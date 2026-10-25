@@ -10,6 +10,15 @@ for(const l of content.lessons){const {sourceHash,...core}=l;assert.equal(hash(c
 for(const [level,c] of Object.entries(manifest.levels)){for(const w of c.weeks)for(const id of w.lessonIds)assert(byId.get(id)?.levels.includes(level));assert.equal(c.mockExams.length,0);}
 const languageSource=fs.readFileSync(path.join(root,'src/i18n/languages.ts'),'utf8');const supported=[...languageSource.split('export type AppLanguage =')[0].matchAll(/'([^']+)'/g)].map(m=>m[1]).filter(l=>l!=='ja');assert.deepEqual(Object.keys(translations.locales).sort(),supported.sort());
 let translationCount=0;for(const [locale,entries]of Object.entries(translations.locales))for(const [id,t]of Object.entries(entries)){const l=byId.get(id);assert(l);assert.equal(t.sourceHash,l.sourceHash);assert(t.title&&t.objective&&t.activity);assert.equal(t.translatedDirectlyFrom,'ja');assert.equal(t.nativeReviewed,false);assert.deepEqual(Object.keys(t.paragraphs).sort(),l.paragraphs.map(p=>p.id).sort());assert.deepEqual(Object.keys(t.paragraphTitles).sort(),l.paragraphs.map(p=>p.id).sort());assert(Object.values(t.paragraphTitles).every(Boolean));assert(Object.values(t.paragraphs).every(v=>typeof v==='string'&&v.trim()));translationCount++;}
+const conceptDiagrams=read('src/data/agriculture/diagrams.json').diagrams,figureRegister=read('docs/ssw-workspace/agriculture/illustration-register.json').figures;
+const figureIds=new Set(figureRegister.map(f=>f.id));assert.equal(figureIds.size,figureRegister.length);
+assert.equal(new Set(conceptDiagrams.map(d=>d.id)).size,conceptDiagrams.length);
+for(const d of conceptDiagrams){
+ assert(figureIds.has(d.id));assert(['comparison','sequence'].includes(d.kind));assert(d.titleJa&&d.altJa&&d.panels.length>=2);assert(d.panels.every(p=>p.titleJa&&p.bodyJa));assert.equal(d.notARecognitionPhotograph,true);assert.equal(d.domainReviewed,false);
+ d.sources.forEach(validateRef);
+ for(const id of d.lessonIds){const l=byId.get(id);assert(l&&l.levels.every(level=>d.scopeLevels.includes(level)));}
+ for(const id of d.knowledgeIds){const k=knowledge.get(id);assert(k&&k.figureIds.includes(d.id));}
+}
 const translationManifest=read('src/data/agriculture/translations.json');
 if(translationManifest.authoredLessonCoverage){
  const c=translationManifest.authoredLessonCoverage;

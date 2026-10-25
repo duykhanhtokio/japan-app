@@ -1,0 +1,122 @@
+{
+  "status": "complete",
+  "packetFile": "docs/ssw-workspace/agriculture/parallel-06/terms-recognition.json",
+  "packetSha256": "b7bcfec8912d4dfa05ba0f538661b6847b6674aafaa3dada0643baa6f6d67b40",
+  "reviewer": "agri_flowers_independent_source_image_review",
+  "scope": {
+    "lessons": 6,
+    "lessonParagraphs": 36,
+    "weeklyQuestions": 16,
+    "termsAndReadings": true,
+    "titleObjectiveActivity": true,
+    "sourcePageImagesInspected": [
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 99
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 100
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 101
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 102
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 103
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 104
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 105
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 128
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 129
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 130
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 131
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 132
+      }
+    ],
+    "recognitionCaptionEntries": 48,
+    "recognitionDistinctSubjects": 44,
+    "glossaryEntries": 81,
+    "glossaryDistinctHeadwords": 60,
+    "colophonMetadataAndExclusions": true
+  },
+  "patches": [
+    {
+      "targetType": "paragraph",
+      "targetId": "agr-workterms-weather-damage-p6",
+      "field": "titleJa",
+      "before": "似た音や字の作業語と区別する",
+      "after": "似た音でも漢字と文脈を確かめる",
+      "reason": "The compared words 干害(かんがい) and かん水(かんすい) do not have identical readings. Remove the contradictory same-reading premise while preserving the lexical distinction."
+    },
+    {
+      "targetType": "paragraph",
+      "targetId": "agr-workterms-weather-damage-p6",
+      "field": "textJa",
+      "before": "干害の読みは「かんがい」で、資料で水を与える仕事に使う「かん水」とは別の語です。音だけで判断せず、漢字と文中の条件を合わせて確認すると、被害の報告と作業の指示を混同しにくくなります。",
+      "after": "干害は「かんがい」、水を与える仕事のかん水は「かんすい」と読みます。音が似ていても別の語です。漢字と文中の条件を合わせて確認すると、被害の報告と作業の指示を混同しにくくなります。",
+      "reason": "Explicitly state the different readings; preserve weather damage versus water-giving work, without a false homophone relationship."
+    },
+    {
+      "targetType": "paragraph",
+      "targetId": "agr-workterms-soil-verbs-p4",
+      "field": "textJa",
+      "before": "記録では「整地をした」だけで終えず、どの畑で、どの作業の後に整えたかを確認します。代かきなら水田、中耕なら育成中の畑という、用語を判断する手掛かりを添えます。",
+      "after": "記録では「整地をした」だけで終えず、どの畑で、どの作業の後に整えたかを確認します。代かきなら水田、中耕なら作物が生育している畑という、用語を判断する手掛かりを添えます。",
+      "reason": "Use 生育 for crop growth rather than 育成 modifying the field; retain the timing condition for 中耕."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par06-terms-recognition-q03",
+      "field": "optionReasonsJa[1]",
+      "before": "育成中の畑の表面を浅く耕す仕事です。",
+      "after": "作物の生育中に、畑の表面を浅く耕す仕事です。",
+      "reason": "Clarify crop growth timing consistently with source 中耕; correct answer and options unchanged."
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "verifiedFindings": [
+    "Shared lesson source levels and lexical scope retained; no exhaustive cultivation procedure course claimed.",
+    "Seed preparation is before sowing, not transplanting; no salt, chemical or germination conditions invented.",
+    "All16questions checked for source definitions, unique intended answers, equal position distribution and no triple repetition.",
+    "Photo inventory matches12vegetables,5materials,11fruits in1go;8diseases,8pests,4materials in2go. Four cover subjects overlap, giving44distinctsubjects.",
+    "Visible feature observations are not diagnoses; original-image and recognition-ready limitations retained.",
+    "Historical family labels and sweet-potato discrepancy explicitly held rather than taught as current taxonomy.",
+    "Glossary81entries/60headwords remain fullKnowledgeCoverageCertified:false, with detailed mapping gaps explicit.",
+    "Colophons: S1Japanese2020-02publication/2022-03revision; S2Japanese2023-09publication versus EnglishFebruary2020 separately retained, no unsupported edition number."
+  ],
+  "limitations": [
+    "Independent AI source comparison, not human/native/domain certification.",
+    "Existing subject links do not certify exhaustive coverage of earlier lessons.",
+    "No original recognition images or runtime recognition tasks created by this review."
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceValidated": false
+}

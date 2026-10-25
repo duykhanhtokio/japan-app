@@ -1,0 +1,99 @@
+{
+  "status": "complete",
+  "packetFile": "docs/ssw-workspace/agriculture/parallel-06/flowers.json",
+  "packetSha256": "93cb53a2717c4c19eecb4577b0a814f5154de20ef0a04e6c432dc1d1929b35a6",
+  "reviewer": "agri_fruit_management",
+  "reviewType": "independent_source_image_and_Japanese_semantic_review",
+  "scope": {
+    "lessonsReviewed": 6,
+    "knowledgeUnitsReviewed": 36,
+    "paragraphBodiesReviewed": 36,
+    "headingsReviewed": 36,
+    "termsReadingsReviewed": true,
+    "objectivesActivitiesReviewed": true,
+    "questionsReviewed": 16,
+    "allOptionsAndReasonsReviewed": true,
+    "conceptDiagramsReviewed": 1,
+    "sourcePageImages": [
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 124,
+        "printedPage": 122
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 125,
+        "printedPage": 123
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 126,
+        "printedPage": 124
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 127,
+        "printedPage": 125
+      }
+    ]
+  },
+  "patches": [
+    {
+      "targetType": "paragraph",
+      "targetId": "agr-flower-work-coldchain-p5",
+      "field": "textJa",
+      "before": "資料では、エチレンの作用を抑える処理、糖による栄養補給、抗菌による腐敗防止が異なる目的として挙げられています。役割を学ぶことと、特定の薬剤や糖を自分で混ぜて使用することは別です。",
+      "after": "資料では、エチレンの作用を抑える処理、糖による栄養補給、抗菌による腐敗防止が異なる目的として挙げられています。糖の補給には老化を遅らせ、つぼみの開花を助ける役割も記載されています。これらの役割を学ぶことと、薬剤や糖を自分で混ぜて使うことは別です。",
+      "reason": "S2PDF126/printed124 explicitly assigns sugar both delayed senescence and bud opening, not merely unspecified nutrition. Preserve these two functional knowledge details without introducing a recipe, dose or universal effectiveness promise."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par06-flowers-q10",
+      "field": "stemJa",
+      "before": "切り花の品質記録で、しおれ以外にも確認するものはどれですか。",
+      "after": "切り花の品質低下の兆候として、資料がしおれ以外に挙げる組合せはどれですか。",
+      "reason": "Current stem asks broadly what to check in quality records; option2 grade/length/bundle count is also a legitimate quality-record check. Restrict the stem to deterioration signs so only option3 answers the stated objective."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par06-flowers-q03",
+      "field": "optionsJa[2]",
+      "before": "分類に入れば地域を問わず同じ日に枯れると考える",
+      "after": "多年にわたって育つ性質があれば、一年草として利用する計画は誤りだと考える",
+      "reason": "Replace an implausible same-day-death claim with a realistic confusion between intrinsic perennial habit and horticultural annual use. CorrectIndex3 unchanged; source explicitly identifies Primula as the counterexample."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par06-flowers-q03",
+      "field": "optionReasonsJa[2]",
+      "before": "分類表は全地域の枯死日を保証する情報ではありません。",
+      "after": "本来は宿根草の性質を持っていても、園芸利用上は一年草として扱う例があります。",
+      "reason": "Align the explanation with the revised intrinsic-habit versus utilization distractor and the explicit Primula source example."
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "findings": [
+    {
+      "topic": "source guarded details retained",
+      "decision": "Taxonomy/binomial confusion, printed packaging term, chemical identity/product-specific conditions and absolute photosynthesis statement remain explicit local holds; no unsupported current procedure activated."
+    },
+    {
+      "topic": "numeric and table checks",
+      "decision": "Cultivation-period ranges3months–1year/3months–severalyears/3–6months/several–decades/3–5years checked against PDF125 image. Classification/species examples and seasonal table targets checked against PDF124/125/127 images."
+    },
+    {
+      "topic": "figure ledger links",
+      "decision": "Concept diagram correctly points to existing knowledge IDs and2go-only lesson IDs. Individual knowledge.figureIds are empty in author packet; coordinator should populate them from conceptDiagram.knowledgeIds during integration.",
+      "blocking": false
+    }
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "nativeDeviceTested": false,
+  "limits": [
+    "Full six-lesson scope and16questions reviewed; not certification of all unprocessed species-table rows or biological taxonomy outside source examples.",
+    "No raw PDF page image or source text is copied into the review.",
+    "AI source review is not native/domain/human/device approval."
+  ]
+}
