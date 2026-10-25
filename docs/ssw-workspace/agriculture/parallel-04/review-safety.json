@@ -1,0 +1,194 @@
+{
+  "reviewedFile": "parallel-04/safety.json",
+  "reviewedSha256": "e95f28042df1faa20d7199b768fd0979466bfb9474a000646526ab16c1b74c3f",
+  "status": "changes_requested",
+  "factualBlockingIssues": [
+    {
+      "targetId": "agr-safety-spray-check-p6",
+      "severity": "high",
+      "issue": "The spraying-health paragraph omits the source instruction for prompt physician assessment when symptoms occur. Apply proposed patch before integration."
+    }
+  ],
+  "patches": [
+    {
+      "targetType": "paragraph",
+      "targetId": "agr-safety-spray-check-p6",
+      "field": "textJa",
+      "before": "長時間の作業では休憩も考慮します。体調に異常がある場面や残液が出た場面で、作業量や使用量を増やして解決しようとせず、適切な対応を確認する必要があります。",
+      "after": "長時間の作業では適度な休憩が必要です。散布中や散布後にめまい、吐き気などの異常を感じたら、作業を続けず、速やかに医師の診察を受けます。残液を減らすために表示を超えて追加散布することはせず、処分方法を別に確認します。",
+      "reason": "Source explicitly directs prompt medical consultation for dizziness/nausea during or after spraying; generic confirmation of an appropriate response omits the urgent action. This is referral, not a diagnosis or treatment protocol.",
+      "source": [
+        "AGR-S1 PDF40 printed34",
+        "AGR-S2 PDF57 printed55"
+      ]
+    },
+    {
+      "targetType": "paragraph",
+      "targetId": "agr-safety-machine-preparation-p4",
+      "field": "textJa",
+      "before": "疲労すると注意が続きにくくなり、機械作業の危険につながります。資料は、疲れている状態での作業に注意し、飲酒後には機械作業をしないことを示しています。",
+      "after": "疲労すると注意が続きにくくなり、機械作業の危険につながります。疲れた状態での機械作業は避け、適度に休憩します。飲酒後には機械作業をしません。",
+      "reason": "Make the fatigue precaution explicit rather than only asking for attention; preserve the absolute alcohol prohibition.",
+      "source": [
+        "AGR-S1 PDF37–38 printed31–32",
+        "AGR-S2 PDF51–52 printed49–50"
+      ]
+    },
+    {
+      "targetType": "paragraph",
+      "targetId": "agr-safety-spray-check-p4",
+      "field": "textJa",
+      "before": "雨のときや降雨の直前直後を避け、できるだけ朝夕の涼しいときに行うという目安が示されています。この記述から、すべての農薬に共通する待ち時間や時刻を作らないでください。",
+      "after": "雨のときや降雨の直前直後には散布作業をしません。できるだけ朝夕の涼しいときに行うという目安が示されています。この記述から、すべての農薬に共通する待ち時間や時刻を作らないでください。",
+      "reason": "Restore source prohibition rather than weaker avoidance wording while retaining the hold on universal waiting periods and clock times.",
+      "source": [
+        "AGR-S1 PDF40 printed34",
+        "AGR-S2 PDF57 printed55"
+      ]
+    }
+  ],
+  "coverage": {
+    "lessons": 10,
+    "paragraphs": 60,
+    "questions": 16,
+    "textSourcePages": [
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 37
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 38
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 39
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 40
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 41
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 42
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 43
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 44
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 45
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 51
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 52
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 53
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 54
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 55
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 56
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 57
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 58
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 59
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 60
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 61
+      }
+    ],
+    "visuallyCheckedPages": [
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 39
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 40
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 45
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 54
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 61
+      }
+    ],
+    "allCorrectAnswersAndOptionReasonsChecked": true
+  },
+  "questionReview": {
+    "factualBlockingIssues": [],
+    "correctIndexChanges": [],
+    "answerCounts": {
+      "0": 4,
+      "1": 4,
+      "2": 4,
+      "3": 4
+    },
+    "finding": "All 16 keyed answers and their distractor reasons agree with the source scope. No question edits required."
+  },
+  "safetyFlags": {
+    "noUniversalMachineStartSequence": true,
+    "noUniversalGloveRuleAcrossMachineryAndChemicals": true,
+    "pesticidePpeRemainsLabelAndProductDependent": true,
+    "engineStopNotPresentedAsAllHazardsEliminated": true,
+    "noUniversalFuelMixOrCurrentContainerLawClaim": true,
+    "noUniversalPesticideConcentrationOrWaitingInterval": true,
+    "noBackwardSprayingWalkingInstruction": true,
+    "noLeftoverDisposalRecipe": true,
+    "noMedicalTreatmentProtocol": true,
+    "retainAllAuthorHolds": true
+  },
+  "externalCrossCheck": {
+    "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00td0062&dataType=1&pageNo=1",
+    "title": "令和8年度農薬危害防止運動の実施について",
+    "published": "2026-04-28",
+    "checked": "2026-10-25",
+    "scope": "Current official pesticide harm-prevention notification; uploaded textbook is the direct evidence for the prompt referral patch."
+  },
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "publicationApproved": false
+}
