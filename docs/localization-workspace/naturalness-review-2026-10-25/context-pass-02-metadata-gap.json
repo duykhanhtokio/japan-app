@@ -1,0 +1,27 @@
+{
+  "status": "PENDING_TRANSLATION_AND_DISPLAY_INTEGRATION",
+  "scenarios": {
+    "SC-LOC-ISK-KOMATSU-03-001": {
+      "name": "左右の模様をあえて変える",
+      "situation": "石川県を背景にした架空の学習場面。工芸体験で対になる小物を作る。見本の左右対称をそのまま写さず、用途に合わせて模様を変える。 設備・日時・商品・受付対応は教材上の設定で、実在施設の運用を示さない。",
+      "learningObjective": "場面に応じた五つの発話目的を果たし、相手の応答を受けて次の行動を決める。",
+      "playerGoal": "二つの用途を説明する",
+      "npcGoal": "用件を確認し、場面に応じて応答・案内を行い、会話を自然に閉じる。"
+    },
+    "SC-LOC-ISK-KOMATSU-04-001": {
+      "name": "茶葉の飲み比べで順番を記録する",
+      "situation": "石川県を背景にした架空の学習場面。お茶店の試飲で二種類を飲み比べるが、どちらを先に飲んだか分からなくなり、試飲順と印象を整理する。 設備・日時・商品・受付対応は教材上の設定で、実在施設の運用を示さない。",
+      "learningObjective": "場面に応じた五つの発話目的を果たし、相手の応答を受けて次の行動を決める。",
+      "playerGoal": "好みの印象と名前の不明を伝える",
+      "npcGoal": "用件を確認し、場面に応じて応答・案内を行い、会話を自然に閉じる。"
+    }
+  },
+  "observedRuntimePath": [
+    "src/services/life-content-repository.ts",
+    "src/components/world/scenario-mission.ts",
+    "src/app/world/dialogue/[scenarioId].tsx"
+  ],
+  "finding": "Scenario metadata has no per-locale fields in LifeScenario. scenarioMission constructs Japanese guidance and is called without a locale. These metadata strings are outside the sentence/task locale batch layer; do not count locale batch coverage as metadata localization.",
+  "action": "Preserve approved UI. Provide source-bound metadata translations through an integrated locale-aware data path during the subsequent metadata work; audit all canonical scenario metadata.",
+  "uiVerified": false
+}
