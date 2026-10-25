@@ -22,6 +22,18 @@ function RiceProcess() {
  {['もみ','もみ殻を除く →','玄米','精米する →','白米'].map((name,i)=><View key={name} style={[s.stage,{backgroundColor:i%2===0?['#e5be6f','#ead0a0','#fff8e6'][i/2]:'transparent'}]}><Text style={{fontSize:16,color:'#302c26',textAlign:'center'}}>{name}</Text></View>)}
  </View>;
 }
+function OrgansDiagram() {
+ return <View style={s.diagram} accessibilityLabel="栄養器官は葉・茎・根、生殖器官は花・果実です。">
+ {[["栄養器官","葉 · 茎 · 根"],["生殖器官","花 · 果実"]].map(([title,items])=><View key={title} style={[s.stage,{backgroundColor:title==='栄養器官'?'#d6e6ba':'#f1cfbb',minWidth:130}]}><Text style={{color:'#302c26',fontSize:17,fontWeight:'700'}}>{title}</Text><Text style={{color:'#302c26',fontSize:17,lineHeight:30}}>{items}</Text></View>)}
+ </View>;
+}
+function SowingDiagram() {
+ return <View style={[s.diagram,{alignItems:'stretch'}]} accessibilityLabel="ばらまきはうね全体、すじまきは列、点まきは一か所に数粒ずつ。図は模式図で、実際の間隔を示しません。">
+ {(['ばらまき','すじまき','点まき'] as const).map((name,index)=><View key={name} style={[s.stage,{backgroundColor:'#e7d7b4',minWidth:120}]}><Text style={{color:'#302c26',textAlign:'center',fontSize:17}}>{name}</Text><View style={{height:110,width:100,alignSelf:'center',position:'relative',marginVertical:10}}>
+ {Array.from({length:12},(_,i)=>{const col=i%3,row=Math.floor(i/3);const x=index===0?8+((i*23)%78):index===1?45:15+col*6;const y=index===0?8+Math.floor(i/3)*24: index===1?i*8:10+row*27+(col%2)*4;return <View key={i} style={{position:'absolute',left:x,top:y,width:5,height:5,borderRadius:3,backgroundColor:'#654420'}}/>;})}</View></View>)}
+ <Text style={{color:'#302c26',fontSize:14}}>模式図 · 実際の間隔や粒数の指定ではありません</Text>
+ </View>;
+}
 export function AgricultureCourse({learner,language,onBack}:{learner:string;language:string;onBack:()=>void}) {
  const [level,setLevel]=useState<AgricultureLevel|null>(null);
  return <StudyAppearanceProvider>{level?<Course key={`${learner}:${level}`} learner={learner} language={language} level={level} onBack={()=>setLevel(null)}/>:<Surface><TokuteiHeader title="農業 · 耕種農業" onBack={onBack}/><ScrollView contentContainerStyle={s.content}><RoyalContentPanel style={s.panel}><Text style={s.heading}>学習する区分を選ぶ</Text><Text style={s.body}>学習内容は順次追加しています。</Text>{(['1','2'] as const).map(l=><Button key={l} title={`特定技能${l}号`} onPress={()=>setLevel(l)}/>)}</RoyalContentPanel></ScrollView></Surface>}</StudyAppearanceProvider>;
@@ -51,12 +63,12 @@ function CheckCard({learner,level,exam,onPress}:{learner:string;level:Agricultur
 }
 function Reader({lesson,language,onBack,onComplete,saving,saveError}:{lesson:AgricultureLesson;language:string;onBack:()=>void;onComplete:()=>void;saving:boolean;saveError:boolean}) {
  const [show,setShow]=useState(false),{colors}=useStudyAppearance(),t=agricultureTranslation(lesson,language);
- return <Surface reading><TokuteiHeader title={lesson.titleJa} onBack={onBack}/><ScrollView contentContainerStyle={s.content}>
+ return <Surface reading><TokuteiHeader title={lesson.titleJa} onBack={()=>{if(!saving)onBack();}}/><ScrollView contentContainerStyle={s.content}>
  <ReadingAppearanceControl/>{language!=='ja'&&<Button title={show?'訳を隠す':'訳を表示'} onPress={()=>setShow(v=>!v)}/>}
  {show&&language!=='ja'&&!t&&<TranslationText>この言語の訳は準備中です。</TranslationText>}
  <Text style={[s.body,{color:colors.text}]}>{lesson.objectiveJa}</Text>{show&&t&&<TranslationText>{t.title}{'\n'}{t.objective}</TranslationText>}
  {lesson.paragraphs.map(p=><View key={p.id} style={[s.section,{borderColor:colors.border}]}><Text style={[s.heading,{color:colors.text}]}>{p.titleJa}</Text><Text selectable style={[s.body,{color:colors.text}]}>{p.textJa}</Text>{show&&t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}</View>)}
- {lesson.id==='agr-rice'&&<RiceProcess/>}
+ {lesson.id==='agr-rice'&&<RiceProcess/>}{lesson.id==='agr-organs'&&<OrgansDiagram/>}{lesson.id==='agr-sowing-design'&&<SowingDiagram/>}
  <Text style={[s.heading,{color:colors.text}]}>用語</Text>{lesson.terms.map(term=><Text key={term.ja} style={[s.body,{color:colors.text}]}>{term.ja}（{term.reading}）</Text>)}
  <Text style={[s.heading,{color:colors.text}]}>整理して説明する</Text><Text style={[s.body,{color:colors.text}]}>{lesson.activityJa}</Text>{show&&t&&<TranslationText>{t.activity}</TranslationText>}
  {saveError&&<Text accessibilityRole="alert" style={[s.body,{color:colors.text}]}>完了を保存できませんでした。もう一度お試しください。</Text>}
