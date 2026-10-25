@@ -41,3 +41,14 @@ Translations now use bounded per-locale JSON shards. translations.json is a sche
 Source problems remain explicit holds: different soil three-phase target ranges/pHcategory descriptions, historical elemental counts, ECthresholdconditions, and drainage headings. External MAFF nutrient resolution is recorded separately, not silently substituted into disputed answer keys. No raw source PDFs/text/images were copied into the public repository. Mechanical48character source-expression scan finds no matching paragraph windows; it is not originality, rights or full semantic certification.
 
 Resume at1goPDF37/printed31(safety),2goPDF48/printed46(remaining general crop content before safetyPDF51/printed49). Revisit detailed older chapter holes and holds in progress/ledger before claiming chapter completion. Six AI finished this batch; no authoring worker is claimed to remain running after the turn.
+
+
+## Parallel04 — six AI, 2026-10-25
+
+Added30 Japanese lessons (safety, rice work, field/vegetable work),180 mapped units and48 weekly questions. Added336 direct Japanese-to-target translation pairs; first43 lessons now have all12 draft locales. Totals:73 Japanese lessons,438 units,152 distinct weekly questions,516 lesson-locale pairs,133 inspected page images,3 concept diagrams. The30 new lessons need360 more translation pairs. Mock forms remain0/20 and mock questions0/800; exam-authoring-blueprint.json is a provisional allocation, not authored questions or an official exam specification.
+
+Independent targeted AI cross-review produced51 applied source/editorial field repairs. Four water-methods translation bindings were reconciled against current canonical punctuation before integration. Source-specific differences and numeric/legal holds remain explicit, including the sweet-potato source discrepancy. Source-overlap screening found no exact48-character windows across73 lesson paragraphs; this is not semantic, rights or originality certification.
+
+Fixed learner progress validation to accept real lesson IDs containing digits, including2go suffixes; existing stored progress can be restored. Locale translation objects are loaded on selection through explicit local loaders. Data/state checks, TypeScript, ESLint and Chromium checks passed:516 translated lesson-locale cases, four viewports, failed-save retry, completion reload including numeric IDs, level separation, attempt resume and hidden answers before submit. Browser adapters do not certify native device, production Expo build, fonts or artwork.
+
+Resume at1goPDF63/printed57 and2goPDF82/printed80 (facility horticulture), while revisiting source2PDF48–50, F1PDF15, graftingPDF17–19 and older detailed/recognition/regulated holds. Full source semantic coverage, calendar duration, native/domain/human review and release readiness remain false. Six workers completed this batch; no background authoring process remains running.
