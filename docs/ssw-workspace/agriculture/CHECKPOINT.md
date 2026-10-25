@@ -1,5 +1,7 @@
 # Agriculture authoring — 2026-10-25
 
+Latest verified-content snapshot:73 Japanese lessons,438 mapped units,152 weekly questions,876 draft lesson-locale pairs (all73 authored lessons in12 target locales). Full curriculum and mock bank remain incomplete. See progress.json and latest parallel-05-manifest.json; earlier entries below are historical.
+
 Status: IN_PROGRESS. Full publisher requirements are preserved in AUTHORING_REQUIREMENTS_VI.md.
 
 Source inventory accounts for both supplied PDFs (105 + 132 = 237 pages), source hashes, printed/PDF offsets and all chapter starts. This is extraction/accounting, NOT a claim to have read or reviewed every page. 11 specific page images have been checked; fields distinguish extraction from partial semantic mapping. PDF binaries, source text and source images were not published.
@@ -52,3 +54,16 @@ Independent targeted AI cross-review produced51 applied source/editorial field r
 Fixed learner progress validation to accept real lesson IDs containing digits, including2go suffixes; existing stored progress can be restored. Locale translation objects are loaded on selection through explicit local loaders. Data/state checks, TypeScript, ESLint and Chromium checks passed:516 translated lesson-locale cases, four viewports, failed-save retry, completion reload including numeric IDs, level separation, attempt resume and hidden answers before submit. Browser adapters do not certify native device, production Expo build, fonts or artwork.
 
 Resume at1goPDF63/printed57 and2goPDF82/printed80 (facility horticulture), while revisiting source2PDF48–50, F1PDF15, graftingPDF17–19 and older detailed/recognition/regulated holds. Full source semantic coverage, calendar duration, native/domain/human review and release readiness remain false. Six workers completed this batch; no background authoring process remains running.
+
+
+## Parallel05 — six AI direct translation and independent cross-review, 2026-10-25
+
+Closed the remaining360 lesson-locale drafts for the30 safety/rice-work/field-vegetable lessons. Six disjoint author packets each contain60pairs; a different AI independently compared each packet with Japanese. Source hashes and all original516translation objects were preserved. Current73lessons each have all12direct target-language drafts:876pairs,0missing pairs for currently authored lessons. This does not mean the full source curriculum or native/domain review is complete. Japanese73lessons/438units,152weekly questions,133page images,3concept diagrams and0/800mock questions are unchanged.
+
+Applied56 exact field-level patches from independent reviews. Examples include inclusive40%or more, pre-sowing versus transplanting, bag-fill quantity versus empty-container weight, botanical storage-organ terms, safe refueling timing and straddling warnings. Rice-b author also recorded6self-corrections for inclusive40% before the final independent review snapshot. New360pairs comprise2160body paragraphs,2160headings and1080title/objective/activity fields. Reviews are AI checks; all human/native/domain/device flags remain false.
+
+Validation PASS: source hash/ID/data/state constraints; all876translated reader cases;48long-new-translation cases across390x844,844x390,768x1024 and1440x900; numeric token screening156paragraph-locale cases,0mismatches; save failure/retry/reload including numeric lesson IDs; level isolation; attempt resume/cancel/hidden answers; JS syntax/Python compile; approved JLPT UI lock. No TypeScript application code changed. Minimal QA dependencies lack Expo's base tsconfig and esbuild emitted that environment warning; no full Expo/native build is claimed.
+
+Initial QA rendering lacked Khmer glyphs. Added explicit QA fallback fonts for Bengali,Devanagari,Myanmar,Thai,Khmer, waited for font loading, and reran the entire876-case browser suite. Final Khmer/Myanmar screenshots show readable glyphs and reachable completion; representative portrait/landscape/tablet/desktop views were inspected. QA Royal/background/safe-area/storage adapters and explicit fonts remain distinct from production native artwork/fonts. Screenshots are regenerable local artifacts, not claimed as durable image evidence.
+
+Resume source authoring at1goPDF63/printed57 and2goPDF82/printed80 (facility horticulture), then remaining fruit/flower/terms/recognition chapters and prior detailed holds. Full source-knowledge ledger, measured study duration,800mock questions and actual native/domain/device certification remain open. All six workers completed this batch; no background authoring is left running.

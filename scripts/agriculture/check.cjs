@@ -10,6 +10,16 @@ for(const l of content.lessons){const {sourceHash,...core}=l;assert.equal(hash(c
 for(const [level,c] of Object.entries(manifest.levels)){for(const w of c.weeks)for(const id of w.lessonIds)assert(byId.get(id)?.levels.includes(level));assert.equal(c.mockExams.length,0);}
 const languageSource=fs.readFileSync(path.join(root,'src/i18n/languages.ts'),'utf8');const supported=[...languageSource.split('export type AppLanguage =')[0].matchAll(/'([^']+)'/g)].map(m=>m[1]).filter(l=>l!=='ja');assert.deepEqual(Object.keys(translations.locales).sort(),supported.sort());
 let translationCount=0;for(const [locale,entries]of Object.entries(translations.locales))for(const [id,t]of Object.entries(entries)){const l=byId.get(id);assert(l);assert.equal(t.sourceHash,l.sourceHash);assert(t.title&&t.objective&&t.activity);assert.equal(t.translatedDirectlyFrom,'ja');assert.equal(t.nativeReviewed,false);assert.deepEqual(Object.keys(t.paragraphs).sort(),l.paragraphs.map(p=>p.id).sort());assert.deepEqual(Object.keys(t.paragraphTitles).sort(),l.paragraphs.map(p=>p.id).sort());assert(Object.values(t.paragraphTitles).every(Boolean));assert(Object.values(t.paragraphs).every(v=>typeof v==='string'&&v.trim()));translationCount++;}
+const translationManifest=read('src/data/agriculture/translations.json');
+if(translationManifest.authoredLessonCoverage){
+ const c=translationManifest.authoredLessonCoverage;
+ assert.equal(c.authoredLessons,content.lessons.length);
+ assert.equal(c.lessonLocalePairs,translationCount);
+ const fullyTranslated=content.lessons.filter(l=>supported.every(locale=>translations.locales[locale][l.id]?.sourceHash===l.sourceHash)).length;
+ assert.equal(c.fullyDraftTranslatedLessons,fullyTranslated);
+ assert.equal(c.completeForCurrentlyAuthoredLessons,fullyTranslated===content.lessons.length);
+ assert.equal(c.wholeCurriculumComplete,content.courseComplete);
+}
 const stems=new Set(),questionIds=new Set();for(const e of checks.exams){const counts=[0,0,0,0];assert.equal(e.kind,'weekly');for(const level of e.levels)assert(manifest.levels[level].weeks.some(w=>w.id===e.weekIdsByLevel[level]));assert.equal(e.officialSimulation,false);assert.equal(e.timeLimitMinutes,null);for(const [i,q]of e.questions.entries()){assert(!questionIds.has(q.id));questionIds.add(q.id);assert(!stems.has(q.stemJa));stems.add(q.stemJa);assert.equal(q.optionsJa.length,4);assert.equal(new Set(q.optionsJa).size,4);assert.equal(q.optionReasonsJa.length,4);assert(q.optionReasonsJa.every(Boolean));assert(q.correctIndex>=0&&q.correctIndex<4);counts[q.correctIndex]++;const l=byId.get(q.lessonId);assert(l);for(const level of e.levels)assert(l.levels.includes(level));assert.equal(q.lessonSourceHash,l.sourceHash);for(const id of q.knowledgeIds)assert(knowledge.get(id)?.questionIds.includes(q.id));if(i>=2)assert(!(q.correctIndex===e.questions[i-1].correctIndex&&q.correctIndex===e.questions[i-2].correctIndex));}assert(counts.every(n=>n===e.questions.length/4));assert.equal(e.revision,'v1-'+hash(e.questions).slice(0,16));}
 (async()=>{
  const built=await require('esbuild').build({entryPoints:[path.join(root,'src/services/agriculture-study-state.ts')],bundle:true,write:false,platform:'node',format:'cjs'});const m={exports:{}};new Function('module','exports',built.outputFiles[0].text)(m,m.exports);const api=m.exports;

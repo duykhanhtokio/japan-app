@@ -1,0 +1,89 @@
+{
+  "status": "complete",
+  "packetFile": "translations-safety-a.json",
+  "packetSha256": "de5d6babff5ff858bcf99d458816dd0f2ae6b581f352a5a9d7aa230935f2bb56",
+  "reviewType": "independent_ai_direct_Japanese_semantic_review",
+  "locales": [
+    "en",
+    "vi",
+    "id",
+    "zh-CN",
+    "zh-TW",
+    "tl"
+  ],
+  "lessonIds": [
+    "agr-safety-machine-preparation",
+    "agr-safety-inspection-stop",
+    "agr-safety-pesticide-clothing",
+    "agr-safety-pesticide-label",
+    "agr-safety-spray-check",
+    "agr-safety-power-fuel",
+    "agr-safety-maintenance-tools",
+    "agr-safety-stepladder",
+    "agr-safety-workload-2",
+    "agr-safety-label-fields-2"
+  ],
+  "lessonLocalePairsReviewed": 60,
+  "fieldsReviewedPerPair": [
+    "title",
+    "objective",
+    "paragraphTitles",
+    "paragraphs",
+    "activity"
+  ],
+  "paragraphBodiesReviewed": 360,
+  "paragraphHeadingsReviewed": 360,
+  "patches": [
+    {
+      "locale": "en",
+      "lessonId": "agr-safety-power-fuel",
+      "field": "paragraphs",
+      "paragraphId": "agr-safety-power-fuel-p5",
+      "before": "Before refueling, check that there are no ignition sources nearby, and take care not to spill fuel or overflow the tank. Checking the fuel type and checking the refueling location are separate items.",
+      "after": "During refueling, check that there are no ignition sources nearby, and take care not to spill fuel or overflow the tank. Checking the fuel type and checking the refueling location are separate items.",
+      "reason": "Canonical 給油中 specifies the refueling period, not merely a check before refueling. Preserve that temporal scope without adding a new operation."
+    },
+    {
+      "locale": "vi",
+      "lessonId": "agr-safety-stepladder",
+      "field": "paragraphs",
+      "paragraphId": "agr-safety-stepladder-p4",
+      "before": "Tài liệu minh họa đứng hoặc ngồi dạng chân qua mặt đỉnh thang là nguy hiểm. Phân biệt mặt đỉnh với bậc thang, rồi đối chiếu vị trí đứng trong hình.",
+      "after": "Tài liệu minh họa việc đứng trên mặt đỉnh hoặc đặt hai chân sang hai bên mặt đỉnh thang là nguy hiểm. Phân biệt mặt đỉnh với bậc thang, rồi đối chiếu vị trí đứng trong hình.",
+      "reason": "またぐ means straddling; do not restrict the warning to sitting astride. Preserve the distinction from standing on the top cap."
+    },
+    {
+      "locale": "zh-CN",
+      "lessonId": "agr-safety-stepladder",
+      "field": "paragraphs",
+      "paragraphId": "agr-safety-stepladder-p4",
+      "before": "资料把站在顶盖上或跨坐顶盖列为危险示例。应区分顶盖与踏步，并通过图确认站立位置。",
+      "after": "资料把站在顶盖上，或两腿分跨在顶盖两侧列为危险示例。应区分顶盖与踏步，并通过图确认站立位置。",
+      "reason": "Preserve またぐ as straddling without limiting it to seated straddling (跨坐)."
+    },
+    {
+      "locale": "zh-TW",
+      "lessonId": "agr-safety-stepladder",
+      "field": "paragraphs",
+      "paragraphId": "agr-safety-stepladder-p4",
+      "before": "資料把站上頂蓋或跨坐頂蓋列為危險示例。應區分頂蓋和踏階，透過圖確認站立位置。",
+      "after": "資料把站上頂蓋，或雙腿分跨在頂蓋兩側列為危險示例。應區分頂蓋和踏階，透過圖確認站立位置。",
+      "reason": "Preserve またぐ as straddling without limiting it to seated straddling (跨坐)."
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "checks": [
+    "Stop work and prompt physician examination for dizziness/nausea during or after spraying preserved in all six locales.",
+    "Rain before/after restriction, wind cancellation, fatigue/alcohol limits, PPE task matching and glove caveats preserved.",
+    "Inspection running exception is not extended to hand-clearing; temporary interruptions and blockage removal require engine stopped.",
+    "Power100V/three-phase200V, wet-hand shock warning, compatible fuel, engine-off refueling and product/model/legal holds preserved.",
+    "Label crop/target/dilution/quantity/time/method/count/expiry/lot distinctions preserved, including cumulative same-active-ingredient count.",
+    "Stepladder stability, spreader restraint, top-cap and lateral-lean hazards preserved; three wording patches broaden straddling to match source.",
+    "One English temporal patch restores during-refueling scope."
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "deviceValidated": false,
+  "limitations": "AI review against canonical Japanese only; no new source-PDF verification, current-law certification, medical treatment guidance or native-speaker certification."
+}
