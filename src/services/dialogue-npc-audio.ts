@@ -1,6 +1,7 @@
 import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
 import Constants from 'expo-constants';
-import { Platform } from 'react-native';
+import { AppState, Platform } from 'react-native';
+import { npcAudioRelease, packedRecordingFor } from './dialogue-audio-packs';
 import { npcAudioClips, npcAudioEntries } from '../data/dialogue-content/npc-audio.generated';
 import casting from '../data/dialogue-content/npc-voice-casting.json';
 import voices from '../data/jlpt-original/voice-casting.json';
@@ -13,8 +14,12 @@ let subscription: { remove(): void } | null = null;
 let watchdog: ReturnType<typeof setTimeout> | null = null;
 let generation = 0;
 let pending: AbortController | null = null;
+let segmentTimer: ReturnType<typeof setInterval> | null = null;
+let removeInterruption: (()=>void) | null = null;
 function release() {
  pending?.abort(); pending = null;
+ if(segmentTimer)clearInterval(segmentTimer);segmentTimer=null;
+ removeInterruption?.();removeInterruption=null;
  subscription?.remove(); subscription = null;
  if (watchdog) clearTimeout(watchdog); watchdog = null;
  const player = current; current = null;
@@ -42,6 +47,8 @@ function voiceServer() {
 export function recordingFor(text: string, options: Pick<Options, 'scenarioId' | 'turnId' | 'category'>) {
  const entry = npcAudioEntries[options.scenarioId]?.[options.turnId];
  const { role, ...approved } = approvedVoiceFor(options.category);
+ const packed = packedRecordingFor(text, options.scenarioId, options.turnId, role, approved.speakerId);
+ if (packed) return packed;
  return entry && entry.sourceJa === text && entry.role === role && entry.speakerId === approved.speakerId && npcAudioClips[entry.clip] !== undefined
   ? { ...entry, source: npcAudioClips[entry.clip] } : null;
 }
@@ -55,30 +62,53 @@ export function speak(text: string, options: Options) {
   release();
   options.onError?.();
  };
- const play = (source: number | {uri: string}, durationMs?: number, recover = false) => {
+ const play = (source: number | {uri: string}, durationMs?: number, startMs = 0, recover = false) => {
   if (token !== generation) return;
   const playbackFailure = () => recover ? requestLive() : fail();
   try {
-   const player = createAudioPlayer(source, { updateInterval: 75 });
+   const start=startMs/1000,end=durationMs?start+durationMs/1000:0;
+   const actualSource=packed&&Platform.OS==='web'&&typeof source==='object'?{uri:`${source.uri}#t=${start},${end}`}:source;
+   const player = createAudioPlayer(actualSource, { updateInterval: 25 });
    current = player;
    let started = false;
+   let seeking = false;
+   let positioned = startMs === 0;
+   const complete = () => { if (token !== generation || current !== player) return; generation++; release(); options.onDone?.(); };
+   const interrupt = () => { if (token !== generation || current !== player) return; generation++; release(); options.onStopped?.(); options.onError?.(); };
+   const app = AppState?.addEventListener('change', state => { if (state !== 'active') interrupt(); });
+   const visibility = () => { if (typeof document !== 'undefined' && document.hidden) interrupt(); };
+   if (Platform.OS === 'web' && typeof document !== 'undefined') document.addEventListener('visibilitychange', visibility);
+   removeInterruption = () => { app?.remove(); if (typeof document !== 'undefined') document.removeEventListener('visibilitychange', visibility); };
+   const position=()=>{
+    if(positioned||seeking||token!==generation||current!==player)return;
+    seeking=true;
+    void player.seekTo(startMs/1000,0,0).then(()=>{
+     if(token!==generation||current!==player)return;
+     positioned=true;player.play();
+    }).catch(()=>{if(token===generation&&current===player)fail();});
+   };
    subscription = player.addListener('playbackStatusUpdate', status => {
     if (token !== generation || current !== player) return;
     if (status.playbackState === 'error') { release(); playbackFailure(); return; }
+    if(status.isLoaded&&!positioned)position();
+    if (!positioned) return;
     if (status.playing) {
      started = true;
      if (watchdog) clearTimeout(watchdog); watchdog = null;
-     const duration = status.duration || (durationMs ?? 0) / 1000;
-     if (duration > 0) options.onBoundary?.({charIndex: Math.min(text.length, Math.floor(status.currentTime / duration * text.length)), charLength: 0});
+     const elapsed = Math.max(0, status.currentTime - startMs / 1000);
+     const duration = durationMs ? durationMs / 1000 : status.duration;
+     if (packed && durationMs && elapsed >= durationMs / 1000 - .01) { complete(); return; }
+     if (duration > 0) options.onBoundary?.({charIndex: Math.min(text.length, Math.floor(elapsed / duration * text.length)), charLength: 0});
     }
-    if (status.didJustFinish) { generation++; release(); options.onDone?.(); }
+    if(status.didJustFinish){if(!packed||status.currentTime>=end-.1)complete();else fail();}
    });
    watchdog = setTimeout(() => { if (!started) { release(); playbackFailure(); } }, 15000);
-   player.play();
+   if(packed)segmentTimer=setInterval(()=>{if(token===generation&&current===player&&started&&player.currentTime>=end-.01)complete();},20);
+   if(positioned)player.play();else if(player.isLoaded)position();
   } catch { release(); playbackFailure(); }
  };
- // Never substitute the device's unrelated default voice for an approved NPC.
  const requestLive = () => {
+ if (npcAudioRelease.complete) { fail(); return; }
  const server = voiceServer();
  if (!server) { fail(); return; }
  const controller = new AbortController(); pending = controller;
@@ -94,6 +124,7 @@ export function speak(text: string, options: Options) {
    play({uri:server+result.url});
   }).catch(fail).finally(()=>clearTimeout(timeout));
  };
- if (recording) play(recording.source, recording.durationMs, true);
+ // Complete releases resolve every NPC through pre-generated recordings.
+ if (recording) play(recording.source, recording.durationMs, 'startMs' in recording ? recording.startMs : 0, !('startMs' in recording));
  else requestLive();
 }
