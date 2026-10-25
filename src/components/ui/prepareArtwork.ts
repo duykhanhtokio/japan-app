@@ -8,7 +8,27 @@ export function isArtworkSource(source: unknown): source is ArtworkSource {
     || (!!source && typeof source === 'object' && 'uri' in source && typeof source.uri === 'string');
 }
 const prepared = new Map<number | string, Promise<void>>();
-const decodedWeb = new Map<string, HTMLImageElement>();
+const decodedWeb = new Map<string, { image: HTMLImageElement; key: number | string; pixels: number }>();
+const MAX_DECODED_IMAGES = 24;
+const MAX_DECODED_PIXELS = 12_000_000;
+let decodedPixels = 0;
+function retainDecodedImage(uri: string, image: HTMLImageElement, key: number | string) {
+  const previous = decodedWeb.get(uri);
+  if (previous) decodedPixels -= previous.pixels;
+  decodedWeb.delete(uri);
+  const pixels = (image.naturalWidth || 0) * (image.naturalHeight || 0);
+  decodedWeb.set(uri, { image, key, pixels });
+  decodedPixels += pixels;
+  // Release our extra strong references, never clear a displayed image's src.
+  while (decodedWeb.size > MAX_DECODED_IMAGES || decodedPixels > MAX_DECODED_PIXELS) {
+    const oldest = decodedWeb.keys().next().value;
+    if (oldest === undefined) break;
+    const entry = decodedWeb.get(oldest)!;
+    decodedPixels -= entry.pixels;
+    decodedWeb.delete(oldest);
+    prepared.delete(entry.key);
+  }
+}
 
 // Populate the caches used by the existing renderers. Never replace sources,
 // geometry, overlays or mounted components with a preload representation.
@@ -21,7 +41,8 @@ export async function prepareArtwork(sources: ArtworkSource | ArtworkSource[]) {
     if (!pending) {
       pending = (async () => {
         const asset = Asset.fromModule(source);
-        await asset.downloadAsync();
+        // Asset.downloadAsync also opens an Image on web. Decode the URI once.
+        if (Platform.OS !== 'web') await asset.downloadAsync();
         const resolved = typeof source === 'number' && typeof NativeImage.resolveAssetSource === 'function'
           ? NativeImage.resolveAssetSource(source) : undefined;
         const uri = resolved?.uri ?? asset.uri;
@@ -29,7 +50,7 @@ export async function prepareArtwork(sources: ArtworkSource | ArtworkSource[]) {
           const image = new globalThis.Image();
           image.src = uri;
           await image.decode();
-          decodedWeb.set(uri, image);
+          retainDecodedImage(uri, image, key);
         } else {
           const [nativeReady, expoReady] = await Promise.all([
             NativeImage.prefetch(uri),

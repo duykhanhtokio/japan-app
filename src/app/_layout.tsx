@@ -1,13 +1,11 @@
-import { EffectsProvider, useEffects } from '@/components/effects/EffectsProvider';
+import { EffectsProvider } from '@/components/effects/EffectsProvider';
 import { PressSound } from '@/components/effects/PressSound';
 import { prepareArtwork } from '@/components/ui/prepareArtwork';
 import { prepareSceneRoute, cancelPreparedNavigation, registerNavigationStateReader, backPrepared } from '@/components/ui/prepareSceneRoute';
-import { OPEN_FRAME_SLICES } from '@/components/ui/RoyalPaperPanel';
-import { NAVY_FRAME_ART } from '@/components/ui/RoyalSurface';
 import { DEVELOPMENT_FEATURES } from '@/config/development-features';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Stack, usePathname, useNavigationContainerRef } from 'expo-router';
-import { Animated, BackHandler, Platform } from 'react-native';
+import { BackHandler } from 'react-native';
 import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
 import { AppBackdrop } from '@/components/ui/AppBackdrop';
 import * as SplashScreen from 'expo-splash-screen';
@@ -46,24 +44,13 @@ export default function RootLayout() {
     }, 10000);
     // Only prepare the first visible screen. Other screens retain their
     // existing destination preparation when the learner navigates to them.
-    const preparation = initialPathname === '/' ? prepareArtwork(
-      DEVELOPMENT_FEATURES.skipRegistration ? [
-        ...OPEN_FRAME_SLICES, NAVY_FRAME_ART,
-        require('../../assets/app/ui/royal-af/hud-top-composite-midnight-v3.png'),
-        require('../../assets/app/ui/royal-af/hud-player-medallion-v1.png'),
-        require('../../assets/app/ui/royal-af/hud-coin-v1.png'),
-        require('../../assets/app/ui/royal-af/nav-composite-navy-v1.png'),
-        require('../../assets/app/welcome/welcome-japan-landscape-v2.png'),
-        require('../../assets/app/home-cards/study-man.png'),
-        require('../../assets/app/home-cards/conversation-three.png'),
-        require('../../assets/app/home-cards/tokutei-engine-safety.png'),
-      ] : [
-        require('../../assets/app/welcome/welcome-japan-portrait-v2.png'),
-        require('../../assets/app/welcome/welcome-japan-landscape-v2.png'),
-        require('../../assets/app/welcome/sakura-petal-welcome-v2.png'),
-        require('../../assets/app/ui/royal-af/button-wide-v2.png'),
-      ],
-    ) : prepareSceneRoute(initialPathname);
+    const firstRoute = initialPathname === '/' && DEVELOPMENT_FEATURES.skipRegistration ? '/home' : initialPathname;
+    const preparation = firstRoute === '/' ? prepareArtwork([
+      require('../../assets/app/welcome/welcome-japan-portrait-v2.png'),
+      require('../../assets/app/welcome/welcome-japan-landscape-v2.png'),
+      require('../../assets/app/welcome/sakura-petal-welcome-v2.png'),
+      require('../../assets/app/ui/royal-af/button-wide-v2.png'),
+    ]) : prepareSceneRoute(firstRoute);
     void preparation.catch(error => {
       console.warn('Initial artwork preparation failed:', error);
     }).finally(() => {
@@ -85,40 +72,7 @@ export default function RootLayout() {
     <SafeAreaProvider initialMetrics={initialWindowMetrics}><LanguageProvider><EffectsProvider>
       <OnboardingMusic />
       <PressSound />
-      <AppBackdrop pathname={pathname}><MotionStack /></AppBackdrop>
+      <AppBackdrop pathname={pathname}><Stack screenOptions={{ headerShown: false, animation: 'none', gestureEnabled: false, freezeOnBlur: false, contentStyle: { backgroundColor: 'transparent' } }} /></AppBackdrop>
     </EffectsProvider></LanguageProvider></SafeAreaProvider>
   );
-}
-
-function MotionStack() {
-  const pathname = usePathname();
-  const { reduceMotion, active } = useEffects();
-  const entrance = useRef(new Animated.Value(1)).current;
-  const previous = useRef(pathname);
-  const exam = /^\/(?:n[1-5]|jlpt-listening-review)(?:\/|$)/i.test(pathname);
-  useLayoutEffect(() => {
-    const changed = previous.current !== pathname;
-    const wasExam = /^\/(?:n[1-5]|jlpt-listening-review)(?:\/|$)/i.test(previous.current);
-    previous.current = pathname;
-    entrance.stopAnimation();
-    entrance.setValue(1);
-    if (Platform.OS !== 'web' || !changed || reduceMotion || !active || exam || wasExam) return;
-    entrance.setValue(0);
-    const animation = Animated.timing(entrance, { toValue: 1, duration: 220, useNativeDriver: true, isInteraction: false });
-    animation.start();
-    return () => animation.stop();
-  }, [pathname, reduceMotion, active, exam, entrance]);
-  const stack = <Stack screenOptions={({ route }) => ({
-    headerShown: false,
-    // Native stack blends scenes over the persistent prepared backdrop.
-    animation: reduceMotion || /^(?:\[level\]|jlpt-listening-review)/.test(route.name) ? 'none' : 'fade',
-    animationDuration: 220,
-    gestureEnabled: false,
-    freezeOnBlur: false,
-    contentStyle: { backgroundColor: 'transparent' },
-  })} />;
-  // Native stack has no web transition; retain its mounted navigator and
-  // reveal the destination over the already-prepared persistent backdrop.
-  return Platform.OS === 'web' ? <Animated.View style={{ flex: 1, opacity: entrance,
-    transform: [{ translateY: entrance.interpolate({ inputRange: [0, 1], outputRange: [6, 0] }) }] }}>{stack}</Animated.View> : stack;
 }

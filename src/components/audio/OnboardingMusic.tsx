@@ -1,114 +1,52 @@
 import { useEffects } from '@/components/effects/EffectsProvider';
+import { DEVELOPMENT_FEATURES } from '@/config/development-features';
 import { setAudioModeAsync, useAudioPlayer } from 'expo-audio';
 import { usePathname } from 'expo-router';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Platform } from 'react-native';
 
-const MUSIC_ROUTES = new Set([
-  '/',
-  '/portal',
-  '/register',
-  '/register/work',
-]);
+const MUSIC_ROUTES = new Set(['/', '/portal', '/register', '/register/work']);
 
-function isMusicRoute(pathname: string) {
-  return MUSIC_ROUTES.has(pathname) || pathname.startsWith('/portal/');
-}
-
+// Keep the player unmounted outside onboarding. useAudioPlayer loads its source
+// immediately, even when playback is paused; Home must not download this track.
 export function OnboardingMusic() {
   const pathname = usePathname();
-  const { preferences, ready, active: appActive } = useEffects();
-  const [webActivated, setWebActivated] = useState(Platform.OS !== 'web');
+  const { preferences, ready, active } = useEffects();
+  // Restore the speaker session after recording without allocating a music player.
   useEffect(() => {
-    if (Platform.OS !== 'web' || webActivated) return;
-    const activate = () => setWebActivated(true);
+    if (!/^\/(?:n[1-5]|jlpt-listening-review)(?:\/|$)/i.test(pathname)) return;
+    void setAudioModeAsync({ allowsRecording: false, playsInSilentMode: true,
+      shouldPlayInBackground: false }).catch(error => console.warn('Exam audio route:', error));
+  }, [pathname]);
+  const onboarding = MUSIC_ROUTES.has(pathname) || pathname.startsWith('/portal/');
+  if (!ready || !active || !preferences.music || !onboarding
+    || (pathname === '/' && DEVELOPMENT_FEATURES.skipRegistration)) return null;
+  return <OnboardingMusicPlayer />;
+}
+
+function OnboardingMusicPlayer() {
+  const player = useAudioPlayer(require('../../../assets/app/audio/welcome-theme.mp3'));
+  const [activated, setActivated] = useState(Platform.OS !== 'web');
+  useEffect(() => {
+    if (Platform.OS !== 'web' || activated) return;
+    const activate = () => setActivated(true);
     window.addEventListener('pointerdown', activate, { once: true });
     window.addEventListener('keydown', activate, { once: true });
     return () => {
       window.removeEventListener('pointerdown', activate);
       window.removeEventListener('keydown', activate);
     };
-  }, [webActivated]);
-  const configured = useRef(false);
-  const fadeToken = useRef(0);
-  const musicFinished = useRef(false);
-  const player = useAudioPlayer(
-    require('../../../assets/app/audio/welcome-theme.mp3'),
-  );
-
+  }, [activated]);
   useEffect(() => {
-    let active = true;
-    const token = ++fadeToken.current;
-
-    async function fadeOutAndStop(resetToStart: boolean) {
-      const steps = 28;
-      const stepDuration = 55;
-      const initialVolume = Math.min(Math.max(player.volume, 0), 0.38) || 0.38;
-
-      for (let step = 1; step <= steps; step += 1) {
-        await new Promise<void>((resolve) => setTimeout(resolve, stepDuration));
-        if (!active || token !== fadeToken.current) return;
-
-        const remaining = 1 - step / steps;
-        player.volume = initialVolume * remaining * remaining;
-      }
-
-      if (!active || token !== fadeToken.current) return;
-      player.pause();
-      player.volume = 0.38;
-      if (resetToStart) {
-        await player.seekTo(0);
-        musicFinished.current = true;
-      }
-    }
-
-    async function syncMusic() {
-      try {
-        if (!configured.current) {
-          await setAudioModeAsync({
-            playsInSilentMode: true,
-            shouldPlayInBackground: false,
-            interruptionMode: 'mixWithOthers',
-          });
-          configured.current = true;
-        }
-        if (!active) return;
-
-        // A recording screen can leave the shared iOS audio session routed to
-        // the receiver. Restore speaker playback before entering an exam.
-        if (/^\/(?:n[1-5]|jlpt-listening-review)(?:\/|$)/i.test(pathname)) {
-          await setAudioModeAsync({
-            allowsRecording: false,
-            playsInSilentMode: true,
-            shouldPlayInBackground: false,
-          });
-        }
-
-        if (!ready || !appActive || !preferences.music) { player.pause(); return; }
-
-        player.loop = true;
-        player.volume = 0.38;
-
-        if (isMusicRoute(pathname)) {
-          if (musicFinished.current || !webActivated) return;
-          fadeToken.current = token;
-          player.volume = 0.38;
-          if (!player.playing) player.play();
-          return;
-        }
-
-        await fadeOutAndStop(pathname === '/home');
-      } catch (error) {
-        console.warn('[OnboardingMusic] Không thể đồng bộ nhạc nền:', error);
-      }
-    }
-
-    void syncMusic();
-    return () => {
-      active = false;
-      if (fadeToken.current === token) fadeToken.current += 1;
-    };
-  }, [pathname, player, webActivated, ready, appActive, preferences.music]);
-
+    let mounted = true;
+    void setAudioModeAsync({ playsInSilentMode: true, shouldPlayInBackground: false,
+      interruptionMode: 'mixWithOthers' }).then(() => {
+      if (!mounted || !activated) return;
+      player.loop = true;
+      player.volume = .38;
+      player.play();
+    }).catch(error => console.warn('Onboarding music:', error));
+    return () => { mounted = false; player.pause(); };
+  }, [activated, player]);
   return null;
 }

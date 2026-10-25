@@ -1,4 +1,3 @@
-import { SceneLighting } from '@/components/effects/SceneLighting';
 import { EffectPressable as Pressable } from '@/components/effects/EffectPressable';
 import { backPrepared } from '@/components/ui/prepareSceneRoute';
 import fontAdvances from './royal-font-advances.json';
@@ -102,7 +101,6 @@ export default function ResponsiveWorldMap({assets,items,onItemPress,title,subti
  },[cardWidths,insets.top,items,landZones,markerSizing.height,mode,size.height,size.width,title,headerHeight]);
  return <View style={s.screen}>
   <Image fadeDuration={0} source={assets[mode]} resizeMode="cover" style={s.background}/>
-  <SceneLighting />
   {!!title&&<View style={[s.hero,{top:insets.top,left:insets.left,right:insets.right}]}>
    <WorldTitleHeader title={title} subtitle={regionLabel} detail={subtitle} onBack={()=>backPrepared()}/>
   </View>}

@@ -18,7 +18,7 @@ const copy: Record<AppLanguageCode, readonly [string, string, string, string, st
   km: ['បែបផែន', 'បែបផែនពន្លឺ', 'ចលនា និងការប្តូរអេក្រង់', 'សំឡេងចុចប៊ូតុង', 'តន្ត្រីផ្ទៃខាងក្រោយ'],
   tl: ['Mga effect', 'Ilaw', 'Galaw at paglipat ng screen', 'Tunog ng mga button', 'Musika sa background'],
 };
-const keys: (keyof EffectPreferences)[] = ['lighting', 'motion', 'sound', 'music'];
+const keys: (keyof EffectPreferences)[] = ['sound', 'music'];
 export function EffectsSettings() {
   const { language } = useAppLanguage();
   const { preferences, ready, update } = useEffects();
@@ -26,8 +26,8 @@ export function EffectsSettings() {
   return <View style={s.panel}>
     <Text style={s.heading}>{labels[0]}</Text>
     {keys.map((key, index) => <View key={key} style={s.row}>
-      <Text style={s.label}>{labels[index + 1]}</Text>
-      <Switch accessibilityLabel={labels[index + 1]} disabled={!ready} value={preferences[key]}
+      <Text style={s.label}>{labels[index + 3]}</Text>
+      <Switch accessibilityLabel={labels[index + 3]} disabled={!ready} value={preferences[key]}
         onValueChange={value => update(key, value)} trackColor={{ false: '#596477', true: '#8a692b' }} thumbColor="#f2db9b" />
     </View>)}
   </View>;

@@ -4,7 +4,7 @@ import { AccessibilityInfo, AppState } from 'react-native';
 
 const KEY = 'japan-app:effects:v1';
 export type EffectPreferences = { lighting: boolean; motion: boolean; sound: boolean; music: boolean };
-const defaults: EffectPreferences = { lighting: true, motion: true, sound: true, music: true };
+const defaults: EffectPreferences = { lighting: false, motion: false, sound: true, music: true };
 const EffectsContext = createContext({ preferences: defaults, active: true, reduceMotion: true, ready: false,
   update: (_key: keyof EffectPreferences, _value: boolean) => {} });
 export const useEffects = () => useContext(EffectsContext);

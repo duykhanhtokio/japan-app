@@ -1,4 +1,3 @@
-import { LanternGlow } from '@/components/effects/LanternGlow';
 import { EffectPressable as Pressable } from '@/components/effects/EffectPressable';
 import { RoyalExplanationPanel } from './RoyalPanels';
 import { APP_TYPOGRAPHY } from '@/theme/app-design-system';
@@ -118,7 +117,7 @@ export function RoyalChevron({style,direction='right',variant='navigation'}:{sty
 }
 
 export function RoyalHintButton({onPress,style,color='gold'}:{onPress:()=>void;style?:StyleProp<ViewStyle>;color?:'gold'|'red'}) {
-  return <Pressable accessibilityRole="button" accessibilityLabel="ヒント" hitSlop={8} onPress={onPress} style={({pressed})=>[s.hintAsset,style,pressed&&s.hintPressed]}><LanternGlow /><Image fadeDuration={0} source={color==='red'?RED_HINT_LANTERN:HINT_LANTERN} resizeMode="contain" style={s.fillImage}/></Pressable>;
+  return <Pressable accessibilityRole="button" accessibilityLabel="ヒント" hitSlop={8} onPress={onPress} style={({pressed})=>[s.hintAsset,style,pressed&&s.hintPressed]}><Image fadeDuration={0} source={color==='red'?RED_HINT_LANTERN:HINT_LANTERN} resizeMode="contain" style={s.fillImage}/></Pressable>;
 }
 
 export function RoyalSelectionMark({style}:{style?:StyleProp<ViewStyle>}) {

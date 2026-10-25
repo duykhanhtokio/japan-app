@@ -3,6 +3,7 @@ import { japanAssets, regionMaps, type RegionMapId } from '@/data/world-map-conf
 import { prepareArtwork, isArtworkSource, type ArtworkSource } from './prepareArtwork';
 import { ROUTE_ARTWORK } from './route-artwork';
 import { COMMON_UI_ARTWORK } from './common-artwork';
+import { HOME_ARTWORK } from './home-artwork';
 import { router } from 'expo-router';
 import { matchRoutePattern, previousRoutePath, type NavigationState } from './navigation-path';
 
@@ -16,8 +17,8 @@ export async function prepareSceneRoute(path: string) {
   // Dynamic world scenes are selected below. Their generated route list
   // includes every category's backgrounds/NPCs; do not decode all of them.
   const dynamicWorldScene = /^\/world\/(?:city|location|dialogue)\//.test(path);
-  const routeImages = !dynamicWorldScene && pattern ? ROUTE_ARTWORK[pattern] : [];
-  await prepareArtwork([...COMMON_UI_ARTWORK, ...routeImages]);
+  const routeImages = path === '/home' ? HOME_ARTWORK
+    : [...COMMON_UI_ARTWORK, ...(!dynamicWorldScene && pattern ? ROUTE_ARTWORK[pattern] : [])];
   const additional: ArtworkSource[] = [];
   const { width, height } = Dimensions.get('window');
   const ratio = height ? width / height : .46;
@@ -45,29 +46,23 @@ export async function prepareSceneRoute(path: string) {
       ? require('../../../assets/app/backgrounds/profile-details.png')
       : require('../../../assets/app/backgrounds/study-light.png');
   if (/^\/world\/(?:prefecture|city|location|dialogue)\//.test(path)) {
-    const [repository, cities, locations, scenes] = await Promise.all([
-      import('@/services/life-content-repository'), import('@/components/world/city-images.generated'),
-      import('@/components/world/location-backgrounds.generated'), import('@/components/world/life-assets'),
-    ]);
+    const repository = await import('@/services/life-content-repository');
     const [, , kind, rawId] = path.split('/');
     const id = decodeURIComponent(rawId);
     if (kind === 'prefecture') {
+      const cities = await import('@/components/world/city-images.generated');
       blurRadius = 10;
       const city = repository.getLifeCitiesByPrefecture(id)[0];
       artwork = city ? cities.cityImageById[city.id] : undefined;
-      for (const item of repository.getLifeCitiesByPrefecture(id)) {
-        const image = cities.cityImageById[item.id];
-        if (isArtworkSource(image)) additional.push(image);
-      }
     } else if (kind === 'city') {
+      const cities = await import('@/components/world/city-images.generated');
       cityBackdrop = true;
       blurRadius = width > height ? 10 : 6;
       artwork = cities.cityImageById[id];
-      for (const item of repository.getLifeLocationsByCity(id)) {
-        const image = locations.locationBackground(item.id, item.category) ?? scenes.sceneForCategory(item.category);
-        if (isArtworkSource(image)) additional.push(image);
-      }
     } else {
+      const [locations, scenes] = await Promise.all([
+        import('@/components/world/location-backgrounds.generated'), import('@/components/world/life-assets'),
+      ]);
       blurRadius = 0;
       const locationId = kind === 'dialogue' ? repository.getLifeScenarioById(id)?.locationId : id;
       const location = locationId ? repository.getLifeLocationById(locationId) : undefined;
@@ -86,8 +81,6 @@ export async function prepareSceneRoute(path: string) {
     const location = locations.gameLocations.find(item => item.id === mission?.locationId);
     artwork = location?.backgroundId ? assets.gameBackgrounds[location.backgroundId] : undefined;
   }
-  if (artwork !== undefined) await prepareArtwork(artwork as Parameters<typeof prepareArtwork>[0]);
-  await prepareArtwork(additional);
   const ownsPreparedFullScreen = /^\/(?:game|home|profile|specified-skills|register(?:\/work)?|portal)$/.test(path)
     || /^\/specified-skills\//.test(path)
     || /^\/world\/(?:prefecture|city|location|dialogue)\//.test(path);
@@ -96,6 +89,10 @@ export async function prepareSceneRoute(path: string) {
       ? require('../../../assets/app/backgrounds/profile-details.png')
       : require('../../../assets/app/backgrounds/study-light.png');
   if (isArtworkSource(backdrop)) routeBackdrops.set(path, { source: typeof backdrop === 'string' ? { uri: backdrop } : backdrop, blurRadius: ownsPreparedFullScreen ? blurRadius : 40, city: cityBackdrop });
+  // Publish the correct target before waiting: the bounded navigation fallback
+  // must never render a generic backdrop and then replace it with this scene.
+  // Decode the destination and its controls in one parallel pass, without neighbours.
+  await prepareArtwork([...routeImages, ...additional, ...(isArtworkSource(artwork) ? [artwork] : [])]);
 }
 
 let navigationIntent = 0;
