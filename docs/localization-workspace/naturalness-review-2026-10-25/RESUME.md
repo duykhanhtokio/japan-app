@@ -107,6 +107,10 @@ fields across the combined 16 Kaga/Komatsu scenarios, including the two preserve
 pass02 scenarios. Full technical coverage still resolves 7,128 scenarios;
 structural coverage is not an additional semantic-review count.
 
+The existing translation-coverage manifest's 36 affected file hashes are also
+synchronized with the reviewed data; coverage counts and native/semantic-review
+flags are preserved. The separate manifest-sync receipt records old/new hashes.
+
 Notable corrections retain reference-item checks on measuring equipment,
 distinguish each postcard's writing date from its mailing date, avoid portraying
 flower containers as being carried on their side, distinguish baggage storage
