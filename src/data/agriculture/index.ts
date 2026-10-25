@@ -9,7 +9,7 @@ type Translation = {sourceHash:string;title:string;objective:string;paragraphs:R
 export const agricultureLessons = content.lessons;
 export function agricultureWeeks(level:AgricultureLevel) { return manifest.levels[level].weeks; }
 export function agricultureLesson(id:string,level:AgricultureLevel) { return agricultureLessons.find(l=>l.id===id && l.levels.includes(level)); }
-export function agricultureChecks(level:AgricultureLevel) { return checks.exams.filter(e=>e.level===level); }
+export function agricultureChecks(level:AgricultureLevel) { return checks.exams.filter(e=>e.levels.includes(level)); }
 export function agricultureTranslation(lesson:AgricultureLesson,locale:string) {
  const data = (translated.locales as Record<string,Record<string,Translation>>)[locale]?.[lesson.id];
  return data?.sourceHash===lesson.sourceHash ? data : null;
