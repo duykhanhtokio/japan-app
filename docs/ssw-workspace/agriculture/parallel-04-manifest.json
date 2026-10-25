@@ -1,0 +1,2471 @@
+{
+  "schemaVersion": 1,
+  "status": "integrated_checks_passed",
+  "workers": [
+    {
+      "worker": "safety",
+      "originalPayloadSha256": "1f79784df197a4dbdccae51209da62d570e26fa622128be5c00472910ec609b5",
+      "integratedPayloadSha256": "46673b7784be43266703392e042f7bf92a634c2b53e77cac6f9ef5baffc895b2",
+      "lessonIds": [
+        "agr-safety-machine-preparation",
+        "agr-safety-inspection-stop",
+        "agr-safety-pesticide-clothing",
+        "agr-safety-pesticide-label",
+        "agr-safety-spray-check",
+        "agr-safety-power-fuel",
+        "agr-safety-maintenance-tools",
+        "agr-safety-stepladder",
+        "agr-safety-workload-2",
+        "agr-safety-label-fields-2"
+      ],
+      "questions": 16,
+      "repairs": [
+        {
+          "targetType": "paragraph",
+          "targetId": "agr-safety-spray-check-p6",
+          "field": "textJa",
+          "before": "長時間の作業では休憩も考慮します。体調に異常がある場面や残液が出た場面で、作業量や使用量を増やして解決しようとせず、適切な対応を確認する必要があります。",
+          "after": "長時間の作業では適度な休憩が必要です。散布中や散布後にめまい、吐き気などの異常を感じたら、作業を続けず、速やかに医師の診察を受けます。残液を減らすために表示を超えて追加散布することはせず、処分方法を別に確認します。",
+          "reason": "Source explicitly directs prompt medical consultation for dizziness/nausea during or after spraying; generic confirmation of an appropriate response omits the urgent action. This is referral, not a diagnosis or treatment protocol.",
+          "source": [
+            "AGR-S1 PDF40 printed34",
+            "AGR-S2 PDF57 printed55"
+          ]
+        },
+        {
+          "targetType": "paragraph",
+          "targetId": "agr-safety-machine-preparation-p4",
+          "field": "textJa",
+          "before": "疲労すると注意が続きにくくなり、機械作業の危険につながります。資料は、疲れている状態での作業に注意し、飲酒後には機械作業をしないことを示しています。",
+          "after": "疲労すると注意が続きにくくなり、機械作業の危険につながります。疲れた状態での機械作業は避け、適度に休憩します。飲酒後には機械作業をしません。",
+          "reason": "Make the fatigue precaution explicit rather than only asking for attention; preserve the absolute alcohol prohibition.",
+          "source": [
+            "AGR-S1 PDF37–38 printed31–32",
+            "AGR-S2 PDF51–52 printed49–50"
+          ]
+        },
+        {
+          "targetType": "paragraph",
+          "targetId": "agr-safety-spray-check-p4",
+          "field": "textJa",
+          "before": "雨のときや降雨の直前直後を避け、できるだけ朝夕の涼しいときに行うという目安が示されています。この記述から、すべての農薬に共通する待ち時間や時刻を作らないでください。",
+          "after": "雨のときや降雨の直前直後には散布作業をしません。できるだけ朝夕の涼しいときに行うという目安が示されています。この記述から、すべての農薬に共通する待ち時間や時刻を作らないでください。",
+          "reason": "Restore source prohibition rather than weaker avoidance wording while retaining the hold on universal waiting periods and clock times.",
+          "source": [
+            "AGR-S1 PDF40 printed34",
+            "AGR-S2 PDF57 printed55"
+          ]
+        }
+      ],
+      "holds": [
+        {
+          "id": "AGR-H-SAFETY-LAW-FUEL",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 42,
+              "printedPage": 36
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 43,
+              "printedPage": 37
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 59,
+              "printedPage": 57
+            }
+          ],
+          "topic": "燃料容器の法的容量・材質条件",
+          "reason": "歴史的な20L/30L等の具体的記述を現行法と材質・容量の全条件を確かめずに一般的な適法判定へしない。共有本文と問題に数値を入れない。",
+          "blocks": "specific current container-law instruction only"
+        },
+        {
+          "id": "AGR-H-SAFETY-ROAD",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 37,
+              "printedPage": 31
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 52,
+              "printedPage": 50
+            }
+          ],
+          "topic": "公道走行の免許・車両条件",
+          "reason": "必要な免許種別や車両・装備条件の現行の全規定を確認していない。資料の免許必要という短文を公道走行可能性の判定に代用しない。",
+          "blocks": "current road-licensing instruction only"
+        },
+        {
+          "id": "AGR-H-SAFETY-START",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 38,
+              "printedPage": 32
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 39,
+              "printedPage": 33
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 53,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 54,
+              "printedPage": 52
+            }
+          ],
+          "topic": "管理機・草刈り機の型式別始動停止",
+          "reason": "スロットル割合、チョーク、燃料コック、長期保管時燃料切れ運転、繰返し始動の例を全型式の操作手順へしない。実機・説明書での安全確認が必要。",
+          "blocks": "model-specific operational sequence only"
+        },
+        {
+          "id": "AGR-H-SAFETY-TRACTOR",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 37,
+              "printedPage": 31
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 52,
+              "printedPage": 50
+            }
+          ],
+          "topic": "トラクタの個別操作と作業後の満タン",
+          "reason": "乗降側、安全フレーム、ブレーキ連結、作業機の降下・取外し、作業後燃料満タンの例は車種と操作場面の確認を要する。特に満タンを熱い機体への直ちの給油指示にしない。個別機種教材は未作成。",
+          "blocks": "tractor-specific operations and unconditional refuelling rule"
+        },
+        {
+          "id": "AGR-H-SAFETY-DILUTION",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 41,
+              "printedPage": 35
+            }
+          ],
+          "topic": "農薬希釈と粉・顆粒の重量表現",
+          "reason": "原液・製剤・最終液量と剤型条件の確認を要し、掲載計算を全製品へ使用可能な希釈率・用量としない。このパケットは実在農薬の希釈処方を作らない。",
+          "blocks": "product-specific dilution prescription only"
+        },
+        {
+          "id": "AGR-H-SAFETY-SPRAY-MOVEMENT",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 40,
+              "printedPage": 34
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 57,
+              "printedPage": 55
+            }
+          ],
+          "topic": "風を背にして後ろ向きという動作の一般化",
+          "reason": "足場、機械、障害物、製品条件を問わない後ろ歩きの指示は避ける。共有本文では飛散、風、天候の確認を扱い、歩き方の詳細は未統合。",
+          "blocks": "universal backward-walking instruction only"
+        },
+        {
+          "id": "AGR-H-SAFETY-LEFTOVER",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 40,
+              "printedPage": 34
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 41,
+              "printedPage": 35
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 57,
+              "printedPage": 55
+            }
+          ],
+          "topic": "残液使い切り・器具洗浄排水の処分",
+          "reason": "余りを使い切るために使用基準を超えて追加散布してよいと読ませない。残液・洗浄水・容器処分は具体的製品表示と現場の適切な条件を要し、共有本文に処分手順を創作しない。",
+          "blocks": "specific disposal procedure and excess-application instruction"
+        },
+        {
+          "id": "AGR-H-SAFETY-HEALTH",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 40,
+              "printedPage": 34
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 57,
+              "printedPage": 55
+            }
+          ],
+          "topic": "農薬曝露・体調異常への医療対応",
+          "reason": "資料のめまい・吐き気の記述は診断や治療、応急処置法の根拠にしない。症状別の手当や服薬指示は未作成で、適切な医療・緊急対応の検証が別途必要。",
+          "blocks": "individual medical or first-aid prescription only"
+        },
+        {
+          "id": "AGR-H-SAFETY-REGISTRATION",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 41,
+              "printedPage": 35
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 55,
+              "printedPage": 53
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 56,
+              "printedPage": 54
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 57,
+              "printedPage": 55
+            }
+          ],
+          "topic": "農薬登録・毒劇物保管の現行条件",
+          "reason": "掲載ラベルの番号説明を無条件の安全保証にせず、製品の現在の適用作物・回数・期限を教科書の例で置き換えない。毒劇物等の保管要件の法的全条件は未検証。",
+          "blocks": "current registration/legal storage determination only"
+        },
+        {
+          "id": "AGR-H-SAFETY-RECOGNITION",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 42,
+              "printedPage": 36
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 44,
+              "printedPage": 38
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 45,
+              "printedPage": 39
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 58,
+              "printedPage": 56
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 60,
+              "printedPage": 58
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 61,
+              "printedPage": 59
+            }
+          ],
+          "topic": "器具・電源・脚立の個別認識図",
+          "reason": "源写真は閲覧のみで転載していない。工具、プラグ、脚立の独立した新規認識図と実機確認は未完成。文章による構造説明を画像識別完了とは数えない。",
+          "blocks": "recognition illustration and actual-device confirmation"
+        }
+      ]
+    },
+    {
+      "worker": "rice-work",
+      "originalPayloadSha256": "b99d709896a51bb2e397498e70fc73adc40c6ae80c74d8fa1d9eed31a18d350e",
+      "integratedPayloadSha256": "2f8def1e3c94a84f895d946449cefd562f309acd8d308943e4625efc7b9eea29",
+      "lessonIds": [
+        "agr-ricework-seed",
+        "agr-ricework-soaking",
+        "agr-ricework-nursery",
+        "agr-ricework-field",
+        "agr-ricework-water",
+        "agr-ricework-harvest",
+        "agr-ricework-processing",
+        "agr-ricework-lowcost",
+        "agr-ricework-feed",
+        "agr-ricework-stages"
+      ],
+      "questions": 16,
+      "repairs": [
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q03",
+          "field": "optionsJa[1]",
+          "before": "浸種はもみがらを取る工程、催芽は玄米を袋に詰める工程。",
+          "after": "浸種は播種前の芽出し、催芽は十分に吸水させる段階。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 47,
+              "printedPage": 41
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 64,
+              "printedPage": 62
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q03",
+          "field": "optionReasonsJa[1]",
+          "before": "収穫後の工程との混同です。",
+          "after": "浸種と催芽の目的が逆です。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 47,
+              "printedPage": 41
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 64,
+              "printedPage": 62
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q03",
+          "field": "optionsJa[2]",
+          "before": "浸種した時点で、必ず全ての種が同時に発芽済みとなる。",
+          "after": "浸種は吸水させる段階であり、その後の催芽は播種後に行う。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 47,
+              "printedPage": 41
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 64,
+              "printedPage": 62
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q03",
+          "field": "optionReasonsJa[2]",
+          "before": "作業を行ったことと発芽の結果は別です。",
+          "after": "資料では催芽は播種前に行います。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 47,
+              "printedPage": 41
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 64,
+              "printedPage": 62
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q03",
+          "field": "optionsJa[3]",
+          "before": "浸種は乾燥させる工程、催芽は水分を完全になくす工程。",
+          "after": "浸種も催芽も吸水だけが目的で、芽の状態を確認する必要はない。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 47,
+              "printedPage": 41
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 64,
+              "printedPage": 62
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q03",
+          "field": "optionReasonsJa[3]",
+          "before": "吸水と芽出しの目的と逆です。",
+          "after": "催芽では芽出しを行い、ハト胸の状態を確認します。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 47,
+              "printedPage": 41
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 64,
+              "printedPage": 62
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q06",
+          "field": "optionsJa[1]",
+          "before": "播種したら、その後は温度も灌水も確認しなくてよい。",
+          "after": "催芽は播種前の吸水だけを指し、芽出しは播種後の出芽で初めて始まる。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 47,
+              "printedPage": 41
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 48,
+              "printedPage": 42
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 64,
+              "printedPage": 62
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 65,
+              "printedPage": 63
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q06",
+          "field": "optionReasonsJa[1]",
+          "before": "育苗中も環境や生育の管理が必要です。",
+          "after": "催芽は吸水だけでなく、播種前に加温して芽出しする段階です。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 47,
+              "printedPage": 41
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 48,
+              "printedPage": 42
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 64,
+              "printedPage": 62
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 65,
+              "printedPage": 63
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q08",
+          "field": "optionsJa[0]",
+          "before": "苗を使わず直接種をまくことだけ",
+          "after": "代かき前に肥料を水田全面へまく施肥",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 48,
+              "printedPage": 42
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 49,
+              "printedPage": 43
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 65,
+              "printedPage": 63
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 66,
+              "printedPage": 64
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q08",
+          "field": "optionReasonsJa[0]",
+          "before": "直播と、施肥の方法は区別します。",
+          "after": "施肥の例ですが、田植えと同時に行う側条施肥とは時期が異なります。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 48,
+              "printedPage": 42
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 49,
+              "printedPage": 43
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 65,
+              "printedPage": 63
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 66,
+              "printedPage": 64
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q08",
+          "field": "optionsJa[3]",
+          "before": "収穫後の田へのわらの埋め込みだけ",
+          "after": "出穂前に窒素とカリを与える穂肥",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 48,
+              "printedPage": 42
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 49,
+              "printedPage": 43
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 65,
+              "printedPage": 63
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 66,
+              "printedPage": 64
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q08",
+          "field": "optionReasonsJa[3]",
+          "before": "田植えと同時の施肥とは異なります。",
+          "after": "穂肥は生育後の追肥であり、田植えと同時の施肥ではありません。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 48,
+              "printedPage": 42
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 49,
+              "printedPage": 43
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 65,
+              "printedPage": 63
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 66,
+              "printedPage": 64
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q11",
+          "field": "optionsJa[0]",
+          "before": "乾燥機の温度を14～15℃にする指示である。",
+          "after": "収穫直後のもみの水分を表し、乾燥前から14～15％である。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 50,
+              "printedPage": 44
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 68,
+              "printedPage": 66
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q11",
+          "field": "optionReasonsJa[0]",
+          "before": "％は温度の単位ではありません。",
+          "after": "資料では収穫直後は20～27％、乾燥後は14～15％と区別しています。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 50,
+              "printedPage": 44
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 68,
+              "printedPage": 66
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q11",
+          "field": "optionsJa[1]",
+          "before": "一袋に必ず14～15kgだけ詰める指示である。",
+          "after": "乾燥で取り除く水分の量が、収穫時のもみ重量の14～15％という意味である。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 50,
+              "printedPage": 44
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 68,
+              "printedPage": 66
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q11",
+          "field": "optionReasonsJa[1]",
+          "before": "水分の割合と袋の重量を混同しています。",
+          "after": "14～15％は乾燥後のもみに含まれる水分の割合で、除去した水の割合ではありません。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 50,
+              "printedPage": 44
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 68,
+              "printedPage": 66
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q11",
+          "field": "optionsJa[2]",
+          "before": "肥料成分の窒素割合を表す数値である。",
+          "after": "乾燥後に取り除くくず米の割合を表す数値である。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 50,
+              "printedPage": 44
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 68,
+              "printedPage": 66
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q11",
+          "field": "optionReasonsJa[2]",
+          "before": "収穫物の水分の記載です。",
+          "after": "これは乾燥後のもみの水分であり、調整で除くくず米の割合ではありません。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 50,
+              "printedPage": 44
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 68,
+              "printedPage": 66
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q14",
+          "field": "optionsJa[0]",
+          "before": "収穫後の米を乾燥機へ入れる方法である。",
+          "after": "乾いた状態で播種し、出芽を待たず直ちに湛水して、その状態を保つ。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 51,
+              "printedPage": 45
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 69,
+              "printedPage": 67
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q14",
+          "field": "optionReasonsJa[0]",
+          "before": "乾田直播と収穫後の乾燥は別です。",
+          "after": "資料では出芽後もしばらく畑状態に置き、その後に湛水します。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 51,
+              "printedPage": 45
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 69,
+              "printedPage": 67
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q16",
+          "field": "optionsJa[1]",
+          "before": "主食用米の袋の表示だけを変えたもの。",
+          "after": "完熟前に穂や茎葉を収穫し、サイレージにせず生のまま使う粗飼料。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 52,
+              "printedPage": 46
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 70,
+              "printedPage": 68
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q16",
+          "field": "optionReasonsJa[1]",
+          "before": "利用部分や加工の形が異なります。",
+          "after": "利用部分と収穫段階は近いですが、資料の稲WCSはサイレージ化した粗飼料です。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 52,
+              "printedPage": 46
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 70,
+              "printedPage": 68
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q16",
+          "field": "optionsJa[2]",
+          "before": "食用の白米だけを精米したもの。",
+          "after": "完熟前に収穫した茎葉を乾燥させ、乾草にした粗飼料。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 52,
+              "printedPage": 46
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 70,
+              "printedPage": 68
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q16",
+          "field": "optionReasonsJa[2]",
+          "before": "穂や茎葉を含む粗飼料とは異なります。",
+          "after": "乾草とサイレージは異なり、資料の稲WCSはサイレージ化した粗飼料です。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 52,
+              "printedPage": 46
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 70,
+              "printedPage": 68
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q16",
+          "field": "optionsJa[3]",
+          "before": "肥料として土へすき込むことだけを目的にした種子。",
+          "after": "完熟した実だけを収穫し、粒のまま利用する飼料。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 52,
+              "printedPage": 46
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 70,
+              "printedPage": 68
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-ricework-weekly-q16",
+          "field": "optionReasonsJa[3]",
+          "before": "家畜が利用する飼料という目的を失っています。",
+          "after": "これは稲WCSの説明ではなく、実を利用する飼料用米に近い説明です。",
+          "reason": "正解を変えず、工程・目的を取り違えた実務上あり得る誤解を選択肢にする。無関係な工程や単位だけで消去できる選択肢を改善。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 52,
+              "printedPage": 46
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 70,
+              "printedPage": 68
+            }
+          ]
+        }
+      ],
+      "holds": [
+        {
+          "id": "AGR-H-RICEWORK-HERBICIDE",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 66,
+              "printedPage": 64
+            }
+          ],
+          "topic": "除草剤の湛水・落水・7日間の文章",
+          "reason": "Source labels/前者 correspondence and laterfoliar-drainage statement are ambiguous and product-specific. No universal7day holding, concentration, product use, release of water or safety guarantee authored. Verify current official product guidance separately.",
+          "blocks": "chemical operating instructions only"
+        },
+        {
+          "id": "AGR-H-RICEWORK-MIDDRAIN",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 62,
+              "printedPage": 60
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 66,
+              "printedPage": 64
+            }
+          ],
+          "topic": "中干し時期・かんがい停止の表現",
+          "reason": "PDF66 has garbled干害/干落 wording and stage-order formulation; common lesson teaches purpose andstageawareness only. Exact schedule/depth/drain duration held for agronomicverification.",
+          "blocks": "precise operational schedule only"
+        },
+        {
+          "id": "AGR-H-RICEWORK-SOAKSUM",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 47,
+              "printedPage": 41
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 64,
+              "printedPage": 62
+            }
+          ],
+          "topic": "積算温度100℃の単位",
+          "reason": "Source displays100℃ for accumulatedtemperature without explicit dayunit/basis. Not silently corrected to degree-days or assessed as dimensionalfact. Soaking temperature/dayexamples remain bounded and not universal.",
+          "blocks": "accumulated-unit explanation only"
+        },
+        {
+          "id": "AGR-H-RICEWORK-TREAT",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 46,
+              "printedPage": 40
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 63,
+              "printedPage": 61
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 51,
+              "printedPage": 45
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 69,
+              "printedPage": 67
+            }
+          ],
+          "topic": "種子消毒・直播種子被覆の薬剤条件",
+          "reason": "Products, concentrations, rates, treatmenttemperatures/times and currentregistration not authored from generic source examples. Biological nematode/pathogenclassification difference retained for review.",
+          "blocks": "product-specific prescription only"
+        },
+        {
+          "id": "AGR-H-RICEWORK-PANICLEFERT",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 49,
+              "printedPage": 43
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 67,
+              "printedPage": 65
+            }
+          ],
+          "topic": "穂肥の出穂前15–25日・成分・量",
+          "reason": "Source reference timing not taught as universally applicable fieldinstruction; rates/dates need cultivar/growth/localstandards. Detailed穂肥knowledge remains to author.",
+          "blocks": "detailed timing/dose only"
+        },
+        {
+          "id": "AGR-H-RICEWORK-RECOGNITION",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 49,
+              "printedPage": 43
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 67,
+              "printedPage": 65
+            }
+          ],
+          "topic": "病害虫・農機具の認識画像",
+          "reason": "Source photos inspected; packet does not generate or certify recognition images. No diagnosis from a generic single symptom and no machine操作certification.",
+          "blocks": "image recognition and operation only"
+        },
+        {
+          "id": "AGR-H-RICEWORK-DETAILS",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 66,
+              "printedPage": 64
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 52,
+              "printedPage": 46
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 70,
+              "printedPage": 68
+            }
+          ],
+          "topic": "残る除草類型・品種特性・経営詳細",
+          "reason": "Methods/historical price rationale/specialized feedvariety traits not exhaustively mapped. No zero-pesticide safety guarantee, currentprice assertion, feedingratio or livestockcurriculumadded.2go-specific postharvest decomposition and weed-management detail is also not silently counted as shared coverage.",
+          "blocks": "those unmatched details only"
+        }
+      ]
+    },
+    {
+      "worker": "vegetable-work",
+      "originalPayloadSha256": "2b8dbb41f443ba78332465144539a9de34cb88be574ec0a7ccd1f647eff9228c",
+      "integratedPayloadSha256": "90227725d4a1f8dba481b43c357f5d25ef1607ea81f03d6bf943deb4ca4ccce2",
+      "lessonIds": [
+        "agr-vegwork-grains",
+        "agr-vegwork-families",
+        "agr-vegwork-leafy",
+        "agr-vegwork-rootvegetables",
+        "agr-vegwork-fruitvegetables",
+        "agr-vegwork-industrial",
+        "agr-vegwork-feed",
+        "agr-vegwork-environment",
+        "agr-vegwork-seedstorage",
+        "agr-vegwork-tubers-2"
+      ],
+      "questions": 16,
+      "repairs": [
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q02",
+          "field": "optionsJa[1]",
+          "before": "地下茎を切るだけで、花や子房柄を経ず同じさやになる。",
+          "after": "地上の花の受精後、その場で枝に付いたさやを収穫する。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 53,
+              "printedPage": 47
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 59,
+              "printedPage": 53
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 71,
+              "printedPage": 69
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 72,
+              "printedPage": 70
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q02",
+          "field": "optionReasonsJa[1]",
+          "before": "イモ類の利用と混同しています。",
+          "after": "花は地上ですが、子房柄が土に入り、その先にさやができます。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 53,
+              "printedPage": 47
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 59,
+              "printedPage": 53
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 71,
+              "printedPage": 69
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 72,
+              "printedPage": 70
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q05",
+          "field": "optionsJa[1]",
+          "before": "移植する例はなく、種を使わず栽培する。",
+          "after": "育苗後に移植する栽培はなく、どの地域でも畑へ直接まく。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 55,
+              "printedPage": 49
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 56,
+              "printedPage": 50
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 75,
+              "printedPage": 73
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 76,
+              "printedPage": 74
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q05",
+          "field": "optionReasonsJa[1]",
+          "before": "移植栽培の説明と合いません。",
+          "after": "移植が一般的であり、地域によって直まきも行います。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 55,
+              "printedPage": 49
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 56,
+              "printedPage": 50
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 75,
+              "printedPage": 73
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 76,
+              "printedPage": 74
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q07",
+          "field": "optionsJa[1]",
+          "before": "低温なら発芽三条件の酸素が不要になる。",
+          "after": "低温は発芽にだけ関係し、花芽の形成には関係しない。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 56,
+              "printedPage": 50
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q07",
+          "field": "optionReasonsJa[1]",
+          "before": "酸素の必要性を変える説明ではありません。",
+          "after": "資料は低温が続くと花芽分化すると説明しています。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 56,
+              "printedPage": 50
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q07",
+          "field": "optionsJa[2]",
+          "before": "土の乾燥が全く影響しなくなる。",
+          "after": "低温が続くと花芽分化を抑える。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 56,
+              "printedPage": 50
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q07",
+          "field": "optionReasonsJa[2]",
+          "before": "低温と水分の条件を混同しています。",
+          "after": "資料の説明は、低温が続くと花芽分化するというものです。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 56,
+              "printedPage": 50
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q08",
+          "field": "optionsJa[0]",
+          "before": "発芽に必要なのは光だけで、水も酸素も不要である。",
+          "after": "発芽するまで土を乾かし、発芽後に初めて水分に注意する。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 56,
+              "printedPage": 50
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q08",
+          "field": "optionReasonsJa[0]",
+          "before": "既習の発芽三条件を失っています。",
+          "after": "ニンジンは乾燥すると発芽しにくいため、発芽前も水分に注意します。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 56,
+              "printedPage": 50
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q09",
+          "field": "optionsJa[1]",
+          "before": "種イモから伸びた苗の根だけを掘り取る。",
+          "after": "緑色の果実をさらに熟させてから収穫する。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 58,
+              "printedPage": 52
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 78,
+              "printedPage": 76
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q09",
+          "field": "optionReasonsJa[1]",
+          "before": "イモ類などの管理と混同しています。",
+          "after": "この章では熟す前の緑色の果実を利用します。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 58,
+              "printedPage": 52
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 78,
+              "printedPage": 76
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q10",
+          "field": "optionsJa[0]",
+          "before": "全ての品種へ同じ日付と同じ枝数を無条件に指定する。",
+          "after": "育苗・定植・覆土・収穫後の乾燥",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 58,
+              "printedPage": 52
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 78,
+              "printedPage": 76
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q10",
+          "field": "optionReasonsJa[0]",
+          "before": "共通の日付や枝数は示されていません。",
+          "after": "支柱立て・芽かき・誘引・整枝という生育中の管理の組合せではありません。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 58,
+              "printedPage": 52
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 78,
+              "printedPage": 76
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q10",
+          "field": "optionsJa[1]",
+          "before": "収穫後の果実だけを土に埋め、育苗と呼ぶ。",
+          "after": "播種・覆土・間引き・種子の低温保存",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 58,
+              "printedPage": 52
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 78,
+              "printedPage": 76
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q10",
+          "field": "optionReasonsJa[1]",
+          "before": "枝や苗の管理ではありません。",
+          "after": "種子や播種の作業と、生育が進んだナスの枝の管理を混同しています。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 58,
+              "printedPage": 52
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 78,
+              "printedPage": 76
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q10",
+          "field": "optionsJa[2]",
+          "before": "葉や枝の状態を見ず、支柱も枝の管理も全く行わない。",
+          "after": "収穫・脱穀・籾すり・精米",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 58,
+              "printedPage": 52
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 78,
+              "printedPage": 76
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q10",
+          "field": "optionReasonsJa[2]",
+          "before": "資料に挙げた管理を省いています。",
+          "after": "稲の収穫後の調製作業との混同です。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 58,
+              "printedPage": 52
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 77,
+              "printedPage": 75
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 78,
+              "printedPage": 76
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q12",
+          "field": "optionsJa[0]",
+          "before": "播種当日に果実を収穫する一年草の野菜だけを指す。",
+          "after": "種を直接まき、その年に肥大した根を収穫して加工する。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 58,
+              "printedPage": 52
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 59,
+              "printedPage": 53
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 78,
+              "printedPage": 76
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 79,
+              "printedPage": 77
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q12",
+          "field": "optionReasonsJa[0]",
+          "before": "期間も部位も違います。",
+          "after": "資料は種イモから育てる地下茎の作物で、収穫まで数年かかると説明しています。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 58,
+              "printedPage": 52
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 59,
+              "printedPage": 53
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 78,
+              "printedPage": 76
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 79,
+              "printedPage": 77
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q13",
+          "field": "optionsJa[0]",
+          "before": "家畜への利用とは無関係な観賞植物の名前である。",
+          "after": "サイレージは密封せず、空気を通しながら貯蔵する。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 59,
+              "printedPage": 53
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 79,
+              "printedPage": 77
+            }
+          ]
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-vegwork-weekly-q13",
+          "field": "optionReasonsJa[0]",
+          "before": "飼料としての目的が違います。",
+          "after": "資料では酸素のない状態で密封貯蔵し、発酵させます。",
+          "reason": "Replace implausible distractor with a crop or cultivation misconception while preserving the correct answer position.",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 59,
+              "printedPage": 53
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 79,
+              "printedPage": 77
+            }
+          ]
+        }
+      ],
+      "holds": [
+        {
+          "id": "AGR-H-VEGWORK-SWEETPOTATO",
+          "topic": "サツマイモの器官の記載差",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 57,
+              "printedPage": 51
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 73,
+              "printedPage": 71
+            }
+          ],
+          "reason": "1go states肥大した地下茎;2go states肥大した根. Do not silently merge or test1go wording as botanical truth.2go-only lesson anchored explicitly to2go.",
+          "blocks": "conflicting1go botanical statement only"
+        },
+        {
+          "id": "AGR-H-VEGWORK-SPINACH-FAMILY",
+          "topic": "ホウレンソウの科名",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 54,
+              "printedPage": 48
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 74,
+              "printedPage": 72
+            }
+          ],
+          "reason": "1goアカザ科 and2goヒユ科 differ. No forced single shared taxonomy answer without authoritative resolution.",
+          "blocks": "spinach-family answer only"
+        },
+        {
+          "id": "AGR-H-VEGWORK-WATER-RANGE",
+          "topic": "土壌水分35–55%の測定条件",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 60,
+              "printedPage": 54
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 80,
+              "printedPage": 78
+            }
+          ],
+          "reason": "Unspecified measurement basis and soil/crop/stage conditions. No universal field target or percent-to-pF conversion taught/tested.",
+          "blocks": "unqualified numerical target only"
+        },
+        {
+          "id": "AGR-H-VEGWORK-RECOGNITION",
+          "topic": "野菜・種子・加工種子の認識画像",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 54,
+              "printedPage": 48
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 62,
+              "printedPage": 56
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 74,
+              "printedPage": 72
+            }
+          ],
+          "reason": "Source images reviewed but not copied. New identification assets and recognition exercises remain pending.",
+          "blocks": "recognition artwork only"
+        },
+        {
+          "id": "AGR-H-VEGWORK-F1",
+          "topic": "F1・固定種・自家採種の知識",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 61,
+              "printedPage": 55
+            }
+          ],
+          "reason": "F1/fixed variety biology and broad regional-variety/seed-saving assertions remain separate follow-up. Legal seed-saving permission is not inferred.",
+          "blocks": "this subtopic only"
+        },
+        {
+          "id": "AGR-H-VEGWORK-NUMERIC-EXTENSIONS",
+          "topic": "2号作付比率・輸入比率・温度表と種子処理の追加",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 71,
+              "printedPage": 69
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 80,
+              "printedPage": 78
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 61,
+              "printedPage": 55
+            }
+          ],
+          "reason": "Undated80%statistics, crop-specific full temperature table, maize cleaning-crop/root-nodule detail and1go-only naked seed processing not exhaustively authored in this packet. Preserve as remaining knowledge, not implied full chapter coverage.",
+          "blocks": "those unreviewed knowledge units only"
+        }
+      ]
+    },
+    {
+      "worker": "translations-a",
+      "payloadSha256": "93af4b03da22e6d771ab83a54bff68858d86eb85db9777efed2fc6364c62ad02",
+      "integratedPayloadSha256": "93af4b03da22e6d771ab83a54bff68858d86eb85db9777efed2fc6364c62ad02",
+      "pairs": 48,
+      "repairs": [],
+      "review": {
+        "complete": false,
+        "sourceLanguage": "ja",
+        "method": "direct_in_session_translation_from_complete_Japanese_lessons",
+        "nativeReviewed": false,
+        "humanReviewed": false,
+        "domainReviewed": false,
+        "ownedLocaleSubsetComplete": true,
+        "scope": "Eight assigned stable water/soil lessons; six owned locales. Remaining six locales delegated by root.",
+        "lessonIds": [
+          "agr-water-decision",
+          "agr-water-methods",
+          "agr-soil-texture",
+          "agr-soil-groups",
+          "agr-soil-structure",
+          "agr-soil-building",
+          "agr-soil-ph-measure",
+          "agr-soil-rotation"
+        ],
+        "completedTargetLocales": [
+          "en",
+          "id",
+          "tl",
+          "vi",
+          "zh-CN",
+          "zh-TW"
+        ],
+        "remainingTargetLocales": [
+          "hi",
+          "bn",
+          "ne",
+          "my",
+          "th",
+          "km"
+        ],
+        "lessonLocalePairs": 48,
+        "requestedFullScopePairs": 96,
+        "translatedParagraphs": 288,
+        "translatedTextFields": 720,
+        "sourceBindingsVerified": true,
+        "paragraphAndHeadingAlignmentVerified": true,
+        "allTargetFieldsNonempty": true,
+        "pHRangesChecked": true,
+        "sourceHashes": {
+          "agr-water-decision": "a680e55111691e1a219c1291a3dc2594bb645c0063722f89f826bd9040fc7128",
+          "agr-water-methods": "829d4c37df6d3411406eb85d76b75ad16a1f59d8625ae4163375030a8c38d413",
+          "agr-soil-texture": "3e0ea39715221ccc18607905f1f0a3453cfcf9b0a2c5c3c25d5eb3b100160b33",
+          "agr-soil-groups": "4eaa9dda9e4ddeab7506f7647f815be1ef5b9de887a4c26dd56d63c248eac155",
+          "agr-soil-structure": "f9b44146a681ab696dd2b7b88e02e37ac5f2fb040b000319180f4c0e63e34804",
+          "agr-soil-building": "7372c6f5dfc8bcd9793958b1525828fe2c761b854b8cf3f80f5a2cfef9fbf5f7",
+          "agr-soil-ph-measure": "f28494af7f930994e608f730f3d702d0c83bb29ead82af4a1978591920f86ea8",
+          "agr-soil-rotation": "dbc07814c89a3bfe345ee0fc1fc0c85932c9e2ff6e458a4e20951665624d04d1"
+        },
+        "terminologyPolicy": "Japanese texture and soil-group identifiers retained where useful, with natural local descriptions; no silent transfer of national texture thresholds.",
+        "preservedLimits": [
+          "No universal irrigation liters or clock time",
+          "Soil structure ranges differ between source documents; no merged ratio",
+          "Soil acidity classification thresholds unresolved",
+          "One minute is the featured instrument example, not all models",
+          "No crop-independent lime/disinfectant dose",
+          "No diagnosis from one symptom or guarantee of one countermeasure"
+        ],
+        "remainingReviews": [
+          "Independent native-language/domain review",
+          "Actual-device selected-language rendering and font coverage"
+        ],
+        "noTestsTranslated": true,
+        "sourceLessonsReadCompletely": true
+      }
+    },
+    {
+      "worker": "translations-b",
+      "payloadSha256": "4350da28219ddc8ae4e8c1e59868151ffb59b548517f1f143c04d429bf739f8a",
+      "integratedPayloadSha256": "4350da28219ddc8ae4e8c1e59868151ffb59b548517f1f143c04d429bf739f8a",
+      "pairs": 40,
+      "repairs": [],
+      "review": {
+        "status": "partial_40_of_120_ai_drafts",
+        "requestedPairs": 120,
+        "sourceLessonIds": [
+          "agr-water-equipment-2",
+          "agr-soil-biological-2",
+          "agr-fertilizer-nutrients",
+          "agr-fertilizer-types",
+          "agr-fertilizer-release",
+          "agr-fertilizer-timing",
+          "agr-fertilizer-label",
+          "agr-fertilizer-quantity",
+          "agr-drainage-foundations",
+          "agr-drainage-comparison"
+        ],
+        "sourceHashes": {
+          "agr-water-equipment-2": "2ccd896a10c68b3be85f7e2ce49d7eb165de4b51a09f9cf9d8cf5542abdbdc78",
+          "agr-soil-biological-2": "8591d5fa198b6048dcfff5a0f676037b18d714adab04a0c7b4a0fb9a9858a7bb",
+          "agr-fertilizer-nutrients": "8ee2a583b39a2aef773e82669ddbaef65c3e60f9b6c6fa1cc809f7efb7c292ba",
+          "agr-fertilizer-types": "6cdd46e34d4a61fb2954100c879438558b12975f748f344fedc0c944170f2146",
+          "agr-fertilizer-release": "d09eaa4d45104ad488b2cc3a34ffa8058f4ddccf143fd1d10b4bb142d7dd6999",
+          "agr-fertilizer-timing": "cd38f614ee12795ae62c7bb443ddd7ccc4906670d5b79c9b9d62785270c15422",
+          "agr-fertilizer-label": "3ee18e565dcc09a645ec7840957127f1eeed7f247f3cde446c32adec530c34b3",
+          "agr-fertilizer-quantity": "8beb2db973f1a751b0a05dac0d645f2f2bae2ecc993346400c3ba92838310a9d",
+          "agr-drainage-foundations": "c1094d2d4eb71ebf55f3da7c84d7f77f4499ba2e7464e31be10efcc10196e89b",
+          "agr-drainage-comparison": "6584839c3bb41dd11d106234a8571961535e9e43d80104bdc0dcf436c5e57f24"
+        },
+        "directJapaneseOnly": true,
+        "pivotLanguageUsed": false,
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "completedLocales": [
+          "en",
+          "vi",
+          "zh-CN",
+          "zh-TW"
+        ],
+        "completedPairs": 40,
+        "remainingLocalesAssignedSeparately": [
+          "id",
+          "hi",
+          "bn",
+          "ne",
+          "my",
+          "th",
+          "km",
+          "tl"
+        ],
+        "validation": {
+          "completedPairs": 40,
+          "completedLocales": 4,
+          "lessonsPerLocale": 10,
+          "paragraphBodies": 240,
+          "paragraphHeadings": 240,
+          "sourceHashesMatch": true,
+          "allParagraphIdsMatch": true,
+          "nonemptyFields": true,
+          "calculationParagraphNumberChecks": 48,
+          "hypotheticalExamplesNotActualDosage": true,
+          "viDecimalCommaEquivalentToSourceDecimalPoint": true,
+          "humanReviewed": false,
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "remainingRequestedPairs": 80
+        }
+      }
+    },
+    {
+      "worker": "translations-c",
+      "payloadSha256": "1f546372c06f0d1b2a4cbdae0aafb66d4ea355b977274f0ccabfb6f0b80382e0",
+      "integratedPayloadSha256": "1f546372c06f0d1b2a4cbdae0aafb66d4ea355b977274f0ccabfb6f0b80382e0",
+      "pairs": 60,
+      "repairs": [],
+      "review": {
+        "status": "assigned_60_pairs_complete_remaining60_owned_by_other_worker",
+        "sourceLanguage": "ja",
+        "directJapaneseOnly": true,
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "ownedLessonIds": [
+          "agr-management-shoots",
+          "agr-management-thinning",
+          "agr-management-pollination",
+          "agr-management-training",
+          "agr-management-harvest",
+          "agr-cover-methods",
+          "agr-cover-mulch",
+          "agr-pest-foundation",
+          "agr-pest-weeds",
+          "agr-pest-ipm"
+        ],
+        "assignedLocales": [
+          "en",
+          "vi",
+          "id",
+          "zh-CN",
+          "zh-TW",
+          "tl"
+        ],
+        "remainingLocalesOwnedElsewhere": [
+          "hi",
+          "bn",
+          "ne",
+          "my",
+          "th",
+          "km"
+        ],
+        "assignedLessonLocalePairs": 60,
+        "totalBatchTargetPairs": 120,
+        "validation": {
+          "assignedLocales": 6,
+          "lessonsPerLocale": 10,
+          "assignedLessonLocalePairs": 60,
+          "paragraphTranslations": 360,
+          "headingTranslations": 360,
+          "allSourceHashesMatch": true,
+          "allParagraphIdsMatch": true,
+          "allFieldsNonempty": true,
+          "replacementCharacters": 0,
+          "full120BatchComplete": false,
+          "other60PairsInSeparateWorkerFile": true,
+          "nativeDeviceTested": false,
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "semanticChecks": [
+          "Removal locations and developmental stages preserved.",
+          "Manual pollination distinguished from later fruitset; no success guarantee.",
+          "Figure-eight fastening retained without crop-universal dimensions.",
+          "Harvest indicators retained for tomato/spinach/cucumber; no universal precooling values.",
+          "Cover positions, film colours and biodegradability disposal caveat retained.",
+          "Prevention/detection and disease/insect/weed targets preserved; no product doses or legal additions.",
+          "IPM retains economic purpose and separate product conditions."
+        ]
+      }
+    },
+    {
+      "worker": "translations-a-extra",
+      "payloadSha256": "c193c809d4d1192db156c8a55219a0cbeb41af4c3cb5cff5dc7e74625b951016",
+      "integratedPayloadSha256": "c193c809d4d1192db156c8a55219a0cbeb41af4c3cb5cff5dc7e74625b951016",
+      "pairs": 32,
+      "repairs": [],
+      "review": {
+        "status": "ai_translation_unreviewed",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "completedPairs": 32,
+        "targetPairs": 32,
+        "remainingLocales": [],
+        "sourceBindingCorrections": [
+          {
+            "locale": "hi",
+            "lessonId": "agr-water-methods",
+            "field": "sourceHash",
+            "before": "af9ef180bba08803690c5b4242cc64cb8b2fd5aee7661c264b2c7a65b6d5aaa0",
+            "after": "829d4c37df6d3411406eb85d76b75ad16a1f59d8625ae4163375030a8c38d413",
+            "sourcePath": "src/data/agriculture/lessons.ja.json",
+            "sourceChange": {
+              "paragraphId": "agr-water-methods-p4",
+              "beforeJa": "うねと、うねの間に水を流す方法がうね間かん水です。多くの水を必要とする点を保って覚え、少量の水だけで済む方法と取り違えないようにします。",
+              "afterJa": "うねとうねの間に水を流す方法がうね間かん水です。多くの水を必要とする点を保って覚え、少量の水だけで済む方法と取り違えないようにします。",
+              "basis": "Japanese punctuation only: removed comma after first うねと. All six current Japanese paragraphs, headings, title, objective and activity compared with this locale translation; existing translation remains semantically applicable.",
+              "paragraphMeaningChecks": [
+                {
+                  "paragraphId": "agr-water-methods-p1",
+                  "result": "Location classification, not equipment names alone, retained."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p2",
+                  "result": "Overhead water and all four equipment examples retained; base-only watering distinguished."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p3",
+                  "result": "Plant-base delivery, drip tube and water saving retained."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p4",
+                  "result": "Between adjacent ridges/beds, large water requirement and not low-volume retained; comma removal changes no meaning."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p5",
+                  "result": "Ordinary irrigation tube versus drip tube delivery distinction retained."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p6",
+                  "result": "Sprinkler-overhead/drip-base matching and nonuniversal site layout retained."
+                }
+              ]
+            },
+            "translationTextChanged": false,
+            "nativeReviewed": false,
+            "domainReviewed": false
+          },
+          {
+            "locale": "bn",
+            "lessonId": "agr-water-methods",
+            "field": "sourceHash",
+            "before": "af9ef180bba08803690c5b4242cc64cb8b2fd5aee7661c264b2c7a65b6d5aaa0",
+            "after": "829d4c37df6d3411406eb85d76b75ad16a1f59d8625ae4163375030a8c38d413",
+            "sourcePath": "src/data/agriculture/lessons.ja.json",
+            "sourceChange": {
+              "paragraphId": "agr-water-methods-p4",
+              "beforeJa": "うねと、うねの間に水を流す方法がうね間かん水です。多くの水を必要とする点を保って覚え、少量の水だけで済む方法と取り違えないようにします。",
+              "afterJa": "うねとうねの間に水を流す方法がうね間かん水です。多くの水を必要とする点を保って覚え、少量の水だけで済む方法と取り違えないようにします。",
+              "basis": "Japanese punctuation only: removed comma after first うねと. All six current Japanese paragraphs, headings, title, objective and activity compared with this locale translation; existing translation remains semantically applicable.",
+              "paragraphMeaningChecks": [
+                {
+                  "paragraphId": "agr-water-methods-p1",
+                  "result": "Location classification, not equipment names alone, retained."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p2",
+                  "result": "Overhead water and all four equipment examples retained; base-only watering distinguished."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p3",
+                  "result": "Plant-base delivery, drip tube and water saving retained."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p4",
+                  "result": "Between adjacent ridges/beds, large water requirement and not low-volume retained; comma removal changes no meaning."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p5",
+                  "result": "Ordinary irrigation tube versus drip tube delivery distinction retained."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p6",
+                  "result": "Sprinkler-overhead/drip-base matching and nonuniversal site layout retained."
+                }
+              ]
+            },
+            "translationTextChanged": false,
+            "nativeReviewed": false,
+            "domainReviewed": false
+          },
+          {
+            "locale": "ne",
+            "lessonId": "agr-water-methods",
+            "field": "sourceHash",
+            "before": "af9ef180bba08803690c5b4242cc64cb8b2fd5aee7661c264b2c7a65b6d5aaa0",
+            "after": "829d4c37df6d3411406eb85d76b75ad16a1f59d8625ae4163375030a8c38d413",
+            "sourcePath": "src/data/agriculture/lessons.ja.json",
+            "sourceChange": {
+              "paragraphId": "agr-water-methods-p4",
+              "beforeJa": "うねと、うねの間に水を流す方法がうね間かん水です。多くの水を必要とする点を保って覚え、少量の水だけで済む方法と取り違えないようにします。",
+              "afterJa": "うねとうねの間に水を流す方法がうね間かん水です。多くの水を必要とする点を保って覚え、少量の水だけで済む方法と取り違えないようにします。",
+              "basis": "Japanese punctuation only: removed comma after first うねと. All six current Japanese paragraphs, headings, title, objective and activity compared with this locale translation; existing translation remains semantically applicable.",
+              "paragraphMeaningChecks": [
+                {
+                  "paragraphId": "agr-water-methods-p1",
+                  "result": "Location classification, not equipment names alone, retained."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p2",
+                  "result": "Overhead water and all four equipment examples retained; base-only watering distinguished."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p3",
+                  "result": "Plant-base delivery, drip tube and water saving retained."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p4",
+                  "result": "Between adjacent ridges/beds, large water requirement and not low-volume retained; comma removal changes no meaning."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p5",
+                  "result": "Ordinary irrigation tube versus drip tube delivery distinction retained."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p6",
+                  "result": "Sprinkler-overhead/drip-base matching and nonuniversal site layout retained."
+                }
+              ]
+            },
+            "translationTextChanged": false,
+            "nativeReviewed": false,
+            "domainReviewed": false
+          },
+          {
+            "locale": "my",
+            "lessonId": "agr-water-methods",
+            "field": "sourceHash",
+            "before": "af9ef180bba08803690c5b4242cc64cb8b2fd5aee7661c264b2c7a65b6d5aaa0",
+            "after": "829d4c37df6d3411406eb85d76b75ad16a1f59d8625ae4163375030a8c38d413",
+            "sourcePath": "src/data/agriculture/lessons.ja.json",
+            "sourceChange": {
+              "paragraphId": "agr-water-methods-p4",
+              "beforeJa": "うねと、うねの間に水を流す方法がうね間かん水です。多くの水を必要とする点を保って覚え、少量の水だけで済む方法と取り違えないようにします。",
+              "afterJa": "うねとうねの間に水を流す方法がうね間かん水です。多くの水を必要とする点を保って覚え、少量の水だけで済む方法と取り違えないようにします。",
+              "basis": "Japanese punctuation only: removed comma after first うねと. All six current Japanese paragraphs, headings, title, objective and activity compared with this locale translation; existing translation remains semantically applicable.",
+              "paragraphMeaningChecks": [
+                {
+                  "paragraphId": "agr-water-methods-p1",
+                  "result": "Location classification, not equipment names alone, retained."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p2",
+                  "result": "Overhead water and all four equipment examples retained; base-only watering distinguished."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p3",
+                  "result": "Plant-base delivery, drip tube and water saving retained."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p4",
+                  "result": "Between adjacent ridges/beds, large water requirement and not low-volume retained; comma removal changes no meaning."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p5",
+                  "result": "Ordinary irrigation tube versus drip tube delivery distinction retained."
+                },
+                {
+                  "paragraphId": "agr-water-methods-p6",
+                  "result": "Sprinkler-overhead/drip-base matching and nonuniversal site layout retained."
+                }
+              ]
+            },
+            "translationTextChanged": false,
+            "nativeReviewed": false,
+            "domainReviewed": false
+          }
+        ],
+        "canonicalHashValidation": {
+          "sourcePath": "src/data/agriculture/lessons.ja.json",
+          "sourceFileSha256AtValidation": "4ce2184caffb89f99fc80c2e650df33a4fc362c5b70bf0cfc84bf57e6778c69a",
+          "validatedPairs": 32,
+          "mismatchesAfterCorrection": 0,
+          "paragraphIdsValidated": 192,
+          "allTranslationTextPreserved": true
+        }
+      }
+    },
+    {
+      "worker": "translations-a-extra-2",
+      "payloadSha256": "04e1bcac8ade9179f985ce4187247a0bd9f33bd104556ba311337784e1a30eb7",
+      "integratedPayloadSha256": "04e1bcac8ade9179f985ce4187247a0bd9f33bd104556ba311337784e1a30eb7",
+      "pairs": 16,
+      "repairs": [],
+      "review": {
+        "scope": "8 stable Japanese water/soil lessons × th/km only; other locales owned by separate workers",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "complete": true,
+        "pairs": 16,
+        "paragraphs": 96,
+        "translatedFields": 240,
+        "holdsPreserved": [
+          "No universal irrigation clock or litres",
+          "Japanese soil taxonomy labels retained alongside local descriptions",
+          "No merged three-phase proportions",
+          "No invented tillage depth or lime application dose",
+          "pH 6.5–7.0 spinach; 4.5–5.5 tea/blueberry",
+          "One-minute wait limited to cited simple instrument example",
+          "Conflicting soil acidity classification thresholds not merged",
+          "No disinfection chemical/dose/conditions invented"
+        ]
+      }
+    },
+    {
+      "worker": "translations-b-extra",
+      "payloadSha256": "ad9adfa3559a61eb9ef020faa264378a434bce0172b05fe94d90770cec08587d",
+      "integratedPayloadSha256": "ad9adfa3559a61eb9ef020faa264378a434bce0172b05fe94d90770cec08587d",
+      "pairs": 40,
+      "repairs": [],
+      "review": {
+        "status": "40_of_80_split_cohort_ai_drafts",
+        "assignedLocales": [
+          "id",
+          "tl",
+          "hi",
+          "bn"
+        ],
+        "sourceLessonIds": [
+          "agr-water-equipment-2",
+          "agr-soil-biological-2",
+          "agr-fertilizer-nutrients",
+          "agr-fertilizer-types",
+          "agr-fertilizer-release",
+          "agr-fertilizer-timing",
+          "agr-fertilizer-label",
+          "agr-fertilizer-quantity",
+          "agr-drainage-foundations",
+          "agr-drainage-comparison"
+        ],
+        "completedLocales": [
+          "id",
+          "tl",
+          "hi",
+          "bn"
+        ],
+        "completedPairs": 40,
+        "remainingOtherWorkerLocales": [
+          "ne",
+          "my",
+          "th",
+          "km"
+        ],
+        "directJapaneseOnly": true,
+        "pivotLanguageUsed": false,
+        "humanReviewed": false,
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "sourceHashes": {
+          "agr-water-equipment-2": "2ccd896a10c68b3be85f7e2ce49d7eb165de4b51a09f9cf9d8cf5542abdbdc78",
+          "agr-soil-biological-2": "8591d5fa198b6048dcfff5a0f676037b18d714adab04a0c7b4a0fb9a9858a7bb",
+          "agr-fertilizer-nutrients": "8ee2a583b39a2aef773e82669ddbaef65c3e60f9b6c6fa1cc809f7efb7c292ba",
+          "agr-fertilizer-types": "6cdd46e34d4a61fb2954100c879438558b12975f748f344fedc0c944170f2146",
+          "agr-fertilizer-release": "d09eaa4d45104ad488b2cc3a34ffa8058f4ddccf143fd1d10b4bb142d7dd6999",
+          "agr-fertilizer-timing": "cd38f614ee12795ae62c7bb443ddd7ccc4906670d5b79c9b9d62785270c15422",
+          "agr-fertilizer-label": "3ee18e565dcc09a645ec7840957127f1eeed7f247f3cde446c32adec530c34b3",
+          "agr-fertilizer-quantity": "8beb2db973f1a751b0a05dac0d645f2f2bae2ecc993346400c3ba92838310a9d",
+          "agr-drainage-foundations": "c1094d2d4eb71ebf55f3da7c84d7f77f4499ba2e7464e31be10efcc10196e89b",
+          "agr-drainage-comparison": "6584839c3bb41dd11d106234a8571961535e9e43d80104bdc0dcf436c5e57f24"
+        },
+        "validation": {
+          "completedPairs": 40,
+          "completedLocales": 4,
+          "lessonsPerLocale": 10,
+          "paragraphBodies": 240,
+          "paragraphHeadings": 240,
+          "sourceHashesMatch": true,
+          "allParagraphIdsMatch": true,
+          "nonemptyFields": true,
+          "calculationParagraphNumberMultisetChecks": 48,
+          "indonesianDecimalCommaEquivalentToSourceDecimalPoint": true,
+          "hypotheticalExamplesNotActualDosage": true,
+          "directSourceJapaneseFieldsRead": true,
+          "humanReviewed": false,
+          "nativeReviewed": false,
+          "domainReviewed": false
+        }
+      }
+    },
+    {
+      "worker": "translations-b-extra-2",
+      "payloadSha256": "2eaa216d4c85b1bf6647c40d397fd8e313390d158dc4bf28bdcb1b25cdc49346",
+      "integratedPayloadSha256": "2eaa216d4c85b1bf6647c40d397fd8e313390d158dc4bf28bdcb1b25cdc49346",
+      "pairs": 40,
+      "repairs": [],
+      "review": {
+        "status": "complete_40_pairs_ai_draft",
+        "requestedPairs": 40,
+        "sourceLessonIds": [
+          "agr-water-equipment-2",
+          "agr-soil-biological-2",
+          "agr-fertilizer-nutrients",
+          "agr-fertilizer-types",
+          "agr-fertilizer-release",
+          "agr-fertilizer-timing",
+          "agr-fertilizer-label",
+          "agr-fertilizer-quantity",
+          "agr-drainage-foundations",
+          "agr-drainage-comparison"
+        ],
+        "sourceHashes": {
+          "agr-water-equipment-2": "2ccd896a10c68b3be85f7e2ce49d7eb165de4b51a09f9cf9d8cf5542abdbdc78",
+          "agr-soil-biological-2": "8591d5fa198b6048dcfff5a0f676037b18d714adab04a0c7b4a0fb9a9858a7bb",
+          "agr-fertilizer-nutrients": "8ee2a583b39a2aef773e82669ddbaef65c3e60f9b6c6fa1cc809f7efb7c292ba",
+          "agr-fertilizer-types": "6cdd46e34d4a61fb2954100c879438558b12975f748f344fedc0c944170f2146",
+          "agr-fertilizer-release": "d09eaa4d45104ad488b2cc3a34ffa8058f4ddccf143fd1d10b4bb142d7dd6999",
+          "agr-fertilizer-timing": "cd38f614ee12795ae62c7bb443ddd7ccc4906670d5b79c9b9d62785270c15422",
+          "agr-fertilizer-label": "3ee18e565dcc09a645ec7840957127f1eeed7f247f3cde446c32adec530c34b3",
+          "agr-fertilizer-quantity": "8beb2db973f1a751b0a05dac0d645f2f2bae2ecc993346400c3ba92838310a9d",
+          "agr-drainage-foundations": "c1094d2d4eb71ebf55f3da7c84d7f77f4499ba2e7464e31be10efcc10196e89b",
+          "agr-drainage-comparison": "6584839c3bb41dd11d106234a8571961535e9e43d80104bdc0dcf436c5e57f24"
+        },
+        "assignedLocales": [
+          "ne",
+          "my",
+          "th",
+          "km"
+        ],
+        "directJapaneseOnly": true,
+        "pivotLanguageUsed": false,
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "completedLocales": [
+          "ne",
+          "my",
+          "th",
+          "km"
+        ],
+        "completedPairs": 40,
+        "remainingLocales": [],
+        "validation": {
+          "pairs": 40,
+          "locales": [
+            "ne",
+            "my",
+            "th",
+            "km"
+          ],
+          "lessonsPerLocale": 10,
+          "paragraphBodies": 240,
+          "paragraphHeadings": 240,
+          "sourceHashesMatch": true,
+          "paragraphIdsMatch": true,
+          "nonemptyFields": true,
+          "calculationParagraphNumberChecks": 48,
+          "unexpectedCjkScript": false,
+          "humanReviewed": false,
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "existingNeMyPairsUnchanged": true,
+          "preservedNeMySha256": "74cd57daeca51cb41356654d8127b2c2a71462f89a1b0528feba66b2d04cfd80"
+        }
+      }
+    },
+    {
+      "worker": "translations-c-extra",
+      "payloadSha256": "480ef6957f4d9e1b11415ccb1a5337cf4d31f7b5662aa6ed6f1fc7815348fa8e",
+      "integratedPayloadSha256": "480ef6957f4d9e1b11415ccb1a5337cf4d31f7b5662aa6ed6f1fc7815348fa8e",
+      "pairs": 40,
+      "repairs": [],
+      "review": {}
+    },
+    {
+      "worker": "translations-c-extra-2",
+      "payloadSha256": "596d973e3bb0457cf680808a975b14d52b81c96f5b0fefcfff351982071b9a89",
+      "integratedPayloadSha256": "596d973e3bb0457cf680808a975b14d52b81c96f5b0fefcfff351982071b9a89",
+      "pairs": 20,
+      "repairs": [],
+      "review": {
+        "status": "assigned20_pairs_complete",
+        "assignedLocales": [
+          "th",
+          "km"
+        ],
+        "sourceLanguage": "ja",
+        "directJapaneseOnly": true,
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "ownedLessonIds": [
+          "agr-management-shoots",
+          "agr-management-thinning",
+          "agr-management-pollination",
+          "agr-management-training",
+          "agr-management-harvest",
+          "agr-cover-methods",
+          "agr-cover-mulch",
+          "agr-pest-foundation",
+          "agr-pest-weeds",
+          "agr-pest-ipm"
+        ],
+        "assignedLessonLocalePairs": 20,
+        "remainingOtherLocalesOwnedByOtherWorkers": true,
+        "validation": {
+          "locales": 2,
+          "lessonsPerLocale": 10,
+          "lessonLocalePairs": 20,
+          "paragraphTranslations": 120,
+          "paragraphHeadings": 120,
+          "sourceHashesAndIdsMatch": true,
+          "nonemptyFields": true,
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "deviceValidated": false
+        }
+      }
+    }
+  ],
+  "newLessonIds": [
+    "agr-safety-machine-preparation",
+    "agr-safety-inspection-stop",
+    "agr-safety-pesticide-clothing",
+    "agr-safety-pesticide-label",
+    "agr-safety-spray-check",
+    "agr-safety-power-fuel",
+    "agr-safety-maintenance-tools",
+    "agr-safety-stepladder",
+    "agr-safety-workload-2",
+    "agr-safety-label-fields-2",
+    "agr-ricework-seed",
+    "agr-ricework-soaking",
+    "agr-ricework-nursery",
+    "agr-ricework-field",
+    "agr-ricework-water",
+    "agr-ricework-harvest",
+    "agr-ricework-processing",
+    "agr-ricework-lowcost",
+    "agr-ricework-feed",
+    "agr-ricework-stages",
+    "agr-vegwork-grains",
+    "agr-vegwork-families",
+    "agr-vegwork-leafy",
+    "agr-vegwork-rootvegetables",
+    "agr-vegwork-fruitvegetables",
+    "agr-vegwork-industrial",
+    "agr-vegwork-feed",
+    "agr-vegwork-environment",
+    "agr-vegwork-seedstorage",
+    "agr-vegwork-tubers-2"
+  ],
+  "newTranslations": 336,
+  "counts": {
+    "lessons": 73,
+    "knowledgeUnits": 438,
+    "weeklyQuestions": 152,
+    "lessonLocalePairs": 516,
+    "pageImagesChecked": 133
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "courseComplete": false,
+  "validation": {
+    "dataState": "PASS",
+    "typescript": "PASS",
+    "eslint": "PASS",
+    "browserLessonLocalePairs": 516,
+    "browserViewports": 4,
+    "numericLessonIdCompletionReload": true,
+    "sourceOverlap48CharacterMatches": 0,
+    "nativeDeviceTested": false
+  }
+}
