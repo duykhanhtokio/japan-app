@@ -15,3 +15,14 @@ No complete mock exams exist yet:0/20 forms,0/800questions. Full knowledge denom
 Resume from progress.json: complete missing chapter1detail mapping, then source1PDF8/printed2 and source2PDF9/printed7, chapter耕種農業一般. Current quarantine for historical entry/biosecurity instructions and variety-rights rules blocks those topics only; verify current authoritative sources before teaching them as current rules. Do not copy the old source instructions as legal advice.
 
 Only Agriculture files and the narrow Agriculture development-menu entry belong to this unit. Preserve audio factory, translations and other sector work. Persist the checked unit to recovery/jlpt-n3-n1 and verify the exact remote commit before claiming durable completion.
+
+
+## Batch02 — continuation 2026-10-25
+
+Added9source-bound Japanese lessons across14new page images: source1PDF8–13 and source2PDF9–16. Six shared foundation lessons cover organs/growth, plant processes, flower buds, crop plans, germination and nursery/transplanting. Three2go-specific extensions cover use-based crop classification, light saturation/water responses and sowing patterns/row spacing. Reused one24-question weekly bank across1go/2go while preserving separate attempt keys; added12questions for2go extensions. Original first-week revisions and source hashes remain stable.
+
+Current totals:15Japanese lessons,90mapped units,56distinct weekly questions,3original concept diagrams,24lesson-locale drafts (rice and organs each12locales),25page images checked. The remaining13authored lessons need156locale drafts. No full mock forms or800-question bank have been created. No fixed total weeks, measured30minute learning time, full source coverage or human/native/domain/device certification is claimed.
+
+Source differences explicitly retain the2go saturation-point boundary and row spacing. Shared text does not turn increasing light into an unlimited rule, short-day into universal fixed hours, or hand planting into a blanket zero-cost guarantee. Dot sowing diagram is schematic, not a real spacing/seed-count prescription. Source2PDF15F1biology and legal seed-saving questions remain unfinished.
+
+Resume at source1PDF14/printed8 and source2PDF17/printed15 (watering), while keeping chapter1detail and F1holds in progress.json. No background authoring was launched.
