@@ -1,0 +1,1127 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_AUTOMATED_AND_TARGETED_INDEPENDENT_AI_CHECKS",
+  "workers": [
+    {
+      "worker": "water-soil",
+      "originalPayloadSha256": "08d81430168c31a1f617ee82fb96505e07a2678ad33f3cbdf93b0f79efe92e5a",
+      "integratedPayloadSha256": "e6e44322646388bbc190b2fe5299d9ed530ef8dff03728ea9eef9b7d7d13d6f9",
+      "editorialRepairs": [
+        {
+          "id": "AGR-WS-EDIT-01",
+          "severity": "minor_clarity",
+          "targetId": "agr-water-methods-p4",
+          "field": "lessons[id=agr-water-methods].paragraphs[id=agr-water-methods-p4].textJa",
+          "before": "うねと、うねの間に水を流す方法がうね間かん水です。多くの水を必要とする点を保って覚え、少量の水だけで済む方法と取り違えないようにします。",
+          "after": "うねとうねの間に水を流す方法がうね間かん水です。多くの水を必要とする点を保って覚え、少量の水だけで済む方法と取り違えないようにします。",
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 15,
+              "printedPage": 9
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 20,
+              "printedPage": 18
+            }
+          ],
+          "reason": "Remove an awkward comma that can make the location less clear. Meaning/source unchanged; regenerate lessonHash andlinkedquestionhashes if applied."
+        },
+        {
+          "id": "AGR-WS-EDIT-02",
+          "severity": "distractor_quality",
+          "targetId": "agr-water-soil-q06",
+          "field": "questions[id=agr-water-soil-q06].optionsJa[1] and optionReasonsJa[1]",
+          "before": {
+            "option": "粘土が多いほど保肥力と水はけは同じ語になる。",
+            "reason": "別々の性質として示されています。"
+          },
+          "after": {
+            "option": "保肥力も水はけも悪い。",
+            "reason": "埴土の保肥力は良いと示されており、水はけと同じ評価ではありません。"
+          },
+          "source": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 16,
+              "printedPage": 10
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 21,
+              "printedPage": 19
+            }
+          ],
+          "reason": "Makes the wrong choice a plausible table-reading misconception rather than an implausible claim that two properties become the same word. Does not change correctIndex."
+        }
+      ],
+      "lessons": [
+        "agr-water-decision",
+        "agr-water-methods",
+        "agr-soil-texture",
+        "agr-soil-groups",
+        "agr-soil-structure",
+        "agr-soil-building",
+        "agr-soil-ph-measure",
+        "agr-soil-rotation",
+        "agr-water-equipment-2",
+        "agr-soil-biological-2"
+      ],
+      "questions": 16,
+      "review": {},
+      "comparisons": [
+        {
+          "topic": "かん水時間",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 14,
+              "printedPage": 8
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 20,
+              "printedPage": 18
+            }
+          ],
+          "difference": "1号は夏の午前中と夕方、2号は朝方と夕方。冬は1号が午前中、2号が暖かな午前中。",
+          "handling": "共通の観察判断と季節の目安を教え、具体的な時刻を発明しない。"
+        },
+        {
+          "topic": "三相の一般的な目安",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 18,
+              "printedPage": 12
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 23,
+              "printedPage": 21
+            }
+          ],
+          "source1": {
+            "solidPercent": "45–50",
+            "liquidAndGasPercent": "20–30"
+          },
+          "source2": {
+            "solidPercent": "40–50",
+            "liquidAndGasPercent": "25–30"
+          },
+          "handling": "相違を保存。共通課程では三相の意味と土壌差を扱い、矛盾する範囲を融合した正答や作業設定値にしない。"
+        },
+        {
+          "topic": "pHの区分",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 19,
+              "printedPage": 13
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 25,
+              "printedPage": 23
+            }
+          ],
+          "source1": "pH7中性、7未満酸性、7超アルカリ性。",
+          "source2": "中性土pH7前後、酸性土6.5未満、アルカリ土8超。",
+          "handling": "化学的な中性の定義と資料の土壌分類表現を無断で同一化せず、共通問題で相違する境界を問わない。両資料で一致する作物別範囲のみ扱う。"
+        },
+        {
+          "topic": "2号の追加内容",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 20,
+              "printedPage": 18
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 21,
+              "printedPage": 19
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 24,
+              "printedPage": 22
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 27,
+              "printedPage": 25
+            }
+          ],
+          "handling": "器具の構造・真夏のホースやタンク水の温度と、土壌生物の詳細を2号専用の二つの追加レッスンへ。連作の作物別年数目安は未統合として記録。"
+        },
+        {
+          "topic": "土壌構造の表現",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 18,
+              "printedPage": 12
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 23,
+              "printedPage": 21
+            }
+          ],
+          "handling": "資料の詰まった粒子の比較図に限定して説明。全ての単粒構造は必ず透水性が悪いという普遍的指導へ拡張しない。"
+        }
+      ],
+      "holds": [
+        {
+          "id": "AGR-H-WATER-SOIL-01",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 18,
+              "printedPage": 12
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 23,
+              "printedPage": 21
+            }
+          ],
+          "topic": "三相の数値目安の資料差",
+          "reason": "固相と液・気相の一般的な目安が資料間で不一致。共通の数値問題・一律の圃場設定としては保留。",
+          "blocks": "conflicting numerical thresholds only"
+        },
+        {
+          "id": "AGR-H-WATER-SOIL-02",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 19,
+              "printedPage": 13
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 25,
+              "printedPage": 23
+            }
+          ],
+          "topic": "土壌pH分類の境界表現",
+          "reason": "中性土・酸性土・アルカリ土の範囲の表現差がある。源資料の区別を残し、共通一問一答へ未統合。",
+          "blocks": "conflicting category thresholds only"
+        },
+        {
+          "id": "AGR-H-WATER-SOIL-03",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 27,
+              "printedPage": 25
+            }
+          ],
+          "topic": "作物別の再作付年数の目安",
+          "reason": "土壌・気候条件付きの年数群と連作可能の表現は今回の8共通・2拡張レッスンに未統合。絶対的な安全保証にしない形で継続作業が必要。",
+          "blocks": "this subtopic only"
+        },
+        {
+          "id": "AGR-H-WATER-SOIL-04",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 14,
+              "printedPage": 8
+            }
+          ],
+          "topic": "ポット苗・セル苗の植付図",
+          "reason": "水やりページにある定植の図は今回の水・土の範囲外。育苗担当の既存範囲へ引き継ぎ、全ページ意味レビュー完了とはしない。",
+          "blocks": "transplant figure only"
+        },
+        {
+          "id": "AGR-H-WATER-SOIL-05",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 20,
+              "printedPage": 14
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 21,
+              "printedPage": 15
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 26,
+              "printedPage": 24
+            }
+          ],
+          "topic": "耕うん農機具の個別認識",
+          "reason": "写真の器具・機械は視覚確認済みだが、個別認識教材と新規識別図は今回未作成。本文の土づくりと同一視して完了扱いしない。",
+          "blocks": "tool recognition assets only"
+        }
+      ]
+    },
+    {
+      "worker": "fertilizer",
+      "originalPayloadSha256": "5269d057d284566a5cccdef1d559a776cdf0e6048be521b367765c8378617fe1",
+      "integratedPayloadSha256": "ccb9f381fee20b76f26bb710ab08e629540ededbebd8f18ea6ee718cc633b987",
+      "editorialRepairs": [
+        {
+          "targetId": "agr-par03-fertilizer-q03",
+          "field": "optionsJa[2]",
+          "before": "袋が一つか、二つ以上あるか。",
+          "after": "原料が有機物由来か、化学的に合成されたものか。"
+        },
+        {
+          "targetId": "agr-par03-fertilizer-q03",
+          "field": "optionReasonsJa[2]",
+          "before": "袋の個数では分類しません。",
+          "after": "有機質肥料と化学肥料の原料による区分であり、単肥と複合肥料を分ける基準ではありません。"
+        },
+        {
+          "targetId": "agr-par03-fertilizer-q03",
+          "field": "optionsJa[3]",
+          "before": "使う作業者が一人か、二人以上か。",
+          "after": "三要素の合計含有率が30％未満か、30％以上か。"
+        },
+        {
+          "targetId": "agr-par03-fertilizer-q03",
+          "field": "optionReasonsJa[3]",
+          "before": "作業人数による区分ではありません。",
+          "after": "普通化成と高度化成の区分であり、単肥と複合肥料は含まれる三要素の種類数で分けます。"
+        },
+        {
+          "targetId": "agr-par03-fertilizer-q08",
+          "field": "optionsJa[1]",
+          "before": "元肥と追肥は袋の色だけで決まる。",
+          "after": "元肥は化学肥料、追肥は有機質肥料という原料の区分。"
+        },
+        {
+          "targetId": "agr-par03-fertilizer-q08",
+          "field": "optionReasonsJa[1]",
+          "before": "栽培の時期と使い方に着目します。",
+          "after": "元肥と追肥は施す時期や追加の目的による区分で、原料の違いではありません。"
+        }
+      ],
+      "lessons": [
+        "agr-fertilizer-nutrients",
+        "agr-fertilizer-types",
+        "agr-fertilizer-release",
+        "agr-fertilizer-timing",
+        "agr-fertilizer-label",
+        "agr-fertilizer-quantity",
+        "agr-drainage-foundations",
+        "agr-drainage-comparison"
+      ],
+      "questions": 16,
+      "review": {},
+      "comparisons": [
+        {
+          "topic": "三要素の働き、肥料の原料・状態・効き方、元肥追肥、計算",
+          "scope": "shared_bounded_foundation",
+          "lessonIds": [
+            "agr-fertilizer-nutrients",
+            "agr-fertilizer-types",
+            "agr-fertilizer-release",
+            "agr-fertilizer-timing",
+            "agr-fertilizer-label",
+            "agr-fertilizer-quantity",
+            "agr-drainage-foundations"
+          ],
+          "note": "Preserves1go/2go wording differences; no assertion of full source-semantic coverage."
+        },
+        {
+          "topic": "化学肥料の速さ",
+          "source1": "PDF23 broadly says fast action",
+          "source2": "PDF30 says many have fast action",
+          "decision": "Shared lesson uses bounded many-products wording and separates controlled/delayed release."
+        },
+        {
+          "topic": "排水の作業性・施工負担・果樹盛土",
+          "scope": "level2_explicit_extension",
+          "lessonIds": [
+            "agr-drainage-comparison"
+          ],
+          "note": "Underground mechanisms also exist in1go, but2go-specific comparison of workability, cost and orchard local improvement is taught separately."
+        },
+        {
+          "topic": "Drainage continuation",
+          "decision": "Read1goPDF28/printed22 to finish drainage section; stops before摘心, avoiding overlap with other worker."
+        },
+        {
+          "topic": "肥料計算",
+          "decision": "New hypothetical12-6-6/25kg and4kg/16% examples replace source worked example; dimensions and percentages verified, no actual agronomic rate prescribed."
+        }
+      ],
+      "holds": [
+        {
+          "id": "AGR-H-FERT-ESSENTIAL",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 22,
+              "printedPage": 16
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 28,
+              "printedPage": 26
+            }
+          ],
+          "topic": "必須元素の数と多量・微量の区分",
+          "reason": "1go says16 and groupsCa/Mg/S under microelements;2go says17 inclNi and separates macronutrients. Isolated pending authoritative correction; no count/microclassification lesson or question claims certification.",
+          "blocks": "this subtopic only"
+        },
+        {
+          "id": "AGR-H-FERT-SYMBOL",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 22,
+              "printedPage": 16
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 27,
+              "printedPage": 21
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 28,
+              "printedPage": 26
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 34,
+              "printedPage": 32
+            }
+          ],
+          "topic": "成分名・元素記号・酸化物換算表記",
+          "reason": "2goPDF34 displays nitrogen N2 whilePDF28 andothertext useN. P/P2O5 andK/K2O differ across passages. Lessons retain label component names and do not copy apparent symbol typo or teach conversion ratios.",
+          "blocks": "conflicting symbols/conversion only"
+        },
+        {
+          "id": "AGR-H-FERT-EC",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 32,
+              "printedPage": 30
+            }
+          ],
+          "topic": "EC0.5/1.0mS/cmの施肥判断",
+          "reason": "Source gives numeric reduction/omit-basal thresholds without measurement extraction method or crop applicability. Not promoted to universal operational dosing rule or assessed as universally correct. Needs official agronomic verification.",
+          "blocks": "numeric operational threshold only"
+        },
+        {
+          "id": "AGR-H-DRAIN-HEADING",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 34,
+              "printedPage": 32
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 35,
+              "printedPage": 33
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 28,
+              "printedPage": 22
+            }
+          ],
+          "topic": "地表排水の列挙に暗きょが含まれる不整合",
+          "reason": "2goPDF34 lists暗きょ under surface drainage whilePDF35 and1go classify buried-drain method under underground drainage. Lessons explain observed physical structures and retain classification discrepancy for review.",
+          "blocks": "unresolved source heading wording only"
+        },
+        {
+          "id": "AGR-H-DRAIN-DEPTH",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 34,
+              "printedPage": 32
+            }
+          ],
+          "topic": "暗きょ施工深さ",
+          "reason": "Approximate1m source example is not a universal design depth; specific drainage design remains outside these introductory lessons.",
+          "blocks": "site-specific depth prescription only"
+        },
+        {
+          "id": "AGR-H-FERT-COVERAGE",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 24,
+              "printedPage": 18
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 32,
+              "printedPage": 30
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 33,
+              "printedPage": 31
+            }
+          ],
+          "topic": "肥料銘柄一覧・土壌改良材・機械写真認識",
+          "reason": "Lessons do not exhaustively teach every named fertilizer compound, guarantee/legal classification, amendment material or machine photo. These remain explicit content/visual-asset coverage gaps; amendment may overlap soil worker and should be reconciled by coordinator.",
+          "blocks": "unmapped detail/recognition only"
+        }
+      ]
+    },
+    {
+      "worker": "crop-management",
+      "originalPayloadSha256": "6ea45527dbc6ba647eaf7907f698865ad17b2b9be1c7f01eca07e4049261adb7",
+      "integratedPayloadSha256": "bd620a5567a3ad444f9dc7ca3aff79c0d7670ada1f37602625951db35ed8e730",
+      "editorialRepairs": [
+        {
+          "targetId": "agr-cm-weekly-q02",
+          "id": "agr-cm-weekly-q02",
+          "field": "optionsJa[0]",
+          "before": "土にまく前の種子だけ",
+          "after": "側枝の先端にある芽だけ"
+        },
+        {
+          "targetId": "agr-cm-weekly-q02",
+          "id": "agr-cm-weekly-q02",
+          "field": "optionReasonsJa[0]",
+          "before": "わき芽は種子そのものではありません。",
+          "after": "わき芽の位置は葉の付け根であり、側枝の先端とは区別します。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q02",
+          "id": "agr-cm-weekly-q02",
+          "field": "optionsJa[3]",
+          "before": "すでに収穫した果実の中の種子",
+          "after": "葉そのものを全て取り除く部分"
+        },
+        {
+          "targetId": "agr-cm-weekly-q02",
+          "id": "agr-cm-weekly-q02",
+          "field": "optionReasonsJa[3]",
+          "before": "生育中の葉の付け根の芽とは違います。",
+          "after": "葉を取る摘葉と、葉の付け根の芽を取るわき芽かきは別です。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q08",
+          "id": "agr-cm-weekly-q08",
+          "field": "optionsJa[0]",
+          "before": "支柱を使わず全ての枝を地面へ押さえる。",
+          "after": "支柱同士だけを八の字に留め、茎にはひもを掛けない。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q08",
+          "id": "agr-cm-weekly-q08",
+          "field": "optionReasonsJa[0]",
+          "before": "支柱への固定例と異なります。",
+          "after": "資料の例は支柱と茎を固定するものです。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q08",
+          "id": "agr-cm-weekly-q08",
+          "field": "optionsJa[2]",
+          "before": "果実だけを切り取って支柱に載せる。",
+          "after": "支柱と茎を交差のない一つの輪にまとめる。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q08",
+          "id": "agr-cm-weekly-q08",
+          "field": "optionReasonsJa[2]",
+          "before": "誘引とは違います。",
+          "after": "問題が尋ねる資料の例は、八の字型の固定です。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q08",
+          "id": "agr-cm-weekly-q08",
+          "field": "optionsJa[3]",
+          "before": "茎を切り離してから支柱に固定する。",
+          "after": "支柱にだけひもを巻き、茎とは結び付けない。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q08",
+          "id": "agr-cm-weekly-q08",
+          "field": "optionReasonsJa[3]",
+          "before": "枝を支える仕事を損なう説明です。",
+          "after": "資料の固定例では支柱と茎の両方を留めます。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q10",
+          "id": "agr-cm-weekly-q10",
+          "field": "optionsJa[0]",
+          "before": "全ての作物の収穫適期を同じ日に変更する。",
+          "after": "冷却することで、収穫前の適期の判断自体を不要にする。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q10",
+          "id": "agr-cm-weekly-q10",
+          "field": "optionReasonsJa[0]",
+          "before": "冷却と適期判断は別です。",
+          "after": "収穫の適期判断と、収穫後の冷却は別の段階です。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q10",
+          "id": "agr-cm-weekly-q10",
+          "field": "optionsJa[1]",
+          "before": "種を発芽させるためだけに温める。",
+          "after": "収穫後の冷却と、収穫前に着果数を減らす作業を同じものとする。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q10",
+          "id": "agr-cm-weekly-q10",
+          "field": "optionReasonsJa[1]",
+          "before": "対象も温度の方向も違います。",
+          "after": "着果数の調整は摘果であり、予冷の目的ではありません。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q10",
+          "id": "agr-cm-weekly-q10",
+          "field": "optionsJa[2]",
+          "before": "茎の先端を切り、形を整える。",
+          "after": "収穫物を冷やす作業だけで、鮮度保持の必要がなくなると保証する。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q10",
+          "id": "agr-cm-weekly-q10",
+          "field": "optionReasonsJa[2]",
+          "before": "摘心の説明です。",
+          "after": "予冷は鮮度保持のための手段で、以後の管理が不要になる保証ではありません。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q14",
+          "id": "agr-cm-weekly-q14",
+          "field": "optionsJa[2]",
+          "before": "両方とも花粉を柱頭へ付ける。",
+          "after": "両方とも土を動かさず、雑草の地上部だけを刈り取る。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q14",
+          "id": "agr-cm-weekly-q14",
+          "field": "optionReasonsJa[2]",
+          "before": "受粉との混同です。",
+          "after": "中耕と培土は土を扱う作業で、刈取りとは異なります。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q14",
+          "id": "agr-cm-weekly-q14",
+          "field": "optionsJa[3]",
+          "before": "両方とも地表を透明フィルムで覆うだけ。",
+          "after": "両方とも作物がない畑だけで行い、栽培中には行わない。"
+        },
+        {
+          "targetId": "agr-cm-weekly-q14",
+          "id": "agr-cm-weekly-q14",
+          "field": "optionReasonsJa[3]",
+          "before": "マルチングとの混同です。",
+          "after": "資料は栽培中の中耕・培土と、作物がない畑での耕うんを区別しています。"
+        }
+      ],
+      "lessons": [
+        "agr-management-shoots",
+        "agr-management-thinning",
+        "agr-management-pollination",
+        "agr-management-training",
+        "agr-management-harvest",
+        "agr-cover-methods",
+        "agr-cover-mulch",
+        "agr-pest-foundation",
+        "agr-pest-weeds",
+        "agr-pest-ipm"
+      ],
+      "questions": 16,
+      "review": {},
+      "comparisons": [
+        {
+          "topic": "摘心から収穫・被覆・雑草防除までの共通基礎",
+          "scope": "shared_foundation",
+          "lessonIds": [
+            "agr-management-shoots",
+            "agr-management-thinning",
+            "agr-management-pollination",
+            "agr-management-training",
+            "agr-management-harvest",
+            "agr-cover-methods",
+            "agr-cover-mulch",
+            "agr-pest-foundation",
+            "agr-pest-weeds"
+          ],
+          "note": "Two-source overlap retained;2go-only leaf-fruit ratios, fertilization compatibility, hormones and postharvest detail are not silently counted as covered."
+        },
+        {
+          "topic": "IPMの体系",
+          "scope": "level2_extension",
+          "lessonIds": [
+            "agr-pest-ipm"
+          ],
+          "note": "2go formalizes agronomic,physical,biological,chemical groupings and economic-loss purpose."
+        },
+        {
+          "topic": "わき芽の位置の表現",
+          "scope": "source_wording_difference_recorded",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 28,
+              "printedPage": 22
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 36,
+              "printedPage": 34
+            }
+          ],
+          "decision": "Shared lesson uses leaf axil wording grounded in1go text and2go same-page摘心 paragraph/illustration.2goわき芽かき paragraph says芽の付け根; source original is not rewritten or declared corrected."
+        }
+      ],
+      "holds": [
+        {
+          "id": "AGR-H-CM-FILM-LAW",
+          "topic": "使用後フィルムの廃棄・野焼きに関する現行制度",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 33,
+              "printedPage": 27
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 43,
+              "printedPage": 41
+            }
+          ],
+          "reason": "No current legal disposal procedure or blanket permission authored; verify authoritative current rules separately.",
+          "blocks": "legal procedure only"
+        },
+        {
+          "id": "AGR-H-CM-CHEMICALS",
+          "topic": "農薬・除草剤・摘果剤・ホルモン処理の製品条件",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 35,
+              "printedPage": 29
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 38,
+              "printedPage": 36
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 47,
+              "printedPage": 45
+            }
+          ],
+          "reason": "No product rates, registrations, application counts or legal instructions authored. Source tables/classes are not live product authorizations.",
+          "blocks": "current chemical use prescriptions only"
+        },
+        {
+          "id": "AGR-H-CM-ADVANCED",
+          "topic": "2go詳細の追加執筆",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 37,
+              "printedPage": 35
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 38,
+              "printedPage": 36
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 41,
+              "printedPage": 39
+            }
+          ],
+          "reason": "Leaf-fruit ratio numbers, staged thinning/alternate bearing, compatibility/fertilization, hormones, cooling-method suitability and curing remain to author; not claimed complete.",
+          "blocks": "those knowledge units only"
+        },
+        {
+          "id": "AGR-H-CM-RECOGNITION",
+          "topic": "収穫・防除・除草機具の認識画像",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 31,
+              "printedPage": 25
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 36,
+              "printedPage": 30
+            }
+          ],
+          "reason": "Photos visually checked as source; no source-photo copy or original recognition image generated by this packet.",
+          "blocks": "recognition imagery only"
+        }
+      ]
+    },
+    {
+      "worker": "translations-a",
+      "originalPayloadSha256": "c6743198f2cb3b0b492026a6a81dcc6d81056dd4188d1294960dc2eb9e3e3fa6",
+      "integratedPayloadSha256": "44ff5245ca1990c53dc99e054ed253c3e6c5cc1df0e385d196e06465239c6f0f",
+      "editorialRepairs": [
+        {
+          "locale": "en",
+          "lessonId": "agr-fruit",
+          "field": "paragraphs.agr-fruit-p2",
+          "severity": "clarity_taxonomic_grouping",
+          "before": "Citrus trees such as satsuma mandarin, and loquat, are classified as evergreen fruit trees. Learn the names together with their classification, rather than memorizing the names alone.",
+          "after": "Citrus trees, including satsuma mandarin, are evergreen fruit trees. Loquat is also an evergreen fruit tree. Learn the names together with their classification, rather than memorizing the names alone.",
+          "sourceJa": "ウンシュウミカンなどのかんきつ類や、ビワは常緑果樹として整理します。名前を覚えるだけでなく、分類と組み合わせて確認してください。",
+          "sourceReferences": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 7,
+              "printedPage": 1
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 6,
+              "printedPage": 4
+            }
+          ],
+          "reason": "Separate loquat explicitly from citrus examples; current punctuation is awkward and can be misread.",
+          "requiresSourceHashChange": false,
+          "applyOnlyIfBeforeStillMatches": true
+        },
+        {
+          "locale": "th",
+          "lessonId": "agr-fruit",
+          "field": "paragraphs.agr-fruit-p2",
+          "severity": "clarity_taxonomic_grouping",
+          "before": "พืชตระกูลส้ม เช่น ส้มอุนชู และปี่แป่ อยู่ในกลุ่มไม้ผลไม่ผลัดใบ นอกจากจำชื่อแล้ว ให้ตรวจสอบประเภทควบคู่กันด้วย",
+          "after": "พืชตระกูลส้ม เช่น ส้มอุนชู จัดอยู่ในกลุ่มไม้ผลไม่ผลัดใบ ส่วนต้นปี่แป่ก็เป็นไม้ผลไม่ผลัดใบเช่นกัน นอกจากจำชื่อแล้ว ให้ตรวจสอบประเภทควบคู่กันด้วย",
+          "sourceJa": "ウンシュウミカンなどのかんきつ類や、ビワは常緑果樹として整理します。名前を覚えるだけでなく、分類と組み合わせて確認してください。",
+          "sourceReferences": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 7,
+              "printedPage": 1
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 6,
+              "printedPage": 4
+            }
+          ],
+          "reason": "Explicitly separates loquat from citrus so it is not read as another example of the citrus family.",
+          "requiresSourceHashChange": false,
+          "applyOnlyIfBeforeStillMatches": true
+        }
+      ],
+      "lessonIds": [
+        "agr-climate",
+        "agr-fruit",
+        "agr-statistics",
+        "agr-vegetables"
+      ],
+      "lessonLocalePairs": 48,
+      "review": {
+        "sourceLanguage": "ja",
+        "method": "direct_in_session_translation_from_each_complete_Japanese_lesson",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "humanReviewed": false,
+        "complete": true,
+        "scope": "Four assigned stable lessons only; not whole-course translation completion",
+        "lessonIds": [
+          "agr-climate",
+          "agr-fruit",
+          "agr-statistics",
+          "agr-vegetables"
+        ],
+        "targetLocales": [
+          "bn",
+          "en",
+          "hi",
+          "id",
+          "km",
+          "my",
+          "ne",
+          "th",
+          "tl",
+          "vi",
+          "zh-CN",
+          "zh-TW"
+        ],
+        "lessonLocalePairs": 48,
+        "translatedParagraphs": 288,
+        "translatedTextFields": 720,
+        "sourceBindingsVerified": true,
+        "paragraphAndHeadingAlignmentVerified": true,
+        "allTargetFieldsNonempty": true,
+        "historicalYearsAndPercentagesChecked": true,
+        "sourceHashes": {
+          "agr-climate": "ddcee332204a8d627b6c832c733ad7721ef9efedf32ee880a205f1fbfae7bb7b",
+          "agr-fruit": "b915024a36469c05ff9670fd762bcd4e2538e4fbfc1b98c603804ce104c1ddd5",
+          "agr-statistics": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7",
+          "agr-vegetables": "33b85019a2fe2453eb6402c94fd89764b2f00e4a1adb3ebf0097f9a708c0566d"
+        },
+        "localeProfiles": {
+          "bn": {
+            "register": "respectful clear adult educational prose",
+            "address": "neutral explanatory and learner instructions; no invented gender, age or kinship",
+            "statisticalMeaning": "year, measurement basis and denominator preserved",
+            "terms": "local natural technical wording; Japanese glossary remains canonical in application",
+            "nativeReviewed": false
+          },
+          "en": {
+            "register": "respectful clear adult educational prose",
+            "address": "neutral explanatory and learner instructions; no invented gender, age or kinship",
+            "statisticalMeaning": "year, measurement basis and denominator preserved",
+            "terms": "local natural technical wording; Japanese glossary remains canonical in application",
+            "nativeReviewed": false
+          },
+          "hi": {
+            "register": "respectful clear adult educational prose",
+            "address": "neutral explanatory and learner instructions; no invented gender, age or kinship",
+            "statisticalMeaning": "year, measurement basis and denominator preserved",
+            "terms": "local natural technical wording; Japanese glossary remains canonical in application",
+            "nativeReviewed": false
+          },
+          "id": {
+            "register": "respectful clear adult educational prose",
+            "address": "neutral explanatory and learner instructions; no invented gender, age or kinship",
+            "statisticalMeaning": "year, measurement basis and denominator preserved",
+            "terms": "local natural technical wording; Japanese glossary remains canonical in application",
+            "nativeReviewed": false
+          },
+          "km": {
+            "register": "respectful clear adult educational prose",
+            "address": "neutral explanatory and learner instructions; no invented gender, age or kinship",
+            "statisticalMeaning": "year, measurement basis and denominator preserved",
+            "terms": "local natural technical wording; Japanese glossary remains canonical in application",
+            "nativeReviewed": false
+          },
+          "my": {
+            "register": "respectful clear adult educational prose",
+            "address": "neutral explanatory and learner instructions; no invented gender, age or kinship",
+            "statisticalMeaning": "year, measurement basis and denominator preserved",
+            "terms": "local natural technical wording; Japanese glossary remains canonical in application",
+            "nativeReviewed": false
+          },
+          "ne": {
+            "register": "respectful clear adult educational prose",
+            "address": "neutral explanatory and learner instructions; no invented gender, age or kinship",
+            "statisticalMeaning": "year, measurement basis and denominator preserved",
+            "terms": "local natural technical wording; Japanese glossary remains canonical in application",
+            "nativeReviewed": false
+          },
+          "th": {
+            "register": "respectful clear adult educational prose",
+            "address": "neutral explanatory and learner instructions; no invented gender, age or kinship",
+            "statisticalMeaning": "year, measurement basis and denominator preserved",
+            "terms": "local natural technical wording; Japanese glossary remains canonical in application",
+            "nativeReviewed": false
+          },
+          "tl": {
+            "register": "respectful clear adult educational prose",
+            "address": "neutral explanatory and learner instructions; no invented gender, age or kinship",
+            "statisticalMeaning": "year, measurement basis and denominator preserved",
+            "terms": "local natural technical wording; Japanese glossary remains canonical in application",
+            "nativeReviewed": false
+          },
+          "vi": {
+            "register": "respectful clear adult educational prose",
+            "address": "neutral explanatory and learner instructions; no invented gender, age or kinship",
+            "statisticalMeaning": "year, measurement basis and denominator preserved",
+            "terms": "local natural technical wording; Japanese glossary remains canonical in application",
+            "nativeReviewed": false
+          },
+          "zh-CN": {
+            "register": "respectful clear adult educational prose",
+            "address": "neutral explanatory and learner instructions; no invented gender, age or kinship",
+            "statisticalMeaning": "year, measurement basis and denominator preserved",
+            "terms": "local natural technical wording; Japanese glossary remains canonical in application",
+            "nativeReviewed": false
+          },
+          "zh-TW": {
+            "register": "respectful clear adult educational prose",
+            "address": "neutral explanatory and learner instructions; no invented gender, age or kinship",
+            "statisticalMeaning": "year, measurement basis and denominator preserved",
+            "terms": "local natural technical wording; Japanese glossary remains canonical in application",
+            "nativeReviewed": false
+          }
+        },
+        "remainingReviews": [
+          "Independent native-language/domain review",
+          "Actual-device selected-language rendering and font coverage"
+        ],
+        "noTestsTranslated": true,
+        "sourceLessonsReadCompletely": true
+      }
+    },
+    {
+      "worker": "translations-b",
+      "originalPayloadSha256": "ba35a555ea5eae9daa1380c59e23ea503c9d5722e700a14f2029d9aff281db83",
+      "integratedPayloadSha256": "ba35a555ea5eae9daa1380c59e23ea503c9d5722e700a14f2029d9aff281db83",
+      "editorialRepairs": [],
+      "lessonIds": [
+        "agr-crop-plan",
+        "agr-flowering",
+        "agr-flowers",
+        "agr-plant-balance"
+      ],
+      "lessonLocalePairs": 48,
+      "review": {
+        "status": "complete_ai_draft_structurally_checked",
+        "directJapaneseOnly": true,
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "sourceLessonIds": [
+          "agr-flowers",
+          "agr-plant-balance",
+          "agr-flowering",
+          "agr-crop-plan"
+        ],
+        "lessonLocalePairs": 48,
+        "paragraphTranslations": 288,
+        "titleAndBodyAlignmentChecked": true,
+        "pivotLanguageUsed": false,
+        "testsTranslated": false,
+        "validation": {
+          "pairs": 48,
+          "locales": 12,
+          "lessons": 4,
+          "paragraphs": 288,
+          "paragraphTitles": 288,
+          "sourceHashesMatch": true,
+          "allParagraphIdsMatch": true,
+          "nonemptyFields": true,
+          "unexpectedCjkScriptOutsideChineseLocales": false,
+          "humanReviewed": false,
+          "nativeReviewed": false,
+          "domainReviewed": false
+        }
+      }
+    },
+    {
+      "worker": "translations-c",
+      "originalPayloadSha256": "83b4030147c67570d021b207566200da941e2eb01c885a0436f4bc60628987ea",
+      "integratedPayloadSha256": "230d9eef7fac4531fdce0539a6dee8e1e95d01e2cc22a43b3c52d0216c268066",
+      "editorialRepairs": [
+        {
+          "locale": "id",
+          "lessonId": "agr-germination",
+          "sourceHash": "ff847c65d80c262c1c3e7d4de04312c4c16f8dcf438f286560528b0cc9348810",
+          "paragraphId": "agr-germination-p4",
+          "field": "paragraphs.agr-germination-p4",
+          "severity": "meaning_qualifier_fix",
+          "before": "Benih yang lebih mudah berkecambah saat terkena cahaya disebut benih yang memerlukan cahaya, sedangkan yang lebih sulit berkecambah saat terkena cahaya tergolong benih yang terhambat cahaya. Materi menjelaskan penutupan lebih tipis untuk kelompok pertama dan lebih tebal untuk kelompok kedua, bukan satu ketebalan pasti untuk semuanya.",
+          "after": "Benih yang lebih mudah berkecambah saat terkena cahaya disebut benih yang perkecambahannya dipacu cahaya, sedangkan yang lebih sulit berkecambah saat terkena cahaya tergolong benih yang terhambat cahaya. Materi menjelaskan penutupan lebih tipis untuk kelompok pertama dan lebih tebal untuk kelompok kedua, bukan satu ketebalan pasti untuk semuanya.",
+          "sourceJa": "光があると発芽しやすい種子は明発芽種子、光があると発芽しにくい種子は暗発芽種子です。資料では、前者は薄く、後者は厚く覆土するという違いが説明されています。具体的な厚さを一律に決める説明ではありません。",
+          "reason": "The definition correctly says germination is easier in light, but the Indonesian label memerlukan cahaya means requires light and can strengthen the source into an absolute requirement. Replace with a facilitative phrase without changing relative covering depths or introducing a fixed thickness.",
+          "applyOnlyIfBeforeAndSourceHashMatch": true
+        }
+      ],
+      "lessonIds": [
+        "agr-crop-types",
+        "agr-germination",
+        "agr-nursery",
+        "agr-plant-responses",
+        "agr-sowing-design"
+      ],
+      "lessonLocalePairs": 60,
+      "review": {
+        "status": "ai_drafts_complete_structurally_validated",
+        "sourceLanguage": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "directJapaneseOnly": true,
+        "ownedLessonIds": [
+          "agr-germination",
+          "agr-nursery",
+          "agr-crop-types",
+          "agr-plant-responses",
+          "agr-sowing-design"
+        ],
+        "styleGuide": "KAIGO_LANGUAGE_STYLE_GUIDE.md version1 principles adapted to adult agricultural explanations",
+        "lessonLocalePairs": 60,
+        "paragraphTranslations": 360,
+        "headingTranslations": 360,
+        "reviewedByNativeSpeaker": false,
+        "independentDomainReview": false,
+        "productionDeviceValidated": false,
+        "validation": {
+          "locales": 12,
+          "lessonsPerLocale": 5,
+          "lessonLocalePairs": 60,
+          "paragraphTexts": 360,
+          "paragraphHeadings": 360,
+          "allSourceHashesMatch": true,
+          "allParagraphIdsMatch": true,
+          "noEmptyFields": true,
+          "noReplacementCharacters": true,
+          "reviewScope": "AI direct Japanese fidelity and structural checks; native/domain/device review not performed"
+        },
+        "integrationNote": "Root has a separate Indonesian agr-germination-p4 facilitation-vs-requirement correction; apply during integration. Other locale paragraph definitions preserve ease rather than absolute light requirement."
+      }
+    }
+  ],
+  "newLessonIds": [
+    "agr-water-decision",
+    "agr-water-methods",
+    "agr-soil-texture",
+    "agr-soil-groups",
+    "agr-soil-structure",
+    "agr-soil-building",
+    "agr-soil-ph-measure",
+    "agr-soil-rotation",
+    "agr-water-equipment-2",
+    "agr-soil-biological-2",
+    "agr-fertilizer-nutrients",
+    "agr-fertilizer-types",
+    "agr-fertilizer-release",
+    "agr-fertilizer-timing",
+    "agr-fertilizer-label",
+    "agr-fertilizer-quantity",
+    "agr-drainage-foundations",
+    "agr-drainage-comparison",
+    "agr-management-shoots",
+    "agr-management-thinning",
+    "agr-management-pollination",
+    "agr-management-training",
+    "agr-management-harvest",
+    "agr-cover-methods",
+    "agr-cover-mulch",
+    "agr-pest-foundation",
+    "agr-pest-weeds",
+    "agr-pest-ipm"
+  ],
+  "newTranslations": 156,
+  "counts": {
+    "lessons": 43,
+    "knowledgeUnits": 258,
+    "weeklyQuestions": 104,
+    "lessonLocalePairs": 180,
+    "pageImagesChecked": 76
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "courseComplete": false,
+  "independentReviewReports": [
+    "parallel-03/review-water-soil.json",
+    "parallel-03/review-fertilizer.json",
+    "parallel-03/review-crop-management.json",
+    "parallel-03/translation-a-meaning-qa.json",
+    "parallel-03/translation-b-meaning-qa.json",
+    "parallel-03/translation-c-meaning-qa.json"
+  ],
+  "validation": {
+    "sourceBindings": "PASS",
+    "fullTypeScript": "PASS",
+    "changedTypeScriptEslint": "PASS_0_ERRORS_0_WARNINGS",
+    "browserTranslatedLessonLocalePairs": 180,
+    "browserViewports": 4,
+    "sourceOverlap48CharacterScreen": "NO_MATCHES",
+    "nativeDeviceTested": false,
+    "independentSemanticReviewOfEveryLocaleField": false
+  }
+}
