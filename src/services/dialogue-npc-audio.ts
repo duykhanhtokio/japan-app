@@ -1,5 +1,6 @@
 import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
-import * as DeviceSpeech from 'expo-speech';
+import Constants from 'expo-constants';
+import { Platform } from 'react-native';
 import { npcAudioClips, npcAudioEntries } from '../data/dialogue-content/npc-audio.generated';
 import casting from '../data/dialogue-content/npc-voice-casting.json';
 import voices from '../data/jlpt-original/voice-casting.json';
@@ -11,7 +12,9 @@ let current: AudioPlayer | null = null;
 let subscription: { remove(): void } | null = null;
 let watchdog: ReturnType<typeof setTimeout> | null = null;
 let generation = 0;
+let pending: AbortController | null = null;
 function release() {
+ pending?.abort(); pending = null;
  subscription?.remove(); subscription = null;
  if (watchdog) clearTimeout(watchdog); watchdog = null;
  const player = current; current = null;
@@ -20,50 +23,77 @@ function release() {
 export async function stop() {
  generation++;
  release();
- await DeviceSpeech.stop();
+
+}
+export function approvedVoiceFor(category?: string | null) {
+ const key = (category ?? '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+ const role = (casting.categories as Record<string, string>)[key] ?? casting.fallbackRole;
+ return { role, ...voices.roles[role as keyof typeof voices.roles] };
+}
+function voiceServer() {
+ const configured = process.env.EXPO_PUBLIC_NPC_VOICE_URL;
+ if (configured) return configured.replace(/\/$/, '');
+ const hostUri = Constants.expoConfig?.hostUri;
+ const host = Platform.OS === 'web' && typeof window !== 'undefined' ? window.location.hostname
+  : hostUri ? new URL(hostUri.includes('://') ? hostUri : `http://${hostUri}`).hostname : null;
+ return host ? `http://${host}:50130` : null;
 }
 /** Select recordings by exact source AND visual character voice, never just turn position. */
 export function recordingFor(text: string, options: Pick<Options, 'scenarioId' | 'turnId' | 'category'>) {
  const entry = npcAudioEntries[options.scenarioId]?.[options.turnId];
- const category = (options.category ?? '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
- const role = (casting.categories as Record<string, string>)[category] ?? casting.fallbackRole;
- const approved = voices.roles[role as keyof typeof voices.roles];
+ const { role, ...approved } = approvedVoiceFor(options.category);
  return entry && entry.sourceJa === text && entry.role === role && entry.speakerId === approved.speakerId && npcAudioClips[entry.clip] !== undefined
   ? { ...entry, source: npcAudioClips[entry.clip] } : null;
 }
 export function speak(text: string, options: Options) {
  const token = ++generation;
  release();
- const { scenarioId, turnId, category, ...speechOptions } = options;
+ const { scenarioId, turnId, category } = options;
  const recording = recordingFor(text, { scenarioId, turnId, category });
- const fallback = () => {
+ const fail = () => {
   if (token !== generation) return;
   release();
-  DeviceSpeech.speak(text, speechOptions);
+  options.onError?.();
  };
- // Preserve existing speech for lines not recorded yet; coverage is tracked explicitly.
- if (!recording) { fallback(); return; }
- try {
-  const player = createAudioPlayer(recording.source, { updateInterval: 75 });
-  current = player;
-  let started = false;
-  subscription = player.addListener('playbackStatusUpdate', status => {
+ const play = (source: number | {uri: string}, durationMs?: number, recover = false) => {
+  if (token !== generation) return;
+  const playbackFailure = () => recover ? requestLive() : fail();
+  try {
+   const player = createAudioPlayer(source, { updateInterval: 75 });
+   current = player;
+   let started = false;
+   subscription = player.addListener('playbackStatusUpdate', status => {
+    if (token !== generation || current !== player) return;
+    if (status.playbackState === 'error') { release(); playbackFailure(); return; }
+    if (status.playing) {
+     started = true;
+     if (watchdog) clearTimeout(watchdog); watchdog = null;
+     const duration = status.duration || (durationMs ?? 0) / 1000;
+     if (duration > 0) options.onBoundary?.({charIndex: Math.min(text.length, Math.floor(status.currentTime / duration * text.length)), charLength: 0});
+    }
+    if (status.didJustFinish) { generation++; release(); options.onDone?.(); }
+   });
+   watchdog = setTimeout(() => { if (!started) { release(); playbackFailure(); } }, 15000);
+   player.play();
+  } catch { release(); playbackFailure(); }
+ };
+ // Never substitute the device's unrelated default voice for an approved NPC.
+ const requestLive = () => {
+ const server = voiceServer();
+ if (!server) { fail(); return; }
+ const controller = new AbortController(); pending = controller;
+ const timeout = setTimeout(() => controller.abort(), 60000);
+ void fetch(`${server}/speech`, {method:'POST', headers:{'Content-Type':'application/json'}, signal:controller.signal,
+  body:JSON.stringify({text, speakerId:approvedVoiceFor(category).speakerId})})
+  .then(async response => {
+   if (!response.ok) throw new Error(`VOICEVOX ${response.status}`);
+   const result = await response.json() as {url:string};
+   if (!/^\/clip\/[a-f0-9]{64}\.wav$/.test(result.url)) throw new Error('Invalid voice clip');
    if (token !== generation) return;
-   if (status.playbackState === 'error') { fallback(); return; }
-   if (status.playing) {
-    started = true;
-    if (watchdog) clearTimeout(watchdog); watchdog = null;
-    // Time-proportional reveal, not word alignment; completion follows the actual decoder event.
-    const length = Math.min(text.length, Math.floor(status.currentTime / (status.duration || recording.durationMs / 1000) * text.length));
-    options.onBoundary?.({ charIndex: length, charLength: 0 });
-   }
-   if (status.didJustFinish) {
-    generation++;
-    release();
-    options.onDone?.();
-   }
-  });
-  watchdog = setTimeout(() => { if (!started) fallback(); }, 15000);
-  player.play();
- } catch { fallback(); }
+   pending = null;
+   play({uri:server+result.url});
+  }).catch(fail).finally(()=>clearTimeout(timeout));
+ };
+ if (recording) play(recording.source, recording.durationMs, true);
+ else requestLive();
 }

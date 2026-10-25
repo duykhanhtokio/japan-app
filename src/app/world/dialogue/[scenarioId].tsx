@@ -23,7 +23,7 @@ import { recordNpcScenario } from '@/services/npc-progression-storage';
 import { scenarioMission } from '@/components/world/scenario-mission';
 import { displayLocationNameJa } from '@/components/world/world-ja';
 import { getPlayerNativeHint } from '@/components/world/player-answer-guidance';
-import { dialogueCopyLines as copyLines, dialoguePanelLayout, nativeDialogueLineHeight } from '@/components/world/dialogue-panel-layout';
+import { dialogueCopyLines as copyLines, dialoguePanelLayout, dialogueTextPages, rubyDialogueLineHeight, nativeDialogueLineHeight } from '@/components/world/dialogue-panel-layout';
 import { RoyalBackButton, RoyalButton, RoyalHintButton, RoyalNavyFrame, ROYAL, ROYAL_FONT, ROYAL_PLACEMENT, ROYAL_TEXT_FIT, ROYAL_TYPE, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 
 const missingHint:Record<string,string>={ja:'この文のヒントはまだありません。',vi:'Chưa có gợi ý cho câu này.',en:'No hint is available for this line yet.',id:'Petunjuk untuk kalimat ini belum tersedia.','zh-CN':'这句话暂时没有提示。','zh-TW':'這句話暫時沒有提示。',hi:'इस वाक्य के लिए संकेत अभी उपलब्ध नहीं है।',bn:'এই বাক্যের ইঙ্গিত এখনও পাওয়া যায়নি।',ne:'यस वाक्यको सङ्केत अझै उपलब्ध छैन।',my:'ဤစာကြောင်းအတွက် အရိပ်အမြွက် မရရှိသေးပါ။',th:'ยังไม่มีคำใบ้สำหรับประโยคนี้',km:'មិនទាន់មានតម្រុយសម្រាប់ប្រយោគនេះទេ។',tl:'Wala pang pahiwatig para sa linyang ito.'};
@@ -53,6 +53,8 @@ function DialogueScreen({id}:{id?:string}){
  const latestTranscript=useRef('');
  latestTranscript.current=speech.finalTranscript.trim()||speech.transcript.trim();
  const [hintStages,setHintStages]=useState<Record<string,number>>({});
+ const [panelPages,setPanelPages]=useState<Record<string,number>>({});
+ const [audioRetry,setAudioRetry]=useState(0),[audioError,setAudioError]=useState(false);
  const viewport=useWindowDimensions();
  const stageSize=viewport;
  const abortListening=speech.abortListening;
@@ -78,7 +80,7 @@ function DialogueScreen({id}:{id?:string}){
    transitionBusy.current=false;
    setTransitioning(false);
   });
- },[abortListening,index,turnMotion,turns.length]);
+ },[abortListening,index,turnMotion,turns]);
  useEffect(()=>()=>turnMotion.stopAnimation(),[turnMotion]);
  useEffect(()=>{
   if(turn?.speaker==='PLAYER'&&speech.finalTranscript.trim()&&!speech.recognizing&&!speech.speechError&&index+1<turns.length){
@@ -95,6 +97,7 @@ function DialogueScreen({id}:{id?:string}){
   if(turn?.speaker==='NPC'&&turn.npc?.textJa&&!heardNpcIds.current.has(turn.id)){
    const spokenText=turn.npc.textJa;
    setNpcSpeechDone(false);
+   setAudioError(false);
    setSpokenLengths(previous=>({...previous,[turn.id]:0}));
    Speech.speak(spokenText,{scenarioId:turn.scenarioId,turnId:turn.id,category:location?.category,language:'ja-JP',rate:.82,
     onBoundary:(event:{charIndex:number;charLength?:number})=>{
@@ -110,13 +113,13 @@ function DialogueScreen({id}:{id?:string}){
      if(turns[index+1]?.speaker==='PLAYER')advanceTurn(index+1);
     },
     onStopped:()=>{if(active)setNpcSpeechDone(true)},
-    onError:()=>{if(active)setNpcSpeechDone(true)},
+    onError:()=>{if(active){setNpcSpeechDone(true);setAudioError(true);setRevealedTurnIds(previous=>new Set(previous).add(turn.id))}},
    });
   }else setNpcSpeechDone(true);
   };
   void begin().catch(()=>{if(active)setNpcSpeechDone(true)});
   return()=>{active=false;void Speech.stop()};
- },[turn?.id,turn?.speaker,turn?.npc?.textJa,location?.category,abortListening,index,turns,advanceTurn]);
+ },[turn?.id,turn?.speaker,turn?.npc?.textJa,turn?.scenarioId,location?.category,abortListening,index,turns,advanceTurn,audioRetry]);
  if(!scenario||!turn)return <RoyalPageBackground source={require('../../../../assets/app/backgrounds/profile-details.png')}><SafeAreaView style={s.emptyScreen}><Text style={s.empty}>会話データがありません。</Text></SafeAreaView></RoyalPageBackground>;
  const nextHint=(turnId:string,isNpc:boolean)=>{if(isNpc)setHintStages(previous=>({...previous,[turnId]:previous[turnId]?0:1}));else setHintStages(previous=>({...previous,[turnId]:previous[turnId]?0:1}))},move=(next:number)=>advanceTurn(next);
  const finish=async()=>{if(finishing)return;const category=normalizeNpcCategory(location?.category);if(!category){backPrepared();return}setFinishing(true);const result=await recordNpcScenario(scenario.id,category.id);const unlocked=result.unlockedCategoryId?npcCategoryById(result.unlockedCategoryId):null;setRewardCategory(unlocked??category);setRewardProgress(result.progress);setIsUnlock(!!unlocked);setRewardVisible(true);setFinishing(false)};
@@ -124,9 +127,8 @@ function DialogueScreen({id}:{id?:string}){
  const npcBoxHeight=stageSize.height*(wide?.82:.72),npcBoxWidth=stageSize.width*(wide?.48:.94);
  const npcDrawHeight=Math.min(npcBoxHeight,npcBoxWidth/npcRatio);
  const npcWaist=stageSize.height-controlsBottom-npcBoxHeight+(npcBoxHeight-npcDrawHeight)/2+npcDrawHeight*npcPresentation.waistY/npcPresentation.height;
- // Short phones show the current turn at full width. Previous turns remain
- // available through 前へ; the lantern switches between complete Japanese
- // and translated copy rather than stacking both in a shallow frame.
+ // Keep the NPC/Player pair below the source-image waist. Long copy pages
+ // inside its fixed lower-screen allocation; hints reuse the same text area.
  const lineHeight=nativeDialogueLineHeight(language);
  function layoutPanels(compact:boolean){
  const compactLandscape=compact&&wide;
@@ -135,32 +137,33 @@ function DialogueScreen({id}:{id?:string}){
  const missionFont=wide?12:ROYAL_TYPE.explanation,missionLine=wide?16:ROYAL_TYPE.explanationLine;
  const missionLines=copyLines(mission,missionWidth,missionFont);
  const headerHeight=compactLandscape?insets.top+8+Math.max(44,12+20+missionLines*missionLine):insets.top+ROYAL_PLACEMENT.headerTop+44+4+12+(wide?20:36)+missionLines*missionLine;
- const visiblePanels=compact?[turn]:turns.slice(Math.max(0,index-1),index+1);
- const panelSpecs=visiblePanels.map((panel,slot)=>{
+ const npcAt=turn.speaker==='NPC'?index:Math.max(0,index-1);
+ const npcPanel=turns[npcAt];
+ const playerPanel=turns[npcAt+1]?.speaker==='PLAYER'?turns[npcAt+1]:turns[npcAt-1]?.speaker==='PLAYER'?turns[npcAt-1]:undefined;
+ const visiblePanels=[npcPanel,playerPanel].filter((panel):panel is typeof turn=>!!panel);
+ const panelSpecs=visiblePanels.map(panel=>{
   const hintStage=hintStages[panel.id]??0,isNpc=panel.speaker==='NPC';
   const npcNative=panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null)??missingHint[language];
   const answerHasRuby=hasAlignedRuby(panel.player?.recommendedAnswerJa??'',panel.player?.recommendedAnswerRuby);
   const npcHasRuby=hasAlignedRuby(panel.npc?.textJa??'',panel.npc?.textRuby);
-  const npcIsJapanese=!compact||hintStage===0||language==='ja';
-  const copy=isNpc?[{text:compact&&hintStage>0&&language!=='ja'?npcNative:panel.npc?.textJa??'',lineHeight:npcIsJapanese&&npcHasRuby?3.2:lineHeight}]:[{text:hintStage>0?panel.player?.recommendedAnswerJa??'':(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language],lineHeight:hintStage>0?(answerHasRuby?3.2:1.25):lineHeight}];
-  if(isNpc&&!compact&&hintStage>0&&language!=='ja')copy.push({text:panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null)??missingHint[language],lineHeight});
-  const transcript=isNpc?'':visiblePanels.length===2&&slot===0?playerTranscripts[panel.id]??'':speech.transcript;
+  const npcIsJapanese=hintStage===0||language==='ja';
+  const copy=isNpc?[{text:npcIsJapanese?panel.npc?.textJa??'':npcNative,lineHeight:npcIsJapanese&&npcHasRuby?2.05:lineHeight}]:[{text:hintStage>0?panel.player?.recommendedAnswerJa??'':(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language],lineHeight:hintStage>0?(answerHasRuby?2.05:1.25):lineHeight}];
+  const transcript=isNpc?'':panel.id!==turn.id?playerTranscripts[panel.id]??'':speech.transcript;
   if(transcript)copy.push({text:`「${transcript}」`,lineHeight});
-  const japanese={text:isNpc?panel.npc?.textJa??'':panel.player?.recommendedAnswerJa??'',lineHeight:(isNpc?npcHasRuby:answerHasRuby)?3.2:1.3};
+  const japanese={text:isNpc?panel.npc?.textJa??'':panel.player?.recommendedAnswerJa??'',lineHeight:(isNpc?npcHasRuby:answerHasRuby)?2.05:1.3};
   const native={text:isNpc?npcNative:(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language],lineHeight};
-  const alternatives=isNpc?[!compact&&language!=='ja'?[japanese,native]:[japanese],[native]]:[[japanese],[native]];
+  const alternatives=[[japanese],[native]];
   if(transcript)for(const alternative of alternatives)alternative.push({text:`「${transcript}」`,lineHeight});
-  return{copy,alternatives,context:visiblePanels.length===2&&slot===0};
+  return{copy,alternatives,context:panel.id!==turn.id};
  });
  const panelLayout=dialoguePanelLayout({width:stageSize.width,height:stageSize.height,headerBottom:headerHeight,bottom:stageSize.height-controlsBottom-dockReserve,npcWaist,wide,compact,panels:panelSpecs});
  return {compactLandscape,headerHeight,visiblePanels,panelLayout};
  }
  let compact=wide?stageSize.height<480:stageSize.height<720;
  let layout=layoutPanels(compact);
- // Ruby adds a reading row. Reuse the existing single-turn phone mode when
- // two complete panels cannot fit at readable sizes; previous stays on 前へ.
+ // Short viewports use compact header/dock spacing while retaining both panels.
  if(!compact&&!layout.panelLayout.fits){compact=true;layout=layoutPanels(true);}
- const {compactLandscape,headerHeight,visiblePanels,panelLayout}=layout;
+ const {compactLandscape,visiblePanels,panelLayout}=layout;
  const entryDistance=Math.max(80,...panelLayout.placements.map(panel=>panel.height))+16;
  const renderPanel=(panel:typeof turn,context:boolean,slot:number)=>{
   const isNpc=panel.speaker==='NPC',showText=context||revealedTurnIds.has(panel.id),hintStage=hintStages[panel.id]??0;
@@ -170,29 +173,41 @@ function DialogueScreen({id}:{id?:string}){
   const panelRecognizing=!isNpc&&!context&&speech.recognizing;
   const {height:allocatedHeight,fontSize}=panelLayout.placements[slot];
   const fit={fontSize,lineHeight:fontSize*lineHeight};
-  return <View key={panel.id} style={[s.bubbleWrap,{height:allocatedHeight}]}>
+  const sourceText=isNpc?(hintStage>0&&language!=='ja'?npcTranslation??missingHint[language]:npcText):(hintStage>0?panel.player?.recommendedAnswerJa??'':(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]);
+  const ruby=(isNpc&&!(hintStage>0&&language!=='ja'))?(panel.npc?.textRuby?visibleRuby(panel.npc.textRuby,sourceText.length):undefined):!isNpc&&hintStage>0?panel.player?.recommendedAnswerRuby:undefined;
+  const aligned=hasAlignedRuby(sourceText,ruby);
+  const contentWidth=Math.max(60,panelLayout.placements[slot].width-52);
+  const factor=aligned?Math.max(2.05,rubyDialogueLineHeight(fontSize)):lineHeight;
+  const naturalHeight=Math.max(fontSize*factor,allocatedHeight-40);
+  let pages=dialogueTextPages(sourceText,contentWidth,fontSize,naturalHeight,factor,ruby);
+  if(pages.length>1||panelTranscript){
+   const pagedHeight=Math.max(fontSize*factor,allocatedHeight-62);
+   pages=dialogueTextPages(sourceText,contentWidth,fontSize,pagedHeight,factor,ruby);
+   if(panelTranscript)pages.push(...dialogueTextPages(`「${panelTranscript}」`,contentWidth,fontSize,pagedHeight,lineHeight));
+  }
+  const pageKey=`${panel.id}:${hintStage}`,pageIndex=Math.min(panelPages[pageKey]??0,pages.length-1),page=pages[pageIndex];
+  return <View testID={`dialogue-panel-${panel.speaker}`} key={panel.id} style={[s.bubbleWrap,{height:allocatedHeight}]}>
    <RoyalNavyFrame style={s.speakerPlate}><Text onPress={isNpc?()=>Alert.alert('VOICEVOX',Speech.voiceCredits):undefined} accessibilityRole={isNpc?'button':undefined} accessibilityLabel={isNpc?`${npcName} · VOICEVOX`:undefined} numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} style={s.speakerName}>{isNpc?npcName:playerName}</Text></RoyalNavyFrame>
-   <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame style={[{flex:1},(wide||compact)&&{paddingVertical:8,paddingHorizontal:22}]}>
-    {!isNpc?hintStage===0?<Text maxFontSizeMultiplier={1} style={[s.guidance,fit,{color:theme.text}]}>{(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]}</Text>:<JapaneseRuby fontSize={fontSize} text={panel.player?.recommendedAnswerJa??''} segments={panel.player?.recommendedAnswerRuby} color={theme.text} readingColor={theme.reading}/>:<>
-     {(!compact||hintStage===0||language==='ja')&&<JapaneseRuby testID="npc-japanese-ruby" text={npcText||' '} fontSize={fontSize} segments={panel.npc?.textRuby?visibleRuby(panel.npc.textRuby,npcText.length):undefined} color={theme.text} readingColor={theme.reading}/>}
-     {hintStage>0&&language!=='ja'&&<Text maxFontSizeMultiplier={1} style={[s.translation,fit,{color:theme.reading}]}>{npcTranslation??missingHint[language]}</Text>}
-    </>}
-    {!isNpc&&(panelRecognizing||!!panelTranscript)&&<Text maxFontSizeMultiplier={1} style={[s.transcript,fit,{color:theme.text}]}>「{panelTranscript||'音声を認識しています…'}」</Text>}
+   <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame style={[{flex:1},{paddingVertical:8,paddingHorizontal:22}]}>
+    {page.ruby?<JapaneseRuby testID={isNpc?'npc-japanese-ruby':'player-japanese-ruby'} text={page.text||' '} fontSize={fontSize} segments={page.ruby} color={theme.text} readingColor={theme.reading}/>:<Text testID="dialogue-copy" maxFontSizeMultiplier={1} style={[s.guidance,fit,{color:theme.text}]}>{page.text||' '}</Text>}
+    {panelRecognizing&&!panelTranscript&&<Text style={[fit,{color:theme.reading}]}>音声を認識しています…</Text>}
+    {pages.length>1&&<View style={s.copyPages}><Pressable accessibilityRole="button" accessibilityLabel="前のページ" disabled={pageIndex===0} onPress={()=>setPanelPages(previous=>({...previous,[pageKey]:pageIndex-1}))}><Text style={s.copyPageText}>‹</Text></Pressable><Text style={s.copyPageText}>{pageIndex+1}/{pages.length}</Text><Pressable accessibilityRole="button" accessibilityLabel="次のページ" disabled={pageIndex===pages.length-1} onPress={()=>setPanelPages(previous=>({...previous,[pageKey]:pageIndex+1}))}><Text style={s.copyPageText}>›</Text></Pressable></View>}
    </RoyalReadingFrame><RoyalHintButton onPress={()=>nextHint(panel.id,isNpc)} color={isNpc?'gold':'red'} style={s.hintButton}/></View>
   </View>;
  };
  return <ImageBackground inheritBackdrop key={location?.id} source={background} resizeMode="cover" style={s.screen}><View style={s.safe}>
   <View style={[s.header,{paddingTop:insets.top+(compactLandscape?8:ROYAL_PLACEMENT.headerTop)},compactLandscape&&{flexDirection:'row',alignItems:'center',gap:8}]}><View style={[s.headerRow,compactLandscape&&{width:'34%'}]}><RoyalBackButton onPress={()=>backPrepared()}/><View style={s.headerTitle}><View style={s.titleRow}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.title}>{location?displayLocationNameJa(location.nameJa,location.category):'会話練習'}</Text></View></View></View><View style={[s.missionCard,wide&&s.missionCardWide,compactLandscape&&{width:'64%',marginTop:0}]}><RoyalNavyFrame style={s.missionLabel}><Text style={s.missionLabelText}>課題</Text></RoyalNavyFrame><RoyalReadingFrame explanation style={wide?{paddingVertical:10}:undefined}><Text maxFontSizeMultiplier={1} style={[s.missionText,{color:ROYAL.paleGold},wide&&{fontSize:12,lineHeight:16}]}>{mission}</Text></RoyalReadingFrame></View></View>
   <View testID="dialogue-npc" pointerEvents="none" style={[s.npcLayer,{left:stageSize.width*(wide?.02:.03),top:stageSize.height-controlsBottom-npcBoxHeight,width:npcBoxWidth,height:npcBoxHeight}]}><Image key={location?.category} fadeDuration={0} source={npcImage} resizeMode="contain" style={s.npcImage}/></View>
-  <View testID="dialogue-panels" pointerEvents={transitioning?'none':'auto'} style={[s.conversation,{top:panelLayout.top,bottom:panelLayout.bottom,overflow:'hidden'},wide&&s.conversationWide,(panelLayout.columns||compact)&&{left:10,right:10}]}>
+  <View testID="dialogue-panels" accessibilityLabel={`waist:${npcWaist}`} pointerEvents={transitioning?'none':'auto'} style={[s.conversation,{top:panelLayout.top,bottom:panelLayout.bottom,overflow:'hidden'},wide&&s.conversationWide,(panelLayout.columns||compact)&&{left:10,right:10}]}>
    {visiblePanels.map((panel,slot)=>{
-    const previous=visiblePanels.length===2&&slot===0;
+    const previous=panel.id!==turn.id;
     const placement=panelLayout.placements[slot];
     return <NativeAnimated.View key={panel.id} style={{position:'absolute',left:placement.left,width:placement.width,top:placement.top,transform:[{translateY:transitioning?turnMotion.interpolate({inputRange:[0,1],outputRange:[entryDistance,0]}):0}]}}>
      {renderPanel(panel,previous,slot)}
     </NativeAnimated.View>;
    })}
   </View>
+  {audioError&&npcTurn&&<Pressable accessibilityRole="button" accessibilityLabel="音声を再生" onPress={()=>setAudioRetry(value=>value+1)} style={{position:'absolute',alignSelf:'center',bottom:controlsBottom+76,paddingHorizontal:12,paddingVertical:6,backgroundColor:'#15364e',borderRadius:8,zIndex:30}}><Text style={{color:'#fff',fontSize:14}}>音声を再生できません · 再試行 ↻</Text></Pressable>}
   {playerTurn&&<View testID="dialogue-microphone" style={[s.microphoneDock,{bottom:controlsBottom+(compactLandscape?0:wide?52:72),height:wide?44:48},wide&&s.conversationWide,compactLandscape&&{left:'44%',right:'44%'}]}><PulsingMic disabled={transitioning||!speech.speechAvailable||(npcTurn&&!npcSpeechDone)} recording={speech.recognizing} onPress={()=>{if(speech.recognizing)speech.stopListening();else void speech.startListening()}}/></View>}
   <View style={[s.controls,{bottom:controlsBottom},wide&&s.controlsWide,compactLandscape&&{left:10,right:10,gap:70}]}><RoyalButton contentStyle={wide?{paddingVertical:4}:undefined} disabled={transitioning||index===0} onPress={()=>move(index-1)} style={[s.control,wide&&{height:44,minHeight:44}]}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.controlText}>前へ</Text></RoyalButton><RoyalButton contentStyle={wide?{paddingVertical:4}:undefined} disabled={transitioning||finishing||(npcTurn&&!npcSpeechDone)} onPress={()=>index+1<turns.length?move(index+1):finish()} style={[s.control,wide&&{height:44,minHeight:44}]}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.controlText}>{index+1<turns.length?'次へ':finishing?'保存中…':npcTurn&&!npcSpeechDone?'再生中…':'終了'}</Text></RoyalButton></View>
   {rewardVisible&&<NpcRewardModal visible={rewardVisible} category={rewardCategory} progress={rewardProgress} isUnlock={isUnlock} onClose={()=>{
@@ -207,6 +222,7 @@ function DialogueScreen({id}:{id?:string}){
 }
 
 const s=StyleSheet.create({
+ copyPages:{height:20,flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginTop:2},copyPageText:{fontSize:13,color:'#34516b',paddingHorizontal:10},
  screen:{flex:1},safe:{flex:1},
  header:{zIndex:10,width:'100%',paddingHorizontal:ROYAL_PLACEMENT.headerHorizontal,paddingTop:ROYAL_PLACEMENT.headerTop},headerRow:{flexDirection:'row',alignItems:'center',gap:ROYAL_PLACEMENT.headerGap},headerTitle:{flex:1},
  titleRow:{flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:6},title:{flex:1,color:'#fff',fontFamily:ROYAL_FONT.heading,fontSize:20,},
@@ -218,7 +234,7 @@ const s=StyleSheet.create({
  japanese:{fontFamily:ROYAL_FONT.heading,fontSize:17,lineHeight:21,textAlign:'center'},reading:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:19,marginTop:3,textAlign:'center'},guidance:{fontFamily:ROYAL_FONT.body,fontSize:17,lineHeight:21,textAlign:'center'},
  translation:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:21,marginTop:3,textAlign:'center'},
  microphoneDock:{position:'absolute',left:10,right:10,zIndex:9,height:48,alignItems:'center',justifyContent:'center'},
- actionRow:{height:44,width:'100%',flexDirection:'row',alignItems:'center',justifyContent:'center',gap:28},hintButton:{position:'absolute',right:8,bottom:-28.5,zIndex:20,width:45,height:57},
+ actionRow:{height:44,width:'100%',flexDirection:'row',alignItems:'center',justifyContent:'center',gap:28},hintButton:{position:'absolute',left:8,bottom:-28.5,zIndex:20,width:45,height:57},
  speechArea:{marginTop:8,alignItems:'center',justifyContent:'center',gap:6,minHeight:44},transcript:{width:'100%',fontSize:16,lineHeight:24,fontFamily:ROYAL_FONT.body,textAlign:'center',textAlignVertical:'center',includeFontPadding:false},speechNotice:{marginTop:4,marginHorizontal:12,color:'#fff3e1',fontFamily:ROYAL_FONT.body,fontSize:12,lineHeight:18,textAlign:'center',},mic:{width:44,height:44,alignItems:'center',justifyContent:'center'},micIcon:{width:28,height:28},
  controls:{position:'absolute',zIndex:8,left:10,right:10,flexDirection:'row',gap:6},controlsWide:{left:'51%',right:'3%'},control:{flex:1,height:66,minHeight:66},controlText:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:18},pressed:{opacity:.86,},disabled:{opacity:.35},emptyScreen:{flex:1,backgroundColor:'transparent'},empty:{color:'#fff',fontFamily:ROYAL_FONT.body,padding:24,fontSize:18},
 });

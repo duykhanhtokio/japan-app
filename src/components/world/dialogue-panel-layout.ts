@@ -49,38 +49,75 @@ export function nativeDialogueLineHeight(language: string): number {
   return ['hi', 'bn', 'ne', 'my', 'th', 'km'].includes(language) ? 1.45 : 1.3;
 }
 
+export function rubyDialogueLineHeight(fontSize: number) {
+  return 1.25 + 1.25 * Math.max(9, fontSize * .56) / fontSize;
+}
+
 export function dialoguePanelLayout({ width, height, headerBottom, bottom, npcWaist, wide, compact = false, panels }: {
   width: number; height: number; headerBottom: number; bottom: number; npcWaist: number; wide: boolean; compact?: boolean; panels: DialoguePanelSpec[];
 }) {
-  const gap = 16, inset = wide || compact ? 40 : 60;
-  const topLimit = Math.max(0, headerBottom + 8), bottomLimit = Math.min(height, bottom);
+  const gap = 12, inset = 40;
+  const topLimit = Math.max(0, headerBottom + 8, npcWaist), bottomLimit = Math.min(height, bottom);
   const available = Math.max(0, bottomLimit - topLimit);
   const normalWidth = wide && !compact ? width * .46 : width - 20;
   function required(spec: DialoguePanelSpec, panelWidth: number, fontSize: number) {
     const copyWidth = Math.max(80, panelWidth - (wide || compact ? 44 : 56) - 8);
-    const copyHeight = Math.max(...[spec.copy, ...(spec.alternatives ?? [])].map(copy => copy.reduce((sum, row) => sum + dialogueCopyLines(row.text, copyWidth, fontSize) * fontSize * row.lineHeight, 0)));
+    const copyHeight = Math.max(...[spec.copy, ...(spec.alternatives ?? [])].map(copy => copy.reduce((sum, row) => sum + dialogueCopyLines(row.text, copyWidth, fontSize) * fontSize * (row.lineHeight >= 2 ? Math.max(row.lineHeight, rubyDialogueLineHeight(fontSize)) : row.lineHeight), 0)));
     return Math.ceil(copyHeight + inset + 8);
   }
   const atFourteen = panels.map(spec => required(spec, normalWidth, 14));
-  const columns = wide && panels.length === 2 && atFourteen.reduce((sum, value) => sum + value, gap) > available;
+  const columns = panels.length === 2 && (wide || (available < 200 && atFourteen.reduce((sum, value) => sum + value, gap) > available));
   const panelWidth = columns ? (width - 20 - gap) / 2 : normalWidth;
   const fonts = panels.map(() => 17);
   const heights = () => panels.map((spec, i) => required(spec, panelWidth, fonts[i]));
   const total = () => columns ? Math.max(0, ...heights()) : heights().reduce((sum, value) => sum + value, gap * Math.max(0, panels.length - 1));
-  // Give complete copy the empty space above the NPC's waist before reducing
-  // type. The current prompt stays at least 14; context may use 12.
+  // The waist is a hard boundary. Long copy is paged inside the allocated frame.
+  // Never borrow space above the character waist to fit a transcript.
   const order = panels.map((_, i) => i).sort((a, b) => Number(panels[b].context) - Number(panels[a].context));
   for (const i of order) {
     const minimum = panels[i].context ? 12 : 14;
     while (fonts[i] > minimum && (columns ? heights()[i] > available : total() > available)) fonts[i] -= .5;
   }
-  const sizes = heights(), extent = total();
-  const top = Math.max(topLimit, Math.min(npcWaist, bottomLimit - extent));
+  const budget = columns ? available : Math.max(0, (available - gap * Math.max(0, panels.length - 1)) / Math.max(1, panels.length));
+  const sizes = heights().map(value => Math.min(value, budget));
+  const top = topLimit;
   let next = 0;
   const placements = sizes.map((panelHeight, i) => {
     const placement = { left: columns ? i * (panelWidth + gap) : 0, top: columns ? 0 : next, width: panelWidth, height: panelHeight, fontSize: fonts[i] };
     next += panelHeight + gap;
     return placement;
   });
-  return { top, bottom: height - bottomLimit, columns, placements, fits: extent <= available };
+  return { top, bottom: height - bottomLimit, columns, placements, fits: budget >= 64 };
+}
+
+export type DialogueRubyPart = { text: string; reading?: string };
+/** Page complete source copy inside a fixed frame, retaining aligned ruby groups. */
+export function dialogueTextPages(text: string, width: number, fontSize: number, maxHeight: number, lineFactor: number, ruby?: DialogueRubyPart[]) {
+  const rows = Math.max(1, Math.floor(maxHeight / (fontSize * lineFactor)));
+  const aligned = ruby?.map(part => part.text).join('') === text;
+  const units: DialogueRubyPart[] = aligned ? ruby! : (text.match(/[A-Za-zÀ-ž0-9]+|[^A-Za-zÀ-ž0-9]/gu) ?? []).flatMap(token => dialogueCopyLines(token,width,fontSize)>1 ? graphemes(token).map(text=>({text})) : [{text:token}]);
+  const pages: { text: string; ruby?: DialogueRubyPart[] }[] = [];
+  let current: DialogueRubyPart[] = [];
+  const flush = () => {
+    if (!current.length) return;
+    pages.push({ text: current.map(part => part.text).join(''), ...(aligned ? { ruby: current } : {}) });
+    current = [];
+  };
+  for (const unit of units) {
+    const candidate = current.map(part => part.text).join('') + unit.text;
+    let lines = 1;
+    if (aligned) {
+      let used = 0;
+      for (const part of [...current, unit]) {
+        const units = (value: string) => graphemes(value).reduce((sum, char) => sum + advance(char), 0);
+        const size = Math.max(units(part.text) * fontSize, units(part.reading ?? '') * Math.max(9,fontSize*.56));
+        if (used && used + size > width) { lines++; used = 0; }
+        used += size;
+      }
+    } else lines = dialogueCopyLines(candidate, width, fontSize);
+    if (current.length && lines > rows) flush();
+    current.push(unit);
+  }
+  flush();
+  return pages.length ? pages : [{ text: '' }];
 }
