@@ -7,7 +7,7 @@ export function restoreAgricultureProgress(raw:string|null):AgricultureProgress|
  if(raw===null)return {version:1,entries:{}};
  try {
   const p=JSON.parse(raw);
-  if(!p || p.version!==1 || !p.entries || typeof p.entries!=='object' || Array.isArray(p.entries) || !Object.entries(p.entries).every(([id,hash])=>/^agr-[a-z-]+$/.test(id)&&typeof hash==='string'&&/^[a-f0-9]{64}$/.test(hash)))return null;
+  if(!p || p.version!==1 || !p.entries || typeof p.entries!=='object' || Array.isArray(p.entries) || !Object.entries(p.entries).every(([id,hash])=>/^agr-[a-z0-9-]+$/.test(id)&&typeof hash==='string'&&/^[a-f0-9]{64}$/.test(hash)))return null;
   return {version:1,entries:{...p.entries}};
  }catch{return null;}
 }
