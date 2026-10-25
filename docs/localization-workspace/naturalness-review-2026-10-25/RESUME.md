@@ -4,9 +4,10 @@ Status: IN_PROGRESS. This checkpoint does not certify the corpus.
 
 Active resume authority: `prefecture-queue.json`. Work by prefecture, then city,
 then complete scenario sets across all 12 target locales. Ishikawa PRF-017 has
-101 scenarios across 11 cities; Kaga and Komatsu now have all 16 sentence/task
-sets context-reviewed. Metadata, Japanese author issues and visual/native review
-are distinct and unfinished. Next: SC-ISK-NANAO-001, batch 151.
+101 scenarios across 11 cities; Kaga, Komatsu, Nanao and Wajima now have all
+32 sentence/task sets context-reviewed. Metadata, Japanese author issues and
+visual/native review are distinct and unfinished. Next: SC-LOC-017-01-001,
+batch 034 (Kanazawa).
 
 Publisher scope: all 7,128 Japanese scenarios and all 12 target locales,
 including dialogue, task hints, scenario metadata, other learning content and
@@ -129,3 +130,33 @@ Work for this pass is isolated in `japan-app-prefecture-review` so concurrent
 ambient-lighting/UI changes in the earlier checkout remain untouched. Commit
 only the 36 locale data files and this review's documents; do not piggyback
 unpublished changes from another checkout.
+
+## Prefecture pass04 — Nanao and Wajima sentence/task cluster
+
+Read all 16 complete Japanese premises, exchanges and task hints and all 12
+target languages. Reviewed 3,072 additional fields and corrected 484: vi253,
+en14, id21, tl22, zh-CN19, zh-TW23, hi32, bn20, ne17, my16, th22, km25.
+Exact edits and all reviewed source/target hashes are in prefecture-pass-04.json.
+Corrections distinguish an eight-month-old baby from a newborn, clarify who
+asks to view ferry registration, distinguish a festival welcome desk from
+administrative intake, preserve unfinished quantities inside a production box,
+and clarify whose contact number replaces a previous lost-property inquiry.
+Retail, food ordering, care-home clothing and bank-letter dialogue now give
+clearer objects, actors and speech tasks without adding real-world policies.
+
+Two Japanese ambiguities remain recorded: 叔母 does not specify the maternal/
+paternal branch, and one wagashi task says box count while the response asks
+box capacity. The existing Vietnamese aunt term remains unresolved pending
+author clarification. No Japanese source or approved UI was changed.
+
+Exact patch replay, source/ID/speaker/hint bindings, reviewed loader hashes,
+full technical loader coverage and approved UI locks are checked separately.
+The 24 changed translation-file hashes are synchronized with the existing
+coverage manifest; no native or semantic-certification flags are promoted.
+
+Ishikawa sentence/task context review is now 32/101; 69 remain. Kaga, Komatsu,
+Nanao and Wajima each have 8/8 sets reviewed. Next: Kanazawa 21 scenarios,
+starting SC-LOC-017-01-001, then the other six Ishikawa cities (48 scenarios).
+Corpus sentence/task progress is 32/7,128. Metadata, other learning/UI content,
+source issues, native review and device/browser visual validation remain open.
+This checkpoint is not a statement that the prefecture or corpus is finished.
