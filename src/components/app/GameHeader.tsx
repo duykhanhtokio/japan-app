@@ -1,6 +1,6 @@
 import { EffectPressable as Pressable } from '@/components/effects/EffectPressable';
 import { pushPrepared, replacePrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
-import RoyalPaperPanel, { royalOpenFrameGeometry } from '@/components/ui/RoyalPaperPanel';
+import { OPEN_FRAME_SLICES, royalOpenFrameGeometry } from '@/components/ui/RoyalPaperPanel';
 import { router } from 'expo-router';
 import { Image, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { RoyalBackButton, ROYAL, ROYAL_FONT, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
@@ -101,7 +101,12 @@ function EnergyBar({label,value,ratio,tint,large=false}:{label:string;value:stri
  const percentage=Math.round(clamp01(ratio)*100);
  return <View testID={`hud-energy-${label.startsWith('CREDIT')?'credit':'exp'}`} style={[s.energyFrame,large&&s.approvedEnergyFrame]}>
   <View pointerEvents="none" style={[s.energyInset,{left:inset.left,right:inset.right,top:inset.top,bottom:inset.bottom,borderRadius:inset.radius,backgroundColor:'#fff7e7'}]}><View style={[s.energyColorClip,{width:`${percentage}%`,backgroundColor:tint}]}/></View>
-  <RoyalPaperPanel borderOnly edgeScale={inset.cornerX/36} style={{...StyleSheet.absoluteFillObject,minHeight:0,padding:0}} />
+  <View pointerEvents="none" style={StyleSheet.absoluteFillObject}>{OPEN_FRAME_SLICES.map((source,index)=>{
+   const cell=index<4?index:index+1,row=Math.floor(cell/3),col=cell%3;
+   const horizontal=col===0?{left:0,width:inset.cornerX}:col===2?{right:0,width:inset.cornerX}:{left:inset.cornerX,right:inset.cornerX};
+   const vertical=row===0?{top:0,height:inset.cornerY}:row===2?{bottom:0,height:inset.cornerY}:{top:inset.cornerY,bottom:inset.cornerY};
+   return <View key={cell} style={{position:'absolute',...horizontal,...vertical}}><Image fadeDuration={0} source={source} resizeMode="stretch" style={{width:'100%',height:'100%'}}/></View>;
+  })}</View>
   <View pointerEvents="none" style={s.energyTextSafe}><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.78} maxFontSizeMultiplier={1} style={[s.energyCenteredText,percentage>=55&&s.creditText]}>{label}{value?`  ${value}`:''}</Text></View>
  </View>;
 }
