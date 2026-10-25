@@ -65,6 +65,7 @@ export function speak(text: string, options: Options) {
  const play = (source: number | {uri: string}, durationMs?: number, startMs = 0, recover = false) => {
   if (token !== generation) return;
   const playbackFailure = () => recover ? requestLive() : fail();
+  const packed = Boolean(recording && 'startMs' in recording);
   try {
    const start=startMs/1000,end=durationMs?start+durationMs/1000:0;
    const actualSource=packed&&Platform.OS==='web'&&typeof source==='object'?{uri:`${source.uri}#t=${start},${end}`}:source;
