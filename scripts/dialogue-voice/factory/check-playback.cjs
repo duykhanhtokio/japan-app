@@ -3,7 +3,7 @@ const path = require('node:path');
 (async () => {
  const root = path.resolve(__dirname, '../../..');
  const build = await require('esbuild').build({entryPoints:[path.join(root,'src/services/dialogue-npc-audio.ts')],bundle:true,write:false,platform:'node',format:'cjs',external:['expo-audio','expo-constants','react-native'],plugins:[{name:'packed-fixture',setup(b){
- b.onLoad({filter:/dialogue-audio-packs\.ts$/},()=>({contents:`export function packedRecordingFor(text,id,turn,role,speakerId){return text==='録音です。'&&id==='fixture'&&turn==='t1'?{sourceJa:text,role,speakerId,source:{uri:'https://example.test/voice.mp3'},startMs:12000,durationMs:2400}:null;}`,loader:'ts'}));
+ b.onLoad({filter:/dialogue-audio-packs\.ts$/},()=>({contents:`export const npcAudioRelease={complete:false}; export function packedRecordingFor(text,id,turn,role,speakerId){return text==='録音です。'&&id==='fixture'&&turn==='t1'?{sourceJa:text,role,speakerId,source:{uri:'https://example.test/voice.mp3'},startMs:12000,durationMs:2400}:null;}`,loader:'ts'}));
  b.onResolve({filter:/\.mp3$/},a=>({path:a.path,external:true}));
  }}]});
  const players=[];let done=0,errors=0,requests=0,interruption;
