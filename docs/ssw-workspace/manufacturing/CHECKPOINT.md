@@ -1,3 +1,19 @@
+# Manufacturing SSW1 — batch13 integrated draft curriculum and mock runner
+
+Date: 2026-10-26 (Asia/Tokyo). Scope: 製造分野・特定技能1号 only; SSW2 excluded.
+
+Integrated91additional Japanese lessons and156weekly questions: mechanical21/36, electrical42/72, surface28/48. Totals224lessons,32weekly checks/384questions, previewweeks10/12/10. Earlier133lessons/228questions remain value-identical. Additional lessons received author AI review and bounded cross-track AI review; no full source semantic, native or domain certification. Source/knowledge links remain partial;574page structural inventory is not full semantic coverage.
+
+Created and integrated30original draft mock forms (10per specialty), each30true/false theory questions and10practical four-choice questions;1200globally distinct mock stems, no exact within-specialty weekly overlaps. Theory/practical each2400000ms (40minutes), separate app equal-weight practice thresholds20/30 and6/10. These integer thresholds are app practice scoring and do not guarantee unpublished official scoring. AI author review remains distinct from independent/native/domain review. Original expressions; source exercises and SSW2 not used.
+
+Actual controller supports explicit start, independent clocks, deadline/answer/position restore, automatic expiry, storage failure retry, invalid record explicit reset, results after both sections and no early rationale leak. Japanese canonical; missing translations display pending and never silently substitute another language. Mock content translations/furigana remain incomplete.11existing diagrams retained. Chinese zh-CN/zh-TW each cover all current224lessons/384weekly questions and11captions as AI drafts; Traditional Chinese used orthographic preparation followed by Japanese comparison and regional terminology adaptation. Other locale counts are in progress.json and revision-bound manifest and remain partial for the expanded curriculum.
+
+Validation: scripts/manufacturing/check.cjs PASS224/384; check-batch13.py PASS30forms/1200unique questions/source and lesson hashes/answer balance/prior content preservation. Mock state checker PASS. Browser fixture26checks and integrated actual30forms at320x568/932x43060checks PASS,0pageerrors; selected screenshots inspected. RNWeb harness uses storage/safearea/Royal adapters, so fullExpo/native/device/whole-app visual certification is not claimed. Scoped ESLint0errors/0warnings after hook dependency repair. Full repository TypeScript reports566errors (565kensetsu missing dependencies and1agriculture typing issue),0manufacturing diagnostics; fullbuild not certified. JLPT byte-lock verified separately. Two worker service-capacity errors prevented planned followup review; no automatic retry.
+
+Wholecurriculum/release flags remainfalse. Remaining: complete source semantic/object review and curriculum/illustration coverage, all12targetlocale gaps including mocks, independent mock/content review, fullExpo/type/build/native/device checks. No unattended process implied. See batch13/session-evidence.json, mock-data-qa.json, production-browser.json and progress.json. Historical checkpoints below retain earlier scoped counts.
+
+---
+
 # Manufacturing SSW1 — batch11 Thai coverage of current authored content
 
 Date:2026-10-26 (Asia/Tokyo). Manufacturing baseline:0c902c0d. SixAIworkers; only 製造分野・特定技能1号,SSW2 excluded.

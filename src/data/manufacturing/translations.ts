@@ -3,11 +3,11 @@ export type LessonTranslation={sourceHash:string;title:string;objective:string;p
 export type QuestionTranslation={sourceHash:string;stem:string;options:string[];reasons:string[]};
 export function manufacturingTranslation(lesson:ManufacturingLesson,locale:string):LessonTranslation|null {
  let entries:Record<string,LessonTranslation>|null=null;
- switch(locale){case 'th':entries=require('./translations/th.json').lessons;break;case 'id':entries=require('./translations/id.json').lessons;break;case 'vi':entries=require('./translations/vi.json').lessons;break;case 'en':entries=require('./translations/en.json').lessons;break;}
+ switch(locale){case 'tl':entries=require('./translations/tl.json').lessons;break;case 'zh-TW':entries=require('./translations/zh-TW.json').lessons;break;case 'zh-CN':entries=require('./translations/zh-CN.json').lessons;break;case 'th':entries=require('./translations/th.json').lessons;break;case 'id':entries=require('./translations/id.json').lessons;break;case 'vi':entries=require('./translations/vi.json').lessons;break;case 'en':entries=require('./translations/en.json').lessons;break;}
  const item=entries?.[lesson.id];return item?.sourceHash===lesson.sourceHash?item:null;
 }
 export function manufacturingQuestionTranslation(question:ManufacturingQuestion,locale:string):QuestionTranslation|null {
  let entries:Record<string,QuestionTranslation>|null=null;
- switch(locale){case 'th':entries=require('./translations/questions.th.json').questions;break;case 'id':entries=require('./translations/questions.id.json').questions;break;case 'vi':entries=require('./translations/questions.vi.json').questions;break;case 'en':entries=require('./translations/questions.en.json').questions;break;}
+ switch(locale){case 'zh-TW':entries=require('./translations/questions.zh-TW.json').questions;break;case 'zh-CN':entries=require('./translations/questions.zh-CN.json').questions;break;case 'th':entries=require('./translations/questions.th.json').questions;break;case 'id':entries=require('./translations/questions.id.json').questions;break;case 'vi':entries=require('./translations/questions.vi.json').questions;break;case 'en':entries=require('./translations/questions.en.json').questions;break;}
  const item=entries?.[question.id];return item?.sourceHash===question.sourceHash?item:null;
 }
