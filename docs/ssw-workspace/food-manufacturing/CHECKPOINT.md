@@ -2,7 +2,16 @@
 
 Internal development preview on `feature/food-manufacturing-20261026`. Read IMPLEMENTATION_REQUEST.md, progress.json, source-review.md, source-map.json and batch-06-review.json. AI checks do not certify native, expert or release quality.
 
-## Current content
+## Continuation after batch06
+
+- Added Indonesian translations for the first 10 questions in the canonical order of `food-1-mock-03`, plus its title. Translation commit: `b3f43f54be3feeb5866bfb9c5546f088a233560e`.
+- New IDs: food-1-q271, food-1-q092, food-1-q336, food-1-q150, food-1-q275, food-1-q282, food-1-q256, food-1-q163, food-1-q350, food-1-q090.
+- Current totals: 2,478 question-locale pairs; Indonesian 209, EN/VI 239 each, other nine locales 199 each. Remaining: 7,590 pairs.
+- Checked directly against canonical Japanese: 10 sourceHash values match the existing English revision anchors; four choices and four reasons per item; correct-answer explanation alignment; all 199 previous Indonesian question entries preserved exactly. No Japanese questions, answer positions, runtime or UI files changed.
+- These 10 additions are AI-authored and have NOT received browser, native-speaker or domain-expert validation. Batch06 browser evidence below still covers only its original 2,468 pairs. `progress.json` and batch06 review reports remain historical until the next full-batch audit.
+- Next action: translate the remaining 30 questions of `food-1-mock-03` into Indonesian using exact canonical form membership, then finish the other nine missing locales and continue the batch06 next-work plan. Do not count this partial addition as the complete 960-pair batch.
+
+## Batch06 content baseline
 
 - 78 canonical Japanese lessons: 42 for 1号 in 7 weeks; 36 for 2号 in 6 weeks. All 12 target lesson locales have 78 entries each (936 pairs).
 - 20 mock forms: 10 per level, 40 questions each (800 total), plus 13 weekly checks of 3 questions (39 total). All 839 Japanese items and 33 assessment revisions are unchanged from batch02.
