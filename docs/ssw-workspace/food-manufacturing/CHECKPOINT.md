@@ -1,8 +1,17 @@
 # Food manufacturing implementation checkpoint
 
-Internal development preview on `feature/food-manufacturing-20261026`. Read IMPLEMENTATION_REQUEST.md, progress.json, source-review.md, source-map.json and batch-09-review.json. AI checks do not certify native, expert or release quality.
+Internal development preview on `feature/food-manufacturing-20261026`. Read IMPLEMENTATION_REQUEST.md, progress.json, source-review.md, source-map.json and batch-10-review.json. AI checks do not certify native, expert or release quality.
 
-## Batch09 — six parallel translation assignments
+## Batch10 — six parallel translation assignments
+
+- Added240 question-locale pairs and six titles: food-2-mock-03 in zh-CN,zh-TW,bn, and food-1-mock-04 in en,vi,id. Mock01-03 of BOTH levels are now complete in all12 locales; food-1-mock-04 has three complete locales.
+- Current total3,468 pairs: en/vi/id each319; the other nine locales each279. Remaining6,600 pairs. All3,228 prior pairs/titles preserved; Japanese items/revisions, runtime, UI, lessons and diagram data unchanged.
+- PASS:240 hashes and exact form memberships, four choices/reasons, correct-reason/main-explanation alignment, nonempty/script checks, and existing adapter valid/stale/missing-locale behavior. Report: batch-10-review.json.
+- Independent AI critical reviews covered72 locale-question units; no material issues found. Six exact arithmetic cases plus one hypothetical CL/OL classification PASS.16 worded-number audit candidates reviewed equivalent;0pending. Negative avoid-action wording, expiry/storage scope, last-normal-detector product period, emergency authority and jam/isolation safety are preserved.
+- Browser baseline remains2,468 pairs/9,872 viewport cases. All1,000 additions after batch06 await browser QA; no new browser/native/fullExpo or native/expert certification claimed. The original960-pair target is complete, with40 additional ID pairs for food-1-mock-04.
+- Next action: translate all40 food-1-mock-04 questions/title into tl,th,my,km,hi,ne,zh-CN,zh-TW,bn (360pairs), then continue remaining mock forms. Keep sector work independent and approved JLPT UI unchanged.
+
+## Historical batch09 — six parallel translation assignments
 
 - Added240 question-locale pairs and six titles: all40 canonical food-2-mock-03 questions in tl,th,my,km,hi,ne. This form is now complete in nine locales (en,vi,id plus these six); zh-CN,zh-TW,bn remain.
 - Current total3,228 pairs; en,vi,id,tl,th,my,km,hi,ne each279 and zh-CN,zh-TW,bn each239. Remaining6,840 pairs. All2,988 prior pairs/titles preserved; Japanese questions/revisions, runtime, UI, lessons and diagram data unchanged.

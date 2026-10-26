@@ -223,14 +223,14 @@
   },
   "productionRelease": false,
   "remaining": [
-    "Complete6840 remaining mock question-locale translations. Weekly checks, mock01/02 of both levels and food-1-mock-03 are in all12 locales. food-2-mock-03 complete in en,vi,id,tl,th,my,km,hi,ne; zh-CN,zh-TW,bn pending.",
+    "Complete6600 remaining mock question-locale translations. All weekly checks and mock01-03 of both levels are translated in all12 locales; food-1-mock-04 additionally EN/VI/ID.",
     "Verified full-body furigana",
     "Full detailed source competency mapping and complete source visual review",
     "Original explanatory illustrations and optional prerecorded audio",
     "Full Expo/native build and actual device validation",
     "Expert/native review remains unverified"
   ],
-  "next": "Translate food-2-mock-03 into zh-CN,zh-TW,bn (120 pairs), then food-1-mock-04 into EN/VI (80 pairs). Browser-check760 added pairs since batch06. Preserve prior entries and Japanese/runtime/UI.",
+  "next": "Translate food-1-mock-04 into tl,th,my,km,hi,ne,zh-CN,zh-TW,bn (360pairs), then continue remaining mock forms. Browser-check1000 additions since batch06. Preserve prior entries, canonical/runtime/UI.",
   "japaneseAuthorshipStatus": "AI-authored candidate covering all source chapters; detailed competency coverage remains unverified",
   "sourceReferences": "153/158 TOC entries have candidate lesson page references; remaining5 are indexes/notices/bibliography. This is not mastery or full coverage certification.",
   "nativeSpeakerReviewed": false,
@@ -254,7 +254,7 @@
     "fullExpoBuildTested": false,
     "newLocaleResponsiveCases": 24,
     "diagramTranslationPairs": 20,
-    "translatedQuestionPairs": 3228,
+    "translatedQuestionPairs": 3468,
     "testTranslationLeakChecks": 2468,
     "testTranslationResponsiveCases": 9872,
     "missingTranslationNotices": 7,
@@ -324,7 +324,7 @@
       "deltaBaselineCommit": "854bfc43e6ee0c074ab0de60efc787aa2faa98ba",
       "all12LocaleGroupsDisjoint": true
     },
-    "assessmentEvidence": "Historical browser baseline batch06 covers2468 pairs/9872 viewport cases. Current data totals3228;760 subsequent additions await browser validation. Batch09 checks240 new pairs using the existing translation lookup with stale/missing-locale rejection, not browser/device evidence.",
+    "assessmentEvidence": "Historical browser baseline batch06 covers2468 pairs/9872 viewport cases. Current data totals3468;1000 subsequent additions await browser validation. Batch10 checks240 new pairs using existing translation lookup and stale/missing-locale rejection, not browser/device evidence.",
     "batch06": {
       "structuralContent": "PASS2468 pairs",
       "translationAdapter": "PASS2468 valid and stale-revision rejection checks;7600missing without fallback",
@@ -388,21 +388,36 @@
       "arithmeticReferenceCases": 6,
       "numericAuditCandidates": 10,
       "pendingNumericCandidates": 0
+    },
+    "batch10": {
+      "status": "PASS structural/hash/adapter checks; browser pending",
+      "newQuestionLocalePairs": 240,
+      "priorQuestionLocalePairs": 3228,
+      "currentQuestionLocalePairs": 3468,
+      "remainingQuestionLocalePairs": 6600,
+      "browserTested": false,
+      "nativeDeviceTested": false,
+      "fullExpoBuildTested": false,
+      "sourceReport": "batch-10-review.json",
+      "aiPeerReviewUniqueUnits": 72,
+      "arithmeticReferenceCases": 7,
+      "numericAuditCandidates": 16,
+      "pendingNumericCandidates": 0
     }
   },
   "translatedQuestions": {
-    "bn": 239,
-    "zh-TW": 239,
+    "bn": 279,
+    "zh-TW": 279,
     "hi": 279,
     "th": 279,
-    "id": 279,
-    "zh-CN": 239,
+    "id": 319,
+    "zh-CN": 279,
     "tl": 279,
     "my": 279,
     "ne": 279,
     "km": 279,
-    "vi": 279,
-    "en": 279
+    "vi": 319,
+    "en": 319
   },
   "batch02": {
     "newMockQuestions": 640,
@@ -509,6 +524,18 @@
       "ne"
     ],
     "remainingMockQuestionLocalePairs": 6840,
+    "nativeExpertReviewed": false
+  },
+  "batch10": {
+    "newQuestionLocalePairs": 240,
+    "totalQuestionLocalePairs": 3468,
+    "completedAll12LocaleForm": "food-2-mock-03",
+    "food1Mock04Locales": [
+      "en",
+      "vi",
+      "id"
+    ],
+    "remainingMockQuestionLocalePairs": 6600,
     "nativeExpertReviewed": false
   }
 }
