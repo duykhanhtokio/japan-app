@@ -1,3 +1,15 @@
+# Batch13 — actual six-worker continuation
+
+Base3881d18a on feature/food-manufacturing-20261026. Added480question-locale pairs and12titles:2号mock04 into nine remaining locales and1号mock05 into EN/VI/ID. Both levels mock01–04 are now complete in all12locales. Current4428/10068pairs,5640missing. Every prior3948entry/title preserved.
+
+PASS:structure,sourcehash/adapter/stale rejection,480actualChromium question/review/leakchecks,1920responsivecases across fourviewports,production study-state checks. TwelveWebP evidence images; VI/KM images visually inspected. See batch-13-review.json and browser-assessments-batch13-qa.json. Historical1480pairs afterbatch06 remain without browserQA; do not count them as tested.
+
+Peer review64unique pairs found3Bengali spacing issues and Khmerq187 upper-only narrowing; corrected beforefinalQA. Directchecks on10sourcePDFpages support4of96range candidates;92still unreviewed. Full-body furigana,complete sourcevisual/competency verification,illustrations,native/domain review and fullExpo/device checks remain pending. OverallscopeComplete=false.
+
+Next:remaining1号mock05 locales,then2号mock05. Two further isolated120pair batches are authored but not part of this checkpoint:locale-a/next and locale-b/mock05 under current session workspace. Revalidate and persist them before counting. Some reviewer turns failed with model-at-capacity; preserve their complete files/reports. Approved JLPT and food runtime unchanged.
+
+---
+
 # Food manufacturing implementation checkpoint
 
 Internal development preview on `feature/food-manufacturing-20261026`. Read IMPLEMENTATION_REQUEST.md, progress.json, source-review.md, source-map.json and batch-12-review.json. AI checks do not certify native, expert or release quality.
