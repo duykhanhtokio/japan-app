@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "checks": {
+    "sourceDataHashState": "PASS",
+    "approvedJlptUiLock": "PASS",
+    "unchangedJapaneseLessonObjects": 125,
+    "unchangedPriorTranslationObjects": 876,
+    "newTranslationPairs": 636,
+    "integratedTranslationPairs": 1512,
+    "completedReviewPackets": 6,
+    "appliedFieldPatches": 67,
+    "numericMeaningPreservedExceptions": 24,
+    "unresolvedNumericCandidates": 0,
+    "frozenAuthorPacketsPreserved": true,
+    "storedStateKeysAndRecordsModified": false
+  },
+  "baselineCommit": "a630ed48a9b83b4c2f8e56121507d6d66121bd30",
+  "canonicalCorrection": [
+    {
+      "id": "agr-par07-life-activity-consistency",
+      "lessonId": "agr-fruit-foundation-life",
+      "field": "activityJa",
+      "before": "果樹の一生を三つの段階に整理し、木の大きさと結実量をそれぞれ説明します。図から正確な収穫開始年を決められない理由も述べてください。",
+      "after": "果樹の一生を本文の区分に沿って整理し、木の大きさと結実量をそれぞれ説明します。図から正確な収穫開始年を決められない理由も述べてください。",
+      "previousSourceHash": "a3374ca630d9af1c2fae6dc90679a9324b4541f88aa08c2e915ceaddf1f3cef3",
+      "reason": "Paragraph2 lists幼木/若木/成木/老木, but the activity arbitrarily requested three stages. Refer to the actual categories rather than imposing a conflicting number; no new source knowledge or age threshold is added.",
+      "translationField": "activity",
+      "all12ActivitiesRequireIndependentRecheck": true,
+      "preserveStoredProgressKeysAndRecords": true,
+      "sourceVersionBindingMayMarkAffectedLessonOrAttemptStale": true,
+      "sourceHash": "10ea4dd8ce4cbdf0445202109b3e3c08967654ef518628f60f83973ff0c5dc8b",
+      "reboundTargetLocales": [
+        "bn",
+        "en",
+        "hi",
+        "id",
+        "km",
+        "my",
+        "ne",
+        "th",
+        "tl",
+        "vi",
+        "zh-CN",
+        "zh-TW"
+      ],
+      "reboundTargetEntries": 12
+    }
+  ],
+  "weeklyBankRevisionChanges": [
+    {
+      "examId": "agr-par06-fruit-foundations-check",
+      "previousRevision": "v1-1f46656955e49dcb",
+      "revision": "v1-fbcf595dbf2ec2fc",
+      "reboundQuestionIds": [
+        "agr-par06-fruit-foundations-q01",
+        "agr-par06-fruit-foundations-q02"
+      ]
+    }
+  ],
+  "baselineSha256": {
+    "src/data/agriculture/translations.json": "bb7b1114eb2722f9f11d3ec54fee1b09d65235c4cf01827a8eaa5ba0ac8bcfbd",
+    "src/data/agriculture/lessons.ja.json": "19f1b9b46a0badca467f4e914a517b83c8048762779ad77ebe703aa0d2f4e85a",
+    "src/data/agriculture/course-manifest.json": "64c3529c0e7b4074985792d086d31073f6892b22600c43dbb60efafcedde386e",
+    "src/data/agriculture/weekly-checks.ja.json": "ef354cda82620275f11827a9c21ad72e72565892d1c556ff1bdf28bd53fd14f3",
+    "src/data/agriculture/diagrams.json": "4d625c6f71d225ffaf5af5e7b16a8ae5e6c68c213ae66ffb6823fbb9a19b7772",
+    "src/data/agriculture/translations/bn.json": "647621ad8fe4dcb00f2d64934869a4299ec07f909ab9211756ca8d8c2233a278",
+    "src/data/agriculture/translations/zh-TW.json": "26e64f13ebeed474943205570ad35b6a649834260a0db8cbae8ee027ef2117e2",
+    "src/data/agriculture/translations/hi.json": "c722fadde450744887aa684483fa80db568ccd32d727218e470eea733edf1942",
+    "src/data/agriculture/translations/th.json": "396d3c8ee5c06fa35c47fc4e2634c73d6882d30ecb1b452eb14605a52d952491",
+    "src/data/agriculture/translations/id.json": "12f6a244edd97c4c4adb1e5635df141ed209cbfc5c1ba76900ccd13d444dc57c",
+    "src/data/agriculture/translations/zh-CN.json": "7e760278fe02babf36efb17f992cfd17af08cc65182f08851986f06dfe2046af",
+    "src/data/agriculture/translations/tl.json": "9771630e85531397a3ccc23450c6d2b614f7b21064d2180cc10e46f69b42cee4",
+    "src/data/agriculture/translations/my.json": "45e3b7dbbe49bc41a539ea9057ce581cf4c97d367007eaeaa4e218bb3c90c03f",
+    "src/data/agriculture/translations/ne.json": "3b93848fa0837146d3211bde5131e073ae5550db64855195709463f64582813a",
+    "src/data/agriculture/translations/km.json": "bca124d815cced0feca28f7ea56d3f1e3002a15c4f59988da6e9e9a308965fe7",
+    "src/data/agriculture/translations/vi.json": "0f4f87d43946768007cb033dc887b82838b2d47f2cbc35e276a6bf50ffb74638",
+    "src/data/agriculture/translations/en.json": "133b3f143f3962aa1bb870ed966564299d54835d8a92309ce1365daad583ed8c",
+    "docs/ssw-workspace/agriculture/progress.json": "ebb5daedf47fc7cb62a809b66b0d8c6e83514c7d85e786d75afb575a8a5a21dd",
+    "docs/ssw-workspace/agriculture/CHECKPOINT.md": "f22c5bcfc4798a84202f7d9f5a65cdf0daecac5c39489033226c759a204ffedf",
+    "docs/ssw-workspace/agriculture/parallel-07/RESUME.md": "54c54963395a548cf4650fed8b8179138090a3c140871a16be08cdeb1d8f8844",
+    "docs/ssw-workspace/agriculture/parallel-07/checkpoint.json": "0019fcdaebcc496d4d105de74251e6da48ed479bbb8f242a5792fd07638a8604"
+  },
+  "limits": [
+    "AI review only; no native or domain certification",
+    "Minimal QA dependencies omit Expo base tsconfig; no full Expo/native build",
+    "Browser validation uses explicit adapters/fonts and is recorded separately"
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "releaseReady": false,
+  "browserQa": {
+    "status": "PASS",
+    "translatedReaderLocales": 12,
+    "translatedLessonLocalePairs": 1512,
+    "sharedWeeklyAttemptIsolation": true,
+    "newJapaneseLessonCases": 0,
+    "newLessonMissingTranslationCases": 0,
+    "newDiagramResponsiveCases": 0,
+    "newTranslationResponsiveCases": 48,
+    "viewports": [
+      [
+        390,
+        844
+      ],
+      [
+        844,
+        390
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        1440,
+        900
+      ]
+    ],
+    "completionSaveFailureHandled": true,
+    "completionReload": true,
+    "numericLessonIdCompletionReload": true,
+    "levelIsolation": true,
+    "examResume": true,
+    "hiddenAnswersBeforeSubmit": true,
+    "cancelSubmit": true,
+    "weeklyCompletionBadge": true,
+    "screenshots": [
+      "new-long-bn-390x844.png",
+      "new-long-en-390x844.png",
+      "new-long-hi-390x844.png",
+      "new-long-id-390x844.png",
+      "new-long-km-390x844.png",
+      "new-long-my-390x844.png",
+      "new-long-ne-390x844.png",
+      "new-long-th-390x844.png",
+      "new-long-tl-390x844.png",
+      "new-long-vi-390x844.png",
+      "new-long-zh-CN-390x844.png",
+      "new-long-zh-TW-390x844.png",
+      "reader-390x844.png",
+      "reader-844x390.png",
+      "reader-768x1024.png",
+      "reader-1440x900.png",
+      "sowing-390x844.png"
+    ],
+    "adapters": [
+      "Royal artwork",
+      "background",
+      "safe area",
+      "localStorage for AsyncStorage"
+    ],
+    "nativeDeviceTested": false,
+    "productionExpoTested": false,
+    "japaneseQaFontLoaded": true,
+    "additionalQaScriptFonts": [
+      "bn",
+      "hi",
+      "my",
+      "th",
+      "km"
+    ],
+    "nativeFontsCertified": false,
+    "courseComplete": false
+  },
+  "representativeScreenshotsInspected": [
+    "new-long-km-390x844.png",
+    "new-long-my-390x844.png",
+    "reader-1440x900.png",
+    "reader-844x390.png"
+  ],
+  "screenshotStorage": "Regenerable scratch QA evidence, not durable image assets"
+}
