@@ -1,0 +1,204 @@
+{
+  "status": "complete",
+  "packetSha256": "d8d8f23e77ce4ae32fdf93e5664dd9a713db7470474f79050e344f6b2a954291",
+  "scope": {
+    "lessonIds": [
+      "agr-par11-general-gas-transport",
+      "agr-par11-general-cropping-calendar"
+    ],
+    "lessons": 2,
+    "paragraphs": 12,
+    "knowledgeUnits": 12,
+    "questions": 8,
+    "sourceImages": 7,
+    "sourceGapResolutionGroups": 11,
+    "sourceItemOccurrences": 33,
+    "reviewMethod": "Full semantic direct Japanese review of all12 paragraphs, both objectives/activities/all terms,12knowledge entries,8stems/32options/32reasons, scope/source references and11gap-resolution groups. Reopened all7cited retained source images and checked SHA provenance; source calendars checked visually across year without invented endpoints. Semantic dedup screened against all296existing weekly stems/options with related items compared in detail.",
+    "fullSemanticReview": true,
+    "priorWeeklyQuestions": 296,
+    "humanExpertCertification": false
+  },
+  "patches": [
+    {
+      "targetType": "question",
+      "targetId": "agr-par11-general-q02",
+      "field": "optionsJa",
+      "before": [
+        "H2Oは酸素、O2は水",
+        "どちらも水蒸気だけを指す",
+        "H2Oは水、O2は酸素",
+        "どちらも二酸化炭素を指す"
+      ],
+      "after": [
+        "H2Oは酸素、O2は水",
+        "H2Oは水、O2は二酸化炭素",
+        "H2Oは水、O2は酸素",
+        "H2Oは二酸化炭素、O2は酸素"
+      ],
+      "reason": "Replace implausible both-symbols-identical distractors with plausible one-symbol/one-substance mapping mistakes; preserve correctIndex2."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par11-general-q02",
+      "field": "optionReasonsJa",
+      "before": [
+        "水と酸素の対応が逆です。",
+        "両記号は同じ物質を指しません。",
+        "図の水と酸素にそれぞれ対応します。",
+        "二酸化炭素はCO2です。"
+      ],
+      "after": [
+        "水と酸素の対応が逆です。",
+        "H2Oの対応は正しいですが、O2は二酸化炭素ではなく酸素です。",
+        "図の水と酸素にそれぞれ対応します。",
+        "O2の対応は正しいですが、H2Oは二酸化炭素ではなく水です。"
+      ],
+      "reason": "Keep each explanation aligned with revised symbol mapping options."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par11-general-q05",
+      "field": "optionsJa",
+      "before": [
+        "二つの別作物を同じ行に載せたため",
+        "収穫が播種より前に済むため",
+        "年をまたぐ作型を1～12月の横軸で示したため",
+        "12月に全株を植え直すため"
+      ],
+      "after": [
+        "同じ年の1月収穫と9月播種の順を示したため",
+        "9月播種後の収穫が12月で終わることを示したため",
+        "年をまたぐ作型を1～12月の横軸で示したため",
+        "9月以降の異なる播種時期を一つの行に並べたため"
+      ],
+      "reason": "Replace unsupported different-crop/replanting distractions with plausible calendar-sequence/harvest-end/sowing-versus-harvest interpretation errors; no new source endpoints."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par11-general-q05",
+      "field": "optionReasonsJa",
+      "before": [
+        "同じキュウリ促成の行です。",
+        "年のつながりを考える必要があります。",
+        "年末から翌年側へ続く表示として読みます。",
+        "植え直すという指示はありません。"
+      ],
+      "after": [
+        "収穫と播種を同じ暦年内の前後関係だけで読むと、年またぎを見落とします。",
+        "年初側にも収穫帯があり、12月で終わる表示ではありません。",
+        "年末から翌年側へ続く表示として読みます。",
+        "播種点と収穫帯は別の記号であり、複数の播種時期を並べた表示ではありません。"
+      ],
+      "reason": "Match revised calendar distractors without inventing exact beginning/end dates."
+    }
+  ],
+  "resolutionPatches": [
+    {
+      "index": 3,
+      "field": "disposition",
+      "before": "covered_by_new_prose",
+      "after": "partially_covered",
+      "reason": "Retain prose coverage but do not close diagram/arrow-reading asset scope merely from text; mixed group retains explicit full definition coverage."
+    },
+    {
+      "index": 3,
+      "field": "reasonJa",
+      "before": "指定段落で掲載資料の意味を独立した文章として説明。 この知識の本文説明のみ。新規の画像認識教材や実技・全地域の日程の承認は含まない。",
+      "after": "指定段落は図由来のガス方向・植物内移動を独立した文章として説明する。一方、元の監査項目が含む矢印と図中位置を視覚的に対応させる課題は、新規図版未作成のため残る。概念本文の追加を図版課題の全面解消とは扱わない。",
+      "reason": "Retain prose coverage but do not close diagram/arrow-reading asset scope merely from text; mixed group retains explicit full definition coverage."
+    },
+    {
+      "index": 4,
+      "field": "disposition",
+      "before": "covered_by_new_prose",
+      "after": "partially_covered",
+      "reason": "Retain prose coverage but do not close diagram/arrow-reading asset scope merely from text; mixed group retains explicit full definition coverage."
+    },
+    {
+      "index": 4,
+      "field": "reasonJa",
+      "before": "指定段落で掲載資料の意味を独立した文章として説明。 この知識の本文説明のみ。新規の画像認識教材や実技・全地域の日程の承認は含まない。",
+      "after": "呼吸の定義AGR-A10-GENERAL-0294は本文で説明済み。指定段落は図由来のガス方向・植物内移動を独立した文章として説明する。一方、元の監査項目が含む矢印と図中位置を視覚的に対応させる課題は、新規図版未作成のため残る。概念本文の追加を図版課題の全面解消とは扱わない。",
+      "reason": "Retain prose coverage but do not close diagram/arrow-reading asset scope merely from text; mixed group retains explicit full definition coverage."
+    },
+    {
+      "index": 5,
+      "field": "disposition",
+      "before": "covered_by_new_prose",
+      "after": "partially_covered",
+      "reason": "Retain prose coverage but do not close diagram/arrow-reading asset scope merely from text; mixed group retains explicit full definition coverage."
+    },
+    {
+      "index": 5,
+      "field": "reasonJa",
+      "before": "指定段落で掲載資料の意味を独立した文章として説明。 この知識の本文説明のみ。新規の画像認識教材や実技・全地域の日程の承認は含まない。",
+      "after": "指定段落は図由来のガス方向・植物内移動を独立した文章として説明する。一方、元の監査項目が含む矢印と図中位置を視覚的に対応させる課題は、新規図版未作成のため残る。概念本文の追加を図版課題の全面解消とは扱わない。",
+      "reason": "Retain prose coverage but do not close diagram/arrow-reading asset scope merely from text; mixed group retains explicit full definition coverage."
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "sourceImagesChecked": [
+    {
+      "documentId": "AGR-S1",
+      "pdfPage": 8,
+      "renderPath": "/workspace/scratch/018c0b6e29b8/audit10-general-pages/s1-08.png",
+      "renderSha256": "126024e4298d5255716c143554c8e709c46d6a14a3728a0f26443e3a89049f83"
+    },
+    {
+      "documentId": "AGR-S1",
+      "pdfPage": 9,
+      "renderPath": "/workspace/scratch/018c0b6e29b8/audit10-general-pages/s1-09.png",
+      "renderSha256": "8e597cbafdfbfc7c9304277bb5819838f3185024abd55b65dd1ac8b24d6ffe9b"
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 9,
+      "renderPath": "/workspace/scratch/018c0b6e29b8/audit10-general-pages/s2-09.png",
+      "renderSha256": "661b561630f2744a35820dd405a7407eb5d7b54e29143bb62bf8a46375892b04"
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 10,
+      "renderPath": "/workspace/scratch/018c0b6e29b8/audit10-general-pages/s2-10.png",
+      "renderSha256": "ad11d60209f1dfefdc17c1b3087cf6d654e5492204f267f620100c3df2e2d6e7"
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 11,
+      "renderPath": "/workspace/scratch/018c0b6e29b8/audit10-general-pages/s2-11.png",
+      "renderSha256": "cb10c50bf85b98c77d966fae3852b8f5c32b31e8c57212d4ff0fa75c7fcc1b8d"
+    },
+    {
+      "documentId": "AGR-S1",
+      "pdfPage": 11,
+      "renderPath": "/workspace/scratch/018c0b6e29b8/audit10-general-pages/s1-11.png",
+      "renderSha256": "91d6c574c5f917167d350fdda4e9f3530a3d8c96da237c398635b5fe26a7f5d4"
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 13,
+      "renderPath": "/workspace/scratch/018c0b6e29b8/audit10-general-pages/s2-13.png",
+      "renderSha256": "82bb658da2ecd12abd332b17c8b8aff0f1be495428611e3aa072b6217c325953"
+    }
+  ],
+  "findings": [
+    {
+      "topic": "calendar_cross_year",
+      "result": "source_checked",
+      "detailsJa": "キュウリ9月・4月・7月、キャベツ3月・7月・10月・12月の各播種点を両資料で確認。促成および秋・冬まきの年またぎを保持し、帯の全月境界や共通の現場日程を追加しない。"
+    },
+    {
+      "topic": "semantic_dedup",
+      "result": "distinct_new_targets",
+      "detailsJa": "従来問は光合成の必要条件・生成物・夜温時の消費、作型概念・促成の意味・凡例の一般注意を問う。今回の化学式対応・ガス方向・行別月対応・年またぎは異なる能力で、同じ事実の言換えだけではない。CO2と光合成方向、H2O/O2と呼吸方向も別々の対象として確認。"
+    },
+    {
+      "topic": "source_limits",
+      "result": "retained",
+      "detailsJa": "画像は保持レンダーを再確認。元PDFのSHAは以前の検証記録であり、今回の再ハッシュではない。新図版、帯端点の網羅、現場処方の認証は含めない。"
+    }
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false
+}

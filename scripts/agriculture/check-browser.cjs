@@ -33,7 +33,7 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
  const errors=[],screenshots=[];
  try{
  browser=await chromium.launch({executablePath,headless:true,args:['--no-sandbox','--disable-gpu']});const page=await browser.newPage({viewport:{width:390,height:844}});page.on('pageerror',e=>errors.push(e.message));const url=`http://127.0.0.1:${server.address().port}/`;
- async function fontsReady(){await page.evaluate(async locales=>{await Promise.all(locales.map(locale=>document.fonts.load('16px AgricultureQA_'+locale)));await document.fonts.ready;},scriptFonts);}
+ async function fontsReady(){await page.evaluate(async locales=>{await Promise.all([document.fonts.load('16px AgricultureQA'),...locales.map(locale=>document.fonts.load('16px AgricultureQA_'+locale))]);await document.fonts.ready;},scriptFonts);}
  async function start(level='1',language='vi'){await page.goto(url+'?language='+language);await fontsReady();await page.getByRole('button',{name:'特定技能'+level+'号',exact:true}).click();}
  async function reader(level='1',language='vi'){await start(level,language);await page.getByRole('button',{name:/第1週/}).click();await page.getByTestId('agri-day-'+level+'-1').click();}
  let translatedLessonLocalePairs=0;
@@ -106,9 +106,10 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
   for(const [width,height]of [[390,844],[844,390],[768,1024],[1440,900]]){
    await page.setViewportSize({width,height});await start(level,language);await page.getByRole('button',{name:new RegExp('^第'+week.number+'週')}).click();await page.getByTestId('agri-day-'+level+'-'+day).click();await page.getByRole('button',{name:'訳を表示',exact:true}).click();
    assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),language+'/'+id+'/'+width);
-   const complete=page.getByRole('button',{name:'完了する',exact:true});await complete.scrollIntoViewIfNeeded();assert(await complete.isVisible());const box=await complete.boundingBox();assert(box&&box.y>=-1&&box.y+box.height<=height+1,language+'/'+id+'/completion bounds');
+   await fontsReady();await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+   const complete=page.getByRole('button',{name:'完了する',exact:true});await complete.evaluate(el=>el.scrollIntoView({block:'end',behavior:'instant'}));await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));assert(await complete.isVisible());const box=await complete.boundingBox();assert(box&&box.y>=-1&&box.y+box.height<=height+1,language+'/'+id+'/completion bounds');
    const text=await page.locator('body').innerText();assert(Object.values(t.paragraphs).every(v=>text.includes(v)));
-   if(width===390){const file='new-long-'+language+'-390x844.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}
+   if(width===390){const file='new-long-'+language+'-390x844.png';await page.screenshot({path:path.join(out,file)});const capturedBox=await complete.boundingBox();assert(capturedBox&&capturedBox.y>=-1&&capturedBox.y+capturedBox.height<=height+1,language+'/'+id+'/captured completion bounds');screenshots.push(file);}
    newTranslationResponsiveCases++;
   }
  }
