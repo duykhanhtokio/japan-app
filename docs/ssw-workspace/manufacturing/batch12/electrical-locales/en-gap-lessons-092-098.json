@@ -1,0 +1,272 @@
+{
+  "locale": "en",
+  "lessons": {
+    "mfg1-electrical-l092": {
+      "sourceHash": "73ffc032630b96c12946e18459064194d264439f2f68b673fd895724f7b66586",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Compare passive-component construction and selection",
+      "objective": "Distinguish passive-component structures and applications from lubricant indication scales.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Capacitor materials",
+          "text": "Capacitors separate conductors with dielectric. In the textbook aluminum-electrolytic example, the anode is aluminum foil, the dielectric is aluminum oxide, and electrolyte also contributes to construction. Ceramic, film, multilayer-chip and variable types differ; even equal capacitance requires comparing polarity, temperature, frequency and aging conditions."
+        },
+        {
+          "id": "section-2",
+          "title": "Coils and functional elements",
+          "text": "Coils may be wound, multilayer or thin-film; they are not always visibly wound around an iron core. Distinguish thermistor resistance/temperature behavior, piezoelectric force/electric conversion and quartz vibration. Diodes also serve detection, Zener-breakdown voltage control and photoelectric conversion besides rectification."
+        },
+        {
+          "id": "section-3",
+          "title": "Lubricant indications have conditions too",
+          "text": "Lubrication supplies oil, grease or similar materials to reduce contact friction and wear. Grease consistency expresses softness, but penetration values andNLGI numbers run in opposite directions. Do not apply the textbook’s “larger values mean softer” statement to every grease grade number. Check standard, scale name and specified product."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "誘電体",
+          "reading": "ゆうでんたい",
+          "meaning": "An insulating material between conductors in capacitors and similar devices."
+        }
+      ],
+      "activity": "30-minute study target: reading10 minutes, organizing examples8, writing9, reflection3.\nList checks beyond capacitance before substituting aluminum-electrolytic and ceramic parts of equal capacitance. Explain why consistency values and grade numbers must be distinguished.",
+      "safety": [
+        "For equipment operation, measurement, machining or setting changes, verify qualifications, training, responsibility limits and approved procedures."
+      ],
+      "summary": "In “Compare passive-component construction and selection”, compare construction, application and applicability conditions rather than names alone."
+    },
+    "mfg1-electrical-l093": {
+      "sourceHash": "c9c250bb226da27d795729550eb30911875aa4a4d2ec14454c090016ee353cff",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Explain fields and resistance circuits from equation conditions",
+      "objective": "State assumptions for force/circuit equations and explain graphs, voltage division and current division.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "From charge to force",
+          "text": "Charge is measured inC; electric field relates to force per unit charge and differs from voltage or current. In the vacuum point-charge model, Coulomb force magnitude is|q1 q2|/(4πε0 r²). A changed medium changes the permittivity assumption; do not apply point-charge equations unconditionally to all nearby objects."
+        },
+        {
+          "id": "section-2",
+          "title": "Graph slope",
+          "text": "WithV horizontally andI vertically, straight-line slope isI/V=1/R. More current at the same voltage means lower resistance. Swapping axes changes slope meaning. Retain constant-temperature and other proportionality conditions; not every device has a straight-line characteristic."
+        },
+        {
+          "id": "section-3",
+          "title": "Check divider ratios",
+          "text": "For two unloaded series resistors,V1=V0 R1/(R1+R2). For two parallel resistors,I1=I0 R2/(R1+R2), so a smallerR1 carries moreI1. Derive the opposite-branch numerator from shared voltage andI1=V/R1. Adding loads or meters changes the circuit, so the original ratio may no longer apply."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "分流",
+          "reading": "ぶんりゅう",
+          "meaning": "Current dividing into parallel branches."
+        }
+      ],
+      "activity": "30-minute study target: reading10 minutes, organizing examples8, writing9, reflection3.\nFind each voltage for100Ω and200Ω in series across6 V. Then connect them in parallel and divide total90 mA between the branches; check the ratios.",
+      "safety": [
+        "For equipment operation, measurement, machining or setting changes, verify qualifications, training, responsibility limits and approved procedures."
+      ],
+      "summary": "In “Explain fields and resistance circuits from equation conditions”, compare construction, application and applicability conditions rather than names alone."
+    },
+    "mfg1-electrical-l094": {
+      "sourceHash": "61b41fff2df8e19987bcf4354d4a41ddb8d68e02d034d08b2c10ab90e54c1625",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Trace relays, contactors and overload detection together",
+      "objective": "Trace switching, overload detection and reset roles in a magnetic starter.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Magnetic-starter combination",
+          "text": "A contactor combined with a thermal overload relay is called a magnetic starter or magnetic switch. The contactor switches the load; the thermal relay detects overload and is not alone the main-circuit interrupter. Short-circuit protection is not necessarily the same function; check protection coordination."
+        },
+        {
+          "id": "section-2",
+          "title": "Reset after detection",
+          "text": "Thermal operation responds to heating from current over time, so distinguish brief changes from sustained overload. Bimetal bends because two metals expand differently. After operation, check cause and safety and use approved reset procedures; do not repeatedly reset to keep running."
+        },
+        {
+          "id": "section-3",
+          "title": "Holding paths and power loss",
+          "text": "In a basic self-holding circuit, the relay’s own contact parallel to the start button maintains coil current, and stop conditions interrupt it. Ordinary electromagnetic relays lose energization on power loss. RetentivePLC settings and other restart circuits may behave differently; do not universally assume safe stopping after power restoration. Check actual circuits and restoration conditions."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "電磁開閉器",
+          "reading": "でんじかいへいき",
+          "meaning": "Switching equipment combining a contactor and overload detector."
+        }
+      ],
+      "activity": "30-minute study target: reading10 minutes, organizing examples8, writing9, reflection3.\nTabulate basic holding-coil energization for start, start release, stop, power loss and restoration. Explain why changed retentivePLC settings require rechecking.",
+      "safety": [
+        "For equipment operation, measurement, machining or setting changes, verify qualifications, training, responsibility limits and approved procedures."
+      ],
+      "summary": "In “Trace relays, contactors and overload detection together”, compare construction, application and applicability conditions rather than names alone."
+    },
+    "mfg1-electrical-l095": {
+      "sourceHash": "b35aac25a5434e4d01dcaf35c62e96e044312d27ea3d831e48afb78f96bf198f",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Compare rotating machines and transformers by structure",
+      "objective": "Compare motor/transformer construction, starting, losses and detection conditions.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Rotors and starting conditions",
+          "text": "Three-phase induction machines include squirrel-cage and wound rotors. Star-delta current reduction assumes compatible three-phase windings compared at the same line voltage. Starting torque also changes; reduced current does not make it suitable for every load. Compare method, winding terminals, ratings, load and protection together."
+        },
+        {
+          "id": "section-2",
+          "title": "Commands and detected values",
+          "text": "Encoders encode rotation angles or linear displacement. Servos feed detected values back and correct command differences to control position, speed or torque. Distinguish feed-speed and winding-torque requirements; do not try to fix position error simply by increasing speed."
+        },
+        {
+          "id": "section-3",
+          "title": "Loss and medium information",
+          "text": "The textbook gives stray-load loss at roughly5–30% of copper loss as an example, not a fixed percentage for every transformer. Sulfur hexafluoride,SF6, is an insulation/cooling-gas example; check environmental impact and handling conditions. Vacuum/gas arc extinction differs in classification from oil-filled/molded insulation. Do not declare that no old oil breakers exist."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "回転子",
+          "reading": "かいてんし",
+          "meaning": "The rotating portion of a motor or similar machine."
+        }
+      ],
+      "activity": "30-minute study target: reading10 minutes, organizing examples8, writing9, reflection3.\nGive position, speed and torque command examples and explain use of detected data. Explain why starting current alone cannot select star-delta starting, considering load torque and ratings.",
+      "safety": [
+        "For equipment operation, measurement, machining or setting changes, verify qualifications, training, responsibility limits and approved procedures."
+      ],
+      "summary": "In “Compare rotating machines and transformers by structure”, compare construction, application and applicability conditions rather than names alone."
+    },
+    "mfg1-electrical-l096": {
+      "sourceHash": "65320d9cddc8349601ebef035fce30c59a788715a8319a1e7897e5194bb5d71d",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Separate structural, environmental and electrical tests",
+      "objective": "Distinguish structural, functional, environmental, safety and reliability checks.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Structural checks",
+          "text": "Structural inspection checks size, weight, strength and assembly structure against requirements. Dimensions alone do not pass weight or strength. Appearance damage, function and structure have different purposes; compare the test sheet’s objects and methods."
+        },
+        {
+          "id": "section-2",
+          "title": "Sustained performance and external conditions",
+          "text": "Functional inspection checks required behavior for specified inputs; environmental testing applies prescribed temperature, humidity, vibration or shock. Accelerated-life tests use specified intensified conditions, not permission to raise temperature or voltage freely. Relating acceleration to normal lifetime involves evaluation assumptions."
+        },
+        {
+          "id": "section-3",
+          "title": "Electrical safety and records",
+          "text": "Insulation resistance, withstand voltage, leakage and electromagnetic effects such asEMS require different methods. General labels like multimeter or oscilloscope do not establish suitability for all tests. Compare equipment, applied conditions, time, criteria and operator; identify nonconformities and connect them to records. Supplier inspection and finished-product evaluation do not unconditionally replace each other."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "構造検査",
+          "reading": "こうぞうけんさ",
+          "meaning": "Inspection comparing product construction, weight, strength and related requirements."
+        }
+      ],
+      "activity": "30-minute study target: reading10 minutes, organizing examples8, writing9, reflection3.\nCreate seven columns for appearance, dimensions, structure, function, environment, safety and reliability; give a target and reference for each. Explain why a pass in one column cannot transfer to another.",
+      "safety": [
+        "For equipment operation, measurement, machining or setting changes, verify qualifications, training, responsibility limits and approved procedures."
+      ],
+      "summary": "In “Separate structural, environmental and electrical tests”, compare construction, application and applicability conditions rather than names alone."
+    },
+    "mfg1-electrical-l097": {
+      "sourceHash": "8e20d924ea819b92ec89bed0e0ba91f48aad5f3833baca2c7127b11c522d3e84",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Compare packaging materials and resin production conditions",
+      "objective": "Compare packaging protection with molding methods and production costs.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Materials and logistics requirements",
+          "text": "Match paperboard boxes, corrugated packaging, wooden boxes and metal/glass/plastic containers to products, transport and storage. Square or nearly square timber is one material example; required restraint strength comes from packaging design. Prioritize protection and efficiency over decoration; minimum material does not justify omitting necessary cushioning or restraint."
+        },
+        {
+          "id": "section-2",
+          "title": "Volume production and tooling cost",
+          "text": "Injection molding suits making many identical shapes quickly, but precision molds have initial costs and are not always cheapest for small batches. Screw feeding, holding pressure, cooling and shrinkage are distinct conditions. Do not universally determine injection quantity from rotation speed alone; check metering/injection mechanisms and standards."
+        },
+        {
+          "id": "section-3",
+          "title": "Resin and forming methods",
+          "text": "Blow molding inflates resin with air and differs from injection molding. Thermosets cross-link and cannot be remelted in the same way. Biodegradability depends on conditions and does not permit abandonment anywhere. FRP can use impregnation, lay-up and pressure; it is not all made exclusively by high-temperature, high-pressure pressing."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "架橋",
+          "reading": "かきょう",
+          "meaning": "A structural change connecting polymer chains to one another."
+        }
+      ],
+      "activity": "30-minute study target: reading10 minutes, organizing examples8, writing9, reflection3.\nFor annual volumes of20 and20000, compare initial mold cost separately from processing time per item. Check whether reduced packaging still meets humidity, impact and restraint requirements.",
+      "safety": [
+        "For equipment operation, measurement, machining or setting changes, verify qualifications, training, responsibility limits and approved procedures."
+      ],
+      "summary": "In “Compare packaging materials and resin production conditions”, compare construction, application and applicability conditions rather than names alone."
+    },
+    "mfg1-electrical-l098": {
+      "sourceHash": "32dac857b35ef384dc54fce909412c7d2553e56a169f25379c89531af350e191",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Distinguish PCB stages and machining scales",
+      "objective": "Distinguish PCB structure, process films and dimensional orders of magnitude.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Board roles and heat dissipation",
+          "text": "A motherboard is a main board connectingCPU, memory and other items. Metal-base boards combine metal, insulation and copper conductors to aid heat dissipation; a metal base does not permit direct electrical continuity between patterns and the metal plate. Distinguish single/double/multilayer structure from application names."
+        },
+        {
+          "id": "section-2",
+          "title": "Process sequence",
+          "text": "A conceptual subtractive copper-clad-board flow includes cutting, drilling/copper plating, photosensitive film, exposure/development and etching. Solder resist, legend printing, surface finishing, outline machining/V-cutting and inspection have separate roles; verify actual sequence against process instructions. Do not confuse circuit-forming film with solder resist on the finished board."
+        },
+        {
+          "id": "section-3",
+          "title": "Chemical treatment and scale",
+          "text": "Wet etching chemically removes unwanted copper with solutions, unlike mechanical polishing. Control solution concentration, temperature and washing. The textbook compares submillimeter PCB scales with nanometer semiconductor scales, not a single line width for every product.1 mm=10⁶nm; verify the order-of-magnitude conversion."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "ソルダレジスト",
+          "reading": "そるだれじすと",
+          "meaning": "A film on the board protecting areas where solder is not wanted and similar regions."
+        }
+      ],
+      "activity": "30-minute study target: reading10 minutes, organizing examples8, writing9, reflection3.\nSeparate photosensitive film, solder resist and legend printing by purpose. Convert0.1 mm into nm and distinguish the textbook scale comparison from specific product design values.",
+      "safety": [
+        "For equipment operation, measurement, machining or setting changes, verify qualifications, training, responsibility limits and approved procedures."
+      ],
+      "summary": "In “Distinguish PCB stages and machining scales”, compare construction, application and applicability conditions rather than names alone."
+    }
+  },
+  "questions": {}
+}
