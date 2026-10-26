@@ -33,7 +33,7 @@ for l in lessons:
  digest=hashlib.sha256(json.dumps(copy,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
  check(l.get('sourceHash')==digest,label+': source hash mismatch')
 exams=json.loads((data/'exams.ja.json').read_text())['exams'] if (data/'exams.ja.json').exists() else []
-qids=set(); prompts=set(); totals=collections.Counter()
+qids=set(); prompts=set(); totals=collections.Counter(); weeklyTotals=collections.Counter()
 for exam in exams:
  answers=[]
  for q in exam['questions']:
@@ -42,7 +42,7 @@ for exam in exams:
   check(len(q['optionsJa'])==4 and len(set(q['optionsJa']))==4,label+': invalid choices')
   check(q['answerIndex'] in range(4),label+': invalid answer')
   check(bool(q.get('explanationJa')) and len(q.get('optionExplanationsJa',[]))==4,label+': missing explanations')
-  refs(q.get('sourceRefs'),label);answers.append(q['answerIndex']);totals[q['level']]+=1
+  refs(q.get('sourceRefs'),label);answers.append(q['answerIndex']);(totals if exam.get('kind')=='mock' else weeklyTotals)[q['level']]+=1
  if exam.get('kind')=='mock':
   check(len(answers)==40,exam['id']+': mock requires40')
   check(collections.Counter(answers)=={0:10,1:10,2:10,3:10},exam['id']+': unbalanced answers')
@@ -54,8 +54,13 @@ for locale in locales:
  for lid,t in pack.items():
   source=next((l for l in lessons if l['id']==lid),None)
   check(source is not None,locale+': unknown lesson '+lid)
-  if source: check(t.get('sourceHash')==source['sourceHash'],locale+': stale translation '+lid)
+  if source:
+   check(t.get('sourceHash')==source['sourceHash'],locale+': stale translation '+lid)
+   for key in ('title','objective','activity','summary'): check(bool(t.get(key,'').strip()),locale+': empty '+key+' '+lid)
+   for para in source['paragraphs']:
+    for key in ('paragraphs','paragraphTitles'): check(bool(t.get(key,{}).get(para['id'],'')),locale+': missing '+key+' '+lid)
+   for term in source['terms']: check(bool(t.get('terms',{}).get(term['ja'],'')),locale+': missing term '+lid+' '+term['ja'])
 pending={'mockQuestions':{level:max(0,400-totals[level]) for level in ('1','2')},'lessonTranslations':{locale:max(0,len(lessons)-translated[locale]) for locale in locales},'fullBodyFurigana':'pending_verified_segments','nativeDomainReview':'pending','productionDeviceValidation':'pending'}
-report={'pending':pending,'scopeComplete':False,'lessons':dict(collections.Counter(l['level'] for l in lessons)),'mockQuestions':dict(totals),'mockQuestionTarget':{'1':400,'2':400},'translationLessons':translated,'errors':errors,'status':'PASS' if not errors else 'FAIL','meaning':'Structural check only; not native/domain/visual certification.'}
+report={'pending':pending,'scopeComplete':False,'lessons':dict(collections.Counter(l['level'] for l in lessons)),'weeklyQuestions':dict(weeklyTotals),'mockQuestions':dict(totals),'mockQuestionTarget':{'1':400,'2':400},'translationLessons':translated,'errors':errors,'status':'PASS' if not errors else 'FAIL','meaning':'Structural check only; not native/domain/visual certification.'}
 print(json.dumps(report,ensure_ascii=False,indent=2))
 raise SystemExit(bool(errors))

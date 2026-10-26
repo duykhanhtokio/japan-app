@@ -72,3 +72,17 @@ At this snapshot51 lessons existed:37 for1号 and14 for2号. Page-overlap matchi
 The37 1号 lessons were read for source consistency. No direct contradiction was found in that pass. They remain an initial conceptual treatment: full knowledge coverage still needs, among other things, detailed allergen/pathogen distinctions, table-based reading and numeric conditions where appropriate, equipment/PPE distinctions and safety-sign recognition. Referring generally to a source table is not equivalent to teaching its complete contents. No exam, illustration or translation completeness is implied by source mapping.
 
 Source-body review remains distinct from source factual correctness, up-to-date legal verification, full-document visual review, content coverage and learner-facing integration.
+
+
+## Final binding snapshot of this pass
+
+The refreshed inventory references **78 authored lessons** and **160 questions** as candidates. 153 TOC units have candidate lesson page references; 73 have candidate question knowledge-ID references; 5 have neither. The explicit unaddressed and no-lesson lists are in `source-map.json`. All158 units still await formal full-competency coverage verification.
+
+The five added1号 lessons038–042 were checked against the source lists/tables and the already inspected original visuals. Allergen names and counts, eight bacterial categories, ingredient-storage groups, contextual heating/cooling/chemical numbers, Anisakis conditions and fifteen safety-sign meanings match the attached edition. These checks do not certify current legal applicability or replace workplace procedures.
+
+The initial80 question prompts, keyed correct answers and main explanations were read. Their knowledge IDs and PDF/printed page offsets validate. One wording correction was sent to the question author:2号 q011 should say acting before deviation from CL, rather than before satisfying CL. All distractors and later forms still need scoped source review; no full exam certification is claimed.
+
+
+## Weekly assessment checkpoint update
+
+The frozen assessment inventory now contains160 mock questions and 39 weekly questions (199 total). Source-map candidate question references include the 39 additions by their explicit knowledgeId. Earlier 160-question review counts above describe the earlier snapshot; they do not certify the 39 additions. All structural/semantic review limitations remain.
