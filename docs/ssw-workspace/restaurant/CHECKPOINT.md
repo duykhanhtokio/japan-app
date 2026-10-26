@@ -1,17 +1,17 @@
 # Nhà hàng / 外食業 — checkpoint 2026-10-26
 
-## Lô04 — hoàn thiện giải nghĩa tiếng Nhật
+## Lô05 — hiển thị cách đọc có chú thích và dịch bài vệ sinh
 
-Nhánh được người dùng cho phép: `duykhanhtokio/japan-app`, `feature/restaurant-20261026`. Base đã xác minh và WORK PERSISTENCE PASS: `a7cd71d5f79f02512d3cc92f5ecd896610a6d505`. Lô04 chỉ được coi là lưu bền sau khi commit remote được fetch và đối chiếu thành công.
+Nhánh được người dùng cho phép: `duykhanhtokio/japan-app`, `feature/restaurant-20261026`. Base đã xác minh và WORK PERSISTENCE PASS: `dd39f88540b080a4987e453eacaec6eee9a3ccfe`. Chỉ coi lô05 là lưu bền sau khi commit remote được fetch và đối chiếu thành công.
 
-- Giữ120 bài Nhật (59/61),800 câu luyện tập và184 câu tuần (96/88), không sửa ngành khác hoặc UI JLPT.
-- Bổ sung190 giải nghĩa mới, nâng tổng số có giải nghĩa lên691/692. Phân biệt カキ/かき, fruitもも/meatもも và ラウンド trong ngữ cảnh chế biến cá. Không coi nghĩa từ vựng là chứng nhận bao phủ toàn bộ kiến thức.
-- Mục duy nhất chưa giải nghĩa: `うぐいす骨`. Chỉ mục PDF39 dẫn trang in4, nhưng hình cá PDF8 không ghi nhãn này. Không đoán vị trí giải phẫu. Ghi local blocker trong batch04-glossary-definitions.json.
-- Các định nghĩa có từ chuyên biệt đã đối chiếu tài liệu và nguồn công khai được ghi trong báo cáo. AI authored/unreviewed; nativeReviewed/domainReviewed giữ false. Còn46 ứng viên cách đọc cần rà ngữ cảnh.
-- Bản dịch bài252 và câu192 giữ nguyên; chưa dịch phần lớn bài/câu và bảng thuật ngữ cho12ngôn ngữ. Còn thiếu bao phủ nguồn, hình, furigana và Expo/native QA.
-- Kiểm tra cấu trúc PASS;complete FALSE. Browser thuật ngữ24trường hợp ở4kích thước kiểm tra lại sau khi bổ sung giải nghĩa. Không có tác vụ chạy ngầm sau phiên.
+- Giữ120 bài Nhật (59/61),800 câu luyện tập và184 câu tuần (96/88).
+- 691/692 thuật ngữ có giải nghĩa. Mục `うぐいす骨` vẫn là local blocker: chỉ mục dẫn tới trang in4 nhưng hình cá PDF8 không ghi nhãn này; không đoán vị trí giải phẫu.
+- Đã rà46 mục bị bộ lọc gắn cờ:45 mục có dấu ngoặc/ngăn cách, đọc đúng nhưng trước đây không được hiển thị. Hiện dùng dòng cách đọc riêng cho cả chú thích, giữ nguyên dấu câu. Một mụcヴィーガン được chuẩn hóa từう゛ぃーがん sangゔぃーがん. Không coi đây là chứng nhận toàn bộ phát âm bởi người bản ngữ. Báo cáo batch05-reading-review.json.
+- Thêm5 bài vệ sinh11–15 ×vi/en =10 bản dịch đầy đủ, đối chiếu trực tiếp tiếng Nhật hiện tại. Tổng262 bản dịch bài:vi/en25;hi/bn26;các ngôn ngữ khác20. Câu hỏi192 bản dịch giữ nguyên. Còn thiếu phần lớn nội dung cho12ngôn ngữ và bảng thuật ngữ.
+- Kiểm tra cấu trúc PASS;complete FALSE. Sàng lọc số3440trường PASS, không chứng nhận ngữ nghĩa. Browser thuật ngữ kiểm tra lại24trường hợp/4kích thước, thêm xác nhận cách đọc của mọi dòng gồm chú thích. UI JLPT byte lock10/10 PASS.
+- Chưa chạy Expo/native/thiết bị thật. Không có tác vụ chạy ngầm sau phiên.
 
-Điểm tiếp tục: xác minh thuật ngữ giải phẫu còn vướng, rà46 ứng viên cách đọc; đối chiếu bao phủ nguồn; mở rộng12ngôn ngữ; hoàn thiện hình/furigana và kiểm thử app thật.
+Điểm tiếp tục: xác minh thuật ngữ giải phẫu còn vướng; đối chiếu bao phủ nguồn; mở rộng12ngôn ngữ; hoàn thiện hình/furigana toàn bài và kiểm thử app thật.
 
 ---
 ## Checkpoint lịch sử trước lô tiếp nối

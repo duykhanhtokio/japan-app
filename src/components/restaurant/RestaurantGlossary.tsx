@@ -7,8 +7,8 @@ type GlossaryEntry={id:string;termJa:string;reading:string;explanationJa?:string
 type GlossaryGroup={id:string;titleJa:string;lessonIds:string[];entries:GlossaryEntry[]};
 function Term({entry}:{entry:GlossaryEntry}){
  const {colors}=useStudyAppearance(),{width,fontScale}=useWindowDimensions();
- const readingValid=/^[ぁ-ゖー\s]+$/u.test(entry.reading||''),available=Math.max(100,width-64)/(fontScale||1);
- if(entry.termJa.length*17>available||(readingValid&&entry.reading.length*10>available))return <View style={{width:'100%',minWidth:0}}>{readingValid&&<Text style={{fontSize:10,lineHeight:16,color:colors.muted}}>{entry.reading}</Text>}<Text selectable style={{fontSize:17,lineHeight:29,color:colors.text}}>{entry.termJa}</Text></View>;
+ const readingValid=/^[ぁ-ゖー\s（）・、]+$/u.test(entry.reading||''),annotatedReading=/[（）・、]/u.test(entry.reading||''),available=Math.max(100,width-64)/(fontScale||1);
+ if(annotatedReading||entry.termJa.length*17>available||(readingValid&&entry.reading.length*10>available))return <View style={{width:'100%',minWidth:0}}>{readingValid&&<Text style={{fontSize:10,lineHeight:16,color:colors.muted}}>{entry.reading}</Text>}<Text selectable style={{fontSize:17,lineHeight:29,color:colors.text}}>{entry.termJa}</Text></View>;
  return <RestaurantReading text={entry.termJa} segments={readingValid?[{text:entry.termJa,reading:entry.reading}]:undefined}/>;
 }
 function Group({group}:{group:GlossaryGroup}){
