@@ -1,3 +1,17 @@
+# Manufacturing SSW1 — batch05 Indonesian coverage checkpoint
+
+Date: 2026-10-26 (Asia/Tokyo). Remote baseline: 360f0f08. SSW1 only; all SSW2 sources/content remain excluded.
+
+Added 28 Indonesian lesson drafts and 48 question drafts for electrical/surface weeks 4–5. Indonesian now covers all currently authored 105 lessons and 180 weekly questions: 35 lessons/60 questions per specialty. English and Vietnamese retain the same coverage. Totals: 315 lesson–locale pairs, 540 question–locale pairs, 24 diagram-caption pairs. These counts do not mean the full curriculum is finished. Japanese remains canonical and unchanged at 105 lessons, 15 weekly checks, 180 questions and 8 diagrams; official-format mocks remain 0/30.
+
+Direct Japanese author review covered 908 translated fields with exact paragraph IDs, term order, safety-item counts, source hashes and ordered options/rationales preserved. Prior 77 Indonesian lesson entries and 132 question entries are unchanged. Canonical Japanese and EN/VI translation bytes are unchanged. Translation status stays ai_translated_draft, nativeReviewed=false, domainReviewed=false; no independent certification is claimed.
+
+Validation: data/state/source checker PASS; final focused RN Web browser PASS 60 checks, including 56 reader visits (28 lessons at 320×568 and 932×430), 48 translated questions and 192 rationales, no rationales before submission, no page overflow and 0 page errors. Twelve screenshots generated; two representative phone/landscape screenshots visually inspected and retained. JLPT approved UI lock PASS 10/10. Full Expo, TypeScript, lint, native/device and whole-app startup validation are not certified; the sparse-checkout expo/tsconfig.base warning remains. See batch05-session-evidence.json and batch05-indonesian-qa.json.
+
+Next: complete remaining source knowledge/object mapping and remaining Japanese curriculum, the other 9 target languages, and 30 original official-format mocks, then full Expo/device checks. No background worker is implied. Preserve all other sectors and revision-bound progress. Historical batch04/batch03 evidence follows; its earlier partial-ID counts are superseded by this checkpoint.
+
+---
+
 # Manufacturing SSW1 — batch04 translation continuation
 
 Date:2026-10-26 (Asia/Tokyo). Baseline:b9bbe0a4. Only SSW1; SSW2 excluded.
