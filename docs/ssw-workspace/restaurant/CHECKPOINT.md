@@ -1,18 +1,18 @@
 # Nhà hàng / 外食業 — checkpoint 2026-10-26
 
-## Lô09 —5 bài nấu ăn06–10 ×12ngôn ngữ,6AI song song
+## Lô10 —5 bài nấu ăn11–15 ×12ngôn ngữ,6AI song song
 
-Nhánh được người dùng cho phép: `duykhanhtokio/japan-app`, `feature/restaurant-20261026`. Base đã WORK PERSISTENCE PASS: `ccec2a565bfc464936916500d1002cb9e3902603`. Lô09 chỉ lưu bền sau khi commit remote được fetch và đối chiếu thành công.
+Nhánh được người dùng cho phép: `duykhanhtokio/japan-app`, `feature/restaurant-20261026`. Base đã WORK PERSISTENCE PASS: `d7335160d9ac33e189f112eb5e6bb2b54e4e072b`. Lô10 chỉ lưu bền sau khi commit remote được fetch và đối chiếu thành công.
 
-- Thêm60 bản dịch cook06–10 đủ12locale,240đoạn cùng toàn bộ tiêu đề/mục tiêu/thuật ngữ/tóm tắt/hoạt động. Sáu AI tác giả theo cặp ngôn ngữ và rà chéo độc lập;60hash review khớp bản cuối. Giữ toàn bộ record cũ/questions/ui.
-- Đã sửa rõ nghĩa một câu hoạt động Hindi và các trade labels round/semi-dressed/dressed/fillet trongZH;không coi fillet là tuyệt đối không xương hoặc sẵn sàng ăn sống. Native/domain/human review giữ false.
-- Tổng422 bản dịch bài:12locale mỗi35;hi/bn36. Giữ192 bản dịch câu. Toàn kho120bài/984câu vẫn chưa dịch đủ.
-- Cấu trúc PASS;complete FALSE; sàng lọc số4756trường PASS. Sàng lọc số không chứng nhận ngữ nghĩa. Các cảnh báo chốngnâu≠sátkhuẩn, dầu/thiếtbị≠nhiệtđộtâm, antoàn dầu/hơinước đã được rà theo bản Nhật hiện tại.
-- Browser PASS:60cặp mới ×2kích thước=120trường hợp, ngoài mẫu12locale. Ảnh chụp chọn cook09; báo cáo locale-browser-qa.json. Dùng presentation/storage adapters; chưa Expo/native/thiết bị thật.
-- Giữ120 bài Nhật (59/61),800 câu luyện tập và184 câu tuần (96/88). Glossary692/692 có giải nghĩa;うぐいす骨 vẫn chỉ có định nghĩa hẹp theo nguồnふぐ, quan hệ với sơ đồ cá chung chưa rõ.
+- Thêm60 bản dịch cook11–15 đủ12locale,264đoạn và toàn bộ tiêu đề/mục tiêu/thuật ngữ/tóm tắt/hoạt động. Bài12 và14 có5đoạn; các bài khác4đoạn. SáuAI tác giả và rà chéo độc lập;60hash toàn bộ bản dịch khớp review cuối.
+- Rà chéo đã làm rõ tên máy đóng gói chân không Nepal, dụng cụ đánh trứng Khmer, tray chữ nhật/vuông Indonesia, display Filipino và vật liệu dụng cụ. Giữ đủ danh mục máy/dụng cụ,6nhóm máy,3mục mỗi nhóm và300gram; giữ các điều kiện an toàn/nhiệtđộ/khối lượng/dung tích. Native/domain/human false.
+- Tổng482 bản dịch bài:12locale mỗi40;hi/bn41. Giữ192 bản dịch câu. Toàn kho120bài/984câu vẫn chưa dịch đủ. Mỗi shard chỉ thêm đúng5bài; mọi record cũ/questions/ui giữ nguyên.
+- Cấu trúc PASS;complete FALSE; sàng lọc số5260trường PASS. Các số viết bằng chữ đã được peer review; numeric screen không chứng nhận nghĩa.
+- Browser PASS:60cặp mới ×2kích thước=120trường hợp, ngoài mẫu12locale; ảnh chụp chọn cook14, báo cáo locale-browser-qa.json. Dùng presentation/storage adapters; chưa Expo/native/thiết bị thật.
+- Giữ120 bài Nhật (59/61),800 câu luyện tập và184 câu tuần (96/88). Glossary692/692 có giải nghĩa;うぐいす骨 chỉ có định nghĩa hẹp theo nguồnふぐ, quan hệ sơ đồ cá chung còn chưa rõ.
 - Không đổi UI JLPT/ngành song song. Còn độ bao phủ nguồn, phần lớn bản dịch, hình/furigana và native QA. Không có tác vụ chạy ngầm sau phiên.
 
-Điểm tiếp tục: cook11–15 theo12ngôn ngữ; bài vệ sinh16 cho10locale còn thiếu (hi/bn đã có); rà bao phủ nguồn, hình/furigana và app thật. Không coi số bản dịch là chứng nhận chuyên môn/người bản ngữ.
+Điểm tiếp tục: cook16trởđi theo12ngôn ngữ; vệ sinh16 cho10locale còn thiếu (hi/bn đã có); rà bao phủ nguồn, hình/furigana và app thật. Không coi số bản dịch là chứng nhận chuyên môn/người bản ngữ.
 
 ---
 ## Checkpoint lịch sử trước lô tiếp nối
