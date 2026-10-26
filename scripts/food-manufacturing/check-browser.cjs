@@ -5,8 +5,14 @@ const esbuild=require('esbuild'),{chromium}=require(require.resolve('playwright'
 const scriptFonts=[],extraFontCss='',fontFamilies='FoodQA,sans-serif';
 const font=process.env.FOOD_QA_JAPANESE_FONT;if(!font)throw Error('Set FOOD_QA_JAPANESE_FONT');fs.copyFileSync(font,path.join(out,'japanese.ttf'));
 const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0,right:0});',backdrop:'export const useBackdropOcclusion=()=>{};',storage:`export default {getItem:async k=>{if(window.__failRead)throw Error('read');return localStorage.getItem(k)},setItem:async(k,v)=>{if(window.__failWrite)throw Error('write');localStorage.setItem(k,v)}};`,royal:`import React from 'react';import {View,Pressable,Text} from 'react-native';export const ROYAL_LAYOUT={screenGutter:12,backSafeTop:8},ROYAL_FONT={};export const RoyalBackButton=({onPress})=><Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={onPress}><Text>Back</Text></Pressable>;export const RoyalContentPanel=({children,style})=><View style={style}>{children}</View>;export const RoyalExplanationPanel=RoyalContentPanel;export default ({children})=><View style={{flex:1,backgroundColor:'#eee6d6'}}>{children}</View>;`};
+const localeIds=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
+// Freeze each input once so a parallel author cannot change expectations after bundling.
+const inputFiles=['lessons.1.ja.json','lessons.2.ja.json','exams.ja.json','diagrams.json','translations/glossary.json',...localeIds.flatMap(locale=>['translations/'+locale+'.json','test-translations/'+locale+'.json'])];
+const frozenInputs=new Map(inputFiles.map(file=>[path.join(root,'src/data/food-manufacturing',file),fs.readFileSync(path.join(root,'src/data/food-manufacturing',file),'utf8')]));
+const frozenData=file=>JSON.parse(frozenInputs.get(path.join(root,'src/data/food-manufacturing',file)));
 (async()=>{
  await esbuild.build({stdin:{contents:`import React from 'react';import {createRoot} from 'react-dom/client';import {FoodManufacturingCourse} from './src/components/food-manufacturing/FoodManufacturingCourse';const locale=new URLSearchParams(location.search).get('language')||'vi';createRoot(document.getElementById('root')).render(<FoodManufacturingCourse learner="qa" language={locale} onBack={()=>{window.__left=true}}/>);`,resolveDir:root,loader:'tsx'},outfile:path.join(out,'entry.js'),bundle:true,nodePaths:(process.env.NODE_PATH||'').split(path.delimiter).filter(Boolean),platform:'browser',jsx:'automatic',define:{'process.env.NODE_ENV':'"development"','__DEV__':'true'},plugins:[{name:'browser-adapters',setup(b){
+ b.onLoad({filter:/\.json$/},a=>frozenInputs.has(a.path)?{contents:frozenInputs.get(a.path),loader:'json'}:null);
  b.onResolve({filter:/^react-native$/},()=>({path:require.resolve('react-native-web')}));
  b.onResolve({filter:/^react-native-safe-area-context$/},()=>({path:'safe',namespace:'adapter'}));
  b.onResolve({filter:/^@react-native-async-storage\/async-storage$/},()=>({path:'storage',namespace:'adapter'}));
@@ -25,11 +31,11 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
  async function start(level='1',language='vi'){await page.goto(url+'?language='+language);await fontsReady();await page.getByRole('button',{name:'特定技能'+level+'号',exact:true}).click();}
  async function reader(level='1',language='vi'){await start(level,language);await page.getByRole('button',{name:/第1週/}).click();await page.getByTestId('food-day-'+level+'-1').click();}
 
- const lessons=[...require('../../src/data/food-manufacturing/lessons.1.ja.json').lessons,...require('../../src/data/food-manufacturing/lessons.2.ja.json').lessons];
- const exams=require('../../src/data/food-manufacturing/exams.ja.json').exams;
- const report={sourceHashes:Object.fromEntries(['lessons.1.ja.json','lessons.2.ja.json','exams.ja.json'].map(file=>[file,require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(root,'src/data/food-manufacturing',file))).digest('hex')])),status:'RUNNING',readerCases:0,responsiveCases:0,translatedReaderPairs:0,testQuestions:0,viewports:[[390,844],[844,390],[768,1024],[1440,900]],screenshots,adapters:['Royal artwork','background','safe area','localStorage for AsyncStorage'],nativeDeviceTested:false,productionExpoTested:false};
+ const lessons=[...frozenData('lessons.1.ja.json').lessons,...frozenData('lessons.2.ja.json').lessons];
+ const exams=frozenData('exams.ja.json').exams;
+ const report={sourceHashes:Object.fromEntries(inputFiles.map(file=>[file,require('node:crypto').createHash('sha256').update(frozenInputs.get(path.join(root,'src/data/food-manufacturing',file))).digest('hex')])),status:'RUNNING',readerCases:0,responsiveCases:0,translatedReaderPairs:0,testQuestions:0,viewports:[[390,844],[844,390],[768,1024],[1440,900]],screenshots,adapters:['Royal artwork','background','safe area','localStorage for AsyncStorage'],nativeDeviceTested:false,productionExpoTested:false};
  for(const lesson of lessons){
-  await start(lesson.level,'ja');await page.getByRole('button',{name:new RegExp('^第'+lesson.week+'週')}).click();await page.getByTestId('food-day-'+lesson.level+'-'+lesson.day).click();const text=await page.locator('body').innerText();assert(text.includes(lesson.objectiveJa)&&text.includes(lesson.activityJa)&&text.includes(lesson.summaryJa),lesson.id);for(const p of lesson.paragraphs)assert(text.includes(p.textJa),lesson.id+'/'+p.id);report.readerCases++;
+  await start(lesson.level,'ja');await page.getByRole('button',{name:new RegExp('^第'+lesson.week+'週')}).click();await page.getByTestId('food-day-'+lesson.level+'-'+lesson.day).click();const text=await page.locator('body').innerText();assert(text.includes(lesson.objectiveJa)&&text.includes(lesson.activityJa)&&text.includes(lesson.summaryJa),lesson.id);for(const p of lesson.paragraphs)assert(text.includes(p.textJa),lesson.id+'/'+p.id);report.readerCases++;if(report.readerCases%26===0)console.log('QA Japanese readers',report.readerCases);
  }
  for(const level of ['1','2'])for(const [width,height]of report.viewports)for(const mode of ['昼','夜']){
   await page.setViewportSize({width,height});await reader(level,'ja');await page.getByRole('button',{name:mode,exact:true}).click();assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));const complete=page.getByRole('button',{name:'完了する',exact:true});await complete.scrollIntoViewIfNeeded();const box=await complete.boundingBox();assert(box&&box.y>=-1&&box.y+box.height<=height+1);const file=`reader-${level}-${width}x${height}-${mode==='昼'?'day':'night'}.png`;await page.screenshot({path:path.join(out,file)});screenshots.push(file);if(width===390){const objective=lessons.find(l=>l.level===level&&l.week===1&&l.day===1).objectiveJa;await page.getByText(objective,{exact:true}).scrollIntoViewIfNeeded();const top=`reader-${level}-390x844-${mode==='昼'?'day':'night'}-top.png`;await page.screenshot({path:path.join(out,top)});screenshots.push(top);}report.responsiveCases++;
@@ -38,21 +44,29 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
  await page.reload();await page.getByRole('button',{name:'特定技能1号',exact:true}).click();await page.getByRole('button',{name:/第1週/}).click();assert((await page.getByTestId('food-day-1-1').innerText()).includes('学習済み'));
  await start('2','ja');await page.getByRole('button',{name:/第1週/}).click();assert(!(await page.getByTestId('food-day-2-1').innerText()).includes('学習済み'));
  for(const locale of ['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']){
-  const translations=require('../../src/data/food-manufacturing/translations/'+locale+'.json');
+  const translations=frozenData('translations/'+locale+'.json');
   for(const [id,t]of Object.entries(translations)){
-   const lesson=lessons.find(l=>l.id===id);if(!lesson)continue;await start(lesson.level,locale);await page.getByRole('button',{name:new RegExp('^第'+lesson.week+'週')}).click();await page.getByTestId('food-day-'+lesson.level+'-'+lesson.day).click();await page.getByRole('button',{name:'訳を表示',exact:true}).click();const text=await page.locator('body').innerText();assert(text.includes(t.title)&&text.includes(t.objective)&&text.includes(t.summary));for(const p of lesson.paragraphs)assert(text.includes(t.paragraphs[p.id]));report.translatedReaderPairs++;
+   const lesson=lessons.find(l=>l.id===id);if(!lesson)continue;await start(lesson.level,locale);await page.getByRole('button',{name:new RegExp('^第'+lesson.week+'週')}).click();await page.getByTestId('food-day-'+lesson.level+'-'+lesson.day).click();await page.getByRole('button',{name:'訳を表示',exact:true}).click();const text=await page.locator('body').innerText();assert(text.includes(t.title)&&text.includes(t.objective)&&text.includes(t.summary));for(const p of lesson.paragraphs)assert(text.includes(t.paragraphs[p.id]));report.translatedReaderPairs++;if(report.translatedReaderPairs%78===0)console.log('QA translated reader pairs',report.translatedReaderPairs);
   }
  }
 
- const diagramData=require('../../src/data/food-manufacturing/diagrams.json').diagrams;report.diagramTranslationPairs=0;report.responsiveDiagramCases=0;report.missingTranslationCases=0;
+ report.newLocaleResponsiveCases=0;
+ for(const locale of ['id','zh-CN','zh-TW']){
+  const entries=Object.entries(frozenData('translations/'+locale+'.json')).sort((a,b)=>Object.values(b[1].paragraphs).join('').length-Object.values(a[1].paragraphs).join('').length);if(!entries.length)continue;
+  const [id,t]=entries[0],lesson=lessons.find(l=>l.id===id);
+  for(const [width,height]of report.viewports)for(const mode of ['昼','夜']){
+   await page.setViewportSize({width,height});await start(lesson.level,locale);await page.getByRole('button',{name:new RegExp('^第'+lesson.week+'週')}).click();await page.getByTestId('food-day-'+lesson.level+'-'+lesson.day).click();await page.getByRole('button',{name:'訳を表示',exact:true}).click();await page.getByRole('button',{name:mode,exact:true}).click();assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),locale+'/'+width+'/'+mode);const complete=page.getByRole('button',{name:'完了する',exact:true});await complete.scrollIntoViewIfNeeded();const box=await complete.boundingBox();assert(box&&box.y>=-1&&box.y+box.height<=height+1);if(width===390&&mode==='昼'){await page.getByText(t.title,{exact:false}).first().scrollIntoViewIfNeeded();const file='reader-'+locale+'-390x844.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}report.newLocaleResponsiveCases++;
+  }
+ }
+ const diagramData=frozenData('diagrams.json').diagrams;report.diagramTranslationPairs=0;report.responsiveDiagramCases=0;report.missingTranslationCases=0;
  await page.setViewportSize({width:390,height:844});
- for(const d of diagramData)for(const locale of ['vi','en']){
+ for(const d of diagramData)for(const locale of Object.keys(d.translations)){
   const lesson=lessons.find(l=>l.id===d.lessonIds[0]);if(!lesson)continue;await start(lesson.level,locale);await page.getByRole('button',{name:new RegExp('^第'+lesson.week+'週')}).click();await page.getByTestId('food-day-'+lesson.level+'-'+lesson.day).click();const figure=page.getByTestId(d.id);assert(!(await figure.innerText()).includes(d.translations[locale].title));await page.getByRole('button',{name:'訳を表示',exact:true}).click();const text=await figure.innerText(),t=d.translations[locale];assert(text.includes(d.titleJa)&&text.includes(t.title)&&text.includes(t.description)&&text.includes(t.note));for(const label of Object.values(t.nodeLabels))assert(text.includes(label));for(const label of t.edgeLabels)assert(text.includes(label));for(const [width,height]of report.viewports)for(const mode of ['昼','夜']){await page.setViewportSize({width,height});await page.getByRole('button',{name:mode,exact:true}).click();assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),d.id+'/'+locale+'/'+width+'/'+mode);const figureBox=await figure.boundingBox();assert(figureBox&&figureBox.x>=-1&&figureBox.x+figureBox.width<=width+1);const complete=page.getByRole('button',{name:'完了する',exact:true});await complete.scrollIntoViewIfNeeded();const bounds=await complete.boundingBox();assert(bounds&&bounds.y>=-1&&bounds.y+bounds.height<=height+1);if(width===390&&mode==='昼'){await figure.scrollIntoViewIfNeeded();const file=d.id+'-'+locale+'-390x844.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}report.responsiveDiagramCases++;}await page.getByRole('button',{name:'訳を隠す',exact:true}).click();assert(!(await figure.innerText()).includes(t.title));report.diagramTranslationPairs++;
  }
  for(const locale of ['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']){
-  const pack=require('../../src/data/food-manufacturing/translations/'+locale+'.json'),lesson=lessons.find(l=>!pack[l.id]);if(!lesson)continue;await start(lesson.level,locale);await page.getByRole('button',{name:new RegExp('^第'+lesson.week+'週')}).click();await page.getByTestId('food-day-'+lesson.level+'-'+lesson.day).click();await page.getByRole('button',{name:'訳を表示',exact:true}).click();assert((await page.locator('body').innerText()).includes('この言語の訳は準備中です。'));report.missingTranslationCases++;
+  const pack=frozenData('translations/'+locale+'.json'),lesson=lessons.find(l=>!pack[l.id]);if(!lesson)continue;await start(lesson.level,locale);await page.getByRole('button',{name:new RegExp('^第'+lesson.week+'週')}).click();await page.getByTestId('food-day-'+lesson.level+'-'+lesson.day).click();await page.getByRole('button',{name:'訳を表示',exact:true}).click();assert((await page.locator('body').innerText()).includes('この言語の訳は準備中です。'));report.missingTranslationCases++;
  }
- for(const exam of exams){
+ for(const exam of exams){console.log('QA assessment',exam.id);
   const level=exam.level,index=exams.filter(e=>e.level===level).findIndex(e=>e.id===exam.id);
   await start(level,'ja');await page.getByRole('button',{name:'確認・模擬試験',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).nth(index).click();await page.getByRole('button',{name:'次へ',exact:true}).waitFor();assert(!(await page.locator('body').innerText()).includes('正解：'));
   await page.evaluate(()=>window.__failWrite=true);await page.getByRole('button').filter({hasText:/^1\. /}).first().click();await page.getByRole('alert').waitFor();await page.evaluate(()=>window.__failWrite=false);await page.getByRole('button',{name:'保存を再試行',exact:true}).click();await page.getByRole('button',{name:'提出する',exact:true}).waitFor();await page.getByRole('button',{name:'次へ',exact:true}).click();await page.reload();await page.getByRole('button',{name:'特定技能'+level+'号',exact:true}).click();await page.getByRole('button',{name:'確認・模擬試験',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).nth(index).click();await page.getByRole('button',{name:'提出する',exact:true}).waitFor();assert((await page.locator('body').innerText()).includes('2 /'));await page.getByRole('button',{name:'前へ',exact:true}).click();
@@ -61,6 +75,30 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
   }
   await page.getByRole('button',{name:'提出する',exact:true}).click();await page.getByRole('button',{name:'キャンセル',exact:true}).click();assert(!(await page.locator('body').innerText()).includes('正解：'));await page.getByRole('button',{name:'提出する',exact:true}).click();await page.getByRole('button',{name:'確定',exact:true}).click();await page.getByRole('button',{name:'もう一度解く',exact:true}).waitFor();assert((await page.locator('body').innerText()).includes(`正解 ${exam.questions.length} / ${exam.questions.length}`));await page.getByRole('button',{name:'Back',exact:true}).click();await page.getByText(/問 · ✓ 完了/).first().waitFor();
  }
+
+ report.translatedQuestionPairs=0;report.testTranslationLeakChecks=0;report.testTranslationResponsiveCases=0;
+ for(const locale of ['vi','en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']){
+  const pack=frozenData('test-translations/'+locale+'.json');
+  for(const exam of exams.filter(e=>e.questions.some(q=>pack.questions[q.id]))){
+   const index=exams.filter(e=>e.level===exam.level).findIndex(e=>e.id===exam.id);
+   await start(exam.level,locale);await page.getByRole('button',{name:'確認・模擬試験',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).nth(index).click();
+   await page.getByRole('button',{name:'もう一度解く',exact:true}).click();await page.getByRole('button',{name:'確定',exact:true}).click();
+   await page.getByRole('button',{name:'訳を表示',exact:true}).click();
+   for(const [i,q]of exam.questions.entries()){
+    const t=pack.questions[q.id];if(!t){if(i<exam.questions.length-1)await page.getByRole('button',{name:'次へ',exact:true}).click();continue;}
+    let text=await page.locator('body').innerText();assert(text.includes(q.promptJa)&&text.includes(t.prompt),q.id+'/'+locale);for(const v of t.options)assert(text.includes(v),q.id+'/'+locale+'/choice');assert(!text.includes('正解：'));assert(!text.includes(t.explanation),q.id+'/'+locale+'/early explanation');report.testTranslationLeakChecks++;
+    for(const [width,height]of report.viewports){await page.setViewportSize({width,height});assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),q.id+'/'+locale+'/width');report.testTranslationResponsiveCases++;}
+    await page.getByRole('button').filter({hasText:new RegExp('^'+(q.answerIndex+1)+'\\. ')}).first().click();if(i<exam.questions.length-1)await page.getByRole('button',{name:'次へ',exact:true}).click();
+   }
+   await page.getByRole('button',{name:'提出する',exact:true}).click();await page.getByRole('button',{name:'確定',exact:true}).click();await page.getByRole('button',{name:'もう一度解く',exact:true}).waitFor();
+   for(let i=exam.questions.length-1;i>=0;i--){
+    const q=exam.questions[i],t=pack.questions[q.id];if(t){const text=await page.locator('body').innerText();assert(text.includes(t.explanation),q.id+'/'+locale+'/review');for(const reason of t.optionExplanations)assert(text.includes(reason),q.id+'/'+locale+'/reason');report.translatedQuestionPairs++;}
+    if(i>0)await page.getByRole('button',{name:'前へ',exact:true}).click();
+   }
+   if(locale==='vi'&&exam.id==='food-1-weekly-01'){await page.setViewportSize({width:390,height:844});const file='translated-weekly-review-vi-390x844.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}
+  }
+ }
+ await start('1','vi');await page.getByRole('button',{name:'確認・模擬試験',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).first().click();await page.getByRole('button',{name:'訳を表示',exact:true}).click();assert((await page.locator('body').innerText()).includes('この言語の問題訳は準備中です。'));report.missingQuestionTranslationHandled=true;
  assert.deepEqual(errors,[]);Object.assign(report,{status:'PASS',completionSaveFailureHandled:true,examSaveFailureHandled:true,completionReload:true,levelIsolation:true,examResume:true,hiddenAnswersBeforeSubmit:true,cancelSubmit:true,completionBadge:true,japaneseQaFontLoaded:true});fs.writeFileSync(path.join(root,'docs/ssw-workspace/food-manufacturing/browser-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
  }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1});

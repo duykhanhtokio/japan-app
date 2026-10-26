@@ -60,7 +60,27 @@ for locale in locales:
    for para in source['paragraphs']:
     for key in ('paragraphs','paragraphTitles'): check(bool(t.get(key,{}).get(para['id'],'')),locale+': missing '+key+' '+lid)
    for term in source['terms']: check(bool(t.get('terms',{}).get(term['ja'],'')),locale+': missing term '+lid+' '+term['ja'])
+def runtime_revision(value):
+ text=json.dumps(value,ensure_ascii=False,separators=(',',':')).encode('utf-16-le');h=2166136261
+ for i in range(0,len(text),2):h=((h^(text[i]+256*text[i+1]))*16777619)&0xffffffff
+ return f'fnv1a-{h:x}'
+source_questions={q['id']:q for e in exams for q in e['questions']}
+source_exams={e['id']:e for e in exams}
+question_translations={}
+for locale in locales:
+ path=data/'test-translations'/f'{locale}.json';pack=json.loads(path.read_text()) if path.exists() else {'questions':{},'examTitles':{}}
+ question_translations[locale]=len(pack['questions'])
+ for qid,t in pack['questions'].items():
+  q=source_questions.get(qid);check(q is not None,locale+': unknown translated question '+qid)
+  if q:
+   check(t.get('sourceHash')==runtime_revision({k:q[k] for k in ['promptJa','optionsJa','explanationJa','optionExplanationsJa']}),locale+': stale question '+qid)
+   check(bool(t.get('prompt')) and bool(t.get('explanation')),locale+': empty question text '+qid)
+   check(len(t.get('options',[]))==4 and all(isinstance(x,str) and x.strip() for x in t['options']),locale+': incomplete choices '+qid)
+   check(len(t.get('optionExplanations',[]))==4 and all(isinstance(x,str) and x.strip() for x in t['optionExplanations']),locale+': incomplete option reasons '+qid)
+ for eid,t in pack['examTitles'].items():
+  e=source_exams.get(eid);check(e is not None,locale+': unknown translated exam '+eid)
+  if e:check(t.get('sourceHash')==runtime_revision({'titleJa':e['titleJa']}) and bool(t.get('title')),locale+': stale/empty exam title '+eid)
 pending={'mockQuestions':{level:max(0,400-totals[level]) for level in ('1','2')},'lessonTranslations':{locale:max(0,len(lessons)-translated[locale]) for locale in locales},'fullBodyFurigana':'pending_verified_segments','nativeDomainReview':'pending','productionDeviceValidation':'pending'}
-report={'pending':pending,'scopeComplete':False,'lessons':dict(collections.Counter(l['level'] for l in lessons)),'weeklyQuestions':dict(weeklyTotals),'mockQuestions':dict(totals),'mockQuestionTarget':{'1':400,'2':400},'translationLessons':translated,'errors':errors,'status':'PASS' if not errors else 'FAIL','meaning':'Structural check only; not native/domain/visual certification.'}
+report={'pending':pending,'scopeComplete':False,'lessons':dict(collections.Counter(l['level'] for l in lessons)),'weeklyQuestions':dict(weeklyTotals),'mockQuestions':dict(totals),'mockQuestionTarget':{'1':400,'2':400},'translationLessons':translated,'translatedQuestions':question_translations,'errors':errors,'status':'PASS' if not errors else 'FAIL','meaning':'Structural check only; not native/domain/visual certification.'}
 print(json.dumps(report,ensure_ascii=False,indent=2))
 raise SystemExit(bool(errors))

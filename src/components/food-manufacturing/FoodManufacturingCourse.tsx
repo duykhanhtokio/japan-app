@@ -9,7 +9,7 @@ import {useBackdropOcclusion} from '@/components/ui/AppBackdrop';
 import {RoyalContentPanel,RoyalExplanationPanel} from '@/components/ui/RoyalPanels';
 import {TokuteiHeader,TokuteiDayCard} from '@/components/tokutei/TokuteiChrome';
 import {StudyAppearanceProvider,ReadingAppearanceControl,TranslationText,useStudyAppearance} from '@/components/tokutei/StudyAppearance';
-import {foodManufacturingWeeks,foodManufacturingLesson,foodManufacturingChecks,foodManufacturingTranslation,foodManufacturingTermTranslation,type FoodManufacturingLevel,type FoodManufacturingLesson,type FoodManufacturingExam} from '@/data/food-manufacturing';
+import {foodManufacturingWeeks,foodManufacturingLesson,foodManufacturingChecks,foodManufacturingTranslation,foodManufacturingTermTranslation,foodManufacturingQuestionTranslation,foodManufacturingExamTitleTranslation,type FoodManufacturingLevel,type FoodManufacturingLesson,type FoodManufacturingExam} from '@/data/food-manufacturing';
 import {foodManufacturingCompletionKey,foodManufacturingExamKey,restoreFoodManufacturingProgress,foodManufacturingLessonDone,freshTestAttempt,restoreTestAttempt,gradeTest,type FoodManufacturingProgress,type TestAttempt} from '@/services/food-manufacturing-study-state';
 function Button({title,onPress,disabled=false,selected=false}:{title:string;onPress:()=>void;disabled?:boolean;selected?:boolean}) {
  const {colors}=useStudyAppearance();return <Pressable accessibilityRole="button" accessibilityState={{disabled,selected}} disabled={disabled} onPress={onPress} style={[s.button,{borderColor:colors.border,backgroundColor:selected?colors.translation:colors.background,opacity:disabled?.45:1}]}><Text style={{color:colors.text,fontSize:16,lineHeight:25,textAlign:'center'}}>{title}</Text></Pressable>;
@@ -33,7 +33,7 @@ function Course({learner,language,level,onBack}:{learner:string;language:string;
   const next:FoodManufacturingProgress={version:1,entries:{...progress.entries,[lesson.id]:lesson.sourceHash}};
   try{await AsyncStorage.setItem(key,JSON.stringify(next));if(live.current){setProgress(next);setLesson(null);}}catch{if(live.current)setError(true);}finally{busy.current=false;if(live.current)setSaving(false);}
  };
- if(exam)return <Attempt key={exam.id} learner={learner} level={level} exam={exam} onBack={()=>setExam(null)}/>;
+ if(exam)return <Attempt key={exam.id} learner={learner} level={level} exam={exam} language={language} onBack={()=>setExam(null)}/>;
  if(lesson)return <Reader key={lesson.id} lesson={lesson} language={language} saving={saving} saveError={error} onComplete={()=>{void complete();}} onBack={()=>setLesson(null)}/>;
  const weeks=foodManufacturingWeeks(level),selected=week===null?null:weeks[week];
  return <Surface><TokuteiHeader title={`飲食料品製造業 · ${level}号`} onBack={()=>{if(selected)setWeek(null);else onBack();}}/><ScrollView contentContainerStyle={s.content}>
@@ -60,7 +60,8 @@ function Reader({lesson,language,onBack,onComplete,saving,saveError}:{lesson:Foo
  <Button title={saving?'保存中…':'完了する'} disabled={saving} onPress={onComplete}/>
  </ScrollView></Surface>;
 }
-function Attempt({learner,level,exam,onBack}:{learner:string;level:FoodManufacturingLevel;exam:FoodManufacturingExam;onBack:()=>void}) {
+function Attempt({learner,level,exam,language,onBack}:{learner:string;level:FoodManufacturingLevel;exam:FoodManufacturingExam;language:string;onBack:()=>void}) {
+ const [showTranslation,setShowTranslation]=useState(false);
  const [attempt,setAttempt]=useState<TestAttempt|null>(null),[error,setError]=useState<'read'|'invalid'|'write'|null>(null),[saving,setSaving]=useState(false),[confirm,setConfirm]=useState<'submit'|'restart'|'leave'|'reset'|null>(null),[retry,setRetry]=useState(0);
  const live=useRef(true),queue=useRef(Promise.resolve()),latest=useRef<TestAttempt|null>(null),serial=useRef(0),{colors}=useStudyAppearance(),key=foodManufacturingExamKey(learner,level,exam.id);
  useEffect(()=>{live.current=true;setAttempt(null);setError(null);AsyncStorage.getItem(key).then(raw=>{if(!live.current)return;const a=restoreTestAttempt(raw,exam);if(a){setAttempt(a);latest.current=a;}else setError('invalid');}).catch(()=>{if(live.current)setError('read');});return()=>{live.current=false;};},[key,exam,retry]);
@@ -68,14 +69,17 @@ function Attempt({learner,level,exam,onBack}:{learner:string;level:FoodManufactu
   latest.current=next;setAttempt(next);setSaving(true);const n=++serial.current;
   queue.current=queue.current.catch(()=>{}).then(()=>AsyncStorage.setItem(key,JSON.stringify(next))).then(()=>{if(live.current&&n===serial.current){setSaving(false);setError(null);}}).catch(()=>{if(live.current&&n===serial.current){setSaving(false);setError('write');}});
  };
- const q=attempt?exam.questions[attempt.currentQuestion]:null,result=attempt?gradeTest(exam,attempt.answers):null;
+ const q=attempt?exam.questions[attempt.currentQuestion]:null,t=q?foodManufacturingQuestionTranslation(q,language):null,translatedTitle=foodManufacturingExamTitleTranslation(exam,language),result=attempt?gradeTest(exam,attempt.answers):null;
  return <Surface reading><TokuteiHeader title={exam.titleJa} onBack={()=>{if(saving)return;if(error==='write')setConfirm('leave');else onBack();}}/><ScrollView contentContainerStyle={s.content}>
  {!attempt?<><Text style={[s.body,{color:colors.text}]}>{error==='invalid'?'保存記録の内容が現在の問題と一致しません。記録は上書きしていません。':error?'保存記録を読み込めませんでした。':'読み込み中…'}</Text>{error&&<Button title="読み込みを再試行" onPress={()=>setRetry(n=>n+1)}/ >}{error==='invalid'&&<Button title="この試験の記録を初期化" onPress={()=>setConfirm('reset')}/>}</>:q&&<>
  {error==='write'&&<><Text accessibilityRole="alert" style={[s.body,{color:colors.text}]}>回答を保存できませんでした。</Text><Button title="保存を再試行" disabled={saving} onPress={()=>{if(latest.current)persist(latest.current);}}/></>}
+ {language!=='ja'&&<Button title={showTranslation?'訳を隠す':'訳を表示'} onPress={()=>setShowTranslation(v=>!v)}/>}
+ {showTranslation&&translatedTitle&&<TranslationText>{translatedTitle}</TranslationText>}
+ {showTranslation&&language!=='ja'&&!t&&<TranslationText>この言語の問題訳は準備中です。</TranslationText>}
  {attempt.submitted&&result&&<Text style={[s.heading,{color:colors.text}]}>正解 {result.correct} / {result.total} · 未回答 {result.unanswered}</Text>}
- <Text style={[s.body,{color:colors.text}]}>{attempt.currentQuestion+1} / {exam.questions.length}</Text><Text style={[s.heading,{color:colors.text}]}>{q.stemJa}</Text>
- {q.optionsJa.map((text,i)=><Button key={i} title={`${i+1}. ${text}`} selected={attempt.answers[attempt.currentQuestion]===i} disabled={attempt.submitted} onPress={()=>{const current=latest.current??attempt;const answers=[...current.answers];answers[current.currentQuestion]=i;persist({...current,answers});}}/>)}
- {attempt.submitted&&<View><Text style={[s.body,{color:colors.text}]}>正解：{q.correctIndex+1}</Text><Text style={[s.body,{color:colors.text}]}>{q.explanationJa}</Text>{q.optionReasonsJa.map((why,i)=><Text key={i} style={[s.body,{color:colors.text}]}>{i+1}. {why}</Text>)}</View>}
+ <Text style={[s.body,{color:colors.text}]}>{attempt.currentQuestion+1} / {exam.questions.length}</Text><Text style={[s.heading,{color:colors.text}]}>{q.stemJa}</Text>{showTranslation&&t&&<TranslationText>{t.prompt}</TranslationText>}
+ {q.optionsJa.map((text,i)=><View key={i}><Button title={`${i+1}. ${text}`} selected={attempt.answers[attempt.currentQuestion]===i} disabled={attempt.submitted} onPress={()=>{const current=latest.current??attempt;const answers=[...current.answers];answers[current.currentQuestion]=i;persist({...current,answers});}}/>{showTranslation&&t&&<TranslationText>{t.options[i]}</TranslationText>}</View>)}
+ {attempt.submitted&&<View><Text style={[s.body,{color:colors.text}]}>正解：{q.correctIndex+1}</Text><Text style={[s.body,{color:colors.text}]}>{q.explanationJa}</Text>{showTranslation&&t&&<TranslationText>{t.explanation}</TranslationText>}{q.optionReasonsJa.map((why,i)=><View key={i}><Text style={[s.body,{color:colors.text}]}>{i+1}. {why}</Text>{showTranslation&&t&&<TranslationText>{t.optionExplanations[i]}</TranslationText>}</View>)}</View>}
  <View style={s.row}><Button title="前へ" disabled={attempt.currentQuestion===0} onPress={()=>persist({...(latest.current??attempt),currentQuestion:Math.max(0,(latest.current??attempt).currentQuestion-1)})}/><Button title="次へ" disabled={attempt.currentQuestion===exam.questions.length-1} onPress={()=>persist({...(latest.current??attempt),currentQuestion:Math.min(exam.questions.length-1,(latest.current??attempt).currentQuestion+1)})}/></View>
  <Button title={attempt.submitted?'もう一度解く':saving?'保存中…':'提出する'} disabled={saving||error==='write'} onPress={()=>setConfirm(attempt.submitted?'restart':'submit')}/>
  </>}

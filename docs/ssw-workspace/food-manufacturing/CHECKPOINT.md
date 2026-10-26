@@ -1,17 +1,21 @@
 # Food manufacturing implementation checkpoint
 
-Internal development preview only. Read IMPLEMENTATION_REQUEST.md, progress.json, source-review.md and source-map.json. Counts in progress.json are authored candidates, not release certification.
+Internal development preview on feature/food-manufacturing-20261026. Read IMPLEMENTATION_REQUEST.md, progress.json, source-review.md, source-map.json and batch-02-review.json. Authored counts and structural checks are not expert/native or release certification.
 
-Independent worktree/branch from 31abbf8d. Existing agriculture worktree preserved. No JLPT UI changes. Do not merge/release unreviewed material automatically.
+## Current content
 
-Browser QA uses react-native-web with explicit background, Royal artwork, safe-area and AsyncStorage adapters. It is not a full Expo build or device certification. See browser-qa.json for tested snapshot and check-content.py for current structural checks.
+- 78 canonical Japanese lessons: 42 for 1号 in 7 weeks and 36 for 2号 in 6 weeks. Source hashes preserved.
+- 20 mock forms: 10 for each level, 40 questions each (800 total).
+- 13 independent weekly checks: 3 questions each (39 total).
+- Full EN,VI,ID,zh-CN,zh-TW lesson packs: 78 each, 390 lesson-locale pairs. Four precise color diagrams have captions in all five locales.
+- Vietnamese translations of all 39 weekly questions, their four choices/reasons, and 13 weekly assessment titles. Translation source revisions are checked; explanations appear only after submission. Missing/stale translations return no fallback.
 
-User-facing PDF sources are not redistributed in this repository; input-manifest.json records checksums. Source files remain the two user uploads.
+The prior 17 assessment objects were preserved exactly. New forms03–10 per level use chapter-stratified independent author pools; every new 2号 form covers all six source chapters. Option/explanation pairs remain aligned after answer-position balancing. Source references use original printed/PDF pages; source PDFs/images are not redistributed.
 
-Resume remaining tasks in progress.json; preserve completed Japanese sourceHash values so translations and completion records remain revision-bound.
+## Validation and resume
 
-## Authored candidate inventory
+Run scripts/food-manufacturing/check-content.py, check-state.mjs, check-question-translations.cjs and check-browser.cjs as documented by their environment checks. Full browser QA freezes all JSON inputs before bundling to avoid races with parallel authors. It uses react-native-web with explicit Royal artwork, background, safe-area and storage adapters; it is not a full Expo build or native-device certification. Consult browser-qa.json hashes and actual counts.
 
-78 Japanese lessons:42 for 1号 (7 weeks) and36 for 2号 (6 weeks). Full revision-bound Vietnamese and English lesson packs: 78 each. Four 40-question mock forms (160/800 target), plus 13 weekly checks of 3 questions (39additional). Four precise color concept diagrams with EN/VI caption data. Ten other locale lesson packs remain empty and are not counted translated; twelve-locale glossary is limited to 12 terms.
+Remaining:seven lesson locales (hi,bn,ne,my,th,km,tl), remaining assessment translations, verified full-body furigana, detailed competency mapping, complete source visual review, original illustrative assets as needed, optional prerecorded audio, full Expo/native validation and expert/native review. This preview must not be treated as a completed production release.
 
-Remaining work is mandatory:640 mock items,10 locale lesson packs, all test translations, verified full-body furigana, full detailed competency mapping, original illustrative assets as needed, full Expo/native validation. This checkpoint is an internal development preview and not a completed release.
+Worktree is independent from agriculture. Preserve unrelated work and the approved JLPT UI. Native/expert review flags remain false. Source subsection end pages inferred from the TOC can omit continuation text; 96 candidate reference ranges require detailed mapping review and are explicitly recorded, not silently certified.
