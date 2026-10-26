@@ -1,3 +1,19 @@
+# Manufacturing SSW1 — batch06 mechanical week6
+
+Date: 2026-10-26 (Asia/Tokyo). Previous manufacturing checkpoint: dc2b8691. SSW1 only; SSW2 attachments remain excluded.
+
+Added 7 original Japanese lessons and 12 original four-choice weekly questions for mechanical week6: pH/redox,3R/circular economy,standards scope/edition,impact/bend/fatigue, dial indicators,othercomparative instruments,master/limit gauges. Mechanical now has42lessons/6weeks;electrical andsurface retain35lessons/5weeks each. Totals112lessons,16weeklychecks,192questions. Each newlesson has aweeklyitem;answers balance3perposition withno triples. Existing105lessons/180questions andtheir revisions are unchanged.
+
+All7newlessons and12questions have directJapanese EN/VI/IDdrafts:21lessonpairs and36questionpairs added. Eachofthose3locales now covers112lessons/192questions;totals336lessonpairs and576questionpairs. Sourcehashes bind translations;prior translations unchanged. Author compared639translatedfields,without independent/native/domain certification.
+
+Sourcework:15physicalpages from theuploadedmechanicalSSW1PDF were extracted,rendered andvisuallyread,including diagrams,panels andexerciseexplanations. Noneofthereferenceexercises werecopied.12previouslyunlinkedTOCrows nowlinktodraftlessons;215of487TOCrows have draftlinks,not215fullycoveredknowledgeunits. See batch06-source-review.json forscope andqualifications concerning pHrange/neutrality,markingvsacceptance,material-specificbendangle,signedcomparativevalues,mastervslimitroles andthreadNOGOcriteria. Fullknowledgeatomization remainsincomplete; no cumulativeunique-pagecoverageclaim.
+
+Data/state/sourcechecker PASS:112lessons/192questions/336lessonpairs/576questionpairs. JLPTapprovedUIlock PASS10/10. FinalfocusedRNWebbrowser PASS49checks:42translatedreadervisits,36translatedquestionvisits,144postsubmissionrationales,noearlyrationaleleak,answer/positionresume,week6completionreturn,0pageerrors andnohorizontaloverflowat320×568/932×430. Sixscreenshotsgenerated;phone/landscapeevidence visuallyinspected andtwosaved. See batch06-content-qa.json andbatch06-session-evidence.json. Harness usesstorage/safearea/Royaladapters;fullExpo/native/devicebehaviorisnotcertified. Existingexpo/tsconfig.basewarningretained;fulltypecheck/lint/buildunrun.
+
+Eightpreviousdiagrams unchanged;newmeasurementillustrations remainpending. Officialformatmocks remain0/30. Next:remainingJapanese sourceknowledge/curriculumgaps across3specialties,illustrations,9otherlocales,30originalofficial-formatmocks,andfullExpo/devicechecks. No backgroundworker is implied. Historical checkpoints follow;earlier totals are superseded.
+
+---
+
 # Manufacturing SSW1 — batch05 Indonesian coverage checkpoint
 
 Date: 2026-10-26 (Asia/Tokyo). Remote baseline: 360f0f08. SSW1 only; all SSW2 sources/content remain excluded.
