@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+"""Validate authored food content without pretending pending scope is complete."""
+import collections, hashlib, json, pathlib, re
+root=pathlib.Path(__file__).resolve().parents[2]
+data=root/'src/data/food-manufacturing'
+errors=[]
+def check(ok,message):
+ if not ok: errors.append(message)
+def refs(items,label):
+ check(bool(items),label+': missing sources')
+ for ref in items:
+  doc=ref.get('document'); p=ref.get('pdfPage'); printed=ref.get('printedPage')
+  check(doc in ('ssw1','ssw2'),label+': invalid source')
+  check(isinstance(p,int) and 1<=p<=({'ssw1':86,'ssw2':165}.get(doc,0)),label+': invalid PDF page')
+  if printed is not None: check(p==printed+({'ssw1':5,'ssw2':9}.get(doc,0)),label+': wrong page offset')
+lessons=[]
+for level in ('1','2'):
+ path=data/f'lessons.{level}.ja.json'
+ if path.exists(): lessons+=json.loads(path.read_text())['lessons']
+ids=set(); titles=set()
+for l in lessons:
+ label=l['id']; check(label not in ids,label+': duplicate ID'); ids.add(label)
+ check(l['titleJa'] not in titles,label+': duplicate title'); titles.add(l['titleJa'])
+ for key in ('titleJa','objectiveJa','activityJa','summaryJa'): check(bool(l.get(key,'').strip()),label+': empty '+key)
+ check(l.get('level') in ('1','2'),label+': invalid level')
+ check(l.get('week',0)>0 and 1<=l.get('day',0)<=7,label+': invalid calendar')
+ check(len(l.get('paragraphs',[]))>=2,label+': too few explanation units')
+ for p in l.get('paragraphs',[]):
+  check(bool(p.get('titleJa')) and len(p.get('textJa',''))>=35,label+': short/empty paragraph')
+ for t in l.get('terms',[]): check(bool(t.get('ja')) and bool(t.get('reading')),label+': missing term reading')
+ refs(l.get('sourceRefs'),label)
+ copy={k:v for k,v in l.items() if k!='sourceHash'}
+ digest=hashlib.sha256(json.dumps(copy,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+ check(l.get('sourceHash')==digest,label+': source hash mismatch')
+exams=json.loads((data/'exams.ja.json').read_text())['exams'] if (data/'exams.ja.json').exists() else []
+qids=set(); prompts=set(); totals=collections.Counter()
+for exam in exams:
+ answers=[]
+ for q in exam['questions']:
+  label=q['id']; check(label not in qids,label+': duplicate ID'); qids.add(label)
+  prompt=re.sub(r'\s+','',q['promptJa']);check(prompt not in prompts,label+': duplicate prompt');prompts.add(prompt)
+  check(len(q['optionsJa'])==4 and len(set(q['optionsJa']))==4,label+': invalid choices')
+  check(q['answerIndex'] in range(4),label+': invalid answer')
+  check(bool(q.get('explanationJa')) and len(q.get('optionExplanationsJa',[]))==4,label+': missing explanations')
+  refs(q.get('sourceRefs'),label);answers.append(q['answerIndex']);totals[q['level']]+=1
+ if exam.get('kind')=='mock':
+  check(len(answers)==40,exam['id']+': mock requires40')
+  check(collections.Counter(answers)=={0:10,1:10,2:10,3:10},exam['id']+': unbalanced answers')
+  check(all(not(a==b==c) for a,b,c in zip(answers,answers[1:],answers[2:])),exam['id']+': answer run')
+locales=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];translated={}
+for locale in locales:
+ path=data/'translations'/f'{locale}.json'; pack=json.loads(path.read_text()) if path.exists() else {}
+ translated[locale]=len(pack)
+ for lid,t in pack.items():
+  source=next((l for l in lessons if l['id']==lid),None)
+  check(source is not None,locale+': unknown lesson '+lid)
+  if source: check(t.get('sourceHash')==source['sourceHash'],locale+': stale translation '+lid)
+pending={'mockQuestions':{level:max(0,400-totals[level]) for level in ('1','2')},'lessonTranslations':{locale:max(0,len(lessons)-translated[locale]) for locale in locales},'fullBodyFurigana':'pending_verified_segments','nativeDomainReview':'pending','productionDeviceValidation':'pending'}
+report={'pending':pending,'scopeComplete':False,'lessons':dict(collections.Counter(l['level'] for l in lessons)),'mockQuestions':dict(totals),'mockQuestionTarget':{'1':400,'2':400},'translationLessons':translated,'errors':errors,'status':'PASS' if not errors else 'FAIL','meaning':'Structural check only; not native/domain/visual certification.'}
+print(json.dumps(report,ensure_ascii=False,indent=2))
+raise SystemExit(bool(errors))

@@ -54,10 +54,10 @@ export default function SpecifiedSkillsScreen() {
                     ({ icon, ja, vi }) => (
                         <Pressable
                             key={ja}
-                            accessibilityRole={(ja==='介護'||ja==='建設'||ja==='農業')&&__DEV__?'button':undefined}
-                            accessibilityLabel={(ja==='介護'||ja==='建設'||ja==='農業')&&__DEV__?uiText('internalPreview',language,{name:ja}):ja}
-                            disabled={(ja!=='介護'&&ja!=='建設'&&ja!=='農業')||!__DEV__}
-                            onPress={()=>{void pushPrepared(ja==='建設'?'/specified-skills/kensetsu':ja==='農業'?'/specified-skills/agriculture':'/specified-skills/kaigo');}}
+                            accessibilityRole={(ja==='介護'||ja==='建設'||ja==='農業'||ja==='飲食料品製造業')&&__DEV__?'button':undefined}
+                            accessibilityLabel={(ja==='介護'||ja==='建設'||ja==='農業'||ja==='飲食料品製造業')&&__DEV__?uiText('internalPreview',language,{name:ja}):ja}
+                            disabled={(ja!=='介護'&&ja!=='建設'&&ja!=='農業'&&ja!=='飲食料品製造業')||!__DEV__}
+                            onPress={()=>{void pushPrepared(ja==='建設'?'/specified-skills/kensetsu':ja==='農業'?'/specified-skills/agriculture':ja==='飲食料品製造業'?'/specified-skills/food-manufacturing':'/specified-skills/kaigo');}}
                             style={
                                 styles.card
                             }

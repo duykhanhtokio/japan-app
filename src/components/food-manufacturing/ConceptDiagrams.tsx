@@ -1,0 +1,6 @@
+import {Text,View,StyleSheet} from 'react-native';
+import data from '@/data/food-manufacturing/diagrams.json';
+export function FoodConceptDiagrams({lessonId,textColor}:{lessonId:string;textColor:string}){
+ return <>{data.diagrams.filter(d=>d.lessonIds.includes(lessonId as never)).map(d=><View key={d.id} testID={d.id} style={s.diagram} accessible accessibilityLabel={`${d.titleJa}。${d.descriptionJa}。${d.noteJa}`}><Text style={[s.title,{color:textColor}]}>{d.titleJa}</Text><Text style={[s.body,{color:textColor}]}>{d.descriptionJa}</Text><View style={s.nodes}>{d.nodes.map(n=><View key={n.id} style={[s.node,{backgroundColor:n.color}]}><Text style={s.label}>{n.labelJa}</Text></View>)}</View>{d.edges.map((e,i)=><Text key={i} style={[s.body,{color:textColor}]}>{d.nodes.find(n=>n.id===e.from)?.labelJa} → {d.nodes.find(n=>n.id===e.to)?.labelJa}{e.labelJa?`：${e.labelJa}`:''}</Text>)}<Text style={[s.note,{color:textColor}]}>{d.noteJa}</Text></View>)}</>;
+}
+const s=StyleSheet.create({diagram:{paddingVertical:16,gap:12},title:{fontSize:18,lineHeight:28,fontWeight:'700'},body:{fontSize:16,lineHeight:26},nodes:{flexDirection:'row',flexWrap:'wrap',gap:12},node:{padding:16,borderRadius:10,minWidth:130,flexGrow:1},label:{fontSize:17,lineHeight:28,color:'#29251f'},note:{fontSize:14,lineHeight:24}});

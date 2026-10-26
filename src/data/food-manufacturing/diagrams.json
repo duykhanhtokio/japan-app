@@ -1,0 +1,233 @@
+{
+  "diagrams": [
+    {
+      "id": "food-hazards",
+      "lessonIds": [
+        "food-1-003",
+        "food-1-004",
+        "food-1-005",
+        "food-1-006",
+        "food-1-008",
+        "food-2-007"
+      ],
+      "titleJa": "危害要因の三つの分類",
+      "descriptionJa": "危害要因を種類ごとに整理する模式図。",
+      "nodes": [
+        {
+          "id": "1",
+          "labelJa": "物理的危害要因\n硬い異物など",
+          "color": "#d9eaf7"
+        },
+        {
+          "id": "2",
+          "labelJa": "化学的危害要因\n有害な化学物質など",
+          "color": "#f3dfb8"
+        },
+        {
+          "id": "3",
+          "labelJa": "生物的危害要因\n有害な微生物など",
+          "color": "#dcebd5"
+        }
+      ],
+      "edges": [],
+      "noteJa": "分類だけで安全と判断せず、対象の原材料・工程ごとの危害要因を確認する。",
+      "sourceRefs": [
+        {
+          "document": "ssw1",
+          "pdfPage": 12,
+          "printedPage": 7,
+          "section": "第2章2 危害要因"
+        },
+        {
+          "document": "ssw1",
+          "pdfPage": 13,
+          "printedPage": 8,
+          "section": "第2章2 危害要因"
+        },
+        {
+          "document": "ssw1",
+          "pdfPage": 15,
+          "printedPage": 10,
+          "section": "第2章2 危害要因"
+        }
+      ],
+      "status": "authored_ai_unreviewed"
+    },
+    {
+      "id": "food-haccp-monitoring",
+      "lessonIds": [
+        "food-1-027",
+        "food-2-013"
+      ],
+      "titleJa": "監視と逸脱時の対応",
+      "descriptionJa": "重要管理点の監視で逸脱が分かった場合の対応を整理した模式図。",
+      "nodes": [
+        {
+          "id": "1",
+          "labelJa": "決められた方法で監視",
+          "color": "#d9eaf7"
+        },
+        {
+          "id": "2",
+          "labelJa": "管理基準からの逸脱を確認",
+          "color": "#f3dfb8"
+        },
+        {
+          "id": "3",
+          "labelJa": "対象食品を出荷させない",
+          "color": "#efcccc"
+        },
+        {
+          "id": "4",
+          "labelJa": "定められた改善措置・記録",
+          "color": "#dcebd5"
+        }
+      ],
+      "edges": [
+        {
+          "to": "2",
+          "labelJa": "逸脱がある場合",
+          "from": "1"
+        },
+        {
+          "to": "3",
+          "labelJa": "対象を識別",
+          "from": "2"
+        },
+        {
+          "to": "4",
+          "labelJa": "手順に従って対応",
+          "from": "3"
+        }
+      ],
+      "noteJa": "これは逸脱時の概念図。具体的な管理基準、製品の扱い、再開条件は対象製品・職場の手順で確認する。",
+      "sourceRefs": [
+        {
+          "document": "ssw1",
+          "pdfPage": 42,
+          "printedPage": 37,
+          "section": "第2章4 HACCPによる衛生管理"
+        },
+        {
+          "document": "ssw1",
+          "pdfPage": 44,
+          "printedPage": 39,
+          "section": "第2章4 管理基準からの逸脱"
+        },
+        {
+          "document": "ssw1",
+          "pdfPage": 45,
+          "printedPage": 40,
+          "section": "第2章4 改善措置・記録"
+        }
+      ],
+      "status": "authored_ai_unreviewed"
+    },
+    {
+      "id": "food-traceability",
+      "lessonIds": [],
+      "titleJa": "ロットをつなぐ記録",
+      "descriptionJa": "原材料から製品、出荷先までを追えるよう、対応関係を記録する模式図。",
+      "nodes": [
+        {
+          "id": "1",
+          "labelJa": "原材料のロット",
+          "color": "#f3dfb8"
+        },
+        {
+          "id": "2",
+          "labelJa": "製造・加工の記録",
+          "color": "#d9eaf7"
+        },
+        {
+          "id": "3",
+          "labelJa": "製品のロット",
+          "color": "#dcebd5"
+        },
+        {
+          "id": "4",
+          "labelJa": "出荷先の記録",
+          "color": "#e5ddf0"
+        }
+      ],
+      "edges": [
+        {
+          "to": "2",
+          "labelJa": "使用した原料",
+          "from": "1"
+        },
+        {
+          "to": "3",
+          "labelJa": "製造した製品",
+          "from": "2"
+        },
+        {
+          "to": "4",
+          "labelJa": "出荷した先",
+          "from": "3"
+        }
+      ],
+      "noteJa": "この図は記録のつながりの例。追跡に必要な情報は対象製品と管理の仕組みに応じて定める。",
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 76,
+          "printedPage": 67,
+          "section": "第3章3（3）トレーサビリティ"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 77,
+          "printedPage": 68,
+          "section": "第3章3（3）トレーサビリティ"
+        }
+      ],
+      "status": "authored_ai_unreviewed"
+    },
+    {
+      "id": "food-productivity",
+      "lessonIds": [],
+      "titleJa": "生産性と原単位",
+      "descriptionJa": "同じ投入量・産出量を逆の関係で見る二つの指標。",
+      "nodes": [
+        {
+          "id": "1",
+          "labelJa": "投入量 INPUT",
+          "color": "#f3dfb8"
+        },
+        {
+          "id": "2",
+          "labelJa": "産出量 OUTPUT",
+          "color": "#dcebd5"
+        },
+        {
+          "id": "3",
+          "labelJa": "生産性＝産出量 ÷ 投入量",
+          "color": "#d9eaf7"
+        },
+        {
+          "id": "4",
+          "labelJa": "原単位＝投入量 ÷ 産出量",
+          "color": "#e5ddf0"
+        }
+      ],
+      "edges": [],
+      "noteJa": "分子・分母の対象と単位をそろえて比較する。原単位の産出量は通常、製品の生産量。品質と安全を犠牲にして数値だけを改善しない。",
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 96,
+          "printedPage": 87,
+          "section": "第4章1（5）生産性と原単位"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 97,
+          "printedPage": 88,
+          "section": "第4章1（5）生産性と原単位"
+        }
+      ],
+      "status": "authored_ai_unreviewed"
+    }
+  ]
+}
