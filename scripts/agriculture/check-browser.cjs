@@ -2,6 +2,9 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
 const root=path.resolve(__dirname,'../..'),out=process.env.AGRICULTURE_QA_OUTPUT,executablePath=process.env.AGRICULTURE_QA_CHROMIUM;
 if(!out||!executablePath)throw Error('Set AGRICULTURE_QA_OUTPUT and AGRICULTURE_QA_CHROMIUM');
 const translatedFixture=require('./translation-fixture.cjs')();
+// Source-only batches preserve all existing translations; exercise new readers and state.
+const sourceOnly=process.env.AGRICULTURE_QA_SOURCE_ONLY==='1';
+if(sourceOnly&&!process.env.AGRICULTURE_QA_NEW_BATCH)throw Error('Source-only QA requires a new-source batch manifest');
 const esbuild=require('esbuild'),{chromium}=require(require.resolve('playwright',{paths:[process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES]}));fs.mkdirSync(out,{recursive:true});
 const scriptFontDir=process.env.AGRICULTURE_QA_SCRIPT_FONT_DIR;
 const scriptFonts=scriptFontDir?['bn','hi','my','th','km']:[];
@@ -31,7 +34,7 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
  async function reader(level='1',language='vi'){await start(level,language);await page.getByRole('button',{name:/第1週/}).click();await page.getByTestId('agri-day-'+level+'-1').click();}
  let translatedLessonLocalePairs=0;
  const lessons=require('../../src/data/agriculture/lessons.ja.json').lessons,manifest=require('../../src/data/agriculture/course-manifest.json');
- for(const [language,entries]of Object.entries(translatedFixture.locales)){
+ if(!sourceOnly)for(const [language,entries]of Object.entries(translatedFixture.locales)){
  await page.goto(url+'?language='+language);await fontsReady();
  for(const [id,t]of Object.entries(entries)){
  const lesson=lessons.find(l=>l.id===id),level=lesson.levels[0],week=manifest.levels[level].weeks.find(w=>w.lessonIds.includes(id)),day=week.lessonIds.indexOf(id)+1;
@@ -44,17 +47,25 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
  }
  }
  // New Japanese source lessons and explicit missing-translation behavior.
- let newJapaneseLessonCases=0,newLessonMissingTranslationCases=0,newDiagramResponsiveCases=0;
+ let newJapaneseLessonCases=0,newJapaneseResponsiveCases=0,newWeeklyQuestionCases=0,newWeeklyBanks=0,newLessonMissingTranslationCases=0,newDiagramResponsiveCases=0;
  const batchName=process.env.AGRICULTURE_QA_NEW_BATCH;
  if(batchName){
   assert(/^parallel-[0-9]+-manifest\.json$/.test(batchName));
   const batch=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/agriculture',batchName),'utf8'));
   const openLesson=async(lesson,language)=>{const level=lesson.levels[0],week=manifest.levels[level].weeks.find(w=>w.lessonIds.includes(lesson.id));await start(level,language);await page.getByRole('button',{name:new RegExp('^第'+week.number+'週')}).click();await page.getByTestId('agri-day-'+level+'-'+(week.lessonIds.indexOf(lesson.id)+1)).click();};
-  for(const id of batch.newLessonIds){const lesson=lessons.find(l=>l.id===id);await openLesson(lesson,'ja');const text=await page.locator('body').innerText();assert(text.includes(lesson.objectiveJa)&&text.includes(lesson.activityJa));for(const p of lesson.paragraphs)assert(text.includes(p.textJa)&&text.includes(p.titleJa));newJapaneseLessonCases++;}
+  for(const id of batch.newLessonIds){const lesson=lessons.find(l=>l.id===id);await openLesson(lesson,'ja');const text=await page.locator('body').innerText();assert(text.includes(lesson.objectiveJa)&&text.includes(lesson.activityJa));for(const p of lesson.paragraphs)assert(text.includes(p.textJa)&&text.includes(p.titleJa));newJapaneseLessonCases++;
+   if(sourceOnly)for(const [width,height]of [[390,844],[844,390],[768,1024],[1440,900]]){
+    await page.setViewportSize({width,height});await openLesson(lesson,'ja');
+    assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),lesson.id+'/'+width);
+    const complete=page.getByRole('button',{name:'完了する',exact:true});await complete.scrollIntoViewIfNeeded();const box=await complete.boundingBox();assert(box&&box.y>=-1&&box.y+box.height<=height+1);
+    if(id===batch.newLessonIds[0]){const file='new-source-'+width+'x'+height+'.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}
+    newJapaneseResponsiveCases++;
+   }
+  }
   const missing=lessons.find(l=>l.id===batch.newLessonIds[0]);
   if(missing)for(const language of Object.keys(translatedFixture.locales)){await openLesson(missing,language);await page.getByRole('button',{name:'訳を表示',exact:true}).click();assert((await page.locator('body').innerText()).includes('この言語の訳は準備中です。'));newLessonMissingTranslationCases++;}
   const diagrams=require('../../src/data/agriculture/diagrams.json').diagrams;
-  for(const d of diagrams){for(const [width,height]of [[390,844],[844,390],[768,1024],[1440,900]])for(const mode of ['昼','夜']){
+  for(const d of diagrams.filter(d=>!sourceOnly||d.lessonIds.some(id=>batch.newLessonIds.includes(id)))){for(const [width,height]of [[390,844],[844,390],[768,1024],[1440,900]])for(const mode of ['昼','夜']){
    await page.setViewportSize({width,height});const lesson=lessons.find(l=>l.id===d.lessonIds[0]);await openLesson(lesson,'ja');await page.getByRole('button',{name:mode,exact:true}).click();const figure=page.getByTestId(d.id);await figure.scrollIntoViewIfNeeded();const text=await figure.innerText();assert(text.includes(d.titleJa)&&d.panels.every(p=>text.includes(p.titleJa)&&text.includes(p.bodyJa)));assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));
    const complete=page.getByRole('button',{name:'完了する',exact:true});await complete.scrollIntoViewIfNeeded();const box=await complete.boundingBox();assert(box&&box.y>=-1&&box.y+box.height<=height+1);
    if(width===390&&mode==='昼'){await figure.scrollIntoViewIfNeeded();const file=d.id+'-390x844.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}
@@ -62,9 +73,24 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
   }}
   if(diagrams.length)await page.getByRole('button',{name:'昼',exact:true}).click();
  }
+ if(sourceOnly){
+  const batch=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/agriculture',batchName),'utf8'));
+  const banks=require('../../src/data/agriculture/weekly-checks.ja.json').exams;
+  for(const exam of banks.filter(e=>e.questions.some(q=>batch.newLessonIds.includes(q.lessonId)))){
+   const level=exam.levels[0],at=banks.filter(e=>e.levels.includes(level)).findIndex(e=>e.id===exam.id);
+   await start(level,'ja');await page.getByRole('button',{name:'週の確認',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).nth(at).click();
+   for(const [i,q]of exam.questions.entries()){
+    const text=await page.locator('body').innerText();assert(text.includes(q.stemJa)&&q.optionsJa.every(v=>text.includes(v)),q.id);assert(!text.includes('正解：'));
+    await page.getByRole('button').filter({hasText:new RegExp('^'+(q.correctIndex+1)+'\\. ')}).first().click();
+    if(i<exam.questions.length-1)await page.getByRole('button',{name:'次へ',exact:true}).click();newWeeklyQuestionCases++;
+   }
+   await page.getByRole('button',{name:'提出する',exact:true}).click();await page.getByRole('button',{name:'確定',exact:true}).click();await page.getByRole('button',{name:'もう一度解く',exact:true}).waitFor();
+   assert((await page.locator('body').innerText()).includes('正解 '+exam.questions.length+' / '+exam.questions.length));newWeeklyBanks++;
+  }
+ }
  // Exercise the longest newly translated lesson in each locale at all four sizes.
  let newTranslationResponsiveCases=0;
- for(const [language,entries]of Object.entries(translatedFixture.locales)){
+ if(!sourceOnly)for(const [language,entries]of Object.entries(translatedFixture.locales)){
   const translatedBatchName=process.env.AGRICULTURE_QA_TRANSLATED_BATCH;
   let translatedIds=null;
   if(translatedBatchName){assert(/^parallel-[0-9]+-manifest\.json$/.test(translatedBatchName));translatedIds=new Set(JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/agriculture',translatedBatchName),'utf8')).translatedLessonIds);}
@@ -94,12 +120,12 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
  const option=page.getByRole('button').filter({hasText:/^1\./}).first();await option.click();await page.getByRole('button',{name:'次へ',exact:true}).click();await page.reload();await page.getByRole('button',{name:'特定技能'+level+'号',exact:true}).click();await page.getByRole('button',{name:'週の確認',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).first().click();await page.getByRole('button',{name:'提出する',exact:true}).waitFor();assert((await page.locator('body').innerText()).includes('2 /'));
  await page.getByRole('button',{name:'提出する',exact:true}).click();await page.getByRole('button',{name:'キャンセル',exact:true}).click();assert(!(await page.locator('body').innerText()).includes('正解：'));
  await page.getByRole('button',{name:'提出する',exact:true}).click();await page.getByRole('button',{name:'確定',exact:true}).click();await page.getByRole('button',{name:'もう一度解く',exact:true}).waitFor();assert((await page.locator('body').innerText()).includes('正解：'));
- await page.getByRole('button',{name:'Back',exact:true}).click();await page.getByText(/問 · ✓ 完了/).waitFor();
+ await page.getByRole('button',{name:'Back',exact:true}).click();await page.getByText(/問 · ✓ 完了/).first().waitFor();
  }
  // Same source questions, independent saved attempts for the two levels.
  await start('1');await page.getByRole('button',{name:'週の確認',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).nth(1).click();await page.getByRole('button',{name:'次へ',exact:true}).waitFor();await page.getByRole('button').filter({hasText:/^1\./}).first().click();await page.waitForFunction(()=>{const v=localStorage.getItem('@japan_app_agriculture:exam:v1:qa:1:agr-shared-w02-check');return v&&JSON.parse(v).answers[0]!==null;});
  await start('2');await page.getByRole('button',{name:'週の確認',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).nth(1).click();await page.getByRole('button',{name:'次へ',exact:true}).waitFor();assert(await page.evaluate(()=>{const v=localStorage.getItem('@japan_app_agriculture:exam:v1:qa:2:agr-shared-w02-check');return !v||JSON.parse(v).answers.every(a=>a===null);}));await page.getByRole('button').filter({hasText:/^2\./}).first().click();await page.waitForFunction(()=>{const one=JSON.parse(localStorage.getItem('@japan_app_agriculture:exam:v1:qa:1:agr-shared-w02-check')||'null'),two=JSON.parse(localStorage.getItem('@japan_app_agriculture:exam:v1:qa:2:agr-shared-w02-check')||'null');return one?.answers[0]===0&&two?.answers[0]===1;});
  await start('2');await page.getByRole('button',{name:/第3週/}).click();await page.getByTestId('agri-day-2-3').click();await page.setViewportSize({width:390,height:844});assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));await page.getByLabel('ばらまきはうね全体、すじまきは列、点まきは一か所に数粒ずつ。図は模式図で、実際の間隔を示しません。').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,'sowing-390x844.png')});screenshots.push('sowing-390x844.png');
- assert.deepEqual(errors,[]);const report={status:'PASS',translatedReaderLocales:12,translatedLessonLocalePairs,sharedWeeklyAttemptIsolation:true,newJapaneseLessonCases,newLessonMissingTranslationCases,newDiagramResponsiveCases,newTranslationResponsiveCases,viewports:[[390,844],[844,390],[768,1024],[1440,900]],completionSaveFailureHandled:true,completionReload:true,numericLessonIdCompletionReload:true,levelIsolation:true,examResume:true,hiddenAnswersBeforeSubmit:true,cancelSubmit:true,weeklyCompletionBadge:true,screenshots,adapters:['Royal artwork','background','safe area','localStorage for AsyncStorage'],nativeDeviceTested:false,productionExpoTested:false,japaneseQaFontLoaded:true,additionalQaScriptFonts:scriptFonts,nativeFontsCertified:false,courseComplete:false};fs.writeFileSync(path.join(root,'docs/ssw-workspace/agriculture/browser-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+ assert.deepEqual(errors,[]);const report={status:'PASS',translatedReaderLocales:sourceOnly?0:12,translatedLessonLocalePairs,sourceOnly,existingTranslationDataCheckedSeparately:sourceOnly,sharedWeeklyAttemptIsolation:true,newJapaneseLessonCases,newJapaneseResponsiveCases,newWeeklyQuestionCases,newWeeklyBanks,newLessonMissingTranslationCases,newDiagramResponsiveCases,newTranslationResponsiveCases,viewports:[[390,844],[844,390],[768,1024],[1440,900]],completionSaveFailureHandled:true,completionReload:true,numericLessonIdCompletionReload:true,levelIsolation:true,examResume:true,hiddenAnswersBeforeSubmit:true,cancelSubmit:true,weeklyCompletionBadge:true,screenshots,adapters:['Royal artwork','background','safe area','localStorage for AsyncStorage'],nativeDeviceTested:false,productionExpoTested:false,japaneseQaFontLoaded:true,additionalQaScriptFonts:scriptFonts,nativeFontsCertified:false,courseComplete:false};fs.writeFileSync(path.join(root,'docs/ssw-workspace/agriculture/browser-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
  }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1});

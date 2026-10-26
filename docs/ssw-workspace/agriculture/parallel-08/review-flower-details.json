@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "packetFile": "docs/ssw-workspace/agriculture/parallel-08/flower-details.json",
+  "packetSha256": "5b7cacca8046a292d00c1dc1231393a881c1f3de58d578bcc12dddccdb26e3f5",
+  "reviewer": "agri_5_fruit_details",
+  "reviewType": "independent_ai_source_and_editorial_review",
+  "scope": {
+    "lessons": 3,
+    "titles": 3,
+    "objectives": 3,
+    "activities": 3,
+    "paragraphBodies": 18,
+    "paragraphHeadings": 18,
+    "termReadings": 15,
+    "knowledgeUnits": 18,
+    "weeklyQuestions": 8,
+    "optionTexts": 32,
+    "optionReasons": 32,
+    "sourcePageImagesIndependentlyInspected": 4,
+    "semanticComparisonAgainstExistingFlowerLessons": 6
+  },
+  "sourceImagesChecked": [
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 124
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 125
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 126
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 127
+    }
+  ],
+  "confirmedChecks": [
+    "Viewed actual source2PDF124/125classification tables: petunia/vinca nonhardy annuals, sweetpea/statice hardy annuals, sweetWilliambiennial, gentian/peonyperennial,PhalaenopsisWesternorchid/EbineEasternorchid,Crotonwoody/Pothosherbaceous match source categories. No disputed herb-lavender taxonomy is expanded.",
+    "Viewed source2PDF125economic table: annual-biennial cheap/cheap/much, perennial somewhat costly/somewhat high/much, bulb high/somewhat high/little, woodybranches high/somewhat high with rose much/other little. Qualitative costs are never converted into current prices or profits.",
+    "Viewed source2PDF127seasonal rows and named additions: daisy/kale autumnwinter-spring;linaria/ranunculus spring;delphinium/lobelia spring-summer;zinnia/ageratum spring-autumn;Portulaca/Melampodiumsummer-autumn;autumnchrysanthemum/spraychrysanthemumautumn. Haibyakushin is a named ground-cover example, not a seasonal flower threshold.",
+    "Compared all three new lessons against existing classification/organs/production/handling/coldchain/bedding lessons. New named examples and economic row combinations fill partial gaps; some framing concepts recur as supporting explanation, with no verbatim paragraph duplicates. No exhaustive species/recognition claim.",
+    "All8questions are supported by viewed source tables, four unique options and one correct answer each;wrong options use actual adjacent table categories;answer positions remain2each, no run3same. Allscopelevels2 only match the source.",
+    "No chemical application, universal dates, minimum temperatures, source packaging-name conjecture or recognition certification added."
+  ],
+  "findings": [
+    {
+      "severity": "linkage",
+      "targetId": "agr-par08-flower-details-q07",
+      "detail": "Comparison tests both lobelia spring-summer and zinnia spring-autumn, but only the latter knowledge unit was linked. Add the former unit; integration derives reverse question links."
+    }
+  ],
+  "patches": [
+    {
+      "targetType": "question",
+      "targetId": "agr-par08-flower-details-q07",
+      "field": "knowledgeIds",
+      "before": [
+        "AGR-K-FLOWER-DETAILS-SEASONAL-EXAMPLES-04"
+      ],
+      "after": [
+        "AGR-K-FLOWER-DETAILS-SEASONAL-EXAMPLES-03",
+        "AGR-K-FLOWER-DETAILS-SEASONAL-EXAMPLES-04"
+      ],
+      "reason": "Q07 explicitly comparesロベリア andジニア. Include p3 spring-summer unit alongside p4 spring-autumn so both tested concepts are traceable."
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "partialLimitations": [
+    "Additional examples do not close every row of the source classification or seasonal tables.",
+    "No original recognition assets, current economics, native/domain review or device/release certification.",
+    "Source2PDF126was visually checked to ensure no accidental packaging/chemical instructions; this packet does not author new coverage of that page."
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "mechanicalValidation": {
+    "status": "PASS",
+    "exactBeforePatchAppliedToCopy": true,
+    "rawPacketUnmodified": true,
+    "balancedCorrectPositionCounts": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "allSourceHashBindingsMatch": true,
+    "allKnowledgeLinksExist": true
+  }
+}

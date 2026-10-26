@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "packetFile": "fruit-details.json",
+  "packetSha256": "fcd070415a6d95f73f83196dba0947705fb3c13d1edcc29897c401ed6a8df2fe",
+  "reviewer": "agri_4_management_details",
+  "reviewType": "independent_ai_source_and_editorial_review",
+  "scope": {
+    "lessons": 3,
+    "paragraphBodies": 18,
+    "paragraphHeadings": 18,
+    "objectives": 3,
+    "titles": 3,
+    "activities": 3,
+    "termsWithReadings": 12,
+    "weeklyQuestions": 8,
+    "optionTexts": 32,
+    "optionReasons": 32,
+    "knowledgeUnits": 18,
+    "sourceImagesInspected": 5,
+    "coverage": "All lesson fields,18knowledge records and8questions reviewed. All27 S1pH range cells, all10 S2range rows and3coarse groups, all6harvest calendar rows and row-name distinctions visually checked."
+  },
+  "sourceImageScope": {
+    "AGR-S1": [
+      91,
+      93
+    ],
+    "AGR-S2": [
+      110,
+      113,
+      117
+    ]
+  },
+  "confirmedChecks": [
+    "All9shared species numeric ranges match sources; S1optimal column explicitly kept source-specific, not silently attributed to2go.",
+    "Blueberry4.0–5.0 and coarse acid/weak-acid/neutral groups retain程度 qualifier; no lime dosage or garden target inferred.",
+    "All6calendar rows match both images, with source1ナシ/source2ニホンナシ and European-pear distinction retained.",
+    "3newlessons add specific unprocessed table detail beyond existing general pH and harvest examples, preserving existing2go grape/maturity lessons.",
+    "8questions each4unique plausible options, single source-supported answer and reasons; shared4and2go4eachbalanced1perposition; full balance2each and no3consecutive.",
+    "SHA source bindings, IDs,18units and no exact existing paragraph duplicates pass."
+  ],
+  "patches": [
+    {
+      "targetType": "paragraph",
+      "targetId": "agr-fruit-detail-harvest-calendar-p6",
+      "field": "textJa",
+      "before": "ウンシュウミカンは10月中旬～12月上旬です。カキと終わりは同じ表現でも、開始は約一か月後の別の旬になります。これらは資料に示す収穫期の幅であり、その月に入れば全果実を収穫できるという判定基準ではありません。",
+      "after": "ウンシュウミカンは10月中旬～12月上旬です。カキと終わりは同じ表現でも、開始はカキの9月下旬より後の10月中旬になります。これらは資料に示す収穫期の幅であり、その月に入れば全果実を収穫できるという判定基準ではありません。",
+      "reason": "S1PDF91 andS2PDF113 specify persimmon begins9月下旬 and satsuma10月中旬. These are two旬 apart rather than約一か月. Preserve exact source endpoints instead of adding a rough elapsed-month claim."
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "limits": "AI image and source-bound editorial review only; no universal pH/season prescription, native/domain certification or exhaustive source knowledge claim."
+}
