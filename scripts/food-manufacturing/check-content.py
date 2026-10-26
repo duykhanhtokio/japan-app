@@ -60,6 +60,9 @@ for locale in locales:
    for para in source['paragraphs']:
     for key in ('paragraphs','paragraphTitles'): check(bool(t.get(key,{}).get(para['id'],'')),locale+': missing '+key+' '+lid)
    for term in source['terms']: check(bool(t.get('terms',{}).get(term['ja'],'')),locale+': missing term '+lid+' '+term['ja'])
+   if locale in ['hi','bn','ne','my','th','km','tl']:
+    values=[t.get(k,'') for k in ['title','objective','activity','summary']]+list(t.get('paragraphTitles',{}).values())+list(t.get('paragraphs',{}).values())+list(t.get('terms',{}).values())
+    check(not any(re.search(r'[\u3040-\u30ff\u4e00-\u9fff]',v) for v in values),locale+': Japanese fallback in target values '+lid)
 def runtime_revision(value):
  text=json.dumps(value,ensure_ascii=False,separators=(',',':')).encode('utf-16-le');h=2166136261
  for i in range(0,len(text),2):h=((h^(text[i]+256*text[i+1]))*16777619)&0xffffffff
