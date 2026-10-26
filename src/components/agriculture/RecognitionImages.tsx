@@ -27,6 +27,11 @@ const assets:Record<string,ImageSourcePropType>={
  'asian-pear':require('../../../assets/agriculture/recognition/asian-pear-v1.webp'),
  peach:require('../../../assets/agriculture/recognition/peach-v1.webp'),
  chestnut:require('../../../assets/agriculture/recognition/chestnut-v1.webp'),
+ kiwi:require('../../../assets/agriculture/recognition/kiwi-v1.webp'),
+ blueberry:require('../../../assets/agriculture/recognition/blueberry-v1.webp'),
+ 'unshu-mikan':require('../../../assets/agriculture/recognition/unshu-mikan-v1.webp'),
+ yuzu:require('../../../assets/agriculture/recognition/yuzu-v1.webp'),
+ loquat:require('../../../assets/agriculture/recognition/loquat-v1.webp'),
 };
 type RecognitionImage={
  id:string;lessonIds:string[];lessonSourceHashes:Record<string,string>;

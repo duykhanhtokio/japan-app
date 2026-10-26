@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "owner": "agri_6",
+  "status": "prepared_waiting_root_ready",
+  "baselineCommit": "388a99dc",
+  "ownedScript": "/workspace/scratch/018c0b6e29b8/japan-app/scripts/agriculture/check-recognition-17-browser.cjs",
+  "scriptSha256": "57cca9810a24636af594d3353f228476473f8c60540cad9b17077ef8c9324ae3",
+  "inputManifestPath": "/workspace/scratch/018c0b6e29b8/japan-app/docs/ssw-workspace/agriculture/parallel-17-manifest.json",
+  "inputManifestPreparationSha256": "f4b2a4a314040b64468bed8d9707afbb1c0b88ee1b2c9249bb268ff5e015da4f",
+  "requiredManifestFields": {
+    "newRecognitionImageIds": "exact five unique IDs matching registry",
+    "preservedPriorImageIds": "entire batch16 image set, currently24 IDs",
+    "lessonIds": "two new mapped gallery lessons; runtime derives actual bindings"
+  },
+  "newImageIds": [
+    "agr-recognition-kiwi-v1",
+    "agr-recognition-blueberry-v1",
+    "agr-recognition-unshu-mikan-v1",
+    "agr-recognition-yuzu-v1",
+    "agr-recognition-loquat-v1"
+  ],
+  "priorImageIds": [
+    "agr-recognition-cabbage-v1",
+    "agr-recognition-chinese-cabbage-v1",
+    "agr-recognition-lettuce-v1",
+    "agr-recognition-spinach-v1",
+    "agr-recognition-onion-v1",
+    "agr-recognition-daikon-v1",
+    "agr-recognition-indica-brown-rice-v1",
+    "agr-recognition-japonica-brown-rice-v1",
+    "agr-recognition-plant-organ-positions-v1",
+    "agr-recognition-sowing-patterns-v1",
+    "agr-recognition-soil-handtest-states-v1",
+    "agr-recognition-nursery-containers-v1",
+    "agr-recognition-potato-v1",
+    "agr-recognition-sweet-potato-v1",
+    "agr-recognition-carrot-v1",
+    "agr-recognition-tomato-v1",
+    "agr-recognition-eggplant-v1",
+    "agr-recognition-cucumber-v1",
+    "agr-recognition-apple-v1",
+    "agr-recognition-grapes-v1",
+    "agr-recognition-persimmon-v1",
+    "agr-recognition-asian-pear-v1",
+    "agr-recognition-peach-v1",
+    "agr-recognition-chestnut-v1"
+  ],
+  "plan": {
+    "newVisual": "all actual new mapped lessons/routes ×4sizes ×day/night; expected32 if two shared lessons",
+    "priorRegression": "all prior mapped lessons on actual routes, phone/day; derived rather than fixed",
+    "translation": "12 actual locale shard keys ×new fruit reader and old non-gallery representative",
+    "assetEvidence": "all29 actual SHA/decoded dimensions; live labels/alt/captions; capped whole-image viewport geometry; no horizontal overflow",
+    "fixtures": "every mapped lesson exact/current hash count, wrong/absent/unmapped zero;3full-course sowing fallback cases",
+    "expanded": "prior3controlled diagrams ×4sizes, expected8active/4hidden; expand/shrink same bytes and ratio",
+    "completion": "reachability and actual badge/reload checks; actual executed counts only"
+  },
+  "manifestBinding": "SHA256 of exact input manifest bytes read at execution recorded in report; parent must preserve unchanged input snapshot before enriching final manifest with QA references",
+  "scopeLimits": [
+    "Browser adapter, not native Expo/device certification",
+    "No runtime/shared-data/old-helper edits",
+    "No run before root READY"
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseReady": false
+}
