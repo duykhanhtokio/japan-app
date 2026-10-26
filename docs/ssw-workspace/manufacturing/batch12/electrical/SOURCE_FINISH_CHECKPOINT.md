@@ -1,0 +1,13 @@
+# Electrical recovery and source continuation checkpoint
+
+Only this isolated manufacturing-complete checkout was used by the replacement author. Canonical shared data/runtime/manifests and Git commits were not edited by this worker.
+
+Final bindings are in source-finish-frozen-sha256.json. Preserve all snapshots in backups. build-mocks.py and its initial91e94 candidate are foreign diagnostic history and must not be executed as the final build. theory-draft.json480d73 is the recovered300 manually authored propositions. recover-mocks.py recovers the initial400 candidate; apply-mock-gaps.py applies the authorized14 final retargets using the frozen9b95 prior candidate, producing3a81192. It is the current mocks.json, not an unchecked foreign builder output. Independent reports are in sibling electrical-locales.
+
+Final staged Japanese consists of frozen42 new lessons/72weekly items in new-content.json, plus14detail lessons/24weekly items in gap-content.json. The old canonical42lessons/72weekly items are preserved. Gap lessons085–098 form weeks13–14. Both weekly forms have three correct positions each and no triples, with different noncycling sequences. All98 lessons are referenced across the400mock items. Original84lesson mock coverage and theory/practical answer positions survive the14retargets.
+
+The replacement author read the198-page main-text extraction with ruby spans removed and inspected114dense pages in57two-page rendered sheets. The descriptive source ledger contains189semantic groups and per-page dispositions, bound to authored lesson hashes. This is a substantive source audit, but it is not exhaustive sentence/table-cell/image-label atomization. Exact geometric object boxes are not claimed. Do not turn false certification fields true from counts or source-page images.
+
+Remaining source/visual gates are explicit in source-knowledge-closure-audit.json: independent exhaustive object-to-lesson audit; controlled symbol bank for062/087; asset-level learner visual coverage for source shape/scale/circuit knowledge. Original source pages were not added as learner assets.14/24gap text and400finalmock semantics received independent AI checks; native/domain/release flags remain false.
+
+The actualPDF76shows squared-area resistivity units; a lost superscript in extraction is not a source mistake. ActualPDF79has rubber/paper classification errors, and125/126/171/195have qualifications captured in lessons and audit. Grease penetration versusNLGIgrade direction was checked against primary manufacturer ENEOS and recorded separately; do not infer every grade number grows softer from PDF159.
