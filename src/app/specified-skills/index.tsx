@@ -31,6 +31,7 @@ const sectors = [
     {icon:require('../../../assets/app/industries/food-manufacturing-v1.png'),ja:'飲食料品製造業',vi:'Sản xuất thực phẩm'},
     {icon:require('../../../assets/app/industries/caregiving-v1.png'),ja:'介護',vi:'Điều dưỡng'},
     {icon:require('../../../assets/app/industries/hospitality-v1.png'),ja:'宿泊',vi:'Khách sạn'},
+    {icon:null,ja:'製造分野',vi:'Sản xuất công nghiệp'},
 ];
 
 export default function SpecifiedSkillsScreen() {
@@ -54,22 +55,22 @@ export default function SpecifiedSkillsScreen() {
                     ({ icon, ja, vi }) => (
                         <Pressable
                             key={ja}
-                            accessibilityRole={(ja==='介護'||ja==='建設'||ja==='農業')&&__DEV__?'button':undefined}
-                            accessibilityLabel={(ja==='介護'||ja==='建設'||ja==='農業')&&__DEV__?uiText('internalPreview',language,{name:ja}):ja}
-                            disabled={(ja!=='介護'&&ja!=='建設'&&ja!=='農業')||!__DEV__}
-                            onPress={()=>{void pushPrepared(ja==='建設'?'/specified-skills/kensetsu':ja==='農業'?'/specified-skills/agriculture':'/specified-skills/kaigo');}}
+                            accessibilityRole={(ja==='介護'||ja==='建設'||ja==='農業'||ja==='製造分野')&&__DEV__?'button':undefined}
+                            accessibilityLabel={(ja==='介護'||ja==='建設'||ja==='農業'||ja==='製造分野')&&__DEV__?uiText('internalPreview',language,{name:ja}):ja}
+                            disabled={(ja!=='介護'&&ja!=='建設'&&ja!=='農業'&&ja!=='製造分野')||!__DEV__}
+                            onPress={()=>{void pushPrepared(ja==='製造分野'?'/specified-skills/manufacturing':ja==='建設'?'/specified-skills/kensetsu':ja==='農業'?'/specified-skills/agriculture':'/specified-skills/kaigo');}}
                             style={
                                 styles.card
                             }
                         >
                             <RoyalPaperPanel style={styles.cardArtwork}>
-                            <Image fadeDuration={0}
+                            {icon?<Image fadeDuration={0}
                                 source={icon}
                                 resizeMode="cover"
                                 style={
                                     styles.icon
                                 }
-                            />
+                            />:<View style={[styles.icon,{alignItems:'center',justifyContent:'center',backgroundColor:'#d5e0e5'}]}><Text style={{fontSize:26,color:'#203b4a'}}>製</Text></View>}
 
                             <View style={{flex:1,minWidth:0}}>
                                 <Text

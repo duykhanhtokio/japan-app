@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-26",
+  "scope": "manufacturing_ssw1_three_uploaded_textbooks_only",
+  "excluded": "All uploaded SSW2 exam PDFs were not opened or used by this QA task.",
+  "sources": [
+    {
+      "specialty": "electrical",
+      "fileName": "製造 分野 特定技能  1号 評価 試験機械 電気電子機械組み立て 区分テキスト.pdf",
+      "sha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPages": 198,
+      "sourceType": "ssw1_learning_reference",
+      "overviewAsOf": "2026-07",
+      "editionNumber": "not_stated_on_cover_or_overview",
+      "overviewPhysicalPage": 10,
+      "printedToPhysicalOffset": 9,
+      "overviewVisuallyVerified": true,
+      "uploadedVersionIncludesOctoberErrata": false,
+      "notes": "Uploaded text must be corrected through an explicit errata overlay; retain source hash and never silently replace source."
+    },
+    {
+      "specialty": "surface",
+      "fileName": "製造 分野 特定技能  1号 評価 試験機械 金属表面処理区分テキスト.pdf",
+      "sha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPages": 207,
+      "sourceType": "ssw1_learning_reference",
+      "overviewAsOf": "2026-07",
+      "editionNumber": "not_stated_on_cover_or_overview",
+      "overviewPhysicalPage": 11,
+      "printedToPhysicalOffset": 10,
+      "overviewVisuallyVerified": true,
+      "uploadedVersionIncludesOctoberErrata": false,
+      "notes": "Uploaded text must be corrected through an explicit errata overlay; retain source hash and never silently replace source."
+    },
+    {
+      "specialty": "mechanical",
+      "fileName": "製造 分野 特定技能  1号 評価 試験機械 機械金属加工 区分テキスト.pdf",
+      "sha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPages": 169,
+      "sourceType": "ssw1_learning_reference",
+      "overviewAsOf": "2026-07",
+      "editionNumber": "not_stated_on_cover_or_overview",
+      "overviewPhysicalPage": 9,
+      "printedToPhysicalOffset": 8,
+      "overviewVisuallyVerified": true,
+      "uploadedVersionIncludesOctoberErrata": false,
+      "notes": "Uploaded text must be corrected through an explicit errata overlay; retain source hash and never silently replace source."
+    }
+  ],
+  "examBlueprint": {
+    "status": "official_current_structure_verified",
+    "specialties": [
+      "mechanical",
+      "electrical",
+      "surface"
+    ],
+    "language": "ja",
+    "furigana": true,
+    "method": "CBT",
+    "theory": {
+      "questions": 30,
+      "responseType": "true_false",
+      "durationMinutes": 40,
+      "durationMs": 2400000,
+      "passRatio": 0.65
+    },
+    "practical": {
+      "questions": 10,
+      "responseType": "multiple_choice_judgment_and_planning",
+      "durationMinutes": 40,
+      "durationMs": 2400000,
+      "passRatio": 0.6
+    },
+    "totalMinutes": 80,
+    "totalDurationMs": 4800000,
+    "calculator": false,
+    "passRequires": "Both sections must independently meet their thresholds. Do not use pooled 40-item overall percentage.",
+    "practiceScoringPolicy": "For equal-weight in-app items: theory >=20/30 and practical >=6/10. This is the app calculation from published percentages; do not claim unpublished official per-item weights.",
+    "answerBalancePolicy": "True/false theory balances two positions. Four-choice balance only applies to four-choice practice questions; do not force theory into four choices."
+  },
+  "officialEvidence": [
+    {
+      "url": "https://www.jaim-skill.or.jp/exam/about-ssw1/",
+      "checkedAt": "2026-10-26",
+      "supports": [
+        "CBT",
+        "40 minutes each section",
+        "true/false theory",
+        "65%/60% section thresholds",
+        "Japanese"
+      ]
+    },
+    {
+      "url": "https://www.prometric-jp.com/ssw/test_list/archives/17",
+      "checkedAt": "2026-10-26",
+      "supports": [
+        "40 total questions",
+        "30 theory +10 practical",
+        "40 minutes each section",
+        "furigana",
+        "no calculator",
+        "specialty codes M50-J11J/J12J/J13J"
+      ]
+    },
+    {
+      "url": "https://www.jaim-skill.or.jp/exam/materials/",
+      "checkedAt": "2026-10-26",
+      "supports": [
+        "All three Japanese textbook errata published 2026-10-01",
+        "Website textbooks replaced with corrected copies"
+      ]
+    }
+  ],
+  "errata": [
+    {
+      "specialty": "mechanical",
+      "url": "https://www.jaim-skill.or.jp/assets/files/exam/materials/studyguide1_01_errata.pdf",
+      "publishedAt": "2026-10-01",
+      "items": [
+        {
+          "printedPage": 122,
+          "correction": "Figure 9-2 should be 9-1"
+        },
+        {
+          "printedPage": 123,
+          "correction": "Figure 9-3 should be 9-2; figure 9-4 should be 9-3"
+        },
+        {
+          "printedPage": 124,
+          "correction": "Figure 9-5 should be 9-4"
+        }
+      ]
+    },
+    {
+      "specialty": "electrical",
+      "url": "https://www.jaim-skill.or.jp/assets/files/exam/materials/studyguide1_02_errata.pdf",
+      "publishedAt": "2026-10-01",
+      "items": [
+        {
+          "printedPage": 70,
+          "correction": "Table 6-13 inorganic insulation examples: mica and ceramic only; remove natural rubber."
+        },
+        {
+          "printedPage": 96,
+          "correction": "Do not universalize K-type thermocouple range -73 to1300C; official revised text states below zero to over1000C. Actual rating depends on instrument and conditions."
+        }
+      ]
+    },
+    {
+      "specialty": "surface",
+      "url": "https://www.jaim-skill.or.jp/assets/files/exam/materials/studyguide1_03_errata.pdf",
+      "publishedAt": "2026-10-01",
+      "items": [
+        {
+          "printedPage": 96,
+          "correction": "Acidic oxide reacts with base to form salt; basic oxide reacts with acid to form salt. Uploaded text reverses the definitions."
+        },
+        {
+          "printedPage": 96,
+          "correction": "Official errata changes phosphorus oxide example to 三酸化リン(P2O3); uploaded name/formula inconsistent. Avoid phosphorus oxide example until independently resolving naming/formula; use CO2/SO2 examples."
+        },
+        {
+          "printedPage": 123,
+          "correction": "Section label (3)特徴 should be (2)特徴."
+        },
+        {
+          "printedPage": 166,
+          "correction": "Anodizing equation must retain oxide-ion 2- charge, including 2Al3+ + 3O2- -> Al2O3. Verify superscripts visually; text extraction loses them."
+        }
+      ]
+    }
+  ],
+  "safetyReviewRules": [
+    {
+      "id": "ppe-context",
+      "rule": "Never state gloves are required for every task; the source specifically prohibits gloves at drilling-machine rotating tools. Chemical-protective and electrical PPE are task-specific.",
+      "sourcePhysicalPages": {
+        "mechanical": [
+          24,
+          110,
+          112
+        ],
+        "surface": [
+          25
+        ],
+        "electrical": [
+          24
+        ]
+      }
+    },
+    {
+      "id": "stop-isolate",
+      "rule": "Emergency stopping does not establish zero-energy isolation. Do not teach reaching into machinery based solely on pressing stop. Follow local authorized energy-isolation procedure."
+    },
+    {
+      "id": "chemical",
+      "rule": "No improvised chemical mixing, neutralization, wastewater treatment or dosage instructions. Site-approved procedure/SDS, trained authorization and engineering controls take precedence."
+    },
+    {
+      "id": "electrical",
+      "rule": "Do not imply theoretical course completion qualifies learner for licensed/live electrical work; avoid universal insulation or meter-use claims."
+    },
+    {
+      "id": "source-not-authority",
+      "rule": "A textbook figure or worked example is not a universal machine/process operating instruction."
+    }
+  ],
+  "verificationLimits": [
+    "Eight source pages visually reviewed in this QA pass: three overview pages plus mechanical PDF110, electrical PDF95/102, surface PDF71/176. This is not full page-by-page verification.",
+    "No domain expert/native speaker certification.",
+    "Full knowledge matrix granularity and all lesson content still require review.",
+    "No SSW2 content reviewed or integrated."
+  ],
+  "releaseStatus": "not_release_certified",
+  "additionalSourceDiscrepancies": [
+    {
+      "specialty": "surface",
+      "printedPage": 61,
+      "pdfPage": 71,
+      "status": "unresolved_source_inconsistency_not_official_erratum",
+      "detail": "Uploaded eddy-current thickness-meter description calls zinc/copper/aluminium plating nonconductive. Do not reuse that application rule without manufacturer/standard verification. Authored lesson003 deliberately lists principles without that universal mapping."
+    }
+  ]
+}
