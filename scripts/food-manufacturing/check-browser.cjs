@@ -3,6 +3,10 @@ const root=path.resolve(__dirname,'../..'),out=process.env.FOOD_QA_OUTPUT,execut
 if(!out||!executablePath)throw Error('Set FOOD_QA_OUTPUT and FOOD_QA_CHROMIUM');
 const esbuild=require('esbuild'),{chromium}=require(require.resolve('playwright',{paths:[process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES]}));fs.mkdirSync(out,{recursive:true});
 const assessmentOnly=process.env.FOOD_QA_ASSESSMENTS_ONLY==='1';
+const deltaBase=process.env.FOOD_QA_ASSESSMENT_DELTA_BASE;
+const deltaGroup=process.env.FOOD_QA_DELTA_GROUP;
+if(deltaGroup&&(!deltaBase||!/^[a-z0-9-]+$/.test(deltaGroup)))throw Error('Delta group must be a simple name in assessment delta mode');
+if(deltaBase&&(!assessmentOnly||!/^[a-f0-9]{40}$/.test(deltaBase)))throw Error('Assessment delta requires assessment-only mode and a full baseline commit SHA');
 const translationOnly=assessmentOnly||process.env.FOOD_QA_TRANSLATIONS_ONLY==='1';
 const selectedLocales=assessmentOnly?[]:process.env.FOOD_QA_LOCALES?process.env.FOOD_QA_LOCALES.split(','):['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
 const selectedTestLocales=process.env.FOOD_QA_TEST_LOCALES?process.env.FOOD_QA_TEST_LOCALES.split(','):(translationOnly&&!assessmentOnly?['en']:['vi','en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']);
@@ -27,10 +31,38 @@ if(translationOnly){
  assert.equal(baseline.status,'PASS');
  if(assessmentOnly){const core=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/food-manufacturing/browser-qa.json'),'utf8'));assert.equal(core.status,'PASS');assert.equal(core.testQuestions,839);assert.equal(baseline.sourceHashes['exams.ja.json'],core.sourceHashes['exams.ja.json']);}else assert.equal(baseline.testQuestions,839);
  for(const [file,hash]of Object.entries(baseline.sourceHashes)){
-  if((file==='diagrams.json'&&!assessmentOnly)||selectedLocales.some(l=>file==='translations/'+l+'.json')||selectedTestLocales.some(l=>file==='test-translations/'+l+'.json'))continue;
+  if((deltaBase&&file.startsWith('test-translations/'))||(file==='diagrams.json'&&!assessmentOnly)||selectedLocales.some(l=>file==='translations/'+l+'.json')||selectedTestLocales.some(l=>file==='test-translations/'+l+'.json'))continue;
   assert.equal(require('node:crypto').createHash('sha256').update(frozenInputs.get(path.join(root,'src/data/food-manufacturing',file))).digest('hex'),hash,'Baseline changed: '+file);
  }
 }
+
+
+// Reuse prior browser evidence only when every old entry, input and runtime byte is preserved.
+const deltaQuestions=new Map();let inheritedQuestionPairs=0,expectedDeltaPairs=0,untestedNewQuestionPairs=0;
+if(deltaBase){
+ const {execFileSync}=require('node:child_process'),sha256=value=>require('node:crypto').createHash('sha256').update(value).digest('hex');
+ const atBase=file=>execFileSync('git',['show',deltaBase+':'+file],{cwd:root,maxBuffer:20*1024*1024});
+ const prior=JSON.parse(atBase('docs/ssw-workspace/food-manufacturing/browser-assessments-qa.json'));
+ assert.equal(prior.status,'PASS');assert.equal(prior.mode,'assessment_translation_batch_only');
+ for(const file of inputFiles){
+  const oldRaw=atBase('src/data/food-manufacturing/'+file);
+  assert.equal(sha256(oldRaw),prior.sourceHashes[file],'Prior evidence mismatch: '+file);
+  const current=frozenInputs.get(path.join(root,'src/data/food-manufacturing',file));
+  if(!file.startsWith('test-translations/')){assert.equal(sha256(current),sha256(oldRaw),'Inherited source changed: '+file);continue;}
+  const locale=path.basename(file,'.json'),old=JSON.parse(oldRaw),now=JSON.parse(current);
+  for(const section of ['questions','examTitles'])for(const [id,value]of Object.entries(old[section]))assert.deepEqual(now[section][id],value,'Prior translation changed: '+locale+'/'+id);
+  inheritedQuestionPairs+=Object.keys(old.questions).length;
+  const added=new Set(Object.keys(now.questions).filter(id=>!old.questions[id]));deltaQuestions.set(locale,added);
+  if(selectedTestLocales.includes(locale))expectedDeltaPairs+=added.size;
+  else untestedNewQuestionPairs+=added.size;
+ }
+ assert.equal(inheritedQuestionPairs,prior.translatedQuestionPairs,'Prior pair count mismatch');
+ for(const file of ['src/components/food-manufacturing/FoodManufacturingCourse.tsx','src/components/food-manufacturing/ConceptDiagrams.tsx','src/data/food-manufacturing/index.ts','src/services/food-manufacturing-study-state.ts','src/app/specified-skills/food-manufacturing.tsx'])assert.equal(sha256(fs.readFileSync(path.join(root,file))),sha256(atBase(file)),'Inherited runtime changed: '+file);
+ if(process.env.FOOD_QA_EXPECTED_NEW_QUESTION_PAIRS)assert.equal(expectedDeltaPairs,Number(process.env.FOOD_QA_EXPECTED_NEW_QUESTION_PAIRS),'Incomplete assessment delta');
+ assert(expectedDeltaPairs>0,'No new assessment translations to test');
+ console.log('QA inherited assessment pairs',inheritedQuestionPairs,'new pairs',expectedDeltaPairs);
+}
+const shouldTest=(locale,id)=>!deltaBase||deltaQuestions.get(locale).has(id);
 
 (async()=>{
  await esbuild.build({stdin:{contents:`import React from 'react';import {createRoot} from 'react-dom/client';import {FoodManufacturingCourse} from './src/components/food-manufacturing/FoodManufacturingCourse';const locale=new URLSearchParams(location.search).get('language')||'vi';createRoot(document.getElementById('root')).render(<FoodManufacturingCourse learner="qa" language={locale} onBack={()=>{window.__left=true}}/>);`,resolveDir:root,loader:'tsx'},outfile:path.join(out,'entry.js'),bundle:true,nodePaths:(process.env.NODE_PATH||'').split(path.delimiter).filter(Boolean),platform:'browser',jsx:'automatic',define:{'process.env.NODE_ENV':'"development"','__DEV__':'true'},plugins:[{name:'browser-adapters',setup(b){
@@ -104,28 +136,30 @@ if(translationOnly){
  if(selectedTestLocales.length){
  for(const locale of selectedTestLocales){
   const pack=frozenData('test-translations/'+locale+'.json');
-  for(const exam of exams.filter(e=>e.questions.some(q=>pack.questions[q.id]))){
+  for(const exam of exams.filter(e=>e.questions.some(q=>pack.questions[q.id]&&shouldTest(locale,q.id)))){
    const index=exams.filter(e=>e.level===exam.level).findIndex(e=>e.id===exam.id);
    await start(exam.level,locale);await page.getByRole('button',{name:'確認・模擬試験',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).nth(index).click();
    await page.getByRole('button',{name:/^(提出する|もう一度解く)$/}).waitFor();if(!await page.getByRole('button',{name:'もう一度解く',exact:true}).isVisible()){await page.getByRole('button',{name:'提出する',exact:true}).click();await page.getByRole('button',{name:'確定',exact:true}).click();await page.getByRole('button',{name:'もう一度解く',exact:true}).waitFor();}
    await page.getByRole('button',{name:'もう一度解く',exact:true}).click();await page.getByRole('button',{name:'確定',exact:true}).click();
    await page.getByRole('button',{name:'訳を表示',exact:true}).click();
    for(const [i,q]of exam.questions.entries()){
-    const t=pack.questions[q.id];if(!t){if(i<exam.questions.length-1)await page.getByRole('button',{name:'次へ',exact:true}).click();continue;}
+    const t=pack.questions[q.id];if(!t||!shouldTest(locale,q.id)){if(i<exam.questions.length-1)await page.getByRole('button',{name:'次へ',exact:true}).click();continue;}
     let text=await page.locator('body').innerText();assert(text.includes(q.promptJa)&&text.includes(t.prompt),q.id+'/'+locale);for(const v of t.options)assert(text.includes(v),q.id+'/'+locale+'/choice');assert(!text.includes('正解：'));assert(!text.includes(t.explanation),q.id+'/'+locale+'/early explanation');report.testTranslationLeakChecks++;
     for(const [width,height]of report.viewports){await page.setViewportSize({width,height});assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),q.id+'/'+locale+'/width');const submit=page.getByRole('button',{name:'提出する',exact:true});await submit.scrollIntoViewIfNeeded();const bounds=await submit.boundingBox();assert(bounds&&bounds.y>=-1&&bounds.y+bounds.height<=height+1,q.id+'/'+locale+'/submit bounds');report.testTranslationResponsiveCases++;}
     await page.getByRole('button').filter({hasText:new RegExp('^'+(q.answerIndex+1)+'\\. ')}).first().click();if(i<exam.questions.length-1)await page.getByRole('button',{name:'次へ',exact:true}).click();
    }
    await page.getByRole('button',{name:'提出する',exact:true}).click();await page.getByRole('button',{name:'確定',exact:true}).click();await page.getByRole('button',{name:'もう一度解く',exact:true}).waitFor();
    for(let i=exam.questions.length-1;i>=0;i--){
-    const q=exam.questions[i],t=pack.questions[q.id];if(t){const text=await page.locator('body').innerText();assert(text.includes(t.explanation),q.id+'/'+locale+'/review');for(const reason of t.optionExplanations)assert(text.includes(reason),q.id+'/'+locale+'/reason');report.translatedQuestionPairs++;}
+    const q=exam.questions[i],t=pack.questions[q.id];if(t&&shouldTest(locale,q.id)){const text=await page.locator('body').innerText();assert(text.includes(t.explanation),q.id+'/'+locale+'/review');for(const reason of t.optionExplanations)assert(text.includes(reason),q.id+'/'+locale+'/reason');report.translatedQuestionPairs++;}
     if(i>0)await page.getByRole('button',{name:'前へ',exact:true}).click();
    }
-   if(exam.id==='food-1-weekly-01'){await page.setViewportSize({width:390,height:844});const file='translated-weekly-review-'+locale+'-390x844.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}
+   if(exam.id==='food-1-weekly-01'||(deltaBase&&exam.id==='food-1-mock-02')){await page.setViewportSize({width:390,height:844});const file=(exam.kind==='mock'?'translated-mock02-review-':'translated-weekly-review-')+locale+'-390x844.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}
+   console.log('QA assessment form',locale,exam.id,'tested pairs',report.translatedQuestionPairs);
   }
  }
  const missingPack=frozenData('test-translations/vi.json'),missingExam=exams.find(e=>e.questions.every(q=>!missingPack.questions[q.id]));assert(missingExam,'Missing-translation fixture required');const missingIndex=exams.filter(e=>e.level===missingExam.level).findIndex(e=>e.id===missingExam.id);await start(missingExam.level,'vi');await page.getByRole('button',{name:'確認・模擬試験',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).nth(missingIndex).click();await page.getByRole('button',{name:'訳を表示',exact:true}).click();assert((await page.locator('body').innerText()).includes('この言語の問題訳は準備中です。'));report.missingQuestionTranslationHandled=true;report.missingQuestionTranslationFixture=missingExam.id;
  }
- assert.deepEqual(errors,[]);Object.assign(report,translationOnly?{status:'PASS',mode:assessmentOnly?'assessment_translation_batch_only':'locale_batch_only',testedLocales:selectedLocales,testedQuestionLocales:selectedTestLocales,scriptFontFamiliesLoaded:scriptFonts,previousBaselineCommit:assessmentOnly?'1344c92fd4f5892c887b241e17f2018f6aee399a':'7ef2d42a169b61b3e2cac44b24013d316d215492'}:{status:'PASS',completionSaveFailureHandled:true,examSaveFailureHandled:true,completionReload:true,levelIsolation:true,examResume:true,hiddenAnswersBeforeSubmit:true,cancelSubmit:true,completionBadge:true,japaneseQaFontLoaded:true});fs.writeFileSync(path.join(root,'docs/ssw-workspace/food-manufacturing',assessmentOnly?'browser-assessments-qa.json':translationOnly?'browser-locales-qa.json':'browser-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+ if(deltaBase){assert.equal(report.translatedQuestionPairs,expectedDeltaPairs);assert.equal(report.testTranslationLeakChecks,expectedDeltaPairs);assert.equal(report.testTranslationResponsiveCases,expectedDeltaPairs*report.viewports.length);Object.assign(report,{deltaBaselineCommit:deltaBase,inheritedQuestionPairs,untestedNewQuestionPairs,combinedVerifiedQuestionPairs:inheritedQuestionPairs+report.translatedQuestionPairs,inheritedRuntimeUnchanged:true});}
+ assert.deepEqual(errors,[]);Object.assign(report,translationOnly?{status:'PASS',mode:assessmentOnly?'assessment_translation_batch_only':'locale_batch_only',testedLocales:selectedLocales,testedQuestionLocales:selectedTestLocales,scriptFontFamiliesLoaded:scriptFonts,previousBaselineCommit:assessmentOnly?'1344c92fd4f5892c887b241e17f2018f6aee399a':'7ef2d42a169b61b3e2cac44b24013d316d215492'}:{status:'PASS',completionSaveFailureHandled:true,examSaveFailureHandled:true,completionReload:true,levelIsolation:true,examResume:true,hiddenAnswersBeforeSubmit:true,cancelSubmit:true,completionBadge:true,japaneseQaFontLoaded:true});fs.writeFileSync(path.join(root,'docs/ssw-workspace/food-manufacturing',deltaBase?'browser-assessments-delta'+(deltaGroup?'-'+deltaGroup:'')+'-qa.json':assessmentOnly?'browser-assessments-qa.json':translationOnly?'browser-locales-qa.json':'browser-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
  }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1});

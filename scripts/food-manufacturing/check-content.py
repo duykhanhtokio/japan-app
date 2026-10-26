@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Validate authored food content without pretending pending scope is complete."""
-import collections, hashlib, json, pathlib, re
+import collections, hashlib, json, pathlib, re, unicodedata
 root=pathlib.Path(__file__).resolve().parents[2]
 data=root/'src/data/food-manufacturing'
 errors=[]
@@ -84,6 +84,11 @@ for locale in locales:
    target_values=[t['prompt'],t['explanation']]+t['options']+t['optionExplanations']
    pattern=r'[\u3041-\u3096\u30a1-\u30fa]' if locale in ['zh-CN','zh-TW'] else r'[\u3041-\u3096\u30a1-\u30fa\u4e00-\u9fff]'
    check(not any(re.search(pattern,v) for v in target_values),locale+': Japanese fallback in question translation '+qid)
+   # Catch foreign letters/marks/digits; shared Indic danda punctuation is valid in Bengali.
+   script_ranges={'th':r'[\u0e00-\u0e7f]','km':r'[\u1780-\u17ff]','my':r'[\u1000-\u109f]','bn':r'[\u0980-\u09ff]','hi-ne':r'[\u0900-\u097f]'}
+   allowed_script='hi-ne' if locale in ['hi','ne'] else locale
+   for script,foreign in script_ranges.items():
+    if script!=allowed_script:check(not any(unicodedata.category(c)[0] in 'LMN' for v in target_values for c in re.findall(foreign,v)),locale+': unexpected '+script+' script in question translation '+qid)
  for eid,t in pack['examTitles'].items():
   e=source_exams.get(eid);check(e is not None,locale+': unknown translated exam '+eid)
   if e:check(t.get('sourceHash')==runtime_revision({'titleJa':e['titleJa']}) and bool(t.get('title')),locale+': stale/empty exam title '+eid)
