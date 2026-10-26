@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "batch": "08",
+  "reviewer": "independent_electrical_gap_worker",
+  "scope": "Mechanical and surface next-plan metadata, prerequisite graph, source anchors and targeted duplicate-content checks only",
+  "pdfPagesOpenedByReviewer": 0,
+  "fullPdfSemanticReview": false,
+  "nativeOrDomainCertification": false,
+  "results": [
+    {
+      "specialty": "mechanical",
+      "planPath": "docs/ssw-workspace/manufacturing/batch08-mechanical-next-plan.json",
+      "planSha256": "4014e31eb9e231b317388454fcb411cd34121be8e22a54e7e48cf1fa3ece018e",
+      "proposedLessonCount": 7,
+      "knowledgeReferencesChecked": 9,
+      "baselineLessonCount": 49,
+      "invalidIdsPageOffsetsOrPrerequisites": [],
+      "structuralResult": "PASS",
+      "duplicateReview": "Planned new distinctions and referenced prerequisites checked against canonical lesson metadata and targeted paragraph excerpts. No automatic complete-semantic-coverage claim."
+    },
+    {
+      "specialty": "surface",
+      "planPath": "docs/ssw-workspace/manufacturing/batch08-surface-next-plan.json",
+      "planSha256": "bfba584604a9d78c8397324917e0bea102e7964f3311920ce3c6e210ae868bc6",
+      "proposedLessonCount": 7,
+      "knowledgeReferencesChecked": 28,
+      "baselineLessonCount": 42,
+      "invalidIdsPageOffsetsOrPrerequisites": [],
+      "structuralResult": "PASS",
+      "duplicateReview": "Planned new distinctions and referenced prerequisites checked against canonical lesson metadata and targeted paragraph excerpts. No automatic complete-semantic-coverage claim."
+    }
+  ],
+  "findings": [
+    {
+      "severity": "authoring_gate",
+      "plan": "surface",
+      "lessonId": "mfg1-surface-lesson-049",
+      "finding": "Existing lesson005 already explicitly defines electron receipt as reduction and anode reactions as oxidation; lesson027 already describes metal electron loss. Merely teaching the oxidation/reduction pair again would duplicate existing canonical knowledge even though the selected matrix row is unlinked.",
+      "requiredBeforeAuthorship": "Retain the plan’s stated electron-balance comparison only if new source-body review identifies an additional supported learning distinction. Record the specific new distinction/assessment; otherwise merge the knowledge-row mapping into existing lessons or select another gap.",
+      "planAlreadyAcknowledgesOverlap": true
+    },
+    {
+      "severity": "authoring_gate",
+      "plan": "mechanical",
+      "lessonId": "mfg1-mechanical-lesson-051",
+      "finding": "Other-direct-instrument unit has provisional instrument types because body page78 has not been read. The plan truthfully marks this; available novelty cannot be determined from the heading.",
+      "requiredBeforeAuthorship": "Confirm instrument types and teaching target from all source-page objects; if they repeat existing l018/l019/l040/l041/l042, update mappings rather than force a new30minute lesson."
+    },
+    {
+      "severity": "note",
+      "plan": "both",
+      "finding": "All checked knowledge IDs exist and are currently unlinked, offsets agree with inventory (+8 mechanical/+10 surface), and prerequisites exist or point to earlier proposed units. No source/body-review overclaim found.",
+      "requiredBeforeAuthorship": "Continue explicit body-page review gates and current-primary-source verification for any precise legal obligation."
+    }
+  ],
+  "overallResult": "PASS_FOR_PROVISIONAL_PLANNING_WITH_AUTHORING_GATES",
+  "authoredContentApproved": false,
+  "filesEditedByReviewer": [
+    "docs/ssw-workspace/manufacturing/batch08-plans-independent-review.json"
+  ]
+}

@@ -1,3 +1,17 @@
+# Manufacturing SSW1 — batch08 six-AI continuation
+
+Date: 2026-10-26 (Asia/Tokyo). Manufacturing baseline: 83217632; integration preserves concurrent remote agriculture commits. Scope: only manufacturing 特定技能1号; SSW2 remains excluded.
+
+Six AI workers produced first-week direct Japanese-to-Thai drafts for each specialty and three seven-lesson gap plans. Integrated Thai: 21 lessons and 36 weekly questions; 661 translated fields independently compared against Japanese, with mechanical/electrical/surface precision fixes applied. Status remains ai_translated_draft, nativeReviewed=false and domainReviewed=false. Existing Japanese 133 lessons/19 weekly checks/228 questions, EN/VI/ID files and all revisions remain byte-identical. Total translation pairs: 420 lesson pairs and720 question pairs; Thai is partial21/133 and36/228. Eight other target locales remain unstarted; Thai captions remain unavailable (33 existing EN/VI/ID caption pairs unchanged).
+
+Plans are not authored lessons or newly reviewed source coverage. Mechanical proposed050–056, electrical043–049 andsurface043–049 target56 presently unlinked TOC rows. Unlinked umbrella headings do not represent missing lessons. Plans require source visual review before authorship. Independent review adds explicit no-duplicate gates for mechanical other measuring instruments and surface redox, whose existing lessons already teach related outcomes. No new PDF body page semantic-review claim; full source atomization and curriculum remain incomplete.
+
+Validation: final manufacturing data/source/state checks PASS at133/228/420/720; baseline11-file preservation PASS; focused RNWeb browser PASS51 checks,42 Thai reader visits,36 question visits and144 postsubmission rationales at320x568 and932x430, zero page errors. Checks include answer/position resume, no early rationale disclosure and completion/return. Twelve screenshots generated; selected phone/landscape evidence retained. Browser harness uses storage/safe-area/Royal adapters and explicit Thai/Japanese test fonts; it does not certify full Expo/native/device/background fidelity. Existing missing expo/tsconfig.base warning persists; full typecheck/lint/build unrun. JLPT byte-lock PASS10/10.
+
+Next: finish remaining Thai112 lessons/192 weekly questions and11 captions, remaining8 locales; visually read source pages and resolve authoring gates before proposed next curriculum units; continue source-object mapping, illustrations,30 original official-format mocks (still0/30) and full Expo/device validation. No background worker implied after this batch.
+
+---
+
 # Manufacturing SSW1 — batch07 parallel continuation
 
 Date:2026-10-26 (Asia/Tokyo). Baseline:97569ae4. Six AI workers, SSW1 only; SSW2 remains excluded.
