@@ -1,0 +1,63 @@
+{
+  "locale": "tl",
+  "status": "ai_translated_draft",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "independentlyReviewed": false,
+  "lessons": {
+    "mfg1-electrical-l028": {
+      "sourceHash": "cedf3f5b13b0d74026ab57d69794392e8b571766d3af97be396225cd7d8ee33a",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Pagsunod sa start at stop ng self-holding circuit",
+      "objective": "Ipaliwanag ang relay self-holding sa pagbabago ng state at ihiwalay ang start, hold, stop, at power loss.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Sandali ng pagpindot at matapos bitawan",
+          "text": "Sa batayang pang-aral na circuit, nae-energize ang relay coil kapag pinindot ang starting a-contact at nagsasara ang sariling a-contact. Kapag parallel ito sa start contact, nananatili ang landas sa coil kahit binitiwan ang start button. Ito ang self-holding.\nHindi laging dahil nakapindot pa ang button kaya tuloy ang ilaw. Sundan kung aling contact ang bumubuo sa current path. Huwag paghaluin ang initial state na bukas ang self-contact at state matapos ma-energize."
+        },
+        {
+          "id": "section-2",
+          "title": "Stop at power loss",
+          "text": "Sa halimbawang ito, series sa landas ang stopping b-contact. Sa stop, bumubukas ito, humihinto ang energization, at bumabalik ang self-contact kaya nawawala ang hold. Iba ito sa circuit na humihinto sa pagbitaw lamang ng start.\nSa batayang halimbawa ng ordinaryong non-latching relay at nakabalik na start input, nawawala ang hold sa power loss at hindi magre-restart sa power return lamang. Ngunit hindi ito garantiya sa lahat ng tunay na kagamitan; kailangan ang pagtiyak ayon sa circuit, input state, at holding method."
+        },
+        {
+          "id": "section-3",
+          "title": "Paggawa ng state table",
+          "text": "Isulat nang sunod: initial coil off/lamp off; pagkatapos start coil on/lamp on; kahit bitawan, on sa self-contact; matapos stop, off. Hiwalay na row ang power return matapos patayin. Ipaliwanag gamit ang aprubadong drawing o materyal sa halip na subukan sa tunay na makina; hiwalay na suriin ang pagiging angkop ng stop at safety functions."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "自己保持",
+          "reading": "じこほじ",
+          "meaning": "Pagpapatuloy ng state gamit ang sariling contact."
+        },
+        {
+          "ja": "励磁",
+          "reading": "れいじ",
+          "meaning": "Pagdaloy ng current sa coil upang lumikha ng magnetism."
+        },
+        {
+          "ja": "初期状態",
+          "reading": "しょきじょうたい",
+          "meaning": "Reference state bago magsimula ang operasyon."
+        },
+        {
+          "ja": "解除",
+          "reading": "かいじょ",
+          "meaning": "Pag-alis sa state na pinananatili."
+        }
+      ],
+      "activity": "Gabay na 30 minuto: 3 pagbalik-aral, 10 teksto, 7 path tracing, 7 state table, 3 paglalagom.\nPagsulat: Gumawa ng table para sa initial, start, pagkatapos bitawan, pagkatapos stop, at power loss. Ipaliwanag sa Japanese ang contact na nagpapatuloy at nag-aalis ng hold. Isulat din ang mga palagay ng hindi pag-restart sa power return lamang.\nSariling pagsusuri: Malinaw bang ordinaryong non-latching relay at bumalik na start input ang palagay at hindi ginagawang pangkalahatan sa makina?",
+      "safety": [
+        "Huwag i-short ang stopping contact o safety function upang subukan.",
+        "Ang awtorisadong tao lamang ang magsasagawa ng power loss/return test at restart matapos tiyakin ang danger zone at aprubadong procedure."
+      ],
+      "summary": "Nagpapatuloy ang self-holding sa contact path. Hiwalay na sundan ang stop, power loss, at return kasama ang malinaw na palagay."
+    }
+  }
+}

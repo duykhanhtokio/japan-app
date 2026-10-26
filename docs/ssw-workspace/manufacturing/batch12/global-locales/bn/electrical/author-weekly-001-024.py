@@ -32,4 +32,6 @@ def writeq(data,questions,name):
  for q,(s,opts,rr) in zip(questions,data):
   assert len(opts)==len(rr)==len(q['optionsJa']);o['questions'][q['id']]={'sourceHash':q['sourceHash'],'translatedDirectlyFrom':'ja','nativeReviewed':False,'domainReviewed':False,'status':'ai_translated_draft','stem':s,'options':opts,'reasons':rr}
  (OUT/name).write_text(json.dumps(o,ensure_ascii=False,indent=2)+'\n');print(name,len(data))
-if __name__=='__main__':writeq(D,[q for ch in src['checks'][:2] for q in ch['questions']],'bn-electrical-weekly-001-024.json')
+if __name__=='__main__':
+ import runpy
+ runpy.run_path(str(OUT/'repair-weekly-001-024.py'))

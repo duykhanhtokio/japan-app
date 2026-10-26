@@ -1,0 +1,63 @@
+{
+  "locale": "tl",
+  "status": "ai_translated_draft",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "independentlyReviewed": false,
+  "lessons": {
+    "mfg1-electrical-l020": {
+      "sourceHash": "c05ab4a434bc985022ac055dab7f2aed0c5f10a452be0ebe5f8faa925d1fa571",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Pag-unawa sa AND at OR ng sequence control",
+      "objective": "Gumawa ng talahanayan ng binary input/output at ipaliwanag ang pagkakaiba ng AND, OR, NOT.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Ihiwalay ang pagkakasunod at kondisyon",
+          "text": "Ang sequence control ay pagpapatakbo sa bawat yugto ayon sa takdang ayos o pamamaraan. Maaaring kombinasyon ng relay at ibang piyesa o programangPLC. Upang maunawaan ang aktuwal na operasyon, ihiwalay kung kailan ano ang mangyayari at kung anong kondisyon ang naglalabas ng output.\nDito, input 0 ay off at 1 ay on para sa pang-aral na indicator. AND: output 1 lamang kung lahat 1; OR: output 1 kung kahit isa 1; NOT: baligtad na input. Hindi “isa lamang” angOR; kapag parehong 1, output 1 rin."
+        },
+        {
+          "id": "section-2",
+          "title": "Pagtiyak sa apat na kombinasyon",
+          "text": "Sa input A, B na 00, 01, 10, 11, ANDoutputs ay 0, 0, 0, 1 at OR ay 0, 1, 1, 1. SaNOT ng A, A=0 ayoutput 1, A=1 ayoutput 0. Sa table, mas madaling makita ang maling pakahulugan sa pang-araw-araw na “o.”\nSa batayang a-contact na nagsasara kapag inputon, series contacts angANDat parallel angOR. Ngunit lohika lamang ito; hindi nito ginagawang sapat ang design ng safety circuit. Hiwalay na suriin ang kilos sa pagkasira at safety standards."
+        },
+        {
+          "id": "section-3",
+          "title": "Pagbasa ng kondisyon ng indicator",
+          "text": "Kung ang lamp L ay dapat umilaw kapag “parehongon ang A at B,”AND ito. SaA=1, B=0, hindi iilaw; sa parehong 1, iilaw. Kung “kahit isa sa A at B ay on,”OR ito at iilaw kahitA=1, B=0. Kahit dalawang input pa rin, nagbabago ang output kapag binago ang nakasulat na kondisyon."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "論理積",
+          "reading": "ろんりせき",
+          "meaning": "AND na totoo kapag lahat ng kondisyon ay totoo."
+        },
+        {
+          "ja": "論理和",
+          "reading": "ろんりわ",
+          "meaning": "OR na totoo kapag kahit isang kondisyon ay totoo."
+        },
+        {
+          "ja": "否定",
+          "reading": "ひてい",
+          "meaning": "NOT na nagpapalit ng 0 at 1."
+        },
+        {
+          "ja": "入力",
+          "reading": "にゅうりょく",
+          "meaning": "Signal na ibinibigay sa control."
+        }
+      ],
+      "activity": "Gabay na 30 minuto: 3 pagbalik-aral, 10 teksto, 7 operation table, 7 pagsulat ng kondisyon, 3 paglalagom.\nPagsulat: Gumawa ng AND at OR output table para sa apat na kombinasyon ng A, B. Ihambing sa A=0, B=1. Ipaliwanag saJapanese ang “kahit isa” at “pareho.”\nSariling pagsusuri: 1 rin ba ang OR sa 11 at hindi ginagamit ang lohika lamang upang patunayang ligtas ang circuit?",
+      "safety": [
+        "Huwag basta baguhin ang interlock o safety circuit ng tunay na makina upang umayon sa pang-aral na lohika.",
+        "Subukan sa aprubadong materyal at pamamaraan; huwag gamitin ang makinang may tao sa danger zone."
+      ],
+      "summary": "AND: lahat; OR: kahit isa; NOT: pagbaligtad. Magkaiba ang kalkulasyon ng lohika at katumpakan ng safety circuit."
+    }
+  }
+}
