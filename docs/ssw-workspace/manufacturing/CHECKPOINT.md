@@ -1,3 +1,17 @@
+# Manufacturing SSW1 — batch11 Thai coverage of current authored content
+
+Date:2026-10-26 (Asia/Tokyo). Manufacturing baseline:0c902c0d. SixAIworkers; only 製造分野・特定技能1号,SSW2 excluded.
+
+Added28directJapanese-to-Thai lesson drafts and48weekly-question drafts: mechanical14lessons/24questions weeks6–7,electrical7/12week6,surface7/12week6. IndependentAI review compared all880fields and verified technical precision corrections againstJapanese. Finalpayload hashes bound in author/independentQA; all76new runtimeentries equal finalreviewedstaging. Flags ai_translated_draft,nativeReviewed=false/domainReviewed=false remain.11canonical/prior-locale files byte-identical;105priorThai lessons/180questions unchanged. No Japanese/sourcehash/revision/progressidentity changes.
+
+Thai now covers all CURRENT133authoredJapanese lessons,19weeklychecks/228questions and11existingdiagramcaptions. EN/VI/ID/TH have full AI-draft coverage of currentauthoredcontent;8other targetlocales remain unstarted. Totals532lesson-locale pairs,912question-locale pairs,44caption-locale pairs. This does not mean completeJapanese curriculum,full574page semanticcoverage,native/domain approval orrelease readiness. No newJapanese lesson,PDFbody review,imageasset,caption orofficial-format mock claimed thisbatch.
+
+Validation:data/source/statechecker PASS133/228/532/912/44; exactThai canonicalIDsets133/228; runtimebinding PASS133lesson+228questionlookups,361stale-source rejects and361unsupported-locale nulls. Compatibility PASS11fullfiles/285priorThai entries/76newentryequality; termidentity/distinctThaioptions checked. Focused actualRNWeb browser PASS77checks:56reader visits,48translatedquestionvisits,192postsubmissionrationales,6caption/image load/enlarge/pan/closechecks for3last-weekfigures at320x568/932x430,and3unstarted-locale pendingindicators. Answer/positionresume,noearlyrationales,completion/return tested;0pageerrors.18screenshots generated,4retained andinspected. JLPTbyte-lock PASS10/10. Storage/safearea/Royal adapters andtestfonts mean fullExpo/native/device/backgroundfidelity unverified. Existingexpo/tsconfig.base warningpersists; fulltypecheck/lint/buildunrun.
+
+Next:Japanese sourceknowledge/curriculumgaps,sourcevisualreview andno-duplicate gates for next-unitplans; illustrations,other8targetlocales,30originalofficial-format mocks(still0/30),fullExpo/native/devicechecks. FullThai coverage is revision-bound to thisauthored snapshot andmust be updated asnewJapanese unitsareadded. No backgroundworker implied afterthisbatch.
+
+---
+
 # Manufacturing SSW1 — batch10 six-AI Thai weeks4–5
 
 Date:2026-10-26 (Asia/Tokyo). Manufacturing baseline:c88ee4a8; verified remote integration baseline4d70964e includes concurrent agriculture work. Only 製造分野・特定技能1号; SSW2 remains excluded.
