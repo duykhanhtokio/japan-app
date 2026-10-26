@@ -37,6 +37,11 @@ const assets:Record<string,ImageSourcePropType>={
  'nonwoven-cover':require('../../../assets/agriculture/recognition/nonwoven-cover-v1.webp'),
  'shade-cloth':require('../../../assets/agriculture/recognition/shade-cloth-v1.webp'),
  'insect-net':require('../../../assets/agriculture/recognition/insect-net-v1.webp'),
+ 'strawberry-gray-mold':require('../../../assets/agriculture/recognition/strawberry-gray-mold-v1.webp'),
+ 'cabbage-sclerotinia':require('../../../assets/agriculture/recognition/cabbage-sclerotinia-v1.webp'),
+ 'cabbage-soft-rot':require('../../../assets/agriculture/recognition/cabbage-soft-rot-v1.webp'),
+ 'cucumber-powdery-mildew':require('../../../assets/agriculture/recognition/cucumber-powdery-mildew-v1.webp'),
+ 'cucumber-downy-mildew':require('../../../assets/agriculture/recognition/cucumber-downy-mildew-v1.webp'),
 };
 type RecognitionImage={
  id:string;lessonIds:string[];lessonSourceHashes:Record<string,string>;
