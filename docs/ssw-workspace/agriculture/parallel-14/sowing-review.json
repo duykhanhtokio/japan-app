@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "agri_5",
+  "status": "complete",
+  "authorPacketPath": "/workspace/scratch/018c0b6e29b8/agri14-sowing-author.json",
+  "authorPacketSha256": "e97cf3f74bcc87573a88fda14aaf607e72a5661ff54702d3b3bd039cb4ac5d1b",
+  "assetBindings": {
+    "svg": {
+      "path": "/workspace/scratch/018c0b6e29b8/japan-app/assets/agriculture/recognition/sowing-patterns-v1.svg",
+      "sha256": "63887fd47e7b98a662510573c410668dc1390708b9b1b210105bdaabdf55ff9d",
+      "bytes": 5065
+    },
+    "webp": {
+      "path": "/workspace/scratch/018c0b6e29b8/japan-app/assets/agriculture/recognition/sowing-patterns-v1.webp",
+      "sha256": "6a5fe02bff458bcab6d34a360eccd2e795c97900923c1df03e24eb52fb20d92f",
+      "bytes": 28040,
+      "encoding": "losslessWebP RGB"
+    }
+  },
+  "sources": [
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 14,
+      "printedPage": 12
+    }
+  ],
+  "sourceEvidence": {
+    "originalPdfPath": "/workspace/scratch/018c0b6e29b8/agri12-original-sources/耕種農業全般 特定技能2号.pdf",
+    "originalPdfSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+    "freshHashVerified": true,
+    "independentReviewerRenderPath": "/workspace/scratch/018c0b6e29b8/agri14-sowing-source-p14.png",
+    "independentReviewerRenderSha256": "7398a7d5b77aa5238ae37c4b2699b679b5410fa4c10c51328fbc6bf4e9ac030d",
+    "pdfPage": 14,
+    "printedPage": 12,
+    "visuallyChecked": true
+  },
+  "scope": {
+    "assetsViewed": [
+      "full1200x720WebP",
+      "phone330preview",
+      "SVGgeometryandtext"
+    ],
+    "metadataFieldsReviewed": [
+      "titleJa",
+      "altJa",
+      "observationJa",
+      "limitJa"
+    ],
+    "labelsReviewed": [
+      "ばらまき",
+      "すじまき",
+      "点まき"
+    ],
+    "sourceItemIds": [
+      "AGR-A10-GENERAL-0353",
+      "AGR-A10-GENERAL-0354",
+      "AGR-A10-GENERAL-0355"
+    ],
+    "lessonIds": [
+      "agr-sowing-design"
+    ],
+    "lessonHashesVerified": true
+  },
+  "patches": [],
+  "unresolvedBlockingIssues": [],
+  "findings": [
+    {
+      "topic": "spatial_patterns",
+      "result": "Source S2PDF14 shows broadcast acrosswholebed,rowinline,andpoint-sowingseveralseedsperseparatedsite. Newtopdownfigure clearlypreserves those distinctions. Broadcast varies bothx/y acrossarea,rowonehorizontal line,pointthree separatedfour-dotclusters. Equal12dots/style/area keepspositionratherthancount/color asrecognitioncue."
+    },
+    {
+      "topic": "labels_and_readability",
+      "result": "All3Japanese methodlabels correct and matched toactualpositions. FullWebP and330pixelpreview independentlyviewed: labelsunclipped, isolatedscattervscontinuousrowvsclusters distinguishable. Footer explicitly saysschematicandnotspacing/countinstruction."
+    },
+    {
+      "topic": "metadata_and_limits",
+      "result": "All4JAfieldsaccurate. Norealdistance/density/seedcount/coverdepth/germination guarantee orcrop-specificinstruction. Dotcountandcoordinatesareauthoringgeometryonly. Scope remainslevel2,1gosourceobjectivesnotclosed. No interactiveassessmentorrealtoolrecognitionclaim."
+    },
+    {
+      "topic": "originality",
+      "result": "Newtopdownpanels,changedordering,uniformcircles/equalareas andindependentnativeJapanese typography differ fromsourceperspectivebeds/captions/cropicons. No sourceimage input ortrace appears in SVG. This isAIreview,notrightsorhuman/domaincertification."
+    },
+    {
+      "topic": "integration_note",
+      "result": "ExistingnativeSowingDiagramalreadyillustratesbasicpatterns. Rootshouldchooseonepresentationperlessonratherthanstackduplicatefigures; newassetdoesnotcreateanewknowledgeobjectivebyitself."
+    }
+  ],
+  "geometryChecks": [
+    {
+      "panel": "broadcast",
+      "circleCount": 12,
+      "positionsChecked": true,
+      "sameRadiusAndFill": true
+    },
+    {
+      "panel": "row",
+      "circleCount": 12,
+      "positionsChecked": true,
+      "sameRadiusAndFill": true
+    },
+    {
+      "panel": "hill",
+      "circleCount": 12,
+      "positionsChecked": true,
+      "sameRadiusAndFill": true
+    }
+  ],
+  "sourceOccurrencesClosed": 0,
+  "sourcePhotoObjectiveComplete": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceTested": false,
+  "releaseReady": false
+}

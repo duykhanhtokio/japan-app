@@ -1,5 +1,5 @@
 import {ConceptDiagrams} from './ConceptDiagrams';
-import {RecognitionImages} from './RecognitionImages';
+import {RecognitionImages,hasRecognitionImage} from './RecognitionImages';
 import {useEffect,useRef,useState,type PropsWithChildren} from 'react';
 import {Modal,Pressable,ScrollView,StyleSheet,Text,View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -70,7 +70,7 @@ function Reader({lesson,language,onBack,onComplete,saving,saveError}:{lesson:Agr
  {show&&language!=='ja'&&!t&&<TranslationText>この言語の訳は準備中です。</TranslationText>}
  <Text style={[s.body,{color:colors.text}]}>{lesson.objectiveJa}</Text>{show&&t&&<TranslationText>{t.title}{'\n'}{t.objective}</TranslationText>}
  {lesson.paragraphs.map(p=><View key={p.id} style={[s.section,{borderColor:colors.border}]}><Text style={[s.heading,{color:colors.text}]}>{p.titleJa}</Text><Text selectable style={[s.body,{color:colors.text}]}>{p.textJa}</Text>{show&&t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}</View>)}
- {lesson.id==='agr-rice'&&<RiceProcess/>}{lesson.id==='agr-organs'&&<OrgansDiagram/>}{lesson.id==='agr-sowing-design'&&<SowingDiagram/>}<ConceptDiagrams lessonId={lesson.id} colors={colors}/>
+ {lesson.id==='agr-rice'&&<RiceProcess/>}{lesson.id==='agr-organs'&&<OrgansDiagram/>}{lesson.id==='agr-sowing-design'&&!hasRecognitionImage(lesson.id,lesson.sourceHash,'sowing-patterns')&&<SowingDiagram/>}<ConceptDiagrams lessonId={lesson.id} colors={colors}/>
  <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} colors={colors}/>
  <Text style={[s.heading,{color:colors.text}]}>用語</Text>{lesson.terms.map(term=><Text key={term.ja} style={[s.body,{color:colors.text}]}>{term.ja}（{term.reading}）</Text>)}
  <Text style={[s.heading,{color:colors.text}]}>整理して説明する</Text><Text style={[s.body,{color:colors.text}]}>{lesson.activityJa}</Text>{show&&t&&<TranslationText>{t.activity}</TranslationText>}

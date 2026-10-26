@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "agri_5",
+  "status": "complete_static_review_pass_browser_execution_pending",
+  "filesReviewed": [
+    {
+      "path": "src/components/agriculture/RecognitionImages.tsx",
+      "sha256": "713fc4d470ce63aff1f5821a3ad2891b0faf6b9c71fa7b921a1569105ed6c959"
+    },
+    {
+      "path": "src/data/agriculture/recognition-images.json",
+      "sha256": "468227de5e36614cc833026ddcb18bb5061e6080b88bec89734d902db12e7afd"
+    },
+    {
+      "path": "scripts/agriculture/check-parallel-14.py",
+      "sha256": "84c588b356efdf2022479b9d30339baa8b469187ccd5d39710d530e65e3f8a5e"
+    }
+  ],
+  "scope": {
+    "componentHookStateRatioAndConditionalButtonReview": true,
+    "all12RegistryRowsChecked": true,
+    "newExpandedKeys": [
+      "plant-organ-positions",
+      "sowing-patterns",
+      "soil-handtest-states"
+    ],
+    "priorSixRowsPreserved": true
+  },
+  "registryChangeProof": {
+    "priorReviewedRegistrySha256": "6ebfd63a92be04fe79b8af7a1898e746075cc80de5b4aaae7ee5b3d79bd3621a",
+    "reconstructPriorMethod": "RemoveonlyallowExpandedViewkeysfromcurrentrows; standardoriginalJSONindent2/ensure_asciiFalse/newline serialization.",
+    "reconstructedSha256": "6ebfd63a92be04fe79b8af7a1898e746075cc80de5b4aaae7ee5b3d79bd3621a",
+    "exactMatch": true,
+    "implication": "Allpreexistingmetadata/source/lessonhash/assetSHA/labels/dimensions preserved; onlythreeallowExpandedView:truefieldsadded."
+  },
+  "findings": [
+    {
+      "topic": "hook_safety",
+      "result": "useWindowDimensions anduseStateare called onceatcomponenttop, beforefilter/map andwithnoconditionalhook. Perimageidexpandedstate andfunctionalsetExpanded update avoid staleclosure/lostupdates. No hook inside visibleitemloop."
+    },
+    {
+      "topic": "ratio_and_bounds",
+      "result": "Image retains width100%, intrinsicwidth/height aspectRatio, alignSelfcenter andcontain. CollapsedmaxWidthusesviewportheightcap; expandedremovesonlymaxWidth, leavingwidthconstrainedtoexistingcardmax720/padding. Heightmayexceedviewportwhenexpanded butpageScrollViewretainsverticalscroll;nocrop intended."
+    },
+    {
+      "topic": "button_scope",
+      "result": "Pressable onlyforallowExpandedViewtrueandestimatedfullcardinnerwidth>capwidth+8. Oldsixvegetableimagesplusgrainpair/nurseryhave noflag andnobutton. Newthreecontrolleddiagramseligible. Minheight44,buttonroleandJapaneseaccessibilitylabeltogglebetweenexpand/shrink."
+    },
+    {
+      "topic": "resize_and_state",
+      "result": "Statekeyisimageid,soexpandingonefiguredoesnotexpandothers. Onnarrowviewportbuttonmayhidewhenfullwidthisnolargerthancap; expandedstatepersistsbutrenderedwidthremainscardwidth. Returningwideallowsvisiblebuttonwithshrinklabel. Noimagecontentorsourcehashmutations occur."
+    },
+    {
+      "topic": "shared_predicate_and_fallback",
+      "result": "matchesLessonstillguardslessonassociation/exacthash/ownassetkey/finitepositivedimensions/metadatapresence. hasRecognitionImageandactualrenderuse samepredicate; newexpandedflagdoesnotbypasshashbinding. ExistingSowingDiagramfallbackconditionunchangedbythispatch."
+    }
+  ],
+  "nonBlockingLimits": [
+    {
+      "topic": "threshold_is_estimate",
+      "note": "ButtonthresholdusesMath.min(viewportwidth-66,688), not actualonLayoutcardmeasurement. Currentreaders haveknownpadding; agent6mustconfirmshow/shrink/nooverflowacrossactual4viewports. Arbitraryfuturenesting/layoutshouldrevisitmeasurement."
+    },
+    {
+      "topic": "review_scope",
+      "note": "Staticcode/preservationreviewdoesnotclaimbrowserexpansionexecutionorallglyphreadability. Agent6expandedcase rerunandrootactualimageinspectionprovide finalruntimeevidence."
+    }
+  ],
+  "validatorResult": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python scripts/agriculture/check-parallel-14.py",
+    "status": "PASS",
+    "sourceOccurrencesClosed": 0,
+    "preservedJapaneseLessons": 168,
+    "preservedTranslationPairs": 2016,
+    "preservedWeeklyQuestions": 388
+  },
+  "patches": [],
+  "unresolvedBlockingIssues": [],
+  "sourceOccurrencesClosed": 0,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceTested": false,
+  "releaseReady": false
+}

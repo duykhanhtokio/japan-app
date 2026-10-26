@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "owner": "agri_6",
+  "status": "planned_waiting_final_registry_and_manifest",
+  "baseline": {
+    "lessons": 168,
+    "translations": 2016,
+    "weeklyQuestions": 388,
+    "priorRecognitionAssets": 6
+  },
+  "newAssetGroups": [
+    "two rice grain assets",
+    "plant organs",
+    "sowing patterns",
+    "soil hand test",
+    "nursery containers"
+  ],
+  "sourceOfScope": "parallel-14-manifest.json explicit newRecognitionImageIds or AGRICULTURE_QA_NEW_IMAGE_IDS comma list; must resolve exactly6 registry entries",
+  "matrix": {
+    "newFigures": "all mapped lessons and actual applicable routes,4sizes,day/night",
+    "priorRegression": "both prior readers,actual routes,390x844,day/night",
+    "translation": "all12actualshardkeys,one new representative reader and one prior reader at390x844/day; no locale×geometry crossproduct",
+    "negativeFixtures": "each scoped mapped lesson exact hash count derived from registry; wrong hash,missing binding,unmapped lesson expect0"
+  },
+  "checks": [
+    "real bytes hash verification against assetSha256",
+    "decoded intrinsic dimensions and image viewport bounds/height cap",
+    "captions/alt/clues/limits present",
+    "translation toggles and actual translated titles",
+    "completion reachable and completion badge survives reload",
+    "counts derived from executed cases; screenshot names include lesson,image,viewport,mode"
+  ],
+  "artifactPolicy": "write only new QA script and outside report/screenshots; preserve13 evidence",
+  "nativeDeviceTested": false,
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false
+}
