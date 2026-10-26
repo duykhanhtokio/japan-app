@@ -1,18 +1,17 @@
 # Nhà hàng / 外食業 — checkpoint 2026-10-26
 
-## Lô tiếp nối đã lưu, đang hoàn thiện thuật ngữ
+## Lô04 — hoàn thiện giải nghĩa tiếng Nhật
 
-Người dùng đã cho phép đẩy lô nhà hàng và tiếp tục trên `duykhanhtokio/japan-app`, nhánh `feature/restaurant-20261026`. Base remote đã xác minh: `3ebe00fb0ce6b57891e3c0377e06564d8a579d56`. Lô trước đã lưu remote tại `e30abe14f3e490785cf5db4a8699bc5b04265330`, đã fetch và WORK PERSISTENCE PASS. Lô tiếp theo bổ sung45 giải nghĩa nhóm nấu ăn; báo cáo batch03-glossary-definitions.json. Chỉ coi lô tiếp theo là lưu bền khi đối chiếu remote thành công.
+Nhánh được người dùng cho phép: `duykhanhtokio/japan-app`, `feature/restaurant-20261026`. Base đã xác minh và WORK PERSISTENCE PASS: `a7cd71d5f79f02512d3cc92f5ecd896610a6d505`. Lô04 chỉ được coi là lưu bền sau khi commit remote được fetch và đối chiếu thành công.
 
-- 120 bài Nhật: 59 bài 1号/12 tuần, 61 bài 2号/11 tuần.
-- 20 bộ luyện tập ×40 =800 câu; 23 kiểm tra tuần/184 câu (96+88).
-- 692 thuật ngữ trong6 nhóm;191 còn thiếu giải nghĩa,46 ứng viên cách đọc cần kiểm tra ngữ cảnh. Chưa hoàn thành toàn bộ kiến thức.
-- 252 bản dịch bài (20/ngôn ngữ;hi,bn26) và192 bản dịch câu (16/ngôn ngữ). Còn thiếu phần lớn bản dịch cho12ngôn ngữ; không chứng nhận chuyên môn/người bản ngữ.
-- Đã sửa21 câu có phương án nhiễu vô lý/không liên quan, giữ nguyên đáp án đúng; cập nhật12 bản dịch câu tuần1 số7 và furigana tương ứng. Báo cáo: batch03-distractor-repairs.json. Các báo cáo batch02 là ảnh chụp kiểm tra cũ, không coi hash cũ là chứng nhận cho nội dung đã sửa.
-- Kiểm tra cấu trúc PASS;complete FALSE; sàng lọc số3360trường PASS. Lưu trạng thái10nhóm và tải theo nhu cầu6nhóm PASS. Browser thuật ngữ24trường hợp/4kích thước PASS; kiểm tra đổi khóa lưu3trường hợp PASS. UI JLPT byte lock10/10 PASS.
-- Chưa chạy Expo/native/thiết bị thật; browser dùng adapter trình bày như đã ghi trong các báo cáo. Không công bố kiểm thử native.
+- Giữ120 bài Nhật (59/61),800 câu luyện tập và184 câu tuần (96/88), không sửa ngành khác hoặc UI JLPT.
+- Bổ sung190 giải nghĩa mới, nâng tổng số có giải nghĩa lên691/692. Phân biệt カキ/かき, fruitもも/meatもも và ラウンド trong ngữ cảnh chế biến cá. Không coi nghĩa từ vựng là chứng nhận bao phủ toàn bộ kiến thức.
+- Mục duy nhất chưa giải nghĩa: `うぐいす骨`. Chỉ mục PDF39 dẫn trang in4, nhưng hình cá PDF8 không ghi nhãn này. Không đoán vị trí giải phẫu. Ghi local blocker trong batch04-glossary-definitions.json.
+- Các định nghĩa có từ chuyên biệt đã đối chiếu tài liệu và nguồn công khai được ghi trong báo cáo. AI authored/unreviewed; nativeReviewed/domainReviewed giữ false. Còn46 ứng viên cách đọc cần rà ngữ cảnh.
+- Bản dịch bài252 và câu192 giữ nguyên; chưa dịch phần lớn bài/câu và bảng thuật ngữ cho12ngôn ngữ. Còn thiếu bao phủ nguồn, hình, furigana và Expo/native QA.
+- Kiểm tra cấu trúc PASS;complete FALSE. Browser thuật ngữ24trường hợp ở4kích thước kiểm tra lại sau khi bổ sung giải nghĩa. Không có tác vụ chạy ngầm sau phiên.
 
-Điểm tiếp tục: hoàn thiện191 giải nghĩa thuật ngữ, kiểm tra46 ứng viên cách đọc; rà soát độ bao phủ nguồn; dịch phần còn thiếu; bổ sung hình/furigana và native QA. Không có tác vụ chạy ngầm sau phiên.
+Điểm tiếp tục: xác minh thuật ngữ giải phẫu còn vướng, rà46 ứng viên cách đọc; đối chiếu bao phủ nguồn; mở rộng12ngôn ngữ; hoàn thiện hình/furigana và kiểm thử app thật.
 
 ---
 ## Checkpoint lịch sử trước lô tiếp nối
