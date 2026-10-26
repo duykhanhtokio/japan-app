@@ -21,6 +21,12 @@ const assets:Record<string,ImageSourcePropType>={
  tomato:require('../../../assets/agriculture/recognition/tomato-v1.webp'),
  eggplant:require('../../../assets/agriculture/recognition/eggplant-v1.webp'),
  cucumber:require('../../../assets/agriculture/recognition/cucumber-v1.webp'),
+ apple:require('../../../assets/agriculture/recognition/apple-v1.webp'),
+ grapes:require('../../../assets/agriculture/recognition/grapes-v1.webp'),
+ persimmon:require('../../../assets/agriculture/recognition/persimmon-v1.webp'),
+ 'asian-pear':require('../../../assets/agriculture/recognition/asian-pear-v1.webp'),
+ peach:require('../../../assets/agriculture/recognition/peach-v1.webp'),
+ chestnut:require('../../../assets/agriculture/recognition/chestnut-v1.webp'),
 };
 type RecognitionImage={
  id:string;lessonIds:string[];lessonSourceHashes:Record<string,string>;

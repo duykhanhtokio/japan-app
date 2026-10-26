@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "agri_5",
+  "status": "complete",
+  "baselineCommit": "1b3d28013492cf4a49d18b1cdca0add07614cdb4",
+  "filesReviewed": [
+    {
+      "path": "scripts/agriculture/check-parallel-16.py",
+      "sha256": "34f8834a2afbde6115867892d13db51641e226bf0f0a20c71d98a5fea6c94429"
+    },
+    {
+      "path": "src/data/agriculture/recognition-images.json",
+      "sha256": "061a099fb404d073304856355250ddf49b433e8d5e2633f75bd5dc262bb6ec01"
+    },
+    {
+      "path": "docs/ssw-workspace/agriculture/illustration-register.json",
+      "sha256": "6a07a62e0b1a58c592cc77765518c3fcb460a57b81ed1ae4321270b47ff0a4e3"
+    },
+    {
+      "path": "docs/ssw-workspace/agriculture/recognition-inventory.json",
+      "sha256": "2c965ccecaf6f27ac2228562d176b34d697cd209e042db3788a46c18a38515a0"
+    },
+    {
+      "path": "docs/ssw-workspace/agriculture/parallel-16-manifest.json",
+      "sha256": "230ab8f0e12c1648155fd019c77d915804d8cc5f67aaa1352377714916c1402c"
+    },
+    {
+      "path": "src/components/agriculture/RecognitionImages.tsx",
+      "sha256": "661edb0a97845d9ddb6188bd28f9325242b00bb779f1183cde2e52d84ad8fee0"
+    },
+    {
+      "path": "src/components/agriculture/AgricultureCourse.tsx",
+      "sha256": "8ed3245c95a66d34de35ae9a70ab750f96e15a9856ffb90d153264592ff28c7b"
+    }
+  ],
+  "validatorCommand": "PYTHONDONTWRITEBYTECODE=1 python scripts/agriculture/check-parallel-16.py",
+  "validatorResult": {
+    "status": "PASS",
+    "newFigures": 6,
+    "priorRecognitionRowsAndRastersPreserved": 18,
+    "priorEditableSVGFilesPreserved": 3,
+    "priorRegisterFigureObjectsPreserved": 25,
+    "totalRegisterFigureObjects": 31,
+    "sourceOccurrencesReferenced": 6,
+    "sourceOccurrencesClosed": 0,
+    "priorJapaneseLessonsUnchanged": 168,
+    "priorKnowledgeUnitsUnchanged": 1008,
+    "priorTranslationPairsUnchanged": 2016,
+    "priorWeeklyQuestionsUnchanged": 388,
+    "frozenDocumentationFiles": 5
+  },
+  "metadataExactness": {
+    "allSixTimesFourFieldsChecked": true,
+    "fieldChecks": [
+      {
+        "assetKey": "apple",
+        "authorSha256": "90bbb6c030c11337a0e84cc352915590672b543e1477de9ea757caeb598d3af0",
+        "reviewSha256": "573c4e4eb719e337d2d81e52bde9923f1b3e68823307954dff5a8a8a70242029",
+        "allFourJAFieldsExactAfterApprovedPatches": true
+      },
+      {
+        "assetKey": "grapes",
+        "authorSha256": "dd50adc8c8c3fe6819f633a7b4f5364eca4901bf549ce1f6d5eb858ee48e92a3",
+        "reviewSha256": "7a92780e4337e9e44d62f14c51b5af7119bd7cce1cc16aa59cbfc42368e453c1",
+        "allFourJAFieldsExactAfterApprovedPatches": true
+      },
+      {
+        "assetKey": "persimmon",
+        "authorSha256": "37cf0d01d7c533943c78680c48841b84a282a063d61742d580c5da66bdee7123",
+        "reviewSha256": "8bf9f81e07fd79163112b406a42787f33479e1c2422a28d98c5b3aae92fa46b1",
+        "allFourJAFieldsExactAfterApprovedPatches": true
+      },
+      {
+        "assetKey": "asian-pear",
+        "authorSha256": "6d43dda5290cbe09094f92663df4dc63ea7b6ac9ef0554a18672f2764b82ebf5",
+        "reviewSha256": "2bb5d745ee4aabb629f5b0c3f078628974b0853e9124fb2b8783f00070db21b2",
+        "allFourJAFieldsExactAfterApprovedPatches": true
+      },
+      {
+        "assetKey": "peach",
+        "authorSha256": "f402550ab9353958d6b1d001381136cb82fe279050c6bdb7753c3fb1664af770",
+        "reviewSha256": "578c46448d35a3a7e79d60397d60627bc7d7810801e511c3cfc2504ce5499344",
+        "allFourJAFieldsExactAfterApprovedPatches": true
+      },
+      {
+        "assetKey": "chestnut",
+        "authorSha256": "b01025308e7ebe4fdd85de16bf84537c6d93502fad6f99609f4b581dbbdc77c0",
+        "reviewSha256": "eafdd835e5a8e1089a13f83367744b135ca0e4978eecbe41419201e13c9c94c4",
+        "allFourJAFieldsExactAfterApprovedPatches": true
+      }
+    ],
+    "approvedPatchCount": 1,
+    "approvedPatch": {
+      "imageId": "agr-recognition-asian-pear-v1",
+      "field": "altJa",
+      "before": "黄褐色の小さな点がある丸いナシに、上部のくぼみから短い茶色の柄が伸びるイラスト。",
+      "after": "黄褐色の丸いナシの表面に小さな点があり、上部のくぼみから短い茶色の柄が伸びるイラスト。",
+      "reason": "Make clear that yellow-brown describes the fruit skin, while small surface speckles are a separate observation; retain the same supported appearance and top attachment without adding diagnostic claims."
+    },
+    "silentUnreviewedFourFieldChanges": 0
+  },
+  "findings": [
+    {
+      "topic": "baseline_and_runtime",
+      "result": "ValidatorbytecomparesallbaselineAgricultureJSONexcludingappendonlyregistry;old18rowobjects/rasterbytes+3SVGsourcebytesunchanged. RecognitionImages.tsx differssolelyby6newstaticimports;AgricultureCourse.tsxexactbaseline. Existingfilter,ratio,expansionstate/3flags/live-labelsandsowingfallback behavior preserved."
+    },
+    {
+      "topic": "RI_additions",
+      "result": "All48historicalRIrows/oldfieldvaluesandorderpreserved. OnlyS1PDF104RI18–23gain3keys(originalIllustrationAssetId,originalIllustrationAvailable:true,sourcePhotoObjectiveComplete:false). Previous12vegetablelinksunchanged. Originalillustrationssummary18 iscaption-linkedcropillustrations, notall24registryimages norfullphotorecognition."
+    },
+    {
+      "topic": "newsource_scopes",
+      "result": "Apple/grapes/persimmon/asianpear/peach/chestnut linkexactatomic0466–0471andRI18–23atS1PDF104printed98. ScopeLevels1andmanifestsource1explicit;sharedagr-fruit/agr-workterms-photo-labels2goaccessissupplemental,notS2photoobjectivecoverage. Current2lessonhashmapsvalid."
+    },
+    {
+      "topic": "metadata_and_peerpatch",
+      "result": "All24visibleJAfields equal6frozenauthorpackets afterexactpeerpatch application. OnlypearaltJa approvedpatch applied; correctlyclarifiesyellow-brownfruitwithsmallsurfacepoints. No otherhiddenmetadataedits;eachfrozenauthor/reviewSHAreverified. Assetdigestsstayrawauthorvalues."
+    },
+    {
+      "topic": "counts_and_flags",
+      "result": "25oldregisterobjects+6newcropillustrationobjects=31. Recognitionregistryold18+new6=24. Batchadds6commonappearanceillustrations,0controlledconceptdiagrams,0lessons/translations/questions/mocks.0sourceclosures,complete/expert/releaseflagsfalse;candidatephotoobjectivesandholdsunchanged."
+    },
+    {
+      "topic": "validator_review",
+      "result": "Strictcheck24staticmapsandonly6importedlines,oldassetbytes/3SVGs,RI48preservationandtarget6additions,scope/pageinventoryreferences,hashes/dims,6sourceIDs,2lessonunionandreviewSHA/blockerspassescurrentrecords. New4JAprovenancewasindependentlyverifiedoutsidevalidator."
+    }
+  ],
+  "nonBlockingRecommendations": [
+    {
+      "topic": "future_guard",
+      "note": "Add exactvisible4JAfield reconstruction(rawauthor+exactapprovedreviewpatch) tovalidator sofutureunreviewedregistrymetadataedits failautomatically; currentbatchmanuallycheckedwith0differences."
+    },
+    {
+      "topic": "review_status_guard",
+      "note": "FutureguardcanrequireexplicitcompletereviewstatusandacceptedauthorSHAfieldratherthananyscalarSHA/nonemptystatus; currentrecordsfullybound/completeandnoblockers."
+    }
+  ],
+  "patches": [],
+  "unresolvedBlockingIssues": [],
+  "blockers": [],
+  "sourceOccurrencesClosed": 0,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceTested": false,
+  "releaseReady": false,
+  "limits": [
+    "Integration/staticpreservationandmetadatareview; agent6executingbrowsermatrix,rootwillbindfinalQAseparately.",
+    "Thisreviewerpersonallyviewedownpeachandpeerchestnut;otherfourpixelreviewsremainseparateSHA-boundpeerrecords.",
+    "Nohuman/native/domain/realdevice/font/releasecertification oruniqueassessableobjectiveincrement."
+  ]
+}
