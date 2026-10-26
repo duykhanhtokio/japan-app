@@ -24,6 +24,8 @@ def append_unique(old,new):
   else:old.append(x);by_id[x['id']]=x
 def main():
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/check-source-review-bindings.py')],check=True,capture_output=True,text=True)
+ subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/integrate-source-guides.py')],check=True,capture_output=True,text=True)
+ guide_report=read(STAGE/'source-guides/integration-qa.json')
  frozen=read(STAGE/'frozen-source-inputs.json')['sha256']
  for relative,expected in frozen.items():assert hashlib.sha256((STAGE/relative).read_bytes()).hexdigest()==expected,'Source freeze drift: '+relative
  manifest=read(DATA/'course-manifest.json');matrix=read(DOCS/'knowledge-matrix.json');knowledge={k['id']:k for k in matrix['knowledge']}
@@ -107,6 +109,11 @@ def main():
   write(DATA/'mocks'/f'{specialty}.json',bundle)
  manifest['completedMockExams']=30
  write(STAGE/'mock-source-binding-normalization.json',mock_binding_remaps)
+ for guide in read(DATA/'source-guides.json')['guides']:
+  for kid in guide['knowledgeIds']:
+   row=knowledge[kid];row.setdefault('referenceGuideIds',[])
+   if guide['id'] not in row['referenceGuideIds']:row['referenceGuideIds'].append(guide['id'])
+   row['coverageStatus']='linked_to_ai_reference_supplement_not_source_certification'
  manifest['courseComplete']=False;manifest['releaseReady']=False;write(DATA/'course-manifest.json',manifest);write(DOCS/'knowledge-matrix.json',matrix)
  translation_aliases={}
  registry=read(DATA/'translations/manifest.json');targets=list(registry['locales']);locale_lessons={};locale_questions={};locale_mocks={};caption_data=read(DATA/'diagram-translations.json')
@@ -171,9 +178,13 @@ def main():
  progress['createdDiagrams']=18;progress['usedDiagrams']=18
  progress['mockTranslationCoverage']={l:len(existing_mock_locales.get(l,{})) for l in targets}
  progress['diagramTranslationCoverage']={l:len(caption_data['locales'].get(l,{})) for l in targets}
- progress['fullyDraftTranslatedLocalesForAllCurrentContent']=[l for l in complete if len(existing_mock_locales.get(l,{}))==1200 and len(caption_data['locales'].get(l,{}))==18]
+ progress['fullyDraftTranslatedLocalesForAllCurrentContent']=[l for l in complete if len(existing_mock_locales.get(l,{}))==1200 and len(caption_data['locales'].get(l,{}))==18 and guide_report['coverage'].get(l,0)==5]
+ progress['sourceReferenceGuides']=guide_report['guides'];progress['sourceGuideTranslationCoverage']=guide_report['coverage'];progress['translatedSourceGuideLocalePairs']=guide_report['translatedGuidePairs']
+ progress['specificallyAuditedTocGapsWithReferenceGuides']=sum(bool(k.get('referenceGuideIds')) for k in knowledge.values())
+ progress['aiDraftDeliveryComplete']=len(progress['fullyDraftTranslatedLocalesForAllCurrentContent'])==12
+ manifest['aiDraftDeliveryComplete']=progress['aiDraftDeliveryComplete'];manifest['sourceReferenceGuides']=guide_report['guides'];write(DATA/'course-manifest.json',manifest)
  remaining_locales=[l for l in targets if l not in progress['fullyDraftTranslatedLocalesForAllCurrentContent']]
- progress['next']=('Complete remaining source-bound draft translations: '+', '.join(remaining_locales)+'. ' if remaining_locales else 'All12 target locales cover the currently authored lessons, weekly questions, mocks and captions as AI drafts. ')+"Maintain source-object provenance and finish full-source atomization/coverage review; independent native/domain review and physical native-device verification remain uncertified. SSW2 excluded."
+ progress['next']=('Complete remaining source-bound draft translations: '+', '.join(remaining_locales)+'. ' if remaining_locales else 'All12 target locales cover the currently authored lessons, weekly questions, mocks, captions and five source-reference guides as AI drafts. ')+"Maintain source-object provenance and finish full-source atomization/coverage review; independent native/domain review and physical native-device verification remain uncertified. SSW2 excluded."
  progress['lessonTranslationCoverage']={l:e['lessonCount'] for l,e in registry['locales'].items()};progress['questionTranslationCoverage']={l:e['questionCount'] for l,e in registry['locales'].items()};progress['previewWeeksBySpecialty']={s['id']:len(s['weeks']) for s in manifest['specialties']};write(DOCS/'progress.json',progress)
  write(STAGE/'translation-schema-normalization.json',translation_aliases)
  write(STAGE/'integration-input-digests.json',input_digests)

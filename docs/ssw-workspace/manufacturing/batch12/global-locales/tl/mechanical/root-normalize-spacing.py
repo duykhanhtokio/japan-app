@@ -4,10 +4,12 @@ import json,re,hashlib
 P=Path(__file__).parent
 TARGET_KEYS={'title','objective','text','meaning','activity','summary','stem'}
 def norm(s):
+ s=re.sub(r'(?<![0-9] )\bA ng\b','Ang',s)
+ s=re.sub(r'(?<![0-9] )\bm ay\b','may',s)
  s=s.replace('・', ', ').replace('timesng','times ng').replace('binale-wala','binalewala')
  s=re.sub(r'(?<=[0-9])(?=[A-Za-z])',' ',s)
  s=re.sub(r'(?<=[A-Za-z])(?=[0-9])',' ',s)
- s=re.sub(r'\b(mm|ms|cm|kg|s|g|m|V|A)(ang|ay|at|sa|ng)(?=\b|[0-9])',r'\1 \2',s)
+ s=re.sub(r'(?<=[0-9] )(mm|ms|cm|kg|s|g|m|V|A)(ang|ay|at|sa|ng|kapag|lamang|kaysa|bilang|hanggang)(?=\b|[0-9])',r'\1 \2',s)
  s=re.sub(r'(?<=[²³Ω℃%])(?=[A-Za-z])',' ',s)
  s=re.sub(r'(?<=[,;:])(?=[A-Za-z])',' ',s)
  s=re.sub(r'(?<=\.)(?=[A-Z“])',' ',s)

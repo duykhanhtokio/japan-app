@@ -34,5 +34,12 @@ def scan(x,report):
   for v in x:scan(v,report)
 for p in (STAGE/'surface-locales').glob('ja-independent-review-*.json'):scan(read(p),p)
 missing=set(objects)-matched;assert not missing,sorted(missing)
-result={'status':'PASS','fileDigestBoundReviews':len(pairs),'surfaceReviewedObjects':len(matched),'supersededReviewRecords':mismatches,'missingCurrentReviewBindings':[],'scope':'Exact frozen source identities and independently reviewed snapshots, not a native/domain/full-knowledge certificate.'}
+guide_count=0
+guide_freeze=STAGE/'source-guides/source-freeze.json'
+if guide_freeze.exists():
+ gf=read(guide_freeze);gp=ROOT/gf['path'];assert hashlib.sha256(gp.read_bytes()).hexdigest()==gf['sha256'],'Reference guide source freeze drift'
+ for guide in read(gp)['guides']:
+  assert guide['sourceHash']==gf['objects'][guide['id']]==h({k:v for k,v in guide.items() if k!='sourceHash'}),guide['id']
+  guide_count+=1
+result={'status':'PASS','sourceReferenceGuidesBound':guide_count,'fileDigestBoundReviews':len(pairs),'surfaceReviewedObjects':len(matched),'supersededReviewRecords':mismatches,'missingCurrentReviewBindings':[],'scope':'Exact frozen source identities and independently reviewed snapshots, not a native/domain/full-knowledge certificate.'}
 (STAGE/'source-review-bindings-qa.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps(result))

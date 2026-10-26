@@ -9,6 +9,7 @@ import {TokuteiHeader,TokuteiDayCard} from '@/components/tokutei/TokuteiChrome';
 import {StudyAppearanceProvider,ReadingAppearanceControl,TranslationText,useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import {ManufacturingDiagram} from './ManufacturingDiagram';
 import {ManufacturingMocks} from './ManufacturingMocks';
+import {manufacturingSourceGuides,manufacturingSourceGuidesLabel,manufacturingSourceGuideTranslation} from '@/data/manufacturing/source-guides';
 import {manufacturingMockUi} from '@/data/manufacturing/mock-ui';
 import {manufacturingTranslation,manufacturingQuestionTranslation} from '@/data/manufacturing/translations';
 import {manufacturingUi} from '@/data/manufacturing/ui';
@@ -41,9 +42,11 @@ function Course({learner,language,specialty,onBack}:{learner:string;language:str
  if(tab==='mock')return <ManufacturingMocks learner={learner} specialty={specialty} language={language} onBack={()=>setTab('study')}/>;
  if(exam)return <Attempt key={exam.id} learner={learner} specialty={specialty} exam={exam} onBack={()=>setExam(null)}/>;
  if(lesson)return <Reader key={lesson.id} lesson={lesson} language={language} saving={saving} saveError={error} onComplete={()=>{void complete();}} onBack={()=>{if(!saving)setLesson(null);}}/>;
+ const guides=manufacturingSourceGuides(specialty);
  const selected=week===null?null:info.weeks[week];
  return <Surface><TokuteiHeader title={`${info.titleJa} · 1号`} onBack={()=>{if(selected)setWeek(null);else onBack();}}/><ScrollView contentContainerStyle={s.content}>
  <View style={s.row}><Button title={t('study')} selected={tab==='study'} onPress={()=>setTab('study')}/><Button title={t('weeklyChecks')} selected={tab==='test'} onPress={()=>setTab('test')}/><Button title={manufacturingMockUi(language,'mockExams')} onPress={()=>setTab('mock')}/></View>
+ {progress&&tab==='study'&&!selected&&guides.length>0&&<RoyalContentPanel style={s.panel}><Text style={s.heading}>{manufacturingSourceGuidesLabel(language)}</Text>{guides.map(guide=><Button key={guide.id} title={guide.titleJa} onPress={()=>{setError(false);setLesson(guide);}}/>)}</RoyalContentPanel>}
  {error&&!progress?<RoyalExplanationPanel style={s.panel}><Text style={s.body}>{t('readError')}</Text><Button title={t('retry')} onPress={()=>setRetry(n=>n+1)}/></RoyalExplanationPanel>:!progress?<Text style={s.body}>{t('loading')}</Text>:tab==='test'?<><Text style={s.body}>{t('practiceNotice')}</Text>{course.checks.map(e=><CheckCard key={e.id} learner={learner} specialty={specialty} exam={e} onPress={()=>setExam(e)}/>)}</>:selected?<><Text style={s.heading}>{selected.titleJa}</Text><View style={s.grid}>{Array.from({length:7},(_,day)=>{const id=selected.lessonIds[day],l=course.lessons.find(l=>l.id===id);return l?<View key={day} style={s.day}><TokuteiDayCard testID={`mfg-day-${specialty}-${day+1}`} day={day+1} title={l.titleJa} done={manufacturingLessonDone(progress,l)} onPress={()=>{setError(false);setLesson(l);}}/></View>:<View key={day} style={[s.day,s.empty]}><Text style={s.body}>—</Text></View>;})}</View></>:<View style={s.grid}>{info.weeks.map((w,i)=><View key={w.id} style={s.week}><Button title={`第${w.number}週\n${w.titleJa}`} onPress={()=>setWeek(i)}/></View>)}</View>}
  </ScrollView></Surface>;
 }
@@ -54,7 +57,7 @@ function CheckCard({learner,specialty,exam,onPress}:{learner:string;specialty:Sp
 }
 function Reader({lesson,language,onBack,onComplete,saving,saveError}:{lesson:ManufacturingLesson;language:string;onBack:()=>void;onComplete:()=>void;saving:boolean;saveError:boolean}){
  const t=useLabels();
- const [show,setShow]=useState(false),{colors}=useStudyAppearance(),translation=show?manufacturingTranslation(lesson,language):null;
+ const [show,setShow]=useState(false),{colors}=useStudyAppearance(),translation=show?(lesson.id.includes('-source-guide-')?manufacturingSourceGuideTranslation(lesson,language):manufacturingTranslation(lesson,language)):null;
  return <Surface reading><TokuteiHeader title={lesson.titleJa} onBack={onBack}/><ScrollView contentContainerStyle={s.content}><ReadingAppearanceControl/>{language!=='ja'&&<Button title={show?t('translationHide'):t('translationShow')} onPress={()=>setShow(v=>!v)}/>}{show&&language!=='ja'&&!translation&&<TranslationText>{t('translationPending')}</TranslationText>}
  <Text style={[s.body,{color:colors.text}]}>{lesson.objectiveJa}</Text>{translation&&<TranslationText>{translation.title}{'\n'}{translation.objective}</TranslationText>}<Text style={[s.body,{color:colors.muted}]}>学習時間の目安：約{lesson.estimatedMinutes}分（説明・練習・振り返り）</Text>
  {lesson.paragraphs.map(p=><View key={p.id} style={[s.section,{borderColor:colors.border}]}><Text style={[s.heading,{color:colors.text}]}>{p.titleJa}</Text><Text selectable style={[s.body,{color:colors.text}]}>{p.textJa}</Text>{translation&&<TranslationText>{translation.paragraphs.find(t=>t.id===p.id)?.title}{'\n'}{translation.paragraphs.find(t=>t.id===p.id)?.text}</TranslationText>}</View>)}

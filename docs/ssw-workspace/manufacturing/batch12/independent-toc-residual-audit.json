@@ -1,0 +1,599 @@
+{
+  "status": "scoped_audit_complete_residual_gaps_confirmed",
+  "auditDate": "2026-10-26",
+  "reviewer": "independent_AI_reviewer_not_canonical_source_author_for_these_objects",
+  "scope": "Only the eight residual leaf TOC entries named in the task. Not a page-by-page audit of all three textbooks,all parent rows,all question banks,all translations or all images.",
+  "method": [
+    "Read source text from specified local PDFs.",
+    "Rendered and visually inspected surfacePDF11,12,13,14,48,49and mechanicalPDF115,116to resolve ruby extraction artifacts.",
+    "Read electricalPDF10–13for shared intro/safety corroboration.",
+    "Compared current canonical Japanese paragraphs,weekly/mock question content and manufacturing UI code/JAstrings.",
+    "No canonical Japanese,translation,matrix,frozen-source or UI mutation. Only this report is authored."
+  ],
+  "sourceFiles": [
+    {
+      "documentId": "mfg1-mechanical-source",
+      "filename": "製造 分野 特定技能  1号 評価 試験機械 機械金属加工 区分テキスト.pdf",
+      "sha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "reviewedPdfPages": [
+        115,
+        116
+      ]
+    },
+    {
+      "documentId": "mfg1-electrical-source",
+      "filename": "製造 分野 特定技能  1号 評価 試験機械 電気電子機械組み立て 区分テキスト.pdf",
+      "sha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "reviewedPdfPages": [
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "documentId": "mfg1-surface-source",
+      "filename": "製造 分野 特定技能  1号 評価 試験機械 金属表面処理区分テキスト.pdf",
+      "sha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "reviewedPdfPages": [
+        11,
+        12,
+        13,
+        14,
+        48,
+        49
+      ]
+    }
+  ],
+  "snapshotSha256": {
+    "src/data/manufacturing/mechanical.json": "03aa03f0321d095787d29d3b6e1c61c0bccad3bed6effc2a88acb42788957113",
+    "src/data/manufacturing/electrical.json": "e590319d60ff137ac22a27ca9e92ee5ac6407df2b9df98e5929e37e6e8d5f7ca",
+    "src/data/manufacturing/surface.json": "96d750ea565f43952617ce38caa7bdba1bce52b92eb78ab6e2a03932ed73e392",
+    "src/data/manufacturing/mock-ui-translations.json": "bc7215cde2bb3f28e7d0b854b1620d7bfb704e592148c9c0c9b907e12a5754a5",
+    "src/data/manufacturing/ui-translations.json": "0c6d7862ba9cc331ccaa682ee09b3a27886379b9f7f66de802890f2b6817b4c2",
+    "src/components/manufacturing/ManufacturingMocks.tsx": "dd6b2f028135eadc8ed3319fc5b6e26437b0776f9d82290e749efa61cbed32eb",
+    "src/components/manufacturing/ManufacturingCourse.tsx": "7112cfa4507704c5bc9820850da2f3df987c43c487692ff9df7528d3b961c6d7",
+    "docs/ssw-workspace/manufacturing/knowledge-matrix.json": "0d5e6f522071e95a5066b0d1ef38b34a7a4fffd02abecd10735fff059af4b355",
+    "docs/ssw-workspace/manufacturing/batch12/surface/knowledge-closure-detail.json": "0944f8e6f8fe0fded59da9ee8ee4e4cc8bea3dd75dfcad7406433157d581681a"
+  },
+  "findings": [
+    {
+      "knowledgeId": "mfg1-mechanical-c08-s2-1",
+      "titleJa": "5S活動の徹底",
+      "source": {
+        "documentId": "mfg1-mechanical-source",
+        "pdfPages": [
+          115,
+          116
+        ],
+        "printedPages": [
+          107,
+          108
+        ],
+        "textExtracted": true,
+        "pageImagesVisuallyInspected": true
+      },
+      "classification": "substantial_5S_semantic_coverage_but_explicit_4S_leaf_facts_missing",
+      "sourceFacts": [
+        "5S is shared rules for safety/efficiency: sort, set in order, clean, sustain cleanliness, discipline; each term has a distinct role.",
+        "4S is the first four terms with discipline omitted; responsibility is not a member of either list.",
+        "Daily continuation supports safety, comfort and good products; a one-off cleanup is insufficient.",
+        "Exercise8-4 deliberately substitutes responsibility for cleaning and is false."
+      ],
+      "currentCoverage": [
+        {
+          "lessonId": "mfg1-mechanical-lesson-002",
+          "titleJa": "5Sを作業台で実践する",
+          "sourceHash": "e1fd5d7b1db081c770649554e8226ae111d9ed386c017321a660cd744e496e2d",
+          "paragraphIds": [
+            "explanation",
+            "example"
+          ]
+        }
+      ],
+      "coverageAssessment": "The five correct concepts, cleaning-as-abnormality-discovery, sustained practice and safety/quality purpose are taught. The later chapter repeats that knowledge; lack of a second lesson is not itself a whole-topic gap.",
+      "explicitFactsNotCovered": [
+        "The label4S and its exact four-member list excluding discipline.",
+        "Explicit exclusion of responsibility from4S/5S; exact misconception in exercise8-4."
+      ],
+      "notAnAuthorizationToMutate": "Crosslinking lesson002 could repair traceability but would not supply the missing4S facts.",
+      "matrixLessonIdsAtAudit": [],
+      "matrixDirectLinkMissing": true,
+      "allUnderlyingFactsTablesAndFiguresAtomized": false
+    },
+    {
+      "knowledgeId": "mfg1-surface-c01-s1-1",
+      "titleJa": "試験の内容",
+      "source": {
+        "documentId": "mfg1-surface-source",
+        "pdfPages": [
+          11
+        ],
+        "printedPages": [
+          1
+        ],
+        "textExtracted": true,
+        "pageImagesVisuallyInspected": true
+      },
+      "classification": "mock_UI_covers_format_timing_but_surface_exam_metadata_incomplete",
+      "sourceSnapshotDate": "2026-07",
+      "sourceFacts": [
+        "SSW1 evaluation checks skills requiring a certain amount of knowledge/experience; the text describes skill-test grade3 equivalence and immediately performing a degree of work without special further training.",
+        "CBT:theory30true/false and practical10multiple-choice judgement/planning questions; each section40minutes.",
+        "Text thresholds:theory65%+,practical60%+; Japanese with ruby on kanji.",
+        "Text eligibility as ofJuly2026:foreign nationals generally17+on exam day,18+if Indonesian nationality,and intention to work in Japan upon passing."
+      ],
+      "currentCoverage": [],
+      "currentUI": [
+        {
+          "path": "src/data/manufacturing/mock-ui-translations.json",
+          "locale": "ja",
+          "keys": [
+            "instructions",
+            "passRule"
+          ],
+          "coverage": "Format30TF/40min and10practical/40min plus independently required app equal-weight20/30and6/10."
+        },
+        {
+          "path": "src/components/manufacturing/ManufacturingMocks.tsx",
+          "symbols": [
+            "MockCard",
+            "Japanese"
+          ],
+          "coverage": "Renders30+10and40+40; original mock Japanese stems/options have ruby data."
+        }
+      ],
+      "crossSpecialtyCoverage": [
+        {
+          "lessonId": "mfg1-mechanical-lesson-069",
+          "titleJa": "二つの試験区分の時間と合格条件を別々に管理する",
+          "sourceHash": "b95baae80de044ae43933c200d3800c4422ccf58ecd660ba3ca0d9f902bddfbb",
+          "paragraphIds": [
+            "section-1",
+            "section-2",
+            "section-3"
+          ]
+        }
+      ],
+      "coverageAssessment": "Mock behavior is real format practice, not a complete rendering of the source overview. App equal-weight score counts are correctly scoped as practice; do not rebrand them as guaranteed official undisclosed scoring.",
+      "explicitFactsNotCovered": [
+        "Surface-specific dated exam overview,CBT identification and practical judgement/planning description.",
+        "Skill level/grade3 equivalence.",
+        "Dated eligibility ages/nationality exception/intention-to-work statement.",
+        "Surface-specific explanation of source65%/60%versus the app equal-weight counts; Japanese/ruby requirement as exam information."
+      ],
+      "publicationCaution": "These are facts in the uploadedJuly2026snapshot,not independently verified current registration rules. If added,retain date and refer users to current organizer guidance.",
+      "matrixLessonIdsAtAudit": [],
+      "matrixDirectLinkMissing": true,
+      "allUnderlyingFactsTablesAndFiguresAtomized": false
+    },
+    {
+      "knowledgeId": "mfg1-surface-c01-s1-2",
+      "titleJa": "金属表面処理区分と業務の対応関係",
+      "source": {
+        "documentId": "mfg1-surface-source",
+        "pdfPages": [
+          12
+        ],
+        "printedPages": [
+          2
+        ],
+        "textExtracted": true,
+        "pageImagesVisuallyInspected": true
+      },
+      "classification": "four_technical_work_topics_covered_but_official_category_relationship_not_explicit",
+      "sourceFacts": [
+        "Table1-2 relates the metal surface treatment exam category to electroplating,hot-dip galvanizing,anodizing and buff polishing."
+      ],
+      "currentCoverage": [
+        {
+          "lessonId": "mfg1-surface-lesson-005",
+          "titleJa": "電気めっきの陽極と陰極を区別する",
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "paragraphIds": [
+            "section-1",
+            "section-3"
+          ]
+        },
+        {
+          "lessonId": "mfg1-surface-lesson-018",
+          "titleJa": "溶融めっきの前処理と浴管理を理解する",
+          "sourceHash": "7fa1081fc992c4c9bf535ebc3dc3f8bc04a044280f642ce806feeae76bb030d5",
+          "paragraphIds": [
+            "section-1"
+          ]
+        },
+        {
+          "lessonId": "mfg1-surface-lesson-007",
+          "titleJa": "アルマイトは基材から酸化皮膜を育てる",
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "paragraphIds": [
+            "section-1"
+          ]
+        },
+        {
+          "lessonId": "mfg1-surface-lesson-008",
+          "titleJa": "バフ研磨は工程間の傷と熱を管理する",
+          "sourceHash": "354e014df8809fb81e0bb21c0fad6a1ac11c2d64e4b0d0f5e07bc061f7b04349",
+          "paragraphIds": [
+            "section-1"
+          ]
+        }
+      ],
+      "coverageAssessment": "All four listed technical activities are substantive lesson topics. Treat this as an explicit category-to-work metadata/traceability omission,not absence of those four technical lessons.",
+      "explicitFactsNotCovered": [
+        "An explicit surface-category-to-these-four-work-activities relation asTable1-2; distinctions between exam coverage and actual assignment/authorization."
+      ],
+      "matrixLessonIdsAtAudit": [],
+      "matrixDirectLinkMissing": true,
+      "allUnderlyingFactsTablesAndFiguresAtomized": false
+    },
+    {
+      "knowledgeId": "mfg1-surface-c01-s1-3",
+      "titleJa": "受験時の注意事項",
+      "source": {
+        "documentId": "mfg1-surface-source",
+        "pdfPages": [
+          12
+        ],
+        "printedPages": [
+          2
+        ],
+        "textExtracted": true,
+        "pageImagesVisuallyInspected": true
+      },
+      "classification": "no_direct_surface_exam_fairness_lesson_partial_cross_specialty_coverage",
+      "sourceFacts": [
+        "Actual questions/answers including partial information must not be taken out or shared through public or private SNS/other methods; fairness is the stated reason.",
+        "Text describes cameras and invigilators monitoring exam behavior.",
+        "Misconduct may invalidate results and lead to further measures,with examples of future disqualification and immigration-authority notification."
+      ],
+      "currentCoverage": [],
+      "crossSpecialtyCoverage": [
+        {
+          "lessonId": "mfg1-mechanical-lesson-070",
+          "titleJa": "業務範囲と学び方を確認し、試験の公正を守る",
+          "sourceHash": "7d861464c96a4d4ce144c79dc98cce44e4448c0ad0b9c5530fb816564c955126",
+          "paragraphIds": [
+            "section-3"
+          ]
+        }
+      ],
+      "coverageAssessment": "Mechanical070covers the no-taking/no-sharing principle and directs current-day rules to the organizer. This is not automatically a surface-course lesson or complete representation of all source precautions. Independently authored app mocks do not teach the missing administrative facts by themselves.",
+      "explicitFactsNotCovered": [
+        "Surface-course instruction against taking/sharing actual questions/answers,including partial information and public/private channels.",
+        "Monitoring/camera/invigilator description.",
+        "Source misconduct consequence examples and fairness rationale as explicit surface information."
+      ],
+      "publicationCaution": "Do not reconstruct actual exam questions. Any administrative consequence wording must be dated to source and avoid asserting independently verified current legal procedure.",
+      "matrixLessonIdsAtAudit": [],
+      "matrixDirectLinkMissing": true,
+      "allUnderlyingFactsTablesAndFiguresAtomized": false
+    },
+    {
+      "knowledgeId": "mfg1-surface-c01-s2",
+      "titleJa": "学習する上での注意事項",
+      "source": {
+        "documentId": "mfg1-surface-source",
+        "pdfPages": [
+          13
+        ],
+        "printedPages": [
+          3
+        ],
+        "textExtracted": true,
+        "pageImagesVisuallyInspected": true
+      },
+      "classification": "study_support_affordances_and_questioning_partial_but_no_complete_surface_study_guidance",
+      "sourceFacts": [
+        "Study Japanese in parallel when the source/exam Japanese is difficult.",
+        "Ask supervisors/colleagues about unfamiliar technical language.",
+        "Reread until meanings are understood without lengthy lookup; the source refers to80minutes total.",
+        "Read Japanese sentences to the end,including negative endings,to avoid opposite interpretation."
+      ],
+      "currentCoverage": [
+        {
+          "lessonId": "mfg1-surface-lesson-043",
+          "titleJa": "教育の範囲とKYTの行動目標を確認する",
+          "sourceHash": "7393565086afd0ad22323b8d4a0028a5e9de08500636e569ac6dcf70389df8ff",
+          "paragraphIds": [
+            "section-1",
+            "section-2"
+          ]
+        }
+      ],
+      "currentUI": [
+        {
+          "path": "src/components/manufacturing/ManufacturingCourse.tsx",
+          "symbols": [
+            "Reader"
+          ],
+          "coverage": "Japanese objectives/body,Japanese glossary readings,translation toggle,and study activities; useful tools but not all source study instructions."
+        },
+        {
+          "path": "src/components/manufacturing/ManufacturingMocks.tsx",
+          "coverage": "Separate40+40practice timers,total80minutes; not a standalone Japanese-reading strategy lesson."
+        }
+      ],
+      "crossSpecialtyCoverage": [
+        {
+          "lessonId": "mfg1-mechanical-lesson-070",
+          "titleJa": "業務範囲と学び方を確認し、試験の公正を守る",
+          "sourceHash": "7d861464c96a4d4ce144c79dc98cce44e4448c0ad0b9c5530fb816564c955126",
+          "paragraphIds": [
+            "section-2"
+          ]
+        }
+      ],
+      "explicitFactsNotCovered": [
+        "Direct surface guidance to study Japanese alongside skills preparation.",
+        "Repeated Japanese rereading to fluency under the80-minute total constraint.",
+        "Explicit surface practice to read sentence endings,negation and conditions to avoid reversed meaning."
+      ],
+      "coverageAssessment": "Surface043teaches asking before work,while translations/ruby aid comprehension. Neither should be counted as an exact full substitute for all four source study recommendations.",
+      "matrixLessonIdsAtAudit": [],
+      "matrixDirectLinkMissing": true,
+      "allUnderlyingFactsTablesAndFiguresAtomized": false
+    },
+    {
+      "knowledgeId": "mfg1-surface-c02-s1-1",
+      "titleJa": "安全衛生の心得",
+      "source": {
+        "documentId": "mfg1-surface-source",
+        "pdfPages": [
+          14
+        ],
+        "printedPages": [
+          4
+        ],
+        "textExtracted": true,
+        "pageImagesVisuallyInspected": true
+      },
+      "classification": "broad_surface_safety_coverage_but_some_intro_atoms_missing",
+      "sourceFacts": [
+        "Safety-health protects life/health from heat,heavy loads,machines and chemicals.",
+        "The text defines occupational accidents as injury/illness caused by work or commuting and calls for each worker to prevent them.",
+        "Five instructions:follow workplace rules to protect self/others;do not touch unknown tools/machines and ask supervisor;handle tools carefully,store correctly,do not throw/pass or leave scattered;obey law/rules even if no hazard is visible;stop/report abnormal sound,odor,vibration and follow instructions."
+      ],
+      "currentCoverage": [
+        {
+          "lessonId": "mfg1-surface-lesson-001",
+          "titleJa": "表面処理の作業前に危険と保護具を確認する",
+          "sourceHash": "420a44ba83d9bd5905c757867895afd97eee1fd5a123508b1d22732f66e90bb2",
+          "paragraphIds": [
+            "section-1",
+            "section-2",
+            "section-3",
+            "example"
+          ]
+        },
+        {
+          "lessonId": "mfg1-surface-lesson-036",
+          "titleJa": "報連相と5Sで取り違えを防ぐ",
+          "sourceHash": "8ba88aca0af9d357d6324ae5cae34d7d39ee89871a452255b8de5ad1651f103d",
+          "paragraphIds": [
+            "section-2",
+            "section-3",
+            "example"
+          ]
+        },
+        {
+          "lessonId": "mfg1-surface-lesson-043",
+          "titleJa": "教育の範囲とKYTの行動目標を確認する",
+          "sourceHash": "7393565086afd0ad22323b8d4a0028a5e9de08500636e569ac6dcf70389df8ff",
+          "paragraphIds": [
+            "section-1",
+            "section-2"
+          ]
+        },
+        {
+          "lessonId": "mfg1-surface-lesson-071",
+          "titleJa": "安全衛生の責任体制と挨拶の役割を知る",
+          "sourceHash": "aeed8683518ebc61a91e29e96f861760717bcd96870236b02ba9d2b9f34020eb",
+          "paragraphIds": [
+            "section-1",
+            "section-2"
+          ]
+        }
+      ],
+      "currentQuestions": [
+        {
+          "questionId": "mfg1-surface-mock-09-practical-q08",
+          "path": "src/data/manufacturing/mocks/surface.json",
+          "coverage": "Unusual washer vibration:specified stop and fact reporting,not waiting for the cause."
+        }
+      ],
+      "crossSpecialtyCoverage": [
+        {
+          "lessonId": "mfg1-electrical-l044",
+          "titleJa": "安全衛生の責任と異常時の行動",
+          "sourceHash": "1e226b28ab038e668c0b68065eb401e6554284eac069f52d950a3160417f88a2",
+          "paragraphIds": [
+            "section-1",
+            "section-2",
+            "section-3"
+          ]
+        }
+      ],
+      "explicitFactsNotCovered": [
+        "Explicit surface definition of occupational accidents including commuting and both injury/illness.",
+        "Explicit surface instruction not to throw/pass tools;proper storage is covered but this exact handling prohibition is not.",
+        "The complete five-item introductory checklist is not assembled as one surface teaching unit;related pieces exist elsewhere."
+      ],
+      "coverageAssessment": "Do not label the whole leaf absent:hazard/PPE/procedure,training,storage,law compliance and stop/report principles are substantially present. Do not label fully atomized either:the commute definition and tool-handling atom remain missing.",
+      "matrixLessonIdsAtAudit": [],
+      "matrixDirectLinkMissing": true,
+      "allUnderlyingFactsTablesAndFiguresAtomized": false
+    },
+    {
+      "knowledgeId": "mfg1-surface-c04-s1-1",
+      "titleJa": "pH",
+      "source": {
+        "documentId": "mfg1-surface-source",
+        "pdfPages": [
+          48
+        ],
+        "printedPages": [
+          38
+        ],
+        "textExtracted": true,
+        "pageImagesVisuallyInspected": true
+      },
+      "classification": "substantial_pH_semantics_but_neutral_and_side_classification_not_explicit_in_surface",
+      "sourceFacts": [
+        "Source describes pH as hydrogen-ion index for aqueous acidity/alkalinity,uses an introductory0–14scale,neutral7,acidic below7and alkaline above7,with increasing strength in the corresponding direction."
+      ],
+      "currentCoverage": [
+        {
+          "lessonId": "mfg1-surface-lesson-002",
+          "titleJa": "pHの変化を読み、測定結果を記録する",
+          "sourceHash": "90f19288d5d8f8eaa298bac95b9c13fab266bc24830b9764b0a473a3bc75dfb0",
+          "paragraphIds": [
+            "section-1",
+            "section-2",
+            "section-3",
+            "example"
+          ]
+        },
+        {
+          "lessonId": "mfg1-surface-lesson-048",
+          "titleJa": "酸・塩基・塩を名称と性質で整理する",
+          "sourceHash": "9ee4edf387af8cbb82a3933bf159f2c0d87baf2d005f4a2279d9bf4d8f5d763f",
+          "paragraphIds": [
+            "section-1",
+            "section-2"
+          ]
+        },
+        {
+          "lessonId": "mfg1-surface-lesson-051",
+          "titleJa": "ガラス電極と比較電極でpH測定を理解する",
+          "sourceHash": "789d0e18a2f056aa3009e2422cc99d41c4edb2e6822f38c4860baafb7e98ee97",
+          "paragraphIds": [
+            "section-1",
+            "section-2"
+          ]
+        }
+      ],
+      "crossSpecialtyCoverage": [
+        {
+          "lessonId": "mfg1-mechanical-lesson-036",
+          "titleJa": "pHの記録と酸化還元の説明を分ける",
+          "sourceHash": "15f0cd63df1fed4ff5dcaa62d749c3542e27ed3f559d316844ee07afebb23737",
+          "paragraphIds": [
+            "section-1"
+          ]
+        }
+      ],
+      "explicitFactsNotCovered": [
+        "Positive elementary surface explanation of approximately neutralpH7under stated usual aqueous conditions and acidic/alkaline sides below/above7.",
+        "The source0–14introductory scale is not explicitly taught in surface;it must not be introduced as a universal hard bound."
+      ],
+      "coverageAssessment": "Surface002already teaches acidity/alkalinity,negative-log approximation,tenfold changes,measurement and safe reporting. Surface048warns neutralization is not alwayspH7,but does not itself teach the elementary neutral7reference. Qualify temperature/concentration when repairing rather than reproducing source oversimplification uncritically.",
+      "matrixLessonIdsAtAudit": [],
+      "matrixDirectLinkMissing": true,
+      "allUnderlyingFactsTablesAndFiguresAtomized": false
+    },
+    {
+      "knowledgeId": "mfg1-surface-c04-s1-3",
+      "titleJa": "比重",
+      "source": {
+        "documentId": "mfg1-surface-source",
+        "pdfPages": [
+          49
+        ],
+        "printedPages": [
+          39
+        ],
+        "textExtracted": true,
+        "pageImagesVisuallyInspected": true
+      },
+      "classification": "definition_and_measurement_covered_but_reference_temperature_and_distinct_six_value_example_missing",
+      "sourceFacts": [
+        "Specific gravity compares density with a reference;this page uses water at4°Cas1for solids/liquids.",
+        "The six example values on this page are aluminum2.68,iron7.87,nickel8.69,copper8.82,lead11.43,gold19.32."
+      ],
+      "currentCoverage": [
+        {
+          "lessonId": "mfg1-surface-lesson-009",
+          "titleJa": "液温と比重を同じ条件で測る",
+          "sourceHash": "0e66f1319d94125711a891eb188acd39c8d30e302878378603cceacb79f871f8",
+          "paragraphIds": [
+            "section-2",
+            "section-3",
+            "example"
+          ]
+        },
+        {
+          "lessonId": "mfg1-surface-lesson-072",
+          "titleJa": "21種の金属を比重・特徴・用途の参照表で比べる",
+          "sourceHash": "f1dfb2d86c8a808346b268c5d41eb623d88cc47767ccc887a1395a79ac4e4b29",
+          "paragraphIds": [
+            "section-1",
+            "section-2",
+            "section-3"
+          ]
+        }
+      ],
+      "crossSpecialtyCoverage": [
+        {
+          "lessonId": "mfg1-mechanical-lesson-050",
+          "titleJa": "比重を密度との比として読み、単位を混同しない",
+          "sourceHash": "335a305ee11101a1b0310d8524de45b14318c0f30e2fe3cf827414b7dc35390c",
+          "paragraphIds": [
+            "section-1",
+            "section-3"
+          ]
+        }
+      ],
+      "explicitFactsNotCovered": [
+        "Direct surface explanation of the source4°Cwater reference with relative density1.",
+        "The page39six-value example as its own dated/condition-limited source object;Table7-1has different representative values for four of these metals."
+      ],
+      "valueConflictRequiringExplicitScoping": {
+        "page39": {
+          "Al": 2.68,
+          "Fe": 7.87,
+          "Ni": 8.69,
+          "Cu": 8.82,
+          "Pb": 11.43,
+          "Au": 19.32
+        },
+        "currentTable7_1Lesson072": {
+          "Al": 2.7,
+          "Fe": 7.87,
+          "Ni": 8.9,
+          "Cu": 8.93,
+          "Pb": 11.36,
+          "Au": 19.32
+        },
+        "sameValues": [
+          "Fe",
+          "Au"
+        ],
+        "differentValues": [
+          "Al",
+          "Ni",
+          "Cu",
+          "Pb"
+        ]
+      },
+      "coverageAssessment": "Surface009teaches density ratio,temperature/readings and concentration-table limits.072adds dimensionless definition and complete21-rowTable7-1and explicitly notes source discrepancies. That is substantial coverage but does not reproduce/label the distinct page39reference and six values. Never silently overwriteTable7-1withpage39or call values universally measured constants.",
+      "matrixLessonIdsAtAudit": [],
+      "matrixDirectLinkMissing": true,
+      "allUnderlyingFactsTablesAndFiguresAtomized": false
+    }
+  ],
+  "summary": {
+    "auditedLeafEntries": 8,
+    "allEightMatrixDirectLinksMissing": true,
+    "zeroLessonIdsDoesNotMeanZeroSemanticCoverage": true,
+    "semanticCoverageDoesNotMeanEverySourceFactCovered": true,
+    "allEightHaveAtLeastAnExplicitMetadataOrFactGap": true,
+    "unlinkedParentRowsNotAudited": 48,
+    "fullCurriculumKnowledgeAtomizationCertified": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "releaseReadyCertified": false
+  },
+  "recommendedNextStep": "Retain current freeze. Plan a separately reviewed supplemental source/translation batch or explicitly scoped exam-information section for confirmed missing atoms;proven semantic crosslinks can repair traceability only.Do not flip course/release/full-knowledge flags from counts or TOC links. Source exam/eligibility/consequence statements are dated uploaded-source information,not verified current legal guidance."
+}
