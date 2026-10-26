@@ -4,12 +4,13 @@ Internal development preview on `feature/food-manufacturing-20261026`. Read IMPL
 
 ## Continuation after batch06
 
-- Added Indonesian translations for the first 10 questions in the canonical order of `food-1-mock-03`, plus its title. Translation commit: `b3f43f54be3feeb5866bfb9c5546f088a233560e`.
-- New IDs: food-1-q271, food-1-q092, food-1-q336, food-1-q150, food-1-q275, food-1-q282, food-1-q256, food-1-q163, food-1-q350, food-1-q090.
-- Current totals: 2,478 question-locale pairs; Indonesian 209, EN/VI 239 each, other nine locales 199 each. Remaining: 7,590 pairs.
-- Checked directly against canonical Japanese: 10 sourceHash values match the existing English revision anchors; four choices and four reasons per item; correct-answer explanation alignment; all 199 previous Indonesian question entries preserved exactly. No Japanese questions, answer positions, runtime or UI files changed.
-- These 10 additions are AI-authored and have NOT received browser, native-speaker or domain-expert validation. Batch06 browser evidence below still covers only its original 2,468 pairs. `progress.json` and batch06 review reports remain historical until the next full-batch audit.
-- Next action: translate the remaining 30 questions of `food-1-mock-03` into Indonesian using exact canonical form membership, then finish the other nine missing locales and continue the batch06 next-work plan. Do not count this partial addition as the complete 960-pair batch.
+- Indonesian `food-1-mock-03` is now complete: 40/40 canonical questions and its title. First 10 were added in `b3f43f54be3feeb5866bfb9c5546f088a233560e`; the remaining 30 in `21a74f5ad3d0df07d07114305603c552787e354c`.
+- Current totals: 2,508 question-locale pairs; Indonesian, EN and VI have 239 each; the other nine locales have 199 each. Remaining: 7,560 pairs. Lesson/diagram/Japanese assessment totals remain the batch06 baseline below.
+- This continuation added exactly the last 30 questions in canonical form order, not a numeric ID range: food-1-q185, food-1-q131, food-1-q397, food-1-q140, food-1-q145, food-1-q088, food-1-q158, food-1-q228, food-1-q284, food-1-q220, food-1-q098, food-1-q338, food-1-q179, food-1-q308, food-1-q289, food-1-q357, food-1-q261, food-1-q392, food-1-q177, food-1-q109, food-1-q279, food-1-q230, food-1-q288, food-1-q253, food-1-q302, food-1-q316, food-1-q248, food-1-q344, food-1-q327, food-1-q100.
+- Validation PASS: all 30 new sourceHash values match canonical Japanese and existing English revision anchors; all 40 form entries are present and revision-bound; each new entry has four choices and four reasons; correct-option reason matches the main explanation; no Japanese script leakage; all 209 prior Indonesian entries and all prior titles preserved exactly.
+- Explicit calculation/scope review: q185 retains hypothetical training conditions, start 11:20/end 11:48, elapsed 28 minutes, 14°C <= 15°C and 28 <= 30 minutes. q109 preserves the table-reading exercise, liquid/solid distinction, <=10°C example and instruction to check actual specified storage conditions. AI semantic review also checked worker authority, no falsified records, no bypassing locked machinery, allergen/virus/toxin distinctions and verification versus monitoring.
+- No Japanese questions, answer positions, runtime or UI files changed. Additions remain AI-authored, not native/domain certified. Browser evidence below covers only the original 2,468 pairs; the 40 Indonesian mock03 additions still require browser validation. `progress.json` and batch06 reports remain historical until the next full-batch audit.
+- Next action: translate all 40 canonical questions and title of `food-1-mock-03` into Tagalog (tl), preserving existing entries. Then finish the other eight missing locales, 2号 mock03 in all 12 and 1号 mock04 in EN/VI. Remaining target from the original 960-pair batch: 920 pairs.
 
 ## Batch06 content baseline
 
