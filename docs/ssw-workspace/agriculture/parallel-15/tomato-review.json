@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "owner": "agri_3",
+  "status": "complete",
+  "authorPacketSha256": "1be9da0960cf878cee322982c96ed93d722ee3b828733dddd408cdea9bd35018",
+  "packetSha256": "1be9da0960cf878cee322982c96ed93d722ee3b828733dddd408cdea9bd35018",
+  "authorPacketPath": "/workspace/scratch/018c0b6e29b8/agri15-tomato-author.json",
+  "assetSha256": "be865331ae7df17e875f5ca15937420e2e754a041de093ffd7bffd73a4ea5e94",
+  "assetPath": "/workspace/scratch/018c0b6e29b8/japan-app/assets/agriculture/recognition/tomato-v1.webp",
+  "scope": {
+    "metadataFieldsReviewed": [
+      "titleJa",
+      "altJa",
+      "observationJa",
+      "limitJa"
+    ],
+    "sourceItemIds": [
+      "AGR-A10-FLOWER-0452"
+    ],
+    "photoInventoryIds": [
+      "AGR-RI-S1-103-10"
+    ],
+    "lessonIds": [
+      "agr-vegetables",
+      "agr-workterms-photo-labels"
+    ],
+    "actualViews": [
+      "finalWebP1024x1024",
+      "finalWebPresized330x330",
+      "originalS1PDF103printed97fresh145dpirender"
+    ],
+    "limits": "IndependentAIreviewoflimitedappearanceillustration; notexpert/native/human/device/fullfieldrecognitioncertification."
+  },
+  "sourceVerification": {
+    "documentId": "AGR-S1",
+    "pdfPage": 103,
+    "printedPage": 97,
+    "originalPdfSha256": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+    "freshHashVerified": true,
+    "renderPath": "/workspace/scratch/018c0b6e29b8/agri15-carrot-qa/source-s1-p103.png",
+    "renderSha256": "5c05c4b338ac63ec8ff92f375b5ed1a68df5529c5d329ca350c4652d1d52cf72",
+    "visuallyChecked": true
+  },
+  "patches": [],
+  "unresolvedBlockingIssues": [],
+  "findings": [
+    {
+      "topic": "actual illustration",
+      "result": "Singlewholegenerallyroundredfruit, greenstar-shapedcalyxatupperstemend andshortstemfromcentralattachment; allfruit/calyxtipsinsideframe. Noembeddedtext, cutsection, extraobjects, cultivar/ripeness/qualitybadges. Warmivory2Dpaintedstyle consistentvegetableassets."
+    },
+    {
+      "topic": "source comparison",
+      "result": "S1PDF103printed97RI10showsmultiple redtomatofruitswithgreen calyces/stems. Newindependentsingle-fruitarrangement supports observing redcolor, overallroundoutline anduppercalyx/stemattachment; itdoesnotcopythesourcephotocomposition orclaimeverytomatolookslikethis."
+    },
+    {
+      "topic": "Japanese fields",
+      "result": "title namesトマト; alt accuratelylocatesfruit/calyx/shortstem; observation focusesoutlineandattachmentposition ratherthancoloralone. limit explicitoneexample andrefusesuniversaldetection,cultivar,ripeness,quality,edibilityjudgments. All4fieldsaccurate/natural; nooperation/diagnosticprescription."
+    },
+    {
+      "topic": "source and course bindings",
+      "result": "Exactsourceoccurrence0452isrecognition-captionitem; RI10captionトマト/sourceS1PDF103printed97match. Separateclassification0453isnotclosed. Bothcurrentlessonhashes match, lessons shared1/2; packetexplicitlylimitsclaimedsourceobjective to1go and2gousetosupplementalS1example, notS2photoevidence."
+    },
+    {
+      "topic": "small display and limits",
+      "result": "Actual330pxpreview retainsclearwholefruit, calyxandshortstemwithoutcrop. Thisisstaticpreviewevidence, notnative/device/runtimecertification. AuthorprovenanceusesbuiltinimagegenwithnoPDFimageinput; rights/fullphotorecognitionnotcertifiedbythisreview.0sourceclosuresandfalseexpertflagsretained."
+    }
+  ],
+  "recommendation": "Acceptlimitedcommon-appearanceillustrationwithvisibleJapanesecuesandlimits; retain0sourceoccurrenceclosures, sourcePhotoObjectiveComplete=false andallfalseexpertflags.",
+  "sourceOccurrencesClosed": 0,
+  "sourcePhotoObjectiveComplete": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceTested": false,
+  "releaseReady": false,
+  "authorPacketMutated": false
+}

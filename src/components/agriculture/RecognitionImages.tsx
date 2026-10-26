@@ -15,6 +15,12 @@ const assets:Record<string,ImageSourcePropType>={
  'sowing-patterns':require('../../../assets/agriculture/recognition/sowing-patterns-v1.webp'),
  'soil-handtest-states':require('../../../assets/agriculture/recognition/soil-handtest-states-v1.webp'),
  'nursery-containers':require('../../../assets/agriculture/recognition/nursery-containers-v1.webp'),
+ potato:require('../../../assets/agriculture/recognition/potato-v1.webp'),
+ 'sweet-potato':require('../../../assets/agriculture/recognition/sweet-potato-v1.webp'),
+ carrot:require('../../../assets/agriculture/recognition/carrot-v1.webp'),
+ tomato:require('../../../assets/agriculture/recognition/tomato-v1.webp'),
+ eggplant:require('../../../assets/agriculture/recognition/eggplant-v1.webp'),
+ cucumber:require('../../../assets/agriculture/recognition/cucumber-v1.webp'),
 };
 type RecognitionImage={
  id:string;lessonIds:string[];lessonSourceHashes:Record<string,string>;
