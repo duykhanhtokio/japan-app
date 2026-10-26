@@ -4,6 +4,9 @@ Existing lexicon + explicitly authored restaurant term readings. Context review 
 from pathlib import Path
 import json,re,collections,sys
 ROOT=Path(__file__).resolve().parents[2];DATA=ROOT/'src/data/restaurant';HAN=re.compile(r'[一-龯々〆ヵヶ]')
+sys.path.insert(0,str(ROOT/'scripts'))
+from furigana.reading_rules import counted,number,parse_number
+DURATION=re.compile(r'(?<![0-9０-９.．])([0-9０-９]+)(時間|秒|分|℃)')
 def read(p):return json.loads(p.read_text())
 def write(p,x):p.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n')
 def hira(s):return ''.join(chr(ord(c)-96) if 'ァ'<=c<='ヶ' else c for c in s)
@@ -452,7 +455,12 @@ for p in read(ROOT/'src/data/dialogue-content/furigana-lexicon.json'):
 lookup={s:next(iter(rs)) for s,rs in lex.items() if len(rs)==1}
 for line in CUSTOM.strip().splitlines():
  s,r=line.split();lookup[s]=r
-files=[p for p in DATA.glob('lessons.*.ja.json' if '--lessons-only' in sys.argv else '*.ja.json')];packs={p:read(p) for p in files}
+extra=DATA/'reading-overrides.json'
+if extra.exists():
+ for surface,reading in read(extra)['readings'].items():
+  assert HAN.search(surface) and re.fullmatch('[ぁ-ゖー]+',reading)
+  lookup[surface]=reading
+files=[] if '--self-test' in sys.argv else [p for p in DATA.glob('lessons.*.ja.json' if '--lessons-only' in sys.argv else '*.ja.json')];packs={p:read(p) for p in files}
 for x in packs.values():
  for l in x.get('lessons',[]):
   for t in l.get('terms',[]):
@@ -467,6 +475,12 @@ missing=collections.Counter();stats=collections.Counter()
 def ruby(text):
  result=[];i=0;unknown=False
  while i<len(text):
+  duration=DURATION.match(text,i)
+  if duration and not (duration.group(2)=='分' and text[duration.end():].startswith('の')):
+   value=parse_number(duration.group(1));unit=duration.group(2)
+   if 0<value<100000:
+    reading=counted(value,'分') if unit=='分' else counted(value,'時')+'かん' if unit=='時間' else number(value)+('びょう' if unit=='秒' else 'ど')
+    result.append({'text':duration.group(),'reading':reading});i=duration.end();stats['numericDurationTemperatureTokens']+=1;continue
   kanji_end=i
   if HAN.search(text[i]):
    while kanji_end<len(text) and HAN.search(text[kanji_end]):kanji_end+=1
@@ -480,12 +494,19 @@ def ruby(text):
     while j<len(text) and HAN.search(text[j]):j+=1
     missing[text[i:j]]+=1;unknown=True
    else:
-    while j<len(text) and not HAN.search(text[j]) and not byfirst.get(text[j]):j+=1
+    while j<len(text) and not HAN.search(text[j]) and not byfirst.get(text[j]) and not text[j].isdecimal():j+=1
    result.append({'text':text[i:j]});i=j
  assert ''.join(p['text'] for p in result)==text
  stats['fields']+=1
  if unknown:stats['fieldsWithUnknownKanji']+=1
  return result
+if '--self-test' in sys.argv:
+ cases={'生食':'せいしょく','食用油':'しょくようゆ','紫外線':'しがいせん','事故事例':'じこじれい','30分':'さんじゅっぷん','1分':'いっぷん','24時間':'にじゅうよじかん','75℃':'ななじゅうごど','90秒':'きゅうじゅうびょう','１分':'いっぷん','使った':'つかった','同じ':'おなじ'}
+ for source,expected in cases.items():
+  tokens=ruby(source);assert ''.join(t.get('reading',t['text']) for t in tokens)==expected,(source,tokens)
+ for source in ('事故事例集','紫外線未知群','4分の1','3.5℃'):
+  tokens=ruby(source);assert not any(t.get('reading') for t in tokens),(source,tokens)
+ print(json.dumps({'status':'PASS','cases':len(cases)+4,'scope':'known readings/durations/temperatures/unknown-compound and fraction safety','nativeReviewed':False}));sys.exit(0)
 for p,x in packs.items():
  for l in x.get('lessons',[]):
   l['furigana']={k:ruby(l[field]) for k,field in [('title','titleJa'),('objective','objectiveJa'),('summary','summaryJa'),('activity','activityJa')]}

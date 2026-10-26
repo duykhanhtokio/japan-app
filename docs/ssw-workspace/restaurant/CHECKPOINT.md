@@ -1,5 +1,30 @@
 # Nhà hàng / 外食業 — checkpoint 2026-10-26
 
+## Lô tiếp nối đã rà soát, chuẩn bị commit
+
+Người dùng đã cho phép đẩy lô nhà hàng và tiếp tục trên `duykhanhtokio/japan-app`, nhánh `feature/restaurant-20261026`. Base remote đã xác minh: `3ebe00fb0ce6b57891e3c0377e06564d8a579d56`. Chỉ coi lô này là lưu bền sau khi push/fetch và đối chiếu HEAD.
+
+- 120 bài Nhật: 59 bài 1号/12 tuần, 61 bài 2号/11 tuần.
+- 20 bộ luyện tập ×40 =800 câu; 23 kiểm tra tuần/184 câu (96+88).
+- 692 thuật ngữ trong6 nhóm;236 còn thiếu giải nghĩa,46 ứng viên cách đọc cần kiểm tra ngữ cảnh. Chưa hoàn thành toàn bộ kiến thức.
+- 252 bản dịch bài (20/ngôn ngữ;hi,bn26) và192 bản dịch câu (16/ngôn ngữ). Còn thiếu phần lớn bản dịch cho12ngôn ngữ; không chứng nhận chuyên môn/người bản ngữ.
+- Đã sửa21 câu có phương án nhiễu vô lý/không liên quan, giữ nguyên đáp án đúng; cập nhật12 bản dịch câu tuần1 số7 và furigana tương ứng. Báo cáo: batch03-distractor-repairs.json. Các báo cáo batch02 là ảnh chụp kiểm tra cũ, không coi hash cũ là chứng nhận cho nội dung đã sửa.
+- Kiểm tra cấu trúc PASS;complete FALSE; sàng lọc số3360trường PASS. Lưu trạng thái10nhóm và tải theo nhu cầu6nhóm PASS. Browser thuật ngữ24trường hợp/4kích thước PASS; kiểm tra đổi khóa lưu3trường hợp PASS. UI JLPT byte lock10/10 PASS.
+- Chưa chạy Expo/native/thiết bị thật; browser dùng adapter trình bày như đã ghi trong các báo cáo. Không công bố kiểm thử native.
+
+Điểm tiếp tục: hoàn thiện236 giải nghĩa thuật ngữ, kiểm tra46 ứng viên cách đọc; rà soát độ bao phủ nguồn; dịch phần còn thiếu; bổ sung hình/furigana và native QA. Không có tác vụ chạy ngầm sau phiên.
+
+---
+## Checkpoint lịch sử trước lô tiếp nối
+
+## Kiểm tra tiếp nối — 2026-10-26 (lô chưa commit)
+
+Đã xác minh bằng GitHub connector: remote `feature/restaurant-20261026` có commit `3ebe00fb0ce6b57891e3c0377e06564d8a579d56`. Các số liệu bên dưới của checkpoint ban đầu thuộc commit này; dòng “chưa đẩy” bên dưới là lịch sử đã lỗi thời đối với riêng commit này.
+
+Working tree chứa lô tiếp nối chưa commit: 120 bài (59/61), 20 bộ luyện tập ×40 =800 câu, 104 câu tuần (96/8). Không coi lô này là đã lưu remote. Đã chuẩn hóa lại hash của bản Nhật và manifest bằng normalize.py; không gắn lại hash bản dịch. Kiểm tra cấu trúc PASS, completeness FALSE (19 nhóm thiếu); sàng lọc số 252 bản dịch bài +192 bản dịch câu/3360 trường PASS, không chứng nhận ngữ nghĩa. Fixture chuẩn bị API PASS 6 trường hợp; JLPT UI lock PASS 10/10; git diff --check PASS.
+
+Còn thiếu kiểm tra tuần 2号, bản dịch đầy đủ 12 ngôn ngữ, bao phủ kiến thức/hình/furigana và kiểm thử native. Cần rà soát toàn bộ thay đổi đang chờ trước commit/push. Không có tác vụ chạy ngầm sau phiên. Giữ nguyên mọi thay đổi có sẵn.
+
 Trạng thái: ĐANG THỰC HIỆN. Lô này đã được tích hợp và kiểm tra trong nhánh riêng `feature/restaurant-20261026`; chưa được đẩy lên remote, chưa cài vào app trên Mac của người dùng. Không có chứng nhận người bản ngữ hoặc chuyên gia.
 
 ## Nội dung hiện có

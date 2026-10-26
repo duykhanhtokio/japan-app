@@ -108,6 +108,26 @@ for locale in LOCALES:
   else:gaps.append(locale+': incomplete/stale question translation '+q['id'])
  metrics['translations'][locale]={'lessons':validL,'questions':validQ}
  if validL!=len(lessons) or validQ!=len(questions) or not p.exists():gaps.append(f'{locale}: translations {validL}/{len(lessons)} lessons, {validQ}/{len(questions)} questions')
+glossaryPath=DATA/'glossary.ja.json'
+if glossaryPath.exists():
+ g=read(glossaryPath);groups=g.get('groups',[]);entryIds=[];missingDefinitions=missingReadings=0
+ lessonIds={l['id'] for l in lessons}
+ for group in groups:
+  require(bool(group.get('id')) and bool(group.get('titleJa')),'invalid glossary group')
+  require(bool(group.get('lessonIds')) and set(group['lessonIds']).issubset(lessonIds),group.get('id','?')+': glossary attachment')
+  for entry in group.get('entries',[]):
+   entryIds.append(entry.get('id'));require(bool(entry.get('id')) and bool(entry.get('termJa')),group['id']+': glossary entry')
+   if not entry.get('explanationJa'):missingDefinitions+=1
+   if not entry.get('reading'):missingReadings+=1
+   elif not re.fullmatch('[ぁ-ゖー\\s]+',entry['reading']):gaps.append(str(entry['id'])+': glossary reading needs verification')
+   refs(entry)
+ require(len(entryIds)==len(set(entryIds)),'duplicate glossary IDs')
+ links=read(DATA/'glossary-links.json')
+ require(set(links.get('lessonIds',[]))=={id for group in groups for id in group['lessonIds']},'glossary links stale')
+ metrics['glossary']={'groups':len(groups),'entries':len(entryIds),'missingDefinitions':missingDefinitions,'missingReadings':missingReadings}
+ if missingDefinitions:gaps.append('glossary definitions incomplete')
+ if missingReadings:gaps.append('glossary readings incomplete')
+ gaps.append('glossary translations pending')
 metrics['paragraphs']=len(paragraphs);metrics['sourceDocumentsReferenced']=len({r['documentId'] for l in lessons for r in l['sourceRefs']})
 # Completion never follows schema checks alone.
 review=ROOT/'docs/ssw-workspace/restaurant/acceptance-review.json'
