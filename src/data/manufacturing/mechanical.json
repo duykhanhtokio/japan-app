@@ -524,6 +524,976 @@
       ],
       "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
       "sourceHash": "f94c86281caf7f0a0d575355b72ed039040149fc3f2881a4ffd6e1e59f68a870"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-009",
+      "specialty": "mechanical",
+      "titleJa": "品質を「使う人の要求」から考える",
+      "objectiveJa": "設計品質・製造品質・物流品質を区別し、合否判断の根拠を説明する。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "品質は、製品をつくる側の都合だけで決まりません。使う人の要求を満たすことが出発点です。設計品質は狙う性能や仕様、製造品質はそれを実際の製品で実現した状態、物流品質は正しい品物を正しい数量・納期・状態で届けることに関係します。寸法だけが合っていても、必要な数量が届かなければ要求全体を満たしたとはいえません。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "ある注文では、同じ仕様の取付金具を80個、指定日までに納める必要があります。加工した80個の寸法は基準内ですが、梱包後に78個しか入っていないことが分かりました。この場合、寸法の確認結果をそのまま数量の合格根拠にはできません。梱包数量、ラベル、出荷記録を確認し、不足の処置を責任者に相談します。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "QCDは品質・コスト・納期を表し、安全を含めてQCDSと呼ぶこともあります。納期に間に合わせるために検査を省く、コストを下げるために無断で材料を変える、といった判断はできません。要求、判定基準、実際の結果を対応させ、変更が必要なら権限のある人に確認します。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "設計品質",
+          "reading": "せっけいひんしつ",
+          "meaningJa": "設計段階で狙いとして定める品質。"
+        },
+        {
+          "ja": "製造品質",
+          "reading": "せいぞうひんしつ",
+          "meaningJa": "製造で実現された性能や状態。"
+        },
+        {
+          "ja": "物流品質",
+          "reading": "ぶつりゅうひんしつ",
+          "meaningJa": "顧客に届くまでの品物・数量・納期・状態に関する品質。"
+        },
+        {
+          "ja": "要求",
+          "reading": "ようきゅう",
+          "meaningJa": "満たすことを求められる内容。"
+        }
+      ],
+      "activityJa": "4分：用語を読み、今回扱う判断を確認する。\n10分：説明を読み、条件と結論を分けてメモする。\n7分：事例の判断を根拠とともに書き直す。\n7分：架空の注文を一つ作り、性能・寸法、数量、納期、包装状態の四項目に要求と確認方法を書く。\n2分：要点と残った疑問を記録する。",
+      "safetyJa": [
+        "納期や費用を理由に安全手順や必要な検査を省略しない。"
+      ],
+      "summaryJa": "品質は要求との対応で考える。寸法の合格だけで数量や出荷状態まで合格とは判断しない。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 33,
+          "printedPage": 25
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 34,
+          "printedPage": 26
+        }
+      ],
+      "estimatedMinutes": 30,
+      "durationBasis": "target_with_activities_not_measured",
+      "knowledgeIds": [
+        "mfg1-mechanical-c03-s1-1",
+        "mfg1-mechanical-c03-s1-2"
+      ],
+      "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+      "sourceHash": "4e79ef67a3fe430862cf4432ff2ed5b2ecd8a04703ba9d0935a84e6d6c449eb9"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-010",
+      "specialty": "mechanical",
+      "titleJa": "4Mの変化から品質問題を調べる",
+      "objectiveJa": "人・設備・材料・方法の変化を整理し、事実と原因の仮説を分ける。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "製造の4Mは、人、機械・設備、材料・部品、方法です。品質が変化したとき、この四つの視点で条件の変化を探すと、確認漏れを減らせます。ただし「担当者が替わったから、その人が原因だ」と決め付けるための分類ではありません。同時に工具交換や材料ロットの変更があった可能性も調べます。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "午前中は穴径が基準内でしたが、午後の最初の測定で基準を外れました。記録を確認すると、昼に工具を交換し、担当者も交代していました。まず最後の合格確認時点と最初の不適合確認時点を整理し、工具の取付状態、使用材料、設定・手順の記録を調べます。どちらか一つの変更だけを原因と断定せず、責任者と確認する順序を決めます。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "三現主義では、現場、現物、現実から事実を確かめます。安全に確認できる範囲で状態を観察し、記録と照合します。対策を決めた後も、結果を目標と比較して改善するPDCAが必要です。改善後の一個だけが合格しても、工程全体が安定した証明にはなりません。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "4M",
+          "reading": "よんエム",
+          "meaningJa": "人・機械・材料・方法から製造条件を見る考え方。"
+        },
+        {
+          "ja": "現物",
+          "reading": "げんぶつ",
+          "meaningJa": "実際の製品や対象となる物。"
+        },
+        {
+          "ja": "仮説",
+          "reading": "かせつ",
+          "meaningJa": "確認前に考えた説明や原因の候補。"
+        },
+        {
+          "ja": "工程",
+          "reading": "こうてい",
+          "meaningJa": "製造を構成する一つの作業段階。"
+        }
+      ],
+      "activityJa": "4分：用語を読み、今回扱う判断を確認する。\n10分：説明を読み、条件と結論を分けてメモする。\n7分：事例の判断を根拠とともに書き直す。\n7分：寸法異常の架空の時系列を作り、4Mごとに「確認済みの事実」と「まだ調べること」を二列に整理する。\n2分：要点と残った疑問を記録する。",
+      "safetyJa": [
+        "原因調査のために稼働中の機械へ手を入れたり安全装置を外したりしない。"
+      ],
+      "summaryJa": "4Mは調査の視点であり、原因を証明するものではない。事実を確認し、対策の効果を継続して見る。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 35,
+          "printedPage": 27
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 36,
+          "printedPage": 28
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 37,
+          "printedPage": 29
+        }
+      ],
+      "estimatedMinutes": 30,
+      "durationBasis": "target_with_activities_not_measured",
+      "knowledgeIds": [
+        "mfg1-mechanical-c03-s1-2"
+      ],
+      "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+      "sourceHash": "ecb222cbf972f891a91e32de28cec02fd0abc15c6f8a6e72141f70de20e4674d"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-011",
+      "specialty": "mechanical",
+      "titleJa": "作業標準とQC工程図を読み分ける",
+      "objectiveJa": "作業方法の指示と、品質を管理する項目・頻度・異常処置を区別する。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "作業標準は、作業内容、順序、設備、工具、重要な条件などを明確にし、人や時間が変わっても必要な品質を保つために使います。QC工程図は、工程ごとに何を、どの方法で、どの頻度で管理し、異常時にどう処置するかを整理したものです。同じ工程でも、作業のやり方と管理の仕組みは役割が違います。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "架空の切断工程では、作業標準に材料の固定方法と使用工具が示されています。QC工程図には、切断長さを指定の測定器で開始時と30分ごとに確認し、範囲外なら対象品を区分して責任者へ連絡するとあります。作業が手順どおりにできたことだけで、30分ごとの測定を省いてはいけません。逆に、測定をしただけでは、固定方法を省いてよい理由になりません。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "文書を読むときは、対象品、工程、文書番号、改訂版を合わせて確認します。古い版と新しい版の条件が違うときは、経験で一方を選ばず確認します。異常品の処置、記録先、連絡先まで把握してから作業を始めます。ここでの頻度は架空の例で、実際には自工程の指定を使います。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "作業標準",
+          "reading": "さぎょうひょうじゅん",
+          "meaningJa": "作業内容・順序・方法などを定めたもの。"
+        },
+        {
+          "ja": "QC工程図",
+          "reading": "キューシーこうていず",
+          "meaningJa": "各工程の管理項目・方法・頻度・異常処置をまとめたもの。"
+        },
+        {
+          "ja": "管理頻度",
+          "reading": "かんりひんど",
+          "meaningJa": "どれくらいの間隔や回数で管理するか。"
+        },
+        {
+          "ja": "改訂",
+          "reading": "かいてい",
+          "meaningJa": "文書の内容を見直して変更すること。"
+        }
+      ],
+      "activityJa": "4分：用語を読み、今回扱う判断を確認する。\n10分：説明を読み、条件と結論を分けてメモする。\n7分：事例の判断を根拠とともに書き直す。\n7分：架空の穴あけ工程について、作業標準に書く内容三つとQC工程図に書く内容五つを分けて表にする。\n2分：要点と残った疑問を記録する。",
+      "safetyJa": [
+        "教材中の管理頻度を現場の承認された指示に無断で置き換えない。"
+      ],
+      "summaryJa": "作業標準はやり方、QC工程図は管理の仕組みを示す。対象と改訂版を確認し、両方を守る。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 39,
+          "printedPage": 31
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 40,
+          "printedPage": 32
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 41,
+          "printedPage": 33
+        }
+      ],
+      "estimatedMinutes": 30,
+      "durationBasis": "target_with_activities_not_measured",
+      "knowledgeIds": [
+        "mfg1-mechanical-c03-s2-1",
+        "mfg1-mechanical-c03-s2-2"
+      ],
+      "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+      "sourceHash": "7c03413b76ee4823f4b9ac8ec818aa9003f657910af6dff216db2eb51c4ac24d"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-012",
+      "specialty": "mechanical",
+      "titleJa": "QC道具を目的に合わせて選ぶ",
+      "objectiveJa": "チェックシート・パレート図・ヒストグラムなどの用途を区別する。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "データを集めるにはチェックシート、項目別の件数から優先順位を見るにはパレート図、寸法などの分布を見るにはヒストグラムを使います。時間による変化は折れ線グラフ、工程の安定性の監視は管理図、二つの量の関係は散布図が役立ちます。特性要因図では原因候補を整理します。図を作る前に、何を判断したいかを決めます。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "一週間の外観不良を、打痕18件、汚れ9件、変色3件と記録しました。合計は30件で、パレート図の累積比率は打痕まで60%、汚れまで90%、変色まで100%です。件数の多い打痕から調べる材料になりますが、危険性や重大さが高い不良を件数が少ないという理由だけで後回しにはしません。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "ヒストグラムはデータの分布を示すため、元の時間順序は読み取れません。散布図に関係が見えても、それだけで因果関係は証明できません。管理図の管理限界と、製品の合否に使う規格限界も別です。目的に合う図と判断基準を使い、見た目だけで結論を出さないことが大切です。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "パレート図",
+          "reading": "パレートず",
+          "meaningJa": "項目別件数と累積比率で重点を考える図。"
+        },
+        {
+          "ja": "ヒストグラム",
+          "reading": "ヒストグラム",
+          "meaningJa": "一定の区間に分けた度数で分布を示す図。"
+        },
+        {
+          "ja": "散布図",
+          "reading": "さんぷず",
+          "meaningJa": "二つの量の組を点で示す図。"
+        },
+        {
+          "ja": "管理限界",
+          "reading": "かんりげんかい",
+          "meaningJa": "管理図で工程の変化を監視するために設定する境界。"
+        }
+      ],
+      "activityJa": "4分：用語を読み、今回扱う判断を確認する。\n10分：説明を読み、条件と結論を分けてメモする。\n7分：事例の判断を根拠とともに書き直す。\n7分：架空の不良件数を四分類で作り、合計と累積比率を計算する。寸法のばらつきと時間変化を調べたい場合に選ぶ図も書く。\n2分：要点と残った疑問を記録する。",
+      "safetyJa": [
+        "重大な安全不良を件数だけで軽視しない。"
+      ],
+      "summaryJa": "図の種類を調べたい目的で選ぶ。累積比率、因果関係、管理限界の意味を混同しない。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 41,
+          "printedPage": 33
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 42,
+          "printedPage": 34
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 43,
+          "printedPage": 35
+        }
+      ],
+      "estimatedMinutes": 30,
+      "durationBasis": "target_with_activities_not_measured",
+      "knowledgeIds": [
+        "mfg1-mechanical-c03-s3"
+      ],
+      "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+      "sourceHash": "a5d4b0e59956b0f039f65bff4cbbd18ff5226fabf1b779acf75d49a72e8a20d8"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-013",
+      "specialty": "mechanical",
+      "titleJa": "SI単位と接頭語を確認して記録する",
+      "objectiveJa": "基本単位と単位換算を区別し、数値に単位を付けて記録する。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "SIの基本単位は、長さm、質量kg、時間s、電流A、熱力学温度K、物質量mol、光度cdの七つです。現場ではmm、g、msなども使います。数字が同じでも単位が違えば量は異なるため、指示、表示、記録欄の単位を合わせて確認します。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "材料の厚さ0.8 mmをメートルで記録する場合は、1 mm＝0.001 mなので0.0008 mです。質量2.4 kgは2400 g、時間750 msは0.75 sです。換算後に元の単位へ戻して同じ量になるか確認すると、1000倍の誤りに気づきやすくなります。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "大文字と小文字も区別します。mは長さの単位ですが、mmの最初のmは千分の一を表す接頭語です。また、質量kgと力Nは別の量です。「重さ」という会話だけで判断せず、書類が質量か力のどちらを求めているか確認します。計算式の途中でも単位を残して確かめます。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "国際単位系",
+          "reading": "こくさいたんいけい",
+          "meaningJa": "量を共通の単位で表す体系。"
+        },
+        {
+          "ja": "質量",
+          "reading": "しつりょう",
+          "meaningJa": "物体の量を表す量で、SI基本単位はkg。"
+        },
+        {
+          "ja": "接頭語",
+          "reading": "せっとうご",
+          "meaningJa": "単位の前に付け、倍数や分数を表すもの。"
+        },
+        {
+          "ja": "換算",
+          "reading": "かんさん",
+          "meaningJa": "同じ量を別の単位で表し直すこと。"
+        }
+      ],
+      "activityJa": "4分：用語を読み、今回扱う判断を確認する。\n10分：説明を読み、条件と結論を分けてメモする。\n7分：事例の判断を根拠とともに書き直す。\n7分：0.35 mm、1800 g、250 msをそれぞれm、kg、sへ換算し、逆算して確認する。七つの基本単位の対応表も作る。\n2分：要点と残った疑問を記録する。",
+      "safetyJa": [
+        "設定値を換算して設備に入力する場合は、表示単位と承認された値を確認する。"
+      ],
+      "summaryJa": "単位を含めて数値を読む。換算は元の量に戻して検算し、質量と力を混同しない。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 46,
+          "printedPage": 38
+        }
+      ],
+      "estimatedMinutes": 30,
+      "durationBasis": "target_with_activities_not_measured",
+      "knowledgeIds": [
+        "mfg1-mechanical-c03-s4-3"
+      ],
+      "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+      "sourceHash": "08cbdd5a897752800177bb3bacbb13be2643f58b7aa40aa6d646b189c37e8608"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-014",
+      "specialty": "mechanical",
+      "titleJa": "検査の範囲と不適合品率を区別する",
+      "objectiveJa": "受入・工程・出荷検査の目的を区別し、分母を明示して不適合品率を求める。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "受入検査は購入品が仕様に合うか、工程検査は加工途中の特性が合うか、出荷検査は完成品が要求を満たすかを確認します。全数検査は対象のすべて、抜取検査は定められたサンプルを調べます。抜取検査のサンプル数、選び方、合否基準をその場の都合で変えてはいけません。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "架空のロット600個から、手順に従い60個を調べ、不適合品が3個ありました。サンプル内の不適合品率は3÷60×100＝5%です。3÷600×100＝0.5%とすると、検査していない540個を合格と扱う誤りになります。また、ロットの合否はこの5%だけで決めず、指定の合格判定数などで判断します。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "一個の製品にキズが二つあっても、不適合品の個数としては一個です。キズの件数と不適合品数を混ぜないようにします。全数を調べた結果かサンプルだけの結果か、対象期間、ロット番号を記録します。抜取結果はロットの状態を考える情報であり、未検査品すべての適合を保証するものではありません。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "受入検査",
+          "reading": "うけいれけんさ",
+          "meaningJa": "納入された購入品が要求仕様に合うか調べる検査。"
+        },
+        {
+          "ja": "抜取検査",
+          "reading": "ぬきとりけんさ",
+          "meaningJa": "対象の一部を定めた方法で選んで行う検査。"
+        },
+        {
+          "ja": "不適合品率",
+          "reading": "ふてきごうひんりつ",
+          "meaningJa": "対象個数に対する不適合品数の割合。"
+        },
+        {
+          "ja": "ロット",
+          "reading": "ロット",
+          "meaningJa": "同じ条件などで区分して管理する製品のまとまり。"
+        }
+      ],
+      "activityJa": "4分：用語を読み、今回扱う判断を確認する。\n10分：説明を読み、条件と結論を分けてメモする。\n7分：事例の判断を根拠とともに書き直す。\n7分：全数240個中6個と、サンプル40個中2個の不適合品率を別々に計算する。分母・対象・未検査の有無を添え、ロット合否に追加で必要な条件を書く。\n2分：要点と残った疑問を記録する。",
+      "safetyJa": [
+        "不適合や未判定の品物を、許可なく適合品に混ぜて流さない。"
+      ],
+      "summaryJa": "割合は分母と対象を明示する。サンプルの比率だけで未検査品の状態やロット合否を断定しない。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 53,
+          "printedPage": 45
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 54,
+          "printedPage": 46
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 56,
+          "printedPage": 48
+        }
+      ],
+      "estimatedMinutes": 30,
+      "durationBasis": "target_with_activities_not_measured",
+      "knowledgeIds": [
+        "mfg1-mechanical-c05-s1-2",
+        "mfg1-mechanical-c05-s1-3"
+      ],
+      "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+      "sourceHash": "85a6746f35d720c9df6341d0dc10f9885ddf0109d44a8376a0b1e4f8e6de95c7"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-015",
+      "specialty": "mechanical",
+      "titleJa": "引張試験と硬さ試験の結果を読み分ける",
+      "objectiveJa": "応力・ひずみの基本計算と、硬さ記号の意味を区別する。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "引張試験は試験片に引張力を加え、力と伸びから性質を調べます。元の断面積をA、力をFとすると、公称応力はF÷Aです。元の標点間距離をL、伸びをΔLとすると、公称ひずみはΔL÷Lで、百分率なら100を掛けます。一般に破断まで試験するため、試験片は製品としてそのまま使えません。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "断面積25 mm²の試験片に10000 Nがかかると、公称応力は400 N/mm²＝400 MPaです。標点間距離50 mmが荷重中に51 mmになった時点の伸びは1 mmで、公称ひずみは1÷50＝0.02、すなわち2%です。この一時点の値だけを最大引張強さや破断伸びと呼んではいけません。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "硬さ試験は別の性質を評価します。ロックウェルはくぼみの深さ、ブリネルはくぼみの直径、ビッカースは対角線長さなどを用います。HRC、HBW、HVは試験方法や条件に関係する記号で、単なる飾りではありません。数値だけを抜き出して異なる方法同士を同じ尺度として比較せず、指定された方法・条件で判定します。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "応力",
+          "reading": "おうりょく",
+          "meaningJa": "単位断面積当たりの力。"
+        },
+        {
+          "ja": "ひずみ",
+          "reading": "ひずみ",
+          "meaningJa": "元の長さに対する長さ変化の割合。"
+        },
+        {
+          "ja": "標点",
+          "reading": "ひょうてん",
+          "meaningJa": "伸びを測るために試験片に付ける基準点。"
+        },
+        {
+          "ja": "圧子",
+          "reading": "あっし",
+          "meaningJa": "硬さ試験で試料に押し付ける決められた形状の部品。"
+        }
+      ],
+      "activityJa": "4分：用語を読み、今回扱う判断を確認する。\n10分：説明を読み、条件と結論を分けてメモする。\n7分：事例の判断を根拠とともに書き直す。\n7分：断面積20 mm²・力6000 Nの応力と、標点間40 mm・伸び0.8 mmのひずみを求める。HRC・HBW・HVで確認すべき情報を整理する。\n2分：要点と残った疑問を記録する。",
+      "safetyJa": [
+        "試験機の挟まれ・飛散防止手順を守り、試験片や破断部に運転中触れない。"
+      ],
+      "summaryJa": "応力とひずみは別の量である。一時点の値と最大値・破断後の値、異なる硬さ尺度を混同しない。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 58,
+          "printedPage": 50
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 59,
+          "printedPage": 51
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 60,
+          "printedPage": 52
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 61,
+          "printedPage": 53
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 62,
+          "printedPage": 54
+        }
+      ],
+      "estimatedMinutes": 30,
+      "durationBasis": "target_with_activities_not_measured",
+      "knowledgeIds": [
+        "mfg1-mechanical-c05-s2-1",
+        "mfg1-mechanical-c05-s2-2"
+      ],
+      "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+      "sourceHash": "92d89fedabc628cafb74ccd7016933d216455d72cfbcf37ad49e2e96d26ff1fc"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-016",
+      "specialty": "mechanical",
+      "titleJa": "欠陥の位置に合う非破壊検査を考える",
+      "objectiveJa": "表面と内部の欠陥を区別し、検査方法の適用条件を説明する。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "非破壊検査は、対象を使用できなくする破壊を行わずに欠陥を調べる方法です。放射線透過試験は透過の違い、超音波探傷試験は反射などを利用して内部を調べます。磁粉探傷試験は磁化できる対象の表面や表面近く、浸透探傷試験は表面に開いた欠陥を調べる方法です。方法によって、見つけやすい欠陥や適用できる材料が異なります。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "溶接部の表面を目視し、目立つ割れが見つからなかったとします。それだけでは内部の欠陥がないとはいえません。要求されている検査範囲と方法を確認します。また、非磁性の材料を磁粉探傷で検査できると決めず、材質と方法の適合を検査担当者に確認します。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "官能検査では視覚や聴覚などを使いますが、個人の印象だけに頼らず、照明、見本、判定基準などをそろえます。「異常が見つからなかった」は指定条件での結果であり、どの方法でも全欠陥を必ず発見できるわけではありません。検査した方法、範囲、条件と結果を一緒に残します。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "非破壊検査",
+          "reading": "ひはかいけんさ",
+          "meaningJa": "対象を破壊せずに欠陥などを調べる検査。"
+        },
+        {
+          "ja": "浸透探傷試験",
+          "reading": "しんとうたんしょうしけん",
+          "meaningJa": "浸透液を使って表面に開いた欠陥を調べる試験。"
+        },
+        {
+          "ja": "磁粉探傷試験",
+          "reading": "じふんたんしょうしけん",
+          "meaningJa": "磁化と磁粉で表面や表面近くの欠陥を調べる試験。"
+        },
+        {
+          "ja": "官能検査",
+          "reading": "かんのうけんさ",
+          "meaningJa": "人の感覚を用いて行う検査。"
+        }
+      ],
+      "activityJa": "4分：用語を読み、今回扱う判断を確認する。\n10分：説明を読み、条件と結論を分けてメモする。\n7分：事例の判断を根拠とともに書き直す。\n7分：表面の開口割れ、内部の空洞、外観の色むらの三つについて、相談する検査方法と追加確認する材料・条件を表にする。\n2分：要点と残った疑問を記録する。",
+      "safetyJa": [
+        "放射線の管理区域へ入らない。薬品を使う検査や専門検査は資格・教育・作業許可と手順に従う。"
+      ],
+      "summaryJa": "欠陥の位置と材質に合わせて方法を確認する。目視で問題がなくても内部まで保証したことにはならない。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 65,
+          "printedPage": 57
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 66,
+          "printedPage": 58
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 67,
+          "printedPage": 59
+        }
+      ],
+      "estimatedMinutes": 30,
+      "durationBasis": "target_with_activities_not_measured",
+      "knowledgeIds": [
+        "mfg1-mechanical-c05-s3-1",
+        "mfg1-mechanical-c05-s3-2"
+      ],
+      "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+      "sourceHash": "7a5f9b7be83e4d562c947fb6a42327f8d6e423a195e91ed74c0d0fb738841ae6"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-017",
+      "specialty": "mechanical",
+      "titleJa": "測定前の状態と読み方をそろえる",
+      "objectiveJa": "視差・温度・測定器の状態が結果に与える影響を説明する。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "測定値には、測定器、測る人、温度、取付状態などの影響が含まれます。目盛りを斜めから見ると読みが変わる視差が生じるため、正面から読みます。基準との関係を定める校正や、日常点検の記録、使用期限を確認し、ゼロ点が合うことだけで全範囲の正しさまで保証されたと考えません。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "同じ軸を二人で測ったところ、読みが一致しませんでした。一人は測定器を斜めから見ており、もう一人は熱い加工直後の軸を測っていました。平均値を出す前に、測定方法と温度条件をそろえて再確認する必要があります。互いの測定値、時刻、対象の状態を記録し、異なる条件の値を無条件にまとめません。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "治具は、対象や測定器を安定して保持する補助具です。Vブロックは円筒形の保持などに使いますが、固定の強さや置き方が不適切なら変形や傾きの原因になります。基準、測定箇所、保持方法を決めてから測り、ずれが見つかった測定器を無断で調整して使い続けません。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "視差",
+          "reading": "しさ",
+          "meaningJa": "目盛りを見る方向がずれて読みが変わること。"
+        },
+        {
+          "ja": "校正",
+          "reading": "こうせい",
+          "meaningJa": "基準と測定器の指示との関係を確認すること。"
+        },
+        {
+          "ja": "治具",
+          "reading": "じぐ",
+          "meaningJa": "対象や測定器を保持するなど作業を補助する道具。"
+        },
+        {
+          "ja": "ゼロ点",
+          "reading": "ゼロてん",
+          "meaningJa": "測定値の基準となるゼロの位置。"
+        }
+      ],
+      "activityJa": "4分：用語を読み、今回扱う判断を確認する。\n10分：説明を読み、条件と結論を分けてメモする。\n7分：事例の判断を根拠とともに書き直す。\n7分：二人の測定値が違った場合の確認表を作り、視線、温度、測定箇所、測定器、保持方法の五項目を書く。\n2分：要点と残った疑問を記録する。",
+      "safetyJa": [
+        "熱い加工物を素手で扱わず、冷却・取扱いの手順を守る。"
+      ],
+      "summaryJa": "測る条件をそろえてから値を比べる。ゼロ点確認、日常点検、校正を同じ作業とみなさない。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 69,
+          "printedPage": 61
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 70,
+          "printedPage": 62
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 71,
+          "printedPage": 63
+        }
+      ],
+      "estimatedMinutes": 30,
+      "durationBasis": "target_with_activities_not_measured",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s1-1"
+      ],
+      "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+      "sourceHash": "4b551fd599fce7d837a851436feb5d27be33ed01e7df1bfdc733532a82218348"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-018",
+      "specialty": "mechanical",
+      "titleJa": "ノギスの測定面と副尺を使い分ける",
+      "objectiveJa": "外側・内側・深さの測定面を選び、主尺と副尺を足して読む。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "ノギスには外側用と内側用のジョウがあり、デプスバー付きなら深さも測れます。対象に応じた測定面を選び、測定面の汚れ、動き、がたつき、閉じたときのすき間とゼロ点を確認します。測定物も清掃し、ばりの処置は承認された方法で行います。強く挟めば正確になるわけではありません。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "最小読取値0.05 mmのノギスで、主尺の読みが18 mm、副尺の一致する線が4番目なら、副尺分は4×0.05＝0.20 mmです。合計は18.20 mmです。「4番目」を0.4 mmと読み替えないよう、使う器具の最小読取値を先に確認します。これは読み方の計算例で、実際の線の一致は器具を正面から見て確認します。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "外側寸法はできるだけジョウの根元で安定して挟み、傾いた状態で読まないようにします。内側寸法や深さも、対象との当たり方を確認します。デジタル表示の細かさと測定の正確さは別です。表示が細かいだけで、必要な公差の判定に使えるとは判断せず、指定の測定器を使います。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "ノギス",
+          "reading": "ノギス",
+          "meaningJa": "スライダとジョウを使って寸法を測る器具。"
+        },
+        {
+          "ja": "副尺",
+          "reading": "ふくしゃく",
+          "meaningJa": "主尺より細かい部分を読み取るための目盛り。"
+        },
+        {
+          "ja": "ジョウ",
+          "reading": "ジョウ",
+          "meaningJa": "測定物を挟んだり内側に当てたりする部分。"
+        },
+        {
+          "ja": "最小読取値",
+          "reading": "さいしょうよみとりち",
+          "meaningJa": "器具の目盛りから読み取る最小の単位量。"
+        }
+      ],
+      "activityJa": "4分：用語を読み、今回扱う判断を確認する。\n10分：説明を読み、条件と結論を分けてメモする。\n7分：事例の判断を根拠とともに書き直す。\n7分：最小読取値0.05 mm、主尺12 mm、副尺の一致が7番目の場合を計算する。外径・穴径・溝の深さごとに使う測定面も書く。\n2分：要点と残った疑問を記録する。",
+      "safetyJa": [
+        "回転中の材料や動いている機械上の部品をノギスで測らない。"
+      ],
+      "summaryJa": "測定面と最小読取値を先に確認する。主尺と副尺を足し、表示の細かさを精度と混同しない。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 72,
+          "printedPage": 64
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 73,
+          "printedPage": 65
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 74,
+          "printedPage": 66
+        }
+      ],
+      "estimatedMinutes": 30,
+      "durationBasis": "target_with_activities_not_measured",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+      "sourceHash": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-019",
+      "specialty": "mechanical",
+      "titleJa": "マイクロメータの測定力と半目盛りを確認する",
+      "objectiveJa": "温度・測定力をそろえ、スリーブとシンブルの値を足す。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "外側マイクロメータは、ねじで動くスピンドルと固定側のアンビルで対象を挟みます。測定面を清掃し、使用範囲に合う基準でゼロ点や基点を確認します。温度の影響を減らすため、器具と対象を指定された環境になじませます。教材では20℃が基準として示されています。熱い製品を急いで測ると、寸法の比較が適切にできません。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "ねじピッチ0.5 mm、シンブル一周50等分の器具なら、一目盛りは0.01 mmです。スリーブで7.5 mmまで見え、シンブルが0.23 mmを示すと、測定値は7.73 mmになります。7 mmだけを読んで半目盛りを落とすと、0.5 mmの誤りになります。まず見えているスリーブの最後の目盛りを確認します。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "接触後は指定された定圧装置を使い、必要以上の力で締め込みません。装置の使い方や回数は器具の取扱説明に従います。強く締めたときの値を正しい値として選ばず、姿勢と接触をそろえて読みます。読める桁数を無断で増やさず、記録する桁と単位も手順に合わせます。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "マイクロメータ",
+          "reading": "マイクロメータ",
+          "meaningJa": "ねじの動きを使って精密に寸法を測る器具。"
+        },
+        {
+          "ja": "スピンドル",
+          "reading": "スピンドル",
+          "meaningJa": "ねじ機構で動く測定側の軸。"
+        },
+        {
+          "ja": "スリーブ",
+          "reading": "スリーブ",
+          "meaningJa": "基準となる目盛りが付いた筒状の部分。"
+        },
+        {
+          "ja": "定圧装置",
+          "reading": "ていあつそうち",
+          "meaningJa": "測定力をそろえるための機構。"
+        }
+      ],
+      "activityJa": "4分：用語を読み、今回扱う判断を確認する。\n10分：説明を読み、条件と結論を分けてメモする。\n7分：事例の判断を根拠とともに書き直す。\n7分：ピッチ0.5 mm・50等分の条件で、スリーブ9.5 mm、シンブル0.17 mmの合計を求める。温度・清掃・基点・測定力の確認順序を書く。\n2分：要点と残った疑問を記録する。",
+      "safetyJa": [
+        "運転中の加工物を測らず、熱い物や鋭いばりを安全な手順で扱う。"
+      ],
+      "summaryJa": "半目盛りの見落としを防ぐ。温度と測定力をそろえ、必要以上に締めない。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 75,
+          "printedPage": 67
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 76,
+          "printedPage": 68
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 77,
+          "printedPage": 69
+        }
+      ],
+      "estimatedMinutes": 30,
+      "durationBasis": "target_with_activities_not_measured",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-2"
+      ],
+      "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+      "sourceHash": "d9e8a5bb0d6a2da7895edccb6b78c93e52896b444c1386efcbd415b456e83cc1"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-020",
+      "specialty": "mechanical",
+      "titleJa": "尺度と線の種類から図面を読む",
+      "objectiveJa": "図の大きさと実寸を区別し、外形線・寸法線・隠れ線・中心線を読み分ける。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "尺度1:1は現尺、2:1は実物の二倍に描く倍尺、1:2は半分に描く縮尺です。図面に記入された寸法数値は、尺度にかかわらず対象の実際の寸法を示します。拡大表示や印刷サイズが変わることもあるため、画面や紙を定規で測った長さだけで加工寸法を決めません。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "尺度2:1の部品図で、ある部分の寸法が12と指示されています。その部分は図上では約24 mmに見えるかもしれませんが、実寸の指示は12 mmです。一方、実寸計算の練習として「尺度1:5で図上30 mm」と条件が与えられたなら、実物は30×5＝150 mmです。寸法指示を読む場面と、尺度の計算練習を分けます。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "見える輪郭は太い実線、寸法線や寸法補助線は細い実線、見えない輪郭は破線、中心は通常細い一点鎖線で示します。中心線を外形と見誤ると形状を取り違えます。部品図は部品加工、組立図は組立て、配置図は設備などの位置の理解に使い、目的に合う図面と版を確認します。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "尺度",
+          "reading": "しゃくど",
+          "meaningJa": "図上の大きさと実物の大きさの比。"
+        },
+        {
+          "ja": "倍尺",
+          "reading": "ばいしゃく",
+          "meaningJa": "実物より大きく描く尺度。"
+        },
+        {
+          "ja": "隠れ線",
+          "reading": "かくれせん",
+          "meaningJa": "見えない部分の形を表す線。"
+        },
+        {
+          "ja": "中心線",
+          "reading": "ちゅうしんせん",
+          "meaningJa": "図形の中心を示す線。"
+        }
+      ],
+      "activityJa": "4分：用語を読み、今回扱う判断を確認する。\n10分：説明を読み、条件と結論を分けてメモする。\n7分：事例の判断を根拠とともに書き直す。\n7分：尺度1:2で図上45 mmの実寸を計算する。別に、2:1の図面に寸法8とあるときの実寸を書き、二つの判断の違いを説明する。\n2分：要点と残った疑問を記録する。",
+      "safetyJa": [
+        "不鮮明な線や読めない寸法を推測して加工しない。"
+      ],
+      "summaryJa": "寸法指示は実寸として読む。尺度・表示倍率・線の意味を分けて確認する。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 87,
+          "printedPage": 79
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 88,
+          "printedPage": 80
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 89,
+          "printedPage": 81
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 90,
+          "printedPage": 82
+        }
+      ],
+      "estimatedMinutes": 30,
+      "durationBasis": "target_with_activities_not_measured",
+      "knowledgeIds": [
+        "mfg1-mechanical-c07-s1-2",
+        "mfg1-mechanical-c07-s1-3",
+        "mfg1-mechanical-c07-s1-5"
+      ],
+      "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+      "sourceHash": "d093d570d5b0a9a12428523e25be3ba8375577f612c2c85f1810397662eca666"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-021",
+      "specialty": "mechanical",
+      "titleJa": "寸法公差と補助記号を読み取る",
+      "objectiveJa": "上下限を求めて測定値を判定し、直径・半径・厚さの記号を区別する。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "寸法には許される範囲があり、その上限と下限の差が公差です。基準寸法に正負の許容差を付けた表示では、上の値が上の許容差、下の値が下の許容差です。符号を落とさず加えて限界寸法を求めます。上下の数値を見た目だけで絶対値として足し引きしないようにします。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "架空の軸寸法が20 mm、上の許容差＋0.04 mm、下の許容差－0.02 mmなら、上限は20.04 mm、下限は19.98 mm、公差は0.06 mmです。通常の上下限比較では20.03 mmは範囲内、19.97 mmは範囲外です。ただし限界付近の測定値の扱いは、指定の測定方法と判定規則に従い、都合よく丸めません。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "φは直径、Rは半径、tは厚さを表します。φ10とR10は同じ大きさではなく、R10の円なら直径は20です。公差クラスの大文字は穴、小文字は軸に用いられ、数値範囲は対応表などで確認します。文字の位置だけから実際のはめあい状態を断定せず、組み合わせる穴と軸の限界寸法を調べます。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "公差",
+          "reading": "こうさ",
+          "meaningJa": "許容される最大寸法と最小寸法の差。"
+        },
+        {
+          "ja": "許容差",
+          "reading": "きょようさ",
+          "meaningJa": "基準寸法から許される差。"
+        },
+        {
+          "ja": "直径",
+          "reading": "ちょっけい",
+          "meaningJa": "円の中心を通り円周の二点を結ぶ長さ。"
+        },
+        {
+          "ja": "半径",
+          "reading": "はんけい",
+          "meaningJa": "円の中心から円周までの長さ。"
+        }
+      ],
+      "activityJa": "4分：用語を読み、今回扱う判断を確認する。\n10分：説明を読み、条件と結論を分けてメモする。\n7分：事例の判断を根拠とともに書き直す。\n7分：基準寸法15 mm、上＋0.03 mm、下－0.01 mmの上下限と公差を計算し、14.98・15.00・15.03 mmを判定する。φ6、R6、t6の意味を文章で書く。\n2分：要点と残った疑問を記録する。",
+      "safetyJa": [
+        "限界外の製品を、測定値の無断修正や丸めで合格にしない。"
+      ],
+      "summaryJa": "符号を含めて上下限を求める。公差と許容差、直径と半径を混同しない。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 95,
+          "printedPage": 87
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 96,
+          "printedPage": 88
+        },
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 97,
+          "printedPage": 89
+        }
+      ],
+      "estimatedMinutes": 30,
+      "durationBasis": "target_with_activities_not_measured",
+      "knowledgeIds": [
+        "mfg1-mechanical-c07-s3-4",
+        "mfg1-mechanical-c07-s3-5"
+      ],
+      "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+      "sourceHash": "7f588a7c67b86e7ad773e48af595bd25d8ce8d0f9a4b1feb6b0107d4bdd930a1"
     }
   ],
   "checks": [
@@ -957,6 +1927,1039 @@
         }
       ],
       "revision": "v1-b0693c0bada6746e"
+    },
+    {
+      "id": "mfg1-mechanical-weekly-02",
+      "titleJa": "第2週の確認",
+      "kind": "weekly",
+      "officialSimulation": false,
+      "timeLimitMinutes": null,
+      "weekId": "mfg1-mechanical-week-02",
+      "questions": [
+        {
+          "id": "mfg1-mechanical-weekly-02-q01",
+          "lessonId": "mfg1-mechanical-lesson-008",
+          "lessonSourceHash": "f94c86281caf7f0a0d575355b72ed039040149fc3f2881a4ffd6e1e59f68a870",
+          "knowledgeIds": [
+            "mfg1-mechanical-c02-s5-1",
+            "mfg1-mechanical-c02-s5-2",
+            "mfg1-mechanical-c02-s5-3",
+            "mfg1-mechanical-c02-s5-4"
+          ],
+          "stemJa": "容器の危険表示が消えて中身を確認できない。どうするか。",
+          "optionsJa": [
+            "においを直接確かめる。",
+            "使用を保留し、容器の場所と状態を責任者へ伝える。",
+            "同じ色の液として使う。",
+            "別容器へ移して表示を捨てる。"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "不明な物質へのばく露の危険がある。",
+            "表示不明の物を推測で使わず、確認まで保留する。",
+            "色だけで物質を識別できない。",
+            "識別情報を失い、混同を招く。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 27,
+              "printedPage": 19
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 28,
+              "printedPage": 20
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 29,
+              "printedPage": 21
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 30,
+              "printedPage": 22
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "924f98c83e0a5bc69156511aa097ef2f186c7fd960ade38f7d0b0dd0082dde26"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-02-q02",
+          "lessonId": "mfg1-mechanical-lesson-009",
+          "lessonSourceHash": "4e79ef67a3fe430862cf4432ff2ed5b2ecd8a04703ba9d0935a84e6d6c449eb9",
+          "knowledgeIds": [
+            "mfg1-mechanical-c03-s1-1",
+            "mfg1-mechanical-c03-s1-2"
+          ],
+          "stemJa": "顧客が指定した寸法を外れた部品は、見た目がきれいなら合格にできるか。",
+          "optionsJa": [
+            "できる。光沢が品質の全てである。",
+            "できる。製造数が多ければよい。",
+            "顧客に知らせず図面を変更すればよい。",
+            "できない。外観と寸法の適合を別々に確認する。"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "品質は外観だけでは決まらない。",
+            "数量は寸法不適合を解消しない。",
+            "無断で要求を変えて適合扱いにはできない。",
+            "要求された寸法も品質の判定条件である。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 33,
+              "printedPage": 25
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 34,
+              "printedPage": 26
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "74e7ab74fbdf595682a51707110a8c59b03d5ac80a70913dd1d4acbfb4813e16"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-02-q03",
+          "lessonId": "mfg1-mechanical-lesson-010",
+          "lessonSourceHash": "ecb222cbf972f891a91e32de28cec02fd0abc15c6f8a6e72141f70de20e4674d",
+          "knowledgeIds": [
+            "mfg1-mechanical-c03-s1-2"
+          ],
+          "stemJa": "工具交換後から寸法の変化が見られた。4Mを使う調査として適切なのはどれか。",
+          "optionsJa": [
+            "交換時刻や工具の仕様、測定結果を記録し、他の4Mの変化も照合する。",
+            "工具交換だけが必ず原因だと断定する。",
+            "交換前の記録を消して比較をやめる。",
+            "4Mは材料だけを見るので工具は調べない。"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "変更の事実と発生状況を対応させ、工具だけに原因を決めつけない。",
+            "時間的に近いだけでは原因を確定できない。",
+            "変化を調べる情報を失う。",
+            "4Mは人・機械・材料・方法を含む。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 35,
+              "printedPage": 27
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 36,
+              "printedPage": 28
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 37,
+              "printedPage": 29
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "2bad661ace07e64a333c13fc452cc05ca09b6edbb613c7a6063b27f658c32051"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-02-q04",
+          "lessonId": "mfg1-mechanical-lesson-011",
+          "lessonSourceHash": "7c03413b76ee4823f4b9ac8ec818aa9003f657910af6dff216db2eb51c4ac24d",
+          "knowledgeIds": [
+            "mfg1-mechanical-c03-s2-1",
+            "mfg1-mechanical-c03-s2-2"
+          ],
+          "stemJa": "作業標準書に指定された工具が見当たらない。適切な対応はどれか。",
+          "optionsJa": [
+            "形が似た工具なら何でも使う。",
+            "工具名を標準書から消す。",
+            "代用品を勝手に選ばず、担当者に確認する。",
+            "確認せず手作業で代用する。"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "外形だけでは適合を判断できない。",
+            "無断変更は標準の管理を損なう。",
+            "工具の指定も安全と品質をそろえる基準の一部である。",
+            "必要な条件を満たすか未確認である。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 39,
+              "printedPage": 31
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 40,
+              "printedPage": 32
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 41,
+              "printedPage": 33
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "f58092574b0c743c1ffb1d8074c80f2c2f01f8071428c395dc857966ea0cdb91"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-02-q05",
+          "lessonId": "mfg1-mechanical-lesson-012",
+          "lessonSourceHash": "a5d4b0e59956b0f039f65bff4cbbd18ff5226fabf1b779acf75d49a72e8a20d8",
+          "knowledgeIds": [
+            "mfg1-mechanical-c03-s3"
+          ],
+          "stemJa": "寸法データがどの範囲に多く集まるか、分布の形を見たい。適する道具はどれか。",
+          "optionsJa": [
+            "作業者名簿",
+            "工程順だけの表",
+            "工具の貸出記録",
+            "ヒストグラム"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "測定値の分布を示す道具ではない。",
+            "手順を示しても寸法分布は分からない。",
+            "工具の貸出しと寸法分布は異なる情報である。",
+            "寸法などのデータのばらつきと分布を示す。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 41,
+              "printedPage": 33
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 42,
+              "printedPage": 34
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 43,
+              "printedPage": 35
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "cfce5f5a8d2d7348f5353a48363344b8591831e52d62070b1c5dd54b0129fa98"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-02-q06",
+          "lessonId": "mfg1-mechanical-lesson-013",
+          "lessonSourceHash": "08cbdd5a897752800177bb3bacbb13be2643f58b7aa40aa6d646b189c37e8608",
+          "knowledgeIds": [
+            "mfg1-mechanical-c03-s4-3"
+          ],
+          "stemJa": "図面の長さ0.025 mをmmで記録するといくつか。",
+          "optionsJa": [
+            "0.025 mm",
+            "25 mm",
+            "250 mm",
+            "2500 mm"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "単位だけ変えて換算していない。",
+            "1 m=1000 mmなので、0.025×1000=25。",
+            "換算値が10倍大きい。",
+            "換算値が100倍大きい。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 46,
+              "printedPage": 38
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "9d0b611e773405d0b946568c86626ff33b1ec6d6f4405dd8561665b3e1dac238"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-02-q07",
+          "lessonId": "mfg1-mechanical-lesson-014",
+          "lessonSourceHash": "85a6746f35d720c9df6341d0dc10f9885ddf0109d44a8376a0b1e4f8e6de95c7",
+          "knowledgeIds": [
+            "mfg1-mechanical-c05-s1-2",
+            "mfg1-mechanical-c05-s1-3"
+          ],
+          "stemJa": "製品100個を検査して不適合品が3個あった。不適合品率はいくらか。",
+          "optionsJa": [
+            "30%",
+            "0.03%",
+            "3%",
+            "97%"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "3個は100個の30%ではない。",
+            "比率0.03を百分率へ換算していない。",
+            "3÷100×100=3%。不適合品の個数を使う。",
+            "これは適合品97個の割合である。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 53,
+              "printedPage": 45
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 54,
+              "printedPage": 46
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 56,
+              "printedPage": 48
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "e395c0e781ea1ae0f2ba552fc1bd6ae1c8d4a563668fd7142c1772f61a36a448"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-02-q08",
+          "lessonId": "mfg1-mechanical-lesson-009",
+          "lessonSourceHash": "4e79ef67a3fe430862cf4432ff2ed5b2ecd8a04703ba9d0935a84e6d6c449eb9",
+          "knowledgeIds": [
+            "mfg1-mechanical-c03-s1-1",
+            "mfg1-mechanical-c03-s1-2"
+          ],
+          "stemJa": "安い製品を作るために指定検査を省く提案が出た。品質管理として適切なのはどれか。",
+          "optionsJa": [
+            "必要な品質と安全を守り、承認された方法でコスト改善を検討する。",
+            "費用が下がれば要求品質を無視できる。",
+            "納期に間に合えば検査結果は不要。",
+            "品質問題は顧客が使うまで記録しない。"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "コストだけを優先して要求を満たさない製品にしない。",
+            "コスト削減は不適合を正当化しない。",
+            "納期と検査の必要性は別の条件である。",
+            "早期の確認と記録を妨げる。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 33,
+              "printedPage": 25
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 34,
+              "printedPage": 26
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "378be755d5e19b813e3182b81106434aa88d8f0a4bdb4da6c569309c941fca01"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-02-q09",
+          "lessonId": "mfg1-mechanical-lesson-010",
+          "lessonSourceHash": "ecb222cbf972f891a91e32de28cec02fd0abc15c6f8a6e72141f70de20e4674d",
+          "knowledgeIds": [
+            "mfg1-mechanical-c03-s1-2"
+          ],
+          "stemJa": "平均寸法が目標と同じだった。全ての製品が規格内だと判断してよいか。",
+          "optionsJa": [
+            "よい。平均は全製品の値と同じである。",
+            "よくない。個々の値とばらつきも確認する。",
+            "よい。ばらつきは存在しなくなる。",
+            "個々の規格外値は消してよい。"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "平均と個々の測定値は同一ではない。",
+            "平均だけでは規格外の製品の有無を判断できない。",
+            "平均が目標でも分布の広がりは残り得る。",
+            "不利なデータの削除は実態を隠す。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 35,
+              "printedPage": 27
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 36,
+              "printedPage": 28
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 37,
+              "printedPage": 29
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "aa46d45eaa7fd8de726e2e06cf3f3d8205ed5e90a329375dcbe03d56b4072e37"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-02-q10",
+          "lessonId": "mfg1-mechanical-lesson-011",
+          "lessonSourceHash": "7c03413b76ee4823f4b9ac8ec818aa9003f657910af6dff216db2eb51c4ac24d",
+          "knowledgeIds": [
+            "mfg1-mechanical-c03-s2-1",
+            "mfg1-mechanical-c03-s2-2"
+          ],
+          "stemJa": "QC工程図で、ある工程の管理項目と測定方法を確認したい。適切なのはどれか。",
+          "optionsJa": [
+            "工程名だけを見て管理項目を無視する。",
+            "別製品の工程図を無条件に使う。",
+            "対象工程と適用する管理条件・方法を対応させて読む。",
+            "不明な管理値を自分で書き換える。"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "管理内容を確認したことにならない。",
+            "適用対象が異なる可能性がある。",
+            "工程ごとに何をどう管理するかを確認する。",
+            "管理条件の無断変更になる。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 39,
+              "printedPage": 31
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 40,
+              "printedPage": 32
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 41,
+              "printedPage": 33
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "e0557fe81a0ec3ffb5e94181fdac45e7b72e34284cf6bcbc5410e4fa0c78c887"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-02-q11",
+          "lessonId": "mfg1-mechanical-lesson-012",
+          "lessonSourceHash": "a5d4b0e59956b0f039f65bff4cbbd18ff5226fabf1b779acf75d49a72e8a20d8",
+          "knowledgeIds": [
+            "mfg1-mechanical-c03-s3"
+          ],
+          "stemJa": "二つの測定項目の関係を点で示して調べたい。適する道具はどれか。",
+          "optionsJa": [
+            "散布図",
+            "ヒストグラム",
+            "作業順序書",
+            "出勤表"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "二つの変数の関係を縦軸と横軸で示す。",
+            "一つの量の分布を見る用途と区別する。",
+            "二変数の関係を示す図ではない。",
+            "測定項目間の関係を示していない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 41,
+              "printedPage": 33
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 42,
+              "printedPage": 34
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 43,
+              "printedPage": 35
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "206cc47c1a07bf341c6be6694a0ceb64beac4ce1449f4a45cf70b3cdee171be0"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-02-q12",
+          "lessonId": "mfg1-mechanical-lesson-014",
+          "lessonSourceHash": "85a6746f35d720c9df6341d0dc10f9885ddf0109d44a8376a0b1e4f8e6de95c7",
+          "knowledgeIds": [
+            "mfg1-mechanical-c05-s1-2",
+            "mfg1-mechanical-c05-s1-3"
+          ],
+          "stemJa": "一部だけを調べてロットを判定する検査はどれか。",
+          "optionsJa": [
+            "全数検査",
+            "無検査と同じ",
+            "好きな良品だけを選ぶ検査",
+            "抜取検査"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "全数検査は全ての対象を調べる。",
+            "一部を検査することと全く検査しないことは異なる。",
+            "抜取りは定めた選び方と判定基準で行う。",
+            "定めた方法で一部を選び、ロットの判定に使う。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 53,
+              "printedPage": 45
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 54,
+              "printedPage": 46
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 56,
+              "printedPage": 48
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "8a06279f1cbac92be87c368096244d0128c57f7ad8c7edfbe728a885ddca7245"
+        }
+      ],
+      "revision": "v1-c6b21983eba64c22"
+    },
+    {
+      "id": "mfg1-mechanical-weekly-03",
+      "titleJa": "第3週の確認",
+      "kind": "weekly",
+      "officialSimulation": false,
+      "timeLimitMinutes": null,
+      "weekId": "mfg1-mechanical-week-03",
+      "questions": [
+        {
+          "id": "mfg1-mechanical-weekly-03-q01",
+          "lessonId": "mfg1-mechanical-lesson-015",
+          "lessonSourceHash": "92d89fedabc628cafb74ccd7016933d216455d72cfbcf37ad49e2e96d26ff1fc",
+          "knowledgeIds": [
+            "mfg1-mechanical-c05-s2-1",
+            "mfg1-mechanical-c05-s2-2"
+          ],
+          "stemJa": "引張試験で主に調べる性質はどれか。",
+          "optionsJa": [
+            "表面の色だけ",
+            "液の酸性",
+            "電源の周波数",
+            "引っ張る力に対する強さや伸び。"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "色だけを調べる試験ではない。",
+            "材料の引張試験とpH測定は異なる。",
+            "引張試験の測定対象ではない。",
+            "引張荷重と変形から材料の機械的性質を評価する。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 58,
+              "printedPage": 50
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 59,
+              "printedPage": 51
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 60,
+              "printedPage": 52
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 61,
+              "printedPage": 53
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 62,
+              "printedPage": 54
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "11be06095356f0213ebc11e27c5d364adc4f01bcd86ff6fe9a94a7a5d009263e"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-03-q02",
+          "lessonId": "mfg1-mechanical-lesson-016",
+          "lessonSourceHash": "7a5f9b7be83e4d562c947fb6a42327f8d6e423a195e91ed74c0d0fb738841ae6",
+          "knowledgeIds": [
+            "mfg1-mechanical-c05-s3-1",
+            "mfg1-mechanical-c05-s3-2"
+          ],
+          "stemJa": "完成品を切断せず内部の欠陥を調べたい。目的に合う分類はどれか。",
+          "optionsJa": [
+            "非破壊検査",
+            "必ず切断する破壊試験",
+            "外観を見ずに推測するだけ",
+            "製品を全て廃棄して調べる方法"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "対象を破壊せず欠陥を調べる方法の分類である。",
+            "切断しないという条件に合わない。",
+            "検査ではなく未確認の判断である。",
+            "目的を満たす検査の説明ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 65,
+              "printedPage": 57
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 66,
+              "printedPage": 58
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 67,
+              "printedPage": 59
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "b7c4c62db9e44a3c7568ec02abc2afe5aaa1af5ada29d8f8b4386c449a736870"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-03-q03",
+          "lessonId": "mfg1-mechanical-lesson-017",
+          "lessonSourceHash": "4b551fd599fce7d837a851436feb5d27be33ed01e7df1bfdc733532a82218348",
+          "knowledgeIds": [
+            "mfg1-mechanical-c06-s1-1"
+          ],
+          "stemJa": "測定面に切りくずが付いたまま測ると、どのような問題があるか。",
+          "optionsJa": [
+            "金属同士なら影響しない。",
+            "表示の桁が多ければ異物は補正される。",
+            "異物の厚さなどが測定結果に影響する。",
+            "強く挟めば必ず正確になる。"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "同じ材質でも異物は測定に影響する。",
+            "表示桁数は汚れを自動的に取り除かない。",
+            "測定前に清掃し、器具と対象の状態を確認する。",
+            "過大な力で変形や誤差を生む場合がある。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 69,
+              "printedPage": 61
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 70,
+              "printedPage": 62
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 71,
+              "printedPage": 63
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "dedbe7a968ec79d55689ef904d2876fd4ac86299efba16e684be72943ae50744"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-03-q04",
+          "lessonId": "mfg1-mechanical-lesson-018",
+          "lessonSourceHash": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb",
+          "knowledgeIds": [
+            "mfg1-mechanical-c06-s2-1"
+          ],
+          "stemJa": "ノギスで穴の内径を測るとき、使う部分はどれか。",
+          "optionsJa": [
+            "外側用ジョウだけ",
+            "デプスバー",
+            "目盛りのない持ち手",
+            "内側用ジョウ"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "外側寸法用であり用途が異なる。",
+            "深さを測る部分である。",
+            "測定用の基準部ではない。",
+            "内側寸法に対応する測定部を使う。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 72,
+              "printedPage": 64
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 73,
+              "printedPage": 65
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 74,
+              "printedPage": 66
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "9dc79e0a445218a56d3f6240968836f30c1ab83d5c17d0623983ad5f1a9e3d4c"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-03-q05",
+          "lessonId": "mfg1-mechanical-lesson-019",
+          "lessonSourceHash": "d9e8a5bb0d6a2da7895edccb6b78c93e52896b444c1386efcbd415b456e83cc1",
+          "knowledgeIds": [
+            "mfg1-mechanical-c06-s2-2"
+          ],
+          "stemJa": "0.01 mm目盛りのマイクロメータで、スリーブ7.5 mm、シンブル26を読んだ。値はいくらか。",
+          "optionsJa": [
+            "7.26 mm",
+            "7.76 mm",
+            "7.526 mm",
+            "26.75 mm"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "0.5 mm分を読み落としている。",
+            "7.5+26×0.01=7.76 mm。",
+            "数値を連結せず、単位をそろえて加える。",
+            "スリーブとシンブルの役割を取り違えている。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 75,
+              "printedPage": 67
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 76,
+              "printedPage": 68
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 77,
+              "printedPage": 69
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "f2a86c95838ac71d6396a07ceacdedcaead5c674ab76a77213d69465ec4261e4"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-03-q06",
+          "lessonId": "mfg1-mechanical-lesson-020",
+          "lessonSourceHash": "d093d570d5b0a9a12428523e25be3ba8375577f612c2c85f1810397662eca666",
+          "knowledgeIds": [
+            "mfg1-mechanical-c07-s1-2",
+            "mfg1-mechanical-c07-s1-3",
+            "mfg1-mechanical-c07-s1-5"
+          ],
+          "stemJa": "尺度1:2で描いた図面の寸法記入が60 mmだった。実物の寸法はいくらか。",
+          "optionsJa": [
+            "30 mm",
+            "120 mm",
+            "60 mm",
+            "定規で図を測らなければ分からない。"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "図の縮尺を記入寸法へ再度適用している。",
+            "記入寸法を逆方向に二重換算している。",
+            "記入寸法は実物の値であり、図の見かけの長さとは区別する。",
+            "実物寸法は寸法記入から読む。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 87,
+              "printedPage": 79
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 88,
+              "printedPage": 80
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 89,
+              "printedPage": 81
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 90,
+              "printedPage": 82
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "2876d0b6ba1485ebed4002b60bc5c919576ff4c0f58140ae5d49acbdb5f882ce"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-03-q07",
+          "lessonId": "mfg1-mechanical-lesson-021",
+          "lessonSourceHash": "7f588a7c67b86e7ad773e48af595bd25d8ce8d0f9a4b1feb6b0107d4bdd930a1",
+          "knowledgeIds": [
+            "mfg1-mechanical-c07-s3-4",
+            "mfg1-mechanical-c07-s3-5"
+          ],
+          "stemJa": "寸法10.00±0.05 mmに対して10.06 mmと測定した。単純な上下限判定ではどうなるか。",
+          "optionsJa": [
+            "範囲内である。",
+            "下限より小さい。",
+            "10.00へ無断で丸めれば合格。",
+            "上限10.05 mmを超える。"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "10.06は10.05より大きい。",
+            "下限9.95より大きい。",
+            "規格外を隠す丸めをしてはいけない。",
+            "許容範囲は9.95〜10.05 mm。10.06は上限外である。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 95,
+              "printedPage": 87
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 96,
+              "printedPage": 88
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 97,
+              "printedPage": 89
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "f6ce4951491e31cfdbfedfadcfac104f5221db4b8e0f9dfa01269ea2a1d23511"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-03-q08",
+          "lessonId": "mfg1-mechanical-lesson-015",
+          "lessonSourceHash": "92d89fedabc628cafb74ccd7016933d216455d72cfbcf37ad49e2e96d26ff1fc",
+          "knowledgeIds": [
+            "mfg1-mechanical-c05-s2-1",
+            "mfg1-mechanical-c05-s2-2"
+          ],
+          "stemJa": "硬さ試験の値だけで、引張強さや用途の適否を全て断定してよいか。",
+          "optionsJa": [
+            "よい。全ての機械的性質は同じ値である。",
+            "よくない。試験方法と要求される性質を確認する。",
+            "硬さが高ければ全用途で最適。",
+            "試験方法の違いは記録しなくてよい。"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "異なる性質を一つの値とみなせない。",
+            "硬さと他の性質を混同せず、対象と要求に合う試験で評価する。",
+            "用途ごとの要求と条件を考慮する必要がある。",
+            "方法や条件がなければ値を適切に比較できない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 58,
+              "printedPage": 50
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 59,
+              "printedPage": 51
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 60,
+              "printedPage": 52
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 61,
+              "printedPage": 53
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 62,
+              "printedPage": 54
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "994792f99459029e8fffb267dde13672ebfa449984bb31f89782b69d86c5399a"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-03-q09",
+          "lessonId": "mfg1-mechanical-lesson-016",
+          "lessonSourceHash": "7a5f9b7be83e4d562c947fb6a42327f8d6e423a195e91ed74c0d0fb738841ae6",
+          "knowledgeIds": [
+            "mfg1-mechanical-c05-s3-1",
+            "mfg1-mechanical-c05-s3-2"
+          ],
+          "stemJa": "官能検査で判定者によって結果が違った。対応として適切なのはどれか。",
+          "optionsJa": [
+            "見本、判定基準、照明などの条件をそろえて確認する。",
+            "経験者の好みだけを基準にする。",
+            "不合格の記録だけ削除する。",
+            "確認条件は品質に関係しない。"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "感覚に関わる検査でも基準と条件を明確にしてばらつきを減らす。",
+            "共通の判定基準にならない。",
+            "判定差の原因を隠してしまう。",
+            "照明などの条件は判定に影響し得る。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 65,
+              "printedPage": 57
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 66,
+              "printedPage": 58
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 67,
+              "printedPage": 59
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "8f5c9c47e97b42e22c4ddb90673d1764f879931310174fe00da306835a183c52"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-03-q10",
+          "lessonId": "mfg1-mechanical-lesson-017",
+          "lessonSourceHash": "4b551fd599fce7d837a851436feb5d27be33ed01e7df1bfdc733532a82218348",
+          "knowledgeIds": [
+            "mfg1-mechanical-c06-s1-1"
+          ],
+          "stemJa": "精密な寸法を測るとき、加熱直後の部品をそのまま室温品と比較してよいか。",
+          "optionsJa": [
+            "温度は長さに一切影響しない。",
+            "熱いほど常に正しい寸法になる。",
+            "温度による影響を考え、規定の測定条件を確認する。",
+            "手で強く握って温度を適当に合わせる。"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "熱による寸法変化を無視している。",
+            "正確さは温度の高さで決まらない。",
+            "温度差で寸法が変わる場合があり、条件をそろえる必要がある。",
+            "規定条件を満たす確認方法ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 69,
+              "printedPage": 61
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 70,
+              "printedPage": 62
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 71,
+              "printedPage": 63
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "02ac815a7db88bf4328fd6c8a947a33a354c72a1dc1f7fcfe5f2594d6d3c8ced"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-03-q11",
+          "lessonId": "mfg1-mechanical-lesson-018",
+          "lessonSourceHash": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb",
+          "knowledgeIds": [
+            "mfg1-mechanical-c06-s2-1"
+          ],
+          "stemJa": "ノギスのジョウを斜めに当てた値が規格限界に近かった。どうするか。",
+          "optionsJa": [
+            "当て方と器具状態を確認し、規定の方法で測定する。",
+            "近い値なので確認せず合格にする。",
+            "一番小さい値だけ記録する。",
+            "図面の限界値を変える。"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "斜めの接触は誤差の原因。都合よく合格扱いにしない。",
+            "測定条件の不備が残っている。",
+            "選別した値だけでは実態を示さない。",
+            "無断で要求を変更してはいけない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 72,
+              "printedPage": 64
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 73,
+              "printedPage": 65
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 74,
+              "printedPage": 66
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "eb7b6c78e9275f2c85c0bf62ff52e72d21f08f9ea85dd1f7a0b3d18d9c82aeb7"
+        },
+        {
+          "id": "mfg1-mechanical-weekly-03-q12",
+          "lessonId": "mfg1-mechanical-lesson-021",
+          "lessonSourceHash": "7f588a7c67b86e7ad773e48af595bd25d8ce8d0f9a4b1feb6b0107d4bdd930a1",
+          "knowledgeIds": [
+            "mfg1-mechanical-c07-s3-4",
+            "mfg1-mechanical-c07-s3-5"
+          ],
+          "stemJa": "寸法公差とはどれか。",
+          "optionsJa": [
+            "測定値を自由に書き換えられる量",
+            "許容される最大寸法と最小寸法の差。",
+            "図面を印刷するときの紙の余白",
+            "全ての製品で同じ固定値"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "公差は記録改変を許可するものではない。",
+            "公差は最大許容寸法と最小許容寸法の差であり、基準寸法からの許容差とは区別する。",
+            "製品寸法の要求と用紙の余白は異なる。",
+            "公差は個々の要求に応じて指定される。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 95,
+              "printedPage": 87
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 96,
+              "printedPage": 88
+            },
+            {
+              "documentId": "mfg1-mechanical-source",
+              "pdfPage": 97,
+              "printedPage": 89
+            }
+          ],
+          "reviewStatus": "ai_checked_draft_not_domain_or_native_certified",
+          "sourceHash": "268ae2f632c0d81e9391d8134fe76cae0b7dd449f5fca8b14f7bd75a32cea8fd"
+        }
+      ],
+      "revision": "v1-4dec99f322bd618c"
     }
   ]
 }
