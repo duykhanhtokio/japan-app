@@ -172,6 +172,8 @@ def main():
  progress['mockTranslationCoverage']={l:len(existing_mock_locales.get(l,{})) for l in targets}
  progress['diagramTranslationCoverage']={l:len(caption_data['locales'].get(l,{})) for l in targets}
  progress['fullyDraftTranslatedLocalesForAllCurrentContent']=[l for l in complete if len(existing_mock_locales.get(l,{}))==1200 and len(caption_data['locales'].get(l,{}))==18]
+ remaining_locales=[l for l in targets if l not in progress['fullyDraftTranslatedLocalesForAllCurrentContent']]
+ progress['next']=('Complete remaining source-bound draft translations: '+', '.join(remaining_locales)+'. ' if remaining_locales else 'All12 target locales cover the currently authored lessons, weekly questions, mocks and captions as AI drafts. ')+"Maintain source-object provenance and finish full-source atomization/coverage review; independent native/domain review and physical native-device verification remain uncertified. SSW2 excluded."
  progress['lessonTranslationCoverage']={l:e['lessonCount'] for l,e in registry['locales'].items()};progress['questionTranslationCoverage']={l:e['questionCount'] for l,e in registry['locales'].items()};progress['previewWeeksBySpecialty']={s['id']:len(s['weeks']) for s in manifest['specialties']};write(DOCS/'progress.json',progress)
  write(STAGE/'translation-schema-normalization.json',translation_aliases)
  write(STAGE/'integration-input-digests.json',input_digests)

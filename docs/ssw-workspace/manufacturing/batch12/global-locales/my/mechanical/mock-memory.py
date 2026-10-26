@@ -30,6 +30,8 @@ def tr(a):
  # numbers/units alone are unchanged
  if re.fullmatch(r'[0-9a-zA-ZΩ℃μ²³%＋－−+*/÷×=＝. :〜～°±φRSt□()\-]+',a):return a
  return None
+for f in sorted(P.glob('mock-author-*.json')):
+ for a,b in json.loads(f.read_text())['exactJaTranslations'].items():add(a,b,f.name)
 mock=json.loads((R/'src/data/manufacturing/mocks/mechanical.json').read_text());out={};missing={};coverage=[]
 for e in mock['exams']:
  for sec in e['sections'].values():
