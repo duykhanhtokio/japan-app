@@ -1,0 +1,90 @@
+{
+  "status": "complete",
+  "authorPacketSha256": "f3a51079d191a27d99395a0e7c68724ebe27e09ad10ca170f46971e14cdab360",
+  "sourceMasterSha256": "77416e05521146095283d182828e6c7ead5eb240fc867f85a1ee93824f30fa2e",
+  "lessonLocalePairsReviewed": 12,
+  "fieldsReviewed": 180,
+  "patches": [
+    {
+      "locale": "zh-CN",
+      "lessonId": "agr-par22-fertilizer",
+      "field": "activity",
+      "before": "将一份假想的收货记录分为“名称与分类”“主要材料”“形态”“开始起效与持续时间”四栏。把硝安与硝酸铵记作指向同一种肥料的一组名称，再将牛粪、猪粪、鸡粪堆肥的名称与主要材料对应起来。接着，简要说明压制颗粒的形状与原料混合、迟效肥料起效慢的两种途径，以及缓效肥料中有持续1年以上的例子，不要混为一谈。整理时，应将这些知识与实物识别、施用量判断分开。",
+      "after": "将一份假想的收货记录分为“名称与分类”“主要材料”“形态”“开始起效与持续时间”四栏。把硝安与硝酸铵记作指向同一种肥料的一组名称，再将牛粪、猪粪、鸡粪堆肥的名称与主要材料对应起来。接着，简要说明圆柱状颗粒的形状与原料混合、迟效肥料起效慢的两种途径，以及缓效肥料中有持续1年以上的例子，不要混为一谈。整理时，应将这些知识与实物识别、施用量判断分开。",
+      "reason": "Japanese ペレットの形 denotes pellet form; it does not specify a pressing process. Keep the activity focused on shape versus ingredients."
+    },
+    {
+      "locale": "zh-CN",
+      "lessonId": "agr-par22-fertilizer",
+      "field": "paragraphs",
+      "before": "2号资料把压制颗粒状说明为加工成圆柱形固体的形态。同一页还列举了混合化学肥料与有机肥料的例子。前者是形态信息，后者是所含材料的信息。例如，不能仅凭“看起来是圆柱形”的观察就判断原料组合，应将形状和原料分栏核对。",
+      "after": "2号资料把圆柱状颗粒说明为加工成圆柱形固体的形态。同一页还列举了混合化学肥料与有机肥料的例子。前者是形态信息，后者是所含材料的信息。例如，不能仅凭“看起来是圆柱形”的观察就判断原料组合，应将形状和原料分栏核对。",
+      "reason": "Japanese says processed into cylindrical solids, without specifying pressing as the production method. Remove the unsupported process detail.",
+      "paragraphId": "agr-par22-fertilizer-p6"
+    },
+    {
+      "locale": "zh-CN",
+      "lessonId": "agr-par22-vegetables",
+      "field": "paragraphTitles",
+      "before": "洋葱的食用部位与育苗方式分别记录",
+      "after": "洋葱的食用部位与种苗处理分别记录",
+      "reason": "Japanese 苗の扱い means handling seedlings and the paragraph explains transplantation; 育苗方式 can instead mean the method of raising seedlings before transplanting.",
+      "paragraphId": "agr-par22-vegetables-p6"
+    }
+  ],
+  "numericFindings": [
+    {
+      "lessonId": "agr-par22-facility",
+      "paragraphId": "agr-par22-facility-p1",
+      "locales": [
+        "zh-CN",
+        "zh-TW"
+      ],
+      "result": "verified",
+      "finding": "2018 nationwide protected tomato production 約56.2万t is retained as 约56.2万吨 / 約56.2萬噸, equivalent to approximately 562,000 tonnes. Protected-production scope and separate cultivated-area ranking remain explicit."
+    },
+    {
+      "lessonId": "agr-par22-facility",
+      "paragraphId": "agr-par22-facility-p4",
+      "locales": [
+        "zh-CN",
+        "zh-TW"
+      ],
+      "result": "verified",
+      "finding": "2018 nationwide protected strawberry production 約13.5万t is retained as 约13.5万吨 / 約13.5萬噸, equivalent to approximately 135,000 tonnes, including the example record. Neither locale recasts it as current or all-method production."
+    },
+    {
+      "lessonId": "agr-par22-facility",
+      "paragraphId": "agr-par22-facility-p6",
+      "locales": [
+        "zh-CN",
+        "zh-TW"
+      ],
+      "result": "verified",
+      "finding": "The yield denominator 10a is rendered as 每10公亩 in zh-CN and 每10a in zh-TW, preserving exactly ten ares. Heading, paragraph and activity distinguish declining area from rising yield per this area; no trend comparison years or rates are invented."
+    },
+    {
+      "lessonId": "agr-par22-fertilizer",
+      "paragraphId": "agr-par22-fertilizer-p5",
+      "locales": [
+        "zh-CN",
+        "zh-TW"
+      ],
+      "result": "verified",
+      "finding": "1年以上 includes one year and longer. Both paragraphs retain some fertilizers as the source-scoped example and deny a common guaranteed duration for all actual products; activities retain the example scope."
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseReady": false,
+  "reviewFindings": [
+    "Read all six Japanese lessons and independently compared all 180 fields across 12 pairs, including each title, objective, activity, six paragraph titles and six paragraph bodies. This was a semantic review, not merely script conversion.",
+    "Both locales preserve 硝安 as the abbreviation for ammonium nitrate and one fertilizer rather than two, and preserve many blends containing organic fertilizer as frequency rather than high organic proportion or a universal ingredient definition.",
+    "Both locales preserve microbial decomposition versus chemical poor solubility, separate pellet shape from ingredients, restrict ABA teaching to seed dormancy, and retain ethylene flowering promotion and suppression.",
+    "Both locales preserve selective/non-selective affected-plant scope separately from uptake/application route, retain already-large-weed effectiveness limits, and distinguish equipment residues from outward drift without introducing product-use permissions.",
+    "Both locales preserve cabbage form and summer-region distinctions, Chinese cabbage cooking versus calendar, lettuce curled form versus transplantation, spinach breeding and year-round cultivation without one-plant continuous harvest, and onion edible-part versus transplant method.",
+    "Both locales preserve source-attributed regulator purposes, Unshu mandarin specificity, generic pear scope without narrowing to Japanese pears, preharvest timing, many-fruit-tree scope, and self-propelled versus ride-on type."
+  ]
+}
