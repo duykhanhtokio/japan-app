@@ -1,18 +1,18 @@
 # Nhà hàng / 外食業 — checkpoint 2026-10-26
 
-## Lô10 —5 bài nấu ăn11–15 ×12ngôn ngữ,6AI song song
+## Lô11 — 5 bài nấu ăn16–20 ×12ngôn ngữ,6AI song song
 
-Nhánh được người dùng cho phép: `duykhanhtokio/japan-app`, `feature/restaurant-20261026`. Base đã WORK PERSISTENCE PASS: `d7335160d9ac33e189f112eb5e6bb2b54e4e072b`. Lô10 chỉ lưu bền sau khi commit remote được fetch và đối chiếu thành công.
+Nhánh được người dùng cho phép: `duykhanhtokio/japan-app`, `feature/restaurant-20261026`. Base đã WORK PERSISTENCE PASS: `15268085cfae98abef04d017192f8fecd43308ef`. Lô11 chỉ lưu bền sau khi commit remote được fetch và đối chiếu thành công.
 
-- Thêm60 bản dịch cook11–15 đủ12locale,264đoạn và toàn bộ tiêu đề/mục tiêu/thuật ngữ/tóm tắt/hoạt động. Bài12 và14 có5đoạn; các bài khác4đoạn. SáuAI tác giả và rà chéo độc lập;60hash toàn bộ bản dịch khớp review cuối.
-- Rà chéo đã làm rõ tên máy đóng gói chân không Nepal, dụng cụ đánh trứng Khmer, tray chữ nhật/vuông Indonesia, display Filipino và vật liệu dụng cụ. Giữ đủ danh mục máy/dụng cụ,6nhóm máy,3mục mỗi nhóm và300gram; giữ các điều kiện an toàn/nhiệtđộ/khối lượng/dung tích. Native/domain/human false.
-- Tổng482 bản dịch bài:12locale mỗi40;hi/bn41. Giữ192 bản dịch câu. Toàn kho120bài/984câu vẫn chưa dịch đủ. Mỗi shard chỉ thêm đúng5bài; mọi record cũ/questions/ui giữ nguyên.
-- Cấu trúc PASS;complete FALSE; sàng lọc số5260trường PASS. Các số viết bằng chữ đã được peer review; numeric screen không chứng nhận nghĩa.
-- Browser PASS:60cặp mới ×2kích thước=120trường hợp, ngoài mẫu12locale; ảnh chụp chọn cook14, báo cáo locale-browser-qa.json. Dùng presentation/storage adapters; chưa Expo/native/thiết bị thật.
+- Thêm60 bản dịch cook16–20 đủ12locale,240đoạn và toàn bộ tiêu đề/mục tiêu/thuật ngữ/tóm tắt/hoạt động. Mỗi bài4đoạn. SáuAI tác giả và rà chéo độc lập;60hash toàn bộ bản dịch khớp review cuối,12hash shard đóng băng được đối chiếu trước tích hợp.
+- Rà chéo giữ đủ điều kiện vận chuyển đồ nóng/nặng, rút phích và dừng hẳn máy, cách ly khi vỡ kính, dùng hóa chất đúng cách, ưu tiên thoát nạn. Đã làm rõ bộ phận chung, thủy hải sản, phần thịt, bảng tra cứu, chốt an toàn Khmer và tên quả hồng Myanmar. Bài20 giữ từ đồng âm, hai nhãn リブリース/リブロース,3nhóm5từ và7–8–8–7phút. Native/domain/human false.
+- Tổng542 bản dịch bài:10locale mỗi45;hi/bn46. Giữ192 bản dịch câu. Toàn kho120bài/984câu vẫn chưa dịch đủ. Mỗi shard chỉ thêm đúng5bài; mọi record cũ/questions/ui giữ nguyên.
+- Cấu trúc PASS;complete FALSE; sàng lọc số5740trường PASS. Các số viết bằng chữ đã được peer review; numeric screen không chứng nhận nghĩa.
+- Browser PASS:60cặp mới ×2kích thước390×844/1440×900=120trường hợp, ngoài mẫu12locale; ảnh chụp chọn cook19, báo cáo locale-browser-qa.json. Đã xem ảnh VI/MY, không tràn ngang và điều khiển hoàn thành tiếp cận được. Dùng presentation/storage adapters; chưa Expo/native/thiết bị thật.
 - Giữ120 bài Nhật (59/61),800 câu luyện tập và184 câu tuần (96/88). Glossary692/692 có giải nghĩa;うぐいす骨 chỉ có định nghĩa hẹp theo nguồnふぐ, quan hệ sơ đồ cá chung còn chưa rõ.
 - Không đổi UI JLPT/ngành song song. Còn độ bao phủ nguồn, phần lớn bản dịch, hình/furigana và native QA. Không có tác vụ chạy ngầm sau phiên.
 
-Điểm tiếp tục: cook16trởđi theo12ngôn ngữ; vệ sinh16 cho10locale còn thiếu (hi/bn đã có); rà bao phủ nguồn, hình/furigana và app thật. Không coi số bản dịch là chứng nhận chuyên môn/người bản ngữ.
+Điểm tiếp tục: vệ sinh1号16 cho10locale còn thiếu (hi/bn đã có); dịch tiếp dịch vụ1号svc01trởđi và vệ sinh2号hyg11trởđi; rà bao phủ nguồn, hình/furigana và app thật. Không coi số bản dịch là chứng nhận chuyên môn/người bản ngữ.
 
 ---
 ## Checkpoint lịch sử trước lô tiếp nối
