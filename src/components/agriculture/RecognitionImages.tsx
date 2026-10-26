@@ -32,6 +32,11 @@ const assets:Record<string,ImageSourcePropType>={
  'unshu-mikan':require('../../../assets/agriculture/recognition/unshu-mikan-v1.webp'),
  yuzu:require('../../../assets/agriculture/recognition/yuzu-v1.webp'),
  loquat:require('../../../assets/agriculture/recognition/loquat-v1.webp'),
+ 'pvc-cover-film':require('../../../assets/agriculture/recognition/pvc-cover-film-v1.webp'),
+ 'agripoly-film':require('../../../assets/agriculture/recognition/agripoly-film-v1.webp'),
+ 'nonwoven-cover':require('../../../assets/agriculture/recognition/nonwoven-cover-v1.webp'),
+ 'shade-cloth':require('../../../assets/agriculture/recognition/shade-cloth-v1.webp'),
+ 'insect-net':require('../../../assets/agriculture/recognition/insect-net-v1.webp'),
 };
 type RecognitionImage={
  id:string;lessonIds:string[];lessonSourceHashes:Record<string,string>;
