@@ -56,6 +56,27 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
   await openLesson(candidate||first,locale);await page.getByTestId('restaurant-translation-toggle').click();const text=await page.locator('body').innerText();if(candidate){const t=shard.lessons[candidate.id];assert(text.includes(t.title)&&text.includes(t.objective)&&text.includes(t.summary)&&text.includes(t.activity));for(const p of candidate.paragraphs)assert(text.includes(t.paragraphs[p.id]));assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),locale+'/translation overflow');const complete=page.getByTestId('restaurant-complete');await complete.scrollIntoViewIfNeeded();const bounds=await complete.boundingBox();assert(bounds&&bounds.y>=-1&&bounds.y+bounds.height<=844+1,locale+'/completion control');if(['ne','my','th','km'].includes(locale)){const file='translated-'+locale+'-390x844.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}translatedPairs++;}else{assert(text.includes('この言語の訳は準備中です。'));missingPairs++;}
  }
  checks.translatedLocales=translatedPairs;checks.explicitMissingLocaleBehavior=missingPairs;
+ // Optionally verify every newly authored pair from a batch, not just one locale sample.
+ const translationBatch=process.env.RESTAURANT_QA_TRANSLATION_BATCH;
+ if(translationBatch){
+  const batch=JSON.parse(fs.readFileSync(translationBatch));let batchCases=0;
+  for(const item of batch.entries){
+   const lesson=lessons.find(l=>l.id===item.id);assert(lesson,'Batch lesson missing');
+   const shard=JSON.parse(fs.readFileSync(path.join(root,'src/data/restaurant/translations',item.locale+'.json'))),t=shard.lessons[item.id];
+   assert(t&&t.sourceHash===lesson.sourceHash&&item.sourceHash===lesson.sourceHash,'Stale batch pair');
+   for(const [width,height]of [[390,844],[1440,900]]){
+    await page.setViewportSize({width,height});await openLesson(lesson,item.locale);await page.getByTestId('restaurant-translation-toggle').click();
+    const text=await page.locator('body').innerText();for(const field of ['title','objective','summary','activity'])assert(text.includes(t[field]),item.locale+'/'+item.id+'/'+field);
+    for(const paragraph of lesson.paragraphs){assert(text.includes(t.paragraphTitles[paragraph.id]));assert(text.includes(t.paragraphs[paragraph.id]));}
+    for(const term of lesson.terms)assert(text.includes(t.terms[term.ja]),item.locale+'/'+item.id+'/term');
+    assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),item.locale+'/'+item.id+'/overflow');
+    const complete=page.getByTestId('restaurant-complete');await complete.scrollIntoViewIfNeeded();const bounds=await complete.boundingBox();assert(bounds&&bounds.y>=-1&&bounds.y+bounds.height<=height+1,'Batch completion reachable');
+    if(item.id==='rst-1-hyg-14'&&width===390){await page.getByTestId('restaurant-translation-toggle').scrollIntoViewIfNeeded();const file='batch-'+item.locale+'-'+item.id+'.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}batchCases++;
+   }
+  }
+  checks.translationBatchPairs=batch.entries.length;checks.translationBatchViewportCases=batchCases;
+ }
+
  if(!localeOnly){
  for(const level of ['1','2']){
   const exam=exams.find(e=>e.level===level&&e.kind==='practice'&&e.questions.length>1);if(!exam)continue;

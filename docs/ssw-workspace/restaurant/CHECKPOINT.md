@@ -1,17 +1,18 @@
 # Nhà hàng / 外食業 — checkpoint 2026-10-26
 
-## Lô05 — hiển thị cách đọc có chú thích và dịch bài vệ sinh
+## Lô06 — mở rộng bản dịch bài vệ sinh
 
-Nhánh được người dùng cho phép: `duykhanhtokio/japan-app`, `feature/restaurant-20261026`. Base đã xác minh và WORK PERSISTENCE PASS: `dd39f88540b080a4987e453eacaec6eee9a3ccfe`. Chỉ coi lô05 là lưu bền sau khi commit remote được fetch và đối chiếu thành công.
+Nhánh được người dùng cho phép: `duykhanhtokio/japan-app`, `feature/restaurant-20261026`. Base đã xác minh WORK PERSISTENCE PASS: `7c7340a8c9b97c3c9f4dcb981b57733ce4a4b06e`. Chỉ coi lô06 là lưu bền sau khi commit remote được fetch và đối chiếu thành công.
 
-- Giữ120 bài Nhật (59/61),800 câu luyện tập và184 câu tuần (96/88).
-- 691/692 thuật ngữ có giải nghĩa. Mục `うぐいす骨` vẫn là local blocker: chỉ mục dẫn tới trang in4 nhưng hình cá PDF8 không ghi nhãn này; không đoán vị trí giải phẫu.
-- Đã rà46 mục bị bộ lọc gắn cờ:45 mục có dấu ngoặc/ngăn cách, đọc đúng nhưng trước đây không được hiển thị. Hiện dùng dòng cách đọc riêng cho cả chú thích, giữ nguyên dấu câu. Một mụcヴィーガン được chuẩn hóa từう゛ぃーがん sangゔぃーがん. Không coi đây là chứng nhận toàn bộ phát âm bởi người bản ngữ. Báo cáo batch05-reading-review.json.
-- Thêm5 bài vệ sinh11–15 ×vi/en =10 bản dịch đầy đủ, đối chiếu trực tiếp tiếng Nhật hiện tại. Tổng262 bản dịch bài:vi/en25;hi/bn26;các ngôn ngữ khác20. Câu hỏi192 bản dịch giữ nguyên. Còn thiếu phần lớn nội dung cho12ngôn ngữ và bảng thuật ngữ.
-- Kiểm tra cấu trúc PASS;complete FALSE. Sàng lọc số3440trường PASS, không chứng nhận ngữ nghĩa. Browser thuật ngữ kiểm tra lại24trường hợp/4kích thước, thêm xác nhận cách đọc của mọi dòng gồm chú thích. UI JLPT byte lock10/10 PASS.
-- Chưa chạy Expo/native/thiết bị thật. Không có tác vụ chạy ngầm sau phiên.
+- Thêm5 bài vệ sinh11–15 ×id/zh-CN/zh-TW =15 bản dịch đầy đủ. Biên soạn trực tiếp theo bản Nhật có hash hiện tại, bản phồn thể dùng cách diễn đạt riêng. Không dùng dịch vụ dịch bên ngoài. Báo cáo batch06-translations.json.
+- Tổng277 bản dịch bài:en/vi/id/zh-CN/zh-TW mỗi25;hi/bn mỗi26;ne/my/th/km/tl mỗi20. Giữ192 bản dịch câu. Chưa đủ12ngôn ngữ cho toàn kho120 bài và984 câu.
+- Kiểm tra cấu trúc PASS;complete FALSE; sàng lọc số3560trường PASS, không chứng nhận ngữ nghĩa/người bản ngữ.
+- Bổ sung tùy chọn QA kiểm tra từng cặp dịch trong báo cáo lô: đầy đủ tiêu đề/mục tiêu/đoạn/tiêu đề đoạn/thuật ngữ/tóm tắt/hoạt động, không tràn ngang và nút hoàn thành truy cập được. Lô06 gồm15 cặp ở2kích thước=30trường hợp, ngoài kiểm tra mẫu12ngôn ngữ. Báo cáo locale-browser-qa.json.
+- Giữ120 bài Nhật (59/61),800 câu luyện tập và184 câu tuần (96/88). 691/692 thuật ngữ có giải nghĩa. Mục `うぐいす骨` vẫn cần xác minh vị trí giải phẫu; không đoán nghĩa.
+- Bản sửa lô05 giữ45 dòng cách đọc có dấu chú thích và chuẩn hóaヴィーガン. Không coi kiểm tra ký tự là chứng nhận phát âm toàn bộ.
+- Còn thiếu phần lớn bản dịch, đối chiếu bao phủ nguồn, hình và furigana toàn bài. Chưa chạy Expo/native/thiết bị thật. Không có tác vụ chạy ngầm sau phiên.
 
-Điểm tiếp tục: xác minh thuật ngữ giải phẫu còn vướng; đối chiếu bao phủ nguồn; mở rộng12ngôn ngữ; hoàn thiện hình/furigana toàn bài và kiểm thử app thật.
+Điểm tiếp tục: mở rộng5 bài vệ sinh11–15 cho5ngôn ngữ còn lại (ne/my/th/km/tl), kiểm tra hash hiện tại trước khi dịch; tiếp tục các bài khác; hoàn thiện hình/furigana và native QA. Không đánh dấu hoàn thành toàn bộ chỉ từ số lượng bài/câu.
 
 ---
 ## Checkpoint lịch sử trước lô tiếp nối
