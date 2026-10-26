@@ -11,13 +11,13 @@ This is an in-progress AI draft checkpoint. `courseComplete` and `releaseReady` 
 | id | 262 | 456 | 1200 | 18 |
 | zh-CN | 262 | 456 | 1200 | 18 |
 | zh-TW | 262 | 456 | 1200 | 18 |
-| hi | 189 | 312 | 0 | 18 |
-| bn | 0 | 0 | 0 | 18 |
-| ne | 98 | 60 | 0 | 18 |
-| my | 98 | 60 | 0 | 18 |
-| th | 211 | 300 | 0 | 18 |
-| km | 124 | 0 | 0 | 18 |
-| tl | 7 | 0 | 0 | 18 |
+| hi | 262 | 456 | 280 | 18 |
+| bn | 182 | 108 | 0 | 18 |
+| ne | 98 | 168 | 360 | 18 |
+| my | 98 | 168 | 360 | 18 |
+| th | 262 | 456 | 1200 | 18 |
+| km | 193 | 0 | 0 | 18 |
+| tl | 14 | 0 | 0 | 18 |
 
 Validation: source-bound content/schema check; 30-form/1,200-item mock identity, duration, balance, distinct-stem and lesson-coverage check; all mock ruby stem/option text aligned; mock state restoration/timer/independent grading checks; all 30 production exam forms exercised on full Expo 54 web with actual Royal, Safe Area, AsyncStorage and native-stack components, zero reported JavaScript errors. Seven new diagrams also passed load/ratio/expand/pan/close checks at 320 and 932 pixels. Scope and exact source digests are in batch12 QA reports.
 

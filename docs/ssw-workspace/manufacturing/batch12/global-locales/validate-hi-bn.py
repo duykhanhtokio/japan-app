@@ -1,7 +1,8 @@
 import json,pathlib,hashlib,re
 P=pathlib.Path(__file__).parent;ROOT=P.parents[4]
-lessons={};questions={}
+lessons={};questions={};mocks={}
 for track in ['mechanical','electrical','surface']:
+ m=json.load(open(ROOT/f'src/data/manufacturing/mocks/{track}.json'));mocks.update({q['id']:q for e in m['exams'] for z in e['sections'].values() for q in z['questions']})
  c=json.load(open(ROOT/f'src/data/manufacturing/{track}.json'));lessons.update({l['id']:l for l in c['lessons']});questions.update({q['id']:q for w in c['checks'] for q in w['questions']})
  for name in ['new-content.json','gap-content.json']:
   f=ROOT/f'docs/ssw-workspace/manufacturing/batch12/{track}/{name}'
@@ -31,9 +32,15 @@ for locale in ['hi','bn']:
    assert all(isinstance(z,str) and z.strip() and not cjk.search(z) for z in texts),key
   for key,t in qq.items():
    j=questions[key];assert t['sourceHash']==j['sourceHash'];assert t['translatedDirectlyFrom']=='ja';assert not t['nativeReviewed'] and not t['domainReviewed'];assert len(t['options'])==len(j['optionsJa'])==len(t['reasons']);assert len(set(t['options']))==len(t['options']);assert all(z and not cjk.search(z) for z in [t['stem']]+t['options']+t['reasons'])
+  mm={}
+  for f in lp.glob('mocks-*.json'):
+   d=json.load(open(f));assert d['locale']==locale
+   for k,t in d['questions'].items():assert k not in mm;mm[k]=t
+  for key,t in mm.items():
+   j=mocks[key];assert t['sourceHash']==j['sourceHash'];assert t['translatedDirectlyFrom']=='ja';assert not t['nativeReviewed'] and not t['domainReviewed'];assert t['status']=='ai_translated_draft';assert len(t['options'])==len(j['optionsJa'])==len(t['reasons']);assert len(set(t['options']))==len(t['options']);assert all(isinstance(z,str) and z.strip() and not cjk.search(z) for z in [t['stem']]+t['options']+t['reasons']),key
   caps={}
   for f in lp.glob('captions-*.json'):
    d=json.load(open(f));assert d['locale']==locale
    for k,t in d['captions'].items():assert k not in caps;assert t['sourceJa']==captionSources[k];assert t['text'] and not cjk.search(t['text']);caps[k]=t
-  counts[locale][track]={'lessons':len(ll),'weeklyQuestions':len(qq),'captions':len(caps),'mocks':0}
-checkpoint=P/'hi-bn-checkpoint.json';d=json.load(open(checkpoint));d.update(counts);d['next']='Continue Hindi frozen new units: electrical043–098, surface043–073; extend all tracks to frozen262lessons456weeklyquestions, allmocks; then Bangla electrical/surface; root owns Bangla mechanical lessons/weekly. Hindi mechanical91/156 complete. All133baselineHindi lessons and228weekly complete; all18Hindi and all18Bangla captions complete. RootcanonicalfreezeACKreceived.';d['chunkDigests']={str(f.relative_to(P)):hashlib.sha256(f.read_bytes()).hexdigest() for locale in ['hi','bn'] for f in (P/locale).rglob('*.json') if f.name!='terminology.json'};d['authorStructureAndJapaneseResidueCheck']='PASS';checkpoint.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'status':'PASS','counts':counts},ensure_ascii=False))
+  counts[locale][track]={'lessons':len(ll),'weeklyQuestions':len(qq),'captions':len(caps),'mocks':len(mm)}
+checkpoint=P/'hi-bn-checkpoint.json';d=json.load(open(checkpoint));d.update(counts);d['next']='Hindi curriculum262lessons456weekly18captions draft complete; continue1200Hindi mock items. Bangla lesson/weekly/mocks owned by specialty workers; preserve completed18Bangla captions. All flags AI draft, native/domain review pending.';d['chunkDigests']={str(f.relative_to(P)):hashlib.sha256(f.read_bytes()).hexdigest() for locale in ['hi','bn'] for f in (P/locale).rglob('*.json') if f.name!='terminology.json'};d['authorStructureAndJapaneseResidueCheck']='PASS';checkpoint.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'status':'PASS','counts':counts},ensure_ascii=False))

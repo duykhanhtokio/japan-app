@@ -108,6 +108,7 @@ def main():
  manifest['completedMockExams']=30
  write(STAGE/'mock-source-binding-normalization.json',mock_binding_remaps)
  manifest['courseComplete']=False;manifest['releaseReady']=False;write(DATA/'course-manifest.json',manifest);write(DOCS/'knowledge-matrix.json',matrix)
+ translation_aliases={}
  registry=read(DATA/'translations/manifest.json');targets=list(registry['locales']);locale_lessons={};locale_questions={};locale_mocks={};caption_data=read(DATA/'diagram-translations.json')
  # Retain valid existing translations, then overlay full staged fields only.
  for locale in targets:
@@ -128,6 +129,11 @@ def main():
     if not isinstance(entries,dict):continue
     for identifier,translation in entries.items():
      if not isinstance(translation,dict) or not translation.get('sourceHash'):continue
+     if key=='questions' and 'reasons' not in translation and isinstance(translation.get('optionReasons'),list):
+      original=translation
+      assert isinstance(original.get('options'),list) and len(original['options'])==len(original['optionReasons']) and all(isinstance(v,str) and v.strip() for v in original['optionReasons']),identifier
+      translation={k:v for k,v in original.items() if k!='optionReasons'};translation['reasons']=original['optionReasons']
+      translation_aliases[locale+':'+identifier]={'sourceHash':original['sourceHash'],'fromField':'optionReasons','toField':'reasons','reasonCount':len(original['optionReasons']),'targetReasonStringsUnchanged':translation['reasons']==original['optionReasons'],'originalPayloadSha256':hash_object(original),'normalizedPayloadSha256':hash_object(translation)}
      if key=='lessons' and not all(k in translation for k in ['title','objective','paragraphs','terms','activity','safety','summary']):continue
      if key=='questions' and not all(k in translation for k in ['stem','options','reasons']):continue
      if identifier in known and (translation['sourceHash']==known[identifier]['sourceHash'] or (identifier in normalized_bindings and translation['sourceHash']==normalized_bindings[identifier]['from'])):
@@ -160,12 +166,14 @@ def main():
  for locale,entries in locale_mocks.items():existing_mock_locales.setdefault(locale,{}).update(entries)
  write(DATA/'mock-translations.json',{'sourceLocale':'ja','status':'ai_translated_draft','nativeReviewed':False,'domainReviewed':False,'locales':existing_mock_locales})
  progress=read(DOCS/'progress.json');progress.update(batch='12-in-progress',authoredJapaneseLessons=len(all_lessons),aiEditorialReviewedJapaneseLessons=len(all_lessons),integratedPreviewLessons=len(all_lessons),weeklyChecks=sum(len(c['checks']) for c in courses.values()),weeklyQuestions=len(all_questions),tocEntriesWithDraftLessons=sum(bool(k.get('lessonIds')) for k in knowledge.values()),translatedLessonLocalePairs=sum(e['lessonCount'] for e in registry['locales'].values()),translatedQuestionLocalePairs=sum(e['questionCount'] for e in registry['locales'].values()),translatedDiagramCaptionLocalePairs=sum(len(x) for x in caption_data['locales'].values()),fullyDraftTranslatedLocalesForAuthoredContent=complete,partiallyDraftTranslatedLocales=partial,wholeCurriculumComplete=False,releaseReady=False)
+ progress['draftUiLabelsPerLocale']=len(read(DATA/'ui-translations.json')['locales']['ja'])
  progress['originalMocksCompleted']=30
  progress['createdDiagrams']=18;progress['usedDiagrams']=18
  progress['mockTranslationCoverage']={l:len(existing_mock_locales.get(l,{})) for l in targets}
  progress['diagramTranslationCoverage']={l:len(caption_data['locales'].get(l,{})) for l in targets}
  progress['fullyDraftTranslatedLocalesForAllCurrentContent']=[l for l in complete if len(existing_mock_locales.get(l,{}))==1200 and len(caption_data['locales'].get(l,{}))==18]
  progress['lessonTranslationCoverage']={l:e['lessonCount'] for l,e in registry['locales'].items()};progress['questionTranslationCoverage']={l:e['questionCount'] for l,e in registry['locales'].items()};progress['previewWeeksBySpecialty']={s['id']:len(s['weeks']) for s in manifest['specialties']};write(DOCS/'progress.json',progress)
+ write(STAGE/'translation-schema-normalization.json',translation_aliases)
  write(STAGE/'integration-input-digests.json',input_digests)
  write(STAGE/'source-binding-normalization.json',normalized_bindings)
  print(json.dumps({'lessons':len(all_lessons),'weeklyQuestions':len(all_questions),'weeks':progress['previewWeeksBySpecialty'],'translatedLessonPairs':progress['translatedLessonLocalePairs'],'translatedQuestionPairs':progress['translatedQuestionLocalePairs'],'completeDraftLocales':complete,'courseComplete':False}))
