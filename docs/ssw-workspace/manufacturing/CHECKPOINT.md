@@ -1,40 +1,39 @@
-# Manufacturing SSW1 — batch02 integrated checkpoint
+# Manufacturing SSW1 — batch03 integrated checkpoint
 
-Date: 2026-10-26 (Asia/Tokyo). Branch: recovery/jlpt-n3-n1. Baseline:1ac615db.
-Scope remains ONLY the three uploaded SSW1 textbooks. No SSW2 attachment or content used.
+Date:2026-10-26 (Asia/Tokyo). Branch:recovery/jlpt-n3-n1. Baseline:8fdd3fe3.
+Only the three uploaded SSW1 textbooks are used. SSW2 remains excluded.
 
-## Current verified authored/integrated scope
+## Current authored and preview scope
 
-- 63 original Japanese lessons:21per specialty (24retained +39new). Three complete preview weeks per specialty; these are not the full curriculum duration. Approximately30minutes with written practice perlesson is an unmeasured target.
-- 9 formative weekly checks:12questions each,108total (36retained +72new). Every taught lesson in each represented week has a question. Answers balanced3eachposition/check, no triple; new6checks have distinct answersequences. Source and crossbatch semantic reviews performed; two new questions were rewritten to avoid repeated reasoning. This is NOT30official mockexams; completed mock count remains0/30.
-- Vietnamese and English cover all63lessons and108questions as explicit AI drafts. Indonesian covers the first8lessons andfirstweeklycheck ofeach specialty only:24/63lessons,36/108questions. Missing target translations remain explicit, with no runtime machine-translation API or English fallback.
-- Totals:150lesson–locale pairs and252question–locale pairs. Other9targetlocales have UI labels only; Indonesian also has39lessons/72questions still untranslated.35UIlabels have draft translations for all12targets (plusJapanese).
-- Five original2D-color diagrams are now used: Ohm, QC control information, surface process controls, series/parallel quantities and g/L versus mol/L. Small-screen enlargement opens a960px-minimum image with horizontal/vertical scrolling and a fixed close control. No new lesson/image is a source-page reproduction.
-- Existing Japanese-first reader, week calendar, ivory/day-night surfaces, learner/specialty progress keys, revision-bound quiz resume and post-submission explanations retained. Dev-preview/public-release gate preserved.
+- 105 original Japanese lessons:35per specialty;42new and63retained. Five full preview weeks per specialty, not the full curriculum duration. Approximately30minutes with written practice is an unmeasured learning target.
+- 15 formative weekly checks,12questions each:180total,72new. All7lessons of eachweek have a check item. Balanced3answers/position percheck, no triples,6distinct newanswersequences. Seven newquestion/reasoning/alignment revisions addressed crossbatch overlap or lesson coverage. These are NOT official mocks; completed official-format mock count remains0/30.
+- English/Vietnamese cover all105authored lessons and180questions as AI drafts. Indonesian covers first21lessons/specialty andweeks1–3:63/105lessons and108/180questions;39lessons/72questions added in thisbatch. IDstill lacks the new42lessons/72questions; other9targetlocales have UIlabels only.
+- Totals273lesson–locale pairs,468question–locale pairs.35UIlabels available in all12targetlocales.24diagramcaption pairs (8figures×EN/VI/ID) are revision-bound to exactcanonical Japanese captions andshown by the learner's translationtoggle. Image lettering remains canonicalJapanese; targetcaptions explain it.
+- Eight original controlled2D-color diagrams are used; newrolling/extrusion, idealACtransformer ratio, andcharge/currentefficiency. Sourceconfirmed by relevantlesson authors, PNGs rendered and visuallychecked. Min960px expansion, horizontal/vertical pan andfixedclose control retained. No source-page image is redistributed.
+- Japanese-first dailyreader, separateweeklychecks, weekcalendar, ivory/day-night surfaces, completionreturn, namespaced learner/specialty progress andrevision-bound answerresume retained. Existing63lessons/108questions andtheirrevisions unchanged, see batch03-baseline-compatibility.json. Devpreview gate preserved; no production-ready claim.
 
-## Source audit and revisions
+## Source semantic work
 
-- Three SHA-bound sources remain169+198+207=574physical pages,487TOC entries.
-- New structural page-object inventory enumerates every574page and487TOC link. Printed footers checked with0offset mismatches; frontmatter and colophon pages remain unnumbered.35source-chapter groups are provisional planning units, not35weeks.
-- Machine image/table/formula/vector candidates are NOT verified semantic objects. Full page-object semantic inventory, source knowledge coverage and full curriculum allocation remain incomplete; source-gap-review.json explicitly retains544body-page gaps.
-- Preserve July2026 textbook identities and October1errata overlays. Additional source printed98normality prose contradicts its example; no normality formula from that passage was taught. Surface lesson012uses corrected acidic/basic oxide definitions.
-- Precise current-density formula source printed147/PDF157 added to old surface lesson006 and formative003. Their learner text/answers are unchanged; dependent source hashes/quizrevision rebound. Other old learner text/answers protected, see batch02-baseline-compatibility.json.
+- Source identities remain169+198+207=574physicalpages and487TOC entries. Existingstructuralinventory complete; fullknowledge/objectatomization remainsincomplete.203TOC entries have one ormore draftlesson links, not203certified-completeknowledge units.
+- Batch03 actuallyrendered/read30newbodypages (10/specialty), including allvisibletext,diagrams,tables,formulae,labels/footers.106meaningful technicalobjects have paraphrasedscope, approximatepageboxes,matrixIDs andsourcehashes. This is notsentence-by-sentence atomization or574pagecertification.
+- Three additionalcolophons read, unnumbered: secondeditionJuly2026, firsteditionDecember2025, editedAOTS/publishedJAIM. Verifiededition evidence added toall3inventories andsourceQAmetadata. Canonicalsurface title followscover/overview despiteinternalcolophontitlevariant.
+- 65scopequalifications/ambiguitynotes are NOT65confirmederrors. Report flags motor synchronous/rotorspeed wording, resistremoval/electron-arrow/paint-polarity andAASSpH issues; authors avoided unsupportedabsolutes. PriorOctober1errata andnormality-sourcecontradiction remain applicable. Do notteach uncertainstandardrecipes as currentrequirements.
+- All42newlesson source/matrix references audited:0unknownIDs,0badpageoffsets,0out-of-bodyrefs,0duplicatepages. Full35chapter remaining-summary retained in source-review. Source-page renders stay scratch-only; commitonly descriptiveledger/review.
 
-## QA and tests
+## QA and validation
 
-- IndependentAI review: all39newJapanese lessons and72newJapanese questions;78EN/VI lessonpairs+144EN/VI questionpairs (222pairs,2570fields). Separate review of24Indonesian lessonpairs+36questionpairs (60pairs,708fields). Identified technical/meaning/fluency issues were corrected; current runtime/source hashes are in the two batch02QA reports. These are not native/domain/release certificates.
-- `scripts/manufacturing/check.cjs`: source/offset/574page inventory,487knowledge IDs, hashes, global unique question IDs/stems, weekly taught coverage, answer distribution, translations and progress/session behavior PASS at63lessons/108questions/150lessonpairs/252questionpairs.
-- Browser test:41checks PASS,21screenshots generated across five sizes320x568,390x844,768x1024,1440x900,932x430. Includes150available translated-reader visits,6newweeklychecks, existing resume/submission/save-failure behavior, missing-translation display and answer-rationale concealment before submission. Actual PNGs loaded with natural-width checks; selected new screenshots retained in browser/.
-- Focused image test:6enlarge/load/horizontal-pan/close checks PASS at320and932widths. Selected expanded-phone screenshot retained; see browser/batch02-zoom-result.json.
-- Browser runs actual manufacturing React Native Web components with storage/safe-area/Royal-backdrop adapters. They do NOT certify full Expo navigation/backdrop, native devices or whole-app startup performance.
-- Three changed TS source files syntax-transpile PASS; JLPT byte-lock10/10PASS. Full semantic TypeScript, Expo build and repository lint remain unrun: this sparse checkout lacks the Expo/TypeScript dependencies and ordinary full-app assets. Esbuild's missing expo/tsconfig.base warning is recorded, not counted as full-build success.
+- IndependentAI primaryreview:42newJapanese lessons and72newJapanese questions;84EN/VIlessonpairs+144EN/VIquestionpairs=228pairs/2668fields. SeparateIDreview:39lessonpairs+72questionpairs=111pairs/1285fields. Separate24diagramcaptionreview. Allidentifiedissues corrected; currentnormalizedhashes andscope are in batch03QA reports. Native/domain/release certification remainsfalse.
+- `scripts/manufacturing/check.cjs` PASS:105lessons,180weeklyquestions,273lessonpairs,468questionpairs,24captionpairs;574structuralpages,30newsemanticreadings/106objects,global IDs/stems/sourceoffsets/links/revisions, PNGdimensions,progress/sessionbehavior andperweeklytaughtcoverage.
+- Actualmanufacturing ReactNativeWeb browser test PASS48checks,21screenshots generated across320x568,390x844,768x1024,1440x900,932x430. Includes273translatedreader visits,24caption visits, weeks2–5checks, answerresume/submission/noearlyrationales, storagefail/retry/return, actualimage-load verification andnewdiagrams. Selectedscreenshots stored in browser/; see batch03-result.json.
+- Focusedimage test PASS6enlarge/load/horizontal-pan/close checks on320and932widths;12screenshots generated,selectedexpandedphoneevidence retained. See batch03-zoom-result.json.
+- Browser uses storage/safe-area/Royalbackdrop adapters. It does NOTcertify fullExpo navigation/backdrop, native devices orwhole-appstartupperformance. TwochangedTScomponents syntax-transpile PASS; JLPTbyte-lock10/10PASS. FullsemanticTypeScript, Expo build andrepositorylint remainunrun because the sparsecheckout lacks projectExpo/TypeScript dependencies andordinaryfull-appassets. Esbuild's missingexpo/tsconfig.base warning is recorded, nottreated as fullbuildsuccess.
 
-## Next work
+## Remaining work
 
-1. Resolve remaining page-level semantic objects/source ambiguities and full curriculum allocation; structural page coverage is not full taught coverage.
-2. Continue remaining source units for each specialty, associated illustrations and week checks; retain deliberate prerequisites/common-foundation mapping.
-3. Complete10original official-format forms per specialty (30total). Implement30true/false theory/40minutes and10practical MCQ/40minutes, independent section thresholds/timers. Four-choice formative checks are not this runner.
-4. Finish Indonesian missing39/72 and the other9languages across all authored content, then remaining content/UI. Keep source revisions and explicit partial locale manifests.
-5. Perform full Expo/build/type/lint and actual whole-app/device verification in a complete checkout. Preserve JLPT UI and other sectors.
+1. Finish remaining sourceknowledge/objectatomization andfullcurriculumallocation, with preciseprerequisites/common-foundation identity. Machineinventory andselectedfullvisualreadings do notmean completecurriculumcoverage.
+2. Author remainingunits, mappedimages andweeklychecks; resolve sourceambiguities before affectedmaterial is taught.
+3. Finish Indonesian missing42lessons/72questions andtheother9targetlanguages, then remainingnewcontent/UI/captions. No runtime translationAPI orsilentEnglishfallback.
+4. Create10original official-format forms/specialty,30total; implement30true/false theory/40minutes +10practicalMCQ/40minutes, independentsectiontimers/thresholds. Four-choiceweeklychecks are not thisrunner.
+5. RunfullExpo/type/lint/build andwhole-app/devicechecks in acompletecheckout. Preserve approvedJLPTUI, othersectors andexistingprogress.
 
-Resume from progress.json, knowledge-matrix.json, page-object-inventory.json, source-gap-review.json, course-manifest.json and validators. No background worker is implied by this checkpoint. All native/domain/release flags remain false; wholeCurriculumComplete remains false.
+Resume from progress.json, knowledge-matrix.json, page-object-inventory.json, batch03semantic/source/QA reports, course-manifest.json andvalidators. Wholecurriculum/release flags remainfalse. No backgroundworker is implied by thischeckpoint.
