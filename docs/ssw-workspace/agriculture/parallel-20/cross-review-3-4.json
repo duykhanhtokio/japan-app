@@ -1,0 +1,1813 @@
+{
+  "schemaVersion": 1,
+  "id": "agriculture-parallel-20-cross-review-3-4",
+  "status": "independent_conservative_semantic_review_complete_pending_root_integration",
+  "reviewedPackets": [
+    {
+      "path": "docs/ssw-workspace/agriculture/parallel-20/objectives-3.json",
+      "sha256": "ae8507b59a0503689ef2c9db64dbbedbd17d170265751a197c3d15b047832fce"
+    },
+    {
+      "path": "docs/ssw-workspace/agriculture/parallel-20/objectives-4.json",
+      "sha256": "1c65f09602287ae2eb892f87e77557d7b704b754fb8f32d31ea86073ca14edba"
+    }
+  ],
+  "canonicalInputSha256": {
+    "src/data/agriculture/lessons.ja.json": "1fb86d2592f676c99bb35580582a85be8c6145c52f9297acfeb73ead1a7a1b9f",
+    "src/data/agriculture/weekly-checks.ja.json": "6c19836b0cc1c00015842a7872bc5c31f3b38f8c18c6897c1e807497ab05675a"
+  },
+  "method": "Read every proposed group3 candidate and all group4 proposed objects against canonical referenced paragraphs. Reused full388stem/correct-answer semantic screen; directly read relevant options and explanations to detect exposed facts. Explicitly reject crop/example/number/name substitutions and collapse adjacent paragraphs from one underlying task family. Review source claims are limited to current canonical text, not original PDFs.",
+  "summary": {
+    "entriesReviewed": 71,
+    "originallyEligibleEntries": 52,
+    "dispositions": {
+      "reject_as_new_independent_construct": 18,
+      "retain_provisional_distinct_cluster": 29,
+      "merge_do_not_count_separately": 5,
+      "preserve_existing_hold_not_promoted": 19
+    },
+    "newQuestions": 0,
+    "sourceOccurrencesClosed": 0,
+    "globalUniqueAssessableObjectiveCount": null,
+    "enoughDistinctObjectivesFor800Certified": false
+  },
+  "entries": [
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-field-p1",
+      "lessonId": "agr-ricework-field",
+      "sourceHash": "1e53e3a1089d7033024a8463e7f8efae37e5430115d24886e37ba3a4934db8f2",
+      "objectiveJa": "育苗箱とは別に、本田の耕うん・平らにする準備を説明する。",
+      "paragraphIds": [
+        "agr-ricework-field-p1"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-FIELD-01"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-water-soil-q12",
+          "stemJa": "耕うんと深耕の説明として正しいものはどれですか。",
+          "correctAnswerJa": "耕うんは土を掘り返す作業で、深く耕うんすることが深耕である。"
+        },
+        {
+          "questionId": "agr-par06-terms-recognition-q01",
+          "stemJa": "作業日報にある「整地」の読みとして正しいものはどれですか。",
+          "correctAnswerJa": "せいち"
+        }
+      ],
+      "reason": "Basic tillage/levelling contrasted with nursery preparation adds a task-context contrast, not another distinct construct. Merge with group5 land-levelling-task-meaning if that semantic candidate survives, never count both.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-field-p4",
+      "lessonId": "agr-ricework-field",
+      "sourceHash": "1e53e3a1089d7033024a8463e7f8efae37e5430115d24886e37ba3a4934db8f2",
+      "objectiveJa": "田植機の条数を、一度に植える列の数として読み取る。",
+      "paragraphIds": [
+        "agr-ricework-field-p4"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-FIELD-04"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-water-p1",
+      "lessonId": "agr-ricework-water",
+      "sourceHash": "346f840fd4a7283f1cb0b500ca46141c00c9df5f25937800267a3e87c6db1f60",
+      "objectiveJa": "移植直後の入水を苗の保護という目的と結び付ける。",
+      "paragraphIds": [
+        "agr-ricework-water-p1"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-WATER-01"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-water-p2",
+      "lessonId": "agr-ricework-water",
+      "sourceHash": "346f840fd4a7283f1cb0b500ca46141c00c9df5f25937800267a3e87c6db1f60",
+      "objectiveJa": "新しい根・葉の発生に応じて浅水管理へ進む関係を説明する。",
+      "paragraphIds": [
+        "agr-ricework-water-p2"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-WATER-02"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "merge_do_not_count_separately",
+      "mergeIntoReference": "agr-ricework-water-p1",
+      "existingQuestionEvidence": [],
+      "reason": "Transplant protection by initial watering and later shallow water are stages of one growth-conditioned transplant water-management sequence. Count one sequence, not a second paragraph-sized objective.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-water-p4",
+      "lessonId": "agr-ricework-water",
+      "sourceHash": "346f840fd4a7283f1cb0b500ca46141c00c9df5f25937800267a3e87c6db1f60",
+      "objectiveJa": "中干しを生育に応じた落水・田面の乾燥として説明する。",
+      "paragraphIds": [
+        "agr-ricework-water-p4"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-WATER-04"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-harvest-p1",
+      "lessonId": "agr-ricework-harvest",
+      "sourceHash": "8dd1edce7c251e2fe68b10829c0c27c12ed584445439d784ae690a656e8200f8",
+      "objectiveJa": "幼穂分化と外に穂が出た出穂を区別する。",
+      "paragraphIds": [
+        "agr-ricework-harvest-p1"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-HARVEST-01"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-harvest-p3",
+      "lessonId": "agr-ricework-harvest",
+      "sourceHash": "8dd1edce7c251e2fe68b10829c0c27c12ed584445439d784ae690a656e8200f8",
+      "objectiveJa": "出穂から収穫まで30～60日という掲載目安の幅を保持する。",
+      "paragraphIds": [
+        "agr-ricework-harvest-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-HARVEST-03"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Retaining a30–60day textbook range instead of universalising it repeats conditional calendar/range reading; a different crop/time value alone is not an independent construct.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-processing-p1",
+      "lessonId": "agr-ricework-processing",
+      "sourceHash": "20131e8d2a98b9c430824bf399f6911fff9f1eccaee6da7754d92f15aa87b2f3",
+      "objectiveJa": "収穫直後のもみ水分20～27％を収穫後工程の状態として読む。",
+      "paragraphIds": [
+        "agr-ricework-processing-p1"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-PROCESSING-01"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-ricework-weekly-q11",
+          "stemJa": "資料の「もみの水分14～15％」の読み方として適切なものはどれですか。",
+          "correctAnswerJa": "乾燥後のもみの水分についての例であり、機械の設定温度ではない。"
+        }
+      ],
+      "reason": "Existing q11 reason explicitly states harvest moisture20–27% versus dried14–15%; the proposed proposition is already exposed exactly, not merely a new number.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-processing-p5",
+      "lessonId": "agr-ricework-processing",
+      "sourceHash": "20131e8d2a98b9c430824bf399f6911fff9f1eccaee6da7754d92f15aa87b2f3",
+      "objectiveJa": "収穫後の田で切り株・わらを耕うんで土へ埋める管理を説明する。",
+      "paragraphIds": [
+        "agr-ricework-processing-p5"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-PROCESSING-05"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-lowcost-p2",
+      "lessonId": "agr-ricework-lowcost",
+      "sourceHash": "236f4ee8903164b27aa2e1d3224494533a09aa8e1752e7b316b49f03d08e2118",
+      "objectiveJa": "湛水直播を、耕起・代かき後の土中又は表面への播種として説明する。",
+      "paragraphIds": [
+        "agr-ricework-lowcost-p2"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-LOWCOST-02"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-ricework-weekly-q14",
+          "stemJa": "乾田直播の水の状態の流れとして、本文に合うものはどれですか。",
+          "correctAnswerJa": "乾いた状態で播種し、出芽後もしばらく畑状態で、その後に水を入れる。"
+        }
+      ],
+      "reason": "Flooded versus dry direct seeding is the same water-state-at-sowing classification already exercised by q14 and its alternatives. No independent count for the opposite method label; seed coating would need its own verified mechanism rather than this broad proposition.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-feed-p3",
+      "lessonId": "agr-ricework-feed",
+      "sourceHash": "2ad9058186e1ad31fbcf430fdf97558789c9249a05d08f421fc46082ce7c5baf",
+      "objectiveJa": "稲WCSの掲載収穫段階を黄熟期ごろとして位置付ける。",
+      "paragraphIds": [
+        "agr-ricework-feed-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-FEED-03"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-ricework-weekly-q16",
+          "stemJa": "資料で稲WCSとして説明される形はどれですか。",
+          "correctAnswerJa": "完熟前に収穫してサイレージにした粗飼料。"
+        }
+      ],
+      "reason": "Yellow-ripe timing narrows the already-tested pre-full-maturity WCS harvest-stage axis. It may refine the content inventory, but should not become another independent assessment objective based solely on naming one maturity stage.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-stages-p2",
+      "lessonId": "agr-ricework-stages",
+      "sourceHash": "0ff78d87faaff5a755e8d6d674ad1034a7b4583721e3a619f03f502bc71f998c",
+      "objectiveJa": "茎が増えても全て穂になるとは限らない無効分げつを説明する。",
+      "paragraphIds": [
+        "agr-ricework-stages-p2"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-STAGES-02"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-stages-p4",
+      "lessonId": "agr-ricework-stages",
+      "sourceHash": "0ff78d87faaff5a755e8d6d674ad1034a7b4583721e3a619f03f502bc71f998c",
+      "objectiveJa": "穂が外へ出る前の葉鞘の膨らみを穂ばらみ期に対応させる。",
+      "paragraphIds": [
+        "agr-ricework-stages-p4"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-STAGES-04"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "merge_do_not_count_separately",
+      "mergeIntoReference": "agr-ricework-harvest-p1",
+      "existingQuestionEvidence": [],
+      "reason": "Panicle differentiation, booting and heading form one rice developmental-stage-to-observation mapping family; splitting each named stage inflates the denominator.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-stages-p5",
+      "lessonId": "agr-ricework-stages",
+      "sourceHash": "0ff78d87faaff5a755e8d6d674ad1034a7b4583721e3a619f03f502bc71f998c",
+      "objectiveJa": "有効茎のおよそ半数が出穂したほ場段階を出穂期の目安として読む。",
+      "paragraphIds": [
+        "agr-ricework-stages-p5"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-STAGES-05"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "merge_do_not_count_separately",
+      "mergeIntoReference": "agr-ricework-harvest-p1",
+      "existingQuestionEvidence": [],
+      "reason": "Field-level half-effective-stem heading criterion belongs to the same rice stage/observable definition comparison; preserve the criterion without adding a stage-name objective count.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-ricework-stages-p6",
+      "lessonId": "agr-ricework-stages",
+      "sourceHash": "0ff78d87faaff5a755e8d6d674ad1034a7b4583721e3a619f03f502bc71f998c",
+      "objectiveJa": "成熟期を穀粒の硬化と胚乳全体の透明化に対応させる。",
+      "paragraphIds": [
+        "agr-ricework-stages-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-STAGES-06"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "merge_do_not_count_separately",
+      "mergeIntoReference": "agr-ricework-harvest-p1",
+      "existingQuestionEvidence": [],
+      "reason": "Grain hardening/endosperm appearance completes the same source-stage mapping family. Retain its facts inside one integrated chronology/observable objective.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-vegwork-leafy-p2",
+      "lessonId": "agr-vegwork-leafy",
+      "sourceHash": "26d96561c7d849c21163f237569848e8e965535fc1f720c9506f7a1d13575a93",
+      "objectiveJa": "ハクサイには結球・半結球・非結球の型があると説明する。",
+      "paragraphIds": [
+        "agr-vegwork-leafy-p2"
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-LEAFY-02"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-vegwork-leafy-p4",
+      "lessonId": "agr-vegwork-leafy",
+      "sourceHash": "26d96561c7d849c21163f237569848e8e965535fc1f720c9506f7a1d13575a93",
+      "objectiveJa": "レタスの高温による花芽分化を、葉の生育に好む涼しさと区別する。",
+      "paragraphIds": [
+        "agr-vegwork-leafy-p4"
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-LEAFY-04"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-shared-w02-q10",
+          "stemJa": "ある程度成長した後、規則的に花芽分化する例として本文にある作物はどれですか。",
+          "correctAnswerJa": "トマト"
+        },
+        {
+          "questionId": "agr-shared-w02-q11",
+          "stemJa": "短日植物について、暗い時間に着目した説明はどれですか。",
+          "correctAnswerJa": "一定の長さより暗い時間が長い条件で花芽分化する。"
+        },
+        {
+          "questionId": "agr-shared-w02-q12",
+          "stemJa": "低温に遭うことによる花芽分化の例はどれですか。",
+          "correctAnswerJa": "ダイコン・キャベツ・ブロッコリー"
+        }
+      ],
+      "reason": "The bank already tests crop-dependent floral induction cues including temperature/daylength. Substituting lettuce/high-temperature as another crop-condition example must not increment a distinct-objective denominator.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-vegwork-rootvegetables-p4",
+      "lessonId": "agr-vegwork-rootvegetables",
+      "sourceHash": "839249e06bc74a1a6c676190e0ac95ada4ee5611d949687850e20dabf7f00ecd",
+      "objectiveJa": "ニンジンのカロテンと食用加工の特徴を整理する。",
+      "paragraphIds": [
+        "agr-vegwork-rootvegetables-p4"
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-ROOTVEGETABLES-04"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-vegwork-weekly-q11",
+          "stemJa": "茶として加工するチャノキの部位はどれですか。",
+          "correctAnswerJa": "葉や茎"
+        },
+        {
+          "questionId": "agr-par12-riceveg-q03",
+          "stemJa": "国産ダイズの主な食品用途として、2号資料に載っている組合せはどれですか。",
+          "correctAnswerJa": "豆腐・納豆・煮豆・味噌・醤油。"
+        }
+      ],
+      "reason": "A new crop nutrient/food-use fact extends crop-use recall. Carrot/juice cannot be counted as a new independent skill against tea usable parts and soy-food uses; do not invent a nutritional decision task absent from this paragraph.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-vegwork-fruitvegetables-p1",
+      "lessonId": "agr-vegwork-fruitvegetables",
+      "sourceHash": "04fb06868a5993603b810120d7bb02819ac8cf94c67c251c5a15cd0063d59115",
+      "objectiveJa": "トマトの品種を生食用と加工用の利用目的で分ける。",
+      "paragraphIds": [
+        "agr-vegwork-fruitvegetables-p1"
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-FRUITVEGETABLES-01"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-1-w01-q03",
+          "stemJa": "米粉を作ることを目的に育てる米は、用途上どれに当たりますか。",
+          "correctAnswerJa": "加工用米"
+        },
+        {
+          "questionId": "agr-par12-riceveg-q06",
+          "stemJa": "スイートコーンとデントコーンの用途を資料に沿って分けたものはどれですか。",
+          "correctAnswerJa": "スイートコーンは未成熟な状態の生食、デントコーンは飼料向けの青刈りやサイレージ。"
+        }
+      ],
+      "reason": "Fresh-versus-processing tomato use repeats crop-use classification already tested with rice and corn; changing the commodity is not a new construct.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-vegwork-industrial-p3",
+      "lessonId": "agr-vegwork-industrial",
+      "sourceHash": "c4d3416a994a1f24ecf698e4304932d1a00cc71693c139b7833ed30b67b91e69",
+      "objectiveJa": "チャノキを常緑低木・複数年収穫する作物として整理する。",
+      "paragraphIds": [
+        "agr-vegwork-industrial-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-INDUSTRIAL-03"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-par06-fruit-foundations-q01",
+          "stemJa": "新しく果樹園を作る計画で、植え付け直後の数年間をどう考えますか。",
+          "correctAnswerJa": "すぐの収穫だけでなく、まず木を育てる期間を考える。"
+        },
+        {
+          "questionId": "agr-par06-fruit-foundations-q02",
+          "stemJa": "果樹の一生の図にある樹齢の目盛りを読むとき、適切なのはどれですか。",
+          "correctAnswerJa": "変化の傾向を読み、全樹種の結実開始年を固定する表にはしない。"
+        }
+      ],
+      "reason": "Perennial tea versus replanting annual crops repeats multi-year establishment/lifecycle planning. The species and crop-use example differ, not the underlying competence.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-vegwork-industrial-p4",
+      "lessonId": "agr-vegwork-industrial",
+      "sourceHash": "c4d3416a994a1f24ecf698e4304932d1a00cc71693c139b7833ed30b67b91e69",
+      "objectiveJa": "茶園の仕立て高さを収穫作業のしやすさに結び付ける。",
+      "paragraphIds": [
+        "agr-vegwork-industrial-p4"
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-INDUSTRIAL-04"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-par06-facility-structure-q04",
+          "stemJa": "イチゴの高設ベンチ栽培の特徴として挙げられるものはどれですか。",
+          "correctAnswerJa": "立った姿勢で作業できるよう、栽培位置を高くする。"
+        }
+      ],
+      "reason": "Working height for tea harvesting repeats explicit height-to-working-posture ergonomics in the elevated strawberry bench question. Do not count a different crop and waist-height example separately.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-vegwork-industrial-p6",
+      "lessonId": "agr-vegwork-industrial",
+      "sourceHash": "c4d3416a994a1f24ecf698e4304932d1a00cc71693c139b7833ed30b67b91e69",
+      "objectiveJa": "コンニャクの適地を平地・傾斜地だけでなく排水条件と合わせて説明する。",
+      "paragraphIds": [
+        "agr-vegwork-industrial-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-INDUSTRIAL-06"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-par06-fruit-management-q08",
+          "stemJa": "果樹の根の水分環境について適切な組合せはどれですか。",
+          "correctAnswerJa": "適度な保水性と排水性をともに考える。"
+        },
+        {
+          "questionId": "agr-water-soil-q02",
+          "stemJa": "水を多く与え過ぎたときに、資料が注意していることはどれですか。",
+          "correctAnswerJa": "根が腐ることがある。"
+        }
+      ],
+      "reason": "Konjac topography-plus-drainage is an additional crop suitability example of already-tested root-water/drainage requirements. It does not add an independent drainage construct.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-vegwork-seedstorage-p4",
+      "lessonId": "agr-vegwork-seedstorage",
+      "sourceHash": "6018cba82f0a2b148ca20551019f6fdd2760738832ea2d0fb3ec061425c70ba1",
+      "objectiveJa": "コーティング種子をまきやすくする球状加工と説明する。",
+      "paragraphIds": [
+        "agr-vegwork-seedstorage-p4"
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-SEEDSTORAGE-04"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-vegwork-tubers-2-p4",
+      "lessonId": "agr-vegwork-tubers-2",
+      "sourceHash": "67bf8ac6420874c0d2566d20831e7e0ac02719477a59d8fe034fe7f119db2088",
+      "objectiveJa": "サツマイモの苗は種イモから伸びた茎を切り取るという材料を説明する。",
+      "paragraphIds": [
+        "agr-vegwork-tubers-2-p4"
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-TUBERS-2-04"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-vegwork-tubers-2-p6",
+      "lessonId": "agr-vegwork-tubers-2",
+      "sourceHash": "67bf8ac6420874c0d2566d20831e7e0ac02719477a59d8fe034fe7f119db2088",
+      "objectiveJa": "緑化したジャガイモを食用・販売に回さない掲載安全注意を保持する。",
+      "paragraphIds": [
+        "agr-vegwork-tubers-2-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-TUBERS-2-06"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-flower-calendar-p6",
+      "lessonId": "agr-facility-structure-flower-calendar",
+      "sourceHash": "efa9ae3097bbdc2292c39c179d66c7cdc882cdc60221601625c7768cf9dd214d",
+      "objectiveJa": "ユリの低温処理と秋ギクの日長調節を異なる出荷時期調節として区別する。",
+      "paragraphIds": [
+        "agr-facility-structure-flower-calendar-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-FLOWER-CALENDAR-06"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-par06-facility-structure-q05",
+          "stemJa": "秋ギクの電照栽培で夜間に光を当てる目的はどれですか。",
+          "correctAnswerJa": "開花を遅らせて、時期を調節する。"
+        },
+        {
+          "questionId": "agr-par06-facility-structure-q06",
+          "stemJa": "花の周年出荷を考える際、正しい理解はどれですか。",
+          "correctAnswerJa": "作型や系統の組合せを使って、一年を通した出荷を組み立てる。"
+        },
+        {
+          "questionId": "agr-par06-facility-structure-q07",
+          "stemJa": "スプレータイプのカーネーションを説明するとき、何に注目しますか。",
+          "correctAnswerJa": "一本の茎に複数の花がつくこと。"
+        }
+      ],
+      "reason": "Existing q07 wrong option and reason explicitly expose lily bulb cold treatment, while q05 tests chrysanthemum lighting and q06 their schedule context. Comparing those two exposed examples is not new.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-flower-forms-p3",
+      "lessonId": "agr-facility-structure-flower-forms",
+      "sourceHash": "5f07b6c391f4cdd5c0ddf31c7c4a8101730d69eb038f4274779a12b06e46bd59",
+      "objectiveJa": "キクを増やす主な方法としてさし芽を対応させる。",
+      "paragraphIds": [
+        "agr-facility-structure-flower-forms-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-FLOWER-FORMS-03"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-par06-fruit-foundations-q06",
+          "stemJa": "さし木と取り木を見分けるとき、取り木に当たる説明はどれですか。",
+          "correctAnswerJa": "親の枝につながった状態で根を出させ、後で切り離す。"
+        }
+      ],
+      "reason": "Cuttings are explicitly defined in q06 alternative and reason. Chrysanthemum cuttings adds the species mapping, not a different propagation mechanism.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-roof-types-p3",
+      "lessonId": "agr-facility-structure-roof-types",
+      "sourceHash": "409f90dd01d40af8c4a501f064089f719efe95afb7ca2cc9303f70122a87466e",
+      "objectiveJa": "屋根断面の両屋根型と、棟をつなぐ単棟・連棟の分類軸を分ける。",
+      "paragraphIds": [
+        "agr-facility-structure-roof-types-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-ROOF-TYPES-03"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-roof-types-p6",
+      "lessonId": "agr-facility-structure-roof-types",
+      "sourceHash": "409f90dd01d40af8c4a501f064089f719efe95afb7ca2cc9303f70122a87466e",
+      "objectiveJa": "フェンロー型の特徴を高い軒として読み、棟高と区別する。",
+      "paragraphIds": [
+        "agr-facility-structure-roof-types-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-ROOF-TYPES-06"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-par06-facility-structure-q12",
+          "stemJa": "二つの屋根面の幅が異なる形として説明されるのはどれですか。",
+          "correctAnswerJa": "スリークォータ型"
+        }
+      ],
+      "reason": "Existing q12 reason explicitly calls Venlo a high-eave system. Reasking its characteristic or adding the generic eave-versus-ridge wording does not produce a new assessment construct.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-outer-covers-p3",
+      "lessonId": "agr-facility-structure-outer-covers",
+      "sourceHash": "e25615d2aa8b921c309bc0838b722bdba780ecd22c46288f150537c498d9eb0d",
+      "objectiveJa": "農ビを燃やすと有毒ガスが発生するという掲載警告を保持する。",
+      "paragraphIds": [
+        "agr-facility-structure-outer-covers-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-OUTER-COVERS-03"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-outer-covers-p4",
+      "lessonId": "agr-facility-structure-outer-covers",
+      "sourceHash": "e25615d2aa8b921c309bc0838b722bdba780ecd22c46288f150537c498d9eb0d",
+      "objectiveJa": "農PO系フィルムを農ビとの重さ・べたつき・汚れ方の比較で整理する。",
+      "paragraphIds": [
+        "agr-facility-structure-outer-covers-p4"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-OUTER-COVERS-04"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-par06-facility-structure-q13",
+          "stemJa": "農ビの長所と弱点を両方含む説明はどれですか。",
+          "correctAnswerJa": "保温性がある一方、重さやべたつき、汚れやすさがある。"
+        }
+      ],
+      "reason": "All proposed PO-versus-PVC weight/stickiness/soiling contrasts appear in q13 options and explanations; reversing the comparison direction is not new.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-inner-covers-p3",
+      "lessonId": "agr-facility-structure-inner-covers",
+      "sourceHash": "4927a8b75aa50fcd63b31be526a4a64632f0e11e4f839fdcd39ebef31e159a12",
+      "objectiveJa": "農ポリが本文で扱う軟質フィルムの中では保温性が劣ることを説明する。",
+      "paragraphIds": [
+        "agr-facility-structure-inner-covers-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-INNER-COVERS-03"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-inner-covers-p5",
+      "lessonId": "agr-facility-structure-inner-covers",
+      "sourceHash": "4927a8b75aa50fcd63b31be526a4a64632f0e11e4f839fdcd39ebef31e159a12",
+      "objectiveJa": "寒冷紗の遮光と通気という二つの性質を同時に説明する。",
+      "paragraphIds": [
+        "agr-facility-structure-inner-covers-p5"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-INNER-COVERS-05"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-cover-functions-2-p1",
+      "lessonId": "agr-facility-structure-cover-functions-2",
+      "sourceHash": "db6e175a56d4a2ae9de94ef14431d894cfca3afae40abf97c7dbd7b10a59edd7",
+      "objectiveJa": "散光性を光量ではなく施設内への光の広がり方として説明する。",
+      "paragraphIds": [
+        "agr-facility-structure-cover-functions-2-p1"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-COVER-FUNCTIONS-2-01"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-cover-functions-2-p2",
+      "lessonId": "agr-facility-structure-cover-functions-2",
+      "sourceHash": "db6e175a56d4a2ae9de94ef14431d894cfca3afae40abf97c7dbd7b10a59edd7",
+      "objectiveJa": "付着水が光と病害に関係するため水滴関連機能を確認する理由を説明する。",
+      "paragraphIds": [
+        "agr-facility-structure-cover-functions-2-p2"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-COVER-FUNCTIONS-2-02"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-cover-functions-2-p3",
+      "lessonId": "agr-facility-structure-cover-functions-2",
+      "sourceHash": "db6e175a56d4a2ae9de94ef14431d894cfca3afae40abf97c7dbd7b10a59edd7",
+      "objectiveJa": "紫外線を遮る資材は害虫抑制とともにミツバチの行動も抑える面があると説明する。",
+      "paragraphIds": [
+        "agr-facility-structure-cover-functions-2-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-COVER-FUNCTIONS-2-03"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-cover-functions-2-p4",
+      "lessonId": "agr-facility-structure-cover-functions-2",
+      "sourceHash": "db6e175a56d4a2ae9de94ef14431d894cfca3afae40abf97c7dbd7b10a59edd7",
+      "objectiveJa": "赤外線を抑える遮熱性と夜間の保温性を区別する。",
+      "paragraphIds": [
+        "agr-facility-structure-cover-functions-2-p4"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-COVER-FUNCTIONS-2-04"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-cover-functions-2-p5",
+      "lessonId": "agr-facility-structure-cover-functions-2",
+      "sourceHash": "db6e175a56d4a2ae9de94ef14431d894cfca3afae40abf97c7dbd7b10a59edd7",
+      "objectiveJa": "PC板の耐衝撃性という特徴を、無損傷の保証とせず読む。",
+      "paragraphIds": [
+        "agr-facility-structure-cover-functions-2-p5"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-COVER-FUNCTIONS-2-05"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 3,
+      "packetReference": "agr-facility-structure-cover-functions-2-p6",
+      "lessonId": "agr-facility-structure-cover-functions-2",
+      "sourceHash": "db6e175a56d4a2ae9de94ef14431d894cfca3afae40abf97c7dbd7b10a59edd7",
+      "objectiveJa": "農酢ビを畳んだまま高温保管すると融着するおそれを説明する。",
+      "paragraphIds": [
+        "agr-facility-structure-cover-functions-2-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-COVER-FUNCTIONS-2-06"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-085-01",
+      "lessonId": "agr-facility-env-temperature-reading",
+      "sourceHash": "0aca8e25834a8c584831412352d15fbc19cec8d799b02828ad644bb71fd541e0",
+      "objectiveJa": "液柱温度計で視線を横に合わせ、アルコールと水銀の液面を読む位置を区別する。",
+      "paragraphIds": [
+        "agr-facility-env-temperature-reading-p5"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-TEMPERATURE-READING-05"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-086-01",
+      "lessonId": "agr-facility-env-humidity-control",
+      "sourceHash": "aa40471252f939d86d71ddd7e20c2e437948d75dba92ebc7710fc78491c7631d",
+      "objectiveJa": "コンピュータによる自動化で、換気・暖房という制御対象と温度・湿度という環境要素を対応させる。",
+      "paragraphIds": [
+        "agr-facility-env-humidity-control-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-HUMIDITY-CONTROL-06"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-par06-facility-environment-q08",
+          "stemJa": "複合環境制御という考え方に当てはまるものはどれですか。",
+          "correctAnswerJa": "温度、湿度、光、二酸化炭素などを関連付けて管理する。"
+        },
+        {
+          "questionId": "agr-par12-facility-q02",
+          "stemJa": "2号資料の「カーテン、天窓の順に開く」という説明に付く、設備側の条件はどれですか。",
+          "correctAnswerJa": "換気を機械で制御している場合。"
+        }
+      ],
+      "reason": "Canonical p6 says a computer automates ventilation/heating but gives no new actuator/sensor mapping details. Existing integrated-control question and mechanical-ventilation condition already test relationships of apparatus to managed environment; the candidate mostly recasts that wording.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-087-01",
+      "lessonId": "agr-facility-env-growth-observation",
+      "sourceHash": "24449c49a5220e0ab5f2acd447f32d3c0944e48cffff7b30797ce5dbee080ad8",
+      "objectiveJa": "草丈の測定範囲と節間の測定範囲を区別する。",
+      "paragraphIds": [
+        "agr-facility-env-growth-observation-p2"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-GROWTH-OBSERVATION-02"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-087-02",
+      "lessonId": "agr-facility-env-growth-observation",
+      "sourceHash": "24449c49a5220e0ab5f2acd447f32d3c0944e48cffff7b30797ce5dbee080ad8",
+      "objectiveJa": "窒素不足の下葉黄化と鉄不足の新葉黄化という教材例を、観察部位の違いとして比較する。",
+      "paragraphIds": [
+        "agr-facility-env-growth-observation-p5"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-GROWTH-OBSERVATION-05"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-088-01",
+      "lessonId": "agr-facility-env-hydroponic-systems",
+      "sourceHash": "d3ce354a817db94e887eb4a9c3a360b2a7a95441ed63a646e1227dac0f02247e",
+      "objectiveJa": "固形培地を使わない水耕と水気耕を、根の大部分が空気中にあるかという観点から区別する。",
+      "paragraphIds": [
+        "agr-facility-env-hydroponic-systems-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-HYDROPONIC-SYSTEMS-03"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-088-02",
+      "lessonId": "agr-facility-env-hydroponic-systems",
+      "sourceHash": "d3ce354a817db94e887eb4a9c3a360b2a7a95441ed63a646e1227dac0f02247e",
+      "objectiveJa": "養液栽培で省ける土づくり・除草と、設備費・栽培管理が残ることを費用と作業の別軸で比較する。",
+      "paragraphIds": [
+        "agr-facility-env-hydroponic-systems-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-HYDROPONIC-SYSTEMS-06"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-091-01",
+      "lessonId": "agr-facility-env-soil-indicators-2",
+      "sourceHash": "b3d0bcbd3901ead43119dbdc66d8cafd0df7c698768834fa8668148d51c97683",
+      "objectiveJa": "土壌水分百分率とpFを異なる尺度として読み、水分が多いほどpFが低いという方向を区別する。",
+      "paragraphIds": [
+        "agr-facility-env-soil-indicators-2-p1",
+        "agr-facility-env-soil-indicators-2-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-SOIL-INDICATORS-2-01",
+        "AGR-K-FACILITY-ENV-SOIL-INDICATORS-2-03"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-091-02",
+      "lessonId": "agr-facility-env-soil-indicators-2",
+      "sourceHash": "b3d0bcbd3901ead43119dbdc66d8cafd0df7c698768834fa8668148d51c97683",
+      "objectiveJa": "同じ水分15％でも砂土と黒ボク土でpFの教材例が異なることを説明する。",
+      "paragraphIds": [
+        "agr-facility-env-soil-indicators-2-p2"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-SOIL-INDICATORS-2-02"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-091-03",
+      "lessonId": "agr-facility-env-soil-indicators-2",
+      "sourceHash": "b3d0bcbd3901ead43119dbdc66d8cafd0df7c698768834fa8668148d51c97683",
+      "objectiveJa": "2号に記載されたpFの生育域・水不足・しおれ・継続乾燥の段階を、条件付きの資料読解として区別する。",
+      "paragraphIds": [
+        "agr-facility-env-soil-indicators-2-p4",
+        "agr-facility-env-soil-indicators-2-p5"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-SOIL-INDICATORS-2-04",
+        "AGR-K-FACILITY-ENV-SOIL-INDICATORS-2-05"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-092-01",
+      "lessonId": "agr-facility-env-solution-circulation-2",
+      "sourceHash": "a198bda7105bc554b1c846fdb7d6a5a9957168abb5d45dfd5b4c2e3da45e943d",
+      "objectiveJa": "培地の有無と培養液を再利用するかを、養液栽培の独立した分類軸として整理する。",
+      "paragraphIds": [
+        "agr-facility-env-solution-circulation-2-p1"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-SOLUTION-CIRCULATION-2-01"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "merge_do_not_count_separately",
+      "mergeIntoReference": "AGR-A20-G4-092-02",
+      "existingQuestionEvidence": [],
+      "reason": "The medium-versus-reuse classification is the entry classification for the same circulating-system benefit/risk comparison. Conservatively count one source-specific circulation decision construct, not two adjacent explanatory paragraphs.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-092-02",
+      "lessonId": "agr-facility-env-solution-circulation-2",
+      "sourceHash": "a198bda7105bc554b1c846fdb7d6a5a9957168abb5d45dfd5b4c2e3da45e943d",
+      "objectiveJa": "循環方式の成分・量の安定と少ない廃液を、病害が短期間に広がりやすい注意点と組で比較する。",
+      "paragraphIds": [
+        "agr-facility-env-solution-circulation-2-p2",
+        "agr-facility-env-solution-circulation-2-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-SOLUTION-CIRCULATION-2-02",
+        "AGR-K-FACILITY-ENV-SOLUTION-CIRCULATION-2-03"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-092-03",
+      "lessonId": "agr-facility-env-solution-circulation-2",
+      "sourceHash": "a198bda7105bc554b1c846fdb7d6a5a9957168abb5d45dfd5b4c2e3da45e943d",
+      "objectiveJa": "非循環方式で病害の蔓延が比較的少ないことと、排液処理が必要なことを両立して説明する。",
+      "paragraphIds": [
+        "agr-facility-env-solution-circulation-2-p4",
+        "agr-facility-env-solution-circulation-2-p5"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-SOLUTION-CIRCULATION-2-04",
+        "AGR-K-FACILITY-ENV-SOLUTION-CIRCULATION-2-05"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-094-01",
+      "lessonId": "agr-fruit-foundation-buds",
+      "sourceHash": "3ba3e1718233bb040b56e4a7e64e2201cfbb26d6b712f49e0bc909a3f2b67e00",
+      "objectiveJa": "多くの果樹では収穫年より前に花芽を作るため、前年からの記録をつなげる。",
+      "paragraphIds": [
+        "agr-fruit-foundation-buds-p2"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-FOUNDATION-BUDS-02"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-par06-fruit-foundations-q03",
+          "stemJa": "モモの枝を見ながらせん定を考えるとき、残す枝について確かめることは何ですか。",
+          "correctAnswerJa": "前年に伸びた枝のどこに花芽が付いているか。"
+        }
+      ],
+      "reason": "q03 explicitly requires locating flower buds on last-year branches and rejects looking only at this-year shoots. Generalising to previous-year records repeats that temporal distinction.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-095-01",
+      "lessonId": "agr-fruit-foundation-propagation",
+      "sourceHash": "91201ead2450a867faf5f7ad3884dd3bd7af697ce82c75e97cbf53a561f60e3a",
+      "objectiveJa": "種子繁殖を台木育成や新品種育成に使う目的を、収穫品種の栄養繁殖と区別する。",
+      "paragraphIds": [
+        "agr-fruit-foundation-propagation-p2"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-FOUNDATION-PROPAGATION-02"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-096-01",
+      "lessonId": "agr-fruit-foundation-graft-types",
+      "sourceHash": "ac1d735322cd977e92f117662881da0a14a9475dd438e33d54410bde4ce563da",
+      "objectiveJa": "Ｔ形芽接ぎで芽を外に出してテープで留める教材図の要点を説明する。",
+      "paragraphIds": [
+        "agr-fruit-foundation-graft-types-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-FOUNDATION-GRAFT-TYPES-06"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-097-01",
+      "lessonId": "agr-fruit-foundation-graft-alignment",
+      "sourceHash": "1bef1d6ac339d9b499d225c9f495dc4a5bc8042c13391af889b438bc183dc601",
+      "objectiveJa": "形成層を師部と木部の間に位置付け、木部外側を位置の目安とする説明を読む。",
+      "paragraphIds": [
+        "agr-fruit-foundation-graft-alignment-p1",
+        "agr-fruit-foundation-graft-alignment-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-FOUNDATION-GRAFT-ALIGNMENT-01",
+        "AGR-K-FRUIT-FOUNDATION-GRAFT-ALIGNMENT-03"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-097-02",
+      "lessonId": "agr-fruit-foundation-graft-alignment",
+      "sourceHash": "1bef1d6ac339d9b499d225c9f495dc4a5bc8042c13391af889b438bc183dc601",
+      "objectiveJa": "接いだ後の固定で位置を保つ目的と、切り口の乾燥を防ぐ保護の目的を区別する。",
+      "paragraphIds": [
+        "agr-fruit-foundation-graft-alignment-p4",
+        "agr-fruit-foundation-graft-alignment-p5"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-FOUNDATION-GRAFT-ALIGNMENT-04",
+        "AGR-K-FRUIT-FOUNDATION-GRAFT-ALIGNMENT-05"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-098-01",
+      "lessonId": "agr-fruit-foundation-pruning",
+      "sourceHash": "8ee1e101aa02d741905f7420be25d0f04310b7b1831e01ae4781fe1a36738934",
+      "objectiveJa": "冬季を中心、夏季を補助とする教材のせん定時期を、樹種を問わない一律日程とは分ける。",
+      "paragraphIds": [
+        "agr-fruit-foundation-pruning-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-FOUNDATION-PRUNING-03"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-098-02",
+      "lessonId": "agr-fruit-foundation-pruning",
+      "sourceHash": "8ee1e101aa02d741905f7420be25d0f04310b7b1831e01ae4781fe1a36738934",
+      "objectiveJa": "木全体と主枝・亜主枝を先に見て、主枝側から先端・基部へ確認する流れを読む。",
+      "paragraphIds": [
+        "agr-fruit-foundation-pruning-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-FOUNDATION-PRUNING-06"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-100-01",
+      "lessonId": "agr-fruit-foundation-pollination",
+      "sourceHash": "ca6103a7ae4184715e88c34fd389afcd299558eee033d8a3fbe53c22b65d7bd2",
+      "objectiveJa": "成熟による糖の蓄積と軟化を、全果実への保証ではない変化として区別する。",
+      "paragraphIds": [
+        "agr-fruit-foundation-pollination-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-FOUNDATION-POLLINATION-06"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-101-01",
+      "lessonId": "agr-fruit-foundation-definition-2",
+      "sourceHash": "448c583109690ab3c8fdb877c1ea7790c6e5d1ba0f4453c71ecf15ec933d2387",
+      "objectiveJa": "2号の果樹の定義を、2年以上・木本と草本・果実収穫目的という条件の組で適用する。",
+      "paragraphIds": [
+        "agr-fruit-foundation-definition-2-p1",
+        "agr-fruit-foundation-definition-2-p2",
+        "agr-fruit-foundation-definition-2-p3",
+        "agr-fruit-foundation-definition-2-p4",
+        "agr-fruit-foundation-definition-2-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-FOUNDATION-DEFINITION-2-01",
+        "AGR-K-FRUIT-FOUNDATION-DEFINITION-2-02",
+        "AGR-K-FRUIT-FOUNDATION-DEFINITION-2-03",
+        "AGR-K-FRUIT-FOUNDATION-DEFINITION-2-04",
+        "AGR-K-FRUIT-FOUNDATION-DEFINITION-2-06"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-101-02",
+      "lessonId": "agr-fruit-foundation-definition-2",
+      "sourceHash": "448c583109690ab3c8fdb877c1ea7790c6e5d1ba0f4453c71ecf15ec933d2387",
+      "objectiveJa": "2021年の果樹例で収穫量順位と生産額順位を分け、同じ指標とみなさない。",
+      "paragraphIds": [
+        "agr-fruit-foundation-definition-2-p5"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-FOUNDATION-DEFINITION-2-05"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-102-01",
+      "lessonId": "agr-fruit-foundation-bud-patterns-2",
+      "sourceHash": "3dee9771270036f3c92e74e8ea56363272fc8e44fc33bfa3edb96063e28c3fdf",
+      "objectiveJa": "葉芽・純正花芽・混合花芽を、葉だけ・花だけ・両方が出る違いから区別する。",
+      "paragraphIds": [
+        "agr-fruit-foundation-bud-patterns-2-p1"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-FOUNDATION-BUD-PATTERNS-2-01"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "retain_provisional_distinct_cluster",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Canonical paragraph supplies a substantive mechanism, safety hazard, morphology, instrument relationship or operational distinction not located as an existing tested/exposed proposition in the screened current bank. Retain only provisionally, with fresh original-source check and all other-group dedup still required.",
+      "retainedCandidate": true,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-102-02",
+      "lessonId": "agr-fruit-foundation-bud-patterns-2",
+      "sourceHash": "3dee9771270036f3c92e74e8ea56363272fc8e44fc33bfa3edb96063e28c3fdf",
+      "objectiveJa": "前年枝へ直接・前年結果枝先端の伸長部・今年の新梢葉腋という三型を、枝の年次変化から区別する。",
+      "paragraphIds": [
+        "agr-fruit-foundation-bud-patterns-2-p3",
+        "agr-fruit-foundation-bud-patterns-2-p4",
+        "agr-fruit-foundation-bud-patterns-2-p5",
+        "agr-fruit-foundation-bud-patterns-2-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-FOUNDATION-BUD-PATTERNS-2-03",
+        "AGR-K-FRUIT-FOUNDATION-BUD-PATTERNS-2-04",
+        "AGR-K-FRUIT-FOUNDATION-BUD-PATTERNS-2-05",
+        "AGR-K-FRUIT-FOUNDATION-BUD-PATTERNS-2-06"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-103-01",
+      "lessonId": "agr-fruit-manage-bagging",
+      "sourceHash": "8d53f7831d3c19f66cbc86cbd523ccef0a42f9b12f9db30a6cd60beefbeea8da",
+      "objectiveJa": "袋かけによる保護・外観改善と、摘果による果実数の調整を目的で区別する。",
+      "paragraphIds": [
+        "agr-fruit-manage-bagging-p1"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-BAGGING-01"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-106-01",
+      "lessonId": "agr-fruit-manage-orchard-soil",
+      "sourceHash": "5c3dff85cf014584c568a673652ae27ed6a1da9d84a459530f784d860605c6af",
+      "objectiveJa": "斜面で排水溝が水を導く役割と、石垣が土を支える役割を分ける。",
+      "paragraphIds": [
+        "agr-fruit-manage-orchard-soil-p4"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-ORCHARD-SOIL-04"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-107-01",
+      "lessonId": "agr-fruit-manage-fertilizer",
+      "sourceHash": "785f724be0f650f1c569e7c45a3ee5f5fea61d2bc47ceb9964c3c3ac9f857af0",
+      "objectiveJa": "果樹の元肥時期の教材例を、休眠期と落葉・常緑の区分に結び付けて読む。",
+      "paragraphIds": [
+        "agr-fruit-manage-fertilizer-p2"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-FERTILIZER-02"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-108-01",
+      "lessonId": "agr-fruit-manage-storage-facility",
+      "sourceHash": "e4c2004f72ada62f5b4d513779fbe2de681913f06c2a477a28349ce70978cf72",
+      "objectiveJa": "屋根で雨が直接当たらない果樹施設でも、内外温度差と水分を管理する理由を説明する。",
+      "paragraphIds": [
+        "agr-fruit-manage-storage-facility-p5",
+        "agr-fruit-manage-storage-facility-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-STORAGE-FACILITY-05",
+        "AGR-K-FRUIT-MANAGE-STORAGE-FACILITY-06"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-109-01",
+      "lessonId": "agr-fruit-manage-citrus-apple-grape",
+      "sourceHash": "28ebe283f6ad48247776661af142a021b0ec43245a75fc3ae712009163529d99",
+      "objectiveJa": "種なしブドウのジベレリン処理例を、品種・時期・濃度の確認が必要な作業として限定する。",
+      "paragraphIds": [
+        "agr-fruit-manage-citrus-apple-grape-p6"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-CITRUS-APPLE-GRAPE-06"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-110-01",
+      "lessonId": "agr-fruit-manage-persimmon-pear-peach",
+      "sourceHash": "cc153db32899e39621e67a282e222af80c773c655ac2f29c205e1630d0948be1",
+      "objectiveJa": "ニホンナシとセイヨウナシの栽培環境例を、温暖多雨と涼しく少雨で比較する。",
+      "paragraphIds": [
+        "agr-fruit-manage-persimmon-pear-peach-p3"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-PERSIMMON-PEAR-PEACH-03"
+      ],
+      "originalAssessmentEligibleCandidate": true,
+      "disposition": "reject_as_new_independent_construct",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [
+        {
+          "questionId": "agr-1-w01-q08",
+          "stemJa": "資料の栽培地域の傾向に合う説明はどれですか。",
+          "correctAnswerJa": "リンゴは寒い地域、ウンシュウミカンは暖かい地域で多く栽培される。"
+        }
+      ],
+      "reason": "Japanese-versus-European pear climate is another crop-region preference contrast on the apple-versus-mikan warm/cold axis. Humidity adds descriptive detail, but no separate inference/management skill is supplied by the paragraph.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-110-02",
+      "lessonId": "agr-fruit-manage-persimmon-pear-peach",
+      "sourceHash": "cc153db32899e39621e67a282e222af80c773c655ac2f29c205e1630d0948be1",
+      "objectiveJa": "モモの3年結実・7～8年樹体生育を教材例として読み、普遍保証と区別する。",
+      "paragraphIds": [
+        "agr-fruit-manage-persimmon-pear-peach-p5"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-PERSIMMON-PEAR-PEACH-05"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "group": 4,
+      "packetReference": "AGR-A20-G4-111-01",
+      "lessonId": "agr-fruit-manage-materials-machines",
+      "sourceHash": "48b21c392c82bb1dc8049bd45148cf73b0ba58c85c7bc991d91495236891c726",
+      "objectiveJa": "モノレールと運搬車を線路に沿う運搬と車両運搬として区別し、積載量や乗車可否を推定しない。",
+      "paragraphIds": [
+        "agr-fruit-manage-materials-machines-p5"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-MATERIALS-MACHINES-05"
+      ],
+      "originalAssessmentEligibleCandidate": false,
+      "disposition": "preserve_existing_hold_not_promoted",
+      "mergeIntoReference": null,
+      "existingQuestionEvidence": [],
+      "reason": "Author packet already withholds this objective. Cross-review does not promote it; original visual/source/taxonomic/procedural conditions remain.",
+      "retainedCandidate": false,
+      "sourcePdfReverified": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    }
+  ],
+  "crossGroupNotes": [
+    {
+      "references": [
+        "agr-ricework-field-p1",
+        "objectives-5.json:land-levelling-task-meaning"
+      ],
+      "disposition": "same_levelling_family_do_not_count_both",
+      "reason": "Rice-field levelling and seichi task meaning differ by task setting. Root must retain at most one conceptual objective after whole-six-group reconciliation."
+    },
+    {
+      "references": [
+        "AGR-A20-G4-095-01",
+        "objectives-5.json:grafting-clonal-identity-versus-earlier-bearing"
+      ],
+      "disposition": "cross_group_propagation_purpose_review_required",
+      "reason": "Seed/rootstock/new-cultivar purposes versus clonal-identity propagation partly share purpose classification. The earlier-bearing mechanism is a different factual relation; root should avoid separate near-identical purpose-list questions."
+    },
+    {
+      "references": [
+        "AGR-A20-G4-100-01",
+        "objectives-5.json:maturity-indicator-instrument-mapping"
+      ],
+      "disposition": "related_but_not_same_construct",
+      "reason": "Sugar accumulation/softening physiology differs from choosing sugar/hardness/colour measurement instruments; they should not automatically collapse solely for sharing maturity vocabulary."
+    }
+  ],
+  "limits": [
+    "No raw author packets changed.",
+    "No original-PDF/source discrepancy resolution, official-exam certification, native/domain approval or800-objective sufficiency claim.",
+    "Retained clusters remain provisional. Counts from this review are not a globally deduplicated denominator."
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseReady": false
+}
