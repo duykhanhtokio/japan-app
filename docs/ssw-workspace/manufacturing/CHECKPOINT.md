@@ -1,3 +1,21 @@
+# Manufacturing SSW1 — batch07 parallel continuation
+
+Date:2026-10-26 (Asia/Tokyo). Baseline:97569ae4. Six AI workers, SSW1 only; SSW2 remains excluded.
+
+Added21 original Japanese lessons and36 original weekly four-choice questions: mechanical week7 (drawing/projection/sections/dimensions/geometric tolerances/surface/welding symbols), electrical week6 (tools/fasteners/comparative measurements/instruments/chassiswork/electromagnetism), surface week6 (reporting/5S/qualitymanagement/QCtools/corrosion/resistivecircuit relationships). Totals133lessons,19weeklychecks,228questions; previewweeks7/6/6 are not complete curricula. Previous112lessons/192questions and translations retain values,source hashes and revisions. New answerpositions are balanced3each,withouttriples,and3distinctirregularsequences after review fixes.
+
+All21newlessons/36questions have complete directJA EN/VI/ID AI drafts:63lessonpairs/108questionpairs added. Totals399lessonpairs/684questionpairs. Native/domain certification remainsfalse. Independent AI review corrected arrow-bend wording and Indonesian burr/chip terminology; full-field translation/schema checks retained source hashes,paragraphIDs,term/safety counts and option/reason order.
+
+Three original controlled color SVG/PNG diagrams integrated: third-angle placement,comparative dial measurement,andnumeric Kirchhoff/resistor examples. Totals11diagrams/33localizedcaptionpairs. Authors and root opened renderedPNG files; independent AI review scope is recorded in individualreports. No copied textbook figure or operational recipe. Existing layout andzoom/pan/close controls unchanged.
+
+Sourcework:56physicalpages visuallyread inbatch (16mechanical/20electrical/20surface),not56newunique cumulativepages andnot full574page semanticcertification.46previouslyunlinkedTOCrows nowlinked;261/487TOCrows have draftlessonlinks,not261completeknowledgeunits. Fullknowledge/objectatomization remainsincomplete.
+
+Validation: data/source/state checker PASS at133/228/399/684/33; JLPTapprovedUIlock10/10PASS. Focused actual RNWeb browser PASS165checks:126translatedreadervisits,108translatedquestionvisits,432postsubmissionrationales,18screenshotsgenerated,0pageerrors; noearlyrationales,answer/positionresume,completionreturn,and18newdiagramcaption/load/enlarge/pan/closechecks at320×568 and932×430. Fourrepresentative screenshotsretained;selectedphone/landscapeandall3diagramPNGsexamined. Harnessadaptersmean fullExpo/native/device/backgroundfidelityisnotcertified;missingexpo/tsconfig.basewarningpersists. Fulltypecheck/lint/buildunrun. See batch07-session-evidence.json and browser/batch07-result.json;portableharness scripts/manufacturing/check-batch07-browser.cjs.
+
+Next: remainingJapaneseknowledge/curriculum gaps,sourceobjectmapping,moremappedillustrations,9otherlocales,30originalofficial-formatmocks (still0/30),fullExpo/devicechecks. Do not reauthor completed units. No backgroundworker implied. Historicalcheckpointsbelowaresupersededcounts.
+
+---
+
 # Manufacturing SSW1 — batch06 mechanical week6
 
 Date: 2026-10-26 (Asia/Tokyo). Previous manufacturing checkpoint: dc2b8691. SSW1 only; SSW2 attachments remain excluded.
