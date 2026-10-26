@@ -223,14 +223,14 @@
   },
   "productionRelease": false,
   "remaining": [
-    "Complete remaining assessment translations (39 English and39 Vietnamese weekly pairs currently available)",
+    "Complete 9520 remaining mock question-locale translations; all39 weekly questions now translated into all12 locales",
     "Verified full-body furigana",
     "Full detailed source competency mapping and complete source visual review",
     "Original explanatory illustrations and optional prerecorded audio",
     "Full Expo/native build and actual device validation",
     "Expert/native review remains unverified"
   ],
-  "next": "Continue translations of the800 mock items and remaining weekly locales, then verified full-body furigana, detailed coverage, illustrations and Expo/native validation. Preserve Japanese hashes and all33 assessment revisions.",
+  "next": "Continue remaining mock translations (9520 question-locale pairs), then verified full-body furigana, detailed coverage, illustrations and Expo/native validation. Preserve Japanese hashes and all33 assessment revisions.",
   "japaneseAuthorshipStatus": "AI-authored candidate covering all source chapters; detailed competency coverage remains unverified",
   "sourceReferences": "153/158 TOC entries have candidate lesson page references; remaining5 are indexes/notices/bibliography. This is not mastery or full coverage certification.",
   "nativeSpeakerReviewed": false,
@@ -254,9 +254,9 @@
     "fullExpoBuildTested": false,
     "newLocaleResponsiveCases": 24,
     "diagramTranslationPairs": 20,
-    "translatedQuestionPairs": 39,
-    "testTranslationLeakChecks": 39,
-    "testTranslationResponsiveCases": 156,
+    "translatedQuestionPairs": 548,
+    "testTranslationLeakChecks": 548,
+    "testTranslationResponsiveCases": 2192,
     "missingTranslationNotices": 7,
     "newLocaleBatchBrowser": "PASS",
     "batch03": {
@@ -278,11 +278,47 @@
       "baselineJapaneseAssessmentItems": 839,
       "nativeDeviceTested": false,
       "fullExpoBuildTested": false
+    },
+    "batch04": {
+      "status": "PASS",
+      "mode": "assessment_translation_batch_only",
+      "translatedQuestionPairs": 548,
+      "testTranslationLeakChecks": 548,
+      "testTranslationResponsiveCases": 2192,
+      "missingQuestionTranslationHandled": true,
+      "missingQuestionTranslationFixture": "food-1-mock-02",
+      "testedQuestionLocales": [
+        "en",
+        "vi",
+        "id",
+        "zh-CN",
+        "zh-TW",
+        "hi",
+        "bn",
+        "ne",
+        "my",
+        "th",
+        "km",
+        "tl"
+      ],
+      "previousBaselineCommit": "1344c92fd4f5892c887b241e17f2018f6aee399a",
+      "nativeDeviceTested": false,
+      "productionExpoTested": false
     }
   },
   "translatedQuestions": {
-    "en": 39,
-    "vi": 39
+    "en": 79,
+    "vi": 79,
+    "id": 39,
+    "zh-CN": 39,
+    "zh-TW": 39,
+    "hi": 39,
+    "bn": 39,
+    "ne": 39,
+    "my": 39,
+    "th": 39,
+    "km": 39,
+    "tl": 39
   },
   "batch02": {
     "newMockQuestions": 640,
@@ -304,5 +340,21 @@
       "km.level2.013-024.json",
       "km.level2.025-036.json"
     ]
+  },
+  "batch04": {
+    "newQuestionLocalePairs": 470,
+    "totalQuestionLocalePairs": 548,
+    "weeklyQuestionLocalePairs": 468,
+    "mockQuestionLocalePairs": 80,
+    "mockFormsTranslated": {
+      "en": [
+        "food-1-mock-01"
+      ],
+      "vi": [
+        "food-1-mock-01"
+      ]
+    },
+    "remainingMockQuestionLocalePairs": 9520,
+    "nativeExpertReviewed": false
   }
 }

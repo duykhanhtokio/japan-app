@@ -2,11 +2,12 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
 const root=path.resolve(__dirname,'../..'),out=process.env.FOOD_QA_OUTPUT,executablePath=process.env.FOOD_QA_CHROMIUM;
 if(!out||!executablePath)throw Error('Set FOOD_QA_OUTPUT and FOOD_QA_CHROMIUM');
 const esbuild=require('esbuild'),{chromium}=require(require.resolve('playwright',{paths:[process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES]}));fs.mkdirSync(out,{recursive:true});
-const translationOnly=process.env.FOOD_QA_TRANSLATIONS_ONLY==='1';
-const selectedLocales=process.env.FOOD_QA_LOCALES?process.env.FOOD_QA_LOCALES.split(','):['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
-const selectedTestLocales=process.env.FOOD_QA_TEST_LOCALES?process.env.FOOD_QA_TEST_LOCALES.split(','):(translationOnly?['en']:['vi','en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']);
+const assessmentOnly=process.env.FOOD_QA_ASSESSMENTS_ONLY==='1';
+const translationOnly=assessmentOnly||process.env.FOOD_QA_TRANSLATIONS_ONLY==='1';
+const selectedLocales=assessmentOnly?[]:process.env.FOOD_QA_LOCALES?process.env.FOOD_QA_LOCALES.split(','):['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
+const selectedTestLocales=process.env.FOOD_QA_TEST_LOCALES?process.env.FOOD_QA_TEST_LOCALES.split(','):(translationOnly&&!assessmentOnly?['en']:['vi','en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']);
 const scriptFontDir=process.env.FOOD_QA_SCRIPT_FONT_DIR;
-if(translationOnly&&selectedLocales.some(l=>['hi','bn','ne','my','th','km'].includes(l))&&!scriptFontDir)throw Error('Set FOOD_QA_SCRIPT_FONT_DIR for script-specific font checks');
+if(translationOnly&&selectedLocales.concat(selectedTestLocales).some(l=>['hi','bn','ne','my','th','km'].includes(l))&&!scriptFontDir)throw Error('Set FOOD_QA_SCRIPT_FONT_DIR for script-specific font checks');
 const scriptFonts=scriptFontDir?['hi','bn','my','th','km']:[];
 for(const locale of scriptFonts)fs.copyFileSync(path.join(scriptFontDir,'qa-'+locale+'.woff2'),path.join(out,'qa-'+locale+'.woff2'));
 const extraFontCss=scriptFonts.map(locale=>'@font-face{font-family:FoodQA_'+locale+';src:url(/qa-'+locale+'.woff2)}').join('');
@@ -18,12 +19,15 @@ const localeIds=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','t
 const inputFiles=['lessons.1.ja.json','lessons.2.ja.json','exams.ja.json','diagrams.json','translations/glossary.json',...localeIds.flatMap(locale=>['translations/'+locale+'.json','test-translations/'+locale+'.json'])];
 const frozenInputs=new Map(inputFiles.map(file=>[path.join(root,'src/data/food-manufacturing',file),fs.readFileSync(path.join(root,'src/data/food-manufacturing',file),'utf8')]));
 const frozenData=file=>JSON.parse(frozenInputs.get(path.join(root,'src/data/food-manufacturing',file)));
+if(assessmentOnly&&process.env.FOOD_QA_EXPECTED_QUESTION_PAIRS){const actual=selectedTestLocales.reduce((n,l)=>n+Object.keys(frozenData('test-translations/'+l+'.json').questions).length,0);assert.equal(actual,Number(process.env.FOOD_QA_EXPECTED_QUESTION_PAIRS),'Incomplete assessment translation batch');}
+
 if(translationOnly){
  for(const figure of frozenData('diagrams.json').diagrams)for(const locale of selectedLocales)assert(figure.translations[locale],'Missing diagram caption: '+figure.id+'/'+locale);
- const baseline=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/food-manufacturing/browser-qa.json'),'utf8'));
- assert.equal(baseline.status,'PASS');assert.equal(baseline.testQuestions,839);
+ const baseline=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/food-manufacturing',assessmentOnly?'browser-locales-qa.json':'browser-qa.json'),'utf8'));
+ assert.equal(baseline.status,'PASS');
+ if(assessmentOnly){const core=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/food-manufacturing/browser-qa.json'),'utf8'));assert.equal(core.status,'PASS');assert.equal(core.testQuestions,839);assert.equal(baseline.sourceHashes['exams.ja.json'],core.sourceHashes['exams.ja.json']);}else assert.equal(baseline.testQuestions,839);
  for(const [file,hash]of Object.entries(baseline.sourceHashes)){
-  if(file==='diagrams.json'||selectedLocales.some(l=>file==='translations/'+l+'.json')||selectedTestLocales.some(l=>file==='test-translations/'+l+'.json'))continue;
+  if((file==='diagrams.json'&&!assessmentOnly)||selectedLocales.some(l=>file==='translations/'+l+'.json')||selectedTestLocales.some(l=>file==='test-translations/'+l+'.json'))continue;
   assert.equal(require('node:crypto').createHash('sha256').update(frozenInputs.get(path.join(root,'src/data/food-manufacturing',file))).digest('hex'),hash,'Baseline changed: '+file);
  }
 }
@@ -109,7 +113,7 @@ if(translationOnly){
    for(const [i,q]of exam.questions.entries()){
     const t=pack.questions[q.id];if(!t){if(i<exam.questions.length-1)await page.getByRole('button',{name:'次へ',exact:true}).click();continue;}
     let text=await page.locator('body').innerText();assert(text.includes(q.promptJa)&&text.includes(t.prompt),q.id+'/'+locale);for(const v of t.options)assert(text.includes(v),q.id+'/'+locale+'/choice');assert(!text.includes('正解：'));assert(!text.includes(t.explanation),q.id+'/'+locale+'/early explanation');report.testTranslationLeakChecks++;
-    for(const [width,height]of report.viewports){await page.setViewportSize({width,height});assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),q.id+'/'+locale+'/width');report.testTranslationResponsiveCases++;}
+    for(const [width,height]of report.viewports){await page.setViewportSize({width,height});assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),q.id+'/'+locale+'/width');const submit=page.getByRole('button',{name:'提出する',exact:true});await submit.scrollIntoViewIfNeeded();const bounds=await submit.boundingBox();assert(bounds&&bounds.y>=-1&&bounds.y+bounds.height<=height+1,q.id+'/'+locale+'/submit bounds');report.testTranslationResponsiveCases++;}
     await page.getByRole('button').filter({hasText:new RegExp('^'+(q.answerIndex+1)+'\\. ')}).first().click();if(i<exam.questions.length-1)await page.getByRole('button',{name:'次へ',exact:true}).click();
    }
    await page.getByRole('button',{name:'提出する',exact:true}).click();await page.getByRole('button',{name:'確定',exact:true}).click();await page.getByRole('button',{name:'もう一度解く',exact:true}).waitFor();
@@ -120,8 +124,8 @@ if(translationOnly){
    if(exam.id==='food-1-weekly-01'){await page.setViewportSize({width:390,height:844});const file='translated-weekly-review-'+locale+'-390x844.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}
   }
  }
- await start('1','vi');await page.getByRole('button',{name:'確認・模擬試験',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).first().click();await page.getByRole('button',{name:'訳を表示',exact:true}).click();assert((await page.locator('body').innerText()).includes('この言語の問題訳は準備中です。'));report.missingQuestionTranslationHandled=true;
+ const missingPack=frozenData('test-translations/vi.json'),missingExam=exams.find(e=>e.questions.every(q=>!missingPack.questions[q.id]));assert(missingExam,'Missing-translation fixture required');const missingIndex=exams.filter(e=>e.level===missingExam.level).findIndex(e=>e.id===missingExam.id);await start(missingExam.level,'vi');await page.getByRole('button',{name:'確認・模擬試験',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).nth(missingIndex).click();await page.getByRole('button',{name:'訳を表示',exact:true}).click();assert((await page.locator('body').innerText()).includes('この言語の問題訳は準備中です。'));report.missingQuestionTranslationHandled=true;report.missingQuestionTranslationFixture=missingExam.id;
  }
- assert.deepEqual(errors,[]);Object.assign(report,translationOnly?{status:'PASS',mode:'locale_batch_only',testedLocales:selectedLocales,testedQuestionLocales:selectedTestLocales,scriptFontFamiliesLoaded:scriptFonts,previousBaselineCommit:'7ef2d42a169b61b3e2cac44b24013d316d215492'}:{status:'PASS',completionSaveFailureHandled:true,examSaveFailureHandled:true,completionReload:true,levelIsolation:true,examResume:true,hiddenAnswersBeforeSubmit:true,cancelSubmit:true,completionBadge:true,japaneseQaFontLoaded:true});fs.writeFileSync(path.join(root,'docs/ssw-workspace/food-manufacturing',translationOnly?'browser-locales-qa.json':'browser-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+ assert.deepEqual(errors,[]);Object.assign(report,translationOnly?{status:'PASS',mode:assessmentOnly?'assessment_translation_batch_only':'locale_batch_only',testedLocales:selectedLocales,testedQuestionLocales:selectedTestLocales,scriptFontFamiliesLoaded:scriptFonts,previousBaselineCommit:assessmentOnly?'1344c92fd4f5892c887b241e17f2018f6aee399a':'7ef2d42a169b61b3e2cac44b24013d316d215492'}:{status:'PASS',completionSaveFailureHandled:true,examSaveFailureHandled:true,completionReload:true,levelIsolation:true,examResume:true,hiddenAnswersBeforeSubmit:true,cancelSubmit:true,completionBadge:true,japaneseQaFontLoaded:true});fs.writeFileSync(path.join(root,'docs/ssw-workspace/food-manufacturing',assessmentOnly?'browser-assessments-qa.json':translationOnly?'browser-locales-qa.json':'browser-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
  }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1});

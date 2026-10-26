@@ -60,9 +60,10 @@ for locale in locales:
    for para in source['paragraphs']:
     for key in ('paragraphs','paragraphTitles'): check(bool(t.get(key,{}).get(para['id'],'')),locale+': missing '+key+' '+lid)
    for term in source['terms']: check(bool(t.get('terms',{}).get(term['ja'],'')),locale+': missing term '+lid+' '+term['ja'])
+   # Match Japanese letters, not the interpunct used in A・B・C mathematical labels.
    if locale in ['hi','bn','ne','my','th','km','tl']:
     values=[t.get(k,'') for k in ['title','objective','activity','summary']]+list(t.get('paragraphTitles',{}).values())+list(t.get('paragraphs',{}).values())+list(t.get('terms',{}).values())
-    check(not any(re.search(r'[\u3040-\u30ff\u4e00-\u9fff]',v) for v in values),locale+': Japanese fallback in target values '+lid)
+    check(not any(re.search(r'[\u3041-\u3096\u30a1-\u30fa\u4e00-\u9fff]',v) for v in values),locale+': Japanese fallback in target values '+lid)
 def runtime_revision(value):
  text=json.dumps(value,ensure_ascii=False,separators=(',',':')).encode('utf-16-le');h=2166136261
  for i in range(0,len(text),2):h=((h^(text[i]+256*text[i+1]))*16777619)&0xffffffff
@@ -80,6 +81,9 @@ for locale in locales:
    check(bool(t.get('prompt')) and bool(t.get('explanation')),locale+': empty question text '+qid)
    check(len(t.get('options',[]))==4 and all(isinstance(x,str) and x.strip() for x in t['options']),locale+': incomplete choices '+qid)
    check(len(t.get('optionExplanations',[]))==4 and all(isinstance(x,str) and x.strip() for x in t['optionExplanations']),locale+': incomplete option reasons '+qid)
+   target_values=[t['prompt'],t['explanation']]+t['options']+t['optionExplanations']
+   pattern=r'[\u3041-\u3096\u30a1-\u30fa]' if locale in ['zh-CN','zh-TW'] else r'[\u3041-\u3096\u30a1-\u30fa\u4e00-\u9fff]'
+   check(not any(re.search(pattern,v) for v in target_values),locale+': Japanese fallback in question translation '+qid)
  for eid,t in pack['examTitles'].items():
   e=source_exams.get(eid);check(e is not None,locale+': unknown translated exam '+eid)
   if e:check(t.get('sourceHash')==runtime_revision({'titleJa':e['titleJa']}) and bool(t.get('title')),locale+': stale/empty exam title '+eid)
