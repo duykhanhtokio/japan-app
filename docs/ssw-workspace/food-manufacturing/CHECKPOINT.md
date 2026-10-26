@@ -2,7 +2,17 @@
 
 Internal development preview on `feature/food-manufacturing-20261026`. Read IMPLEMENTATION_REQUEST.md, progress.json, source-review.md, source-map.json and batch-06-review.json. AI checks do not certify native, expert or release quality.
 
-## Continuation after batch06
+## Batch07 — six parallel translation assignments
+
+- Completed all 40 canonical questions and the title of `food-1-mock-03` in tl, th, my, km, hi and ne: 240 new question-locale pairs, 960 choices and 960 option explanations.
+- Current total: 2,748 question-locale pairs. EN, VI, ID and the six new locales each have 239; zh-CN, zh-TW and bn each have 199. Remaining: 7,320 pairs.
+- All prior 2,508 pairs and titles preserved; Japanese source questions, answer positions, assessment revisions, runtime and approved UI remain unchanged.
+- Validation: canonical hashes, form membership, four choices/reasons, correct-answer explanation alignment, nonempty fields, script contamination checks, and exact existing adapter valid/stale/missing-locale behavior. See `batch-07-review.json`. AI review is not native/domain certification.
+- AI cross-review corrected ambiguous Burmese thawing wording in q179, made q185's <=15°C boundary explicit, clarified Khmer conveyor terminology in q308/q338 and refrigeration wording in q288. Numerical/training scope and worker authority reviewed. Browser/native/Expo testing for these additions remains pending.
+- Historical browser evidence below covers 2,468 baseline pairs only. A total of 280 additions since batch06 (40 ID + this 240) await browser QA; do not inherit unrun evidence. `progress.json` now reflects current translation counts while retaining historical browser results.
+- Next action: translate `food-1-mock-03` into zh-CN, zh-TW and bn (120 pairs), then `food-2-mock-03` into all 12 and `food-1-mock-04` into EN/VI. Remaining from original 960-pair target: 680.
+
+## Historical continuation after batch06
 
 - Indonesian `food-1-mock-03` is now complete: 40/40 canonical questions and its title. First 10 were added in `b3f43f54be3feeb5866bfb9c5546f088a233560e`; the remaining 30 in `21a74f5ad3d0df07d07114305603c552787e354c`.
 - Current totals: 2,508 question-locale pairs; Indonesian, EN and VI have 239 each; the other nine locales have 199 each. Remaining: 7,560 pairs. Lesson/diagram/Japanese assessment totals remain the batch06 baseline below.
