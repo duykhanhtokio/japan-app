@@ -5,6 +5,10 @@ const esbuild=require('esbuild'),{chromium}=require(require.resolve('playwright'
 const assessmentOnly=process.env.FOOD_QA_ASSESSMENTS_ONLY==='1';
 const deltaBase=process.env.FOOD_QA_ASSESSMENT_DELTA_BASE;
 const deltaGroup=process.env.FOOD_QA_DELTA_GROUP;
+const deltaBatch=process.env.FOOD_QA_DELTA_BATCH;
+const deltaBaselineReport=process.env.FOOD_QA_ASSESSMENT_BASELINE_REPORT||'browser-assessments-qa.json';
+if(!/^[a-z0-9-]+\.json$/.test(deltaBaselineReport))throw Error('Invalid assessment baseline report name');
+if(deltaBatch&&(!deltaBase||!/^[a-z0-9-]+$/.test(deltaBatch)))throw Error('Invalid delta batch name');
 if(deltaGroup&&(!deltaBase||!/^[a-z0-9-]+$/.test(deltaGroup)))throw Error('Delta group must be a simple name in assessment delta mode');
 if(deltaBase&&(!assessmentOnly||!/^[a-f0-9]{40}$/.test(deltaBase)))throw Error('Assessment delta requires assessment-only mode and a full baseline commit SHA');
 const translationOnly=assessmentOnly||process.env.FOOD_QA_TRANSLATIONS_ONLY==='1';
@@ -42,8 +46,16 @@ const deltaQuestions=new Map();let inheritedQuestionPairs=0,expectedDeltaPairs=0
 if(deltaBase){
  const {execFileSync}=require('node:child_process'),sha256=value=>require('node:crypto').createHash('sha256').update(value).digest('hex');
  const atBase=file=>execFileSync('git',['show',deltaBase+':'+file],{cwd:root,maxBuffer:20*1024*1024});
- const prior=JSON.parse(atBase('docs/ssw-workspace/food-manufacturing/browser-assessments-qa.json'));
- assert.equal(prior.status,'PASS');assert.equal(prior.mode,'assessment_translation_batch_only');
+ const prior=JSON.parse(atBase('docs/ssw-workspace/food-manufacturing/'+deltaBaselineReport));
+ assert.equal(prior.status,'PASS');assert(['assessment_translation_batch_only','merged_assessment_translation_delta'].includes(prior.mode),'Unsupported prior assessment evidence');
+ const priorPairs=prior.mode==='merged_assessment_translation_delta'?prior.combinedVerifiedQuestionPairs:prior.translatedQuestionPairs;
+ assert(Number.isInteger(priorPairs)&&priorPairs>0);
+ if(prior.mode==='merged_assessment_translation_delta'){
+  assert.equal(prior.inheritedRuntimeUnchanged,true);assert.equal(prior.inheritedQuestionPairs+prior.newTranslatedQuestionPairs,priorPairs);
+  const covered=new Set();let verifiedNew=0;
+  for(const name of prior.groupReports){assert(/^[a-z0-9-]+\.json$/.test(name));const group=JSON.parse(atBase('docs/ssw-workspace/food-manufacturing/'+name));assert.equal(group.status,'PASS');assert.equal(group.deltaBaselineCommit,prior.deltaBaselineCommit);assert.equal(group.inheritedQuestionPairs,prior.inheritedQuestionPairs);assert.deepEqual(group.sourceHashes,prior.sourceHashes);assert.equal(group.testTranslationLeakChecks,group.translatedQuestionPairs);assert.equal(group.testTranslationResponsiveCases,group.translatedQuestionPairs*group.viewports.length);for(const locale of group.testedQuestionLocales){assert(!covered.has(locale));covered.add(locale);}verifiedNew+=group.translatedQuestionPairs;}
+  assert.deepEqual([...covered].sort(),[...localeIds].sort());assert.equal(verifiedNew,prior.newTranslatedQuestionPairs);
+ }
  for(const file of inputFiles){
   const oldRaw=atBase('src/data/food-manufacturing/'+file);
   assert.equal(sha256(oldRaw),prior.sourceHashes[file],'Prior evidence mismatch: '+file);
@@ -56,7 +68,7 @@ if(deltaBase){
   if(selectedTestLocales.includes(locale))expectedDeltaPairs+=added.size;
   else untestedNewQuestionPairs+=added.size;
  }
- assert.equal(inheritedQuestionPairs,prior.translatedQuestionPairs,'Prior pair count mismatch');
+ assert.equal(inheritedQuestionPairs,priorPairs,'Prior pair count mismatch');
  for(const file of ['src/components/food-manufacturing/FoodManufacturingCourse.tsx','src/components/food-manufacturing/ConceptDiagrams.tsx','src/data/food-manufacturing/index.ts','src/services/food-manufacturing-study-state.ts','src/app/specified-skills/food-manufacturing.tsx'])assert.equal(sha256(fs.readFileSync(path.join(root,file))),sha256(atBase(file)),'Inherited runtime changed: '+file);
  if(process.env.FOOD_QA_EXPECTED_NEW_QUESTION_PAIRS)assert.equal(expectedDeltaPairs,Number(process.env.FOOD_QA_EXPECTED_NEW_QUESTION_PAIRS),'Incomplete assessment delta');
  assert(expectedDeltaPairs>0,'No new assessment translations to test');
@@ -153,13 +165,13 @@ const shouldTest=(locale,id)=>!deltaBase||deltaQuestions.get(locale).has(id);
     const q=exam.questions[i],t=pack.questions[q.id];if(t&&shouldTest(locale,q.id)){const text=await page.locator('body').innerText();assert(text.includes(t.explanation),q.id+'/'+locale+'/review');for(const reason of t.optionExplanations)assert(text.includes(reason),q.id+'/'+locale+'/reason');report.translatedQuestionPairs++;}
     if(i>0)await page.getByRole('button',{name:'前へ',exact:true}).click();
    }
-   if(exam.id==='food-1-weekly-01'||(deltaBase&&exam.id==='food-1-mock-02')){await page.setViewportSize({width:390,height:844});const file=(exam.kind==='mock'?'translated-mock02-review-':'translated-weekly-review-')+locale+'-390x844.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}
+   if(exam.id==='food-1-weekly-01'||(deltaBase&&exam.id===(process.env.FOOD_QA_SCREENSHOT_EXAM||'food-1-mock-02'))){await page.setViewportSize({width:390,height:844});await page.evaluate(()=>{for(const node of document.querySelectorAll('*'))if(node.scrollTop)node.scrollTop=0;window.scrollTo(0,0);});const file=(deltaBase?'translated-'+exam.id+'-review-':'translated-weekly-review-')+locale+'-390x844.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}
    console.log('QA assessment form',locale,exam.id,'tested pairs',report.translatedQuestionPairs);
   }
  }
  const missingPack=frozenData('test-translations/vi.json'),missingExam=exams.find(e=>e.questions.every(q=>!missingPack.questions[q.id]));assert(missingExam,'Missing-translation fixture required');const missingIndex=exams.filter(e=>e.level===missingExam.level).findIndex(e=>e.id===missingExam.id);await start(missingExam.level,'vi');await page.getByRole('button',{name:'確認・模擬試験',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).nth(missingIndex).click();await page.getByRole('button',{name:'訳を表示',exact:true}).click();assert((await page.locator('body').innerText()).includes('この言語の問題訳は準備中です。'));report.missingQuestionTranslationHandled=true;report.missingQuestionTranslationFixture=missingExam.id;
  }
- if(deltaBase){assert.equal(report.translatedQuestionPairs,expectedDeltaPairs);assert.equal(report.testTranslationLeakChecks,expectedDeltaPairs);assert.equal(report.testTranslationResponsiveCases,expectedDeltaPairs*report.viewports.length);Object.assign(report,{deltaBaselineCommit:deltaBase,inheritedQuestionPairs,untestedNewQuestionPairs,combinedVerifiedQuestionPairs:inheritedQuestionPairs+report.translatedQuestionPairs,inheritedRuntimeUnchanged:true});}
- assert.deepEqual(errors,[]);Object.assign(report,translationOnly?{status:'PASS',mode:assessmentOnly?'assessment_translation_batch_only':'locale_batch_only',testedLocales:selectedLocales,testedQuestionLocales:selectedTestLocales,scriptFontFamiliesLoaded:scriptFonts,previousBaselineCommit:assessmentOnly?'1344c92fd4f5892c887b241e17f2018f6aee399a':'7ef2d42a169b61b3e2cac44b24013d316d215492'}:{status:'PASS',completionSaveFailureHandled:true,examSaveFailureHandled:true,completionReload:true,levelIsolation:true,examResume:true,hiddenAnswersBeforeSubmit:true,cancelSubmit:true,completionBadge:true,japaneseQaFontLoaded:true});fs.writeFileSync(path.join(root,'docs/ssw-workspace/food-manufacturing',deltaBase?'browser-assessments-delta'+(deltaGroup?'-'+deltaGroup:'')+'-qa.json':assessmentOnly?'browser-assessments-qa.json':translationOnly?'browser-locales-qa.json':'browser-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+ if(deltaBase){assert.equal(report.translatedQuestionPairs,expectedDeltaPairs);assert.equal(report.testTranslationLeakChecks,expectedDeltaPairs);assert.equal(report.testTranslationResponsiveCases,expectedDeltaPairs*report.viewports.length);Object.assign(report,{deltaBaselineCommit:deltaBase,deltaBaselineReport,inheritedQuestionPairs,untestedNewQuestionPairs,combinedVerifiedQuestionPairs:inheritedQuestionPairs+report.translatedQuestionPairs,inheritedRuntimeUnchanged:true});}
+ assert.deepEqual(errors,[]);Object.assign(report,translationOnly?{status:'PASS',mode:assessmentOnly?'assessment_translation_batch_only':'locale_batch_only',testedLocales:selectedLocales,testedQuestionLocales:selectedTestLocales,scriptFontFamiliesLoaded:scriptFonts,previousBaselineCommit:deltaBase||(assessmentOnly?'1344c92fd4f5892c887b241e17f2018f6aee399a':'7ef2d42a169b61b3e2cac44b24013d316d215492')}:{status:'PASS',completionSaveFailureHandled:true,examSaveFailureHandled:true,completionReload:true,levelIsolation:true,examResume:true,hiddenAnswersBeforeSubmit:true,cancelSubmit:true,completionBadge:true,japaneseQaFontLoaded:true});fs.writeFileSync(path.join(root,'docs/ssw-workspace/food-manufacturing',deltaBase?'browser-assessments-'+(deltaBatch||'delta')+(deltaGroup?'-'+deltaGroup:'')+'-qa.json':assessmentOnly?'browser-assessments-qa.json':translationOnly?'browser-locales-qa.json':'browser-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
  }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1});

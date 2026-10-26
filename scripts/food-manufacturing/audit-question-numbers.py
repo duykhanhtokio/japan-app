@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Flag assessment numeric differences for semantic review, never automatic correction."""
+import argparse
 import collections
 import json
 import pathlib
@@ -37,6 +38,11 @@ for path in sorted((data / 'test-translations').glob('*.json')):
                               'status': 'needs_semantic_review_not_automatic_error'})
 report = {'questionCounts': counts, 'numericReviewCandidates': flags,
           'meaning': 'Unicode digits normalized. Worded numbers may be correct; each candidate requires semantic review.'}
-output = root / 'docs/ssw-workspace/food-manufacturing/batch-05-numeric-audit.json'
+parser = argparse.ArgumentParser()
+parser.add_argument('--output', default='assessment-numeric-audit.json')
+args = parser.parse_args()
+if not re.fullmatch(r'[a-z0-9-]+\.json', args.output):
+    parser.error('--output must be a JSON basename')
+output = root / 'docs/ssw-workspace/food-manufacturing' / args.output
 output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
 print(json.dumps({'questionCounts': counts, 'numericCandidates': len(flags)}))
