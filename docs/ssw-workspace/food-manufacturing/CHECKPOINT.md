@@ -1,8 +1,17 @@
 # Food manufacturing implementation checkpoint
 
-Internal development preview on `feature/food-manufacturing-20261026`. Read IMPLEMENTATION_REQUEST.md, progress.json, source-review.md, source-map.json and batch-06-review.json. AI checks do not certify native, expert or release quality.
+Internal development preview on `feature/food-manufacturing-20261026`. Read IMPLEMENTATION_REQUEST.md, progress.json, source-review.md, source-map.json and batch-08-review.json. AI checks do not certify native, expert or release quality.
 
-## Batch07 — six parallel translation assignments
+## Batch08 — six parallel translation assignments
+
+- Added 240 question-locale pairs and six titles: food-1-mock-03 in zh-CN, zh-TW and bn; food-2-mock-03 in en, vi and id. The first-level third mock is now complete in all12 locales; the second-level third mock has three complete locales.
+- Current total: 2,988 pairs. EN/VI/ID each279; all other nine locales each239. Remaining: 7,080 pairs. Preserve original78 Japanese lessons,839 assessment items,33 revisions and approved UI.
+- PASS:240 canonical source hashes, exact form membership, four choices/reasons each, correct-answer explanation alignment, nonempty/script checks, exact existing translation-lookup function and stale/missing-locale rejection. All2,748 prior pairs and titles preserved.
+- Six independent AI critical reviews covered72 locale-question units. Corrected TW chemical-contamination specificity, EN CL-deviation wording, ID recurrence-prevention wording and VI both-OL-conditions clarity. Six arithmetic/limit reference cases pass;52 numeric-format candidates reviewed equivalent,0 pending. See batch-08-review.json.
+- Browser baseline remains2,468 pairs/9,872 viewport cases. All520 additions since batch06 await browser validation. No browser, native-device, fullExpo or native/expert certification is claimed for this batch.
+- Next action: translate all40 canonical food-2-mock-03 questions/title into tl,th,my,km,hi,ne,zh-CN,zh-TW,bn (360 pairs), then food-1-mock-04 in EN/VI (80 pairs). Original960-pair target has440 pairs remaining.
+
+## Historical batch07 — six parallel translation assignments
 
 - Completed all 40 canonical questions and the title of `food-1-mock-03` in tl, th, my, km, hi and ne: 240 new question-locale pairs, 960 choices and 960 option explanations.
 - Current total: 2,748 question-locale pairs. EN, VI, ID and the six new locales each have 239; zh-CN, zh-TW and bn each have 199. Remaining: 7,320 pairs.
