@@ -1,0 +1,131 @@
+{
+  "status": "PASS",
+  "scope": "Eleven arithmetic/conditional references. Hypothetical conditions apply only where source labels them.",
+  "cases": [
+    {
+      "questionId": "food-1-q336",
+      "sourceHash": "fnv1a-4aa43a0c",
+      "formula": "42min-40min",
+      "result": 2,
+      "unitOrInterpretation": "minutes excess",
+      "canonicalCorrectChoice": "2分超過も逸脱として報告する。",
+      "answerIndex": 1,
+      "status": "ai_arithmetic_or_conditional_logic_checked"
+    },
+    {
+      "questionId": "food-1-q185",
+      "sourceHash": "fnv1a-85dd326f",
+      "formula": "11:48-11:20; 28<=30 and14<=15",
+      "result": {
+        "elapsedMinutes": 28,
+        "timeMeets": true,
+        "temperatureMeets": true
+      },
+      "unitOrInterpretation": "both criteria at this measurement",
+      "canonicalCorrectChoice": "経過28分、中心14℃なので提示された条件を満たす。",
+      "answerIndex": 2,
+      "status": "ai_arithmetic_or_conditional_logic_checked"
+    },
+    {
+      "questionId": "food-1-q223",
+      "sourceHash": "fnv1a-c55045f3",
+      "formula": "68C-23C",
+      "result": 45,
+      "unitOrInterpretation": "Celsius difference, not product conformity",
+      "canonicalCorrectChoice": "45℃。",
+      "answerIndex": 0,
+      "status": "ai_arithmetic_or_conditional_logic_checked"
+    },
+    {
+      "questionId": "food-2-q254",
+      "sourceHash": "fnv1a-f6076d3e",
+      "formula": "100*erf(3/sqrt(2)) under normal distribution",
+      "result": 99.73002039367398,
+      "unitOrInterpretation": "percent approximately99.7; no all-product guarantee",
+      "canonicalCorrectChoice": "全製品の適合を保証する数字ではなく、分布の前提と規格の位置も確認する。",
+      "answerIndex": 2,
+      "status": "ai_arithmetic_or_conditional_logic_checked"
+    },
+    {
+      "questionId": "food-2-q307",
+      "sourceHash": "fnv1a-6a5aeba",
+      "formula": "44kg/20kg*100; dry-ingredient denominator",
+      "result": 220.00000000000003,
+      "unitOrInterpretation": "percent; added water explains yield>100",
+      "canonicalCorrectChoice": "220％。",
+      "answerIndex": 0,
+      "status": "ai_arithmetic_or_conditional_logic_checked"
+    },
+    {
+      "questionId": "food-2-q256",
+      "sourceHash": "fnv1a-43a8d523",
+      "formula": "(18+12)/(18+12+6+4)*100",
+      "result": 75.0,
+      "unitOrInterpretation": "percent cumulative top-two",
+      "canonicalCorrectChoice": "75％。",
+      "answerIndex": 2,
+      "status": "ai_arithmetic_or_conditional_logic_checked"
+    },
+    {
+      "questionId": "food-2-q145",
+      "sourceHash": "fnv1a-c1ae02b2",
+      "formula": "CL>=74C,>=80s; OL>=75C,>=90s at74.5C/85s",
+      "result": {
+        "CL": true,
+        "OL": false
+      },
+      "unitOrInterpretation": "CL meets both; OL misses both; predefined response needed",
+      "canonicalCorrectChoice": "CLの二条件は満たすがOLの二条件は満たさず、予め決めた対応が必要である。",
+      "answerIndex": 1,
+      "status": "ai_arithmetic_or_conditional_logic_checked"
+    },
+    {
+      "questionId": "food-2-q229",
+      "sourceHash": "fnv1a-16d8db80",
+      "formula": "Steps6..12 inclusive; preparation1..5",
+      "result": 7,
+      "unitOrInterpretation": "seven principles",
+      "canonicalCorrectChoice": "準備は手順1～5、7原則は危害要因分析の手順6から手順12までとして構成を直す。",
+      "answerIndex": 0,
+      "status": "ai_arithmetic_or_conditional_logic_checked"
+    },
+    {
+      "questionId": "food-2-q386",
+      "sourceHash": "fnv1a-a6ce4db5",
+      "formula": "171kg/180kg*100, not denominator200kg",
+      "result": 95.0,
+      "unitOrInterpretation": "percent second-stage yield",
+      "canonicalCorrectChoice": "95％。",
+      "answerIndex": 1,
+      "status": "ai_arithmetic_or_conditional_logic_checked"
+    },
+    {
+      "questionId": "food-2-q293",
+      "sourceHash": "fnv1a-2b35fd2c",
+      "formula": "47<48;53>52;53-47;mean50 within48..52",
+      "result": {
+        "belowSpec": true,
+        "aboveSpec": true,
+        "rangeGrams": 6,
+        "meanWithinSpec": true
+      },
+      "unitOrInterpretation": "mean cannot guarantee all values conform",
+      "canonicalCorrectChoice": "平均は中心だが規格外があり、ばらつきの改善が必要である。",
+      "answerIndex": 3,
+      "status": "ai_arithmetic_or_conditional_logic_checked"
+    },
+    {
+      "questionId": "food-2-q348",
+      "sourceHash": "fnv1a-8a5de0c3",
+      "formula": "(40min*18units/min+60min*23units/min)/100min",
+      "result": 21.0,
+      "unitOrInterpretation": "units/minute weighted actual speed",
+      "canonicalCorrectChoice": "21個/分。",
+      "answerIndex": 2,
+      "status": "ai_arithmetic_or_conditional_logic_checked"
+    }
+  ],
+  "nativeSpeakerReviewed": false,
+  "domainExpertReviewed": false,
+  "meaning": "Math and source-choice alignment, not universal production limits or full domain certification."
+}

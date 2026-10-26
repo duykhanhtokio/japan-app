@@ -1,7 +1,7 @@
 {
   "status": "in_progress_internal_preview",
   "scopeComplete": false,
-  "branch": "feature/food-manufacturing-20261026",
+  "branch": "feature/food-manufacturing-batch07-20261026",
   "lessonsAuthored": {
     "1": 42,
     "2": 36
@@ -223,14 +223,14 @@
   },
   "productionRelease": false,
   "remaining": [
-    "Complete 7600 remaining mock question-locale translations; all weekly checks and first two mocks of each level are translated in all12 locales;1号 mock03 additionally EN/VI.",
+    "Complete 6640 remaining mock question-locale translations; weekly checks and mock01–03 of both levels all12;1号 mock04 additionally EN/VI.",
     "Verified full-body furigana",
     "Full detailed source competency mapping and complete source visual review",
     "Original explanatory illustrations and optional prerecorded audio",
     "Full Expo/native build and actual device validation",
     "Expert/native review remains unverified"
   ],
-  "next": "Next960 pairs:1号 mock03 in remaining10 locales,2号 mock03 in all12,1号 mock04 in EN/VI. Preserve all existing source and translation entries. Later full-body furigana, detailed source/visual coverage, illustrations, optional audio, native/domain and fullExpo/native validation.",
+  "next": "Reconcile overlapping draftPR variants with shared sector branch before continuing. Next960 pairs:1号 mock04 in remaining10 locales,2号 mock04 all12,1号 mock05 EN/VI. Preserve exact canonical form membership and all old entries. Then remaining mock forms, verified furigana, detailed source/visual mapping, illustrations, optional audio and fullExpo/native/expert review.",
   "japaneseAuthorshipStatus": "AI-authored candidate covering all source chapters; detailed competency coverage remains unverified",
   "sourceReferences": "153/158 TOC entries have candidate lesson page references; remaining5 are indexes/notices/bibliography. This is not mastery or full coverage certification.",
   "nativeSpeakerReviewed": false,
@@ -254,9 +254,9 @@
     "fullExpoBuildTested": false,
     "newLocaleResponsiveCases": 24,
     "diagramTranslationPairs": 20,
-    "translatedQuestionPairs": 2468,
-    "testTranslationLeakChecks": 2468,
-    "testTranslationResponsiveCases": 9872,
+    "translatedQuestionPairs": 3428,
+    "testTranslationLeakChecks": 3428,
+    "testTranslationResponsiveCases": 13712,
     "missingTranslationNotices": 7,
     "newLocaleBatchBrowser": "PASS",
     "batch03": {
@@ -324,7 +324,7 @@
       "deltaBaselineCommit": "854bfc43e6ee0c074ab0de60efc787aa2faa98ba",
       "all12LocaleGroupsDisjoint": true
     },
-    "assessmentEvidence": "1508 prior pairs/6032 viewport cases at c94e38b4 plus960 new pairs/3840 cases; exact old-entry/source/runtime preservation verified",
+    "assessmentEvidence": "2468 prior pairs/9872 viewport cases at77a84b5f plus960 new pairs/3840 cases; exact prior-entry/source/runtime preservation verified",
     "batch06": {
       "structuralContent": "PASS2468 pairs",
       "translationAdapter": "PASS2468 valid and stale-revision rejection checks;7600missing without fallback",
@@ -345,21 +345,42 @@
       "deltaBaselineCommit": "c94e38b422b15a3b2582d098bcedfca57b29f80f",
       "deltaBaselineReport": "browser-assessments-batch05-qa.json",
       "all12LocaleGroupsDisjoint": true
+    },
+    "batch07": {
+      "structuralContent": "PASS3428 pairs",
+      "translationAdapter": "PASS3428 valid and stale-revision rejection checks;6640 missing without fallback",
+      "prior2468PairsAndTitlesPreserved": true,
+      "numericAudit": "64 equivalent formatting/wording candidates AI-resolved;0pending",
+      "arithmeticConditionalReferenceCases": 11,
+      "aiPeerReviewUniqueUnits": 273,
+      "jlptUiLock": "10/10 PASS",
+      "browser": "PASS after concurrent ID integration",
+      "nativeDeviceTested": false,
+      "fullExpoBuildTested": false,
+      "newQuestionLocalePairs": 960,
+      "inheritedQuestionLocalePairs": 2468,
+      "combinedVerifiedQuestionLocalePairs": 3428,
+      "newPreSubmissionLeakChecks": 960,
+      "newResponsiveCases": 3840,
+      "sourceReport": "browser-assessments-batch07-qa.json",
+      "deltaBaselineCommit": "77a84b5fcec06a2a7d68aa1734bbdd91a0d8fd0e",
+      "deltaBaselineReport": "browser-assessments-batch06-qa.json",
+      "all12LocaleGroupsDisjoint": true
     }
   },
   "translatedQuestions": {
-    "bn": 199,
-    "zh-TW": 199,
-    "hi": 199,
-    "th": 199,
-    "id": 199,
-    "zh-CN": 199,
-    "tl": 199,
-    "my": 199,
-    "ne": 199,
-    "km": 199,
-    "vi": 239,
-    "en": 239
+    "bn": 279,
+    "zh-TW": 279,
+    "hi": 279,
+    "th": 279,
+    "id": 279,
+    "zh-CN": 279,
+    "tl": 279,
+    "my": 279,
+    "ne": 279,
+    "km": 279,
+    "vi": 319,
+    "en": 319
   },
   "batch02": {
     "newMockQuestions": 640,
@@ -425,5 +446,22 @@
     "remainingMockQuestionLocalePairs": 7600,
     "peerReviewedUniqueUnits": 200,
     "nativeExpertReviewed": false
-  }
+  },
+  "batch07": {
+    "newQuestionLocalePairs": 960,
+    "totalQuestionLocalePairs": 3428,
+    "weeklyQuestionLocalePairs": 468,
+    "mockQuestionLocalePairs": 2960,
+    "newCompletedAll12Forms": [
+      "food-1-mock-03",
+      "food-2-mock-03"
+    ],
+    "additionalEnViForm": "food-1-mock-04",
+    "remainingMockQuestionLocalePairs": 6640,
+    "peerReviewedUniqueUnits": 273,
+    "nativeExpertReviewed": false,
+    "concurrentIndonesianPairsRetained": 40,
+    "newPairsBeyondConcurrentHead": 920
+  },
+  "integrationStatus": "Validated batch isolated for review because shared sector branch is concurrently advancing; reconcile six overlapping locale variants before merge"
 }
