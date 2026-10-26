@@ -1,3 +1,17 @@
+# Manufacturing SSW1 — batch10 six-AI Thai weeks4–5
+
+Date:2026-10-26 (Asia/Tokyo). Manufacturing baseline:c88ee4a8; verified remote integration baseline4d70964e includes concurrent agriculture work. Only 製造分野・特定技能1号; SSW2 remains excluded.
+
+Added42directJapanese-to-Thai lesson drafts and72weekly-question drafts:14lessons/24questions per specialty,weeks4–5. Independent AI comparison covered1334translatedfields; technical precision corrections applied and rechecked against Japanese, with final frozen payload hashes bound in author/independent QA. All114new runtimeentries equal the final reviewed staging. Flags remain ai_translated_draft,nativeReviewed=false/domainReviewed=false. Existing63Thai lessons/108questions unchanged;11canonical/prior-locale files including Japanese courses,checks,revisions andall EN/VI/ID content/captions are byte-identical.
+
+Totals:133Japanese lessons,19weekly checks/228questions,11diagrams. Thai105/133lessons,180/228questions,11/11existingcaptions. Lesson-locale pairs504,question-locale pairs864,caption-locale pairs44. Thai covers first5previewweeks per specialty, not a complete curriculum.8other targetlocales unstarted. No newJapanese lesson,PDFbody review,image asset,caption orofficial-format mock claimed thisbatch. Previousnext-unit plans require sourcevisualreview andno-duplicate gates.
+
+Validation:data/source/statechecker PASS133/228/504/864/44; runtimebinding PASS133lesson+228questionlookups,361stale-source rejections and361unsupported-locale nulls. Compatibility PASS11fullfiles/171priorThai entries/114newentry equality; exactJapanese termlabels/readings anddistinctThai answeroptions verified. Focused RNWebbrowser PASS111checks:84reader visits,72translatedquestionvisits,288postsubmissionrationales,6caption/image load/enlarge/pan/closechecks for3week4–5figures at320x568/932x430,and3week6pendingindicators. Answer/positionresume,noearlyrationales,completion/return tested;0pageerrors.26screenshots generated,4selected retained andinspected,including automaticnight appearance. JLPTbyte-lock PASS10/10. Storage/safearea/Royal adapters andtestfonts mean fullExpo/native/device/background fidelity unverified. Existingexpo/tsconfig.base warningpersists; fulltypecheck/lint/buildunrun.
+
+Next:remainingThai28lessons/48questions(mechanicalweeks6–7,electricalweek6,surfaceweek6),other8locales; visuallyread sourcepages andresolve no-duplicate gates before nextJapanese curriculumunits; source-objectmapping,illustrations,30originalofficial-format mocks(still0/30),fullExpo/native/devicechecks. No backgroundworker implied afterthisbatch.
+
+---
+
 # Manufacturing SSW1 — batch09 six-AI Thai weeks2–3
 
 Date:2026-10-26 (Asia/Tokyo). Baseline:32d41e5f. Manufacturing 特定技能1号 only; SSW2 sources remain excluded.

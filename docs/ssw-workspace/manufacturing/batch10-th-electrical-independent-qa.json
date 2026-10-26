@@ -1,0 +1,381 @@
+{
+  "schemaVersion": 1,
+  "batch": "10",
+  "reviewKind": "independent_direct_Japanese_to_Thai_AI_review",
+  "reviewerRole": "electrical_gap_worker_separate_from_Thai_author",
+  "baselineCommit": "4d70964e",
+  "scope": {
+    "lessons": 14,
+    "questions": 24,
+    "lessonTranslatedFields": 224,
+    "questionTranslatedFields": 216,
+    "totalPayloadTranslatedFieldsReviewed": 440
+  },
+  "method": "Compared every translated title/objective, each paragraph title/text, all term meanings, activity, ordered safety items, summary, and all24 question stems/96 ordered options/96 ordered reasons directly with canonical Japanese read in this session. Checked paragraphIDs, term labels/readings, source hashes and truthful AI-draft flags mechanically. Re-read the two corrected fields after author changes.",
+  "technicalChecks": [
+    "Capacitor capacitance versus16V/50V rating; idealcharging versus leakage; residualcharge and no improvisedshortcircuit safety.",
+    "Transistor B/C/E,pnp/npn, hFE conditional ratio8/0.10=80 and4/0.05=80; maximumratings separate.",
+    "Analog/digital,AD/DA,amplification/oscillation,AM/FM/PM distinguished.",
+    "Computer fivefunctions,CPU andbinary10=2,1101=13,1011=11,10010=18,question101=5 retained.",
+    "BarePCB versus assembly,protectiveresist versus removaletching,subtractive versus platingmethods and authoritylimitations retained.",
+    "Grease consistencymeasuredvalue versus productclassification,designatedtype/quantity/interval and no unauthorizedmixing retained.",
+    "Selfhold start/hold/stop/currentpath retained; nonlatchingrelay and returnedstartinput preconditions for powerreturn behavior retained.",
+    "Motor rotatingfield versus actualrotor speed,feedback/position/speed/torque roles retained.",
+    "IdealACtransformer V2/V1=N2/N1,100V×100/500=20V,120V×150/600=30V,question100×50/200=25V; iron/copperloss and primaryhazard retained.",
+    "Breaker/loadswitch/disconnector roles,arcquenching,overcurrentprotection versus allshock/leakageprotection, no repeatedunknownreset retained.",
+    "Solarcellgeneration versus storagebattery versus powerconditioning,night/outage not proof of absentvoltage retained.",
+    "Hydraulicpressure-force,flow-speed,directionpath,observations versus valvefaultcertainty,residualpressure and injectioninjury avoidance retained.",
+    "Packagingprotection plus product/count6/destination/deadline and nostack requirements retained.",
+    "Thermoplastic versus thermoset, injection/clamping/mold roles,FRPfiber/resin variation and no blanketinsulationclaim retained.",
+    "Allquestion optionpositions and reasonalignment preserved."
+  ],
+  "findings": [
+    {
+      "id": "E10-01",
+      "lessonId": "mfg1-electrical-l029",
+      "field": "terms[トルク].meaning",
+      "issue": "Duplicated Thai words ผลของแรงของแรง in torque definition.",
+      "resolution": "Author replaced with ผลของแรงที่พยายามหมุนเพลา; independently re-read and accepted.",
+      "status": "resolved"
+    },
+    {
+      "id": "E10-02",
+      "lessonId": "mfg1-electrical-l028",
+      "field": "paragraphs[section-3].text",
+      "issue": "CoilON/OFF described as open/closed in Thai could be confused with contact states.",
+      "resolution": "Author now explicitly uses energized/deenergized ขดลวดถูกกระตุ้น/ขดลวดไม่ถูกกระตุ้น throughout state example; independently re-read against JA and accepted.",
+      "status": "resolved"
+    }
+  ],
+  "correctionRequests": 2,
+  "unresolvedMaterialFindings": 0,
+  "result": "PASS_AI_DRAFT_REVIEW",
+  "payloadPath": "docs/ssw-workspace/manufacturing/batch10-th-electrical.json",
+  "payloadSha256": "173a22b7e4db717a620aea50c7efc11fcb94e1e0286d5160ca5441eaba4e45dd",
+  "canonicalPath": "src/data/manufacturing/electrical.json",
+  "canonicalFileSha256": "2e0d9897972b8ff44df5fcc39e34ee95af0417baf8954d552ff592f164d4a8cf",
+  "lessons": [
+    {
+      "id": "mfg1-electrical-l022",
+      "sourceHash": "a680c5bfcdaace4358439016b5305ee47889bdadc534f139ef7639c53c75b82f",
+      "translationDigest": "63bc67528f03e0315abd68053c68f339d3c3538565fe827d3cfec1824857cbb9",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-l023",
+      "sourceHash": "5e8b9ca9ce437a0ab453ee1b4b1263f1a78f85c1db93b37c2209f6c198919973",
+      "translationDigest": "fd4bf655ae13ca3cc02b20a05c98eede003a386c7a86010d0126a64ba88edff4",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-l024",
+      "sourceHash": "ec282035552d7ae1be1486a6287e4710f738254307794e9da64218526aa33f91",
+      "translationDigest": "240441ef1e8efc07b5cd595ac2aa1b281d976464b8898d1b63736dcb066bac3d",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-l025",
+      "sourceHash": "f6c61e108c840e7b1ccf9794a4da7c366703a38c3368945803d9310c31a1aa37",
+      "translationDigest": "9fb143aa2e70274492caf8e37fff4dc103b6881a594699210e61d19aec666818",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-l026",
+      "sourceHash": "1d7fdf6cc82278ade4f9b755e5fbdc449f5b46931a1aea345db76d9fe9e3b2a5",
+      "translationDigest": "277e763d87b0d1afc5c5b0ae193b8b0abe9eb8ddd139f2332e5eeed862a552eb",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-l027",
+      "sourceHash": "e33b8ccae4da46a52b6bb775596d119b418562198357bc8a06af0d0defd157f1",
+      "translationDigest": "0a27b068cbda419e662642a4e4c35b4aeba0451f6859222a2e33864fd48b1402",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-l028",
+      "sourceHash": "cedf3f5b13b0d74026ab57d69794392e8b571766d3af97be396225cd7d8ee33a",
+      "translationDigest": "dae167a8e00cdca05f2afd0f90b91241d0100c36300408dcef1c99053e659e86",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-l029",
+      "sourceHash": "36840f63d74a17940fee7aa25127b1fb590bf334452baa2c6db7a419583de233",
+      "translationDigest": "ad20037779ad28c29cb952cdf4cc8f8713274bdb4d6f06cc205a926d5f83c025",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-l030",
+      "sourceHash": "f8d8fc04575b667f12bcf7ffd98c235972136b8b2033c2724b2ac73362424474",
+      "translationDigest": "090e7246bac0afe005deb333db5f688219cf162459bc053483e7c6dd155e95fe",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-l031",
+      "sourceHash": "788a9633fb569ae0505368d9fa3284920490c147a0cf9bc80444115f2abb728a",
+      "translationDigest": "99b6aea4dc93a6b05736361d5023aa6d4077f7b009fe14eeb9211990c9ecff33",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-l032",
+      "sourceHash": "d17d7dcf79eaeffe5074f5d2ab57b34f1481fd875012e165c78e8411dfb77db2",
+      "translationDigest": "4f78c1acaead376143c319cb1f1387940e5ba7bbfbee1deaa45eb7addc7c2253",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-l033",
+      "sourceHash": "356f00962ec9c5ec5103442ff5bb0a7c93d66a6d95b742658f2101d322b440f6",
+      "translationDigest": "bef24a5b9c94cc0c61d0183cd5148864de0f22c6d34ab63200a736c6425ff4fe",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-l034",
+      "sourceHash": "d90c633c04b1815d796de13f6f7f8aebe16ac1c155e9dce4ffa868bba0593b28",
+      "translationDigest": "38a673131db31202547b47bebb502902e0ab891f3f512ae33ff7614eaa4f8329",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-l035",
+      "sourceHash": "5f33302fc0aa0a19fa54ceef92716ae3e97f2fedd18777ae181759bbd158859a",
+      "translationDigest": "68d8ceefd7de79799315edf84b8e95c18a819115019ae5fef88991345de6bde0",
+      "translatedFieldsReviewed": 16,
+      "result": "PASS"
+    }
+  ],
+  "questions": [
+    {
+      "id": "mfg1-electrical-weekly-04-q01",
+      "sourceHash": "373a26256d8e7af39ab981b95e3461c7d7003705be90f3ad1eeb7cea0b6ec49a",
+      "translationDigest": "2bb5f9f55d43eb9f0edcf9125638350c3ce54604b31c76dbaf239f210e040217",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 1,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-04-q02",
+      "sourceHash": "00383a79d3734f0fc7d00ff3f10103637d934ff266fbbdf05033593b414aedd1",
+      "translationDigest": "2a1c62afbd6b398f0c04aad22b7744c42eac9ead8ed506c9998c76731e9c4856",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 3,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-04-q03",
+      "sourceHash": "694f989316dcda444faed639c73aa394d0d10c56dc66b9280cc52ebb6c729602",
+      "translationDigest": "aab974fa18be3f053ea2ceb5499e188180566e8a8d32898c331779a17bf9ce09",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 0,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-04-q04",
+      "sourceHash": "187014dfbafdc62f0acea7c09e2fc5b21fe5cbd244bf3bd33726552aa356d803",
+      "translationDigest": "edf1fd13cb2eb4a5a9788030be26050a22abe056c73f34bcd5c6e27ec86d8ee7",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 2,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-04-q05",
+      "sourceHash": "685a92ee61c2e783280d48401050145dfeddc4224043cbd9bf5f4b9e3e7e8106",
+      "translationDigest": "3d268bd20f3baf9ad8066445402445c0534e3346db1375a9a5e508b221917f1e",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 3,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-04-q06",
+      "sourceHash": "1ae7f6f8d57ad0268fe9d1b7c5f851a7b66e5132bfe0ae91d4b812f7086c5e9b",
+      "translationDigest": "a04fe6792d35ef99319b70964ca62687c50afba9e786b1fdd4a065185b656f92",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 1,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-04-q07",
+      "sourceHash": "1bb908a638c18533c8052888696ea8cb54a67f325ddf39bd0496e752fea7e2ac",
+      "translationDigest": "faa061b6c5e067a4a10583c132e1bdc7cad2f5d474915a5fa2169f0c30ae87ec",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 2,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-04-q08",
+      "sourceHash": "f7b23ed025821e4328737d448968c39114e6b71062d65f83e7c29fd606ce1fb5",
+      "translationDigest": "b030fb5ae476e007ee620e190fddf8b93e419361122db77f506bc9d4884ef2fc",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 3,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-04-q09",
+      "sourceHash": "8840cf49a8efcd0df815ba9c5c064fcab6cdc5eab13b46187307e291a414599c",
+      "translationDigest": "e774467dca6daf684818b5e07461e1ed6251e3e2c79a0ecc5705dea60c084280",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 1,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-04-q10",
+      "sourceHash": "e805521f83f53960ff1db5ecd70946b26392ff6465f5b92a18e63fb8ba015234",
+      "translationDigest": "4b61761937e98ba68b5af9f46165d8e2ff9555494beefc2cef60e5dba1f6e2d9",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 0,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-04-q11",
+      "sourceHash": "8b316477e23127b98dc30f5a7b176f77ebd9260e55ceecb49e49366e55d4efe5",
+      "translationDigest": "272e25763c524889a796d55ec724da1f11eb9711705acbc4053447b6e9d1687f",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 2,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-04-q12",
+      "sourceHash": "6cb49afbabde55f5e7448c894dbe9accd6fd6bd18e057135e39533687c72bf71",
+      "translationDigest": "7abb8d3c54b3255fda190bdd09622fdd319f12afa47655271bb19c6d0f7c4e43",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 0,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-05-q01",
+      "sourceHash": "fcc283ba24773567afc2813f4b1da609cdf6ff851882a3c0d4bd5e2192071516",
+      "translationDigest": "0620d14ce4be9a9c79ce104b1c261cfdd675bfbdf4b607d698ddd9d3cc675c55",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 3,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-05-q02",
+      "sourceHash": "d011556805a9e6befe3ee91b7dbdeeb953a7a336c2883cfdced2b73d76331873",
+      "translationDigest": "37527ececc4b8e0ef0f661848ee64ba247ca6b5df084890834cba75d6f41b800",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 0,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-05-q03",
+      "sourceHash": "3ba38d1fc33f7bd5a28e97c2b05ef9a48bba93be96047229ac4d779f0bd88938",
+      "translationDigest": "a91022f1ac1697a613ef91d7118bc03a3d51279d9cc0d2aec79f47ac3a5ab49f",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 2,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-05-q04",
+      "sourceHash": "3eac7cdec3f190e93b5718102b4c45b97dfddbdb87e9b676426780999181843f",
+      "translationDigest": "b164536a4f6ac9ecbba378f711cb5fb1709a1de232f35d529c66e4c9acb12d81",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 3,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-05-q05",
+      "sourceHash": "01736a4d03b9ec64eee52c3286787c8bd738223a588b22bf7c1764a70fdc3817",
+      "translationDigest": "99b92e5b3d71cf875f3c4c29ba2243a7c172bc1b96ad51a5d02d7ab680c1f1f9",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 0,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-05-q06",
+      "sourceHash": "3aaaf6f2c0d6cea14ee61be4a8a197faf7bade9014f6cb876d58a50b4ca8ec1d",
+      "translationDigest": "2359c2b3a4380c8614556efe974ae5e15f6af863cd625395467f202398c30aae",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 2,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-05-q07",
+      "sourceHash": "604a65aea9cfa5564cbdfa520964b75f880e5b6ec1b105a8e8c203cee87b43d8",
+      "translationDigest": "4cbf698b92574e28a78f339462c208dd52abfd60b850cd20eb504a299cd3085f",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 1,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-05-q08",
+      "sourceHash": "b244ec57bec949c712dd4a5a37657da6a85a144987feb47c96ea1e389730346e",
+      "translationDigest": "c3d13c0bbbe4505b5ca2db61ff476893d10d8950a061eb332c6190ed8a30ad01",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 3,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-05-q09",
+      "sourceHash": "8f4f0cdc3bf527a7d4f99787ad825ade8f118b8e963c957b31f547823000e92e",
+      "translationDigest": "567dd0427922866248df7c58da5efea1041a8dbcb8be9ba33d8860f6d086bc5e",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 1,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-05-q10",
+      "sourceHash": "676c5edc9dd76b9ae9ee986c8a1bffc6c584732fd6129d748ae32adb28012020",
+      "translationDigest": "e5435259f8dfe0a3df32d969c36da306b1dffe55ad0ecb80b4231ddcadf6c3e5",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 2,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-05-q11",
+      "sourceHash": "aca30567b8d9b573f52373d0a5b129444822161643569eab8096e141f2ab1de9",
+      "translationDigest": "7fd51d5378dac03ea2c32c14653ae2f417e7703cb52770919b3a87750080df0f",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 0,
+      "result": "PASS"
+    },
+    {
+      "id": "mfg1-electrical-weekly-05-q12",
+      "sourceHash": "e10e1ac0c4956c4c756fe9ff75e5ade4f6cfb25dc9954c365df199d775669ce4",
+      "translationDigest": "3978e9a83cc4e419583c7017b038b8afea46c247551d1fdfe2239eef04bae710",
+      "translatedFieldsReviewed": 9,
+      "orderedOptionsAndReasonsCompared": true,
+      "canonicalCorrectIndex": 1,
+      "result": "PASS"
+    }
+  ],
+  "generatedBy": "AI",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "sourcePdfVisuallyReviewedInThisReview": false,
+  "releaseCertification": false,
+  "runtimeValidationByReviewer": false
+}
