@@ -1,0 +1,15 @@
+# Batch10 source audit contract
+
+The six page scopes are disjoint and together cover AGR-S1 PDF1–105 and AGR-S2 PDF1–132. Every assigned page must have a record, even administrative pages. Source printed pages use source-inventory.json and may be null. Verify both original PDF SHA256 values against the inventory.
+
+Each packet is schemaVersion1 with owner, sourceHashes, pages, crossSourceLinks, summary, humanReviewed:false, domainReviewed:false and nativeReviewed:false. Each page has documentId,pdfPage,printedPage,visualChecked:true,pageRole,items. Each item should use id,kind,objectiveJa,status,conditionsJa,existingLessonIds,existingKnowledgeIds,holdIds,reasonJa and optional scopeLevels/sources. Existing early aliases can be normalized by root if documented; do not rewrite a completed packet merely to rename a field.
+
+Allowed status: authored,missing,hold,excluded. Split partially covered facts: don't label an item authored when an essential table row/condition/figure distinction is absent from the prose. A title or a paragraph knowledgeID alone is not proof of semantic coverage. An empty existingLessonIds is valid for a missing/held item. Authored requires actual matching prose; record which field/paragraph supports it in reasonJa or evidence. Hold means unresolved source/current-condition issues, not general source incompleteness. Excluded is administrative/nonlearning content with reason.
+
+Use compact original Japanese learning objectives, not copied source sentences/tables. Preserve values only as needed for exact mapping and source-specific conditions. Do not embed raw images/PDF/text. Distinguish source occurrences from unique knowledge objectives: counts in these packets do not certify enough distinct objectives for800questions. CrossSourceLinks should record actual same/expanded/different fact relationships without merging incompatible ranges or interpretations.
+
+Keep explicit limits. This is an AI candidate atomic audit; no domain/native/human certification or overall coverage percentage. Do not remove source holds or declare full curriculum readiness. Existing144Japanese lessons,1728translation objects and296weekly questions must remain untouched.
+
+Peer review will bind packetSha256 and inspect page completeness, actual prose links, factual/conditional mapping and selected high-risk tables/figures. It must distinguish complete mechanical review from any targeted semantic recheck. Exact corrections use JSON Pointer paths with before/after values; author packets remain frozen.
+
+Curatorial clarification: an excluded occurrence may also be an incidental number set in a redundant worked example, when an independently authored example already teaches the same method. Record that distinction and the actual method/prose link. Do not count arbitrary source example numbers as new knowledge, and do not mark the exact source numeric example authored if only an equivalent independent example is used. The underlying method must remain authored/missing/held as justified.
