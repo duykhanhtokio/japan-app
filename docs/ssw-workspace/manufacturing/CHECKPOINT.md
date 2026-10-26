@@ -1,3 +1,17 @@
+# Manufacturing SSW1 — batch04 translation continuation
+
+Date:2026-10-26 (Asia/Tokyo). Baseline:b9bbe0a4. Only SSW1; SSW2 excluded.
+
+Added14 Indonesian lesson drafts (mechanical022–035) and24 weekly-question drafts (mechanical04–05). All35 currently authored mechanical lessons and60 mechanical weekly questions now have Indonesian drafts. Electrical/surface remain21lessons and36questions each in Indonesian. TotalID:77/105lessons and132/180questions; remaining28lessons/48questions in those tracks. EN/VI unchanged at105lessons/180questions each. Totals287lesson–locale pairs and492question–locale pairs. The Japanese curriculum remains105lessons,15weeklychecks,180questions,8diagrams; no official-format mocks authored (0/30).
+
+DirectJapanese-to-Indonesian author review is recorded with per-entry canonical hashes and translation digests in batch04-indonesian-qa.json. Prior63IDlesson entries and108IDquestion entries are unchanged. SourceJapanese, IDs, source mappings, question order, answer indices, revisions and progress keys are unchanged. New content remains AI drafts: no independent/native/domain certification. Existing30minute practice allocation is preserved, not measured learning time.
+
+Validation: data/state/source checker PASS at105JP/180questions/287lessonpairs/492questionpairs; final focused browser PASS30checks (28reader visits,24questions,96rationales,6screenshots,0pageerrors), including no rationales before submission. One phone screenshot visually inspected. JLPT byte-lock10/10PASS. See batch04-session-evidence.json for exact scope, earlier stale-bundle timeout and environment limits.
+
+Full source coverage, remaining curriculum, other9languages,30official-format mocks and fullExpo/native/device validation remain unfinished. Resume with Indonesian electrical/surfaceweeks4–5 and progress.json. Previous batch03 source/diagram/UI evidence below remains historical scoped evidence, not proof of this batch's new translations.
+
+---
+
 # Manufacturing SSW1 — batch03 integrated checkpoint
 
 Date:2026-10-26 (Asia/Tokyo). Branch:recovery/jlpt-n3-n1. Baseline:8fdd3fe3.
