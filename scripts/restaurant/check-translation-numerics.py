@@ -11,8 +11,9 @@ flags=[];fields=records=question_records=0
 reviewPath=ROOT/'docs/ssw-workspace/restaurant/translation-numeric-adjudications.json'
 reviewed=json.loads(reviewPath.read_text()).get('records',[]) if reviewPath.exists() else []
 def adjudicated(locale,id,field,ja,tr):
- return any(z.get('locale')==locale and z.get('questionId')==id and z.get('field')==field and z.get('status')=='AI_reviewed_spelled_out_ordinal' and z.get('fieldSourceHash')==hashlib.sha256(ja.encode()).hexdigest() and z.get('fieldTranslationHash')==hashlib.sha256(tr.encode()).hexdigest() for z in reviewed)
+ return any(z.get('locale')==locale and (z.get('questionId') or z.get('lessonId'))==id and z.get('field')==field and z.get('status') in ('AI_reviewed_spelled_out_ordinal','AI_reviewed_numeric_notation') and z.get('fieldSourceHash')==hashlib.sha256(ja.encode()).hexdigest() and z.get('fieldTranslationHash')==hashlib.sha256(tr.encode()).hexdigest() for z in reviewed)
 acceptedOrdinalFields=0
+acceptedLessonNotationFields=0
 for p in (DATA/'translations').glob('*.json'):
  x=json.loads(p.read_text())
  for key,t in x['lessons'].items():
@@ -23,6 +24,7 @@ for p in (DATA/'translations').glob('*.json'):
   for para in l['paragraphs']:pairs.append((para['id'],para['textJa'],t.get('paragraphs',{}).get(para['id'],'')))
   for field,ja,tr in pairs:
    fields+=1
+   if numbers(ja)!=numbers(tr) and adjudicated(p.stem,key,field,ja,tr):acceptedLessonNotationFields+=1;continue
    if numbers(ja)!=numbers(tr):flags.append({'locale':p.stem,'lessonId':key,'field':field,'sourceNumbers':dict(numbers(ja)),'translationNumbers':dict(numbers(tr)),'reason':'different numerals; inspect spelling-out/local conventions versus omission'})
  for key,t in x.get('questions',{}).items():
   q=questions.get(key)
@@ -34,5 +36,5 @@ for p in (DATA/'translations').glob('*.json'):
    fields+=1
    if numbers(ja)!=numbers(tr) and adjudicated(p.stem,key,field,ja,tr):acceptedOrdinalFields+=1;continue
    if numbers(ja)!=numbers(tr):flags.append({'locale':p.stem,'questionId':key,'field':field,'sourceNumbers':dict(numbers(ja)),'translationNumbers':dict(numbers(tr)),'reason':'different numerals; inspect spelling-out/local conventions versus omission'})
-report={'status':'REVIEW_FLAGS' if flags else 'NUMERIC_SCREEN_PASS','records':records,'questionRecords':question_records,'fields':fields,'reviewedSpelledOrdinalFields':acceptedOrdinalFields,'flags':flags,'semanticTranslationCertified':False,'limits':['Numbers spelled out as words require manual review. Equal digits do not establish preserved units, signs, conditions or meaning.']}
+report={'status':'REVIEW_FLAGS' if flags else 'NUMERIC_SCREEN_PASS','records':records,'questionRecords':question_records,'fields':fields,'reviewedSpelledOrdinalFields':acceptedOrdinalFields,'reviewedLessonNotationFields':acceptedLessonNotationFields,'flags':flags,'semanticTranslationCertified':False,'limits':['Numbers spelled out as words require manual review. Equal digits do not establish preserved units, signs, conditions or meaning. Adjudications apply only to exact source and translation field hashes; changed fields must be reviewed again.']}
 (ROOT/'docs/ssw-workspace/restaurant/translation-numeric-screen.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps(report,ensure_ascii=False))

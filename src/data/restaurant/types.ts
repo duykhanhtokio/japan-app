@@ -20,7 +20,9 @@ export interface RestaurantLessonTranslation {
  sourceHash:string;title:string;objective:string;paragraphTitles:Record<string,string>;paragraphs:Record<string,string>;terms:Record<string,string>;summary:string;activity:string;
 }
 export interface RestaurantQuestionTranslation {sourceHash:string;stem:string;options:string[];explanation:string;objective:string}
-export interface RestaurantLocale {schemaVersion:number;locale:string;lessons:Record<string,RestaurantLessonTranslation>;questions:Record<string,RestaurantQuestionTranslation>;ui:Record<string,string>}
+export interface RestaurantGlossaryEntry {id:string;termJa:string;reading:string;explanationJa?:string;sourceHash:string;reviewStatus?:string}
+export interface RestaurantGlossaryTranslation {sourceHash:string;term:string;explanation:string}
+export interface RestaurantLocale {schemaVersion:number;locale:string;lessons:Record<string,RestaurantLessonTranslation>;questions:Record<string,RestaurantQuestionTranslation>;ui:Record<string,string>;glossary?:Record<string,RestaurantGlossaryTranslation>}
 export interface RestaurantDiagram {
  id:string;lessonIds:string[];titleJa:string;captionJa:string;kind:'flow'|'comparison';nodes:{id:string;labelJa:string;color:string}[];links:{from:string;to:string}[];
  translations:Record<string,{title:string;caption:string;labels:Record<string,string>}>;

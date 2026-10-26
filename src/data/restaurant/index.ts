@@ -1,5 +1,5 @@
 import diagrams from './diagrams.json';
-import type {RestaurantLesson,RestaurantLevel,RestaurantExam,RestaurantLocale,RestaurantQuestion,RestaurantDiagram} from './types';
+import type {RestaurantLesson,RestaurantLevel,RestaurantExam,RestaurantLocale,RestaurantQuestion,RestaurantDiagram,RestaurantGlossaryEntry} from './types';
 export type * from './types';
 export {RESTAURANT_CONTENT_VERSION} from './types';
 // Keep module evaluation small on the industry/level selector. Load only the chosen level.
@@ -35,3 +35,7 @@ export function restaurantQuestionTranslation(q:RestaurantQuestion,locale:string
  return t&&!!q.sourceHash&&t.sourceHash===q.sourceHash&&t.stem&&t.explanation&&Array.isArray(t.options)&&t.options.length===q.optionsJa.length&&t.options.every(Boolean)?t:null;
 }
 export function restaurantUi(text:string,locale:string){return localeData(locale)?.ui?.[text]||text;}
+export function restaurantGlossaryTranslation(entry:RestaurantGlossaryEntry,locale:string){
+ const t=localeData(locale)?.glossary?.[entry.id];
+ return t&&entry.sourceHash&&t.sourceHash===entry.sourceHash&&t.term&&t.explanation?t:null;
+}

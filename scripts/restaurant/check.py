@@ -119,7 +119,7 @@ if glossaryPath.exists():
    entryIds.append(entry.get('id'));require(bool(entry.get('id')) and bool(entry.get('termJa')),group['id']+': glossary entry')
    if not entry.get('explanationJa'):missingDefinitions+=1
    if not entry.get('reading'):missingReadings+=1
-   elif not re.fullmatch('[ぁ-ゖー\\s]+',entry['reading']):gaps.append(str(entry['id'])+': glossary reading needs verification')
+   elif not re.fullmatch('[ぁ-ゖー\\s（）・、]+',entry['reading']):gaps.append(str(entry['id'])+': glossary reading needs verification')
    refs(entry)
  require(len(entryIds)==len(set(entryIds)),'duplicate glossary IDs')
  links=read(DATA/'glossary-links.json')
@@ -127,7 +127,17 @@ if glossaryPath.exists():
  metrics['glossary']={'groups':len(groups),'entries':len(entryIds),'missingDefinitions':missingDefinitions,'missingReadings':missingReadings}
  if missingDefinitions:gaps.append('glossary definitions incomplete')
  if missingReadings:gaps.append('glossary readings incomplete')
- gaps.append('glossary translations pending')
+ for locale in LOCALES:
+  translated=read(DATA/'translations'/f'{locale}.json').get('glossary',{}); valid=0
+  for group in groups:
+   for entry in group['entries']:
+    expected=sha({k:entry[k] for k in ('termJa','reading','explanationJa')})
+    require(entry.get('sourceHash')==expected,entry['id']+': stale glossary definition hash')
+    t=translated.get(entry['id'])
+    if t and t.get('sourceHash')==expected and t.get('term') and t.get('explanation'):valid+=1
+    elif t:gaps.append(locale+': incomplete/stale glossary '+entry['id'])
+  metrics['translations'][locale]['glossary']=valid
+  if valid!=len(entryIds):gaps.append(f'{locale}: glossary translations {valid}/{len(entryIds)}')
 metrics['paragraphs']=len(paragraphs);metrics['sourceDocumentsReferenced']=len({r['documentId'] for l in lessons for r in l['sourceRefs']})
 # Completion never follows schema checks alone.
 review=ROOT/'docs/ssw-workspace/restaurant/acceptance-review.json'
