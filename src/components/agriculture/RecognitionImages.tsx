@@ -42,6 +42,9 @@ const assets:Record<string,ImageSourcePropType>={
  'cabbage-soft-rot':require('../../../assets/agriculture/recognition/cabbage-soft-rot-v1.webp'),
  'cucumber-powdery-mildew':require('../../../assets/agriculture/recognition/cucumber-powdery-mildew-v1.webp'),
  'cucumber-downy-mildew':require('../../../assets/agriculture/recognition/cucumber-downy-mildew-v1.webp'),
+ 'tomato-late-blight':require('../../../assets/agriculture/recognition/tomato-late-blight-v1.webp'),
+ 'negi-rust':require('../../../assets/agriculture/recognition/negi-rust-v1.webp'),
+ 'broccoli-clubroot':require('../../../assets/agriculture/recognition/broccoli-clubroot-v1.webp'),
 };
 type RecognitionImage={
  id:string;lessonIds:string[];lessonSourceHashes:Record<string,string>;
