@@ -1,18 +1,18 @@
 # Nhà hàng / 外食業 — checkpoint 2026-10-26
 
-## Lô07 — 6 AI song song, hoàn thiện nhóm vệ sinh11–15 đủ12ngôn ngữ
+## Lô08 — 5 bài nấu ăn ×12ngôn ngữ,6AI phối hợp
 
-Người dùng đã yêu cầu6 AI và cho phép tiếp tục lưu `duykhanhtokio/japan-app`, `feature/restaurant-20261026`. Base đã WORK PERSISTENCE PASS: `ab31c5846e8016ec08dc1a7570db6c2afa83b7f4`. Chỉ coi lô07 là lưu bền sau khi commit remote được fetch và đối chiếu thành công.
+Nhánh được người dùng cho phép: `duykhanhtokio/japan-app`, `feature/restaurant-20261026`. Base đã WORK PERSISTENCE PASS: `5c5cb2b07b2367f706bd983ac2fd5129b5dfc916`. Lô08 chỉ lưu bền sau khi commit remote được fetch và đối chiếu thành công.
 
-- 5 AI biên soạn riêng ne/my/th/km/tl;1 AI rà độc lập đủ25 bản dịch mới theo tiếng Nhật. Đã sửa rõ nghĩa đối tượng áp dụng ở TL14; rà lại chỉnh diễn đạt MY. Native/domain/human review giữ false. Báo cáo từng ngôn ngữ và batch07-independent-review.json.
-- Thêm25 bản dịch đầy đủ cho5 bài vệ sinh11–15; nhóm này nay đủ60/60 cặp bài/ngôn ngữ trên12locale, hash khớp bản Nhật hiện tại. Tổng302 bản dịch bài:12locale mỗi25, riênghi/bn26. Giữ192 bản dịch câu. Toàn kho120 bài/984 câu vẫn chưa dịch đủ.
-- Bổ sung định nghĩa hẹp cuối cùng `うぐいす骨` theo tài liệu thành phố下関市: dùng trong sơ chếふぐ trước三枚おろし. Không khẳng định tương ứng với sơ đồ cá chung của giáo trình. Glossary692/692 mục có giải nghĩa nhưng chưa chứng nhận kiến thức/cách đọc toàn bộ; metadata giữ source-alignment issue chưa rõ.
-- Kiểm tra cấu trúc PASS;complete FALSE. Sàng lọc số3760trường PASS. AI independent review không thay thế chuyên gia/người bản ngữ.
-- Browser kiểm tra25 cặp mới ×2kích thước=50trường hợp và mẫu12ngôn ngữ; kiểm tra glossary24trường hợp/4kích thước sau thay đổi định nghĩa. Dùng presentation/storage adapters như báo cáo, không phải native/Expo.
-- Giữ120 bài Nhật (59/61),800 câu luyện tập và184 câu tuần (96/88). Không đổi UI JLPT hoặc các ngành song song.
-- Còn thiếu phần lớn bản dịch, đối chiếu bao phủ nguồn, hình, furigana toàn bài và native QA. Không có tác vụ chạy ngầm sau phiên.
+- Thêm60 bản dịch cook01–05, đủ12locale,276đoạn dịch và toàn bộ tiêu đề/mục tiêu/thuật ngữ/tóm tắt/hoạt động. Bài01 có6đoạn; bài05 có5đoạn với16kiểu cắt. Canonical JP không đổi.
+- 6 tác giả song song theo cặp ngôn ngữ;root tiếp quản tl/id khi một child báo capacity. Rà chéo đủ60bản;60hash review khớp snapshot cuối. Đã sửa nghĩa phần đùi/ngoài đùi thay vì innerthigh/ham, mở rộng魚介類 khỏi shellfish/biển, làm rõかつらむき và phạm viメロン/白菜. Báo cáo tác giả và crossreview batch08-*.json; native/domain/human false.
+- Tổng362 bản dịch bài:12locale mỗi30;hi/bn31. Giữ192 bản dịch câu. Toàn kho120bài/984câu vẫn chưa dịch đủ.
+- Kiểm tra cấu trúc PASS;complete FALSE. Sàng lọc số4276trường PASS. Các số đếm viết bằng chữ được rà chéo; sàng lọc số tự động không chứng nhận ngữ nghĩa.
+- Browser PASS:60cặp mới ×2kích thước=120trường hợp, ngoài mẫu12locale. Ảnh chụp chọn cook01 và font5hệ chữ được ghi trong locale-browser-qa.json. Dùng presentation/storage adapters; chưa Expo/native/thiết bị thật.
+- Giữ120 bài Nhật (59/61),800 câu luyện tập và184 câu tuần (96/88). Glossary692/692 có giải nghĩa;うぐいす骨 chỉ được giải nghĩa hẹp theo nguồnふぐ, quan hệ với sơ đồ cá chung vẫn chưa rõ.
+- Không đổi UI JLPT/ngành song song. Còn đối chiếu độ bao phủ nguồn, phần lớn bản dịch, hình/furigana và native QA. Không có tác vụ chạy ngầm sau phiên.
 
-Điểm tiếp tục: đối chiếu các mục nguồn còn thiếu chi tiết; mở rộng bài tiếp theo theo12ngôn ngữ; hoàn thiện hình/furigana và kiểm thử app thật. Quan hệ thuật ngữうぐいす骨 với sơ đồ nguồn vẫn cần đối chiếu, không xóa ghi chú chưa rõ chỉ vì đã có định nghĩa hẹp.
+Điểm tiếp tục: tiếp tục cook06 trở đi theo12ngôn ngữ; hoàn thiện bài vệ sinh16 cho10locale còn thiếu (hi/bn đã có); rà bao phủ nguồn, hình/furigana và app thật. Không coi số lượng bản dịch là chứng nhận chuyên môn/người bản ngữ.
 
 ---
 ## Checkpoint lịch sử trước lô tiếp nối

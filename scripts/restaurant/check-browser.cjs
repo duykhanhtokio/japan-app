@@ -71,7 +71,7 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
     for(const term of lesson.terms)assert(text.includes(t.terms[term.ja]),item.locale+'/'+item.id+'/term');
     assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),item.locale+'/'+item.id+'/overflow');
     const complete=page.getByTestId('restaurant-complete');await complete.scrollIntoViewIfNeeded();const bounds=await complete.boundingBox();assert(bounds&&bounds.y>=-1&&bounds.y+bounds.height<=height+1,'Batch completion reachable');
-    if(item.id==='rst-1-hyg-14'&&width===390){await page.getByTestId('restaurant-translation-toggle').scrollIntoViewIfNeeded();const file='batch-'+item.locale+'-'+item.id+'.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}batchCases++;
+    if(item.id===(process.env.RESTAURANT_QA_SCREENSHOT_LESSON||'rst-1-hyg-14')&&width===390){await page.getByTestId('restaurant-translation-toggle').scrollIntoViewIfNeeded();const file='batch-'+item.locale+'-'+item.id+'.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}batchCases++;
    }
   }
   checks.translationBatchPairs=batch.entries.length;checks.translationBatchViewportCases=batchCases;
