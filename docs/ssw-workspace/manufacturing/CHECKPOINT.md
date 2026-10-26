@@ -1,3 +1,17 @@
+# Manufacturing SSW1 — batch09 six-AI Thai weeks2–3
+
+Date:2026-10-26 (Asia/Tokyo). Baseline:32d41e5f. Manufacturing 特定技能1号 only; SSW2 sources remain excluded.
+
+Added direct Japanese-to-Thai drafts for42 lessons and72 weekly questions:14lessons/24questions per specialty, weeks2–3. Independent AI comparison covered all1332 translated fields, plus11 new Thai diagram captions. Four semantic precision corrections and one author clarification were applied and rechecked; final runtime entries equal frozen reviewed payloads. Translation flags remain ai_translated_draft, nativeReviewed=false/domainReviewed=false. Existing21Thai lessons/36questions and EN/VI/ID entries retain values; Japanese canonical lessons, checks, source hashes, revisions and progress identities are unchanged.
+
+Totals:133Japanese lessons,19weekly checks/228questions,11existing diagrams. Thai now63/133lessons,108/228questions and11/11captions; lesson-locale pairs462,question-locale pairs792,caption-locale pairs44. Thai is still partial; eight other target locales remain unstarted. No new Japanese lesson, PDF body review, image asset or official-format mock is claimed in this batch. Previous provisional next-lesson plans and their no-duplicate/source-reading gates remain pending.
+
+Validation: data/source/state checker PASS at133/228/462/792/44; runtime binding PASS133lesson+228question lookups,361 stale-source rejects and361 unsupported-locale nulls. Compatibility PASS10canonical/prior-full-locale files byte-identical,57 priorThai entries and3caption locales unchanged,114new runtime entries equal final staging. Focused actual RNWeb browser PASS127checks:84Thai reader visits,72translatedquestions,288postsubmissionrationales,22caption/image load/enlarge/pan/close checks across11diagrams at320x568/932x430, plus week4pending indicators; zero pageerrors. Answer/position resume, no early rationale leakage and completion/return tested.26screenshots generated,4selected retained and inspected. JLPT byte-lock PASS10/10. Harness storage/safearea/Royal adapters and test fonts do not certify fullExpo/native/device/background fidelity. Existing missingexpo/tsconfig.base warning persists; fulltypecheck/lint/build unrun.
+
+Next:remainingThai70lessons/120questions,other8locales; visuallyread sourcepages and resolve no-duplicate gates before next Japanese curriculum units; source-object mapping,illustrations,30originalofficial-format mocks(still0/30),fullExpo/native/devicechecks. No backgroundworker implied after this batch.
+
+---
+
 # Manufacturing SSW1 — batch08 six-AI continuation
 
 Date: 2026-10-26 (Asia/Tokyo). Manufacturing baseline: 83217632; integration preserves concurrent remote agriculture commits. Scope: only manufacturing 特定技能1号; SSW2 remains excluded.
