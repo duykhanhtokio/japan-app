@@ -1,3 +1,20 @@
+# Nhà hàng / 外食業 — checkpoint 2, 2026-10-26
+
+Yêu cầu toàn bộ CHƯA hoàn thành. Nhánh `feature/restaurant-20261026`; parent remote đã đối chiếu `fbd2cb2752cc909bbb98618a38d9fc8c95d74921`. Snapshot này phải qua push/fetch/persistence gate; không coi bản ghi này tự nó là chứng cứ remote.
+
+- 120 bài Nhật; 800 câu luyện tập trong 20 bộ và184 câu tuần trong23 tuần. 692 định nghĩa thuật ngữ Nhật.
+- Đủ 1440/1440 bản dịch bài (120 cho mỗi12 ngôn ngữ), tăng 530 so với parent. Câu hỏi 1956/11808 bản dịch, tăng 1764. Đủ73 nhãn UI/ngôn ngữ, gồm template đếm có placeholder được kiểm tra.
+- en/vi246 câu mỗi ngôn ngữ; zh-CN/zh-TW504; hi/bn96; tl/id76; ne/my40; th/km16. Bản Trung đủ496 câu1号 mỗi ngôn ngữ. Bản dịch được gắn sourceHash chính xác; AI tự rà, không có chứng nhận người bản ngữ/chuyên gia.
+- Sửa18 trường dịch Anh/Việt từ rà số liệu/nghĩa, khôi phục điều kiện bị rút gọn, giữ nguyên lựa chọn Nhật khi câu hỏi kiểm tra khác biệt cách nói. Bổ sung156 cách đọc cụm từ; furigana toàn ngữ cảnh vẫn chưa đủ.
+- Cấu trúc PASS, numeric screen1440 bài +1956 câu PASS; signed-Celsius184 trường PASS (không chứng nhận toàn bộ an toàn/nghĩa). Rà12 phép tính và nguồn PDF11–16 của運営, vẫn giữ reference unit partial.
+- TypeScript phạm vi restaurant và các import:0 lỗi với Expo54/ReactNative0.81.5. Loading13 ca; state10 nhóm; hook scope3 ca PASS. Browser4 kích thước,12 locale,12 luồng lịch/nộp/kết quả dịch PASS. Dùng adapter cho chrome/storage/nền; chưa productionExpo/native. JLPT UI-lock10/10 PASS.
+- 6 AI cùng phiên làm trên bản cô lập sau khi phát hiện phiên trước vẫn ghi thư mục cũ; đã giữ/merge các bản cũ khớp hash. Không ghi đè phiên nông nghiệp/thực phẩm.
+
+Còn 9852 cặp dịch câu hỏi,8304 cặp dịch thuật ngữ; rà bao phủ nguồn (590 mục partial), hình nhận dạng, toàn văn furigana và kiểm thử Expo/native. Không nâng acceptance-review thành hoàn thành từ số lượng. Điểm tiếp tục: phần questions thiếu theo locale; glossary692×12; xem validation-report.json và completion2-*.json. Các AI đang tạm dừng ghi để qua cổng lưu bền vững.
+
+---
+## Checkpoint trước (lịch sử)
+
 # Nhà hàng / 外食業 — tiếp tục hoàn thiện toàn bộ
 
 Base đã WORK PERSISTENCE PASS: `bb9060f48d994c8e12f30f42f89d88fd3db16c66`; branch `feature/restaurant-20261026`. Người dùng yêu cầu6AI và hoàn thiện toàn bộ trong phiên; snapshot này CHƯA hoàn tất toàn bộ.

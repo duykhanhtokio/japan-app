@@ -8,7 +8,8 @@ sys.path.insert(0,str(ROOT/'scripts'))
 from furigana.reading_rules import counted,number,parse_number
 DURATION=re.compile(r'(?<![0-9０-９.．])([0-9０-９]+)(時間|秒|分|℃)')
 def read(p):return json.loads(p.read_text())
-def write(p,x):p.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n')
+def write(p,x):
+ temporary=p.with_name(p.name+'.furigana-tmp');temporary.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n');temporary.replace(p)
 def hira(s):return ''.join(chr(ord(c)-96) if 'ァ'<=c<='ヶ' else c for c in s)
 # These are dictionary readings, not a claim of native contextual approval.
 CUSTOM='''事故事例 じこじれい

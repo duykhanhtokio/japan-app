@@ -91,6 +91,7 @@ for level in ('1','2'):
  expected={'hygiene','cooking','service'}|({'operations'} if level=='2' else set())
  if not expected.issubset({l['topic'] for l in ls}):gaps.append(f'{level}: source subject missing')
 metrics['translations']={}
+uiKeys=read(DATA/'ui-keys.ja.json').get('keys',[]) if (DATA/'ui-keys.ja.json').exists() else []
 for locale in LOCALES:
  p=DATA/'translations'/f'{locale}.json';x=read(p) if p.exists() else {};lt=x.get('lessons',{});qt=x.get('questions',{});validL=validQ=0
  for l in lessons:
@@ -106,7 +107,13 @@ for locale in LOCALES:
   if not t:continue
   if t.get('sourceHash')==q.get('sourceHash') and all(t.get(k) for k in ('stem','explanation','objective')) and len(t.get('options',[]))==4:validQ+=1
   else:gaps.append(locale+': incomplete/stale question translation '+q['id'])
- metrics['translations'][locale]={'lessons':validL,'questions':validQ}
+ for key in uiKeys:
+  translated=x.get('ui',{}).get(key)
+  if isinstance(translated,str) and translated.strip():
+   require(collections.Counter(re.findall(r'\{[a-zA-Z]+\}',key))==collections.Counter(re.findall(r'\{[a-zA-Z]+\}',translated)),locale+': UI placeholders differ '+key)
+ validUi=sum(isinstance(x.get('ui',{}).get(key),str) and bool(x['ui'][key].strip()) for key in uiKeys)
+ metrics['translations'][locale]={'lessons':validL,'questions':validQ,'fixedUi':validUi}
+ if validUi!=len(uiKeys):gaps.append(f'{locale}: fixed UI translations {validUi}/{len(uiKeys)}')
  if validL!=len(lessons) or validQ!=len(questions) or not p.exists():gaps.append(f'{locale}: translations {validL}/{len(lessons)} lessons, {validQ}/{len(questions)} questions')
 glossaryPath=DATA/'glossary.ja.json'
 if glossaryPath.exists():

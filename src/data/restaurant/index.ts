@@ -32,9 +32,12 @@ export function restaurantLessonTranslation(lesson:RestaurantLesson,locale:strin
 }
 export function restaurantQuestionTranslation(q:RestaurantQuestion,locale:string){
  const t=localeData(locale)?.questions?.[q.id];
- return t&&!!q.sourceHash&&t.sourceHash===q.sourceHash&&t.stem&&t.explanation&&Array.isArray(t.options)&&t.options.length===q.optionsJa.length&&t.options.every(Boolean)?t:null;
+ return t&&!!q.sourceHash&&t.sourceHash===q.sourceHash&&t.stem&&t.explanation&&t.objective&&Array.isArray(t.options)&&t.options.length===q.optionsJa.length&&t.options.every(Boolean)?t:null;
 }
-export function restaurantUi(text:string,locale:string){return localeData(locale)?.ui?.[text]||text;}
+export function restaurantUi(text:string,locale:string,values:Record<string,string|number>={}){
+ const translated=localeData(locale)?.ui?.[text]||text;
+ return translated.replace(/\{([a-zA-Z]+)\}/g,(token,key)=>Object.prototype.hasOwnProperty.call(values,key)?String(values[key]):token);
+}
 export function restaurantGlossaryTranslation(entry:RestaurantGlossaryEntry,locale:string){
  const t=localeData(locale)?.glossary?.[entry.id];
  return t&&entry.sourceHash&&t.sourceHash===entry.sourceHash&&t.term&&t.explanation?t:null;

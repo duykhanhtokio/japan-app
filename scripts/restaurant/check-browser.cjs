@@ -56,6 +56,29 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
   await openLesson(candidate||first,locale);await page.getByTestId('restaurant-translation-toggle').click();const text=await page.locator('body').innerText();if(candidate){const t=shard.lessons[candidate.id];assert(text.includes(t.title)&&text.includes(t.objective)&&text.includes(t.summary)&&text.includes(t.activity));for(const p of candidate.paragraphs)assert(text.includes(t.paragraphs[p.id]));assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),locale+'/translation overflow');const complete=page.getByTestId('restaurant-complete');await complete.scrollIntoViewIfNeeded();const bounds=await complete.boundingBox();assert(bounds&&bounds.y>=-1&&bounds.y+bounds.height<=844+1,locale+'/completion control');if(['ne','my','th','km'].includes(locale)){const file='translated-'+locale+'-390x844.png';await page.screenshot({path:path.join(out,file)});screenshots.push(file);}translatedPairs++;}else{assert(text.includes('この言語の訳は準備中です。'));missingPairs++;}
  }
  checks.translatedLocales=translatedPairs;checks.explicitMissingLocaleBehavior=missingPairs;
+ if(process.env.RESTAURANT_QA_UI_TEMPLATES==='1'){
+  let templateCases=0;
+  for(const locale of ['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']){
+   const shard=JSON.parse(fs.readFileSync(path.join(root,'src/data/restaurant/translations',locale+'.json')));
+   const ui=(key,values={})=>{assert(shard.ui[key],locale+'/missing UI '+key);return shard.ui[key].replace(/\{([a-zA-Z]+)\}/g,(token,key)=>String(values[key]??token));};
+   await cleanStart('1',locale);
+   await page.getByTestId('restaurant-week-1').click();
+   await page.getByText(ui('第{week}週',{week:1}),{exact:true}).waitFor();
+   await page.getByTestId('restaurant-tab-weekly').click();
+   const exam=exams.find(e=>e.level==='1'&&e.kind==='weekly'&&e.week===1),q=exam.questions[0],t=shard.questions[q.id];assert(t&&t.sourceHash===q.sourceHash);
+   await page.getByTestId('restaurant-exam-'+exam.id).click();await page.getByTestId('restaurant-submit').waitFor();
+   await page.getByRole('button',{name:ui('訳を表示'),exact:true}).click();
+   let body=await page.locator('body').innerText();assert(body.includes(t.stem),locale+'/question translation');for(const option of t.options)assert(body.includes(option),locale+'/option translation');
+   assert.equal(await page.getByTestId('restaurant-answer-review').count(),0);
+   await page.getByTestId('restaurant-submit').click();
+   assert((await page.locator('body').innerText()).includes(ui('提出しますか。未回答：{count}問',{count:exam.questions.length})),locale+'/localized unanswered count');
+   await page.getByRole('button',{name:ui('確定'),exact:true}).click();await page.getByTestId('restaurant-result').waitFor();
+   body=await page.locator('body').innerText();assert(body.includes(ui('正解'))&&body.includes(ui('未回答'))&&body.includes(t.explanation),locale+'/translated results and explanation');
+   assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),locale+'/question overflow');templateCases++;
+  }
+  checks.localizedCalendarSubmissionResults=templateCases;
+ }
+
  // Optionally verify every newly authored pair from a batch, not just one locale sample.
  const translationBatch=process.env.RESTAURANT_QA_TRANSLATION_BATCH;
  if(translationBatch){
