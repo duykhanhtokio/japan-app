@@ -65,4 +65,8 @@ r={}
 for l,z in zip(J[7:14],D):
  title,obj,texts,terms,extra,safety,summary=z
  r[l['id']]={'sourceHash':l['sourceHash'],'translatedDirectlyFrom':'ja','nativeReviewed':False,'domainReviewed':False,'status':'ai_translated_draft','title':title,'objective':obj,'paragraphs':[{'id':p['id'],'title':heads[p['id']],'text':t} for p,t in zip(l['paragraphs'],texts)],'terms':[{'ja':t['ja'],'reading':t['reading'],'meaning':m} for t,m in zip(l['terms'],terms)],'activity':activity(extra,l['id'].endswith('008')),'safety':safety,'summary':summary}
+_heads=json.load(open(P/'paragraph-title-map.json'))['japaneseTitles']
+_jmap={l['id']:l for l in J}
+for _key,_t in r.items():
+ for _p,_j in zip(_t['paragraphs'],_jmap[_key]['paragraphs']):_p['title']=_heads[_j['titleJa']]
 (P/'lessons-008-014.json').write_text(json.dumps({'locale':'hi','lessons':r},ensure_ascii=False,indent=2)+'\n');print('Hindi7morefullfieldlessonswritten')

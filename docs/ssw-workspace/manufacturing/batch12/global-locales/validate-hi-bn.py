@@ -9,6 +9,7 @@ for track in ['mechanical','electrical','surface']:
    c=json.load(open(f));lessons.update({l['id']:l for l in c['lessons']});questions.update({q['id']:q for w in c.get('checks',[]) for q in w['questions']})
 cjk=re.compile(r'[\u3040-\u30ff\u3400-\u9fff]')
 captionSources={k:v['sourceJa'] for k,v in json.load(open(ROOT/'src/data/manufacturing/diagram-translations.json'))['locales']['en'].items()}
+captionSources.update(json.load(open(ROOT/'docs/ssw-workspace/manufacturing/batch12/new-diagram-captions.json'))['captions'])
 counts={}
 for locale in ['hi','bn']:
  counts[locale]={}
@@ -32,4 +33,4 @@ for locale in ['hi','bn']:
    d=json.load(open(f));assert d['locale']==locale
    for k,t in d['captions'].items():assert k not in caps;assert t['sourceJa']==captionSources[k];assert t['text'] and not cjk.search(t['text']);caps[k]=t
   counts[locale][track]={'lessons':len(ll),'weeklyQuestions':len(qq),'captions':len(caps),'mocks':0}
-checkpoint=P/'hi-bn-checkpoint.json';d=json.load(open(checkpoint));d.update(counts);d['next']='Continuehi mechanical036–042/061–072; finishall3specialties/262lessons456weeklyquestionsandcaptions/mocksafterfinalJAfreeze; thenbn';d['chunkDigests']={str(f.relative_to(P)):hashlib.sha256(f.read_bytes()).hexdigest() for locale in ['hi','bn'] for f in (P/locale).rglob('*.json') if f.name!='terminology.json'};d['authorStructureAndJapaneseResidueCheck']='PASS';checkpoint.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'status':'PASS','counts':counts},ensure_ascii=False))
+checkpoint=P/'hi-bn-checkpoint.json';d=json.load(open(checkpoint));d.update(counts);d['next']='Continue Hindi surface baseline lessons001–042 / weekly001–072; extend all tracks to frozen262lessons456weeklyquestions, allmocks; then Bangla. Mechanicalbase49/84complete; electricalbase42/72complete; all18Hindi and all18Bangla captions complete. RootcanonicalfreezeACKreceived.';d['chunkDigests']={str(f.relative_to(P)):hashlib.sha256(f.read_bytes()).hexdigest() for locale in ['hi','bn'] for f in (P/locale).rglob('*.json') if f.name!='terminology.json'};d['authorStructureAndJapaneseResidueCheck']='PASS';checkpoint.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'status':'PASS','counts':counts},ensure_ascii=False))

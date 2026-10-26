@@ -3,7 +3,7 @@
 This is a data assembly operation, not a claim of full-source/native certification.
 """
 from pathlib import Path
-import hashlib,json,re
+import hashlib,json,re,subprocess,sys
 
 ROOT=Path(__file__).resolve().parents[2]
 DATA=ROOT/'src/data/manufacturing'
@@ -23,6 +23,9 @@ def append_unique(old,new):
   if x['id'] in by_id:assert by_id[x['id']]==x or without_bindings(by_id[x['id']])==without_bindings(x),'Existing source content changed '+x['id']
   else:old.append(x);by_id[x['id']]=x
 def main():
+ subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/check-source-review-bindings.py')],check=True,capture_output=True,text=True)
+ frozen=read(STAGE/'frozen-source-inputs.json')['sha256']
+ for relative,expected in frozen.items():assert hashlib.sha256((STAGE/relative).read_bytes()).hexdigest()==expected,'Source freeze drift: '+relative
  manifest=read(DATA/'course-manifest.json');matrix=read(DOCS/'knowledge-matrix.json');knowledge={k['id']:k for k in matrix['knowledge']}
  inputs={'mechanical':['new-content.json','gap-content.json'],'electrical':['new-content.json','gap-content.json'],'surface':['new-content.json','leaf-gap-supplement.json']}
  normalization_path=STAGE/'source-binding-normalization.json'
@@ -157,6 +160,11 @@ def main():
  for locale,entries in locale_mocks.items():existing_mock_locales.setdefault(locale,{}).update(entries)
  write(DATA/'mock-translations.json',{'sourceLocale':'ja','status':'ai_translated_draft','nativeReviewed':False,'domainReviewed':False,'locales':existing_mock_locales})
  progress=read(DOCS/'progress.json');progress.update(batch='12-in-progress',authoredJapaneseLessons=len(all_lessons),aiEditorialReviewedJapaneseLessons=len(all_lessons),integratedPreviewLessons=len(all_lessons),weeklyChecks=sum(len(c['checks']) for c in courses.values()),weeklyQuestions=len(all_questions),tocEntriesWithDraftLessons=sum(bool(k.get('lessonIds')) for k in knowledge.values()),translatedLessonLocalePairs=sum(e['lessonCount'] for e in registry['locales'].values()),translatedQuestionLocalePairs=sum(e['questionCount'] for e in registry['locales'].values()),translatedDiagramCaptionLocalePairs=sum(len(x) for x in caption_data['locales'].values()),fullyDraftTranslatedLocalesForAuthoredContent=complete,partiallyDraftTranslatedLocales=partial,wholeCurriculumComplete=False,releaseReady=False)
+ progress['originalMocksCompleted']=30
+ progress['createdDiagrams']=18;progress['usedDiagrams']=18
+ progress['mockTranslationCoverage']={l:len(existing_mock_locales.get(l,{})) for l in targets}
+ progress['diagramTranslationCoverage']={l:len(caption_data['locales'].get(l,{})) for l in targets}
+ progress['fullyDraftTranslatedLocalesForAllCurrentContent']=[l for l in complete if len(existing_mock_locales.get(l,{}))==1200 and len(caption_data['locales'].get(l,{}))==18]
  progress['lessonTranslationCoverage']={l:e['lessonCount'] for l,e in registry['locales'].items()};progress['questionTranslationCoverage']={l:e['questionCount'] for l,e in registry['locales'].items()};progress['previewWeeksBySpecialty']={s['id']:len(s['weeks']) for s in manifest['specialties']};write(DOCS/'progress.json',progress)
  write(STAGE/'integration-input-digests.json',input_digests)
  write(STAGE/'source-binding-normalization.json',normalized_bindings)

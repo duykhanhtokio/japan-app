@@ -1,0 +1,34 @@
+"""Check exact source snapshots against independent AI review evidence."""
+from pathlib import Path
+import json,hashlib
+ROOT=Path(__file__).resolve().parents[2];STAGE=ROOT/'docs/ssw-workspace/manufacturing/batch12'
+def read(p):return json.loads(p.read_text())
+def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def h(x):return hashlib.sha256(json.dumps(x,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+frozen=read(STAGE/'frozen-source-inputs.json')['sha256']
+for relative,expected in frozen.items():assert digest(STAGE/relative)==expected,relative
+pairs=[('mechanical/new-content.json','mechanical-locales/new-japanese-independent-review.json','sourcePayloadSha256AfterRepair'),('mechanical/gap-content.json','mechanical-locales/gap-japanese-independent-review.json','sourcePayloadSha256'),('electrical/new-content.json','electrical-locales/new-JA-independent-review-progress.json','payloadSha256'),('electrical/gap-content.json','electrical-locales/gap-independent-qa.json','payloadSha256'),('mechanical/mocks.json','mechanical/independent-mock-review.json','payloadSha256'),('electrical/mocks.json','electrical-locales/mocks-independent-qa.json','payloadSha256')]
+for source,report,key in pairs:assert digest(STAGE/source)==read(STAGE/report)[key],source
+objects={}
+for name in ['new-content.json','leaf-gap-supplement.json']:
+ d=read(STAGE/'surface'/name);objects.update({l['id']:l for l in d['lessons']});objects.update({q['id']:q for c in d['checks'] for q in c['questions']})
+d=read(STAGE/'surface/mocks.json');objects.update({q['id']:q for e in d['exams'] for s in e['sections'].values() for q in s['questions']})
+matched=set();mismatches=[]
+def scan(x,report):
+ if isinstance(x,dict):
+  identifier=x.get('id') or x.get('lessonId') or x.get('questionId')
+  if identifier in objects:
+   original=objects[identifier];checks=[]
+   if 'sourceHash' in x:checks.append(x['sourceHash']==original['sourceHash'])
+   for key in ['reviewedQuestionObjectSha256','reviewedLessonObjectSha256']:
+    if key in x:checks.append(x[key]==h(original))
+   if checks:
+    if all(checks):matched.add(identifier)
+    else:mismatches.append({'report':str(report.relative_to(STAGE)),'id':identifier})
+  for v in x.values():scan(v,report)
+ elif isinstance(x,list):
+  for v in x:scan(v,report)
+for p in (STAGE/'surface-locales').glob('ja-independent-review-*.json'):scan(read(p),p)
+missing=set(objects)-matched;assert not missing,sorted(missing)
+result={'status':'PASS','fileDigestBoundReviews':len(pairs),'surfaceReviewedObjects':len(matched),'supersededReviewRecords':mismatches,'missingCurrentReviewBindings':[],'scope':'Exact frozen source identities and independently reviewed snapshots, not a native/domain/full-knowledge certificate.'}
+(STAGE/'source-review-bindings-qa.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps(result))

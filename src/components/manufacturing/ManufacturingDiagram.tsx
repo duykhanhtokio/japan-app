@@ -4,6 +4,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import {manufacturingUi} from '@/data/manufacturing/ui';
 import captionData from '@/data/manufacturing/diagram-translations.json';
+const ratios:Record<string,number>={"mfg1-mechanical-lesson-081": 1.1428571428571428, "mfg1-mechanical-lesson-082": 1.1428571428571428, "mfg1-electrical-l087": 0.7947019867549668, "mfg1-electrical-l077": 1.6, "mfg1-electrical-l071": 1.5, "mfg1-surface-lesson-053": 1.6, "mfg1-surface-lesson-060": 1.6};
 const figures:Record<string,{source:ReturnType<typeof require>;altJa:string}>={
  'mfg1-mechanical-lesson-044':{source:require('../../../assets/manufacturing/diagrams/batch07-mechanical-third-angle.png'),altJa:'第三角法では、正面図の上に上から見た平面図、右に右から見た右側面図を配置する。配置関係だけを示す模式図で、部品の形状や寸法は示さない。'},
  'mfg1-electrical-l038':{source:require('../../../assets/manufacturing/diagrams/batch07-electrical-comparison-measurement.png'),altJa:'比較測定の紙上例。一目盛0.01mmを仮定し、4目盛の移動から差の大きさ0.04mmを求める。＋の符号はこの例の記録条件であり、対象の絶対寸法ではない。実機では基準、接触条件、符号、目盛値を確認する。'},
@@ -16,14 +17,21 @@ const figures:Record<string,{source:ReturnType<typeof require>;altJa:string}>={
  'mfg1-mechanical-lesson-011':{source:require('../../../assets/manufacturing/diagrams/qc-control-plan.png'),altJa:'QC工程図では工程・管理項目・管理方法・管理頻度・異常時の処置を確認する。'},
  'mfg1-electrical-l017':{source:require('../../../assets/manufacturing/diagrams/series-parallel.png'),altJa:'直列では電流が共通で電圧を加え、並列では電圧が共通で電流を加える。抵抗と直流電源の基本関係を示す模式図。'},
  'mfg1-surface-lesson-011':{source:require('../../../assets/manufacturing/diagrams/concentration-units.png'),altJa:'g/Lは溶質の質量を溶液の体積で割り、mol/Lは溶質の物質量を溶液の体積で割る。単位を区別する。'},
+ 'mfg1-mechanical-lesson-081':{source:require('../../../assets/manufacturing/diagrams/batch12-mechanical-dimension-symbols.png'),altJa:'寸法補助記号の13項目。球の直径Sφと半径SR、円弧長さ、面取り、板厚、ざぐり、皿ざぐり、深さを区別する。寸法例は形状の読み方を示し、加工条件ではない。'},
+ 'mfg1-mechanical-lesson-082':{source:require('../../../assets/manufacturing/diagrams/batch12-mechanical-geometric-symbols.png'),altJa:'幾何公差の15名称と記号。形状・姿勢・位置・振れの対象を区別する。同心度と同軸度は同じ記号でも対象の意味を確認する。'},
+ 'mfg1-electrical-l087':{source:require('../../../assets/manufacturing/diagrams/batch12-electrical-symbol-bank.png'),altJa:'電気用図記号22項目。接点の常態、動作方式、半導体の端子と矢印を名称と対応させる。PNPの矢印はエミッタ側で内向き。実機の配線図や端子配列ではない。'},
+ 'mfg1-electrical-l077':{source:require('../../../assets/manufacturing/diagrams/batch12-electrical-time-delays.png'),altJa:'入力が1秒でオン、6秒でオフになる紙上例。3秒のオンディレーは4秒でオン、6秒でオフ。3秒のオフディレーは1秒でオン、9秒でオフ。設定や配線の手順ではない。'},
+ 'mfg1-electrical-l071':{source:require('../../../assets/manufacturing/diagrams/batch12-electrical-pn-junction.png'),altJa:'外部電圧のないpn接合。空乏層のp側には負、n側には正の固定イオンがあり、内部電界はn側からp側へ向かう。外側の正孔・電子は移動キャリアで、領域全体の帯電を示さない。'},
+ 'mfg1-surface-lesson-053':{source:require('../../../assets/manufacturing/diagrams/batch12-surface-right-grip.png'),altJa:'右ねじの関係を視点と量で区別する。直線導体の電流が紙面から手前へ出ると磁界は反時計回り。コイルを端面から見て電流が反時計回りなら内部磁界は手前へ向かう。'},
+ 'mfg1-surface-lesson-060':{source:require('../../../assets/manufacturing/diagrams/batch12-surface-coating-defects.png'),altJa:'めっき皮膜の断面例。ピンホールは皮膜を貫く穴、ここでのピットは途中までのくぼみ、ふくれは皮膜の局部的な浮き。模式図であり、寸法と合否基準は適用規格・限度見本で確認する。'},
 };
 export function ManufacturingDiagram({lessonId,language='ja',showTranslation=false}:{lessonId:string;language?:string;showTranslation?:boolean}){
  const [expanded,setExpanded]=useState(false),{width}=useWindowDimensions(),i=useSafeAreaInsets();
- const item=figures[lessonId],{colors}=useStudyAppearance();if(!item)return null;
+ const ratio=ratios[lessonId]??1.6,item=figures[lessonId],{colors}=useStudyAppearance();if(!item)return null;
  const candidate=captionData.locales[language as keyof typeof captionData.locales]?.[lessonId as keyof typeof captionData.locales.en];
  const translated=candidate&&showTranslation&&candidate.sourceJa===item.altJa?candidate.text:null;
  const zoomWidth=Math.max(960,width),button=(label:string,action:()=>void)=><Pressable accessibilityRole="button" accessibilityLabel={label} onPress={action} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:16,textAlign:'center'}}>{label}</Text></Pressable>;
- return <View style={{gap:8}}><Image testID="manufacturing-technical-diagram" accessibilityLabel={translated??item.altJa} source={item.source} resizeMode="contain" style={{width:'100%',aspectRatio:1.6}}/><Text style={{fontSize:15,lineHeight:25,color:colors.muted}}>{item.altJa}</Text>{translated&&<Text style={{fontSize:15,lineHeight:25,color:colors.translationText,backgroundColor:colors.translation,padding:12,borderRadius:8}}>{translated}</Text>}{button(manufacturingUi(language,'imageZoom'),()=>setExpanded(true))}
- <Modal visible={expanded} animationType="none" onRequestClose={()=>setExpanded(false)}><View style={{flex:1,paddingTop:i.top,paddingBottom:i.bottom,paddingLeft:i.left,paddingRight:i.right,backgroundColor:colors.background}}><View style={{padding:12}}>{button(manufacturingUi(language,'imageClose'),()=>setExpanded(false))}</View><ScrollView style={{flex:1}}><ScrollView horizontal nestedScrollEnabled style={{width:'100%'}}><Image testID="manufacturing-expanded-diagram" accessibilityLabel={translated??item.altJa} source={item.source} resizeMode="contain" style={{width:zoomWidth,height:zoomWidth/1.6}}/></ScrollView></ScrollView></View></Modal>
+ return <View style={{gap:8}}><Image testID="manufacturing-technical-diagram" accessibilityLabel={translated??item.altJa} source={item.source} resizeMode="contain" style={{width:'100%',aspectRatio:ratio}}/><Text style={{fontSize:15,lineHeight:25,color:colors.muted}}>{item.altJa}</Text>{translated&&<Text style={{fontSize:15,lineHeight:25,color:colors.translationText,backgroundColor:colors.translation,padding:12,borderRadius:8}}>{translated}</Text>}{button(manufacturingUi(language,'imageZoom'),()=>setExpanded(true))}
+ <Modal visible={expanded} animationType="none" onRequestClose={()=>setExpanded(false)}><View style={{flex:1,paddingTop:i.top,paddingBottom:i.bottom,paddingLeft:i.left,paddingRight:i.right,backgroundColor:colors.background}}><View style={{padding:12}}>{button(manufacturingUi(language,'imageClose'),()=>setExpanded(false))}</View><ScrollView style={{flex:1}}><ScrollView horizontal nestedScrollEnabled style={{width:'100%'}}><Image testID="manufacturing-expanded-diagram" accessibilityLabel={translated??item.altJa} source={item.source} resizeMode="contain" style={{width:zoomWidth,height:zoomWidth/ratio}}/></ScrollView></ScrollView></View></Modal>
  </View>;
 }
