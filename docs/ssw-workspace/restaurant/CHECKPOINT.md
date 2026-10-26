@@ -1,18 +1,18 @@
 # Nhà hàng / 外食業 — checkpoint 2026-10-26
 
-## Lô08 — 5 bài nấu ăn ×12ngôn ngữ,6AI phối hợp
+## Lô09 —5 bài nấu ăn06–10 ×12ngôn ngữ,6AI song song
 
-Nhánh được người dùng cho phép: `duykhanhtokio/japan-app`, `feature/restaurant-20261026`. Base đã WORK PERSISTENCE PASS: `5c5cb2b07b2367f706bd983ac2fd5129b5dfc916`. Lô08 chỉ lưu bền sau khi commit remote được fetch và đối chiếu thành công.
+Nhánh được người dùng cho phép: `duykhanhtokio/japan-app`, `feature/restaurant-20261026`. Base đã WORK PERSISTENCE PASS: `ccec2a565bfc464936916500d1002cb9e3902603`. Lô09 chỉ lưu bền sau khi commit remote được fetch và đối chiếu thành công.
 
-- Thêm60 bản dịch cook01–05, đủ12locale,276đoạn dịch và toàn bộ tiêu đề/mục tiêu/thuật ngữ/tóm tắt/hoạt động. Bài01 có6đoạn; bài05 có5đoạn với16kiểu cắt. Canonical JP không đổi.
-- 6 tác giả song song theo cặp ngôn ngữ;root tiếp quản tl/id khi một child báo capacity. Rà chéo đủ60bản;60hash review khớp snapshot cuối. Đã sửa nghĩa phần đùi/ngoài đùi thay vì innerthigh/ham, mở rộng魚介類 khỏi shellfish/biển, làm rõかつらむき và phạm viメロン/白菜. Báo cáo tác giả và crossreview batch08-*.json; native/domain/human false.
-- Tổng362 bản dịch bài:12locale mỗi30;hi/bn31. Giữ192 bản dịch câu. Toàn kho120bài/984câu vẫn chưa dịch đủ.
-- Kiểm tra cấu trúc PASS;complete FALSE. Sàng lọc số4276trường PASS. Các số đếm viết bằng chữ được rà chéo; sàng lọc số tự động không chứng nhận ngữ nghĩa.
-- Browser PASS:60cặp mới ×2kích thước=120trường hợp, ngoài mẫu12locale. Ảnh chụp chọn cook01 và font5hệ chữ được ghi trong locale-browser-qa.json. Dùng presentation/storage adapters; chưa Expo/native/thiết bị thật.
-- Giữ120 bài Nhật (59/61),800 câu luyện tập và184 câu tuần (96/88). Glossary692/692 có giải nghĩa;うぐいす骨 chỉ được giải nghĩa hẹp theo nguồnふぐ, quan hệ với sơ đồ cá chung vẫn chưa rõ.
-- Không đổi UI JLPT/ngành song song. Còn đối chiếu độ bao phủ nguồn, phần lớn bản dịch, hình/furigana và native QA. Không có tác vụ chạy ngầm sau phiên.
+- Thêm60 bản dịch cook06–10 đủ12locale,240đoạn cùng toàn bộ tiêu đề/mục tiêu/thuật ngữ/tóm tắt/hoạt động. Sáu AI tác giả theo cặp ngôn ngữ và rà chéo độc lập;60hash review khớp bản cuối. Giữ toàn bộ record cũ/questions/ui.
+- Đã sửa rõ nghĩa một câu hoạt động Hindi và các trade labels round/semi-dressed/dressed/fillet trongZH;không coi fillet là tuyệt đối không xương hoặc sẵn sàng ăn sống. Native/domain/human review giữ false.
+- Tổng422 bản dịch bài:12locale mỗi35;hi/bn36. Giữ192 bản dịch câu. Toàn kho120bài/984câu vẫn chưa dịch đủ.
+- Cấu trúc PASS;complete FALSE; sàng lọc số4756trường PASS. Sàng lọc số không chứng nhận ngữ nghĩa. Các cảnh báo chốngnâu≠sátkhuẩn, dầu/thiếtbị≠nhiệtđộtâm, antoàn dầu/hơinước đã được rà theo bản Nhật hiện tại.
+- Browser PASS:60cặp mới ×2kích thước=120trường hợp, ngoài mẫu12locale. Ảnh chụp chọn cook09; báo cáo locale-browser-qa.json. Dùng presentation/storage adapters; chưa Expo/native/thiết bị thật.
+- Giữ120 bài Nhật (59/61),800 câu luyện tập và184 câu tuần (96/88). Glossary692/692 có giải nghĩa;うぐいす骨 vẫn chỉ có định nghĩa hẹp theo nguồnふぐ, quan hệ với sơ đồ cá chung chưa rõ.
+- Không đổi UI JLPT/ngành song song. Còn độ bao phủ nguồn, phần lớn bản dịch, hình/furigana và native QA. Không có tác vụ chạy ngầm sau phiên.
 
-Điểm tiếp tục: tiếp tục cook06 trở đi theo12ngôn ngữ; hoàn thiện bài vệ sinh16 cho10locale còn thiếu (hi/bn đã có); rà bao phủ nguồn, hình/furigana và app thật. Không coi số lượng bản dịch là chứng nhận chuyên môn/người bản ngữ.
+Điểm tiếp tục: cook11–15 theo12ngôn ngữ; bài vệ sinh16 cho10locale còn thiếu (hi/bn đã có); rà bao phủ nguồn, hình/furigana và app thật. Không coi số bản dịch là chứng nhận chuyên môn/người bản ngữ.
 
 ---
 ## Checkpoint lịch sử trước lô tiếp nối
