@@ -223,14 +223,14 @@
   },
   "productionRelease": false,
   "remaining": [
-    "Complete5640 remaining mock question-locale translations. Weekly checks and mock01-04 of both levels are in all12 locales;1号 mock05 additionally EN/VI/ID.",
+    "Complete5128 remaining mock question-locale translations. Weekly checks and mock01-04 of BOTHlevels complete in all12locales. Detailed laterform coverage:batch-14-form-coverage.json.",
     "Verified full-body furigana",
     "Full detailed source competency mapping and complete source visual review",
     "Original explanatory illustrations and optional prerecorded audio",
     "Full Expo/native build and actual device validation",
     "Expert/native review remains unverified"
   ],
-  "next": "Complete remaining9 locales of food-1-mock-05, then food-2-mock-05 in all12. Next240pairs EN/VI/ID2号mock05 and ZH-CN/ZH-TW/BN1号mock05 already authored in isolated worker files, not included in this checkpoint. Historical1480 pairs still await browserQA.",
+  "next": "Finish1号mock05 inTH/NE/MY/KM (THpartial), thenremaining2号mock05 locales; continuefromexactperlocale/formmatrix inbatch-14-form-coverage.json. Historical1480pairs stillneedbrowserQA; fullbodyfurigana/sourcevisual/competency/illustrations/Expo/nativevalidation remainpending.",
   "japaneseAuthorshipStatus": "AI-authored candidate covering all source chapters; detailed competency coverage remains unverified",
   "sourceReferences": "153/158 TOC entries have candidate lesson page references; remaining5 are indexes/notices/bibliography. This is not mastery or full coverage certification.",
   "nativeSpeakerReviewed": false,
@@ -254,7 +254,7 @@
     "fullExpoBuildTested": false,
     "newLocaleResponsiveCases": 24,
     "diagramTranslationPairs": 20,
-    "translatedQuestionPairs": 4428,
+    "translatedQuestionPairs": 4940,
     "testTranslationLeakChecks": 2468,
     "testTranslationResponsiveCases": 9872,
     "missingTranslationNotices": 7,
@@ -324,7 +324,7 @@
       "deltaBaselineCommit": "854bfc43e6ee0c074ab0de60efc787aa2faa98ba",
       "all12LocaleGroupsDisjoint": true
     },
-    "assessmentEvidence": "Historical browser baseline2468pairs plus disjointbatch13 subset480pairs=2948 testedpairs. Historical1480 additions remain untested. No cumulative full-browser/native/Expo certification.",
+    "assessmentEvidence": "Historical2468browserbaseline plus disjointbatch13(480) andbatch14(512)=3460nettestedpairs/13840viewportcases. Historical1480pairs remainuntested. Batch14supersededHI/TL80 excludedfromnetcounts; actualexecuted592pairs. No native/Expo certification.",
     "batch06": {
       "structuralContent": "PASS2468 pairs",
       "translationAdapter": "PASS2468 valid and stale-revision rejection checks;7600missing without fallback",
@@ -455,21 +455,41 @@
       "sourcePdfPagesDirectlyChecked": 10,
       "sourceRangeCandidatesSupported": 4,
       "scopeComplete": false
+    },
+    "batch14": {
+      "newQuestionLocalePairs": 512,
+      "totalQuestionLocalePairs": 4940,
+      "remainingQuestionLocalePairs": 5128,
+      "baseCommit": "1b5869f75a875b9562284315f56e22816eebed7a",
+      "prior4428PairsAndTitlesPreserved": true,
+      "canonicalAdapterValidPairs": 4940,
+      "staleHashesRejected": 4940,
+      "browserNetNewPairs": 512,
+      "browserResponsiveCases": 2048,
+      "browserExecutedPairsIncludingSuperseded": 592,
+      "peerReviewedPairs": 112,
+      "nativeSpeakerReviewed": false,
+      "domainExpertReviewed": false,
+      "productionExpoTested": false,
+      "nativeDeviceTested": false,
+      "scopeComplete": false,
+      "thaiExtraPoolPairs": 32,
+      "thaiPoolCompletesFullForm": false
     }
   },
   "translatedQuestions": {
-    "bn": 359,
-    "zh-TW": 359,
-    "hi": 359,
-    "th": 359,
-    "id": 399,
-    "zh-CN": 359,
-    "tl": 359,
+    "bn": 399,
+    "zh-TW": 399,
+    "hi": 399,
+    "th": 391,
+    "id": 479,
+    "zh-CN": 399,
+    "tl": 399,
     "my": 359,
     "ne": 359,
     "km": 359,
-    "vi": 399,
-    "en": 399
+    "vi": 479,
+    "en": 519
   },
   "batch02": {
     "newMockQuestions": 640,
@@ -638,5 +658,25 @@
     "sourcePdfPagesDirectlyChecked": 10,
     "sourceRangeCandidatesSupported": 4,
     "scopeComplete": false
+  },
+  "batch14": {
+    "newQuestionLocalePairs": 512,
+    "totalQuestionLocalePairs": 4940,
+    "remainingQuestionLocalePairs": 5128,
+    "baseCommit": "1b5869f75a875b9562284315f56e22816eebed7a",
+    "prior4428PairsAndTitlesPreserved": true,
+    "canonicalAdapterValidPairs": 4940,
+    "staleHashesRejected": 4940,
+    "browserNetNewPairs": 512,
+    "browserResponsiveCases": 2048,
+    "browserExecutedPairsIncludingSuperseded": 592,
+    "peerReviewedPairs": 112,
+    "nativeSpeakerReviewed": false,
+    "domainExpertReviewed": false,
+    "productionExpoTested": false,
+    "nativeDeviceTested": false,
+    "scopeComplete": false,
+    "thaiExtraPoolPairs": 32,
+    "thaiPoolCompletesFullForm": false
   }
 }

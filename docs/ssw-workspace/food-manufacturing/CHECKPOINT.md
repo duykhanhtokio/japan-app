@@ -1,3 +1,17 @@
+# Batch14 — final verified continuation checkpoint
+
+Base1b5869f on feature/food-manufacturing-20261026. Added512question-locale pairs afterbatch13; combinedthissession992newpairs. Current4940/10068,remaining5128. Allprior4428questions/titlespreserved. See batch-14-form-coverage.json for exactperlocale/formresume. Japanese78lessons,800mocks,39weeklyquestions andruntime/UI unchanged.
+
+New:EN/VI/ID2号mock05 and1号mock06;EN2号mock06;ZH-CN/ZH-TW/BN/HI/TL1号mock05;TH32additional canonicalpoolquestions acrosslaterforms(noextra fullformcompletionclaimed). Allcanonicalhashes/order/correctreason checksPASS.
+
+ActualChromiumPASS512netpairs/2048responsivecases,includingcorrectedHI/TL80 andfinalEN40. Executed592pairsincluding80supersededchecks;donotdoublecount. Finalselectedentriesdeepequalcurrentpacks.112independentAIreviewpairsyieldedHIhandrinseterminology,HInegation,andTLsortingcorrections;fixedbeforefinalQA. Reportsand12WebPevidenceimagesinsectordocs. FinalENscreenshotvisuallyinspected.
+
+Totaluniquebrowserassessmentcoverage3460pairs;historical1480pairsremainuntested. Fullbodyfurigana,92remainingrangecandidatereviews/fullsourcevisual/competencyverification,originalillustrations,andExpo/native/devicechecksremainpending. No native/domaincertification;scopeComplete=false.
+
+Resume:finish1号mock05TH/NE/MY/KM(THpartial),thenremaining2号mock05locales;useexactmatrix. Someworkershitmodelcapacity;environmentbrieflydisconnectedthenrecovered. No claimofcontinuedbackgroundwork. Allcompleteworkercontentusedhereisnowintegrated;olderbatch13notesaboutisolatednextbatchesaresuperseded.
+
+---
+
 # Batch13 — actual six-worker continuation
 
 Base3881d18a on feature/food-manufacturing-20261026. Added480question-locale pairs and12titles:2号mock04 into nine remaining locales and1号mock05 into EN/VI/ID. Both levels mock01–04 are now complete in all12locales. Current4428/10068pairs,5640missing. Every prior3948entry/title preserved.
