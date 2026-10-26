@@ -5,6 +5,10 @@ ROOT=Path(__file__).resolve().parents[2];STAGE=ROOT/'docs/ssw-workspace/manufact
 def read(p):return json.loads(p.read_text())
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def h(x):return hashlib.sha256(json.dumps(x,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+baseline=read(STAGE/'baseline-object-freeze.json')['objects']
+for specialty,bindings in baseline.items():
+ course=read(ROOT/f'src/data/manufacturing/{specialty}.json');current={l['id']:l for l in course['lessons']};current.update({q['id']:q for c in course['checks'] for q in c['questions']})
+ for identifier,expected in bindings.items():assert identifier in current and h(current[identifier])==expected,'Baseline content drift: '+identifier
 frozen=read(STAGE/'frozen-source-inputs.json')['sha256']
 for relative,expected in frozen.items():assert digest(STAGE/relative)==expected,relative
 pairs=[('mechanical/new-content.json','mechanical-locales/new-japanese-independent-review.json','sourcePayloadSha256AfterRepair'),('mechanical/gap-content.json','mechanical-locales/gap-japanese-independent-review.json','sourcePayloadSha256'),('electrical/new-content.json','electrical-locales/new-JA-independent-review-progress.json','payloadSha256'),('electrical/gap-content.json','electrical-locales/gap-independent-qa.json','payloadSha256'),('mechanical/mocks.json','mechanical/independent-mock-review.json','payloadSha256'),('electrical/mocks.json','electrical-locales/mocks-independent-qa.json','payloadSha256')]

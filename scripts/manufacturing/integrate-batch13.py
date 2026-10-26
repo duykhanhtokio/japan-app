@@ -35,6 +35,8 @@ def append_unique(old, new, protected=()):
 
 
 def main():
+    if (DOCS / 'batch12/frozen-source-inputs.json').exists():
+        raise SystemExit('Historical integrator is blocked for the review-bound completion snapshot. Use scripts/manufacturing/integrate-completion.py.')
     manifest = read(DATA / 'course-manifest.json')
     matrix = read(DOCS / 'knowledge-matrix.json')
     knowledge = {x['id']: x for x in matrix['knowledge']}

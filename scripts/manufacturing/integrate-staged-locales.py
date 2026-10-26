@@ -17,6 +17,8 @@ def write(path, value):
 
 
 def main():
+    if (DOCS / 'batch12/frozen-source-inputs.json').exists():
+        raise SystemExit('Historical integrator is blocked for the review-bound completion snapshot. Use scripts/manufacturing/integrate-completion.py.')
     registry = read(DATA / 'translations/manifest.json')
     courses = [read(DATA / (s + '.json')) for s in ['mechanical', 'electrical', 'surface']]
     canonical = {'lessons': {l['id']: l for c in courses for l in c['lessons']}, 'questions': {q['id']: q for c in courses for e in c['checks'] for q in e['questions']}}

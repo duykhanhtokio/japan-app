@@ -7,17 +7,17 @@ This is an in-progress AI draft checkpoint. `courseComplete` and `releaseReady` 
 | Locale | Lessons / 262 | Weekly questions / 456 | Mock questions / 1200 | Captions / 18 |
 |---|---:|---:|---:|---:|
 | en | 262 | 456 | 1200 | 18 |
-| vi | 261 | 396 | 720 | 18 |
-| id | 133 | 228 | 0 | 18 |
-| zh-CN | 262 | 456 | 520 | 18 |
-| zh-TW | 262 | 456 | 400 | 18 |
-| hi | 82 | 132 | 0 | 18 |
+| vi | 262 | 456 | 1200 | 18 |
+| id | 262 | 456 | 1200 | 18 |
+| zh-CN | 262 | 456 | 1200 | 18 |
+| zh-TW | 262 | 456 | 1200 | 18 |
+| hi | 189 | 312 | 0 | 18 |
 | bn | 0 | 0 | 0 | 18 |
-| ne | 35 | 24 | 0 | 18 |
-| my | 31 | 24 | 0 | 18 |
-| th | 133 | 228 | 0 | 18 |
-| km | 70 | 0 | 0 | 0 |
-| tl | 7 | 0 | 0 | 0 |
+| ne | 98 | 60 | 0 | 18 |
+| my | 98 | 60 | 0 | 18 |
+| th | 211 | 300 | 0 | 18 |
+| km | 124 | 0 | 0 | 18 |
+| tl | 7 | 0 | 0 | 18 |
 
 Validation: source-bound content/schema check; 30-form/1,200-item mock identity, duration, balance, distinct-stem and lesson-coverage check; all mock ruby stem/option text aligned; mock state restoration/timer/independent grading checks; all 30 production exam forms exercised on full Expo 54 web with actual Royal, Safe Area, AsyncStorage and native-stack components, zero reported JavaScript errors. Seven new diagrams also passed load/ratio/expand/pan/close checks at 320 and 932 pixels. Scope and exact source digests are in batch12 QA reports.
 
