@@ -1,7 +1,7 @@
 {
   "status": "in_progress_internal_preview",
   "scopeComplete": false,
-  "branch": "feature/food-manufacturing-batch15-20261027",
+  "branch": "feature/food-manufacturing-20261026",
   "lessonsAuthored": {
     "1": 42,
     "2": 36
@@ -223,14 +223,14 @@
   },
   "productionRelease": false,
   "remaining": [
-    "Complete4932 remaining mock question-locale translations. Weekly checks and mock01-04 of bothlevels, plus1号mock05, complete in all12locales. See batch-15-form-coverage.json.",
+    "Complete4591 remaining mock question-locale translations. See batch-16-form-coverage.json. Partial per-form contributions are counted only by actual question IDs.",
     "Verified full-body furigana",
     "Full detailed source competency mapping and complete source visual review",
     "Original explanatory illustrations and optional prerecorded audio",
     "Full Expo/native build and actual device validation",
     "Expert/native review remains unverified"
   ],
-  "next": "Continue remaining2号mock05 locales, then remaining mock06–10 from exact batch-15-form-coverage.json.1676current pairs have no browser evidence. Full-body furigana,source competency/visual review,illustrations,Expo/native and expert/native review remain pending.",
+  "next": "Finish remaining2号mock05 locales; continue exact missing IDs in batch-16-form-coverage.json. Unfinished source/visual/furigana/illustration/Expo/native requirements remain.",
   "japaneseAuthorshipStatus": "AI-authored candidate covering all source chapters; detailed competency coverage remains unverified",
   "sourceReferences": "153/158 TOC entries have candidate lesson page references; remaining5 are indexes/notices/bibliography. This is not mastery or full coverage certification.",
   "nativeSpeakerReviewed": false,
@@ -254,7 +254,7 @@
     "fullExpoBuildTested": false,
     "newLocaleResponsiveCases": 24,
     "diagramTranslationPairs": 20,
-    "translatedQuestionPairs": 5136,
+    "translatedQuestionPairs": 5477,
     "testTranslationLeakChecks": 2468,
     "testTranslationResponsiveCases": 9872,
     "missingTranslationNotices": 7,
@@ -324,7 +324,7 @@
       "deltaBaselineCommit": "854bfc43e6ee0c074ab0de60efc787aa2faa98ba",
       "all12LocaleGroupsDisjoint": true
     },
-    "assessmentEvidence": "Historical3460netbrowser-tested pairs/13840viewportcases unchanged;1480historical plus196new=1676current pairs notbrowser-tested. Newbatch15 adapter/state/VMregression checks are notbrowser evidence.",
+    "assessmentEvidence": "Historical3460netbrowser-tested pairs unchanged.2017currentpairs have nobrowser evidence afterbatch16. Newadapter checks are notbrowser/native testing.",
     "batch06": {
       "structuralContent": "PASS2468 pairs",
       "translationAdapter": "PASS2468 valid and stale-revision rejection checks;7600missing without fallback",
@@ -491,21 +491,37 @@
       "nativeDeviceTested": false,
       "productionExpoTested": false,
       "scopeComplete": false
+    },
+    "batch16": {
+      "baseCommit": "48c11c2869e177040e45d6a63fdb8b0972966699",
+      "newQuestionLocalePairs": 341,
+      "totalQuestionLocalePairs": 5477,
+      "remainingQuestionLocalePairs": 4591,
+      "prior5136PairsAndTitlesPreserved": true,
+      "canonicalAdapterValidPairs": 5477,
+      "staleHashesRejected": 5477,
+      "independentAiPeerReviewUnits": 81,
+      "browserTested": false,
+      "nativeDeviceTested": false,
+      "fullExpoBuildTested": false,
+      "nativeSpeakerReviewed": false,
+      "domainExpertReviewed": false,
+      "scopeComplete": false
     }
   },
   "translatedQuestions": {
-    "bn": 399,
-    "zh-TW": 399,
-    "hi": 399,
-    "th": 427,
-    "id": 479,
-    "zh-CN": 399,
-    "tl": 399,
+    "bn": 404,
+    "zh-TW": 439,
+    "hi": 403,
+    "th": 435,
+    "id": 519,
+    "zh-CN": 439,
+    "tl": 439,
     "my": 399,
-    "ne": 399,
+    "ne": 403,
     "km": 399,
-    "vi": 519,
-    "en": 519
+    "vi": 599,
+    "en": 599
   },
   "batch02": {
     "newMockQuestions": 640,
@@ -716,5 +732,21 @@
       "examId": "food-2-mock-06"
     }
   },
-  "integrationStatus": "Batch15 isolated from latest sharedsector head9efc1ae3; no data taken from stale isolatedbatch07 variants. Allprior sharedsector translation objects preserved."
+  "integrationStatus": "Batch15 isolated from latest sharedsector head9efc1ae3; no data taken from stale isolatedbatch07 variants. Allprior sharedsector translation objects preserved.",
+  "batch16": {
+    "baseCommit": "48c11c2869e177040e45d6a63fdb8b0972966699",
+    "newQuestionLocalePairs": 341,
+    "totalQuestionLocalePairs": 5477,
+    "remainingQuestionLocalePairs": 4591,
+    "prior5136PairsAndTitlesPreserved": true,
+    "canonicalAdapterValidPairs": 5477,
+    "staleHashesRejected": 5477,
+    "independentAiPeerReviewUnits": 81,
+    "browserTested": false,
+    "nativeDeviceTested": false,
+    "fullExpoBuildTested": false,
+    "nativeSpeakerReviewed": false,
+    "domainExpertReviewed": false,
+    "scopeComplete": false
+  }
 }

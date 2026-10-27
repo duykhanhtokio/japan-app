@@ -1,3 +1,18 @@
+# Batch16 — 2026-10-27
+
+Based on sharedsector commit `48c11c2869e177040e45d6a63fdb8b0972966699`; candidate branch `feature/food-manufacturing-batch16-20261027`.
+
+- Added341 question-locale pairs; total5477/10068, remaining4591. Completed newforms: EN/VI1号mock07and08, ID2号mock06, TL/ZH-CN/ZH-TW2号mock05. BN5,HI4,NE4andTH8 are explicit partial2号mock05 contributions, never whole-form completion.
+- Exact source membership, revision hashes, four choices/reasons, main/correct-option explanation equality and existing5136question/title objects checked. Actualadapter PASS5477 valid and stale-hash rejection checks. Missing4591withoutfallback. Japanesecontent andruntimeunchanged.
+- IndependentAI semantic review covers81newunits:60root-authored Chineseunits,16TH/HI/NEunits and5BNunits. Othernewunits remain awaiting independentAI peer review; all content remains native/domain-unreviewed. TW regional conversion artifacts and general preparation-versus-changeover wording corrected; BNfrequencywording andTHphrasing corrected.
+- Numeric audit:TLq147 adds :00 to source hour notation;9:00/10:00/11:00 represent source9/10/11hours, not altered values. Remaining numeric candidates0.
+- Browser evidence unchanged3460pairs.2017currentpairs still await browserQA. This workspace lacks React,react-dom,react-native-web,esbuild andTypeScript packages, so fullExpo/browser build cannot be run here; Nodeactualadapter uses built-in TypeScript stripping. No browser/native/productioncertification.
+- Source inventory839questions,20mockforms,13weeklychecks; historical199question source-review snapshot remains historical, not current coverage proof. Fullsource competency/visual verification,furigana,illustrations anddevicevalidation remainopen. scopeComplete=false; productionRelease=false.
+
+Exact next IDs: `batch-16-form-coverage.json`. Parallel workers may have newer completed files beyond this frozen snapshot; revalidate and persist before counting.
+
+---
+
 # Batch15 — 2026-10-27
 
 Candidate branch `feature/food-manufacturing-batch15-20261027`, based on shared sector commit `9efc1ae3f522ddc7291f1a8458a5dd43caed8f64`. The separately published batch07 is stale for continuation; no overlapping variants were imported from it.

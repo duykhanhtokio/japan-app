@@ -86,3 +86,8 @@ The initial80 question prompts, keyed correct answers and main explanations were
 ## Weekly assessment checkpoint update
 
 The frozen assessment inventory now contains160 mock questions and 39 weekly questions (199 total). Source-map candidate question references include the 39 additions by their explicit knowledgeId. Earlier 160-question review counts above describe the earlier snapshot; they do not certify the 39 additions. All structural/semantic review limitations remain.
+
+
+## Current inventory clarification — 2026-10-27 batch16
+
+The199-question weekly checkpoint above is a historical snapshot. Current canonical runtime data has20mockforms with800questions plus13weekly checks with39questions:839items across33assessments. Updating inventory counts does not extend any historical source-semantic review to the later640mock items. Full-competency certification remains unverified; retain the explicit review states in source-map.json. Translation progress is separately recorded in progress.json and does not certify source completeness.
