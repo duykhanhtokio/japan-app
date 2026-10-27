@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "status": "independent_ai_source_review_changes_required_before_integration",
+  "reviewer": "recognition_audit",
+  "reviewedPacketSha256": "ce7b9ea428c7f2cdc745a064c4ab76e714d67487adc0c8780ebf58963558c4b4",
+  "pageImagesActuallyInspected": [
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 3,
+      "printedPage": 1
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 4,
+      "printedPage": 2
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 5,
+      "printedPage": 3
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 6,
+      "printedPage": 4
+    }
+  ],
+  "sourceHashMatchedInventory": true,
+  "reviewScope": "36Japaneseparagraphs/41proposedoccurrenceclosures; checked actualpageimages3–6 and conditions/mappings. Notdomain/native/humancertification.",
+  "fieldPatches": [
+    {
+      "lessonId": "agr-s27-vegetable-origins",
+      "paragraphId": "agr-s27-vegetable-origins-p5",
+      "field": "titleJa",
+      "old": "外国からの導入例と時期",
+      "new": "外国から導入された野菜の例",
+      "reason": "Do not teach questionable common1886introduction date as fact."
+    },
+    {
+      "lessonId": "agr-s27-vegetable-origins",
+      "paragraphId": "agr-s27-vegetable-origins-p5",
+      "field": "textJa",
+      "old": "資料は、1886年以降の外国からの導入例として、トマト、キャベツ、ハクサイ、タマネギを挙げています。この四つと掲載された時期を対応させます。四品目それぞれの正確な導入年や、すべてが1886年に同時に導入されたという情報は、この記述にはありません。",
+      "new": "トマト、キャベツ、ハクサイ、タマネギは、資料では外国から導入された野菜の例として挙げられています。ここでは、外国からの導入例という区分と四つの名前を対応させます。日本で栽培されていることと、日本原産であることは別の情報です。",
+      "reason": "Retain bounded imported-name classification while withholding precisehistoricaldate pending authoritative confirmation. This does not close source objectives requiring1886."
+    },
+    {
+      "lessonId": "agr-s27-fruit-components",
+      "paragraphId": "agr-s27-fruit-components-p6",
+      "field": "textJa",
+      "old": "果樹の技術紹介には、施設栽培やわい化栽培があります。これらが果樹にも導入されているという範囲で整理し、全ての樹種・地域で同じ設備や方法を選べるという指示にはしません。別の記述にある育成品種の割合の分母は未解決なので、この技術紹介から割合を補って説明しないようにします。",
+      "new": "果樹の技術紹介には、施設栽培やわい化栽培があります。これらが果樹にも導入されているという範囲で整理し、全ての樹種・地域で同じ設備や方法を選べるという指示にはしません。学習メモでは、果樹の種類を挙げる欄と、栽培技術を挙げる欄を分けて記録します。",
+      "reason": "Remove internal metadata-hold implementationdetails fromlearnerprose while preserving actualtechnologyscope."
+    }
+  ],
+  "mappingChanges": [
+    {
+      "sourceItemIds": [
+        "AGR-A10-GENERAL-0179",
+        "AGR-A10-GENERAL-0180",
+        "AGR-A10-GENERAL-0181",
+        "AGR-A10-GENERAL-0182"
+      ],
+      "disposition": "hold_precise_historical_year_pending_authoritative_resolution",
+      "proposedHoldId": "AGR-H-S27-VEGETABLE-INTRODUCTION-YEAR",
+      "reasonJa": "資料には1886年以降という記載があるが、四品目の導入時期を一括して教材化する妥当性は未確認。正確な導入年を外部の公的・研究機関資料で確認するまで年の主張と当該発生項目の閉鎖を保留。年を省いた導入例の分類だけを新規本文に残す。"
+    }
+  ],
+  "knowledgeChanges": [
+    {
+      "id": "AGR-K-S27-VEGETABLE-ORIGINS-05",
+      "titleJa": "外国から導入された野菜の例",
+      "kind": "concept",
+      "note": "Retainnew36paragraphmappingbutclaim0closureforthefourdate-bearingoccurrences."
+    }
+  ],
+  "checksPassed": [
+    "2019total89387andfourcropvalues21515/17484/8399/3264and24/20/9/4preservedwithyearandunits",
+    "2019weightselfsupply97/16/6/79/38keptdistinctfromcaloriebasis",
+    "2021riceabout1.4trillion/15percentandconsumption118kg1962/50.8kg2021retainedhistorically",
+    "Fruitnutritioniscomponentexampleonlyandnotclinicaldiseasepreventionguarantee",
+    "Noapparentrawsourceparagraphcopyinginthe36newparagraphs;notmechanicalrightsapproval",
+    "Sixsynthesisparagraphsdonotclaimnewoccurrenceclosure"
+  ],
+  "acceptedProposedSourceOccurrenceClosuresAfterPatches": 37,
+  "retainedNewParagraphs": 36,
+  "coveragePercent": null,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseReady": false
+}

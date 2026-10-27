@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "pair": "bn-ne",
+  "reviewer": "/root/source_audit",
+  "authorPacketPath": "docs/ssw-workspace/agriculture/session-20261027/translations-bn-ne.json",
+  "authorPacketSha256": "89b664cf43b3afe11b053946aa401d245610259e969b1104b5f788cf3a91e571",
+  "sourceMasterSha256": "83f3f627caacd81430d3830fbd158a176e2d2cf022e28070b521f7b8deb8b669",
+  "status": "complete",
+  "lessonLocalePairsReviewed": 12,
+  "fieldsReviewed": 180,
+  "reviewedLessonIds": [
+    "agr-s27-climate-detail",
+    "agr-s27-production-2019",
+    "agr-s27-self-supply-2019",
+    "agr-s27-rice-history",
+    "agr-s27-vegetable-origins",
+    "agr-s27-fruit-components"
+  ],
+  "reviewScope": "Direct semantic comparison of all title/objective/activity and36headings+36bodies per locale against frozen Japanese; source author is distinct from translation author.",
+  "patches": [
+    {
+      "locale": "bn",
+      "lessonId": "agr-s27-rice-history",
+      "field": "paragraphs",
+      "before": "কোশিহিকারি সম্পর্কে উপকরণে বলা হয়েছে, দেশের মোট ধান চাষের জমির এক-তৃতীয়াংশের বেশি এই জাতের অধীনে। এখানে সূচকটি জমির আয়তন। চালের সংগৃহীত ওজন বা উৎপাদনমূল্যের এক-তৃতীয়াংশের বেশি—এমন অন্য সূচকে বদলাবেন না; উপকরণের বক্তব্যের পরিসরে পড়ুন।",
+      "after": "কোশিহিকারি সম্পর্কে উপকরণে বলা হয়েছে, দেশের মোট ধান চাষের জমির এক-তৃতীয়াংশ বা তার বেশি এই জাতের অধীনে। এখানে সূচকটি জমির আয়তন। চালের সংগৃহীত ওজন বা উৎপাদনমূল্যের এক-তৃতীয়াংশ বা তার বেশি—এমন অন্য সূচকে বদলাবেন না; উপকরণের বক্তব্যের পরিসরে পড়ুন।",
+      "reason": "Japanese3分の1以上 includes equality; preserve inclusive threshold in source claim and warning.",
+      "paragraphId": "agr-s27-rice-history-p3"
+    },
+    {
+      "locale": "ne",
+      "lessonId": "agr-s27-rice-history",
+      "field": "paragraphs",
+      "before": "कोशिहिकारीबारे स्रोतले देशभरको धान खेती क्षेत्रफलको एक-तिहाइभन्दा बढी हिस्सा ओगट्ने बताउँछ। यहाँको सूचक क्षेत्रफल हो। काटिएको धानको तौल वा उत्पादन मूल्यको एक-तिहाइभन्दा बढी भन्ने अर्कै सूचकमा नबदल्नुहोस्; स्रोतमा उल्लेखित दायराभित्र पढ्नुहोस्।",
+      "after": "कोशिहिकारीबारे स्रोतले देशभरको धान खेती क्षेत्रफलको एक-तिहाइ वा सोभन्दा बढी हिस्सा ओगट्ने बताउँछ। यहाँको सूचक क्षेत्रफल हो। काटिएको धानको तौल वा उत्पादन मूल्यको एक-तिहाइ वा सोभन्दा बढी भन्ने अर्कै सूचकमा नबदल्नुहोस्; स्रोतमा उल्लेखित दायराभित्र पढ्नुहोस्।",
+      "reason": "Japanese3分の1以上 includes equality; preserve inclusive threshold in source claim and warning.",
+      "paragraphId": "agr-s27-rice-history-p3"
+    },
+    {
+      "locale": "bn",
+      "lessonId": "agr-s27-vegetable-origins",
+      "field": "objective",
+      "before": "উপকরণের বছর, উদাহরণ ও প্রজাতি গণনার পরিসর আলাদা করে, জাপানে উৎপত্তি ও বিদেশ থেকে প্রবর্তিত উদাহরণ মেলাতে পারা।",
+      "after": "উপকরণের বছর, উদাহরণ ও ধরন গণনার পরিসর আলাদা করে, জাপানে উৎপত্তি ও বিদেশ থেকে প্রবর্তিত উদাহরণ মেলাতে পারা।",
+      "reason": "Japanese種類 means types, not necessarily biological species; avoid narrowing counting scope to species."
+    },
+    {
+      "locale": "ne",
+      "lessonId": "agr-s27-fruit-components",
+      "field": "title",
+      "before": "फलवृक्षको रकम, पोषक तत्त्वका उदाहरण र प्रविधिको परिचय मिलाउने",
+      "after": "फलवृक्षको रकम, तत्त्वका उदाहरण र प्रविधिको परिचय मिलाउने",
+      "reason": "Japanese成分 means components; do not classify every listed component, includingpolyphenols, as a nutrient in the title."
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "releaseReady": false,
+  "limits": [
+    "AI semantic review,not native/domain/human certification.",
+    "Checked conversions1億円=10crore inBN/NE;1兆4千億=1lakh40thousandcroreyenBN=14खर्बNE;2兆1千億=2lakh10thousandcroreyenBN=21खर्बNE.",
+    "Historicalyears,fiscalyear,approximation,non-guaranteeofhealth,andforeignintroductionvsoriginchecked."
+  ]
+}

@@ -45,6 +45,14 @@ const assets:Record<string,ImageSourcePropType>={
  'tomato-late-blight':require('../../../assets/agriculture/recognition/tomato-late-blight-v1.webp'),
  'negi-rust':require('../../../assets/agriculture/recognition/negi-rust-v1.webp'),
  'broccoli-clubroot':require('../../../assets/agriculture/recognition/broccoli-clubroot-v1.webp'),
+ 'pest-thrips-wakegi':require('../../../assets/agriculture/recognition/pest-thrips-wakegi-v1.webp'),
+ 'pest-leafminer-wakegi-damage':require('../../../assets/agriculture/recognition/pest-leafminer-wakegi-damage-v1.webp'),
+ 'pest-mite-cucumber-damage':require('../../../assets/agriculture/recognition/pest-mite-cucumber-damage-v1.webp'),
+ 'pest-aphid-eggplant':require('../../../assets/agriculture/recognition/pest-aphid-eggplant-v1.webp'),
+ 'pest-cabbage-caterpillar':require('../../../assets/agriculture/recognition/pest-cabbage-caterpillar-v1.webp'),
+ 'pest-whitefly-tomato':require('../../../assets/agriculture/recognition/pest-whitefly-tomato-v1.webp'),
+ 'pest-sweetpotato-weevil':require('../../../assets/agriculture/recognition/pest-sweetpotato-weevil-v1.webp'),
+ 'pest-pepper-bug':require('../../../assets/agriculture/recognition/pest-pepper-bug-v1.webp'),
 };
 type RecognitionImage={
  id:string;lessonIds:string[];lessonSourceHashes:Record<string,string>;

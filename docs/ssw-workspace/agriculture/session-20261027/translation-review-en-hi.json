@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "pair": "en-hi",
+  "reviewer": "/root/source_audit",
+  "authorPacketPath": "docs/ssw-workspace/agriculture/session-20261027/translations-en-hi.json",
+  "authorPacketSha256": "cd9ba2711e3b22940aa7c5beeed6efec15aff4458e2f1bb09d776c44b8bcc93e",
+  "sourceMasterSha256": "83f3f627caacd81430d3830fbd158a176e2d2cf022e28070b521f7b8deb8b669",
+  "status": "complete",
+  "lessonLocalePairsReviewed": 12,
+  "fieldsReviewed": 180,
+  "reviewedLessonIds": [
+    "agr-s27-climate-detail",
+    "agr-s27-production-2019",
+    "agr-s27-self-supply-2019",
+    "agr-s27-rice-history",
+    "agr-s27-vegetable-origins",
+    "agr-s27-fruit-components"
+  ],
+  "reviewScope": "Direct semantic comparison of all title/objective/activity and36headings+36bodies per locale against frozen Japanese; source author acts as independent reviewer of separately authored target packet.",
+  "patches": [
+    {
+      "locale": "en",
+      "lessonId": "agr-s27-rice-history",
+      "field": "paragraphs",
+      "before": "For Koshihikari, the material states that it accounts for more than one-third of the nationwide planted area. The indicator here is area. Retain the scope described rather than changing it into a claim about more than one-third of rice harvest weight or output value.",
+      "after": "For Koshihikari, the material states that it accounts for one-third or more of the nationwide planted area. The indicator here is area. Retain the scope described rather than changing it into a claim about one-third or more of rice harvest weight or output value.",
+      "reason": "Japanese3分の1以上 includes equality; preserve inclusive threshold in claim and warning.",
+      "paragraphId": "agr-s27-rice-history-p3"
+    },
+    {
+      "locale": "hi",
+      "lessonId": "agr-s27-rice-history",
+      "field": "paragraphs",
+      "before": "कोशिहिकारी के बारे में सामग्री बताती है कि देश भर के बोए गए क्षेत्रफल में उसका हिस्सा एक-तिहाई से अधिक है। यहाँ संकेतक क्षेत्रफल है। इसे चावल की कटाई के वजन या उत्पादन मूल्य के एक-तिहाई से अधिक में न बदलें; सामग्री में बताए गए दायरे में पढ़ें।",
+      "after": "कोशिहिकारी के बारे में सामग्री बताती है कि देश भर के बोए गए क्षेत्रफल में उसका हिस्सा एक-तिहाई या उससे अधिक है। यहाँ संकेतक क्षेत्रफल है। इसे चावल की कटाई के वजन या उत्पादन मूल्य के एक-तिहाई या उससे अधिक में न बदलें; सामग्री में बताए गए दायरे में पढ़ें।",
+      "reason": "Japanese3分の1以上 includes equality; preserve inclusive threshold in claim and warning.",
+      "paragraphId": "agr-s27-rice-history-p3"
+    },
+    {
+      "locale": "hi",
+      "lessonId": "agr-s27-vegetable-origins",
+      "field": "title",
+      "before": "सब्जियों के उत्पादन मूल्य, मूल स्थान और आयातित परिचय के दिए उदाहरण पढ़ें",
+      "after": "सब्जियों के उत्पादन मूल्य, मूल स्थान और विदेश से लाए जाने के दिए उदाहरण पढ़ें",
+      "reason": "Replace unnatural आयातित परिचय with natural explicit wording for introduction from abroad; preserve three separate information types."
+    },
+    {
+      "locale": "hi",
+      "lessonId": "agr-s27-production-2019",
+      "field": "objective",
+      "before": "2019 की कुल राशि और फसल क्षेत्र की चार उत्पाद श्रेणियों की राशि व हिस्से का मिलान करें और अलग संकेतकों को मिलाए बिना तुलना कर सकें।",
+      "after": "2019 की कुल राशि और फसली उत्पादन की चार उत्पाद श्रेणियों की राशि व हिस्से का मिलान करें और अलग संकेतकों को मिलाए बिना तुलना कर सकें।",
+      "reason": "Avoid ambiguous फसल क्षेत्र which can be read as crop area; Japanese耕種部門 refers to the crop-production sector, not planted area."
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "releaseReady": false,
+  "limits": [
+    "AI semantic review, not native/domain/human certification.",
+    "Correct unit conversions100millionyen=10croreyen;1.4trillionyen=1.4लाखकरोड़ and2.1trillionyen=2.1लाखकरोड़ checked.",
+    "Historicalyears,notcurrent;scopeexamples;negation;diseaseguarantee exclusion checked."
+  ]
+}
