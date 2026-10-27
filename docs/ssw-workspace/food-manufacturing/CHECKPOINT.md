@@ -1,3 +1,18 @@
+# Batch15 — 2026-10-27
+
+Candidate branch `feature/food-manufacturing-batch15-20261027`, based on shared sector commit `9efc1ae3f522ddc7291f1a8458a5dd43caed8f64`. The separately published batch07 is stale for continuation; no overlapping variants were imported from it.
+
+- Added196 question-locale pairs:36TH and40each NE/MY/KM for `food-1-mock-05`, plus40VI for `food-2-mock-06`, with five revision-bound titles.1号 mock05 is now complete in all12locales;2号 mock06 has EN/VI. Total5,136 of10,068;4,932 remain.
+- All4,940 prior question entries and titles preserved exactly. All33 Japanese assessment objects, options, answers and revisions unchanged. Corrected only stale top-level authored-scope metadata from2/160/640 to10/800/0.
+- Every new pair has independent full-form AI semantic review (196units), including all options and reasons. Corrections include NE inclusive220ppm threshold/rounding, MY rotating-screw terminology and KM hot-liquid/clothing wording. Native/domain certification remains false.
+- PASS:actual adapter evaluated with Node's TypeScript stripping and JSON import injection;5,136valid plus5,136stale-hash rejection checks;4,932missing without fallback;272valid titles. State resume/revision/scoring/storage checks PASS. No esbuild was available in this workspace; `check-adapter-without-bundler.cjs` runs the actual adapter rather than duplicating lookup logic.
+- Browser QA's natural missing-translation fixture no longer falsely fails once all translations exist. When none exists it explicitly records not_exercised; a three-case VM regression checks both fixture branches and failure on absent notice. This does not launch a browser.
+- Historical browser evidence is unchanged:3,460net pairs,13,840viewport cases.1,480historical plus196new=1,676current pairs still need browser validation. No new browser/fullExpo/native evidence is claimed. Approved JLPT/runtime source files are unchanged.
+
+Resume from `batch-15-form-coverage.json`: remaining2号mock05 locales, then missing mock06–10. Full-body furigana, detailed source competency/visual verification, original illustrations, expert/native review and fullExpo/device validation remain pending. `scopeComplete=false`, `productionRelease=false`; the existing internal-preview gate is preserved.
+
+---
+
 # Batch14 — final verified continuation checkpoint
 
 Base1b5869f on feature/food-manufacturing-20261026. Added512question-locale pairs afterbatch13; combinedthissession992newpairs. Current4940/10068,remaining5128. Allprior4428questions/titlespreserved. See batch-14-form-coverage.json for exactperlocale/formresume. Japanese78lessons,800mocks,39weeklyquestions andruntime/UI unchanged.

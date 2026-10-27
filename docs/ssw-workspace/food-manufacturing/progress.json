@@ -1,7 +1,7 @@
 {
   "status": "in_progress_internal_preview",
   "scopeComplete": false,
-  "branch": "feature/food-manufacturing-20261026",
+  "branch": "feature/food-manufacturing-batch15-20261027",
   "lessonsAuthored": {
     "1": 42,
     "2": 36
@@ -223,14 +223,14 @@
   },
   "productionRelease": false,
   "remaining": [
-    "Complete5128 remaining mock question-locale translations. Weekly checks and mock01-04 of BOTHlevels complete in all12locales. Detailed laterform coverage:batch-14-form-coverage.json.",
+    "Complete4932 remaining mock question-locale translations. Weekly checks and mock01-04 of bothlevels, plus1号mock05, complete in all12locales. See batch-15-form-coverage.json.",
     "Verified full-body furigana",
     "Full detailed source competency mapping and complete source visual review",
     "Original explanatory illustrations and optional prerecorded audio",
     "Full Expo/native build and actual device validation",
     "Expert/native review remains unverified"
   ],
-  "next": "Finish1号mock05 inTH/NE/MY/KM (THpartial), thenremaining2号mock05 locales; continuefromexactperlocale/formmatrix inbatch-14-form-coverage.json. Historical1480pairs stillneedbrowserQA; fullbodyfurigana/sourcevisual/competency/illustrations/Expo/nativevalidation remainpending.",
+  "next": "Continue remaining2号mock05 locales, then remaining mock06–10 from exact batch-15-form-coverage.json.1676current pairs have no browser evidence. Full-body furigana,source competency/visual review,illustrations,Expo/native and expert/native review remain pending.",
   "japaneseAuthorshipStatus": "AI-authored candidate covering all source chapters; detailed competency coverage remains unverified",
   "sourceReferences": "153/158 TOC entries have candidate lesson page references; remaining5 are indexes/notices/bibliography. This is not mastery or full coverage certification.",
   "nativeSpeakerReviewed": false,
@@ -254,7 +254,7 @@
     "fullExpoBuildTested": false,
     "newLocaleResponsiveCases": 24,
     "diagramTranslationPairs": 20,
-    "translatedQuestionPairs": 4940,
+    "translatedQuestionPairs": 5136,
     "testTranslationLeakChecks": 2468,
     "testTranslationResponsiveCases": 9872,
     "missingTranslationNotices": 7,
@@ -324,7 +324,7 @@
       "deltaBaselineCommit": "854bfc43e6ee0c074ab0de60efc787aa2faa98ba",
       "all12LocaleGroupsDisjoint": true
     },
-    "assessmentEvidence": "Historical2468browserbaseline plus disjointbatch13(480) andbatch14(512)=3460nettestedpairs/13840viewportcases. Historical1480pairs remainuntested. Batch14supersededHI/TL80 excludedfromnetcounts; actualexecuted592pairs. No native/Expo certification.",
+    "assessmentEvidence": "Historical3460netbrowser-tested pairs/13840viewportcases unchanged;1480historical plus196new=1676current pairs notbrowser-tested. Newbatch15 adapter/state/VMregression checks are notbrowser evidence.",
     "batch06": {
       "structuralContent": "PASS2468 pairs",
       "translationAdapter": "PASS2468 valid and stale-revision rejection checks;7600missing without fallback",
@@ -475,20 +475,36 @@
       "scopeComplete": false,
       "thaiExtraPoolPairs": 32,
       "thaiPoolCompletesFullForm": false
+    },
+    "batch15": {
+      "newQuestionLocalePairs": 196,
+      "totalQuestionLocalePairs": 5136,
+      "remainingQuestionLocalePairs": 4932,
+      "baseCommit": "9efc1ae3f522ddc7291f1a8458a5dd43caed8f64",
+      "prior4940PairsAndTitlesPreserved": true,
+      "canonicalAdapterValidPairs": 5136,
+      "staleHashesRejected": 5136,
+      "peerReviewedNewPairs": 196,
+      "state": "PASS",
+      "browserMissingFixtureVmCases": 3,
+      "browserTested": false,
+      "nativeDeviceTested": false,
+      "productionExpoTested": false,
+      "scopeComplete": false
     }
   },
   "translatedQuestions": {
     "bn": 399,
     "zh-TW": 399,
     "hi": 399,
-    "th": 391,
+    "th": 427,
     "id": 479,
     "zh-CN": 399,
     "tl": 399,
-    "my": 359,
-    "ne": 359,
-    "km": 359,
-    "vi": 479,
+    "my": 399,
+    "ne": 399,
+    "km": 399,
+    "vi": 519,
     "en": 519
   },
   "batch02": {
@@ -678,5 +694,27 @@
     "scopeComplete": false,
     "thaiExtraPoolPairs": 32,
     "thaiPoolCompletesFullForm": false
-  }
+  },
+  "batch15": {
+    "newQuestionLocalePairs": 196,
+    "totalQuestionLocalePairs": 5136,
+    "remainingQuestionLocalePairs": 4932,
+    "baseCommit": "9efc1ae3f522ddc7291f1a8458a5dd43caed8f64",
+    "prior4940PairsAndTitlesPreserved": true,
+    "canonicalAdapterValidPairs": 5136,
+    "staleHashesRejected": 5136,
+    "peerReviewedNewPairs": 196,
+    "state": "PASS",
+    "browserMissingFixtureVmCases": 3,
+    "browserTested": false,
+    "nativeDeviceTested": false,
+    "productionExpoTested": false,
+    "scopeComplete": false,
+    "completedAll12LocaleForm": "food-1-mock-05",
+    "additionalCompleteForm": {
+      "locale": "vi",
+      "examId": "food-2-mock-06"
+    }
+  },
+  "integrationStatus": "Batch15 isolated from latest sharedsector head9efc1ae3; no data taken from stale isolatedbatch07 variants. Allprior sharedsector translation objects preserved."
 }
