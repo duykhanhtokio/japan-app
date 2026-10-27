@@ -16,6 +16,7 @@ assert values('15度、30度、45度')==collections.Counter()
 assert values('85–90℃')==collections.Counter({'90':1})
 lessons={l['id']:l for p in DATA.glob('lessons.*.ja.json') for l in json.loads(p.read_text())['lessons']}
 questions={q['id']:q for p in DATA.glob('exams.*.ja.json') for e in json.loads(p.read_text())['exams'] for q in e['questions']}
+glossary={entry['id']:entry for group in json.loads((DATA/'glossary.ja.json').read_text())['groups'] for entry in group['entries']}
 flags=[];screened=0
 for path in (DATA/'translations').glob('*.json'):
  x=json.loads(path.read_text())
@@ -29,5 +30,13 @@ for path in (DATA/'translations').glob('*.json'):
     if not a and not b:continue
     screened+=1
     if a!=b:flags.append({'locale':path.stem,'id':id,'field':field,'sourceSignedCelsiusValues':dict(a),'targetSignedCelsiusValues':dict(b),'sourceFieldHash':hashlib.sha256(ja.encode()).hexdigest(),'targetFieldHash':hashlib.sha256(tr.encode()).hexdigest()})
+ for id,t in x.get('glossary',{}).items():
+  g=glossary.get(id)
+  if not g:continue
+  for field,ja,tr in [('term',g['termJa'],t.get('term','')),('explanation',g.get('explanationJa',''),t.get('explanation',''))]:
+   a,b=values(ja),values(tr)
+   if not a and not b:continue
+   screened+=1
+   if a!=b:flags.append({'locale':path.stem,'glossaryId':id,'field':field,'sourceSignedCelsiusValues':dict(a),'targetSignedCelsiusValues':dict(b),'sourceFieldHash':hashlib.sha256(ja.encode()).hexdigest(),'targetFieldHash':hashlib.sha256(tr.encode()).hexdigest()})
 report={'status':'CANDIDATES_REQUIRE_REVIEW' if flags else 'SIGNED_CELSIUS_SCREEN_PASS','screenedFields':screened,'flags':flags,'safetyCertified':False,'limits':['Lexical units such as degrees Celsius written without a degree symbol may generate candidates.','Equal temperature numerals do not verify signs in prose, comparison direction, minimum durations, exemptions or overall safety.']}
 (ROOT/'docs/ssw-workspace/restaurant/translation-temperature-screen.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'status':report['status'],'screenedFields':screened,'flags':len(flags)}))

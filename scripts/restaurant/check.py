@@ -1,6 +1,6 @@
 """Restaurant structural and completeness gate. A structural pass is not editorial certification."""
 from pathlib import Path
-import json,re,hashlib,sys,collections
+import json,re,hashlib,sys,collections,unicodedata
 ROOT=Path(__file__).resolve().parents[2];DATA=ROOT/'src/data/restaurant'
 LOCALES=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']
 PAGES={'rst-1-hygiene':45,'rst-1-cooking':49,'rst-1-service':50,'rst-2-hygiene':42,'rst-2-cooking':25,'rst-2-service':27,'rst-2-operations':33}
@@ -39,7 +39,9 @@ def ruby(text,segments,where):
  require(''.join(z.get('text','') for z in segments)==text,where+': ruby/source mismatch')
 for l in lessons:
  for key,field in [('title','titleJa'),('objective','objectiveJa'),('summary','summaryJa'),('activity','activityJa')]:ruby(l[field],l.get('furigana',{}).get(key),l['id']+'/'+field)
- for para in l['paragraphs']:ruby(para['textJa'],para.get('furigana'),l['id']+'/'+para['id'])
+ for para in l['paragraphs']:
+  ruby(para['textJa'],para.get('furigana'),l['id']+'/'+para['id'])
+  ruby(para['titleJa'],l.get('furigana',{}).get('paragraphTitles',{}).get(para['id']),l['id']+'/'+para['id']+'/title')
  for key in ('titleJa','objectiveJa','summaryJa','activityJa'):
   require(isinstance(l.get(key),str) and bool(l[key].strip()),l['id']+': missing '+key)
  require(l.get('minutes')==30,l['id']+': duration')
@@ -105,6 +107,9 @@ for locale in LOCALES:
  for q in questions:
   t=qt.get(q['id'])
   if not t:continue
+  options=t.get('options',[])
+  validOptions=isinstance(options,list) and len(options)==4 and all(isinstance(o,str) and o.strip() for o in options)
+  require(validOptions and len({unicodedata.normalize('NFKC',o).strip().casefold() for o in options})==4,locale+': missing/duplicate translated options '+q['id'])
   if t.get('sourceHash')==q.get('sourceHash') and all(t.get(k) for k in ('stem','explanation','objective')) and len(t.get('options',[]))==4:validQ+=1
   else:gaps.append(locale+': incomplete/stale question translation '+q['id'])
  for key in uiKeys:

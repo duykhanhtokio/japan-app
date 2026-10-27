@@ -511,6 +511,7 @@ if '--self-test' in sys.argv:
 for p,x in packs.items():
  for l in x.get('lessons',[]):
   l['furigana']={k:ruby(l[field]) for k,field in [('title','titleJa'),('objective','objectiveJa'),('summary','summaryJa'),('activity','activityJa')]}
+  l['furigana']['paragraphTitles']={para['id']:ruby(para['titleJa']) for para in l['paragraphs']}
   for para in l['paragraphs']:para['furigana']=ruby(para['textJa'])
  for e in x.get('exams',[]):
   for q in e['questions']:q['furigana']={'stem':ruby(q['stemJa']),'options':[ruby(v) for v in q['optionsJa']],'explanation':ruby(q['explanationJa'])}

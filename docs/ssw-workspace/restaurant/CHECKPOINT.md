@@ -1,3 +1,21 @@
+# Nhà hàng / 外食業 — checkpoint 4, 2026-10-27
+
+Toàn bộ mô-đun CHƯA hoàn thành. Base đã xác minh remote và WORK PERSISTENCE PASS35files: `e429ff6949ed871c2b3206c94def5304ff660d78`, nhánh riêng `feature/restaurant-20261026`. Snapshot này chỉ thành checkpoint bền vững sau GitAPI commit/ref khôngforce, fetch và persistencegate.
+
+- Giữ120bài Nhật,984câu (800practice+184weekly),1440bản bài và73UI×12locale. Thêm2360bản câu từ checkpoint3; tổng6616/11808, tăng4660trongphiên. Còn5192cặp câu chưa dịch.
+- Theo locale: en/vi600;hi/bn624;id/tl504;ne/my360;th/km236;zh-CN/zh-TW984. Toàn bộ1号 đã đủ cho8locale:en,vi,id,tl,hi,bn,zh-CN,zh-TW. Hai bản Trung đã đủ toàn984câu.
+- Thêm2768bản thuật ngữ+định nghĩa, đủ692mục cho mỗi en,vi,zh-CN,zh-TW. Còn5536cặp glossary cho8locale khác. Mọi hash khớp định nghĩa Nhật hiện hành; không có chứng nhận người bản ngữ/chuyên gia.
+- Làm rõ stem câu rst-1-q034: hỏi nội dung sửa lời giải thích sai, giữ nguyên4lựa chọn/đáp án/giải thích. Cả12bản dịch stem đã đối chiếu và gắn hash mới. Exam revision thay đổi đúng thiết kế; không gắn lại hash mù cho nội dung dịch cũ.
+- Đưa ruby căn chỉnh của487tiêuđề đoạn vào renderer hiện có; thêm4cụm tiêuđề đọc nguyên cụm. Mọi hash ngữ nghĩa bài học giữ nguyên. Tổng150cụm đọc mới trongphiên;7358trường ruby có4348trường còn kanji chưa được phủ, không coi fullfurigana hoàn tất.
+- Mở rộng sàng lọc số/nhiệtđộ sang glossary;3ca regression gồm phát hiện đổi75→74và mất dấuâmPASS. Numeric6616câu+2768glossary+1440bài PASS, signedCelsius328trường PASS.26trường ký hiệu số mới có adjudication gắn exactsource/translationhash.
+- Bắt lỗi lựa chọn dịch rỗng/trùng theoNFKC/casefold; toàn kho hiện không cóflag. Giữ lựa chọn Nhật khi chính khác biệt hình thức kínhngữ là đối tượng câu hỏi, thay vì dịch mất sự phân biệt.
+- TypeScript phạmvi0lỗi; browser4viewports/12locale/calendar/submission/results/8raster/4diagram PASS sau bổ sung ruby. Glossarybrowser24cases/692entries/3308assertions/92paginationclicksPASS. Dùngadapter chrome/storage/background, chưa productionExpo/native; ảnhQA chỉ ởscratch.
+- Kiểm toàn bộ record cũ theo base: chỉ12stem/hash q034 thay đổi có chủđích; mọi bài/UI/câu cũ khác giữ nguyên; không đổi đáp án hoặc thứtự lựa chọn Nhật. JLPT UI giữ khóa.
+
+Còn5192cặp câu,5536cặp glossary, nguồn590partial, fullcontextfurigana, hình nhận dạng và productionExpo/native. Không nâng các cờ acceptance chưa đủ chứng cứ. SáuAI đã tạm dừng ghi để qua cổng lưu; một số lônháp2号 đang ởscratch, chưa tíchhợp không được cộng số liệu. Điểm tiếp tục: câu2号 củaen/vi/id/tl/hi/bn; hoàn1号củamy/ne/th/km; glossary8locale còn lại; ràsource/hình/furigana/thiếtbị.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 3, 2026-10-27
 
 Trạng thái toàn bộ: CHƯA HOÀN THÀNH. Nhánh riêng `feature/restaurant-20261026`, base remote đã kiểm chứng `8aba68bf58b1e8c503e3ab569c58f96831edc8b2`. Bản ghi này cần qua Git API commit, cập nhật nhánh không force, fetch và WORK PERSISTENCE PASS mới là bằng chứng lưu remote.

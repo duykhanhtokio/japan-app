@@ -8,7 +8,7 @@ export interface RestaurantLesson {
  id:string;level:RestaurantLevel;week:number;day:number;topic:RestaurantTopic;titleJa:string;objectiveJa:string;minutes:number;
  paragraphs:{id:string;titleJa:string;textJa:string;furigana?:ReadingSegment[]}[];
  terms:{ja:string;reading:string}[];summaryJa:string;activityJa:string;sourceRefs:RestaurantSource[];knowledgeIds:string[];sourceHash:string;
- furigana?:{title?:ReadingSegment[];objective?:ReadingSegment[];summary?:ReadingSegment[];activity?:ReadingSegment[]};
+ furigana?:{title?:ReadingSegment[];objective?:ReadingSegment[];summary?:ReadingSegment[];activity?:ReadingSegment[];paragraphTitles?:Record<string,ReadingSegment[]>};
 }
 export interface RestaurantQuestion {
  id:string;topic:RestaurantTopic;objectiveJa:string;stemJa:string;optionsJa:string[];correctIndex:number;explanationJa:string;
