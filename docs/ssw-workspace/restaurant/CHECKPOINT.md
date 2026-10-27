@@ -1,3 +1,21 @@
+# Nhà hàng / 外食業 — checkpoint 5, 2026-10-27
+
+Toàn bộ mô-đun CHƯA hoàn tất. Base remote đã xác minh WORK PERSISTENCE PASS cho46files: `7fb919bb54ae98dfbd0e5b10568926a78b09e221`. Nhánh riêng `feature/restaurant-20261026`; snapshot này cần commit/ref/fetch/persistencegate trước khi công bố lưu bền vững.
+
+- ĐỦ496/496câu1号 cho TẤT CẢ12locale:400practice+96weekly. Tổng7968/11808bản câu, thêm6012trongphiên. Còn3840cặp câu2号.120bài Nhật/1440bản dịch bài/73nhãnUI×12 giữ đủ.
+- Số câu mỗi locale:en/vi624;hi/bn744;id/tl624;my/ne504;th/km504;zh-CN/zh-TW984. Glossary2768/8304: en,vi,zh-CN,zh-TW mỗi locale đủ692term+definition; còn5536cặp cho8locale khác.
+- Rà sâu phát hiện objective bị dịch thànhtopic chung dù hashkhớp. Sửa1360objective hi/bn/my/ne bằng EXACT Japanese text match và lesson sourceHash; không suy diễn theotopic/không gắn lại hash. Tác giả sửa200objective th/km121–220. Scriptalign-question-objectives.py có7regressionPASS; dry-run12locale sau sửa báo0changes. Mỗi locale có120lessonobjective khác nhau, bảo toàn120sự phân biệt nguồn.
+- Sửa myq156 để tránh nhập nhằng『bên nào/bên trái』; neq400 giữ đúng nghĩa『không tránh kính mà chạy』. Sửa dấu cách công thức en/viq102 để100và160,000không bị đọc thành100.160. Khôi phục lookupkey有効照射 bị thay nhầm ởhi/bn, giữ nguyên bản dịch. Không đổi Japanese/đápán/hash.
+- Ghép88weekly+80practice mới mỗi th/km từ3map disjoint của3AI; không ghi đè giữaAI. Toàn bộ các lônháp đã tíchhợp.
+- Numeric7968câu+2768glossary+1440bài PASS; signedCelsius386trường PASS.77đối chiếu số mới khớp exactfieldhashes. Lựa chọn không rỗng/trùngNFKC; không replacement/private-usechars. Kiểm1956recordgốc từ8aba: chỉ12stem/hashq034thay đổi có chủđích; bài/UI/cácfieldgốc khác giữ nguyên.
+- TypeScript nhà hàng0lỗi, browser4viewports/12locale và glossary24cases đã PASS ởcheckpoint4; lô5chỉ sửa data/Python, không tuyên bốnative/productionExpo. JLPT UI giữ khóa.
+
+Còn3840cặp câu2号,5536cặp glossary; source590partial, toàn văn furigana/hình nhận dạng/productionExpo/native chưa hoàn tất. Giữ acceptanceflags chưa đạt ởfalse. SáuAI đã dừng ghi. Không có cam kết chạy nền sau phản hồi.
+
+Tiếp theo:2号en/vi/id/tl từq121;hi/bn từq241;my/ne/th/km từq001;weekly2号tuần02–11 của10locale;glossary8locale vàsource/hình/furigana/thiếtbị. Objective phải dịch đúng canonical text:120/125câu nguồn trùngexactlessonobjective,5câu tổng quát riêng; tuyệt đối không thay bằngtopic.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 4, 2026-10-27
 
 Toàn bộ mô-đun CHƯA hoàn thành. Base đã xác minh remote và WORK PERSISTENCE PASS35files: `e429ff6949ed871c2b3206c94def5304ff660d78`, nhánh riêng `feature/restaurant-20261026`. Snapshot này chỉ thành checkpoint bền vững sau GitAPI commit/ref khôngforce, fetch và persistencegate.
