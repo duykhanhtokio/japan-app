@@ -502,12 +502,12 @@ def ruby(text):
  if unknown:stats['fieldsWithUnknownKanji']+=1
  return result
 if '--self-test' in sys.argv:
- cases={'生食':'せいしょく','食用油':'しょくようゆ','紫外線':'しがいせん','事故事例':'じこじれい','30分':'さんじゅっぷん','1分':'いっぷん','24時間':'にじゅうよじかん','75℃':'ななじゅうごど','90秒':'きゅうじゅうびょう','１分':'いっぷん','使った':'つかった','同じ':'おなじ'}
+ cases={'生食':'せいしょく','食用油':'しょくようゆ','紫外線':'しがいせん','事故事例':'じこじれい','30分':'さんじゅっぷん','1分':'いっぷん','24時間':'にじゅうよじかん','75℃':'ななじゅうごど','90秒':'きゅうじゅうびょう','１分':'いっぷん','使った':'つかった','同じ':'おなじ','行った処置':'おこなったしょち','消しに行ったり':'けしにいったり','行ってはいけない作業':'おこなってはいけないさぎょう','葉物野菜':'はものやさい','水質検査成績書':'すいしつけんさせいせきしょ'}
  for source,expected in cases.items():
   tokens=ruby(source);assert ''.join(t.get('reading',t['text']) for t in tokens)==expected,(source,tokens)
- for source in ('事故事例集','紫外線未知群','4分の1','3.5℃'):
+ for source in ('事故事例集','紫外線未知群','4分の1','3.5℃','行った','行って'):
   tokens=ruby(source);assert not any(t.get('reading') for t in tokens),(source,tokens)
- print(json.dumps({'status':'PASS','cases':len(cases)+4,'scope':'known readings/durations/temperatures/unknown-compound and fraction safety','nativeReviewed':False}));sys.exit(0)
+ print(json.dumps({'status':'PASS','cases':len(cases)+6,'scope':'known readings/durations/temperatures/unknown-compound and fraction safety','nativeReviewed':False}));sys.exit(0)
 for p,x in packs.items():
  for l in x.get('lessons',[]):
   l['furigana']={k:ruby(l[field]) for k,field in [('title','titleJa'),('objective','objectiveJa'),('summary','summaryJa'),('activity','activityJa')]}

@@ -1,3 +1,19 @@
+# Nhà hàng / 外食業 — checkpoint 3, 2026-10-27
+
+Trạng thái toàn bộ: CHƯA HOÀN THÀNH. Nhánh riêng `feature/restaurant-20261026`, base remote đã kiểm chứng `8aba68bf58b1e8c503e3ab569c58f96831edc8b2`. Bản ghi này cần qua Git API commit, cập nhật nhánh không force, fetch và WORK PERSISTENCE PASS mới là bằng chứng lưu remote.
+
+- Giữ120bài Nhật,800câu luyện tập+184câu tuần,1440bản dịch bài và73nhãnUI×12locale.
+- Thêm2300bản dịch câu hỏi; tổng4256/11808, còn7552. en/vi416; zh-CN/zh-TW904; hi/bn296; id/tl236; ne/my160; th/km116 mỗi locale. Tất cả1956bản câu cũ và1440bản bài cũ bảo toàn nguyên vẹn theo so sánh toàn record.
+- Bổ sung146cách đọc nguyên cụm/dạng chia động từ. Không dùng fallback『行った/行って』vì có hai cách đọc; dùng cụm đủ ngữ cảnh.6871trường ruby căn chỉnh, số trường còn kanji chưa có cách đọc giảm4625→4207.23ca self-test PASS. Nội dung Nhật, hash, đáp án và thứ tự lựa chọn không đổi ngoài furigana.
+- Sàng lọc số và Celsius PASS;14trường en/vi có đối chiếu ký hiệu số theo exact field hashes. Đây không phải chứng nhận toàn bộ nghĩa/an toàn.
+- Browser React/NativeWeb dùng adapter:4kích thước,8caảnh thật,4sơđồ,12locale đọc bài và12luồng lịch/nộp/kết quả PASS. Phát hiện thiếu font gây ôvuông ở harness, bổ sung đủ5fontscript để kiểm tra và bắt buộc script dừng nếu thiếu font. Kiểm cmap5ngônngữ không thiếu glyph trong tập ký tự được kiểm. Hình chụp QA ở scratch; không công bố là native/productionExpo.
+- TypeScript phạm vi nhà hàng và dependency:0lỗi; loading13nhóm,state10nhóm,hook scope3nhóm PASS; JLPT UIlock10/10 PASS.
+- Còn7552cặp dịch câu hỏi,8304cặp định nghĩa glossary,590mục nguồn partial, toàn văn furigana/hình/productionExpo/native và rà soát chuyên môn/người bản ngữ. Giữ mọi cờ duyệt thật ởfalse.
+
+Điểm tiếp theo: hoàn tất80câu tuần2号 còn thiếu cho mỗi bản Trung, rồi glossary; tiếp tục câu thiếu của10locale khác. SáuAI tạm dừng ghi để checkpoint, chỉ tiếp tục sau khi root xác minh lưu remote.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 2, 2026-10-26
 
 Yêu cầu toàn bộ CHƯA hoàn thành. Nhánh `feature/restaurant-20261026`; parent remote đã đối chiếu `fbd2cb2752cc909bbb98618a38d9fc8c95d74921`. Snapshot này phải qua push/fetch/persistence gate; không coi bản ghi này tự nó là chứng cứ remote.
