@@ -1,6 +1,7 @@
 import {useCallback,useEffect,useRef,useState,type PropsWithChildren} from 'react';
 import {AppState,Modal,Pressable,ScrollView,StyleSheet,Text,View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useManufacturingBack} from './useManufacturingBack';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useBackdropOcclusion} from '@/components/ui/AppBackdrop';
 import {RoyalContentPanel} from '@/components/ui/RoyalPanels';
@@ -18,6 +19,7 @@ function Japanese({question,field}:{question:ManufacturingQuestion;field:'stem'|
 export function ManufacturingMocks({learner,specialty,language,onBack}:{learner:string;specialty:Specialty;language:string;onBack:()=>void}){
  const [exams]=useState(()=>loadManufacturingMocks(specialty)),[exam,setExam]=useState<ManufacturingMock|null>(null),{colors}=useStudyAppearance();
  const t=(key:Parameters<typeof manufacturingMockUi>[1])=>manufacturingMockUi(language,key);
+ useManufacturingBack(onBack,exam===null);
  if(exam)return <MockAttempt key={`${learner}:${exam.id}`} learner={learner} exam={exam} language={language} onBack={()=>setExam(null)}/>;
  return <Page><TokuteiHeader title={t('mockExams')} onBack={onBack}/><ScrollView testID="manufacturing-mock-catalog" contentContainerStyle={s.content}><ReadingAppearanceControl/><Text style={[s.body,{color:colors.text}]}>{t('instructions')}</Text><Text style={[s.body,{color:colors.text}]}>{t('passRule')}</Text>{exams.length===0?<Text style={[s.body,{color:colors.text}]}>{t('unavailable')}</Text>:exams.map(item=><MockCard key={item.id} learner={learner} exam={item} language={language} onPress={()=>setExam(item)}/>)}</ScrollView></Page>;
 }
@@ -34,6 +36,7 @@ function MockAttempt({learner,exam,language,onBack}:{learner:string;exam:Manufac
  const section=attempt?.sections[sectionId],definition=exam.sections[sectionId],question=section?definition.questions[section.currentQuestion]:null,translated=question&&showTranslation?manufacturingMockTranslation(question,language):null;
  const remaining=section?mockRemainingMs(section,definition,now):definition.durationMs,seconds=Math.ceil(remaining/1000),clock=`${Math.floor(seconds/60).toString().padStart(2,'0')}:${(seconds%60).toString().padStart(2,'0')}`;
  const leave=()=>{if(saving)return;if(error==='write'||(attempt&&!complete&&MOCK_SECTION_IDS.some(id=>attempt.sections[id].startedAt!==null)))setConfirm('leave');else onBack();};
+ useManufacturingBack(leave);
  const update=(fn:(current:ManufacturingMockAttempt)=>ManufacturingMockAttempt)=>{const current=latest.current;if(current){const next=fn(current);if(next!==current)persist(next);}};
  return <Page><TokuteiHeader title={exam.titleJa} onBack={leave}/><ScrollView testID="manufacturing-mock-attempt" contentContainerStyle={s.content}>
  <ReadingAppearanceControl/>{!attempt?<><Text accessibilityRole={error?'alert':undefined} style={[s.body,{color:colors.text}]}>{error?u('readError'):u('loading')}</Text>{error&&<Button title={u('retry')} onPress={()=>setRetry(n=>n+1)}/>} {error==='invalid'&&<Button title={u('restart')} onPress={()=>setConfirm('restart')}/>}</>:<>

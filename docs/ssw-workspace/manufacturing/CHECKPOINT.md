@@ -1,3 +1,15 @@
+# Manufacturing SSW1 — batch14 verification and Android Back protection, 2026-10-27
+
+Six AI workers checked the current authored snapshot. Counts remain262 core lessons,5 source-reference guides,456 weekly questions,30 mocks/1200 questions,18 diagrams and complete AI drafts in all12 target languages. No content was regenerated and no review/source freeze was rewritten.
+
+Fixed two acceptance gaps: the validators now require exact locale and canonical-ID sets for lessons,weekly questions,mocks,captions and guides, with current source bindings;19 negative regression snapshots are rejected. Android hardware Back now invokes each visible page's existing header handler, preserving nested returns, pending-save guards and leave confirmations. Actual ReactNativeWeb controllers with a simulated Android BackHandler passed12 checks and0 JavaScript errors; this is not physical-device/native-Modal certification.
+
+Independent AI semantic reviews cover400 mechanical mock questions and100 previously pending electrical practical questions. No required answer-key correction was identified. Reports retain minor wording notes and exact snapshot bindings; runtime reviewStatus values were preserved rather than invalidating source hashes. These scoped reviews do not certify all source objects, all languages, domain expertise or native devices.
+
+Data/source/mock-state checks, exact-coverage tests and JLPT10/10 UI lock pass. See batch14/session-evidence.json for the final validation record and report hashes. aiDraftDeliveryComplete remains true;wholeCurriculumComplete/courseComplete/releaseReady remain false. Full-source atomization and physical/native/domain review remain unfinished. No background process is implied after this session.
+
+---
+
 # Manufacturing SSW1 — completed AI draft delivery, 2026-10-26
 
 Six parallel AI workers completed the authorized manufacturing SSW1 draft delivery this session. Scope: mechanical, electrical and surface treatment; Japanese canonical. Baseline Japanese content remains preserved.

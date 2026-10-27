@@ -1,0 +1,946 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-27",
+  "reviewer": "independent_AI_assembly_worker",
+  "scope": "Manufacturing SSW1 electrical: exact100 practical mock questions marked independent_review_pending; stems, all400 options, keys, all400 option explanations. Earlier300 theory keys received separate preliminary inspection, not included in this100-item completion claim.",
+  "sourceSnapshots": {
+    "src/data/manufacturing/mocks/electrical.json": "3a81192ddcc0b74d427e57c07418a0f3049435818f137cdcc9d2fede7457ecc0",
+    "src/data/manufacturing/electrical.json": "e590319d60ff137ac22a27ca9e92ee5ac6407df2b9df98e5929e37e6e8d5f7ca"
+  },
+  "selection": {
+    "reviewStatus": "ai_authored_draft_independent_review_pending",
+    "questionCount": 100,
+    "examCount": 10,
+    "questionsPerExam": 10
+  },
+  "method": [
+    "Compared every selected stem, all choices, answer and all choice explanations for correctness, unique best answer, hazardous instruction and unjustified certainty.",
+    "Compared referenced canonical lesson objectives, summaries and safety notes; additionally read complete paragraph bodies for technical/calculation lessons006,007,016,017,025,056,068,069,070,073,075,077,078,083,084.",
+    "Recomputed numerical examples, including unit/time conversions, resistor tolerances, speed/output, analog range, binary/logic, rates and electric-circuit relationships.",
+    "Verified exact question-to-canonical lesson sourceHash matches and four options/four rationales for all100 selected questions."
+  ],
+  "result": "bounded_independent_AI_review_no_required_correction_identified",
+  "requiredCorrections": [],
+  "nonblockingPrecisionNotes": [
+    {
+      "questionId": "mfg1-electrical-mock-03-practical-q04",
+      "note": "A fixed resistor also has a temperature coefficient, but wording uses intentional function and explanation clearly distinguishes primary use; thermistor remains unique best listed answer. Optional future wording can add「温度検出を主目的として」."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-08-practical-q08",
+      "note": "Bridge interpretation assumes unintended connection in solder-defect lesson context. Optional future wording「本来つながない隣のランドへ」would make design intent explicit; current competing options do not provide another valid answer."
+    }
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "runtimeModified": false,
+  "limits": [
+    "AI review against canonical authored lessons is not independent physicalPDF/page verification or new full-source atomization.",
+    "No SSW2 sources used; no official scoring, certification or release-ready guarantee.",
+    "Translations, furigana, UI, fullExpo flows and physical-device behavior are outside this report.",
+    "Runtime reviewStatus fields remain unchanged; this external evidence applies only to the exact frozen snapshots."
+  ],
+  "items": [
+    {
+      "questionId": "mfg1-electrical-mock-01-practical-q01",
+      "questionSourceHash": "bf0d6c7dc1ee5ed63df677c749f88132993fd33c1dadf953522e0e1212ad697a",
+      "questionSnapshotSha256": "5a13873c2a79438e36b04ab0c79a5014f2ae618abd4d6070da281c424d6e8291",
+      "lessonId": "mfg1-electrical-l016",
+      "lessonSourceHash": "51f6e5bb168cd2a249b1464289b25b0250ee9ca98d0da790de78b2a55cc21dc0",
+      "verdict": "no_required_correction_identified",
+      "reason": "1000 ±50 gives950–1050Ω."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-01-practical-q02",
+      "questionSourceHash": "3cc0b0c9dfc982d90dbfd9b111d2d7f1f72a88db07b3ad8ca8122ca314931046",
+      "questionSnapshotSha256": "245a27b6f63edd9bd933e3138c89990e6af1bdd988286857c81582961cc1b90f",
+      "lessonId": "mfg1-electrical-l078",
+      "lessonSourceHash": "951f5d99de389d0d052f5ec6d390eec31b4f6e712de1d05988ba3a5075789e8d",
+      "verdict": "no_required_correction_identified",
+      "reason": "120×50/6=1000min⁻¹; synchronous, not loaded shaft speed."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-01-practical-q03",
+      "questionSourceHash": "82a7d558711cc4d653aab143421fde50bda46981c1440443fa5817ecd7d2539a",
+      "questionSnapshotSha256": "b3bedba5fcdad03dc0ca9bcd3e7ba4662706a3fd783ac13efaf4dbe9780ed16d",
+      "lessonId": "mfg1-electrical-l079",
+      "lessonSourceHash": "af84b9524b18f9b658de324772404620a6a10b8c979991083baef14c247af53f",
+      "verdict": "no_required_correction_identified",
+      "reason": "Rated energization still has iron loss and electrical hazards without load."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-01-practical-q04",
+      "questionSourceHash": "eaa0a7de3f1e3610ac5562e9297e43884a4b50f14ae309a4e603a65e87d5a407",
+      "questionSnapshotSha256": "bd9129bdd05ccc84ced916deb1035dab1ae7ae4e4686f1204c6f9929e52ab9e4",
+      "lessonId": "mfg1-electrical-l019",
+      "lessonSourceHash": "1f1e498d2079634e54fcc72973deeaab17f02e59ebb46b3f54e25fda1f7c8d67",
+      "verdict": "no_required_correction_identified",
+      "reason": "ESD damage may be invisible; identify and follow inspection/hold procedure."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-01-practical-q05",
+      "questionSourceHash": "7f09a73923ae548a3f4b93b0dcbe27f4e6428f7042ae8673411340d775e8204b",
+      "questionSnapshotSha256": "198f1308fcd0d92d7aa8d390f340807dc3d996263e776a771495afcd843a74ef",
+      "lessonId": "mfg1-electrical-l081",
+      "lessonSourceHash": "ab98932a05addd11dfecc87a20fd600c1de0350eb266f55dfc35a8041c24700f",
+      "verdict": "no_required_correction_identified",
+      "reason": "Equal failures at half operating time are not equal rates."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-01-practical-q06",
+      "questionSourceHash": "e87dff0717a1f58b30ed93f4600d4fc00b49c0833a3cce90d8cd1cc3d66e5f6a",
+      "questionSnapshotSha256": "75de1ee518ade38eafab14afa52873f1f067070dc73bb3abdb2ebda68cca6dfd",
+      "lessonId": "mfg1-electrical-l002",
+      "lessonSourceHash": "424baccd83209cd0a5fce43b1c7b59954795c72cf82677f555056b6c0e6b9746",
+      "verdict": "no_required_correction_identified",
+      "reason": "Do not disturb solidifying joint; cool, inspect and use approved rework."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-01-practical-q07",
+      "questionSourceHash": "7c426899faa53bc450109149a56ed44114cd50d69b2829fff24af8b63c331f3c",
+      "questionSnapshotSha256": "ddf24b6723dee01fd16a979e3d641ba65874a48614ceab8535aa43f629d82b1f",
+      "lessonId": "mfg1-electrical-l076",
+      "lessonSourceHash": "da01dd1203b38cd444550c258b608849799ca0724a520cf934b0e36601be8489",
+      "verdict": "no_required_correction_identified",
+      "reason": "Coil voltage and contact load capacity are independent requirements."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-01-practical-q08",
+      "questionSourceHash": "d81ec01d31877f940771c40c754a802aa9cf5dc1ec5b9dbd08607fec2c1832a5",
+      "questionSnapshotSha256": "aca7bda53b68a44a55a6d635f1a64d26fd633d0a5aefc0443f097d6439663e1e",
+      "lessonId": "mfg1-electrical-l046",
+      "lessonSourceHash": "47b4d3d42ff6351a877ce68c49a9c7615a8c8880c5a44efa4075ab44088cb947",
+      "verdict": "no_required_correction_identified",
+      "reason": "Gloves can entangle in rotating drills; task-specific safeguards required."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-01-practical-q09",
+      "questionSourceHash": "f03653862d876ab38f46d28b779a3530345510c41d2a0c661e5182661765d5f6",
+      "questionSnapshotSha256": "a77808c61ac4d7dc1f5365ab9f249a1323e2b2a38bccde3f23f0708a676af997",
+      "lessonId": "mfg1-electrical-l050",
+      "lessonSourceHash": "de16ec5ccf0a1b2121602799ee978846021ac2489ff040a66fbe0cd9c8353e44",
+      "verdict": "no_required_correction_identified",
+      "reason": "Material change and measurement conditions are investigated without assumed causation."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-01-practical-q10",
+      "questionSourceHash": "b1d80cd468b470ad7357a27e7760dd3841ebdc1ca2fbc37585230abd97a34d86",
+      "questionSnapshotSha256": "4bee85921a70ea7a0cf6b3a877b15eb92d5e72f20630a65af37836dad8d4551a",
+      "lessonId": "mfg1-electrical-l082",
+      "lessonSourceHash": "ed9890d616a3eae840411f4609118f4a78a14d922ba3bd6a570339ed035d9fd1",
+      "verdict": "no_required_correction_identified",
+      "reason": "12×5−54=6 units discrepancy."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-02-practical-q01",
+      "questionSourceHash": "4aa48bac610cf682d63acb61b20fce0fcd91af361afea320c28fe4d943b85c0c",
+      "questionSnapshotSha256": "a0a4aa67f38c6c7f91d23150c7647878d38df264855d4c7d973ff14a5265d048",
+      "lessonId": "mfg1-electrical-l048",
+      "lessonSourceHash": "1579bd70fb32210b2e132da19886e5db99f6240bfbadb736c33e5eaa81900335",
+      "verdict": "no_required_correction_identified",
+      "reason": "Unidentified chemical: stop use, identify and consult SDS; do not sniff/mix."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-02-practical-q02",
+      "questionSourceHash": "65e967bfbb26e91f1918c8a81865ebc8ef917aa17d0238b10c66284d8d0728be",
+      "questionSnapshotSha256": "9d8bfa8e57f767af83ccd5dccc6e1de0f6c5e1b78340bb09af2bced51d818ed6",
+      "lessonId": "mfg1-electrical-l077",
+      "lessonSourceHash": "614284c4181587733b9090e0984f94cf23ab20ea4d46b2619f26c39cc9d52024",
+      "verdict": "no_required_correction_identified",
+      "reason": "Basic nonretentive on-delay input3s is shorter than setting5s."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-02-practical-q03",
+      "questionSourceHash": "6aa36988c0a50daa4806bfca248862c8eaf4d213ba1ab5480701e3a73e25ad36",
+      "questionSnapshotSha256": "b20c2e8c6755fa7159ecc72e5c1da402566a4edd64f7a7376648695e8a610890",
+      "lessonId": "mfg1-electrical-l034",
+      "lessonSourceHash": "d90c633c04b1815d796de13f6f7f8aebe16ac1c155e9dce4ffa868bba0593b28",
+      "verdict": "no_required_correction_identified",
+      "reason": "Correct destination is separate from contents and cushioning."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-02-practical-q04",
+      "questionSourceHash": "351916240773f42c4f209ee200e63ebf34352e5a4fa24a4cd1796c3b1eb8f7d2",
+      "questionSnapshotSha256": "2320635e20a700bf0fc8f3c9e4eef83f05bd3f962f1d51668c7ead68a7649719",
+      "lessonId": "mfg1-electrical-l006",
+      "lessonSourceHash": "540a1c3e16efed961ad30a27dad230fa427d266bae80ff59db5decee27a6f492",
+      "verdict": "no_required_correction_identified",
+      "reason": "6/.002=3000Ω=3kΩ."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-02-practical-q05",
+      "questionSourceHash": "3e590ddd5eaba9a3805bf2737f1a8195f1b1f625c7626d204f7f9497b07791d9",
+      "questionSnapshotSha256": "128e5bbd1f820d00671cb4b0618828479c2aeb19c3b01d16145ceefb817bd388",
+      "lessonId": "mfg1-electrical-l007",
+      "lessonSourceHash": "da9be587e6df36724129316fd32868b2c701b06e45a1f3ac03eb5174fc614b45",
+      "verdict": "no_required_correction_identified",
+      "reason": "0.5ms×8=.004s; inverse250Hz."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-02-practical-q06",
+      "questionSourceHash": "abc2082e59eea5dbacf955e74bc79e1026e6d6d484183b41682ad2c795a2652f",
+      "questionSnapshotSha256": "a55e7d26f5bb3a3619069ff1e6316465f81ce4f1991391f9337dc516213be128",
+      "lessonId": "mfg1-electrical-l004",
+      "lessonSourceHash": "ed8991b0b74fd0ee53acaefe01df73626d5bd64d6cac7aada260b37598f11bd9",
+      "verdict": "no_required_correction_identified",
+      "reason": "8.5+.17=8.67mm."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-02-practical-q07",
+      "questionSourceHash": "942a0c945afbfeccc681d90451d169595cacb2f612077df88a9143a0e0ebf9e6",
+      "questionSnapshotSha256": "18a491d548084edbd153256043338cab92a74bea2c5b7c2f2a0c0238cee19a7c",
+      "lessonId": "mfg1-electrical-l056",
+      "lessonSourceHash": "7516e9ee6643f966df0ba2b7d90f0c31aa48a4cdd4f65d261c1948b1afc5ba4e",
+      "verdict": "no_required_correction_identified",
+      "reason": "Equal-volume mass ratio3 gives dimensionless specific gravity3."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-02-practical-q08",
+      "questionSourceHash": "ebaf40be60f16efc900d99231ebc622d1a20d9f53e8d1c5b576b17fb6a132a70",
+      "questionSnapshotSha256": "01a359179a928a4538ea2a4b7240408aa288076ce4ec2580297b6d94e9f9e45e",
+      "lessonId": "mfg1-electrical-l013",
+      "lessonSourceHash": "61e3e1aa396f6864baab347c846ccec451c6669338ca2240ed4341bcaa9d7ade",
+      "verdict": "no_required_correction_identified",
+      "reason": "Written80mm controls independent of1:2 drawing scale."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-02-practical-q09",
+      "questionSourceHash": "5a8310915879c882c1cf2aaeb0b14795f7870a9c861fad017314db7ecb5697b2",
+      "questionSnapshotSha256": "83c4651f264f252f67e1a3e009329010c358f3d5ec553008ada83db0be04e819",
+      "lessonId": "mfg1-electrical-l078",
+      "lessonSourceHash": "951f5d99de389d0d052f5ec6d390eec31b4f6e712de1d05988ba3a5075789e8d",
+      "verdict": "no_required_correction_identified",
+      "reason": "2π×600×3/60≈188.5W shaft output."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-02-practical-q10",
+      "questionSourceHash": "9b31951c9b022b2fd4723a94d3cd1601b7ca7b43f17bd4a73fed801abfdc0bf7",
+      "questionSnapshotSha256": "2136494625849911c429d1561a3b1c40616a772da9657b1e0f6e9afd0fa6a832",
+      "lessonId": "mfg1-electrical-l061",
+      "lessonSourceHash": "8aceec3857c06e6d413bda27a5f963ae8a711d916d1b9c70da2e75264a41733b",
+      "verdict": "no_required_correction_identified",
+      "reason": "Both hole and shaft permissible limits determine fit."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-03-practical-q01",
+      "questionSourceHash": "e25726568f9aced581614f3bda7041f2188588d5fa610dde08cc0b533f8fcaa5",
+      "questionSnapshotSha256": "924acffb7729dda89d680a4aeb0f772af4516a7349a6ab5b988ee5a5dbd2736b",
+      "lessonId": "mfg1-electrical-l003",
+      "lessonSourceHash": "d2f746db61cb8c12a6e45830ea9f325a78686e6c2a968a1a9f73552538c6e286",
+      "verdict": "no_required_correction_identified",
+      "reason": "18+.45=18.45mm; .05 is resolution, not the measured fraction."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-03-practical-q02",
+      "questionSourceHash": "6c6b9a1ce5a798ec31a1c4125c73e8a29947a60931afeb358cf2271e587466a2",
+      "questionSnapshotSha256": "fd230fa0a9a6fcb293d672ff7df42a9fae2564c59da2d65fddc257c9aa9afa0e",
+      "lessonId": "mfg1-electrical-l067",
+      "lessonSourceHash": "05f9b9f7e90cc950c0b37ae129f394912cecea318c87dc965df475196de4225d",
+      "verdict": "no_required_correction_identified",
+      "reason": "Basic lathe rotates workpiece; other listed machines do not meet described basic operation."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-03-practical-q03",
+      "questionSourceHash": "5de83573c7e7197a3413efd2a227713ab0b214cb433355d7f4ab0acd837c1147",
+      "questionSnapshotSha256": "347419c7ab90cc3a8d6b431ffa12a94280a209f2088bc362dd8d58eca1d87b7a",
+      "lessonId": "mfg1-electrical-l071",
+      "lessonSourceHash": "d99438ff6de3ea74ebce53fd03707467e62759206566ed9fe53e1897c1385686",
+      "verdict": "no_required_correction_identified",
+      "reason": "n-type electrons and p-type holes are majority carriers."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-03-practical-q04",
+      "questionSourceHash": "c09cf5164d2db3785d722fa772ea1dccad9c5e8ad89feb4d2d243fde90496593",
+      "questionSnapshotSha256": "ba02d0c059c4afacda5cd07ebd544d227794525449bd2d2c73d7c7eb8444ad63",
+      "lessonId": "mfg1-electrical-l066",
+      "lessonSourceHash": "52e82953a82dc1d65e2e8abc167c4dcefff2f0addac1fd7c5c166b19e7256859",
+      "verdict": "no_required_correction_identified",
+      "reason": "Thermistor intentionally uses resistance-temperature response; fixed resistor temperature coefficient is not its stated primary use."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-03-practical-q05",
+      "questionSourceHash": "2e515478e04bd769332aefeed5553930072e0ce2f5240ff7bc5249beb89c73bd",
+      "questionSnapshotSha256": "2fba05eeb8b0847490e7cc95842407e9a9ea221409fb1ecb1bcc76704ccc49f2",
+      "lessonId": "mfg1-electrical-l022",
+      "lessonSourceHash": "a680c5bfcdaace4358439016b5305ee47889bdadc534f139ef7639c53c75b82f",
+      "verdict": "no_required_correction_identified",
+      "reason": "Power off does not remove capacitor residual energy; approved isolation/discharge."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-03-practical-q06",
+      "questionSourceHash": "a2b22d246a9b523bfe573aa0f2a50e3e9cb07d1476ff94e74b6c862532fe3de5",
+      "questionSnapshotSha256": "d3543b4f1c8b3438a5eaf592d01ddd8a72873f94b530fe369b98d56d3a4cbe9d",
+      "lessonId": "mfg1-electrical-l076",
+      "lessonSourceHash": "da01dd1203b38cd444550c258b608849799ca0724a520cf934b0e36601be8489",
+      "verdict": "no_required_correction_identified",
+      "reason": "SSR uses semiconductor switching, unlike listed mechanical-contact devices."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-03-practical-q07",
+      "questionSourceHash": "57c85436a404cd6fd726d83b152548ab42771757163b719be848827cdd9867b5",
+      "questionSnapshotSha256": "e5dbd96c81b6627a6400ee50f17b79fada17af059b0f2aedceb65969ad757039",
+      "lessonId": "mfg1-electrical-l063",
+      "lessonSourceHash": "b76aa1793be9ca2b5294c7a565cab6cfc9424dcb82b156efe9e79686dd8a6c4b",
+      "verdict": "no_required_correction_identified",
+      "reason": "Insulation thermal classF155 is not blanket ambient-temperature permission."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-03-practical-q08",
+      "questionSourceHash": "7ab5ae3ea23a94455f1021f767a8c9c78ad217b3a6478611a858719f04e90ed6",
+      "questionSnapshotSha256": "fbe1e1aed90a93297003ce14203c10c3a37de1c66f09f32d6b90663206dc39c2",
+      "lessonId": "mfg1-electrical-l024",
+      "lessonSourceHash": "ec282035552d7ae1be1486a6287e4710f738254307794e9da64218526aa33f91",
+      "verdict": "no_required_correction_identified",
+      "reason": "ADC converts continuous voltage into digital representation; gain/filter alone do not."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-03-practical-q09",
+      "questionSourceHash": "2559339c2561eb43e60621fb771674ffaf5569d1d6c8fdcaa1c77f825ecaefcd",
+      "questionSnapshotSha256": "e5490b441751d44cdc2c6678ede5bff1bd7c5251ebe7314a99fd87e92730a4f0",
+      "lessonId": "mfg1-electrical-l069",
+      "lessonSourceHash": "2070ae51e0e9eb05263795e8dcde06ab44490e7bc5146bebeb2a3e63ac3daedb",
+      "verdict": "no_required_correction_identified",
+      "reason": "1/50s=.02s=20ms."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-03-practical-q10",
+      "questionSourceHash": "26d3a717b52317a2ed0936e0b836ee6d17d89112bed45861e5c1aa09a6fac2de",
+      "questionSnapshotSha256": "6fe5fc708f1adfa480e8268a0005993f87daca7f204c3150177659222cf7cc1b",
+      "lessonId": "mfg1-electrical-l068",
+      "lessonSourceHash": "37fa285ec2bb91c45010b17187dc0689d772b24bab1a1b4937db97f1daca2601",
+      "verdict": "no_required_correction_identified",
+      "reason": "12²/24=6W; .5A is current, not power."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-04-practical-q01",
+      "questionSourceHash": "ae257411e3b009f17920cc8ed77abb405a2e5adcccd0972a9cf7f9838988299e",
+      "questionSnapshotSha256": "773274063ae7776913d801975b5032813c1f79b3eb53e5fb03bbfd301e2f318a",
+      "lessonId": "mfg1-electrical-l036",
+      "lessonSourceHash": "dc84097f99b1a21c3d04786cae4b136580c0977ad941e049ac9d3ebe947bb005",
+      "verdict": "no_required_correction_identified",
+      "reason": "Torque setting needs value/unit/tool applicability; no numerical-only substitution."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-04-practical-q02",
+      "questionSourceHash": "6d50022dffa74a295e959301165f7659f7366f21bf5409b2c5ae090780b9f40d",
+      "questionSnapshotSha256": "0bb8e4b0fc9d232a408c2c5bb5d55c7903c89a4257c1e0af066a2ce594b1750b",
+      "lessonId": "mfg1-electrical-l044",
+      "lessonSourceHash": "1e226b28ab038e668c0b68065eb401e6554284eac069f52d950a3160417f88a2",
+      "verdict": "no_required_correction_identified",
+      "reason": "Report observed vibration, equipment, time and operating condition, not accusation."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-04-practical-q03",
+      "questionSourceHash": "ea48658c65672b9e81b0ebc35ee25253cdfff9bccfb0e6707d745551997e4dfa",
+      "questionSnapshotSha256": "e929c66807351cc2339e9c61976f9703f9a9f6e0b33b453bb00dd971e2508258",
+      "lessonId": "mfg1-electrical-l062",
+      "lessonSourceHash": "559c4a0398fcfc6fc59cc11caf04c0d3df65fb3c21870d22158b1b6a1e447edf",
+      "verdict": "no_required_correction_identified",
+      "reason": "MatchingK3 identifiers connect separated coil/contact representations."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-04-practical-q04",
+      "questionSourceHash": "aa9db96976953f4e9c5f003a05149b66569a1b31d9bcd7f66614812783335e3d",
+      "questionSnapshotSha256": "5568767764c93876898786c9a9f5a63548428862d01a1c07b254cc26805b0159",
+      "lessonId": "mfg1-electrical-l030",
+      "lessonSourceHash": "f8d8fc04575b667f12bcf7ffd98c235972136b8b2033c2724b2ac73362424474",
+      "verdict": "no_required_correction_identified",
+      "reason": "Ideal voltage ratio800/400 gives24×2=48V."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-04-practical-q05",
+      "questionSourceHash": "aa646b664fb4adefeb9dc0c17e6eb921596d102e75e4d2918c793188f4fabbe1",
+      "questionSnapshotSha256": "ec939f57dba261cb8b755f295c3ac3af42ebdbdf71ffa2865971eb0df3f17401",
+      "lessonId": "mfg1-electrical-l023",
+      "lessonSourceHash": "5e8b9ca9ce437a0ab453ee1b4b1263f1a78f85c1db93b37c2209f6c198919973",
+      "verdict": "no_required_correction_identified",
+      "reason": "BCE pinout and maximum ratings require type documentation."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-04-practical-q06",
+      "questionSourceHash": "f894c208a129bbf8dc484d04593ac9b653f89c84d568cd704b7644ccc04a7d0c",
+      "questionSnapshotSha256": "4f964dd4d758a477448e77acd0b213022e9406b0efcb67450f71cb8f6752d1ab",
+      "lessonId": "mfg1-electrical-l082",
+      "lessonSourceHash": "ed9890d616a3eae840411f4609118f4a78a14d922ba3bd6a570339ed035d9fd1",
+      "verdict": "no_required_correction_identified",
+      "reason": "3/20000×10⁶=150PPM."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-04-practical-q07",
+      "questionSourceHash": "ac7da314ed5bf8e507390d8cb4e6ba92493449acb0032a81f9a32e18e3191298",
+      "questionSnapshotSha256": "4a3c1c44ffc94b09861b8ef1b137bb7561315d842bd3ca48d755d757762b3999",
+      "lessonId": "mfg1-electrical-l043",
+      "lessonSourceHash": "e9e17404e6165edcba961c93d088830e0b757dd9f8d22069fdaf30bc500267f8",
+      "verdict": "no_required_correction_identified",
+      "reason": "App equal-weight20/30 and6/10 separate thresholds: practical5 fails; no claim of official unpublished weighting."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-04-practical-q08",
+      "questionSourceHash": "4a7e84f0e8b66e2e75c827558716e16fe6beaacb04d4ea5ba8296a73b0e59c8b",
+      "questionSnapshotSha256": "3d147ac3be050dd134e55f08dd76066a175b52b1ed82e8bb786d9e5b42ae39b9",
+      "lessonId": "mfg1-electrical-l001",
+      "lessonSourceHash": "9b570e190c07fe071d90bf8e89256cedff531d6ad52480009d9144812b426855",
+      "verdict": "no_required_correction_identified",
+      "reason": "Stranded area2mm² differs from solid diameter2mm; tool/terminal fit required."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-04-practical-q09",
+      "questionSourceHash": "315be56e125eb49e6c37df6ecf1af06695869c601036defb9e77950e417c3ef2",
+      "questionSnapshotSha256": "9ca88fc8df3304298e06b856e15a7c23873f9b852e2eafa690c2145b8adfa9a6",
+      "lessonId": "mfg1-electrical-l038",
+      "lessonSourceHash": "9174292d60f625cc88610a75529c488ca10d7f97444b7ba2c36559e75d10a6e2",
+      "verdict": "no_required_correction_identified",
+      "reason": "Comparative measurement requires common datum, contact direction and preload."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-04-practical-q10",
+      "questionSourceHash": "bfb126cc45bc2de4007683a2a5672992302dfbe8c43545859c96df81523c2259",
+      "questionSnapshotSha256": "dc0a588cf32d4ef16f4a23690e750e463a69ac2e42c295596af028edec72aea3",
+      "lessonId": "mfg1-electrical-l054",
+      "lessonSourceHash": "416b775390fdfa41652b1bc7866da763128b0ce80735fd987ea98e4223198204",
+      "verdict": "no_required_correction_identified",
+      "reason": "Certification scope and individual product conformity/inspection are distinct."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-05-practical-q01",
+      "questionSourceHash": "0f070d3aefea3a58b5b318260bd3997ab6b756ee2a703f70ce0a3123f546cf5f",
+      "questionSnapshotSha256": "e9bb2d95943e8cf9da2b4ae6a9ae6cd57aa61848019eb64cb940514c88ea80b3",
+      "lessonId": "mfg1-electrical-l017",
+      "lessonSourceHash": "42bdff3e0759e2d01d348391465d41b9dea1edc600922d8541b54e4833420065",
+      "verdict": "no_required_correction_identified",
+      "reason": "60×120/(60+120)=40Ω, below smallest branch resistance."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-05-practical-q02",
+      "questionSourceHash": "e0d6b8ab75cf01158f0a97ec9c9f00ce8e0a14d6edc4f589d708a6c68c218d50",
+      "questionSnapshotSha256": "cc3f249fe53418657fd9392f4458bc21a2eb49c9ee8f049721c4d2357f4cd05f",
+      "lessonId": "mfg1-electrical-l084",
+      "lessonSourceHash": "8d0ef8c0512cce8ce611451ae6551ece6f67a7da00ae1951ee6f514ec154896c",
+      "verdict": "no_required_correction_identified",
+      "reason": "Specified subtractive-process protective film is stripped after etch; no general recipe supplied."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-05-practical-q03",
+      "questionSourceHash": "e80d0ad602cf5d0bf7ede310861a17cb68e3b0d748dde6a8c08eb9c483b459bf",
+      "questionSnapshotSha256": "7357f03c597b7d506e107c50fe4ead6b074f7549a6f9506c67111773cb7a52cf",
+      "lessonId": "mfg1-electrical-l055",
+      "lessonSourceHash": "fa6aaa7bc6ce1651a940e947d0c4dd1932210808ba139d192265b2548f7056ab",
+      "verdict": "no_required_correction_identified",
+      "reason": "2.4×1000=2400Ω."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-05-practical-q04",
+      "questionSourceHash": "42791296ddb04dc142443a550fb65e2c69cb79e415c53f91e3309b37793f3d07",
+      "questionSnapshotSha256": "896fa8e4e2693e1f7349b3031d77fb5089c7afe7f26ce612608fad1e01860312",
+      "lessonId": "mfg1-electrical-l080",
+      "lessonSourceHash": "0c25e5f9d30ad13f7d71c9c8aede8d788a91d0fc6ce691876527c268f82f0129",
+      "verdict": "no_required_correction_identified",
+      "reason": "Single functional operation is not lifetime/reliability certification."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-05-practical-q05",
+      "questionSourceHash": "eac2e086003956f3bc5a2351a452a7f391d637fda0c2a13a36a5f86e2f5b71f8",
+      "questionSnapshotSha256": "ca603a2826061f0d91a4d5da3c4038000d1f65889c0ef2d5f2fcb491e870f52b",
+      "lessonId": "mfg1-electrical-l029",
+      "lessonSourceHash": "36840f63d74a17940fee7aa25127b1fb590bf334452baa2c6db7a419583de233",
+      "verdict": "no_required_correction_identified",
+      "reason": "Induction synchronous-field speed differs from loaded rotor speed because of slip."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-05-practical-q06",
+      "questionSourceHash": "67a5ba33daed8c36fb1f0d06543f56c312994a3c5b6004d75c0b252e041e0190",
+      "questionSnapshotSha256": "abf65790efd44112e083ee41eaf5d51dd90022d17c0d4daf443fe5b2d92575da",
+      "lessonId": "mfg1-electrical-l030",
+      "lessonSourceHash": "f8d8fc04575b667f12bcf7ffd98c235972136b8b2033c2724b2ac73362424474",
+      "verdict": "no_required_correction_identified",
+      "reason": "120×150/600=30V under ideal AC assumption."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-05-practical-q07",
+      "questionSourceHash": "6c74cd240d2b8f3489f40fb34dcfdfca1679de749750579f12000871adea4d59",
+      "questionSnapshotSha256": "f42b4eb5e9fe9d8afce0f83bfe3d43c9afffd90d893493e2e9efd52c2e0d8f79",
+      "lessonId": "mfg1-electrical-l079",
+      "lessonSourceHash": "af84b9524b18f9b658de324772404620a6a10b8c979991083baef14c247af53f",
+      "verdict": "no_required_correction_identified",
+      "reason": "FixedR means(2I)²R=4I²R."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-05-practical-q08",
+      "questionSourceHash": "b145f8a6b7a5f1e731b5ca7f55d83cf9aa17f4763ad76f2ad2521b597f1a580e",
+      "questionSnapshotSha256": "b58cc5d4f02e7b1c3d50a5110ddcf10ef14e8bb096845949667601f661ea7e2c",
+      "lessonId": "mfg1-electrical-l060",
+      "lessonSourceHash": "c5f63987c6b38a05568066b10e31063044cda9d6cf37d1ef9536753882f3ec9f",
+      "verdict": "no_required_correction_identified",
+      "reason": "Third-angle right view is right; projection convention still checked."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-05-practical-q09",
+      "questionSourceHash": "a6f30f30e7fb0baac0189d5767d68ece04e7d704c1cfd21b541135c1b57a240b",
+      "questionSnapshotSha256": "faf26ce37ca74ad55b7634adfe86e7c8ba3f9432f39460b8c5b7c7df265f6f00",
+      "lessonId": "mfg1-electrical-l027",
+      "lessonSourceHash": "e33b8ccae4da46a52b6bb775596d119b418562198357bc8a06af0d0defd157f1",
+      "verdict": "no_required_correction_identified",
+      "reason": "Grease compatibility, amount and approved isolation are required; no unsanctioned mixing."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-05-practical-q10",
+      "questionSourceHash": "b0830fed7917ae11874dfcf74d49e10953256ce029f74fed973939452c4e2343",
+      "questionSnapshotSha256": "f195faf7d32d8013940147067b3088ee7979b53b885e04ba5afb810c2fddf712",
+      "lessonId": "mfg1-electrical-l011",
+      "lessonSourceHash": "7ac97182b7515dae74e6937e1e9cfd82d179c70e14b1d1eec949ea5ab80d3c89",
+      "verdict": "no_required_correction_identified",
+      "reason": "Mean20.00 does not make individual19.80/20.20 satisfy19.90–20.10."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-06-practical-q01",
+      "questionSourceHash": "4124c056320cb8b314cc1f6321e68a36ecdce821b079beae0bf0519c015f9da6",
+      "questionSnapshotSha256": "f964839161567e460da0391bdbb799797c0dc6e41e668c3e073c4d28277b83af",
+      "lessonId": "mfg1-electrical-l032",
+      "lessonSourceHash": "d17d7dcf79eaeffe5074f5d2ab57b34f1481fd875012e165c78e8411dfb77db2",
+      "verdict": "no_required_correction_identified",
+      "reason": "PV generates, battery stores, conditioner converts/conditions; outage capability remains system-specific."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-06-practical-q02",
+      "questionSourceHash": "f0a42c396ed9f3981281e25582187061b30b8959d60b0ecae1d946fffc42964c",
+      "questionSnapshotSha256": "1b2c949d2c8264c79a5d4427ecb2fa399dc6d4f24ab6d51ca93e8c1c8ff8ae4f",
+      "lessonId": "mfg1-electrical-l075",
+      "lessonSourceHash": "25b343d5c17e0f1c6341bbb74624260be811dd15aa757a4eb8207cec69466d89",
+      "verdict": "no_required_correction_identified",
+      "reason": "NOT(0 AND1)=1."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-06-practical-q03",
+      "questionSourceHash": "a145b024be221676c85744dcdbb5b0bdd9006afa8a7ec8ddc5277e1d70dbd583",
+      "questionSnapshotSha256": "d806a28e56b1659b9012a0ac0bd7599f56a00d44924fc0eaaa6db330c94eb27f",
+      "lessonId": "mfg1-electrical-l033",
+      "lessonSourceHash": "356f00962ec9c5ec5103442ff5bb0a7c93d66a6d95b742658f2101d322b440f6",
+      "verdict": "no_required_correction_identified",
+      "reason": "Cylinder speed relates to flow; observation alone does not identify a failed valve."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-06-practical-q04",
+      "questionSourceHash": "d599b22bcfe51c6deb9c2c3dd66a8d26794af1e43203f3ef2badc052102e51d1",
+      "questionSnapshotSha256": "0682406ff7d7a4c4b806313fda6c0100f001e604e3351448556c57639440a00b",
+      "lessonId": "mfg1-electrical-l012",
+      "lessonSourceHash": "6bf38e20c1e07bb94c4132c8f23e67fb1bad3d4b9455e430e4fb7af1655dc041",
+      "verdict": "no_required_correction_identified",
+      "reason": "(12+6)/(12+6+2)=90%; severity remains separate."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-06-practical-q05",
+      "questionSourceHash": "c12720b16139f684a3af37956c60ff1d95900aaf22ce1c1627b9995623838502",
+      "questionSnapshotSha256": "d1ce3dd560a25bbd8a7c303ad2f629524d703018d98cb6aee39cbd5c811af4cf",
+      "lessonId": "mfg1-electrical-l074",
+      "lessonSourceHash": "aa3bf37030bd09585e1ff4baf543ab4c1ec11f7be57a52d6d3ffa8c331bd90db",
+      "verdict": "no_required_correction_identified",
+      "reason": "Unaccounted fasteners require reconciliation and possible contamination/missing-part report."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-06-practical-q06",
+      "questionSourceHash": "ac311bdeb6dac603cd8b13a6bf78fddde940925546c6dc4d267d28b4d7d7f386",
+      "questionSnapshotSha256": "f4094574ea5be97682c35271368cecf584eb117fb0057064a5fe96e0d754db7b",
+      "lessonId": "mfg1-electrical-l040",
+      "lessonSourceHash": "5b8b51ad3e16c58e382165caa850fa608d676470e6b2e3b34644746767f1829b",
+      "verdict": "no_required_correction_identified",
+      "reason": "Unexpected tapping resistance: stop forcing and check hole/tool/chips using procedure."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-06-practical-q07",
+      "questionSourceHash": "2ade56ad9127e22cb19f64744a709b152285b5b6a9de275658437e8af3e451d7",
+      "questionSnapshotSha256": "cf1c3e501d5dbc32918d416498fbe6908f8b5a542df5c71efb0d930741cca536",
+      "lessonId": "mfg1-electrical-l041",
+      "lessonSourceHash": "5ca418118abb4b5e7807aff1689ded494dd2d9c02a00d66961d3a6e10a4a899f",
+      "verdict": "no_required_correction_identified",
+      "reason": "Hole curvature and retained geometry determine file section/size."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-06-practical-q08",
+      "questionSourceHash": "d165babed8378be781114fa59e0d755aa55f1fab5d29cc88ed4982b0820f266c",
+      "questionSnapshotSha256": "4e70bb830ede81a75338439bb5563dd700c0aea2cb20d85dc7c027d6643c6509",
+      "lessonId": "mfg1-electrical-l058",
+      "lessonSourceHash": "ded2493cad8338a4e4c59d5389601174057fb43b3d22f77b5a1f5fe8296f92c2",
+      "verdict": "no_required_correction_identified",
+      "reason": "ProductPSE mark does not authorize different equipment voltage or operator qualifications."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-06-practical-q09",
+      "questionSourceHash": "213a6a8aa4e894efcbaf14ad96dcd883610f21271dd5ce3faf4b1e9ffcabb8e9",
+      "questionSnapshotSha256": "45a72688985624e3124f74debfd5496a5cfa52f7757e6f8fe4506b005760bbe7",
+      "lessonId": "mfg1-electrical-l055",
+      "lessonSourceHash": "fa6aaa7bc6ce1651a940e947d0c4dd1932210808ba139d192265b2548f7056ab",
+      "verdict": "no_required_correction_identified",
+      "reason": ".25mm×1000=250μm."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-06-practical-q10",
+      "questionSourceHash": "6e4f7b96c55f70e8bf2f68eb132189bc8fa5637e0698efd4d4b70f769e138d43",
+      "questionSnapshotSha256": "32baea534aeea135c1c9c4e4a864b34c7a635abe4efced194de423bc0d2f7fb5",
+      "lessonId": "mfg1-electrical-l007",
+      "lessonSourceHash": "da9be587e6df36724129316fd32868b2c701b06e45a1f3ac03eb5174fc614b45",
+      "verdict": "no_required_correction_identified",
+      "reason": "6div×2V/div=12Vpp; symmetric zero-centered amplitude6V."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-07-practical-q01",
+      "questionSourceHash": "1e58944ccbd917245001a88e6a8269245e27af9129c1b059c22a9e10a2cb1bce",
+      "questionSnapshotSha256": "37b91eb251e6135df941dffbeaa97108c2a095e533bf9c418ec921f3fb6d7631",
+      "lessonId": "mfg1-electrical-l047",
+      "lessonSourceHash": "9c9916632dadb0ed446d60db5052dbb87582ddc5878de449a90d6ec2c38ce048",
+      "verdict": "no_required_correction_identified",
+      "reason": "Prohibition applies despite short duration/tool need; obtain authorized access."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-07-practical-q02",
+      "questionSourceHash": "742d54cbaa9c58c02287c8f49fbd74c21d4bf43ebf4008ebb84a03ac1d870065",
+      "questionSnapshotSha256": "e654d603f33f322013cb02a79afa781a3c1236f3792d369ac4ec66cdf3872728",
+      "lessonId": "mfg1-electrical-l025",
+      "lessonSourceHash": "f6c61e108c840e7b1ccf9794a4da7c366703a38c3368945803d9310c31a1aa37",
+      "verdict": "no_required_correction_identified",
+      "reason": "Binary1010=8+2=10."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-07-practical-q03",
+      "questionSourceHash": "7eb021d705a9e79327ef8450e40a80ddc2dfe01441b60c03e6509b833059a954",
+      "questionSnapshotSha256": "5f137bfd04cd53106486dcb8dc55e8e64bd884ee84a211b35383c4965330febb",
+      "lessonId": "mfg1-electrical-l009",
+      "lessonSourceHash": "3960734f6e59070cd5ff0fe7a9eebb09fb759d2ca2a2645d392c236e7554762a",
+      "verdict": "no_required_correction_identified",
+      "reason": "52−37=15 only for verified box; other warehouse remains unknown."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-07-practical-q04",
+      "questionSourceHash": "643dd9f3eefecdec249369b78f2538236fd5c3de98f0ab1b4497aaaaf04dd5eb",
+      "questionSnapshotSha256": "f7a17ccf14400edda0d9bae59cda8853cc327953caeed95a0355fb13474d366c",
+      "lessonId": "mfg1-electrical-l059",
+      "lessonSourceHash": "0a85b0c6c7b4c0650ab2317ff83f36e9c3d50c42228311a61ac9b3792d8db029",
+      "verdict": "no_required_correction_identified",
+      "reason": "CorrespondingJIS/IEC identifiers do not ensure identical editions or national deviations."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-07-practical-q05",
+      "questionSourceHash": "2bfe199b7462683e5968439a48ab61929ed356090013e319d212495717bd2381",
+      "questionSnapshotSha256": "365ae198518613ba7a248c881cd38f428560cbdea1dda544f473282c87aeaaa9",
+      "lessonId": "mfg1-electrical-l057",
+      "lessonSourceHash": "ded6ac22dacf79b0c53ffb94d2ab00067e27c4659adc901ec6397bb29f6b4f2e",
+      "verdict": "no_required_correction_identified",
+      "reason": "Reusing intact returned box isReuse rather than material recycling."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-07-practical-q06",
+      "questionSourceHash": "8fe59cf1781f898bbd52e0350034fa431540cc88d9323c584325e1158df3db6e",
+      "questionSnapshotSha256": "dbfc229d8039ba887641ae40e80be35bd3d64afe97ef78f2ebb17f8b203cf540",
+      "lessonId": "mfg1-electrical-l051",
+      "lessonSourceHash": "9a55436de848cee3466855cee915e709f3a2a95df0ff3fc28676a2e7b82434ed",
+      "verdict": "no_required_correction_identified",
+      "reason": "Check evaluates results on comparable definitions and conditions before standardization."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-07-practical-q07",
+      "questionSourceHash": "5f85efe4caac69d9768d57753293c991fdf78973c46ebda067187ac101377854",
+      "questionSnapshotSha256": "b036c7997641f146bc0f9e635e8731711cb2f213e4d236f337aae1ccb56446fc",
+      "lessonId": "mfg1-electrical-l084",
+      "lessonSourceHash": "8d0ef8c0512cce8ce611451ae6551ece6f67a7da00ae1951ee6f514ec154896c",
+      "verdict": "no_required_correction_identified",
+      "reason": "Negative resist conceptual model retains exposed hardened film after development."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-07-practical-q08",
+      "questionSourceHash": "cfe7eb81554a22b4d0b8b3653d2c94ca0128be1b2485c0151396b9fe2f6d625d",
+      "questionSnapshotSha256": "7c08c05ea136902fb68eae0d07aee2d2b620ee14076a4c0492403eb3855313e4",
+      "lessonId": "mfg1-electrical-l020",
+      "lessonSourceHash": "c05ab4a434bc985022ac055dab7f2aed0c5f10a452be0ebe5f8faa925d1fa571",
+      "verdict": "no_required_correction_identified",
+      "reason": "AND(1,0)=0."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-07-practical-q09",
+      "questionSourceHash": "ed990e08688975cafa4faf7b3e9daa13ae41ba5f6afdaa17f12ff6907feef890",
+      "questionSnapshotSha256": "775c28eba72a09de86a9a1a36f77a453eb28f51d6ae6447e56353401ffce7984",
+      "lessonId": "mfg1-electrical-l037",
+      "lessonSourceHash": "72a7d3c677b4ed2db79aac5f2113f984afe1168b5ff6b62a4fc69ab46491a6ba",
+      "verdict": "no_required_correction_identified",
+      "reason": "Pilot hole plus tap produces female thread; die is for male thread."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-07-practical-q10",
+      "questionSourceHash": "a958a3e9cdf56dad8d1d1ab0218aa3655464ba77564d56225a0666782519c698",
+      "questionSnapshotSha256": "57fe54b07e3248d0948d30c645b916c55a59bb5bf1feb35468d4b1c307fe86d9",
+      "lessonId": "mfg1-electrical-l026",
+      "lessonSourceHash": "1d7fdf6cc82278ade4f9b755e5fbdc449f5b46931a1aea345db76d9fe9e3b2a5",
+      "verdict": "no_required_correction_identified",
+      "reason": "Etching removes exposed unwanted copper; coating/exposure/mounting are distinct."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-08-practical-q01",
+      "questionSourceHash": "86c698800df7b2069b56886cdb72a070ac4452321fd84b7dd3028d8f2a91f360",
+      "questionSnapshotSha256": "1fd74394f3e35bbd01af2e2013a7aec79e3aa8e009a364089ab8f241a02423e8",
+      "lessonId": "mfg1-electrical-l069",
+      "lessonSourceHash": "2070ae51e0e9eb05263795e8dcde06ab44490e7bc5146bebeb2a3e63ac3daedb",
+      "verdict": "no_required_correction_identified",
+      "reason": "Ideal sinusoidal inductor current lags voltage; real losses are qualified."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-08-practical-q02",
+      "questionSourceHash": "1c51969636e989c7a97ba742db15fdf3696d8f4a05199d52d64290eec4253f60",
+      "questionSnapshotSha256": "f10457c22877eec01de255fe8e12558aaef038aaac389cd51c9a6380ceb79f7e",
+      "lessonId": "mfg1-electrical-l028",
+      "lessonSourceHash": "cedf3f5b13b0d74026ab57d69794392e8b571766d3af97be396225cd7d8ee33a",
+      "verdict": "no_required_correction_identified",
+      "reason": "Self-holding uses corresponding contact path; does not defeat stop conditions."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-08-practical-q03",
+      "questionSourceHash": "5b979624b76efb103a218deef7c763d7bb28400083bb413318d2a560a89a6ca0",
+      "questionSnapshotSha256": "b448677021aad37161b9ffd96a2b327af248ebfb2c0efbe1af774fed63237d85",
+      "lessonId": "mfg1-electrical-l070",
+      "lessonSourceHash": "e4f00ae5cbf227148e2b5380b6976d5533fc785630e52efefdc6f1514d4c17cb",
+      "verdict": "no_required_correction_identified",
+      "reason": "12−4=8mA byKCL."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-08-practical-q04",
+      "questionSourceHash": "df56ca737c9805b1bae8eeb1fbf4542c9c6b39d9f0c8005cbfad6fdfb7a686b5",
+      "questionSnapshotSha256": "fd55cfeddeff09baceeca3661aaf8b1692cb25a12b2850f619199517d617c0a8",
+      "lessonId": "mfg1-electrical-l035",
+      "lessonSourceHash": "5f33302fc0aa0a19fa54ceef92716ae3e97f2fedd18777ae181759bbd158859a",
+      "verdict": "no_required_correction_identified",
+      "reason": "Glass/carbonFRP properties differ despite matching appearance."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-08-practical-q05",
+      "questionSourceHash": "b2837f9336f31853223491573db0e87dbe57e4185d5c57d3b9435a60d4624661",
+      "questionSnapshotSha256": "695cdbf7336f5119801a9ad7d74e52dd8ce4f879974fcfc97ab165a9b50692a0",
+      "lessonId": "mfg1-electrical-l075",
+      "lessonSourceHash": "25b343d5c17e0f1c6341bbb74624260be811dd15aa757a4eb8207cec69466d89",
+      "verdict": "no_required_correction_identified",
+      "reason": "NOT(1 OR0)=0; DeMorgan check agrees."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-08-practical-q06",
+      "questionSourceHash": "71e7f646d1cb710c9e12adef03ed4e41303f11aff0cd18e24d87e175efcf50de",
+      "questionSnapshotSha256": "b782e8a3f6855b776301c2f3e252dad21629377ab60fee8127e8c2598bdf5bcc",
+      "lessonId": "mfg1-electrical-l077",
+      "lessonSourceHash": "614284c4181587733b9090e0984f94cf23ab20ea4d46b2619f26c39cc9d52024",
+      "verdict": "no_required_correction_identified",
+      "reason": "Basic off-delay output falls4s after input off; product power/retention conditions qualified."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-08-practical-q07",
+      "questionSourceHash": "48e6d37bb3bcadb3f72e803b0917596afc2c5c368495dcf96c2b034a5268cf91",
+      "questionSnapshotSha256": "ff18ca68ce1fe73a749c4d679206237bb958b349f4826d9e14e7fcf7906eaefd",
+      "lessonId": "mfg1-electrical-l053",
+      "lessonSourceHash": "6ff5a5a352521a52ddbece44b4378a6865c3aaeb5b2f95b2eb4469137607f1be",
+      "verdict": "no_required_correction_identified",
+      "reason": "Correlation is candidate relationship, not proof of temperature causation."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-08-practical-q08",
+      "questionSourceHash": "c9879288793c3f225bf7c593c1710a799e0606439774b75d408c3a8f24daed08",
+      "questionSnapshotSha256": "ed65dc9ce8cbb426fe27c2d02b8e591adbb619c6b418154e941e8cdf63743835",
+      "lessonId": "mfg1-electrical-l065",
+      "lessonSourceHash": "ea00b75e01ffc7c14c5dd3893b9d5417686a3eb3a6b2c57e0a50d26e90fabaa6",
+      "verdict": "no_required_correction_identified",
+      "reason": "Solder joining adjacent lands is treated as unwanted bridge in defect context."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-08-practical-q09",
+      "questionSourceHash": "535c4247ffce26ca0935fa8491594492d2425c367d92d2a8320d78b2a205f172",
+      "questionSnapshotSha256": "80fa1ff3a8b4cc4d0b32ff85704f8d542366cdfa0194edf0961d1109ea9f0571",
+      "lessonId": "mfg1-electrical-l045",
+      "lessonSourceHash": "adb20021f7532d3a31df0a6132d37280412f17dd6c1f8d9cf730a11914f9c127",
+      "verdict": "no_required_correction_identified",
+      "reason": "7 is3 below lower limit10; upper-limit difference is not defective count."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-08-practical-q10",
+      "questionSourceHash": "04d006166bf737475a62874872d6675a721eadba65ff73d1987f13558ceb641c",
+      "questionSnapshotSha256": "35b6ad2212810b52cf68660690ab661b325ad03699e46def8b0e050884f34f84",
+      "lessonId": "mfg1-electrical-l073",
+      "lessonSourceHash": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1",
+      "verdict": "no_required_correction_identified",
+      "reason": "40/100×50=20mA for the stated corresponding linear scale."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-09-practical-q01",
+      "questionSourceHash": "4bac99a073dd06393ff25ea757ab72e6662be4496f04f3f357d90192955ac09e",
+      "questionSnapshotSha256": "ece0dea08d96519e1399d3b1291eeb32142aab67f7e4d0e50db340c40e567099",
+      "lessonId": "mfg1-electrical-l049",
+      "lessonSourceHash": "33ee70ac67d89f53340dd095cfc5ae53bb71761cb25f3ac5782859c3edd2f718",
+      "verdict": "no_required_correction_identified",
+      "reason": "Near miss retains hazard information even without injury; unsafe reenactment rejected."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-09-practical-q02",
+      "questionSourceHash": "516057394b59b7d1ff67b9a4ae5fb920f142469dc247fbe1c9e82999feb88fa8",
+      "questionSnapshotSha256": "52bfe8defaff75ac0ea7571b9872bdee0dc2e731df363613c6d9bed150477d7f",
+      "lessonId": "mfg1-electrical-l014",
+      "lessonSourceHash": "9990d5682d40bc83845c192ee91e3a53bb1b9d047c76418e2b218339e7733571",
+      "verdict": "no_required_correction_identified",
+      "reason": "Placement drawing supplements electrical connectivity for physical installation location."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-09-practical-q03",
+      "questionSourceHash": "964547e831fc76398494ed131f978693f7e50966e47362cfe6b70f14963632db",
+      "questionSnapshotSha256": "64ad624226a0411477db9d4dea2458a61c3e63381e31d52ad6fe66dfd7713ee1",
+      "lessonId": "mfg1-electrical-l042",
+      "lessonSourceHash": "aeb1b6dad2facb358bd2ca6388cd1947fe758e5e0ee221ba6301fba817a19bfc",
+      "verdict": "no_required_correction_identified",
+      "reason": "Coulomb inverse-square distance factor3 gives1/9 force."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-09-practical-q04",
+      "questionSourceHash": "7c24c694c7a4ec2e30bc4aa3706bbeb47439422e43f276a7d3586855dab68baa",
+      "questionSnapshotSha256": "ea0b3623f15781f6b5e23067cb048d1a1908ca09f6f0e93bdb19d58667b9e60b",
+      "lessonId": "mfg1-electrical-l068",
+      "lessonSourceHash": "37fa285ec2bb91c45010b17187dc0689d772b24bab1a1b4937db97f1daca2601",
+      "verdict": "no_required_correction_identified",
+      "reason": "8W×45/60h=6Wh."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-09-practical-q05",
+      "questionSourceHash": "50374c80feb0e8cd2f03726c332eb79659523a1639027063db058dcb0c7d3b06",
+      "questionSnapshotSha256": "0dc7f0e758d6cefc5ec8574f5d3758b49324ea1f7f21b54a2d9ea4d1f8b17682",
+      "lessonId": "mfg1-electrical-l031",
+      "lessonSourceHash": "788a9633fb569ae0505368d9fa3284920490c147a0cf9bc80444115f2abb728a",
+      "verdict": "no_required_correction_identified",
+      "reason": "Trip plus burning smell requires safe condition/report/cause investigation, not repeated reset."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-09-practical-q06",
+      "questionSourceHash": "199957222c072746956832edb96448a833cc7bf6001b3d3adbaf841db7564e9d",
+      "questionSnapshotSha256": "2e89180514f81643314e16183834d5787ea6da50fda30686c698808a80976037",
+      "lessonId": "mfg1-electrical-l021",
+      "lessonSourceHash": "08d8e5394649ca2538ce30436be9d2c3bf52533e39038c791c6b598cc4f3ca13",
+      "verdict": "no_required_correction_identified",
+      "reason": "Pre-failure wear observations inform preventive maintenance without unlimited life guarantee."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-09-practical-q07",
+      "questionSourceHash": "0f366fb85b9ac036899c45603a1064532081beff37371c79e56efbb39d6486d1",
+      "questionSnapshotSha256": "4d5bb50f9106e1329915d634d89eff59a719c3a1893ae22bb2f754f70ec677fe",
+      "lessonId": "mfg1-electrical-l015",
+      "lessonSourceHash": "25d7da40236abfd57e0e62fafda205a46a321d258e83fad5905f178fb6ce31bb",
+      "verdict": "no_required_correction_identified",
+      "reason": "Weak magnetic response does not imply insulation; copper conducts."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-09-practical-q08",
+      "questionSourceHash": "bac1880e13b3d70d6051ade623cf2c1e7c0fa2df67b1a3b2ab6fe1c5c178bab3",
+      "questionSnapshotSha256": "2741659e6fe4704fa394954822b908411d22249e8098f0598ca83d30faa6d4a8",
+      "lessonId": "mfg1-electrical-l005",
+      "lessonSourceHash": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe",
+      "verdict": "no_required_correction_identified",
+      "reason": "Disconnect before correcting current-input lead/function/range; avoid supply short circuit."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-09-practical-q09",
+      "questionSourceHash": "78003cab5d5167ddf62026875b1b78a189d3de8404f837ba5a7b8e1d8d433b28",
+      "questionSnapshotSha256": "56a6d85dba38ddfb61c1b884fc72fe24d22c03d5ecbea989284e586b032e354d",
+      "lessonId": "mfg1-electrical-l052",
+      "lessonSourceHash": "07bdb79e41b71e4722bf854bd3e8a083b981dfb2c49db970c79e26e9e26d6be4",
+      "verdict": "no_required_correction_identified",
+      "reason": "QC control-point mismatch requires revision/authority reconciliation."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-09-practical-q10",
+      "questionSourceHash": "91d7b8867dbc49ed789b03be17f65b964542dd8845b3257e0ede2ced426fbeb4",
+      "questionSnapshotSha256": "d0b4e722d8396aa96b376c2348c3badb6b2bb5de1f5787b9f76090dfbf184344",
+      "lessonId": "mfg1-electrical-l039",
+      "lessonSourceHash": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+      "verdict": "no_required_correction_identified",
+      "reason": "Gaussmeter measures flux density; alternatives measure dimensions/light."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-10-practical-q01",
+      "questionSourceHash": "40451bf70d1edfb594edff8ef687f9b3fb473e365b5a06a80e098cec3d152431",
+      "questionSnapshotSha256": "9de5e14a057fffccd567dd921f01b97af2bfbe941614cbc547de75359ce6a45b",
+      "lessonId": "mfg1-electrical-l017",
+      "lessonSourceHash": "42bdff3e0759e2d01d348391465d41b9dea1edc600922d8541b54e4833420065",
+      "verdict": "no_required_correction_identified",
+      "reason": "100+300=400Ω series."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-10-practical-q02",
+      "questionSourceHash": "daeac022d40e5be99cf01b1e260c2f6bb5755f84147377e541566407eaf24d64",
+      "questionSnapshotSha256": "0967509a0b6efcff553f2f6efff7be7fec05a8a575de7b67d016cac4caa1e6ab",
+      "lessonId": "mfg1-electrical-l068",
+      "lessonSourceHash": "37fa285ec2bb91c45010b17187dc0689d772b24bab1a1b4937db97f1daca2601",
+      "verdict": "no_required_correction_identified",
+      "reason": "Sameρ andS, half length gives half resistance."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-10-practical-q03",
+      "questionSourceHash": "17d475ca094f5367834811cef5e40a5082be1443590085a2e46e909465a39899",
+      "questionSnapshotSha256": "3f20b9ed405b2d1dbe0b01cfd7581741add22cbdd81f226de9a83ebbbee9f8dd",
+      "lessonId": "mfg1-electrical-l010",
+      "lessonSourceHash": "311aab37042dbec57ffdb5a2c71adbd096d3bb58de706604e094f2352e726367",
+      "verdict": "no_required_correction_identified",
+      "reason": "Exclude people then approved stable location/handling; warning alone insufficient."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-10-practical-q04",
+      "questionSourceHash": "1aaace2a91520e1e9074eb18a9818cd65200c29db55582ada233493706e589de",
+      "questionSnapshotSha256": "b17796a15168288b966a2ea52f00921183768d5aeadc5b566ddffd3ae2090ccf",
+      "lessonId": "mfg1-electrical-l006",
+      "lessonSourceHash": "540a1c3e16efed961ad30a27dad230fa427d266bae80ff59db5decee27a6f492",
+      "verdict": "no_required_correction_identified",
+      "reason": "9/3000=.003A=3mA under ideal calculation."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-10-practical-q05",
+      "questionSourceHash": "78b4463b3c108ec56474ce82c7362646d6c175a453618b5d8c9d7f216bbd8772",
+      "questionSnapshotSha256": "d66025dd0f3a7c0a87a5ba57a213a7e9f24bb76c9a2db799bef38705ea75af38",
+      "lessonId": "mfg1-electrical-l018",
+      "lessonSourceHash": "e31e735cd6be75ceadc82390e397911487373abb684564fe38ea8925180e562b",
+      "verdict": "no_required_correction_identified",
+      "reason": "Diode polarity/pinout/reverse-voltage/current ratings all matter."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-10-practical-q06",
+      "questionSourceHash": "31d0d78bd897f679aff44f875329e2e80aeeb211a37d51b9547a96dad9426c9b",
+      "questionSnapshotSha256": "50930d9866095b7ed6a2c28ad9ee30ce879ebebe32d6659462082f258ba40144",
+      "lessonId": "mfg1-electrical-l064",
+      "lessonSourceHash": "2406f51b31d15c2b8be938e239f49a58d7638db1c8400455c81653d2eebb29ae",
+      "verdict": "no_required_correction_identified",
+      "reason": "Color alone does not establish conductor, rating, terminal or tool fit."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-10-practical-q07",
+      "questionSourceHash": "2d2bc94e5f75b26976a2efffa6e22039d85e36ed8b39bae72f5f5203350ce744",
+      "questionSnapshotSha256": "2af4e397b85b6c708d1c8914a9a6851fd8b7eafdc5cd7022fe82e82c78b19777",
+      "lessonId": "mfg1-electrical-l083",
+      "lessonSourceHash": "9700f5ce1eb6f74c9dcf3014c8c3fa483f7492ad014114254b87e3a7fdb3a768",
+      "verdict": "no_required_correction_identified",
+      "reason": "Ejector pin ejects formed item; sprue/runner/gate are flow path features."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-10-practical-q08",
+      "questionSourceHash": "78ea18b829e569f6d26fabd03d020d15f2e9f5986de8046649c2323d8810bcf4",
+      "questionSnapshotSha256": "6d44ac93b96db756d3e6f6efffa716aa37bcf923007fdebd18ed5a73c8893516",
+      "lessonId": "mfg1-electrical-l008",
+      "lessonSourceHash": "be0b8bf2d02582f4a570aacea9fef592a08465b39b1385e1b4fc99ee0871b2e9",
+      "verdict": "no_required_correction_identified",
+      "reason": "Suspected bridge is identified/held/reported despite inspection label; unauthorizedHV testing rejected."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-10-practical-q09",
+      "questionSourceHash": "7deb38b89a2f3207a0019f5091fb0ff17ef8733b7f42b80b36f831a4a461ddac",
+      "questionSnapshotSha256": "7011cbea8ab50c5f5de5f8508a3f3b9ec7f8292002092b4096b9c4613b81aff5",
+      "lessonId": "mfg1-electrical-l072",
+      "lessonSourceHash": "aa213598332b37cded6bc5c111231b9e6ae94d7de76cbd4ad174f8fac3927460",
+      "verdict": "no_required_correction_identified",
+      "reason": "Op-amp is analog amplifier, unlike logic/memory/processor primary functions."
+    },
+    {
+      "questionId": "mfg1-electrical-mock-10-practical-q10",
+      "questionSourceHash": "c815a0c51c286347b1483f4f365cf0e3ce3dfd2282d2d66c29d4e16cf514c77e",
+      "questionSnapshotSha256": "f07008b2afccfb47782c7756f995c9ba2b87a85e7750ac28c37db456a1f5da41",
+      "lessonId": "mfg1-electrical-l070",
+      "lessonSourceHash": "e4f00ae5cbf227148e2b5380b6976d5533fc785630e52efefdc6f1514d4c17cb",
+      "verdict": "no_required_correction_identified",
+      "reason": "18−7=11V remaining drop under stated single-source two-drop loop."
+    }
+  ]
+}

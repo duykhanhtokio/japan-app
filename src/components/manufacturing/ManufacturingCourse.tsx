@@ -9,6 +9,7 @@ import {TokuteiHeader,TokuteiDayCard} from '@/components/tokutei/TokuteiChrome';
 import {StudyAppearanceProvider,ReadingAppearanceControl,TranslationText,useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import {ManufacturingDiagram} from './ManufacturingDiagram';
 import {ManufacturingMocks} from './ManufacturingMocks';
+import {useManufacturingBack} from './useManufacturingBack';
 import {manufacturingSourceGuides,manufacturingSourceGuidesLabel,manufacturingSourceGuideTranslation} from '@/data/manufacturing/source-guides';
 import {manufacturingMockUi} from '@/data/manufacturing/mock-ui';
 import {manufacturingTranslation,manufacturingQuestionTranslation} from '@/data/manufacturing/translations';
@@ -28,6 +29,7 @@ function Surface({children,reading=false}:PropsWithChildren<{reading?:boolean}>)
 export function ManufacturingCourse({learner,language,onBack}:{learner:string;language:string;onBack:()=>void}){
  const t=(key:Parameters<typeof manufacturingUi>[1])=>manufacturingUi(language,key);
  const [specialty,setSpecialty]=useState<Specialty|null>(null);
+ useManufacturingBack(onBack,specialty===null);
  return <LocaleContext.Provider value={language}><StudyAppearanceProvider>{specialty?<Course key={`${learner}:${specialty}`} learner={learner} language={language} specialty={specialty} onBack={()=>setSpecialty(null)}/>:<Surface><TokuteiHeader title="製造分野 · 特定技能1号" onBack={onBack}/><ScrollView contentContainerStyle={s.content}><RoyalContentPanel style={s.panel}><Text style={s.heading}>{t('chooseSpecialty')}</Text><Text style={s.body}>{t('previewNotice')}</Text>{manufacturingSpecialties.map(item=><Button key={item.id} title={item.titleJa} onPress={()=>setSpecialty(item.id as Specialty)}/>)}</RoyalContentPanel></ScrollView></Surface>}</StudyAppearanceProvider></LocaleContext.Provider>;
 }
 function Course({learner,language,specialty,onBack}:{learner:string;language:string;specialty:Specialty;onBack:()=>void}){
@@ -39,12 +41,14 @@ function Course({learner,language,specialty,onBack}:{learner:string;language:str
  const live=useRef(true),busy=useRef(false),key=manufacturingCompletionKey(learner,specialty);
  useEffect(()=>{live.current=true;setProgress(null);setError(false);AsyncStorage.getItem(key).then(raw=>{if(!live.current)return;const p=restoreManufacturingProgress(raw);if(p)setProgress(p);else setError(true);}).catch(()=>{if(live.current)setError(true);});return()=>{live.current=false;};},[key,retry]);
  const complete=async()=>{if(!progress||!lesson||busy.current)return;busy.current=true;setSaving(true);setError(false);const next:ManufacturingProgress={version:1,entries:{...progress.entries,[lesson.id]:lesson.sourceHash}};try{await AsyncStorage.setItem(key,JSON.stringify(next));if(live.current){setProgress(next);setLesson(null);}}catch{if(live.current)setError(true);}finally{busy.current=false;if(live.current)setSaving(false);}};
+ const back=()=>{if(lesson){if(!saving)setLesson(null);}else if(week!==null)setWeek(null);else onBack();};
+ useManufacturingBack(back,tab!=='mock'&&exam===null);
  if(tab==='mock')return <ManufacturingMocks learner={learner} specialty={specialty} language={language} onBack={()=>setTab('study')}/>;
  if(exam)return <Attempt key={exam.id} learner={learner} specialty={specialty} exam={exam} onBack={()=>setExam(null)}/>;
- if(lesson)return <Reader key={lesson.id} lesson={lesson} language={language} saving={saving} saveError={error} onComplete={()=>{void complete();}} onBack={()=>{if(!saving)setLesson(null);}}/>;
+ if(lesson)return <Reader key={lesson.id} lesson={lesson} language={language} saving={saving} saveError={error} onComplete={()=>{void complete();}} onBack={back}/>;
  const guides=manufacturingSourceGuides(specialty);
  const selected=week===null?null:info.weeks[week];
- return <Surface><TokuteiHeader title={`${info.titleJa} · 1号`} onBack={()=>{if(selected)setWeek(null);else onBack();}}/><ScrollView contentContainerStyle={s.content}>
+ return <Surface><TokuteiHeader title={`${info.titleJa} · 1号`} onBack={back}/><ScrollView contentContainerStyle={s.content}>
  <View style={s.row}><Button title={t('study')} selected={tab==='study'} onPress={()=>setTab('study')}/><Button title={t('weeklyChecks')} selected={tab==='test'} onPress={()=>setTab('test')}/><Button title={manufacturingMockUi(language,'mockExams')} onPress={()=>setTab('mock')}/></View>
  {progress&&tab==='study'&&!selected&&guides.length>0&&<RoyalContentPanel style={s.panel}><Text style={s.heading}>{manufacturingSourceGuidesLabel(language)}</Text>{guides.map(guide=><Button key={guide.id} title={guide.titleJa} onPress={()=>{setError(false);setLesson(guide);}}/>)}</RoyalContentPanel>}
  {error&&!progress?<RoyalExplanationPanel style={s.panel}><Text style={s.body}>{t('readError')}</Text><Button title={t('retry')} onPress={()=>setRetry(n=>n+1)}/></RoyalExplanationPanel>:!progress?<Text style={s.body}>{t('loading')}</Text>:tab==='test'?<><Text style={s.body}>{t('practiceNotice')}</Text>{course.checks.map(e=><CheckCard key={e.id} learner={learner} specialty={specialty} exam={e} onPress={()=>setExam(e)}/>)}</>:selected?<><Text style={s.heading}>{selected.titleJa}</Text><View style={s.grid}>{Array.from({length:7},(_,day)=>{const id=selected.lessonIds[day],l=course.lessons.find(l=>l.id===id);return l?<View key={day} style={s.day}><TokuteiDayCard testID={`mfg-day-${specialty}-${day+1}`} day={day+1} title={l.titleJa} done={manufacturingLessonDone(progress,l)} onPress={()=>{setError(false);setLesson(l);}}/></View>:<View key={day} style={[s.day,s.empty]}><Text style={s.body}>—</Text></View>;})}</View></>:<View style={s.grid}>{info.weeks.map((w,i)=><View key={w.id} style={s.week}><Button title={`第${w.number}週\n${w.titleJa}`} onPress={()=>setWeek(i)}/></View>)}</View>}
@@ -79,7 +83,9 @@ function Attempt({learner,specialty,exam,onBack}:{learner:string;specialty:Speci
  };
  const q=attempt?exam.questions[attempt.currentQuestion]:null,result=attempt?gradeTest(exam,attempt.answers):null;
  const translated=q&&showTranslation?manufacturingQuestionTranslation(q,locale):null;
- return <Surface reading><TokuteiHeader title={exam.titleJa} onBack={()=>{if(saving)return;if(error==='write')setConfirm('leave');else onBack();}}/><ScrollView contentContainerStyle={s.content}>
+ const back=()=>{if(saving)return;if(error==='write')setConfirm('leave');else onBack();};
+ useManufacturingBack(back);
+ return <Surface reading><TokuteiHeader title={exam.titleJa} onBack={back}/><ScrollView contentContainerStyle={s.content}>
  {!attempt?<><Text style={[s.body,{color:colors.text}]}>{error==='invalid'?t('recordMismatch'):error?t('readError'):t('loading')}</Text>{error&&<Button title={t('retry')} onPress={()=>setRetry(n=>n+1)}/>} {error==='invalid'&&<Button title={t('restart')} onPress={()=>setConfirm('restart')}/>}</>:q&&<>
  {error==='write'&&<><Text accessibilityRole="alert" style={[s.body,{color:colors.text}]}>{t('answerSaveError')}</Text><Button title={t('retry')} disabled={saving} onPress={()=>{if(latest.current)persist(latest.current);}}/></>}
  <ReadingAppearanceControl/>{locale!=='ja'&&<Button title={showTranslation?t('translationHide'):t('translationShow')} onPress={()=>setShowTranslation(v=>!v)}/>}
