@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "reviewer": "independent_AI_surface_lane_caption_comparison",
+  "scope": "Direct comparison of one canonical Japanese diagram caption and all12target-caption drafts only. No source-PDF, diagram geometry, runtime, typography or native/domain certification by this reviewer.",
+  "inputFile": "docs/ssw-workspace/manufacturing/batch19/diagram-captions.json",
+  "inputFileSha256": "c35fed7fd5fa0ad636c828577bafc7ec113f591023027accfb1e69988cb7cb30",
+  "canonicalReferenceFile": "docs/ssw-workspace/manufacturing/batch19/source-review.json",
+  "canonicalReferenceFileSha256": "1984b634a7e6d6c114d54c737d379ec1bb2b7f81efb951cdf5cdc56fcf570f97",
+  "lessonId": "mfg1-mechanical-lesson-048",
+  "captionJa": "この資料の基本例では、表面の幾何公差は外形線またはその延長線へ矢印で示し、軸線の幾何公差は寸法線の延長線へ矢印で示します。データムは文字と三角形の記号で識別し、表面は外形線またはその延長線、軸線は寸法線の延長線への取付けを確認します。四つの模式図は取付位置の比較用で、公差値・実寸・測定合否を指定するものではありません。実際の図面の適用規格と指示を優先します。",
+  "captionJaSha256": "6ee71ecc3a4a9d64a5364325f1146b67cb39323c3721a363b47693231e120fca",
+  "method": "Read each complete target caption against the complete Japanese caption, comparing both attachment rules for tolerance and datum, letter/triangle identity, basic-example qualification, four-schematic scope and the three expressly excluded claims. Hashes calculated after semantic comparison; hashes prove evidence identity, not semantic correctness.",
+  "checks": [
+    "surface_tolerance_outline_or_outline_extension",
+    "axis_tolerance_dimension_line_extension",
+    "datum_letter_and_triangle",
+    "surface_datum_outline_or_outline_extension",
+    "axis_datum_dimension_line_extension",
+    "four_schematics_attachment_comparison_only",
+    "no_tolerance_value_actual_dimension_or_measurement_acceptance",
+    "actual_drawing_standards_and_instructions_take_priority",
+    "basic_source_example_not_universal_rule",
+    "no_substitution_of_centreline_for_dimension_line_extension"
+  ],
+  "locales": {
+    "en": {
+      "entrySha256": "d0c8e957df5d65586e33eff0f3b667e6c419606931db11a4bb58a7d33d6095e8",
+      "textSha256": "1f8a9e3a08c37d5b027a0b2b03dbce28b252f732409d1e0ca2b31d3b466d70a1",
+      "sourceJaSha256": "6ee71ecc3a4a9d64a5364325f1146b67cb39323c3721a363b47693231e120fca",
+      "comparedDirectlyWithJapanese": true,
+      "checksPassed": [
+        "surface_tolerance_outline_or_outline_extension",
+        "axis_tolerance_dimension_line_extension",
+        "datum_letter_and_triangle",
+        "surface_datum_outline_or_outline_extension",
+        "axis_datum_dimension_line_extension",
+        "four_schematics_attachment_comparison_only",
+        "no_tolerance_value_actual_dimension_or_measurement_acceptance",
+        "actual_drawing_standards_and_instructions_take_priority",
+        "basic_source_example_not_universal_rule",
+        "no_substitution_of_centreline_for_dimension_line_extension"
+      ],
+      "verdict": "pass_scoped_ai_comparison",
+      "note": "Outline/outline extension versus dimension-line extension remains explicit for both tolerance and datum attachments; all limits retained.",
+      "findings": []
+    },
+    "vi": {
+      "entrySha256": "05c057e21668e1c6b86c87ce383133009a0a42837bb89200f82df7fd4f9af42e",
+      "textSha256": "e777a028cf1e507b32eead9e73f42578decfab7976123c39e9216a6e69189398",
+      "sourceJaSha256": "6ee71ecc3a4a9d64a5364325f1146b67cb39323c3721a363b47693231e120fca",
+      "comparedDirectlyWithJapanese": true,
+      "checksPassed": [
+        "surface_tolerance_outline_or_outline_extension",
+        "axis_tolerance_dimension_line_extension",
+        "datum_letter_and_triangle",
+        "surface_datum_outline_or_outline_extension",
+        "axis_datum_dimension_line_extension",
+        "four_schematics_attachment_comparison_only",
+        "no_tolerance_value_actual_dimension_or_measurement_acceptance",
+        "actual_drawing_standards_and_instructions_take_priority",
+        "basic_source_example_not_universal_rule",
+        "no_substitution_of_centreline_for_dimension_line_extension"
+      ],
+      "verdict": "pass_scoped_ai_comparison",
+      "note": "Đường bao/phần kéo dài and phần kéo dài của đường kích thước remain distinct; chuẩn and all schematic-only limits retained.",
+      "findings": []
+    },
+    "id": {
+      "entrySha256": "19bfea0890e9f8a5c9d0ec83fc787851fb88519a0deae1117aac99d97a03ff43",
+      "textSha256": "406d03e68ac8fce5367059de4600a8e4dca119a2a1512d9f3597e8433cdd3bc6",
+      "sourceJaSha256": "6ee71ecc3a4a9d64a5364325f1146b67cb39323c3721a363b47693231e120fca",
+      "comparedDirectlyWithJapanese": true,
+      "checksPassed": [
+        "surface_tolerance_outline_or_outline_extension",
+        "axis_tolerance_dimension_line_extension",
+        "datum_letter_and_triangle",
+        "surface_datum_outline_or_outline_extension",
+        "axis_datum_dimension_line_extension",
+        "four_schematics_attachment_comparison_only",
+        "no_tolerance_value_actual_dimension_or_measurement_acceptance",
+        "actual_drawing_standards_and_instructions_take_priority",
+        "basic_source_example_not_universal_rule",
+        "no_substitution_of_centreline_for_dimension_line_extension"
+      ],
+      "verdict": "pass_scoped_ai_comparison",
+      "note": "Garis kontur/perpanjangannya and perpanjangan garis ukuran remain distinct; datum triangle/letter and limits retained.",
+      "findings": []
+    },
+    "zh-CN": {
+      "entrySha256": "4e411f083bdc0b1a010ffc28a280503b815a44d20bf67702e7edda31cbb91bf1",
+      "textSha256": "bb89bca69df929d82fc0eb80b0e23ef8823860b2c7e756ae0f9275e74591a542",
+      "sourceJaSha256": "6ee71ecc3a4a9d64a5364325f1146b67cb39323c3721a363b47693231e120fca",
+      "comparedDirectlyWithJapanese": true,
+      "checksPassed": [
+        "surface_tolerance_outline_or_outline_extension",
+        "axis_tolerance_dimension_line_extension",
+        "datum_letter_and_triangle",
+        "surface_datum_outline_or_outline_extension",
+        "axis_datum_dimension_line_extension",
+        "four_schematics_attachment_comparison_only",
+        "no_tolerance_value_actual_dimension_or_measurement_acceptance",
+        "actual_drawing_standards_and_instructions_take_priority",
+        "basic_source_example_not_universal_rule",
+        "no_substitution_of_centreline_for_dimension_line_extension"
+      ],
+      "verdict": "pass_scoped_ai_comparison",
+      "note": "轮廓线及其延长线 versus 尺寸线延长线 correctly distinguishes surface and axis; 基准字母/三角形 and limits retained.",
+      "findings": []
+    },
+    "zh-TW": {
+      "entrySha256": "a0257fc9cb57457c39c7556fb5961493651924e2b1abf08f72384084e1388a5b",
+      "textSha256": "5e45eff703b65e4f42966f10018e57a32137fb5ea0cdb8e969509256c32e67a0",
+      "sourceJaSha256": "6ee71ecc3a4a9d64a5364325f1146b67cb39323c3721a363b47693231e120fca",
+      "comparedDirectlyWithJapanese": true,
+      "checksPassed": [
+        "surface_tolerance_outline_or_outline_extension",
+        "axis_tolerance_dimension_line_extension",
+        "datum_letter_and_triangle",
+        "surface_datum_outline_or_outline_extension",
+        "axis_datum_dimension_line_extension",
+        "four_schematics_attachment_comparison_only",
+        "no_tolerance_value_actual_dimension_or_measurement_acceptance",
+        "actual_drawing_standards_and_instructions_take_priority",
+        "basic_source_example_not_universal_rule",
+        "no_substitution_of_centreline_for_dimension_line_extension"
+      ],
+      "verdict": "pass_scoped_ai_comparison",
+      "note": "輪廓線及其延長線 versus 尺度線延長線 correctly distinguishes surface and axis; 基準字母/三角形 and limits retained.",
+      "findings": []
+    },
+    "hi": {
+      "entrySha256": "cd34378030c1abe2f4915e8af3d2b13f79ced9bd8440c2a738f4b8017d3eb35e",
+      "textSha256": "ad9c3e22349edf999431e8a1cb47d8788129ce21fd8d6d91943f595320751640",
+      "sourceJaSha256": "6ee71ecc3a4a9d64a5364325f1146b67cb39323c3721a363b47693231e120fca",
+      "comparedDirectlyWithJapanese": true,
+      "checksPassed": [
+        "surface_tolerance_outline_or_outline_extension",
+        "axis_tolerance_dimension_line_extension",
+        "datum_letter_and_triangle",
+        "surface_datum_outline_or_outline_extension",
+        "axis_datum_dimension_line_extension",
+        "four_schematics_attachment_comparison_only",
+        "no_tolerance_value_actual_dimension_or_measurement_acceptance",
+        "actual_drawing_standards_and_instructions_take_priority",
+        "basic_source_example_not_universal_rule",
+        "no_substitution_of_centreline_for_dimension_line_extension"
+      ],
+      "verdict": "pass_scoped_ai_comparison",
+      "note": "बाहरी रूपरेखा/उसका विस्तार versus आयाम रेखा का विस्तार correctly preserves the attachment distinction; डेटम and limits retained.",
+      "findings": []
+    },
+    "bn": {
+      "entrySha256": "867d34c5682e4c8085f1e1414db6b14c1e312735e6fe57c06193a048703e4004",
+      "textSha256": "ba2c79ec16da1df3dab692cbac9784b5ca3d60f27a5be9685739bf0deeaafc2e",
+      "sourceJaSha256": "6ee71ecc3a4a9d64a5364325f1146b67cb39323c3721a363b47693231e120fca",
+      "comparedDirectlyWithJapanese": true,
+      "checksPassed": [
+        "surface_tolerance_outline_or_outline_extension",
+        "axis_tolerance_dimension_line_extension",
+        "datum_letter_and_triangle",
+        "surface_datum_outline_or_outline_extension",
+        "axis_datum_dimension_line_extension",
+        "four_schematics_attachment_comparison_only",
+        "no_tolerance_value_actual_dimension_or_measurement_acceptance",
+        "actual_drawing_standards_and_instructions_take_priority",
+        "basic_source_example_not_universal_rule",
+        "no_substitution_of_centreline_for_dimension_line_extension"
+      ],
+      "verdict": "pass_scoped_ai_comparison",
+      "note": "বাইরের আকৃতির রেখা/তার বর্ধিত অংশ versus মাত্রারেখার বর্ধিত অংশ preserves distinct attachment rules; ডেটাম and limits retained.",
+      "findings": []
+    },
+    "ne": {
+      "entrySha256": "113ccb0a2b16fc9fc3ce5c9933af65a08251bbbb91d827bdae32bfc2a6e530e7",
+      "textSha256": "351456fa2e9c1ea15483150b56556fc1126f660ef06d8e7856425aecdde423b6",
+      "sourceJaSha256": "6ee71ecc3a4a9d64a5364325f1146b67cb39323c3721a363b47693231e120fca",
+      "comparedDirectlyWithJapanese": true,
+      "checksPassed": [
+        "surface_tolerance_outline_or_outline_extension",
+        "axis_tolerance_dimension_line_extension",
+        "datum_letter_and_triangle",
+        "surface_datum_outline_or_outline_extension",
+        "axis_datum_dimension_line_extension",
+        "four_schematics_attachment_comparison_only",
+        "no_tolerance_value_actual_dimension_or_measurement_acceptance",
+        "actual_drawing_standards_and_instructions_take_priority",
+        "basic_source_example_not_universal_rule",
+        "no_substitution_of_centreline_for_dimension_line_extension"
+      ],
+      "verdict": "pass_scoped_ai_comparison",
+      "note": "बाहिरी आकाररेखा/त्यसको विस्तार versus आयाम रेखाको विस्तार preserves distinct attachment rules; डेटम and limits retained.",
+      "findings": []
+    },
+    "my": {
+      "entrySha256": "ccdc0ce41f8c832102200feb3522ec7886351ac2674d735effd5a429be327965",
+      "textSha256": "44cf40cf5577eb64264991e97855557804c37f89ec0fe4ac67b040cf11c74781",
+      "sourceJaSha256": "6ee71ecc3a4a9d64a5364325f1146b67cb39323c3721a363b47693231e120fca",
+      "comparedDirectlyWithJapanese": true,
+      "checksPassed": [
+        "surface_tolerance_outline_or_outline_extension",
+        "axis_tolerance_dimension_line_extension",
+        "datum_letter_and_triangle",
+        "surface_datum_outline_or_outline_extension",
+        "axis_datum_dimension_line_extension",
+        "four_schematics_attachment_comparison_only",
+        "no_tolerance_value_actual_dimension_or_measurement_acceptance",
+        "actual_drawing_standards_and_instructions_take_priority",
+        "basic_source_example_not_universal_rule",
+        "no_substitution_of_centreline_for_dimension_line_extension"
+      ],
+      "verdict": "pass_scoped_ai_comparison",
+      "note": "အပြင်ပုံသဏ္ဌာန်မျဉ်း/ဆက်တိုးမျဉ်း versus အတိုင်းအတာမျဉ်း၏ ဆက်တိုးမျဉ်း preserves surface/axis distinction; datum letters/triangle and limits retained.",
+      "findings": []
+    },
+    "th": {
+      "entrySha256": "f7fba721da5b9c70ce7f30ae3b2c79f1e82f91286415d2962a27e85d5fbbeb36",
+      "textSha256": "e7c7b196359e44c6d9d87470eb48f9016275e109667f1b9a8909a6d7310707c0",
+      "sourceJaSha256": "6ee71ecc3a4a9d64a5364325f1146b67cb39323c3721a363b47693231e120fca",
+      "comparedDirectlyWithJapanese": true,
+      "checksPassed": [
+        "surface_tolerance_outline_or_outline_extension",
+        "axis_tolerance_dimension_line_extension",
+        "datum_letter_and_triangle",
+        "surface_datum_outline_or_outline_extension",
+        "axis_datum_dimension_line_extension",
+        "four_schematics_attachment_comparison_only",
+        "no_tolerance_value_actual_dimension_or_measurement_acceptance",
+        "actual_drawing_standards_and_instructions_take_priority",
+        "basic_source_example_not_universal_rule",
+        "no_substitution_of_centreline_for_dimension_line_extension"
+      ],
+      "verdict": "pass_scoped_ai_comparison",
+      "note": "เส้นขอบรูป/ส่วนต่อ versus ส่วนต่อของเส้นบอกขนาด preserves surface/axis distinction; ดาตัม letters/triangle and limits retained.",
+      "findings": []
+    },
+    "km": {
+      "entrySha256": "8e03a1831385e08c66df8e6f336f56859cc04af1dc7a9b84d84f3795ec359d2d",
+      "textSha256": "a2042f616531f0226f4df71f08a1b7e02cc29d849a3b2eee3b164b40af0d0b05",
+      "sourceJaSha256": "6ee71ecc3a4a9d64a5364325f1146b67cb39323c3721a363b47693231e120fca",
+      "comparedDirectlyWithJapanese": true,
+      "checksPassed": [
+        "surface_tolerance_outline_or_outline_extension",
+        "axis_tolerance_dimension_line_extension",
+        "datum_letter_and_triangle",
+        "surface_datum_outline_or_outline_extension",
+        "axis_datum_dimension_line_extension",
+        "four_schematics_attachment_comparison_only",
+        "no_tolerance_value_actual_dimension_or_measurement_acceptance",
+        "actual_drawing_standards_and_instructions_take_priority",
+        "basic_source_example_not_universal_rule",
+        "no_substitution_of_centreline_for_dimension_line_extension"
+      ],
+      "verdict": "pass_scoped_ai_comparison",
+      "note": "បន្ទាត់គ្រោងខាងក្រៅ/បន្ទាត់បន្ត versus បន្ទាត់បន្តនៃបន្ទាត់កំណត់វិមាត្រ preserves surface/axis distinction; datum letters/triangle and limits retained.",
+      "findings": []
+    },
+    "tl": {
+      "entrySha256": "4e173baecc9711ee4c92919e3d21dac5ede1a81bcf3115b41cdf7c2343ce92f5",
+      "textSha256": "3f4f1f8a5b2b167d9dfa31deffb86fcac2a0771fa727fbe46798e91abeb93163",
+      "sourceJaSha256": "6ee71ecc3a4a9d64a5364325f1146b67cb39323c3721a363b47693231e120fca",
+      "comparedDirectlyWithJapanese": true,
+      "checksPassed": [
+        "surface_tolerance_outline_or_outline_extension",
+        "axis_tolerance_dimension_line_extension",
+        "datum_letter_and_triangle",
+        "surface_datum_outline_or_outline_extension",
+        "axis_datum_dimension_line_extension",
+        "four_schematics_attachment_comparison_only",
+        "no_tolerance_value_actual_dimension_or_measurement_acceptance",
+        "actual_drawing_standards_and_instructions_take_priority",
+        "basic_source_example_not_universal_rule",
+        "no_substitution_of_centreline_for_dimension_line_extension"
+      ],
+      "verdict": "pass_scoped_ai_comparison",
+      "note": "Outline/ekstensiyon versus ekstensiyon ng dimension line remains distinct; datum letters/triangle and all limits retained.",
+      "findings": []
+    }
+  },
+  "findings": [],
+  "reviewedCaptionPairs": 12,
+  "reviewedAssertionsPerCaption": 10,
+  "independentAIComparisonPerformed": true,
+  "status": "scoped_independent_ai_comparison_pass",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "releaseReady": false,
+  "runtimeModified": false,
+  "limitations": [
+    "AI comparison only; terminology and fluency remain pending native/domain review.",
+    "Source-specific convention is retained; no current engineering standard certification.",
+    "No visual glyph/layout or device verification by this reviewer."
+  ],
+  "referenceMetadataRefresh": {
+    "reason": "Mechanical reviewer finalized independent asset visual review. Canonical Japanese caption text and hash were checked unchanged; translation input bytes remain identical. Only whole-reference-file digest refreshed; no regeneration of semantic reviews.",
+    "previousReferenceFileSha256": "f9deab68398a78cae01079501334920883af349de1c64138a979513978e37a01",
+    "currentReferenceFileSha256": "1984b634a7e6d6c114d54c737d379ec1bb2b7f81efb951cdf5cdc56fcf570f97",
+    "canonicalCaptionUnchanged": true,
+    "translationInputUnchanged": true
+  }
+}

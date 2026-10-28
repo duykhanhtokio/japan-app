@@ -40,7 +40,7 @@ def main():
     parser.add_argument('--report', type=Path, default=ROOT / DOCS / 'batch17/integration-qa.json')
     args = parser.parse_args()
     sandbox = Path(tempfile.mkdtemp(prefix='manufacturing-batch17-rebuild-'))
-    for relative in (DATA, DOCS, SCRIPTS):
+    for relative in (DATA, DOCS, SCRIPTS, 'src/components/manufacturing', 'assets/manufacturing/diagrams'):
         target = sandbox / relative
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copytree(ROOT / relative, target, copy_function=shutil.copy2)

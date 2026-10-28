@@ -48,6 +48,7 @@ def staged_translation_resolver(selection):
  def finish():assert used==set(selection),'Unused translation selection entries: '+','.join(sorted(set(selection)-used))
  return add,resolve,finish
 def main():
+ runpy.run_path(str(ROOT/'scripts/manufacturing/apply-diagram-extension.py'))['preflight']()
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/check-source-review-bindings.py')],check=True,capture_output=True,text=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/integrate-source-guides.py')],check=True,capture_output=True,text=True)
  guide_report=read(STAGE/'source-guides/integration-qa.json')
@@ -206,10 +207,10 @@ def main():
  progress=read(DOCS/'progress.json');progress.setdefault('batch','12-in-progress');progress.update(authoredJapaneseLessons=len(all_lessons),aiEditorialReviewedJapaneseLessons=len(all_lessons),integratedPreviewLessons=len(all_lessons),weeklyChecks=sum(len(c['checks']) for c in courses.values()),weeklyQuestions=len(all_questions),tocEntriesWithDraftLessons=sum(bool(k.get('lessonIds')) for k in knowledge.values()),translatedLessonLocalePairs=sum(e['lessonCount'] for e in registry['locales'].values()),translatedQuestionLocalePairs=sum(e['questionCount'] for e in registry['locales'].values()),translatedDiagramCaptionLocalePairs=sum(len(x) for x in caption_data['locales'].values()),fullyDraftTranslatedLocalesForAuthoredContent=complete,partiallyDraftTranslatedLocales=partial,wholeCurriculumComplete=False,releaseReady=False)
  progress['draftUiLabelsPerLocale']=len(read(DATA/'ui-translations.json')['locales']['ja'])
  progress['originalMocksCompleted']=30
- progress['createdDiagrams']=18;progress['usedDiagrams']=18
+ progress['createdDiagrams']=19;progress['usedDiagrams']=19
  progress['mockTranslationCoverage']={l:len(existing_mock_locales.get(l,{})) for l in targets}
  progress['diagramTranslationCoverage']={l:len(caption_data['locales'].get(l,{})) for l in targets}
- progress['fullyDraftTranslatedLocalesForAllCurrentContent']=[l for l in complete if len(existing_mock_locales.get(l,{}))==1200 and len(caption_data['locales'].get(l,{}))==18 and guide_report['coverage'].get(l,0)==5]
+ progress['fullyDraftTranslatedLocalesForAllCurrentContent']=[l for l in complete if len(existing_mock_locales.get(l,{}))==1200 and len(caption_data['locales'].get(l,{}))==19 and guide_report['coverage'].get(l,0)==5]
  progress['sourceReferenceGuides']=guide_report['guides'];progress['sourceGuideTranslationCoverage']=guide_report['coverage'];progress['translatedSourceGuideLocalePairs']=guide_report['translatedGuidePairs']
  progress['specificallyAuditedTocGapsWithReferenceGuides']=sum(bool(k.get('referenceGuideIds')) for k in knowledge.values())
  progress['aiDraftDeliveryComplete']=len(progress['fullyDraftTranslatedLocalesForAllCurrentContent'])==12
@@ -224,5 +225,6 @@ def main():
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-editorial-patches.py')],check=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-locale-revisions.py')],check=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-reference-guide-extension.py')],check=True)
+ subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-diagram-extension.py')],check=True)
  print(json.dumps({'lessons':len(all_lessons),'weeklyQuestions':len(all_questions),'weeks':progress['previewWeeksBySpecialty'],'translatedLessonPairs':progress['translatedLessonLocalePairs'],'translatedQuestionPairs':progress['translatedQuestionLocalePairs'],'completeDraftLocales':complete,'courseComplete':False}))
 if __name__=='__main__':main()

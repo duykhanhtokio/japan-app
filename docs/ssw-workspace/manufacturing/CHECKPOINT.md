@@ -1,3 +1,15 @@
+# Manufacturing SSW1 — batch19 six-AI attachment diagram, 2026-10-28
+
+Six requested AI lanes reviewed mechanical source, electrical/compiler risks, surface source/independent captions, translations, controlled visuals and actual reader integration. Added one original four-panel surface/axis tolerance and datum attachment diagram to mechanical lesson048. Physical source102–103 (printed94–95) was visually compared; the axis-datum panel is explicitly an original construction derived from source prose. Blank tolerance frames intentionally omit characteristic symbols/values. Existing lesson082 symbol chart, all262core lessons,456weekly questions,30mocks/1200questions,8reference guides and learner source hashes remain unchanged.
+
+All12direct-Japanese caption drafts received independent scoped AI comparison (120 bounded assertions). Current total19diagrams/228caption pairs. Existing18assets/captions/component mappings are preserved through exact historical inputs plus one approved extension; the compiler checks source/visual/caption review digests and rejects unknown current snapshots before writes. Independent code review found a progress-locale acceptance gap; fixed before release and covered by negative fixtures. CourseComplete/releaseReady/native/domain flags remainfalse.
+
+Actual RNWeb reader PASS26flows across13UIlocales at320x568 and932x430: real PNG load, all12target toggles/accessibility labels, aspect ratio, real horizontal/vertical pan, close and no page overflow;0pageerrors. Six screenshots retained, representative JA/VI views inspected. QA uses Royal/safe-area/storage/decorative-image adapters and Japanese font; no fullExpo/native-device/all-script glyph certification. Detailed validation and rebuild evidence:batch19/session-evidence.json. No background process implied.
+
+Next: remaining controlled measurement/geometric/arc visuals, the two optional source-bound electrical practical refinements, exhaustive source-object coverage and native/domain/physical-device review. SSW2 excluded.
+
+---
+
 # Manufacturing SSW1 — batch18 three new reference guides integrated, 2026-10-28
 
 Six explicitly requested AI workers finalized and independently compared three Japanese reference guides and all36direct-Japanese target translations: tolerance-grade/dimension annotation, leakage/earthing/continuing fault hazards, and anodizing pretreatment/jig roles. All480translated prose-field pairs received scoped independent AI comparison; finalMY/NEtechnical andVI/TLclarity corrections are bound in the review receipts. The3guides are now integrated into the existing reader. Native/domain/full-source certification remainsfalse.
