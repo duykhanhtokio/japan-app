@@ -1,0 +1,52 @@
+{
+  "decision": "accept data-only kana normalization",
+  "actualEvaluator": "src/components/world/japanese-ruby-data.ts hasAlignedRuby evaluated using node:module stripTypeScriptTypes and vm",
+  "cases": [
+    {
+      "text": "健康チェック",
+      "before": "けんこうチェック",
+      "after": "けんこうちぇっく",
+      "beforeAligned": false,
+      "afterAligned": true,
+      "kanaEquivalent": true
+    },
+    {
+      "text": "食品ロス",
+      "before": "しょくひんロス",
+      "after": "しょくひんろす",
+      "beforeAligned": false,
+      "afterAligned": true,
+      "kanaEquivalent": true
+    }
+  ],
+  "affected": [
+    {
+      "file": "lessons.2.ja.json",
+      "lessonId": "food-2-010",
+      "termIndex": 0,
+      "term": {
+        "ja": "健康チェック",
+        "reading": "けんこうチェック"
+      }
+    },
+    {
+      "file": "lessons.2.ja.json",
+      "lessonId": "food-2-025",
+      "termIndex": 2,
+      "term": {
+        "ja": "食品ロス",
+        "reading": "しょくひんロス"
+      }
+    }
+  ],
+  "scope": "Read-only independent check. Katakana-to-hiragana normalization preserves the exact kana sequence/pronunciation; small ェ becomes small ぇ, permitted by Unicode Script=Hiragana. No renderer change needed.",
+  "requiredRootIntegration": [
+    "Recompute the two affected canonical lesson source hashes using existing hashing contract.",
+    "Rebind unchanged translations only after confirming all 12 locales still match the canonical lesson content.",
+    "Validate new hashes accepted and old hashes rejected; retain AI/unreviewed flags."
+  ],
+  "limitations": [
+    "Syntax/alignment and kana equivalence checked; not native/domain pronunciation certification.",
+    "No repo edits."
+  ]
+}

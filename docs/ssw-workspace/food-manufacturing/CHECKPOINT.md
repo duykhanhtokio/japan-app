@@ -1,3 +1,19 @@
+# Completion audit — 2026-10-28 — remaining acceptance work explicit
+
+Base `e0e8d76a845f3aa3438edd5ae1d877afca63dd1d`; branch `feature/food-completion-audit-20261028`.
+
+- Six AI audit streams completed the source/question inventory, translation/terminology, editorial, ruby/runtime readiness and visual/source evidence review. Final user report: `COMPLETION_REPORT.md`; machine-readable current state: `completion-summary.json`.
+- q204 omission resolved with generic hygiene-response wording, preserving all options/answers/explanations and twelve target texts. Only its source hashes and food-1-mock-10 revision change; historical copy is in exams.1.03-06.ja.json and retains its different answer ordering. Actual adapter/state verifies old hashes and saved attempts rejected, current translations/restoration/40-of-40 grading valid, other 32 exam revisions unchanged.
+- Two mixed-kana readings normalized to hiragana in food-2-010/025; lesson hashes and 24 target bindings updated without target text changes. Actual ruby gate now accepts all 238 term occurrences. Full-body furigana and pronunciation/device review remain pending.
+- Corrected the previous standalone-versus-runtime caption gap: 13 prior accepted leaves copied into embedded diagrams; 10 new source-backed leaves (including corresponding standalone copies). All 23 independently peer reviewed and exact-before/numeric/metadata checked. No runtime/UI code or source knowledge changed.
+- PASS content structure, actual adapter 10,068 valid/stale-rejection pairs and 396 titles, targeted actual state/ruby regression, diagram leaf parity and JLPT lock 10/10. Inventory stays 78 lessons/936 lesson translations and 839 questions/10,068 question translations. All 839 question references match the source-map candidate IDs; zero missing/stale/orphan IDs.
+- Formal full competency certification remains 0/158; candidate lesson references 153/158 and candidate question references 95/158. Historical canonical pixel review covers 30/251 pages, not full visual knowledge. Four concept diagrams serve 10 lessons. Six locales/source-absent 2号 terms, detailed competency/visual mapping, full-body ruby, illustrations, native/domain review and actual build/device acceptance remain open.
+- Environment readiness is blocked by missing project dependencies, 5,545 tracked assets omitted in this sparse checkout, and approximately 170–192 MiB free at this audit. No installs, full Expo, new browser or native/device tests attempted. Old browser labels/counts are now explicitly historical. `scopeComplete=false`, `productionRelease=false`.
+
+Next: follow completion-summary remaining list and terminology-standard.json. Preserve existing work, food-sector isolation and locked JLPT UI. Restore dependencies/assets only when sufficient storage is available.
+
+---
+
 # Terminology standard — 2026-10-28 — six supplied locales
 
 Base `21e9862d6075649778a42ee129963b15fb7b28f5`; branch `feature/food-terminology-standard-20261028`.
