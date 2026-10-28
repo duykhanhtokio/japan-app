@@ -1,3 +1,17 @@
+# Batch18 — 2026-10-28
+
+Base `00cb2ec727b85116fe398d3638e1c023f62532b4`; branch `feature/food-manufacturing-batch18-20261028`.
+
+- Added 219 question–locale pairs for 2号 mock05: BN 35, HI 36, NE 36, TH 32, MY 40 and KM 40. Preserved 21 existing form entries and four existing titles; added two titles. Mock01–05 of both levels are now complete in all 12 locales. Total: 5,896/10,068; 4,172 remain. See `batch-18-form-coverage.json` for exact IDs.
+- All 5,677 prior question/title objects, 839 Japanese questions, 78 lessons, 33 assessment revisions and runtime/UI files preserved. Exact missing membership, source hashes, four ordered choices/reasons and correct-reason/main-explanation equality checked.
+- Independent AI semantic review covers all 219 new pairs. Six peer reports retain exact reviewed IDs, corrections and integrated-part hashes. AI review is not native/domain certification. Numeric-format differences and the explicit q346 arithmetic reference are recorded in `batch-18-review.json`; source PDFs were not revalidated in this translation batch.
+- PASS: content structure; actual Node adapter with 5,896 valid and stale-source rejection checks, plus 4,172 missing pairs without fallback; state resume/scoring/revision/storage isolation; approved JLPT UI lock 10/10.
+- Historical browser evidence remains at 3,460 pairs; 2,436 current pairs await browser QA. React, react-dom, react-native-web and esbuild are unavailable here. No new browser/full Expo/native/device evidence. Full-body furigana, complete source competency/visual verification, illustrations and native/domain review remain open. `scopeComplete=false`; `productionRelease=false`.
+
+Next: continue exact missing mock06–10 IDs from `batch-18-form-coverage.json`. Keep food work separate from unrelated sectors and JLPT.
+
+---
+
 # Batch17 — 2026-10-28
 
 Base `7bf77e6d7fdd7e178db0d38b9eae0d0a78eb1b12`; branch `feature/food-manufacturing-batch17-20261028`.

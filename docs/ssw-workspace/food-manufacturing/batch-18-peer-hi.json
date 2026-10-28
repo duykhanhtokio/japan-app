@@ -1,0 +1,82 @@
+{
+  "reviewType": "independent_ai_semantic_review",
+  "locale": "hi",
+  "examId": "food-2-mock-05",
+  "reviewedQuestionCount": 36,
+  "reviewedQuestionIds": [
+    "food-2-q211",
+    "food-2-q171",
+    "food-2-q129",
+    "food-2-q096",
+    "food-2-q317",
+    "food-2-q236",
+    "food-2-q204",
+    "food-2-q392",
+    "food-2-q356",
+    "food-2-q210",
+    "food-2-q365",
+    "food-2-q271",
+    "food-2-q286",
+    "food-2-q188",
+    "food-2-q326",
+    "food-2-q336",
+    "food-2-q168",
+    "food-2-q287",
+    "food-2-q234",
+    "food-2-q131",
+    "food-2-q225",
+    "food-2-q381",
+    "food-2-q135",
+    "food-2-q111",
+    "food-2-q364",
+    "food-2-q108",
+    "food-2-q318",
+    "food-2-q224",
+    "food-2-q205",
+    "food-2-q391",
+    "food-2-q337",
+    "food-2-q367",
+    "food-2-q346",
+    "food-2-q266",
+    "food-2-q153",
+    "food-2-q281"
+  ],
+  "reviewedFields": [
+    "prompt",
+    "all four ordered options",
+    "main explanation",
+    "all four ordered option reasons",
+    "title"
+  ],
+  "corrections": [
+    {
+      "id": "food-2-q336",
+      "field": "prompt",
+      "before": "पूरे लॉट का माना जा रहा हिस्टोग्राम एक तरफ अचानक कट गया है। एक प्रभारी ने बीच में बाहरी मान हटा दिए थे। उचित कार्रवाई क्या है?",
+      "after": "पूरे लॉट का माना जा रहा हिस्टोग्राम एक तरफ अचानक कट गया है। एक प्रभारी ने बीच में अत्यधिक अलग मान (आउटलायर) हटा दिए थे। उचित कार्रवाई क्या है?",
+      "reason": "Clarify statistical outliers; original 外れ値 does not mean externally sourced values.",
+      "corrected": true
+    },
+    {
+      "id": "food-2-q188",
+      "field": "options[3]",
+      "before": "असामान्यता आने तक प्रभारी और उत्पाद के निपटान, दोनों को अनिर्धारित रखें।",
+      "after": "असामान्यता आने तक प्रभारी और उत्पाद पर की जाने वाली कार्रवाई, दोनों को अनिर्धारित रखें।",
+      "reason": "製品の扱い is generic product handling/actions, not necessarily disposal.",
+      "corrected": true
+    }
+  ],
+  "findings": "All36 new entries compared directly with exact canonical Japanese. Preserved supervisory roles, prohibitions, scope, and q346 hypothetical100g/900bags/99kg/9kg/no-rounding calculation. Correct-option reason equals main explanation. Two precision corrections applied. Existing4HI objects not edited.",
+  "checks": {
+    "exactMissingMembership": true,
+    "canonicalHashes": true,
+    "fourOrderedOptionsAndReasons": true,
+    "mainExplanationEqualsCorrectReason": true,
+    "AIUnreviewedFlagsPreserved": true
+  },
+  "nativeSpeakerReviewed": false,
+  "domainExpertReviewed": false,
+  "browserTested": false,
+  "reviewedArtifactSha256": "0595acbfa16afebb33cc129cb1b236eac6564a7d0d4724b3b575ab9554053a06",
+  "integratedPartSha256": "0595acbfa16afebb33cc129cb1b236eac6564a7d0d4724b3b575ab9554053a06"
+}
