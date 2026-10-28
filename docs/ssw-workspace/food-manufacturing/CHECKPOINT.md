@@ -1,3 +1,17 @@
+# Batch21 — 2026-10-28
+
+Base `133cdf823e6746f32cda6c341af37c880ed978f4`; branch `feature/food-manufacturing-batch21-20261028`.
+
+- Six authoring assignments added 394 question–locale pairs and ten titles for 1号 mock07. ID/TL/BN/HI/NE/MY/KM/ZH-CN/ZH-TW: 40 each; TH: 34. Six preexisting Thai form entries preserved. Mock01–06 of both levels and 1号 mock07 are now complete in all 12 locales. Total: 6,883/10,068; 3,185 remain. Exact IDs: `batch-21-form-coverage.json`.
+- All 6,489 prior question/title objects, 839 Japanese questions, 78 lessons, 33 assessment revisions and runtime/UI preserved. Missing membership, canonical source hashes, four ordered choices/reasons and correct-reason/main-explanation equality checked. Main `exams.ja.json` membership is authoritative; historical split files are not.
+- Independent AI semantic review covers all 394 new pairs. Ten peer reports contain exact reviewed IDs, corrections and final integrated-part hashes. Explicit references cover negative-temperature ordering q108, hypothetical/nonstandard sample ratio q227, two-step-only approximate handwash sum q128 and fictional elapsed-time q184. AI review is not native/domain certification; source PDFs were not revalidated here.
+- PASS: content structure; actual Node adapter 6,883 valid/stale-source rejection checks, plus 3,185 missing pairs without fallback; state resume/scoring/revision/storage isolation; approved JLPT UI lock 10/10.
+- Historical browser evidence remains 3,460 pairs; 3,423 current pairs await browser QA. No new browser/full Expo/native/device evidence. Full-body furigana, complete source competency/visual verification, illustrations and native/domain review remain open. `scopeComplete=false`; `productionRelease=false`.
+
+Next: exact missing 2号 mock07 and mock08–10 IDs from `batch-21-form-coverage.json`. Keep food separate from unrelated sectors and JLPT.
+
+---
+
 # Batch20 — 2026-10-28
 
 Base `0f89111c0bc5f564952e45e1a9761c200aeac13d`; branch `feature/food-manufacturing-batch20-20261028`.
