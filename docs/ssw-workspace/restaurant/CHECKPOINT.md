@@ -1,3 +1,15 @@
+# Nhà hàng / 外食業 — checkpoint 17, 2026-10-28
+
+Toàn bộ mô-đun CHƯA hoàn tất. Checkpoint16 đã qua WORK PERSISTENCE PASS 9d4075e71dfd460367814846a3038d1be27a4e1c. Lô17 phải qua commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
+
+- Sáu AI tiếp tục sáu tập bài/câu, rà chéo480đề xuất và6replacement. Loại6suffix đa nghĩa 時は/時に/物を/物と/後は/後に,thay6cụm đầy đủ đã rà lại;khử trùng vàloại4lexicon đã có,thêm470dictionary candidates theo ngữ cảnh. Không phải duyệt người bản ngữ/chuyên gia.
+- readKanjiTokens36729→37240;trường còn kanji chưa đọc3938→3674 trên7358trường;thêm264trường phủ đầy đủ. Không tự đoán kanji đơn đa nghĩa.
+- 23self-tests PASS;structural PASS. Đối chiếu Git bảo toàn toàn bộ Nhật ngoài furigana,sourceHash,đáp án/thứ tự lựa chọn;12file dịch byte-identical. Giữ đủ1440bài/11808câu/8304glossary dịch.
+- completion17-reading-review.json lưu đề xuất/peer review/rejected suffix/replacements/preservation. nativeReviewed/contextualReviewComplete vẫn false. Chưa productionExpo/native/device;không thayUI/ngànhkhác.
+- Còn3674trường furigana,source590partial,hình nhận dạng,thiết bị/hiệu năng và duyệt bản ngữ/chuyên môn. Không cam kết chạy nền sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 16, 2026-10-28
 
 Toàn bộ mô-đun CHƯA hoàn tất. Checkpoint15 đã qua WORK PERSISTENCE PASS b6e0fec198d061e7ea342e59049c4f71bb3111e2. Lô16 phải qua commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
