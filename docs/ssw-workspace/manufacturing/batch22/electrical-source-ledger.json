@@ -1,0 +1,553 @@
+{
+  "schemaVersion": 1,
+  "batch": "22",
+  "date": "2026-10-28",
+  "specialty": "electrical",
+  "scopeLevel": "1",
+  "baselineCommit": "30f79554bb20e9d096f09fbc0edb2464a1a7a30e",
+  "source": {
+    "documentId": "mfg1-electrical-source",
+    "sha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf"
+  },
+  "inputsSha256": {
+    "docs/ssw-workspace/manufacturing/page-object-inventory.json": "f2a9800cdc94ccaac79a164e6cb753768c2833ad259e1d5ccc537c593f47c1ef",
+    "docs/ssw-workspace/manufacturing/batch07-electrical-source-review.json": "10f3ce5d3d2a941ee81d649a75a02f7153a9d71e1775987d5877c2a4b3ce1df9",
+    "docs/ssw-workspace/manufacturing/batch12/electrical/source-knowledge-closure-audit.json": "8e0d36b9235c5c135c4182df31edec7f81a6548a602364953fae8821ed3fcad3",
+    "docs/ssw-workspace/manufacturing/batch17/electrical-source-review.json": "2fedd1a59679b035efd097c57f34e7a16c61f18d57e89ddf7fba7411986426e7",
+    "docs/ssw-workspace/manufacturing/knowledge-matrix.json": "66a76372f4392fb4a0bde8bf463c13667af318a55951b4f1267f9ca123f951b1",
+    "src/data/manufacturing/electrical.json": "e590319d60ff137ac22a27ca9e92ee5ac6407df2b9df98e5929e37e6e8d5f7ca",
+    "src/components/manufacturing/ManufacturingDiagram.tsx": "e9cf0d5d33d6a0ae9b7778e76bcae86f03fa76c0a94fa175013c1e0201a14426"
+  },
+  "scope": "Additive finer source-object comparison for three previously text-read measurement-method pages; source exercises excluded; no runtime/history/matrix mutation or full-source certification.",
+  "pages": [
+    {
+      "pdfPage": 103,
+      "printedPage": 94,
+      "priorEvidenceStatus": "Main text previously read in batch12; coarse scope group101 exists; batch12visualReadfalse. This is a new granular reread, not a globally new source page.",
+      "visualInspection": {
+        "performed": true,
+        "method": "Actual exact-hash PDF rendered1.7x withPyMuPDF and fullpage visually inspected; four supplement7-1table rows read; lower sourceexercise7-5 not copied or atomized.",
+        "renderSha256": "ab95969b130103054bb57f8fd8fff4c88d1404af3d763aea4f7a0f3aaaa3dcd3",
+        "sourceExercisesExcluded": true,
+        "sourceImagesRedistributed": false
+      },
+      "objects": [
+        {
+          "id": "mfg1-electrical-b22-p103-o01",
+          "type": "performance_specification",
+          "summary": "Input channel count limits how many signals can be observed simultaneously.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-5"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l007",
+            "mfg1-electrical-l073"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l007": "da9be587e6df36724129316fd32868b2c701b06e45a1f3ac03eb5174fc614b45",
+            "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.19,
+            0.17,
+            0.86,
+            0.21
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Source supplement7-1 row1; lesson007 describes signal/time axes and lesson073 section-3 lists other scope limits but neither explicitly explains simultaneous channel count.",
+          "uncoveredFacets": [
+            "Simultaneous-channel-count selection criterion is not explicitly explained in current lesson text."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-101"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b22-p103-o02",
+          "type": "performance_specification",
+          "summary": "Bandwidth concerns the speed/frequency range of signals an oscilloscope can faithfully observe; it is distinct from sample rate.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-5"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l073"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.19,
+            0.2,
+            0.86,
+            0.24
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Supplement7-1 row2 gives high-speed-signal observation scope; lesson073 section-3 names bandwidth but does not explain the separate quantity.",
+          "uncoveredFacets": [
+            "Separate bandwidth meaning/selection comparison is named but not elaborated."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-101"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b22-p103-o03",
+          "type": "performance_specification",
+          "summary": "Sampling rate describes analog-to-digital data conversion frequency per second.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-5"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l073"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.19,
+            0.23,
+            0.86,
+            0.28
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Supplement7-1 row3; lesson073 section-3 says to check sample rate without defining conversions per second.",
+          "uncoveredFacets": [
+            "Explicit per-second sampling interpretation is absent from current prose."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-101"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b22-p103-o04",
+          "type": "performance_dependency",
+          "summary": "Record memory must support the acquired sample data; insufficient memory can prevent the intended waveform record from being reproduced.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-5"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l073"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.19,
+            0.27,
+            0.86,
+            0.34
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Supplement7-1 row4 relates memory to using sample-rate performance; lesson073 section-3 names memory but does not explain this dependency.",
+          "uncoveredFacets": [
+            "Memory/sample-rate relationship is not explicitly explained."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-101"
+          ]
+        }
+      ]
+    },
+    {
+      "pdfPage": 104,
+      "printedPage": 95,
+      "priorEvidenceStatus": "Batch07 andbatch12 visually read this page; batch12coarse LCRgroup102 exists. New granular comparison only.",
+      "visualInspection": {
+        "performed": true,
+        "method": "Actual exact-hash PDF rendered1.7x; fullpage visually inspected; lower6.6LCRprose/figure7-16 reviewed, upper exercise explanation excluded.",
+        "renderSha256": "15adca1640c2b29e305dd796883829cf5b93d99180130e975a02370ba7a90bc1",
+        "sourceExercisesExcluded": true,
+        "sourceImagesRedistributed": false
+      },
+      "objects": [
+        {
+          "id": "mfg1-electrical-b22-p104-o01",
+          "type": "instrument_quantity_taxonomy",
+          "summary": "An LCR meter measures inductance, capacitance, resistance and impedance-related quantities rather than a single universal electrical value.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-6"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l039"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2"
+          },
+          "coverageStatus": "covered_concept",
+          "bboxNormalized": [
+            0.16,
+            0.49,
+            0.68,
+            0.62
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Source6.6(1) opening and firstbullet; lesson039 section-1 explicitly identifies L,C,R and impedance and requires suitable conditions.",
+          "uncoveredFacets": [],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-102"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b22-p104-o02",
+          "type": "historical_method_context",
+          "summary": "The source contrasts bridge-method measurement requiring skill with easier instrument computation; this is textbook context, not a universal claim that all present impedance measurement is difficult or all LCR meters share one architecture.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-6"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l039",
+            "mfg1-electrical-l091"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+            "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+          },
+          "coverageStatus": "source_qualification_or_ambiguity",
+          "bboxNormalized": [
+            0.16,
+            0.55,
+            0.68,
+            0.64
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Source6.6(1) firstbullet plus opening of secondbullet; lesson091 section-3 uses automatic-balancing bridge as an example, correctly avoiding universal instrument architecture.",
+          "uncoveredFacets": [
+            "Current textbook-history statements are not current-standard or exhaustive instrument classifications."
+          ],
+          "derivation": "canonical_editorial_inference",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-102"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b22-p104-o03",
+          "type": "measurement_processing",
+          "summary": "The described automatic-balancing bridge instrument digitizes voltage, current and phase information and computes LCR/impedance quantities.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-6"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l091"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.16,
+            0.64,
+            0.68,
+            0.74
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Source6.6(1) secondbullet; lesson091 section-3 explicitly relates automatic-balancing bridge to voltage/current/phase and component values but does not spell out the digitization stage.",
+          "uncoveredFacets": [
+            "Digitization/computation chain is only partly explicit in lesson091."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-102"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b22-p104-o04",
+          "type": "instrument_illustration",
+          "summary": "Figure7-16 is an example LCR meter front panel, not a universal terminal layout or an independently validated component measurement.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-6"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l039"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.72,
+            0.48,
+            0.85,
+            0.65
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Actualfigure7-16 image/caption; lesson039 teaches quantity and condition selection, not this model’s display/buttons.",
+          "uncoveredFacets": [
+            "No controlled LCR illustration is integrated; source-specific display/buttons must not be treated as general operating instructions."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-102"
+          ]
+        }
+      ]
+    },
+    {
+      "pdfPage": 105,
+      "printedPage": 96,
+      "priorEvidenceStatus": "Batch07 andbatch12 visually read this page; batch12coarse thermocouplegroup103/Hallgroup104 exist. New granular comparison only.",
+      "visualInspection": {
+        "performed": true,
+        "method": "Actual exact-hash PDF rendered1.7x and fullpage visually inspected; allthree sensor sections,figures7-17/7-18,labels/conductorpaths/arrows andfooter96read.",
+        "renderSha256": "21ab7cbc4b972383763f9f479f21da152c6a958363c26f459bb19a9173982c7b",
+        "sourceExercisesExcluded": true,
+        "sourceImagesRedistributed": false
+      },
+      "objects": [
+        {
+          "id": "mfg1-electrical-b22-p105-o01",
+          "type": "sensor_principle",
+          "summary": "A thermocouple uses thermoelectric response associated with dissimilar conductors and the temperatures of measurement and reference ends.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-6"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l039",
+            "mfg1-electrical-l091"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+            "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+          },
+          "coverageStatus": "covered_concept",
+          "bboxNormalized": [
+            0.16,
+            0.08,
+            0.89,
+            0.18
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Source(2)thermocouple opening; lesson039 section-2 and091 section-2 describe dissimilar metals and reference-side temperature handling.",
+          "uncoveredFacets": [],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-103"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b22-p105-o02",
+          "type": "connection_concept_diagram",
+          "summary": "Figure7-17 distinguishes metalA/metalB, measured-sideT1, instrument-sideT2 and measured thermoelectric response; the diagram is a principle sketch rather than full compensation or terminal specifications.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-6"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l039",
+            "mfg1-electrical-l091"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+            "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.26,
+            0.2,
+            0.77,
+            0.38
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Actualfigure7-17labels/conductor paths; current039section-2 covers reference junction concept but no corresponding controlled diagram is integrated.",
+          "uncoveredFacets": [
+            "Original two-metal/junction-temperature conceptual visual remains absent; no complete compensation/lead circuit is taught by source sketch."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-103"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b22-p105-o03",
+          "type": "source_range_qualification",
+          "summary": "The textbook gives a K-type temperature-range example; it does not establish one guaranteed range for every K-type assembly, environment or measuring system.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-6"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l039",
+            "mfg1-electrical-l091"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+            "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+          },
+          "coverageStatus": "source_qualification_or_ambiguity",
+          "bboxNormalized": [
+            0.16,
+            0.13,
+            0.89,
+            0.19
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Source(2) final sentence states example-73to1300degreesC; lesson039section-2 and091section-2 explicitly qualify by specification/conditions and wire/protection/environment/instrument.",
+          "uncoveredFacets": [
+            "The printed range is not a certified universal operating or safety specification."
+          ],
+          "derivation": "canonical_editorial_inference",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-103"
+          ],
+          "sourceExample": {
+            "type": "K",
+            "minimumCelsius": -73,
+            "maximumCelsius": 1300,
+            "status": "source_example_not_universal_specification"
+          }
+        },
+        {
+          "id": "mfg1-electrical-b22-p105-o04",
+          "type": "sensor_quantity_mapping",
+          "summary": "An illuminance meter uses a light-to-electrical sensing element, identified here as a photodiode, to measure illuminance.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-6"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l039"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.16,
+            0.39,
+            0.89,
+            0.48
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Source(3)illuminanceprose; lesson039section-3 explains illuminance and condition matching but does not name photodiode in that section.",
+          "uncoveredFacets": [
+            "Photodiode-to-illuminance instrument mapping is not explicitly named in current lesson039section-3."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": []
+        },
+        {
+          "id": "mfg1-electrical-b22-p105-o05",
+          "type": "instrument_quantity_mapping",
+          "summary": "A gaussmeter measures magnetic flux density using a Hall-element-based sensing principle in the source example.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-6"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l039",
+            "mfg1-electrical-l091"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+            "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+          },
+          "coverageStatus": "covered_concept",
+          "bboxNormalized": [
+            0.16,
+            0.5,
+            0.89,
+            0.57
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Source(4) opening; lesson039section-3 and091section-2 explicitly identify gaussmeter/flux density/Hall principle.",
+          "uncoveredFacets": [],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-104"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b22-p105-o06",
+          "type": "orthogonal_direction_relation",
+          "summary": "For the stated Hall-effect arrangement, applied magnetic field is perpendicular to current and the resulting transverse electromotive response is perpendicular to both.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-6"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l091"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+          },
+          "coverageStatus": "covered_concept",
+          "bboxNormalized": [
+            0.16,
+            0.55,
+            0.89,
+            0.62
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Source(4)Hallprose; lesson091section-2 expressly states the three-direction relationship. No sign/polarity generalization is inferred.",
+          "uncoveredFacets": [],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-104"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b22-p105-o07",
+          "type": "vector_concept_diagram",
+          "summary": "Figure7-18 visually separates current direction, transverse magnetic field and the Hall-response measurement direction; its drawn arrows are a single conceptual arrangement, not a universal carrier-sign or wiring rule.",
+          "knowledgeIds": [
+            "mfg1-electrical-c07-s6-6"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l039",
+            "mfg1-electrical-l091"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+            "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.37,
+            0.62,
+            0.64,
+            0.76
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+          "comparisonBasis": "Actualfigure7-18arrows/plate/measurementloop visually compared; current091section-2 covers orthogonality but controlled three-axis diagram is not integrated.",
+          "uncoveredFacets": [
+            "Original Hall direction-comparison visual remains absent; no carrier-polarity calibration or real sensor terminals established."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b12-object-104"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pagesReviewed": 3,
+    "granularObjects": 15,
+    "globallyNewSourcePagesClaimed": 0,
+    "sourceExerciseObjects": 0,
+    "newRuntimeLessons": 0,
+    "newRuntimeDiagrams": 0,
+    "newRuntimeTranslations": 0
+  },
+  "method": {
+    "visualSourceInspection": "Actual sourcePDF rendered and visually inspected; text extraction used for navigation only.",
+    "coverageJudgment": "Exact current Japanese lesson paragraphs and runtime diagram mappings compared per object; uncovered facets remain explicit.",
+    "regions": "Approximate normalized top-left-origin reviewer regions, not exact OCR or semantic segmentation.",
+    "claims": "Prior coarse groups are referenced, not replaced or promoted to exhaustive proof."
+  },
+  "sourceImagesRedistributed": false,
+  "sourceExercisesCopied": false,
+  "ssw2Used": false,
+  "runtimeModified": false,
+  "historicalEvidenceModified": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "fullKnowledgeAtomizationComplete": false,
+  "fullSourceKnowledgeCoverageCertified": false,
+  "wholeCurriculumComplete": false,
+  "releaseReady": false
+}
