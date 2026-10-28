@@ -1,3 +1,15 @@
+# Nhà hàng / 外食業 — checkpoint 13, 2026-10-28
+
+Toàn bộ mô-đun CHƯA hoàn tất. Tiếp từ checkpoint12 đã xác minh remote 4db50a8f2c68461bc0eee04f0f47cc5042f3cf4f. Lô này cần commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
+
+- Sáu AI làm sáu tập bài/câu và rà chéo toàn bộ 261 đề xuất; hợp nhất 248 cụm duy nhất, loại 5 cách đọc đã có trong lexicon, thêm 243 dictionary candidates theo ngữ cảnh. Không phải duyệt bản ngữ/chuyên gia.
+- Chạy lại bộ dựng furigana hiện hữu: readKanjiTokens 35928 → 36228; trường còn kanji chưa đọc 4348 → 4248 trên 7358 trường. 100 trường được phủ đầy đủ thêm. Kanji đơn đa nghĩa vẫn không đoán cách đọc.
+- 23 self-tests PASS; structural PASS. Bảo toàn toàn bộ nội dung Nhật ngoài furigana, sourceHash, đáp án và thứ tự lựa chọn; 12 tệp bản dịch byte-identical với checkpoint12. Vẫn đủ1440bài/11808câu/8304glossary dịch.
+- Evidence: completion13-reading-review.json gồm đề xuất/rà chéo và preservation. nativeReviewed/contextualReviewComplete vẫn false. Chưa productionExpo/native/device.
+- TIẾP THEO: còn4248trường cần furigana theo ngữ cảnh,source590partial,hình nhận dạng,kiểm thử thiết bị/hiệu năng và duyệt bản ngữ/chuyên môn. Không dịch lại phần đã đủ,không cam kết chạy nền sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 12, 2026-10-28
 
 Toàn bộ mô-đun CHƯA hoàn tất. Checkpoint11 đã qua WORK PERSISTENCE PASS `f6a4ece13acef2032bc4575ed17d4d6f40e7b80a`. Lô cuối cần commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
