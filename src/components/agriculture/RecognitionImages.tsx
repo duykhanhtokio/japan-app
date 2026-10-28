@@ -53,6 +53,12 @@ const assets:Record<string,ImageSourcePropType>={
  'pest-whitefly-tomato':require('../../../assets/agriculture/recognition/pest-whitefly-tomato-v1.webp'),
  'pest-sweetpotato-weevil':require('../../../assets/agriculture/recognition/pest-sweetpotato-weevil-v1.webp'),
  'pest-pepper-bug':require('../../../assets/agriculture/recognition/pest-pepper-bug-v1.webp'),
+ 'equipment-manual-shoulder-sprayer':require('../../../assets/agriculture/equipment/manual-shoulder-sprayer-v1.png'),
+ 'equipment-powered-backpack-sprayer':require('../../../assets/agriculture/equipment/powered-backpack-sprayer-v1.png'),
+ 'equipment-speed-sprayer':require('../../../assets/agriculture/equipment/speed-sprayer-v1.png'),
+ 'equipment-portable-brush-cutter':require('../../../assets/agriculture/equipment/portable-brush-cutter-v1.png'),
+ 'equipment-walkbehind-hammer-mower':require('../../../assets/agriculture/equipment/walkbehind-hammer-mower-v1.png'),
+ 'equipment-ride-on-mower':require('../../../assets/agriculture/equipment/ride-on-mower-v1.png'),
 };
 type RecognitionImage={
  id:string;lessonIds:string[];lessonSourceHashes:Record<string,string>;

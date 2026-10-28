@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "reviewerWorker": 4,
+  "authorWorker": 5,
+  "status": "independent_ai_visual_review_complete_not_domain_certification",
+  "inputMetadataSha256": "264a5cde0383fc5c52f7bea1833b1945865d3146bc2d7993b1cfd4573d3d0481",
+  "assetSha256": "df5b84131488f2938f0a37aeefef40a6ab1190ed597057320ddb16b538de7b7f",
+  "assetPath": "assets/agriculture/equipment/walkbehind-hammer-mower-v1.png",
+  "decision": "accept",
+  "iterationNeeded": false,
+  "checks": [
+    {
+      "check": "generated_image",
+      "decision": "accept",
+      "observedJa": "実際の1254角PNGをview_imageで確認。前方の幅広い不透明な刈取部の覆い、後方寄りの動力部、車輪、二本の長いハンドルと握りを確認。全機体が画面内に入り、座席・ハンドル輪・乗車台・人・文字・ロゴ・断面・露出刃は見えない。",
+      "exactbeforepatches": []
+    },
+    {
+      "check": "source_exterior_correspondence",
+      "decision": "accept",
+      "observedJa": "現バッチで独立に閲覧したS1PDF36/印刷30の歩行型ハンマーナイフモア写真と、S2PDF50/印刷48の自走式草刈り機写真に、覆い付き前方刈取部・動力部・歩行用後方ハンドルが対応する。生成図の色や細部の車輪構成を源写真と同一の型式とは認定しない。",
+      "exactbeforepatches": []
+    },
+    {
+      "check": "internal_mechanism_limit",
+      "decision": "accept",
+      "observedJa": "刈取部の内部は完全に見えない。画像から縦回転・刃形状・刃数・配置・粉砕性能を確定しないというlimitsJaが明示され、本文の機構説明と外観例が区別されている。",
+      "exactbeforepatches": []
+    },
+    {
+      "check": "japanese_metadata_and_binding",
+      "decision": "accept",
+      "observedJa": "title/alt/observationsは生成図で確認可能な外観へ限定。既存2号lessonhash/paragraphhash/p5/knowledgeIDがcanonicalに一致。S1は出典照合のみで新たな1号レッスンを増やさない。sourceitem0070/0321は実際の内容とも照合でき、いずれも完了扱いではない。",
+      "exactbeforepatches": []
+    },
+    {
+      "check": "generation_and_approval_provenance",
+      "decision": "accept",
+      "observedJa": "一回のbuilt-in新規生成、参考画像入力なし、原PNGを加工せずコピー、生成元とassetのhashが一致。承認状態false・原写真未配布・0closureを保持。",
+      "exactbeforepatches": []
+    }
+  ],
+  "sourceEvidence": [
+    {
+      "documentId": "AGR-S1",
+      "pdfPage": 36,
+      "printedPage": 30,
+      "pdfSha256": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+      "reviewerPageRenderPath": "/tmp/agri-p31-w4/s1-036.png",
+      "reviewerPageRenderSha256": "27311c2751b0586c89d9da9b6eee4f526447ba7f0779a82c8801f240ce739988",
+      "actualPageImageInspected": true,
+      "inspectionTiming": "same_parallel31_batch_reviewer_source_inspection_reused_without_rerender"
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 50,
+      "printedPage": 48,
+      "pdfSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+      "reviewerPageRenderPath": "/tmp/agri-p31-w4/s2-050.png",
+      "reviewerPageRenderSha256": "b9773cea9c89fa0b81df56812781cc1cbe89ac87f0efbfd5822c01148f79e922",
+      "actualPageImageInspected": true,
+      "inspectionTiming": "same_parallel31_batch_reviewer_source_inspection_reused_without_rerender"
+    }
+  ],
+  "exactbeforepatches": [],
+  "sourceOccurrencesClosed": 0,
+  "visualRecognitionOccurrencesClosed": 0,
+  "internalFlailDirectionCertifiedByImage": false,
+  "independentAiReviewed": true,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "realDeviceReviewed": false,
+  "releaseReady": false,
+  "limits": [
+    "External appearance only; image is not a cutaway and cannot verify internal flail direction.",
+    "No subtype or dimensional/operating identification certification; generic source-corresponding example only.",
+    "Existing 50 rasters and shared registries untouched."
+  ]
+}
