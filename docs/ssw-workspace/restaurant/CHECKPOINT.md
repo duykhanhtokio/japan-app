@@ -1,3 +1,15 @@
+# Nhà hàng / 外食業 — checkpoint 6, 2026-10-28
+
+Toàn bộ mô-đun CHƯA hoàn tất. Tiếp tục từ remote `d0607f088e6c05d80845bf75ff1ab958f218fa51` trên `feature/restaurant-20261026`; base đã qua WORK PERSISTENCE PASS có phạm vi trước khi sửa. Chỉ công bố lưu bền vững sau commit/ref/fetch và persistence gate.
+
+- Thêm 40 câu 2号 q121–160 cho mỗi en/vi, tổng 80 bản dịch câu. Mỗi locale hiện 664/984 câu; toàn kho 8048/11808, còn 3760 cặp câu.
+- Mục tiêu học tập được lấy từ bản dịch bài học có objectiveJa trùng nguyên văn; cả 40 câu có đúng một bản dịch mục tiêu tương ứng mỗi locale. Không thay mục tiêu bằng tên chủ đề.
+- Giữ nguyên mọi record đã có của cả hai locale; không đổi Nhật, đáp án, thứ tự lựa chọn, bài học, glossary hay UI. Glossary vẫn 2768/8304, còn 5536 cặp.
+- Structural PASS; numeric PASS trên 73476 trường; signed Celsius PASS 386 trường; JLPT UI lock 10/10 PASS. Đây là kiểm tra dữ liệu và tự rà AI, chưa chứng nhận người bản ngữ/chuyên môn hoặc kiểm thử Expo/native trong phiên này.
+- Tiếp theo en/vi 2号 từ q161; id/tl từ q121; hi/bn từ q241; my/ne/th/km từ q001; weekly 2号 tuần02–11 và glossary8locale. Source590partial, toàn văn furigana, hình nhận dạng, productionExpo/native vẫn chưa hoàn tất. Acceptance chưa đạt giữ false.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 5, 2026-10-27
 
 Toàn bộ mô-đun CHƯA hoàn tất. Base remote đã xác minh WORK PERSISTENCE PASS cho46files: `7fb919bb54ae98dfbd0e5b10568926a78b09e221`. Nhánh riêng `feature/restaurant-20261026`; snapshot này cần commit/ref/fetch/persistencegate trước khi công bố lưu bền vững.
