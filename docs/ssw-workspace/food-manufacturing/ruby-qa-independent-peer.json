@@ -1,0 +1,444 @@
+{
+  "review": "Independent semantic/contextual QA review, not a copied self-review",
+  "partSHA256": {
+    "food-ruby-qa.json": "bc7b1a916ab800fd9c44291e4e8bbe23aa894cc61877082ccf604bae7135c63f"
+  },
+  "questions": 210,
+  "fieldsChecked": 2100,
+  "uniqueActualKanjiBaseReadingPairsReviewed": 1439,
+  "uniqueTokenLexiconCandidatesReviewed": 1850,
+  "rejectedFields": 29,
+  "corrections": [
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q005",
+        "fields",
+        "explanationJa"
+      ],
+      "before": "魚{さかな}は受入{うけい}れ後{あと}すぐに冷蔵{れいぞう}または冷凍{れいとう}し、保存{ほぞん}状態{じょうたい}の悪化{あっか}によるヒスタミンの増加{ぞうか}を防{ふせ}ぎます。",
+      "after": "魚{さかな}は受入{うけい}れ後{ご}すぐに冷蔵{れいぞう}または冷凍{れいとう}し、保存{ほぞん}状態{じょうたい}の悪化{あっか}によるヒスタミンの増加{ぞうか}を防{ふせ}ぎます。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q005",
+        "fields",
+        "optionExplanationsJa",
+        3
+      ],
+      "before": "魚{さかな}は受入{うけい}れ後{あと}すぐに冷蔵{れいぞう}または冷凍{れいとう}し、保存{ほぞん}状態{じょうたい}の悪化{あっか}によるヒスタミンの増加{ぞうか}を防{ふせ}ぎます。",
+      "after": "魚{さかな}は受入{うけい}れ後{ご}すぐに冷蔵{れいぞう}または冷凍{れいとう}し、保存{ほぞん}状態{じょうたい}の悪化{あっか}によるヒスタミンの増加{ぞうか}を防{ふせ}ぎます。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q054",
+        "fields",
+        "promptJa"
+      ],
+      "before": "生魚{なまざかな}に触{ふ}れた後{あと}、加熱済{かねつず}み食品{しょくひん}の盛{も}り付{づ}けへ移{うつ}ります。適切{てきせつ}な衛生{えいせい}対応{たいおう}はどれですか。",
+      "after": "生魚{なまざかな}に触{ふ}れた後{あと}、加熱済{かねつず}み食品{しょくひん}の盛{も}り付{つ}けへ移{うつ}ります。適切{てきせつ}な衛生{えいせい}対応{たいおう}はどれですか。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "盛り付け is もりつけ; no rendaku to もりづけ."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q055",
+        "fields",
+        "promptJa"
+      ],
+      "before": "手洗{てあら}い後{あと}、清潔{せいけつ}に手{て}を乾{かわ}かす方法{ほうほう}として教材{きょうざい}が示{しめ}すものはどれですか。",
+      "after": "手洗{てあら}い後{ご}、清潔{せいけつ}に手{て}を乾{かわ}かす方法{ほうほう}として教材{きょうざい}が示{しめ}すものはどれですか。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q075",
+        "fields",
+        "promptJa"
+      ],
+      "before": "二人{ふたり}で行{おこな}うと決{き}めた機械{きかい}作業{さぎょう}で一{いち}人{にん}欠員{けついん}です。適切{てきせつ}なのはどれですか。",
+      "after": "二人{ふたり}で行{おこな}うと決{き}めた機械{きかい}作業{さぎょう}で一人{ひとり}欠員{けついん}です。適切{てきせつ}なのはどれですか。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Modern workplace count 一人 is ひとり in this missing-worker context."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q075",
+        "fields",
+        "optionsJa",
+        0
+      ],
+      "before": "二{に}人{にん}分{ぶん}の操作{そうさ}を急{いそ}いで一人{ひとり}で行{おこな}う。",
+      "after": "二人{ふたり}分{ぶん}の操作{そうさ}を急{いそ}いで一人{ひとり}で行{おこな}う。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Two persons worth is ふたりぶん, not ににんぶん."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q256",
+        "fields",
+        "promptJa"
+      ],
+      "before": "加熱{かねつ}不足{ふそく}後{あと}に設備{せつび}条件{じょうけん}を戻{もど}しましたが、それまでの製品{せいひん}が残{のこ}っています。作業者{さぎょうしゃ}が行{おこな}うことはどれですか。",
+      "after": "加熱{かねつ}不足{ふそく}後{ご}に設備{せつび}条件{じょうけん}を戻{もど}しましたが、それまでの製品{せいひん}が残{のこ}っています。作業者{さぎょうしゃ}が行{おこな}うことはどれですか。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q163",
+        "fields",
+        "optionExplanationsJa",
+        3
+      ],
+      "before": "除去{じょきょ}後{あと}でも新{あら}たな付着{ふちゃく}は起{お}こり得{え}ます。",
+      "after": "除去{じょきょ}後{ご}でも新{あら}たな付着{ふちゃく}は起{お}こり得{え}ます。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q090",
+        "fields",
+        "promptJa"
+      ],
+      "before": "盛{も}り付{づ}けの途中{とちゅう}で眼鏡{めがね}を直{なお}す際{さい}、目{め}の周{まわ}りを手袋{てぶくろ}で触{さわ}ってしまいました。作業{さぎょう}へ戻{もど}る対応{たいおう}はどれですか。",
+      "after": "盛{も}り付{つ}けの途中{とちゅう}で眼鏡{めがね}を直{なお}す際{さい}、目{め}の周{まわ}りを手袋{てぶくろ}で触{さわ}ってしまいました。作業{さぎょう}へ戻{もど}る対応{たいおう}はどれですか。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "盛り付け is もりつけ; no rendaku to もりづけ."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q090",
+        "fields",
+        "explanationJa"
+      ],
+      "before": "目{め}の周{まわ}りへ触{ふ}れた手袋{てぶくろ}のまま食品{しょくひん}に触{ふ}れず、手洗{てあら}い後{あと}に清潔{せいけつ}な手袋{てぶくろ}を着{つ}けます。",
+      "after": "目{め}の周{まわ}りへ触{ふ}れた手袋{てぶくろ}のまま食品{しょくひん}に触{ふ}れず、手洗{てあら}い後{ご}に清潔{せいけつ}な手袋{てぶくろ}を着{つ}けます。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q090",
+        "fields",
+        "optionExplanationsJa",
+        3
+      ],
+      "before": "目{め}の周{まわ}りへ触{ふ}れた手袋{てぶくろ}のまま食品{しょくひん}に触{ふ}れず、手洗{てあら}い後{あと}に清潔{せいけつ}な手袋{てぶくろ}を着{つ}けます。",
+      "after": "目{め}の周{まわ}りへ触{ふ}れた手袋{てぶくろ}のまま食品{しょくひん}に触{ふ}れず、手洗{てあら}い後{ご}に清潔{せいけつ}な手袋{てぶくろ}を着{つ}けます。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q220",
+        "fields",
+        "optionsJa",
+        2
+      ],
+      "before": "除去{じょきょ}容器{ようき}が一{いち}杯{はい}になったら原料{げんりょう}側{がわ}へ戻{もど}す。",
+      "after": "除去{じょきょ}容器{ようき}が一杯{いっぱい}になったら原料{げんりょう}側{がわ}へ戻{もど}す。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Container becomes full: 一杯 is いっぱい, not literal one-cup いちはい."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q098",
+        "fields",
+        "optionsJa",
+        3
+      ],
+      "before": "品名{ひんめい}が合{あ}えば臭{くさ}いの確認{かくにん}は不要{ふよう}とする。",
+      "after": "品名{ひんめい}が合{あ}えば臭{にお}いの確認{かくにん}は不要{ふよう}とする。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Here 臭い is the noun odor/smell (confirmation/odor transfer/occurrence), not adjective くさい."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q261",
+        "fields",
+        "optionsJa",
+        0
+      ],
+      "before": "包装{ほうそう}後{あと}の検査{けんさ}なら種類{しゅるい}を問{と}わず全{すべ}ての危害{きがい}を保証{ほしょう}できる。",
+      "after": "包装{ほうそう}後{ご}の検査{けんさ}なら種類{しゅるい}を問{と}わず全{すべ}ての危害{きがい}を保証{ほしょう}できる。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q381",
+        "fields",
+        "promptJa"
+      ],
+      "before": "逸脱{いつだつ}後{あと}の記録{きろく}を確認{かくにん}すると、測定値{そくていち}はありますが何{なに}をしたか不明{ふめい}です。必要{ひつよう}な情報{じょうほう}はどれですか。",
+      "after": "逸脱{いつだつ}後{ご}の記録{きろく}を確認{かくにん}すると、測定値{そくていち}はありますが何{なに}をしたか不明{ふめい}です。必要{ひつよう}な情報{じょうほう}はどれですか。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q381",
+        "fields",
+        "optionsJa",
+        0
+      ],
+      "before": "実際{じっさい}に行{い}った改善措置{かいぜんそち}の内容{ないよう}も残{のこ}す。",
+      "after": "実際{じっさい}に行{おこな}った改善措置{かいぜんそち}の内容{ないよう}も残{のこ}す。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Here 行った means performed an action/measure, not went; read おこなった."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q087",
+        "fields",
+        "promptJa"
+      ],
+      "before": "朝{あさ}、入場{にゅうじょう}前{まえ}に手{て}を洗{あら}いました。その後{ご}に休憩{きゅうけい}室{しつ}へ戻{もど}り、時間{じかん}を置{お}いて盛{も}り付{づ}けを始{はじ}めます。手洗{てあら}いはどうしますか。",
+      "after": "朝{あさ}、入場{にゅうじょう}前{まえ}に手{て}を洗{あら}いました。その後{ご}に休憩{きゅうけい}室{しつ}へ戻{もど}り、時間{じかん}を置{お}いて盛{も}り付{つ}けを始{はじ}めます。手洗{てあら}いはどうしますか。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "盛り付け is もりつけ; no rendaku to もりづけ."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q087",
+        "fields",
+        "optionsJa",
+        2
+      ],
+      "before": "盛{も}り付{づ}けを始{はじ}める直前{ちょくぜん}にも行{おこな}う。",
+      "after": "盛{も}り付{つ}けを始{はじ}める直前{ちょくぜん}にも行{おこな}う。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "盛り付け is もりつけ; no rendaku to もりづけ."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q120",
+        "fields",
+        "optionsJa",
+        3
+      ],
+      "before": "よい香{かお}りなら食品{しょくひん}の臭{くさ}い移{うつ}りは問題{もんだい}にならない。",
+      "after": "よい香{かお}りなら食品{しょくひん}の臭{にお}い移{うつ}りは問題{もんだい}にならない。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Here 臭い is the noun odor/smell (confirmation/odor transfer/occurrence), not adjective くさい."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q120",
+        "fields",
+        "explanationJa"
+      ],
+      "before": "香水{こうすい}は食品{しょくひん}への臭{くさ}い移{うつ}りや、原料{げんりょう}・食品{しょくひん}の品質{ひんしつ}異常{いじょう}への気付{きづ}きに影響{えいきょう}することがあります。",
+      "after": "香水{こうすい}は食品{しょくひん}への臭{にお}い移{うつ}りや、原料{げんりょう}・食品{しょくひん}の品質{ひんしつ}異常{いじょう}への気付{きづ}きに影響{えいきょう}することがあります。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Here 臭い is the noun odor/smell (confirmation/odor transfer/occurrence), not adjective くさい."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q120",
+        "fields",
+        "optionExplanationsJa",
+        2
+      ],
+      "before": "香水{こうすい}は食品{しょくひん}への臭{くさ}い移{うつ}りや、原料{げんりょう}・食品{しょくひん}の品質{ひんしつ}異常{いじょう}への気付{きづ}きに影響{えいきょう}することがあります。",
+      "after": "香水{こうすい}は食品{しょくひん}への臭{にお}い移{うつ}りや、原料{げんりょう}・食品{しょくひん}の品質{ひんしつ}異常{いじょう}への気付{きづ}きに影響{えいきょう}することがあります。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Here 臭い is the noun odor/smell (confirmation/odor transfer/occurrence), not adjective くさい."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q269",
+        "fields",
+        "optionExplanationsJa",
+        2
+      ],
+      "before": "始動{しどう}後{あと}の音{おと}では危険{きけん}を防{ふせ}げません。",
+      "after": "始動{しどう}後{ご}の音{おと}では危険{きけん}を防{ふせ}げません。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q205",
+        "fields",
+        "optionsJa",
+        0
+      ],
+      "before": "作業{さぎょう}開始{かいし}後{あと}に財布{さいふ}を出{だ}せばよい。",
+      "after": "作業{さぎょう}開始{かいし}後{ご}に財布{さいふ}を出{だ}せばよい。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q151",
+        "fields",
+        "optionExplanationsJa",
+        2
+      ],
+      "before": "臭{くさ}いの発生{はっせい}を待{ま}たず定期{ていき}的{てき}に清掃{せいそう}します。",
+      "after": "臭{にお}いの発生{はっせい}を待{ま}たず定期{ていき}的{てき}に清掃{せいそう}します。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Here 臭い is the noun odor/smell (confirmation/odor transfer/occurrence), not adjective くさい."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q379",
+        "fields",
+        "optionsJa",
+        2
+      ],
+      "before": "測定{そくてい}した結果{けっか}と、その後{ご}に行{い}った連絡{れんらく}や措置{そち}。",
+      "after": "測定{そくてい}した結果{けっか}と、その後{ご}に行{おこな}った連絡{れんらく}や措置{そち}。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Here 行った means performed an action/measure, not went; read おこなった."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q188",
+        "fields",
+        "promptJa"
+      ],
+      "before": "検査{けんさ}合格{ごうかく}後{あと}、常温{じょうおん}の出荷{しゅっか}待{ま}ち場所{ばしょ}に置{お}いてよいか迷{まよ}う製品{せいひん}があります。まず確{たし}かめることはどれですか。",
+      "after": "検査{けんさ}合格{ごうかく}後{ご}、常温{じょうおん}の出荷{しゅっか}待{ま}ち場所{ばしょ}に置{お}いてよいか迷{まよ}う製品{せいひん}があります。まず確{たし}かめることはどれですか。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q263",
+        "fields",
+        "optionsJa",
+        2
+      ],
+      "before": "石{いし}は包装{ほうそう}後{あと}に自動{じどう}で消{き}える。",
+      "after": "石{いし}は包装{ほうそう}後{ご}に自動{じどう}で消{き}える。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q243",
+        "fields",
+        "optionExplanationsJa",
+        1
+      ],
+      "before": "選別{せんべつ}後{あと}にも混入{こんにゅう}する可能性{かのうせい}があります。",
+      "after": "選別{せんべつ}後{ご}にも混入{こんにゅう}する可能性{かのうせい}があります。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    },
+    {
+      "file": "food-ruby-qa.json",
+      "path": [
+        "food-1-q170",
+        "fields",
+        "optionsJa",
+        3
+      ],
+      "before": "受入{うけい}れ後{あと}の全{ぜん}工程{こうてい}を同{おな}じ状態{じょうたい}とみなすため。",
+      "after": "受入{うけい}れ後{ご}の全{ぜん}工程{こうてい}を同{おな}じ状態{じょうたい}とみなすため。",
+      "decision": "reject_current_accept_suggested",
+      "rationale": "Temporal compound suffix 後 following the process noun is ご (e.g. 包装後/選別後/受入れ後), distinguished from standalone あと."
+    }
+  ],
+  "otherPeerReportSHA256": "4c3bab7a544db4f42fe721a59a2f2950926357ac6340170501df7aa114c4b66f",
+  "otherPeerCorrectionsReview": {
+    "reviewed": 31,
+    "accepted": 29,
+    "rejected": 2,
+    "rejectedCorrections": [
+      {
+        "index": 3,
+        "file": "food-ruby-qb.json",
+        "path": [
+          "food-1-q184",
+          "fields",
+          "explanationJa"
+        ],
+        "decision": "reject_peer_change_retain_original",
+        "reason": "At zero minutes 00分 is れいふん/ぜろふん, with ふん. The nonzero tens contraction rule (10/20/30分 etc. ぷん) does not apply to0/00. Retain the original00分{ふん}."
+      },
+      {
+        "index": 4,
+        "file": "food-ruby-qb.json",
+        "path": [
+          "food-1-q184",
+          "fields",
+          "optionExplanationsJa",
+          2
+        ],
+        "decision": "reject_peer_change_retain_original",
+        "reason": "At zero minutes 00分 is れいふん/ぜろふん, with ふん. The nonzero tens contraction rule (10/20/30分 etc. ぷん) does not apply to0/00. Retain the original00分{ふん}."
+      }
+    ],
+    "acceptedRationale": "Other29 contextual corrections are sound: source suffix 源げん, 正しくただしく, 未達みたつ, 省人化しょうじんか, contracted counters, 拭取りふきとり alignment, 防護柵さく, priority 高こう, root cause 根本こんぽん."
+  },
+  "acceptedVariants": [
+    {
+      "form": "切傷{きりきず}",
+      "judgment": "Dictionary-supported reading in the concrete finger-cut context retained; glossary せっしょう is the technical on-reading. Not falsely marked a phonetic error."
+    },
+    {
+      "form": "この間{かん}",
+      "judgment": "このかん is accepted formal interval register; not forced to このあいだ."
+    },
+    {
+      "form": "除{の}けない",
+      "judgment": "のける is an accepted removal verb reading; no forced synonym change solely to のぞける."
+    },
+    {
+      "form": "先入先出{さきいれさきだし}",
+      "judgment": "Recognized industry reading of the abbreviated compound, matching canonical terminology."
+    },
+    {
+      "form": "等{とう}",
+      "judgment": "Formal enumeration reading is valid alongside など; no stylistic-only correction."
+    }
+  ],
+  "validation": {
+    "sourceStrippingBeforeAndAfter": true,
+    "zeroUncoveredKanjiAfter": true,
+    "all210CorrectReasonEqualityAfter": true,
+    "readingSyntaxValidAfter": true,
+    "repoEdits": false,
+    "nativeReviewed": false,
+    "independentNodeSourceHashFailures": [],
+    "independentNodeSourceHashesChecked": 210
+  },
+  "scope": "Independent reading review of all unique QA token candidates, and actual annotation-pair inventory, with full Japanese context inspection of high-risk readings and ambiguous counters/nouns/suffixes. Exact correction pointers are SHA-bound. This is not native or domain certification."
+}

@@ -1,0 +1,806 @@
+{
+  "reviewType": "Independent source-data to new component logic/geometry review, plus all72 original-illustration captions",
+  "reviewerRole": "Authored Japanese exercise data; did not author or edit AppliedPractice.tsx. Independent implementation review, not independent authorship of the source dataset.",
+  "inputs": {
+    "component": {
+      "path": "/workspace/scratch/ba945b425b2b/food-app/src/components/food-manufacturing/AppliedPractice.tsx",
+      "sha256": "2ae11a47eb440c1491109247868249ee8ac8f8dc8fb27839e88f8b577684d195"
+    },
+    "sourcePacket": {
+      "path": "/workspace/scratch/ba945b425b2b/food-supplements-source-packet.json",
+      "sha256": "193c5fd232281f655b3f36f608152ce303ee5df0c90941b5a56d7fa3ba670fd6"
+    },
+    "illustrations": {
+      "path": "/workspace/scratch/ba945b425b2b/food-app/src/data/food-manufacturing/illustrations.json",
+      "sha256": "bc3a47c9f940da2ae0137b5c017e4024b5dd972c1d5ccd831064c68d39f72913"
+    }
+  },
+  "scope": {
+    "exerciseDataEntries": 12,
+    "SVGFixtures": 19,
+    "tableAndPromptBranchesChecked": 12,
+    "originalRasterAssetsPixelViewed": 6,
+    "JapaneseCaptionsChecked": 6,
+    "TranslatedCaptionsChecked": 72,
+    "captionLocales": 12
+  },
+  "method": [
+    "Extracted actual pure SVG helper functions from current TypeScript source and executed them using Node24stripTypeScriptTypes and vm with frozen exerciseData; no handwritten imitation of the helper formulas.",
+    "Parsed all19generatedSVGs, checked data/axis relationships and point/count labels. Decimal display normalization such as9.0→9is numerically equal.",
+    "Used restored local Chromium through Playwright to compute actual SVG textgetBBox for all19fixtures; no text outside760×heightviewports and no detected labeled flow-node overflow after parent fixes.",
+    "Inspected every native-table branch against frozen inputs. Did not claim full native-app layout execution from this source/fixture review.",
+    "Personally viewed all6original PNGassets and compared captions with their actual depicted scope, linked Japanese lesson knowledge and source supplements. Read all72translatedcaptions at AI review level and checked numeric tokens and flags.",
+    "Final Graphic wrapper rechecked: fixed760CSSpxSVGinside designated horizontalScrollView retains nominal labelsize, with visible Japanese scrollinghint. Pure SVGhelpers/data unchanged; previous760viewBoxDOMbounds fixtures remain applicable."
+  ],
+  "exerciseChecks": [
+    {
+      "supplementId": "food-2-009-extension-01",
+      "family": "versions",
+      "SVGCount": 0,
+      "status": "PASS_SCOPED_INPUT_AND_SEMANTICS",
+      "findings": "All document IDs, versions, approval states and available header fields preserve the source; unapproved and old versions do not become usable."
+    },
+    {
+      "supplementId": "food-2-010-extension-01",
+      "family": "temperatureRangeC",
+      "SVGCount": 0,
+      "status": "PASS_SCOPED_INPUT_AND_SEMANTICS",
+      "findings": "K2/T7,4.0–8.0°C, actual/planned times,6.2/8.4°C, recorderA and reviewerB are preserved. Newly added judgment column is a learner prompt, not a fabricated measurement or premature answer."
+    },
+    {
+      "supplementId": "food-2-012-extension-01",
+      "family": "nodes",
+      "SVGCount": 1,
+      "status": "PASS_SCOPED_INPUT_AND_SEMANTICS",
+      "findings": "All12nodes,11normal edges and2hypothetical unexpected edges preserved. H is only this example’sCCP; red dashed routes are marked for investigation, not approved pathways. Heating/cooling conditions are expressly absent."
+    },
+    {
+      "supplementId": "food-2-013-extension-01",
+      "family": "CL",
+      "SVGCount": 0,
+      "status": "PASS_SCOPED_INPUT_AND_SEMANTICS",
+      "findings": "Both minimum temperature and minimum holding time preserved forCL/OL and observationsA/B/C. Tables remain explicitly fictional and do not silently trade time against temperature."
+    },
+    {
+      "supplementId": "food-2-020-extension-01",
+      "family": "normalCurve",
+      "SVGCount": 1,
+      "status": "PASS_SCOPED_INPUT_AND_SEMANTICS",
+      "findings": "Mean40g,σ2g,34–46g ticks and1/2/3σ bands with68.3/95.4/99.7percent preserved. Curve uses Gaussian shape; band percentages are labeled approximate, not whole-product guarantees. Sampling30/6 and both index sets preserved, B labeled hypothetical."
+    },
+    {
+      "supplementId": "food-2-021-extension-01",
+      "family": "bins",
+      "SVGCount": 7,
+      "status": "PASS_SCOPED_INPUT_AND_SEMANTICS",
+      "findings": "Ten original measurements, equal-width half-open bins and4/3/3frequencies preserved. Seven adjacent-bar histograms comprise the measured distribution plus six illustrative shapes. Shape headings do not claim confirmed causes."
+    },
+    {
+      "supplementId": "food-2-021-extension-02",
+      "family": "series",
+      "SVGCount": 6,
+      "status": "PASS_SCOPED_INPUT_AND_SEMANTICS",
+      "findings": "All six exact numeric series, center10/LCL8/UCL12 and exercise-only rule table preserved. Point counts and displayed numeric values agree with input. All six use same frozen-data scale7.5–12.5. Product specification remains absent; no automatic cause or product conformity claim."
+    },
+    {
+      "supplementId": "food-2-021-extension-03",
+      "family": "tallySheet",
+      "SVGCount": 4,
+      "status": "PASS_SCOPED_INPUT_AND_SEMANTICS",
+      "findings": "Three category rows and daily counts8/9/8,total25 preserve input. Pareto14/7/4 cumulative56/84/100correct; leftcount/rightpercent mapping correct. CompositionA/Bsum100. Radar uses common0–5scale,three axes and exact tuples. Fishbone preserves4unconfirmed hypotheses and effect."
+    },
+    {
+      "supplementId": "food-2-027-extension-01",
+      "family": "intervals",
+      "SVGCount": 0,
+      "status": "PASS_SCOPED_INPUT_AND_SEMANTICS",
+      "findings": "Planned240min excludes planned break;80min×32and120min×44give2560/5280,total7840,200actualminutes and40unplannedstop. Source final rounding instruction preserved; no defective-product adjustment is invented."
+    },
+    {
+      "supplementId": "food-2-028-extension-01",
+      "family": "VYen",
+      "SVGCount": 0,
+      "status": "PASS_SCOPED_INPUT_AND_SEMANTICS",
+      "findings": "Company-specificVdefinition and180000/70000/40000/10000yen inputs preserved;300kg,5hours,3people×5hours,15person-hours remain distinct. V=60000 is an exercise answer, not a universal accounting rule."
+    },
+    {
+      "supplementId": "food-2-033-extension-01",
+      "family": "scores",
+      "SVGCount": 0,
+      "status": "PASS_SCOPED_INPUT_AND_SEMANTICS",
+      "findings": "Likelihoodrowslow/medium/high andseveritycolumnslight/medium/heavy agree with3×3lookup. Cells and4–5/2–3/1actions match exercise. CasesA/B/Cinputcategories preserved; scores are not treated as multiplication or universally approved safe-work thresholds."
+    },
+    {
+      "supplementId": "food-2-016-extension-01",
+      "family": "scopeMatching",
+      "SVGCount": 0,
+      "status": "PASS_SCOPED_INPUT_AND_SEMANTICS",
+      "findings": "Three primary scopes and FSSC scheme distinction preserved. Standard-name answers are not inserted into case prompts; company certification scope still requires confirmation."
+    }
+  ],
+  "SVGChecks": [
+    {
+      "id": "food-2-012-extension-01",
+      "graphic": "flow",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-020-extension-01",
+      "graphic": "normal",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-01",
+      "graphic": "histogram",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-01",
+      "graphic": "一般型",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-01",
+      "graphic": "ふた山型",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-01",
+      "graphic": "歯抜け型",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-01",
+      "graphic": "すそ引き型",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-01",
+      "graphic": "絶壁型",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-01",
+      "graphic": "離れ小島型",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-02",
+      "graphic": "control-A",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-02",
+      "graphic": "control-B",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-02",
+      "graphic": "control-C",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-02",
+      "graphic": "control-D",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-02",
+      "graphic": "control-E",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-02",
+      "graphic": "control-F",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-03",
+      "graphic": "pareto",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-03",
+      "graphic": "band",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-03",
+      "graphic": "radar",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    },
+    {
+      "id": "food-2-021-extension-03",
+      "graphic": "fishbone",
+      "status": "PASS_SOURCE_FIXTURE_STRUCTURE_NUMBERS"
+    }
+  ],
+  "geometry": {
+    "fixtureCount": 19,
+    "outOfViewTextFindings": [],
+    "nodeLabelOverflowFindings": [],
+    "DOMBoundsPass": true,
+    "fullAppOrNativePixelValidation": false,
+    "finalWrapperSourceChecked": true
+  },
+  "findingsFixedByParentAndRechecked": [
+    {
+      "id": "control-y-label-space",
+      "componentLine": 28,
+      "originalConcern": "Long Japanese center-line label had little left margin at x55.",
+      "currentFix": "Plot x0=125,width575; labels right-aligned atx115.",
+      "verification": "Actual19fixture browsertextbounds pass; numeric series and shared scale unchanged.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "flow-node-label-wrap",
+      "componentLine": 46,
+      "originalConcern": "Uandother Japanese labels could exceed130pxnodewidth.",
+      "currentFix": "Split node labels into7character lines atfont14; exampleCCPlabel separate line.",
+      "verification": "Browserbounds found no detected node-label overflow; allnodewords/IDs remain in SVG.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "composition-color-legend",
+      "componentLine": 56,
+      "originalConcern": "Segments had percentages but category/color mapping relied on separate native table/order.",
+      "currentFix": "Adds explicit colored swatches with actual category labels.",
+      "verification": "Source helper maps each category to same indexed color as bars; browserbounds pass.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "record-judgment-column",
+      "componentLine": 73,
+      "originalConcern": "Record-reading table omitted a judgment column despite source learning objective.",
+      "currentFix": "Adds判定（記入）with自分で考えるprompt.",
+      "verification": "Blank learner decision is retained rather than leaking/forging answers. Actual measurement/time/reviewer inputs unchanged.",
+      "status": "RESOLVED"
+    }
+  ],
+  "openBlockingFindings": [],
+  "captionReview": {
+    "checks": [
+      {
+        "illustrationId": "hygiene",
+        "locale": "en",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hygiene",
+        "locale": "vi",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hygiene",
+        "locale": "id",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hygiene",
+        "locale": "zh-CN",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hygiene",
+        "locale": "zh-TW",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hygiene",
+        "locale": "hi",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hygiene",
+        "locale": "bn",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hygiene",
+        "locale": "ne",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hygiene",
+        "locale": "my",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hygiene",
+        "locale": "th",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hygiene",
+        "locale": "km",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hygiene",
+        "locale": "tl",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "cross-contamination",
+        "locale": "en",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "cross-contamination",
+        "locale": "vi",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "cross-contamination",
+        "locale": "id",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "cross-contamination",
+        "locale": "zh-CN",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "cross-contamination",
+        "locale": "zh-TW",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "cross-contamination",
+        "locale": "hi",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "cross-contamination",
+        "locale": "bn",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "cross-contamination",
+        "locale": "ne",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "cross-contamination",
+        "locale": "my",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "cross-contamination",
+        "locale": "th",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "cross-contamination",
+        "locale": "km",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "cross-contamination",
+        "locale": "tl",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "protective-clothing",
+        "locale": "en",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "protective-clothing",
+        "locale": "vi",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "protective-clothing",
+        "locale": "id",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "protective-clothing",
+        "locale": "zh-CN",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "protective-clothing",
+        "locale": "zh-TW",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "protective-clothing",
+        "locale": "hi",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "protective-clothing",
+        "locale": "bn",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "protective-clothing",
+        "locale": "ne",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "protective-clothing",
+        "locale": "my",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "protective-clothing",
+        "locale": "th",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "protective-clothing",
+        "locale": "km",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "protective-clothing",
+        "locale": "tl",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hazard-recognition",
+        "locale": "en",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hazard-recognition",
+        "locale": "vi",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hazard-recognition",
+        "locale": "id",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hazard-recognition",
+        "locale": "zh-CN",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hazard-recognition",
+        "locale": "zh-TW",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hazard-recognition",
+        "locale": "hi",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hazard-recognition",
+        "locale": "bn",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hazard-recognition",
+        "locale": "ne",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hazard-recognition",
+        "locale": "my",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hazard-recognition",
+        "locale": "th",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hazard-recognition",
+        "locale": "km",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "hazard-recognition",
+        "locale": "tl",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "machine-safety",
+        "locale": "en",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "machine-safety",
+        "locale": "vi",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "machine-safety",
+        "locale": "id",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "machine-safety",
+        "locale": "zh-CN",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "machine-safety",
+        "locale": "zh-TW",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "machine-safety",
+        "locale": "hi",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "machine-safety",
+        "locale": "bn",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "machine-safety",
+        "locale": "ne",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "machine-safety",
+        "locale": "my",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "machine-safety",
+        "locale": "th",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "machine-safety",
+        "locale": "km",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "machine-safety",
+        "locale": "tl",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "monitoring-records",
+        "locale": "en",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "monitoring-records",
+        "locale": "vi",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "monitoring-records",
+        "locale": "id",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "monitoring-records",
+        "locale": "zh-CN",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "monitoring-records",
+        "locale": "zh-TW",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "monitoring-records",
+        "locale": "hi",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "monitoring-records",
+        "locale": "bn",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "monitoring-records",
+        "locale": "ne",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "monitoring-records",
+        "locale": "my",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "monitoring-records",
+        "locale": "th",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "monitoring-records",
+        "locale": "km",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      },
+      {
+        "illustrationId": "monitoring-records",
+        "locale": "tl",
+        "status": "ACCEPTED_AI_SCOPE_REVIEW",
+        "numericTokenSequenceMatchesJapanese": true,
+        "nativeCertification": false
+      }
+    ],
+    "rejected": [],
+    "assetScopeFindings": [
+      {
+        "id": "hygiene",
+        "finding": "Image shows soap/rinse/dry, lacks complete prewash/fingertip/nail/wrist/disinfection sequence and timings, and depicts no full workwear compliance. Japanese and all12translations explicitly limit scope and direct reader to body;30/20remain approximate and not illustrated. Accepted as partial schematic, not complete operational method."
+      },
+      {
+        "id": "cross-contamination",
+        "finding": "Raw/cooked separation illustration contains knife handling; captions explicitly reject divider-only protection and knife-technique instruction. Equipment/glove/clothing/movementchangeover remains workplace-specific."
+      },
+      {
+        "id": "protective-clothing",
+        "finding": "Clothing/glove image is schematic. Captions retain pre-glovehandwash and do not imply cut/heat/chemical resistance of pictured gloves."
+      },
+      {
+        "id": "hazard-recognition",
+        "finding": "Chemicals next to food are unsafe example in actual image. Everytranslatedcaption retains do-not-copy warning, designation/labeling/separation requirements and schematic-microbe/species limitation; no endorsement of pictured storage."
+      },
+      {
+        "id": "machine-safety",
+        "finding": "Safety-cover/disconnectlock/tag image does not establish zeroenergy or permission to reach inside. Everycaption retains authority/workplaceprocedure,preventrestart/checkremaininghazards and nohand-entry implication."
+      },
+      {
+        "id": "monitoring-records",
+        "finding": "Image shows probing/recording but no numeric endpoint. Captions require product/workplace-specific temperature,time,position,equipment and raw/cooked separation; reject cooking-complete or shipment decisions from image alone."
+      }
+    ],
+    "allCaptionNumericSequencesMatch": true,
+    "allAssetHashesMatch": true,
+    "nativeOrDomainCertified": false
+  },
+  "limitations": [
+    "This is scoped AI implementation and caption review; not native-language, professional food-safety or release certification.",
+    "DOMtextbounds do not prove Japanese glyph quality, mobile scroll usability or real Expo/native Image SVG support. Fixed760CSSpx plus designated horizontal scroll addresses proportional shrinking, but actual integrated browser/native pixels remain root responsibility.",
+    "No new user-facing warnings requested beyond the existing source-specific teaching caveats; original examples remain hypothetical.",
+    "All current graphic/table labels are Japanese canonical strings. This review did not certify translated SVG/table labels or locale layout;language/showTranslationprops are currently unused in the component.",
+    "No repository/Git writes by this reviewer."
+  ]
+}

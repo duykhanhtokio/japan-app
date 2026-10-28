@@ -1,3 +1,19 @@
+# Source, ruby and applied-learning completion — 2026-10-28
+
+Base `51cb9a2743fe2595f2f71da72d6b4fcdd9af6e1f`; branch `feature/food-ruby-source-visuals-20261028`.
+
+- Current user report: `COMPLETION_REPORT.md`; authoritative machine snapshot: `readiness-current.json`. Canonical inventory preserved: 78 Japanese lessons/936 lesson translations; 839 questions/10,068 question translations; 20mock forms plus13weekly checks;396titles. No Japanese question/lesson source or assessment revisions changed in this unit.
+- Offline source-bound ruby integrated across 788lesson fields,8,390question fields and52extension fields, with64,017annotations. Default-on reading toggles, plain-text fallback on stale/misaligned data, source reconstruction and correct-reason equality verified. Contextual peer corrections include source-specific counters/ambiguous readings; native pronunciation certification remains false.
+- All251canonical PDFpages pixel-overview reviewed;44individual detailpages thispass.96range flags all source-supported,27shared-boundary metadata clarifications; no question/sourceHash churn. Third source-only arithmetic typo recorded.20original source-gap extensions with240full translations, all52nonemptyJapaneseextensionfields ruby-supported.19deterministic appliedSVGs plus readable tables render actual task inputs and parent-controlled answers.
+- Six original2Dcolor illustrations with72scope captions,15source-backedvector signcards with12locale labels/actions, and88sourcevideo links integrated. Landing-page HEAD88/88available; no video playback/rehosting. Captions explicitly identify partial procedures/unsafeexamples and do not certify workplace procedures.
+- Fresh scoped webPASS:78readers,839questions before/after submission,33guards,20extensions/12answer reveals,180sign-captionUIpairs,all19appliedSVGs and6actualPNGs,12locale reader/question samples plus14supplement samples,4viewports/day-night,8selectedWebPs. All10,068question pairs and240extension pairs adapter/source-bound; not allpairs browser-tested. Source/runtimehashes bound through only2exactChinese proper-name repairs and freshdelta checks. Losslessexpo-imagewebshim, Royal/safearea/storageadapters explicit. See runtime-tests/ruby-source-20261028/final-combined-report.json.
+- Eighteen lessons contain substantive new learning material: old progress entries retained but require new completion;60otherlessonversionsstable;new78versionsvalid. Examstorage/scoring/optionsunchanged. Source/body/ruby/extension checks and JLPTlock10/10PASS.
+- Remaining: formalfullcompetency/native-language/domain/phonetic signoff (0/158formalcoveragecertifications), sixunprovidedterminologyreferences, fullExpo and actualnative/deviceacceptance, physical operation/training acceptance. Overview/images/AItests do not certify those. `scopeComplete=false`, `productionRelease=false`. Optionalprerecordedaudio remainsseparate.
+
+Next: follow readiness-current remainingAcceptance. Preserve current working knowledge, terminology-standard.json, source-discrepancy cautions, all historical exams/assets and lockedJLPTUI. No background work is implied after the session.
+
+---
+
 # Completion audit — 2026-10-28 — remaining acceptance work explicit
 
 Base `e0e8d76a845f3aa3438edd5ae1d877afca63dd1d`; branch `feature/food-completion-audit-20261028`.

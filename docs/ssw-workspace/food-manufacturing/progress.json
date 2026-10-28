@@ -1,7 +1,7 @@
 {
-  "status": "in_progress_internal_preview",
+  "status": "internal_preview_ai_content_and_scoped_web_qa",
   "scopeComplete": false,
-  "branch": "feature/food-completion-audit-20261028",
+  "branch": "feature/food-ruby-source-visuals-20261028",
   "lessonsAuthored": {
     "1": 42,
     "2": 36
@@ -223,19 +223,17 @@
   },
   "productionRelease": false,
   "remaining": [
-    "Detailed source competency and complete source visual verification;92range-review candidates still open",
-    "Verified full-body furigana;238term occurrences structurally renderable but788main lesson text fields lack ruby segments",
-    "Original explanatory illustrations;4concept diagrams currently link10lessons;optional audio separate",
-    "Six locales without supplied terminology references and source-absent2号terms deferred",
-    "Restore assets/dependencies with sufficient disk space;fullExpo/browser/native/device acceptance",
-    "Native-language and domain-expert review remains unverified"
+    "Detailed within-section full competency verification and native/domain sign-off; all158formal flags remain unverified, candidate references are not mastery evidence.",
+    "Native-language and pronunciation review of Japanese/readings and all12locales; six locales without supplied terminology references remain unstandardized against an external reference.",
+    "Full Expo build and real iOS/Android/tablet/device acceptance after restoring dependencies/assets and sufficient storage; scoped web adapters are not production/native certification.",
+    "Physical operation/KYT/figure-reading training acceptance is not established by prose, figures, automated tests or source overview. Optional prerecorded audio is separate."
   ],
-  "next": "Resolve detailed competency/visual mappings, then contextual full-body furigana and original illustrations; restore build prerequisites before actual device acceptance. Use terminology-standard.json for all language edits. q204 omission and2reading syntax defects resolved. Preserve existing839questions/78lessons and12locale coverage.",
+  "next": "Use readiness-current.json and COMPLETION_REPORT.md. Prioritize expert/native fullcompetency+pronunciation review and sixreference-absentlocales, then fullExpo/nativeactual-device acceptance with restoreddependencies/assets. Do not redo completed9178mainruby fields,20extensions,96resolvedrangeflags orcomplete questiontranslations. Preservepartial-illustration/fictional-data caveats and18lessoncompletionversion semantics.",
   "japaneseAuthorshipStatus": "AI-authored candidate across all source chapters; q204 omission clarified; detailed competency coverage and native/domain review remain unverified",
-  "sourceReferences": "153/158 TOC entries have candidate lesson page references; remaining5 are indexes/notices/bibliography. This is not mastery or full coverage certification.",
+  "sourceReferences": "153/158candidate lesson units;95candidate question units,839valid question references. All96range candidates source-supported;27shared-page continuations verified.251pages overview-reviewed,44detailpages thispass. Formalfullcompetency certification remains0/158.",
   "nativeSpeakerReviewed": false,
   "domainExpertReviewed": false,
-  "fullBodyFurigana": "pending;238/238 term occurrences pass actual ruby alignment syntax after2data corrections, no native pronunciation/device certification",
+  "fullBodyFurigana": "Integrated revision-bound offline AI readings for788lesson+8390question+52extension fields with contextual corrections and web-toggle proof. Native pronunciation/allnative-device acceptance pending; no claim allbutton/SVGlabels covered.",
   "mockQuestionsAuthored": 800,
   "weeklyQuestionsAuthored": 39,
   "weeklyChecks": 13,
@@ -463,7 +461,7 @@
       "examId": "food-2-mock-06"
     }
   },
-  "integrationStatus": "Completion editorial fixes applied: q204 canonical/historical stem clarified,12question hashes rebound;2term readings normalized,24lesson hashes rebound;23diagram field corrections reach runtime embedded captions. All10068question and936lesson translations retained. No production/browser/native certification.",
+  "integrationStatus": "Source-bound readings integrated throughout canonical78lessons/839questions plus20sourceextensions;240new extension translations.6original illustrations,19appliedSVGs,15signcards and88sourcevideo links. CurrentfreshscopedwebQA PASS with explicitadapters and2leaflocale repair delta.18lessoncompletionversionsextended,60preserved;originalJapanese/assessmentsource and translations untouched. No fullExpo/native/native-language/domain/release certification.",
   "batch16": {
     "baseCommit": "48c11c2869e177040e45d6a63fdb8b0972966699",
     "newQuestionLocalePairs": 341,
@@ -1206,20 +1204,52 @@
     }
   },
   "validation": {
-    "structuralContent": "PASS",
-    "actualAdapter": {
-      "status": "PASS",
-      "validPairs": 10068,
-      "stalePairsRejected": 10068,
-      "missingWithoutFallback": 0,
-      "validTitles": 396
-    },
-    "actualEditorialStateAndRubyRegression": "PASS; completion-editorial-qa.json",
-    "diagramExactBeforeNumbersMetadataAndParity": "PASS; completion-diagram-peer.json",
+    "contentStructure": "PASS",
+    "actualAssessmentAdapter": "10068valid/stale-rejection;0missing;396titles PASS",
+    "rubyAdapter": "78lessons/839questions/9178fields;stale/content mismatch rejection PASS",
+    "sourceExtensionAdapter": "20items/240translations/52rubyfields/content hashes/18+60versions/6assetSHA/88URLs PASS",
+    "sourceExtensionNumbersAndFallback": "240pairs per-field numeric integrity and no Japanese fallback PASS",
+    "sourceAndChartAiPeerReview": "PASS scoped reviews; not native/domain certification",
     "jlptUiLock": "10/10 PASS",
-    "nativeDeviceTested": false,
-    "fullExpoBuildTested": false,
-    "browser": "not_run_for_current_completion_snapshot",
-    "historicalEvidence": "Prior reports retained at historical commits; do not interpret old PASS or aggregate pair counts as validation of current corrected text."
+    "browser": {
+      "status": "PASS",
+      "japaneseReaders": 78,
+      "japaneseQuestionsPreAndPostSubmit": 839,
+      "submissionGuards": 33,
+      "supplementAnswerReveals": 12,
+      "signCaptionUiPairs": 180,
+      "appliedSvgDistinctLoaded": 19,
+      "rasterPngDistinctLoaded": 6,
+      "translatedAssessmentUiSamples": 12,
+      "translatedSupplementUiSamples": 14,
+      "translatedReaderUiSamples": 12,
+      "viewports": 4,
+      "responsiveCases": 16,
+      "screenshots": 8,
+      "report": "runtime-tests/ruby-source-20261028/final-combined-report.json",
+      "explicitWebAdapters": true,
+      "fullExpo": false,
+      "nativeDevice": false
+    }
+  },
+  "currentReadinessReport": "readiness-current.json",
+  "sourceExtensionProgress": {
+    "items": 20,
+    "lessonIds": 18,
+    "translations": 240,
+    "numericIntegrity": "PASS",
+    "parentHashBound": true,
+    "contentHashBound": true,
+    "all12Locales": true,
+    "nativeReviewed": false,
+    "report": "source-supplements-peer.json"
+  },
+  "visualProgress": {
+    "originalIllustrations": 6,
+    "newAppliedSvgFigures": 19,
+    "safetySigns": 15,
+    "sourceVideoLinks": 88,
+    "videoLandingHttpChecks": "88/88available,playbacknotverified",
+    "report": "runtime-tests/ruby-source-20261028/final-combined-report.json"
   }
 }

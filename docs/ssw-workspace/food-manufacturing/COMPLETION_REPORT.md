@@ -1,53 +1,53 @@
-# Tổng kết ngành chế biến thực phẩm — 28/10/2026
+# Tổng kết thực phẩm — 28/10/2026
 
-Phạm vi: **飲食料品製造業**, gồm 特定技能1号 và2号. Trạng thái: bản xem trước nội bộ; **chưa nghiệm thu toàn bộ và chưa phát hành production**. Không gán tỷ lệ hoàn thành chung vì độ sâu kiến thức và thử nghiệm thiết bị chưa được xác nhận.
+Phạm vi: **飲食料品製造業**, cấp **特定技能1号 và 2号**. Đã bổ sung nội dung và hoàn thành kiểm thử web có giới hạn nêu dưới đây. Trạng thái vẫn là **bản xem trước nội bộ**, chờ nghiệm thu chuyên môn, ngôn ngữ và thiết bị thật; chưa phát hành production.
 
-## Nội dung và ngôn ngữ
+## Nội dung hiện có
 
-| Hạng mục | Kết quả kiểm kê |
-|---|---|
-| Bài học Nhật |78: cấp1 có42 bài/7 tuần; cấp2 có36 bài/6 tuần|
-| Bản dịch bài học |936/936 lượt bài–ngôn ngữ, đủ12 ngôn ngữ|
-| Thi thử |20 đề ×40 câu =800 câu; mỗi cấp10 đề|
-| Kiểm tra tuần |13 bài ×3 câu =39 câu|
-| Tổng câu hỏi |839 câu, có4 lựa chọn, đáp án và giải thích|
-| Bản dịch câu hỏi |10068/10068 lượt câu–ngôn ngữ;396/396 tiêu đề|
-| Chuẩn thuật ngữ cung cấp |VI, EN, ID, zh-CN, KM, MY;1338 vị trí sửa ở mốc trước, có kiểm tra chéo AI và16 đề xuất bị loại vì đổi/hẹp nghĩa|
+| Hạng mục | Kết quả |
+|---|---:|
+| Bài học Nhật | 78: cấp 1 có 42 bài, cấp 2 có 36 bài |
+| Bản dịch bài học | 936/936 lượt bài–ngôn ngữ |
+| Thi thử | 20 đề × 40 câu = 800 câu |
+| Kiểm tra tuần | 13 bài, 39 câu |
+| Tổng câu hỏi | 839 câu |
+| Bản dịch câu hỏi | 10.068/10.068, đủ 12 ngôn ngữ |
+| Tiêu đề bài kiểm tra | 396/396 bản dịch |
+| Phần bổ sung từ đối chiếu nguồn | 20 phần, có 240 bản dịch |
 
-12 ngôn ngữ: Việt, Anh, Indonesia, Tagalog, Bengali, Thái, Hindi, Nepal, Myanmar, Khmer, Trung giản thể và phồn thể. Đủ bản dịch không đồng nghĩa mọi câu đã được người bản ngữ/chuyên gia duyệt.
+12 ngôn ngữ: Việt, Anh, Indonesia, Tagalog, Bengali, Thái, Hindi, Nepal, Myanmar, Khmer, Trung giản thể và phồn thể. Các bản dịch và nội dung mới giữ cờ AI biên soạn, chưa được người bản ngữ/chuyên gia duyệt.
 
-## Phần hoàn thiện trong lượt này
+## Đã hoàn thiện trong lượt này
 
-- **Sửa câu Nhật food-1-q204**: bổ sung đối tượng bị lược bỏ bằng “衛生上の対応が必要なのはなぜですか”. Giữ đáp án, lựa chọn, giải thích, kiến thức và toàn bộ chữ của12 bản dịch. Cập nhật liên kết sourceHash. Bản lịch sử nằm trong `exams.1.03-06.ja.json`, có thứ tự đáp án khác bản chính; đã giữ nguyên từng thứ tự.
-- **Sửa2 cách ghi cách đọc**: 健康チェック→けんこうちぇっく; 食品ロス→しょくひんろす. Hai cách đọc cũ chứa katakana nên bộ hiển thị ruby từ chối. Nay238/238 mục từ qua được điều kiện cấu trúc của bộ hiển thị; không coi đây là xác minh phát âm hoặc hình ảnh trên thiết bị thật. Cập nhật hash2 bài Nhật và24 bản dịch tương ứng, không sửa chữ bản dịch.
-- **Đồng bộ chuẩn vào sơ đồ đang hiển thị**: màn hình dùng bản nhúng trong `diagrams.json`, không tự đọc tệp chú thích riêng. Đồng bộ13 vị trí đã được duyệt ở tệp riêng và10 vị trí bổ sung có nguồn/kiểm tra chéo (gồm3 bản riêng tương ứng); tổng23 vị trí. Không thay layout hoặc nguồn kiến thức.
-- **Làm rõ báo cáo kiểm thử**: tách bằng chứng trình duyệt lịch sử khỏi kiểm tra hiện tại. Không kế thừa nhãn PASS cũ thành chứng nhận cho chữ đã sửa.
+**Furigana và cách đọc.** Tích hợp dữ liệu ngoại tuyến gắn phiên bản nguồn cho 788 trường bài học, 8.390 trường câu hỏi và 52 trường bổ sung: tổng **9.230 trường nội dung chính**, với 64.017 đoạn có cách đọc. Người học có thể bật/tắt. Dữ liệu lệch nguồn trở về chữ Nhật nguyên bản; không dùng cách đọc cũ sai phiên bản. Đã sửa các lỗi đọc theo ngữ cảnh và bộ đếm qua kiểm tra chéo. Điều này không phải xác nhận phát âm bởi người bản ngữ, cũng không khẳng định mọi nút/chữ nhỏ trong SVG đều có furigana.
 
-## Bao phủ kiến thức và bằng chứng nguồn
+**Đối chiếu tài liệu.** Đã xem trực quan tổng quan toàn bộ **251 trang** của hai PDF 2026, kiểm tra riêng **44 trang** trọng điểm ở độ phóng lớn hơn. Cả **96 tham chiếu từng bị đánh dấu** đều có nội dung nguồn hỗ trợ; 27 mục được ghi rõ phần tiếp tục trên trang chung. Không phải sửa kiến thức hay mã câu hỏi. Đã ghi nhận ba lỗi số liệu/đơn vị trong nguồn, bao gồm phép làm tròn 350÷395 thành 88,7% thay vì 88,6%; không sao chép số sai vào bài học.
 
-Nội dung có vệ sinh thực phẩm; mối nguy vật lý/hóa học/sinh học; dị ứng, vi sinh, ngộ độc; vệ sinh cá nhân, cơ sở/thiết bị; quản lý nguyên liệu, bảo quản, xử lý; HACCP; an toàn lao động. Cấp2 bổ sung vai trò tổ trưởng, chỉ đạo/đào tạo, giao tiếp, quản lý chất lượng, dữ liệu/QC, sản xuất, chi phí, năng suất, rủi ro và phương hướng doanh nghiệp.
+**Bổ sung kiến thức và thực hành.** Thêm 20 phần vào 18 bài liên quan: trình tự chuẩn bị, vệ sinh tay, phân biệt bảo hộ, đọc kết quả kiểm nghiệm, tư thế nâng vật, biển báo/KYT/video; quản lý phiên bản tài liệu, hồ sơ nhiệt độ, nhánh luồng sản xuất, CL/OL, lấy mẫu và phân bố, histogram, quản đồ, công cụ QC, thời gian–năng suất, giá trị gia tăng, ma trận rủi ro và phạm vi hệ thống quản lý. Có dữ kiện, bảng/biểu đồ và đáp án đóng/mở riêng, không đưa đáp án bài thi ra trước khi nộp. Những thông số luyện tập được ghi rõ là giả định, không phải quy trình vận hành cho mọi nhà máy.
 
-- Hai PDF Nhật có86+165=251 trang. Mục lục có158 mục (54 cấp1,104 cấp2).
--153 mục có tham chiếu bài học dự kiến;95 mục có tham chiếu câu hỏi dự kiến. Cả839 câu đều có mã kiến thức hợp lệ và đúng tham chiếu dự kiến: thiếu/lỗi thời/trùng/mồ côi đều0.
--5 mục không có cả hai loại tham chiếu là chỉ mục/thông báo/tài liệu tham khảo.63 mục không có câu hỏi gắn trực tiếp; nhiều mục là mục cha/chương, nên không tự suy ra63 lỗ hổng kiến thức độc lập.
--**0/158 mục được xác nhận chính thức là bao phủ trọn năng lực**. Đây là trạng thái chưa kiểm chứng, không phải kết luận các bài không có kiến thức. Tham chiếu trang hoặc mã kiến thức chưa chứng minh mọi ý nhỏ đã được dạy/kiểm tra đủ.
-- Bằng chứng lịch sử ghi nhận đọc phần nội dung dạng chữ và kiểm tra trực quan30 trang ưu tiên (10 cấp1,20 cấp2). Chưa kiểm tra hình/bảng/chú thích toàn bộ251 trang.96 ứng viên lệch khoảng trang mục lục còn cần ánh xạ chi tiết;4 đã có hỗ trợ dạng chữ theo phạm vi hẹp,92 còn mở. Không tự coi lệch khoảng là sai kiến thức.
+**Minh họa.** Thêm sáu hình 2D màu nguyên bản, 15 thẻ nhận diện biển báo bằng vector và 19 sơ đồ/biểu đồ dữ liệu mới. Các bảng và đồ thị hiển thị dữ kiện thật của bài luyện tập; đồ thị rộng được kéo ngang trong khung riêng để chữ còn đọc được trên điện thoại. Hình rửa tay chỉ là tổng quan một phần; hình hóa chất có ví dụ bảo quản sai và được ghi rõ bằng chú thích. Bốn sơ đồ khái niệm cũ được giữ nguyên.
 
-## Kiểm tra hiện tại
+**Video nguồn.** Tích hợp 88 liên kết chính thức theo 11 ngôn ngữ của tài liệu. Cả 88 trang đích phản hồi HTTP hợp lệ tại kiểm tra. Không tải lại, lưu lại hay tái phân phối video; chưa xác minh phát video thực tế.
 
-Xem `completion-editorial-qa.json` và `completion-summary.json` cho kết quả máy đọc được. Kiểm tra cấu trúc/bộ nạp bản dịch và khóa UI được chạy sau thay đổi. Kiểm tra thực tế bộ nạp và lưu bài làm xác nhận hash cũ bị từ chối, hash mới dùng được, bài làm cũ của đề sửa bị vô hiệu hóa đúng, bài làm mới khôi phục/chấm40/40 được và32 phiên bản đề khác giữ nguyên.
+**Tiến độ học.** Vì 18 bài có kiến thức mới, dấu hoàn thành cũ của các bài đó cần được cập nhật sau khi học bổ sung. Dữ liệu cũ không bị xóa; phiên bản hoàn thành của 60 bài khác và toàn bộ phiên bản đề thi giữ nguyên.
 
-Không chạy mới trình duyệt, fullExpo hoặc thiết bị native. Bằng chứng trình duyệt lịch sử không được gắn lại với toàn bộ bản hiện tại.
+## Kiểm thử đã thực hiện
 
-## Phần còn thiếu trước nghiệm thu
+- PASS cấu trúc bài học/đề, đáp án, liên kết phiên bản và bộ nạp 10.068 bản dịch câu hỏi.
+- PASS toàn bộ dữ liệu furigana, 20 phần bổ sung/240 bản dịch, chữ Nhật nguyên gốc, số liệu, hash nội dung và điều kiện từ chối dữ liệu cũ.
+- PASS trình duyệt: 78 trang học Nhật; 839 câu trước và sau nộp; 33 xác nhận nộp; 20 phần bổ sung và 12 lần mở đáp án; 15 biển báo với 180 lượt chú thích ngôn ngữ; sáu PNG và 19 SVG thực sự tải được.
+- Có mẫu hiển thị bản dịch cho đủ 12 ngôn ngữ: 12 bài học, 12 câu hỏi và 14 phần bổ sung. **Không tuyên bố toàn bộ 10.068 bản dịch đã được thử giao diện.**
+- PASS bốn kích thước 390×844, 844×390, 768×1024, 1440×900; ngày/đêm, 16 trường hợp bố cục; không tràn ngang toàn trang. Việc kéo ngang bảng/đồ thị trong khung riêng được kiểm tra thực tế.
+- Có tám ảnh chụp đã xem lại; lỗi JavaScript trang là 0. Khóa giao diện JLPT đạt 10/10, không thay đổi các tệp khóa.
 
-| Ưu tiên | Công việc | Điều kiện hoàn thành |
-|---|---|---|
-|1|Đối chiếu chi tiết năng lực và toàn bộ hình/bảng nguồn|Từng ý nhỏ có bài/câu/hình phù hợp, giải quyết92 ứng viên phạm vi còn mở, có bằng chứng nguồn cụ thể|
-|2|Furigana toàn bài và bài test|Hiện788 trường chữ chính trong bài học chưa có ruby; bổ sung cách đọc theo ngữ cảnh và kiểm tra trên màn hình thật|
-|3|Minh họa và thông tin đa phương tiện|Hiện4 sơ đồ khái niệm gắn10/78 bài; chưa đủ bộ minh họa2Dmàu theo nội dung. Không có âm thanh học tích hợp; âm thanh thu sẵn tùy chọn tách riêng|
-|4|Thuật ngữ và ngôn ngữ|Rà6 ngôn ngữ chưa có nguồn chuẩn và thuật ngữ riêng cấp2 không nằm trong tài liệu1号đã cung cấp; chuyên gia/người bản ngữ kiểm tra|
-|5|Khôi phục môi trường, build và thử thực tế|Thiếuexpo/react/react-native/esbuild và thư viện liên quan;5545 tài nguyên Git đang bị bỏ qua bởi sparse checkout, không bị xóa khỏi Git. Đĩa chỉ còn khoảng170–192 MiB tại kiểm tra; cần đủ dung lượng trước khôi phục/cài đặt|
-|6|Nghiệm thu chất lượng|Kiểm tra điện thoại/tablet/desktop, dọc/ngang, font, furigana, cuộn/nút, lưu tiến trình và chấm điểm; xác nhận chuyên môn và ngôn ngữ|
+Kiểm thử web dùng bộ chuyển tiếp cho Royal/background/safe area/lưu trữ và ảnh SVG. Các khác biệt này được ghi rõ; kết quả không thay thế full Expo hoặc kiểm thử native. Hai sửa tên riêng nhỏ trong bản Trung được kiểm tra bổ sung, có bằng chứng mọi trường còn lại giữ nguyên.
 
-Mốc này hoàn tất phần sửa lỗi cụ thể và kiểm kê tổng kết nêu trên. **Toàn dự án thực phẩm vẫn `scopeComplete=false`, `productionRelease=false`.** Không có tác vụ chạy nền được hứa sau báo cáo.
+Bằng chứng đầy đủ: [báo cáo web hiện tại](runtime-tests/ruby-source-20261028/final-combined-report.json), [tổng hợp máy đọc được](readiness-current.json), [nguồn tạo ảnh và đường dẫn tài sản](image-generation-provenance.json).
+
+## Phần còn cần nghiệm thu
+
+1. **Chuyên gia/người bản ngữ:** đối chiếu sâu từng chuẩn đầu ra, thuật ngữ, phát âm và cả 12 ngôn ngữ. Sáu ngôn ngữ chưa có tài liệu thuật ngữ chuẩn vẫn cần nguồn đối chiếu. 153/158 mục có tham chiếu bài học và 95 mục có câu hỏi là bằng chứng liên quan; chưa phải chứng nhận bao phủ trọn năng lực. Cờ xác nhận trọn năng lực 158 mục vẫn chưa được nâng lên.
+2. **Full Expo và thiết bị thật:** khôi phục tài nguyên/thư viện với đủ dung lượng rồi nghiệm thu iOS/Android/tablet, bố cục native, cách đọc và hành vi ảnh. Bằng chứng web dùng bộ chuyển tiếp không thay thế bước này.
+3. **Kỹ năng thao tác và thị giác:** bảng, hình, lời giải và kiểm tra tự động không chứng minh người học đã thực hiện được thao tác nhà máy, KYT hoặc xử lý tình huống thật. Âm thanh thu sẵn là hạng mục tùy chọn riêng.
+
+**Kết luận:** phần nội dung AI và kiểm thử web đã tiến thêm rõ ràng theo bằng chứng trên. Chưa có cơ sở để gọi toàn ngành hoàn tất 100% hoặc nghiệm thu phát hành production. `scopeComplete=false`, `productionRelease=false`.
