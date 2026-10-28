@@ -6,6 +6,7 @@ import runpy
 ROOT = Path(__file__).resolve().parents[2]
 STAGE = 'docs/ssw-workspace/manufacturing/batch17/'
 LOCALE = runpy.run_path(str(Path(__file__).with_name('apply-locale-revisions.py')))
+PRECISION = runpy.run_path(str(Path(__file__).with_name('apply-electrical-precision.py')))
 digest, object_digest, require = LOCALE['digest'], LOCALE['object_digest'], LOCALE['require']
 
 
@@ -20,9 +21,12 @@ def index(items, field):
 
 
 def validate_electrical(report):
+    source_path='src/data/manufacturing/mocks/electrical.json'
+    historical = PRECISION['transform_files']({source_path:(ROOT/source_path).read_bytes()},
+                                            PRECISION['load_patch'](),forward=False)
     for path, expected in report['sourceSnapshots'].items():
-        require(digest((ROOT / path).read_bytes()) == expected, 'Electrical review file drift: ' + path)
-    exams = read('src/data/manufacturing/mocks/electrical.json')['exams']
+        require(digest(historical.get(path,(ROOT/path).read_bytes())) == expected, 'Electrical review file drift: ' + path)
+    exams = json.loads(historical[source_path])['exams']
     questions = index([q for e in exams for q in e['sections']['theory']['questions']], 'id')
     lessons = index(read('src/data/manufacturing/electrical.json')['lessons'], 'id')
     items = index(report['items'], 'questionId')
@@ -49,6 +53,7 @@ def validate_electrical(report):
 def validate_language(report):
     patch = LOCALE['load_patch']()
     inputs = {path: (ROOT / path).read_bytes() for path in report['inputFiles']}
+    inputs = PRECISION['transform_files'](inputs,PRECISION['load_patch'](),forward=False)
     LOCALE['validate_current'](inputs, patch)
     historical = LOCALE['transform_files'](inputs, patch, forward=False)
     for path, expected in report['inputFiles'].items():

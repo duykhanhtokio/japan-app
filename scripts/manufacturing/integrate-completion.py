@@ -48,6 +48,7 @@ def staged_translation_resolver(selection):
  def finish():assert used==set(selection),'Unused translation selection entries: '+','.join(sorted(set(selection)-used))
  return add,resolve,finish
 def main():
+ runpy.run_path(str(ROOT/'scripts/manufacturing/apply-electrical-precision.py'))['preflight']()
  runpy.run_path(str(ROOT/'scripts/manufacturing/apply-diagram-extension.py'))['preflight']()
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/check-source-review-bindings.py')],check=True,capture_output=True,text=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/integrate-source-guides.py')],check=True,capture_output=True,text=True)
@@ -224,6 +225,7 @@ def main():
  # Preserve later source-bound editorial revisions when rebuilding frozen drafts.
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-editorial-patches.py')],check=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-locale-revisions.py')],check=True)
+ subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-electrical-precision.py')],check=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-reference-guide-extension.py')],check=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-diagram-extension.py')],check=True)
  print(json.dumps({'lessons':len(all_lessons),'weeklyQuestions':len(all_questions),'weeks':progress['previewWeeksBySpecialty'],'translatedLessonPairs':progress['translatedLessonLocalePairs'],'translatedQuestionPairs':progress['translatedQuestionLocalePairs'],'completeDraftLocales':complete,'courseComplete':False}))

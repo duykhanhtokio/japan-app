@@ -9,6 +9,8 @@ patcher = runpy.run_path(str(Path(__file__).with_name('apply-editorial-patches.p
 patch = json.loads((ROOT / patcher['PATCH_PATH']).read_bytes())
 paths = (patch['sourcePath'], patcher['TRANSLATIONS'], patcher['FURIGANA'])
 inputs = {p: (ROOT / p).read_bytes() for p in paths}
+precision = runpy.run_path(str(Path(__file__).with_name('apply-electrical-precision.py')))
+inputs = precision['transform_files'](inputs, precision['load_patch'](), forward=False)
 locale = runpy.run_path(str(Path(__file__).with_name('apply-locale-revisions.py')))
 inputs = locale['transform_files'](inputs, locale['load_patch'](), forward=False)
 compile_outputs = patcher['compile_outputs']

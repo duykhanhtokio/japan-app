@@ -14,6 +14,7 @@ AUDIT = 'docs/ssw-workspace/manufacturing/batch12/mechanical/full-source-audit.j
 PATCH_PATH = 'docs/ssw-workspace/manufacturing/batch16/mock-editorial-patches.json'
 PATCHER = runpy.run_path(str(ROOT / 'scripts/manufacturing/apply-editorial-patches.py'))
 LOCALE = runpy.run_path(str(ROOT / 'scripts/manufacturing/apply-locale-revisions.py'))
+PRECISION = runpy.run_path(str(ROOT / 'scripts/manufacturing/apply-electrical-precision.py'))
 
 
 def require(condition, message):
@@ -49,6 +50,10 @@ def unique_index(items, key, label):
 
 def validate(inputs):
     result = {}
+    precision = PRECISION['load_patch']()
+    require(PRECISION['transform_files'](inputs, precision) == inputs,
+            'Electrical precision revisions not fully applied')
+    inputs = PRECISION['transform_files'](inputs, precision, forward=False)
     revisions = LOCALE['load_patch']()
     LOCALE['validate_current'](inputs, revisions)
     inputs = LOCALE['transform_files'](inputs, revisions, forward=False)
@@ -127,10 +132,15 @@ def validate(inputs):
             result[specialty].update(historicalReviewedQuestions=400,
                                      unchangedCurrentReviewedQuestions=398,
                                      authorRevisedQuestions=2, revisedQuestionsIndependentlyReviewed=False)
+        else:
+            result[specialty].update(historicalReviewedQuestions=100,
+                                     unchangedCurrentReviewedQuestions=98,
+                                     separatelyReviewedStemRevisions=2,
+                                     revisedFullQuestionSourceCertification=False)
     for path, expected in PATCHER['compile_outputs'](inputs, patch).items():
         require(inputs[path] == expected, 'Runtime editorial patch not fully applied: ' + path)
     return {'status': 'PASS', 'reviews': result,
-            'scope': 'Exact batch14 evidence plus reversible batch16 author revisions; no independent revision, PDF, native or domain certification.',
+            'scope': 'Exact historical batch14 evidence reconstructed before batch21 stem refinements, plus reversible batch16 author revisions; no full-source/native/domain certification.',
             'runtimeFilesModified': False, 'releaseReady': False}
 
 

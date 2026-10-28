@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "reviewer": "electrical_source_author_ai",
+  "baselineCommit": "7639bbab163cba6a7084de61bf20ffcb7623eaf0",
+  "scope": "Bounded source-context inspection and author editorial consistency review for two existing Japanese practical mock stems. Exact technical definition verification against cited PDF is NOT claimed.",
+  "canonicalRevisions": {
+    "path": "docs/ssw-workspace/manufacturing/batch21/canonical-revisions.json",
+    "sha256": "9dd73fa31b2deb86225f0ec18d6fce1416c2ec78e1adc5bda5f58cc1b24959b1"
+  },
+  "proposalBinding": {
+    "path": "docs/ssw-workspace/manufacturing/batch17/electrical-mocks/practical-precision-proposals.json",
+    "sha256": "4ddad910f75795148ccbfedfb5723648e3211aafaddacd3686c1f8dacc9cd889"
+  },
+  "source": {
+    "documentId": "mfg1-electrical-source",
+    "sha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+    "physicalPagesReviewed": [
+      89,
+      90,
+      91,
+      106,
+      127,
+      128,
+      139,
+      141
+    ],
+    "printedPagesReviewed": [
+      80,
+      81,
+      82,
+      97,
+      118,
+      119,
+      130,
+      132
+    ]
+  },
+  "sourceVisualReview": {
+    "performed": true,
+    "method": "Rendered actual exact-hash PDF pages89/90/91/106/127/128/139/141 at1.3x and visually inspected all8fullpage images; text extraction only cross-check.",
+    "sourceImagesRedistributed": false,
+    "sourceExercisesCopied": false,
+    "newUniqueSourcePages": 0
+  },
+  "findings": [
+    {
+      "questionId": "mfg1-electrical-mock-03-practical-q04",
+      "lessonBinding": {
+        "id": "mfg1-electrical-l066",
+        "sourceHash": "52e82953a82dc1d65e2e8abc167c4dcefff2f0addac1fd7c5c166b19e7256859"
+      },
+      "beforeSourceHash": "c09cf5164d2db3785d722fa772ea1dccad9c5e8ad89feb4d2d243fde90496593",
+      "afterSourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+      "directPdfDefinitionSupport": false,
+      "observedPdfSupport": "Physical106 table7-7 lists thermistor among other passive components. Physical127 defines resistance;128is capacitor context;139diode and141ICcontext do not directly teach the exact thermistor temperature-sensing proposition.",
+      "canonicalBasis": "Lesson066 section-1 already distinguishes resistor temperature coefficients and section-3/termサーミスタ teaches temperature-related resistance changes; all four existing question rationales already distinguish sensing purpose from fixed-resistor use.",
+      "editorialDecision": "Specify temperature detection as primary purpose in this question. Does not claim every thermistor application is temperature detection, or fixed resistors have no temperature coefficient.",
+      "keyPreserved": true,
+      "optionsPreserved": true,
+      "rationalesPreserved": true,
+      "sourceReferencesPreserved": true,
+      "sourceHashValid": true,
+      "verdict": "pass_scoped_editorial_consistency_not_direct_pdf_definition_certification"
+    },
+    {
+      "questionId": "mfg1-electrical-mock-08-practical-q08",
+      "lessonBinding": {
+        "id": "mfg1-electrical-l065",
+        "sourceHash": "ea00b75e01ffc7c14c5dd3893b9d5417686a3eb3a6b2c57e0a50d26e90fabaa6"
+      },
+      "beforeSourceHash": "c9879288793c3f225bf7c593c1710a799e0606439774b75d408c3a8f24daed08",
+      "afterSourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+      "directPdfDefinitionSupport": false,
+      "observedPdfSupport": "Physical89–90 covers soldering tools/materials/flux/procedure;91is an exercise panel excluded from authorship. These cited pages do not explicitly define solder bridge or land.",
+      "canonicalBasis": "Lesson065 section-3 already identifies bridge as defect and requires approved rework/reinspection. Existing correct rationale defines bridge as an unwanted connection to an adjacent part; other rationales distinguish it from normal tolerance and flux.",
+      "editorialDecision": "Explicitly state adjacent land should not be connected. Does not imply all adjacent pads must always be isolated or authorize any rework procedure.",
+      "keyPreserved": true,
+      "optionsPreserved": true,
+      "rationalesPreserved": true,
+      "sourceReferencesPreserved": true,
+      "sourceHashValid": true,
+      "verdict": "pass_scoped_editorial_consistency_not_direct_pdf_definition_certification"
+    }
+  ],
+  "furiganaAuthorReview": {
+    "performed": true,
+    "scope": "Exact new Japanese stems only; prior option segments preserved byte-equivalent.",
+    "checks": [
+      "temperature検出けんしゅつ/主目的しゅもくてき/温度おんど/変化へんか/抵抗ていこう/利用りよう/素子そし",
+      "bridge本来ほんらい inserted; existingはんだ付けづけ/後ご/隣となり/該当がいとう/状態じょうたい retained",
+      "All segment text concatenations equal revisedJapanese stems; options/sourceHash bindings checked."
+    ]
+  },
+  "reviewStatusModified": false,
+  "runtimeModified": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "fullSourceKnowledgeCoverageCertified": false,
+  "releaseReady": false,
+  "ssw2Used": false,
+  "limitations": [
+    "The cited PDF pages supply general textbook context but do not explicitly establish thermistor temperature-detection behavior or solder-bridge/land definitions.",
+    "These are bounded editorial clarifications of existing lesson paragraphs and answer rationales, not newly PDF-certified technical definitions.",
+    "Independent canonical/source/furigana comparison is recorded separately; runtime reviewStatus remains unchanged."
+  ]
+}
