@@ -1,3 +1,15 @@
+# Nhà hàng / 外食業 — checkpoint 20, 2026-10-28
+
+Module chưa hoàn tất. Base f1fef268cdeb707892ca69eb374e6025a95b84ca đã xác minh remote. Lô này cần qua commit/ref/fetch/persistence gate trước khi báo đã lưu bền vững.
+
+- Năm AI đề xuất600cụm, rà chéo toàn bộ. Root chỉ nhận cụm có occurrence đè lên kanji chưa có reading trong dữ liệu trước sửa;loại302cụm chỉ gộp phần đã đọc/không bổ sung phủ kanji. Giữ298cụm mới, tất cả thực sự phát sinh token. Trường chưa phủ3080→2913/7358,thêm167trường phủ đầy đủ. Token đọc37739→37728 do gộp cụm dài,không dùng số token làm tỷ lệ hoàn thành.23self-tests PASS.
+- Rà10unit nguồn hẹp. Ba công thức2operations-k015/k018/k019 được root vàAI độc lập chấp nhận phủ đủ trong phạm vi unit:粗利益,月間標準原価率,実際原価率. Toàn639unit nay13covered/587partial/39structural. Đây là đối chiếu AI với nguồn đã cung cấp,không duyệt người bản ngữ/chuyên môn/người thật.
+- Bảy unit khác giữpartial. Đề xuấtservice-k038 bị peer bác vì thiếu ghi chú/ảnh về nhận diện người lái xe;không bỏ qua phần ảnh khi xét phạm vi unit. Sáu unit còn lại có checklist thiếu cụ thể về tỷ lệ,công thức cá biệt,thuật ngữ,đề xuất món,phân loại rượu vàăn chay. Xemcompletion20-source-review.json.
+- Subject-link validator PASS;120/120bài,984/984câu,1401lesson edges/1039question edges giữ nguyên. Structural PASS;Nhật ngoài furigana,sourceHash,đápán/options/knowledgeIds và12filedịch giữ nguyên. Không đổiUI/ngànhkhác.
+- closure-status/acceptance cập nhật đúng2913trường và587partial. Chưa productionExpo/native/device,fullimagecoverage vàduyệt bản ngữ/chuyên môn. Không cam kết chạy nền sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 19, 2026-10-28
 
 Module chưa hoàn tất. Base 53dd16e3e31f5f59c1f89ec41daa8d3968f8a380 đã xác minh remote. Lô này cần qua commit/ref/fetch/persistence gate trước khi báo đã lưu bền vững.
