@@ -1,3 +1,16 @@
+# Nhà hàng / 外食業 — checkpoint 19, 2026-10-28
+
+Module chưa hoàn tất. Base 53dd16e3e31f5f59c1f89ec41daa8d3968f8a380 đã xác minh remote. Lô này cần qua commit/ref/fetch/persistence gate trước khi báo đã lưu bền vững.
+
+- Năm AI đề xuất 600 cách đọc, rà chéo toàn bộ. Sửa cách đọc 担う, mở rộng một cụm bị tiền tố che, loại một cụm dư và ba cụm không phát sinh token thực tế. Thêm 596 cách đọc có dùng; trường còn kanji chưa đọc 3333→3080/7358, thêm253trường phủ đầy đủ. Số token có đọc 37976→37739 do cụm dài gộp token cũ; không dùng số token làm tỷ lệ hoàn thành. 23self-tests PASS.
+- Rà nguồn riêng cho q033: áp dụng hai liên kết chủ đề cùng cấp rst-2-hygiene-k005/k006 theo nguồn2hyg7–8. 120/120bài và984/984câu nay có metadata hai chiều hợp lệ,1401lesson edges+1039question edges. Không chứng nhận mọi chi tiết câu; phần tổng hợp nguy cơ hóa học và các đề xuất liên cấp được ghi riêng,không âm thầm đổisourceRefs/hashes.
+- Thêm check-knowledge-links.py vàknowledge-link-report.json: kiểm tra ID,level,liên kết xuôi/ngược,primarylesson vàtổngstatus. Dữ liệu thực PASS;2fixture lỗi ID/thiếu chiều ngược được phát hiện trong bộ nhớ,không sửa dữ liệu đểtest.
+- Không nâng coverage:639unit vẫn10covered/590partial/39structural. Rà egg/liver vàAnisakis cho thấy các unit rộng còn chi tiết chưa dạy đủ;không đánh dấu xong chỉ vì tiểu mục đã có. Ghi rõ4câu có giới hạn căn cứ hẹp. Nguồn hãng Testo xác nhận phân biệt nhiệt kế bề mặt/tâm;Osaka Prefecture hỗ trợ quản lý ngày pha chế/hạn dùng,nhưng kết luận không đoán lịch sử là suy luận biên tập được ghi rõ. Xemcompletion19-source-review.json.
+- Structural PASS;toàn bộ Nhật ngoài furigana/knowledgeIds,sourceHash,đáp án/options và12file dịch giữ nguyên. Chưa productionExpo/native/device vàchưa duyệt bản ngữ/chuyên môn. Không thayUI/ngànhkhác.
+- Tiếp theo:3080trường furigana,đối chiếu590partial vàhình/thiết bị/nghiệmthu. Liên kết chủ đề đầy đủ không phải bao phủ100%kiến thức. Không cam kết chạy nền sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 18, 2026-10-28
 
 Yêu cầu đóng cả7hạng mục trongphiên: CHƯA đạt toàn bộ;không nâng cờ nghiệm thu khi thiếu bằng chứng. Base ca6885f5f823d612356cd2e7aecd5b075a3ba260 đã remote-verified. Lô này cần commit/ref/fetch/persistence gate.
