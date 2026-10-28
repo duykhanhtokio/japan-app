@@ -1,3 +1,15 @@
+# Nhà hàng / 外食業 — checkpoint 11, 2026-10-28 (trung gian)
+
+Toàn bộ mô-đun CHƯA hoàn tất. Base remote đã qua WORK PERSISTENCE PASS `39c522f604c6ab45ddc4c897d812a88e8ab986b4`, nhánh `feature/restaurant-20261026`. Lô này phải qua commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
+
+- Thêm1560 bản dịch glossary:hi360,bn240,my240,ne240,th360,km120. Tổng5712/8304, còn2592 tại snapshot này. Sáu locale en/vi/id/tl/zh-CN/zh-TW đủ692 giữ nguyên.
+- Giữ nguyên11808/11808 bản dịch câu,1440 bản bài và73UI×12. Bảo toàn18276 record cũ; mọi dữ liệu ngoài glossary không đổi. Hash1560 glossary mới khớp định nghĩa Nhật.
+- Structural PASS; numeric105684 trường PASS; signedCelsius396 trường PASS. Không có flag số cần đối chiếu mới. Các bản mới AI chưa được người bản ngữ/chuyên môn duyệt.
+- Sáu child tiếp tục trên fragment riêng theo canonicalindex; dữ liệu chưa ghép không cộng vào snapshot. Điểm tiếp của kho đã ghép:hi/th từ360;bn/my/ne từ240;km từ120. Hợp nhất phần mới theoID/hash, không ghi đè record đã ghép.
+- Còn glossary,source590partial,fullfurigana/hình và productionExpo/native. Giữ acceptance chưa đạt ởfalse; không cam kết chạy nền sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 10, 2026-10-28
 
 Toàn bộ mô-đun CHƯA hoàn tất. Base remote đã qua scoped WORK PERSISTENCE PASS `b41bbc29401f1c447903effc9ee41d84f7014c58`, nhánh `feature/restaurant-20261026`. Lô này cần commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
