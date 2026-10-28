@@ -286,3 +286,7 @@ Tuân thủ phạm vi cho phép Git đã có; không trộn thay đổi của n�
 Làm liên tục theo khả năng thực thi, báo cáo ngắn tại mốc có ý nghĩa. Không hứa tác vụ tự chạy sau khi kết thúc phiên nếu không có hệ thống chạy nền được xác nhận.
 
 Bắt đầu bằng việc kiểm tra repository, đọc đầy đủ hai PDF, lập ma trận kiến thức và thiết kế chương trình. Sau đó triển khai từng lô đến khi đạt các tiêu chí nghiệm thu, không dừng ở một bản kế hoạch.
+
+## Cập nhật thuật ngữ được người dùng yêu cầu — 2026-10-28
+
+Dùng sáu bản dịch giáo trình đính kèm làm chuẩn thuật ngữ cho VI, EN, ID, zh-CN, KM và MY trong bài học, bài kiểm tra, bảng thuật ngữ và chú thích. Trước mọi sửa đổi/dịch mới, đọc `terminology-standard.json` và báo cáo ngôn ngữ tương ứng `terminology-20261028-{locale}.json`. Các PDF bản 2024 chỉ là chuẩn thuật ngữ; giữ kiến thức, số liệu và điều kiện của nguồn Nhật2026. Giữ phân biệt 管理基準/許容限界(CL)/OL, 改善措置/修正/是正処置 và các ngoại lệ ngữ cảnh đã ghi. Sáu ngôn ngữ chưa được cung cấp nguồn chuẩn được để rà soát sau. Không coi việc đối chiếu AI là xác nhận người bản ngữ/chuyên gia.

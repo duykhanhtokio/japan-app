@@ -1,7 +1,7 @@
 {
   "status": "in_progress_internal_preview",
   "scopeComplete": false,
-  "branch": "feature/food-manufacturing-batch28-20261028",
+  "branch": "feature/food-terminology-standard-20261028",
   "lessonsAuthored": {
     "1": 42,
     "2": 36
@@ -228,9 +228,10 @@
     "Full detailed source competency mapping and complete source visual review",
     "Original explanatory illustrations and optional prerecorded audio",
     "Full Expo/native build and actual device validation",
-    "Expert/native review remains unverified"
+    "Expert/native review remains unverified",
+    "Terminology QA: six locales without supplied references deferred; additional source-absent 2号 terms and full native/domain review remain open. Consult terminology-standard.json for all future edits."
   ],
-  "next": "Assessment translation coverage complete: 839questions ×12locales =10068pairs and33titles ×12 =396. Do not redo completed translations. Continue source competency/visual verification and Japanese editorial q204, verified full-body furigana, original illustrations, browser/Expo/device testing and native/domain review. Source edits require corresponding revision/hash updates and revalidation.",
+  "next": "Use terminology-standard.json and locale audits for all future translations/edits. Confirm remaining source-absent terms and six deferred locales when references are supplied. Continue full source competency/visual mapping, Japanese editorial q204, verified furigana, original illustrations and actual browser/Expo/device QA. Do not redo completed translations.",
   "japaneseAuthorshipStatus": "AI-authored candidate covering all source chapters; detailed competency coverage remains unverified",
   "sourceReferences": "153/158 TOC entries have candidate lesson page references; remaining5 are indexes/notices/bibliography. This is not mastery or full coverage certification.",
   "nativeSpeakerReviewed": false,
@@ -324,7 +325,7 @@
       "deltaBaselineCommit": "854bfc43e6ee0c074ab0de60efc787aa2faa98ba",
       "all12LocaleGroupsDisjoint": true
     },
-    "assessmentEvidence": "Historical 3460 browser-tested pairs retained; at least6608current pairs lack browser evidence, and historical source-version binding has not been revalidated. Batch28 actual adapter/state and AI semantic checks are not browser/native/Expo certification.",
+    "assessmentEvidence": "Historical browser evidence remains 3460 pairs at its old snapshots. Terminology edits changed410question-locale objects; no new browser tests or current-version rebinding of historical evidence. Do not interpret historical counts as current text validation.",
     "batch06": {
       "structuralContent": "PASS2468 pairs",
       "translationAdapter": "PASS2468 valid and stale-revision rejection checks;7600missing without fallback",
@@ -711,6 +712,13 @@
       "completedAll12LocaleForm": "food-2-mock-10",
       "completeAll12LocaleMockForms": 20,
       "explicitTranslationCoverageComplete": true
+    },
+    "terminologyStandardization": {
+      "content": "PASS",
+      "adapter": "PASS10068valid/10068stale-rejection/396titles",
+      "independentAiPeerReview": true,
+      "browserTested": false,
+      "nativeDeviceTested": false
     }
   },
   "translatedQuestions": {
@@ -936,7 +944,7 @@
       "examId": "food-2-mock-06"
     }
   },
-  "integrationStatus": "Batch28 adds480revision-bound translations and12titles on isolatedfood branch. All10068question-locale pairs and396title pairs now explicit. All9588prior question/title objects, Japanese content, assessment revisions and runtime/UI preserved. Overall source/native/device/visual work remains incomplete.",
+  "integrationStatus": "Terminology reference applied to six supplied locales in lessons/tests/glossary/captions. 1338 field corrections after independent AI peer review; 16 meaning-narrowing proposals rejected. Full 10068 question translations and936 lesson translations retained. Japanese/runtime/UI unchanged. See terminology-20261028-qa.json.",
   "batch16": {
     "baseCommit": "48c11c2869e177040e45d6a63fdb8b0972966699",
     "newQuestionLocalePairs": 341,
@@ -1159,5 +1167,32 @@
     "completedAll12LocaleForm": "food-2-mock-10",
     "completeAll12LocaleMockForms": 20,
     "explicitTranslationCoverageComplete": true
+  },
+  "terminologyStandardization": {
+    "status": "supplied_reference_term_families_audited_ai_peer_reviewed_not_native_certified",
+    "reference": "terminology-standard.json",
+    "qaReport": "terminology-20261028-qa.json",
+    "priorityLocales": [
+      "vi",
+      "en",
+      "id",
+      "zh-CN",
+      "km",
+      "my"
+    ],
+    "deferredLocales": [
+      "tl",
+      "bn",
+      "th",
+      "hi",
+      "ne",
+      "zh-TW"
+    ],
+    "acceptedFieldCorrections": 1338,
+    "runtimeFieldCorrections": 1329,
+    "rejectedMeaningNarrowingProposals": 16,
+    "sourceEdition": "2024 terminology only; Japanese2026 canonical knowledge unchanged",
+    "nativeReviewed": false,
+    "exhaustiveTranslationCertification": false
   }
 }

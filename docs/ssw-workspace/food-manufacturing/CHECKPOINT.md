@@ -1,3 +1,17 @@
+# Terminology standard — 2026-10-28 — six supplied locales
+
+Base `21e9862d6075649778a42ee129963b15fb7b28f5`; branch `feature/food-terminology-standard-20261028`.
+
+- Publisher supplied six translated 1号 textbooks (2024 fourth edition) as terminology authority: VI, EN, ID, zh-CN, KM, MY. Japanese2026 source remains knowledge authority; no older legal lists, counts, numerical conditions or source text copied into the app. PDF text corruption in Khmer/Myanmar was resolved by visual reading, not copying broken glyph extraction.
+- Six AI authors audited confirmed technical term families across all78lessons/839questions in each priority locale; independent peers reviewed all1354proposed field changes. Accepted1338, rejected16 to preserve generic2号 management criteria, 是正処置 and the broad heat-illness meaning. Counts are text fields, not unique terms;1329runtime fields and9historical Khmer-part fields.119lesson-locale objects and410question-locale objects changed, plus glossary/captions. Exact pointers, target hashes, source PDF pages and exceptions in `terminology-20261028-{locale}.json`; reusable policy/inventory in `terminology-standard.json`.
+- Locale accepted fields: VI102, EN263, ID176, zh-CN248, KM201, MY348. All Japanese, question order/answers, source hashes, review flags and other six locales preserved. All10068question-locale pairs,936lesson-locale pairs and396titles retained. Supplied zh-CN is not automatic authority for zh-TW.
+- PASS: explicit before-values, approved-leaf-only differences, numeric tokens, all839correct-reason equalities per priority locale; content structure; actual adapter10068valid/10068stale-rejection/0missing/396titles; JLPT UI lock10/10. Canonical/runtime/UI unchanged. No new browser, fullExpo, native/device, native-speaker or domain certification. Historical browser evidence binds older snapshots; current corrected text needs visual validation.
+- Confirmed-term audit is not exhaustive translation certification. Six unprovided locales and2号-only terminology absent from these1号sources remain deferred; source competency/visual coverage, editorialq204, full-bodyfurigana, original illustrations and release testing remain open. `scopeComplete=false`, `productionRelease=false`.
+
+Next: consult the standard for every future language change; complete remaining source/domain/native and runtime visual QA. Exact validation and data SHA256: `terminology-20261028-qa.json`. Keep food isolated from other sectors.
+
+---
+
 # Batch28 — 2026-10-28 — assessment translation coverage complete
 
 Base `e3288d412ca7225df6e1dc15aa2b191680ce7c2b`; branch `feature/food-manufacturing-batch28-20261028`.
