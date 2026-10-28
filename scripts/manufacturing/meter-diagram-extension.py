@@ -160,6 +160,9 @@ def historical_batch22_inputs(inputs, approved_captions, approved_register):
     """Project only the exact approved addition; preserve the old audit bytes."""
     stage = ROOT/'docs/ssw-workspace/manufacturing/batch23'
     outputs = dict(inputs)
+    loader='src/data/manufacturing/mocks.ts'
+    if loader in outputs:
+        outputs[loader]=runpy.run_path(str(ROOT/'scripts/manufacturing/reference-practice-projection.py'))['historical_loader'](outputs[loader])
     guide_layer=runpy.run_path(str(ROOT/'scripts/manufacturing/apply-guide-extension26.py'))
     for relative in guide_layer['BASES']:
         if relative in outputs:outputs[relative]=guide_layer['historical_bytes'](relative,outputs[relative])

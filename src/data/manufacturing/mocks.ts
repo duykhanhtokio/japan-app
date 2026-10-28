@@ -1,9 +1,12 @@
 import type {Specialty,ManufacturingQuestion} from './index';
 import type {ManufacturingMock} from '@/services/manufacturing-mock-state';
 import type {QuestionTranslation} from './translations';
+import {referenceManufacturingMocks} from './reference-practice';
 
 export function loadManufacturingMocks(specialty:Specialty):ManufacturingMock[]{
- switch(specialty){case 'mechanical':return require('./mocks/mechanical.json').exams;case 'electrical':return require('./mocks/electrical.json').exams;case 'surface':return require('./mocks/surface.json').exams;}
+ let original:ManufacturingMock[];
+ switch(specialty){case 'mechanical':original=require('./mocks/mechanical.json').exams;break;case 'electrical':original=require('./mocks/electrical.json').exams;break;case 'surface':original=require('./mocks/surface.json').exams;break;}
+ return [...original,...referenceManufacturingMocks(specialty,original)];
 }
 export function manufacturingMockTranslation(question:ManufacturingQuestion,locale:string):QuestionTranslation|null{
  const entries=require('./mock-translations.json').locales[locale] as Record<string,QuestionTranslation>|undefined;

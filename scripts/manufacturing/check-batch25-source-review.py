@@ -104,6 +104,9 @@ def add_bytes(path,inputs,root):
     path=safe_path(path)
     if path not in inputs:
         raw=(root/path).read_bytes()
+        if path=='src/data/manufacturing/mocks.ts':
+            import runpy
+            raw=runpy.run_path(str(root/'scripts/manufacturing/reference-practice-projection.py'))['historical_loader'](raw)
         if path in {'src/data/manufacturing/source-guides.json','src/data/manufacturing/source-guide-translations.json','src/data/manufacturing/course-manifest.json'}:
             import runpy
             layer=runpy.run_path(str(root/'scripts/manufacturing/apply-guide-extension26.py'))

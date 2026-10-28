@@ -1,3 +1,17 @@
+# Manufacturing SSW1 — batch28 uploaded-reference practice assemblies, 2026-10-28
+
+Read the user ZIP inventory (10 PDFs) and visually compared covers/practical instructions for the three current specialties. Added3curated forms/120existing-question appearances through the existing mock catalog;30original forms/1200unique original bank questions remain exact. Total catalog33,11/specialty. Every reused question retains its ID/hash/lesson/answer/rationale,12target translations andruby. No sample question/image copied. The covers confirm total80minutes; existing40+40training split retained without claiming source confirmation of separate clocks.
+
+Actual adapter/state checks:1440translation pairs,420ruby fields,independent exam/session IDs,correct grading,both section thresholds,expiry/resume/stale revision andstale optional-bank suppression. ActualRNWeb78flows across13UIlocales×320/932 widths pass with0pageerrors,translation/rationale toggle,answer/position resume,noearlyrationale andprior-originalattempt preservation. VIphone/JAlandscape screenshots inspected. Royal/safearea/storage/image adapters andJapanese/Thai fonts explicit; noallscriptglyph/fullExpo/native-device certification.
+
+Exact pinned before/after loader projection preserves historical22/25freeze bytes; arbitrary loader edits rejected. Active24historical22projection,source25index/57fixtures,guide26/46fixtures,manufacturingdata/state andJLPT10/10lock pass. A direct standalone historical22check requires its historical asset snapshot; current active24projection is the applicable gate. Nofullrebuild after28due diskcapacity. Details:batch28-reference-exams/session-evidence.json andREPORT.vi.md.
+
+Also completed ten pending caliper target drafts:batch27 now hasJapanese+12targets/156structurally checked prose fields. It remains staged,notindependently compared orintegrated; don't count it in11guides/132pairs. Integrated262corelessons/456weeklyquestions/22diagrams unchanged. Fullsource/native/domain/release flagsfalse;56/487TOCrows stillunlinked directly,not a complete knowledge-gap count. SSW2excluded. No backgroundprocess implied.
+
+Next: independently compare/integrate stagedcaliper supplement with revision/rebuild/reader checks, then remaining source-object/instrument/surface-test details andnative/domain/physical-device review. See batch27-caliper/STATUS.md for superseding current locale status.
+
+---
+
 # Manufacturing SSW1 — batch26 three source-qualified guides integrated, 2026-10-28
 
 Six requested AI lanes authored three bounded Japanese reference guides with36 direct-Japanese target translations, independently compared the Japanese with the original source and all468 target prose-field pairs with Japanese, and integrated a reversible guarded extension. One Vietnamese arc-definition term was refined and rechecked. Native/domain/full-source/release certification remainsfalse.
