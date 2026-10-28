@@ -1,3 +1,15 @@
+# Manufacturing SSW1 — batch16 mechanical editorial corrections, 2026-10-28
+
+Resolved the two batch14 mechanical wording findings as author AI revisions: replaced the ambiguous universal safe-concentration wording with substance identification, hazards and handling conditions; replaced Chinese 工件 with Japanese 工作物 in both caliper rationales. Updated12 target stems,24 source-bound translation entries and2 furigana bindings; clarified the affected Vietnamese caliper rationales. Answer keys/options and398 other mechanical questions remain unchanged. Only forms01/03 changed revision. Native/domain/independent revision certification remains false.
+
+Added a guarded, byte-idempotent editorial compiler with exact before/after objects, source-file digests and two exam revisions. Frozen batch12 inputs and batch14 review reports remain untouched. The ordinary mock validator verifies the revised snapshot while reconstructing the exact historical review predecessor:398 current questions remain independently reviewed;2 revised questions are author-reviewed only. The frozen-draft integrator reapplies these revisions at the end. In-memory baseline rebuild reproduces all three current runtime files; full integrator rerun is not claimed.
+
+Validation:12 invalid revision cases rejected; existing25 evidence and9 mock-translation regression cases pass. All30 forms/1200questions and12 complete target sets pass, including exact furigana alignment. The actual state service rejects stale attempts for the2revised forms, preserves answers/position/timers for8unchanged forms and restores all10current forms; section clocks/expiry/threshold checks pass. Existing source freezes/review bindings and JLPT10/10 UI lock pass. Esbuild warns that expo/tsconfig.base is absent in this sparse checkout; no full build, browser or native-device certification is claimed. Evidence: `batch16/session-evidence.json`.
+
+Counts remain262core lessons,5guides,456weekly questions,30mocks and18diagrams. CourseComplete/releaseReady remainfalse. Next:continue exhaustive source-object/knowledge coverage, target-language semantic checks and physical/native-device verification. Electrical optional wording notes remain recorded in batch14. No background process is implied.
+
+---
+
 # Manufacturing SSW1 — batch15 editorial evidence freshness gate, 2026-10-28
 
 Added a read-only gate for batch14's 400 mechanical and 100 electrical practical mock reviews. The ordinary mock-content validator now requires exact reviewed file digests, complete nonduplicate reviewed question IDs, current lesson/question bindings and the reports' bounded review claims. Electrical per-question object snapshots, selection status and unresolved verdicts/corrections are checked. Mechanical's source-audit snapshot is also bound. This validates evidence freshness, not new semantic correctness.

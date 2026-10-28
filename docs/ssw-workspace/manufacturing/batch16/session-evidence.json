@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "baselineCommit": "dcb8eb3d52d95f620fae9b3e6ffe201e8b878b56",
+  "scope": "Manufacturing SSW1; two mechanical editorial revisions, source-bound direct AI target updates; SSW2 excluded.",
+  "resolvedByAuthor": [
+    "mechanical-mock-editorial-001",
+    "mechanical-mock-editorial-002"
+  ],
+  "checks": {
+    "scopedRevisionCompiler": "PASS: exact baseline/revised snapshots, byte-idempotence and frozen rebuild reproduction",
+    "preservation": {
+      "unchangedMechanicalQuestions": 398,
+      "preservedMechanicalAnswerKeys": 400,
+      "unaffectedMockTranslationEntries": 14376,
+      "unaffectedRubyEntries": 1198
+    },
+    "editorialNegativeRegression": 12,
+    "priorEvidenceNegativeRegression": 25,
+    "mockTranslationNegativeRegression": 9,
+    "mockContent": "PASS: 30 forms,1200 questions,12 complete target ID sets,source hashes and exact ruby text",
+    "actualStateService": {
+      "revisedStaleAttemptsRejected": 2,
+      "unchangedAttemptsRestored": 8,
+      "currentAttemptsRestored": 10,
+      "sectionClockRestoreExpiryAndIndependentThresholds": "PASS"
+    },
+    "canonicalSourceReviewBindings": "PASS: existing frozen source/review/guide bindings; no new source readings",
+    "jlptUiLock": "PASS:10/10 byte-locked files and registry structure",
+    "gitWhitespace": "PASS"
+  },
+  "compilerReintegration": "integrate-completion.py invokes the scoped compiler after frozen-draft assembly. In-memory baseline rebuild reproduced all three runtime outputs. Full integration script was not rerun.",
+  "warnings": [
+    "Esbuild reported missing expo/tsconfig.base in this sparse checkout. State-service bundling/checks passed; this is not a full Expo/type/build check."
+  ],
+  "baselineRuntimeSha256": {
+    "src/data/manufacturing/mocks/mechanical.json": "aa64749566554f3ec46007a92ff054eb67e700ba04af2ff50c24a1db9892deac",
+    "src/data/manufacturing/mock-translations.json": "bd31d4aa26e447ceef5476c753a55f2b2282bafb5761d8b77094b1ce1c2a9acc",
+    "src/data/manufacturing/mock-furigana.json": "0ea925b79d18ff8b8a39e2c14d664b0e2c263b4a6fb9529fdf0f65dd12251dd0"
+  },
+  "revisedRuntimeSha256": {
+    "src/data/manufacturing/mocks/mechanical.json": "7b496f0fefecd73e2d28e4fc61abceed119a67b677e810aab9fda3e274db3443",
+    "src/data/manufacturing/mock-translations.json": "ce1dcca2708302a6ab23612d392e7cf9aa38b90851c237e2df32ee10ab141c5c",
+    "src/data/manufacturing/mock-furigana.json": "b873c58a6e9c7c5f2551d4179c2eb4ffdbc16dd2d60687e19c3e8066ae5e3f57"
+  },
+  "implementationSha256": {
+    "scripts/manufacturing/apply-editorial-patches.py": "f16d1284f75b773bdd59bd8f6683f25a23d89089dbbb12ae9c0e9c6b1e657d4c",
+    "scripts/manufacturing/check-editorial-patches.py": "6dd5164532c1549d6af794fc37f00b8f426dc4e4afd37aa5276ed00a1b57052a",
+    "scripts/manufacturing/check-editorial-attempts.cjs": "2a4f5ad46836bfcfac2a5c3e91410f4bf732874d9390ac70e6862a139790a403",
+    "scripts/manufacturing/check-editorial-review-bindings.py": "338eef720ab0fb1db988356643daf50f25edd14f73546adea3ffe666787c225a",
+    "scripts/manufacturing/integrate-completion.py": "9a1a60c7dabc3b4c6f650eb897311328f8eb6f82715b9502bfea37702a86b8b4",
+    "docs/ssw-workspace/manufacturing/batch16/mock-editorial-patches.json": "1967e6b96e2989cbfdd58a21622eb5712afbee48090c47737c12f6b3f912027e"
+  },
+  "review": {
+    "kind": "author_AI_comparison_to_Japanese_and_batch14_findings",
+    "independentReviewed": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "releaseReady": false
+  },
+  "limits": [
+    "Author AI comparison only; two revised questions do not inherit independent approval from the historical400-item review.",
+    "No new full-PDF semantic/source-object atomization or current official exam requirements review.",
+    "No browser rendering or physical/native-device verification this batch.",
+    "Native/domain review and release readiness remain false."
+  ],
+  "next": "Continue source-object/knowledge coverage review across the three SSW1 textbooks, remaining semantic language checks and physical/native-device verification. Electrical optional wording notes remain recorded in batch14."
+}

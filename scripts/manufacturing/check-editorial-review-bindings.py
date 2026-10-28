@@ -6,10 +6,13 @@ from collections import Counter
 from pathlib import Path
 import hashlib
 import json
+import runpy
 
 ROOT = Path(__file__).resolve().parents[2]
 REPORT_BASE = 'docs/ssw-workspace/manufacturing/batch14/'
 AUDIT = 'docs/ssw-workspace/manufacturing/batch12/mechanical/full-source-audit.json'
+PATCH_PATH = 'docs/ssw-workspace/manufacturing/batch16/mock-editorial-patches.json'
+PATCHER = runpy.run_path(str(ROOT / 'scripts/manufacturing/apply-editorial-patches.py'))
 
 
 def require(condition, message):
@@ -27,7 +30,7 @@ def object_digest(value):
 
 
 def load_inputs(root=ROOT):
-    paths = [AUDIT]
+    paths = [AUDIT, PATCH_PATH, PATCHER['TRANSLATIONS'], PATCHER['FURIGANA']]
     for specialty in ('mechanical', 'electrical'):
         paths.extend([f'src/data/manufacturing/{specialty}.json',
                       f'src/data/manufacturing/mocks/{specialty}.json',
@@ -43,6 +46,7 @@ def unique_index(items, key, label):
 
 def validate(inputs):
     result = {}
+    patch = json.loads(inputs[PATCH_PATH])
     for specialty in ('mechanical', 'electrical'):
         course_path = f'src/data/manufacturing/{specialty}.json'
         mock_path = f'src/data/manufacturing/mocks/{specialty}.json'
@@ -72,6 +76,10 @@ def validate(inputs):
                     f'{q["id"]}: invalid question hash')
 
         if specialty == 'mechanical':
+            require(patch['sourcePath'] == mock_path, 'Unexpected editorial patch source path')
+            require(digest(inputs[mock_path]) == patch['revisedSourceSha256'],
+                    'Current mechanical mocks lack the recorded editorial revisions')
+            historical_bytes, _ = PATCHER['source_versions'](inputs[mock_path], patch)
             bindings = unique_index(report['inputFiles'], 'path', 'mechanical inputs')
             require(set(bindings) == {course_path, mock_path, AUDIT}, 'mechanical: unexpected input set')
             snapshots = {path: entry['sha256'] for path, entry in bindings.items()}
@@ -106,10 +114,17 @@ def validate(inputs):
             for note in report['nonblockingPrecisionNotes']:
                 require(note['questionId'] in questions, 'electrical: unknown precision-note question')
         for path, expected in snapshots.items():
-            require(digest(inputs[path]) == expected, f'{specialty}: stale reviewed file {path}')
+            payload = historical_bytes if specialty == 'mechanical' and path == mock_path else inputs[path]
+            require(digest(payload) == expected, f'{specialty}: stale reviewed file {path}')
         result[specialty] = {'boundQuestions': len(questions), 'boundFiles': len(snapshots)}
+        if specialty == 'mechanical':
+            result[specialty].update(historicalReviewedQuestions=400,
+                                     unchangedCurrentReviewedQuestions=398,
+                                     authorRevisedQuestions=2, revisedQuestionsIndependentlyReviewed=False)
+    for path, expected in PATCHER['compile_outputs'](inputs, patch).items():
+        require(inputs[path] == expected, 'Runtime editorial patch not fully applied: ' + path)
     return {'status': 'PASS', 'reviews': result,
-            'scope': 'Exact batch14 evidence bindings only; no new semantic, PDF, native or domain review.',
+            'scope': 'Exact batch14 evidence plus reversible batch16 author revisions; no independent revision, PDF, native or domain certification.',
             'runtimeFilesModified': False, 'releaseReady': False}
 
 

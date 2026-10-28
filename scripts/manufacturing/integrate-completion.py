@@ -189,5 +189,7 @@ def main():
  write(STAGE/'translation-schema-normalization.json',translation_aliases)
  write(STAGE/'integration-input-digests.json',input_digests)
  write(STAGE/'source-binding-normalization.json',normalized_bindings)
+ # Preserve later source-bound editorial revisions when rebuilding frozen drafts.
+ subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-editorial-patches.py')],check=True)
  print(json.dumps({'lessons':len(all_lessons),'weeklyQuestions':len(all_questions),'weeks':progress['previewWeeksBySpecialty'],'translatedLessonPairs':progress['translatedLessonLocalePairs'],'translatedQuestionPairs':progress['translatedQuestionLocalePairs'],'completeDraftLocales':complete,'courseComplete':False}))
 if __name__=='__main__':main()
