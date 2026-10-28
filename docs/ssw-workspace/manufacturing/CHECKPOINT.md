@@ -1,3 +1,19 @@
+# Manufacturing SSW1 — batch24 six-AI vernier readout diagram, 2026-10-28
+
+Six requested AI lanes authored source/model/caption and controlledasset, independently reviewed physicalgeometry, translated12captions, independently reviewed captions/compiler/UI, and implemented/tested a second readerfigure. Added an original1400x1300vernierreading diagram to existinglesson018 under distinctdiagramKey018-reading; the23contactfigure/caption remains intact. Source72–73readingprocess is theknowledgebasis,74exercise/source30.35example excluded. The20intervals=19mainmillimetres construction is explicitly an originalpaper model, not a PDF-certified device specification.
+
+Exactmodel: mainstep1mm,substep19/20=.95mm,readingunit.05mm;zero18.20 isbetween18and19;uniquecoincidenceindex4atmain22;18+4×.05=18.20mm. All49physicalSVGtickpositions independently parsed and checked againstsource model/external geometry; explicit4× inset preserveszero fraction anddifferentdrawingmagnification. ActualPNG independently inspected. No actualinstrumentaccuracy/acceptance/specification certification. Threeboundedreadingfacets p073-o05/o08/o09 addressed; four priorqualification/lightgap/resetobjects remainopen; no whole-object/sourceclosure.
+
+All12directJapanese caption drafts received120independentsemanticassertions,0requiredcorrections. Counts22diagrams/264captionpairs. Actual lessonIDs,core content,sourcehashes,262lessons,456weeklyquestions,30mocks1200questions,8guides andall21priorfigureassets/captions remain unchanged. New diagramkey maps to actual018,not a new lesson/progress identity.
+
+Reader now composes independent primary/secondary DiagramFrame states onlyfor018; primarytestIDs/translatedcontrols remain equivalent,secondarycontrols append2. Theguarded layer requires exactbefore/afterrenderer snapshots, approvedsource/visual/caption/modelgeometry hashes and prior21inputs; arbitraryrendereredits rejected. Historical22projection strips24rendereraddition then23figure to reconstruct theexactold48objectindex without modifyinghistoricalreceipts. Independentreview foundmissingexplicit24facetsemanticguards beyondhashes; exactpriorobject/facet/open-ID checks fixed it and all3reviewerrepros nowreject. Thirty-threenewnegativefixtures plus62historical-layer fixtures pass; fiveactualfullintegrations preserve46runtimefiles,finalbyte-idempotencePASS. JLPT10/10UIlock/whitespace pass.
+
+ActualRNWeb browser passes26secondaryflows13locales×320/932,primaryimage/caption/accessibilityregressionall26,primaryzoom/closebothsizes,separatemodalstates,exactcurrent/priorcompletionpreservation,0pageerrors. Sixscreenshotsretained; VIphone/JAlandscapeinspected. Royal/safearea/storage/decorativeimageadapters/JapaneseQAfont explicit; no fullExpo/native-device/allscriptglyphcertification. Sparseexpo/tsconfig.basewarning remains. Details:batch24/session-evidence.json. CourseComplete/releaseReady/native/domain/fullsourcefalse; SSW2excluded; no backgroundprocess implied.
+
+Next:remainingcaliperqualifications, geometric/arc/instrument/surface/reactiondetails,exhaustivesourceclosure andnative/domain/physical-device review.
+
+---
+
 # Manufacturing SSW1 — batch23 six-AI caliper contact diagram, 2026-10-28
 
 Six requested AI lanes authored/independently compared the source/caption/controlled asset, translated12captions, independently reviewed all12and the compiler, and ran actual reader QA. Added one original1400x1400four-panel caliper contact diagram to mechanical lesson018: fixed/mainbeam versus slider/movingjaw roles, outsidecontacts, hole/grooveinsidecontacts and depthreference/tipcontacts. Actual source72–73read;74exerciseexcluded. Depthconstruction is explicitly an original visualization of source-described capability, not a copied source contact figure. No scale, numerical readout or operatingsequence is taught.

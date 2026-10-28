@@ -60,10 +60,10 @@ except ValueError:
 else:
     raise AssertionError('Historical audit weakened')
 progress=json.loads((ROOT/'docs/ssw-workspace/manufacturing/progress.json').read_text())
-assert progress['createdDiagrams'] == progress['usedDiagrams'] == 21
-assert progress['translatedDiagramCaptionLocalePairs'] == 252
-assert set(progress['diagramTranslationCoverage'].values()) == {21}
-print(json.dumps({'status':'PASS','diagrams':21,'captionPairs':252,'invalidFixturesRejected':len(rejected),
+assert progress['createdDiagrams'] == progress['usedDiagrams'] == 22
+assert progress['translatedDiagramCaptionLocalePairs'] == 264
+assert set(progress['diagramTranslationCoverage'].values()) == {22}
+print(json.dumps({'status':'PASS','diagrams':22,'captionPairs':264,'invalidFixturesRejected':len(rejected),
                   'fixtures':rejected,'historicalBatch22IndexExact':True,'boundedFacetResolutions':len(facets['facets']),
                   'componentFacetRemainsPartial':True,'readoutFacetsRemainOpen':True,
                   'nativeReviewed':False,'domainReviewed':False,'wholeCurriculumComplete':False}))

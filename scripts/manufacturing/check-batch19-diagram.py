@@ -77,9 +77,9 @@ for relative in ['diagram-captions.json', 'diagram-caption-review.json', 'source
     finally:
         namespace['sha'] = original_sha
 progress = json.loads((ROOT/'docs/ssw-workspace/manufacturing/progress.json').read_text())
-assert progress['createdDiagrams'] == progress['usedDiagrams'] == 21
-assert progress['translatedDiagramCaptionLocalePairs'] == 252
+assert progress['createdDiagrams'] == progress['usedDiagrams'] == 22
+assert progress['translatedDiagramCaptionLocalePairs'] == 264
 assert set(progress['diagramTranslationCoverage']) == api['TARGETS']
-assert set(progress['diagramTranslationCoverage'].values()) == {21}
-print(json.dumps({'status':'PASS','diagrams':21,'captionPairs':252,'rejectedFixtures':fixtures,
+assert set(progress['diagramTranslationCoverage'].values()) == {22}
+print(json.dumps({'status':'PASS','diagrams':22,'captionPairs':264,'rejectedFixtures':fixtures,
                   'scope':'Exact reviewed extension and immutable historical inputs; not native/domain certification'}))

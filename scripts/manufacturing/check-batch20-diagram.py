@@ -58,9 +58,9 @@ except AssertionError:
 else:
     raise AssertionError('Wrong aspect ratio accepted')
 progress = json.loads((ROOT/'docs/ssw-workspace/manufacturing/progress.json').read_text())
-assert progress['createdDiagrams'] == progress['usedDiagrams'] == 21
-assert progress['translatedDiagramCaptionLocalePairs'] == 252
+assert progress['createdDiagrams'] == progress['usedDiagrams'] == 22
+assert progress['translatedDiagramCaptionLocalePairs'] == 264
 assert set(progress['diagramTranslationCoverage']) == layer['TARGETS']
-assert set(progress['diagramTranslationCoverage'].values()) == {21}
-print(json.dumps({'status':'PASS','diagrams':21,'captionPairs':252,'negativeFixtures':len(rejected),
+assert set(progress['diagramTranslationCoverage'].values()) == {22}
+print(json.dumps({'status':'PASS','diagrams':22,'captionPairs':264,'negativeFixtures':len(rejected),
                   'rejected':rejected,'scope':'Exact meter-layer artifact/evidence/source gates; no native/domain certification'}))

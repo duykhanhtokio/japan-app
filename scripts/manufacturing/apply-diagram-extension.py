@@ -100,14 +100,15 @@ def preflight():
     base = read(STAGE / 'base-diagram-translations.json')
     previous = ROOT / 'docs/ssw-workspace/manufacturing/batch20'
     latest = ROOT / 'docs/ssw-workspace/manufacturing/batch23'
-    assert current in (base, read(previous / 'base-diagram-translations.json'), read(latest / 'base-diagram-translations.json'), captions), 'Unknown caption snapshot; refusing overwrite'
+    newest = ROOT / 'docs/ssw-workspace/manufacturing/batch24'
+    assert current in (base, read(previous / 'base-diagram-translations.json'), read(latest / 'base-diagram-translations.json'), read(newest / 'base-diagram-translations.json'), captions), 'Unknown caption snapshot; refusing overwrite'
     current_register = read(ROOT / 'docs/ssw-workspace/manufacturing/illustration-register.json')
-    assert current_register in (read(STAGE / 'base-illustration-register.json'), read(previous / 'base-illustration-register.json'), read(latest / 'base-illustration-register.json'), register), 'Unknown register snapshot'
+    assert current_register in (read(STAGE / 'base-illustration-register.json'), read(previous / 'base-illustration-register.json'), read(latest / 'base-illustration-register.json'), read(newest / 'base-illustration-register.json'), register), 'Unknown register snapshot'
     progress = read(ROOT / 'docs/ssw-workspace/manufacturing/progress.json')
     assert set(progress['diagramTranslationCoverage']) == TARGETS, 'Unknown progress locales'
-    assert set(progress['diagramTranslationCoverage'].values()) in ({18}, {19}, {20}, {21}), 'Unknown progress coverage'
-    assert progress['createdDiagrams'] == progress['usedDiagrams'] in (18, 19, 20, 21)
-    assert progress['translatedDiagramCaptionLocalePairs'] in (216, 228, 240, 252)
+    assert set(progress['diagramTranslationCoverage'].values()) in ({18}, {19}, {20}, {21}, {22}), 'Unknown progress coverage'
+    assert progress['createdDiagrams'] == progress['usedDiagrams'] in (18, 19, 20, 21, 22)
+    assert progress['translatedDiagramCaptionLocalePairs'] in (216, 228, 240, 252, 264)
     return captions, register
 
 def main():
@@ -116,11 +117,11 @@ def main():
     write(ROOT / 'docs/ssw-workspace/manufacturing/illustration-register.json', register)
     path = ROOT / 'docs/ssw-workspace/manufacturing/progress.json'
     progress = read(path)
-    progress.update(createdDiagrams=21, usedDiagrams=21, translatedDiagramCaptionLocalePairs=252,
-                    diagramTranslationCoverage={locale:21 for locale in captions['locales']})
+    progress.update(createdDiagrams=22, usedDiagrams=22, translatedDiagramCaptionLocalePairs=264,
+                    diagramTranslationCoverage={locale:22 for locale in captions['locales']})
     write(path, progress)
     validate()
-    print('Manufacturing diagram extensions PASS: exact21 diagrams/252 caption pairs; historical20 preserved')
+    print('Manufacturing diagram extensions PASS: exact22 diagrams/264 caption pairs; historical21 preserved')
 
 if __name__ == '__main__':
     main()
