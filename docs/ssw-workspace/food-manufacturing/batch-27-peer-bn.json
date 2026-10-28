@@ -1,0 +1,79 @@
+{
+  "reviewerAgent": "/root/b27_hi_ne",
+  "authorAgent": "/root/b27_bn_th",
+  "locale": "bn",
+  "examId": "food-1-mock-10",
+  "reviewedQuestionCount": 40,
+  "reviewedQuestionIds": [
+    "food-1-q346",
+    "food-1-q251",
+    "food-1-q281",
+    "food-1-q152",
+    "food-1-q355",
+    "food-1-q296",
+    "food-1-q362",
+    "food-1-q204",
+    "food-1-q331",
+    "food-1-q387",
+    "food-1-q369",
+    "food-1-q396",
+    "food-1-q226",
+    "food-1-q241",
+    "food-1-q345",
+    "food-1-q196",
+    "food-1-q237",
+    "food-1-q219",
+    "food-1-q287",
+    "food-1-q304",
+    "food-1-q246",
+    "food-1-q232",
+    "food-1-q299",
+    "food-1-q181",
+    "food-1-q153",
+    "food-1-q082",
+    "food-1-q337",
+    "food-1-q097",
+    "food-1-q250",
+    "food-1-q161",
+    "food-1-q113",
+    "food-1-q236",
+    "food-1-q371",
+    "food-1-q291",
+    "food-1-q169",
+    "food-1-q195",
+    "food-1-q149",
+    "food-1-q300",
+    "food-1-q267",
+    "food-1-q129"
+  ],
+  "reviewedArtifactSha256": "e6fe10d8813b600cc25ce72ee8ec02743373b8f3f47dcaddf03b1f5c675370a4",
+  "reviewScope": "Full canonical Japanese prompt, all four ordered options, main explanation, all four reasons and title compared with every target field. Hashes, exact missing IDs and correct-reason equality checked.",
+  "corrections": [
+    {
+      "questionId": "food-1-q219",
+      "field": "options[1]",
+      "before": "ফ্রিজে ঠান্ডা বাতাস চলাচলের ফাঁক দরকার; ফ্রিজারে হিমায়িত খাদ্য 8–9 ভাগ ভরে বিদ্যুৎ সাশ্রয়ের ব্যাখ্যা আছে।",
+      "after": "ফ্রিজে ঠান্ডা বাতাস চলাচলের ফাঁক দরকার; ফ্রিজারে হিমায়িত খাদ্য 80–90% ভরে বিদ্যুৎ সাশ্রয়ের ব্যাখ্যা আছে।",
+      "reason": "8–9割 explicitly means 80–90% of capacity; bare 8–9 parts lacked a denominator."
+    }
+  ],
+  "findings": [],
+  "numericEquivalences": [
+    {
+      "questionId": "food-1-q371",
+      "fields": [
+        "explanation",
+        "optionExplanations[0]"
+      ],
+      "finding": "সপ্তম is the Bengali ordinal seventh; সপ্তম নীতিতে means in principle 7. Source 7 is preserved semantically."
+    },
+    {
+      "questionId": "food-1-q219",
+      "field": "options[1]",
+      "finding": "80–90% equals Japanese 8–9割; textbook energy-saving example and real equipment/raw-material conditions retained."
+    }
+  ],
+  "nativeSpeakerReviewed": false,
+  "domainExpertReviewed": false,
+  "integratedPartSha256": "e6fe10d8813b600cc25ce72ee8ec02743373b8f3f47dcaddf03b1f5c675370a4"
+}
