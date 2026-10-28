@@ -1,3 +1,18 @@
+# Nhà hàng / 外食業 — checkpoint 9, 2026-10-28
+
+Toàn bộ mô-đun CHƯA hoàn tất. Base remote đã qua scoped WORK PERSISTENCE PASS `9a450967e5fb623bc4d960253355ae98679ed0e9`, nhánh `feature/restaurant-20261026`. Lô này cần commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
+
+- Thêm 1040 bản dịch câu 2号: en/vi q281–380; id/tl q241–340; my/ne/th/km q121–220; hi/bn q361–400 và weekly02–11. Tổng 10288/11808, còn 1520 cặp.
+- Hindi và Bengali đã đủ 984/984 câu mỗi locale, gồm luyện tập và kiểm tra tuần. Nhật/đáp án/thứ tự lựa chọn/UI giữ nguyên.
+- Thêm 200 thuật ngữ+định nghĩa mỗi id/tl, hiện 500/692 mỗi locale. Tổng glossary 3768/8304, còn 4536 cặp.
+- Bảo toàn 14932 record cũ cùng metadata ngoài phạm vi. Cả 1040 hash câu và 400 hash glossary mới khớp nguồn; 1040 mục tiêu chỉ tái sử dụng qua exact objectiveJa và sourceHash hợp lệ của bài/câu cũ, không thay bằng topic.
+- Structural PASS; numeric 91156 trường PASS; signed Celsius 390 trường PASS. Thêm 41 rà soát theo exact field hashes cho chữ số viết bằng từ, đơn vị mỗi suất/đĩa/kg/ngày, dấu thập phân/hàng nghìn và 8割=80% giữ điều kiện tối thiểu. Không chứng nhận toàn bộ ngữ nghĩa.
+- Root bổ sung 32 câu weekly10–11 hi/bn, child phụ trách 208 câu còn lại; rà độc lập 32 câu đạt trong phạm vi cấu trúc/số liệu/điều kiện. Sửa từ chỉ đặt chỗ Bengali trong một record mới. Không có duyệt bản ngữ/chuyên gia.
+- Chưa production Expo/native; giữ acceptance chưa đạt ở false. Source590partial, full furigana/hình nhận dạng và rà chuyên môn vẫn còn dở.
+- Điểm tiếp: en/vi q381; id/tl q341; my/ne/th/km q221 và weekly02–11. Hi/bn đã đủ câu, không làm lại. Glossary id/tl còn192 mỗi locale; sáu locale khác còn692 mỗi locale. Không cam kết tác vụ chạy nền sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 8, 2026-10-28
 
 Toàn bộ mô-đun CHƯA hoàn tất. Base remote đã qua scoped WORK PERSISTENCE PASS `fa4d7f4b8306c5dd8b09e4a8b67e30f4ce39ae61`, nhánh `feature/restaurant-20261026`. Lô này cần commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
