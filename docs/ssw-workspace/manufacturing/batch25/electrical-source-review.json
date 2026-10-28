@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "batch": "25",
+  "date": "2026-10-28",
+  "specialty": "electrical",
+  "scopeLevel": "1",
+  "baselineCommit": "dd3b19bfb3bac33ee3c33a8f88e80949d4714762",
+  "source": {
+    "documentId": "mfg1-electrical-source",
+    "sha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf"
+  },
+  "inputsSha256": {
+    "docs/ssw-workspace/manufacturing/batch17/electrical-source-review.json": "2fedd1a59679b035efd097c57f34e7a16c61f18d57e89ddf7fba7411986426e7",
+    "src/data/manufacturing/electrical.json": "e590319d60ff137ac22a27ca9e92ee5ac6407df2b9df98e5929e37e6e8d5f7ca",
+    "docs/ssw-workspace/manufacturing/knowledge-matrix.json": "66a76372f4392fb4a0bde8bf463c13667af318a55951b4f1267f9ca123f951b1",
+    "docs/ssw-workspace/manufacturing/page-object-inventory.json": "f2a9800cdc94ccaac79a164e6cb753768c2833ad259e1d5ccc537c593f47c1ef",
+    "docs/ssw-workspace/manufacturing/batch20/source-review.json": "0a579ba43dbd00fac30f2d869bea59d580a644c0a9ae4809320f7028811aeda3",
+    "src/components/manufacturing/ManufacturingDiagram.tsx": "553bbdbbb97df29dc0b291c709cd7bf1acdfe0c0d86ef02ff91a9268bd7428df"
+  },
+  "scope": "Additive finer comparison of actual electrical151 resistance-method taxonomy and voltage measurement context; not a fabricated direct/indirect/absolute/comparison taxonomy.",
+  "requestedTaxonomyClarification": {
+    "requestedTerms": [
+      "direct measurement",
+      "indirect measurement",
+      "absolute measurement",
+      "comparison measurement"
+    ],
+    "explicitlyPresentOnInspectedPage": false,
+    "actualTaxonomy": "Resistance bridge methods versus voltage-drop methods.",
+    "resolution": "Do not attribute the requested four-way taxonomy to this page. A future four-way lesson would require a separately inspected source and authoring scope."
+  },
+  "pages": [
+    {
+      "pdfPage": 151,
+      "printedPage": 142,
+      "priorEvidenceStatus": "Batch12/17 context andbatch20 bounded source inspection already exist; batch17has five coarser objects on this page. This is a granular reread, not a globally new source page.",
+      "visualInspection": {
+        "performed": true,
+        "method": "Actual exact-hash electricalPDF physical151 rendered1.7x withPyMuPDF and entire page visually inspected, including both1.2resistance and1.3voltage prose/headings/footer. Text extraction used for navigation/cross-check only.",
+        "renderSha256": "c587566048b107d78e14226921aa30a409b106681ab91d3f67a52c42a5df8fae",
+        "sourceExercisesExcluded": true,
+        "sourceImagesRedistributed": false
+      },
+      "objects": [
+        {
+          "id": "mfg1-electrical-b25-p151-o01",
+          "type": "measurement_method_taxonomy",
+          "summary": "The source names bridge methods and voltage-drop methods as two broad ways of measuring resistance.",
+          "knowledgeIds": [
+            "mfg1-electrical-c10-s1-2"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l073",
+            "mfg1-electrical-l091"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1",
+            "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.11,
+            0.1,
+            0.9,
+            0.19
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not exact semantic segmentation",
+          "comparisonBasis": "Actual151section1.2opening; current073section-3 teaches voltage-drop R=V/I, current091section-3 teaches an automatic-balancing LCR bridge as an example. Neither currentparagraph explicitly compares the source resistance-method pair.",
+          "uncoveredFacets": [
+            "Explicit side-by-side resistance-method comparison remains absent; mentioning bridge in an LCR context alone is not full taxonomy coverage."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b17-p151-o01"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b25-p151-o02",
+          "type": "historical_prevalence_qualification",
+          "summary": "The source contrasts older bridge-method use with more recent voltage-drop use; this relative-time assertion is textbook narration, not verified current prevalence or universal superiority.",
+          "knowledgeIds": [
+            "mfg1-electrical-c10-s1-2"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l073",
+            "mfg1-electrical-l091"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1",
+            "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+          },
+          "coverageStatus": "source_qualification_or_ambiguity",
+          "bboxNormalized": [
+            0.11,
+            0.12,
+            0.9,
+            0.19
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not exact semantic segmentation",
+          "comparisonBasis": "Actual151section1.2opening historical wording; currentlessons do not repeat an obsolete/always-best claim. No currentmarket/standards conclusion is drawn.",
+          "uncoveredFacets": [
+            "No independent present-day prevalence verification; no bridge-obsolescence or accuracy ranking certification."
+          ],
+          "derivation": "canonical_editorial_inference",
+          "priorObjectIds": [
+            "mfg1-electrical-b17-p151-o01"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b25-p151-o03",
+          "type": "computed_quantity_formula",
+          "summary": "The voltage/current approach obtains resistance from measured voltage divided by measured current under a suitable measurement model.",
+          "knowledgeIds": [
+            "mfg1-electrical-c10-s1-2"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l073"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1"
+          },
+          "coverageStatus": "covered_concept",
+          "bboxNormalized": [
+            0.11,
+            0.19,
+            0.9,
+            0.25
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not exact semantic segmentation",
+          "comparisonBasis": "Actual151section1.2principleparagraph; lesson073section-3 explicitly names voltage-drop R=V/I and measurement loading. This is a conceptual formula, not an energized-work procedure.",
+          "uncoveredFacets": [],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b17-p151-o02"
+          ],
+          "formula": {
+            "expression": "R=V/I",
+            "quantityRoles": {
+              "R": "target resistance under the stated model",
+              "V": "corresponding measured potential difference",
+              "I": "corresponding measured current"
+            },
+            "units": "V/A=ohm",
+            "numericSourceExerciseCopied": false
+          }
+        },
+        {
+          "id": "mfg1-electrical-b25-p151-o04",
+          "type": "measurement_system_influence",
+          "summary": "The source identifies power supply, measuring instruments, wiring and connections as having resistances that can influence the observed result.",
+          "knowledgeIds": [
+            "mfg1-electrical-c10-s1-2"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l073"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1"
+          },
+          "coverageStatus": "covered_concept",
+          "bboxNormalized": [
+            0.11,
+            0.25,
+            0.9,
+            0.36
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not exact semantic segmentation",
+          "comparisonBasis": "Actual151section1.2finalparagraph; current073section-3 explicitly names leads, contacts and instrument resistance and says meter insertion/input affects the circuit.",
+          "uncoveredFacets": [],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b17-p151-o03"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b25-p151-o05",
+          "type": "measurement_model_qualification",
+          "summary": "The source says measured results can differ from the true target resistance because of measurement-system effects; its prose must not be converted into a universal fixed additive-error equation or an automatic exact correction.",
+          "knowledgeIds": [
+            "mfg1-electrical-c10-s1-2"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l073"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1"
+          },
+          "coverageStatus": "source_qualification_or_ambiguity",
+          "bboxNormalized": [
+            0.11,
+            0.28,
+            0.9,
+            0.36
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not exact semantic segmentation",
+          "comparisonBasis": "Actual151section1.2finalsentences compared with current073section-3 warning not to assume the displayed value is the true value. Error magnitude/sign and correction depend on circuit/instrument model; this qualification is editorial consistency, not an extra source equation.",
+          "uncoveredFacets": [
+            "No source-certified general error sign/magnitude or correction formula; no bridge versus voltage-drop accuracy ranking."
+          ],
+          "derivation": "canonical_editorial_inference",
+          "priorObjectIds": [
+            "mfg1-electrical-b17-p151-o03"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b25-p151-o06",
+          "type": "instrument_function_selection",
+          "summary": "For voltage measurement the source requires choosing an instrument suitable for the intended AC or DC quantity; some instruments are mode-specific and some support both.",
+          "knowledgeIds": [
+            "mfg1-electrical-c10-s1-3"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l005",
+            "mfg1-electrical-l073"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l005": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe",
+            "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1"
+          },
+          "coverageStatus": "covered_concept",
+          "bboxNormalized": [
+            0.11,
+            0.45,
+            0.9,
+            0.53
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not exact semantic segmentation",
+          "comparisonBasis": "Actual151section1.3opening; lesson005section-1/examplerequires matching function/terminals/range/safety ratings, while073section-2 stresses model-dependent capabilities. Instrument names alone do not establish suitability.",
+          "uncoveredFacets": [],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b17-p151-o04"
+          ]
+        },
+        {
+          "id": "mfg1-electrical-b25-p151-o07",
+          "type": "parallel_connection_topology",
+          "summary": "The source places a voltmeter in parallel with the target portion whose voltage is measured.",
+          "knowledgeIds": [
+            "mfg1-electrical-c10-s1-3"
+          ],
+          "lessonIds": [
+            "mfg1-electrical-l005"
+          ],
+          "lessonBindings": {
+            "mfg1-electrical-l005": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe"
+          },
+          "coverageStatus": "covered_concept",
+          "bboxNormalized": [
+            0.11,
+            0.54,
+            0.9,
+            0.59
+          ],
+          "bboxPrecision": "approximate reviewer region; normalized top-left origin; not exact semantic segmentation",
+          "comparisonBasis": "Actual151section1.3finalparagraph; current005section-1 explicitly teaches voltage across two target points in parallel. Existingbatch20meterdiagram already illustrates the same topology and is not newly authored here.",
+          "uncoveredFacets": [],
+          "derivation": "explicit_source",
+          "priorObjectIds": [
+            "mfg1-electrical-b17-p151-o05"
+          ]
+        }
+      ]
+    }
+  ],
+  "proposedBoundedNextWork": [
+    {
+      "priorObjectId": "mfg1-electrical-b17-p151-o01",
+      "proposedUnit": "One short source-qualified resistance-method comparison supplement or explanatory visual: bridge comparison versus measured V/I calculation.",
+      "sourceScope": "Only the pair actually named in151; no four-way taxonomy or current prevalence claim.",
+      "mustPreserve": [
+        "Japanese canonical lesson/question identities unless intentionally revised with full locale/revision workflow.",
+        "Existing meter diagram and saved learner source hashes.",
+        "Instrumentation/loading/error qualifications; no real wiring sequence."
+      ],
+      "remainingBeforeTeaching": [
+        "Inspect a specific bridge-principle source if depicting bridge circuit mechanics;151 names the method but does not give bridge construction.",
+        "Author all required target-language support and obtain separate independent source/semantic/visual review."
+      ]
+    }
+  ],
+  "summary": {
+    "pagesReviewed": 1,
+    "granularObjects": 7,
+    "coveredConcepts": 4,
+    "partialDetailOrVisualGaps": 1,
+    "sourceQualifications": 2,
+    "globallyNewSourcePagesClaimed": 0,
+    "newRuntimeLessons": 0,
+    "newRuntimeDiagrams": 0,
+    "newRuntimeTranslations": 0
+  },
+  "sourceImagesRedistributed": false,
+  "sourceExercisesCopied": false,
+  "ssw2Used": false,
+  "runtimeModified": false,
+  "historicalEvidenceModified": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "fullKnowledgeAtomizationComplete": false,
+  "fullSourceKnowledgeCoverageCertified": false,
+  "wholeCurriculumComplete": false,
+  "releaseReady": false,
+  "limitations": [
+    "One bounded page reread, not exhaustive source atomization.",
+    "Direct/indirect/absolute/comparison taxonomy is not explicit on actual151; no source support is invented.",
+    "Qualification statements are marked canonical_editorial_inference where they constrain rather than quote textbook wording.",
+    "No new learner-facing content, native/domain/current-standards/physical-device certification."
+  ]
+}

@@ -1,3 +1,15 @@
+# Manufacturing SSW1 — batch25 six-AI source-qualified gap review, 2026-10-28
+
+Six requested AI lanes visually reviewed mechanicalPDF97, electricalPDF151 and surfacePDF175–176, independently compared the three ledgers with the source, verified current twelve-locale bindings and built a guarded additive source-object index. These are four review occurrences of previously reviewed pages, not new global source coverage or new learner content.
+
+Thirty-five bounded object occurrences:23 covered concepts,6 partial detail gaps and6 source qualifications. Mechanical identifies the source table’s strict >180° conditions forφ/Sφ, without inferring a converse, equality case or current-standard rule. Electrical corrects the older planning assumption: actual151 covers bridge versus voltage-drop resistance measurement and voltage measurement; it does not support the direct/indirect/absolute/comparison taxonomy. Surface reconfirms the already-recorded oxide-charge notation qualification. Two surface cautions were reclassified as editorial inference following independent review; no new erratum or live official verification is claimed.
+
+Structural review binds7 current lessons,84 lesson-locale records and24 Japanese/288 target paragraphs by exact hashes/order; it does not certify translation semantics. All99 frozen runtime, component/service, asset and matrix/inventory files remain identical. The deterministic index passes57 negative fixtures, including forged provenance and unsupported source claims. Independent compiler execution confirms invalid-authority --write causes zero writes; three historical authority hashes are pinned. Focused manufacturing data/state and JLPT10/10 UI-lock checks pass. Counts remain262 core lessons,8 guides,456 weekly questions,30 mocks/1200 questions and22 diagrams/264 captions. Native/domain/full-source/release flags remainfalse; SSW2 excluded.
+
+Next: implement bounded source-qualified supplements from batch25 evidence with12 direct-Japanese translations and independent comparison; retain all existing lesson identities and progress. See batch25/session-evidence.json for validation and limitations. No background process is implied.
+
+---
+
 # Manufacturing SSW1 — batch24 six-AI vernier readout diagram, 2026-10-28
 
 Six requested AI lanes authored source/model/caption and controlledasset, independently reviewed physicalgeometry, translated12captions, independently reviewed captions/compiler/UI, and implemented/tested a second readerfigure. Added an original1400x1300vernierreading diagram to existinglesson018 under distinctdiagramKey018-reading; the23contactfigure/caption remains intact. Source72–73readingprocess is theknowledgebasis,74exercise/source30.35example excluded. The20intervals=19mainmillimetres construction is explicitly an originalpaper model, not a PDF-certified device specification.
