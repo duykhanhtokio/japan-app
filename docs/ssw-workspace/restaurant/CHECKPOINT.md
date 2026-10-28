@@ -1,3 +1,18 @@
+# Nhà hàng / 外食業 — checkpoint 10, 2026-10-28
+
+Toàn bộ mô-đun CHƯA hoàn tất. Base remote đã qua scoped WORK PERSISTENCE PASS `b41bbc29401f1c447903effc9ee41d84f7014c58`, nhánh `feature/restaurant-20261026`. Lô này cần commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
+
+- ĐỦ toàn bộ 11808/11808 bản dịch câu cho12locale,984 câu mỗi locale. Thêm1520: en/vi q381–400+weekly02–11;id/tl q341–400+weekly02–11;my/ne/th/km q221–400+weekly02–11. Các ngôn ngữ hi/bn/zh-CN/zh-TW giữ nguyên phần đã đủ.
+- Thêm384 thuật ngữ+định nghĩa:192 mỗi id/tl, hiện đủ692/692 mỗi locale. Tổng glossary4152/8304:en,vi,id,tl,zh-CN,zh-TW đủ;hi,bn,my,ne,th,km còn692 mỗi locale.
+- Bảo toàn16372 record cũ và metadata ngoài phạm vi.1520hash câu mới+384hash glossary mới khớp nguồn;1520objective chỉ dùng exact objectiveJa với sourceHash bài/câu cũ hợp lệ. Toàn bộ tập984ID câu đầy đủ cho cả12locale.
+- Structural PASS; numeric102564 trường PASS;signedCelsius396 trường PASS.146 rà số mới gắn exactfieldhashes, gồm77 trường rà độc lập. Không chứng nhận toàn bộ ngữ nghĩa/người bản ngữ.
+- Rà độc lập384glossary của root:hash/trường/không ghi đè và mẫu an toàn/công thức đạt; sửa5field từ ngữ/khoảng trắng (gin,lên men,tuổi20). Làm rõ3field phép năm Việt và đơn vị mỗi suất trong1stem Khmer mới. Không thay nội dung Nhật,đáp án,thứ tự lựa chọn hoặcUI.
+- Các child dùng lô40 để vượt giới hạn phiên; phần hợp lệ được giữ và tiếp nối. Tách tên intermediate theo nhiệm vụ sau một va chạm source-extract ởscratch; xác minh cuối theo canonical IDs/hashes, không ghép dựa trên tên tạm.
+- Chưa productionExpo/native;giữ acceptance chưa đạt ởfalse. Source590partial,fullfurigana/hình nhận dạng và rà chuyên môn/người bản ngữ vẫn còn dở.
+- Điểm tiếp:KHÔNG dịch lại câu hỏi/bài/UI đã đủ. Bổ sung glossary692×6locale hi/bn/my/ne/th/km (4152cặp);rá nguồn/hình/furigana/thiết bị. Không cam kết tác vụ chạy nền sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 9, 2026-10-28
 
 Toàn bộ mô-đun CHƯA hoàn tất. Base remote đã qua scoped WORK PERSISTENCE PASS `9a450967e5fb623bc4d960253355ae98679ed0e9`, nhánh `feature/restaurant-20261026`. Lô này cần commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
