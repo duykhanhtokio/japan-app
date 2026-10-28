@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "reviewerWorker": 2,
+  "reviewedWorker": 6,
+  "date": "2026-10-28",
+  "status": "independent_ai_review_complete_with_revisions_and_exclusion",
+  "decisions": [
+    {
+      "questionId": "agr-2-m03-q01",
+      "decision": "accept",
+      "reasonJa": "切り花の輸送損傷という状況で、収穫段階を選ぶ目的を問う。既存の包装の役割とは手段が異なり、収穫対象や時期の名称を入れ替えただけではない。正答は掲載例の目的、各誤答は等級・水分・予冷の代替という誤推論で一意。",
+      "relatedQuestionIds": [
+        "agr-par06-flowers-q10",
+        "agr-par06-flowers-q11"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "agr-2-m03-q02",
+      "decision": "accept",
+      "reasonJa": "等級と長さという出荷調整の二指標を切り分ける実務上の点検。既存の包装・症状・低温管理にも、worker1/2/4の分類・測定対象にも同じ等級判定はない。本文p5と正答・四理由が一致。",
+      "relatedQuestionIds": [
+        "agr-par06-flowers-q11",
+        "agr-par12-general-q03"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "agr-2-m03-q03",
+      "decision": "accept",
+      "reasonJa": "収穫後の蒸散・呼吸と養水分の状態という過程を確認する理由。既存の症状一覧、包装工程、夜温と炭水化物蓄積とは対象と判断段階が異なる。光合成ゼロや温度処方は追加していない。",
+      "relatedQuestionIds": [
+        "agr-par06-flowers-q10",
+        "agr-par06-flowers-q11",
+        "agr-shared-w02-q07"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "agr-2-m03-q04",
+      "decision": "accept",
+      "reasonJa": "低温管理の狙いとしてエチレン発生・呼吸消耗の二つを抑える対応。予冷とコールドチェーンの範囲や糖・抗菌剤の役割とは異なり、Q03の収穫後の変化の存在とも制御の目的が異なる。方向を反転させた誤答が一意。",
+      "relatedQuestionIds": [
+        "agr-par06-flowers-q12",
+        "agr-par21-g5-q03",
+        "agr-2-m03-q03"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "agr-2-m03-q05",
+      "decision": "accept",
+      "reasonJa": "輸送費という具体的な比較項目と出荷形態の対応で、既存の市場価格・労力・利益の推論とは別。現在の取引価格を保証せず教材の相対比較に限定している。全選択肢の比較関係も一意。",
+      "relatedQuestionIds": [
+        "agr-par06-flowers-q06",
+        "agr-par21-g6-q01",
+        "agr-par08-flower-details-q04"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "agr-2-m03-q06",
+      "decision": "accept",
+      "reasonJa": "東アジア沿岸・主に温帯・海洋性という地理的背景の対応。既存の沖縄・北海道や冬の地域差と異なる掲載事項で、地域名の置換による別問ではない。国内一様とは述べず本文p1/p2に一致。",
+      "relatedQuestionIds": [
+        "agr-2-w01-q01",
+        "agr-2-w01-q03"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "agr-2-m03-q07",
+      "decision": "revise",
+      "reasonJa": "足し算50,662億円は正しい。ただし現選択肢は正答だけが小計と全体を区別し、計算せず限定表現だけで選べる。全選択肢で小計の範囲を同じにして計算誤りを比較させれば、既存の分母確認・割合区分・未掲載部分の推論とは異なる実際の集計操作になる。",
+      "relatedQuestionIds": [
+        "agr-2-w01-q06",
+        "agr-2-w01-q09",
+        "agr-par12-flower-q04"
+      ],
+      "patches": [
+        {
+          "field": "optionsJa",
+          "before": [
+            "四品目の小計は50,662億円で、農業全体の総額ではない。",
+            "四品目の小計は50,662億円で、農業全体の総額である。",
+            "四品目の小計は47,398億円で、四品目全てを集計している。",
+            "四品目の小計は89,387億円で、農業全体の総額と等しい。"
+          ],
+          "after": [
+            "四品目の小計は50,662億円で、農業全体の総額ではない。",
+            "四品目の小計は47,398億円で、農業全体の総額ではない。",
+            "四品目の小計は42,263億円で、農業全体の総額ではない。",
+            "四品目の小計は68,146億円で、農業全体の総額ではない。"
+          ],
+          "reasonJa": "全選択肢で小計と全体の範囲を同じにし、足し算の実行を必要にする。"
+        },
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "21,515＋17,484＋8,399＋3,264＝50,662です。四品目は農業全体の全品目ではありません。",
+            "計算値は合いますが、四品目の小計を農業全体とする範囲の誤りです。",
+            "47,398億円では花き3,264億円が加わっていません。",
+            "89,387億円は教材の農業全体の値で、掲載四品目の足し算ではありません。"
+          ],
+          "after": [
+            "21,515＋17,484＋8,399＋3,264＝50,662です。四品目は農業全体の全品目ではありません。",
+            "47,398は野菜・米・果実の合計で、花き3,264億円が加わっていません。",
+            "42,263は野菜・米・花きの合計で、果実8,399億円が加わっていません。",
+            "68,146は正しい小計50,662に米17,484億円を再び加えた値で、米を二重に数えています。"
+          ],
+          "reasonJa": "各誤答を一品目の加算漏れ又は米の二重計上に対応させ、計算を検証する。"
+        }
+      ]
+    },
+    {
+      "questionId": "agr-2-m03-q08",
+      "decision": "accept",
+      "reasonJa": "一人当たりか全国全体か、年間か月間かという消費量指標の読み取り。既存の産出額の割合・金額単位を確認する操作とは単位の分母と期間の組が違う。年次の明示だけを再出題せず、本文の一人当たり年間という技術的な対象を保っている。",
+      "relatedQuestionIds": [
+        "agr-2-w01-q06",
+        "agr-2-w01-q07"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "agr-2-m03-q09",
+      "decision": "accept",
+      "reasonJa": "1兆円=10,000億円、これに4,000億円を足して14,000億円。既存は単位を確認する必要性だけで、実換算を解かせていない。肥料百分率計算の値を替えた問題でもない。約と2021年の条件も保つ。",
+      "relatedQuestionIds": [
+        "agr-2-w01-q07",
+        "agr-par03-fertilizer-q13"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "agr-2-m03-q10",
+      "decision": "accept",
+      "reasonJa": "資料が同じ重量ベースの小麦・大豆について述べる、低自給率と輸入依存の関係を問う。カロリーと重量という基準の違いの既存問から独立し、現在の率や特定国の輸入比率を推定していない。",
+      "relatedQuestionIds": [
+        "agr-2-w01-q08"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "agr-2-m03-q11",
+      "decision": "accept",
+      "reasonJa": "日本原産と日本で栽培する種類の範囲を区別する。国内栽培を原産と同義にしない対象知識で、利用部位・科・栽培設備やworker1のイネと米の区分とは同じ分類操作ではない。例示を網羅的な種類数へ変えていない。",
+      "relatedQuestionIds": [
+        "agr-1-w01-q04",
+        "agr-vegwork-weekly-q03",
+        "agr-1-m02-q01"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "agr-2-m03-q12",
+      "decision": "accept",
+      "reasonJa": "資料が挙げる成分四群を一問にまとめて識別させ、成分名ごとの置換問題へ水増ししていない。既存の樹種・栽培地域の対応やworker2の肥料養分とは対象知識が異なる。誤答の成分を含まないと主張しない理由も正確。",
+      "relatedQuestionIds": [
+        "agr-1-w01-q07",
+        "agr-1-w01-q08",
+        "agr-1-m03-q12",
+        "agr-1-m03-q13"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "agr-2-m03-q13",
+      "decision": "exclude",
+      "reasonJa": "本文の注意としては正しいが、提案された操作は「紹介・例示を個別の効能保証へ広げない」という限定表現の選別に留まる。既存の症状例を診断保証にしない問や耐久性記載を全製品保証にしない問と同型で、果実・健康という名詞へ替えただけの追加枠としては数えない。知識そのものを教材から除く判断ではない。",
+      "relatedQuestionIds": [
+        "agr-par03-fertilizer-q02",
+        "agr-1-m01-q04",
+        "agr-1-m03-q17"
+      ],
+      "patches": []
+    }
+  ],
+  "summary": {
+    "reviewedQuestions": 13,
+    "accept": 11,
+    "revise": 1,
+    "exclude": 1,
+    "retainedIfPatchesApplied": 12,
+    "canonicalExistingQuestionsIndexed": 452,
+    "crossWorkerCandidatesIndexed": 52
+  },
+  "mathChecks": {
+    "four2019AmountsSubtotal": 50662,
+    "withoutFlowers": 47398,
+    "withoutFruit": 42263,
+    "doubleCountRice": 68146,
+    "mixedYenUnitToOku": 14000
+  },
+  "comparisonMethod": "Canonical paragraphs for all13questions and same-topic existing assessments read; all452existing and52worker1/2/4questions indexed for exact and lexical candidate screening; flagged semantic neighbors manually compared. Lexical screening is navigation only, not semantic certification.",
+  "inputsSha256": {
+    "src/data/agriculture/lessons.ja.json": "d83275f9d09b2239fcd2416448d0d8179c1d400298f29b93c25dc24bdeac7574",
+    "src/data/agriculture/weekly-checks.ja.json": "06023b72dd6f5997a9c908b3a6f16824166be3118dedafa97abdf41a7d441a86",
+    "src/data/agriculture/mock-exams.ja.json": "43d51b4be787251ab2f8e60d50bcab031242ac1bee3c30d09a9e2c2945aa303c",
+    "docs/ssw-workspace/agriculture/parallel-28/worker6.json": "0d22f2b678ea95642092127786598813820c82ead75eae58300a6b07d628874b",
+    "docs/ssw-workspace/agriculture/parallel-28/worker1.json": "ee6ace2d4ccf207659c6aba278eefddf4063a079317ff40b321ad0563061a09c",
+    "docs/ssw-workspace/agriculture/parallel-28/worker2.json": "6528d49861f3e7e8256d40d49909fc6ea71c57a6e9746db90d725bb86981a8d3",
+    "docs/ssw-workspace/agriculture/parallel-28/worker4.json": "fce636a3895cf1fcf24441607e4b7f82f18e8ef9d889fa7f024befe8594de5f0"
+  },
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "freshPdfVerified": false,
+  "globalSemanticUniquenessCertified": false,
+  "rawWorkerPacketChanged": false,
+  "rootAction": "Apply Q07 exact-before patches and exclude Q13 from new-question counts; final root review and cross-worker integration required."
+}

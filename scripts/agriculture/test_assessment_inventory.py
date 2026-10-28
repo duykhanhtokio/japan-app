@@ -9,6 +9,8 @@ class AssessmentEvidenceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.baseline = load()
+        cls.question_count = len({q['id'] for key in ['weekly', 'mocks']
+                                  for e in cls.baseline[key]['exams'] for q in e['questions']})
 
     def changed(self):
         return copy.deepcopy(self.baseline)
@@ -20,7 +22,7 @@ class AssessmentEvidenceTests(unittest.TestCase):
 
     def test_real_data_never_implies_certified_capacity(self):
         report = build(self.baseline)
-        self.assertEqual(report['summary']['uniqueExistingQuestions'], 452)
+        self.assertEqual(report['summary']['uniqueExistingQuestions'], self.question_count)
         self.assertFalse(report['capacityFor800Certified'])
         self.assertTrue(all(not r['independentObjectiveCertified'] for r in report['paragraphCandidates']))
         self.assertTrue(all(not r['eligibleForAutomaticQuestionGeneration'] for r in report['locallyScreenedCandidates']))
@@ -50,7 +52,7 @@ class AssessmentEvidenceTests(unittest.TestCase):
         data['weekly']['exams'].append(extra)
         self.rebind_review(data)
         report = build(data)
-        self.assertEqual(report['summary']['uniqueExistingQuestions'], 452)
+        self.assertEqual(report['summary']['uniqueExistingQuestions'], self.question_count)
         qid = extra['questions'][0]['id']
         row = next(r for r in report['existingAssessments'] if r['questionId'] == qid)
         self.assertEqual(len(row['uses']), 2)

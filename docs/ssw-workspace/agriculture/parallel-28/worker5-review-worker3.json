@@ -1,0 +1,766 @@
+{
+  "schemaVersion": 1,
+  "reviewerWorker": 5,
+  "reviewedWorker": 3,
+  "status": "independent_ai_review_not_domain_or_native_approval",
+  "reviewedInputSha256": {
+    "docs/ssw-workspace/agriculture/parallel-28/worker3.json": "ab1a39b424bb9363f52bfa811087963c0d8485f300086ec85296910739f316b7",
+    "docs/ssw-workspace/agriculture/parallel-28/worker5.json": "02f4e6e71d42207c9fe7a73e5820a83b13d34734029795cf61efa274876430d0",
+    "docs/ssw-workspace/agriculture/parallel-28/worker6.json": "0d22f2b678ea95642092127786598813820c82ead75eae58300a6b07d628874b",
+    "src/data/agriculture/lessons.ja.json": "d83275f9d09b2239fcd2416448d0d8179c1d400298f29b93c25dc24bdeac7574",
+    "src/data/agriculture/weekly-checks.ja.json": "06023b72dd6f5997a9c908b3a6f16824166be3118dedafa97abdf41a7d441a86",
+    "src/data/agriculture/mock-exams.ja.json": "43d51b4be787251ab2f8e60d50bcab031242ac1bee3c30d09a9e2c2945aa303c",
+    "docs/ssw-workspace/agriculture/knowledge-ledger.json": "a5ca69fae5f864189d9c42d8d6066be2bcd34d00f17d7f457908ce011ee6c790"
+  },
+  "decisions": [
+    {
+      "questionId": "agr-2-m01-q01",
+      "decision": "revise",
+      "reasonJa": "定義された体内物質と、外部から行う処理を分ける独立した概念。ただし受粉・剪定という無関係な誤答は外し、同じ概念の範囲内で比較させる。",
+      "relatedQuestionIds": [
+        "agr-cm-weekly-q06",
+        "agr-2-m01-q02"
+      ],
+      "fieldPatches": [
+        {
+          "field": "optionsJa",
+          "before": [
+            "植物ホルモンは植物体内でできる調節物質、ホルモン処理は外から行う作業である。",
+            "どちらも花粉を柱頭へ運ぶ作業を指す。",
+            "植物ホルモンは外から与えた液だけ、ホルモン処理は体内で物質ができることである。",
+            "どちらも枝を切って形を整える作業を指す。"
+          ],
+          "after": [
+            "植物ホルモンは植物体内でできる調節物質、ホルモン処理は外から行う作業である。",
+            "植物ホルモンは植物体内の調節物質、ホルモン処理はその体内での生成を観察するだけの作業である。",
+            "植物ホルモンは外から与えた液だけ、ホルモン処理は体内で物質ができることである。",
+            "植物ホルモンもホルモン処理も、外から与える薬液だけを表す物質名である。"
+          ],
+          "reasonJa": "無関係または不自然な誤答を、本文の概念・条件に即した選択肢へ替える。正答位置は維持する。"
+        },
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "物質の定義と、外部から処理する作業を分けています。",
+            "花粉を運ぶ受粉の作業とは異なります。",
+            "植物体内でつくられる物質という説明を逆にしています。",
+            "枝を整える作業と調節物質の定義を混同しています。"
+          ],
+          "after": [
+            "体内でつくられる物質と、外部から行う処理を分けています。",
+            "ホルモン処理は、体内での生成を観察するだけの作業ではありません。",
+            "植物体内でつくられる物質と外から行う作業の対応を逆にしています。",
+            "植物ホルモンは体内でつくられる物質であり、ホルモン処理は物質名ではなく作業です。"
+          ],
+          "reasonJa": "各変更後の選択肢へ一対一で対応する理由に直す。本文外の処方や保証は加えない。"
+        }
+      ],
+      "acceptableOnlyAfterPatches": true
+    },
+    {
+      "questionId": "agr-2-m01-q02",
+      "decision": "revise",
+      "reasonJa": "現状は第1問と同じ物質対作業の区別で解ける。オーキシンの側芽抑制・頂芽優勢という実際の作用を問う設問へ改めれば独立する。",
+      "relatedQuestionIds": [
+        "agr-cm-weekly-q02",
+        "agr-2-m01-q01"
+      ],
+      "fieldPatches": [
+        {
+          "field": "stemJa",
+          "before": "日報の「わき芽を摘み取った」と、オーキシンの説明にある「わき芽の成長を抑える」を比べます。適切なのはどれですか。",
+          "after": "オーキシンのわき芽への働きについて、2号本文に合う説明はどれですか。",
+          "reasonJa": "第1問と重なる物質対作業の分類を離れ、オーキシン固有の側芽抑制を問う。"
+        },
+        {
+          "field": "optionsJa",
+          "before": [
+            "前者も後者も、芽を物理的に取り除いたという作業記録である。",
+            "前者は体内の物質の働き、後者は芽を物理的に除く作業である。",
+            "前者は芽を除く作業、後者は側芽を増やす方向の働きである。",
+            "前者は芽を除く作業、後者は芽の成長に関する物質の働きである。"
+          ],
+          "after": [
+            "側芽を増やし、葉の老化を抑える働きとして示される。",
+            "種子の休眠を打破し、茎の伸長を促す働きとして示される。",
+            "種子を休眠させる方向の働きとして示される。",
+            "わき芽の成長を抑える働きとして、頂芽優勢と結び付けられる。"
+          ],
+          "reasonJa": "無関係または不自然な誤答を、本文の概念・条件に即した選択肢へ替える。正答位置は維持する。"
+        },
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "物質の作用を、芽の除去を行った記録と同一視しています。",
+            "わき芽かきとオーキシンの説明を入れ替えています。",
+            "オーキシンについて本文が示すのは側芽の成長を抑える働きです。",
+            "除去する作業と、成長を調節する物質の作用を分けています。"
+          ],
+          "after": [
+            "本文ではサイトカイニンの作用として挙げられる内容で、オーキシンの欄とは異なります。",
+            "本文ではジベレリンの作用として挙げられる内容で、オーキシンの欄とは異なります。",
+            "本文ではアブシジン酸について扱う方向で、オーキシンの欄とは異なります。",
+            "本文はオーキシンをわき芽の成長抑制に結び付け、頂芽優勢という語とともに示しています。"
+          ],
+          "reasonJa": "各変更後の選択肢へ一対一で対応する理由に直す。本文外の処方や保証は加えない。"
+        }
+      ],
+      "acceptableOnlyAfterPatches": true
+    },
+    {
+      "questionId": "agr-2-m01-q03",
+      "decision": "accept",
+      "reasonJa": "ジベレリンの茎伸長・果実肥大という器官別の作用を問う。第5問の種子休眠とは作用対象が異なり、逆向きの同じ対応ではない。worker5の成長調整剤の目的一覧も物質名の作用対応とは異なる。",
+      "relatedQuestionIds": [
+        "agr-2-m01-q05",
+        "agr-2-m02-q31"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q04",
+      "decision": "revise",
+      "reasonJa": "葉の老化抑制は他候補と異なる作用対象。物理的な摘葉という弱い誤答をなくし、側芽と葉の老化に関する本文の二つの作用を一課題にまとめる。",
+      "relatedQuestionIds": [
+        "agr-2-m01-q02"
+      ],
+      "fieldPatches": [
+        {
+          "field": "stemJa",
+          "before": "葉の老化について、サイトカイニンの説明と一致する記録はどれですか。",
+          "after": "サイトカイニンの欄を「側芽／葉の老化」で整理します。本文に合う組合せはどれですか。",
+          "reasonJa": "葉の老化という独立した作用を保ち、側芽と併せて本文の二対象を一つの比較課題にする。"
+        },
+        {
+          "field": "optionsJa",
+          "before": [
+            "側芽の作用だけが載り、葉の老化への作用は載っていない。",
+            "葉の老化を抑える働きが挙げられている。",
+            "葉の老化を進める働きだけが挙げられている。",
+            "葉を摘み取る作業名として説明されている。"
+          ],
+          "after": [
+            "側芽を増やす／葉の老化を進める。",
+            "側芽を増やす／葉の老化を抑える。",
+            "側芽の成長を抑える／葉の老化を進める。",
+            "側芽の成長を抑える／葉の老化を抑える。"
+          ],
+          "reasonJa": "無関係または不自然な誤答を、本文の概念・条件に即した選択肢へ替える。正答位置は維持する。"
+        },
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "本文は側芽に加えて、葉の老化を抑える作用も挙げています。",
+            "本文は側芽の作用に加え、葉の老化を抑える作用を挙げています。",
+            "掲載された作用の方向が逆です。",
+            "摘葉という作業名とは異なります。"
+          ],
+          "after": [
+            "側芽の説明は合っていますが、本文は葉の老化を抑えるとしています。",
+            "側芽を増やすことと葉の老化を抑えることの、本文の二つの作用を保持しています。",
+            "側芽と葉の老化について、どちらも本文の方向と異なります。",
+            "葉の老化の説明は合っていますが、側芽を増やすという本文の説明と異なります。"
+          ],
+          "reasonJa": "各変更後の選択肢へ一対一で対応する理由に直す。本文外の処方や保証は加えない。"
+        }
+      ],
+      "acceptableOnlyAfterPatches": true
+    },
+    {
+      "questionId": "agr-2-m01-q05",
+      "decision": "accept",
+      "reasonJa": "ジベレリンとアブシジン酸の休眠への相反する作用を一問に統合しており、二つの鏡写し問題へ分割していない。離層・薬剤処方は範囲外のまま。",
+      "relatedQuestionIds": [
+        "agr-2-m01-q03"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q06",
+      "decision": "revise",
+      "reasonJa": "エチレンの気体という性状と開花作用の方向は独立した知識。受粉だけを対象とする液体という極端な誤答を、性状・作用の二軸で比較できるものへ直す。worker6第4問の収穫後の温度管理・エチレン発生抑制とは異なる。",
+      "relatedQuestionIds": [
+        "agr-2-m03-q04"
+      ],
+      "fieldPatches": [
+        {
+          "field": "optionsJa",
+          "before": [
+            "気体として紹介され、開花への作用には促進と抑制の例がある。",
+            "液体として紹介され、作用の対象は花粉の移動だけである。",
+            "気体として紹介され、どの植物でも開花を同じだけ早める。",
+            "固体として紹介され、開花への作用は促進だけである。"
+          ],
+          "after": [
+            "気体として紹介され、開花への作用には促進と抑制の例がある。",
+            "液体として紹介され、開花への作用には促進と抑制の例がある。",
+            "気体として紹介され、開花への作用は促進だけに限られる。",
+            "気体として紹介され、開花への作用は抑制だけに限られる。"
+          ],
+          "reasonJa": "無関係または不自然な誤答を、本文の概念・条件に即した選択肢へ替える。正答位置は維持する。"
+        },
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "物質の性状と、作用を一方向へ限定しない説明の両方を保持しています。",
+            "性状も、掲載された作用の対象も異なります。",
+            "植物を問わない一律の効果や日数は示されていません。",
+            "気体という紹介と、促進・抑制の両方がある説明に反します。"
+          ],
+          "after": [
+            "気体という性状と、開花作用を一方向へ限定しない説明を保っています。",
+            "開花作用の二方向は合っていますが、本文は気体として紹介しています。",
+            "気体という性状は合っていますが、抑制の例を除いています。",
+            "気体という性状は合っていますが、促進の例を除いています。"
+          ],
+          "reasonJa": "各変更後の選択肢へ一対一で対応する理由に直す。本文外の処方や保証は加えない。"
+        }
+      ],
+      "acceptableOnlyAfterPatches": true
+    },
+    {
+      "questionId": "agr-2-m01-q07",
+      "decision": "revise",
+      "reasonJa": "雑草が病害虫の生息環境になる経路は、種子の持込み・圃場での落種とは異なる。一本で全作物が発病という不自然な誤答を、管理対象を草量だけに狭める等の実際的な取り違えへ直す。",
+      "relatedQuestionIds": [
+        "agr-cm-weekly-q16",
+        "agr-2-m01-q25",
+        "agr-2-m01-q27"
+      ],
+      "fieldPatches": [
+        {
+          "field": "optionsJa",
+          "before": [
+            "雑草の数だけで、病害虫の種類も発生量も確定できる。",
+            "雑草が一本あれば、必ず全ての作物に同じ病気が発生する。",
+            "雑草が病害虫の住みかになる場合があり、畑の環境としても管理する。",
+            "雑草と病害虫は関係しないため、作物の状態とは分けて無視する。"
+          ],
+          "after": [
+            "雑草の量を減らすことだけを記し、病害虫の生息場所としての確認は省く。",
+            "作物との養水分競合だけを除草の目的とし、病害虫の関係は記録しない。",
+            "雑草が病害虫の住みかになる場合があり、畑の環境としても管理する。",
+            "雑草が種子を落とさなければ、生えている間の病害虫との関係は確認しない。"
+          ],
+          "reasonJa": "無関係または不自然な誤答を、本文の概念・条件に即した選択肢へ替える。正答位置は維持する。"
+        },
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "雑草の数だけで病害虫の種類や量を確定する根拠はありません。",
+            "可能性を全ての作物への必然的な発病へ広げています。",
+            "病害虫の住みかとなる可能性を、畑の環境管理へ結び付けています。",
+            "本文で示された生息環境との関係を取り除いています。"
+          ],
+          "after": [
+            "草量だけに限定すると、病害虫の住みかになる場合があるという本文の経路が残りません。",
+            "養水分の競合だけでなく、本文は病害虫の生息環境との関係も述べています。",
+            "病害虫の住みかとなる可能性を、畑の環境管理へ結び付けています。",
+            "落種の予防と、生きた雑草が病害虫の住みかになる可能性は別の経路です。"
+          ],
+          "reasonJa": "各変更後の選択肢へ一対一で対応する理由に直す。本文外の処方や保証は加えない。"
+        }
+      ],
+      "acceptableOnlyAfterPatches": true
+    },
+    {
+      "questionId": "agr-2-m01-q08",
+      "decision": "exclude",
+      "reasonJa": "第9問が選択性という影響範囲を同じ本文から使って、さらに茎葉吸収との二軸を評価する。第8問を別枠に数えると同一の分類操作が内包重複するため、本バッチの新規問題数から除外する。",
+      "relatedQuestionIds": [
+        "agr-2-m01-q09"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q09",
+      "decision": "accept",
+      "reasonJa": "影響する植物の範囲と吸収される部位の二軸を区別する課題として、第8問を除外したうえで保持できる。製品の適用許可を推定していない。",
+      "relatedQuestionIds": [
+        "agr-2-m01-q08"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q10",
+      "decision": "revise",
+      "reasonJa": "土壌処理と雑草の生育段階という条件が対象。茎葉処理への名称変更という弱い誤答をなくし、成長段階と効果の関係として四つを比較させる。",
+      "relatedQuestionIds": [
+        "agr-2-m01-q09"
+      ],
+      "fieldPatches": [
+        {
+          "field": "optionsJa",
+          "before": [
+            "本文では、大きい雑草にも効果が一定と説明されている。",
+            "大きくなった雑草では、土壌処理という説明を茎葉からの吸収へ置き換える。",
+            "本文では、雑草が大きいほど必ず効果が高いと説明されている。",
+            "本文では、効果が下がると説明されている。"
+          ],
+          "after": [
+            "雑草の大きさが変わっても、効果は一定だと説明されている。",
+            "雑草の大きさと効果の関係は、本文では触れられていない。",
+            "雑草が大きくなるほど、効果が高くなると説明されている。",
+            "すでに大きくなった雑草では、効果が下がると説明されている。"
+          ],
+          "reasonJa": "無関係または不自然な誤答を、本文の概念・条件に即した選択肢へ替える。正答位置は維持する。"
+        },
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "生育段階に関係なく一定だという説明ではありません。",
+            "生育段階の条件を、別の処理経路へ置き換えてはいけません。",
+            "掲載された生育段階との関係が逆です。",
+            "土中に成分が残って発生・成長を抑える説明に、生育段階の条件を添えています。"
+          ],
+          "after": [
+            "本文はすでに大きくなった雑草で効果が下がるという条件を付けています。",
+            "本文には、すでに大きくなった雑草では効果が下がるという説明があります。",
+            "生育段階と効果の関係が、本文の説明と逆です。",
+            "土中に成分が残って発生・成長を抑える説明に、生育段階の条件を保持しています。"
+          ],
+          "reasonJa": "各変更後の選択肢へ一対一で対応する理由に直す。本文外の処方や保証は加えない。"
+        }
+      ],
+      "acceptableOnlyAfterPatches": true
+    },
+    {
+      "questionId": "agr-2-m01-q11",
+      "decision": "accept",
+      "reasonJa": "器材の用途分離と洗浄を代替可能としない具体的な薬害防止判断。使用簿や保管場所の既存問題とは異なる経路。",
+      "relatedQuestionIds": [
+        "agr-par04-safety-q08"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q12",
+      "decision": "accept",
+      "reasonJa": "器材内の残留と周囲への飛散を分ける課題。第11問の用途分離から導ける部分はあるが、ノズル・カバーとドリフトという外への経路を新たに比較する。",
+      "relatedQuestionIds": [
+        "agr-par04-safety-q10",
+        "agr-2-m01-q11"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q13",
+      "decision": "accept",
+      "reasonJa": "希釈倍数と使用液量は異なる単位・情報。既存の剤型の形状・溶け方とは別であり、現行製品の数値を処方していない。",
+      "relatedQuestionIds": [
+        "agr-par08-fertilizer-formulations-q06",
+        "agr-par08-fertilizer-formulations-q07"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q14",
+      "decision": "revise",
+      "reasonJa": "収穫前の使用時期と施用方法という区分は、使用回数・有効期限の既存問題とは異なる。ただし成分名・ロット番号などとの不自然な対応を、時期と方法の混同を中心にする誤答へ直す。",
+      "relatedQuestionIds": [
+        "agr-par21-g2-q03",
+        "agr-par21-g2-q04"
+      ],
+      "fieldPatches": [
+        {
+          "field": "optionsJa",
+          "before": [
+            "前者は有効成分名、後者は内容量。",
+            "前者も後者も希釈倍数。",
+            "前者はロット番号、後者は最終有効期限。",
+            "前者は使用時期、後者は使用方法。"
+          ],
+          "after": [
+            "前者は使用量、後者は使用時期。",
+            "前者は使用方法、後者は使用時期。",
+            "前者も後者も使用時期。",
+            "前者は使用時期、後者は使用方法。"
+          ],
+          "reasonJa": "無関係または不自然な誤答を、本文の概念・条件に即した選択肢へ替える。正答位置は維持する。"
+        },
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "時期と施用方法を、成分名と内容量へ置き換えています。",
+            "時期も施用方法も、薄め方だけを表す項目ではありません。",
+            "製造・照合情報と、使用時の条件を混同しています。",
+            "いつ使うかと、どのように使うかを区別しています。"
+          ],
+          "after": [
+            "収穫までの時期を量の情報へ替え、土壌処理・葉への散布も時期へ置き換えています。",
+            "いつ使うかと、どのように使うかの対応が逆です。",
+            "土壌処理・葉への散布は使用方法であり、使用時期と同じ情報ではありません。",
+            "収穫までの使用時期と、土壌処理・葉への散布という使用方法を区別しています。"
+          ],
+          "reasonJa": "各変更後の選択肢へ一対一で対応する理由に直す。本文外の処方や保証は加えない。"
+        }
+      ],
+      "acceptableOnlyAfterPatches": true
+    },
+    {
+      "questionId": "agr-2-m01-q15",
+      "decision": "accept",
+      "reasonJa": "適用作物と対象病害虫を組として確認する判断で、量・濃度や使用記録の既存課題とは異なる。製品の現在の許可を教材から推定させていない。",
+      "relatedQuestionIds": [
+        "agr-par04-safety-q07"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q16",
+      "decision": "accept",
+      "reasonJa": "同じ姿勢の継続を避ける作業配分であり、目の休息や機械作業の飲酒・疲労による可否とは異なる具体的な負担。医学的時間値は作っていない。",
+      "relatedQuestionIds": [
+        "agr-par04-safety-q02",
+        "agr-2-m01-q17"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q17",
+      "decision": "accept",
+      "reasonJa": "視作業の負担と遠くを見る等の休息は、身体姿勢の前問とは対象が異なる。全員共通の医学的時間を作らない限度も守っている。",
+      "relatedQuestionIds": [
+        "agr-2-m01-q16"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q18",
+      "decision": "accept",
+      "reasonJa": "洗浄後に残る乾燥・整備・収納・記録という具体的な仕事範囲。第23問の点検時点の分け方とは別の工程内容。",
+      "relatedQuestionIds": [
+        "agr-par04-safety-q03",
+        "agr-2-m01-q23"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q19",
+      "decision": "accept",
+      "reasonJa": "風の強さという既存条件とは別の降雨前後の条件を扱う。朝夕という目安を他条件の代わりにせず、数値の待ち時間を新設していない。",
+      "relatedQuestionIds": [
+        "agr-par04-safety-q10"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q20",
+      "decision": "accept",
+      "reasonJa": "濡れる軍手を避け、表示・条件に合う手袋を選ぶ具体的な素材・適合の確認。着用開始時期・重ね方の既存課題と異なる。",
+      "relatedQuestionIds": [
+        "agr-par04-safety-q05",
+        "agr-par04-safety-q06",
+        "agr-2-m01-q21"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q21",
+      "decision": "accept",
+      "reasonJa": "薬液付着への保護と機械への巻込みという異なる危険をまたぐ転用の問題。前問の薬剤に対する手袋適合とは異なる危険機構を含む。",
+      "relatedQuestionIds": [
+        "agr-2-m01-q20"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q22",
+      "decision": "accept",
+      "reasonJa": "六角穴とプラス溝への工具接触面を対応させる課題で、既存のソケット構造・モンキの幅調整とは別。締付け力や実機整備手順を新設していない。",
+      "relatedQuestionIds": [
+        "agr-par04-safety-q13",
+        "agr-par04-safety-q14"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q23",
+      "decision": "accept",
+      "reasonJa": "点検の時点を運転前・中・後に区分する課題。点検目的や停止手順の既存問題と異なり、可動部へ手を入れる許可にしていない。",
+      "relatedQuestionIds": [
+        "agr-par04-safety-q03",
+        "agr-par04-safety-q04",
+        "agr-2-m01-q18"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q24",
+      "decision": "accept",
+      "reasonJa": "基本用語で難度は低いが、病気対害虫という薬剤の対象分類は、既存の天敵・剤型・IPM目標では問われていない。四択は二分類の対象の対応・同一視で一貫しており、無関係な紙や名称の誤答ではない。製品選択の処方にはしない。",
+      "relatedQuestionIds": [
+        "agr-cm-weekly-q13",
+        "agr-par21-g2-q01"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q25",
+      "decision": "accept",
+      "reasonJa": "抵抗性品種・輪作・圃場衛生による発生しにくい条件づくりは、IPMの一般目標や反射・粘着・熱の仕組みとは異なる方法分類。",
+      "relatedQuestionIds": [
+        "agr-par21-g2-q01",
+        "agr-2-m01-q07"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q26",
+      "decision": "accept",
+      "reasonJa": "交尾を妨げて次世代を減らすという性フェロモンの経路で、天敵の捕食・粘着捕獲・反射とは異なる。worker6の植物のエチレンや品質保持とも混同しない。",
+      "relatedQuestionIds": [
+        "agr-cm-weekly-q13",
+        "agr-par11-management-q05",
+        "agr-2-m03-q04"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q27",
+      "decision": "revise",
+      "reasonJa": "外からの種子の持込み予防と、既に圃場で育つ雑草からの落種予防は異なる発生経路。種子を無区別に持込むという極端な誤答を、発芽後の除去だけへ偏る等の誤りに直す。",
+      "relatedQuestionIds": [
+        "agr-cm-weekly-q16",
+        "agr-2-m01-q07"
+      ],
+      "fieldPatches": [
+        {
+          "field": "optionsJa",
+          "before": [
+            "畑へ雑草の種子を持ち込まないことも確認する。",
+            "作物の種子と雑草の種子を区別せず持ち込む。",
+            "持込みの有無を見ず、刈取り前後の草丈だけを記録する。",
+            "雑草が見えなければ、外から入る種子は確認しない。"
+          ],
+          "after": [
+            "畑へ雑草の種子を持ち込まないことも確認する。",
+            "新しく入る資材は確認せず、畑で発芽してから抜くことだけを計画する。",
+            "持込みの有無を見ず、刈取り前後の草丈だけを記録する。",
+            "畑で育った草が種子を落とす前に刈ることだけを対策とする。"
+          ],
+          "reasonJa": "無関係または不自然な誤答を、本文の概念・条件に即した選択肢へ替える。正答位置は維持する。"
+        },
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "現在ある草とは別に、新たに入ってくる種子への予防を含めています。",
+            "持込みを防ぐという目的に反します。",
+            "草丈の記録は、外から種子が入る経路への確認の代わりにはなりません。",
+            "目に見える雑草の有無だけで持込みの確認を省いています。"
+          ],
+          "after": [
+            "現在ある草とは別に、新たに外から入る種子への予防を含めています。",
+            "発芽後の除去だけでは、本文が挙げる種子の持込み防止が計画に含まれません。",
+            "草丈の記録は、外から種子が入る経路の確認の代わりにはなりません。",
+            "圃場内の落種防止は重要ですが、それだけでは外からの持込みという経路を確認したことになりません。"
+          ],
+          "reasonJa": "各変更後の選択肢へ一対一で対応する理由に直す。本文外の処方や保証は加えない。"
+        }
+      ],
+      "acceptableOnlyAfterPatches": true
+    },
+    {
+      "questionId": "agr-2-m01-q28",
+      "decision": "revise",
+      "reasonJa": "重大な本文不整合。設問と目的は作物がない畑という耕うん条件だが、選択肢・理由は果実の摘果から混入している。現状のままは不採用。本文agr-pest-weeds-p5だけに基づく四択・四理由へ完全置換した場合に限り保持候補。",
+      "relatedQuestionIds": [
+        "agr-cm-weekly-q14",
+        "agr-2-m01-q29"
+      ],
+      "fieldPatches": [
+        {
+          "field": "optionsJa",
+          "before": [
+            "果実の状態は見ず、枝の先端からの順番だけ。",
+            "病害虫の影響や、果実の形に異常がないか。",
+            "果実の形は見ず、作業しやすい高さだけ。",
+            "病害虫の影響は見ず、果実の大きい順だけ。"
+          ],
+          "after": [
+            "作業名を中耕と書き替えれば、作物の有無を確かめずに転用できる。",
+            "掲載例は作物がない畑の耕うんであり、作物が育つ場所へ条件を確かめず転用しない。",
+            "雑草が多い場合は、作物が育っているかどうかを条件から外してよい。",
+            "耕うんの適用は雑草の草丈だけで決め、作物の有無は記録しない。"
+          ],
+          "reasonJa": "無関係または不自然な誤答を、本文の概念・条件に即した選択肢へ替える。正答位置は維持する。"
+        },
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "枝上の順番だけを、果実の状態の観察の代わりにしています。",
+            "本文は数だけでなく、一つ一つの状態も判断対象としています。",
+            "作業のしやすさだけでは、本文が挙げる果実の状態の確認になりません。",
+            "大きさだけに限定し、本文が挙げる病害虫の影響を外しています。"
+          ],
+          "after": [
+            "作業名を書き替えたことは、本文の作物がないという条件を確認したことになりません。",
+            "本文agr-pest-weeds-p5の作物がない畑という適用場面を保った確認です。",
+            "雑草の量を理由に、掲載例の作物がない畑という条件を取り除いています。",
+            "草丈だけへ判断を狭めると、本文が残す作物の有無という条件が失われます。"
+          ],
+          "reasonJa": "各変更後の選択肢へ一対一で対応する理由に直す。本文外の処方や保証は加えない。"
+        }
+      ],
+      "acceptableOnlyAfterPatches": true
+    },
+    {
+      "questionId": "agr-2-m01-q29",
+      "decision": "revise",
+      "reasonJa": "摘果対象の病害虫影響・形状異常の観察は、残す果実への養水分という既存の目的とは別。紙サイズ・株の順番という不自然な誤答を、数・大きさ・取りやすさだけで選ぶ誤りへ直す。",
+      "relatedQuestionIds": [
+        "agr-cm-weekly-q04"
+      ],
+      "fieldPatches": [
+        {
+          "field": "optionsJa",
+          "before": [
+            "果実を付けた株の並び順だけ。",
+            "病害虫の影響や、果実の形に異常がないか。",
+            "果実の数が同じなら、混み合った葉の状態も確認済みとする。",
+            "作業記録の用紙の大きさだけ。"
+          ],
+          "after": [
+            "目標の数にすることだけを優先し、果実の大きい順に機械的に選ぶ。",
+            "病害虫の影響や、果実の形に異常がないか。",
+            "果実の数が同じなら、形や病害虫の影響も確認済みとする。",
+            "取りやすい高さの果実だけを対象にし、状態は確認しない。"
+          ],
+          "reasonJa": "無関係または不自然な誤答を、本文の概念・条件に即した選択肢へ替える。正答位置は維持する。"
+        },
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "株の並び順だけを摘果対象の基準にする説明ではありません。",
+            "本文は数だけでなく、一つ一つの状態も判断対象としています。",
+            "果実数と、葉の混み合いや病気の確認は別です。",
+            "用紙の大きさは果実の状態を示しません。"
+          ],
+          "after": [
+            "数をそろえることや大きさだけに限定し、本文が挙げる病害虫の影響や形の観察を省いています。",
+            "本文は数だけでなく、一つ一つの果実の状態も判断対象にしています。",
+            "数が同じことは、果実の形や病害虫の影響を確認した証拠にはなりません。",
+            "作業のしやすさだけでは、本文が挙げる果実の状態を見たことになりません。"
+          ],
+          "reasonJa": "各変更後の選択肢へ一対一で対応する理由に直す。本文外の処方や保証は加えない。"
+        }
+      ],
+      "acceptableOnlyAfterPatches": true
+    },
+    {
+      "questionId": "agr-2-m01-q30",
+      "decision": "revise",
+      "reasonJa": "摘葉の対象と通風・日当たり改善を結ぶ課題は、摘心・摘葉の部位名対応とは別。ただし花粉の作業などの弱い誤答を、葉数のみ・位置のみで取る等の対象選択の誤りへ直す。",
+      "relatedQuestionIds": [
+        "agr-cm-weekly-q01",
+        "agr-cm-weekly-q02"
+      ],
+      "fieldPatches": [
+        {
+          "field": "optionsJa",
+          "before": [
+            "通風や日当たりの改善につなげるため、葉の状態も見て対象を選ぶ。",
+            "摘葉は花粉を付ける作業なので、混み合いとは分けて考えない。",
+            "摘葉は茎の先端だけを取る作業なので、葉の状態は見ない。",
+            "葉を減らすこと自体が目的なので、状態を見ず同じ枚数を取る。"
+          ],
+          "after": [
+            "通風や日当たりの改善につなげるため、葉の状態も見て対象を選ぶ。",
+            "葉の総枚数を減らすことだけを目標にし、通風や日当たりは判断に入れない。",
+            "病気の葉は対象から外し、健康な葉を同じ位置から取ることを優先する。",
+            "葉を減らすこと自体が目的なので、状態を見ず同じ枚数を取る。"
+          ],
+          "reasonJa": "無関係または不自然な誤答を、本文の概念・条件に即した選択肢へ替える。正答位置は維持する。"
+        },
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "対象とする葉の状態を、栽培環境を整える目的へ結び付けています。",
+            "摘葉を受粉へ置き換えています。",
+            "茎の先端を取る摘心と混同しています。",
+            "本文は減らすこと自体を目的とはしていません。"
+          ],
+          "after": [
+            "対象とする葉の状態を、通風や日当たりを整える目的へ結び付けています。",
+            "本文は葉を減らすこと自体を目的とせず、通風と日当たりの改善に結び付けています。",
+            "本文が対象に挙げる病気の葉や混み合った葉の観察を外しています。",
+            "状態や管理目的を確認せず、同じ枚数を取るという説明ではありません。"
+          ],
+          "reasonJa": "各変更後の選択肢へ一対一で対応する理由に直す。本文外の処方や保証は加えない。"
+        }
+      ],
+      "acceptableOnlyAfterPatches": true
+    },
+    {
+      "questionId": "agr-2-m01-q31",
+      "decision": "accept",
+      "reasonJa": "冷気が庫内を回るか、容器の通気孔を通るかという機構を比較する。既存の真空冷却の蒸発原理やworker6の切り花の温度管理目的とは異なる。製品運転条件は作らない。",
+      "relatedQuestionIds": [
+        "agr-par08-management-details-q07",
+        "agr-2-m03-q04"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    },
+    {
+      "questionId": "agr-2-m01-q32",
+      "decision": "accept",
+      "reasonJa": "真空冷却の原理を問う既存課題から、収穫物からの水分の抜けやすさという適性条件へ対象を移している。単なる果実名の置換ではなく、収穫物の性質を冷却機構へ結び付ける。",
+      "relatedQuestionIds": [
+        "agr-par08-management-details-q07",
+        "agr-2-m01-q31"
+      ],
+      "fieldPatches": [],
+      "acceptableOnlyAfterPatches": false
+    }
+  ],
+  "summary": {
+    "questionsReviewed": 32,
+    "decisions": {
+      "revise": 11,
+      "accept": 20,
+      "exclude": 1
+    },
+    "exactFieldPatches": 24,
+    "unchangedCorrectPositions": true,
+    "requiresRebalancingAfterExcludedQuestion": true,
+    "criticalMismatchQuestion": "agr-2-m01-q28",
+    "nestedOverlapExcludedQuestion": "agr-2-m01-q08"
+  },
+  "reviewLimits": {
+    "currentExistingQuestionCorpus": 452,
+    "allCorpusUsedForComparisonSearch": true,
+    "selectedRelatedQuestionsSemanticallyCompared": true,
+    "own32AndWorker6CandidatesCompared": true,
+    "freshOriginalPdfInspection": false,
+    "globalSemanticDedupCertified": false,
+    "humanReviewed": false,
+    "nativeReviewed": false,
+    "domainReviewed": false
+  },
+  "notes": [
+    "q28 is unacceptable as-is; all four options and reasons must be replaced exactly as recorded before any retention.",
+    "q08 and q09 should not both be credited as independent new questions in this batch.",
+    "q02 requires the recorded actual-auxin-action revision to avoid a generic substance/work mirror of q01.",
+    "No canonical or author packet was edited. Root must apply patches with before-value guards, check semantic comparisons across all six packets, rebalance final40 forms and retain truthful review flags."
+  ]
+}

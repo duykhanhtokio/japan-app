@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "worker1-independent-integration-review",
+  "date": "2026-10-28",
+  "auditedScript": "scripts/agriculture/integrate-parallel-28.py",
+  "auditedScriptSha256": "58b4064650320cf1dc8f641dd9a1371b988846fa89552d24cfd0752e93c0cb22",
+  "scope": "Code and isolated fixtures only; no live integration or canonical edits by reviewer.",
+  "contractsRead": [
+    "scripts/agriculture/check-mocks.cjs",
+    "src/data/agriculture/index.ts",
+    "src/services/agriculture-study-state.ts",
+    "src/services/kensetsu-test-state.ts",
+    "src/components/agriculture/AgricultureCourse.tsx: Attempt rendering/submit/review and CheckCard storage consumers"
+  ],
+  "fixtureChecks": [
+    {
+      "test": "preservation-and-answer-permutation",
+      "result": "PASS",
+      "detail": "Existing exam objects preserved;40new question correct texts and all option/reason pairings preserved;10perposition;revision matches."
+    },
+    {
+      "test": "already-integrated-replay",
+      "result": "PASS",
+      "detail": "Replay rejected before file changes."
+    },
+    {
+      "test": "objective-paragraph-knowledge-disagreement",
+      "result": "BUG_CONFIRMED",
+      "detail": "Selectedagr-rice-p2 bound only to AGR-K-RICE-02, but accepted objective and question retain AGR-K-RICE-01 fromp1. Integrator wrote canonical files without rejecting mismatch."
+    },
+    {
+      "test": "patched-objective-id",
+      "result": "BUG_CONFIRMED",
+      "detail": "Patching objectiveId after lookup leaves runtime objectiveId unbound to accepted-objectives record. Existing mock checker checks objectiveId uniqueness only, so it does not establish the missing linkage."
+    },
+    {
+      "test": "duplicate-objective-in-form",
+      "result": "BUG_CONFIRMED",
+      "detail": "Two accepted questions can reuse an objectiveId and are written;check-mocks would reject only after live files have changed. Add preflight uniqueness across existing+new objective/question/exam IDs."
+    }
+  ],
+  "findings": [
+    {
+      "id": "P28-INTEGRATION-01",
+      "severity": "high",
+      "status": "confirmed",
+      "issue": "Objective paragraph and knowledge bindings can disagree.",
+      "requiredFix": "For each selected paragraph collect its knowledge IDs, assert objective knowledge IDs are nonempty and contained in their union, then assert question IDs are contained in objective IDs. Check ledger/lesson consistency for the same selected binding."
+    },
+    {
+      "id": "P28-INTEGRATION-02",
+      "severity": "high",
+      "status": "confirmed",
+      "issue": "Patches may change objectiveId or source-binding fields after objective lookup.",
+      "requiredFix": "Whitelist editable editorial fields, normally stemJa/optionsJa/optionReasonsJa/correctIndex, or re-resolve and fully validate binding after patches. Assert q.objectiveId equals accepted objective.id. Reject unknown patch refs and duplicate/conflicting patches."
+    },
+    {
+      "id": "P28-INTEGRATION-03",
+      "severity": "medium",
+      "status": "confirmed",
+      "issue": "Malformed duplicate objective IDs can be published before the external checker runs.",
+      "requiredFix": "Validate all selected forms fully in memory before writes, including unique new/current objective IDs, exam/question IDs, nonempty stem, four unique nonempty options, four nonempty reasons, integercorrectIndex0..3, level membership, and manifest registry consistency."
+    },
+    {
+      "id": "P28-INTEGRATION-04",
+      "severity": "low",
+      "status": "static_latent",
+      "issue": "bank.complete is never recomputed after appending forms. It will remainfalse if a future plan reaches10forms perlevel.",
+      "requiredFix": "Recompute bank.complete from exact form counts and reject counts exceeding10perlevel. Currentpartialbatch remainsfalse, so this is not a blocker limited to the current planned small batch."
+    }
+  ],
+  "positiveFindings": [
+    "All validations currently present run before writes.",
+    "Old exam objects are appended to rather than rebuilt.",
+    "Raw packet hashes are checked.",
+    "Options and individual reasons use the same permutation;correctIndex points to the old correct text.",
+    "Stable exam-specific revision hashes align with restoreTestAttempt contentRevision checks.",
+    "Already-integrated exam IDs reject replay before changes.",
+    "Attempt displays options by array index and post-submit reasons by the same index; the shared permutation preserves this contract. Stable existing IDs/revisions preserve old saved-attempt compatibility."
+  ],
+  "review": {
+    "liveFilesChanged": false,
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "newDeviceOrBrowserQa": false
+  },
+  "limitations": [
+    "Independent code review does not assess author semantics, source factual accuracy or native rendering.",
+    "Fixtures are synthetic mechanical inputs and are never proposed exam questions.",
+    "Audited script hash is frozen; laterroot patches require a targeted rerun or diff review."
+  ],
+  "followups": [
+    {
+      "auditedScriptSha256": "2dd89fe6a635a272e54a7f7396ed59b98e3c7d253618799283b42b5dac6755dc",
+      "status": "all_three_confirmed_bugs_fixed_in_current_script",
+      "checks": [
+        {
+          "test": "valid-partial-batch-preservation-permutation-revision",
+          "result": "PASS",
+          "detail": "Old exam objects and pairedreasons preserved;new40 has balanced positions;complete remainsfalse and capacityFor800Certifiedfalse."
+        },
+        {
+          "test": "replay-after-integration",
+          "result": "PASS",
+          "rejectedBeforeWrites": true
+        },
+        {
+          "test": "objective-paragraph-knowledge-disagreement",
+          "result": "PASS",
+          "rejectedBeforeWrites": true,
+          "detail": "Objective/paragraph mismatch: 1:fixture-raw-q00"
+        },
+        {
+          "test": "unsafe-objective-patch",
+          "result": "PASS",
+          "rejectedBeforeWrites": true,
+          "detail": "Unsafe patch field"
+        },
+        {
+          "test": "duplicate-new-objective",
+          "result": "PASS",
+          "rejectedBeforeWrites": true,
+          "detail": "Repeated objective: fixture-obj-00"
+        },
+        {
+          "test": "existing-objective-id-reuse",
+          "result": "PASS",
+          "rejectedBeforeWrites": true,
+          "detail": "Repeated objective: AGR-ASSESS-M01-01"
+        },
+        {
+          "test": "duplicate-planned-form",
+          "result": "PASS",
+          "rejectedBeforeWrites": true,
+          "detail": "Duplicate planned form"
+        },
+        {
+          "test": "three-options",
+          "result": "PASS",
+          "rejectedBeforeWrites": true,
+          "detail": ""
+        },
+        {
+          "test": "empty-reason",
+          "result": "PASS",
+          "rejectedBeforeWrites": true,
+          "detail": ""
+        },
+        {
+          "test": "duplicate-option-text",
+          "result": "PASS",
+          "rejectedBeforeWrites": true,
+          "detail": ""
+        },
+        {
+          "test": "boolean-answer-index",
+          "result": "PASS",
+          "rejectedBeforeWrites": true,
+          "detail": ""
+        },
+        {
+          "test": "changed-frozen-input",
+          "result": "PASS",
+          "rejectedBeforeWrites": true,
+          "detail": "Changed input: src/data/agriculture/mock-exams.ja.json"
+        }
+      ],
+      "remainingHardeningNotes": [
+        "Input guard validates only paths explicitly present in integration-plan.inputFileSha256;root plan should include all canonical inputs.",
+        "Check-mocks remains the final required postintegration full-bank gate, including globalexam/question/stem uniqueness.",
+        "Complete is now mechanically recomputed, but this batch is partial and no capacity/domain certification is inferred."
+      ],
+      "liveCanonicalChanges": false
+    }
+  ]
+}
