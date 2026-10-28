@@ -1,3 +1,17 @@
+# Nhà hàng / 外食業 — checkpoint 8, 2026-10-28
+
+Toàn bộ mô-đun CHƯA hoàn tất. Base remote đã qua scoped WORK PERSISTENCE PASS `fa4d7f4b8306c5dd8b09e4a8b67e30f4ce39ae61`, nhánh `feature/restaurant-20261026`. Lô này cần commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
+
+- Thêm800 bản dịch câu2号: en/vi q201–280; id/tl q161–240; hi/bn q281–360; my/ne/th/km q041–120. Tổng9248/11808, còn2560 cặp.
+- Thêm200 thuật ngữ+định nghĩa mỗi id/tl, hiện300/692 mỗi locale. Tổng glossary3368/8304, còn4936 cặp.
+- Bảo toàn13732 record cũ (bài/câu/UI/glossary);800 hash câu mới và400 hash glossary mới khớp nguồn. Cả800 objective tái sử dụng chỉ từ exact Japanese objectiveJa và sourceHash hợp lệ của bài HOẶC câu cũ; nhóm generic q041–120 không có exact lesson match, không thay bằng topic.
+- Structural PASS; numeric83076 trường PASS; signedCelsius386 trường PASS. Thêm7 đối chiếu exact field hashes cho đơn vị mỗi suất/đĩa và dấu thập phân. Rà độc lập hi/bn,my/ne về cấu trúc/số liệu/mục tiêu; không chứng nhận bản ngữ.
+- Một child id/tl gặp service capacity; giữ80 dòng Indonesia và phiên tiếp nối hoàn thiện80 Filipino, không khởi tạo lại dữ liệu hợp lệ. Các fragment rời được ghép không ghi đè.
+- Không đổi Nhật/đáp án/thứ tự lựa chọn/UI. Chưa kiểm thử productionExpo/native; giữ acceptance chưa đạt ởfalse. Source590partial, fullfurigana/hình nhận dạng và duyệt chuyên môn/người bản ngữ vẫn còn dở.
+- Điểm tiếp: en/vi q281; id/tl q241; hi/bn q361; my/ne/th/km q121; weekly2号tuần02–11 và glossary8locale. Không có cam kết tác vụ chạy nền sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 7, 2026-10-28
 
 Toàn bộ mô-đun CHƯA hoàn tất. Tiếp tục từ base remote đã qua scoped WORK PERSISTENCE PASS `a1720c6827029b288beb107d73562593bd303d55`, nhánh `feature/restaurant-20261026`. Checkpoint này chỉ lưu bền vững sau commit/push/fetch/persistence gate.
