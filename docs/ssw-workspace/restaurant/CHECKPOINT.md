@@ -1,3 +1,19 @@
+# Nhà hàng / 外食業 — checkpoint 22, 2026-10-28
+
+Yêu cầu hoàn thiện các hạng mục còn thiếu và tổng kết. Module CHƯA đạt nghiệm thu toàn bộ. Base0f4dadf58d04b78ba45967cfa87295d0eab3e26f đã remote-verified. Lô này cần commit/ref/fetch/persistence gate; không coi file cục bộ là đã lưu bền vững.
+
+- Sáu AI rà song song nguồn1号/2号, furigana bài/câu, toàn ngân hàng câu và runtime/hình. Rà chéo các sửa đổi trước tích hợp; giữ cờ native/domain/human false.
+- 1872cách đọc mới thực sự phát sinh token và phủ kanji chưa đọc; loại4ứng viên không thêm phủ. Trường còn kanji chưa đọc2913→1499/7358. Số này chỉ nói7358trường bài/câu chuẩn,không chứng nhận toàn bộUI hoặc phát âm. Sửa lỗi14分野 bị tách thành14分;4durationprefix sai được loại.25self-tests PASS.
+- Bổ sung2công thức ở2ops03:nguyên giá/lợi nhuận gộp dùng cùng doanhthu có tổng100%;tỷ lệ chuẩn của một món dùng đúng giá bán của chính món đó. Dịch rõ phần bổ sung cho cả12locale rồi gắn revision mới. Peer sửa Khmer/Bengali để không nhầm doanhthu tổng với giá bán đơn vị. Không đưa cách gọi逆ざや mơ hồ của nguồn vào bài.
+- Rà AI đầy đủ984câu gồm4lựa chọn/giải thích;24phép tính độc lập PASS,16near-duplicatepairs phân biệt mục tiêu. Sửaq234 từ hỏiđiểm yếu sang chọnđánh giá phù hợp;giữ nguyên cả4lựa chọn Nhật/key/sourceRefs.12stem được sửa rõ ràng;hi/bn cùngcâu được hoàn thiện lựa chọn/giải thích vàrà chéo.28fieldgroups/58leafchanges gồm explicitrevisionbindings. Ba objective en/id/th đã sửa thuật ngữ trướcđó được kiểm tra giữ nguyên rồi cập nhật provenance hash,không gắn hash mù.
+- Nguồn:20/22đề xuất hẹp được peer chấp nhận,2giữpartial vì thiếu điều kiện vệ sinh khu khách tiếp xúc động vật vàdiễn tập định kỳ. Hai công thức mới thêm2unit.639recordnay35covered/565partial/39structural;không phải639kiến thức độc lập vàkhông báo tỷ lệ bao phủ tổng thể. Báo cáo1号227units và2号412units có phân biệttriage vớiđối chiếu đầyđủ.
+- Thêm sơđồcode-native6vị trí一汁三菜,theo góc nhìnkhách;đối chiếu hìnhPDF13/trangin9,môđun riêngbài1svc04.7localeưu tiên có nhãn/chúthích,5localeđểNhật theo ưu tiênuser. Không copyhình nguồn/không đổiRoyalchrome.3raster+4conceptdiagrams+16cutcards+1mealmodule;chưa fullobject/sourcefigurecoverage.
+- Runtime webthật vớiReact/RNW/Chromiumvàfontthật:4viewports/12locale,luồnglưu/khôiphục/nộp/kếtquả;meal32cases+2xfont.23Nodeassertions+3hookcases PASS. CóWebPscreenshotdurableindex. Đây vẫn dùngadapterRoyal/safearea/storage,khôngproductionExpo/native/device/performance.
+- Structural,numeric110868fields,Celsius396fields,terminology138standards/559fields,subjectlinks,preservationPASS. Chỉ2canonicalcontentfields đổi;mọiJAanswer/options/sourceRefs giữ nguyên,không đổi ngànhkhác/lockedJLPT. Coursechỉ thêmimport/rendermealmodule;manifestchỉđổicontentHash. Bản dịch chỉcácfieldđãrà. Giữ nguyênunfinishedpycache ngoài scope.
+- Còn1499furiganafields,565partialsource,hìnhnhậndạng/thao tác,toànngữnghĩa/bảnngữ,production/native/device vànghiệmthuchuyênmôn. Không tuyênbố7mụcđãđónghoặcchạyngầm sauphảnhồi. Báocáotổngkết:completion22-summary.md;chi tiếtclosure-status.json.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 21, 2026-10-28
 
 User cung cấp ZIP bản dịch chuyên ngành và yêu cầu dùng làm chuẩn từ vựng bài học/bài test; ưu tiên các ngôn ngữ có tài liệu, để các ngôn ngữ khác rà sau. Base48e8004a92e789513506730fe53a65a4e517c737 đã xác minh remote. Lô này cần qua commit/ref/fetch/persistence gate.

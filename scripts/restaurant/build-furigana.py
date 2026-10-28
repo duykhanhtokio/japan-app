@@ -477,7 +477,8 @@ def ruby(text):
  result=[];i=0;unknown=False
  while i<len(text):
   duration=DURATION.match(text,i)
-  if duration and not (duration.group(2)=='分' and text[duration.end():].startswith('の')):
+  # 分野 is a field/category, not the minute counter (e.g. 14分野).
+  if duration and not (duration.group(2)=='分' and text[duration.end():].startswith(('の','野'))):
    value=parse_number(duration.group(1));unit=duration.group(2)
    if 0<value<100000:
     reading=counted(value,'分') if unit=='分' else counted(value,'時')+'かん' if unit=='時間' else number(value)+('びょう' if unit=='秒' else 'ど')
@@ -507,7 +508,9 @@ if '--self-test' in sys.argv:
   tokens=ruby(source);assert ''.join(t.get('reading',t['text']) for t in tokens)==expected,(source,tokens)
  for source in ('事故事例集','紫外線未知群','4分の1','3.5℃','行った','行って'):
   tokens=ruby(source);assert not any(t.get('reading') for t in tokens),(source,tokens)
- print(json.dumps({'status':'PASS','cases':len(cases)+6,'scope':'known readings/durations/temperatures/unknown-compound and fraction safety','nativeReviewed':False}));sys.exit(0)
+ for source in ('14分野','１４分野'):
+  tokens=ruby(source);assert not any(t.get('reading') and t['text'].endswith('分') for t in tokens),(source,tokens)
+ print(json.dumps({'status':'PASS','cases':len(cases)+8,'scope':'known readings/durations/temperatures/unknown-compound, fraction and category-counter safety','nativeReviewed':False}));sys.exit(0)
 for p,x in packs.items():
  for l in x.get('lessons',[]):
   l['furigana']={k:ruby(l[field]) for k,field in [('title','titleJa'),('objective','objectiveJa'),('summary','summaryJa'),('activity','activityJa')]}

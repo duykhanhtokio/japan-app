@@ -4,59 +4,68 @@
   "complete": false,
   "sourcePagesRetrieved": 271,
   "preservation": {
-    "canonicalMeaningAnswersOptionsSourceHashesUnchanged": true,
-    "onlyCanonicalMetadataChanged": [
-      "furigana",
-      "knowledgeIds"
+    "canonicalContentChangesThisCheckpoint": [
+      {
+        "id": "rst-2-ops-03",
+        "field": "paragraphs.knowledge",
+        "reason": "Two missing cost-ratio formula definitions added"
+      },
+      {
+        "id": "rst-2-q234",
+        "field": "stemJa",
+        "reason": "Appropriate-assessment framing removes multiple-answer interpretation"
+      }
     ],
-    "translationChangesLimitedTo3JapaneseQuotationCorrections": true,
-    "otherSectorsAndLockedUIUnchanged": true
+    "canonicalAnswersOptionsAndSourceRefsUnchanged": true,
+    "translationUpdatesLimitedToReviewedFields": 28,
+    "otherSectorsAndLockedUIUnchanged": true,
+    "evidence": "completion22-preservation-qa.json"
   },
   "items": [
     {
       "id": "source",
       "status": "partial",
-      "evidence": "120/120lessons and984/984questions subject-linked.3narrow operations formula units independently AI-reviewed ascovered;13covered total.",
-      "remaining": "587partial and39structural source units still require full factual/visual comparison. AI narrow-unit coverage is not native/domain/human acceptance."
+      "evidence": "All120lessons/984questions remain subject-linked;22additionalnarrowunits independentlyAIreviewed (20existingfacts+2newformulaunits);35covered total.",
+      "remaining": "565partial and39structural source units remain;hierarchyoverlaps,notanatomicfactdenominator. Fullfactual/visualcomparisonpending."
     },
     {
       "id": "furigana",
       "status": "partial",
-      "evidence": "Checkpoint20 adds298emitted contextual readings that overlap previously unread kanji;uncoveredfields3080→2913",
-      "remaining": "2913/7358fields contain uncovered kanji;pronunciation/context certification pending"
+      "evidence": "1872newemitted contextualreadingsoverlapactualunreadkanji;7358canonicalfields,2913→1499uncovered;14分野 duration-prefix bugfixed;25selftestsPASS.",
+      "remaining": "1499canonicalfields still contain uncoveredkanji;fullcontextual/nativepronunciationreviewpending."
     },
     {
       "id": "illustrations",
       "status": "partial",
-      "evidence": "New8vegetable sheet in2lessons; existing16cut-shape cards confirmed in separatecomponent;3rasters+4diagrams+1cutting module",
-      "remaining": "Full ingredient/equipment/source-figure coverage, rendering and domain review"
+      "evidence": "3rasters+4conceptdiagrams+16cutcards+new6positionmealmodule. Guest-perspective mealdiagram inlesson1svc04 has7prioritylocales;32webcases+2xfontPASS.",
+      "remaining": "Fishanatomy/processing,meatcuts,equipment andadditionalservice/sourcefigures remain;fullnative/domainvisualacceptancepending."
     },
     {
       "id": "questions",
-      "status": "partial",
-      "evidence": "984screened;0exact/cosmetic duplicate stems;16near-duplicate pairs reviewed;answerpositions246each",
-      "remaining": "Full source factual/safety and semantic uniqueness acceptance"
+      "status": "ai_reviewed_pending_acceptance",
+      "evidence": "All984stems,4options,explanations read;24arithmeticchecksPASS;16near-duplicatepairs reviewed;oneambiguousq234 repaired and12stems synchronized,hi/bnoptions/explanation completed.",
+      "remaining": "Qualifiedsafety/domain/native/fullsourceacceptancepending. Noidentifiedunresolvedlogicfinding inAIreview;notprooftherecanbenoerror."
     },
     {
       "id": "translations",
       "status": "partial",
-      "evidence": "Seven user-reference locales en/vi/id/km/my/ne/th:138standards,559contextualfieldalignments withindependentAIpeerreview;fullquantitiesstillcomplete",
-      "remaining": "Five locales zh-CN/zh-TW/hi/bn/tl deferredperuser;further terminology outside listedstandards and comprehensive native/semantic acceptance pending"
+      "evidence": "Prior138standards/559alignments retained;12explicitformulaadditions+12revisedq234stems+hi/bnitemcompletion;allrevisionbindingsvalid;numeric110868fields/Celsius396PASS.",
+      "remaining": "Comprehensiveterminology/semantic/nativeacceptancepending;5unprovidedlocales remain deferredforbroadterminologyreview. Sameitemcontentcorrectionsinall12areseparatelyreviewed."
     },
     {
       "id": "runtime",
-      "status": "blocked_environment",
-      "evidence": "Original loading/state assertions PASS via scopedNodeTypeScriptadapter;noExpo/bundler/browserclaim",
-      "remaining": "ProductionExpo/native/device/performance validation;required dependencies and browser unavailable"
+      "status": "partial",
+      "evidence": "RealChromium/React/RNW browserregressionwithactual3images andrealfontsPASS;scopedNode23assertions and3hookcasesPASS. Newmealmodule32cases+2xPASS. Finalrevision-specificchecksrecordedincompletion22-runtime.json.",
+      "remaining": "ProductionExpo/native/device/performancevalidation remains;browseradaptersdo notcertifynativeapp."
     },
     {
       "id": "acceptance",
       "status": "blocked_external_review",
-      "evidence": "Unearnedfullmodule flags remainfalse",
-      "remaining": "Qualified human/native/domain signoff cannot be supplied by AI"
+      "evidence": "Allunearnedfullmodule/native/domainflagsremainfalse;AIcheckedscopesdocumented.",
+      "remaining": "Qualifiedhuman/native/domainsignoff andrealdeviceevidencecannotbeinvented."
     }
   ],
-  "latestCheckpoint": 21,
-  "latestSourceReview": "completion20-source-review.json",
+  "latestCheckpoint": 22,
+  "latestSourceReview": "completion22-source-peer.json",
   "terminologyAuthority": "terminology-authority.json"
 }

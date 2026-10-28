@@ -14,6 +14,7 @@ import {RestaurantDiagrams} from './RestaurantDiagrams';
 import {RestaurantIllustrations} from './RestaurantIllustrations';
 import {RestaurantGlossary} from './RestaurantGlossary';
 import {RestaurantCuttingGuide} from './RestaurantCuttingGuide';
+import {RestaurantMealPlacement} from './RestaurantMealPlacement';
 const RestaurantLanguage=createContext('ja');
 
 function Button({title,onPress,disabled=false,selected=false,testID,readingSegments}:{title:string;onPress:()=>void;disabled?:boolean;selected?:boolean;testID?:string;readingSegments?:ReadingSegment[]}){
@@ -62,7 +63,7 @@ function Reader({lesson,language,initialScrollY,saving,saveError,onScrollPositio
  {show&&language!=='ja'&&!t&&<TranslationText>{restaurantUi('この言語の訳は準備中です。',language)}</TranslationText>}
  <RestaurantReading heading text={lesson.titleJa} segments={lesson.furigana?.title} terms={lesson.terms}/><Text style={[s.body,{color:colors.muted}]}>{restaurantUi('約{minutes}分',language,{minutes:lesson.minutes})}</Text><RestaurantReading text={lesson.objectiveJa} segments={lesson.furigana?.objective} terms={lesson.terms}/>{show&&t&&<TranslationText>{t.title}{'\n'}{t.objective}</TranslationText>}
  {lesson.paragraphs.map(paragraph=><View key={paragraph.id} style={[s.section,{borderColor:colors.border}]}><RestaurantReading heading text={paragraph.titleJa} segments={lesson.furigana?.paragraphTitles?.[paragraph.id]} terms={lesson.terms}/><RestaurantReading text={paragraph.textJa} segments={paragraph.furigana} terms={lesson.terms}/>{show&&t&&<TranslationText>{t.paragraphTitles[paragraph.id]}{'\n'}{t.paragraphs[paragraph.id]}</TranslationText>}</View>)}
- <RestaurantDiagrams lessonId={lesson.id} language={language} showTranslation={show}/><RestaurantCuttingGuide lessonId={lesson.id} language={language} showTranslation={show}/><RestaurantIllustrations lessonId={lesson.id} language={language} showTranslation={show}/><RestaurantGlossary lessonId={lesson.id} language={language} showTranslation={show}/>
+ <RestaurantDiagrams lessonId={lesson.id} language={language} showTranslation={show}/><RestaurantCuttingGuide lessonId={lesson.id} language={language} showTranslation={show}/><RestaurantMealPlacement lessonId={lesson.id} language={language} showTranslation={show}/><RestaurantIllustrations lessonId={lesson.id} language={language} showTranslation={show}/><RestaurantGlossary lessonId={lesson.id} language={language} showTranslation={show}/>
  <RestaurantReading heading text="用語" segments={[{text:"用語",reading:"ようご"}]}/>{lesson.terms.map(term=><View key={term.ja}><RestaurantReading text={term.ja} segments={[{text:term.ja,reading:term.reading}]}/>{show&&t&&<TranslationText>{t.terms[term.ja]}</TranslationText>}</View>)}
  <RestaurantReading heading text="まとめ"/><RestaurantReading text={lesson.summaryJa} segments={lesson.furigana?.summary} terms={lesson.terms}/>{show&&t&&<TranslationText>{t.summary}</TranslationText>}
  <RestaurantReading heading text="考えて説明する" segments={[{text:"考えて",reading:"かんがえて"},{text:"説明",reading:"せつめい"},{text:"する"}]}/><RestaurantReading text={lesson.activityJa} segments={lesson.furigana?.activity} terms={lesson.terms}/>{show&&t&&<TranslationText>{t.activity}</TranslationText>}
