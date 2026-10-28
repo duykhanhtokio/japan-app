@@ -3,6 +3,7 @@ from copy import deepcopy
 from pathlib import Path
 import hashlib
 import json
+import runpy
 
 ROOT = Path(__file__).resolve().parents[2]
 PATCH_PATH = 'docs/ssw-workspace/manufacturing/batch16/mock-editorial-patches.json'
@@ -109,7 +110,14 @@ def compile_outputs(inputs, patch):
 def main():
     patch = json.loads((ROOT / PATCH_PATH).read_bytes())
     inputs = {p: (ROOT / p).read_bytes() for p in (patch['sourcePath'], TRANSLATIONS, FURIGANA)}
-    outputs = compile_outputs(inputs, patch)
+    locale = runpy.run_path(str(ROOT / 'scripts/manufacturing/apply-locale-revisions.py'))
+    _, revised_source = source_versions(inputs[patch['sourcePath']], patch)
+    context = {patch['sourcePath']: revised_source}
+    revisions = locale['load_patch'](canonical_overrides=context)
+    historical = locale['transform_files'](inputs, revisions, forward=False, allow_prior=True,
+                                           canonical_overrides=context)
+    outputs = locale['transform_files'](compile_outputs(historical, patch), revisions,
+                                        canonical_overrides=context)
     changed = []
     for path, payload in outputs.items():
         if payload != inputs[path]:

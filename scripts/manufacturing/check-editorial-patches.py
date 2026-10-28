@@ -9,6 +9,8 @@ patcher = runpy.run_path(str(Path(__file__).with_name('apply-editorial-patches.p
 patch = json.loads((ROOT / patcher['PATCH_PATH']).read_bytes())
 paths = (patch['sourcePath'], patcher['TRANSLATIONS'], patcher['FURIGANA'])
 inputs = {p: (ROOT / p).read_bytes() for p in paths}
+locale = runpy.run_path(str(Path(__file__).with_name('apply-locale-revisions.py')))
+inputs = locale['transform_files'](inputs, locale['load_patch'](), forward=False)
 compile_outputs = patcher['compile_outputs']
 outputs = compile_outputs(inputs, patch)
 assert outputs == inputs, 'Compiler must be byte-idempotent on revised files'

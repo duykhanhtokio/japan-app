@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "baselineCommit": "29ac8afb5a96b507bd4d8ba7b11074138155ee65",
+  "scope": "Manufacturing SSW1 only; six explicitly requested AI workers plus root integration. SSW2 excluded.",
+  "workers": [
+    "mechanical_source",
+    "electrical_source",
+    "surface_source",
+    "language_review",
+    "electrical_mocks",
+    "integration_qa"
+  ],
+  "sourceReview": {
+    "pageReviewOccurrences": 24,
+    "detailedObjectOccurrences": 141,
+    "specialtyCounts": {
+      "mechanical": {
+        "pages": 9,
+        "objects": 69
+      },
+      "electrical": {
+        "pages": 7,
+        "objects": 30
+      },
+      "surface": {
+        "pages": 8,
+        "objects": 42
+      }
+    },
+    "globallyNewPreviouslyUnseenPages": null,
+    "index": "docs/ssw-workspace/manufacturing/batch17/source-object-index.json",
+    "fullKnowledgeAtomizationComplete": false
+  },
+  "independentReview": {
+    "electricalTheoryQuestions": 300,
+    "electricalRationaleSides": 600,
+    "languageMockTargetRecords": 24,
+    "vietnameseLessons": 7,
+    "vietnameseWeeklyQuestions": 12,
+    "canonicalAnswerKeyCorrectionsRequired": 0
+  },
+  "runtimeChanges": {
+    "targetRecordsCorrected": 4,
+    "locales": [
+      "en",
+      "vi",
+      "bn"
+    ],
+    "japaneseCanonicalChanged": false,
+    "sourceHashesOrExamRevisionsChanged": false,
+    "untouchedOtherMockAndVietnameseWeeklyTargetRecords": 14852
+  },
+  "rebuildRepair": {
+    "mtimeSelectionRemoved": true,
+    "explicitConflictSelections": 7,
+    "latestProgressMetadataPreserved": true,
+    "fullIntegrationRuns": 5,
+    "strictByteIdenticalRuntimeFilesPerOrdinaryRun": 46,
+    "missingTargetRecreation": "Seven selected TL records restored exact payloads; JSON insertion order differs only in that recovery variant.",
+    "invalidSelectorFixturesRejected": 6
+  },
+  "checks": {
+    "sourceIndexAndSnapshotBindings": "PASS141objects/24page occurrences",
+    "scopedIndependentReviewBindings": "PASS300electrical theory and language/after-repair records",
+    "mockContent": "PASS30forms/1200questions/12complete target locales/source and ruby alignment",
+    "localeRevisionRegression": {
+      "exactRevisedTargetRecords": 4,
+      "unchangedOtherTargetRecords": 14852,
+      "forwardByteIdempotent": true,
+      "reverseByteIdempotent": true,
+      "reverseForwardExact": true,
+      "batch16CliPreservesAllFourFixes": true,
+      "frozen16Then17CliReproducesCurrent": true,
+      "negativeChecks": 21,
+      "rejectedInvalidRevisions": [
+        "stale current source hash",
+        "unrecognized current prose",
+        "missing revised target file",
+        "changed alternatives count",
+        "changed rationale count",
+        "stale patch source hash",
+        "unknown file identity",
+        "unknown locale identity",
+        "unknown question identity",
+        "duplicate revision identity",
+        "missing revision identity",
+        "unsupported native certification",
+        "changed direct-source provenance",
+        "wrong collection",
+        "mismatched target path alias",
+        "mismatched question alias",
+        "mismatched collection alias",
+        "coherently rehashed stale canonical source",
+        "tampered proposal object fingerprint",
+        "tampered reviewed proposal file fingerprint",
+        "tampered review expected fingerprint"
+      ],
+      "realRuntimeFilesModified": false
+    },
+    "fullRebuild": "PASS5actualisolatedintegrations; reportintegration-qa.json",
+    "existingContentAndStateValidators": "PASS7scopedchecks recorded in integration-qa.json",
+    "jlptUiLock": "PASS10/10byte-locked files and registry structure",
+    "gitWhitespace": "PASS"
+  },
+  "inputSha256": {
+    "docs/ssw-workspace/manufacturing/batch17/electrical-mocks/practical-precision-proposals.json": "4ddad910f75795148ccbfedfb5723648e3211aafaddacd3686c1f8dacc9cd889",
+    "docs/ssw-workspace/manufacturing/batch17/electrical-source-review.json": "2fedd1a59679b035efd097c57f34e7a16c61f18d57e89ddf7fba7411986426e7",
+    "docs/ssw-workspace/manufacturing/batch17/electrical-theory-independent-review.json": "d6e91d5af4dc7cf359e34c926b6153f11948e6084e9c2508c38f36816b4a77fb",
+    "docs/ssw-workspace/manufacturing/batch17/electrical/leakage-earth-supplement.proposed.json": "16e9d8acb516b59ed9947b3add485af77d3fd88e6f2f566713162c02c001624e",
+    "docs/ssw-workspace/manufacturing/batch17/electrical/source-supplement-independent-qa.json": "0e4da6ed2d21461030c4d409903f3d3dacc55eb88a9d779182653522f3744719",
+    "docs/ssw-workspace/manufacturing/batch17/integration-qa.json": "1c52b98685c40e9f01981c578f6e6597e7bd539a9676e87dcd7be2d0962da62f",
+    "docs/ssw-workspace/manufacturing/batch17/integration/pre-repair-reproduction.json": "6a0e7f49c7d7060f6ed75936b36f342494a1a1371a8b9e2cf17e0eefcf9cc033",
+    "docs/ssw-workspace/manufacturing/batch17/integration/translation-selection.json": "afc59f348cefead97a313d5ae515c5cc9222611f24fb2e2151cad8873184657d",
+    "docs/ssw-workspace/manufacturing/batch17/language-independent-review.json": "aee9221e4f8cdba93b627053ca0efd859192b467cac72d5c876ca95b4cde44a4",
+    "docs/ssw-workspace/manufacturing/batch17/language/compiler-independent-qa.json": "a3ba4f43c113b83fbe53e0425b04d63fa1c4bad00ed37c0927ede4d8111fc79f",
+    "docs/ssw-workspace/manufacturing/batch17/language/proposed-locale-deltas.json": "88359fae42e450c63e1062ec3de8802732b6bd328ac7b86f3212ab88c375101c",
+    "docs/ssw-workspace/manufacturing/batch17/mechanical-source-review.json": "0752097c0d857ba814c46b5c42bf932dd0b6a0e7b3ad69fc6f119c737d0fbbff",
+    "docs/ssw-workspace/manufacturing/batch17/mechanical/supplement-drafts.json": "f54a33bb52ff2646ea898e9dbf4394c54dfc419240aa2d85085bc769d73199c9",
+    "docs/ssw-workspace/manufacturing/batch17/source-object-index.json": "786809b68c8c6b1d4a3b619aa33362cd8b24313377f5e678ee04d229d84ac098",
+    "docs/ssw-workspace/manufacturing/batch17/surface-source-review.json": "ac430f0064f650d5e0cd33aed4a3d30f867675ccffe70561095b309f9b7ef949",
+    "docs/ssw-workspace/manufacturing/batch17/surface/pretreatment-jig-supplement-proposal.json": "ad8400aa14f738d142016370ad4351220d0ba2585b0ac11573f6b400e9b19c59",
+    "docs/ssw-workspace/manufacturing/progress.json": "399dd3c03a444a745baadf4961acd4b3bc857a85625678105866bdce1591e13f",
+    "scripts/manufacturing/apply-editorial-patches.py": "eead7ad732758f929b1fa67068e5297ff7fb124d276a2fc8e21146827186253f",
+    "scripts/manufacturing/apply-locale-revisions.py": "9d8e69cdfd747052e57b7a25b8d4864e330196ac1d732c4ce408976035d45898",
+    "scripts/manufacturing/build-batch17-source-index.py": "2df925d78e38f1deca102207ddd4f92211e40a24e477edd57fa9e990c18caaaf",
+    "scripts/manufacturing/check-batch17-locale-revisions.py": "be17cf2814c28e2e7fc0832ab5c3c2e8a0795e0e5d22d9f17fc31aac444cfe45",
+    "scripts/manufacturing/check-batch17-rebuild.py": "9e962c4a2a94675e217df602270ff2524ead3af9d8be9346ca398162a7e357f9",
+    "scripts/manufacturing/check-batch17-reviews.py": "e2477f38e36b41b07cf8b3337d4d2db28d1108c1a21a691f01dd24e724c194b1",
+    "scripts/manufacturing/check-editorial-patches.py": "029e1b0fff12d55fa1eb6ac963be09443446efbba90b3236bbac0a7c74939693",
+    "scripts/manufacturing/check-editorial-review-bindings.py": "0376f59ed38c18c737a8f2bfe2906892c6a8202ef872db21f9606abda381fe47",
+    "scripts/manufacturing/check-mock-content.py": "911020a9f0297eec876ab63a2207cad3b05f262669a8b898d30ec2414e3be67d",
+    "scripts/manufacturing/integrate-completion.py": "7abc859fd5f0c416e65c42b094ba15c4326df6ec4044bcd1f7b24cd3b027552c",
+    "src/data/manufacturing/mock-translations.json": "dd83d2381b595b88fb6c8a0b1ef60c656c275e585790bd44fddf40a25f2892f2",
+    "src/data/manufacturing/translations/questions.vi.json": "ae7cb08f2b2945458fa94594af853b80b90f1282bb31c9526af52b3f7bd4067c"
+  },
+  "counts": {
+    "coreLessons": 262,
+    "referenceGuides": 5,
+    "weeklyQuestions": 456,
+    "mocks": 30,
+    "mockQuestions": 1200,
+    "diagrams": 18,
+    "targetLocales": 12
+  },
+  "remaining": [
+    "Three source-bound Japanese supplement proposals are STAGED only, not new app lessons; electrical proposal has an independent scoped source check with one wording suggestion.",
+    "Two optional electrical practical precision proposals need normal multilingual/furigana/revision-bound integration.",
+    "Full-source knowledge/object coverage, further target-language semantics and native/domain/physical-device certification remain incomplete."
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "wholeCurriculumComplete": false,
+  "releaseReady": false,
+  "browserOrNativeDeviceChecksThisBatch": false,
+  "backgroundProcessImplied": false
+}

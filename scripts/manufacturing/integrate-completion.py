@@ -22,6 +22,31 @@ def append_unique(old,new):
  for x in new:
   if x['id'] in by_id:assert by_id[x['id']]==x or without_bindings(by_id[x['id']])==without_bindings(x),'Existing source content changed '+x['id']
   else:old.append(x);by_id[x['id']]=x
+def staged_translation_resolver(selection):
+ """Coalesce identical drafts; require explicit authority for conflicting text."""
+ candidates={};used=set()
+ def add(locale,kind,identifier,translation,path):
+  key=f'{locale}:{kind}:{identifier}';payload=hash_object(translation)
+  row=candidates.setdefault(key,{}).setdefault(payload,{'value':translation,'paths':set()})
+  row['paths'].add(str(path.relative_to(ROOT)))
+ def resolve(locale,kind,table):
+  prefix=f'{locale}:{kind}:'
+  for key,variants in candidates.items():
+   if not key.startswith(prefix):continue
+   identifier=key[len(prefix):]
+   if len(variants)==1:
+    assert key not in selection,'Recorded translation conflict disappeared: '+key
+    chosen=next(iter(variants.values()))['value']
+   else:
+    assert key in selection,'Unresolved staged translation conflict: '+key
+    rule=selection[key];expected=rule['selectedPayloadSha256'];used.add(key)
+    assert set(variants)==set(rule['candidatePayloadSha256']),'Translation conflict variants changed: '+key
+    assert expected in variants and rule['selectedPath'] in variants[expected]['paths'],'Selected staged translation missing: '+key
+    chosen=variants[expected]['value']
+    assert chosen['sourceHash']==rule['sourceHash'],'Translation selection source changed: '+key
+   table[identifier]=chosen
+ def finish():assert used==set(selection),'Unused translation selection entries: '+','.join(sorted(set(selection)-used))
+ return add,resolve,finish
 def main():
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/check-source-review-bindings.py')],check=True,capture_output=True,text=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/integrate-source-guides.py')],check=True,capture_output=True,text=True)
@@ -123,7 +148,9 @@ def main():
   if entry.get('file'):
    locale_lessons[locale]=read(DATA/'translations'/entry['file']).get('lessons',{})
   if entry.get('questionFile'):locale_questions[locale]=read(DATA/'translations'/entry['questionFile']).get('questions',{})
- for p in sorted(STAGE.rglob('*.json'),key=lambda p:(p.stat().st_mtime_ns,str(p))):
+ selection=read(DOCS/'batch17/integration/translation-selection.json')['entries']
+ stage_add,stage_resolve,stage_finish=staged_translation_resolver(selection)
+ for p in sorted(STAGE.rglob('*.json'),key=str):
   if not any(x in p.parts for x in ['mechanical-locales','electrical-locales','surface-locales','global-locales']):continue
   if any(x in p.name for x in ['qa','review','checkpoint','blueprint','progress']):continue
   d=read(p)
@@ -144,15 +171,18 @@ def main():
      if key=='lessons' and not all(k in translation for k in ['title','objective','paragraphs','terms','activity','safety','summary']):continue
      if key=='questions' and not all(k in translation for k in ['stem','options','reasons']):continue
      if identifier in known and (translation['sourceHash']==known[identifier]['sourceHash'] or (identifier in normalized_bindings and translation['sourceHash']==normalized_bindings[identifier]['from'])):
-      table[identifier]={**translation,'sourceHash':known[identifier]['sourceHash']}
+      stage_add(locale,key,identifier,{**translation,'sourceHash':known[identifier]['sourceHash']},p)
      elif key=='questions' and identifier in mock_questions:
       expected=mock_questions[identifier]['sourceHash'];remap=mock_binding_remaps.get(identifier)
-      if translation['sourceHash']==expected or (remap and translation['sourceHash']==remap['from']):locale_mocks[locale][identifier]={**translation,'sourceHash':expected}
+      if translation['sourceHash']==expected or (remap and translation['sourceHash']==remap['from']):stage_add(locale,'mocks',identifier,{**translation,'sourceHash':expected},p)
    for ckey in ['captions','diagramCaptions']:
     entries=block.get(ckey,{})
     if isinstance(entries,dict):
      for identifier,translation in entries.items():
-      if isinstance(translation,dict) and isinstance(translation.get('sourceJa'),str) and isinstance(translation.get('text'),str):caption_data['locales'].setdefault(locale,{})[identifier]=translation
+      if isinstance(translation,dict) and isinstance(translation.get('sourceJa'),str) and isinstance(translation.get('text'),str):stage_add(locale,'captions',identifier,translation,p)
+ for locale in targets:
+  stage_resolve(locale,'lessons',locale_lessons[locale]);stage_resolve(locale,'questions',locale_questions[locale]);stage_resolve(locale,'mocks',locale_mocks[locale]);stage_resolve(locale,'captions',caption_data['locales'].setdefault(locale,{}))
+ stage_finish()
  complete=[];partial=[]
  for locale in targets:
   entry=registry['locales'][locale];ls={k:v for k,v in locale_lessons[locale].items() if k in all_lessons and v['sourceHash']==all_lessons[k]['sourceHash']};qs={k:v for k,v in locale_questions[locale].items() if k in all_questions and v['sourceHash']==all_questions[k]['sourceHash']}
@@ -172,7 +202,7 @@ def main():
  existing_mock_locales=read(DATA/'mock-translations.json').get('locales',{})
  for locale,entries in locale_mocks.items():existing_mock_locales.setdefault(locale,{}).update(entries)
  write(DATA/'mock-translations.json',{'sourceLocale':'ja','status':'ai_translated_draft','nativeReviewed':False,'domainReviewed':False,'locales':existing_mock_locales})
- progress=read(DOCS/'progress.json');progress.update(batch='12-in-progress',authoredJapaneseLessons=len(all_lessons),aiEditorialReviewedJapaneseLessons=len(all_lessons),integratedPreviewLessons=len(all_lessons),weeklyChecks=sum(len(c['checks']) for c in courses.values()),weeklyQuestions=len(all_questions),tocEntriesWithDraftLessons=sum(bool(k.get('lessonIds')) for k in knowledge.values()),translatedLessonLocalePairs=sum(e['lessonCount'] for e in registry['locales'].values()),translatedQuestionLocalePairs=sum(e['questionCount'] for e in registry['locales'].values()),translatedDiagramCaptionLocalePairs=sum(len(x) for x in caption_data['locales'].values()),fullyDraftTranslatedLocalesForAuthoredContent=complete,partiallyDraftTranslatedLocales=partial,wholeCurriculumComplete=False,releaseReady=False)
+ progress=read(DOCS/'progress.json');progress.setdefault('batch','12-in-progress');progress.update(authoredJapaneseLessons=len(all_lessons),aiEditorialReviewedJapaneseLessons=len(all_lessons),integratedPreviewLessons=len(all_lessons),weeklyChecks=sum(len(c['checks']) for c in courses.values()),weeklyQuestions=len(all_questions),tocEntriesWithDraftLessons=sum(bool(k.get('lessonIds')) for k in knowledge.values()),translatedLessonLocalePairs=sum(e['lessonCount'] for e in registry['locales'].values()),translatedQuestionLocalePairs=sum(e['questionCount'] for e in registry['locales'].values()),translatedDiagramCaptionLocalePairs=sum(len(x) for x in caption_data['locales'].values()),fullyDraftTranslatedLocalesForAuthoredContent=complete,partiallyDraftTranslatedLocales=partial,wholeCurriculumComplete=False,releaseReady=False)
  progress['draftUiLabelsPerLocale']=len(read(DATA/'ui-translations.json')['locales']['ja'])
  progress['originalMocksCompleted']=30
  progress['createdDiagrams']=18;progress['usedDiagrams']=18
@@ -184,12 +214,13 @@ def main():
  progress['aiDraftDeliveryComplete']=len(progress['fullyDraftTranslatedLocalesForAllCurrentContent'])==12
  manifest['aiDraftDeliveryComplete']=progress['aiDraftDeliveryComplete'];manifest['sourceReferenceGuides']=guide_report['guides'];write(DATA/'course-manifest.json',manifest)
  remaining_locales=[l for l in targets if l not in progress['fullyDraftTranslatedLocalesForAllCurrentContent']]
- progress['next']=('Complete remaining source-bound draft translations: '+', '.join(remaining_locales)+'. ' if remaining_locales else 'All12 target locales cover the currently authored lessons, weekly questions, mocks, captions and five source-reference guides as AI drafts. ')+"Maintain source-object provenance and finish full-source atomization/coverage review; independent native/domain review and physical native-device verification remain uncertified. SSW2 excluded."
+ progress.setdefault('next',('Complete remaining source-bound draft translations: '+', '.join(remaining_locales)+'. ' if remaining_locales else 'All12 target locales cover the currently authored lessons, weekly questions, mocks, captions and five source-reference guides as AI drafts. ')+"Maintain source-object provenance and finish full-source atomization/coverage review; independent native/domain review and physical native-device verification remain uncertified. SSW2 excluded.")
  progress['lessonTranslationCoverage']={l:e['lessonCount'] for l,e in registry['locales'].items()};progress['questionTranslationCoverage']={l:e['questionCount'] for l,e in registry['locales'].items()};progress['previewWeeksBySpecialty']={s['id']:len(s['weeks']) for s in manifest['specialties']};write(DOCS/'progress.json',progress)
  write(STAGE/'translation-schema-normalization.json',translation_aliases)
  write(STAGE/'integration-input-digests.json',input_digests)
  write(STAGE/'source-binding-normalization.json',normalized_bindings)
  # Preserve later source-bound editorial revisions when rebuilding frozen drafts.
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-editorial-patches.py')],check=True)
+ subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-locale-revisions.py')],check=True)
  print(json.dumps({'lessons':len(all_lessons),'weeklyQuestions':len(all_questions),'weeks':progress['previewWeeksBySpecialty'],'translatedLessonPairs':progress['translatedLessonLocalePairs'],'translatedQuestionPairs':progress['translatedQuestionLocalePairs'],'completeDraftLocales':complete,'courseComplete':False}))
 if __name__=='__main__':main()

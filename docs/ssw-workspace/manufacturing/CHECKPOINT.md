@@ -1,3 +1,17 @@
+# Manufacturing SSW1 — batch17 six-AI source, language and rebuild work, 2026-10-28
+
+Six explicitly requested AI workers reviewed source objects in the three specialties, target languages, electrical mocks and the real rebuild pipeline. Root integrated four source-bound target corrections: clearer EN/VI caliper stems, Bengali general-foreign-matter and measuring-face/workpiece explanations, and Vietnamese weekly004 terminology matching lesson003. Japanese, keys, question hashes and exam revisions are unchanged. Exact before/after records remain bound to independent AI comparison; native/domain approval is not claimed.
+
+Fixed a real rebuild defect: staged drafts were selected by file mtime, allowing seven Tagalog electrical lessons to revert to different wording. Conflicts now require an explicit manifest of source/payload/candidate hashes and selected paths; unknown conflicts fail closed. Rebuild preserves later batch/next/updatedAt metadata and reapplies both16and17 editorial layers. A canonical-context ordering defect found by the reviewers was repaired using exact verified post16source bytes, without weakening ordinary current-source validation.
+
+Actual isolated QA: five full integrations. Current/repeated/reversed/equal-mtime runs preserve46runtime files byte-for-byte; deleting/recreating the seven selected TL entries restores exact semantic payloads with key-order-only difference in that recovery variant. Six invalid conflict fixtures and21locale revision mutations are rejected. Current/frozen16then17 CLI tests reproduce current bytes;14,852other mock/VIweekly target records remain unchanged. All30forms/1200questions/12target sets and existing state gates pass. New gate binds300independently reviewed electrical theory questions/600rationale sides and the scoped language reviews. JLPT10/10UI lock and whitespace pass. No new browser/native-device certification.
+
+Source work:24page-review occurrences and141granular source-object records (mechanical9/69,electrical7/30,surface8/42), linked to exact source/lesson hashes in `batch17/source-object-index.json`. These are deeper local reviews, NOT141new lessons or24globally new previously unread pages. Three Japanese source-gap supplements are staged, not integrated; two electrical practical precision proposals are also staged. Existing source freezes and historical reviews remain intact. Details and all six reports: `batch17/session-evidence.json`.
+
+Counts remain262core lessons,5guides,456weekly questions,30mocks and18diagrams. CourseComplete/releaseReady remainfalse. Next:integrate source-bound supplements and missing measurement visuals with all12languages/revision gates; continue exhaustive source-object coverage, language semantics and physical native-device verification. No background process is implied.
+
+---
+
 # Manufacturing SSW1 — batch16 mechanical editorial corrections, 2026-10-28
 
 Resolved the two batch14 mechanical wording findings as author AI revisions: replaced the ambiguous universal safe-concentration wording with substance identification, hazards and handling conditions; replaced Chinese 工件 with Japanese 工作物 in both caliper rationales. Updated12 target stems,24 source-bound translation entries and2 furigana bindings; clarified the affected Vietnamese caliper rationales. Answer keys/options and398 other mechanical questions remain unchanged. Only forms01/03 changed revision. Native/domain/independent revision certification remains false.

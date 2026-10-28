@@ -13,6 +13,7 @@ REPORT_BASE = 'docs/ssw-workspace/manufacturing/batch14/'
 AUDIT = 'docs/ssw-workspace/manufacturing/batch12/mechanical/full-source-audit.json'
 PATCH_PATH = 'docs/ssw-workspace/manufacturing/batch16/mock-editorial-patches.json'
 PATCHER = runpy.run_path(str(ROOT / 'scripts/manufacturing/apply-editorial-patches.py'))
+LOCALE = runpy.run_path(str(ROOT / 'scripts/manufacturing/apply-locale-revisions.py'))
 
 
 def require(condition, message):
@@ -30,7 +31,9 @@ def object_digest(value):
 
 
 def load_inputs(root=ROOT):
-    paths = [AUDIT, PATCH_PATH, PATCHER['TRANSLATIONS'], PATCHER['FURIGANA']]
+    revisions = LOCALE['load_patch']()
+    paths = list(dict.fromkeys([AUDIT, PATCH_PATH, PATCHER['TRANSLATIONS'], PATCHER['FURIGANA']]
+                              + [u['file'] for u in revisions['updates']]))
     for specialty in ('mechanical', 'electrical'):
         paths.extend([f'src/data/manufacturing/{specialty}.json',
                       f'src/data/manufacturing/mocks/{specialty}.json',
@@ -46,6 +49,9 @@ def unique_index(items, key, label):
 
 def validate(inputs):
     result = {}
+    revisions = LOCALE['load_patch']()
+    LOCALE['validate_current'](inputs, revisions)
+    inputs = LOCALE['transform_files'](inputs, revisions, forward=False)
     patch = json.loads(inputs[PATCH_PATH])
     for specialty in ('mechanical', 'electrical'):
         course_path = f'src/data/manufacturing/{specialty}.json'

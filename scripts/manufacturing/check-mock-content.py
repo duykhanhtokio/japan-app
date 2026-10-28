@@ -56,4 +56,6 @@ assert len(scope['targetLocales'])==len(set(scope['targetLocales']))==12
 coverage=validate_translations(translations,questions,scope['targetLocales'])
 editorial=runpy.run_path(str(ROOT/'scripts/manufacturing/check-editorial-review-bindings.py'))
 editorial_bindings=editorial['validate'](editorial['load_inputs']())
+batch17=runpy.run_path(str(ROOT/'scripts/manufacturing/check-batch17-reviews.py'))
+batch17_reviews=batch17['validate']()
 print(json.dumps({'status':'PASS','specialties':report,'totalExams':len(ids),'totalQuestions':len(questions),'mockTranslationCoverage':coverage,'rubyExactTextAligned':True,'nativeReviewed':False,'editorialEvidenceBindings':editorial_bindings['reviews']}))
