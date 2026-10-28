@@ -1,3 +1,16 @@
+# Nhà hàng / 外食業 — checkpoint 12, 2026-10-28
+
+Toàn bộ mô-đun CHƯA hoàn tất. Checkpoint11 đã qua WORK PERSISTENCE PASS `f6a4ece13acef2032bc4575ed17d4d6f40e7b80a`. Lô cuối cần commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
+
+- ĐỦ số lượng bản dịch12locale:1440/1440 bài,11808/11808 câu,8304/8304 glossary,73UI×12. Mỗi locale120bài+984câu+692thuật ngữ và định nghĩa. Không đồng nghĩa được người bản ngữ/chuyên gia duyệt.
+- Phiên này thêm4152glossary chohi/bn/my/ne/th/km:1560đãlưucheckpoint11,2592còn lại trongcheckpoint12. Bảo toàn18276record từ39c522f6 và1560glossary trung gian; mọi dữ liệu ngoài glossary giữ nguyên.
+- SourceHash4152bản mới khớp định nghĩa Nhật; tất cả692ID glossary có đủ ở12locale. Structural PASS;numerics110868trường PASS;signedCelsius396trường PASS,không có flag mới cần đối chiếu.
+- Rà AI độc lập:692ID/hash/trường mỗi6locale và38mục quan trọng mỗi locale(228bản):phủ mẫu phủ định/an toàn,dị ứng,halal,khuyết tật,tuổi20 và công thức tổngdoanhthu/lãigộp.3field mới được làm rõ:termxe lăn tựđẩy hi/bn và mẫu số tổngdoanhthu bn;peer xác nhận đã sửa. Lưu đầy đủ report ởcompletion12-peer-review.json. Không coi đây là duyệt bản ngữ/chuyên môn/toàn bộ ngữ nghĩa.
+- Chưa đổi Nhật,đáp án,thứ tự lựa chọn,UI. Chưa chạyproductionExpo/native. Kiểm kê furigana hiện hữu vẫn4348/7358trường còn kanji chưa có cách đọc đầy đủ; không đoán cách đọc đơn lẻ đa nghĩa.
+- TIẾP THEO:không dịch lại phần văn bản đã đủ;rà nguồn590partial,hình nhận dạng,furigana theo ngữ cảnh,productionExpo/native/hiệu năng và duyệt chuyên môn/người bản ngữ. Giữ acceptance chưa có bằng chứng ởfalse. Không cam kết tác vụ chạy nền sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 11, 2026-10-28 (trung gian)
 
 Toàn bộ mô-đun CHƯA hoàn tất. Base remote đã qua WORK PERSISTENCE PASS `39c522f604c6ab45ddc4c897d812a88e8ab986b4`, nhánh `feature/restaurant-20261026`. Lô này phải qua commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
