@@ -1,3 +1,19 @@
+# Manufacturing SSW1 — batch26 three source-qualified guides integrated, 2026-10-28
+
+Six requested AI lanes authored three bounded Japanese reference guides with36 direct-Japanese target translations, independently compared the Japanese with the original source and all468 target prose-field pairs with Japanese, and integrated a reversible guarded extension. One Vietnamese arc-definition term was refined and rechecked. Native/domain/full-source/release certification remainsfalse.
+
+Added: mechanicalφ/Sφ source-specific strict>180° conditions with explicit no-converse/equality/current-standard inference; electrical bridge versus voltage-drop method names, R=V/I and measurement-system effects without bridge construction, accuracy ranking or operating recipe; surface Al-electron-loss/H-ion-electron-uptake and external-electron/liquid-ion distinction, excluding qualified water/oxide expressions. Four previously reviewed physical pages97/151/175–176 supply the evidence; no new global page coverage claim. Six bounded conceptual facets are addressed in batch26/facet-resolution.json; six source qualifications remain and no whole source object is declared closed.
+
+Current total11 guides/132 target pairs; previous8 guides/96 target pairs and all262 core lessons,456 weekly questions,30 mocks/1200 questions,22 diagrams/264 captions retain their exact source identities. No reader/component/service changes. Exact historical projections preserve older review snapshots instead of rewriting their evidence.
+
+Actual RNWeb reader passes78 flows:3 new guides×13 UI locales×320/932 widths, all36 target toggles at both sizes, stale-completion rejection, new completion/reopen, previous guide and core completion preservation, save-failure/retry, no horizontal overflow and0 page errors. Six screenshots retained; Vietnamese phone and Japanese landscape inspected. Explicit Royal/safearea/storage/decorative-image adapters and Japanese QA font; no all-script glyph/fullExpo/native-device certification. See batch26/session-evidence.json for compiler and final-check evidence. No full rebuild was run in this continuation.
+
+A disk-allocation failure during the first integration write was recovered by freeing reproducible temporary build bundles and reconstructing the exact approved outputs. The writer now allocates all validated payloads before replacing any runtime file. No partial output is accepted as valid. The new layer passes46 rejected-input fixtures and independent zero-write progress probes. Five actual isolated full integrations preserve46 runtime files under ordinary/repeated/reversed/equal timestamps and explicit seven-record TL recovery. Historical18 regression passes17 rejection fixtures; historical22/25 indices remain exact. Focused data/state, JLPT10/10 lock and whitespace checks pass.
+
+Next: remaining caliper/instrument/surface-test details and visuals, bridge construction only with separate verified source evidence, exhaustive source closure and native/domain/physical-device review. SSW2 excluded. No background process implied.
+
+---
+
 # Manufacturing SSW1 — batch25 six-AI source-qualified gap review, 2026-10-28
 
 Six requested AI lanes visually reviewed mechanicalPDF97, electricalPDF151 and surfacePDF175–176, independently compared the three ledgers with the source, verified current twelve-locale bindings and built a guarded additive source-object index. These are four review occurrences of previously reviewed pages, not new global source coverage or new learner content.

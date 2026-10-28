@@ -25,11 +25,19 @@ def main():
         'docs/ssw-workspace/manufacturing/source-qa-report.json',
         'docs/ssw-workspace/manufacturing/knowledge-matrix.json',
     }
+    latest = runpy.run_path(str(ROOT / 'scripts/manufacturing/apply-guide-extension26.py'))
+    paths |= set(latest['load_inputs']()) | {'scripts/manufacturing/apply-guide-extension26.py'}
     isolated = Path(tempfile.mkdtemp(prefix='reference-guide-extension-'))
     for relative in paths:
         target = isolated / relative
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(ROOT / relative, target)
+    # Review the old18 layer through the exact approved26 reverse projection.
+    # Historical receipts and snapshots remain unchanged; the shared files are
+    # never rewritten by this regression checker.
+    for relative in (helper['SOURCE'], helper['TARGETS']):
+        raw = (ROOT / relative).read_bytes()
+        (isolated / relative).write_bytes(latest['historical_bytes'](relative, raw))
     m = runpy.run_path(str(isolated / helper_path))
     outputs = m['extension_outputs']()
     current = {p: (isolated / p).read_bytes() for p in (m['SOURCE'], m['TARGETS'])}
@@ -117,7 +125,7 @@ def main():
               'addedGuides': 3, 'addedTargetPairs': 36, 'currentGuides': 8, 'currentTargetPairs': 96,
               'baseAndExtensionRecoveryCombinations': 4, 'byteIdempotent': True,
               'rejectedInvalidExtensions': rejected, 'isolatedCopy': str(isolated),
-              'sharedRuntimeModified': False, 'nativeReviewed': False, 'domainReviewed': False,
+              'sharedRuntimeModified': False, 'currentBatch26ProjectedToExactHistorical8': True, 'nativeReviewed': False, 'domainReviewed': False,
               'releaseReady': False, 'implementationSha256': {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest()
                                                              for p in (helper_path, 'scripts/manufacturing/check-reference-guide-extension.py')}}
     args.report.parent.mkdir(parents=True, exist_ok=True)

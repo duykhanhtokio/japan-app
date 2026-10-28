@@ -1,6 +1,6 @@
 """Exact reviewed diagram layers over the preserved nineteen-diagram base."""
 from pathlib import Path
-import copy, hashlib, json, re, struct
+import copy, hashlib, json, re, struct, runpy
 from decimal import Decimal
 import xml.etree.ElementTree as ET
 
@@ -160,6 +160,9 @@ def historical_batch22_inputs(inputs, approved_captions, approved_register):
     """Project only the exact approved addition; preserve the old audit bytes."""
     stage = ROOT/'docs/ssw-workspace/manufacturing/batch23'
     outputs = dict(inputs)
+    guide_layer=runpy.run_path(str(ROOT/'scripts/manufacturing/apply-guide-extension26.py'))
+    for relative in guide_layer['BASES']:
+        if relative in outputs:outputs[relative]=guide_layer['historical_bytes'](relative,outputs[relative])
     for relative, snapshot, expected in [
         ('src/data/manufacturing/diagram-translations.json','base-diagram-translations.json',approved_captions),
         ('docs/ssw-workspace/manufacturing/illustration-register.json','base-illustration-register.json',approved_register)]:

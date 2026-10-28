@@ -527,6 +527,185 @@
       "nativeReviewed": false,
       "domainReviewed": false,
       "sourceHash": "5f490df8b98d953aff2c063302d497cf4212d2028e55b858ecc89832163ab143"
+    },
+    {
+      "id": "mfg1-mechanical-source-guide-arc-diameter-condition",
+      "specialty": "mechanical",
+      "titleJa": "資料のφ・Sφと円弧条件を読む",
+      "objectiveJa": "円と球の直径を区別し、資料の「180度を超える」という条件の範囲を確認する。",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "titleJa": "円と球を区別して表の条件を読む",
+          "textJa": "機械金属加工の資料の表7-2では、φは円の直径に加え、180度を超える円弧の直径を表すと説明されています。Sφは球の直径に加え、180度を超える球の円弧の直径として示されています。円と球を同じ対象とせず、記号と対象、表に示された条件を一緒に確認します。"
+        },
+        {
+          "id": "section-2",
+          "titleJa": "条件から逆の規則を作らない",
+          "textJa": "「180度を超える」は180度より大きい範囲であり、180度ちょうどを含みません。この表だけでは、180度ちょうどや、それより小さい全ての円弧の指示方法まで確定しません。「180度以下なら必ずRを使う」といった逆の規則を作らないようにします。ここでは資料の記載範囲を読み分け、実際の図面では適用する規格と指示を確認します。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "円弧",
+          "reading": "えんこ",
+          "meaningJa": "円周の一部。"
+        },
+        {
+          "ja": "球径",
+          "reading": "きゅうけい",
+          "meaningJa": "球の直径。"
+        }
+      ],
+      "activityJa": "3分：φとSφの対象を円と球に分けて書く。\n4分：180度を超える条件と180度ちょうどを区別し、表だけでは決められない点を書く。\n3分：図面の記号や適用規格が不明なときの確認事項をまとめる。",
+      "safetyJa": [
+        "紙上で学ぶ。表から推測した逆の規則で加工や合否判定を進めない。"
+      ],
+      "summaryJa": "φとSφの対象と、資料の厳密な「180度を超える」条件を合わせて読む。表の記載を越える判断は図面の適用規格と指示で確認する。",
+      "sources": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 97,
+          "printedPage": 89
+        }
+      ],
+      "knowledgeIds": [
+        "mfg1-mechanical-c07-s3-5"
+      ],
+      "estimatedMinutes": 10,
+      "durationBasis": "target_with_activities_not_measured",
+      "reviewStatus": "ai_authored_reference_supplement_independent_review_pending",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "sourceHash": "aa8282b30261adb0dc3730445a2188f97a41f5b4001ea374be9d8ec31546cc9f"
+    },
+    {
+      "id": "mfg1-electrical-source-guide-resistance-methods",
+      "specialty": "electrical",
+      "titleJa": "抵抗測定の方法名と測定系の影響",
+      "objectiveJa": "教材の二つの方法名、抵抗の計算、測定系の影響を分けて説明する。",
+      "paragraphs": [
+        {
+          "id": "method-names",
+          "titleJa": "二つの方法名",
+          "textJa": "教材は抵抗測定の方法として、ブリッジ法と電圧降下法を挙げています。ここでは二つの名称を区別します。ブリッジ回路の構成や接続手順は、この説明から決めません。"
+        },
+        {
+          "id": "voltage-current",
+          "titleJa": "電圧と電流から抵抗を求める",
+          "textJa": "電圧降下法では、対象に対応する電圧Vと電流Iの測定値から、R=V/Iで抵抗Rを求めます。この式だけで、使用する計器や安全な接続方法が決まるわけではありません。"
+        },
+        {
+          "id": "system-influence",
+          "titleJa": "測定系の影響を考える",
+          "textJa": "電源、計器、配線、接続部の抵抗が測定結果に影響する場合があります。表示値を対象だけの真の抵抗値と即断しません。影響の大きさや向き、補正方法は条件で異なるため、一律に加減する補正式をこの説明から作りません。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "ブリッジ法",
+          "reading": "ぶりっじほう",
+          "meaningJa": "教材が抵抗測定の方法として挙げる名称。回路構成はここでは扱わない。"
+        },
+        {
+          "ja": "電圧降下法",
+          "reading": "でんあつこうかほう",
+          "meaningJa": "電圧と電流の測定値から抵抗を求める方法。"
+        },
+        {
+          "ja": "測定系",
+          "reading": "そくていけい",
+          "meaningJa": "測定に用いる電源、計器、配線、接続部などの組合せ。"
+        }
+      ],
+      "activityJa": "二つの方法名を書き、R=V/Iの各記号が表す量を説明する。測定結果に影響し得るものを二つ挙げる。実物の接続作業は行わない。",
+      "safetyJa": [
+        "この説明を実機の配線手順として使わず、担当範囲、教育、承認手順と計器の仕様を確認する。"
+      ],
+      "summaryJa": "方法名、抵抗の計算、測定系の影響を区別する。式や表示値だけで測定条件や補正を決めない。",
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 151,
+          "printedPage": 142
+        }
+      ],
+      "knowledgeIds": [
+        "mfg1-electrical-c10-s1-2"
+      ],
+      "estimatedMinutes": 15,
+      "durationBasis": "target_with_activities_not_measured",
+      "reviewStatus": "ai_authored_reference_supplement_independent_review_pending",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "sourceHash": "0952fa683ee00242a2553d47de3f786b1e098fa9cd4be98aa3092c69953e4428"
+    },
+    {
+      "id": "mfg1-surface-source-guide-electrode-reactions",
+      "specialty": "surface",
+      "titleJa": "陽極と陰極の反応を電子の位置で読む",
+      "objectiveJa": "陽極の酸化と陰極の還元を、反応式の電子の位置から区別する。",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "titleJa": "陽極で電子を失う",
+          "textJa": "アルミニウム品物を陽極とする説明では、Al→Al³⁺+3e⁻と表します。電子が右側にあるので、アルミニウムが電子を失う酸化を示します。別の金属を載せることと、基材表面から酸化皮膜を形成することを区別します。"
+        },
+        {
+          "id": "section-2",
+          "titleJa": "陰極で電子を受け取る",
+          "textJa": "陰極側の式は2H⁺+2e⁻→H₂です。電子が左側にあり、水素イオンが電子を受け取る還元を示します。図の陰極側のH₂表示と対応させます。これは式の読み取りであり、気体を発生させる実験の指示ではありません。"
+        },
+        {
+          "id": "section-3",
+          "titleJa": "移動の場所を分ける",
+          "textJa": "外部回路の電子の移動と、液内のH⁺などのイオンの移動を分けて読みます。簡略な図や式だけで液内の全反応を説明したと考えず、そこから薬液・配線・処理条件を決めません。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "酸化",
+          "reading": "さんか",
+          "meaningJa": "この学習では電子を失う変化。"
+        },
+        {
+          "ja": "還元",
+          "reading": "かんげん",
+          "meaningJa": "この学習では電子を受け取る変化。"
+        },
+        {
+          "ja": "半反応",
+          "reading": "はんはんのう",
+          "meaningJa": "電子の授受を一方の変化として表す式。"
+        }
+      ],
+      "activityJa": "紙上で二つの式の電子に印を付け、電子を失う側と受け取る側を説明する。図のH₂表示と、外部回路・液内の違いも確認する。",
+      "safetyJa": [
+        "学習は紙上で行う。薬液の調製、設備の接続や通電、気体を発生・採取する実験をしない。"
+      ],
+      "summaryJa": "陽極のAlは電子を失い、陰極のH⁺は電子を受け取る。電子とイオンの移動場所を区別し、式を操作手順にしない。",
+      "sources": [
+        {
+          "documentId": "mfg1-surface-source",
+          "pdfPage": 175,
+          "printedPage": 165
+        },
+        {
+          "documentId": "mfg1-surface-source",
+          "pdfPage": 176,
+          "printedPage": 166
+        }
+      ],
+      "knowledgeIds": [
+        "mfg1-surface-c12-s1",
+        "mfg1-surface-c12-s1-1"
+      ],
+      "estimatedMinutes": 15,
+      "durationBasis": "target_with_activities_not_measured",
+      "reviewStatus": "ai_authored_reference_supplement_independent_review_pending",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "sourceHash": "cb5ef537d74f8470286666a32dec4b330439792d81989c7c71b7f12a6b3d3c4c"
     }
   ],
   "nativeReviewed": false,

@@ -86,7 +86,7 @@ def load_inputs(root=ROOT):
     inputs={}
     def add(path):
         path=safe_path(path)
-        if path not in inputs:inputs[path]=(root/path).read_bytes()
+        add_bytes(path,inputs,root)
         return json.loads(inputs[path])
     freeze=add(FREEZE)
     for path in freeze['files']:add_bytes(path,inputs,root)
@@ -102,7 +102,13 @@ def load_inputs(root=ROOT):
 
 def add_bytes(path,inputs,root):
     path=safe_path(path)
-    if path not in inputs:inputs[path]=(root/path).read_bytes()
+    if path not in inputs:
+        raw=(root/path).read_bytes()
+        if path in {'src/data/manufacturing/source-guides.json','src/data/manufacturing/source-guide-translations.json','src/data/manufacturing/course-manifest.json'}:
+            import runpy
+            layer=runpy.run_path(str(root/'scripts/manufacturing/apply-guide-extension26.py'))
+            raw=layer['historical_bytes'](path,raw)
+        inputs[path]=raw
 
 
 def index(items,field,label):

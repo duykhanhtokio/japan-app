@@ -161,6 +161,8 @@ def historical_source_guides_bytes(current_bytes):
     base, _ = base_snapshots()
     if current_bytes == base:
         return base
+    if current_bytes != extension_outputs()[SOURCE]:
+        current_bytes=runpy.run_path(str(ROOT/'scripts/manufacturing/apply-guide-extension26.py'))['historical_bytes'](SOURCE,current_bytes)
     require(current_bytes == extension_outputs()[SOURCE], 'Current source guides are not the exact approved extension')
     return base
 
@@ -169,6 +171,8 @@ def historical_source_guide_translations_bytes(current_bytes):
     _, base = base_snapshots()
     if current_bytes == base:
         return base
+    if current_bytes != extension_outputs()[TARGETS]:
+        current_bytes=runpy.run_path(str(ROOT/'scripts/manufacturing/apply-guide-extension26.py'))['historical_bytes'](TARGETS,current_bytes)
     require(current_bytes == extension_outputs()[TARGETS], 'Current guide targets are not the exact approved extension')
     return base
 
