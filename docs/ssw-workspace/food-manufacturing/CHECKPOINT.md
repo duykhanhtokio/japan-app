@@ -1,3 +1,18 @@
+# Batch20 — 2026-10-28
+
+Base `0f89111c0bc5f564952e45e1a9761c200aeac13d`; branch `feature/food-manufacturing-batch20-20261028`.
+
+- Six authoring assignments added 360 question–locale pairs and nine titles for 2号 mock06: TL/BN/HI/NE/TH/MY/KM/ZH-CN/ZH-TW, 40 each. Mock01–06 of both levels are now complete in all 12 locales. Total: 6,489/10,068; 3,579 remain. Exact IDs: `batch-20-form-coverage.json`.
+- All 6,129 prior question/title objects, 839 Japanese questions, 78 lessons, 33 assessment revisions and runtime/UI preserved. Missing membership, canonical source hashes, four ordered choices/reasons and correct-reason/main-explanation equality checked. Use main `exams.ja.json` membership; historical split authoring files are stale for this form.
+- Independent AI semantic review covers all 360 new pairs. Nine peer reports contain exact reviewed IDs, corrections and final integrated-part hashes. Explicit hypothetical arithmetic references cover q255, q269 and q303. AI review is not native/domain certification; source PDFs were not revalidated in this translation batch.
+- PASS: content structure; actual Node adapter 6,489 valid/stale-source rejection checks, plus 3,579 missing pairs without fallback; state resume/scoring/revision/storage isolation; approved JLPT UI lock 10/10.
+- Two initially limited-context assignments were replaced, preserving five completed Thai entries. Disk filled during a Taiwan script write; only this clone downloaded LFS object cache was cleared. Working files and backups retained. Final part/peer hashes checked after recovery.
+- Historical browser evidence remains 3,460 pairs; 3,029 current pairs await browser QA. No new browser/full Expo/native/device evidence. Full-body furigana, complete source competency/visual verification, illustrations and native/domain review remain open. `scopeComplete=false`; `productionRelease=false`.
+
+Next: exact missing mock07–10 IDs from `batch-20-form-coverage.json`. Keep food separate from unrelated sectors and JLPT.
+
+---
+
 # Batch19 — 2026-10-28
 
 Base `2798593053d776ec9a9f280b75640914fb0b1f7c`; branch `feature/food-manufacturing-batch19-20261028`.
