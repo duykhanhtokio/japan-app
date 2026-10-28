@@ -1,3 +1,18 @@
+# Batch24 — 2026-10-28
+
+Base `19a1b8225be5084fa307d0371192251ed76ae991`; branch `feature/food-manufacturing-batch24-20261028`.
+
+- Six AI authors added 490 question–locale pairs: 480 for 2号 mock08 and ten previously deferred q363 translations for 1号 mock08. Both levels' mock01–08 are now complete in all 12 locales. All468weekly-check translation pairs remain complete. Total 8,239/10,068; 1,829 remain. Twelve titles added. Exact IDs: `batch-24-form-coverage.json`.
+- q363 now explicitly asks which option correctly explains the error in the quoted claim. Only that prompt changes in canonical Japanese and its historical split copy; each retains its own correct answer/option order. No new subject knowledge introduced. Two independent AI assessments support the clarification. Existing EN/VI text already identifies the quoted error; only their sourceHash values rebound. All other prior translation objects and Japanese content preserved.
+- Actual source/revision QA proves old q363 hashes are rejected, current EN/VI lookups work, old food-1-mock-08 saved attempts are invalidated by the changed revision, current attempts restore/grade, and the other 32 assessment revision values remain unchanged. The previous q363 blocker is resolved at AI editorial level, without native/domain certification. See `batch-24-source-clarification-qa.json`.
+- Independent full-field AI peer review covers all 490 new pairs; twelve reports bind final artifact hashes and corrections. Explicit arithmetic references cover fictional q388 planned 300 min × 10 kg/min = 3000 kg and 2400/3000 = 80%, fictional q331 sum 120 g / five = 24 g, and q333 normal-distribution ±1σ/±2σ approximations 68.3%/95.4%. Numeric-format resolutions bind reviewed target fields. Source PDFs not revalidated here.
+- PASS: content structure; actual adapter 8,239 valid/stale-source rejection checks and 1,829 missing without fallback; state resume/scoring/revision/storage isolation; approved JLPT UI lock 10/10. Runtime/UI and assets Git entries unchanged.
+- Historical browser evidence remains 3,460 pairs; 4,779 current pairs await browser QA. No new browser/full Expo/native/device evidence. Full-body furigana, complete source competency/visual verification, illustrations and native/domain review remain open. `scopeComplete=false`; `productionRelease=false`. Sparse checkout excludes asset working copies; full builds require restoration with enough disk space.
+
+Next: exact missing mock09–10 entries. Keep food isolated from other sectors/JLPT.
+
+---
+
 # Batch23 — 2026-10-28
 
 Base `1f208ff59d40d028de262dc46ba34fe1a1189bcc`; branch `feature/food-manufacturing-batch23-20261028`.
