@@ -1,3 +1,17 @@
+# Batch28 — 2026-10-28 — assessment translation coverage complete
+
+Base `e3288d412ca7225df6e1dc15aa2b191680ce7c2b`; branch `feature/food-manufacturing-batch28-20261028`.
+
+- Six AI authors added 480 question–locale pairs for 2号 mock10 (40 per locale) and twelve titles. All 20 mock forms and 13 weekly checks now have explicit translations in all 12 locales: 839 questions × 12 = 10,068 pairs; 33 titles × 12 = 396. Missing pairs 0. All 468 weekly-check pairs retained. Exact coverage: `batch-28-form-coverage.json`.
+- All 9,588 prior question/title objects, Japanese 839 questions/78 lessons, 33 assessment revision values and runtime/UI preserved. Exact missing IDs, canonical source hashes, four ordered choices/reasons and main/correct-reason equality checked. Main exams.ja.json membership remains authoritative.
+- Independent full-field AI peer review covers the 480 new pairs, with twelve SHA-bound reports. Arithmetic references retain hypothetical 0.04 person-hours/box × 350 = 14 person-hours, required input 108/0.90 = 120 kg, and defined efficiency 0.80 × 0.90 = 72%. Preserve person-hours versus elapsed time, source heating-example limits and procedural/organizational meaning of soft measures. Numeric-format resolutions bind final target fields. Source PDFs not revalidated.
+- PASS: content structure; actual adapter 10,068 valid/stale-source rejection checks, 0 missing without fallback and 396 valid titles; state resume/scoring/revision/storage isolation; approved JLPT UI lock 10/10. Runtime/UI and assets Git entries unchanged.
+- Translation coverage completion is not native/domain review or overall project completion. Historical browser evidence remains 3,460 pairs; at least 6,608 current pairs lack browser evidence and historical source-version binding is unverified. No new browser/full Expo/native/device evidence. Source competency/visual coverage, Japanese editorial q204, verified full-body furigana, illustrations and native/domain review remain open. `scopeComplete=false`; `productionRelease=false`.
+
+Next: use `batch-28-translation-milestone.json` and progress remaining list for nontranslation work. Do not reauthor completed questions or redo translations. Any verified source wording change must update source revisions/translation hashes together. Restore sparse-checkout assets with enough disk space before full builds. Keep food isolated from other sectors/JLPT.
+
+---
+
 # Batch27 — 2026-10-28
 
 Base `f295621d7ebb22c43c1ccf4b95487f996ebaf331`; branch `feature/food-manufacturing-batch27-20261028`.
