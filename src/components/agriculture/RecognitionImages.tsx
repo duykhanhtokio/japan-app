@@ -59,6 +59,12 @@ const assets:Record<string,ImageSourcePropType>={
  'equipment-portable-brush-cutter':require('../../../assets/agriculture/equipment/portable-brush-cutter-v1.png'),
  'equipment-walkbehind-hammer-mower':require('../../../assets/agriculture/equipment/walkbehind-hammer-mower-v1.png'),
  'equipment-ride-on-mower':require('../../../assets/agriculture/equipment/ride-on-mower-v1.png'),
+ 'tool-socket-wrench':require('../../../assets/agriculture/tools/socket-wrench-v1.png'),
+ 'tool-open-end-spanner':require('../../../assets/agriculture/tools/open-end-spanner-v1.png'),
+ 'tool-box-end-wrench':require('../../../assets/agriculture/tools/box-end-wrench-v1.png'),
+ 'tool-screwdrivers':require('../../../assets/agriculture/tools/screwdrivers-v1.png'),
+ 'tool-adjustable-wrench':require('../../../assets/agriculture/tools/adjustable-wrench-v1.png'),
+ 'tool-hex-keys':require('../../../assets/agriculture/tools/hex-keys-v1.png'),
 };
 type RecognitionImage={
  id:string;lessonIds:string[];lessonSourceHashes:Record<string,string>;

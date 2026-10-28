@@ -1,0 +1,11 @@
+# Six original handtool illustrations
+
+Six authors generated one original PNG each with the built-in image tool. Six different AI peers inspected the full outputs, source pages and metadata. The six original PNGs are saved in `assets/agriculture/tools/`; exact prompts, original/saved hashes and Japanese descriptions are preserved in `asset-1.json` through `asset-6.json`. No source photo was supplied to the generator and no generated pixels were edited.
+
+The socket wrench, open-ended spanner, box-ended wrench, screwdrivers, adjustable wrench and hex keys supplement the existing shared 1号/2号 lesson `agr-safety-maintenance-tools`. Captions and recognition limits remain Japanese, following the existing image metadata policy. Lesson translations and all lesson/test IDs, revisions, saved-state keys and question content are unchanged.
+
+Run `python scripts/agriculture/check-tools-33.py` for additive-data, asset, peer and source-hash checks. The new real-route browser and expansion harnesses are `check-tools-33-browser.cjs` and `check-tools-33-expansion.cjs`; they require explicit QA dependencies, a real Chromium executable, Japanese/script fonts and output paths, as shown by the environment variables in those scripts. Browser artwork, safe-area, storage and decorative assets use explicit test adapters. The original new PNG bytes are decoded rather than replaced by placeholders.
+
+The integration script requires the frozen base and six image files. By default it reads the published PNGs from `assets/agriculture/tools`; `AGRICULTURE_TOOL_SOURCE_DIR` can provide a separate generation output directory. It refuses stale baseline inputs and differing existing assets. Do not replay it against already integrated current data.
+
+Current totals are 62 rasters and 69 figure records; the prior 56 image objects and renderer behavior are preserved. All 186 Japanese lessons, 2,232 translated lesson pairs, 421 weekly questions and four forms/160 mock questions remain. The image batch closes zero source occurrences and adds no independent question capacity. Shapes do not certify product dimensions, fit, tightening force, operating procedures or safety. AI review is distinct from domain, native-language, human, physical-device or release approval.

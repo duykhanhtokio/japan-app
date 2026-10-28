@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "batch": "tools-33",
+  "assetNumber": 1,
+  "author": "general",
+  "reviewer": "soil",
+  "reviewedAssetMetadataSha256": "6ce7514f13c8a908d652b6c1c2752b9f6c474d29b343273e96bbe3ed605bb7da",
+  "reviewedImageSha256": "77d73c688fc5600ebf82af94e7deb23dfe3c853b08648334ab18c053d6d8683f",
+  "decision": "accept",
+  "reviewScope": "AI full-output visual recognition comparison against original PDF page images and existing canonical paragraph; no domain/human certification",
+  "fullOutputViewed": true,
+  "sourceEvidence": [
+    {
+      "documentId": "AGR-S1",
+      "pdfPage": 44,
+      "printedPage": 38,
+      "pdfSha256": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+      "reviewerRenderSha256": "4a15f594a807c347d856319c34a2b6fea68782fda238a31eaf55f2862a6a56a2",
+      "renderMethod": "pdftoppm -scale-to 1600 -png",
+      "directlyViewed": true
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 60,
+      "printedPage": 58,
+      "pdfSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+      "reviewerRenderSha256": "2fe198a5b9003133f55eb531c0bc4648f79d50abae4787b6bea26d37037f2fed",
+      "renderMethod": "pdftoppm -scale-to 1600 -png",
+      "directlyViewed": true
+    }
+  ],
+  "lessonBinding": {
+    "lessonId": "agr-safety-maintenance-tools",
+    "lessonSourceHash": "cfedd979dacc60ef52fa2ed5759f20c8ba7e60cf397c6bf21063957a434618eb",
+    "paragraphId": "agr-safety-maintenance-tools-p2",
+    "paragraphSha256": "8f8e945fc189bb786c5154520678932ec4503396dbd261237d965039279a7d02"
+  },
+  "checks": {
+    "fullHandleVisible": true,
+    "attachedSocketClearlyPresent": true,
+    "threeSeparateInterchangeableSocketExamples": true,
+    "hollowSocketOpeningsVisible": true,
+    "credibleRecognitionLevelConstruction": true,
+    "noVisibleTextLogosDimensions": true,
+    "noHandsBoltsOperation": true,
+    "noCrop": true,
+    "captionAndAltMatchImage": true
+  },
+  "reasons": [
+    "The ratchet handle with one mounted cylindrical socket and three detached sockets expresses the existing p2 distinction between handle and replaceable socket.",
+    "The original source pages show a handle plus separate sockets; generated arrangement is independently expressed and does not copy source layout.",
+    "Caption and alt describe only visible parts. The limits correctly exclude precise internal-profile, dimensions, torque and operational certification.",
+    "Small grooves and reflective detail are illustration texture, not readable specifications. No machine-internal diagram or safe-use instruction is asserted."
+  ],
+  "requiredExactBeforePatches": [],
+  "limitationsJa": [
+    "ソケットの正確な内部形状、駆動部の規格や機構はこの外観図では認定しません。",
+    "すべての製品が同じ形・大きさ・取付け方式であるとは示しません。",
+    "本文と図の照合は工具認識のAI確認に限り、安全な整備や締付け力の承認ではありません。"
+  ],
+  "countsAsClosedSourceOccurrence": false,
+  "runtimeClosureCredit": 0,
+  "newQuestionApproved": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceTested": false,
+  "releaseReady": false
+}
