@@ -1,0 +1,15 @@
+# Agriculture source continuation 36
+
+Six authors reconciled six source domains against the current course, and six independent peers reviewed their packets. These drafts remain evidence and next-work candidates unless explicitly integrated below. Original source PDFs/pages are not redistributed.
+
+One 2号 lesson, `agr-s36-fruit-environment-layering`, is integrated with six paragraphs and twelve direct-from-Japanese AI-draft locales. Source S2 PDF99/printed97 and PDF101/printed99 was inspected directly. Its six source occurrences are FACILITY0601,0611,0612,0650,0651,0652. Many deciduous fruit trees/June–August is a source-limited range, not a universal duration or work schedule. Existing pear-trellis purposes and root-before-separation order are preserved, not recounted as new objectives. The newly expressed details are names, environmental relationships, branch/fruit damage details, layering materials and apple-rootstock use.
+
+The immutable author lesson and original peer review are retained. The adopted peer review withdraws an ineffective before==after proposal and keeps one valid month-range patch. `japanese-reviewed.json` is the frozen master. Twelve locales have180 individually AI-reviewed fields and25 exact-before translation patches; all native/domain/human review flags remain false.
+
+Week47 contains one actual lesson and no filler day or fabricated weekly quiz. Existing187lessons/2244translationpairs/421weeklyquestions/160mockquestions/62rasters remain unchanged. New totals188lessons/1128units/2256pairs. Six source occurrences are newly expressed: cumulative375, remaining1184missing-or-partial and301baselineholds. These are not a unique knowledge denominator or certified exam capacity.
+
+The six-domain next packets are not automatically promoted: general definitions, three soil prose details and irrigation visuals, fuel-storage/PPE details, rice details and figures, and flower names/recognition remain candidates pending complete translation/integration/asset checks. Source-audit32 holds and overrides remain binding. Mock35 retains20unintegrated candidates and17excluded proposals; no new questions or forms are added here. Remaining target16forms/640questions; whole800capacity uncertified.
+
+`assessment-review-current.json` preserves all36historical candidate decisions, compares the six added paragraphs with relevant existing581questions/options/reasons and the mock35queue, and rebinds current semantic inputs. This does not certify global semantic deduplication or independent question capacity.
+
+Validation: `python scripts/agriculture/check-content-36.py`, standard agriculture data/state check, assessment inventory plus13regression tests, scoped strict TypeScript, and browser reader QA with explicit adapters. Read `reader-qa.json` for exact current fields, responsive cases and limits. Browser emulation is not a native-device or production Expo build test. Commit/fetch persistence is verified separately after publication; no SHA-only follow-up commit is required.
