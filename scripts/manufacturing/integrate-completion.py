@@ -3,7 +3,7 @@
 This is a data assembly operation, not a claim of full-source/native certification.
 """
 from pathlib import Path
-import hashlib,json,re,subprocess,sys
+import hashlib,json,re,subprocess,sys,runpy
 
 ROOT=Path(__file__).resolve().parents[2]
 DATA=ROOT/'src/data/manufacturing'
@@ -134,7 +134,8 @@ def main():
   write(DATA/'mocks'/f'{specialty}.json',bundle)
  manifest['completedMockExams']=30
  write(STAGE/'mock-source-binding-normalization.json',mock_binding_remaps)
- for guide in read(DATA/'source-guides.json')['guides']:
+ guide_history=runpy.run_path(str(ROOT/'scripts/manufacturing/apply-reference-guide-extension.py'))
+ for guide in json.loads(guide_history['historical_source_guides_bytes']((DATA/'source-guides.json').read_bytes()))['guides']:
   for kid in guide['knowledgeIds']:
    row=knowledge[kid];row.setdefault('referenceGuideIds',[])
    if guide['id'] not in row['referenceGuideIds']:row['referenceGuideIds'].append(guide['id'])
@@ -222,5 +223,6 @@ def main():
  # Preserve later source-bound editorial revisions when rebuilding frozen drafts.
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-editorial-patches.py')],check=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-locale-revisions.py')],check=True)
+ subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-reference-guide-extension.py')],check=True)
  print(json.dumps({'lessons':len(all_lessons),'weeklyQuestions':len(all_questions),'weeks':progress['previewWeeksBySpecialty'],'translatedLessonPairs':progress['translatedLessonLocalePairs'],'translatedQuestionPairs':progress['translatedQuestionLocalePairs'],'completeDraftLocales':complete,'courseComplete':False}))
 if __name__=='__main__':main()

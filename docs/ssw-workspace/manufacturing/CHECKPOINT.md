@@ -1,3 +1,15 @@
+# Manufacturing SSW1 — batch18 three new reference guides integrated, 2026-10-28
+
+Six explicitly requested AI workers finalized and independently compared three Japanese reference guides and all36direct-Japanese target translations: tolerance-grade/dimension annotation, leakage/earthing/continuing fault hazards, and anodizing pretreatment/jig roles. All480translated prose-field pairs received scoped independent AI comparison; finalMY/NEtechnical andVI/TLclarity corrections are bound in the review receipts. The3guides are now integrated into the existing reader. Native/domain/full-source certification remainsfalse.
+
+Current total:262core lessons,8referenceguides,456weekly questions,30mocks/1200questions and18diagrams; all12targets cover all8guides (96pairs). The original5guides/60pairs and all core lessons/questions/mocks retain their exact content/source identities. The new compiler uses39approvedinputfiles/3independentreviewreceipts. Exact historical base views preserve batch12freezes and earlier source ledgers while rejecting arbitrary guide supersets. No knowledge-matrix rewrite or new source-image redistribution.
+
+Validation:17invalid-extension fixtures rejected;5actualisolatedfullrebuilds pass (46runtimefiles byte-identical on ordinary/repeat/reversed/equal-mtime runs; explicit7TL-recordrecovery retains identical content with key-order-onlydifference). ActualRNWeb ManufacturingCourse/Reader passes39new-guide flows across13UIlocales,0pageerrors,36targettoggles,currenthashcompletionpersist/reopen,priorcompletionpreservation,stalehashrejection and simulatedsavefailure recovery. Four screenshots inspected by worker; root also inspected readableVIphone andEN/JAlandscape views. Royal/safearea/storage/image adapters andQAfonts are used; no fullExpo/native-device certification. Broaddata/state,30mockforms,sourcefreezes,previous141objectindex andJLPT10/10UIlock pass. Details:`batch18/session-evidence.json`.
+
+CourseComplete/releaseReady remainfalse. Next:controlledmeasurement/geometricvisuals and source-bound integration of the2electricalpracticalprecisionproposals; continue full-source object coverage,language/domain review andphysicalnative-deviceverification. No background process implied.
+
+---
+
 # Manufacturing SSW1 — batch17 six-AI source, language and rebuild work, 2026-10-28
 
 Six explicitly requested AI workers reviewed source objects in the three specialties, target languages, electrical mocks and the real rebuild pipeline. Root integrated four source-bound target corrections: clearer EN/VI caliper stems, Bengali general-foreign-matter and measuring-face/workpiece explanations, and Vietnamese weekly004 terminology matching lesson003. Japanese, keys, question hashes and exam revisions are unchanged. Exact before/after records remain bound to independent AI comparison; native/domain approval is not claimed.

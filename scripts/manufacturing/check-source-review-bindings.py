@@ -1,6 +1,6 @@
 """Check exact source snapshots against independent AI review evidence."""
 from pathlib import Path
-import json,hashlib
+import json,hashlib,runpy
 ROOT=Path(__file__).resolve().parents[2];STAGE=ROOT/'docs/ssw-workspace/manufacturing/batch12'
 def read(p):return json.loads(p.read_text())
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -37,9 +37,12 @@ missing=set(objects)-matched;assert not missing,sorted(missing)
 guide_count=0
 guide_freeze=STAGE/'source-guides/source-freeze.json'
 if guide_freeze.exists():
- gf=read(guide_freeze);gp=ROOT/gf['path'];assert hashlib.sha256(gp.read_bytes()).hexdigest()==gf['sha256'],'Reference guide source freeze drift'
- for guide in read(gp)['guides']:
+ gf=read(guide_freeze);gp=ROOT/gf['path'];history=runpy.run_path(str(ROOT/'scripts/manufacturing/apply-reference-guide-extension.py'));guide_bytes=history['historical_source_guides_bytes'](gp.read_bytes());assert hashlib.sha256(guide_bytes).hexdigest()==gf['sha256'],'Reference guide source freeze drift'
+ for guide in json.loads(guide_bytes)['guides']:
   assert guide['sourceHash']==gf['objects'][guide['id']]==h({k:v for k,v in guide.items() if k!='sourceHash'}),guide['id']
   guide_count+=1
 result={'status':'PASS','sourceReferenceGuidesBound':guide_count,'fileDigestBoundReviews':len(pairs),'surfaceReviewedObjects':len(matched),'supersededReviewRecords':mismatches,'missingCurrentReviewBindings':[],'scope':'Exact frozen source identities and independently reviewed snapshots, not a native/domain/full-knowledge certificate.'}
-(STAGE/'source-review-bindings-qa.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps(result))
+report_payload=(json.dumps(result,ensure_ascii=False,indent=2)+'\n').encode();report_path=STAGE/'source-review-bindings-qa.json'
+if report_path.exists():assert report_path.read_bytes()==report_payload,'Historical source-review binding report drift'
+else:report_path.write_bytes(report_payload)
+print(json.dumps(result))

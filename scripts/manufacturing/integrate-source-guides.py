@@ -1,11 +1,14 @@
 """Compile exact-source AI reference translations; retain original course identities."""
 from pathlib import Path
-import argparse,hashlib,json,re
+import argparse,hashlib,json,re,runpy
 R=Path(__file__).resolve().parents[2];P=R/'docs/ssw-workspace/manufacturing/batch12/source-guides';D=R/'src/data/manufacturing';parser=argparse.ArgumentParser();parser.add_argument('--require-complete',action='store_true');args=parser.parse_args()
 def read(p):return json.loads(p.read_text())
 def write(p,d):p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
 def sha(d):return hashlib.sha256(json.dumps(d,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
-source=read(D/'source-guides.json');freeze=read(P/'source-freeze.json');assert hashlib.sha256((D/'source-guides.json').read_bytes()).hexdigest()==freeze['sha256'];guides={g['id']:g for g in source['guides']};assert len(guides)==5
+history=runpy.run_path(str(R/'scripts/manufacturing/apply-reference-guide-extension.py'))
+current_source=(D/'source-guides.json').read_bytes();base_source=history['historical_source_guides_bytes'](current_source)
+source=json.loads(base_source);freeze=read(P/'source-freeze.json');assert hashlib.sha256(base_source).hexdigest()==freeze['sha256'];guides={g['id']:g for g in source['guides']};assert len(guides)==5
+history['historical_source_guide_translations_bytes']((D/'source-guide-translations.json').read_bytes())
 for id,g in guides.items():assert sha({k:v for k,v in g.items() if k!='sourceHash'})==g['sourceHash']==freeze['objects'][id]
 targets=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];locales={};labels={'ja':source['uiLabelJa']};counts={};fields=0;numeric_equivalents=[]
 for locale in targets:
@@ -29,6 +32,12 @@ for locale in targets:
   fields+=len(pairs)
  locales[locale]=entries;counts[locale]=len(entries)
 if args.require_complete:assert all(counts[l]==5 for l in targets),counts
-write(D/'source-guide-translations.json',{'sourceLocale':'ja','status':'source_bound_ai_drafts_not_native_or_domain_certified','nativeReviewed':False,'domainReviewed':False,'uiLabels':labels,'locales':locales})
+target_payload=history['encoded']({'sourceLocale':'ja','status':'source_bound_ai_drafts_not_native_or_domain_certified','nativeReviewed':False,'domainReviewed':False,'uiLabels':labels,'locales':locales})
+assert history['historical_source_guide_translations_bytes'](target_payload)==target_payload,'Historical reference-target assembly drift'
+if current_source!=base_source:target_payload=history['extension_outputs']()[history['TARGETS']]
+if (D/'source-guide-translations.json').read_bytes()!=target_payload:(D/'source-guide-translations.json').write_bytes(target_payload)
 report={'status':'PASS','guides':len(guides),'translatedGuidePairs':sum(counts.values()),'translatedTextFields':fields,'coverage':counts,'completeDraftLocales':[l for l in targets if counts[l]==5],'numericEquivalentDates':numeric_equivalents,'scope':'Five AI reference supplements close eight specifically audited TOC gaps; not full-source object atomization or native/domain certification. Original262lessons/456weekly/30mocks unchanged.','nativeReviewed':False,'domainReviewed':False}
-write(P/'integration-qa.json',report);print(json.dumps(report))
+report_payload=history['encoded'](report);report_path=P/'integration-qa.json'
+if report_path.exists():assert report_path.read_bytes()==report_payload,'Historical five-guide integration report drift'
+else:report_path.write_bytes(report_payload)
+print(json.dumps(report))

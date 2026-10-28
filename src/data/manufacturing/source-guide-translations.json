@@ -254,6 +254,141 @@
           "Do not judge an unidentified material or liquid to be safe or to meet the specified material requirement, and then use it, based on specific gravity alone."
         ],
         "summary": "In the material, water at 4°C is the reference with specific gravity 1. Preserve the sources of the six example values; they do not replace checking actual material specifications."
+      },
+      "mfg1-mechanical-source-guide-tolerance-annotation": {
+        "sourceHash": "b71ddb8e6c81669c806e62fdbabc82f59b15e86b62011a9a18f5dcd2e90103a2",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "Read tolerance grades and dimension annotation separately",
+        "objective": "Distinguish the roles of letters and grade numbers in a tolerance class, and check the basic reading of dimension lines, extension lines and values.",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "The grade number alone does not determine limit sizes",
+            "text": "The letter in a tolerance class indicates the position of the tolerance zone: uppercase letters are used for holes and lowercase letters for shafts. The following number is the size-tolerance grade. When compared under the same nominal-size conditions, a smaller grade number means a narrower tolerance band. This number is not a dimension value directly stating the upper or lower limit. Check actual limit sizes in the applicable tolerance table, and gather information about both the mating hole and shaft when assessing the fit."
+          },
+          {
+            "id": "section-2",
+            "title": "Check line direction and the units of values",
+            "text": "In the basic annotation examples in the material, a dimension line for a length follows the direction being measured, and its extension lines are perpendicular to it. Values are oriented to be read from below or from the right and are generally placed above, near the centre of the dimension line. Ordinary lengths may be expressed in millimetres with mm omitted; angles use degrees and may also use angular minutes or seconds. On an actual drawing, first check the specified units and annotation convention."
+          }
+        ],
+        "terms": [
+          {
+            "ja": "サイズ公差等級",
+            "reading": "サイズこうさとうきゅう",
+            "meaning": "A grade indicating stages of tolerance width under the same nominal-size conditions."
+          },
+          {
+            "ja": "寸法補助線",
+            "reading": "すんぽうほじょせん",
+            "meaning": "An auxiliary line showing the positions between which a dimension is specified."
+          }
+        ],
+        "activity": "4 minutes: Read the text and write the roles of the tolerance-class letter and number separately.\n5 minutes: Draw a rectangle, dimension lines and extension lines on paper, and check the reading direction of the values.\n4 minutes: Separate mm for length from degrees, minutes and seconds for angles; list the references needed to find actual limit sizes.\n2 minutes: Summarize what to ask when drawing instructions are unclear.",
+        "safety": [
+          "Study on paper. Do not proceed with machining or acceptance decisions using guessed values before checking the tolerance table and drawing instructions."
+        ],
+        "summary": "The grade number indicates a stage of tolerance width, not the limit sizes themselves. Read line roles, value orientation, units and drawing instructions together."
+      },
+      "mfg1-electrical-source-guide-leakage-earth": {
+        "sourceHash": "4c2826026a00fa02ec94ba1c39b463b1b2f4d084f016013a6b236cc34f8b2eaa",
+        "title": "Distinguish leakage causes from hazards remaining after earthing",
+        "objective": "Explain how damaged insulation can cause leakage and why earthing does not mean the fault has been repaired.",
+        "paragraphs": [
+          {
+            "id": "fault-path",
+            "title": "Leaving the intended current path",
+            "text": "Insulation on wires and equipment helps prevent current from flowing outside its intended path. Deteriorated or damaged insulation can allow current to reach an equipment metal case. This is one mechanism of leakage. If leakage is suspected, do not check by touching; follow workplace procedures to stop use and report it."
+          },
+          {
+            "id": "protective-earth",
+            "title": "Earthing does not repair a fault",
+            "text": "In this textbook example, an earth conductor connects equipment metal parts to an earth electrode, providing a path for fault leakage current toward earth. However, earthing does not repair damaged insulation. Do not conclude that leaking equipment may remain in use."
+          },
+          {
+            "id": "complementary-protection",
+            "title": "Check the required protections together",
+            "text": "Earthing and a residual-current protective device serve different roles. Do not assume a protective device permits removal of earthing, or that earthing eliminates shock risk. Check required protections and operating conditions through equipment-specific approved procedures. This material alone does not authorize earthing work or protective-device changes."
+          }
+        ],
+        "terms": [
+          {
+            "ja": "漏電",
+            "reading": "ろうでん",
+            "meaning": "Current flowing outside its intended path because of insulation failure or similar causes."
+          },
+          {
+            "ja": "絶縁",
+            "reading": "ぜつえん",
+            "meaning": "Preventing current from flowing into unintended parts."
+          },
+          {
+            "ja": "接地",
+            "reading": "せっち",
+            "meaning": "An electrical connection to earth for equipment protection and other purposes. Actual methods require equipment specifications and qualified responsibility."
+          }
+        ],
+        "activity": "On paper, distinguish insulation failure, earthing and a residual-current protective device. For the judgment “The equipment is earthed, so continue using it despite suspected leakage,” explain missing checks concerning the continuing fault and required reporting. Do not verify using actual equipment.",
+        "safety": [
+          "Do not touch suspected equipment to test for leakage. Follow workplace procedures for stopping use, withdrawing and reporting.",
+          "This material alone does not authorize removing earth conductors, earthing work, protective-device changes or tests."
+        ],
+        "summary": "Earthing and residual-current protection do not unconditionally make faults harmless. Distinguish leakage causes, required protection and abnormal-condition responses.",
+        "translatedDirectlyFrom": "ja",
+        "status": "ai_translated_draft",
+        "nativeReviewed": false,
+        "domainReviewed": false
+      },
+      "mfg1-surface-source-guide-pretreatment-jig": {
+        "sourceHash": "5f490df8b98d953aff2c063302d497cf4212d2028e55b858ecc89832163ab143",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "Distinguish pretreatment and jig roles",
+        "objective": "Distinguish pretreatment purposes, jig protection and electrical contacts.",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "Pretreatment targets",
+            "text": "Degreasing mainly removes oil. Etching acts on surface oxides and other surface material; desmutting removes residues from alloy constituents that may remain after etching. Do not treat these names as identical washing steps; identify their different targets."
+          },
+          {
+            "id": "section-2",
+            "title": "Limits of simplified diagrams",
+            "text": "Textbook process diagrams may omit rinsing or branches. Do not use them as complete operating procedures; compare them with the actual line’s approved procedures. Do not choose chemicals or process conditions from the textbook."
+          },
+          {
+            "id": "section-3",
+            "title": "Jig materials and contacts",
+            "text": "Aluminium and titanium jigs are examples used in anodizing. Aluminium jigs are consumed during treatment, so titanium may be selected for repeated use, but material names alone cannot guarantee service life or suitability. Distinguish protective coatings from current-carrying contacts and report damage to the responsible person."
+          }
+        ],
+        "terms": [
+          {
+            "ja": "脱脂",
+            "reading": "だっし",
+            "meaning": "Mainly removing oil from a surface."
+          },
+          {
+            "ja": "デスマット",
+            "reading": "ですまっと",
+            "meaning": "Removing residues originating from alloy constituents after etching or similar treatment."
+          },
+          {
+            "ja": "接点",
+            "reading": "せってん",
+            "meaning": "A contact area through which electric current passes."
+          }
+        ],
+        "activity": "Write the different targets of the three pretreatments, then explain in words the separate roles of jig protection and electrical contacts.",
+        "safety": [
+          "Do not change chemicals, conditions or jigs on your own; follow approved procedures and the limits of your training."
+        ],
+        "summary": "Distinguish pretreatment targets. A simplified diagram is not an operating procedure. Do not confuse jig protection with electrical contacts."
       }
     },
     "vi": {
@@ -491,6 +626,141 @@
           "Không chỉ dựa vào tỷ trọng để kết luận vật liệu hoặc chất lỏng chưa rõ loại là an toàn hay đúng vật liệu quy định rồi đem sử dụng."
         ],
         "summary": "Trong tài liệu, nước ở 4°C là mốc với tỷ trọng 1. Giữ nguồn của sáu giá trị ví dụ; chúng không thay thế việc kiểm tra quy cách vật liệu thực tế."
+      },
+      "mfg1-mechanical-source-guide-tolerance-annotation": {
+        "sourceHash": "b71ddb8e6c81669c806e62fdbabc82f59b15e86b62011a9a18f5dcd2e90103a2",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "Đọc riêng cấp dung sai và cách ghi kích thước",
+        "objective": "Phân biệt vai trò của chữ cái và số cấp trong ký hiệu dung sai; kiểm tra cách đọc cơ bản của đường kích thước, đường gióng và trị số.",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "Chỉ số cấp không quyết định kích thước giới hạn",
+            "text": "Chữ cái trong ký hiệu dung sai cho biết vị trí miền dung sai: chữ hoa dùng cho lỗ, chữ thường dùng cho trục. Số theo sau là cấp dung sai kích thước. Khi so sánh trong cùng điều kiện kích thước danh nghĩa, số cấp càng nhỏ thì bề rộng dung sai càng hẹp. Số này không phải là trị số kích thước trực tiếp chỉ giới hạn trên hoặc dưới. Cần tra kích thước giới hạn thực tế trong bảng dung sai áp dụng; khi đánh giá lắp ghép, phải có thông tin của cả lỗ và trục ghép với nhau."
+          },
+          {
+            "id": "section-2",
+            "title": "Kiểm tra hướng đường và đơn vị của trị số",
+            "text": "Trong các ví dụ ghi kích thước cơ bản của tài liệu, đường kích thước chiều dài nằm theo hướng cần đo, còn đường gióng vuông góc với đường kích thước đó. Trị số được đặt để đọc từ phía dưới hoặc phía phải, thông thường ở phía trên và gần giữa đường kích thước. Chiều dài thường biểu thị bằng milimét và có thể lược ký hiệu mm; góc dùng độ và có thể dùng cả phút góc hoặc giây góc. Với bản vẽ thực tế, trước hết cần kiểm tra đơn vị và quy ước ghi được chỉ định."
+          }
+        ],
+        "terms": [
+          {
+            "ja": "サイズ公差等級",
+            "reading": "サイズこうさとうきゅう",
+            "meaning": "Cấp biểu thị mức bề rộng dung sai trong cùng điều kiện kích thước danh nghĩa."
+          },
+          {
+            "ja": "寸法補助線",
+            "reading": "すんぽうほじょせん",
+            "meaning": "Đường phụ giúp xác định hai vị trí mà kích thước được chỉ giữa chúng."
+          }
+        ],
+        "activity": "4 phút: Đọc bài và viết riêng vai trò của chữ cái và số trong ký hiệu dung sai.\n5 phút: Vẽ hình chữ nhật, đường kích thước và đường gióng trên giấy; kiểm tra hướng đọc trị số.\n4 phút: Tách mm của chiều dài khỏi độ, phút góc và giây góc; liệt kê tài liệu cần tra để biết kích thước giới hạn thực tế.\n2 phút: Ghi lại nội dung cần hỏi khi chỉ dẫn trên bản vẽ chưa rõ.",
+        "safety": [
+          "Học trên giấy. Không gia công hoặc quyết định đạt hay không đạt bằng trị số phỏng đoán khi chưa kiểm tra bảng dung sai và chỉ dẫn trên bản vẽ."
+        ],
+        "summary": "Số cấp biểu thị mức bề rộng dung sai, không phải chính kích thước giới hạn. Cần đọc kết hợp vai trò của đường, hướng trị số, đơn vị và chỉ dẫn trên bản vẽ."
+      },
+      "mfg1-electrical-source-guide-leakage-earth": {
+        "sourceHash": "4c2826026a00fa02ec94ba1c39b463b1b2f4d084f016013a6b236cc34f8b2eaa",
+        "title": "Phân biệt nguyên nhân rò điện và nguy hiểm còn lại sau khi nối đất",
+        "objective": "Giải thích vì sao cách điện hư hỏng có thể gây rò điện và vì sao nối đất không có nghĩa là đã sửa xong sự cố.",
+        "paragraphs": [
+          {
+            "id": "fault-path",
+            "title": "Dòng điện đi ngoài đường dẫn dự kiến",
+            "text": "Vật liệu cách điện của dây dẫn và thiết bị giúp ngăn dòng điện đi ngoài đường dẫn dự kiến. Khi vật liệu này xuống cấp hoặc bị hư hỏng, dòng điện có thể đi tới vỏ kim loại của thiết bị. Đây là một cơ chế gây rò điện. Khi nghi có rò điện, không chạm tay để kiểm tra; thực hiện ngừng sử dụng và báo cáo theo quy trình nơi làm việc."
+          },
+          {
+            "id": "protective-earth",
+            "title": "Nối đất không phải sửa chữa sự cố",
+            "text": "Trong ví dụ của giáo trình, dây nối đất nối phần kim loại của thiết bị với điện cực nối đất, tạo đường để dòng điện rò khi có sự cố đi về phía đất. Tuy nhiên, nối đất không sửa được vật liệu cách điện đã hỏng. Không kết luận rằng có thể tiếp tục sử dụng thiết bị đang rò điện."
+          },
+          {
+            "id": "complementary-protection",
+            "title": "Kiểm tra đồng thời các biện pháp bảo vệ cần thiết",
+            "text": "Nối đất và thiết bị ngắt chống rò điện có vai trò khác nhau. Không cho rằng có thiết bị ngắt chống rò thì được tháo nối đất, hoặc đã nối đất thì không còn nguy cơ điện giật. Kiểm tra biện pháp bảo vệ và điều kiện sử dụng theo quy trình đã được phê duyệt cho từng thiết bị. Không chỉ dựa vào tài liệu này để thi công nối đất hay thay đổi thiết bị bảo vệ."
+          }
+        ],
+        "terms": [
+          {
+            "ja": "漏電",
+            "reading": "ろうでん",
+            "meaning": "Dòng điện đi ngoài đường dẫn dự kiến do cách điện kém hoặc nguyên nhân tương tự."
+          },
+          {
+            "ja": "絶縁",
+            "reading": "ぜつえん",
+            "meaning": "Ngăn dòng điện đi tới những phần ngoài dự kiến."
+          },
+          {
+            "ja": "接地",
+            "reading": "せっち",
+            "meaning": "Kết nối điện với đất để bảo vệ thiết bị và các mục đích khác. Cách thực hiện phải theo yêu cầu của thiết bị và phạm vi người có đủ điều kiện phụ trách."
+          }
+        ],
+        "activity": "Trên giấy, phân biệt ba yếu tố: cách điện hư hỏng, nối đất và thiết bị ngắt chống rò. Với nhận định “Đã nối đất nên cứ dùng thiết bị nghi rò điện”, viết những kiểm tra còn thiếu về sự cố tiếp diễn và việc báo cáo cần thiết. Không dùng thiết bị thật để kiểm chứng.",
+        "safety": [
+          "Không chạm thiết bị đáng ngờ để kiểm tra rò điện. Ngừng sử dụng, tránh xa và báo cáo theo quy trình nơi làm việc.",
+          "Không chỉ dựa vào tài liệu này để tháo dây nối đất, thi công nối đất, thay đổi hoặc thử thiết bị bảo vệ."
+        ],
+        "summary": "Nối đất và thiết bị ngắt chống rò không làm mọi sự cố tự động trở nên vô hại. Phân biệt nguyên nhân rò điện, biện pháp bảo vệ cần thiết và cách xử lý khi có bất thường.",
+        "translatedDirectlyFrom": "ja",
+        "status": "ai_translated_draft",
+        "nativeReviewed": false,
+        "domainReviewed": false
+      },
+      "mfg1-surface-source-guide-pretreatment-jig": {
+        "sourceHash": "5f490df8b98d953aff2c063302d497cf4212d2028e55b858ecc89832163ab143",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "Phân biệt vai trò tiền xử lý và đồ gá",
+        "objective": "Phân biệt mục đích tiền xử lý, phần bảo vệ và tiếp điểm của đồ gá.",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "Đối tượng tiền xử lý",
+            "text": "Tẩy dầu chủ yếu loại bỏ dầu mỡ. Bước ăn mòn tác động lên oxit và các thành phần trên bề mặt; tẩy cặn hợp kim loại bỏ phần dư do thành phần hợp kim có thể để lại sau bước ăn mòn. Không coi các tên này đều là cùng một bước rửa; cần phân biệt đối tượng xử lý."
+          },
+          {
+            "id": "section-2",
+            "title": "Giới hạn của sơ đồ giản lược",
+            "text": "Sơ đồ trong giáo trình có thể lược bỏ bước rửa nước hoặc nhánh quy trình. Không dùng sơ đồ làm hướng dẫn thao tác đầy đủ; phải đối chiếu với quy trình được phê duyệt của dây chuyền thực tế. Không tự chọn hóa chất hoặc điều kiện xử lý từ giáo trình."
+          },
+          {
+            "id": "section-3",
+            "title": "Vật liệu đồ gá và tiếp điểm",
+            "text": "Đồ gá bằng nhôm hoặc titan là các ví dụ dùng trong anod hóa. Đồ gá nhôm bị tiêu hao trong xử lý, nên có trường hợp chọn titan để dùng nhiều lần; tuy vậy, tên vật liệu không bảo đảm tuổi thọ hoặc độ phù hợp. Phân biệt lớp phủ bảo vệ với tiếp điểm dẫn điện và báo hư hỏng cho người phụ trách."
+          }
+        ],
+        "terms": [
+          {
+            "ja": "脱脂",
+            "reading": "だっし",
+            "meaning": "Chủ yếu loại bỏ dầu mỡ trên bề mặt."
+          },
+          {
+            "ja": "デスマット",
+            "reading": "ですまっと",
+            "meaning": "Loại bỏ cặn có nguồn gốc từ thành phần hợp kim sau ăn mòn hoặc bước tương tự."
+          },
+          {
+            "ja": "接点",
+            "reading": "せってん",
+            "meaning": "Phần tiếp xúc để dòng điện đi qua."
+          }
+        ],
+        "activity": "Ghi riêng đối tượng của ba bước tiền xử lý, rồi giải thích bằng lời vai trò của phần bảo vệ và tiếp điểm dẫn điện của đồ gá.",
+        "safety": [
+          "Không tự ý đổi hóa chất, điều kiện hoặc đồ gá; tuân thủ quy trình được phê duyệt và phạm vi đã được đào tạo."
+        ],
+        "summary": "Phân biệt đối tượng tiền xử lý. Sơ đồ giản lược không phải quy trình thao tác. Không nhầm phần bảo vệ đồ gá với tiếp điểm."
       }
     },
     "id": {
@@ -733,6 +1003,141 @@
           "Jangan menggunakan bahan atau cairan yang jenisnya tidak diketahui dengan menganggapnya aman atau sebagai bahan yang ditentukan hanya berdasarkan berat jenis."
         ],
         "summary": "Dalam materi, acuan berat jenis adalah air 4°C dengan nilai 1. Pertahankan sumber keenam nilai contoh; jangan menjadikannya pengganti pemeriksaan spesifikasi bahan sebenarnya."
+      },
+      "mfg1-mechanical-source-guide-tolerance-annotation": {
+        "sourceHash": "b71ddb8e6c81669c806e62fdbabc82f59b15e86b62011a9a18f5dcd2e90103a2",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "Baca tingkat toleransi dan penulisan dimensi secara terpisah",
+        "objective": "Bedakan peran huruf dan angka tingkat dalam kelas toleransi, lalu periksa cara dasar membaca garis ukuran, garis bantu ukuran, dan nilai.",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "Angka tingkat saja tidak menentukan ukuran batas",
+            "text": "Huruf dalam kelas toleransi menunjukkan posisi daerah toleransi: huruf besar dipakai untuk lubang dan huruf kecil untuk poros. Angka sesudahnya adalah tingkat toleransi ukuran. Jika dibandingkan pada kondisi ukuran nominal yang sama, angka tingkat yang lebih kecil berarti rentang toleransi yang lebih sempit. Angka ini bukan nilai dimensi yang langsung menyatakan batas atas atau bawah. Periksa ukuran batas yang sebenarnya pada tabel toleransi yang berlaku, dan lengkapi informasi lubang serta poros pasangannya saat menilai suaian."
+          },
+          {
+            "id": "section-2",
+            "title": "Periksa arah garis dan satuan nilai",
+            "text": "Dalam contoh penulisan dasar pada materi, garis ukuran panjang mengikuti arah yang diukur, sedangkan garis bantu ukurannya tegak lurus terhadap garis ukuran tersebut. Nilai diarahkan agar terbaca dari bawah atau kanan dan umumnya ditempatkan di atas, dekat bagian tengah garis ukuran. Panjang biasa dapat dinyatakan dalam milimeter tanpa menuliskan mm; sudut memakai derajat serta dapat memakai menit atau detik sudut. Pada gambar sebenarnya, utamakan pemeriksaan satuan dan cara penulisan yang ditentukan."
+          }
+        ],
+        "terms": [
+          {
+            "ja": "サイズ公差等級",
+            "reading": "サイズこうさとうきゅう",
+            "meaning": "Tingkat yang menunjukkan tahapan lebar toleransi pada kondisi ukuran nominal yang sama."
+          },
+          {
+            "ja": "寸法補助線",
+            "reading": "すんぽうほじょせん",
+            "meaning": "Garis bantu yang menunjukkan posisi awal dan akhir dimensi yang dinyatakan."
+          }
+        ],
+        "activity": "4 menit: Baca teks dan tuliskan secara terpisah peran huruf serta angka dalam kelas toleransi.\n5 menit: Gambar persegi panjang, garis ukuran, dan garis bantu ukuran di kertas; periksa arah pembacaan nilainya.\n4 menit: Pisahkan mm untuk panjang dari derajat, menit, dan detik untuk sudut; daftarkan acuan untuk mencari ukuran batas sebenarnya.\n2 menit: Rangkum hal yang perlu ditanyakan ketika petunjuk gambar tidak jelas.",
+        "safety": [
+          "Belajar di atas kertas. Jangan melanjutkan pemesinan atau keputusan lulus/tidak lulus menggunakan nilai perkiraan sebelum memeriksa tabel toleransi dan petunjuk gambar."
+        ],
+        "summary": "Angka tingkat menunjukkan tahapan lebar toleransi, bukan ukuran batas itu sendiri. Baca bersama peran garis, arah nilai, satuan, dan petunjuk gambar."
+      },
+      "mfg1-electrical-source-guide-leakage-earth": {
+        "sourceHash": "4c2826026a00fa02ec94ba1c39b463b1b2f4d084f016013a6b236cc34f8b2eaa",
+        "title": "Bedakan penyebab kebocoran arus dan bahaya yang tersisa setelah pembumian",
+        "objective": "Jelaskan mengapa kerusakan isolasi dapat menyebabkan kebocoran arus dan mengapa pembumian tidak berarti gangguan telah diperbaiki.",
+        "paragraphs": [
+          {
+            "id": "fault-path",
+            "title": "Keluar dari jalur arus yang dimaksud",
+            "text": "Isolasi kabel dan peralatan membantu mencegah arus mengalir di luar jalur yang dimaksud. Isolasi yang menua atau rusak dapat menyebabkan arus mencapai selubung logam peralatan. Ini salah satu mekanisme kebocoran arus. Jika dicurigai terjadi kebocoran, jangan memeriksa dengan menyentuh; hentikan penggunaan dan laporkan sesuai prosedur tempat kerja."
+          },
+          {
+            "id": "protective-earth",
+            "title": "Pembumian bukan perbaikan gangguan",
+            "text": "Dalam contoh buku ini, penghantar bumi menghubungkan bagian logam peralatan dengan elektrode bumi sehingga tersedia jalur arus bocor saat gangguan menuju bumi. Namun, pembumian tidak memperbaiki isolasi yang rusak. Jangan menyimpulkan bahwa peralatan yang bocor boleh terus digunakan."
+          },
+          {
+            "id": "complementary-protection",
+            "title": "Periksa perlindungan yang diperlukan sebagai satu kesatuan",
+            "text": "Pembumian dan alat pemutus arus bocor memiliki peran berbeda. Jangan menganggap adanya pemutus membolehkan pelepasan pembumian, atau pembumian menghilangkan risiko sengatan. Periksa perlindungan dan kondisi penggunaan melalui prosedur yang disetujui untuk masing-masing peralatan. Materi ini saja tidak menjadi dasar pekerjaan pembumian atau perubahan alat pelindung."
+          }
+        ],
+        "terms": [
+          {
+            "ja": "漏電",
+            "reading": "ろうでん",
+            "meaning": "Arus mengalir di luar jalur yang dimaksud akibat kegagalan isolasi atau penyebab serupa."
+          },
+          {
+            "ja": "絶縁",
+            "reading": "ぜつえん",
+            "meaning": "Mencegah arus mengalir ke bagian yang tidak dimaksud."
+          },
+          {
+            "ja": "接地",
+            "reading": "せっち",
+            "meaning": "Sambungan listrik ke bumi untuk perlindungan peralatan dan tujuan lain. Metode pelaksanaan mengikuti ketentuan peralatan dan tanggung jawab personel berkualifikasi."
+          }
+        ],
+        "activity": "Di atas kertas, bedakan kerusakan isolasi, pembumian dan pemutus arus bocor. Untuk keputusan “Sudah dibumikan, jadi peralatan yang dicurigai bocor tetap digunakan”, tuliskan pemeriksaan yang kurang terkait gangguan yang berlanjut dan pelaporan. Jangan membuktikan dengan peralatan nyata.",
+        "safety": [
+          "Jangan menyentuh peralatan yang dicurigai untuk menguji kebocoran. Ikuti prosedur penghentian penggunaan, menjauh dan pelaporan.",
+          "Jangan hanya berdasarkan materi ini melepas penghantar bumi, melakukan pekerjaan pembumian, mengubah atau menguji alat pelindung."
+        ],
+        "summary": "Pembumian dan pemutus arus bocor tidak tanpa syarat membuat gangguan tidak berbahaya. Bedakan penyebab, perlindungan yang diperlukan dan respons terhadap kelainan.",
+        "translatedDirectlyFrom": "ja",
+        "status": "ai_translated_draft",
+        "nativeReviewed": false,
+        "domainReviewed": false
+      },
+      "mfg1-surface-source-guide-pretreatment-jig": {
+        "sourceHash": "5f490df8b98d953aff2c063302d497cf4212d2028e55b858ecc89832163ab143",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "Bedakan fungsi praperlakuan dan jig",
+        "objective": "Bedakan tujuan praperlakuan, bagian pelindung jig dan kontak listrik.",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "Sasaran praperlakuan",
+            "text": "Penghilangan lemak terutama membuang minyak. Etsa bekerja pada oksida dan material permukaan lainnya; desmutting membuang residu unsur paduan yang dapat tertinggal setelah etsa. Jangan menganggap semuanya sebagai pencucian yang sama; periksa perbedaan sasarannya."
+          },
+          {
+            "id": "section-2",
+            "title": "Batas diagram sederhana",
+            "text": "Diagram proses dalam buku dapat menghilangkan pembilasan atau percabangan. Jangan menggunakannya sebagai prosedur kerja lengkap; cocokkan dengan prosedur resmi lini sebenarnya. Jangan menentukan bahan kimia atau kondisi proses dari buku."
+          },
+          {
+            "id": "section-3",
+            "title": "Bahan jig dan kontak",
+            "text": "Jig aluminium dan titanium merupakan contoh untuk anodisasi. Jig aluminium terkikis selama perlakuan sehingga titanium dapat dipilih untuk pemakaian berulang, tetapi nama bahan saja tidak menjamin umur pakai atau kesesuaian. Bedakan lapisan pelindung dari kontak penghantar arus dan laporkan kerusakan kepada penanggung jawab."
+          }
+        ],
+        "terms": [
+          {
+            "ja": "脱脂",
+            "reading": "だっし",
+            "meaning": "Terutama membuang minyak pada permukaan."
+          },
+          {
+            "ja": "デスマット",
+            "reading": "ですまっと",
+            "meaning": "Membuang residu unsur paduan setelah etsa atau perlakuan sejenis."
+          },
+          {
+            "ja": "接点",
+            "reading": "せってん",
+            "meaning": "Bagian yang bersentuhan untuk menghantarkan arus listrik."
+          }
+        ],
+        "activity": "Tuliskan sasaran tiga praperlakuan secara terpisah, lalu jelaskan dengan kata-kata fungsi bagian pelindung jig dan kontak listrik masing-masing.",
+        "safety": [
+          "Jangan mengubah bahan kimia, kondisi atau jig sendiri; ikuti prosedur resmi dan batas pelatihan."
+        ],
+        "summary": "Bedakan sasaran praperlakuan. Diagram sederhana bukan prosedur kerja. Jangan menyamakan pelindung jig dengan kontak listrik."
       }
     },
     "zh-CN": {
@@ -975,6 +1380,141 @@
           "不要仅凭比重这一个项目，就把材质不明的材料或液体判断为安全或指定材料并使用。"
         ],
         "summary": "资料中的比重基准是4°C的水，比重为1。处理六个示例值时保留来源，不能代替实际材料的规格确认。"
+      },
+      "mfg1-mechanical-source-guide-tolerance-annotation": {
+        "sourceHash": "b71ddb8e6c81669c806e62fdbabc82f59b15e86b62011a9a18f5dcd2e90103a2",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "分清公差等级与尺寸标注方式",
+        "objective": "区分公差代号中字母和等级数字的作用，确认尺寸线、尺寸界线及数值的基本读法。",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "仅凭等级数字不能确定极限尺寸",
+            "text": "公差代号中的字母表示公差带的位置，大写字母用于孔，小写字母用于轴。其后的数字是尺寸公差等级。在相同公称尺寸条件下比较，等级数字越小，公差带宽度越窄。这个数字不是直接表示上限或下限的尺寸数值。实际极限尺寸应查适用的公差表；判断配合时，还应备齐相互配合的孔和轴的信息。"
+          },
+          {
+            "id": "section-2",
+            "title": "确认线的方向和数值单位",
+            "text": "在资料的基本标注示例中，长度尺寸线沿所测方向绘制，尺寸界线与该尺寸线垂直。数值的方向便于从下方或右方读取，原则上写在尺寸线上方、靠近中间的位置。通常长度以毫米表示时可能省略mm；角度除度以外，也可使用角分或角秒。阅读实际图纸时，应优先确认指定的单位和标注方式。"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "サイズ公差等級",
+            "reading": "サイズこうさとうきゅう",
+            "meaning": "在相同公称尺寸条件下，表示公差宽度级别的等级。"
+          },
+          {
+            "ja": "寸法補助線",
+            "reading": "すんぽうほじょせん",
+            "meaning": "用来表明尺寸所指起止位置的辅助线。"
+          }
+        ],
+        "activity": "4分钟：阅读正文，分别写出公差代号中字母和数字的作用。\n5分钟：在纸上画长方形、尺寸线和尺寸界线，确认数值的读取方向。\n4分钟：将长度的mm与角度的度、角分、角秒分栏整理，列出查询实际极限尺寸所需的资料。\n2分钟：整理图纸指示不明确时需要询问的内容。",
+        "safety": [
+          "在纸上学习。未确认公差表及图纸指定内容前，不得用猜测数值进行加工或作出合格判定。"
+        ],
+        "summary": "等级数字表示公差宽度的级别，并非极限尺寸本身。应结合线的作用、数值方向、单位和图纸指示读取。"
+      },
+      "mfg1-electrical-source-guide-leakage-earth": {
+        "sourceHash": "4c2826026a00fa02ec94ba1c39b463b1b2f4d084f016013a6b236cc34f8b2eaa",
+        "title": "区分漏电原因与接地后仍存在的危险",
+        "objective": "说明绝缘损坏为何可能引起漏电，以及接地为何不等于故障已修复。",
+        "paragraphs": [
+          {
+            "id": "fault-path",
+            "title": "偏离原定电流路径",
+            "text": "电线和设备的绝缘材料用于防止电流流向原定路径以外的地方。绝缘材料老化或损坏时，电流可能流向设备金属外壳。这是漏电的一种发生机制。怀疑漏电时，不要用手触摸确认，应按工作场所规程停止使用并报告。"
+          },
+          {
+            "id": "protective-earth",
+            "title": "接地不是修复故障",
+            "text": "本教材的例子用接地线连接设备金属部分与接地极，为故障时的漏电流提供流向大地的路径。但是，接地并不能修好损坏的绝缘材料。不能认定漏电设备可以继续使用。"
+          },
+          {
+            "id": "complementary-protection",
+            "title": "一并确认所需保护",
+            "text": "接地与漏电保护断路器的作用不同。不能认为有漏电保护断路器就可以拆除接地，或接地后就没有触电危险。应按各设备批准的规程确认所需保护及使用条件。不得仅凭本教材进行接地施工或改动保护装置。"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "漏電",
+            "reading": "ろうでん",
+            "meaning": "因绝缘不良等原因，电流流向原定电路以外。"
+          },
+          {
+            "ja": "絶縁",
+            "reading": "ぜつえん",
+            "meaning": "防止电流流向非预期部分。"
+          },
+          {
+            "ja": "接地",
+            "reading": "せっち",
+            "meaning": "为设备保护等目的与大地建立电气连接。具体方法须遵守设备要求及负责人员的资质范围。"
+          }
+        ],
+        "activity": "在纸面案例中区分绝缘不良、接地与漏电保护断路器。针对“已经接地，所以继续使用疑似漏电设备”的判断，从故障仍持续和必要报告的角度写出缺少的确认。不要用实际设备验证。",
+        "safety": [
+          "不要触摸可疑设备来确认漏电。停止使用、避开危险并报告须按工作场所规程执行。",
+          "不得仅凭本教材拆除接地线、进行接地施工、改动或测试保护装置。"
+        ],
+        "summary": "接地和漏电保护断路器并不会无条件地消除故障危险。应区分漏电原因、必要保护和异常时的应对。",
+        "translatedDirectlyFrom": "ja",
+        "status": "ai_translated_draft",
+        "nativeReviewed": false,
+        "domainReviewed": false
+      },
+      "mfg1-surface-source-guide-pretreatment-jig": {
+        "sourceHash": "5f490df8b98d953aff2c063302d497cf4212d2028e55b858ecc89832163ab143",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "区分前处理与夹具的作用",
+        "objective": "区分前处理的目的、夹具保护部位和导电接点。",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "前处理的对象",
+            "text": "脱脂主要去除油污。蚀刻作用于表面氧化物等；除灰去除蚀刻后可能残留的合金成分残渣。不要把这些名称都当作相同的清洗，应确认各自处理对象的区别。"
+          },
+          {
+            "id": "section-2",
+            "title": "简化图的局限",
+            "text": "教材工艺图可能省略水洗或分支。不要把图当作完整操作规程，应与实际生产线的批准规程核对。不要根据教材自行决定药液或处理条件。"
+          },
+          {
+            "id": "section-3",
+            "title": "夹具材料与接点",
+            "text": "阳极氧化中有使用铝或钛夹具的例子。铝夹具会在处理中损耗，因此考虑重复使用时也可能选择钛，但仅凭材料名称不能保证寿命或适用性。区分保护涂层与导电接点，发现损伤应向负责人报告。"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "脱脂",
+            "reading": "だっし",
+            "meaning": "主要去除表面油污。"
+          },
+          {
+            "ja": "デスマット",
+            "reading": "ですまっと",
+            "meaning": "去除蚀刻等处理后源自合金成分的残渣。"
+          },
+          {
+            "ja": "接点",
+            "reading": "せってん",
+            "meaning": "为通电而相互接触的部位。"
+          }
+        ],
+        "activity": "分别写出三种前处理的对象，并用语言分别说明夹具保护部位与导电接点的作用。",
+        "safety": [
+          "不要自行改变药液、条件或夹具，应遵守批准规程和培训范围。"
+        ],
+        "summary": "区分前处理对象。简化图不是操作规程。不要混淆夹具保护部位与接点。"
       }
     },
     "zh-TW": {
@@ -1217,6 +1757,141 @@
           "不要僅憑比重這一個項目，就把材質不明的材料或液體判斷為安全或指定材料並使用。"
         ],
         "summary": "資料中的比重基準是4°C的水，比重為1。處理六個示例值時保留來源，不能代替實際材料的規格確認。"
+      },
+      "mfg1-mechanical-source-guide-tolerance-annotation": {
+        "sourceHash": "b71ddb8e6c81669c806e62fdbabc82f59b15e86b62011a9a18f5dcd2e90103a2",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "分清公差等級與尺寸標註方式",
+        "objective": "區分公差代號中字母與等級數字的作用，確認尺度線、尺度界線及數值的基本讀法。",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "只憑等級數字無法確定極限尺寸",
+            "text": "公差代號中的字母表示公差帶的位置，大寫字母用於孔，小寫字母用於軸。其後的數字是尺寸公差等級。在相同公稱尺寸條件下比較，等級數字越小，公差帶寬度越窄。這個數字並不是直接表示上限或下限的尺寸數值。實際極限尺寸應查適用的公差表；判斷配合時，也應備齊相互配合的孔與軸的資訊。"
+          },
+          {
+            "id": "section-2",
+            "title": "確認線的方向與數值單位",
+            "text": "在資料的基本標註範例中，長度尺度線沿所測方向繪製，尺度界線與該尺度線垂直。數值的方向便於從下方或右方讀取，原則上寫在尺度線上方、靠近中間的位置。一般長度以公釐表示時可能省略mm；角度除了度，也可使用角分或角秒。閱讀實際圖面時，應優先確認指定的單位與標註方式。"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "サイズ公差等級",
+            "reading": "サイズこうさとうきゅう",
+            "meaning": "在相同公稱尺寸條件下，表示公差寬度級別的等級。"
+          },
+          {
+            "ja": "寸法補助線",
+            "reading": "すんぽうほじょせん",
+            "meaning": "用來表明尺寸所指起點與終點位置的輔助線。"
+          }
+        ],
+        "activity": "4分鐘：閱讀本文，分別寫出公差代號中字母與數字的作用。\n5分鐘：在紙上畫長方形、尺度線與尺度界線，確認數值的讀取方向。\n4分鐘：將長度的mm與角度的度、角分、角秒分欄整理，列出查詢實際極限尺寸所需的資料。\n2分鐘：整理圖面指示不明確時需要詢問的內容。",
+        "safety": [
+          "在紙上學習。確認公差表與圖面指定內容之前，不得以猜測數值進行加工或作出合格判定。"
+        ],
+        "summary": "等級數字表示公差寬度的級別，並非極限尺寸本身。應結合線的作用、數值方向、單位與圖面指示讀取。"
+      },
+      "mfg1-electrical-source-guide-leakage-earth": {
+        "sourceHash": "4c2826026a00fa02ec94ba1c39b463b1b2f4d084f016013a6b236cc34f8b2eaa",
+        "title": "區分漏電原因與接地後仍存在的危險",
+        "objective": "說明絕緣損壞為何可能引起漏電，以及接地為何不等於故障已修復。",
+        "paragraphs": [
+          {
+            "id": "fault-path",
+            "title": "偏離原定電流路徑",
+            "text": "電線和設備的絕緣材料用於防止電流流向原定路徑以外的地方。絕緣材料老化或損壞時，電流可能流向設備金屬外殼。這是漏電的一種發生機制。懷疑漏電時，不要用手觸摸確認，應按工作場所程序停止使用並通報。"
+          },
+          {
+            "id": "protective-earth",
+            "title": "接地不是修復故障",
+            "text": "本教材的例子以接地線連接設備金屬部分與接地極，為故障時的漏電流提供流向大地的路徑。但是，接地並不能修好損壞的絕緣材料。不能認定漏電設備可以繼續使用。"
+          },
+          {
+            "id": "complementary-protection",
+            "title": "一併確認所需保護",
+            "text": "接地與漏電斷路器的作用不同。不能認為有漏電斷路器就可以拆除接地，或接地後就沒有觸電危險。應按各設備核准的程序確認所需保護及使用條件。不得僅憑本教材進行接地施工或更動保護裝置。"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "漏電",
+            "reading": "ろうでん",
+            "meaning": "因絕緣不良等原因，電流流向原定電路以外。"
+          },
+          {
+            "ja": "絶縁",
+            "reading": "ぜつえん",
+            "meaning": "防止電流流向非預期部分。"
+          },
+          {
+            "ja": "接地",
+            "reading": "せっち",
+            "meaning": "為設備保護等目的與大地建立電氣連接。具體方法須遵守設備要求及負責人員的資格範圍。"
+          }
+        ],
+        "activity": "在紙上案例中區分絕緣不良、接地與漏電斷路器。針對「已經接地，所以繼續使用疑似漏電設備」的判斷，從故障仍持續和必要通報的角度寫出缺少的確認。不要用實際設備驗證。",
+        "safety": [
+          "不要觸摸可疑設備來確認漏電。停止使用、避開危險並通報須按工作場所程序執行。",
+          "不得僅憑本教材拆除接地線、進行接地施工、更動或測試保護裝置。"
+        ],
+        "summary": "接地與漏電斷路器不會無條件消除故障危險。應區分漏電原因、必要保護與異常時的應對。",
+        "translatedDirectlyFrom": "ja",
+        "status": "ai_translated_draft",
+        "nativeReviewed": false,
+        "domainReviewed": false
+      },
+      "mfg1-surface-source-guide-pretreatment-jig": {
+        "sourceHash": "5f490df8b98d953aff2c063302d497cf4212d2028e55b858ecc89832163ab143",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "區分前處理與治具的作用",
+        "objective": "區分前處理目的、治具保護部位與導電接點。",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "前處理的對象",
+            "text": "脫脂主要去除油污。蝕刻作用於表面氧化物等；除灰去除蝕刻後可能殘留的合金成分殘渣。不要把這些名稱都當成相同清洗，應確認各自處理對象的差異。"
+          },
+          {
+            "id": "section-2",
+            "title": "簡化圖的限制",
+            "text": "教材製程圖可能省略水洗或分支。不要把圖當成完整操作程序，應與實際產線核准的程序核對。不要根據教材自行決定藥液或處理條件。"
+          },
+          {
+            "id": "section-3",
+            "title": "治具材料與接點",
+            "text": "陽極氧化中有使用鋁或鈦治具的例子。鋁治具會在處理中耗損，因此考量重複使用時也可能選擇鈦，但僅憑材料名稱不能保證壽命或適用性。區分保護塗層與導電接點，發現損傷應向負責人報告。"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "脱脂",
+            "reading": "だっし",
+            "meaning": "主要去除表面油污。"
+          },
+          {
+            "ja": "デスマット",
+            "reading": "ですまっと",
+            "meaning": "去除蝕刻等處理後源自合金成分的殘渣。"
+          },
+          {
+            "ja": "接点",
+            "reading": "せってん",
+            "meaning": "為通電而相互接觸的部位。"
+          }
+        ],
+        "activity": "分別寫出三種前處理的對象，並用文字分別說明治具保護部位與導電接點的作用。",
+        "safety": [
+          "不要自行改變藥液、條件或治具，應遵守核准程序及受訓範圍。"
+        ],
+        "summary": "區分前處理對象。簡化圖不是操作程序。不要混淆治具保護部位與接點。"
       }
     },
     "hi": {
@@ -1459,6 +2134,141 @@
           "अज्ञात सामग्री या द्रव को केवल विशिष्ट गुरुत्व से सुरक्षित या निर्दिष्ट सामग्री मानकर उपयोग न करें।"
         ],
         "summary": "स्रोत में संदर्भ 4°C पानी और उसका विशिष्ट गुरुत्व 1 है। छह मानों का स्रोत बनाए रखें; वे वास्तविक सामग्री विनिर्देश जाँच का विकल्प नहीं हैं।"
+      },
+      "mfg1-mechanical-source-guide-tolerance-annotation": {
+        "sourceHash": "b71ddb8e6c81669c806e62fdbabc82f59b15e86b62011a9a18f5dcd2e90103a2",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "सहनशीलता श्रेणी और आयाम अंकन को अलग-अलग पढ़ें",
+        "objective": "सहनशीलता वर्ग के अक्षर और श्रेणी-अंक की भूमिकाएँ अलग करें तथा आयाम रेखाओं, विस्तार रेखाओं और मानों को पढ़ने की मूल विधि जाँचें।",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "केवल श्रेणी-अंक से सीमा आयाम तय नहीं होते",
+            "text": "सहनशीलता वर्ग का अक्षर सहनशीलता क्षेत्र की स्थिति बताता है: छिद्रों के लिए बड़े अक्षर और शाफ्टों के लिए छोटे अक्षर उपयोग होते हैं। उसके बाद की संख्या आयामी सहनशीलता श्रेणी है। समान नाममात्र आयाम की स्थितियों में तुलना करने पर छोटा श्रेणी-अंक संकरी सहनशीलता सीमा दर्शाता है। यह अंक स्वयं ऊपरी या निचली सीमा बताने वाला आयाम-मान नहीं है। वास्तविक सीमा आयाम लागू सहनशीलता तालिका से जाँचें और फिट का आकलन करते समय मिलाए जाने वाले छिद्र तथा शाफ्ट, दोनों की जानकारी जुटाएँ।"
+          },
+          {
+            "id": "section-2",
+            "title": "रेखाओं की दिशा और मानों की इकाइयाँ जाँचें",
+            "text": "सामग्री के मूल अंकन उदाहरणों में लंबाई की आयाम रेखा मापी जा रही दिशा के साथ होती है और विस्तार रेखाएँ उस आयाम रेखा के लंबवत होती हैं। मान नीचे या दाईं ओर से पढ़ने योग्य दिशा में होते हैं तथा सामान्यतः आयाम रेखा के ऊपर, उसके मध्य के पास लिखे जाते हैं। सामान्य लंबाई मिलीमीटर में लिखते समय mm छोड़ा जा सकता है; कोणों के लिए डिग्री के अलावा कोणीय मिनट या सेकंड भी उपयोग होते हैं। वास्तविक ड्रॉइंग में निर्दिष्ट इकाइयों और अंकन पद्धति की पहले जाँच करें।"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "サイズ公差等級",
+            "reading": "サイズこうさとうきゅう",
+            "meaning": "समान नाममात्र आयाम की स्थितियों में सहनशीलता की चौड़ाई के स्तर बताने वाली श्रेणी।"
+          },
+          {
+            "ja": "寸法補助線",
+            "reading": "すんぽうほじょせん",
+            "meaning": "वह सहायक रेखा जो आयाम द्वारा दर्शाई गई आरंभ और अंत की स्थितियाँ बताती है।"
+          }
+        ],
+        "activity": "4 मिनट: पाठ पढ़ें और सहनशीलता वर्ग के अक्षर तथा संख्या की भूमिकाएँ अलग-अलग लिखें।\n5 मिनट: कागज पर आयत, आयाम रेखाएँ और विस्तार रेखाएँ बनाएँ तथा मान पढ़ने की दिशा जाँचें।\n4 मिनट: लंबाई के mm को कोण के डिग्री, कोणीय मिनट और सेकंड से अलग लिखें; वास्तविक सीमा आयाम खोजने के लिए आवश्यक संदर्भ सूचीबद्ध करें।\n2 मिनट: ड्रॉइंग के निर्देश अस्पष्ट होने पर पूछे जाने वाले प्रश्नों का सार लिखें।",
+        "safety": [
+          "कागज पर अध्ययन करें। सहनशीलता तालिका और ड्रॉइंग के निर्देश जाँचे बिना अनुमानित मानों से मशीनिंग या स्वीकार्यता का निर्णय न करें।"
+        ],
+        "summary": "श्रेणी-अंक सहनशीलता की चौड़ाई का स्तर बताता है, सीमा आयाम स्वयं नहीं। रेखाओं की भूमिका, मानों की दिशा, इकाइयों और ड्रॉइंग के निर्देशों को साथ पढ़ें।"
+      },
+      "mfg1-electrical-source-guide-leakage-earth": {
+        "sourceHash": "4c2826026a00fa02ec94ba1c39b463b1b2f4d084f016013a6b236cc34f8b2eaa",
+        "title": "रिसाव के कारण और अर्थिंग के बाद बचा खतरा अलग समझें",
+        "objective": "समझाएँ कि खराब इन्सुलेशन से रिसाव कैसे होता है और अर्थिंग का अर्थ दोष की मरम्मत क्यों नहीं है।",
+        "paragraphs": [
+          {
+            "id": "fault-path",
+            "title": "निर्धारित विद्युत पथ से बाहर",
+            "text": "तारों और उपकरणों का इन्सुलेशन धारा को निर्धारित पथ के बाहर जाने से रोकता है। पुराना या क्षतिग्रस्त इन्सुलेशन धारा को उपकरण के धातु आवरण तक पहुँचने दे सकता है। यह रिसाव होने का एक तरीका है। रिसाव का संदेह होने पर छूकर जाँच न करें; कार्यस्थल की प्रक्रिया के अनुसार उपयोग रोकें और सूचना दें।"
+          },
+          {
+            "id": "protective-earth",
+            "title": "अर्थिंग दोष की मरम्मत नहीं",
+            "text": "इस पाठ्यपुस्तक के उदाहरण में अर्थ तार उपकरण के धातु भाग को अर्थ इलेक्ट्रोड से जोड़कर दोष के समय रिसाव धारा को धरती की ओर जाने का मार्ग देता है। पर अर्थिंग क्षतिग्रस्त इन्सुलेशन को ठीक नहीं करती। रिसाव वाले उपकरण का उपयोग जारी रखना उचित न मानें।"
+          },
+          {
+            "id": "complementary-protection",
+            "title": "आवश्यक सुरक्षा एक साथ जाँचें",
+            "text": "अर्थिंग और अवशिष्ट-धारा सुरक्षा उपकरण की भूमिकाएँ अलग हैं। सुरक्षा उपकरण होने से अर्थिंग हटाना उचित नहीं, और अर्थिंग होने से झटके का खतरा समाप्त नहीं होता। प्रत्येक उपकरण की अनुमोदित प्रक्रिया से आवश्यक सुरक्षा और उपयोग की शर्तें जाँचें। केवल इस सामग्री के आधार पर अर्थिंग कार्य या सुरक्षा उपकरण में बदलाव न करें।"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "漏電",
+            "reading": "ろうでん",
+            "meaning": "इन्सुलेशन की खराबी आदि से निर्धारित पथ के बाहर धारा बहना।"
+          },
+          {
+            "ja": "絶縁",
+            "reading": "ぜつえん",
+            "meaning": "धारा को अनचाहे भागों में जाने से रोकना।"
+          },
+          {
+            "ja": "接地",
+            "reading": "せっち",
+            "meaning": "उपकरण की सुरक्षा आदि के लिए धरती से विद्युत संपर्क। वास्तविक तरीका उपकरण की शर्तों और जिम्मेदार व्यक्ति की योग्यता के अनुसार हो।"
+          }
+        ],
+        "activity": "कागज पर इन्सुलेशन दोष, अर्थिंग और अवशिष्ट-धारा सुरक्षा उपकरण में अंतर करें। “अर्थिंग है, इसलिए संदिग्ध रिसाव वाला उपकरण चलाते रहें” निर्णय में जारी दोष और आवश्यक सूचना से संबंधित अधूरी जाँच लिखें। वास्तविक उपकरण पर पुष्टि न करें।",
+        "safety": [
+          "रिसाव जाँचने के लिए संदिग्ध उपकरण न छुएँ। उपयोग रोकने, दूर हटने और सूचना देने की कार्यस्थल प्रक्रिया अपनाएँ।",
+          "केवल इस सामग्री के आधार पर अर्थ तार हटाना, अर्थिंग कार्य, सुरक्षा उपकरण में बदलाव या परीक्षण न करें।"
+        ],
+        "summary": "अर्थिंग और अवशिष्ट-धारा सुरक्षा दोष को बिना शर्त हानिरहित नहीं बनाते। कारण, आवश्यक सुरक्षा और असामान्यता की प्रतिक्रिया अलग जाँचें।",
+        "translatedDirectlyFrom": "ja",
+        "status": "ai_translated_draft",
+        "nativeReviewed": false,
+        "domainReviewed": false
+      },
+      "mfg1-surface-source-guide-pretreatment-jig": {
+        "sourceHash": "5f490df8b98d953aff2c063302d497cf4212d2028e55b858ecc89832163ab143",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "पूर्व उपचार और जिग की भूमिकाएँ अलग करें",
+        "objective": "पूर्व उपचार का उद्देश्य, जिग का सुरक्षा भाग और विद्युत संपर्क अलग करें।",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "पूर्व उपचार का लक्ष्य",
+            "text": "डीग्रीसिंग मुख्यतः तेल हटाता है। एचिंग सतह के ऑक्साइड आदि पर कार्य करता है; डीस्मटिंग एचिंग के बाद बच सकने वाले मिश्रधातु घटकों के अवशेष हटाता है। इन नामों को एक जैसा धुलाई चरण न मानें; इनके अलग लक्ष्यों की पुष्टि करें।"
+          },
+          {
+            "id": "section-2",
+            "title": "सरल चित्र की सीमाएँ",
+            "text": "पुस्तक के प्रक्रिया चित्र में पानी से धुलाई या शाखाएँ छूटी हो सकती हैं। इसे पूर्ण कार्यविधि न मानें; वास्तविक लाइन की अनुमोदित विधि से मिलाएँ। पुस्तक से रसायन या उपचार की परिस्थितियाँ तय न करें।"
+          },
+          {
+            "id": "section-3",
+            "title": "जिग सामग्री और संपर्क",
+            "text": "एनोडाइजिंग में एल्युमिनियम या टाइटेनियम जिग के उदाहरण हैं। एल्युमिनियम जिग उपचार में घिसता है, इसलिए बार-बार उपयोग के लिए टाइटेनियम चुना जा सकता है, लेकिन सामग्री का नाम अकेले आयु या उपयुक्तता की गारंटी नहीं देता। सुरक्षा कोटिंग और विद्युत संपर्क अलग करें तथा क्षति की सूचना प्रभारी को दें।"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "脱脂",
+            "reading": "だっし",
+            "meaning": "मुख्यतः सतह का तेल हटाना।"
+          },
+          {
+            "ja": "デスマット",
+            "reading": "ですまっと",
+            "meaning": "एचिंग आदि के बाद मिश्रधातु घटकों के अवशेष हटाने का उपचार।"
+          },
+          {
+            "ja": "接点",
+            "reading": "せってん",
+            "meaning": "विद्युत प्रवाह के लिए संपर्क कराने वाला भाग।"
+          }
+        ],
+        "activity": "तीन पूर्व उपचारों के लक्ष्य अलग लिखें और जिग के सुरक्षा भाग तथा विद्युत संपर्क की अलग भूमिकाएँ शब्दों में समझाएँ।",
+        "safety": [
+          "रसायन, परिस्थितियाँ या जिग स्वयं न बदलें; अनुमोदित विधि और प्रशिक्षण की सीमा का पालन करें।"
+        ],
+        "summary": "पूर्व उपचार के लक्ष्य अलग करें। सरल चित्र कार्यविधि नहीं है। जिग के सुरक्षा भाग और संपर्क को न मिलाएँ।"
       }
     },
     "bn": {
@@ -1701,6 +2511,141 @@
           "অজানা উপাদান বা তরলকে শুধু আপেক্ষিক ঘনত্ব দেখে নিরাপদ বা নির্ধারিত উপাদান ধরে ব্যবহার করবেন না।"
         ],
         "summary": "উৎসে ভিত্তি 4°C পানি, আপেক্ষিক ঘনত্ব 1। ছয়টি মান উৎসসহ ব্যবহার করুন; এগুলো বাস্তব উপাদান-বিনির্দেশ যাচাইয়ের বিকল্প নয়।"
+      },
+      "mfg1-mechanical-source-guide-tolerance-annotation": {
+        "sourceHash": "b71ddb8e6c81669c806e62fdbabc82f59b15e86b62011a9a18f5dcd2e90103a2",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "সহনশীলতার গ্রেড ও মাত্রা লেখার নিয়ম আলাদা করে পড়ুন",
+        "objective": "সহনশীলতা শ্রেণির অক্ষর ও গ্রেড-সংখ্যার ভূমিকা আলাদা করুন এবং মাত্রারেখা, সহায়ক মাত্রারেখা ও মান পড়ার মৌলিক পদ্ধতি যাচাই করুন।",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "শুধু গ্রেড-সংখ্যা দিয়ে সীমা-মাত্রা নির্ধারিত হয় না",
+            "text": "সহনশীলতা শ্রেণির অক্ষর সহনশীলতা অঞ্চলের অবস্থান বোঝায়: ছিদ্রের জন্য বড় হাতের এবং শ্যাফটের জন্য ছোট হাতের অক্ষর ব্যবহৃত হয়। এর পরের সংখ্যা হলো মাপের সহনশীলতার গ্রেড। একই নামমাত্র মাপের অবস্থায় তুলনা করলে ছোট গ্রেড-সংখ্যা সংকীর্ণ সহনশীলতা-পরিসর বোঝায়। এই সংখ্যা সরাসরি ঊর্ধ্ব বা নিম্ন সীমা প্রকাশ করা কোনো মাত্রার মান নয়। প্রকৃত সীমা-মাত্রা প্রযোজ্য সহনশীলতা সারণিতে যাচাই করুন; ফিট বিচার করার সময় পরস্পরের সঙ্গে যুক্ত ছিদ্র ও শ্যাফট, উভয়ের তথ্য সংগ্রহ করুন।"
+          },
+          {
+            "id": "section-2",
+            "title": "রেখার দিক ও মানের একক যাচাই করুন",
+            "text": "পাঠ্যসামগ্রীর মৌলিক উদাহরণে দৈর্ঘ্যের মাত্রারেখা মাপার দিক বরাবর থাকে এবং সহায়ক মাত্রারেখা ওই মাত্রারেখার লম্বভাবে থাকে। মানগুলো নিচ থেকে বা ডান দিক থেকে পড়ার উপযোগী করে সাধারণত মাত্রারেখার ওপরে, মাঝামাঝি স্থানে লেখা হয়। সাধারণ দৈর্ঘ্য মিলিমিটারে প্রকাশ করার সময় mm বাদ যেতে পারে; কোণের জন্য ডিগ্রির পাশাপাশি কৌণিক মিনিট বা সেকেন্ডও ব্যবহৃত হয়। বাস্তব অঙ্কনে আগে নির্দিষ্ট একক ও লেখার নিয়ম যাচাই করুন।"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "サイズ公差等級",
+            "reading": "サイズこうさとうきゅう",
+            "meaning": "একই নামমাত্র মাপের অবস্থায় সহনশীলতার প্রস্থের ধাপ নির্দেশকারী গ্রেড।"
+          },
+          {
+            "ja": "寸法補助線",
+            "reading": "すんぽうほじょせん",
+            "meaning": "কোন দুই অবস্থানের মধ্যে মাত্রা নির্দেশিত হচ্ছে তা বোঝানো সহায়ক রেখা।"
+          }
+        ],
+        "activity": "4 মিনিট: পাঠ পড়ে সহনশীলতা শ্রেণির অক্ষর ও সংখ্যার ভূমিকা আলাদাভাবে লিখুন।\n5 মিনিট: কাগজে আয়তক্ষেত্র, মাত্রারেখা ও সহায়ক মাত্রারেখা আঁকুন এবং মান পড়ার দিক যাচাই করুন।\n4 মিনিট: দৈর্ঘ্যের mm থেকে কোণের ডিগ্রি, কৌণিক মিনিট ও সেকেন্ড আলাদা ঘরে লিখুন; প্রকৃত সীমা-মাত্রা খোঁজার প্রয়োজনীয় তথ্যসূত্র তালিকাভুক্ত করুন।\n2 মিনিট: অঙ্কনের নির্দেশ অস্পষ্ট হলে কী জিজ্ঞাসা করবেন তা সংক্ষেপে লিখুন।",
+        "safety": [
+          "কাগজে অনুশীলন করুন। সহনশীলতা সারণি ও অঙ্কনের নির্দেশ যাচাই করার আগে অনুমানভিত্তিক মান দিয়ে যন্ত্রে কাটার কাজ বা গ্রহণযোগ্যতার সিদ্ধান্ত নেবেন না।"
+        ],
+        "summary": "গ্রেড-সংখ্যা সহনশীলতার প্রস্থের ধাপ বোঝায়, সীমা-মাত্রা নিজে নয়। রেখার ভূমিকা, মানের দিক, একক ও অঙ্কনের নির্দেশ একসঙ্গে পড়ুন।"
+      },
+      "mfg1-electrical-source-guide-leakage-earth": {
+        "sourceHash": "4c2826026a00fa02ec94ba1c39b463b1b2f4d084f016013a6b236cc34f8b2eaa",
+        "title": "লিকেজের কারণ ও আর্থিংয়ের পরও থাকা বিপদ আলাদা করুন",
+        "objective": "ইনসুলেশন নষ্ট হলে কেন লিকেজ হতে পারে এবং আর্থিং মানে কেন ত্রুটি মেরামত নয়, ব্যাখ্যা করুন।",
+        "paragraphs": [
+          {
+            "id": "fault-path",
+            "title": "নির্ধারিত বিদ্যুৎপথের বাইরে",
+            "text": "তার ও যন্ত্রের ইনসুলেশন বিদ্যুৎকে নির্ধারিত পথের বাইরে যেতে বাধা দেয়। পুরোনো বা ক্ষতিগ্রস্ত ইনসুলেশনের কারণে বিদ্যুৎ যন্ত্রের ধাতব আবরণে পৌঁছাতে পারে। এটি লিকেজের একটি প্রক্রিয়া। লিকেজ সন্দেহ হলে হাত দিয়ে ছুঁয়ে পরীক্ষা নয়; কর্মস্থলের পদ্ধতি অনুযায়ী ব্যবহার বন্ধ ও রিপোর্ট করুন।"
+          },
+          {
+            "id": "protective-earth",
+            "title": "আর্থিং ত্রুটির মেরামত নয়",
+            "text": "এই পাঠ্যবইয়ের উদাহরণে আর্থ তার যন্ত্রের ধাতব অংশকে আর্থ ইলেকট্রোডের সঙ্গে যুক্ত করে ত্রুটির সময় লিকেজ কারেন্টের মাটির দিকে যাওয়ার পথ তৈরি করে। কিন্তু আর্থিং নষ্ট ইনসুলেশন ঠিক করে না। লিকেজযুক্ত যন্ত্র চালিয়ে যাওয়া যায় বলে ভাববেন না।"
+          },
+          {
+            "id": "complementary-protection",
+            "title": "প্রয়োজনীয় সুরক্ষা একসঙ্গে যাচাই",
+            "text": "আর্থিং ও অবশিষ্ট-কারেন্ট সুরক্ষা যন্ত্রের ভূমিকা আলাদা। সুরক্ষা যন্ত্র আছে বলে আর্থিং খুলবেন না, আর আর্থিং থাকলেই শকের ঝুঁকি নেই ভাববেন না। প্রতিটি যন্ত্রের অনুমোদিত পদ্ধতি অনুযায়ী সুরক্ষা ও ব্যবহারের শর্ত যাচাই করুন। শুধু এই পাঠের ভিত্তিতে আর্থিংয়ের কাজ বা সুরক্ষা যন্ত্র পরিবর্তন নয়।"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "漏電",
+            "reading": "ろうでん",
+            "meaning": "ইনসুলেশন ত্রুটি ইত্যাদির কারণে নির্ধারিত পথের বাইরে বিদ্যুৎ প্রবাহ।"
+          },
+          {
+            "ja": "絶縁",
+            "reading": "ぜつえん",
+            "meaning": "অনিচ্ছাকৃত অংশে বিদ্যুৎ প্রবাহ প্রতিরোধ।"
+          },
+          {
+            "ja": "接地",
+            "reading": "せっち",
+            "meaning": "যন্ত্রের সুরক্ষা ইত্যাদির জন্য মাটির সঙ্গে বৈদ্যুতিক সংযোগ। পদ্ধতি যন্ত্রের নির্দেশ ও দায়িত্বপ্রাপ্ত ব্যক্তির যোগ্যতা অনুযায়ী হবে।"
+          }
+        ],
+        "activity": "কাগজের উদাহরণে ইনসুলেশন ত্রুটি, আর্থিং ও অবশিষ্ট-কারেন্ট সুরক্ষা যন্ত্র আলাদা করুন। “আর্থিং আছে, তাই সন্দেহজনক লিকেজের যন্ত্র চালাব” সিদ্ধান্তে চলমান ত্রুটি ও প্রয়োজনীয় রিপোর্টের দিক থেকে কী যাচাই বাদ পড়েছে লিখুন। আসল যন্ত্রে যাচাই করবেন না।",
+        "safety": [
+          "লিকেজ যাচাই করতে সন্দেহজনক যন্ত্র ছোঁবেন না। ব্যবহার বন্ধ, নিরাপদ দূরত্বে সরা ও রিপোর্টের কর্মস্থল পদ্ধতি মানুন।",
+          "শুধু এই পাঠের ভিত্তিতে আর্থ তার খোলা, আর্থিংয়ের কাজ, সুরক্ষা যন্ত্র পরিবর্তন বা পরীক্ষা নয়।"
+        ],
+        "summary": "আর্থিং ও অবশিষ্ট-কারেন্ট সুরক্ষা ত্রুটিকে শর্তহীনভাবে নিরাপদ করে না। কারণ, প্রয়োজনীয় সুরক্ষা ও অস্বাভাবিক অবস্থার ব্যবস্থা আলাদা যাচাই করুন।",
+        "translatedDirectlyFrom": "ja",
+        "status": "ai_translated_draft",
+        "nativeReviewed": false,
+        "domainReviewed": false
+      },
+      "mfg1-surface-source-guide-pretreatment-jig": {
+        "sourceHash": "5f490df8b98d953aff2c063302d497cf4212d2028e55b858ecc89832163ab143",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "প্রাক্‌প্রক্রিয়া ও জিগের ভূমিকা আলাদা করুন",
+        "objective": "প্রাক্‌প্রক্রিয়ার উদ্দেশ্য, জিগের সুরক্ষা অংশ ও বৈদ্যুতিক সংযোগ আলাদা করুন।",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "প্রাক্‌প্রক্রিয়ার লক্ষ্য",
+            "text": "ডিগ্রিজিং মূলত তেল সরায়। এচিং পৃষ্ঠের অক্সাইড ইত্যাদির ওপর কাজ করে; ডিসমাটিং এচিংয়ের পরে থেকে যেতে পারে এমন সংকর ধাতুর উপাদানজাত অবশিষ্টাংশ সরায়। সব নামকে একই ধোয়া হিসেবে না দেখে লক্ষ্যগুলোর পার্থক্য যাচাই করুন।"
+          },
+          {
+            "id": "section-2",
+            "title": "সরল চিত্রের সীমা",
+            "text": "বইয়ের প্রক্রিয়াচিত্রে পানি দিয়ে ধোয়া বা শাখা বাদ থাকতে পারে। একে সম্পূর্ণ কাজের পদ্ধতি হিসেবে ব্যবহার করবেন না; প্রকৃত লাইনের অনুমোদিত পদ্ধতির সঙ্গে মিলিয়ে নিন। বই থেকে রাসায়নিক বা প্রক্রিয়ার শর্ত ঠিক করবেন না।"
+          },
+          {
+            "id": "section-3",
+            "title": "জিগের উপাদান ও সংযোগ",
+            "text": "অ্যানোডাইজিংয়ে অ্যালুমিনিয়াম বা টাইটানিয়ামের জিগ ব্যবহারের উদাহরণ আছে। প্রক্রিয়াকরণে অ্যালুমিনিয়াম জিগ ক্ষয় হয়, তাই বারবার ব্যবহারের জন্য টাইটানিয়াম বেছে নেওয়া হতে পারে, তবে উপাদানের নাম মাত্রেই আয়ু বা উপযোগিতা নিশ্চিত হয় না। সুরক্ষা আবরণ ও বিদ্যুৎবাহী সংযোগ আলাদা করুন এবং ক্ষতি দায়িত্বপ্রাপ্ত ব্যক্তিকে জানান।"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "脱脂",
+            "reading": "だっし",
+            "meaning": "মূলত পৃষ্ঠের তেল সরানো।"
+          },
+          {
+            "ja": "デスマット",
+            "reading": "ですまっと",
+            "meaning": "এচিং ইত্যাদির পর সংকর ধাতুর উপাদানজাত অবশিষ্টাংশ সরানোর প্রক্রিয়া।"
+          },
+          {
+            "ja": "接点",
+            "reading": "せってん",
+            "meaning": "বিদ্যুৎ প্রবাহের জন্য স্পর্শ করানো অংশ।"
+          }
+        ],
+        "activity": "তিনটি প্রাক্‌প্রক্রিয়ার লক্ষ্য আলাদা লিখুন এবং জিগের সুরক্ষা অংশ ও বৈদ্যুতিক সংযোগের ভূমিকা আলাদা করে কথায় ব্যাখ্যা করুন।",
+        "safety": [
+          "নিজে রাসায়নিক, শর্ত বা জিগ পরিবর্তন করবেন না; অনুমোদিত পদ্ধতি ও প্রশিক্ষণের সীমা মানুন।"
+        ],
+        "summary": "প্রাক্‌প্রক্রিয়ার লক্ষ্য আলাদা করুন। সরল চিত্র কাজের পদ্ধতি নয়। জিগের সুরক্ষা অংশ ও সংযোগ গুলিয়ে ফেলবেন না।"
       }
     },
     "ne": {
@@ -1938,6 +2883,141 @@
           "प्रकार नखुलेको पदार्थ वा तरललाई विशिष्ट गुरुत्वको एउटा पक्षले मात्र सुरक्षित वा निर्दिष्ट पदार्थ ठानेर प्रयोग नगर्ने।"
         ],
         "summary": "सामग्रीमा विशिष्ट गुरुत्वको आधार 4°C को पानी हो र यसको मान 1 हो। छ उदाहरण मान स्रोत कायम राखेर प्रयोग गरिन्छन्; वास्तविक पदार्थको विशिष्टता जाँचको विकल्प होइनन्।"
+      },
+      "mfg1-mechanical-source-guide-tolerance-annotation": {
+        "sourceHash": "b71ddb8e6c81669c806e62fdbabc82f59b15e86b62011a9a18f5dcd2e90103a2",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "सहनशीलता श्रेणी र आयाम लेख्ने विधि छुट्टाछुट्टै पढ्नुहोस्",
+        "objective": "सहनशीलता वर्गमा अक्षर र श्रेणी-अङ्कको भूमिका छुट्याउनुहोस् तथा आयाम रेखा, सहायक आयाम रेखा र मान पढ्ने आधारभूत तरिका जाँच्नुहोस्।",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "श्रेणी-अङ्कले मात्र सीमा आयाम निर्धारण गर्दैन",
+            "text": "सहनशीलता वर्गको अक्षरले सहनशीलता क्षेत्रको स्थिति जनाउँछ: प्वालका लागि ठूला अक्षर र शाफ्टका लागि साना अक्षर प्रयोग गरिन्छ। त्यसपछिको अङ्क आयामी सहनशीलता श्रेणी हो। एउटै नाममात्र आयामको अवस्थामा तुलना गर्दा सानो श्रेणी-अङ्कले साँघुरो सहनशीलता दायरा जनाउँछ। यो अङ्क आफैँ माथिल्लो वा तल्लो सीमा बताउने आयाम मान होइन। वास्तविक सीमा आयाम लागू हुने सहनशीलता तालिकाबाट जाँच्नुहोस् र फिटको मूल्याङ्कन गर्दा जोडिने प्वाल र शाफ्ट दुवैको जानकारी जुटाउनुहोस्।"
+          },
+          {
+            "id": "section-2",
+            "title": "रेखाको दिशा र मानका एकाइ जाँच्नुहोस्",
+            "text": "सामग्रीका आधारभूत उदाहरणमा लम्बाइको आयाम रेखा नापिने दिशासँगै हुन्छ र सहायक आयाम रेखा त्यस आयाम रेखासँग लम्ब हुन्छ। मान तल वा दायाँबाट पढ्न मिल्ने दिशामा, सामान्यतया आयाम रेखामाथि बीचतिर लेखिन्छ। साधारण लम्बाइ मिलिमिटरमा देखाउँदा mm छुटाउन सकिन्छ; कोणका लागि डिग्रीका साथै कोणीय मिनेट वा सेकेन्ड पनि प्रयोग हुन्छन्। वास्तविक रेखाचित्रमा तोकिएका एकाइ र लेख्ने विधि पहिले जाँच्नुहोस्।"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "サイズ公差等級",
+            "reading": "サイズこうさとうきゅう",
+            "meaning": "एउटै नाममात्र आयामको अवस्थामा सहनशीलताको चौडाइको तह जनाउने श्रेणी।"
+          },
+          {
+            "ja": "寸法補助線",
+            "reading": "すんぽうほじょせん",
+            "meaning": "आयाम कुन स्थानदेखि कुन स्थानसम्म हो भनेर देखाउने सहायक रेखा।"
+          }
+        ],
+        "activity": "4 मिनेट: पाठ पढेर सहनशीलता वर्गको अक्षर र अङ्कको भूमिका छुट्टाछुट्टै लेख्नुहोस्।\n5 मिनेट: कागजमा आयत, आयाम रेखा र सहायक आयाम रेखा कोर्नुहोस् तथा मान पढ्ने दिशा जाँच्नुहोस्।\n4 मिनेट: लम्बाइको mm लाई कोणका डिग्री, कोणीय मिनेट र सेकेन्डबाट छुट्टै स्तम्भमा राख्नुहोस्; वास्तविक सीमा आयाम खोज्न आवश्यक सन्दर्भ लेख्नुहोस्।\n2 मिनेट: रेखाचित्रको निर्देशन अस्पष्ट हुँदा सोध्नुपर्ने कुरा संक्षेपमा लेख्नुहोस्।",
+        "safety": [
+          "कागजमा अध्ययन गर्नुहोस्। सहनशीलता तालिका र रेखाचित्रको निर्देशन जाँच्नुअघि अनुमानित मान प्रयोग गरेर मेसिनद्वारा काट्ने काम वा स्वीकार्यताको निर्णय नगर्नुहोस्।"
+        ],
+        "summary": "श्रेणी-अङ्कले सहनशीलताको चौडाइको तह जनाउँछ, सीमा आयाम आफैँ होइन। रेखाको भूमिका, मानको दिशा, एकाइ र रेखाचित्रको निर्देशन एकसाथ पढ्नुहोस्।"
+      },
+      "mfg1-electrical-source-guide-leakage-earth": {
+        "sourceHash": "4c2826026a00fa02ec94ba1c39b463b1b2f4d084f016013a6b236cc34f8b2eaa",
+        "title": "चुहावटको कारण र अर्थिङपछि बाँकी खतरा छुट्याउनुहोस्",
+        "objective": "बिग्रेको इन्सुलेसनले चुहावट किन गराउँछ र अर्थिङ हुनु दोष मर्मत हुनु किन होइन भन्ने बुझाउनुहोस्।",
+        "paragraphs": [
+          {
+            "id": "fault-path",
+            "title": "तोकिएको विद्युत् मार्गबाहिर",
+            "text": "तार र उपकरणको इन्सुलेसनले विद्युत् तोकिएको मार्गबाहिर बग्न रोक्छ। इन्सुलेसन पुरानो वा क्षतिग्रस्त हुँदा उपकरणको धातु आवरणमा विद्युत् पुग्न सक्छ। यो चुहावट हुने एउटा तरिका हो। चुहावटको शङ्का भए छोएर जाँच नगर्नुहोस्; कार्यस्थलको प्रक्रियाअनुसार प्रयोग रोक्नुहोस् र जानकारी दिनुहोस्।"
+          },
+          {
+            "id": "protective-earth",
+            "title": "अर्थिङ दोषको मर्मत होइन",
+            "text": "यस पाठ्यपुस्तकको उदाहरणमा अर्थ तारले उपकरणको धातु भाग र अर्थ इलेक्ट्रोड जोडेर दोषको चुहावट विद्युत् जमिनतिर बग्ने मार्ग दिन्छ। तर अर्थिङले बिग्रेको इन्सुलेसन ठीक गर्दैन। चुहावट भइरहेको उपकरण चलाइरहन मिल्छ भन्ने नसोच्नुहोस्।"
+          },
+          {
+            "id": "complementary-protection",
+            "title": "आवश्यक सुरक्षा सँगै जाँच्नुहोस्",
+            "text": "अर्थिङ र अवशिष्ट-धारा सुरक्षा उपकरणका भूमिका फरक छन्। सुरक्षा उपकरण छ भन्दै अर्थिङ हटाउन वा अर्थिङ छ भन्दै झट्काको जोखिम छैन भन्न मिल्दैन। उपकरणअनुसार स्वीकृत प्रक्रियाबाट सुरक्षा र प्रयोगका सर्त जाँच्नुहोस्। यो सामग्रीकै आधारमा अर्थिङको काम वा सुरक्षा उपकरण परिवर्तन नगर्नुहोस्।"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "漏電",
+            "reading": "ろうでん",
+            "meaning": "इन्सुलेसनको खराबी आदिले तोकिएको मार्गबाहिर विद्युत् बग्नु।"
+          },
+          {
+            "ja": "絶縁",
+            "reading": "ぜつえん",
+            "meaning": "विद्युत् अनचाहेको भागमा बग्न रोक्नु।"
+          },
+          {
+            "ja": "接地",
+            "reading": "せっち",
+            "meaning": "उपकरणको सुरक्षा आदि प्रयोजनका लागि जमिनसँग विद्युत् जडान। वास्तविक विधि उपकरणका निर्देशन र जिम्मेवार व्यक्तिको योग्यताअनुसार हुन्छ।"
+          }
+        ],
+        "activity": "कागजी उदाहरणमा इन्सुलेसन दोष, अर्थिङ र अवशिष्ट-धारा सुरक्षा उपकरण छुट्याउनुहोस्। “अर्थिङ छ, त्यसैले चुहावट शङ्का भएको उपकरण चलाइराख्ने” निर्णयमा जारी दोष र आवश्यक जानकारीका सम्बन्धमा छुटेका जाँच लेख्नुहोस्। वास्तविक उपकरणमा पुष्टि नगर्नुहोस्।",
+        "safety": [
+          "चुहावट जाँच्न शङ्कास्पद उपकरण नछुनुहोस्। प्रयोग रोक्ने, टाढा हट्ने र जानकारी दिने कार्यस्थल प्रक्रिया पालना गर्नुहोस्।",
+          "यो सामग्रीकै आधारमा अर्थ तार हटाउने, अर्थिङ गर्ने, सुरक्षा उपकरण परिवर्तन वा परीक्षण गर्ने काम नगर्नुहोस्।"
+        ],
+        "summary": "अर्थिङ र अवशिष्ट-धारा सुरक्षा हुँदा पनि दोष निःसर्त हानिरहित हुँदैन। कारण, आवश्यक सुरक्षा र असामान्य अवस्थाको प्रतिक्रिया छुट्याएर जाँच्नुहोस्।",
+        "translatedDirectlyFrom": "ja",
+        "status": "ai_translated_draft",
+        "nativeReviewed": false,
+        "domainReviewed": false
+      },
+      "mfg1-surface-source-guide-pretreatment-jig": {
+        "sourceHash": "5f490df8b98d953aff2c063302d497cf4212d2028e55b858ecc89832163ab143",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "पूर्वउपचार र जिगका भूमिका छुट्याउनुहोस्",
+        "objective": "पूर्वउपचारको उद्देश्य, जिगको सुरक्षात्मक भाग र विद्युतीय सम्पर्क छुट्याउनुहोस्।",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "पूर्वउपचारको लक्ष्य",
+            "text": "डिग्रिसिङले मुख्यतः तेल हटाउँछ। एचिङले सतहको अक्साइड आदिमा काम गर्छ; डिस्मटिङले एचिङपछि बाँकी रहन सक्ने मिश्रधातुका अवयवबाट बनेका अवशेष हटाउँछ। यी नामलाई एउटै धुलाई नसम्झी लक्ष्यको भिन्नता जाँच्नुहोस्।"
+          },
+          {
+            "id": "section-2",
+            "title": "सरल चित्रका सीमा",
+            "text": "पाठ्यपुस्तकको प्रक्रियाचित्रमा पानीले धुने चरण वा शाखा छुटेका हुन सक्छन्। त्यसलाई पूर्ण कार्यविधि नमान्नुहोस्; वास्तविक लाइनको स्वीकृत कार्यविधिसँग मिलाउनुहोस्। पुस्तकबाट रसायन वा उपचारका अवस्था तय नगर्नुहोस्।"
+          },
+          {
+            "id": "section-3",
+            "title": "जिगको सामग्री र सम्पर्क",
+            "text": "एनोडाइजिङमा एल्युमिनियम वा टाइटेनियम जिग प्रयोगका उदाहरण छन्। उपचारमा एल्युमिनियम जिग खिइने भएकाले दोहोर्‍याएर प्रयोग गर्न टाइटेनियम रोज्न सकिन्छ, तर सामग्रीको नामले मात्र आयु वा उपयुक्तता सुनिश्चित गर्दैन। सुरक्षात्मक कोटिङ र विद्युत् बग्ने सम्पर्क छुट्याएर क्षतिको सूचना जिम्मेवार व्यक्तिलाई दिनुहोस्।"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "脱脂",
+            "reading": "だっし",
+            "meaning": "मुख्यतः सतहको तेल हटाउनु।"
+          },
+          {
+            "ja": "デスマット",
+            "reading": "ですまっと",
+            "meaning": "एचिङ आदिपछि मिश्रधातुका अवयवबाट बनेका अवशेष हटाउने उपचार।"
+          },
+          {
+            "ja": "接点",
+            "reading": "せってん",
+            "meaning": "विद्युत् बगाउन सम्पर्क गराइने भाग।"
+          }
+        ],
+        "activity": "तीन पूर्वउपचारका लक्ष्य अलग लेख्नुहोस् र जिगको सुरक्षात्मक भाग तथा विद्युतीय सम्पर्कको भूमिका शब्दमा छुट्टाछुट्टै व्याख्या गर्नुहोस्।",
+        "safety": [
+          "रसायन, अवस्था वा जिग आफैँ परिवर्तन नगर्नुहोस्; स्वीकृत कार्यविधि र तालिमको सीमाभित्र रहनुहोस्।"
+        ],
+        "summary": "पूर्वउपचारका लक्ष्य छुट्याउनुहोस्। सरल चित्र कार्यविधि होइन। जिगको सुरक्षा भाग र सम्पर्क नझुक्किनुहोस्।"
       }
     },
     "my": {
@@ -2175,6 +3255,141 @@
           "အမျိုးအစားမသိသည့်ပစ္စည်း သို့မဟုတ် အရည်ကို နှိုင်းယှဉ်သိပ်သည်းဆတစ်ချက်တည်းဖြင့် ဘေးကင်းသည် သို့မဟုတ် သတ်မှတ်ပစ္စည်းဟု ဆုံးဖြတ်အသုံးမပြုပါနှင့်။"
         ],
         "summary": "စာတမ်းတွင် နှိုင်းယှဉ်သိပ်သည်းဆအခြေခံသည် 4°C ရေဖြစ်၍ 1 ဖြစ်သည်။ ဥပမာတန်ဖိုးခြောက်ခုကို ရင်းမြစ်ထိန်းသိမ်း၍ ကိုင်တွယ်ပြီး တကယ့်ပစ္စည်း၏သတ်မှတ်ချက်စစ်ဆေးခြင်းအစား မသုံးပါ။"
+      },
+      "mfg1-mechanical-source-guide-tolerance-annotation": {
+        "sourceHash": "b71ddb8e6c81669c806e62fdbabc82f59b15e86b62011a9a18f5dcd2e90103a2",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "ခွင့်ပြုအတိုင်းအတာကွာဟချက်အဆင့်နှင့် အတိုင်းအတာရေးသွင်းပုံကို ခွဲဖတ်ပါ",
+        "objective": "အတိုင်းအတာအတွက် ခွင့်ပြုထားသော ကွာဟချက်ကို ဖော်ပြသည့် သတ်မှတ်ချက်ရှိ အက္ခရာနှင့် အဆင့်နံပါတ်၏ အခန်းကဏ္ဍကို ခွဲခြားပြီး အတိုင်းအတာမျဉ်း၊ အထောက်အကူမျဉ်းနှင့် တန်ဖိုးများ၏ အခြေခံဖတ်နည်းကို စစ်ဆေးပါ။",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "အဆင့်နံပါတ်တစ်ခုတည်းဖြင့် ကန့်သတ်အတိုင်းအတာ မသတ်မှတ်နိုင်ပါ",
+            "text": "အတိုင်းအတာအတွက် ခွင့်ပြုထားသော ကွာဟချက်ကို ဖော်ပြသည့် သတ်မှတ်ချက်ရှိ အက္ခရာသည် ခွင့်ပြုအကွာအဝေး၏ တည်နေရာကို ပြသည်။ အပေါက်အတွက် အက္ခရာအကြီးနှင့် ဝင်ရိုးအတွက် အက္ခရာအသေးကို သုံးသည်။ နောက်မှလိုက်သော နံပါတ်သည် ခွင့်ပြုအတိုင်းအတာကွာဟချက်အဆင့် ဖြစ်သည်။ အမည်ခံအတိုင်းအတာ တူညီသော အခြေအနေတွင် နှိုင်းယှဉ်လျှင် အဆင့်နံပါတ်ငယ်လေ ခွင့်ပြုအကွာအဝေး၏ အကျယ် ကျဉ်းလေဖြစ်သည်။ ထိုနံပါတ်သည် အပေါ်ကန့်သတ် သို့မဟုတ် အောက်ကန့်သတ်ကို တိုက်ရိုက်ပြသော အတိုင်းအတာတန်ဖိုး မဟုတ်ပါ။ အမှန်တကယ်ကန့်သတ်အတိုင်းအတာကို သက်ဆိုင်ရာခွင့်ပြုကွာဟချက်ဇယားတွင် စစ်ဆေးပြီး အံဝင်ခွင်ကျဖြစ်မှုကို ဆုံးဖြတ်ရာ၌ တွဲဖက်မည့် အပေါက်နှင့် ဝင်ရိုး နှစ်ခုလုံး၏ အချက်အလက်ကို စုဆောင်းပါ။"
+          },
+          {
+            "id": "section-2",
+            "title": "မျဉ်းဦးတည်ချက်နှင့် တန်ဖိုး၏ယူနစ်ကို စစ်ဆေးပါ",
+            "text": "စာအုပ်၏ အခြေခံရေးသွင်းပုံဥပမာတွင် အလျားအတိုင်းအတာမျဉ်းသည် တိုင်းတာသည့်ဦးတည်ချက်အတိုင်း ရှိပြီး အထောက်အကူမျဉ်းသည် ထိုအတိုင်းအတာမျဉ်းနှင့် ထောင့်မှန်ကျသည်။ တန်ဖိုးများကို အောက်ဘက် သို့မဟုတ် ညာဘက်မှ ဖတ်နိုင်အောင် လှည့်ထားပြီး များသောအားဖြင့် အတိုင်းအတာမျဉ်း၏ အပေါ်ဘက် အလယ်နားတွင် ရေးသည်။ ပုံမှန်အလျားကို မီလီမီတာဖြင့် ပြရာ၌ mm ကို ချန်လှပ်နိုင်သည်။ ထောင့်အတွက် ဒီဂရီအပြင် ထောင့်မိနစ် သို့မဟုတ် ထောင့်စက္ကန့်ကိုလည်း သုံးနိုင်သည်။ လက်တွေ့ပုံဆွဲတွင် သတ်မှတ်ထားသည့် ယူနစ်နှင့် ရေးသွင်းနည်းကို ဦးစွာစစ်ဆေးပါ။"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "サイズ公差等級",
+            "reading": "サイズこうさとうきゅう",
+            "meaning": "အမည်ခံအတိုင်းအတာ တူညီသောအခြေအနေတွင် ခွင့်ပြုအတိုင်းအတာအကွာအဝေး၏ အကျယ်အဆင့်ကို ပြသောသတ်မှတ်ချက်။"
+          },
+          {
+            "ja": "寸法補助線",
+            "reading": "すんぽうほじょせん",
+            "meaning": "အတိုင်းအတာကို မည်သည့်နေရာမှ မည်သည့်နေရာအထိ ပြထားသည်ကို ဖော်ပြသော အထောက်အကူမျဉ်း။"
+          }
+        ],
+        "activity": "4 မိနစ်: စာကိုဖတ်ပြီး သတ်မှတ်ချက်ရှိ အက္ခရာနှင့် နံပါတ်၏ အခန်းကဏ္ဍကို သီးခြားရေးပါ။\n5 မိနစ်: စာရွက်ပေါ်တွင် ထောင့်မှန်စတုဂံ၊ အတိုင်းအတာမျဉ်းနှင့် အထောက်အကူမျဉ်းများကို ဆွဲပြီး တန်ဖိုးဖတ်ရမည့်ဦးတည်ချက်ကို စစ်ဆေးပါ။\n4 မိနစ်: အလျား၏ mm ကို ထောင့်၏ ဒီဂရီ၊ ထောင့်မိနစ်နှင့် ထောင့်စက္ကန့်တို့မှ သီးခြားကော်လံတွင် ရေးပြီး ကန့်သတ်အတိုင်းအတာရှာရန် လိုအပ်သော ကိုးကားစာရင်းကို ပြုစုပါ။\n2 မိနစ်: ပုံဆွဲညွှန်ကြားချက် မရှင်းလင်းလျှင် မေးမြန်းရမည့်အချက်ကို ချုပ်ရေးပါ။",
+        "safety": [
+          "စာရွက်ပေါ်တွင် လေ့လာပါ။ သက်ဆိုင်ရာခွင့်ပြုကွာဟချက်ဇယားနှင့် ပုံဆွဲညွှန်ကြားချက်ကို မစစ်ဆေးမီ ခန့်မှန်းတန်ဖိုးဖြင့် စက်ဖြတ်တောက်မှု သို့မဟုတ် လက်ခံသင့်မသင့် ဆုံးဖြတ်မှုကို မဆောင်ရွက်ပါနှင့်။"
+        ],
+        "summary": "အဆင့်နံပါတ်သည် ခွင့်ပြုအတိုင်းအတာအကွာအဝေး၏ အကျယ်အဆင့်ကို ပြပြီး ကန့်သတ်အတိုင်းအတာကိုယ်တိုင် မဟုတ်ပါ။ မျဉ်း၏အခန်းကဏ္ဍ၊ တန်ဖိုး၏ဦးတည်ချက်၊ ယူနစ်နှင့် ပုံဆွဲညွှန်ကြားချက်ကို တွဲဖတ်ပါ။"
+      },
+      "mfg1-electrical-source-guide-leakage-earth": {
+        "sourceHash": "4c2826026a00fa02ec94ba1c39b463b1b2f4d084f016013a6b236cc34f8b2eaa",
+        "title": "ယိုစိမ့်မှုအကြောင်းရင်းနှင့် မြေချပြီးနောက် ကျန်အန္တရာယ်ကို ခွဲခြားပါ",
+        "objective": "လျှပ်ကာပျက်စီးခြင်းက ယိုစိမ့်မှုဖြစ်စေနိုင်ပုံနှင့် မြေချခြင်းသည် ချို့ယွင်းချက်ပြုပြင်ပြီးခြင်း မဟုတ်သည့်အကြောင်း ရှင်းပြပါ။",
+        "paragraphs": [
+          {
+            "id": "fault-path",
+            "title": "သတ်မှတ်လျှပ်စီးလမ်းကြောင်းမှ လွဲထွက်ခြင်း",
+            "text": "ဝါယာနှင့်စက်ပစ္စည်း၏ လျှပ်ကာသည် လျှပ်စီးကို သတ်မှတ်လမ်းကြောင်းပြင်ပသို့ မစီးစေရန် ကာကွယ်သည်။ လျှပ်ကာဟောင်းနွမ်း သို့မဟုတ် ပျက်စီးပါက စက်၏သတ္တုအဖုံးသို့ လျှပ်စီးရောက်နိုင်သည်။ ဤသည် ယိုစိမ့်မှုဖြစ်ပုံတစ်မျိုးဖြစ်သည်။ သံသယရှိလျှင် လက်ဖြင့်ထိ၍ မစစ်ဆေးဘဲ လုပ်ငန်းခွင်စည်းမျဉ်းအတိုင်း အသုံးပြုမှုရပ်ပြီး သတင်းပို့ပါ။"
+          },
+          {
+            "id": "protective-earth",
+            "title": "မြေချခြင်းသည် ချို့ယွင်းချက်ပြုပြင်ခြင်း မဟုတ်",
+            "text": "ဤစာအုပ်ဥပမာတွင် စက်၏သတ္တုအစိတ်အပိုင်းနှင့် မြေချလျှပ်ခေါင်းကို မြေချကြိုးဖြင့်ဆက်ကာ ချို့ယွင်းချိန် ယိုစိမ့်လျှပ်စီး မြေဘက်သို့ စီးရန်လမ်းပေးထားသည်။ သို့သော် မြေချခြင်းက ပျက်စီးလျှပ်ကာကို မပြုပြင်ပေးပါ။ ယိုစိမ့်နေသည့်စက်ကို ဆက်သုံးနိုင်သည်ဟု မယူဆရ။"
+          },
+          {
+            "id": "complementary-protection",
+            "title": "လိုအပ်သော ကာကွယ်မှုများကို အတူစစ်ဆေးပါ",
+            "text": "မြေချခြင်းနှင့် လျှပ်စီးယိုစိမ့်ဖြတ်တောက်ကိရိယာ၏ အခန်းကဏ္ဍ မတူပါ။ ဖြတ်တောက်ကိရိယာရှိ၍ မြေချကြိုးဖြုတ်နိုင်သည်၊ မြေချထား၍ ဓာတ်လိုက်အန္တရာယ်မရှိဟု မယူဆပါနှင့်။ စက်တစ်ခုချင်း၏ အတည်ပြုလုပ်ထုံးလုပ်နည်းအတိုင်း ကာကွယ်မှုနှင့် အသုံးပြုအခြေအနေများကို စစ်ပါ။ ဤသင်ခန်းစာတစ်ခုတည်းကို အခြေခံ၍ မြေချလုပ်ငန်း သို့မဟုတ် ကာကွယ်ကိရိယာပြောင်းလဲမှု မလုပ်ရ။"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "漏電",
+            "reading": "ろうでん",
+            "meaning": "လျှပ်ကာချို့ယွင်းမှု စသည်တို့ကြောင့် သတ်မှတ်လမ်းကြောင်းပြင်ပသို့ လျှပ်စီးစီးခြင်း။"
+          },
+          {
+            "ja": "絶縁",
+            "reading": "ぜつえん",
+            "meaning": "မရည်ရွယ်သော အစိတ်အပိုင်းများသို့ လျှပ်စီးမစီးစေရန် ကာကွယ်ခြင်း။"
+          },
+          {
+            "ja": "接地",
+            "reading": "せっち",
+            "meaning": "စက်ကာကွယ်ရေး စသည်တို့အတွက် မြေနှင့်လျှပ်စစ်ဆက်သွယ်ခြင်း။ လက်တွေ့နည်းလမ်းသည် စက်သတ်မှတ်ချက်နှင့် တာဝန်ရှိသူအရည်အချင်းအတိုင်း ဖြစ်ရမည်။"
+          }
+        ],
+        "activity": "စာရွက်ပေါ်ဥပမာတွင် လျှပ်ကာချို့ယွင်းမှု၊ မြေချခြင်းနှင့် ယိုစိမ့်ဖြတ်တောက်ကိရိယာကို ခွဲပါ။ “မြေချထား၍ ယိုစိမ့်သံသယရှိစက်ကို ဆက်သုံးမည်” ဆိုသောဆုံးဖြတ်ချက်တွင် ဆက်ရှိနေသောချို့ယွင်းချက်နှင့် သတင်းပို့ရန် လိုအပ်ချက်အတွက် ဘာစစ်ဆေးချက်လွတ်သလဲ ရေးပါ။ စက်အစစ်ဖြင့် မစစ်ဆေးရ။",
+        "safety": [
+          "ယိုစိမ့်မှုစစ်ရန် သံသယရှိစက်ကို မထိရ။ အသုံးပြုမှုရပ်ခြင်း၊ ဝေးရာသို့ရှောင်ခြင်းနှင့် သတင်းပို့ခြင်းကို လုပ်ငန်းခွင်စည်းမျဉ်းအတိုင်း လုပ်ပါ။",
+          "ဤသင်ခန်းစာတစ်ခုတည်းကို အခြေခံ၍ မြေချကြိုးဖြုတ်ခြင်း၊ မြေချလုပ်ငန်း၊ ကာကွယ်ကိရိယာပြောင်းလဲခြင်း သို့မဟုတ် စမ်းသပ်ခြင်း မလုပ်ရ။"
+        ],
+        "summary": "မြေချခြင်းနှင့် ယိုစိမ့်ဖြတ်တောက်ကိရိယာက ချို့ယွင်းချက်တိုင်းကို အခြေအနေမဲ့ ဘေးကင်းစေခြင်းမဟုတ်။ အကြောင်းရင်း၊ လိုအပ်သောကာကွယ်မှုနှင့် မူမမှန်ချိန်တုံ့ပြန်မှုကို ခွဲစစ်ပါ။",
+        "translatedDirectlyFrom": "ja",
+        "status": "ai_translated_draft",
+        "nativeReviewed": false,
+        "domainReviewed": false
+      },
+      "mfg1-surface-source-guide-pretreatment-jig": {
+        "sourceHash": "5f490df8b98d953aff2c063302d497cf4212d2028e55b858ecc89832163ab143",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "ကြိုတင်ပြုပြင်မှုနှင့် ဂျစ်၏အခန်းကဏ္ဍကို ခွဲခြားပါ",
+        "objective": "ကြိုတင်ပြုပြင်မှုရည်ရွယ်ချက်၊ ဂျစ်၏ကာကွယ်ထားသောအစိတ်အပိုင်းနှင့် လျှပ်စစ်ထိတွေ့နေရာကို ခွဲခြားပါ။",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "ကြိုတင်ပြုပြင်မှု၏ပစ်မှတ်",
+            "text": "ဆီဖယ်ရှားခြင်းသည် အဓိကအားဖြင့် ဆီကိုဖယ်ရှားသည်။ အက်ချင်းသည် မျက်နှာပြင်အောက်ဆိုဒ် စသည်တို့အပေါ် သက်ရောက်ပြီး၊ ဒီစမတ်တင်းသည် အက်ချင်းပြီးနောက် ကျန်နိုင်သော သတ္တုစပ်ပါဝင်ပစ္စည်းမှ အကြွင်းအကျန်ကို ဖယ်ရှားသည်။ အမည်အားလုံးကို တူညီသောဆေးကြောမှုဟု မယူဘဲ ပစ်မှတ်ကွာခြားချက်ကို စစ်ဆေးပါ။"
+          },
+          {
+            "id": "section-2",
+            "title": "အကျဉ်းချုပ်ပုံ၏ကန့်သတ်ချက်",
+            "text": "စာအုပ်၏လုပ်ငန်းစဉ်ပုံတွင် ရေဆေးခြင်း သို့မဟုတ် လမ်းခွဲများကို ချန်ထားနိုင်သည်။ ပုံကို ပြည့်စုံသောလုပ်ငန်းညွှန်ကြားချက်အဖြစ် မသုံးဘဲ လက်တွေ့လိုင်း၏အတည်ပြုလုပ်ထုံးလုပ်နည်းနှင့် တိုက်စစ်ပါ။ ဓာတုဆေးရည် သို့မဟုတ် ပြုပြင်မှုအခြေအနေများကို စာအုပ်မှ မဆုံးဖြတ်ပါနှင့်။"
+          },
+          {
+            "id": "section-3",
+            "title": "ဂျစ်ပစ္စည်းနှင့် ထိတွေ့နေရာ",
+            "text": "အနိုဒိုက်ဇင်းတွင် အလူမီနီယမ် သို့မဟုတ် တိုက်တေနီယမ်ဂျစ် အသုံးပြုသည့် ဥပမာများရှိသည်။ အလူမီနီယမ်ဂျစ်သည် ပြုပြင်မှုတွင် စားသွားသောကြောင့် ထပ်ခါသုံးရန် တိုက်တေနီယမ်ကို ရွေးနိုင်သော်လည်း ပစ္စည်းအမည်တစ်ခုတည်းက သက်တမ်း သို့မဟုတ် သင့်လျော်မှုကို အာမမခံပါ။ ကာကွယ်အလွှာနှင့် လျှပ်စီးဖြတ်သန်းသောထိတွေ့နေရာကို ခွဲခြားပြီး ပျက်စီးမှုကို တာဝန်ရှိသူထံ သတင်းပို့ပါ။"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "脱脂",
+            "reading": "だっし",
+            "meaning": "အဓိကအားဖြင့် မျက်နှာပြင်ဆီကို ဖယ်ရှားခြင်း။"
+          },
+          {
+            "ja": "デスマット",
+            "reading": "ですまっと",
+            "meaning": "အက်ချင်း စသည်တို့ပြီးနောက် သတ္တုစပ်ပါဝင်ပစ္စည်းမှ အကြွင်းအကျန်ကို ဖယ်ရှားသည့်လုပ်ငန်း။"
+          },
+          {
+            "ja": "接点",
+            "reading": "せってん",
+            "meaning": "လျှပ်စီးဖြတ်သန်းရန် ထိတွေ့စေသောအစိတ်အပိုင်း။"
+          }
+        ],
+        "activity": "ကြိုတင်ပြုပြင်မှုသုံးမျိုး၏ပစ်မှတ်ကို ခွဲရေးပြီး ဂျစ်၏ကာကွယ်ထားသောအစိတ်အပိုင်းနှင့် လျှပ်စစ်ထိတွေ့နေရာ၏ အခန်းကဏ္ဍကို စကားဖြင့် သီးခြားရှင်းပြပါ။",
+        "safety": [
+          "ဆေးရည်၊ အခြေအနေ သို့မဟုတ် ဂျစ်ကို မိမိသဘောဖြင့် မပြောင်းဘဲ အတည်ပြုလုပ်ထုံးလုပ်နည်းနှင့် သင်တန်းရရှိထားသောအတိုင်းအတာကို လိုက်နာပါ။"
+        ],
+        "summary": "ကြိုတင်ပြုပြင်မှုပစ်မှတ်များကို ခွဲခြားပါ။ အကျဉ်းချုပ်ပုံသည် လုပ်ထုံးလုပ်နည်းမဟုတ်ပါ။ ဂျစ်ကာကွယ်ရာနှင့် ထိတွေ့ရာကို မရောထွေးပါနှင့်။"
       }
     },
     "th": {
@@ -2417,6 +3632,141 @@
           "อย่าตัดสินว่าวัสดุหรือของเหลวที่ไม่ทราบชนิดปลอดภัยหรือเป็นวัสดุที่กำหนดแล้วนำไปใช้ โดยอาศัยความถ่วงจำเพาะเพียงรายการเดียว"
         ],
         "summary": "ในเอกสาร เกณฑ์ความถ่วงจำเพาะคือน้ำที่ 4°C ซึ่งมีค่า 1 ใช้ค่าตัวอย่างหกค่าโดยรักษาแหล่งที่มา และไม่ใช้แทนการตรวจสอบข้อกำหนดวัสดุจริง"
+      },
+      "mfg1-mechanical-source-guide-tolerance-annotation": {
+        "sourceHash": "b71ddb8e6c81669c806e62fdbabc82f59b15e86b62011a9a18f5dcd2e90103a2",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "แยกอ่านเกรดพิกัดความเผื่อกับวิธีเขียนขนาด",
+        "objective": "แยกบทบาทของตัวอักษรและเลขเกรดในชั้นพิกัดความเผื่อ และตรวจวิธีอ่านเส้นบอกขนาด เส้นช่วยบอกขนาด และค่าตัวเลขเบื้องต้น",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "เลขเกรดเพียงอย่างเดียวกำหนดขนาดขีดจำกัดไม่ได้",
+            "text": "ตัวอักษรในชั้นพิกัดความเผื่อแสดงตำแหน่งของแถบพิกัดความเผื่อ โดยใช้อักษรตัวใหญ่สำหรับรูและตัวเล็กสำหรับเพลา ตัวเลขที่ตามมาคือเกรดพิกัดความเผื่อของขนาด เมื่อเปรียบเทียบภายใต้เงื่อนไขขนาดระบุเดียวกัน เลขเกรดยิ่งน้อย แถบพิกัดความเผื่อยิ่งแคบ เลขนี้ไม่ใช่ค่าขนาดที่ระบุขีดจำกัดบนหรือล่างโดยตรง ต้องตรวจขนาดขีดจำกัดจริงจากตารางพิกัดความเผื่อที่ใช้ และเมื่อพิจารณาการสวมประกอบต้องมีข้อมูลทั้งรูและเพลาที่จับคู่กัน"
+          },
+          {
+            "id": "section-2",
+            "title": "ตรวจทิศทางของเส้นและหน่วยของค่า",
+            "text": "ในตัวอย่างการเขียนพื้นฐานของเอกสาร เส้นบอกขนาดความยาวอยู่ตามทิศทางที่วัด และเส้นช่วยบอกขนาดตั้งฉากกับเส้นบอกขนาดนั้น ค่าตัวเลขวางให้สามารถอ่านจากด้านล่างหรือด้านขวา โดยทั่วไปอยู่เหนือบริเวณกึ่งกลางเส้นบอกขนาด ความยาวทั่วไปอาจแสดงเป็นมิลลิเมตรโดยละ mm ส่วนมุมใช้องศาและอาจใช้ลิปดาหรือพิลิปดาได้ด้วย สำหรับแบบงานจริง ให้ตรวจหน่วยและวิธีเขียนที่กำหนดไว้ก่อน"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "サイズ公差等級",
+            "reading": "サイズこうさとうきゅう",
+            "meaning": "เกรดที่บอกระดับความกว้างของพิกัดความเผื่อภายใต้เงื่อนไขขนาดระบุเดียวกัน"
+          },
+          {
+            "ja": "寸法補助線",
+            "reading": "すんぽうほじょせん",
+            "meaning": "เส้นช่วยที่แสดงตำแหน่งต้นและปลายของขนาดที่ระบุ"
+          }
+        ],
+        "activity": "4 นาที: อ่านเนื้อหาแล้วเขียนบทบาทของตัวอักษรและตัวเลขในชั้นพิกัดความเผื่อแยกกัน\n5 นาที: วาดสี่เหลี่ยมผืนผ้า เส้นบอกขนาด และเส้นช่วยบอกขนาดบนกระดาษ แล้วตรวจทิศทางการอ่านค่า\n4 นาที: แยก mm ของความยาวออกจากองศา ลิปดา และพิลิปดาของมุมเป็นคนละช่อง และระบุเอกสารอ้างอิงที่ต้องใช้หาขนาดขีดจำกัดจริง\n2 นาที: สรุปสิ่งที่ต้องสอบถามเมื่อคำสั่งในแบบไม่ชัดเจน",
+        "safety": [
+          "เรียนบนกระดาษ ห้ามดำเนินการตัดเฉือนหรือพิจารณาผ่านไม่ผ่านโดยใช้ค่าที่คาดเดา ก่อนตรวจตารางพิกัดความเผื่อและคำสั่งในแบบ"
+        ],
+        "summary": "เลขเกรดบอกระดับความกว้างพิกัดความเผื่อ ไม่ใช่ขนาดขีดจำกัดโดยตรง ให้อ่านบทบาทของเส้น ทิศทางค่า หน่วย และคำสั่งในแบบร่วมกัน"
+      },
+      "mfg1-electrical-source-guide-leakage-earth": {
+        "sourceHash": "4c2826026a00fa02ec94ba1c39b463b1b2f4d084f016013a6b236cc34f8b2eaa",
+        "title": "แยกสาเหตุไฟรั่วกับอันตรายที่ยังเหลือหลังต่อลงดิน",
+        "objective": "อธิบายว่าฉนวนเสียหายทำให้ไฟรั่วได้อย่างไร และเหตุใดการต่อลงดินจึงไม่ใช่การซ่อมความขัดข้องแล้ว",
+        "paragraphs": [
+          {
+            "id": "fault-path",
+            "title": "กระแสออกนอกเส้นทางที่ตั้งใจ",
+            "text": "ฉนวนของสายไฟและอุปกรณ์ช่วยไม่ให้กระแสไหลออกนอกเส้นทางที่ตั้งใจ เมื่อฉนวนเสื่อมหรือเสียหาย กระแสอาจไหลไปยังโครงโลหะของอุปกรณ์ นี่คือกลไกหนึ่งของไฟรั่ว หากสงสัยไฟรั่ว อย่าใช้มือสัมผัสเพื่อตรวจสอบ ให้หยุดใช้งานและรายงานตามขั้นตอนของสถานที่ทำงาน"
+          },
+          {
+            "id": "protective-earth",
+            "title": "ต่อลงดินไม่ใช่ซ่อมความขัดข้อง",
+            "text": "ในตัวอย่างของตำรานี้ สายดินเชื่อมส่วนโลหะของอุปกรณ์กับหลักดิน เพื่อเป็นทางให้กระแสรั่วเมื่อเกิดความขัดข้องไหลลงดิน แต่การต่อลงดินไม่ได้ซ่อมฉนวนที่เสียหาย อย่าตัดสินว่าใช้อุปกรณ์ที่มีไฟรั่วต่อไปได้"
+          },
+          {
+            "id": "complementary-protection",
+            "title": "ตรวจมาตรการป้องกันที่จำเป็นร่วมกัน",
+            "text": "การต่อลงดินกับเครื่องตัดไฟรั่วมีหน้าที่ต่างกัน อย่าคิดว่ามีเครื่องตัดไฟรั่วแล้วถอดสายดินได้ หรือมีสายดินแล้วไม่มีอันตรายจากไฟดูด ตรวจมาตรการป้องกันและเงื่อนไขการใช้งานตามขั้นตอนที่อนุมัติสำหรับแต่ละอุปกรณ์ อย่าทำงานต่อลงดินหรือเปลี่ยนอุปกรณ์ป้องกันโดยอาศัยบทเรียนนี้เพียงอย่างเดียว"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "漏電",
+            "reading": "ろうでん",
+            "meaning": "กระแสไหลนอกเส้นทางที่ตั้งใจเนื่องจากฉนวนบกพร่องหรือสาเหตุคล้ายกัน"
+          },
+          {
+            "ja": "絶縁",
+            "reading": "ぜつえん",
+            "meaning": "การป้องกันไม่ให้กระแสไหลไปยังส่วนที่ไม่ตั้งใจ"
+          },
+          {
+            "ja": "接地",
+            "reading": "せっち",
+            "meaning": "การเชื่อมต่อทางไฟฟ้ากับดินเพื่อป้องกันอุปกรณ์และวัตถุประสงค์อื่น วิธีจริงต้องตามข้อกำหนดอุปกรณ์และคุณสมบัติของผู้รับผิดชอบ"
+          }
+        ],
+        "activity": "ใช้กรณีศึกษาบนกระดาษแยกฉนวนบกพร่อง การต่อลงดิน และเครื่องตัดไฟรั่ว สำหรับการตัดสินว่า “ต่อลงดินแล้ว จึงใช้อุปกรณ์ที่สงสัยไฟรั่วต่อไป” ให้เขียนสิ่งที่ยังต้องตรวจเกี่ยวกับความขัดข้องที่ยังอยู่และการรายงาน อย่าใช้อุปกรณ์จริงตรวจพิสูจน์",
+        "safety": [
+          "อย่าสัมผัสอุปกรณ์ที่สงสัยเพื่อตรวจไฟรั่ว ปฏิบัติตามขั้นตอนสถานที่ทำงานในการหยุดใช้ ถอยออก และรายงาน",
+          "อย่าถอดสายดิน ทำงานต่อลงดิน เปลี่ยนหรือทดสอบอุปกรณ์ป้องกันโดยอาศัยบทเรียนนี้เพียงอย่างเดียว"
+        ],
+        "summary": "การต่อลงดินและเครื่องตัดไฟรั่วไม่ได้ทำให้ความขัดข้องปลอดภัยโดยไม่มีเงื่อนไข แยกตรวจสาเหตุไฟรั่ว การป้องกันที่จำเป็น และการตอบสนองเมื่อผิดปกติ",
+        "translatedDirectlyFrom": "ja",
+        "status": "ai_translated_draft",
+        "nativeReviewed": false,
+        "domainReviewed": false
+      },
+      "mfg1-surface-source-guide-pretreatment-jig": {
+        "sourceHash": "5f490df8b98d953aff2c063302d497cf4212d2028e55b858ecc89832163ab143",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "แยกบทบาทการเตรียมผิวและจิ๊ก",
+        "objective": "แยกวัตถุประสงค์การเตรียมผิว ส่วนป้องกันและจุดสัมผัสไฟฟ้าของจิ๊ก",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "สิ่งที่เตรียมผิวจัดการ",
+            "text": "การขจัดไขมันเน้นกำจัดน้ำมัน การกัดผิวทำปฏิกิริยากับออกไซด์บนผิว เป็นต้น ส่วนการขจัดสมุตกำจัดคราบจากส่วนประกอบโลหะผสมที่อาจเหลือหลังการกัดผิว อย่าจำทุกชื่อว่าเป็นการล้างแบบเดียวกัน ให้ตรวจสิ่งที่แต่ละขั้นจัดการ"
+          },
+          {
+            "id": "section-2",
+            "title": "ข้อจำกัดของแผนภาพย่อ",
+            "text": "แผนภาพกระบวนการในหนังสืออาจละขั้นล้างน้ำหรือทางแยก อย่าใช้เป็นวิธีปฏิบัติงานฉบับสมบูรณ์ ให้เทียบกับขั้นตอนที่อนุมัติของสายงานจริง อย่ากำหนดสารละลายหรือสภาวะจากหนังสือ"
+          },
+          {
+            "id": "section-3",
+            "title": "วัสดุจิ๊กและจุดสัมผัส",
+            "text": "การอโนไดซ์มีตัวอย่างใช้จิ๊กอะลูมิเนียมหรือไทเทเนียม จิ๊กอะลูมิเนียมสึกกร่อนระหว่างการบำบัด จึงอาจเลือกไทเทเนียมเมื่อต้องการใช้ซ้ำ แต่ชื่อวัสดุอย่างเดียวไม่รับประกันอายุหรือความเหมาะสม แยกชั้นเคลือบป้องกันจากจุดสัมผัสนำไฟฟ้า และรายงานความเสียหายต่อผู้รับผิดชอบ"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "脱脂",
+            "reading": "だっし",
+            "meaning": "การกำจัดน้ำมันบนผิวเป็นหลัก"
+          },
+          {
+            "ja": "デスマット",
+            "reading": "ですまっと",
+            "meaning": "การกำจัดคราบจากส่วนประกอบโลหะผสมหลังการกัดผิว เป็นต้น"
+          },
+          {
+            "ja": "接点",
+            "reading": "せってん",
+            "meaning": "ส่วนที่สัมผัสกันเพื่อให้กระแสไฟฟ้าไหล"
+          }
+        ],
+        "activity": "เขียนสิ่งที่การเตรียมผิวสามขั้นจัดการแยกกัน แล้วอธิบายด้วยคำพูดถึงบทบาทของส่วนป้องกันและจุดสัมผัสนำไฟฟ้าของจิ๊กแยกกัน",
+        "safety": [
+          "อย่าเปลี่ยนสารละลาย เงื่อนไขหรือจิ๊กเอง ให้ทำตามขั้นตอนที่อนุมัติและขอบเขตการฝึกอบรม"
+        ],
+        "summary": "แยกสิ่งที่แต่ละขั้นจัดการ แผนภาพย่อไม่ใช่วิธีปฏิบัติงาน อย่าสับสนส่วนป้องกันกับจุดสัมผัสจิ๊ก"
       }
     },
     "km": {
@@ -2659,6 +4009,141 @@
           "កុំវិនិច្ឆ័យហើយប្រើសម្ភារៈ ឬអង្គធាតុរាវមិនស្គាល់ប្រភេទថាមានសុវត្ថិភាព ឬជាសម្ភារៈកំណត់ ដោយផ្អែកលើដង់ស៊ីតេធៀបតែមួយមុខ។"
         ],
         "summary": "ក្នុងឯកសារ គោលដង់ស៊ីតេធៀបគឺទឹក4°Cដែលមានតម្លៃ1។ ប្រើតម្លៃឧទាហរណ៍ប្រាំមួយដោយរក្សាប្រភព ហើយកុំប្រើជំនួសការផ្ទៀងផ្ទាត់លក្ខណៈបញ្ជាក់របស់សម្ភារៈពិត។"
+      },
+      "mfg1-mechanical-source-guide-tolerance-annotation": {
+        "sourceHash": "b71ddb8e6c81669c806e62fdbabc82f59b15e86b62011a9a18f5dcd2e90103a2",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "បែងចែកការអានថ្នាក់តូលេរ៉ង់ និងរបៀបសរសេរវិមាត្រ",
+        "objective": "បែងចែកតួនាទីអក្សរ និងលេខថ្នាក់ក្នុងកូដតូលេរ៉ង់ ហើយពិនិត្យរបៀបអានមូលដ្ឋាននៃខ្សែវិមាត្រ ខ្សែជំនួយវិមាត្រ និងតម្លៃ។",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "លេខថ្នាក់តែមួយមិនកំណត់វិមាត្រព្រំដែនទេ",
+            "text": "អក្សរក្នុងកូដតូលេរ៉ង់បង្ហាញទីតាំងនៃតំបន់តូលេរ៉ង់៖ អក្សរធំប្រើសម្រាប់រន្ធ និងអក្សរតូចប្រើសម្រាប់អ័ក្ស។ លេខដែលបន្ទាប់មកគឺជាថ្នាក់តូលេរ៉ង់វិមាត្រ។ នៅពេលប្រៀបធៀបក្រោមលក្ខខណ្ឌទំហំនាមដូចគ្នា លេខថ្នាក់កាន់តែតូច ទទឹងតូលេរ៉ង់កាន់តែតូច។ លេខនេះមិនមែនជាតម្លៃវិមាត្រដែលបញ្ជាក់ព្រំដែនខាងលើ ឬខាងក្រោមដោយផ្ទាល់ទេ។ ត្រូវពិនិត្យវិមាត្រព្រំដែនពិតប្រាកដក្នុងតារាងតូលេរ៉ង់ដែលអនុវត្ត ហើយនៅពេលវាយតម្លៃការផ្គុំ ត្រូវមានព័ត៌មានទាំងរន្ធ និងអ័ក្សដែលត្រូវផ្គុំជាគូ។"
+          },
+          {
+            "id": "section-2",
+            "title": "ពិនិត្យទិសខ្សែ និងឯកតានៃតម្លៃ",
+            "text": "ក្នុងឧទាហរណ៍សរសេរមូលដ្ឋាននៃឯកសារ ខ្សែវិមាត្រប្រវែងស្ថិតតាមទិសដែលវាស់ ហើយខ្សែជំនួយវិមាត្រកែងនឹងខ្សែវិមាត្រនោះ។ តម្លៃត្រូវដាក់ក្នុងទិសដែលអាចអានពីខាងក្រោម ឬខាងស្ដាំ ហើយជាទូទៅសរសេរនៅខាងលើជិតកណ្ដាលខ្សែវិមាត្រ។ ប្រវែងធម្មតាអាចបង្ហាញជាមីលីម៉ែត្រដោយមិនសរសេរ mm; មុំប្រើដឺក្រេ ហើយអាចប្រើនាទីមុំ ឬវិនាទីមុំផងដែរ។ ចំពោះគំនូរពិត ត្រូវពិនិត្យឯកតា និងរបៀបសរសេរដែលបានកំណត់ជាមុន។"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "サイズ公差等級",
+            "reading": "サイズこうさとうきゅう",
+            "meaning": "ថ្នាក់ដែលបង្ហាញកម្រិតទទឹងតូលេរ៉ង់ក្រោមលក្ខខណ្ឌទំហំនាមដូចគ្នា។"
+          },
+          {
+            "ja": "寸法補助線",
+            "reading": "すんぽうほじょせん",
+            "meaning": "ខ្សែជំនួយដែលបង្ហាញទីតាំងចាប់ផ្តើម និងបញ្ចប់នៃវិមាត្រដែលបញ្ជាក់។"
+          }
+        ],
+        "activity": "4 នាទី៖ អានអត្ថបទ ហើយសរសេរតួនាទីអក្សរ និងលេខក្នុងកូដតូលេរ៉ង់ដាច់ដោយឡែក។\n5 នាទី៖ គូរចតុកោណកែង ខ្សែវិមាត្រ និងខ្សែជំនួយវិមាត្រលើក្រដាស ហើយពិនិត្យទិសអានតម្លៃ។\n4 នាទី៖ បែងចែក mm របស់ប្រវែងពីដឺក្រេ នាទីមុំ និងវិនាទីមុំជាជួរឈរផ្សេងគ្នា ហើយរាយឯកសារយោងដែលត្រូវការដើម្បីរកវិមាត្រព្រំដែនពិត។\n2 នាទី៖ សង្ខេបអ្វីដែលត្រូវសួរ នៅពេលសេចក្ដីណែនាំក្នុងគំនូរមិនច្បាស់។",
+        "safety": [
+          "សិក្សាលើក្រដាស។ កុំធ្វើការកាត់ច្នៃដោយម៉ាស៊ីន ឬសម្រេចថាជាប់ឬធ្លាក់ដោយប្រើតម្លៃស្មាន មុនពិនិត្យតារាងតូលេរ៉ង់ និងសេចក្ដីណែនាំក្នុងគំនូរ។"
+        ],
+        "summary": "លេខថ្នាក់បង្ហាញកម្រិតទទឹងតូលេរ៉ង់ មិនមែនវិមាត្រព្រំដែនផ្ទាល់ទេ។ ត្រូវអានតួនាទីខ្សែ ទិសតម្លៃ ឯកតា និងសេចក្ដីណែនាំក្នុងគំនូររួមគ្នា។"
+      },
+      "mfg1-electrical-source-guide-leakage-earth": {
+        "sourceHash": "4c2826026a00fa02ec94ba1c39b463b1b2f4d084f016013a6b236cc34f8b2eaa",
+        "title": "បែងចែកមូលហេតុចរន្តលេចធ្លាយ និងគ្រោះថ្នាក់ដែលនៅសល់ក្រោយភ្ជាប់ដី",
+        "objective": "ពន្យល់ថាអ៊ីសូឡង់ខូចអាចបង្កចរន្តលេចធ្លាយ និងហេតុអ្វីភ្ជាប់ដីមិនមានន័យថាបានជួសជុលកំហូច។",
+        "paragraphs": [
+          {
+            "id": "fault-path",
+            "title": "ចរន្តចេញក្រៅផ្លូវដែលបានកំណត់",
+            "text": "អ៊ីសូឡង់របស់ខ្សែនិងឧបករណ៍ជួយទប់ចរន្តមិនឱ្យទៅក្រៅផ្លូវកំណត់។ ពេលអ៊ីសូឡង់ចាស់ឬខូច ចរន្តអាចទៅដល់សំបកលោហៈឧបករណ៍។ នេះជារបៀបមួយនៃចរន្តលេចធ្លាយ។ បើសង្ស័យ កុំប៉ះដោយដៃដើម្បីពិនិត្យ ត្រូវឈប់ប្រើនិងរាយការណ៍តាមនីតិវិធីកន្លែងធ្វើការ។"
+          },
+          {
+            "id": "protective-earth",
+            "title": "ភ្ជាប់ដីមិនមែនជួសជុលកំហូច",
+            "text": "ក្នុងឧទាហរណ៍សៀវភៅនេះ ខ្សែដីភ្ជាប់ផ្នែកលោហៈឧបករណ៍ទៅអេឡិចត្រូតដី ដើម្បីបង្កើតផ្លូវឱ្យចរន្តលេចធ្លាយពេលខូចហូរទៅដី។ ប៉ុន្តែការភ្ជាប់ដីមិនជួសជុលអ៊ីសូឡង់ខូចទេ។ កុំសន្និដ្ឋានថាអាចបន្តប្រើឧបករណ៍ដែលលេចធ្លាយចរន្ត។"
+          },
+          {
+            "id": "complementary-protection",
+            "title": "ពិនិត្យការការពារចាំបាច់ជាមួយគ្នា",
+            "text": "ការភ្ជាប់ដីនិងឧបករណ៍ផ្ដាច់ចរន្តលេចធ្លាយមានតួនាទីខុសគ្នា។ កុំគិតថាមានឧបករណ៍ផ្ដាច់ហើយអាចដោះខ្សែដី ឬភ្ជាប់ដីហើយគ្មានហានិភ័យឆក់។ ពិនិត្យការការពារនិងលក្ខខណ្ឌប្រើតាមនីតិវិធីអនុម័តរបស់ឧបករណ៍នីមួយៗ។ កុំធ្វើការភ្ជាប់ដីឬកែឧបករណ៍ការពារដោយផ្អែកលើមេរៀននេះតែប៉ុណ្ណោះ។"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "漏電",
+            "reading": "ろうでん",
+            "meaning": "ចរន្តហូរចេញក្រៅផ្លូវកំណត់ដោយសារអ៊ីសូឡង់ខូចជាដើម។"
+          },
+          {
+            "ja": "絶縁",
+            "reading": "ぜつえん",
+            "meaning": "ការទប់មិនឱ្យចរន្តហូរទៅផ្នែកដែលមិនបានកំណត់។"
+          },
+          {
+            "ja": "接地",
+            "reading": "せっち",
+            "meaning": "ការតភ្ជាប់អគ្គិសនីជាមួយដីដើម្បីការពារឧបករណ៍ជាដើម។ វិធីពិតត្រូវតាមការកំណត់ឧបករណ៍និងគុណវុឌ្ឍិអ្នកទទួលខុសត្រូវ។"
+          }
+        ],
+        "activity": "លើករណីសិក្សាក្រដាស បែងចែកអ៊ីសូឡង់ខូច ការភ្ជាប់ដី និងឧបករណ៍ផ្ដាច់ចរន្តលេចធ្លាយ។ ចំពោះការសម្រេចថា “ភ្ជាប់ដីហើយ ដូច្នេះបន្តប្រើឧបករណ៍សង្ស័យលេចធ្លាយ” សរសេរការពិនិត្យដែលខ្វះអំពីកំហូចនៅបន្តនិងការរាយការណ៍ចាំបាច់។ កុំប្រើឧបករណ៍ពិតផ្ទៀងផ្ទាត់។",
+        "safety": [
+          "កុំប៉ះឧបករណ៍សង្ស័យដើម្បីពិនិត្យចរន្តលេចធ្លាយ។ ឈប់ប្រើ ចាកចេញពីគ្រោះថ្នាក់ និងរាយការណ៍តាមនីតិវិធីកន្លែងធ្វើការ។",
+          "កុំដោះខ្សែដី ធ្វើការភ្ជាប់ដី កែឬសាកល្បងឧបករណ៍ការពារ ដោយផ្អែកលើមេរៀននេះតែប៉ុណ្ណោះ។"
+        ],
+        "summary": "ការភ្ជាប់ដីនិងឧបករណ៍ផ្ដាច់ចរន្តលេចធ្លាយមិនធ្វើឱ្យកំហូចគ្មានគ្រោះថ្នាក់ដោយគ្មានលក្ខខណ្ឌទេ។ បែងចែកមូលហេតុ ការការពារចាំបាច់ និងការឆ្លើយតបពេលខុសប្រក្រតី។",
+        "translatedDirectlyFrom": "ja",
+        "status": "ai_translated_draft",
+        "nativeReviewed": false,
+        "domainReviewed": false
+      },
+      "mfg1-surface-source-guide-pretreatment-jig": {
+        "sourceHash": "5f490df8b98d953aff2c063302d497cf4212d2028e55b858ecc89832163ab143",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "បែងចែកតួនាទីការរៀបចំផ្ទៃ និងឧបករណ៍ចាប់កាន់",
+        "objective": "បែងចែកគោលបំណងរៀបចំផ្ទៃ ផ្នែកការពារ និងចំណុចប៉ះចម្លងអគ្គិសនី។",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "គោលដៅរៀបចំផ្ទៃ",
+            "text": "ការសម្អាតខ្លាញ់ដកប្រេងជាចម្បង។ ការឆ្លាក់គីមីមានឥទ្ធិពលលើអុកស៊ីតផ្ទៃជាដើម ហើយការដកកាកសំណល់ដកកាកពីសមាសធាតុលោហៈផ្សំដែលអាចនៅសល់ក្រោយការឆ្លាក់។ កុំចាត់ទុកឈ្មោះទាំងនេះជាការលាងដូចគ្នា ត្រូវពិនិត្យគោលដៅខុសគ្នា។"
+          },
+          {
+            "id": "section-2",
+            "title": "ដែនកំណត់រូបសង្ខេប",
+            "text": "រូបដំណើរការក្នុងសៀវភៅអាចរំលងការលាងទឹក ឬផ្លូវបែក។ កុំប្រើជានីតិវិធីការងារពេញលេញ ត្រូវផ្ទៀងផ្ទាត់នឹងនីតិវិធីដែលអនុម័តសម្រាប់ខ្សែផលិតកម្មពិត។ កុំកំណត់សារធាតុគីមី ឬលក្ខខណ្ឌតាមសៀវភៅ។"
+          },
+          {
+            "id": "section-3",
+            "title": "សម្ភារៈឧបករណ៍ចាប់កាន់ និងចំណុចប៉ះ",
+            "text": "ក្នុងការអាណូឌីកម្ម មានឧទាហរណ៍ប្រើឧបករណ៍ចាប់កាន់អាលុយមីញ៉ូម ឬទីតានីញ៉ូម។ ឧបករណ៍អាលុយមីញ៉ូមសឹកក្នុងការព្យាបាល ដូច្នេះអាចជ្រើសទីតានីញ៉ូមសម្រាប់ប្រើឡើងវិញ ប៉ុន្តែឈ្មោះសម្ភារៈមិនធានាអាយុកាល ឬភាពសមស្របទេ។ បែងចែកស្រទាប់ការពារពីចំណុចប៉ះចម្លងចរន្ត ហើយរាយការណ៍ការខូចដល់អ្នកទទួលខុសត្រូវ។"
+          }
+        ],
+        "terms": [
+          {
+            "ja": "脱脂",
+            "reading": "だっし",
+            "meaning": "ដកប្រេងពីផ្ទៃជាចម្បង។"
+          },
+          {
+            "ja": "デスマット",
+            "reading": "ですまっと",
+            "meaning": "ដកកាកពីសមាសធាតុលោហៈផ្សំក្រោយការឆ្លាក់គីមីជាដើម។"
+          },
+          {
+            "ja": "接点",
+            "reading": "せってん",
+            "meaning": "ផ្នែកប៉ះគ្នាដើម្បីឱ្យចរន្តអគ្គិសនីហូរ។"
+          }
+        ],
+        "activity": "សរសេរគោលដៅដាច់ដោយឡែករបស់ការរៀបចំផ្ទៃបីប្រភេទ ហើយពន្យល់ជាពាក្យអំពីតួនាទីផ្នែកការពារ និងចំណុចចម្លងអគ្គិសនីនៃឧបករណ៍ចាប់កាន់។",
+        "safety": [
+          "កុំប្តូរសារធាតុ លក្ខខណ្ឌ ឬឧបករណ៍តាមចិត្ត ត្រូវគោរពនីតិវិធីអនុម័ត និងដែនបណ្តុះបណ្តាល។"
+        ],
+        "summary": "បែងចែកគោលដៅរៀបចំផ្ទៃ។ រូបសង្ខេបមិនមែនជានីតិវិធីទេ។ កុំច្រឡំផ្នែកការពារ និងចំណុចប៉ះ។"
       }
     },
     "tl": {
@@ -2901,6 +4386,141 @@
           "Huwag gamitin ang materyal o likidong hindi alam ang uri sa pag-aakalang ligtas o iyon ang itinakdang materyal batay lamang sa specific gravity."
         ],
         "summary": "Sa materyal, tubig sa 4°C na may halagang 1 ang batayan ng specific gravity. Panatilihin ang pinagmulan ng anim na halimbawang halaga; huwag itong ipalit sa pagsusuri ng espesipikasyon ng aktuwal na materyal."
+      },
+      "mfg1-mechanical-source-guide-tolerance-annotation": {
+        "sourceHash": "b71ddb8e6c81669c806e62fdbabc82f59b15e86b62011a9a18f5dcd2e90103a2",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "Ihiwalay ang pagbasa ng grado ng toleransiya at pagsulat ng dimensiyon",
+        "objective": "Ihiwalay ang tungkulin ng titik at numero ng grado sa klase ng toleransiya, at suriin ang batayang pagbasa ng mga linya ng dimensiyon, pantulong na linya at mga halaga.",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "Hindi sapat ang numero ng grado upang matukoy ang mga sukat ng hangganan",
+            "text": "Ang titik sa klase ng toleransiya ay nagpapakita ng posisyon ng saklaw ng toleransiya: malalaking titik para sa mga butas at maliliit na titik para sa mga baras. Ang kasunod na numero ay ang grado ng toleransiya sa sukat. Kapag inihambing sa parehong kondisyon ng nominal na sukat, mas maliit na numero ng grado ang nangangahulugang mas makitid na lapad ng toleransiya. Ang numerong ito ay hindi halagang direktang nagsasaad ng itaas o ibabang sukat ng hangganan. Tingnan ang aktuwal na mga sukat ng hangganan sa naaangkop na talahanayan ng toleransiya, at tipunin ang impormasyon ng magkaparis na butas at baras kapag sinusuri ang pagkakasya."
+          },
+          {
+            "id": "section-2",
+            "title": "Suriin ang direksiyon ng linya at yunit ng mga halaga",
+            "text": "Sa mga batayang halimbawa ng materyal, ang linya ng dimensiyon para sa haba ay sumusunod sa direksiyong sinusukat at ang mga pantulong na linya nito ay patayo rito. Nakaharap ang mga halaga upang mabasa mula sa ibaba o kanan at karaniwang inilalagay sa itaas, malapit sa gitna ng linya ng dimensiyon. Maaaring ipahayag ang karaniwang haba sa milimetro nang hindi isinusulat ang mm; para sa anggulo, ginagamit ang digri at maaari ring gumamit ng minuto o segundo ng anggulo. Sa aktuwal na guhit, unahing suriin ang itinakdang mga yunit at paraan ng pagsulat."
+          }
+        ],
+        "terms": [
+          {
+            "ja": "サイズ公差等級",
+            "reading": "サイズこうさとうきゅう",
+            "meaning": "Grado na nagpapakita ng mga antas ng lapad ng toleransiya sa parehong kondisyon ng nominal na sukat."
+          },
+          {
+            "ja": "寸法補助線",
+            "reading": "すんぽうほじょせん",
+            "meaning": "Pantulong na linya na nagpapakita ng dalawang posisyong tinutukoy ng isang dimensiyon."
+          }
+        ],
+        "activity": "4 minuto: Basahin ang teksto at isulat nang hiwalay ang tungkulin ng titik at numero sa klase ng toleransiya.\n5 minuto: Gumuhit sa papel ng parihaba, mga linya ng dimensiyon at pantulong na linya; suriin ang direksiyon ng pagbasa ng mga halaga.\n4 minuto: Ihiwalay sa magkakaibang hanay ang mm para sa haba at digri, minuto at segundo para sa anggulo; ilista ang mga sangguniang kailangan upang hanapin ang aktuwal na sukat ng hangganan.\n2 minuto: Ibuod ang dapat itanong kapag hindi malinaw ang mga tagubilin sa guhit.",
+        "safety": [
+          "Mag-aral sa papel. Huwag magsagawa ng pagmamakinang o magpasya kung pasado o hindi gamit ang hinulaang halaga bago suriin ang talahanayan ng toleransiya at mga tagubilin sa guhit."
+        ],
+        "summary": "Ipinapakita ng numero ng grado ang antas ng lapad ng toleransiya, hindi ang mismong mga sukat ng hangganan. Basahin nang magkakasama ang tungkulin ng linya, direksiyon ng halaga, mga yunit at mga tagubilin sa guhit."
+      },
+      "mfg1-electrical-source-guide-leakage-earth": {
+        "sourceHash": "4c2826026a00fa02ec94ba1c39b463b1b2f4d084f016013a6b236cc34f8b2eaa",
+        "title": "Ihiwalay ang sanhi ng tagas-kuryente sa panganib na nananatili matapos ang grounding",
+        "objective": "Ipaliwanag kung paano nagdudulot ng tagas-kuryente ang sirang insulasyon at kung bakit hindi nangangahulugang naayos na ang sira kapag may grounding.",
+        "paragraphs": [
+          {
+            "id": "fault-path",
+            "title": "Paglabas sa nilalayong daanan ng kuryente",
+            "text": "Pinipigilan ng insulasyon ng kawad at kagamitan ang pagdaloy ng kuryente sa labas ng nilalayong daanan. Kapag naluma o nasira ito, maaaring umabot ang kuryente sa metal na kaha ng kagamitan. Isa ito sa mga paraan ng pagtagas. Kung may hinalang tagas, huwag hawakan upang tiyakin; ihinto ang paggamit at mag-ulat ayon sa pamamaraan ng lugar ng trabaho."
+          },
+          {
+            "id": "protective-earth",
+            "title": "Hindi pagkukumpuni ang grounding",
+            "text": "Sa halimbawa ng aklat na ito, ikinokonekta ng ground wire ang metal na bahagi ng kagamitan sa ground electrode upang magbigay ng daanan patungo sa lupa para sa tagas-kuryente kapag may sira. Ngunit hindi inaayos ng grounding ang sirang insulasyon. Huwag ipalagay na puwedeng patuloy na gamitin ang tumatagas na kagamitan."
+          },
+          {
+            "id": "complementary-protection",
+            "title": "Sabay na suriin ang kailangang proteksiyon",
+            "text": "Magkaiba ang papel ng grounding at aparatong pamutol sa tagas-kuryente. Huwag ipalagay na puwedeng alisin ang grounding dahil may pamutol, o na walang panganib ng pagkakuryente dahil may grounding. Suriin ang proteksiyon at kondisyon ng paggamit ayon sa aprubadong pamamaraan ng bawat kagamitan. Huwag magsagawa ng grounding o baguhin ang proteksiyon batay lamang sa materyal na ito."
+          }
+        ],
+        "terms": [
+          {
+            "ja": "漏電",
+            "reading": "ろうでん",
+            "meaning": "Kuryenteng dumadaloy sa labas ng nilalayong daanan dahil sa depektong insulasyon o katulad na sanhi."
+          },
+          {
+            "ja": "絶縁",
+            "reading": "ぜつえん",
+            "meaning": "Pagpigil sa pagdaloy ng kuryente sa mga bahaging hindi nilalayon."
+          },
+          {
+            "ja": "接地",
+            "reading": "せっち",
+            "meaning": "Elektrikal na koneksiyon sa lupa para sa proteksiyon ng kagamitan at iba pang layunin. Dapat sundin ng aktuwal na paraan ang espesipikasyon at kwalipikasyon ng responsable."
+          }
+        ],
+        "activity": "Sa halimbawang nasa papel, ihiwalay ang depektong insulasyon, grounding at aparatong pamutol sa tagas-kuryente. Sa pasyang “May grounding, kaya ipagpatuloy ang paggamit ng kagamitang pinaghihinalaang tumatagas,” isulat ang kulang na pagsusuri tungkol sa patuloy na sira at kailangang pag-uulat. Huwag tiyakin gamit ang tunay na kagamitan.",
+        "safety": [
+          "Huwag hawakan ang pinaghihinalaang kagamitan upang subukan ang tagas. Sundin ang pamamaraan ng trabaho sa paghinto ng paggamit, paglayo at pag-uulat.",
+          "Huwag mag-alis ng ground wire, magsagawa ng grounding, magbago o magsubok ng proteksiyon batay lamang sa materyal na ito."
+        ],
+        "summary": "Hindi awtomatikong ginagawang ligtas ng grounding at pamutol sa tagas-kuryente ang lahat ng sira. Ihiwalay ang sanhi, kailangang proteksiyon at pagtugon sa abnormalidad.",
+        "translatedDirectlyFrom": "ja",
+        "status": "ai_translated_draft",
+        "nativeReviewed": false,
+        "domainReviewed": false
+      },
+      "mfg1-surface-source-guide-pretreatment-jig": {
+        "sourceHash": "5f490df8b98d953aff2c063302d497cf4212d2028e55b858ecc89832163ab143",
+        "translatedDirectlyFrom": "ja",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft",
+        "title": "Ihiwalay ang tungkulin ng pretreatment at jig",
+        "objective": "Ihiwalay ang layunin ng pretreatment, protektadong bahagi ng jig at kontak na elektrikal.",
+        "paragraphs": [
+          {
+            "id": "section-1",
+            "title": "Target ng pretreatment",
+            "text": "Pangunahing nag-aalis ng langis ang degreasing. Kumikilos ang etching sa mga oxide sa ibabaw at iba pa; inaalis ng desmutting ang latak mula sa mga sangkap ng haluang metal na maaaring maiwan pagkatapos ng etching. Huwag ituring ang lahat ng pangalan bilang iisang paghuhugas; tiyakin ang magkakaibang target."
+          },
+          {
+            "id": "section-2",
+            "title": "Limitasyon ng payak na diagram",
+            "text": "Maaaring hindi ipakita sa diagram sa aklat ang pagbabanlaw o mga sangay. Huwag itong gamitin bilang kumpletong pamamaraan ng trabaho; ihambing sa aprubadong pamamaraan ng tunay na linya. Huwag magpasya ng kemikal o kondisyon mula sa aklat."
+          },
+          {
+            "id": "section-3",
+            "title": "Materyal ng jig at kontak",
+            "text": "May mga halimbawang aluminium o titanium jig sa anodizing. Nauubos ang aluminium jig sa pagproseso kaya maaaring piliin ang titanium para sa paulit-ulit na paggamit, ngunit hindi ginagarantiyahan ng pangalan ng materyal ang haba ng buhay o pagiging angkop. Ihiwalay ang proteksiyong coating sa kontak na dinadaluyan ng kuryente at iulat ang pinsala sa namamahala."
+          }
+        ],
+        "terms": [
+          {
+            "ja": "脱脂",
+            "reading": "だっし",
+            "meaning": "Pangunahing pag-aalis ng langis sa ibabaw."
+          },
+          {
+            "ja": "デスマット",
+            "reading": "ですまっと",
+            "meaning": "Pag-aalis ng latak mula sa sangkap ng haluang metal pagkatapos ng etching at katulad nito."
+          },
+          {
+            "ja": "接点",
+            "reading": "せってん",
+            "meaning": "Bahaging magkadikit upang makadaloy ang kuryente."
+          }
+        ],
+        "activity": "Isulat nang hiwalay ang target ng tatlong pretreatment, at ipaliwanag sa salita ang magkahiwalay na tungkulin ng protektadong bahagi ng jig at kontak na elektrikal.",
+        "safety": [
+          "Huwag basta baguhin ang kemikal, kondisyon o jig; sundin ang aprubadong pamamaraan at saklaw ng pagsasanay."
+        ],
+        "summary": "Ihiwalay ang target ng pretreatment. Hindi pamamaraan ng trabaho ang payak na diagram. Huwag ipaghalo ang proteksiyon ng jig at kontak."
       }
     }
   }

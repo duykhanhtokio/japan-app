@@ -3,6 +3,7 @@ from collections import Counter
 from pathlib import Path
 import hashlib
 import json
+import runpy
 import sys
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -44,7 +45,11 @@ def build_index():
             require(report.get(key, False) is False, specialty + ': unsupported whole-source claim')
         for relative, expected in report[INPUT_KEYS[specialty]].items():
             require(not Path(relative).is_absolute() and '..' not in Path(relative).parts, 'Unsafe evidence path')
-            require(digest((ROOT / relative).read_bytes()) == expected, specialty + ': stale comparison input ' + relative)
+            compared = (ROOT / relative).read_bytes()
+            if relative == 'src/data/manufacturing/source-guides.json':
+                extension = runpy.run_path(str(ROOT / 'scripts/manufacturing/apply-reference-guide-extension.py'))
+                compared = extension['historical_source_guides_bytes'](compared)
+            require(digest(compared) == expected, specialty + ': stale comparison input ' + relative)
         lessons = {l['id']: l for l in read(f'src/data/manufacturing/{specialty}.json')['lessons']}
         pages, objects, statuses = set(), [], Counter()
         for page in report['pages']:
