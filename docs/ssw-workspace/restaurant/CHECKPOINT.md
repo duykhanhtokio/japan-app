@@ -1,3 +1,17 @@
+# Nhà hàng / 外食業 — checkpoint 21, 2026-10-28
+
+User cung cấp ZIP bản dịch chuyên ngành và yêu cầu dùng làm chuẩn từ vựng bài học/bài test; ưu tiên các ngôn ngữ có tài liệu, để các ngôn ngữ khác rà sau. Base48e8004a92e789513506730fe53a65a4e517c737 đã xác minh remote. Lô này cần qua commit/ref/fetch/persistence gate.
+
+- ZIP có21PDF/895trang thuộc3mảng hygiene/cooking/service,7locale en/vi/id/km/my/ne/th. Lưu tên/hash/trang vàarchiveLibraryID/SHA trongterminology-authority.json;không đưaPDF hoặc nguyên văn trích xuất vàoGit. 138mục chuẩn có bằng chứng trang;ưu tiên cách gọi PDF trong đúng nghĩa Nhật,không thay dữ kiện/điều kiện an toàn theo tài liệu cũ.
+- Áp dụng559field corrections/alignments:142lessonsfields,203questionfields,214glossaryfields. en103,vi92,id80,km82,my70,ne97,th35. Cả120bài/984câu/692glossary mỗi locale được quét cho các biến thể trong danh mục;không chứng nhận mọi từ trên895trang đã khớp. Một số thay đổi chỉ đồng bộ từ đồng nghĩa đúng nghĩa,không gọi tất cả là lỗi dịch.
+- Peer review toàn559patch,11điểm được chỉnh trước tích hợp:7IDgeneralhygiene,3VIalignment cùngfield,1NEpairedstew/simmer. Mỗi field cóbefore/after,canonicalhash,afterhash,standardindexesvàsourcepage. Glyph Khmer/Myanmar/Nepali/Thai khótríchxuất đã đối chiếu trangrender;dùng Unicode phù hợp,không copy lỗi glyph. Giữ nhãn mơ hồ/mistranslation nguồn ngoài phạm vi thuật ngữ để rà,không truyền lỗi sang app.
+- zh-CN/zh-TW/hi/bn/tl giữ byte-identical theo ưu tiên user. Nhật/đápán/options/sourceHash/UI vàmetadata bản dịch giữ nguyên. Manifest JSON giữ nguyên;khác biệt newline có sẵn không thuộc phạmvi commit. Không đổi ngành khác hoặc giao diện.
+- Structural PASS,numeric110868fields PASS,Celsius396fields PASS. VI3.000giờ=JA3000時間 được rà lại độc lập theo exactfieldhash sau đổi diệt khuẩn→sát khuẩn;giữ caveat thiết bị. Không bỏ qua numeric flag cũ chỉ vì thuật ngữ đổi.
+- Thêmcheck-terminology-standard.py/terminology-validation.json:kiểm tra nguồnchuẩn/hash,phạmvi,trường đãrà,source revision,numbers vàoptions.3fixture sai target/canonicalhash/referencehash bị phát hiện;preservationQA PASS.
+- Đây là rà thuật ngữ theo tài liệu user,không phải nghiệm thu toàn bộ ngữ nghĩa/người bản ngữ/chuyên môn. Module còn2913trường furigana,587partialsource,hình,thiết bị vànghiệmthu. Cờ fullacceptance vẫnfalse. Không cam kết chạy nền sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 20, 2026-10-28
 
 Module chưa hoàn tất. Base f1fef268cdeb707892ca69eb374e6025a95b84ca đã xác minh remote. Lô này cần qua commit/ref/fetch/persistence gate trước khi báo đã lưu bền vững.
