@@ -1,3 +1,19 @@
+# Current agriculture checkpoint — 2026-10-28
+
+Status: IN_PROGRESS; whole source, native/domain/device and release completion are unconfirmed.
+
+Runtime: **195 Japanese lessons, 1170 knowledge units, 2340 direct-Japanese AI-draft lesson-locale pairs, 62 raster figures, 421 weekly questions, 4 mock forms/160 questions.** All195 authored lessons have12draft locales. Remaining mock target:16forms/640questions.
+
+Latest integrated unit: `content-38/manifest.json`; source overlay `source-gap-reconciliation-38.json`. Six independently source-reviewed2go lessons add36units/72locale pairs and express73source occurrences. Translation peers checked1080fields and applied25exact-before patches. Old189lessons/2268pairs/all581questions and learner-state code are preserved. Week49has six real lessons and no fabricated quiz.
+
+Source:455cumulative occurrences newly expressed from the frozen missing baseline;1104candidate missing-or-partial occurrences plus301baselineholds remain. These are not independent knowledge counts; no whole-knowledge percentage or800questioncapacity certification. SAFETY0292wrong-backlog-wording correction is held, as are comparative recognition, source contradictions and product/regulatory conditions. Mock35queue20retained/17excluded is unchanged.
+
+Current scope report: **[COMPLETION_REPORT_VI.md](content-38/COMPLETION_REPORT_VI.md)** and `content-38/completion-summary.json`. Read these and progress.json first; all entries below are historical and remain unchanged.
+
+Validation: scoped source/hash/preservation, standarddata/state, assessment inventory+13regression tests, scoped strict TypeScript and browser reader checks. See final content-38 evidence for exact outcomes. Browser adapters do not certify Expo productionbuild/native fonts/devices; human/native/domain/release flags remain false. No background authoring is claimed after this unit ends. Remote durability must be confirmed separately by commit/fetch and WORK PERSISTENCE PASS, without a SHA-only follow-up commit.
+
+---
+
 # Agriculture authoring — 2026-10-25
 
 Latest checked-content snapshot:126 Japanese lessons,756 mapped units,248 weekly questions,6 concept diagrams,876 draft lesson-locale pairs (the previous73 lessons in12locales;53new lessons need636pairs). All237page images have now been AI inspected; exhaustive source knowledge coverage remains unconfirmed. See progress.json and latest parallel-06-manifest.json; earlier entries below are historical.
