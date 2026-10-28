@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "worker2",
+  "authorWorker": 6,
+  "reviewedPacket": "worker6-supplement.json",
+  "reviewedInputSha256": "453c4b3bfd03b252414860cd79800d86a3eaa4fa6678ee33934a2e55a2fe52c4",
+  "reviewedInputCanonicalSha256": "601b1e47fcd6fad4768b3e91d740b643401c2f55a07266b50ce9288e4cb45a27",
+  "baselineExistingQuestionCount": 532,
+  "baselineExistingQuestionsCanonicalSha256": "49ebc6d486610b58d4328e20826ebc6f46b86725b7465ac7a44b37fa22b7c00c",
+  "otherPacketCanonicalSha256": {
+    "worker6.json": "44c02a14c6516a35499906df99d70fbee1ea34cd210aff097c20968e3821375e",
+    "worker4.json": "a5f973e569e288776e76ae0e82aa60ef45182c1e01f4b7c0aacb849200002ae4",
+    "worker2.json": "98d51aa327609b54bcf851c4a367d1a591c435dd18599b50fdc46bc4bb537f1e",
+    "worker3.json": "1afba96d6b4500175492ea413985fe2de52779925bd429b3c7cc059a703ef776",
+    "worker1.json": "28cde12a30ba10f2647f887c35218018381bb26cc5775bdbbc31c13c7824bc51",
+    "worker5.json": "6abdd96cd732366a89cf728f316b8b31598c8895d37b0be8d80928c934127c78"
+  },
+  "decisions": [
+    {
+      "questionId": "p29-w6-sq01",
+      "objectiveId": "AGR-ASSESS-P29-W6-S01",
+      "questionHash": "fd844b881dc9588ff70c19b289b2203ce08049875ec22f65b85260164bdae656",
+      "decision": "accept",
+      "reasonJa": "既存は原料/成分数/液状と形状または効き方の区別。本問は円筒形という観察から原料構成を確認済みとしない独立の二軸照合。p29-w2-q04の動植物由来という有機質定義とも異なる。同じ旧six-aiペレット候補を統合した一問で、候補IDの数を容量に上乗せしない。",
+      "sourceParagraphHashes": {
+        "agr-par22-fertilizer-p6": "152e054c1d73914be97013ebf4400d89d7e998a0cc84198c1fec35dfb91bc31b"
+      },
+      "relatedExistingQuestionIds": [
+        "agr-par03-fertilizer-q03",
+        "agr-par03-fertilizer-q05",
+        "agr-par03-fertilizer-q06",
+        "agr-par08-fertilizer-formulations-q03",
+        "agr-1-m02-q27"
+      ],
+      "relatedParallel29QuestionIds": [
+        "p29-w2-q04"
+      ],
+      "sourceBoundsPass": true,
+      "singleCorrectAnswerPass": true,
+      "needsIndependentDomainReview": true
+    },
+    {
+      "questionId": "p29-w6-sq02",
+      "objectiveId": "AGR-ASSESS-P29-W6-S02",
+      "questionHash": "610cb7b8c6f4151a71b1925a3efa5f5e9dad64c9b2f998d805cdc6f2a6d29231",
+      "decision": "accept",
+      "reasonJa": "既存m02q27の有機質の微生物分解は既習だが、成分の難溶性による化学肥料の遅効性はその正答・誤答・理由に含まれない。本問は有機質だけという分類を訂正し、二経路を分ける。速効/被膜の名称替えではない。旧six-aiの同一機構候補を一問へ統合。",
+      "sourceParagraphHashes": {
+        "agr-par22-fertilizer-p4": "fbbc0de4d9b72b47cd849eed1ea8eeff5f3fcf29347d07f5c58c5118db04d64f"
+      },
+      "relatedExistingQuestionIds": [
+        "agr-1-m02-q27",
+        "agr-par03-fertilizer-q06",
+        "agr-par03-fertilizer-q07",
+        "agr-1-m02-q25"
+      ],
+      "relatedParallel29QuestionIds": [],
+      "sourceBoundsPass": true,
+      "singleCorrectAnswerPass": true,
+      "needsIndependentDomainReview": true
+    }
+  ],
+  "patches": [
+    {
+      "questionId": "p29-w6-sq02",
+      "field": "optionsJa[0]",
+      "before": "化学肥料は全て速効性として別欄へ移す。",
+      "after": "化学肥料は速効性の欄へまとめ、遅効性の欄から外す。",
+      "reasonJa": "正答だけが長い手掛かりと、全てという露骨な極端表現を抑え、誤りの中心を二経路の取違えに置く。"
+    },
+    {
+      "questionId": "p29-w6-sq02",
+      "field": "optionsJa[1]",
+      "before": "化学肥料にも成分が溶けにくい例があり、微生物分解を経る有機質肥料とは経路を分けて記す。",
+      "after": "溶けにくい化学肥料も加え、有機質の分解とは別経路にする。",
+      "reasonJa": "正答だけが長い手掛かりと、全てという露骨な極端表現を抑え、誤りの中心を二経路の取違えに置く。"
+    },
+    {
+      "questionId": "p29-w6-sq02",
+      "field": "optionsJa[3]",
+      "before": "全ての遅効性肥料は被膜の厚さだけで効き始めが決まると記す。",
+      "after": "被膜で溶出を調整するという、一つの経路へ整理する。",
+      "reasonJa": "正答だけが長い手掛かりと、全てという露骨な極端表現を抑え、誤りの中心を二経路の取違えに置く。"
+    }
+  ],
+  "summary": {
+    "accept": 2,
+    "exclude": 0,
+    "hold": 0,
+    "proposedFieldPatches": 3
+  },
+  "reviewScope": "Independent AI review of full canonical six-paragraph fertilizer lesson, full current fertilizer question options/reasons, all532-object comparison scan and all6 current P29 packets. Existing retained duplicate objectives unified, not separately credited.",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "originalPdfReverified": false,
+  "globalSemanticDedupComplete": false
+}
