@@ -2,6 +2,7 @@ import {Image,Text,View} from 'react-native';
 import illustrations from '@/data/restaurant/illustrations.json';
 import {useStudyAppearance,TranslationText} from '@/components/tokutei/StudyAppearance';
 const assets:Record<string,number>={
+ 'rst-img-vegetables-v1':require('../../../assets/restaurant/vegetables-v1.png'),
  'rst-img-meat-trays-v1':require('../../../assets/restaurant/meat-trays-v1.png'),
  'rst-img-kitchen-tools-v1':require('../../../assets/restaurant/kitchen-tools-v1.png'),
 };

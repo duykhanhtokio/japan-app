@@ -1,3 +1,17 @@
+# Nhà hàng / 外食業 — checkpoint 18, 2026-10-28
+
+Yêu cầu đóng cả7hạng mục trongphiên: CHƯA đạt toàn bộ;không nâng cờ nghiệm thu khi thiếu bằng chứng. Base ca6885f5f823d612356cd2e7aecd5b075a3ba260 đã remote-verified. Lô này cần commit/ref/fetch/persistence gate.
+
+- Khôi phục trích xuất7nguồn/271trang;không đồng nghĩa kiểm tra ảnh/toàn bộ ngữ nghĩa. Rà AI chủ đề và ghép metadata hai chiều:120/120bài,983/984câu;1401lesson edges+1037question edges. Giữ nguyên trạng thái639ledger:10covered/590partial/39structural. rst-2-q033 chưa có liên kết hẹp đủ chắc. Metadata section sai lệch và các ngoại lệ nguồn nằm trong report;không sửa nội dung chỉ để khớp nguồn cũ.
+- Thêm300furigana candidates đã peer review;readKanjiTokens37240→37976;trường chưa phủ3674→3333/7358. Không chứng nhận đọc đúng toàn bộ.
+- Screen984câu:không exact/cosmetic stem duplicate hoặc duplicate options,đáp án246mỗi vị trí;rà16near-duplicatepairs. Chưa duyệt an toàn/toàn ngữ nghĩa. All12locale fields/hashes/ID complete;numeric110868fields PASS,Celsius396fields PASS. Sửa3quote Nhật zh-TW q222 options1–3 註文→注文;không đổi hashnguồn/đápán/thứtự.
+- Bổ sung original8vegetablePNG1536×1024 vàcaption12locale,gắn2bài. Xác nhận trướcđây có16cuttingcards ởRestaurantCuttingGuide,báocáotrước đã bỏsót. Hiện3raster+4conceptdiagrams+1cuttingmodule;không fullsourceimagecoverage. Một dòng.gitAttributes chỉ dànhnewassetpersistasordinaryblob.
+- Original loading/state assertions PASS quaNodeTypeScriptadapter riêng:23cases.23furigana selftests PASS,structural PASS. Adapter không kiểm tra bundler/browser/productionExpo/native/device/performance. DependenciesExpo/React/esbuild vàbrowserkhôngsẵnsàng;không báo đã test.
+- Bảo toàn Nhật ngoài furigana/knowledgeIds,toàn bộsourceHash/đápán/options;11filedịchbyte-identical,zh-TW chỉ3quoteđãrà. Không thayUIlayout/ngànhkhác;renderer chỉthêmassetrequire.
+- Hồ sơ7mục:closure-status.json;source-links/audits,question/translation/imageQA vàscopedruntimeevidence. Khôngcopy nguyênPDFtextvàoGit. Sourcequotes trongevidence đượcthaydigest. acceptancefullflags vẫnfalse;native/domain/human review cầnngườiđủchuyênmôn. Còn3333furiganafields,source590partial,hình,thiết bị vànghiệmthu. Không camkết chạyngầmsauphảnhồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 17, 2026-10-28
 
 Toàn bộ mô-đun CHƯA hoàn tất. Checkpoint16 đã qua WORK PERSISTENCE PASS 9d4075e71dfd460367814846a3038d1be27a4e1c. Lô17 phải qua commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.

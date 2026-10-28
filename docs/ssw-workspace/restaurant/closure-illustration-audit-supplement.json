@@ -1,0 +1,45 @@
+{
+  "status": "AI_supplementary_correction",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "inventoryCorrection": {
+    "codeVisualModules": 1,
+    "cuttingCards": 16,
+    "lessonIds": [
+      "rst-1-cook-05"
+    ],
+    "uniqueLessonsWithVisualsIncludingCode": 10,
+    "cuts": [
+      "小口切り",
+      "斜め切り",
+      "乱切り",
+      "ささがき",
+      "輪切り",
+      "半月切り",
+      "いちょう切り",
+      "色紙切り",
+      "短冊切り",
+      "拍子木切り",
+      "千切り",
+      "しらが",
+      "かつらむき",
+      "みじん切り",
+      "サイの目切り",
+      "あられ切り"
+    ],
+    "evidence": "HEAD RestaurantCourse.tsx line65 renders RestaurantCuttingGuide; guide gates lesson ID rst-1-cook-05. Original geometric React Native View drawings, no knife demonstration.",
+    "assetCorrection": "Both raster files and mobile QA webp evidence exist in HEAD git tree. Sparse checkout absence is not missing repository assets. Earlier assetResolutionGap must be retracted.",
+    "priorityCorrection": "Remove missing-cutting-shapes image brief; preserve existing schematic module and review shape fidelity separately if needed."
+  },
+  "captionReview": {
+    "file": "closure-vegetable-captions.json",
+    "localeCount": 12,
+    "ordering": "All captions preserve top row carrot/daikon/onion/potato then bottom row cabbage/spinach/cucumber/tomato, each left-to-right.",
+    "confirmedIssues": [],
+    "reviewNotes": [
+      "Thai ผักโขม is commonly used for spinach but also denotes amaranth; native botanical terminology review could improve precision.",
+      "Image pixels not supplied in this caption task: review establishes interlocale alignment to Japanese caption only, not correspondence to generated image."
+    ],
+    "nativeReviewed": false
+  }
+}
