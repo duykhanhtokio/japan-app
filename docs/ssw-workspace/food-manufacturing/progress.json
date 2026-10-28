@@ -1,7 +1,7 @@
 {
   "status": "in_progress_internal_preview",
   "scopeComplete": false,
-  "branch": "feature/food-manufacturing-20261026",
+  "branch": "feature/food-manufacturing-batch17-20261028",
   "lessonsAuthored": {
     "1": 42,
     "2": 36
@@ -223,14 +223,14 @@
   },
   "productionRelease": false,
   "remaining": [
-    "Complete4591 remaining mock question-locale translations. See batch-16-form-coverage.json. Partial per-form contributions are counted only by actual question IDs.",
+    "Complete4391 remaining question-locale pairs; exact missing IDs in batch-17-form-coverage.json.",
     "Verified full-body furigana",
     "Full detailed source competency mapping and complete source visual review",
     "Original explanatory illustrations and optional prerecorded audio",
     "Full Expo/native build and actual device validation",
     "Expert/native review remains unverified"
   ],
-  "next": "Finish remaining2号mock05 locales; continue exact missing IDs in batch-16-form-coverage.json. Unfinished source/visual/furigana/illustration/Expo/native requirements remain.",
+  "next": "Finish remaining2号mock05 locales and exact missing mock06–10 entries using batch-17-form-coverage.json. Current2217pairs lack browser QA. Full-body furigana/source competency/visual verification/illustrations/Expo/native review remain open.",
   "japaneseAuthorshipStatus": "AI-authored candidate covering all source chapters; detailed competency coverage remains unverified",
   "sourceReferences": "153/158 TOC entries have candidate lesson page references; remaining5 are indexes/notices/bibliography. This is not mastery or full coverage certification.",
   "nativeSpeakerReviewed": false,
@@ -254,7 +254,7 @@
     "fullExpoBuildTested": false,
     "newLocaleResponsiveCases": 24,
     "diagramTranslationPairs": 20,
-    "translatedQuestionPairs": 5477,
+    "translatedQuestionPairs": 5677,
     "testTranslationLeakChecks": 2468,
     "testTranslationResponsiveCases": 9872,
     "missingTranslationNotices": 7,
@@ -324,7 +324,7 @@
       "deltaBaselineCommit": "854bfc43e6ee0c074ab0de60efc787aa2faa98ba",
       "all12LocaleGroupsDisjoint": true
     },
-    "assessmentEvidence": "Historical3460netbrowser-tested pairs unchanged.2017currentpairs have nobrowser evidence afterbatch16. Newadapter checks are notbrowser/native testing.",
+    "assessmentEvidence": "Historical3460net browser-tested pairs unchanged;2217current pairs lack browser evidence. Batch17 adapter/state and semantic review do not certify browser/native/Expo.",
     "batch06": {
       "structuralContent": "PASS2468 pairs",
       "translationAdapter": "PASS2468 valid and stale-revision rejection checks;7600missing without fallback",
@@ -507,21 +507,37 @@
       "nativeSpeakerReviewed": false,
       "domainExpertReviewed": false,
       "scopeComplete": false
+    },
+    "batch17": {
+      "baseCommit": "7bf77e6d7fdd7e178db0d38b9eae0d0a78eb1b12",
+      "newQuestionLocalePairs": 200,
+      "totalQuestionLocalePairs": 5677,
+      "remainingQuestionLocalePairs": 4391,
+      "prior5477PairsAndTitlesPreserved": true,
+      "canonicalAdapterValidPairs": 5677,
+      "staleHashesRejected": 5677,
+      "independentAiPeerReviewUnits": 200,
+      "browserTested": false,
+      "nativeDeviceTested": false,
+      "fullExpoBuildTested": false,
+      "nativeSpeakerReviewed": false,
+      "domainExpertReviewed": false,
+      "scopeComplete": false
     }
   },
   "translatedQuestions": {
     "bn": 404,
-    "zh-TW": 439,
     "hi": 403,
-    "th": 435,
     "id": 519,
-    "zh-CN": 439,
-    "tl": 439,
-    "my": 399,
     "ne": 403,
+    "tl": 479,
+    "en": 639,
+    "my": 399,
+    "th": 435,
+    "zh-CN": 479,
     "km": 399,
-    "vi": 599,
-    "en": 599
+    "vi": 639,
+    "zh-TW": 479
   },
   "batch02": {
     "newMockQuestions": 640,
@@ -732,7 +748,7 @@
       "examId": "food-2-mock-06"
     }
   },
-  "integrationStatus": "Batch15 isolated from latest sharedsector head9efc1ae3; no data taken from stale isolatedbatch07 variants. Allprior sharedsector translation objects preserved.",
+  "integrationStatus": "Batch17 adds only200source-revision-bound translations and5titles on isolated food branch; original Japanese/runtime/UI and5477prior question/title entries preserved.",
   "batch16": {
     "baseCommit": "48c11c2869e177040e45d6a63fdb8b0972966699",
     "newQuestionLocalePairs": 341,
@@ -742,6 +758,22 @@
     "canonicalAdapterValidPairs": 5477,
     "staleHashesRejected": 5477,
     "independentAiPeerReviewUnits": 81,
+    "browserTested": false,
+    "nativeDeviceTested": false,
+    "fullExpoBuildTested": false,
+    "nativeSpeakerReviewed": false,
+    "domainExpertReviewed": false,
+    "scopeComplete": false
+  },
+  "batch17": {
+    "baseCommit": "7bf77e6d7fdd7e178db0d38b9eae0d0a78eb1b12",
+    "newQuestionLocalePairs": 200,
+    "totalQuestionLocalePairs": 5677,
+    "remainingQuestionLocalePairs": 4391,
+    "prior5477PairsAndTitlesPreserved": true,
+    "canonicalAdapterValidPairs": 5677,
+    "staleHashesRejected": 5677,
+    "independentAiPeerReviewUnits": 200,
     "browserTested": false,
     "nativeDeviceTested": false,
     "fullExpoBuildTested": false,

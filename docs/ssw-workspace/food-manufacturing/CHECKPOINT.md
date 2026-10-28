@@ -1,3 +1,18 @@
+# Batch17 — 2026-10-28
+
+Base `7bf77e6d7fdd7e178db0d38b9eae0d0a78eb1b12`; branch `feature/food-manufacturing-batch17-20261028`.
+
+- Added200question-locale pairs and5titles: EN/VI1号mock09; TL/ZH-CN/ZH-TW1号mock06. Total5677/10068;4391remain. Exact IDs in batch-17-form-coverage.json.
+- All5477prior questions/titles preserved exactly; Japanese839questions,78lessons,33assessment revisions and runtime/UI unchanged. Canonical sourcehashes, four ordered choices/reasons and correct-reason alignment checked.
+- Independent AI semantic review covers all200newpairs. Corrections remove added qualifiers, clarify hot-environment work and preserve generic management criteria/deviations and responsible-worker scope. Five peer reports retained. No native/domain certification.
+- PASS:content structure; actual Node adapter5677valid and5677stale-hash rejections,4391missing withoutfallback; state resume/scoring/revision/storage isolation; approvedJLPT UI lock10/10. Numeric differences in newfields reviewed separately in batch-17-review.json.
+- Browser evidence unchanged3460pairs;2217current pairs await browserQA. No newbrowser/Expo/native/device evidence. Fullbodyfurigana,sourcecompetency/visual review andillustrations remainopen. scopeComplete=false; productionRelease=false.
+- One of six authoring workers failed at modelcapacity; its Indonesian task remainsunmodified. Only five completed40-question files are counted.
+
+Next:finish remaining2号mock05 locales and missing mock06–10 entries from exactmatrix. Continue independentfood work without changing agriculture/restaurant/JLPT.
+
+---
+
 # Batch16 — 2026-10-27
 
 Based on sharedsector commit `48c11c2869e177040e45d6a63fdb8b0972966699`; candidate branch `feature/food-manufacturing-batch16-20261027`.
