@@ -1,3 +1,15 @@
+# Nhà hàng / 外食業 — checkpoint 14, 2026-10-28
+
+Toàn bộ mô-đun CHƯA hoàn tất. Checkpoint13 đã qua WORK PERSISTENCE PASS a751ce9c607490d61d8f5c3cb28fb7038ae22480 sau khi khôi phục môi trường. Lô14 phải qua commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
+
+- Sáu AI tiếp tục sáu tập bài/câu, rà chéo180đề xuất;178cụm duy nhất,loại2cách đọc lexicon đã có,thêm176dictionary candidates theo ngữ cảnh. Không phải chứng nhận người bản ngữ/chuyên gia.
+- readKanjiTokens36228→36363;trường còn kanji chưa đọc4248→4180 trên7358trường,thêm68trường phủ đầy đủ. Tính cả lô13 vừa cứu và lô14:419cách đọc mới,168trường phủ đầy đủ thêm từ4348→4180. Kanji đơn đa nghĩa chưa được đoán cách đọc.
+- 23self-tests PASS;structural PASS. Đối chiếu Git bảo toàn toàn bộ Nhật ngoài furigana,sourceHash,đáp án/thứ tự lựa chọn;12file dịch byte-identical. Giữ đủ1440bài/11808câu/8304glossary dịch.
+- completion14-reading-review.json lưu đề xuất,peer review và preservation. nativeReviewed/contextualReviewComplete vẫn false. Không productionExpo/native/device. Không thayUI/ngànhkhác.
+- Ổ làm việc báo100% ởđầuphiên;không xóa dữ liệu người dùng/ngànhkhác. Ưu tiên checkpoints nhỏ đã kiểm chứng. Còn4180trường furigana,source590partial,hình nhận dạng,thiết bị/hiệu năng và duyệt bản ngữ/chuyên môn. Không cam kết chạy nền sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 13, 2026-10-28
 
 Toàn bộ mô-đun CHƯA hoàn tất. Tiếp từ checkpoint12 đã xác minh remote 4db50a8f2c68461bc0eee04f0f47cc5042f3cf4f. Lô này cần commit/ref/fetch/persistence gate trước khi công bố lưu bền vững.
