@@ -1,6 +1,6 @@
 """Validate published mock identities, section rules and source bindings."""
 from pathlib import Path
-import json,hashlib,collections
+import json,hashlib,collections,runpy
 ROOT=Path(__file__).resolve().parents[2];DATA=ROOT/'src/data/manufacturing'
 def h(x):return hashlib.sha256(json.dumps(x,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 
@@ -54,4 +54,6 @@ translations=json.loads((DATA/'mock-translations.json').read_text())['locales']
 scope=json.loads((ROOT/'docs/ssw-workspace/manufacturing/approved-scope.json').read_text())
 assert len(scope['targetLocales'])==len(set(scope['targetLocales']))==12
 coverage=validate_translations(translations,questions,scope['targetLocales'])
-print(json.dumps({'status':'PASS','specialties':report,'totalExams':len(ids),'totalQuestions':len(questions),'mockTranslationCoverage':coverage,'rubyExactTextAligned':True,'nativeReviewed':False}))
+editorial=runpy.run_path(str(ROOT/'scripts/manufacturing/check-editorial-review-bindings.py'))
+editorial_bindings=editorial['validate'](editorial['load_inputs']())
+print(json.dumps({'status':'PASS','specialties':report,'totalExams':len(ids),'totalQuestions':len(questions),'mockTranslationCoverage':coverage,'rubyExactTextAligned':True,'nativeReviewed':False,'editorialEvidenceBindings':editorial_bindings['reviews']}))

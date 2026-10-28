@@ -1,3 +1,13 @@
+# Manufacturing SSW1 — batch15 editorial evidence freshness gate, 2026-10-28
+
+Added a read-only gate for batch14's 400 mechanical and 100 electrical practical mock reviews. The ordinary mock-content validator now requires exact reviewed file digests, complete nonduplicate reviewed question IDs, current lesson/question bindings and the reports' bounded review claims. Electrical per-question object snapshots, selection status and unresolved verdicts/corrections are checked. Mechanical's source-audit snapshot is also bound. This validates evidence freshness, not new semantic correctness.
+
+All 25 in-memory invalid-evidence mutations were rejected without touching runtime data. The integrated mock validator passes all 30 forms/1,200 questions and 12 complete translation ID sets; its existing nine translation regression cases also pass. Evidence: `batch15/session-evidence.json`. Japanese, translations, answers, source freezes, review reports and runtime UI remain unchanged. Counts stay 262 core lessons, 5 guides, 456 weekly questions and 18 diagrams. No new PDF/semantic/native/domain/device review is claimed; courseComplete and releaseReady remain false.
+
+Next: resolve the two mechanical wording findings with the normal revision-bound staging/canonical/translation/furigana workflow; continue exhaustive source-object coverage and target-language semantic review. Historical batch14 evidence remains valid only while this new gate passes. No background process is implied.
+
+---
+
 # Manufacturing SSW1 — batch14 verification and Android Back protection, 2026-10-27
 
 Six AI workers checked the current authored snapshot. Counts remain262 core lessons,5 source-reference guides,456 weekly questions,30 mocks/1200 questions,18 diagrams and complete AI drafts in all12 target languages. No content was regenerated and no review/source freeze was rewritten.
