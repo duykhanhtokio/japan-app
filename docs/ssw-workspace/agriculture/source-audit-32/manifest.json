@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "baselineCommit": "30f79554bb20e9d096f09fbc0edb2464a1a7a30e",
+  "scope": "six-ai-independent-peer-source-gap-reconciliation",
+  "packets": [
+    {
+      "worker": "general",
+      "authorPacket": "worker-general.json",
+      "authorSha256": "8470a5370964f785270ce344168919716a07ba6ba187c4d27b3dd509a80c67d0",
+      "peerPacket": "review-general.json",
+      "peerSha256": "6c717ea496e5cbc85a319f9edeaae86df30373b5dc3b53f6da3fb400370a20fc",
+      "reviewer": "soil-water-fertilizer"
+    },
+    {
+      "worker": "soil",
+      "authorPacket": "worker-soil.json",
+      "authorSha256": "f204facd37b9fcf0a068b9f943a653e0c21449612f59aa8bb1350877bde68115",
+      "peerPacket": "review-soil.json",
+      "peerSha256": "fa4e5c40f0262883b9d0a7c2e6c3de36dd463a921e83d05b102d819e96205e37",
+      "reviewer": "general"
+    },
+    {
+      "worker": "safety",
+      "authorPacket": "worker-safety.json",
+      "authorSha256": "fac35a359f5bfb0c20b04ba0a0af22b22ffc7c1dc8c1340a9ace2df71c45cc1d",
+      "peerPacket": "review-safety.json",
+      "peerSha256": "5285debd4ad01069f6aebcbda33bd62714784f0452936d318b3c9723d1a21018",
+      "reviewer": "rice"
+    },
+    {
+      "worker": "rice",
+      "authorPacket": "worker-rice.json",
+      "authorSha256": "12d5cd463b63b8f088573df7357e2183dbdddfaecb5f7f51ff74c3b81599b27b",
+      "peerPacket": "review-rice.json",
+      "peerSha256": "971474cd534f9e43d6007b0673b055fa99aa49b366ff46659d5f87976c1b17c4",
+      "reviewer": "safety"
+    },
+    {
+      "worker": "facility-fruit",
+      "authorPacket": "worker-facility-fruit.json",
+      "authorSha256": "e5205bf13b1c89e32f79de96723bd443b07c988fda776bd808a514488a8ce47c",
+      "peerPacket": "review-facility-fruit.json",
+      "peerSha256": "02b3767599a967d87d446f304bdff04092e82ab0dd260d1fe8eb2eacf049780f",
+      "reviewer": "flower_equipment"
+    },
+    {
+      "worker": "flower-equipment",
+      "authorPacket": "worker-flower-equipment.json",
+      "authorSha256": "bf8e16ec6681001a17a16b0b252da939890c02db56642610b1d430f1023558f9",
+      "peerPacket": "review-flower-equipment.json",
+      "peerSha256": "09b55a0028b50caad8ace0b72489adbec5060ae6ec33634d161d11d6d71a5f5a",
+      "reviewer": "facility_fruit"
+    }
+  ],
+  "adoptedAuditSha256": "c65310e7e8745780c4cbd8fdfd96e3a3f973e7a7e39f3a95db3cc54bba3187e1",
+  "frozenInputHashesSha256": "198ad0731ec54247c0640c2686d19b55e93ffdbe08b55c7297176c73b72ceed9",
+  "counts": {
+    "aiWorkers": 6,
+    "independentPeerPackets": 6,
+    "auditRows": 65,
+    "uniqueSelectedSourceOccurrences": 70,
+    "newLessons": 0,
+    "newTranslations": 0,
+    "newQuestions": 0,
+    "newImages": 0,
+    "newSourceClosures": 0
+  },
+  "currentRuntimeCounts": {
+    "japaneseLessons": 186,
+    "translationPairs": 2232,
+    "weeklyQuestions": 421,
+    "mockForms": 4,
+    "mockQuestions": 160,
+    "registeredRasters": 56
+  },
+  "remaining": {
+    "mockForms": 16,
+    "mockQuestions": 640,
+    "candidateMissingOrPartialSourceOccurrences": 1200,
+    "frozenBaselineHolds": 301
+  },
+  "limits": [
+    "No new runtime content or closure credit",
+    "Direct PDF image comparison and independent AI review are not domain/native/human approval",
+    "No browser/native/device run needed or claimed for this evidence-only unit",
+    "No raw source PDFs, extracted source text or page images redistributed",
+    "Overrides do not change historical baseline counts or certify independent question capacity"
+  ],
+  "next": "Use adopted overrides first. Next implement the six tool-recognition images against existing paragraphs, or one bounded source-verified disease-spread supplement, retaining all independent source and review gates. Reuse existing sowing diagram and rice nursery/pear-trellis prose.",
+  "publication": "Requires narrow commit, push, fetch and exact-HEAD WORK PERSISTENCE PASS; no SHA-only follow-up commit.",
+  "historicalInputHashesSha256": "57adb9c3485f02ff914cb8ce5e43e10063ed499756fafeea4904678d2ad2419c",
+  "reconciledRemoteCommit": "138d15b70620074737e4f7c9acd0a2d4fad48701",
+  "concurrentReconciliationSha256": "78ba981e2728d45e1ee5ff542e9d0f0dbe5373136aae2d0d37069ea8b983e251"
+}

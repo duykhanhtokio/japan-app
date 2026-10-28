@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 1,
+  "worker": "general",
+  "scope": "source-gap evidence audit; no runtime edit",
+  "status": "ai_audited_pending_independent_review",
+  "baselineCommit": "30f79554bb20e9d096f09fbc0edb2464a1a7a30e",
+  "inputHashes": {
+    "docs/ssw-workspace/agriculture/source-gap-backlog.json": "a75cf3f64e25d938d0d6319069d6b9d9002d9b949da165ed466f80badf7765c2",
+    "docs/ssw-workspace/agriculture/source-gap-reconciliation-11.json": "0d238931b4384b5fe0097a5718733275e22509d3f861cf73d03c4666ee7c53ca",
+    "docs/ssw-workspace/agriculture/source-gap-reconciliation-12.json": "bf744380dbabbfbe282c8b8f51d56628a2d34c034f3cbc23ab8f6bb4685fd9b9",
+    "docs/ssw-workspace/agriculture/source-gap-reconciliation-22.json": "97f96f892b94a6724a86681e712802429867af63a6f259ea2990056335bd12fd",
+    "docs/ssw-workspace/agriculture/source-gap-reconciliation-27.json": "768bdbc780f700d899cb44a316984f6d234b340e0dbaa7e521f5a8e515aac727",
+    "docs/ssw-workspace/agriculture/source-gap-reconciliation-30.json": "054a32035e65b650fb088064e98c37652fa9bc5ac67cce0a0bf91701817dc040"
+  },
+  "productHashes": {
+    "src/data/agriculture/lessons.ja.json": "1a3c1be81671869b1f2ed7fd3410dedc0e0279278439c12a321d967b6cb00e7e",
+    "src/data/agriculture/diagrams.json": "0a89d16e72d15ade424e0a29a9025ef4c17353c3ede1fa68d1ed0aad06f26eda",
+    "src/data/agriculture/recognition-images.json": "a4f712a1d019c72782d54a4e2b3694767872ebfa796fee642d0b31130c3b18f4"
+  },
+  "source": {
+    "documentId": "AGR-S2",
+    "pdfSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+    "directlyInspectedPages": [
+      {
+        "pdfPage": 10,
+        "printedPage": 8,
+        "renderSha256": "43cb386366dad79f2748f9ceed706d796f56c1aacc6b8a5617cc7095266ae41b",
+        "renderMethod": "PyMuPDF Matrix(1.4,1.4); actual page viewed with view_image"
+      },
+      {
+        "pdfPage": 13,
+        "printedPage": 11,
+        "renderSha256": "496544644deba6fd598bb620b69dc4bc948a1edd4dda40defed5437f16c77d6d",
+        "renderMethod": "PyMuPDF Matrix(1.4,1.4); actual page viewed with view_image"
+      },
+      {
+        "pdfPage": 14,
+        "printedPage": 12,
+        "renderSha256": "015efdc90a2d98b7099b40e490e397272687c482e0227aa1d229dbce2adfc6d2",
+        "renderMethod": "PyMuPDF Matrix(1.4,1.4); actual page viewed with view_image"
+      },
+      {
+        "pdfPage": 15,
+        "printedPage": 13,
+        "renderSha256": "7dd9914765d8b6106c0d0662d8e4365660b237d04eb347ce253cb0453e76600c",
+        "renderMethod": "PyMuPDF Matrix(1.4,1.4); actual page viewed with view_image"
+      }
+    ],
+    "rawSourcePublished": false
+  },
+  "sourceCorrection": {
+    "sourceItemId": "AGR-A10-GENERAL-0347",
+    "field": "objectiveJa",
+    "before": "ダイズを2号の暗発芽の例として光応答と結び付ける。",
+    "after": "ダイコンを2号の暗発芽の例として光応答と結び付ける。",
+    "evidenceJa": "PDF13／印刷11の暗発芽種子欄の例はダイコン、トマト、スイカ。ダイズではない。",
+    "runtimeBinding": {
+      "lessonId": "agr-s30-plant-detail",
+      "lessonSourceHash": "b18ec043ee4a32d0d1e9e82aa3af976ba85c063752f3c67beca9454562477af5",
+      "paragraphId": "agr-s30-plant-detail-p6",
+      "paragraphSha256": "afeecc4f6493517282deab7568919090f85d14be551d3a991d36564d3db416db",
+      "currentTextJa": "光があると発芽しにくい暗発芽種子は、嫌光性種子という呼び名にも対応します。二号資料のこの欄に載るのはダイコン、トマト、スイカです。資料の相対的な説明では厚く覆土します。前の段落の花芽分化における長日・短日と、種子が発芽するときの光への反応は、対象の段階が違う分類として別欄に記しましょう。"
+    },
+    "recommendedDisposition": "correct_backlog_metadata_preserve_history_no_coverage_credit",
+    "countsAsClosedSourceOccurrence": false,
+    "reasonJa": "既存本文はすでにダイコンを正しく示す。誤ったダイズの監査目標を達成したことにはせず、メタデータ修正と学習内容追加を区別する。"
+  },
+  "rows": [
+    {
+      "sourceItemId": "AGR-A10-GENERAL-0288",
+      "documentId": "AGR-S2",
+      "pdfPage": 10,
+      "printedPage": 8,
+      "sourceItemStatus": "missing",
+      "sourceItemObjectiveJa": "常緑を年間を通じて葉がある性質として説明する。",
+      "auditDisposition": "prose_missing",
+      "currentCoverage": [
+        {
+          "lessonId": "agr-fruit",
+          "lessonSourceHash": "b915024a36469c05ff9670fd762bcd4e2538e4fbfc1b98c603804ce104c1ddd5",
+          "paragraphId": "agr-fruit-p1",
+          "paragraphSha256": "17b3f1b65489c30aee6a724eab5563b019d78e338038502dc955a4182b0cff35",
+          "currentTextJa": "果樹には常緑果樹と落葉果樹があります。果実の色や甘さだけで分類せず、葉の性質に着目して学びましょう。"
+        }
+      ],
+      "coverageFindingJa": "関連する既存本文はあるが、この追加定義は明示されていない。",
+      "safeNextScopeJa": "一年中葉を付ける常緑という性質を、果樹例と対応させる。葉が一枚も更新されないという意味にしない。",
+      "countsAsClosedSourceOccurrence": false,
+      "countsAsNewQuestion": false,
+      "scopeLevels": [
+        "2"
+      ]
+    },
+    {
+      "sourceItemId": "AGR-A10-GENERAL-0289",
+      "documentId": "AGR-S2",
+      "pdfPage": 10,
+      "printedPage": 8,
+      "sourceItemStatus": "missing",
+      "sourceItemObjectiveJa": "落葉を寒い時期に葉が落ちる性質として資料の範囲で説明する。",
+      "auditDisposition": "prose_missing",
+      "currentCoverage": [
+        {
+          "lessonId": "agr-fruit",
+          "lessonSourceHash": "b915024a36469c05ff9670fd762bcd4e2538e4fbfc1b98c603804ce104c1ddd5",
+          "paragraphId": "agr-fruit-p3",
+          "paragraphSha256": "b189a2a6a0728994a77bb9a9df91ed72485b84dfa350ec314dd4810d28ddb6a0",
+          "currentTextJa": "リンゴ、ブドウ、ナシ、モモ、カキは落葉果樹の例です。よく食べる果実でも、木の分類を別に確認することが必要です。"
+        }
+      ],
+      "coverageFindingJa": "関連する既存本文はあるが、この追加定義は明示されていない。",
+      "safeNextScopeJa": "資料が述べる寒い時季の落葉という葉の挙動を例と結び付ける。すべての気候で同じ月に落葉すると一般化しない。",
+      "countsAsClosedSourceOccurrence": false,
+      "countsAsNewQuestion": false,
+      "scopeLevels": [
+        "2"
+      ]
+    },
+    {
+      "sourceItemId": "AGR-A10-GENERAL-0290",
+      "documentId": "AGR-S2",
+      "pdfPage": 10,
+      "printedPage": 8,
+      "sourceItemStatus": "missing",
+      "sourceItemObjectiveJa": "暑い国由来の果樹が施設で栽培されることが多いという資料の傾向を説明する。",
+      "auditDisposition": "prose_missing",
+      "currentCoverage": [
+        {
+          "lessonId": "agr-fruit",
+          "lessonSourceHash": "b915024a36469c05ff9670fd762bcd4e2538e4fbfc1b98c603804ce104c1ddd5",
+          "paragraphId": "agr-fruit-p4",
+          "paragraphSha256": "384b07e53629fb54fb0b2644a0d442a5f689fa23c108fa543f71ea3f87b0d41b",
+          "currentTextJa": "リンゴは寒い地域、ウンシュウミカンは暖かい地域で多く栽培されています。これは代表的な傾向であり、その地域以外では絶対に作れないという意味ではありません。"
+        }
+      ],
+      "coverageFindingJa": "関連する既存本文はあるが、この追加定義は明示されていない。",
+      "safeNextScopeJa": "暑い地域由来の果樹では施設栽培が多いという資料の傾向を追加する。全熱帯果樹の必須要件に変えない。",
+      "countsAsClosedSourceOccurrence": false,
+      "countsAsNewQuestion": false,
+      "scopeLevels": [
+        "2"
+      ]
+    },
+    {
+      "sourceItemId": "AGR-A10-GENERAL-0363",
+      "documentId": "AGR-S2",
+      "pdfPage": 14,
+      "printedPage": 12,
+      "sourceItemStatus": "missing",
+      "sourceItemObjectiveJa": "手押し播種機を新しい画像で識別し播種に使う機械と対応させる。",
+      "auditDisposition": "equipment_visual_missing",
+      "currentCoverage": [
+        {
+          "lessonId": "agr-sowing-design",
+          "lessonSourceHash": "511c1053ee5965b87f76c4f4d4cb7bbb6a49ab84aef2d3e3279b9897b9be6818",
+          "paragraphId": "agr-sowing-design-p6",
+          "paragraphSha256": "bb292519f153b22435d915d6b7b878290e145cb78315ea2288194b15d2241f09",
+          "currentTextJa": "定植した作物の列を条と呼び、列と列の間隔が条間です。株間は株同士の間隔で、条間とは異なります。作物ごとの具体的な間隔を、図の見た目だけから決めてはいけません。"
+        }
+      ],
+      "coverageFindingJa": "関連する語義・作業説明はあるが、この対象の新規識別図は現行diagrams.json又はrecognition-images.jsonの登録にない。本文だけでは視覚課題を閉じない。",
+      "safeNextScopeJa": "手で押すハンドル、接地輪、種を入れる部分をもつ小型播種機の独立した識別素材を作成・確認する。写真一枚から内部機構や全機種共通仕様を推定しない。",
+      "countsAsClosedSourceOccurrence": false,
+      "countsAsNewQuestion": false,
+      "scopeLevels": [
+        "2"
+      ]
+    },
+    {
+      "sourceItemId": "AGR-A10-GENERAL-0364",
+      "documentId": "AGR-S2",
+      "pdfPage": 14,
+      "printedPage": 12,
+      "sourceItemStatus": "missing",
+      "sourceItemObjectiveJa": "シーダーを新しい画像で識別し播種に使う機械と対応させる。",
+      "auditDisposition": "equipment_visual_missing",
+      "currentCoverage": [
+        {
+          "lessonId": "agr-sowing-design",
+          "lessonSourceHash": "511c1053ee5965b87f76c4f4d4cb7bbb6a49ab84aef2d3e3279b9897b9be6818",
+          "paragraphId": "agr-sowing-design-p6",
+          "paragraphSha256": "bb292519f153b22435d915d6b7b878290e145cb78315ea2288194b15d2241f09",
+          "currentTextJa": "定植した作物の列を条と呼び、列と列の間隔が条間です。株間は株同士の間隔で、条間とは異なります。作物ごとの具体的な間隔を、図の見た目だけから決めてはいけません。"
+        }
+      ],
+      "coverageFindingJa": "関連する語義・作業説明はあるが、この対象の新規識別図は現行diagrams.json又はrecognition-images.jsonの登録にない。本文だけでは視覚課題を閉じない。",
+      "safeNextScopeJa": "幅広い種まき作業機を独立した素材で示し、手押し播種機と比較する。資料写真だけで型式や条数を教材上の必須規格にしない。",
+      "countsAsClosedSourceOccurrence": false,
+      "countsAsNewQuestion": false,
+      "scopeLevels": [
+        "2"
+      ]
+    },
+    {
+      "sourceItemId": "AGR-A10-GENERAL-0372",
+      "documentId": "AGR-S2",
+      "pdfPage": 15,
+      "printedPage": 13,
+      "sourceItemStatus": "missing",
+      "sourceItemObjectiveJa": "生育不良の図と残す苗を比べる新規識別素材を作る。",
+      "auditDisposition": "visual_missing",
+      "currentCoverage": [
+        {
+          "lessonId": "agr-germination",
+          "lessonSourceHash": "ff847c65d80c262c1c3e7d4de04312c4c16f8dcf438f286560528b0cc9348810",
+          "paragraphId": "agr-germination-p6",
+          "paragraphSha256": "fbc5980c76ec1a1967ed749963d957cff388112934a94b4ffb8304827abb5fce",
+          "currentTextJa": "直まき栽培では、余分な苗や、病害虫の影響がある苗、形に異常がある苗などを取り除き、苗同士の間隔を整えます。大きな苗を無条件に全部抜くという意味ではありません。"
+        }
+      ],
+      "coverageFindingJa": "関連する語義・作業説明はあるが、この対象の新規識別図は現行diagrams.json又はrecognition-images.jsonの登録にない。本文だけでは視覚課題を閉じない。",
+      "safeNextScopeJa": "独立した比較図に小さく生育が悪い苗と残す苗を示す。大きさだけを全作物共通の判断基準にしない。",
+      "countsAsClosedSourceOccurrence": false,
+      "countsAsNewQuestion": false,
+      "scopeLevels": [
+        "2"
+      ]
+    },
+    {
+      "sourceItemId": "AGR-A10-GENERAL-0373",
+      "documentId": "AGR-S2",
+      "pdfPage": 15,
+      "printedPage": 13,
+      "sourceItemStatus": "missing",
+      "sourceItemObjectiveJa": "徒長の図と残す苗を比べる新規識別素材を作る。",
+      "auditDisposition": "visual_missing",
+      "currentCoverage": [
+        {
+          "lessonId": "agr-germination",
+          "lessonSourceHash": "ff847c65d80c262c1c3e7d4de04312c4c16f8dcf438f286560528b0cc9348810",
+          "paragraphId": "agr-germination-p6",
+          "paragraphSha256": "fbc5980c76ec1a1967ed749963d957cff388112934a94b4ffb8304827abb5fce",
+          "currentTextJa": "直まき栽培では、余分な苗や、病害虫の影響がある苗、形に異常がある苗などを取り除き、苗同士の間隔を整えます。大きな苗を無条件に全部抜くという意味ではありません。"
+        }
+      ],
+      "coverageFindingJa": "関連する語義・作業説明はあるが、この対象の新規識別図は現行diagrams.json又はrecognition-images.jsonの登録にない。本文だけでは視覚課題を閉じない。",
+      "safeNextScopeJa": "独立した比較図に細長く伸びた苗と残す苗を示す。外観だけから原因を断定しない。",
+      "countsAsClosedSourceOccurrence": false,
+      "countsAsNewQuestion": false,
+      "scopeLevels": [
+        "2"
+      ]
+    },
+    {
+      "sourceItemId": "AGR-A10-GENERAL-0374",
+      "documentId": "AGR-S2",
+      "pdfPage": 15,
+      "printedPage": 13,
+      "sourceItemStatus": "missing",
+      "sourceItemObjectiveJa": "葉の奇形・虫くいの図と残す苗を比べる新規識別素材を作る。",
+      "auditDisposition": "visual_missing",
+      "currentCoverage": [
+        {
+          "lessonId": "agr-germination",
+          "lessonSourceHash": "ff847c65d80c262c1c3e7d4de04312c4c16f8dcf438f286560528b0cc9348810",
+          "paragraphId": "agr-germination-p6",
+          "paragraphSha256": "fbc5980c76ec1a1967ed749963d957cff388112934a94b4ffb8304827abb5fce",
+          "currentTextJa": "直まき栽培では、余分な苗や、病害虫の影響がある苗、形に異常がある苗などを取り除き、苗同士の間隔を整えます。大きな苗を無条件に全部抜くという意味ではありません。"
+        }
+      ],
+      "coverageFindingJa": "関連する語義・作業説明はあるが、この対象の新規識別図は現行diagrams.json又はrecognition-images.jsonの登録にない。本文だけでは視覚課題を閉じない。",
+      "safeNextScopeJa": "独立した比較図に葉の形の異常・虫食いの例と残す苗を示す。特定病害虫の確定診断は教えない。",
+      "countsAsClosedSourceOccurrence": false,
+      "countsAsNewQuestion": false,
+      "scopeLevels": [
+        "2"
+      ]
+    },
+    {
+      "sourceItemId": "AGR-A10-GENERAL-0375",
+      "documentId": "AGR-S2",
+      "pdfPage": 15,
+      "printedPage": 13,
+      "sourceItemStatus": "missing",
+      "sourceItemObjectiveJa": "過密の図と残す苗を比べる新規識別素材を作る。",
+      "auditDisposition": "visual_missing",
+      "currentCoverage": [
+        {
+          "lessonId": "agr-germination",
+          "lessonSourceHash": "ff847c65d80c262c1c3e7d4de04312c4c16f8dcf438f286560528b0cc9348810",
+          "paragraphId": "agr-germination-p6",
+          "paragraphSha256": "fbc5980c76ec1a1967ed749963d957cff388112934a94b4ffb8304827abb5fce",
+          "currentTextJa": "直まき栽培では、余分な苗や、病害虫の影響がある苗、形に異常がある苗などを取り除き、苗同士の間隔を整えます。大きな苗を無条件に全部抜くという意味ではありません。"
+        }
+      ],
+      "coverageFindingJa": "関連する語義・作業説明はあるが、この対象の新規識別図は現行diagrams.json又はrecognition-images.jsonの登録にない。本文だけでは視覚課題を閉じない。",
+      "safeNextScopeJa": "独立した比較図に密すぎる苗間隔を示し、どれを間引くと間隔を確保できるか説明する。機械的に中央苗だけを全場面で抜くという規則にしない。",
+      "countsAsClosedSourceOccurrence": false,
+      "countsAsNewQuestion": false,
+      "scopeLevels": [
+        "2"
+      ]
+    },
+    {
+      "sourceItemId": "AGR-A10-GENERAL-0291",
+      "documentId": "AGR-S2",
+      "pdfPage": 10,
+      "printedPage": 8,
+      "sourceItemStatus": "missing",
+      "sourceItemObjectiveJa": "野菜を葉・茎・花・実を利用する草本の総称とする資料の定義を説明する。",
+      "auditDisposition": "prose_missing",
+      "currentCoverage": [
+        {
+          "lessonId": "agr-crop-types",
+          "lessonSourceHash": "d10fc90dea2cc955ee04b2c69927f4507a7dbd156498ec6db5333631a7f14601",
+          "paragraphId": "agr-crop-types-p5",
+          "paragraphSha256": "f2e2f800c61db5636bfe11b01712927e6a5df00bb1dd9b3e2544b05881aa3a9b",
+          "currentTextJa": "園芸作物には、果樹、野菜、観賞植物があります。食べることだけでなく、花やサボテンなどを見て楽しむ利用も含まれます。"
+        }
+      ],
+      "coverageFindingJa": "関連する既存本文はあるが、この追加定義又は対象例の明示が不足。",
+      "safeNextScopeJa": "野菜の定義で葉・茎・花・果実の利用と草本類という性質を明示する。野菜の全分類をこの短い定義だけで確定したり、根の利用を排除する一般定義に広げたりしない。",
+      "countsAsClosedSourceOccurrence": false,
+      "countsAsNewQuestion": false,
+      "scopeLevels": [
+        "2"
+      ]
+    },
+    {
+      "sourceItemId": "AGR-A10-GENERAL-0377",
+      "documentId": "AGR-S2",
+      "pdfPage": 15,
+      "printedPage": 13,
+      "sourceItemStatus": "missing",
+      "sourceItemObjectiveJa": "イネを育苗する資料の例に対応させる。",
+      "auditDisposition": "prose_missing",
+      "currentCoverage": [
+        {
+          "lessonId": "agr-nursery",
+          "lessonSourceHash": "c1a937413a433a99ba32d9e8c6a6a18f62ee806fa325596e9556fe46d4c8bc17",
+          "paragraphId": "agr-nursery-p1",
+          "paragraphSha256": "b31b874a39d379fbfc370eef9ef2cbc9b1249001a5063b19ae6e50cace3fb197",
+          "currentTextJa": "本来栽培する田畑とは別の場所で、種から苗を育てることを育苗と呼びます。苗を育てる場所は苗床です。種をまく場所と、後で栽培する場所を分けて考えます。"
+        }
+      ],
+      "coverageFindingJa": "関連する既存本文はあるが、この追加定義又は対象例の明示が不足。",
+      "safeNextScopeJa": "育苗の対象例としてイネを明示する。育苗一般の定義を繰り返すだけではなく、例としての対応を短く補う。",
+      "countsAsClosedSourceOccurrence": false,
+      "countsAsNewQuestion": false,
+      "scopeLevels": [
+        "2"
+      ]
+    },
+    {
+      "sourceItemId": "AGR-A10-GENERAL-0378",
+      "documentId": "AGR-S2",
+      "pdfPage": 15,
+      "printedPage": 13,
+      "sourceItemStatus": "missing",
+      "sourceItemObjectiveJa": "トマト・キュウリの果菜群を育苗する資料の例に対応させる。",
+      "auditDisposition": "prose_missing",
+      "currentCoverage": [
+        {
+          "lessonId": "agr-nursery",
+          "lessonSourceHash": "c1a937413a433a99ba32d9e8c6a6a18f62ee806fa325596e9556fe46d4c8bc17",
+          "paragraphId": "agr-nursery-p1",
+          "paragraphSha256": "b31b874a39d379fbfc370eef9ef2cbc9b1249001a5063b19ae6e50cace3fb197",
+          "currentTextJa": "本来栽培する田畑とは別の場所で、種から苗を育てることを育苗と呼びます。苗を育てる場所は苗床です。種をまく場所と、後で栽培する場所を分けて考えます。"
+        }
+      ],
+      "coverageFindingJa": "関連する既存本文はあるが、この追加定義又は対象例の明示が不足。",
+      "safeNextScopeJa": "育苗の対象例としてトマト・キュウリの果菜群を明示する。すべての果菜に同じ育苗日数や処方を与えない。",
+      "countsAsClosedSourceOccurrence": false,
+      "countsAsNewQuestion": false,
+      "scopeLevels": [
+        "2"
+      ]
+    }
+  ],
+  "scopePlan": [
+    {
+      "topicJa": "果樹の葉の性質と施設栽培の傾向",
+      "sourceItemIds": [
+        "AGR-A10-GENERAL-0288",
+        "AGR-A10-GENERAL-0289",
+        "AGR-A10-GENERAL-0290"
+      ],
+      "action": "Source definitions may form a concise supplement after independent review and 12-locale translation; do not manufacture six paragraphs or new questions solely to fit a template."
+    },
+    {
+      "topicJa": "野菜の定義と育苗対象例",
+      "sourceItemIds": [
+        "AGR-A10-GENERAL-0291",
+        "AGR-A10-GENERAL-0377",
+        "AGR-A10-GENERAL-0378"
+      ],
+      "action": "Concise definitions/examples supplement only; these are not certified distinct examination objectives."
+    },
+    {
+      "topicJa": "播種機と間引きの識別",
+      "sourceItemIds": [
+        "AGR-A10-GENERAL-0363",
+        "AGR-A10-GENERAL-0364",
+        "AGR-A10-GENERAL-0372",
+        "AGR-A10-GENERAL-0373",
+        "AGR-A10-GENERAL-0374",
+        "AGR-A10-GENERAL-0375"
+      ],
+      "action": "Original equipment and thinning comparison visuals need independent review before registration."
+    }
+  ],
+  "holdDecisions": [
+    {
+      "sourceItemId": "AGR-A10-GENERAL-0370",
+      "disposition": "hold_unchanged",
+      "reasonJa": "固定種の生物学的説明から採種・増殖の法的許可を導かない。現行権利条件を未検証のまま解除しない。"
+    },
+    {
+      "sourceItemIds": [
+        "AGR-A10-GENERAL-0294",
+        "AGR-A10-GENERAL-0298"
+      ],
+      "disposition": "preserve_partial_overlay11",
+      "reasonJa": "呼吸のガス交換はagr-par11-general-gas-transport-p4で説明済み。元の矢印位置との視覚対応が未作成なので、語義を再執筆して新規知識として数えない。"
+    }
+  ],
+  "counts": {
+    "reviewedMissingOccurrences": 12,
+    "newlyClosedOccurrences": 0,
+    "metadataCorrectionsProposed": 1,
+    "newLessons": 0,
+    "newQuestions": 0
+  },
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceTested": false,
+  "existingAssetReconciliation": {
+    "sourceItemIds": [
+      "AGR-A10-GENERAL-0353",
+      "AGR-A10-GENERAL-0354",
+      "AGR-A10-GENERAL-0355"
+    ],
+    "assetId": "agr-recognition-sowing-patterns-v1",
+    "lessonId": "agr-sowing-design",
+    "disposition": "do_not_recreate; existing registry object found after checking actual registry",
+    "countsAsClosedSourceOccurrence": false,
+    "reason": "The frozen backlog says missing, but current registry includes an original sowing-pattern image. No image visual validation was performed in this audit, so do not close these rows; future work must check the existing asset rather than generate duplicate art."
+  },
+  "inspectionCorrection": "Initial candidate screen considered sowing visuals missing. Actual registry inspection found the existing asset; those three candidates were replaced before final packet with prose rows0291/0377/0378. Current final12 rows are disjoint."
+}

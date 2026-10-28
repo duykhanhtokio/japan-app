@@ -1,0 +1,530 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "general",
+  "author": "soil-water-fertilizer",
+  "packetSHA256": "f204facd37b9fcf0a068b9f943a653e0c21449612f59aa8bb1350877bde68115",
+  "status": "independent_ai_peer_review_complete",
+  "inputHashesVerified": [
+    {
+      "path": "docs/ssw-workspace/agriculture/source-gap-backlog.json",
+      "sha256": "a75cf3f64e25d938d0d6319069d6b9d9002d9b949da165ed466f80badf7765c2",
+      "matchesPacket": true
+    },
+    {
+      "path": "docs/ssw-workspace/agriculture/source-gap-reconciliation-11.json",
+      "sha256": "0d238931b4384b5fe0097a5718733275e22509d3f861cf73d03c4666ee7c53ca",
+      "matchesPacket": true
+    },
+    {
+      "path": "docs/ssw-workspace/agriculture/source-gap-reconciliation-12.json",
+      "sha256": "bf744380dbabbfbe282c8b8f51d56628a2d34c034f3cbc23ab8f6bb4685fd9b9",
+      "matchesPacket": true
+    },
+    {
+      "path": "docs/ssw-workspace/agriculture/source-gap-reconciliation-22.json",
+      "sha256": "97f96f892b94a6724a86681e712802429867af63a6f259ea2990056335bd12fd",
+      "matchesPacket": true
+    },
+    {
+      "path": "docs/ssw-workspace/agriculture/source-gap-reconciliation-27.json",
+      "sha256": "768bdbc780f700d899cb44a316984f6d234b340e0dbaa7e521f5a8e515aac727",
+      "matchesPacket": true
+    },
+    {
+      "path": "docs/ssw-workspace/agriculture/source-gap-reconciliation-30.json",
+      "sha256": "054a32035e65b650fb088064e98c37652fa9bc5ac67cce0a0bf91701817dc040",
+      "matchesPacket": true
+    },
+    {
+      "path": "src/data/agriculture/lessons.ja.json",
+      "sha256": "1a3c1be81671869b1f2ed7fd3410dedc0e0279278439c12a321d967b6cb00e7e",
+      "matchesPacket": true
+    },
+    {
+      "path": "src/data/agriculture/weekly-checks.ja.json",
+      "sha256": "41ce974912a2adc1f2079d13b9f1e1845069aab0ec1a131655293bf00388c50a",
+      "matchesPacket": true
+    },
+    {
+      "path": "src/data/agriculture/mock-exams.ja.json",
+      "sha256": "481540b1f7603cb1c0429985db5ab158b8be0a3d13d331cf303f37a82986ea59",
+      "matchesPacket": true
+    },
+    {
+      "path": "src/data/agriculture/diagrams.json",
+      "sha256": "0a89d16e72d15ade424e0a29a9025ef4c17353c3ede1fa68d1ed0aad06f26eda",
+      "matchesPacket": true
+    },
+    {
+      "path": "src/data/agriculture/recognition-images.json",
+      "sha256": "a4f712a1d019c72782d54a4e2b3694767872ebfa796fee642d0b31130c3b18f4",
+      "matchesPacket": true
+    }
+  ],
+  "sourceInspection": [
+    {
+      "documentId": "AGR-S1",
+      "pdfPage": 15,
+      "printedPage": 9,
+      "pdfSha256": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+      "peerImageSha256": "80d431de0c74e4d1ae58e153fdcf84953f1ea1c4f1b8dff0e6fc46f37278c59a",
+      "peerRenderMethod": "PyMuPDF Matrix(1.4,1.4)",
+      "directlyViewed": true,
+      "differentRendererFromAuthor": true
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 34,
+      "printedPage": 32,
+      "pdfSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+      "peerImageSha256": "2520ea11447847c639fd77909663261846cafafb86432c4c23b41fd7e5503c60",
+      "peerRenderMethod": "PyMuPDF Matrix(1.4,1.4)",
+      "directlyViewed": true,
+      "differentRendererFromAuthor": true
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 35,
+      "printedPage": 33,
+      "pdfSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+      "peerImageSha256": "c99919cf5c6843e8e80e7a68a97622249c5ee6a252adba1432bd82350f1d3cc4",
+      "peerRenderMethod": "PyMuPDF Matrix(1.4,1.4)",
+      "directlyViewed": true,
+      "differentRendererFromAuthor": true
+    }
+  ],
+  "registryInspection": {
+    "recognitionImages": 50,
+    "diagrams": 4,
+    "noIrrigationOrDrainageEquipmentAssetFound": true,
+    "note": "Registry absence is bounded to these two files; not a production device or asset-render check."
+  },
+  "rows": [
+    {
+      "sourceItemId": "AGR-A10-SOIL-0005",
+      "decision": "accept",
+      "reasonJa": "PDF S1p15の頭上かん水欄は真夏の日中をなるべく避ける限定的助言を明示。現行p2は器具と場所、decision-p4は夏の一般時季のみで、この方法への明示的結合は不足。水温・時刻の新規数値を作らないという境界を採用。",
+      "sourceReference": {
+        "documentId": "AGR-S1",
+        "pdfPage": 15,
+        "printedPage": 9
+      },
+      "canonicalBindings": [
+        {
+          "paragraphId": "agr-water-methods-p1",
+          "paragraphSha256": "c190e1c970b149cf08f22ac4e1788c7415b7f53167c4a22060bdcd2eadb5a235"
+        },
+        {
+          "paragraphId": "agr-water-methods-p2",
+          "paragraphSha256": "9464dffc8d8aedf39c1141bcd925c32b6d796325c2de31a14efb3274428fb3af"
+        },
+        {
+          "paragraphId": "agr-water-methods-p3",
+          "paragraphSha256": "a5e4fa04c6a929ed99f6b7fa3e62dd860c6c57c1a513c11fa781e40499015859"
+        },
+        {
+          "paragraphId": "agr-water-methods-p4",
+          "paragraphSha256": "24572383baf20bcea0aac25a5720b5cb606111cd5ed1428b095f5af236b4db86"
+        },
+        {
+          "paragraphId": "agr-water-methods-p5",
+          "paragraphSha256": "282dbfb2edcad8ae3f08eda27d86d5329b29f1e04412863c57f1f0700ea0854b"
+        },
+        {
+          "paragraphId": "agr-water-decision-p4",
+          "paragraphSha256": "2a35edc24e5cf33a892f6c3b97eecde4bd5556e6ea62496d6d4f678b54e9b811"
+        },
+        {
+          "paragraphId": "agr-s30-soil-detail-p2",
+          "paragraphSha256": "56b9d9889d2b02e63926d59c198c28a13742f7fcc02819951a759b88100e66ce"
+        }
+      ],
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0011",
+      "decision": "accept",
+      "reasonJa": "頭上から散水する位置関係は実際の図にある。現行本文で場所を既習であり、登録済み50画像・4概念図にかん水比較素材はない。画像化だけで独立した新問容量を認定しない。",
+      "sourceReference": {
+        "documentId": "AGR-S1",
+        "pdfPage": 15,
+        "printedPage": 9
+      },
+      "canonicalBindings": [
+        {
+          "paragraphId": "agr-water-methods-p1",
+          "paragraphSha256": "c190e1c970b149cf08f22ac4e1788c7415b7f53167c4a22060bdcd2eadb5a235"
+        },
+        {
+          "paragraphId": "agr-water-methods-p2",
+          "paragraphSha256": "9464dffc8d8aedf39c1141bcd925c32b6d796325c2de31a14efb3274428fb3af"
+        },
+        {
+          "paragraphId": "agr-water-methods-p3",
+          "paragraphSha256": "a5e4fa04c6a929ed99f6b7fa3e62dd860c6c57c1a513c11fa781e40499015859"
+        },
+        {
+          "paragraphId": "agr-water-methods-p4",
+          "paragraphSha256": "24572383baf20bcea0aac25a5720b5cb606111cd5ed1428b095f5af236b4db86"
+        },
+        {
+          "paragraphId": "agr-water-methods-p5",
+          "paragraphSha256": "282dbfb2edcad8ae3f08eda27d86d5329b29f1e04412863c57f1f0700ea0854b"
+        },
+        {
+          "paragraphId": "agr-water-decision-p4",
+          "paragraphSha256": "2a35edc24e5cf33a892f6c3b97eecde4bd5556e6ea62496d6d4f678b54e9b811"
+        },
+        {
+          "paragraphId": "agr-s30-soil-detail-p2",
+          "paragraphSha256": "56b9d9889d2b02e63926d59c198c28a13742f7fcc02819951a759b88100e66ce"
+        }
+      ],
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0013",
+      "decision": "accept",
+      "reasonJa": "PDF図は株元の管と水の局所的な供給を示す。current p3の語義・節水は既習。新規素材の必要性のみ採用し、製品ごとの点滴器具形状を一律化しない。",
+      "sourceReference": {
+        "documentId": "AGR-S1",
+        "pdfPage": 15,
+        "printedPage": 9
+      },
+      "canonicalBindings": [
+        {
+          "paragraphId": "agr-water-methods-p1",
+          "paragraphSha256": "c190e1c970b149cf08f22ac4e1788c7415b7f53167c4a22060bdcd2eadb5a235"
+        },
+        {
+          "paragraphId": "agr-water-methods-p2",
+          "paragraphSha256": "9464dffc8d8aedf39c1141bcd925c32b6d796325c2de31a14efb3274428fb3af"
+        },
+        {
+          "paragraphId": "agr-water-methods-p3",
+          "paragraphSha256": "a5e4fa04c6a929ed99f6b7fa3e62dd860c6c57c1a513c11fa781e40499015859"
+        },
+        {
+          "paragraphId": "agr-water-methods-p4",
+          "paragraphSha256": "24572383baf20bcea0aac25a5720b5cb606111cd5ed1428b095f5af236b4db86"
+        },
+        {
+          "paragraphId": "agr-water-methods-p5",
+          "paragraphSha256": "282dbfb2edcad8ae3f08eda27d86d5329b29f1e04412863c57f1f0700ea0854b"
+        },
+        {
+          "paragraphId": "agr-water-decision-p4",
+          "paragraphSha256": "2a35edc24e5cf33a892f6c3b97eecde4bd5556e6ea62496d6d4f678b54e9b811"
+        },
+        {
+          "paragraphId": "agr-s30-soil-detail-p2",
+          "paragraphSha256": "56b9d9889d2b02e63926d59c198c28a13742f7fcc02819951a759b88100e66ce"
+        }
+      ],
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0015",
+      "decision": "accept",
+      "reasonJa": "PDF図はうね間の溝に水を通す。current p4の語義・大量の水という比較は既習であり、新たな文章選択問を重ねない。",
+      "sourceReference": {
+        "documentId": "AGR-S1",
+        "pdfPage": 15,
+        "printedPage": 9
+      },
+      "canonicalBindings": [
+        {
+          "paragraphId": "agr-water-methods-p1",
+          "paragraphSha256": "c190e1c970b149cf08f22ac4e1788c7415b7f53167c4a22060bdcd2eadb5a235"
+        },
+        {
+          "paragraphId": "agr-water-methods-p2",
+          "paragraphSha256": "9464dffc8d8aedf39c1141bcd925c32b6d796325c2de31a14efb3274428fb3af"
+        },
+        {
+          "paragraphId": "agr-water-methods-p3",
+          "paragraphSha256": "a5e4fa04c6a929ed99f6b7fa3e62dd860c6c57c1a513c11fa781e40499015859"
+        },
+        {
+          "paragraphId": "agr-water-methods-p4",
+          "paragraphSha256": "24572383baf20bcea0aac25a5720b5cb606111cd5ed1428b095f5af236b4db86"
+        },
+        {
+          "paragraphId": "agr-water-methods-p5",
+          "paragraphSha256": "282dbfb2edcad8ae3f08eda27d86d5329b29f1e04412863c57f1f0700ea0854b"
+        },
+        {
+          "paragraphId": "agr-water-decision-p4",
+          "paragraphSha256": "2a35edc24e5cf33a892f6c3b97eecde4bd5556e6ea62496d6d4f678b54e9b811"
+        },
+        {
+          "paragraphId": "agr-s30-soil-detail-p2",
+          "paragraphSha256": "56b9d9889d2b02e63926d59c198c28a13742f7fcc02819951a759b88100e66ce"
+        }
+      ],
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0017",
+      "decision": "accept",
+      "reasonJa": "S1p15の器具写真にはす口のラベルが確認できる。current p2に名称はあるが、はす口に対応する独立した識別素材が登録されていない。",
+      "sourceReference": {
+        "documentId": "AGR-S1",
+        "pdfPage": 15,
+        "printedPage": 9
+      },
+      "canonicalBindings": [
+        {
+          "paragraphId": "agr-water-methods-p1",
+          "paragraphSha256": "c190e1c970b149cf08f22ac4e1788c7415b7f53167c4a22060bdcd2eadb5a235"
+        },
+        {
+          "paragraphId": "agr-water-methods-p2",
+          "paragraphSha256": "9464dffc8d8aedf39c1141bcd925c32b6d796325c2de31a14efb3274428fb3af"
+        },
+        {
+          "paragraphId": "agr-water-methods-p3",
+          "paragraphSha256": "a5e4fa04c6a929ed99f6b7fa3e62dd860c6c57c1a513c11fa781e40499015859"
+        },
+        {
+          "paragraphId": "agr-water-methods-p4",
+          "paragraphSha256": "24572383baf20bcea0aac25a5720b5cb606111cd5ed1428b095f5af236b4db86"
+        },
+        {
+          "paragraphId": "agr-water-methods-p5",
+          "paragraphSha256": "282dbfb2edcad8ae3f08eda27d86d5329b29f1e04412863c57f1f0700ea0854b"
+        },
+        {
+          "paragraphId": "agr-water-decision-p4",
+          "paragraphSha256": "2a35edc24e5cf33a892f6c3b97eecde4bd5556e6ea62496d6d4f678b54e9b811"
+        },
+        {
+          "paragraphId": "agr-s30-soil-detail-p2",
+          "paragraphSha256": "56b9d9889d2b02e63926d59c198c28a13742f7fcc02819951a759b88100e66ce"
+        }
+      ],
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0019",
+      "decision": "accept",
+      "reasonJa": "S1p15の器具写真とラベルがスプリンクラーに対応。current p2/p6と既存問題の方法対応は再利用し、名称記憶を新目的として水増ししない。",
+      "sourceReference": {
+        "documentId": "AGR-S1",
+        "pdfPage": 15,
+        "printedPage": 9
+      },
+      "canonicalBindings": [
+        {
+          "paragraphId": "agr-water-methods-p1",
+          "paragraphSha256": "c190e1c970b149cf08f22ac4e1788c7415b7f53167c4a22060bdcd2eadb5a235"
+        },
+        {
+          "paragraphId": "agr-water-methods-p2",
+          "paragraphSha256": "9464dffc8d8aedf39c1141bcd925c32b6d796325c2de31a14efb3274428fb3af"
+        },
+        {
+          "paragraphId": "agr-water-methods-p3",
+          "paragraphSha256": "a5e4fa04c6a929ed99f6b7fa3e62dd860c6c57c1a513c11fa781e40499015859"
+        },
+        {
+          "paragraphId": "agr-water-methods-p4",
+          "paragraphSha256": "24572383baf20bcea0aac25a5720b5cb606111cd5ed1428b095f5af236b4db86"
+        },
+        {
+          "paragraphId": "agr-water-methods-p5",
+          "paragraphSha256": "282dbfb2edcad8ae3f08eda27d86d5329b29f1e04412863c57f1f0700ea0854b"
+        },
+        {
+          "paragraphId": "agr-water-decision-p4",
+          "paragraphSha256": "2a35edc24e5cf33a892f6c3b97eecde4bd5556e6ea62496d6d4f678b54e9b811"
+        },
+        {
+          "paragraphId": "agr-s30-soil-detail-p2",
+          "paragraphSha256": "56b9d9889d2b02e63926d59c198c28a13742f7fcc02819951a759b88100e66ce"
+        }
+      ],
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0021",
+      "decision": "accept",
+      "reasonJa": "写真欄のかん水チューブを確認。current water-methods-p5とs30-soil-detail-p2で機構差は既習。新規素材は資料写真の複製を避け、すべての製品に同じ外観を要求しない。",
+      "sourceReference": {
+        "documentId": "AGR-S1",
+        "pdfPage": 15,
+        "printedPage": 9
+      },
+      "canonicalBindings": [
+        {
+          "paragraphId": "agr-water-methods-p1",
+          "paragraphSha256": "c190e1c970b149cf08f22ac4e1788c7415b7f53167c4a22060bdcd2eadb5a235"
+        },
+        {
+          "paragraphId": "agr-water-methods-p2",
+          "paragraphSha256": "9464dffc8d8aedf39c1141bcd925c32b6d796325c2de31a14efb3274428fb3af"
+        },
+        {
+          "paragraphId": "agr-water-methods-p3",
+          "paragraphSha256": "a5e4fa04c6a929ed99f6b7fa3e62dd860c6c57c1a513c11fa781e40499015859"
+        },
+        {
+          "paragraphId": "agr-water-methods-p4",
+          "paragraphSha256": "24572383baf20bcea0aac25a5720b5cb606111cd5ed1428b095f5af236b4db86"
+        },
+        {
+          "paragraphId": "agr-water-methods-p5",
+          "paragraphSha256": "282dbfb2edcad8ae3f08eda27d86d5329b29f1e04412863c57f1f0700ea0854b"
+        },
+        {
+          "paragraphId": "agr-water-decision-p4",
+          "paragraphSha256": "2a35edc24e5cf33a892f6c3b97eecde4bd5556e6ea62496d6d4f678b54e9b811"
+        },
+        {
+          "paragraphId": "agr-s30-soil-detail-p2",
+          "paragraphSha256": "56b9d9889d2b02e63926d59c198c28a13742f7fcc02819951a759b88100e66ce"
+        }
+      ],
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0023",
+      "decision": "accept",
+      "reasonJa": "写真欄の点滴かん水チューブを確認。既存の株元・点滴という説明と区別して、未登録の視覚教材だけを次作業とする提案を採用。流量や材質規格を追加しない。",
+      "sourceReference": {
+        "documentId": "AGR-S1",
+        "pdfPage": 15,
+        "printedPage": 9
+      },
+      "canonicalBindings": [
+        {
+          "paragraphId": "agr-water-methods-p1",
+          "paragraphSha256": "c190e1c970b149cf08f22ac4e1788c7415b7f53167c4a22060bdcd2eadb5a235"
+        },
+        {
+          "paragraphId": "agr-water-methods-p2",
+          "paragraphSha256": "9464dffc8d8aedf39c1141bcd925c32b6d796325c2de31a14efb3274428fb3af"
+        },
+        {
+          "paragraphId": "agr-water-methods-p3",
+          "paragraphSha256": "a5e4fa04c6a929ed99f6b7fa3e62dd860c6c57c1a513c11fa781e40499015859"
+        },
+        {
+          "paragraphId": "agr-water-methods-p4",
+          "paragraphSha256": "24572383baf20bcea0aac25a5720b5cb606111cd5ed1428b095f5af236b4db86"
+        },
+        {
+          "paragraphId": "agr-water-methods-p5",
+          "paragraphSha256": "282dbfb2edcad8ae3f08eda27d86d5329b29f1e04412863c57f1f0700ea0854b"
+        },
+        {
+          "paragraphId": "agr-water-decision-p4",
+          "paragraphSha256": "2a35edc24e5cf33a892f6c3b97eecde4bd5556e6ea62496d6d4f678b54e9b811"
+        },
+        {
+          "paragraphId": "agr-s30-soil-detail-p2",
+          "paragraphSha256": "56b9d9889d2b02e63926d59c198c28a13742f7fcc02819951a759b88100e66ce"
+        }
+      ],
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0502",
+      "decision": "amend",
+      "reasonJa": "S2p34に素焼き土管と専用の穴あき管が掲載。current drainage-p2は一般的な排水管説明で材料例は不足。p34は地表排水小見出し配下に暗きょを置き、p35は地下排水に暗きょ排水を列挙するため見出し不整合を明示的に保つ。英語のdark drainageはunderdrainage又は暗きょに直す。",
+      "sourceReference": {
+        "documentId": "AGR-S2",
+        "pdfPage": 34,
+        "printedPage": 32
+      },
+      "canonicalBindings": [
+        {
+          "paragraphId": "agr-drainage-comparison-p2",
+          "paragraphSha256": "bd756b443ebab11d3a31f84c43c70377128cc7f75b182530c9e414b3e5d7630a"
+        },
+        {
+          "paragraphId": "agr-drainage-comparison-p3",
+          "paragraphSha256": "15796a79a5d48a3b4f66fb3ba57ec126e326df220f148c0c202c2260a33a7b5c"
+        }
+      ],
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0538",
+      "decision": "hold",
+      "reasonJa": "S2p35は株元だけ高く盛り上げて植栽する例に客土という語を括弧で付す。current drainage-p5は操作を説明済みだが語は未記載。これを客土全般の定義として採用できないという著者の範囲保留を支持。",
+      "sourceReference": {
+        "documentId": "AGR-S2",
+        "pdfPage": 35,
+        "printedPage": 33
+      },
+      "canonicalBindings": [
+        {
+          "paragraphId": "agr-drainage-comparison-p5",
+          "paragraphSha256": "c443b86a5b06eeb441df328863f92c5126cf269fa4bc4ec65d71abfe28323a63"
+        },
+        {
+          "paragraphId": "agr-drainage-comparison-p6",
+          "paragraphSha256": "ecbb0345a7e912ecf94d833b33f19a18dbc5b177eb06ddd7e2e707335d303323"
+        }
+      ],
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0539",
+      "decision": "accept",
+      "reasonJa": "S2p35は限定部分の排水改善と比較的簡単な施工を対比。current drainage-p5は範囲限定だけ、p6は比較軸一般であり、施工容易性の具体的比較は未記載。低費用等へ拡張せず限定例として補う。",
+      "sourceReference": {
+        "documentId": "AGR-S2",
+        "pdfPage": 35,
+        "printedPage": 33
+      },
+      "canonicalBindings": [
+        {
+          "paragraphId": "agr-drainage-comparison-p5",
+          "paragraphSha256": "c443b86a5b06eeb441df328863f92c5126cf269fa4bc4ec65d71abfe28323a63"
+        },
+        {
+          "paragraphId": "agr-drainage-comparison-p6",
+          "paragraphSha256": "ecbb0345a7e912ecf94d833b33f19a18dbc5b177eb06ddd7e2e707335d303323"
+        }
+      ],
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    }
+  ],
+  "amendments": [
+    {
+      "sourceItemId": "AGR-A10-SOIL-0502",
+      "target": "nextAction",
+      "beforeSubstring": "dark drainage",
+      "afterSubstring": "underdrainage (暗きょ)",
+      "reason": "Avoid misleading literal English translation while preserving source heading discrepancy."
+    }
+  ],
+  "globalDecision": "accept_bounded_evidence_after_one_wording_amendment; retain_0538_scope_hold",
+  "zeroRuntimeAdditions": true,
+  "newClosures": 0,
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "existingQuestionOverlapDirectlyChecked": {
+    "questionIds": [
+      "agr-par21-g1-q02",
+      "agr-water-soil-q03",
+      "agr-1-m02-q05",
+      "agr-water-soil-q04"
+    ],
+    "finding": "Actual stems/options/objectives match author duplicate boundaries: heated hose/tank water; overhead/sprinkler pairing; base/drip water-saving pairing; furrow/high-water pairing. These operations are already assessed and must not be relabelled as fresh verbal objectives."
+  }
+}
