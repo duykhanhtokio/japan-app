@@ -1,3 +1,13 @@
+# Manufacturing SSW1 — batch30 structural source-link reconciliation, 2026-10-28
+
+Corrected interpretation of the earlier56/487figure:56rows lack a direct CORElesson link,not56missing knowledge units. All262actualcorelessons match the matrix bidirectionally. Current12actualreferenceguides link19rows,11overlapcore; directunion439. The48remainingrows allhave linkedTOCdescendants and areparentheadings. Mutuallyexclusivecounts:420core-only,8guide-only,11both,48hierarchy-only,0structuralorphans. No matrix/source/content identities rewritten andno newlessons orsource-page readings.
+
+The deterministic487-rowindex binds exactmatrix,3actualcourses andcurrentguidefilehashes. Main data/state gate now checks itsfreshness; fullassembler regenerates it after the finalcaliperguide layer. The parentrollup is an explicit metadata/hierarchy inference,not directteaching orsemanticclosure. Do NOT author duplicate parentlessons just to fill emptycorebacklinks. No semantic coverage percentage is inferred; semanticCoveragePercent=null andwholeCurriculumComplete/releaseReady=false.
+
+Existing262corelessons,12guides/144targetpairs,33mockassemblies and22diagrams unchanged. Readbatch30-link-reconciliation/REPORT.vi.md andsource-links.json; earlier56/48narrative counts are superseded as descriptions of missingcontent. Remainingwork is fine-grained source-object completeness, independent/native/domain review (includingauthor-comparedcaliperpreview) andfullExpo/native/physical-device verification. SSW2excluded; nobackgroundprocess implied.
+
+---
+
 # Manufacturing SSW1 — batch29 caliper preview guide integrated, 2026-10-28
 
 Integrated the staged source-bound caliper supplement into the existing reader with all12targets. Current12reference guides/144target pairs;262corelessons,456weeklyquestions,33mockassemblies(30original+3curated)/1200uniqueoriginalquestions and22diagrams unchanged. Actual original lesson018 and all11prior guide/target identities remain exact.
