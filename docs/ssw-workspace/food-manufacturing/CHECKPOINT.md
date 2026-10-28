@@ -1,3 +1,18 @@
+# Batch26 — 2026-10-28
+
+Base `4b40905dc09a136750c784d414e1397c5d362973`; branch `feature/food-manufacturing-batch26-20261028`.
+
+- Six successful AI author assignments added 480 question–locale pairs for 2号 mock09, 40 for each of 12 locales; 12 titles added. Both levels' mock01–09 are now complete in all 12 locales: 18/20 mock forms. All 468 weekly-check pairs remain complete. Total 9,113/10,068; 955 remain. Exact IDs: `batch-26-form-coverage.json`.
+- All 8,633 prior question/title objects, Japanese 839 questions/78 lessons, 33 assessment revision values and runtime/UI preserved. Exact missing IDs, canonical hashes, four ordered choices/reasons and main/correct-reason equality checked before integration. Main exams.ja.json membership is authoritative, never historical split membership.
+- Independent full-field AI peer review covers all 480 new pairs; twelve reports bind final artifact hashes and corrections. Explicit mathematical references verify weighted mean 63 g, sequential yield 72%, 6 person-hours excess, 6 elapsed hours under parallel/no-idle assumptions, 90-degree pie-chart sector and ±3σ interval 28.5–31.5 g without an all-product guarantee. Fictional risk-score rules remain exercise-only. Numeric-format resolutions bind final target fields. Source PDFs not revalidated; no native/domain certification.
+- PASS: content structure; actual adapter 9,113 valid/stale-source rejection checks and 955 missing without fallback; state resume/scoring/revision/storage isolation; approved JLPT UI lock 10/10. Runtime/UI and assets Git entries unchanged.
+- An initial KM child exhausted context without creating content; a fresh child completed its assignment. A transient Git index lock cleared before a safe branch-switch retry. No existing work was deleted/reset.
+- Historical browser evidence remains 3,460 pairs; 5,653 current pairs await browser QA. No new browser/full Expo/native/device evidence. Full-body furigana, complete source competency/visual verification, illustrations and native/domain review remain open. `scopeComplete=false`; `productionRelease=false`. Sparse checkout excludes asset working copies; full builds need restoration with enough disk space.
+
+Next: exact missing mock10 entries for both levels. Keep food isolated from other sectors/JLPT.
+
+---
+
 # Batch25 — 2026-10-28
 
 Base `d5abdd517d1cfe8e760741d0c5e9eafa9976d6c4`; branch `feature/food-manufacturing-batch25-20261028`.
