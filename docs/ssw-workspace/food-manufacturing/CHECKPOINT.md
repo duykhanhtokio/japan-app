@@ -1,3 +1,16 @@
+# Lesson full-body ruby — 2026-10-28
+
+Base `51cb9a2743fe2595f2f71da72d6b4fcdd9af6e1f`; branch `feature/food-final-report-20261028`.
+
+- All78lessons /788main fields now have source-bound offline candidate ruby. Six independent author packs and peer review;9contextual corrections applied. Canonical Japanese, source hashes, translations, exam data/revisions and study-state code unchanged.
+- Actual loader/gate checks PASS:788aligned/current fields, stale/misaligned rejection and156malformed/uncovered cases. Actual RN-web ruby component:780lesson/viewport/scale cases /7880field cases across five viewports and two font scales. Large text is a DOM simulation, not native accessibility acceptance.
+- Actual course via browser adapters:16cases, both levels/day/night/four viewports, Vietnamese toggle, completion persistence/reload PASS. Source/component hashes in `lesson-ruby-20261028-qa.json`. Scoped esbuild web bundle PASS, state regression PASS, JLPT lock10/10 PASS. FullExpo/whole-project TypeScript/native not run.
+- Inventory remains78lessons/936lesson-locale pairs,839questions/10068question-locale pairs/396titles. Do not redo translations. Ruby remains AI-authored/unreviewed by natives. Tests do not certify pronunciation or source competency.
+- Remaining: complete source competency/visual mapping and92range candidates; assessment ruby; remaining numeric/Latin-unit readings; full illustrations; six deferred locale/2号term review; restored fullExpo/native/device acceptance. `scopeComplete=false`, `productionRelease=false`.
+- Final consolidated report: `COMPLETION_REPORT.md`; exact current commit/persistence is obtained from Git after remote publication. No background continuation claim.
+
+---
+
 # Completion audit — 2026-10-28 — remaining acceptance work explicit
 
 Base `e0e8d76a845f3aa3438edd5ae1d877afca63dd1d`; branch `feature/food-completion-audit-20261028`.

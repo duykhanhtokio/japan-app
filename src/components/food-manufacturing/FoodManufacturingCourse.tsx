@@ -1,4 +1,5 @@
 import JapaneseRuby from '@/components/world/JapaneseRuby';
+import {FoodLessonRuby} from './FoodLessonRuby';
 import {FoodConceptDiagrams} from './ConceptDiagrams';
 import {useEffect,useRef,useState,type PropsWithChildren} from 'react';
 import {Modal,Pressable,ScrollView,StyleSheet,Text,View} from 'react-native';
@@ -51,11 +52,11 @@ function Reader({lesson,language,onBack,onComplete,saving,saveError}:{lesson:Foo
  return <Surface reading><TokuteiHeader title={lesson.titleJa} onBack={()=>{if(!saving)onBack();}}/><ScrollView contentContainerStyle={s.content}>
  <ReadingAppearanceControl/>{language!=='ja'&&<Button title={show?'訳を隠す':'訳を表示'} onPress={()=>setShow(v=>!v)}/>}
  {show&&language!=='ja'&&!t&&<TranslationText>この言語の訳は準備中です。</TranslationText>}
- <Text style={[s.body,{color:colors.text}]}>{lesson.objectiveJa}</Text>{show&&t&&<TranslationText>{t.title}{'\n'}{t.objective}</TranslationText>}
- {lesson.paragraphs.map(p=><View key={p.id} style={[s.section,{borderColor:colors.border}]}><Text style={[s.heading,{color:colors.text}]}>{p.titleJa}</Text><Text selectable style={[s.body,{color:colors.text}]}>{p.textJa}</Text>{show&&t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}</View>)}
+ <FoodLessonRuby lesson={lesson} field="titleJa" text={lesson.titleJa} color={colors.text} readingColor={colors.muted} heading/><FoodLessonRuby lesson={lesson} field="objectiveJa" text={lesson.objectiveJa} color={colors.text} readingColor={colors.muted}/>{show&&t&&<TranslationText>{t.title}{'\n'}{t.objective}</TranslationText>}
+ {lesson.paragraphs.map(p=><View key={p.id} style={[s.section,{borderColor:colors.border}]}><FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.titleJa`} text={p.titleJa} color={colors.text} readingColor={colors.muted} heading/><FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.textJa`} text={p.textJa} color={colors.text} readingColor={colors.muted}/>{show&&t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}</View>)}
  
- <FoodConceptDiagrams lessonId={lesson.id} textColor={colors.text} language={language} showTranslation={show}/><Text style={[s.heading,{color:colors.text}]}>要点</Text><Text style={[s.body,{color:colors.text}]}>{lesson.summaryJa}</Text>{show&&t&&<TranslationText>{t.summary}</TranslationText>}<Text style={[s.heading,{color:colors.text}]}>用語</Text>{lesson.terms.map(term=><View key={term.ja} style={{alignSelf:'flex-start'}}><JapaneseRuby text={term.ja} segments={[{text:term.ja,reading:term.reading}]} color={colors.text} readingColor={colors.muted}/>{show&&(t?.terms?.[term.ja]||foodManufacturingTermTranslation(term.ja,language))&&<TranslationText>{t?.terms?.[term.ja]||foodManufacturingTermTranslation(term.ja,language)}</TranslationText>}</View>)}
- <Text style={[s.heading,{color:colors.text}]}>整理して説明する</Text><Text style={[s.body,{color:colors.text}]}>{lesson.activityJa}</Text>{show&&t&&<TranslationText>{t.activity}</TranslationText>}
+ <FoodConceptDiagrams lessonId={lesson.id} textColor={colors.text} language={language} showTranslation={show}/><Text style={[s.heading,{color:colors.text}]}>要点</Text><FoodLessonRuby lesson={lesson} field="summaryJa" text={lesson.summaryJa} color={colors.text} readingColor={colors.muted}/>{show&&t&&<TranslationText>{t.summary}</TranslationText>}<Text style={[s.heading,{color:colors.text}]}>用語</Text>{lesson.terms.map(term=><View key={term.ja} style={{alignSelf:'flex-start'}}><JapaneseRuby text={term.ja} segments={[{text:term.ja,reading:term.reading}]} color={colors.text} readingColor={colors.muted}/>{show&&(t?.terms?.[term.ja]||foodManufacturingTermTranslation(term.ja,language))&&<TranslationText>{t?.terms?.[term.ja]||foodManufacturingTermTranslation(term.ja,language)}</TranslationText>}</View>)}
+ <Text style={[s.heading,{color:colors.text}]}>整理して説明する</Text><FoodLessonRuby lesson={lesson} field="activityJa" text={lesson.activityJa} color={colors.text} readingColor={colors.muted}/>{show&&t&&<TranslationText>{t.activity}</TranslationText>}
  {saveError&&<Text accessibilityRole="alert" style={[s.body,{color:colors.text}]}>完了を保存できませんでした。もう一度お試しください。</Text>}
  <Button title={saving?'保存中…':'完了する'} disabled={saving} onPress={onComplete}/>
  </ScrollView></Surface>;

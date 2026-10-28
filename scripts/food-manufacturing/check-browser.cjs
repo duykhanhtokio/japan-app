@@ -97,6 +97,26 @@ const shouldTest=(locale,id)=>!deltaBase||deltaQuestions.get(locale).has(id);
  async function start(level='1',language='vi'){await page.goto(url+'?language='+language);await fontsReady();await page.getByRole('button',{name:'特定技能'+level+'号',exact:true}).click();}
  async function reader(level='1',language='vi'){await start(level,language);await page.getByRole('button',{name:/第1週/}).click();await page.getByTestId('food-day-'+level+'-1').click();}
 
+ if(process.env.FOOD_QA_RUBY_SMOKE_ONLY==='1'){
+  const allLessons=[...frozenData('lessons.1.ja.json').lessons,...frozenData('lessons.2.ja.json').lessons];
+  let readerCases=0;
+  for(const level of ['1','2'])for(const [width,height] of [[320,568],[390,844],[768,1024],[932,430]])for(const mode of ['昼','夜']){
+   await page.setViewportSize({width,height});await reader(level,'vi');await page.getByRole('button',{name:mode,exact:true}).click();
+   const lesson=allLessons.find(l=>l.level===level&&l.week===1&&l.day===1);
+   const ruby=page.locator('[data-testid^="food-ruby-"]');assert.equal(await ruby.count(),4+lesson.paragraphs.length*2);
+   assert.equal(await page.getByTestId(`food-ruby-${lesson.id}-objectiveJa`).getAttribute('aria-label'),lesson.objectiveJa);
+   await page.getByRole('button',{name:'訳を表示',exact:true}).click();
+   assert((await page.locator('body').innerText()).includes(JSON.parse(frozenInputs.get(path.join(root,'src/data/food-manufacturing/translations/vi.json')))[lesson.id].objective));
+   assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));
+   const complete=page.getByRole('button',{name:'完了する',exact:true});await complete.scrollIntoViewIfNeeded();const box=await complete.boundingBox();assert(box&&box.y>=-1&&box.y+box.height<=height+1);
+   if(width===390&&mode==='昼'){await page.getByTestId(`food-ruby-${lesson.id}-titleJa`).scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,`course-ruby-${level}-390.png`)});}
+   await complete.click();await page.getByTestId(`food-day-${level}-1`).waitFor();
+   assert(await page.evaluate(({id,hash})=>Object.values(localStorage).some(raw=>raw.includes(id)&&raw.includes(hash)),{id:lesson.id,hash:lesson.sourceHash}));
+   await page.reload();await page.getByRole('button',{name:`特定技能${level}号`,exact:true}).click();await page.getByRole('button',{name:/第1週/}).click();await page.getByTestId(`food-day-${level}-1`).waitFor();readerCases++;
+  }
+  assert.deepEqual(errors,[]);const report={status:'PASS',readerCases,levels:2,modes:['day','night'],viewports:[[320,568],[390,844],[768,1024],[932,430]],rubyFieldRendering:true,vietnameseToggle:true,completionPersistAndReload:true,pageErrors:errors,scope:'Actual course via browser adapters; not full Expo/native/device validation'};
+  fs.writeFileSync(path.join(out,'ruby-course-report.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));return;
+ }
  const lessons=[...frozenData('lessons.1.ja.json').lessons,...frozenData('lessons.2.ja.json').lessons];
  const exams=frozenData('exams.ja.json').exams;
  const report={sourceHashes:Object.fromEntries(inputFiles.map(file=>[file,require('node:crypto').createHash('sha256').update(frozenInputs.get(path.join(root,'src/data/food-manufacturing',file))).digest('hex')])),status:'RUNNING',readerCases:0,responsiveCases:0,translatedReaderPairs:0,testQuestions:0,viewports:[[390,844],[844,390],[768,1024],[1440,900]],screenshots,adapters:['Royal artwork','background','safe area','localStorage for AsyncStorage'],nativeDeviceTested:false,productionExpoTested:false};

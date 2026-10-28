@@ -1,9 +1,9 @@
 {
   "date": "2026-10-28",
   "sector": "飲食料品製造業",
-  "baseCommit": "e0e8d76a845f3aa3438edd5ae1d877afca63dd1d",
-  "branch": "feature/food-completion-audit-20261028",
-  "status": "internal_preview_content_inventory_complete_remaining_acceptance_work",
+  "baseCommit": "51cb9a2743fe2595f2f71da72d6b4fcdd9af6e1f",
+  "branch": "feature/food-final-report-20261028",
+  "status": "internal_preview_lesson_ruby_integrated_remaining_source_and_release_acceptance",
   "inventory": {
     "japaneseLessons": 78,
     "level1Lessons": 42,
@@ -81,7 +81,8 @@
     },
     "actualEditorialStateAndRubyRegression": "PASS; completion-editorial-qa.json",
     "diagramExactBeforeNumbersMetadataAndParity": "PASS; completion-diagram-peer.json",
-    "jlptUiLock": "10/10 PASS"
+    "jlptUiLock": "10/10 PASS",
+    "lessonRuby": "PASS; lesson-ruby-20261028-qa.json"
   },
   "visuals": {
     "conceptDiagrams": 4,
@@ -91,17 +92,25 @@
   },
   "furigana": {
     "termReadingsStructurallyRenderable": 238,
-    "mainLessonTextFieldsWithoutRubySegments": 788,
+    "mainLessonTextFieldsWithoutRubySegments": 0,
     "nativePronunciationVerification": false,
-    "fullBodyVerified": false
+    "fullBodyVerified": false,
+    "mainLessonTextFieldsWithCandidateRuby": 788,
+    "lessonCandidatePacks": 6,
+    "lessonCandidateStatus": "authored_ai_unreviewed_with_independent_AI_peer_review",
+    "assessmentFullBodyRubyIntegrated": false,
+    "numericAndLatinUnitReadingCoverage": "partial; complete contextual reading/native verification pending"
   },
   "runtimeReadiness": {
-    "newBrowserTested": false,
+    "newBrowserTested": true,
     "fullExpoBuildTested": false,
     "nativeDeviceTested": false,
     "assetWorkingCopiesOmittedBySparseCheckout": 5545,
     "assetsDeletedFromGit": false,
-    "missingDependencies": [
+    "buildAndBrowserStatus": "Scoped esbuild web bundle PASS and actual component/course browser-adapter checks PASS. Full Expo/native checks not executed.",
+    "environmentNote": "Disk-backed filesystem full during initial full clone; partial clone and scoped QA performed in /dev/shm. Standalone esbuild/react/react-dom/react-native-web installed outside repository. Project Expo dependencies and omitted assets still unresolved.",
+    "diskFreeAtReadinessAuditBytesHistorical": 200421376,
+    "missingDependenciesHistorical": [
       "expo",
       "react",
       "react-dom",
@@ -109,13 +118,11 @@
       "react-native-web",
       "esbuild",
       "typescript"
-    ],
-    "diskFreeAtReadinessAuditBytes": 200421376,
-    "buildAndBrowserStatus": "blocked_by_environment_prerequisites_not_executed"
+    ]
   },
   "remaining": [
     "Detailed source competency/paragraph/table/figure mapping and remaining92range candidates",
-    "Full-body furigana with contextual reading review and actual responsive rendering",
+    "Assessment full-body ruby; complete numeric/Latin-unit readings; native contextual pronunciation and device accessibility review. All 788 main lesson fields now have integrated AI-reviewed candidate ruby.",
     "Original explanatory illustration set and verified source-linked visual information",
     "Six deferred locales and source-absent2号terminology plus native/domain review",
     "Restore tracked assets and dependencies with sufficient storage; fullExpo/browser/native/device acceptance"
