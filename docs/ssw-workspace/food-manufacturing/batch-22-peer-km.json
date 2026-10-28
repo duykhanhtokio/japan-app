@@ -1,0 +1,119 @@
+{
+  "locale": "km",
+  "examId": "food-2-mock-07",
+  "reviewType": "independent_ai_semantic_all_fields",
+  "reviewer": "b22_hi_ne",
+  "reviewedArtifact": "km-b22.json",
+  "reviewedArtifactSha256": "8dbe069f28be19cc92219915e92736d446cea37ce74feb4659ee5a9bd3fd0867",
+  "reviewedQuestionCount": 40,
+  "reviewedQuestionIds": [
+    "food-2-q374",
+    "food-2-q258",
+    "food-2-q228",
+    "food-2-q106",
+    "food-2-q207",
+    "food-2-q372",
+    "food-2-q238",
+    "food-2-q361",
+    "food-2-q159",
+    "food-2-q251",
+    "food-2-q208",
+    "food-2-q196",
+    "food-2-q314",
+    "food-2-q344",
+    "food-2-q357",
+    "food-2-q267",
+    "food-2-q270",
+    "food-2-q324",
+    "food-2-q384",
+    "food-2-q345",
+    "food-2-q138",
+    "food-2-q119",
+    "food-2-q231",
+    "food-2-q126",
+    "food-2-q232",
+    "food-2-q143",
+    "food-2-q120",
+    "food-2-q248",
+    "food-2-q091",
+    "food-2-q295",
+    "food-2-q134",
+    "food-2-q301",
+    "food-2-q368",
+    "food-2-q097",
+    "food-2-q278",
+    "food-2-q104",
+    "food-2-q291",
+    "food-2-q170",
+    "food-2-q082",
+    "food-2-q226"
+  ],
+  "reviewedExamTitle": true,
+  "source": "batch22-canonical-source.json exact MAIN frozen Japanese",
+  "scope": [
+    "prompt",
+    "four ordered options",
+    "main explanation",
+    "four ordered option explanations",
+    "exam title",
+    "source hashes",
+    "AI unreviewed flags"
+  ],
+  "findings": [
+    {
+      "questionId": "food-2-q267",
+      "field": "prompt",
+      "issue": "Made specified standard-weight basis explicit rather than possible actual-fill reading.",
+      "resolution": "Clarified standard200g per bag."
+    },
+    {
+      "questionId": "food-2-q301",
+      "field": "optionExplanations[1]",
+      "issue": "After converting amounts to yen, original ten-thousand-yen unit needed explicit source-language context.",
+      "resolution": "Added original Japanese qualifier."
+    },
+    {
+      "questionId": "food-2-q143",
+      "field": "options[1]",
+      "issue": "Splatter wording could narrow dispersal in oil-fume context.",
+      "resolution": "Broadened to dispersal of substances."
+    }
+  ],
+  "corrections": [
+    {
+      "questionId": "food-2-q267",
+      "field": "prompt",
+      "before": "ផលិតផលសន្មតមួយមានទម្ងន់បទដ្ឋាន 200g ក្នុងមួយថង់ និងលក់តាមចំនួនថង់។ វត្ថុធាតុដើម 80kg ផលិតបានផលិតផលជាប់គុណភាព 360 ថង់។ តើអត្រាទិន្នផលដែលបម្លែងតាមទម្ងន់បទដ្ឋានមានប៉ុន្មាន? មិនត្រូវការបង្គត់ទេ។",
+      "after": "ផលិតផលសន្មតមួយមានទម្ងន់បទដ្ឋាន 200g ក្នុងមួយថង់ និងលក់តាមចំនួនថង់។ វត្ថុធាតុដើម 80kg ផលិតបានផលិតផលជាប់គុណភាព 360 ថង់។ តើអត្រាទិន្នផលដែលបម្លែងតាមទម្ងន់បទដ្ឋានមានប៉ុន្មាន? មិនត្រូវការបង្គត់ទេ។",
+      "status": "applied_and_rechecked"
+    },
+    {
+      "questionId": "food-2-q301",
+      "field": "optionExplanations[1]",
+      "before": "ក្នុងអត្ថបទជប៉ុនដើម ឯកតារបស់ចំណាយនីមួយៗជាម៉ឺនយ៉េន មិនត្រូវគុណ 10 ទេ។",
+      "after": "ក្នុងភាសាជប៉ុនដើម ឯកតារបស់ចំណាយនីមួយៗជាម៉ឺនយ៉េន មិនត្រូវគុណ 10 ទេ។",
+      "status": "applied_and_rechecked"
+    },
+    {
+      "questionId": "food-2-q143",
+      "field": "options[1]",
+      "before": "ពិនិត្យការរីកសាយនៃសារធាតុពីខ្សែជុំវិញនិងការប៉ះពាល់ពីមនុស្សផង ហើយដាក់ក្នុងការវិភាគគ្រោះថ្នាក់។",
+      "after": "ពិនិត្យការរីកសាយនៃសារធាតុពីខ្សែជុំវិញនិងការប៉ះពាល់ពីមនុស្សផង ហើយដាក់ក្នុងការវិភាគគ្រោះថ្នាក់។",
+      "status": "applied_and_rechecked"
+    }
+  ],
+  "criticalChecks": {
+    "q374": "Rare severe safety issues remain actionable regardless of Pareto count.",
+    "q258": "Correlation does not establish sole cause.",
+    "q267": "Fictional standard-weight yield:360*0.2=72kg;72/80*100=90%.",
+    "q384": "Fictional hourly line output rises200->240kg;person-hour productivity falls50->40kg.",
+    "q301": "JPY300000+200000+100000=600000;ordered intentional6000000 distractor preserved.",
+    "q226": "Fictional joint CL>=78C AND>=70s:A79/65 fails;B78/75 passes inclusive boundary.",
+    "structure": "Exact40 IDs/hashes, four ordered choices/reasons, correct reason equals explanation, titlehash, unreviewed flags and all-target Japanese-script scans PASS."
+  },
+  "result": "pass_after_precision_refinements",
+  "remainingIssues": [],
+  "reviewedByNativeSpeaker": false,
+  "domainCertification": false,
+  "integratedPartSha256": "8dbe069f28be19cc92219915e92736d446cea37ce74feb4659ee5a9bd3fd0867"
+}

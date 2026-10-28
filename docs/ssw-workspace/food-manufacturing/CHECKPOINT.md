@@ -1,3 +1,18 @@
+# Batch22 — 2026-10-28
+
+Base `32286bfe72784749ffe94b22945e98e4b927938e`; branch `feature/food-manufacturing-batch22-20261028`.
+
+- Six authoring assignments added 480 question–locale pairs and 12 titles for 2号 mock07: all 12 target locales, 40 each. Mock01–07 of both levels are now complete in all 12 locales. Total: 7,363/10,068; 2,705 remain. Exact IDs: `batch-22-form-coverage.json`.
+- All 6,883 prior question/title objects, 839 Japanese questions, 78 lessons, 33 assessment revisions and runtime/UI preserved. Missing membership, canonical hashes, four ordered choices/reasons and correct-reason/main-explanation equality checked. Main `exams.ja.json` is authoritative; historical split membership is not.
+- Independent AI semantic review covers all 480 new pairs. Twelve peer reports bind exact reviewed IDs, corrections and final integrated-part hashes. Explicit arithmetic references cover q267 yield, q384 output versus labor productivity, q301 Japanese ten-thousand-yen scale and q226 inclusive AND limits. Numeric formatting/worded-number resolutions are retained with target-field hashes. AI review is not native/domain certification; source PDFs were not revalidated here.
+- PASS: content structure; actual Node adapter 7,363 valid/stale-source rejection checks, plus 2,705 missing pairs without fallback; state resume/scoring/revision/storage isolation; approved JLPT UI lock 10/10.
+- Historical browser evidence remains 3,460 pairs; 3,903 current pairs await browser QA. No new browser/full Expo/native/device evidence. Full-body furigana, complete source competency/visual verification, illustrations and native/domain review remain open. `scopeComplete=false`; `productionRelease=false`.
+- Disk exhaustion recovered with sparse checkout excluding the assets working directory; asset Git entries and working content changes are unchanged. Restore assets in a sufficiently sized environment before full builds. This is a workspace setting, not a repository content change.
+
+Next: exact missing mock08–10 IDs from `batch-22-form-coverage.json`. Keep food separate from unrelated sectors and JLPT.
+
+---
+
 # Batch21 — 2026-10-28
 
 Base `133cdf823e6746f32cda6c341af37c880ed978f4`; branch `feature/food-manufacturing-batch21-20261028`.

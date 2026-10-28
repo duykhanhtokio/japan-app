@@ -1,0 +1,93 @@
+{
+  "locale": "my",
+  "examId": "food-2-mock-07",
+  "reviewType": "independent_ai_semantic_all_fields",
+  "reviewer": "b22_hi_ne",
+  "reviewedArtifact": "my-b22.json",
+  "reviewedArtifactSha256": "1e57fa3342923be6a37b79b74d48d5d1b927d67e81b265ed535f229c4b0f9dea",
+  "reviewedQuestionCount": 40,
+  "reviewedQuestionIds": [
+    "food-2-q374",
+    "food-2-q258",
+    "food-2-q228",
+    "food-2-q106",
+    "food-2-q207",
+    "food-2-q372",
+    "food-2-q238",
+    "food-2-q361",
+    "food-2-q159",
+    "food-2-q251",
+    "food-2-q208",
+    "food-2-q196",
+    "food-2-q314",
+    "food-2-q344",
+    "food-2-q357",
+    "food-2-q267",
+    "food-2-q270",
+    "food-2-q324",
+    "food-2-q384",
+    "food-2-q345",
+    "food-2-q138",
+    "food-2-q119",
+    "food-2-q231",
+    "food-2-q126",
+    "food-2-q232",
+    "food-2-q143",
+    "food-2-q120",
+    "food-2-q248",
+    "food-2-q091",
+    "food-2-q295",
+    "food-2-q134",
+    "food-2-q301",
+    "food-2-q368",
+    "food-2-q097",
+    "food-2-q278",
+    "food-2-q104",
+    "food-2-q291",
+    "food-2-q170",
+    "food-2-q082",
+    "food-2-q226"
+  ],
+  "reviewedExamTitle": true,
+  "source": "batch22-canonical-source.json exact MAIN frozen Japanese",
+  "scope": [
+    "prompt",
+    "four ordered options",
+    "main explanation",
+    "four ordered option explanations",
+    "exam title",
+    "source hashes",
+    "AI unreviewed flags"
+  ],
+  "findings": [
+    {
+      "questionId": "food-2-q126",
+      "field": "options[2]",
+      "issue": "Original Burmese wording could mean document distributors rather than the Japanese count of recipients reached by past material distribution.",
+      "resolution": "Corrected explicitly to recipients."
+    }
+  ],
+  "corrections": [
+    {
+      "questionId": "food-2-q126",
+      "field": "options[2]",
+      "before": "ယခင်စာရွက်ဝေသူအရေအတွက်ကို ရောက်ရှိရမည့်ရည်မှန်းချက်သတ်မှတ်သည်။",
+      "after": "ယခင်စာရွက်များ လက်ခံရရှိသူအရေအတွက်ကို ရောက်ရှိရမည့်ရည်မှန်းချက်သတ်မှတ်သည်။",
+      "status": "applied_and_rechecked"
+    }
+  ],
+  "criticalChecks": {
+    "q374": "Rare severe safety issues remain actionable regardless of Pareto count.",
+    "q258": "Correlation does not establish sole cause.",
+    "q267": "Fictional standard-weight yield:360*0.2=72kg;72/80*100=90%.",
+    "q384": "Fictional hourly line output rises200->240kg;person-hour productivity falls50->40kg.",
+    "q301": "JPY300000+200000+100000=600000;ordered intentional6000000 distractor preserved.",
+    "q226": "Fictional joint CL>=78C AND>=70s:A79/65 fails;B78/75 passes inclusive boundary.",
+    "structure": "Exact40 IDs/hashes, four ordered choices/reasons, correct reason equals explanation, titlehash and all target Japanese-script scans PASS."
+  },
+  "result": "pass_after_correction",
+  "remainingIssues": [],
+  "reviewedByNativeSpeaker": false,
+  "domainCertification": false,
+  "integratedPartSha256": "1e57fa3342923be6a37b79b74d48d5d1b927d67e81b265ed535f229c4b0f9dea"
+}

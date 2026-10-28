@@ -1,0 +1,96 @@
+{
+  "locale": "vi",
+  "examId": "food-2-mock-07",
+  "reviewType": "independent_ai_semantic_review",
+  "reviewer": "b22_zh",
+  "reviewedArtifact": "vi-b22.json",
+  "reviewedArtifactSha256": "f74d596396aea70b675b6ea12f877c51b902750906d601aecb3758846cf07a01",
+  "reviewedQuestionCount": 40,
+  "reviewedQuestionIds": [
+    "food-2-q374",
+    "food-2-q258",
+    "food-2-q228",
+    "food-2-q106",
+    "food-2-q207",
+    "food-2-q372",
+    "food-2-q238",
+    "food-2-q361",
+    "food-2-q159",
+    "food-2-q251",
+    "food-2-q208",
+    "food-2-q196",
+    "food-2-q314",
+    "food-2-q344",
+    "food-2-q357",
+    "food-2-q267",
+    "food-2-q270",
+    "food-2-q324",
+    "food-2-q384",
+    "food-2-q345",
+    "food-2-q138",
+    "food-2-q119",
+    "food-2-q231",
+    "food-2-q126",
+    "food-2-q232",
+    "food-2-q143",
+    "food-2-q120",
+    "food-2-q248",
+    "food-2-q091",
+    "food-2-q295",
+    "food-2-q134",
+    "food-2-q301",
+    "food-2-q368",
+    "food-2-q097",
+    "food-2-q278",
+    "food-2-q104",
+    "food-2-q291",
+    "food-2-q170",
+    "food-2-q082",
+    "food-2-q226"
+  ],
+  "reviewedExamTitle": true,
+  "source": "batch22-canonical-source.json, exact main-exam Japanese fields",
+  "scope": [
+    "Every prompt, four ordered options, main explanation, four option explanations and exam title compared directly to canonical Japanese.",
+    "Verified management roles, negation, conditions, counts, unit conversions, hypothetical scope, exact source hashes, and correct-option explanation equality."
+  ],
+  "findings": [
+    {
+      "questionId": "food-2-q231",
+      "severity": "minor",
+      "finding": "Translation narrowed 管理基準 to critical limits although the Japanese uses the broader control-criteria term.",
+      "correction": "Changed prompt to control criteria / tiêu chí kiểm soát.",
+      "resolved": true
+    },
+    {
+      "questionId": "food-2-q267",
+      "severity": "minor",
+      "finding": "Clarify that 200g per bag is the specified product weight used for yield conversion, not an independently measured actual fill.",
+      "correction": "Prompt now explicitly says specified weight / quy cách. All 360×0.2=72kg and 72/80=90% arithmetic retained.",
+      "resolved": true
+    }
+  ],
+  "corrections": [
+    {
+      "questionId": "food-2-q231",
+      "correction": "Changed prompt to control criteria / tiêu chí kiểm soát."
+    },
+    {
+      "questionId": "food-2-q267",
+      "correction": "Prompt now explicitly says specified weight / quy cách. All 360×0.2=72kg and 72/80=90% arithmetic retained."
+    }
+  ],
+  "criticalChecks": {
+    "food-2-q258": "Correlation does not prove causation; other conditions require investigation.",
+    "food-2-q374": "Rare severe safety abnormalities remain actionable regardless of Pareto frequency.",
+    "food-2-q267": "Hypothetical specified200g ×360acceptable bags=72kg;72/80×100=90%; no actual-fill or universal production standard implied.",
+    "food-2-q384": "Hourly line output200→240kg rises; productivity per person-hour50→40kg falls.",
+    "food-2-q226": "Hypothetical CL≥78°C AND≥70seconds; A79/65fails time; B78/75passes inclusive limits; not actual factory conditions.",
+    "food-2-q301": "JPY300000+200000+100000=600000; second wrong option6000000 retained in source order."
+  },
+  "result": "pass_after_corrections",
+  "remainingIssues": [],
+  "reviewedByNativeSpeaker": false,
+  "domainCertification": false,
+  "integratedPartSha256": "f74d596396aea70b675b6ea12f877c51b902750906d601aecb3758846cf07a01"
+}
