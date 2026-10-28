@@ -1,0 +1,1061 @@
+{
+  "schemaVersion": 1,
+  "worker": "agri_4",
+  "scope": "bounded_facility_fruit_atomic_objective_review",
+  "status": "ai_editorial_screen_not_capacity_certification",
+  "canonicalReadMethod": "git show HEAD:<canonical path>",
+  "inputs": {
+    "lessons": {
+      "path": "src/data/agriculture/lessons.ja.json",
+      "canonicalJsonSha256": "a195fbc073bc88fb28d4d98016f430f52473f8857134ad52bc781cfdb18f30a5"
+    },
+    "weekly": {
+      "path": "src/data/agriculture/weekly-checks.ja.json",
+      "canonicalJsonSha256": "e7e5e9fcbc9bd9dbb8f7950425412cfa1328daf9c57d8a6e0b0ad90d445a1b31"
+    },
+    "mocks": {
+      "path": "src/data/agriculture/mock-exams.ja.json",
+      "canonicalJsonSha256": "877232d847c195dca9ac647936096080ed868e2e7f2b0fca47141940d8e97d5e"
+    },
+    "ledger": {
+      "path": "docs/ssw-workspace/agriculture/knowledge-ledger.json",
+      "canonicalJsonSha256": "5f227c1738d2fa72c7cfa264a4954c9f1b3d47ac588a2309b5607a7b8d566019"
+    },
+    "candidates": {
+      "path": "docs/ssw-workspace/agriculture/session-20261027/assessment-audit.json",
+      "canonicalJsonSha256": "d6d74e0bfd4d77ba52cfe7939bd11f5452cbaeecc58b438642498e6d24b551e6"
+    },
+    "review": {
+      "path": "docs/ssw-workspace/agriculture/session-20261028/assessment-review.json",
+      "canonicalJsonSha256": "86e41d7a8ca9d8159161b1563c8415fb8822a0352f48549c453a6c248bfce8dc"
+    }
+  },
+  "existingUniqueQuestionCountCompared": 452,
+  "comparisonMethod": "All 452 question stems and options scanned mechanically by Japanese bigram comparison for each target; nearest questions and same-topic assessment families then reviewed editorially. This is not a claim of independent exhaustive human semantic review.",
+  "excludedOverlap": "No par22 or s27 paragraphs selected; original 36 locallyScreenedCandidates paragraph IDs excluded.",
+  "counts": {
+    "retain_for_cross_packet_review": 3,
+    "exclude_duplicate": 5,
+    "hold": 4
+  },
+  "capacityFor800Certified": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "freshOriginalPdfInspection": false,
+  "productFilesChanged": false,
+  "limitations": [
+    "Distinct candidates remain provisional; another reviewer must compare them against other workers and the full matrix.",
+    "No questions authored and no source-gap occurrences closed.",
+    "Source bindings and source-page hold signals are inherited from the fingerprinted inventory; no current legal/product advice created."
+  ],
+  "reviewedQuestionCount": 452,
+  "rows": [
+    {
+      "paragraphId": "agr-facility-structure-roof-types-p1",
+      "lessonId": "agr-facility-structure-roof-types",
+      "lessonSourceHash": "409f90dd01d40af8c4a501f064089f719efe95afb7ca2cc9303f70122a87466e",
+      "paragraphHash": "eb66bfe9d31c87bc89df3cc15897b0f3f29c432a1f04cabc579eec7dfd9b765d",
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-ROOF-TYPES-01"
+      ],
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 66,
+          "printedPage": 60
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 85,
+          "printedPage": 83
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 86,
+          "printedPage": 84
+        }
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "decision": "exclude_duplicate",
+      "reasonJa": "屋根の名称と特徴の対応操作を対象名だけ替える追加枠として数えない。",
+      "nearestQuestionHashes": {
+        "agr-par06-facility-structure-q12": "b22b02d23c3ec06a0cfae3238718f757de6f167126096053269602a3b22a624f",
+        "agr-par06-facility-structure-q11": "7810d8f42ef167eac3851f5ea03523048c8381f1eaff6dabb0fca5387d9e8fdb"
+      },
+      "all452LexicalComparisonTop6": [
+        {
+          "questionId": "agr-par06-facility-environment-q04",
+          "bigramJaccard": 0.089947
+        },
+        {
+          "questionId": "agr-par08-management-details-q03",
+          "bigramJaccard": 0.083333
+        },
+        {
+          "questionId": "agr-par06-facility-structure-q11",
+          "bigramJaccard": 0.078049
+        },
+        {
+          "questionId": "agr-par12-soil-q01",
+          "bigramJaccard": 0.075
+        },
+        {
+          "questionId": "agr-cm-weekly-q15",
+          "bigramJaccard": 0.071429
+        },
+        {
+          "questionId": "agr-1-m01-q12",
+          "bigramJaccard": 0.069519
+        }
+      ],
+      "globalCandidateDedupComplete": false,
+      "approvedForQuestionAuthoring": false,
+      "independentObjectiveCertified": false,
+      "id": "AGR-ATOMIC-SIXAI4-01",
+      "objectiveJa": "単棟という名称を一つの屋根を基本とする構成へ対応させる。",
+      "relatedQuestionIds": [
+        "agr-par06-facility-structure-q12",
+        "agr-par06-facility-structure-q11"
+      ],
+      "holdReview": {
+        "sourcePageHoldIds": [
+          "AGR-H-FACILITY-STRUCTURE-FUNCTION-DETAILS-PENDING"
+        ],
+        "disposition": "page_level_signal_requires_topic_specific_source_check_before_authoring",
+        "pendingOtherClone80QuestionsCompared": false,
+        "nextComparison": "Compare pending 80-question packet before any authoring or capacity count."
+      }
+    },
+    {
+      "paragraphId": "agr-facility-structure-roof-types-p3",
+      "lessonId": "agr-facility-structure-roof-types",
+      "lessonSourceHash": "409f90dd01d40af8c4a501f064089f719efe95afb7ca2cc9303f70122a87466e",
+      "paragraphHash": "2fb86df831d1e225f5036de22261463cb93a41745f302b26092b5736a207f097",
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-ROOF-TYPES-03"
+      ],
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 66,
+          "printedPage": 60
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 85,
+          "printedPage": 83
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 86,
+          "printedPage": 84
+        }
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "decision": "retain_for_cross_packet_review",
+      "reasonJa": "既存は連棟の利点とスリークォータの名称対応。二つの分類軸が独立であるとの判断は別操作になり得るが、全候補との相互レビューが必要。",
+      "nearestQuestionHashes": {
+        "agr-par06-facility-structure-q11": "7810d8f42ef167eac3851f5ea03523048c8381f1eaff6dabb0fca5387d9e8fdb",
+        "agr-par06-facility-structure-q12": "b22b02d23c3ec06a0cfae3238718f757de6f167126096053269602a3b22a624f"
+      },
+      "all452LexicalComparisonTop6": [
+        {
+          "questionId": "agr-par06-facility-environment-q11",
+          "bigramJaccard": 0.072626
+        },
+        {
+          "questionId": "agr-par11-flower-q01",
+          "bigramJaccard": 0.068182
+        },
+        {
+          "questionId": "agr-par06-flowers-q03",
+          "bigramJaccard": 0.067708
+        },
+        {
+          "questionId": "agr-2-w01-q09",
+          "bigramJaccard": 0.067073
+        },
+        {
+          "questionId": "agr-par21-g6-q04",
+          "bigramJaccard": 0.066667
+        },
+        {
+          "questionId": "agr-par12-general-q04",
+          "bigramJaccard": 0.066176
+        }
+      ],
+      "globalCandidateDedupComplete": false,
+      "approvedForQuestionAuthoring": false,
+      "independentObjectiveCertified": false,
+      "id": "AGR-ATOMIC-SIXAI4-02",
+      "objectiveJa": "棟の連結数と屋根断面の形を別の分類軸として扱い、両屋根型にも単棟・連棟があると判断する。",
+      "relatedQuestionIds": [
+        "agr-par06-facility-structure-q11",
+        "agr-par06-facility-structure-q12"
+      ],
+      "holdReview": {
+        "sourcePageHoldIds": [
+          "AGR-H-FACILITY-STRUCTURE-FUNCTION-DETAILS-PENDING"
+        ],
+        "disposition": "page_level_signal_requires_topic_specific_source_check_before_authoring",
+        "pendingOtherClone80QuestionsCompared": false,
+        "nextComparison": "Compare pending 80-question packet before any authoring or capacity count."
+      }
+    },
+    {
+      "paragraphId": "agr-facility-structure-roof-types-p4",
+      "lessonId": "agr-facility-structure-roof-types",
+      "lessonSourceHash": "409f90dd01d40af8c4a501f064089f719efe95afb7ca2cc9303f70122a87466e",
+      "paragraphHash": "a8a3c4a30dac3017fd9b6f3a4929564194b163d347ab6d3757c0b45c0200bd0b",
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-ROOF-TYPES-04"
+      ],
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 66,
+          "printedPage": 60
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 85,
+          "printedPage": 83
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 86,
+          "printedPage": 84
+        }
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "decision": "exclude_duplicate",
+      "reasonJa": "屋根形状から名称を選ぶ既存操作の対象置換であり、新規容量に数えない。",
+      "nearestQuestionHashes": {
+        "agr-par06-facility-structure-q12": "b22b02d23c3ec06a0cfae3238718f757de6f167126096053269602a3b22a624f"
+      },
+      "all452LexicalComparisonTop6": [
+        {
+          "questionId": "agr-par06-facility-environment-q14",
+          "bigramJaccard": 0.082418
+        },
+        {
+          "questionId": "agr-par12-general-q03",
+          "bigramJaccard": 0.071856
+        },
+        {
+          "questionId": "agr-par08-seed-graft-q08",
+          "bigramJaccard": 0.07027
+        },
+        {
+          "questionId": "agr-2-w03-q01",
+          "bigramJaccard": 0.067485
+        },
+        {
+          "questionId": "agr-par06-facility-environment-q16",
+          "bigramJaccard": 0.066667
+        },
+        {
+          "questionId": "agr-shared-w02-q14",
+          "bigramJaccard": 0.062827
+        }
+      ],
+      "globalCandidateDedupComplete": false,
+      "approvedForQuestionAuthoring": false,
+      "independentObjectiveCertified": false,
+      "id": "AGR-ATOMIC-SIXAI4-03",
+      "objectiveJa": "丸い屋根断面から丸屋根型の名称を選ぶ。",
+      "relatedQuestionIds": [
+        "agr-par06-facility-structure-q12"
+      ],
+      "holdReview": {
+        "sourcePageHoldIds": [
+          "AGR-H-FACILITY-STRUCTURE-FUNCTION-DETAILS-PENDING"
+        ],
+        "disposition": "page_level_signal_requires_topic_specific_source_check_before_authoring",
+        "pendingOtherClone80QuestionsCompared": false,
+        "nextComparison": "Compare pending 80-question packet before any authoring or capacity count."
+      }
+    },
+    {
+      "paragraphId": "agr-facility-structure-roof-types-p6",
+      "lessonId": "agr-facility-structure-roof-types",
+      "lessonSourceHash": "409f90dd01d40af8c4a501f064089f719efe95afb7ca2cc9303f70122a87466e",
+      "paragraphHash": "3ce62ef90e7a3bd44a8540cec00fe7b6f1b85aee25ed62e81e000d6b9af4311d",
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-ROOF-TYPES-06"
+      ],
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 66,
+          "printedPage": 60
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 85,
+          "printedPage": 83
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 86,
+          "printedPage": 84
+        }
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "decision": "hold",
+      "reasonJa": "高さの測定部位を分ける既存の草丈・節間長問題と抽象操作が近い。軒と棟を示す独立図の根拠・視覚資産が未確認。",
+      "nearestQuestionHashes": {
+        "agr-par21-facility-fruit-q01": "0a3d210db82d9b1d2a56ba02e369f1e96dc9fb31bb732398ef18bb64c1f98071",
+        "agr-par06-facility-structure-q12": "b22b02d23c3ec06a0cfae3238718f757de6f167126096053269602a3b22a624f"
+      },
+      "all452LexicalComparisonTop6": [
+        {
+          "questionId": "agr-2-w01-q09",
+          "bigramJaccard": 0.105263
+        },
+        {
+          "questionId": "agr-1-m01-q14",
+          "bigramJaccard": 0.08427
+        },
+        {
+          "questionId": "agr-1-m01-q18",
+          "bigramJaccard": 0.078313
+        },
+        {
+          "questionId": "agr-par06-facility-environment-q16",
+          "bigramJaccard": 0.078125
+        },
+        {
+          "questionId": "agr-par06-facility-environment-q14",
+          "bigramJaccard": 0.076923
+        },
+        {
+          "questionId": "agr-1-m01-q26",
+          "bigramJaccard": 0.07362
+        }
+      ],
+      "globalCandidateDedupComplete": false,
+      "approvedForQuestionAuthoring": false,
+      "independentObjectiveCertified": false,
+      "id": "AGR-ATOMIC-SIXAI4-04",
+      "objectiveJa": "フェンロー型の軒高と屋根頂点高を区別する。",
+      "relatedQuestionIds": [
+        "agr-par21-facility-fruit-q01",
+        "agr-par06-facility-structure-q12"
+      ],
+      "holdReview": {
+        "sourcePageHoldIds": [
+          "AGR-H-FACILITY-STRUCTURE-FUNCTION-DETAILS-PENDING"
+        ],
+        "disposition": "page_level_signal_requires_topic_specific_source_check_before_authoring",
+        "pendingOtherClone80QuestionsCompared": false,
+        "nextComparison": "Compare pending 80-question packet before any authoring or capacity count."
+      }
+    },
+    {
+      "paragraphId": "agr-facility-structure-heating-p4",
+      "lessonId": "agr-facility-structure-heating",
+      "lessonSourceHash": "a14bfe5857dcd517903de32900d7d00710d595d16ba6a6341faa7d831a976173",
+      "paragraphHash": "2e11b2f4a3f5448ea4cf080b01ffc67e359c3b690cf8e6c768e9511a68547d80",
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-HEATING-04"
+      ],
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 68,
+          "printedPage": 62
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 88,
+          "printedPage": 86
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 89,
+          "printedPage": 87
+        }
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "decision": "exclude_duplicate",
+      "reasonJa": "暖房のエネルギー又は方式の掲載例を選ぶ操作の名称追加にとどまる。",
+      "nearestQuestionHashes": {
+        "agr-1-m01-q09": "559dad297b92f53ccdce1e6776dd21be33437faca113dfd6b9940b40da20b78a",
+        "agr-par06-facility-structure-q15": "096578e0869ec5b0edd615ce52112afb89cec93ca6fe6688dee3b10bf68e35f0"
+      },
+      "all452LexicalComparisonTop6": [
+        {
+          "questionId": "agr-par06-facility-structure-q15",
+          "bigramJaccard": 0.07971
+        },
+        {
+          "questionId": "agr-par06-facility-structure-q04",
+          "bigramJaccard": 0.068421
+        },
+        {
+          "questionId": "agr-1-m01-q32",
+          "bigramJaccard": 0.06383
+        },
+        {
+          "questionId": "agr-par06-facility-environment-q11",
+          "bigramJaccard": 0.060109
+        },
+        {
+          "questionId": "agr-1-m01-q12",
+          "bigramJaccard": 0.060109
+        },
+        {
+          "questionId": "agr-par04-safety-q03",
+          "bigramJaccard": 0.05914
+        }
+      ],
+      "globalCandidateDedupComplete": false,
+      "approvedForQuestionAuthoring": false,
+      "independentObjectiveCertified": false,
+      "id": "AGR-ATOMIC-SIXAI4-05",
+      "objectiveJa": "太陽熱やヒートポンプが暖房に関わる掲載例だと対応させる。",
+      "relatedQuestionIds": [
+        "agr-1-m01-q09",
+        "agr-par06-facility-structure-q15"
+      ],
+      "holdReview": {
+        "sourcePageHoldIds": [
+          "AGR-H-FACILITY-ENV-RECOGNITION",
+          "AGR-H-FACILITY-ENV-VENT-2-DETAIL",
+          "AGR-H-FACILITY-STRUCTURE-CHEMICAL-LABELS",
+          "AGR-H-FACILITY-STRUCTURE-FUNCTION-DETAILS-PENDING"
+        ],
+        "disposition": "page_level_signal_requires_topic_specific_source_check_before_authoring",
+        "pendingOtherClone80QuestionsCompared": false,
+        "nextComparison": "Compare pending 80-question packet before any authoring or capacity count."
+      }
+    },
+    {
+      "paragraphId": "agr-facility-env-humidity-control-p2",
+      "lessonId": "agr-facility-env-humidity-control",
+      "lessonSourceHash": "aa40471252f939d86d71ddd7e20c2e437948d75dba92ebc7710fc78491c7631d",
+      "paragraphHash": "099b3be98e793555b8959a1f8345d93c4b6a121d4ddf3506779f9aec426df3a9",
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-HUMIDITY-CONTROL-02"
+      ],
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 69,
+          "printedPage": 63
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 70,
+          "printedPage": 64
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 72,
+          "printedPage": 66
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 90,
+          "printedPage": 88
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 92,
+          "printedPage": 90
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 93,
+          "printedPage": 91
+        }
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "decision": "exclude_duplicate",
+      "reasonJa": "冬夜の閉鎖施設で過湿・結露を確認する既存問題が同じ判断を要求する。",
+      "nearestQuestionHashes": {
+        "agr-par06-facility-environment-q07": "0d4cfdaf2e83b59c21d201d4a7c0147ae18e81e08ae446bb163d56f45edb1bbc"
+      },
+      "all452LexicalComparisonTop6": [
+        {
+          "questionId": "agr-par06-facility-environment-q07",
+          "bigramJaccard": 0.119318
+        },
+        {
+          "questionId": "agr-par12-general-q07",
+          "bigramJaccard": 0.098266
+        },
+        {
+          "questionId": "agr-1-m01-q14",
+          "bigramJaccard": 0.094972
+        },
+        {
+          "questionId": "agr-par06-facility-environment-q08",
+          "bigramJaccard": 0.079365
+        },
+        {
+          "questionId": "agr-water-soil-q01",
+          "bigramJaccard": 0.079268
+        },
+        {
+          "questionId": "agr-1-m01-q18",
+          "bigramJaccard": 0.076923
+        }
+      ],
+      "globalCandidateDedupComplete": false,
+      "approvedForQuestionAuthoring": false,
+      "independentObjectiveCertified": false,
+      "id": "AGR-ATOMIC-SIXAI4-06",
+      "objectiveJa": "施設を閉め切った際、気温とは別に湿度を確認する。",
+      "relatedQuestionIds": [
+        "agr-par06-facility-environment-q07"
+      ],
+      "holdReview": {
+        "sourcePageHoldIds": [
+          "AGR-H-FACILITY-ENV-CO2-2-DETAIL",
+          "AGR-H-FACILITY-ENV-CO2-OPERATION",
+          "AGR-H-FACILITY-ENV-EXTENSION-QUESTIONS",
+          "AGR-H-FACILITY-ENV-PF-RANGE",
+          "AGR-H-FACILITY-ENV-RECOGNITION"
+        ],
+        "disposition": "page_level_signal_requires_topic_specific_source_check_before_authoring",
+        "pendingOtherClone80QuestionsCompared": false,
+        "nextComparison": "Compare pending 80-question packet before any authoring or capacity count."
+      }
+    },
+    {
+      "paragraphId": "agr-facility-env-humidity-control-p4",
+      "lessonId": "agr-facility-env-humidity-control",
+      "lessonSourceHash": "aa40471252f939d86d71ddd7e20c2e437948d75dba92ebc7710fc78491c7631d",
+      "paragraphHash": "eefb5915622c2f7c73741f1ca7bec44a791a265b46b5bb3ab95c3cffb079b0e3",
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-HUMIDITY-CONTROL-04"
+      ],
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 69,
+          "printedPage": 63
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 70,
+          "printedPage": 64
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 72,
+          "printedPage": 66
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 90,
+          "printedPage": 88
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 92,
+          "printedPage": 90
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 93,
+          "printedPage": 91
+        }
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "decision": "hold",
+      "reasonJa": "既存の過湿確認・複合環境制御・暖房自動化との境界が未確定。本文は具体的な湿度制御条件や機構を与えないため処方問題にしない。",
+      "nearestQuestionHashes": {
+        "agr-par06-facility-environment-q07": "0d4cfdaf2e83b59c21d201d4a7c0147ae18e81e08ae446bb163d56f45edb1bbc",
+        "agr-par06-facility-environment-q08": "9fe39a168ec21b56e07492f94e8feee836a145c43051ca15dd152d4236be87c7",
+        "agr-1-m01-q19": "2eea6fd4bf826a5244425bae3e224f3877986f08183ff493bb10f16666d9b2c3"
+      },
+      "all452LexicalComparisonTop6": [
+        {
+          "questionId": "agr-1-m01-q14",
+          "bigramJaccard": 0.111732
+        },
+        {
+          "questionId": "agr-par06-facility-environment-q08",
+          "bigramJaccard": 0.101064
+        },
+        {
+          "questionId": "agr-cm-weekly-q12",
+          "bigramJaccard": 0.083832
+        },
+        {
+          "questionId": "agr-par04-safety-q03",
+          "bigramJaccard": 0.083799
+        },
+        {
+          "questionId": "agr-par06-facility-environment-q07",
+          "bigramJaccard": 0.081081
+        },
+        {
+          "questionId": "agr-par12-management-q06",
+          "bigramJaccard": 0.080925
+        }
+      ],
+      "globalCandidateDedupComplete": false,
+      "approvedForQuestionAuthoring": false,
+      "independentObjectiveCertified": false,
+      "id": "AGR-ATOMIC-SIXAI4-07",
+      "objectiveJa": "加温を気温だけでなく過湿・結露との関係で捉える。",
+      "relatedQuestionIds": [
+        "agr-par06-facility-environment-q07",
+        "agr-par06-facility-environment-q08",
+        "agr-1-m01-q19"
+      ],
+      "holdReview": {
+        "sourcePageHoldIds": [
+          "AGR-H-FACILITY-ENV-CO2-2-DETAIL",
+          "AGR-H-FACILITY-ENV-CO2-OPERATION",
+          "AGR-H-FACILITY-ENV-EXTENSION-QUESTIONS",
+          "AGR-H-FACILITY-ENV-PF-RANGE",
+          "AGR-H-FACILITY-ENV-RECOGNITION"
+        ],
+        "disposition": "page_level_signal_requires_topic_specific_source_check_before_authoring",
+        "pendingOtherClone80QuestionsCompared": false,
+        "nextComparison": "Compare pending 80-question packet before any authoring or capacity count."
+      }
+    },
+    {
+      "paragraphId": "agr-facility-env-grafted-seedlings-p2",
+      "lessonId": "agr-facility-env-grafted-seedlings",
+      "lessonSourceHash": "ca6d0c289c016916a37c9103e8d4160fc1497c9b1182ac98a286c0dc610f491b",
+      "paragraphHash": "a4c65863d8b334abccc9a11295bdfe1a3f046c4da92e8bb2e39fe7478b7fc10e",
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-GRAFTED-SEEDLINGS-02"
+      ],
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 75,
+          "printedPage": 69
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 76,
+          "printedPage": 70
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 18,
+          "printedPage": 16
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 19,
+          "printedPage": 17
+        }
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "decision": "exclude_duplicate",
+      "reasonJa": "台木と穂木の役割を問う既存問題の一部分であり新規ではない。",
+      "nearestQuestionHashes": {
+        "agr-par06-facility-environment-q15": "3891f5e099a67e69e7e697316e6cbaee0052f3c8d5cc264559a02258d0f003ec",
+        "agr-par06-fruit-foundations-q05": "8f55ebadb05f490a778187c6a50e6e8bf3b9083663b8848c2728aae281b9973e",
+        "agr-1-m01-q32": "88462c2f44b4fcf342bc50901b5994e1b93f51fe1f6bb69cded16a039ac5aa3f"
+      },
+      "all452LexicalComparisonTop6": [
+        {
+          "questionId": "agr-par06-facility-environment-q15",
+          "bigramJaccard": 0.174242
+        },
+        {
+          "questionId": "agr-par06-fruit-foundations-q05",
+          "bigramJaccard": 0.114458
+        },
+        {
+          "questionId": "agr-par08-seed-graft-q08",
+          "bigramJaccard": 0.096591
+        },
+        {
+          "questionId": "agr-shared-w02-q13",
+          "bigramJaccard": 0.086093
+        },
+        {
+          "questionId": "agr-par06-facility-environment-q11",
+          "bigramJaccard": 0.083832
+        },
+        {
+          "questionId": "agr-2-w03-q01",
+          "bigramJaccard": 0.076433
+        }
+      ],
+      "globalCandidateDedupComplete": false,
+      "approvedForQuestionAuthoring": false,
+      "independentObjectiveCertified": false,
+      "id": "AGR-ATOMIC-SIXAI4-08",
+      "objectiveJa": "台木に病害虫への抵抗性を重視する。",
+      "relatedQuestionIds": [
+        "agr-par06-facility-environment-q15",
+        "agr-par06-fruit-foundations-q05",
+        "agr-1-m01-q32"
+      ],
+      "holdReview": {
+        "sourcePageHoldIds": [
+          "AGR-H-FACILITY-ENV-GRAFT-2-DETAIL",
+          "AGR-H-FACILITY-ENV-RECOGNITION",
+          "AGR-H-PAR08-SEED-GRAFT-ORIGINAL-IMAGES"
+        ],
+        "disposition": "page_level_signal_requires_topic_specific_source_check_before_authoring",
+        "pendingOtherClone80QuestionsCompared": false,
+        "nextComparison": "Compare pending 80-question packet before any authoring or capacity count."
+      }
+    },
+    {
+      "paragraphId": "agr-fruit-manage-bagging-p1",
+      "lessonId": "agr-fruit-manage-bagging",
+      "lessonSourceHash": "8d53f7831d3c19f66cbc86cbd523ccef0a42f9b12f9db30a6cd60beefbeea8da",
+      "paragraphHash": "4a7a83bf59e497a3713ae9dd62a9ca575782f2ea96b34fb7e2574c958d778815",
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-BAGGING-01"
+      ],
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 89,
+          "printedPage": 83
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 90,
+          "printedPage": 84
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 111,
+          "printedPage": 109
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 112,
+          "printedPage": 110
+        }
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "decision": "retain_for_cross_packet_review",
+      "reasonJa": "既存は袋の位置・止金、摘果の名称・養分集中を問う。果実を残して保護するか除去するかを対比する判断は暫定的に別。ただし単なる目的名の再組合せとなる設問は除外する。",
+      "nearestQuestionHashes": {
+        "agr-par06-fruit-management-q01": "a677a0e33363bd4a736c45382ec6dda1a60a472f5437e87015d00ec0c22538c9",
+        "agr-par06-fruit-management-q02": "36eced1baf8e18e75995e38ba30a2169ee9fffedaa25cd07278fc93efdad1613",
+        "agr-cm-weekly-q03": "ddbc73e9cbb92fb2df3615448bfd0dadb689e80e6ade6cd216efb5227f2057df",
+        "agr-cm-weekly-q04": "4467c365750af171b870a064a3233e4c83178984933ed24ade2c4a9ba0c6d192"
+      },
+      "all452LexicalComparisonTop6": [
+        {
+          "questionId": "agr-par06-fruit-management-q01",
+          "bigramJaccard": 0.068063
+        },
+        {
+          "questionId": "agr-par11-management-q02",
+          "bigramJaccard": 0.065868
+        },
+        {
+          "questionId": "agr-par21-g3-q04",
+          "bigramJaccard": 0.062147
+        },
+        {
+          "questionId": "agr-cm-weekly-q04",
+          "bigramJaccard": 0.060241
+        },
+        {
+          "questionId": "agr-par08-management-details-q02",
+          "bigramJaccard": 0.059406
+        },
+        {
+          "questionId": "agr-par06-fruit-management-q11",
+          "bigramJaccard": 0.05914
+        }
+      ],
+      "globalCandidateDedupComplete": false,
+      "approvedForQuestionAuthoring": false,
+      "independentObjectiveCertified": false,
+      "id": "AGR-ATOMIC-SIXAI4-09",
+      "objectiveJa": "袋かけによる果実の保護と摘果による果実除去を作業目的と対象への作用で区別する。",
+      "relatedQuestionIds": [
+        "agr-par06-fruit-management-q01",
+        "agr-par06-fruit-management-q02",
+        "agr-cm-weekly-q03",
+        "agr-cm-weekly-q04"
+      ],
+      "holdReview": {
+        "sourcePageHoldIds": [],
+        "disposition": "none_in_inventory_not_a_source_certification",
+        "pendingOtherClone80QuestionsCompared": false,
+        "nextComparison": "Compare pending 80-question packet before any authoring or capacity count."
+      }
+    },
+    {
+      "paragraphId": "agr-fruit-manage-bagging-p4",
+      "lessonId": "agr-fruit-manage-bagging",
+      "lessonSourceHash": "8d53f7831d3c19f66cbc86cbd523ccef0a42f9b12f9db30a6cd60beefbeea8da",
+      "paragraphHash": "eb073d170fd62172495312730ec5de958b7d88ef5273a1016f2ea92f78c811ff",
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-BAGGING-04"
+      ],
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 89,
+          "printedPage": 83
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 90,
+          "printedPage": 84
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 111,
+          "printedPage": 109
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 112,
+          "printedPage": 110
+        }
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "decision": "hold",
+      "reasonJa": "既存ブドウの止金位置をモモへ替えただけになりやすい。手順全体の新しい判断には独立図と源ページの再確認が必要。",
+      "nearestQuestionHashes": {
+        "agr-par06-fruit-management-q01": "a677a0e33363bd4a736c45382ec6dda1a60a472f5437e87015d00ec0c22538c9",
+        "agr-par06-fruit-management-q02": "36eced1baf8e18e75995e38ba30a2169ee9fffedaa25cd07278fc93efdad1613"
+      },
+      "all452LexicalComparisonTop6": [
+        {
+          "questionId": "agr-par06-fruit-management-q02",
+          "bigramJaccard": 0.173913
+        },
+        {
+          "questionId": "agr-cm-weekly-q08",
+          "bigramJaccard": 0.094891
+        },
+        {
+          "questionId": "agr-par06-fruit-management-q06",
+          "bigramJaccard": 0.094203
+        },
+        {
+          "questionId": "agr-par21-g6-q03",
+          "bigramJaccard": 0.070513
+        },
+        {
+          "questionId": "agr-par06-fruit-management-q01",
+          "bigramJaccard": 0.069767
+        },
+        {
+          "questionId": "agr-par06-fruit-foundations-q13",
+          "bigramJaccard": 0.069444
+        }
+      ],
+      "globalCandidateDedupComplete": false,
+      "approvedForQuestionAuthoring": false,
+      "independentObjectiveCertified": false,
+      "id": "AGR-ATOMIC-SIXAI4-10",
+      "objectiveJa": "モモの袋口をまとめ止金を枝に留める流れを区別する。",
+      "relatedQuestionIds": [
+        "agr-par06-fruit-management-q01",
+        "agr-par06-fruit-management-q02"
+      ],
+      "holdReview": {
+        "sourcePageHoldIds": [],
+        "disposition": "none_in_inventory_not_a_source_certification",
+        "pendingOtherClone80QuestionsCompared": false,
+        "nextComparison": "Compare pending 80-question packet before any authoring or capacity count."
+      }
+    },
+    {
+      "paragraphId": "agr-fruit-manage-renewal-p3",
+      "lessonId": "agr-fruit-manage-renewal",
+      "lessonSourceHash": "c0f08d51cd28af1bb7a7a08c2a93130bdb1497205804bb9ebc1dfcb8de679368",
+      "paragraphHash": "675a821c07d0c453a75d1e731dd558287c35da6a6c2832f079bb4195728b53be",
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-RENEWAL-03"
+      ],
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 91,
+          "printedPage": 85
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 92,
+          "printedPage": 86
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 114,
+          "printedPage": 112
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 115,
+          "printedPage": 113
+        }
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "decision": "hold",
+      "reasonJa": "改植の定義と高接ぎの二型・目的が既に出題済み。裏返した選択肢だけでは新しい能力にならない。",
+      "nearestQuestionHashes": {
+        "agr-par06-fruit-management-q05": "8a25a16b88a424cbf0fc25afd8b63189997fcc28c19cd769071598021c1a55fd",
+        "agr-par06-fruit-management-q06": "95b611f4e70e52321e03d7beec376d5ff217700f3975ab3ee3ed71a5a320a470",
+        "agr-par08-seed-graft-q08": "3e1d6e553d0d399e105165b7dec1cca5cef4526c2294ba32c1f4f8971c0acdec"
+      },
+      "all452LexicalComparisonTop6": [
+        {
+          "questionId": "agr-par08-seed-graft-q08",
+          "bigramJaccard": 0.084211
+        },
+        {
+          "questionId": "agr-par06-fruit-management-q06",
+          "bigramJaccard": 0.076433
+        },
+        {
+          "questionId": "agr-par08-seed-graft-q04",
+          "bigramJaccard": 0.072727
+        },
+        {
+          "questionId": "agr-par06-fruit-foundations-q06",
+          "bigramJaccard": 0.067797
+        },
+        {
+          "questionId": "agr-1-m01-q29",
+          "bigramJaccard": 0.067114
+        },
+        {
+          "questionId": "agr-par06-fruit-management-q05",
+          "bigramJaccard": 0.064516
+        }
+      ],
+      "globalCandidateDedupComplete": false,
+      "approvedForQuestionAuthoring": false,
+      "independentObjectiveCertified": false,
+      "id": "AGR-ATOMIC-SIXAI4-11",
+      "objectiveJa": "高接ぎが新苗を植える作業ではなく既存樹の枝へ別品種を接ぐ作業だと区別する。",
+      "relatedQuestionIds": [
+        "agr-par06-fruit-management-q05",
+        "agr-par06-fruit-management-q06",
+        "agr-par08-seed-graft-q08"
+      ],
+      "holdReview": {
+        "sourcePageHoldIds": [
+          "AGR-H-FRUIT-MANAGE-NUMERIC-TIMING",
+          "AGR-H-PAR08-FRUIT-HARVEST-LOCALIZATION"
+        ],
+        "disposition": "page_level_signal_requires_topic_specific_source_check_before_authoring",
+        "pendingOtherClone80QuestionsCompared": false,
+        "nextComparison": "Compare pending 80-question packet before any authoring or capacity count."
+      }
+    },
+    {
+      "paragraphId": "agr-fruit-manage-maturity-indicators-2-p1",
+      "lessonId": "agr-fruit-manage-maturity-indicators-2",
+      "lessonSourceHash": "3b4f8e26d018aa6f49428ccc3d867b7e586245ee00abc2ac38f16374b3480e85",
+      "paragraphHash": "acdd9390faba88e36145ca4f6ab63c6fabcb88d75e2001c6a9439a1fdb580e95",
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-MATURITY-INDICATORS-2-01"
+      ],
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 113,
+          "printedPage": 111
+        }
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "decision": "retain_for_cross_packet_review",
+      "reasonJa": "既存は測定器と指標の対応又は樹齢図の一般化限界。代表果実と全体の区別は暫定的に別だが、出典本文が与えるサンプリング根拠と追加候補間の重複を要確認。",
+      "nearestQuestionHashes": {
+        "agr-par21-g5-q02": "8f40a25979e470dfcef2281e4b3994119b23b8f6f441e5c1385f50fa8dcbd739",
+        "agr-par06-fruit-foundations-q02": "ef17dbe49bae7402ce964667cc4a4c0e725cab258ef77dcb18008763f46c9cb1"
+      },
+      "all452LexicalComparisonTop6": [
+        {
+          "questionId": "agr-1-m01-q18",
+          "bigramJaccard": 0.088889
+        },
+        {
+          "questionId": "agr-par08-management-details-q02",
+          "bigramJaccard": 0.073171
+        },
+        {
+          "questionId": "agr-shared-w02-q09",
+          "bigramJaccard": 0.071038
+        },
+        {
+          "questionId": "agr-1-m01-q06",
+          "bigramJaccard": 0.070652
+        },
+        {
+          "questionId": "agr-par06-facility-environment-q14",
+          "bigramJaccard": 0.070352
+        },
+        {
+          "questionId": "agr-1-m01-q23",
+          "bigramJaccard": 0.069149
+        }
+      ],
+      "globalCandidateDedupComplete": false,
+      "approvedForQuestionAuthoring": false,
+      "independentObjectiveCertified": false,
+      "id": "AGR-ATOMIC-SIXAI4-12",
+      "objectiveJa": "代表果実の測定結果を全果実の同一状態の保証とせず、何を測定したかの報告として扱う。",
+      "relatedQuestionIds": [
+        "agr-par21-g5-q02",
+        "agr-par06-fruit-foundations-q02"
+      ],
+      "holdReview": {
+        "sourcePageHoldIds": [
+          "AGR-H-FRUIT-MANAGE-EXTENSION-QUESTIONS",
+          "AGR-H-FRUIT-MANAGE-NUMERIC-TIMING",
+          "AGR-H-PAR08-FRUIT-HARVEST-LOCALIZATION"
+        ],
+        "disposition": "page_level_signal_requires_topic_specific_source_check_before_authoring",
+        "pendingOtherClone80QuestionsCompared": false,
+        "nextComparison": "Compare pending 80-question packet before any authoring or capacity count."
+      }
+    }
+  ],
+  "pendingOtherClone80QuestionsCompared": false
+}

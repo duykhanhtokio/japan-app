@@ -1,0 +1,4745 @@
+{
+  "schemaVersion": 1,
+  "status": "bounded_review_not_global_capacity",
+  "inputs": {
+    "src/data/agriculture/lessons.ja.json": "a195fbc073bc88fb28d4d98016f430f52473f8857134ad52bc781cfdb18f30a5",
+    "src/data/agriculture/weekly-checks.ja.json": "e7e5e9fcbc9bd9dbb8f7950425412cfa1328daf9c57d8a6e0b0ad90d445a1b31",
+    "src/data/agriculture/mock-exams.ja.json": "877232d847c195dca9ac647936096080ed868e2e7f2b0fca47141940d8e97d5e"
+  },
+  "packetCanonicalHashes": {
+    "objectives-1.json": "e5b4ac5c8865d275dd13f9d5b3aa5c61036f3078ec15351bddb9bacfb90f75a4",
+    "objectives-2.json": "e7e7ef8bb04af57fd4e3ffdee4ad6624d322ed89d43a891c607b904501ca8305",
+    "objectives-3.json": "9168999bebd255087ff039782512e8a0355db1af457da6dedcd9cb8e364f436a",
+    "objectives-4.json": "97839660179e2bd367acc1fe6778522d050e2bb7980861a3a6afd12eaf567c5c",
+    "objectives-5.json": "561dfaf6444be2719c5021ab2e901c4d70f057d8947789db5de31b50ed1b839b",
+    "objectives-6.json": "f5429e6626df42cc254bf18438be57fa07d3e8ccbb3102b05f957a1813bbd644"
+  },
+  "peerCanonicalHashes": {
+    "review-2.json": "5696e77ca529ba9f78c5b7e5c6297a99da95befe638b5157bc6011bced3d293b",
+    "review-1-3.json": "875f9dd441115374b04b71f5e58af77f6f718272b9c208dfc9aa2fdfd6912f0a",
+    "review-4-5.json": "4f27bfaf08154ea1b92aa05bc0b3d9b9c6c3af2117f7f3ced49fa2c4cd2a10f8"
+  },
+  "pendingSnapshotCanonicalHash": "c684f09f8dda946ee97a985863b6b2c9223bcdcfc42b6770ff6f12e04b14c2e2",
+  "summary": {
+    "workers": 6,
+    "reviewRows": 94,
+    "independentlyCrossReviewedRows": 34,
+    "uniqueParagraphs": 91,
+    "baselineUniqueQuestions": 452,
+    "decisions": {
+      "exclude_duplicate": 70,
+      "retain_for_cross_packet_review": 13,
+      "hold": 11
+    },
+    "newQuestions": 0
+  },
+  "overlappingParagraphReviews": {
+    "agr-par22-fertilizer-p1": 2,
+    "agr-par22-fertilizer-p4": 2,
+    "agr-par22-fertilizer-p6": 2
+  },
+  "rows": [
+    {
+      "id": "AGR-ATOMIC-20261028-G1-01",
+      "packet": "objectives-1.json",
+      "lessonId": "agr-organs",
+      "paragraphId": "agr-organs-p1",
+      "paragraphHash": "12f94876201f32d668a140e88a0b61c9e29d1b214320dcb37989abb8bba4a77f",
+      "lessonSourceHash": "b6860139509b2eb4052e64097e6f3baee60de8e838b1a69b380637c53edd05a9",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 8,
+          "printedPage": 2
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 9,
+          "printedPage": 7
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-ORGANS-01"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "形や位置だけでなく役割を使って作物の器官を分類する。",
+      "decision": "exclude_duplicate",
+      "reason": "栄養器官と生殖器官を役割で分類する既存二問の導入文で、新しい器官別機能を示していない。段落に問題が未結合でも独立枠には数えない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-shared-w02-q01",
+          "hash": "c79451009ed47b3dc539ca0e3f41f5324c67d75a012a65c4edd438506d7fb541"
+        },
+        {
+          "id": "agr-shared-w02-q02",
+          "hash": "bfbf46d8de780f17662467060cff064776ddc64702e5d4fd5e5bc5196ddad259"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-20261028-G1-02",
+      "packet": "objectives-1.json",
+      "lessonId": "agr-organs",
+      "paragraphId": "agr-organs-p5",
+      "paragraphHash": "73102188fdbf46cde3c391ee041fb4af93702292cbae128a308e10a8a39525b7",
+      "lessonSourceHash": "b6860139509b2eb4052e64097e6f3baee60de8e838b1a69b380637c53edd05a9",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 8,
+          "printedPage": 2
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 9,
+          "printedPage": 7
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-ORGANS-05"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "果実・種子の形成という観察を生殖成長として識別する。",
+      "decision": "exclude_duplicate",
+      "reason": "既存q03は生殖成長の説明を誤答として明示し、q02は花・果実の生殖上の役割を問う。栄養成長の反対を正答に替えただけの追加枠は避ける。",
+      "relatedQuestions": [
+        {
+          "id": "agr-shared-w02-q03",
+          "hash": "f2aa12d7ab807409983ccd89ffbc89c7092332a0ae15ea766f56c496e618c772"
+        },
+        {
+          "id": "agr-shared-w02-q02",
+          "hash": "bfbf46d8de780f17662467060cff064776ddc64702e5d4fd5e5bc5196ddad259"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-20261028-G1-03",
+      "packet": "objectives-1.json",
+      "lessonId": "agr-plant-balance",
+      "paragraphId": "agr-plant-balance-p3",
+      "paragraphHash": "796256cb670d417bb1d16f846dd0c54e97ba35e16b032572d1186be8878124d2",
+      "lessonSourceHash": "d5a1d900c6bf3b83324114ed58f1c540d63d0a7296cab2e91c17004691c724a5",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 8,
+          "printedPage": 2
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 9,
+          "printedPage": 3
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 9,
+          "printedPage": 7
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 10,
+          "printedPage": 8
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 11,
+          "printedPage": 9
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PLANT-BALANCE-03"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "温度上昇に加え、生長が盛んなことも呼吸が盛んになる条件として識別する。",
+      "decision": "retain_for_cross_packet_review",
+      "reason": "q07は夜温と炭水化物の残量、q04は呼吸の気体方向を問う。候補は温度以外の生長状態という条件一つを対象とし、夜温の数値や普遍的な適温は問わない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-shared-w02-q07",
+          "hash": "149af979ba4df4cd5d40133f11f90eafcc135eb8a275a4057f550d2f89d95ffb"
+        },
+        {
+          "id": "agr-par11-general-q04",
+          "hash": "9954d1e59afbdb2cb36e0e211423fc03d67c5d792570c7baf39a502fdc3ffb7c"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-1-3.json",
+        "decision": "retain_for_further_global_review",
+        "pendingQuestionIds": [],
+        "reason": "保留80問に呼吸量と生長状態の直接対応は見当たらない。2号q09は収穫後の呼吸による品質変化で、生長が盛んな植物の条件とは異なる。独立性・元資料照合は未認定。"
+      }
+    },
+    {
+      "id": "AGR-ATOMIC-20261028-G1-04",
+      "packet": "objectives-1.json",
+      "lessonId": "agr-plant-balance",
+      "paragraphId": "agr-plant-balance-p6",
+      "paragraphHash": "f624aae82f333f5c46f2bb742f64886cef5923f9fd2170c7ee5e3f1e007a98d7",
+      "lessonSourceHash": "d5a1d900c6bf3b83324114ed58f1c540d63d0a7296cab2e91c17004691c724a5",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 8,
+          "printedPage": 2
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 9,
+          "printedPage": 3
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 9,
+          "printedPage": 7
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 10,
+          "printedPage": 8
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 11,
+          "printedPage": 9
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PLANT-BALANCE-06"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "土の水分・養分が根から入る経路を識別する。",
+      "decision": "exclude_duplicate",
+      "reason": "q08は吸収が根を通って内へという経路を既に正答に含む。q02は同化物の逆方向の移動を問う。根吸収のみへの分割は新枠にしない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-shared-w02-q08",
+          "hash": "7ccfd460184bb2ad0b4f9d124296af7c85ef1d6a7dfce194707b7791d4f54199"
+        },
+        {
+          "id": "agr-par21-g6-q02",
+          "hash": "bc87c0c84f3f83a4b0b9371217ce5b72aca48933e76141e04cd02c7a14807bb7"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-20261028-G1-05",
+      "packet": "objectives-1.json",
+      "lessonId": "agr-flowering",
+      "paragraphId": "agr-flowering-p3",
+      "paragraphHash": "68c75f41f7299ddbac10a5d4c54f8d7ae983e43f938e2832bdbc397af71dece7",
+      "lessonSourceHash": "4d57dba7c9477a4e9f74bdd38926d28278c0b050558ef863dd6ead598f3e8e15",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 10,
+          "printedPage": 4
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 12,
+          "printedPage": 10
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FLOWERING-03"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "花芽分化の条件を温度条件と日長条件に区別する。",
+      "decision": "exclude_duplicate",
+      "reason": "短日条件・低温条件は既存問題にあり、施設q06も低温と短日の複合条件を問う。環境という上位名へのまとめは追加能力を特定しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-shared-w02-q11",
+          "hash": "9129c2ffe40f439c9357e08f00721eab30303a8b923038a18a8be70bdf554b8c"
+        },
+        {
+          "id": "agr-shared-w02-q12",
+          "hash": "00b62ef480c99243d08eecc78608289c7f6c91caf78770e644b891229283da54"
+        },
+        {
+          "id": "agr-par12-facility-q06",
+          "hash": "37fd75f993d2265c2356c0a1f29fc84fd3a95a2f0056104c9046198713857e0f"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-20261028-G1-06",
+      "packet": "objectives-1.json",
+      "lessonId": "agr-flowering",
+      "paragraphId": "agr-flowering-p5",
+      "paragraphHash": "78b823972bb9be23414d7f72e1ef68093480eebe19dd8919749debc4e2e9ab33",
+      "lessonSourceHash": "4d57dba7c9477a4e9f74bdd38926d28278c0b050558ef863dd6ead598f3e8e15",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 10,
+          "printedPage": 4
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 12,
+          "printedPage": 10
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FLOWERING-05"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "長日条件を、明期の長さではなく暗期が基準より短いこととして読み分ける。",
+      "decision": "exclude_duplicate",
+      "reason": "q11の誤答には暗期が短いという長日側の説明があり、q10の解説にもホウレンソウと長日が結合済み。短日から長日への対語反転だけでは独立枠を確定しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-shared-w02-q11",
+          "hash": "9129c2ffe40f439c9357e08f00721eab30303a8b923038a18a8be70bdf554b8c"
+        },
+        {
+          "id": "agr-shared-w02-q10",
+          "hash": "854a062b233c01a225749bdcc7b72992f51822123518fffbc6b358a91a2ff161"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-20261028-G1-07",
+      "packet": "objectives-1.json",
+      "lessonId": "agr-germination",
+      "paragraphId": "agr-germination-p3",
+      "paragraphHash": "85dc5ba8392845f6cabcef1fbf6f057786f70f01cfddf0331bcfe70f8c3618b4",
+      "lessonSourceHash": "ff847c65d80c262c1c3e7d4de04312c4c16f8dcf438f286560528b0cc9348810",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 11,
+          "printedPage": 5
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 12,
+          "printedPage": 6
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 13,
+          "printedPage": 11
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 14,
+          "printedPage": 12
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 15,
+          "printedPage": 13
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-GERMINATION-03"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "播種した種子へ後から土をかける作業を覆土として識別する。",
+      "decision": "hold",
+      "reason": "q05は播種後の覆土という順序を、q19は覆土厚と種子の光反応を問う。作業名のみの独立性は弱い。ページ由来の種子法務・遺伝holdがこの定義を含むかは本パケットで未解決。",
+      "relatedQuestions": [
+        {
+          "id": "agr-ricework-weekly-q05",
+          "hash": "ced532a283d4e2be14ed348ce125916d95e597be4a12526ed03db864de514eb8"
+        },
+        {
+          "id": "agr-shared-w02-q19",
+          "hash": "33c4fb7c5930106c87b33c250c5eba4dac13fbbcfeb7fc75f29f6249be79b7b1"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-1-3.json",
+        "decision": "hold",
+        "pendingQuestionIds": [],
+        "reason": "保留80問では覆土の定義を直接問う問は見当たらないが、既存の覆土順序と光反応の問との独立性が弱い。種子の頁由来保留の範囲確認を継続し、追加枠に数えない。"
+      }
+    },
+    {
+      "id": "AGR-ATOMIC-20261028-G1-08",
+      "packet": "objectives-1.json",
+      "lessonId": "agr-germination",
+      "paragraphId": "agr-germination-p5",
+      "paragraphHash": "77279ce51dd1f2c20be14f0a7bda1237c26eff38e42af2180eb5206b5b3821f3",
+      "lessonSourceHash": "ff847c65d80c262c1c3e7d4de04312c4c16f8dcf438f286560528b0cc9348810",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 11,
+          "printedPage": 5
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 12,
+          "printedPage": 6
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 13,
+          "printedPage": 11
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 14,
+          "printedPage": 12
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 15,
+          "printedPage": 13
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-GERMINATION-05"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "種子を畑へ直接まく方法と、別の場所で育苗してから植える方法を区別する。",
+      "decision": "exclude_duplicate",
+      "reason": "直播の直接播種と移植育苗の区別は既存q13/q21に跨って評価済み。ダイコン・ニンジンへの作物名変更で増やさない。ページholdの法務範囲は別途未解決。",
+      "relatedQuestions": [
+        {
+          "id": "agr-ricework-weekly-q13",
+          "hash": "b7e62f404a0daf42933d6880a82f5d1cc34eca9f7dac9fec2dd09bfa336fde3a"
+        },
+        {
+          "id": "agr-2-w03-q11",
+          "hash": "db072f9834d8a7901183615ee8729eced36b295a793671b8d45fb75c1aa61c9c"
+        },
+        {
+          "id": "agr-shared-w02-q21",
+          "hash": "eb07fafb5b53e0869bc91d091bbd69f03a8f9a8deb842d1cd4a4cb70366e7582"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-20261028-G1-09",
+      "packet": "objectives-1.json",
+      "lessonId": "agr-sowing-design",
+      "paragraphId": "agr-sowing-design-p2",
+      "paragraphHash": "32e068991a13694a59d63fb50bda9845ee237fc23ba0f015985c00d3d97385fe",
+      "lessonSourceHash": "511c1053ee5965b87f76c4f4d4cb7bbb6a49ab84aef2d3e3279b9897b9be6818",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 13,
+          "printedPage": 11
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 14,
+          "printedPage": 12
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 16,
+          "printedPage": 14
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-SOWING-DESIGN-02"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "一列に種子を置く配置をすじまきとして識別する。",
+      "decision": "exclude_duplicate",
+      "reason": "q09の選択肢と理由はすじまきを列状と既に明示する。ばらまき・点まきとの播種配置分類をもう一名称へ移すだけなので追加枠から除く。",
+      "relatedQuestions": [
+        {
+          "id": "agr-2-w03-q09",
+          "hash": "4e6ebb52e9da97e4a564e5a1fc66d4b72341f7cc8608432feb0b065c5a1c8886"
+        },
+        {
+          "id": "agr-2-w03-q10",
+          "hash": "a716c06b6454bcd1d512da5cc71e02030759a252d377ab915cd7c041f0b39d90"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-20261028-G1-10",
+      "packet": "objectives-1.json",
+      "lessonId": "agr-sowing-design",
+      "paragraphId": "agr-sowing-design-p5",
+      "paragraphHash": "53bf838782f71a6c394cd4fdfddef63f0b9530df49f642dcfda30d720feeb870",
+      "lessonSourceHash": "511c1053ee5965b87f76c4f4d4cb7bbb6a49ab84aef2d3e3279b9897b9be6818",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 13,
+          "printedPage": 11
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 14,
+          "printedPage": 12
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 16,
+          "printedPage": 14
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-SOWING-DESIGN-05"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "短期栽培の葉菜類で直まきする理由を、直根性作物の移植による根傷みと区別する。",
+      "decision": "retain_for_cross_packet_review",
+      "reason": "q11は直根性と移植障害、q23は育苗による本圃利用期間短縮を問う。候補は短期栽培という別の理由を選び分ける。ただし根傷みの言い換えや作物名置換のみにはしない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-2-w03-q11",
+          "hash": "db072f9834d8a7901183615ee8729eced36b295a793671b8d45fb75c1aa61c9c"
+        },
+        {
+          "id": "agr-shared-w02-q23",
+          "hash": "2371138ff38ab4be19120bcbfca11af6562bb73dfe646d2666cbb404aa686005"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-1-3.json",
+        "decision": "retain_for_further_global_review",
+        "pendingQuestionIds": [],
+        "reason": "1号q10は育苗の利点、q16は苗床の名称で、短期栽培ゆえの直まきという理由は直接問わない。他パケットに同一理由の候補は見当たらないが、根傷みとの区別を本当に新能力にできるかは未認定。"
+      }
+    },
+    {
+      "id": "AGR-ATOMIC-20261028-G1-11",
+      "packet": "objectives-1.json",
+      "lessonId": "agr-seed-f1-fixed",
+      "paragraphId": "agr-seed-f1-fixed-p2",
+      "paragraphHash": "4ebdccba0da618b47a93dc994380746b1981a29d63dc3e03b9ff7e78a9d8148a",
+      "lessonSourceHash": "5c39344a959105b7cfbf4c1d473556d7527f0c230539f3771ba8e8d67abc1bae",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 61,
+          "printedPage": 55
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 15,
+          "printedPage": 13
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR08-SEED-F1-FIXED-02"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "異なる固定種の交配で得る一代目を、二種類の種子を袋で混ぜる操作と区別する。",
+      "decision": "exclude_duplicate",
+      "reason": "候補は親と一代目の生成関係だが、q01の誤答理由とq03は交配由来を既に説明する。法務・遺伝およびF1holdの範囲と既存解説との独立性を確認するまで採用しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par08-seed-graft-q01",
+          "hash": "c8900a92eb9d9349deb0227c410b17540549ca7845849b5019de638623147cb3"
+        },
+        {
+          "id": "agr-par08-seed-graft-q03",
+          "hash": "b2a164a01e3647416f75497fb8026e751e177d508424d231cd74738d5b2a6033"
+        },
+        {
+          "id": "agr-par21-g5-q04",
+          "hash": "020058497bc3646feeabb464817a2fe1ba84e875fd8ae0384b74447cb325d26d"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-1-3.json",
+        "decision": "exclude_pending_duplicate",
+        "pendingQuestionIds": [
+          "agr-1-m02-q13"
+        ],
+        "reason": "保留1号q13が固定種の親と交配で得る一代目を問う。同問の選択肢と理由は袋で混ぜることとの違いも明示するため、この候補を新枠に重ねない。法務・遺伝の保留は解除しない。"
+      }
+    },
+    {
+      "id": "AGR-ATOMIC-20261028-G1-12",
+      "packet": "objectives-1.json",
+      "lessonId": "agr-seed-f1-fixed",
+      "paragraphId": "agr-seed-f1-fixed-p4",
+      "paragraphHash": "efdb23738729c54e537fd9041126cd43c6bdefd91b08a081bebf22d19497b47e",
+      "lessonSourceHash": "5c39344a959105b7cfbf4c1d473556d7527f0c230539f3771ba8e8d67abc1bae",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 61,
+          "printedPage": 55
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 15,
+          "printedPage": 13
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR08-SEED-F1-FIXED-04"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "固定種とF1の説明をそれぞれの区分へ対応させる。",
+      "decision": "exclude_duplicate",
+      "reason": "q04の誤答と理由が固定種への親の性質の継承を明示し、正答は一代雑種の形質発現。対照を入れ替えるだけの追加枠にしない。F1・種子法務holdは解除していない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par21-g5-q04",
+          "hash": "020058497bc3646feeabb464817a2fe1ba84e875fd8ae0384b74447cb325d26d"
+        },
+        {
+          "id": "agr-par08-seed-graft-q01",
+          "hash": "c8900a92eb9d9349deb0227c410b17540549ca7845849b5019de638623147cb3"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-fertilizer-p1",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-fertilizer",
+      "paragraphId": "agr-par22-fertilizer-p1",
+      "paragraphHash": "2193a44c283b28fa4faa600c79f3a2ec851291c8fd5c9641aab32f263250f97e",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 30,
+          "printedPage": 28
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 31,
+          "printedPage": 29
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-01"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Match 硝安 to 硝酸アンモニウム without counting synonyms as different fertilizers.",
+      "decision": "exclude_duplicate",
+      "reason": "硫安の別名を問う既存問題と同じ名称対応操作で、肥料名を替えた追加枠として数えない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par08-fertilizer-formulations-q01",
+          "hash": "66d8ca032426a224097a4ede0187b62a272b4727f8ca0cdd3080f203d2d26311"
+        },
+        {
+          "id": "agr-par08-fertilizer-formulations-q04",
+          "hash": "7474930b3be1f8a0fecfd024eb499f72112b616105e809f18a598e63491d3734"
+        },
+        {
+          "id": "agr-par08-fertilizer-formulations-q03",
+          "hash": "a7aac194f308ebbe3e08ab26150cd13b65913e76dd0ac5ca6be7fbf0918cb3c2"
+        },
+        {
+          "id": "agr-par08-fertilizer-formulations-q02",
+          "hash": "139881f1915b8d92140878d1bc2dc559456dde9eeeb8644dcb9a17b0f38e5430"
+        },
+        {
+          "id": "agr-par08-flower-details-q02",
+          "hash": "e6cf672f7ccdd7c30f546141759315eb2442fe1d76b9facf108b6012cd24a471"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-fertilizer-p2",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-fertilizer",
+      "paragraphId": "agr-par22-fertilizer-p2",
+      "paragraphHash": "5aaa5769ea9fdda3e9441cb7d9e01a00654c7145d71ce59dd7ab8cb054735227",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 30,
+          "printedPage": 28
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 31,
+          "printedPage": 29
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-02"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish examples of blended fertilizers from universal claims about their ingredients.",
+      "decision": "retain_for_cross_packet_review",
+      "reason": "既存問題は配合肥料という分類名の対応。候補は原料の傾向と全製品への一般化の区別だが、設問化時に分類名だけの再出題にしない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par08-fertilizer-formulations-q03",
+          "hash": "a7aac194f308ebbe3e08ab26150cd13b65913e76dd0ac5ca6be7fbf0918cb3c2"
+        },
+        {
+          "id": "agr-par08-fertilizer-formulations-q02",
+          "hash": "139881f1915b8d92140878d1bc2dc559456dde9eeeb8644dcb9a17b0f38e5430"
+        },
+        {
+          "id": "agr-par03-fertilizer-q03",
+          "hash": "2a3a937cd51f6949fac0dd01fa54f0d5ec6dc8bf29c43a80f2394a06f190be70"
+        },
+        {
+          "id": "agr-par06-fruit-management-q10",
+          "hash": "5f5979b5451e96c727abac31a5bba47a9c24773c2213a447036ee5818440392b"
+        },
+        {
+          "id": "agr-par03-fertilizer-q04",
+          "hash": "0af78099295b5a489bc4a44a997c5ba62f059277ddd2b56c646feb7bdf020f3b"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "retain_for_cross_packet_review",
+        "pendingQuestionIds": [
+          "agr-1-m02-q25"
+        ],
+        "reason": "q25は主に単肥を混ぜる作り方を問う。残すなら有機質原料を含むものが多いという傾向を全製品への保証と区別する狭い能力に限定する。配合の作り方の再出題は除く。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-fertilizer-p3",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-fertilizer",
+      "paragraphId": "agr-par22-fertilizer-p3",
+      "paragraphHash": "2d67a768a458ecfdce36ed19f4504c0786c2bb6def1e88fd9d306a933fe30338",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 30,
+          "printedPage": 28
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 31,
+          "printedPage": 29
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-03"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish fermented manure compost from unprocessed manure.",
+      "decision": "retain_for_cross_packet_review",
+      "reason": "既存問題は堆肥の二つの役割。発酵した資材と未処理原料の区別は異なる操作候補。発酵条件や完熟判定を本文外から追加しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par03-fertilizer-q04",
+          "hash": "0af78099295b5a489bc4a44a997c5ba62f059277ddd2b56c646feb7bdf020f3b"
+        },
+        {
+          "id": "agr-par08-fertilizer-formulations-q03",
+          "hash": "a7aac194f308ebbe3e08ab26150cd13b65913e76dd0ac5ca6be7fbf0918cb3c2"
+        },
+        {
+          "id": "agr-par11-management-q08",
+          "hash": "7d53496d83df03617255e6409a46683252814ddca0130f4cec70f05a31fe5295"
+        },
+        {
+          "id": "agr-par12-soil-q06",
+          "hash": "f69a2b1fa5b4f79538e52bf7849d82d39bb4518542275082bc1ef081fd4369db"
+        },
+        {
+          "id": "agr-par03-fertilizer-q08",
+          "hash": "ab570c229fdfb9deacbc70a378a7b87ed87f2c3fd19a9c530fac448d463c86be"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "retain_for_cross_packet_review",
+        "pendingQuestionIds": [
+          "agr-1-m02-q27"
+        ],
+        "reason": "q27は施肥後の微生物分解による効き始め。候補は施用前の発酵済み堆肥と未処理原料の識別で、時間段階と対象が異なる。完熟判定法は補わない。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-fertilizer-p4",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-fertilizer",
+      "paragraphId": "agr-par22-fertilizer-p4",
+      "paragraphHash": "fbbc0de4d9b72b47cd849eed1ea8eeff5f3fcf29347d07f5c58c5118db04d64f",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 30,
+          "printedPage": 28
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 31,
+          "printedPage": 29
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-04"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish microbial decomposition from low chemical solubility as two slow-release mechanisms.",
+      "decision": "retain_for_cross_packet_review",
+      "reason": "既存問題の速効性・被膜の説明と区別し、微生物分解と難溶性の二経路を比較する候補。溶出速度の数値を創作しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par03-fertilizer-q06",
+          "hash": "16163c2b13cde35d0ef657836ca0311eae345581533264e851228e6f190162a5"
+        },
+        {
+          "id": "agr-par03-fertilizer-q07",
+          "hash": "4fce0121bb31094497a22006921509752a20520d9125a081b010851b3900016b"
+        },
+        {
+          "id": "agr-par08-fertilizer-formulations-q03",
+          "hash": "a7aac194f308ebbe3e08ab26150cd13b65913e76dd0ac5ca6be7fbf0918cb3c2"
+        },
+        {
+          "id": "agr-par08-fertilizer-formulations-q07",
+          "hash": "9eaa99d29867cbc1993714a315232bced7e4d405f83cb3b9da15c264620f5161"
+        },
+        {
+          "id": "agr-shared-w02-q13",
+          "hash": "a9445dc048d70a6654dbf71c70fb4ef058707abb547c3778a4101fbf483aa2bc"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "retain_for_cross_packet_review",
+        "pendingQuestionIds": [
+          "agr-1-m02-q27"
+        ],
+        "reason": "微生物分解だけを再度問うならq27と重複。保持可能なのは難溶性の化学肥料も遅効性に含むという反例と、有機質の分解経路との対照に限る。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-fertilizer-p5",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-fertilizer",
+      "paragraphId": "agr-par22-fertilizer-p5",
+      "paragraphHash": "d9cce07c48509a4bb31de82f5e9e0f2ee48c626265e56eed2ebd4cb978d85c4f",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 30,
+          "printedPage": 28
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 31,
+          "printedPage": 29
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-05"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Retain existence qualifier for fertilizer lasting over one year; no universal duration guarantee.",
+      "decision": "exclude_duplicate",
+      "reason": "現候補は期間例を全製品保証へ広げないという読み方で、既存の耐久年数問題と同型。持続年数や資材名を替えるだけの追加問題にしない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-1-m01-q04",
+          "hash": "a30c627ce3bf184887e41f14bd05594bb37824896c11003f2cdebb0557fb82fb"
+        },
+        {
+          "id": "agr-par03-fertilizer-q07",
+          "hash": "4fce0121bb31094497a22006921509752a20520d9125a081b010851b3900016b"
+        },
+        {
+          "id": "agr-par03-fertilizer-q06",
+          "hash": "16163c2b13cde35d0ef657836ca0311eae345581533264e851228e6f190162a5"
+        },
+        {
+          "id": "agr-par06-flowers-q07",
+          "hash": "8281f3fa3810949ea343441777ef8eaa5736d013e4262d0bab8194aedb24a995"
+        },
+        {
+          "id": "agr-par11-management-q01",
+          "hash": "98b2be055b7463d63f59d35d7a665a9f12b66db56dd7ec6ffc60ae9c70a00fe1"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-fertilizer-p6",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-fertilizer",
+      "paragraphId": "agr-par22-fertilizer-p6",
+      "paragraphHash": "152e054c1d73914be97013ebf4400d89d7e998a0cc84198c1fec35dfb91bc31b",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 30,
+          "printedPage": 28
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 31,
+          "printedPage": 29
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-06"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish pellet shape from ingredient composition.",
+      "decision": "retain_for_cross_packet_review",
+      "reason": "ペレットの形状と原料組成を分ける候補。既存の固体・液体区分や単肥区分の名称選択を再利用しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par03-fertilizer-q03",
+          "hash": "2a3a937cd51f6949fac0dd01fa54f0d5ec6dc8bf29c43a80f2394a06f190be70"
+        },
+        {
+          "id": "agr-par03-fertilizer-q05",
+          "hash": "5d6cf23806f4fe97fca6a5e19de6b69710c8e3f0aeb20d3d5391aec8daf84348"
+        },
+        {
+          "id": "agr-par08-fertilizer-formulations-q03",
+          "hash": "a7aac194f308ebbe3e08ab26150cd13b65913e76dd0ac5ca6be7fbf0918cb3c2"
+        },
+        {
+          "id": "agr-par11-facility-q06",
+          "hash": "7d042e82fd587e68345646a92d532f80ee7e5833ee83b6952b7f9faa211d7069"
+        },
+        {
+          "id": "agr-par03-fertilizer-q08",
+          "hash": "ab570c229fdfb9deacbc70a378a7b87ed87f2c3fd19a9c530fac448d463c86be"
+        },
+        {
+          "id": "agr-par08-fertilizer-formulations-q04",
+          "hash": "7474930b3be1f8a0fecfd024eb499f72112b616105e809f18a598e63491d3734"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "retain_for_cross_packet_review",
+        "pendingQuestionIds": [
+          "agr-1-m02-q25",
+          "agr-1-m02-q27"
+        ],
+        "reason": "q25は混合作業、q27は効き始めと分解。円筒形ペレットという観察から成分の組合せを確定できないという形状対原料の判断は直接未評価。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-hormones-p1",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-hormones",
+      "paragraphId": "agr-par22-hormones-p1",
+      "paragraphHash": "061864e215834ade0143ceee5dc32f8d4fbfb8c1fe2fd67a4db629b5f3d58faa",
+      "lessonSourceHash": "2dd40be4c9e3197d661cb2b6bbba83bcfc8ffacf45b38f448d6f7e7ba8ad23d2",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 38,
+          "printedPage": 36
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-01"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish endogenous growth-regulating substance from external treatment operation.",
+      "decision": "exclude_duplicate",
+      "reason": "植物体内の調整物質と外部処理の区別は作業名の識別とは異なる。ただし処理効能・登録条件を問わず、頁単位保留の対象範囲を確認する。",
+      "relatedQuestions": [
+        {
+          "id": "agr-cm-weekly-q02",
+          "hash": "f390a027ec6f99e0da3d705372c314108267a4ea5dec94df1451e9a3f127ddfd"
+        },
+        {
+          "id": "agr-shared-w02-q08",
+          "hash": "7ccfd460184bb2ad0b4f9d124296af7c85ef1d6a7dfce194707b7791d4f54199"
+        },
+        {
+          "id": "agr-par03-fertilizer-q01",
+          "hash": "be71f2d3f97f83ec37cb0eb66dd939fed968fe8037c2c79187c133248bc057d6"
+        },
+        {
+          "id": "agr-par12-flower-q07",
+          "hash": "b2ddc217a4e51c8cf5e1e6db0a049266120170de42acfe91ff09102a8e437bde"
+        },
+        {
+          "id": "agr-cm-weekly-q13",
+          "hash": "18462b7dc4123cb7a53b5e3dee2b9db32ef8b6e668fe03a479737a1794c37700"
+        },
+        {
+          "id": "agr-par08-seed-graft-q01",
+          "hash": "c8900a92eb9d9349deb0227c410b17540549ca7845849b5019de638623147cb3"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "exclude_duplicate",
+        "pendingQuestionIds": [
+          "agr-2-m01-q01"
+        ],
+        "reason": "植物体内の物質と外からの作業という同じ二欄の対照をq01が直接評価する。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-hormones-p2",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-hormones",
+      "paragraphId": "agr-par22-hormones-p2",
+      "paragraphHash": "76c18f6cedf5217b7dd11ff353201a390f5e4468cc190d4c2f02418c3df7289a",
+      "lessonSourceHash": "2dd40be4c9e3197d661cb2b6bbba83bcfc8ffacf45b38f448d6f7e7ba8ad23d2",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 38,
+          "printedPage": 36
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-02"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Associate auxin with lateral-bud suppression/apical dominance.",
+      "decision": "exclude_duplicate",
+      "reason": "オーキシンの側芽抑制とサイトカイニンの側芽増加は一つの方向比較目標に統合する。同じ関係の逆向き照合を二問と数えない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-cm-weekly-q01",
+          "hash": "ef803fbc2501401f9c4a53552171ab9b3098244ab43ca8e044c8a1e76589bca2"
+        },
+        {
+          "id": "agr-cm-weekly-q02",
+          "hash": "f390a027ec6f99e0da3d705372c314108267a4ea5dec94df1451e9a3f127ddfd"
+        },
+        {
+          "id": "agr-par08-soil-details-q07",
+          "hash": "4ce9c072d3fe371b3e9634b0cf7f978797a55e149f97944dac427b1d5adc4e04"
+        },
+        {
+          "id": "agr-par21-g6-q02",
+          "hash": "bc87c0c84f3f83a4b0b9371217ce5b72aca48933e76141e04cd02c7a14807bb7"
+        },
+        {
+          "id": "agr-par12-soil-q01",
+          "hash": "47ed586fcef0016083cf286db89736aeda1b49c0401c394b7c018c383e4febc2"
+        },
+        {
+          "id": "agr-1-m01-q34",
+          "hash": "eb90f56b2ac27d9b01f695ab009b305fa79c5e4ff2216a2d159ef75c9a994ede"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "exclude_duplicate",
+        "pendingQuestionIds": [
+          "agr-2-m01-q04",
+          "agr-2-m01-q10"
+        ],
+        "reason": "オーキシンの側芽抑制・頂芽優勢をq04、サイトカイニンの側芽増加をq10が直接評価する。二つを対照表へ結合しても新しい枠にしない。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-hormones-p3",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-hormones",
+      "paragraphId": "agr-par22-hormones-p3",
+      "paragraphHash": "6b0203c4b1ef8fbc66721144f97df7836481d692ab89781f4561375b59a1814e",
+      "lessonSourceHash": "2dd40be4c9e3197d661cb2b6bbba83bcfc8ffacf45b38f448d6f7e7ba8ad23d2",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 38,
+          "printedPage": 36
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-03"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Associate gibberellin with stem elongation and dormancy breaking, retaining multiple targets.",
+      "decision": "exclude_duplicate",
+      "reason": "休眠打破と休眠促進の比較を一つの目標とし、アブシジン酸候補を統合する。茎伸長・果実肥大は別候補へ自動分割しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par06-terms-recognition-q12",
+          "hash": "5b9b89dd1ffc3f0d8431d9ea5efedc8f4e075f78c73eb41eab2f595668308a1c"
+        },
+        {
+          "id": "agr-par06-fruit-foundations-q16",
+          "hash": "66e2d1bc5e93b743c47bd1476b21c85758caeef14daf2c63d96c5c78bc75a108"
+        },
+        {
+          "id": "agr-par08-fruit-details-q03",
+          "hash": "de6de523e47172bb2d7d565e39e4b7ebc46b83cdc2b5184b57a54cac3b6d3f4c"
+        },
+        {
+          "id": "agr-cm-weekly-q03",
+          "hash": "ddbc73e9cbb92fb2df3615448bfd0dadb689e80e6ade6cd216efb5227f2057df"
+        },
+        {
+          "id": "agr-par12-soil-q04",
+          "hash": "9034f53531db3fc9d474a8a28d0ba36bfa15e0ac71eff9bb3ca17400f956682c"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "exclude_duplicate",
+        "pendingQuestionIds": [
+          "agr-2-m01-q07",
+          "agr-2-m01-q13"
+        ],
+        "reason": "茎伸長・果実肥大をq07、ジベレリンの休眠打破とABAの休眠方向をq13が評価済み。統合済み操作と一致する。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-hormones-p4",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-hormones",
+      "paragraphId": "agr-par22-hormones-p4",
+      "paragraphHash": "8d5588d7379dea96c536a9812b9f2d66990f38ac26a34b49a0ddc9d584ffff82",
+      "lessonSourceHash": "2dd40be4c9e3197d661cb2b6bbba83bcfc8ffacf45b38f448d6f7e7ba8ad23d2",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 38,
+          "printedPage": 36
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-04"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Associate cytokinin with lateral-bud increase and delayed leaf senescence.",
+      "decision": "exclude_duplicate",
+      "reason": "側芽の方向比較はhormones-p2へ統合。葉の老化抑制は本文に残すが、新しい独立操作として今回認定しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-water-soil-q15",
+          "hash": "edf6efd03246edb00db0b002236db0166b2f08f21aa216f4b905af13e867bf20"
+        },
+        {
+          "id": "agr-par06-fruit-foundations-q12",
+          "hash": "2a9f1844d428c3a27137ef503f620cbf3951449d5e2dcc9d55d0617bf397b855"
+        },
+        {
+          "id": "agr-vegwork-weekly-q07",
+          "hash": "04fa843f6c6baa1aec32b63c066ca726ce22802602584689abbd4e08cd110c4b"
+        },
+        {
+          "id": "agr-ricework-weekly-q09",
+          "hash": "93f37d8a897a6316e65704b14c98c01d0f8fd524b1e2ebda57bc905fa90a9fbd"
+        },
+        {
+          "id": "agr-par08-seed-graft-q01",
+          "hash": "c8900a92eb9d9349deb0227c410b17540549ca7845849b5019de638623147cb3"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-hormones-p5",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-hormones",
+      "paragraphId": "agr-par22-hormones-p5",
+      "paragraphHash": "d222004980df42bce9214210c407d6a941ba9befb54649256b232425045058c8",
+      "lessonSourceHash": "2dd40be4c9e3197d661cb2b6bbba83bcfc8ffacf45b38f448d6f7e7ba8ad23d2",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 38,
+          "printedPage": 36
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-05"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish ABA dormancy promotion from gibberellin dormancy breaking; do not assess ABA abscission hold.",
+      "decision": "exclude_duplicate",
+      "reason": "種子休眠の反対方向を同じ対応の逆問として増やさずhormones-p3へ統合。離層に関する保留知識を使用しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par12-soil-q02",
+          "hash": "7deb6a6b38e281427196db7fa042842b0e045e97c5f658d75dd56cba849aa9e9"
+        },
+        {
+          "id": "agr-par08-flower-details-q06",
+          "hash": "27afdd02f0f6532b0ef86419ca94b37f163a57121c3fdd14cc02e9b76fdd166b"
+        },
+        {
+          "id": "agr-par06-terms-recognition-q10",
+          "hash": "5821e1c4716d1091b19cff4478877e8dee2a52559070e08b30510d9b8980b459"
+        },
+        {
+          "id": "agr-1-m01-q05",
+          "hash": "20122fc16ef00a6e8196318e8cfbeeaba3dc8924a6d87075e39de9f1a45a4e72"
+        },
+        {
+          "id": "agr-par21-g5-q04",
+          "hash": "020058497bc3646feeabb464817a2fe1ba84e875fd8ae0384b74447cb325d26d"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-hormones-p6",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-hormones",
+      "paragraphId": "agr-par22-hormones-p6",
+      "paragraphHash": "76567ceab976c6f8f32caa3820ded4edb881518c694d8fdcff66bf192cc2f0ae",
+      "lessonSourceHash": "2dd40be4c9e3197d661cb2b6bbba83bcfc8ffacf45b38f448d6f7e7ba8ad23d2",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 38,
+          "printedPage": 36
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-06"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Recognize ethylene as gaseous and avoid a universal one-direction flowering claim.",
+      "decision": "exclude_duplicate",
+      "reason": "気体という状態と開花作用が一方向ではないことの読取り。切り花の糖・抗菌剤の役割とは異なるが、果実成熟だけを再出題しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par21-g5-q03",
+          "hash": "e4fa27af6c3238a368267a34e1c587c14724c3653f58b06fee40676213556522"
+        },
+        {
+          "id": "agr-par06-flowers-q13",
+          "hash": "c03aee3a5742592f09508cf6c1571af5bad66f61700292c4774e354cf6c2a22f"
+        },
+        {
+          "id": "agr-par06-facility-structure-q08",
+          "hash": "93f7cd9e2e4d9b71b75f5458f4957350112f1f25a0c1b2a36800df56aa520597"
+        },
+        {
+          "id": "agr-shared-w02-q17",
+          "hash": "1426c08be1fd3c32417d531b09359630d190860b56aab6da595c4b95aaec664c"
+        },
+        {
+          "id": "agr-par06-flowers-q16",
+          "hash": "15b2c336a1c25fa4d54d98a1041babf5fd744cee6af34caaabd6b5d4dddf5217"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "exclude_duplicate",
+        "pendingQuestionIds": [
+          "agr-2-m01-q16"
+        ],
+        "reason": "気体であることと開花の促進・抑制という二点をq16が同じ正答で直接評価する。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-weeds-p1",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-weeds",
+      "paragraphId": "agr-par22-weeds-p1",
+      "paragraphHash": "a009a7846dd4e2028914e4f54808752fe9a6d6adc7430e7b93c3fd32b68d1c4f",
+      "lessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 46,
+          "printedPage": 44
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 47,
+          "printedPage": 45
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 49,
+          "printedPage": 47
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-WEEDS-01"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Explain weed habitat relationship with pests without asserting all weeds are infested.",
+      "decision": "exclude_duplicate",
+      "reason": "既存の早期防除や種子散布防止に対し、雑草が病害虫の生息環境となる経路の候補。すべての雑草が感染しているという断定を避ける。",
+      "relatedQuestions": [
+        {
+          "id": "agr-cm-weekly-q15",
+          "hash": "91e410aeca05b4bcae56fe74cf847d1f68e48d099dfbebc47180fd76570b457a"
+        },
+        {
+          "id": "agr-cm-weekly-q16",
+          "hash": "2eaf40a781c1fc90779f662a501768de455f0d88a3c9febcaf2e77203600e33a"
+        },
+        {
+          "id": "agr-par06-facility-environment-q15",
+          "hash": "3891f5e099a67e69e7e697316e6cbaee0052f3c8d5cc264559a02258d0f003ec"
+        },
+        {
+          "id": "agr-par21-g1-q04",
+          "hash": "e2d3960aa080ea81cca0c508f8a00220c0237414bf5aad4bd82298fd5f4c5d89"
+        },
+        {
+          "id": "agr-par08-soil-details-q03",
+          "hash": "18840ea937d20ff7b57f71042f1b8c8d4cdf523f0a03e69f3eda2c09579b00b4"
+        },
+        {
+          "id": "agr-par21-g6-q03",
+          "hash": "0b45b4b47bcd3ce6ab7ee00e3ebbc9d2a9af2b6f5301d02532e04248b55634d8"
+        },
+        {
+          "id": "agr-par21-facility-fruit-q03",
+          "hash": "4e56bcf92a847ecb379af312cca186dd42e988d6f63609f5669730ec6d0d1881"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "exclude_duplicate",
+        "pendingQuestionIds": [
+          "agr-2-m01-q19"
+        ],
+        "reason": "雑草が病害虫の住みかになる場合という留保も含めq19と一致する。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-weeds-p2",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-weeds",
+      "paragraphId": "agr-par22-weeds-p2",
+      "paragraphHash": "901a20db72bc003262d2d66974a57134d69cb4a9c91c108189eab74f97621709",
+      "lessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 46,
+          "printedPage": 44
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 47,
+          "printedPage": 45
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 49,
+          "printedPage": 47
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-WEEDS-02"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish selective vs nonselective classifications while not inferring product authorization.",
+      "decision": "exclude_duplicate",
+      "reason": "対象植物による選択性と吸収部位による分類軸を一つの対照目標に統合。実製品の使用許可を推定しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par04-safety-q07",
+          "hash": "eee8334575b578b6997ce8a2004e3b23bcd359096e7258a7d13c54b7f1b018a8"
+        },
+        {
+          "id": "agr-1-w01-q05",
+          "hash": "2fd805a0b9cc7e0dfa668a7ffc8276a95c8d60ff8aa9428fa9ab87d827434423"
+        },
+        {
+          "id": "agr-shared-w02-q13",
+          "hash": "a9445dc048d70a6654dbf71c70fb4ef058707abb547c3778a4101fbf483aa2bc"
+        },
+        {
+          "id": "agr-cm-weekly-q14",
+          "hash": "a9d7f6160e364300c16c480348e2df50bb1ef05ad56d7ee3fd047054d033833d"
+        },
+        {
+          "id": "agr-water-soil-q12",
+          "hash": "a63b691138ac2ecd57154dbc3621786958cd510fb5cd451e06d5ed34a5e4c84e"
+        },
+        {
+          "id": "agr-2-w03-q02",
+          "hash": "29371b0c095e61b6fe7f2036778be50274689fc2228f61e50632b6afb41051f8"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "exclude_duplicate",
+        "pendingQuestionIds": [
+          "agr-2-m01-q22"
+        ],
+        "reason": "吸収部位と影響する植物の範囲という分類軸の対照をq22が直接評価する。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-weeds-p3",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-weeds",
+      "paragraphId": "agr-par22-weeds-p3",
+      "paragraphHash": "447a59240880cd269ac7970255a9083a27b76ac0af0913660d8a463317fe3ff2",
+      "lessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 46,
+          "printedPage": 44
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 47,
+          "printedPage": 45
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 49,
+          "printedPage": 47
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-WEEDS-03"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish foliar absorption route from selectivity classification.",
+      "decision": "exclude_duplicate",
+      "reason": "吸収部位と影響対象の二軸比較はweeds-p2へ統合し、表を逆向きに読む別問を増やさない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par12-soil-q01",
+          "hash": "47ed586fcef0016083cf286db89736aeda1b49c0401c394b7c018c383e4febc2"
+        },
+        {
+          "id": "agr-par08-flower-details-q03",
+          "hash": "3e370e7f0869dbedaa4ddf6d1ac71c4f763eb5ecd133c2c40663791eedbc3446"
+        },
+        {
+          "id": "agr-par21-g6-q02",
+          "hash": "bc87c0c84f3f83a4b0b9371217ce5b72aca48933e76141e04cd02c7a14807bb7"
+        },
+        {
+          "id": "agr-par11-riceveg-q07",
+          "hash": "4f2e4902ff76e2915dfe1a764b5d8b7108cd304c392d71ec840fcad15b633b10"
+        },
+        {
+          "id": "agr-par08-fertilizer-formulations-q07",
+          "hash": "9eaa99d29867cbc1993714a315232bced7e4d405f83cb3b9da15c264620f5161"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-weeds-p4",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-weeds",
+      "paragraphId": "agr-par22-weeds-p4",
+      "paragraphHash": "2eb828db70245d1bd364ee6f5a845ab3c28127def9025e02d14d1f8974659a0d",
+      "lessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 46,
+          "printedPage": 44
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 47,
+          "printedPage": 45
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 49,
+          "printedPage": 47
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-WEEDS-04"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Retain reduced effect on already large weeds for soil treatment description.",
+      "decision": "exclude_duplicate",
+      "reason": "土壌処理と雑草の生育段階の条件を結び付ける候補。製品一般の散布日や有効量には広げない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par08-fertilizer-formulations-q07",
+          "hash": "9eaa99d29867cbc1993714a315232bced7e4d405f83cb3b9da15c264620f5161"
+        },
+        {
+          "id": "agr-par11-facility-q01",
+          "hash": "890b0176c9831fbe4b2fa03e2798af3c0bc9b3bd5ce2f62ac58e2f3b3fe6f3e3"
+        },
+        {
+          "id": "agr-par06-fruit-foundations-q16",
+          "hash": "66e2d1bc5e93b743c47bd1476b21c85758caeef14daf2c63d96c5c78bc75a108"
+        },
+        {
+          "id": "agr-cm-weekly-q16",
+          "hash": "2eaf40a781c1fc90779f662a501768de455f0d88a3c9febcaf2e77203600e33a"
+        },
+        {
+          "id": "agr-cm-weekly-q14",
+          "hash": "a9d7f6160e364300c16c480348e2df50bb1ef05ad56d7ee3fd047054d033833d"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "exclude_duplicate",
+        "pendingQuestionIds": [
+          "agr-2-m01-q25"
+        ],
+        "reason": "既に大きい雑草では効果が下がるという条件をq25が直接評価する。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-weeds-p5",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-weeds",
+      "paragraphId": "agr-par22-weeds-p5",
+      "paragraphHash": "5b84682ce6a1fea05e1d5fda03525d270851866b06b72f65c5b6c3fd39113fff",
+      "lessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 46,
+          "printedPage": 44
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 47,
+          "printedPage": 45
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 49,
+          "printedPage": 47
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-WEEDS-05"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Keep herbicide-use equipment separate from pest/disease equipment; washing is not presented as equivalence.",
+      "decision": "exclude_duplicate",
+      "reason": "器材内部の残留と周囲への飛散の経路を一つの比較目標へ統合。兼用禁止と洗浄を同一視しない限定を保持する。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par04-safety-q08",
+          "hash": "7db5b61f56c635b7d103a0d781cacfd69b2192ec5f6b0c16bfee3dd778d7e5af"
+        },
+        {
+          "id": "agr-par21-g2-q02",
+          "hash": "6aa048e3465b8e866616e4ad01cd770227bb65dab5ea644ac641d2e2e7a32761"
+        },
+        {
+          "id": "agr-par12-riceveg-q01",
+          "hash": "b6319812a06d4b9e433d7cb7c2e9e89507606c5721e22bbbb94e7851ab884d64"
+        },
+        {
+          "id": "agr-par08-soil-details-q04",
+          "hash": "a778ff20dae9b9e90c853bb00707808f448380e4fb8c91f52b2e24003d220bb4"
+        },
+        {
+          "id": "agr-par12-soil-q07",
+          "hash": "d8754c2bb1d44f6c5b36dc468fe41092c7543750a5937121ce8c1600bfcc141f"
+        },
+        {
+          "id": "agr-par12-general-q07",
+          "hash": "70583b2ba8f2eee6eaffec6eeb7f5a139e301edbe4c6758e7b712c59ccf25623"
+        },
+        {
+          "id": "agr-par12-soil-q06",
+          "hash": "f69a2b1fa5b4f79538e52bf7849d82d39bb4518542275082bc1ef081fd4369db"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "exclude_duplicate",
+        "pendingQuestionIds": [
+          "agr-2-m01-q28",
+          "agr-2-m01-q31"
+        ],
+        "reason": "洗浄と兼用禁止をq28、周囲への飛散と器材内残留という経路比較をq31が評価する。統合目標の残部も追加枠にしない。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-weeds-p6",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-weeds",
+      "paragraphId": "agr-par22-weeds-p6",
+      "paragraphHash": "e8f441d82f1a157b8a945b66f21fe628e07b5629eb0b9f3388b78f0336b0d45e",
+      "lessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 46,
+          "printedPage": 44
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 47,
+          "printedPage": 45
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 49,
+          "printedPage": 47
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-WEEDS-06"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish off-target drift prevented by nozzle/cover from residue inside equipment.",
+      "decision": "exclude_duplicate",
+      "reason": "薬剤の移動経路の比較はweeds-p5へ統合。専用ノズルの仕様/距離/使用量は追加しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par04-safety-q10",
+          "hash": "80a5f54024b43902187c0bef8132cb920293b5a11028f7a8c577b0db3f00bfb4"
+        },
+        {
+          "id": "agr-par06-flowers-q11",
+          "hash": "cadb889b0c827924ed96642f358a3e18e069573533ea893ef021366edc4c12f5"
+        },
+        {
+          "id": "agr-par06-fruit-management-q01",
+          "hash": "a677a0e33363bd4a736c45382ec6dda1a60a472f5437e87015d00ec0c22538c9"
+        },
+        {
+          "id": "agr-par06-terms-recognition-q15",
+          "hash": "bd5276b54cc3d20e84e649ddd5cc4af57c21fced83db5cb6d4afba6b96eb82bd"
+        },
+        {
+          "id": "agr-shared-w02-q17",
+          "hash": "1426c08be1fd3c32417d531b09359630d190860b56aab6da595c4b95aaec664c"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-vegetables-p1",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-vegetables",
+      "paragraphId": "agr-par22-vegetables-p1",
+      "paragraphHash": "cf1bc2b820a6a22f1d7f00f840e0c0110ca8ba966837b95c6ed4e3a3452a640f",
+      "lessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 75,
+          "printedPage": 73
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 76,
+          "printedPage": 74
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-VEGETABLES-01"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Retain season and location together for summer highland cabbage production.",
+      "decision": "exclude_duplicate",
+      "reason": "夏の高冷地という例だけでは、既存の地域差を使う供給・作型問題から独立する操作が未指定。地域名・作物名の置換で追加しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-1-w01-q06",
+          "hash": "626ebb90c05c5b159a7af686f1b8ff46c89a06aaa862773596f816f382f3dfa0"
+        },
+        {
+          "id": "agr-par11-general-q07",
+          "hash": "81571bbd628db3d778f9c8a3b1feea0fba1350a89f290683bcfc200c00281a37"
+        },
+        {
+          "id": "agr-1-w01-q05",
+          "hash": "2fd805a0b9cc7e0dfa668a7ffc8276a95c8d60ff8aa9428fa9ab87d827434423"
+        },
+        {
+          "id": "agr-par11-flower-q03",
+          "hash": "f65fd42eb5c6d9dcab946e684688e18549e10b1533cdc224225a8bbd7e24091b"
+        },
+        {
+          "id": "agr-1-m01-q38",
+          "hash": "3545a16989bca8b92e5568938ae860699b072f3a1a92bf9045e60fe8580c8adf"
+        },
+        {
+          "id": "agr-par06-facility-environment-q12",
+          "hash": "03bc91c909eb9ff247bbbbe24d5c7a997bc04d6006bc806935311c532e2b15a8"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-vegetables-p2",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-vegetables",
+      "paragraphId": "agr-par22-vegetables-p2",
+      "paragraphHash": "8002bad62ba248e5186c591de668acd99fe0b2fc7fa68439f56993c33445931f",
+      "lessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 75,
+          "printedPage": 73
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 76,
+          "printedPage": 74
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-VEGETABLES-02"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Compare cabbage types by head shape and firmness.",
+      "decision": "retain_for_cross_packet_review",
+      "reason": "寒玉・春玉・丸玉の形と結球の特徴を対応させる候補。名称から播種日や全品種の性質を推定しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par11-general-q07",
+          "hash": "81571bbd628db3d778f9c8a3b1feea0fba1350a89f290683bcfc200c00281a37"
+        },
+        {
+          "id": "agr-par12-soil-q06",
+          "hash": "f69a2b1fa5b4f79538e52bf7849d82d39bb4518542275082bc1ef081fd4369db"
+        },
+        {
+          "id": "agr-par11-general-q08",
+          "hash": "e623d1ead5eee9752f7ca25f4de21e056752ed22fd6265c881ec096005d26e97"
+        },
+        {
+          "id": "agr-par03-fertilizer-q06",
+          "hash": "16163c2b13cde35d0ef657836ca0311eae345581533264e851228e6f190162a5"
+        },
+        {
+          "id": "agr-par11-riceveg-q01",
+          "hash": "821264073c105c43cf6f09987119878cf5cc487d44e0a2b11b11e79d66d6d618"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "retain_for_cross_packet_review",
+        "pendingQuestionIds": [],
+        "reason": "保留80問に寒玉・春玉・丸玉の形や結球の比較はない。名称の置換ではなく同一作物内の形態比較という狭い目標を保持する。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-vegetables-p3",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-vegetables",
+      "paragraphId": "agr-par22-vegetables-p3",
+      "paragraphHash": "181dd151b844791dc141777f3742fcd0c726e1a6df722eee94ba27e01e34808b",
+      "lessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 75,
+          "printedPage": 73
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 76,
+          "printedPage": 74
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-VEGETABLES-03"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish Chinese-cabbage use examples from universal sowing/harvest dates.",
+      "decision": "exclude_duplicate",
+      "reason": "料理例と全国共通の栽培日を混同しないという現候補だけでは、新しい農作業能力が明確でない。料理名を替えた数合わせに使わない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-shared-w02-q16",
+          "hash": "507c86b909a5a5fdc13b61b173577b5d5cd423e5e3d4808c3d1962e0bc539447"
+        },
+        {
+          "id": "agr-1-w01-q04",
+          "hash": "176630366b852b32bcbda1656369c47302def29ea3925dc8cbf49db4bd2f651f"
+        },
+        {
+          "id": "agr-par06-flowers-q14",
+          "hash": "a36821e45ead2f5ca8cd24ae3f2934d121c4d00d3cebe8c0b7ce3192b4ac5552"
+        },
+        {
+          "id": "agr-par12-riceveg-q04",
+          "hash": "9648f020beb78c92cdae4f492a9d99b86a54042e6917648da157802da62df713"
+        },
+        {
+          "id": "agr-par12-riceveg-q06",
+          "hash": "e16af23ab7c6564953db7df43d0a611dac272fb303c87fbee92b5586df2215eb"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-vegetables-p4",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-vegetables",
+      "paragraphId": "agr-par22-vegetables-p4",
+      "paragraphHash": "729f82a52b8ce1b9f4b92e2389fb38c426b2309e3798541e09bba05d1c46e286",
+      "lessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 75,
+          "printedPage": 73
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 76,
+          "printedPage": 74
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-VEGETABLES-04"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish lettuce leaf form from transplant cultivation method.",
+      "decision": "retain_for_cross_packet_review",
+      "reason": "形態と移植方式を分ける具体的記録の設計が未確定。タマネギ候補と同じ分類欄の読取りなら一つにする。",
+      "relatedQuestions": [
+        {
+          "id": "agr-1-w01-q04",
+          "hash": "176630366b852b32bcbda1656369c47302def29ea3925dc8cbf49db4bd2f651f"
+        },
+        {
+          "id": "agr-vegwork-weekly-q05",
+          "hash": "02c7a05ee3028efd25d2fa7ecec02673bb220405f24b973c54ca39b3da5346f7"
+        },
+        {
+          "id": "agr-par06-fruit-management-q02",
+          "hash": "36eced1baf8e18e75995e38ba30a2169ee9fffedaa25cd07278fc93efdad1613"
+        },
+        {
+          "id": "agr-par21-facility-fruit-q03",
+          "hash": "4e56bcf92a847ecb379af312cca186dd42e988d6f63609f5669730ec6d0d1881"
+        },
+        {
+          "id": "agr-par06-terms-recognition-q08",
+          "hash": "ad49850e3018007b2ace9577d79c18b6a26a41c9f028f9f4547a832ca2810428"
+        },
+        {
+          "id": "agr-par21-g5-q04",
+          "hash": "020058497bc3646feeabb464817a2fe1ba84e875fd8ae0384b74447cb325d26d"
+        },
+        {
+          "id": "agr-par06-facility-structure-q08",
+          "hash": "93f7cd9e2e4d9b71b75f5458f4957350112f1f25a0c1b2a36800df56aa520597"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "retain_for_cross_packet_review",
+        "pendingQuestionIds": [
+          "agr-1-m02-q40"
+        ],
+        "reason": "q40はレタスの温度条件と花芽分化。候補は葉の巻き方・縮れという形態と移植方式という別軸の照合で、温度判断とは異なる。元パケットのタマネギとの類似操作統合は未解決。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-vegetables-p5",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-vegetables",
+      "paragraphId": "agr-par22-vegetables-p5",
+      "paragraphHash": "805b7c821f2a6a42f6ee6455715b518dc94b489c232bb93cdcaf90eadc1e9c1e",
+      "lessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 75,
+          "printedPage": 73
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 76,
+          "printedPage": 74
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-VEGETABLES-05"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Explain variety improvement enabling year-round spinach cultivation without one-plant year-round inference.",
+      "decision": "exclude_duplicate",
+      "reason": "現候補は周年栽培を一株の連続収穫と誤解しない説明。既存の周年栽培の意味の再出題を作物名置換で追加しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-1-w01-q05",
+          "hash": "2fd805a0b9cc7e0dfa668a7ffc8276a95c8d60ff8aa9428fa9ab87d827434423"
+        },
+        {
+          "id": "agr-par06-facility-structure-q06",
+          "hash": "60c9110f723bd22b86dfcd8d7df6f09b064576531b41ebbe1659afc3c8e9e93f"
+        },
+        {
+          "id": "agr-cm-weekly-q09",
+          "hash": "2b1dd28e773bd8facfb16efb589583dd31e2dcc19ea090fdd3d2085d3e0a9436"
+        },
+        {
+          "id": "agr-par11-riceveg-q05",
+          "hash": "cf78baeca372f01a79014b4a07f62835955dfe195a4457c8077f40d5bd76ca2a"
+        },
+        {
+          "id": "agr-par08-seed-graft-q08",
+          "hash": "3e1d6e553d0d399e105165b7dec1cca5cef4526c2294ba32c1f4f8971c0acdec"
+        },
+        {
+          "id": "agr-par08-management-details-q01",
+          "hash": "808a5a77f26a07782e3831e0dd850cb0708049e5f044de064762a220915719a2"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-vegetables-p6",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-vegetables",
+      "paragraphId": "agr-par22-vegetables-p6",
+      "paragraphHash": "1d23016329a57417031c3b514e3ab9d72c9420908bbaf60a9a126267596605f2",
+      "lessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 75,
+          "printedPage": 73
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 76,
+          "printedPage": 74
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-VEGETABLES-06"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish onion edible organ classification from transplant method.",
+      "decision": "exclude_duplicate",
+      "reason": "器官と移植方式を分ける操作はvegetables-p4と共通。作物名の置換による追加枠にしない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-vegwork-weekly-q06",
+          "hash": "60025fa71a04ae827a3e8b710a3ddeac0d0190b6de7e7f982dc651cf2815c476"
+        },
+        {
+          "id": "agr-par11-riceveg-q07",
+          "hash": "4f2e4902ff76e2915dfe1a764b5d8b7108cd304c392d71ec840fcad15b633b10"
+        },
+        {
+          "id": "agr-par08-soil-details-q05",
+          "hash": "0abc99a9bb74cd4d3a3ebefbba388b591cb6065a48cee8dcc7038a62844ac93e"
+        },
+        {
+          "id": "agr-vegwork-weekly-q11",
+          "hash": "e2412dc1ceab73dadfc08f87456e714fa8cae5afbe9d6638a7ef2bf2e9f97275"
+        },
+        {
+          "id": "agr-shared-w02-q03",
+          "hash": "f2aa12d7ab807409983ccd89ffbc89c7092332a0ae15ea766f56c496e618c772"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-facility-p1",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-facility",
+      "paragraphId": "agr-par22-facility-p1",
+      "paragraphHash": "7b2e7400a7b7614b65df56730771270d6fa5bab0acd8fe8e5c1f59a9ba2789c4",
+      "lessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 82,
+          "printedPage": 80
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FACILITY-01"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Read 2018 protected-tomato production about 562000t separately from area ranking and open-field production.",
+      "decision": "retain_for_cross_packet_review",
+      "reason": "歴史的な年・施設生産という対象・重量と面積の指標を同時に保持する一つの統計読解候補。イチゴの値の置換版を別枠に数えない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-2-w01-q12",
+          "hash": "54f988ce60e0e1ab1bcb4f39cba4c275893bdd90d3b6aa41f553606a3a9ba203"
+        },
+        {
+          "id": "agr-par03-fertilizer-q14",
+          "hash": "d0f1f5a965c939cdbb0b02f00a51ad90c6cbf18ea924ff953a7c1d71baf039c9"
+        },
+        {
+          "id": "agr-par12-flower-q01",
+          "hash": "f37e8adccb22b5a47c7862c4aaf7048a6b287a1e73c9d85611d9b74f53f6fbf7"
+        },
+        {
+          "id": "agr-2-w01-q06",
+          "hash": "ab57b2de69ec893838c14f8a940daa836b6c3ba858182ce0dba4c1e07f27a95d"
+        },
+        {
+          "id": "agr-1-m01-q08",
+          "hash": "06c410f9d7cb89dc9775fb416abff67ff120b5454a1df4c9c6e99c16131eb29b"
+        },
+        {
+          "id": "agr-2-w01-q08",
+          "hash": "a1ccd72a5c6bd300f6de1194fc587df2846bc80cebb06bd4e40fb8fb66dc7909"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "retain_for_cross_packet_review",
+        "pendingQuestionIds": [
+          "agr-2-m01-q21",
+          "agr-2-m01-q24",
+          "agr-2-m01-q27"
+        ],
+        "reason": "保留問は金額小計、1人年消費、金額単位換算。候補を2018年の施設トマト生産重量と面積順位、露地込み範囲の区別に限定すれば異なる。歴史的数字を替えた計算問題にはしない。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-facility-p2",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-facility",
+      "paragraphId": "agr-par22-facility-p2",
+      "paragraphHash": "da11892fb7df8288187daeb9bbe476f8fea573aa5d49c78a3c804315929c2e0a",
+      "lessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 82,
+          "printedPage": 80
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FACILITY-02"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Match example tomato regions with production-system relay without inventing rankings.",
+      "decision": "exclude_duplicate",
+      "reason": "産地リレーによる周年供給は既存問題で扱う操作。県名やトマトという作物名の変更だけでは独立目標にならない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-1-w01-q06",
+          "hash": "626ebb90c05c5b159a7af686f1b8ff46c89a06aaa862773596f816f382f3dfa0"
+        },
+        {
+          "id": "agr-par06-flowers-q13",
+          "hash": "c03aee3a5742592f09508cf6c1571af5bad66f61700292c4774e354cf6c2a22f"
+        },
+        {
+          "id": "agr-par12-soil-q06",
+          "hash": "f69a2b1fa5b4f79538e52bf7849d82d39bb4518542275082bc1ef081fd4369db"
+        },
+        {
+          "id": "agr-par12-general-q01",
+          "hash": "4cbd26faf5050fa2d345147ea6b7d063d9c1c3b867758fd3633357781d1a7575"
+        },
+        {
+          "id": "agr-par21-facility-fruit-q02",
+          "hash": "1d17f1af6ac01a2ecebc30a48b612806263aa080d1c803b7aa6809ca04e8b7ef"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-facility-p3",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-facility",
+      "paragraphId": "agr-par22-facility-p3",
+      "paragraphHash": "4e3c5e3107bc9a9f7b0a59ec795b6d5538848bdcd52586db0383c51cf2269ceb",
+      "lessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 82,
+          "printedPage": 80
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FACILITY-03"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Recognize overlapping vegetative and reproductive growth in tomato.",
+      "decision": "retain_for_cross_packet_review",
+      "reason": "既存は栄養成長の定義と移行の作物差。並行して観察する二対象は候補として異なるが、単純な定義再出題にしない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-shared-w02-q03",
+          "hash": "f2aa12d7ab807409983ccd89ffbc89c7092332a0ae15ea766f56c496e618c772"
+        },
+        {
+          "id": "agr-shared-w02-q04",
+          "hash": "d8274497858e65d9406c4709d9bf71ce4e4a0fc2551dcbfa01cdb3e9fd00091c"
+        },
+        {
+          "id": "agr-shared-w02-q05",
+          "hash": "23fd7e59f6d2b1508ddfc1c64267e76a78fe5fa07c8999df87037265651c19e1"
+        },
+        {
+          "id": "agr-shared-w02-q06",
+          "hash": "ea06ae281c761669414ef78bdd175fdda7bf298e6a06394d1e7ec2bfaa995fd9"
+        },
+        {
+          "id": "agr-shared-w02-q09",
+          "hash": "5e3cbd53334ee667fd48c19ce1bf6882f0b6032e8df82948b8846e784af7623c"
+        },
+        {
+          "id": "agr-shared-w02-q01",
+          "hash": "c79451009ed47b3dc539ca0e3f41f5324c67d75a012a65c4edd438506d7fb541"
+        },
+        {
+          "id": "agr-vegwork-weekly-q07",
+          "hash": "04fa843f6c6baa1aec32b63c066ca726ce22802602584689abbd4e08cd110c4b"
+        },
+        {
+          "id": "agr-par21-facility-fruit-q04",
+          "hash": "6bd9863b288732ca28c397faa80c89937903698f5be123182593fd8bfbae134c"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "retain_for_cross_packet_review",
+        "pendingQuestionIds": [
+          "agr-2-m01-q20",
+          "agr-2-m01-q29"
+        ],
+        "reason": "q20/q29は果樹の前年枝・開花位置。候補は同じ時点のトマトの栄養成長と生殖成長の並行で、単純な前後順や成長定義の反転にしない。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-facility-p4",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-facility",
+      "paragraphId": "agr-par22-facility-p4",
+      "paragraphHash": "5c14b87ec37550151ca1bf20f9a5a634aec9873b910787a91146830313477097",
+      "lessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 82,
+          "printedPage": 80
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FACILITY-04"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Read 2018 protected-strawberry production about 135000t with year/production scope/unit retained.",
+      "decision": "exclude_duplicate",
+      "reason": "同じ候補群の施設トマト統計と、年・対象・数量単位を保持する操作が重なる。作物名と数量だけを替えた第二問にしない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par03-fertilizer-q14",
+          "hash": "d0f1f5a965c939cdbb0b02f00a51ad90c6cbf18ea924ff953a7c1d71baf039c9"
+        },
+        {
+          "id": "agr-1-m01-q35",
+          "hash": "ea5f10f8e8602836efe620a96a924500f4ce50aa971717ff13ea9071b48c1c50"
+        },
+        {
+          "id": "agr-par11-facility-q04",
+          "hash": "5c8ab0957605f266f2c43b11917a899298357769072aeb81ca5e09f5aee70265"
+        },
+        {
+          "id": "agr-1-m01-q02",
+          "hash": "f2281171f33998865b596b06d1411d558a5381f931709cbe42b678d25886a399"
+        },
+        {
+          "id": "agr-1-m01-q37",
+          "hash": "6c1cb291631540f2657c82daf5cb1263d0baca8316163a66183cbbcd5053a9f4"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-facility-p5",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-facility",
+      "paragraphId": "agr-par22-facility-p5",
+      "paragraphHash": "704e740ec9e92fbc0312c244631810028b6bdb2fe51e44cbd9ecd1918cb91529",
+      "lessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 82,
+          "printedPage": 80
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FACILITY-05"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish strawberry region examples from tomato region examples; not current rankings.",
+      "decision": "exclude_duplicate",
+      "reason": "県名を作物別に記憶照合する提案は、地域名置換の枠を増やしやすい。現候補を独立した新規問題数に算入しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-cm-weekly-q09",
+          "hash": "2b1dd28e773bd8facfb16efb589583dd31e2dcc19ea090fdd3d2085d3e0a9436"
+        },
+        {
+          "id": "agr-par06-facility-structure-q01",
+          "hash": "c6457c9a4cde3fd462f5b1e32eaf41caa9c795faae7993dee2f7283b371514c4"
+        },
+        {
+          "id": "agr-par11-riceveg-q07",
+          "hash": "4f2e4902ff76e2915dfe1a764b5d8b7108cd304c392d71ec840fcad15b633b10"
+        },
+        {
+          "id": "agr-2-w01-q04",
+          "hash": "1c4e7e190e2adb0bdd800528103e79c8070d5d0c72f2bc5648d8864080d5fb12"
+        },
+        {
+          "id": "agr-par08-fertilizer-formulations-q02",
+          "hash": "139881f1915b8d92140878d1bc2dc559456dde9eeeb8644dcb9a17b0f38e5430"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-facility-p6",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-facility",
+      "paragraphId": "agr-par22-facility-p6",
+      "paragraphHash": "3b18e6ecd1899053b4bd763bf4b0482262c7be37f8ba3d255afb73d7abce2f6b",
+      "lessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 82,
+          "printedPage": 80
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FACILITY-06"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish total cultivated area direction from yield-per-10a direction without inventing a percentage/year.",
+      "decision": "retain_for_cross_packet_review",
+      "reason": "総作付面積と単位面積収量の異なる分母を比較する。既存順位/構成比の問題と区別し、総生産量の増減を算出しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par12-flower-q01",
+          "hash": "f37e8adccb22b5a47c7862c4aaf7048a6b287a1e73c9d85611d9b74f53f6fbf7"
+        },
+        {
+          "id": "agr-par12-flower-q04",
+          "hash": "f92ac2431944753d2e7ffa1112ac95308207ec5967805ea7ce646b271b6e068d"
+        },
+        {
+          "id": "agr-2-w01-q08",
+          "hash": "a1ccd72a5c6bd300f6de1194fc587df2846bc80cebb06bd4e40fb8fb66dc7909"
+        },
+        {
+          "id": "agr-par03-fertilizer-q13",
+          "hash": "72a2059d8282c6de41e87f22bcb964a5224134cc610acb36c0bdb276e010c8ab"
+        },
+        {
+          "id": "agr-par03-fertilizer-q10",
+          "hash": "3d14308c3ceed3ed302a2c7e5e396e84ab2f9e5b543831c32d24473ed0f2d1ca"
+        },
+        {
+          "id": "agr-par06-facility-structure-q01",
+          "hash": "c6457c9a4cde3fd462f5b1e32eaf41caa9c795faae7993dee2f7283b371514c4"
+        },
+        {
+          "id": "agr-par12-facility-q08",
+          "hash": "97ee8ff28b0019facf64cd845a334ec5977a23f32925b1cf149ef050d658a259"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "retain_for_cross_packet_review",
+        "pendingQuestionIds": [
+          "agr-2-m01-q21",
+          "agr-2-m01-q24"
+        ],
+        "reason": "全体の作付面積と10a当たり収量が逆方向に動くという分母の対照は保留80問で直接評価されない。増減率や総生産量の推論は追加しない。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-fruit-p1",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-fruit",
+      "paragraphId": "agr-par22-fruit-p1",
+      "paragraphHash": "a308fb8369d06654abb3f9d81dd802cd3ba2e5795702c313af7747038606b98c",
+      "lessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 121,
+          "printedPage": 119
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 123,
+          "printedPage": 121
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FRUIT-01"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Match peel-puffing prevention purpose to satsuma mandarin without product prescription.",
+      "decision": "exclude_duplicate",
+      "reason": "浮皮防止・収穫前落果防止・成熟促進・根枝発生を目的の対象/変化の一つの対照表へ統合し、作物名置換の四問にしない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-1-m01-q30",
+          "hash": "5f4357c7ae2e41c8278118c5b3b0b3f501617f21ecfc0a20905ed97a2be06ed3"
+        },
+        {
+          "id": "agr-par06-fruit-management-q11",
+          "hash": "ef94913430313aa4f6bbdc910a1e9e022222ef1a41fdc0031f9fbcfe1a13e11d"
+        },
+        {
+          "id": "agr-par06-fruit-management-q03",
+          "hash": "6d80786b42d90e3f294a18bdd5681c6c13f077dfbe3070a1d2e690253eb17db6"
+        },
+        {
+          "id": "agr-1-m01-q39",
+          "hash": "4183eb2afd638eddc04d5b5dbde4abd0d90ffae09accd75a95ea8c31ef5ff108"
+        },
+        {
+          "id": "agr-1-w01-q08",
+          "hash": "56b4148ffebbfb4de9141be0f5cee87b7a35d450123c24dd272edb77262b3ede"
+        },
+        {
+          "id": "agr-par12-soil-q01",
+          "hash": "47ed586fcef0016083cf286db89736aeda1b49c0401c394b7c018c383e4febc2"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "exclude_duplicate",
+        "pendingQuestionIds": [
+          "agr-2-m01-q38"
+        ],
+        "reason": "ウンシュウミカン浮皮防止から他の掲載目的まで、統合された対照表全体をq38が一問で直接評価する。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-fruit-p2",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-fruit",
+      "paragraphId": "agr-par22-fruit-p2",
+      "paragraphHash": "a232e55184473e74aaeae686edfa8d79f88048b9d0b3e47b4f8e8d3f2cefabb8",
+      "lessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 121,
+          "printedPage": 119
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 123,
+          "printedPage": 121
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FRUIT-02"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Retain preharvest timing and source apple/pear scope in fruit-drop prevention.",
+      "decision": "exclude_duplicate",
+      "reason": "収穫前という限定を保持してfruit-p1の目的比較へ統合。ナシの種/品種を推定する設問は保留。",
+      "relatedQuestions": [
+        {
+          "id": "agr-vegwork-weekly-q09",
+          "hash": "4d864e95b48536b55cd91d39ca804f51a3b6e10553702b7107017112d1a582e5"
+        },
+        {
+          "id": "agr-par08-fruit-details-q03",
+          "hash": "de6de523e47172bb2d7d565e39e4b7ebc46b83cdc2b5184b57a54cac3b6d3f4c"
+        },
+        {
+          "id": "agr-par06-fruit-management-q14",
+          "hash": "3258dd6c46ab2933525edccff989f592865c1b13069d96c5355417efed2cd4eb"
+        },
+        {
+          "id": "agr-par08-management-details-q02",
+          "hash": "05132edfeba906d784beabb5a8e52284e4571dc135e4bf3e26e1bcaad5ea1bc1"
+        },
+        {
+          "id": "agr-par06-fruit-foundations-q15",
+          "hash": "84559b3c52f674c2ea87a80231ef7cd9a918f80478ab26535294f4a2d34dedeb"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-fruit-p3",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-fruit",
+      "paragraphId": "agr-par22-fruit-p3",
+      "paragraphHash": "7f198453786799b570d88438e0af25daafc171c7200aa878d0a5dfa904fde775",
+      "lessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 121,
+          "printedPage": 119
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 123,
+          "printedPage": 121
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FRUIT-03"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Retain many-fruit-trees qualifier for maturation promotion.",
+      "decision": "exclude_duplicate",
+      "reason": "成熟促進と落果防止の目的比較はfruit-p1へ統合。エチレンの成熟作用の単純逆問も増やさない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par06-fruit-management-q15",
+          "hash": "379bede125eb28f78cc4f345ec16e092a5fbf64d5395c4fd0b7d8c66fe2ac910"
+        },
+        {
+          "id": "agr-cm-weekly-q04",
+          "hash": "4467c365750af171b870a064a3233e4c83178984933ed24ade2c4a9ba0c6d192"
+        },
+        {
+          "id": "agr-par08-management-details-q02",
+          "hash": "05132edfeba906d784beabb5a8e52284e4571dc135e4bf3e26e1bcaad5ea1bc1"
+        },
+        {
+          "id": "agr-par11-riceveg-q02",
+          "hash": "cc8b6b1d64ee66db0eaf5b6322b97ef80d7ed0eebbe9e46a020cc61a17d18fbc"
+        },
+        {
+          "id": "agr-vegwork-weekly-q07",
+          "hash": "04fa843f6c6baa1aec32b63c066ca726ce22802602584689abbd4e08cd110c4b"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-fruit-p4",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-fruit",
+      "paragraphId": "agr-par22-fruit-p4",
+      "paragraphHash": "5bd876f00dcf96a2578d799eb241c49b9919ce13f4a30bab416fe8875ec48376",
+      "lessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 121,
+          "printedPage": 119
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 123,
+          "printedPage": 121
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FRUIT-04"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish root/branch initiation purpose from fruit maturity or propagation method.",
+      "decision": "exclude_duplicate",
+      "reason": "根枝発生もfruit-p1の目的比較に含める。栄養繁殖の方法名は既存問題にあり、それだけなら新規ではない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-1-m01-q30",
+          "hash": "5f4357c7ae2e41c8278118c5b3b0b3f501617f21ecfc0a20905ed97a2be06ed3"
+        },
+        {
+          "id": "agr-par06-terms-recognition-q10",
+          "hash": "5821e1c4716d1091b19cff4478877e8dee2a52559070e08b30510d9b8980b459"
+        },
+        {
+          "id": "agr-par11-riceveg-q07",
+          "hash": "4f2e4902ff76e2915dfe1a764b5d8b7108cd304c392d71ec840fcad15b633b10"
+        },
+        {
+          "id": "agr-par08-seed-graft-q08",
+          "hash": "3e1d6e553d0d399e105165b7dec1cca5cef4526c2294ba32c1f4f8971c0acdec"
+        },
+        {
+          "id": "agr-par06-fruit-management-q12",
+          "hash": "e3379359455df560c20464b9b1301ff5e32bb3462ab23b107fe758410cf8ea8c"
+        },
+        {
+          "id": "agr-par12-soil-q01",
+          "hash": "47ed586fcef0016083cf286db89736aeda1b49c0401c394b7c018c383e4febc2"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-fruit-p5",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-fruit",
+      "paragraphId": "agr-par22-fruit-p5",
+      "paragraphHash": "c4d839c108ccd8b957e8310f56c8274ba79224c3792062c03281854ea689def8",
+      "lessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 121,
+          "printedPage": 119
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 123,
+          "printedPage": 121
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FRUIT-05"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish agricultural monorail/単軌条運搬機 synonyms and riding/nonriding types.",
+      "decision": "exclude_duplicate",
+      "reason": "機械の用途/走行方式/自走/乗用区分を分ける一つの記録判断目標へ統合。機械名を替えた乗車可否問題を増やさない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par06-fruit-management-q16",
+          "hash": "5e9457200503df221e04deec2841cc423ec1677c2d99dcaf5728e3cb0980e95f"
+        },
+        {
+          "id": "agr-par12-management-q03",
+          "hash": "29c31ae639d8c415cc35606b28d0401311ef41eeff02f24df53cdc568b53b27e"
+        },
+        {
+          "id": "agr-1-m01-q38",
+          "hash": "3545a16989bca8b92e5568938ae860699b072f3a1a92bf9045e60fe8580c8adf"
+        },
+        {
+          "id": "agr-par11-flower-q03",
+          "hash": "f65fd42eb5c6d9dcab946e684688e18549e10b1533cdc224225a8bbd7e24091b"
+        },
+        {
+          "id": "agr-par12-soil-q07",
+          "hash": "d8754c2bb1d44f6c5b36dc468fe41092c7543750a5937121ce8c1600bfcc141f"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-2.json",
+        "decision": "exclude_duplicate",
+        "pendingQuestionIds": [
+          "agr-2-m01-q40"
+        ],
+        "reason": "乗用・非乗用と自走から乗車可否を推定できない留保をq40が同じ対比で直接評価する。名称の同義関係だけの残部を別枠にしない。"
+      }
+    },
+    {
+      "id": "ASSESS-CAND-agr-par22-fruit-p6",
+      "packet": "objectives-2.json",
+      "lessonId": "agr-par22-fruit",
+      "paragraphId": "agr-par22-fruit-p6",
+      "paragraphHash": "66978b0f3e0645cb86bbe1464fdc74f578078e9d4c81f3d82da1ccd0468b022c",
+      "lessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 121,
+          "printedPage": 119
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 123,
+          "printedPage": 121
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FRUIT-06"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "Distinguish crawler-type self-propulsion from permission to ride or specific load limits.",
+      "decision": "exclude_duplicate",
+      "reason": "自走を乗用許可と誤解しない操作はfruit-p5の機械属性比較に統合。積載量や運転方法の出題は本文根拠がない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par11-soil-q07",
+          "hash": "5412e811487ba8162e717e04612659ce80fb9ff0b83224f4d1d51efbbd321569"
+        },
+        {
+          "id": "agr-par08-fruit-details-q06",
+          "hash": "db3d626ce7e684815edbd2d967c1cc74c768466662d1fa2d6a0d33536de7b5d5"
+        },
+        {
+          "id": "agr-par06-facility-environment-q06",
+          "hash": "7a3a28750268f6b905a95d6de92f1d6bce770b101e1f495def15f867bd6c278f"
+        },
+        {
+          "id": "agr-shared-w02-q13",
+          "hash": "a9445dc048d70a6654dbf71c70fb4ef058707abb547c3778a4101fbf483aa2bc"
+        },
+        {
+          "id": "agr-2-w01-q07",
+          "hash": "618beaf8585ac2b26d78160b549595fddfcc6b61153e9741cf8b37a5d5386ffa"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-SIX3-OBJ-01",
+      "packet": "objectives-3.json",
+      "lessonId": "agr-par11-soil-handtest-profile",
+      "paragraphId": "agr-par11-soil-handtest-profile-p2",
+      "paragraphHash": "3633520ba9cc0e054c9c38d6b98815b6685095eb9a544feea6ceeaf6ed6af0a2",
+      "lessonSourceHash": "d50826e7043e52759781f1471475d0bcac0e2a9a8872f31892691075fe665488",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 17,
+          "printedPage": 11
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 22,
+          "printedPage": 20
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR11-SOIL-HANDTEST-PROFILE-02"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "割れ目のある小さなまとまりを簡易握り試験の土性群と照合する。",
+      "decision": "exclude_duplicate",
+      "reason": "既存問題が同じ観察と土性群の照合を直接評価する。図の新規作成は教材の追加だが新しい評価目標ではない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par11-soil-q06",
+          "hash": "adaca33bae31b9e4fcf20cd983dc75a4db8c35c37defb8b0e96a4e0f5b44011f"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-SIX3-OBJ-02",
+      "packet": "objectives-3.json",
+      "lessonId": "agr-par12-soil-nutrient-details",
+      "paragraphId": "agr-par12-soil-nutrient-details-p1",
+      "paragraphHash": "b291ae4981bbba2153379ed6ea1b4b5ec636f7e27736bb1360bc937ee095273c",
+      "lessonSourceHash": "153bdd1aec0a87377b11410adbf1cf5d88d6b641ea1948a7ed709fe969219027",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 29,
+          "printedPage": 27
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR12-SOIL-NUTRIENT-DETAILS-01"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "窒素不足の掲載例を読む際、葉の大きさと葉色の観察記録を分ける。",
+      "decision": "hold",
+      "reason": "既存q02は症状例を診断へ一般化しない扱い、q04はカリ不足の部位と見え方。新候補は観察記録の大きさと色を別欄へ保持する能力。ただし症状の名前替えに留まるなら除外する。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par03-fertilizer-q02",
+          "hash": "e4d4c681d89b1154ff5211458d0d6a4cd4dc783449d2c4ccb0179a5a17e60956"
+        },
+        {
+          "id": "agr-par12-soil-q04",
+          "hash": "9034f53531db3fc9d474a8a28d0ba36bfa15e0ac71eff9bb3ca17400f956682c"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-1-3.json",
+        "decision": "hold",
+        "pendingQuestionIds": [],
+        "reason": "保留80問には葉の大きさと色の直接照合は見当たらない。ただし大きさと色を別欄にする一般記録操作だけでは独立した窒素学習能力の裏付けが弱く、既存症状問との境界も未確定。元の窒素症状例を確定診断へ広げない。"
+      }
+    },
+    {
+      "id": "AGR-SIX3-OBJ-03",
+      "packet": "objectives-3.json",
+      "lessonId": "agr-par12-soil-nutrient-details",
+      "paragraphId": "agr-par12-soil-nutrient-details-p4",
+      "paragraphHash": "dcaac998e6c00b6b441c6fa5ade05ca9dc6362f1981f4477ada82a6ecd28002f",
+      "lessonSourceHash": "153bdd1aec0a87377b11410adbf1cf5d88d6b641ea1948a7ed709fe969219027",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 29,
+          "printedPage": 27
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR12-SOIL-NUTRIENT-DETAILS-04"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "カリと根の発育の関係を対応させる。",
+      "decision": "exclude_duplicate",
+      "reason": "養分名と働きを対応する既存操作の置換に留まり、根という語の追加だけでは独立枠に数えない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par12-soil-q01",
+          "hash": "47ed586fcef0016083cf286db89736aeda1b49c0401c394b7c018c383e4febc2"
+        },
+        {
+          "id": "agr-par03-fertilizer-q01",
+          "hash": "be71f2d3f97f83ec37cb0eb66dd939fed968fe8037c2c79187c133248bc057d6"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-SIX3-OBJ-04",
+      "packet": "objectives-3.json",
+      "lessonId": "agr-par12-soil-application-area-tools",
+      "paragraphId": "agr-par12-soil-application-area-tools-p4",
+      "paragraphHash": "1b89c724819206dacca998f20027c7adfb2e8644c6463136e5ea59068eab4826",
+      "lessonSourceHash": "4718996d786823abbc1f426bbcad5e7eff00af5e4317bb5e1475035e9ab3ad1e",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 33,
+          "printedPage": 31
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR12-SOIL-APPLICATION-AREA-TOOLS-04"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "粒状資材と広い散布範囲をブロードキャスタの用途へ対応させる。",
+      "decision": "exclude_duplicate",
+      "reason": "同じ機械名・材料・散布範囲の組合せが既存q07にある。写真識別は別途画像検証を要し、この本文だけから追加認定しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par12-soil-q07",
+          "hash": "d8754c2bb1d44f6c5b36dc468fe41092c7543750a5937121ce8c1600bfcc141f"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-SIX3-OBJ-05",
+      "packet": "objectives-3.json",
+      "lessonId": "agr-par12-management-machine-mechanisms",
+      "paragraphId": "agr-par12-management-machine-mechanisms-p1",
+      "paragraphHash": "154b2a6caa2bd80d05f82da225825c006cafdea5f91d7145b74cfec0ccd13959",
+      "lessonSourceHash": "4a69532cdef892351cff0ac6e3b4f01339c608954efb32a0695304eb843dc03a",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 50,
+          "printedPage": 48
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR12-MANAGEMENT-MACHINE-MECHANISMS-01"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "噴霧器の運び方と蓄圧方式を別の軸として区別する。",
+      "decision": "exclude_duplicate",
+      "reason": "既存q01が手動と動力の蓄圧方式を比較する。肩掛け形状の追加だけでは新能力にならない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par12-management-q01",
+          "hash": "948c36609b082590ea93c68ee1e1fea4782cf09140bdf620b3cb6d57fa3b3966"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-SIX3-OBJ-06",
+      "packet": "objectives-3.json",
+      "lessonId": "agr-par12-management-power-fuel-information",
+      "paragraphId": "agr-par12-management-power-fuel-information-p3",
+      "paragraphHash": "bd60346c87cbd9f8e383ace7f6be819568b479460a939cb09ad82fdd2a473053",
+      "lessonSourceHash": "5b27ec4c4bc0259eb2c57a8b6e5d0f8b85023d3de7462d6baedbe63f465b1ffd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 57,
+          "printedPage": 55
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 58,
+          "printedPage": 56
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 59,
+          "printedPage": 57
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR12-MANAGEMENT-POWER-FUEL-INFORMATION-03"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "乾燥機と暖房機を三相を用いる大きな機械の掲載例として対応させる。",
+      "decision": "exclude_duplicate",
+      "reason": "単相・三相と機械規模の既存比較へ機械名を替えて追加するだけでは独立目標としない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par12-management-q06",
+          "hash": "6dcf3d1ccae0744f3799d80f3d5f35e92c3d4adcd2693ddcf1c342861a6fd915"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-SIX3-OBJ-07",
+      "packet": "objectives-3.json",
+      "lessonId": "agr-par12-management-power-fuel-information",
+      "paragraphId": "agr-par12-management-power-fuel-information-p4",
+      "paragraphHash": "cbcc54901a555995684dd332980c27bee313161fde4280ae63f16a487fc8ae1f",
+      "lessonSourceHash": "5b27ec4c4bc0259eb2c57a8b6e5d0f8b85023d3de7462d6baedbe63f465b1ffd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 57,
+          "printedPage": 55
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 58,
+          "printedPage": 56
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 59,
+          "printedPage": 57
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR12-MANAGEMENT-POWER-FUEL-INFORMATION-04"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "手が乾いていることと差込み部分にほこりがないことを別の確認点として区別する。",
+      "decision": "exclude_duplicate",
+      "reason": "既存g6q04が乾いた手とほこりという同じ条件を使って直接評価する。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par21-g6-q04",
+          "hash": "db16506b69c1f7e16e554813af8563eb7b18204de3bf7cb635ba088b43d121ec"
+        },
+        {
+          "id": "agr-par04-safety-q11",
+          "hash": "8c72bc13b7c47904e80fe733f466013a1fbcca74093246b34ec5729cbb6c2bf6"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-SIX3-OBJ-08",
+      "packet": "objectives-3.json",
+      "lessonId": "agr-par22-fertilizer",
+      "paragraphId": "agr-par22-fertilizer-p1",
+      "paragraphHash": "2193a44c283b28fa4faa600c79f3a2ec851291c8fd5c9641aab32f263250f97e",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 30,
+          "printedPage": 28
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 31,
+          "printedPage": 29
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-01"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "硝安と硝酸アンモニウムを同じ肥料の名称として照合する。",
+      "decision": "exclude_duplicate",
+      "reason": "硫安の別名を対応させる既存操作の肥料名替え。28候補へ自動再昇格しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par08-fertilizer-formulations-q01",
+          "hash": "66d8ca032426a224097a4ede0187b62a272b4727f8ca0cdd3080f203d2d26311"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-SIX3-OBJ-09",
+      "packet": "objectives-3.json",
+      "lessonId": "agr-par22-fertilizer",
+      "paragraphId": "agr-par22-fertilizer-p4",
+      "paragraphHash": "fbbc0de4d9b72b47cd849eed1ea8eeff5f3fcf29347d07f5c58c5118db04d64f",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 30,
+          "printedPage": 28
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 31,
+          "printedPage": 29
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-04"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "遅効性肥料の微生物分解と溶けにくさという二つの経路を比較する。",
+      "decision": "exclude_duplicate",
+      "reason": "q06は速効性、q07は被膜等で溶出を調整する緩効性。候補は遅効性の二経路を区別し化学肥料なら必ず速効という誤推論を修正する。ただし既存選択肢まで含む追加重複確認が必要。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par03-fertilizer-q06",
+          "hash": "16163c2b13cde35d0ef657836ca0311eae345581533264e851228e6f190162a5"
+        },
+        {
+          "id": "agr-par03-fertilizer-q07",
+          "hash": "4fce0121bb31094497a22006921509752a20520d9125a081b010851b3900016b"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-1-3.json",
+        "decision": "merge_cross_packet_candidate",
+        "pendingQuestionIds": [
+          "agr-1-m02-q27"
+        ],
+        "reason": "objectives-2の同一段落候補と二つの遅効性経路の比較が一致し、一つへ統合する。保留1号q27は微生物分解を直接問い、被膜・速効性との区別も選択肢理由にある。難溶性との追加対比の独立性を再確認するまで新枠に数えない。"
+      }
+    },
+    {
+      "id": "AGR-SIX3-OBJ-10",
+      "packet": "objectives-3.json",
+      "lessonId": "agr-par22-fertilizer",
+      "paragraphId": "agr-par22-fertilizer-p6",
+      "paragraphHash": "152e054c1d73914be97013ebf4400d89d7e998a0cc84198c1fec35dfb91bc31b",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 30,
+          "printedPage": 28
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 31,
+          "printedPage": 29
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-06"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "ペレットの円筒形という観察と有機質・化学肥料の原料構成を別欄へ記録する。",
+      "decision": "exclude_duplicate",
+      "reason": "q05は溶かした肥料の液体区分、q03は配合肥料の例。候補は円筒形という観察から原料を推論しない二軸分類であり単なる銘柄追加ではない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par03-fertilizer-q05",
+          "hash": "5d6cf23806f4fe97fca6a5e19de6b69710c8e3f0aeb20d3d5391aec8daf84348"
+        },
+        {
+          "id": "agr-par08-fertilizer-formulations-q03",
+          "hash": "a7aac194f308ebbe3e08ab26150cd13b65913e76dd0ac5ca6be7fbf0918cb3c2"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-1-3.json",
+        "decision": "merge_cross_packet_candidate",
+        "pendingQuestionIds": [],
+        "reason": "objectives-2の同一段落候補とペレット形状・原料組成を分ける操作が同じであり、一つへ統合する。保留1号q27は粒形だけで効き始めを決めない理由を含むが、原料組成の推定そのものではない。統合後も自動採用しない。"
+      }
+    },
+    {
+      "id": "AGR-ATOMIC-SIXAI4-01",
+      "packet": "objectives-4.json",
+      "lessonId": "agr-facility-structure-roof-types",
+      "paragraphId": "agr-facility-structure-roof-types-p1",
+      "paragraphHash": "eb66bfe9d31c87bc89df3cc15897b0f3f29c432a1f04cabc579eec7dfd9b765d",
+      "lessonSourceHash": "409f90dd01d40af8c4a501f064089f719efe95afb7ca2cc9303f70122a87466e",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 66,
+          "printedPage": 60
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 85,
+          "printedPage": 83
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 86,
+          "printedPage": 84
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-ROOF-TYPES-01"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "単棟という名称を一つの屋根を基本とする構成へ対応させる。",
+      "decision": "exclude_duplicate",
+      "reason": "屋根の名称と特徴の対応操作を対象名だけ替える追加枠として数えない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par06-facility-structure-q12",
+          "hash": "b22b02d23c3ec06a0cfae3238718f757de6f167126096053269602a3b22a624f"
+        },
+        {
+          "id": "agr-par06-facility-structure-q11",
+          "hash": "7810d8f42ef167eac3851f5ea03523048c8381f1eaff6dabb0fca5387d9e8fdb"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-SIXAI4-02",
+      "packet": "objectives-4.json",
+      "lessonId": "agr-facility-structure-roof-types",
+      "paragraphId": "agr-facility-structure-roof-types-p3",
+      "paragraphHash": "2fb86df831d1e225f5036de22261463cb93a41745f302b26092b5736a207f097",
+      "lessonSourceHash": "409f90dd01d40af8c4a501f064089f719efe95afb7ca2cc9303f70122a87466e",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 66,
+          "printedPage": 60
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 85,
+          "printedPage": 83
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 86,
+          "printedPage": 84
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-ROOF-TYPES-03"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "棟の連結数と屋根断面の形を別の分類軸として扱い、両屋根型にも単棟・連棟があると判断する。",
+      "decision": "retain_for_cross_packet_review",
+      "reason": "既存は連棟の利点とスリークォータの名称対応。二つの分類軸が独立であるとの判断は別操作になり得るが、全候補との相互レビューが必要。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par06-facility-structure-q11",
+          "hash": "7810d8f42ef167eac3851f5ea03523048c8381f1eaff6dabb0fca5387d9e8fdb"
+        },
+        {
+          "id": "agr-par06-facility-structure-q12",
+          "hash": "b22b02d23c3ec06a0cfae3238718f757de6f167126096053269602a3b22a624f"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-4-5.json",
+        "decision": "retain_provisional_source_recheck",
+        "pendingQuestionIds": [],
+        "reason": "None of the pending 80 stems/options/reasons tests independence of roof cross-section and number of connected spans. Retain only as a candidate; topic-specific source hold and original page inspection remain unresolved."
+      }
+    },
+    {
+      "id": "AGR-ATOMIC-SIXAI4-03",
+      "packet": "objectives-4.json",
+      "lessonId": "agr-facility-structure-roof-types",
+      "paragraphId": "agr-facility-structure-roof-types-p4",
+      "paragraphHash": "a8a3c4a30dac3017fd9b6f3a4929564194b163d347ab6d3757c0b45c0200bd0b",
+      "lessonSourceHash": "409f90dd01d40af8c4a501f064089f719efe95afb7ca2cc9303f70122a87466e",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 66,
+          "printedPage": 60
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 85,
+          "printedPage": 83
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 86,
+          "printedPage": 84
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-ROOF-TYPES-04"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "丸い屋根断面から丸屋根型の名称を選ぶ。",
+      "decision": "exclude_duplicate",
+      "reason": "屋根形状から名称を選ぶ既存操作の対象置換であり、新規容量に数えない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par06-facility-structure-q12",
+          "hash": "b22b02d23c3ec06a0cfae3238718f757de6f167126096053269602a3b22a624f"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-SIXAI4-04",
+      "packet": "objectives-4.json",
+      "lessonId": "agr-facility-structure-roof-types",
+      "paragraphId": "agr-facility-structure-roof-types-p6",
+      "paragraphHash": "3ce62ef90e7a3bd44a8540cec00fe7b6f1b85aee25ed62e81e000d6b9af4311d",
+      "lessonSourceHash": "409f90dd01d40af8c4a501f064089f719efe95afb7ca2cc9303f70122a87466e",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 66,
+          "printedPage": 60
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 85,
+          "printedPage": 83
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 86,
+          "printedPage": 84
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-ROOF-TYPES-06"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "フェンロー型の軒高と屋根頂点高を区別する。",
+      "decision": "hold",
+      "reason": "高さの測定部位を分ける既存の草丈・節間長問題と抽象操作が近い。軒と棟を示す独立図の根拠・視覚資産が未確認。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par21-facility-fruit-q01",
+          "hash": "0a3d210db82d9b1d2a56ba02e369f1e96dc9fb31bb732398ef18bb64c1f98071"
+        },
+        {
+          "id": "agr-par06-facility-structure-q12",
+          "hash": "b22b02d23c3ec06a0cfae3238718f757de6f167126096053269602a3b22a624f"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-4-5.json",
+        "decision": "hold_not_new_capacity",
+        "pendingQuestionIds": [],
+        "reason": "No direct match among pending 80. Distinguishing eaves height from ridge height needs source-supported distinct visual task and original illustration; an abstract measurement-location substitution does not establish capacity."
+      }
+    },
+    {
+      "id": "AGR-ATOMIC-SIXAI4-05",
+      "packet": "objectives-4.json",
+      "lessonId": "agr-facility-structure-heating",
+      "paragraphId": "agr-facility-structure-heating-p4",
+      "paragraphHash": "2e11b2f4a3f5448ea4cf080b01ffc67e359c3b690cf8e6c768e9511a68547d80",
+      "lessonSourceHash": "a14bfe5857dcd517903de32900d7d00710d595d16ba6a6341faa7d831a976173",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 68,
+          "printedPage": 62
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 88,
+          "printedPage": 86
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 89,
+          "printedPage": 87
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-STRUCTURE-HEATING-04"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "太陽熱やヒートポンプが暖房に関わる掲載例だと対応させる。",
+      "decision": "exclude_duplicate",
+      "reason": "暖房のエネルギー又は方式の掲載例を選ぶ操作の名称追加にとどまる。",
+      "relatedQuestions": [
+        {
+          "id": "agr-1-m01-q09",
+          "hash": "559dad297b92f53ccdce1e6776dd21be33437faca113dfd6b9940b40da20b78a"
+        },
+        {
+          "id": "agr-par06-facility-structure-q15",
+          "hash": "096578e0869ec5b0edd615ce52112afb89cec93ca6fe6688dee3b10bf68e35f0"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-SIXAI4-06",
+      "packet": "objectives-4.json",
+      "lessonId": "agr-facility-env-humidity-control",
+      "paragraphId": "agr-facility-env-humidity-control-p2",
+      "paragraphHash": "099b3be98e793555b8959a1f8345d93c4b6a121d4ddf3506779f9aec426df3a9",
+      "lessonSourceHash": "aa40471252f939d86d71ddd7e20c2e437948d75dba92ebc7710fc78491c7631d",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 69,
+          "printedPage": 63
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 70,
+          "printedPage": 64
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 72,
+          "printedPage": 66
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 90,
+          "printedPage": 88
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 92,
+          "printedPage": 90
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 93,
+          "printedPage": 91
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-HUMIDITY-CONTROL-02"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "施設を閉め切った際、気温とは別に湿度を確認する。",
+      "decision": "exclude_duplicate",
+      "reason": "冬夜の閉鎖施設で過湿・結露を確認する既存問題が同じ判断を要求する。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par06-facility-environment-q07",
+          "hash": "0d4cfdaf2e83b59c21d201d4a7c0147ae18e81e08ae446bb163d56f45edb1bbc"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-SIXAI4-07",
+      "packet": "objectives-4.json",
+      "lessonId": "agr-facility-env-humidity-control",
+      "paragraphId": "agr-facility-env-humidity-control-p4",
+      "paragraphHash": "eefb5915622c2f7c73741f1ca7bec44a791a265b46b5bb3ab95c3cffb079b0e3",
+      "lessonSourceHash": "aa40471252f939d86d71ddd7e20c2e437948d75dba92ebc7710fc78491c7631d",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 69,
+          "printedPage": 63
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 70,
+          "printedPage": 64
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 72,
+          "printedPage": 66
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 90,
+          "printedPage": 88
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 92,
+          "printedPage": 90
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 93,
+          "printedPage": 91
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-HUMIDITY-CONTROL-04"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "加温を気温だけでなく過湿・結露との関係で捉える。",
+      "decision": "hold",
+      "reason": "既存の過湿確認・複合環境制御・暖房自動化との境界が未確定。本文は具体的な湿度制御条件や機構を与えないため処方問題にしない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par06-facility-environment-q07",
+          "hash": "0d4cfdaf2e83b59c21d201d4a7c0147ae18e81e08ae446bb163d56f45edb1bbc"
+        },
+        {
+          "id": "agr-par06-facility-environment-q08",
+          "hash": "9fe39a168ec21b56e07492f94e8feee836a145c43051ca15dd152d4236be87c7"
+        },
+        {
+          "id": "agr-1-m01-q19",
+          "hash": "2eea6fd4bf826a5244425bae3e224f3877986f08183ff493bb10f16666d9b2c3"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-4-5.json",
+        "decision": "hold_not_new_capacity",
+        "pendingQuestionIds": [],
+        "reason": "No pending 80 item specifically assesses heating versus condensation/humidity. Existing baseline humidity/environment-control questions still create a construct boundary issue; source gives no operating prescription. Preserve hold."
+      }
+    },
+    {
+      "id": "AGR-ATOMIC-SIXAI4-08",
+      "packet": "objectives-4.json",
+      "lessonId": "agr-facility-env-grafted-seedlings",
+      "paragraphId": "agr-facility-env-grafted-seedlings-p2",
+      "paragraphHash": "a4c65863d8b334abccc9a11295bdfe1a3f046c4da92e8bb2e39fe7478b7fc10e",
+      "lessonSourceHash": "ca6d0c289c016916a37c9103e8d4160fc1497c9b1182ac98a286c0dc610f491b",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 75,
+          "printedPage": 69
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 76,
+          "printedPage": 70
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 18,
+          "printedPage": 16
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 19,
+          "printedPage": 17
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FACILITY-ENV-GRAFTED-SEEDLINGS-02"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "台木に病害虫への抵抗性を重視する。",
+      "decision": "exclude_duplicate",
+      "reason": "台木と穂木の役割を問う既存問題の一部分であり新規ではない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par06-facility-environment-q15",
+          "hash": "3891f5e099a67e69e7e697316e6cbaee0052f3c8d5cc264559a02258d0f003ec"
+        },
+        {
+          "id": "agr-par06-fruit-foundations-q05",
+          "hash": "8f55ebadb05f490a778187c6a50e6e8bf3b9083663b8848c2728aae281b9973e"
+        },
+        {
+          "id": "agr-1-m01-q32",
+          "hash": "88462c2f44b4fcf342bc50901b5994e1b93f51fe1f6bb69cded16a039ac5aa3f"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-SIXAI4-09",
+      "packet": "objectives-4.json",
+      "lessonId": "agr-fruit-manage-bagging",
+      "paragraphId": "agr-fruit-manage-bagging-p1",
+      "paragraphHash": "4a7a83bf59e497a3713ae9dd62a9ca575782f2ea96b34fb7e2574c958d778815",
+      "lessonSourceHash": "8d53f7831d3c19f66cbc86cbd523ccef0a42f9b12f9db30a6cd60beefbeea8da",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 89,
+          "printedPage": 83
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 90,
+          "printedPage": 84
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 111,
+          "printedPage": 109
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 112,
+          "printedPage": 110
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-BAGGING-01"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "袋かけによる果実の保護と摘果による果実除去を作業目的と対象への作用で区別する。",
+      "decision": "hold",
+      "reason": "既存は袋の位置・止金、摘果の名称・養分集中を問う。果実を残して保護するか除去するかを対比する判断は暫定的に別。ただし単なる目的名の再組合せとなる設問は除外する。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par06-fruit-management-q01",
+          "hash": "a677a0e33363bd4a736c45382ec6dda1a60a472f5437e87015d00ec0c22538c9"
+        },
+        {
+          "id": "agr-par06-fruit-management-q02",
+          "hash": "36eced1baf8e18e75995e38ba30a2169ee9fffedaa25cd07278fc93efdad1613"
+        },
+        {
+          "id": "agr-cm-weekly-q03",
+          "hash": "ddbc73e9cbb92fb2df3615448bfd0dadb689e80e6ade6cd216efb5227f2057df"
+        },
+        {
+          "id": "agr-cm-weekly-q04",
+          "hash": "4467c365750af171b870a064a3233e4c83178984933ed24ade2c4a9ba0c6d192"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-4-5.json",
+        "decision": "hold_not_new_capacity",
+        "pendingQuestionIds": [],
+        "reason": "Pending 80 has no fruit bagging-versus-thinning item. However both existing action definitions and purposes are already exposed in baseline questions. A simple recombination does not prove a new ability; require distinct decision and source check."
+      }
+    },
+    {
+      "id": "AGR-ATOMIC-SIXAI4-10",
+      "packet": "objectives-4.json",
+      "lessonId": "agr-fruit-manage-bagging",
+      "paragraphId": "agr-fruit-manage-bagging-p4",
+      "paragraphHash": "eb073d170fd62172495312730ec5de958b7d88ef5273a1016f2ea92f78c811ff",
+      "lessonSourceHash": "8d53f7831d3c19f66cbc86cbd523ccef0a42f9b12f9db30a6cd60beefbeea8da",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 89,
+          "printedPage": 83
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 90,
+          "printedPage": 84
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 111,
+          "printedPage": 109
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 112,
+          "printedPage": 110
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-BAGGING-04"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "モモの袋口をまとめ止金を枝に留める流れを区別する。",
+      "decision": "hold",
+      "reason": "既存ブドウの止金位置をモモへ替えただけになりやすい。手順全体の新しい判断には独立図と源ページの再確認が必要。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par06-fruit-management-q01",
+          "hash": "a677a0e33363bd4a736c45382ec6dda1a60a472f5437e87015d00ec0c22538c9"
+        },
+        {
+          "id": "agr-par06-fruit-management-q02",
+          "hash": "36eced1baf8e18e75995e38ba30a2169ee9fffedaa25cd07278fc93efdad1613"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-4-5.json",
+        "decision": "hold_not_new_capacity",
+        "pendingQuestionIds": [],
+        "reason": "No pending 80 item concerns fastening peach fruit bags. Crop substitution from grape bag positioning/fastener questions is insufficient; source and original visual sequence remain required."
+      }
+    },
+    {
+      "id": "AGR-ATOMIC-SIXAI4-11",
+      "packet": "objectives-4.json",
+      "lessonId": "agr-fruit-manage-renewal",
+      "paragraphId": "agr-fruit-manage-renewal-p3",
+      "paragraphHash": "675a821c07d0c453a75d1e731dd558287c35da6a6c2832f079bb4195728b53be",
+      "lessonSourceHash": "c0f08d51cd28af1bb7a7a08c2a93130bdb1497205804bb9ebc1dfcb8de679368",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 91,
+          "printedPage": 85
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 92,
+          "printedPage": 86
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 114,
+          "printedPage": 112
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 115,
+          "printedPage": 113
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-RENEWAL-03"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "高接ぎが新苗を植える作業ではなく既存樹の枝へ別品種を接ぐ作業だと区別する。",
+      "decision": "exclude_duplicate",
+      "reason": "改植の定義と高接ぎの二型・目的が既に出題済み。裏返した選択肢だけでは新しい能力にならない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par06-fruit-management-q05",
+          "hash": "8a25a16b88a424cbf0fc25afd8b63189997fcc28c19cd769071598021c1a55fd"
+        },
+        {
+          "id": "agr-par06-fruit-management-q06",
+          "hash": "95b611f4e70e52321e03d7beec376d5ff217700f3975ab3ee3ed71a5a320a470"
+        },
+        {
+          "id": "agr-par08-seed-graft-q08",
+          "hash": "3e1d6e553d0d399e105165b7dec1cca5cef4526c2294ba32c1f4f8971c0acdec"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-4-5.json",
+        "decision": "exclude_duplicate_baseline",
+        "pendingQuestionIds": [],
+        "reason": "Pending 80 adds no high-grafting/renewal item, but baseline already distinguishes new-tree replanting and high grafting definitions/purposes; reversing the same comparison is not a new atomic objective."
+      }
+    },
+    {
+      "id": "AGR-ATOMIC-SIXAI4-12",
+      "packet": "objectives-4.json",
+      "lessonId": "agr-fruit-manage-maturity-indicators-2",
+      "paragraphId": "agr-fruit-manage-maturity-indicators-2-p1",
+      "paragraphHash": "acdd9390faba88e36145ca4f6ab63c6fabcb88d75e2001c6a9439a1fdb580e95",
+      "lessonSourceHash": "3b4f8e26d018aa6f49428ccc3d867b7e586245ee00abc2ac38f16374b3480e85",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 113,
+          "printedPage": 111
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FRUIT-MANAGE-MATURITY-INDICATORS-2-01"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "代表果実の測定結果を全果実の同一状態の保証とせず、何を測定したかの報告として扱う。",
+      "decision": "retain_for_cross_packet_review",
+      "reason": "既存は測定器と指標の対応又は樹齢図の一般化限界。代表果実と全体の区別は暫定的に別だが、出典本文が与えるサンプリング根拠と追加候補間の重複を要確認。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par21-g5-q02",
+          "hash": "8f40a25979e470dfcef2281e4b3994119b23b8f6f441e5c1385f50fa8dcbd739"
+        },
+        {
+          "id": "agr-par06-fruit-foundations-q02",
+          "hash": "ef17dbe49bae7402ce964667cc4a4c0e725cab258ef77dcb18008763f46c9cb1"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-4-5.json",
+        "decision": "retain_provisional_source_recheck",
+        "pendingQuestionIds": [],
+        "reason": "No pending 80 item evaluates representative-fruit sampling versus whole-crop guarantee. Candidate may be distinct from instrument matching, but inherited lesson prose and generic qualification alone do not certify source-backed sampling competence."
+      }
+    },
+    {
+      "id": "atomic-w5-01",
+      "packet": "objectives-5.json",
+      "lessonId": "agr-ricework-lowcost",
+      "paragraphId": "agr-ricework-lowcost-p1",
+      "paragraphHash": "2d31ad7eed972820852acdca2f392ea6dff16d0d40698ba77534b34c8f19e2dc",
+      "lessonSourceHash": "236f4ee8903164b27aa2e1d3224494533a09aa8e1752e7b316b49f03d08e2118",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 51,
+          "printedPage": 45
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 69,
+          "printedPage": 67
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-LOWCOST-01"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "直播は、苗を育てて田植えする代わりに、種子を直接水田へまく栽培です。育苗作業や育苗資材を減らせることが、資料に示された省力化の理由です。",
+      "decision": "exclude_duplicate",
+      "reason": "Direct sowing removes nursery/transplant stages; already explicit in the correct answer and explanation.",
+      "relatedQuestions": [
+        {
+          "id": "agr-ricework-weekly-q13",
+          "hash": "b7e62f404a0daf42933d6880a82f5d1cc34eca9f7dac9fec2dd09bfa336fde3a"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "atomic-w5-02",
+      "packet": "objectives-5.json",
+      "lessonId": "agr-ricework-lowcost",
+      "paragraphId": "agr-ricework-lowcost-p2",
+      "paragraphHash": "534fcc97e58480130650df849aa05d2d3640af6abe11a19f552b8948a8285c31",
+      "lessonSourceHash": "236f4ee8903164b27aa2e1d3224494533a09aa8e1752e7b316b49f03d08e2118",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 51,
+          "printedPage": 45
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 69,
+          "printedPage": 67
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-LOWCOST-02"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "耕起と代かきを行ったうえで、土中や表面へ種をまく方法が湛水直播です。資料には出芽のための種子被覆の例もありますが、この入門では薬剤や製品の具体的な処理条件を指定しません。",
+      "decision": "exclude_duplicate",
+      "reason": "Flooded direct-sowing preparation (tillage/puddling) differs from dry-field subsequent water sequence; broad direct-sowing distinction alone is insufficient clearance.",
+      "relatedQuestions": [
+        {
+          "id": "agr-ricework-weekly-q14",
+          "hash": "5a60f1ddbc96e13e58b398c71661503741e5d2bff4da3a0f7b8416ed0dae1228"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false,
+      "peerReview": {
+        "file": "review-4-5.json",
+        "decision": "exclude_duplicate_pending",
+        "pendingQuestionIds": [
+          "agr-1-m02-q26"
+        ],
+        "reason": "The pending question directly asks tillage and puddling before flooded direct sowing, the exact proposed atomic objective. Its four choices/reasons also distinguish sparse planting, transplanting and dry-field sequence. Do not count it again even before publication."
+      }
+    },
+    {
+      "id": "atomic-w5-03",
+      "packet": "objectives-5.json",
+      "lessonId": "agr-ricework-lowcost",
+      "paragraphId": "agr-ricework-lowcost-p3",
+      "paragraphHash": "96fa26924aa6381a7e0774e8dadf17dd939788b60b7bdcbd89e64165002e4396",
+      "lessonSourceHash": "236f4ee8903164b27aa2e1d3224494533a09aa8e1752e7b316b49f03d08e2118",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 51,
+          "printedPage": 45
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 69,
+          "printedPage": 67
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-LOWCOST-03"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "乾いた田の状態で播種し、出芽後もしばらく畑のような状態で育て、その後に水を入れる方法が乾田直播です。最初から同じ水の状態でまく方法ではありません。",
+      "decision": "exclude_duplicate",
+      "reason": "Exact dry-field sowing/emergence/field-state/flooding sequence already assessed.",
+      "relatedQuestions": [
+        {
+          "id": "agr-ricework-weekly-q14",
+          "hash": "5a60f1ddbc96e13e58b398c71661503741e5d2bff4da3a0f7b8416ed0dae1228"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "atomic-w5-04",
+      "packet": "objectives-5.json",
+      "lessonId": "agr-ricework-lowcost",
+      "paragraphId": "agr-ricework-lowcost-p4",
+      "paragraphHash": "a40c2fdbe8c96fcb710cf58f6e43facf829daa319d9d70f05cf5a6a119ed038d",
+      "lessonSourceHash": "236f4ee8903164b27aa2e1d3224494533a09aa8e1752e7b316b49f03d08e2118",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 51,
+          "printedPage": 45
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 69,
+          "printedPage": 67
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-LOWCOST-04"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "疎植は、田植機の株間を広げ、栽植密度を下げる方法です。直播とは異なり、育てた苗を植える方法の中で、間隔を変える点に着目します。",
+      "decision": "exclude_duplicate",
+      "reason": "Wider transplant spacing as sparse planting already occurs in correct answer.",
+      "relatedQuestions": [
+        {
+          "id": "agr-ricework-weekly-q13",
+          "hash": "b7e62f404a0daf42933d6880a82f5d1cc34eca9f7dac9fec2dd09bfa336fde3a"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "atomic-w5-05",
+      "packet": "objectives-5.json",
+      "lessonId": "agr-ricework-lowcost",
+      "paragraphId": "agr-ricework-lowcost-p5",
+      "paragraphHash": "4c54f64a6b83941bb110a3ed7c48befd2c245a174119025cc88fb723f747580d",
+      "lessonSourceHash": "236f4ee8903164b27aa2e1d3224494533a09aa8e1752e7b316b49f03d08e2118",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 51,
+          "printedPage": 45
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 69,
+          "printedPage": 67
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-LOWCOST-05"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "資料は、畦間30cmの例で、株間を15cmから28cmへ広げると、必要な育苗箱数が40％以上少なくなると説明しています。条件付きの例を、全ての田で同じ費用削減になるという保証に変えないでください。",
+      "decision": "hold",
+      "reason": "Conditional seedling-box reduction example is numeric substitution within existing sparse-planting mechanism; no independent ability established.",
+      "relatedQuestions": [
+        {
+          "id": "agr-ricework-weekly-q13",
+          "hash": "b7e62f404a0daf42933d6880a82f5d1cc34eca9f7dac9fec2dd09bfa336fde3a"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "atomic-w5-06",
+      "packet": "objectives-5.json",
+      "lessonId": "agr-ricework-lowcost",
+      "paragraphId": "agr-ricework-lowcost-p6",
+      "paragraphHash": "46cfc186871361712f072d92e2517b3cc7d41eb269acac0d10b17b3c7da4071e",
+      "lessonSourceHash": "236f4ee8903164b27aa2e1d3224494533a09aa8e1752e7b316b49f03d08e2118",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 51,
+          "printedPage": 45
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 69,
+          "printedPage": 67
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-LOWCOST-06"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "直播や疎植は、それぞれ作業や資材を減らすための工夫です。しかし、種をまいた後や苗を植えた後の管理までなくなるわけではありません。どの工程を変えるのかを分けて比較します。",
+      "decision": "exclude_duplicate",
+      "reason": "Post-sowing/transplant management is explicitly retained by the existing wrong-option reason.",
+      "relatedQuestions": [
+        {
+          "id": "agr-ricework-weekly-q13",
+          "hash": "b7e62f404a0daf42933d6880a82f5d1cc34eca9f7dac9fec2dd09bfa336fde3a"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "atomic-w5-07",
+      "packet": "objectives-5.json",
+      "lessonId": "agr-vegwork-rootvegetables",
+      "paragraphId": "agr-vegwork-rootvegetables-p1",
+      "paragraphHash": "6cd9b3706f20a013188f751cd5adff886da264d1e47ad041887c28c3b46a8d86",
+      "lessonSourceHash": "839249e06bc74a1a6c676190e0ac95ada4ee5611d949687850e20dabf7f00ecd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 56,
+          "printedPage": 50
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 57,
+          "printedPage": 51
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 77,
+          "printedPage": 75
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-ROOTVEGETABLES-01"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "ダイコンは秋から冬の栽培に加え、春や夏にも生産され、年間を通じて栽培されています。全国の一つの畑で、同じ日程を必ず使えるという意味ではありません。",
+      "decision": "hold",
+      "reason": "Year-round regional production versus universal schedule is a generic qualification; no distinct agricultural decision specified.",
+      "relatedQuestions": [
+        {
+          "id": "agr-vegwork-weekly-q07",
+          "hash": "04fa843f6c6baa1aec32b63c066ca726ce22802602584689abbd4e08cd110c4b"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "atomic-w5-08",
+      "packet": "objectives-5.json",
+      "lessonId": "agr-vegwork-rootvegetables",
+      "paragraphId": "agr-vegwork-rootvegetables-p2",
+      "paragraphHash": "3add6ec1983e09201a258293d4e3cb2aa134289e9763f0fc337d85ba29576e40",
+      "lessonSourceHash": "839249e06bc74a1a6c676190e0ac95ada4ee5611d949687850e20dabf7f00ecd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 56,
+          "printedPage": 50
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 57,
+          "printedPage": 51
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 77,
+          "printedPage": 75
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-ROOTVEGETABLES-02"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "寒い時期のダイコンでは、トンネルを利用する例があります。被覆の構造は既習の被覆資材の内容へ結び付け、ここでは作物と季節への適用例として理解します。",
+      "decision": "hold",
+      "reason": "Tunnel use for cold-season radish applies prior cover knowledge to a named crop; crop substitution alone does not establish novelty.",
+      "relatedQuestions": [
+        {
+          "id": "agr-vegwork-weekly-q07",
+          "hash": "04fa843f6c6baa1aec32b63c066ca726ce22802602584689abbd4e08cd110c4b"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "atomic-w5-09",
+      "packet": "objectives-5.json",
+      "lessonId": "agr-vegwork-rootvegetables",
+      "paragraphId": "agr-vegwork-rootvegetables-p3",
+      "paragraphHash": "c77e39f901ae3cd9286bdfb0ef1f79a7e28d14cee6ed009e3d97c9d47b3ecf2c",
+      "lessonSourceHash": "839249e06bc74a1a6c676190e0ac95ada4ee5611d949687850e20dabf7f00ecd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 56,
+          "printedPage": 50
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 57,
+          "printedPage": 51
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 77,
+          "printedPage": 75
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-ROOTVEGETABLES-03"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "ダイコンは直まきする作物で、低温が続くと花芽分化することが説明されています。発芽に必要な温度と、その後の花芽形成への温度の影響は別の観察項目です。",
+      "decision": "exclude_duplicate",
+      "reason": "Radish cold-induced floral differentiation already directly assessed; agr-shared-w02-q12 also names the example.",
+      "relatedQuestions": [
+        {
+          "id": "agr-vegwork-weekly-q07",
+          "hash": "04fa843f6c6baa1aec32b63c066ca726ce22802602584689abbd4e08cd110c4b"
+        },
+        {
+          "id": "agr-shared-w02-q12",
+          "hash": "00b62ef480c99243d08eecc78608289c7f6c91caf78770e644b891229283da54"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "atomic-w5-10",
+      "packet": "objectives-5.json",
+      "lessonId": "agr-vegwork-rootvegetables",
+      "paragraphId": "agr-vegwork-rootvegetables-p4",
+      "paragraphHash": "f4823cb0a2335f91c6c59b6011b986cef4ef1c7a36d8cc0df48ae9009cdc0050",
+      "lessonSourceHash": "839249e06bc74a1a6c676190e0ac95ada4ee5611d949687850e20dabf7f00ecd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 56,
+          "printedPage": 50
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 57,
+          "printedPage": 51
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 77,
+          "printedPage": 75
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-ROOTVEGETABLES-04"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "ニンジンはカロテンを多く含み、料理やジュースなどに使われる作物です。食用の特徴を、種をまく方法や育つ気候の情報とは分けてまとめます。",
+      "decision": "hold",
+      "reason": "Carotene and food/juice use are factual crop examples, not yet an independently specified practical ability.",
+      "relatedQuestions": [
+        {
+          "id": "agr-vegwork-weekly-q08",
+          "hash": "451387e5ed4d25a279b5061c1fd193bfa66cdee2ce64986c35c6c3b34e8e9a42"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "atomic-w5-11",
+      "packet": "objectives-5.json",
+      "lessonId": "agr-vegwork-rootvegetables",
+      "paragraphId": "agr-vegwork-rootvegetables-p5",
+      "paragraphHash": "cbaeb96317adab9539fed92619e883c3d30945b5082c24f345b84cef6731cc55",
+      "lessonSourceHash": "839249e06bc74a1a6c676190e0ac95ada4ee5611d949687850e20dabf7f00ecd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 56,
+          "printedPage": 50
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 57,
+          "printedPage": 51
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 77,
+          "printedPage": 75
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-ROOTVEGETABLES-05"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "ニンジンは涼しい気候で育ち、全国の各地で栽培され、直まきをします。地域が広いという説明と、気候を問わず全く同じ管理でよいという説明を混同しないことが大切です。",
+      "decision": "hold",
+      "reason": "Cool climate and direct sowing of carrot combine familiar factors with a crop name; source-linked competence is not yet distinct.",
+      "relatedQuestions": [
+        {
+          "id": "agr-vegwork-weekly-q08",
+          "hash": "451387e5ed4d25a279b5061c1fd193bfa66cdee2ce64986c35c6c3b34e8e9a42"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "atomic-w5-12",
+      "packet": "objectives-5.json",
+      "lessonId": "agr-vegwork-rootvegetables",
+      "paragraphId": "agr-vegwork-rootvegetables-p6",
+      "paragraphHash": "ab43c24d4fd3447e1a352b62df1c3a799e1aaf7bfcb8b3bb55eda994465da530",
+      "lessonSourceHash": "839249e06bc74a1a6c676190e0ac95ada4ee5611d949687850e20dabf7f00ecd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 56,
+          "printedPage": 50
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 57,
+          "printedPage": 51
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 77,
+          "printedPage": 75
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-ROOTVEGETABLES-06"
+      ],
+      "levels": [
+        "1",
+        "2"
+      ],
+      "objective": "ニンジンは乾燥すると発芽しにくい性質があります。発芽三条件の説明を実際の作物へ当てはめ、播種後の水分に注意する理由を理解します。ここから一律の水量や回数は決めません。",
+      "decision": "exclude_duplicate",
+      "reason": "Carrot dryness suppressing germination and attention to moisture are already exact question content.",
+      "relatedQuestions": [
+        {
+          "id": "agr-vegwork-weekly-q08",
+          "hash": "451387e5ed4d25a279b5061c1fd193bfa66cdee2ce64986c35c6c3b34e8e9a42"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-G6-agr-statistics-p1",
+      "packet": "objectives-6.json",
+      "lessonId": "agr-statistics",
+      "paragraphId": "agr-statistics-p1",
+      "paragraphHash": "5505cf021fc69eaca097918ad11f4730f3180786895a52ab20d7e14b832538d8",
+      "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 3,
+          "printedPage": 1
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 4,
+          "printedPage": 2
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 7,
+          "printedPage": 5
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 8,
+          "printedPage": 6
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-STATISTICS-01"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "統計の対象年を保って現在値との混同を避ける",
+      "decision": "exclude_duplicate",
+      "reason": "同じ年表示の保持を既存問が直接評価する。",
+      "relatedQuestions": [
+        {
+          "id": "agr-2-w01-q05",
+          "hash": "3c5ecfaf12afb23017be8ecf963ae0b1b49e8dabc9fd53a3be31bdef00135d0c"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-G6-agr-statistics-p2",
+      "packet": "objectives-6.json",
+      "lessonId": "agr-statistics",
+      "paragraphId": "agr-statistics-p2",
+      "paragraphHash": "c9065409c66ef5cb1efff8516b6fc3b3132a47a745789fbf3db042d95533b5a9",
+      "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 3,
+          "printedPage": 1
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 4,
+          "printedPage": 2
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 7,
+          "printedPage": 5
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 8,
+          "printedPage": 6
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-STATISTICS-02"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "農業産出額の構成比と面積・重量の比率を区別する",
+      "decision": "exclude_duplicate",
+      "reason": "野菜24%の分母識別を既存問が直接評価する。品目や数値の差替えは新能力ではない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-2-w01-q06",
+          "hash": "ab57b2de69ec893838c14f8a940daa836b6c3ba858182ce0dba4c1e07f27a95d"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-G6-agr-statistics-p3",
+      "packet": "objectives-6.json",
+      "lessonId": "agr-statistics",
+      "paragraphId": "agr-statistics-p3",
+      "paragraphHash": "9c618247194c9407575b6b7d883578dabb83c8c2c34f29f4243b5939e7a21466",
+      "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 3,
+          "printedPage": 1
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 4,
+          "printedPage": 2
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 7,
+          "printedPage": 5
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 8,
+          "printedPage": 6
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-STATISTICS-03"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "表示単位を確認して金額を比較する",
+      "decision": "exclude_duplicate",
+      "reason": "円・億円・兆円の確認が既存問の正答そのものである。",
+      "relatedQuestions": [
+        {
+          "id": "agr-2-w01-q07",
+          "hash": "618beaf8585ac2b26d78160b549595fddfcc6b61153e9741cf8b37a5d5386ffa"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-G6-agr-statistics-p4",
+      "packet": "objectives-6.json",
+      "lessonId": "agr-statistics",
+      "paragraphId": "agr-statistics-p4",
+      "paragraphHash": "b083b1fd6efa2a59ab9c7e54ad661e5d64e9d3596c19365c2b9fe6041cdd01e3",
+      "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 3,
+          "printedPage": 1
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 4,
+          "printedPage": 2
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 7,
+          "printedPage": 5
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 8,
+          "printedPage": 6
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-STATISTICS-04"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "カロリーと重量の自給率の指標を区別する",
+      "decision": "exclude_duplicate",
+      "reason": "同一分母として扱わない判断を既存問が直接評価する。",
+      "relatedQuestions": [
+        {
+          "id": "agr-2-w01-q08",
+          "hash": "a1ccd72a5c6bd300f6de1194fc587df2846bc80cebb06bd4e40fb8fb66dc7909"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-G6-agr-statistics-p5",
+      "packet": "objectives-6.json",
+      "lessonId": "agr-statistics",
+      "paragraphId": "agr-statistics-p5",
+      "paragraphHash": "d5798aba6da1c58e07a75e923fddbebb9218f394b7b3b378467d4bced33f93ab",
+      "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 3,
+          "printedPage": 1
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 4,
+          "printedPage": 2
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 7,
+          "printedPage": 5
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 8,
+          "printedPage": 6
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-STATISTICS-05"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "花き内訳と農業全体の構成比の分母を区別する",
+      "decision": "exclude_duplicate",
+      "reason": "何を100%とするかの識別を既存問が直接評価する。",
+      "relatedQuestions": [
+        {
+          "id": "agr-2-w01-q09",
+          "hash": "e57b0fc27a2963a2f7714596e81844322f855b80064dc4ef54dbcdd839584f8c"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-G6-agr-statistics-p6",
+      "packet": "objectives-6.json",
+      "lessonId": "agr-statistics",
+      "paragraphId": "agr-statistics-p6",
+      "paragraphHash": "0eba82917d0dd56eef2fcd5e4f7d2da316f181fdbcb234b56bab7e0ff450364b",
+      "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 3,
+          "printedPage": 1
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 4,
+          "printedPage": 2
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 7,
+          "printedPage": 5
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 8,
+          "printedPage": 6
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-STATISTICS-06"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "年・単位・対象・分母を表の記録に保つ",
+      "decision": "exclude_duplicate",
+      "reason": "既習四操作のまとめであり、独立した第五の能力をこの段落から自動認定しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-2-w01-q05",
+          "hash": "3c5ecfaf12afb23017be8ecf963ae0b1b49e8dabc9fd53a3be31bdef00135d0c"
+        },
+        {
+          "id": "agr-2-w01-q06",
+          "hash": "ab57b2de69ec893838c14f8a940daa836b6c3ba858182ce0dba4c1e07f27a95d"
+        },
+        {
+          "id": "agr-2-w01-q07",
+          "hash": "618beaf8585ac2b26d78160b549595fddfcc6b61153e9741cf8b37a5d5386ffa"
+        },
+        {
+          "id": "agr-2-w01-q09",
+          "hash": "e57b0fc27a2963a2f7714596e81844322f855b80064dc4ef54dbcdd839584f8c"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-G6-agr-flower-details-economic-rows-p1",
+      "packet": "objectives-6.json",
+      "lessonId": "agr-flower-details-economic-rows",
+      "paragraphId": "agr-flower-details-economic-rows-p1",
+      "paragraphHash": "a0d7e38ba46980665ff0484d2fa280cda6757448cd1a95bfd504cc4c33abfe45",
+      "lessonSourceHash": "1ad06032a2e0ac9686f7ff5de53a676dac99432bf23ca15315a46ba8d02b63cd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 125,
+          "printedPage": 123
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FLOWER-DETAILS-ECONOMIC-ROWS-01"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "種苗費・市場価格・労力の列を混同しない",
+      "decision": "exclude_duplicate",
+      "reason": "既存の行照合と利益計算保留の一般原則に重なる。列見出しの再説明だけで新規枠にしない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par08-flower-details-q04",
+          "hash": "c4518bfbeea0580594bc75bbc64b76a94f4fba1d82837cd478e3e90343eb9442"
+        },
+        {
+          "id": "agr-par08-flower-details-q05",
+          "hash": "0345b974d43b0d1e71277da09d983416e90fdf472c5f67183b95ac859e9527e9"
+        },
+        {
+          "id": "agr-par21-g6-q01",
+          "hash": "5814dfb2debb6233e2bbe2d741dd5969d9046f801c2ec7201441f44e4ee48de4"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-G6-agr-flower-details-economic-rows-p2",
+      "packet": "objectives-6.json",
+      "lessonId": "agr-flower-details-economic-rows",
+      "paragraphId": "agr-flower-details-economic-rows-p2",
+      "paragraphHash": "34acf117516b4401ea77d40621f10e2721c4089b819dbb319185e86f6d8390de",
+      "lessonSourceHash": "1ad06032a2e0ac9686f7ff5de53a676dac99432bf23ca15315a46ba8d02b63cd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 125,
+          "printedPage": 123
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FLOWER-DETAILS-ECONOMIC-ROWS-02"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "一・二年草の安い種苗費と多い労力を対応させる",
+      "decision": "exclude_duplicate",
+      "reason": "同じ作物群と二列の対応を既存問が直接評価する。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par08-flower-details-q04",
+          "hash": "c4518bfbeea0580594bc75bbc64b76a94f4fba1d82837cd478e3e90343eb9442"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-G6-agr-flower-details-economic-rows-p3",
+      "packet": "objectives-6.json",
+      "lessonId": "agr-flower-details-economic-rows",
+      "paragraphId": "agr-flower-details-economic-rows-p3",
+      "paragraphHash": "eafc4782787e5275934f2bfb84d9babd018cca8ff03df8f17755a62f3a9d41f1",
+      "lessonSourceHash": "1ad06032a2e0ac9686f7ff5de53a676dac99432bf23ca15315a46ba8d02b63cd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 125,
+          "printedPage": 123
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FLOWER-DETAILS-ECONOMIC-ROWS-03"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "宿根草のやや高い費用・価格と多い労力を表どおり照合する",
+      "decision": "exclude_duplicate",
+      "reason": "品目群・高低語の差替えによる同じ表照合操作で、独立能力として数えない。「やや」を保つ意味は教材に残す。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par08-flower-details-q04",
+          "hash": "c4518bfbeea0580594bc75bbc64b76a94f4fba1d82837cd478e3e90343eb9442"
+        },
+        {
+          "id": "agr-par08-flower-details-q05",
+          "hash": "0345b974d43b0d1e71277da09d983416e90fdf472c5f67183b95ac859e9527e9"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-G6-agr-flower-details-economic-rows-p4",
+      "packet": "objectives-6.json",
+      "lessonId": "agr-flower-details-economic-rows",
+      "paragraphId": "agr-flower-details-economic-rows-p4",
+      "paragraphHash": "3cbb46c04dc99e20fa40ac5771ed2d6a9f5a57132fd9cca972ae97d6a53ce1c8",
+      "lessonSourceHash": "1ad06032a2e0ac9686f7ff5de53a676dac99432bf23ca15315a46ba8d02b63cd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 125,
+          "printedPage": 123
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FLOWER-DETAILS-ECONOMIC-ROWS-04"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "球根類の種苗費・価格・労力を別列として照合する",
+      "decision": "exclude_duplicate",
+      "reason": "同じ球根類の価格・労力対応を既存問が評価する。種苗費一欄を足すだけで新規能力と認定しない。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par08-flower-details-q05",
+          "hash": "0345b974d43b0d1e71277da09d983416e90fdf472c5f67183b95ac859e9527e9"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-G6-agr-flower-details-economic-rows-p5",
+      "packet": "objectives-6.json",
+      "lessonId": "agr-flower-details-economic-rows",
+      "paragraphId": "agr-flower-details-economic-rows-p5",
+      "paragraphHash": "4e338ac3fce326166f0bd417ae9e6e058d3014ee08c74824d924e0263befff96",
+      "lessonSourceHash": "1ad06032a2e0ac9686f7ff5de53a676dac99432bf23ca15315a46ba8d02b63cd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 125,
+          "printedPage": 123
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FLOWER-DETAILS-ECONOMIC-ROWS-05"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "花木・枝ものの労力をバラとその他に分ける",
+      "decision": "exclude_duplicate",
+      "reason": "二つの既存問で同じ労力欄の分岐を既に評価している。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par06-flowers-q09",
+          "hash": "1e9d76eabd7ba4c5281ed89060d0b5b6aa1a89a72428d5d412bbe56bb01c845f"
+        },
+        {
+          "id": "agr-par08-flower-details-q06",
+          "hash": "27afdd02f0f6532b0ef86419ca94b37f163a57121c3fdd14cc02e9b76fdd166b"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    },
+    {
+      "id": "AGR-ATOMIC-G6-agr-flower-details-economic-rows-p6",
+      "packet": "objectives-6.json",
+      "lessonId": "agr-flower-details-economic-rows",
+      "paragraphId": "agr-flower-details-economic-rows-p6",
+      "paragraphHash": "c0fce53ec6fae6bc98f9a75ba35c79d4c07a6694a7a62560b1b980937dcdc3a0",
+      "lessonSourceHash": "1ad06032a2e0ac9686f7ff5de53a676dac99432bf23ca15315a46ba8d02b63cd",
+      "sourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 125,
+          "printedPage": 123
+        }
+      ],
+      "knowledgeIds": [
+        "AGR-K-FLOWER-DETAILS-ECONOMIC-ROWS-06"
+      ],
+      "levels": [
+        "2"
+      ],
+      "objective": "相対評価表から利益額を算出しない",
+      "decision": "exclude_duplicate",
+      "reason": "販売額・総費用不明による計算保留が既存問の正答と一致する。",
+      "relatedQuestions": [
+        {
+          "id": "agr-par21-g6-q01",
+          "hash": "5814dfb2debb6233e2bbe2d741dd5969d9046f801c2ec7201441f44e4ee48de4"
+        }
+      ],
+      "eligibleForAutomaticQuestionGeneration": false
+    }
+  ],
+  "globalSemanticDedupComplete": false,
+  "capacityFor800Certified": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "pendingParallel28QuestionsAreAppContent": false,
+  "limitations": [
+    "Lexical screening supports targeted AI comparison; it is not exhaustive semantic certification.",
+    "All retained rows still require source and global objective review before authoring.",
+    "Pending parallel-28 questions are uncommitted review inputs, not credited app content.",
+    "Cross-packet reviews remain separately hash-bound evidence; no automatic promotion."
+  ]
+}

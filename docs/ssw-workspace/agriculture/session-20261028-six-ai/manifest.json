@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "scope": "six-ai-bounded-atomic-objective-cross-review",
+  "baselineCommit": "97feb8f04b1fc0cb01562171c24fe718466c8f3b",
+  "startupPersistence": "WORK PERSISTENCE PASS",
+  "checkpointBeforeSha256": "dce85b4e1aafc9b271a3172c0ec5fa6c1e4a43895e2733e2e914233f24decf6a",
+  "counts": {
+    "workers": 6,
+    "reviewRows": 94,
+    "independentlyCrossReviewedRows": 34,
+    "uniqueParagraphs": 91,
+    "baselineUniqueQuestions": 452,
+    "decisions": {
+      "exclude_duplicate": 70,
+      "retain_for_cross_packet_review": 13,
+      "hold": 11
+    },
+    "newQuestions": 0
+  },
+  "validation": {
+    "sourceParagraphQuestionAndPeerBindings": "PASS",
+    "negativeMatrixGuards": 6,
+    "assessmentInventory": "PASS",
+    "existingMockValidator": "PASS",
+    "assessmentInventoryRegressionTests": 13
+  },
+  "preservedProductSha256": {
+    "src/data/agriculture/lessons.ja.json": "d83275f9d09b2239fcd2416448d0d8179c1d400298f29b93c25dc24bdeac7574",
+    "src/data/agriculture/weekly-checks.ja.json": "06023b72dd6f5997a9c908b3a6f16824166be3118dedafa97abdf41a7d441a86",
+    "src/data/agriculture/mock-exams.ja.json": "43d51b4be787251ab2f8e60d50bcab031242ac1bee3c30d09a9e2c2945aa303c"
+  },
+  "notChanged": [
+    "lessons",
+    "translations",
+    "weekly questions",
+    "mock questions",
+    "artwork",
+    "runtime",
+    "learner sessions",
+    "other sectors"
+  ],
+  "limits": {
+    "globalSemanticDedupComplete": false,
+    "capacityFor800Certified": false,
+    "freshOriginalPdfInspection": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "humanReviewed": false,
+    "newRuntimeOrDeviceQa": false,
+    "releaseReady": false
+  },
+  "pendingWork": "80 questions in uncommitted parallel-28 were only comparison evidence; their integration/publication is owned by the separate working tree and not credited here.",
+  "next": "Resolve source/hold scope for 13 retained candidates and compare against latest persisted question inventory before writing any new form. Preserve pending parallel-28 work; continue inline equipment/state art and source gaps.",
+  "publication": "Requires narrow commit, push, fetch and exact-HEAD WORK PERSISTENCE PASS; no SHA-only follow-up commit."
+}
