@@ -1,3 +1,16 @@
+# Nhà hàng / 外食業 — checkpoint 7, 2026-10-28
+
+Toàn bộ mô-đun CHƯA hoàn tất. Tiếp tục từ base remote đã qua scoped WORK PERSISTENCE PASS `a1720c6827029b288beb107d73562593bd303d55`, nhánh `feature/restaurant-20261026`. Checkpoint này chỉ lưu bền vững sau commit/push/fetch/persistence gate.
+
+- Sáu AI tạo 400 bản dịch câu 2号 mới: en/vi q161–200; id/tl q121–160; hi/bn q241–280; my/ne/th/km q001–040. Tổng câu 8448/11808, còn 3360 cặp.
+- Thêm 100 thuật ngữ+định nghĩa mỗi id/tl: tổng glossary 2968/8304, còn 5336 cặp. Giữ mọi record có sẵn, không đổi Nhật, đáp án, thứ tự lựa chọn hoặc UI.
+- Structural PASS, numeric PASS 76676 trường, signed Celsius PASS 386 trường. Đối chiếu 10 trường khác ký hiệu hàng nghìn/đơn vị mỗi đĩa bằng exact field hashes; không chứng nhận ngữ nghĩa toàn kho.
+- SourceHash khớp tất cả 400 câu mới; mọi record bài/câu/UI/glossary cũ bảo toàn. completion7-preservation-qa.json lưu số liệu.
+- Chưa kiểm thử Expo/native trong phiên, chưa duyệt người bản ngữ/chuyên gia. Không nâng acceptance false. Source590partial, full furigana và hình nhận dạng vẫn còn dở.
+- Điểm tiếp: en/vi từ q201; id/tl q161; hi/bn q281; my/ne/th/km q041, weekly2号tuần02–11; thuật ngữ8locale còn thiếu. Không có cam kết tác vụ chạy nền sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 6, 2026-10-28
 
 Toàn bộ mô-đun CHƯA hoàn tất. Tiếp tục từ remote `d0607f088e6c05d80845bf75ff1ab958f218fa51` trên `feature/restaurant-20261026`; base đã qua WORK PERSISTENCE PASS có phạm vi trước khi sửa. Chỉ công bố lưu bền vững sau commit/ref/fetch và persistence gate.
