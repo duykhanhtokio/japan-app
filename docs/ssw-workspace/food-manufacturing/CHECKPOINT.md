@@ -1,3 +1,17 @@
+# Batch25 — 2026-10-28
+
+Base `d5abdd517d1cfe8e760741d0c5e9eafa9976d6c4`; branch `feature/food-manufacturing-batch25-20261028`.
+
+- Six AI authors added 394 question–locale pairs for 1号 mock09: ID/TL/BN/HI/NE/MY/KM/ZH-CN/ZH-TW 40 each and TH34. Six existing Thai entries preserved; ten titles added. 1号 mock01–09 and 2号 mock01–08 are now complete in all 12 locales: 17/20 mock forms. All 468 weekly-check pairs remain complete. Total 8,633/10,068; 1,435 remain. Exact IDs: `batch-25-form-coverage.json`.
+- All 8,239 prior question/title objects, Japanese 839 questions/78 lessons, 33 assessment revision values and runtime/UI preserved. Exact missing IDs, canonical hashes, four ordered choices/reasons and main/correct-reason equality checked before integration. Main exams.ja.json membership is authoritative, never historical split membership.
+- Independent full-field AI peer review covers all 394 new pairs; ten reports bind final artifact hashes and corrections. Source O157/O111 identifiers, q359 three distinct management roles and seven-principle wording preserved. Numeric-format resolutions bind reviewed target fields. Source PDFs not revalidated; no native/domain certification.
+- PASS: content structure; actual adapter 8,633 valid/stale-source rejection checks and 1,435 missing without fallback; state resume/scoring/revision/storage isolation; approved JLPT UI lock 10/10. Runtime/UI and assets Git entries unchanged.
+- Historical browser evidence remains 3,460 pairs; 5,173 current pairs await browser QA. No new browser/full Expo/native/device evidence. Full-body furigana, complete source competency/visual verification, illustrations and native/domain review remain open. `scopeComplete=false`; `productionRelease=false`. Sparse checkout excludes asset working copies; full builds need restoration with enough disk space.
+
+Next: exact missing 2号 mock09 and both levels mock10. Keep food isolated from other sectors/JLPT.
+
+---
+
 # Batch24 — 2026-10-28
 
 Base `19a1b8225be5084fa307d0371192251ed76ae991`; branch `feature/food-manufacturing-batch24-20261028`.
