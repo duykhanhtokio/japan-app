@@ -102,11 +102,15 @@ def compile_outputs(inputs):
 def historical_bytes(path,raw):
  require(path in BASES,'Unknown26historicalpath');inputs=load_inputs();base=inputs[STAGE+'integration/'+BASES[path][0]]
  # Check exact approved outputs even when passed a base snapshot: stale receipts fail closed.
- outputs=compile_outputs(inputs);require(raw in (base,outputs[path]),'Unknown26currentbytes:'+path);return base
+ outputs=compile_outputs(inputs)
+ if raw not in (base,outputs[path]):
+  raw=runpy.run_path(str(ROOT/'scripts/manufacturing/apply-caliper-guide29.py'))['historical_bytes'](path,raw,outputs)
+ require(raw in (base,outputs[path]),'Unknown26currentbytes:'+path);return base
 def preflight(current=None):
  inputs=load_inputs();outputs=compile_outputs(inputs);current=current or {p:(ROOT/p).read_bytes() for p in BASES}
  require(set(current)==set(BASES),'Incomplete26runtimefiles')
- for p in BASES:require(current[p] in (inputs[STAGE+'integration/'+BASES[p][0]],outputs[p]),'Unknown26runtime:'+p)
+ for p in BASES:
+  if current[p] not in (inputs[STAGE+'integration/'+BASES[p][0]],outputs[p]):historical_bytes(p,current[p])
  progress_preflight((ROOT/PROGRESS).read_bytes())
  return outputs
 PROGRESS='docs/ssw-workspace/manufacturing/progress.json'
@@ -114,6 +118,8 @@ BASE_PROGRESS_SHA256='38870e5d241e5c0fbebfaa22ae2d8249230f7b9113d96d8f93e7bbb7d3
 def progress_preflight(raw):
  before_raw=(ROOT/(STAGE+'integration/base-progress.json')).read_bytes();require(digest(before_raw)==BASE_PROGRESS_SHA256,'Historical26progressdrift');before=json.loads(before_raw);after=deepcopy(before);after.update(sourceReferenceGuides=11,sourceGuideExtensionStage=STAGE+'integration',sourceGuideTranslationCoverage={l:11 for l in LOCALES},translatedSourceGuideLocalePairs=132)
  current=json.loads(raw);strip=lambda d:{k:v for k,v in d.items() if k not in {'batch','next','updatedAt'}}
+ if strip(current) not in (strip(before),strip(after)):
+  current=runpy.run_path(str(ROOT/'scripts/manufacturing/apply-caliper-guide29.py'))['projected_progress'](current,after)
  require(strip(current) in (strip(before),strip(after)),'Unknown26progressmetadata');return current
 def main():
  outputs=preflight();progress=progress_preflight((ROOT/PROGRESS).read_bytes());progress.update(sourceReferenceGuides=11,sourceGuideExtensionStage=STAGE+'integration',sourceGuideTranslationCoverage={l:11 for l in LOCALES},translatedSourceGuideLocalePairs=132);outputs[PROGRESS]=encoded(progress);changed=[]

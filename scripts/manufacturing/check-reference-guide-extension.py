@@ -27,6 +27,8 @@ def main():
     }
     latest = runpy.run_path(str(ROOT / 'scripts/manufacturing/apply-guide-extension26.py'))
     paths |= set(latest['load_inputs']()) | {'scripts/manufacturing/apply-guide-extension26.py'}
+    caliper = runpy.run_path(str(ROOT / 'scripts/manufacturing/apply-caliper-guide29.py'))
+    paths |= set(caliper['load_inputs']()) | {'scripts/manufacturing/apply-caliper-guide29.py'}
     isolated = Path(tempfile.mkdtemp(prefix='reference-guide-extension-'))
     for relative in paths:
         target = isolated / relative

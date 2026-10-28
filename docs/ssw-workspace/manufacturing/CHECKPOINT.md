@@ -1,3 +1,17 @@
+# Manufacturing SSW1 — batch29 caliper preview guide integrated, 2026-10-28
+
+Integrated the staged source-bound caliper supplement into the existing reader with all12targets. Current12reference guides/144target pairs;262corelessons,456weeklyquestions,33mockassemblies(30original+3curated)/1200uniqueoriginalquestions and22diagrams unchanged. Actual original lesson018 and all11prior guide/target identities remain exact.
+
+Fresh author visual comparison of source physical72/printed64 and same-agent Japanese/12target comparison cover156prosefields. Four bounded conceptual facets add source-qualified0.1/0.05/0.02mmreading increments,0.01mmdisplay increment,light-against-gap check andzero/reset distinction. Display resolution is not certified accuracy; resetting is not proof that physical gaps/play are absent. Same-agent author comparison is explicitly NOT independent/native/domain review; originalguide reviewStatus remains independent_review_pending. No whole-source closure or operational instrument approval.
+
+Controlled29compiler rejects14invalidsnapshots,including false independent/native claims and decimal/source/safety drift. Allocates all payloads before any replacement. Actual isolatedRAM final26->29writer chain restores4runtimefilesbyte-exactly;29repeat isidempotent andactualstaleinput failure leavesall4outputsuntouched. Exact12->11->8historicalprojections preserve earlierreceipts;18/17,26/46,25/57and24/33rejection gatespass. Fullfrozen-draft/Expobuild notrun due diskcapacity; targetedwriterchain is not claimed as fullbuild.
+
+ActualRNWeb26flows across13UIlocales and320/932widths pass0pageerrors,alltargetparagraphs/toggles,currentcompletion/reopen,stalehashrejection,simulatedsavefailure/retry andpriorguide/corecompletionpreservation. VIphone/JAlandscape inspected. In-memorybundle plusRoyal/storage/safearea/decorativeimageadapters/JapaneseQAfont; noallscriptglyph/native-devicecertification. Existing33mockstate/translation/rubytests andJLPT10/10lockpass. Details:batch29-caliper-integration/session-evidence.json.
+
+Fullsource/native/domain/release flagsremainfalse;56/487TOCrows stillunlinked directly,not an exhaustiveknowledgegap count. Next:remaininginstrument/component/surface-testsource details,independent comparison of the newguide,fullsourceclosure andnative/domain/physicaldeviceverification. SSW2excluded. No background process implied.
+
+---
+
 # Manufacturing SSW1 — batch28 uploaded-reference practice assemblies, 2026-10-28
 
 Read the user ZIP inventory (10 PDFs) and visually compared covers/practical instructions for the three current specialties. Added3curated forms/120existing-question appearances through the existing mock catalog;30original forms/1200unique original bank questions remain exact. Total catalog33,11/specialty. Every reused question retains its ID/hash/lesson/answer/rationale,12target translations andruby. No sample question/image copied. The covers confirm total80minutes; existing40+40training split retained without claiming source confirmation of separate clocks.

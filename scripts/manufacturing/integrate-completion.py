@@ -230,5 +230,6 @@ def main():
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-reference-guide-extension.py')],check=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-diagram-extension.py')],check=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-guide-extension26.py')],check=True)
+ subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-caliper-guide29.py')],check=True)
  print(json.dumps({'lessons':len(all_lessons),'weeklyQuestions':len(all_questions),'weeks':progress['previewWeeksBySpecialty'],'translatedLessonPairs':progress['translatedLessonLocalePairs'],'translatedQuestionPairs':progress['translatedQuestionLocalePairs'],'completeDraftLocales':complete,'courseComplete':False}))
 if __name__=='__main__':main()

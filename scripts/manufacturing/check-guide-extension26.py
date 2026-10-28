@@ -9,7 +9,11 @@ def validate():
  inputs=M['load_inputs']();build=M['compile_outputs'];enc=M['encoded'];sha=M['digest'];outputs=build(inputs);rejected=[]
  assert build(dict(reversed(list(inputs.items()))))==outputs
  assert M['preflight']()==outputs
- for p,raw in outputs.items():assert (ROOT/p).read_bytes()==raw,'Apply26first:'+p
+ for p,raw in outputs.items():
+  current=(ROOT/p).read_bytes()
+  if current!=raw:
+   current=runpy.run_path(str(ROOT/'scripts/manufacturing/apply-caliper-guide29.py'))['historical_bytes'](p,current,outputs)
+  assert current==raw,'Apply26first:'+p
  def reject(label,fn):
   try:fn()
   except (ValueError,AssertionError,KeyError):rejected.append(label)
