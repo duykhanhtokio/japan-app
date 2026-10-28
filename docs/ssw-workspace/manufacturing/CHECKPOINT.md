@@ -1,3 +1,17 @@
+# Manufacturing SSW1 — batch22 six-AI fine source review, 2026-10-28
+
+First recovered the interrupted batch21 exact validated tree and verified remote persistence at30f79554b. Six requested AI lanes then completed three fine source ledgers, independent direct-source comparison, structural target-binding review and a guarded additive index/compiler. New work is source-review metadata only, not new learner lessons or translations.
+
+Actual inspected slices: mechanicalPDF72–73(printed64–65), electrical103–105(94–96), surface183–184(173–174). The48detailed object occurrences split17coveredconcepts/22partialdetail-or-visualgaps/9sourcequalifications. Mechanical21objects refine caliper mechanism/contact/readout; electrical15refine oscilloscope/LCR/thermocouple/illuminance/Hall details; surface12refine anodized-film properties, test conditions and Vickers/dielectric illustrations. Source exercises excluded; page images remain scratch-only. These are deeper localizations of previously discussed/read pages, not48new lessons or7globally new pages.
+
+Independent AI source review binds all48objects and all3exactledgerdigests, without native/domain/full-source certification. Structural target review binds9current lessons/108lesson-locale pairs,32Japanese/384target paragraphs by exact IDs/order/objecthashes. It does not certify translation semantics. Coverage/gap qualifications are preserved verbatim, and stale translation/integration statuses in historical knowledge-matrix are not used as current coverage proof.
+
+The deterministic source-object-index preserves summaries, comparison basis, uncovered facets and exact source/lesson/review provenance. Prior coarse12objects resolve only through allowed exact-hash-bound historical audits; prior17index remains unchanged. Compiler review identified a too-broad priorresolver; restricted paths and anti-shadow checks fix it. All49negativefixtures rejected. An exact102file freeze preserves runtime data, components/services, historical inputs and all20SVG/PNGpairs. No runtime/history/matrix edits and no unnecessary browser rerun. JLPT10/10UIlock and whitespace pass. Details:batch22/session-evidence.json.
+
+Counts remain262core lessons,8reference guides,456weekly questions,30mocks/1200questions,20diagrams/240caption pairs. CourseComplete/releaseReady/native/domain/full-source flags remainfalse. Next:author bounded missing fine details/controlled visuals from this index and earlier geometric/arc/reaction gaps; continue full-source closure and native/domain/physical-device review. SSW2 excluded. No background process implied.
+
+---
+
 # Manufacturing SSW1 — batch21 six-AI electrical stem precision, 2026-10-28
 
 Six requested AI lanes completed both previously staged optional electrical practical stem refinements: mock03q04 now explicitly asks for temperature detection as the primary purpose, and mock08q08 explicitly states the adjacent solder land should not be connected. Changed only2Japanese stems/source hashes,24direct-Japanese target stems/bindings,2furigana stems/bindings and the containing03/08exam revisions. All keys/options/rationales,398other electrical questions,14376other mock translation records and1198other ruby entries remain unchanged. Runtime pending-review flags are preserved.
