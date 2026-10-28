@@ -62,7 +62,7 @@ reject_input('missing progress locale before writes', 'docs/ssw-workspace/manufa
 reject_input('extra progress locale before writes', 'docs/ssw-workspace/manufacturing/progress.json',
              lambda d:d['diagramTranslationCoverage'].update(xx=19))
 reject_input('invalid progress count before writes', 'docs/ssw-workspace/manufacturing/progress.json',
-             lambda d:d.update(createdDiagrams=20))
+             lambda d:d.update(createdDiagrams=999))
 reject_input('unaccepted semantic receipt', 'docs/ssw-workspace/manufacturing/batch19/diagram-caption-review.json',
              lambda d:d['locales']['vi'].update(verdict='pending'))
 for relative in ['diagram-captions.json', 'diagram-caption-review.json', 'source-review.json']:
@@ -77,9 +77,9 @@ for relative in ['diagram-captions.json', 'diagram-caption-review.json', 'source
     finally:
         namespace['sha'] = original_sha
 progress = json.loads((ROOT/'docs/ssw-workspace/manufacturing/progress.json').read_text())
-assert progress['createdDiagrams'] == progress['usedDiagrams'] == 19
-assert progress['translatedDiagramCaptionLocalePairs'] == 228
+assert progress['createdDiagrams'] == progress['usedDiagrams'] == 20
+assert progress['translatedDiagramCaptionLocalePairs'] == 240
 assert set(progress['diagramTranslationCoverage']) == api['TARGETS']
-assert set(progress['diagramTranslationCoverage'].values()) == {19}
-print(json.dumps({'status':'PASS','diagrams':19,'captionPairs':228,'rejectedFixtures':fixtures,
+assert set(progress['diagramTranslationCoverage'].values()) == {20}
+print(json.dumps({'status':'PASS','diagrams':20,'captionPairs':240,'rejectedFixtures':fixtures,
                   'scope':'Exact reviewed extension and immutable historical inputs; not native/domain certification'}))

@@ -1,3 +1,17 @@
+# Manufacturing SSW1 — batch20 six-AI meter connection diagram, 2026-10-28
+
+Six requested AI lanes covered electrical source/caption authoring, controlled SVG/PNG authoring, independent source/visual review,12direct-Japanese captions, independent all12caption/compiler review and actual reader QA. Added one original1400x1100concept diagram to electrical lesson005: A in the load branch in series, V between the same two load nodes in parallel. Actual source physical99/100/147/148/151/152 was visually inspected; no source exercises/images are redistributed. The chart expressly excludes actual terminals/wiring/connection procedures, retains current-range prohibition and role/training/equipment-procedure/instrument-suitability qualifications. No universal AC-current multimeter capability claim is taught.
+
+Current total20diagrams/240caption pairs. All prior19diagram assets, mappings, captions and all262core lessons/456weekly questions/30mocks1200questions/8reference guides preserve exact content/source identities. Twelve target captions received independent direct-Japanese comparison (120bounded assertions); independent final visual review binds exact source/caption/SVG/PNG identities. Source and visual reviews remain separate. Native/domain/physical-device/full-source approval remainsfalse.
+
+The guarded layer extends the exact historical19view, validates its original asset digests, independent receipts, lesson binding, caption entries and current aspect ratio, and rejects unknown runtime snapshots before writes. Forty-four negative fixtures across the historical/current layers pass. Five actual isolated full integrations preserve46runtimefiles under normal/repeated/reversed/equalmtime and explicitTLrecovery scenarios; final extension is byte-idempotent. Existing source freezes and JLPT10/10UIlock pass. See batch20/session-evidence.json.
+
+Actual RNWeb reader passes26flows13UIlocales×320/932: realPNG,12caption show/hide/accessibility bindings,ratio,horizontal/verticalpan,close,overflow and0pageerrors. Six screenshots retained; representative VIphone/JAlandscape inspected. Royal/safearea/storage/decorative-image adapters and Japanese QAfont are explicit; fullExpo/native-device/all-script glyph certification not claimed. Sparse checkout still warns expo/tsconfig.base missing. CourseComplete/releaseReady remainfalse. No background process implied.
+
+Next:remaining geometric/arc and measurement-method visuals, two optional source-bound electrical practical refinements, exhaustive source-object closure and native/domain/physical-device review. SSW2 excluded.
+
+---
+
 # Manufacturing SSW1 — batch19 six-AI attachment diagram, 2026-10-28
 
 Six requested AI lanes reviewed mechanical source, electrical/compiler risks, surface source/independent captions, translations, controlled visuals and actual reader integration. Added one original four-panel surface/axis tolerance and datum attachment diagram to mechanical lesson048. Physical source102–103 (printed94–95) was visually compared; the axis-datum panel is explicitly an original construction derived from source prose. Blank tolerance frames intentionally omit characteristic symbols/values. Existing lesson082 symbol chart, all262core lessons,456weekly questions,30mocks/1200questions,8reference guides and learner source hashes remain unchanged.

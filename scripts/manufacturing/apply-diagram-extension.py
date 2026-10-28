@@ -1,6 +1,6 @@
-"""Replay the single reviewed batch19 diagram over exact historical inputs."""
+"""Replay reviewed diagram layers over exact historical inputs."""
 from pathlib import Path
-import copy, hashlib, json, re, struct
+import copy, hashlib, json, re, struct, runpy
 
 ROOT = Path(__file__).resolve().parents[2]
 STAGE = ROOT / 'docs/ssw-workspace/manufacturing/batch19'
@@ -19,7 +19,7 @@ def object_sha(value):
 def write(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
 
-def expected():
+def expected(include_meter=True):
     approval = read(STAGE / 'approved-diagram.json')
     for relative, digest in approval['sha256'].items():
         assert sha(ROOT / relative) == digest, 'Stale diagram evidence: ' + relative
@@ -72,6 +72,8 @@ def expected():
     assert png[:8] == b'\x89PNG\r\n\x1a\n'
     assert struct.unpack('>II', png[16:24]) == (asset['dimensions']['width'], asset['dimensions']['height'])
     component = (ROOT / 'src/components/manufacturing/ManufacturingDiagram.tsx').read_text()
+    meter = runpy.run_path(str(ROOT / 'scripts/manufacturing/meter-diagram-extension.py'))
+    component = meter['project_component'](component)
     figures = re.findall(r"'([^']+)':\{source:require\('([^']+)'\),altJa:'([^']+)'\}", component)
     assert len(figures) == len({x[0] for x in figures}) == 19
     assert {x[0] for x in figures} == set(base['locales']['en'])
@@ -82,7 +84,7 @@ def expected():
     assert added_line in historical_component
     historical_component = historical_component.replace(added_line, '', 1)
     assert hashlib.sha256(historical_component.encode()).hexdigest() == baseline['src/components/manufacturing/ManufacturingDiagram.tsx'], 'Historical diagram mappings changed'
-    return base, register
+    return meter['extend'](base, register) if include_meter else (base, register)
 
 def validate(captions=None, register=None):
     wanted_captions, wanted_register = expected()
@@ -96,14 +98,15 @@ def preflight():
     current = read(ROOT / 'src/data/manufacturing/diagram-translations.json')
     # A rebuild may present the base or exact approved extension, never unknown data.
     base = read(STAGE / 'base-diagram-translations.json')
-    assert current in (base, captions), 'Unknown caption snapshot; refusing overwrite'
+    previous = ROOT / 'docs/ssw-workspace/manufacturing/batch20'
+    assert current in (base, read(previous / 'base-diagram-translations.json'), captions), 'Unknown caption snapshot; refusing overwrite'
     current_register = read(ROOT / 'docs/ssw-workspace/manufacturing/illustration-register.json')
-    assert current_register in (read(STAGE / 'base-illustration-register.json'), register), 'Unknown register snapshot'
+    assert current_register in (read(STAGE / 'base-illustration-register.json'), read(previous / 'base-illustration-register.json'), register), 'Unknown register snapshot'
     progress = read(ROOT / 'docs/ssw-workspace/manufacturing/progress.json')
     assert set(progress['diagramTranslationCoverage']) == TARGETS, 'Unknown progress locales'
-    assert set(progress['diagramTranslationCoverage'].values()) in ({18}, {19}), 'Unknown progress coverage'
-    assert progress['createdDiagrams'] == progress['usedDiagrams'] in (18, 19)
-    assert progress['translatedDiagramCaptionLocalePairs'] in (216, 228)
+    assert set(progress['diagramTranslationCoverage'].values()) in ({18}, {19}, {20}), 'Unknown progress coverage'
+    assert progress['createdDiagrams'] == progress['usedDiagrams'] in (18, 19, 20)
+    assert progress['translatedDiagramCaptionLocalePairs'] in (216, 228, 240)
     return captions, register
 
 def main():
@@ -112,11 +115,11 @@ def main():
     write(ROOT / 'docs/ssw-workspace/manufacturing/illustration-register.json', register)
     path = ROOT / 'docs/ssw-workspace/manufacturing/progress.json'
     progress = read(path)
-    progress.update(createdDiagrams=19, usedDiagrams=19, translatedDiagramCaptionLocalePairs=228,
-                    diagramTranslationCoverage={locale:19 for locale in captions['locales']})
+    progress.update(createdDiagrams=20, usedDiagrams=20, translatedDiagramCaptionLocalePairs=240,
+                    diagramTranslationCoverage={locale:20 for locale in captions['locales']})
     write(path, progress)
     validate()
-    print('Batch19 diagram extension PASS: exact19 diagrams/228 caption pairs; historical18 preserved')
+    print('Manufacturing diagram extensions PASS: exact20 diagrams/240 caption pairs; historical19 preserved')
 
 if __name__ == '__main__':
     main()

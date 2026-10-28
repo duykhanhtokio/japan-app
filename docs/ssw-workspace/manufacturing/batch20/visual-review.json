@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "reviewer": "independent_technical_visual_ai",
+  "status": "pass",
+  "scope": "Independent source-specific circuit topology and final original diagram visual review only",
+  "baselineCommit": "d26d892a0b966348c8a3e36e077bf8b75e4fad0d",
+  "diagramId": "mfg1-batch20-electrical-meter-connections",
+  "lessonBinding": {
+    "id": "mfg1-electrical-l005",
+    "sourceHash": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe",
+    "canonicalLessonBytesModifiedByThisWorker": false
+  },
+  "sourceReview": {
+    "path": "docs/ssw-workspace/manufacturing/batch20/source-review.json",
+    "sha256": "0a579ba43dbd00fac30f2d869bea59d580a644c0a9ae4809320f7028811aeda3"
+  },
+  "source": {
+    "documentId": "mfg1-electrical-source",
+    "sha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+    "physicalPagesIndependentlyVisuallyReviewed": [
+      99,
+      100,
+      147,
+      148,
+      151,
+      152
+    ]
+  },
+  "captionJaSha256": "28f115d3499164faba1f22546f9078106b4ba8bc84703166686e5c235e9bfef1",
+  "assets": {
+    "svg": {
+      "path": "assets/manufacturing/diagrams/batch20-electrical-meter-connections.svg",
+      "sha256": "6534175cd981a0fab9940abee6be7bb84ce26322a9fc8dd11fe1eb2823f5f348"
+    },
+    "png": {
+      "path": "assets/manufacturing/diagrams/batch20-electrical-meter-connections.png",
+      "sha256": "f19584ace2cbc26337eba251e0eb28e0bf46ba370284c6b8f2720a951c415326"
+    }
+  },
+  "svgSha256": "6534175cd981a0fab9940abee6be7bb84ce26322a9fc8dd11fe1eb2823f5f348",
+  "pngSha256": "f19584ace2cbc26337eba251e0eb28e0bf46ba370284c6b8f2720a951c415326",
+  "dimensions": {
+    "width": 1400,
+    "height": 1100
+  },
+  "method": "Independently viewed actual full-page electrical PDF renders99,100,151,152 followed by147/148; compared final PNG with source diagrams/prose, canonical caption and lesson005. Exact input digests bound after inspection.",
+  "checks": [
+    {
+      "id": "ammeter_series",
+      "status": "pass",
+      "basis": "Actual source physical100 figure7-13,147 figure10-2,152 section1.4",
+      "result": "A and load are on the same single path with no bypass or extra junction; source topology preserved in original vertical arrangement."
+    },
+    {
+      "id": "voltmeter_parallel",
+      "status": "pass",
+      "basis": "Actual source physical148 figure10-4 and151 section1.3",
+      "result": "V forms a separate branch between precisely the same filled nodesP/Q as the load; no series insertion or floating lead."
+    },
+    {
+      "id": "measurement_distinction",
+      "status": "pass",
+      "basis": "Actual source physical147/148 prose and canonical lesson005",
+      "result": "Labels distinguish selected-branch current from potential difference between two points; no asserted numerical readings."
+    },
+    {
+      "id": "conceptual_scope",
+      "status": "pass",
+      "basis": "Accepted canonical caption and lesson005 safety prose",
+      "result": "Partial circuit endpoints are explicitly continuation points; no source, terminals, physical wiring instructions, range-selection steps or energized操作 sequence shown. Footer preserves current-range hazard and authorization/instrument-suitability qualifications."
+    },
+    {
+      "id": "source_qualification",
+      "status": "pass",
+      "basis": "Actual physical99/152 capability wording difference",
+      "result": "No blanket claim that all testers can or cannot measure AC current. Source exercise content visible on100/147 was excluded from new figure/caption authorship."
+    },
+    {
+      "id": "visual_legibility",
+      "status": "pass",
+      "basis": "Independent inspection of final1400x1100 PNG at native image size",
+      "result": "Japanese labels, nodesP/Q and A/V readable; no clipped text, tofu glyphs or overlapping labels. Original two-panel layout clearly separates meter quantities and topology."
+    }
+  ],
+  "assertionCount": 6,
+  "independentScopedReview": true,
+  "sourceImagesRedistributed": false,
+  "sourceExercisesCopied": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "currentStandardsCertified": false,
+  "fullSourceCertified": false,
+  "nativeDeviceCertified": false,
+  "releaseReady": false,
+  "limitations": [
+    "Bounded AI technical visual comparison, not licensed/domain/native-language review.",
+    "No browser/native-device/fullExpo verification by this worker.",
+    "No exhaustive full-source coverage or real-equipment operating procedure validation."
+  ]
+}

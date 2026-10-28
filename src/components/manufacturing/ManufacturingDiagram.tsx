@@ -4,8 +4,9 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import {manufacturingUi} from '@/data/manufacturing/ui';
 import captionData from '@/data/manufacturing/diagram-translations.json';
-const ratios:Record<string,number>={"mfg1-mechanical-lesson-048":14/13,"mfg1-mechanical-lesson-081": 1.1428571428571428, "mfg1-mechanical-lesson-082": 1.1428571428571428, "mfg1-electrical-l087": 0.7947019867549668, "mfg1-electrical-l077": 1.6, "mfg1-electrical-l071": 1.5, "mfg1-surface-lesson-053": 1.6, "mfg1-surface-lesson-060": 1.6};
+const ratios:Record<string,number>={"mfg1-electrical-l005":1400/1100,"mfg1-mechanical-lesson-048":14/13,"mfg1-mechanical-lesson-081": 1.1428571428571428, "mfg1-mechanical-lesson-082": 1.1428571428571428, "mfg1-electrical-l087": 0.7947019867549668, "mfg1-electrical-l077": 1.6, "mfg1-electrical-l071": 1.5, "mfg1-surface-lesson-053": 1.6, "mfg1-surface-lesson-060": 1.6};
 const figures:Record<string,{source:ReturnType<typeof require>;altJa:string}>={
+ 'mfg1-electrical-l005':{source:require('../../../assets/manufacturing/diagrams/batch20-electrical-meter-connections.png'),altJa:'測定する量と接続の違いを示す紙上の概念図。電圧計Vは対象の二点間に並列、電流計Aは対象の枝路に直列につなぐ。実機の端子・配線や接続手順を示す図ではない。電流レンジを電源両端へ直接当てない。実作業では担当範囲・教育・設備手順と測定器の適合を確認する。'},
  'mfg1-mechanical-lesson-048':{source:require('../../../assets/manufacturing/diagrams/batch19-mechanical-geometric-attachments.png'),altJa:'この資料の基本例では、表面の幾何公差は外形線またはその延長線へ矢印で示し、軸線の幾何公差は寸法線の延長線へ矢印で示します。データムは文字と三角形の記号で識別し、表面は外形線またはその延長線、軸線は寸法線の延長線への取付けを確認します。四つの模式図は取付位置の比較用で、公差値・実寸・測定合否を指定するものではありません。実際の図面の適用規格と指示を優先します。'},
  'mfg1-mechanical-lesson-044':{source:require('../../../assets/manufacturing/diagrams/batch07-mechanical-third-angle.png'),altJa:'第三角法では、正面図の上に上から見た平面図、右に右から見た右側面図を配置する。配置関係だけを示す模式図で、部品の形状や寸法は示さない。'},
  'mfg1-electrical-l038':{source:require('../../../assets/manufacturing/diagrams/batch07-electrical-comparison-measurement.png'),altJa:'比較測定の紙上例。一目盛0.01mmを仮定し、4目盛の移動から差の大きさ0.04mmを求める。＋の符号はこの例の記録条件であり、対象の絶対寸法ではない。実機では基準、接触条件、符号、目盛値を確認する。'},

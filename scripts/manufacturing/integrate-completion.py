@@ -207,10 +207,10 @@ def main():
  progress=read(DOCS/'progress.json');progress.setdefault('batch','12-in-progress');progress.update(authoredJapaneseLessons=len(all_lessons),aiEditorialReviewedJapaneseLessons=len(all_lessons),integratedPreviewLessons=len(all_lessons),weeklyChecks=sum(len(c['checks']) for c in courses.values()),weeklyQuestions=len(all_questions),tocEntriesWithDraftLessons=sum(bool(k.get('lessonIds')) for k in knowledge.values()),translatedLessonLocalePairs=sum(e['lessonCount'] for e in registry['locales'].values()),translatedQuestionLocalePairs=sum(e['questionCount'] for e in registry['locales'].values()),translatedDiagramCaptionLocalePairs=sum(len(x) for x in caption_data['locales'].values()),fullyDraftTranslatedLocalesForAuthoredContent=complete,partiallyDraftTranslatedLocales=partial,wholeCurriculumComplete=False,releaseReady=False)
  progress['draftUiLabelsPerLocale']=len(read(DATA/'ui-translations.json')['locales']['ja'])
  progress['originalMocksCompleted']=30
- progress['createdDiagrams']=19;progress['usedDiagrams']=19
+ progress['createdDiagrams']=20;progress['usedDiagrams']=20
  progress['mockTranslationCoverage']={l:len(existing_mock_locales.get(l,{})) for l in targets}
  progress['diagramTranslationCoverage']={l:len(caption_data['locales'].get(l,{})) for l in targets}
- progress['fullyDraftTranslatedLocalesForAllCurrentContent']=[l for l in complete if len(existing_mock_locales.get(l,{}))==1200 and len(caption_data['locales'].get(l,{}))==19 and guide_report['coverage'].get(l,0)==5]
+ progress['fullyDraftTranslatedLocalesForAllCurrentContent']=[l for l in complete if len(existing_mock_locales.get(l,{}))==1200 and len(caption_data['locales'].get(l,{}))==20 and guide_report['coverage'].get(l,0)==5]
  progress['sourceReferenceGuides']=guide_report['guides'];progress['sourceGuideTranslationCoverage']=guide_report['coverage'];progress['translatedSourceGuideLocalePairs']=guide_report['translatedGuidePairs']
  progress['specificallyAuditedTocGapsWithReferenceGuides']=sum(bool(k.get('referenceGuideIds')) for k in knowledge.values())
  progress['aiDraftDeliveryComplete']=len(progress['fullyDraftTranslatedLocalesForAllCurrentContent'])==12
