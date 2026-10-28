@@ -1,3 +1,19 @@
+# Manufacturing SSW1 — batch23 six-AI caliper contact diagram, 2026-10-28
+
+Six requested AI lanes authored/independently compared the source/caption/controlled asset, translated12captions, independently reviewed all12and the compiler, and ran actual reader QA. Added one original1400x1400four-panel caliper contact diagram to mechanical lesson018: fixed/mainbeam versus slider/movingjaw roles, outsidecontacts, hole/grooveinsidecontacts and depthreference/tipcontacts. Actual source72–73read;74exerciseexcluded. Depthconstruction is explicitly an original visualization of source-described capability, not a copied source contact figure. No scale, numerical readout or operatingsequence is taught.
+
+Independent8check visual review addresses only2boundedvisualfacets (fixed/sliding relation and grooveinsidecontacts); p072-o08componentmapping remainspartial, withlocking/scalegeometry omitted. All7explicitlyunclosedpriorobjects, includingvernierzero/maininterval/coincidentline, remainopen. Exact source/lesson/22objects and narrowresolution are retained in batch23/facet-resolution.json. Historical22ledgers/index are unchanged, not silently markedclosed.
+
+All12directJapanese captions received independent comparison (120boundedassertions). One Burmese groove term was corrected and rechecked beforebinding. Currenttotal21diagrams/252caption pairs. All20priorassets/captions/mappings and all262core lessons/456weekly questions/30mocks1200questions/8reference guides are preserved. Existing lesson018/lesson001 exacthash completionrecords remain unchanged across26actual reader flows.
+
+Generalized the guarded extension to sequential exact20then23layers, preserving all oldbase hashes and source/visual/caption receipts. Exact historical22projection restores only3approved caption/register/component inputs; all99other frozenfiles, including40oldSVG/PNGassets, remainbyte-identical. Rebuilt old48objectindexexactly; no oldauditweakened. Eighteennewnegativefixtures plus24/20historical-layerfixtures pass. Fiveactual isolated fullintegrations preserve46runtimefiles underrepeat/reversed/equalmtime/explicitTLrecovery; finalextensionbyte-idempotent. Independent compilerreview confirmed0writes on invalidprogress input. JLPT10/10UIlock/whitespace pass.
+
+ActualRNWeb browser passes26flows13locales×320/932: realPNG,12targettoggles/accessibility,1:1ratio,expand/horizontal+verticalpan/close/nooverflow,0pageerrors andcompletionpreservation. Sixscreenshotsretained; VIphone/JAlandscapeinspected. Royal/safearea/storage/decorative-imageadapters andJapaneseQAfont are explicit. No fullExpo/native-device/all-scriptglyphcertification; sparseexpo/tsconfig.basewarning remains. Details:batch23/session-evidence.json. CourseComplete/releaseReady/native/domain/fullsource remainfalse. SSW2excluded; no backgroundprocess implied.
+
+Next:remaining caliperreadout andgeometric/arc/instrument/surface-test/reactiondetails, exhaustive sourceclosure andnative/domain/physicaldevice review.
+
+---
+
 # Manufacturing SSW1 — batch22 six-AI fine source review, 2026-10-28
 
 First recovered the interrupted batch21 exact validated tree and verified remote persistence at30f79554b. Six requested AI lanes then completed three fine source ledgers, independent direct-source comparison, structural target-binding review and a guarded additive index/compiler. New work is source-review metadata only, not new learner lessons or translations.
