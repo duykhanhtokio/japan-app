@@ -1,3 +1,11 @@
+# Manufacturing SSW1 — batch34 source-bound lesson076 reader clarification, 2026-10-29
+
+Reopened and visually read hash-verified mechanical PDF physical137/printed129. Integrated a bounded Japanese +12target paragraph clarification in the actual reader: leakage flux is the phenomenon involved in magnetic-particle testing in this source passage, distinct from eddy-current testing. Exact sourceHash/Japanese/prior-target wording guards; no locale fallback or original bank mutation. Frozen262lessons/456weeklyquestions/33mocks/12guides/22diagrams and progress/session identities preserved; this clarifies an existing outcome without adding a procedure. Canonical old prose is retained as historical source data; learners see revised wording on matching inputs.
+
+Actual RNWeb26flows across13locales and320/932widths PASS0errors: wording replacement, translationtoggle,completion/reopen,preserved prior records andsavefailure/retry. Helper strictTypeScript andreader syntax transpile PASS; full reader semantic typecheck blocked by missing sharedExpo/navigation/effect dependencies. Main data/state PASS; source25/57negative fixtures and exact historical course reconstruction PASS; JLPT10/10lock PASS. QA adapters/Japanese font explicit; no all-script/native-device certification. No full assembler/fullExpo run; no new unique page or whole-source closure. Independent/native/domain/human/fullsource/release flags remainfalse. Read batch34-continuation/REPORT.vi.md and session-evidence.json. Continue remaining source facets/illustrations, surface062 clarification and full prose/question review; SSW2excluded.
+
+---
+
 # Manufacturing SSW1 — batch33 six-AI source/language/device review, 2026-10-29
 
 Six explicitly requested AI lanes completed source-text/overview reading for all574pages, with541detail-viewed pages and actual262Japanese lesson/12guide prose comparisons. Surface visual receipts union primary186detailpages plus74assist occurrences into196unique bodypages; overlaps counted once,10unique additional pages. No whole-page knowledge/object closure or human/native/domain certification inferred.
