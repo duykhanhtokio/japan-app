@@ -1,3 +1,13 @@
+# Agriculture completion40 phase2 checkpoint — 2026-10-29
+
+Runtime: **240 Japanese lessons, 1355 mapped units, 2880 direct-Japanese AI-draft lesson-locale pairs, 186 rasters, 427 weekly questions and 4 mock forms/160 questions.** This adds 45 lessons and 124 rasters relative to the 195-lesson baseline. Original source pages/images are private and not redistributed. New raster bytes are manifest/SHA verified. Reader figures support expansion and horizontal panning. Three additional metadata-only shared-source extensions preserve prior completion hashes and question revisions.
+
+The actual-route browser harness passed all 45 new Japanese lessons, 540 translated reader cases, 96 long-translation responsive cases, 45 completion/reload cases and failed-save/retry. Real agriculture assets were served over HTTP; Royal/safe-area/storage/font adapters remain explicit. Data/state and scoped TypeScript checks pass; JLPT's10 byte locks pass. This does not certify Expo production, physical devices, native language or domain review.
+
+This is an in-session durability checkpoint, not final sector completion. Finish source-specific route corrections, the required official2号 safety-management supplement, final question selection/20forms and masked-figure browser QA. The frozen1405 backlog now has an explicit candidate overlay; 55 genuine source ambiguities remain distinct from administrative exclusions, and11 routing checks await final intake. Do not call candidate occurrence counts unique knowledge coverage. See completion-40/source-reconciliation.json and reader-qa.json. Preserve concurrent manufacturing work and all learner state.
+
+---
+
 # Agriculture in-progress checkpoint — 2026-10-29, completion40phase1
 
 Runtime now203Japanese lessons/1225units/2436directAI-draftlocale pairs/65rasters/427weeklyquestions/4forms160mockquestions. Eight source-bound lessons and96locale pairs added, plus two originalcontrolled diagrams, one originalgeneric irrigation-equipment plate and one nativecalendarsequence. Metadata-only fertilizer sharedscope exposes existingprose in2号 while explicitsemantic-hashcompatibility preserves old1号completion and oldweeklyquizrevisions/answers.

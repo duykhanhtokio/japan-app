@@ -1,3 +1,4 @@
+import {AgricultureExamIllustration,hasAgricultureExamIllustration} from './AgricultureExamIllustration';
 import {ConceptDiagrams} from './ConceptDiagrams';
 import {RecognitionImages,hasRecognitionImage} from './RecognitionImages';
 import {useEffect,useRef,useState,type PropsWithChildren} from 'react';
@@ -51,7 +52,7 @@ function Course({learner,language,level,onBack}:{learner:string;language:string;
   try{await AsyncStorage.setItem(key,JSON.stringify(next));if(live.current){setProgress(next);setLesson(null);}}catch{if(live.current)setError(true);}finally{busy.current=false;if(live.current)setSaving(false);}
  };
  if(exam)return <Attempt key={exam.id} learner={learner} level={level} exam={exam} onBack={()=>setExam(null)}/>;
- if(lesson)return <Reader key={lesson.id} lesson={lesson} language={language} saving={saving} saveError={error} onComplete={()=>{void complete();}} onBack={()=>setLesson(null)}/>;
+ if(lesson)return <Reader key={lesson.id} level={level} lesson={lesson} language={language} saving={saving} saveError={error} onComplete={()=>{void complete();}} onBack={()=>setLesson(null)}/>;
  const weeks=agricultureWeeks(level),selected=week===null?null:weeks[week],tests=agricultureChecks(level,tab==='mock'?'mock':'weekly');
  return <Surface><TokuteiHeader title={`耕種農業 · ${level}号`} onBack={()=>{if(selected)setWeek(null);else onBack();}}/><ScrollView contentContainerStyle={s.content}>
  <View style={s.row}><Button title="学習" selected={tab==='study'} onPress={()=>setTab('study')}/><Button title="週の確認" selected={tab==='test'} onPress={()=>setTab('test')}/><Button title="総合練習" selected={tab==='mock'} onPress={()=>setTab('mock')}/></View>
@@ -63,15 +64,15 @@ function CheckCard({learner,level,exam,onPress}:{learner:string;level:Agricultur
  useEffect(()=>{let live=true;AsyncStorage.getItem(agricultureExamKey(learner,level,exam.id)).then(raw=>{if(live)setDone(!!restoreTestAttempt(raw,exam)?.submitted);}).catch(()=>{});return()=>{live=false;};},[learner,level,exam]);
  return <RoyalContentPanel style={s.panel}><Text style={s.heading}>{exam.titleJa}</Text><Text style={s.body}>{exam.questions.length}問{done?' · ✓ 完了':''}</Text><Button title="開く・再開" onPress={onPress}/></RoyalContentPanel>;
 }
-function Reader({lesson,language,onBack,onComplete,saving,saveError}:{lesson:AgricultureLesson;language:string;onBack:()=>void;onComplete:()=>void;saving:boolean;saveError:boolean}) {
+function Reader({lesson,language,onBack,onComplete,saving,saveError,level}:{level:AgricultureLevel;lesson:AgricultureLesson;language:string;onBack:()=>void;onComplete:()=>void;saving:boolean;saveError:boolean}) {
  const [show,setShow]=useState(false),{colors}=useStudyAppearance(),t=agricultureTranslation(lesson,language);
  return <Surface reading><TokuteiHeader title={lesson.titleJa} onBack={()=>{if(!saving)onBack();}}/><ScrollView contentContainerStyle={s.content}>
  <ReadingAppearanceControl/>{language!=='ja'&&<Button title={show?'訳を隠す':'訳を表示'} onPress={()=>setShow(v=>!v)}/>}
  {show&&language!=='ja'&&!t&&<TranslationText>この言語の訳は準備中です。</TranslationText>}
  <Text style={[s.body,{color:colors.text}]}>{lesson.objectiveJa}</Text>{show&&t&&<TranslationText>{t.title}{'\n'}{t.objective}</TranslationText>}
  {lesson.paragraphs.map(p=><View key={p.id} style={[s.section,{borderColor:colors.border}]}><Text style={[s.heading,{color:colors.text}]}>{p.titleJa}</Text><Text selectable style={[s.body,{color:colors.text}]}>{p.textJa}</Text>{show&&t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}</View>)}
- {lesson.id==='agr-rice'&&<RiceProcess/>}{lesson.id==='agr-organs'&&<OrgansDiagram/>}{lesson.id==='agr-sowing-design'&&!hasRecognitionImage(lesson.id,lesson.sourceHash,'sowing-patterns')&&<SowingDiagram/>}<ConceptDiagrams lessonId={lesson.id} colors={colors}/>
- <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} colors={colors}/>
+ {lesson.id==='agr-rice'&&<RiceProcess/>}{lesson.id==='agr-organs'&&<OrgansDiagram/>}{lesson.id==='agr-sowing-design'&&!hasRecognitionImage(lesson.id,lesson.sourceHash,'sowing-patterns',level)&&<SowingDiagram/>}<ConceptDiagrams lessonId={lesson.id} colors={colors} level={level}/>
+ <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} colors={colors} level={level}/>
  <Text style={[s.heading,{color:colors.text}]}>用語</Text>{lesson.terms.map(term=><Text key={term.ja} style={[s.body,{color:colors.text}]}>{term.ja}（{term.reading}）</Text>)}
  <Text style={[s.heading,{color:colors.text}]}>整理して説明する</Text><Text style={[s.body,{color:colors.text}]}>{lesson.activityJa}</Text>{show&&t&&<TranslationText>{t.activity}</TranslationText>}
  {saveError&&<Text accessibilityRole="alert" style={[s.body,{color:colors.text}]}>完了を保存できませんでした。もう一度お試しください。</Text>}
@@ -87,15 +88,17 @@ function Attempt({learner,level,exam,onBack}:{learner:string;level:AgricultureLe
   queue.current=queue.current.catch(()=>{}).then(()=>AsyncStorage.setItem(key,JSON.stringify(next))).then(()=>{if(live.current&&n===serial.current){setSaving(false);setError(null);}}).catch(()=>{if(live.current&&n===serial.current){setSaving(false);setError('write');}});
  };
  const q=attempt?exam.questions[attempt.currentQuestion]:null,result=attempt?gradeTest(exam,attempt.answers):null;
+ const figureReady=!q?.illustrationId||hasAgricultureExamIllustration(q.illustrationId,q.illustrationRevision,level);
  return <Surface reading><TokuteiHeader title={exam.titleJa} onBack={()=>{if(saving)return;if(error==='write')setConfirm('leave');else onBack();}}/><ScrollView contentContainerStyle={s.content}>
  {!attempt?<><Text style={[s.body,{color:colors.text}]}>{error==='invalid'?'保存記録の内容が現在の問題と一致しません。記録は上書きしていません。':error?'保存記録を読み込めませんでした。':'読み込み中…'}</Text>{error&&<Button title="読み込みを再試行" onPress={()=>setRetry(n=>n+1)}/>}</>:q&&<>
  {error==='write'&&<><Text accessibilityRole="alert" style={[s.body,{color:colors.text}]}>回答を保存できませんでした。</Text><Button title="保存を再試行" disabled={saving} onPress={()=>{if(latest.current)persist(latest.current);}}/></>}
  {attempt.submitted&&result&&<Text style={[s.heading,{color:colors.text}]}>正解 {result.correct} / {result.total} · 未回答 {result.unanswered}</Text>}
  <Text style={[s.body,{color:colors.text}]}>{attempt.currentQuestion+1} / {exam.questions.length}</Text><Text style={[s.heading,{color:colors.text}]}>{q.stemJa}</Text>
- {q.optionsJa.map((text,i)=><Button key={i} title={`${i+1}. ${text}`} selected={attempt.answers[attempt.currentQuestion]===i} disabled={attempt.submitted} onPress={()=>{const answers=[...attempt.answers];answers[attempt.currentQuestion]=i;persist({...attempt,answers});}}/>)}
+ {q.illustrationId&&<AgricultureExamIllustration id={q.illustrationId} revision={q.illustrationRevision} level={level} colors={colors}/>}
+ {q.optionsJa.map((text,i)=><Button key={i} title={`${i+1}. ${text}`} selected={attempt.answers[attempt.currentQuestion]===i} disabled={attempt.submitted||!figureReady} onPress={()=>{const answers=[...attempt.answers];answers[attempt.currentQuestion]=i;persist({...attempt,answers});}}/>)}
  {attempt.submitted&&<View><Text style={[s.body,{color:colors.text}]}>正解：{q.correctIndex+1}</Text>{q.optionReasonsJa.map((why,i)=><Text key={i} style={[s.body,{color:colors.text}]}>{i+1}. {why}</Text>)}</View>}
  <View style={s.row}><Button title="前へ" disabled={attempt.currentQuestion===0} onPress={()=>persist({...attempt,currentQuestion:attempt.currentQuestion-1})}/><Button title="次へ" disabled={attempt.currentQuestion===exam.questions.length-1} onPress={()=>persist({...attempt,currentQuestion:attempt.currentQuestion+1})}/></View>
- <Button title={attempt.submitted?'もう一度解く':saving?'保存中…':'提出する'} disabled={saving||error==='write'} onPress={()=>setConfirm(attempt.submitted?'restart':'submit')}/>
+ <Button title={attempt.submitted?'もう一度解く':saving?'保存中…':'提出する'} disabled={saving||error==='write'||!figureReady} onPress={()=>setConfirm(attempt.submitted?'restart':'submit')}/>
  </>}
  </ScrollView><Modal visible={confirm!==null} transparent animationType="none" onRequestClose={()=>setConfirm(null)}><View style={s.modal}><View style={[s.dialog,{backgroundColor:colors.background}]}><Text style={[s.body,{color:colors.text}]}>{confirm==='leave'?'保存できていない回答があります。保存せずに戻りますか。':confirm==='restart'?'この確認問題を最初から解き直しますか。':`提出しますか。未回答：${attempt?.answers.filter(a=>a===null).length??0}問`}</Text><Button title="キャンセル" onPress={()=>setConfirm(null)}/><Button title="確定" onPress={()=>{if(confirm==='leave'){setConfirm(null);onBack();return;}if(attempt)persist(confirm==='restart'?freshTestAttempt(exam):{...attempt,submitted:true});setConfirm(null);}}/></View></View></Modal></Surface>;
 }

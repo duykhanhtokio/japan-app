@@ -6,7 +6,9 @@ import mocks from './mock-exams.ja.json';
 export type AgricultureLevel = '1' | '2';
 export type AgricultureLesson = (typeof content.lessons)[number];
 type WeeklyExam = (typeof checks.exams)[number];
-export type AgricultureExam = Pick<WeeklyExam,'id'|'revision'|'titleJa'|'questions'|'officialSimulation'|'timeLimitMinutes'|'passThreshold'> & {
+export type AgricultureQuestion = WeeklyExam['questions'][number] & {illustrationId?:string;illustrationRevision?:string};
+export type AgricultureExam = Pick<WeeklyExam,'id'|'revision'|'titleJa'|'officialSimulation'|'timeLimitMinutes'|'passThreshold'> & {
+ questions:AgricultureQuestion[];
  kind:'weekly'|'mock';
  levels:string[];
 };

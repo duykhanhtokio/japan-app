@@ -2,12 +2,12 @@ import {Fragment} from 'react';
 import {StyleSheet,Text,View} from 'react-native';
 import data from '@/data/agriculture/diagrams.json';
 
-type Diagram={id:string;lessonIds:string[];titleJa:string;altJa:string;kind:'comparison'|'sequence';panels:{titleJa:string;bodyJa:string}[]};
+type Diagram={id:string;lessonIds:string[];scopeLevels?:string[];titleJa:string;altJa:string;kind:'comparison'|'sequence';panels:{titleJa:string;bodyJa:string}[]};
 type Colors={text:string;translation:string;translationText:string;border:string};
 const diagrams=data.diagrams as Diagram[];
 
-export function ConceptDiagrams({lessonId,colors}:{lessonId:string;colors:Colors}) {
- return <>{diagrams.filter(d=>d.lessonIds.includes(lessonId)).map(d=><View key={d.id} testID={d.id} accessibilityLabel={d.altJa} style={s.figure}>
+export function ConceptDiagrams({lessonId,colors,level}:{lessonId:string;colors:Colors;level?:string}) {
+ return <>{diagrams.filter(d=>d.lessonIds.includes(lessonId)&&(!level||d.scopeLevels?.includes(level))).map(d=><View key={d.id} testID={d.id} accessibilityLabel={d.altJa} style={s.figure}>
   <Text style={[s.title,{color:colors.text}]}>{d.titleJa}</Text>
   <View style={d.kind==='sequence'?s.sequence:s.comparison}>
    {d.panels.map((p,i)=><Fragment key={p.titleJa}>
