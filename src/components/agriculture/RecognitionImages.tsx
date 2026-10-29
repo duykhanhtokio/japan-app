@@ -3,6 +3,9 @@ import {Image,Pressable,StyleSheet,Text,View,useWindowDimensions,type ImageSourc
 import data from '@/data/agriculture/recognition-images.json';
 
 const assets:Record<string,ImageSourcePropType>={
+ 'irrigation-destinations':require('../../../assets/agriculture/diagrams/irrigation-destinations-v1.png'),
+ 'irrigation-tools':require('../../../assets/agriculture/diagrams/irrigation-tools-v1.png'),
+ 'soil-aggregate-comparison':require('../../../assets/agriculture/diagrams/soil-aggregate-comparison-v1.png'),
  cabbage:require('../../../assets/agriculture/recognition/cabbage-v1.webp'),
  'chinese-cabbage':require('../../../assets/agriculture/recognition/chinese-cabbage-v1.webp'),
  lettuce:require('../../../assets/agriculture/recognition/lettuce-v1.webp'),

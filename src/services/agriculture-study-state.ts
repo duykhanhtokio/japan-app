@@ -1,3 +1,4 @@
+import compatibility from '../data/agriculture/source-hash-compatibility.json';
 import type { AgricultureLesson, AgricultureLevel } from '@/data/agriculture';
 export {freshTestAttempt,restoreTestAttempt,gradeTest,type TestAttempt} from './kensetsu-test-state';
 export const agricultureCompletionKey = (learner:string,level:AgricultureLevel) => `@japan_app_agriculture:completion:v1:${encodeURIComponent(learner)}:${level}`;
@@ -11,4 +12,9 @@ export function restoreAgricultureProgress(raw:string|null):AgricultureProgress|
   return {version:1,entries:{...p.entries}};
  }catch{return null;}
 }
-export function agricultureLessonDone(progress:AgricultureProgress,lesson:AgricultureLesson) {return progress.entries[lesson.id]===lesson.sourceHash;}
+export function agricultureLessonDone(progress:AgricultureProgress,lesson:AgricultureLesson) {
+ const saved=progress.entries[lesson.id];
+ if(saved===lesson.sourceHash)return true;
+ const entry=(compatibility.lessons as Record<string,{currentSourceHash:string;compatibleSourceHashes:string[]}>)[lesson.id];
+ return entry?.currentSourceHash===lesson.sourceHash&&entry.compatibleSourceHashes.includes(saved);
+}

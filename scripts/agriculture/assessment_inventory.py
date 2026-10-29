@@ -15,7 +15,8 @@ INPUTS = {
     'mocks': 'src/data/agriculture/mock-exams.ja.json',
     'ledger': 'docs/ssw-workspace/agriculture/knowledge-ledger.json',
     'candidates': 'docs/ssw-workspace/agriculture/session-20261027/assessment-audit.json',
-    'review': 'docs/ssw-workspace/agriculture/weekly-39/assessment-review-current.json',
+    'review': 'docs/ssw-workspace/agriculture/completion-40/assessment-review-current.json',
+    'compatibility': 'src/data/agriculture/source-hash-compatibility.json',
 }
 
 
@@ -51,12 +52,16 @@ def build(data):
                 require(kid in ledger and lesson['id'] in ledger[kid]['lessonIds'],
                         'invalid paragraph knowledge: ' + p['id'] + '/' + kid)
             paragraphs[p['id']] = (lesson, p)
+    def accepts_source(lesson, source_hash):
+        entry=data['compatibility']['lessons'].get(lesson['id'], {})
+        semantic={k:v for k,v in lesson.items() if k not in {'sourceHash','sources','levels','revision','nativeReviewed','domainReviewed','humanReviewed','sourceCheck'}}
+        return source_hash==lesson['sourceHash'] or (entry.get('currentSourceHash')==lesson['sourceHash'] and source_hash in entry.get('compatibleSourceHashes', []) and digest(semantic)==entry.get('semanticPayloadSha256'))
     for kind, bank in [('weekly', data['weekly']), ('mock', data['mocks'])]:
         for exam in bank['exams']:
             for q in exam['questions']:
                 require(q['lessonId'] in lessons, 'unknown question lesson: ' + q['id'])
                 lesson = lessons[q['lessonId']]
-                require(q['lessonSourceHash'] == lesson['sourceHash'],
+                require(accepts_source(lesson, q['lessonSourceHash']),
                         'stale question lesson: ' + q['id'])
                 require(q['knowledgeIds'], 'unbound question: ' + q['id'])
                 for kid in q['knowledgeIds']:
@@ -119,7 +124,7 @@ def build(data):
         require(candidate['paragraphId'] in paragraphs, 'unknown candidate paragraph: ' + cid)
         lesson, p = paragraphs[candidate['paragraphId']]
         require(candidate['lessonId'] == lesson['id'], 'candidate lesson mismatch: ' + cid)
-        require(candidate['lessonSourceHash'] == lesson['sourceHash'], 'stale candidate lesson: ' + cid)
+        require(accepts_source(lesson, candidate['lessonSourceHash']), 'stale candidate lesson: ' + cid)
         require(set(candidate['knowledgeIds']) <= set(p['knowledgeIds']), 'candidate knowledge mismatch: ' + cid)
         require(set(candidate['scopeLevels']) <= set(lesson['levels']), 'candidate level mismatch: ' + cid)
         review = reviews[cid]

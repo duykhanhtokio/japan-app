@@ -1,3 +1,13 @@
+# Agriculture in-progress checkpoint — 2026-10-29, completion40phase1
+
+Runtime now203Japanese lessons/1225units/2436directAI-draftlocale pairs/65rasters/427weeklyquestions/4forms160mockquestions. Eight source-bound lessons and96locale pairs added, plus two originalcontrolled diagrams, one originalgeneric irrigation-equipment plate and one nativecalendarsequence. Metadata-only fertilizer sharedscope exposes existingprose in2号 while explicitsemantic-hashcompatibility preserves old1号completion and oldweeklyquizrevisions/answers.
+
+Data/state/schema,587questioninventory,13inventoryregressions,scopedstrictTypeScript and shared-scope savedstate compatibility pass. The firstlongreaderQA browser closed before the fullsuite finished; no browserPASS or production/nativecertification claimed for thischeckpoint. RawPDFs,sourceextracts andpageimages are notpublished.
+
+This is a durability checkpoint DURING the current completion attempt, not sectorcompletion. Sixdomainauthors continue source-reconciliation, correctlyscopedshortsupplements, actualrecognition/positionart and source-distinct assessment candidates. Read completion-40/manifest.json and preserve thebase55e63b4ef snapshots. Original1104missing/partial+301holds remain baseline reference until theactiveoverlay is integrated. No800questioncapacity or wholeknowledgepercentage has been certified. Continue safe work after publication/fetch/WORKPERSISTENCEPASS; noSHA-onlyfollowupcommit.
+
+---
+
 # Current agriculture checkpoint — 2026-10-29
 
 Status: IN_PROGRESS. Latest addition: `weekly-39/manifest.json`.
