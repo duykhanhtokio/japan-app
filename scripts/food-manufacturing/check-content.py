@@ -3,6 +3,7 @@
 import collections, hashlib, json, pathlib, re, unicodedata
 root=pathlib.Path(__file__).resolve().parents[2]
 data=root/'src/data/food-manufacturing'
+parts=[json.loads(p.read_text()) for p in sorted((data/'authoring-20261029').glob('part[1-6].json'))]
 errors=[]
 def check(ok,message):
  if not ok: errors.append(message)
@@ -17,6 +18,7 @@ lessons=[]
 for level in ('1','2'):
  path=data/f'lessons.{level}.ja.json'
  if path.exists(): lessons+=json.loads(path.read_text())['lessons']
+lessons += [l for part in parts for l in part.get('lessons',[])]
 ids=set(); titles=set()
 for l in lessons:
  label=l['id']; check(label not in ids,label+': duplicate ID'); ids.add(label)
@@ -33,6 +35,7 @@ for l in lessons:
  digest=hashlib.sha256(json.dumps(copy,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
  check(l.get('sourceHash')==digest,label+': source hash mismatch')
 exams=json.loads((data/'exams.ja.json').read_text())['exams'] if (data/'exams.ja.json').exists() else []
+exams += [e for part in parts for e in part.get('exams',[])]
 qids=set(); prompts=set(); totals=collections.Counter(); weeklyTotals=collections.Counter()
 for exam in exams:
  answers=[]
@@ -47,9 +50,16 @@ for exam in exams:
   check(len(answers)==40,exam['id']+': mock requires40')
   check(collections.Counter(answers)=={0:10,1:10,2:10,3:10},exam['id']+': unbalanced answers')
   check(all(not(a==b==c) for a,b,c in zip(answers,answers[1:],answers[2:])),exam['id']+': answer run')
+for level in ('1','2'):
+ expected_weeks={l['week'] for l in lessons if l['level']==level}
+ weekly=[e for e in exams if e['level']==level and e.get('kind')=='weekly']
+ check({e.get('week') for e in weekly}==expected_weeks,level+': missing weekly assessment')
+ check(len({e.get('week') for e in weekly})==len(weekly),level+': duplicate weekly assessment')
+ check(all(len(e['questions'])==3 for e in weekly),level+': weekly assessment requires3 questions')
 locales=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];translated={}
 for locale in locales:
  path=data/'translations'/f'{locale}.json'; pack=json.loads(path.read_text()) if path.exists() else {}
+ for part in parts: pack.update(part.get('translations',{}).get(locale,{}))
  translated[locale]=len(pack)
  for lid,t in pack.items():
   source=next((l for l in lessons if l['id']==lid),None)
@@ -73,6 +83,9 @@ source_exams={e['id']:e for e in exams}
 question_translations={}
 for locale in locales:
  path=data/'test-translations'/f'{locale}.json';pack=json.loads(path.read_text()) if path.exists() else {'questions':{},'examTitles':{}}
+ for part in parts:
+  extra=part.get('testTranslations',{}).get(locale,{})
+  pack['questions'].update(extra.get('questions',{}));pack['examTitles'].update(extra.get('examTitles',{}))
  question_translations[locale]=len(pack['questions'])
  for qid,t in pack['questions'].items():
   q=source_questions.get(qid);check(q is not None,locale+': unknown translated question '+qid)

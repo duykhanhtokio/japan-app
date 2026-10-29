@@ -1,19 +1,21 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const {stripTypeScriptTypes}=require('node:module');
 const root=path.resolve(__dirname,'../..'),data=path.join(root,'src/data/food-manufacturing');
-const lessons=['1','2'].flatMap(l=>JSON.parse(fs.readFileSync(path.join(data,`lessons.${l}.ja.json`))).lessons);
+const supplements=fs.readdirSync(path.join(data,'authoring-20261029')).filter(n=>/^part[1-6]\.json$/.test(n)).map(n=>JSON.parse(fs.readFileSync(path.join(data,'authoring-20261029',n))));
+const supplementalLessonRuby=Object.assign({},...supplements.map(p=>p.ruby.lessons));
+const lessons=['1','2'].flatMap(l=>JSON.parse(fs.readFileSync(path.join(data,`lessons.${l}.ja.json`))).lessons).concat(supplements.flatMap(p=>p.lessons));
 const gateSource=stripTypeScriptTypes(fs.readFileSync(path.join(root,'src/components/world/japanese-ruby-data.ts'),'utf8').replace(/^import type .*$/gm,'')).replace(/^export /gm,'');
 const {hasAlignedRuby}=vm.runInNewContext(gateSource+';({hasAlignedRuby})');
 let source=fs.readFileSync(path.join(data,'lesson-ruby.ts'),'utf8')
- .replace(/^import type .*$/gm,'').replace(/^import \{hasAlignedRuby\}.*$/gm,'')
+ .replace(/^import type .*$/gm,'').replace(/^import \{supplementalLessonRuby\}.*$/gm,'').replace(/^import \{hasAlignedRuby\}.*$/gm,'')
  .replace(/^import (pack\d) from '(.+\.json)';$/gm,(_,name,file)=>`const ${name}=load(${JSON.stringify(file)});`);
 source=stripTypeScriptTypes(source).replace(/^export /gm,'');
-const packs=Array.from({length:6},(_,i)=>JSON.parse(fs.readFileSync(path.join(data,`ruby/lessons-0${i+1}.json`))));
-const {foodManufacturingLessonRuby,readings}=vm.runInNewContext(source+';({foodManufacturingLessonRuby,readings})',{hasAlignedRuby,load:file=>JSON.parse(fs.readFileSync(path.join(data,file)))});
+const packs=[...Array.from({length:6},(_,i)=>JSON.parse(fs.readFileSync(path.join(data,`ruby/lessons-0${i+1}.json`)))),...supplements.map(p=>p.ruby)];
+const {foodManufacturingLessonRuby,readings}=vm.runInNewContext(source+';({foodManufacturingLessonRuby,readings})',{hasAlignedRuby,supplementalLessonRuby,load:file=>JSON.parse(fs.readFileSync(path.join(data,file)))});
 let fields=0,segments=0,kanjiSegments=0;
 const ids=new Set();
 for(const pack of packs){assert.equal(pack.status,'authored_ai_unreviewed');for(const id of Object.keys(pack.lessons)){assert(!ids.has(id));ids.add(id);}}
-assert.equal(ids.size,78);
+assert.equal(ids.size,lessons.length);
 for(const lesson of lessons){
  const expected={titleJa:lesson.titleJa,objectiveJa:lesson.objectiveJa,activityJa:lesson.activityJa,summaryJa:lesson.summaryJa};
  for(const p of lesson.paragraphs){expected[`paragraphs.${p.id}.titleJa`]=p.titleJa;expected[`paragraphs.${p.id}.textJa`]=p.textJa;}
@@ -31,4 +33,4 @@ for(const lesson of lessons){
  entry.fields.objectiveJa=[{text:lesson.objectiveJa}];assert.equal(foodManufacturingLessonRuby(lesson,'objectiveJa',lesson.objectiveJa),undefined);
  entry.fields.objectiveJa=saved;
 }
-console.log(JSON.stringify({status:'PASS',lessons:lessons.length,fields,segments,kanjiSegments,staleAndMisalignedRejected:fields,malformedAndUncoveredRejected:156,nativeReviewed:false,deviceTested:false}));
+console.log(JSON.stringify({status:'PASS',lessons:lessons.length,fields,segments,kanjiSegments,staleAndMisalignedRejected:fields,malformedAndUncoveredRejected:lessons.length*2,nativeReviewed:false,deviceTested:false}));

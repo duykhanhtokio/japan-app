@@ -4,6 +4,7 @@ const root=path.resolve(__dirname,'../..'),out=fs.mkdtempSync(path.join(os.tmpdi
 (async()=>{
 const entry=`import React from 'react';import {renderToStaticMarkup} from 'react-dom/server';import {FoodQuestionRuby} from './src/components/food-manufacturing/FoodQuestionRuby';import {foodManufacturingChecks} from './src/data/food-manufacturing';import {Attempt} from './src/components/food-manufacturing/FoodManufacturingCourse';import {freshTestAttempt} from './src/services/food-manufacturing-study-state';export {renderToStaticMarkup,React,FoodQuestionRuby,foodManufacturingChecks,Attempt,freshTestAttempt};`;
 await esbuild.build({stdin:{contents:entry,resolveDir:root,loader:'tsx'},outfile:path.join(out,'entry.cjs'),bundle:true,platform:'node',format:'cjs',jsx:'automatic',nodePaths:(process.env.NODE_PATH||'').split(path.delimiter),define:{'process.env.NODE_ENV':'"production"'},plugins:[{name:'food-render-adapters',setup(b){
+ b.onLoad({filter:/\.webp$/},a=>({contents:`export default {uri:'data:image/webp;base64,${fs.readFileSync(a.path).toString('base64')}'}`,loader:'js'}));
  b.onResolve({filter:/^react-native$/},()=>({path:require.resolve('react-native-web')}));
  b.onResolve({filter:/^@react-native-async-storage\/async-storage$|^react-native-safe-area-context$/},a=>({path:a.path,namespace:'adapter'}));
  b.onResolve({filter:/^@\//},a=>{const name=a.path.slice(2);if(['components/ui/RoyalPageBackground','components/ui/AppBackdrop','components/ui/RoyalPanels','components/tokutei/TokuteiChrome','components/tokutei/StudyAppearance','components/world/JapaneseRuby'].includes(name))return {path:name,namespace:'adapter'};const file=path.join(root,'src',name);for(const ext of ['','.ts','.tsx','.json','/index.ts'])if(fs.existsSync(file+ext)&&fs.statSync(file+ext).isFile())return {path:file+ext};throw Error(file);});
@@ -17,7 +18,7 @@ await esbuild.build({stdin:{contents:entry,resolveDir:root,loader:'tsx'},outfile
 }}]});
 const api=require(path.join(out,'entry.cjs'));let fields=0,attemptCases=0;
 for(const level of ['1','2'])for(const exam of api.foodManufacturingChecks(level)){
- if(exam.kind!=='weekly')continue;
+
  for(let i=0;i<exam.questions.length;i++){
   const q=exam.questions[i],expected={stemJa:q.stemJa,...Object.fromEntries(q.optionsJa.map((s,i)=>[`optionsJa.${i}`,s])),explanationJa:q.explanationJa,...Object.fromEntries(q.optionReasonsJa.map((s,i)=>[`optionReasonsJa.${i}`,s]))};
   for(const [field,text] of Object.entries(expected)){
@@ -35,6 +36,6 @@ for(const level of ['1','2'])for(const exam of api.foodManufacturingChecks(level
   }
  }
 }
-assert.equal(fields,390);assert.equal(attemptCases,78);
+assert.equal(fields,8480);assert.equal(attemptCases,1696);
 console.log(JSON.stringify({status:'PASS',renderedFields:fields,submittedAndUnsubmittedCases:attemptCases,answerExplanationVisibility:true,scope:'React SSR of actual components with test-only initial attempt injection and explicit app adapters; no browser geometry or native/device claims'}));
 })().catch(e=>{console.error(e);process.exitCode=1;});

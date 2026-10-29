@@ -24,7 +24,7 @@ const font=process.env.FOOD_QA_JAPANESE_FONT;if(!font)throw Error('Set FOOD_QA_J
 const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0,right:0});',backdrop:'export const useBackdropOcclusion=()=>{};',storage:`export default {getItem:async k=>{if(window.__failRead)throw Error('read');return localStorage.getItem(k)},setItem:async(k,v)=>{if(window.__failWrite)throw Error('write');localStorage.setItem(k,v)}};`,royal:`import React from 'react';import {View,Pressable,Text} from 'react-native';export const ROYAL_LAYOUT={screenGutter:12,backSafeTop:8},ROYAL_FONT={};export const RoyalBackButton=({onPress})=><Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={onPress}><Text>Back</Text></Pressable>;export const RoyalContentPanel=({children,style})=><View style={style}>{children}</View>;export const RoyalExplanationPanel=RoyalContentPanel;export default ({children})=><View style={{flex:1,backgroundColor:'#eee6d6'}}>{children}</View>;`};
 const localeIds=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
 // Freeze each input once so a parallel author cannot change expectations after bundling.
-const inputFiles=['lessons.1.ja.json','lessons.2.ja.json','exams.ja.json','diagrams.json','translations/glossary.json',...localeIds.flatMap(locale=>['translations/'+locale+'.json','test-translations/'+locale+'.json'])];
+const inputFiles=['lessons.1.ja.json','lessons.2.ja.json','exams.ja.json','diagrams.json','translations/glossary.json',...Array.from({length:6},(_,i)=>'authoring-20261029/part'+(i+1)+'.json'),...localeIds.flatMap(locale=>['translations/'+locale+'.json','test-translations/'+locale+'.json'])];
 const frozenInputs=new Map(inputFiles.map(file=>[path.join(root,'src/data/food-manufacturing',file),fs.readFileSync(path.join(root,'src/data/food-manufacturing',file),'utf8')]));
 const frozenData=file=>JSON.parse(frozenInputs.get(path.join(root,'src/data/food-manufacturing',file)));
 if(assessmentOnly&&process.env.FOOD_QA_EXPECTED_QUESTION_PAIRS){const actual=selectedTestLocales.reduce((n,l)=>n+Object.keys(frozenData('test-translations/'+l+'.json').questions).length,0);assert.equal(actual,Number(process.env.FOOD_QA_EXPECTED_QUESTION_PAIRS),'Incomplete assessment translation batch');}
@@ -97,6 +97,33 @@ const shouldTest=(locale,id)=>!deltaBase||deltaQuestions.get(locale).has(id);
  async function start(level='1',language='vi'){await page.goto(url+'?language='+language);await fontsReady();await page.getByRole('button',{name:'特定技能'+level+'号',exact:true}).click();}
  async function reader(level='1',language='vi'){await start(level,language);await page.getByRole('button',{name:/第1週/}).click();await page.getByTestId('food-day-'+level+'-1').click();}
 
+
+ if(process.env.FOOD_QA_SUPPLEMENT_SMOKE_ONLY==='1'){
+  const parts=Array.from({length:6},(_,i)=>frozenData('authoring-20261029/part'+(i+1)+'.json'));
+  const added=parts.flatMap(p=>p.lessons),allExams=[...frozenData('exams.ja.json').exams,...parts.flatMap(p=>p.exams||[])];
+  let readerCases=0,weeklyForms=0,weeklyQuestions=0;
+  for(const id of ['food-1-043','food-1-048','food-2-037','food-2-042','food-2-043','food-2-048'])for(const [width,height]of [[390,844],[932,430]])for(const mode of ['昼','夜']){
+   const lesson=added.find(l=>l.id===id);assert(lesson,id);await page.setViewportSize({width,height});await start(lesson.level,'vi');
+   await page.getByRole('button',{name:new RegExp('^第'+lesson.week+'週')}).click();await page.getByTestId('food-day-'+lesson.level+'-'+lesson.day).click();
+   await page.getByRole('button',{name:mode,exact:true}).click();await page.getByTestId('food-ruby-'+id+'-objectiveJa').waitFor();
+   await page.getByRole('button',{name:'訳を表示',exact:true}).click();const t=parts.map(p=>p.translations.vi?.[id]).find(Boolean);assert(t);
+   assert((await page.locator('body').innerText()).includes(t.objective));assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));
+   const complete=page.getByRole('button',{name:'完了する',exact:true});await complete.scrollIntoViewIfNeeded();await complete.click();await page.getByTestId('food-day-'+lesson.level+'-'+lesson.day).waitFor();
+   assert(await page.evaluate(({id,hash})=>Object.values(localStorage).some(v=>v.includes(id)&&v.includes(hash)),{id,hash:lesson.sourceHash}));
+   await page.reload();await page.getByRole('button',{name:'特定技能'+lesson.level+'号',exact:true}).click();await page.getByRole('button',{name:new RegExp('^第'+lesson.week+'週')}).click();await page.getByTestId('food-day-'+lesson.level+'-'+lesson.day).waitFor();readerCases++;
+  }
+  await page.setViewportSize({width:390,height:844});
+  for(const exam of parts.flatMap(p=>p.exams||[])){
+   const index=allExams.filter(e=>e.level===exam.level).findIndex(e=>e.id===exam.id);await start(exam.level,'vi');await page.getByRole('button',{name:'確認・模擬試験',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).nth(index).click();
+   for(const [i,q]of exam.questions.entries()){
+    await page.getByTestId('food-question-ruby-'+q.id+'-stemJa').waitFor();assert.equal(await page.getByTestId('food-question-ruby-'+q.id+'-explanationJa').count(),0);
+    await page.getByRole('button',{name:(q.answerIndex+1)+'. '+q.optionsJa[q.answerIndex],exact:true}).click();if(i<exam.questions.length-1)await page.getByRole('button',{name:'次へ',exact:true}).click();weeklyQuestions++;
+   }
+   await page.getByRole('button',{name:'提出する',exact:true}).click();await page.getByRole('button',{name:'確定',exact:true}).click();await page.getByRole('button',{name:'もう一度解く',exact:true}).waitFor();assert((await page.locator('body').innerText()).includes('正解 3 / 3'));
+   await page.reload();await page.getByRole('button',{name:'特定技能'+exam.level+'号',exact:true}).click();await page.getByRole('button',{name:'確認・模擬試験',exact:true}).click();await page.getByRole('button',{name:'開く・再開',exact:true}).nth(index).click();await page.getByRole('button',{name:'もう一度解く',exact:true}).waitFor();assert((await page.locator('body').innerText()).includes('正解 3 / 3'));weeklyForms++;
+  }
+  assert.deepEqual(errors,[]);const report={status:'PASS',readerCases,weeklyForms,weeklyQuestions,vietnameseToggle:true,completionPersistAndReload:true,correctGradingAndReviewReload:true,scope:'Actual expanded course navigation via explicit browser adapters; representative new lessons at two viewports/day-night and all new weekly forms. Not fullExpo/native/device acceptance.'};fs.writeFileSync(path.join(out,'supplement-course-report.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));return;
+ }
  if(process.env.FOOD_QA_RUBY_SMOKE_ONLY==='1'){
   const allLessons=[...frozenData('lessons.1.ja.json').lessons,...frozenData('lessons.2.ja.json').lessons];
   let readerCases=0;

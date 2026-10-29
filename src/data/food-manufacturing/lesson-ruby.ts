@@ -1,3 +1,4 @@
+import {supplementalLessonRuby} from './supplemental';
 import pack1 from './ruby/lessons-01.json';
 import pack2 from './ruby/lessons-02.json';
 import pack3 from './ruby/lessons-03.json';
@@ -9,7 +10,7 @@ import type {RubySegment} from '@/types/japanese-ruby';
 import type {FoodManufacturingLesson} from './index';
 
 type ReadingEntry={sourceHash:string;fields:Record<string,RubySegment[]>};
-const readings:Record<string,ReadingEntry>=Object.assign({},pack1.lessons,pack2.lessons,pack3.lessons,pack4.lessons,pack5.lessons,pack6.lessons);
+const readings:Record<string,ReadingEntry>=Object.assign({},pack1.lessons,pack2.lessons,pack3.lessons,pack4.lessons,pack5.lessons,pack6.lessons,supplementalLessonRuby);
 
 /** Offline AI-authored readings. A changed source or partial reading falls back to plain Japanese. */
 export function foodManufacturingLessonRuby(lesson:FoodManufacturingLesson,field:string,text:string):RubySegment[]|undefined {

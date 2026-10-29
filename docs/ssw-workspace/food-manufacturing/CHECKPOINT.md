@@ -1,3 +1,17 @@
+# Final expanded candidate authoring/integration — 2026-10-29
+
+Branch `feature/food-continue-20261029`; base `106dfb5e9d230616deef01beac4ba952fa4d8106`.
+
+- Current96lessons (48eachlevel/eightweekseach),1152lesson-locale pairs;20mockforms/800questions preserved;16weeklychecks/48questions;848questions/10176question-locale pairs/432titles.18source-audit lessons+9weeklyquestions added through six source-hash-bound authoring packs.
+- Offline candidate ruby:996mainlessonfields+8480assessmentfields. All old IDs/answer orders/revisions/progress remain;9source-only question anchor changes do not alter scoring content.52annotation splits and18counter-reading corrections recorded.
+-251sourcepages text-read;175renderedpages inspected by six scoped audits.96historical range candidates classified,34inclusive extent corrections,9QCquestion anchors fixed. Five unmappedTOC entries are reference back matter.158-unit independent/domain certification is NOT claimed.
+- Visuals:4concept diagrams+6context images+7management charts+15independent sign drawings+6source-practice figures.12locale caption/label support includes300management label fields,192signfields and12incorrect-storage warning labels. Educational drawings are not certified regulatory artwork.
+- PASS structural/hash/translation/ruby gates,8480fieldSSR/1696pre-post cases,960lesson browser cases/9960field cases,8480Japanese assessment viewport-scale cases/10176translatedpairs,expanded actual course24cases+3weekly forms/9questions,visual300geometry+180locale cases and15stale gates. ScopedTypeScript,state andJLPTlock PASS. Browser uses explicitRN-web/storage/safearea/Royal adapters; no fullExpo/native/device certificate.
+- Whole-app export attempts blocked by memory then missing shared `learning-characters-v1.png`;whole-projectTypeScript exit137. Independent/native/domain/full spoken-formula/device/performance acceptance and optional audio remain separate. `candidateAuthoringComplete=true`, `scopeComplete=false`, `productionRelease=false`.
+- Read current `COMPLETION_REPORT.md`, `completion-summary.json`, six competency audits and final browser reports. Do not reauthor finished material; next work is independent acceptance and release validation, not an unverified quantity claim. Verify actual GitHEAD/upstream with persistence gate before reporting durable completion.
+
+---
+
 # All weekly assessment readings — 2026-10-29
 
 Base `f0b14c5bf1535c14ca254fef86c0fd3385724bb7`; branch `feature/food-continue-20261029`.
