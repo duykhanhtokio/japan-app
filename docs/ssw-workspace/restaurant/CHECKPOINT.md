@@ -1,3 +1,19 @@
+# Nhà hàng / 外食業 — checkpoint 27, 2026-10-29
+
+Tiếp tục từ base `e9765e059b7f79c570b9f83a2d903bc266c4a431` đã WORK PERSISTENCE PASS. Bản cập nhật này cần commit/ref/fetch/persistence gate trước khi báo lưu.
+
+- Đọc trực tiếp nội dung PDF gốc 店舗運営 trang PDF17–18 / trang in13–14 qua file libfile_a60fc48fbcfc8191b1d972d2d19991c1. Không tuyên bố đã đọc ảnh nguồn hoặc xác minh lại bytehash trong phiên. Không phân phối lại trang/bảng/hình nguồn.
+- Thêm RestaurantOrderingExercise ở đúng bài rst-2-ops-05: ba mức doanh thu24000/48000/72000yên, hai món có giá800yên và lượng gạo0.10/0.13kg mỗi suất; tổng nhu cầu3.6/7.2/10.8kg. Bài tập dùng số liệu, cách trình bày và lịch giao tự soạn.
+- Tình huống đặt thêm:7.2+0.3−2.0−1.3=4.2kg. Nêu rõ tồn2.0kg không gồm đơn cũ1.3kg; đơn cũ chỉ được trừ nếu kiểm nhận đạt trước sử dụng. Khung thời gian từ thứBa09:00 đến thứNăm09:00; đặt trước thứHai10:00, nhận thứBa09:00, sơ chế10:00, nhà cung cấp nghỉ thứTư. Trễ/không đạt phải lập lại kế hoạch. Mức dự phòng không phải tỷ lệ cố định cho mọi nhà hàng.
+- 28 trường Nhật có ruby căn chỉnh;336 bản dịch cho12locale. Nút hiển thị/ẩn lời giải riêng, không can thiệp bài thi hay câu trả lời đã lưu. Bổ sung hướng dẫn dự báo theo POS/phiếu bán, mùa/ngày và gộp đơn theo nhà cung cấp.
+- Dữ liệu và10 phép tính Decimal độc lập PASS. Browser React/RNW component thật:52 ca4viewports×13locale;13ca font/lineheight gấp đôi tại320px;ẩn/hiện đáp án,bật/tắt dịch,loại bài khác vàkhôngtrànngangPASS. Đã nhìn ảnh QA768px/1440px và cắt kiểm320px font2x. Dùng adapter AsyncStorage no-op/default appearance; không chứng nhận fullCourse,Expo/native hay thiết bị thật.
+- Đóng hẹp duy nhất rst-2-operations-k027 theo đoạn nguồn đã đọc và bảng quy đổi mới. Tổng ledger148covered/452partial/39structural, không phải tỷ lệ kiến thức độc lập. Parentk026 vàk028 giữpartial, ghi thiếu POS/CK/AI tự động và phạm vi hình chưa kiểm đầy đủ.
+- 19 tệp canonical/bản dịch/manifest cũ byte-identical;984câu/đáp án/options giữ nguyên. Knowledge links PASS;565sourceanchors cũ PASS;JLPT UIlock10/10PASS. Không thay renderer dùng chung,không thêm dependency runtime.
+
+Chi tiết:completion27-ordering-source-review.json,completion27-ordering-data-qa.json,completion27-ordering-browser-qa.json,completion27-preservation-qa.json. Native/domain/human/fullacceptance vẫnfalse. Không có tác vụ chạy ngầm được cam kết sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 26, 2026-10-29
 
 Yêu cầu: giải phóng dữ liệu trùng không cần thiết rồi tiếp tục. Base `03819c107bace6a7545b3b06a24316b90ca09df0` đã xác minh WORK PERSISTENCE PASS cho các tệp dữ liệu trước sửa. Bản cập nhật này cần commit/push/fetch và persistence gate trước khi báo lưu.

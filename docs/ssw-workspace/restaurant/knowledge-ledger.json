@@ -19708,10 +19708,10 @@
       ],
       "illustrationNeeded": false,
       "status": "drafted",
-      "coverageStatus": "partial",
+      "coverageStatus": "covered",
       "review": {
         "sourceHeadingLocated": true,
-        "semanticCoverageVerified": false,
+        "semanticCoverageVerified": true,
         "domainReviewed": false,
         "humanReviewed": false,
         "aiSubjectLinkReviewed": true,
@@ -19719,19 +19719,24 @@
         "nativeReviewed": false
       },
       "coverageEvidence": {
-        "method": "AI subject-level semantic inspection of source heading, authored lesson objective/paragraphs, and author cross-review; page ranges only route navigation",
+        "method": "AI narrow comparison of primary source text and an independently authored, rendered ordering exercise",
         "lessonTitles": [
           "発注・棚卸し・検収をつなぐ"
         ],
-        "limitation": "This links the subject to draft teaching; it does not certify every source fact, illustration, numerical condition, term or question.",
-        "unresolvedDetails": []
+        "limitation": "Narrow source-text/exercise acceptance only; no native/domain/human/current-law or whole-chapter certification.",
+        "unresolvedDetails": [],
+        "narrowScope": "Only section 3.(1).1: standardising preparation and purchasing from sales estimates, source records, recipes and supplier groups. Not the whole ordering chapter.",
+        "supplementReport": "completion27-ordering-source-review.json",
+        "supplementArtifact": "src/data/restaurant/ordering-exercise.json",
+        "supplementArtifactSha256": "bbd668d847fe28f228a21ff9a519ad17347e7bc91f7fad58b268035ffe5d486f"
       },
       "questionLinkStatus": "not_semantically_reviewed",
-      "illustrationStatus": "not_required_for_navigation",
+      "illustrationStatus": "original_exercise_browser_checked_not_domain_certified",
       "detailedSourceComparison": {
-        "report": "completion25-source-level2-other.json",
+        "report": "completion27-ordering-source-review.json",
         "unitId": "rst-2-operations-k027",
-        "decisionAtSourceAudit": "partial",
+        "decisionAtSourceAudit": "covered",
+        "previousReport": "completion25-source-level2-other.json",
         "sourcePagesInspected": [
           {
             "documentId": "rst-2-operations",
@@ -19740,15 +19745,10 @@
             ]
           }
         ],
-        "sourceVisualPagesInspected": [
-          {
-            "documentId": "rst-2-operations",
-            "pdfPages": []
-          }
-        ],
+        "sourceVisualPagesInspected": [],
         "currentLawCurrencyCertified": false,
-        "factGapCount": 1,
-        "imageGapCount": 1
+        "factGapCount": 0,
+        "imageGapCount": 0
       }
     },
     {
@@ -47810,12 +47810,12 @@
       "subsection": 157,
       "visual_application": 10
     },
-    "semanticCoverageVerified": 147,
+    "semanticCoverageVerified": 148,
     "unassigned": 0,
     "coverageStatusCounts": {
       "structural_only": 39,
-      "partial": 453,
-      "covered": 147
+      "partial": 452,
+      "covered": 148
     },
     "subjectLinked": 639,
     "authoredLessonsAssessed": 120,
@@ -47859,6 +47859,9 @@
       "completion25-source-level1.json",
       "completion25-source-level2-hygiene.json",
       "completion25-source-level2-other.json"
+    ],
+    "supplementalReviews": [
+      "completion27-ordering-source-review.json"
     ]
   }
 }
