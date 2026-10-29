@@ -13,6 +13,7 @@ import {useManufacturingBack} from './useManufacturingBack';
 import {manufacturingSourceGuides,manufacturingSourceGuidesLabel,manufacturingSourceGuideTranslation} from '@/data/manufacturing/source-guides';
 import {manufacturingMockUi} from '@/data/manufacturing/mock-ui';
 import {manufacturingTranslation,manufacturingQuestionTranslation} from '@/data/manufacturing/translations';
+import {manufacturingSupplementExams,manufacturingSupplementTranslation} from '@/data/manufacturing/supplement-practice';
 import {manufacturingUi} from '@/data/manufacturing/ui';
 import {manufacturingSpecialties,loadManufacturingCourse,type Specialty,type ManufacturingLesson,type ManufacturingExam} from '@/data/manufacturing';
 import {manufacturingCompletionKey,manufacturingExamKey,restoreManufacturingProgress,manufacturingLessonDone,freshTestAttempt,restoreTestAttempt,gradeTest,type ManufacturingProgress,type TestAttempt} from '@/services/manufacturing-study-state';
@@ -34,7 +35,7 @@ export function ManufacturingCourse({learner,language,onBack}:{learner:string;la
 }
 function Course({learner,language,specialty,onBack}:{learner:string;language:string;specialty:Specialty;onBack:()=>void}){
  const t=useLabels();
- const [course]=useState(()=>loadManufacturingCourse(specialty));
+ const [course]=useState(()=>{const core=loadManufacturingCourse(specialty);return {...core,checks:[...core.checks,...manufacturingSupplementExams(specialty)]};});
  const info=manufacturingSpecialties.find(i=>i.id===specialty)!;
  const [tab,setTab]=useState<'study'|'test'|'mock'>('study'),[week,setWeek]=useState<number|null>(null),[lesson,setLesson]=useState<ManufacturingLesson|null>(null),[exam,setExam]=useState<ManufacturingExam|null>(null);
  const [progress,setProgress]=useState<ManufacturingProgress|null>(null),[error,setError]=useState(false),[saving,setSaving]=useState(false),[retry,setRetry]=useState(0);
@@ -82,7 +83,7 @@ function Attempt({learner,specialty,exam,onBack}:{learner:string;specialty:Speci
   queue.current=queue.current.catch(()=>{}).then(()=>AsyncStorage.setItem(key,JSON.stringify(next))).then(()=>{if(live.current&&n===serial.current){setSaving(false);setError(null);}}).catch(()=>{if(live.current&&n===serial.current){setSaving(false);setError('write');}});
  };
  const q=attempt?exam.questions[attempt.currentQuestion]:null,result=attempt?gradeTest(exam,attempt.answers):null;
- const translated=q&&showTranslation?manufacturingQuestionTranslation(q,locale):null;
+ const translated=q&&showTranslation?(manufacturingSupplementTranslation(q,locale)??manufacturingQuestionTranslation(q,locale)):null;
  const back=()=>{if(saving)return;if(error==='write')setConfirm('leave');else onBack();};
  useManufacturingBack(back);
  return <Surface reading><TokuteiHeader title={exam.titleJa} onBack={back}/><ScrollView contentContainerStyle={s.content}>

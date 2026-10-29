@@ -1,3 +1,13 @@
+# Manufacturing SSW1 — batch32 twelve-locale caliper formative check, 2026-10-29
+
+Integrated the eight Japanese/Vietnamese draft questions from batch31 as a separate mechanical formative check with all12 target locales (96 question-locale pairs). Existing262 core lessons/456weeklyquestions/33mockassemblies/12guides/22diagrams retain their original identities and content. Runtime additions use separate attempt IDs, current-guide and question/target hash checks; no target-language fallback. The existing weekly controller supplies submission, rationales, retry and answer/position resume. This is additive AI preview content, not official exam content or production approval.
+
+Actual RNWeb26flows across13UIlocales and320/932widths PASS,208questionvisits/192targetvisits,zero pageerrors; before-submission rationale suppression, answer/position resume, write-failure/retry and prior-key preservation. Explicit Royal/storage/safearea/decorativeimage adapters and JapaneseQAfont; no allscriptglyph/native certification. ScopedTypeScript andESLint PASS(0errors/0warnings). Data/state,33mockforms,source25(57negativefixtures),guide29(14fixtures),exacthistoricalcourseprojection andJLPT10/10lock PASS. Historical course freeze receipts are preserved by exact pinned before/after projection, not weakened.
+
+FullExpo web attempted after installing dependencies and resolving sparseasset omissions; still blocked because sharedfarm PNG inputs are GitLFS pointer bytes rejected by Metro. See batch32-caliper-practice/expo-blocked.txt. Physicaldevice validation unavailable. Recorded-source-open-items.json consolidates only43noncovered/qualified historical objectoccurrences from22/25,16withlaterbounded evidence; this is NOT the full574page knowledge inventory or43missing lessons. No newsourcepages read; no whole sourceobject closed. Independent/native/domain/fullsource/release flags remainfalse. Entiresector completion is not claimed. SSW2excluded. Resume from batch32-caliper-practice/REPORT.vi.md and session-evidence.json; finish source completeness and required review/build/device gates before release.
+
+---
+
 # Manufacturing SSW1 — batch30 structural source-link reconciliation, 2026-10-28
 
 Corrected interpretation of the earlier56/487figure:56rows lack a direct CORElesson link,not56missing knowledge units. All262actualcorelessons match the matrix bidirectionally. Current12actualreferenceguides link19rows,11overlapcore; directunion439. The48remainingrows allhave linkedTOCdescendants and areparentheadings. Mutuallyexclusivecounts:420core-only,8guide-only,11both,48hierarchy-only,0structuralorphans. No matrix/source/content identities rewritten andno newlessons orsource-page readings.

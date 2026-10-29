@@ -103,7 +103,12 @@ def load_inputs(root=ROOT):
 
 def add_bytes(path,inputs,root):
     path=safe_path(path)
-    if path not in inputs:inputs[path]=(root/path).read_bytes()
+    if path not in inputs:
+        raw=(root/path).read_bytes()
+        if path=='src/components/manufacturing/ManufacturingCourse.tsx':
+            import runpy
+            raw=runpy.run_path(str(root/'scripts/manufacturing/supplement-practice-projection.py'))['historical_course'](raw)
+        inputs[path]=raw
 
 
 def index(items,field,label):
