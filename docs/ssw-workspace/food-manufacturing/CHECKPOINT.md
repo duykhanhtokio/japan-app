@@ -1,3 +1,15 @@
+# Assessment ruby continuation — 2026-10-29
+
+Base `6088974449798cbac1dbdb5c8e83197a23ce51e4`; branch `feature/food-continue-20261029`.
+
+- Integrated explicit source-bound readings for first-week checks at both levels: 6 questions / 60 fields. All Japanese questions, answers, order, revisions, translations and progress keys preserved.
+- Sector-local question renderer and accessible option content; missing/stale/broken readings fall back to canonical text. Explanations/reasons remain submitted-only.
+- PASS actual loader, stale/alignment/malformed gates, 833 uncovered fallbacks, TSX transformation/bundled loader, actual translation adapter, content structure, study state and JLPT lock. Full Expo, browser/native/device validation not run.
+- Remaining assessment readings: 33 weekly + 800 mock questions. Begin with `food-1-week-02`, then subsequent weeks; keep status `authored_ai_unreviewed`. Other source/visual/native/release gaps remain open.
+- Details: `assessment-ruby-20261029.md`. No background continuation claim. `scopeComplete=false`, `productionRelease=false`.
+
+---
+
 # Lesson full-body ruby — 2026-10-28
 
 Base `51cb9a2743fe2595f2f71da72d6b4fcdd9af6e1f`; branch `feature/food-final-report-20261028`.
