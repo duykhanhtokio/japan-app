@@ -1,3 +1,18 @@
+# Nhà hàng / 外食業 — checkpoint 26, 2026-10-29
+
+Yêu cầu: giải phóng dữ liệu trùng không cần thiết rồi tiếp tục. Base `03819c107bace6a7545b3b06a24316b90ca09df0` đã xác minh WORK PERSISTENCE PASS cho các tệp dữ liệu trước sửa. Bản cập nhật này cần commit/push/fetch và persistence gate trước khi báo lưu.
+
+- Dọn bản tải cục bộ: xóa 1.678 tệp ngoài phạm vi cần dùng, mỗi tệp được kiểm tra SHA1 Git blob trùng hoàn toàn với bản trong HEAD; tổng 2.200.224.056 byte. Chỉ bỏ bản sao có thể khôi phục từ Git, không xóa dữ liệu trên GitHub hoặc Library. Các tệp khác biệt do lần checkout thiếu dung lượng được giữ ngoài phạm vi commit; không coi bản clone là sạch toàn bộ.
+- Thêm hai đoạn bài học tự biên soạn ở rst-2-ops-02 và rst-2-ops-06, triển khai đề xuất đã được ghi trong completion25-level2-other-fixes.json. Ví dụ thứ nhất tính nhân công từ lợi nhuận gộp và quy đổi bốn chỉ số theo giờ công; ví dụ thứ hai phân tích khách đơn giá theo số món × giá bình quân, kèm kiểm tra mong muốn khách và quyền từ chối. Không tuyên bố mở lại PDF gốc hoặc đối chiếu nguồn mới.
+- Dịch mới 24 đoạn + 24 tiêu đề cho 12 ngôn ngữ; bảo toàn toàn bộ trường dịch cũ và 61 bài Nhật cũ sau khi loại các phần bổ sung được liệt kê. Gắn revision sau kiểm tra exact-record, không gắn lại hash mù. 984 câu/đáp án/lựa chọn giữ nguyên.
+- Thêm furigana chính xác theo đoạn mới, không thêm quy tắc đọc toàn cục. Validator suy ra số trường từ cấu trúc dữ liệu thay vì hằng số 7358: hiện 7362 trường, không còn kanji chưa có chú âm. Điều này không chứng nhận phát âm bản ngữ hay cách đọc mọi chữ số.
+- Structural PASS; numeric 110892 trường PASS; source-anchor 565 mục PASS; thuật ngữ 559 trường PASS; bảo toàn 88 sửa phát âm + 6 sửa VI PASS; liên kết 639 mục PASS; loading 13 nhóm PASS; adapter cho hai bài mới × 12 locale = 24 trường hợp PASS; 8 phép kiểm tra số học độc lập PASS; JLPT UI lock 10/10 PASS.
+- Còn nguyên 453 mục nguồn partial; hai bài tập không tự đóng các khoảng trống hình/sơ đồ, phạm vi nguồn và nghiệm thu. Chưa kiểm thử browser/Expo/native/điện thoại trong lô này; không suy ra từ data adapter. Native/domain/full acceptance vẫn false.
+
+Chi tiết: completion26-operations-additions.json, completion26-preservation-arithmetic-qa.json, completion26-adapter-qa.json. Không có tác vụ chạy ngầm được cam kết sau phản hồi.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 25, 2026-10-29
 
 User yêu cầu chia6AI đối chiếu565mụcnguồn,minh họa,duyệtngữ nghĩa/phátâm vàExpo/thiếtbị thật. SáuAI thực hiện3nhóm nguồn(210/177/178),minh họa,ngữ nghĩa/phátâm vàruntime. Base d4bf4e65c45cd53a51ff650c27ab7e8f95ed657b đã remote-verified.
