@@ -1,3 +1,17 @@
+# Current agriculture checkpoint — 2026-10-29
+
+Status: IN_PROGRESS. Latest addition: `weekly-39/manifest.json`.
+
+Week49 now has six Japanese weekly questions on actual seedling observations, gasoline vapor in storage, rodenticide/growth-regulator classification, acrylic expansion, agricultural PO film whitening and inner-lining humidity. These assess selected supplement facts only, not every objective in all six lessons. The bank is level2-only and uses the existing reader/test controller and independent state namespace.
+
+Current runtime: **195 Japanese lessons, 1170 knowledge units, 2340 direct-Japanese AI-draft lesson-locale pairs, 62 rasters, 427 weekly questions, 4 mock forms/160 questions.** Sixteen mock forms/640 questions, 1104 candidate missing/partial source occurrences and 301 baseline holds remain. No new source closure, image, translation, lesson or mock-form credit is claimed. All prior581questions, current source/translation hashes, source holds and mock35queue remain preserved. Existing36candidate decisions are unchanged and rebound to the updated weekly input.
+
+Checks passed: scoped additive/source-binding/preservation checks, data/state/schema checks,587question inventory,13inventory regression tests,10/10JLPTUIlocks, diff whitespace check. The actual-route browser harness passed all6questions,8responsive day/night configurations, hidden answers, resume, cancellation, full scoring, explanations, restart, completion badge, failed-save/retry and existing1号bank access. Phone/day screenshot inspected. Explicit Royal/artwork/safearea/storage adapters and QA font were used; productionExpo and physical-device testing remain open. Initial browser/font setup failures were corrected; final QA binds the final input hashes. No independent peer, human, native-language or domain approval is claimed.
+
+Next: continue the retained source-gap/recognition work and distinct assessment matrix; preserve held0292wording, source contradictions, numeric/diagnostic/regulatoryholds and mock35exclusions. Do not infer800questioncapacity from paragraph counts. Remote persistence requires publication, fetch and exact-HEAD WORK PERSISTENCE PASS; this text alone is not proof. No background authoring runs.
+
+---
+
 # Current agriculture checkpoint — 2026-10-28
 
 Status: IN_PROGRESS; whole source, native/domain/device and release completion are unconfirmed.
