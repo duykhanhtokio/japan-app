@@ -34,5 +34,5 @@ for key,value in context['fields'].items():
 assert count==7358,('unexpected canonical field scope',count)
 assert not uncovered,uncovered[:10]
 report={'status':'CONTEXT_ALIGNMENT_PASS','canonicalFields':count,'uncoveredFields':0,'exactFieldHashes':len(context['fields']),'uniqueAnnotationSpans':spans,'pronunciationCertified':False,'nativeReviewed':False,'domainReviewed':False,'scope':'Japanese lesson title/objective/paragraph title/text/summary/activity and question stem/options/explanation. Not all UI, Arabic-number pronunciation or external review.'}
-(ROOT/'docs/ssw-workspace/restaurant/completion24-furigana-qa.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+(ROOT/'docs/ssw-workspace/restaurant/context-reading-validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(report,ensure_ascii=False))

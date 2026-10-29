@@ -1,3 +1,17 @@
+# Nhà hàng / 外食業 — checkpoint 25, 2026-10-29
+
+User yêu cầu chia6AI đối chiếu565mụcnguồn,minh họa,duyệtngữ nghĩa/phátâm vàExpo/thiếtbị thật. SáuAI thực hiện3nhóm nguồn(210/177/178),minh họa,ngữ nghĩa/phátâm vàruntime. Base d4bf4e65c45cd53a51ff650c27ab7e8f95ed657b đã remote-verified.
+
+- Đối chiếu565/565mục,7PDF/271trang hash/pagecount khớpinventory. Scope/page/paragraphhash gatePASS. Baseline107covered/458partial; supplement5unitk008/k009/k010/k023/k024 sau guideintegration. Toànledger147covered/453partial/39structural,khôngmẫu sốphần trăm kiến thức. Thêm27lessonlinks cùngcấp/hai chiều;không xóa liênkết.
+- AI5 rà1371span/300nhóm +554override ngắn;áp88sửa phátâm(43span cósẵn,45anchorlegacy) và6fieldVIq017/q053. Giữ nguyênNhật/984key/options;7358fieldvẫn0kanjiuncovered.42selftests và88exact-positionregressionsPASS. Khôngnative/audio/fullall-localeapproval.
+- Thêm10hình gốc trong3nhóm:anatomy1,filletresults3,processingstates4,measurement2.29fieldNhậtalignruby,7localeưu tiên;Courseimport/renderđúng3bài. AI4source8/16/31và6screenshot;AI6standalone156+3font2x/integrated84+3font2x. Khôngsaochéphìnhnguồn;khôngknifeprocedural/species/domaincertification.
+- Bổsungnguồnq033(1hygPDF5chemicalcontrols),q143(2hygPDF12highdust). Rootxem2trangrender1.4x,giữchữNhật/key/order/dịch;24source-ref-onlyhashbindingsvà2examrevisions/manifest được tínhlại. Cóeditorialapplication/inference đượcghi rõ,khôngcoilàcâunguồnsaochép.
+- Nguồncũcósai kýhiệu/vídụ firstaidkhôngnênkhôiphục;3reportchi tiếtghirõintentionaldivergence,gapvàphạmvichưaduyệtluậthiệnhành. Cácproposalbổsungkhác làbacklog,chưađưa tiếngNhật/dịchchưakiểmvàoapp.
+- Cấutrúc,sourceanchors,knowledge-links,numeric110868/Celsius396/terminology559,preservation,state10/loading13PASS. Runtimechi tiết/phạmvibuild/browser/currentinputfingerprints:completion25-expo-device.json. Chưa cóthiếtbịthật;khôngcoiHermesbytecode hoặcwebadapterlànativerun.
+- Còn453mụcnguồnpartial,hìnhmeatcuts/dao/species/equipment/service,toànngữnghĩa/bảnngữ/chuyênmôn vàfullapp/native/device/performance. Giữfullacceptancefalse. Cầncommit/ref/fetch/persistencegate trước khibáolưu. Khôngcamkếtprocesschạyngầmsauphiên.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 24, 2026-10-29
 
 Yêu cầu hoàn tất ngành nhà hàng trong phiên. Chưa được coi là hoàn tất toàn bộ: còn nguồn, hình, nghiệm thu ngữ nghĩa và production/native/device.
