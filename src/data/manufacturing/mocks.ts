@@ -2,6 +2,7 @@ import type {Specialty,ManufacturingQuestion} from './index';
 import type {ManufacturingMock} from '@/services/manufacturing-mock-state';
 import type {QuestionTranslation} from './translations';
 import {referenceManufacturingMocks} from './reference-practice';
+import {revisedManufacturingQuestionTranslation} from './editorial-translations';
 
 export function loadManufacturingMocks(specialty:Specialty):ManufacturingMock[]{
  let original:ManufacturingMock[];
@@ -10,7 +11,7 @@ export function loadManufacturingMocks(specialty:Specialty):ManufacturingMock[]{
 }
 export function manufacturingMockTranslation(question:ManufacturingQuestion,locale:string):QuestionTranslation|null{
  const entries=require('./mock-translations.json').locales[locale] as Record<string,QuestionTranslation>|undefined;
- const entry=entries?.[question.id];return entry?.sourceHash===question.sourceHash?entry:null;
+ const entry=entries?.[question.id];return entry?.sourceHash===question.sourceHash?revisedManufacturingQuestionTranslation('mock',question,locale,entry):null;
 }
 export type MockRuby={text:string;reading?:string};
 export function manufacturingMockRuby(question:ManufacturingQuestion,field:'stem'|number):MockRuby[]|null{

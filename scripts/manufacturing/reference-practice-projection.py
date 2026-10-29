@@ -9,6 +9,8 @@ AFTER='1b8fb9174d20010b2ddda9e6d1780659a0bcc78d5ddf3629939b6395d8beb688'
 BINDINGS='4131f41713ff3e6113e6e7a126102517c32ea5c55f0cf90b31ea8ca968303603'
 def sha(b):return hashlib.sha256(b).hexdigest()
 def historical_loader(raw):
+ import runpy
+ raw=runpy.run_path(str(ROOT/'scripts/manufacturing/editorial-translation-projection.py'))['historical_translation_loader'](LOADER,raw)
  receipt=(ROOT/(STAGE+'extension-bindings.json')).read_bytes()
  assert sha(receipt)==BINDINGS,'Reference extension binding drift'
  for p,h in json.loads(receipt)['inputsSha256'].items():assert sha((ROOT/p).read_bytes())==h,'Stale reference input:'+p

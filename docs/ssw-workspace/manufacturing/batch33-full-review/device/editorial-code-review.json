@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "reviewer": "independent_lane6_ai",
+  "status": "PASS_SCOPED_CODE_WITH_RESOLVED_HARDENING",
+  "inputFilesSha256": {
+    "src/data/manufacturing/editorial-translations.ts": "770d91ff8ed0925042ee457e94b17a6aaf32af3b5bb4f4f62d8e3f631445a472",
+    "scripts/manufacturing/build-review33-corrections.py": "5d1557a39762b296858c9722676e62c1ca69bf80a9364d13baa7855314e83da2",
+    "scripts/manufacturing/editorial-translation-projection.py": "cd2b3b7928250cec6db71de32f094821cb79796dc1b4296c0b6a31f33e183239",
+    "src/data/manufacturing/mocks.ts": "6c49e926660957d32531f90dec10f5f641a12664253ac58b3484c862c000a91c",
+    "src/data/manufacturing/translations.ts": "d981f76a1d8e6e4f43cf02068440c716b94fd9a00a6cc8ef09a53bd16cafc436",
+    "src/data/manufacturing/source-guides.ts": "25a51dfd21579c6739d4fa5a7e7e3cc963d8562d2e4d6e240a0571a8acacc6e4"
+  },
+  "reviewedInvariants": [
+    "Selection requires kind,locale,entryId and canonical sourceHash.",
+    "Target sourceHash must match canonical source.",
+    "All selected prior values are checked before any clone change; one conflict returns original whole entry.",
+    "Allowed field-name set excludes IDs,sourceHash,correctIndex and prototype properties.",
+    "JSON clone prevents modifying frozen translation banks; answer/reason order and metadata remain unchanged unless the specifically reviewed textual field is selected.",
+    "Type-only imports avoid a runtime circular translation dependency.",
+    "Compiler derives source directly from canonical lessons/guides/questions and compares exact Japanese field,existing target,before/source hashes and false review flags.",
+    "Duplicate field corrections rejected by compiler; source and target banks not rewritten.",
+    "Three getter wrappers only revise returned translations; question/answer/session data are not revised.",
+    "Pinned before/after historical loader projections reject arbitrary unknown revisions.",
+    "Final helper differs after hardening only by combining type imports; runtime guards remain intact.",
+    "Final compiler additionally checks proposal sourceHash when supplied, and supports slash/dot/bracket field notation before canonical schema validation."
+  ],
+  "focusedFixtureResult": "editorial-fixture-results.json",
+  "historicalProjectionProbes": [
+    {
+      "path": "src/data/manufacturing/mocks.ts",
+      "currentSha256": "6c49e926660957d32531f90dec10f5f641a12664253ac58b3484c862c000a91c",
+      "historicalSha256": "1b8fb9174d20010b2ddda9e6d1780659a0bcc78d5ddf3629939b6395d8beb688",
+      "unknownRevisionRejected": true
+    },
+    {
+      "path": "src/data/manufacturing/translations.ts",
+      "currentSha256": "d981f76a1d8e6e4f43cf02068440c716b94fd9a00a6cc8ef09a53bd16cafc436",
+      "historicalSha256": "9d3c3f84cf1180f6bb97d719012f296cee42a9f7d2df226d1b48d63bc92c35ac",
+      "unknownRevisionRejected": true
+    },
+    {
+      "path": "src/data/manufacturing/source-guides.ts",
+      "currentSha256": "25a51dfd21579c6739d4fa5a7e7e3cc963d8562d2e4d6e240a0571a8acacc6e4",
+      "historicalSha256": "5d24678001a56a7fd3915d8e9b11999fb0bfe0b90f753d5cfd730bad7a538d00",
+      "unknownRevisionRejected": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "RUNTIME_MALFORMED_AFTER",
+      "severity": "low_for_valid_compiled_bundle",
+      "status": "resolved_and_independently_retested",
+      "evidence": "Independent numeric after5 fixture raised TypeError at p.after.trim; builder rejects nonstring after, so normal compiled inputs remain valid.",
+      "recommendation": "Check typeof before/after and Array.isArray fieldPath before string/array operations if fail-closed handling of malformed bundled JSON is desired.",
+      "resolution": "Runtime now rejects null patches, nonarray paths, nonstring before/after and blank text without throwing; focused fixtures pass."
+    },
+    {
+      "id": "COMPILER_LOCALE_SCOPE",
+      "severity": "low",
+      "status": "resolved_and_independently_retested",
+      "evidence": "Compiler selects locale from proposal but does not explicitly assert membership in approved-scope targetLocales. Current proposals use approved targets.",
+      "recommendation": "Assert each proposal locale is in the approved12targetLocales and bind scope file hash.",
+      "resolution": "Compiler binds approved scope hash, asserts SSWlevel1 and12target locales, and rejects a proposal using unsupported locale; independent negative fixture passes."
+    },
+    {
+      "id": "WRITER_TWO_OUTPUT_ATOMICITY",
+      "severity": "low",
+      "status": "resolved_and_independently_retested",
+      "evidence": "--write validates build first, then writes runtime and receipt in sequence. A second-write OSError can leave a new runtime paired with old/missing receipt.",
+      "recommendation": "Allocate both payloads into temporary files before replacement if allocation-safe publication is required; otherwise document sequential publication and verify final receipt before commit.",
+      "resolution": "Compiler now stages both payloads before any os.replace. Actual --write second-allocation OSError fixture observes zero replacements. This is allocation-before-replacement, not transactional multi-file atomicity."
+    }
+  ],
+  "blockingFindingsForCurrentValidCompilerOutput": [],
+  "runtimeProposalSetNotFrozenAtReview": false,
+  "independentAIComparisonPerformed": true,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "physicalDeviceVerified": false,
+  "releaseReady": false,
+  "additionalProbeEvidence": "editorial-compiler-probes.json",
+  "finalWrapperProbeEvidence": "editorial-wrapper-probes.json",
+  "finalCompilerScope": {
+    "proposalFiles": 7,
+    "fields": 421,
+    "entryLocalePairs": 288,
+    "scopeOfIndependentCodeReview": "Guard/compiler design and targeted wrappers only; this is not independent semantic review of all421fields."
+  },
+  "fieldPathNotationProbe": "PASS_slash_dot_bracket",
+  "finalRuntimeManifestObserved": {
+    "fields": 421,
+    "entryLocalePairs": 288,
+    "sha256": "447d7232dda078de65b02cfa5d061d14f7d1ca2660d3c020a77ae58c36df2d03",
+    "meaning": "Manifest count/hash observed only; semantic review remains19selectedtargetfields."
+  }
+}

@@ -1,0 +1,51 @@
+Starting Metro Bundler
+| (node:23) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:22) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:25) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:30) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:36) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:42) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android ./index.js ▓▓▓▓▓░░░░░░░░░░░ 35.7% ( 848/2089)
+Android Bundling failed 3188ms index.js (2360 modules)
+Error: Unable to resolve module ../../assets/game/backgrounds/tokyo/cafe/tokyo_cafe_01.jpg from /workspace/scratch/352524e30171/japan-app/src/data/game-assets.ts: 
+
+None of these files exist:
+  * tokyo_cafe_01.jpg
+  * ../../../workspace/scratch/352524e30171/japan-app/assets/game/backgrounds/tokyo/cafe/tokyo_cafe_01.jpg
+[0m [90m 15 |[39m     [33mImageSourcePropType[39m
+ [90m 16 |[39m [33m>[39m [33m=[39m {
+[31m[1m>[22m[39m[90m 17 |[39m     [33mTOKYO_CAFE_01[39m[33m:[39m require(
+ [90m    |[39m                    [31m[1m^[22m[39m
+ [90m 18 |[39m         [32m'../../assets/game/backgrounds/tokyo/cafe/tokyo_cafe_01.jpg'[39m
+ [90m 19 |[39m     )[33m,[39m
+ [90m 20 |[39m }[33m;[39m[0m
+
+Import stack:
+
+ ../../../workspace/scratch/352524e30171/japan-app/src/data/game-assets.ts
+ | import "../../assets/game/backgrounds/tokyo/cafe/tokyo_cafe_01.jpg"
+
+ ../../../workspace/scratch/352524e30171/japan-app/src/components/ui/prepareSceneRoute.ts
+ | import "@/data/game-assets"
+
+ ../../../workspace/scratch/352524e30171/japan-app/src/components/ui/AppBackdrop.tsx
+ | import "./prepareSceneRoute"
+
+ ../../../workspace/scratch/352524e30171/japan-app/src/components/manufacturing/ManufacturingCourse.tsx
+ | import "@/components/ui/AppBackdrop"
+
+ App.tsx
+ | import "/workspace/scratch/352524e30171/japan-app/src/components/manufacturing/ManufacturingCourse"
+
+ index.js
+ | import "./App"
+
+ 
+ | import "./index.js"
+

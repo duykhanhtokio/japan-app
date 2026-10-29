@@ -1,13 +1,14 @@
 import type {ManufacturingLesson,ManufacturingQuestion} from './index';
+import {revisedManufacturingQuestionTranslation,revisedManufacturingLessonTranslation} from './editorial-translations';
 export type LessonTranslation={sourceHash:string;title:string;objective:string;paragraphs:{id:string;title:string;text:string}[];terms:{ja:string;reading:string;meaning:string}[];activity:string;safety:string[];summary:string};
 export type QuestionTranslation={sourceHash:string;stem:string;options:string[];reasons:string[]};
 export function manufacturingTranslation(lesson:ManufacturingLesson,locale:string):LessonTranslation|null {
  let entries:Record<string,LessonTranslation>|null=null;
  switch(locale){case 'en':entries=require('./translations/en.json').lessons;break;case 'vi':entries=require('./translations/vi.json').lessons;break;case 'id':entries=require('./translations/id.json').lessons;break;case 'zh-CN':entries=require('./translations/zh-CN.json').lessons;break;case 'zh-TW':entries=require('./translations/zh-TW.json').lessons;break;case 'hi':entries=require('./translations/hi.json').lessons;break;case 'bn':entries=require('./translations/bn.json').lessons;break;case 'ne':entries=require('./translations/ne.json').lessons;break;case 'my':entries=require('./translations/my.json').lessons;break;case 'th':entries=require('./translations/th.json').lessons;break;case 'km':entries=require('./translations/km.json').lessons;break;case 'tl':entries=require('./translations/tl.json').lessons;break;}
- const item=entries?.[lesson.id];return item?.sourceHash===lesson.sourceHash?item:null;
+ const item=entries?.[lesson.id];return item?.sourceHash===lesson.sourceHash?revisedManufacturingLessonTranslation(lesson,locale,item):null;
 }
 export function manufacturingQuestionTranslation(question:ManufacturingQuestion,locale:string):QuestionTranslation|null {
  let entries:Record<string,QuestionTranslation>|null=null;
  switch(locale){case 'en':entries=require('./translations/questions.en.json').questions;break;case 'vi':entries=require('./translations/questions.vi.json').questions;break;case 'id':entries=require('./translations/questions.id.json').questions;break;case 'zh-CN':entries=require('./translations/questions.zh-CN.json').questions;break;case 'zh-TW':entries=require('./translations/questions.zh-TW.json').questions;break;case 'hi':entries=require('./translations/questions.hi.json').questions;break;case 'bn':entries=require('./translations/questions.bn.json').questions;break;case 'ne':entries=require('./translations/questions.ne.json').questions;break;case 'my':entries=require('./translations/questions.my.json').questions;break;case 'th':entries=require('./translations/questions.th.json').questions;break;case 'km':entries=require('./translations/questions.km.json').questions;break;case 'tl':entries=require('./translations/questions.tl.json').questions;break;}
- const item=entries?.[question.id];return item?.sourceHash===question.sourceHash?item:null;
+ const item=entries?.[question.id];return item?.sourceHash===question.sourceHash?revisedManufacturingQuestionTranslation('weekly',question,locale,item):null;
 }

@@ -1,3 +1,15 @@
+# Manufacturing SSW1 — batch33 six-AI source/language/device review, 2026-10-29
+
+Six explicitly requested AI lanes completed source-text/overview reading for all574pages, with541detail-viewed pages and actual262Japanese lesson/12guide prose comparisons. Surface visual receipts union primary186detailpages plus74assist occurrences into196unique bodypages; overlaps counted once,10unique additional pages. No whole-page knowledge/object closure or human/native/domain certification inferred.
+
+Both language lanes actually compared all1018glossary definition occurrences in their6locales:12216target meaning fields across12locales. Numeric/selected-question review is separately bounded; full-prose/all-question semantic review remains incomplete.421exact-before/Japanese-source-bound target-field corrections across288entry-locale pairs now render via guarded getters (86lesson/12guide/73weekly/250mock fields). Original banks, Japanese IDs/hashes, answer order,grading and sessions remain unchanged. Historical loader receipts are preserved by exact pinned projections; final assembly regenerates corrections and restores the3reviewed getters. Isolated actual loader-writer checks pass; not a full assembler/build certification.
+
+Actual RNWeb118flows/59cases across320/932widths PASS0pageerrors, plus2focused VI safety-visual flows. Getters verify all421revisedfields, stale-source/prior-wording guards and protected metadata; scopedTypeScript/ESLint PASS0errors/0warnings. Coredata/state,33reference catalog,mockstate,source25/57fixtures,guide29/14fixtures andJLPT10/10lock pass. Explicit QA adapters/Japanesefont; no all-script/native-device claim.
+
+Device lane found no physicaldevice bridge/SDK/USB. Actual Android Metro export blocked by tracked sparse-omitted cafe assets; many shared assets remain LFSpointers. Hardware matrix12groups not_run. Source findings/remaining knowledge facets, full prose/question rationale/native/domain approval and physical hardware remain pending. wholeCurriculumComplete/releaseReady remainfalse;SSW2excluded. Read batch33-full-review/REPORT.vi.md,review-index.json,glossary-review-index.json and integration/applied-corrections.json. No background physical-device test implied.
+
+---
+
 # Manufacturing SSW1 — batch32 twelve-locale caliper formative check, 2026-10-29
 
 Integrated the eight Japanese/Vietnamese draft questions from batch31 as a separate mechanical formative check with all12 target locales (96 question-locale pairs). Existing262 core lessons/456weeklyquestions/33mockassemblies/12guides/22diagrams retain their original identities and content. Runtime additions use separate attempt IDs, current-guide and question/target hash checks; no target-language fallback. The existing weekly controller supplies submission, rationales, retry and answer/position resume. This is additive AI preview content, not official exam content or production approval.
