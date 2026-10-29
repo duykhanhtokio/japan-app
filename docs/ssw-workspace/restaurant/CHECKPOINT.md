@@ -1,3 +1,14 @@
+# Nhà hàng / 外食業 — checkpoint 23, 2026-10-29
+
+Base `59c94c5d689085850322a23483954127f41f2aab` đã qua WORK PERSISTENCE PASS. Lô này cần GitAPI commit/ref, fetch và persistence gate trước khi báo đã lưu.
+
+- Thêm 118 quy tắc đọc có dùng, mỗi quy tắc phủ kanji trước đó chưa đọc. 1499→1123/7358 trường còn kanji chưa phủ; thêm 376 trường phủ đầy đủ. Một ứng viên không phát sinh token và một ứng viên không thêm phủ bị loại.
+- Rà ngữ cảnh trong completion23-reading-review.json. Bổ sung chín cụm nguyên vẹn để phân biệt hậu tố ご/じ và あと/とき sau mệnh đề; không thêm cách đọc mặc định cho kanji đứng riêng mơ hồ. 39 self-tests PASS. Rà AI tự kiểm, không có rà độc lập/người bản ngữ.
+- Bảo toàn toàn bộ nội dung Nhật ngoài furigana, sourceHash, đáp án, lựa chọn, sourceRefs, metadata hình và manifest; 12 bản dịch byte-identical. Chi tiết completion23-preservation-qa.json. Không sửa giao diện hoặc ngành khác.
+- Còn 1123 trường furigana, 565 mục nguồn partial, hình nhận dạng/thao tác, rà toàn ngữ nghĩa/người bản ngữ và production Expo/native/thiết bị thật. Giữ các cờ nghiệm thu toàn bộ false. Không có tác vụ chạy ngầm được cam kết sau phiên.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 22, 2026-10-28
 
 Yêu cầu hoàn thiện các hạng mục còn thiếu và tổng kết. Module CHƯA đạt nghiệm thu toàn bộ. Base0f4dadf58d04b78ba45967cfa87295d0eab3e26f đã remote-verified. Lô này cần commit/ref/fetch/persistence gate; không coi file cục bộ là đã lưu bền vững.
