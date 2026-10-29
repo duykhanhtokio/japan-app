@@ -1,3 +1,16 @@
+# All weekly assessment readings — 2026-10-29
+
+Base `f0b14c5bf1535c14ca254fef86c0fd3385724bb7`; branch `feature/food-continue-20261029`.
+
+- Added 33 weekly questions / 330 fields; all 39 weekly questions now have 390 offline source-bound fields. Stems, four choices, main explanation and four option reasons covered. First-week pack and all Japanese/translation/answer/revision/progress data preserved.
+- Reused unambiguous candidate reading tokens, authored context overrides and read through all 330 reconstructed fields; corrected compound/context readings listed in `weekly-ruby-20261029-qa.json`. Single AI review, not independent/native certification. Data remains `authored_ai_unreviewed`.
+- PASS actual loader390 / stale-text rejection780 / malformed1560 / uncovered-mock fallback800; TSX transform and loader bundle; actual component React SSR390 fields and78 pre/post submission cases with explanation/reason visibility; state and JLPT lock10/10.
+- Chromium installation failed (corrupt/empty download). SSR uses explicit app adapters and test-only initial-state injection; not browser geometry/font/navigation, fullExpo, native or real-device verification.
+- Remaining assessment ruby:800 mock questions. Start with actual canonical `food-1-mock-01` membership, not numeric question-ID ranges. Source competency, visual assets, terminology/native/domain and release gaps remain open. `scopeComplete=false`, `productionRelease=false`.
+- Previous local `b7eed2a0a` was published using GitHub connector as tree-identical `f0b14c5b` and fetched; WORK PERSISTENCE PASS obtained before authoring this batch. Original local commit retained under `local/food-first-week-b7eed2a0a`.
+
+---
+
 # Assessment ruby continuation — 2026-10-29
 
 Base `6088974449798cbac1dbdb5c8e83197a23ce51e4`; branch `feature/food-continue-20261029`.

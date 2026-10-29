@@ -1,3 +1,11 @@
+## Bổ sung ngày 29/10/2026 — furigana kiểm tra tuần
+
+Đã tích hợp furigana cho **39/39 câu kiểm tra tuần (390 trường)**. Bổ sung33câu sau lô6câu đầu; còn800câu thi thử chưa có furigana toàn văn. Giữ nguyên bản Nhật, đáp án, bản dịch, phiên bản đề và dữ liệu tiến độ. Cách đọc vẫn là ứng viên AI, chưa được người bản ngữ duyệt.
+
+Kiểm tra bộ nạp và từ chối dữ liệu cũ/hỏng đạt; render React SSR390trường và78trường hợp trước/sau nộp đạt, lời giải chỉ xuất hiện sau nộp. SSR dùng adapter và khởi tạo trạng thái phục vụ kiểm tra, không phải kiểm tra bố cục trình duyệt. Chưa chạy fullExpo/native/thiết bị; tải Chromium thất bại do gói tải hỏng. Bằng chứng: `weekly-ruby-20261029-qa.json`. Các phần thiếu về đối chiếu nguồn, minh họa, thuật ngữ và nghiệm thu bên dưới vẫn còn hiệu lực.
+
+---
+
 # Tổng kết ngành chế biến thực phẩm — cập nhật 28/10/2026
 
 Phạm vi **飲食料品製造業**, Tokutei 1号 và 2号. Nhánh `feature/food-final-report-20261028`, tiếp nối commit `51cb9a2743fe2595f2f71da72d6b4fcdd9af6e1f`. Commit hiện tại và trạng thái đồng bộ được xác minh bằng Git trong báo cáo bàn giao. Bản này vẫn là **xem trước nội bộ**, chưa nghiệm thu toàn bộ hoặc phát hành production.
