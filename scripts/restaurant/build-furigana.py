@@ -2,7 +2,7 @@
 Existing lexicon + explicitly authored restaurant term readings. Context review is separate.
 """
 from pathlib import Path
-import json,re,collections,sys
+import json,re,collections,sys,hashlib
 ROOT=Path(__file__).resolve().parents[2];DATA=ROOT/'src/data/restaurant';HAN=re.compile(r'[一-龯々〆ヵヶ]')
 sys.path.insert(0,str(ROOT/'scripts'))
 from furigana.reading_rules import counted,number,parse_number
@@ -473,9 +473,22 @@ byfirst=collections.defaultdict(list)
 for s,r in lookup.items():byfirst[s[0]].append((s,r))
 for xs in byfirst.values():xs.sort(key=lambda p:len(p[0]),reverse=True)
 missing=collections.Counter();stats=collections.Counter()
+context_file=DATA/'context-readings.json'
+context_fields=read(context_file).get('fields',{}) if context_file.exists() and '--ignore-context' not in sys.argv else {}
 def ruby(text):
  result=[];i=0;unknown=False
+ context=context_fields.get(hashlib.sha256(text.encode()).hexdigest())
+ spans={}
+ if context:
+  assert context['textLength']==len(text)
+  end=0
+  for span in context['spans']:
+   a,b=span['start'],span['end']
+   assert end<=a<b<=len(text) and text[a:b]==span['text'] and re.fullmatch('[ぁ-ゖー]+',span['reading'])
+   spans[a]=span;end=b
  while i<len(text):
+  if i in spans:
+   span=spans[i];result.append({'text':span['text'],'reading':span['reading']});i=span['end'];stats['contextualExactSpanTokens']+=1;continue
   duration=DURATION.match(text,i)
   # 分野 is a field/category, not the minute counter (e.g. 14分野).
   if duration and not (duration.group(2)=='分' and text[duration.end():].startswith(('の','野'))):
@@ -496,7 +509,7 @@ def ruby(text):
     while j<len(text) and HAN.search(text[j]):j+=1
     missing[text[i:j]]+=1;unknown=True
    else:
-    while j<len(text) and not HAN.search(text[j]) and not byfirst.get(text[j]) and not text[j].isdecimal():j+=1
+    while j<len(text) and j not in spans and not HAN.search(text[j]) and not byfirst.get(text[j]) and not text[j].isdecimal():j+=1
    result.append({'text':text[i:j]});i=j
  assert ''.join(p['text'] for p in result)==text
  stats['fields']+=1
@@ -512,7 +525,18 @@ if '--self-test' in sys.argv:
   tokens=ruby(source);assert not any(t.get('reading') for t in tokens),(source,tokens)
  for source in ('14分野','１４分野'):
   tokens=ruby(source);assert not any(t.get('reading') and t['text'].endswith('分') for t in tokens),(source,tokens)
- print(json.dumps({'status':'PASS','cases':len(cases)+8,'scope':'known readings/durations/temperatures/unknown-compound, fraction and category-counter safety','nativeReviewed':False}));sys.exit(0)
+ # A field-bound rule must preserve literal text and cannot apply to a different field.
+ context_key=hashlib.sha256('20日'.encode()).hexdigest();saved=context_fields.get(context_key)
+ context_fields[context_key]={'textLength':3,'spans':[{'start':0,'end':3,'text':'20日','reading':'はつか'}]}
+ assert ruby('20日')==[{'text':'20日','reading':'はつか'}]
+ assert ''.join(t.get('reading',t['text']) for t in ruby('21日'))!='はつか'
+ context_fields[context_key]['spans'][0]['end']=2
+ try:ruby('20日')
+ except AssertionError:pass
+ else:raise AssertionError('Corrupt exact-span annotation was accepted')
+ if saved is None:context_fields.pop(context_key)
+ else:context_fields[context_key]=saved
+ print(json.dumps({'status':'PASS','cases':len(cases)+11,'scope':'known readings/durations/temperatures/unknown-compound, fraction/category safety, field-hash isolation and corrupt-span rejection','nativeReviewed':False}));sys.exit(0)
 for p,x in packs.items():
  for l in x.get('lessons',[]):
   l['furigana']={k:ruby(l[field]) for k,field in [('title','titleJa'),('objective','objectiveJa'),('summary','summaryJa'),('activity','activityJa')]}
@@ -521,5 +545,6 @@ for p,x in packs.items():
  for e in x.get('exams',[]):
   for q in e['questions']:q['furigana']={'stem':ruby(q['stemJa']),'options':[ruby(v) for v in q['optionsJa']],'explanation':ruby(q['explanationJa'])}
  write(p,x)
-write(ROOT/'docs/ssw-workspace/restaurant/furigana-report.json',{'status':'aligned_dictionary_candidates','nativeReviewed':False,'contextReviewComplete':False,'stats':dict(stats),'unknownKanji':dict(missing.most_common()),'ambiguousStandaloneWordsIntentionallyUnannotated':True,'remaining':'Contextual pronunciation and all uncovered kanji require editorial review; exact alignment is not pronunciation certification.'})
+stats.setdefault('fieldsWithUnknownKanji',0)
+write(ROOT/'docs/ssw-workspace/restaurant/furigana-report.json',{'status':'aligned_dictionary_and_exact_context_candidates','nativeReviewed':False,'contextReviewComplete':False,'stats':dict(stats),'unknownKanji':dict(missing.most_common()),'ambiguousStandaloneWordsIntentionallyUnannotated':True,'remaining':'All canonical field kanji may be aligned while contextual pronunciation/native acceptance remain pending; exact alignment is not pronunciation certification.'})
 print(json.dumps({'stats':dict(stats),'unknownTypes':len(missing)},ensure_ascii=False))

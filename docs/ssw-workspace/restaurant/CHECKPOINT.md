@@ -1,3 +1,16 @@
+# Nhà hàng / 外食業 — checkpoint 24, 2026-10-29
+
+Yêu cầu hoàn tất ngành nhà hàng trong phiên. Chưa được coi là hoàn tất toàn bộ: còn nguồn, hình, nghiệm thu ngữ nghĩa và production/native/device.
+
+- Base549e2ab07e0662b8ec1aae3445cfac929a7d77b9 đã remote-verified. 7358/7358 trường bài/câu không còn kanji chưa phủ; 1111 field hashes/1371 exact spans,1380 lượt dùng do văn bản lặp lại. Cách đọc AI theo ngữ cảnh, không chứng nhận bản ngữ.
+- Thêm context-readings.json ràng buộc SHA256 văn bản/offset; generator từ chối span sai và không áp dụng sang văn bản khác.42 self-tests và check-context-readings PASS. Dữ liệu này chỉ dùng lúc biên soạn, không thêm import/tải runtime.
+- Làm rõ5field:一値→一つの測定値;過金→帳簿より多い現金;全月→すべての月;大卓→大きなテーブル;全皿→すべての皿. Đã đọc đối chiếu60field dịch tương ứng, giữ nguyên chữ dịch, gắn revision rõ ràng. Giữ984đáp án và toàn nguồn;3lựa chọn chỉ đổi cách diễn đạt Nhật,giữ nghĩa/vị trí.
+- 黄色素 đọcきしきそ có nguồn chữ ruby của Toyonaka; không đoánおうしきそ. Rà lại0.1mg/L so với0,1mg/L củaVI/ID sau sửa câu Nhật, gắn đúng fieldhash. Numeric110868/Celsius396/terminology559/source links PASS.
+- Lưu test-state10/loading13, kết quả runtime mới phải đọc từ report riêng; không suy ra production Expo/native. Không đổiUI/ngànhkhác.
+- Còn565partialsource/39structural; hình nhận dạng/thao tác; rà toàn ngữ nghĩa/người bản ngữ và Expo/native/thiết bị thật. Không nâng fullacceptance. Cần GitAPI commit/ref/fetch/persistence gate trước khi báo đã lưu. Không cam kết tác vụ chạy ngầm sau phiên.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 23, 2026-10-29
 
 Base `59c94c5d689085850322a23483954127f41f2aab` đã qua WORK PERSISTENCE PASS. Lô này cần GitAPI commit/ref, fetch và persistence gate trước khi báo đã lưu.
