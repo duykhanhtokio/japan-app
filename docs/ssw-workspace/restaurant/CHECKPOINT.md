@@ -1,3 +1,18 @@
+# Nhà hàng / 外食業 — checkpoint 30, 2026-10-31
+
+Base `a603cf88384f7ed7daba591e31b62aac900b4f17` đã WORK PERSISTENCE PASS. Sáu AI rà đủ439 mục partial ban đầu, đọc lại7PDF đã đối chiếu SHA/page count (271 trang). Commit/ref/fetch/persistence cần hoàn tất trước khi báo đã lưu.
+
+- Thêm 117 đoạn Nhật tự soạn, 1404 đoạn dịch và 1404 tiêu đề cho12locale; giữ nguyên mọi đoạn Nhật/ruby/bản dịch cũ,984 câu/đáp án/thứ tự lựa chọn và692 thuật ngữ. Đối chiếu nguyên bản trong completion30-preservation-qa.json.
+- Đóng 175 mục nguồn có bằng chứng đoạn học SHA chính xác; còn 264 partial,39structural. Tổng 336 covered. Mọi439 mục có đánh giá cụ thể; không tự đóng parent, không tính tỷ lệ kiến thức độc lập, không chứng nhận an toàn/luật hiện hành/bản ngữ/chuyên môn.
+- Thêm bộ44 hình dụng cụ tự dựng, checklist QSC15 mục, mẫu hồ sơ vệ sinh7nhóm/5quy trình; luồng phàn nàn5bước, lịch4giai đoạn và bài tập tỷ lệ/giá trị theo giờ. Đủ12locale và ruby căn chỉnh. Mẫu vệ sinh không tự đánh giá ngưỡng an toàn, sửa số đo sẽ hủy đánh giá cũ, không tự đánh dấu PASS khi chưa quan sát.
+- PASS: cấu trúc120bài/984câu/692thuậtngữ;7622trường Nhật0kanji chưa phủ; numeric112452trường0flags;559sửa thuật ngữ với98binding xác minh trường cũ;88sửa phát âm;565sourceanchors;639units và liên kết hai chiều;7nguồn/2587trường0trùng chính xác40ký tự (không chứng nhận tương đồng ngữ nghĩa). ScopedTypeScript,208React/RNW SSRcases,13loadingcases,JLPT10/10lock.
+- Chưa đủ toàn bộ439. Phần còn lại có hình giải phẫu/quy trình, nhận diện, thông số/pháp luật hiện hành, bài tập và phạm vi parent đầy đủ; xem từng mục trong completion30-source-dispositions.json. Gallery/flow đã có không còn ghi là chưa triển khai; vẫn cần kiểm giao diện và đối chiếu đầy đủ.
+- Browser thực bị EPERM; CUA bị bwrap read-only; Expo riêng trước đó SIGKILL; tra cứu web nguồn hiện hành lỗi. Không nhận PASS browser/native/thiết bị, an toàn, chuyên môn hay bản ngữ. Lịch sử checkpoint25 không chứng nhận UI mới.
+
+Bằng chứng: completion30-source-dispositions.json,completion30-integrated-additions.json,completion30-preservation-qa.json,completion30-existing-evidence-qa.json,completion30-detail-guide-qa.json,completion30-hygiene-records-qa.json,completion30-tool-gallery-qa.json.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 29, 2026-10-30
 
 Base `4eaf84de7fea830a15430f89f9a758dcebad8d48` đã WORK PERSISTENCE PASS. Commit này có Git tree chính xác bằng `797b114ca5753675cc2bc4b23912d0cc2b103860`; kết nối GitHub tạo metadata mới do Git CLI thiếu đăng nhập. Nhánh remote feature/restaurant-20261026 đã được xác minh. Lô29 cần commit/ref/fetch/persistence trước khi báo lưu.
