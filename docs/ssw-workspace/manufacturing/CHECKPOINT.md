@@ -1,3 +1,13 @@
+# Manufacturing SSW1 — batch35 six-AI safety and core-question continuation, 2026-10-30
+
+Integrated exact-source-bound surface062 term clarification in Japanese+12targets;28 EN/VI safety-field corrections after377 Japanese/754target safety-field comparisons; and surface07theoryq13 suspect-goods segregation clarification in Japanese+12targets with alignedruby. Frozen banks/IDs/hashes/grading/sessions preserved. Actual new review502questions/1404rationales plus698 exact historical bindings gives cumulative1200core questions/3000rationales; not1200 newly read, PDF-fidelity or domain/native certification.22actual PNGs/264caption bindings PASS;18selected Japanese high-risk lessons reread, no speculative corrections.
+
+Main data/state, editorial negative guards, saved attempts/timers/grading,502review bindings/25Decimal cases, source57negative fixtures, scopedESLint0/0 andJLPT10/10lock PASS. FullappTypeScript6GiB reports1unchanged agriculture RecognitionImages.tsx:202 TS2322,0manufacturing diagnostics. RNWeb bundle succeeds but Chromium socket denied beforepage creation:0UIflows. FullAndroid export unresolved:GitLFS objects partially recovered, some server404; default exit137;1worker endsEMFILE at23658modules. No Expo/native/physicaldevice acceptance.
+
+Counts remain262corelessons/456weeklyquestions/30originalmocks+3curatedassemblies/12guides/22diagrams. Full574page knowledge-objectclosure,5recordedvisualfacets,alltargetsemanticreview andnative/domain/physicaldevice gates remain pending. Wholecurriculum/release flags false;SSW2excluded. Read batch35-continuation/REPORT.vi.md and evidence; no backgroundprocess implied.
+
+---
+
 # Manufacturing SSW1 — batch34 source-bound lesson076 reader clarification, 2026-10-29
 
 Reopened and visually read hash-verified mechanical PDF physical137/printed129. Integrated a bounded Japanese +12target paragraph clarification in the actual reader: leakage flux is the phenomenon involved in magnetic-particle testing in this source passage, distinct from eddy-current testing. Exact sourceHash/Japanese/prior-target wording guards; no locale fallback or original bank mutation. Frozen262lessons/456weeklyquestions/33mocks/12guides/22diagrams and progress/session identities preserved; this clarifies an existing outcome without adding a procedure. Canonical old prose is retained as historical source data; learners see revised wording on matching inputs.

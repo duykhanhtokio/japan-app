@@ -7,7 +7,7 @@ let patches:Patch[]|null=null;
  * Original banks, answer order, grading and stored attempts remain unchanged.
  */
 function revised<T extends {sourceHash:string}>(kind:Patch['kind'],source:{id:string;sourceHash:string},locale:string,entry:T):T{
- const revisions=patches??(patches=require('./editorial-translations.json').patches as Patch[]);
+ const revisions=patches??(patches=[...require('./editorial-translations.json').patches,...require('./safety-editorial-translations.json').patches] as Patch[]);
  const selected=revisions.filter(p=>p&&p.kind===kind&&p.locale===locale&&p.entryId===source.id&&p.sourceHash===source.sourceHash);
  if(!selected.length||entry.sourceHash!==source.sourceHash)return entry;
  const words=new Set(['stem','options','reasons','title','objective','paragraphs','terms','meaning','text','activity','safety','summary']);
