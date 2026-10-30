@@ -1,5 +1,7 @@
 # Runtime data memory — 2026-10-30
 
+Subsequent successful iOS development bundling and full web export are recorded in `RUNTIME_MEMORY_FOLLOWUP_20261030.md`; use that follow-up for current build status and worker settings.
+
 Branch: `feature/food-continue-20261029`. Baseline: `1707a267098f54626c759d1fd4fb1e468dac3462`.
 
 The source JSON remains authoritative and editable. Metro resolves `src/data/**/*.json` imports to generated, compressed CommonJS modules in the ignored `.metro-runtime-data/` cache. Large JSON is deflated during preparation, decoded with the declared pure-JavaScript `pako` dependency only when its module is required, and then parsed. This keeps the raw 844 MB JSON corpus out of Metro's module graph and avoids running the JavaScript minifier over huge object literals. Other JavaScript, assets and Expo transforms retain the upstream pipeline. Transform parallelism defaults to two workers.

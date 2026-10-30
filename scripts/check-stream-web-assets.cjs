@@ -1,0 +1,25 @@
+const fs=require('node:fs'),path=require('node:path'),os=require('node:os');
+const assert=require('node:assert/strict');
+const {streamHostedAssets}=require('./metro/stream-web-assets.cjs');
+const expoRoot=path.dirname(require.resolve('expo/package.json'));
+const cliRoot=path.dirname(require.resolve('@expo/cli/package.json',{paths:[expoRoot]}));
+const {persistMetroAssetsAsync}=require(path.join(cliRoot,'build/src/export/persistMetroAssets.js'));
+const root=fs.mkdtempSync(path.join(os.tmpdir(),'expo-assets-check-'));
+(async()=>{
+  const files=[path.join(root,'sample.bin'),path.join(root,'sample@2x.bin')];
+  files.forEach((p,i)=>fs.writeFileSync(p,Buffer.from([0,255,i,13,10])));
+  const assets=[{name:'sample',type:'bin',scales:[1,2],files,fileSystemLocation:root,httpServerLocation:'/assets/fixtures'}];
+  const expected=new Map();
+  await persistMetroAssetsAsync(root,assets,{platform:'web',outputDirectory:root,baseUrl:'',files:expected});
+  const out=path.join(root,'output'),retained=new Map([['index.html',{contents:'preserve metadata'}]]);
+  await streamHostedAssets(persistMetroAssetsAsync,root,assets,{platform:'web',outputDirectory:out,baseUrl:'',files:retained});
+  assert.equal(expected.size,2);assert.equal(retained.size,1);
+  assert.equal(retained.get('index.html').contents,'preserve metadata');
+  for(const [name,value]of expected)assert.deepEqual(fs.readFileSync(path.join(out,name)),value.contents);
+  let captured;
+  await streamHostedAssets(async(...args)=>{captured=args;},root,assets,{platform:'ios',files:expected});
+  assert.strictEqual(captured[2].files,expected,'Native export must keep the upstream behavior');
+  fs.unlinkSync(files[0]);
+  await assert.rejects(streamHostedAssets(persistMetroAssetsAsync,root,assets,{platform:'web',outputDirectory:out,files:retained}),{code:'ENOENT'});
+  console.log('PASS: exact asset bytes/paths/scales, metadata preservation, native fallback and copy errors');
+})().catch(error=>{console.error(error);process.exitCode=1}).finally(()=>fs.rmSync(root,{recursive:true,force:true}));

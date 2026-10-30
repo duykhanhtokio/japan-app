@@ -41,6 +41,7 @@
     "typescript": "~5.9.2"
   },
   "scripts": {
+    "export:web:low-memory": "node --max-old-space-size=1536 scripts/export-web-low-memory.cjs",
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo run:android",
