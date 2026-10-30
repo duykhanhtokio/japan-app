@@ -1,3 +1,18 @@
+# Nhà hàng / 外食業 — checkpoint 29, 2026-10-30
+
+Base `4eaf84de7fea830a15430f89f9a758dcebad8d48` đã WORK PERSISTENCE PASS. Commit này có Git tree chính xác bằng `797b114ca5753675cc2bc4b23912d0cc2b103860`; kết nối GitHub tạo metadata mới do Git CLI thiếu đăng nhập. Nhánh remote feature/restaurant-20261026 đã được xác minh. Lô29 cần commit/ref/fetch/persistence trước khi báo lưu.
+
+- Sáu AI tiếp tục vệ sinh/chế biến/tiếp khách/vận hành/ngôn ngữ/nguồn-QA. Thêm8 đoạn tự soạn trong7bài với96đoạn dịch và96tiêu đề cho12locale: truyền đạt và đổi kế hoạch; lưu/tìm hồ sơ; món riêng/nhóm món; lệch định lượng theo từng đĩa; nhập tiền theo ví dụ hai người; xử lý phàn nàn; kênh bán; các giai đoạn đào tạo và OJT/OFFJT. Không tạo quy định thời hạn lưu, tỷ lệ hoặc số liệu an toàn mới.
+- Rà độc lập JA/EN/VI toàn8đoạn;12locale192trường tiêu đề/nội dung qua kiểm dữ liệu/số liệu. Sửa TL để yêu cầu nhân viên giải thích lại thay vì chỉ nghe giải thích; sửa1đoạn Việt cũ phân biệt hướng dẫn tổng đài119 và quy trình đã tập huấn. Chưa chứng nhận toàn12locale bởi người bản ngữ.
+- SourceQA kiểm8hash bài trước sửa, paragraph evidence lịch sử,4sourceSHA vớiinventory và mọi ruby mới. Đóng13leaf hẹp: hygk015/k017/k018;servicek039;opsk039/040/041/042/043/075/078/079/082. Bổ sung3liênkết lesson-knowledge hai chiều. Tổng161covered/439partial/39structural;khôngphảiphầntrăm kiếnthứcđộclập. Giữcookingref01/servicek043/visual021partial do cònthuậtngữ/hình. Khôngđóngparenttựđộng,khôngchứngnhận luật hiện hành/chuyên môn/bản ngữ.
+- Đọc mới nguồn chế biến PDF22–23 bằng text theo AI;các phầnkhác dùngđốichiếuđãcommit cùngphiênbản,khôngtuyênbốđọclại7PDF hoặc hình. Khôngcopy bảng/hình/câunguồn;fullsourcesimilaritycheckunavailable.
+- PASS:cấutrúc;7388trường Nhật cóchúâm0kanjichưaphủ;numeric111048trường0flags;559sửa thuậtngữ(8bindingđượcxácminhtrườngcũchínhxác);565sourceanchors;639knowledgeunits;1431lessonlinks;loading13;JLPT10/10. Giữnguyên984câu/đápán/options vàglossary;mọi đoạnNhậtcũ vàbảndịchcũ giữ nguyên ngoài1sửaVI đãghi.
+- Chưa chạy browser/native/thiếtbịthật lômới. Môi trườngtrướcđóChromiumsocketEPERM/ExpoSIGKILL;khôngsuyraPASS. Fullacceptancefalse. Cònhình,439nguồnpartial,ràchuyênmôn/bảnngữ vàhiệunăng/thiếtbịthật. Khôngcótiếntrìnhchạyngầmsauphảnhồi.
+
+Bằngchứng:completion29-integrated-additions.json,completion29-source-review.json,completion29-coverage-decisions.json,completion29-language-review.json,completion29-preservation-qa.json,completion29-final-data-qa.json.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 28, 2026-10-30
 
 Base `13550ed5b86fb46fdb25497069cc958c5b9080c0` đã WORK PERSISTENCE PASS. Sáu AI chia vệ sinh, chế biến, tiếp khách, vận hành, ngôn ngữ và kiểm thử. Lô này cần commit/push/fetch/persistence trước khi báo đã lưu.
