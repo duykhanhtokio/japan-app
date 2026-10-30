@@ -1,7 +1,8 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'../..'),read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 require('node:child_process').execFileSync(process.execPath,['scripts/manufacturing/check-lesson-editorial.cjs'],{cwd:root,stdio:'pipe'});
-for(const check of ['check-term-editorial.cjs','check-safety-editorial-translations.cjs','check-question-editorial.cjs']) require('node:child_process').execFileSync(process.execPath,['scripts/manufacturing/'+check],{cwd:root,stdio:'pipe'});
+for(const check of ['check-term-editorial.cjs','check-safety-editorial-translations.cjs','check-question-editorial.cjs','check-boolean-editorial.cjs','check-supplemental-diagrams.cjs','check-boolean-practice.cjs','check-supplemental-render.cjs']) require('node:child_process').execFileSync(process.execPath,['scripts/manufacturing/'+check],{cwd:root,stdio:'pipe'});
+require('node:child_process').execFileSync('python3',['scripts/manufacturing/check-runtime-extension36.py'],{cwd:root,stdio:'pipe'});
 // Python authoring uses codepoint sort; these schema keys are ASCII.
 const sorted=x=>Array.isArray(x)?x.map(sorted):x&&typeof x==='object'?Object.fromEntries(Object.keys(x).sort().map(k=>[k,sorted(x[k])])):x;
 const hash=x=>crypto.createHash('sha256').update(JSON.stringify(sorted(x))).digest('hex');

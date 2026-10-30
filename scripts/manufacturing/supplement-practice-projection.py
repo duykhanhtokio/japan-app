@@ -6,8 +6,18 @@ BASE='947fecd8eb083f596810f8cb5884dff9db2b7aadc5e40cdb95a546125edd8b5f'
 AFTER='916478a8a44dd7abeba7bbf91d72b68b0caa25fceb4c75d01a0d0ec77582e88e'
 CLARIFIED='7c13a9073ad41b721ff5c2d1ce0f753f0ecdeb3a426087b5571c25ce10796225'
 TERM_EDITORIAL='b111774eec13e1a6932c4358ce583ff07f1f9b8c4a26ec5cf24470b64d385574'
+SUPPLEMENTAL_DIAGRAMS='55e0fda24abe8da991c48178371ca84424273725ed4b8ecf779f7d70fe4b04a2'
+BOOLEAN_PRACTICE='0d205ea0f5150852956a13cfb71911108c4feb62ac8fc483f70f04466ba9c74e'
 def historical_course(raw):
     digest=hashlib.sha256(raw).hexdigest()
+    if digest==BOOLEAN_PRACTICE:
+        raw=(ROOT/'docs/ssw-workspace/manufacturing/batch36-continuation/base-boolean-ManufacturingCourse.tsx').read_bytes()
+        assert hashlib.sha256(raw).hexdigest()==SUPPLEMENTAL_DIAGRAMS,'Boolean practice predecessor snapshot drift'
+        digest=SUPPLEMENTAL_DIAGRAMS
+    if digest==SUPPLEMENTAL_DIAGRAMS:
+        raw=(ROOT/'docs/ssw-workspace/manufacturing/batch36-continuation/base-ManufacturingCourse.tsx').read_bytes()
+        assert hashlib.sha256(raw).hexdigest()==TERM_EDITORIAL,'Supplemental predecessor snapshot drift'
+        digest=TERM_EDITORIAL
     if digest==TERM_EDITORIAL:
         raw=(ROOT/'docs/ssw-workspace/manufacturing/batch35-continuation/base-ManufacturingCourse.tsx').read_bytes()
         assert hashlib.sha256(raw).hexdigest()==CLARIFIED,'Term editorial predecessor snapshot drift'

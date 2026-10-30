@@ -1,3 +1,13 @@
+# Manufacturing SSW1 — batch36 source-qualified diagrams and Boolean practice, 2026-10-30
+
+Integrated5independent conceptual figures (LCR/thermocouple/Hall/caliperparts/Vickersdiagonals) with60source-boundtargetcaptions;22original+5supplemental=27figures. Verified all3originalPDFhashes and visually reread electrical104/105/161,mechanical72,surface184;notnewunique-page orwhole-sourceclosure. Added dualdistributivity teaching to electrical075 inJapanese+12targets and4original formativequestions/48targetpairs with20visible rubyfields. Separate IDs/revisions,exactteachingactivation/source/targetguards,no fallback;existing corebanks/456weeklyquestions/8caliperquestions/96targets/30mocks+3assemblies/12guides unchanged.
+
+Independent AI source/pixel/technicalcaption/question review,artworkexacthashes,mainstate/negativeguards,savedanswer-position-submission/grading,104diagramSSR+192translatedoptionSSRcases,scopedESLint0/0,isolatedruntime-replay2files andJLPT10/10lock PASS. SSR usesdeclaredappearance/safearea/imageadapters;notbrowserlayout/image-load/zoom/nativeacceptance. FullappTypeScript6GiB retains1existing agriculture RecognitionImages.tsx:202 TS2322,0manufacturingdiagnostics. End-of-assembler narrowreplay preservesexactreviewedreader/mockloader;fullassembler/Expo notrun.
+
+Counts262corelessons/456coreweeklyquestions/30originalmocks+3curated/12guides unchanged;additionalformative now8caliper+4Boolean. Fourvisual-detail assessmentgaps preciselyrecorded;full574pageatomization,alltranslationsemantics anddomain/native/physicaldevice gates remainpending. Allwholecurriculum/release/human/native/domain/deviceflagsfalse;SSW2excluded. Readbatch36-continuation/REPORT.vi.md andsession-evidence.json. Nobackgroundprocess implied.
+
+---
+
 # Manufacturing SSW1 — batch35 six-AI safety and core-question continuation, 2026-10-30
 
 Integrated exact-source-bound surface062 term clarification in Japanese+12targets;28 EN/VI safety-field corrections after377 Japanese/754target safety-field comparisons; and surface07theoryq13 suspect-goods segregation clarification in Japanese+12targets with alignedruby. Frozen banks/IDs/hashes/grading/sessions preserved. Actual new review502questions/1404rationales plus698 exact historical bindings gives cumulative1200core questions/3000rationales; not1200 newly read, PDF-fidelity or domain/native certification.22actual PNGs/264caption bindings PASS;18selected Japanese high-risk lessons reread, no speculative corrections.

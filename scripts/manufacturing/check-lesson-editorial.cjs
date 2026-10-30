@@ -2,6 +2,10 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const root=path.resolve(__dirname,'../..'),read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const {transformSync}=require('esbuild'),file=path.join(root,'src/data/manufacturing/lesson-editorial.ts');
 const compiled=new Module(file,module);compiled.filename=file;compiled.paths=Module._nodeModulePaths(path.dirname(file));
+const booleanFile=path.join(root,'src/data/manufacturing/boolean-editorial.ts'),booleanModule=new Module(booleanFile,module);
+booleanModule.filename=booleanFile;booleanModule.paths=Module._nodeModulePaths(path.dirname(booleanFile));
+booleanModule._compile(transformSync(fs.readFileSync(booleanFile,'utf8'),{loader:'ts',format:'cjs'}).code,booleanFile);
+compiled.require=function(id){return id==='./boolean-editorial'?booleanModule.exports:Module.prototype.require.call(this,id);};
 compiled._compile(transformSync(fs.readFileSync(file,'utf8'),{loader:'ts',format:'cjs'}).code,file);
 const apply=compiled.exports.manufacturingLessonParagraph,patch=require(path.join(root,'src/data/manufacturing/lesson-editorial.json'));
 const lesson=read('src/data/manufacturing/mechanical.json').lessons.find(l=>l.id===patch.lessonId),before=JSON.stringify(lesson);

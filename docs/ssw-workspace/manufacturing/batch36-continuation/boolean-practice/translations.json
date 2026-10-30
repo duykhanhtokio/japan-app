@@ -1,0 +1,945 @@
+{
+  "schemaVersion": 1,
+  "status": "ai_translated_draft",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "locales": {
+    "en": {
+      "mfg1-boolean-distributivity-check-01": {
+        "sourceHash": "7ae15862f98608d126a20cae67138923f3595a0b1dce5f611ddd83267f19af69",
+        "stem": "In binary logic, a, b and c are 0 or 1; ＋ means OR and ・ means AND. Which expression equals a+(b・c) for every input?",
+        "options": [
+          "(a+b)・(a+c)",
+          "(a+b)+(a+c)",
+          "(a+b)・c",
+          "a・(b+c)"
+        ],
+        "reasons": [
+          "Distributing OR over AND gives (a+b)・(a+c). The two sides agree for all eight inputs.",
+          "For a=0, b=1, c=0, the original expression is 0, but this expression is 1.",
+          "For a=1, b=0, c=0, the original expression is 1, but this expression is 0.",
+          "For a=1, b=0, c=0, the original expression is 1, but this expression is 0."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-02": {
+        "sourceHash": "e17a90e54616cfbc64ec142807ba026c520a7b392799085a3ee8a1e11f70693e",
+        "stem": "In binary logic, ＋ means OR and ・ means AND. Let a=0, b=1 and c=1. Which pair gives the values of the left side a+(b・c) and the right side (a+b)・(a+c)?",
+        "options": [
+          "Left 0, right 0",
+          "Left 1, right 1",
+          "Left 0, right 1",
+          "Left 1, right 0"
+        ],
+        "reasons": [
+          "Since b・c=1, neither side is 0.",
+          "The left side is 0+(1・1)=1 and the right side is (0+1)・(0+1)=1. ＋ means OR, not numerical addition.",
+          "The left side is also 0+(1・1)=1, so it is not 0.",
+          "The right side is also (0+1)・(0+1)=1, so it is not 0."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-03": {
+        "sourceHash": "75368e9c4f221fb2a172a0bd6219cff388c0b58b626aa59b764bb19cdc54154c",
+        "stem": "In binary logic, a, b and c are 0 or 1. Which input demonstrates that a+(b・c)=a・(b+c) does not hold? ＋ means OR and ・ means AND.",
+        "options": [
+          "a=0、b=0、c=0",
+          "a=0、b=1、c=0",
+          "a=1、b=0、c=0",
+          "a=1、b=1、c=0"
+        ],
+        "reasons": [
+          "Both sides are 0 for this input, so it does not demonstrate a mismatch.",
+          "Both sides are 0 for this input, so it does not demonstrate a mismatch.",
+          "The left side is 1 and the right side is 0. A single mismatch disproves the claim that they are equal for every input.",
+          "Both sides are 1 for this input, so it does not demonstrate a mismatch."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-04": {
+        "sourceHash": "7b3df3b1c3eb89760e092783fcfb2fd6e4781fc62ee31b358cbda0e0b1999905",
+        "stem": "In binary logic, ＋ means OR and ・ means AND. Check a+(b・c)=(a+b)・(a+c) for all eight input combinations. Which explanation covers every input?",
+        "options": [
+          "Agreement in only the row a=0, b=0, c=0 is sufficient.",
+          "Calculate ＋ as ordinary addition.",
+          "Agreement in only the two rows where a=b=c is sufficient.",
+          "In the four rows with a=0, both sides equal b・c; in the four rows with a=1, both sides equal 1."
+        ],
+        "reasons": [
+          "Agreement in one row says nothing about the remaining seven rows.",
+          "Here ＋ means OR, so 1+1 gives 1 as the result of OR. Distinguish this from ordinary addition.",
+          "The two rows where a=b=c leave the remaining six rows unchecked.",
+          "The two cases for a divide all eight inputs, showing equal results on both sides in each case. This mathematical check is separate from authorization to modify a real safety circuit."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      }
+    },
+    "vi": {
+      "mfg1-boolean-distributivity-check-01": {
+        "sourceHash": "7ae15862f98608d126a20cae67138923f3595a0b1dce5f611ddd83267f19af69",
+        "stem": "Trong logic nhị phân, a, b, c nhận giá trị 0 hoặc 1; ＋ là OR và ・ là AND. Biểu thức nào có giá trị bằng a+(b・c) với mọi đầu vào?",
+        "options": [
+          "(a+b)・(a+c)",
+          "(a+b)+(a+c)",
+          "(a+b)・c",
+          "a・(b+c)"
+        ],
+        "reasons": [
+          "Phân phối OR qua AND cho kết quả (a+b)・(a+c). Hai vế bằng nhau với cả 8 tổ hợp đầu vào.",
+          "Với a=0, b=1, c=0, biểu thức ban đầu bằng 0 nhưng biểu thức này bằng 1.",
+          "Với a=1, b=0, c=0, biểu thức ban đầu bằng 1 nhưng biểu thức này bằng 0.",
+          "Với a=1, b=0, c=0, biểu thức ban đầu bằng 1 nhưng biểu thức này bằng 0."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-02": {
+        "sourceHash": "e17a90e54616cfbc64ec142807ba026c520a7b392799085a3ee8a1e11f70693e",
+        "stem": "Trong logic nhị phân, ＋ là OR và ・ là AND. Cho a=0, b=1, c=1. Cặp nào là giá trị của vế trái a+(b・c) và vế phải (a+b)・(a+c)?",
+        "options": [
+          "Vế trái 0, vế phải 0",
+          "Vế trái 1, vế phải 1",
+          "Vế trái 0, vế phải 1",
+          "Vế trái 1, vế phải 0"
+        ],
+        "reasons": [
+          "Vì b・c=1 nên cả vế trái lẫn vế phải đều không bằng 0.",
+          "Vế trái là 0+(1・1)=1; vế phải là (0+1)・(0+1)=1. ＋ là OR, không phải phép cộng số học.",
+          "Vế trái cũng bằng 0+(1・1)=1 nên không bằng 0.",
+          "Vế phải cũng bằng (0+1)・(0+1)=1 nên không bằng 0."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-03": {
+        "sourceHash": "75368e9c4f221fb2a172a0bd6219cff388c0b58b626aa59b764bb19cdc54154c",
+        "stem": "Trong logic nhị phân, a, b, c nhận giá trị 0 hoặc 1. Đầu vào nào chứng minh a+(b・c)=a・(b+c) không đúng? ＋ là OR và ・ là AND.",
+        "options": [
+          "a=0、b=0、c=0",
+          "a=0、b=1、c=0",
+          "a=1、b=0、c=0",
+          "a=1、b=1、c=0"
+        ],
+        "reasons": [
+          "Với đầu vào này, hai vế đều bằng 0 nên không chứng minh được sự khác nhau.",
+          "Với đầu vào này, hai vế đều bằng 0 nên không chứng minh được sự khác nhau.",
+          "Vế trái bằng 1, vế phải bằng 0. Chỉ một trường hợp khác nhau cũng đủ bác bỏ khẳng định rằng hai vế bằng nhau với mọi đầu vào.",
+          "Với đầu vào này, hai vế đều bằng 1 nên không chứng minh được sự khác nhau."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-04": {
+        "sourceHash": "7b3df3b1c3eb89760e092783fcfb2fd6e4781fc62ee31b358cbda0e0b1999905",
+        "stem": "Trong logic nhị phân, ＋ là OR và ・ là AND. Kiểm tra a+(b・c)=(a+b)・(a+c) bằng 8 tổ hợp đầu vào. Giải thích nào bao quát mọi đầu vào?",
+        "options": [
+          "Chỉ cần hai vế bằng nhau ở dòng a=0, b=0, c=0.",
+          "Chỉ cần tính ＋ như phép cộng thông thường.",
+          "Chỉ cần hai vế bằng nhau ở hai dòng có a=b=c.",
+          "Ở 4 dòng có a=0, hai vế đều bằng b・c; ở 4 dòng có a=1, hai vế đều bằng 1."
+        ],
+        "reasons": [
+          "Hai vế bằng nhau ở một dòng chưa cho phép kết luận về 7 dòng còn lại.",
+          "Ở đây ＋ là OR nên 1+1 cho kết quả OR bằng 1. Cần phân biệt với phép cộng thông thường.",
+          "Chỉ xét hai dòng có a=b=c thì chưa kiểm tra 6 dòng còn lại.",
+          "Hai trường hợp của a chia đủ cả 8 tổ hợp, cho thấy hai vế bằng nhau trong mỗi trường hợp. Đây là kiểm chứng tính toán, khác với việc được phép thay đổi mạch an toàn thực tế."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      }
+    },
+    "id": {
+      "mfg1-boolean-distributivity-check-01": {
+        "sourceHash": "7ae15862f98608d126a20cae67138923f3595a0b1dce5f611ddd83267f19af69",
+        "stem": "Dalam logika biner, a, b, dan c bernilai 0 atau 1; ＋ berarti OR dan ・ berarti AND. Ekspresi mana yang sama dengan a+(b・c) untuk setiap masukan?",
+        "options": [
+          "(a+b)・(a+c)",
+          "(a+b)+(a+c)",
+          "(a+b)・c",
+          "a・(b+c)"
+        ],
+        "reasons": [
+          "Mendistribusikan OR terhadap AND menghasilkan (a+b)・(a+c). Kedua ruas sama untuk seluruh delapan masukan.",
+          "Untuk a=0, b=1, c=0, ekspresi semula bernilai 0, tetapi ekspresi ini bernilai 1.",
+          "Untuk a=1, b=0, c=0, ekspresi semula bernilai 1, tetapi ekspresi ini bernilai 0.",
+          "Untuk a=1, b=0, c=0, ekspresi semula bernilai 1, tetapi ekspresi ini bernilai 0."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-02": {
+        "sourceHash": "e17a90e54616cfbc64ec142807ba026c520a7b392799085a3ee8a1e11f70693e",
+        "stem": "Dalam logika biner, ＋ berarti OR dan ・ berarti AND. Misalkan a=0, b=1, c=1. Pasangan mana yang menunjukkan nilai ruas kiri a+(b・c) dan ruas kanan (a+b)・(a+c)?",
+        "options": [
+          "Ruas kiri 0, ruas kanan 0",
+          "Ruas kiri 1, ruas kanan 1",
+          "Ruas kiri 0, ruas kanan 1",
+          "Ruas kiri 1, ruas kanan 0"
+        ],
+        "reasons": [
+          "Karena b・c=1, kedua ruas tidak bernilai 0.",
+          "Ruas kiri adalah 0+(1・1)=1 dan ruas kanan adalah (0+1)・(0+1)=1. ＋ adalah OR, bukan penjumlahan bilangan.",
+          "Ruas kiri juga bernilai 0+(1・1)=1, jadi bukan 0.",
+          "Ruas kanan juga bernilai (0+1)・(0+1)=1, jadi bukan 0."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-03": {
+        "sourceHash": "75368e9c4f221fb2a172a0bd6219cff388c0b58b626aa59b764bb19cdc54154c",
+        "stem": "Dalam logika biner, a, b, dan c bernilai 0 atau 1. Masukan mana yang membuktikan a+(b・c)=a・(b+c) tidak berlaku? ＋ berarti OR dan ・ berarti AND.",
+        "options": [
+          "a=0、b=0、c=0",
+          "a=0、b=1、c=0",
+          "a=1、b=0、c=0",
+          "a=1、b=1、c=0"
+        ],
+        "reasons": [
+          "Untuk masukan ini, kedua ruas bernilai 0 sehingga tidak menunjukkan ketidaksamaan.",
+          "Untuk masukan ini, kedua ruas bernilai 0 sehingga tidak menunjukkan ketidaksamaan.",
+          "Ruas kiri bernilai 1 dan ruas kanan bernilai 0. Satu ketidaksamaan saja dapat menyangkal klaim bahwa keduanya sama untuk semua masukan.",
+          "Untuk masukan ini, kedua ruas bernilai 1 sehingga tidak menunjukkan ketidaksamaan."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-04": {
+        "sourceHash": "7b3df3b1c3eb89760e092783fcfb2fd6e4781fc62ee31b358cbda0e0b1999905",
+        "stem": "Dalam logika biner, ＋ berarti OR dan ・ berarti AND. Periksa a+(b・c)=(a+b)・(a+c) untuk delapan kombinasi masukan. Penjelasan mana yang mencakup semua masukan?",
+        "options": [
+          "Cukup sama pada satu baris a=0, b=0, c=0.",
+          "Cukup menghitung ＋ sebagai penjumlahan biasa.",
+          "Cukup sama pada dua baris dengan a=b=c.",
+          "Pada empat baris dengan a=0, kedua ruas bernilai b・c; pada empat baris dengan a=1, kedua ruas bernilai 1."
+        ],
+        "reasons": [
+          "Kesamaan pada satu baris tidak cukup untuk menilai tujuh baris lainnya.",
+          "Di sini ＋ adalah OR, sehingga 1+1 menghasilkan 1 sebagai hasil OR. Bedakan dari penjumlahan biasa.",
+          "Dua baris dengan a=b=c belum memeriksa enam baris lainnya.",
+          "Dua kasus untuk a membagi seluruh delapan masukan dan menunjukkan kesamaan kedua ruas pada tiap kasus. Pemeriksaan matematis ini terpisah dari izin mengubah rangkaian keselamatan nyata."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      }
+    },
+    "zh-CN": {
+      "mfg1-boolean-distributivity-check-01": {
+        "sourceHash": "7ae15862f98608d126a20cae67138923f3595a0b1dce5f611ddd83267f19af69",
+        "stem": "在二值逻辑中，a、b、c取0或1，＋表示OR，・表示AND。哪个式子在所有输入下都与a+(b・c)相等？",
+        "options": [
+          "(a+b)・(a+c)",
+          "(a+b)+(a+c)",
+          "(a+b)・c",
+          "a・(b+c)"
+        ],
+        "reasons": [
+          "将OR对AND分配可得(a+b)・(a+c)，8种输入下两边都相等。",
+          "a=0、b=1、c=0时，原式为0，但该式为1。",
+          "a=1、b=0、c=0时，原式为1，但该式为0。",
+          "a=1、b=0、c=0时，原式为1，但该式为0。"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-02": {
+        "sourceHash": "e17a90e54616cfbc64ec142807ba026c520a7b392799085a3ee8a1e11f70693e",
+        "stem": "在二值逻辑中，＋表示OR，・表示AND。设a=0、b=1、c=1。左边a+(b・c)和右边(a+b)・(a+c)的值是哪一组？",
+        "options": [
+          "左边0，右边0",
+          "左边1，右边1",
+          "左边0，右边1",
+          "左边1，右边0"
+        ],
+        "reasons": [
+          "b・c=1，所以两边都不是0。",
+          "左边为0+(1・1)=1，右边为(0+1)・(0+1)=1。＋是OR，不是数的加法。",
+          "左边也为0+(1・1)=1，因此不是0。",
+          "右边也为(0+1)・(0+1)=1，因此不是0。"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-03": {
+        "sourceHash": "75368e9c4f221fb2a172a0bd6219cff388c0b58b626aa59b764bb19cdc54154c",
+        "stem": "二值逻辑中的a、b、c取0或1。哪组输入能证明a+(b・c)=a・(b+c)不成立？＋表示OR，・表示AND。",
+        "options": [
+          "a=0、b=0、c=0",
+          "a=0、b=1、c=0",
+          "a=1、b=0、c=0",
+          "a=1、b=1、c=0"
+        ],
+        "reasons": [
+          "这组输入下两边都为0，不能证明不相等。",
+          "这组输入下两边都为0，不能证明不相等。",
+          "左边为1，右边为0。只需一组不相等的输入，就能否定所有输入下都相等的说法。",
+          "这组输入下两边都为1，不能证明不相等。"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-04": {
+        "sourceHash": "7b3df3b1c3eb89760e092783fcfb2fd6e4781fc62ee31b358cbda0e0b1999905",
+        "stem": "在二值逻辑中，＋表示OR，・表示AND。用8种输入验证a+(b・c)=(a+b)・(a+c)。哪项说明涵盖全部输入？",
+        "options": [
+          "只要a=0、b=0、c=0这一行相等即可。",
+          "把＋按普通加法计算即可。",
+          "只要a=b=c的两行相等即可。",
+          "a=0的4行两边都等于b・c，a=1的4行两边都等于1。"
+        ],
+        "reasons": [
+          "只有一行相等，无法判断其余7行。",
+          "这里＋是OR，因此1+1的OR结果是1，须与普通加法区分。",
+          "只验证a=b=c的两行，尚未检查其余6行。",
+          "按a的两种情况覆盖全部8种输入，并说明每种情况两边的结果相等。这是数学验算，与实际安全电路的变更许可不同。"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      }
+    },
+    "zh-TW": {
+      "mfg1-boolean-distributivity-check-01": {
+        "sourceHash": "7ae15862f98608d126a20cae67138923f3595a0b1dce5f611ddd83267f19af69",
+        "stem": "在二值邏輯中，a、b、c取0或1，＋表示OR，・表示AND。哪個式子在所有輸入下都與a+(b・c)相等？",
+        "options": [
+          "(a+b)・(a+c)",
+          "(a+b)+(a+c)",
+          "(a+b)・c",
+          "a・(b+c)"
+        ],
+        "reasons": [
+          "將OR對AND分配可得(a+b)・(a+c)，8種輸入下兩邊都相等。",
+          "a=0、b=1、c=0時，原式為0，但該式為1。",
+          "a=1、b=0、c=0時，原式為1，但該式為0。",
+          "a=1、b=0、c=0時，原式為1，但該式為0。"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-02": {
+        "sourceHash": "e17a90e54616cfbc64ec142807ba026c520a7b392799085a3ee8a1e11f70693e",
+        "stem": "在二值邏輯中，＋表示OR，・表示AND。設a=0、b=1、c=1。左邊a+(b・c)和右邊(a+b)・(a+c)的值是哪一組？",
+        "options": [
+          "左邊0，右邊0",
+          "左邊1，右邊1",
+          "左邊0，右邊1",
+          "左邊1，右邊0"
+        ],
+        "reasons": [
+          "b・c=1，所以兩邊都不是0。",
+          "左邊為0+(1・1)=1，右邊為(0+1)・(0+1)=1。＋是OR，不是數的加法。",
+          "左邊也為0+(1・1)=1，因此不是0。",
+          "右邊也為(0+1)・(0+1)=1，因此不是0。"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-03": {
+        "sourceHash": "75368e9c4f221fb2a172a0bd6219cff388c0b58b626aa59b764bb19cdc54154c",
+        "stem": "二值邏輯中的a、b、c取0或1。哪組輸入能證明a+(b・c)=a・(b+c)不成立？＋表示OR，・表示AND。",
+        "options": [
+          "a=0、b=0、c=0",
+          "a=0、b=1、c=0",
+          "a=1、b=0、c=0",
+          "a=1、b=1、c=0"
+        ],
+        "reasons": [
+          "這組輸入下兩邊都為0，不能證明不相等。",
+          "這組輸入下兩邊都為0，不能證明不相等。",
+          "左邊為1，右邊為0。只需一組不相等的輸入，就能否定所有輸入下都相等的說法。",
+          "這組輸入下兩邊都為1，不能證明不相等。"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-04": {
+        "sourceHash": "7b3df3b1c3eb89760e092783fcfb2fd6e4781fc62ee31b358cbda0e0b1999905",
+        "stem": "在二值邏輯中，＋表示OR，・表示AND。用8種輸入驗證a+(b・c)=(a+b)・(a+c)。哪項說明涵蓋全部輸入？",
+        "options": [
+          "只要a=0、b=0、c=0這一列相等即可。",
+          "把＋按普通加法計算即可。",
+          "只要a=b=c的兩列相等即可。",
+          "a=0的4列兩邊都等於b・c，a=1的4列兩邊都等於1。"
+        ],
+        "reasons": [
+          "只有一列相等，無法判斷其餘7列。",
+          "這裡＋是OR，因此1+1的OR結果是1，須與普通加法區分。",
+          "只驗證a=b=c的兩列，尚未檢查其餘6列。",
+          "按a的兩種情況涵蓋全部8種輸入，並說明每種情況兩邊的結果相等。這是數學驗算，與實際安全電路的變更許可不同。"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      }
+    },
+    "hi": {
+      "mfg1-boolean-distributivity-check-01": {
+        "sourceHash": "7ae15862f98608d126a20cae67138923f3595a0b1dce5f611ddd83267f19af69",
+        "stem": "द्विआधारी तर्क में a, b और c के मान 0 या 1 हैं; ＋ का अर्थ OR और ・ का अर्थ AND है। कौन-सा व्यंजक हर इनपुट पर a+(b・c) के बराबर है?",
+        "options": [
+          "(a+b)・(a+c)",
+          "(a+b)+(a+c)",
+          "(a+b)・c",
+          "a・(b+c)"
+        ],
+        "reasons": [
+          "OR को AND पर वितरित करने पर (a+b)・(a+c) मिलता है। आठों इनपुट पर दोनों पक्ष समान हैं।",
+          "a=0, b=1, c=0 पर मूल व्यंजक 0 है, लेकिन यह व्यंजक 1 है।",
+          "a=1, b=0, c=0 पर मूल व्यंजक 1 है, लेकिन यह व्यंजक 0 है।",
+          "a=1, b=0, c=0 पर मूल व्यंजक 1 है, लेकिन यह व्यंजक 0 है।"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-02": {
+        "sourceHash": "e17a90e54616cfbc64ec142807ba026c520a7b392799085a3ee8a1e11f70693e",
+        "stem": "द्विआधारी तर्क में ＋ का अर्थ OR और ・ का अर्थ AND है। a=0, b=1, c=1 मानें। बाएँ पक्ष a+(b・c) और दाएँ पक्ष (a+b)・(a+c) के मानों की सही जोड़ी कौन-सी है?",
+        "options": [
+          "बायाँ 0, दायाँ 0",
+          "बायाँ 1, दायाँ 1",
+          "बायाँ 0, दायाँ 1",
+          "बायाँ 1, दायाँ 0"
+        ],
+        "reasons": [
+          "b・c=1 है, इसलिए कोई भी पक्ष 0 नहीं है।",
+          "बायाँ पक्ष 0+(1・1)=1 और दायाँ पक्ष (0+1)・(0+1)=1 है। ＋ का अर्थ OR है, संख्याओं का जोड़ नहीं।",
+          "बायाँ पक्ष भी 0+(1・1)=1 है, इसलिए 0 नहीं है।",
+          "दायाँ पक्ष भी (0+1)・(0+1)=1 है, इसलिए 0 नहीं है।"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-03": {
+        "sourceHash": "75368e9c4f221fb2a172a0bd6219cff388c0b58b626aa59b764bb19cdc54154c",
+        "stem": "द्विआधारी तर्क में a, b और c के मान 0 या 1 हैं। कौन-सा इनपुट दिखाता है कि a+(b・c)=a・(b+c) सही नहीं है? ＋ का अर्थ OR और ・ का अर्थ AND है।",
+        "options": [
+          "a=0、b=0、c=0",
+          "a=0、b=1、c=0",
+          "a=1、b=0、c=0",
+          "a=1、b=1、c=0"
+        ],
+        "reasons": [
+          "इस इनपुट पर दोनों पक्ष 0 हैं, इसलिए यह असमानता नहीं दिखाता।",
+          "इस इनपुट पर दोनों पक्ष 0 हैं, इसलिए यह असमानता नहीं दिखाता।",
+          "बायाँ पक्ष 1 और दायाँ पक्ष 0 है। एक असमानता भी हर इनपुट पर समान होने के दावे को गलत सिद्ध करती है।",
+          "इस इनपुट पर दोनों पक्ष 1 हैं, इसलिए यह असमानता नहीं दिखाता।"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-04": {
+        "sourceHash": "7b3df3b1c3eb89760e092783fcfb2fd6e4781fc62ee31b358cbda0e0b1999905",
+        "stem": "द्विआधारी तर्क में ＋ का अर्थ OR और ・ का अर्थ AND है। a+(b・c)=(a+b)・(a+c) को आठों इनपुट संयोजनों से जाँचें। कौन-सा स्पष्टीकरण सभी इनपुट को समेटता है?",
+        "options": [
+          "केवल a=0, b=0, c=0 वाली पंक्ति में समानता पर्याप्त है।",
+          "＋ को सामान्य जोड़ मानकर गणना करना पर्याप्त है।",
+          "केवल a=b=c वाली दो पंक्तियों में समानता पर्याप्त है।",
+          "a=0 वाली चार पंक्तियों में दोनों पक्ष b・c और a=1 वाली चार पंक्तियों में दोनों पक्ष 1 हैं।"
+        ],
+        "reasons": [
+          "एक पंक्ति में समानता से बाकी सात पंक्तियों का निर्णय नहीं किया जा सकता।",
+          "यहाँ ＋ का अर्थ OR है, इसलिए 1+1 का OR परिणाम 1 है। इसे सामान्य जोड़ से अलग समझें।",
+          "a=b=c वाली केवल दो पंक्तियाँ देखने पर बाकी छह पंक्तियाँ जाँची नहीं जातीं।",
+          "a के दो मामलों में आठों इनपुट बाँटकर हर मामले में दोनों पक्षों की समानता दिखाई गई है। यह गणितीय जाँच वास्तविक सुरक्षा सर्किट बदलने की अनुमति से अलग है।"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      }
+    },
+    "bn": {
+      "mfg1-boolean-distributivity-check-01": {
+        "sourceHash": "7ae15862f98608d126a20cae67138923f3595a0b1dce5f611ddd83267f19af69",
+        "stem": "দ্বিমিক যুক্তিতে a, b ও c-এর মান 0 বা 1; ＋ বোঝায় OR এবং ・ বোঝায় AND। কোন রাশিটি সব ইনপুটে a+(b・c)-এর সমান?",
+        "options": [
+          "(a+b)・(a+c)",
+          "(a+b)+(a+c)",
+          "(a+b)・c",
+          "a・(b+c)"
+        ],
+        "reasons": [
+          "AND-এর ওপর OR বণ্টন করলে (a+b)・(a+c) পাওয়া যায়। আটটি ইনপুটেই উভয় পক্ষ সমান।",
+          "a=0, b=1, c=0 হলে মূল রাশির মান 0, কিন্তু এই রাশির মান 1।",
+          "a=1, b=0, c=0 হলে মূল রাশির মান 1, কিন্তু এই রাশির মান 0।",
+          "a=1, b=0, c=0 হলে মূল রাশির মান 1, কিন্তু এই রাশির মান 0।"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-02": {
+        "sourceHash": "e17a90e54616cfbc64ec142807ba026c520a7b392799085a3ee8a1e11f70693e",
+        "stem": "দ্বিমিক যুক্তিতে ＋ বোঝায় OR এবং ・ বোঝায় AND। a=0, b=1, c=1 ধরা হোক। বাম পক্ষ a+(b・c) ও ডান পক্ষ (a+b)・(a+c)-এর মানের জোড়া কোনটি?",
+        "options": [
+          "বাম পক্ষ 0, ডান পক্ষ 0",
+          "বাম পক্ষ 1, ডান পক্ষ 1",
+          "বাম পক্ষ 0, ডান পক্ষ 1",
+          "বাম পক্ষ 1, ডান পক্ষ 0"
+        ],
+        "reasons": [
+          "b・c=1 হওয়ায় কোনো পক্ষই 0 নয়।",
+          "বাম পক্ষ 0+(1・1)=1 এবং ডান পক্ষ (0+1)・(0+1)=1। ＋ হলো OR, সংখ্যার সাধারণ যোগ নয়।",
+          "বাম পক্ষও 0+(1・1)=1, তাই 0 নয়।",
+          "ডান পক্ষও (0+1)・(0+1)=1, তাই 0 নয়।"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-03": {
+        "sourceHash": "75368e9c4f221fb2a172a0bd6219cff388c0b58b626aa59b764bb19cdc54154c",
+        "stem": "দ্বিমিক যুক্তিতে a, b ও c-এর মান 0 বা 1। কোন ইনপুট দেখায় যে a+(b・c)=a・(b+c) সঠিক নয়? ＋ বোঝায় OR এবং ・ বোঝায় AND।",
+        "options": [
+          "a=0、b=0、c=0",
+          "a=0、b=1、c=0",
+          "a=1、b=0、c=0",
+          "a=1、b=1、c=0"
+        ],
+        "reasons": [
+          "এই ইনপুটে উভয় পক্ষ 0, তাই অমিল দেখায় না।",
+          "এই ইনপুটে উভয় পক্ষ 0, তাই অমিল দেখায় না।",
+          "বাম পক্ষ 1 এবং ডান পক্ষ 0 হয়। একটি অমিলই সব ইনপুটে সমান হওয়ার দাবি খণ্ডন করতে পারে।",
+          "এই ইনপুটে উভয় পক্ষ 1, তাই অমিল দেখায় না।"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-04": {
+        "sourceHash": "7b3df3b1c3eb89760e092783fcfb2fd6e4781fc62ee31b358cbda0e0b1999905",
+        "stem": "দ্বিমিক যুক্তিতে ＋ বোঝায় OR এবং ・ বোঝায় AND। আটটি ইনপুট সমন্বয়ে a+(b・c)=(a+b)・(a+c) যাচাই করুন। কোন ব্যাখ্যাটি সব ইনপুটকে অন্তর্ভুক্ত করে?",
+        "options": [
+          "শুধু a=0, b=0, c=0 সারিতে সমান হলেই যথেষ্ট।",
+          "＋-কে সাধারণ যোগ হিসেবে হিসাব করলেই যথেষ্ট।",
+          "শুধু a=b=c হওয়া দুই সারিতে সমান হলেই যথেষ্ট।",
+          "a=0 হওয়া চার সারিতে উভয় পক্ষ b・c এবং a=1 হওয়া চার সারিতে উভয় পক্ষ 1 হয়।"
+        ],
+        "reasons": [
+          "এক সারিতে মিল থাকলেই বাকি সাত সারি সম্পর্কে সিদ্ধান্ত নেওয়া যায় না।",
+          "এখানে ＋ হলো OR, তাই OR-এর ফল হিসেবে 1+1 হয় 1। একে সাধারণ যোগ থেকে আলাদা করতে হবে।",
+          "শুধু a=b=c হওয়া দুই সারি দেখলে বাকি ছয় সারি যাচাই করা হয় না।",
+          "a-এর দুই অবস্থায় সব আটটি ইনপুট ভাগ করে প্রতিটি অবস্থায় উভয় পক্ষের ফল সমান দেখানো হয়েছে। এই গাণিতিক যাচাই বাস্তব নিরাপত্তা সার্কিট পরিবর্তনের অনুমতি থেকে আলাদা।"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      }
+    },
+    "ne": {
+      "mfg1-boolean-distributivity-check-01": {
+        "sourceHash": "7ae15862f98608d126a20cae67138923f3595a0b1dce5f611ddd83267f19af69",
+        "stem": "द्विआधारी तर्कमा a, b र c का मान 0 वा 1 हुन्; ＋ ले OR र ・ ले AND जनाउँछ। कुन अभिव्यक्ति सबै इनपुटमा a+(b・c) बराबर हुन्छ?",
+        "options": [
+          "(a+b)・(a+c)",
+          "(a+b)+(a+c)",
+          "(a+b)・c",
+          "a・(b+c)"
+        ],
+        "reasons": [
+          "OR लाई AND माथि वितरण गर्दा (a+b)・(a+c) हुन्छ। आठै इनपुटमा दुवै पक्ष मिल्छन्।",
+          "a=0, b=1, c=0 हुँदा मूल अभिव्यक्ति 0 तर यो अभिव्यक्ति 1 हुन्छ।",
+          "a=1, b=0, c=0 हुँदा मूल अभिव्यक्ति 1 तर यो अभिव्यक्ति 0 हुन्छ।",
+          "a=1, b=0, c=0 हुँदा मूल अभिव्यक्ति 1 तर यो अभिव्यक्ति 0 हुन्छ।"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-02": {
+        "sourceHash": "e17a90e54616cfbc64ec142807ba026c520a7b392799085a3ee8a1e11f70693e",
+        "stem": "द्विआधारी तर्कमा ＋ ले OR र ・ ले AND जनाउँछ। a=0, b=1, c=1 मान्नुहोस्। बायाँ पक्ष a+(b・c) र दायाँ पक्ष (a+b)・(a+c) का मानको जोडी कुन हो?",
+        "options": [
+          "बायाँ 0, दायाँ 0",
+          "बायाँ 1, दायाँ 1",
+          "बायाँ 0, दायाँ 1",
+          "बायाँ 1, दायाँ 0"
+        ],
+        "reasons": [
+          "b・c=1 भएकाले दुवै पक्ष 0 होइनन्।",
+          "बायाँ पक्ष 0+(1・1)=1 र दायाँ पक्ष (0+1)・(0+1)=1 हुन्छ। ＋ भनेको OR हो, सङ्ख्याको सामान्य जोड होइन।",
+          "बायाँ पक्ष पनि 0+(1・1)=1 भएकाले 0 होइन।",
+          "दायाँ पक्ष पनि (0+1)・(0+1)=1 भएकाले 0 होइन।"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-03": {
+        "sourceHash": "75368e9c4f221fb2a172a0bd6219cff388c0b58b626aa59b764bb19cdc54154c",
+        "stem": "द्विआधारी तर्कमा a, b र c का मान 0 वा 1 हुन्। कुन इनपुटले a+(b・c)=a・(b+c) सही नभएको देखाउँछ? ＋ ले OR र ・ ले AND जनाउँछ।",
+        "options": [
+          "a=0、b=0、c=0",
+          "a=0、b=1、c=0",
+          "a=1、b=0、c=0",
+          "a=1、b=1、c=0"
+        ],
+        "reasons": [
+          "यो इनपुटमा दुवै पक्ष 0 भएकाले असमानता देखाउँदैन।",
+          "यो इनपुटमा दुवै पक्ष 0 भएकाले असमानता देखाउँदैन।",
+          "बायाँ पक्ष 1 र दायाँ पक्ष 0 हुन्छ। एउटा असमानताले पनि सबै इनपुटमा बराबर हुने दाबी खण्डन गर्न सक्छ।",
+          "यो इनपुटमा दुवै पक्ष 1 भएकाले असमानता देखाउँदैन।"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-04": {
+        "sourceHash": "7b3df3b1c3eb89760e092783fcfb2fd6e4781fc62ee31b358cbda0e0b1999905",
+        "stem": "द्विआधारी तर्कमा ＋ ले OR र ・ ले AND जनाउँछ। आठै इनपुट संयोजनबाट a+(b・c)=(a+b)・(a+c) जाँच्नुहोस्। कुन व्याख्याले सबै इनपुट समेट्छ?",
+        "options": [
+          "a=0, b=0, c=0 भएको एउटा पङ्क्तिमा मात्र मिल्नु पर्याप्त हुन्छ।",
+          "＋ लाई सामान्य जोड मानेर गणना गरे पुग्छ।",
+          "a=b=c भएका दुई पङ्क्तिमा मात्र मिल्नु पर्याप्त हुन्छ।",
+          "a=0 भएका चार पङ्क्तिमा दुवै पक्ष b・c र a=1 भएका चार पङ्क्तिमा दुवै पक्ष 1 हुन्छन्।"
+        ],
+        "reasons": [
+          "एउटा पङ्क्तिमा मिल्दैमा बाँकी सात पङ्क्तिबारे निर्णय गर्न सकिँदैन।",
+          "यहाँ ＋ भनेको OR हो, त्यसैले 1+1 को OR परिणाम 1 हुन्छ। यसलाई सामान्य जोडबाट छुट्याउनुहोस्।",
+          "a=b=c भएका दुई पङ्क्ति मात्र हेर्दा बाँकी छ पङ्क्ति जाँचिँदैनन्।",
+          "a का दुई अवस्थाले आठै इनपुट छुट्याएर प्रत्येक अवस्थामा दुवै पक्षको नतिजा मिल्ने देखाउँछन्। यो गणितीय जाँच वास्तविक सुरक्षा सर्किट परिवर्तन गर्ने अनुमतिभन्दा फरक हो।"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      }
+    },
+    "my": {
+      "mfg1-boolean-distributivity-check-01": {
+        "sourceHash": "7ae15862f98608d126a20cae67138923f3595a0b1dce5f611ddd83267f19af69",
+        "stem": "ဒွိတန်ဖိုးလော့ဂျစ်တွင် a၊ b၊ c တို့သည် 0 သို့မဟုတ် 1 ဖြစ်ပြီး ＋ သည် OR၊ ・ သည် AND ကို ဆိုလိုသည်။ အဝင်အားလုံးတွင် a+(b・c) နှင့် တန်ဖိုးတူသော အဆိုမှာ မည်သည်နည်း။",
+        "options": [
+          "(a+b)・(a+c)",
+          "(a+b)+(a+c)",
+          "(a+b)・c",
+          "a・(b+c)"
+        ],
+        "reasons": [
+          "OR ကို AND ပေါ် ဖြန့်ဝေလျှင် (a+b)・(a+c) ရသည်။ အဝင် 8 မျိုးလုံး၌ နှစ်ဖက်တူညီသည်။",
+          "a=0၊ b=1၊ c=0 အတွက် မူလအဆိုသည် 0 ဖြစ်သော်လည်း ဤအဆိုသည် 1 ဖြစ်သည်။",
+          "a=1၊ b=0၊ c=0 အတွက် မူလအဆိုသည် 1 ဖြစ်သော်လည်း ဤအဆိုသည် 0 ဖြစ်သည်။",
+          "a=1၊ b=0၊ c=0 အတွက် မူလအဆိုသည် 1 ဖြစ်သော်လည်း ဤအဆိုသည် 0 ဖြစ်သည်။"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-02": {
+        "sourceHash": "e17a90e54616cfbc64ec142807ba026c520a7b392799085a3ee8a1e11f70693e",
+        "stem": "ဒွိတန်ဖိုးလော့ဂျစ်တွင် ＋ သည် OR၊ ・ သည် AND ဖြစ်သည်။ a=0၊ b=1၊ c=1 ဟုထားပါ။ ဘယ်ဘက် a+(b・c) နှင့် ညာဘက် (a+b)・(a+c) တို့၏ တန်ဖိုးအတွဲမှာ မည်သည်နည်း။",
+        "options": [
+          "ဘယ်ဘက် 0၊ ညာဘက် 0",
+          "ဘယ်ဘက် 1၊ ညာဘက် 1",
+          "ဘယ်ဘက် 0၊ ညာဘက် 1",
+          "ဘယ်ဘက် 1၊ ညာဘက် 0"
+        ],
+        "reasons": [
+          "b・c=1 ဖြစ်သဖြင့် နှစ်ဖက်လုံး 0 မဟုတ်ပါ။",
+          "ဘယ်ဘက်သည် 0+(1・1)=1၊ ညာဘက်သည် (0+1)・(0+1)=1 ဖြစ်သည်။ ＋ သည် OR ဖြစ်ပြီး သာမန်ဂဏန်းပေါင်းခြင်း မဟုတ်ပါ။",
+          "ဘယ်ဘက်လည်း 0+(1・1)=1 ဖြစ်သဖြင့် 0 မဟုတ်ပါ။",
+          "ညာဘက်လည်း (0+1)・(0+1)=1 ဖြစ်သဖြင့် 0 မဟုတ်ပါ။"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-03": {
+        "sourceHash": "75368e9c4f221fb2a172a0bd6219cff388c0b58b626aa59b764bb19cdc54154c",
+        "stem": "ဒွိတန်ဖိုးလော့ဂျစ်တွင် a၊ b၊ c တို့သည် 0 သို့မဟုတ် 1 ဖြစ်သည်။ a+(b・c)=a・(b+c) မမှန်ကြောင်း ပြသသော အဝင်မှာ မည်သည်နည်း။ ＋ သည် OR၊ ・ သည် AND ဖြစ်သည်။",
+        "options": [
+          "a=0、b=0、c=0",
+          "a=0、b=1、c=0",
+          "a=1、b=0、c=0",
+          "a=1、b=1、c=0"
+        ],
+        "reasons": [
+          "ဤအဝင်၌ နှစ်ဖက်လုံး 0 ဖြစ်သဖြင့် မတူညီမှုကို မပြပါ။",
+          "ဤအဝင်၌ နှစ်ဖက်လုံး 0 ဖြစ်သဖြင့် မတူညီမှုကို မပြပါ။",
+          "ဘယ်ဘက်သည် 1၊ ညာဘက်သည် 0 ဖြစ်သည်။ မတူညီမှုတစ်ခုတည်းဖြင့်ပင် အဝင်အားလုံး၌ တူညီသည်ဆိုသော အဆိုကို ငြင်းပယ်နိုင်သည်။",
+          "ဤအဝင်၌ နှစ်ဖက်လုံး 1 ဖြစ်သဖြင့် မတူညီမှုကို မပြပါ။"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-04": {
+        "sourceHash": "7b3df3b1c3eb89760e092783fcfb2fd6e4781fc62ee31b358cbda0e0b1999905",
+        "stem": "ဒွိတန်ဖိုးလော့ဂျစ်တွင် ＋ သည် OR၊ ・ သည် AND ဖြစ်သည်။ a+(b・c)=(a+b)・(a+c) ကို အဝင်ပေါင်းစပ်မှု 8 မျိုးဖြင့် စစ်ပါ။ အဝင်အားလုံးကို လွှမ်းခြုံသော ရှင်းလင်းချက်မှာ မည်သည်နည်း။",
+        "options": [
+          "a=0၊ b=0၊ c=0 ဖြစ်သော တစ်တန်းသာ တူညီလျှင် လုံလောက်သည်။",
+          "＋ ကို သာမန်ပေါင်းခြင်းအဖြစ် တွက်လျှင် လုံလောက်သည်။",
+          "a=b=c ဖြစ်သော နှစ်တန်းသာ တူညီလျှင် လုံလောက်သည်။",
+          "a=0 ဖြစ်သော 4 တန်း၌ နှစ်ဖက်လုံး b・c ဖြစ်ပြီး a=1 ဖြစ်သော 4 တန်း၌ နှစ်ဖက်လုံး 1 ဖြစ်သည်။"
+        ],
+        "reasons": [
+          "တစ်တန်းတည်းတူညီရုံဖြင့် ကျန် 7 တန်းကို မဆုံးဖြတ်နိုင်ပါ။",
+          "ဤနေရာ၌ ＋ သည် OR ဖြစ်သဖြင့် 1+1 ၏ OR ရလဒ်သည် 1 ဖြစ်သည်။ သာမန်ပေါင်းခြင်းနှင့် ခွဲခြားပါ။",
+          "a=b=c ဖြစ်သော နှစ်တန်းသာ စစ်လျှင် ကျန် 6 တန်းကို မစစ်ရသေးပါ။",
+          "a ၏ အခြေအနေနှစ်မျိုးဖြင့် အဝင် 8 မျိုးလုံးကို ခွဲပြီး တစ်မျိုးစီ၌ နှစ်ဖက်ရလဒ်တူညီကြောင်း ပြသည်။ ဤသင်္ချာစစ်ဆေးမှုသည် လက်တွေ့ဘေးကင်းရေးဆားကစ် ပြောင်းလဲခွင့်နှင့် မတူပါ။"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      }
+    },
+    "th": {
+      "mfg1-boolean-distributivity-check-01": {
+        "sourceHash": "7ae15862f98608d126a20cae67138923f3595a0b1dce5f611ddd83267f19af69",
+        "stem": "ในตรรกะสองค่า a, b และ c มีค่า 0 หรือ 1 โดย ＋ หมายถึง OR และ ・ หมายถึง AND นิพจน์ใดมีค่าเท่ากับ a+(b・c) สำหรับทุกอินพุต",
+        "options": [
+          "(a+b)・(a+c)",
+          "(a+b)+(a+c)",
+          "(a+b)・c",
+          "a・(b+c)"
+        ],
+        "reasons": [
+          "แจกแจง OR เหนือ AND จะได้ (a+b)・(a+c) ทั้งสองข้างตรงกันในอินพุตทั้ง 8 แบบ",
+          "เมื่อ a=0, b=1, c=0 นิพจน์เดิมมีค่า 0 แต่นิพจน์นี้มีค่า 1",
+          "เมื่อ a=1, b=0, c=0 นิพจน์เดิมมีค่า 1 แต่นิพจน์นี้มีค่า 0",
+          "เมื่อ a=1, b=0, c=0 นิพจน์เดิมมีค่า 1 แต่นิพจน์นี้มีค่า 0"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-02": {
+        "sourceHash": "e17a90e54616cfbc64ec142807ba026c520a7b392799085a3ee8a1e11f70693e",
+        "stem": "ในตรรกะสองค่า ＋ หมายถึง OR และ ・ หมายถึง AND กำหนด a=0, b=1, c=1 คู่ใดเป็นค่าของข้างซ้าย a+(b・c) และข้างขวา (a+b)・(a+c)",
+        "options": [
+          "ข้างซ้าย 0 ข้างขวา 0",
+          "ข้างซ้าย 1 ข้างขวา 1",
+          "ข้างซ้าย 0 ข้างขวา 1",
+          "ข้างซ้าย 1 ข้างขวา 0"
+        ],
+        "reasons": [
+          "เนื่องจาก b・c=1 ทั้งสองข้างจึงไม่ใช่ 0",
+          "ข้างซ้ายคือ 0+(1・1)=1 และข้างขวาคือ (0+1)・(0+1)=1 โดย ＋ คือ OR ไม่ใช่การบวกตัวเลข",
+          "ข้างซ้ายก็เท่ากับ 0+(1・1)=1 จึงไม่ใช่ 0",
+          "ข้างขวาก็เท่ากับ (0+1)・(0+1)=1 จึงไม่ใช่ 0"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-03": {
+        "sourceHash": "75368e9c4f221fb2a172a0bd6219cff388c0b58b626aa59b764bb19cdc54154c",
+        "stem": "ในตรรกะสองค่า a, b และ c มีค่า 0 หรือ 1 อินพุตใดแสดงว่า a+(b・c)=a・(b+c) ไม่เป็นจริง โดย ＋ หมายถึง OR และ ・ หมายถึง AND",
+        "options": [
+          "a=0、b=0、c=0",
+          "a=0、b=1、c=0",
+          "a=1、b=0、c=0",
+          "a=1、b=1、c=0"
+        ],
+        "reasons": [
+          "อินพุตนี้ทำให้ทั้งสองข้างเป็น 0 จึงไม่แสดงความไม่ตรงกัน",
+          "อินพุตนี้ทำให้ทั้งสองข้างเป็น 0 จึงไม่แสดงความไม่ตรงกัน",
+          "ข้างซ้ายเป็น 1 และข้างขวาเป็น 0 ความไม่ตรงกันเพียงกรณีเดียวก็หักล้างข้ออ้างว่าตรงกันทุกอินพุตได้",
+          "อินพุตนี้ทำให้ทั้งสองข้างเป็น 1 จึงไม่แสดงความไม่ตรงกัน"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-04": {
+        "sourceHash": "7b3df3b1c3eb89760e092783fcfb2fd6e4781fc62ee31b358cbda0e0b1999905",
+        "stem": "ในตรรกะสองค่า ＋ หมายถึง OR และ ・ หมายถึง AND ตรวจสอบ a+(b・c)=(a+b)・(a+c) ด้วยอินพุต 8 แบบ คำอธิบายใดครอบคลุมทุกอินพุต",
+        "options": [
+          "ตรงกันเพียงแถว a=0, b=0, c=0 ก็เพียงพอ",
+          "คำนวณ ＋ เป็นการบวกทั่วไปก็เพียงพอ",
+          "ตรงกันเพียงสองแถวที่ a=b=c ก็เพียงพอ",
+          "สี่แถวที่ a=0 ทั้งสองข้างเท่ากับ b・c และสี่แถวที่ a=1 ทั้งสองข้างเท่ากับ 1"
+        ],
+        "reasons": [
+          "ตรงกันหนึ่งแถวยังตัดสินอีกเจ็ดแถวไม่ได้",
+          "ที่นี่ ＋ คือ OR ดังนั้นผล OR ของ 1+1 คือ 1 ต้องแยกจากการบวกทั่วไป",
+          "ตรวจเพียงสองแถวที่ a=b=c ยังไม่ได้ตรวจอีกหกแถว",
+          "แบ่งอินพุตทั้งแปดตามสองกรณีของ a และแสดงว่าทั้งสองข้างตรงกันในแต่ละกรณี การตรวจทางคณิตศาสตร์นี้แยกจากการอนุญาตให้แก้ไขวงจรนิรภัยจริง"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      }
+    },
+    "km": {
+      "mfg1-boolean-distributivity-check-01": {
+        "sourceHash": "7ae15862f98608d126a20cae67138923f3595a0b1dce5f611ddd83267f19af69",
+        "stem": "ក្នុងតក្កវិជ្ជាពីរតម្លៃ a, b និង c មានតម្លៃ 0 ឬ 1; ＋ តំណាងឱ្យ OR និង ・ តំណាងឱ្យ AND។ កន្សោមណាមានតម្លៃស្មើ a+(b・c) សម្រាប់គ្រប់តម្លៃបញ្ចូល?",
+        "options": [
+          "(a+b)・(a+c)",
+          "(a+b)+(a+c)",
+          "(a+b)・c",
+          "a・(b+c)"
+        ],
+        "reasons": [
+          "ចែកចាយ OR លើ AND បាន (a+b)・(a+c)។ ភាគទាំងពីរត្រូវគ្នាក្នុងការបញ្ចូលទាំង 8 បែប។",
+          "នៅពេល a=0, b=1, c=0 កន្សោមដើមស្មើ 0 ប៉ុន្តែកន្សោមនេះស្មើ 1។",
+          "នៅពេល a=1, b=0, c=0 កន្សោមដើមស្មើ 1 ប៉ុន្តែកន្សោមនេះស្មើ 0។",
+          "នៅពេល a=1, b=0, c=0 កន្សោមដើមស្មើ 1 ប៉ុន្តែកន្សោមនេះស្មើ 0។"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-02": {
+        "sourceHash": "e17a90e54616cfbc64ec142807ba026c520a7b392799085a3ee8a1e11f70693e",
+        "stem": "ក្នុងតក្កវិជ្ជាពីរតម្លៃ ＋ តំណាងឱ្យ OR និង ・ តំណាងឱ្យ AND។ កំណត់ a=0, b=1, c=1។ គូណាជាតម្លៃនៃភាគខាងឆ្វេង a+(b・c) និងភាគខាងស្តាំ (a+b)・(a+c)?",
+        "options": [
+          "ឆ្វេង 0 ស្តាំ 0",
+          "ឆ្វេង 1 ស្តាំ 1",
+          "ឆ្វេង 0 ស្តាំ 1",
+          "ឆ្វេង 1 ស្តាំ 0"
+        ],
+        "reasons": [
+          "ដោយសារ b・c=1 ភាគទាំងពីរមិនស្មើ 0 ទេ។",
+          "ភាគឆ្វេងគឺ 0+(1・1)=1 ហើយភាគស្តាំគឺ (0+1)・(0+1)=1។ ＋ គឺ OR មិនមែនការបូកលេខធម្មតាទេ។",
+          "ភាគឆ្វេងក៏ស្មើ 0+(1・1)=1 ដូច្នេះមិនមែន 0 ទេ។",
+          "ភាគស្តាំក៏ស្មើ (0+1)・(0+1)=1 ដូច្នេះមិនមែន 0 ទេ។"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-03": {
+        "sourceHash": "75368e9c4f221fb2a172a0bd6219cff388c0b58b626aa59b764bb19cdc54154c",
+        "stem": "ក្នុងតក្កវិជ្ជាពីរតម្លៃ a, b និង c មានតម្លៃ 0 ឬ 1។ តម្លៃបញ្ចូលណាបង្ហាញថា a+(b・c)=a・(b+c) មិនពិត? ＋ តំណាងឱ្យ OR និង ・ តំណាងឱ្យ AND។",
+        "options": [
+          "a=0、b=0、c=0",
+          "a=0、b=1、c=0",
+          "a=1、b=0、c=0",
+          "a=1、b=1、c=0"
+        ],
+        "reasons": [
+          "ការបញ្ចូលនេះធ្វើឱ្យភាគទាំងពីរស្មើ 0 ដូច្នេះមិនបង្ហាញភាពមិនត្រូវគ្នាទេ។",
+          "ការបញ្ចូលនេះធ្វើឱ្យភាគទាំងពីរស្មើ 0 ដូច្នេះមិនបង្ហាញភាពមិនត្រូវគ្នាទេ។",
+          "ភាគឆ្វេងស្មើ 1 ហើយភាគស្តាំស្មើ 0។ ភាពមិនត្រូវគ្នាតែមួយក៏អាចបដិសេធការអះអាងថាស្មើគ្នាគ្រប់តម្លៃបញ្ចូលបាន។",
+          "ការបញ្ចូលនេះធ្វើឱ្យភាគទាំងពីរស្មើ 1 ដូច្នេះមិនបង្ហាញភាពមិនត្រូវគ្នាទេ។"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-04": {
+        "sourceHash": "7b3df3b1c3eb89760e092783fcfb2fd6e4781fc62ee31b358cbda0e0b1999905",
+        "stem": "ក្នុងតក្កវិជ្ជាពីរតម្លៃ ＋ តំណាងឱ្យ OR និង ・ តំណាងឱ្យ AND។ ផ្ទៀងផ្ទាត់ a+(b・c)=(a+b)・(a+c) ដោយការបញ្ចូល 8 បែប។ ការពន្យល់ណាគ្របដណ្ដប់គ្រប់តម្លៃបញ្ចូល?",
+        "options": [
+          "ត្រូវគ្នាតែក្នុងជួរ a=0, b=0, c=0 គឺគ្រប់គ្រាន់។",
+          "គ្រាន់តែគណនា ＋ ជាការបូកលេខធម្មតា។",
+          "ត្រូវគ្នាតែក្នុងពីរជួរដែល a=b=c គឺគ្រប់គ្រាន់។",
+          "នៅ 4 ជួរដែល a=0 ភាគទាំងពីរស្មើ b・c ហើយនៅ 4 ជួរដែល a=1 ភាគទាំងពីរស្មើ 1។"
+        ],
+        "reasons": [
+          "ត្រូវគ្នាតែមួយជួរ មិនអាចវិនិច្ឆ័យជួរ 7 ទៀតបានទេ។",
+          "នៅទីនេះ ＋ គឺ OR ដូច្នេះលទ្ធផល OR របស់ 1+1 គឺ 1។ ត្រូវបែងចែកពីការបូកលេខធម្មតា។",
+          "ពិនិត្យតែពីរជួរដែល a=b=c គឺមិនទាន់ពិនិត្យជួរ 6 ទៀតទេ។",
+          "ករណីពីររបស់ a បែងចែកការបញ្ចូលទាំង 8 ហើយបង្ហាញថាភាគទាំងពីរមានលទ្ធផលដូចគ្នាក្នុងករណីនីមួយៗ។ ការផ្ទៀងផ្ទាត់គណិតវិទ្យានេះខុសពីការអនុញ្ញាតឱ្យកែសៀគ្វីសុវត្ថិភាពជាក់ស្ដែង។"
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      }
+    },
+    "tl": {
+      "mfg1-boolean-distributivity-check-01": {
+        "sourceHash": "7ae15862f98608d126a20cae67138923f3595a0b1dce5f611ddd83267f19af69",
+        "stem": "Sa binary logic, 0 o 1 ang a, b at c; ang ＋ ay OR at ang ・ ay AND. Aling ekspresyon ang kapareho ng a+(b・c) para sa bawat input?",
+        "options": [
+          "(a+b)・(a+c)",
+          "(a+b)+(a+c)",
+          "(a+b)・c",
+          "a・(b+c)"
+        ],
+        "reasons": [
+          "Kapag ipinamahagi ang OR sa AND, makukuha ang (a+b)・(a+c). Magkapareho ang dalawang panig sa lahat ng walong input.",
+          "Kapag a=0, b=1, c=0, ang orihinal na ekspresyon ay 0 ngunit ang ekspresyong ito ay 1.",
+          "Kapag a=1, b=0, c=0, ang orihinal na ekspresyon ay 1 ngunit ang ekspresyong ito ay 0.",
+          "Kapag a=1, b=0, c=0, ang orihinal na ekspresyon ay 1 ngunit ang ekspresyong ito ay 0."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-02": {
+        "sourceHash": "e17a90e54616cfbc64ec142807ba026c520a7b392799085a3ee8a1e11f70693e",
+        "stem": "Sa binary logic, ang ＋ ay OR at ang ・ ay AND. Itakda ang a=0, b=1, c=1. Aling pares ang halaga ng kaliwang panig a+(b・c) at kanang panig (a+b)・(a+c)?",
+        "options": [
+          "Kaliwa 0, kanan 0",
+          "Kaliwa 1, kanan 1",
+          "Kaliwa 0, kanan 1",
+          "Kaliwa 1, kanan 0"
+        ],
+        "reasons": [
+          "Dahil b・c=1, hindi 0 ang alinman sa dalawang panig.",
+          "Ang kaliwa ay 0+(1・1)=1 at ang kanan ay (0+1)・(0+1)=1. Ang ＋ ay OR, hindi pagdaragdag ng mga numero.",
+          "Ang kaliwa rin ay 0+(1・1)=1, kaya hindi 0.",
+          "Ang kanan rin ay (0+1)・(0+1)=1, kaya hindi 0."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-03": {
+        "sourceHash": "75368e9c4f221fb2a172a0bd6219cff388c0b58b626aa59b764bb19cdc54154c",
+        "stem": "Sa binary logic, 0 o 1 ang a, b at c. Aling input ang nagpapakitang hindi totoo ang a+(b・c)=a・(b+c)? Ang ＋ ay OR at ang ・ ay AND.",
+        "options": [
+          "a=0、b=0、c=0",
+          "a=0、b=1、c=0",
+          "a=1、b=0、c=0",
+          "a=1、b=1、c=0"
+        ],
+        "reasons": [
+          "Parehong 0 ang dalawang panig sa input na ito, kaya hindi nito ipinapakita ang hindi pagkakatugma.",
+          "Parehong 0 ang dalawang panig sa input na ito, kaya hindi nito ipinapakita ang hindi pagkakatugma.",
+          "Ang kaliwa ay 1 at ang kanan ay 0. Kahit isang hindi pagkakatugma ay sapat upang pabulaanan ang pahayag na magkapareho ang mga ito sa bawat input.",
+          "Parehong 1 ang dalawang panig sa input na ito, kaya hindi nito ipinapakita ang hindi pagkakatugma."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      },
+      "mfg1-boolean-distributivity-check-04": {
+        "sourceHash": "7b3df3b1c3eb89760e092783fcfb2fd6e4781fc62ee31b358cbda0e0b1999905",
+        "stem": "Sa binary logic, ang ＋ ay OR at ang ・ ay AND. Suriin ang a+(b・c)=(a+b)・(a+c) sa walong kumbinasyon ng input. Aling paliwanag ang sumasaklaw sa lahat ng input?",
+        "options": [
+          "Sapat nang magkapareho sa hilera lamang na a=0, b=0, c=0.",
+          "Sapat nang kalkulahin ang ＋ bilang karaniwang pagdaragdag.",
+          "Sapat nang magkapareho sa dalawang hilera lamang na a=b=c.",
+          "Sa apat na hilera na a=0, parehong b・c ang dalawang panig; sa apat na hilera na a=1, parehong 1 ang mga ito."
+        ],
+        "reasons": [
+          "Ang pagkakatugma sa isang hilera ay hindi sapat upang hatulan ang natitirang pitong hilera.",
+          "Dito ang ＋ ay OR, kaya 1 ang resulta ng OR para sa 1+1. Ihiwalay ito sa karaniwang pagdaragdag.",
+          "Hindi nasuri ang natitirang anim na hilera kung ang dalawang hilera lamang na a=b=c ang tiningnan.",
+          "Hinahati ng dalawang kaso ng a ang lahat ng walong input at ipinapakitang magkapareho ang dalawang panig sa bawat kaso. Ang pagsusuring matematikal na ito ay hiwalay sa pahintulot na baguhin ang aktuwal na safety circuit."
+        ],
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "status": "ai_translated_draft"
+      }
+    }
+  }
+}

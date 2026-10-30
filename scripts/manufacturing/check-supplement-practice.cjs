@@ -18,7 +18,7 @@ async function load(overrides={}){
   for(const loc of locales){const row=d.locales[loc][i];assert(row&&row[0]&&row[2]);assert.equal(row[1].length,4);assert.equal(new Set(row[1]).size,4);assert.equal(d.localeSourceHashes[loc][i],sourceHash);assert.equal(d.reasonPrefixes[loc].length,2);}
  }
  assert.deepEqual(counts,[2,2,2,2]);
- const a=await load(),exam=a.manufacturingSupplementExams('mechanical')[0];assert(exam);assert.equal(a.manufacturingSupplementExams('electrical').length,0);assert.equal(a.manufacturingSupplementExams('surface').length,0);
+ const a=await load(),exam=a.manufacturingSupplementExams('mechanical')[0];assert(exam);assert.deepEqual(a.manufacturingSupplementExams('electrical').map(e=>e.id),['mfg1-electrical-boolean-supplement-01']);assert.equal(a.manufacturingSupplementExams('surface').length,0);
  let pairs=0;for(const q of exam.questions)for(const loc of locales){const t=a.manufacturingSupplementTranslation(q,loc);assert(t&&t.stem&&t.options.length===4&&t.reasons.length===4);assert.equal(t.sourceHash,q.sourceHash);pairs++;}
  assert.equal(a.manufacturingSupplementTranslation(exam.questions[0],'unknown'),null);
  assert.equal(a.manufacturingSupplementTranslation({...exam.questions[0],sourceHash:'0'.repeat(64)},'vi'),null);

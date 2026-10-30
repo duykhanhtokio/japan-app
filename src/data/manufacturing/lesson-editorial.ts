@@ -1,4 +1,5 @@
 import type {ManufacturingLesson} from './index';
+import {manufacturingBooleanParagraph} from './boolean-editorial';
 
 type Clarification={lessonId:string;paragraphId:string;sourceHash:string;wording:Record<string,{before:string;after:string}>};
 let clarification:Clarification|null=null;
@@ -8,6 +9,7 @@ let clarification:Clarification|null=null;
  * This clarifies an existing inspection principle, without adding an operating procedure.
  */
 export function manufacturingLessonParagraph(lesson:ManufacturingLesson,paragraphId:string,locale:string,text:string|undefined):string|undefined {
+ if(lesson.id==='mfg1-electrical-l075')return manufacturingBooleanParagraph(lesson,paragraphId,locale,text);
  if(lesson.id!=='mfg1-mechanical-lesson-076'||paragraphId!=='section-3')return text;
  const patch=clarification??(clarification=require('./lesson-editorial.json') as Clarification);
  const original=lesson.paragraphs.find(p=>p.id===paragraphId);
