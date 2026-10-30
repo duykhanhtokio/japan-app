@@ -1,3 +1,19 @@
+# Nhà hàng / 外食業 — checkpoint 28, 2026-10-30
+
+Base `13550ed5b86fb46fdb25497069cc958c5b9080c0` đã WORK PERSISTENCE PASS. Sáu AI chia vệ sinh, chế biến, tiếp khách, vận hành, ngôn ngữ và kiểm thử. Lô này cần commit/push/fetch/persistence trước khi báo đã lưu.
+
+- Thêm 5 đoạn tự soạn trong 5 bài: 5S áp dụng hằng ngày; quy cách tên phần thịt/đặc điểm jidori-broiler; thực hành lòng hiếu khách; phân biệt chênh lệch điểm phần trăm với ví dụ quản lý ±0.5; POS/AI/CK và kiểm tra tồn kho/đơn cũ/lịch giao trước xác nhận. Đủ 60 đoạn dịch và 60 tiêu đề cho 12 locale, ruby căn chỉnh mọi kanji mới. Không thay giáo trình 120 bài hoặc 984 câu hỏi/đáp án cũ.
+- Sửa 11 trường Việt và 3 trường Anh: bỏ lối viết tắt khó hiểu và các chi tiết tự thêm không có ở bản Nhật. Bằng chứng before/after trong hai báo cáo editorial; không chứng nhận bản ngữ/chuyên môn.
+- Hai binding thuật ngữ MY của bài tiếp khách được chuyển revision chỉ sau khi kiểm tra chính xác trường cũ và toàn bộ đoạn Nhật/thuật ngữ cũ không đổi. Không gắn hash mù.
+- PASS: cấu trúc; 7372 trường Nhật có chú âm,0 kanji chưa phủ; numeric110952 trường;396 Celsius;559 sửa thuật ngữ;88 sửa phát âm và6 trường VI trước đây;565 sourceanchors;639 knowledge links; Node state10/loading13;10 phép tính đặt hàng;JLPT10/10 khóa; toàn984 câu và glossary/ledger byte-identical.
+- Đọc nguồn trực tiếp chỉ phần tiếp khách PDF5–6 và chế biến PDF5–7 theo báo cáo AI; phần vệ sinh/vận hành dựa trên hồ sơ đối chiếu cũ đã ghi rõ. Không tuyên bố đọc lại toàn7PDF hoặc kiểm hình nguồn. Full-source similarity hiện unavailable; biểu đạt mới do AI rà, chưa xác nhận quyền/chuyên môn/bản ngữ toàn bộ.
+- Runtime: Chromium cục bộ bị socket EPERM; lượt export Expo riêng module bị SIGKILL trước hoàn thành. Không chứng nhận browser/Expo/native/thiết bị thật trong lô này. Xem completion28-testing-baseline.json.
+- Ledger vẫn148 covered/452 partial/39 structural. Bổ sung không tự đóng parent/chương rộng; còn hình nhận diện, nguồn chi tiết, rà chuyên môn/người bản ngữ và thiết bị thật. Fullacceptancefalse. Không có tiến trình chạy ngầm sau phản hồi.
+
+Bằng chứng: completion28-integrated-additions.json, completion28-preservation-qa.json, completion28-final-data-qa.json, completion28-*-editorial-review.json.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 27, 2026-10-29
 
 Tiếp tục từ base `e9765e059b7f79c570b9f83a2d903bc266c4a431` đã WORK PERSISTENCE PASS. Bản cập nhật này cần commit/ref/fetch/persistence gate trước khi báo lưu.
