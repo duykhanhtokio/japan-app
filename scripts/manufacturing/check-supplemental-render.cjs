@@ -3,7 +3,7 @@
 const assert=require('node:assert/strict'),path=require('node:path'),fs=require('node:fs'),Module=require('node:module');
 const root=path.resolve(__dirname,'../..');
 (async()=>{
- const build=await require('esbuild').build({stdin:{contents:"export {SupplementalManufacturingDiagrams} from './src/components/manufacturing/SupplementalManufacturingDiagrams';export {BooleanPracticeJapanese,BooleanPracticeOption} from './src/components/manufacturing/BooleanPracticeJapanese';",resolveDir:root,loader:'tsx'},bundle:true,write:false,platform:'node',format:'cjs',jsx:'automatic',external:['react','react/jsx-runtime','react-dom','react-dom/client','react-dom/server'],define:{__DEV__:'false','process.env.NODE_ENV':'"production"'},tsconfigRaw:{compilerOptions:{baseUrl:root,paths:{'@/*':['src/*']}}},plugins:[{name:'declared-ssr-adapters',setup(b){
+ const build=await require('esbuild').build({stdin:{contents:"export {SupplementalManufacturingDiagrams} from './src/components/manufacturing/SupplementalManufacturingDiagrams';export {BooleanPracticeJapanese,BooleanPracticeOption} from './src/components/manufacturing/BooleanPracticeJapanese';export {CompletionManufacturingDiagrams} from './src/components/manufacturing/CompletionManufacturingDiagrams';",resolveDir:root,loader:'tsx'},bundle:true,write:false,platform:'node',format:'cjs',jsx:'automatic',external:['react','react/jsx-runtime','react-dom','react-dom/client','react-dom/server'],define:{__DEV__:'false','process.env.NODE_ENV':'"production"'},tsconfigRaw:{compilerOptions:{baseUrl:root,paths:{'@/*':['src/*']}}},plugins:[{name:'declared-ssr-adapters',setup(b){
   b.onResolve({filter:/^react-native$/},()=>({path:require.resolve('react-native-web')}));
   b.onResolve({filter:/^react-native-safe-area-context$/},()=>({path:'safe',namespace:'qa'}));
   b.onResolve({filter:/tokutei\/StudyAppearance$/},()=>({path:'appearance',namespace:'qa'}));
@@ -31,5 +31,16 @@ const root=path.resolve(__dirname,'../..');
  for(const q of practice.questions){const stem=renderToStaticMarkup(React.createElement(m.exports.BooleanPracticeJapanese,{question:q,field:'stem'}));assert(stem.includes(escape(q.stemJa)),'Accessible stem text');
   for(const [locale,entries] of Object.entries(practice.locales))for(let index=0;index<4;index++){const html=renderToStaticMarkup(React.createElement(m.exports.BooleanPracticeOption,{question:q,index,translation:entries[q.id].options[index],selected:index===q.correctIndex,disabled:false,onPress:()=>{}}));assert(html.includes(escape(entries[q.id].options[index])));assert(html.includes(escape(q.optionsJa[index])));practiceCases++;}
  }
- console.log(JSON.stringify({status:'PASS',renderCases:cases,practiceOptionCases:practiceCases,translationVisibility:true,staleRevisionSuppressed:true,scope:'Actual supplemental ReactNativeWeb component SSR; appearance/safearea/image adapters explicit. Not browser layout, image-load, zoom interaction or native certification.'}));
+ const completionRegistry=require(path.join(root,'src/data/manufacturing/completion37/diagrams.json'));
+ const completionLessons=['mechanical','electrical','surface'].flatMap(s=>require(path.join(root,'src/data/manufacturing/completion37/'+s+'.json')).lessons);
+ let completionDiagramCases=0;
+ for(const id of new Set(completionRegistry.items.map(i=>i.lessonId))){const lesson=completionLessons.find(l=>l.id===id);assert(lesson);const items=completionRegistry.items.filter(i=>i.lessonId===id);
+  for(const locale of ['ja',...Object.keys(targets)])for(const show of [false,true]){const html=renderToStaticMarkup(React.createElement(m.exports.CompletionManufacturingDiagrams,{lesson,language:locale,showTranslation:show}));
+   for(const item of items){assert.equal(item.lessonSourceHash,lesson.sourceHash);assert.equal(item.captionJa,lesson.summaryJa);const png=fs.readFileSync(path.join(root,'assets/manufacturing/diagrams',item.assetFile));assert.equal(png.readUInt32BE(16),item.width);assert.equal(png.readUInt32BE(20),item.height);assert(html.includes(escape(item.captionJa)));assert(html.includes('manufacturing-supplemental-'+item.id));}
+   if(locale!=='ja'){const entry=require(path.join(root,'src/data/manufacturing/completion37/translations/'+locale+'.json')).lessons[id];assert.equal(html.includes(escape(entry.summary)),show);}
+   completionDiagramCases++;
+  }
+  assert.equal(renderToStaticMarkup(React.createElement(m.exports.CompletionManufacturingDiagrams,{lesson:{...lesson,sourceHash:'stale'},language:'vi',showTranslation:true})), '');
+ }
+ console.log(JSON.stringify({status:'PASS',renderCases:cases,practiceOptionCases:practiceCases,completionDiagramCases,translationVisibility:true,staleRevisionSuppressed:true,scope:'Actual supplemental ReactNativeWeb component SSR; appearance/safearea/image adapters explicit. Not browser layout, image-load, zoom interaction or native certification.'}));
 })().catch(e=>{console.error(e);process.exitCode=1;});

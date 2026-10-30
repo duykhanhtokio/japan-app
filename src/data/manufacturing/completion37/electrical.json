@@ -1,0 +1,1076 @@
+{
+  "schemaVersion": 1,
+  "specialty": "electrical",
+  "lessons": [
+    {
+      "id": "mfg1-electrical-completion37-scope",
+      "specialty": "electrical",
+      "titleJa": "オシロスコープの四つの性能を分ける",
+      "objectiveJa": "同時観測数、帯域、標本化、記録容量を別の条件として説明する。",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "titleJa": "同時に比べる信号",
+          "textJa": "入力チャネル数は、複数の信号を同時に観測するときの確認項目です。二つの信号の時間関係を見たい場面で、一つの入力を順番に切り替えた記録を、同時に観測した結果と扱いません。必要な信号数と使える入力の条件を仕様で照合します。"
+        },
+        {
+          "id": "section-2",
+          "titleJa": "帯域とサンプリング",
+          "textJa": "周波数帯域は、どの程度の速い信号まで観測できるかに関わります。サンプリングレートは一秒当たりに信号をデータへ変換する回数に関わります。両者は別の性能なので、サンプリングレートの数字が大きいだけで帯域の不足が解消するとは判断しません。"
+        },
+        {
+          "id": "section-3",
+          "titleJa": "記録を残す容量",
+          "textJa": "メモリは取得したデータを記録する容量です。高いサンプリングレートでも、必要なデータを保存できなければ目的の波形記録を得られません。観測したい時間と記録条件を合わせて確認します。これらの性能を満たしても、プローブや入力定格、安全な接続の確認は別に必要です。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "入力チャネル数",
+          "reading": "にゅうりょくちゃねるすう",
+          "meaningJa": "同時観測に使える信号入力の数。"
+        },
+        {
+          "ja": "周波数帯域",
+          "reading": "しゅうはすうたいいき",
+          "meaningJa": "速い信号の観測能力に関わる周波数の範囲。"
+        },
+        {
+          "ja": "サンプリングレート",
+          "reading": "さんぷりんぐれーと",
+          "meaningJa": "一秒当たりの標本化回数に関わる値。"
+        },
+        {
+          "ja": "メモリ",
+          "reading": "めもり",
+          "meaningJa": "取得データを記録する容量。"
+        }
+      ],
+      "activityJa": "四つの性能を表に分け、二信号の同時比較と長時間記録で確認する項目を説明する。",
+      "safetyJa": [
+        "この教材を根拠に実機へ接続せず、入力定格と承認された測定手順を確認する。"
+      ],
+      "summaryJa": "同時観測数、帯域、標本化、記録容量を別の条件として説明する。",
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 102,
+          "printedPage": 93
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 103,
+          "printedPage": 94
+        }
+      ],
+      "estimatedMinutes": 30,
+      "reviewStatus": "ai_authored_source_compared_native_domain_review_pending",
+      "sourceHash": "0c854e705c157e76e30e102faf832e7444bcb1a5f4dfeab1b44e1933cd20ab83"
+    },
+    {
+      "id": "mfg1-electrical-completion37-lcr",
+      "specialty": "electrical",
+      "titleJa": "LCR測定の情報と演算を追う",
+      "objectiveJa": "L・C・Rの対象と、電圧・電流・位相から値を求める説明を区別する。",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "titleJa": "何を測りたいか",
+          "textJa": "Lはインダクタンス、Cは静電容量、Rは抵抗を表します。LCRメーターはこれらやインピーダンスを測るために使われます。同じ表示欄に数字が出ても、対象量と単位、測定条件を確認しなければ結果の意味を判断できません。"
+        },
+        {
+          "id": "section-2",
+          "titleJa": "情報を処理して値へ結び付ける",
+          "textJa": "教材にある自動平衡ブリッジ方式の説明では、電圧、電流、位相差の測定情報をデータ化して演算し、LCRやインピーダンスの値を求めます。表示値は単に端子の電圧を別の名前へ変更したものではなく、測定情報と方式に基づく結果です。"
+        },
+        {
+          "id": "section-3",
+          "titleJa": "方式の説明と製品仕様",
+          "textJa": "教材の方式説明を、全てのLCRメーターが同じ構造であるという断定へ広げません。また、昔の方法との比較は教材の説明であり、現在の全製品の難易度や精度順位を証明しません。使用する機器と部品に対して、端子、測定周波数、測定範囲などの指定を確認します。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "インダクタンス",
+          "reading": "いんだくたんす",
+          "meaningJa": "コイルなどの磁束と電流の関係に関わる量。"
+        },
+        {
+          "ja": "静電容量",
+          "reading": "せいでんようりょう",
+          "meaningJa": "電荷を蓄える能力に関わる量。"
+        },
+        {
+          "ja": "位相差",
+          "reading": "いそうさ",
+          "meaningJa": "交流の波形同士の進み遅れを表す関係。"
+        }
+      ],
+      "activityJa": "L・C・Rの三枚のカードと、電圧・電流・位相差の三枚のカードを、対象量と測定情報へ分ける。",
+      "safetyJa": [
+        "方式の概念説明から実際の端子配置や通電中の接続を決めない。"
+      ],
+      "summaryJa": "L・C・Rの対象と、電圧・電流・位相から値を求める説明を区別する。",
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 104,
+          "printedPage": 95
+        }
+      ],
+      "estimatedMinutes": 30,
+      "reviewStatus": "ai_authored_source_compared_native_domain_review_pending",
+      "sourceHash": "bfb4c1708da1b3ede83e0780584195239a6566840612150cf22489d05856c1fb"
+    },
+    {
+      "id": "mfg1-electrical-completion37-thermocouple",
+      "specialty": "electrical",
+      "titleJa": "熱電対の二つの温度を読み分ける",
+      "objectiveJa": "異種金属と温度差の原理を説明し、基準側と使用範囲の条件を確認する。",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "titleJa": "異なる金属と計測する側",
+          "textJa": "熱電対では異なる金属の組合せによる熱起電力を温度測定へ利用します。概念図のT1を計測する側、T2を計器側として読むとき、T1だけでなくT2の扱いも結果へ関わります。一本の金属の色や形だけで温度が決まるという説明ではありません。"
+        },
+        {
+          "id": "section-2",
+          "titleJa": "基準側を分けて考える",
+          "textJa": "計器側の基準をどう扱うか、基準接点の補償をどう行うかは、測定系の指定で確認します。二種類の金属と二つの温度を描いた図だけでは、実機の全配線や補償方法、電圧の正負を確定できません。種類、極性、補償導線と計器設定を一組として照合します。"
+        },
+        {
+          "id": "section-3",
+          "titleJa": "温度範囲の例を保証へ変えない",
+          "textJa": "Kタイプという名称が同じでも、線径、保護管、周囲の雰囲気、使用する計器などで適用範囲は異なります。教材にある温度範囲の例を、全てのKタイプ製品に共通する使用許可へ置き換えません。目的の温度と条件に対し、当該製品の仕様を確認します。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "熱電対",
+          "reading": "ねつでんつい",
+          "meaningJa": "異なる金属の組合せによる熱起電力を利用する温度センサー。"
+        },
+        {
+          "ja": "基準接点",
+          "reading": "きじゅんせってん",
+          "meaningJa": "熱起電力から温度を読むときの基準側の接点。"
+        },
+        {
+          "ja": "補償導線",
+          "reading": "ほしょうどうせん",
+          "meaningJa": "熱電対と計器の接続で指定される種類の導線。"
+        }
+      ],
+      "activityJa": "概念図のT1とT2を指し、どちらの温度も扱いを確認する理由を説明する。",
+      "safetyJa": [
+        "図の原理だけで極性や実機配線を決めず、機器別の承認手順に従う。"
+      ],
+      "summaryJa": "異種金属と温度差の原理を説明し、基準側と使用範囲の条件を確認する。",
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 105,
+          "printedPage": 96
+        }
+      ],
+      "estimatedMinutes": 30,
+      "reviewStatus": "ai_authored_source_compared_native_domain_review_pending",
+      "sourceHash": "9ea12bc736541093e83c6f1ce7dc1f74369842d50c49c3469f38748732cad5cf"
+    },
+    {
+      "id": "mfg1-electrical-completion37-light",
+      "specialty": "electrical",
+      "titleJa": "照度計の受光と測る量を区別する",
+      "objectiveJa": "フォトダイオードによる光の電気信号への変換と、照度の測定を対応させる。",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "titleJa": "光を電気的な情報に変える",
+          "textJa": "照度計は受光部へ届く光を電気的な情報へ変え、その情報を照度の測定へ用います。教材はこの受光素子としてフォトダイオードを挙げています。受光素子の働きと、計器が最終的に示す量を分けて読むことが大切です。"
+        },
+        {
+          "id": "section-2",
+          "titleJa": "照度と磁束密度を混ぜない",
+          "textJa": "照度計が扱う光の状態と、ガウスメーターが扱う磁束密度は異なる量です。電子式の計器であるという共通点だけで用途を交換できません。測りたい量から計器と受光部などの構成を照合し、記録には計器名と対象量を対応させます。"
+        },
+        {
+          "id": "section-3",
+          "titleJa": "比較条件を記録する",
+          "textJa": "受光部の置く位置や向き、周囲の光は測定条件です。場所を変えた結果の違いを、すぐに光源の故障と断定しません。比較する目的に対して条件をそろえ、違いがある場合はその条件も記録します。受光素子の名称だけでは機器の校正状態や精度を保証できません。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "照度計",
+          "reading": "しょうどけい",
+          "meaningJa": "受光部へ届く光に関する照度を測る計器。"
+        },
+        {
+          "ja": "フォトダイオード",
+          "reading": "ふぉとだいおーど",
+          "meaningJa": "光を電気的な情報へ変える働きに用いられる素子。"
+        },
+        {
+          "ja": "受光部",
+          "reading": "じゅこうぶ",
+          "meaningJa": "測定対象の光を受ける部分。"
+        }
+      ],
+      "activityJa": "照度計とガウスメーターのカードを、光と磁界の対象別に分け、比較時の位置と向きを説明する。",
+      "safetyJa": [
+        "素子名だけで実機の端子や定格を決めず、計器別の仕様と確認方法に従う。"
+      ],
+      "summaryJa": "フォトダイオードによる光の電気信号への変換と、照度の測定を対応させる。",
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 105,
+          "printedPage": 96
+        }
+      ],
+      "estimatedMinutes": 30,
+      "reviewStatus": "ai_authored_source_compared_native_domain_review_pending",
+      "sourceHash": "d419fb27c05a8fc9ba9d9a5ed0a09046f9d6d7734600418d5dc75c66ee59e7b1"
+    },
+    {
+      "id": "mfg1-electrical-completion37-hall",
+      "specialty": "electrical",
+      "titleJa": "ホール効果の三方向を対応させる",
+      "objectiveJa": "電流・磁界・ホール電圧が互いに直交する概念と、符号や端子の条件を分ける。",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "titleJa": "三つの方向",
+          "textJa": "ホール効果の概念では、物質へ電流を流し、その電流と垂直な磁界を加えると、電流と磁界の両方へ直交する方向に電圧が現れます。電流の方向、磁界の方向、現れる電圧の方向を同じ矢印として扱わず、三方向に分けて図を読みます。"
+        },
+        {
+          "id": "section-2",
+          "titleJa": "紙面上の図を読む",
+          "textJa": "電流を紙面の左右、磁界を紙面に垂直な方向とした概念図なら、ホール電圧は紙面の上下方向に対応します。この説明は三つの方向の関係を示すもので、上下のどちらが正かを無条件に決めるものではありません。正負や実端子の対応は素子の仕様と条件で確認します。"
+        },
+        {
+          "id": "section-3",
+          "titleJa": "何を検出するか",
+          "textJa": "ホール素子は磁束密度の検出などに使われ、ガウスメーターの原理に利用されます。図の電圧方向を見て、その線を実機の接続端子と決めつけません。検出したい量、センサーの向き、機器の指定条件を対応させ、計器と対象に適した測定方法を確認します。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "ホール効果",
+          "reading": "ほーるこうか",
+          "meaningJa": "電流と磁界に直交する方向へ電圧が生じる現象。"
+        },
+        {
+          "ja": "直交",
+          "reading": "ちょっこう",
+          "meaningJa": "方向が直角に交わる関係。"
+        },
+        {
+          "ja": "磁束密度",
+          "reading": "じそくみつど",
+          "meaningJa": "磁界の状態を表し、ガウスメーターなどで測る量。"
+        }
+      ],
+      "activityJa": "左右・上下・紙面に垂直な三方向を、電流・ホール電圧・磁界へ対応させ、電圧の正負と方向の違いを説明する。",
+      "safetyJa": [
+        "概念図の矢印だけで実センサーの端子接続や極性を決めない。"
+      ],
+      "summaryJa": "電流・磁界・ホール電圧が互いに直交する概念と、符号や端子の条件を分ける。",
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 105,
+          "printedPage": 96
+        }
+      ],
+      "estimatedMinutes": 30,
+      "reviewStatus": "ai_authored_source_compared_native_domain_review_pending",
+      "sourceHash": "1108151b5508f9253e14a9da72e860f7964473c52455c2b38a6d0c8abd916520"
+    },
+    {
+      "id": "mfg1-electrical-completion37-resistance",
+      "specialty": "electrical",
+      "titleJa": "抵抗測定の方法名と誤差の扱いを確認する",
+      "objectiveJa": "教材の二つの方法名とR=V/Iを区別し、測定系の影響を一律の補正式へ変えない。",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "titleJa": "方法名と説明範囲",
+          "textJa": "教材は抵抗測定の方法としてブリッジ法と電圧降下法を挙げます。ここでは方法の名称を区別します。該当する説明にはブリッジ回路の詳細な構成や調整手順は示されていないため、名前だけを根拠に実回路を組みません。古い方法との比較を、現在の全機器の使用割合や優劣の証明として扱いません。"
+        },
+        {
+          "id": "section-2",
+          "titleJa": "測定値から求める紙上例",
+          "textJa": "電圧降下法では、対象に対応する電圧Vと電流Iを測り、抵抗RをR=V/Iで求めます。独立した紙上例で0.30Vと15mAなら、15mA=0.015Aとして0.30÷0.015=20Ωです。これは与えた測定値を使う計算であり、実機の安全な接続や対象の真値を保証する例ではありません。"
+        },
+        {
+          "id": "section-3",
+          "titleJa": "表示と対象だけの抵抗",
+          "textJa": "電源、計器、配線、接点などにも測定結果へ関わる要素があります。結果の違いを見ても、常に同じ抵抗値を足す、又は引くといった補正を一律に決めません。どの部分の電圧と電流を測ったか、測定条件が対応しているかを確認し、影響の扱いは指定された評価方法に従います。"
+        }
+      ],
+      "terms": [
+        {
+          "ja": "ブリッジ法",
+          "reading": "ぶりっじほう",
+          "meaningJa": "教材が挙げる抵抗測定方法の一つ。"
+        },
+        {
+          "ja": "電圧降下法",
+          "reading": "でんあつこうかほう",
+          "meaningJa": "測定した電圧と電流から抵抗を求める方法。"
+        },
+        {
+          "ja": "測定系",
+          "reading": "そくていけい",
+          "meaningJa": "計器、電源、配線、接続部など測定に関係する構成。"
+        }
+      ],
+      "activityJa": "方法名の区別、紙上のR=V/I計算、測定系の影響を三つの欄へ分けて記録する。",
+      "safetyJa": [
+        "計算が正しくても実作業の配線や通電が許可されるわけではない。"
+      ],
+      "summaryJa": "教材の二つの方法名とR=V/Iを区別し、測定系の影響を一律の補正式へ変えない。",
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 151,
+          "printedPage": 142
+        }
+      ],
+      "estimatedMinutes": 30,
+      "reviewStatus": "ai_authored_source_compared_native_domain_review_pending",
+      "sourceHash": "a808c99bdc1c34c32e0d696f0216b31b6b3b9ede1a51cabb6fa6a557f9ee2037"
+    }
+  ],
+  "checks": [
+    {
+      "id": "mfg1-electrical-completion37-scope-check",
+      "revision": "completion37-f09c49715f5b1f844da4",
+      "titleJa": "補足確認：オシロスコープの四つの性能を分ける",
+      "kind": "weekly",
+      "officialSimulation": false,
+      "weekId": "completion37-scope",
+      "questions": [
+        {
+          "id": "mfg1-electrical-completion37-scope-q01",
+          "lessonId": "mfg1-electrical-completion37-scope",
+          "lessonSourceHash": "0c854e705c157e76e30e102faf832e7444bcb1a5f4dfeab1b44e1933cd20ab83",
+          "stemJa": "二信号の時間関係を同時に比べたい。最初に必要数を照合する性能はどれか。",
+          "optionsJa": [
+            "入力チャネル数",
+            "メモリの外形寸法だけ",
+            "表示画面の色数だけ",
+            "電源コードの長さだけ"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "入力チャネル数は同時に観測する信号数に関わる。",
+            "外形寸法から同時入力数は判断できない。",
+            "色数だけでは必要な信号入力を備えるか分からない。",
+            "コードの長さは同時信号数の条件ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 102,
+              "printedPage": 93
+            },
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 103,
+              "printedPage": 94
+            }
+          ],
+          "sourceHash": "b49c7ef5d0a2248833ba809afcb7c3f210666843ae514cd7a5002f8291270df9"
+        },
+        {
+          "id": "mfg1-electrical-completion37-scope-q02",
+          "lessonId": "mfg1-electrical-completion37-scope",
+          "lessonSourceHash": "0c854e705c157e76e30e102faf832e7444bcb1a5f4dfeab1b44e1933cd20ab83",
+          "stemJa": "帯域が目的に合うか不明だが、サンプリングレートの数字は大きかった。適切な判断はどれか。",
+          "optionsJa": [
+            "大きい数字だけで全性能に適合する",
+            "帯域とサンプリングレートを分けて仕様を確認する",
+            "チャネル数が帯域を必ず決める",
+            "メモリの色で帯域を判断する"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "異なる性能を一つの数字で保証できない。",
+            "帯域と標本化の速さは異なる条件なので両方を照合する。",
+            "入力数は帯域と同じ量ではない。",
+            "色は帯域を示す測定仕様ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 102,
+              "printedPage": 93
+            },
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 103,
+              "printedPage": 94
+            }
+          ],
+          "sourceHash": "993138ce9a9a8e33864a4f942d22a3a4364d8fc5a57b4c8bfcff2f02cace2dba"
+        },
+        {
+          "id": "mfg1-electrical-completion37-scope-q03",
+          "lessonId": "mfg1-electrical-completion37-scope",
+          "lessonSourceHash": "0c854e705c157e76e30e102faf832e7444bcb1a5f4dfeab1b44e1933cd20ab83",
+          "stemJa": "一秒当たりに信号をデータへ変換する回数に関わる性能はどれか。",
+          "optionsJa": [
+            "入力チャネル数",
+            "表示部の幅",
+            "サンプリングレート",
+            "筐体の質量"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "チャネル数は入力数であり一秒当たりの標本化回数ではない。",
+            "表示部の幅はデータ変換回数を表さない。",
+            "サンプリングレートは一秒当たりの標本化に関わる。",
+            "質量は標本化回数と異なる量である。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 102,
+              "printedPage": 93
+            },
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 103,
+              "printedPage": 94
+            }
+          ],
+          "sourceHash": "73cf5ded69dfe7cc7a92d71087d5246f3bcb71d4659be2be34c27a034752a70f"
+        },
+        {
+          "id": "mfg1-electrical-completion37-scope-q04",
+          "lessonId": "mfg1-electrical-completion37-scope",
+          "lessonSourceHash": "0c854e705c157e76e30e102faf832e7444bcb1a5f4dfeab1b44e1933cd20ab83",
+          "stemJa": "速く標本化できるが、必要な波形記録を保存し切れなかった。追加で優先して確認するのはどれか。",
+          "optionsJa": [
+            "チャネル名の文字数だけ",
+            "前の機種の広告だけ",
+            "画面の明るさだけ",
+            "記録時間とメモリ容量の対応"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "名称の長さは保存可能なデータ量を示さない。",
+            "別機種の広告で現在の記録条件は確定できない。",
+            "画面を明るくしても記録容量は増えない。",
+            "標本化の速さと記録容量を目的の観測時間に対応させる。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 102,
+              "printedPage": 93
+            },
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 103,
+              "printedPage": 94
+            }
+          ],
+          "sourceHash": "5a555e39b2c784df8f8d5c5e6884a610c55bbb421d8ed585ae1c61441e5047fc"
+        }
+      ]
+    },
+    {
+      "id": "mfg1-electrical-completion37-lcr-check",
+      "revision": "completion37-7a5a0f49a50047fc78bd",
+      "titleJa": "補足確認：LCR測定の情報と演算を追う",
+      "kind": "weekly",
+      "officialSimulation": false,
+      "weekId": "completion37-lcr",
+      "questions": [
+        {
+          "id": "mfg1-electrical-completion37-lcr-q01",
+          "lessonId": "mfg1-electrical-completion37-lcr",
+          "lessonSourceHash": "bfb4c1708da1b3ede83e0780584195239a6566840612150cf22489d05856c1fb",
+          "stemJa": "コイルのLとコンデンサのCを資料へ対応させる。正しい組合せはどれか。",
+          "optionsJa": [
+            "Lはインダクタンス、Cは静電容量",
+            "Lは長さ、Cは電流だけ",
+            "LもCも抵抗の別名",
+            "Lは照度、Cは磁束密度"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "LとCは異なる素子量を表す。",
+            "ここでのL・Cは長さや電流の記号ではない。",
+            "抵抗RとL・Cは同じ量ではない。",
+            "照度と磁束密度はこの記号の対応ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 104,
+              "printedPage": 95
+            }
+          ],
+          "sourceHash": "515e1f15c8e55ff1370f9609b6524e7c8a98a08f02d6c6f8f83b23094aa49dc6"
+        },
+        {
+          "id": "mfg1-electrical-completion37-lcr-q02",
+          "lessonId": "mfg1-electrical-completion37-lcr",
+          "lessonSourceHash": "bfb4c1708da1b3ede83e0780584195239a6566840612150cf22489d05856c1fb",
+          "stemJa": "教材の自動平衡ブリッジ方式で、演算に利用する情報の組合せはどれか。",
+          "optionsJa": [
+            "部品の色と箱の寸法だけ",
+            "電圧・電流・位相差の測定情報",
+            "製品名の文字数だけ",
+            "作業者が予想した値だけ"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "外観だけで必要な電気情報は得られない。",
+            "教材はこれらの測定情報をデータ化して演算する説明をしている。",
+            "名称の文字数は測定情報ではない。",
+            "予想は測定した情報の代わりにならない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 104,
+              "printedPage": 95
+            }
+          ],
+          "sourceHash": "01d69d3f2108d21435624f7a1e2e23484ce5aab928e2d72f6f1b799bcee89df6"
+        },
+        {
+          "id": "mfg1-electrical-completion37-lcr-q03",
+          "lessonId": "mfg1-electrical-completion37-lcr",
+          "lessonSourceHash": "bfb4c1708da1b3ede83e0780584195239a6566840612150cf22489d05856c1fb",
+          "stemJa": "教材に一つのLCR方式が書かれていた。別製品について適切なのはどれか。",
+          "optionsJa": [
+            "全製品の内部構造は同じと決める",
+            "同じ外形なら設定を確認しない",
+            "当該製品の方式と測定条件を仕様で確認する",
+            "教材の図だけで端子へ接続する"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "一方式の説明は全製品の構造を保証しない。",
+            "外形の一致は測定条件の一致ではない。",
+            "対象製品の仕様を照合し、教材の例を無条件に一般化しない。",
+            "概念図は機器別の安全な接続手順ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 104,
+              "printedPage": 95
+            }
+          ],
+          "sourceHash": "e830dbfbe8f4751917a91c19aa1f1d30a375491adf72b58604be2160c45507f4"
+        },
+        {
+          "id": "mfg1-electrical-completion37-lcr-q04",
+          "lessonId": "mfg1-electrical-completion37-lcr",
+          "lessonSourceHash": "bfb4c1708da1b3ede83e0780584195239a6566840612150cf22489d05856c1fb",
+          "stemJa": "LCR測定で数値だけを記録し、対象量と単位が分からなくなった。適切な対応はどれか。",
+          "optionsJa": [
+            "全て抵抗Ωとして扱う",
+            "数値が近い別部品の記録を写す",
+            "表示色から対象量を推測する",
+            "元の測定対象・量・単位・条件を確認する"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "L・C・Rを全て抵抗へ置き換えることはできない。",
+            "別部品の記録では今回の測定事実を確認できない。",
+            "色だけで対象量を同定できない。",
+            "測定値の意味を決める情報を元の記録や指定から確認する。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 104,
+              "printedPage": 95
+            }
+          ],
+          "sourceHash": "188428284122a5023e1f3add217a8cc4b752c0d9180f9b06b48d52bcecdbf94e"
+        }
+      ]
+    },
+    {
+      "id": "mfg1-electrical-completion37-thermocouple-check",
+      "revision": "completion37-6ed23c18a1a93ded48e3",
+      "titleJa": "補足確認：熱電対の二つの温度を読み分ける",
+      "kind": "weekly",
+      "officialSimulation": false,
+      "weekId": "completion37-thermocouple",
+      "questions": [
+        {
+          "id": "mfg1-electrical-completion37-thermocouple-q01",
+          "lessonId": "mfg1-electrical-completion37-thermocouple",
+          "lessonSourceHash": "9ea12bc736541093e83c6f1ce7dc1f74369842d50c49c3469f38748732cad5cf",
+          "stemJa": "熱電対の原理に合う説明はどれか。",
+          "optionsJa": [
+            "異なる金属の組合せと温度差に関わる熱起電力を利用する",
+            "同じ色の金属なら温度は一定になる",
+            "磁石へ付く強さだけを温度へ換える",
+            "光の明るさだけを測る"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "異種金属と温度差に関わる電気的応答を温度測定へ利用する。",
+            "色の一致は熱電対の温度決定原理ではない。",
+            "磁性の観察は熱電対の測定原理ではない。",
+            "光を受ける照度計とは測る仕組みが異なる。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 105,
+              "printedPage": 96
+            }
+          ],
+          "sourceHash": "03e4591f6162d0bedeb55e77adc4679b1d35d9df00d1624ba567a03533410c8c"
+        },
+        {
+          "id": "mfg1-electrical-completion37-thermocouple-q02",
+          "lessonId": "mfg1-electrical-completion37-thermocouple",
+          "lessonSourceHash": "9ea12bc736541093e83c6f1ce7dc1f74369842d50c49c3469f38748732cad5cf",
+          "stemJa": "概念図で計測側T1だけを読み、計器側T2を無視する提案があった。適切なのはどれか。",
+          "optionsJa": [
+            "T1の文字があればT2は常に無関係",
+            "基準側T2の扱いと補償を含む測定系の指定を確認する",
+            "T2は必ず全製品で同じ値",
+            "金属名を消せば基準側の影響がなくなる"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "熱起電力から温度を読むには基準側の扱いも関係する。",
+            "二つの温度と基準接点の条件を分けて確認する。",
+            "図にあるT2を全製品共通の定数と決めつけない。",
+            "記号や名称の削除は物理的な影響をなくさない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 105,
+              "printedPage": 96
+            }
+          ],
+          "sourceHash": "76dc67ab7d274bf7784ad91db8c7f74c557d1a6bdb1e0fa9ed28a25bb57a9b49"
+        },
+        {
+          "id": "mfg1-electrical-completion37-thermocouple-q03",
+          "lessonId": "mfg1-electrical-completion37-thermocouple",
+          "lessonSourceHash": "9ea12bc736541093e83c6f1ce7dc1f74369842d50c49c3469f38748732cad5cf",
+          "stemJa": "別のKタイプ熱電対を受け取った。使用範囲について適切なのはどれか。",
+          "optionsJa": [
+            "Kという名称だけで全温度へ使える",
+            "以前の製品の上限を必ず引き継ぐ",
+            "当該製品の線径・保護・雰囲気・計器条件を仕様で確認する",
+            "図の金属線の長さだけで使用温度を決める"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "種類名だけでは全条件の使用範囲を保証しない。",
+            "別製品の仕様をそのまま引き継ぐことはできない。",
+            "熱電対の種類に加え、製品と使用環境の条件を照合する。",
+            "概念図の線長は実機の使用温度仕様ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 105,
+              "printedPage": 96
+            }
+          ],
+          "sourceHash": "9631462e75afadea1aec36271539aa01e7c45f7117d3aa7dcdcbebcc4ab50801"
+        },
+        {
+          "id": "mfg1-electrical-completion37-thermocouple-q04",
+          "lessonId": "mfg1-electrical-completion37-thermocouple",
+          "lessonSourceHash": "9ea12bc736541093e83c6f1ce7dc1f74369842d50c49c3469f38748732cad5cf",
+          "stemJa": "二金属とT1・T2の概念図から、何を無条件には決められないか。",
+          "optionsJa": [
+            "二つの温度を区別する必要",
+            "異なる金属を使う原理",
+            "温度に関係する電気的応答の利用",
+            "実機の端子配置・極性・全補償配線"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "温度を区別する考え方は図の学習対象である。",
+            "異種金属の組合せは図が示す原理である。",
+            "熱起電力の利用は図の概念として説明できる。",
+            "原理図は製品別の全配線仕様や極性を指定するものではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 105,
+              "printedPage": 96
+            }
+          ],
+          "sourceHash": "ea86d0221dcbdaf28142b98afc06bb00e8f74a4b17fd929b3e1e41c6ebb66cb0"
+        }
+      ]
+    },
+    {
+      "id": "mfg1-electrical-completion37-light-check",
+      "revision": "completion37-aca92ebb7a7fde8e3b31",
+      "titleJa": "補足確認：照度計の受光と測る量を区別する",
+      "kind": "weekly",
+      "officialSimulation": false,
+      "weekId": "completion37-light",
+      "questions": [
+        {
+          "id": "mfg1-electrical-completion37-light-q01",
+          "lessonId": "mfg1-electrical-completion37-light",
+          "lessonSourceHash": "d419fb27c05a8fc9ba9d9a5ed0a09046f9d6d7734600418d5dc75c66ee59e7b1",
+          "stemJa": "教材が照度計の受光素子として挙げるものはどれか。",
+          "optionsJa": [
+            "フォトダイオード",
+            "ねじゲージ",
+            "デプスバー",
+            "圧着端子"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "教材は光を電気的に変換する素子としてフォトダイオードを挙げている。",
+            "ねじゲージは光の受光素子ではない。",
+            "デプスバーは深さ測定に関わる部位である。",
+            "圧着端子は電線接続の部品で受光素子ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 105,
+              "printedPage": 96
+            }
+          ],
+          "sourceHash": "5ef135b7c2937881dc21f7a79a7f498cd9513f810bdbbc400ca2c8f07111c31d"
+        },
+        {
+          "id": "mfg1-electrical-completion37-light-q02",
+          "lessonId": "mfg1-electrical-completion37-light",
+          "lessonSourceHash": "d419fb27c05a8fc9ba9d9a5ed0a09046f9d6d7734600418d5dc75c66ee59e7b1",
+          "stemJa": "照度計とガウスメーターの対応として正しいものはどれか。",
+          "optionsJa": [
+            "両方とも同じ磁束密度だけを測る",
+            "前者は照度、後者は磁束密度を測る",
+            "前者は長さ、後者は質量を測る",
+            "電子式なら用途を自由に交換できる"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "照度と磁束密度は異なる対象量である。",
+            "計器の名称を測る量と対応させる。",
+            "長さや質量の計器という対応ではない。",
+            "電子式という共通点は用途の互換性を保証しない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 105,
+              "printedPage": 96
+            }
+          ],
+          "sourceHash": "c8a7fa2dbcc9f311902efd9b3cca8ff1469efb520191ccd9ba889a12188bbdda"
+        },
+        {
+          "id": "mfg1-electrical-completion37-light-q03",
+          "lessonId": "mfg1-electrical-completion37-light",
+          "lessonSourceHash": "d419fb27c05a8fc9ba9d9a5ed0a09046f9d6d7734600418d5dc75c66ee59e7b1",
+          "stemJa": "照度の比較で受光部の位置と向きも変わっていた。適切な判断はどれか。",
+          "optionsJa": [
+            "数値差は必ず光源の故障を示す",
+            "計器名を消せば比較条件が一致する",
+            "位置・向き・周囲の光を確認して比較する",
+            "近い値だけを選んで記録する"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "観測条件の変化を調べず故障原因を断定できない。",
+            "名称の削除で測定条件の違いは解消しない。",
+            "受光条件をそろえるか、差を記録して比較の前提を明確にする。",
+            "都合のよい値の選別は測定事実を隠す。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 105,
+              "printedPage": 96
+            }
+          ],
+          "sourceHash": "3f20c3707062651e4ae4db8c8a2a4b520e5a06f2a3ea90d4d6f753cbda852789"
+        },
+        {
+          "id": "mfg1-electrical-completion37-light-q04",
+          "lessonId": "mfg1-electrical-completion37-light",
+          "lessonSourceHash": "d419fb27c05a8fc9ba9d9a5ed0a09046f9d6d7734600418d5dc75c66ee59e7b1",
+          "stemJa": "計器にフォトダイオードが使われていると分かった。この情報だけでは保証できないものはどれか。",
+          "optionsJa": [
+            "光を受ける素子があること",
+            "光に関する情報を扱うこと",
+            "素子の働きと表示量を分けて考える必要",
+            "現在の校正状態と測定精度"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "素子の名称から受光素子の存在は説明できる。",
+            "受光素子を使うという概念に対応する。",
+            "素子から表示への働きを区別する学習はできる。",
+            "素子の種類だけでは現在の機器全体の測定性能を保証しない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 105,
+              "printedPage": 96
+            }
+          ],
+          "sourceHash": "09cab4b1d7ec3a86a0ba3f58f02b481b8ac7d959d4ca2a68132a43d6e5c7be17"
+        }
+      ]
+    },
+    {
+      "id": "mfg1-electrical-completion37-hall-check",
+      "revision": "completion37-9b8c9f3fb91f77bce6a4",
+      "titleJa": "補足確認：ホール効果の三方向を対応させる",
+      "kind": "weekly",
+      "officialSimulation": false,
+      "weekId": "completion37-hall",
+      "questions": [
+        {
+          "id": "mfg1-electrical-completion37-hall-q01",
+          "lessonId": "mfg1-electrical-completion37-hall",
+          "lessonSourceHash": "1108151b5508f9253e14a9da72e860f7964473c52455c2b38a6d0c8abd916520",
+          "stemJa": "ホール効果で現れる電圧の方向は、電流と磁界に対してどの関係か。",
+          "optionsJa": [
+            "両方に直交する",
+            "電流と必ず同じ方向",
+            "磁界と必ず同じ方向",
+            "三方向は区別できない"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "教材の原理は電流と磁界の双方に直交する方向の応答である。",
+            "電流方向と電圧方向を同じとする説明ではない。",
+            "磁界方向と電圧方向を同じとする説明ではない。",
+            "三方向の区別が原理図を読む要点である。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 105,
+              "printedPage": 96
+            }
+          ],
+          "sourceHash": "f6241525640135e724db15728491f38d64f0d6002901565451b0ea444ffcd6d0"
+        },
+        {
+          "id": "mfg1-electrical-completion37-hall-q02",
+          "lessonId": "mfg1-electrical-completion37-hall",
+          "lessonSourceHash": "1108151b5508f9253e14a9da72e860f7964473c52455c2b38a6d0c8abd916520",
+          "stemJa": "電流が紙面の左右、磁界が紙面に垂直な概念図である。ホール電圧に対応する方向はどれか。",
+          "optionsJa": [
+            "紙面の左右",
+            "紙面の上下",
+            "紙面に垂直な方向だけ",
+            "電流と同じ一方向だけ"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "電流の左右方向とは直交する。",
+            "左右と紙面に垂直な方向の両方へ直交するのは上下方向である。",
+            "磁界と同方向ではなく両方へ直交する方向を考える。",
+            "原理の三方向を一つへまとめない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 105,
+              "printedPage": 96
+            }
+          ],
+          "sourceHash": "732e7c45a512f821f8a8588b2e433b4bd365fbfdf07a35c617fe8dd25834519d"
+        },
+        {
+          "id": "mfg1-electrical-completion37-hall-q03",
+          "lessonId": "mfg1-electrical-completion37-hall",
+          "lessonSourceHash": "1108151b5508f9253e14a9da72e860f7964473c52455c2b38a6d0c8abd916520",
+          "stemJa": "ホール素子の概念図に上下の電圧方向が示されている。適切な判断はどれか。",
+          "optionsJa": [
+            "全素子で上側が必ず正の端子",
+            "図の上下を全機種の端子番号へ置き換える",
+            "方向の関係と電圧の正負・実端子の指定を分ける",
+            "図があるので製品仕様は不要"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "概念的な方向関係だけでは全素子の正負を固定できない。",
+            "図上の位置は製品別の端子番号ではない。",
+            "直交する方向の学習と、機器別の符号・端子の確認は異なる。",
+            "製品の指定条件は概念図と別に確認する。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 105,
+              "printedPage": 96
+            }
+          ],
+          "sourceHash": "46c8ade5b7898d23b7bba31178ba043002c3a73fc99b3a37477814f013366ae9"
+        },
+        {
+          "id": "mfg1-electrical-completion37-hall-q04",
+          "lessonId": "mfg1-electrical-completion37-hall",
+          "lessonSourceHash": "1108151b5508f9253e14a9da72e860f7964473c52455c2b38a6d0c8abd916520",
+          "stemJa": "ホール効果を利用する計器と測定対象の対応はどれか。",
+          "optionsJa": [
+            "ノギスと直径",
+            "照度計と包装数量",
+            "ハイトゲージと光の色",
+            "ガウスメーターと磁束密度"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "ノギスの寸法測定はホール効果の利用例ではない。",
+            "照度計は包装数量を測る計器ではない。",
+            "ハイトゲージは高さなどの寸法に関わる。",
+            "ホール素子は磁束密度の検出に利用される。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 105,
+              "printedPage": 96
+            }
+          ],
+          "sourceHash": "ecaf5ea061ba03cf2f707450460a4791f37e64b543ea9f68451183c7fb8095c0"
+        }
+      ]
+    },
+    {
+      "id": "mfg1-electrical-completion37-resistance-check",
+      "revision": "completion37-601b4a2b56bf29ae44bb",
+      "titleJa": "補足確認：抵抗測定の方法名と誤差の扱いを確認する",
+      "kind": "weekly",
+      "officialSimulation": false,
+      "weekId": "completion37-resistance",
+      "questions": [
+        {
+          "id": "mfg1-electrical-completion37-resistance-q01",
+          "lessonId": "mfg1-electrical-completion37-resistance",
+          "lessonSourceHash": "a808c99bdc1c34c32e0d696f0216b31b6b3b9ede1a51cabb6fa6a557f9ee2037",
+          "stemJa": "教材が抵抗測定の二つの方法名として挙げる組はどれか。",
+          "optionsJa": [
+            "ブリッジ法と電圧降下法",
+            "塗装法と研磨法",
+            "照度法と包装法",
+            "外観法と色分け法だけ"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "教材はこの二つを抵抗測定の方法として挙げている。",
+            "表面処理の名称であり該当する抵抗測定方法ではない。",
+            "測る量や作業が異なる。",
+            "教材の二つの方法名に対応しない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 151,
+              "printedPage": 142
+            }
+          ],
+          "sourceHash": "72adff5d86b376de24ffc1241738027b0d85ae3917c0b91f9fdeaad61a393793"
+        },
+        {
+          "id": "mfg1-electrical-completion37-resistance-q02",
+          "lessonId": "mfg1-electrical-completion37-resistance",
+          "lessonSourceHash": "a808c99bdc1c34c32e0d696f0216b31b6b3b9ede1a51cabb6fa6a557f9ee2037",
+          "stemJa": "紙上例で電圧0.30V、電流15mAが与えられた。R=V/Iの計算値はどれか。",
+          "optionsJa": [
+            "0.020Ω",
+            "20Ω",
+            "4.5Ω",
+            "50Ω"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "15mAを15Aとして扱うと千倍の換算を誤る。",
+            "15mA=0.015Aより0.30÷0.015=20Ωとなる。",
+            "電圧と電流の数値を掛ける計算ではない。",
+            "I/Vという逆の関係で抵抗を求めない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 151,
+              "printedPage": 142
+            }
+          ],
+          "sourceHash": "ec024f6fce04e4a0be43344c753d0504d3329023bc0211ac878ddb23b175addb"
+        },
+        {
+          "id": "mfg1-electrical-completion37-resistance-q03",
+          "lessonId": "mfg1-electrical-completion37-resistance",
+          "lessonSourceHash": "a808c99bdc1c34c32e0d696f0216b31b6b3b9ede1a51cabb6fa6a557f9ee2037",
+          "stemJa": "表示抵抗に測定系の影響が疑われる。適切な考え方はどれか。",
+          "optionsJa": [
+            "常に全機種で同じ値を引けば真値になる",
+            "接点の情報を消せば影響がなくなる",
+            "測定箇所と条件を確認し、指定された方法で影響を評価する",
+            "最も小さい値だけを採用する"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "影響の向きや大きさは一律ではなく固定補正を作れない。",
+            "記録の削除は測定系の物理的影響を消さない。",
+            "測定系の構成と測った量の対応を確かめて判断する。",
+            "都合のよい値の選択では正しい評価にならない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 151,
+              "printedPage": 142
+            }
+          ],
+          "sourceHash": "dde69cb771eab8199c3c0280f50624185bc7401677669c1f3aaa06c4da818a54"
+        },
+        {
+          "id": "mfg1-electrical-completion37-resistance-q04",
+          "lessonId": "mfg1-electrical-completion37-resistance",
+          "lessonSourceHash": "a808c99bdc1c34c32e0d696f0216b31b6b3b9ede1a51cabb6fa6a557f9ee2037",
+          "stemJa": "教材に「以前はある方法が多く使われた」と書かれている。そこから保証できない結論はどれか。",
+          "optionsJa": [
+            "教材が複数の方法名を紹介していること",
+            "方法の説明と実機の指定を区別する必要",
+            "電圧と電流の単位をそろえる必要",
+            "現在の全製品の使用割合と精度順位"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "教材内で紹介された方法名は確認できる。",
+            "教材の説明範囲と製品の適用条件を区別できる。",
+            "R=V/Iの計算では対応する単位の確認が必要である。",
+            "相対的な時代表現から現在の市場全体や精度の順位は証明できない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-electrical-source",
+              "pdfPage": 151,
+              "printedPage": 142
+            }
+          ],
+          "sourceHash": "ce1a6d72b40c2bf2a96ed4e36adca3ac3d4fc2ba0de21e1ff01e77ac8ad6e7b0"
+        }
+      ]
+    }
+  ]
+}

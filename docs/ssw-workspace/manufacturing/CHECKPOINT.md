@@ -1,3 +1,13 @@
+# Manufacturing SSW1 — batch37 six-AI concentrated production, 2026-10-31
+
+Onlymanufacturing1号. Added22source-bound cohesive JP supplements(mechanical8/electrical6/surface8),22checks/80newquestions(32/24/24),all12targets:264lesson-locale+960question-locale pairs. AuthorsreassignedafterJPtofiveconcurrenttranslationlanes whileintegratorownedcode. Newreadingcards/existingweeklycontroller,independentIDs/revisions/progress,exactteaching/question/targetbindings,nofallback. Old262corelessons/456weeklyquestions/8caliper+4Boolean/30originalmocks+3curated/12guides retained.7originalSVGPNGboards(4mechanical+3surface)/9lessonattachments,translatedsummarycaptions;total27+7=34uniqueartworks.
+
+Mainnew/legacydatastategate,66preservedcorehashes,source/canonicalhashes,alltargetfields,savedprogress/answers/grading/negativeguards PASS. SSR104oldfigure+192Booleanoption+208newfigurecasesPASS withdeclaredappearance/safearea/imageadapters;notbrowserlayout/image-load/zoom/nativecertification. Scopedhelper/figureTypeScript,readerTSXsyntax,scopedESLint0/0,JLPT10/10lock andwhitespacePASS. Exactreaderreplay/idempotence/unknown-inputzero-writePASS;fullassembler/Expo/fullappTypeScriptnotrerun. NoPDF/sourcepageartredistributed;source-specificrecipes/standardsnotuniversalized.
+
+Finite remaining-required-work.json has15groupedartifactpacks withspecificpages/goals/lessonlinks,not15lessons. Mechanical14visualpage-rows/8groups andsurface26visualrowsremaingloballybounded;sevenboards/duplicatesexcluded. Electrical14knownoccurrences+2visualassessmentfacetsnowhavetaught/assessedbindings;noinventedbridgeconstructionfrom151. Full574pageobjectclosure/alltranslationnative/domain/physicaldevicegatesremainunverified;wholecurriculum/release/human/native/domain/deviceflagsfalse. Readbatch37-completion/REPORT.vi.md,session-evidence.json andremaining-required-work.json. Nobackgroundprocessimplied.
+
+---
+
 # Manufacturing SSW1 — batch36 source-qualified diagrams and Boolean practice, 2026-10-30
 
 Integrated5independent conceptual figures (LCR/thermocouple/Hall/caliperparts/Vickersdiagonals) with60source-boundtargetcaptions;22original+5supplemental=27figures. Verified all3originalPDFhashes and visually reread electrical104/105/161,mechanical72,surface184;notnewunique-page orwhole-sourceclosure. Added dualdistributivity teaching to electrical075 inJapanese+12targets and4original formativequestions/48targetpairs with20visible rubyfields. Separate IDs/revisions,exactteachingactivation/source/targetguards,no fallback;existing corebanks/456weeklyquestions/8caliperquestions/96targets/30mocks+3assemblies/12guides unchanged.

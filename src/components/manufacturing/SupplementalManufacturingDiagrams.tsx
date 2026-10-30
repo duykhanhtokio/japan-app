@@ -14,11 +14,11 @@ const sources:Record<string,ReturnType<typeof require>>={
  'batch36-indentation.png':require('../../../assets/manufacturing/diagrams/batch36-indentation.png'),
 };
 
-function SupplementalFigure({item,language,showTranslation}:{item:SupplementalDiagram;language:string;showTranslation:boolean}){
+export function SupplementalFigure({item,language,showTranslation,imageSource,translatedCaption}:{item:SupplementalDiagram;language:string;showTranslation:boolean;imageSource?:ReturnType<typeof require>;translatedCaption?:string|null}){
  const [expanded,setExpanded]=useState(false),{width}=useWindowDimensions(),insets=useSafeAreaInsets(),{colors}=useStudyAppearance();
- const source=Object.prototype.hasOwnProperty.call(sources,item.assetFile)?sources[item.assetFile]:undefined;
+ const source=imageSource??(Object.prototype.hasOwnProperty.call(sources,item.assetFile)?sources[item.assetFile]:undefined);
  if(!source)return null;
- const target=showTranslation?manufacturingSupplementalCaption(item,language):null;
+ const target=showTranslation?(translatedCaption??manufacturingSupplementalCaption(item,language)):null;
  const label=target??item.captionJa,ratio=item.width/item.height,zoomWidth=Math.max(960,width);
  const close=()=>setExpanded(false);
  const button=(key:'imageZoom'|'imageClose',action:()=>void)=><Pressable accessibilityRole="button" accessibilityLabel={`${manufacturingUi(language,key)} · ${item.captionJa.split('。')[0]}`} onPress={action} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:16,textAlign:'center'}}>{manufacturingUi(language,key)}</Text></Pressable>;
