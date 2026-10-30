@@ -9,7 +9,18 @@ import unicodedata
 
 root = pathlib.Path(__file__).resolve().parents[2]
 data = root / 'src/data/food-manufacturing'
-questions = {q['id']: q for e in json.loads((data / 'exams.ja.json').read_text())['exams'] for q in e['questions']}
+parts = [json.loads(path.read_text()) for path in sorted((data / 'authoring-20261029').glob('part[1-6].json'))]
+exams = json.loads((data / 'exams.ja.json').read_text())['exams']
+exams += [exam for part in parts for exam in part.get('exams', [])]
+questions = {q['id']: q for exam in exams for q in exam['questions']}
+# Mirror supplemental.ts and index.ts: later parts extend the base locale pack.
+locale_questions = {
+    path.stem: json.loads(path.read_text())['questions']
+    for path in sorted((data / 'test-translations').glob('*.json'))
+}
+for part in parts:
+    for locale, pack in part.get('testTranslations', {}).items():
+        locale_questions.setdefault(locale, {}).update(pack['questions'])
 
 def numbers(text):
     normalized = ''
@@ -21,10 +32,9 @@ def numbers(text):
     return collections.Counter(re.findall(r'\d+(?:\.\d+)?', normalized))
 
 flags, counts = [], {}
-for path in sorted((data / 'test-translations').glob('*.json')):
-    pack = json.loads(path.read_text())
-    counts[path.stem] = len(pack['questions'])
-    for qid, target in pack['questions'].items():
+for locale, translated_questions in sorted(locale_questions.items()):
+    counts[locale] = len(translated_questions)
+    for qid, target in translated_questions.items():
         source = questions[qid]
         pairs = [('prompt', source['promptJa'], target['prompt']),
                  ('explanation', source['explanationJa'], target['explanation'])]
@@ -33,7 +43,7 @@ for path in sorted((data / 'test-translations').glob('*.json')):
         for field, ja, translated in pairs:
             a, b = numbers(ja), numbers(translated)
             if a != b:
-                flags.append({'locale': path.stem, 'questionId': qid, 'field': field,
+                flags.append({'locale': locale, 'questionId': qid, 'field': field,
                               'sourceNumbers': dict(a), 'targetNumbers': dict(b),
                               'status': 'needs_semantic_review_not_automatic_error'})
 report = {'questionCounts': counts, 'numericReviewCandidates': flags,

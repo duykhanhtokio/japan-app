@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-30",
+  "baselineCommit": "9199a0da672e84f979c1fd09cefe743a90a1db5f",
+  "scope": "Runtime integration, scoped TypeScript, full Expo export attempt and browser launch attempt",
+  "scopedTypeScript": {
+    "command": "node node_modules/typescript/lib/tsc.js -p scripts/food-manufacturing/tsconfig.scoped.json --pretty false",
+    "status": "PASS",
+    "exitCode": 0
+  },
+  "expoWebExport": {
+    "command": "CI=1 NODE_OPTIONS=--max-old-space-size=6144 node node_modules/expo/bin/cli export --platform web --max-workers 1 --output-dir <scratch>/food-web-export",
+    "status": "FAILED",
+    "exitCode": 137,
+    "lastMetroModuleProgress": "858/20371",
+    "diagnosis": "Process killed; likely environment memory limit. No successful export or browser route test claimed.",
+    "priorMissingAssetNowPresent": {
+      "path": "assets/app/ui/royal-af/learning-characters-v1.png",
+      "bytes": 1912999
+    }
+  },
+  "moduleGraphObservation": {
+    "sourceFiles": 18300,
+    "generatedDialogueJsonFiles": 7561,
+    "localeBatchFiles": 8568,
+    "cause": "dialogue-content-loader.ts require.context includes generated/dialogues and dialogue-content/locale-batches. Lazy runtime access does not remove modules from Metro build graph.",
+    "foodSpecificRuntimeBugProven": false
+  },
+  "foodComponentBundle": {
+    "status": "PASS",
+    "tool": "esbuild browser bundle with RN-web",
+    "bytes": 45394550,
+    "adapters": [
+      "safe-area",
+      "AsyncStorage(localStorage)",
+      "Royal panels/background",
+      "backdrop",
+      "image placeholders"
+    ],
+    "fullExpoEquivalent": false
+  },
+  "browserSmoke": {
+    "status": "BLOCKED",
+    "reason": "Chromium launch aborted before page creation: process_singleton_posix.cc socket() Operation not permitted (1).",
+    "pageAssertionsExecuted": 0,
+    "nativeDeviceTested": false
+  },
+  "sourceSha256": {
+    "src/components/food-manufacturing/FoodManufacturingCourse.tsx": "d75440a1e6fe6da9ed9c4b30bdf15994427af48f7a25a4852fbe6ae7acb130eb",
+    "src/data/food-manufacturing/index.ts": "a50712fc8d1c7b859008ce925f1e44970f67cbcbafdba338feebf7a47ec327b2",
+    "src/services/dialogue-content-loader.ts": "cd898129d373305bd8ddc27c71003633a7fc9b8a833f3d1caea36379663bdf5a",
+    "metro.config.js": "5576d95242aae008ddd3a6c4e063cc0eeae0ab05726e1bc59de979b3cec98755"
+  },
+  "productionRelease": false
+}
