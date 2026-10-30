@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "packs": [
+    {
+      "id": "mfg37-required-sample-location-mean",
+      "specialty": "surface",
+      "lessonIds": [
+        "mfg1-surface-lesson-063"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-063": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9"
+      },
+      "titleJa": "位置・平均・極値を別々に読む",
+      "captionJa": "独自の100×60mm試料の五点を示します。膜厚はA8、B10、C12、D14、E16μmです。平均は測定値の合計を測定数で割ります。紙上の条件は各点10～14μm（両端を含む）であり、平均だけで全点適合を決めません。実製品の仕様ではありません。",
+      "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+      "assets": [
+        {
+          "id": "mfg38-sampling-map",
+          "file": "assets/manufacturing/recognition38/sampling-map.png",
+          "width": 1400,
+          "height": 1000,
+          "altJa": "100×60mmの独自試料上の五点A8、B10、C12、D14、E16μmと各点10～14μmの紙上条件。",
+          "sha256": "bc5263f1b96a86faa1c81963bf9580227fcc9c95558c6d30aac514fcf09ca0bf"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg38-sample-location-mean-q01",
+          "lessonId": "mfg1-surface-lesson-063",
+          "lessonSourceHash": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+          "stemJa": "位置図の最小値と最大値の対応はどれか。",
+          "optionsJa": [
+            "最小A8μm、最大E16μm",
+            "最小E16μm、最大A8μm",
+            "最小B10μm、最大D14μm",
+            "全点がC12μmと同じ"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "図のAが8μmで最小、Eが16μmで最大です。",
+            "大小と位置の対応が逆です。",
+            "BとDは最小・最大ではありません。",
+            "図には五つの異なる局所値があります。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 72,
+              "printedPage": 62
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sampling-map"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sampling-map": "bc5263f1b96a86faa1c81963bf9580227fcc9c95558c6d30aac514fcf09ca0bf"
+          },
+          "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33"
+        },
+        {
+          "id": "mfg38-sample-location-mean-q02",
+          "lessonId": "mfg1-surface-lesson-063",
+          "lessonSourceHash": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+          "stemJa": "位置図の五点の平均膜厚はいくらか。",
+          "optionsJa": [
+            "10μm",
+            "12μm",
+            "14μm",
+            "60μm"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "合計60を五点で割ると10ではありません。",
+            "(8+10+12+14+16)÷5=12μmです。",
+            "14μmはDの局所値です。",
+            "60μmは五値の合計で、平均ではありません。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 72,
+              "printedPage": 62
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sampling-map"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sampling-map": "bc5263f1b96a86faa1c81963bf9580227fcc9c95558c6d30aac514fcf09ca0bf"
+          },
+          "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd"
+        },
+        {
+          "id": "mfg38-sample-location-mean-q03",
+          "lessonId": "mfg1-surface-lesson-063",
+          "lessonSourceHash": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+          "stemJa": "図の紙上条件は各点10～14μmです。平均だけでなく局所値も見る判断はどれか。",
+          "optionsJa": [
+            "平均が範囲内なので全点適合",
+            "値を全て12へ書き換える",
+            "AとEが範囲外で、平均が範囲内でも各点条件は満たさない",
+            "端の二点は記録から消す"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "平均が範囲内でもA8とE16は範囲外です。",
+            "実測位置の値を書き換えてはいけません。",
+            "Aは下限未満、Eは上限超過です。平均と各点の判定を分けます。",
+            "指定した測定位置を都合で削除しません。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 72,
+              "printedPage": 62
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sampling-map"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sampling-map": "bc5263f1b96a86faa1c81963bf9580227fcc9c95558c6d30aac514fcf09ca0bf"
+          },
+          "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672"
+        }
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false,
+      "releaseReady": false
+    },
+    {
+      "id": "mfg37-required-coating-thickness-instrument-recognition",
+      "specialty": "surface",
+      "lessonIds": [
+        "mfg1-surface-lesson-063",
+        "mfg1-surface-lesson-069"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-063": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+        "mfg1-surface-lesson-069": "4aada97b9ffd9e7ae041763e972ec6557c4551c7b9aa22d94526acbda1b028b5"
+      },
+      "titleJa": "膜厚計の原理と試料条件を対応させる",
+      "captionJa": "Aは入射X線と元素に関係する特性X線の検出を分け、Bはコイルを含むプローブと皮膜・導電性基材の関係を示します。Bの例は導電性・非磁性基材上の非導電性皮膜です。厚さと硬さは別の評価です。材質、層構成、形状、基準試料と校正条件の適合は別に確認します。実機の構造や操作手順ではありません。",
+      "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+      "assets": [
+        {
+          "id": "mfg38-thickness-xrf",
+          "file": "assets/manufacturing/recognition38/thickness-xrf.png",
+          "width": 1400,
+          "height": 1000,
+          "altJa": "AはX線源から試料への入射と、元素に関係する特性X線を受ける検出器を分けた概念図。",
+          "sha256": "3e2ead9eca382cbe17a6d95836a5d26caed2cf560b2869f1922e02e98da864ac"
+        },
+        {
+          "id": "mfg38-thickness-eddy",
+          "file": "assets/manufacturing/recognition38/thickness-eddy.png",
+          "width": 1400,
+          "height": 1000,
+          "altJa": "Bはコイルを含むプローブ、非導電性皮膜、導電性非磁性基材と渦電流の関係を示す概念図。",
+          "sha256": "f3a2047ca280962cd662fce648a83b683254915c845308fc0f655e80836854e3"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg38-coating-thickness-instrument-recognition-q01",
+          "lessonId": "mfg1-surface-lesson-063",
+          "lessonSourceHash": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+          "stemJa": "図A・Bのうち、励起するX線源と特性X線を受ける検出器を分けて示すものはどれか。",
+          "optionsJa": [
+            "Aの蛍光X線概念図",
+            "Bのコイルだけ",
+            "両方とも硬さ圧子の図",
+            "どちらもノギスの図"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "Aは入射X線と特性X線の検出を区別しています。",
+            "Bはプローブと渦電流の概念図です。",
+            "圧子による硬さ試験ではありません。",
+            "寸法を挟んで読むノギスの構造ではありません。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 75,
+              "printedPage": 65
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 182,
+              "printedPage": 172
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-thickness-xrf",
+            "mfg38-thickness-eddy"
+          ],
+          "imageAssetHashes": {
+            "mfg38-thickness-xrf": "3e2ead9eca382cbe17a6d95836a5d26caed2cf560b2869f1922e02e98da864ac",
+            "mfg38-thickness-eddy": "f3a2047ca280962cd662fce648a83b683254915c845308fc0f655e80836854e3"
+          },
+          "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea"
+        },
+        {
+          "id": "mfg38-coating-thickness-instrument-recognition-q02",
+          "lessonId": "mfg1-surface-lesson-063",
+          "lessonSourceHash": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+          "stemJa": "図Bで渦電流が描かれているのはどこか。",
+          "optionsJa": [
+            "非導電性皮膜だけの内部",
+            "導電性・非磁性の基材側",
+            "画面の数値欄",
+            "硬さ試験の圧痕"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "この図では非導電性皮膜内の電流として描いていません。",
+            "コイルの交流磁界に関係する渦電流を導電性基材側に示しています。",
+            "図は数値表示による電流の発生を示しません。",
+            "図Bは圧痕を用いる硬さ試験ではありません。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 75,
+              "printedPage": 65
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 182,
+              "printedPage": 172
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-thickness-eddy"
+          ],
+          "imageAssetHashes": {
+            "mfg38-thickness-eddy": "f3a2047ca280962cd662fce648a83b683254915c845308fc0f655e80836854e3"
+          },
+          "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5"
+        },
+        {
+          "id": "mfg38-coating-thickness-instrument-recognition-q03",
+          "lessonId": "mfg1-surface-lesson-063",
+          "lessonSourceHash": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+          "stemJa": "図Bと同じ原理名の膜厚計を別の積層品へ使いたい。開始前の適切な判断はどれか。",
+          "optionsJa": [
+            "μm表示があれば全材質に適合",
+            "同じ原理名なら校正は不要",
+            "厚さが分かれば硬さも保証される",
+            "基材・皮膜・層構成・形状と基準試料や校正条件の適合を確認"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "表示単位だけでは適用できる材質や構成は決まりません。",
+            "原理名の一致は現在の校正確認を代替しません。",
+            "厚さと硬さは別の量です。",
+            "試料と方法の適合を具体的条件で照合します。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 75,
+              "printedPage": 65
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 182,
+              "printedPage": 172
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-thickness-xrf",
+            "mfg38-thickness-eddy"
+          ],
+          "imageAssetHashes": {
+            "mfg38-thickness-xrf": "3e2ead9eca382cbe17a6d95836a5d26caed2cf560b2869f1922e02e98da864ac",
+            "mfg38-thickness-eddy": "f3a2047ca280962cd662fce648a83b683254915c845308fc0f655e80836854e3"
+          },
+          "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40"
+        }
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false,
+      "releaseReady": false
+    },
+    {
+      "id": "mfg37-required-solder-wetting-observation",
+      "specialty": "surface",
+      "lessonIds": [
+        "mfg1-surface-lesson-055",
+        "mfg1-surface-lesson-024"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-055": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d",
+        "mfg1-surface-lesson-024": "bf4e0da0d0fa1e1a6a10577bb0b289b98209af70e116732b2efd36601c7d2a98"
+      },
+      "titleJa": "試片の濡れ広がりを観察して分類する",
+      "captionJa": "同じ形の評価用試片を独自に描いた観察教材です。Aは広がった付着、Bは局所的な丸い塊と露出面を示します。この見え方の分類は、硬さ、接合強さ、製品合否や実作業の許可を保証しません。試料と指定評価方法は担当者が確認します。実加熱や浸漬の条件を示すものではありません。",
+      "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+      "assets": [
+        {
+          "id": "mfg38-wetting-observation",
+          "file": "assets/manufacturing/recognition38/wetting-observation.png",
+          "width": 1400,
+          "height": 1000,
+          "altJa": "同形の灰色の試片を二枚表示。Aには横長の連続した青い領域、Bには円形の青い領域があり、両方とも周りに灰色の面が見える。",
+          "sha256": "eb79e1f5da8aa8a8ba22159f59176ab2c5e017a8a656d8cef2cde339ef6960b6"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg38-solder-wetting-observation-q01",
+          "lessonId": "mfg1-surface-lesson-055",
+          "lessonSourceHash": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d",
+          "stemJa": "観察図で、面上に広がった付着が見える試片はどれか。",
+          "optionsJa": [
+            "A",
+            "Bだけ",
+            "両方とも付着が見えない",
+            "図ではAとBを区別できない"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "Aでは面に沿った広がりを描いています。",
+            "Bは局所的な丸い塊と露出面の例です。",
+            "どちらにも付着の観察像があります。",
+            "AとBの広がりの違いが示されています。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 81,
+              "printedPage": 71
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-wetting-observation"
+          ],
+          "imageAssetHashes": {
+            "mfg38-wetting-observation": "eb79e1f5da8aa8a8ba22159f59176ab2c5e017a8a656d8cef2cde339ef6960b6"
+          },
+          "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239"
+        },
+        {
+          "id": "mfg38-solder-wetting-observation-q02",
+          "lessonId": "mfg1-surface-lesson-055",
+          "lessonSourceHash": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d",
+          "stemJa": "Bの観察像について、見えている範囲の説明はどれか。",
+          "optionsJa": [
+            "全ての材質で接合強さが不足すると証明した",
+            "局所的な丸い塊と露出面が見える",
+            "硬さがAより必ず低い",
+            "指定試験なしで出荷可能と決定した"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "観察図だけで全材質の接合強さは証明できません。",
+            "図の見え方に基づいた観察記録です。",
+            "この図は硬さを測定していません。",
+            "見え方の分類と製品合否は別です。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 81,
+              "printedPage": 71
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-wetting-observation"
+          ],
+          "imageAssetHashes": {
+            "mfg38-wetting-observation": "eb79e1f5da8aa8a8ba22159f59176ab2c5e017a8a656d8cef2cde339ef6960b6"
+          },
+          "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8"
+        },
+        {
+          "id": "mfg38-solder-wetting-observation-q03",
+          "lessonId": "mfg1-surface-lesson-055",
+          "lessonSourceHash": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d",
+          "stemJa": "Aのような広がりを観察した後の判断として適切なのはどれか。",
+          "optionsJa": [
+            "画像だけで実加熱条件を決める",
+            "全ての試験済み品を未使用良品へ混ぜる",
+            "見え方を記録し、試料の識別と指定評価・判定手順を確認する",
+            "広がっていれば他の要求は全て合格"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "この教材は加熱や浸漬の実施条件ではありません。",
+            "試験で変化した品を未使用良品へ混ぜません。",
+            "観察、試料管理、製品の判定を分けて扱います。",
+            "広がりだけで他の性能や要求を保証しません。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 81,
+              "printedPage": 71
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-wetting-observation"
+          ],
+          "imageAssetHashes": {
+            "mfg38-wetting-observation": "eb79e1f5da8aa8a8ba22159f59176ab2c5e017a8a656d8cef2cde339ef6960b6"
+          },
+          "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252"
+        }
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false,
+      "releaseReady": false
+    }
+  ]
+}

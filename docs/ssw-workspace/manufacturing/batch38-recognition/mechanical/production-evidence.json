@@ -1,0 +1,127 @@
+{
+  "date": "2026-10-31",
+  "scope": "Only three assigned mechanical recognition packs. Authored original teaching/quiz artwork plus image-referenced Japanese MCQs and all12targetcaptions/questions/options/reasons.",
+  "sourceEvidence": {
+    "mechanicalPdfSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+    "physicalPagesReopenedTextAndHighResolutionImage": [
+      27,
+      28,
+      29,
+      30,
+      75,
+      76,
+      80,
+      82,
+      98,
+      99,
+      105,
+      106,
+      107
+    ],
+    "sourceRasterRedistributed": false,
+    "originalVectors": "All shapes independently authored in create-recognition38-mechanical.py; standardized concepts approximated as educational models,not certified signage."
+  },
+  "packs": [
+    {
+      "packId": "mfg37-required-sign-recognition",
+      "assetCount": 4,
+      "questionCount": 9,
+      "targetLocales": [
+        "bn",
+        "en",
+        "hi",
+        "id",
+        "km",
+        "my",
+        "ne",
+        "th",
+        "tl",
+        "vi",
+        "zh-CN",
+        "zh-TW"
+      ],
+      "captionSourceHash": "3bfdb85f51a5c4039460bdbc34d52b3a51fe96e28a65d0bb7ed09f08af40622d",
+      "imageHashBindings": {
+        "mfg38-sign-prohibition": "b21e41778f9cb7187c27df22d15a5a4db3d54f9e643f9c47729e984b7df8b522",
+        "mfg38-sign-warning": "e7a4c99e7b60d321b854d481239bd3cf6408abcb36069d2009553721278a9b1a",
+        "mfg38-sign-chemical": "c18372a17b40126063d5bd5e1acff69711e3f6353d37ec99f0a6cf912d4da0f1",
+        "mfg38-sign-emergency": "4cf433adde83f591ce7260fa00082890fc3614597319e6b7f162abb5d11a8cdd"
+      }
+    },
+    {
+      "packId": "mfg37-required-analogue-metrology-readout",
+      "assetCount": 4,
+      "questionCount": 4,
+      "targetLocales": [
+        "bn",
+        "en",
+        "hi",
+        "id",
+        "km",
+        "my",
+        "ne",
+        "th",
+        "tl",
+        "vi",
+        "zh-CN",
+        "zh-TW"
+      ],
+      "captionSourceHash": "4f8dd91dce75a32e09d0973b634f5f44a2bf4f2ed8a20e6c0c186d580f0a8585",
+      "imageHashBindings": {
+        "mfg38-metrology-micrometer": "a7efbddc9bb783b52b7f84ab3d2746b0f1064b69916be7c0ff0acbd53e208fc4",
+        "mfg38-metrology-dial": "0b0447f1e9159dfbe90c27d43063bc095f87190789abf74c0c21a8a0a7530cdb",
+        "mfg38-metrology-lever": "a48770d220b4daf4268cd40fb615ae4c051c3391c7b110e5e855e8f5a7823337",
+        "mfg38-metrology-bore": "6f734e24449ac398321d8eb0048c10352b653c6747bbdf58583a89913ec02661"
+      }
+    },
+    {
+      "packId": "mfg37-required-hole-weld-annotations",
+      "assetCount": 3,
+      "questionCount": 8,
+      "targetLocales": [
+        "bn",
+        "en",
+        "hi",
+        "id",
+        "km",
+        "my",
+        "ne",
+        "th",
+        "tl",
+        "vi",
+        "zh-CN",
+        "zh-TW"
+      ],
+      "captionSourceHash": "4d2094dc609f8cc7661523b41b569fd7ca93607ecf28f7098e863f527269273b",
+      "imageHashBindings": {
+        "mfg38-annotations-holes": "c355cbb8764ee6363d55f1d742949a45d90de4982391f9777cf6af96f5b2a4a2",
+        "mfg38-annotations-weld": "d7bddb0732b2f6e8fc946a764813f2c9dd74c69562a108d9253217ced88ba9e6",
+        "mfg38-annotations-intermittent": "15d83cb44cefb9a51fab6e5eb5a63eeec12bf28a8a7b4f910fc07b86468b5101"
+      }
+    }
+  ],
+  "boundedGoalCoverage": {
+    "signRecognition": "All10prohibition+10warning+5chemical+5emergencylocationmeanings occur in explicit ordered-panel identification questions; twoadditionalrestricted-actionquestions. Q006names toxicity/skin-eyeirritationexamples rather than justshape.",
+    "analogueReading": "Micrometermain/thimble,dialpositive,levernegative,boremodel-specificreversedsign each has a separate independently calculated image question.",
+    "annotations": "Blind/throughhole/depth,source-qualifiedoppositeside,broken-arrowmember,totalintermittentlength,cleargap,start-to-startpitch each assessed."
+  },
+  "quizLeakReview": "Panelcodesareusedwithoutsemanticanswerlabels. Conditionsneededforreadingarevisible; computedresults/rationalesareabsentfromimages. IntrinsicAEDletteringbelongswithinitsrecognitionmodel. HolepanelA/Bmeaningtextremovedbeforefinalhash. Rootmusthideexplanatorycaptionandanswersuntilsubmission.",
+  "independentGeometryCheck": "PASS scripts/manufacturing/check-recognition38-mechanical.py:100/50/100 equallyspacedticks;actualSVGneedleangles+12/-5/+12;visiblemain14.5+thimble23×.01=14.73;reference20.12/9.990/24.988;holedepth9/16;segment20×3=60,pitch35,gap15.",
+  "answerPositions": {
+    "0": 6,
+    "1": 5,
+    "2": 5,
+    "3": 5
+  },
+  "pixelQA": "All11PNGsopened;finalsignwarning/chemical/emergencyandthreecomparatorsreopenedafterrepair. Correctedneedlethickness/sign,shape-borderfit,AED/evacbuildingpersonvisibility,andremoveddirectA/Bholelabels. NoPNGclippingnoted.",
+  "translationValidation": "All12×3captions and12×21questions with4options/4reasons exacthashbound andnonempty. Someotherlocaleauthorshipbythefourteammates;thislaneauthoredCN/TW/TL. SameAIcomparisonisnotnative/domainacceptance.",
+  "productionTasksComplete": true,
+  "runtimeIntegrationAndDeviceAcceptanceOwner": "parent",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "physicalDeviceVerified": false,
+  "fullSourceObjectInventoryComplete": false,
+  "wholeCurriculumComplete": false,
+  "releaseReady": false
+}

@@ -459,3 +459,6 @@ Only the three uploaded SSW1 textbooks are used. SSW2 remains excluded.
 5. RunfullExpo/type/lint/build andwhole-app/devicechecks in acompletecheckout. Preserve approvedJLPTUI, othersectors andexistingprogress.
 
 Resume from progress.json, knowledge-matrix.json, page-object-inventory.json, batch03semantic/source/QA reports, course-manifest.json andvalidators. Wholecurriculum/release flags remainfalse. No backgroundworker is implied by thischeckpoint.
+
+## Batch38 — 15 nhóm nhận diện
+15/15 nhóm đã có mã nguồn, 29 PNG/SVG, 61 câu hỏi và 12 ngôn ngữ; kiểm tra tổng PASS, xuất native Android/iOS PASS. Xem batch38-recognition/REPORT.vi.md, closure-report.json và device/native-export.json. Nghiệm thu chuyên gia con người, thiết bị thật và chứng nhận toàn bộ đối tượng nguồn vẫn chưa hoàn tất; không đánh dấu courseComplete.

@@ -237,5 +237,6 @@ def main():
  # Keep later reviewed reader additions and source-bound mock wording after rebuilding old drafts.
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-runtime-extension36.py')],check=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-runtime-extension37.py')],check=True)
+ subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-runtime-extension38.py')],check=True)
  print(json.dumps({'lessons':len(all_lessons),'weeklyQuestions':len(all_questions),'weeks':progress['previewWeeksBySpecialty'],'translatedLessonPairs':progress['translatedLessonLocalePairs'],'translatedQuestionPairs':progress['translatedQuestionLocalePairs'],'completeDraftLocales':complete,'courseComplete':False}))
 if __name__=='__main__':main()

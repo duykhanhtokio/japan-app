@@ -1,0 +1,3138 @@
+{
+  "schemaVersion": 1,
+  "status": "ai_authored_source_compared_not_native_or_domain_certified",
+  "packs": [
+    {
+      "id": "mfg37-required-electrical-symbol-field-direction",
+      "lessonIds": [
+        "mfg1-surface-lesson-052",
+        "mfg1-surface-lesson-053"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-052": "6f7dfd544e12c52ef52f642d23e9c4e6103733f63cba37209be90df1558c03fb",
+        "mfg1-surface-lesson-053": "ff9c0c7a21879d0fcd08987ba719814c183722320c90df25cbd95dfd525e7cd5"
+      },
+      "titleJa": "記号と三方向を画像で区別する",
+      "captionJa": "図E1は五つの基本記号を独自に配置したカードです。電池の長い線は＋、短い線は−、交流電源の円内は波形です。図E2の・は紙面から手前向きの慣用電流を表します。直線電流の周囲の磁界は右ねじの対応で考えます。一方、磁界中の電流に働く力はフレミング左手（人差指B・中指I・親指F）で分けます。図のBは右、Iは手前です。電場と磁場は同じものではありません。発電の規則や実配線の指示に置き換えません。",
+      "assets": [
+        {
+          "id": "mfg38-electrical-symbols",
+          "file": "assets/manufacturing/recognition38/electrical-symbols.png",
+          "width": 1300,
+          "height": 800,
+          "altJa": "A二本の等長平行板、B円内の波形、C三本の長さが減る接地線、D長方形、E長短板と正負を描く五枚の回路記号カード。",
+          "sha256": "61ee56f5449cbed00c8d2520f10cd2b68d3381eb63155debd85b4e88d31adfdf"
+        },
+        {
+          "id": "mfg38-electrical-directions",
+          "file": "assets/manufacturing/recognition38/electrical-directions.png",
+          "width": 1300,
+          "height": 800,
+          "altJa": "左側は紙面手前向き電流と周囲の回転候補1反時計回り・2時計回り。右側は左手の指対応、右向き磁界と手前向き電流から力を選ぶ模式図。",
+          "sha256": "2f66ee2885d0e65a48f6e67f287771dc061925edd15e213cfa729cc8962565ec"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg37-required-electrical-symbol-field-direction-q01",
+          "lessonId": "mfg1-surface-lesson-052",
+          "stemJa": "図E1で、抵抗・コンデンサ・接地・電池・交流電源の順に並べた記号はどれか。",
+          "optionsJa": [
+            "D→A→C→E→B",
+            "A→D→C→E→B",
+            "D→A→E→C→B",
+            "D→A→C→B→E"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "長方形D、等長板A、接地線C、長短板E、波形円Bを区別する。",
+            "抵抗とコンデンサが逆。",
+            "接地と電池が逆。",
+            "電池と交流電源が逆。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 125,
+              "printedPage": 115
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-electrical-symbols"
+          ],
+          "imageAssetHashes": {
+            "mfg38-electrical-symbols": "61ee56f5449cbed00c8d2520f10cd2b68d3381eb63155debd85b4e88d31adfdf"
+          },
+          "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3"
+        },
+        {
+          "id": "mfg37-required-electrical-symbol-field-direction-q02",
+          "lessonId": "mfg1-surface-lesson-052",
+          "stemJa": "図E1のEで、＋に対応する部分はどれか。",
+          "optionsJa": [
+            "短い線",
+            "長い線",
+            "外枠全体",
+            "文字Eそのもの"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "短い線は−として描いた。",
+            "この電池記号では長い線が＋。",
+            "カードの外枠は回路記号ではない。",
+            "Eはカード識別子で、極性ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 125,
+              "printedPage": 115
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-electrical-symbols"
+          ],
+          "imageAssetHashes": {
+            "mfg38-electrical-symbols": "61ee56f5449cbed00c8d2520f10cd2b68d3381eb63155debd85b4e88d31adfdf"
+          },
+          "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2"
+        },
+        {
+          "id": "mfg37-required-electrical-symbol-field-direction-q03",
+          "lessonId": "mfg1-surface-lesson-052",
+          "stemJa": "図E2左の電流は手前向き。磁界の回り方に対応する候補はどれか。",
+          "optionsJa": [
+            "2",
+            "磁界は生じない",
+            "1",
+            "左右の直線だけ"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "2は時計回りで、この電流向きには対応しない。",
+            "直線電流の周囲には磁界が生じる。",
+            "右ねじの対応では、手前向き電流の周囲は反時計回りの1。",
+            "周囲の磁界を電流と同じ直線にしない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 126,
+              "printedPage": 116
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-electrical-directions"
+          ],
+          "imageAssetHashes": {
+            "mfg38-electrical-directions": "2f66ee2885d0e65a48f6e67f287771dc061925edd15e213cfa729cc8962565ec"
+          },
+          "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9"
+        },
+        {
+          "id": "mfg37-required-electrical-symbol-field-direction-q04",
+          "lessonId": "mfg1-surface-lesson-052",
+          "stemJa": "図E2右のB→、Iは手前向き。フレミング左手で対応するFはどれか。",
+          "optionsJa": [
+            "↓",
+            "←",
+            "→",
+            "↑"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "下向きではなく上向き。",
+            "磁界と力の直交関係に合わない。",
+            "磁界と同方向ではない。",
+            "慣用電流が手前、磁界が右なら力は上。この図の条件に限定する。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 135,
+              "printedPage": 125
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-electrical-directions"
+          ],
+          "imageAssetHashes": {
+            "mfg38-electrical-directions": "2f66ee2885d0e65a48f6e67f287771dc061925edd15e213cfa729cc8962565ec"
+          },
+          "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb"
+        }
+      ],
+      "locales": {
+        "en": {
+          "caption": "E1 independently arranges five basic circuit symbols. The long battery line is +, the short line is −; the AC-source circle contains a wave. In E2, a dot means conventional current toward the viewer. Use the right-hand screw relation for the field around a straight current. Separately, Fleming’s left hand relates force to current in a magnetic field: index B, middle I, thumb F. Here B points right and I toward the viewer. Electric and magnetic fields are different. This is neither a generator rule nor wiring authorization.",
+          "captionSourceHash": "8355fea765021baa836ade53359fee40fc3a7ce7b983b819a23b3ef52d012569",
+          "questions": {
+            "mfg37-required-electrical-symbol-field-direction-q01": {
+              "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3",
+              "stem": "In E1, which sequence gives resistor, capacitor, earth, battery and AC source?",
+              "options": [
+                "D→A→C→E→B",
+                "A→D→C→E→B",
+                "D→A→E→C→B",
+                "D→A→C→B→E"
+              ],
+              "reasons": [
+                "D rectangle; A equal plates; C earth lines; E unequal plates; B wave circle.",
+                "Resistor and capacitor are reversed.",
+                "Earth and battery are reversed.",
+                "Battery and AC source are reversed."
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q02": {
+              "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2",
+              "stem": "Which part of E in E1 represents +?",
+              "options": [
+                "Short line",
+                "Long line",
+                "Entire card border",
+                "Letter E"
+              ],
+              "reasons": [
+                "The short line is drawn as −.",
+                "The long line is + in this battery symbol.",
+                "The card border is not a circuit symbol.",
+                "E identifies the card, not polarity."
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q03": {
+              "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9",
+              "stem": "Current in E2 left points toward the viewer. Which field circulation matches?",
+              "options": [
+                "2",
+                "No magnetic field",
+                "1",
+                "Only straight left–right lines"
+              ],
+              "reasons": [
+                "2 is clockwise, wrong for this current.",
+                "A straight current produces a surrounding field.",
+                "1 is counterclockwise for current toward the viewer.",
+                "Do not make the surrounding field a straight line along current."
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q04": {
+              "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb",
+              "stem": "In E2 right, B points right and I toward the viewer. What is F by Fleming’s left hand?",
+              "options": [
+                "↓",
+                "←",
+                "→",
+                "↑"
+              ],
+              "reasons": [
+                "Force is upward, not downward.",
+                "Force must be perpendicular to B.",
+                "Force is not parallel to B.",
+                "For these given directions, conventional current toward the viewer and B right give F up."
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "vi": {
+          "caption": "E1 bố trí độc lập năm ký hiệu mạch cơ bản. Ở pin, vạch dài là +, vạch ngắn là −; nguồn xoay chiều có hình sóng trong vòng tròn. Dấu chấm ở E2 là dòng điện quy ước hướng ra phía người xem. Dùng quy tắc vít phải cho từ trường quanh dây thẳng. Riêng lực tác dụng lên dòng trong từ trường dùng bàn tay trái Fleming: ngón trỏ B, ngón giữa I, ngón cái F. Ở đây B sang phải, I hướng ra trước. Điện trường và từ trường khác nhau; không thay thành quy tắc máy phát hay chỉ dẫn đấu dây.",
+          "captionSourceHash": "8355fea765021baa836ade53359fee40fc3a7ce7b983b819a23b3ef52d012569",
+          "questions": {
+            "mfg37-required-electrical-symbol-field-direction-q01": {
+              "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3",
+              "stem": "Ở E1, dãy nào lần lượt là điện trở, tụ điện, nối đất, pin, nguồn xoay chiều?",
+              "options": [
+                "D→A→C→E→B",
+                "A→D→C→E→B",
+                "D→A→E→C→B",
+                "D→A→C→B→E"
+              ],
+              "reasons": [
+                "D hình chữ nhật; A hai bản bằng nhau; C nối đất; E bản dài/ngắn; B vòng tròn có sóng.",
+                "Điện trở và tụ bị đảo.",
+                "Nối đất và pin bị đảo.",
+                "Pin và nguồn xoay chiều bị đảo."
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q02": {
+              "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2",
+              "stem": "Ở thẻ E của E1, phần nào ứng với +?",
+              "options": [
+                "Vạch ngắn",
+                "Vạch dài",
+                "Toàn bộ khung thẻ",
+                "Chữ E"
+              ],
+              "reasons": [
+                "Vạch ngắn được vẽ là −.",
+                "Vạch dài là + trong ký hiệu pin này.",
+                "Khung thẻ không phải ký hiệu mạch.",
+                "E là mã thẻ, không phải cực tính."
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q03": {
+              "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9",
+              "stem": "Dòng điện bên trái E2 hướng ra trước. Chọn chiều từ trường nào?",
+              "options": [
+                "2",
+                "Không có từ trường",
+                "1",
+                "Chỉ các đường thẳng trái–phải"
+              ],
+              "reasons": [
+                "2 quay thuận kim đồng hồ, không đúng chiều dòng này.",
+                "Dòng thẳng tạo từ trường xung quanh.",
+                "1 ngược kim đồng hồ khi dòng hướng ra người xem.",
+                "Không biến từ trường quanh dây thành đường thẳng cùng dòng."
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q04": {
+              "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb",
+              "stem": "Ở phải E2, B sang phải và I hướng ra trước. Theo Fleming trái, F hướng nào?",
+              "options": [
+                "↓",
+                "←",
+                "→",
+                "↑"
+              ],
+              "reasons": [
+                "Lực lên trên, không xuống dưới.",
+                "Lực phải vuông góc B.",
+                "Lực không cùng hướng B.",
+                "Với điều kiện này, dòng quy ước ra trước và B sang phải cho F lên trên."
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "id": {
+          "caption": "E1 menyusun lima simbol dasar secara mandiri. Garis baterai panjang adalah +, pendek −; sumber AC memuat gelombang dalam lingkaran. Titik di E2 berarti arus konvensional menuju pengamat. Gunakan hubungan sekrup tangan kanan untuk medan di sekitar arus lurus. Secara terpisah, tangan kiri Fleming menghubungkan gaya pada arus dalam medan: telunjuk B, tengah I, ibu jari F. Di sini B ke kanan, I ke pengamat. Medan listrik berbeda dari medan magnet. Ini bukan aturan generator atau izin pengawatan.",
+          "captionSourceHash": "8355fea765021baa836ade53359fee40fc3a7ce7b983b819a23b3ef52d012569",
+          "questions": {
+            "mfg37-required-electrical-symbol-field-direction-q01": {
+              "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3",
+              "stem": "Urutan simbol resistor, kapasitor, tanah, baterai, sumber AC pada E1 adalah?",
+              "options": [
+                "D→A→C→E→B",
+                "A→D→C→E→B",
+                "D→A→E→C→B",
+                "D→A→C→B→E"
+              ],
+              "reasons": [
+                "D persegi panjang; A pelat sama; C tanah; E pelat panjang/pendek; B lingkaran gelombang.",
+                "Resistor dan kapasitor tertukar.",
+                "Tanah dan baterai tertukar.",
+                "Baterai dan sumber AC tertukar."
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q02": {
+              "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2",
+              "stem": "Bagian E di E1 mana yang berarti +?",
+              "options": [
+                "Garis pendek",
+                "Garis panjang",
+                "Seluruh bingkai",
+                "Huruf E"
+              ],
+              "reasons": [
+                "Garis pendek digambar −.",
+                "Garis panjang berarti + pada simbol ini.",
+                "Bingkai bukan simbol rangkaian.",
+                "E adalah identitas kartu, bukan polaritas."
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q03": {
+              "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9",
+              "stem": "Arus kiri E2 menuju pengamat. Sirkulasi medan yang sesuai?",
+              "options": [
+                "2",
+                "Tidak ada medan",
+                "1",
+                "Hanya garis lurus kiri–kanan"
+              ],
+              "reasons": [
+                "2 searah jarum jam, salah untuk arus ini.",
+                "Arus lurus menimbulkan medan di sekitarnya.",
+                "1 berlawanan jarum jam untuk arus menuju pengamat.",
+                "Medan sekeliling bukan garis lurus searah arus."
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q04": {
+              "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb",
+              "stem": "Pada kanan E2, B ke kanan dan I ke pengamat. Arah F menurut tangan kiri Fleming?",
+              "options": [
+                "↓",
+                "←",
+                "→",
+                "↑"
+              ],
+              "reasons": [
+                "Gaya ke atas, bukan bawah.",
+                "Gaya harus tegak lurus B.",
+                "Gaya bukan searah B.",
+                "Untuk kondisi ini, arus konvensional ke pengamat dan B kanan menghasilkan F atas."
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "tl": {
+          "caption": "Sa E1, malayang inayos ang limang pangunahing simbolo. Ang mahabang guhit ng baterya ay +, maikli ay −; may alon sa bilog ng AC source. Ang tuldok sa E2 ay conventional current patungo sa tumitingin. Gamitin ang tuntunin ng kanang turnilyo sa magnetic field sa paligid ng tuwid na agos. Iba ang kaliwang kamay ni Fleming para sa puwersa: hintuturo B, gitnang daliri I, hinlalaki F. Dito B pakanan, I palapit. Magkaiba ang electric at magnetic field. Hindi ito generator rule o pahintulot sa pagkakable.",
+          "captionSourceHash": "8355fea765021baa836ade53359fee40fc3a7ce7b983b819a23b3ef52d012569",
+          "questions": {
+            "mfg37-required-electrical-symbol-field-direction-q01": {
+              "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3",
+              "stem": "Sa E1, alin ang sunod na resistor, capacitor, earth, baterya at AC source?",
+              "options": [
+                "D→A→C→E→B",
+                "A→D→C→E→B",
+                "D→A→E→C→B",
+                "D→A→C→B→E"
+              ],
+              "reasons": [
+                "D parihaba; A pantay na plato; C earth; E mahaba/maikling plato; B bilog na may alon.",
+                "Baligtad ang resistor at capacitor.",
+                "Baligtad ang earth at baterya.",
+                "Baligtad ang baterya at AC."
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q02": {
+              "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2",
+              "stem": "Anong bahagi ng E sa E1 ang +?",
+              "options": [
+                "Maikling guhit",
+                "Mahabang guhit",
+                "Buong frame",
+                "Titik E"
+              ],
+              "reasons": [
+                "Ang maikli ay −.",
+                "Ang mahaba ay + sa simbolong ito.",
+                "Hindi circuit symbol ang frame.",
+                "Pangalan ng kard ang E, hindi polarity."
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q03": {
+              "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9",
+              "stem": "Palapit ang agos sa kaliwa ng E2. Aling ikot ng field ang tama?",
+              "options": [
+                "2",
+                "Walang field",
+                "1",
+                "Tuwid na kaliwa–kanan lang"
+              ],
+              "reasons": [
+                "Pa-clockwise ang 2, mali sa agos na ito.",
+                "May field sa paligid ng tuwid na agos.",
+                "Pa-counterclockwise ang 1 para sa palapit na agos.",
+                "Hindi tuwid na kasabay ng agos ang field sa paligid."
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q04": {
+              "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb",
+              "stem": "Sa kanan E2, B pakanan, I palapit. Ano ang F ayon sa kaliwang Fleming?",
+              "options": [
+                "↓",
+                "←",
+                "→",
+                "↑"
+              ],
+              "reasons": [
+                "Pataas, hindi pababa, ang puwersa.",
+                "Dapat patayo sa B ang puwersa.",
+                "Hindi kapareho ng B ang direksiyon.",
+                "Sa ibinigay na kondisyon, I palapit at B pakanan ay F pataas."
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "zh-CN": {
+          "caption": "E1独立排列五种基本电路符号。电池长线为＋、短线为−，交流电源圆内有波形。E2的点表示朝向观察者的约定电流。直线电流周围磁场用右手螺旋关系判断；磁场中电流受力另用弗莱明左手：食指B、中指I、拇指F。本图B向右，I向前。电场与磁场不同，不可替换成发电规则或实际接线指令。",
+          "captionSourceHash": "8355fea765021baa836ade53359fee40fc3a7ce7b983b819a23b3ef52d012569",
+          "questions": {
+            "mfg37-required-electrical-symbol-field-direction-q01": {
+              "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3",
+              "stem": "E1中按电阻、电容、接地、电池、交流电源顺序排列的是？",
+              "options": [
+                "D→A→C→E→B",
+                "A→D→C→E→B",
+                "D→A→E→C→B",
+                "D→A→C→B→E"
+              ],
+              "reasons": [
+                "D矩形、A等长板、C接地线、E长短板、B波形圆。",
+                "电阻与电容颠倒。",
+                "接地与电池颠倒。",
+                "电池与交流电源颠倒。"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q02": {
+              "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2",
+              "stem": "E1的E中哪部分对应＋？",
+              "options": [
+                "短线",
+                "长线",
+                "整个外框",
+                "字母E"
+              ],
+              "reasons": [
+                "短线画为−。",
+                "本电池符号长线为＋。",
+                "外框不是电路符号。",
+                "E是卡片编号，不是极性。"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q03": {
+              "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9",
+              "stem": "E2左电流朝向观察者，磁场环绕方向是哪项？",
+              "options": [
+                "2",
+                "没有磁场",
+                "1",
+                "仅左右直线"
+              ],
+              "reasons": [
+                "2为顺时针，不符此电流方向。",
+                "直线电流周围产生磁场。",
+                "按右手螺旋，朝前电流对应逆时针1。",
+                "周围磁场不能画成与电流同向直线。"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q04": {
+              "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb",
+              "stem": "E2右B向右、I朝前，弗莱明左手对应F是哪项？",
+              "options": [
+                "↓",
+                "←",
+                "→",
+                "↑"
+              ],
+              "reasons": [
+                "力向上，不向下。",
+                "力应与B垂直。",
+                "力不与B同向。",
+                "在本条件下，约定电流朝前、B向右，F向上。"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "zh-TW": {
+          "caption": "E1獨立排列五種基本電路符號。電池長線為＋、短線為−，交流電源圓內有波形。E2的點表示朝向觀察者的約定電流。直線電流周圍磁場用右手螺旋關係判斷；磁場中電流受力另用弗萊明左手：食指B、中指I、拇指F。本圖B向右，I向前。電場與磁場不同，不可替換成發電規則或實際接線指令。",
+          "captionSourceHash": "8355fea765021baa836ade53359fee40fc3a7ce7b983b819a23b3ef52d012569",
+          "questions": {
+            "mfg37-required-electrical-symbol-field-direction-q01": {
+              "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3",
+              "stem": "E1中按電阻、電容、接地、電池、交流電源順序排列的是？",
+              "options": [
+                "D→A→C→E→B",
+                "A→D→C→E→B",
+                "D→A→E→C→B",
+                "D→A→C→B→E"
+              ],
+              "reasons": [
+                "D矩形、A等長板、C接地線、E長短板、B波形圓。",
+                "電阻與電容顛倒。",
+                "接地與電池顛倒。",
+                "電池與交流電源顛倒。"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q02": {
+              "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2",
+              "stem": "E1的E中哪部分對應＋？",
+              "options": [
+                "短線",
+                "長線",
+                "整個外框",
+                "字母E"
+              ],
+              "reasons": [
+                "短線畫為−。",
+                "本電池符號長線為＋。",
+                "外框不是電路符號。",
+                "E是卡片編號，不是極性。"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q03": {
+              "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9",
+              "stem": "E2左電流朝向觀察者，磁場環繞方向是哪項？",
+              "options": [
+                "2",
+                "沒有磁場",
+                "1",
+                "僅左右直線"
+              ],
+              "reasons": [
+                "2為順時針，不符此電流方向。",
+                "直線電流周圍產生磁場。",
+                "按右手螺旋，朝前電流對應逆時針1。",
+                "周圍磁場不能畫成與電流同向直線。"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q04": {
+              "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb",
+              "stem": "E2右B向右、I朝前，弗萊明左手對應F是哪項？",
+              "options": [
+                "↓",
+                "←",
+                "→",
+                "↑"
+              ],
+              "reasons": [
+                "力向上，不向下。",
+                "力應與B垂直。",
+                "力不與B同向。",
+                "在本條件下，約定電流朝前、B向右，F向上。"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "hi": {
+          "caption": "E1 में पाँच मूल परिपथ चिह्न स्वतंत्र रूप से रखे गए हैं। बैटरी की लंबी रेखा +, छोटी − है; AC स्रोत के वृत्त में तरंग है। E2 का बिंदु दर्शक की ओर आने वाली परंपरागत धारा है। सीधी धारा के आसपास चुंबकीय क्षेत्र के लिए दाएँ पेंच का संबंध देखें। अलग से, चुंबकीय क्षेत्र में धारा पर बल के लिए फ्लेमिंग का बायाँ हाथ: तर्जनी B, मध्यमा I, अँगूठा F। यहाँ B दाएँ और I सामने है। विद्युत और चुंबकीय क्षेत्र अलग हैं। इसे जनरेटर नियम या वास्तविक तार-जोड़ निर्देश न मानें।",
+          "captionSourceHash": "8355fea765021baa836ade53359fee40fc3a7ce7b983b819a23b3ef52d012569",
+          "questions": {
+            "mfg37-required-electrical-symbol-field-direction-q01": {
+              "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3",
+              "stem": "E1 में प्रतिरोधक, संधारित्र, अर्थ, बैटरी, AC स्रोत का क्रम कौन-सा है?",
+              "options": [
+                "D→A→C→E→B",
+                "A→D→C→E→B",
+                "D→A→E→C→B",
+                "D→A→C→B→E"
+              ],
+              "reasons": [
+                "D आयत; A समान प्लेट; C अर्थ रेखाएँ; E लंबी/छोटी प्लेट; B तरंग वृत्त।",
+                "प्रतिरोधक और संधारित्र उलटे हैं।",
+                "अर्थ और बैटरी उलटे हैं।",
+                "बैटरी और AC उलटे हैं।"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q02": {
+              "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2",
+              "stem": "E1 के E में + किस भाग का है?",
+              "options": [
+                "छोटी रेखा",
+                "लंबी रेखा",
+                "पूरा फ्रेम",
+                "अक्षर E"
+              ],
+              "reasons": [
+                "छोटी रेखा − है।",
+                "इस बैटरी चिह्न में लंबी रेखा + है।",
+                "फ्रेम परिपथ चिह्न नहीं है।",
+                "E कार्ड की पहचान है, ध्रुवता नहीं।"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q03": {
+              "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9",
+              "stem": "E2 बाएँ धारा दर्शक की ओर है। क्षेत्र का सही चक्कर कौन-सा है?",
+              "options": [
+                "2",
+                "कोई चुंबकीय क्षेत्र नहीं",
+                "1",
+                "केवल सीधी बाएँ–दाएँ रेखाएँ"
+              ],
+              "reasons": [
+                "2 दक्षिणावर्त है, इस धारा के लिए गलत।",
+                "सीधी धारा के आसपास क्षेत्र बनता है।",
+                "दाएँ पेंच संबंध में सामने आती धारा का क्षेत्र वामावर्त 1 है।",
+                "आसपास का क्षेत्र धारा के साथ सीधी रेखा नहीं है।"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q04": {
+              "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb",
+              "stem": "E2 दाएँ B दाएँ और I सामने है। फ्लेमिंग के बाएँ हाथ से F कौन-सा है?",
+              "options": [
+                "↓",
+                "←",
+                "→",
+                "↑"
+              ],
+              "reasons": [
+                "बल ऊपर है, नीचे नहीं।",
+                "बल B के लंबवत होना चाहिए।",
+                "बल B के समान दिशा में नहीं।",
+                "इन शर्तों में सामने आती परंपरागत धारा और दाएँ B से F ऊपर है।"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "bn": {
+          "caption": "E1-এ পাঁচ মূল সার্কিট চিহ্ন স্বাধীনভাবে সাজানো। ব্যাটারির লম্বা রেখা +, ছোট −; AC উৎসের বৃত্তে তরঙ্গ আছে। E2-এর বিন্দু দর্শকের দিকে প্রচলিত তড়িৎপ্রবাহ বোঝায়। সরল প্রবাহের চারপাশের চৌম্বক ক্ষেত্র ডানহাতি স্ক্রুর সম্পর্ক দিয়ে বিচার করুন। অন্যদিকে চৌম্বক ক্ষেত্রে প্রবাহের ওপর বলের জন্য ফ্লেমিংয়ের বাম হাত: তর্জনী B, মধ্যমা I, বুড়ো আঙুল F। এখানে B ডানে, I সামনে। তড়িৎ ও চৌম্বক ক্ষেত্র আলাদা। একে জেনারেটরের নিয়ম বা তার সংযোগের অনুমতি ভাববেন না।",
+          "captionSourceHash": "8355fea765021baa836ade53359fee40fc3a7ce7b983b819a23b3ef52d012569",
+          "questions": {
+            "mfg37-required-electrical-symbol-field-direction-q01": {
+              "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3",
+              "stem": "E1-এ রোধক, ধারক, আর্থ, ব্যাটারি, AC উৎসের ক্রম কোনটি?",
+              "options": [
+                "D→A→C→E→B",
+                "A→D→C→E→B",
+                "D→A→E→C→B",
+                "D→A→C→B→E"
+              ],
+              "reasons": [
+                "D আয়তক্ষেত্র; A সমান পাত; C আর্থ রেখা; E বড়/ছোট পাত; B তরঙ্গের বৃত্ত।",
+                "রোধক ও ধারক উল্টো।",
+                "আর্থ ও ব্যাটারি উল্টো।",
+                "ব্যাটারি ও AC উল্টো।"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q02": {
+              "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2",
+              "stem": "E1-এর E-তে + কোন অংশ?",
+              "options": [
+                "ছোট রেখা",
+                "লম্বা রেখা",
+                "পুরো ফ্রেম",
+                "E অক্ষর"
+              ],
+              "reasons": [
+                "ছোট রেখাটি −।",
+                "এই ব্যাটারি চিহ্নে লম্বা রেখা +।",
+                "ফ্রেম সার্কিট চিহ্ন নয়।",
+                "E কার্ডের পরিচয়, পোলারিটি নয়।"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q03": {
+              "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9",
+              "stem": "E2 বামে প্রবাহ দর্শকের দিকে। ক্ষেত্র কোন দিকে ঘুরবে?",
+              "options": [
+                "2",
+                "কোনো ক্ষেত্র নেই",
+                "1",
+                "শুধু বাঁ–ডানে সরল রেখা"
+              ],
+              "reasons": [
+                "2 ঘড়ির দিকে, এই প্রবাহের জন্য ভুল।",
+                "সরল প্রবাহের চারপাশে ক্ষেত্র হয়।",
+                "ডানহাতি স্ক্রুতে সামনের প্রবাহের জন্য ঘড়ির বিপরীত 1।",
+                "চারপাশের ক্ষেত্র প্রবাহের সমান্তরাল সরল রেখা নয়।"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q04": {
+              "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb",
+              "stem": "E2 ডানে B ডানে, I সামনে। ফ্লেমিং বামহাতে F কোনটি?",
+              "options": [
+                "↓",
+                "←",
+                "→",
+                "↑"
+              ],
+              "reasons": [
+                "বল ওপরে, নিচে নয়।",
+                "বল B-এর লম্ব হতে হবে।",
+                "বল B-এর দিকে নয়।",
+                "এই শর্তে প্রচলিত প্রবাহ সামনে ও B ডানে হলে F ওপরে।"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "ne": {
+          "caption": "E1 मा पाँच आधारभूत परिपथ चिह्न स्वतन्त्र रूपमा राखिएका छन्। ब्याट्रीको लामो रेखा +, छोटो − हो; AC स्रोतको वृत्तमा तरङ्ग छ। E2 को थोप्लो दर्शकतर्फको प्रचलित विद्युत् धारा हो। सीधा धारावरिपरिको चुम्बकीय क्षेत्र दायाँ पेचको सम्बन्धबाट हेर्नुहोस्। अलग रूपमा, क्षेत्रभित्र धारामा लाग्ने बलका लागि फ्लेमिङको बायाँ हात: चोरऔँला B, माझी I, बूढीऔँला F। यहाँ B दायाँ, I अगाडि छ। विद्युतीय र चुम्बकीय क्षेत्र फरक हुन्। यसलाई जेनेरेटर नियम वा वास्तविक तारजडान निर्देशन नमान्नुहोस्।",
+          "captionSourceHash": "8355fea765021baa836ade53359fee40fc3a7ce7b983b819a23b3ef52d012569",
+          "questions": {
+            "mfg37-required-electrical-symbol-field-direction-q01": {
+              "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3",
+              "stem": "E1 मा प्रतिरोधक, क्यापासिटर, अर्थ, ब्याट्री, AC स्रोतको क्रम कुन हो?",
+              "options": [
+                "D→A→C→E→B",
+                "A→D→C→E→B",
+                "D→A→E→C→B",
+                "D→A→C→B→E"
+              ],
+              "reasons": [
+                "D आयत; A बराबर प्लेट; C अर्थ रेखा; E लामो/छोटो प्लेट; B तरङ्ग वृत्त।",
+                "प्रतिरोधक र क्यापासिटर उल्टा।",
+                "अर्थ र ब्याट्री उल्टा।",
+                "ब्याट्री र AC उल्टा।"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q02": {
+              "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2",
+              "stem": "E1 को E मा + कुन भाग हो?",
+              "options": [
+                "छोटो रेखा",
+                "लामो रेखा",
+                "पूरै फ्रेम",
+                "E अक्षर"
+              ],
+              "reasons": [
+                "छोटो रेखा − हो।",
+                "यो ब्याट्री चिह्नमा लामो रेखा + हो।",
+                "फ्रेम परिपथ चिह्न होइन।",
+                "E कार्ड पहिचान हो, ध्रुवता होइन।"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q03": {
+              "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9",
+              "stem": "E2 बायाँ धारा दर्शकतर्फ छ। क्षेत्रको घुमाइ कुन हो?",
+              "options": [
+                "2",
+                "चुम्बकीय क्षेत्र हुँदैन",
+                "1",
+                "बायाँ–दायाँ सीधा रेखा मात्र"
+              ],
+              "reasons": [
+                "2 घडीको दिशामा छ, यो धाराका लागि गलत।",
+                "सीधा धारावरिपरि क्षेत्र बन्छ।",
+                "दायाँ पेचअनुसार अगाडितर्फ धारामा विपरीत घडी दिशा 1 हुन्छ।",
+                "वरिपरि क्षेत्रलाई धारासँगै सीधा नबनाउनुहोस्।"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q04": {
+              "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb",
+              "stem": "E2 दायाँ B दायाँ र I अगाडि छ। फ्लेमिङ बायाँ हातबाट F कुन हो?",
+              "options": [
+                "↓",
+                "←",
+                "→",
+                "↑"
+              ],
+              "reasons": [
+                "बल माथि हो, तल होइन।",
+                "बल B को लम्ब हुनुपर्छ।",
+                "बल B कै दिशामा होइन।",
+                "यी अवस्थामा प्रचलित धारा अगाडि र B दायाँ हुँदा F माथि हुन्छ।"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "my": {
+          "caption": "E1 သည် အခြေခံဆားကစ်သင်္ကေတငါးခုကို သီးခြားစီထားသည်။ ဘက်ထရီမျဉ်းရှည်က +၊ တိုက − ဖြစ်ပြီး AC စက်ဝိုင်းတွင်း လှိုင်းရှိသည်။ E2 အစက်သည် ကြည့်သူထံလာသော သတ်မှတ်လျှပ်စီးဖြစ်သည်။ ဖြောင့်လျှပ်စီးပတ်လည်ကွင်းကို ညာဝက်အူဆက်နွှယ်မှုဖြင့် ဖတ်ပါ။ ကွင်းအတွင်းလျှပ်စီးအပေါ်အားအတွက် ဖလဲမင်းဘယ်လက်ကို သီးခြားသုံးသည်—လက်ညှိုး B၊ လက်ခလယ် I၊ လက်မ F။ ဤပုံတွင် B ညာ၊ I ရှေ့ဖြစ်သည်။ လျှပ်စစ်ကွင်းနှင့် သံလိုက်ကွင်း မတူပါ။ မီးစက်နိယာမ သို့မဟုတ် ဝိုင်ယာဆက်ခွင့်ဟု မယူပါနှင့်။",
+          "captionSourceHash": "8355fea765021baa836ade53359fee40fc3a7ce7b983b819a23b3ef52d012569",
+          "questions": {
+            "mfg37-required-electrical-symbol-field-direction-q01": {
+              "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3",
+              "stem": "E1 ၌ ခုခံပစ္စည်း၊ ကပ်ပါစီတာ၊ မြေချ၊ ဘက်ထရီ၊ AC အစဉ်မှာ?",
+              "options": [
+                "D→A→C→E→B",
+                "A→D→C→E→B",
+                "D→A→E→C→B",
+                "D→A→C→B→E"
+              ],
+              "reasons": [
+                "D စတုဂံ၊ A ညီပြား၊ C မြေချ၊ E ရှည်/တိုပြား၊ B လှိုင်းဝိုင်း။",
+                "ခုခံနှင့်ကပ်ပါစီတာ ပြောင်းပြန်။",
+                "မြေချနှင့်ဘက်ထရီ ပြောင်းပြန်။",
+                "ဘက်ထရီနှင့်AC ပြောင်းပြန်။"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q02": {
+              "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2",
+              "stem": "E1 E ၏ + သည် မည်သည့်အပိုင်းလဲ?",
+              "options": [
+                "မျဉ်းတို",
+                "မျဉ်းရှည်",
+                "ဘောင်တစ်ခုလုံး",
+                "E အက္ခရာ"
+              ],
+              "reasons": [
+                "တိုသည် − ဖြစ်သည်။",
+                "ဤဘက်ထရီသင်္ကေတ၌ ရှည်သည် +။",
+                "ဘောင်က ဆားကစ်သင်္ကေတမဟုတ်။",
+                "E က ကတ်အမည်၊ အပေါင်းအနုတ်မဟုတ်။"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q03": {
+              "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9",
+              "stem": "E2 ဘယ် လျှပ်စီးသည် ကြည့်သူထံလာသည်။ ကွင်းလှည့်မှုမှန်မှာ?",
+              "options": [
+                "2",
+                "သံလိုက်ကွင်းမရှိ",
+                "1",
+                "ဘယ်ညာဖြောင့်မျဉ်းသာ"
+              ],
+              "reasons": [
+                "2 နာရီလက်တံအတိုင်းဖြစ်၍ ဤလျှပ်စီးအတွက်မှား။",
+                "ဖြောင့်လျှပ်စီးပတ်လည် ကွင်းဖြစ်သည်။",
+                "ညာဝက်အူအရ ရှေ့လာလျှပ်စီးက လက်တံပြောင်းပြန်1။",
+                "ပတ်လည်ကွင်းကို လျှပ်စီးတူဖြောင့်မျဉ်းမယူပါနှင့်။"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q04": {
+              "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb",
+              "stem": "E2 ညာ၌ B ညာ၊ I ရှေ့။ ဖလဲမင်းဘယ်လက်အရ F မည်သည်လဲ?",
+              "options": [
+                "↓",
+                "←",
+                "→",
+                "↑"
+              ],
+              "reasons": [
+                "အားက အပေါ်၊ အောက်မဟုတ်။",
+                "အားသည် B နှင့်ထောင့်မှန်ဖြစ်ရမည်။",
+                "B နှင့်တူညီရာမဟုတ်။",
+                "ဤအခြေအနေ၌ သတ်မှတ်လျှပ်စီးရှေ့၊ B ညာဆို F အပေါ်။"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "th": {
+          "caption": "E1 จัดสัญลักษณ์พื้นฐานห้าแบบขึ้นใหม่ เส้นยาวของแบตเตอรี่คือ + เส้นสั้นคือ − วงกลมแหล่ง AC มีรูปคลื่น จุดใน E2 หมายถึงกระแสตามข้อตกลงพุ่งมาหาผู้ดู ใช้กฎสกรูมือขวากับสนามรอบกระแสในลวดตรง ส่วนแรงบนกระแสในสนามใช้มือซ้ายเฟลมมิงแยกกัน: นิ้วชี้ B นิ้วกลาง I นิ้วโป้ง F ภาพนี้ B ขวา I พุ่งมาหา สนามไฟฟ้ากับสนามแม่เหล็กต่างกัน ไม่ใช่กฎเครื่องกำเนิดหรือคำสั่งต่อสายจริง",
+          "captionSourceHash": "8355fea765021baa836ade53359fee40fc3a7ce7b983b819a23b3ef52d012569",
+          "questions": {
+            "mfg37-required-electrical-symbol-field-direction-q01": {
+              "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3",
+              "stem": "ใน E1 ลำดับตัวต้านทาน ตัวเก็บประจุ สายดิน แบตเตอรี่ แหล่ง AC คือข้อใด",
+              "options": [
+                "D→A→C→E→B",
+                "A→D→C→E→B",
+                "D→A→E→C→B",
+                "D→A→C→B→E"
+              ],
+              "reasons": [
+                "D สี่เหลี่ยม A แผ่นเท่ากัน C สายดิน E แผ่นยาว/สั้น B วงกลมคลื่น",
+                "ตัวต้านทานกับตัวเก็บประจุสลับ",
+                "สายดินกับแบตเตอรี่สลับ",
+                "แบตเตอรี่กับ AC สลับ"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q02": {
+              "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2",
+              "stem": "ส่วนใดของ E ใน E1 ตรงกับ +",
+              "options": [
+                "เส้นสั้น",
+                "เส้นยาว",
+                "กรอบทั้งใบ",
+                "ตัวอักษร E"
+              ],
+              "reasons": [
+                "เส้นสั้นวาดเป็น −",
+                "เส้นยาวคือ + ในสัญลักษณ์นี้",
+                "กรอบไม่ใช่สัญลักษณ์วงจร",
+                "E คือรหัสการ์ด ไม่ใช่ขั้ว"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q03": {
+              "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9",
+              "stem": "กระแสทางซ้าย E2 พุ่งมาหาผู้ดู สนามหมุนตามตัวเลือกใด",
+              "options": [
+                "2",
+                "ไม่เกิดสนาม",
+                "1",
+                "เส้นตรงซ้ายขวาเท่านั้น"
+              ],
+              "reasons": [
+                "2 ตามเข็มไม่ตรงกับกระแสนี้",
+                "กระแสในเส้นตรงสร้างสนามรอบตัว",
+                "กฎสกรูขวาให้กระแสมาหาตรงกับ1ทวนเข็ม",
+                "อย่าทำสนามรอบสายเป็นเส้นตรงตามกระแส"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q04": {
+              "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb",
+              "stem": "ขวา E2 มี B ขวา I พุ่งมาหา ตามมือซ้ายเฟลมมิง F คือข้อใด",
+              "options": [
+                "↓",
+                "←",
+                "→",
+                "↑"
+              ],
+              "reasons": [
+                "แรงขึ้น ไม่ใช่ลง",
+                "แรงต้องตั้งฉาก B",
+                "แรงไม่ทิศเดียวกับ B",
+                "ตามเงื่อนไขนี้ กระแสตามข้อตกลงมาหาและ B ขวาให้ F ขึ้น"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "km": {
+          "caption": "E1 រៀបសញ្ញាសៀគ្វីមូលដ្ឋានប្រាំដោយឯករាជ្យ។ ខ្សែវែងថ្មជា + ខ្លីជា − ហើយប្រភព AC មានរលកក្នុងរង្វង់។ ចំណុច E2 ជាចរន្តតាមក្បួនមករកអ្នកមើល។ ប្រើទំនាក់ទំនងវីសដៃស្តាំសម្រាប់ដែនជុំវិញចរន្តក្នុងខ្សែត្រង់។ ដាច់ដោយឡែក កម្លាំងលើចរន្តក្នុងដែនប្រើដៃឆ្វេង Fleming៖ ចង្អុល B កណ្ដាល I មេដៃ F។ នៅនេះ B ស្តាំ I មកមុខ។ ដែនអគ្គិសនីនិងម៉ាញេទិចខុសគ្នា កុំប្រែជាក្បួនម៉ាស៊ីនភ្លើងឬបញ្ជាតខ្សែពិត។",
+          "captionSourceHash": "8355fea765021baa836ade53359fee40fc3a7ce7b983b819a23b3ef52d012569",
+          "questions": {
+            "mfg37-required-electrical-symbol-field-direction-q01": {
+              "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3",
+              "stem": "E1 លំដាប់រេស៊ីស្ត័រ កុងដង់សាទ័រ ដី ថ្ម ប្រភព AC គឺមួយណា",
+              "options": [
+                "D→A→C→E→B",
+                "A→D→C→E→B",
+                "D→A→E→C→B",
+                "D→A→C→B→E"
+              ],
+              "reasons": [
+                "D ចតុកោណ A បន្ទះស្មើ C ដី E បន្ទះវែង/ខ្លី B រង្វង់រលក។",
+                "រេស៊ីស្ត័រនិងកុងដង់សាទ័របញ្ច្រាស។",
+                "ដីនិងថ្មបញ្ច្រាស។",
+                "ថ្មនិង AC បញ្ច្រាស។"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q02": {
+              "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2",
+              "stem": "ក្នុង E របស់ E1 ផ្នែកណាតំណាង +",
+              "options": [
+                "ខ្សែខ្លី",
+                "ខ្សែវែង",
+                "ស៊ុមទាំងមូល",
+                "អក្សរ E"
+              ],
+              "reasons": [
+                "ខ្លីគូរជា −។",
+                "ខ្សែវែងជា + ក្នុងសញ្ញាថ្មនេះ។",
+                "ស៊ុមមិនមែនសញ្ញាសៀគ្វី។",
+                "E ជាលេខសម្គាល់កាត មិនមែនប៉ូល។"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q03": {
+              "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9",
+              "stem": "E2 ឆ្វេង ចរន្តមករកអ្នកមើល ដែនវិលតាមមួយណា",
+              "options": [
+                "2",
+                "គ្មានដែនម៉ាញេទិច",
+                "1",
+                "តែខ្សែត្រង់ឆ្វេងស្តាំ"
+              ],
+              "reasons": [
+                "2 តាមទ្រនិចនាឡិកាខុសនឹងចរន្តនេះ។",
+                "ចរន្តក្នុងខ្សែត្រង់បង្កដែនជុំវិញ។",
+                "តាមវីសស្តាំ ចរន្តមកមុខត្រូវ1បញ្ច្រាសទ្រនិច។",
+                "កុំចាត់ដែនជុំវិញជាខ្សែត្រង់ដូចចរន្ត។"
+              ]
+            },
+            "mfg37-required-electrical-symbol-field-direction-q04": {
+              "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb",
+              "stem": "E2 ស្តាំ B ស្តាំ I មកមុខ តាម Fleming ឆ្វេង F មួយណា",
+              "options": [
+                "↓",
+                "←",
+                "→",
+                "↑"
+              ],
+              "reasons": [
+                "កម្លាំងឡើង មិនចុះ។",
+                "កម្លាំងត្រូវកែង B។",
+                "កម្លាំងមិនទិសដូច B។",
+                "តាមលក្ខខណ្ឌនេះ ចរន្តមកមុខនិង B ស្តាំឱ្យ F ឡើង។"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        }
+      },
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false
+    },
+    {
+      "id": "mfg37-required-treatment-taxonomy",
+      "lessonIds": [
+        "mfg1-surface-lesson-057"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-057": "d1a9cc3f4c9b8989e00ac8b95ba06f5e827bdaab17f91b7319d3c8fc6e3b80ae"
+      },
+      "titleJa": "基材・皮膜・処理系列を分類図で読む",
+      "captionJa": "図Tは資料の分類を独自の枝とカードに組み直したものです。めっきは金属皮膜、陽極酸化は酸化皮膜、化成処理はリン酸塩等の化合物皮膜、塗装は樹脂皮膜を考えます。めっきの下位には溶融、湿式（電気・無電解）、乾式（PVD・CVD）を示しました。基材の例は全材質への適合保証ではありません。防食・摩耗・導電・装飾など目的も照合します。膜厚の表中例を濃度・時間・温度の設定や現行規格の保証にしません。",
+      "assets": [
+        {
+          "id": "mfg38-taxonomy-tree",
+          "file": "assets/manufacturing/recognition38/taxonomy-tree.png",
+          "width": 1300,
+          "height": 1140,
+          "altJa": "表面処理からめっき・陽極酸化・化成処理・塗装・その他へ枝分かれする独自分類図。めっきは溶融・湿式の電気と無電解・乾式PVD/CVDへ分ける。",
+          "sha256": "13f7c07c5f410ba88673e8153782ac0490b2ef536541bb87e73ab68f737ac344"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg37-required-treatment-taxonomy-q01",
+          "lessonId": "mfg1-surface-lesson-057",
+          "stemJa": "図Tで、アルミニウム等の表面を酸化させて酸化皮膜をつくる枠はどれか。",
+          "optionsJa": [
+            "陽極酸化",
+            "塗装",
+            "研磨",
+            "電気めっき"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "陽極酸化は酸化皮膜の系列。",
+            "塗装は樹脂皮膜の系列。",
+            "研磨はこの酸化皮膜形成の枠ではない。",
+            "電気めっきの金属皮膜とは別。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 139,
+              "printedPage": 129
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 141,
+              "printedPage": 131
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-taxonomy-tree"
+          ],
+          "imageAssetHashes": {
+            "mfg38-taxonomy-tree": "13f7c07c5f410ba88673e8153782ac0490b2ef536541bb87e73ab68f737ac344"
+          },
+          "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde"
+        },
+        {
+          "id": "mfg37-required-treatment-taxonomy-q02",
+          "lessonId": "mfg1-surface-lesson-057",
+          "stemJa": "図Tのめっきの枝で、湿式の下に並ぶ二つはどれか。",
+          "optionsJa": [
+            "PVD・CVD",
+            "電気・無電解",
+            "焼入れ・窒化",
+            "研磨・エッチング"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "図では乾式の下位。",
+            "図では湿式を電気と無電解へ分けた。",
+            "その他の方法として扱う。",
+            "湿式めっきの二分ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 139,
+              "printedPage": 129
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-taxonomy-tree"
+          ],
+          "imageAssetHashes": {
+            "mfg38-taxonomy-tree": "13f7c07c5f410ba88673e8153782ac0490b2ef536541bb87e73ab68f737ac344"
+          },
+          "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25"
+        },
+        {
+          "id": "mfg37-required-treatment-taxonomy-q03",
+          "lessonId": "mfg1-surface-lesson-057",
+          "stemJa": "図Tで、リン酸塩等の化合物皮膜と塗装下地の目的を対応させる枠はどれか。",
+          "optionsJa": [
+            "交流電源",
+            "陽極酸化だけ",
+            "化成処理",
+            "旋盤"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "電源は表面処理の分類ではない。",
+            "酸化皮膜と化合物皮膜の枠を分ける。",
+            "化成処理は化学反応で化合物皮膜をつくる系列。",
+            "旋盤はこの処理分類の枠ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 139,
+              "printedPage": 129
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 141,
+              "printedPage": 131
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-taxonomy-tree"
+          ],
+          "imageAssetHashes": {
+            "mfg38-taxonomy-tree": "13f7c07c5f410ba88673e8153782ac0490b2ef536541bb87e73ab68f737ac344"
+          },
+          "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511"
+        },
+        {
+          "id": "mfg37-required-treatment-taxonomy-q04",
+          "lessonId": "mfg1-surface-lesson-057",
+          "stemJa": "図Tで木材等の上に樹脂皮膜をつくる例と、注意点が合うものはどれか。",
+          "optionsJa": [
+            "全材料に同じめっき条件",
+            "表の膜厚をそのまま温度設定にする",
+            "研磨で必ず樹脂皮膜になる",
+            "塗装。基材・塗料・条件の適合は別に確認する"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "全材料に同じ条件とは示していない。",
+            "厚さと温度は別の量。",
+            "研磨と塗装を混同しない。",
+            "図の塗装枠に対応するが、仕様確認を省略しない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 141,
+              "printedPage": 131
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-taxonomy-tree"
+          ],
+          "imageAssetHashes": {
+            "mfg38-taxonomy-tree": "13f7c07c5f410ba88673e8153782ac0490b2ef536541bb87e73ab68f737ac344"
+          },
+          "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d"
+        }
+      ],
+      "locales": {
+        "en": {
+          "caption": "T reorganizes the source classification into original branches and cards: plating forms a metal coating, anodizing an oxide, conversion treatment a compound coating such as phosphate, and painting a resin film. Plating branches into hot-dip, wet (electroplating/electroless) and dry (PVD/CVD). Substrate examples do not guarantee compatibility with every material. Check the purpose, such as corrosion/wear protection, conduction or decoration. Example thicknesses are not concentration, time or temperature settings, nor proof of current standards.",
+          "captionSourceHash": "7817ce2f49812cef16074e1a2635e57671d8992921237450564a1b7cf99bf0d1",
+          "questions": {
+            "mfg37-required-treatment-taxonomy-q01": {
+              "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde",
+              "stem": "Which T box forms an oxide coating by oxidizing aluminium, for example?",
+              "options": [
+                "Anodizing",
+                "Painting",
+                "Polishing",
+                "Electroplating"
+              ],
+              "reasons": [
+                "Anodizing forms an oxide coating.",
+                "Painting forms a resin film.",
+                "Polishing is not this oxide-forming class.",
+                "Electroplating forms a metal coating instead."
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q02": {
+              "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25",
+              "stem": "Which two branches are under wet plating in T?",
+              "options": [
+                "PVD/CVD",
+                "Electroplating/electroless",
+                "Quenching/nitriding",
+                "Polishing/etching"
+              ],
+              "reasons": [
+                "These are dry branches.",
+                "Wet plating divides into electroplating and electroless.",
+                "These are other methods.",
+                "These are not the two wet-plating branches."
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q03": {
+              "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511",
+              "stem": "Which T box matches a phosphate compound film and a paint-base purpose?",
+              "options": [
+                "AC source",
+                "Anodizing only",
+                "Conversion treatment",
+                "Lathe"
+              ],
+              "reasons": [
+                "A power source is not a treatment class.",
+                "Distinguish oxide from compound coating.",
+                "Conversion treatment forms a compound coating by chemical reaction.",
+                "A lathe is not this treatment class."
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q04": {
+              "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d",
+              "stem": "Which matches a resin film on wood, for example, and the necessary caution?",
+              "options": [
+                "Same plating conditions for all materials",
+                "Use table thickness directly as temperature",
+                "Polishing always forms a resin film",
+                "Painting; verify substrate, paint and conditions separately"
+              ],
+              "reasons": [
+                "The diagram never specifies identical conditions for all materials.",
+                "Thickness and temperature are different quantities.",
+                "Do not confuse polishing with painting.",
+                "This matches painting, but specification checks remain necessary."
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "vi": {
+          "caption": "T sắp xếp lại phân loại nguồn bằng nhánh và thẻ độc lập: mạ tạo lớp kim loại, oxy hóa anốt tạo oxit, chuyển hóa tạo hợp chất như phốt phát, sơn tạo màng nhựa. Mạ chia nhúng nóng, ướt (điện/không điện) và khô (PVD/CVD). Ví dụ vật liệu nền không bảo đảm mọi vật liệu đều phù hợp. Đối chiếu mục đích chống ăn mòn, mài mòn, dẫn điện hoặc trang trí. Chiều dày ví dụ không phải thông số nồng độ, thời gian, nhiệt độ hay chứng nhận tiêu chuẩn hiện hành.",
+          "captionSourceHash": "7817ce2f49812cef16074e1a2635e57671d8992921237450564a1b7cf99bf0d1",
+          "questions": {
+            "mfg37-required-treatment-taxonomy-q01": {
+              "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde",
+              "stem": "Ô nào ở T tạo màng oxit bằng oxy hóa bề mặt nhôm chẳng hạn?",
+              "options": [
+                "Oxy hóa anốt",
+                "Sơn",
+                "Đánh bóng",
+                "Mạ điện"
+              ],
+              "reasons": [
+                "Oxy hóa anốt tạo màng oxit.",
+                "Sơn tạo màng nhựa.",
+                "Đánh bóng không thuộc nhóm tạo oxit này.",
+                "Mạ điện tạo lớp kim loại, khác nhóm."
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q02": {
+              "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25",
+              "stem": "Hai nhánh dưới mạ ướt ở T là gì?",
+              "options": [
+                "PVD/CVD",
+                "Mạ điện/mạ không điện",
+                "Tôi/thấm nitơ",
+                "Đánh bóng/ăn mòn tạo hình"
+              ],
+              "reasons": [
+                "Đây là nhánh mạ khô.",
+                "Mạ ướt chia mạ điện và không điện.",
+                "Đây là các phương pháp khác.",
+                "Không phải hai nhánh mạ ướt."
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q03": {
+              "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511",
+              "stem": "Ô nào ở T ứng với màng hợp chất phốt phát và mục đích làm nền sơn?",
+              "options": [
+                "Nguồn xoay chiều",
+                "Chỉ oxy hóa anốt",
+                "Xử lý chuyển hóa",
+                "Máy tiện"
+              ],
+              "reasons": [
+                "Nguồn điện không phải nhóm xử lý bề mặt.",
+                "Phân biệt màng oxit với hợp chất.",
+                "Chuyển hóa tạo màng hợp chất bằng phản ứng hóa học.",
+                "Máy tiện không phải nhóm xử lý này."
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q04": {
+              "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d",
+              "stem": "Ví dụ màng nhựa trên gỗ ở T và lưu ý nào đúng?",
+              "options": [
+                "Mọi vật liệu dùng cùng điều kiện mạ",
+                "Dùng chiều dày bảng làm nhiệt độ",
+                "Đánh bóng luôn tạo màng nhựa",
+                "Sơn; kiểm tra riêng nền, sơn và điều kiện"
+              ],
+              "reasons": [
+                "Hình không quy định điều kiện giống nhau cho mọi vật liệu.",
+                "Chiều dày và nhiệt độ là hai đại lượng.",
+                "Không nhầm đánh bóng với sơn.",
+                "Đúng ô sơn, nhưng vẫn phải kiểm tra quy cách."
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "id": {
+          "caption": "T menyusun ulang klasifikasi sumber dengan cabang dan kartu asli: pelapisan menghasilkan lapisan logam, anodisasi oksida, konversi senyawa seperti fosfat, pengecatan film resin. Pelapisan terbagi celup panas, basah (elektro/tanpa listrik) dan kering (PVD/CVD). Contoh substrat tidak menjamin semua bahan sesuai. Periksa tujuan antikorosi, ketahanan aus, konduksi atau dekorasi. Contoh tebal bukan setelan konsentrasi, waktu, suhu atau jaminan standar terkini.",
+          "captionSourceHash": "7817ce2f49812cef16074e1a2635e57671d8992921237450564a1b7cf99bf0d1",
+          "questions": {
+            "mfg37-required-treatment-taxonomy-q01": {
+              "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde",
+              "stem": "Kotak T mana membentuk oksida dengan mengoksidasi aluminium, misalnya?",
+              "options": [
+                "Anodisasi",
+                "Pengecatan",
+                "Pemolesan",
+                "Elektroplating"
+              ],
+              "reasons": [
+                "Anodisasi membentuk oksida.",
+                "Cat membentuk film resin.",
+                "Pemolesan bukan kelas pembentukan oksida ini.",
+                "Elektroplating membentuk lapisan logam."
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q02": {
+              "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25",
+              "stem": "Dua cabang di bawah pelapisan basah T adalah?",
+              "options": [
+                "PVD/CVD",
+                "Elektroplating/tanpa listrik",
+                "Pengerasan/nitridasi",
+                "Pemolesan/etsa"
+              ],
+              "reasons": [
+                "Ini cabang kering.",
+                "Basah dibagi elektroplating dan tanpa listrik.",
+                "Ini metode lain.",
+                "Bukan dua cabang basah."
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q03": {
+              "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511",
+              "stem": "Kotak T untuk lapisan senyawa fosfat dan dasar cat adalah?",
+              "options": [
+                "Sumber AC",
+                "Hanya anodisasi",
+                "Perlakuan konversi",
+                "Mesin bubut"
+              ],
+              "reasons": [
+                "Sumber bukan kelas perlakuan.",
+                "Bedakan oksida dan senyawa.",
+                "Konversi membentuk senyawa melalui reaksi kimia.",
+                "Bubut bukan kelas ini."
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q04": {
+              "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d",
+              "stem": "Mana yang sesuai untuk film resin di kayu dan catatannya?",
+              "options": [
+                "Semua bahan memakai kondisi pelapisan sama",
+                "Tebal tabel menjadi suhu",
+                "Pemolesan selalu membentuk resin",
+                "Pengecatan; periksa substrat, cat dan kondisi tersendiri"
+              ],
+              "reasons": [
+                "Diagram tidak menentukan semua kondisi sama.",
+                "Tebal dan suhu berbeda.",
+                "Jangan samakan pemolesan dengan pengecatan.",
+                "Sesuai kotak cat; pemeriksaan spesifikasi tetap perlu."
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "tl": {
+          "caption": "Inayos muli sa T ang klasipikasyon ng sanggunian gamit ang orihinal na mga sanga at kard: metal na patong sa plating, oxide sa anodizing, compound gaya ng phosphate sa conversion treatment, resin film sa painting. May hot-dip, wet (electroplating/electroless), dry (PVD/CVD) na sanga ang plating. Hindi garantiya para sa lahat ng materyal ang mga halimbawang substrate. Suriin ang layuning laban sa corrosion/pagkasuot, konduksiyon o dekorasyon. Ang kapal na halimbawa ay hindi setting ng konsentrasyon, oras o temperatura, ni patunay ng kasalukuyang pamantayan.",
+          "captionSourceHash": "7817ce2f49812cef16074e1a2635e57671d8992921237450564a1b7cf99bf0d1",
+          "questions": {
+            "mfg37-required-treatment-taxonomy-q01": {
+              "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde",
+              "stem": "Aling kahon T ang bumubuo ng oxide sa pag-oxidize ng aluminium?",
+              "options": [
+                "Anodizing",
+                "Painting",
+                "Polishing",
+                "Electroplating"
+              ],
+              "reasons": [
+                "Oxide ang anodizing.",
+                "Resin film ang painting.",
+                "Hindi ito ang uri ng polishing.",
+                "Metal na patong ang electroplating."
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q02": {
+              "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25",
+              "stem": "Aling dalawang sanga ang nasa wet plating ng T?",
+              "options": [
+                "PVD/CVD",
+                "Electroplating/electroless",
+                "Quenching/nitriding",
+                "Polishing/etching"
+              ],
+              "reasons": [
+                "Nasa dry ang mga ito.",
+                "Hinati ang wet sa electroplating at electroless.",
+                "Iba pang pamamaraan ito.",
+                "Hindi ito dalawang wet-plating branch."
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q03": {
+              "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511",
+              "stem": "Aling T box ang phosphate compound film at base para sa pintura?",
+              "options": [
+                "AC source",
+                "Anodizing lamang",
+                "Conversion treatment",
+                "Lathe"
+              ],
+              "reasons": [
+                "Hindi surface-treatment class ang power source.",
+                "Ihiwalay ang oxide at compound.",
+                "Gumagawa ng compound film sa reaksiyong kemikal ang conversion.",
+                "Hindi klase ng treatment ang lathe."
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q04": {
+              "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d",
+              "stem": "Alin ang resin film sa kahoy at tamang paalala?",
+              "options": [
+                "Parehong plating setting sa lahat",
+                "Gawing temperatura ang kapal sa talahanayan",
+                "Laging resin film ang polishing",
+                "Painting; hiwalay na suriin ang substrate, pintura at kondisyon"
+              ],
+              "reasons": [
+                "Hindi pare-pareho ang lahat ng kondisyon sa larawan.",
+                "Magkaibang dami ang kapal at temperatura.",
+                "Huwag ipaghalo ang polishing at painting.",
+                "Tugma sa painting, ngunit kailangan pa rin ang espesipikasyon."
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "zh-CN": {
+          "caption": "T用原创分支卡片重组资料分类：镀覆形成金属层，阳极氧化形成氧化层，化成处理形成磷酸盐等化合物层，涂装形成树脂层。镀覆分热浸、湿式（电镀/化学镀）、干式（PVD/CVD）。基材例不保证适合所有材料，还要核对防腐、耐磨、导电、装饰等目的。厚度例不是浓度、时间、温度设置，也不是现行标准保证。",
+          "captionSourceHash": "7817ce2f49812cef16074e1a2635e57671d8992921237450564a1b7cf99bf0d1",
+          "questions": {
+            "mfg37-required-treatment-taxonomy-q01": {
+              "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde",
+              "stem": "T中使铝等表面氧化形成氧化膜的是？",
+              "options": [
+                "阳极氧化",
+                "涂装",
+                "研磨",
+                "电镀"
+              ],
+              "reasons": [
+                "阳极氧化形成氧化膜。",
+                "涂装形成树脂膜。",
+                "研磨不是此氧化成膜分类。",
+                "电镀金属膜是另一类。"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q02": {
+              "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25",
+              "stem": "T湿式镀覆的两个下级分支是？",
+              "options": [
+                "PVD/CVD",
+                "电镀/化学镀",
+                "淬火/渗氮",
+                "研磨/蚀刻"
+              ],
+              "reasons": [
+                "这是干式分支。",
+                "图中湿式分电镀与化学镀。",
+                "作为其他方法。",
+                "不是湿式的两个分支。"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q03": {
+              "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511",
+              "stem": "T中对应磷酸盐化合物膜和涂装底层目的的是？",
+              "options": [
+                "交流电源",
+                "只有阳极氧化",
+                "化成处理",
+                "车床"
+              ],
+              "reasons": [
+                "电源不是表面处理类别。",
+                "区分氧化膜与化合物膜。",
+                "化成处理通过化学反应形成化合物膜。",
+                "车床不是此处理类别。"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q04": {
+              "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d",
+              "stem": "T中木材上形成树脂膜的例子及注意事项，哪项正确？",
+              "options": [
+                "所有材料同一电镀条件",
+                "表中厚度直接作温度",
+                "研磨必定形成树脂膜",
+                "涂装；另外核对基材、涂料、条件"
+              ],
+              "reasons": [
+                "图未规定所有材料条件相同。",
+                "厚度与温度是不同量。",
+                "不混淆研磨和涂装。",
+                "符合涂装框，但仍要核对规格。"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "zh-TW": {
+          "caption": "T用原創分支卡片重組資料分類：鍍覆形成金屬層，陽極氧化形成氧化層，化成處理形成磷酸鹽等化合物層，塗裝形成樹脂層。鍍覆分熱浸、濕式（電鍍/化學鍍）、乾式（PVD/CVD）。基材範例不保證適合所有材料，還要核對防蝕、耐磨、導電、裝飾等目的。厚度範例不是濃度、時間、溫度設定，也不是現行標準保證。",
+          "captionSourceHash": "7817ce2f49812cef16074e1a2635e57671d8992921237450564a1b7cf99bf0d1",
+          "questions": {
+            "mfg37-required-treatment-taxonomy-q01": {
+              "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde",
+              "stem": "T中使鋁等表面氧化形成氧化膜的是？",
+              "options": [
+                "陽極氧化",
+                "塗裝",
+                "研磨",
+                "電鍍"
+              ],
+              "reasons": [
+                "陽極氧化形成氧化膜。",
+                "塗裝形成樹脂膜。",
+                "研磨不是此氧化成膜分類。",
+                "電鍍金屬膜是另一類。"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q02": {
+              "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25",
+              "stem": "T濕式鍍覆的兩個下級分支是？",
+              "options": [
+                "PVD/CVD",
+                "電鍍/化學鍍",
+                "淬火/滲氮",
+                "研磨/蝕刻"
+              ],
+              "reasons": [
+                "這是乾式分支。",
+                "圖中濕式分電鍍與化學鍍。",
+                "作為其他方法。",
+                "不是濕式的兩個分支。"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q03": {
+              "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511",
+              "stem": "T中對應磷酸鹽化合物膜和塗裝底層目的的是？",
+              "options": [
+                "交流電源",
+                "只有陽極氧化",
+                "化成處理",
+                "車床"
+              ],
+              "reasons": [
+                "電源不是表面處理類別。",
+                "區分氧化膜與化合物膜。",
+                "化成處理透過化學反應形成化合物膜。",
+                "車床不是此處理類別。"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q04": {
+              "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d",
+              "stem": "T中木材上形成樹脂膜的範例及注意事項，哪項正確？",
+              "options": [
+                "所有材料同一電鍍條件",
+                "表中厚度直接作溫度",
+                "研磨必定形成樹脂膜",
+                "塗裝；另外核對基材、塗料、條件"
+              ],
+              "reasons": [
+                "圖未規定所有材料條件相同。",
+                "厚度與溫度是不同量。",
+                "不混淆研磨和塗裝。",
+                "符合塗裝框，但仍要核對規格。"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "hi": {
+          "caption": "T में स्रोत वर्गीकरण को मौलिक शाखाओं और कार्डों में रखा है: प्लेटिंग में धातु परत, ऐनोडीकरण में ऑक्साइड, रूपांतरण में फॉस्फेट जैसे यौगिक, पेंटिंग में रेज़िन फिल्म। प्लेटिंग की शाखाएँ गर्म-डुबकी, गीली (विद्युत/विद्युत-रहित), सूखी (PVD/CVD) हैं। आधार पदार्थों के उदाहरण सभी सामग्रियों की अनुकूलता नहीं बताते। संक्षारण/घिसाव प्रतिरोध, चालकता और सजावट जैसे उद्देश्य भी जाँचें। मोटाई के उदाहरण सांद्रता, समय या तापमान सेटिंग और वर्तमान मानक की गारंटी नहीं हैं।",
+          "captionSourceHash": "7817ce2f49812cef16074e1a2635e57671d8992921237450564a1b7cf99bf0d1",
+          "questions": {
+            "mfg37-required-treatment-taxonomy-q01": {
+              "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde",
+              "stem": "T का कौन-सा खंड अलुमिनियम आदि को ऑक्सीकृत करके ऑक्साइड परत बनाता है?",
+              "options": [
+                "ऐनोडीकरण",
+                "पेंटिंग",
+                "पॉलिशिंग",
+                "विद्युत प्लेटिंग"
+              ],
+              "reasons": [
+                "ऐनोडीकरण ऑक्साइड बनाता है।",
+                "पेंटिंग रेज़िन फिल्म बनाती है।",
+                "पॉलिशिंग यह ऑक्साइड-निर्माण वर्ग नहीं है।",
+                "विद्युत प्लेटिंग धातु परत बनाती है।"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q02": {
+              "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25",
+              "stem": "T की गीली प्लेटिंग के नीचे दो शाखाएँ कौन-सी हैं?",
+              "options": [
+                "PVD/CVD",
+                "विद्युत/विद्युत-रहित प्लेटिंग",
+                "क्वेंचिंग/नाइट्राइडिंग",
+                "पॉलिशिंग/एच्चिंग"
+              ],
+              "reasons": [
+                "ये सूखी शाखाएँ हैं।",
+                "गीली को विद्युत और विद्युत-रहित में बाँटा है।",
+                "ये अन्य विधियाँ हैं।",
+                "ये गीली प्लेटिंग की दो शाखाएँ नहीं।"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q03": {
+              "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511",
+              "stem": "T में फॉस्फेट यौगिक परत और पेंट आधार के उद्देश्य वाला खंड कौन-सा है?",
+              "options": [
+                "AC स्रोत",
+                "केवल ऐनोडीकरण",
+                "रूपांतरण उपचार",
+                "लेथ"
+              ],
+              "reasons": [
+                "स्रोत सतह उपचार वर्ग नहीं है।",
+                "ऑक्साइड और यौगिक परत अलग रखें।",
+                "रूपांतरण रासायनिक अभिक्रिया से यौगिक परत बनाता है।",
+                "लेथ यह उपचार वर्ग नहीं है।"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q04": {
+              "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d",
+              "stem": "T में लकड़ी आदि पर रेज़िन फिल्म और सही सावधानी कौन-सी है?",
+              "options": [
+                "सब सामग्रियों पर समान प्लेटिंग शर्तें",
+                "तालिका मोटाई को तापमान बनाएँ",
+                "पॉलिशिंग से हमेशा रेज़िन",
+                "पेंटिंग; आधार, पेंट और शर्तें अलग जाँचें"
+              ],
+              "reasons": [
+                "चित्र सबके लिए समान शर्तें नहीं देता।",
+                "मोटाई और तापमान अलग राशियाँ हैं।",
+                "पॉलिशिंग और पेंटिंग न मिलाएँ।",
+                "पेंटिंग से मेल है, विनिर्देश फिर भी जाँचें।"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "bn": {
+          "caption": "T-তে উৎসের শ্রেণিবিভাগ মৌলিক শাখা ও কার্ডে সাজানো: প্লেটিংয়ে ধাতব আবরণ, অ্যানোডাইজিংয়ে অক্সাইড, রূপান্তর প্রক্রিয়ায় ফসফেটের মতো যৌগ, রংয়ে রেজিন স্তর। প্লেটিংয়ের শাখা হট-ডিপ, ভেজা (ইলেক্ট্রোপ্লেটিং/বিদ্যুৎবিহীন), শুষ্ক (PVD/CVD)। ভিত্তি উপাদানের উদাহরণ সব উপকরণের উপযোগিতা নিশ্চিত করে না। ক্ষয়/ঘর্ষণ প্রতিরোধ, পরিবাহিতা, সাজসজ্জার উদ্দেশ্যও দেখুন। পুরুত্বের উদাহরণ ঘনমাত্রা, সময় বা তাপমাত্রার সেটিং কিংবা বর্তমান মানের নিশ্চয়তা নয়।",
+          "captionSourceHash": "7817ce2f49812cef16074e1a2635e57671d8992921237450564a1b7cf99bf0d1",
+          "questions": {
+            "mfg37-required-treatment-taxonomy-q01": {
+              "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde",
+              "stem": "T-তে অ্যালুমিনিয়াম ইত্যাদি জারিত করে অক্সাইড স্তর গড়ে কোন ঘর?",
+              "options": [
+                "অ্যানোডাইজিং",
+                "রং করা",
+                "পলিশিং",
+                "ইলেক্ট্রোপ্লেটিং"
+              ],
+              "reasons": [
+                "অ্যানোডাইজিং অক্সাইড তৈরি করে।",
+                "রং রেজিন স্তর তৈরি করে।",
+                "পলিশিং এই অক্সাইড গঠনের শ্রেণি নয়।",
+                "ইলেক্ট্রোপ্লেটিং ধাতব স্তর তৈরি করে।"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q02": {
+              "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25",
+              "stem": "T-র ভেজা প্লেটিংয়ের নিচে দুই শাখা কোনটি?",
+              "options": [
+                "PVD/CVD",
+                "ইলেক্ট্রোপ্লেটিং/বিদ্যুৎবিহীন প্লেটিং",
+                "কোয়েঞ্চিং/নাইট্রাইডিং",
+                "পলিশিং/এচিং"
+              ],
+              "reasons": [
+                "এগুলি শুষ্ক শাখা।",
+                "ভেজা ভাগে ইলেক্ট্রোপ্লেটিং ও বিদ্যুৎবিহীন আছে।",
+                "এগুলি অন্যান্য পদ্ধতি।",
+                "ভেজা প্লেটিংয়ের দুই শাখা নয়।"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q03": {
+              "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511",
+              "stem": "T-তে ফসফেট যৌগস্তর ও রঙের ভিত্তি উদ্দেশ্যের ঘর কোনটি?",
+              "options": [
+                "AC উৎস",
+                "শুধু অ্যানোডাইজিং",
+                "রূপান্তর প্রক্রিয়া",
+                "লেদ"
+              ],
+              "reasons": [
+                "উৎস পৃষ্ঠপ্রক্রিয়ার শ্রেণি নয়।",
+                "অক্সাইড ও যৌগস্তর আলাদা।",
+                "রূপান্তর রাসায়নিক বিক্রিয়ায় যৌগস্তর তৈরি করে।",
+                "লেদ এই প্রক্রিয়া শ্রেণি নয়।"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q04": {
+              "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d",
+              "stem": "T-তে কাঠে রেজিন স্তরের উদাহরণ ও সতর্কতা কোনটি ঠিক?",
+              "options": [
+                "সব উপকরণে একই প্লেটিং শর্ত",
+                "সারণির পুরুত্বকে তাপমাত্রা করুন",
+                "পলিশিং সর্বদা রেজিন গড়ে",
+                "রং; ভিত্তি, রং ও শর্ত আলাদা যাচাই করুন"
+              ],
+              "reasons": [
+                "চিত্র সব উপকরণে এক শর্ত দেয় না।",
+                "পুরুত্ব ও তাপমাত্রা ভিন্ন রাশি।",
+                "পলিশিং ও রং এক নয়।",
+                "রঙের ঘরের সঙ্গে মেলে, তবু নির্দিষ্টকরণ দেখুন।"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "ne": {
+          "caption": "T ले स्रोत वर्गीकरणलाई मौलिक हाँगा र कार्डमा राख्छ: प्लेटिङमा धातु तह, एनोडाइजिङमा अक्साइड, रूपान्तरणमा फस्फेटजस्ता यौगिक, रङमा रेजिन तह। प्लेटिङका हाँगा तातो-डुबाइ, भिजेको (विद्युतीय/विद्युत्-रहित), सुक्खा (PVD/CVD) हुन्। आधार पदार्थका उदाहरणले सबै सामग्री उपयुक्त हुने प्रत्याभूति दिँदैनन्। क्षय/घिसावट प्रतिरोध, चालकता, सजावटको उद्देश्य पनि जाँच्नुहोस्। मोटाइका उदाहरण सान्द्रता, समय वा तापमान सेटिङ वा वर्तमान मानकको प्रमाण होइनन्।",
+          "captionSourceHash": "7817ce2f49812cef16074e1a2635e57671d8992921237450564a1b7cf99bf0d1",
+          "questions": {
+            "mfg37-required-treatment-taxonomy-q01": {
+              "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde",
+              "stem": "T को कुन बाकसले आलुमिनियम आदि अक्सिडाइज गरेर अक्साइड तह बनाउँछ?",
+              "options": [
+                "एनोडाइजिङ",
+                "रङ लगाउने",
+                "पोलिसिङ",
+                "विद्युत् प्लेटिङ"
+              ],
+              "reasons": [
+                "एनोडाइजिङले अक्साइड बनाउँछ।",
+                "रङले रेजिन तह बनाउँछ।",
+                "पोलिसिङ यो अक्साइड निर्माण वर्ग होइन।",
+                "विद्युत् प्लेटिङले धातु तह बनाउँछ।"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q02": {
+              "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25",
+              "stem": "T को भिजेको प्लेटिङअन्तर्गत दुई हाँगा कुन हुन्?",
+              "options": [
+                "PVD/CVD",
+                "विद्युतीय/विद्युत्-रहित प्लेटिङ",
+                "क्वेन्चिङ/नाइट्राइडिङ",
+                "पोलिसिङ/एचिङ"
+              ],
+              "reasons": [
+                "यी सुक्खा हाँगा हुन्।",
+                "भिजेकोलाई विद्युतीय र विद्युत्-रहितमा बाँडेको छ।",
+                "यी अन्य विधि हुन्।",
+                "यी भिजेको प्लेटिङका दुई हाँगा होइनन्।"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q03": {
+              "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511",
+              "stem": "T मा फस्फेट यौगिक तह र रङको आधार उद्देश्य कुन बाकस हो?",
+              "options": [
+                "AC स्रोत",
+                "एनोडाइजिङ मात्र",
+                "रूपान्तरण उपचार",
+                "लेथ"
+              ],
+              "reasons": [
+                "स्रोत सतह उपचार वर्ग होइन।",
+                "अक्साइड र यौगिक तह छुट्याउनुहोस्।",
+                "रूपान्तरणले रासायनिक प्रतिक्रियाबाट यौगिक तह बनाउँछ।",
+                "लेथ यो उपचार वर्ग होइन।"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q04": {
+              "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d",
+              "stem": "T मा काठमा रेजिन तहको उदाहरण र सही सावधानी कुन हो?",
+              "options": [
+                "सबै सामग्रीमा एउटै प्लेटिङ अवस्था",
+                "तालिकाको मोटाइलाई तापमान बनाउने",
+                "पोलिसिङले सधैँ रेजिन बनाउँछ",
+                "रङ लगाउने; आधार, रङ र अवस्था अलग जाँच्ने"
+              ],
+              "reasons": [
+                "चित्रले सबैमा एउटै अवस्था तोक्दैन।",
+                "मोटाइ र तापमान फरक राशि हुन्।",
+                "पोलिसिङ र रङ लगाउने नमिसाउनुहोस्।",
+                "रङको बाकससँग मिल्छ तर विनिर्देश जाँच चाहिन्छ।"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "my": {
+          "caption": "T သည် ရင်းမြစ်အမျိုးအစားကို ကိုယ်ပိုင်ခွဲခက်ကတ်ဖြင့် ပြန်စီထားသည်။ ပလိတ်တင်ခြင်းက သတ္တုလွှာ၊ အန်နုတ်အောက်ဆိုဒ်က အောက်ဆိုဒ်လွှာ၊ ဓာတုပြောင်းလဲမှုက ဖော့စဖိတ်ကဲ့သို့ဒြပ်ပေါင်းလွှာ၊ ဆေးသုတ်ခြင်းက ရက်ဇင်လွှာဖြစ်သည်။ ပလိတ်တင်ကို ပူရည်နှစ်၊ အစို (လျှပ်စစ်/လျှပ်စစ်မဲ့)၊ အခြောက် (PVD/CVD) ခွဲသည်။ အခြေခံပစ္စည်းဥပမာက အားလုံးသင့်ကြောင်းမအာမခံပါ။ သံချေး၊ ပွန်းစားခံနိုင်မှု၊ လျှပ်စစ်စီးကူးမှု၊ အလှဆင်ရည်ရွယ်ချက်ကိုပါ စစ်ပါ။ အထူဥပမာသည် ပြင်းအား၊ အချိန်၊ အပူချိန်သတ်မှတ်ချက် သို့မဟုတ် လက်ရှိစံအာမခံမဟုတ်ပါ။",
+          "captionSourceHash": "7817ce2f49812cef16074e1a2635e57671d8992921237450564a1b7cf99bf0d1",
+          "questions": {
+            "mfg37-required-treatment-taxonomy-q01": {
+              "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde",
+              "stem": "T ၌ အလူမီနီယမ်စသည့်မျက်နှာပြင်ကို အောက်ဆိုဒ်ဖြစ်စေသောကတ်မှာ?",
+              "options": [
+                "အန်နုတ်အောက်ဆိုဒ်",
+                "ဆေးသုတ်",
+                "အချောပွတ်",
+                "လျှပ်စစ်ပလိတ်"
+              ],
+              "reasons": [
+                "အန်နုတ်နည်းက အောက်ဆိုဒ်လွှာ။",
+                "ဆေးသုတ်က ရက်ဇင်လွှာ။",
+                "ပွတ်ခြင်းက ဤအောက်ဆိုဒ်အမျိုးအစားမဟုတ်။",
+                "လျှပ်စစ်ပလိတ်က သတ္တုလွှာ။"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q02": {
+              "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25",
+              "stem": "T အစိုပလိတ်အောက် ခွဲနှစ်မျိုးမှာ?",
+              "options": [
+                "PVD/CVD",
+                "လျှပ်စစ်/လျှပ်စစ်မဲ့ပလိတ်",
+                "မာကျောအအေးချ/နိုက်ထရိုက်",
+                "ပွတ်/ဓာတုစား"
+              ],
+              "reasons": [
+                "ဤသည်အခြောက်ခွဲ။",
+                "အစိုကိုလျှပ်စစ်နှင့်လျှပ်စစ်မဲ့ခွဲသည်။",
+                "အခြားနည်းများဖြစ်သည်။",
+                "အစိုပလိတ်ခွဲနှစ်မျိုးမဟုတ်။"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q03": {
+              "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511",
+              "stem": "T ၌ ဖော့စဖိတ်ဒြပ်ပေါင်းနှင့် ဆေးအောက်ခံရည်ရွယ်ချက်ကတ်မှာ?",
+              "options": [
+                "AC အရင်းအမြစ်",
+                "အန်နုတ်သာ",
+                "ဓာတုပြောင်းလဲကုသမှု",
+                "တွင်ခုံ"
+              ],
+              "reasons": [
+                "အရင်းအမြစ်သည် မျက်နှာပြင်ကုသမှုမဟုတ်။",
+                "အောက်ဆိုဒ်နှင့်ဒြပ်ပေါင်းကိုခွဲပါ။",
+                "ဓာတုပြောင်းလဲမှုသည် တုံ့ပြန်မှုဖြင့်ဒြပ်ပေါင်းလွှာဖွဲ့သည်။",
+                "တွင်ခုံက ဤအမျိုးအစားမဟုတ်။"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q04": {
+              "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d",
+              "stem": "T ၌ သစ်သားပေါ်ရက်ဇင်နှင့် သတိပြုချက်မှန်မှာ?",
+              "options": [
+                "ပစ္စည်းအားလုံးပလိတ်အခြေအနေတူ",
+                "ဇယားအထူကိုအပူချိန်သုံး",
+                "ပွတ်လျှင်ရက်ဇင်အမြဲဖြစ်",
+                "ဆေးသုတ်၊ အောက်ခံ/ဆေး/အခြေအနေကိုသီးခြားစစ်"
+              ],
+              "reasons": [
+                "ပုံက အားလုံးတူဟုမသတ်မှတ်။",
+                "အထူနှင့်အပူချိန်ကွဲ။",
+                "ပွတ်ခြင်းနှင့်ဆေးသုတ်မရောပါနှင့်။",
+                "ဆေးကတ်နှင့်ကိုက်သော်လည်း သတ်မှတ်ချက်စစ်ရမည်။"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "th": {
+          "caption": "T จัดประเภทจากเอกสารเป็นกิ่งและการ์ดใหม่: ชุบให้ฟิล์มโลหะ แอโนไดซ์ให้ออกไซด์ แปรสภาพให้สารประกอบเช่นฟอสเฟต ทาสีให้เรซิน ชุบแบ่งจุ่มร้อน แบบเปียก (ไฟฟ้า/ไม่ใช้ไฟฟ้า) และแห้ง (PVD/CVD) ตัวอย่างวัสดุฐานไม่รับประกันเหมาะกับทุกวัสดุ ต้องเทียบเป้าหมายกันกัดกร่อน ทนสึก นำไฟ ตกแต่งด้วย ความหนาตัวอย่างไม่ใช่ค่าตั้งความเข้มข้น เวลา อุณหภูมิ หรือรับรองมาตรฐานปัจจุบัน",
+          "captionSourceHash": "7817ce2f49812cef16074e1a2635e57671d8992921237450564a1b7cf99bf0d1",
+          "questions": {
+            "mfg37-required-treatment-taxonomy-q01": {
+              "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde",
+              "stem": "กล่องใดใน T ออกซิไดซ์ผิวอะลูมิเนียม เป็นต้น ให้ฟิล์มออกไซด์",
+              "options": [
+                "แอโนไดซ์",
+                "ทาสี",
+                "ขัด",
+                "ชุบไฟฟ้า"
+              ],
+              "reasons": [
+                "แอโนไดซ์ให้ออกไซด์",
+                "สีให้เรซิน",
+                "ขัดไม่ใช่กลุ่มสร้างออกไซด์นี้",
+                "ชุบไฟฟ้าให้ฟิล์มโลหะต่างกัน"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q02": {
+              "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25",
+              "stem": "สองกิ่งใต้ชุบแบบเปียกใน T คืออะไร",
+              "options": [
+                "PVD/CVD",
+                "ชุบไฟฟ้า/ไม่ใช้ไฟฟ้า",
+                "ชุบแข็ง/ไนไตรดิง",
+                "ขัด/กัดผิว"
+              ],
+              "reasons": [
+                "นี่คือกิ่งแห้ง",
+                "แบบเปียกแบ่งไฟฟ้ากับไม่ใช้ไฟฟ้า",
+                "เป็นวิธีอื่น",
+                "ไม่ใช่สองกิ่งชุบเปียก"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q03": {
+              "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511",
+              "stem": "กล่องใดใน T ตรงฟิล์มสารประกอบฟอสเฟตและรองพื้นสี",
+              "options": [
+                "แหล่ง AC",
+                "แอโนไดซ์เท่านั้น",
+                "แปรสภาพทางเคมี",
+                "เครื่องกลึง"
+              ],
+              "reasons": [
+                "แหล่งไฟไม่ใช่ประเภททำผิว",
+                "แยกออกไซด์กับสารประกอบ",
+                "แปรสภาพสร้างสารประกอบด้วยปฏิกิริยาเคมี",
+                "เครื่องกลึงไม่ใช่ประเภทนี้"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q04": {
+              "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d",
+              "stem": "ตัวอย่างเรซินบนไม้ใน T กับข้อควรระวังใดถูก",
+              "options": [
+                "ทุกวัสดุใช้เงื่อนไขชุบเดียว",
+                "ใช้ความหนาในตารางตั้งอุณหภูมิ",
+                "ขัดย่อมเกิดเรซินเสมอ",
+                "ทาสี ต้องตรวจฐาน สี และเงื่อนไขแยก"
+              ],
+              "reasons": [
+                "ภาพไม่ได้กำหนดทุกวัสดุเหมือน",
+                "ความหนากับอุณหภูมิต่างปริมาณ",
+                "อย่าปนขัดกับทาสี",
+                "ตรงกล่องสี แต่ยังต้องตรวจข้อกำหนด"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "km": {
+          "caption": "T រៀបការចាត់ថ្នាក់ឯកសារជាមែកនិងកាតថ្មី៖ ស្រោបលោហៈបានស្រទាប់លោហៈ អាណូតបានអុកស៊ីត បម្លែងគីមីបានសមាសធាតុដូចផូស្វាត លាបបានរេស៊ីន។ ស្រោបលោហៈបែងជ្រលក់ក្តៅ សើម (អគ្គិសនី/គ្មានអគ្គិសនី) ស្ងួត (PVD/CVD)។ គំរូសម្ភារៈមូលដ្ឋានមិនធានាសមគ្រប់វត្ថុ។ ពិនិត្យគោលដៅការពារច្រេះ សឹក នាំភ្លើង តុបតែងផង។ កម្រាស់គំរូមិនមែនការកំណត់កំហាប់ ពេល សីតុណ្ហភាព ឬធានាស្តង់ដារបច្ចុប្បន្ន។",
+          "captionSourceHash": "7817ce2f49812cef16074e1a2635e57671d8992921237450564a1b7cf99bf0d1",
+          "questions": {
+            "mfg37-required-treatment-taxonomy-q01": {
+              "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde",
+              "stem": "ប្រអប់ណាក្នុង T អុកស៊ីតកម្មអាលុយមីញ៉ូមជាដើមបង្កស្រទាប់អុកស៊ីត",
+              "options": [
+                "អាណូតអុកស៊ីតកម្ម",
+                "លាបថ្នាំ",
+                "ខាត់",
+                "ស្រោបអគ្គិសនី"
+              ],
+              "reasons": [
+                "អាណូតបង្កអុកស៊ីត។",
+                "លាបបង្ករេស៊ីន។",
+                "ខាត់មិនមែនក្រុមបង្កអុកស៊ីតនេះ។",
+                "ស្រោបអគ្គិសនីបង្កលោហៈខុសគ្នា។"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q02": {
+              "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25",
+              "stem": "មែកពីរក្រោមស្រោបសើមក្នុង T ជាអ្វី",
+              "options": [
+                "PVD/CVD",
+                "អគ្គិសនី/គ្មានអគ្គិសនី",
+                "ពន្លត់រឹង/នីត្រីតកម្ម",
+                "ខាត់/ឆ្លាក់គីមី"
+              ],
+              "reasons": [
+                "នេះជាមែកស្ងួត។",
+                "សើមបែងអគ្គិសនីនិងគ្មានអគ្គិសនី។",
+                "នេះជាវិធីផ្សេង។",
+                "មិនមែនមែកពីរសើម។"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q03": {
+              "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511",
+              "stem": "ប្រអប់ T ណាត្រូវស្រទាប់សមាសធាតុផូស្វាតនិងបាតថ្នាំ",
+              "options": [
+                "ប្រភព AC",
+                "អាណូតតែប៉ុណ្ណោះ",
+                "បម្លែងគីមី",
+                "ម៉ាស៊ីនក្រឡឹង"
+              ],
+              "reasons": [
+                "ប្រភពមិនមែនថ្នាក់ផ្ទៃ។",
+                "បែងអុកស៊ីតនិងសមាសធាតុ។",
+                "បម្លែងគីមីបង្កសមាសធាតុដោយប្រតិកម្ម។",
+                "ក្រឡឹងមិនមែនថ្នាក់នេះ។"
+              ]
+            },
+            "mfg37-required-treatment-taxonomy-q04": {
+              "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d",
+              "stem": "ឧទាហរណ៍រេស៊ីនលើឈើក្នុង T និងការប្រុងប្រយ័ត្នណាត្រឹម",
+              "options": [
+                "គ្រប់វត្ថុស្រោបលក្ខខណ្ឌដូច",
+                "កម្រាស់តារាងយកកំណត់សីតុណ្ហភាព",
+                "ខាត់តែងបង្ករេស៊ីន",
+                "លាប ត្រូវពិនិត្យមូលដ្ឋាន ថ្នាំ និងលក្ខខណ្ឌដាច់"
+              ],
+              "reasons": [
+                "រូបមិនកំណត់លក្ខខណ្ឌទាំងអស់ដូច។",
+                "កម្រាស់និងសីតុណ្ហភាពខុសបរិមាណ។",
+                "កុំច្រឡំខាត់និងលាប។",
+                "ត្រូវប្រអប់លាប តែនៅត្រូវពិនិត្យលក្ខណៈ។"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        }
+      },
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false
+    },
+    {
+      "id": "mfg37-required-plating-process-sequence",
+      "lessonIds": [
+        "mfg1-surface-lesson-006",
+        "mfg1-surface-lesson-016",
+        "mfg1-surface-lesson-018",
+        "mfg1-surface-lesson-059"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-006": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+        "mfg1-surface-lesson-016": "0b3e38703af71909630f6026c9fd8913913e0512d423614412c2f91fadaf0109",
+        "mfg1-surface-lesson-018": "7fa1081fc992c4c9bf535ebc3dc3f8bc04a044280f642ce806feeae76bb030d5",
+        "mfg1-surface-lesson-059": "2591f625a2f6a94c249ec474b2fc6236e65fe60ef4cdeee593259c7abc613ed1"
+      },
+      "titleJa": "水洗・任意工程・乾燥を二つの順序で見分ける",
+      "captionJa": "図SのAは電気めっき、Bは溶融めっきの学習モデルです。Aでは処理の間に水洗を入れ、図の破線の下地めっき・後処理は製品仕様に応じた承認工程として区別しました。Bは洗浄・活性化後の水洗、承認されたフラックス、乾燥確認、溶融浴、冷却、仕上げを示します。湿った品物を溶融浴へ入れる意味ではありません。水洗は前工程の液を流し去る役割で、乾燥とは別です。前処理の要否・順序は材料と承認仕様で確認し、一つの全製品共通レシピにはしません。",
+      "assets": [
+        {
+          "id": "mfg38-sequence-cards",
+          "file": "assets/manufacturing/recognition38/sequence-cards.png",
+          "width": 1300,
+          "height": 1070,
+          "altJa": "A・B二つの工程を縦のカードで比較。水洗、乾燥、任意承認工程と溶融浴前の乾燥を明示。",
+          "sha256": "f6f61a377a167f69c59c9d64c89092071dc1391a3a26136ac89062da52cd7549"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg37-required-plating-process-sequence-q01",
+          "lessonId": "mfg1-surface-lesson-006",
+          "stemJa": "図SのA・Bの対応はどれか。",
+          "optionsJa": [
+            "A電気めっき・B溶融めっき",
+            "A溶融めっき・B電気めっき",
+            "AもBも塗装だけ",
+            "AもBも研磨だけ"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "Aは主めっきと水洗、Bは乾燥後の溶融浴を区別した。",
+            "AとBが逆。",
+            "塗装だけの流れではない。",
+            "研磨だけの流れではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 157,
+              "printedPage": 147
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 170,
+              "printedPage": 160
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sequence-cards"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sequence-cards": "f6f61a377a167f69c59c9d64c89092071dc1391a3a26136ac89062da52cd7549"
+          },
+          "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe"
+        },
+        {
+          "id": "mfg37-required-plating-process-sequence-q02",
+          "lessonId": "mfg1-surface-lesson-006",
+          "stemJa": "図SのAの破線枠について適切なのはどれか。",
+          "optionsJa": [
+            "必ず全製品に追加する",
+            "仕様と承認された工程で要否を確認する",
+            "作業者がいつでも省略する",
+            "破線なら水洗も不要になる"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "全製品必須とは示していない。",
+            "下地めっき・後処理は必要に応じた承認工程。",
+            "省略も自己判断しない。",
+            "水洗の役割が消えるわけではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 157,
+              "printedPage": 147
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sequence-cards"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sequence-cards": "f6f61a377a167f69c59c9d64c89092071dc1391a3a26136ac89062da52cd7549"
+          },
+          "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b"
+        },
+        {
+          "id": "mfg37-required-plating-process-sequence-q03",
+          "lessonId": "mfg1-surface-lesson-006",
+          "stemJa": "図SのBで、溶融浴でのめっきの直前に置いた確認はどれか。",
+          "optionsJa": [
+            "冷却後の仕上げ",
+            "濡れたまま投入",
+            "乾燥を確認",
+            "回転中の研磨"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "仕上げは後の段階。",
+            "湿った品物を溶融浴へ入れない。",
+            "Bではフラックス処理の後、溶融浴の前に乾燥を確認する。",
+            "この流れの直前工程ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 170,
+              "printedPage": 160
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sequence-cards"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sequence-cards": "f6f61a377a167f69c59c9d64c89092071dc1391a3a26136ac89062da52cd7549"
+          },
+          "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2"
+        },
+        {
+          "id": "mfg37-required-plating-process-sequence-q04",
+          "lessonId": "mfg1-surface-lesson-006",
+          "stemJa": "図Sの水洗と乾燥について正しい説明はどれか。",
+          "optionsJa": [
+            "どちらも電流の別名",
+            "水洗すれば品物は必ず乾く",
+            "水洗はどの工程でも不要",
+            "水洗は液の持込みを減らし、乾燥は水分を除く役割"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "工程名を電流としない。",
+            "水洗と乾燥は別の役割。",
+            "図は処理間の水洗を示す。",
+            "役割を分けて読み、実際の方法は承認仕様で確認する。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 157,
+              "printedPage": 147
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 170,
+              "printedPage": 160
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sequence-cards"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sequence-cards": "f6f61a377a167f69c59c9d64c89092071dc1391a3a26136ac89062da52cd7549"
+          },
+          "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a"
+        }
+      ],
+      "locales": {
+        "en": {
+          "caption": "S compares learning models A electroplating and B hot-dip. A includes interstage rinsing; dashed underplating and post-treatment are approved steps whose need depends on product specifications. B shows rinsing after cleaning/activation, approved flux, drying confirmation, molten bath, cooling and finishing. It never means placing wet items in molten metal. Rinsing removes preceding liquid; drying removes moisture. Verify pretreatment and order against the material and approved specification; this is no universal recipe.",
+          "captionSourceHash": "2c1127ad9338eae8b51ab2343472ba5ceb56ec400b51d0303d92ad20ad95209d",
+          "questions": {
+            "mfg37-required-plating-process-sequence-q01": {
+              "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe",
+              "stem": "How do A and B in S correspond?",
+              "options": [
+                "A electroplating; B hot-dip",
+                "A hot-dip; B electroplating",
+                "Both painting only",
+                "Both polishing only"
+              ],
+              "reasons": [
+                "A shows main plating/rinsing; B a molten bath after drying.",
+                "A and B are reversed.",
+                "These are not painting-only flows.",
+                "These are not polishing-only flows."
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q02": {
+              "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b",
+              "stem": "How should the dashed A boxes in S be treated?",
+              "options": [
+                "Always add to every product",
+                "Check need against specifications and approved process",
+                "Operator may omit at any time",
+                "Dashed boxes eliminate rinsing"
+              ],
+              "reasons": [
+                "They are not mandatory for every product.",
+                "Underplating and post-treatment are approved steps used as needed.",
+                "Do not decide omissions independently.",
+                "Rinsing retains its role."
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q03": {
+              "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2",
+              "stem": "Which check immediately precedes the molten bath in S, B?",
+              "options": [
+                "Finishing after cooling",
+                "Insert while wet",
+                "Confirm drying",
+                "Polish while rotating"
+              ],
+              "reasons": [
+                "Finishing comes later.",
+                "Never place wet items in a molten bath.",
+                "B confirms drying after flux and before the bath.",
+                "This is not the preceding step shown."
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q04": {
+              "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a",
+              "stem": "Which explains rinsing and drying in S correctly?",
+              "options": [
+                "Both mean electric current",
+                "Rinsing always makes items dry",
+                "Rinsing is never needed",
+                "Rinsing reduces liquid carryover; drying removes moisture"
+              ],
+              "reasons": [
+                "Do not confuse step names with current.",
+                "Rinsing and drying have different roles.",
+                "The diagram includes interstage rinsing.",
+                "Distinguish their roles; use approved specifications for actual methods."
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "vi": {
+          "caption": "S so sánh mô hình học A mạ điện và B mạ nhúng nóng. A có rửa nước giữa công đoạn; mạ lót và xử lý sau nét đứt là công đoạn được phê duyệt, thực hiện khi quy cách sản phẩm yêu cầu. B gồm rửa sau làm sạch/hoạt hóa, trợ dung được duyệt, xác nhận khô, bể nóng chảy, làm nguội và hoàn thiện. Không có nghĩa cho vật ướt vào kim loại nóng chảy. Rửa loại dung dịch trước, làm khô loại nước. Xác nhận tiền xử lý và thứ tự theo vật liệu, quy cách đã duyệt; đây không phải công thức chung.",
+          "captionSourceHash": "2c1127ad9338eae8b51ab2343472ba5ceb56ec400b51d0303d92ad20ad95209d",
+          "questions": {
+            "mfg37-required-plating-process-sequence-q01": {
+              "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe",
+              "stem": "A và B ở S tương ứng thế nào?",
+              "options": [
+                "A mạ điện; B nhúng nóng",
+                "A nhúng nóng; B mạ điện",
+                "Cả hai chỉ sơn",
+                "Cả hai chỉ đánh bóng"
+              ],
+              "reasons": [
+                "A có mạ chính/rửa; B có bể nóng chảy sau khô.",
+                "A và B bị đảo.",
+                "Không phải hai quy trình chỉ sơn.",
+                "Không phải hai quy trình chỉ đánh bóng."
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q02": {
+              "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b",
+              "stem": "Khung nét đứt của A ở S nên hiểu thế nào?",
+              "options": [
+                "Luôn thêm cho mọi sản phẩm",
+                "Xác nhận cần hay không theo quy cách và công đoạn được duyệt",
+                "Người thao tác bỏ tùy lúc",
+                "Nét đứt làm rửa không cần thiết"
+              ],
+              "reasons": [
+                "Không thể hiện bắt buộc với mọi sản phẩm.",
+                "Mạ lót và xử lý sau là công đoạn được duyệt khi cần.",
+                "Không tự quyết định bỏ.",
+                "Vai trò rửa vẫn còn."
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q03": {
+              "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2",
+              "stem": "Ở B của S, xác nhận nào ngay trước bể nóng chảy?",
+              "options": [
+                "Hoàn thiện sau nguội",
+                "Cho vào khi còn ướt",
+                "Xác nhận khô",
+                "Đánh bóng khi quay"
+              ],
+              "reasons": [
+                "Hoàn thiện ở sau.",
+                "Không cho vật ướt vào bể nóng chảy.",
+                "B xác nhận khô sau trợ dung và trước bể.",
+                "Không phải công đoạn ngay trước trong hình."
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q04": {
+              "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a",
+              "stem": "Giải thích nào đúng về rửa và khô ở S?",
+              "options": [
+                "Đều là tên khác của dòng điện",
+                "Rửa luôn làm vật khô",
+                "Mọi công đoạn đều không cần rửa",
+                "Rửa giảm dung dịch mang sang; khô loại nước"
+              ],
+              "reasons": [
+                "Không biến tên công đoạn thành dòng điện.",
+                "Rửa và khô khác vai trò.",
+                "Hình có rửa giữa công đoạn.",
+                "Phân biệt vai trò; phương pháp thực tế theo quy cách đã duyệt."
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "id": {
+          "caption": "S membandingkan model belajar A elektroplating dan B celup panas. A memakai pembilasan antarproses; pelapisan dasar/pascaperlakuan bergaris putus adalah tahap disetujui sesuai kebutuhan spesifikasi. B menunjukkan pembilasan setelah pembersihan/aktivasi, fluks disetujui, konfirmasi kering, bak cair, pendinginan dan penyelesaian. Bukan memasukkan barang basah ke logam cair. Pembilasan membuang cairan sebelumnya, pengeringan membuang air. Periksa praperlakuan dan urutan sesuai bahan serta spesifikasi disetujui; bukan resep universal.",
+          "captionSourceHash": "2c1127ad9338eae8b51ab2343472ba5ceb56ec400b51d0303d92ad20ad95209d",
+          "questions": {
+            "mfg37-required-plating-process-sequence-q01": {
+              "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe",
+              "stem": "Pasangan A dan B pada S adalah?",
+              "options": [
+                "A elektroplating; B celup panas",
+                "A celup panas; B elektroplating",
+                "Keduanya hanya pengecatan",
+                "Keduanya hanya pemolesan"
+              ],
+              "reasons": [
+                "A menunjukkan pelapisan utama/bilas; B bak cair setelah kering.",
+                "A dan B terbalik.",
+                "Bukan alur pengecatan saja.",
+                "Bukan alur pemolesan saja."
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q02": {
+              "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b",
+              "stem": "Bagaimana membaca kotak putus A pada S?",
+              "options": [
+                "Tambahkan ke semua produk",
+                "Periksa kebutuhan pada spesifikasi dan proses disetujui",
+                "Operator boleh menghilangkan kapan saja",
+                "Garis putus menghapus kebutuhan bilas"
+              ],
+              "reasons": [
+                "Bukan wajib semua produk.",
+                "Dasar dan pascaperlakuan tahap disetujui sesuai kebutuhan.",
+                "Jangan menghilangkan atas keputusan sendiri.",
+                "Pembilasan tetap berperan."
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q03": {
+              "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2",
+              "stem": "Pemeriksaan tepat sebelum bak cair pada B, S?",
+              "options": [
+                "Penyelesaian setelah dingin",
+                "Masukkan saat basah",
+                "Pastikan kering",
+                "Memoles sambil berputar"
+              ],
+              "reasons": [
+                "Penyelesaian sesudahnya.",
+                "Jangan masukkan barang basah ke bak cair.",
+                "B memastikan kering setelah fluks dan sebelum bak.",
+                "Bukan tahap tepat sebelumnya."
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q04": {
+              "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a",
+              "stem": "Penjelasan bilas dan kering S yang benar?",
+              "options": [
+                "Keduanya nama arus",
+                "Bilas selalu mengeringkan",
+                "Bilas tidak pernah perlu",
+                "Bilas mengurangi cairan terbawa; kering membuang air"
+              ],
+              "reasons": [
+                "Nama proses bukan arus.",
+                "Bilas dan kering berbeda peran.",
+                "Diagram menunjukkan bilas antarproses.",
+                "Bedakan peran; metode nyata mengikuti spesifikasi disetujui."
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "tl": {
+          "caption": "Pinaghahambing ng S ang modelong A electroplating at B hot-dip. May banlaw sa pagitan ng proseso sa A; ang putol na underplating at post-treatment ay aprubadong hakbang ayon sa pangangailangan ng espesipikasyon. Sa B: banlaw matapos linis/activation, aprubadong flux, tiyaking tuyo, tunaw na paliguan, palamig, pagtatapos. Hindi nito sinasabing ilubog ang basa sa tunaw na metal. Inaalis ng banlaw ang naunang likido, ng pagpapatuyo ang tubig. Sundin ang materyal at aprubadong espesipikasyon sa pretreatment at pagkakasunod; hindi ito iisang resipe.",
+          "captionSourceHash": "2c1127ad9338eae8b51ab2343472ba5ceb56ec400b51d0303d92ad20ad95209d",
+          "questions": {
+            "mfg37-required-plating-process-sequence-q01": {
+              "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe",
+              "stem": "Ano ang A at B sa S?",
+              "options": [
+                "A electroplating; B hot-dip",
+                "A hot-dip; B electroplating",
+                "Parehong painting lang",
+                "Parehong polishing lang"
+              ],
+              "reasons": [
+                "May pangunahing plating/banlaw sa A; tunaw na paliguan matapos tuyo sa B.",
+                "Baligtad ang A at B.",
+                "Hindi painting-only ang daloy.",
+                "Hindi polishing-only ang daloy."
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q02": {
+              "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b",
+              "stem": "Paano unawain ang putol na kahon A sa S?",
+              "options": [
+                "Idagdag sa lahat palagi",
+                "Tingnan kung kailangan ayon sa espesipikasyon at aprubadong proseso",
+                "Maaaring alisin ng operator anumang oras",
+                "Hindi na kailangan ang banlaw"
+              ],
+              "reasons": [
+                "Hindi sapilitan sa lahat.",
+                "Aprubadong hakbang ayon sa kailangan ang underplating at post-treatment.",
+                "Huwag sariling magpasiyang mag-alis.",
+                "May papel pa rin ang banlaw."
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q03": {
+              "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2",
+              "stem": "Anong pagsusuri ang kaagad bago ang tunaw na paliguan sa B?",
+              "options": [
+                "Pagtatapos pagkatapos lumamig",
+                "Ipasok nang basa",
+                "Tiyaking tuyo",
+                "Polishing habang umiikot"
+              ],
+              "reasons": [
+                "Sa huli ang pagtatapos.",
+                "Huwag ilagay ang basa sa tunaw na paliguan.",
+                "Tinitiyak ang tuyo matapos flux, bago paliguan.",
+                "Hindi ito ang hakbang bago ang paliguan."
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q04": {
+              "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a",
+              "stem": "Ano ang tamang paliwanag sa banlaw at tuyo sa S?",
+              "options": [
+                "Parehong tawag sa electric current",
+                "Laging natutuyo sa banlaw",
+                "Hindi kailangan ang banlaw kailanman",
+                "Binabawasan ng banlaw ang likidong nadadala; inaalis ng tuyo ang tubig"
+              ],
+              "reasons": [
+                "Huwag gawing current ang pangalan ng proseso.",
+                "Magkaiba ang papel ng banlaw at tuyo.",
+                "May banlaw sa pagitan ng hakbang sa larawan.",
+                "Ihiwalay ang papel; sundin ang aprubadong paraan sa aktuwal."
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "zh-CN": {
+          "caption": "S比较学习模型A电镀与B热浸镀。A有工序间水洗，虚线底镀/后处理是按产品规格确认需要的批准工序。B为清洗/活化后水洗、批准助镀剂、确认干燥、熔融浴、冷却、精整，不表示将湿物投入熔融金属。水洗去除前道液体，干燥去除水分。前处理与顺序按材料和批准规格核对，不是所有产品通用配方。",
+          "captionSourceHash": "2c1127ad9338eae8b51ab2343472ba5ceb56ec400b51d0303d92ad20ad95209d",
+          "questions": {
+            "mfg37-required-plating-process-sequence-q01": {
+              "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe",
+              "stem": "S中A与B对应哪项？",
+              "options": [
+                "A电镀，B热浸镀",
+                "A热浸镀，B电镀",
+                "都只有涂装",
+                "都只有研磨"
+              ],
+              "reasons": [
+                "A主镀及水洗，B干燥后熔融浴。",
+                "A与B颠倒。",
+                "不是单纯涂装流程。",
+                "不是单纯研磨流程。"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q02": {
+              "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b",
+              "stem": "S中A虚线框应如何理解？",
+              "options": [
+                "所有产品必须添加",
+                "按规格与批准工序确认需要与否",
+                "操作者随时省略",
+                "虚线表示无需水洗"
+              ],
+              "reasons": [
+                "未表示所有产品必需。",
+                "底镀和后处理为按需批准工序。",
+                "省略也不能自行决定。",
+                "水洗作用不会消失。"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q03": {
+              "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2",
+              "stem": "S中B熔融浴前紧邻的确认是？",
+              "options": [
+                "冷却后精整",
+                "湿态投入",
+                "确认干燥",
+                "旋转中研磨"
+              ],
+              "reasons": [
+                "精整在后面。",
+                "不能把湿物投入熔融浴。",
+                "B在助镀后、熔融浴前确认干燥。",
+                "不是图中紧前工序。"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q04": {
+              "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a",
+              "stem": "S水洗与干燥的正确说明是？",
+              "options": [
+                "都是电流别名",
+                "水洗必定使物品干燥",
+                "任何工序都不需水洗",
+                "水洗减少液体带入，干燥去除水分"
+              ],
+              "reasons": [
+                "不把工序名当电流。",
+                "水洗与干燥作用不同。",
+                "图示工序间水洗。",
+                "区分作用，实际方法按批准规格核对。"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "zh-TW": {
+          "caption": "S比較學習模型A電鍍與B熱浸鍍。A有工序間水洗，虛線底鍍/後處理是按產品規格確認需要的核准工序。B為清洗/活化後水洗、核准助鍍劑、確認乾燥、熔融浴、冷卻、精整，不表示將濕物投入熔融金屬。水洗去除前道液體，乾燥去除水分。前處理與順序按材料和核准規格核對，不是所有產品通用配方。",
+          "captionSourceHash": "2c1127ad9338eae8b51ab2343472ba5ceb56ec400b51d0303d92ad20ad95209d",
+          "questions": {
+            "mfg37-required-plating-process-sequence-q01": {
+              "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe",
+              "stem": "S中A與B對應哪項？",
+              "options": [
+                "A電鍍，B熱浸鍍",
+                "A熱浸鍍，B電鍍",
+                "都只有塗裝",
+                "都只有研磨"
+              ],
+              "reasons": [
+                "A主鍍及水洗，B乾燥後熔融浴。",
+                "A與B顛倒。",
+                "不是單純塗裝流程。",
+                "不是單純研磨流程。"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q02": {
+              "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b",
+              "stem": "S中A虛線框應如何理解？",
+              "options": [
+                "所有產品必須添加",
+                "按規格與核准工序確認需要與否",
+                "操作者隨時省略",
+                "虛線表示無需水洗"
+              ],
+              "reasons": [
+                "未表示所有產品必需。",
+                "底鍍和後處理為按需核准工序。",
+                "省略也不能自行決定。",
+                "水洗作用不會消失。"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q03": {
+              "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2",
+              "stem": "S中B熔融浴前緊鄰的確認是？",
+              "options": [
+                "冷卻後精整",
+                "濕態投入",
+                "確認乾燥",
+                "旋轉中研磨"
+              ],
+              "reasons": [
+                "精整在後面。",
+                "不能把濕物投入熔融浴。",
+                "B在助鍍後、熔融浴前確認乾燥。",
+                "不是圖中緊前工序。"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q04": {
+              "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a",
+              "stem": "S水洗與乾燥的正確說明是？",
+              "options": [
+                "都是電流別名",
+                "水洗必定使物品乾燥",
+                "任何工序都不需水洗",
+                "水洗減少液體帶入，乾燥去除水分"
+              ],
+              "reasons": [
+                "不把工序名當電流。",
+                "水洗與乾燥作用不同。",
+                "圖示工序間水洗。",
+                "區分作用，實際方法按核准規格核對。"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "hi": {
+          "caption": "S में अध्ययन मॉडल A विद्युत प्लेटिंग और B गर्म-डुबकी हैं। A में चरणों के बीच धुलाई है; टूटी रेखा वाले आधार प्लेटिंग/बाद के उपचार उत्पाद विनिर्देशानुसार आवश्यक अनुमोदित चरण हैं। B में सफाई/सक्रियण के बाद धुलाई, अनुमोदित फ्लक्स, सूखने की पुष्टि, पिघला स्नान, शीतलन और फिनिशिंग है। गीली वस्तु पिघली धातु में डालना नहीं है। धुलाई पिछला द्रव हटाती है, सुखाना नमी। पूर्व-उपचार और क्रम सामग्री तथा अनुमोदित विनिर्देश से जाँचें; यह सार्वभौम नुस्खा नहीं है।",
+          "captionSourceHash": "2c1127ad9338eae8b51ab2343472ba5ceb56ec400b51d0303d92ad20ad95209d",
+          "questions": {
+            "mfg37-required-plating-process-sequence-q01": {
+              "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe",
+              "stem": "S में A और B का सही मेल?",
+              "options": [
+                "A विद्युत प्लेटिंग; B गर्म-डुबकी",
+                "A गर्म-डुबकी; B विद्युत प्लेटिंग",
+                "दोनों केवल पेंटिंग",
+                "दोनों केवल पॉलिशिंग"
+              ],
+              "reasons": [
+                "A मुख्य प्लेटिंग/धुलाई, B सुखाने के बाद पिघला स्नान है।",
+                "A और B उलटे हैं।",
+                "यह केवल पेंटिंग प्रवाह नहीं।",
+                "यह केवल पॉलिशिंग प्रवाह नहीं।"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q02": {
+              "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b",
+              "stem": "S के A में टूटी रेखा वाले खंड कैसे समझें?",
+              "options": [
+                "हर उत्पाद में हमेशा जोड़ें",
+                "विनिर्देश और अनुमोदित प्रक्रिया से आवश्यकता जाँचें",
+                "कर्मचारी जब चाहे छोड़े",
+                "टूटी रेखा से धुलाई नहीं चाहिए"
+              ],
+              "reasons": [
+                "सब उत्पादों में अनिवार्य नहीं।",
+                "आधार और बाद का उपचार आवश्यकता अनुसार अनुमोदित चरण हैं।",
+                "छोड़ना भी स्वयं तय न करें।",
+                "धुलाई की भूमिका बनी रहती है।"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q03": {
+              "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2",
+              "stem": "S के B में पिघले स्नान के ठीक पहले कौन-सी जाँच है?",
+              "options": [
+                "शीतलन के बाद फिनिशिंग",
+                "गीला डालना",
+                "सूखने की पुष्टि",
+                "घूमते समय पॉलिशिंग"
+              ],
+              "reasons": [
+                "फिनिशिंग बाद में है।",
+                "गीली वस्तु पिघले स्नान में न डालें।",
+                "B में फ्लक्स के बाद, स्नान से पहले सूखना जाँचा है।",
+                "यह ठीक पिछला चरण नहीं।"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q04": {
+              "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a",
+              "stem": "S की धुलाई और सुखाने का सही कथन?",
+              "options": [
+                "दोनों धारा के नाम",
+                "धुलाई हमेशा सुखा देती है",
+                "किसी चरण में धुलाई नहीं चाहिए",
+                "धुलाई द्रव साथ जाने को घटाती है; सुखाना नमी हटाता है"
+              ],
+              "reasons": [
+                "प्रक्रिया नाम को धारा न मानें।",
+                "धुलाई और सुखाना अलग कार्य हैं।",
+                "चित्र में बीच की धुलाई है।",
+                "भूमिकाएँ अलग रखें; वास्तविक विधि अनुमोदित विनिर्देश से जाँचें।"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "bn": {
+          "caption": "S-এ শেখার মডেল A ইলেক্ট্রোপ্লেটিং ও B হট-ডিপ তুলনা করা। A-তে ধাপের মাঝে ধোয়া আছে; ভাঙা রেখার ভিত্তি-প্লেটিং/পরবর্তী প্রক্রিয়া পণ্যের নির্দিষ্টকরণ অনুযায়ী প্রয়োজনীয় অনুমোদিত ধাপ। B-তে পরিষ্কার/সক্রিয়করণের পরে ধোয়া, অনুমোদিত ফ্লাক্স, শুকনো নিশ্চিতকরণ, গলিত ধাতুর স্নান, শীতলকরণ ও ফিনিশিং। ভেজা বস্তু গলিত ধাতুতে দেওয়া নয়। ধোয়া আগের তরল সরায়, শুকানো জল সরায়। পূর্বপ্রক্রিয়া ও ক্রম উপকরণ ও অনুমোদিত নির্দিষ্টকরণে যাচাই করুন; এটি সর্বজনীন প্রণালি নয়।",
+          "captionSourceHash": "2c1127ad9338eae8b51ab2343472ba5ceb56ec400b51d0303d92ad20ad95209d",
+          "questions": {
+            "mfg37-required-plating-process-sequence-q01": {
+              "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe",
+              "stem": "S-তে A ও B কী?",
+              "options": [
+                "A ইলেক্ট্রোপ্লেটিং; B হট-ডিপ",
+                "A হট-ডিপ; B ইলেক্ট্রোপ্লেটিং",
+                "দুটিই শুধু রং",
+                "দুটিই শুধু পলিশিং"
+              ],
+              "reasons": [
+                "A-তে মূল প্লেটিং/ধোয়া, B-তে শুকানোর পরে গলিত স্নান।",
+                "A ও B উল্টো।",
+                "শুধু রঙের ধারা নয়।",
+                "শুধু পলিশিংয়ের ধারা নয়।"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q02": {
+              "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b",
+              "stem": "S-এর A-র ভাঙা রেখার ঘর কীভাবে বুঝবেন?",
+              "options": [
+                "সব পণ্যে সর্বদা যোগ",
+                "নির্দিষ্টকরণ ও অনুমোদিত প্রক্রিয়ায় প্রয়োজন যাচাই",
+                "কর্মী যেকোনো সময় বাদ দেবে",
+                "ভাঙা রেখা মানে ধোয়া লাগে না"
+              ],
+              "reasons": [
+                "সব পণ্যে বাধ্যতামূলক নয়।",
+                "ভিত্তি ও পরপ্রক্রিয়া প্রয়োজন অনুযায়ী অনুমোদিত ধাপ।",
+                "বাদ দেওয়াও নিজে ঠিক করবেন না।",
+                "ধোয়ার ভূমিকা থাকে।"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q03": {
+              "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2",
+              "stem": "S-এর B-তে গলিত স্নানের ঠিক আগে কোন যাচাই?",
+              "options": [
+                "ঠান্ডার পরে ফিনিশিং",
+                "ভেজা অবস্থায় প্রবেশ",
+                "শুকনো নিশ্চিত করা",
+                "ঘুরতে থাকা অবস্থায় পলিশ"
+              ],
+              "reasons": [
+                "ফিনিশিং পরে।",
+                "ভেজা বস্তু গলিত স্নানে দেবেন না।",
+                "B-তে ফ্লাক্সের পরে ও স্নানের আগে শুকনো যাচাই।",
+                "চিত্রে ঠিক আগের ধাপ নয়।"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q04": {
+              "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a",
+              "stem": "S-তে ধোয়া ও শুকানো সম্পর্কে কোনটি ঠিক?",
+              "options": [
+                "দুটিই প্রবাহের নাম",
+                "ধুলেই সর্বদা শুকায়",
+                "কোনো ধাপে ধোয়া লাগে না",
+                "ধোয়া তরল বহন কমায়; শুকানো জল সরায়"
+              ],
+              "reasons": [
+                "প্রক্রিয়ার নামকে প্রবাহ ভাববেন না।",
+                "ধোয়া ও শুকানো আলাদা কাজ।",
+                "চিত্রে মাঝের ধোয়া আছে।",
+                "কাজ আলাদা করুন; বাস্তব পদ্ধতি অনুমোদিত নির্দিষ্টকরণে যাচাই করুন।"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "ne": {
+          "caption": "S मा अध्ययन मोडेल A विद्युत् प्लेटिङ र B तातो-डुबाइ तुलना छन्। A मा चरणबीच धुलाई छ; टुटेको रेखाका आधार प्लेटिङ/पछिको उपचार उत्पादन विनिर्देशअनुसार आवश्यक स्वीकृत चरण हुन्। B मा सफाइ/सक्रियकरणपछि धुलाई, स्वीकृत फ्लक्स, सुक्खा पुष्टि, पग्लेको बाथ, चिस्याउने र फिनिसिङ छ। भिजेको वस्तु पग्लेको धातुमा हाल्ने अर्थ होइन। धुलाईले अघिल्लो तरल, सुकाइले पानी हटाउँछ। पूर्वउपचार र क्रम सामग्री तथा स्वीकृत विनिर्देशबाट जाँच्नुहोस्; यो सार्वभौम विधि होइन।",
+          "captionSourceHash": "2c1127ad9338eae8b51ab2343472ba5ceb56ec400b51d0303d92ad20ad95209d",
+          "questions": {
+            "mfg37-required-plating-process-sequence-q01": {
+              "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe",
+              "stem": "S मा A र B को सही जोडी?",
+              "options": [
+                "A विद्युत् प्लेटिङ; B तातो-डुबाइ",
+                "A तातो-डुबाइ; B विद्युत् प्लेटिङ",
+                "दुवै रङ मात्र",
+                "दुवै पोलिसिङ मात्र"
+              ],
+              "reasons": [
+                "A मुख्य प्लेटिङ/धुलाई, B सुकाएपछि पग्लेको बाथ हो।",
+                "A र B उल्टा।",
+                "रङमात्रको प्रवाह होइन।",
+                "पोलिसिङमात्रको प्रवाह होइन।"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q02": {
+              "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b",
+              "stem": "S को A मा टुटेको बाकस कसरी बुझ्ने?",
+              "options": [
+                "सबै उत्पादनमा सधैँ थप्ने",
+                "विनिर्देश र स्वीकृत प्रक्रियाबाट आवश्यकता जाँच्ने",
+                "अपरेटरले जुनसुकै बेला छोड्ने",
+                "टुटेको रेखा भए धुलाई पर्दैन"
+              ],
+              "reasons": [
+                "सबैमा अनिवार्य देखाइएको छैन।",
+                "आधार र पछिको उपचार आवश्यकताअनुसार स्वीकृत चरण हुन्।",
+                "छोड्ने पनि आफैँ निर्णय नगर्नुहोस्।",
+                "धुलाईको भूमिका रहन्छ।"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q03": {
+              "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2",
+              "stem": "S को B मा पग्लेको बाथको ठीकअघि कुन जाँच छ?",
+              "options": [
+                "चिस्याएपछिको फिनिसिङ",
+                "भिजेकै हाल्ने",
+                "सुक्खा पुष्टि",
+                "घुम्दै पोलिसिङ"
+              ],
+              "reasons": [
+                "फिनिसिङ पछि छ।",
+                "भिजेको वस्तु पग्लेको बाथमा नहाल्नुहोस्।",
+                "B मा फ्लक्सपछि र बाथअघि सुक्खा पुष्टि छ।",
+                "यो ठीक अघिल्लो चरण होइन।"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q04": {
+              "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a",
+              "stem": "S मा धुलाई र सुकाइको सही व्याख्या?",
+              "options": [
+                "दुवै धाराका नाम",
+                "धुलाईले सधैँ सुकाउँछ",
+                "कुनै चरणमा धुलाई पर्दैन",
+                "धुलाईले तरल सँगै लैजाने घटाउँछ; सुकाइले पानी हटाउँछ"
+              ],
+              "reasons": [
+                "प्रक्रियाका नामलाई धारा नमान्नुहोस्।",
+                "धुलाई र सुकाइ फरक काम हुन्।",
+                "चित्रमा बीचको धुलाई छ।",
+                "भूमिका छुट्याई वास्तविक विधि स्वीकृत विनिर्देशबाट जाँच्नुहोस्।"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "my": {
+          "caption": "S တွင် A လျှပ်စစ်ပလိတ်နှင့် B ပူရည်နှစ်သင်ခန်းစာမော်ဒယ်ကို နှိုင်းသည်။ A တွင် ကြားရေဆေးရှိပြီး မျဉ်းပြတ်အောက်ခံပလိတ်/နောက်ကုသမှုသည် ထုတ်ကုန်သတ်မှတ်ချက်အရ လိုအပ်သော အတည်ပြုအဆင့်ဖြစ်သည်။ B သည် သန့်စင်/အသက်သွင်းပြီးရေဆေး၊ ခွင့်ပြုဖလပ်စ်၊ ခြောက်ကြောင်းစစ်၊ အရည်ပျော်ကန်၊ အအေးခံ၊ အချောသတ်ကို ပြသည်။ စိုသောပစ္စည်းကို အရည်ပျော်သတ္တုထဲထည့်ရန် မဆိုလိုပါ။ ရေဆေးက ယခင်အရည်ဖယ်၊ အခြောက်ခံက ရေဖယ်သည်။ ရှေ့ပြုပြင်မှုနှင့်အစဉ်ကို ပစ္စည်း/ခွင့်ပြုသတ်မှတ်ချက်ဖြင့်စစ်ပါ၊ အားလုံးအတွက်နည်းတစ်မျိုးမဟုတ်ပါ။",
+          "captionSourceHash": "2c1127ad9338eae8b51ab2343472ba5ceb56ec400b51d0303d92ad20ad95209d",
+          "questions": {
+            "mfg37-required-plating-process-sequence-q01": {
+              "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe",
+              "stem": "S ၌ A နှင့် B မှန်ကန်သောတွဲမှာ?",
+              "options": [
+                "A လျှပ်စစ်ပလိတ်၊ B ပူရည်နှစ်",
+                "A ပူရည်နှစ်၊ B လျှပ်စစ်ပလိတ်",
+                "နှစ်ခုလုံးဆေးသာ",
+                "နှစ်ခုလုံးပွတ်သာ"
+              ],
+              "reasons": [
+                "A ပင်မပလိတ်/ရေဆေး၊ B ခြောက်ပြီးအရည်ပျော်ကန်။",
+                "A B ပြောင်းပြန်။",
+                "ဆေးသုတ်သာမဟုတ်။",
+                "ပွတ်သာမဟုတ်။"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q02": {
+              "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b",
+              "stem": "S A မျဉ်းပြတ်ကတ်ကို မည်သို့ဖတ်မလဲ?",
+              "options": [
+                "အားလုံးအမြဲထည့်",
+                "သတ်မှတ်ချက်နှင့်အတည်ပြုလုပ်ငန်းဖြင့် လိုအပ်မှုစစ်",
+                "အလုပ်သမားအချိန်မရွေးကျော်",
+                "မျဉ်းပြတ်ရှိလျှင်ရေဆေးမလို"
+              ],
+              "reasons": [
+                "အားလုံးမဖြစ်မနေမဆို။",
+                "အောက်ခံနှင့်နောက်ကုသမှုသည် လိုသလိုအတည်ပြုအဆင့်။",
+                "ကျော်ရန်လည်းမိမိသဘောမဆုံးဖြတ်။",
+                "ရေဆေးအခန်းကဏ္ဍရှိနေသည်။"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q03": {
+              "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2",
+              "stem": "S B ၌ အရည်ပျော်ကန်မတိုင်မီ ချက်ချင်းစစ်သည့်အရာမှာ?",
+              "options": [
+                "အအေးခံပြီးအချောသတ်",
+                "စိုစိုထည့်",
+                "ခြောက်ကြောင်းစစ်",
+                "လည်နေစဉ်ပွတ်"
+              ],
+              "reasons": [
+                "အချောသတ်ကနောက်။",
+                "စိုသောအရာကိုအရည်ပျော်ကန်မထည့်ပါနှင့်။",
+                "B တွင်ဖလပ်စ်ပြီး ကန်မတိုင်မီခြောက်စစ်။",
+                "ပုံ၏ချက်ချင်းရှေ့အဆင့်မဟုတ်။"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q04": {
+              "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a",
+              "stem": "S ရေဆေးနှင့်ခြောက်ခံမှန်သောရှင်းလင်းချက်မှာ?",
+              "options": [
+                "နှစ်ခုလုံးလျှပ်စီးအမည်",
+                "ရေဆေးလျှင်အမြဲခြောက်",
+                "ရေဆေးဘယ်အဆင့်မှမလို",
+                "ရေဆေးကအရည်သယ်ဆောင်မှုလျှော့၊ ခြောက်ခံကရေဖယ်"
+              ],
+              "reasons": [
+                "အဆင့်အမည်ကိုလျှပ်စီးမယူ။",
+                "ရေဆေးနှင့်ခြောက်ခံကွဲ။",
+                "ပုံကကြားရေဆေးပြသည်။",
+                "အခန်းကဏ္ဍခွဲပြီး လက်တွေ့နည်းကိုအတည်ပြုသတ်မှတ်ချက်စစ်။"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "th": {
+          "caption": "S เทียบโมเดลเรียน A ชุบไฟฟ้า กับ B จุ่มร้อน A มีล้างน้ำระหว่างขั้น กล่องประของชุบรอง/หลังชุบเป็นขั้นอนุมัติตามความจำเป็นของข้อกำหนดผลิตภัณฑ์ B แสดงล้างหลังทำความสะอาด/กระตุ้น ฟลักซ์ที่อนุมัติ ยืนยันแห้ง บ่อหลอม เย็น และเก็บงาน ไม่หมายถึงนำของเปียกลงโลหะหลอม ล้างน้ำเอาสารขั้นก่อนออก ส่วนทำแห้งเอาน้ำออก ตรวจเตรียมผิวและลำดับตามวัสดุกับข้อกำหนดอนุมัติ ไม่ใช่สูตรร่วมทุกผลิตภัณฑ์",
+          "captionSourceHash": "2c1127ad9338eae8b51ab2343472ba5ceb56ec400b51d0303d92ad20ad95209d",
+          "questions": {
+            "mfg37-required-plating-process-sequence-q01": {
+              "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe",
+              "stem": "A กับ B ใน S ตรงข้อใด",
+              "options": [
+                "A ชุบไฟฟ้า B จุ่มร้อน",
+                "A จุ่มร้อน B ชุบไฟฟ้า",
+                "ทั้งคู่แค่ทาสี",
+                "ทั้งคู่แค่ขัด"
+              ],
+              "reasons": [
+                "A ชุบหลัก/ล้าง B บ่อหลอมหลังแห้ง",
+                "A B สลับ",
+                "ไม่ใช่แค่ลำดับทาสี",
+                "ไม่ใช่แค่ลำดับขัด"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q02": {
+              "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b",
+              "stem": "ควรอ่านกล่องประของ A ใน S อย่างไร",
+              "options": [
+                "ต้องเพิ่มทุกผลิตภัณฑ์",
+                "ตรวจความจำเป็นตามข้อกำหนดและขั้นอนุมัติ",
+                "ผู้ทำงานข้ามเมื่อไรก็ได้",
+                "มีเส้นประไม่ต้องล้าง"
+              ],
+              "reasons": [
+                "ไม่ได้บอกว่าทุกผลิตภัณฑ์ต้องมี",
+                "ชุบรอง/หลังชุบเป็นขั้นอนุมัติเมื่อจำเป็น",
+                "ข้ามก็ห้ามตัดสินเอง",
+                "บทบาทล้างน้ำยังอยู่"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q03": {
+              "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2",
+              "stem": "B ใน S มีการตรวจใดทันทีก่อนบ่อหลอม",
+              "options": [
+                "เก็บงานหลังเย็น",
+                "ใส่ขณะเปียก",
+                "ยืนยันแห้ง",
+                "ขัดขณะหมุน"
+              ],
+              "reasons": [
+                "เก็บงานเป็นขั้นหลัง",
+                "ห้ามใส่ของเปียกในบ่อหลอม",
+                "B ตรวจแห้งหลังฟลักซ์ก่อนบ่อ",
+                "ไม่ใช่ขั้นทันทีก่อนในภาพ"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q04": {
+              "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a",
+              "stem": "ข้อใดอธิบายล้างน้ำและแห้งใน S ถูก",
+              "options": [
+                "ทั้งคู่ชื่ออื่นของกระแส",
+                "ล้างแล้วย่อมแห้ง",
+                "ทุกขั้นไม่ต้องล้าง",
+                "ล้างลดสารติดไปขั้นต่อ แห้งเอาน้ำออก"
+              ],
+              "reasons": [
+                "อย่าทำชื่อขั้นเป็นกระแส",
+                "ล้างกับแห้งต่างบทบาท",
+                "ภาพแสดงล้างระหว่างขั้น",
+                "แยกบทบาท วิธีจริงตรวจตามข้อกำหนดอนุมัติ"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        "km": {
+          "caption": "S ធៀបម៉ូដែលរៀន A ស្រោបអគ្គិសនី និង B ជ្រលក់ក្តៅ។ A មានលាងទឹកចន្លោះជំហាន ខ្សែដាច់ស្រោបបាត/ក្រោយជាជំហានអនុម័តតាមតម្រូវការផលិតផល។ B មានលាងក្រោយសម្អាត/ធ្វើសកម្ម ផ្លាក់ស៍អនុម័ត ផ្ទៀងស្ងួត អាងរលាយ ត្រជាក់ និងបញ្ចប់។ មិនមានន័យដាក់វត្ថុសើមក្នុងលោហៈរលាយទេ។ លាងយករាវមុនចេញ សម្ងួតយកទឹកចេញ។ ត្រូវផ្ទៀងមុននិងលំដាប់តាមសម្ភារៈនិងលក្ខណៈអនុម័ត មិនមែនរូបមន្តរួមទាំងអស់។",
+          "captionSourceHash": "2c1127ad9338eae8b51ab2343472ba5ceb56ec400b51d0303d92ad20ad95209d",
+          "questions": {
+            "mfg37-required-plating-process-sequence-q01": {
+              "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe",
+              "stem": "A និង B ក្នុង S ត្រូវមួយណា",
+              "options": [
+                "A ស្រោបអគ្គិសនី B ជ្រលក់ក្តៅ",
+                "A ជ្រលក់ក្តៅ B ស្រោបអគ្គិសនី",
+                "ទាំងពីរតែលាប",
+                "ទាំងពីរតែខាត់"
+              ],
+              "reasons": [
+                "A ស្រោបមេ/លាង B អាងរលាយក្រោយស្ងួត។",
+                "A B បញ្ច្រាស។",
+                "មិនមែនលំដាប់លាបតែប៉ុណ្ណោះ។",
+                "មិនមែនលំដាប់ខាត់តែប៉ុណ្ណោះ។"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q02": {
+              "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b",
+              "stem": "ខ្សែដាច់ក្នុង A របស់ S ត្រូវអានយ៉ាងណា",
+              "options": [
+                "ត្រូវបន្ថែមគ្រប់ផលិតផល",
+                "ផ្ទៀងតម្រូវការតាមលក្ខណៈនិងជំហានអនុម័ត",
+                "អ្នកធ្វើអាចរំលងគ្រប់ពេល",
+                "ខ្សែដាច់ធ្វើឱ្យមិនបាច់លាង"
+              ],
+              "reasons": [
+                "មិនបង្ហាញចាំបាច់គ្រប់ផលិតផល។",
+                "ស្រោបបាតនិងក្រោយជាជំហានអនុម័តពេលត្រូវការ។",
+                "ការរំលងក៏មិនត្រូវសម្រេចខ្លួន។",
+                "តួនាទីលាងនៅមាន។"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q03": {
+              "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2",
+              "stem": "B ក្នុង S ផ្ទៀងអ្វីភ្លាមមុនអាងរលាយ",
+              "options": [
+                "បញ្ចប់ក្រោយត្រជាក់",
+                "ដាក់នៅសើម",
+                "ផ្ទៀងស្ងួត",
+                "ខាត់ពេលបង្វិល"
+              ],
+              "reasons": [
+                "បញ្ចប់នៅក្រោយ។",
+                "កុំដាក់វត្ថុសើមក្នុងអាងរលាយ។",
+                "B ផ្ទៀងស្ងួតក្រោយផ្លាក់ស៍ មុនអាង។",
+                "មិនមែនជំហានភ្លាមមុនក្នុងរូប។"
+              ]
+            },
+            "mfg37-required-plating-process-sequence-q04": {
+              "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a",
+              "stem": "ការពន្យល់លាងនិងសម្ងួតក្នុង S ណាត្រឹម",
+              "options": [
+                "ទាំងពីរឈ្មោះផ្សេងចរន្ត",
+                "លាងតែងធ្វើឱ្យស្ងួត",
+                "គ្រប់ជំហានមិនបាច់លាង",
+                "លាងកាត់រាវជាប់ទៅមុខ សម្ងួតយកទឹកចេញ"
+              ],
+              "reasons": [
+                "កុំចាត់ឈ្មោះជំហានជាចរន្ត។",
+                "លាងនិងសម្ងួតតួនាទីខុស។",
+                "រូបបង្ហាញលាងចន្លោះជំហាន។",
+                "បែងតួនាទី វិធីពិតតាមលក្ខណៈអនុម័ត។"
+              ]
+            }
+          },
+          "status": "ai_translated_draft",
+          "nativeReviewed": false,
+          "domainReviewed": false
+        }
+      },
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false
+    }
+  ]
+}

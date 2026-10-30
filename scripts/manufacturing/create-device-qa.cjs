@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+'use strict';
+const fs=require('fs'),path=require('path'),crypto=require('crypto');
+const root=path.resolve(__dirname,'../..');
+const out=path.resolve(process.argv[2]||process.env.MANUFACTURING_DEVICE_QA_OUTPUT||'');
+if(!process.argv[2]&&!process.env.MANUFACTURING_DEVICE_QA_OUTPUT)throw Error('Usage: node scripts/manufacturing/create-device-qa.cjs /absolute/outside-repository');
+if(out===root||out.startsWith(root+path.sep))throw Error('Output must be outside repository');
+fs.mkdirSync(out,{recursive:true});
+const write=(name,value)=>fs.writeFileSync(path.join(out,name),typeof value==='string'?value:JSON.stringify(value,null,2)+'\n');
+const deps=JSON.parse(fs.readFileSync(path.join(root,'package.json'))).dependencies;
+write('package.json',{name:'manufacturing-device-qa',private:true,version:'1.0.0',main:'index.js',dependencies:deps});
+write('app.json',{expo:{name:'Manufacturing Device QA',slug:'manufacturing-device-qa',version:'1.0.0',scheme:'manufacturing-device-qa',ios:{bundleIdentifier:'org.japanapp.manufacturingqa',supportsTablet:true},android:{package:'org.japanapp.manufacturingqa'},web:{bundler:'metro'}}});
+write('index.js',"import {registerRootComponent} from 'expo';import App from './App';registerRootComponent(App);\n");
+write('tsconfig.json',{extends:'expo/tsconfig.base',compilerOptions:{baseUrl:'.',paths:{'@/*':[path.relative(out,path.join(root,'src','*'))]}}});
+write('metro.config.js',`const{getDefaultConfig}=require('expo/metro-config');const c=getDefaultConfig(__dirname);c.watchFolders=[${JSON.stringify(root)}];c.maxWorkers=1;module.exports=c;\n`);
+if(!fs.existsSync(path.join(out,'node_modules')))fs.symlinkSync(path.join(root,'node_modules'),path.join(out,'node_modules'),'dir');
+const prefix=path.relative(out,root).split(path.sep).join('/');
+write('App.tsx',`import React from 'react';import{NavigationContainer}from'@react-navigation/native';import{createNativeStackNavigator}from'@react-navigation/native-stack';import{SafeAreaProvider}from'react-native-safe-area-context';import{ManufacturingCourse}from'${prefix}/src/components/manufacturing/ManufacturingCourse';import{AppBackdrop}from'${prefix}/src/components/ui/AppBackdrop';const Stack=createNativeStackNavigator();export default function App(){return <SafeAreaProvider><NavigationContainer><Stack.Navigator screenOptions={{headerShown:false}}><Stack.Screen name="ManufacturingQA">{()=> <AppBackdrop pathname="/specified-skills/manufacturing"><ManufacturingCourse learner="device-manufacturing-qa" language="en" onBack={()=>{}}/></AppBackdrop>}</Stack.Screen></Stack.Navigator></NavigationContainer></SafeAreaProvider>;}\n`);
+write('qa-manifest.json',{createdAt:new Date().toISOString(),root,entry:'App.tsx',sourceComponents:['ManufacturingCourse','AppBackdrop','SafeAreaProvider','NavigationContainer','NativeStack'],adapters:false,physicalDeviceTested:false,sourceHash:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/components/manufacturing/ManufacturingCourse.tsx'))).digest('hex')});
+console.log(JSON.stringify({output:out,physicalDeviceTested:false,commands:[`cd ${out}`,"NODE_OPTIONS=--max-old-space-size=3072 EXPO_OFFLINE=1 CI=1 node node_modules/expo/bin/cli export --platform android --max-workers 1 --output-dir export-android","NODE_OPTIONS=--max-old-space-size=3072 EXPO_OFFLINE=1 CI=1 node node_modules/expo/bin/cli export --platform ios --max-workers 1 --output-dir export-ios","node node_modules/expo/bin/cli start --lan --port 8032"]},null,2));

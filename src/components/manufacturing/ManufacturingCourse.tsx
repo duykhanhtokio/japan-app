@@ -13,6 +13,8 @@ import {CompletionManufacturingDiagrams} from './CompletionManufacturingDiagrams
 import {BooleanPracticeJapanese,BooleanPracticeOption} from './BooleanPracticeJapanese';
 import {ManufacturingMocks} from './ManufacturingMocks';
 import {useManufacturingBack} from './useManufacturingBack';
+import {RecognitionReader,RecognitionQuestionFigures} from './RecognitionManufacturing';
+import {manufacturingRecognitionLessons,manufacturingRecognitionChecks,manufacturingRecognitionQuestionTranslation} from '@/data/manufacturing/recognition38';
 import {manufacturingCompletionLessons,manufacturingCompletionChecks,manufacturingCompletionLessonTranslation,manufacturingCompletionQuestionTranslation} from '@/data/manufacturing/completion37';
 import {manufacturingSourceGuides,manufacturingSourceGuidesLabel,manufacturingSourceGuideTranslation} from '@/data/manufacturing/source-guides';
 import {manufacturingMockUi} from '@/data/manufacturing/mock-ui';
@@ -41,7 +43,7 @@ export function ManufacturingCourse({learner,language,onBack}:{learner:string;la
 }
 function Course({learner,language,specialty,onBack}:{learner:string;language:string;specialty:Specialty;onBack:()=>void}){
  const t=useLabels();
- const [course]=useState(()=>{const core=loadManufacturingCourse(specialty);return {...core,checks:[...core.checks,...manufacturingSupplementExams(specialty),...manufacturingCompletionChecks(specialty)]};});
+ const [course]=useState(()=>{const core=loadManufacturingCourse(specialty);return {...core,checks:[...core.checks,...manufacturingSupplementExams(specialty),...manufacturingCompletionChecks(specialty),...manufacturingRecognitionChecks(specialty)]};});
  const info=manufacturingSpecialties.find(i=>i.id===specialty)!;
  const [tab,setTab]=useState<'study'|'test'|'mock'>('study'),[week,setWeek]=useState<number|null>(null),[lesson,setLesson]=useState<ManufacturingLesson|null>(null),[exam,setExam]=useState<ManufacturingExam|null>(null);
  const [progress,setProgress]=useState<ManufacturingProgress|null>(null),[error,setError]=useState(false),[saving,setSaving]=useState(false),[retry,setRetry]=useState(0);
@@ -53,7 +55,7 @@ function Course({learner,language,specialty,onBack}:{learner:string;language:str
  if(tab==='mock')return <ManufacturingMocks learner={learner} specialty={specialty} language={language} onBack={()=>setTab('study')}/>;
  if(exam)return <Attempt key={exam.id} learner={learner} specialty={specialty} exam={exam} onBack={()=>setExam(null)}/>;
  if(lesson)return <Reader key={lesson.id} lesson={lesson} language={language} saving={saving} saveError={error} onComplete={()=>{void complete();}} onBack={back}/>;
- const guides=[...manufacturingSourceGuides(specialty),...manufacturingCompletionLessons(specialty)];
+ const guides=[...manufacturingSourceGuides(specialty),...manufacturingCompletionLessons(specialty),...manufacturingRecognitionLessons(specialty)];
  const selected=week===null?null:info.weeks[week];
  return <Surface><TokuteiHeader title={`${info.titleJa} · 1号`} onBack={back}/><ScrollView contentContainerStyle={s.content}>
  <View style={s.row}><Button title={t('study')} selected={tab==='study'} onPress={()=>setTab('study')}/><Button title={t('weeklyChecks')} selected={tab==='test'} onPress={()=>setTab('test')}/><Button title={manufacturingMockUi(language,'mockExams')} onPress={()=>setTab('mock')}/></View>
@@ -69,6 +71,7 @@ function CheckCard({learner,specialty,exam,onPress}:{learner:string;specialty:Sp
 function Reader({lesson,language,onBack,onComplete,saving,saveError}:{lesson:ManufacturingLesson;language:string;onBack:()=>void;onComplete:()=>void;saving:boolean;saveError:boolean}){
  const t=useLabels();
  const [show,setShow]=useState(false),{colors}=useStudyAppearance(),translation=show?(lesson.id.includes('-completion37-')?manufacturingCompletionLessonTranslation(lesson,language):lesson.id.includes('-source-guide-')?manufacturingSourceGuideTranslation(lesson,language):manufacturingTranslation(lesson,language)):null;
+ if(lesson.id.includes('-recognition38-'))return <Surface reading><RecognitionReader lesson={lesson} language={language} onBack={onBack} onComplete={onComplete} saving={saving} saveError={saveError}/></Surface>;
  return <Surface reading><TokuteiHeader title={lesson.titleJa} onBack={onBack}/><ScrollView contentContainerStyle={s.content}><ReadingAppearanceControl/>{language!=='ja'&&<Button title={show?t('translationHide'):t('translationShow')} onPress={()=>setShow(v=>!v)}/>}{show&&language!=='ja'&&!translation&&<TranslationText>{t('translationPending')}</TranslationText>}
  <Text style={[s.body,{color:colors.text}]}>{lesson.objectiveJa}</Text>{translation&&<TranslationText>{translation.title}{'\n'}{translation.objective}</TranslationText>}<Text style={[s.body,{color:colors.muted}]}>学習時間の目安：約{lesson.estimatedMinutes}分（説明・練習・振り返り）</Text>
  {lesson.paragraphs.map(p=><View key={p.id} style={[s.section,{borderColor:colors.border}]}><Text style={[s.heading,{color:colors.text}]}>{p.titleJa}</Text><Text selectable style={[s.body,{color:colors.text}]}>{manufacturingLessonParagraph(lesson,p.id,'ja',p.textJa)}</Text>{translation&&<TranslationText>{translation.paragraphs.find(t=>t.id===p.id)?.title}{'\n'}{manufacturingLessonParagraph(lesson,p.id,language,translation.paragraphs.find(t=>t.id===p.id)?.text)}</TranslationText>}</View>)}
@@ -89,7 +92,7 @@ function Attempt({learner,specialty,exam,onBack}:{learner:string;specialty:Speci
   queue.current=queue.current.catch(()=>{}).then(()=>AsyncStorage.setItem(key,JSON.stringify(next))).then(()=>{if(live.current&&n===serial.current){setSaving(false);setError(null);}}).catch(()=>{if(live.current&&n===serial.current){setSaving(false);setError('write');}});
  };
  const q=attempt?exam.questions[attempt.currentQuestion]:null,result=attempt?gradeTest(exam,attempt.answers):null;
- const translated=q&&showTranslation?(manufacturingCompletionQuestionTranslation(q,locale)??manufacturingSupplementTranslation(q,locale)??manufacturingQuestionTranslation(q,locale)):null;
+ const translated=q&&showTranslation?(manufacturingRecognitionQuestionTranslation(q,locale)??manufacturingCompletionQuestionTranslation(q,locale)??manufacturingSupplementTranslation(q,locale)??manufacturingQuestionTranslation(q,locale)):null;
  const back=()=>{if(saving)return;if(error==='write')setConfirm('leave');else onBack();};
  useManufacturingBack(back);
  return <Surface reading><TokuteiHeader title={exam.titleJa} onBack={back}/><ScrollView contentContainerStyle={s.content}>
@@ -98,6 +101,7 @@ function Attempt({learner,specialty,exam,onBack}:{learner:string;specialty:Speci
  <ReadingAppearanceControl/>{locale!=='ja'&&<Button title={showTranslation?t('translationHide'):t('translationShow')} onPress={()=>setShowTranslation(v=>!v)}/>}
  {showTranslation&&locale!=='ja'&&!translated&&<TranslationText>{t('translationPending')}</TranslationText>}
  {attempt.submitted&&result&&<Text style={[s.heading,{color:colors.text}]}>{t('correct')} {result.correct} / {result.total} · {t('unanswered')} {result.unanswered}</Text>}
+ <RecognitionQuestionFigures question={q} language={locale}/>
  <Text style={[s.body,{color:colors.text}]}>{attempt.currentQuestion+1} / {exam.questions.length}</Text>{q.id.startsWith('mfg1-boolean-distributivity-check-')?<BooleanPracticeJapanese question={q} field="stem"/>:<Text style={[s.heading,{color:colors.text}]}>{q.stemJa}</Text>}{translated&&<TranslationText>{translated.stem}</TranslationText>}
  {q.optionsJa.map((text,i)=>q.id.startsWith('mfg1-boolean-distributivity-check-')?<BooleanPracticeOption key={i} question={q} index={i} translation={translated?.options[i]} selected={attempt.answers[attempt.currentQuestion]===i} disabled={attempt.submitted} onPress={()=>{const answers=[...attempt.answers];answers[attempt.currentQuestion]=i;persist({...attempt,answers});}}/>:<Button key={i} title={`${i+1}. ${text}${translated?'\n'+translated.options[i]:''}`} selected={attempt.answers[attempt.currentQuestion]===i} disabled={attempt.submitted} onPress={()=>{const answers=[...attempt.answers];answers[attempt.currentQuestion]=i;persist({...attempt,answers});}}/>)}
  {attempt.submitted&&<View><Text style={[s.body,{color:colors.text}]}>{t('correct')}：{q.correctIndex+1}</Text>{q.optionReasonsJa.map((why,i)=><View key={i}><Text style={[s.body,{color:colors.text}]}>{i+1}. {why}</Text>{translated&&<TranslationText>{translated.reasons[i]}</TranslationText>}</View>)}</View>}

@@ -37,7 +37,8 @@
     "@types/react": "~19.1.10",
     "eslint": "^9.0.0",
     "eslint-config-expo": "~10.0.0",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "esbuild": "0.28.2"
   },
   "scripts": {
     "start": "expo start",
@@ -50,7 +51,10 @@
     "jlpt:checkpoint:check": "node scripts/check-jlpt-batch-01-checkpoint.mjs",
     "jlpt:integration:check": "node scripts/check-jlpt-exam-integration.mjs",
     "voice:local": "node scripts/dialogue-voice/local-server.cjs",
-    "dev:voice": "node scripts/dialogue-voice/dev.cjs"
+    "dev:voice": "node scripts/dialogue-voice/dev.cjs",
+    "manufacturing:check": "node scripts/manufacturing/check.cjs",
+    "manufacturing:recognition:build": "python3 scripts/manufacturing/build-recognition38.py",
+    "manufacturing:device:prepare": "node scripts/manufacturing/create-device-qa.cjs"
   },
   "private": true
 }

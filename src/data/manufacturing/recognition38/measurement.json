@@ -1,0 +1,2802 @@
+{
+  "schemaVersion": 1,
+  "packs": [
+    {
+      "id": "mfg37-required-sample-location-mean",
+      "specialty": "surface",
+      "lessonIds": [
+        "mfg1-surface-lesson-063"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-063": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9"
+      },
+      "titleJa": "位置・平均・極値を別々に読む",
+      "captionJa": "独自の100×60mm試料の五点を示します。膜厚はA8、B10、C12、D14、E16μmです。平均は測定値の合計を測定数で割ります。紙上の条件は各点10～14μm（両端を含む）であり、平均だけで全点適合を決めません。実製品の仕様ではありません。",
+      "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+      "assets": [
+        {
+          "id": "mfg38-sampling-map",
+          "file": "assets/manufacturing/recognition38/sampling-map.png",
+          "width": 1400,
+          "height": 1000,
+          "altJa": "100×60mmの独自試料上の五点A8、B10、C12、D14、E16μmと各点10～14μmの紙上条件。",
+          "sha256": "bc5263f1b96a86faa1c81963bf9580227fcc9c95558c6d30aac514fcf09ca0bf"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg38-sample-location-mean-q01",
+          "lessonId": "mfg1-surface-lesson-063",
+          "lessonSourceHash": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+          "stemJa": "位置図の最小値と最大値の対応はどれか。",
+          "optionsJa": [
+            "最小A8μm、最大E16μm",
+            "最小E16μm、最大A8μm",
+            "最小B10μm、最大D14μm",
+            "全点がC12μmと同じ"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "図のAが8μmで最小、Eが16μmで最大です。",
+            "大小と位置の対応が逆です。",
+            "BとDは最小・最大ではありません。",
+            "図には五つの異なる局所値があります。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 72,
+              "printedPage": 62
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sampling-map"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sampling-map": "bc5263f1b96a86faa1c81963bf9580227fcc9c95558c6d30aac514fcf09ca0bf"
+          },
+          "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33"
+        },
+        {
+          "id": "mfg38-sample-location-mean-q02",
+          "lessonId": "mfg1-surface-lesson-063",
+          "lessonSourceHash": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+          "stemJa": "位置図の五点の平均膜厚はいくらか。",
+          "optionsJa": [
+            "10μm",
+            "12μm",
+            "14μm",
+            "60μm"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "合計60を五点で割ると10ではありません。",
+            "(8+10+12+14+16)÷5=12μmです。",
+            "14μmはDの局所値です。",
+            "60μmは五値の合計で、平均ではありません。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 72,
+              "printedPage": 62
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sampling-map"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sampling-map": "bc5263f1b96a86faa1c81963bf9580227fcc9c95558c6d30aac514fcf09ca0bf"
+          },
+          "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd"
+        },
+        {
+          "id": "mfg38-sample-location-mean-q03",
+          "lessonId": "mfg1-surface-lesson-063",
+          "lessonSourceHash": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+          "stemJa": "図の紙上条件は各点10～14μmです。平均だけでなく局所値も見る判断はどれか。",
+          "optionsJa": [
+            "平均が範囲内なので全点適合",
+            "値を全て12へ書き換える",
+            "AとEが範囲外で、平均が範囲内でも各点条件は満たさない",
+            "端の二点は記録から消す"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "平均が範囲内でもA8とE16は範囲外です。",
+            "実測位置の値を書き換えてはいけません。",
+            "Aは下限未満、Eは上限超過です。平均と各点の判定を分けます。",
+            "指定した測定位置を都合で削除しません。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 72,
+              "printedPage": 62
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sampling-map"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sampling-map": "bc5263f1b96a86faa1c81963bf9580227fcc9c95558c6d30aac514fcf09ca0bf"
+          },
+          "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672"
+        }
+      ],
+      "locales": {
+        "en": {
+          "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+          "caption": "Five positions are shown on an original 100×60 mm specimen: A8, B10, C12, D14 and E16 μm. The mean is the sum divided by the number of measurements. The paper exercise requires 10–14 μm inclusive at every point; a mean alone cannot establish conformity at all points. This is not a real product specification.",
+          "questions": {
+            "mfg38-sample-location-mean-q01": {
+              "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33",
+              "stem": "Which pairing correctly identifies the minimum and maximum in the position diagram?",
+              "options": [
+                "Minimum A8 μm; maximum E16 μm",
+                "Minimum E16 μm; maximum A8 μm",
+                "Minimum B10 μm; maximum D14 μm",
+                "Every point equals C12 μm"
+              ],
+              "reasons": [
+                "A is lowest at 8 μm; E is highest at 16 μm.",
+                "The values and positions are reversed.",
+                "B and D are not the extreme points.",
+                "The diagram contains five different local values."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q02": {
+              "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd",
+              "stem": "What is the mean thickness of the five positions?",
+              "options": [
+                "10 μm",
+                "12 μm",
+                "14 μm",
+                "60 μm"
+              ],
+              "reasons": [
+                "Dividing the total 60 by five does not give 10.",
+                "(8+10+12+14+16)÷5=12 μm.",
+                "14 μm is the local value at D.",
+                "60 μm is the total, not the mean."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q03": {
+              "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672",
+              "stem": "Each point must be 10–14 μm in this paper exercise. Which judgment considers local values too?",
+              "options": [
+                "The mean is within range, so all points conform",
+                "Rewrite every value as 12",
+                "A and E are outside the range; an in-range mean does not satisfy the per-point requirement",
+                "Delete the two edge points"
+              ],
+              "reasons": [
+                "A8 and E16 remain outside despite the in-range mean.",
+                "Recorded values must not be rewritten.",
+                "A is below the lower limit and E above the upper; distinguish mean and pointwise judgments.",
+                "Do not delete prescribed locations for convenience."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "vi": {
+          "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+          "caption": "Hình độc lập minh họa năm vị trí trên mẫu 100×60 mm: A8, B10, C12, D14, E16 μm. Trung bình bằng tổng các giá trị chia số lần đo. Điều kiện bài tập là từng điểm phải đạt 10–14 μm, kể cả hai đầu; không dùng riêng trung bình để kết luận tất cả điểm đạt. Đây không phải quy cách sản phẩm thực tế.",
+          "questions": {
+            "mfg38-sample-location-mean-q01": {
+              "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33",
+              "stem": "Cặp vị trí nhỏ nhất và lớn nhất trên hình là cặp nào?",
+              "options": [
+                "Nhỏ nhất A8 μm, lớn nhất E16 μm",
+                "Nhỏ nhất E16 μm, lớn nhất A8 μm",
+                "Nhỏ nhất B10 μm, lớn nhất D14 μm",
+                "Mọi điểm đều bằng C12 μm"
+              ],
+              "reasons": [
+                "A8 μm nhỏ nhất và E16 μm lớn nhất.",
+                "Đã đảo ngược quan hệ lớn nhỏ và vị trí.",
+                "B và D không phải hai cực trị.",
+                "Hình có năm giá trị cục bộ khác nhau."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q02": {
+              "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd",
+              "stem": "Chiều dày trung bình của năm điểm trên hình là bao nhiêu?",
+              "options": [
+                "10 μm",
+                "12 μm",
+                "14 μm",
+                "60 μm"
+              ],
+              "reasons": [
+                "Tổng 60 chia năm không bằng 10.",
+                "(8+10+12+14+16)÷5=12 μm.",
+                "14 μm là giá trị tại D.",
+                "60 μm là tổng, không phải trung bình."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q03": {
+              "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672",
+              "stem": "Điều kiện bài tập là từng điểm 10–14 μm. Cách nào xét cả giá trị cục bộ?",
+              "options": [
+                "Trung bình trong khoảng nên mọi điểm đạt",
+                "Sửa mọi giá trị thành 12",
+                "A và E ngoài khoảng; trung bình trong khoảng vẫn chưa đáp ứng điều kiện từng điểm",
+                "Xóa hai điểm ở mép"
+              ],
+              "reasons": [
+                "A8 và E16 vẫn ngoài khoảng dù trung bình nằm trong khoảng.",
+                "Không được sửa giá trị đã đo.",
+                "A dưới giới hạn dưới, E vượt giới hạn trên; phải phân biệt trung bình với từng điểm.",
+                "Không tùy ý loại vị trí đo quy định."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "id": {
+          "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+          "caption": "Gambar mandiri menunjukkan lima titik pada spesimen 100×60 mm: A8, B10, C12, D14, E16 μm. Rata-rata ialah jumlah nilai dibagi jumlah pengukuran. Syarat latihan adalah 10–14 μm termasuk batas pada setiap titik; rata-rata saja tidak membuktikan semua titik sesuai. Ini bukan spesifikasi produk nyata.",
+          "questions": {
+            "mfg38-sample-location-mean-q01": {
+              "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33",
+              "stem": "Pasangan minimum dan maksimum pada gambar titik yang benar adalah?",
+              "options": [
+                "Minimum A8 μm, maksimum E16 μm",
+                "Minimum E16 μm, maksimum A8 μm",
+                "Minimum B10 μm, maksimum D14 μm",
+                "Semua titik sama dengan C12 μm"
+              ],
+              "reasons": [
+                "A8 paling kecil dan E16 paling besar.",
+                "Hubungan nilai dan posisi terbalik.",
+                "B dan D bukan titik ekstrem.",
+                "Ada lima nilai setempat yang berbeda."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q02": {
+              "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd",
+              "stem": "Berapa rata-rata ketebalan pada kelima titik?",
+              "options": [
+                "10 μm",
+                "12 μm",
+                "14 μm",
+                "60 μm"
+              ],
+              "reasons": [
+                "Jumlah 60 dibagi lima bukan 10.",
+                "(8+10+12+14+16)÷5=12 μm.",
+                "14 μm adalah nilai setempat D.",
+                "60 μm adalah jumlah, bukan rata-rata."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q03": {
+              "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672",
+              "stem": "Syarat latihan tiap titik 10–14 μm. Keputusan mana juga menilai nilai setempat?",
+              "options": [
+                "Rata-rata dalam rentang, jadi semua sesuai",
+                "Ubah semua nilai menjadi 12",
+                "A dan E di luar rentang; rata-rata sesuai belum memenuhi syarat tiap titik",
+                "Hapus kedua titik tepi"
+              ],
+              "reasons": [
+                "A8 dan E16 tetap di luar rentang.",
+                "Hasil ukur tidak boleh diubah.",
+                "A di bawah batas bawah dan E di atas batas atas; penilaian rata-rata dan tiap titik berbeda.",
+                "Jangan hapus titik yang ditetapkan demi kemudahan."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "tl": {
+          "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+          "caption": "Limang punto ang ipinapakita sa orihinal na 100×60 mm na specimen: A8, B10, C12, D14 at E16 μm. Ang mean ay kabuuan ng mga halaga na hinati sa bilang ng pagsukat. Sa pagsasanay, bawat punto ay dapat 10–14 μm kasama ang hangganan; hindi sapat ang mean para sabihing lahat ay pasok. Hindi ito aktuwal na product specification.",
+          "questions": {
+            "mfg38-sample-location-mean-q01": {
+              "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33",
+              "stem": "Aling pares ang tamang minimum at maximum sa position diagram?",
+              "options": [
+                "Minimum A8 μm, maximum E16 μm",
+                "Minimum E16 μm, maximum A8 μm",
+                "Minimum B10 μm, maximum D14 μm",
+                "Lahat ay katumbas ng C12 μm"
+              ],
+              "reasons": [
+                "Pinakamababa ang A8 at pinakamataas ang E16.",
+                "Baligtad ang halaga at posisyon.",
+                "Hindi B at D ang mga extreme.",
+                "May limang magkakaibang lokal na halaga."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q02": {
+              "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd",
+              "stem": "Ano ang mean na kapal sa limang punto?",
+              "options": [
+                "10 μm",
+                "12 μm",
+                "14 μm",
+                "60 μm"
+              ],
+              "reasons": [
+                "Hindi 10 ang kabuuang 60 na hinati sa lima.",
+                "(8+10+12+14+16)÷5=12 μm.",
+                "Lokal na halaga ng D ang 14 μm.",
+                "Kabuuan ang 60 μm, hindi mean."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q03": {
+              "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672",
+              "stem": "Bawat punto ay dapat 10–14 μm. Aling pasya ang tumitingin din sa lokal na halaga?",
+              "options": [
+                "Pasok ang mean kaya pasok lahat",
+                "Palitan ang lahat ng halaga ng 12",
+                "Labas ang A at E; hindi sapat ang pasok na mean para sa bawat punto",
+                "Burahin ang dalawang puntong nasa gilid"
+              ],
+              "reasons": [
+                "Labas pa rin ang A8 at E16 kahit pasok ang mean.",
+                "Hindi dapat palitan ang naitalang halaga.",
+                "Mas mababa sa limit ang A at mas mataas ang E; magkaiba ang mean at bawat-puntong pasya.",
+                "Huwag basta alisin ang itinakdang posisyon."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "zh-CN": {
+          "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+          "caption": "独立绘制的100×60 mm试样有五个位置：A8、B10、C12、D14、E16 μm。平均值为测量值总和除以测量次数。纸上条件要求每点均为10～14 μm，包含两端；不能仅凭平均值判断各点合格。这不是实际产品规格。",
+          "questions": {
+            "mfg38-sample-location-mean-q01": {
+              "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33",
+              "stem": "位置图中最小值与最大值的正确组合是？",
+              "options": [
+                "最小A8 μm，最大E16 μm",
+                "最小E16 μm，最大A8 μm",
+                "最小B10 μm，最大D14 μm",
+                "各点都等于C12 μm"
+              ],
+              "reasons": [
+                "A为8 μm最小，E为16 μm最大。",
+                "大小与位置对应颠倒。",
+                "B和D不是极值。",
+                "图中有五个不同的局部值。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q02": {
+              "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd",
+              "stem": "图中五点的平均膜厚是多少？",
+              "options": [
+                "10 μm",
+                "12 μm",
+                "14 μm",
+                "60 μm"
+              ],
+              "reasons": [
+                "总和60除以五不是10。",
+                "(8+10+12+14+16)÷5=12 μm。",
+                "14 μm是D点局部值。",
+                "60 μm是总和而非平均值。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q03": {
+              "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672",
+              "stem": "纸上条件为每点10～14 μm。哪项同时考虑局部值？",
+              "options": [
+                "平均在范围内，因此全部合格",
+                "把全部值改成12",
+                "A和E超出范围，平均在范围内仍不满足逐点要求",
+                "删除两端点记录"
+              ],
+              "reasons": [
+                "平均合格也无法改变A8和E16越界。",
+                "不能改写实测值。",
+                "A低于下限，E超过上限；应区分平均与逐点判断。",
+                "不能为方便而删除指定位置。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "zh-TW": {
+          "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+          "caption": "獨立繪製的100×60 mm試樣有五個位置：A8、B10、C12、D14、E16 μm。平均值為量測值總和除以量測次數。紙上條件要求每點均為10～14 μm，包含兩端；不能僅憑平均值判定各點合格。這不是實際產品規格。",
+          "questions": {
+            "mfg38-sample-location-mean-q01": {
+              "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33",
+              "stem": "位置圖中最小值與最大值的正確組合是？",
+              "options": [
+                "最小A8 μm，最大E16 μm",
+                "最小E16 μm，最大A8 μm",
+                "最小B10 μm，最大D14 μm",
+                "各點都等於C12 μm"
+              ],
+              "reasons": [
+                "A為8 μm最小，E為16 μm最大。",
+                "大小與位置對應顛倒。",
+                "B與D不是極值。",
+                "圖中有五個不同的局部值。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q02": {
+              "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd",
+              "stem": "圖中五點的平均膜厚是多少？",
+              "options": [
+                "10 μm",
+                "12 μm",
+                "14 μm",
+                "60 μm"
+              ],
+              "reasons": [
+                "總和60除以五不是10。",
+                "(8+10+12+14+16)÷5=12 μm。",
+                "14 μm是D點局部值。",
+                "60 μm是總和而非平均值。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q03": {
+              "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672",
+              "stem": "紙上條件為每點10～14 μm。哪項同時考慮局部值？",
+              "options": [
+                "平均在範圍內，因此全部合格",
+                "把全部值改成12",
+                "A與E超出範圍，平均在範圍內仍不滿足逐點要求",
+                "刪除兩端點紀錄"
+              ],
+              "reasons": [
+                "平均合格仍無法改變A8與E16越界。",
+                "不能改寫實測值。",
+                "A低於下限，E超過上限；應區分平均與逐點判定。",
+                "不能為方便而刪除指定位置。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "hi": {
+          "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+          "caption": "मौलिक 100×60 mm नमूने पर पाँच स्थान हैं: A8, B10, C12, D14, E16 μm। औसत मापों के योग को उनकी संख्या से भाग देकर मिलता है। कागजी शर्त हर बिंदु पर 10–14 μm है, दोनों सीमाएँ शामिल हैं; केवल औसत से सभी बिंदुओं की अनुरूपता तय नहीं होती। यह वास्तविक उत्पाद विनिर्देश नहीं है।",
+          "questions": {
+            "mfg38-sample-location-mean-q01": {
+              "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33",
+              "stem": "स्थान चित्र में न्यूनतम और अधिकतम का सही जोड़ा कौन सा है?",
+              "options": [
+                "न्यूनतम A8 μm, अधिकतम E16 μm",
+                "न्यूनतम E16 μm, अधिकतम A8 μm",
+                "न्यूनतम B10 μm, अधिकतम D14 μm",
+                "सभी बिंदु C12 μm के समान"
+              ],
+              "reasons": [
+                "A8 सबसे कम और E16 सबसे अधिक है।",
+                "मान और स्थान उलटे हैं।",
+                "B और D चरम मान नहीं हैं।",
+                "चित्र में पाँच अलग स्थानीय मान हैं।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q02": {
+              "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd",
+              "stem": "पाँच स्थानों की औसत मोटाई कितनी है?",
+              "options": [
+                "10 μm",
+                "12 μm",
+                "14 μm",
+                "60 μm"
+              ],
+              "reasons": [
+                "कुल60 को पाँच से भाग देने पर10 नहीं मिलता।",
+                "(8+10+12+14+16)÷5=12 μm।",
+                "14 μm, D का स्थानीय मान है।",
+                "60 μm योग है, औसत नहीं।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q03": {
+              "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672",
+              "stem": "हर बिंदु की कागजी शर्त10–14 μm है। कौन सा निर्णय स्थानीय मान भी देखता है?",
+              "options": [
+                "औसत सीमा में है इसलिए सभी पास",
+                "सभी मान12 लिख दें",
+                "A और E सीमा से बाहर; सही औसत भी हर बिंदु की शर्त पूरी नहीं करता",
+                "दो किनारे के बिंदु मिटा दें"
+              ],
+              "reasons": [
+                "औसत सही होने पर भी A8 और E16 बाहर हैं।",
+                "मापे मान बदले नहीं जाते।",
+                "A निचली सीमा से कम और E ऊपरी से अधिक है; औसत और हर बिंदु अलग जाँचें।",
+                "सुविधा के लिए निर्धारित स्थान न हटाएँ।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "bn": {
+          "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+          "caption": "নিজস্ব100×60 mm নমুনার পাঁচটি স্থান দেখানো হয়েছে: A8, B10, C12, D14, E16 μm। গড় হলো মাপগুলোর যোগফলকে মাপের সংখ্যা দিয়ে ভাগ করা। কাগুজে শর্তে প্রতিটি বিন্দু10–14 μm, দুই সীমাসহ; শুধু গড় দিয়ে সব বিন্দু সঠিক বলা যায় না। এটি বাস্তব পণ্যের স্পেসিফিকেশন নয়।",
+          "questions": {
+            "mfg38-sample-location-mean-q01": {
+              "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33",
+              "stem": "স্থানচিত্রে সর্বনিম্ন ও সর্বোচ্চের সঠিক জোড়া কোনটি?",
+              "options": [
+                "সর্বনিম্ন A8 μm, সর্বোচ্চ E16 μm",
+                "সর্বনিম্ন E16 μm, সর্বোচ্চ A8 μm",
+                "সর্বনিম্ন B10 μm, সর্বোচ্চ D14 μm",
+                "সব বিন্দু C12 μm-এর সমান"
+              ],
+              "reasons": [
+                "A8 সর্বনিম্ন, E16 সর্বোচ্চ।",
+                "মান ও স্থানের সম্পর্ক উল্টো।",
+                "B ও D চরম মান নয়।",
+                "চিত্রে পাঁচটি ভিন্ন স্থানীয় মান আছে।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q02": {
+              "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd",
+              "stem": "পাঁচ বিন্দুর গড় পুরুত্ব কত?",
+              "options": [
+                "10 μm",
+                "12 μm",
+                "14 μm",
+                "60 μm"
+              ],
+              "reasons": [
+                "মোট60-কে পাঁচ দিয়ে ভাগ করলে10 নয়।",
+                "(8+10+12+14+16)÷5=12 μm।",
+                "14 μm হলো D-এর স্থানীয় মান।",
+                "60 μm যোগফল, গড় নয়।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q03": {
+              "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672",
+              "stem": "কাগুজে শর্ত প্রতিটি বিন্দু10–14 μm। কোন সিদ্ধান্ত স্থানীয় মানও দেখে?",
+              "options": [
+                "গড় সীমায় তাই সব সঠিক",
+                "সব মান12 করে লিখুন",
+                "A ও E সীমার বাইরে; গড় ঠিক হলেও প্রতিটি বিন্দুর শর্ত পূরণ হয় না",
+                "দুই প্রান্তের বিন্দু বাদ দিন"
+              ],
+              "reasons": [
+                "গড় ঠিক হলেও A8 ও E16 বাইরে থাকে।",
+                "মাপা মান বদলানো যাবে না।",
+                "A নিচের সীমার কম, E ওপরের সীমার বেশি; গড় ও প্রতিটি বিন্দু আলাদা বিচার করুন।",
+                "সুবিধামতো নির্ধারিত স্থান বাদ দেবেন না।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "ne": {
+          "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+          "caption": "स्वतन्त्र100×60 mm नमुनाका पाँच स्थान A8,B10,C12,D14,E16 μm छन्। औसत मापनको योगलाई सङ्ख्याले भाग गर्दा निस्कन्छ। कागजी सर्तमा हरेक बिन्दु10–14 μm,दुवै सीमासहित हुनुपर्छ;औसत मात्रले सबै बिन्दु उपयुक्त ठहरिँदैनन्। यो वास्तविक उत्पादन विनिर्देश होइन।",
+          "questions": {
+            "mfg38-sample-location-mean-q01": {
+              "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33",
+              "stem": "स्थान चित्रमा न्यूनतम र अधिकतमको सही जोडी कुन?",
+              "options": [
+                "न्यूनतम A8 μm,अधिकतम E16 μm",
+                "न्यूनतम E16 μm,अधिकतम A8 μm",
+                "न्यूनतम B10 μm,अधिकतम D14 μm",
+                "सबै बिन्दु C12 μm बराबर"
+              ],
+              "reasons": [
+                "A8सबैभन्दा सानो रE16सबैभन्दा ठूलो हो।",
+                "मान र स्थान उल्टा छन्।",
+                "B रDचरम मान होइनन्।",
+                "चित्रमा पाँच फरक स्थानीय मान छन्।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q02": {
+              "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd",
+              "stem": "पाँच बिन्दुको औसत मोटाइ कति?",
+              "options": [
+                "10 μm",
+                "12 μm",
+                "14 μm",
+                "60 μm"
+              ],
+              "reasons": [
+                "कुल60लाई पाँचले भाग गर्दा10हुँदैन।",
+                "(8+10+12+14+16)÷5=12 μm।",
+                "14 μm,Dको स्थानीय मान हो।",
+                "60 μmयोग हो,औसत होइन।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q03": {
+              "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672",
+              "stem": "कागजी सर्त हरेक बिन्दु10–14 μm हो। स्थानीय मान पनि हेर्ने निर्णय कुन?",
+              "options": [
+                "औसत सीमाभित्र छ,त्यसैले सबै पास",
+                "सबै मान12मा बदल्ने",
+                "A रEबाहिर छन्;औसत सही भए पनि हरेक बिन्दुको सर्त मिल्दैन",
+                "किनाराका दुई बिन्दु हटाउने"
+              ],
+              "reasons": [
+                "औसत सही हुँदा पनिA8 रE16बाहिरै छन्।",
+                "मापन मान बदल्न मिल्दैन।",
+                "Aतल्लो सीमाभन्दा कम रEमाथिल्लोभन्दा बढी;औसत र प्रत्येक बिन्दु छुट्याइन्छ।",
+                "सुविधाका लागि निर्दिष्ट स्थान नहटाउनुहोस्।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "my": {
+          "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+          "caption": "သီးခြား100×60 mmနမူနာ၏အမှတ်ငါးခုမှာ A8၊B10၊C12၊D14၊E16 μmဖြစ်သည်။ ပျမ်းမျှသည် တိုင်းတန်ဖိုးပေါင်းကိုအကြိမ်ရေဖြင့်စားခြင်းဖြစ်သည်။ စာရွက်စည်းကမ်းတွင် အမှတ်တိုင်း10–14 μm၊အစွန်းနှစ်ခုအပါအဝင်ဖြစ်ရပြီး ပျမ်းမျှသာဖြင့်အားလုံးကိုက်ကြောင်းမဆုံးဖြတ်ရပါ။ အမှန်ထုတ်ကုန်သတ်မှတ်ချက်မဟုတ်ပါ။",
+          "questions": {
+            "mfg38-sample-location-mean-q01": {
+              "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33",
+              "stem": "နေရာပုံ၏အနည်းဆုံးနှင့်အများဆုံးမှန်သောတွဲမှာမည်သည်နည်း။",
+              "options": [
+                "အနည်းဆုံးA8 μm၊အများဆုံးE16 μm",
+                "အနည်းဆုံးE16 μm၊အများဆုံးA8 μm",
+                "အနည်းဆုံးB10 μm၊အများဆုံးD14 μm",
+                "အားလုံးC12 μmနှင့်တူ"
+              ],
+              "reasons": [
+                "A8ကအနည်းဆုံး၊E16ကအများဆုံးဖြစ်သည်။",
+                "ကိန်းနှင့်နေရာပြောင်းပြန်ဖြစ်သည်။",
+                "Bနှင့်Dကအစွန်းတန်ဖိုးမဟုတ်ပါ။",
+                "ပုံတွင်နေရာတန်ဖိုးငါးမျိုးကွာသည်။"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q02": {
+              "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd",
+              "stem": "ငါးနေရာ၏ပျမ်းမျှအထူမှာမည်မျှနည်း။",
+              "options": [
+                "10 μm",
+                "12 μm",
+                "14 μm",
+                "60 μm"
+              ],
+              "reasons": [
+                "စု60ကိုငါးဖြင့်စားလျှင်10မရပါ။",
+                "(8+10+12+14+16)÷5=12 μm။",
+                "14 μmကDနေရာတန်ဖိုးဖြစ်သည်။",
+                "60 μmကစုစုပေါင်းဖြစ်၍ပျမ်းမျှမဟုတ်ပါ။"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q03": {
+              "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672",
+              "stem": "စာရွက်စည်းကမ်းကနေရာတိုင်း10–14 μmဖြစ်သည်။ နေရာတန်ဖိုးကိုပါကြည့်သည့်ဆုံးဖြတ်ချက်မှာမည်သည်နည်း။",
+              "options": [
+                "ပျမ်းမျှအတွင်းဖြစ်၍အားလုံးကိုက်သည်",
+                "ကိန်းအားလုံး12ဟုပြင်မည်",
+                "Aနှင့်Eနယ်ကျော်၍ပျမ်းမျှအတွင်းဖြစ်သော်လည်းနေရာတိုင်းစည်းကမ်းမပြည့်ပါ",
+                "အစွန်းနှစ်နေရာကိုဖျက်မည်"
+              ],
+              "reasons": [
+                "ပျမ်းမျှအတွင်းလည်းA8နှင့်E16နယ်ပြင်ပဖြစ်သည်။",
+                "တိုင်းတန်ဖိုးမပြင်ရေးရပါ။",
+                "Aကအောက်နယ်အောက်၊Eကအပေါ်နယ်ကျော်၍ပျမ်းမျှနှင့်နေရာတိုင်းကိုခွဲသည်။",
+                "အဆင်ပြေစေရန်သတ်မှတ်နေရာမဖျက်ရပါ။"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "th": {
+          "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+          "caption": "แผนภาพต้นฉบับแสดงห้าตำแหน่งบนชิ้นงาน100×60 mm: A8, B10, C12, D14, E16 μm ค่าเฉลี่ยคือผลรวมหารด้วยจำนวนการวัด เงื่อนไขบนกระดาษกำหนดให้ทุกจุดอยู่ที่10–14 μmรวมขอบทั้งสอง ค่าเฉลี่ยอย่างเดียวไม่ยืนยันว่าทุกจุดผ่าน นี่ไม่ใช่ข้อกำหนดผลิตภัณฑ์จริง",
+          "questions": {
+            "mfg38-sample-location-mean-q01": {
+              "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33",
+              "stem": "คู่ค่าต่ำสุดกับสูงสุดในภาพตำแหน่งข้อใดถูกต้อง",
+              "options": [
+                "ต่ำสุด A8 μm สูงสุด E16 μm",
+                "ต่ำสุด E16 μm สูงสุด A8 μm",
+                "ต่ำสุด B10 μm สูงสุด D14 μm",
+                "ทุกจุดเท่ากับ C12 μm"
+              ],
+              "reasons": [
+                "A8ต่ำสุดและE16สูงสุด",
+                "สลับค่ากับตำแหน่ง",
+                "BและDไม่ใช่ค่าสุดขั้ว",
+                "มีค่าท้องถิ่นต่างกันห้าค่า"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q02": {
+              "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd",
+              "stem": "ค่าเฉลี่ยความหนาห้าจุดเท่าใด",
+              "options": [
+                "10 μm",
+                "12 μm",
+                "14 μm",
+                "60 μm"
+              ],
+              "reasons": [
+                "ผลรวม60หารห้าไม่ใช่10",
+                "(8+10+12+14+16)÷5=12 μm",
+                "14 μmเป็นค่าที่D",
+                "60 μmคือผลรวม ไม่ใช่เฉลี่ย"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q03": {
+              "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672",
+              "stem": "กำหนดทุกจุด10–14 μm ข้อใดพิจารณาค่ารายจุดด้วย",
+              "options": [
+                "เฉลี่ยอยู่ในช่วงจึงผ่านทุกจุด",
+                "แก้ทุกค่าเป็น12",
+                "AและEนอกช่วง แม้เฉลี่ยอยู่ในช่วงก็ไม่ผ่านเงื่อนไขทุกจุด",
+                "ลบสองจุดริมออก"
+              ],
+              "reasons": [
+                "A8และE16ยังนอกช่วงแม้เฉลี่ยผ่าน",
+                "ห้ามแก้ค่าที่วัด",
+                "Aต่ำกว่าขอบล่าง Eเกินขอบบน ต้องแยกเฉลี่ยกับรายจุด",
+                "ห้ามลบตำแหน่งกำหนดตามสะดวก"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "km": {
+          "captionSourceHash": "fdfbda7f61ed713bbd4a167b5e309cda6ada6ab56d7d1fb352d5ca6324ad5567",
+          "caption": "រូបគូរឯករាជ្យបង្ហាញប្រាំទីតាំងលើសំណាក100×60 mm៖ A8, B10, C12, D14, E16 μm។ មធ្យមគឺផលបូកចែកនឹងចំនួនវាស់។ លក្ខខណ្ឌលើក្រដាសគឺគ្រប់ចំណុច10–14 μmរួមទាំងព្រំដែនទាំងពីរ មិនអាចប្រើតែមធ្យមថាគ្រប់ចំណុចជាប់ទេ។ នេះមិនមែនលក្ខណៈកំណត់ផលិតផលពិត។",
+          "questions": {
+            "mfg38-sample-location-mean-q01": {
+              "sourceHash": "6309ad2cc3ce73f05ccfa3f30a3027125371d7f4b1a835dba6e737fc27a04b33",
+              "stem": "គូតម្លៃតូចបំផុតនិងធំបំផុតក្នុងរូបទីតាំងមួយណាត្រឹមត្រូវ?",
+              "options": [
+                "តូចA8 μm ធំE16 μm",
+                "តូចE16 μm ធំA8 μm",
+                "តូចB10 μm ធំD14 μm",
+                "គ្រប់ចំណុចស្មើC12 μm"
+              ],
+              "reasons": [
+                "A8តូចបំផុត E16ធំបំផុត។",
+                "ទំហំតម្លៃនិងទីតាំងបញ្ច្រាស។",
+                "BនិងDមិនមែនតម្លៃអតិបរមាអប្បបរមា។",
+                "មានតម្លៃតាមកន្លែងប្រាំខុសគ្នា។"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q02": {
+              "sourceHash": "a4d07a401cf0c77ac91d2b88efe2b49963852e4c68da0ebd6d3e484eaec4f2cd",
+              "stem": "កម្រាស់មធ្យមប្រាំចំណុចប៉ុន្មាន?",
+              "options": [
+                "10 μm",
+                "12 μm",
+                "14 μm",
+                "60 μm"
+              ],
+              "reasons": [
+                "ផលបូក60ចែកប្រាំមិនស្មើ10។",
+                "(8+10+12+14+16)÷5=12 μm។",
+                "14 μmជាតម្លៃត្រង់D។",
+                "60 μmជាផលបូក មិនមែនមធ្យម។"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-sample-location-mean-q03": {
+              "sourceHash": "2044997d8758f3a4fc52bb370d7877b4d85386d0808f2302797e44cfb3090672",
+              "stem": "លក្ខខណ្ឌគ្រប់ចំណុច10–14 μm។ សេចក្ដីសម្រេចណាពិនិត្យតម្លៃតាមកន្លែងផង?",
+              "options": [
+                "មធ្យមក្នុងជួរដូច្នេះជាប់ទាំងអស់",
+                "កែគ្រប់តម្លៃជា12",
+                "AនិងEក្រៅជួរ ទោះមធ្យមក្នុងជួរក៏មិនបំពេញគ្រប់ចំណុច",
+                "លុបចំណុចគែមពីរ"
+              ],
+              "reasons": [
+                "A8និងE16នៅក្រៅទោះមធ្យមជាប់។",
+                "មិនអាចកែតម្លៃវាស់។",
+                "Aក្រោមព្រំទាប Eលើសព្រំខ្ពស់ ត្រូវបំបែកមធ្យមនិងចំណុច។",
+                "មិនលុបទីតាំងកំណត់តាមចិត្ត។"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        }
+      },
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false,
+      "releaseReady": false
+    },
+    {
+      "id": "mfg37-required-coating-thickness-instrument-recognition",
+      "specialty": "surface",
+      "lessonIds": [
+        "mfg1-surface-lesson-063",
+        "mfg1-surface-lesson-069"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-063": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+        "mfg1-surface-lesson-069": "4aada97b9ffd9e7ae041763e972ec6557c4551c7b9aa22d94526acbda1b028b5"
+      },
+      "titleJa": "膜厚計の原理と試料条件を対応させる",
+      "captionJa": "Aは入射X線と元素に関係する特性X線の検出を分け、Bはコイルを含むプローブと皮膜・導電性基材の関係を示します。Bの例は導電性・非磁性基材上の非導電性皮膜です。厚さと硬さは別の評価です。材質、層構成、形状、基準試料と校正条件の適合は別に確認します。実機の構造や操作手順ではありません。",
+      "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+      "assets": [
+        {
+          "id": "mfg38-thickness-xrf",
+          "file": "assets/manufacturing/recognition38/thickness-xrf.png",
+          "width": 1400,
+          "height": 1000,
+          "altJa": "AはX線源から試料への入射と、元素に関係する特性X線を受ける検出器を分けた概念図。",
+          "sha256": "3e2ead9eca382cbe17a6d95836a5d26caed2cf560b2869f1922e02e98da864ac"
+        },
+        {
+          "id": "mfg38-thickness-eddy",
+          "file": "assets/manufacturing/recognition38/thickness-eddy.png",
+          "width": 1400,
+          "height": 1000,
+          "altJa": "Bはコイルを含むプローブ、非導電性皮膜、導電性非磁性基材と渦電流の関係を示す概念図。",
+          "sha256": "f3a2047ca280962cd662fce648a83b683254915c845308fc0f655e80836854e3"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg38-coating-thickness-instrument-recognition-q01",
+          "lessonId": "mfg1-surface-lesson-063",
+          "lessonSourceHash": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+          "stemJa": "図A・Bのうち、励起するX線源と特性X線を受ける検出器を分けて示すものはどれか。",
+          "optionsJa": [
+            "Aの蛍光X線概念図",
+            "Bのコイルだけ",
+            "両方とも硬さ圧子の図",
+            "どちらもノギスの図"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "Aは入射X線と特性X線の検出を区別しています。",
+            "Bはプローブと渦電流の概念図です。",
+            "圧子による硬さ試験ではありません。",
+            "寸法を挟んで読むノギスの構造ではありません。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 75,
+              "printedPage": 65
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 182,
+              "printedPage": 172
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-thickness-xrf",
+            "mfg38-thickness-eddy"
+          ],
+          "imageAssetHashes": {
+            "mfg38-thickness-xrf": "3e2ead9eca382cbe17a6d95836a5d26caed2cf560b2869f1922e02e98da864ac",
+            "mfg38-thickness-eddy": "f3a2047ca280962cd662fce648a83b683254915c845308fc0f655e80836854e3"
+          },
+          "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea"
+        },
+        {
+          "id": "mfg38-coating-thickness-instrument-recognition-q02",
+          "lessonId": "mfg1-surface-lesson-063",
+          "lessonSourceHash": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+          "stemJa": "図Bで渦電流が描かれているのはどこか。",
+          "optionsJa": [
+            "非導電性皮膜だけの内部",
+            "導電性・非磁性の基材側",
+            "画面の数値欄",
+            "硬さ試験の圧痕"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "この図では非導電性皮膜内の電流として描いていません。",
+            "コイルの交流磁界に関係する渦電流を導電性基材側に示しています。",
+            "図は数値表示による電流の発生を示しません。",
+            "図Bは圧痕を用いる硬さ試験ではありません。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 75,
+              "printedPage": 65
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 182,
+              "printedPage": 172
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-thickness-eddy"
+          ],
+          "imageAssetHashes": {
+            "mfg38-thickness-eddy": "f3a2047ca280962cd662fce648a83b683254915c845308fc0f655e80836854e3"
+          },
+          "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5"
+        },
+        {
+          "id": "mfg38-coating-thickness-instrument-recognition-q03",
+          "lessonId": "mfg1-surface-lesson-063",
+          "lessonSourceHash": "ea360eb0c28bbb78fb085b6e910b815ea6cec0ba1cbe71f35e19069eadea2ea9",
+          "stemJa": "図Bと同じ原理名の膜厚計を別の積層品へ使いたい。開始前の適切な判断はどれか。",
+          "optionsJa": [
+            "μm表示があれば全材質に適合",
+            "同じ原理名なら校正は不要",
+            "厚さが分かれば硬さも保証される",
+            "基材・皮膜・層構成・形状と基準試料や校正条件の適合を確認"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "表示単位だけでは適用できる材質や構成は決まりません。",
+            "原理名の一致は現在の校正確認を代替しません。",
+            "厚さと硬さは別の量です。",
+            "試料と方法の適合を具体的条件で照合します。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 75,
+              "printedPage": 65
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 182,
+              "printedPage": 172
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-thickness-xrf",
+            "mfg38-thickness-eddy"
+          ],
+          "imageAssetHashes": {
+            "mfg38-thickness-xrf": "3e2ead9eca382cbe17a6d95836a5d26caed2cf560b2869f1922e02e98da864ac",
+            "mfg38-thickness-eddy": "f3a2047ca280962cd662fce648a83b683254915c845308fc0f655e80836854e3"
+          },
+          "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40"
+        }
+      ],
+      "locales": {
+        "en": {
+          "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+          "caption": "A separates incident X-rays from detection of element-related characteristic X-rays. B shows the relationship between a coil-containing probe, coating and conductive substrate. B illustrates a nonconductive coating on a conductive, nonmagnetic substrate. Thickness and hardness are different evaluations. Material, layer structure, shape, reference specimen and calibration conditions require separate compatibility checks. These are not actual instrument construction or operating instructions.",
+          "questions": {
+            "mfg38-coating-thickness-instrument-recognition-q01": {
+              "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea",
+              "stem": "Which panel separates the exciting X-ray source from the detector receiving characteristic X-rays?",
+              "options": [
+                "A, the X-ray fluorescence concept",
+                "Only the coil in B",
+                "Both show hardness indenters",
+                "Both show calipers"
+              ],
+              "reasons": [
+                "A distinguishes incident X-rays and characteristic-X-ray detection.",
+                "B concerns a probe and eddy currents.",
+                "Neither is an indentation hardness test.",
+                "Neither has the jaw-reading structure of a caliper."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q02": {
+              "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5",
+              "stem": "Where are eddy currents drawn in B?",
+              "options": [
+                "Only inside the nonconductive coating",
+                "In the conductive, nonmagnetic substrate",
+                "In a numeric display",
+                "In a hardness indentation"
+              ],
+              "reasons": [
+                "The drawing does not place these currents in the nonconductive coating.",
+                "They are shown in the conductive substrate in relation to the coil’s alternating field.",
+                "The figure does not show a display generating current.",
+                "B is not an indentation hardness test."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q03": {
+              "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40",
+              "stem": "A meter using B’s principle is proposed for another layered part. What must be checked first?",
+              "options": [
+                "A μm display makes it suitable for every material",
+                "The same principle name eliminates calibration checks",
+                "Knowing thickness guarantees hardness",
+                "Compatibility of substrate, coating, layer structure, shape, reference specimens and calibration conditions"
+              ],
+              "reasons": [
+                "The display unit alone does not establish material or layer applicability.",
+                "A principle name does not replace current calibration checks.",
+                "Thickness and hardness are different quantities.",
+                "Match the specimen and method through their actual conditions."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "vi": {
+          "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+          "caption": "A phân biệt tia X tới với việc thu tia X đặc trưng liên quan đến nguyên tố. B thể hiện quan hệ giữa đầu dò có cuộn dây, lớp phủ và nền dẫn điện; ví dụ B là lớp phủ không dẫn điện trên nền dẫn điện, không từ tính. Chiều dày và độ cứng là hai phép đánh giá khác nhau. Phải kiểm tra riêng vật liệu, cấu trúc lớp, hình dạng, mẫu chuẩn và điều kiện hiệu chuẩn. Hình không phải cấu tạo hay hướng dẫn vận hành máy thực tế.",
+          "questions": {
+            "mfg38-coating-thickness-instrument-recognition-q01": {
+              "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea",
+              "stem": "Hình nào phân biệt nguồn tia X kích thích với đầu thu tia X đặc trưng?",
+              "options": [
+                "A: nguyên lý huỳnh quang tia X",
+                "Chỉ cuộn dây ở B",
+                "Cả hai là đầu ấn đo độ cứng",
+                "Cả hai là thước cặp"
+              ],
+              "reasons": [
+                "A phân biệt tia X tới và việc thu tia X đặc trưng.",
+                "B là nguyên lý đầu dò và dòng điện xoáy.",
+                "Không phải phép đo độ cứng bằng vết lõm.",
+                "Không có cơ cấu kẹp đọc kích thước như thước cặp."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q02": {
+              "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5",
+              "stem": "Trong B, dòng điện xoáy được vẽ ở đâu?",
+              "options": [
+                "Chỉ bên trong lớp phủ không dẫn điện",
+                "Phía nền dẫn điện, không từ tính",
+                "Trong ô hiển thị số",
+                "Trong vết lõm đo độ cứng"
+              ],
+              "reasons": [
+                "Hình không mô tả dòng này trong lớp phủ không dẫn điện.",
+                "Dòng xoáy được thể hiện ở nền dẫn điện, liên quan đến từ trường xoay chiều của cuộn dây.",
+                "Hình không mô tả ô hiển thị tạo dòng điện.",
+                "B không phải thử độ cứng bằng vết lõm."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q03": {
+              "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40",
+              "stem": "Muốn dùng máy cùng nguyên lý B cho sản phẩm nhiều lớp khác, cần xét gì trước?",
+              "options": [
+                "Có đơn vị μm là dùng cho mọi vật liệu",
+                "Cùng tên nguyên lý thì không cần hiệu chuẩn",
+                "Biết chiều dày là bảo đảm độ cứng",
+                "Đối chiếu nền, lớp phủ, cấu trúc lớp, hình dạng, mẫu chuẩn và điều kiện hiệu chuẩn"
+              ],
+              "reasons": [
+                "Đơn vị hiển thị không quyết định phạm vi vật liệu hoặc cấu trúc áp dụng.",
+                "Tên nguyên lý không thay cho kiểm tra hiệu chuẩn hiện tại.",
+                "Chiều dày và độ cứng là hai đại lượng.",
+                "Phải đối chiếu sự phù hợp của mẫu và phương pháp bằng các điều kiện cụ thể."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "id": {
+          "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+          "caption": "A memisahkan sinar-X datang dari deteksi sinar-X karakteristik yang terkait unsur. B menunjukkan hubungan probe berkoil, lapisan dan substrat konduktif. Contoh B memakai lapisan nonkonduktif di atas substrat konduktif nonmagnetik. Ketebalan berbeda dari kekerasan. Kesesuaian bahan, susunan lapisan, bentuk, spesimen acuan dan kalibrasi harus diperiksa tersendiri. Ini bukan struktur atau petunjuk operasi alat nyata.",
+          "questions": {
+            "mfg38-coating-thickness-instrument-recognition-q01": {
+              "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea",
+              "stem": "Panel mana memisahkan sumber sinar-X eksitasi dan detektor sinar-X karakteristik?",
+              "options": [
+                "A, konsep fluoresensi sinar-X",
+                "Hanya koil B",
+                "Keduanya indentor kekerasan",
+                "Keduanya jangka sorong"
+              ],
+              "reasons": [
+                "A membedakan sinar-X datang dan deteksi sinar-X karakteristik.",
+                "B adalah konsep probe dan arus pusar.",
+                "Bukan uji kekerasan dengan indentasi.",
+                "Bukan struktur penjepit dan pembacaan jangka sorong."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q02": {
+              "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5",
+              "stem": "Di mana arus pusar digambar pada B?",
+              "options": [
+                "Hanya di lapisan nonkonduktif",
+                "Pada substrat konduktif nonmagnetik",
+                "Di tampilan angka",
+                "Di indentasi kekerasan"
+              ],
+              "reasons": [
+                "Arus itu tidak digambar di lapisan nonkonduktif.",
+                "Arus ditunjukkan pada substrat konduktif terkait medan bolak-balik koil.",
+                "Gambar tidak menunjukkan tampilan menghasilkan arus.",
+                "B bukan uji kekerasan indentasi."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q03": {
+              "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40",
+              "stem": "Alat berprinsip B akan dipakai pada benda berlapis lain. Apa yang diperiksa terlebih dahulu?",
+              "options": [
+                "Tampilan μm cocok untuk semua bahan",
+                "Nama prinsip sama berarti kalibrasi tidak perlu",
+                "Ketebalan menjamin kekerasan",
+                "Kesesuaian substrat, lapisan, susunan, bentuk, acuan dan kondisi kalibrasi"
+              ],
+              "reasons": [
+                "Satuan tampilan tidak menetapkan kesesuaian bahan atau susunan.",
+                "Nama prinsip tidak mengganti pemeriksaan kalibrasi terkini.",
+                "Ketebalan dan kekerasan berbeda.",
+                "Cocokkan spesimen dan metode berdasarkan kondisi nyata."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "tl": {
+          "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+          "caption": "Ipinaghihiwalay ng A ang papasok na X-ray at pagtukoy sa characteristic X-ray na kaugnay ng elemento. Ipinapakita ng B ang probe na may coil, coating at conductive substrate. Sa B, nonconductive ang coating at conductive ngunit nonmagnetic ang substrate. Magkaiba ang kapal at tigas. Hiwalay na tiyakin ang materyal, mga layer, hugis, reference specimen at calibration. Hindi ito aktuwal na pagkakayari o operating procedure.",
+          "questions": {
+            "mfg38-coating-thickness-instrument-recognition-q01": {
+              "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea",
+              "stem": "Aling panel ang naghihiwalay sa exciting X-ray source at detector ng characteristic X-ray?",
+              "options": [
+                "A, konsepto ng X-ray fluorescence",
+                "Coil lamang sa B",
+                "Parehong hardness indenter",
+                "Parehong caliper"
+              ],
+              "reasons": [
+                "Hiwalay sa A ang papasok na X-ray at detection.",
+                "Probe at eddy-current concept ang B.",
+                "Hindi ito indentation hardness test.",
+                "Hindi ito panga at pagbasa ng caliper."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q02": {
+              "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5",
+              "stem": "Saan iginuhit ang eddy current sa B?",
+              "options": [
+                "Sa nonconductive coating lamang",
+                "Sa conductive at nonmagnetic na substrate",
+                "Sa numeric display",
+                "Sa hardness indentation"
+              ],
+              "reasons": [
+                "Hindi sa nonconductive coating inilagay ang mga agos.",
+                "Sa conductive substrate ipinakita ang agos na kaugnay ng alternating field ng coil.",
+                "Hindi display ang pinagmumulan ng agos sa guhit.",
+                "Hindi hardness-indentation test ang B."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q03": {
+              "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40",
+              "stem": "Gagamit ng kaparehong prinsipyo ng B sa ibang layered part. Ano ang dapat munang suriin?",
+              "options": [
+                "May μm kaya angkop sa lahat ng materyal",
+                "Parehong pangalan ng prinsipyo kaya walang calibration check",
+                "Garantiya ng tigas ang kapal",
+                "Pagkakatugma ng substrate, coating, layers, hugis, reference specimen at calibration"
+              ],
+              "reasons": [
+                "Hindi sapat ang display unit sa material o layer applicability.",
+                "Hindi kapalit ng kasalukuyang calibration check ang pangalan.",
+                "Magkaibang quantity ang kapal at tigas.",
+                "Itugma ang specimen at pamamaraan ayon sa mga kondisyon."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "zh-CN": {
+          "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+          "caption": "A区分入射X射线与元素相关特征X射线的检测。B表示含线圈的探头、涂层和导电基材的关系，例子为导电非磁性基材上的非导电涂层。厚度与硬度是不同评价。材料、层结构、形状、参考试样和校准条件须另行核对。这不是实际设备结构或操作步骤。",
+          "questions": {
+            "mfg38-coating-thickness-instrument-recognition-q01": {
+              "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea",
+              "stem": "哪幅图区分激发X射线源与接收特征X射线的检测器？",
+              "options": [
+                "A的X射线荧光概念图",
+                "只有B的线圈",
+                "两幅都是硬度压头",
+                "两幅都是游标卡尺"
+              ],
+              "reasons": [
+                "A区分入射X射线与特征X射线检测。",
+                "B是探头与涡流概念。",
+                "不是压痕硬度试验。",
+                "不是卡尺夹持读数结构。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q02": {
+              "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5",
+              "stem": "B图中的涡流画在何处？",
+              "options": [
+                "仅在非导电涂层内部",
+                "导电非磁性基材一侧",
+                "数值显示框",
+                "硬度压痕内"
+              ],
+              "reasons": [
+                "图中没有将该电流画在非导电涂层内。",
+                "涡流画在导电基材中，与线圈交变磁场相关。",
+                "图中不表示显示框产生电流。",
+                "B不是压痕硬度试验。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q03": {
+              "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40",
+              "stem": "拟将与B同原理的测厚仪用于另一层状产品，应先如何判断？",
+              "options": [
+                "显示μm就适用所有材料",
+                "原理名相同便不必校准",
+                "知道厚度就保证硬度",
+                "核对基材、涂层、层结构、形状、参考试样及校准条件"
+              ],
+              "reasons": [
+                "显示单位不能确定材料与结构适用范围。",
+                "原理名不能替代当前校准确认。",
+                "厚度与硬度是不同量。",
+                "按具体条件核对试样与方法的适用性。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "zh-TW": {
+          "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+          "caption": "A區分入射X射線與元素相關特徵X射線的偵測。B表示含線圈的探頭、塗層與導電基材的關係，例子為導電非磁性基材上的非導電塗層。厚度與硬度是不同評估。材料、層結構、形狀、參考試樣與校正條件須另行核對。這不是實際設備結構或操作步驟。",
+          "questions": {
+            "mfg38-coating-thickness-instrument-recognition-q01": {
+              "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea",
+              "stem": "哪幅圖區分激發X射線源與接收特徵X射線的偵測器？",
+              "options": [
+                "A的X射線螢光概念圖",
+                "只有B的線圈",
+                "兩幅都是硬度壓頭",
+                "兩幅都是游標卡尺"
+              ],
+              "reasons": [
+                "A區分入射X射線與特徵X射線偵測。",
+                "B是探頭與渦電流概念。",
+                "不是壓痕硬度試驗。",
+                "不是卡尺夾持讀值結構。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q02": {
+              "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5",
+              "stem": "B圖中的渦電流畫在何處？",
+              "options": [
+                "僅在非導電塗層內部",
+                "導電非磁性基材一側",
+                "數值顯示框",
+                "硬度壓痕內"
+              ],
+              "reasons": [
+                "圖中沒有把該電流畫在非導電塗層內。",
+                "渦電流畫在導電基材中，與線圈交變磁場相關。",
+                "圖中不表示顯示框產生電流。",
+                "B不是壓痕硬度試驗。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q03": {
+              "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40",
+              "stem": "擬將與B同原理的測厚儀用於另一層狀產品，應先如何判斷？",
+              "options": [
+                "顯示μm就適用所有材料",
+                "原理名相同便不必校正",
+                "知道厚度就保證硬度",
+                "核對基材、塗層、層結構、形狀、參考試樣及校正條件"
+              ],
+              "reasons": [
+                "顯示單位不能確定材料與結構適用範圍。",
+                "原理名不能取代目前校正確認。",
+                "厚度與硬度是不同量。",
+                "依具體條件核對試樣與方法的適用性。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "hi": {
+          "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+          "caption": "A में आपतित X-किरण और तत्व-संबंधी अभिलाक्षणिक X-किरण का संसूचन अलग दिखता है। B कुंडली वाले प्रोब, परत और चालक आधार का संबंध दिखाता है; उदाहरण में अचालक परत चालक, अचुंबकीय आधार पर है। मोटाई और कठोरता अलग मूल्यांकन हैं। सामग्री, परत संरचना, आकार, संदर्भ नमूने और अंशांकन की उपयुक्तता अलग जाँचें। यह वास्तविक उपकरण संरचना या संचालन विधि नहीं है।",
+          "questions": {
+            "mfg38-coating-thickness-instrument-recognition-q01": {
+              "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea",
+              "stem": "कौन सा पैनल उत्तेजक X-किरण स्रोत और अभिलाक्षणिक X-किरण डिटेक्टर अलग दिखाता है?",
+              "options": [
+                "A का X-किरण प्रतिदीप्ति मॉडल",
+                "केवल B की कुंडली",
+                "दोनों कठोरता इंडेंटर",
+                "दोनों कैलिपर"
+              ],
+              "reasons": [
+                "A आपतित किरण और अभिलाक्षणिक किरण संसूचन अलग करता है।",
+                "B प्रोब और भँवर धारा का मॉडल है।",
+                "यह दबाव-छाप कठोरता परीक्षण नहीं है।",
+                "यह कैलिपर की पकड़कर मापने वाली रचना नहीं है।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q02": {
+              "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5",
+              "stem": "B में भँवर धाराएँ कहाँ बनी दिखाई गई हैं?",
+              "options": [
+                "केवल अचालक परत में",
+                "चालक, अचुंबकीय आधार में",
+                "अंकीय डिस्प्ले में",
+                "कठोरता की छाप में"
+              ],
+              "reasons": [
+                "चित्र ये धाराएँ अचालक परत में नहीं रखता।",
+                "धाराएँ कुंडली के प्रत्यावर्ती क्षेत्र से संबंधित चालक आधार में हैं।",
+                "चित्र डिस्प्ले से धारा पैदा होना नहीं दिखाता।",
+                "B दबाव-छाप कठोरता परीक्षण नहीं है।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q03": {
+              "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40",
+              "stem": "B के सिद्धांत का मीटर दूसरे बहुपरत उत्पाद पर लगाना है। पहले क्या जाँचें?",
+              "options": [
+                "μm डिस्प्ले सभी सामग्री के लिए पर्याप्त",
+                "समान सिद्धांत नाम से अंशांकन अनावश्यक",
+                "मोटाई जानने से कठोरता की गारंटी",
+                "आधार, परत, संरचना, आकार, संदर्भ नमूना और अंशांकन की उपयुक्तता"
+              ],
+              "reasons": [
+                "डिस्प्ले इकाई सामग्री या संरचना की उपयुक्तता तय नहीं करती।",
+                "सिद्धांत नाम वर्तमान अंशांकन जाँच का विकल्प नहीं है।",
+                "मोटाई और कठोरता अलग परिमाण हैं।",
+                "विशिष्ट शर्तों से नमूने और विधि का मेल जाँचें।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "bn": {
+          "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+          "caption": "A-তে আপতিত X-রশ্মি ও মৌল-সম্পর্কিত বৈশিষ্ট্যসূচক X-রশ্মি শনাক্তকরণ আলাদা। B-তে কয়েলযুক্ত প্রোব, আবরণ ও পরিবাহী ভিত্তির সম্পর্ক; উদাহরণটি পরিবাহী অচৌম্বক ভিত্তির ওপর অপরিবাহী আবরণ। পুরুত্ব ও কঠোরতা আলাদা মূল্যায়ন। উপাদান, স্তরবিন্যাস, আকৃতি, মান নমুনা ও ক্যালিব্রেশন শর্তের সামঞ্জস্য পৃথকভাবে যাচাই করুন। এটি বাস্তব যন্ত্রের গঠন বা চালানোর নির্দেশ নয়।",
+          "questions": {
+            "mfg38-coating-thickness-instrument-recognition-q01": {
+              "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea",
+              "stem": "কোন প্যানেলে উত্তেজক X-রশ্মি উৎস ও বৈশিষ্ট্যসূচক রশ্মির ডিটেক্টর আলাদা?",
+              "options": [
+                "A-এর X-রশ্মি ফ্লুরোসেন্স ধারণাচিত্র",
+                "শুধু B-এর কয়েল",
+                "দুটিই কঠোরতার চাপক",
+                "দুটিই ক্যালিপার"
+              ],
+              "reasons": [
+                "A আপতিত রশ্মি ও বৈশিষ্ট্যসূচক রশ্মি শনাক্তকরণ পৃথক করে।",
+                "B প্রোব ও এডি কারেন্টের ধারণা।",
+                "এটি চাপচিহ্নের কঠোরতা পরীক্ষা নয়।",
+                "এটি ক্যালিপারের চোয়াল দিয়ে মাপার গঠন নয়।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q02": {
+              "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5",
+              "stem": "B-তে এডি কারেন্ট কোথায় আঁকা?",
+              "options": [
+                "শুধু অপরিবাহী আবরণের ভেতর",
+                "পরিবাহী অচৌম্বক ভিত্তিতে",
+                "সংখ্যার ডিসপ্লেতে",
+                "কঠোরতার চাপচিহ্নে"
+              ],
+              "reasons": [
+                "এই প্রবাহ অপরিবাহী আবরণে দেখানো হয়নি।",
+                "কয়েলের পরিবর্তী ক্ষেত্রের সঙ্গে সম্পর্কিত প্রবাহ পরিবাহী ভিত্তিতে দেখানো।",
+                "চিত্রে ডিসপ্লে থেকে প্রবাহ তৈরি হয় না।",
+                "B চাপচিহ্নের কঠোরতা পরীক্ষা নয়।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q03": {
+              "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40",
+              "stem": "B-এর নীতির মিটার অন্য স্তরযুক্ত পণ্যে ব্যবহার করতে আগে কী করবেন?",
+              "options": [
+                "μm ডিসপ্লে থাকলেই সব উপাদানে উপযুক্ত",
+                "একই নীতিনাম হলে ক্যালিব্রেশন লাগে না",
+                "পুরুত্ব জানলে কঠোরতা নিশ্চিত",
+                "ভিত্তি, আবরণ, স্তর, আকৃতি, মান নমুনা ও ক্যালিব্রেশনের সামঞ্জস্য যাচাই"
+              ],
+              "reasons": [
+                "ডিসপ্লে একক উপাদান বা স্তরের উপযুক্ততা নির্ধারণ করে না।",
+                "নীতিনাম বর্তমান ক্যালিব্রেশন যাচাইয়ের বিকল্প নয়।",
+                "পুরুত্ব ও কঠোরতা আলাদা রাশি।",
+                "নির্দিষ্ট শর্তে নমুনা ও পদ্ধতির মিল যাচাই করুন।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "ne": {
+          "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+          "caption": "Aले आपतित X-किरण र तत्वसँग सम्बन्धित विशिष्ट X-किरणको पहिचान छुट्याउँछ। Bमा कुण्डली भएको प्रोब,तह र चालक आधारको सम्बन्ध छ;उदाहरण अचालक तह भएको चालक,अचुम्बकीय आधार हो। मोटाइ र कठोरता फरक मूल्याङ्कन हुन्। पदार्थ,तह संरचना,आकार,सन्दर्भ नमुना र क्यालिब्रेसन उपयुक्तता अलग जाँचिन्छ। यो वास्तविक उपकरण संरचना वा सञ्चालन प्रक्रिया होइन।",
+          "questions": {
+            "mfg38-coating-thickness-instrument-recognition-q01": {
+              "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea",
+              "stem": "उत्तेजक X-किरण स्रोत र विशिष्ट X-किरण डिटेक्टर छुट्याउने प्यानल कुन?",
+              "options": [
+                "Aको X-किरण फ्लुओरेसेन्स नमुना",
+                "Bको कुण्डली मात्र",
+                "दुवै कठोरता इन्डेन्टर",
+                "दुवै भर्नियर"
+              ],
+              "reasons": [
+                "Aले आपतित किरण र विशिष्ट किरण पहिचान छुट्याउँछ।",
+                "Bप्रोब र भँवर धाराको नमुना हो।",
+                "यो छापको कठोरता परीक्षण होइन।",
+                "यो भर्नियरले समाती पढ्ने संरचना होइन।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q02": {
+              "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5",
+              "stem": "Bमा भँवर धारा कहाँ कोरिएको छ?",
+              "options": [
+                "अचालक तहभित्र मात्र",
+                "चालक,अचुम्बकीय आधारमा",
+                "अङ्क प्रदर्शनमा",
+                "कठोरताको छापमा"
+              ],
+              "reasons": [
+                "यो धारा अचालक तहमा कोरिएको छैन।",
+                "कुण्डलीको प्रत्यावर्ती क्षेत्रसँग सम्बन्धित धारा चालक आधारमा छ।",
+                "चित्रले प्रदर्शनबाट धारा बन्ने देखाउँदैन।",
+                "Bछाप कठोरता परीक्षण होइन।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q03": {
+              "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40",
+              "stem": "Bकै सिद्धान्तको मोटाइ मापक अर्को बहुस्तरीय भागमा प्रयोग गर्नुअघि के जाँच्ने?",
+              "options": [
+                "μmप्रदर्शन भए सबै पदार्थ मिल्छ",
+                "सिद्धान्त नाम मिल्दा क्यालिब्रेसन पर्दैन",
+                "मोटाइले कठोरता सुनिश्चित गर्छ",
+                "आधार,तह,संरचना,आकार,सन्दर्भ नमुना र क्यालिब्रेसनको उपयुक्तता"
+              ],
+              "reasons": [
+                "प्रदर्शन एकाइले पदार्थ वा संरचना उपयुक्तता तोक्दैन।",
+                "सिद्धान्त नाम अहिलेको क्यालिब्रेसन जाँचको विकल्प होइन।",
+                "मोटाइ र कठोरता फरक परिमाण हुन्।",
+                "ठोस सर्तबाट नमुना र विधिको मेल जाँचिन्छ।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "my": {
+          "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+          "caption": "Aကဝင်ရောက်Xရောင်ခြည်နှင့်ဒြပ်စင်ဆိုင်ရာဝိသေသXရောင်ခြည်ဖမ်းယူမှုကိုခွဲသည်။ Bကကွိုင်ပါပရိုဘ်၊အလွှာနှင့်လျှပ်ကူးအခြေခံဆက်နွယ်မှုဖြစ်ပြီး နမူနာမှာလျှပ်ကူး၊သံလိုက်မဟုတ်အခြေခံပေါ်လျှပ်မကူးအလွှာဖြစ်သည်။ အထူနှင့်မာကျောမှုကသီးခြားအကဲဖြတ်မှုဖြစ်သည်။ ပစ္စည်း၊အလွှာဖွဲ့ပုံ၊ပုံသဏ္ဌာန်၊စံနမူနာနှင့်ချိန်ညှိစည်းကမ်းကိုသီးခြားတိုက်စစ်ရသည်။ လက်တွေ့စက်ဖွဲ့ပုံနှင့်မောင်းနှင်နည်းမဟုတ်ပါ။",
+          "questions": {
+            "mfg38-coating-thickness-instrument-recognition-q01": {
+              "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea",
+              "stem": "Xရောင်ခြည်ပေးရင်းမြစ်နှင့်ဝိသေသXရောင်ခြည်ဖမ်းစက်ကိုခွဲပြသောပန်နယ်မှာမည်သည်နည်း။",
+              "options": [
+                "A၏Xရောင်ခြည်ဖလူအိုရက်ဆန့်အယူအဆပုံ",
+                "Bကွိုင်သာ",
+                "နှစ်ခုလုံးမာကျောမှုဖိထိပ်",
+                "နှစ်ခုလုံးကယ်လီပါ"
+              ],
+              "reasons": [
+                "Aကဝင်ရောင်ခြည်နှင့်ဝိသေသရောင်ခြည်ဖမ်းခြင်းကိုခွဲသည်။",
+                "Bကပရိုဘ်နှင့်အက်ဒီလျှပ်စီးအယူအဆဖြစ်သည်။",
+                "ချိုင့်ရာမာကျောမှုစမ်းခြင်းမဟုတ်ပါ။",
+                "ကယ်လီပါမေးရိုးနှင့်ဖတ်သည့်ဖွဲ့ပုံမဟုတ်ပါ။"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q02": {
+              "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5",
+              "stem": "Bတွင်အက်ဒီလျှပ်စီးကိုဘယ်နေရာ၌ရေးထားသနည်း။",
+              "options": [
+                "လျှပ်မကူးအလွှာအတွင်းသာ",
+                "လျှပ်ကူး၊သံလိုက်မဟုတ်အခြေခံဘက်",
+                "ကိန်းပြကွက်အတွင်း",
+                "မာကျောမှုချိုင့်ရာအတွင်း"
+              ],
+              "reasons": [
+                "ဤလျှပ်စီးကိုလျှပ်မကူးအလွှာအတွင်းမရေးထားပါ။",
+                "ကွိုင်အလှည့်ပြောင်းစက်ကွင်းနှင့်ဆိုင်သည့်လျှပ်စီးကိုလျှပ်ကူးအခြေခံတွင်ပြသည်။",
+                "ပြကွက်ကလျှပ်စီးဖြစ်ကြောင်းမပြပါ။",
+                "Bကချိုင့်ရာမာကျောမှုစမ်းခြင်းမဟုတ်ပါ။"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q03": {
+              "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40",
+              "stem": "Bနည်းတူမီတာကိုအခြားအလွှာစုံပစ္စည်း၌သုံးမည်။ အရင်ဘာစစ်ရမည်နည်း။",
+              "options": [
+                "μmပြလျှင်ပစ္စည်းအားလုံးကိုက်သည်",
+                "နည်းအမည်တူလျှင်ချိန်ညှိမလိုပါ",
+                "အထူသိလျှင်မာကျောမှုအာမခံသည်",
+                "အခြေခံ၊အလွှာ၊ဖွဲ့ပုံ၊ပုံသဏ္ဌာန်၊စံနမူနာနှင့်ချိန်ညှိစည်းကမ်းကိုက်မှု"
+              ],
+              "reasons": [
+                "ပြယူနစ်သာကပစ္စည်းနှင့်ဖွဲ့ပုံအသုံးချမှုမဆုံးဖြတ်ပါ။",
+                "နည်းအမည်ကလက်ရှိချိန်ညှိစစ်မှုကိုအစားမထိုးပါ။",
+                "အထူနှင့်မာကျောမှုသည်သီးခြားပမာဏဖြစ်သည်။",
+                "နမူနာနှင့်နည်းကိုသတ်မှတ်အခြေအနေဖြင့်တိုက်စစ်ရသည်။"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "th": {
+          "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+          "caption": "A แยกรังสีเอกซ์ตกกระทบกับการตรวจรังสีเอกซ์ลักษณะเฉพาะของธาตุ B แสดงความสัมพันธ์ของโพรบที่มีขดลวด ชั้นเคลือบ และวัสดุฐานนำไฟฟ้า ตัวอย่าง B เป็นชั้นไม่นำไฟฟ้าบนฐานนำไฟฟ้าที่ไม่เป็นแม่เหล็ก ความหนากับความแข็งเป็นคนละการประเมิน ต้องตรวจวัสดุ โครงสร้างชั้น รูปร่าง ชิ้นอ้างอิง และการสอบเทียบแยกกัน ไม่ใช่โครงสร้างหรือวิธีใช้งานเครื่องจริง",
+          "questions": {
+            "mfg38-coating-thickness-instrument-recognition-q01": {
+              "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea",
+              "stem": "ภาพใดแยกแหล่งเอกซ์เรย์กระตุ้นกับตัวตรวจรังสีลักษณะเฉพาะ",
+              "options": [
+                "A แนวคิดการเรืองรังสีเอกซ์",
+                "เฉพาะขดลวดB",
+                "ทั้งคู่เป็นหัวกดความแข็ง",
+                "ทั้งคู่เป็นเวอร์เนียร์"
+              ],
+              "reasons": [
+                "Aแยกรังสีตกกระทบกับการตรวจรังสีลักษณะเฉพาะ",
+                "Bเป็นแนวคิดโพรบและกระแสไหลวน",
+                "ไม่ใช่การทดสอบความแข็งด้วยรอยกด",
+                "ไม่ใช่โครงสร้างปากวัดของเวอร์เนียร์"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q02": {
+              "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5",
+              "stem": "กระแสไหลวนในBวาดไว้ที่ใด",
+              "options": [
+                "เฉพาะในชั้นไม่นำไฟฟ้า",
+                "ในฐานนำไฟฟ้าที่ไม่เป็นแม่เหล็ก",
+                "ในช่องตัวเลข",
+                "ในรอยกดความแข็ง"
+              ],
+              "reasons": [
+                "ไม่ได้วาดกระแสไว้ในชั้นไม่นำไฟฟ้า",
+                "วาดไว้ในฐานนำไฟฟ้าที่สัมพันธ์กับสนามสลับของขดลวด",
+                "ภาพไม่ได้แสดงช่องตัวเลขสร้างกระแส",
+                "Bไม่ใช่ทดสอบความแข็งด้วยรอยกด"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q03": {
+              "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40",
+              "stem": "จะใช้เครื่องหลักการเดียวกับBกับชิ้นหลายชั้นอื่น ควรตรวจอะไรก่อน",
+              "options": [
+                "แสดงμmจึงใช้ได้ทุกวัสดุ",
+                "ชื่อหลักการเดียวกันไม่ต้องสอบเทียบ",
+                "รู้ความหนาก็รับรองความแข็ง",
+                "ตรวจฐาน ชั้นเคลือบ โครงสร้าง รูปร่าง ชิ้นอ้างอิงและเงื่อนไขสอบเทียบ"
+              ],
+              "reasons": [
+                "หน่วยแสดงไม่กำหนดความเหมาะสมของวัสดุหรือชั้น",
+                "ชื่อหลักการไม่แทนการตรวจสอบเทียบปัจจุบัน",
+                "ความหนาและความแข็งคนละปริมาณ",
+                "เทียบความเหมาะสมของชิ้นกับวิธีตามเงื่อนไขจริง"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "km": {
+          "captionSourceHash": "630a36329239e140c48b1055b7c1e7efcc0b6fe61fca50575b3e16abd4cbdab3",
+          "caption": "Aបំបែកកាំរស្មីXចូលពីការចាប់កាំរស្មីXលក្ខណៈពិសេសដែលទាក់ទងធាតុ។ Bបង្ហាញប្រូបមានខ្សែរុំ ស្រទាប់ និងមូលដ្ឋាននាំអគ្គិសនី។ ឧទាហរណ៍Bជាស្រទាប់មិននាំលើមូលដ្ឋាននាំដែលមិនមែនម៉ាញេទិច។ កម្រាស់និងភាពរឹងជាការវាយតម្លៃផ្សេងគ្នា។ ត្រូវពិនិត្យសម្ភារៈ រចនាស្រទាប់ រូបរាង សំណាកយោងនិងលក្ខខណ្ឌក្រិតខ្នាតដោយឡែក។ មិនមែនរចនាម៉ាស៊ីនឬនីតិវិធីប្រើពិត។",
+          "questions": {
+            "mfg38-coating-thickness-instrument-recognition-q01": {
+              "sourceHash": "5609c26f9ea952757c6fd372694d3f397e9d4705b11d0952ae96bb14794e60ea",
+              "stem": "បន្ទះណាបំបែកប្រភពXរំញោចពីឧបករណ៍ចាប់Xលក្ខណៈពិសេស?",
+              "options": [
+                "A គោលការណ៍Xបញ្ចេញពន្លឺ",
+                "តែខ្សែរុំB",
+                "ទាំងពីរជាក្បាលសង្កត់ភាពរឹង",
+                "ទាំងពីរជាកាលីប័រ"
+              ],
+              "reasons": [
+                "AបំបែកXចូលនិងការចាប់Xលក្ខណៈពិសេស។",
+                "Bជាគោលការណ៍ប្រូបនិងចរន្តកួច។",
+                "មិនមែនសាកភាពរឹងដោយស្នាមសង្កត់។",
+                "មិនមែនរចនាថ្គាមអានកាលីប័រ។"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q02": {
+              "sourceHash": "697add87e1d2e39e9dc21cb351fe49a6d506f0c3d119be238e8ab66f2c4068e5",
+              "stem": "ក្នុងB ចរន្តកួចគូរនៅទីណា?",
+              "options": [
+                "តែក្នុងស្រទាប់មិននាំ",
+                "ខាងមូលដ្ឋាននាំនិងមិនម៉ាញេទិច",
+                "ក្នុងប្រអប់លេខ",
+                "ក្នុងស្នាមសង្កត់ភាពរឹង"
+              ],
+              "reasons": [
+                "មិនបានគូរចរន្តនេះក្នុងស្រទាប់មិននាំ។",
+                "គូរក្នុងមូលដ្ឋាននាំ ទាក់ទងវាលឆ្លាស់នៃខ្សែរុំ។",
+                "រូបមិនបង្ហាញប្រអប់លេខបង្កើតចរន្ត។",
+                "Bមិនមែនសាកភាពរឹងដោយស្នាម។"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-coating-thickness-instrument-recognition-q03": {
+              "sourceHash": "6affe8fbd7473761cb12d59cbf16fcce6dbb5e660cbde2a0080bb4c5a8320a40",
+              "stem": "ចង់ប្រើម៉ែត្រគោលការណ៍ដូចBលើផ្នែកច្រើនស្រទាប់ផ្សេង ត្រូវពិនិត្យអ្វីមុន?",
+              "options": [
+                "មានμmប្រើបានគ្រប់សម្ភារៈ",
+                "ឈ្មោះគោលការណ៍ដូចមិនចាំក្រិត",
+                "ដឹងកម្រាស់ធានាភាពរឹង",
+                "ភាពសមមូលដ្ឋាន ស្រទាប់ រចនា រូបរាង សំណាកយោងនិងក្រិតខ្នាត"
+              ],
+              "reasons": [
+                "ឯកតាបង្ហាញមិនកំណត់ភាពសមសម្ភារៈនិងរចនា។",
+                "ឈ្មោះគោលការណ៍មិនជំនួសការត្រួតក្រិតបច្ចុប្បន្ន។",
+                "កម្រាស់និងភាពរឹងជាបរិមាណផ្សេង។",
+                "ផ្ទៀងសំណាកនិងវិធីតាមលក្ខខណ្ឌជាក់លាក់។"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        }
+      },
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false,
+      "releaseReady": false
+    },
+    {
+      "id": "mfg37-required-solder-wetting-observation",
+      "specialty": "surface",
+      "lessonIds": [
+        "mfg1-surface-lesson-055",
+        "mfg1-surface-lesson-024"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-055": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d",
+        "mfg1-surface-lesson-024": "bf4e0da0d0fa1e1a6a10577bb0b289b98209af70e116732b2efd36601c7d2a98"
+      },
+      "titleJa": "試片の濡れ広がりを観察して分類する",
+      "captionJa": "同じ形の評価用試片を独自に描いた観察教材です。Aは広がった付着、Bは局所的な丸い塊と露出面を示します。この見え方の分類は、硬さ、接合強さ、製品合否や実作業の許可を保証しません。試料と指定評価方法は担当者が確認します。実加熱や浸漬の条件を示すものではありません。",
+      "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+      "assets": [
+        {
+          "id": "mfg38-wetting-observation",
+          "file": "assets/manufacturing/recognition38/wetting-observation.png",
+          "width": 1400,
+          "height": 1000,
+          "altJa": "同形の灰色の試片を二枚表示。Aには横長の連続した青い領域、Bには円形の青い領域があり、両方とも周りに灰色の面が見える。",
+          "sha256": "eb79e1f5da8aa8a8ba22159f59176ab2c5e017a8a656d8cef2cde339ef6960b6"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg38-solder-wetting-observation-q01",
+          "lessonId": "mfg1-surface-lesson-055",
+          "lessonSourceHash": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d",
+          "stemJa": "観察図で、面上に広がった付着が見える試片はどれか。",
+          "optionsJa": [
+            "A",
+            "Bだけ",
+            "両方とも付着が見えない",
+            "図ではAとBを区別できない"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "Aでは面に沿った広がりを描いています。",
+            "Bは局所的な丸い塊と露出面の例です。",
+            "どちらにも付着の観察像があります。",
+            "AとBの広がりの違いが示されています。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 81,
+              "printedPage": 71
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-wetting-observation"
+          ],
+          "imageAssetHashes": {
+            "mfg38-wetting-observation": "eb79e1f5da8aa8a8ba22159f59176ab2c5e017a8a656d8cef2cde339ef6960b6"
+          },
+          "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239"
+        },
+        {
+          "id": "mfg38-solder-wetting-observation-q02",
+          "lessonId": "mfg1-surface-lesson-055",
+          "lessonSourceHash": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d",
+          "stemJa": "Bの観察像について、見えている範囲の説明はどれか。",
+          "optionsJa": [
+            "全ての材質で接合強さが不足すると証明した",
+            "局所的な丸い塊と露出面が見える",
+            "硬さがAより必ず低い",
+            "指定試験なしで出荷可能と決定した"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "観察図だけで全材質の接合強さは証明できません。",
+            "図の見え方に基づいた観察記録です。",
+            "この図は硬さを測定していません。",
+            "見え方の分類と製品合否は別です。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 81,
+              "printedPage": 71
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-wetting-observation"
+          ],
+          "imageAssetHashes": {
+            "mfg38-wetting-observation": "eb79e1f5da8aa8a8ba22159f59176ab2c5e017a8a656d8cef2cde339ef6960b6"
+          },
+          "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8"
+        },
+        {
+          "id": "mfg38-solder-wetting-observation-q03",
+          "lessonId": "mfg1-surface-lesson-055",
+          "lessonSourceHash": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d",
+          "stemJa": "Aのような広がりを観察した後の判断として適切なのはどれか。",
+          "optionsJa": [
+            "画像だけで実加熱条件を決める",
+            "全ての試験済み品を未使用良品へ混ぜる",
+            "見え方を記録し、試料の識別と指定評価・判定手順を確認する",
+            "広がっていれば他の要求は全て合格"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "この教材は加熱や浸漬の実施条件ではありません。",
+            "試験で変化した品を未使用良品へ混ぜません。",
+            "観察、試料管理、製品の判定を分けて扱います。",
+            "広がりだけで他の性能や要求を保証しません。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 81,
+              "printedPage": 71
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-wetting-observation"
+          ],
+          "imageAssetHashes": {
+            "mfg38-wetting-observation": "eb79e1f5da8aa8a8ba22159f59176ab2c5e017a8a656d8cef2cde339ef6960b6"
+          },
+          "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252"
+        }
+      ],
+      "locales": {
+        "en": {
+          "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+          "caption": "These original drawings show same-shaped assessment specimens. A has spread-out coverage; B has a localized rounded deposit and exposed surface. Classifying this appearance does not establish hardness, joint strength, product acceptance or authorization to perform work. The responsible person confirms specimens and the prescribed evaluation method. No actual heating or immersion conditions are specified.",
+          "questions": {
+            "mfg38-solder-wetting-observation-q01": {
+              "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239",
+              "stem": "Which specimen shows spread-out coverage on its surface?",
+              "options": [
+                "A",
+                "Only B",
+                "Neither shows any deposit",
+                "A and B cannot be distinguished"
+              ],
+              "reasons": [
+                "A depicts material spreading across the surface.",
+                "B depicts a localized rounded deposit and exposed area.",
+                "Both contain a visible deposit.",
+                "The difference in spreading is shown."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q02": {
+              "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8",
+              "stem": "Which statement records only what is visible in B?",
+              "options": [
+                "Insufficient joint strength has been proved for every material",
+                "A localized rounded deposit and exposed surface are visible",
+                "Its hardness must be lower than A’s",
+                "It is accepted for shipment without prescribed testing"
+              ],
+              "reasons": [
+                "This drawing cannot prove joint strength for every material.",
+                "This records the illustrated observation.",
+                "No hardness was measured in this figure.",
+                "Appearance classification and product acceptance are separate."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q03": {
+              "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252",
+              "stem": "What is appropriate after observing spreading like A?",
+              "options": [
+                "Set actual heating conditions from the image alone",
+                "Mix all tested specimens with unused conforming goods",
+                "Record the appearance, maintain specimen identity and confirm prescribed evaluation and acceptance procedures",
+                "Spreading means every other requirement passes"
+              ],
+              "reasons": [
+                "This lesson does not specify heating or immersion conditions.",
+                "Do not mix test-altered items with unused good items.",
+                "Keep observation, specimen control and acceptance decisions separate.",
+                "Spreading alone does not establish other properties or requirements."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "vi": {
+          "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+          "caption": "Hình quan sát tự vẽ mô tả các mẫu đánh giá cùng hình dạng. A có phần bám trải rộng; B có khối tròn tập trung và mặt nền còn lộ. Phân loại biểu hiện này không bảo đảm độ cứng, độ bền mối nối, kết luận đạt hay quyền thao tác. Người phụ trách xác nhận mẫu và phương pháp đánh giá quy định. Hình không đưa ra điều kiện gia nhiệt hoặc nhúng thực tế.",
+          "questions": {
+            "mfg38-solder-wetting-observation-q01": {
+              "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239",
+              "stem": "Mẫu nào có phần bám trải rộng trên mặt?",
+              "options": [
+                "A",
+                "Chỉ B",
+                "Cả hai không có phần bám",
+                "Không phân biệt được A và B"
+              ],
+              "reasons": [
+                "A thể hiện phần bám lan trên mặt.",
+                "B là khối tròn tập trung và phần nền lộ.",
+                "Cả hai đều có phần bám trong hình quan sát.",
+                "Hình đã thể hiện khác biệt về độ trải rộng."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q02": {
+              "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8",
+              "stem": "Mô tả nào chỉ ghi nhận phần nhìn thấy ở B?",
+              "options": [
+                "Chứng minh độ bền mối nối không đủ với mọi vật liệu",
+                "Thấy khối tròn tập trung và mặt nền lộ",
+                "Độ cứng chắc chắn thấp hơn A",
+                "Quyết định xuất hàng không cần thử quy định"
+              ],
+              "reasons": [
+                "Hình không chứng minh độ bền mối nối của mọi vật liệu.",
+                "Đây là ghi nhận theo biểu hiện trên hình.",
+                "Hình không đo độ cứng.",
+                "Phân loại ngoại quan và quyết định đạt là việc khác nhau."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q03": {
+              "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252",
+              "stem": "Sau khi thấy độ trải rộng như A, cách nào phù hợp?",
+              "options": [
+                "Chỉ từ hình quyết định nhiệt độ gia nhiệt thực tế",
+                "Trộn mọi mẫu đã thử với hàng tốt chưa dùng",
+                "Ghi biểu hiện, giữ nhận diện mẫu và xác nhận quy trình đánh giá, kết luận quy định",
+                "Trải rộng là mọi yêu cầu khác đều đạt"
+              ],
+              "reasons": [
+                "Bài này không chỉ định điều kiện gia nhiệt hoặc nhúng.",
+                "Không trộn mẫu bị thay đổi do thử với hàng tốt chưa sử dụng.",
+                "Phân biệt quan sát, quản lý mẫu và quyết định sản phẩm.",
+                "Độ trải rộng riêng không bảo đảm tính năng hoặc yêu cầu khác."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "id": {
+          "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+          "caption": "Gambar asli ini menunjukkan spesimen evaluasi berbentuk sama. A memiliki deposit yang menyebar, B gumpalan bulat setempat dan permukaan terbuka. Klasifikasi tampilan tidak menjamin kekerasan, kekuatan sambungan, kelulusan produk atau izin bekerja. Penanggung jawab memastikan spesimen dan metode evaluasi yang ditetapkan. Kondisi pemanasan atau pencelupan nyata tidak diberikan.",
+          "questions": {
+            "mfg38-solder-wetting-observation-q01": {
+              "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239",
+              "stem": "Spesimen mana memperlihatkan deposit menyebar di permukaan?",
+              "options": [
+                "A",
+                "Hanya B",
+                "Tidak ada deposit pada keduanya",
+                "A dan B tidak dapat dibedakan"
+              ],
+              "reasons": [
+                "A menunjukkan penyebaran sepanjang permukaan.",
+                "B menunjukkan gumpalan setempat dan permukaan terbuka.",
+                "Keduanya memiliki deposit yang terlihat.",
+                "Perbedaan penyebaran ditunjukkan."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q02": {
+              "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8",
+              "stem": "Pernyataan mana hanya mencatat yang tampak pada B?",
+              "options": [
+                "Kekuatan sambungan semua bahan terbukti tidak cukup",
+                "Terlihat gumpalan bulat setempat dan permukaan terbuka",
+                "Kekerasan pasti lebih rendah daripada A",
+                "Boleh dikirim tanpa uji yang ditetapkan"
+              ],
+              "reasons": [
+                "Gambar tidak membuktikan kekuatan sambungan semua bahan.",
+                "Ini catatan berdasarkan pengamatan gambar.",
+                "Tidak ada pengukuran kekerasan.",
+                "Klasifikasi tampilan berbeda dari kelulusan produk."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q03": {
+              "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252",
+              "stem": "Apa tindakan tepat setelah melihat penyebaran seperti A?",
+              "options": [
+                "Tentukan pemanasan nyata dari gambar saja",
+                "Campurkan seluruh benda uji dengan barang baik yang belum digunakan",
+                "Catat tampilan, jaga identitas spesimen dan periksa prosedur evaluasi serta keputusan",
+                "Penyebaran berarti semua persyaratan lain lulus"
+              ],
+              "reasons": [
+                "Materi ini bukan kondisi pemanasan atau pencelupan.",
+                "Jangan campurkan benda yang berubah akibat pengujian dengan barang baik baru.",
+                "Pisahkan pengamatan, pengendalian spesimen dan keputusan produk.",
+                "Penyebaran saja tidak menjamin sifat atau persyaratan lain."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "tl": {
+          "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+          "caption": "Original na guhit ito ng magkakaparehong hugis na assessment specimen. May kumalat na deposito sa A; may bilugang lokal na kumpol at nakalantad na ibabaw sa B. Hindi pinatutunayan ng hitsura ang tigas, lakas ng dugtungan, product acceptance o pahintulot gumawa. Tinitiyak ng responsable ang specimen at itinakdang pagsusuri. Walang ibinigay na aktuwal na heating o immersion conditions.",
+          "questions": {
+            "mfg38-solder-wetting-observation-q01": {
+              "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239",
+              "stem": "Aling specimen ang may kumalat na deposito sa ibabaw?",
+              "options": [
+                "A",
+                "B lamang",
+                "Walang deposito sa pareho",
+                "Hindi maihihiwalay ang A at B"
+              ],
+              "reasons": [
+                "Kumalat sa ibabaw ang ipinakita sa A.",
+                "Lokal na bilog at nakalantad na ibabaw ang B.",
+                "Parehong may nakikitang deposito.",
+                "Ipinapakita ang pagkakaiba ng pagkalat."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q02": {
+              "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8",
+              "stem": "Alin ang paglalarawan lamang ng nakikita sa B?",
+              "options": [
+                "Napatunayang mahina ang dugtungan sa lahat ng materyal",
+                "May bilugang lokal na kumpol at nakalantad na ibabaw",
+                "Tiyak na mas malambot kaysa A",
+                "Puwedeng ipadala nang walang itinakdang test"
+              ],
+              "reasons": [
+                "Hindi napapatunayan ng guhit ang joint strength ng lahat ng materyal.",
+                "Tala ito ng nakalarawang obserbasyon.",
+                "Walang sinukat na tigas sa guhit.",
+                "Magkaiba ang pag-uuri ng hitsura at acceptance."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q03": {
+              "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252",
+              "stem": "Ano ang angkop matapos makakita ng pagkalat gaya ng A?",
+              "options": [
+                "Magtakda ng aktuwal na init mula sa larawan lamang",
+                "Ihalo ang lahat ng nasubukan sa hindi pa nagagamit na good items",
+                "Itala ang hitsura, panatilihin ang specimen identity at tiyakin ang evaluation at decision procedures",
+                "Pagkalat pa lang, pasado na lahat ng ibang requirement"
+              ],
+              "reasons": [
+                "Hindi ito heating o immersion conditions.",
+                "Huwag ihalo ang nabagong test item sa bagong good items.",
+                "Ihiwalay ang obserbasyon, specimen control at product decision.",
+                "Hindi garantiya ng ibang performance ang pagkalat lamang."
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "zh-CN": {
+          "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+          "caption": "这是独立绘制的同形评价试片观察图。A为铺展的附着，B为局部圆团及露出的表面。外观分类不保证硬度、接合强度、产品合格或操作权限。试样和指定评价方法由负责人确认。图中不提供实际加热或浸渍条件。",
+          "questions": {
+            "mfg38-solder-wetting-observation-q01": {
+              "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239",
+              "stem": "哪个试片可见沿表面铺展的附着？",
+              "options": [
+                "A",
+                "仅B",
+                "两者均无附着",
+                "无法区分A与B"
+              ],
+              "reasons": [
+                "A画出了沿面的铺展。",
+                "B为局部圆团及露出面。",
+                "两者都有可见附着。",
+                "图中已表示铺展差异。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q02": {
+              "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8",
+              "stem": "哪项仅描述B图中看得到的状态？",
+              "options": [
+                "证明所有材料接合强度不足",
+                "可见局部圆团及露出面",
+                "硬度一定低于A",
+                "无需指定试验即可出货"
+              ],
+              "reasons": [
+                "单凭观察图不能证明所有材料的接合强度。",
+                "这是基于图中状态的观察记录。",
+                "该图未测硬度。",
+                "外观分类与产品合格判断不同。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q03": {
+              "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252",
+              "stem": "观察到A这样的铺展后，适当做法是？",
+              "options": [
+                "只凭图决定实际加热条件",
+                "将所有试验品混入未使用良品",
+                "记录外观，保持试样标识，确认指定评价和判定步骤",
+                "只要铺展，其他要求全部合格"
+              ],
+              "reasons": [
+                "本教材未给出加热或浸渍条件。",
+                "试验改变的产品不能混入未使用良品。",
+                "分开处理观察、试样管理及产品判定。",
+                "铺展不能保证其他性能或要求。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "zh-TW": {
+          "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+          "caption": "這是獨立繪製的同形評估試片觀察圖。A為鋪展的附著，B為局部圓團及露出的表面。外觀分類不保證硬度、接合強度、產品合格或操作權限。試樣與指定評估方法由負責人確認。圖中不提供實際加熱或浸漬條件。",
+          "questions": {
+            "mfg38-solder-wetting-observation-q01": {
+              "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239",
+              "stem": "哪個試片可見沿表面鋪展的附著？",
+              "options": [
+                "A",
+                "僅B",
+                "兩者均無附著",
+                "無法區分A與B"
+              ],
+              "reasons": [
+                "A畫出了沿面的鋪展。",
+                "B為局部圓團及露出面。",
+                "兩者都有可見附著。",
+                "圖中已表示鋪展差異。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q02": {
+              "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8",
+              "stem": "哪項僅描述B圖中看得到的狀態？",
+              "options": [
+                "證明所有材料接合強度不足",
+                "可見局部圓團及露出面",
+                "硬度一定低於A",
+                "無需指定試驗即可出貨"
+              ],
+              "reasons": [
+                "單憑觀察圖不能證明所有材料的接合強度。",
+                "這是依圖中狀態所作的觀察紀錄。",
+                "該圖未量測硬度。",
+                "外觀分類與產品合格判定不同。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q03": {
+              "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252",
+              "stem": "觀察到A這樣的鋪展後，適當做法是？",
+              "options": [
+                "只憑圖決定實際加熱條件",
+                "將所有試驗品混入未使用良品",
+                "記錄外觀，保持試樣標識，確認指定評估與判定步驟",
+                "只要鋪展，其他要求全部合格"
+              ],
+              "reasons": [
+                "本教材未給出加熱或浸漬條件。",
+                "試驗改變的產品不能混入未使用良品。",
+                "分開處理觀察、試樣管理及產品判定。",
+                "鋪展不能保證其他性能或要求。"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "hi": {
+          "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+          "caption": "समान आकार के मूल्यांकन नमूनों के ये मौलिक अवलोकन चित्र हैं। A में फैला जमाव, B में स्थानीय गोल ढेला और खुली सतह है। इस रूप का वर्गीकरण कठोरता, जोड़ की मजबूती, उत्पाद स्वीकृति या काम की अनुमति की गारंटी नहीं है। जिम्मेदार व्यक्ति नमूना और निर्धारित मूल्यांकन विधि जाँचता है। वास्तविक ताप या डुबाने की शर्तें नहीं दी गई हैं।",
+          "questions": {
+            "mfg38-solder-wetting-observation-q01": {
+              "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239",
+              "stem": "किस नमूने पर सतह में फैला जमाव दिखता है?",
+              "options": [
+                "A",
+                "केवल B",
+                "दोनों पर जमाव नहीं",
+                "A और B अलग नहीं पहचाने जा सकते"
+              ],
+              "reasons": [
+                "A में सतह पर फैलाव दिखाया गया है।",
+                "B स्थानीय गोल ढेले और खुली सतह का उदाहरण है।",
+                "दोनों में जमाव का दृश्य है।",
+                "फैलाव का अंतर चित्र में दिया गया है।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q02": {
+              "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8",
+              "stem": "B में केवल दिखाई देने वाली स्थिति कौन बताता है?",
+              "options": [
+                "सभी सामग्री में कमजोर जोड़ साबित",
+                "स्थानीय गोल ढेला और खुली सतह दिखती है",
+                "कठोरता A से निश्चित कम",
+                "निर्धारित जाँच बिना भेजने की मंजूरी"
+              ],
+              "reasons": [
+                "चित्र सभी सामग्री की जोड़ मजबूती साबित नहीं करता।",
+                "यह चित्र के आधार पर अवलोकन दर्ज करता है।",
+                "चित्र में कठोरता मापी नहीं गई।",
+                "दृश्य वर्गीकरण और उत्पाद स्वीकृति अलग हैं।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q03": {
+              "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252",
+              "stem": "A जैसा फैलाव देखने के बाद उचित निर्णय क्या है?",
+              "options": [
+                "चित्र से वास्तविक ताप शर्त तय करें",
+                "सभी जाँचे नमूने नए अच्छे माल में मिलाएँ",
+                "रूप दर्ज करें, नमूना पहचान बनाए रखें और निर्धारित मूल्यांकन व निर्णय विधि जाँचें",
+                "फैलाव से अन्य सभी माँगें पास"
+              ],
+              "reasons": [
+                "यह सामग्री ताप या डुबाने की शर्त नहीं देती।",
+                "जाँच से बदली वस्तुएँ नए अच्छे माल में न मिलाएँ।",
+                "अवलोकन, नमूना प्रबंधन और निर्णय अलग रखें।",
+                "फैलाव अन्य गुण या माँगों की गारंटी नहीं है।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "bn": {
+          "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+          "caption": "একই আকৃতির মূল্যায়ন নমুনার এই পর্যবেক্ষণচিত্র নিজস্বভাবে আঁকা। A-তে ছড়ানো জমা, B-তে স্থানীয় গোল দলা ও খোলা পৃষ্ঠ আছে। এই চেহারার শ্রেণিবিভাগ কঠোরতা, জোড়ের শক্তি, পণ্য গ্রহণ বা কাজের অনুমতি নিশ্চিত করে না। দায়িত্বপ্রাপ্ত ব্যক্তি নমুনা ও নির্ধারিত মূল্যায়নপদ্ধতি নিশ্চিত করেন। বাস্তব উত্তাপ বা ডোবানোর শর্ত দেওয়া হয়নি।",
+          "questions": {
+            "mfg38-solder-wetting-observation-q01": {
+              "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239",
+              "stem": "কোন নমুনায় পৃষ্ঠজুড়ে ছড়ানো জমা দেখা যায়?",
+              "options": [
+                "A",
+                "শুধু B",
+                "দুটিতেই জমা নেই",
+                "A ও B আলাদা করা যায় না"
+              ],
+              "reasons": [
+                "A-তে পৃষ্ঠজুড়ে ছড়ানো দেখানো।",
+                "B-তে স্থানীয় গোল দলা ও খোলা পৃষ্ঠ।",
+                "দুটিতেই দৃশ্যমান জমা আছে।",
+                "ছড়ানোর পার্থক্য চিত্রে আছে।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q02": {
+              "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8",
+              "stem": "কোনটি শুধু B-তে দেখা অবস্থা নথিভুক্ত করে?",
+              "options": [
+                "সব উপাদানে জোড় দুর্বল প্রমাণিত",
+                "স্থানীয় গোল দলা ও খোলা পৃষ্ঠ দেখা যায়",
+                "কঠোরতা অবশ্যই A-এর কম",
+                "নির্ধারিত পরীক্ষা ছাড়াই পাঠানো যায়"
+              ],
+              "reasons": [
+                "চিত্র সব উপাদানের জোড়ের শক্তি প্রমাণ করে না।",
+                "এটি চিত্রভিত্তিক পর্যবেক্ষণ।",
+                "কঠোরতা মাপা হয়নি।",
+                "চেহারার শ্রেণিবিভাগ ও পণ্য গ্রহণ আলাদা।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q03": {
+              "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252",
+              "stem": "A-এর মতো ছড়ানো দেখার পরে সঠিক কাজ কী?",
+              "options": [
+                "ছবি থেকেই বাস্তব উত্তাপের শর্ত ঠিক করা",
+                "সব পরীক্ষিত নমুনা অব্যবহৃত ভালো পণ্যে মেশানো",
+                "চেহারা লিখে নমুনার পরিচয় রক্ষা এবং নির্ধারিত মূল্যায়ন ও সিদ্ধান্তপদ্ধতি যাচাই",
+                "ছড়ালেই অন্য সব শর্ত পাস"
+              ],
+              "reasons": [
+                "পাঠে উত্তাপ বা ডোবানোর শর্ত নেই।",
+                "পরীক্ষায় পরিবর্তিত পণ্য নতুন ভালো পণ্যে মেশাবেন না।",
+                "পর্যবেক্ষণ, নমুনা নিয়ন্ত্রণ ও পণ্যের সিদ্ধান্ত আলাদা রাখুন।",
+                "ছড়ানো অন্য গুণ বা চাহিদার নিশ্চয়তা নয়।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "ne": {
+          "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+          "caption": "एकै आकारका परीक्षण टुक्राका स्वतन्त्र अवलोकन चित्र हुन्। Aमा फैलिएको निक्षेप र Bमा स्थानीय गोलो डल्लो तथा खुला सतह छ। रूपको वर्गीकरणले कठोरता,जोड सामर्थ्य,उत्पादन पास वा कामको अनुमति सुनिश्चित गर्दैन। जिम्मेवार व्यक्तिले नमुना र निर्दिष्ट मूल्याङ्कन विधि पुष्टि गर्छ। वास्तविक तताउने वा डुबाउने सर्त दिइएको छैन।",
+          "questions": {
+            "mfg38-solder-wetting-observation-q01": {
+              "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239",
+              "stem": "कुन टुक्रामा सतहभरि फैलिएको निक्षेप देखिन्छ?",
+              "options": [
+                "A",
+                "Bमात्र",
+                "दुवैमा निक्षेप छैन",
+                "A रBछुट्याउन सकिँदैन"
+              ],
+              "reasons": [
+                "Aमा सतहमा फैलिएको कोरिएको छ।",
+                "Bमा स्थानीय गोलो डल्लो र खुला सतह छ।",
+                "दुवैमा देखिने निक्षेप छ।",
+                "फैलावटको अन्तर देखाइएको छ।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q02": {
+              "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8",
+              "stem": "Bमा देखिने कुरा मात्र लेख्ने कथन कुन?",
+              "options": [
+                "सबै पदार्थको कमजोर जोड प्रमाणित",
+                "स्थानीय गोलो डल्लो र खुला सतह देखिन्छ",
+                "कठोरता Aभन्दा पक्का कम",
+                "निर्दिष्ट परीक्षणबिना पठाउन मिल्छ"
+              ],
+              "reasons": [
+                "चित्रले सबै पदार्थको जोड सामर्थ्य प्रमाणित गर्दैन।",
+                "यो चित्रको अवस्थाको अवलोकन अभिलेख हो।",
+                "चित्रमा कठोरता नापिएको छैन।",
+                "रूप वर्गीकरण र उत्पादन पास फरक हुन्।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q03": {
+              "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252",
+              "stem": "Aजस्तो फैलावट देखेपछि उचित व्यवहार कुन?",
+              "options": [
+                "चित्रबाट वास्तविक ताप सर्त तोक्ने",
+                "सबै परीक्षण टुक्रा नयाँ राम्रो मालमा मिसाउने",
+                "रूप लेखी नमुना पहिचान राखेर निर्दिष्ट मूल्याङ्कन र निर्णय प्रक्रिया पुष्टि गर्ने",
+                "फैलावट भए अरू सबै माग पास"
+              ],
+              "reasons": [
+                "पाठले तताउने वा डुबाउने सर्त दिँदैन।",
+                "परीक्षणले बदलेको वस्तु नयाँ राम्रो मालमा नमिसाउनुहोस्।",
+                "अवलोकन,नमुना नियन्त्रण र निर्णय अलग राखिन्छ।",
+                "फैलावटले अरू गुण वा माग सुनिश्चित गर्दैन।"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "my": {
+          "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+          "caption": "ပုံတူအကဲဖြတ်ပြားများကိုသီးခြားရေးထားသောကြည့်ရှုသင်ခန်းစာဖြစ်သည်။ Aတွင်ပြန့်ကပ်မှု၊Bတွင်နေရာကွက်ဝိုင်းခဲနှင့်ပွင့်မျက်နှာပြင်ရှိသည်။ ဤပုံခွဲခြားမှုကမာကျောမှု၊ဆက်ကြံ့ခိုင်မှု၊ထုတ်ကုန်လက်ခံမှုနှင့်လုပ်ခွင့်ကိုမအာမခံပါ။ တာဝန်ရှိသူကနမူနာနှင့်သတ်မှတ်အကဲဖြတ်နည်းစစ်သည်။ အမှန်အပူပေး၊နှစ်မြှုပ်စည်းကမ်းမပြပါ။",
+          "questions": {
+            "mfg38-solder-wetting-observation-q01": {
+              "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239",
+              "stem": "ဘယ်ပြားတွင်မျက်နှာပြင်ပေါ်ပြန့်ကပ်မှုမြင်ရသနည်း။",
+              "options": [
+                "A",
+                "Bသာ",
+                "နှစ်ခုလုံးကပ်မှုမရှိပါ",
+                "Aနှင့်Bမခွဲနိုင်ပါ"
+              ],
+              "reasons": [
+                "Aတွင်မျက်နှာပြင်တစ်လျှောက်ပြန့်မှုရေးထားသည်။",
+                "Bကနေရာကွက်ဝိုင်းခဲနှင့်ပွင့်မျက်နှာပြင်ဖြစ်သည်။",
+                "နှစ်ခုလုံးတွင်ကပ်မှုမြင်ရသည်။",
+                "ပြန့်မှုကွာခြားချက်ပြထားသည်။"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q02": {
+              "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8",
+              "stem": "Bတွင်မြင်ရသလောက်သာဖော်ပြသည့်အချက်မှာမည်သည်နည်း။",
+              "options": [
+                "ပစ္စည်းအားလုံးဆက်အားမလုံလောက်ကြောင်းသက်သေပြသည်",
+                "နေရာကွက်ဝိုင်းခဲနှင့်ပွင့်မျက်နှာပြင်မြင်ရသည်",
+                "မာကျောမှုAထက်အမြဲနိမ့်သည်",
+                "သတ်မှတ်စမ်းခြင်းမလိုဘဲထုတ်ပို့နိုင်သည်"
+              ],
+              "reasons": [
+                "ပုံသာကပစ္စည်းအားလုံးဆက်အားကိုမသက်သေပြပါ။",
+                "ပုံမြင်ကွင်းအပေါ်အခြေခံသောမှတ်တမ်းဖြစ်သည်။",
+                "ဤပုံတွင်မာကျောမှုမတိုင်းထားပါ။",
+                "ပုံခွဲခြားခြင်းနှင့်ထုတ်ကုန်လက်ခံမှုသီးခြားဖြစ်သည်။"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q03": {
+              "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252",
+              "stem": "Aကဲ့သို့ပြန့်မှုမြင်ပြီးနောက်သင့်လျော်သည်မှာမည်သည်နည်း။",
+              "options": [
+                "ပုံသာမှအမှန်အပူပေးစည်းကမ်းဆုံးဖြတ်မည်",
+                "စမ်းပြီးပစ္စည်းအားလုံးကိုမသုံးရသေးကောင်းပစ္စည်းနှင့်ရောမည်",
+                "ပုံသတင်းရေး၍နမူနာအမှတ်ထိန်းပြီးသတ်မှတ်အကဲဖြတ်နှင့်ဆုံးဖြတ်နည်းစစ်မည်",
+                "ပြန့်လျှင်အခြားလိုအပ်ချက်အားလုံးအောင်သည်"
+              ],
+              "reasons": [
+                "ဤသင်ခန်းစာကအပူပေး၊နှစ်မြှုပ်စည်းကမ်းမပြပါ။",
+                "စမ်းသပ်ပြောင်းလဲပစ္စည်းကိုအသစ်ကောင်းပစ္စည်းနှင့်မရောရပါ။",
+                "ကြည့်ရှုမှု၊နမူနာထိန်းနှင့်ထုတ်ကုန်ဆုံးဖြတ်မှုကိုခွဲထားသည်။",
+                "ပြန့်မှုသာကအခြားဂုဏ်နှင့်လိုအပ်ချက်ကိုမအာမခံပါ။"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "th": {
+          "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+          "caption": "เป็นภาพสังเกตที่วาดใหม่ของชิ้นประเมินรูปทรงเดียวกัน A มีวัสดุเกาะแผ่กว้าง B มีก้อนกลมเฉพาะที่และผิวที่ยังเปิดอยู่ การจำแนกลักษณะนี้ไม่รับรองความแข็ง ความแข็งแรงรอยต่อ การผ่านเกณฑ์ หรือสิทธิทำงาน ผู้รับผิดชอบตรวจชิ้นตัวอย่างและวิธีประเมินที่กำหนด ไม่ได้ระบุเงื่อนไขให้ความร้อนหรือจุ่มจริง",
+          "questions": {
+            "mfg38-solder-wetting-observation-q01": {
+              "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239",
+              "stem": "ชิ้นใดมีวัสดุเกาะแผ่บนผิว",
+              "options": [
+                "A",
+                "เฉพาะB",
+                "ทั้งคู่ไม่มีวัสดุเกาะ",
+                "แยกAกับBไม่ได้"
+              ],
+              "reasons": [
+                "Aแสดงการแผ่ตามผิว",
+                "Bเป็นก้อนกลมเฉพาะที่กับผิวเปิด",
+                "ทั้งคู่มีวัสดุเกาะให้เห็น",
+                "ภาพแสดงความต่างการแผ่"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q02": {
+              "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8",
+              "stem": "ข้อใดบันทึกเฉพาะสิ่งที่เห็นในB",
+              "options": [
+                "พิสูจน์ว่ารอยต่อทุกวัสดุไม่แข็งแรง",
+                "มีก้อนกลมเฉพาะที่และผิวเปิด",
+                "ความแข็งต่ำกว่าAแน่นอน",
+                "ส่งออกได้โดยไม่ทดสอบกำหนด"
+              ],
+              "reasons": [
+                "ภาพไม่พิสูจน์ความแข็งแรงรอยต่อทุกวัสดุ",
+                "เป็นบันทึกตามภาพสังเกต",
+                "ไม่ได้วัดความแข็งในภาพ",
+                "การจำแนกภาพกับการผ่านเกณฑ์เป็นคนละเรื่อง"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q03": {
+              "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252",
+              "stem": "หลังเห็นการแผ่แบบAควรทำอย่างไร",
+              "options": [
+                "กำหนดความร้อนจริงจากภาพอย่างเดียว",
+                "ผสมชิ้นทดสอบทั้งหมดกับของดีใหม่",
+                "บันทึกภาพลักษณะ คงการระบุชิ้น และตรวจวิธีประเมินกับตัดสินกำหนด",
+                "แผ่แล้วข้อกำหนดอื่นผ่านทั้งหมด"
+              ],
+              "reasons": [
+                "บทนี้ไม่ระบุความร้อนหรือการจุ่มจริง",
+                "ห้ามผสมของเปลี่ยนจากการทดสอบกับของดีใหม่",
+                "แยกการสังเกต การจัดการชิ้น และการตัดสินผลิตภัณฑ์",
+                "การแผ่ไม่รับรองสมบัติหรือข้อกำหนดอื่น"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        },
+        "km": {
+          "captionSourceHash": "01c43bf89c1ca874157c61c4734b2bd94517e66d36a0329eed3e228f3286154c",
+          "caption": "នេះជារូបសង្កេតគូរថ្មីនៃបន្ទះសាកមានរូបរាងដូចគ្នា។ Aមានសារធាតុជាប់រាល Bមានដុំមូលតំបន់តូចនិងផ្ទៃបើក។ ការចាត់រូបរាងនេះមិនធានាភាពរឹង កម្លាំងសន្លាក់ ការជាប់ផលិតផលឬសិទ្ធិធ្វើការទេ។ អ្នកទទួលខុសត្រូវផ្ទៀងសំណាកនិងវិធីវាយតម្លៃកំណត់។ មិនផ្តល់លក្ខខណ្ឌកម្ដៅឬជ្រលក់ពិតទេ។",
+          "questions": {
+            "mfg38-solder-wetting-observation-q01": {
+              "sourceHash": "45723811ca6067709f301d1cb98383227a18e4e43054c6cba2392f2da1a0c239",
+              "stem": "បន្ទះណាឃើញសារធាតុជាប់រាលលើផ្ទៃ?",
+              "options": [
+                "A",
+                "តែB",
+                "ទាំងពីរមិនមានសារធាតុជាប់",
+                "មិនអាចបែងAនិងB"
+              ],
+              "reasons": [
+                "Aបង្ហាញការរាលតាមផ្ទៃ។",
+                "Bជាដុំមូលតំបន់តូចនិងផ្ទៃបើក។",
+                "ទាំងពីរមានសារធាតុជាប់មើលឃើញ។",
+                "រូបបង្ហាញភាពខុសនៃការរាល។"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q02": {
+              "sourceHash": "3a78480c3fe0b5d22cf529aa28c5ab93aad4251c940ae6e76de09e2666f4baf8",
+              "stem": "អ្វីកត់តែស្ថានភាពមើលឃើញក្នុងB?",
+              "options": [
+                "បញ្ជាក់សន្លាក់គ្រប់សម្ភារៈខ្សោយ",
+                "ឃើញដុំមូលតំបន់តូចនិងផ្ទៃបើក",
+                "ភាពរឹងទាបជាងAជានិច្ច",
+                "អនុញ្ញាតចេញដោយមិនសាកកំណត់"
+              ],
+              "reasons": [
+                "រូបមិនបញ្ជាក់កម្លាំងសន្លាក់គ្រប់សម្ភារៈ។",
+                "នេះជាកំណត់ត្រាសង្កេតតាមរូប។",
+                "រូបមិនបានវាស់ភាពរឹង។",
+                "ការចាត់រូបរាងនិងជាប់ផលិតផលជារឿងផ្សេង។"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            },
+            "mfg38-solder-wetting-observation-q03": {
+              "sourceHash": "9cf78c71247daad46b1136901e29816660fba828c92ebb85bc119fded78f6252",
+              "stem": "ក្រោយឃើញការរាលដូចA តើធ្វើអ្វីសមស្រប?",
+              "options": [
+                "សម្រេចកម្ដៅពិតពីរូបតែប៉ុណ្ណោះ",
+                "លាយសំណាកសាកទាំងអស់នឹងទំនិញល្អថ្មី",
+                "កត់រូបរាង រក្សាសម្គាល់សំណាក និងផ្ទៀងវិធីវាយតម្លៃនិងសម្រេចកំណត់",
+                "រាលមានន័យថាតម្រូវការផ្សេងជាប់ទាំងអស់"
+              ],
+              "reasons": [
+                "មេរៀនមិនផ្តល់លក្ខខណ្ឌកម្ដៅឬជ្រលក់។",
+                "មិនលាយវត្ថុប្រែពីការសាកនឹងទំនិញល្អមិនទាន់ប្រើ។",
+                "បំបែកសង្កេត គ្រប់គ្រងសំណាកនិងសម្រេចផលិតផល។",
+                "ការរាលមិនធានាគុណលក្ខណៈឬតម្រូវការផ្សេង។"
+              ],
+              "nativeReviewed": false,
+              "domainReviewed": false,
+              "status": "ai_translated_draft"
+            }
+          },
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "humanReviewed": false
+        }
+      },
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false,
+      "releaseReady": false
+    }
+  ]
+}
