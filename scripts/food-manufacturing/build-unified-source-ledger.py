@@ -28,8 +28,8 @@ def build():
     decisions=read(OUT/'decisions.json') if (OUT/'decisions.json').exists() else {}
     supplement_paths=sorted(p for p in DATA.glob('source-closure*.json') if re.fullmatch(r'source-closure\d+\.json',p.name))
     supplement_ids={s['id'] for path in supplement_paths for s in read(path)['sections']}
-    assessment_path=DATA/'source-assessment34.json'
-    assessment_ids={c['id'] for c in read(assessment_path)['checks']} if assessment_path.exists() else set()
+    assessment_paths=sorted(p for p in DATA.glob('source-assessment*.json') if re.fullmatch(r'source-assessment\d+\.json',p.name))
+    assessment_ids={c['id'] for path in assessment_paths for c in read(path)['checks']}
     figure_manifests=sorted(p for p in OUT.glob('figures*.json') if re.fullmatch(r'figures\d+\.json',p.name))
     figures32={f['id']:f for path in figure_manifests for f in read(path)['figures']}
     lessons={};questions={};input_hashes={}
@@ -80,7 +80,7 @@ def build():
     for p in pages:p['currentVisualReview']=viewed.get((p['document'],p['pdfPage']));p['visualEvidenceAvailable']=p['historicalVisualRead'] or bool(p['currentVisualReview'])
     assert len(pages)==251 and len({(p['document'],p['pdfPage']) for p in pages})==251
     assert len(records)==len({r['id'] for r in records})
-    for p in [OUT/'decisions.json',OUT/'visual-review.json',*supplement_paths,assessment_path,OUT/'question-audit.json',OUT/'source-coverage34.json',OUT/'assessment-link34.json',*figure_manifests,*sorted(OUT.glob('atomic-knowledge[0-9]*.json')),*sorted(OUT.glob('question-semantic[0-9]*.json'))]:
+    for p in [OUT/'decisions.json',OUT/'visual-review.json',*supplement_paths,*assessment_paths,OUT/'question-audit.json',OUT/'source-coverage34.json',OUT/'assessment-link34.json',*figure_manifests,*sorted(OUT.glob('atomic-knowledge[0-9]*.json')),*sorted(OUT.glob('question-semantic[0-9]*.json'))]:
         if p.exists():input_hashes[str(p.relative_to(ROOT))]=sha(p)
     identity=[{k:d[k] for k in ['id','level','filename','version','editionDate','pdfPageCount','sha256','printedPageOffset']} for d in read(DOC/'source-map.json')['documents']]
     write(OUT/'ledger.json',{'schemaVersion':1,'sourceDocuments':identity,'inputSha256':input_hashes,'pages':pages,'records':records,'scopeComplete':False,'fullAtomicSourceDecompositionComplete':False,'humanReviewed':False,'nativeReviewed':False,'domainReviewed':False})

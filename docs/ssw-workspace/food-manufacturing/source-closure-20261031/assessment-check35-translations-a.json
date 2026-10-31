@@ -1,0 +1,769 @@
+{
+  "translations": {
+    "en": {
+      "food-assessment35-stacked-share": {
+        "title": "Read proportions separately from counts in a stacked bar chart",
+        "prompt": "In the learning chart, A has X 30%, Y 50%, Z 20%, while B has X 40%, Y 20%, Z 40%. Check each row’s total and compare the proportion of Y. If the total number of cases in A and B is not given, can you conclude that A also has more Y cases? Explain.",
+        "expectedPoints": [
+          "A totals 30+50+20=100% and B totals 40+20+40=100%. Compare composition with each row’s whole set to 100%.",
+          "Y accounts for 50% in A and 20% in B, so its proportion is larger in A.",
+          "Without the total counts, you cannot determine which has more actual Y cases.",
+          "Proportions and counts differ. Confirm the categories and denominator conditions used in the comparison."
+        ],
+        "sourceHash": "e7943c0c4e90c6f334ad4145d4d32e0a60d709966a260d760f97f0a59eb60a12"
+      },
+      "food-assessment35-radar-scale": {
+        "title": "Read the common scale and individual radar axes",
+        "prompt": "All axes of the learning radar chart use 0–5. For axes I–V, A has 4,2,3,5,1 and B has 2,4,3,2,4. State which is higher on each axis and where they are equal. May you decide an overall ranking from area alone?",
+        "expectedPoints": [
+          "Confirm that every axis uses the same 0–5 scale.",
+          "A is higher on I and IV; B is higher on II and V.",
+          "On III, both A and B are 3.",
+          "Compare each characteristic separately. Do not rank overall by area alone; check what each item means and the evaluation conditions."
+        ],
+        "sourceHash": "b712bb94d50d77d3d38c68194959e0dd12e91079aae6cebcc6224ce8ca6a5c98"
+      },
+      "food-assessment35-progress-band": {
+        "title": "Read cumulative progress axes and a hypothetical band",
+        "prompt": "In the learning progress chart, the standard is 60 kg/hour, the band is hypothetically±15 kg around the standard line, and actual output after 3 hours is 160 kg. Distinguish the horizontal and vertical axes and the standard and actual lines. Calculate the lower band value after 3 hours and compare it with actual output. Can this band be used directly as a workplace stop criterion?",
+        "expectedPoints": [
+          "The horizontal axis is elapsed time and the vertical axis cumulative output in kg. The standard line represents the plan and the actual line actual output.",
+          "At 3 hours the standard is 60×3=180 kg, so the lower band is 180−15=165 kg.",
+          "Actual output 160 kg is 5 kg below 165 kg and lies below the hypothetical band.",
+          "±15 kg is a learning assumption. Actual criteria and responses must be checked against workplace conditions and approved procedures."
+        ],
+        "sourceHash": "fd1f87ef3a893337122de0015429c33300090b8a70bfde9827649bd7a6d190d2"
+      },
+      "food-assessment35-report-paths": {
+        "title": "Compare direct reporting and routes through a team leader",
+        "prompt": "Look at the two learning organisation charts. Explain the instruction and reporting routes when the supervisor communicates directly with workers and when communication goes through a team leader. May you assume your workplace must use the same routes as these diagrams?",
+        "expectedPoints": [
+          "In the direct model, instructions go from supervisor to workers and reports from workers to supervisor.",
+          "In the team-leader model, instructions go supervisor→team leader→workers; reports go workers→team leader→supervisor.",
+          "These are examples of organisation. Do not determine authority or responsibilities from titles alone.",
+          "Confirm your workplace’s organisation and authority, and use its defined instruction and reporting routes."
+        ],
+        "sourceHash": "129fe58a408ecc487753b9857fbda975db230be949efda3a39b209595eb19e28"
+      },
+      "food-assessment35-design-residual": {
+        "title": "Explain hazards reduced by design and those that remain",
+        "prompt": "Compare the learning diagrams for rounding a sharp corner and making a heavy door lighter. What danger or harm does each reduce, and what still needs checking? Is it correct to say, “Once the door is lighter, trapped fingers can never be injured”?",
+        "expectedPoints": [
+          "Rounding a sharp corner reduces dangers such as piercing injuries on contact.",
+          "A lighter door reduces harm when someone is trapped, but does not eliminate the trapping hazard itself or the possibility of injury.",
+          "Evaluate and approve proposals with equipment staff, then check their effect and remaining risks after the change.",
+          "The diagrams teach design principles; workers must not alter equipment independently or give an unconditional safety guarantee."
+        ],
+        "sourceHash": "0e330f034afc7f9952ab78aa63267b5257d08be0eec11d952b2835288920fb20"
+      },
+      "food-assessment35-ojt-observation": {
+        "title": "Check safety, records and abnormal-response actions in OJT",
+        "prompt": "During OJT for measuring filling quantity, you are about to finish the assessment because the learner measured quickly. How should you compare the goal with actual work? How will you check safe operation, measurement, records and reporting abnormalities, and what will you do if something is lacking?",
+        "expectedPoints": [
+          "Assess against the previously defined goal and conditions; speed or attendance records alone do not prove acquisition.",
+          "After the instructor demonstrates, have the learner perform the task while explaining its steps and reasons.",
+          "Observe safe operation and accurate measurement, and check whether actual results can be recorded.",
+          "Use the learner’s explanation or behaviour in a hypothetical scenario to check whom to tell and what to report when an abnormality occurs.",
+          "Check why performance is insufficient, revise instruction or practice, retrain, and assess again against the goal."
+        ],
+        "sourceHash": "94390ce64ea947ef55b01f509a3b94a1c4025c59bd339b22ca7295632361026b"
+      },
+      "food-assessment35-distribution-recognition": {
+        "title": "Match distribution shapes with conditions to investigate",
+        "prompt": "Match histogram examples A–F in the lesson to the six types and scatter plots A–D to the four relationships. Explain the histogram axes and what to investigate for bimodal, gap-toothed, tailed, cliff and isolated-island shapes. For another hypothetical set of 36 data points, what is the√n guide for the number of classes? Can this guide or a shape alone establish the cause or stability?",
+        "expectedPoints": [
+          "Histogram A is general, B gap-toothed, C tailed, D cliff, E bimodal and F isolated-island.",
+          "The horizontal axis gives measurement classes; the vertical axis gives frequency in each class.",
+          "For bimodal or isolated-island patterns, investigate possible mixed populations by separating data by attributes.",
+          "For gap-toothed patterns, check measurement precision, boundaries, class width and inconsistent data processing.",
+          "For tailed patterns investigate one-sided control; for cliffs investigate sorting or exclusion history. Shape alone does not establish a cause.",
+          "Scatter plot A is positive correlation, B negative, C nonlinear and D no clear relationship. Pair corresponding measurements; correlation alone does not prove causation.",
+          "√36=6 suggests about 6 classes, but is not a fixed rule. Check data quantity, distribution and measurement precision; widths that are too narrow or broad change the shape.",
+          "A general shape alone does not prove stability. Use charts as clues to inspect actual items, measurement methods and original data."
+        ],
+        "sourceHash": "b541f4599a73cb80aaaeb0ec5b61fd5143ce63c3e8a97d52f49bf2a39b6bfac1"
+      },
+      "food-assessment35-control-patterns": {
+        "title": "Distinguish eight reference time-series patterns",
+        "prompt": "Charts A–H in the lesson are unitless hypothetical examples with centre 0, reference upper/lower lines±3 and auxiliary lines±1 and±2. Explain the axes and centre/upper/lower lines, then read the point counts and positions in each chart. State hypotheses to investigate for G and H. May these examples directly replace product specifications or workplace decision rules?",
+        "expectedPoints": [
+          "Horizontal axis: observation order; vertical axis: a hypothetical index. Centre 0, upper reference+3, lower−3; distinguish these from product specifications.",
+          "In A, the 6 th point,3.4, exceeds the upper reference 3.",
+          "In B,9 consecutive points lie above centre 0.",
+          "In C,6 consecutive points rise.",
+          "In D,14 points alternate upward and downward.",
+          "In E,2 of 3 points lie above+2, near the upper line.",
+          "In F,4 of 5 points lie above+1, favouring the same side.",
+          "In G,15 points cluster near the centre, inside the band from−1 to+1.",
+          "In H,8 points lie outside the central band from−1 to+1.",
+          "Investigate hypotheses such as small variation for G and mixed populations for H; these are not confirmed causes.",
+          "Distinguish the textbook’s JIS reference examples from company rules and responses. The responsible department sets conditions suited to the product; fictional numbers and reference lines are not universal factory limits."
+        ],
+        "sourceHash": "062f8b2e9f39ed88c2ee66125706b16a5cf28d9c142de23c92fb1b25814ea364"
+      },
+      "food-assessment35-tally-categories": {
+        "title": "Reconcile totals by day and by category",
+        "prompt": "The hypothetical records show packaging defects 3 and dirt 2 on day 1, then packaging defects 1 and dirt 4 on day 2. Calculate daily, category and overall totals, and check that summing in both directions gives the same total. Explain why staff should use consistent category names and recording methods.",
+        "expectedPoints": [
+          "Day 1:3+2=5 cases; day 2:1+4=5 cases.",
+          "Packaging defects:3+1=4 cases; dirt:2+4=6 cases.",
+          "Daily totals 5+5=10 and category totals 4+6=10 agree.",
+          "Use consistent categories, units and recording methods to prevent duplicate counts or classification differences, and use the records for cause analysis."
+        ],
+        "sourceHash": "5df067147588b28acbbb0933116ea02662a9e3e2672e7c41d542e463871b6bec"
+      },
+      "food-assessment35-plan-report-reserve": {
+        "title": "Translate plans into work and report staffing facts",
+        "prompt": "How do you turn the company production plan into work on your line? In a separate hypothetical comparison of the same acceptable product with no stoppages,3 people make 60 kg in 1 hour before a change and 4 people make 72 kg in 1 hour afterwards. Calculate output per hour and per person-hour, and state what to report for management decisions. Distinguish company reserve capacity, avoidable shop-floor stops, and a design proposal for spare downstream capacity.",
+        "expectedPoints": [
+          "Develop company volume, timing and procurement plans into concrete factory plans, then line materials, equipment, staffing, time and work sequence. Report changed conditions to relevant departments and managers.",
+          "Line output rises from 60 to 72 kg/hour. Labour input rises from 3 to 4 person-hours, while labour productivity falls from 60÷3=20 to 72÷4=18 kg/person-hour.",
+          "Do not report improvement in only one measure. Tell managers the output, staffing, person-hours, quality conditions and changes in both measures to support decisions suited to the company.",
+          "Company/factory reserve for demand changes is a management decision; it does not authorise neglecting avoidable stops or waiting within planned operating time. Do not remove or conceal stops needed for safety.",
+          "Downstream reserve capacity is a design proposal considered against variability and equipment conditions, not a fixed capacity order imposed on every line."
+        ],
+        "sourceHash": "399d11c6a557659c7367155bc5a9dce279af660db829fd5403648cb34cfafe6d"
+      },
+      "food-assessment35-productivity-four-cases": {
+        "title": "Compare four input-and-output cases",
+        "prompt": "These hypothetical cases use the same acceptable product and quality conditions. The baseline is 100 kg in 10 person-hours. A:120 kg/10 person-hours; B:100 kg/5; C:180 kg/15; D:80 kg/5. Calculate baseline and A–D labour productivity, then explain four ways improvement can occur while output or input changes. What does reversing the numerator and denominator represent?",
+        "expectedPoints": [
+          "Baseline 100÷10=10 kg/person-hour; A 120÷10=12; B 100÷5=20; C 180÷15=12; D 80÷5=16 kg/person-hour. All exceed baseline.",
+          "A raises output with the same input; B reduces input for the same output.",
+          "In C both input and output rise, but output rises proportionally more.",
+          "In D output also falls, but input falls proportionally more.",
+          "Person-hours÷kg is resource input per unit of product. Do not treat productivity and input-per-unit as the same numerical indicator; align units and quality conditions."
+        ],
+        "sourceHash": "8748b6881b90da4482fd0a0841d57750cdc84f2f0a3ad5b8f03b5b38260ae86c"
+      },
+      "food-assessment35-daily-record-followup": {
+        "title": "Pass daily records to subsequent work and maintenance",
+        "prompt": "The daily report contains only total output. How should stoppages, ingredient receipts/issues and stock, and improvement information be recorded, and to whom should they be passed? Explain why brief stoppages are reviewed over a week or month and how equipment information supports preventive action on similar machines.",
+        "expectedPoints": [
+          "Besides output, accurately record stop/abnormality times and reasons, ingredient receipts/issues and stock, and that day’s issues and improvements.",
+          "Report to managers and share issues and preparation for the next work with upstream/downstream processes.",
+          "Record brief stops accurately too; examine weekly/monthly recurrence. Discuss equipment causes and maintenance with managers and equipment specialists.",
+          "Link consumable-part stocks and replacement history to consider replacement before failure. Provide workplace facts for accident investigation and check for the same dangers in similar equipment or tasks."
+        ],
+        "sourceHash": "002d156efc34afa1063746a59179d8c537d01bb029d7cd76655e1df8e7e8fb6b"
+      },
+      "food-assessment35-yield-scope-pretreatment": {
+        "title": "Check the denominator for pretreatment and sales units",
+        "prompt": "Assume all outputs meet quality requirements and there are no other changes. Compare removing 20 kg of inedible parts from 100 kg of untreated ingredients and losing 10 kg of water in heating with purchasing 80 kg of pretreated ingredients and losing 10 kg in the same heating. In a separate example, input 100 kg yields 70 bags of nominal 1 kg, with actual total weight 77 kg. Explain weight-based and bag-count-based yield and whether theoretical bag-count and nominal-weight calculations agree.",
+        "expectedPoints": [
+          "First case:100−20−10=70 kg acceptable output, or 70% of this factory’s input. Purchased case:80−10=70 kg, or 87.5% of this factory’s input.",
+          "Purchased material was pretreated outside the factory, so denominators and control boundaries differ. Equal acceptable output does not alone prove better overall efficiency including pretreatment. Do not classify necessary bone removal or quality-related water loss as universally avoidable waste.",
+          "For the separate sales example, weight yield 77÷100=77%. Nominal-weight conversion for bag sales:70 bags×1 kg=70 kg, giving 70÷100=70%.",
+          "Input 100 kg÷nominal 1 kg gives 100 theoretical bags;70 actual bags gives 70÷100=70%, matching nominal-weight conversion. Separately check the 7 kg excess actual weight as overfilling.",
+          "Protect quality, labelling and required quantity; do not omit necessary processing or filling conditions merely to raise yield figures."
+        ],
+        "sourceHash": "55f185112062a9bf8d0c07f19cf13217504b8401fc4226abac92e7a21902ca95"
+      },
+      "food-assessment35-environment-capacity-boundary": {
+        "title": "Check environmental indicator boundaries and treatment capacity",
+        "prompt": "May unsupported factors be used to estimateCO2 from electricity, petroleum and gas consumption? How can highly contaminated wastewater affect treatment capacity and factory operation even if its volume falls? Distinguish shop-floor residue recovery/water saving from company decisions on equipment investment and renewable energy. State what to check when comparing different production volumes or periods.",
+        "expectedPoints": [
+          "Use measured consumption for the relevant period and confirm justified conversion conditions with the responsible department. Do not directly add different units or calculate with inventedCO2 factors.",
+          "Compare both wastewater volume and contamination load, including organic matter, with treatment capacity. If it cannot be accepted, water use and production may be prevented.",
+          "The shop floor maintains hygiene, recovers residues first and reduces unnecessary spraying and avoidable food loss. Distinguish this from company-wide investment, renewable-energy, process or ordering decisions, which also use workplace data.",
+          "For the same comparison period and product conditions, check both total use and input per product unit. Do not hide differences in production or denominator, or cut required washing and safety."
+        ],
+        "sourceHash": "c445600c4480e3a30e32c9ce8477ab9494e61c0ce3f6825dcdb25c57b4dbde15"
+      },
+      "food-assessment35-financial-indicator-boundary": {
+        "title": "Do not confuse a defined value difference with accounting profit",
+        "prompt": "After doing the lesson’s financial calculations, may the value-added difference defined in that example be treated as revenue or accounting profit for the whole company or another company? Explain the numerator, denominator and cost boundaries to check, and the limits of evaluating indirect departments only by manufactured kilograms.",
+        "expectedPoints": [
+          "Value added is new value generated by company activity, not all revenue. The lesson’s difference is defined for that exercise.",
+          "Check which material, labour, power/fuel and other costs are included. Do not equate an indicator with accounting profit when cost boundaries differ between companies or departments.",
+          "Confirm whether the numerator is physical output, revenue or value added, and whether the denominator is elapsed time or person-hours. Align quality conditions and comparison scope.",
+          "Indirect quality-control, equipment and administration functions also support the factory. Do not judge each solely by kilograms directly produced; choose indicators suited to its role and whole-factory objectives."
+        ],
+        "sourceHash": "8ed0aac6dd88adbd3d84d8b6efd7f0fac53f5f8e577613999dd0555af9128791"
+      },
+      "food-assessment35-consumer-use": {
+        "title": "Consumers and use after opening",
+        "prompt": "A single-serving product is changed to a large bag used over several days after opening. Infants, people who are ill and older people may also eat it. Explain what information to add to the product description and how the findings will be used.",
+        "expectedPoints": [
+          "Specify the intended consumers, how the food is eaten, whether it is heated and the conditions for using portions after opening.",
+          "Investigate the utensils used to remove food, contact with people and storage conditions after opening.",
+          "Do not judge safety using unopened-storage conditions alone.",
+          "Consumers and methods of use can change the hazards to consider. Give the information to the HACCP team for hazard analysis."
+        ],
+        "sourceHash": "4a9238e975e1582b65ac079ce1c25b06227e9de7a4ff452a3e8830b13e1f152a"
+      },
+      "food-assessment35-flow-paths": {
+        "title": "Process-flow boundaries and control points",
+        "prompt": "Trace the routes of ingredients A and B, packaging materials, workers and utensils in the learning diagram. For a proposal to add an unheated ingredient after heating, explain the zone boundaries, critical control points and process conditions that must be checked.",
+        "expectedPoints": [
+          "Trace the joining of ingredients A and B separately from the step where packaging materials enter.",
+          "Check routes by which people, utensils and splashes could enter the clean side from the contaminated side.",
+          "Hazards from an ingredient added after heating cannot be controlled by that earlier heating alone and require a separate evaluation.",
+          "Determine critical control points from hazard analysis; do not designate every step uniformly.",
+          "Check the approved product-specific heating temperature, time and measurement method. Do not transfer numerical conditions from a different product."
+        ],
+        "sourceHash": "4443f85813a02a1714bc3ebb325744e162afbe4967c61c9a9fec0370c0e9bbb2"
+      },
+      "food-assessment35-cleaning-order": {
+        "title": "Cleaning sequence and allocation of work",
+        "prompt": "Plan equipment cleaning after production. How will you handle residues, equipment that can be dismantled, closed piping, treatment after rinsing and allocation of upstream and downstream work?",
+        "expectedPoints": [
+          "First collect raw materials, work in progress and adhering residues hygienically to reduce the wastewater load. Follow approved conditions for any reuse.",
+          "Clarify shutdown, isolation and responsibilities. Follow approved equipment-appropriate procedures for dismantling, preliminary cleaning, detergent washing, rinsing, prescribed drying and reassembly.",
+          "Use an approved CIP procedure suitable for closed piping and tanks. Do not dismantle them or change chemicals on your own.",
+          "Even when proceeding from upstream to downstream, do not return dirt or cleaning water to cleaned areas. Prevent duplicated or interfering work.",
+          "Managers and workplace supervisors establish methods and procedures, train and supervise. Assigned workers hand records and abnormalities over to the person responsible for checking."
+        ],
+        "sourceHash": "891a33975667beb6508043e992061a44d59c33e242c5320804d05e0ed18844fb"
+      },
+      "food-assessment35-lookup-matrix": {
+        "title": "A lookup table rather than multiplication",
+        "prompt": "In this original practice table, rows are high, medium and low likelihood; columns are fatal, lost-work-time and minor severity. The high row is H, H, M; the medium row H, M, L; and the low row H, M, L. H requires immediate action and stopping until action is completed; M requires prompt action and stopping is desirable; L requires action as needed. Look up “low likelihood, fatal” and “medium likelihood, minor” and explain how this differs from multiplication.",
+        "expectedPoints": [
+          "The intersection of low likelihood and fatal severity is H: take immediate action and stop until the action is completed.",
+          "The intersection of medium likelihood and minor severity is L: take action as needed.",
+          "Read the row-column intersection in this table; do not multiply numbers to create categories.",
+          "Do not treat a fatal consequence lightly merely because its frequency is low.",
+          "This is an original practice table, not the numerical table in the source or an official company standard. In practice, follow the adopted table and stopping conditions."
+        ],
+        "sourceHash": "6ccc4d57bc38a8621e640c3c61ec4b82c7068f8cf1503f715e058ea049cf713c"
+      },
+      "food-assessment35-education-plan": {
+        "title": "Types of learning needs and 5 W 1 H",
+        "prompt": "A does not know how a machine works. B can explain it but cannot operate it. C does not understand the purpose of the work and skips checks. Distinguish the education needed, create a 5 W 1 H training plan for a person assigned to new equipment and explain how you will check the results.",
+        "expectedPoints": [
+          "Consider knowledge education for A, skill training for B and attitude education for C. However, confirm the actual causes through observation and questions rather than assuming them.",
+          "Set goals describing why the training is needed and what the learner should be able to do, to what standard.",
+          "Specify who learns and who teaches, what, when, where, why and how.",
+          "Identify needs such as a new assignment or new equipment, prepare the content and a safe practice environment, then conduct the training.",
+          "Check achievement through questionnaires, reports and observation of work on site, and improve the plan and instruction."
+        ],
+        "sourceHash": "6aa9a308b48150cb7ed2952628268b66335fb8127528450371e6ad93c03c9b9e"
+      },
+      "food-assessment35-conditional-chart": {
+        "title": "Proportions among companies receiving six types of consultation",
+        "prompt": "This original chart reinterprets the source survey conducted in fiscal 2023. It covers companies that received consultations in the preceding three years and shows whether cases occurred for each type. For power harassment, n = 4,985 and 73.0% had cases; for sexual harassment during job seeking and similar situations, n = 54 and 37.0% had cases. Using the six-group chart, including the other four types, read the proportion with no power-harassment cases and explain each group’s denominator and cautions when comparing proportions.",
+        "expectedPoints": [
+          "For power harassment, 27.0% had no applicable cases; together with the 73.0% with cases, this totals 100%.",
+          "The six types are power harassment, sexual harassment, harassment concerning pregnancy, childbirth or childcare leave, harassment concerning family-care leave, seriously disruptive customer conduct, and sexual harassment during job seeking and similar situations.",
+          "The denominator for each type is companies that received consultations about that type during the preceding three years, not all companies or all workers.",
+          "The n differs between groups. Comparing percentages for 4,985 power-harassment companies and 54 job-seeking sexual-harassment companies does not equate the company counts or the overall number of victims.",
+          "The same company may belong to multiple groups; adding the six percentages cannot produce an overall incidence rate.",
+          "These are figures from a survey conducted in fiscal 2023; do not assert that they are the current nationwide incidence rates."
+        ],
+        "sourceHash": "d0ee3345a502e615d9ac53efa0ff051a070dc2135f60c567021b30d4a8b997ce"
+      }
+    },
+    "vi": {
+      "food-assessment35-stacked-share": {
+        "title": "Đọc riêng tỷ lệ và số lượng trên biểu đồ thanh chồng",
+        "prompt": "Trên biểu đồ học tập, A có X 30%, Y 50%, Z 20%; B có X 40%, Y 20%, Z 40%. Hãy kiểm tra tổng mỗi hàng và so sánh tỷ lệ Y. Nếu chưa biết tổng số trường hợp của A và B, có thể kết luận số trường hợp Y thực tế của A cũng nhiều hơn không? Hãy giải thích.",
+        "expectedPoints": [
+          "A có 30+50+20=100%, B có 40+20+40=100%; so sánh cơ cấu khi tổng thể mỗi hàng được quy về 100%.",
+          "Y chiếm 50% ở A và 20% ở B, nên tỷ lệ Y của A lớn hơn.",
+          "Chưa biết tổng số trường hợp thì không thể kết luận bên nào có số trường hợp Y thực tế nhiều hơn.",
+          "Tỷ lệ khác với số lượng thực tế. Cần xác nhận các nhóm và điều kiện của mẫu số khi so sánh."
+        ],
+        "sourceHash": "e7943c0c4e90c6f334ad4145d4d32e0a60d709966a260d760f97f0a59eb60a12"
+      },
+      "food-assessment35-radar-scale": {
+        "title": "Đọc thang đo chung và từng trục của biểu đồ radar",
+        "prompt": "Mọi trục của biểu đồ radar học tập dùng thang 0–5. Giá trị trên các trục I–V của A là 4,2,3,5,1; của B là 2,4,3,2,4. Hãy nêu bên nào cao hơn trên từng trục và trục nào bằng nhau. Có được xếp hạng tổng thể chỉ theo diện tích không?",
+        "expectedPoints": [
+          "Xác nhận mọi trục đều dùng cùng thang 0–5.",
+          "A cao hơn trên I và IV; B cao hơn trên II và V.",
+          "Trên III, cả A và B đều bằng 3.",
+          "So sánh từng đặc tính. Không chỉ theo diện tích để xếp hạng tổng thể; cần kiểm tra ý nghĩa từng mục và điều kiện đánh giá."
+        ],
+        "sourceHash": "b712bb94d50d77d3d38c68194959e0dd12e91079aae6cebcc6224ce8ca6a5c98"
+      },
+      "food-assessment35-progress-band": {
+        "title": "Đọc trục tiến độ lũy tích và dải giả định",
+        "prompt": "Trên biểu đồ tiến độ học tập, mức chuẩn là 60 kg/giờ, dải quanh đường chuẩn được giả định là±15 kg và thực tế sau 3 giờ đạt 160 kg. Hãy phân biệt trục ngang, trục dọc, đường chuẩn và đường thực tế; tính giới hạn dưới của dải sau 3 giờ rồi so với thực tế. Có thể dùng ngay dải này làm tiêu chí dừng tại nơi làm việc không?",
+        "expectedPoints": [
+          "Trục ngang là thời gian đã qua, trục dọc là sản lượng lũy tích theo kg; đường chuẩn biểu thị kế hoạch, đường thực tế biểu thị sản lượng thực tế.",
+          "Sau 3 giờ, mức chuẩn là 60×3=180 kg; giới hạn dưới là 180−15=165 kg.",
+          "Thực tế 160 kg thấp hơn 165 kg là 5 kg, nằm dưới dải giả định.",
+          "±15 kg là giả định học tập. Tiêu chí và cách xử lý thực tế phải được xác nhận theo điều kiện nơi làm việc áp dụng và quy trình đã phê duyệt."
+        ],
+        "sourceHash": "fd1f87ef3a893337122de0015429c33300090b8a70bfde9827649bd7a6d190d2"
+      },
+      "food-assessment35-report-paths": {
+        "title": "So sánh tuyến trực tiếp và tuyến qua trưởng nhóm",
+        "prompt": "Xem hai sơ đồ tổ chức học tập rồi giải thích tuyến chỉ thị và báo cáo trong mô hình tổ trưởng trao đổi trực tiếp với người lao động và mô hình thông qua trưởng nhóm. Có được mặc nhiên quyết định nơi làm việc của mình bắt buộc phải theo đúng tuyến trong hình không?",
+        "expectedPoints": [
+          "Ở mô hình trực tiếp, tổ trưởng truyền chỉ thị cho người lao động; người lao động báo cáo cho tổ trưởng.",
+          "Ở mô hình qua trưởng nhóm, chỉ thị đi từ tổ trưởng→trưởng nhóm→người lao động; báo cáo đi từ người lao động→trưởng nhóm→tổ trưởng.",
+          "Đây là các ví dụ tổ chức; không quyết định quyền hạn và người phụ trách chỉ theo tên chức danh.",
+          "Xác nhận cơ cấu và quyền hạn tại nơi làm việc, rồi dùng tuyến chỉ thị và báo cáo đã quy định."
+        ],
+        "sourceHash": "129fe58a408ecc487753b9857fbda975db230be949efda3a39b209595eb19e28"
+      },
+      "food-assessment35-design-residual": {
+        "title": "Giải thích nguy hiểm giảm đi và nguy hiểm còn lại sau thiết kế",
+        "prompt": "So sánh hai hình học tập về bo tròn góc nhọn và làm cửa nặng nhẹ hơn. Mỗi phương án giảm nguy hiểm hoặc thiệt hại gì và còn phải kiểm tra gì? Câu “cửa đã nhẹ thì ngón tay bị kẹp cũng tuyệt đối không bị thương” có đúng không?",
+        "expectedPoints": [
+          "Bo tròn góc nhọn làm giảm nguy hiểm như bị đâm khi tiếp xúc.",
+          "Cửa nhẹ hơn làm giảm thiệt hại khi bị kẹp, nhưng không loại bỏ hoàn toàn nguy cơ bị kẹp hoặc khả năng chấn thương.",
+          "Cùng bộ phận thiết bị đánh giá, phê duyệt phương án; sau thay đổi, kiểm tra hiệu quả và nguy cơ còn lại.",
+          "Hình dùng để học cách tư duy thiết kế; người lao động không tự ý thay đổi thiết bị hoặc bảo đảm an toàn vô điều kiện."
+        ],
+        "sourceHash": "0e330f034afc7f9952ab78aa63267b5257d08be0eec11d952b2835288920fb20"
+      },
+      "food-assessment35-ojt-observation": {
+        "title": "Kiểm tra an toàn, ghi chép và hành động khi bất thường trong OJT",
+        "prompt": "Trong OJT đo lượng chiết rót, bạn định kết thúc kiểm tra vì người học đo nhanh. Cần đối chiếu mục tiêu với công việc thực tế thế nào? Kiểm tra bằng cách nào về thao tác an toàn, đo lường, ghi chép và liên lạc khi bất thường; nếu còn thiếu thì làm gì?",
+        "expectedPoints": [
+          "Đối chiếu mục tiêu cần đạt và điều kiện đã xác định trước; không kết luận đã thành thạo chỉ từ tốc độ hoặc hồ sơ tham dự.",
+          "Sau khi người hướng dẫn làm mẫu, yêu cầu người học vừa thực hiện thực tế vừa giải thích các bước và lý do.",
+          "Quan sát thao tác an toàn và phép đo đúng, kiểm tra có ghi được kết quả thực tế không.",
+          "Qua lời giải thích hoặc hành động trong tình huống giả định, xác nhận người học biết báo cho ai và thông tin gì khi bất thường.",
+          "Tìm nguyên nhân chưa đạt, điều chỉnh cách dạy hoặc luyện tập, hướng dẫn lại rồi kiểm tra lại theo mục tiêu."
+        ],
+        "sourceHash": "94390ce64ea947ef55b01f509a3b94a1c4025c59bd339b22ca7295632361026b"
+      },
+      "food-assessment35-distribution-recognition": {
+        "title": "Ghép dạng phân bố với điều kiện cần kiểm tra",
+        "prompt": "Ghép các biểu đồ tần suất A–F trong bài với sáu dạng và biểu đồ phân tán A–D với bốn mối quan hệ. Giải thích hai trục của biểu đồ tần suất và điều cần kiểm tra với dạng hai đỉnh, răng khuyết, đuôi kéo dài, vách đứng, đảo tách rời. Với một bộ giả định khác có 36 giá trị, số khoảng tham khảo√n là bao nhiêu? Có thể chỉ theo quy tắc tham khảo hoặc hình dạng mà kết luận nguyên nhân hay tính ổn định không?",
+        "expectedPoints": [
+          "Biểu đồ tần suất A dạng thông thường, B răng khuyết, C đuôi kéo dài, D vách đứng, E hai đỉnh, F đảo tách rời.",
+          "Trục ngang là các khoảng giá trị đo; trục dọc là tần số của mỗi khoảng.",
+          "Với dạng hai đỉnh hoặc đảo tách rời, nghi ngờ việc trộn các tập hợp và tách theo thuộc tính để kiểm tra.",
+          "Với dạng răng khuyết, kiểm tra độ chính xác của phép đo, ranh giới, độ rộng khoảng và sự không thống nhất khi xử lý dữ liệu.",
+          "Với dạng đuôi kéo dài, xem việc chỉ quản lý một phía; với dạng vách đứng, xem lịch sử lựa chọn hoặc loại trừ. Không chỉ theo hình dạng mà kết luận nguyên nhân.",
+          "Biểu đồ phân tán A tương quan dương, B tương quan âm, C quan hệ phi tuyến, D không có quan hệ rõ. Ghép đúng hai giá trị tương ứng; tương quan không tự chứng minh quan hệ nhân quả.",
+          "√36=6 nên khoảng 6 nhóm là mức tham khảo, không phải quy tắc cố định. Xác nhận số dữ liệu, phân bố và độ chính xác đo; chia quá nhỏ hoặc quá lớn đều làm hình dạng thay đổi.",
+          "Dạng thông thường không tự chứng minh tính ổn định; dùng biểu đồ làm gợi ý kiểm tra vật thực, phương pháp đo và dữ liệu gốc."
+        ],
+        "sourceHash": "b541f4599a73cb80aaaeb0ec5b61fd5143ce63c3e8a97d52f49bf2a39b6bfac1"
+      },
+      "food-assessment35-control-patterns": {
+        "title": "Phân biệt tám mẫu chuỗi thời gian tham khảo",
+        "prompt": "Các biểu đồ A–H trong bài là ví dụ giả định không có đơn vị, với tâm 0, đường tham khảo trên/dưới±3 và đường phụ±1,±2. Giải thích các trục, đường tâm và đường trên/dưới; đọc số lượng, vị trí các điểm của từng biểu đồ. Nêu cả giả thuyết cần kiểm tra với G và H. Có được dùng trực tiếp chúng thay cho quy cách sản phẩm hoặc quy tắc phán định tại nơi làm việc không?",
+        "expectedPoints": [
+          "Trục ngang là thứ tự quan sát, trục dọc là giá trị chỉ số giả định; tâm 0, đường tham khảo trên+3, dưới−3, cần phân biệt với quy cách sản phẩm.",
+          "Ở A, điểm thứ 6 bằng 3,4 vượt đường tham khảo trên 3.",
+          "Ở B,9 điểm liên tiếp nằm trên tâm 0.",
+          "Ở C,6 điểm liên tiếp tăng lên.",
+          "Ở D,14 điểm luân phiên lên xuống.",
+          "Ở E,2 trong 3 điểm nằm trên+2, gần đường trên.",
+          "Ở F,4 trong 5 điểm nằm trên+1, lệch về cùng một phía.",
+          "Ở G,15 điểm tập trung gần tâm, bên trong dải từ−1 đến+1.",
+          "Ở H,8 điểm nằm ngoài dải gần tâm từ−1 đến+1.",
+          "Kiểm tra các giả thuyết như biến động nhỏ với G hoặc trộn các tập hợp với H; chưa coi đó là nguyên nhân đã xác định.",
+          "Phân biệt ví dụ JIS tham khảo của giáo trình với quy tắc và cách xử lý công ty áp dụng. Bộ phận quản lý đặt điều kiện phù hợp đặc tính sản phẩm; không coi số và đường giả định là giới hạn chung cho mọi nhà máy."
+        ],
+        "sourceHash": "062f8b2e9f39ed88c2ee66125706b16a5cf28d9c142de23c92fb1b25814ea364"
+      },
+      "food-assessment35-tally-categories": {
+        "title": "Đối chiếu tổng theo ngày và theo loại",
+        "prompt": "Hồ sơ giả định ghi ngày đầu có 3 lỗi bao gói và 2 lỗi bẩn; ngày sau có 1 lỗi bao gói và 4 lỗi bẩn. Tính tổng theo ngày, theo loại và tổng chung; xác nhận cộng theo hai hướng cho cùng kết quả. Giải thích vì sao những người ghi phải thống nhất tên loại và cách ghi.",
+        "expectedPoints": [
+          "Ngày đầu:3+2=5 trường hợp; ngày sau:1+4=5 trường hợp.",
+          "Lỗi bao gói:3+1=4 trường hợp; lỗi bẩn:2+4=6 trường hợp.",
+          "Theo ngày 5+5=10, theo loại 4+6=10, kết quả trùng nhau.",
+          "Thống nhất loại, đơn vị và cách ghi để tránh đếm trùng hoặc lệch phân loại, đồng thời dùng hồ sơ để phân tích nguyên nhân."
+        ],
+        "sourceHash": "5df067147588b28acbbb0933116ea02662a9e3e2672e7c41d542e463871b6bec"
+      },
+      "food-assessment35-plan-report-reserve": {
+        "title": "Triển khai kế hoạch và báo cáo thực tế tăng nhân lực",
+        "prompt": "Bạn triển khai kế hoạch sản xuất của công ty thành công việc của dây chuyền như thế nào? Trong một so sánh giả định riêng, cùng sản phẩm đạt chất lượng và không có thời gian dừng: trước thay đổi,3 người làm 60 kg trong 1 giờ; sau thay đổi,4 người làm 72 kg trong 1 giờ. Tính sản lượng theo giờ và theo người-giờ, rồi nêu thông tin cần báo để phục vụ quyết định quản lý. Phân biệt năng lực dự phòng toàn công ty, thời gian dừng tránh được tại hiện trường và phương án thiết kế năng lực dự phòng ở công đoạn sau.",
+        "expectedPoints": [
+          "Từ kế hoạch sản lượng, thời điểm, thu mua của công ty, triển khai thành kế hoạch cụ thể của nhà máy rồi thành nguyên liệu, thiết bị, nhân lực, thời gian, thứ tự công việc của dây chuyền; báo thay đổi điều kiện cho bộ phận liên quan và cấp trên.",
+          "Sản lượng dây chuyền tăng từ 60 lên 72 kg/giờ. Lao động đầu vào tăng từ 3 lên 4 người-giờ, nhưng năng suất lao động giảm từ 60÷3=20 xuống 72÷4=18 kg/người-giờ.",
+          "Không chỉ báo một chỉ số là đã cải thiện; truyền đạt sản lượng, nhân lực, người-giờ, điều kiện chất lượng và biến động cả hai chỉ số để cấp quản lý quyết định phù hợp điều kiện công ty.",
+          "Năng lực dự phòng toàn công ty/nhà máy để đáp ứng nhu cầu thay đổi thuộc quyết định quản lý, không có nghĩa được bỏ mặc thời gian dừng hay chờ có thể tránh trong giờ vận hành kế hoạch. Không cắt hoặc che giấu dừng cần thiết cho an toàn.",
+          "Năng lực dự phòng công đoạn sau là phương án thiết kế xét theo biến động và điều kiện thiết bị, không phải quy tắc buộc mọi dây chuyền có cùng thứ tự năng lực."
+        ],
+        "sourceHash": "399d11c6a557659c7367155bc5a9dce279af660db829fd5403648cb34cfafe6d"
+      },
+      "food-assessment35-productivity-four-cases": {
+        "title": "So sánh bốn trường hợp đầu vào và đầu ra",
+        "prompt": "Các ví dụ giả định cùng sản phẩm đạt chất lượng và cùng điều kiện chất lượng. Mốc chuẩn là 100 kg trong 10 người-giờ. A:120 kg,10 người-giờ; B:100 kg,5; C:180 kg,15; D:80 kg,5. Tính năng suất theo người-giờ của mốc chuẩn và A–D, rồi giải thích bốn cách cải thiện khi đầu ra hoặc đầu vào tăng giảm. Đảo tử số và mẫu số thì giá trị biểu thị điều gì?",
+        "expectedPoints": [
+          "Mốc chuẩn 100÷10=10 kg/người-giờ; A 120÷10=12; B 100÷5=20; C 180÷15=12; D 80÷5=16 kg/người-giờ. Cả A–D đều cao hơn mốc chuẩn.",
+          "A tăng đầu ra với cùng đầu vào; B giảm đầu vào với cùng đầu ra.",
+          "C tăng cả đầu vào và đầu ra, nhưng tỷ lệ tăng đầu ra lớn hơn.",
+          "D giảm cả đầu vào và đầu ra, nhưng tỷ lệ giảm đầu vào lớn hơn.",
+          "Người-giờ÷kg là mức tiêu hao nguồn lực đầu vào trên đơn vị sản phẩm. Không coi năng suất và mức tiêu hao trên đơn vị là cùng chỉ số số học; phải thống nhất đơn vị và điều kiện chất lượng."
+        ],
+        "sourceHash": "8748b6881b90da4482fd0a0841d57750cdc84f2f0a3ad5b8f03b5b38260ae86c"
+      },
+      "food-assessment35-daily-record-followup": {
+        "title": "Chuyển báo cáo ngày cho công việc tiếp theo và bảo trì",
+        "prompt": "Báo cáo ngày chỉ ghi tổng sản lượng. Cần ghi thông tin dừng máy, nhận/xuất và tồn kho nguyên liệu, cải tiến như thế nào và chuyển cho ai? Giải thích vì sao xem các lần dừng ngắn theo tuần hoặc tháng, và cách dùng thông tin thiết bị để triển khai biện pháp cho máy cùng loại.",
+        "expectedPoints": [
+          "Ngoài sản lượng, ghi đúng thời điểm, nguyên nhân dừng hoặc bất thường, nhận/xuất và tồn nguyên liệu, vấn đề và cải tiến trong ngày.",
+          "Báo cấp trên, chia sẻ vấn đề và việc chuẩn bị tiếp theo với công đoạn trước/sau.",
+          "Ghi chính xác cả dừng ngắn, xem xu hướng lặp lại theo tuần/tháng; cùng cấp trên và nhân sự chuyên môn thiết bị xem nguyên nhân, bảo trì khi liên quan thiết bị.",
+          "Kết nối tồn kho bộ phận hao mòn với lịch sử thay để cân nhắc thay trước khi hỏng. Cung cấp thông tin hiện trường cho điều tra tai nạn và xác nhận nguy hiểm tương tự ở thiết bị hoặc công việc gần giống."
+        ],
+        "sourceHash": "002d156efc34afa1063746a59179d8c537d01bb029d7cd76655e1df8e7e8fb6b"
+      },
+      "food-assessment35-yield-scope-pretreatment": {
+        "title": "Xác nhận mẫu số theo sơ chế và đơn vị bán",
+        "prompt": "Giả định mọi đầu ra đạt chất lượng, không có tăng giảm khác. So sánh việc lấy 100 kg nguyên liệu chưa sơ chế, bỏ 20 kg phần không ăn được rồi mất 10 kg nước khi gia nhiệt với việc mua 80 kg nguyên liệu đã sơ chế rồi mất 10 kg nước khi gia nhiệt giống nhau. Ví dụ riêng: đầu vào 100 kg, được 70 túi quy cách 1 kg, tổng khối lượng thực 77 kg. Giải thích tỷ lệ thu hồi theo khối lượng và theo số túi; cách tính từ số túi có trùng cách quy đổi khối lượng quy cách không?",
+        "expectedPoints": [
+          "Trường hợp đầu:100−20−10=70 kg đạt chất lượng, bằng 70% đầu vào tại nhà máy. Trường hợp mua:80−10=70 kg, bằng 87,5% đầu vào tại nhà máy.",
+          "Trường hợp mua đã được sơ chế ngoài nhà máy nên mẫu số và phạm vi quản lý khác nhau. Chỉ so sánh này chưa thể kết luận hiệu suất tổng thể gồm cả sơ chế tốt hơn dù lượng thành phẩm bằng nhau. Không coi việc loại xương cần thiết hoặc mất nước cần cho chất lượng đều là tổn thất tránh được.",
+          "Ví dụ bán hàng riêng: theo khối lượng 77÷100=77%. Quy đổi quy cách cho bán theo túi:70 túi×1 kg=70 kg, nên 70÷100=70%.",
+          "Đầu vào 100 kg chia quy cách 1 kg cho số túi lý thuyết 100; thực tế 70 túi nên 70÷100=70%, trùng cách quy đổi khối lượng quy cách. Chênh 7 kg so với khối lượng thực cần kiểm tra riêng là lượng chiết rót vượt quy cách.",
+          "Bảo đảm chất lượng, nhãn và lượng cần thiết; không bỏ công đoạn xử lý hoặc điều kiện chiết rót cần thiết chỉ để tăng tỷ lệ thu hồi."
+        ],
+        "sourceHash": "55f185112062a9bf8d0c07f19cf13217504b8401fc4226abac92e7a21902ca95"
+      },
+      "food-assessment35-environment-capacity-boundary": {
+        "title": "Xác nhận phạm vi chỉ số môi trường và năng lực xử lý",
+        "prompt": "Có được dùng hệ số thiếu căn cứ để đánh giáCO2 từ lượng điện, dầu mỏ và khí đốt sử dụng không? Khi nước thải ít đi nhưng bẩn hơn, năng lực xử lý và vận hành nhà máy bị ảnh hưởng thế nào? Phân biệt thu gom cặn, tiết kiệm nước tại hiện trường với quyết định đầu tư thiết bị, năng lượng tái tạo của công ty; nêu điều cần kiểm tra khi so sánh khác sản lượng hoặc thời kỳ.",
+        "expectedPoints": [
+          "Dựa vào lượng sử dụng đo thực trong thời kỳ xét và xác nhận điều kiện quy đổi có căn cứ với bộ phận phụ trách. Không cộng thẳng các lượng khác đơn vị hoặc dùng hệ sốCO2 tự đặt.",
+          "Đối chiếu cả lượng và tải lượng ô nhiễm như chất hữu cơ của nước thải với năng lực xử lý. Nếu không tiếp nhận được, có thể không dùng được nước và sản xuất bị cản trở.",
+          "Hiện trường giữ vệ sinh, thu gom cặn trước, giảm phun nước không cần thiết và thất thoát thực phẩm tránh được. Phân biệt với quyết định toàn công ty về đầu tư, năng lượng tái tạo, thay đổi công đoạn hoặc đặt hàng, dù quyết định đó cũng dùng dữ liệu hiện trường.",
+          "Trong cùng kỳ so sánh và điều kiện sản phẩm, kiểm tra cả tổng lượng và mức tiêu hao trên đơn vị sản phẩm. Không che giấu khác biệt sản lượng hoặc mẫu số, không cắt rửa và an toàn cần thiết."
+        ],
+        "sourceHash": "c445600c4480e3a30e32c9ce8477ab9494e61c0ce3f6825dcdb25c57b4dbde15"
+      },
+      "food-assessment35-financial-indicator-boundary": {
+        "title": "Không nhầm chênh lệch được định nghĩa với lợi nhuận kế toán",
+        "prompt": "Sau khi làm các phép tính tiền trong bài, có thể coi phần chênh lệch giá trị gia tăng được định nghĩa trong ví dụ là doanh thu hoặc lợi nhuận kế toán của toàn công ty hay công ty khác không? Giải thích tử số, mẫu số, phạm vi chi phí cần kiểm tra và hạn chế khi chỉ đánh giá bộ phận gián tiếp bằng kg sản xuất.",
+        "expectedPoints": [
+          "Giá trị gia tăng là giá trị mới do hoạt động công ty tạo ra, khác toàn bộ doanh thu; phần chênh lệch trong bài được định nghĩa riêng cho bài tập đó.",
+          "Xác nhận có tính chi phí nguyên liệu, lao động, điện/nhiên liệu nào; không đồng nhất chỉ số có phạm vi chi phí khác giữa công ty/bộ phận với lợi nhuận kế toán.",
+          "Xác nhận tử số là lượng sản phẩm, doanh thu hay giá trị gia tăng; mẫu số là thời gian đã qua hay người-giờ; thống nhất điều kiện chất lượng và phạm vi so sánh.",
+          "Chức năng gián tiếp như quản lý chất lượng, thiết bị, hành chính cũng hỗ trợ nhà máy. Không chỉ theo kg sản xuất trực tiếp để đánh giá; chọn chỉ tiêu phù hợp vai trò và mục tiêu toàn nhà máy."
+        ],
+        "sourceHash": "8ed0aac6dd88adbd3d84d8b6efd7f0fac53f5f8e577613999dd0555af9128791"
+      },
+      "food-assessment35-consumer-use": {
+        "title": "Đối tượng sử dụng và cách dùng sau khi mở",
+        "prompt": "Một sản phẩm dùng cho một bữa được đổi sang túi lớn, dùng dần trong nhiều ngày sau khi mở. Trẻ nhỏ, người đang mắc bệnh và người cao tuổi cũng có thể ăn sản phẩm. Hãy giải thích thông tin cần bổ sung vào bản mô tả sản phẩm và cách sử dụng kết quả xác nhận.",
+        "expectedPoints": [
+          "Làm rõ đối tượng sử dụng, cách ăn, có gia nhiệt hay không và điều kiện chia phần để dùng sau khi mở.",
+          "Tìm hiểu dụng cụ lấy thực phẩm, sự tiếp xúc của con người và điều kiện bảo quản sau khi mở.",
+          "Không đánh giá là an toàn chỉ dựa vào điều kiện khi chưa mở bao bì.",
+          "Đối tượng và cách sử dụng làm thay đổi các mối nguy cần xem xét. Chuyển thông tin cho nhóm HACCP để phân tích mối nguy."
+        ],
+        "sourceHash": "4a9238e975e1582b65ac079ce1c25b06227e9de7a4ff452a3e8830b13e1f152a"
+      },
+      "food-assessment35-flow-paths": {
+        "title": "Ranh giới trong sơ đồ quy trình và điểm kiểm soát",
+        "prompt": "Hãy lần theo đường đi của nguyên liệu A, B, vật liệu bao gói, người lao động và dụng cụ trong hình học tập. Với đề xuất thêm một thành phần chưa gia nhiệt sau công đoạn gia nhiệt, hãy giải thích ranh giới các khu vực, điểm kiểm soát tới hạn và các điều kiện công đoạn cần xác nhận.",
+        "expectedPoints": [
+          "Phân biệt và lần theo chỗ hợp dòng của nguyên liệu A, B với công đoạn đưa vật liệu bao gói vào.",
+          "Kiểm tra các đường mà người, dụng cụ và giọt bắn có thể đi từ phía nhiễm bẩn sang phía sạch.",
+          "Mối nguy từ thành phần được thêm sau gia nhiệt không thể được kiểm soát chỉ bằng công đoạn gia nhiệt trước đó, nên phải đánh giá riêng.",
+          "Xác định điểm kiểm soát tới hạn dựa trên phân tích mối nguy; không chỉ định đồng loạt mọi công đoạn.",
+          "Xác nhận nhiệt độ, thời gian gia nhiệt và phương pháp đo đã được phê duyệt cho từng sản phẩm; không lấy số liệu của sản phẩm khác để áp dụng."
+        ],
+        "sourceHash": "4443f85813a02a1714bc3ebb325744e162afbe4967c61c9a9fec0370c0e9bbb2"
+      },
+      "food-assessment35-cleaning-order": {
+        "title": "Thứ tự vệ sinh và phân công công việc",
+        "prompt": "Hãy lập kế hoạch vệ sinh thiết bị sau sản xuất. Bạn xử lý cặn bám, thiết bị có thể tháo rời, đường ống kín, bước sau khi tráng và phân công công việc ở thượng lưu, hạ lưu như thế nào?",
+        "expectedPoints": [
+          "Thu hồi nguyên liệu, bán thành phẩm và cặn bám trước một cách hợp vệ sinh để giảm tải nước thải. Việc tái sử dụng phải theo điều kiện đã phê duyệt.",
+          "Làm rõ việc dừng, cách ly và phạm vi phụ trách. Thực hiện tháo rời, rửa sơ bộ, rửa bằng chất tẩy rửa, tráng, làm khô theo quy định và lắp lại theo quy trình đã phê duyệt, phù hợp với thiết bị.",
+          "Với đường ống và bồn kín, dùng quy trình CIP phù hợp với thiết bị và đã được phê duyệt; không tự ý tháo rời hoặc đổi hóa chất.",
+          "Ngay cả khi làm từ thượng lưu xuống hạ lưu, không để chất bẩn hoặc nước vệ sinh quay lại khu vực đã làm sạch; tránh công việc trùng lặp và cản trở nhau.",
+          "Người quản lý và tổ trưởng thiết lập phương pháp, quy trình, đào tạo và giám sát; người phụ trách bàn giao hồ sơ và bất thường cho người kiểm tra."
+        ],
+        "sourceHash": "891a33975667beb6508043e992061a44d59c33e242c5320804d05e0ed18844fb"
+      },
+      "food-assessment35-lookup-matrix": {
+        "title": "Bảng tra khác với phép nhân",
+        "prompt": "Trong bảng luyện tập tự biên soạn này, các hàng là khả năng xảy ra cao, trung bình, thấp; các cột là mức độ nghiêm trọng gây tử vong, phải nghỉ làm, nhẹ. Hàng cao là H, H, M; hàng trung bình là H, M, L; hàng thấp là H, M, L. H yêu cầu xử lý ngay và dừng đến khi hoàn tất biện pháp; M yêu cầu xử lý nhanh và nên dừng; L yêu cầu xử lý khi cần. Hãy tra “khả năng thấp, gây tử vong” và “khả năng trung bình, mức nhẹ”, rồi giải thích điểm khác với phép nhân.",
+        "expectedPoints": [
+          "Giao điểm khả năng thấp và mức gây tử vong là H: xử lý ngay và dừng đến khi hoàn tất biện pháp.",
+          "Giao điểm khả năng trung bình và mức nhẹ là L: xử lý khi cần.",
+          "Đọc giao điểm hàng và cột của bảng này, không nhân các số để tạo phân loại.",
+          "Không xem nhẹ hậu quả tử vong chỉ vì tần suất thấp.",
+          "Đây là bảng luyện tập tự biên soạn, không phải bảng số trong tài liệu gốc hay tiêu chuẩn chính thức của công ty. Khi làm việc, tuân theo bảng và điều kiện dừng đã được áp dụng."
+        ],
+        "sourceHash": "6ccc4d57bc38a8621e640c3c61ec4b82c7068f8cf1503f715e058ea049cf713c"
+      },
+      "food-assessment35-education-plan": {
+        "title": "Loại nhu cầu đào tạo và 5 W 1 H",
+        "prompt": "A không biết cơ chế của máy. B giải thích được nhưng không vận hành được. C không hiểu ý nghĩa công việc nên bỏ qua kiểm tra. Hãy phân biệt nội dung đào tạo cần thiết, lập kế hoạch theo 5 W 1 H cho người phụ trách thiết bị mới và giải thích cách xác nhận sau đào tạo.",
+        "expectedPoints": [
+          "Xem xét đào tạo kiến thức cho A, kỹ năng cho B và thái độ cho C. Tuy nhiên, phải xác nhận nguyên nhân thực tế qua quan sát, hỏi đáp, không kết luận sẵn.",
+          "Đặt mục tiêu về lý do đào tạo, người học cần làm được gì và đạt mức nào.",
+          "Làm rõ ai học, ai dạy, dạy gì, khi nào, ở đâu, vì sao và bằng cách nào.",
+          "Nắm nhu cầu như người mới phụ trách hoặc thiết bị mới; chuẩn bị nội dung và môi trường thực hành an toàn rồi triển khai.",
+          "Xác nhận đạt mục tiêu qua phiếu khảo sát, báo cáo và kiểm tra thao tác tại hiện trường; cải tiến kế hoạch và cách hướng dẫn."
+        ],
+        "sourceHash": "6aa9a308b48150cb7ed2952628268b66335fb8127528450371e6ad93c03c9b9e"
+      },
+      "food-assessment35-conditional-chart": {
+        "title": "Tỷ lệ của doanh nghiệp nhận tư vấn về sáu loại hành vi",
+        "prompt": "Đây là hình tự biên soạn dựa trên cách đọc lại khảo sát năm tài chính 2023 trong tài liệu gốc. Đối tượng là doanh nghiệp đã nhận tư vấn trong ba năm trước đó; hình thể hiện có hay không có trường hợp tương ứng cho từng loại. Với quấy rối quyền lực, n = 4.985 và tỷ lệ có trường hợp là 73,0%; với quấy rối tình dục khi tìm việc và trường hợp tương tự, n = 54 và tỷ lệ có là 37,0%. Từ hình gồm sáu nhóm, kể cả bốn loại còn lại, hãy đọc tỷ lệ “không có” quấy rối quyền lực và giải thích mẫu số của từng nhóm cùng những điểm cần chú ý khi so sánh tỷ lệ.",
+        "expectedPoints": [
+          "Tỷ lệ không có trường hợp quấy rối quyền lực là 27,0%; cộng với 73,0% có trường hợp được 100%.",
+          "Sáu loại gồm quấy rối quyền lực; quấy rối tình dục; quấy rối liên quan đến mang thai, sinh con, nghỉ chăm con; nghỉ chăm sóc người thân; hành vi gây phiền nhiễu nghiêm trọng của khách hàng; và quấy rối tình dục khi tìm việc hoặc trường hợp tương tự.",
+          "Mẫu số của từng loại là các doanh nghiệp đã nhận tư vấn về loại đó trong ba năm trước, không phải toàn bộ doanh nghiệp hay người lao động.",
+          "Giá trị n khác nhau giữa các nhóm. So sánh tỷ lệ của 4.985 doanh nghiệp về quấy rối quyền lực và 54 doanh nghiệp về quấy rối tình dục khi tìm việc không đồng nghĩa với cùng số doanh nghiệp hay cùng tổng số nạn nhân.",
+          "Một doanh nghiệp có thể thuộc nhiều nhóm, nên không thể cộng tỷ lệ của sáu nhóm thành tỷ lệ xảy ra chung.",
+          "Đây là số liệu của khảo sát thực hiện năm tài chính 2023, không được khẳng định là tỷ lệ xảy ra hiện nay trên toàn quốc."
+        ],
+        "sourceHash": "d0ee3345a502e615d9ac53efa0ff051a070dc2135f60c567021b30d4a8b997ce"
+      }
+    },
+    "id": {
+      "food-assessment35-stacked-share": {
+        "title": "Bedakan proporsi dan jumlah pada diagram batang bertumpuk",
+        "prompt": "Pada diagram belajar, A terdiri atas X 30%, Y 50%, Z 20%, sedangkan B terdiri atas X 40%, Y 20%, Z 40%. Periksa total setiap baris dan bandingkan proporsi Y. Jika jumlah seluruh kasus A dan B tidak diberikan, dapatkah disimpulkan bahwa jumlah kasus Y sebenarnya juga lebih banyak pada A? Jelaskan.",
+        "expectedPoints": [
+          "Total A adalah 30+50+20=100% dan B 40+20+40=100%. Bandingkan komposisi dengan keseluruhan setiap baris sebagai 100%.",
+          "Proporsi Y pada A 50% dan B 20%, sehingga proporsinya lebih besar pada A.",
+          "Tanpa jumlah total kasus, tidak dapat dipastikan mana yang memiliki lebih banyak kasus Y sebenarnya.",
+          "Proporsi berbeda dari jumlah sebenarnya. Pastikan kategori dan kondisi penyebut dalam perbandingan."
+        ],
+        "sourceHash": "e7943c0c4e90c6f334ad4145d4d32e0a60d709966a260d760f97f0a59eb60a12"
+      },
+      "food-assessment35-radar-scale": {
+        "title": "Baca skala bersama dan setiap sumbu radar",
+        "prompt": "Semua sumbu diagram radar belajar memakai skala 0–5. Nilai A pada I–V adalah 4,2,3,5,1; nilai B 2,4,3,2,4. Tentukan mana yang lebih tinggi pada setiap sumbu dan mana yang sama. Bolehkah peringkat keseluruhan ditentukan hanya dari luasnya?",
+        "expectedPoints": [
+          "Pastikan semua sumbu menggunakan skala 0–5 yang sama.",
+          "A lebih tinggi pada I dan IV; B lebih tinggi pada II dan V.",
+          "Pada III, A dan B sama-sama bernilai 3.",
+          "Bandingkan setiap karakteristik. Jangan menentukan peringkat keseluruhan hanya dari luas; pastikan arti setiap unsur dan kondisi penilaiannya."
+        ],
+        "sourceHash": "b712bb94d50d77d3d38c68194959e0dd12e91079aae6cebcc6224ce8ca6a5c98"
+      },
+      "food-assessment35-progress-band": {
+        "title": "Baca sumbu kemajuan kumulatif dan pita hipotetis",
+        "prompt": "Pada grafik kemajuan belajar, standar 60 kg/jam, pita di sekitar garis standar diasumsikan±15 kg, dan hasil aktual setelah 3 jam 160 kg. Bedakan sumbu horizontal dan vertikal serta garis standar dan aktual. Hitung batas bawah pita pada 3 jam dan bandingkan dengan hasil aktual. Bolehkah pita ini langsung dijadikan kriteria penghentian kerja?",
+        "expectedPoints": [
+          "Sumbu horizontal adalah waktu berlalu dan sumbu vertikal hasil kumulatif dalam kg. Garis standar menunjukkan rencana, garis aktual menunjukkan hasil sebenarnya.",
+          "Pada 3 jam, standar 60×3=180 kg, sehingga batas bawah 180−15=165 kg.",
+          "Hasil aktual 160 kg lebih rendah 5 kg dari 165 kg dan berada di bawah pita hipotetis.",
+          "±15 kg adalah asumsi belajar. Kriteria dan respons nyata harus dipastikan berdasarkan kondisi yang diadopsi tempat kerja dan prosedur yang disetujui."
+        ],
+        "sourceHash": "fd1f87ef3a893337122de0015429c33300090b8a70bfde9827649bd7a6d190d2"
+      },
+      "food-assessment35-report-paths": {
+        "title": "Bandingkan jalur langsung dan jalur melalui pemimpin kelompok",
+        "prompt": "Lihat dua bagan organisasi belajar. Jelaskan jalur instruksi dan laporan ketika kepala regu berkomunikasi langsung dengan pekerja dan ketika komunikasi melalui pemimpin kelompok. Bolehkah langsung menetapkan bahwa tempat kerja Anda harus memakai jalur yang sama dengan gambar?",
+        "expectedPoints": [
+          "Pada model langsung, instruksi disampaikan kepala regu kepada pekerja dan laporan dari pekerja kepada kepala regu.",
+          "Pada model melalui pemimpin kelompok, instruksi berjalan kepala regu→pemimpin kelompok→pekerja; laporan pekerja→pemimpin kelompok→kepala regu.",
+          "Keduanya merupakan contoh organisasi. Jangan menetapkan kewenangan atau penanggung jawab hanya dari nama jabatan.",
+          "Pastikan organisasi dan kewenangan tempat kerja, lalu gunakan jalur instruksi dan pelaporan yang ditetapkan."
+        ],
+        "sourceHash": "129fe58a408ecc487753b9857fbda975db230be949efda3a39b209595eb19e28"
+      },
+      "food-assessment35-design-residual": {
+        "title": "Jelaskan bahaya yang berkurang melalui desain dan yang tersisa",
+        "prompt": "Bandingkan gambar belajar membulatkan sudut tajam dan membuat pintu berat menjadi lebih ringan. Bahaya atau dampak apa yang berkurang pada setiap usulan, dan apa yang masih perlu diperiksa? Benarkah, “Jika pintu lebih ringan, jari yang terjepit pasti tidak akan cedera”?",
+        "expectedPoints": [
+          "Membulatkan sudut tajam mengurangi bahaya seperti tertusuk saat bersentuhan.",
+          "Pintu lebih ringan mengurangi dampak saat terjepit, tetapi tidak menghilangkan bahaya terjepit atau kemungkinan cedera.",
+          "Evaluasi dan setujui usulan bersama petugas peralatan, lalu periksa efektivitas dan risiko tersisa setelah perubahan.",
+          "Gambar mengajarkan pemikiran desain; pekerja tidak boleh mengubah peralatan sendiri atau menjamin keselamatan tanpa syarat."
+        ],
+        "sourceHash": "0e330f034afc7f9952ab78aa63267b5257d08be0eec11d952b2835288920fb20"
+      },
+      "food-assessment35-ojt-observation": {
+        "title": "Periksa keselamatan, pencatatan dan tindakan saat abnormal dalam OJT",
+        "prompt": "Dalam OJT pengukuran jumlah pengisian, penilaian hendak diakhiri karena peserta mengukur dengan cepat. Bagaimana membandingkan sasaran dengan pekerjaan nyata? Bagaimana memeriksa operasi aman, pengukuran, pencatatan, dan komunikasi saat abnormal, serta apa yang dilakukan jika masih kurang?",
+        "expectedPoints": [
+          "Nilai berdasarkan sasaran dan kondisi yang telah ditentukan; kecepatan atau catatan kehadiran saja tidak membuktikan penguasaan.",
+          "Setelah pembimbing mendemonstrasikan, minta peserta melakukan tugas sambil menjelaskan langkah dan alasannya.",
+          "Amati operasi aman dan pengukuran yang benar, serta periksa apakah hasil sebenarnya dapat dicatat.",
+          "Melalui penjelasan peserta atau tindakan dalam skenario, pastikan siapa yang dihubungi dan apa yang dilaporkan saat abnormal.",
+          "Periksa penyebab kekurangan, perbaiki pengajaran atau latihan, bimbing ulang, dan pastikan lagi apakah sasaran tercapai."
+        ],
+        "sourceHash": "94390ce64ea947ef55b01f509a3b94a1c4025c59bd339b22ca7295632361026b"
+      },
+      "food-assessment35-distribution-recognition": {
+        "title": "Cocokkan bentuk distribusi dengan kondisi yang perlu diperiksa",
+        "prompt": "Cocokkan histogram A–F pada materi dengan enam bentuk dan diagram pencar A–D dengan empat hubungan. Jelaskan kedua sumbu histogram serta hal yang diperiksa pada bentuk dua puncak, gigi rumpang, ekor memanjang, tebing, dan pulau terpisah. Untuk 36 data hipotetis lain, berapa acuan jumlah kelas√n? Dapatkah acuan atau bentuk saja memastikan penyebab atau kestabilan?",
+        "expectedPoints": [
+          "Histogram A bentuk umum, B gigi rumpang, C ekor memanjang, D tebing, E dua puncak, F pulau terpisah.",
+          "Sumbu horizontal adalah kelas nilai pengukuran; sumbu vertikal frekuensi pada setiap kelas.",
+          "Pada dua puncak atau pulau terpisah, curigai campuran populasi dan periksa dengan memisahkan data berdasarkan atribut.",
+          "Pada gigi rumpang, periksa ketelitian pengukuran, batas, lebar kelas, dan ketidakseragaman pengolahan data.",
+          "Pada ekor memanjang, periksa pengendalian satu sisi; pada tebing, riwayat penyortiran atau pengecualian. Bentuk saja tidak memastikan penyebab.",
+          "Diagram pencar A korelasi positif, B negatif, C hubungan nonlinear, D tidak ada hubungan jelas. Pasangkan dua nilai yang sesuai; korelasi saja tidak membuktikan sebab-akibat.",
+          "√36=6 memberi acuan sekitar 6 kelas, bukan aturan tetap. Periksa jumlah data, distribusi dan ketelitian pengukuran; kelas terlalu sempit atau lebar mengubah bentuk.",
+          "Bentuk umum saja tidak membuktikan kestabilan. Gunakan grafik sebagai petunjuk memeriksa benda sebenarnya, metode pengukuran, dan data asli."
+        ],
+        "sourceHash": "b541f4599a73cb80aaaeb0ec5b61fd5143ce63c3e8a97d52f49bf2a39b6bfac1"
+      },
+      "food-assessment35-control-patterns": {
+        "title": "Bedakan delapan pola deret waktu rujukan",
+        "prompt": "Grafik A–H pada materi merupakan contoh hipotetis tanpa satuan: pusat 0, garis rujukan atas/bawah±3, dan garis bantu±1 serta±2. Jelaskan sumbu, garis pusat dan batas rujukan, lalu baca jumlah serta posisi titik setiap grafik. Sebutkan juga hipotesis untuk G dan H. Bolehkah contoh ini langsung menggantikan spesifikasi produk atau aturan keputusan tempat kerja?",
+        "expectedPoints": [
+          "Sumbu horizontal urutan pengamatan, vertikal nilai indeks hipotetis. Pusat 0, garis rujukan atas+3 dan bawah−3; bedakan dari spesifikasi produk.",
+          "Pada A, titik ke-6 bernilai 3,4 melampaui garis rujukan atas 3.",
+          "Pada B,9 titik berturut-turut berada di atas pusat 0.",
+          "Pada C,6 titik berturut-turut naik.",
+          "Pada D,14 titik bergantian naik dan turun.",
+          "Pada E,2 dari 3 titik berada di atas+2, mendekati garis atas.",
+          "Pada F,4 dari 5 titik berada di atas+1, cenderung pada sisi yang sama.",
+          "Pada G,15 titik berkumpul dekat pusat, di dalam rentang−1 hingga+1.",
+          "Pada H,8 titik berada di luar rentang dekat pusat−1 hingga+1.",
+          "Periksa hipotesis seperti variasi kecil pada G dan campuran populasi pada H; itu belum merupakan penyebab pasti.",
+          "Bedakan contoh rujukan JIS dalam buku dari aturan dan respons perusahaan. Bagian pengelola menetapkan kondisi sesuai karakter produk; angka dan garis hipotetis bukan batas pabrik yang universal."
+        ],
+        "sourceHash": "062f8b2e9f39ed88c2ee66125706b16a5cf28d9c142de23c92fb1b25814ea364"
+      },
+      "food-assessment35-tally-categories": {
+        "title": "Cocokkan total per hari dan per jenis",
+        "prompt": "Catatan hipotetis menunjukkan hari pertama 3 cacat kemasan dan 2 kotoran; hari berikutnya 1 cacat kemasan dan 4 kotoran. Hitung total per hari, per jenis, dan keseluruhan; pastikan penjumlahan kedua arah sama. Jelaskan alasan menyamakan nama jenis dan cara pencatatan antarpetugas.",
+        "expectedPoints": [
+          "Hari pertama 3+2=5 kejadian; hari berikutnya 1+4=5 kejadian.",
+          "Cacat kemasan 3+1=4 kejadian; kotoran 2+4=6 kejadian.",
+          "Total per hari 5+5=10 dan per jenis 4+6=10 sama.",
+          "Gunakan jenis, satuan dan cara pencatatan yang sama untuk mencegah hitungan ganda atau perbedaan klasifikasi, serta mendukung analisis penyebab."
+        ],
+        "sourceHash": "5df067147588b28acbbb0933116ea02662a9e3e2672e7c41d542e463871b6bec"
+      },
+      "food-assessment35-plan-report-reserve": {
+        "title": "Jabarkan rencana dan laporkan fakta penambahan tenaga",
+        "prompt": "Bagaimana menjabarkan rencana produksi perusahaan menjadi pekerjaan lini sendiri? Dalam perbandingan hipotetis lain untuk produk baik yang sama tanpa penghentian, sebelum perubahan 3 orang menghasilkan 60 kg selama 1 jam, sesudahnya 4 orang menghasilkan 72 kg selama 1 jam. Hitung hasil per jam dan per jam-orang, lalu jelaskan laporan untuk keputusan manajemen. Bedakan cadangan kapasitas perusahaan, penghentian lapangan yang dapat dihindari, dan usulan cadangan kapasitas proses hilir.",
+        "expectedPoints": [
+          "Jabarkan volume, waktu dan pengadaan perusahaan menjadi rencana konkret pabrik, lalu bahan, peralatan, tenaga, waktu dan urutan kerja lini. Sampaikan perubahan kondisi kepada bagian terkait dan atasan.",
+          "Hasil lini naik dari 60 menjadi 72 kg/jam. Input tenaga naik dari 3 menjadi 4 jam-orang, tetapi produktivitas tenaga turun dari 60÷3=20 menjadi 72÷4=18 kg/jam-orang.",
+          "Jangan hanya melaporkan satu ukuran sebagai perbaikan. Sampaikan hasil, tenaga, jam-orang, kondisi mutu dan perubahan kedua ukuran kepada manajer agar keputusan sesuai kondisi perusahaan.",
+          "Cadangan perusahaan/pabrik untuk perubahan permintaan merupakan keputusan manajemen, bukan izin membiarkan penghentian atau waktu menunggu yang dapat dihindari dalam waktu operasi rencana. Jangan mengurangi atau menyembunyikan penghentian yang diperlukan demi keselamatan.",
+          "Cadangan kapasitas hilir adalah usulan desain berdasarkan variasi dan kondisi peralatan, bukan aturan urutan kapasitas seragam untuk semua lini."
+        ],
+        "sourceHash": "399d11c6a557659c7367155bc5a9dce279af660db829fd5403648cb34cfafe6d"
+      },
+      "food-assessment35-productivity-four-cases": {
+        "title": "Bandingkan empat kasus input dan hasil",
+        "prompt": "Contoh hipotetis memakai produk baik dan kondisi mutu yang sama. Dasar:100 kg dengan 10 jam-orang. A:120 kg/10 jam-orang; B:100 kg/5; C:180 kg/15; D:80 kg/5. Hitung produktivitas tenaga dasar dan A–D, lalu jelaskan empat cara perbaikan saat hasil atau input berubah. Apa arti nilai dengan pembilang dan penyebut dibalik?",
+        "expectedPoints": [
+          "Dasar 100÷10=10 kg/jam-orang; A 120÷10=12; B 100÷5=20; C 180÷15=12; D 80÷5=16 kg/jam-orang. Semuanya melebihi dasar.",
+          "A menaikkan hasil dengan input sama; B mengurangi input dengan hasil sama.",
+          "Pada C input dan hasil naik, tetapi kenaikan hasil secara proporsional lebih besar.",
+          "Pada D hasil juga turun, tetapi penurunan input secara proporsional lebih besar.",
+          "Jam-orang÷kg adalah input sumber daya per unit produk. Jangan menyamakan angkanya dengan produktivitas; samakan satuan dan kondisi mutu."
+        ],
+        "sourceHash": "8748b6881b90da4482fd0a0841d57750cdc84f2f0a3ad5b8f03b5b38260ae86c"
+      },
+      "food-assessment35-daily-record-followup": {
+        "title": "Teruskan laporan harian ke pekerjaan berikut dan pemeliharaan",
+        "prompt": "Laporan harian hanya memuat total hasil. Bagaimana mencatat penghentian, penerimaan/pengeluaran serta persediaan bahan, dan informasi perbaikan, serta kepada siapa diteruskan? Jelaskan alasan melihat penghentian singkat selama seminggu/sebulan dan penggunaan informasi peralatan untuk tindakan pada mesin sejenis.",
+        "expectedPoints": [
+          "Selain hasil, catat secara akurat waktu dan alasan penghentian/ketidaknormalan, penerimaan/pengeluaran dan stok bahan, serta masalah dan perbaikan hari itu.",
+          "Laporkan kepada atasan dan bagikan masalah serta persiapan pekerjaan berikut kepada proses sebelum/sesudahnya.",
+          "Catat juga penghentian singkat, teliti pola mingguan/bulanan, lalu bahas penyebab dan pemeliharaan terkait peralatan bersama atasan dan spesialis peralatan.",
+          "Hubungkan stok komponen habis pakai dengan riwayat penggantian untuk menimbang penggantian sebelum rusak. Berikan fakta lapangan untuk penyelidikan kecelakaan dan periksa bahaya serupa pada peralatan atau pekerjaan sejenis."
+        ],
+        "sourceHash": "002d156efc34afa1063746a59179d8c537d01bb029d7cd76655e1df8e7e8fb6b"
+      },
+      "food-assessment35-yield-scope-pretreatment": {
+        "title": "Periksa penyebut pada prapenanganan dan satuan penjualan",
+        "prompt": "Anggap semua hasil memenuhi mutu dan tidak ada perubahan lain. Bandingkan 100 kg bahan belum ditangani yang dibuang 20 kg bagian tidak termakan lalu kehilangan 10 kg air saat dipanaskan, dengan pembelian 80 kg bahan prapenanganan yang kehilangan 10 kg air pada pemanasan sama. Contoh terpisah: input 100 kg menghasilkan 70 kantong nominal 1 kg dengan berat aktual total 77 kg. Jelaskan rendemen menurut berat dan jumlah kantong, serta kesamaan perhitungan kantong teoretis dan konversi berat nominal.",
+        "expectedPoints": [
+          "Kasus awal 100−20−10=70 kg produk baik, atau 70% input pabrik sendiri. Kasus pembelian 80−10=70 kg, atau 87,5% input pabrik sendiri.",
+          "Pada pembelian, prapenanganan dilakukan di luar pabrik sehingga penyebut dan lingkup kendali berbeda. Hasil baik yang sama belum membuktikan perbaikan efisiensi keseluruhan termasuk prapenanganan. Jangan menyamakan pembuangan tulang atau kehilangan air yang perlu untuk mutu dengan kehilangan yang selalu dapat dihindari.",
+          "Contoh penjualan terpisah menurut berat:77÷100=77%. Konversi nominal penjualan kantong 70 kantong×1 kg=70 kg, sehingga 70÷100=70%.",
+          "Input 100 kg÷nominal 1 kg memberi 100 kantong teoretis;70 kantong aktual memberi 70÷100=70%, sama dengan konversi berat nominal. Periksa terpisah selisih berat aktual 7 kg sebagai pengisian melebihi nominal.",
+          "Patuhi mutu, label dan jumlah yang dibutuhkan; jangan melewatkan penanganan atau kondisi pengisian yang perlu hanya untuk menaikkan angka rendemen."
+        ],
+        "sourceHash": "55f185112062a9bf8d0c07f19cf13217504b8401fc4226abac92e7a21902ca95"
+      },
+      "food-assessment35-environment-capacity-boundary": {
+        "title": "Periksa batas indikator lingkungan dan kapasitas pengolahan",
+        "prompt": "Bolehkah faktor tanpa dasar dipakai menilaiCO2 dari penggunaan listrik, minyak bumi dan gas? Jika volume air limbah turun tetapi pencemarannya tinggi, bagaimana hubungannya dengan kapasitas pengolahan dan operasi pabrik? Bedakan pengumpulan residu/penghematan air di lapangan dari keputusan investasi atau energi terbarukan perusahaan, serta jelaskan pemeriksaan saat membandingkan volume produksi atau periode berbeda.",
+        "expectedPoints": [
+          "Gunakan data konsumsi terukur untuk periode terkait dan konfirmasikan kondisi konversi yang berdasar dengan bagian penanggung jawab. Jangan langsung menjumlahkan satuan berbeda atau memakai faktorCO2 rekaan.",
+          "Cocokkan volume dan beban pencemaran, seperti bahan organik, dengan kapasitas pengolahan. Jika tidak dapat diterima, penggunaan air dan produksi dapat terhambat.",
+          "Lapangan menjaga higiene, mengumpulkan residu terlebih dahulu, serta mengurangi semprotan air tidak perlu dan kehilangan pangan yang dapat dihindari. Bedakan dari keputusan perusahaan mengenai investasi, energi terbarukan, proses atau pesanan, yang juga memakai data lapangan.",
+          "Pada periode dan kondisi produk yang sama, periksa total dan input per unit produk. Jangan menyembunyikan perbedaan produksi/penyebut atau mengurangi pencucian dan keselamatan yang diperlukan."
+        ],
+        "sourceHash": "c445600c4480e3a30e32c9ce8477ab9494e61c0ce3f6825dcdb25c57b4dbde15"
+      },
+      "food-assessment35-financial-indicator-boundary": {
+        "title": "Jangan samakan selisih yang didefinisikan dengan laba akuntansi",
+        "prompt": "Sesudah menghitung angka keuangan pada materi, bolehkah selisih nilai tambah yang didefinisikan dalam contoh disamakan dengan penjualan atau laba akuntansi seluruh perusahaan/perusahaan lain? Jelaskan pembilang, penyebut, batas biaya dan keterbatasan menilai bagian tidak langsung hanya dari kilogram produksi.",
+        "expectedPoints": [
+          "Nilai tambah adalah nilai baru yang dihasilkan kegiatan perusahaan, bukan seluruh penjualan. Selisih pada materi didefinisikan khusus untuk latihan itu.",
+          "Periksa biaya bahan, tenaga, listrik/bahan bakar dan biaya lain yang termasuk. Jangan menyamakan indikator dengan laba akuntansi jika batas biaya berbeda antarperusahaan/bagian.",
+          "Pastikan pembilang berupa hasil fisik, penjualan atau nilai tambah, dan penyebut waktu berlalu atau jam-orang. Samakan kondisi mutu dan lingkup perbandingan.",
+          "Fungsi tidak langsung seperti pengendalian mutu, peralatan dan administrasi juga mendukung pabrik. Jangan menilai hanya dari kilogram produksi langsung; pilih indikator sesuai peran dan tujuan seluruh pabrik."
+        ],
+        "sourceHash": "8ed0aac6dd88adbd3d84d8b6efd7f0fac53f5f8e577613999dd0555af9128791"
+      },
+      "food-assessment35-consumer-use": {
+        "title": "Konsumen dan penggunaan setelah dibuka",
+        "prompt": "Produk untuk satu kali makan diubah menjadi kantong besar yang digunakan selama beberapa hari setelah dibuka. Bayi dan anak kecil, orang yang sakit serta lansia juga mungkin memakannya. Jelaskan informasi yang perlu ditambahkan pada deskripsi produk dan penggunaan hasil pemeriksaannya.",
+        "expectedPoints": [
+          "Perjelas konsumen sasaran, cara mengonsumsi, ada tidaknya pemanasan serta kondisi penggunaan sebagian isi setelah dibuka.",
+          "Periksa alat untuk mengambil makanan, kontak dengan orang dan kondisi penyimpanan setelah dibuka.",
+          "Jangan menilai keamanan hanya berdasarkan kondisi penyimpanan sebelum kemasan dibuka.",
+          "Konsumen dan cara penggunaan dapat mengubah bahaya yang perlu dipertimbangkan. Sampaikan informasi kepada tim HACCP untuk analisis bahaya."
+        ],
+        "sourceHash": "4a9238e975e1582b65ac079ce1c25b06227e9de7a4ff452a3e8830b13e1f152a"
+      },
+      "food-assessment35-flow-paths": {
+        "title": "Batas diagram alir dan titik pengendalian",
+        "prompt": "Telusuri jalur bahan A dan B, bahan kemasan, pekerja serta peralatan pada diagram pembelajaran. Untuk usulan menambahkan bahan yang belum dipanaskan setelah pemanasan, jelaskan batas zona, titik kendali kritis dan kondisi proses yang harus diperiksa.",
+        "expectedPoints": [
+          "Telusuri pertemuan bahan A dan B secara terpisah dari tahap masuknya bahan kemasan.",
+          "Periksa jalur masuk orang, peralatan dan percikan dari sisi tercemar ke sisi bersih.",
+          "Bahaya dari bahan yang ditambahkan setelah pemanasan tidak dapat dikendalikan hanya dengan pemanasan sebelumnya, sehingga harus dinilai secara terpisah.",
+          "Tentukan titik kendali kritis berdasarkan analisis bahaya; jangan menetapkan semua tahap secara seragam.",
+          "Periksa suhu, waktu pemanasan dan metode pengukuran yang disetujui untuk produk tersebut. Jangan memakai angka dari produk lain."
+        ],
+        "sourceHash": "4443f85813a02a1714bc3ebb325744e162afbe4967c61c9a9fec0370c0e9bbb2"
+      },
+      "food-assessment35-cleaning-order": {
+        "title": "Urutan pembersihan dan pembagian pekerjaan",
+        "prompt": "Rencanakan pembersihan peralatan setelah produksi. Bagaimana Anda menangani residu, peralatan yang dapat dibongkar, perpipaan tertutup, perlakuan setelah pembilasan serta pembagian pekerjaan di bagian hulu dan hilir?",
+        "expectedPoints": [
+          "Kumpulkan terlebih dahulu bahan baku, barang dalam proses dan residu yang melekat secara higienis untuk mengurangi beban air limbah. Penggunaan kembali harus mengikuti kondisi yang disetujui.",
+          "Perjelas penghentian, isolasi dan tanggung jawab. Ikuti prosedur yang disetujui dan sesuai peralatan untuk pembongkaran, pembersihan awal, pencucian dengan deterjen, pembilasan, pengeringan yang ditentukan dan perakitan kembali.",
+          "Gunakan prosedur CIP yang sesuai dan disetujui untuk pipa dan tangki tertutup. Jangan membongkar atau mengganti bahan kimia atas keputusan sendiri.",
+          "Meskipun bekerja dari hulu ke hilir, jangan mengembalikan kotoran atau air pembersih ke area yang sudah bersih. Hindari pekerjaan yang berulang atau saling mengganggu.",
+          "Manajer dan kepala tempat kerja menetapkan metode dan prosedur, melatih serta mengawasi. Petugas menyerahkan catatan dan kelainan kepada pemeriksa."
+        ],
+        "sourceHash": "891a33975667beb6508043e992061a44d59c33e242c5320804d05e0ed18844fb"
+      },
+      "food-assessment35-lookup-matrix": {
+        "title": "Tabel pencocokan, bukan perkalian",
+        "prompt": "Pada tabel latihan buatan ini, baris menunjukkan kemungkinan tinggi, sedang dan rendah; kolom menunjukkan keparahan fatal, menyebabkan tidak masuk kerja dan ringan. Baris tinggi adalah H, H, M; sedang H, M, L; rendah H, M, L. H berarti segera bertindak dan berhenti sampai tindakan selesai; M berarti segera menangani dan penghentian dianjurkan; L berarti bertindak sesuai kebutuhan. Cocokkan “kemungkinan rendah, fatal” dan “kemungkinan sedang, ringan”, lalu jelaskan perbedaannya dari perkalian.",
+        "expectedPoints": [
+          "Perpotongan kemungkinan rendah dan keparahan fatal adalah H: segera bertindak dan berhenti sampai tindakan selesai.",
+          "Perpotongan kemungkinan sedang dan keparahan ringan adalah L: bertindak sesuai kebutuhan.",
+          "Baca perpotongan baris dan kolom tabel ini; jangan mengalikan angka untuk membuat kategori.",
+          "Jangan meremehkan akibat fatal hanya karena frekuensinya rendah.",
+          "Ini tabel latihan buatan, bukan tabel angka dalam sumber atau standar resmi perusahaan. Dalam pekerjaan, ikuti tabel dan syarat penghentian yang diadopsi."
+        ],
+        "sourceHash": "6ccc4d57bc38a8621e640c3c61ec4b82c7068f8cf1503f715e058ea049cf713c"
+      },
+      "food-assessment35-education-plan": {
+        "title": "Jenis kebutuhan pendidikan dan 5 W 1 H",
+        "prompt": "A tidak mengetahui cara kerja mesin. B dapat menjelaskannya tetapi tidak dapat mengoperasikannya. C tidak memahami tujuan pekerjaan dan melewatkan pemeriksaan. Bedakan pendidikan yang diperlukan, buat rencana 5 W 1 H bagi petugas peralatan baru dan jelaskan cara memeriksa hasilnya.",
+        "expectedPoints": [
+          "Pertimbangkan pendidikan pengetahuan untuk A, keterampilan untuk B dan sikap untuk C. Namun, pastikan penyebab sebenarnya melalui pengamatan dan pertanyaan, tanpa langsung menyimpulkan.",
+          "Tetapkan tujuan yang menjelaskan alasan pendidikan, kemampuan yang harus dicapai dan tingkat standarnya.",
+          "Tentukan siapa yang belajar dan mengajar, apa, kapan, di mana, mengapa dan bagaimana.",
+          "Identifikasi kebutuhan seperti penugasan atau peralatan baru, siapkan materi dan lingkungan praktik yang aman, lalu laksanakan.",
+          "Periksa pencapaian melalui angket, laporan dan pemeriksaan pekerjaan di lokasi, kemudian perbaiki rencana dan pengajaran."
+        ],
+        "sourceHash": "6aa9a308b48150cb7ed2952628268b66335fb8127528450371e6ad93c03c9b9e"
+      },
+      "food-assessment35-conditional-chart": {
+        "title": "Persentase perusahaan dengan enam jenis konsultasi",
+        "prompt": "Diagram buatan ini menafsirkan kembali survei sumber yang dilakukan pada tahun fiskal 2023. Sasarannya adalah perusahaan yang menerima konsultasi selama tiga tahun sebelumnya; diagram menunjukkan ada atau tidaknya kasus untuk setiap jenis. Pada pelecehan berbasis kekuasaan, n = 4.985 dan 73,0% memiliki kasus; pada pelecehan seksual saat mencari pekerjaan dan situasi sejenis, n = 54 dan 37,0% memiliki kasus. Dari diagram enam kelompok, termasuk empat jenis lainnya, bacalah persentase tanpa kasus pelecehan berbasis kekuasaan dan jelaskan penyebut tiap kelompok serta kehati-hatian dalam membandingkan persentase.",
+        "expectedPoints": [
+          "Untuk pelecehan berbasis kekuasaan, 27,0% tidak memiliki kasus terkait; ditambah 73,0% yang memiliki kasus, jumlahnya 100%.",
+          "Enam jenisnya adalah pelecehan berbasis kekuasaan, pelecehan seksual, pelecehan terkait kehamilan, persalinan atau cuti pengasuhan anak, pelecehan terkait cuti perawatan keluarga, perilaku pelanggan yang sangat mengganggu, serta pelecehan seksual saat mencari pekerjaan dan situasi sejenis.",
+          "Penyebut tiap jenis adalah perusahaan yang menerima konsultasi tentang jenis tersebut dalam tiga tahun sebelumnya, bukan seluruh perusahaan atau seluruh pekerja.",
+          "Nilai n berbeda antarkelompok. Membandingkan persentase 4.985 perusahaan untuk pelecehan berbasis kekuasaan dan 54 perusahaan untuk pelecehan seksual saat mencari pekerjaan tidak menyamakan jumlah perusahaan atau jumlah seluruh korban.",
+          "Perusahaan yang sama dapat termasuk dalam beberapa kelompok; persentase enam kelompok tidak dapat dijumlahkan menjadi tingkat kejadian keseluruhan.",
+          "Angka tersebut berasal dari survei tahun fiskal 2023; jangan menyatakannya sebagai tingkat kejadian nasional saat ini."
+        ],
+        "sourceHash": "d0ee3345a502e615d9ac53efa0ff051a070dc2135f60c567021b30d4a8b997ce"
+      }
+    }
+  },
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false
+}

@@ -1,0 +1,241 @@
+{
+  "figures": [
+    {
+      "id": "food-source37-flow-zones",
+      "lessonId": "food-2-041",
+      "lessonSourceHash": "37b8f67724801f136f0d3fae7655011a31ac7e6e2b7dd07b49fe8ac0613f9490",
+      "paragraphId": "p5",
+      "assetFile": "assets/food-manufacturing/source-practice37/flow-zones.webp",
+      "svgFile": "assets/food-manufacturing/source-practice37/flow-zones.svg",
+      "sha256": "7f46648bb5b1a1016f832088dccf45fb47ab0665944196b3b268fce17c479c55",
+      "width": 1920,
+      "height": 1600,
+      "captionJa": "工程図を区域・再使用・管理点と照合する",
+      "altJa": "仮想工程図。原料AとBが下処理で合流し、加熱CCPを経て清潔側の冷却、加熱後調製、充填包装、製品へ進む。包材は充填へ入る。未加熱の具の追加案と、汚染側の人・器具の接触経路は破線で再評価を促す。温度と時間は製品別の承認条件を確認する。",
+      "objectiveJa": "原料・包材・人と器具の経路を区域境界・CCP条件と関連付ける",
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 50,
+          "printedPage": 41
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 51,
+          "printedPage": 42
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 52,
+          "printedPage": 43
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 53,
+          "printedPage": 44
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 54,
+          "printedPage": 45
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 55,
+          "printedPage": 46
+        }
+      ],
+      "teachingData": {
+        "fictional": true,
+        "inputs": [
+          "原料A",
+          "原料B",
+          "清潔な包材"
+        ],
+        "proposedPostHeatInput": "未加熱の具Cを加える案",
+        "zones": [
+          "汚染側・加熱前",
+          "清潔側・加熱後"
+        ],
+        "ccpExample": "加熱",
+        "ccpConditions": "製品別に承認した温度・時間・測定方法",
+        "numericUniversalLimitSupplied": false,
+        "hazardRoutes": [
+          "作業者",
+          "器具",
+          "飛沫",
+          "加熱後の具の追加"
+        ]
+      },
+      "assessmentCheckIds": [
+        "food-assessment35-flow-paths"
+      ],
+      "scopeLimits": "Original fictional process, not a factory plan. Additional raw topping is a change requiring hazard re-analysis, not approval to bypass lethality. No universal critical limit or product release decision is given.",
+      "rights": "project_original_controlled_geometry",
+      "humanReviewed": false,
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "physicalDeviceTested": false,
+      "captionSupplementId": "food31-flow",
+      "captionSupplementSourceHash": "0588ca3b61a952e179cf7b75e97f337b392b984184c59a1f2d34a8115e90bafb"
+    },
+    {
+      "id": "food-source37-lookup-matrix",
+      "lessonId": "food-2-047",
+      "lessonSourceHash": "1d00c166b8bf70b88402c08467d9f6c45fe304fecca856761fa42b6ae6ee54ea",
+      "paragraphId": "p1",
+      "assetFile": "assets/food-manufacturing/source-practice37/lookup-matrix.webp",
+      "svgFile": "assets/food-manufacturing/source-practice37/lookup-matrix.svg",
+      "sha256": "611bbf6ed451f39eb12a3f87ae94bebea78c11eb92c2bac8be827f1897e60763",
+      "width": 1600,
+      "height": 1280,
+      "captionJa": "可能性と重大性を別々に読む",
+      "altJa": "独自の3行3列の練習照合表。行は可能性の高中低、列は致命的、休業、軽度。各行はH-H-M、H-M-L、H-M-L。低い可能性でも致命的ならH、中の可能性で軽度ならL。Hは直ちに対策し完了まで停止、Mは速やかに対策し停止が望ましい、Lは必要に応じ対策。掛算や会社の正式基準ではない。",
+      "objectiveJa": "独自の行列照合とH・M・Lの対応を掛算とは区別して読む",
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 133,
+          "printedPage": 124
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 134,
+          "printedPage": 125
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 135,
+          "printedPage": 126
+        }
+      ],
+      "teachingData": {
+        "fictional": true,
+        "rowsLikelihood": [
+          "高",
+          "中",
+          "低"
+        ],
+        "columnsSeverity": [
+          "致命的",
+          "休業",
+          "軽度"
+        ],
+        "lookup": [
+          [
+            "H",
+            "H",
+            "M"
+          ],
+          [
+            "H",
+            "M",
+            "L"
+          ],
+          [
+            "H",
+            "M",
+            "L"
+          ]
+        ],
+        "priorityActions": {
+          "H": "直ちに対策し対策完了まで停止",
+          "M": "速やかに対策し停止が望ましい",
+          "L": "必要に応じて対策"
+        },
+        "examples": [
+          {
+            "row": 2,
+            "column": 0,
+            "result": "H"
+          },
+          {
+            "row": 1,
+            "column": 2,
+            "result": "L"
+          }
+        ]
+      },
+      "assessmentCheckIds": [
+        "food-assessment35-lookup-matrix"
+      ],
+      "scopeLimits": "Independent3x3learning lookup, not the textbook4x4numeric example or an approved operational standard. Letters are looked up, never multiplied.",
+      "rights": "project_original_controlled_geometry",
+      "humanReviewed": false,
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "physicalDeviceTested": false
+    },
+    {
+      "id": "food-source37-conditional-groups",
+      "lessonId": "food-2-038",
+      "lessonSourceHash": "8cacaec7cb67aa681d978fb12bcbc1d2a8a7bbf2a826a34cb968c39411a3fbe9",
+      "paragraphId": "p2",
+      "assetFile": "assets/food-manufacturing/source-practice37/conditional-groups.webp",
+      "svgFile": "assets/food-manufacturing/source-practice37/conditional-groups.svg",
+      "sha256": "a375a410e8012cec28a5decf298b33fe6e1ab7463a41acee09d9bcd834ccfa08",
+      "width": 1920,
+      "height": 1328,
+      "captionJa": "同じ割合でも対象が違う",
+      "altJa": "2023年度調査における、過去3年間に相談があった企業の条件付き割合。種類ごとのnと該当判断あり割合は、パワハラ4985社73.0%、セクハラ3075社80.9%、妊娠出産育児休業等794社50.1%、介護休業等301社55.5%、顧客等2167社86.8%、就活等54社37.0%。なし割合も別の記号で示す。全企業や全労働者の率ではなく、群を足さない。",
+      "objectiveJa": "六種類の条件付き企業割合を標本数・年度とともに読む",
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 29,
+          "printedPage": 20
+        }
+      ],
+      "teachingData": {
+        "fictional": false,
+        "surveyFiscalYear": 2023,
+        "japaneseFiscalYear": "令和5年度",
+        "referenceWindow": "過去3年間",
+        "populationCondition": "各種類についてハラスメント相談があった企業",
+        "categories": [
+          "パワハラ",
+          "セクハラ",
+          "妊娠・出産・育児休業等",
+          "介護休業等",
+          "顧客等からの著しい迷惑行為",
+          "就活等セクハラ"
+        ],
+        "sampleSizesCompanies": [
+          4985,
+          3075,
+          794,
+          301,
+          2167,
+          54
+        ],
+        "judgedApplicablePercent": [
+          73.0,
+          80.9,
+          50.1,
+          55.5,
+          86.8,
+          37.0
+        ],
+        "notJudgedApplicablePercent": [
+          27.0,
+          19.1,
+          49.9,
+          44.5,
+          13.2,
+          63.0
+        ],
+        "unit": "percentage_of_consulted_companies_per_category",
+        "groupsMustNotBeSummedIntoPopulationRate": true
+      },
+      "assessmentCheckIds": [
+        "food-assessment35-conditional-chart"
+      ],
+      "scopeLimits": "Historical textbook-published source values, redrawn as an original paired-dot chart. Different conditional sample sizes; do not infer respondent counts from rounded percentages, add group rates, assume groups are disjoint, or call these current national prevalence.",
+      "rights": "project_original_controlled_geometry",
+      "humanReviewed": false,
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "physicalDeviceTested": false
+    }
+  ]
+}

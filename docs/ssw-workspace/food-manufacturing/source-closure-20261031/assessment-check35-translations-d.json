@@ -1,0 +1,766 @@
+{
+  "translations": {
+    "tl": {
+      "food-assessment35-stacked-share": {
+        "title": "Pag-ibahin ang porsiyento at aktuwal na bilang sa stacked bar chart",
+        "prompt": "Sa stacked bar chart ng halimbawa, ang A ay X 30%, Y 50%, Z 20%, at ang B ay X 40%, Y 20%, Z 40%. Tiyakin ang kabuuan ng bawat hanay at ihambing ang porsiyento ng Y. Kung hindi ibinigay ang kabuuang bilang ng A at B, masasabi bang tiyak na mas marami rin ang aktuwal na bilang ng Y sa A? Ipaliwanag kung bakit.",
+        "expectedPoints": [
+          "Sa A, 30+50+20=100%; sa B, 40+20+40=100%. Ihambing ang komposisyon sa batayang 100% ng bawat hanay.",
+          "Ang Y ay 50% sa A at 20% sa B, kaya mas mataas ang porsiyento sa A.",
+          "Dahil hindi alam ang kabuuang bilang, hindi matitiyak kung alin ang may mas maraming aktuwal na Y.",
+          "Magkaiba ang porsiyento at aktuwal na bilang. Tiyakin ang kategoryang inihahambing at ang kondisyon ng denominator."
+        ],
+        "sourceHash": "e7943c0c4e90c6f334ad4145d4d32e0a60d709966a260d760f97f0a59eb60a12"
+      },
+      "food-assessment35-radar-scale": {
+        "title": "Basahin ang magkakatulad na sukatan at bawat aksis ng radar chart",
+        "prompt": "Lahat ng aksis sa radar chart ng halimbawa ay 0–5. Para sa I–V, ang A ay 4, 2, 3, 5, 1 at ang B ay 2, 4, 3, 2, 4. Sabihin kung alin ang mas mataas sa bawat aksis at saan magkapareho ang halaga. Maaari bang magtakda ng pangkalahatang ranggo batay lamang sa lawak ng hugis?",
+        "expectedPoints": [
+          "Tiyaking pare-parehong 0–5 ang sukatan ng lahat ng aksis.",
+          "Mas mataas ang A sa I at IV; mas mataas ang B sa II at V.",
+          "Sa III, parehong 3 ang A at B.",
+          "Ihambing ang maraming katangian ayon sa bawat aksis. Huwag magtakda ng pangkalahatang ranggo batay lamang sa lawak; tiyakin ang kahulugan ng bawat paksa at kondisyon ng pagtatasa."
+        ],
+        "sourceHash": "b712bb94d50d77d3d38c68194959e0dd12e91079aae6cebcc6224ce8ca6a5c98"
+      },
+      "food-assessment35-progress-band": {
+        "title": "Basahin ang mga aksis at pansamantalang banda ng pinagsama-samang progreso",
+        "prompt": "Sa halimbawang grap ng progreso, 60 kg/oras ang pamantayan, ±15 kg ang ipinagpalagay na banda sa paligid ng pamantayang linya, at 160 kg ang aktuwal na resulta pagkaraan ng 3 oras. Pag-ibahin ang pahalang at patayong aksis at ang pamantayan at aktuwal na linya. Kuwentahin ang ibabang halaga pagkaraan ng 3 oras at ihambing sa resulta. Maaari bang gamitin agad ang bandang ito bilang pamantayan ng paghinto sa tunay na trabaho?",
+        "expectedPoints": [
+          "Ang pahalang na aksis ay lumipas na oras; ang patayo ay pinagsama-samang output sa kg. Ang pamantayang linya ay plano at ang aktuwal na linya ay tunay na output.",
+          "Pagkaraan ng 3 oras, 60×3=180 kg ang pamantayan; 180−15=165 kg ang ibabang halaga.",
+          "Ang 160 kg ay 5 kg na mas mababa sa 165 kg, kaya nasa ibaba ng ipinagpalagay na banda.",
+          "Ang±15 kg ay palagay para sa pag-aaral. Tiyakin ang aktuwal na pamantayan at tugon sa mga kondisyong pinagtibay ng lugar ng trabaho at aprubadong pamamaraan."
+        ],
+        "sourceHash": "fd1f87ef3a893337122de0015429c33300090b8a70bfde9827649bd7a6d190d2"
+      },
+      "food-assessment35-report-paths": {
+        "title": "Ihambing ang direktang daloy at daloy sa pamamagitan ng lider ng pangkat",
+        "prompt": "Tingnan ang dalawang pang-organisasyong diagram ng halimbawa. Ipaliwanag ang daloy ng tagubilin at ulat kapag direktang nag-uusap ang foreman at manggagawa, at kapag dumaraan sa lider ng pangkat. Maaari bang magpasiyang kailangang katulad lagi ng diagram ang daloy sa sariling lugar ng trabaho?",
+        "expectedPoints": [
+          "Sa direktang anyo, nagmumula ang tagubilin sa foreman patungo sa manggagawa, at nag-uulat ang manggagawa sa foreman.",
+          "Sa anyong may lider ng pangkat, foreman patungo sa lider at lider patungo sa manggagawa ang tagubilin. Ang ulat ay mula manggagawa patungo sa lider at lider patungo sa foreman.",
+          "Mga halimbawa ng organisasyon ang dalawa; huwag magtakda ng awtoridad o tungkulin batay lamang sa pangalan.",
+          "Tiyakin ang organisasyon at awtoridad sa sariling lugar at sundin ang itinakdang daloy ng tagubilin at pag-uulat."
+        ],
+        "sourceHash": "129fe58a408ecc487753b9857fbda975db230be949efda3a39b209595eb19e28"
+      },
+      "food-assessment35-design-residual": {
+        "title": "Ipaliwanag ang panganib na nababawasan at natitira sa disenyo",
+        "prompt": "Ihambing sa diagram ang pagbilog sa matalim na kanto at pagpapagaan ng mabigat na pinto. Anong panganib o pinsala ang nababawasan sa bawat isa, at ano ang dapat suriin pa?Tama bang sabihing “kapag mas magaan, hindi na kailanman masasaktan kahit maipit ang daliri”?",
+        "expectedPoints": [
+          "Ang pagbilog ng matalim na kanto ay nagpapaliit sa panganib na matusok kapag nadikit dito.",
+          "Ang pagpapagaan ng pinto ay nagpapaliit sa pinsala kapag naipit, ngunit hindi inaalis ang panganib ng pagkaipit o posibilidad ng pinsala.",
+          "Suriin at ipaapruba ang panukala kasama ang namamahala sa kagamitan, at tiyakin ang epekto at natitirang panganib pagkatapos baguhin.",
+          "Halimbawa lamang ito upang matutuhan ang pag-iisip sa disenyo; hindi pahintulot sa sariling pagbabago ng manggagawa o garantiya ng kaligtasan sa lahat ng kondisyon."
+        ],
+        "sourceHash": "0e330f034afc7f9952ab78aa63267b5257d08be0eec11d952b2835288920fb20"
+      },
+      "food-assessment35-ojt-observation": {
+        "title": "Tiyakin sa OJT ang kaligtasan, pagtatala at pagkilos sa abnormalidad",
+        "prompt": "Sa OJT ng pagsukat ng dami ng pagpuno, tatapusin na sana ang pagtiyak dahil mabilis nakasukat ang tao. Paano ihahambing ang layunin sa aktuwal na gawain?Paano titiyakin ang ligtas na operasyon, pagsukat, pagtatala at pagtawag kapag may abnormalidad, at ano ang gagawin kung may kakulangan?",
+        "expectedPoints": [
+          "Ihambing sa naunang layunin at kondisyon; huwag ituring na natutuhan na dahil lamang mabilis o may tala ng pagdalo.",
+          "Pagkatapos ng demonstrasyon ng nagtuturo, ipagawa mismo sa tao habang ipinapaliwanag niya ang mga hakbang at dahilan.",
+          "Obserbahan ang ligtas na operasyon at tamang pagsukat, at tiyaking naitatala niya ang tunay na resulta.",
+          "Tiyakin sa sariling paliwanag o pagkilos niya sa halimbawang sitwasyon kung sino at ano ang dapat ipaalam kapag may abnormalidad.",
+          "Alamin ang dahilan ng kakulangan, baguhin ang pagtuturo o pagsasanay, magturo muli at muling tiyakin kung naabot ang layunin."
+        ],
+        "sourceHash": "94390ce64ea947ef55b01f509a3b94a1c4025c59bd339b22ca7295632361026b"
+      },
+      "food-assessment35-distribution-recognition": {
+        "title": "Iugnay ang hugis ng distribusyon sa mga kondisyong susuriin",
+        "prompt": "Itugma ang histogram A–F sa anim na anyo, at scatter plot A–D sa apat na ugnayan. Ipaliwanag ang dalawang aksis ng histogram at mga kondisyong susuriin sa dalawang tuktok, may puwang, mahabang buntot, matarik na gilid at hiwalay na maliit na pangkat. Sa ibang kathang-isip na 36 obserbasyon, ilan ang gabay na bilang ng class interval na√n?Mapatutunayan ba ang sanhi o katatagan batay lamang sa gabay o hugis?",
+        "expectedPoints": [
+          "Histogram:A pangkalahatang anyo, B may mga puwang, C may mahabang buntot, D may matarik na gilid, E dalawang tuktok, F hiwalay na maliit na pangkat.",
+          "Ang pahalang na aksis ay class interval ng sukat; ang patayo ay dalas sa interval na iyon.",
+          "Sa dalawang tuktok at hiwalay na pangkat, isiping maaaring may magkahalong populasyon at paghiwalayin ayon sa katangian upang tiyakin.",
+          "Sa may puwang, suriin ang decimal precision, mga hangganan, lapad ng interval at hindi magkakatulad na pagproseso.",
+          "Sa mahabang buntot, suriin ang pagkontrol sa isang panig lamang; sa matarik na gilid, suriin ang kasaysayan ng pagpili o pagtanggal. Hindi sapat ang hugis upang matiyak ang sanhi.",
+          "Scatter:A positibong ugnayan, B negatibong ugnayan, C di-linear na ugnayan, D walang malinaw na ugnayan. Itugma nang pares ang kaugnay na halaga; hindi patunay ng sanhi ang correlation lamang.",
+          "√36=6, kaya humigit-kumulang anim na interval ang gabay, hindi permanenteng tuntunin. Suriin ang dami, distribusyon at katumpakan ng pagsukat; maaaring mabago ang hugis kung masyadong pino o malapad ang mga interval.",
+          "Hindi patunay ng katatagan ang pangkalahatang anyo lamang. Gamitin ang diagram na palatandaan upang suriin ang aktuwal na bagay, paraan ng pagsukat at orihinal na datos."
+        ],
+        "sourceHash": "b541f4599a73cb80aaaeb0ec5b61fd5143ce63c3e8a97d52f49bf2a39b6bfac1"
+      },
+      "food-assessment35-control-patterns": {
+        "title": "Pag-ibahin ang walong halimbawang serye sa oras",
+        "prompt": "Ang control chart A–H ay kathang-isip na walang yunit:sentro 0, halimbawang linyang±3, at pantulong na linyang±1 at±2. Ipaliwanag ang mga aksis, sentrong linya at itaas/ibabang linya. Basahin ang bilang at puwesto ng mga punto sa bawat A–H. Magbigay din ng mga haka-hakang susuriin mula sa G at H. Maaari bang basta itumbas ito sa espesipikasyon ng produkto o patakaran ng trabaho?",
+        "expectedPoints": [
+          "Pahalang:pagkakasunod ng obserbasyon; patayo:kathang-isip na sukatan. Sentro 0, halimbawang itaas+3 at ibaba−3; iba ito sa espesipikasyon ng produkto.",
+          "Sa A, ang ika-6 na puntong 3.4 ay lampas sa itaas na linyang 3.",
+          "Sa B, 9 sunod-sunod na punto ang nasa itaas ng sentrong 0.",
+          "Sa C, 6 sunod-sunod na punto ang tumataas.",
+          "Sa D, 14 na punto ang salit-salitang pataas at pababa.",
+          "Sa E, 2 sa 3 punto ang lampas sa+2, malapit sa itaas na hangganan.",
+          "Sa F, 4 sa 5 punto ang lampas sa+1, kaya nakahilig sa isang panig.",
+          "Sa G, 15 punto ang nasa loob ng−1 hanggang+1, malapit sa sentro.",
+          "Sa H, 8 punto ang nasa labas ng−1 hanggang+1 malapit sa sentro.",
+          "Maaaring mas maliit ang pagkakaiba-iba sa G o may magkahalong pangkat sa H:mga haka-hakang susuriin ito, hindi tiyak na sanhi.",
+          "Pag-ibahin ang halimbawang sanggunian sa JIS at ang pinagtibay na tuntunin at tugon ng kompanya. Ang namamahalang departamento ang nagtatakda ng angkop na kondisyon sa produkto; huwag gawing pangkalahatang limitasyon ang kathang-isip na bilang at mga linya."
+        ],
+        "sourceHash": "062f8b2e9f39ed88c2ee66125706b16a5cf28d9c142de23c92fb1b25814ea364"
+      },
+      "food-assessment35-tally-categories": {
+        "title": "Itugma ang kabuuan ayon sa araw at uri",
+        "prompt": "Sa kathang-isip na tala, may 3 depekto sa balot at 2 dumi sa unang araw; may 1 depekto sa balot at 4 dumi sa susunod. Kuwentahin ang kabuuan ayon sa araw, uri at lahat, at tiyaking magkapareho ang kabuuan sa dalawang paraan. Ipaliwanag din kung bakit dapat magkatugma ang pangalan ng kategorya at paraan ng pagtatala ng mga tauhan.",
+        "expectedPoints": [
+          "Unang araw:3+2=5 kaso; susunod:1+4=5 kaso.",
+          "Depekto sa balot:3+1=4 kaso; dumi:2+4=6 kaso.",
+          "Ayon sa araw:5+5=10 kaso; ayon sa uri:4+6=10 kaso; kaya magkatugma.",
+          "Gumamit ng parehong kategorya, yunit at paraan ng pagtatala upang maiwasan ang dobleng bilang o magkaibang pag-uuri, at magamit sa pagsusuri ng sanhi."
+        ],
+        "sourceHash": "5df067147588b28acbbb0933116ea02662a9e3e2672e7c41d542e463871b6bec"
+      },
+      "food-assessment35-plan-report-reserve": {
+        "title": "Iulat ang paglatag ng plano at epekto ng pagdagdag ng tauhan",
+        "prompt": "Paano ilalatag sa sariling linya ang plano ng kompanya?Sa ibang kathang-isip na paghahambing ng parehong maayos na produkto, 3 tao ang gumawa ng 60 kg sa 1 oras bago baguhin; 4 tao ang gumawa ng 72 kg sa 1 oras pagkatapos, walang paghinto. Kuwentahin ang kada oras at kada oras-paggawa at ano ang iuulat para sa pamamahalang pasiya?Pag-ibahin din ang reserbang kapasidad ng kompanya, maiiwasang paghinto sa lugar at panukalang reserbang kapasidad sa susunod na proseso.",
+        "expectedPoints": [
+          "Mula sa plano ng kompanya sa dami, panahon at pagkuha ng materyales, gumawa ng tiyak na plano ng pabrika, at ilatag sa materyales, kagamitan, tauhan, oras at pagkakasunod ng linya. Ipaalam ang pagbabago ng kondisyon sa kinauukulang departamento o nakatataas.",
+          "Tumataas ang linya mula 60 hanggang 72 kg/oras. Tumataas ang input mula 3 hanggang 4 oras-paggawa; bumababa ang produktibidad mula 60÷3=20 hanggang 72÷4=18 kg/oras-paggawa.",
+          "Huwag isang sukatan lamang ang iulat bilang pagbuti. Iulat ang output, tauhan, oras-paggawa, kondisyon sa kalidad at pagbabago ng parehong sukatan sa nakatataas o pamunuan para sa pasiyang angkop sa kompanya.",
+          "Ang reserbang tugon sa pagbabago ng demand ng buong kompanya/pabrika ay pasiya ng pamunuan; hindi pahintulot na pabayaan ang maiiwasang paghinto o paghihintay sa nakaplanong oras. Huwag alisin o itago ang paghintong kailangan sa kaligtasan.",
+          "Ang reserbang kapasidad ng kasunod na proseso ay panukalang disenyo ayon sa pagbabago at kagamitan, hindi tuntuning ipilit ang iisang ayos ng kapasidad sa lahat ng linya."
+        ],
+        "sourceHash": "399d11c6a557659c7367155bc5a9dce279af660db829fd5403648cb34cfafe6d"
+      },
+      "food-assessment35-productivity-four-cases": {
+        "title": "Ihambing ang apat na kombinasyon ng input at resulta",
+        "prompt": "Kathang-isip na paghahambing ito ng parehong maayos na produkto at kalidad. Ang batayan ay 100 kg sa 10 oras-paggawa. A:120 kg/10 oras-paggawa, B:100 kg/5, C:180 kg/15, D:80 kg/5. Kuwentahin ang batayan at A–D at ipaliwanag sa apat na paraan kung bakit bumubuti kahit tumataas o bumababa ang output o input. Ano ang ibig sabihin kung baligtad ang numerator at denominator?",
+        "expectedPoints": [
+          "Batayan 100÷10=10 kg/oras-paggawa; A 120÷10=12, B 100÷5=20, C 180÷15=12, D 80÷5=16 kg/oras-paggawa. Lahat ng A–D ay higit sa batayan.",
+          "A:mas malaking resulta sa parehong input; B:mas maliit na input sa parehong resulta.",
+          "C:tumataas ang input, ngunit mas malaki ang porsiyentong pagtaas ng resulta.",
+          "D:bumababa ang resulta, ngunit mas malaki ang porsiyentong pagbabawas ng input.",
+          "Ang oras-paggawa÷kg ay specific consumption:input sa bawat yunit ng produkto. Huwag ituring na iisang numero ang produktibidad at specific consumption; itugma ang yunit at kondisyon sa kalidad."
+        ],
+        "sourceHash": "8748b6881b90da4482fd0a0841d57750cdc84f2f0a3ad5b8f03b5b38260ae86c"
+      },
+      "food-assessment35-daily-record-followup": {
+        "title": "Iugnay ang arawang ulat sa susunod na gawain at maintenance",
+        "prompt": "Kabuuang output lamang ang isinusulat sa arawang ulat. Paano itatala ang paghinto, pagtanggap/paglabas at imbentaryo ng materyales, at pagpapabuti, at kanino ito ipaaabot?Ipaliwanag kung bakit susuriin ang maiikling paghinto sa loob ng 1 linggo o 1 buwan, at paano iuugnay sa impormasyon ng kagamitan at hakbang para sa kaparehong makina.",
+        "expectedPoints": [
+          "Bukod sa output, itama ang tala ng oras at dahilan ng paghinto o abnormalidad, pagtanggap/paglabas at imbentaryo ng materyales, at mga suliranin/pagpapabuti sa araw.",
+          "Iulat sa nakatataas at ibahagi sa nauna/kasunod na proseso ang suliranin at susunod na paghahanda.",
+          "Itala rin nang tama ang maikling paghinto; suriin ang paulit-ulit na takbo kada linggo/buwan. Kung kagamitan ang salik, talakayin ang sanhi at maintenance sa nakatataas at espesyalista.",
+          "Iugnay ang imbentaryo ng napupudpod na piyesa sa pagpapalit nito at isaalang-alang ang pagpapalit bago masira. Magbigay ng impormasyon sa lugar para sa imbestigasyon at suriin kung may parehong panganib sa kahalintulad na kagamitan o gawain."
+        ],
+        "sourceHash": "002d156efc34afa1063746a59179d8c537d01bb029d7cd76655e1df8e7e8fb6b"
+      },
+      "food-assessment35-yield-scope-pretreatment": {
+        "title": "Tiyakin ang denominator sa paunang paghahanda at yunit ng bentahan",
+        "prompt": "Kathang-isip na maayos na produkto ang lahat; walang ibang dagdag o bawas. Ihambing ang 100 kg na hindi pa naprosesong materyales na binawasan ng 20 kg na hindi nakakain at 10 kg na tubig sa pag-init, sa biniling 80 kg na naproseso na at binawasan din ng 10 kg na tubig sa parehong pag-init. Sa ibang halimbawa, 100 kg ang input, 70 supot na tig 1 kg ang standard, at 77 kg ang aktuwal na bigat. Ipaliwanag ang yield sa bentahang timbang at bentahang supot, at kung magkatugma ang pagkukuwenta sa bilang ng supot at sa standard-equivalent weight.",
+        "expectedPoints": [
+          "Sa unang halimbawa, 100−20−10=70 kg ang maayos na produkto, 70% ng input sa sariling pabrika. Sa biniling materyales, 80−10=70 kg din, ngunit 87.5% ng sariling input.",
+          "Sa biniling materyales, nagawa na sa labas ang paunang paghahanda, kaya iba ang denominator at saklaw. Hindi sapat ang paghahambing upang patunayang bumuti ang buong kahusayan kasama ang paghahanda. Huwag ituring na lahat ay maiiwasang loss ang pag-aalis ng buto o kailangang pag-alis ng tubig para sa kalidad.",
+          "Sa hiwalay na bentahang halimbawa, 77÷100=77% batay sa timbang. Sa bentahang supot, 70 supot×1 kg=70 kg, at 70÷100=70%.",
+          "Ang teoretikal na bilang ay 100 kg÷1 kg=100 supot; 70÷100=70%, kapareho ng standard-equivalent weight. Hiwalay na suriin ang 7 kg na diperensiya sa aktuwal na bigat bilang sobrang pagpuno.",
+          "Sundin ang kalidad, label at kailangang dami. Huwag laktawan ang kailangang pagproseso o kondisyon ng pagpuno upang pataasin lamang ang yield."
+        ],
+        "sourceHash": "55f185112062a9bf8d0c07f19cf13217504b8401fc4226abac92e7a21902ca95"
+      },
+      "food-assessment35-environment-capacity-boundary": {
+        "title": "Tiyakin ang saklaw ng environmental indicators at treatment capacity",
+        "prompt": "Maaari bang gumamit ng walang batayang factor sa pagtataya ng CO 2 mula sa kuryente, langis at gas?Kung nabawasan ang wastewater ngunit marami ang dumi, paano ito nakaaapekto sa treatment capacity at operasyon?Pag-ibahin ang pagkolekta ng residue at pagtitipid ng tubig sa lugar sa pasiya ng kompanya sa investment o renewable energy. Sabihin din ang titiyakin sa paghahambing ng magkaibang dami ng produkto o panahon.",
+        "expectedPoints": [
+          "Gamitin ang aktuwal na datos ng bawat enerhiya sa saklaw na panahon at tiyakin sa kinauukulang departamento ang may batayang conversion. Huwag basta idagdag ang magkaibang yunit o gumamit ng kathang-isip na CO 2 factor.",
+          "Ihambing sa treatment capacity ang dami at organic/dirt load ng wastewater. Kung hindi matanggap, maaaring hindi makagamit ng tubig at maantala ang produksyon.",
+          "Panatilihin ang kalinisan:kolektahin muna ang residue, bawasan ang di-kailangang pagwisik at maiiwasang pagkawala ng pagkain. Iba ito sa pasiya ng buong kompanya sa investment, renewable energy, proseso o order system, na gumagamit din ng datos sa lugar.",
+          "Sa parehong panahon at kondisyon ng produkto, tiyakin ang kabuuan at specific consumption sa bawat produkto. Huwag itago ang pagkakaiba ng output o denominator o bawasan ang kailangang paghuhugas at kaligtasan."
+        ],
+        "sourceHash": "c445600c4480e3a30e32c9ce8477ab9494e61c0ce3f6825dcdb25c57b4dbde15"
+      },
+      "food-assessment35-financial-indicator-boundary": {
+        "title": "Huwag ipagkamali ang tinukoy na diperensiya sa accounting profit",
+        "prompt": "Kahit nagawa ang pagkukuwenta sa pera sa teksto, maaari bang itumbas ang tinukoy na diperensiya ng added value sa sales o sa accounting profit ng buong kompanya o ibang kompanya?Ipaliwanag ang numerator, denominator at saklaw ng gastos na titiyakin bago maghambing, at limitasyon ng pagtatasa sa indirect departments batay lamang sa kg ng produksyon.",
+        "expectedPoints": [
+          "Ang added value ay bagong halagang nalikha ng kompanya, hindi buong sales. Ang diperensiya sa teksto ay ayon sa depinisyon ng pagsasanay na iyon.",
+          "Tiyakin kung aling materyales, labour at utility/fuel costs ang kasama. Huwag sabihing accounting profit ang mga sukatang magkaiba ang saklaw ng gastos sa kompanya o departamento.",
+          "Tiyakin kung pisikal na dami, sales o added value ang numerator, at kung lumipas na oras o oras-paggawa ang denominator. Itugma ang kalidad at saklaw ng paghahambing.",
+          "Sinusuportahan din ng quality control, equipment management at administrasyon ang pabrika. Huwag tasahin bawat departamento sa direktang kg lamang; pumili ng sukatan ayon sa papel at layunin ng buong pabrika."
+        ],
+        "sourceHash": "8ed0aac6dd88adbd3d84d8b6efd7f0fac53f5f8e577613999dd0555af9128791"
+      },
+      "food-assessment35-consumer-use": {
+        "title": "Mga kakain at paggamit pagkatapos buksan",
+        "prompt": "Papalitan ang isang-kainang produkto ng malaking supot na gagamitin sa loob ng ilang araw matapos buksan. Maaaring kainin din ng sanggol o maliit na bata, may sakit at matatanda. Ipaliwanag ang impormasyong idaragdag sa paglalarawan ng produkto at kung saan gagamitin ang natuklasan.",
+        "expectedPoints": [
+          "Linawin ang mga kakain, paraan ng pagkain, kung iinitin, at kondisyon ng paghahati ng gamit matapos buksan.",
+          "Suriin ang kagamitan sa pagkuha, pagkahawak ng tao at pag-iimbak matapos buksan.",
+          "Huwag magpasiyang ligtas batay lamang sa kondisyon habang hindi pa bukas.",
+          "Nagbabago ang kailangang isaalang-alang na panganib ayon sa kakain at gamit. Ibigay ang impormasyon sa HACCP team para sa hazard analysis."
+        ],
+        "sourceHash": "4a9238e975e1582b65ac079ce1c25b06227e9de7a4ff452a3e8830b13e1f152a"
+      },
+      "food-assessment35-flow-paths": {
+        "title": "Hangganan at mga puntong pangkontrol sa flow diagram",
+        "prompt": "Sundan sa diagram ang daloy ng materyales A at B, balot, mga manggagawa at kagamitan. Para sa panukalang magdagdag ng sangkap na hindi nainitan matapos ang pag-init, ipaliwanag ang titiyakin sa hangganan ng sona, kritikal na punto at kondisyon ng proseso.",
+        "expectedPoints": [
+          "Pag-ibahin at sundan ang pagsasanib ng A at B at ang puntong pinapasukan ng balot.",
+          "Tiyakin ang mga daan ng tao, kagamitan at talsik mula marumi patungo sa malinis na panig.",
+          "Hiwalay na tasahin ang panganib ng sangkap na idadagdag pagkatapos uminit, hindi ito makokontrol ng naunang pag-init lamang.",
+          "Itakda ang kritikal na punto batay sa hazard analysis; huwag awtomatikong italaga ang lahat ng proseso.",
+          "Tiyakin ang aprubadong temperatura, oras at paraan ng pagsukat para sa produkto; huwag kopyahin ang numero ng ibang produkto."
+        ],
+        "sourceHash": "4443f85813a02a1714bc3ebb325744e162afbe4967c61c9a9fec0370c0e9bbb2"
+      },
+      "food-assessment35-cleaning-order": {
+        "title": "Pagkakasunod at paghahati ng paglilinis",
+        "prompt": "Nagpaplano ng paghuhugas ng kagamitan matapos ang produksyon. Paano haharapin ang residue, natatanggal na kagamitan, closed-system piping, pagkatapos ng banlaw, at paghahati ng gawain sa upstream at downstream?",
+        "expectedPoints": [
+          "Kolektahin muna nang malinis ang materyales, work-in-progress at nakakapit na residue upang mabawasan ang wastewater load. Sundin ang aprubadong kondisyon kung gagamitin muli.",
+          "Linawin ang paghinto, isolation at saklaw ng pananagutan. Gawin ang angkop na disassembly, paunang banlaw, paghuhugas ng detergent, pagbanlaw, itinakdang pagpapatuyo at assembly ayon sa aprubadong pamamaraan.",
+          "Para sa closed-system piping at tanke, gamitin ang angkop at aprubadong CIP; huwag kusang mag-disassemble o magpalit ng kemikal.",
+          "Kahit upstream patungong downstream, huwag ibalik ang dumi o tubig-panlinis sa malinis nang sona; iwasan ang dobleng gawain at panghihimasok sa trabaho ng iba.",
+          "Itatag ng tagapamahala/foreman ang paraan at pamamaraan, magturo at mangasiwa. Ipasa ng gumagawa ang tala at abnormalidad sa taong susuri."
+        ],
+        "sourceHash": "891a33975667beb6508043e992061a44d59c33e242c5320804d05e0ed18844fb"
+      },
+      "food-assessment35-lookup-matrix": {
+        "title": "Talahanayang pagtutugma na iba sa multiplikasyon",
+        "prompt": "Sa independiyenteng talahanayan, ang hanay ay mataas/katamtaman/mababang posibilidad, at ang mga kolum ay nakamamatay, may pagliban sa trabaho, at banayad na epekto. Mataas:H, H, M; katamtaman:H, M, L; mababa:H, M, L. H:agad kumilos at huminto hanggang matapos; M:mabilis kumilos at kanais-nais huminto; L:kumilos kung kailangan. Itugma ang “mababang posibilidad/nakamamatay” at “katamtamang posibilidad/banayad.”Ipaliwanag ang kaibhan sa multiplikasyon.",
+        "expectedPoints": [
+          "Mababang posibilidad at nakamamatay ay H:agad magpatupad at huminto hanggang matapos.",
+          "Katamtamang posibilidad at banayad ay L:magpatupad kung kailangan.",
+          "Basahin ang salubungan ng hanay at kolum; huwag imultiplika ang numero para lumikha ng kategorya.",
+          "Huwag maliitin ang nakamamatay na epekto kahit bihira.",
+          "Sariling talahanayan ng pagsasanay ito, hindi ang numerikal na talahanayan ng orihinal o opisyal na pamantayan ng kompanya. Sundin ang pinagtibay na talahanayan at kondisyon ng paghinto sa tunay na trabaho."
+        ],
+        "sourceHash": "6ccc4d57bc38a8621e640c3c61ec4b82c7068f8cf1503f715e058ea049cf713c"
+      },
+      "food-assessment35-education-plan": {
+        "title": "Uri ng kakulangan at 5W1H",
+        "prompt": "Hindi alam ni A ang mekanismo ng makina. Nakakapagpaliwanag si B ngunit hindi makapagpatakbo. Nilalaktawan ni C ang pagtiyak dahil hindi nauunawaan ang kabuluhan. Pag-ibahin ang pagtuturong kailangan at gumawa ng5W1H plan para sa bagong tagahawak ng kagamitan, kasama ang pagtiyak pagkatapos ituro.",
+        "expectedPoints": [
+          "Isaalang-alang ang kaalaman para kay A, kasanayan kay B, at saloobin kay C. Ngunit tiyakin ang tunay na sanhi sa pagmamasid at pagtatanong; huwag magpasiyang agad.",
+          "Tukuyin kung bakit magtuturo at anong gawain at antas ang dapat maabot.",
+          "Linawin kung sino ang tuturuan, sino ang magtuturo, ano, kailan, saan, bakit at paano.",
+          "Unawain ang pangangailangan ng bagong tungkulin/kagamitan, ihanda ang nilalaman at ligtas na pagsasanay, at isagawa.",
+          "Tiyakin ang layunin sa questionnaire, ulat o aktuwal na pagtingin sa gawain; pagbutihin ang plano at pagtuturo."
+        ],
+        "sourceHash": "6aa9a308b48150cb7ed2952628268b66335fb8127528450371e6ad93c03c9b9e"
+      },
+      "food-assessment35-conditional-chart": {
+        "title": "Mga porsiyento ng anim na pangkat ng negosyong may konsultasyon",
+        "prompt": "Sariling diagram ito mula sa muling pagbasa ng survey sa piskal na 2023. Target ang mga negosyong may konsultasyon sa nakaraang 3 taon; para sa bawat uri, ipinapakita kung may angkop na kaso o wala. Sa power harassment, n=4,985 at 73.0% ang mayroon; sa sexual harassment sa paghahanap ng trabaho at katulad, n=54 at 37.0%. Mula sa anim na pangkat kasama ang apat pa, basahin ang “wala” para sa power harassment. Ipaliwanag ang denominator at pag-iingat sa paghahambing.",
+        "expectedPoints": [
+          "27.0% ang walang angkop na kaso sa power harassment; kasama ng 73.0% na mayroon, 100% ang kabuuan.",
+          "Ang anim:power harassment, sexual harassment, pagbubuntis/panganganak/childcare leave at iba pa, family-care leave at iba pa, labis na pang-aabala mula sa kostumer at iba pa, at sexual harassment sa paghahanap ng trabaho at katulad.",
+          "Ang denominator ay negosyong may konsultasyon sa partikular na uri sa nakaraang 3 taon, hindi lahat ng negosyo o manggagawa.",
+          "Magkakaiba ang n. Kahit ihambing ang porsiyento ng 4,985 negosyo at 54 negosyo, hindi ito katumbas ng magkaparehong bilang ng negosyo o kabuuang taong napinsala.",
+          "Maaaring kabilang ang iisang negosyo sa maraming pangkat; huwag idagdag ang anim na porsiyento bilang kabuuang rate ng pangyayari.",
+          "Mga numero ito mula sa survey na isinagawa sa piskal na 2023; huwag ituring na kasalukuyang pambansang rate."
+        ],
+        "sourceHash": "d0ee3345a502e615d9ac53efa0ff051a070dc2135f60c567021b30d4a8b997ce"
+      }
+    },
+    "km": {
+      "food-assessment35-stacked-share": {
+        "title": "បែងចែកភាគរយ និងចំនួនជាក់ស្ដែងក្នុងក្រាហ្វបន្ទះ",
+        "prompt": "ក្នុងក្រាហ្វបន្ទះសិក្សា A មានX30%,Y50%,Z20% ហើយ B មានX40%,Y20%,Z40%។សូមពិនិត្យសរុបជួរនីមួយៗ និងប្រៀបធៀបភាគរយY។បើមិនបង្ហាញចំនួនសរុបA និងB តើអាចអះអាងថាចំនួនYជាក់ស្ដែងក៏Aច្រើនជាងដែរឬទេ?សូមពន្យល់ហេតុផល។",
+        "expectedPoints": [
+          "A មាន30+50+20=100% ហើយB មាន40+20+40=100%។ប្រៀបធៀបសមាសភាពដោយយកសរុបជួរនីមួយៗជា100% ដូចគ្នា។",
+          "ភាគរយY នៅAគឺ50% និងBគឺ20% ដូច្នេះភាគរយAធំជាង។",
+          "មិនដឹងចំនួនសរុប ដូច្នេះមិនអាចអះអាងថាភាគីណាមានចំនួនYជាក់ស្ដែងច្រើនជាង។",
+          "ភាគរយខុសពីចំនួនជាក់ស្ដែង។ត្រូវពិនិត្យផ្នែកដែលប្រៀបធៀប និងលក្ខខណ្ឌភាគបែង។"
+        ],
+        "sourceHash": "e7943c0c4e90c6f334ad4145d4d32e0a60d709966a260d760f97f0a59eb60a12"
+      },
+      "food-assessment35-radar-scale": {
+        "title": "អានមាត្រដ្ឋានរួម និងអ័ក្សនីមួយៗរបស់ក្រាហ្វរ៉ាដា",
+        "prompt": "ក្រាហ្វរ៉ាដាសិក្សាមានអ័ក្សទាំងអស់0–5។តម្លៃI–V របស់A គឺ4,2,3,5,1 និងB គឺ2,4,3,2,4។សូមឆ្លើយថាអ័ក្សណាភាគីណាខ្ពស់ជាង និងកន្លែងណាមានតម្លៃដូចគ្នា។តើអាចកំណត់លំដាប់រួមតាមផ្ទៃក្រឡាតែមួយបានទេ?",
+        "expectedPoints": [
+          "ពិនិត្យថាអ័ក្សទាំងអស់ប្រើមាត្រដ្ឋាន0–5 ដូចគ្នា។",
+          "I និងIV តម្លៃAខ្ពស់ជាង ចំណែកII និងV តម្លៃBខ្ពស់ជាង។",
+          "III ទាំងA និងB មានតម្លៃ3 ដូចគ្នា។",
+          "ប្រៀបធៀបលក្ខណៈច្រើនតាមអ័ក្សនីមួយៗ។មិនកំណត់លំដាប់រួមតាមផ្ទៃក្រឡាតែមួយទេ តែពិនិត្យអត្ថន័យធាតុនិងលក្ខខណ្ឌវាយតម្លៃ។"
+        ],
+        "sourceHash": "b712bb94d50d77d3d38c68194959e0dd12e91079aae6cebcc6224ce8ca6a5c98"
+      },
+      "food-assessment35-progress-band": {
+        "title": "អានអ័ក្ស និងបន្ទះសន្មតនៃវឌ្ឍនភាពសន្សំ",
+        "prompt": "ក្នុងគំនូសវឌ្ឍនភាពសិក្សា ស្តង់ដារគឺ60kg/ម៉ោង បន្ទះលើក្រោមខ្សែស្តង់ដារសន្មតថា±15kg ហើយលទ្ធផលក្រោយ3ម៉ោងគឺ160kg។សូមបែងចែកអ័ក្សផ្ដេកនិងបញ្ឈរ ខ្សែស្តង់ដារនិងខ្សែជាក់ស្ដែង គណនាតម្លៃខាងក្រោមក្រោយ3ម៉ោង ហើយប្រៀបធៀបនឹងលទ្ធផល។តើអាចយកបន្ទះនេះជាលក្ខខណ្ឌឈប់នៅកន្លែងធ្វើការពិតភ្លាមបានទេ?",
+        "expectedPoints": [
+          "អ័ក្សផ្ដេកគឺពេលកន្លងទៅ អ័ក្សបញ្ឈរគឺបរិមាណផលិតសន្សំkg។ខ្សែស្តង់ដារតំណាងផែនការ និងខ្សែជាក់ស្ដែងតំណាងបរិមាណផលិតពិត។",
+          "ស្តង់ដារក្រោយ3ម៉ោងគឺ60×3=180kg ហើយខាងក្រោមគឺ180−15=165kg។",
+          "លទ្ធផល160kg តិចជាងខាងក្រោម165kg ចំនួន5kg ហើយស្ថិតក្រោមបន្ទះសន្មត។",
+          "±15kg ជាការសន្មតសម្រាប់សិក្សា។លក្ខខណ្ឌនិងការឆ្លើយតបពិត ត្រូវពិនិត្យតាមលក្ខខណ្ឌដែលកន្លែងការងារប្រើ និងនីតិវិធីអនុម័ត។"
+        ],
+        "sourceHash": "fd1f87ef3a893337122de0015429c33300090b8a70bfde9827649bd7a6d190d2"
+      },
+      "food-assessment35-report-paths": {
+        "title": "ប្រៀបធៀបផ្លូវផ្ទាល់ និងផ្លូវតាមប្រធានក្រុម",
+        "prompt": "មើលគំនូសអង្គការសិក្សាទាំងពីរ ហើយពន្យល់ផ្លូវបញ្ជានិងរាយការណ៍ក្នុងទម្រង់មេការទាក់ទងកម្មករផ្ទាល់ និងទម្រង់តាមប្រធានក្រុម។តើអាចសម្រេចថាកន្លែងខ្លួនក៏ត្រូវប្រើផ្លូវដូចគំនូសជានិច្ចបានទេ?",
+        "expectedPoints": [
+          "ទម្រង់ផ្ទាល់ មេការបញ្ជាទៅកម្មករ ហើយកម្មកររាយការណ៍ទៅមេការ។",
+          "ទម្រង់តាមប្រធានក្រុម បញ្ជាពីមេការទៅប្រធានក្រុម និងពីប្រធានក្រុមទៅកម្មករ។របាយការណ៍ពីកម្មករទៅប្រធានក្រុម និងពីប្រធានក្រុមទៅមេការ។",
+          "ទាំងពីរជាឧទាហរណ៍អង្គការ មិនកំណត់សិទ្ធិអំណាចនិងភារកិច្ចតាមតែឈ្មោះ។",
+          "ពិនិត្យអង្គការនិងសិទ្ធិអំណាចកន្លែងខ្លួន ហើយប្រើផ្លូវបញ្ជានិងរាយការណ៍ដែលបានកំណត់។"
+        ],
+        "sourceHash": "129fe58a408ecc487753b9857fbda975db230be949efda3a39b209595eb19e28"
+      },
+      "food-assessment35-design-residual": {
+        "title": "ពន្យល់គ្រោះថ្នាក់ដែលថយ និងដែលនៅសល់ក្រោយរចនា",
+        "prompt": "សូមប្រៀបធៀបសំណើធ្វើជ្រុងមុតឱ្យមូល និងធ្វើទ្វារធ្ងន់ឱ្យស្រាលក្នុងគំនូស។តើបន្ថយគ្រោះថ្នាក់ឬការខូចខាតអ្វី ហើយនៅត្រូវពិនិត្យអ្វី?តើការនិយាយថា «បើស្រាល ទោះកៀបម្រាមដៃក៏មិនរបួសជាដាច់ខាត» ត្រឹមត្រូវទេ?",
+        "expectedPoints": [
+          "ធ្វើជ្រុងមុតឱ្យមូល បន្ថយគ្រោះថ្នាក់ចាក់មុតពេលប៉ះ។",
+          "ធ្វើទ្វារឱ្យស្រាល បន្ថយការខូចខាតពេលកៀប ប៉ុន្តែមិនលុបគ្រោះថ្នាក់កៀប ឬលទ្ធភាពរបួសទេ។",
+          "ត្រូវវាយតម្លៃនិងអនុម័តសំណើជាមួយអ្នកទទួលបន្ទុកឧបករណ៍ ហើយពិនិត្យប្រសិទ្ធភាពនិងគ្រោះថ្នាក់នៅសល់ក្រោយប្ដូរ។",
+          "គំនូសជាឧទាហរណ៍រៀនគំនិតរចនា មិនអនុញ្ញាតកម្មករប្ដូរឧបករណ៍ដោយខ្លួនឯង ឬធានាសុវត្ថិភាពគ្មានលក្ខខណ្ឌ។"
+        ],
+        "sourceHash": "0e330f034afc7f9952ab78aa63267b5257d08be0eec11d952b2835288920fb20"
+      },
+      "food-assessment35-ojt-observation": {
+        "title": "ពិនិត្យសុវត្ថិភាព កំណត់ត្រា និងសកម្មភាពពេលមិនប្រក្រតីក្នុង OJT",
+        "prompt": "ក្នុង OJT វាស់បរិមាណបំពេញ គេនឹងបញ្ចប់ការពិនិត្យព្រោះបុគ្គលវាស់បានលឿន។តើផ្ទៀងផ្ទាត់គោលដៅនិងការងារពិតយ៉ាងណា?តើប្រើអ្វីពិនិត្យប្រតិបត្តិសុវត្ថិភាព ការវាស់ កំណត់ត្រា និងការទាក់ទងពេលមិនប្រក្រតី ហើយបើខ្វះត្រូវធ្វើអ្វី?",
+        "expectedPoints": [
+          "ផ្ទៀងផ្ទាត់នឹងគោលដៅនិងលក្ខខណ្ឌកំណត់ជាមុន មិនចាត់ទុកថាចេះរួចតាមតែភាពលឿនឬកំណត់ត្រាចូលរៀន។",
+          "ក្រោយអ្នកបង្រៀនបង្ហាញ ត្រូវឱ្យបុគ្គលអនុវត្តផ្ទាល់ ហើយពន្យល់ជំហាននិងមូលហេតុបណ្ដើរ។",
+          "សង្កេតប្រតិបត្តិសុវត្ថិភាព និងវាស់ត្រឹមត្រូវ ហើយពិនិត្យថាកត់លទ្ធផលពិតបានឬអត់។",
+          "ពិនិត្យតាមការពន្យល់ឬសកម្មភាពក្នុងស្ថានភាពសន្មត ថាពេលមិនប្រក្រតីត្រូវប្រាប់អ្នកណា និងអ្វី។",
+          "ពិនិត្យមូលហេតុខ្វះ កែវិធីបង្រៀនឬហាត់ បង្រៀនឡើងវិញ ហើយពិនិត្យម្ដងទៀតថាដល់គោលដៅឬអត់។"
+        ],
+        "sourceHash": "94390ce64ea947ef55b01f509a3b94a1c4025c59bd339b22ca7295632361026b"
+      },
+      "food-assessment35-distribution-recognition": {
+        "title": "ផ្គូផ្គងរូបរាងចែកចាយ និងលក្ខខណ្ឌត្រូវពិនិត្យ",
+        "prompt": "សូមផ្គូផ្គងអ៊ីស្តូក្រាម A–F ក្នុងអត្ថបទទៅរូបរាងប្រាំមួយ និងគំនូសចំណុច A–D ទៅទំនាក់ទំនងបួន។ពន្យល់អ័ក្សពីររបស់អ៊ីស្តូក្រាម និងអ្វីត្រូវស្រាវជ្រាវចំពោះពីរកំពូល ចន្លោះដូចធ្មេញ កន្ទុយវែង ជញ្ជាំងចោត និងក្រុមដាច់តូច។ក្នុងទិន្នន័យសន្មតផ្សេង36ករណី តើគោលណែនាំចំនួនថ្នាក់√n ស្មើប៉ុន្មាន?អាចសម្រេចមូលហេតុឬស្ថេរភាពតាមតែគោលណែនាំនិងរូបរាងទេ?",
+        "expectedPoints": [
+          "អ៊ីស្តូក្រាម៖ A ទូទៅ,B ចន្លោះដូចធ្មេញ,C កន្ទុយវែង,D ជញ្ជាំងចោត,E ពីរកំពូល,F ក្រុមដាច់តូច។",
+          "អ័ក្សផ្ដេកជាថ្នាក់តម្លៃវាស់ អ័ក្សបញ្ឈរជាប្រេកង់ក្នុងថ្នាក់នោះ។",
+          "ពីរកំពូលនិងក្រុមដាច់តូច អាចសង្ស័យក្រុមលាយគ្នា ហើយបែងតាមលក្ខណៈដើម្បីបញ្ជាក់។",
+          "ចន្លោះដូចធ្មេញ ត្រូវពិនិត្យខ្ទង់វាស់ ព្រំដែន ទទឹងថ្នាក់ និងវិធីដំណើរការមិនស្របគ្នាជាដើម។",
+          "កន្ទុយវែង ត្រូវពិនិត្យគ្រប់គ្រងតែម្ខាង ឯជញ្ជាំងចោត ពិនិត្យប្រវត្តិជ្រើសរើសឬដកចេញ។មិនសម្រេចមូលហេតុតាមរូបរាងតែមួយ។",
+          "គំនូសចំណុច៖ A សហសម្ព័ន្ធវិជ្ជមាន,B អវិជ្ជមាន,C ទំនាក់ទំនងមិនលីនេអ៊ែរ,D គ្មានទំនាក់ទំនងច្បាស់។ត្រូវផ្គូតម្លៃពីរដែលត្រូវគ្នា ហើយមិនយកសហសម្ព័ន្ធតែមួយជាភស្តុតាងមូលហេតុ។",
+          "√36=6 ដូច្នេះប្រហែលប្រាំមួយថ្នាក់ជាគោលណែនាំ មិនមែនច្បាប់ថេរ។ពិនិត្យចំនួន ការចែកចាយ និងភាពច្បាស់វាស់ ហើយពន្យល់ថាល្អិតពេកឬទូលាយពេកក៏ប្ដូររូបរាង។",
+          "រូបរាងទូទៅតែមួយមិនបញ្ជាក់ស្ថេរភាពទេ គំនូសជាសញ្ញាដើម្បីស្រាវជ្រាវវត្ថុពិត វិធីវាស់ និងទិន្នន័យដើម។"
+        ],
+        "sourceHash": "b541f4599a73cb80aaaeb0ec5b61fd5143ce63c3e8a97d52f49bf2a39b6bfac1"
+      },
+      "food-assessment35-control-patterns": {
+        "title": "បែងចែកស៊េរីយោងតាមពេលទាំងប្រាំបី",
+        "prompt": "គំនូសគ្រប់គ្រង A–H ជាឧទាហរណ៍សន្មតគ្មានឯកតា៖ កណ្ដាល0 ខ្សែយោងលើក្រោម±3 និងខ្សែជំនួយ±1,±2។ពន្យល់អ័ក្ស ខ្សែកណ្ដាលនិងលើក្រោម ហើយអានចំនួននិងទីតាំងចំណុចនីមួយៗ A–H។លើកសម្មតិកម្មត្រូវស្រាវជ្រាវពី G,H ផង។អាចប្ដូរត្រង់ៗទៅលក្ខណៈផលិតផលឬច្បាប់វិនិច្ឆ័យកន្លែងការងារបានទេ?",
+        "expectedPoints": [
+          "អ័ក្សផ្ដេកជាលំដាប់សង្កេត អ័ក្សបញ្ឈរជាតម្លៃសូចនាករសន្មត។កណ្ដាល0 ខ្សែយោងលើ+3 ក្រោម−3 ត្រូវបែងចែកពីលក្ខណៈផលិតផល។",
+          "A ចំណុចទី6 តម្លៃ3.4 លើសខ្សែយោងលើ3។",
+          "B មាន9ចំណុចបន្តគ្នានៅលើកណ្ដាល0។",
+          "C មាន6ចំណុចបន្តគ្នាឡើង។",
+          "D មាន14ចំណុចឡើងចុះឆ្លាស់គ្នា។",
+          "E មាន2ក្នុង3ចំណុចលើ+2 ដោយប្រមូលជិតខាងលើ។",
+          "F មាន4ក្នុង5ចំណុចលើ+1 ដោយលម្អៀងទៅម្ខាងដូចគ្នា។",
+          "G មាន15ចំណុចក្នុង−1 ដល់+1 ប្រមូលជិតកណ្ដាល។",
+          "H មាន8ចំណុចនៅក្រៅ−1 ដល់+1 ជុំវិញកណ្ដាល។",
+          "G អាចមានការប្រែប្រួលតិច H អាចមានក្រុមលាយជាដើម ជាសម្មតិកម្មត្រូវស្រាវជ្រាវ មិនមែនសម្រេចមូលហេតុ។",
+          "បែងចែកឧទាហរណ៍យោង JIS ក្នុងឯកសារពីច្បាប់និងការឆ្លើយតបក្រុមហ៊ុនប្រើ។ផ្នែកគ្រប់គ្រងកំណត់លក្ខខណ្ឌសមផលិតផល មិនយកចំនួននិងខ្សែសន្មតជាកម្រិតរោងចក្រសកល។"
+        ],
+        "sourceHash": "062f8b2e9f39ed88c2ee66125706b16a5cf28d9c142de23c92fb1b25814ea364"
+      },
+      "food-assessment35-tally-categories": {
+        "title": "ផ្ទៀងផ្ទាត់សរុបតាមថ្ងៃ និងប្រភេទ",
+        "prompt": "កំណត់ត្រាសន្មត ថ្ងៃដំបូងកំហុសវេចខ្ចប់3ករណី និងកខ្វក់2;ថ្ងៃបន្ទាប់កំហុសវេចខ្ចប់1 និងកខ្វក់4។គណនាសរុបតាមថ្ងៃ ប្រភេទ និងទាំងមូល ហើយពិនិត្យថាបូកទាំងពីរទិសបានស្មើគ្នាឬអត់។ពន្យល់ហេតុអ្វីត្រូវឱ្យឈ្មោះប្រភេទនិងវិធីកត់ត្រារបស់អ្នកទទួលបន្ទុកស្របគ្នា។",
+        "expectedPoints": [
+          "ថ្ងៃដំបូង3+2=5ករណី ថ្ងៃបន្ទាប់1+4=5ករណី។",
+          "កំហុសវេចខ្ចប់3+1=4ករណី កខ្វក់2+4=6ករណី។",
+          "តាមថ្ងៃ5+5=10ករណី តាមប្រភេទ4+6=10ករណី ស្មើគ្នា។",
+          "កត់ត្រាដោយប្រភេទ ឯកតា និងវិធីដូចគ្នា ដើម្បីការពាររាប់ស្ទួនឬចាត់ថ្នាក់ខុស ហើយប្រើវិភាគមូលហេតុ។"
+        ],
+        "sourceHash": "5df067147588b28acbbb0933116ea02662a9e3e2672e7c41d542e463871b6bec"
+      },
+      "food-assessment35-plan-report-reserve": {
+        "title": "រាយការណ៍ការបម្លែងផែនការ និងការពិតនៃបន្ថែមបុគ្គលិក",
+        "prompt": "តើបម្លែងផែនការក្រុមហ៊ុនទៅការងារខ្សែខ្លួនយ៉ាងណា?ក្នុងប្រៀបធៀបសន្មតផ្សេង ផលិតផលល្អដូចគ្នា មុនប្ដូរ3នាក់ធ្វើ1ម៉ោងបាន60kg ក្រោយប្ដូរ4នាក់1ម៉ោងបាន72kg គ្មានឈប់។គណនាក្នុងមួយម៉ោងនិងម៉ោងមនុស្ស ហើយរាយការណ៍អ្វីសម្រាប់ការសម្រេចគ្រប់គ្រង?បែងចែកសមត្ថភាពបម្រុងក្រុមហ៊ុន ការឈប់អាចជៀសវាង និងសំណើបម្រុងនៅដំណាក់កាលក្រោយ។",
+        "expectedPoints": [
+          "បម្លែងផែនការបរិមាណ ពេល និងផ្គត់ផ្គង់របស់ក្រុមហ៊ុនទៅផែនការរោងចក្រ និងបន្តទៅសម្ភារៈ ឧបករណ៍ បុគ្គលិក ពេល និងលំដាប់ខ្សែ។ប្រាប់លក្ខខណ្ឌប្រែប្រួលទៅផ្នែកទទួលបន្ទុកឬថ្នាក់លើ។",
+          "ខ្សែឡើងពី60ទៅ72kg/ម៉ោង។ពលកម្មឡើងពី3ទៅ4ម៉ោងមនុស្ស ហើយផលិតភាពក្នុងមួយម៉ោងមនុស្សចុះពី60÷3=20 ទៅ72÷4=18kg/ម៉ោងមនុស្ស។",
+          "មិនរាយការណ៍តែមួយថាកែលម្អរួច តែប្រាប់បរិមាណផលិត មនុស្ស ពលកម្ម គុណភាព និងការប្រែប្រួលសូចនាករទាំងពីរទៅថ្នាក់លើ ដើម្បីសម្រេចសមនឹងក្រុមហ៊ុន។",
+          "បម្រុងសម្រាប់តម្រូវការប្រែប្រួលទាំងក្រុមហ៊ុន/រោងចក្រ ជាការសម្រេចគ្រប់គ្រង មិនមានន័យថាទុកចោលការឈប់ឬរង់ចាំដែលអាចជៀសវាងក្នុងម៉ោងផែនការ។មិនកាត់ឬលាក់ការឈប់ចាំបាច់សុវត្ថិភាព។",
+          "បម្រុងដំណាក់កាលក្រោយ ជាសំណើរចនាតាមការប្រែប្រួលនិងឧបករណ៍ មិនមែនច្បាប់បង្ខំលំដាប់សមត្ថភាពដូចគ្នាគ្រប់ខ្សែ។"
+        ],
+        "sourceHash": "399d11c6a557659c7367155bc5a9dce279af660db829fd5403648cb34cfafe6d"
+      },
+      "food-assessment35-productivity-four-cases": {
+        "title": "ប្រៀបធៀបបួនករណីនៃធាតុបញ្ចូល និងលទ្ធផល",
+        "prompt": "នេះជាឧទាហរណ៍សន្មតផលិតផលល្អនិងគុណភាពដូចគ្នា។មូលដ្ឋាន100kg ក្នុង10ម៉ោងមនុស្ស។A120kg/10ម៉ោងមនុស្ស B100kg/5 C180kg/15 D80kg/5។គណនាផលិតភាពមូលដ្ឋាននិង A–D ហើយពន្យល់បួនវិធីថាហេតុអ្វីអាចកែលម្អទោះលទ្ធផលឬធាតុបញ្ចូលកើនថយ។បើប្ដូរភាគយកនិងភាគបែងតើតំណាងអ្វី?",
+        "expectedPoints": [
+          "មូលដ្ឋាន100÷10=10kg/ម៉ោងមនុស្ស A120÷10=12 B100÷5=20 C180÷15=12 D80÷5=16kg/ម៉ោងមនុស្ស។A–D ទាំងអស់ខ្ពស់ជាងមូលដ្ឋាន។",
+          "A ធាតុបញ្ចូលដដែលលទ្ធផលកើន B លទ្ធផលដដែលធាតុបញ្ចូលថយ។",
+          "C ធាតុបញ្ចូលកើន ប៉ុន្តែអត្រាលទ្ធផលកើនលើស។",
+          "D លទ្ធផលថយ ប៉ុន្តែអត្រាធាតុបញ្ចូលថយលើស។",
+          "ម៉ោងមនុស្ស÷kg ជាធនធានបញ្ចូលក្នុងមួយផលិតផល។មិនយកផលិតភាពនិងការប្រើធនធានក្នុងមួយឯកតាជាលេខដូចគ្នា តែត្រូវប្រៀបធៀបដោយឯកតានិងគុណភាពស្របគ្នា។"
+        ],
+        "sourceHash": "8748b6881b90da4482fd0a0841d57750cdc84f2f0a3ad5b8f03b5b38260ae86c"
+      },
+      "food-assessment35-daily-record-followup": {
+        "title": "ប្រគល់របាយការណ៍ប្រចាំថ្ងៃទៅការងារបន្ទាប់ និងថែទាំ",
+        "prompt": "កត់ត្រាតែសរុបផលិតកម្មក្នុងរបាយការណ៍ប្រចាំថ្ងៃហើយបញ្ចប់។តើត្រូវទុកព័ត៌មានឈប់ ការទទួល/ចេញនិងស្តុកវត្ថុធាតុដើម និងកែលម្អយ៉ាងណា ហើយភ្ជាប់ទៅអ្នកណា?ពន្យល់ហេតុអ្វីត្រូវមើលការឈប់ខ្លីៗក្នុង1សប្ដាហ៍ឬ1ខែ និងគំនិតភ្ជាប់ទៅព័ត៌មានឧបករណ៍និងវិធានការម៉ាស៊ីនដូចគ្នា។",
+        "expectedPoints": [
+          "ក្រៅពីផលិតកម្ម កត់ត្រឹមត្រូវពេលនិងមូលហេតុឈប់ឬមិនប្រក្រតី ការទទួល/ចេញនិងស្តុកវត្ថុធាតុដើម និងបញ្ហាឬកែលម្អថ្ងៃនោះ។",
+          "រាយការណ៍ថ្នាក់លើ និងចែករំលែកបញ្ហានិងការត្រៀមបន្ទាប់ជាមួយដំណាក់កាលមុនក្រោយ។",
+          "កត់ការឈប់ខ្លីឱ្យត្រឹមត្រូវ ហើយមើលនិន្នាការដដែលតាមសប្ដាហ៍ឬខែ។បើមូលហេតុឧបករណ៍ ពិភាក្សាមូលហេតុនិងថែទាំជាមួយថ្នាក់លើនិងអ្នកជំនាញ។",
+          "ភ្ជាប់ស្តុកគ្រឿងសឹកប្រើនិងប្រវត្តិប្ដូរ ដើម្បីពិចារណាប្ដូរមុនខូច។ផ្ដល់ព័ត៌មានកន្លែងសម្រាប់ស៊ើបអង្កេត ហើយពិនិត្យគ្រោះថ្នាក់ដូចគ្នានៅឧបករណ៍ឬការងារស្រដៀង។"
+        ],
+        "sourceHash": "002d156efc34afa1063746a59179d8c537d01bb029d7cd76655e1df8e7e8fb6b"
+      },
+      "food-assessment35-yield-scope-pretreatment": {
+        "title": "ពិនិត្យភាគបែងនៃការរៀបចំមុន និងឯកតាលក់",
+        "prompt": "ទាំងអស់ជាឧទាហរណ៍ផលិតផលល្អសន្មត គ្មានកើនថយផ្សេង។ប្រៀបធៀបវត្ថុធាតុដើមមិនទាន់រៀបចំ100kg ដកផ្នែកមិនអាចញ៉ាំ20kg និងទឹក10kg ដោយកម្ដៅ ជាមួយទិញវត្ថុធាតុដើមរៀបចំរួច80kg ហើយកម្ដៅដូចគ្នាបាត់ទឹក10kg។ឧទាហរណ៍ផ្សេង បញ្ចូល100kg លក្ខណៈ1kg ក្នុង70ថង់ និងទម្ងន់ពិត77kg។ពន្យល់ទិន្នផលតាមទម្ងន់និងតាមថង់ ហើយវិធីគណនាចំនួនថង់និងទម្ងន់ស្តង់ដារស្មើគ្នាឬអត់។",
+        "expectedPoints": [
+          "ករណីដើមផលល្អ100−20−10=70kg គឺ70% នៃបញ្ចូលរោងចក្រខ្លួន។ករណីទិញ80−10=70kg ដែរ ប៉ុន្តែ87.5% នៃបញ្ចូលខ្លួន។",
+          "ករណីទិញ ការរៀបចំមុនបានធ្វើក្រៅរោងចក្រ ដូច្នេះភាគបែងនិងគោលដៅគ្រប់គ្រងខុស។ប្រៀបធៀបនេះតែមួយមិនអាចសម្រេចថាប្រសិទ្ធភាពសរុបរួមការរៀបចំមុនបានប្រសើរ។កុំយកការដកឆ្អឹងឬបន្ថយទឹកចាំបាច់គុណភាពជាការបាត់បង់អាចជៀសវាងទាំងអស់។",
+          "ករណីលក់ផ្សេង តាមទម្ងន់77÷100=77%។តាមថង់70ថង់×1kg=70kg ហើយ70÷100=70%។",
+          "ចំនួនថង់ទ្រឹស្ដី100kg÷1kg=100ថង់ ធៀប70ថង់គឺ70÷100=70% ដូចទម្ងន់ស្តង់ដារ។ភាពខុសពីទម្ងន់ពិត7kg ត្រូវពិនិត្យដាច់ដោយឡែកជាការបំពេញលើស។",
+          "រក្សាគុណភាព ស្លាក និងបរិមាណចាំបាច់ មិនរំលងការរៀបចំឬលក្ខខណ្ឌបំពេញចាំបាច់ដើម្បីតែបង្កើនលេខទិន្នផល។"
+        ],
+        "sourceHash": "55f185112062a9bf8d0c07f19cf13217504b8401fc4226abac92e7a21902ca95"
+      },
+      "food-assessment35-environment-capacity-boundary": {
+        "title": "ពិនិត្យព្រំដែនសូចនាករបរិស្ថាន និងសមត្ថភាពប្រព្រឹត្តកម្ម",
+        "prompt": "ពេលវាយតម្លៃ CO2 ពីការប្រើអគ្គិសនី ប្រេង និងហ្គាស អាចប្រើមេគុណគ្មានមូលដ្ឋានទេ?បើទឹកសំណល់ថយតែកខ្វក់ច្រើន តើទាក់ទងសមត្ថភាពប្រព្រឹត្តកម្មនិងប្រតិបត្តិការយ៉ាងណា?បែងចែកការប្រមូលកាកនិងសន្សំទឹកនៅកន្លែងពីការសម្រេចវិនិយោគឬថាមពលកកើតឡើងវិញរបស់ក្រុមហ៊ុន ហើយឆ្លើយអ្វីត្រូវពិនិត្យពេលប្រៀបធៀបផលិតកម្មឬរយៈពេលខុសគ្នា។",
+        "expectedPoints": [
+          "ផ្អែកលើរយៈពេលគោលដៅនិងទិន្នន័យវាស់ប្រើថាមពលនីមួយៗ ហើយពិនិត្យលក្ខខណ្ឌបម្លែងមានមូលដ្ឋានជាមួយផ្នែកទទួលបន្ទុក។កុំបូកបរិមាណឯកតាខុស ឬគណនាតាមមេគុណ CO2 សន្មត។",
+          "ផ្ទៀងផ្ទាត់ទាំងបរិមាណនិងបន្ទុកសារធាតុសរីរាង្គកខ្វក់ជាមួយសមត្ថភាពប្រព្រឹត្តកម្ម។បើមិនអាចទទួល អាចមិនប្រើទឹកបាន ហើយរាំងផលិតកម្ម។",
+          "កន្លែងការងាររក្សាអនាម័យដោយប្រមូលកាកជាមុន បន្ថយបាញ់ទឹកមិនចាំបាច់ និងការបាត់បង់អាហារអាចជៀសវាង។ការវិនិយោគ ថាមពលកកើតឡើងវិញ ប្ដូរដំណើរការឬការទទួលបញ្ជាទិញ ជាការសម្រេចទាំងក្រុមហ៊ុនដែលប្រើទិន្នន័យកន្លែងផង។",
+          "ពិនិត្យទាំងសរុបនិងធនធានប្រើក្នុងមួយផលិតផលក្រោមរយៈពេលនិងលក្ខខណ្ឌដូចគ្នា។កុំលាក់ភាពខុសនៃផលិតកម្មឬភាគបែង ហើយមិនកាត់ការលាងនិងសុវត្ថិភាពចាំបាច់។"
+        ],
+        "sourceHash": "c445600c4480e3a30e32c9ce8477ab9494e61c0ce3f6825dcdb25c57b4dbde15"
+      },
+      "food-assessment35-financial-indicator-boundary": {
+        "title": "កុំច្រឡំនិយមន័យផលដកនិងប្រាក់ចំណេញគណនេយ្យ",
+        "prompt": "ទោះបានគណនាចំនួនទឹកប្រាក់ក្នុងអត្ថបទ តើអាចថាផលដកតម្លៃបន្ថែមក្នុងឧទាហរណ៍ស្មើចំណូលលក់ ឬប្រាក់ចំណេញគណនេយ្យទាំងក្រុមហ៊ុនឬក្រុមហ៊ុនផ្សេងបានទេ?ពន្យល់ភាគយក ភាគបែង ព្រំដែនថ្លៃមុនប្រៀបធៀប និងដែនកំណត់វាយតម្លៃផ្នែកគាំទ្រតាមតែkg ផលិត។",
+        "expectedPoints": [
+          "តម្លៃបន្ថែមជាតម្លៃថ្មីដែលក្រុមហ៊ុនបង្កើត មិនមែនចំណូលលក់ទាំងមូល។ផលដកអត្ថបទគឺកំណត់សម្រាប់លំហាត់នោះ។",
+          "ពិនិត្យថាផលដករាប់ថ្លៃវត្ថុធាតុដើម ពលកម្ម ថាមពលឬឥន្ធនៈណាខ្លះ។កុំសម្រេចថាសូចនាករព្រំដែនថ្លៃខុសតាមក្រុមហ៊ុនឬផ្នែកស្មើប្រាក់ចំណេញគណនេយ្យ។",
+          "ពិនិត្យភាគយកជាបរិមាណរូបវន្ត ចំណូល ឬតម្លៃបន្ថែម និងភាគបែងជាពេលកន្លងឬម៉ោងពលកម្ម ហើយធ្វើលក្ខខណ្ឌគុណភាពនិងវិសាលភាពប្រៀបធៀបឱ្យស្រប។",
+          "មុខងារគាំទ្រគុណភាព ឧបករណ៍ និងរដ្ឋបាលក៏គាំទ្ររោងចក្រ។កុំវាយតម្លៃផ្នែកនីមួយតាមតែkg ផលិតផ្ទាល់ តែជ្រើសសូចនាករសមតួនាទីនិងគោលដៅរោងចក្រទាំងមូល។"
+        ],
+        "sourceHash": "8ed0aac6dd88adbd3d84d8b6efd7f0fac53f5f8e577613999dd0555af9128791"
+      },
+      "food-assessment35-consumer-use": {
+        "title": "អ្នកប្រើ និងរបៀបប្រើក្រោយបើក",
+        "prompt": "ប្ដូរផលិតផលមួយពេលញ៉ាំទៅថង់ធំដែលប្រើបែកជាច្រើនថ្ងៃក្រោយបើក។ទារក កុមារតូច អ្នកជំងឺ និងមនុស្សចាស់ក៏អាចញ៉ាំ។សូមពន្យល់ព័ត៌មានបន្ថែមក្នុងសេចក្ដីពណ៌នាផលិតផល និងគេយកលទ្ធផលពិនិត្យទៅធ្វើអ្វី។",
+        "expectedPoints": [
+          "កំណត់អ្នកញ៉ាំ របៀបញ៉ាំ ត្រូវកម្ដៅឬអត់ និងលក្ខខណ្ឌប្រើបែកក្រោយបើកឱ្យជាក់លាក់។",
+          "ស្រាវជ្រាវឧបករណ៍យកអាហារចេញ ការប៉ះដោយមនុស្ស និងលក្ខខណ្ឌរក្សាទុកក្រោយបើក។",
+          "មិនសម្រេចសុវត្ថិភាពតាមតែលក្ខខណ្ឌមិនទាន់បើក។",
+          "កត្តាគ្រោះថ្នាក់ត្រូវគិតប្រែតាមអ្នកប្រើនិងវិធីប្រើ ដូច្នេះប្រគល់ព័ត៌មានក្រុម HACCP ដើម្បីវិភាគគ្រោះថ្នាក់។"
+        ],
+        "sourceHash": "4a9238e975e1582b65ac079ce1c25b06227e9de7a4ff452a3e8830b13e1f152a"
+      },
+      "food-assessment35-flow-paths": {
+        "title": "ព្រំដែន និងចំណុចគ្រប់គ្រងក្នុងគំនូសដំណើរការ",
+        "prompt": "តាមដានផ្លូវវត្ថុធាតុដើម A,B សម្ភារៈវេចខ្ចប់ កម្មករ និងឧបករណ៍ក្នុងគំនូស។សម្រាប់សំណើបន្ថែមគ្រឿងមិនទាន់កម្ដៅក្រោយការកម្ដៅ សូមពន្យល់អ្វីត្រូវពិនិត្យអំពីព្រំដែនតំបន់ ចំណុចសំខាន់ និងលក្ខខណ្ឌដំណើរការ។",
+        "expectedPoints": [
+          "តាមដានដាច់គ្នានូវការរួមA,B និងដំណាក់កាលដែលសម្ភារៈវេចខ្ចប់ចូល។",
+          "ពិនិត្យផ្លូវមនុស្ស ឧបករណ៍ និងដំណក់ខ្ទាតពីផ្នែកកខ្វក់ទៅស្អាត។",
+          "គ្រោះថ្នាក់គ្រឿងបន្ថែមក្រោយកម្ដៅ មិនអាចគ្រប់គ្រងដោយតែកម្ដៅមុនបាន ដូច្នេះវាយតម្លៃផ្សេង។",
+          "កំណត់ចំណុចត្រួតពិនិត្យសំខាន់តាមការវិភាគគ្រោះថ្នាក់ មិនដាក់គ្រប់ដំណាក់កាលដូចគ្នា។",
+          "ពិនិត្យសីតុណ្ហភាព ពេលកម្ដៅ និងវិធីវាស់តាមលក្ខខណ្ឌអនុម័តតាមផលិតផល មិនយកលេខផលិតផលផ្សេងមកប្រើ។"
+        ],
+        "sourceHash": "4443f85813a02a1714bc3ebb325744e162afbe4967c61c9a9fec0370c0e9bbb2"
+      },
+      "food-assessment35-cleaning-order": {
+        "title": "លំដាប់ និងការបែងចែកលាងសម្អាត",
+        "prompt": "កំពុងរៀបផែនការលាងឧបករណ៍ក្រោយផលិត។តើចាត់ការកាក ឧបករណ៍ដោះបាន បំពង់ប្រព័ន្ធបិទ ការធ្វើក្រោយជម្រះ និងការបែងចែកការងារដើមនិងចុងលំហូរយ៉ាងណា?",
+        "expectedPoints": [
+          "ប្រមូលវត្ថុធាតុដើម ផលិតផលកំពុងផលិត និងកាកជាប់ជាមុនដោយអនាម័យ ដើម្បីបន្ថយបន្ទុកទឹកសំណល់។ប្រើឡើងវិញតាមលក្ខខណ្ឌអនុម័ត។",
+          "បញ្ជាក់ការបញ្ឈប់ ការផ្ដាច់ និងវិសាលភាពភារកិច្ច ហើយដោះ លាងមុន លាងដោយសារធាតុលាង ជម្រះ សម្ងួតតាមកំណត់ និងដំឡើងតាមនីតិវិធីអនុម័តដែលសមឧបករណ៍។",
+          "បំពង់និងធុងប្រព័ន្ធបិទ ប្រើនីតិវិធី CIP សមនិងអនុម័ត មិនដោះឬប្ដូរសារធាតុគីមីដោយចិត្តឯង។",
+          "ទោះចាប់ពីដើមទៅចុងលំហូរ ក៏មិនឱ្យកខ្វក់ឬទឹកលាងត្រឡប់ទៅតំបន់សម្អាតរួច ហើយការពារការងារស្ទួននិងជ្រៀតជ្រែកគ្នា។",
+          "អ្នកគ្រប់គ្រងនិងមេការបង្កើតវិធីនិងនីតិវិធី ហើយអប់រំនិងត្រួតពិនិត្យ។អ្នកអនុវត្តប្រគល់កំណត់ត្រានិងភាពមិនប្រក្រតីទៅអ្នកពិនិត្យ។"
+        ],
+        "sourceHash": "891a33975667beb6508043e992061a44d59c33e242c5320804d05e0ed18844fb"
+      },
+      "food-assessment35-lookup-matrix": {
+        "title": "តារាងផ្ទៀងផ្ទាត់ដែលខុសពីគុណលេខ",
+        "prompt": "ក្នុងតារាងឯករាជ្យ ជួរដេកជាលទ្ធភាពខ្ពស់ មធ្យម ទាប និងជួរឈរជាភាពធ្ងន់ធ្ងរស្លាប់ ឈប់សម្រាកការងារ ស្រាល។ជួរខ្ពស់ H,H,M មធ្យម H,M,L ទាប H,M,L។H ត្រូវចាត់ការភ្លាមហើយឈប់រហូតបញ្ចប់ M ត្រូវចាត់ការរហ័សហើយគួរឈប់ L ត្រូវចាត់ការតាមចាំបាច់។ផ្ទៀងផ្ទាត់ «លទ្ធភាពទាប/ស្លាប់» និង «លទ្ធភាពមធ្យម/ស្រាល» ហើយពន្យល់ភាពខុសពីគុណលេខ។",
+        "expectedPoints": [
+          "ចំណុចប្រសព្វលទ្ធភាពទាបនិងភាពធ្ងន់ធ្ងរស្លាប់គឺH ត្រូវចាត់ការភ្លាមនិងឈប់រហូតបញ្ចប់។",
+          "ចំណុចប្រសព្វលទ្ធភាពមធ្យមនិងភាពស្រាលគឺL ត្រូវចាត់ការតាមចាំបាច់។",
+          "អានចំណុចប្រសព្វជួរដេកនិងឈរ មិនគុណលេខដើម្បីបង្កើតកម្រិត។",
+          "ទោះញឹកញាប់ទាប ក៏មិនមើលស្រាលលទ្ធផលស្លាប់។",
+          "នេះជាតារាងលំហាត់ឯករាជ្យ មិនមែនតារាងលេខឯកសារដើមឬស្តង់ដារក្រុមហ៊ុន។ការងារពិតតាមតារាងនិងលក្ខខណ្ឌឈប់ដែលបានទទួលយក។"
+        ],
+        "sourceHash": "6ccc4d57bc38a8621e640c3c61ec4b82c7068f8cf1503f715e058ea049cf713c"
+      },
+      "food-assessment35-education-plan": {
+        "title": "ប្រភេទខ្វះ និង5W1H",
+        "prompt": "A មិនដឹងយន្តការម៉ាស៊ីន B ពន្យល់បានតែមិនអាចប្រតិបត្តិ C មិនយល់អត្ថន័យការងារហើយរំលងពិនិត្យ។បែងចែកការអប់រំចាំបាច់ បង្កើតផែនការ5W1H សម្រាប់អ្នកទទួលឧបករណ៍ថ្មី ហើយពន្យល់ដល់វិធីពិនិត្យក្រោយអនុវត្ត។",
+        "expectedPoints": [
+          "គិតអប់រំចំណេះដឹងសម្រាប់A ជំនាញសម្រាប់B និងឥរិយាបថសម្រាប់C។ប៉ុន្តែសង្កេតនិងសួររកមូលហេតុពិត មិនកំណត់ជាមុន។",
+          "កំណត់គោលដៅថាហេតុអ្វីអប់រំ ត្រូវចេះអ្វី និងដល់កម្រិតណា។",
+          "កំណត់ឱ្យជាក់ថាបង្រៀនអ្នកណា ដោយអ្នកណា អ្វី ពេលណា កន្លែងណា ហេតុអ្វី និងយ៉ាងណា។",
+          "យល់តម្រូវការតាមភារកិច្ចឬឧបករណ៍ថ្មី រៀបមាតិកានិងបរិស្ថានអនុវត្តសុវត្ថិភាព ហើយអនុវត្ត។",
+          "ពិនិត្យគោលដៅតាមកម្រងសំណួរ របាយការណ៍ ឬពិនិត្យការងារផ្ទាល់ ហើយកែលម្អផែនការនិងបង្រៀន។"
+        ],
+        "sourceHash": "6aa9a308b48150cb7ed2952628268b66335fb8127528450371e6ad93c03c9b9e"
+      },
+      "food-assessment35-conditional-chart": {
+        "title": "ភាគរយក្រុមហ៊ុនពិគ្រោះប្រាំមួយប្រភេទ",
+        "prompt": "នេះជាគំនូសឯករាជ្យបន្ទាប់ពីអានឡើងវិញការស្ទង់ឆ្នាំសារពើពន្ធ2023។គោលដៅជាក្រុមហ៊ុនមានការពិគ្រោះក្នុង3ឆ្នាំកន្លងមក ហើយបង្ហាញមានករណីត្រូវគ្នា ឬគ្មានតាមប្រភេទ។ការបៀតបៀនអំណាច n=4,985 មាន73.0% ចំណែកការបៀតបៀនផ្លូវភេទពេលស្វែងរកការងារជាដើម n=54 មាន37.0%។ពីគំនូសប្រាំមួយក្រុមរួមបួនប្រភេទផ្សេង សូមអានភាគរយ «គ្មាន» សម្រាប់ការបៀតបៀនអំណាច ហើយពន្យល់ភាគបែង និងចំណុចប្រយ័ត្នប្រៀបធៀប។",
+        "expectedPoints": [
+          "គ្មានករណីការបៀតបៀនអំណាចគឺ27.0% បូកជាមួយមាន73.0% គឺ100%។",
+          "ប្រាំមួយប្រភេទគឺ បៀតបៀនអំណាច ផ្លូវភេទ មានផ្ទៃពោះ/សម្រាល/ឈប់ចិញ្ចឹមកូនជាដើម ឈប់ថែសាច់ញាតិជាដើម អាកប្បកិរិយារំខានខ្លាំងពីអតិថិជនជាដើម និងបៀតបៀនផ្លូវភេទពេលស្វែងរកការងារជាដើម។",
+          "ភាគបែងគឺក្រុមហ៊ុនដែលមានការពិគ្រោះអំពីប្រភេទនោះក្នុង3ឆ្នាំកន្លង មិនមែនក្រុមហ៊ុនឬកម្មករទាំងអស់។",
+          "n ក្រុមនីមួយខុស។ប្រៀបធៀបភាគរយរវាង4,985ក្រុមហ៊ុន និង54ក្រុមហ៊ុន មិនមានន័យដូចចំនួនក្រុមហ៊ុនឬមនុស្សរងគ្រោះសរុប។",
+          "ក្រុមហ៊ុនដដែលអាចនៅច្រើនក្រុម មិនអាចបូកភាគរយប្រាំមួយជាអត្រាកើតទាំងមូល។",
+          "ជាតម្លៃការស្ទង់ធ្វើក្នុងឆ្នាំសារពើពន្ធ2023 មិនអះអាងថាជាអត្រាបច្ចុប្បន្នទូទាំងប្រទេស។"
+        ],
+        "sourceHash": "d0ee3345a502e615d9ac53efa0ff051a070dc2135f60c567021b30d4a8b997ce"
+      }
+    },
+    "my": {
+      "food-assessment35-stacked-share": {
+        "title": "အပိုင်းခွဲတိုင်ဂရပ်၏အချိုးနှင့် အမှန်အရေအတွက်ကိုခွဲဖတ်ပါ",
+        "prompt": "သင်ယူရေးအပိုင်းခွဲတိုင်ဂရပ်တွင် A မှာX30%၊Y50%၊Z20%၊B မှာX40%၊Y20%၊Z40% ဖြစ်သည်။တစ်တန်းချင်းစုစုပေါင်းကိုစစ်၍ Y အချိုးကိုနှိုင်းယှဉ်ပါ။A နှင့်B စုစုပေါင်းအရေအတွက်မဖော်ပြလျှင် Y ၏အမှန်အရေအတွက်လည်း A ကပိုများသည်ဟု သေချာပြောနိုင်ပါသလား။အကြောင်းရင်းရှင်းပြပါ။",
+        "expectedPoints": [
+          "A မှာ30+50+20=100%၊B မှာ40+20+40=100% ဖြစ်၍တစ်တန်းချင်း၏စုစုပေါင်းကိုတူညီသော100% အဖြစ်ထားကာဖွဲ့စည်းပုံနှိုင်းသည်။",
+          "Y အချိုးမှာA က50%၊B က20% ဖြစ်၍ အချိုးအရA ကပိုများသည်။",
+          "စုစုပေါင်းအရေအတွက်မသိသဖြင့် Y အမှန်အရေအတွက်ဘယ်ဖက်ပိုများသည်ကို မသတ်မှတ်နိုင်ပါ။",
+          "အချိုးနှင့်အမှန်အရေအတွက် မတူပါ။နှိုင်းမည့်အမျိုးအစားနှင့် ပိုင်းခြေအခြေအနေကိုစစ်ရမည်။"
+        ],
+        "sourceHash": "e7943c0c4e90c6f334ad4145d4d32e0a60d709966a260d760f97f0a59eb60a12"
+      },
+      "food-assessment35-radar-scale": {
+        "title": "ရေဒါဂရပ်၏တူညီသောစကေးနှင့် ဝင်ရိုးတစ်ခုချင်းကိုဖတ်ပါ",
+        "prompt": "သင်ယူရေးရေဒါဂရပ်၏ဝင်ရိုးအားလုံးမှာ0–5 ဖြစ်၍ I–V တန်ဖိုးများသည်A မှာ4၊2၊3၊5၊1၊B မှာ2၊4၊3၊2၊4 ဖြစ်သည်။တစ်ဝင်ရိုးချင်းဘယ်ဖက်ပိုမြင့်၊ဘယ်နေရာတူသည်ကိုဖြေပါ။ဧရိယာတစ်ခုတည်းကိုကြည့်၍ အလုံးစုံအဆင့်သတ်မှတ်နိုင်ပါသလား။",
+        "expectedPoints": [
+          "ဝင်ရိုးအားလုံးတူညီသော0–5 စကေးဖြစ်ကြောင်းစစ်ရမည်။",
+          "I နှင့်IV တွင်A ပိုမြင့်၍ II နှင့်V တွင်B ပိုမြင့်သည်။",
+          "III တွင်A နှင့်B နှစ်ခုလုံး3 ဖြစ်၍တူသည်။",
+          "အင်္ဂါရပ်မျိုးစုံကိုဝင်ရိုးတစ်ခုချင်းနှိုင်းသည်။ဧရိယာတစ်ခုတည်းဖြင့်အလုံးစုံအဆင့်မသတ်မှတ်ဘဲ အချက်တစ်ခုချင်း၏အဓိပ္ပာယ်နှင့်အကဲဖြတ်အခြေအနေကိုစစ်ရမည်။"
+        ],
+        "sourceHash": "b712bb94d50d77d3d38c68194959e0dd12e91079aae6cebcc6224ce8ca6a5c98"
+      },
+      "food-assessment35-progress-band": {
+        "title": "စုဆောင်းတိုးတက်မှုပြပုံ၏ဝင်ရိုးနှင့် ယာယီဘောင်ကိုဖတ်ပါ",
+        "prompt": "သင်ယူရေးတိုးတက်မှုပြပုံတွင်စံမှာ60kg/နာရီ၊စံမျဉ်း၏အပေါ်အောက်ဘောင်မှာယာယီ±15kg၊3နာရီအကြာအမှန်ရလဒ်မှာ160kg ဖြစ်သည်။အလျားလိုက်နှင့်ဒေါင်လိုက်ဝင်ရိုး၊စံမျဉ်းနှင့်အမှန်မျဉ်းကိုခွဲ၍ 3နာရီအကြာအောက်ဘက်တန်ဖိုးကိုတွက်ကာအမှန်ရလဒ်နှင့်နှိုင်းပါ။ဤဘောင်ကိုတကယ့်လုပ်ငန်းခွင်ရပ်နားစံအဖြစ်တိုက်ရိုက်သုံးနိုင်ပါသလား။",
+        "expectedPoints": [
+          "အလျားလိုက်ဝင်ရိုးမှာကြာချိန်၊ဒေါင်လိုက်မှာစုဆောင်းထုတ်လုပ်ပမာဏkg ဖြစ်၍ စံမျဉ်းကအစီအစဉ်၊အမှန်မျဉ်းကအမှန်ထုတ်လုပ်ပမာဏကိုပြသည်။",
+          "3နာရီအကြာစံမှာ60×3=180kg ဖြစ်၍ အောက်ဘက်မှာ180−15=165kg ဖြစ်သည်။",
+          "အမှန်160kg သည်အောက်ဘက်165kg ထက်5kg နည်း၍ ယာယီဘောင်၏အောက်တွင်ရှိသည်။",
+          "±15kg သည်သင်ယူရေးအတွက်ယူဆချက်ဖြစ်သည်။တကယ့်အလုပ်စံနှင့်တုံ့ပြန်နည်းကို လုပ်ငန်းခွင်လက်ခံသည့်အခြေအနေနှင့်ခွင့်ပြုထားသောလုပ်ထုံးတွင်စစ်ရမည်။"
+        ],
+        "sourceHash": "fd1f87ef3a893337122de0015429c33300090b8a70bfde9827649bd7a6d190d2"
+      },
+      "food-assessment35-report-paths": {
+        "title": "တိုက်ရိုက်လမ်းကြောင်းနှင့် အဖွဲ့ခေါင်းဆောင်မှတစ်ဆင့်လမ်းကြောင်းကိုနှိုင်းပါ",
+        "prompt": "သင်ယူရေးအဖွဲ့အစည်းပုံနှစ်ခုကိုကြည့်၍ လုပ်ငန်းခေါင်းဆောင်နှင့်အလုပ်သမားတိုက်ရိုက်ဆက်သွယ်ပုံ၊အဖွဲ့ခေါင်းဆောင်မှတစ်ဆင့်ဆက်သွယ်ပုံတို့၏ ညွှန်ကြားချက်နှင့်အစီရင်ခံလမ်းကြောင်းကိုရှင်းပြပါ။ကိုယ့်လုပ်ငန်းခွင်၌လည်းပုံနှင့်အမြဲတူရမည်ဟု သတ်မှတ်နိုင်ပါသလား။",
+        "expectedPoints": [
+          "တိုက်ရိုက်ပုံတွင်လုပ်ငန်းခေါင်းဆောင်မှအလုပ်သမားသို့ညွှန်ကြား၍ အလုပ်သမားမှလုပ်ငန်းခေါင်းဆောင်သို့အစီရင်ခံသည်။",
+          "အဖွဲ့ခေါင်းဆောင်မှတစ်ဆင့်ပုံတွင်လုပ်ငန်းခေါင်းဆောင်မှအဖွဲ့ခေါင်းဆောင်၊ထိုမှအလုပ်သမားသို့ညွှန်ကြားသည်။အစီရင်ခံမှုကအလုပ်သမားမှအဖွဲ့ခေါင်းဆောင်၊ထိုမှလုပ်ငန်းခေါင်းဆောင်သို့သွားသည်။",
+          "နှစ်ခုလုံးသည်အဖွဲ့အစည်းဥပမာဖြစ်၍ အမည်တစ်ခုတည်းဖြင့်လုပ်ပိုင်ခွင့်နှင့်တာဝန်မဆုံးဖြတ်ရပါ။",
+          "ကိုယ့်လုပ်ငန်းခွင်အဖွဲ့အစည်းနှင့်လုပ်ပိုင်ခွင့်ကိုစစ်၍ သတ်မှတ်ညွှန်ကြား၊အစီရင်ခံလမ်းကြောင်းကိုသုံးရမည်။"
+        ],
+        "sourceHash": "129fe58a408ecc487753b9857fbda975db230be949efda3a39b209595eb19e28"
+      },
+      "food-assessment35-design-residual": {
+        "title": "ဒီဇိုင်းကြောင့်လျော့သည့်နှင့်ကျန်သည့်အန္တရာယ်ကိုရှင်းပြပါ",
+        "prompt": "ပုံတွင်ထောင့်ချွန်ကိုဝိုင်းစေခြင်းနှင့်တံခါးအလေးကိုပေါ့စေခြင်းတို့ကိုနှိုင်းပါ။တစ်ခုချင်းဘယ်အန္တရာယ်သို့မဟုတ်ထိခိုက်မှုကိုလျော့၍ဘာစစ်ဆေးမှုကျန်သနည်း။“ပေါ့သွားလျှင်လက်ချောင်းညပ်သော်လည်းလုံးဝဒဏ်ရာမရ” ဟုရှင်းပြခြင်းသင့်တော်ပါသလား။",
+        "expectedPoints": [
+          "ထောင့်ချွန်ဝိုင်းစေခြင်းသည်ထိတွေ့စဉ်စူးမိခြင်းကဲ့သို့အန္တရာယ်ကိုလျော့သည်။",
+          "တံခါးပေါ့စေခြင်းသည်ညပ်ချိန်ထိခိုက်မှုလျော့သော်လည်းညပ်သည့်အန္တရာယ်နှင့်ဒဏ်ရာဖြစ်နိုင်ခြေမပျောက်ပါ။",
+          "စက်တာဝန်ခံနှင့်အကဲဖြတ်ခွင့်ပြု၍ပြောင်းပြီးအကျိုးနှင့်ကျန်အန္တရာယ်စစ်ရမည်။",
+          "ပုံသည်ဒီဇိုင်းစဉ်းစားနည်းသင်ရန်ဥပမာဖြစ်၍အလုပ်သမားကိုယ်တိုင်စက်ပြောင်းခြင်းသို့မဟုတ်ဘေးကင်းမှုအကြွင်းမဲ့အာမခံခြင်းမပြုရပါ။"
+        ],
+        "sourceHash": "0e330f034afc7f9952ab78aa63267b5257d08be0eec11d952b2835288920fb20"
+      },
+      "food-assessment35-ojt-observation": {
+        "title": "OJT တွင်ဘေးကင်းမှု၊မှတ်တမ်းနှင့်မမှန်ကန်ချိန်အပြုအမူကိုစစ်ပါ",
+        "prompt": "ဖြည့်ပမာဏတိုင်းသည့် OJT တွင်လူကမြန်မြန်တိုင်းနိုင်၍စစ်ခြင်းပြီးမည်ဟုဆိုသည်။ပန်းတိုင်နှင့်လက်တွေ့အလုပ်ကိုဘယ်လိုတိုက်စစ်မည်နည်း။ဘေးကင်းစွာကိုင်တွယ်မှု၊တိုင်းတာမှု၊မှတ်တမ်းနှင့်မမှန်ကန်ချိန်ဆက်သွယ်မှုကိုဘာဖြင့်စစ်၍မလုံလောက်လျှင်ဘာလုပ်မည်နည်း။",
+        "expectedPoints": [
+          "ကြိုသတ်မှတ်ရောက်ရှိပန်းတိုင်နှင့်အခြေအနေအတိုင်းစစ်၍မြန်နှုန်းသို့မဟုတ်တက်ရောက်မှတ်တမ်းတစ်ခုတည်းဖြင့်တတ်ပြီးဟုမသတ်မှတ်ရပါ။",
+          "သင်ကြားသူသရုပ်ပြပြီးနောက်သင်ယူသူကိုနည်းလမ်းနှင့်အကြောင်းရင်းရှင်းပြရင်းလက်တွေ့လုပ်စေရမည်။",
+          "ဘေးကင်းကိုင်တွယ်မှုနှင့်မှန်ကန်တိုင်းတာမှုကိုကြည့်၍အမှန်ရလဒ်မှတ်တမ်းတင်နိုင်သလားစစ်ရမည်။",
+          "မမှန်ကန်ချိန်ဘယ်သူ့ထံဘာသတင်းပို့မည်ကိုကိုယ်တိုင်ရှင်းပြမှုသို့မဟုတ်စိတ်ကူးအခြေအနေ၌လုပ်ရပ်မှစစ်ရမည်။",
+          "မလုံလောက်သည့်အကြောင်းစစ်၊သင်နည်းနှင့်လေ့ကျင့်မှုကိုပြန်ပြင်၍ပြန်သင်ပြီးပန်းတိုင်ရောက်သလားနောက်တစ်ကြိမ်စစ်ရမည်။"
+        ],
+        "sourceHash": "94390ce64ea947ef55b01f509a3b94a1c4025c59bd339b22ca7295632361026b"
+      },
+      "food-assessment35-distribution-recognition": {
+        "title": "ဖြန့်ကျက်ပုံနှင့်စစ်ဆေးရမည့်အခြေအနေကိုတွဲပါ",
+        "prompt": "စာကိုယ်ရှိဟစ်စတိုဂရမ် A–F ကိုပုံစံခြောက်ခု၊စကက်တာပုံ A–D ကိုဆက်နွယ်မှုလေးခုနှင့်တွဲပါ။ဟစ်စတိုဂရမ်ဝင်ရိုးနှစ်ခုနှင့်ထိပ်နှစ်ခု၊သွားကျိုး၊အမြီးရှည်၊မတ်စောက်၊သီးခြားကျွန်းပုံတို့၌စစ်မည့်အခြေအနေကိုရှင်းပြပါ။အခြားစိတ်ကူးဒေတာ36ခုတွင်အတန်းအရေအတွက်အညွှန်း√n သည်ဘယ်လောက်လဲ။အညွှန်းနှင့်ပုံသဏ္ဌာန်တစ်ခုတည်းဖြင့်အကြောင်းရင်းသို့မဟုတ်တည်ငြိမ်မှုကိုသတ်မှတ်နိုင်ပါသလား။",
+        "expectedPoints": [
+          "ဟစ်စတိုဂရမ် A သာမန်ပုံ၊B သွားကျိုးပုံ၊C အမြီးရှည်ပုံ၊D မတ်စောက်ပုံ၊E ထိပ်နှစ်ခုပုံ၊F သီးခြားကျွန်းငယ်ပုံဖြစ်သည်။",
+          "အလျားလိုက်ဝင်ရိုးမှာတိုင်းတာတန်ဖိုးအတန်း၊ဒေါင်လိုက်မှာထိုအတန်း၏ကြိမ်နှုန်းဖြစ်သည်။",
+          "ထိပ်နှစ်ခုနှင့်ကျွန်းငယ်ပုံတွင်အုပ်စုရောခြင်းစသည်ကိုသံသယထား၍အင်္ဂါရပ်အလိုက်ခွဲစစ်သည်။",
+          "သွားကျိုးပုံတွင်တိုင်းတာဒဿမ၊နယ်နိမိတ်၊အတန်းအကျယ်နှင့်ကိုင်တွယ်နည်းမတူခြင်းစသည်ကိုစစ်သည်။",
+          "အမြီးရှည်ပုံ၌တစ်ဖက်တည်းထိန်းချုပ်မှု၊မတ်စောက်ပုံ၌ရွေးချယ်ဖယ်ရှားမှုသမိုင်းကိုစစ်၍ပုံစံတစ်ခုတည်းဖြင့်အကြောင်းရင်းမသတ်မှတ်ရပါ။",
+          "စကက်တာ A အပေါင်းဆက်စပ်မှု၊B အနုတ်ဆက်စပ်မှု၊C မျဉ်းဖြောင့်မဟုတ်သောဆက်နွယ်မှု၊D ရှင်းလင်းသောဆက်နွယ်မှုမရှိဖြစ်သည်။သက်ဆိုင်သောတန်ဖိုးနှစ်ခုတွဲ၍ဆက်စပ်မှုတစ်ခုတည်းကအကြောင်းအကျိုးကိုသက်သေပြသည်ဟုမဆိုရပါ။",
+          "√36=6 ဖြစ်၍အတန်းခြောက်ခုခန့်အညွှန်းသာဖြစ်ပြီးစည်းကမ်းအတိအကျမဟုတ်ပါ။ဒေတာအရေအတွက်၊ဖြန့်ကျက်ပုံနှင့်တိုင်းတာတိကျမှုစစ်၍အလွန်စိတ်သော်လည်းကျယ်သော်လည်းပုံပြောင်းကြောင်းရှင်းပြရမည်။",
+          "သာမန်ပုံတစ်ခုတည်းကတည်ငြိမ်ကြောင်းမသက်သေပြပါ။ပုံကိုပစ္စည်းအစစ်၊တိုင်းတာနည်းနှင့်မူလဒေတာစစ်ရန်အရိပ်အမြွက်အဖြစ်သုံးရမည်။"
+        ],
+        "sourceHash": "b541f4599a73cb80aaaeb0ec5b61fd5143ce63c3e8a97d52f49bf2a39b6bfac1"
+      },
+      "food-assessment35-control-patterns": {
+        "title": "အချိန်စဉ်ကိုးကားဥပမာရှစ်မျိုးကိုခွဲဖတ်ပါ",
+        "prompt": "စာကိုယ်၏ထိန်းချုပ်ပုံ A–H သည်ဗဟို0၊အထက်အောက်ကိုးကားမျဉ်း±3၊အကူမျဉ်း±1၊±2 ဟူသောယူနစ်မဲ့စိတ်ကူးဥပမာဖြစ်သည်။ဝင်ရိုးနှင့်ဗဟို၊အထက်အောက်မျဉ်းရှင်းပြ၍ A–H တစ်ခုချင်း၏အမှတ်အရေအတွက်နှင့်နေရာကိုဖတ်ပါ။G နှင့်H မှစစ်မည့်ယူဆချက်ပါပြောပါ။ယင်းကိုထုတ်ကုန်စံသို့မဟုတ်လုပ်ငန်းခွင်ဆုံးဖြတ်စည်းကမ်းအဖြစ်တိုက်ရိုက်ပြောင်းသုံးနိုင်ပါသလား။",
+        "expectedPoints": [
+          "အလျားလိုက်မှာကြည့်ရှုစဉ်၊ဒေါင်လိုက်မှာစိတ်ကူးအညွှန်းတန်ဖိုးဖြစ်သည်။ဗဟို0၊အထက်ကိုးကား+3၊အောက်ကိုးကား−3 ဖြစ်၍ထုတ်ကုန်စံနှင့်ခွဲရမည်။",
+          "A တွင်6မြောက်အမှတ်3.4 ကအထက်ကိုးကား3 ကိုကျော်သည်။",
+          "B တွင်အမှတ်9ခုဆက်တိုက်ဗဟို0 အထက်၌ရှိသည်။",
+          "C တွင်အမှတ်6ခုဆက်တိုက်တက်သည်။",
+          "D တွင်အမှတ်14ခုတစ်လှည့်စီတက်ကျသည်။",
+          "E တွင်3ခုအနက်2ခုက+2 ထက်မြင့်၍အထက်နားကပ်သည်။",
+          "F တွင်5ခုအနက်4ခုက+1 ထက်မြင့်၍တူညီဖက်သို့ကပ်သည်။",
+          "G တွင်အမှတ်15ခုက−1 နှင့်+1 အတွင်း၊ဗဟိုအနီးစုသည်။",
+          "H တွင်အမှတ်8ခုကဗဟိုအနီး−1 နှင့်+1 ပြင်ပ၌ရှိသည်။",
+          "G တွင်ကွာဟမှုနည်းနိုင်၊H တွင်အုပ်စုရောနိုင်စသည့်ယူဆချက်ကိုစစ်ခြင်းဖြစ်ပြီးအကြောင်းရင်းအတိအကျမဟုတ်ပါ။",
+          "သင်ခန်းစာ၏JIS ကိုးကားဥပမာကိုကိုယ့်ကုမ္ပဏီစည်းကမ်းနှင့်တုံ့ပြန်နည်းမှခွဲရမည်။စီမံဌာနကထုတ်ကုန်အလိုက်သတ်မှတ်၍စိတ်ကူးအမှတ်နှင့်အထက်အောက်မျဉ်းကိုစက်ရုံအားလုံးသုံးကန့်သတ်ချက်မလုပ်ရပါ။"
+        ],
+        "sourceHash": "062f8b2e9f39ed88c2ee66125706b16a5cf28d9c142de23c92fb1b25814ea364"
+      },
+      "food-assessment35-tally-categories": {
+        "title": "နေ့အလိုက်နှင့်အမျိုးအစားအလိုက်အပေါင်းကိုတိုက်စစ်ပါ",
+        "prompt": "စိတ်ကူးမှတ်တမ်းတွင်ပထမနေ့ထုပ်ပိုးချို့ယွင်းမှု3ခုနှင့်အညစ်အကြေး2ခု၊နောက်နေ့ထုပ်ပိုးချို့ယွင်းမှု1ခုနှင့်အညစ်အကြေး4ခုဖြစ်သည်။နေ့အလိုက်၊အမျိုးအစားအလိုက်နှင့်စုစုပေါင်းတွက်၍နှစ်ဖက်ပေါင်းသည့်စုစုပေါင်းတူသလားစစ်ပါ။အမျိုးအစားအမည်နှင့်မှတ်နည်းကိုတာဝန်ခံများအကြားညီစေရသည့်အကြောင်းပါရှင်းပြပါ။",
+        "expectedPoints": [
+          "ပထမနေ့3+2=5ခု၊နောက်နေ့1+4=5ခုဖြစ်သည်။",
+          "ထုပ်ပိုးချို့ယွင်း3+1=4ခု၊အညစ်အကြေး2+4=6ခုဖြစ်သည်။",
+          "နေ့အလိုက်5+5=10ခု၊အမျိုးအစားအလိုက်4+6=10ခုတူသည်။",
+          "အမျိုးအစား၊ယူနစ်နှင့်မှတ်နည်းတူစွာသုံး၍နှစ်ထပ်ရေတွက်မှု၊ခွဲပုံမတူမှုကိုကာကွယ်ကာအကြောင်းရင်းဆန်းစစ်မှု၌သုံးရမည်။"
+        ],
+        "sourceHash": "5df067147588b28acbbb0933116ea02662a9e3e2672e7c41d542e463871b6bec"
+      },
+      "food-assessment35-plan-report-reserve": {
+        "title": "အစီအစဉ်ချဲ့ထွင်မှုနှင့်လူတိုးသည့်အချက်ကိုအစီရင်ခံပါ",
+        "prompt": "ကုမ္ပဏီထုတ်လုပ်အစီအစဉ်ကိုကိုယ့်လိုင်းအလုပ်သို့ဘယ်လိုချမည်နည်း။အခြားစိတ်ကူးနှိုင်းယှဉ်မှု၌ကောင်းသောထုတ်ကုန်တူပြီးအရင်3ယောက်1နာရီ60kg၊ပြောင်းပြီး4ယောက်1နာရီ72kg ထုတ်ကာရပ်နားမှုမရှိပါ။နာရီအလိုက်နှင့်လူလုပ်အားနာရီအလိုက်တွက်၍စီးပွားရေးဆုံးဖြတ်ချက်အတွက်ဘာတင်ပြမည်နည်း။ကုမ္ပဏီတစ်ခုလုံးစွမ်းရည်အပို၊ရှောင်နိုင်သောနေရာရပ်နားမှုနှင့်နောက်အဆင့်အပိုစွမ်းရည်ဒီဇိုင်းအဆိုကိုလည်းဘယ်လိုခွဲမည်နည်း။",
+        "expectedPoints": [
+          "ကုမ္ပဏီ၏ပမာဏ၊ကာလ၊ဝယ်ယူရေးအစီအစဉ်မှစက်ရုံအသေးစိတ်၊ထိုမှလိုင်း၏ကုန်ကြမ်း၊စက်၊လူ၊အချိန်နှင့်လုပ်ငန်းစဉ်သို့ချ၍အခြေအနေပြောင်းမှုကိုတာဝန်ခံဌာနနှင့်အထက်သို့ပြောရမည်။",
+          "လိုင်းမှာ60မှ72kg/နာရီသို့တက်သည်။လူလုပ်အား3မှ4နာရီသို့တိုး၍လူနာရီထုတ်လုပ်နိုင်စွမ်း60÷3=20မှ72÷4=18kg/လူနာရီသို့ကျသည်။",
+          "တစ်ဖက်တည်းကောင်းပြီဟုမတင်ပြဘဲထုတ်လုပ်ပမာဏ၊လူ၊လုပ်အား၊အရည်အသွေးနှင့်အညွှန်းနှစ်မျိုးပြောင်းမှုကိုအထက်စီမံသူထံပြော၍ကုမ္ပဏီအခြေအနေကိုက်ဆုံးဖြတ်စေရမည်။",
+          "ကုမ္ပဏီနှင့်စက်ရုံတစ်ခုလုံးဝယ်လိုအားပြောင်းမှုတုံ့ပြန်ရန်အပိုသည်စီးပွားရေးဆုံးဖြတ်ချက်ဖြစ်ပြီးအစီအစဉ်အချိန်အတွင်းရှောင်နိုင်သောရပ်နားမှု၊စောင့်ဆိုင်းမှုကိုပစ်ထားခွင့်မဟုတ်ပါ။ဘေးကင်းရေးလိုအပ်သောရပ်နားမှုကိုမလျှော့၊မဖုံးရပါ။",
+          "နောက်အဆင့်အပိုစွမ်းရည်သည်အပြောင်းအလဲနှင့်စက်အခြေအနေအလိုက်စဉ်းစားသည့်ဒီဇိုင်းအဆိုဖြစ်၍လိုင်းအားလုံးကိုစွမ်းရည်အစဉ်တစ်မျိုးတည်းအတင်းပေးသည့်စည်းကမ်းမဟုတ်ပါ။"
+        ],
+        "sourceHash": "399d11c6a557659c7367155bc5a9dce279af660db829fd5403648cb34cfafe6d"
+      },
+      "food-assessment35-productivity-four-cases": {
+        "title": "ထည့်သွင်းမှုနှင့်ရလဒ်အခြေအနေလေးမျိုးကိုနှိုင်းပါ",
+        "prompt": "ကောင်းသောထုတ်ကုန်နှင့်အရည်အသွေးတူသည့်စိတ်ကူးဥပမာဖြစ်သည်။အခြေခံ100kg ကိုလူလုပ်အား10နာရီဖြင့်ထုတ်သည်။A120kg/10လူနာရီ၊B100kg/5၊C180kg/15၊D80kg/5 ဖြစ်သည်။အခြေခံနှင့်A–D လူနာရီထုတ်လုပ်နိုင်စွမ်းတွက်၍ရလဒ်နှင့်ထည့်သွင်းမှုတက်ကျသော်လည်းကောင်းလာနိုင်ပုံလေးမျိုးရှင်းပြပါ။ပိုင်းဝေနှင့်ပိုင်းခြေပြောင်းပြန်တန်ဖိုးကဘာကိုပြသသနည်း။",
+        "expectedPoints": [
+          "အခြေခံ100÷10=10kg/လူနာရီ၊A120÷10=12၊B100÷5=20၊C180÷15=12၊D80÷5=16kg/လူနာရီ။A–D အားလုံးအခြေခံထက်မြင့်သည်။",
+          "A သည်ထည့်သွင်းမှုတူရလဒ်တိုး၊B သည်ရလဒ်တူထည့်သွင်းမှုလျော့ဖြစ်သည်။",
+          "C တွင်ထည့်သွင်းမှုလည်းတိုးသော်လည်းရလဒ်တိုးနှုန်းကပိုများသည်။",
+          "D တွင်ရလဒ်လည်းလျော့သော်လည်းထည့်သွင်းမှုလျော့နှုန်းကပိုများသည်။",
+          "လူနာရီ÷kg သည်ထုတ်ကုန်တစ်ယူနစ်အတွက်အရင်းအမြစ်ထည့်သွင်းပမာဏဖြစ်သည်။ထုတ်လုပ်နိုင်စွမ်းနှင့်ယူနစ်အလိုက်သုံးစွဲမှုကိုတန်ဖိုးတူဟုမယူဆဘဲယူနစ်နှင့်အရည်အသွေးအခြေအနေညီစွာနှိုင်းရမည်။"
+        ],
+        "sourceHash": "8748b6881b90da4482fd0a0841d57750cdc84f2f0a3ad5b8f03b5b38260ae86c"
+      },
+      "food-assessment35-daily-record-followup": {
+        "title": "နေ့စဉ်မှတ်တမ်းကိုနောက်အလုပ်နှင့်ပြုပြင်ထိန်းသိမ်းမှုသို့ပို့ပါ",
+        "prompt": "နေ့စဉ်စာရင်းတွင်စုစုပေါင်းထုတ်လုပ်ပမာဏသာရေးပြီးရပ်ထားသည်။ရပ်နားမှု၊ကုန်ကြမ်းလက်ခံထုတ်ပေးလက်ကျန်နှင့်ပြုပြင်မှုကိုဘယ်လိုမှတ်၍ဘယ်သူ့ထံချိတ်မည်နည်း။ခဏရပ်မှုကို1ပတ်သို့မဟုတ်1လကြည့်ရသည့်အကြောင်းနှင့်စက်သတင်း၊စက်တူကာကွယ်ရေးသို့ချိတ်ပုံပါရှင်းပြပါ။",
+        "expectedPoints": [
+          "ထုတ်လုပ်မှုအပြင်ရပ်နား၊မမှန်ကန်မှုအချိန်နှင့်အကြောင်း၊ကုန်ကြမ်းလက်ခံထုတ်ပေးလက်ကျန်၊ထိုနေ့ပြဿနာနှင့်ပြုပြင်ချက်တို့ကိုမှန်ကန်စွာမှတ်ရမည်။",
+          "အထက်သို့တင်ပြ၍ရှေ့နောက်အဆင့်နှင့်ပြဿနာ၊နောက်တစ်ခါပြင်ဆင်မှုကိုမျှဝေရမည်။",
+          "ခဏရပ်မှုလည်းတိကျစွာမှတ်၍ပတ်နှင့်လအလိုက်ထပ်ဖြစ်ပုံကိုစစ်ကာစက်အကြောင်းဆိုလျှင်အထက်နှင့်စက်ကျွမ်းကျင်သူနှင့်အကြောင်းရင်း၊ထိန်းသိမ်းမှုဆွေးနွေးရမည်။",
+          "ပွန်းစားပစ္စည်းလက်ကျန်နှင့်လဲလှယ်သမိုင်းချိတ်၍မပျက်မီလဲရန်စဉ်းစားရမည်။မတော်တဆမှုစစ်ဆေးရန်နေရာသတင်းပေး၍အလားတူစက်နှင့်အလုပ်တွင်လည်းအန္တရာယ်တူရှိမရှိစစ်ရမည်။"
+        ],
+        "sourceHash": "002d156efc34afa1063746a59179d8c537d01bb029d7cd76655e1df8e7e8fb6b"
+      },
+      "food-assessment35-yield-scope-pretreatment": {
+        "title": "အကြိုပြုပြင်မှုနှင့်ရောင်းယူနစ်အလိုက်ပိုင်းခြေကိုစစ်ပါ",
+        "prompt": "အားလုံးကောင်းသောထုတ်ကုန်စိတ်ကူးအခြေအနေဖြစ်၍အခြားတိုးလျော့မှုမရှိပါ။မပြုပြင်ရသေး100kg မှမစားရသော20kg ဖယ်၊အပူပေးရာရေ10kg လျော့မှုနှင့်ပြုပြင်ပြီးကုန်ကြမ်း80kg ဝယ်ကာတူညီသောအပူပေးရာရေ10kg လျော့မှုကိုနှိုင်းပါ။အခြားဥပမာမှာထည့်သွင်း100kg၊စံ1kg ပါအိတ်70၊အမှန်အလေး77kg ဖြစ်သည်။အလေးချိန်ရောင်းနှင့်အိတ်ရေတွက်ရောင်းအထွက်အချိုး၊အိတ်အရေအတွက်နှင့်စံအလေးတွက်နည်းတူသလားရှင်းပြပါ။",
+        "expectedPoints": [
+          "ပထမဥပမာတွင်ကောင်းသောထုတ်ကုန်100−20−10=70kg၊ကိုယ့်စက်ရုံထည့်သွင်းမှု၏70% ဖြစ်သည်။ဝယ်သည့်ဥပမာလည်း80−10=70kg ဖြစ်သော်လည်းကိုယ့်ထည့်သွင်းမှု၏87.5% ဖြစ်သည်။",
+          "ဝယ်သည့်ဥပမာတွင်အကြိုပြုပြင်မှုကိုစက်ရုံပြင်ပတွင်ပြီးထား၍ပိုင်းခြေနှင့်စီမံရသည့်အရာမတူပါ။ထုတ်ကုန်ပမာဏတူသော်လည်းအကြိုပြုပြင်ပါစုစုပေါင်းအကျိုးရှိမှုကောင်းလာသည်ဟုဤနှိုင်းယှဉ်မှုတစ်ခုတည်းဖြင့်မဆိုရပါ။လိုအပ်သောအရိုးဖယ်မှု၊အရည်အသွေးအတွက်ရေလျော့မှုကိုရှောင်နိုင်သောဆုံးရှုံးမှုအဖြစ်တစ်ပြေးညီမယူဆရပါ။",
+          "အခြားရောင်းဥပမာကိုအလေးချိန်ဖြင့်တွက်လျှင်77÷100=77%၊အိတ်ရေတွက်စံအလေးမှာ70အိတ်×1kg=70kg၊70÷100=70% ဖြစ်သည်။",
+          "ထည့်သွင်း100kg ကိုစံ1kg ဖြင့်စားသောသီအိုရီ100အိတ်နှင့်နှိုင်း70အိတ်ဖြစ်၍70÷100=70%၊စံအလေးတွက်မှုနှင့်တူသည်။အမှန်အလေးနှင့်ကွာ7kg ကိုစံထက်ပိုဖြည့်မှုအဖြစ်သီးခြားစစ်ရမည်။",
+          "အရည်အသွေး၊တံဆိပ်နှင့်လိုအပ်ပမာဏလိုက်နာ၍အထွက်အချိုးကိန်းမြှင့်ရုံအတွက်လိုအပ်သောပြုပြင်မှုသို့မဟုတ်ဖြည့်အခြေအနေမကျော်ရပါ။"
+        ],
+        "sourceHash": "55f185112062a9bf8d0c07f19cf13217504b8401fc4226abac92e7a21902ca95"
+      },
+      "food-assessment35-environment-capacity-boundary": {
+        "title": "ပတ်ဝန်းကျင်အညွှန်းအကန့်နှင့်သန့်စင်စွမ်းရည်ကိုစစ်ပါ",
+        "prompt": "လျှပ်စစ်၊ရေနံ၊ဂက်စ်သုံးစွဲမှုမှ CO2 အကဲဖြတ်ရာအခြေအမြစ်မဲ့ကိန်းသုံးနိုင်သလား။စွန့်ပစ်ရေလျော့သော်လည်းအညစ်အကြေးများလျှင်သန့်စင်စွမ်းရည်နှင့်စက်ရုံလည်ပတ်မှုကိုဘယ်လိုသက်ရောက်သနည်း။နေရာရှိအကြွင်းအကျန်စုခြင်းနှင့်ရေချွေတာခြင်းကိုကုမ္ပဏီစက်ရင်းနှီးမြှုပ်နှံမှု၊ပြန်လည်ပြည့်ဖြိုးမြဲစွမ်းအင်စသည်ဆုံးဖြတ်မှုမှခွဲ၍ထုတ်လုပ်ပမာဏနှင့်ကာလမတူသည်ကိုနှိုင်းရာဘာစစ်မလဲဖြေပါ။",
+        "expectedPoints": [
+          "သတ်မှတ်ကာလနှင့်စွမ်းအင်တစ်မျိုးချင်းအမှန်တိုင်းတာသုံးစွဲဒေတာကိုအခြေခံ၍အထောက်အထားရှိပြောင်းလဲတွက်စည်းကမ်းကိုတာဝန်ခံဌာနနှင့်စစ်ရမည်။ယူနစ်မတူသုံးစွဲမှုကိုတိုက်ရိုက်မပေါင်း၊စိတ်ကူး CO2 ကိန်းဖြင့်မတွက်ရပါ။",
+          "စွန့်ပစ်ရေပမာဏနှင့်အော်ဂဲနစ်အညစ်အကြေးဝန်နှစ်မျိုးလုံးကိုသန့်စင်စွမ်းရည်နှင့်တိုက်စစ်ရမည်။လက်မခံနိုင်လျှင်ရေမသုံးနိုင်၍ထုတ်လုပ်မှုတားဆီးခံရနိုင်သည်။",
+          "နေရာတွင်သန့်ရှင်းရေးထိန်း၍အကြွင်းအကျန်ကိုအရင်စု၊မလိုအပ်သောရေဖြန်းမှုနှင့်ရှောင်နိုင်သောအစားအစာဆုံးရှုံးမှုလျှော့ရမည်။ကုမ္ပဏီရင်းနှီးမြှုပ်နှံမှု၊ပြန်လည်ပြည့်ဖြိုးမြဲစွမ်းအင်၊လုပ်ငန်းစဉ်နှင့်အမှာလက်ခံပို့နည်းပြောင်းမှုသည်နေရာဒေတာပါသုံးသည့်တစ်ကုမ္ပဏီလုံးဆုံးဖြတ်မှုဟုခွဲရမည်။",
+          "နှိုင်းကာလနှင့်ထုတ်ကုန်အခြေအနေတူစွာစုစုပေါင်းနှင့်ထုတ်ကုန်ယူနစ်အလိုက်သုံးစွဲမှုနှစ်ခုလုံးစစ်ရမည်။ထုတ်လုပ်ပမာဏနှင့်ပိုင်းခြေကွာမှုကိုမဖုံး၊လိုအပ်ဆေးကြောမှုနှင့်ဘေးကင်းရေးမလျှော့ရပါ။"
+        ],
+        "sourceHash": "c445600c4480e3a30e32c9ce8477ab9494e61c0ce3f6825dcdb25c57b4dbde15"
+      },
+      "food-assessment35-financial-indicator-boundary": {
+        "title": "သတ်မှတ်ကွာငွေကိုစာရင်းကိုင်အမြတ်နှင့်မရောထွေးပါနှင့်",
+        "prompt": "စာကိုယ်ငွေတွက်မှုပြီးသော်လည်းထိုဥပမာသတ်မှတ်တန်ဖိုးတိုးကွာငွေကိုရောင်းရငွေသို့မဟုတ်ကုမ္ပဏီတစ်ခုလုံးနှင့်အခြားကုမ္ပဏီ၏စာရင်းကိုင်အမြတ်တူဟုဆိုနိုင်သလား။မနှိုင်းမီစစ်မည့်ပိုင်းဝေ၊ပိုင်းခြေ၊ကုန်ကျစရိတ်အကျယ်နှင့်သွယ်ဝိုက်ဌာနကိုထုတ်လုပ်kg သာကြည့်အကဲဖြတ်သည့်ကန့်သတ်ချက်ကိုရှင်းပြပါ။",
+        "expectedPoints": [
+          "တန်ဖိုးတိုးသည်ကုမ္ပဏီလုပ်ငန်းမှအသစ်ဖန်တီးသောတန်ဖိုးဖြစ်၍ရောင်းရငွေအားလုံးနှင့်မတူပါ။စာကိုယ်ကွာငွေသည်ထိုလေ့ကျင့်ခန်းအတွက်သတ်မှတ်ထားခြင်းဖြစ်သည်။",
+          "ဘယ်ကုန်ကြမ်း၊လူလုပ်အားနှင့်စွမ်းအင်လောင်စာစရိတ်ပါသလဲစစ်၍ကုမ္ပဏီနှင့်ဌာနအလိုက်စရိတ်အကန့်မတူသည့်အညွှန်းကိုစာရင်းကိုင်အမြတ်နှင့်တူဟုမဆိုရပါ။",
+          "ပိုင်းဝေကရုပ်ပိုင်းပမာဏ၊ရောင်းရငွေ၊တန်ဖိုးတိုးဘယ်ဟာလဲ၊ပိုင်းခြေကကြာချိန်လားလူလုပ်အားလားစစ်၍အရည်အသွေးနှင့်နှိုင်းအကျယ်ညီစေရမည်။",
+          "အရည်အသွေးစီမံမှု၊စက်စီမံမှုနှင့်ရုံးစသည့်သွယ်ဝိုက်လုပ်ငန်းလည်းစက်ရုံကိုပံ့ပိုးသည်။ဌာနတစ်ခုချင်းကိုတိုက်ရိုက်ထုတ်လုပ်kg သာဖြင့်မအကဲဖြတ်ဘဲအခန်းကဏ္ဍနှင့်စက်ရုံတစ်ခုလုံးပန်းတိုင်ကိုက်အညွှန်းရွေးရမည်။"
+        ],
+        "sourceHash": "8ed0aac6dd88adbd3d84d8b6efd7f0fac53f5f8e577613999dd0555af9128791"
+      },
+      "food-assessment35-consumer-use": {
+        "title": "စားသုံးမည့်သူနှင့်ဖွင့်ပြီးအသုံးပြုပုံ",
+        "prompt": "တစ်နပ်စာထုတ်ကုန်ကိုဖွင့်ပြီးရက်အနည်းငယ်ခွဲသုံးသည့်အိတ်ကြီးသို့ပြောင်းသည်။နို့စို့ကလေးနှင့်ကလေးငယ်၊လူနာနှင့်အသက်ကြီးသူလည်းစားနိုင်သည်။ထုတ်ကုန်ရှင်းလင်းချက်တွင်ထပ်ထည့်မည့်သတင်းနှင့်စစ်တွေ့မှုကိုဘာတွင်သုံးမည်ကိုရှင်းပြပါ။",
+        "expectedPoints": [
+          "စားသုံးသူ၊စားပုံ၊အပူပေးမပေးနှင့်ဖွင့်ပြီးခွဲသုံးသည့်အခြေအနေကိုတိကျစေရမည်။",
+          "ထုတ်ယူသည့်ကိရိယာ၊လူထိတွေ့မှုနှင့်ဖွင့်ပြီးသိုလှောင်အခြေအနေကိုစစ်ရမည်။",
+          "မဖွင့်ရသေးသည့်အခြေအနေတစ်ခုတည်းဖြင့်ဘေးကင်းသည်ဟုမသတ်မှတ်ရပါ။",
+          "စားသူနှင့်သုံးပုံအလိုက်စဉ်းစားရမည့်အန္တရာယ်ပြောင်းသဖြင့် HACCP အဖွဲ့သို့သတင်းပေး၍အန္တရာယ်အကြောင်းရင်းဆန်းစစ်မှုတွင်သုံးရမည်။"
+        ],
+        "sourceHash": "4a9238e975e1582b65ac079ce1c25b06227e9de7a4ff452a3e8830b13e1f152a"
+      },
+      "food-assessment35-flow-paths": {
+        "title": "လုပ်ငန်းစဉ်ပုံ၏အကန့်နှင့်ထိန်းချုပ်မှတ်",
+        "prompt": "ပုံတွင်ကုန်ကြမ်း A၊B၊ထုပ်ပိုးပစ္စည်း၊အလုပ်သမားနှင့်ကိရိယာလမ်းကြောင်းကိုလိုက်ကြည့်ပါ။အပူပေးပြီးနောက်မပူပေးရသေးသောအဆာထည့်မည့်အဆိုအတွက်ဧရိယာအကန့်၊အရေးကြီးထိန်းချုပ်မှတ်နှင့်လုပ်ငန်းအခြေအနေစစ်ချက်ကိုရှင်းပြပါ။",
+        "expectedPoints": [
+          "ကုန်ကြမ်း A၊B ပေါင်းရာနှင့်ထုပ်ပိုးပစ္စည်းဝင်သည့်အဆင့်ကိုခွဲ၍လိုက်ကြည့်ရမည်။",
+          "ညစ်ညမ်းဖက်မှသန့်ရှင်းဖက်သို့လူ၊ကိရိယာနှင့်ရေစက်ဖြာသွားနိုင်သည့်လမ်းကိုစစ်ရမည်။",
+          "အပူပေးပြီးမှထည့်သည့်အဆာအန္တရာယ်ကိုအရင်အပူပေးမှုတစ်ခုတည်းဖြင့်မထိန်းနိုင်၍သီးခြားအကဲဖြတ်ရမည်။",
+          "အရေးကြီးထိန်းချုပ်မှတ်ကိုအန္တရာယ်အကြောင်းရင်းဆန်းစစ်မှုအရသတ်မှတ်၍အဆင့်အားလုံးကိုတစ်ပြေးညီမသတ်မှတ်ရပါ။",
+          "အပူချိန်၊အချိန်နှင့်တိုင်းတာနည်းကိုထုတ်ကုန်အလိုက်ခွင့်ပြုအခြေအနေတွင်စစ်၍အခြားထုတ်ကုန်ကိန်းဂဏန်းကိုမကူးသုံးရပါ။"
+        ],
+        "sourceHash": "4443f85813a02a1714bc3ebb325744e162afbe4967c61c9a9fec0370c0e9bbb2"
+      },
+      "food-assessment35-cleaning-order": {
+        "title": "ဆေးကြောအစဉ်နှင့်တာဝန်ခွဲမှု",
+        "prompt": "ထုတ်လုပ်ပြီးစက်ဆေးကြောရန်အစီအစဉ်လုပ်သည်။အကြွင်းအကျန်၊ဖြုတ်နိုင်စက်၊ပိတ်စနစ်ပိုက်၊ဆေးချပြီးနောက်လုပ်ဆောင်မှုနှင့်ရှေ့နောက်အဆင့်အလုပ်ခွဲမှုကိုဘယ်လိုကိုင်တွယ်မည်နည်း။",
+        "expectedPoints": [
+          "ကုန်ကြမ်း၊လုပ်ငန်းတစ်ဝက်ထုတ်ကုန်နှင့်ကပ်ကျန်ပစ္စည်းကိုသန့်ရှင်းစွာအရင်ပြန်စု၍စွန့်ပစ်ရေဝန်ကိုလျော့ရမည်။ပြန်သုံးမှုကခွင့်ပြုအခြေအနေလိုက်ရမည်။",
+          "ရပ်တန့်ခြင်း၊သီးခြားဖြတ်တောက်ခြင်းနှင့်တာဝန်အကျယ်ရှင်းလင်း၍စက်ကိုက်ဖြုတ်ခြင်း၊အကြိုဆေးခြင်း၊ဆပ်ပြာပစ္စည်းဖြင့်ဆေးခြင်း၊ဆေးချခြင်း၊သတ်မှတ်အခြောက်ခံခြင်းနှင့်ပြန်တပ်ခြင်းကိုခွင့်ပြုလုပ်ထုံးအတိုင်းလုပ်ရမည်။",
+          "ပိတ်စနစ်ပိုက်နှင့်ကန်တွင်စက်နှင့်ကိုက်ပြီးခွင့်ပြုသော CIP ကိုသုံး၍ကိုယ်တိုင်ဖြုတ်ခြင်းနှင့်ဆေးပစ္စည်းပြောင်းခြင်းမပြုရပါ။",
+          "ရှေ့မှနောက်သို့လုပ်သော်လည်းသန့်ရှင်းပြီးဧရိယာသို့အညစ်အကြေးနှင့်ဆေးရေပြန်မဝင်စေဘဲအလုပ်ထပ်ခြင်းနှင့်အချင်းချင်းနှောင့်ယှက်မှုကိုကာကွယ်ရမည်။",
+          "စီမံသူနှင့်ခေါင်းဆောင်ကနည်းနှင့်လုပ်ထုံးထူထောင်၍ပညာပေးကြီးကြပ်ရမည်။လုပ်သူကမှတ်တမ်းနှင့်မမှန်ကန်မှုကိုစစ်ဆေးသူထံလွှဲရမည်။"
+        ],
+        "sourceHash": "891a33975667beb6508043e992061a44d59c33e242c5320804d05e0ed18844fb"
+      },
+      "food-assessment35-lookup-matrix": {
+        "title": "မြှောက်ခြင်းနှင့်မတူသောတိုက်ဆိုင်ကြည့်ဇယား",
+        "prompt": "ဤသီးခြားဇယားတွင်အတန်းမှာဖြစ်နိုင်ခြေမြင့်၊အလတ်၊နိမ့်ဖြစ်၍ကော်လံမှာပြင်းထန်မှုသေဆုံးနိုင်၊အလုပ်နားရ၊ပေါ့ပါးဖြစ်သည်။မြင့်အတန်း H၊H၊M၊အလတ် H၊M၊L၊နိမ့် H၊M၊L ဖြစ်သည်။H ချက်ချင်းတုံ့ပြန်ပြီးပြီးသည်အထိရပ်၊M အမြန်တုံ့ပြန်၍ရပ်သင့်၊L လိုအပ်သလိုတုံ့ပြန်ဟုသတ်မှတ်သည်။“ဖြစ်နိုင်ခြေနိမ့်/သေဆုံးနိုင်” နှင့်“ဖြစ်နိုင်ခြေအလတ်/ပေါ့ပါး” ကိုတိုက်ကြည့်၍မြှောက်နည်းနှင့်ကွာခြားမှုရှင်းပြပါ။",
+        "expectedPoints": [
+          "ဖြစ်နိုင်ခြေနိမ့်နှင့်သေဆုံးနိုင်ပြင်းထန်မှုဆုံချက်မှာH ဖြစ်၍ချက်ချင်းဆောင်ရွက်ပြီးသည်အထိရပ်ရမည်။",
+          "ဖြစ်နိုင်ခြေအလတ်နှင့်ပေါ့ပါးပြင်းထန်မှုဆုံချက်မှာL ဖြစ်၍လိုအပ်သလိုဆောင်ရွက်ရမည်။",
+          "အတန်းနှင့်ကော်လံဆုံချက်ဖတ်ခြင်းဖြစ်၍ကိန်းဂဏန်းမြှောက်ပြီးအဆင့်မဖန်တီးရပါ။",
+          "ကြိမ်နှုန်းနိမ့်သော်လည်းသေဆုံးနိုင်သည့်ရလဒ်ကိုလျှော့မတွက်ရပါ။",
+          "သီးခြားလေ့ကျင့်ဇယားဖြစ်၍မူရင်းကိန်းဂဏန်းဇယားသို့မဟုတ်ကုမ္ပဏီတရားဝင်စံမဟုတ်ပါ။လက်တွေ့တွင်လက်ခံသုံးသောဇယားနှင့်ရပ်နားအခြေအနေလိုက်နာရမည်။"
+        ],
+        "sourceHash": "6ccc4d57bc38a8621e640c3c61ec4b82c7068f8cf1503f715e058ea049cf713c"
+      },
+      "food-assessment35-education-plan": {
+        "title": "မလုံလောက်သည့်အမျိုးအစားနှင့်5W1H",
+        "prompt": "A သည်စက်ဖွဲ့စည်းလည်ပတ်ပုံမသိ။B သည်ရှင်းပြနိုင်သော်လည်းမကိုင်တွယ်နိုင်။C သည်အလုပ်အဓိပ္ပာယ်မနားလည်၍စစ်ချက်ကျော်သည်။လိုအပ်ပညာပေးမှုခွဲ၍စက်အသစ်ကိုင်မည့်သူ၏သင်ကြားအစီအစဉ်ကို5W1H ဖြင့်ရေးကာသင်ပြီးစစ်နည်းအထိရှင်းပြပါ။",
+        "expectedPoints": [
+          "A အတွက်အသိပညာ၊B အတွက်ကျွမ်းကျင်မှု၊C အတွက်သဘောထားဆိုင်ရာသင်ကြားမှုစဉ်းစားရမည်။သို့သော်ကြည့်ရှုမေးမြန်း၍အမှန်အကြောင်းရင်းစစ်ကာကြိုမသတ်မှတ်ရပါ။",
+          "ဘာကြောင့်သင်၊ဘာကိုဘယ်အဆင့်အထိလုပ်နိုင်စေရန်ပန်းတိုင်ထားရမည်။",
+          "ဘယ်သူ့ကို၊ဘယ်သူက၊ဘာကို၊ဘယ်အချိန်၊ဘယ်မှာ၊ဘာကြောင့်၊ဘယ်လိုသင်မည်ကိုတိကျစေရမည်။",
+          "တာဝန်အသစ်နှင့်စက်အသစ်ကဲ့သို့လိုအပ်ချက်ကိုနားလည်၍အကြောင်းအရာနှင့်ဘေးကင်းလက်တွေ့ပတ်ဝန်းကျင်ပြင်ဆင်ပြီးသင်ရမည်။",
+          "မေးခွန်းလွှာ၊အစီရင်ခံစာနှင့်လက်တွေ့အလုပ်စစ်ချက်စသည်ဖြင့်ပန်းတိုင်ရောက်သလားစစ်၍အစီအစဉ်နှင့်သင်နည်းပြုပြင်ရမည်။"
+        ],
+        "sourceHash": "6aa9a308b48150cb7ed2952628268b66335fb8127528450371e6ad93c03c9b9e"
+      },
+      "food-assessment35-conditional-chart": {
+        "title": "တိုင်ပင်မှုရှိလုပ်ငန်းအမျိုးအစားခြောက်ခု၏အချိုး",
+        "prompt": "မူရင်း2023ဘဏ္ဍာနှစ်စစ်တမ်းကိုပြန်ဖတ်၍ပြုစုသည့်သီးခြားပုံဖြစ်သည်။ပြီးခဲ့သော3နှစ်အတွင်းတိုင်ပင်မှုရှိကုမ္ပဏီများကိုပစ်မှတ်ထား၍အမျိုးအစားအလိုက်သက်ဆိုင်ဖြစ်ရပ်ရှိမရှိပြသည်။အာဏာသုံးနှောင့်ယှက်မှုတွင် n=4,985၊ရှိ73.0%၊အလုပ်ရှာချိန်စသည့်လိင်နှောင့်ယှက်မှုတွင် n=54၊ရှိ37.0% ဖြစ်သည်။အခြားလေးမျိုးပါအုပ်စုခြောက်ခုမှအာဏာသုံးနှောင့်ယှက်မှု“မရှိ” အချိုးကိုဖတ်၍အုပ်စုပိုင်းခြေနှင့်အချိုးနှိုင်းရာသတိထားရန်ရှင်းပြပါ။",
+        "expectedPoints": [
+          "အာဏာသုံးနှောင့်ယှက်မှုသက်ဆိုင်ဖြစ်ရပ်မရှိ27.0%၊ရှိ73.0% နှင့်ပေါင်း100% ဖြစ်သည်။",
+          "ခြောက်မျိုးမှာအာဏာသုံး၊လိင်၊ကိုယ်ဝန်/မွေးဖွား/ကလေးစောင့်ရှောက်ခွင့်စသည်၊မိသားစုစောင့်ရှောက်ခွင့်စသည်၊ဖောက်သည်စသည်မှအလွန်အကျွံဒုက္ခပေးမှုနှင့်အလုပ်ရှာချိန်စသည့်လိင်နှောင့်ယှက်မှုဖြစ်သည်။",
+          "ပိုင်းခြေသည်အမျိုးအစားတစ်ခုချင်းအတွက်ပြီးခဲ့သော3နှစ်အတွင်းတိုင်ပင်မှုရှိကုမ္ပဏီဖြစ်၍ကုမ္ပဏီအားလုံးနှင့်အလုပ်သမားအားလုံးမဟုတ်ပါ။",
+          "အုပ်စု n မတူပါ။ကုမ္ပဏီ4,985 နှင့်ကုမ္ပဏီ54 ၏အချိုးနှိုင်းသော်လည်းကုမ္ပဏီအရေအတွက်သို့မဟုတ်စုစုပေါင်းထိခိုက်သူအရေအတွက်တူညီသည့်အဓိပ္ပာယ်မဖြစ်ပါ။",
+          "ကုမ္ပဏီတစ်ခုကအုပ်စုမျိုးစုံထဲပါနိုင်၍ခြောက်အုပ်စုအချိုးပေါင်းပြီးစုစုပေါင်းဖြစ်နှုန်းမလုပ်နိုင်ပါ။",
+          "2023ဘဏ္ဍာနှစ်ပြုလုပ်သောစစ်တမ်းကိန်းဂဏန်းဖြစ်၍လက်ရှိတစ်နိုင်ငံလုံးဖြစ်နှုန်းဟုမသတ်မှတ်ရပါ။"
+        ],
+        "sourceHash": "d0ee3345a502e615d9ac53efa0ff051a070dc2135f60c567021b30d4a8b997ce"
+      }
+    }
+  }
+}
