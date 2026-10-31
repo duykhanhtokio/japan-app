@@ -192,7 +192,7 @@ const assets:Record<string,ImageSourcePropType>={
 };
 export function getAgricultureFigureAsset(assetKey:string) {return assets[assetKey];}
 type RecognitionImage={
- id:string;lessonIds:string[];lessonSourceHashes:Record<string,string>;
+ id:string;lessonIds:string[];lessonSourceHashes:Record<string,string|undefined>;
  titleJa:string;altJa:string;observationJa:string;limitJa:string;
  labelsJa?:string[];scopeLevels?:string[];
  allowExpandedView?:boolean;

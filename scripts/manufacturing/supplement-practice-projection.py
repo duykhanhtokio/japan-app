@@ -10,8 +10,13 @@ SUPPLEMENTAL_DIAGRAMS='55e0fda24abe8da991c48178371ca84424273725ed4b8ecf779f7d70f
 BOOLEAN_PRACTICE='0d205ea0f5150852956a13cfb71911108c4feb62ac8fc483f70f04466ba9c74e'
 COMPLETION37='5f5ff4e3bd2d200500f578b6e7a0a89d358f29bedb1ff6f48313ba72d42937aa'
 RECOGNITION38='0fc06864e60036f4584aab6f6c1f7c479c5dc9adcdf31c3239d9d404cae75587'
+DAILY_LEARNING='50cad14cc4d20eef064e606ce8a80d6b4a3c05fbce28ece5fcc56baa37bc2dc4'
 def historical_course(raw):
     digest=hashlib.sha256(raw).hexdigest()
+    if digest==DAILY_LEARNING:
+        raw=(ROOT/'docs/ssw-workspace/manufacturing/daily-fix-20261031/base-ManufacturingCourse.tsx').read_bytes()
+        assert hashlib.sha256(raw).hexdigest()==RECOGNITION38,'Daily learning predecessor drift'
+        digest=RECOGNITION38
     if digest==RECOGNITION38:
         raw=(ROOT/'docs/ssw-workspace/manufacturing/batch38-recognition/base-ManufacturingCourse.tsx').read_bytes()
         assert hashlib.sha256(raw).hexdigest()==COMPLETION37,'Recognition38 predecessor drift'

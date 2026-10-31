@@ -1,3 +1,4 @@
+import { dailyTechnicalIllustrations, dailyTechnicalIllustrationAspectRatios } from './daily-technical-illustrations';
 import { foremanIllustrations, foremanIllustrationAspectRatios } from './foreman-illustrations';
 import paragraphReuse from './paragraph-reuse-policy.json';
 import { foremanSessions, foremanWeeks } from './foreman';
@@ -860,6 +861,7 @@ export const weeks:Week[]=[...foremanWeeks,week001,week002,week003,week004,week0
 
 export const sessionById=new Map(sessions.map(s=>[s.id,s]));
 export const illustrationAspectRatios:Record<string,number>={
+ ...dailyTechnicalIllustrationAspectRatios,
  ...weeklyIllustrationAspectRatios,
  ...foremanIllustrationAspectRatios,
  ...differentialIllustrationAspectRatios,
@@ -868,6 +870,7 @@ export const illustrationAspectRatios:Record<string,number>={
  'assets/kensetsu/shared/morning-meeting-v1.webp':1.7768331562167907,
 };
 export const illustrations:Record<string,ImageSourcePropType>={
+ ...dailyTechnicalIllustrations,
  ...weeklyIllustrations,
  ...foremanIllustrations,
  ...differentialIllustrations,
