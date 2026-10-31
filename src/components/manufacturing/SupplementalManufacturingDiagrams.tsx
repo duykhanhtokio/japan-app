@@ -14,12 +14,12 @@ const sources:Record<string,ReturnType<typeof require>>={
  'batch36-indentation.png':require('../../../assets/manufacturing/diagrams/batch36-indentation.png'),
 };
 
-export function SupplementalFigure({item,language,showTranslation,imageSource,translatedCaption,hideCaption=false}:{item:SupplementalDiagram;language:string;showTranslation:boolean;imageSource?:ReturnType<typeof require>;translatedCaption?:string|null;hideCaption?:boolean}){
+export function SupplementalFigure({item,language,showTranslation,imageSource,translatedCaption,imageAlt,hideCaption=false}:{item:SupplementalDiagram;language:string;showTranslation:boolean;imageSource?:ReturnType<typeof require>;translatedCaption?:string|null;imageAlt?:string;hideCaption?:boolean}){
  const [expanded,setExpanded]=useState(false),{width}=useWindowDimensions(),insets=useSafeAreaInsets(),{colors}=useStudyAppearance();
  const source=imageSource??(Object.prototype.hasOwnProperty.call(sources,item.assetFile)?sources[item.assetFile]:undefined);
  if(!source)return null;
  const target=showTranslation?(translatedCaption??manufacturingSupplementalCaption(item,language)):null;
- const label=hideCaption?'設問の図':target??item.captionJa,ratio=item.width/item.height,zoomWidth=Math.max(960,width,item.width);
+ const label=hideCaption?'設問の図':imageAlt??target??item.captionJa,ratio=item.width/item.height,zoomWidth=Math.max(960,width,item.width);
  const close=()=>setExpanded(false);
  const button=(key:'imageZoom'|'imageClose',action:()=>void)=><Pressable accessibilityRole="button" accessibilityLabel={hideCaption?manufacturingUi(language,key):`${manufacturingUi(language,key)} · ${item.captionJa.split('。')[0]}`} onPress={action} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:16,textAlign:'center'}}>{manufacturingUi(language,key)}</Text></Pressable>;
  return <View style={{gap:8,marginVertical:12}}>

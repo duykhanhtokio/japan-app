@@ -1,3 +1,5 @@
+import {revisedExam40,questionTranslation40,originalQuestion40} from '@/data/manufacturing/implementation40';
+import {DailyManufacturingFigure} from './DailyManufacturingFigure';
 import {createContext,useContext,useEffect,useRef,useState,type PropsWithChildren} from 'react';
 import {Modal,Pressable,ScrollView,StyleSheet,Text,View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -9,7 +11,6 @@ import {TokuteiHeader,TokuteiDayCard} from '@/components/tokutei/TokuteiChrome';
 import {StudyAppearanceProvider,ReadingAppearanceControl,TranslationText,useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import {ManufacturingDiagram} from './ManufacturingDiagram';
 import {ManufacturingDailySupport} from './ManufacturingDailySupport';
-import {ManufacturingDailyFigure} from './ManufacturingDailyFigure';
 import {SupplementalManufacturingDiagrams} from './SupplementalManufacturingDiagrams';
 import {CompletionManufacturingDiagrams} from './CompletionManufacturingDiagrams';
 import {BooleanPracticeJapanese,BooleanPracticeOption} from './BooleanPracticeJapanese';
@@ -45,7 +46,7 @@ export function ManufacturingCourse({learner,language,onBack}:{learner:string;la
 }
 function Course({learner,language,specialty,onBack}:{learner:string;language:string;specialty:Specialty;onBack:()=>void}){
  const t=useLabels();
- const [course]=useState(()=>{const core=loadManufacturingCourse(specialty);return {...core,checks:[...core.checks,...manufacturingSupplementExams(specialty),...manufacturingCompletionChecks(specialty),...manufacturingRecognitionChecks(specialty)]};});
+ const [course]=useState(()=>{const core=loadManufacturingCourse(specialty);return {...core,checks:[...core.checks,...manufacturingSupplementExams(specialty),...manufacturingCompletionChecks(specialty),...manufacturingRecognitionChecks(specialty)].map(revisedExam40)};});
  const info=manufacturingSpecialties.find(i=>i.id===specialty)!;
  const [tab,setTab]=useState<'study'|'test'|'mock'>('study'),[week,setWeek]=useState<number|null>(null),[lesson,setLesson]=useState<ManufacturingLesson|null>(null),[exam,setExam]=useState<ManufacturingExam|null>(null);
  const [progress,setProgress]=useState<ManufacturingProgress|null>(null),[error,setError]=useState(false),[saving,setSaving]=useState(false),[retry,setRetry]=useState(0);
@@ -77,7 +78,7 @@ function Reader({lesson,language,onBack,onComplete,saving,saveError}:{lesson:Man
  return <Surface reading><TokuteiHeader title={lesson.titleJa} onBack={onBack}/><ScrollView contentContainerStyle={s.content}><ReadingAppearanceControl/>{language!=='ja'&&<Button title={show?t('translationHide'):t('translationShow')} onPress={()=>setShow(v=>!v)}/>}{show&&language!=='ja'&&!translation&&<TranslationText>{t('translationPending')}</TranslationText>}
  <Text style={[s.body,{color:colors.text}]}>{lesson.objectiveJa}</Text>{translation&&<TranslationText>{translation.title}{'\n'}{translation.objective}</TranslationText>}<Text style={[s.body,{color:colors.muted}]}>学習時間の目安：約{lesson.estimatedMinutes}分（説明・練習・振り返り）</Text>
  {lesson.paragraphs.map(p=><View key={p.id} style={[s.section,{borderColor:colors.border}]}><Text style={[s.heading,{color:colors.text}]}>{p.titleJa}</Text><Text selectable style={[s.body,{color:colors.text}]}>{manufacturingLessonParagraph(lesson,p.id,'ja',p.textJa)}</Text>{translation&&<TranslationText>{translation.paragraphs.find(t=>t.id===p.id)?.title}{'\n'}{manufacturingLessonParagraph(lesson,p.id,language,translation.paragraphs.find(t=>t.id===p.id)?.text)}</TranslationText>}</View>)}
- <ManufacturingDailyFigure lesson={lesson} language={language} showTranslation={show}/><ManufacturingDiagram lessonId={lesson.id} language={language} showTranslation={show}/><SupplementalManufacturingDiagrams lesson={lesson} language={language} showTranslation={show}/><CompletionManufacturingDiagrams lesson={lesson} language={language} showTranslation={show}/><Text style={[s.heading,{color:colors.text}]}>{t('terms')}</Text>{lesson.terms.map((term,i)=><View key={term.ja}><Text style={[s.body,{color:colors.text}]}>{term.ja}（{term.reading}）：{manufacturingTermMeaning(lesson,i,'ja',term.meaningJa)}</Text>{translation&&<TranslationText>{manufacturingTermMeaning(lesson,i,language,translation.terms[i]?.meaning)}</TranslationText>}</View>)}
+ <View testID={`manufacturing-daily-objective-figure-${lesson.id}`}><DailyManufacturingFigure lesson={lesson} language={language} showTranslation={show}/><ManufacturingDiagram lessonId={lesson.id} language={language} showTranslation={show}/><SupplementalManufacturingDiagrams lesson={lesson} language={language} showTranslation={show}/><CompletionManufacturingDiagrams lesson={lesson} language={language} showTranslation={show}/></View><Text style={[s.heading,{color:colors.text}]}>{t('terms')}</Text>{lesson.terms.map((term,i)=><View key={term.ja}><Text style={[s.body,{color:colors.text}]}>{term.ja}（{term.reading}）：{manufacturingTermMeaning(lesson,i,'ja',term.meaningJa)}</Text>{translation&&<TranslationText>{manufacturingTermMeaning(lesson,i,language,translation.terms[i]?.meaning)}</TranslationText>}</View>)}
  <Text style={[s.heading,{color:colors.text}]}>{t('safety')}</Text>{lesson.safetyJa.map((note,i)=><View key={i}><Text style={[s.body,{color:colors.text}]}>{note}</Text>{translation&&<TranslationText>{translation.safety[i]}</TranslationText>}</View>)}
  <Text style={[s.heading,{color:colors.text}]}>{t('activity')}</Text><Text style={[s.body,{color:colors.text}]}>{lesson.activityJa}</Text>{translation&&<TranslationText>{translation.activity}</TranslationText>}<Text style={[s.heading,{color:colors.text}]}>{t('summary')}</Text><Text style={[s.body,{color:colors.text}]}>{lesson.summaryJa}</Text>{translation&&<TranslationText>{translation.summary}</TranslationText>}
  <ManufacturingDailySupport lesson={lesson} language={language} showTranslation={show}/>{saveError&&<Text accessibilityRole="alert" style={[s.body,{color:colors.text}]}>{t('saveError')}</Text>}<Button title={saving?t('saving'):t('complete')} disabled={saving} onPress={onComplete}/>
@@ -94,7 +95,7 @@ function Attempt({learner,specialty,exam,onBack}:{learner:string;specialty:Speci
   queue.current=queue.current.catch(()=>{}).then(()=>AsyncStorage.setItem(key,JSON.stringify(next))).then(()=>{if(live.current&&n===serial.current){setSaving(false);setError(null);}}).catch(()=>{if(live.current&&n===serial.current){setSaving(false);setError('write');}});
  };
  const q=attempt?exam.questions[attempt.currentQuestion]:null,result=attempt?gradeTest(exam,attempt.answers):null;
- const translated=q&&showTranslation?(manufacturingRecognitionQuestionTranslation(q,locale)??manufacturingCompletionQuestionTranslation(q,locale)??manufacturingSupplementTranslation(q,locale)??manufacturingQuestionTranslation(q,locale)):null;
+ const translated=q&&showTranslation?(questionTranslation40(q,locale)??manufacturingRecognitionQuestionTranslation(q,locale)??manufacturingCompletionQuestionTranslation(q,locale)??manufacturingSupplementTranslation(q,locale)??manufacturingQuestionTranslation(q,locale)):null;
  const back=()=>{if(saving)return;if(error==='write')setConfirm('leave');else onBack();};
  useManufacturingBack(back);
  return <Surface reading><TokuteiHeader title={exam.titleJa} onBack={back}/><ScrollView contentContainerStyle={s.content}>
@@ -103,7 +104,7 @@ function Attempt({learner,specialty,exam,onBack}:{learner:string;specialty:Speci
  <ReadingAppearanceControl/>{locale!=='ja'&&<Button title={showTranslation?t('translationHide'):t('translationShow')} onPress={()=>setShowTranslation(v=>!v)}/>}
  {showTranslation&&locale!=='ja'&&!translated&&<TranslationText>{t('translationPending')}</TranslationText>}
  {attempt.submitted&&result&&<Text style={[s.heading,{color:colors.text}]}>{t('correct')} {result.correct} / {result.total} · {t('unanswered')} {result.unanswered}</Text>}
- <RecognitionQuestionFigures question={q} language={locale}/>
+ <RecognitionQuestionFigures question={originalQuestion40(q)} language={locale}/>
  <Text style={[s.body,{color:colors.text}]}>{attempt.currentQuestion+1} / {exam.questions.length}</Text>{q.id.startsWith('mfg1-boolean-distributivity-check-')?<BooleanPracticeJapanese question={q} field="stem"/>:<Text style={[s.heading,{color:colors.text}]}>{q.stemJa}</Text>}{translated&&<TranslationText>{translated.stem}</TranslationText>}
  {q.optionsJa.map((text,i)=>q.id.startsWith('mfg1-boolean-distributivity-check-')?<BooleanPracticeOption key={i} question={q} index={i} translation={translated?.options[i]} selected={attempt.answers[attempt.currentQuestion]===i} disabled={attempt.submitted} onPress={()=>{const answers=[...attempt.answers];answers[attempt.currentQuestion]=i;persist({...attempt,answers});}}/>:<Button key={i} title={`${i+1}. ${text}${translated?'\n'+translated.options[i]:''}`} selected={attempt.answers[attempt.currentQuestion]===i} disabled={attempt.submitted} onPress={()=>{const answers=[...attempt.answers];answers[attempt.currentQuestion]=i;persist({...attempt,answers});}}/>)}
  {attempt.submitted&&<View><Text style={[s.body,{color:colors.text}]}>{t('correct')}：{q.correctIndex+1}</Text>{q.optionReasonsJa.map((why,i)=><View key={i}><Text style={[s.body,{color:colors.text}]}>{i+1}. {why}</Text>{translated&&<TranslationText>{translated.reasons[i]}</TranslationText>}</View>)}</View>}

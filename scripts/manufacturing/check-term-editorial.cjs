@@ -2,7 +2,10 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const root=path.resolve(__dirname,'../..'),read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const {transformSync}=require('esbuild'),file=path.join(root,'src/data/manufacturing/term-editorial.ts');
 const compiled=new Module(file,module);compiled.filename=file;compiled.paths=Module._nodeModulePaths(path.dirname(file));
-compiled._compile(transformSync(fs.readFileSync(file,'utf8'),{loader:'ts',format:'cjs'}).code,file);
+// This frozen receipt tests the historical editorial layer, projected only from exact40 bytes.
+const historical=require('node:child_process').execFileSync('python',['-c',
+ "import runpy,pathlib; r=pathlib.Path('.'); m=runpy.run_path('scripts/manufacturing/apply-implementation40.py'); p='src/data/manufacturing/term-editorial.ts'; import sys; sys.stdout.buffer.write(m['predecessor'](p,(r/p).read_bytes()))"],{cwd:root});
+compiled._compile(transformSync(historical.toString('utf8'),{loader:'ts',format:'cjs'}).code,file);
 const apply=compiled.exports.manufacturingTermMeaning,patch=require(path.join(root,'src/data/manufacturing/term-editorial.json'));
 const lesson=read('src/data/manufacturing/surface.json').lessons.find(l=>l.id===patch.lessonId),before=JSON.stringify(lesson);
 const locales=read('docs/ssw-workspace/manufacturing/approved-scope.json').targetLocales;

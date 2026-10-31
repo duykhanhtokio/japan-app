@@ -3,6 +3,7 @@ from pathlib import Path
 import argparse
 import hashlib
 import json
+import runpy
 import os
 import tempfile
 
@@ -22,6 +23,10 @@ def apply(root=ROOT):
     path = root / TARGET
     raw = path.read_bytes()
     digest = hashlib.sha256(raw).hexdigest()
+    historical = runpy.run_path(str(ROOT / 'scripts/manufacturing/apply-implementation40.py'))['predecessor'](TARGET, raw, root)
+    if historical != raw:
+        assert hashlib.sha256(historical).hexdigest() == spec['afterSha256'], 'Implementation40 predecessor is not repaired39'
+        return []
     if digest == spec['afterSha256']:
         return []
     assert digest == spec['beforeSha256'], 'Unknown component revision; preserve it'

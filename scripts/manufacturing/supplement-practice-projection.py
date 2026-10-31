@@ -1,6 +1,7 @@
 """Preserve historical audit receipts for the exact additive practice integration."""
 from pathlib import Path
 import hashlib
+import runpy
 ROOT=Path(__file__).resolve().parents[2]
 BASE='947fecd8eb083f596810f8cb5884dff9db2b7aadc5e40cdb95a546125edd8b5f'
 AFTER='916478a8a44dd7abeba7bbf91d72b68b0caa25fceb4c75d01a0d0ec77582e88e'
@@ -12,6 +13,7 @@ COMPLETION37='5f5ff4e3bd2d200500f578b6e7a0a89d358f29bedb1ff6f48313ba72d42937aa'
 RECOGNITION38='0fc06864e60036f4584aab6f6c1f7c479c5dc9adcdf31c3239d9d404cae75587'
 DAILY_LEARNING='50cad14cc4d20eef064e606ce8a80d6b4a3c05fbce28ece5fcc56baa37bc2dc4'
 def historical_course(raw):
+    raw=runpy.run_path(str(ROOT/'scripts/manufacturing/apply-implementation40.py'))['predecessor']('src/components/manufacturing/ManufacturingCourse.tsx',raw)
     digest=hashlib.sha256(raw).hexdigest()
     if digest==DAILY_LEARNING:
         raw=(ROOT/'docs/ssw-workspace/manufacturing/daily-fix-20261031/base-ManufacturingCourse.tsx').read_bytes()

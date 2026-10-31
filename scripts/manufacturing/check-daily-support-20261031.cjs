@@ -13,6 +13,18 @@ const root=path.resolve(__dirname,'../..'),read=p=>JSON.parse(fs.readFileSync(pa
  }}
  assert.equal(count,262);assert.equal(companions,144);assert.equal(shortBefore,28);assert.equal(shortAfter,0);
  // Runtime additions must not alter any canonical learning, question, locale or saved-state payload.
- const protectedFiles=execFileSync('git',['ls-files','src/data/manufacturing','src/services/manufacturing-study-state.ts'],{cwd:root,encoding:'utf8'}).trim().split('\n').filter(p=>!/(daily-support|daily-figure)/.test(p));for(const p of protectedFiles){const old=execFileSync('git',['show',preservationBase+':'+p],{cwd:root,maxBuffer:30*1024*1024});assert(old.equals(fs.readFileSync(path.join(root,p))),p);}
+ const protectedFiles=execFileSync('git',['ls-tree','-r','--name-only',preservationBase,'--','src/data/manufacturing','src/services/manufacturing-study-state.ts'],{cwd:root,encoding:'utf8'}).trim().split('\n');
+ assert.equal(protectedFiles.length,109,'Frozen canonical baseline count');
+ for(const p of protectedFiles){
+  const old=execFileSync('git',['show',preservationBase+':'+p],{cwd:root,maxBuffer:30*1024*1024});let current=fs.readFileSync(path.join(root,p));
+  if(p==='src/data/manufacturing/term-editorial.ts'){
+   const spec=read('docs/ssw-workspace/manufacturing/implementation40/integration/manifest.json'),entry=spec.files.find(f=>f.path===p);
+   if(crypto.createHash('sha256').update(current).digest('hex')===entry.afterSha256){
+    current=fs.readFileSync(path.join(root,entry.beforeSnapshot));assert.equal(crypto.createHash('sha256').update(current).digest('hex'),entry.beforeSha256,'Exact40 predecessor snapshot');
+   }
+  }
+  assert(old.equals(current),p);
+ }
+
  const report={status:'PASS',preservationBase,authorshipBaseline:'2639e56cc2f488646382750a7e5f0de86d404544',scheduledDays:count,daysWithObjectiveFigure:count,uniqueAssets:Object.keys(data.assets).length,newControlledSchematics:Object.keys(read('src/data/manufacturing/daily-figure-assets.json').assets).length,companionDays:companions,sourceAndObjectiveTamperCases:versionCases,exactLocaleBindings:localeCases,coreBodyBelow300Before:shortBefore,coreBodyBelow300AfterCompanion:shortAfter,preservedExistingProgressCases:count,canonicalFilesUnchanged:protectedFiles.length,measuredDuration:false,domainReviewed:false,nativeReviewed:false,rows};fs.writeFileSync(path.join(root,'docs/ssw-workspace/manufacturing/daily-fix-20261031/validation.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({...report,rows:undefined}));
 })().catch(e=>{console.error(e);process.exitCode=1});
