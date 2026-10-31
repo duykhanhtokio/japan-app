@@ -1,0 +1,461 @@
+{
+  "status": "PASS_ALL_12_LOCALES_REVISION_BOUND_AI_REVIEW_EVIDENCE",
+  "batch": "687",
+  "scenarios": 10,
+  "canonicalScenarios": 7128,
+  "reviewedLocales": [
+    "en",
+    "vi",
+    "id",
+    "tl",
+    "zh-CN",
+    "zh-TW",
+    "hi",
+    "bn",
+    "ne",
+    "my",
+    "th",
+    "km"
+  ],
+  "reviewedUnits": 1920,
+  "reviewedUtterances": 1320,
+  "reviewedHints": 600,
+  "changedUnits": 839,
+  "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+  "nativeReviewed": false,
+  "corpusSemanticReviewComplete": false,
+  "limitations": [
+    "Evidence covers only this batch in all twelve locales; other scenarios require their own contextual review.",
+    "The validator checks reviewer evidence, coverage and hashes; it does not independently assess meaning.",
+    "Native-speaker review and native-device layout are not certified by this evidence."
+  ],
+  "localeReports": [
+    {
+      "locale": "en",
+      "batch": "687",
+      "scenarios": 10,
+      "utterancesReviewed": 110,
+      "hintsReviewed": 50,
+      "changedUnits": 85,
+      "packetId": "all12-687-en-20261025-v1",
+      "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+      "packSha256": "7ad563b22f947b29e7b57700f5fc500016b6a0a8afd8fd4b36cd46c625b87a29",
+      "reviewer": "AI",
+      "nativeReviewed": false,
+      "scopeReviewComplete": true,
+      "structuralValidation": "PASS via repair-worker.validateBatch",
+      "examples": [
+        {
+          "scenarioId": "SC-LOC-JP-44205-04-001",
+          "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-01",
+          "field": "translation",
+          "before": "You are concerned about a message. Is the other person nearby right now?",
+          "after": "You would like to discuss a message that concerns you, is that right? Is the person who contacted you nearby at the moment?",
+          "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44205-04-001",
+          "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-02",
+          "field": "translation",
+          "before": "No, it is only a message. It says parcel redelivery and demands payment by the end of today.",
+          "after": "No, I only received a message. It says it is about redelivering a parcel and asks me to pay a fee by the end of today.",
+          "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44205-04-001",
+          "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-04",
+          "field": "hintTranslation",
+          "before": "Explain you were expecting a parcel but opened no link, replied to nothing, and paid nothing. Say it in Japanese.",
+          "after": "Explain in Japanese that you were expecting a parcel, but have not opened the link, replied to the message, or made a payment.",
+          "reason": "Restore complete natural wording and explicit referents while preserving the Japanese conditions, uncertainty, negation and action order."
+        }
+      ],
+      "remainingIssues": [],
+      "limitations": [
+        "AI semantic review of batch687 only; not native-speaker certification or a claim about other batches."
+      ]
+    },
+    {
+      "locale": "vi",
+      "batch": "687",
+      "scenarios": 10,
+      "utterancesReviewed": 110,
+      "hintsReviewed": 50,
+      "changedUnits": 2,
+      "packetId": "all12-687-vi-20261025-v1",
+      "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+      "packSha256": "504c51b71874d0f2b19f3f700b2d24b8495e7543ef45f12e202e49ebb75ba1fe",
+      "reviewer": "AI",
+      "nativeReviewed": false,
+      "scopeReviewComplete": true,
+      "structuralValidation": "PASS via repair-worker.validateBatch",
+      "examples": [
+        {
+          "scenarioId": "SC-LOC-JP-44206-01-001",
+          "turnId": "DLG-SC-LOC-JP-44206-01-001-SHARED-07",
+          "field": "translation",
+          "before": "Tôi sẽ tìm các phương án, nhưng khi so sánh, thời gian của mỗi phương án cũng chỉ là dự kiến theo thông tin hiện tại. Anh/chị có cần kiểm tra điều kiện đổi hoặc hoàn vé đang có không?",
+          "after": "Tôi sẽ tìm các phương án, nhưng khi so sánh thì mỗi phương án cũng chỉ là dự kiến dựa trên thông tin hiện tại. Anh/chị có cần kiểm tra điều kiện đổi hoặc hoàn vé đang có không?",
+          "reason": "Preserve uncertainty applying to every transport alternative rather than restricting it to journey times alone."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44206-03-001",
+          "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-05",
+          "field": "translation",
+          "before": "Tôi không có thẩm quyền xác nhận chính thức hồ sơ thanh toán, nên sẽ chuyển hai tờ giấy cùng tình hình của anh/chị cho nhân viên phụ trách thanh toán. Anh/chị đừng thanh toán lại cùng khoản tiền đó ở đây nhé.",
+          "after": "Bản thân tôi không thể xác nhận chính thức hồ sơ thanh toán, nên sẽ báo cho nhân viên phụ trách thanh toán về hai tờ giấy cùng tình hình của anh/chị. Anh/chị đừng thanh toán lại cùng khoản tiền đó ở đây nhé.",
+          "reason": "State inability to confirm the payment record without adding an unsupported explanation about formal authority."
+        }
+      ],
+      "remainingIssues": [],
+      "limitations": [
+        "AI semantic review of batch687 only; not native-speaker certification or a claim about other batches."
+      ]
+    },
+    {
+      "locale": "id",
+      "batch": "687",
+      "scenarios": 10,
+      "utterancesReviewed": 110,
+      "hintsReviewed": 50,
+      "changedUnits": 18,
+      "unchangedAcceptableUnits": 142,
+      "packetId": "all12-687-id-20261025-v1",
+      "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+      "packSha256": "08aabac6b82d3368033bc2cf110a50a75cef40cf4d15060db063c70a04228751",
+      "packPath": "src/data/dialogue-content/locale-batches/id/687.json",
+      "reviewer": "AI",
+      "nativeReviewed": false,
+      "status": "ALL_160_UNITS_AI_REVIEWED_AND_REPAIRS_APPLIED",
+      "remainingIssues": [],
+      "limitations": [
+        "AI semantic review is not native-speaker certification.",
+        "This report covers only batch687, not the complete7128-scenario corpus."
+      ],
+      "examples": [
+        {
+          "scenarioId": "SC-LOC-JP-44205-04-001",
+          "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-06",
+          "field": "translation",
+          "reason": "The source explicitly says the speaker cropped the image and refers to sender display, not necessarily a person's name."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44205-04-001",
+          "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-10",
+          "field": "translation",
+          "reason": "Restore the distinction between not assuming parcel identity and not verifying identity; preserve both time received and lack of action."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44205-04-001",
+          "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-10",
+          "field": "hintTranslation",
+          "reason": "Do not translate non-assumption as refusal to verify; retain all task propositions."
+        }
+      ]
+    },
+    {
+      "locale": "tl",
+      "batch": "687",
+      "scenarios": 10,
+      "utterancesReviewed": 110,
+      "hintsReviewed": 50,
+      "changedUnits": 28,
+      "unchangedAcceptableUnits": 132,
+      "packetId": "all12-687-tl-20261025-v1",
+      "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+      "packSha256": "1ec93b523094946c818b5dc62c20b54e537b6f8fdb7ce57d86b49e3a1fa9e94b",
+      "packPath": "src/data/dialogue-content/locale-batches/tl/687.json",
+      "reviewer": "AI",
+      "nativeReviewed": false,
+      "status": "ALL_160_UNITS_AI_REVIEWED_AND_REPAIRS_APPLIED",
+      "remainingIssues": [],
+      "limitations": [
+        "AI semantic review is not native-speaker certification.",
+        "This report covers only batch687, not the complete7128-scenario corpus."
+      ],
+      "examples": [
+        {
+          "scenarioId": "SC-LOC-JP-44205-04-001",
+          "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-03",
+          "field": "translation",
+          "reason": "操作 is broader than pressing something; preserve all actions and the recipient of any sent information."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44205-04-001",
+          "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-08",
+          "field": "translation",
+          "reason": "Clarify that the guessed company is the delivery company, not a company belonging to the parcel."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44205-04-001",
+          "turnId": "DLG-SC-LOC-JP-44205-04-001-SHARED-10",
+          "field": "translation",
+          "reason": "Replace unnatural operasyon and retain lack of action, receipt time and non-assumption of parcel identity."
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "batch": "687",
+      "scenarios": 10,
+      "utterancesReviewed": 110,
+      "hintsReviewed": 50,
+      "changedUnits": 160,
+      "packetId": "all12-687-zh-cn-20261025-v1",
+      "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+      "packSha256": "91107bcf6036b258c7b7e577ab5967522a5a4abc40ae61ae5b0d4b1762ab838f",
+      "reviewer": "AI",
+      "reviewedByNativeSpeaker": false,
+      "nativeReviewed": false,
+      "reviewMethod": "Every utterance and hint reviewed against its canonical Japanese and all adjacent turns in the same10 scenarios. No machine length-only acceptance.",
+      "status": "AI_CONTEXT_REVIEW_AND_REPAIR_COMPLETE_FOR_BATCH_687",
+      "remainingIssues": [],
+      "limitations": [
+        "AI review only; no native-speaker certification or device-layout approval. Scope is batch687, not entire7128-scenario corpus."
+      ],
+      "examples": [
+        {
+          "scenarioId": "SC-LOC-JP-44206-02-001",
+          "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-05",
+          "before": "出示原本问题。候选电话通知可以？",
+          "after": "我们把原件和问题交给负责人看吧。关于可以预约的日期和时间，能否通过电话通知您？"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44206-03-001",
+          "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-08",
+          "before": "那里也不清。结账纸正确也未必合提交条件，问正式名。",
+          "after": "工作单位的通知里也没有明确区分。即使结账文件本身正确，也未必符合提交要求，所以我会向单位询问所需文件的正式名称。"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44206-04-001",
+          "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-02",
+          "before": "藏青布包。买时自拍有，现状有点不同。",
+          "after": "我的藏青色布包不见了。我有刚买时拍的包的照片，但与现在的情况有些不同。"
+        }
+      ]
+    },
+    {
+      "locale": "zh-TW",
+      "batch": "687",
+      "scenarios": 10,
+      "utterancesReviewed": 110,
+      "hintsReviewed": 50,
+      "changedUnits": 160,
+      "packetId": "all12-687-zh-tw-20261025-v1",
+      "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+      "packSha256": "c9a7963e98e33d61ed53a00aa2dee2a849cd9e1257f93e627131a46fd53202d2",
+      "reviewer": "AI",
+      "reviewedByNativeSpeaker": false,
+      "nativeReviewed": false,
+      "reviewMethod": "Every utterance and hint reviewed against its canonical Japanese and all adjacent turns in the same10 scenarios. No machine length-only acceptance.",
+      "status": "AI_CONTEXT_REVIEW_AND_REPAIR_COMPLETE_FOR_BATCH_687",
+      "remainingIssues": [],
+      "limitations": [
+        "AI review only; no native-speaker certification or device-layout approval. Scope is batch687, not entire7128-scenario corpus."
+      ],
+      "examples": [
+        {
+          "scenarioId": "SC-LOC-JP-44206-02-001",
+          "turnId": "DLG-SC-LOC-JP-44206-02-001-SHARED-05",
+          "before": "出示原本問題。候選電話通知可以？",
+          "after": "我們把正本和問題交給承辦人看吧。關於可以預約的日期和時間，能否透過電話通知您？"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44206-03-001",
+          "turnId": "DLG-SC-LOC-JP-44206-03-001-SHARED-08",
+          "before": "那裡也不清。結帳紙正確也未必合提交條件，問正式名。",
+          "after": "工作單位的通知裡也沒有明確區分。即使結帳文件本身正確，也未必符合提交要求，所以我會向單位詢問所需文件的正式名稱。"
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44206-04-001",
+          "turnId": "DLG-SC-LOC-JP-44206-04-001-SHARED-02",
+          "before": "藏青布包。買時自拍有，現狀有點不同。",
+          "after": "我的深藍色布包不見了。我有剛買時拍的包包照片，但與現在的情況有些不同。"
+        }
+      ]
+    },
+    {
+      "status": "AI_CONTEXTUAL_REVIEW_COMPLETED_FOR_BATCH",
+      "locale": "hi",
+      "batch": "687",
+      "scenarios": 10,
+      "utterancesReviewed": 110,
+      "hintsReviewed": 50,
+      "changedUnits": 44,
+      "packetId": "all12-687-hi-20261025-v1",
+      "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+      "packSha256": "ba5b1383df2be5eb7911ec8bc8dece56c52337c79b007bb26a4b8bae3a8b59d9",
+      "reviewer": "AI",
+      "nativeReviewed": false,
+      "semanticReviewScope": "batch687 only, not entire corpus",
+      "examples": [
+        "Ensure a staff member is being asked to check packaging, not the learner doing the check.",
+        "Preserve that sender display, recipient and fees are distinct checks.",
+        "Distinguish a redelivery request processing status from actual parcel receipt.",
+        "Do not infer a sender identity or a definite parcel number from an absent display.",
+        "Nonacceptance is not automatically a merits-based application rejection."
+      ],
+      "remainingIssues": []
+    },
+    {
+      "status": "AI_CONTEXTUAL_REVIEW_COMPLETED_FOR_BATCH",
+      "locale": "bn",
+      "batch": "687",
+      "scenarios": 10,
+      "utterancesReviewed": 110,
+      "hintsReviewed": 50,
+      "changedUnits": 64,
+      "packetId": "all12-687-bn-20261025-v1",
+      "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+      "packSha256": "f7cd9e570abd4ae538623650a4261ee2a51754afc48bc7fef80ce2f14baea8f5",
+      "reviewer": "AI",
+      "nativeReviewed": false,
+      "semanticReviewScope": "batch687 only, not entire corpus",
+      "examples": [
+        "Ensure a staff member is being asked to check packaging, not the learner doing the check.",
+        "Preserve that sender display, recipient and fees are distinct checks.",
+        "Distinguish a redelivery request processing status from actual parcel receipt.",
+        "Do not infer a sender identity or a definite parcel number from an absent display.",
+        "Nonacceptance is not automatically a merits-based application rejection."
+      ],
+      "remainingIssues": []
+    },
+    {
+      "locale": "ne",
+      "batch": "687",
+      "scenarios": 10,
+      "utterancesReviewed": 110,
+      "hintsReviewed": 50,
+      "changedUnits": 35,
+      "packetId": "all12-687-ne-20261025-v1",
+      "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+      "packSha256": "a5ece0a04f72bda9b844bbd4ef3e0fe36d2808930d4d3eee18b71fea3d73f06b",
+      "reviewer": "AI",
+      "nativeReviewed": false,
+      "status": "AI_CONTEXTUAL_REVIEW_AND_REPAIR_COMPLETE",
+      "remainingIssues": [],
+      "limitations": [
+        "AI contextual review; not native-speaker certification or on-device layout verification."
+      ],
+      "examples": [
+        {
+          "scenarioId": "SC-LOC-JP-44205-06-001",
+          "turn": "03/04",
+          "issue": "欄 was translated as room instead of form field; sender/recipient distinction clarified."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44206-03-001",
+          "turn": "02/07/hint08",
+          "issue": "受診 means seeing a clinician, not proof of completed treatment."
+        }
+      ]
+    },
+    {
+      "locale": "my",
+      "batch": "687",
+      "scenarios": 10,
+      "utterancesReviewed": 110,
+      "hintsReviewed": 50,
+      "changedUnits": 81,
+      "packetId": "all12-687-my-20261025-v1",
+      "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+      "packSha256": "77ab3851e4c2f39fddd2bf05431c1ad636f62ba8ae8c82c2d3ff13ec6c03f6a9",
+      "reviewer": "AI",
+      "nativeReviewed": false,
+      "status": "AI_CONTEXTUAL_REVIEW_AND_REPAIR_COMPLETE",
+      "remainingIssues": [],
+      "limitations": [
+        "AI contextual review; not native-speaker certification or on-device layout verification."
+      ],
+      "examples": [
+        {
+          "scenarioId": "SC-LOC-JP-44205-07-001",
+          "turn": "06/10 and hints",
+          "issue": "Generic detergent had been narrowed to laundry detergent; restored general cleaning product meaning."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44205-06-001",
+          "turn": "07",
+          "issue": "Verify with requester OR responsible staff; changed conjunction that previously implied both."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44206-02-001",
+          "turn": "all",
+          "issue": "Expanded telegraphic appointment-related language, preserving unconfirmed availability and confirmation-before-work-adjustment sequence."
+        }
+      ]
+    },
+    {
+      "locale": "th",
+      "batch": "687",
+      "scenarios": 10,
+      "utterancesReviewed": 110,
+      "hintsReviewed": 50,
+      "changedUnits": 43,
+      "packetId": "all12-687-th-20261025-v1",
+      "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+      "packSha256": "4c988d15ea82cb434ad48da56fe86ab174100bfb69447cc0f24bb09931cbd02d",
+      "reviewer": "AI",
+      "nativeReviewed": false,
+      "reviewScope": "All 160 source-bound translation/hint units in batch 687 read and compared in full scenario context. This is AI editorial review, not native or release certification.",
+      "validation": "PASS_SOURCE_ID_COVERAGE",
+      "examples": [
+        {
+          "scenarioId": "SC-LOC-JP-44205-07-001",
+          "turn": "06",
+          "issue": "洗剤 was narrowed to laundry powder; restored general cleaning product."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44205-06-001",
+          "turn": "10",
+          "issue": "Restore decision whether to transfer after knowing costs, without implying transfer is already decided."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44206-05-001",
+          "turn": "06",
+          "issue": "Make storage deadlines explicit; do not confuse with delivery dates or guaranteed extension."
+        }
+      ],
+      "remainingIssues": []
+    },
+    {
+      "locale": "km",
+      "batch": "687",
+      "scenarios": 10,
+      "utterancesReviewed": 110,
+      "hintsReviewed": 50,
+      "changedUnits": 119,
+      "packetId": "all12-687-km-20261025-v1",
+      "sourceSha256": "fe87352c6d81543861deeb23351860d976fad9d3ffafd43528944fb61ba4e6e0",
+      "packSha256": "7a8b29ae6d14017c1114ede0c651da10895f67949af44e610b0afdc0f3d460aa",
+      "reviewer": "AI",
+      "nativeReviewed": false,
+      "reviewScope": "All 160 source-bound translation/hint units in batch 687 read and compared in full scenario context. This is AI editorial review, not native or release certification.",
+      "validation": "PASS_SOURCE_ID_COVERAGE",
+      "examples": [
+        {
+          "scenarioId": "SC-LOC-JP-44205-07-001",
+          "turn": "06",
+          "issue": "洗剤 was narrowed to laundry powder; restored general cleaning product."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44205-06-001",
+          "turn": "10",
+          "issue": "Restore decision whether to transfer after knowing costs, without implying transfer is already decided."
+        },
+        {
+          "scenarioId": "SC-LOC-JP-44206-05-001",
+          "turn": "06",
+          "issue": "Make storage deadlines explicit; do not confuse with delivery dates or guaranteed extension."
+        }
+      ],
+      "remainingIssues": []
+    }
+  ],
+  "unitEvidence": {
+    "path": "docs/localization-workspace/quality-workspace/batch687-all12-review-20261025.json.gz",
+    "sha256": "4440d36b16f5ce53efad570df99284979305794322b91efefb6d101c5621bcf4",
+    "encoding": "gzip",
+    "units": 1920
+  }
+}
