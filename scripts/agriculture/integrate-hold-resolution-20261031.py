@@ -1,14 +1,20 @@
-"""Apply the publisher-scoped 45-item packets with exact baseline guards."""
+"""Apply configured publisher-scoped source packets with exact baseline guards."""
 import collections
 import copy
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 PARTS = ROOT.parent / 'parts'
-OUT = ROOT / 'docs/ssw-workspace/agriculture/session-20261031-hold-resolution'
-OWNERS = ['hold-general', 'hold-soil', 'hold-chemicals', 'hold-legal', 'hold-equipment', 'hold-science']
+CONFIG = json.loads(Path(sys.argv[1]).read_text()) if len(sys.argv) > 1 else {}
+OUT = ROOT / CONFIG.get('sessionDirectory', 'docs/ssw-workspace/agriculture/session-20261031-hold-resolution')
+OWNERS = CONFIG.get('owners', ['hold-general', 'hold-soil', 'hold-chemicals', 'hold-legal', 'hold-equipment', 'hold-science'])
+BASE_COMMIT = CONFIG.get('baselineCommit', 'e45d14a8858ca17cf8b6881ff358d0263b2e7bc6')
+EXPECTED_TARGETS = CONFIG.get('targetCount', 45)
+EXPECTED_REMAINING = CONFIG.get('remainingHoldCount', 10)
+GROUPS = CONFIG.get('sourceGroups', ['GENERAL', 'SOIL', 'SAFETY'])
 
 
 def read(path):
@@ -39,19 +45,25 @@ translations = {locale: read(project(f'src/data/agriculture/translations/{locale
 baseline_translations = copy.deepcopy(translations)
 ledger_path = project('docs/ssw-workspace/agriculture/knowledge-ledger.json')
 ledger = read(ledger_path)
+baseline_knowledge_count = len(ledger['knowledge'])
 knowledge = {row['id']: row for row in ledger['knowledge']}
 recon_path = project('docs/ssw-workspace/agriculture/completion-40/source-reconciliation.json')
 recon = read(recon_path)
 rows = {row['id']: row for row in recon['rows']}
 target_ids = {row['id'] for row in recon['rows'] if row['disposition'] == 'hold'
-              and row['id'].split('-')[2] in ['GENERAL', 'SOIL', 'SAFETY']}
-assert len(target_ids) == 45
+              and row['id'].split('-')[2] in GROUPS}
+assert len(target_ids) == EXPECTED_TARGETS
 seen_japanese, seen_translations, seen_rows = set(), set(), set()
 changed_lessons, added_paragraphs, evidence = set(), [], {}
 exclusion_rules, packet_hashes = [], {}
+if CONFIG.get('preserveExistingExclusions'):
+    exclusion_rules = read(project('src/data/agriculture/authoring-exclusions.json'))['rules']
 
 
 def translation_patch(locale, lid, field, pid, before, after):
+    if '.' in field:
+        field, field_pid = field.split('.', 1)
+        assert field_pid == pid
     key = (locale, lid, field, pid)
     assert key not in seen_translations, ('Overlapping translation owner', key)
     seen_translations.add(key)
@@ -81,6 +93,7 @@ for owner in OWNERS:
         ledger['knowledge'].append(row)
 
     patches = packet.get('paragraphPatches', packet.get('japaneseParagraphPatches', packet.get('patches', [])))
+    owner_paragraph_ids = [patch['paragraphId'] for patch in patches]
     for patch in patches:
         lid, pid = patch['lessonId'], patch['paragraphId']
         assert (lid, pid) not in seen_japanese, ('Overlapping paragraph owner', lid, pid)
@@ -98,7 +111,7 @@ for owner in OWNERS:
             added_paragraphs.append(pid)
         else:
             paragraph = next(p for p in lesson['paragraphs'] if p['id'] == pid)
-            before, after = patch['expectedBefore'], patch['after']
+            before, after = patch['expectedBefore'], patch.get('after', patch.get('afterJa'))
             if isinstance(before, dict):
                 assert paragraph == before, pid
                 paragraph.update(copy.deepcopy(after))
@@ -112,9 +125,10 @@ for owner in OWNERS:
         if nested:
             assert set(nested) == set(locales), pid
             for locale, target in nested.items():
-                if patch.get('operation') == 'appendParagraph':
-                    translation_patch(locale, lid, 'paragraphs', pid, None, target['paragraph'])
-                    translation_patch(locale, lid, 'paragraphTitles', pid, None, target['paragraphTitle'])
+                if isinstance(target, dict) and 'paragraph' in target:
+                    before_target = target.get('expectedBefore', {})
+                    translation_patch(locale, lid, 'paragraphs', pid, before_target.get('paragraph'), target['paragraph'])
+                    translation_patch(locale, lid, 'paragraphTitles', pid, before_target.get('paragraphTitle'), target['paragraphTitle'])
                 elif isinstance(target, str):
                     translation_patch(locale, lid, 'paragraphs', pid,
                                       baseline_translations[locale][lid]['paragraphs'][pid], target)
@@ -130,15 +144,25 @@ for owner in OWNERS:
         translation_patch(patch['locale'], patch['lessonId'], patch['field'], patch.get('paragraphId'),
                           patch['expectedBefore'], patch['after'])
 
-    for patch in packet.get('sourceRowResolutions', packet.get('sourceResolutions', [])):
+    resolutions = packet.get('sourceRowResolutions', packet.get('sourceResolutions', []))
+    if 'sourceRowResolution' in packet:
+        assert not resolutions
+        resolutions = [packet['sourceRowResolution']]
+    for raw_patch in resolutions:
+        patch = {**raw_patch, **raw_patch.get('after', {})}
         sid = patch.get('id', patch.get('sourceItemId', patch.get('sourceRowId')))
         assert sid in target_ids and sid not in seen_rows, sid
         seen_rows.add(sid)
         row = rows[sid]
         if isinstance(patch.get('expectedBefore'), dict):
-            assert row == patch['expectedBefore'], sid
+            for key, value in patch['expectedBefore'].items():
+                assert row.get(key) == value, (sid, key)
         assert row['disposition'] == 'hold', sid
-        disposition = patch.get('disposition', patch.get('recommendedDisposition'))
+        disposition = patch.get('disposition', patch.get('recommendedDisposition', patch.get('afterDisposition', patch.get('resolution'))))
+        if disposition == 'authored':
+            disposition = 'covered_new_unit_clarification'
+        if disposition == 'resolved_bounded_general_knowledge':
+            disposition = 'covered_new_bounded_general_knowledge'
         if disposition == 'resolved_bounded_current_source_supplement':
             disposition = 'covered_new_bounded_current_source_supplement'
         assert disposition.startswith(('covered', 'excluded')), (sid, disposition)
@@ -147,8 +171,9 @@ for owner in OWNERS:
             if key not in ['id', 'sourceItemId', 'sourceRowId', 'expectedBefore', 'disposition']:
                 row[key] = copy.deepcopy(value)
         row['disposition'] = disposition
-        row['paragraphIds'] = patch.get('paragraphIds', patch.get('safeParagraphIds', []))
-        row['reasonJa'] = patch['reasonJa']
+        row['paragraphIds'] = patch.get('paragraphIds', patch.get('safeParagraphIds', owner_paragraph_ids))
+        row['reasonJa'] = patch.get('reasonJa', patch.get('boundedCoverageJa',
+            '花の品質保持の基本目的・衛生・水分管理と、製品を選ぶ場合の表示条件を分けて本文を完成。個別製品の処方が未指定であることを授業全体の不足と数えない。'))
         row['reconciliationFile'] = str((OUT / owner / 'packet.json').relative_to(ROOT))
         row['humanReviewed'] = row['domainReviewed'] = row['nativeReviewed'] = False
 
@@ -214,24 +239,34 @@ write(compat_path, compat)
 
 recon['statusCounts'] = dict(collections.Counter(row['disposition'] for row in recon['rows']))
 recon['routingProblems'] = []
-recon['allSafeObjectivesResolved'] = False
+recon['allSafeObjectivesResolved'] = all(row['disposition'].startswith(('covered', 'excluded')) for row in recon['rows'])
 write(recon_path, recon)
 write(lessons_path, lessons_data)
 write(ledger_path, ledger)
 for locale, data in translations.items():
     write(project(f'src/data/agriculture/translations/{locale}.json'), data)
+if CONFIG.get('excludeUndefinedMoistureTarget'):
+    exclusion_rules.append({
+        'id': 'AGR-EXCLUDE-RICE-0417-0737-IRRIGATION',
+        'sourceItemIds': ['AGR-A10-RICE-0417', 'AGR-A10-RICE-0737'],
+        'action': 'reject_undefined_numeric_irrigation_target',
+        'sourceValue': '35–55%',
+        'excludedUses': ['universal_irrigation_target', 'irrigation_start_stop_threshold', 'water_volume_calculation'],
+        'reasonJa': '原書の割合に測定基準と適用条件がなく、重量・体積・圃場容水量比を推測して数値へ当てはめない。指標と観察の定性的な学習は維持する。',
+        'numericBasisVerified': False})
+assert len({rule['id'] for rule in exclusion_rules}) == len(exclusion_rules)
 write(project('src/data/agriculture/authoring-exclusions.json'), {
     'schemaVersion': 1, 'date': '2026-10-31', 'publisherApproved': True,
     'scope': 'narrow assessment exclusions; no source numeric or scientific correction inferred',
     'rules': exclusion_rules, 'sourceTruthResolved': False})
 holds = [row for row in recon['rows'] if row['disposition'] == 'hold']
-assert len(holds) == 10
+assert len(holds) == EXPECTED_REMAINING
 write(OUT / 'integration.json', {
-    'schemaVersion': 1, 'status': 'PASS', 'baselineCommit': 'e45d14a8858ca17cf8b6881ff358d0263b2e7bc6',
-    'processedSourceRows': sorted(seen_rows), 'processedCount': 45, 'remainingHoldCount': 10,
+    'schemaVersion': 1, 'status': 'PASS', 'baselineCommit': BASE_COMMIT,
+    'processedSourceRows': sorted(seen_rows), 'processedCount': len(seen_rows), 'remainingHoldCount': len(holds),
     'changedLessonIds': sorted(changed_lessons), 'sourceHashTransitions': transitions,
     'newParagraphIds': added_paragraphs, 'translationFieldPatches': len(seen_translations),
-    'newKnowledgeEntries': len(ledger['knowledge']) - 1356,
+    'newKnowledgeEntries': len(ledger['knowledge']) - baseline_knowledge_count,
     'questionTextChanges': 0, 'questionSourceBindingsRebound': sorted(question_bindings),
     'examRevisionTransitions': revised_banks, 'figureSourceBindingsRebound': asset_bindings,
     'sourceExclusionRules': len(exclusion_rules), 'packetCanonicalHashes': packet_hashes,
@@ -239,7 +274,7 @@ write(OUT / 'integration.json', {
     'domainReviewed': False, 'fullSourceCoverageCertified': False})
 write(OUT / 'external-source-register.json', {'schemaVersion': 1, 'sourcesByOwner': evidence})
 write(OUT / 'remaining-source-holds.json', {'schemaVersion': 1, 'count': len(holds), 'holds': holds,
-    'reason': 'Eight rice/crop and two flower items were outside the three publisher tables in this request.'})
-print(json.dumps({'status': 'PASS', 'processed': 45, 'remainingHolds': 10,
+    'reason': CONFIG.get('remainingHoldReason', 'Eight rice/crop and two flower items were outside the three publisher tables in this request.')})
+print(json.dumps({'status': 'PASS', 'processed': len(seen_rows), 'remainingHolds': len(holds),
                   'changedLessons': len(changed_lessons), 'translationFields': len(seen_translations),
                   'newParagraphs': len(added_paragraphs), 'reboundQuestions': len(question_bindings)}))

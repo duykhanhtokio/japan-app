@@ -94,6 +94,22 @@
         "new_assessment_authoring",
         "existing_assessment_audit"
       ]
+    },
+    {
+      "id": "AGR-EXCLUDE-RICE-0417-0737-IRRIGATION",
+      "sourceItemIds": [
+        "AGR-A10-RICE-0417",
+        "AGR-A10-RICE-0737"
+      ],
+      "action": "reject_undefined_numeric_irrigation_target",
+      "sourceValue": "35–55%",
+      "excludedUses": [
+        "universal_irrigation_target",
+        "irrigation_start_stop_threshold",
+        "water_volume_calculation"
+      ],
+      "reasonJa": "原書の割合に測定基準と適用条件がなく、重量・体積・圃場容水量比を推測して数値へ当てはめない。指標と観察の定性的な学習は維持する。",
+      "numericBasisVerified": false
     }
   ],
   "sourceTruthResolved": false

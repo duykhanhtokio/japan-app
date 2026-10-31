@@ -1,3 +1,15 @@
+# Current agriculture checkpoint — 2026-10-31, final10 source decisions
+
+Latest: `session-20261031-final-source-resolution/manifest.json` and `progress.json`. Runtime: **241 Japanese lessons,1363 mapped units,2892 AI-draft lesson-locale pairs,186 rasters,427 weekly questions and20 mock forms/800 questions.** Nine lessons and108 locale bindings were refreshed;180 translation fields patched; one hygiene paragraph added. All1227 assessment contents remain unchanged;50 source bindings and15 bank revisions were updated.
+
+The final10 tracked source occurrences are editorially resolved: eight bounded/corrected mappings and two narrow numeric exclusions. The1405-row overlay now records1388 covered,17 excluded,0 held. Original35–55% soil moisture has no established denominator and must not become an irrigation threshold or calculation operand. Original100℃ notation is preserved as source evidence; the explained cumulative quantity is daily mean water temperature summed over days (℃・日), not effective thermal time. Sweet potato is an enlarged root; original textbook disagreement is recorded. Drainage timing, herbicide water management and actual flower product recipes remain conditional rather than universal instructions.
+
+Six authors had disjoint scopes, with no cross-worker content review. Data/state/schema, source preservation,13 assessment regressions and scoped TypeScript pass; reader results are recorded in the current session evidence. Source occurrence counts are not independent scientific knowledge coverage. Native/domain/human,physical-device,production Expo and release approval remain unclaimed. Historical ledger page-level hold signals are retained as provenance, distinct from the resolved55-item overlay. Earlier checkpoints below are historical.
+
+Publication requires an exact fetched remote commit and a clean-worktree WORK PERSISTENCE PASS. Do not infer persistence from this checkpoint alone.
+
+---
+
 # Agriculture completion40 phase2 checkpoint — 2026-10-29
 
 Runtime: **240 Japanese lessons, 1355 mapped units, 2880 direct-Japanese AI-draft lesson-locale pairs, 186 rasters, 427 weekly questions and 4 mock forms/160 questions.** This adds 45 lessons and 124 rasters relative to the 195-lesson baseline. Original source pages/images are private and not redistributed. New raster bytes are manifest/SHA verified. Reader figures support expansion and horizontal panning. Three additional metadata-only shared-source extensions preserve prior completion hashes and question revisions.

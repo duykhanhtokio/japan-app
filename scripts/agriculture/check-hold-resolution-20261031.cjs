@@ -1,18 +1,20 @@
 // Publisher-scoped data and version-transition checks; no external certification.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
-const root=path.resolve(__dirname,'../..'),base='e45d14a8858ca17cf8b6881ff358d0263b2e7bc6';
+const root=path.resolve(__dirname,'../..');
+const config=process.argv[2]?JSON.parse(fs.readFileSync(path.resolve(root,process.argv[2]),'utf8')):{};
+const base=config.baselineCommit||'e45d14a8858ca17cf8b6881ff358d0263b2e7bc6';
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const before=p=>JSON.parse(execFileSync('git',['show',base+':'+p],{cwd:root,encoding:'utf8',maxBuffer:30*1024*1024}));
-const session='docs/ssw-workspace/agriculture/session-20261031-hold-resolution';
+const session=config.sessionDirectory||'docs/ssw-workspace/agriculture/session-20261031-hold-resolution';
 const adoption=read(session+'/integration.json'),changed=new Set(adoption.changedLessonIds);
 const oldLessons=before('src/data/agriculture/lessons.ja.json').lessons,lessons=read('src/data/agriculture/lessons.ja.json').lessons;
 const byId=new Map(lessons.map(l=>[l.id,l])),byParagraph=new Map(lessons.flatMap(l=>l.paragraphs.map(p=>[p.id,l])));
-assert.equal(lessons.length,241);assert.equal(changed.size,20);
+assert.equal(lessons.length,241);assert.equal(changed.size,config.expectedChangedLessons||20);
 for(const l of oldLessons)if(!changed.has(l.id))assert.deepEqual(byId.get(l.id),l,'Unrelated lesson changed '+l.id);
 const oldRows=before('docs/ssw-workspace/agriculture/completion-40/source-reconciliation.json').rows;
 const recon=read('docs/ssw-workspace/agriculture/completion-40/source-reconciliation.json'),rows=new Map(recon.rows.map(r=>[r.id,r]));
-const targets=new Set(oldRows.filter(r=>r.disposition==='hold'&&['GENERAL','SOIL','SAFETY'].includes(r.id.split('-')[2])).map(r=>r.id));
-assert.equal(targets.size,45);assert.deepEqual(new Set(adoption.processedSourceRows),targets);
+const targets=new Set(oldRows.filter(r=>r.disposition==='hold'&&(config.sourceGroups||['GENERAL','SOIL','SAFETY']).includes(r.id.split('-')[2])).map(r=>r.id));
+assert.equal(targets.size,config.targetCount||45);assert.deepEqual(new Set(adoption.processedSourceRows),targets);
 let holds=0;
 for(const old of oldRows){
  const row=rows.get(old.id);assert(row);
@@ -25,7 +27,7 @@ for(const old of oldRows){
  }
  assert(!row.humanReviewed&&!row.nativeReviewed&&!row.domainReviewed);
 }
-assert.equal(holds,10);
+assert.equal(holds,config.remainingHoldCount??10);
 const languageSource=fs.readFileSync(path.join(root,'src/i18n/languages.ts'),'utf8');
 const locales=[...languageSource.split('export type AppLanguage =')[0].matchAll(/'([^']+)'/g)].map(m=>m[1]).filter(l=>l!=='ja');
 let touchedPairs=0;
@@ -36,7 +38,7 @@ for(const locale of locales){
   else {assert.equal(current[l.id].sourceHash,l.sourceHash);assert.equal(current[l.id].translatedDirectlyFrom,'ja');assert.equal(current[l.id].nativeReviewed,false);touchedPairs++;}
  }
 }
-const policy=read('src/data/agriculture/authoring-exclusions.json');assert.equal(policy.rules.length,2);
+const policy=read('src/data/agriculture/authoring-exclusions.json');assert.equal(policy.rules.length,config.excludeUndefinedMoistureTarget?3:2);
 const blockedPatterns=policy.rules.flatMap(r=>r.blockedJapanesePatterns||[]).map(p=>new RegExp(p,'u'));
 const blockedNumbers=policy.rules.flatMap(r=>(r.printedAnnotations||[]).map(x=>x.value));
 let questionCases=0,unchangedQuestionContents=0;
@@ -64,6 +66,6 @@ for(const f of figures){const old=oldFigures.find(o=>o.id===f.id);assert(old);as
  const module={exports:{}};new Function('module','exports',built.outputFiles[0].text)(module,module.exports);const api=module.exports;
  let versionTransitions=0;
  for(const {old,current}of banks)for(const e of current.exams){const a=api.freshTestAttempt(e);assert(api.restoreTestAttempt(JSON.stringify(a),e));const oldExam=old.exams.find(x=>x.id===e.id);if(oldExam.revision!==e.revision){assert.equal(api.restoreTestAttempt(JSON.stringify(api.freshTestAttempt(oldExam)),e),null);versionTransitions++;}}
- const report={status:'PASS',processedSourceItems:45,remainingOutsideScopeHolds:10,changedLessons:changed.size,updatedLessonLocalePairs:touchedPairs,translationFieldPatches:adoption.translationFieldPatches,newParagraphs:adoption.newParagraphIds.length,unchangedQuestionContents,sourceExclusionAuditCases:questionCases,validatedVersionTransitions:versionTransitions,rasterFilesPreserved:figures.length,questionTextChanges:0,crossWorkerContentReview:false,humanReviewed:false,nativeReviewed:false,domainReviewed:false,physicalDeviceTested:false};
+ const report={status:'PASS',processedSourceItems:targets.size,remainingOutsideScopeHolds:holds,changedLessons:changed.size,updatedLessonLocalePairs:touchedPairs,translationFieldPatches:adoption.translationFieldPatches,newParagraphs:adoption.newParagraphIds.length,unchangedQuestionContents,sourceExclusionAuditCases:questionCases,validatedVersionTransitions:versionTransitions,rasterFilesPreserved:figures.length,questionTextChanges:0,crossWorkerContentReview:false,humanReviewed:false,nativeReviewed:false,domainReviewed:false,physicalDeviceTested:false};
  fs.writeFileSync(path.join(root,session,'validation.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 })().catch(e=>{console.error(e);process.exitCode=1;});

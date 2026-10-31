@@ -5,13 +5,16 @@
   "statusCounts": {
     "excluded_nonlearning": 7,
     "covered_existing": 255,
-    "covered_new": 955,
+    "covered_new": 957,
     "excluded": 7,
     "covered_new_bounded_current_source_supplement": 10,
     "covered_new_bounded_principle": 5,
-    "hold": 10,
+    "covered_new_unit_clarification": 2,
+    "covered_new_authoritative_correction": 2,
+    "excluded_undefined_numeric_operational_threshold": 2,
     "covered_new_bounded_visual": 146,
     "covered_new_level1_supplement": 9,
+    "covered_new_bounded_general_knowledge": 2,
     "excluded_administrative": 1
   },
   "rows": [
@@ -15506,14 +15509,27 @@
         }
       ],
       "objectiveJa": "浸種の積算温度100℃という表記の量と単位を確認する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_unit_clarification",
+      "paragraphIds": [
+        "agr-ricework-soaking-p2"
+      ],
       "figureIds": [],
-      "reasonJa": "積算温度100℃の量・単位を原資料だけで解決できない。℃日等へ無断訂正せず計算問題に使用しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/rice/reconciliation.json",
+      "reasonJa": "原図の100℃という表記を保存したまま、一次技術資料に基づき、浸種で用いる平均水温の累積量、計算説明の℃・日という単位、基準温度を差し引く有効積算温度との違いを補足した。仮定計算の条件と、実際の終了判断を区別する。原資料の公式訂正を行ったという意味ではない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/final-heat/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "浸種の積算温度100℃という表記の量と単位を確認する。",
+      "resolutionKind": "primary_source_contextual_quantity_and_unit_clarification",
+      "externalSourceIds": [
+        "AGR-HEAT-SAITAMA-2010",
+        "AGR-HEAT-NIIGATA-2016",
+        "AGR-HEAT-NARO-BASE-2007",
+        "AGR-HEAT-NARO-SOAKING-2024"
+      ],
+      "sourceNotationCorrected": false,
+      "originalNotation": "積算温度100℃",
+      "issuingBodyErratumClaimed": false
     },
     {
       "id": "AGR-A10-RICE-0042",
@@ -18301,16 +18317,18 @@
         }
       ],
       "objectiveJa": "1号のサツマイモ地下茎という記載と同頁の根の記述、2号の肥大根を照合する。",
-      "disposition": "hold",
+      "disposition": "covered_new_authoritative_correction",
       "paragraphIds": [
         "agr-f40-rice-source-comparison-p4"
       ],
       "figureIds": [],
-      "reasonJa": "1号地下茎と同頁根、2号肥大根の器官表記が矛盾。比較自体は新規本文で学べるが、一つの科学的器官正答へ統合したとはしない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/rice/reconciliation.json",
+      "reasonJa": "サツマイモの食用部は塊根、ジャガイモは塊茎とする。1号PDF57（印刷51）の地下茎記載は科学的正答として採用せず、2号PDF73（印刷71）と農林水産省・農研機構の一次資料で訂正する。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/final-sweetpotato/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "1号のサツマイモ地下茎という記載と同頁の根の記述、2号の肥大根を照合する。",
+      "afterDisposition": "covered_new_authoritative_correction"
     },
     {
       "id": "AGR-A10-RICE-0348",
@@ -18948,14 +18966,32 @@
         }
       ],
       "objectiveJa": "土壌水分35～55%の資料値を測定条件や作物条件とともに確認する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "excluded_undefined_numeric_operational_threshold",
+      "paragraphIds": [
+        "agr-vegwork-environment-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "35～55％の測定基準・土壌/作物条件が原資料で不明。普遍的な灌水目標へしない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/rice/reconciliation.json",
+      "reasonJa": "原資料の35～55%という記載の存在は確認。重量・体積・圃場容水量比のいずれかと適用条件は確定できず、数値そのものを灌水目標・開始終了閾値・水量計算から除外する。指標の区別と不足・過剰の観察は学習対象として維持。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/final-moisture/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "土壌水分35～55%の資料値を測定条件や作物条件とともに確認する。",
+      "resolution": "excluded_undefined_numeric_operational_threshold",
+      "countsAsClosedSourceOccurrence": true,
+      "countsAsVerifiedNumericThreshold": false,
+      "lessonIds": [
+        "agr-vegwork-environment"
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-ENVIRONMENT-06"
+      ],
+      "boundedCoverageJa": "原資料の35～55%という記載の存在は確認。重量・体積・圃場容水量比のいずれかと適用条件は確定できず、数値そのものを灌水目標・開始終了閾値・水量計算から除外する。指標の区別と不足・過剰の観察は学習対象として維持。",
+      "excludedUses": [
+        "irrigation_target",
+        "irrigation_start_stop_threshold",
+        "water_volume_calculation"
+      ]
     },
     {
       "id": "AGR-A10-RICE-0419",
@@ -20090,14 +20126,27 @@
         }
       ],
       "objectiveJa": "浸種の積算温度100℃という表記の量と単位を確認する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_unit_clarification",
+      "paragraphIds": [
+        "agr-ricework-soaking-p2"
+      ],
       "figureIds": [],
-      "reasonJa": "積算温度100℃の量・単位を原資料だけで解決できない。℃日等へ無断訂正せず計算問題に使用しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/rice/reconciliation.json",
+      "reasonJa": "原図の100℃という表記を保存したまま、一次技術資料に基づき、浸種で用いる平均水温の累積量、計算説明の℃・日という単位、基準温度を差し引く有効積算温度との違いを補足した。仮定計算の条件と、実際の終了判断を区別する。原資料の公式訂正を行ったという意味ではない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/final-heat/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "浸種の積算温度100℃という表記の量と単位を確認する。",
+      "resolutionKind": "primary_source_contextual_quantity_and_unit_clarification",
+      "externalSourceIds": [
+        "AGR-HEAT-SAITAMA-2010",
+        "AGR-HEAT-NIIGATA-2016",
+        "AGR-HEAT-NARO-BASE-2007",
+        "AGR-HEAT-NARO-SOAKING-2024"
+      ],
+      "sourceNotationCorrected": false,
+      "originalNotation": "積算温度100℃",
+      "issuingBodyErratumClaimed": false
     },
     {
       "id": "AGR-A10-RICE-0061",
@@ -20723,14 +20772,29 @@
         }
       ],
       "objectiveJa": "幼穂形成から最大分げつまでという中干し時期表現の前後関係を確認する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-ricework-stages-p3",
+        "agr-ricework-water-p4"
+      ],
       "figureIds": [],
-      "reasonJa": "幼穂形成から最大分げつまでという時期表現が生育図の前後と整合せず、固定実施時期を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/rice/reconciliation.json",
+      "reasonJa": "原典AGR-S2 PDF66（印刷64頁）を画像で確認。最高分げつ期と幼穂形成期の順序を一律に置換せず、地域の一般例と一次試験の条件差を区別した。中干しは目標茎数の確認後、幼穂の観察と地域指針で判断し、茨城県コシヒカリの終了例を条件付きで補う。全国一律の暦日・期間・茎数は設定しない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/final-drainage/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "幼穂形成から最大分げつまでという中干し時期表現の前後関係を確認する。",
+      "after": {
+        "disposition": "covered_new",
+        "paragraphIds": [
+          "agr-ricework-stages-p3",
+          "agr-ricework-water-p4"
+        ],
+        "reasonJa": "原典AGR-S2 PDF66（印刷64頁）を画像で確認。最高分げつ期と幼穂形成期の順序を一律に置換せず、地域の一般例と一次試験の条件差を区別した。中干しは目標茎数の確認後、幼穂の観察と地域指針で判断し、茨城県コシヒカリの終了例を条件付きで補う。全国一律の暦日・期間・茎数は設定しない。",
+        "humanReviewed": false,
+        "domainReviewed": false,
+        "nativeReviewed": false
+      }
     },
     {
       "id": "AGR-A10-RICE-0199",
@@ -20796,14 +20860,37 @@
         }
       ],
       "objectiveJa": "茎葉処理・土壌処理の名称と水口・湛水・7日保持という原文の対応を検証する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-ricework-water-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "前者という参照、茎葉処理と湛水7日保持等の対応が曖昧。製品条件を指定せず、一般処方へしない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/rice/reconciliation.json",
+      "reasonJa": "原頁の前者という参照と湛水7日の対応が曖昧で、同頁は茎葉処理剤に落水散布の例も併記する。土壌処理層と茎葉への付着、散布時の水位、流出防止の止水条件を分離して教える。現行MAFF通知・県指導・FAMICの製品確認原則と照合し、7日を全処理共通の湛水・給水処方へ転用しない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/final-herbicide/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "茎葉処理・土壌処理の名称と水口・湛水・7日保持という原文の対応を検証する。",
+      "baselineDisposition": "hold",
+      "resolutionType": "bounded_mechanism_and_label_conditions_not_universal_seven_day_flooding",
+      "countsAsClosedSourceOccurrence": true,
+      "knowledgeIds": [
+        "AGR-K-RICEWORK-WATER-06"
+      ],
+      "sourceRefs": [
+        "MAFF-STOPWATER",
+        "GIFU-PLAN",
+        "NAGANO-PADDY",
+        "FAMIC-QA"
+      ],
+      "specificProductRegistrationResolved": false,
+      "remainingExecutionChecks": [
+        "実際に使う製品の現行登録・ラベル",
+        "対象作物・雑草・剤型・処理方法・時期",
+        "散布時の水位、湛水深、給水と排水の扱い、止水期間",
+        "地域防除指導、降雨・畦畔漏水・越流の確認"
+      ],
+      "wholeLessonOnHold": false
     },
     {
       "id": "AGR-A10-RICE-0212",
@@ -21447,16 +21534,18 @@
         }
       ],
       "objectiveJa": "2号の肥大根という器官を1号の地下茎記載と資料別に保持する。",
-      "disposition": "hold",
+      "disposition": "covered_new_authoritative_correction",
       "paragraphIds": [
         "agr-f40-rice-source-comparison-p4"
       ],
       "figureIds": [],
-      "reasonJa": "1号地下茎と同頁根、2号肥大根の器官表記が矛盾。比較自体は新規本文で学べるが、一つの科学的器官正答へ統合したとはしない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/rice/reconciliation.json",
+      "reasonJa": "サツマイモの食用部は塊根、ジャガイモは塊茎とする。1号PDF57（印刷51）の地下茎記載は科学的正答として採用せず、2号PDF73（印刷71）と農林水産省・農研機構の一次資料で訂正する。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/final-sweetpotato/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "2号の肥大根という器官を1号の地下茎記載と資料別に保持する。",
+      "afterDisposition": "covered_new_authoritative_correction"
     },
     {
       "id": "AGR-A10-RICE-0544",
@@ -23864,14 +23953,32 @@
         }
       ],
       "objectiveJa": "土壌水分35～55%という資料値の作物・土壌・測定条件を確認する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "excluded_undefined_numeric_operational_threshold",
+      "paragraphIds": [
+        "agr-vegwork-environment-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "35～55％の測定基準・土壌/作物条件が原資料で不明。普遍的な灌水目標へしない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/rice/reconciliation.json",
+      "reasonJa": "原資料の35～55%という記載の存在は確認。重量・体積・圃場容水量比のいずれかと適用条件は確定できず、数値そのものを灌水目標・開始終了閾値・水量計算から除外する。指標の区別と不足・過剰の観察は学習対象として維持。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/final-moisture/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "土壌水分35～55%という資料値の作物・土壌・測定条件を確認する。",
+      "resolution": "excluded_undefined_numeric_operational_threshold",
+      "countsAsClosedSourceOccurrence": true,
+      "countsAsVerifiedNumericThreshold": false,
+      "lessonIds": [
+        "agr-vegwork-environment"
+      ],
+      "knowledgeIds": [
+        "AGR-K-VEGWORK-ENVIRONMENT-06"
+      ],
+      "boundedCoverageJa": "原資料の35～55%という記載の存在は確認。重量・体積・圃場容水量比のいずれかと適用条件は確定できず、数値そのものを灌水目標・開始終了閾値・水量計算から除外する。指標の区別と不足・過剰の観察は学習対象として維持。",
+      "excludedUses": [
+        "irrigation_target",
+        "irrigation_start_stop_threshold",
+        "water_volume_calculation"
+      ]
     },
     {
       "id": "AGR-A10-FACILITY-0004",
@@ -37046,14 +37153,27 @@
         }
       ],
       "objectiveJa": "製品別の濃度・処理時間を照合し処方を保留する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_general_knowledge",
+      "paragraphIds": [
+        "agr-flower-work-coldchain-p5",
+        "agr-flower-work-coldchain-p6",
+        "agr-flower-work-handling-source-hygiene"
+      ],
       "figureIds": [],
-      "reasonJa": "対象の実製品・対象花き・使用場面が指定されておらず、製品別濃度・時間・混用・排液条件を出典頁だけで照合できない。一般教材の品質保持目的は既に説明済み。個別処方を創作せず、この実施条件の確認だけを保留。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/flower/final-reconciliation.json",
+      "reasonJa": "花の品質保持の基本目的・衛生・水分管理と、製品を選ぶ場合の表示条件を分けて本文を完成。個別製品の処方が未指定であることを授業全体の不足と数えない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/final-flower/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "製品別の濃度・処理時間を照合し処方を保留する。",
+      "coverage": "Source S2 PDF126 gives treatment purposes, not a named product recipe. General postharvest knowledge is covered by the guarded lesson patches. No missing unnamed-product recipe is counted as a missing whole lesson.",
+      "remainingChecksWhenActualProductSelected": [
+        "Applicable flower and treatment stage",
+        "Current applicable label or instructions: dilution/concentration and duration",
+        "Explicit mixing permission and handling of used solution; do not infer either"
+      ],
+      "productRecipeSpecified": false,
+      "remainingGeneralKnowledgeGap": false
     },
     {
       "id": "AGR-A10-FLOWER-0669",
@@ -37069,14 +37189,27 @@
         }
       ],
       "objectiveJa": "対象花きと混用・排液条件を照合し処方を保留する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_general_knowledge",
+      "paragraphIds": [
+        "agr-flower-work-coldchain-p5",
+        "agr-flower-work-coldchain-p6",
+        "agr-flower-work-handling-source-hygiene"
+      ],
       "figureIds": [],
-      "reasonJa": "対象の実製品・対象花き・使用場面が指定されておらず、製品別濃度・時間・混用・排液条件を出典頁だけで照合できない。一般教材の品質保持目的は既に説明済み。個別処方を創作せず、この実施条件の確認だけを保留。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/flower/final-reconciliation.json",
+      "reasonJa": "花の品質保持の基本目的・衛生・水分管理と、製品を選ぶ場合の表示条件を分けて本文を完成。個別製品の処方が未指定であることを授業全体の不足と数えない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/final-flower/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "対象花きと混用・排液条件を照合し処方を保留する。",
+      "coverage": "Source S2 PDF126 gives treatment purposes, not a named product recipe. General postharvest knowledge is covered by the guarded lesson patches. No missing unnamed-product recipe is counted as a missing whole lesson.",
+      "remainingChecksWhenActualProductSelected": [
+        "Applicable flower and treatment stage",
+        "Current applicable label or instructions: dilution/concentration and duration",
+        "Explicit mixing permission and handling of used solution; do not infer either"
+      ],
+      "productRecipeSpecified": false,
+      "remainingGeneralKnowledgeGap": false
     },
     {
       "id": "AGR-A10-FLOWER-0670",
@@ -38504,7 +38637,7 @@
     }
   ],
   "routingProblems": [],
-  "allSafeObjectivesResolved": false,
+  "allSafeObjectivesResolved": true,
   "coveragePercent": null,
   "humanReviewed": false,
   "domainReviewed": false,

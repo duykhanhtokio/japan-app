@@ -35,7 +35,7 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
   browser=await chromium.launch({executablePath,headless:true,args:launchArgs});
   const page=await browser.newPage({viewport:{width:390,height:844}});page.on('pageerror',e=>errors.push(e.message));
   const url=`http://127.0.0.1:${server.address().port}/`;
-  const adoption=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/agriculture/session-20261031-hold-resolution/integration.json'),'utf8'));
+  const adoption=JSON.parse(fs.readFileSync(path.join(root,(process.env.AGRICULTURE_HOLD_SESSION||'docs/ssw-workspace/agriculture/session-20261031-hold-resolution')+'/integration.json'),'utf8'));
   const lessons=require('../../src/data/agriculture/lessons.ja.json').lessons,manifest=require('../../src/data/agriculture/course-manifest.json');
   const translations=require('./translation-fixture.cjs')();const readerShots=[];let japaneseCases=0,localeCases=0,responsiveReaderCases=0;
   async function openReader(lesson,locale='ja',mode='day'){
@@ -59,6 +59,6 @@ const adapters={safe:'export const useSafeAreaInsets=()=>({top:0,bottom:0,left:0
   }
   assert.deepEqual(errors,[]);for(const [p,digest]of Object.entries(guardedInputSha256))assert.equal(sha(path.join(root,p)),digest,'Input changed during reader QA '+p);
   const report={status:'PASS',japaneseChangedLessonCases:japaneseCases,allLocaleLongestLessonCases:localeCases,longestLessonId:largest.id,responsiveReaderCases,missingOrStaleTranslationCases:0,screenshots:readerShots,guardedInputSha256,inputsUnchangedDuringRun:true,scriptQaFonts:['ja','hi','bn','my','th','km'],adapters:['Royal artwork','safe area','background','localStorage storage'],realRasterFilesUsed:true,physicalDeviceTested:false,productionExpoTested:false,nativeLanguageCertified:false};
-  fs.writeFileSync(path.join(root,'docs/ssw-workspace/agriculture/session-20261031-hold-resolution/reader-browser-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({...report,screenshots:readerShots.length,guardedInputSha256:undefined}));
+  fs.writeFileSync(path.join(root,(process.env.AGRICULTURE_HOLD_SESSION||'docs/ssw-workspace/agriculture/session-20261031-hold-resolution')+'/reader-browser-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({...report,screenshots:readerShots.length,guardedInputSha256:undefined}));
  }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1});
