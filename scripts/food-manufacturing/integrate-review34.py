@@ -14,7 +14,12 @@ read = lambda p: json.loads(p.read_text())
 
 
 def write(path, value):
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2)+'\n')
+    compact = path.exists() and path.read_bytes().count(b'\n') < 2
+    if compact:
+        newline = '\n' if path.read_bytes().endswith(b'\n') else ''
+        path.write_text(json.dumps(value, ensure_ascii=False, separators=(',', ':'))+newline)
+    else:
+        path.write_text(json.dumps(value, ensure_ascii=False, indent=2)+'\n')
 
 
 def sha(value):

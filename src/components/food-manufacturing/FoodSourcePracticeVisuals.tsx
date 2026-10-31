@@ -3,6 +3,8 @@ import {Image,Modal,Pressable,ScrollView,StyleSheet,Text,View,type ImageSourcePr
 import {foodSourcePractice32} from '@/data/food-manufacturing/source-practice32';
 import {foodSourcePractice33} from '@/data/food-manufacturing/source-practice33';
 import {foodSourcePractice34} from '@/data/food-manufacturing/source-practice34';
+import {foodSourcePractice35} from '@/data/food-manufacturing/source-practice35';
+import {foodSourcePractice36} from '@/data/food-manufacturing/source-practice36';
 import ui from '@/data/food-manufacturing/daily-ui-translations.json';
 import {foodManufacturingLesson,foodManufacturingTranslation,type FoodManufacturingLesson} from '@/data/food-manufacturing';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
@@ -12,6 +14,8 @@ const figures:PracticeFigure[]=[
  ...foodSourcePractice32,
  ...foodSourcePractice33,
  ...foodSourcePractice34,
+ ...foodSourcePractice35,
+ ...foodSourcePractice36,
  {id:'food-source-histogram-patterns',lessonId:'food-2-043',paragraphId:'p1',source:require('../../../assets/food-manufacturing/source-practice/histogram-patterns.webp'),aspectRatio:1584/1903},
  {id:'food-source-scatter-patterns',lessonId:'food-2-043',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/scatter-patterns.webp'),aspectRatio:1584/1423},
  {id:'food-source-risk-matrix',lessonId:'food-2-047',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/risk-matrix.webp'),aspectRatio:776/648},
