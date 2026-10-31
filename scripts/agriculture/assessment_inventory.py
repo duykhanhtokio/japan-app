@@ -15,7 +15,7 @@ INPUTS = {
     'mocks': 'src/data/agriculture/mock-exams.ja.json',
     'ledger': 'docs/ssw-workspace/agriculture/knowledge-ledger.json',
     'candidates': 'docs/ssw-workspace/agriculture/session-20261027/assessment-audit.json',
-    'review': 'docs/ssw-workspace/agriculture/completion-40/assessment-review-current.json',
+    'review': 'docs/ssw-workspace/agriculture/session-20261031/assessment-review-current.json',
     'compatibility': 'src/data/agriculture/source-hash-compatibility.json',
 }
 
