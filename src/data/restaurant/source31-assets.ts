@@ -1,0 +1,64 @@
+/** Lazy literal image modules; no image is loaded merely by importing this module. */
+export function source31AssetByFile(file:string):number|null{
+ switch(file){
+ case "assets/restaurant/source31/hygiene1/temperature-paths.png":return require("../../../assets/restaurant/source31/hygiene1/temperature-paths.png");
+ case "assets/restaurant/source31/hygiene1/general-record-worked.png":return require("../../../assets/restaurant/source31/hygiene1/general-record-worked.png");
+ case "assets/restaurant/source31/hygiene1/five-process-plan.png":return require("../../../assets/restaurant/source31/hygiene1/five-process-plan.png");
+ case "assets/restaurant/source31/hygiene1/critical-record-worked.png":return require("../../../assets/restaurant/source31/hygiene1/critical-record-worked.png");
+ case "assets/restaurant/source31/hygiene1/general-record-monthly.png":return require("../../../assets/restaurant/source31/hygiene1/general-record-monthly.png");
+ case "assets/restaurant/source31/hygiene1/critical-record-monthly.png":return require("../../../assets/restaurant/source31/hygiene1/critical-record-monthly.png");
+ case "assets/restaurant/source31/hygiene1/handwash-motion-atlas.png":return require("../../../assets/restaurant/source31/hygiene1/handwash-motion-atlas.png");
+ case "assets/restaurant/source31/hygiene1/food-process-atlas.png":return require("../../../assets/restaurant/source31/hygiene1/food-process-atlas.png");
+ case "assets/restaurant/source31/cooking1/meat-beef.png":return require("../../../assets/restaurant/source31/cooking1/meat-beef.png");
+ case "assets/restaurant/source31/cooking1/meat-pork.png":return require("../../../assets/restaurant/source31/cooking1/meat-pork.png");
+ case "assets/restaurant/source31/cooking1/meat-chicken.png":return require("../../../assets/restaurant/source31/cooking1/meat-chicken.png");
+ case "assets/restaurant/source31/cooking1/machine-gas.png":return require("../../../assets/restaurant/source31/cooking1/machine-gas.png");
+ case "assets/restaurant/source31/cooking1/machine-ih.png":return require("../../../assets/restaurant/source31/cooking1/machine-ih.png");
+ case "assets/restaurant/source31/cooking1/machine-chinese.png":return require("../../../assets/restaurant/source31/cooking1/machine-chinese.png");
+ case "assets/restaurant/source31/cooking1/machine-combi.png":return require("../../../assets/restaurant/source31/cooking1/machine-combi.png");
+ case "assets/restaurant/source31/cooking1/machine-steam.png":return require("../../../assets/restaurant/source31/cooking1/machine-steam.png");
+ case "assets/restaurant/source31/cooking1/machine-fryer.png":return require("../../../assets/restaurant/source31/cooking1/machine-fryer.png");
+ case "assets/restaurant/source31/cooking1/machine-noodle.png":return require("../../../assets/restaurant/source31/cooking1/machine-noodle.png");
+ case "assets/restaurant/source31/cooking1/machine-griddle.png":return require("../../../assets/restaurant/source31/cooking1/machine-griddle.png");
+ case "assets/restaurant/source31/cooking1/machine-standing-rice.png":return require("../../../assets/restaurant/source31/cooking1/machine-standing-rice.png");
+ case "assets/restaurant/source31/cooking1/machine-rice.png":return require("../../../assets/restaurant/source31/cooking1/machine-rice.png");
+ case "assets/restaurant/source31/cooking1/machine-warmer.png":return require("../../../assets/restaurant/source31/cooking1/machine-warmer.png");
+ case "assets/restaurant/source31/cooking1/machine-grill.png":return require("../../../assets/restaurant/source31/cooking1/machine-grill.png");
+ case "assets/restaurant/source31/cooking1/machine-braise.png":return require("../../../assets/restaurant/source31/cooking1/machine-braise.png");
+ case "assets/restaurant/source31/cooking1/machine-conveyor-oven.png":return require("../../../assets/restaurant/source31/cooking1/machine-conveyor-oven.png");
+ case "assets/restaurant/source31/cooking1/machine-kettle.png":return require("../../../assets/restaurant/source31/cooking1/machine-kettle.png");
+ case "assets/restaurant/source31/cooking1/machine-fridge.png":return require("../../../assets/restaurant/source31/cooking1/machine-fridge.png");
+ case "assets/restaurant/source31/cooking1/machine-table-fridge.png":return require("../../../assets/restaurant/source31/cooking1/machine-table-fridge.png");
+ case "assets/restaurant/source31/cooking1/machine-showcase.png":return require("../../../assets/restaurant/source31/cooking1/machine-showcase.png");
+ case "assets/restaurant/source31/cooking1/machine-walkin.png":return require("../../../assets/restaurant/source31/cooking1/machine-walkin.png");
+ case "assets/restaurant/source31/cooking1/machine-ice.png":return require("../../../assets/restaurant/source31/cooking1/machine-ice.png");
+ case "assets/restaurant/source31/cooking1/machine-blast.png":return require("../../../assets/restaurant/source31/cooking1/machine-blast.png");
+ case "assets/restaurant/source31/cooking1/machine-vacuum-cool.png":return require("../../../assets/restaurant/source31/cooking1/machine-vacuum-cool.png");
+ case "assets/restaurant/source31/cooking1/machine-small-washer.png":return require("../../../assets/restaurant/source31/cooking1/machine-small-washer.png");
+ case "assets/restaurant/source31/cooking1/machine-hood-washer.png":return require("../../../assets/restaurant/source31/cooking1/machine-hood-washer.png");
+ case "assets/restaurant/source31/cooking1/machine-conveyor-washer.png":return require("../../../assets/restaurant/source31/cooking1/machine-conveyor-washer.png");
+ case "assets/restaurant/source31/cooking1/machine-sterilizer.png":return require("../../../assets/restaurant/source31/cooking1/machine-sterilizer.png");
+ case "assets/restaurant/source31/cooking1/machine-slicer.png":return require("../../../assets/restaurant/source31/cooking1/machine-slicer.png");
+ case "assets/restaurant/source31/cooking1/machine-small-cutter.png":return require("../../../assets/restaurant/source31/cooking1/machine-small-cutter.png");
+ case "assets/restaurant/source31/cooking1/machine-cutter-mixer.png":return require("../../../assets/restaurant/source31/cooking1/machine-cutter-mixer.png");
+ case "assets/restaurant/source31/cooking1/machine-peeler.png":return require("../../../assets/restaurant/source31/cooking1/machine-peeler.png");
+ case "assets/restaurant/source31/cooking1/machine-vacuum-pack.png":return require("../../../assets/restaurant/source31/cooking1/machine-vacuum-pack.png");
+ case "assets/restaurant/source31/cooking1/machine-hand-dispenser.png":return require("../../../assets/restaurant/source31/cooking1/machine-hand-dispenser.png");
+ case "assets/restaurant/source31/service1/rst31-service1-fig001.png":return require("../../../assets/restaurant/source31/service1/rst31-service1-fig001.png");
+ case "assets/restaurant/source31/service1/rst31-service1-fig002.png":return require("../../../assets/restaurant/source31/service1/rst31-service1-fig002.png");
+ case "assets/restaurant/source31/service1/rst31-service1-fig003.png":return require("../../../assets/restaurant/source31/service1/rst31-service1-fig003.png");
+ case "assets/restaurant/source31/service1/rst31-service1-fig004.png":return require("../../../assets/restaurant/source31/service1/rst31-service1-fig004.png");
+ case "assets/restaurant/source31/service1/rst31-service1-fig005.png":return require("../../../assets/restaurant/source31/service1/rst31-service1-fig005.png");
+ case "assets/restaurant/source31/service1/rst31-service1-fig006.png":return require("../../../assets/restaurant/source31/service1/rst31-service1-fig006.png");
+ case "assets/restaurant/source31/service1/rst31-service1-fig007.png":return require("../../../assets/restaurant/source31/service1/rst31-service1-fig007.png");
+ case "assets/restaurant/source31/service1/rst31-service1-fig008.png":return require("../../../assets/restaurant/source31/service1/rst31-service1-fig008.png");
+ case "assets/restaurant/source31/hygiene2/historical-series.png":return require("../../../assets/restaurant/source31/hygiene2/historical-series.png");
+ case "assets/restaurant/source31/hygiene2/pipe-entry-gap.png":return require("../../../assets/restaurant/source31/hygiene2/pipe-entry-gap.png");
+ case "assets/restaurant/source31/hygiene2/wall-cleaning-range.png":return require("../../../assets/restaurant/source31/hygiene2/wall-cleaning-range.png");
+ case "assets/restaurant/source31/hygiene2/reference-form-exercise.png":return require("../../../assets/restaurant/source31/hygiene2/reference-form-exercise.png");
+ case "assets/restaurant/source31/operations2/cost-comparison.png":return require("../../../assets/restaurant/source31/operations2/cost-comparison.png");
+ case "assets/restaurant/source31/operations2/hood-damper.png":return require("../../../assets/restaurant/source31/operations2/hood-damper.png");
+ case "assets/restaurant/source31/operations2/escape-route.png":return require("../../../assets/restaurant/source31/operations2/escape-route.png");
+ default:return null;
+ }
+}

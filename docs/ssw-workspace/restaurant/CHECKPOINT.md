@@ -1,3 +1,9 @@
+# Nhà hàng — source31 tích hợp từng phần, 2026-10-31
+
+Xem `source-closure31/REPORT.vi.md`, `build-validation.json`, `unit-crosswalk.json` và `integration-qa.json`. 5 gói/219 trang đã nối vào75 bài:104 giải thích,149 câu,58 hình. Còn92 mục thiếu packet cooking-service2,88 mục có blocker/gap,12locale phần mới chưa dịch. Giữ nguyên ngân hàng và tiến độ gốc. Chưa nghiệm thu Expo/thiết bị/chuyên môn/bản ngữ. Cần commit/push/fetch/persistence trước khi coi đã lưu remote.
+
+---
+
 # Nhà hàng / 外食業 — checkpoint 30, 2026-10-31
 
 Base `a603cf88384f7ed7daba591e31b62aac900b4f17` đã WORK PERSISTENCE PASS. Sáu AI rà đủ439 mục partial ban đầu, đọc lại7PDF đã đối chiếu SHA/page count (271 trang). Commit/ref/fetch/persistence cần hoàn tất trước khi báo đã lưu.
