@@ -1,0 +1,33 @@
+import type {HotelTranslation} from './types';
+const loaders:Record<string,()=>{lessons:HotelTranslation[]}>= {
+ 'en/front':()=>require('./translations/en/front.json'),
+ 'en/planning':()=>require('./translations/en/planning.json'),
+ 'en/service':()=>require('./translations/en/service.json'),
+ 'en/restaurant':()=>require('./translations/en/restaurant.json'),
+ 'en/safety':()=>require('./translations/en/safety.json'),
+ 'vi/front':()=>require('./translations/vi/front.json'),
+ 'vi/planning':()=>require('./translations/vi/planning.json'),
+ 'vi/service':()=>require('./translations/vi/service.json'),
+ 'vi/restaurant':()=>require('./translations/vi/restaurant.json'),
+ 'vi/safety':()=>require('./translations/vi/safety.json'),
+ 'id/front':()=>require('./translations/id/front.json'),
+ 'id/planning':()=>require('./translations/id/planning.json'),
+ 'id/service':()=>require('./translations/id/service.json'),
+ 'id/restaurant':()=>require('./translations/id/restaurant.json'),
+ 'id/safety':()=>require('./translations/id/safety.json'),
+ 'zh-CN/front':()=>require('./translations/zh-CN/front.json'),
+ 'zh-CN/planning':()=>require('./translations/zh-CN/planning.json'),
+ 'zh-CN/service':()=>require('./translations/zh-CN/service.json'),
+ 'zh-CN/safety':()=>require('./translations/zh-CN/safety.json'),
+ 'zh-TW/front':()=>require('./translations/zh-TW/front.json'),
+ 'zh-TW/planning':()=>require('./translations/zh-TW/planning.json'),
+ 'zh-TW/service':()=>require('./translations/zh-TW/service.json'),
+ 'zh-TW/safety':()=>require('./translations/zh-TW/safety.json'),
+ 'hi/front':()=>require('./translations/hi/front.json'),
+ 'bn/front':()=>require('./translations/bn/front.json'),
+ 'tl/front':()=>require('./translations/tl/front.json'),
+ 'tl/service':()=>require('./translations/tl/service.json'),
+};
+export function loadHotelTranslation(id:string,language:string,revision:string):HotelTranslation|null {
+ const group=id.split('-')[1],load=loaders[`${language}/${group}`];if(!load)return null;const t=load().lessons.find(t=>t.id===id);return t?.sourceRevision===revision?t:null;
+}

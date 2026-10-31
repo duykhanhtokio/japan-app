@@ -1,0 +1,13 @@
+const fs=require('fs'),path=require('path'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'../..'),locales=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'],groups=['front','planning','service','restaurant','safety'];
+const summary={requiredPairs:456,completePairs:0,locales:{},stale:[],missing:[],nativeReviewed:false};
+function text(s,label){assert.equal(typeof s,'string',label);assert(s.trim().length>0,label);}
+for(const locale of locales){let n=0;for(const group of groups){const source=require(root+`/src/data/hospitality/${group}.json`).lessons,p=path.join(root,`src/data/hospitality/translations/${locale}/${group}.json`);if(!fs.existsSync(p)){summary.missing.push(`${locale}/${group}`);continue;}const data=JSON.parse(fs.readFileSync(p));assert(Array.isArray(data.lessons));assert(data.lessons.length<=source.length,`${locale}/${group}: unknown lessons`);
+ for(const l of source){const t=data.lessons.find(t=>t.id===l.id);if(!t){summary.missing.push(`${locale}/${l.id}`);continue;}assert.equal(t.status,'translated_ai_unreviewed');if(t.sourceRevision!==l.revision){summary.stale.push(`${locale}/${l.id}`);continue;}
+ for(const f of['title','reading'])text(t[f],`${locale}/${l.id}/${f}`);
+ for(const f of['objectives','sections','terms','questions']){assert.equal(t[f]?.length,l[f].length,`${locale}/${l.id}/${f}`);for(let i=0;i<l[f].length;i++){const s=l[f][i],v=t[f][i];if(s.id)assert.equal(v.id,s.id);if(f==='objectives')text(v.text,f);if(f==='sections'){text(v.title,f);text(v.body,f);assert.notEqual(v.body,s.body,`${locale}: copied JP body`);}if(f==='terms'){assert.equal(v.ja,s.ja);assert.equal(v.reading,s.reading);text(v.meaning,f);}if(f==='questions'){text(v.prompt,f);text(v.explanation,f);assert.equal(v.choices.length,4);v.choices.forEach(c=>text(c,f));assert.equal(v.answerIndex,s.answerIndex);}}}
+ text(t.example.situation,'example');assert.equal(t.example.steps.length,l.example.steps.length);t.example.steps.forEach(s=>text(s,'step'));text(t.practice.prompt,'practice');assert.equal(t.practice.expectedPoints.length,l.practice.expectedPoints.length);t.practice.expectedPoints.forEach(s=>text(s,'expectedPoint'));for(const f of['caption','alt'])text(t.illustration[f],f);n++;
+ }
+ }summary.locales[locale]=n;summary.completePairs+=n;}
+summary.complete=summary.completePairs===summary.requiredPairs&&summary.stale.length===0;
+fs.writeFileSync(root+'/docs/ssw-workspace/hospitality/translation-status.json',JSON.stringify(summary,null,2)+'\n');console.log(JSON.stringify(summary));if(process.argv.includes('--require-complete'))assert(summary.complete,'Missing/stale translations remain');
