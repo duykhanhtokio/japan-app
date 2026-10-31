@@ -3,11 +3,11 @@
 ## Phạm vi đã triển khai
 
 - Hai nguồn Nhật52+65=117trang; đã rà văn bản và trực quan117/117. 94trang thuộc phạm vi kiến thức, các trang khác có lý do phân loại riêng trong page-audit.json.
--38ngày học;475IDlegacy;622liên kết kiến thức–nguồn. Bộ nguồn độc lập mới có76ýđược đối chiếu riêng, không cộng với IDlegacy để suy ra tổng ý nguồn. Đây là bằng chứng biên soạn AI, không phải nghiệm thu chuyên gia hay chứng nhận không còn thiếu ý.
--191câu kiểm tra độc lập và2bài tổng hợp25câu/cấp (chọn lại từ ngân hàng đã dạy, không tính thêm thành câu mới). Không tuyên bố cấu trúc đề thi chính thức.
+-38ngày học;475IDlegacy;622liên kết kiến thức–nguồn. Bộ nguồn độc lập mới có149ýđược đối chiếu riêng, không cộng với IDlegacy để suy ra tổng ý nguồn. Đây là bằng chứng biên soạn AI, không phải nghiệm thu chuyên gia hay chứng nhận không còn thiếu ý.
+-201câu kiểm tra độc lập và2bài tổng hợp25câu/cấp (chọn lại từ ngân hàng đã dạy, không tính thêm thành câu mới). Không tuyên bố cấu trúc đề thi chính thức.
 -38PNG tự dựng có byte thật, đăng ký theo ngày. Đã kiểm tra contact sheet; trình đọc có nút phóng to. Chưa duyệt chuyên môn hình ảnh.
 -Tích hợp thẻKhách sạn→route riêng→chọn1号/2号→bài/ngày→kiểm tra→nộp→giải thích→hoàn thành; chế độ nội bộ __DEV__, chưa mở phát hành.
--Tiếng Nhật trước, bản dịch bámrevision. Snapshot hiện có199/456cặp bài–ngôn ngữ hợp lệ;34cặp đã cũ sau sửa Nhật; chi tiết ở translation-status.json. Dịch AI chưa duyệt bản ngữ.
+-Tiếng Nhật trước, bản dịch bámrevision. Snapshot hiện có148/456cặp bài–ngôn ngữ hợp lệ;85cặp đã cũ sau sửa Nhật; chi tiết ở translation-status.json. Dịch AI chưa duyệt bản ngữ.
 
 ## Bằng chứng kiểm tra
 
@@ -70,3 +70,10 @@ Chỉ thị mới: đối chiếu từng ý nguồn và bổ sung Nhật trướ
 -199cặp dịch còn hợp lệ;34cặp cũ bịloaderchặn đúngrevision,223cặp chưa có. Không xóa filedịch, không tự sửa sourceRevision để biến bản cũ thành hợp lệ.
 - Check cấu trúcPASS38bài/191câu/622liên kết;source-atomsPASS76bằng chứngvàsnapshotcâu hỏi;loaderPASS199hợp lệvà257thiếu/đãcũ trảnull. Tiếp tục giữdomain/native/device=falsevàdurationMeasured=false.
 - Phạm vi chưa xong:79trang kiến thức ngoài15trang đợt này chưa được đối chiếu lại theo sổ nguyên tử;15trang đã làm cũng chưa được nghiệm thu chuyên gia hoặc chứng nhận mẫu số đầy đủ tuyệt đối.23trang điều hướng/xuất bản giữ phân loại cũ để rà kiểm kê, không tính là kiến thức đã dạy. Tiếp tục chương lễ tân từsource1tr5/2tr8 và các phần chưa đối chiếu, rồi企画/広報、接客、飲食。 Không dịch tiếp trước khiNhậtổn định.
+
+## Đợt2 — chương lễ tân
+
+- Đối chiếu thêm73ýcủa hai chương lễ tân, cộng149ý/41trang có bằng chứng nguồn. Thêm10câuNhật, tổng201câu.76ýđợt1giữ nguyên bằng chứng, không tạo lại.
+- Bổ sung ví dụ giờcheck-in/outcủa nguồn dưới đúng điều kiện không phải quy định toàn quốc; thêm tênキャッシャーvà宿泊台帳. Thêm câu hỏi cho các trường thông tin đặt phòng/no-show, vai tròドアマン・仲居・レストラン, thứ tự明細/領収書, thuế theo điều kiện, riêng tưVIPvà bảo quản忘れ物. Không tự bịa thời hạn pháp lý cho đồ thất lạc.
+- CanonicalsourceAtomsgiữ trạng thái trước/sau vàreviewedLessonRevision;check-source-atomsPASS149bằng chứng/snapshotcâu hỏi. Checkcấu trúcPASS38bài/201câu;148bản dịch còn hợp lệ,85bản cũ bị chặn,223bản chưa có. Không dịch mới.
+-41trang có ý được đối chiếu không có nghĩa đã nghiệm thu đầy đủ mọi ý hoặc mọi hình. Tiếp tục các phần企画/広報、接客、飲食và mở đầu旅館業法; không tuyên bố xong117trang.
