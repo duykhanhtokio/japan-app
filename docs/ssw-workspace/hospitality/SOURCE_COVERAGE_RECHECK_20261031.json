@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "auditKind": "independent targeted source-to-lesson recheck",
+  "date": "2026-10-31",
+  "baselineCommit": "c0da9f9439ee753aa637e1862925022a661042a2",
+  "scope": "Whole-course structural metrics plus targeted semantic recheck. This is not a complete fresh atom-by-atom audit of 117 pages.",
+  "sources": [
+    {
+      "sourceId": "hotel-1",
+      "filename": "khach_san_1_jp.pdf",
+      "sha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "pdfPages": 52
+    },
+    {
+      "sourceId": "hotel-2",
+      "filename": "khach_san_2_jp.pdf",
+      "sha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "pdfPages": 65
+    }
+  ],
+  "sourcePagesVisuallyRecheckedThisSession": [
+    {
+      "sourceId": "hotel-1",
+      "pdfPages": [
+        7
+      ]
+    },
+    {
+      "sourceId": "hotel-2",
+      "pdfPages": [
+        26,
+        59,
+        60
+      ]
+    }
+  ],
+  "metrics": {
+    "lessons": 38,
+    "lessonsByLevel": {
+      "1": 25,
+      "2": 13
+    },
+    "bodyCharacters": 30559,
+    "bodyCharactersMin": 554,
+    "bodyCharactersMedian": 780.0,
+    "bodyCharactersMax": 1203,
+    "questionCount": 166,
+    "ledgerRows": 621,
+    "distinctKnowledgeIds": 474,
+    "distinctKnowledgeSummaryStrings": 361,
+    "ledgerRowsWithSummaryOver100Characters": 73,
+    "dailyMinutesMeasured": false
+  },
+  "interpretation": [
+    "Character counts concern section bodies only, excluding objectives, glossary, exercises, questions and captions; short length is a warning, not a direct coverage percentage.",
+    "621 rows are knowledge-source links. Repeated source references are legitimate, but cannot be counted as 621 independent concepts.",
+    "474 unique IDs and 361 unique summary strings use inconsistent granularity; neither number establishes a complete source-derived denominator.",
+    "Some planning ledger summaries repeat whole authored paragraphs; checking that those paragraphs exist is circular evidence, not independent source atomization.",
+    "The 233/456=51.1% measure is translation completeness only; it is not knowledge coverage."
+  ],
+  "findings": [
+    {
+      "id": "HC-001",
+      "sourceId": "hotel-2",
+      "pdfPage": 59,
+      "sourceFact": "Check that evacuation is possible in two directions and explain the routes accurately.",
+      "lessonId": "hotel-safety-01",
+      "sectionId": "hotel-safety-01-s02",
+      "finding": "The lesson teaches checking exits and routes, but does not explain the two-direction condition or a blocked-route decision. No lesson/question mentions this distinction.",
+      "status": "missing_specific_knowledge",
+      "requiredAction": "Teach the two-direction check with a facility-specific route example and assess the alternative-route decision; do not invent a universal building layout."
+    },
+    {
+      "id": "HC-002",
+      "sourceId": "hotel-2",
+      "pdfPage": 60,
+      "sourceFact": "Continuous 24-hour fire-alarm monitoring and regular maintenance to prevent malfunctions.",
+      "lessonId": "hotel-safety-07",
+      "sectionId": "hotel-safety-07-s01",
+      "questionId": "hotel-safety-07-q04",
+      "finding": "The lesson compresses the claim into maintaining fire-alarm equipment. It does not separately teach monitoring continuity, handover or malfunction-prevention maintenance. The mapped question is about a linen cart blocking a fire door.",
+      "status": "partial_teaching_and_misaligned_assessment",
+      "requiredAction": "Separate source-version knowledge from current applicability; explain monitoring and maintenance as distinct tasks and add an assessment which actually tests them. Confirm official current requirements before teaching legal universality."
+    },
+    {
+      "id": "HC-003",
+      "sourceId": "hotel-2",
+      "pdfPage": 60,
+      "sourceFact": "Fire training includes extinguishing, evacuation and reporting; the source mentions twice yearly.",
+      "lessonId": "hotel-safety-07",
+      "sectionId": "hotel-safety-07-s01",
+      "questionId": "hotel-safety-07-q04",
+      "finding": "The lesson includes qualified training-frequency information, but the only mapped question tests a blocked fire door, not training components or how to confirm the applicable frequency.",
+      "status": "taught_but_misaligned_assessment",
+      "requiredAction": "Retain current-law qualifications and map an actual training-plan question; do not treat the blocked-door question as evidence of this competency."
+    },
+    {
+      "id": "HC-004",
+      "sourceId": "hotel-2",
+      "pdfPage": 59,
+      "sourceFact": "For emergency ambulance requests, communicate observed symptoms and known patient details such as age and sex.",
+      "lessonId": "hotel-safety-02",
+      "sectionId": "hotel-safety-02-s03",
+      "questionId": "hotel-safety-02-q02",
+      "finding": "The lesson and question teach address, location and known situation, but do not explicitly demonstrate the source-listed patient-detail fields. This is partial operational detail, not total absence of emergency-call training.",
+      "status": "partial_operational_detail",
+      "requiredAction": "Add a clearly bounded reporting example using known facts and answering dispatcher questions; do not guess patient details or give unverified clinical instructions."
+    },
+    {
+      "id": "HC-005",
+      "sourceId": "hotel-1",
+      "pdfPage": 7,
+      "sourceFact": "Single room has one single bed; twin room has two beds.",
+      "lessonId": "hotel-front-01",
+      "sectionId": "hotel-front-01-s03",
+      "questionId": "hotel-front-01-q03",
+      "finding": "The lesson says the bed configurations differ but does not state both configurations. The twin definition appears in the quiz answer/explanation. The distinction is therefore not fully taught before testing.",
+      "status": "knowledge_only_partly_in_question_review",
+      "requiredAction": "Teach both definitions explicitly before the quiz, preserving source scope rather than implying all real properties use identical room naming."
+    }
+  ],
+  "allKnowledgeUnitsCovered": false,
+  "coveragePercent": null,
+  "coveragePercentReason": "An independently enumerated source-atom denominator and per-atom semantic acceptance are not established.",
+  "acceptanceStates": [
+    "missing",
+    "mentioned_only",
+    "partially_taught",
+    "taught_with_direct_evidence",
+    "assessment_missing_or_misaligned",
+    "assessed_with_direct_evidence",
+    "source_conflict_or_current_rule_hold"
+  ],
+  "nextAction": "Prioritize source-first atomization and Japanese remediation before further bulk translation. Preserve existing IDs and historical evidence. Mark changed Japanese revisions stale until their translations are updated.",
+  "humanReviewed": false,
+  "domainReviewed": false
+}

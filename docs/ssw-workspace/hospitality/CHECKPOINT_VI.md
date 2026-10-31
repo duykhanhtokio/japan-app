@@ -48,3 +48,12 @@ Git làm việc tại nhánh feature/hospitality-20261031 từ74df35d91. GitCLI 
 - Đồng bộ loader/ledger/daily-workload. Thêm check-translation-loaders.cjs chạy chính hàm nạp trong app, kiểm233cặp tải đúng,223cặp thiếu trảnull, revision cũ và locale không hỗ trợ trảnull. Không có fallback được tính thành bản dịch.
 - Check cấu trúc38bài/166câu/621liên kết/117trang PASS; check bản dịch hiện có PASS, complete=false; kiểm tra đủ bốn lựa chọn khác nhau, ID/đáp án/revision và thuật ngữ Nhật được giữ nguyên. git diff --check PASS.
 - Chưa chạy lại browser/Expo/native hoặc đo thời gian học. Toàn bộ bản dịch mới translated_ai_unreviewed; các thiếu sót nghiệm thu và nội dung đã liệt kê phía trên vẫn còn.
+
+## Cảnh báo độ bao phủ — tái kiểm tra theo phản ánh người dùng
+
+- Ưu tiên chuyển từ mở rộng dịch sang kiểm tra nguồn độc lập và bổ sung Nhật. Không dùng233/456(51,1%) làm tỷ lệ bao phủ kiến thức: đó chỉ là số cặp dịch hiện có.
+- Đo lại38phần thân bài:30.559ký tự Nhật, tối thiểu554, trung vị780, tối đa1.203ký tự/ngày; chưa tính mục tiêu/thuật ngữ/ví dụ/thực hành/câu hỏi.25phút chưa đo. Số ký tự thấp là dấu hiệu cần kiểm tra, không tự suy ra phần trăm thiếu.
+- Sổ có621liên kết nguồn,474ID,361chuỗi tóm tắt khác nhau. Cấp độ chia ý không đồng nhất;73dòng dùng tóm tắt dài trên100ký tự, có dòng lặp nguyên đoạn tự soạn. Vì vậy chưa có mẫu số đơn vị nguồn độc lập để chốt%phủ.
+- Hồ sơSOURCE_COVERAGE_RECHECK_20261031.json ghi5phát hiện có bằng chứng, gồm thiếu kiểm tra thoát nạn hai hướng(2号tr59), lược chi tiết giám sát/bảo trì báo cháy(2号tr60), câu hỏi chắn cửa chống cháy gắn nhầm cho năng lực diễn tập/bảo trì, chi tiết báo tình trạng người bệnh chưa rõ(2号tr59), và định nghĩa twin chủ yếu xuất hiện trong đáp án thay vì đoạn dạy(1号tr7).
+- Đây là rà mục tiêu, không phải nghiệm thu mới117/117trang. Không sửa hàng loạt trạng thái thànhcovered. Các sửa đổi liên quan quy định/an toàn phải giữ đúng điều kiện hiện hành; không khôi phục máy móc sai khác của nguồn2024.
+- Bước kế tiếp: lập nguyên tử nguồn từ câu/bullet/bảng/hình của PDF trước, rồi liên kết bằng chứng dạy và kiểm tra riêng. Giữ ID học viên; mọi thay đổiNhật cần revision mới và cập nhật lại các bản dịch tương ứng.
