@@ -31,8 +31,8 @@ for(const group of ['front','planning','service','restaurant','safety']){
 fs.writeFileSync(path.join(root,'src/data/hospitality/catalog.json'),JSON.stringify(catalog,null,2)+'\n');
 const atomFile=path.join(out,'source-atoms-authoring.json');
 const atomInput=fs.existsSync(atomFile)?JSON.parse(fs.readFileSync(atomFile)):null;
-const canonicalLedger={schemaVersion:atomInput?2:1,units:ledger};
-if(atomInput){canonicalLedger.sourceAtoms=atomInput.atoms;canonicalLedger.sourceAudit={baselineCommit:atomInput.baselineCommit,scope:atomInput.scope,pages:atomInput.pages,allSourceKnowledgeCovered:false,translationAction:atomInput.translationAction,supplementalOfficialSources:atomInput.supplementalOfficialSources};}
+const canonicalLedger={schemaVersion:atomInput?2:1,units:ledger,legacyCoverageIsNotAcceptance:true,coverageAuthority:'sourceAtoms contain the current source-first evidence; units retain historical authoring links only.'};
+if(atomInput){canonicalLedger.sourceAtoms=atomInput.atoms;canonicalLedger.sourceAudit={baselineCommit:atomInput.baselineCommit,scope:atomInput.scope,pages:atomInput.pages,allSourceKnowledgeCovered:false,translationAction:atomInput.translationAction,supplementalOfficialSources:atomInput.supplementalOfficialSources,sourceFigureDetailRechecks:atomInput.sourceFigureDetailRechecks||[],remainingAcceptanceRequirements:atomInput.remainingAcceptanceRequirements||[]};}
 fs.writeFileSync(path.join(out,'knowledge-ledger.json'),JSON.stringify(canonicalLedger,null,2)+'\n');
 fs.writeFileSync(path.join(out,'daily-workload.json'),JSON.stringify({schemaVersion:1,days},null,2)+'\n');
 let loaders="import type {HotelTranslation} from './types';\nconst loaders:Record<string,()=>{lessons:HotelTranslation[]}>= {\n";

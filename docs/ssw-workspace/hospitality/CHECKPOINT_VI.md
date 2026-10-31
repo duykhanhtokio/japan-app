@@ -3,11 +3,11 @@
 ## Phạm vi đã triển khai
 
 - Hai nguồn Nhật52+65=117trang; đã rà văn bản và trực quan117/117. 94trang thuộc phạm vi kiến thức, các trang khác có lý do phân loại riêng trong page-audit.json.
--38ngày học;475IDlegacy;622liên kết kiến thức–nguồn. Bộ nguồn độc lập mới có149ýđược đối chiếu riêng, không cộng với IDlegacy để suy ra tổng ý nguồn. Đây là bằng chứng biên soạn AI, không phải nghiệm thu chuyên gia hay chứng nhận không còn thiếu ý.
--201câu kiểm tra độc lập và2bài tổng hợp25câu/cấp (chọn lại từ ngân hàng đã dạy, không tính thêm thành câu mới). Không tuyên bố cấu trúc đề thi chính thức.
+-38ngày học;475IDlegacy;622liên kết kiến thức–nguồn. Bộ nguồn độc lập mới có369ýđược đối chiếu riêng, không cộng với IDlegacy để suy ra tổng ý nguồn. Đây là bằng chứng biên soạn AI, không phải nghiệm thu chuyên gia hay chứng nhận không còn thiếu ý.
+-272câu kiểm tra độc lập và2bài tổng hợp25câu/cấp (chọn lại từ ngân hàng đã dạy, không tính thêm thành câu mới). Không tuyên bố cấu trúc đề thi chính thức.
 -38PNG tự dựng có byte thật, đăng ký theo ngày. Đã kiểm tra contact sheet; trình đọc có nút phóng to. Chưa duyệt chuyên môn hình ảnh.
 -Tích hợp thẻKhách sạn→route riêng→chọn1号/2号→bài/ngày→kiểm tra→nộp→giải thích→hoàn thành; chế độ nội bộ __DEV__, chưa mở phát hành.
--Tiếng Nhật trước, bản dịch bámrevision. Snapshot hiện có148/456cặp bài–ngôn ngữ hợp lệ;85cặp đã cũ sau sửa Nhật; chi tiết ở translation-status.json. Dịch AI chưa duyệt bản ngữ.
+-Tiếng Nhật trước, bản dịch bámrevision. Snapshot hiện có31/456cặp bài–ngôn ngữ hợp lệ;202cặp đã cũ sau sửa Nhật; chi tiết ở translation-status.json. Dịch AI chưa duyệt bản ngữ.
 
 ## Bằng chứng kiểm tra
 
@@ -77,3 +77,14 @@ Chỉ thị mới: đối chiếu từng ý nguồn và bổ sung Nhật trướ
 - Bổ sung ví dụ giờcheck-in/outcủa nguồn dưới đúng điều kiện không phải quy định toàn quốc; thêm tênキャッシャーvà宿泊台帳. Thêm câu hỏi cho các trường thông tin đặt phòng/no-show, vai tròドアマン・仲居・レストラン, thứ tự明細/領収書, thuế theo điều kiện, riêng tưVIPvà bảo quản忘れ物. Không tự bịa thời hạn pháp lý cho đồ thất lạc.
 - CanonicalsourceAtomsgiữ trạng thái trước/sau vàreviewedLessonRevision;check-source-atomsPASS149bằng chứng/snapshotcâu hỏi. Checkcấu trúcPASS38bài/201câu;148bản dịch còn hợp lệ,85bản cũ bị chặn,223bản chưa có. Không dịch mới.
 -41trang có ý được đối chiếu không có nghĩa đã nghiệm thu đầy đủ mọi ý hoặc mọi hình. Tiếp tục các phần企画/広報、接客、飲食và mở đầu旅館業法; không tuyên bố xong117trang.
+
+## Đợt3 — mở rộng rà toàn bộ các chương kiến thức, giữ trạng thái nghiệm thu trung thực
+
+- SổsourceAtomshiện369ýđộc lập, cóliên kếtđến94trang kiến thức của haiPDF.23trang điều hướng/xuất bản có lý do loại riêng. Đây là đối chiếu AI ở cấp đoạn/bullet/thuật ngữ, không phải chứng nhận mẫu số không còn một ý nào thiếu; allPageIdeasAccepted và allSourceKnowledgeCovered vẫnfalse.
+- Thêm71câuNhật so vớiđợt2; tổng272câu, tăng106so với166banđầu. Trongtoànphiên32/38bài córevisionmới (có bài chỉ thêm kiểmtra). Giữ tất cảIDbài/câu cũ và lịch sửrevision; không tăng thời lượng bằng việc lặp nội dung. Phần thân bài tăng từ30.559lên33.866ký tựNhật, chưa tínhthuật ngữ/tình huống/thực hành/câu hỏi. Đây không phải bằng chứng25phút.
+- Bổ sung cụ thể: tênレセプション/リザベーション係; ví dụ企画,計算手数料và tiềnデポジット; câu xin lỗi/gọi đáp; kiểmtra các loại敬語・おじぎ・姿勢・電話・対応;バタースプレッダー; mối liên hệ nguyên liệu/dị ứng,八品目nguồn2024và thay đổiカシューナッツ2026theo消費者庁; ví dụ mùa đôngノロvẫn đi kèm vệsinh cả năm; các chi tiết giữ sạch/các bước chuẩn bị bàn và quảnlýF＆B.
+- Không dùng câu hỏi gầnchủđề làm bằng chứng: đã chỉnh riêng liên kết cho truyềnthông/ưuđãi/chi phí, câu chào/đáp/chuẩnbị điệnthoại/cúp máy, cáchbàybàn/cầm dụngcụ, dịứng, phạmvi quảnlývà luật. Snapshotcâu hỏi/đápán được gắn với từngý vàrevisionNhật đã rà. Cần duyệtngữnghĩa chuyênmôn/bảnngữ độc lập; testmáy chỉ xác minh liên kết vànội dung snapshot.
+- Đã mở thêm hình nguồn1号tr31/40,2号tr37/51 để đối chiếu gócおじぎ, tưthế và bốtrí/tiếntrình mónNhật/Tây; hồsơsourceFigureDetailRechecks nằm trongsổ chuẩn. Không đưa ảnh nguồn vào app.
+- Ngừng dịch mới:31cặp còn đúngrevision,202cặp cầncậpnhật,223cặp chưa có. Các bản cũ vẫn được giữ và bị bộnạp chặn. Không đổi sourceRevision để hợp thức hóa bảncũ.
+- ChecksourceAtomsPASS369/94; cấu trúcPASS38bài/272câu/622liênkếtlegacy; loaderPASS31cặphợp lệ,425cặpthiếu/đãcũ trảnull. Chỉ sốlegacy475IDkhông được sử dụng làm mẫu số nghiệmthu; canonicalledgerđánh dấu rõlegacyCoverageIsNotAcceptance.
+- Còn điều kiện nghiệmthu ngoài khả năng checkmáy: chuyênmôn/bảnngữ, độđủ từng hình/ý độc lập, furigana toàn bài, thời gian họcđãđo, fullExpo/nativevà thiếtbịthật. NộidungNhật đã được bổ sung/rà theo AI, chưa được gọi là phát hành hoànthiện hay chứng nhận khôngthiếuý.
