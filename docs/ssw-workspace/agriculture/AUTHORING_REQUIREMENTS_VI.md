@@ -102,7 +102,7 @@ Mỗi ngày học cần có:
 3. Cách quan sát hoặc thao tác theo trình tự.
 4. Điều kiện, sai sót thường gặp và điểm cần chú ý.
 5. Ví dụ thực tế được viết mới.
-6. Hình minh họa khi cần để hiểu hoặc nhận dạng.
+6. Ít nhất một ảnh/sơ đồ minh họa trực tiếp kiến thức quan trọng của ngày, theo `../DAILY_LEARNING_AND_IMAGE_REQUIREMENTS_VI.md`; hình trang trí không được tính.
 7. Thuật ngữ Nhật quan trọng kèm cách đọc.
 8. Tóm tắt cuối bài.
 9. ID liên kết với các đơn vị kiến thức nguồn.
@@ -262,3 +262,7 @@ Bắt đầu bằng kiểm tra dự án và kiểm kê toàn bộ hai PDF. Sau �
 Giữ định nghĩa直播, không dùng riêng lợi ích育苗 đang nghi vấn làm đáp án; không tạo phép tính từ năm chú thích biểu đồ S2PDF7 đã liệt kê. Theo chỉ thị trực tiếp, giữ nội dung黒ボク土50% và15～20%以上, không thêm năm thống kê suy đoán hay diễn giải bất định vào phần học. Với10%phân phối trộn vàEC0.5/1.0, giữ đúng nội dung nguồn, đơn vị và dấu so sánh; không bịa điều kiện khi tài liệu không cung cấp. Thuốc, nhiên liệu, thiết bị, giấy phép và thao tác chỉ được viết đúng phạm vi điều kiện có căn cứ. Tỷ lệ70–80%bệnh do nấm chưa xác minh được loại khỏi phần đánh giá định lượng; giữ kiến thức định tính có nguồn.
 
 Đóng mục theo quyết định biên tập có giới hạn không có nghĩa là đã chứng nhận toàn bộ phát biểu gốc, pháp luật, sản phẩm, thiết bị hoặc người bản ngữ. Mười mục RICE/FLOWER không có trong ba bảng vẫn giữ trạng thái riêng.
+
+### Cập nhật khối lượng/ngày và ảnh —2026-10-31
+
+Áp dụng `../DAILY_LEARNING_AND_IMAGE_REQUIREMENTS_VI.md` và bảng rà từng ngày trong `../daily-learning-audit-20261031/agriculture/audit.json`. Không đưa bổ sung/đính chính một đoạn thành một ngày đầy đủ chỉ để kéo dài lịch; ghép với ngày cùng chủ đề hoặc bổ sung ví dụ/hoạt động có căn cứ. Không đổi ID/tiến độ đã học khi chưa có ánh xạ bảo toàn. Mười mục RICE/FLOWER nêu ở đoạn lịch sử trên đã có quyết định riêng trong `session-20261031-final-source-resolution/PUBLISHER_POLICY.md`; không mở lại như mục chưa xử lý.
