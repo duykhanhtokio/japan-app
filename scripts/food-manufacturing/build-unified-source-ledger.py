@@ -27,6 +27,7 @@ def build():
     OUT.mkdir(parents=True,exist_ok=True)
     decisions=read(OUT/'decisions.json') if (OUT/'decisions.json').exists() else {}
     supplement_ids={s['id'] for s in read(DATA/'source-closure31.json')['sections']} if (DATA/'source-closure31.json').exists() else set()
+    figures32={f['id']:f for f in read(OUT/'figures32.json')['figures']} if (OUT/'figures32.json').exists() else {}
     lessons={};questions={};input_hashes={}
     inputs=[DATA/'lessons.1.ja.json',DATA/'lessons.2.ja.json',DATA/'exams.ja.json']+sorted((DATA/'authoring-20261029').glob('part[1-6].json'))
     for p in inputs:
@@ -62,17 +63,19 @@ def build():
             if decision:
                 assert decision.get('reason') and decision.get('status')
                 assert all(s in supplement_ids for s in decision.get('supplementIds',[]))
+                assert all(f in figures32 for f in decision.get('figureIds',[]))
                 for b in decision.get('lessonBindings',[]):
                     assert b['lessonId'] in lessons
                     assert all(any(p['id']==pid for p in lessons[b['lessonId']]['paragraphs']) for pid in b.get('paragraphIds',[]))
-            records.append({'id':rid,'document':doc,'pdfPages':sorted(set(pp)),'learningOutcome':outcome,'granularity':'page_summary_not_atomic' if part==5 else 'historical_scoped_outcome_not_exhaustive','before':{'status':old,'lessonBindings':lessons_evidence,'questionIds':qids,'remainingDetails':gaps},'supplementCandidates':candidates,'after':decision or {'status':'semantic_recheck_pending','reason':'Historical status preserved; no automatic promotion from supplemental page overlap.'},'figures':[],'provenance':{'path':str(p.relative_to(ROOT)),'recordKey':key,'recordId':rid}})
+            figure_bindings=[{k:figures32[f][k] for k in ['id','assetFile','sha256','lessonId','paragraphId','objectiveJa','sourceRefs']} for f in (decision or {}).get('figureIds',[])]
+            records.append({'id':rid,'document':doc,'pdfPages':sorted(set(pp)),'learningOutcome':outcome,'granularity':'page_summary_not_atomic' if part==5 else 'historical_scoped_outcome_not_exhaustive','before':{'status':old,'lessonBindings':lessons_evidence,'questionIds':qids,'remainingDetails':gaps},'supplementCandidates':candidates,'after':decision or {'status':'semantic_recheck_pending','reason':'Historical status preserved; no automatic promotion from supplemental page overlap.'},'figures':figure_bindings,'provenance':{'path':str(p.relative_to(ROOT)),'recordKey':key,'recordId':rid}})
     # Page review is separate from semantic knowledge coverage.
     visual=read(OUT/'visual-review.json') if (OUT/'visual-review.json').exists() else {'pages':[]}
     viewed={(p['document'],p['pdfPage']):p for p in visual['pages']}
     for p in pages:p['currentVisualReview']=viewed.get((p['document'],p['pdfPage']));p['visualEvidenceAvailable']=p['historicalVisualRead'] or bool(p['currentVisualReview'])
     assert len(pages)==251 and len({(p['document'],p['pdfPage']) for p in pages})==251
     assert len(records)==len({r['id'] for r in records})
-    for p in [OUT/'decisions.json',OUT/'visual-review.json',DATA/'source-closure31.json']:
+    for p in [OUT/'decisions.json',OUT/'visual-review.json',DATA/'source-closure31.json',OUT/'figures32.json',OUT/'atomic-knowledge32.json']:
         if p.exists():input_hashes[str(p.relative_to(ROOT))]=sha(p)
     identity=[{k:d[k] for k in ['id','level','filename','version','editionDate','pdfPageCount','sha256','printedPageOffset']} for d in read(DOC/'source-map.json')['documents']]
     write(OUT/'ledger.json',{'schemaVersion':1,'sourceDocuments':identity,'inputSha256':input_hashes,'pages':pages,'records':records,'scopeComplete':False,'fullAtomicSourceDecompositionComplete':False,'humanReviewed':False,'nativeReviewed':False,'domainReviewed':False})
