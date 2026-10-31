@@ -1,3 +1,13 @@
+# Nhà hàng — source31 đủ12ngôn ngữ, 2026-10-31
+
+Đủ7tài liệu/271trang/639mục theo hồ sơ AI;1476fact;133giải thích,198câu,145lượt hình vào92bài. Đủ12×488=5856bản ghi/33096trường dịch khớp hash;278cờ số có biên bản AI theo đúng trường. Giữ120bài/984câu gốc và tiến độ. PASS1196render yêu cầu đủ locale,28entry/routecase, kiểm lưu/khôi phục, TypeScript; Expo phần bổ sung xuất iOS/Android/web và Chromium thực12locale/92bài/4viewport.
+
+**Chưa đạt nghiệm thu toàn ngành:**3mục nguồn/hình/thực hành chưa đóng;397fact chưa có câu riêng; furigana ngữ cảnh chưa duyệt hết; chưa bản ngữ/chuyên môn. Toàn app export2lần bịSIGKILL137; chưa chạy thiết bị iPhone/Android; chưa đo thời lượng học bằng người thật. Xem source-closure31/REPORT.vi.md và acceptance/STATUS.json. Không dùng trạng thái compilerPASS để chứng nhận release.
+
+Tình trạng lưu cần đối chiếu commit/remote thực tế; không tự thêm SHA của commit hiện tại bằng một commit riêng.
+
+---
+
 # Nhà hàng — tích hợp toàn bộ gói Nhật source31, 2026-10-31
 
 132 giải thích,190 câu luyện tập,144 lượt hình vào92 bài;639 mục/271 trang có đối chiếu theo hồ sơ tác giả. Còn6gap và12locale bản dịch mới chưa đủ; chưa fullfurigana/Expo/native/chuyên môn. Xem source-closure31/REPORT.vi.md, build-validation.json, translation-integration.json và browser-qa/report.json. Giữ nguyên ngân hàng và tiến độ cũ. Cần xác minh remote trước tuyên bố lưu.

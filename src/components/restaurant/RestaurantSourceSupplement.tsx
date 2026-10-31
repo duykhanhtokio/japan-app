@@ -7,23 +7,17 @@ import {sourceLesson31,sourceTarget31,sourceQuestionTarget31,type SourceLesson31
 import {restaurantExamKey,restoreRestaurantAttempt,freshRestaurantAttempt,gradeTest} from '@/services/restaurant-study-state';
 import {useRestaurantRecord} from './useRestaurantRecord';
 import {RestaurantReading} from './RestaurantReading';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {SourcePicture31,SourceFigureGallery31} from './RestaurantSourcePictures';
 import {RestaurantSourceReferences} from './RestaurantSourceReferences';
 function Action({text,language,onPress,disabled=false,testID}:{text:string;language:string;onPress:()=>void;disabled?:boolean;testID?:string}){
  const {colors}=useStudyAppearance();return <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={restaurantUi(text,language)} disabled={disabled} accessibilityState={{disabled}} onPress={onPress} style={[s.button,{borderColor:colors.border,opacity:disabled?.45:1}]}><Text style={{color:colors.text}}>{restaurantUi(text,language)}</Text></Pressable>;
 }
-/** Clip one view of an atlas; question images never expose adjacent labelled cells. */
-export function SourceFigureView31({figure,width,alt}:{figure:SourceFigure31;width?:number;alt:string}){
- const [measured,setMeasured]=useState(0),crop=figure.cropBox;
- const source=sourceFigureAsset31(figure);if(!source)return null;
- const w=width??measured,ratio=crop?crop.width/crop.height:figure.width/figure.height;
- if(!crop)return <Image source={source} accessibilityLabel={alt} resizeMode="contain" style={{width:width??'100%',aspectRatio:ratio}}/>;
- const scale=w/crop.width;
- return <View testID={`source31-crop-${figure.id}`} accessible accessibilityRole="image" accessibilityLabel={alt} onLayout={e=>setMeasured(e.nativeEvent.layout.width)} style={{width:width??'100%',aspectRatio:ratio,overflow:'hidden'}}>{w>0&&<Image source={source} accessible={false} resizeMode="stretch" style={{position:'absolute',width:figure.width*scale,height:figure.height*scale,left:-crop.x*scale,top:-crop.y*scale}}/>}</View>;
-}
+/** One crop implementation is shared by source teaching, neutral questions and regression tests. */
+export const SourceFigureView31=({figure,width,alt}:{figure:SourceFigure31;width?:number;alt:string})=><SourcePicture31 figure={figure} label={alt} width={width}/>;
 /** Separately revised source additions preserve the original day and its completion identity. */
 export function RestaurantSourceSupplement({lesson,learner,language,showTranslation}:{lesson:RestaurantLesson;learner?:string;language:string;showTranslation:boolean}){
- const closeAttempt=useRef<()=>void>(()=>{});
+ const closeAttempt=useRef<()=>void>(()=>{}),insets=useSafeAreaInsets();
  const [open,setOpen]=useState(false),[zoom,setZoom]=useState<string|null>(null),{colors}=useStudyAppearance(),row=sourceLesson31(lesson);
  if(!row)return null;
  return <View testID={`restaurant-source31-${lesson.id}`} style={s.group}>
@@ -34,15 +28,15 @@ export function RestaurantSourceSupplement({lesson,learner,language,showTranslat
  <RestaurantSourceReferences references={row.references??[]} language={language} showTranslation={showTranslation}/>
  {row.exam&&learner&&<Action text="練習問題" language={language} testID={`source31-open-${lesson.id}`} onPress={()=>setOpen(true)}/>}
  <Modal visible={open&&!!row.exam} animationType="none" onRequestClose={()=>closeAttempt.current()}>{open&&row.exam&&learner&&<SourceAttempt key={row.exam.sourceHash} row={row} exam={row.exam} learner={learner} language={language} closeAttempt={closeAttempt} onBack={()=>setOpen(false)}/>}</Modal>
- <Modal visible={zoom!==null} transparent animationType="none" onRequestClose={()=>setZoom(null)}>{zoom&&<View style={[s.zoom,{backgroundColor:colors.background}]}><Action text="戻る" language={language} onPress={()=>setZoom(null)}/><ScrollView horizontal><ScrollView>{row.figures.filter(f=>f.id===zoom).map(f=><SourcePicture31 key={f.id} figure={f} label={showTranslation?sourceTarget31(f,language)?.alt??f.altJa:f.altJa} width={Math.max(960,f.cropBox?.width??f.width)}/>)}</ScrollView></ScrollView></View>}</Modal>
+ <Modal visible={zoom!==null} transparent animationType="none" onRequestClose={()=>setZoom(null)}>{zoom&&<View style={[s.zoom,{backgroundColor:colors.background,paddingTop:12+insets.top,paddingBottom:12+insets.bottom,paddingLeft:12+insets.left,paddingRight:12+insets.right}]}><Action text="戻る" language={language} onPress={()=>setZoom(null)}/><ScrollView horizontal><ScrollView>{row.figures.filter(f=>f.id===zoom).map(f=><SourcePicture31 key={f.id} figure={f} label={showTranslation?sourceTarget31(f,language)?.alt??f.altJa:f.altJa} width={Math.max(960,f.cropBox?.width??f.width)}/>)}</ScrollView></ScrollView></View>}</Modal>
  </View>;
 }
 function SourceAttempt({row,exam,learner,language,closeAttempt,onBack}:{row:SourceLesson31;exam:RestaurantExam&{questions:SourceQuestion31[]};learner:string;language:string;closeAttempt:{current:()=>void};onBack:()=>void}){
- const state=useRestaurantRecord(restaurantExamKey(learner,exam.level,exam),raw=>restoreRestaurantAttempt(raw,exam)),a=state.value,{colors}=useStudyAppearance(),[show,setShow]=useState(false),[confirm,setConfirm]=useState<'submit'|'restart'|'invalid'|'leave'|null>(null);
+ const insets=useSafeAreaInsets(),state=useRestaurantRecord(restaurantExamKey(learner,exam.level,exam),raw=>restoreRestaurantAttempt(raw,exam)),a=state.value,{colors}=useStudyAppearance(),[show,setShow]=useState(false),[confirm,setConfirm]=useState<'submit'|'restart'|'invalid'|'leave'|null>(null);
  const requestBack=()=>{if(state.saving)return;if(state.error==='write')setConfirm('leave');else onBack();};
  useEffect(()=>{closeAttempt.current=requestBack;return ()=>{closeAttempt.current=()=>{};};});
  const q=a?exam.questions[a.currentQuestion]:null,t=q&&show?sourceQuestionTarget31(q,language):null,result=a?gradeTest(exam,a.answers):null;
- return <View accessibilityViewIsModal style={[s.page,{backgroundColor:colors.background}]}><ScrollView contentContainerStyle={s.group}>
+ return <View accessibilityViewIsModal style={[s.page,{backgroundColor:colors.background,paddingTop:16+insets.top,paddingBottom:16+insets.bottom,paddingLeft:16+insets.left,paddingRight:16+insets.right}]}><ScrollView contentContainerStyle={s.group}>
  <Action text="戻る" language={language} onPress={requestBack} disabled={state.saving}/><RestaurantReading heading text={exam.titleJa}/>
  {language!=='ja'&&<Action text={show?'訳を隠す':'訳を表示'} language={language} onPress={()=>setShow(v=>!v)}/>}
  {state.loading?<Text style={{color:colors.text}}>{restaurantUi('読み込み中…',language)}</Text>:!a?<><Text accessibilityRole="alert" style={{color:colors.text}}>{restaurantUi(state.error==='invalid'?'保存記録の内容を確認できません。元の記録は保持しています。':'保存記録を読み込めませんでした。',language)}</Text><Action text="読み込みを再試行" language={language} onPress={()=>{void state.retry();}}/>{state.error==='invalid'&&<Action text="元の記録を保管してやり直す" language={language} onPress={()=>setConfirm('invalid')}/>}</>:q&&<>

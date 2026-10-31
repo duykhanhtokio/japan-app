@@ -461,5 +461,27 @@ for a in additions:
 for f in facts:
  f['primarySourceKeys']=list(dict.fromkeys(k for aid in f['additionIds'] for a in additions if a['id']==aid for k in a.get('primarySourceKeys',[])))
 packet['assessmentSummary']={'taughtAtoms':len(facts),'individuallyTestedOrRepresentativelyTestedAtoms':sum(bool(f['questionIds']) for f in facts),'notIndividuallyTestedAtomIds':[f['id'] for f in facts if not f['questionIds']],'scope':'Source interpretation and unit competencies; not every table cell or chart point is separately examined.'}
+# Explicit root-reviewed integration extension survives regeneration of the author packet.
+extension_file=O/'integration-extension.json'
+if extension_file.exists():
+ extension=json.loads(extension_file.read_text());extra_fact=extension['fact'];extra_question=extension['question']
+ packet['facts']=[f for f in packet['facts'] if f['id']!=extra_fact['id']]+[extra_fact]
+ packet['questions']=[q for q in packet['questions'] if q['id']!=extra_question['id']]+[extra_question]
+ for addition in packet['additions']:
+  if addition['id']==extension['additionId']:
+   addition['sourceRefs']=extension['additionSourceRefs'];addition['factIds']=list(dict.fromkeys(addition['factIds']+[extension['additionFactId']]))
+ for unit in packet['units']:
+  if unit['unitId'] in extension['unitIds']:unit['factIds']=list(dict.fromkeys(unit['factIds']+[extra_fact['id']]))
+ packet['integrationExtensionVerified']=extension['verification']
+noro_extension=O.parent/'integration/noro-primary-context.json'
+if noro_extension.exists():
+ extra=json.loads(noro_extension.read_text())
+ for key in ['facts','additions','questions','officialReferenceLinks']:
+  for item in extra[key]:packet[key]=[x for x in packet.get(key,[]) if x['id']!=item['id']]+[item]
+ for unit in packet['units']:
+  change=extra['unitUpdates'].get(unit['unitId'])
+  if change:
+   unit['factIds']=list(dict.fromkeys(unit['factIds']+[change['appendFactId']]));unit['remainingFactGaps']=[];unit['sourceCitationLimitations']=change['sourceCitationLimitations']
+ packet['integrationNoroPrimaryVerification']=extra['verification']
 (O/'packet.json').write_text(json.dumps(packet,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({'pages':len(pages),'units':len(unit_rows),'facts':len(facts),'additions':len(additions),'questions':len(questions),'decisions':{s:sum(x['decision']==s for x in unit_rows) for s in sorted({x['decision'] for x in unit_rows})}},ensure_ascii=False))

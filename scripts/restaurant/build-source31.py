@@ -1,4 +1,4 @@
-"""Compile source-author packets without changing frozen days, mocks or translations."""
+"""Compile reviewed source additions and revision-matching translations without changing original days or mocks."""
 from pathlib import Path
 import json,hashlib,collections,random,argparse,re
 ROOT=Path(__file__).resolve().parents[2];DOC=ROOT/'docs/ssw-workspace/restaurant/source-closure31';DATA=ROOT/'src/data/restaurant';OUT=DATA/'source31'
@@ -17,13 +17,13 @@ def figure_caption(f):
   text=re.sub(r'^\d+\s*','',label['labelJa']);parts.append(str(label['cell'])+'. '+text)
  return '\n'.join(parts)
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--japanese-only',action='store_true');ap.add_argument('--allow-partial',action='store_true',help='Integrate only frozen packets, retaining explicit missing-unit/page gaps');ap.add_argument('--shards',nargs='+',choices=SHARDS,help='Build only the specified source packets; other units remain explicit gaps');ap.add_argument('--available-translations',action='store_true',help='Integrate only complete revision-matching translated items; report all missing or stale items');ap.add_argument('--export-only',action='store_true');args=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument('--japanese-only',action='store_true');ap.add_argument('--allow-partial',action='store_true',help='Integrate only frozen packets, retaining explicit missing-unit/page gaps');ap.add_argument('--shards',nargs='+',choices=SHARDS,help='Build only the specified source packets; other units remain explicit gaps');ap.add_argument('--available-translations',action='store_true',help='Integrate only complete revision-matching translated items; report all missing or stale items');ap.add_argument('--export-only',action='store_true');ap.add_argument('--require-complete-locales',action='store_true',help='Fail if any of twelve locale items is missing or stale');args=ap.parse_args()
  selected=args.shards or SHARDS
  lessons={l['id']:l for level in ['1','2'] for l in read(DATA/f'lessons.{level}.ja.json')['lessons']};oldq={q['id']:q for level in ['1','2'] for e in read(DATA/f'exams.{level}.ja.json')['exams'] for q in e['questions']};ledger=read(DOC.parent/'knowledge-ledger.json');units={u['id']:u for u in ledger['units']}
  lock=read(DOC/'source-lock.json');pdfs={d['documentId']:d for d in lock['documents']};pagehash={(d['documentId'],p['pdfPage']):p['textSha256'] for d in lock['documents'] for p in d['pages']}
  foreign_packets=[read(DOC/shard/'packet.json') for shard in SHARDS if (DOC/shard/'packet.json').is_file()]
  foreign_additions={a['id'] for pack in foreign_packets for a in pack.get('additions',[])};foreign_questions={q['id'] for pack in foreign_packets for q in pack.get('questions',[])}
- packets=[];allunits={};facts={};additions={};questions={};figures={};terms={};pages={};inputhashes={}
+ packets=[];allunits={};facts={};additions={};questions={};figures={};terms={};references={};pages={};inputhashes={}
  for shard in selected:
   p=DOC/shard/'packet.json'
   if args.allow_partial and not p.is_file():continue
@@ -34,9 +34,31 @@ def main():
    key=(page['documentId'],page['pdfPage']);assert key not in pages and key in pagehash;assert page['textSha256']==pagehash[key];assert page['textRead'] is True;pages[key]=page
   for unit in packet['units']:
    key=unit['unitId'];assert key in units and key not in allunits,key;assert units[key]['sourceRefs'][0]['documentId'] in docs;allunits[key]={**unit,'shard':shard}
-  for name,dest in [('facts',facts),('additions',additions),('questions',questions),('figures',figures),('glossaryAdditions',terms)]:
+  for name,dest in [('facts',facts),('additions',additions),('questions',questions),('figures',figures),('glossaryAdditions',terms),('officialReferenceLinks',references)]:
    for item in packet.get(name,[]):
     key=item['id'];assert key and key not in dest,(name,key);dest[key]={**item,'shard':shard}
+ # Root assessment-only extension leaves the six authors' frozen packets unchanged.
+ assessment_path=DOC/'integration/assessment-delta.json'
+ if assessment_path.is_file() and not args.export_only:
+  extension=read(assessment_path);inputhashes[str(assessment_path.relative_to(ROOT))]=hashlib.sha256(assessment_path.read_bytes()).hexdigest()
+  for q in extension['questions']:
+   shard=facts[q['factIds'][0]]['shard']
+   if shard not in selected:continue
+   assert q['id'] not in questions;questions[q['id']]={**q,'shard':shard}
+   for fid in q['factIds']:
+    assert fid in facts
+    facts[fid]={**facts[fid],'questionIds':sorted(set(facts[fid].get('questionIds',[])+[q['id']])),'integrationAssessmentScope':'Source-based unit competency question, not independent certification of every atom.'}
+  for binding in extension['rebindings']:
+   fid=binding['factId']
+   if fid not in facts:continue
+   assert all(q in questions or q in oldq for q in binding['questionIds'])
+   facts[fid]={**facts[fid],'questionIds':sorted(set(facts[fid].get('questionIds',[])+binding['questionIds'])),'integrationAssessmentScope':binding['scope']}
+ # Reuse the source author's exact figure bytes with an explicit target-lesson scope.
+ foreign_figures={f['id']:f for packet in foreign_packets for f in packet.get('figures',[])}
+ for packet in packets:
+  for binding in packet.get('reusedFigureBindings',[]):
+   original=foreign_figures[binding['figureId']];clone={**original,**binding,'id':binding.get('id',binding['figureId']+'-on-'+binding['lessonId']),'shard':packet['shard']}
+   clone['captionJa']=original['captionJa']+'\n'+binding.get('scopeLimit','');figures[clone['id']]=clone
  missingunits=sorted(set(units)-set(allunits));missingpages=sorted(set(pagehash)-set(pages))
  if not args.allow_partial:
   assert not missingunits,'Every639 hierarchy unit must have an explicit source decision'
@@ -62,7 +84,7 @@ def main():
  def row(lessonid):
   assert lessonid in lessons,lessonid
   if lessonid not in rows:
-   l=lessons[lessonid];rows[lessonid]=dict(lessonId=lessonid,lessonSourceHash=l['sourceHash'],lessonSignature=signature(l),sections=[],figures=[],terms=[],exam=None)
+   l=lessons[lessonid];rows[lessonid]=dict(lessonId=lessonid,lessonSourceHash=l['sourceHash'],lessonSignature=signature(l),sections=[],figures=[],references=[],terms=[],exam=None)
   return rows[lessonid]
  item_registry={};ja_questions=[]
  for id,a in additions.items():
@@ -84,6 +106,10 @@ def main():
   assert t['termJa'].strip() and t['reading'].strip() and t['explanationJa'].strip();term={k:t[k] for k in ['id','termJa','reading','explanationJa']};term['sourceHash']=digest(term)
   for lessonid in t.get('lessonIds',[t.get('lessonId')]):row(lessonid)['terms'].append(term)
   item_registry[id]={'kind':'term',**term}
+ for id,reference in references.items():
+  from urllib.parse import urlsplit
+  url=urlsplit(reference['url']);assert url.scheme=='https' and url.netloc and not url.username and not url.password and not re.search(r'\s',reference['url']),id
+  item={k:reference[k] for k in ['id','titleJa','textJa','url']};item['sourceHash']=digest(item);row(reference['lessonId'])['references'].append(item);item_registry[id]={'kind':'reference','lessonId':reference['lessonId'],**item}
  # Balance new keys without changing old question IDs, answers or saved attempts.
  keymap={}
  for shard,level in [(s,l) for s in selected for l in ['1','2']]:
@@ -92,11 +118,28 @@ def main():
    rng.shuffle(keys)
    if not any(keys[i]==keys[i+1]==keys[i+2] for i in range(len(keys)-2)):break
   keymap.update(zip(ids,keys))
+ # Translation freezes keep their exact option order when later questions are added.
+ frozen_order={};frozen_questions={}
+ for shard in [*selected,'integration']:
+  frozen=DOC/f'canonical-ja.{shard}.json'
+  if not frozen.is_file():continue
+  for id,item in read(frozen)['items'].items():
+   if item.get('kind')!='question' or id not in questions:continue
+   current=questions[id]
+   if set(item['optionsJa'])==set(current['optionsJa']) and item['optionsJa'][item['correctIndex']]==current['optionsJa'][current['correctIndex']]:
+    frozen_order[id]=[current['optionsJa'].index(value) for value in item['optionsJa']];keymap[id]=item['correctIndex'];frozen_questions[id]=item
+ for shard,level in [(s,l) for s in selected for l in ['1','2']]:
+  ids=sorted(id for id,q in questions.items() if q['shard']==shard and lessons[q['lessonId']]['level']==level)
+  counts=collections.Counter(keymap[id] for id in ids if id in frozen_order)
+  for id in ids:
+   if id in frozen_order:continue
+   smallest=min(counts[i] for i in range(4));choices=[i for i in range(4) if counts[i]==smallest];choice=choices[int(textsha(id)[:8],16)%len(choices)];keymap[id]=choice;counts[choice]+=1
  for id,q in sorted(questions.items()):
   assert id not in oldq and len(q['optionsJa'])==4 and len(set(q['optionsJa']))==4,id
   assert len(q['optionReasonsJa'])==4 and all(x.strip() for x in q['optionReasonsJa']),id
   assert 0<=q['correctIndex']<4 and q.get('factIds') and all(f in facts for f in q['factIds']),id
-  lesson=lessons[q['lessonId']];targetkey=keymap[id];wrong=[i for i in range(4) if i!=q['correctIndex']];random.Random(int(textsha(id)[:16],16)).shuffle(wrong);order=wrong[:];order.insert(targetkey,q['correctIndex'])
+  lesson=lessons[q['lessonId']];targetkey=keymap[id];wrong=[i for i in range(4) if i!=q['correctIndex']];random.Random(int(textsha(id)[:16],16)).shuffle(wrong);order=frozen_order.get(id,wrong[:])
+  if id not in frozen_order:order.insert(targetkey,q['correctIndex'])
   item=dict(id=id,level=lesson['level'],topic=lesson['topic'],objectiveJa=q['objectiveJa'],stemJa=q['stemJa'],optionsJa=[q['optionsJa'][i] for i in order],correctIndex=targetkey,explanationJa=q['explanationJa'],optionReasonsJa=[q['optionReasonsJa'][i] for i in order],sourceRefs=q['sourceRefs'],knowledgeIds=q['unitIds'],factIds=q['factIds'])
   if q.get('figureIds'):
    assert all(f in figures and (figures[f].get('quizSafe') or figures[f].get('neutralForQuestions')) for f in q['figureIds']),id;item['figureIds']=q['figureIds']
@@ -113,8 +156,17 @@ def main():
   r['sourceHash']=digest(r)
  if args.export_only:
   assert args.shards and len(args.shards)==1,'Export exactly one frozen source shard'
-  save(DOC/f'canonical-ja.{args.shards[0]}.json',dict(schemaVersion=1,selectedShards=selected,inputSha256=inputhashes,items=item_registry))
+  integration_file=DOC/'canonical-ja.integration.json'
+  integration_ids=set(read(integration_file)['items']) if integration_file.is_file() else set()
+  export_items={id:item for id,item in item_registry.items() if id not in integration_ids}
+  save(DOC/f'canonical-ja.{args.shards[0]}.json',dict(schemaVersion=1,selectedShards=selected,inputSha256=inputhashes,items=export_items))
   print('EXPORTED',args.shards[0],len(item_registry),'Japanese items');return
+ # Reading candidates affect runtime revisions only; frozen Japanese translation exports stay stable.
+ from source31_readings import annotate
+ save(DOC/'reading-candidates.json',annotate(rows,ROOT))
+ for r in rows.values():
+  if r['exam']:r['exam']['sourceHash']=digest({k:v for k,v in r['exam'].items() if k!='sourceHash'})
+  r['sourceHash']=digest({k:v for k,v in r.items() if k!='sourceHash'})
  for level in ['1','2']:save(OUT/f'{level}.json',dict(schemaVersion=1,lessons={id:r for id,r in rows.items() if lessons[id]['level']==level}))
  save(DOC/'canonical-ja.json',dict(schemaVersion=1,selectedShards=selected,inputSha256=inputhashes,items=item_registry))
  save(DOC/'unit-crosswalk.json',dict(schemaVersion=1,units=allunits,facts=facts,pages=list(pages.values()),inputSha256=inputhashes,humanReviewed=False,nativeReviewed=False,domainReviewed=False))
@@ -133,7 +185,7 @@ def main():
     for id,t in target.get('items',{}).items():
      if id not in item_registry:rejected.append(dict(id=id,reason='unknown_item'));continue
      item=item_registry[id]
-     fields=['title','text'] if item['kind'] in ['section','term'] else ['caption','alt'] if item['kind']=='figure' else ['stem','objective','explanation']
+     fields=['title','text'] if item['kind'] in ['section','term','reference'] else ['caption','alt'] if item['kind']=='figure' else ['stem','objective','explanation']
      valid=t.get('sourceHash')==item['sourceHash'] and all(isinstance(t.get(k),str) and t[k].strip() for k in fields)
      if item['kind']=='question':valid=valid and len(t.get('options',[]))==4 and len(t.get('reasons',[]))==4 and all(isinstance(x,str) and x.strip() for x in t['options']+t['reasons'])
      if not valid:rejected.append(dict(id=id,reason='stale_hash_or_incomplete'));continue
@@ -148,14 +200,15 @@ def main():
    path=DOC/'translations'/f'{locale}.json';assert path.is_file(),f'Missing locale {locale}';target=read(path);assert set(target['items'])==set(item_registry),(locale,'exact authored item scope')
    for id,item in item_registry.items():
     t=target['items'][id];assert t['sourceHash']==item['sourceHash'],(locale,id)
-    fields=['title','text'] if item['kind'] in ['section','term'] else ['caption','alt'] if item['kind']=='figure' else ['stem','objective','explanation']
+    fields=['title','text'] if item['kind'] in ['section','term','reference'] else ['caption','alt'] if item['kind']=='figure' else ['stem','objective','explanation']
     assert all(isinstance(t.get(k),str) and t[k].strip() for k in fields),(locale,id)
     if item['kind']=='question':assert len(t.get('options',[]))==4 and len(t.get('reasons',[]))==4 and all(x.strip() for x in t['options']+t['reasons']),(locale,id)
    save(OUT/f'{locale}.json',dict(schemaVersion=1,locale=locale,items=target['items']))
  else:
   pending=LOCALES
   for locale in LOCALES:save(OUT/f'{locale}.json',dict(schemaVersion=1,locale=locale,status='translation_pending',items={}))
+ if args.require_complete_locales:assert not pending,('Incomplete source31 locales',pending)
  unresolved=[id for id,u in allunits.items() if u['decision']=='blocked' or u.get('remainingFactGaps') or u.get('remainingImageGaps')]
- save(DOC/'build-validation.json',dict(status='PARTIAL_JAPANESE_INTEGRATION' if missingunits else 'JAPANESE_FROZEN_TRANSLATIONS_PENDING' if pending else 'PASS',sourceUnits=len(allunits),selectedShards=selected,fullSourceScope=not args.shards,decidedUnits=len(allunits),missingPacketUnits=missingunits,missingPacketPages=[dict(documentId=d,pdfPage=p) for d,p in missingpages],integratedShards=[p['shard'] for p in packets],reviewedPages=len(pages),visualReadPages=sum(bool(p.get('visualRead')) for p in pages.values()),facts=len(facts),newSections=len(additions),newQuestions=len(questions),newFigures=len(figures),newTerms=len(terms),boundLessons=len(rows),unitDecisions=dict(collections.Counter(u['decision'] for u in allunits.values())),unresolvedUnits=unresolved,pendingLocales=pending,allCanonicalBanksPreserved=True,nativeReviewed=False,domainReviewed=False))
+ save(DOC/'build-validation.json',dict(status='PARTIAL_JAPANESE_INTEGRATION' if missingunits else 'JAPANESE_FROZEN_TRANSLATIONS_PENDING' if pending else 'PASS',sourceUnits=len(allunits),selectedShards=selected,fullSourceScope=not args.shards,decidedUnits=len(allunits),missingPacketUnits=missingunits,missingPacketPages=[dict(documentId=d,pdfPage=p) for d,p in missingpages],integratedShards=[p['shard'] for p in packets],reviewedPages=len(pages),visualReadPages=sum(bool(p.get('visualRead')) for p in pages.values()),facts=len(facts),newSections=len(additions),newQuestions=len(questions),newFigures=len(figures),newTerms=len(terms),boundLessons=len(rows),unitDecisions=dict(collections.Counter(u['decision'] for u in allunits.values())),unresolvedUnits=unresolved,pendingLocales=pending,canonicalTranslationItems=len(item_registry),uniqueFigureAssets=len({f['assetFile'] for f in figures.values()}),allCanonicalBanksPreserved=True,sourceCoverageClosed=not unresolved,allAtomicFactsIndividuallyAssessed=False,physicalDeviceTested=False,nativeReviewed=False,domainReviewed=False,passMeaning='Compilation and revision-binding checks only; unresolved source/rights/practical acceptance is listed separately'))
  print('PASS',len(units),'units;',len(facts),'facts;',len(additions),'new sections;',len(questions),'new questions;',len(unresolved),'unresolved')
 if __name__=='__main__':main()
