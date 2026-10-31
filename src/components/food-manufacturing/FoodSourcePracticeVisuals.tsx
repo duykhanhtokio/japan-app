@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {Image,Modal,Pressable,ScrollView,StyleSheet,Text,View,type ImageSourcePropType} from 'react-native';
 import {foodSourcePractice32} from '@/data/food-manufacturing/source-practice32';
 import {foodSourcePractice33} from '@/data/food-manufacturing/source-practice33';
+import {foodSourcePractice34} from '@/data/food-manufacturing/source-practice34';
 import ui from '@/data/food-manufacturing/daily-ui-translations.json';
 import {foodManufacturingLesson,foodManufacturingTranslation,type FoodManufacturingLesson} from '@/data/food-manufacturing';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
@@ -10,6 +11,7 @@ type PracticeFigure={id:string;lessonId:string;paragraphId:string;source:ImageSo
 const figures:PracticeFigure[]=[
  ...foodSourcePractice32,
  ...foodSourcePractice33,
+ ...foodSourcePractice34,
  {id:'food-source-histogram-patterns',lessonId:'food-2-043',paragraphId:'p1',source:require('../../../assets/food-manufacturing/source-practice/histogram-patterns.webp'),aspectRatio:1584/1903},
  {id:'food-source-scatter-patterns',lessonId:'food-2-043',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/scatter-patterns.webp'),aspectRatio:1584/1423},
  {id:'food-source-risk-matrix',lessonId:'food-2-047',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/risk-matrix.webp'),aspectRatio:776/648},
