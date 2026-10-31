@@ -1,14 +1,25 @@
 import {useEffect,useRef,useState} from 'react';
-import {Image,Modal,Pressable,ScrollView,StyleSheet,Text,View} from 'react-native';
+import {Modal,Pressable,ScrollView,StyleSheet,Text,View} from 'react-native';
 import {useStudyAppearance,TranslationText} from '@/components/tokutei/StudyAppearance';
 import type {RestaurantLesson,RestaurantExam} from '@/data/restaurant/types';
 import {restaurantUi} from '@/data/restaurant';
-import {sourceLesson31,sourceTarget31,sourceQuestionTarget31,sourceFigureAsset31,type SourceLesson31,type SourceQuestion31} from '@/data/restaurant/source31';
+import {sourceLesson31,sourceTarget31,sourceQuestionTarget31,type SourceLesson31,type SourceQuestion31,type SourceFigure31} from '@/data/restaurant/source31';
 import {restaurantExamKey,restoreRestaurantAttempt,freshRestaurantAttempt,gradeTest} from '@/services/restaurant-study-state';
 import {useRestaurantRecord} from './useRestaurantRecord';
 import {RestaurantReading} from './RestaurantReading';
+import {SourcePicture31,SourceFigureGallery31} from './RestaurantSourcePictures';
+import {RestaurantSourceReferences} from './RestaurantSourceReferences';
 function Action({text,language,onPress,disabled=false,testID}:{text:string;language:string;onPress:()=>void;disabled?:boolean;testID?:string}){
  const {colors}=useStudyAppearance();return <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={restaurantUi(text,language)} disabled={disabled} accessibilityState={{disabled}} onPress={onPress} style={[s.button,{borderColor:colors.border,opacity:disabled?.45:1}]}><Text style={{color:colors.text}}>{restaurantUi(text,language)}</Text></Pressable>;
+}
+/** Clip one view of an atlas; question images never expose adjacent labelled cells. */
+export function SourceFigureView31({figure,width,alt}:{figure:SourceFigure31;width?:number;alt:string}){
+ const [measured,setMeasured]=useState(0),crop=figure.cropBox;
+ const source=sourceFigureAsset31(figure);if(!source)return null;
+ const w=width??measured,ratio=crop?crop.width/crop.height:figure.width/figure.height;
+ if(!crop)return <Image source={source} accessibilityLabel={alt} resizeMode="contain" style={{width:width??'100%',aspectRatio:ratio}}/>;
+ const scale=w/crop.width;
+ return <View testID={`source31-crop-${figure.id}`} accessible accessibilityRole="image" accessibilityLabel={alt} onLayout={e=>setMeasured(e.nativeEvent.layout.width)} style={{width:width??'100%',aspectRatio:ratio,overflow:'hidden'}}>{w>0&&<Image source={source} accessible={false} resizeMode="stretch" style={{position:'absolute',width:figure.width*scale,height:figure.height*scale,left:-crop.x*scale,top:-crop.y*scale}}/>}</View>;
 }
 /** Separately revised source additions preserve the original day and its completion identity. */
 export function RestaurantSourceSupplement({lesson,learner,language,showTranslation}:{lesson:RestaurantLesson;learner?:string;language:string;showTranslation:boolean}){
@@ -18,11 +29,12 @@ export function RestaurantSourceSupplement({lesson,learner,language,showTranslat
  return <View testID={`restaurant-source31-${lesson.id}`} style={s.group}>
  {showTranslation&&language!=='ja'&&row.sections.some(section=>!sourceTarget31(section,language))&&<TranslationText>{restaurantUi('この言語の訳は準備中です。',language)}</TranslationText>}
  {row.sections.map(section=>{const t=showTranslation?sourceTarget31(section,language):null;return <View key={section.id} testID={`source31-section-${section.id}`} style={[s.section,{borderColor:colors.border}]}><RestaurantReading heading text={section.titleJa} segments={section.furigana?.title}/><RestaurantReading text={section.textJa} segments={section.furigana?.text}/>{t?.title&&t.text&&<TranslationText>{t.title}{'\n'}{t.text}</TranslationText>}</View>;})}
- {row.figures.map(figure=>{const image=sourceFigureAsset31(figure),t=showTranslation?sourceTarget31(figure,language):null;if(!image)return null;return <View key={figure.id} style={s.group}><Pressable accessibilityRole="imagebutton" accessibilityLabel={t?.alt??figure.altJa} onPress={()=>setZoom(figure.id)}><Image source={image} accessibilityLabel={t?.alt??figure.altJa} resizeMode="contain" style={{width:'100%',aspectRatio:figure.width/figure.height}}/></Pressable><RestaurantReading text={figure.captionJa}/>{t?.caption&&<TranslationText>{t.caption}</TranslationText>}</View>;})}
+ <SourceFigureGallery31 key={row.sourceHash} figures={row.figures} language={language} showTranslation={showTranslation} onZoom={setZoom}/>
  {(row.terms??[]).map(term=>{const t=showTranslation?sourceTarget31(term,language):null;return <View key={term.id} style={s.section}><RestaurantReading heading text={term.termJa} segments={[{text:term.termJa,reading:term.reading}]}/><RestaurantReading text={term.explanationJa}/>{t?.title&&t.text&&<TranslationText>{t.title}{"\n"}{t.text}</TranslationText>}</View>;})}
+ <RestaurantSourceReferences references={row.references??[]} language={language} showTranslation={showTranslation}/>
  {row.exam&&learner&&<Action text="練習問題" language={language} testID={`source31-open-${lesson.id}`} onPress={()=>setOpen(true)}/>}
  <Modal visible={open&&!!row.exam} animationType="none" onRequestClose={()=>closeAttempt.current()}>{open&&row.exam&&learner&&<SourceAttempt key={row.exam.sourceHash} row={row} exam={row.exam} learner={learner} language={language} closeAttempt={closeAttempt} onBack={()=>setOpen(false)}/>}</Modal>
- <Modal visible={zoom!==null} transparent animationType="none" onRequestClose={()=>setZoom(null)}>{zoom&&<View style={[s.zoom,{backgroundColor:colors.background}]}><Action text="戻る" language={language} onPress={()=>setZoom(null)}/><ScrollView horizontal><ScrollView>{row.figures.filter(f=>f.id===zoom).map(f=><Image key={f.id} source={sourceFigureAsset31(f)??undefined} resizeMode="contain" accessibilityLabel={showTranslation?sourceTarget31(f,language)?.alt??f.altJa:f.altJa} style={{width:Math.max(960,f.width),height:Math.max(960,f.width)*f.height/f.width}}/>)}</ScrollView></ScrollView></View>}</Modal>
+ <Modal visible={zoom!==null} transparent animationType="none" onRequestClose={()=>setZoom(null)}>{zoom&&<View style={[s.zoom,{backgroundColor:colors.background}]}><Action text="戻る" language={language} onPress={()=>setZoom(null)}/><ScrollView horizontal><ScrollView>{row.figures.filter(f=>f.id===zoom).map(f=><SourcePicture31 key={f.id} figure={f} label={showTranslation?sourceTarget31(f,language)?.alt??f.altJa:f.altJa} width={Math.max(960,f.cropBox?.width??f.width)}/>)}</ScrollView></ScrollView></View>}</Modal>
  </View>;
 }
 function SourceAttempt({row,exam,learner,language,closeAttempt,onBack}:{row:SourceLesson31;exam:RestaurantExam&{questions:SourceQuestion31[]};learner:string;language:string;closeAttempt:{current:()=>void};onBack:()=>void}){
@@ -37,7 +49,7 @@ function SourceAttempt({row,exam,learner,language,closeAttempt,onBack}:{row:Sour
  {state.error==='write'&&<><Text accessibilityRole="alert" style={{color:colors.text}}>{restaurantUi('回答を保存できませんでした。',language)}</Text><Action text="保存を再試行" language={language} onPress={()=>{void state.retry();}}/></>}
  {a.submitted&&result&&<Text testID="source31-result" style={{color:colors.text}}>{restaurantUi('正解',language)} {result.correct} / {result.total}</Text>}
  <Text style={{color:colors.text}}>{a.currentQuestion+1} / {exam.questions.length}</Text><RestaurantReading heading text={q.stemJa} segments={q.furigana?.stem}/>{t?.stem&&<TranslationText>{t.stem}</TranslationText>}
- {(q.figureIds??[]).flatMap(id=>row.figures.filter(f=>f.id===id&&f.quizSafe)).map(f=><Image key={f.id} source={sourceFigureAsset31(f)??undefined} accessibilityLabel="設問の図" resizeMode="contain" style={{width:"100%",aspectRatio:f.width/f.height}}/>)}
+ {(q.figureIds??[]).flatMap(id=>row.figures.filter(f=>f.id===id&&f.quizSafe)).map(f=><SourcePicture31 key={f.id} figure={f} label="設問の図"/>)}
  {q.optionsJa.map((option,i)=><View key={i}><Pressable testID={`source31-option-${i}`} accessibilityRole="button" accessibilityLabel={`${i+1}. ${option}`} accessibilityState={{selected:a.answers[a.currentQuestion]===i,disabled:a.submitted}} disabled={a.submitted||state.saving} style={[s.button,{borderColor:colors.border,backgroundColor:a.answers[a.currentQuestion]===i?colors.translation:colors.background}]} onPress={()=>{void state.update(current=>{const answers=[...current.answers];answers[current.currentQuestion]=i;return {...current,answers};});}}><RestaurantReading text={`${i+1}. ${option}`} segments={q.furigana?.options?.[i]?[{text:`${i+1}. `},...q.furigana.options[i]]:undefined}/></Pressable>{t?.options?.[i]&&<TranslationText>{t.options[i]}</TranslationText>}</View>)}
  {a.submitted&&<View testID="source31-review"><Text style={{color:colors.text}}>{restaurantUi('正解',language)}：{q.correctIndex+1}</Text><RestaurantReading text={q.explanationJa} segments={q.furigana?.explanation}/>{t?.explanation&&<TranslationText>{t.explanation}</TranslationText>}{q.optionReasonsJa.map((reason,i)=><View key={i}><RestaurantReading text={`${i+1}. ${reason}`} segments={q.reasonRuby?.[i]?[{text:`${i+1}. `},...q.reasonRuby[i]]:undefined}/>{t?.reasons?.[i]&&<TranslationText>{i+1}. {t.reasons[i]}</TranslationText>}</View>)}</View>}
  <Action text="前へ" language={language} disabled={a.currentQuestion===0||state.saving} onPress={()=>{void state.update(current=>({...current,currentQuestion:current.currentQuestion-1}));}}/><Action text="次へ" language={language} disabled={a.currentQuestion===exam.questions.length-1||state.saving} onPress={()=>{void state.update(current=>({...current,currentQuestion:current.currentQuestion+1}));}}/>

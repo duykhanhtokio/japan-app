@@ -6,7 +6,7 @@ import json,hashlib,re,collections
 P=Path(__file__).resolve().parent;ROOT=P.parents[4];H=lambda b:hashlib.sha256(b).hexdigest()
 def main():
  j=json.loads((P/'packet.json').read_text());u={x['unitId']:x for x in j['units']};f={x['id']:x for x in j['facts']};a={x['id']:x for x in j['additions']};q={x['id']:x for x in j['questions']};fig={x['id']:x for x in j['figures']}
- assert len(u)==91 and len(f)==130 and len(a)==23 and len(q)==22 and len(fig)==8
+ assert len(u)==91 and len(f)==131 and len(a)==23 and len(q)==22 and len(fig)==8
  ledger=json.loads((ROOT/'docs/ssw-workspace/restaurant/knowledge-ledger.json').read_text());expected={x['id']for x in ledger['units']if any(r['documentId']=='rst-1-hygiene'for r in x['sourceRefs'])};assert set(u)==expected
  lock=json.loads((P.parent/'source-lock.json').read_text());d=next(d for d in lock['documents']if d['documentId']=='rst-1-hygiene');assert j['pdfSha256ByDocument']['rst-1-hygiene']==d['pdfSha256']
  assert len(j['pages'])==45 and {p['pdfPage']for p in j['pages']}==set(range(1,46))
@@ -39,6 +39,6 @@ def main():
   assert not x['remainingFactGaps']and not x['remainingImageGaps']and not x['assessmentGap']
  assert all(j['acceptance'][k]is False for k in ['humanReviewed','nativeReviewed','domainReviewed','physicalDeviceTested'])
  assert not j['acceptance']['unresolved'] and j['acceptance']['integrationPending']
- result={'result':'PASS','pages':45,'units':91,'facts':130,'additions':23,'questions':22,'optionSpecificReasons':88,'figures':8,'unitDecisionCounts':dict(collections.Counter(x['decision']for x in u.values())),'exactFactAssessmentStates':{'factsWithExistingOrNewQuestion':sum(bool(x['questionIds'])for x in f.values()),'taughtFactsWithoutStandaloneQuestion':sum(not x['questionIds']for x in f.values())},'allExaminableUnitsHaveExactCompetencyQuestionEdges':True,'pixelReview':'AI actually inspected8finalrasterassets; handpalmtopalmerrorcorrectedandreinspected','physicalDeviceTested':False,'packetSha256':H((P/'packet.json').read_bytes()),'integrationPending':True}
+ result={'result':'PASS','pages':45,'units':91,'facts':131,'additions':23,'questions':22,'optionSpecificReasons':88,'figures':8,'unitDecisionCounts':dict(collections.Counter(x['decision']for x in u.values())),'exactFactAssessmentStates':{'factsWithExistingOrNewQuestion':sum(bool(x['questionIds'])for x in f.values()),'taughtFactsWithoutStandaloneQuestion':sum(not x['questionIds']for x in f.values())},'allExaminableUnitsHaveExactCompetencyQuestionEdges':True,'pixelReview':'AI actually inspected8finalrasterassets; handpalmtopalmerrorcorrectedandreinspected','physicalDeviceTested':False,'packetSha256':H((P/'packet.json').read_bytes()),'integrationPending':True}
  (P/'validation.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps(result))
 if __name__=='__main__':main()

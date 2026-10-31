@@ -165,5 +165,4 @@ for u in ledger:
  packet['units'].append(dict(unitId=u['id'],decision=decision,factIds=facts,childUnitIds=children,reason=reason,remainingFactGaps=[],remainingImageGaps=[]))
 assert len(packet['units'])==128 and all(u['factIds'] for u in packet['units'])
 # Insert further atomized table facts, exercises and source conflict receipt below.
-(OUT/'packet-work.json').write_text(json.dumps(packet,ensure_ascii=False,indent=2)+'\n')
 print('WORK',len(packet['facts']),len(packet['additions']))

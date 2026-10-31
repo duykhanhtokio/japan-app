@@ -1,3 +1,9 @@
+# Nhà hàng — tích hợp toàn bộ gói Nhật source31, 2026-10-31
+
+132 giải thích,190 câu luyện tập,144 lượt hình vào92 bài;639 mục/271 trang có đối chiếu theo hồ sơ tác giả. Còn6gap và12locale bản dịch mới chưa đủ; chưa fullfurigana/Expo/native/chuyên môn. Xem source-closure31/REPORT.vi.md, build-validation.json, translation-integration.json và browser-qa/report.json. Giữ nguyên ngân hàng và tiến độ cũ. Cần xác minh remote trước tuyên bố lưu.
+
+---
+
 # Nhà hàng — source31 tích hợp từng phần, 2026-10-31
 
 Xem `source-closure31/REPORT.vi.md`, `build-validation.json`, `unit-crosswalk.json` và `integration-qa.json`. 5 gói/219 trang đã nối vào75 bài:104 giải thích,149 câu,58 hình. Còn92 mục thiếu packet cooking-service2,88 mục có blocker/gap,12locale phần mới chưa dịch. Giữ nguyên ngân hàng và tiến độ gốc. Chưa nghiệm thu Expo/thiết bị/chuyên môn/bản ngữ. Cần commit/push/fetch/persistence trước khi coi đã lưu remote.

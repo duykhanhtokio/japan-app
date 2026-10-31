@@ -98,7 +98,7 @@ F('assist-dog-types',20,18,7,'supportMarks','補助犬には盲導犬・介助�
 F('assist-dog-acceptance',20,18,7,'mistakes','補助犬を普通のペットと一律に扱って断らず、受入れに対応する',[39])
 F('assist-dog-identification',20,18,7,'@6','盲導犬のハーネス、介助犬や聴導犬の表示は確認の手がかりになる；確認が必要な時は使用者へ認定証等を丁寧に確認する')
 F('assist-dog-no-distraction',20,18,7,'supportMarks','仕事中の補助犬へ食べ物を与えたり注意をそらしたりしない',[201])
-F('marks',21,18,7,'@7','補助犬マークは補助犬を伴う人の受入れを知らせる手がかりである；耳マークは聞こえにくさへの配慮や対応を示す；オストメイトマークは人工肛門・人工膀胱を使用する人や対応設備に関係する；ハート・プラスマークは外から分かりにくい身体内部の障害を示す；ヘルプマークは外から分からなくても援助・配慮が必要なことを知らせる；マタニティマークは妊産婦への配慮につなげる')
+F('marks',21,18,7,'@7','補助犬マークは身体障害者補助犬法の理解を広めるためのマークである；耳マークは聞こえにくさへの配慮や対応を示す；オストメイトマークは人工肛門・人工膀胱を使用する人や対応設備に関係する；ハート・プラスマークは外から分かりにくい身体内部の障害を示す；ヘルプマークは外から分からなくても援助・配慮が必要なことを知らせる；マタニティマークは妊産婦への配慮につなげる')
 F('prompt-service',23,19,8,'knowledge','完成後も時間と温度が品質と衛生へ影響するため、適切な状態で速やかに提供する',[126])
 F('two-hour-limit',23,19,8,'mistakes','教材の二時間という目安だけで全食品の安全を保証しない',[216])
 F('leftover-policy',24,19,8,'procedure','食べ残しの持ち帰りは店の方針・保存・期限を確認して案内する',[55,213])
@@ -233,7 +233,7 @@ A={
 4:(5,'洋食の食べ方例と片付けを区別する','教材の食べ方例では、一部のデザートを除いて料理を左側から食べ、食べ残したものは皿の手前へまとめます。これは食事の作法を理解するための例で、客を急かす基準ではありません。担当者は料理の進行と道具やナプキンの状態を見て、下膳前に続けて召し上がるか確認します。',[15]),
 5:(7,'車椅子の型と席の条件を確認する','介助用車椅子は主に介助者が操作し、自走式車椅子は本人が車輪を操作して移動する型です。ただし、型だけで手助けの必要性を決めません。段差や通路、本人の希望を確認してから、店で安全にできる支援を考えます。机の高さや足元の空間が合えば、車椅子から移らずに利用できる席へ案内します。移動や移乗を本人に断りなく行ってはいけません。',[17]),
 6:(7,'補助犬の表示と書類を丁寧に確認する','盲導犬は白や黄色のハーネス、介助犬や聴導犬は種類などの表示が見分ける手がかりです。厚生労働省の案内では、使用者は認定証等と健康管理の記録を携帯します。補助犬かどうかの確認が必要な時は、本人へ理由を伝え、認定証などを丁寧に確認します。犬を呼び寄せて試したり、本人を置いて犬だけを動かしたりする方法ではありません。',[18]),
-7:(7,'六つのマークの意味を支援へつなぐ','補助犬マークは補助犬を伴う方の受入れ、耳マークは聞こえにくさへの配慮を考える手がかりです。オストメイトマークは人工肛門・人工膀胱を使う方や対応する設備、ハート・プラスマークは外から分かりにくい身体内部の障害に関係します。ヘルプマークは外見では分からなくても援助や配慮が必要なことを知らせ、マタニティマークは妊産婦への配慮につなげます。病名を決めつけず、筆談、設備の案内、休める席など、必要な対応を本人へ尋ねます。',[18]),
+7:(7,'六つのマークの意味を支援へつなぐ','補助犬マークは身体障害者補助犬法の理解を広めるもので、耳マークは聞こえにくさへの配慮を考える手がかりです。オストメイトマークは人工肛門・人工膀胱を使う方や対応する設備、ハート・プラスマークは外から分かりにくい身体内部の障害に関係します。ヘルプマークは外見では分からなくても援助や配慮が必要なことを知らせ、マタニティマークは妊産婦への配慮につなげます。病名を決めつけず、筆談、設備の案内、休める席など、必要な対応を本人へ尋ねます。',[18]),
 8:(8,'テイクアウトの数値は条件付きの例として読む','教材には冷却管理の例として10℃以下という数値があります。すべての料理を同じ温度・期限で扱えるという意味ではありません。実際には料理、調理後の経過、容器、保存方法などを責任者と確認し、店で定めた温度管理と食べる期限を伝えます。例えば保存方法の質問に答えられなければ、他の商品から数値を流用せず確認してから案内します。',[19]),
 9:(9,'丁寧な表現の役割を確かめる','席へ近づく時だけでなく離れる時も「失礼いたします」と声をかける例があります。「存じ上げております」は知っている内容を丁寧に述べる表現、「そうさせていただきます」は相手の了承などを踏まえて行う内容を述べる表現です。丁寧に聞こえる語を機械的に足さず、事実と許可の有無を確認します。お客様の呼び方では「奥様」「旦那様」「お使いの方」などの教材例もありますが、分かっている名前や本人が望む呼び方を尊重します。',[20,21]),
 10:(10,'電話は聞いていることを声で伝える','電話ではうなずきや表情が相手に見えません。相づちで聞いていることを伝え、分からない所は聞き返します。質問の前は「恐れ入りますが」、取次ぎの前は担当へつなぐことと待っていただくことを説明します。例えば連絡先の数字は復唱して記録し、聞こえたつもりで次の担当へ渡さないようにします。',[22]),
@@ -290,7 +290,7 @@ Q(['napkin'],5,'ナプキンの折り目と位置を理解する','ナプキン�
 Q(['wheelchair-types'],7,'車椅子の型から支援を決めつけない','介助用と自走式の車椅子について適切なのはどれか。',['介助用は主に介助者が操作するが、必要な支援は本人へ確認する','自走式なら段差があっても支援は絶対に不要','介助用なら本人を通さず必ず店員が押す','車椅子の型だけで移乗の可否を決める'],0,['型の特徴と本人への確認を分けている。','自走式でも環境により支援が必要になる。','本人の了承なしに操作しない。','移乗の判断は型だけではできない。'],'型は観察の手がかりであり、希望・段差・通路と安全な方法を確認する。')
 Q(['wheelchair-seat'],7,'車椅子のまま使える席を選ぶ','本人が車椅子のままでの食事を希望した。席で確認する条件はどれか。',['机の高さや足元の空間が合うか','椅子へ必ず移ってもらえるかだけ','車椅子の色が内装に合うかだけ','同行者がいるかだけで決める'],0,['実際に利用できる空間を確認する条件である。','希望を無視して必ず移乗させない。','色は使いやすさの条件ではない。','同行者の有無だけで決めない。'],'通路と机の条件を確かめ、本人が利用できる席へ案内する。')
 Q(['assist-dog-identification'],7,'補助犬の確認方法を選ぶ','補助犬であることの確認が必要になった。適切なのはどれか。',['犬に命令し従うか試す','本人へ丁寧に認定証等の確認をお願いする','表示を見ずすべてペットとして断る','犬を本人から離して別室で確認する'],1,['店員が仕事を妨げて試す方法ではない。','厚生労働省の案内に沿う確認方法である。','補助犬の受入れを一律に拒まない。','本人と犬を無断で引き離さない。'],'表示や必要な書類を本人へ確認し、犬の注意を引く行動は避ける。')
-Q(['marks'],7,'支援マークの異なる意味を区別する','人工肛門・人工膀胱を使う方や対応するトイレ設備に関係するマークはどれか。',['耳マーク','オストメイトマーク','マタニティマーク','補助犬マーク'],1,['聞こえにくさへの配慮に関係する。','オストメイトの方や対応設備に関係する。','妊産婦への配慮に関係する。','補助犬を伴う方の受入れに関係する。'],'マーク名だけを暗記せず、設備案内などどの対応へつなぐかを確認する。')
+Q(['marks'],7,'支援マークの異なる意味を区別する','人工肛門・人工膀胱を使う方や対応するトイレ設備に関係するマークはどれか。',['耳マーク','オストメイトマーク','マタニティマーク','補助犬マーク'],1,['聞こえにくさへの配慮に関係する。','オストメイトの方や対応設備に関係する。','妊産婦への配慮に関係する。','身体障害者補助犬法の理解を広める趣旨である。'],'マーク名だけを暗記せず、設備案内などどの対応へつなぐかを確認する。')
 Q(['marks'],7,'内部障害の表示を理解する','ハート・プラスマークの説明として合うのはどれか。',['外から分かりにくい身体内部の障害を示す','聞こえない方だけを表す','妊娠している方だけを表す','補助犬の種類を証明する'],0,['身体内部の障害への理解につなぐ。','聞こえにくさの耳マークと混同している。','妊産婦のマタニティマークと混同している。','補助犬の表示や書類を代替するものではない。'],'外見で健康状態を判断せず、必要な配慮を本人へ尋ねる。')
 Q(['marks'],7,'ヘルプマークの条件を理解する','ヘルプマークを示す方への理解として適切なのはどれか。',['見た目で困っていなければ配慮は不要','援助や配慮が必要なことが外から分からない場合もある','すべての着用者は同じ病気である','身体障害者用設備の場所だけを示す'],1,['外見で必要性を否定しない。','見えにくい配慮の必要性を知らせる趣旨に合う。','特定の病気だけを示すものではない。','施設の場所だけを示すマークではない。'],'支援の内容を一律に決めず、困っている様子なら希望を尋ねる。')
 Q(['allergy-label-scope'],11,'表示制度の改正日と経過措置を理解する','2026年4月改正のカシューナッツ表示について適切なのはどれか。',['特定原材料へ加わったが経過措置中は表示だけで不使用と決めない','飲食店のすべての料理に包装食品と全く同じ表示義務が生じた','以前の八品目の一覧だけで原材料確認を終える','表示がなければ共用器具の確認も不要になる'],0,['追加と経過措置の両方を踏まえた判断である。','包装加工食品の制度と外食の情報提供を混同している。','旧資料だけでは改正と原材料の変更を見落とす。','表示だけで混入の可能性を否定しない。'],'日付と対象を確かめ、最新の仕入情報と工程を照会する。')
@@ -304,6 +304,9 @@ Q(['choking'],19,'十分な咳が可能な時の対応を選ぶ','食べ物が�
 Q(['earthquake-cover'],20,'揺れの最中に身を守る場所を選ぶ','強い揺れが続いている。落下物から身を守る場所の基本はどれか。',['丈夫なテーブルの下など危険物が落ちない空間','ガラス窓のすぐ前','高く積んだ食器棚の横','熱い鍋のある作業台の近く'],0,['落下・転倒・移動の危険を避ける場所を選ぶ。','割れたり落ちたりする危険がある。','棚や物の落下・転倒の危険がある。','熱い物が飛び出す危険がある。'],'まず身の安全を確保し、揺れが収まってから周囲と避難経路を確認する。')
 Q(['fire-withdraw'],20,'初期消火の中止条件を理解する','初期消火中に炎が天井へ達し、煙で見通しも悪くなった。どうするか。',['消火器が空になるまで必ず続ける','道具を取りに火元へ近づく','消火を続けず避難を優先する','客に消火を交代してもらう'],2,['危険が増してから残量を使い切ることを優先しない。','火元へ近づいて危険を増やさない。','初期消火が困難になる条件として避難を優先する。','客へ危険な消火を任せない。'],'天井への延焼や視界の悪化は消火を続ける根拠ではない。安全な経路へ避難し戻らない。')
 Q(['fire-low'],20,'煙を避ける避難姿勢を選ぶ','煙のある場所から安全な避難経路へ案内する時、基本として適切なのはどれか。',['できるだけ低い姿勢で避難する','煙を確認するため顔を高く上げ続ける','タオルを探し終わるまで全員を待たせる','エレベーターなら必ず煙を避けられると案内する'],0,['煙を吸い込みにくくする基本に合う。','上方にたまりやすい煙へ顔を近づけない。','物を探すため避難を遅らせない。','火災時にエレベーターへ一律に誘導しない。'],'低い姿勢で安全な経路へ進み、持ち物のため遅れたり避難後に戻ったりしない。')
+# Existing rst-1-q357 already tests the same escalation choice; do not add a paraphrased duplicate.
+newq=[q for q in newq if q['id']!='rst31-service1-q022']
+for f in facts:f['questionIds']=[q for q in f['questionIds'] if q!='rst31-service1-q022']
 # Independent visual review is recorded only after the final pixels have actually been viewed.
 figures=J('docs/ssw-workspace/restaurant/source-closure31/service1/figures.json')
 for fig in figures:
@@ -361,6 +364,82 @@ for i,r in enumerate(raw,1):
  glossaryCrosswalk.append(row)
 missing=[r for r in glossaryCrosswalk if not r['existingEntryId']];assert [r['canonicalTermJa'] for r in missing]==['ジェネヴァ']
 glossaryAdditions=[{'id':'rst31-service1-term-genever','termJa':'ジェネヴァ','reading':'じぇねゔぁ','explanationJa':'教材でジンの種類の例として挙げられる名称。提供する商品の種類や原料はメニューと表示で確認する。','lessonIds':['rst-1-svc-12'],'unitIds':['rst-1-service-k037','rst-1-service-ref01'],'factIds':['rst31-service1-gin-family'],'sourceRefs':ref([25,45],'ジンの名称例・索引'),'existingTeachingEvidence':{'path':'src/data/restaurant/lessons.1.ja.json','lessonId':'rst-1-svc-12','paragraphId':'beverage-subtype-families'},'nativeReviewed':False,'domainReviewed':False,'humanReviewed':False}]
+# Official specimens retained byte-for-byte; source-book artwork is never copied.
+official=J('docs/ssw-workspace/restaurant/source-closure31/service1/official-assets.json')
+for g in official:
+ g['factIds']=[f['id'] for f in facts if f['id'] in ['rst31-service1-banknote-values','rst31-service1-currency-old','rst31-service1-coin-values']]
+ g.pop('factTags',None);g['authorPixelReviewed']=True
+ g['scopeLimits']='公式の低解像度見本。額面・図柄の比較用で真贋判定・実寸印刷用ではない。全ての歴史的な券種は網羅しない。'
+ if 'mof-2004-' in g['assetFile']:
+  side='表' if g['assetFile'].endswith('-11.jpg') else '裏'
+  g['captionJa']='2004年発行開始の旧様式紙幣の'+side+'の公式見本。額面表示と図柄を確認する。出典：財務省。'
+  g['altJa']=g['captionJa']
+ figures.append(g)
+marks=[J('docs/ssw-workspace/restaurant/source-closure31/service1/official-mark.json')]+J('docs/ssw-workspace/restaurant/source-closure31/service1/official-more-marks.json')
+for g,num in zip(marks,[1,3,6]):
+ g.pop('factTags',None);g['factIds']=[f'rst31-service1-marks-{num:02}'];g['authorPixelReviewed']=True
+ if num==6:g['altJa']='ピンク色のハートの中に母子を描いた公式マタニティマーク。'
+ figures.append(g)
+ for f in facts:
+  if f['id'] in g['factIds']:f['visualEvidence'].append({'kind':'official_unchanged_asset','figureId':g['id'],'assetFile':g['assetFile'],'authorPixelReviewed':True})
+text='紙幣は額面の数字と図柄を一緒に確認します。2024年発行開始の券は、一万円の表が渋沢栄一・裏が東京駅、五千円の表が津田梅子・裏がフジ、千円の表が北里柴三郎・裏が富嶽三十六景の神奈川沖浪裏です。旧様式の福沢諭吉・樋口一葉・野口英世の券や二千円券も区別します。二千円券は表が守礼門、裏が源氏物語に関係する図柄です。新券の発行だけを理由に旧券を使えないと判断しません。硬貨は一・五・十・五十・百・五百円の数字を読み、五円と五十円には穴があることを公式の表裏画像で比較します。五百円にも新旧の図柄があるため、色だけで額面や有効性を決めません。会計では客から預かった額を読み上げ、機器や店の確認手順を使います。画像は財務省が公開する見本で、真贋判定の教材ではありません。'
+aid='rst31-service1-a019'
+additions.append({'id':aid,'lessonId':'rst-1-svc-17','titleJa':'公式見本で紙幣と硬貨を見分ける','textJa':text,'unitIds':['rst-1-service-k053'],'factIds':[],'sourceRefs':ref([32,33],'現金の図柄と現在の公式見本'),'externalEvidenceIds':['mof-current-currency'],'authoredTextSha256':H(text.encode()),'humanReviewed':False,'nativeReviewed':False,'domainReviewed':False})
+external.append({'id':'mof-current-currency','authority':'財務省','url':'https://www.mof.go.jp/policy/currency/index.html','checkedAt':'2026-10-31','method':'official_image_bytes_and_context_read','verificationJa':'新旧紙幣・二千円券と硬貨の公式見本を取得し、実際の画像を確認。財務省の利用規約・通貨画像利用案内を別記。'})
+for i,statement in enumerate(text.split('。')[:-1],1):
+ fid=f'rst31-service1-currency-visual-{i:02}'
+ facts.append({'id':fid,'unitIds':['rst-1-service-k053'],'statementJa':statement+'。','sourceRefs':ref([32,33],'教材の額面識別を公式現行・旧様式見本で補足'),'existingEvidence':[],'additionIds':[aid],'questionIds':[],'visualEvidence':[{'kind':'official_unchanged_assets','figureIds':[g['id'] for g in official],'authorPixelReviewed':True}],'decision':'covered_after_additions','exclusionReason':None,'externalEvidenceIds':['mof-current-currency']});additions[-1]['factIds'].append(fid)
+for g in official:g['factIds']+=additions[-1]['factIds']
+# Each specimen demonstrates only its observable face, not unrelated legal/procedural assertions.
+for g in official:
+ name=g['assetFile'];nums=[1]
+ if '2024' in name:nums.append(2)
+ if '2004' in name:nums.append(3)
+ if '2000-2000' in name:nums.extend([3,4])
+ if 'coin-' in name:nums.append(6)
+ if 'coin-500' in name:nums.append(7)
+ g['factIds']=[f'rst31-service1-currency-visual-{n:02}' for n in nums]
+for f in facts:
+ if f['id'].startswith('rst31-service1-currency-visual-'):
+  matching=[g['id'] for g in official if f['id'] in g['factIds']]
+  f['visualEvidence']=([{'kind':'official_unchanged_assets','figureIds':matching,'authorPixelReviewed':True}] if matching else [])
+
+# Link-only for marks whose reporting/permission conditions have not been fulfilled.
+figures=[g for g in figures if g['id'] not in ['rst31-service1-official-assistance-law','rst31-service1-official-maternity']]
+for f in facts:f['visualEvidence']=[v for v in f['visualEvidence'] if v.get('figureId') not in ['rst31-service1-official-assistance-law','rst31-service1-official-maternity']]
+marklinks=[('assistance','ほじょ犬マーク','https://www.mhlw.go.jp/stf/newpage_15684.html',1,'利用後報告の履行をまだ確認できないためリンクのみ。'),('ear','耳マーク','https://www.zennancho.or.jp/mimimark/mimimark/',2,'ウェブ媒体等の事前許諾を得ていないためリンクのみ。'),('ostomate','オストメイト','https://www8.cao.go.jp/shougai/mark/mark.html',3,'教育用図記号の公式原画像を出典付きで別に掲載。'),('heart','ハート・プラスマーク','https://h-plus-hp.normanet.ne.jp/DL.html',4,'商用利用条件の適合が未確認のためリンクのみ。'),('help','ヘルプマーク','https://www.fukushi.metro.tokyo.lg.jp/shougai/shougai_shisaku/helpmark',5,'事前使用報告を送っていないためリンクのみ。'),('maternity','マタニティマーク','https://sukoyaka21.cfa.go.jp/maternitymark/',6,'利用後報告の履行をまだ確認できないためリンクのみ。')]
+officialReferenceLinks=[]
+for slug,title,url,num,why in marklinks:
+ officialReferenceLinks.append({'id':'rst31-service1-link-'+slug,'lessonId':'rst-1-svc-07','titleJa':title+'を公式ページで確認','textJa':title+'の正式な形と説明を、権利者・行政の公式ページで確認します。','url':url,'factIds':[f'rst31-service1-marks-{num:02}'],'sourceRefs':ref(18,'配慮に関係するマーク'),'rightsReason':why,'offlineVisualGap':num!=3})
+aid='rst31-service1-a020'
+text='窒息が疑われたら、処置が終わるのを待たず119番通報と応援を依頼します。反応のある成人では、まず背部叩打法、効果がなければ腹部突き上げ法という区別があります。背部叩打法は左右の肩甲骨の間を手の付け根でたたく方法です。腹部突き上げ法を乳児・妊婦・高度な肥満の方へ一律に行ってはいけません。乳児には別の方法があり、最新の公式資料と講習で対象に合う方法を確認します。反応がなくなったら、未通報なら119番通報し、心肺蘇生の手順へ移ります。反応がなくても普段どおりの呼吸がある場合は回復体位で横向きにし、状態を見守るという区別があります。店では公式動画で理論を確認し、実技講習で姿勢や力を練習します。模式図だけで手技の習得を認定しません。'
+additions.append({'id':aid,'lessonId':'rst-1-svc-19','titleJa':'窒息の手技と反応による切替','textJa':text,'unitIds':['rst-1-service-k065'],'factIds':[],'sourceRefs':ref(40,'窒息と反応の条件を現行資料で補う'),'externalEvidenceIds':['fdma-choking','cfa-2026-choking'],'authoredTextSha256':H(text.encode()),'humanReviewed':False,'nativeReviewed':False,'domainReviewed':False})
+for i,t in enumerate(text.split('。')[:7],1):
+ fid=f'rst31-service1-choking-method-{i:02}'
+ facts.append({'id':fid,'unitIds':['rst-1-service-k065'],'statementJa':t+'。','sourceRefs':ref(40,'背部叩打と現行の対象・反応条件'),'existingEvidence':[],'additionIds':[aid],'questionIds':[],'visualEvidence':[],'decision':'covered_after_additions','exclusionReason':None,'externalEvidenceIds':['fdma-choking','cfa-2026-choking']});additions[-1]['factIds'].append(fid)
+external.append({'id':'cfa-2026-choking','authority':'こども家庭庁・政府広報','url':'https://www.cfa.go.jp/policies/child-safety-actions/handbook/content-7','additionalUrl':'https://www.gov-online.go.jp/article/202212/entry-9901.html','checkedAt':'2026-10-31','method':'primary_authority_search_text_read','verificationJa':'2026年公開の乳児手技資料はJRC2025を明記。乳児の具体的な指の本数を旧消防庁ページから転載せず、最新版へ接続。政府広報の腹部突き上げ対象外条件も確認。'})
+for g in J('docs/ssw-workspace/restaurant/source-closure31/service1/firstaid-figures.json'):
+ g.pop('factTags',None);g['factIds']=['rst31-service1-choking-01','rst31-service1-choking-02'] if g['id'].endswith('009') else ['rst31-service1-choking-method-02','rst31-service1-choking-method-03','rst31-service1-choking-method-06'];g['authorPixelReviewed']=True;figures.append(g)
+ for f in facts:
+  if f['id'] in g['factIds']:f['visualEvidence'].append({'kind':'new_independent_controlled_diagram','figureId':g['id'],'authorPixelReviewed':True,'scopeLimits':g['scopeLimits']})
+for slug,title,num,fids in [('choking-conscious','気道異物の除去（反応がある場合）',22,['rst31-service1-choking-method-02','rst31-service1-choking-method-03']),('choking-unresponsive','気道異物の除去（反応がない場合）',23,['rst31-service1-choking-method-06']),('recovery','回復体位',25,['rst31-service1-choking-method-07'])]:
+ officialReferenceLinks.append({'id':'rst31-service1-link-'+slug,'lessonId':'rst-1-svc-19','titleJa':title+'の公式教材','textJa':'消防庁の公式動画教材で、対象・姿勢・手順を確認します。実技の習得は救命講習で練習します。','url':f'https://www.fdma.go.jp/relocation/kyukyukikaku/oukyu/05kobetsu/01/05_01_{num:02}.html','factIds':fids,'sourceRefs':ref(40,'窒息の応急手当'),'rightsReason':'消防庁はリンク自由・連絡不要と明示。動画の転載や変更はしない。','offlineVisualGap':True,'videoPlaybackReviewedByAuthor':False})
+officialReferenceLinks.append({'id':'rst31-service1-link-infant-current','lessonId':'rst-1-svc-19','titleJa':'乳児の方法を最新の公式教材で確認','textJa':'乳児は成人と方法が異なります。JRC2025に基づくこども家庭庁の最新図と公式動画への案内を確認します。','url':'https://www.cfa.go.jp/policies/child-safety-actions/handbook/content-7','factIds':['rst31-service1-choking-method-04','rst31-service1-choking-method-05'],'sourceRefs':ref(40,'対象別の手技'),'rightsReason':'公式ページへのリンク。イラストや動画を転載しない。','offlineVisualGap':True})
+
+F('source-backblow-count',65,40,19,None,'肩甲骨付近を四～五回たたくという元教材の回数例',excluded='回数だけで終了・通報を遅らせる一律手順へしない。反応・対象に応じた公式教材と通報優先の現行説明へ接続する。')
+newq.append({'id':'rst31-service1-q029','lessonId':'rst-1-svc-19','unitIds':['rst-1-service-k065'],'factIds':['rst31-service1-choking-method-02','rst31-service1-choking-method-04'],'objectiveJa':'成人の手技を全対象へ一般化しない','stemJa':'窒息の手当について正しい理解はどれか。','optionsJa':['成人の腹部突き上げ法を乳児にも同じように行う','妊婦にも体型に関係なく腹部突き上げ法を行う','対象や反応によって方法が異なり、乳児には別の方法を確認する','反応がなくなっても立たせたまま同じ方法を続ける'],'correctIndex':2,'optionReasonsJa':['乳児には別の方法があり成人の方法を一般化しない。','妊婦は腹部突き上げ法の対象外条件に含まれる。','対象・反応別に確認する理解が適切。','反応消失時は心肺蘇生の手順へ切り替える。'],'explanationJa':'119番通報を遅らせず、対象と反応の状態に合う公式の手順を用いる。理論図だけで実技習得を認定しない。','sourceRefs':ref(40,'対象別の気道異物除去')})
+reusedFigureBindings=[{'figureId':'rst31-cs2-fig-emergency-roles','assetFile':'assets/restaurant/source31/cooking-service2/emergency-roles.png','lessonId':'rst-1-svc-19','factIds':['rst31-service1-choking-method-06'],'sourceRefs':ref(40,'反応消失時の通報・AEDの応援'),'authorPixelReviewed':True,'scopeLimit':'通報・AEDの手配と誘導の役割だけ。手技・パッド位置を教える図ではない。'}]
+
+# Assessment statements describe the competency actually tested, never all neighbouring atoms.
+for q in newq:
+ ids=q['factIds'][:]
+ narrow={'rst31-service1-q029':'rst31-service1-choking-method-04','rst31-service1-q015':'rst31-service1-marks-03','rst31-service1-q016':'rst31-service1-marks-04','rst31-service1-q017':'rst31-service1-marks-05'}
+ q['testedFactIds']=[narrow[q['id']]] if q['id'] in narrow else ids
+ q['coverageLimit']='この設問の場面・選択肢で確認する代表的な判断。関連する全ての用語・実技・図柄の網羅的評価ではない。'
+for f in facts:
+ f['newAssessmentTestedBy']=[q['id'] for q in newq if f['id'] in q['testedFactIds']]
+ f['assessmentCoverage']='representative_existing_or_new_question' if f['newAssessmentTestedBy'] or any(e['kind']=='assessment' for e in f['existingEvidence']) else 'not_individually_assessed'
+
 # Explicit tree, preserving chapter/section boundaries instead of promoting broad parents.
 children={1:[2,6,12,16,22,26],2:[3,4,5],6:[7,8,9,10,11],12:[13,14,15],16:[17,18,19,20,21],22:[23,24,25],26:[27,28,29,30,31],32:[33,36,39,40,41],33:[34,35],36:[37,38],41:[42,43],44:[45,48,52],45:[46,47],48:[49,50,51],52:[53,54],55:[56,59],56:[57,58],59:[60,61,62],63:[64,66],64:[65],66:[67,68]}
 unitFacts=collections.defaultdict(list)
@@ -380,15 +459,22 @@ for u in ledger:
  elif n is None:
   decision='structural_aggregate';reason='索引201行・200語を既存199語と新規ジェネヴァの経路へ照合。ごはんの重複一行と読み誤記を別記した。索引だけを新しい技能の証拠にしない。'
  elif n==21:
-  decision='blocked';reason='六つの意味の本文・設問を補ったが、正式な六つの記号の現物識別図は未統合。似た自作マークで代替して認識済みとしない。';remainImages=['六つの正式なマークについて権利・使用条件を確認した現物識別教材が未統合。']
+  decision='blocked';reason='六つの意味の本文・設問と公式形状へのリンクを補った。オストメイトの正式画像は掲載。他の五つは権利・報告条件を守ってリンクのみとし、オフライン現物識別の未完を別記する。';remainImages=['オストメイトのみ許容条件付き公式原画像を掲載。他の五マークは事前許諾・商用条件・事前/事後報告条件が未充足なので公式ページへリンクし、オフラインの形状識別は未完。']
  elif n==53:
-  decision='blocked';reason='額面と新旧資料の違いは説明・設問にあるが、現在と旧図柄の表裏の現物識別は不足。模式的な架空紙幣で閉じない。';remainImages=['現行・有効な旧図柄の紙幣と硬貨の表裏を、適法な原画像又は公式参照で識別する教材。']
+  decision='covered_after_additions';reason='財務省の変更なし公式見本28画像と、現行・旧様式・二千円券・六額面硬貨の比較説明を追加。学習上の識別であり真贋判定技能や実機表示検証を含まない。'
  elif n==65:
-  decision='blocked';reason='現行の通報順序・咳の条件・吐物処理を補い旧資料の一律飲水等を除外。年齢別の救命手技の実技・図の確認は別に必要。';remainFacts=['年齢別の気道異物除去・反応消失後の実技を、正式な救命講習で確認する範囲。'];remainImages=['救命手技の正確な実技図を未作成。概略図で手技の習得を認定しない。']
+  decision='covered_after_additions';reason='頁40の四症状を本文・補足へ対応。窒息判断と背部位置の独立理論図、対象・反応別の説明、正式な手技動画・最新乳児図へのリンクを追加。AIは実技習得を認定しない。';remainImages=['オフラインでは正式な手技動画と対象別の全姿勢を再生できない。オンライン公式教材へのリンクを提供。']
  else:
   decision='covered_after_additions' if any(f['id'] in ids and f['decision']=='covered_after_additions' for f in facts) else 'covered_existing'
   reason='担当単位の本文・表の区別・条件を事実へ分け、記した既存の段落・用語定義・設問又は独立した補足へ直接対応させた。人の実技・母語・専門家の認定は含まない。'
  units.append({'unitId':uid,'decision':decision,'factIds':ids,'reason':reason,'childUnitIds':[f'rst-1-service-k{c:03}' for c in children.get(n,[])],'remainingFactGaps':remainFacts,'remainingImageGaps':remainImages})
+# Keep learning, offline visual availability and practical certification as distinct axes.
+for u in units:
+ if u['unitId']=='rst-1-service-k021':
+  u['learningDecision']='covered_after_additions';u['visualDecision']='official_reference_links_with_offline_gaps';u['offlineVisualGap']=True;u['barrierAxis']='third_party_permission_or_usage_report'
+ if u['unitId']=='rst-1-service-k065':
+  u['learningDecision']='covered_after_additions';u['visualDecision']='original_theory_figures_and_official_method_links';u['offlineVisualGap']=True;u['practicalTrainingCertified']=False
+
 # Keep unresolved descendant references visible on structural aggregates.
 byunit={u['unitId']:u for u in units}
 def openchildren(uid):
@@ -406,7 +492,7 @@ pages=[]
 for page in sourceDoc['pages']:
  n=page['pdfPage'];file=pathlib.Path('/workspace/scratch/8c34e3cace7a/restaurant-source31-extracted/rst-1-service')/f'p{n:03}.txt';assert H(file.read_bytes())==page['textSha256']
  pages.append({'documentId':'rst-1-service','pdfPage':n,'textSha256':page['textSha256'],'textRead':True,'visualRead':True,'visualNotes':notes.get(n,'索引の語・読み・参照ページを行単位で照合。' if 43<=n<=48 else '表紙・目次・扉・前後記・権利表示を実際のレンダリングで確認し本文の知識量と混同しない。'),'role':'reference_index' if 43<=n<=48 else roles.get(n,'instructional_content'),'visualMethod':'四ページ比較レンダリングを実際に閲覧。11・12・18は単ページ原寸相当も閲覧。','factIds':[f['id'] for f in facts if any(n in r['pdfPages'] for r in f['sourceRefs'])]})
-packet={'schemaVersion':1,'shard':'service1','documentIds':['rst-1-service'],'baseCommit':'8a0ebfe5f799847ac1fd590a3b610cb0837f7667','pdfSha256ByDocument':{'rst-1-service':sourceDoc['pdfSha256']},'pages':pages,'units':units,'facts':facts,'additions':additions,'questions':newq,'figures':figures,'glossaryAdditions':glossaryAdditions,'glossaryCrosswalk':glossaryCrosswalk,'externalAuthorities':external,'sourceErrata':[{'pdfPages':[24],'issue':'八品目の表は2026年4月改正後の制度としては不足。','handling':'日付と経過措置を付けた九品目の補足へ接続。'},{'pdfPages':[25],'issue':'20歳未満を未成年と呼ぶ旧い表現。','handling':'現行の成年年齢と飲酒年齢を区別。既存本文は正しく対応。'},{'pdfPages':[46],'issue':'トレイの索引読みがといれ。','handling':'既存の正しいとれいを使用。'},{'pdfPages':[43,44,45,46,47,48],'issue':'索引は201物理行・200固有語。既存199語にはジェネヴァの経路がない。','handling':'ごはんの重複行は増語とせず、本文の既存説明へ新規語経路を追加。'}],'legacyDisplayedErrata':[],'reviewScope':{'all50TextPagesActuallyRead':True,'all50RenderedPagesActuallyViewed':True,'singlePageDetailViews':[11,12,18],'all8NewFinalPngsActuallyViewed':True,'existingRuntimeScreenshotReviewedThisBatch':False,'reusesExistingMealPlacement':True,'existingOrderingAndCuttingNotDuplicated':True,'sourceArtworkCopied':False,'newJapaneseFrozen':True,'translationsStarted':False,'existingLessonAndQuestionIdsUnchanged':True},'acceptance':{'aiSourceComparison':True,'humanReviewed':False,'nativeReviewed':False,'domainReviewed':False,'allAssignedUnitsDecided':len(units)==69,'unresolved':[{'unitId':u['unitId'],'factGaps':u['remainingFactGaps'],'imageGaps':u['remainingImageGaps']} for u in units if u['decision']=='blocked'],'runtimeIntegrationPending':True,'translationPendingLocales':['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']}}
+packet={'schemaVersion':1,'shard':'service1','documentIds':['rst-1-service'],'baseCommit':'8a0ebfe5f799847ac1fd590a3b610cb0837f7667','pdfSha256ByDocument':{'rst-1-service':sourceDoc['pdfSha256']},'pages':pages,'units':units,'facts':facts,'additions':additions,'questions':newq,'figures':figures,'officialReferenceLinks':officialReferenceLinks,'reusedFigureBindings':reusedFigureBindings,'glossaryAdditions':glossaryAdditions,'glossaryCrosswalk':glossaryCrosswalk,'externalAuthorities':external,'sourceErrata':[{'pdfPages':[24],'issue':'八品目の表は2026年4月改正後の制度としては不足。','handling':'日付と経過措置を付けた九品目の補足へ接続。'},{'pdfPages':[25],'issue':'20歳未満を未成年と呼ぶ旧い表現。','handling':'現行の成年年齢と飲酒年齢を区別。既存本文は正しく対応。'},{'pdfPages':[46],'issue':'トレイの索引読みがといれ。','handling':'既存の正しいとれいを使用。'},{'pdfPages':[43,44,45,46,47,48],'issue':'索引は201物理行・200固有語。既存199語にはジェネヴァの経路がない。','handling':'ごはんの重複行は増語とせず、本文の既存説明へ新規語経路を追加。'}],'legacyDisplayedErrata':[],'reviewScope':{'all50TextPagesActuallyRead':True,'all50RenderedPagesActuallyViewed':True,'singlePageDetailViews':[11,12,18],'all10NewFinalPngsActuallyViewed':True,'existingRuntimeScreenshotReviewedThisBatch':False,'reusesExistingMealPlacement':True,'existingOrderingAndCuttingNotDuplicated':True,'sourceArtworkCopied':False,'newJapaneseFrozen':True,'translationsStarted':False,'existingLessonAndQuestionIdsUnchanged':True},'acceptance':{'aiSourceComparison':True,'humanReviewed':False,'nativeReviewed':False,'domainReviewed':False,'allAssignedUnitsDecided':len(units)==69,'unresolved':[{'unitId':u['unitId'],'factGaps':u['remainingFactGaps'],'imageGaps':u['remainingImageGaps']} for u in units if u['decision']=='blocked'],'runtimeIntegrationPending':True,'translationPendingLocales':['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']}}
 (O/'packet.json').write_text(json.dumps(packet,ensure_ascii=False,indent=2)+'\n')
 summary={'pages':len(pages),'assignedUnits':len(units),'unitDecisions':dict(collections.Counter(u['decision'] for u in units)),'facts':len(facts),'factDecisions':dict(collections.Counter(f['decision'] for f in facts)),'additions':len(additions),'questions':len(newq),'figures':len(figures),'glossaryPhysicalRows':len(glossaryCrosswalk),'glossaryUniqueTerms':len(set(r['canonicalTermJa'] for r in glossaryCrosswalk)),'glossaryAdditions':len(glossaryAdditions),'packetSha256':H((O/'packet.json').read_bytes()),'humanReviewed':False,'nativeReviewed':False,'domainReviewed':False}
 (O/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n');print(json.dumps(summary,ensure_ascii=False))

@@ -1,9 +1,10 @@
 import type {RestaurantLesson,RestaurantExam,RestaurantQuestion,ReadingSegment} from './types';
 import {source31AssetByFile} from './source31-assets';
 export type SourceSection31={id:string;sourceHash:string;titleJa:string;textJa:string;factIds:string[];furigana?:{title?:ReadingSegment[];text?:ReadingSegment[]}};
-export type SourceFigure31={id:string;assetFile:string;sha256:string;width:number;height:number;captionJa:string;altJa:string;sourceHash:string;quizSafe?:boolean};
+export type SourceFigure31={id:string;assetFile:string;sha256:string;width:number;height:number;captionJa:string;altJa:string;sourceHash:string;quizSafe?:boolean;cropBox?:{x:number;y:number;width:number;height:number};cropBox?:{x:number;y:number;width:number;height:number}};
+export type SourceReference31={id:string;titleJa:string;textJa:string;url:string;sourceHash:string};
 export type SourceQuestion31=RestaurantQuestion&{level:'1'|'2';optionReasonsJa:string[];reasonRuby?:ReadingSegment[][];figureIds?:string[]};
-export type SourceLesson31={lessonId:string;lessonSourceHash:string;lessonSignature:string;sourceHash:string;sections:SourceSection31[];figures:SourceFigure31[];terms?:{id:string;termJa:string;reading:string;explanationJa:string;sourceHash:string}[];exam:(RestaurantExam&{questions:SourceQuestion31[]})|null};
+export type SourceLesson31={lessonId:string;lessonSourceHash:string;lessonSignature:string;sourceHash:string;sections:SourceSection31[];figures:SourceFigure31[];references?:SourceReference31[];terms?:{id:string;termJa:string;reading:string;explanationJa:string;sourceHash:string}[];exam:(RestaurantExam&{questions:SourceQuestion31[]})|null};
 type Pack={lessons:Record<string,SourceLesson31>};
 type Target={sourceHash:string;title?:string;text?:string;caption?:string;alt?:string;stem?:string;options?:string[];reasons?:string[];explanation?:string;objective?:string};
 const own=(v:object,k:string)=>Object.prototype.hasOwnProperty.call(v,k);

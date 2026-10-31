@@ -193,7 +193,7 @@ ADDITIONS=[
 ('a001','02',[52],'壁の清掃範囲を高さと頻度で決める','この資料の施設清掃例では、床から高さ1mまでの内壁を毎日の対象とする。調理台周辺は飛び散った残さが棚や壁に残りやすい。点検表には壁の範囲を示し、見える床だけを拭いて終了としない。湿式床は作業後、乾式床での水や残さは発見時に処理する。これは資料の清掃計画例であり、全施設に共通する法定寸法という意味ではない。'),
 ('a002','06',[93],'食品製造用水と飲用適の区分','資料の食品製造用水は、特定の食品の製造に用いる水の規格を表す。水道水のほか、該当する食品製造用水の規格を満たす水が含まれる。井戸水なら何でも該当するとせず、製造する食品に適用する規格と検査項目を施設管理者へ確認する。飲用に適する水という日常語だけで、特定食品の製造規格への適合を判断しない。'),
 ('a003','06',[95,97],'始業前の水と装置を別々に確かめる','資料の運用例は、水の状態を始業前に1日1回以上確認して記録し、飲用井戸等の殺菌・浄水装置は始業前に作動状態も確認する。残留塩素0.1ppm以上という記載は、その水・設備の管理条件として読む。食品への安全性を一つの測定だけで保証せず、検査・貯水槽清掃・装置点検と組み合わせる。色や濁り、異臭、災害による汚染の疑いがある水を、味見で検査しない。店では設備区分と公的指導に合う手順を確認する。'),
-('a004','10',[129,130,131,132],'健康被害の情報を記録し窓口へつなぐ','複数の客や医師から同じ食品による体調不良の連絡が来た、仕入先が海外製品の回収を知らせた、非加熱で食べる食品の自主検査から有害微生物が出た場合は、対象・時刻・ロットと連絡内容を保全し、責任者から保健所等へ相談する。加熱不足や包装不良による異味・異臭・かび、機械破損で金属や硬い樹脂が混入した疑いも、健康被害の可能性を否定できない情報である。現行施行規則の一般の製品では情報提供に努める規定があり、特定の保健用途食品等の別規定と区別する。古い教材の表現を、すべての事案に同じ罰則付き届出義務があるとの説明へ変えない。消費者には安全な調理法・保存法と確認できた食品情報を伝える。'),
+('a004','10',[129,130,131,132],'健康被害の情報を記録し窓口へつなぐ','複数の客や医師から同じ食品による体調不良の連絡が来た、仕入先が海外製品の回収を知らせた、非加熱で食べる食品の自主検査から有害微生物が出た場合は、対象・時刻・ロットと連絡内容を保全し、責任者から保健所等へ相談する。加熱不足や包装不良による異味・異臭・かび、機械破損で金属や硬い樹脂が混入した疑いも、健康被害の可能性を否定できない情報である。現行施行規則の一般の製品では情報提供に努める規定があり、特定保健用食品・機能性表示食品の対象営業者に関する別規定と区別する。古い教材の表現を、すべての事案に同じ罰則付き届出義務があるとの説明へ変えない。消費者には安全な調理法・保存法と確認できた食品情報を伝える。'),
 ('a005','10',[133,135],'緊急性の高いアレルギー症状への備え','食物アレルギーでは、皮膚や消化器の症状だけでなく、息苦しさ、のどや胸の締め付け、ぐったりする、意識がもうろうとするなど緊急性の高い状態がある。店員は原因の断定や診断を待たず、緊急性の高い症状がある時は119番へ連絡し、客を立たせたり歩かせたりせず、その場で救急隊を待つ。担当者は通報、案内、他の客への対応を分担する。医薬品の使用は客の処方と公的な緊急対応手順に沿い、独自の投薬指示を作らない。研修では公的マニュアルの症状表と役割を確認する。'),
 ('a006','10',[134],'2023年の表と2026年の制度を分けて読む','元資料の2023年の表では義務表示8品目は、えび、かに、小麦、そば、卵、乳、落花生、くるみであり、推奨20品目にはカシューナッツとまつたけが含まれる。この表は発行時点の学習資料である。消費者庁の2026年4月1日改正ではカシューナッツが特定原材料へ移り、9品目となった。表示切替えの経過措置は2028年3月31日までである。ピスタチオも推奨対象へ加わっているため、旧表の品目数だけを頼りに現在の原料を確認しない。対象は主として容器包装された加工食品であり、外食料理の案内と同じ制度とは限らない。店のメニュー情報は原料・調味料・混入可能性を確認し、知らないことを安全と言い切らない。'),
 ('a007','11',[138,139,140],'自主回収の届出事例と対象外を区別する','自主回収報告制度は、食品衛生法違反またはそのおそれがある製品の自主回収を行政へ知らせる制度であり、行政の回収命令とは別である。病原微生物汚染、成分規格不適合、添加物の使用基準違反、硬い異物、包装不良による腐敗等の事例を確認する。安全性に関する表示では、使用した小麦の表示漏れ、実際より長い消費期限、本来より高い保存温度の表示などが問題となる。届出の対象外は、単に数量が少ないことでは決まらない。不特定多数へ売られず容易に回収できることが明らかな場合や、消費者が食べないことが明らかな場合など、法令の条件に照らして窓口へ確認する。期限超過だけを理由に在庫や顧客への危害対応を省かない。'),
@@ -211,6 +211,8 @@ ADDITIONS += [
 
 ADDITIONS.append(('a016','17',[19,34],'監視票の欄と証拠を対応させる','参考票の冒頭では、施設・営業者・所在地、業種、食品や工程の特徴、採用するHACCPの方式、参照手引書、衛生責任者を識別する。その後に計画、必要な手順、教育、実施記録、定期検証を実物と対応させる。一般衛生の欄は責任者、施設、設備、水、防虫防鼠、ごみ・排水、取扱者、検食、回収等を確認する。重要工程の欄は危害分析、重要管理点、管理基準、監視、逸脱時の処置、検証、記録を追う。最後に講習会の受講や仕入・出荷、自主検査、特記事項、実施日と確認者を確かめる。対象外は無条件に満点とせず理由を確認して分母から外す。独自練習で、対象の配点6点と4点の得点が6点と0点、配点2点の項目が対象外なら、分母10点に対して分子6点で60％となる。この配点は練習用で、公式監視の合否や実際の配点を保証しない。'))
 ADDITIONS.append(('a017','11',[144],'配送の到着と食べる時刻を区別する','調理済み食品の配送は、出発から到着までだけでなく、客が実際に食べるまでの時間を見込む。たとえば時間内に弁当を届けても、会議が延びて食事が遅れるなら、その間の温度・保管方法と提供条件を確認する。積込み前の品温や予冷、途中の温度履歴、到着後の管理担当を決め、所定の条件を維持できない計画をそのまま実行しない。'))
+ADDITIONS.append(('a018','18',[3],'2022年の原因別割合は事件数の内訳である','資料の原因別図の分母は2022年の事件962件であり、患者6856人ではない。表示された割合は、アニサキス58.8％、カンピロバクター19.2％、ノロウイルス6.5％、植物性自然毒3.5％、サルモネラ属菌2.3％、ウェルシュ菌2.3％、動物性自然毒1.7％、ぶどう球菌1.6％、クドア1.1％、不明0.9％、腸管出血性大腸菌0.8％、セレウス菌0.3％、その他0.3％、その他の病原大腸菌0.2％、化学物質0.2％、その他の細菌0.1％である。割合は図に表示された丸め値で、足しても厳密に100％にならない。少数の区分でも個店のメニューと工程によって危害を評価し、順位だけで対策を除外しない。'))
+ADDITIONS.append(('a019','14',[5],'冷凍の効果は対象の危害で異なる','アニサキス等の対象寄生虫には適切な冷凍が有効だが、対象・温度・時間を確認する。細菌やウイルスまで一律に死滅するとの説明をしない。原資料の殺滅の原則は、対象に合う加熱等の処理と、加熱後の再汚染・増殖防止を組み合わせる学習である。'))
 ADDITIONS=[(a,ln,ns,title,text+('元資料では日常の官能項目に味も挙げているが、異常や汚染が疑われる水を飲んで確認する指示ではない。' if a=='a003' else '2023年表の推奨欄は、あわび、いか、いくら、オレンジ、カシューナッツ、キウイフルーツ、牛肉、ごま、さけ、さば、大豆、鶏肉、バナナ、豚肉、まつたけ、もも、やまいも、りんご、ゼラチン、アーモンドである。2026年4月の推奨20品目には旧表からカシューナッツとまつたけを外し、マカダミアナッツとピスタチオを含む。旧表との比較は年を付けて行い、仕入れ先の最新表示・仕様書で実際の原料を確かめる。' if a=='a006' else '')) for a,ln,ns,title,text in ADDITIONS if a!='a013']
 # Primary-source provenance for distinctions whose current wording differs from the2023 text.
 PRIMARY={
@@ -325,7 +327,10 @@ for a,ln,ns,title,text in ADDITIONS:
  aid='rst31-hygiene2-'+a;fid=f'rst31-hygiene2-f{len(facts)+1:03}';lessonId='rst-2-hyg-'+ln
  sentence_units={'a003':[[95],[97],[97],[95],[95],[95]],'a004':[[131],[132],[129],[129],[130]],'a005':[[133],[135],[135],[135],[135]],'a007':[[137],[138],[139],[140],[140],[140]],'a008':[[169],[189],[189],[189],[183]],'a009':[[5],[5],[6],[5,6]]}
  fids=[]
- for j,sentence in enumerate([t+'。' for t in text.split('。') if t]):
+ sentences=[t+'。' for t in text.split('。') if t]
+ if a=='a018':
+  pieces=sentences[1].removeprefix('表示された割合は、').removesuffix('である。').split('、');sentences=sentences[:1]+['2022年事件数の構成割合（図の表示値）：'+v+'。' for v in pieces]+sentences[2:]
+ for j,sentence in enumerate(sentences):
   fns=sentence_units.get(a,[])[j] if j<len(sentence_units.get(a,[])) else ns
   fid=f'rst31-hygiene2-f{len(facts)+1:03}';fids.append(fid)
   sr=refs(fns) if a!='a016' else [dict(documentId=D,pdfPages=[39,40],section='参考 食品衛生監視票の各欄と算式')]
@@ -401,6 +406,40 @@ for u in units:
 for f in facts:
  if f['decision']=='teaching_after_addition' and 'rst31-hygiene2-a016' in f['additionIds']:
   questions[-1]['factIds'].append(f['id'])
+q47=dict(id='rst31-hygiene2-q047',lessonId='rst-2-hyg-17',unitIds=[D+'-ref01',D+'-visual039',D+'-visual040'],factIds=[],testedFactIds=[],objectiveJa='参考票の識別欄と管理の証拠を対応させる。',stemJa='参考票を使って店を点検する。最初の施設情報と、続く管理項目の扱いとして適切なのはどれか。',optionsJa=['施設名と管理方式を確認し、計画・手順・教育・記録・検証を実物と照合する。','別店舗の票を施設名だけ変え、参照手引書や責任者の確認を省く。','一般衛生の記録があれば、重要工程の監視と逸脱時処置は対象から外す。','特記事項は得点に直結しないので、異常や対応を残さない。'],correctIndex=0,optionReasonsJa=['施設の識別と、管理項目を裏付ける実施の証拠を対応させる。','施設と手引書・責任者の対応が未確認である。','一般衛生と重要工程は組み合わせて管理する。','異常と対応は実施状況を判断する重要な記録になる。'],explanationJa='様式を埋めるだけでなく、対象施設の管理方式・責任体制と実際の記録や作業を照合する。参考票の点数をアプリの合否へ置き換えない。',sourceRefs=[dict(documentId=D,pdfPages=[39,40],section='参考票の識別欄・一般管理・重要工程・特記事項')],humanReviewed=False,nativeReviewed=False,domainReviewed=False)
+questions.append(q47)
+# AI-authored bounded assessment mapping: related context never means every atom tested.
+TESTED={1:[11,12,13,14,15],2:[38,41],3:[42,43,44,45],4:[48,50,208,212],5:[52,55],6:[56,57,58],7:[60,61,63,64,67],8:[75,76,77],9:[78,79,81,82],10:[83,84,85,86,88],11:[83,87,89],12:[98,100,102,103],13:[106,107,108,109],14:[113,114,115,116],15:[213,214,215,216],16:[120,217,219,220],17:[129,130,131,132],18:[133,135,136,137],19:[138,139,140,141],20:[143,144,148,150],21:[152,154,156,157],22:[224],23:[228,229,231],24:[161,235,236,237,242],25:[243,244,245,246,247,248],26:[31,165,167,287,288],27:[169,170,171,174],28:[175,176,177,178,180],29:[182,183,184,185],30:[207,251,252],31:[194,195,196,198],32:[200,201,202,203,204,206],33:[1],34:[96],35:[117,118,119],36:[225,226],37:[193,194,196,198],38:[160,161,234,239,242],39:[254,256,257],40:[18,22,23,189],41:[74,258,259,260,261],42:[262,263,264],43:[135,136,265,266,267,268],44:[141,142],45:[273,276,277,278],46:[284,285,286],47:[279,280,281,282,283]}
+for q in questions:
+ number=int(q['id'].rsplit('q',1)[1]);q['relatedFactIds']=q['factIds'];q['testedFactIds']=[f'rst31-hygiene2-f{n:03}' for n in TESTED[number]];q['factIds']=q['testedFactIds'];q['coverageLimit']='Representative applied competency. Does not assess every named table item, historical data point, product-specific instruction, or actual human performance.'
+EXISTING_TESTED={
+'rst-2-q331':[278],'rst-2-q352':[5],'rst-2-week08-q04':[6],'rst-2-q167':[7],'rst-2-q035':[20],'rst-2-week01-q01':[19],'rst-2-q254':[20],'rst-2-q355':[21],'rst-2-week09-q04':[24,118,119],'rst-2-q398':[25],'rst-2-q364':[127],'rst-2-q006':[26],'rst-2-q050':[27,145],'rst-2-q365':[28],'rst-2-q393':[28],'rst-2-q075':[29,162],'rst-2-q313':[31,165],'rst-2-q284':[32,171],'rst-2-q309':[33,178],'rst-2-q119':[34,181],'rst-2-q359':[35,36],'rst-2-week08-q08':[37],'rst-2-q350':[39],'rst-2-q354':[40],'rst-2-week08-q01':[40],'rst-2-q222':[47],'rst-2-q071':[48,210],'rst-2-q112':[53],'rst-2-q162':[63],'rst-2-q005':[65],'rst-2-week02-q07':[65,130],'rst-2-q261':[66],'rst-2-week01-q02':[66],'rst-2-q052':[23,69,186,187,199],'rst-2-q011':[70,71],'rst-2-week01-q04':[73,180],'rst-2-q224':[89],'rst-2-week01-q03':[85,86],'rst-2-q367':[92],'rst-2-q390':[91],'rst-2-q391':[90],'rst-2-q324':[95],'rst-2-q127':[95,96],'rst-2-q210':[99],'rst-2-q017':[98,103],'rst-2-week01-q05':[105],'rst-2-q043':[110],'rst-2-q098':[110],'rst-2-q173':[110],'rst-2-q395':[111],'rst-2-week08-q05':[110,111],'rst-2-q053':[97,112],'rst-2-q198':[114],'rst-2-week01-q06':[114],'rst-2-q396':[121],'rst-2-q180':[125],'rst-2-week01-q08':[125],'rst-2-q366':[126],'rst-2-week09-q01':[127],'rst-2-q277':[128],'rst-2-q239':[131],'rst-2-q130':[132],'rst-2-q138':[134,137],'rst-2-week02-q03':[136],'rst-2-q176':[140],'rst-2-week02-q05':[138,139],'rst-2-q275':[141],'rst-2-q262':[143],'rst-2-q125':[145,146],'rst-2-week02-q04':[148],'rst-2-q128':[151],'rst-2-q002':[154],'rst-2-q201':[154,158],'rst-2-q195':[157],'rst-2-q243':[160,162],'rst-2-q165':[162],'rst-2-week02-q08':[162],'rst-2-q298':[165],'rst-2-q315':[287],'rst-2-q296':[166],'rst-2-q310':[167],'rst-2-q066':[169],'rst-2-q299':[173],'rst-2-week02-q06':[179],'rst-2-q260':[181],'rst-2-q014':[182],'rst-2-q057':[182,184],'rst-2-q206':[183],'rst-2-q099':[182],'rst-2-q082':[185],'rst-2-q076':[188],'rst-2-week03-q05':[190,192],'rst-2-q246':[196,197],'rst-2-q021':[198],'rst-2-week03-q06':[202,206],'rst-2-q059':[203],'rst-2-q287':[204],'rst-2-q316':[207,252],'rst-2-week03-q01':[207]}
+for f in facts:
+ f['competencyQuestionIds']=list(f['questionIds']);f['questionIds']=[]
+ # Broad unit-level question links stay explicitly contextual, not atom-level approvals.
+ f['relatedAssessmentEvidence']=[e for e in f['existingEvidence'] if e['kind']=='question_competency'];f['existingEvidence']=[e for e in f['existingEvidence'] if e['kind']!='question_competency']
+ for q in questions:
+  if f['id'] in q['testedFactIds']:f['questionIds'].append(q['id'])
+ n=int(f['id'].rsplit('f',1)[1])
+ for qid,ns in EXISTING_TESTED.items():
+  if n in ns:f['questionIds'].append(qid)
+ f['assessmentStatus']='representative_atom_tested' if f['questionIds'] else 'taught_not_individually_tested'
+# Semantic duplicate facts are joined, with explicit aliases for old sentence references.
+aliases={}
+ref_numbers=[int(f['id'].rsplit('f',1)[1]) for f in facts if any(u in f['unitIds'] for u in [D+'-ref01',D+'-visual039',D+'-visual040'])]
+for f in facts:
+ if any(u in f['unitIds'] for u in [D+'-ref01',D+'-visual039',D+'-visual040']):f['questionIds'].append('rst-2-q332')
+for keep,remove in [(23,69),(48,211)]+[(ref_numbers[0],n) for n in ref_numbers[1:]]:
+ kid=f'rst31-hygiene2-f{keep:03}';rid=f'rst31-hygiene2-f{remove:03}';a=next(f for f in facts if f['id']==kid);b=next(f for f in facts if f['id']==rid)
+ for key in ['unitIds','additionIds','questionIds','competencyQuestionIds']:
+  a[key]=list(dict.fromkeys(a[key]+b[key]))
+ for key in ['sourceRefs','existingEvidence','relatedAssessmentEvidence']:a[key]+=b[key]
+ facts.remove(b);aliases[rid]=kid
+for collection in [unit_rows,additions,questions]:
+ for row in collection:
+  for key in ['factIds','testedFactIds','relatedFactIds']:
+   if key in row:row[key]=list(dict.fromkeys(aliases.get(x,x) for x in row[key]))
+
 lock=json.loads((R/'docs/ssw-workspace/restaurant/source-closure31/source-lock.json').read_text());doc=next(d for d in lock['documents'] if d['documentId']==D)
 pages=[]
 for item in doc['pages']:
@@ -408,10 +447,19 @@ for item in doc['pages']:
  role='cover' if n==1 else 'preface' if n==2 else 'toc' if n in [3,4] else 'acknowledgments' if n==41 else 'rights' if n==42 else 'reference_form' if n in [39,40] else 'content'
  note={5:'二軸の年次棒・折れ線。事件数と患者数を別軸で表示。個々の全年度数値の転記はしていない。',6:'2022年962事件の立体円グラフを全体像と拡大で確認。アニサキス58.8%、カンピロバクター19.2%、ノロ6.5%。少数カテゴリの全件問題化は未実施。',17:'中性・アルカリ・酸性の成分、対象、目的、特性、注意の列行表を拡大確認。',30:'2023年8義務・20推奨の表を拡大確認。現行2026改正とは別扱い。',39:'施設情報、HACCP方式、計画・手順・教育・記録・検証、一般管理項目1～21を拡大確認。',40:'項目22～40、CCP7原則、その他チェック、対象外除外の分母、特記事項欄を拡大確認。'}.get(n,'6頁単位のレンダリングで本文・見出し・箇条書きと表の有無を確認。'+('監視項目・基準点の小表あり。' if n in [11,14,21,22,24,25,28,32,33,34] else '新しい機器写真・技術図はない。'))
  pages.append(dict(documentId=D,pdfPage=n,textSha256=item['textSha256'],textRead=True,visualRead=True,visualNotes=note,role=role))
-packet=dict(shard='hygiene2',documentIds=[D],baseCommit=BASE,pdfSha256ByDocument={D:doc['pdfSha256']},pages=pages,units=unit_rows,facts=facts,additions=additions,questions=questions,figures=json.loads((O/'figure-metadata.json').read_text()),primarySources=PRIMARY,sourceExclusions=[{'unitIds':[uid(46)],'sourcePages':[11],'factJa':'2023年教材の既選任者に関する移行説明','reasonJa':'現在の候補者の適格性は現在の資格要件と窓口で確認する。旧移行説明だけを独立の選任根拠にする問題は作らない。'},{'unitIds':[uid(107)],'sourcePages':[23,24],'factJa':'燻煙後3～4時間の旧教材例','reasonJa':'薬剤・設備・作業に依存する再入室条件を一般化しない。現行製品表示と専門担当の確認を教示・設問化する。'},{'unitIds':[uid(93)],'sourcePages':[21],'factJa':'食品製造用水の個別規格の一覧','reasonJa':'元ページは区分を説明するが個別規格値を列挙しない。与えられない数値や計算問題を新造しない。'},{'unitIds':[D+'-ref01',D+'-visual039',D+'-visual040'],'sourcePages':[39,40],'factJa':'参考票の固定配点の暗記','reasonJa':'参考様式固有の配点を公式試験の合否や全自治体の現行配点として扱わない。項目・証拠・除外後分母の能力は別に教え・問う。'}],sourceErrata=[{'unitIds':[uid(134)],'sourcePages':[29,30],'issueJa':'2023年8品目の表を現在の義務一覧として扱わない。','correctionAdditionId':'rst31-hygiene2-a006'},{'unitIds':[uid(129),uid(131),uid(132)],'sourcePages':[28,29],'issueJa':'一般製品の情報提供の努力義務と特定食品等の別規定を区別する。','correctionAdditionId':'rst31-hygiene2-a004'}],acceptance=dict(aiSourceComparison=True,humanReviewed=False,nativeReviewed=False,domainReviewed=False,allAssignedUnitsDecided=True,unresolved=[dict(unitId=u['unitId'],facts=u['remainingFactGaps'],images=u['remainingImageGaps']) for u in unit_rows if u['decision']=='blocked']))
+formRows=json.loads((O/'reference_form_rows.json').read_text())
+for row in formRows['rows']:
+ row['pdfPage']=39 if row['row']<=21 else 40;row['unitIds']=[uid(n) for n in row['unitNumbers']];row['factIds']=[f['id'] for f in facts if set(f['unitIds'])&set(row['unitIds'])];assert row['factIds']
+packet=dict(referenceFormCoverage=formRows,factAliases=aliases,assessmentPolicy='Unit competency questions are distinct from individual-atom assessment. taught_not_individually_tested atoms remain explicit; no every-value assessment claim.',shard='hygiene2',documentIds=[D],baseCommit=BASE,pdfSha256ByDocument={D:doc['pdfSha256']},pages=pages,units=unit_rows,facts=facts,additions=additions,questions=questions,figures=json.loads((O/'figure-metadata.json').read_text()),primarySources=PRIMARY,sourceExclusions=[{'unitIds':[uid(46)],'sourcePages':[11],'factJa':'2023年教材の既選任者に関する移行説明','reasonJa':'現在の候補者の適格性は現在の資格要件と窓口で確認する。旧移行説明だけを独立の選任根拠にする問題は作らない。'},{'unitIds':[uid(107)],'sourcePages':[23,24],'factJa':'燻煙後3～4時間の旧教材例','reasonJa':'薬剤・設備・作業に依存する再入室条件を一般化しない。現行製品表示と専門担当の確認を教示・設問化する。'},{'unitIds':[uid(93)],'sourcePages':[21],'factJa':'食品製造用水の個別規格の一覧','reasonJa':'元ページは区分を説明するが個別規格値を列挙しない。与えられない数値や計算問題を新造しない。'},{'unitIds':[D+'-ref01',D+'-visual039',D+'-visual040'],'sourcePages':[39,40],'factJa':'参考票の固定配点の暗記','reasonJa':'参考様式固有の配点を公式試験の合否や全自治体の現行配点として扱わない。項目・証拠・除外後分母の能力は別に教え・問う。'}],sourceErrata=[{'unitIds':[uid(134)],'sourcePages':[29,30],'issueJa':'2023年8品目の表を現在の義務一覧として扱わない。','correctionAdditionId':'rst31-hygiene2-a006'},{'unitIds':[uid(129),uid(131),uid(132)],'sourcePages':[28,29],'issueJa':'一般製品の情報提供の努力義務と特定食品等の別規定を区別する。','correctionAdditionId':'rst31-hygiene2-a004'}],acceptance=dict(aiSourceComparison=True,humanReviewed=False,nativeReviewed=False,domainReviewed=False,allAssignedUnitsDecided=True,unresolved=[dict(unitId=u['unitId'],facts=u['remainingFactGaps'],images=u['remainingImageGaps']) for u in unit_rows if u['decision']=='blocked']))
 for fig in packet['figures']:
  ns=fig.pop('unitNumbers');fig['factIds']=[f['id'] for f in facts if set(f['unitIds'])&{uid(n) for n in ns}] if ns else [f['id'] for f in facts if any(x in f['unitIds'] for x in [D+'-ref01',D+'-visual039',D+'-visual040'])];fig['sourceRefs']=refs(ns) if ns else [dict(documentId=D,pdfPages=[39,40],section='参考票の算式。配点は独立した練習値。')];fig['rights']='independently_authored_code_geometry_or_public_numeric_data';fig['visualReviewedByAi']=True
  for fid in fig['factIds']:
   f=next(x for x in facts if x['id']==fid);f['visualEvidence'].append(fig['id'])
+for a in additions:
+ ids={'a004':['law'],'a005':['emergency'],'a006':['allergy'],'a007':['recall'],'a012':['rodent'],'a014':['labelScope'],'a015':['statistics']}.get(a['id'].split('-')[-1],[])
+ a['primarySourceKeys']=ids
+for f in facts:
+ f['primarySourceKeys']=list(dict.fromkeys(k for aid in f['additionIds'] for a in additions if a['id']==aid for k in a.get('primarySourceKeys',[])))
+packet['assessmentSummary']={'taughtAtoms':len(facts),'individuallyTestedOrRepresentativelyTestedAtoms':sum(bool(f['questionIds']) for f in facts),'notIndividuallyTestedAtomIds':[f['id'] for f in facts if not f['questionIds']],'scope':'Source interpretation and unit competencies; not every table cell or chart point is separately examined.'}
 (O/'packet.json').write_text(json.dumps(packet,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({'pages':len(pages),'units':len(unit_rows),'facts':len(facts),'additions':len(additions),'questions':len(questions),'decisions':{s:sum(x['decision']==s for x in unit_rows) for s in sorted({x['decision'] for x in unit_rows})}},ensure_ascii=False))

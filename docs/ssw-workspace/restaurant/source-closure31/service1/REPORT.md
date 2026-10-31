@@ -1,0 +1,11 @@
+# Service1 — final Japanese/evidence freeze
+
+50 physical pages read as text and viewed as renders; pages 11, 12 and 18 also inspected in single-page detail. 69 units: 22 structural aggregates, 22 existing, 24 after additions and one blocked only on offline official-mark availability. 249 atomized facts, 20 original Japanese supplements, 28 questions and 39 figures: 10 independent diagrams plus 28 unchanged MoF currency specimens and one unchanged permitted official ostomate symbol.
+
+Ten officialReferenceLinks provide all six symbol pages and four first-aid method resources. Five conditional symbol images are link-only; no permission application or usage report was sent. Downloaded assistance/maternity source images were moved outside the repository and are not bundled. Offline visual gaps are explicit and separate from taught meanings. The official ostomate image uses the educational symbol permission checked through JSA.
+
+Page40 theory now includes original choking-recognition and scapula/hand-heel location diagrams, a target/response-specific supplement, representative applied question and direct official method links. Infant hand-position specifics are not copied from the older FDMA page because a newer CFA2026 resource explicitly cites JRC2025. Official method video playback was not claimed as reviewed; text and resource navigation were checked. Reused emergency-role artwork references the other shard's exact existing figure after actual pixel inspection. Practical training is never AI-certified.
+
+The index has 201 physical rows/200 distinct terms: 199 existing definitions were read and a genever route points to already-existing teaching. Source reading error トレイ→といれ is not propagated. Dated legal/medical claims are explicitly separated from current corrections. No legacy Japanese override was needed in the examined displayed content.
+
+Validation checks all page hashes, exact existing paragraph/question evidence hashes, new question structure, references and asset byte hashes/dimensions. 85 non-excluded atoms are not individually assessed; representative assessment is not exhaustive. Runtime/device/native/expert acceptance and translations remain pending. No source PDF/extraction/render, commit, publication or external request was added.

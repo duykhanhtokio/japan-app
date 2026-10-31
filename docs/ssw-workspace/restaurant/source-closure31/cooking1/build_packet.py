@@ -147,14 +147,28 @@ ugobj=next(a for a in adds if a['id']==ug);ugobj['sourceRefs'].append({'document
 fid=F('index-uguisu',20,[],[8,39],'元資料の索引のうぐいす骨は本文図のほほ骨と同一だと確認できない。別の市公式資料ではみがきふぐの頭側の骨の用語として扱われる。',None,[],ug,gap='元資料の索引p39「うぐいす骨」から本文p8への参照は、ほほ骨との同一性・正誤の確証がない。公式な原資料訂正票は未確認。')
 facts[-1]['unitIds']=['rst-1-cooking-ref01'];facts[-1]['sourceRefs'].append({'documentId':'primary-shimonoseki-uguisu','pdfPages':[1],'section':'別文脈の用例'});ugobj['unitIds']=['rst-1-cooking-ref01']
 F('index-application',20,[],list(range(39,48)),'索引は食品・部位・器具・方法を本文の図や定義へ照合するための一覧。かきの果実と貝、ももの畜種、リブリースの誤記疑い、重複したサケ・ヒレ・ロースを区別する。','knowledge',['rst-1-week12-q05','rst-1-week12-q06']);facts[-1]['unitIds']=['rst-1-cooking-ref01']
+# Actual food-recognition visuals complete the finite photo-example gap independently of name tables.
+foodfigs=json.loads((OUT/'food-figures.json').read_text())
+for fig in foodfigs:
+ ff=F('food-visual-'+fig['foodKey'],2 if fig['lessonId'].endswith('02') else 3,fig['unitNumbers'],[p for r in fig['sourceRefs'] for p in r['pdfPages']],fig['foodNameJa']+'の認識例では、'+fig['visualDefinitionJa']+'。品種・状態による差があるため、名称・ラベル・現物を合わせて確認する。',visual={'kind':'original_food_recognition_image','figureId':fig['id'],'cropBox':fig.get('cropBox'),'reviewScope':'actual generated/reused pixels compared with source named/photo ingredient and morphology; no safety/species certification'})
+ fig['factIds']=[ff]
+# Neutral quiz records share untouched atlas bytes and a single crop; no food names in caption/alt.
+for foodkey,label,stem,opts,key,reasons,un,ln in [
+ ('hotate','図A：貝の例','図Aの食材に対応する名称はどれですか。',['カキ','アサリ','ホタテ','ズワイガニ'],2,['カキの殻は不規則で粗い形。','アサリは小さな楕円形の二枚貝。','扇状の殻と白い貝柱の例はホタテ。','ズワイガニは長い脚を持つ甲殻類。'],11,2),
+ ('eggplant','図B：野菜の例','図Bの野菜を資料の分類に照合します。正しい組はどれですか。',['なす―果菜類','きゅうり―果実的野菜','たまねぎ―根菜類','にんじん―葉茎菜類'],0,['紫色の実と緑のがくのなすは、資料の果菜類。','図はきゅうりではなく、資料でもきゅうりは果菜類。','図はたまねぎではなく、資料でたまねぎは葉茎菜類。','図はにんじんではなく、資料でにんじんは根菜類。'],13,3),
+ ('asparagus','図C：食材の例','図Cの食材と、資料が挙げる旬の例が合う組はどれですか。',['ねぎ―夏','ふき―冬','たけのこ―秋','アスパラガス―春'],3,['図の先端のまとまりはねぎの葉とは異なり、ねぎは資料で冬の例。','図はふきの葉柄の例ではない。','図は厚い皮に包まれたたけのこではなく、たけのこの資料例も春。','先端にまとまりがある緑の茎のアスパラガスは、資料で春の例。'],14,3)]:
+ original=next(f for f in foodfigs if f['foodKey']==foodkey);neutral=dict(original);neutral['id']=original['id']+'-neutral-quiz';neutral['captionJa']=label;neutral['altJa']='設問で使う一つの食材の画像。';neutral['teachingOnly']=False;neutral['neutralForQuestions']=True;neutral['factIds']=list(original['factIds']);neutral.pop('foodNameJa',None);neutral.pop('visualDefinitionJa',None);foodfigs.append(neutral)
+ Q(ln,[un],['food-visual-'+foodkey],'食材の外形と資料の名称・分類を照合する',stem,opts,key,reasons,'画像の代表的な外形と名称を対応させ、分類や季節の資料例と照合する。実物の状態・品種差や安全性は別に確認する。')
+ newq[-1]['figureIds']=[neutral['id']]
+ newq[-1]['questionImagePolicy']='Use only this neutral caption/alt and crop. Never show teaching food-name captions or the other atlas cells before submission.'
 # Link figure assets only after actual pixel QA; final hashes are rechecked by validation.
-figures=json.loads((OUT/'figures.json').read_text())
+figures=json.loads((OUT/'figures.json').read_text())+foodfigs
 for fig in figures:
- fig['factIds']=[f['id'] for f in facts if any(v.get('figureId')==fig['id'] for v in f['visualEvidence'])]
+ fig['factIds']=[f['id'] for f in facts if any(v.get('figureId')==fig['id'] for v in f['visualEvidence'])] or fig.get('factIds',[])
  fig['aiPixelReviewed']=True
  assert fig['factIds'];assert hashlib.sha256((ROOT/fig['assetFile']).read_bytes()).hexdigest()==fig['sha256']
 # Explicit human judgments on the original book's selected food-photo competencies.
-visualgaps={U(11):'魚介の季節・品名の全事実は教えるが、元資料p9の写真例（サワラ・アサリ・ワカメ、アユ・スルメイカ・ホタテ、カツオ・サケ・サンマ、ズワイガニ・カキ・フグ）の独立した実物識別教材は未作成。機器の図で代用しない。',U(13):'元資料p10の野菜・果実の写真群に対し、既存8種画像は全12例を網羅しない。全分類名・所属の補足はあるが、残りの食品を実物から識別する画像確認は未完了。',U(14):'元資料p11の季節の写真群の全例に対応する独立した食材識別画像は未完了。季節の文字一覧は識別画像の代用ではない。'}
+visualgaps={} # All finite source photo-example sets now have explicit original/reused pixel evidence.
 # Finite parent→child references; aggregate labels never certify unresolved children.
 children={1:[2,6,12],2:[3,4,5],6:[7,11],7:[8,9,10],12:[13,14],15:[16,19,22],16:[17,18],19:[20,21],22:[23,24],25:[26,34],26:list(range(27,34)),34:[35,36],37:[38,43,48],38:[39,40,41,42],43:[44,45,46,47],48:[49],50:[51,57,61,64],51:list(range(52,57)),57:[58,59,60],61:[62,63],64:[65,66]}
 units=[]
@@ -169,7 +183,7 @@ for u in ledger:
  imagegap=[visualgaps[uid]] if uid in visualgaps else []
  factgaps=[x for f in fs for x in f['remainingFactGaps']]
  if uid=='rst-1-cooking-ref01':
-  allfs.update(f['id'] for f in facts if f['id'].startswith('rst31-cooking1-f-tool-') or f['id'].startswith('rst31-cooking1-f-machine-'));decision='blocked';imagegap=['索引の名前→実物対応のうち、食品写真の範囲は未完了。器具44点・機器32項目は明示した図で比較する。']
+  allfs.update(f['id'] for f in facts if f['id'].startswith('rst31-cooking1-f-tool-') or f['id'].startswith('rst31-cooking1-f-machine-'));decision='blocked';imagegap=[]
  units.append({'unitId':uid,'decision':decision,'factIds':sorted(allfs),'childUnitIds':cids,'reason':reason,'remainingFactGaps':factgaps,'remainingImageGaps':imagegap,'priorStatusReviewed':u['status']})
  assert allfs,(uid,'missing authored fact map')
 # Actual page checks preserve low-text dividers and index/rights pages.
@@ -181,6 +195,6 @@ for p in lock['pages']:
  role='cover' if i==1 else 'preface' if i==2 else 'toc' if i==3 else 'chapter-divider' if i in [4,12,17,22,32] else 'index' if 39<=i<=47 else 'acknowledgements' if i==48 else 'rights' if i==49 else 'instructional'
  pages.append({'documentId':DOC,'pdfPage':i,'textSha256':sha,'textRead':True,'visualRead':True,'visualNotes':notes.get(i,'全体レンダーと抽出本文を照合。'+('写真・図ではなく索引表の参照語を確認。' if role=='index' else '章扉の低文字量も記録。' if role=='chapter-divider' else '本文の配置と説明図の対象を確認。')),'role':role,'inspectionScope':'private rendered full-page contact sheet; full-size detailed diagrams/tables where noted'})
 primary=[{'documentId':'primary-mhlw-lowback','url':'https://www.mhlw.go.jp/web/t_doc?dataId=00tb9484&dataType=1','accessedAt':'2026-10-31','supportedClaim':'重量だけの安全保証ではなく、自動化・補助具・作業姿勢・個人等の要因を含めて負担低減する。','scope':'現在参照可能な2013指針。原資料35–40%を現行一律上限へ昇格しない。'},{'documentId':'primary-fdma-extinguisher','url':'https://www.fdma.go.jp/mission/prevention/suisin/post2.html','accessedAt':'2026-10-31','supportedClaim':'安全栓、火元へホース、レバーの三操作。初期消火には火勢の限界がある。','scope':'基本原理の裏付け。適応火災・実地訓練・施設指示を省略しない。'},{'documentId':'primary-shimonoseki-uguisu','url':'https://www.city.shimonoseki.lg.jp/uploaded/attachment/16058.pdf','accessedAt':'2026-10-31','supportedClaim':'うぐいす骨は市公式みがきふぐ資料の頭側の骨の用語として明示される。','scope':'本文ほほ骨との同一性や元資料索引の正誤は確定しない。フグ処理の手順・資格の教材へ拡張しない。'}]
-packet={'shard':'cooking1','documentIds':[DOC],'baseCommit':BASE,'pdfSha256ByDocument':{DOC:lock['pdfSha256']},'pages':pages,'units':units,'facts':facts,'additions':adds,'questions':newq,'figures':figures,'primarySupplementalSources':primary,'sourceAttributionJa':'日本フードサービス協会の飲食物調理（2021年4月15日改訂版）を知識比較の出典とし、説明・問題・図は独自編集。協会の公式教材・公式問題とは表示しない。','acceptance':{'aiSourceComparison':True,'humanReviewed':False,'nativeReviewed':False,'domainReviewed':False,'allAssignedUnitsDecided':len(units)==67,'unresolved':[{'unitId':u['unitId'],'factGaps':u['remainingFactGaps'],'imageGaps':u['remainingImageGaps']} for u in units if u['remainingFactGaps'] or u['remainingImageGaps']],'fullSourceKnowledgeClosure':False,'physicalDeviceVerified':False},'qa':{'all49TextsActuallyRead':True,'all49VisualLayoutsActuallyRead':True,'existing44ToolGeometryReconstructionsActuallyViewed':True,'questionImagePolicy':'All new questions self-contained; figures are teaching-only and must not be displayed before submission as quiz evidence.','sourceProseOrImagesRedistributed':False}}
+packet={'shard':'cooking1','documentIds':[DOC],'baseCommit':BASE,'pdfSha256ByDocument':{DOC:lock['pdfSha256']},'pages':pages,'units':units,'facts':facts,'additions':adds,'questions':newq,'figures':figures,'primarySupplementalSources':primary,'sourceAttributionJa':'日本フードサービス協会の飲食物調理（2021年4月15日改訂版）を知識比較の出典とし、説明・問題・図は独自編集。協会の公式教材・公式問題とは表示しない。','acceptance':{'aiSourceComparison':True,'humanReviewed':False,'nativeReviewed':False,'domainReviewed':False,'allAssignedUnitsDecided':len(units)==67,'unresolved':[{'unitId':u['unitId'],'factGaps':u['remainingFactGaps'],'imageGaps':u['remainingImageGaps']} for u in units if u['remainingFactGaps'] or u['remainingImageGaps']],'fullSourceKnowledgeClosure':False,'allAiFeasibleFoodRecognitionGapsAddressed':True,'residualScope':'Original source-index locator inconsistency remains explicitly unresolved; separate term knowledge is taught with municipal primary provenance','physicalDeviceVerified':False},'qa':{'all49TextsActuallyRead':True,'all49VisualLayoutsActuallyRead':True,'existing44ToolGeometryReconstructionsActuallyViewed':True,'questionImagePolicy':'21 new text questions self-contained;3 new recognition questions use separate neutral records/crops; food-name teaching captions and unselected atlas cells must remain hidden before submission.','sourceProseOrImagesRedistributed':False}}
 (OUT/'packet.json').write_text(json.dumps(packet,ensure_ascii=False,indent=2)+'\n')
 print('PACKET',len(units),'units',len(facts),'facts',len(adds),'additions',len(newq),'questions',len(figures),'figures',collections.Counter(u['decision'] for u in units))

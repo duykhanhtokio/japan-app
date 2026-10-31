@@ -7,11 +7,11 @@ import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 import cairosvg
 R=Path(__file__).resolve().parents[5];O=R/'assets/restaurant/source31/hygiene2';O.mkdir(parents=True,exist_ok=True)
-fp=FontProperties(fname='/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc');plt.rcParams['font.family']=fp.get_name();plt.rcParams['font.size']=23;plt.rcParams['svg.fonttype']='none'
+fp=FontProperties(fname='/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc');plt.rcParams['font.family']=fp.get_name();plt.rcParams['font.size']=23;plt.rcParams['svg.fonttype']='none';plt.rcParams['svg.hashsalt']='restaurant-hygiene2-source31'
 # Official MHLW2022 statistics table, physical PDF p2, totals only (not single-person subrows).
 years=list(range(2003,2023));events=[1585,1666,1545,1491,1289,1369,1048,1254,1062,1100,931,976,1202,1139,1014,1330,1061,887,717,962];patients=[29355,28175,27019,39026,33477,24303,20249,25972,21616,26699,20802,19355,22718,20252,16464,17282,13018,14613,11080,6856]
 fig,ax=plt.subplots(figsize=(20,12),dpi=100);fig.subplots_adjust(left=.09,right=.89,bottom=.2,top=.83);ax2=ax.twinx();ax.bar(years,events,color='#477b93',width=.6,label='事件数（件・左軸）');ax2.plot(years,patients,color='#b65336',marker='o',lw=4,label='患者数（人・右軸）');ax.set_ylim(0,1800);ax2.set_ylim(0,45000);ax.set_ylabel('事件数（件）',fontproperties=fp,fontsize=25);ax2.set_ylabel('患者数（人）',fontproperties=fp,fontsize=25);ax.set_xticks(years[::2]+[2022]);ax.tick_params(axis='x',rotation=45);ax.grid(axis='y',alpha=.25);ax.set_axisbelow(True);ax.set_xlim(2002.4,2022.6);fig.suptitle('全国の食中毒：過去の二つの指標を読む',fontproperties=fp,fontsize=34,y=.96);fig.text(.5,.89,'2003～2022年の確定集計 ／ 最新年の状況ではない',ha='center',fontproperties=fp,fontsize=25);fig.legend([ax.patches[0],ax2.lines[0]],['事件数（左軸）','患者数（右軸）'],loc='lower center',ncol=2,prop=FontProperties(fname='/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',size=24),bbox_to_anchor=(.5,.035));fig.text(.5,.015,'厚生労働省「令和4年食中毒発生状況」の数値から独立作図',ha='center',fontproperties=fp,fontsize=20)
-for ext in ['svg','png']:fig.savefig(O/f'historical-series.{ext}')
+for ext in ['svg','png']:fig.savefig(O/f'historical-series.{ext}',metadata={'Date':None} if ext=='svg' else {})
 plt.close(fig)
 (O/'historical-series-data.json').write_text(json.dumps(dict(years=years,events=events,patients=patients,sourceUrl='https://www.mhlw.go.jp/content/12401000/001075566.pdf',physicalPdfPage=2,rows='H15–R4: all-event totals; single-person subrows excluded'),indent=2)+'\n')
 def label(x,y,s,size=32):return f'<text x="{x}" y="{y}" font-size="{size}" font-family="Noto Sans CJK JP" fill="#183b49">{s}</text>'
@@ -37,10 +37,21 @@ for y,t,point,score,target in [(345,'衛生計画と現場が対応',6,6,'対象
  for x,v in [(90,t),(710,str(point)),(930,str(score)),(1140,target)]:b+=label(x,y,v,30)
 b+=label(90,720,'分母：6＋4＝10点　　分子：6＋0＝6点',34)+label(90,785,'この練習の得点率：6÷10×100＝60％',36)+label(90,850,'実際の適用・対象外の判断は監視担当の基準で確認する。',28)
 save('reference-form-exercise',b)
+names=['アニサキス','カンピロバクター','ノロウイルス','植物性自然毒','サルモネラ属菌','ウェルシュ菌','動物性自然毒','ぶどう球菌','クドア','不明','腸管出血性大腸菌','セレウス菌','その他','その他の病原大腸菌','化学物質','その他の細菌'];values=[58.8,19.2,6.5,3.5,2.3,2.3,1.7,1.6,1.1,.9,.8,.3,.3,.2,.2,.1]
+fig,ax=plt.subplots(figsize=(19,15),dpi=100);fig.subplots_adjust(left=.34,right=.96,top=.85,bottom=.13)
+ax.barh(range(16),values,color='#477b93');ax.set_yticks(range(16),names,fontproperties=fp,fontsize=24);ax.invert_yaxis();ax.set_xlim(0,70);ax.grid(axis='x',alpha=.25);ax.set_axisbelow(True);ax.set_xlabel('事件数に対する割合（％）',fontproperties=fp,fontsize=25)
+for y,v in enumerate(values):ax.text(v+1,y,f'{v:.1f}%',va='center',fontsize=24)
+fig.suptitle('2022年：原因別の事件数の割合',fontproperties=fp,fontsize=34,y=.96);fig.text(.5,.90,'分母は全国962事件 ／ 患者数の割合ではない',ha='center',fontproperties=fp,fontsize=26);fig.text(.5,.04,'値は元資料の丸め表示。現在の発生割合ではない。',ha='center',fontproperties=fp,fontsize=24)
+for ext in ['svg','png']:fig.savefig(O/f'cause-shares.{ext}',metadata={'Date':None} if ext=='svg' else {})
+plt.close(fig)
+
 meta=[]
-for name,lesson,unit,caption in [('historical-series','18',3,'2003～2022年の事件数と患者数を、別の単位の軸で読む独立作図。'),('pipe-entry-gap','07',109,'配管の周囲の開口を点検する模式図。約2cmは資料の目安で安全境界ではない。'),('wall-cleaning-range','02',52,'資料の清掃計画例として、床から1mの内壁と飛散しやすい台周辺を示す。'),('reference-form-exercise','17',None,'独自の3項目の練習で、対象外を除いた分母と実施得点を区別する。')]:
+for name,lesson,unit,caption in [('cause-shares','18',3,'2022年の原因別事件割合を共通の目盛で読み取る。患者割合ではない。'),('historical-series','18',3,'2003～2022年の事件数と患者数を、別の単位の軸で読む独立作図。'),('pipe-entry-gap','07',109,'配管の周囲の開口を点検する模式図。約2cmは資料の目安で安全境界ではない。'),('wall-cleaning-range','02',52,'資料の清掃計画例として、床から1mの内壁と飛散しやすい台周辺を示す。'),('reference-form-exercise','17',None,'独自の3項目の練習で、対象外を除いた分母と実施得点を区別する。')]:
  from PIL import Image
  raw=(O/f'{name}.png').read_bytes();w,h=Image.open(O/f'{name}.png').size
  meta.append(dict(id='rst31-hygiene2-figure-'+name,lessonId='rst-2-hyg-'+lesson,unitNumbers=[unit] if unit else [],assetFile=str((O/f'{name}.png').relative_to(R)),svgFile=str((O/f'{name}.svg').relative_to(R)),width=w,height=h,sha256=hashlib.sha256(raw).hexdigest(),captionJa=caption,altJa=caption,scopeLimits=['teaching_only','原資料の画像・レイアウトは転載していない','nativeReviewed=false','domainReviewed=false']))
 (Path(__file__).parent/'figure-metadata.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n')
 print(len(meta))
+
+for svg in O.glob('*.svg'):
+ svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
