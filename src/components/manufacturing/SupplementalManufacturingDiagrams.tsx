@@ -19,9 +19,9 @@ export function SupplementalFigure({item,language,showTranslation,imageSource,tr
  const source=imageSource??(Object.prototype.hasOwnProperty.call(sources,item.assetFile)?sources[item.assetFile]:undefined);
  if(!source)return null;
  const target=showTranslation?(translatedCaption??manufacturingSupplementalCaption(item,language)):null;
- const label=target??item.captionJa,ratio=item.width/item.height,zoomWidth=Math.max(960,width);
+ const label=hideCaption?'設問の図':target??item.captionJa,ratio=item.width/item.height,zoomWidth=Math.max(960,width,item.width);
  const close=()=>setExpanded(false);
- const button=(key:'imageZoom'|'imageClose',action:()=>void)=><Pressable accessibilityRole="button" accessibilityLabel={`${manufacturingUi(language,key)} · ${item.captionJa.split('。')[0]}`} onPress={action} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:16,textAlign:'center'}}>{manufacturingUi(language,key)}</Text></Pressable>;
+ const button=(key:'imageZoom'|'imageClose',action:()=>void)=><Pressable accessibilityRole="button" accessibilityLabel={hideCaption?manufacturingUi(language,key):`${manufacturingUi(language,key)} · ${item.captionJa.split('。')[0]}`} onPress={action} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:16,textAlign:'center'}}>{manufacturingUi(language,key)}</Text></Pressable>;
  return <View style={{gap:8,marginVertical:12}}>
   <Image testID={`manufacturing-supplemental-${item.id}`} source={source} accessibilityLabel={label} resizeMode="contain" style={{width:'100%',aspectRatio:ratio}}/>
   {!hideCaption&&<Text selectable style={{color:colors.muted,fontSize:15,lineHeight:25}}>{item.captionJa}</Text>}

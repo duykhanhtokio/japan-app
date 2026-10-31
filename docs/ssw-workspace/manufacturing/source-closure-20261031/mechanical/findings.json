@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+  "findings": [
+    {
+      "id": "mfg39-mechanical-provenance-01",
+      "priority": "P0",
+      "kind": "historical_ledger_description_mismatch",
+      "physicalPages": [
+        73
+      ],
+      "affectedPaths": [
+        "docs/ssw-workspace/manufacturing/batch33-full-review/mechanical/page-ledger.json"
+      ],
+      "observed": "The historical page facet describes an18.45mm scale illustration. The exact PDF body example states30.35mm, and fresh visual inspection of figure6-2 shows main labels20/30/40 with vernierzero near30.",
+      "scope": "This corrects source-audit metadata only. The independently authored lesson018 example18.20mm is not asserted to be copied from or identical to the source figure.",
+      "action": "Use this new qualification overlay when consolidating ledgers. Retain historical receipt unchanged; do not inherit18.45mm as source data.",
+      "sourceConfirmed": true,
+      "runtimeCorrectionRequired": false
+    },
+    {
+      "id": "mfg39-mechanical-provenance-02",
+      "priority": "P0",
+      "kind": "historical_ledger_description_mismatch",
+      "physicalPages": [
+        105,
+        106,
+        107
+      ],
+      "affectedPaths": [
+        "docs/ssw-workspace/manufacturing/batch33-full-review/mechanical/page-ledger.json"
+      ],
+      "observed": "Historical p107 facet claims a5mm fillet/intermittent80mm/pitch150mm example. Exact p107 shows bevel-side arrow teaching and a source exercise. Body extraction across169pages finds no断続,80mmor150mm;ピッチ occurs only in micrometer teaching p75.",
+      "scope": "Text search alone cannot exclude all graphic glyphs; p105–107 were visually inspected in this pass and do not establish the claimed intermittent example.",
+      "action": "Retain intermittent-weld learning only as a separately referenced extension; link general length/pitch concept to JWES supplemental source39-jwes-weld-01. Original80/150 values, if present in app questions, must be explicitly supplied independent model data rather than a textbook quote or an operating recommendation.",
+      "sourceConfirmed": true,
+      "runtimeCorrectionRequired": "question/figure lane to inspect actual affected assets"
+    },
+    {
+      "id": "mfg39-mechanical-provenance-03",
+      "priority": "P1",
+      "kind": "authored_extension_not_supported_by_assigned_pdf_pages",
+      "physicalPages": [
+        91,
+        92,
+        93
+      ],
+      "affectedPaths": [
+        "src/data/manufacturing/completion37/mechanical.json"
+      ],
+      "lessonId": "mfg1-mechanical-completion37-lesson-006",
+      "paragraphId": "section-2",
+      "observed": "The current paragraph names全断面/半断面/部分断面. Exact source text has none of those strings on169pages; p92–93 supports generic virtual sectioning/material-versus-void/hatching.",
+      "action": "Keep textbook mapping only for generic sectioning. JEED supplemental curriculum source confirms the category names at metadata level; add a substantive diagram/standard source for exact definitions and each visual distinction before marking this narrower claim verified.",
+      "sourceConfirmed": true,
+      "supplementalSourceId": "mfg39-jeed-section-01",
+      "claimResolution": "partially_resolved_supplemental_taxonomy_only"
+    },
+    {
+      "id": "mfg39-mechanical-provenance-04",
+      "priority": "P1",
+      "kind": "requested_priority_beyond_textbook_specificity",
+      "physicalPages": [
+        130,
+        131,
+        132,
+        133
+      ],
+      "affectedPaths": [
+        "src/data/manufacturing/mechanical.json"
+      ],
+      "lessonId": "mfg1-mechanical-lesson-025",
+      "observed": "The source covers machine roles, tool/workpiece motion, coolant/chip roles. Exact body text does not contain切削速度/送り速度/切込み.",
+      "action": "Add separately scoped cutting-condition terminology and, only if needed, unit/formula teaching based on a verified primary manufacturer technical guide. No universal speeds/feeds/depths or operating settings are inferred. Manufacturer glossary currently supports term equivalence only.",
+      "supplementalSourceId": "mfg39-sumitomo-terms-01",
+      "claimResolution": "terminology_only_operating_conditions_not_verified"
+    },
+    {
+      "id": "mfg39-mechanical-detail-01",
+      "priority": "P1",
+      "kind": "detail_not_explicit_in_current_paragraph",
+      "physicalPages": [
+        94
+      ],
+      "lessonId": "mfg1-mechanical-lesson-046",
+      "paragraphId": "section-2",
+      "observed": "The source basic example draws dimension extension lines perpendicular to the dimension line. Current paragraph explains the role but does not explicitly teach that construction.",
+      "action": "Add a source-qualified explanation or record why this limited construction rule is excluded; bind to a new original line-geometry recognition question, not a copied source exercise.",
+      "claimResolution": "open_bounded_detail"
+    },
+    {
+      "id": "mfg39-mechanical-detail-02",
+      "priority": "P1",
+      "kind": "source_qualification_needs_explicit_disposition",
+      "physicalPages": [
+        97
+      ],
+      "lessonId": "mfg1-mechanical-lesson-081",
+      "paragraphId": "section-1",
+      "observed": "Source table7-2 includes strict greater-than180degree qualifiers for circle/sphere diameter cases. Existing paragraph does not explicitly teach those conditions.",
+      "action": "Retain source qualification; either add a source-limited note with current-standard verification or exclude this particular comparison from assessed outcomes with a recorded reason. Do not infer180degree equality or converse rules.",
+      "claimResolution": "open_source_limited_qualification"
+    },
+    {
+      "id": "mfg39-mechanical-provenance-05",
+      "priority": "P1",
+      "kind": "historical_page_content_misalignment",
+      "physicalPages": [
+        131,
+        132
+      ],
+      "observed": "p131 contains a soft-jaw chuck figure and vertical milling-machine figure. p132 contains a drill-press figure and vertical/horizontal MC prose; historical facet names NC lathe/horizontal-MC component pictures.",
+      "action": "Consolidation should bind artwork by actual figure/page and source labels, not those broad historical facet names. Do not copy source illustrations.",
+      "claimResolution": "current_audit_overlay_records_actual_content"
+    }
+  ],
+  "noRuntimeDataChanged": true,
+  "historicalLedgersPreserved": true,
+  "professionalExpertSignoff": false
+}

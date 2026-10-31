@@ -1,3 +1,15 @@
+# Manufacturing SSW1 — source closure audit39, six owned lanes, 2026-10-31
+
+Exact3PDFhashes verified; all574physicalpages classified(169mechanical/198electrical/207surface), with headings/TOC/prose/table/formula/image/vector extraction receipts, retainedlowtextpages andsourceexerciseobjectives. Sharedsource-closure-20261031/coverage-matrix.json joins267bounded semanticunitoccurrences(107historical+160new;mechanical183/electrical39/surface45), exactsourcehash/page/region and authoredparagraph/term/question links with explicit candidatevsreview states. This is NOT an exhaustive knowledge denominator or wholepageclosure. New semantic sourcecomparisons remain bounded; no sourceprose/PDF/images redistributed. ExistingTOCmatrix retained as structuralhistory.
+
+Questioninventory1809unique authored/5436option sides;900truefalse+909fourchoice;5235page-navigationmetadataedges,19new authoredparagraphreviewedgesfor9Qs.78Qs/302option sides actually reread;63arithmetic+4Boolean recomputedPASS.29rationalegaps identified with116Japanese drafts notintegrated;3substantive crossbankrepeats and2pedagogicdecisionpairs.12locales/207600targetfield structurePASS;204definitions actually semanticallycompared,207396otherfields notclaimed reviewed. Fourcontextprecisioncandidates notautomaticcorrections;existingoverlays replayed toavoidduplicatefixes.
+
+Repaired hiddenquizcaption leakage throughimage/button accessibilitylabels;teachingretained. Zoom preserves at leastoriginalartwidth.29recognitionLFS-pointers replacedby25exact-source-recoveredPNGs+4explicitnewPNGencodingrevisionsfromunchangedhash-verifiedSVGs;9image-boundQrevisions/12localesources rebounded withauthoredwords/keys/reasons/translations identical.63uniquePNGbytes available;no oldcorebanks/IDs/answers changed. Newimagecheckrevisions intentionally reject staleattempts via existingguards. MainmanufacturingdatastategatePASS;793recognitioncomponentSSR andsentinelPASS,notphone/fullExpo certification. Narrowassemblerreplay added.
+
+Read source-closure-20261031/REPORT.vi.md,acceptance.json,completion-work-queue.json andall6lanereports. WholeKnowledgeAtomization/wholeCurriculum/release/human/domain/native/physicaldeviceflagsfalse. Remainingpages/units/options/translations requireactualsemanticdisposition,sourcequalifiedgaps,expert/nativeandrealdeviceevidence. No backgroundprocess implied; narrowpublication/fetch/WORKPERSISTENCErequired.
+
+---
+
 # Manufacturing SSW1 — batch37 six-AI concentrated production, 2026-10-31
 
 Onlymanufacturing1号. Added22source-bound cohesive JP supplements(mechanical8/electrical6/surface8),22checks/80newquestions(32/24/24),all12targets:264lesson-locale+960question-locale pairs. AuthorsreassignedafterJPtofiveconcurrenttranslationlanes whileintegratorownedcode. Newreadingcards/existingweeklycontroller,independentIDs/revisions/progress,exactteaching/question/targetbindings,nofallback. Old262corelessons/456weeklyquestions/8caliper+4Boolean/30originalmocks+3curated/12guides retained.7originalSVGPNGboards(4mechanical+3surface)/9lessonattachments,translatedsummarycaptions;total27+7=34uniqueartworks.
