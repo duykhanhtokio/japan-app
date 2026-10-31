@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-31",
+  "publisherApproved": true,
+  "scope": "narrow assessment exclusions; no source numeric or scientific correction inferred",
+  "rules": [
+    {
+      "id": "AGR-EXCLUDE-GENERAL-0166",
+      "sourceItemIds": [
+        "AGR-A10-GENERAL-0166"
+      ],
+      "scope": {
+        "documentId": "AGR-S2",
+        "pdfPage": 5,
+        "region": "直播栽培のメリット table row 2 only"
+      },
+      "action": "reject_assessment_claim",
+      "blockedClaim": "Treating a shift in nursery stages as an established advantage of direct seeding for distributing harvest work.",
+      "blockedJapanesePatterns": [
+        "育苗.{0,20}(ステージ|段階|時期).{0,25}ずら.{0,40}収穫.{0,20}分散",
+        "育苗.{0,20}(ステージ|段階|時期).{0,25}(変更|変え).{0,40}収穫.{0,20}分散"
+      ],
+      "prohibitedRepairs": [
+        "Silently replace 育苗ステージ with 播種時期 or a new agronomic explanation."
+      ],
+      "allowed": [
+        "Teach and assess the independently sourced definition of 直播.",
+        "Retain other separately verified advantages, disadvantages and cultivation definitions."
+      ],
+      "appliesTo": [
+        "new_assessment_authoring",
+        "existing_assessment_audit"
+      ]
+    },
+    {
+      "id": "AGR-EXCLUDE-GENERAL-0239-0243",
+      "sourceItemIds": [
+        "AGR-A10-GENERAL-0239",
+        "AGR-A10-GENERAL-0240",
+        "AGR-A10-GENERAL-0241",
+        "AGR-A10-GENERAL-0242",
+        "AGR-A10-GENERAL-0243"
+      ],
+      "scope": {
+        "documentId": "AGR-S2",
+        "pdfPage": 7,
+        "region": "lower 花き産出額の推移 stacked bar chart only"
+      },
+      "action": "reject_quantitative_assessment_from_these_annotations",
+      "printedAnnotations": [
+        {
+          "era": "平成2年",
+          "value": "5572"
+        },
+        {
+          "era": "平成10年",
+          "value": "6346"
+        },
+        {
+          "era": "平成20年",
+          "value": "4012"
+        },
+        {
+          "era": "平成24年",
+          "value": "3762"
+        },
+        {
+          "era": "平成29年",
+          "value": "3687"
+        }
+      ],
+      "blockedOperations": [
+        "sum",
+        "difference",
+        "average",
+        "ratio",
+        "percentage",
+        "growth_rate",
+        "reconstructed_axis_or_bar_height",
+        "corrected_total_as_answer"
+      ],
+      "normalization": "Unicode NFKC; ignore spaces and ASCII/fullwidth thousands separators when detecting these numeric operands.",
+      "prohibitedRepairs": [
+        "Do not replace the five printed annotations.",
+        "Do not infer replacement values from bar heights, neighboring years or a different statistical series.",
+        "Do not change them to current statistics."
+      ],
+      "allowed": [
+        "Teach year, unit, denominator and legend-reading principles without using these five annotations as calculation operands.",
+        "Use other independently verified source data, including distinct upper donut charts, within their proper year and statistical scope."
+      ],
+      "sourceIssueFactuallyResolved": false,
+      "appliesTo": [
+        "new_assessment_authoring",
+        "existing_assessment_audit"
+      ]
+    }
+  ],
+  "sourceTruthResolved": false
+}

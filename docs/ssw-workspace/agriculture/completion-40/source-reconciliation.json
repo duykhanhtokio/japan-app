@@ -5,8 +5,11 @@
   "statusCounts": {
     "excluded_nonlearning": 7,
     "covered_existing": 255,
-    "covered_new": 932,
-    "hold": 55,
+    "covered_new": 955,
+    "excluded": 7,
+    "covered_new_bounded_current_source_supplement": 10,
+    "covered_new_bounded_principle": 5,
+    "hold": 10,
     "covered_new_bounded_visual": 146,
     "covered_new_level1_supplement": 9,
     "excluded_administrative": 1
@@ -1000,14 +1003,39 @@
         }
       ],
       "objectiveJa": "育苗の段階・時期をずらして収穫作業を分散するという掲載直播の利点を説明する。",
-      "disposition": "hold",
+      "disposition": "excluded",
       "paragraphIds": [],
       "figureIds": [],
-      "reasonJa": "原頁S2 PDF5の直播利点に育苗ステージをずらす表現があり、直播定義との意図的矛盾が残る。播種時期へ無断変更できず、その利点の正解化のみ保留。直播の既存定義・他の利点は別項目で提供済み。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/general/final-reconciliation.json",
+      "reasonJa": "発行者の指示に従い、直播の利点欄にある育苗ステージの変更と収穫分散を結び付ける疑義のある一項目だけを出題対象から除外する。直播の定義や他の独立した内容は維持する。元の育苗という語を播種時期へ無断で置換しない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-general/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "育苗の段階・時期をずらして収穫作業を分散するという掲載直播の利点を説明する。",
+      "resolutionKind": "publisher_authorized_narrow_assessment_exclusion",
+      "excludedClaim": "Ambiguous benefit: shifting nursery stages is said to distribute harvest work in the direct-seeding advantages table.",
+      "retainedConceptBindings": [
+        {
+          "lessonId": "agr-ricework-lowcost",
+          "paragraphId": "agr-ricework-lowcost-p1",
+          "knowledgeIds": [
+            "AGR-K-RICEWORK-LOWCOST-01"
+          ],
+          "lessonSourceHash": "236f4ee8903164b27aa2e1d3224494533a09aa8e1752e7b316b49f03d08e2118",
+          "meaning": "Direct seeding means sowing seeds directly into the paddy instead of raising and transplanting seedlings."
+        }
+      ],
+      "sourceTruthResolved": false,
+      "sourceCorrected": false,
+      "sourceAmbiguityPreserved": true,
+      "evidence": {
+        "documentId": "AGR-S2",
+        "pdfPage": 5,
+        "printedPage": 3,
+        "originalPageImageViewed": true,
+        "pageImageSha256": "45b039da45fa051db7308670ff73d5a84864237e267c3e92a4a8f564028c47b4",
+        "finding": "The body defines direct seeding as direct sowing into the paddy, while advantage row 2 explicitly refers to shifting nursery stages. The row is not silently rewritten or used as a correct answer."
+      }
     },
     {
       "id": "AGR-A10-GENERAL-0179",
@@ -2097,14 +2125,60 @@
         }
       ],
       "objectiveJa": "平成2年の推移図の注記5572を、棒の高さ・軸の目盛りと照合する。",
-      "disposition": "hold",
+      "disposition": "excluded",
       "paragraphIds": [],
       "figureIds": [],
-      "reasonJa": "原頁S2 PDF7を拡大確認。注記5572は読めるが、推移棒の高さ・目盛りとの不一致が残る。元系列や軸尺度の確定根拠がなく、正しい実額や棒高として問題化する目的は保留。凡例・時系列の読み方は別教材で提供済み。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/general/final-reconciliation.json",
+      "reasonJa": "発行者の指示に従い、花き産出額の推移図にある平成2年の注記5572を使う計算問題を作らない。値を訂正・推定したり、棒の高さから代替値を作ったりしない。この出題上の除外は元図の数値を正しい実額として認証するものではない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-general/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "平成2年の推移図の注記5572を、棒の高さ・軸の目盛りと照合する。",
+      "resolutionKind": "publisher_authorized_chart_calculation_exclusion",
+      "excludedClaim": {
+        "chart": "花き産出額の推移",
+        "era": "平成2年",
+        "printedNumericAnnotation": "5572",
+        "doNotReconstructOrReplace": true
+      },
+      "retainedConceptBindings": [
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p1",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-01"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        },
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p3",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-03"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        },
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p6",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-06"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        }
+      ],
+      "sourceTruthResolved": false,
+      "sourceCorrected": false,
+      "sourceAmbiguityPreserved": true,
+      "evidence": {
+        "documentId": "AGR-S2",
+        "pdfPage": 7,
+        "printedPage": 5,
+        "region": "lower stacked time-series chart only; upper 平成30年 donut charts are separate",
+        "originalPageImageViewed": true,
+        "pageImageSha256": "066a9761c4f0e6ea222bd80ef58d489a231ff1e4d05317ca8ff8086a2e7e49bf",
+        "finding": "The original chart visibly prints 5572 at 平成2年. No substitute total, corrected bar height, growth rate or calculation is inferred."
+      }
     },
     {
       "id": "AGR-A10-GENERAL-0240",
@@ -2120,14 +2194,60 @@
         }
       ],
       "objectiveJa": "平成10年の推移図の注記6346を、棒の高さ・軸の目盛りと照合する。",
-      "disposition": "hold",
+      "disposition": "excluded",
       "paragraphIds": [],
       "figureIds": [],
-      "reasonJa": "原頁S2 PDF7を拡大確認。注記6346は読めるが、推移棒の高さ・目盛りとの不一致が残る。元系列や軸尺度の確定根拠がなく、正しい実額や棒高として問題化する目的は保留。凡例・時系列の読み方は別教材で提供済み。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/general/final-reconciliation.json",
+      "reasonJa": "発行者の指示に従い、花き産出額の推移図にある平成10年の注記6346を使う計算問題を作らない。値を訂正・推定したり、棒の高さから代替値を作ったりしない。この出題上の除外は元図の数値を正しい実額として認証するものではない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-general/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "平成10年の推移図の注記6346を、棒の高さ・軸の目盛りと照合する。",
+      "resolutionKind": "publisher_authorized_chart_calculation_exclusion",
+      "excludedClaim": {
+        "chart": "花き産出額の推移",
+        "era": "平成10年",
+        "printedNumericAnnotation": "6346",
+        "doNotReconstructOrReplace": true
+      },
+      "retainedConceptBindings": [
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p1",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-01"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        },
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p3",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-03"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        },
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p6",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-06"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        }
+      ],
+      "sourceTruthResolved": false,
+      "sourceCorrected": false,
+      "sourceAmbiguityPreserved": true,
+      "evidence": {
+        "documentId": "AGR-S2",
+        "pdfPage": 7,
+        "printedPage": 5,
+        "region": "lower stacked time-series chart only; upper 平成30年 donut charts are separate",
+        "originalPageImageViewed": true,
+        "pageImageSha256": "066a9761c4f0e6ea222bd80ef58d489a231ff1e4d05317ca8ff8086a2e7e49bf",
+        "finding": "The original chart visibly prints 6346 at 平成10年. No substitute total, corrected bar height, growth rate or calculation is inferred."
+      }
     },
     {
       "id": "AGR-A10-GENERAL-0241",
@@ -2143,14 +2263,60 @@
         }
       ],
       "objectiveJa": "平成20年の推移図の注記4012を、棒の高さ・軸の目盛りと照合する。",
-      "disposition": "hold",
+      "disposition": "excluded",
       "paragraphIds": [],
       "figureIds": [],
-      "reasonJa": "原頁S2 PDF7を拡大確認。注記4012は読めるが、推移棒の高さ・目盛りとの不一致が残る。元系列や軸尺度の確定根拠がなく、正しい実額や棒高として問題化する目的は保留。凡例・時系列の読み方は別教材で提供済み。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/general/final-reconciliation.json",
+      "reasonJa": "発行者の指示に従い、花き産出額の推移図にある平成20年の注記4012を使う計算問題を作らない。値を訂正・推定したり、棒の高さから代替値を作ったりしない。この出題上の除外は元図の数値を正しい実額として認証するものではない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-general/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "平成20年の推移図の注記4012を、棒の高さ・軸の目盛りと照合する。",
+      "resolutionKind": "publisher_authorized_chart_calculation_exclusion",
+      "excludedClaim": {
+        "chart": "花き産出額の推移",
+        "era": "平成20年",
+        "printedNumericAnnotation": "4012",
+        "doNotReconstructOrReplace": true
+      },
+      "retainedConceptBindings": [
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p1",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-01"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        },
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p3",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-03"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        },
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p6",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-06"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        }
+      ],
+      "sourceTruthResolved": false,
+      "sourceCorrected": false,
+      "sourceAmbiguityPreserved": true,
+      "evidence": {
+        "documentId": "AGR-S2",
+        "pdfPage": 7,
+        "printedPage": 5,
+        "region": "lower stacked time-series chart only; upper 平成30年 donut charts are separate",
+        "originalPageImageViewed": true,
+        "pageImageSha256": "066a9761c4f0e6ea222bd80ef58d489a231ff1e4d05317ca8ff8086a2e7e49bf",
+        "finding": "The original chart visibly prints 4012 at 平成20年. No substitute total, corrected bar height, growth rate or calculation is inferred."
+      }
     },
     {
       "id": "AGR-A10-GENERAL-0242",
@@ -2166,14 +2332,60 @@
         }
       ],
       "objectiveJa": "平成24年の推移図の注記3762を、棒の高さ・軸の目盛りと照合する。",
-      "disposition": "hold",
+      "disposition": "excluded",
       "paragraphIds": [],
       "figureIds": [],
-      "reasonJa": "原頁S2 PDF7を拡大確認。注記3762は読めるが、推移棒の高さ・目盛りとの不一致が残る。元系列や軸尺度の確定根拠がなく、正しい実額や棒高として問題化する目的は保留。凡例・時系列の読み方は別教材で提供済み。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/general/final-reconciliation.json",
+      "reasonJa": "発行者の指示に従い、花き産出額の推移図にある平成24年の注記3762を使う計算問題を作らない。値を訂正・推定したり、棒の高さから代替値を作ったりしない。この出題上の除外は元図の数値を正しい実額として認証するものではない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-general/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "平成24年の推移図の注記3762を、棒の高さ・軸の目盛りと照合する。",
+      "resolutionKind": "publisher_authorized_chart_calculation_exclusion",
+      "excludedClaim": {
+        "chart": "花き産出額の推移",
+        "era": "平成24年",
+        "printedNumericAnnotation": "3762",
+        "doNotReconstructOrReplace": true
+      },
+      "retainedConceptBindings": [
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p1",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-01"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        },
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p3",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-03"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        },
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p6",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-06"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        }
+      ],
+      "sourceTruthResolved": false,
+      "sourceCorrected": false,
+      "sourceAmbiguityPreserved": true,
+      "evidence": {
+        "documentId": "AGR-S2",
+        "pdfPage": 7,
+        "printedPage": 5,
+        "region": "lower stacked time-series chart only; upper 平成30年 donut charts are separate",
+        "originalPageImageViewed": true,
+        "pageImageSha256": "066a9761c4f0e6ea222bd80ef58d489a231ff1e4d05317ca8ff8086a2e7e49bf",
+        "finding": "The original chart visibly prints 3762 at 平成24年. No substitute total, corrected bar height, growth rate or calculation is inferred."
+      }
     },
     {
       "id": "AGR-A10-GENERAL-0243",
@@ -2189,14 +2401,60 @@
         }
       ],
       "objectiveJa": "平成29年の推移図の注記3687を、棒の高さ・軸の目盛りと照合する。",
-      "disposition": "hold",
+      "disposition": "excluded",
       "paragraphIds": [],
       "figureIds": [],
-      "reasonJa": "原頁S2 PDF7を拡大確認。注記3687は読めるが、推移棒の高さ・目盛りとの不一致が残る。元系列や軸尺度の確定根拠がなく、正しい実額や棒高として問題化する目的は保留。凡例・時系列の読み方は別教材で提供済み。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/general/final-reconciliation.json",
+      "reasonJa": "発行者の指示に従い、花き産出額の推移図にある平成29年の注記3687を使う計算問題を作らない。値を訂正・推定したり、棒の高さから代替値を作ったりしない。この出題上の除外は元図の数値を正しい実額として認証するものではない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-general/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "平成29年の推移図の注記3687を、棒の高さ・軸の目盛りと照合する。",
+      "resolutionKind": "publisher_authorized_chart_calculation_exclusion",
+      "excludedClaim": {
+        "chart": "花き産出額の推移",
+        "era": "平成29年",
+        "printedNumericAnnotation": "3687",
+        "doNotReconstructOrReplace": true
+      },
+      "retainedConceptBindings": [
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p1",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-01"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        },
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p3",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-03"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        },
+        {
+          "lessonId": "agr-statistics",
+          "paragraphId": "agr-statistics-p6",
+          "knowledgeIds": [
+            "AGR-K-STATISTICS-06"
+          ],
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7"
+        }
+      ],
+      "sourceTruthResolved": false,
+      "sourceCorrected": false,
+      "sourceAmbiguityPreserved": true,
+      "evidence": {
+        "documentId": "AGR-S2",
+        "pdfPage": 7,
+        "printedPage": 5,
+        "region": "lower stacked time-series chart only; upper 平成30年 donut charts are separate",
+        "originalPageImageViewed": true,
+        "pageImageSha256": "066a9761c4f0e6ea222bd80ef58d489a231ff1e4d05317ca8ff8086a2e7e49bf",
+        "finding": "The original chart visibly prints 3687 at 平成29年. No substitute total, corrected bar height, growth rate or calculation is inferred."
+      }
     },
     {
       "id": "AGR-A10-GENERAL-0245",
@@ -4237,15 +4495,28 @@
           "printedPage": 11
         }
       ],
-      "objectiveJa": "1号の畑に占める黒ボク土の割合の記述を時点未確定の主張として検討する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "objectiveJa": "日本の畑の50%が黒ボク土であることを学ぶ。",
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-soil-groups-p2"
+      ],
       "figureIds": [],
-      "reasonJa": "黒ボク土50%という割合の基準年・集計範囲が不明。現在の割合として扱わない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/soil/new-reconciliation.json",
+      "reasonJa": "原頁を確認し、出版社指定どおり50%を本文と12言語へ採用。年次や新たな解釈は加えない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-soil/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "1号の畑に占める黒ボク土の割合の記述を時点未確定の主張として検討する。",
+      "lessonIds": [
+        "agr-soil-groups"
+      ],
+      "knowledgeIds": [
+        "AGR-K-SOIL-GROUPS-02"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "resolutionScope": "publisher_approved_source_numeric_preserved_without_added_year_or_interpretation",
+      "operationalGeneralizationAsserted": false,
+      "currentLegalProductClassificationAsserted": false
     },
     {
       "id": "AGR-A10-SOIL-0100",
@@ -4414,15 +4685,28 @@
           "printedPage": 12
         }
       ],
-      "objectiveJa": "特殊な土壌条件の三相数値を条件付きで照合する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "objectiveJa": "黒ボク土の気相率15～20%以上という記載をそのまま学ぶ。",
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-f40-soil-source-comparisons-p2"
+      ],
       "figureIds": [],
-      "reasonJa": "黒ボク土の気相「15～20%以上」は単一の境界が明確でない。原表記と不確実性は補足p2に保存する。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/soil/new-reconciliation.json",
+      "reasonJa": "原頁の15～20%以上という表記を本文と12言語に保持。境界の新解釈は加えない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-soil/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "特殊な土壌条件の三相数値を条件付きで照合する。",
+      "lessonIds": [
+        "agr-f40-soil-source-comparisons"
+      ],
+      "knowledgeIds": [
+        "AGR-K-F40-SOIL-COMPARE-02"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "resolutionScope": "publisher_approved_exact_range_expression_preserved_without_new_interpretation",
+      "operationalGeneralizationAsserted": false,
+      "currentLegalProductClassificationAsserted": false
     },
     {
       "id": "AGR-A10-SOIL-0122",
@@ -5592,15 +5876,28 @@
           "printedPage": 17
         }
       ],
-      "objectiveJa": "配合肥料の成分保証に関する掲載の数値条件を現在の制度と区別する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "objectiveJa": "両教材にある配合肥料の二成分以上・合計10%以上の保証の説明を読む。",
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-fertilizer-types-p3"
+      ],
       "figureIds": [],
-      "reasonJa": "配合肥料10%保証条件は現行制度の詳細な適用を未確認。旧資料の数値だけで一般化しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/soil/new-reconciliation.json",
+      "reasonJa": "原頁と農林水産省の統計用語解説を照合し、教材にある二成分以上・合計10%以上の説明を本文と12言語へ採用。現在の全製品の法規格は認証しない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-soil/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "配合肥料の成分保証に関する掲載の数値条件を現在の制度と区別する。",
+      "lessonIds": [
+        "agr-fertilizer-types"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FERTILIZER-TYPES-03"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "resolutionScope": "source_text_preserved_official_statistics_definition_corresponds_current_product_rule_not_asserted",
+      "operationalGeneralizationAsserted": false,
+      "currentLegalProductClassificationAsserted": false
     },
     {
       "id": "AGR-A10-SOIL-0325",
@@ -6641,15 +6938,28 @@
           "printedPage": 20
         }
       ],
-      "objectiveJa": "2号の畑に占める黒ボク土の割合の記述を時点未確定の主張として検討する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "objectiveJa": "日本の畑の50%が黒ボク土であることを学ぶ。",
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-soil-groups-p2"
+      ],
       "figureIds": [],
-      "reasonJa": "黒ボク土50%という割合の基準年・集計範囲が不明。現在の割合として扱わない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/soil/new-reconciliation.json",
+      "reasonJa": "原頁を確認し、出版社指定どおり50%を本文と12言語へ採用。年次や新たな解釈は加えない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-soil/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "2号の畑に占める黒ボク土の割合の記述を時点未確定の主張として検討する。",
+      "lessonIds": [
+        "agr-soil-groups"
+      ],
+      "knowledgeIds": [
+        "AGR-K-SOIL-GROUPS-02"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "resolutionScope": "publisher_approved_source_numeric_preserved_without_added_year_or_interpretation",
+      "operationalGeneralizationAsserted": false,
+      "currentLegalProductClassificationAsserted": false
     },
     {
       "id": "AGR-A10-SOIL-0101",
@@ -6818,15 +7128,28 @@
           "printedPage": 21
         }
       ],
-      "objectiveJa": "特殊な土壌条件の三相数値を条件付きで照合する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "objectiveJa": "黒ボク土の気相率15～20%以上という記載をそのまま学ぶ。",
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-f40-soil-source-comparisons-p2"
+      ],
       "figureIds": [],
-      "reasonJa": "黒ボク土の気相「15～20%以上」は単一の境界が明確でない。原表記と不確実性は補足p2に保存する。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/soil/new-reconciliation.json",
+      "reasonJa": "原頁の15～20%以上という表記を本文と12言語に保持。境界の新解釈は加えない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-soil/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "特殊な土壌条件の三相数値を条件付きで照合する。",
+      "lessonIds": [
+        "agr-f40-soil-source-comparisons"
+      ],
+      "knowledgeIds": [
+        "AGR-K-F40-SOIL-COMPARE-02"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "resolutionScope": "publisher_approved_exact_range_expression_preserved_without_new_interpretation",
+      "operationalGeneralizationAsserted": false,
+      "currentLegalProductClassificationAsserted": false
     },
     {
       "id": "AGR-A10-SOIL-0123",
@@ -7823,15 +8146,28 @@
           "printedPage": 28
         }
       ],
-      "objectiveJa": "配合肥料の成分保証に関する掲載の数値条件を現在の制度と区別する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "objectiveJa": "両教材にある配合肥料の二成分以上・合計10%以上の保証の説明を読む。",
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-fertilizer-types-p3"
+      ],
       "figureIds": [],
-      "reasonJa": "配合肥料10%保証条件は現行制度の詳細な適用を未確認。旧資料の数値だけで一般化しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/soil/new-reconciliation.json",
+      "reasonJa": "原頁と農林水産省の統計用語解説を照合し、教材にある二成分以上・合計10%以上の説明を本文と12言語へ採用。現在の全製品の法規格は認証しない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-soil/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "配合肥料の成分保証に関する掲載の数値条件を現在の制度と区別する。",
+      "lessonIds": [
+        "agr-fertilizer-types"
+      ],
+      "knowledgeIds": [
+        "AGR-K-FERTILIZER-TYPES-03"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "resolutionScope": "source_text_preserved_official_statistics_definition_corresponds_current_product_rule_not_asserted",
+      "operationalGeneralizationAsserted": false,
+      "currentLegalProductClassificationAsserted": false
     },
     {
       "id": "AGR-A10-SOIL-0341",
@@ -8391,15 +8727,28 @@
           "printedPage": 30
         }
       ],
-      "objectiveJa": "ECの掲載しきい値と操作判断を、未検証の適用条件として保持する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "objectiveJa": "2号教材のEC0.5mS/cm超・1.0mS/cm超の記載を、頁にある情報の範囲で読む。",
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-f40-soil-common-reading-p4"
+      ],
       "figureIds": [],
-      "reasonJa": "EC0.5/1.0mS/cmの操作判断に必要な測定法・作物・土壌条件が不足。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/soil/new-reconciliation.json",
+      "reasonJa": "2号原頁の0.5mS/cm超・1.0mS/cm超と各記載を本文と12言語に保存。頁にない測定法や作物範囲、追加の操作条件は補わない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-soil/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "ECの掲載しきい値と操作判断を、未検証の適用条件として保持する。",
+      "lessonIds": [
+        "agr-f40-soil-common-reading"
+      ],
+      "knowledgeIds": [
+        "AGR-K-F40-SOIL-COMMON-04"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "resolutionScope": "source_text_restored_without_invented_measurement_conditions_or_universal_threshold",
+      "operationalGeneralizationAsserted": false,
+      "currentLegalProductClassificationAsserted": false
     },
     {
       "id": "AGR-A10-SOIL-0457",
@@ -8414,15 +8763,28 @@
           "printedPage": 30
         }
       ],
-      "objectiveJa": "ECの掲載しきい値と操作判断を、未検証の適用条件として保持する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "objectiveJa": "2号教材のEC0.5mS/cm超・1.0mS/cm超の記載を、頁にある情報の範囲で読む。",
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-f40-soil-common-reading-p4"
+      ],
       "figureIds": [],
-      "reasonJa": "EC0.5/1.0mS/cmの操作判断に必要な測定法・作物・土壌条件が不足。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/soil/new-reconciliation.json",
+      "reasonJa": "2号原頁の0.5mS/cm超・1.0mS/cm超と各記載を本文と12言語に保存。頁にない測定法や作物範囲、追加の操作条件は補わない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-soil/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "ECの掲載しきい値と操作判断を、未検証の適用条件として保持する。",
+      "lessonIds": [
+        "agr-f40-soil-common-reading"
+      ],
+      "knowledgeIds": [
+        "AGR-K-F40-SOIL-COMMON-04"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "resolutionScope": "source_text_restored_without_invented_measurement_conditions_or_universal_threshold",
+      "operationalGeneralizationAsserted": false,
+      "currentLegalProductClassificationAsserted": false
     },
     {
       "id": "AGR-A10-SOIL-0464",
@@ -8792,15 +9154,28 @@
           "printedPage": 33
         }
       ],
-      "objectiveJa": "2号が株元の盛土へ客土という語を併記することを他用法と区別して読む。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "objectiveJa": "2号教材の盛土の例と、他所から適土を運び入れる客土の一般的意味を区別する。",
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-s38-soil-condition-drainage-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "株元の盛土へ客土を併記する原記述と用語全体の用法・範囲の差が未解消。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/soil/new-reconciliation.json",
+      "reasonJa": "原頁と図を確認し、盛土の例と、他所から適土を運ぶ客土の一般的意味を公式自治体資料で区別して具体化。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-soil/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "2号が株元の盛土へ客土という語を併記することを他用法と区別して読む。",
+      "lessonIds": [
+        "agr-s38-soil-condition-drainage"
+      ],
+      "knowledgeIds": [
+        "AGR-K-S38-SOIL-CONDITION-06"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "resolutionScope": "source_example_compared_with_official_soil_import_definition",
+      "operationalGeneralizationAsserted": false,
+      "currentLegalProductClassificationAsserted": false
     },
     {
       "id": "AGR-A10-SAFETY-0006",
@@ -9191,14 +9566,31 @@
         }
       ],
       "objectiveJa": "使用済みフィルムの委託処分・野焼き禁止という記載を現行処分条件と区別する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_current_source_supplement",
+      "paragraphIds": [
+        "agr-cover-mulch-legal-disposal"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "排出責任、野焼き・不法投棄禁止を確認。自ら処理する原則と適法な委託を分け、地域の分別回収条件は自治体等への確認とした。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-legal/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "使用済みフィルムの委託処分・野焼き禁止という記載を現行処分条件と区別する。",
+      "expectedBeforeDisposition": "hold",
+      "originalSourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 33,
+          "printedPage": 27
+        }
+      ],
+      "externalSourceIds": [
+        "LEGAL-MAFF-AGRI-PLASTIC",
+        "LEGAL-MOE-WASTE-RESPONSIBILITY",
+        "LEGAL-TOKYO-WASTE-CONSIGNMENT"
+      ],
+      "notAnIndividualPermitOrProductApproval": true
     },
     {
       "id": "AGR-A10-SAFETY-0049",
@@ -9414,14 +9806,39 @@
         }
       ],
       "objectiveJa": "登録・非農耕地用製品禁止・作物回数濃度等の使用基準を現在の製品条件と照合する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-safety-pesticide-label-p1",
+        "agr-safety-pesticide-label-p4",
+        "agr-pest-weeds-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "登録・ラベルの対象、量濃度、時期方法回数を調べる手順と無登録除草剤の禁止範囲を現在の公式説明で具体化。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-chemicals/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "登録・非農耕地用製品禁止・作物回数濃度等の使用基準を現在の製品条件と照合する。",
+      "baselineDisposition": "hold",
+      "resolutionType": "bounded_current_official_guidance_not_product_prescription",
+      "countsAsClosedSourceOccurrence": true,
+      "knowledgeIds": [
+        "AGR-K-SAFETY-PESTICIDE-LABEL-01",
+        "AGR-K-SAFETY-PESTICIDE-LABEL-04",
+        "AGR-K-PEST-WEEDS-06"
+      ],
+      "sourceRefs": [
+        "FAMIC-QA",
+        "MAFF-REGISTER",
+        "MAFF-REVIEW",
+        "MHLW-2026-CAMPAIGN",
+        "MAFF-HERBICIDE"
+      ],
+      "remainingExecutionChecks": [
+        "実際に選ぶ製品の現在の登録適用・ラベル",
+        "現場の作物、目的、生育段階、施設条件に応じた確認"
+      ],
+      "wholeLessonOnHold": false
     },
     {
       "id": "AGR-A10-SAFETY-0063",
@@ -9792,14 +10209,29 @@
         }
       ],
       "objectiveJa": "公道走行の免許記載を現在の免許種別・車両条件へ照合する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_current_source_supplement",
+      "paragraphIds": [
+        "agr-safety-machine-preparation-legal-road"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "農耕トラクタの特定小型特殊に必要な寸法・最高速度・キャブ条件と必要免許を確認し、全農機へ拡張しない。けん引・装備・道路条件は別の現場確認として保持。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-legal/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "公道走行の免許記載を現在の免許種別・車両条件へ照合する。",
+      "expectedBeforeDisposition": "hold",
+      "originalSourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 37,
+          "printedPage": 31
+        }
+      ],
+      "externalSourceIds": [
+        "LEGAL-MAFF-TRACTOR-ROAD"
+      ],
+      "notAnIndividualPermitOrProductApproval": true
     },
     {
       "id": "AGR-A10-SAFETY-0085",
@@ -10215,14 +10647,34 @@
         }
       ],
       "objectiveJa": "毒劇物農薬の区分別専用保管・表示・施錠を現行の全法要件と区別する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-safety-pesticide-label-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "毒物劇物の区分確認、他の農薬等との区別、容器と場所の表示、丈夫な専用保管場所と施錠・鍵管理、飲食品容器へ移さない事項を具体化。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-chemicals/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "毒劇物農薬の区分別専用保管・表示・施錠を現行の全法要件と区別する。",
+      "baselineDisposition": "hold",
+      "resolutionType": "bounded_current_official_guidance_not_product_prescription",
+      "countsAsClosedSourceOccurrence": true,
+      "knowledgeIds": [
+        "AGR-K-SAFETY-PESTICIDE-LABEL-06"
+      ],
+      "sourceRefs": [
+        "FAMIC-QA",
+        "MHLW-2026-CAMPAIGN",
+        "MHLW-BUSINESS",
+        "NIHS-STORAGE"
+      ],
+      "remainingExecutionChecks": [
+        "実際に選ぶ製品の現在の登録適用・ラベル",
+        "現場の作物、目的、生育段階、施設条件に応じた確認"
+      ],
+      "wholeLessonOnHold": false
     },
     {
       "id": "AGR-A10-SAFETY-0113",
@@ -10513,14 +10965,33 @@
         }
       ],
       "objectiveJa": "燃料保管容器の法的制限とガソリンの金属容器指定を現行条件と照合する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_current_source_supplement",
+      "paragraphIds": [
+        "agr-safety-power-fuel-legal-gasoline",
+        "agr-safety-power-fuel-legal-storage"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "金属容器のみという旧資料の一般化を現在のFDMA告示の用途・車両・性能・表示・容積条件へ分解。灯油用20L容器は使用しない原則を保持し、保管総量とは分けた。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-legal/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "燃料保管容器の法的制限とガソリンの金属容器指定を現行条件と照合する。",
+      "expectedBeforeDisposition": "hold",
+      "originalSourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 42,
+          "printedPage": 36
+        }
+      ],
+      "externalSourceIds": [
+        "LEGAL-FDMA-CONT-68-4",
+        "LEGAL-KOSAI-CONTAINER",
+        "LEGAL-FDMA-STORAGE-SYSTEM",
+        "LEGAL-FDMA-STORAGE-QUANTITIES"
+      ],
+      "notAnIndividualPermitOrProductApproval": true
     },
     {
       "id": "AGR-A10-SAFETY-0129",
@@ -10536,14 +11007,33 @@
         }
       ],
       "objectiveJa": "灯油用20Lポリ容器へのガソリン禁止という掲載例を現行法全条件と分ける。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_current_source_supplement",
+      "paragraphIds": [
+        "agr-safety-power-fuel-legal-gasoline",
+        "agr-safety-power-fuel-legal-storage"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "金属容器のみという旧資料の一般化を現在のFDMA告示の用途・車両・性能・表示・容積条件へ分解。灯油用20L容器は使用しない原則を保持し、保管総量とは分けた。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-legal/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "灯油用20Lポリ容器へのガソリン禁止という掲載例を現行法全条件と分ける。",
+      "expectedBeforeDisposition": "hold",
+      "originalSourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 43,
+          "printedPage": 37
+        }
+      ],
+      "externalSourceIds": [
+        "LEGAL-FDMA-CONT-68-4",
+        "LEGAL-KOSAI-CONTAINER",
+        "LEGAL-FDMA-STORAGE-SYSTEM",
+        "LEGAL-FDMA-STORAGE-QUANTITIES"
+      ],
+      "notAnIndividualPermitOrProductApproval": true
     },
     {
       "id": "AGR-A10-SAFETY-0130",
@@ -10559,14 +11049,32 @@
         }
       ],
       "objectiveJa": "軽油30L以下プラスチック容器という歴史的掲載例を現行容器要件と区別する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_current_source_supplement",
+      "paragraphIds": [
+        "agr-safety-power-fuel-legal-kerosene-diesel",
+        "agr-safety-power-fuel-legal-storage"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "30Lという数値を適合する運搬容器の例へ限定。どのポリ容器でも保管できるという読みを採用せず、油種適合と貯蔵総量・条例を分けた。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-legal/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "軽油30L以下プラスチック容器という歴史的掲載例を現行容器要件と区別する。",
+      "expectedBeforeDisposition": "hold",
+      "originalSourcePages": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 43,
+          "printedPage": 37
+        }
+      ],
+      "externalSourceIds": [
+        "LEGAL-KOSAI-CONTAINER",
+        "LEGAL-FDMA-STORAGE-SYSTEM",
+        "LEGAL-FDMA-STORAGE-QUANTITIES"
+      ],
+      "notAnIndividualPermitOrProductApproval": true
     },
     {
       "id": "AGR-A10-SAFETY-0131",
@@ -10607,14 +11115,32 @@
         }
       ],
       "objectiveJa": "容器圧力を抜いて開栓という図の例を個別容器の手順と分ける。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_principle",
+      "paragraphIds": [
+        "agr-safety-power-fuel-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "個別機器・容器又は観察方向に依存する操作条件が未確定。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "製品間で圧力調整部と開栓方法が異なることを確認。原図の例を全容器の共通手順へせず、当該容器の説明書確認と噴出危険という限定知識へ解決。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-equipment/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "容器圧力を抜いて開栓という図の例を個別容器の手順と分ける。",
+      "expectedDisposition": "hold",
+      "knowledgeIds": [
+        "AGR-K-SAFETY-POWER-FUEL-06"
+      ],
+      "externalSourceIds": [
+        "AGR-EXT-EQUIP-NCAC-CAN-2024",
+        "AGR-EXT-EQUIP-DAIJI-FX",
+        "AGR-EXT-EQUIP-DAIJI-FK0506",
+        "AGR-EXT-EQUIP-MATSUMOTO-FIRE"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "closureScope": "bounded_educational_principle_and_source_example_limits",
+      "specificEquipmentModelIdentifiedForLearner": false,
+      "universalOperationProcedureCertified": false,
+      "sourcePageImageSelfChecked": true
     },
     {
       "id": "AGR-A10-SAFETY-0133",
@@ -11105,14 +11631,32 @@
         }
       ],
       "objectiveJa": "ウンシュウミカン・リンゴの摘果剤使用例を現行製品の使用条件と区別する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-management-detail-staged-thinning-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "摘果という目的は保持し、ウンシュウミカン・リンゴの資料例を製品選定や処方へ広げず、現行適用とラベルを調べる手順を明示。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-chemicals/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "ウンシュウミカン・リンゴの摘果剤使用例を現行製品の使用条件と区別する。",
+      "baselineDisposition": "hold",
+      "resolutionType": "bounded_current_official_guidance_not_product_prescription",
+      "countsAsClosedSourceOccurrence": true,
+      "knowledgeIds": [
+        "AGR-K-MANAGEMENT-DETAIL-STAGED-THINNING-06"
+      ],
+      "sourceRefs": [
+        "FAMIC-QA",
+        "MAFF-REGISTER"
+      ],
+      "remainingExecutionChecks": [
+        "実際に選ぶ製品の現在の登録適用・ラベル",
+        "現場の作物、目的、生育段階、施設条件に応じた確認"
+      ],
+      "wholeLessonOnHold": false
     },
     {
       "id": "AGR-A10-SAFETY-0172",
@@ -11378,14 +11922,32 @@
         }
       ],
       "objectiveJa": "植物ホルモン類似作用の薬剤を花芽へ噴霧・浸漬する資料例を製品条件と分ける。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-par22-hormones-p1"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "噴霧・浸漬の目的は学び、実施方法は製品・作物・目的の登録適合とラベル条件で決めることを明示。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-chemicals/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "植物ホルモン類似作用の薬剤を花芽へ噴霧・浸漬する資料例を製品条件と分ける。",
+      "baselineDisposition": "hold",
+      "resolutionType": "bounded_current_official_guidance_not_product_prescription",
+      "countsAsClosedSourceOccurrence": true,
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-01"
+      ],
+      "sourceRefs": [
+        "FAMIC-QA",
+        "MAFF-REGISTER"
+      ],
+      "remainingExecutionChecks": [
+        "実際に選ぶ製品の現在の登録適用・ラベル",
+        "現場の作物、目的、生育段階、施設条件に応じた確認"
+      ],
+      "wholeLessonOnHold": false
     },
     {
       "id": "AGR-A10-SAFETY-0186",
@@ -11426,14 +11988,32 @@
         }
       ],
       "objectiveJa": "トマト・ナス・ブドウの着果、ブドウ落果防止、キク側芽花芽の薬剤例を現在の適用と分ける。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-par22-hormones-p1"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "着果・果実肥大・落果防止・側芽花芽調整の目的を保持。作物名一覧を現在の全製品への適用へ転用せず、製品別確認の境界を具体化。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-chemicals/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "トマト・ナス・ブドウの着果、ブドウ落果防止、キク側芽花芽の薬剤例を現在の適用と分ける。",
+      "baselineDisposition": "hold",
+      "resolutionType": "bounded_current_official_guidance_not_product_prescription",
+      "countsAsClosedSourceOccurrence": true,
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-01"
+      ],
+      "sourceRefs": [
+        "FAMIC-QA",
+        "MAFF-REGISTER"
+      ],
+      "remainingExecutionChecks": [
+        "実際に選ぶ製品の現在の登録適用・ラベル",
+        "現場の作物、目的、生育段階、施設条件に応じた確認"
+      ],
+      "wholeLessonOnHold": false
     },
     {
       "id": "AGR-A10-SAFETY-0192",
@@ -11449,14 +12029,35 @@
         }
       ],
       "objectiveJa": "アブシジン酸と種子休眠・葉花果実の落下の掲載作用を整理する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-par22-hormones-p5"
+      ],
       "figureIds": [],
-      "reasonJa": "原資料の因果・分類又は作用の範囲に科学上の曖昧さがあり、一般則への拡張を保留。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "種子休眠・乾燥応答は確認済みの定性的知識として説明する。器官脱離をABA単独の普遍的直接作用とする記述は採用せず、他の調節因子と植物・器官・条件を残す。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-science/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "アブシジン酸と種子休眠・葉花果実の落下の掲載作用を整理する。",
+      "expectedBeforeDisposition": "hold",
+      "recommendedDisposition": "covered_new",
+      "safeParagraphIds": [
+        "agr-par22-hormones-p5"
+      ],
+      "ratioVerified": null,
+      "notCertifiedByHuman": true,
+      "originalSources": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 38,
+          "printedPage": 36
+        }
+      ],
+      "sourceRefIds": [
+        "SCI-ABA-LEE2022",
+        "SCI-ABA-NARO2018"
+      ]
     },
     {
       "id": "AGR-A10-SAFETY-0195",
@@ -11472,14 +12073,35 @@
         }
       ],
       "objectiveJa": "単為結果説明の不稔・自家不和合・種なしという関係を資料の限定付きで整理する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-management-detail-compatibility-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "原資料の因果・分類又は作用の範囲に科学上の曖昧さがあり、一般則への拡張を保留。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "不稔・自家不和合性・単為結果性を別概念とし、受精しなければ必ず無核果実になるという因果を採用しない。カンキツ原著論文の結実例で反証を確認。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-science/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "単為結果説明の不稔・自家不和合・種なしという関係を資料の限定付きで整理する。",
+      "expectedBeforeDisposition": "hold",
+      "recommendedDisposition": "covered_new",
+      "safeParagraphIds": [
+        "agr-management-detail-compatibility-p6"
+      ],
+      "ratioVerified": null,
+      "notCertifiedByHuman": true,
+      "originalSources": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 38,
+          "printedPage": 36
+        }
+      ],
+      "sourceRefIds": [
+        "SCI-PARTH-NARO2002",
+        "SCI-PARTH-YAMAMOTO1995"
+      ]
     },
     {
       "id": "AGR-A10-SAFETY-0197",
@@ -11970,14 +12592,39 @@
         }
       ],
       "objectiveJa": "有機マルチの分解による腐食・肥料成分増加という掲載効果を区別する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-par11-flower-soil-profile-p4",
+        "agr-par11-flower-soil-profile-p5"
+      ],
       "figureIds": [],
-      "reasonJa": "腐植化・養分増加の条件と原文の表記を現在の生物学的説明へ確定する根拠が不足。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "腐食という原印字は監査上保存し、教材では有機物分解・養分循環を条件付きで説明する。資材・C/N・温度・水分等の違いと一時的窒素固定化を補い、直ちに肥料分が増すという一律の利益を教えない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-science/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "有機マルチの分解による腐食・肥料成分増加という掲載効果を区別する。",
+      "expectedBeforeDisposition": "hold",
+      "recommendedDisposition": "covered_new",
+      "safeParagraphIds": [
+        "agr-par11-flower-soil-profile-p4",
+        "agr-par11-flower-soil-profile-p5"
+      ],
+      "ratioVerified": null,
+      "notCertifiedByHuman": true,
+      "originalSources": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 42,
+          "printedPage": 40
+        }
+      ],
+      "sourceRefIds": [
+        "SCI-MULCH-AGRON2010",
+        "SCI-MULCH-AICHI2024",
+        "SCI-MULCH-MAFF",
+        "SCI-MULCH-NARO2025"
+      ]
     },
     {
       "id": "AGR-A10-SAFETY-0233",
@@ -12168,14 +12815,31 @@
         }
       ],
       "objectiveJa": "使用済みフィルムの委託処分・野焼き禁止という記載を現行処分条件と区別する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_current_source_supplement",
+      "paragraphIds": [
+        "agr-cover-mulch-legal-disposal"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "排出責任、野焼き・不法投棄禁止を確認。自ら処理する原則と適法な委託を分け、地域の分別回収条件は自治体等への確認とした。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-legal/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "使用済みフィルムの委託処分・野焼き禁止という記載を現行処分条件と区別する。",
+      "expectedBeforeDisposition": "hold",
+      "originalSourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 43,
+          "printedPage": 41
+        }
+      ],
+      "externalSourceIds": [
+        "LEGAL-MAFF-AGRI-PLASTIC",
+        "LEGAL-MOE-WASTE-RESPONSIBILITY",
+        "LEGAL-TOKYO-WASTE-CONSIGNMENT"
+      ],
+      "notAnIndividualPermitOrProductApproval": true
     },
     {
       "id": "AGR-A10-SAFETY-0251",
@@ -12191,14 +12855,34 @@
         }
       ],
       "objectiveJa": "植物病害の七～八割が糸状菌という統計的記述を根拠・対象・時点と分けて確認する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "excluded",
+      "paragraphIds": [
+        "agr-s34-disease-spread-prevention-p1"
+      ],
       "figureIds": [],
-      "reasonJa": "七～八割という統計の母集団・調査時点・根拠が未特定。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "七〜八割の母集団・時点・計数方法を確認できず、比率そのものを学習・採点対象から除外。糸状菌が原因の病害という定性的知識は、いもち病の一次研究で裏付けて保持する。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-science/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "植物病害の七～八割が糸状菌という統計的記述を根拠・対象・時点と分けて確認する。",
+      "expectedBeforeDisposition": "hold",
+      "recommendedDisposition": "excluded",
+      "safeParagraphIds": [
+        "agr-s34-disease-spread-prevention-p1"
+      ],
+      "ratioVerified": false,
+      "notCertifiedByHuman": true,
+      "originalSources": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 44,
+          "printedPage": 42
+        }
+      ],
+      "sourceRefIds": [
+        "SCI-FUNGI-NARO2016"
+      ]
     },
     {
       "id": "AGR-A10-SAFETY-0254",
@@ -12214,14 +12898,36 @@
         }
       ],
       "objectiveJa": "菌糸状に増殖する放線菌の説明と排水不良時の被害拡大を読む。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-soil-biological-2-p5"
+      ],
       "figureIds": [],
-      "reasonJa": "原資料の因果・分類又は作用の範囲に科学上の曖昧さがあり、一般則への拡張を保留。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "放線菌を菌糸状に伸長するものを含む細菌として整理。病原性と拮抗作用を分け、排水不良を全病害共通の発生条件としない。高温・乾燥で多発するそうか病の条件付き例を示す。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-science/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "菌糸状に増殖する放線菌の説明と排水不良時の被害拡大を読む。",
+      "expectedBeforeDisposition": "hold",
+      "recommendedDisposition": "covered_new",
+      "safeParagraphIds": [
+        "agr-soil-biological-2-p5"
+      ],
+      "ratioVerified": null,
+      "notCertifiedByHuman": true,
+      "originalSources": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 44,
+          "printedPage": 42
+        }
+      ],
+      "sourceRefIds": [
+        "SCI-ACTINO-FROJD2019",
+        "SCI-ACTINO-HRO",
+        "SCI-ACTINO-NARO2017"
+      ]
     },
     {
       "id": "AGR-A10-SAFETY-0256",
@@ -12237,14 +12943,32 @@
         }
       ],
       "objectiveJa": "ウイルス病は農薬で抑えられないという原資料の断定を現在の予防・媒介虫対策と区別する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-pest-foundation-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "感染株の治療と感染予防を分け、健全種苗・器具衛生・媒介虫対策を明示。原資料の農薬全般を否定する断定は採用しない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-chemicals/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "ウイルス病は農薬で抑えられないという原資料の断定を現在の予防・媒介虫対策と区別する。",
+      "baselineDisposition": "hold",
+      "resolutionType": "bounded_current_official_guidance_not_product_prescription",
+      "countsAsClosedSourceOccurrence": true,
+      "knowledgeIds": [
+        "AGR-K-PEST-FOUNDATION-06"
+      ],
+      "sourceRefs": [
+        "MAFF-IPM",
+        "FAMIC-QA"
+      ],
+      "remainingExecutionChecks": [
+        "実際に選ぶ製品の現在の登録適用・ラベル",
+        "現場の作物、目的、生育段階、施設条件に応じた確認"
+      ],
+      "wholeLessonOnHold": false
     },
     {
       "id": "AGR-A10-SAFETY-0286",
@@ -12285,14 +13009,32 @@
         }
       ],
       "objectiveJa": "雑草への適用と非農耕地用製品の登録条件を現在の製品条件へ照合する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-pest-weeds-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "非農耕地用という表示だけで使用可とせず、農作物・樹木・芝・花きの栽培管理に無登録除草剤を使わないことを公式説明で具体化。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-chemicals/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "雑草への適用と非農耕地用製品の登録条件を現在の製品条件へ照合する。",
+      "baselineDisposition": "hold",
+      "resolutionType": "bounded_current_official_guidance_not_product_prescription",
+      "countsAsClosedSourceOccurrence": true,
+      "knowledgeIds": [
+        "AGR-K-PEST-WEEDS-06"
+      ],
+      "sourceRefs": [
+        "MAFF-HERBICIDE",
+        "FAMIC-QA"
+      ],
+      "remainingExecutionChecks": [
+        "実際に選ぶ製品の現在の登録適用・ラベル",
+        "現場の作物、目的、生育段階、施設条件に応じた確認"
+      ],
+      "wholeLessonOnHold": false
     },
     {
       "id": "AGR-A10-SAFETY-0290",
@@ -12358,14 +13100,33 @@
         }
       ],
       "objectiveJa": "人畜毒性・環境影響と登録・安全使用基準の制度説明を現行条件と照合する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-safety-pesticide-label-p4"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "登録評価の健康・環境面と所定の使用条件を結び付け、番号だけで無条件安全としない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-chemicals/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "人畜毒性・環境影響と登録・安全使用基準の制度説明を現行条件と照合する。",
+      "baselineDisposition": "hold",
+      "resolutionType": "bounded_current_official_guidance_not_product_prescription",
+      "countsAsClosedSourceOccurrence": true,
+      "knowledgeIds": [
+        "AGR-K-SAFETY-PESTICIDE-LABEL-04"
+      ],
+      "sourceRefs": [
+        "MAFF-REVIEW",
+        "FAMIC-QA",
+        "MHLW-2026-CAMPAIGN"
+      ],
+      "remainingExecutionChecks": [
+        "実際に選ぶ製品の現在の登録適用・ラベル",
+        "現場の作物、目的、生育段階、施設条件に応じた確認"
+      ],
+      "wholeLessonOnHold": false
     },
     {
       "id": "AGR-A10-SAFETY-0311",
@@ -12656,14 +13417,29 @@
         }
       ],
       "objectiveJa": "荷物を腰を下げて持ち上げる姿勢の例を個々の荷重・身体条件へ検証する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_principle",
+      "paragraphIds": [
+        "agr-safety-workload-2-p2"
+      ],
       "figureIds": [],
-      "reasonJa": "腰を下げる図の適用は荷重・身体条件で異なり、当該姿勢教材の具体的条件が未確定。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "持ち上げ前の荷重・荷姿・足場・身体条件、省力化や分割・複数人、可能な範囲での姿勢を組にし、腰を下げる姿勢図を全荷重・身体条件へ一般化しない形へ解決。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-equipment/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "荷物を腰を下げて持ち上げる姿勢の例を個々の荷重・身体条件へ検証する。",
+      "expectedDisposition": "hold",
+      "knowledgeIds": [
+        "AGR-K-SAFETY-WORKLOAD-2-02"
+      ],
+      "externalSourceIds": [
+        "AGR-EXT-EQUIP-MHLW-BACK-2013"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "closureScope": "bounded_educational_principle_and_source_example_limits",
+      "specificEquipmentModelIdentifiedForLearner": false,
+      "universalOperationProcedureCertified": false,
+      "sourcePageImageSelfChecked": true
     },
     {
       "id": "AGR-A10-SAFETY-0330",
@@ -12804,14 +13580,29 @@
         }
       ],
       "objectiveJa": "公道免許の短文を現行免許・車両条件と照合する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_current_source_supplement",
+      "paragraphIds": [
+        "agr-safety-machine-preparation-legal-road"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "農耕トラクタの特定小型特殊に必要な寸法・最高速度・キャブ条件と必要免許を確認し、全農機へ拡張しない。けん引・装備・道路条件は別の現場確認として保持。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-legal/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "公道免許の短文を現行免許・車両条件と照合する。",
+      "expectedBeforeDisposition": "hold",
+      "originalSourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 52,
+          "printedPage": 50
+        }
+      ],
+      "externalSourceIds": [
+        "LEGAL-MAFF-TRACTOR-ROAD"
+      ],
+      "notAnIndividualPermitOrProductApproval": true
     },
     {
       "id": "AGR-A10-SAFETY-0342",
@@ -12927,14 +13718,29 @@
         }
       ],
       "objectiveJa": "長期未使用時の燃料コック閉・低速燃料切れ運転という例を個別説明書と照合する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_principle",
+      "paragraphIds": [
+        "agr-par12-management-power-fuel-information-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "個別機器・容器又は観察方向に依存する操作条件が未確定。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "原資料の燃料コック閉・低速運転例を、機種指定の長期保管処理へ限定。Honda参照版は停止して排出する別方式であり、原資料例を全機種に適用しない根拠を確認。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-equipment/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "長期未使用時の燃料コック閉・低速燃料切れ運転という例を個別説明書と照合する。",
+      "expectedDisposition": "hold",
+      "knowledgeIds": [
+        "AGR-K-PAR12-MANAGEMENT-POWER-FUEL-INFORMATION-06"
+      ],
+      "externalSourceIds": [
+        "AGR-EXT-EQUIP-HONDA-F220FH220"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "closureScope": "bounded_educational_principle_and_source_example_limits",
+      "specificEquipmentModelIdentifiedForLearner": false,
+      "universalOperationProcedureCertified": false,
+      "sourcePageImageSelfChecked": true
     },
     {
       "id": "AGR-A10-SAFETY-0347",
@@ -13175,14 +13981,36 @@
         }
       ],
       "objectiveJa": "登録番号を品質・安全性試験の証拠とする資料説明を無条件安全保証と区別する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-safety-pesticide-label-p1",
+        "agr-safety-pesticide-label-p4"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "登録番号は登録内容確認の手掛かりであり、作物・量濃度・時期方法回数・安全注意の確認を省けない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-chemicals/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "登録番号を品質・安全性試験の証拠とする資料説明を無条件安全保証と区別する。",
+      "baselineDisposition": "hold",
+      "resolutionType": "bounded_current_official_guidance_not_product_prescription",
+      "countsAsClosedSourceOccurrence": true,
+      "knowledgeIds": [
+        "AGR-K-SAFETY-PESTICIDE-LABEL-01",
+        "AGR-K-SAFETY-PESTICIDE-LABEL-04"
+      ],
+      "sourceRefs": [
+        "FAMIC-QA",
+        "MAFF-REGISTER",
+        "MAFF-REVIEW",
+        "MHLW-2026-CAMPAIGN"
+      ],
+      "remainingExecutionChecks": [
+        "実際に選ぶ製品の現在の登録適用・ラベル",
+        "現場の作物、目的、生育段階、施設条件に応じた確認"
+      ],
+      "wholeLessonOnHold": false
     },
     {
       "id": "AGR-A10-SAFETY-0366",
@@ -13323,14 +14151,34 @@
         }
       ],
       "objectiveJa": "毒劇物農薬の分離保管と表示・施錠を現行の全要件と区別する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new",
+      "paragraphIds": [
+        "agr-safety-pesticide-label-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "毒物劇物の表示と区分別保管、ラベル保管条件、施錠と鍵管理を現行公的説明と結び付けた。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-chemicals/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "毒劇物農薬の分離保管と表示・施錠を現行の全要件と区別する。",
+      "baselineDisposition": "hold",
+      "resolutionType": "bounded_current_official_guidance_not_product_prescription",
+      "countsAsClosedSourceOccurrence": true,
+      "knowledgeIds": [
+        "AGR-K-SAFETY-PESTICIDE-LABEL-06"
+      ],
+      "sourceRefs": [
+        "FAMIC-QA",
+        "MHLW-2026-CAMPAIGN",
+        "MHLW-BUSINESS",
+        "NIHS-STORAGE"
+      ],
+      "remainingExecutionChecks": [
+        "実際に選ぶ製品の現在の登録適用・ラベル",
+        "現場の作物、目的、生育段階、施設条件に応じた確認"
+      ],
+      "wholeLessonOnHold": false
     },
     {
       "id": "AGR-A10-SAFETY-0387",
@@ -13351,14 +14199,31 @@
         }
       ],
       "objectiveJa": "正相・逆相と回転方向という資料の説明を機種・観察方向の条件と分ける。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_principle",
+      "paragraphIds": [
+        "agr-s38-safety-reading-supplement-p5"
+      ],
       "figureIds": [],
-      "reasonJa": "個別機器・容器又は観察方向に依存する操作条件が未確定。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "相順と回転方向の関係は三相誘導モーターの限定原則として扱う。右左には観察側と機種指定が必要で、正相＝右を一般化しない形へ解決。配線作業は教材化しない。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-equipment/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "正相・逆相と回転方向という資料の説明を機種・観察方向の条件と分ける。",
+      "expectedDisposition": "hold",
+      "knowledgeIds": [
+        "AGR-K-S38-SAFETY-READING-05"
+      ],
+      "externalSourceIds": [
+        "AGR-EXT-EQUIP-SANWA-ROTATION",
+        "AGR-EXT-EQUIP-MITSUBISHI-CWCCW",
+        "AGR-EXT-EQUIP-OMRON-PHASE"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "closureScope": "bounded_educational_principle_and_source_example_limits",
+      "specificEquipmentModelIdentifiedForLearner": false,
+      "universalOperationProcedureCertified": false,
+      "sourcePageImageSelfChecked": true
     },
     {
       "id": "AGR-A10-SAFETY-0392",
@@ -13399,14 +14264,29 @@
         }
       ],
       "objectiveJa": "ガソリンの着色義務・薄いオレンジという説明を現在の制度と分ける。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_current_source_supplement",
+      "paragraphIds": [
+        "agr-safety-power-fuel-legal-color"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "自動車ガソリンの強制規格のオレンジ色を確認。薄い色の許容・色だけの同定を認めず、不明燃料は使用しない。取得方法の制限も出典記録に明記。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-legal/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "ガソリンの着色義務・薄いオレンジという説明を現在の制度と分ける。",
+      "expectedBeforeDisposition": "hold",
+      "originalSourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 58,
+          "printedPage": 56
+        }
+      ],
+      "externalSourceIds": [
+        "LEGAL-GASOLINE-COLOR"
+      ],
+      "notAnIndividualPermitOrProductApproval": true
     },
     {
       "id": "AGR-A10-SAFETY-0396",
@@ -13572,14 +14452,33 @@
         }
       ],
       "objectiveJa": "ガソリン金属容器、灯油用20Lポリ容器禁止を現行法と照合する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_current_source_supplement",
+      "paragraphIds": [
+        "agr-safety-power-fuel-legal-gasoline",
+        "agr-safety-power-fuel-legal-storage"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "金属容器のみという旧資料の一般化を現在のFDMA告示の用途・車両・性能・表示・容積条件へ分解。灯油用20L容器は使用しない原則を保持し、保管総量とは分けた。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-legal/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "ガソリン金属容器、灯油用20Lポリ容器禁止を現行法と照合する。",
+      "expectedBeforeDisposition": "hold",
+      "originalSourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 59,
+          "printedPage": 57
+        }
+      ],
+      "externalSourceIds": [
+        "LEGAL-FDMA-CONT-68-4",
+        "LEGAL-KOSAI-CONTAINER",
+        "LEGAL-FDMA-STORAGE-SYSTEM",
+        "LEGAL-FDMA-STORAGE-QUANTITIES"
+      ],
+      "notAnIndividualPermitOrProductApproval": true
     },
     {
       "id": "AGR-A10-SAFETY-0405",
@@ -13595,14 +14494,32 @@
         }
       ],
       "objectiveJa": "軽油30L以下プラ容器という記載を現在の容器条件と分ける。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_current_source_supplement",
+      "paragraphIds": [
+        "agr-safety-power-fuel-legal-kerosene-diesel",
+        "agr-safety-power-fuel-legal-storage"
+      ],
       "figureIds": [],
-      "reasonJa": "現行の法・登録・製品適用又は個別機種・具体的処分条件が未確定。原資料だけで実務条件を確定しない。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "30Lという数値を適合する運搬容器の例へ限定。どのポリ容器でも保管できるという読みを採用せず、油種適合と貯蔵総量・条例を分けた。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-legal/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "軽油30L以下プラ容器という記載を現在の容器条件と分ける。",
+      "expectedBeforeDisposition": "hold",
+      "originalSourcePages": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 59,
+          "printedPage": 57
+        }
+      ],
+      "externalSourceIds": [
+        "LEGAL-KOSAI-CONTAINER",
+        "LEGAL-FDMA-STORAGE-SYSTEM",
+        "LEGAL-FDMA-STORAGE-QUANTITIES"
+      ],
+      "notAnIndividualPermitOrProductApproval": true
     },
     {
       "id": "AGR-A10-SAFETY-0406",
@@ -13618,14 +14535,32 @@
         }
       ],
       "objectiveJa": "圧力解放後の開栓例を個別容器の手順と区別する。",
-      "disposition": "hold",
-      "paragraphIds": [],
+      "disposition": "covered_new_bounded_principle",
+      "paragraphIds": [
+        "agr-safety-power-fuel-p6"
+      ],
       "figureIds": [],
-      "reasonJa": "個別機器・容器又は観察方向に依存する操作条件が未確定。",
-      "reconciliationFile": "docs/ssw-workspace/agriculture/completion-40/safety/reconciliation.json",
+      "reasonJa": "1号と同じ圧力開放の原図例。二つのメーカー型番群の方法の違いを確認し、製品固有の手順と共通の噴出危険を分ける知識へ解決。",
+      "reconciliationFile": "docs/ssw-workspace/agriculture/session-20261031-hold-resolution/hold-equipment/packet.json",
       "humanReviewed": false,
       "domainReviewed": false,
-      "nativeReviewed": false
+      "nativeReviewed": false,
+      "originalObjectiveJa": "圧力解放後の開栓例を個別容器の手順と区別する。",
+      "expectedDisposition": "hold",
+      "knowledgeIds": [
+        "AGR-K-SAFETY-POWER-FUEL-06"
+      ],
+      "externalSourceIds": [
+        "AGR-EXT-EQUIP-NCAC-CAN-2024",
+        "AGR-EXT-EQUIP-DAIJI-FX",
+        "AGR-EXT-EQUIP-DAIJI-FK0506",
+        "AGR-EXT-EQUIP-MATSUMOTO-FIRE"
+      ],
+      "countsAsClosedSourceOccurrence": true,
+      "closureScope": "bounded_educational_principle_and_source_example_limits",
+      "specificEquipmentModelIdentifiedForLearner": false,
+      "universalOperationProcedureCertified": false,
+      "sourcePageImageSelfChecked": true
     },
     {
       "id": "AGR-A10-SAFETY-0410",

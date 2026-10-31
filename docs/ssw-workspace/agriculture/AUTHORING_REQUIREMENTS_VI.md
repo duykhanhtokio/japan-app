@@ -254,3 +254,11 @@ Bàn giao đầy đủ:
 9. Checkpoint tiếp tục và danh sách phần chưa đạt.
 
 Bắt đầu bằng kiểm tra dự án và kiểm kê toàn bộ hai PDF. Sau đó triển khai liên tục từng cụm hoàn chỉnh. Không dừng sau kế hoạch hoặc vài bài mẫu; chỉ hỏi lại khi có mâu thuẫn quan trọng chưa được quyết định, thiếu nguồn cần thiết hoặc giới hạn quyền truy cập thực sự ngăn công việc.
+
+### Quyết định biên tập riêng của người dùng — 2026-10-31
+
+Áp dụng `session-20261031-hold-resolution/PUBLISHER_POLICY.md` và `src/data/agriculture/authoring-exclusions.json` trước khi tiếp tục soạn nội dung hoặc câu hỏi nông nghiệp. Phạm vi là45bản ghi GENERAL6/SOIL9/SAFETY30 trong ba bảng người dùng đã duyệt; không suy rộng quyết định này sang mọi số liệu hoặc mọi lĩnh vực.
+
+Giữ định nghĩa直播, không dùng riêng lợi ích育苗 đang nghi vấn làm đáp án; không tạo phép tính từ năm chú thích biểu đồ S2PDF7 đã liệt kê. Theo chỉ thị trực tiếp, giữ nội dung黒ボク土50% và15～20%以上, không thêm năm thống kê suy đoán hay diễn giải bất định vào phần học. Với10%phân phối trộn vàEC0.5/1.0, giữ đúng nội dung nguồn, đơn vị và dấu so sánh; không bịa điều kiện khi tài liệu không cung cấp. Thuốc, nhiên liệu, thiết bị, giấy phép và thao tác chỉ được viết đúng phạm vi điều kiện có căn cứ. Tỷ lệ70–80%bệnh do nấm chưa xác minh được loại khỏi phần đánh giá định lượng; giữ kiến thức định tính có nguồn.
+
+Đóng mục theo quyết định biên tập có giới hạn không có nghĩa là đã chứng nhận toàn bộ phát biểu gốc, pháp luật, sản phẩm, thiết bị hoặc người bản ngữ. Mười mục RICE/FLOWER không có trong ba bảng vẫn giữ trạng thái riêng.
