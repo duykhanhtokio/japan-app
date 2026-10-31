@@ -1,0 +1,215 @@
+{
+  "sector": "restaurant",
+  "branchSource": "8b8f47562",
+  "integratedTreeChecks": [
+    {
+      "command": [
+        "python",
+        "scripts/restaurant/check.py"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "elapsedSeconds": 0.59,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check.log",
+      "stdoutTail": "{\"status\": \"STRUCTURAL_PASS\", \"complete\": false, \"metrics\": {\"levels\": {\"1\": {\"lessons\": 59, \"weeks\": 12, \"practiceExams\": 10, \"practiceQuestions\": 400, \"weeklyExams\": 12, \"weeklyQuestions\": 96}, \"2\": {\"lessons\": 61, \"weeks\": 11, \"practiceExams\": 10, \"practiceQuestions\": 400, \"weeklyExams\": 11, \"weeklyQuestions\": 88}}, \"translations\": {\"en\": {\"lessons\": 120, \"questions\": 984, \"fixedUi\": 73, \"glossary\": 692}, \"vi\": {\"lessons\": 120, \"questions\": 984, \"fixedUi\": 73, \"glossary\": 692}, \"id\": {\"lessons\": 120, \"questions\": 984, \"fixedUi\": 73, \"glossary\": 692}, \"zh-CN\": {\"lessons\": 120, \"questions\": 984, \"fixedUi\": 73, \"glossary\": 692}, \"zh-TW\": {\"lessons\": 120, \"questions\": 984, \"fixedUi\": 73, \"glossary\": 692}, \"hi\": {\"lessons\": 120, \"questions\": 984, \"fixedUi\": 73, \"glossary\": 692}, \"bn\": {\"lessons\": 120, \"questions\": 984, \"fixedUi\": 73, \"glossary\": 692}, \"ne\": {\"lessons\": 120, \"questions\": 984, \"fixedUi\": 73, \"glossary\": 692}, \"my\": {\"lessons\": 120, \"questions\": 984, \"fixedUi\": 73, \"glossary\": 692}, \"th\": {\"lessons\": 120, \"questions\": 984, \"fixedUi\": 73, \"glossary\": 692}, \"km\": {\"lessons\": 120, \"questions\": 984, \"fixedUi\": 73, \"glossary\": 692}, \"tl\": {\"lessons\": 120, \"questions\": 984, \"fixedUi\": 73, \"glossary\": 692}}, \"glossary\": {\"groups\": 6, \"entries\": 692, \"missingDefinitions\": 0, \"missingReadings\": 0}, \"paragraphs\": 619, \"sourceDocumentsReferenced\": 7}, \"errors\": [], \"remainingCount\": 7}\n",
+      "stderrTail": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/restaurant/check-knowledge-links.py"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "elapsedSeconds": 0.14,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-knowledge-links.log",
+      "stdoutTail": "{\"status\": \"SUBJECT_LINK_PASS\", \"units\": 639, \"records\": {\"lessons\": {\"total\": 120, \"mapped\": 120, \"unmapped\": [], \"edges\": 1446}, \"questions\": {\"total\": 984, \"mapped\": 984, \"unmapped\": [], \"edges\": 1039}}, \"coverageStatusCounts\": {\"structural_only\": 39, \"partial\": 264, \"covered\": 336}, \"sourceCoverageCertified\": false, \"nativeReviewed\": false, \"domainReviewed\": false, \"errors\": []}\n",
+      "stderrTail": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/restaurant/check-context-readings.py"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "elapsedSeconds": 0.31,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-context-readings.log",
+      "stdoutTail": "{\"status\": \"CONTEXT_ALIGNMENT_PASS\", \"canonicalFields\": 7622, \"uncoveredFields\": 0, \"exactFieldHashes\": 1138, \"uniqueAnnotationSpans\": 1416, \"pronunciationCertified\": false, \"nativeReviewed\": false, \"domainReviewed\": false, \"scope\": \"Japanese lesson title/objective/paragraph title/text/summary/activity and question stem/options/explanation. Not all UI, Arabic-number pronunciation or external review.\"}\n",
+      "stderrTail": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/restaurant/check-translation-numerics.py"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "elapsedSeconds": 2.86,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-translation-numerics.log",
+      "stdoutTail": "{\"status\": \"NUMERIC_SCREEN_PASS\", \"records\": 1440, \"questionRecords\": 11808, \"glossaryRecords\": 8304, \"fields\": 112452, \"reviewedSpelledOrdinalFields\": 353, \"reviewedLessonNotationFields\": 184, \"flags\": [], \"semanticTranslationCertified\": false, \"limits\": [\"Numbers spelled out as words require manual review. Equal digits do not establish preserved units, signs, conditions or meaning. Adjudications apply only to exact source and translation field hashes; changed fields must be reviewed again.\"]}\n",
+      "stderrTail": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/restaurant/check-translation-temperatures.py"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "elapsedSeconds": 2.4,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-translation-temperatures.log",
+      "stdoutTail": "{\"status\": \"SIGNED_CELSIUS_SCREEN_PASS\", \"screenedFields\": 396, \"flags\": 0}\n",
+      "stderrTail": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/restaurant/check-terminology-standard.py"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "elapsedSeconds": 0.28,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-terminology-standard.log",
+      "stdoutTail": "{\"status\": \"TERM_STANDARD_PASS\", \"changedFields\": 559, \"standards\": 138, \"priorityLocales\": [\"en\", \"vi\", \"id\", \"km\", \"my\", \"ne\", \"th\"], \"deferredLocales\": [\"zh-CN\", \"zh-TW\", \"hi\", \"bn\", \"tl\"], \"counts\": {\"en\": {\"lessons\": 23, \"questions\": 36, \"glossary\": 44}, \"vi\": {\"lessons\": 28, \"questions\": 32, \"glossary\": 32}, \"id\": {\"lessons\": 17, \"questions\": 35, \"glossary\": 28}, \"km\": {\"lessons\": 18, \"questions\": 43, \"glossary\": 21}, \"my\": {\"lessons\": 24, \"questions\": 7, \"glossary\": 39}, \"ne\": {\"lessons\": 23, \"questions\": 38, \"glossary\": 36}, \"th\": {\"lessons\": 9, \"questions\": 12, \"glossary\": 14}}, \"errors\": [], \"nativeReviewed\": false, \"domainReviewed\": false, \"scope\": \"Integrity of explicitly reviewed fields and reference revisions; not exhaustive all-language semantic certification.\"}\n",
+      "stderrTail": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/restaurant/check-ordering-exercise.py"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "elapsedSeconds": 0.06,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-ordering-exercise.log",
+      "stdoutTail": "{\"status\": \"ORDERING_EXERCISE_PASS\", \"labels\": 28, \"locales\": 12, \"translatedLabels\": 336, \"exactArithmeticChecks\": 10, \"allJapaneseLabelsAligned\": true, \"sourceTextPagesRead\": [17, 18], \"sourceFigureInspection\": false, \"sourceCoverageCertified\": false, \"nativeReviewed\": false, \"domainReviewed\": false, \"inputSha256\": \"bbd668d847fe28f228a21ff9a519ad17347e7bc91f7fad58b268035ffe5d486f\"}\n",
+      "stderrTail": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/restaurant/check-reviewed-pronunciation.py"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "elapsedSeconds": 0.24,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-reviewed-pronunciation.log",
+      "stdoutTail": "{\"status\": \"REVIEWED_REPAIRS_PASS\", \"pronunciationRepairs\": 88, \"translationFields\": 6, \"scope\": \"Exact reviewed repairs only; does not certify all pronunciations/translations.\", \"nativeReviewed\": false, \"domainReviewed\": false}\n",
+      "stderrTail": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/restaurant/check-state.cjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "elapsedSeconds": 0.08,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-state.log",
+      "stdoutTail": "{\"status\":\"PASS\",\"cases\":[\"learner and level key isolation\",\"content revision exam isolation\",\"strict corrupt progress handling\",\"resume reader scroll position\",\"completion source revision invalidation\",\"invalid position rejection\",\"exam answer and position resume\",\"exam revision invalidation\",\"out-of-range answer rejection\",\"grading unanswered\"],\"nativeDeviceTested\":false}\n",
+      "stderrTail": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/restaurant/check-loading.cjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "elapsedSeconds": 0.11,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-loading.log",
+      "stdoutTail": "{\"status\":\"PASS\",\"cases\":[\"current question translation accepted and stale revision rejected\",\"unsupported question language has no unrelated fallback\",\"localized counts with named placeholders\",\"missing interpolation values remain explicit\",\"no eager lesson/exam/translation evaluation\",\"selected level only\",\"selected locale only\",\"stale translation rejected\",\"no unrelated fallback language\",\"exam bank loads only when requested\",\"current glossary translation accepted\",\"stale glossary definition rejected\",\"missing glossary translation explicit\"],\"timingBenchmarkPerformed\":false}\n",
+      "stderrTail": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/restaurant/check-daily-learning.cjs"
+      ],
+      "exitCode": 1,
+      "status": "FAIL_OR_BLOCKED",
+      "elapsedSeconds": 7.78,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-daily-learning.log",
+      "stdoutTail": "",
+      "stderrTail": "nents/restaurant/RestaurantDailyLearning.tsx:128:8:\n      128 │  return <View testID={`restaurant-daily-figure-${lesson.id}`} sty...\n          ╵         ^\n\n  You can mark the path \"react/jsx-runtime\" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.\n\nError: Build failed with 1 error:\nsrc/components/restaurant/RestaurantDailyLearning.tsx:128:8: ERROR: Could not resolve \"react/jsx-runtime\"\n    at failureErrorWithLog (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:1467:15)\n    at /workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:926:25\n    at runOnEndCallbacks (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:1307:45)\n    at buildResponseToResult (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:924:7)\n    at /workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:951:16\n    at responseCallbacks.<computed> (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:603:9)\n    at handleIncomingPacket (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:658:12)\n    at Socket.readFromStdout (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:581:7)\n    at Socket.emit (node:events:514:28)\n    at addChunk (node:internal/streams/readable:569:12) {\n  errors: [Getter/Setter],\n  warnings: [Getter/Setter]\n}\n"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/restaurant/check-detail-guides.cjs"
+      ],
+      "exitCode": 1,
+      "status": "FAIL_OR_BLOCKED",
+      "elapsedSeconds": 0.14,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-detail-guides.log",
+      "stdoutTail": "",
+      "stderrTail": "ly\" was triggered by this import\n\n    src/components/restaurant/RestaurantReading.tsx:3:29:\n      3 │ import {hasAlignedRuby} from '@/components/world/japanese-ruby-data';\n        ╵                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nError: Build failed with 1 error:\nscripts/restaurant/check-detail-guides.cjs:22:212: ERROR: [plugin: detail-component-only] /workspace/scratch/8c34e3cace7a/japan-app/src/components/world/japanese-ruby-data\n    at failureErrorWithLog (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:1467:15)\n    at /workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:926:25\n    at runOnEndCallbacks (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:1307:45)\n    at buildResponseToResult (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:924:7)\n    at /workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:951:16\n    at responseCallbacks.<computed> (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:603:9)\n    at handleIncomingPacket (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:658:12)\n    at Socket.readFromStdout (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:581:7)\n    at Socket.emit (node:events:514:28)\n    at addChunk (node:internal/streams/readable:569:12) {\n  errors: [Getter/Setter],\n  warnings: [Getter/Setter]\n}\n"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/restaurant/check-record-scope.cjs"
+      ],
+      "exitCode": 1,
+      "status": "FAIL_OR_BLOCKED",
+      "elapsedSeconds": 0.52,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-record-scope.log",
+      "stdoutTail": "",
+      "stderrTail": "enderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --disable-gpu --user-data-dir=/tmp/playwright_chromiumdev_profile-cTHuQd --remote-debugging-pipe --no-startup-window',\n    '  - <launched> pid=128',\n    '  - [pid=128][err] /usr/bin/chromium: 9: [: 5225713664: unexpected operator',\n    '  - [pid=128][err] [128:128:1031/134928.642505:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)',\n    '  - [pid=128][err] [1031/134928.643939:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)',\n    '  - [pid=128] <gracefully close start>',\n    '  - [pid=128] <kill>',\n    '  - [pid=128] <will force kill>',\n    '  - [pid=128] <process did exit: exitCode=null, signal=SIGABRT>',\n    '  - [pid=128] starting temporary directories cleanup',\n    '  - [pid=128] finished temporary directories cleanup',\n    '  - [pid=128] <gracefully close end>'\n  ]\n}\n"
+    }
+  ],
+  "browserHistoryPreserved": true,
+  "physicalDeviceTested": false,
+  "nativeDomainAcceptance": false,
+  "affectedReruns": [
+    {
+      "command": [
+        "node",
+        "-r",
+        "/workspace/scratch/8c34e3cace7a/japan-app/docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-esbuild-nodepath.cjs",
+        "scripts/restaurant/check-daily-learning.cjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "elapsedSeconds": 7.77,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-daily-learning-final.log",
+      "stdout": "{\"status\":\"PASS\",\"days\":120,\"controlledFigureFamilies\":59,\"daysWithBoundObjectiveFigure\":120,\"companionDays\":75,\"companionLocaleBindingsChecked\":900,\"canonicalFilesPreserved\":18,\"allStableLessonIdsPreserved\":true,\"allQuestionContentsPreserved\":true,\"existingProgressHashesPreserved\":true,\"measuredDuration\":false,\"humanReviewed\":false,\"nativeReviewed\":false,\"domainReviewed\":false,\"physicalDeviceTested\":false}\n",
+      "stderr": "▲ [WARNING] Cannot find base config file \"expo/tsconfig.base\" [tsconfig.json]\n\n    tsconfig.json:2:13:\n      2 │   \"extends\": \"expo/tsconfig.base\",\n        ╵              ~~~~~~~~~~~~~~~~~~~~\n\n"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/restaurant/check-detail-guides.cjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "elapsedSeconds": 4.06,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-detail-guides-final.log",
+      "stdout": "{\"status\":\"DETAIL_GUIDES_DATA_AND_SSR_PASS\",\"labels\":27,\"locales\":12,\"arithmeticChecks\":7,\"serverRenderCases\":78,\"additionalComponentCases\":130,\"unrelatedLessonExcluded\":true,\"defaultAnswersHidden\":true,\"dataSha256\":\"4298c1489c6fb7befa5cfaa388a4758ea69704464744b037e2189522c2b0eeed\",\"componentSha256\":\"22dbf4aa192ec932016fbc783fb60ae3089783e5ee8261df05e11a39d65c1fcb\",\"scope\":\"Real React/RNW static server-rendering; AsyncStorage adapted. No click, layout, browser, Expo or native execution certification.\",\"browserTested\":false,\"nativeDeviceTested\":false,\"sourceFigureCoverageCertified\":false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "docs/ssw-workspace/integration-food-restaurant-20261031/check-restaurant-record-hook.cjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "elapsedSeconds": 0.1,
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/restaurant-logs/check-restaurant-record-hook-final.log",
+      "stdout": "{\"status\":\"PASS\",\"actualHook\":\"src/components/restaurant/useRestaurantRecord.ts\",\"cases\":[\"late old-key write cannot alter new-key invalid state\",\"archive preserves current corrupt new-key raw rather than old successful JSON\",\"old and new key writes preserved\"],\"adapter\":\"Controlled AsyncStorage plus React test renderer\",\"browserTested\":false,\"nativeDeviceTested\":false}\n",
+      "stderr": ""
+    }
+  ],
+  "environmentResolutionAdapter": "Only esbuild nodePaths configured from NODE_PATH for daily check; no production source substitution. Optional expo/tsconfig.base absent in sparse environment still warns.",
+  "structuralAcceptance": {
+    "status": "STRUCTURAL_PASS",
+    "complete": false,
+    "remainingAcceptanceFlags": 7,
+    "sourceUnits": 639,
+    "covered": 336,
+    "partial": 264,
+    "structuralOnly": 39
+  }
+}

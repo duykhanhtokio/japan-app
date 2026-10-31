@@ -1,0 +1,1 @@
+const id=require.resolve('esbuild'),esbuild=require(id);require.cache[id].exports={...esbuild,build:options=>esbuild.build({...options,nodePaths:[...(options.nodePaths||[]),...(process.env.NODE_PATH||'').split(require('path').delimiter).filter(Boolean)]})};

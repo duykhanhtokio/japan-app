@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "scope": "Baseline verification before completion28 editorial changes; rerun relevant gates after integration.",
+  "baseCommit": "13550ed5b86fb46fdb25497069cc958c5b9080c0",
+  "structural": "PASS",
+  "knowledgeLinks": "PASS",
+  "historical565SourceAnchors": "PASS",
+  "contextReadings": "PASS",
+  "reviewed88PronunciationRepairsAnd6TranslationFields": "PASS",
+  "translationNumericScreen": {"status": "PASS", "fields": 110892},
+  "signedCelsiusScreen": {"status": "PASS", "fields": 396},
+  "terminologyStandardIntegrity": {"status": "PASS", "fields": 559, "standards": 138},
+  "orderingExercise": {"status": "PASS", "arithmeticChecks": 10},
+  "nodeState": {"status": "PASS", "caseGroups": 10},
+  "nodeLoading": {"status": "PASS", "caseGroups": 13},
+  "jlptUiLock": {"status": "PASS", "lockedFiles": 10},
+  "coverageLedger": {
+    "covered": 148,
+    "partial": 452,
+    "structuralOnly": 39,
+    "partialByLevelTopic": {"1-hygiene": 71, "1-cooking": 56, "1-service": 58, "2-hygiene": 141, "2-cooking": 27, "2-service": 35, "2-operations": 64},
+    "limitations": "Hierarchical source records, not independent knowledge units or a total coverage percentage. Exact anchors do not certify editorial completeness."
+  },
+  "localBrowser": {
+    "status": "BLOCKED_ENVIRONMENT",
+    "command": "NODE_PATH=<food-deps>/node_modules RESTAURANT_QA_CHROMIUM=/usr/bin/chromium node scripts/restaurant/check-record-scope.cjs",
+    "reason": "Chromium launch aborted: process_singleton_posix.cc socket() failed Operation not permitted (1); ptrace also denied.",
+    "executedAssertions": false
+  },
+  "expoModuleExport": {
+    "status": "INCOMPLETE_SIGKILL",
+    "command": "RESTAURANT_EXPO_QA_DIR=<scratch>/restaurant-expo-baseline RESTAURANT_EXPO_DEPS=<food-deps> node scripts/restaurant/check-expo-export.cjs",
+    "versions": {"expo": "54.0.38", "reactNative": "0.81.5", "react": "19.1.0", "reactNativeWeb": "0.21.4"},
+    "observed": "Web bundled 201 modules in37093ms; iOS96.3% andAndroid96.2% when process receivedSIGKILL. No completed export or execution assertion.",
+    "limitation": "Isolated restaurant-module diagnostic only; cannot certify full app, UI, native runtime or device behavior."
+  },
+  "nativeDeviceTested": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "fullAcceptance": false
+}

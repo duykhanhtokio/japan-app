@@ -1,0 +1,29 @@
+{
+  "scopeComplete": false,
+  "blockers": [
+    {
+      "questionId": "food-1-q363",
+      "status": "local_source_wording_review_required",
+      "sourcePrompt": "卵を配合する製品で「器具を洗ったので卵を使った表示確認は不要」と言われました。間違いはどれですか。",
+      "issue": "The final Japanese question can be read as asking which option is incorrect, while answerIndex2 is the correct distinction between cross-contact prevention and ingredient declaration; options0,1,3 are incorrect. Intended reading may be identify the error in the quoted claim. Do not silently resolve this ambiguity in new translations.",
+      "newTranslationsDeferredLocales": [
+        "id",
+        "tl",
+        "bn",
+        "th",
+        "hi",
+        "ne",
+        "my",
+        "km",
+        "zh-CN",
+        "zh-TW"
+      ],
+      "existingEnglishVietnamesePreserved": true,
+      "existingEnglishVietnameseInterpretation": "Which statement identifies the error?",
+      "independentAiAssessment": "Second AI independently confirmed the Japanese wording is ambiguous rather than an unambiguous request to identify the quoted error; proposed clarification: この発言の誤りを正しく説明しているのはどれですか。",
+      "canonicalJapaneseChanged": false,
+      "canonicalAnswersChanged": false,
+      "nextAction": "Review Japanese prompt intent, then if correction is confirmed, update Japanese source/revision and rebind all affected existing translations as a separate narrow unit."
+    }
+  ]
+}

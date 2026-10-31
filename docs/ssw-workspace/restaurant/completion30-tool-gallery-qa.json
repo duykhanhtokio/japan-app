@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "author": "cooking1 AI; no native or domain certification",
+  "scope": "44 finite source28–31 tool/container/measurement recognition targets; source23–27 cooking machines excluded",
+  "files": {
+    "src/components/restaurant/RestaurantToolGallery.tsx": "9ee23bbf504977b7d1f824aa3b01adeff70648fa43bc5cdf08f92707900f89e4",
+    "src/data/restaurant/tool-gallery.json": "fb6f2279b7a90b8ee3a48d4aef181934e2ee86e25efed3b355b0132931fcaebf"
+  },
+  "sourceEvidence": {
+    "documentId": "rst-1-cooking",
+    "sha256": "faac56d3d4e80874b6b02acb7adbde0d269cf18094683fecd4397ca63d3ee7ac",
+    "pdfPages": 49,
+    "byteAndPageCountVerified": true,
+    "directPixelsInspected": [
+      8,
+      23,
+      25,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "inventory": [
+      {
+        "group": "pans",
+        "pdfPages": [
+          28
+        ],
+        "unitIds": [
+          "rst-1-cooking-k043",
+          "rst-1-cooking-k044"
+        ],
+        "targetIds": [
+          "frying-pan",
+          "beijing-wok",
+          "canton-wok",
+          "perforated-pan",
+          "cooking-pan",
+          "stockpot",
+          "deep-fryer-pan",
+          "yukihira",
+          "saucepan",
+          "steamer",
+          "kettle"
+        ]
+      },
+      {
+        "group": "knives",
+        "pdfPages": [
+          29
+        ],
+        "unitIds": [
+          "rst-1-cooking-k043",
+          "rst-1-cooking-k045"
+        ],
+        "targetIds": [
+          "santoku",
+          "nakiri",
+          "sashimi",
+          "cleaver",
+          "bread-knife",
+          "cutting-board"
+        ]
+      },
+      {
+        "group": "containers",
+        "pdfPages": [
+          29
+        ],
+        "unitIds": [
+          "rst-1-cooking-k043",
+          "rst-1-cooking-k046"
+        ],
+        "targetIds": [
+          "kitchen-pot",
+          "hotel-pan",
+          "shallow-tray",
+          "bowl",
+          "steel-colander",
+          "plastic-colander"
+        ]
+      },
+      {
+        "group": "utensils",
+        "pdfPages": [
+          30
+        ],
+        "unitIds": [
+          "rst-1-cooking-k043",
+          "rst-1-cooking-k047"
+        ],
+        "targetIds": [
+          "wood-spatula",
+          "turner",
+          "chopsticks",
+          "otama",
+          "chinese-ladle",
+          "ladle",
+          "whisk",
+          "skimmer",
+          "noodle-basket",
+          "rice-paddle",
+          "measuring-cup",
+          "measuring-spoons"
+        ]
+      },
+      {
+        "group": "measurement",
+        "pdfPages": [
+          31
+        ],
+        "unitIds": [
+          "rst-1-cooking-k048",
+          "rst-1-cooking-k049"
+        ],
+        "targetIds": [
+          "digital-scale",
+          "dial-scale",
+          "digital-probe",
+          "dial-probe",
+          "liquid-thermometer",
+          "fridge-thermometer",
+          "hygrometer",
+          "infrared",
+          "timer"
+        ]
+      }
+    ]
+  },
+  "dataChecks": {
+    "status": "PASS",
+    "targets": 44,
+    "localizedItemLabels": 528,
+    "localizedGroupLabels": 60,
+    "localizedHeadingAndNote": 24,
+    "full12Locales": true,
+    "rubyReconstruction": true,
+    "allKanjiCovered": true,
+    "maximumRubyBaseLength": 5,
+    "lessonBindings": {
+      "rst-1-cook-14": 35,
+      "rst-1-cook-15": 9,
+      "rst-2-cook-06": 44
+    },
+    "sourceMetadataAbsentFromRuntimeData": true,
+    "noRuntimeDependencyAdded": true
+  },
+  "typeScript": {
+    "status": "PASS",
+    "config": "/tmp/restaurant-tool-strict.json adapted from roots strict config",
+    "errors": 0
+  },
+  "geometryChecks": {
+    "status": "PASS",
+    "instrumentedActualDrawingFunction": true,
+    "nonemptyUniqueMarkArrays": 44,
+    "finiteInFrameUnrotatedBounds": true,
+    "reviewedMontage": "Pillow rendering of actual drawing Mark arrays, not browser/native output",
+    "distinctions": [
+      "one long handle vs two loop handles",
+      "perforated shaaren pan",
+      "deep hotelpan vs shallow tray",
+      "steel mesh vs plastic perforations",
+      "serrated bread knife vs narrow sashimi blade vs tall cleaver",
+      "digital display vs dial or liquid column",
+      "probe thermometer vs refrigerator remote probe vs surface instrument"
+    ]
+  },
+  "browser": {
+    "status": "BLOCKED",
+    "reason": "Chromium launch aborts at process_singleton_posix.cc socket() Operation not permitted; no viewport or font verification claimed",
+    "bundleCompiledBeforeLaunch": true
+  },
+  "integration": {
+    "courseChanged": false,
+    "rootMustWire": true,
+    "export": "RestaurantToolGallery",
+    "props": [
+      "lessonId",
+      "language",
+      "showTranslation"
+    ],
+    "newSourceAssetCopied": false
+  },
+  "acceptance": {
+    "integratedVisualCoverageVerified": false,
+    "browserResponsiveVerified": false,
+    "nativeDeviceVerified": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "humanReviewed": false
+  },
+  "limitations": [
+    "Original simplified geometric examples, not exact manufacturer/model identification.",
+    "No operating sequence, knife movement or numeric temperature settings taught.",
+    "Source23–27 heat/cold/washing/processing machines require a separate verified recognition module.",
+    "Root must run actual SSR/integration and inspect rendered responsive UI before considering narrow visual closure."
+  ]
+}

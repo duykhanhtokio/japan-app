@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "baseCommit": "d4bf4e65c45cd53a51ff650c27ab7e8f95ed657b",
+  "status": "implemented_source_compared_integrated_and_scoped_browser_checked",
+  "author": "AI4",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "source": {
+    "documentId": "rst-1-cooking",
+    "pdfSha256": "faac56d3d4e80874b6b02acb7adbde0d269cf18094683fecd4397ca63d3ee7ac",
+    "pdfPagesVisuallyInspected": [
+      8,
+      16,
+      31
+    ],
+    "printedPages": [
+      4,
+      11,
+      24
+    ],
+    "inspection": "PyMuPDF page raster render at1.35x, viewed three whole page images; text used only to confirm labels/definitions. No source pixels, paths or source page images added to repository."
+  },
+  "files": [
+    "src/components/restaurant/RestaurantAdditionalGuides.tsx",
+    "src/data/restaurant/additional-guides.json"
+  ],
+  "implemented": [
+    {
+      "id": "anatomy",
+      "lessonIds": [
+        "rst-1-cook-02"
+      ],
+      "sourcePdfPages": [
+        8
+      ],
+      "scope": "Ten facts/landmarks: eye,dorsal fin,lateral line,cheekbone,gill cover,collar,pectoral fin,pelvic fin,anal fin,caudal fin. Generic geometric side view, head right/tail left. Original numbered leader lines and wrapping legend.",
+      "figureCount": 1,
+      "labels": 10,
+      "limits": "Schematic topology and terminology, not species-specific anatomy or photographic identification. AI4 visually compared target relationships and the six browser screenshots; not qualified anatomical/native review."
+    },
+    {
+      "id": "processing",
+      "lessonIds": [
+        "rst-1-cook-07"
+      ],
+      "sourcePdfPages": [
+        16
+      ],
+      "scope": "Three outputs of filleting: two sides of flesh and central bone frame; four states round,semidress,dress,fillet. Independent generic geometric marks with captions.",
+      "figureCount": 7,
+      "limits": "Compares processing states, not a knife-operation demonstration. Supplier definitions can vary; no claim of guaranteed absence of small bones or suitability for raw consumption."
+    },
+    {
+      "id": "measurement",
+      "lessonIds": [
+        "rst-1-cook-15"
+      ],
+      "sourcePdfPages": [
+        31
+      ],
+      "scope": "Two independent diagrams place probe measurement in food core and infrared measurement on food surface. Blank displays, no invented time/temperature thresholds.",
+      "figureCount": 2,
+      "limits": "Measurement-point distinction only; device-specific placement/disinfection/operating instructions remain with manual and restaurant procedure."
+    }
+  ],
+  "localization": {
+    "priorityLocales": [
+      "en",
+      "vi",
+      "id",
+      "km",
+      "my",
+      "ne",
+      "th"
+    ],
+    "deferredLocales": [
+      "zh-CN",
+      "zh-TW",
+      "hi",
+      "bn",
+      "tl"
+    ],
+    "labelsReuse": "Existing authored glossary/lesson term translations reused for available exact terms. Eye and side-of-flesh labels plus new captions independently AI translated. No native certification.",
+    "deferredBehavior": "When translation absent, Japanese is rendered; no unrelated-language fallback or Japanese placeholder reported as a translation.",
+    "furigana": "29 text fields aligned; all kanji in new label/title/note/description fields have an explicit reading; long prose split into wrapping word tokens, not one full-width ruby token."
+  },
+  "checks": {
+    "typescriptSyntaxErrors": 0,
+    "alignedRubyTextFields": 29,
+    "priorityLabelLocalesComplete": 7,
+    "diffCheck": "PASS",
+    "runtimeVisualReview": "AI6 Chromium PASS156 viewport/locale/guide cases plus3 mobile DOM2x-font cases; AI4 personally inspected all6 saved VI source screenshots at normal/2x. No clipping or drawing/legend mismatch observed.",
+    "realDeviceTested": false,
+    "productionExpoTested": false,
+    "viewportLocaleGuideCases": 156,
+    "font2xCases": 3,
+    "runtimeReport": "completion25-expo-device.json (root/AI6 owns final report)",
+    "runtimeAdapterScope": "Standalone guide bundle uses default appearance context. DOM font/line-height doubled; not native accessibility scaling.",
+    "standaloneScreenshotFiles": [
+      "anatomy-390x844-vi.png",
+      "processing-390x844-vi.png",
+      "measurement-390x844-vi.png",
+      "anatomy-390x844-vi-font2x.png",
+      "processing-390x844-vi-font2x.png",
+      "measurement-390x844-vi-font2x.png"
+    ],
+    "screenshotsLocalDirectory": "/workspace/scratch/815b69225e4a/restaurant-expo-qa/additional-guides"
+  },
+  "remainingIllustrationGaps": [
+    "Species-specific identification and season examples from source fish/produce material",
+    "Detailed beef/pork/chicken cut-location maps",
+    "Hand/knife movement sequences and procedural food preparation",
+    "Other equipment recognition and service/tableware/source figure coverage beyond existing guide modules"
+  ],
+  "integration": {
+    "import": "import {RestaurantAdditionalGuides} from './RestaurantAdditionalGuides';",
+    "render": "<RestaurantAdditionalGuides lessonId={lesson.id} language={language} showTranslation={show}/>",
+    "location": "RestaurantCourse lesson reader, after RestaurantMealPlacement, before paragraphs; root owns integration file."
+  },
+  "artifactSha256": {
+    "src/components/restaurant/RestaurantAdditionalGuides.tsx": "4bf3b80248255400880e71061d1068344908d769aa359f5d4971fa62dce67e9a",
+    "src/data/restaurant/additional-guides.json": "1b129cb2993e7ecb61ee2cee7ed2c43407de107c9453decc54d22b421a9ed7bf"
+  },
+  "rootIntegration": {
+    "component": "RestaurantAdditionalGuides",
+    "consumer": "src/components/restaurant/RestaurantCourse.tsx",
+    "placement": "After RestaurantMealPlacement inside matched lesson reader",
+    "componentAndDataHashesVerified": true,
+    "integratedCourseCases": 84,
+    "font2xCases": 3,
+    "evidence": "completion25-expo-device.json",
+    "nativeDeviceTested": false
+  }
+}

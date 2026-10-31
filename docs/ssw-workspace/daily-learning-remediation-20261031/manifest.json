@@ -12,20 +12,26 @@
     "restaurant": {
       "commit": "8b8f4756281dc2d092348da010a24d46b7a16a70",
       "branch": "feature/restaurant-20261026",
-      "remotePersistence": "PASS"
+      "remotePersistence": "PASS",
+      "integratedOnBranch": "recovery/jlpt-n3-n1",
+      "integrationEvidence": "../integration-food-restaurant-20261031/REPORT.vi.md"
     },
     "food": {
       "commit": "e847656988041b8f1c4ab0497b89911ef0e3a090",
       "branch": "feature/food-continue-20261029",
       "remotePersistence": "PASS",
-      "parentSequentialFullScopedTypeScript": "PASS_4096MB"
+      "parentSequentialFullScopedTypeScript": "PASS_4096MB",
+      "integratedOnBranch": "recovery/jlpt-n3-n1",
+      "integrationEvidence": "../integration-food-restaurant-20261031/REPORT.vi.md"
     }
   },
   "mainSectorManifests": {
     "agriculture": "../agriculture/daily-fix-20261031/manifest.json",
     "manufacturing": "../manufacturing/daily-fix-20261031/manifest.json",
     "kensetsu": "../kensetsu/daily-fix-20261031/manifest.json",
-    "kaigo": "../kaigo/daily-fix-20261031/manifest.json"
+    "kaigo": "../kaigo/daily-fix-20261031/manifest.json",
+    "restaurant": "../restaurant/daily-fix-20261031/manifest.json",
+    "food": "../food-manufacturing/daily-fix-20261031/manifest.json"
   },
   "learnerDurationMeasured": false,
   "humanReviewed": false,
@@ -45,5 +51,11 @@
   "jlptUILock": "PASS10/10",
   "manufacturingUpstreamReconciliation": "../manufacturing/daily-fix-20261031/upstream-reconciliation.json",
   "report": "REPORT_VI.md",
-  "durability": "Main changes require following exact remote commit and clean-worktree gate; feature branch gates already passed."
+  "durability": "Main changes require following exact remote commit and clean-worktree gate; feature branch gates already passed.",
+  "featureSectorIntegration": {
+    "status": "implemented_and_tested_on_integration_tree",
+    "evidence": "../integration-food-restaurant-20261031/REPORT.vi.md",
+    "physicalDeviceTested": false,
+    "productionExpoTested": false
+  }
 }

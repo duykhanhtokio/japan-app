@@ -1,0 +1,118 @@
+{
+  "locale": "hi",
+  "examId": "food-2-mock-07",
+  "reviewType": "independent_ai_semantic_review",
+  "reviewer": "b22_zh",
+  "reviewedArtifact": "hi-b22.json",
+  "reviewedArtifactSha256": "af53e619e692aa5012a589889cf7bb3d80363452d49258d92f16fb3d2d189fac",
+  "reviewedQuestionCount": 40,
+  "reviewedQuestionIds": [
+    "food-2-q374",
+    "food-2-q258",
+    "food-2-q228",
+    "food-2-q106",
+    "food-2-q207",
+    "food-2-q372",
+    "food-2-q238",
+    "food-2-q361",
+    "food-2-q159",
+    "food-2-q251",
+    "food-2-q208",
+    "food-2-q196",
+    "food-2-q314",
+    "food-2-q344",
+    "food-2-q357",
+    "food-2-q267",
+    "food-2-q270",
+    "food-2-q324",
+    "food-2-q384",
+    "food-2-q345",
+    "food-2-q138",
+    "food-2-q119",
+    "food-2-q231",
+    "food-2-q126",
+    "food-2-q232",
+    "food-2-q143",
+    "food-2-q120",
+    "food-2-q248",
+    "food-2-q091",
+    "food-2-q295",
+    "food-2-q134",
+    "food-2-q301",
+    "food-2-q368",
+    "food-2-q097",
+    "food-2-q278",
+    "food-2-q104",
+    "food-2-q291",
+    "food-2-q170",
+    "food-2-q082",
+    "food-2-q226"
+  ],
+  "reviewedExamTitle": true,
+  "source": "batch22-canonical-source.json, exact main-exam Japanese fields",
+  "scope": [
+    "Compared every prompt, all four ordered options, main explanation, four option explanations and title directly against canonical Japanese.",
+    "Checked roles, negation, conditions, hypothetical scope, numerical values, exact source hashes and correct-reason equality."
+  ],
+  "findings": [
+    {
+      "questionId": "food-2-q119",
+      "severity": "minor",
+      "finding": "Initial Hindi wording suggested equipment use had begun; Japanese states the next team was about to use it.",
+      "correction": "Prompt now uses about-to-use wording, preserving attempted rather than completed use.",
+      "resolved": true
+    },
+    {
+      "questionId": "food-2-q344",
+      "severity": "minor",
+      "finding": "Initial Hindi prompt did not explicitly retain that inability to complete the next order was a forecast.",
+      "correction": "Added explicit forecast wording corresponding to 見込み.",
+      "resolved": true
+    },
+    {
+      "questionId": "food-2-q267",
+      "severity": "minor",
+      "finding": "Clarify 200g/bag is specified product weight for the yield calculation, rather than a separately measured actual fill.",
+      "correction": "Prompt explicitly identifies standard weight; hypothetical scope and90% calculation retained.",
+      "resolved": true
+    },
+    {
+      "questionId": "food-2-q301",
+      "severity": "minor",
+      "finding": "Currency-unit explanation should identify original Japanese units because localized question uses full yen amounts.",
+      "correction": "Reason now explicitly refers to original Japanese units. All ordered amounts and intentional6million-yen distractor retained.",
+      "resolved": true
+    }
+  ],
+  "corrections": [
+    {
+      "questionId": "food-2-q119",
+      "correction": "Prompt now uses about-to-use wording, preserving attempted rather than completed use."
+    },
+    {
+      "questionId": "food-2-q344",
+      "correction": "Added explicit forecast wording corresponding to 見込み."
+    },
+    {
+      "questionId": "food-2-q267",
+      "correction": "Prompt explicitly identifies standard weight; hypothetical scope and90% calculation retained."
+    },
+    {
+      "questionId": "food-2-q301",
+      "correction": "Reason now explicitly refers to original Japanese units. All ordered amounts and intentional6million-yen distractor retained."
+    }
+  ],
+  "criticalChecks": {
+    "food-2-q374": "Minor high-frequency defects do not justify ignoring rare severe safety abnormalities.",
+    "food-2-q258": "Correlation retained without claiming causation.",
+    "food-2-q267": "Hypothetical specified200g×360acceptable bags=72kg;72/80×100=90%; not a universal manufacturing condition.",
+    "food-2-q384": "Hourly line output200→240kg increases; productivity per person-hour50→40kg decreases.",
+    "food-2-q226": "Hypothetical inclusive≥78°C AND≥70seconds: A79/65fails, B78/75passes; actual-factory disclaimer retained.",
+    "food-2-q301": "JPY300000+200000+100000=600000; ordered options500000/6000000/400000/600000 preserved."
+  },
+  "result": "pass_after_corrections",
+  "remainingIssues": [],
+  "reviewedByNativeSpeaker": false,
+  "domainCertification": false,
+  "integratedPartSha256": "af53e619e692aa5012a589889cf7bb3d80363452d49258d92f16fb3d2d189fac"
+}

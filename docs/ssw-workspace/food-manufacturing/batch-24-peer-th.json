@@ -1,0 +1,76 @@
+{
+  "reviewerAgent": "/root/b24_en_vi",
+  "authorAgent": "/root/b24_bn_th",
+  "reviewedQuestionCount": 41,
+  "reviewedQuestionIds": [
+    "food-2-q274",
+    "food-2-q308",
+    "food-2-q186",
+    "food-2-q223",
+    "food-2-q299",
+    "food-2-q214",
+    "food-2-q333",
+    "food-2-q240",
+    "food-2-q350",
+    "food-2-q272",
+    "food-2-q198",
+    "food-2-q100",
+    "food-2-q242",
+    "food-2-q085",
+    "food-2-q081",
+    "food-2-q151",
+    "food-2-q366",
+    "food-2-q388",
+    "food-2-q233",
+    "food-2-q322",
+    "food-2-q259",
+    "food-2-q230",
+    "food-2-q128",
+    "food-2-q277",
+    "food-2-q189",
+    "food-2-q161",
+    "food-2-q156",
+    "food-2-q387",
+    "food-2-q182",
+    "food-2-q302",
+    "food-2-q227",
+    "food-2-q331",
+    "food-2-q360",
+    "food-2-q130",
+    "food-2-q183",
+    "food-2-q327",
+    "food-2-q362",
+    "food-2-q172",
+    "food-2-q398",
+    "food-2-q329",
+    "food-1-q363"
+  ],
+  "reviewedArtifactSha256": "1932b04474479df83b03577df394333fb70286b3ba67ecb7b7dca2a607fc421b",
+  "corrections": [
+    {
+      "questionId": "food-2-q302",
+      "fields": [
+        "prompt",
+        "options[3]"
+      ],
+      "before": [
+        "ผลิตเสร็จในวันที่วางแผนแต่ไม่ทันเวลาส่งออกที่ต้องการ ควรทบทวนการบริหารกำหนดส่งอย่างไร?",
+        "ไม่ควบคุมเวลาส่งออกถ้าเป็นวันเดียวกัน"
+      ],
+      "after": [
+        "ผลิตเสร็จในวันที่วางแผนแต่ไม่ทันเวลาจัดส่งสินค้าที่ต้องการ ควรทบทวนการบริหารกำหนดส่งอย่างไร?",
+        "ไม่ควบคุมเวลาจัดส่งสินค้าถ้าเป็นวันเดียวกัน"
+      ],
+      "reason": "Use ordinary shipment wording จัดส่งสินค้า rather than ส่งออก, which can imply export; Japanese 出荷 does not specify export."
+    }
+  ],
+  "findings": [
+    "Full independent semantic comparison of all prompts, ordered choices, explanations/reasons and title against Japanese canonical packet.",
+    "Negatives, authority, hypothetical conditions, numeric values and units preserved. q333 68.3%/95.4%; q388 300×10=3000kg, 2400÷3000=80%; q331 120g÷5=24g verified.",
+    "q363 correctly explains the error in the quoted assertion and retains answerIndex2.",
+    "No unresolved material semantic findings."
+  ],
+  "nativeSpeakerReviewed": false,
+  "domainExpertReviewed": false,
+  "integratedPartSha256": "1932b04474479df83b03577df394333fb70286b3ba67ecb7b7dca2a607fc421b"
+}

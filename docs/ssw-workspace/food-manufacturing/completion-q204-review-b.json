@@ -1,0 +1,185 @@
+{
+  "review": "Independent read-only q204 completion audit B",
+  "repositoryHead": "e0e8d76a",
+  "questionId": "food-1-q204",
+  "exactCurrentJapanesePrompt": "清潔な使い捨て手袋を着けた人が、髪を耳へ掛け直しました。次の食品に触れる前に必要な理由はどれですか。",
+  "proposedJapanesePrompt": "清潔な使い捨て手袋を着けた人が、髪を耳へ掛け直しました。次の食品に触れる前に、再手洗いや手袋交換が必要なのはなぜですか。",
+  "japaneseJudgment": "Accept minimal repair. Existing stem leaves the required action unspecified (必要な理由 has no clear referent). New stem explicitly states the already-present explanation intervention 再手洗いや手袋交換, asks why it is required, and preserves the contaminated-glove correct answer. No knowledge/answer/option/order/source change.",
+  "sourceMeaning": {
+    "canonicalSourceRefs": [
+      {
+        "document": "ssw1",
+        "pdfPage": 31,
+        "printedPage": 26,
+        "section": "（３）作業者の衛生管理"
+      }
+    ],
+    "explanationJa": "髪などへ触れた手で作業せず、再手洗いや手袋交換を行います。",
+    "correctOptionJa": "髪に触れたことで手袋が汚染している可能性があるから。",
+    "knowledge": "After hair contact, gloves may be contaminated. Do not continue food work with contaminated hands/gloves; rewash hands or change gloves as specified. Retain Japanese や/or alternatives without adding a new cumulative obligation."
+  },
+  "sourceHashOnlyRebindJudgment": "Accept semantic sourceHash-only rebind for the preferred 衛生上の対応 prompt: the current target prompts already ask why action/measures/hygiene action are required before touching the next food, and their explanations supply the specific intervention. Generic action wording in several locales has its hygiene referent supplied by the immediate hair/glove/food context; no contradictory or newly added procedural detail. MY/KM linguistic confidence remains provisional, rather than new-translation/native certification.",
+  "current12Prompts": [
+    {
+      "locale": "bn",
+      "file": "src/data/food-manufacturing/test-translations/bn.json",
+      "exactCurrentPrompt": "পরিষ্কার একবার ব্যবহারযোগ্য দস্তানা পরা একজন ব্যক্তি চুল কানের পেছনে গুঁজেছেন। পরের খাদ্য স্পর্শ করার আগে ব্যবস্থা নেওয়া কেন প্রয়োজন?",
+      "exactCurrentSourceHash": "fnv1a-3ecea9b4",
+      "judgment": "accept_hash_only_context_equivalence",
+      "confidence": "moderate",
+      "rationale": "ব্যবস্থা নেওয়া কেন প্রয়োজন asks why taking measures is necessary. Explanation explicitly mentions আবার হাত ধুতে বা দস্তানা বদলাতে (wash again or change gloves).",
+      "explicitHandwashOrGloveChangeInStem": false,
+      "correctReasonEqualsExplanation": true,
+      "authorLanguageChange": false
+    },
+    {
+      "locale": "en",
+      "file": "src/data/food-manufacturing/test-translations/en.json",
+      "exactCurrentPrompt": "A person wearing clean disposable gloves tucks their hair behind their ear again. Why is action needed before touching the next food?",
+      "exactCurrentSourceHash": "fnv1a-3ecea9b4",
+      "judgment": "accept_hash_only_context_equivalence",
+      "confidence": "high",
+      "rationale": "Why is action needed asks for the same reason; explanation explicitly states wash hands again or change gloves.",
+      "explicitHandwashOrGloveChangeInStem": false,
+      "correctReasonEqualsExplanation": true,
+      "authorLanguageChange": false
+    },
+    {
+      "locale": "hi",
+      "file": "src/data/food-manufacturing/test-translations/hi.json",
+      "exactCurrentPrompt": "साफ, एक बार उपयोग होने वाले दस्ताने पहने व्यक्ति ने बालों को फिर कान के पीछे किया। अगले खाद्य पदार्थ को छूने से पहले कार्रवाई क्यों आवश्यक है?",
+      "exactCurrentSourceHash": "fnv1a-3ecea9b4",
+      "judgment": "accept_hash_only_context_equivalence",
+      "confidence": "high",
+      "rationale": "कार्रवाई क्यों आवश्यक है asks why action is necessary; explanation explicitly gives हाथ फिर धोएँ या दस्ताने बदलें.",
+      "explicitHandwashOrGloveChangeInStem": false,
+      "correctReasonEqualsExplanation": true,
+      "authorLanguageChange": false
+    },
+    {
+      "locale": "id",
+      "file": "src/data/food-manufacturing/test-translations/id.json",
+      "exactCurrentPrompt": "Seseorang yang mengenakan sarung tangan sekali pakai yang bersih merapikan rambutnya ke belakang telinga. Mengapa tindakan kebersihan diperlukan sebelum menyentuh makanan berikutnya?",
+      "exactCurrentSourceHash": "fnv1a-3ecea9b4",
+      "judgment": "accept_hash_only_context_equivalence",
+      "confidence": "high",
+      "rationale": "tindakan kebersihan means hygiene action; explanation explicitly states cuci tangan kembali atau ganti sarung tangan.",
+      "explicitHandwashOrGloveChangeInStem": false,
+      "correctReasonEqualsExplanation": true,
+      "authorLanguageChange": false
+    },
+    {
+      "locale": "km",
+      "file": "src/data/food-manufacturing/test-translations/km.json",
+      "exactCurrentPrompt": "អ្នកពាក់ស្រោមដៃប្រើម្តងចោលដែលស្អាត បានយកដៃរៀបសក់សៀតត្រចៀកឡើងវិញ។ តើហេតុផលណាធ្វើឱ្យត្រូវចាត់វិធានការមុនប៉ះអាហារបន្ទាប់?",
+      "exactCurrentSourceHash": "fnv1a-3ecea9b4",
+      "judgment": "provisional_hash_only_context_equivalence",
+      "confidence": "limited",
+      "rationale": "Stem uses ចាត់វិធានការ (take measures) before the next food; explanation gives លាងដៃឡើងវិញ ឬប្តូរស្រោមដៃ (wash hands again or change gloves). No apparent contradiction; broader lexical/style judgment is not certified.",
+      "explicitHandwashOrGloveChangeInStem": false,
+      "correctReasonEqualsExplanation": true,
+      "authorLanguageChange": false
+    },
+    {
+      "locale": "my",
+      "file": "src/data/food-manufacturing/test-translations/my.json",
+      "exactCurrentPrompt": "သန့်ရှင်းသော တစ်ခါသုံးလက်အိတ်ဝတ်ထားသူတစ်ဦးက ဆံပင်ကို နားနောက်သို့ ပြန်သပ်တင်လိုက်သည်။ နောက်အစားအစာကို မထိမီ သန့်ရှင်းရေးပြန်လုပ်ရန် လိုအပ်သည့်အကြောင်းရင်းမှာ မည်သည်နည်း။",
+      "exactCurrentSourceHash": "fnv1a-3ecea9b4",
+      "judgment": "provisional_hash_only_context_equivalence",
+      "confidence": "limited",
+      "rationale": "Stem already says သန့်ရှင်းရေးပြန်လုပ်ရန် (perform hygiene/cleaning again), and explanation visibly includes လက်ပြန်ဆေးခြင်း သို့မဟုတ် လက်အိတ်လဲခြင်း (rewashing hands or changing gloves). No apparent contradiction; broader lexical/style judgment is not certified.",
+      "explicitHandwashOrGloveChangeInStem": false,
+      "correctReasonEqualsExplanation": true,
+      "authorLanguageChange": false
+    },
+    {
+      "locale": "ne",
+      "file": "src/data/food-manufacturing/test-translations/ne.json",
+      "exactCurrentPrompt": "सफा एकपटक प्रयोग गर्ने पन्जा लगाएका व्यक्तिले कपाल फेरि कानपछाडि मिलाए। अर्को खाद्यवस्तु छुनुअघि कदम चाल्नु किन आवश्यक छ?",
+      "exactCurrentSourceHash": "fnv1a-3ecea9b4",
+      "judgment": "accept_hash_only_context_equivalence",
+      "confidence": "moderate",
+      "rationale": "कदम चाल्नु किन आवश्यक छ asks why taking a step is necessary; explanation explicitly gives हात फेरि धुने वा पन्जा फेर्ने.",
+      "explicitHandwashOrGloveChangeInStem": false,
+      "correctReasonEqualsExplanation": true,
+      "authorLanguageChange": false
+    },
+    {
+      "locale": "th",
+      "file": "src/data/food-manufacturing/test-translations/th.json",
+      "exactCurrentPrompt": "ผู้สวมถุงมือใช้ครั้งเดียวที่สะอาดเอาผมทัดหูอีกครั้ง เหตุใดจึงต้องดำเนินการก่อนสัมผัสอาหารถัดไป",
+      "exactCurrentSourceHash": "fnv1a-3ecea9b4",
+      "judgment": "accept_hash_only_context_equivalence",
+      "confidence": "moderate",
+      "rationale": "ต้องดำเนินการ asks why action is required; explanation explicitly gives ล้างมือใหม่หรือเปลี่ยนถุงมือ.",
+      "explicitHandwashOrGloveChangeInStem": false,
+      "correctReasonEqualsExplanation": true,
+      "authorLanguageChange": false
+    },
+    {
+      "locale": "tl",
+      "file": "src/data/food-manufacturing/test-translations/tl.json",
+      "exactCurrentPrompt": "Ang taong may malinis na disposable na guwantes ay muling isinukbit ang buhok sa likod ng tainga. Bakit kailangang gumawa ng hakbang sa kalinisan bago humawak ng susunod na pagkain?",
+      "exactCurrentSourceHash": "fnv1a-3ecea9b4",
+      "judgment": "accept_hash_only_context_equivalence",
+      "confidence": "high",
+      "rationale": "gumawa ng hakbang sa kalinisan explicitly means take a hygiene step; explanation states maghugas muli ng kamay o magpalit ng guwantes.",
+      "explicitHandwashOrGloveChangeInStem": false,
+      "correctReasonEqualsExplanation": true,
+      "authorLanguageChange": false
+    },
+    {
+      "locale": "vi",
+      "file": "src/data/food-manufacturing/test-translations/vi.json",
+      "exactCurrentPrompt": "Một người đeo găng tay dùng một lần sạch vừa vén lại tóc ra sau tai. Vì sao cần có biện pháp trước khi chạm vào thực phẩm tiếp theo?",
+      "exactCurrentSourceHash": "fnv1a-3ecea9b4",
+      "judgment": "accept_hash_only_context_equivalence",
+      "confidence": "high",
+      "rationale": "cần có biện pháp means measures are needed; explanation explicitly states rửa tay lại hoặc thay găng tay.",
+      "explicitHandwashOrGloveChangeInStem": false,
+      "correctReasonEqualsExplanation": true,
+      "authorLanguageChange": false
+    },
+    {
+      "locale": "zh-CN",
+      "file": "src/data/food-manufacturing/test-translations/zh-CN.json",
+      "exactCurrentPrompt": "一名戴着干净的一次性手套的人，把头发重新别到耳后。在接触下一份食品前需要采取措施，其原因是哪一项？",
+      "exactCurrentSourceHash": "fnv1a-3ecea9b4",
+      "judgment": "accept_hash_only_context_equivalence",
+      "confidence": "high",
+      "rationale": "需要采取措施 states the intervention; explanation supplies 重新洗手或更换手套. No conflicting procedure.",
+      "explicitHandwashOrGloveChangeInStem": false,
+      "correctReasonEqualsExplanation": true,
+      "authorLanguageChange": false
+    },
+    {
+      "locale": "zh-TW",
+      "file": "src/data/food-manufacturing/test-translations/zh-TW.json",
+      "exactCurrentPrompt": "一名戴著乾淨拋棄式手套的人，把頭髮重新撥到耳後。在接觸下一份食品前需要採取措施，其原因是哪一項？",
+      "exactCurrentSourceHash": "fnv1a-3ecea9b4",
+      "judgment": "accept_hash_only_context_equivalence",
+      "confidence": "high",
+      "rationale": "需要採取措施 means measures are necessary; surrounding explanation explicitly supplies 重新洗手或更換手套. Broader stem remains answerable and conveys the same implicit hygiene intervention.",
+      "explicitHandwashOrGloveChangeInStem": false,
+      "correctReasonEqualsExplanation": true,
+      "authorLanguageChange": false
+    }
+  ],
+  "checks": {
+    "localeCount": 12,
+    "allCorrectReasonEqualExplanation": true,
+    "repoFilesEdited": false,
+    "answerIndexRemains": 0,
+    "allCurrentSourceHashes": [
+      "fnv1a-3ecea9b4"
+    ]
+  },
+  "limitations": [
+    "AI linguistic review; no native-speaker/domain certification.",
+    "Burmese and Khmer judgments are provisional because lexical/style confidence is limited. No proposed wording authored for those languages.",
+    "Hash-only changes should be recorded as editorial source rebinds preserving an already equivalent hygiene-action question, not fresh translation or human review."
+  ],
+  "alternativeJapanesePrompt": "清潔な使い捨て手袋を着けた人が、髪を耳へ掛け直しました。次の食品に触れる前に、衛生上の対応が必要なのはなぜですか。",
+  "preferredJapanesePrompt": "清潔な使い捨て手袋を着けた人が、髪を耳へ掛け直しました。次の食品に触れる前に、衛生上の対応が必要なのはなぜですか。",
+  "comparisonJudgment": "Prefer the alternative 衛生上の対応 stem. It repairs the omitted referent with an explicit hygiene response, remains clear when asking for the cause, and preserves the broader action/measure wording already present in all12 target prompts. The explicit 再手洗いや手袋交換 version is also technically correct but adds a detailed enumeration to the stem that current translations omit."
+}

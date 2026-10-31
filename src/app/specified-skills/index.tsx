@@ -1,3 +1,4 @@
+import {specifiedSkillRoute,specifiedSkillAvailable} from '@/data/specified-skills-routes';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { uiText } from '@/i18n/ui-text';
 import { Text } from '@/components/app/LocalizedText';
@@ -55,10 +56,10 @@ export default function SpecifiedSkillsScreen() {
                     ({ icon, ja, vi }) => (
                         <Pressable
                             key={ja}
-                            accessibilityRole={(ja==='介護'||ja==='建設'||ja==='農業'||ja==='製造分野')&&__DEV__?'button':undefined}
-                            accessibilityLabel={(ja==='介護'||ja==='建設'||ja==='農業'||ja==='製造分野')&&__DEV__?uiText('internalPreview',language,{name:ja}):ja}
-                            disabled={(ja!=='介護'&&ja!=='建設'&&ja!=='農業'&&ja!=='製造分野')||!__DEV__}
-                            onPress={()=>{void pushPrepared(ja==='製造分野'?'/specified-skills/manufacturing':ja==='建設'?'/specified-skills/kensetsu':ja==='農業'?'/specified-skills/agriculture':'/specified-skills/kaigo');}}
+                            accessibilityRole={specifiedSkillAvailable(ja,__DEV__)?'button':undefined}
+                            accessibilityLabel={specifiedSkillAvailable(ja,__DEV__)?uiText('internalPreview',language,{name:ja}):ja}
+                            disabled={!specifiedSkillAvailable(ja,__DEV__)}
+                            onPress={()=>{const route=specifiedSkillRoute(ja);if(route)void pushPrepared(route);}}
                             style={
                                 styles.card
                             }

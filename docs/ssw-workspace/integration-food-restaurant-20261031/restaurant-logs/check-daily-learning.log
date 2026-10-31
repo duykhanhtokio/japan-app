@@ -1,0 +1,30 @@
+
+▲ [WARNING] Cannot find base config file "expo/tsconfig.base" [tsconfig.json]
+
+    tsconfig.json:2:13:
+      2 │   "extends": "expo/tsconfig.base",
+        ╵              ~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "react/jsx-runtime"
+
+    src/components/restaurant/RestaurantDailyLearning.tsx:128:8:
+      128 │  return <View testID={`restaurant-daily-figure-${lesson.id}`} sty...
+          ╵         ^
+
+  You can mark the path "react/jsx-runtime" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+Error: Build failed with 1 error:
+src/components/restaurant/RestaurantDailyLearning.tsx:128:8: ERROR: Could not resolve "react/jsx-runtime"
+    at failureErrorWithLog (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:1467:15)
+    at /workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:924:7)
+    at /workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:951:16
+    at responseCallbacks.<computed> (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:603:9)
+    at handleIncomingPacket (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:658:12)
+    at Socket.readFromStdout (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:569:12) {
+  errors: [Getter/Setter],
+  warnings: [Getter/Setter]
+}

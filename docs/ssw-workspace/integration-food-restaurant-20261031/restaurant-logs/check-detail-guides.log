@@ -1,0 +1,55 @@
+
+✘ [ERROR] /workspace/scratch/8c34e3cace7a/japan-app/src/components/world/japanese-ruby-data [plugin detail-component-only]
+
+    scripts/restaurant/check-detail-guides.cjs:22:212:
+      22 │ ...&&fs.statSync(p+ext).isFile())return{path:p+ext};throw Error(p)});
+         ╵                                                           ^
+
+    at /workspace/scratch/8c34e3cace7a/japan-app/scripts/restaurant/check-detail-guides.cjs:22:213
+    at requestCallbacks.on-resolve (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:1217:28)
+    at handleRequest (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:569:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:520:3)
+    at Readable.push (node:internal/streams/readable:400:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:194:23)
+
+  This error came from the "onResolve" callback registered here:
+
+    scripts/restaurant/check-detail-guides.cjs:22:3:
+      22 │  b.onResolve({filter:/^@\//},a=>{const p=path.join(root,'src',a.pa...
+         ╵    ~~~~~~~~~
+
+    at setup (/workspace/scratch/8c34e3cace7a/japan-app/scripts/restaurant/check-detail-guides.cjs:22:4)
+    at handlePlugins (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:1141:21)
+    at buildOrContextImpl (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:854:5)
+    at Object.buildOrContext (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:680:5)
+    at /workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:2026:15
+    at new Promise (<anonymous>)
+    at Object.build (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:2025:25)
+    at Object.build (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:1876:51)
+    at /workspace/scratch/8c34e3cace7a/japan-app/scripts/restaurant/check-detail-guides.cjs:18:37
+
+  The plugin "detail-component-only" was triggered by this import
+
+    src/components/restaurant/RestaurantReading.tsx:3:29:
+      3 │ import {hasAlignedRuby} from '@/components/world/japanese-ruby-data';
+        ╵                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error: Build failed with 1 error:
+scripts/restaurant/check-detail-guides.cjs:22:212: ERROR: [plugin: detail-component-only] /workspace/scratch/8c34e3cace7a/japan-app/src/components/world/japanese-ruby-data
+    at failureErrorWithLog (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:1467:15)
+    at /workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:924:7)
+    at /workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:951:16
+    at responseCallbacks.<computed> (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:603:9)
+    at handleIncomingPacket (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:658:12)
+    at Socket.readFromStdout (/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:569:12) {
+  errors: [Getter/Setter],
+  warnings: [Getter/Setter]
+}
