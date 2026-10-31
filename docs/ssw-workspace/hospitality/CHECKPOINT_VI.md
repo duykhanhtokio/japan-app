@@ -3,11 +3,11 @@
 ## Phạm vi đã triển khai
 
 - Hai nguồn Nhật52+65=117trang; đã rà văn bản và trực quan117/117. 94trang thuộc phạm vi kiến thức, các trang khác có lý do phân loại riêng trong page-audit.json.
--38ngày học;474mã kiến thức;621liên kết kiến thức–nguồn. Đây là bằng chứng biên soạn AI, không phải nghiệm thu chuyên gia hay chứng nhận không còn thiếu ý.
--166câu kiểm tra độc lập và2bài tổng hợp25câu/cấp (chọn lại từ ngân hàng đã dạy, không tính thêm thành câu mới). Không tuyên bố cấu trúc đề thi chính thức.
+-38ngày học;475IDlegacy;622liên kết kiến thức–nguồn. Bộ nguồn độc lập mới có76ýđược đối chiếu riêng, không cộng với IDlegacy để suy ra tổng ý nguồn. Đây là bằng chứng biên soạn AI, không phải nghiệm thu chuyên gia hay chứng nhận không còn thiếu ý.
+-191câu kiểm tra độc lập và2bài tổng hợp25câu/cấp (chọn lại từ ngân hàng đã dạy, không tính thêm thành câu mới). Không tuyên bố cấu trúc đề thi chính thức.
 -38PNG tự dựng có byte thật, đăng ký theo ngày. Đã kiểm tra contact sheet; trình đọc có nút phóng to. Chưa duyệt chuyên môn hình ảnh.
 -Tích hợp thẻKhách sạn→route riêng→chọn1号/2号→bài/ngày→kiểm tra→nộp→giải thích→hoàn thành; chế độ nội bộ __DEV__, chưa mở phát hành.
--Tiếng Nhật trước, bản dịch bámrevision. Snapshot hiện có233/456cặp bài–ngôn ngữ; chi tiết ở translation-status.json. Dịch AI chưa duyệt bản ngữ.
+-Tiếng Nhật trước, bản dịch bámrevision. Snapshot hiện có199/456cặp bài–ngôn ngữ hợp lệ;34cặp đã cũ sau sửa Nhật; chi tiết ở translation-status.json. Dịch AI chưa duyệt bản ngữ.
 
 ## Bằng chứng kiểm tra
 
@@ -57,3 +57,16 @@ Git làm việc tại nhánh feature/hospitality-20261031 từ74df35d91. GitCLI 
 - Hồ sơSOURCE_COVERAGE_RECHECK_20261031.json ghi5phát hiện có bằng chứng, gồm thiếu kiểm tra thoát nạn hai hướng(2号tr59), lược chi tiết giám sát/bảo trì báo cháy(2号tr60), câu hỏi chắn cửa chống cháy gắn nhầm cho năng lực diễn tập/bảo trì, chi tiết báo tình trạng người bệnh chưa rõ(2号tr59), và định nghĩa twin chủ yếu xuất hiện trong đáp án thay vì đoạn dạy(1号tr7).
 - Đây là rà mục tiêu, không phải nghiệm thu mới117/117trang. Không sửa hàng loạt trạng thái thànhcovered. Các sửa đổi liên quan quy định/an toàn phải giữ đúng điều kiện hiện hành; không khôi phục máy móc sai khác của nguồn2024.
 - Bước kế tiếp: lập nguyên tử nguồn từ câu/bullet/bảng/hình của PDF trước, rồi liên kết bằng chứng dạy và kiểm tra riêng. Giữ ID học viên; mọi thay đổiNhật cần revision mới và cập nhật lại các bản dịch tương ứng.
+
+## Bổ sung Nhật theo ý nguồn — đợt1
+
+Chỉ thị mới: đối chiếu từng ý nguồn và bổ sung Nhật trước khi dịch tiếp. Chưa dịch mới trong đợt này.
+
+- Sổ chuẩn knowledge-ledger.json đã lênschema2: giữ nguyên unitslegacy và bổ sung sourceAtoms độc lập từ nguồn. source-atoms-authoring.json chỉ là đầu vào tác giả.76ýnguồn,15trang có đối chiếu (13trang chương an toàn/vệ sinh/cơ sở/môi trường của hai cấp +1号tr7/2号tr11). Mỗi ý cósource/page/hash, trạng thái trước, câu bằng chứng trong đoạn dạy, snapshotcâu hỏi/đáp án đúng vàrevision đã rà. Không đánh dấu toàn trang hay toàn117trang đã đủ ý.
+- Sửa6bàiNhật:front01,safety02,04,05,07,08. Thêm25câu kiểm tra, tổng191câu; giữ toàn bộIDcũ. Bổ sung rõsingle/twin trước câu hỏi, thông tin người bệnh khi119, hai hướng thoát nạn, ba loại diễn tập, giám sát/bảo trì báo cháy, trình tự xử lý吐物và tên薬剤, ví dụ nguyên nhân食中毒. Thêm câu kiểm tra thực sự cho các năng lực vệ sinh/cơ sở/môi trường trước đó thiếu.
+- Sửa liên kết sai: câu chắn cửa chống cháy không còn là bằng chứng cho tần suất diễn tập và giám sát/bảo trì. Có câu hỏi riêng cho diễn tập, giám sát, xử lý警報và可燃物.
+- Hìnhsafety07đã thay bằng sơ đồ kiểm soát được về hai hướng thoát nạn và bàn giao giám sát. Đã xemPNGđể kiểm tra nhãn/vịtrí; không nhận là testtrong trình đọc hay thiết bị thật.
+- Giữ ghi chú khác biệt nguồn2024với hướng dẫn chính thức: không áp tần suấtthông báo đồng nhất; không phục hồi chỉ dẫn tiếp tục chữa cháy sau khi lửa lên trần; không áp nhiệt độ/tình trạng thể chất một cách phổ quát; không chép nguyên trình tự xử lý吐物rút gọn. Nguồn chính thức bổ trợ ghi trongsourceAudit.
+-199cặp dịch còn hợp lệ;34cặp cũ bịloaderchặn đúngrevision,223cặp chưa có. Không xóa filedịch, không tự sửa sourceRevision để biến bản cũ thành hợp lệ.
+- Check cấu trúcPASS38bài/191câu/622liên kết;source-atomsPASS76bằng chứngvàsnapshotcâu hỏi;loaderPASS199hợp lệvà257thiếu/đãcũ trảnull. Tiếp tục giữdomain/native/device=falsevàdurationMeasured=false.
+- Phạm vi chưa xong:79trang kiến thức ngoài15trang đợt này chưa được đối chiếu lại theo sổ nguyên tử;15trang đã làm cũng chưa được nghiệm thu chuyên gia hoặc chứng nhận mẫu số đầy đủ tuyệt đối.23trang điều hướng/xuất bản giữ phân loại cũ để rà kiểm kê, không tính là kiến thức đã dạy. Tiếp tục chương lễ tân từsource1tr5/2tr8 và các phần chưa đối chiếu, rồi企画/広報、接客、飲食。 Không dịch tiếp trước khiNhậtổn định.
