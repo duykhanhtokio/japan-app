@@ -1,3 +1,9 @@
+# Daily workload and instructional figures —2026-10-31
+
+Latest candidate: `daily-fix-20261031/manifest.json`; apply `../DAILY_LEARNING_AND_IMAGE_REQUIREMENTS_VI.md`.96stable days remain,94gain same-topic existing companion paragraphs/activities;96have objective-bound original diagrams from35new small WebP assets. All canonical data,12draft translation texts,848questions/revisions and saved-progress keys remain byte-identical. Identity day map and final validation/browser evidence are in the session folder. New UI headings/close labels have36draft translations. No measured30minute/native/domain/device/release approval claimed. Remote persistence requires root publication/fetch and exact commit verification; this checkpoint is not proof by itself. Earlier entries below are historical.
+
+---
+
 # Final expanded candidate authoring/integration — 2026-10-29
 
 Branch `feature/food-continue-20261029`; base `106dfb5e9d230616deef01beac4ba952fa4d8106`.
