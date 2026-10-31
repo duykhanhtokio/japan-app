@@ -1,14 +1,15 @@
 import {useState} from 'react';
 import {Image,Modal,Pressable,ScrollView,StyleSheet,Text,View,type ImageSourcePropType} from 'react-native';
 import {foodSourcePractice32} from '@/data/food-manufacturing/source-practice32';
+import {foodSourcePractice33} from '@/data/food-manufacturing/source-practice33';
 import ui from '@/data/food-manufacturing/daily-ui-translations.json';
-import {supplementalLessons} from '@/data/food-manufacturing/supplemental';
-import {foodManufacturingTranslation,type FoodManufacturingLesson} from '@/data/food-manufacturing';
+import {foodManufacturingLesson,foodManufacturingTranslation,type FoodManufacturingLesson} from '@/data/food-manufacturing';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 import {FoodLessonRuby} from './FoodLessonRuby';
 type PracticeFigure={id:string;lessonId:string;paragraphId:string;source:ImageSourcePropType;aspectRatio:number;width?:number;height?:number;lessonSourceHash?:string};
 const figures:PracticeFigure[]=[
  ...foodSourcePractice32,
+ ...foodSourcePractice33,
  {id:'food-source-histogram-patterns',lessonId:'food-2-043',paragraphId:'p1',source:require('../../../assets/food-manufacturing/source-practice/histogram-patterns.webp'),aspectRatio:1584/1903},
  {id:'food-source-scatter-patterns',lessonId:'food-2-043',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/scatter-patterns.webp'),aspectRatio:1584/1423},
  {id:'food-source-risk-matrix',lessonId:'food-2-047',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/risk-matrix.webp'),aspectRatio:776/648},
@@ -20,7 +21,7 @@ const figures:PracticeFigure[]=[
 export function FoodSourcePracticeVisuals({lesson,textColor,readingColor,language,showTranslation}:{lesson:FoodManufacturingLesson;textColor:string;readingColor:string;language:string;showTranslation:boolean}){
  const [expanded,setExpanded]=useState<PracticeFigure|null>(null);
  const labels=showTranslation&&language!=='ja'?(ui.locales as Record<string,{close:string}>)[language]:undefined;
- const base=supplementalLessons.find(l=>l.id===lesson.id);
+ const base=foodManufacturingLesson(lesson.id,lesson.level);
  if(!base||base.sourceHash!==lesson.sourceHash)return null;
  const translated=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
  return <>{figures.filter(f=>f.lessonId===lesson.id&&(!f.lessonSourceHash||f.lessonSourceHash===lesson.sourceHash)).map(figure=>{

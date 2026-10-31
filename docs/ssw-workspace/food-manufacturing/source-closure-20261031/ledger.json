@@ -25,7 +25,7 @@
   "inputSha256": {
     "src/data/food-manufacturing/lessons.1.ja.json": "3d5da3d651ce0f4304d71bc0c936abe181b583b45d7f877ae645de7d2510e24e",
     "src/data/food-manufacturing/lessons.2.ja.json": "e236d99bc844e832da0aadc6d73b4d227c119c06e97c37f6778b9c9e089edcb7",
-    "src/data/food-manufacturing/exams.ja.json": "5b10949898b2482b9ca400be891bda019d888bcbb712461428235bab645ef855",
+    "src/data/food-manufacturing/exams.ja.json": "47be6ec603e5173f6b721d64b65626e2cb4d097835f34535995e40c88743194a",
     "src/data/food-manufacturing/authoring-20261029/part1.json": "50fba944a74f2f8b29d32da71a5887195b4a1da0bf48ca7e2a7abe62d6192d4f",
     "src/data/food-manufacturing/authoring-20261029/part2.json": "ec367b55940d8526c908a1a5bc837d572e1e6b6693d8cbcbf059eb5dd1cefad7",
     "src/data/food-manufacturing/authoring-20261029/part3.json": "f7d50aa4e2641c3adeb323f19d0e2fb9c1615b8574a3bf4b1c561b50c2398689",
@@ -38,11 +38,16 @@
     "docs/ssw-workspace/food-manufacturing/competency-audit-part4-20261029.json": "bad7118602e78dc22413dfc1dcfb7ecb75cb7ef6ffb925c9aebee3d0e2c0a099",
     "docs/ssw-workspace/food-manufacturing/competency-audit-part5-20261029.json": "34242a8c617d809ef26072f6edf5edd064895d4316e4cb1f0308505067b2bff8",
     "docs/ssw-workspace/food-manufacturing/competency-audit-part6-20261029.json": "365de19a0bba3d63cf9b309c2006d42fef1112b41f196ef807c36b49b745291b",
-    "docs/ssw-workspace/food-manufacturing/source-closure-20261031/decisions.json": "c040d3d0161b82a1bf6839a42ed2defe11cbeda1d7e2278b46bffa6af22cd629",
+    "docs/ssw-workspace/food-manufacturing/source-closure-20261031/decisions.json": "af07dbabffda5107e5bfa12c0634f9193fdd642c14a9d7b7a007a6d57537208e",
     "docs/ssw-workspace/food-manufacturing/source-closure-20261031/visual-review.json": "793e48227fbed43fd7b2e11b379c707f86e7237255dad3f54914080d617b6117",
     "src/data/food-manufacturing/source-closure31.json": "8af4229635a23605106470686b5ec068eb6f89ea1170dbafcdaf25c1d72d41d4",
+    "docs/ssw-workspace/food-manufacturing/source-closure-20261031/question-audit.json": "81c1a6610b17fd2b0a665811e140e7134b9af8a6e7081e7902bc81923bf9e0e0",
     "docs/ssw-workspace/food-manufacturing/source-closure-20261031/figures32.json": "470d1f3a5244fc0867318780c55c1a1cfae929e84f6f8c11f70806f1fcee2e52",
-    "docs/ssw-workspace/food-manufacturing/source-closure-20261031/atomic-knowledge32.json": "acdb58c1e3cd1935b708e20232bd646a46fed8d9821f1a14def6ba428f7791ff"
+    "docs/ssw-workspace/food-manufacturing/source-closure-20261031/figures33.json": "ab510d5e21d729f5cfc4e7be1f387e2e8ff7844bb44d5d844c63c5dfa0d266af",
+    "docs/ssw-workspace/food-manufacturing/source-closure-20261031/atomic-knowledge32.json": "acdb58c1e3cd1935b708e20232bd646a46fed8d9821f1a14def6ba428f7791ff",
+    "docs/ssw-workspace/food-manufacturing/source-closure-20261031/atomic-knowledge33.json": "0d57d9ff9bdbf49e48d3a76d4d05cf361b01ad7f44bb95a4afd64ec8a798aa1e",
+    "docs/ssw-workspace/food-manufacturing/source-closure-20261031/question-semantic32.json": "2469bc94067fd009356b50ee624be4d955d21a4dab240e36296ccb1502e76c9c",
+    "docs/ssw-workspace/food-manufacturing/source-closure-20261031/question-semantic33.json": "75ac922830f02229e35a79e62c92a94c99b1c4157ab35dcf4a4d314fd94321ca"
   },
   "pages": [
     {
@@ -5327,25 +5332,43 @@
         }
       ],
       "after": {
-        "status": "teaching_rechecked_visual_pending",
+        "status": "scoped_practice_card_integrated_recheck_remaining",
         "lessonBindings": [
           {
             "lessonId": "food-1-044",
             "paragraphIds": [
-              "p2",
-              "p3"
+              "p2"
             ]
           }
         ],
-        "reason": "Read the current prose against source PDF27–28: collar, buttons/pockets, cuffs, tucking, covers, cap and mask fit are taught. Exact visual recognition still requires checking the existing illustration.",
+        "figureIds": [
+          "food-source33-garment"
+        ],
+        "reason": "Source text and rendered source page read; original practice card integrated at the pinned lesson paragraph. Scoped support only, not full page or competency closure.",
         "remaining": [
-          "Confirm every named detail in an independently authored visual and recognition exercise."
+          "Actual garment-part visual identification still needs an independently illustrated person, not only text cards."
         ],
         "humanReviewed": false,
         "nativeReviewed": false,
         "domainReviewed": false
       },
-      "figures": [],
+      "figures": [
+        {
+          "id": "food-source33-garment",
+          "assetFile": "assets/food-manufacturing/source-practice33/garment.webp",
+          "sha256": "8e25071caa1bb90a1b2fcd6341146fbbe8daed0ec3c683b14c158e13c768c2d6",
+          "lessonId": "food-1-044",
+          "paragraphId": "p2",
+          "objectiveJa": "内側ネット・縦襟・ボタンなし内衣を確認する",
+          "sourceRefs": [
+            {
+              "document": "ssw1",
+              "pdfPage": 27,
+              "printedPage": 22
+            }
+          ]
+        }
+      ],
       "provenance": {
         "path": "docs/ssw-workspace/food-manufacturing/competency-audit-part1-20261029.json",
         "recordKey": "competencies",
@@ -5384,25 +5407,48 @@
         }
       ],
       "after": {
-        "status": "teaching_rechecked_visual_pending",
+        "status": "scoped_practice_card_integrated_recheck_remaining",
         "lessonBindings": [
           {
             "lessonId": "food-1-044",
             "paragraphIds": [
-              "p2",
               "p3"
             ]
           }
         ],
-        "reason": "Read the current prose against source PDF27–28: collar, buttons/pockets, cuffs, tucking, covers, cap and mask fit are taught. Exact visual recognition still requires checking the existing illustration.",
+        "figureIds": [
+          "food-source33-head-mask-gloves"
+        ],
+        "reason": "Source text and rendered source page read; original practice card integrated at the pinned lesson paragraph. Scoped support only, not full page or competency closure.",
         "remaining": [
-          "Confirm every named detail in an independently authored visual and recognition exercise."
+          "Actual correct/incorrect fit identification still needs visual examples."
         ],
         "humanReviewed": false,
         "nativeReviewed": false,
         "domainReviewed": false
       },
-      "figures": [],
+      "figures": [
+        {
+          "id": "food-source33-head-mask-gloves",
+          "assetFile": "assets/food-manufacturing/source-practice33/head-mask-gloves.webp",
+          "sha256": "26ec96d2841a428fc3d6cedcece55949ddc687f6a2adc84572decc5bb1d560e5",
+          "lessonId": "food-1-044",
+          "paragraphId": "p3",
+          "objectiveJa": "長髪・帽子の深さ・裾収納を確認する",
+          "sourceRefs": [
+            {
+              "document": "ssw1",
+              "pdfPage": 24,
+              "printedPage": 19
+            },
+            {
+              "document": "ssw1",
+              "pdfPage": 28,
+              "printedPage": 23
+            }
+          ]
+        }
+      ],
       "provenance": {
         "path": "docs/ssw-workspace/food-manufacturing/competency-audit-part1-20261029.json",
         "recordKey": "competencies",
@@ -10668,10 +10714,48 @@
         }
       ],
       "after": {
-        "status": "semantic_recheck_pending",
-        "reason": "Historical status preserved; no automatic promotion from supplemental page overlap."
+        "status": "scoped_practice_card_integrated_recheck_remaining",
+        "lessonBindings": [
+          {
+            "lessonId": "food-2-004",
+            "paragraphIds": [
+              "p3"
+            ]
+          }
+        ],
+        "figureIds": [
+          "food-source33-ojt-cycle"
+        ],
+        "reason": "Source text and rendered source page read; original practice card integrated at the pinned lesson paragraph. Scoped support only, not full page or competency closure.",
+        "remaining": [
+          "Other knowledge/attitude/5W1H outcomes require individual assessment evidence."
+        ],
+        "humanReviewed": false,
+        "nativeReviewed": false,
+        "domainReviewed": false
       },
-      "figures": [],
+      "figures": [
+        {
+          "id": "food-source33-ojt-cycle",
+          "assetFile": "assets/food-manufacturing/source-practice33/ojt-cycle.webp",
+          "sha256": "1c6079c1269123e2d46507eab0451c890245eb9d15d93b1decbdf36d3aee9806",
+          "lessonId": "food-2-004",
+          "paragraphId": "p3",
+          "objectiveJa": "目標と実施条件を先に定める",
+          "sourceRefs": [
+            {
+              "document": "ssw2",
+              "pdfPage": 22,
+              "printedPage": 13
+            },
+            {
+              "document": "ssw2",
+              "pdfPage": 23,
+              "printedPage": 14
+            }
+          ]
+        }
+      ],
       "provenance": {
         "path": "docs/ssw-workspace/food-manufacturing/competency-audit-part3-20261029.json",
         "recordKey": "records",
@@ -17038,7 +17122,7 @@
         }
       ],
       "after": {
-        "status": "teaching_rechecked_visual_pending",
+        "status": "scoped_practice_card_integrated_recheck_remaining",
         "lessonBindings": [
           {
             "lessonId": "food-2-046",
@@ -17047,15 +17131,39 @@
             ]
           }
         ],
-        "reason": "Humidity/noise/vibration, after-improvement check, guard/edge/remote design and residual-burden options now explicit; design visual practice still pending.",
+        "figureIds": [
+          "food-source33-engineering-check"
+        ],
+        "reason": "Source text and rendered source page read; original practice card integrated at the pinned lesson paragraph. Scoped support only, not full page or competency closure.",
         "remaining": [
-          "Compare independently drawn before/after engineering controls."
+          "Measurements of temperature/humidity/noise/vibration and improvement comparisons require separate practice evidence."
         ],
         "humanReviewed": false,
         "nativeReviewed": false,
         "domainReviewed": false
       },
-      "figures": [],
+      "figures": [
+        {
+          "id": "food-source33-engineering-check",
+          "assetFile": "assets/food-manufacturing/source-practice33/engineering-check.webp",
+          "sha256": "150d9d248aac84b2d3c2e75dd50eed407c23ac62a0b1844b3053c2935bcce3da",
+          "lessonId": "food-2-046",
+          "paragraphId": "p2",
+          "objectiveJa": "尖った端を丸くして危険を小さくする",
+          "sourceRefs": [
+            {
+              "document": "ssw2",
+              "pdfPage": 131,
+              "printedPage": 122
+            },
+            {
+              "document": "ssw2",
+              "pdfPage": 132,
+              "printedPage": 123
+            }
+          ]
+        }
+      ],
       "provenance": {
         "path": "docs/ssw-workspace/food-manufacturing/competency-audit-part6-20261029.json",
         "recordKey": "competencies",
@@ -17099,7 +17207,7 @@
         }
       ],
       "after": {
-        "status": "teaching_rechecked_visual_pending",
+        "status": "scoped_practice_card_integrated_recheck_remaining",
         "lessonBindings": [
           {
             "lessonId": "food-2-046",
@@ -17108,15 +17216,39 @@
             ]
           }
         ],
-        "reason": "Humidity/noise/vibration, after-improvement check, guard/edge/remote design and residual-burden options now explicit; design visual practice still pending.",
+        "figureIds": [
+          "food-source33-engineering-check"
+        ],
+        "reason": "Source text and rendered source page read; original practice card integrated at the pinned lesson paragraph. Scoped support only, not full page or competency closure.",
         "remaining": [
-          "Compare independently drawn before/after engineering controls."
+          "Low-voltage example and individual assessment remain outside this figure scope."
         ],
         "humanReviewed": false,
         "nativeReviewed": false,
         "domainReviewed": false
       },
-      "figures": [],
+      "figures": [
+        {
+          "id": "food-source33-engineering-check",
+          "assetFile": "assets/food-manufacturing/source-practice33/engineering-check.webp",
+          "sha256": "150d9d248aac84b2d3c2e75dd50eed407c23ac62a0b1844b3053c2935bcce3da",
+          "lessonId": "food-2-046",
+          "paragraphId": "p2",
+          "objectiveJa": "尖った端を丸くして危険を小さくする",
+          "sourceRefs": [
+            {
+              "document": "ssw2",
+              "pdfPage": 131,
+              "printedPage": 122
+            },
+            {
+              "document": "ssw2",
+              "pdfPage": 132,
+              "printedPage": 123
+            }
+          ]
+        }
+      ],
       "provenance": {
         "path": "docs/ssw-workspace/food-manufacturing/competency-audit-part6-20261029.json",
         "recordKey": "competencies",

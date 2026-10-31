@@ -4,7 +4,7 @@ Only explicit human/AI decisions in decisions.json can change after.status.
 Missing bindings remain visible; input hashes make later changes detectable.
 """
 from pathlib import Path
-import json, hashlib, collections
+import json, hashlib, collections, re
 
 ROOT = Path(__file__).resolve().parents[2]
 DOC = ROOT / 'docs/ssw-workspace/food-manufacturing'
@@ -27,7 +27,8 @@ def build():
     OUT.mkdir(parents=True,exist_ok=True)
     decisions=read(OUT/'decisions.json') if (OUT/'decisions.json').exists() else {}
     supplement_ids={s['id'] for s in read(DATA/'source-closure31.json')['sections']} if (DATA/'source-closure31.json').exists() else set()
-    figures32={f['id']:f for f in read(OUT/'figures32.json')['figures']} if (OUT/'figures32.json').exists() else {}
+    figure_manifests=sorted(p for p in OUT.glob('figures*.json') if re.fullmatch(r'figures\d+\.json',p.name))
+    figures32={f['id']:f for path in figure_manifests for f in read(path)['figures']}
     lessons={};questions={};input_hashes={}
     inputs=[DATA/'lessons.1.ja.json',DATA/'lessons.2.ja.json',DATA/'exams.ja.json']+sorted((DATA/'authoring-20261029').glob('part[1-6].json'))
     for p in inputs:
@@ -75,7 +76,7 @@ def build():
     for p in pages:p['currentVisualReview']=viewed.get((p['document'],p['pdfPage']));p['visualEvidenceAvailable']=p['historicalVisualRead'] or bool(p['currentVisualReview'])
     assert len(pages)==251 and len({(p['document'],p['pdfPage']) for p in pages})==251
     assert len(records)==len({r['id'] for r in records})
-    for p in [OUT/'decisions.json',OUT/'visual-review.json',DATA/'source-closure31.json',OUT/'figures32.json',OUT/'atomic-knowledge32.json']:
+    for p in [OUT/'decisions.json',OUT/'visual-review.json',DATA/'source-closure31.json',OUT/'question-audit.json',*figure_manifests,*sorted(OUT.glob('atomic-knowledge[0-9]*.json')),*sorted(OUT.glob('question-semantic[0-9]*.json'))]:
         if p.exists():input_hashes[str(p.relative_to(ROOT))]=sha(p)
     identity=[{k:d[k] for k in ['id','level','filename','version','editionDate','pdfPageCount','sha256','printedPageOffset']} for d in read(DOC/'source-map.json')['documents']]
     write(OUT/'ledger.json',{'schemaVersion':1,'sourceDocuments':identity,'inputSha256':input_hashes,'pages':pages,'records':records,'scopeComplete':False,'fullAtomicSourceDecompositionComplete':False,'humanReviewed':False,'nativeReviewed':False,'domainReviewed':False})
