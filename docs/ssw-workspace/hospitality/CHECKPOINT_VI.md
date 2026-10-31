@@ -7,7 +7,7 @@
 -166câu kiểm tra độc lập và2bài tổng hợp25câu/cấp (chọn lại từ ngân hàng đã dạy, không tính thêm thành câu mới). Không tuyên bố cấu trúc đề thi chính thức.
 -38PNG tự dựng có byte thật, đăng ký theo ngày. Đã kiểm tra contact sheet; trình đọc có nút phóng to. Chưa duyệt chuyên môn hình ảnh.
 -Tích hợp thẻKhách sạn→route riêng→chọn1号/2号→bài/ngày→kiểm tra→nộp→giải thích→hoàn thành; chế độ nội bộ __DEV__, chưa mở phát hành.
--Tiếng Nhật trước, bản dịch bámrevision. Snapshot hiện có215/456cặp bài–ngôn ngữ; chi tiết ở translation-status.json. Dịch AI chưa duyệt bản ngữ.
+-Tiếng Nhật trước, bản dịch bámrevision. Snapshot hiện có233/456cặp bài–ngôn ngữ; chi tiết ở translation-status.json. Dịch AI chưa duyệt bản ngữ.
 
 ## Bằng chứng kiểm tra
 
@@ -39,3 +39,12 @@ Git làm việc tại nhánh feature/hospitality-20261031 từ74df35d91. GitCLI 
 - Validator nay từ chối file dịch có thật nhưng không được đăng ký trong loader; cũng kiểm tra key/path khớp và loader không trỏ tới file thiếu.
 - Bằng chứng phiên: check.cjs PASS38bài/166câu/621liên kết/117trang; check-translations.cjs PASS phần hiện có, complete=false; kiểm thử trực tiếp bộ nạp215/215 và từ chối revision cũ; kiểm thử hồi quy bỏ đăng ký tl/restaurant bị validator chặn đúng. git diff --check PASS.
 - Không chạy lại Expo/native. check-state.cjs chưa chạy được ở workspace mới vì thiếu esbuild; kết quả PASS ở phiên trước giữ là bằng chứng lịch sử, không nhận là kiểm thử mới. Nghiệm thu chuyên môn/bản ngữ/thiết bị và các thiếu sót đã nêu vẫn còn.
+
+## Tiếp tục — hoàn tất nhóm ăn uống cho hai locale Trung
+
+- Thêm đầy đủ9bài restaurant cho zh-CN và9bài cho zh-TW:18cặp bài–ngôn ngữ,72đoạn nội dung,72câu hỏi kèm giải thích và18cặp caption/alt, cùng mục tiêu, thuật ngữ, ví dụ và thực hành. Không đổi nội dung Nhật, ID, đáp án hoặc sourceRevision.
+- Trung giản thể và phồn thể đều38/38bài. Tổng mới233/456cặp (51,1%), còn223cặp. Năm locale đủ số bài:en,vi,id,zh-CN,zh-TW; đây là độ đầy đủ dữ liệu, không phải chứng nhận bản ngữ/chuyên môn.
+- Bản phồn thể chuyển phần văn xuôi bằng OpenCC rồi hiệu đính AI các cách dùng như菜單,數據và tên giống nho. Giữ nguyên thuật ngữ/cách đọc tiếng Nhật; hồ sơ và hash tại zh-restaurant-translation-evidence.json.
+- Đồng bộ loader/ledger/daily-workload. Thêm check-translation-loaders.cjs chạy chính hàm nạp trong app, kiểm233cặp tải đúng,223cặp thiếu trảnull, revision cũ và locale không hỗ trợ trảnull. Không có fallback được tính thành bản dịch.
+- Check cấu trúc38bài/166câu/621liên kết/117trang PASS; check bản dịch hiện có PASS, complete=false; kiểm tra đủ bốn lựa chọn khác nhau, ID/đáp án/revision và thuật ngữ Nhật được giữ nguyên. git diff --check PASS.
+- Chưa chạy lại browser/Expo/native hoặc đo thời gian học. Toàn bộ bản dịch mới translated_ai_unreviewed; các thiếu sót nghiệm thu và nội dung đã liệt kê phía trên vẫn còn.
