@@ -25,8 +25,10 @@ const loaders:Record<string,()=>{lessons:HotelTranslation[]}>= {
  'zh-TW/safety':()=>require('./translations/zh-TW/safety.json'),
  'hi/front':()=>require('./translations/hi/front.json'),
  'bn/front':()=>require('./translations/bn/front.json'),
+ 'ne/front':()=>require('./translations/ne/front.json'),
  'tl/front':()=>require('./translations/tl/front.json'),
  'tl/service':()=>require('./translations/tl/service.json'),
+ 'tl/restaurant':()=>require('./translations/tl/restaurant.json'),
 };
 export function loadHotelTranslation(id:string,language:string,revision:string):HotelTranslation|null {
  const group=id.split('-')[1],load=loaders[`${language}/${group}`];if(!load)return null;const t=load().lessons.find(t=>t.id===id);return t?.sourceRevision===revision?t:null;
