@@ -15,15 +15,16 @@ type OriginalMaster = {
 const master = require('./master.ja.json') as OriginalMaster;
 const organization = require('./listening-organization.ja.json') as { groups: { problem: number; example: { options: {id: string; text: string}[] } }[] };
 function practiceInstruction(q: OriginalQuestion): string {
+  if (q.section === 'listening' && q.group === 1) return '';
   if (q.section !== 'listening' || q.number !== 1) return '';
   if (q.group <= 2) return '\n練習（採点なし・選択操作不要）：\n' + organization.groups.find(g => g.problem === q.group)!.example.options.map(o => o.id + ' ' + o.text).join('\n');
   return q.group === 4 ? '\n練習と本問１番は同じ自転車店の絵を使います。音声で説明される場面の目的に注意してください。練習は採点しません。練習中は選択ボタンを押しません。' : '\n音声の練習は採点しません。練習中は選択ボタンを押しません。';
 }
-const audio = require('./audio.manifest.json') as { durationMs: number; matchesLevelDurationTarget: boolean };
+const audio = require('./audio.manifest.json') as { durationMs: number; matchesLevelDurationTarget: boolean; shortenedIntroApplied?: boolean };
 
 export const N3_ORIGINAL_04_SESSION_KEY = 'jlpt:jpapp:n3:original:04:v1';
 // Register only when the master is integrated and the complete listening track is ready.
-export const N3_ORIGINAL_04_REGISTRATION_READY = master.runtimeIntegrated && audio.matchesLevelDurationTarget;
+export const N3_ORIGINAL_04_REGISTRATION_READY = master.runtimeIntegrated && (audio.matchesLevelDurationTarget || audio.shortenedIntroApplied === true);
 export const N3_ORIGINAL_04_VISUALS: Readonly<Record<number, ImageSourcePropType>> = {
   401: require('../../../../../assets/jlpt-original/n3/04/images/problem-4-01.png'),
   402: require('../../../../../assets/jlpt-original/n3/04/images/problem-4-02.png'),

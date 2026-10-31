@@ -31,7 +31,8 @@ for(const q of questions){
  if(q.family==='listening'){
   assert.equal(q.audio.transcriptJa,'');assert.equal(q.audio.startMs,0);assert.ok(q.audio.endMs>0);
   for(const o of q.options)assert.equal(o.textJa,original.options.find(x=>x.id===o.id).text);
-  if(q.questionNumber===1)assert.ok(q.instructionJa.includes('練習'));
+  if(q.questionNumber===1 && q.problemNumber!==1)assert.ok(q.instructionJa.includes('練習'));
+  if(q.questionNumber===1 && q.problemNumber===1)assert.ok(!q.instructionJa.includes('練習'));
   assert.ok(!q.instructionJa.includes('練習中は選択ボタンを押しません。練習中は選択ボタンを押しません。'));
  }
  if(q.visualOptionPage)assert.ok(images[q.visualOptionPage]);

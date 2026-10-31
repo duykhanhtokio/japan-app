@@ -1,36 +1,28 @@
 {
   "examId": "jpapp-n1-original-01-v1",
   "status": "independent_ai_unreviewed",
-  "openingJa": "これから、ジャパンアプリの独自模擬試験、エヌ一、第一回の聴解を始めます。音声と画面を使って答えてください。",
+  "openingJa": "日本語能力模擬試験聴解を始めます。音が聞こえるか、先に確かめましょう。",
   "soundCheck": [
     {
-      "role": "femaleStudent",
-      "text": "音声を確認しています。私の声が聞こえますか。"
+      "role": "adultMale",
+      "text": "こんにちは。今日の空は青いです。これから近くの公園まで歩きます。"
     },
     {
       "role": "adultFemale",
-      "text": "この声で、説明と質問を案内します。"
-    },
-    {
-      "role": "youngMale",
-      "text": "話す人が変わることも、聞き分けてください。"
-    },
-    {
-      "role": "adultMale",
-      "text": "無理のない音量に調整してから始めましょう。"
+      "text": "私は公園の入口で待っています。白いかばんを持っています。"
     }
   ],
-  "generalInstructionsJa": "採点する答えは三十六個です。練習は採点しません。話は一度だけ流れ、問題二の後に一分間の音楽の休みがあります。休みの後は自動で問題三へ進みます。音声だけの答えは、内容を聞いて番号を選んでください。",
+  "generalInstructionsJa": "音の確認は終わりです。これから問題一を始めます。",
   "closingJa": "これで聴解は終わりです。答えの番号を確かめ、準備ができたら提出してください。",
   "groups": [
     {
       "problem": 1,
-      "instructionsJa": "問題一では、次にする作業を考えます。質問を先に聞き、話の後でもう一度確かめます。画面にある四つの候補から答えてください。練習で進め方を確認します。",
+      "instructionsJa": "問題一は六問です。メモを取っても構いません。質問を聞いてから、話を聞きます。話の後、もう一度質問を聞きます。問題用紙に書いてある、四つの答えから最も適切な答えを一つ選んでください。では始めます。",
       "choicesDisplay": "printed",
       "readQuestionAfterDialogue": true,
       "readChoices": false,
       "replayWholeDialogue": false,
-      "scoredStartJa": "練習はここまでです。問題1の採点する話に進みます。",
+      "scoredStartJa": "",
       "example": {
         "id": "jpapp-n1-original-01-practice-1",
         "scored": false,
@@ -69,7 +61,8 @@
         ],
         "correctOptionId": "1",
         "answerExplanationJa": "場所と容器の対応を先に残すと言っているので、一番です。"
-      }
+      },
+      "playExample": false
     },
     {
       "problem": 2,
@@ -254,5 +247,15 @@
   ],
   "publisherReviewed": false,
   "nativeReviewCompleted": false,
-  "perceptualApproval": false
+  "perceptualApproval": false,
+  "openingBell": {
+    "source": "independently_synthesized_two_note_bell",
+    "startMs": 26435,
+    "endMs": 28435
+  },
+  "openingRevision": {
+    "date": "2026-10-31",
+    "scope": "opening_and_problem_1_only",
+    "status": "audio_applied_ai_unreviewed"
+  }
 }

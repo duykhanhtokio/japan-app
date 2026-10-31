@@ -73,18 +73,26 @@ try:
  for check in organization['soundCheck']:
   album.extend(synth(check['text'],check['role']));album.extend(silence(settings['betweenTurnsSeconds']))
  narration(organization['generalInstructionsJa']);orientation_segments.append({'role':'opening_sound_check_and_general_instructions','startMs':opening_start,'endMs':round(len(album)/48)})
+ if organization.get('openingBell'):
+  from importlib import import_module
+  album.extend(import_module('shorten-jlpt-original-opening').bell())
+  orientation_segments[-1]['endMs']=round(len(album)/48)
  for group in range(1,len(organization['groups'])+1):
-  orientation_start=round(len(album)/48);narration(plan[group]);org=next(g for g in organization['groups'] if g['problem']==group);practice=org['example'];practice_start=round(len(album)/48);practice_turns=[]
-  for i,(role,text) in enumerate(practice['script']):
-   album.extend(synth(text,role));album.extend(silence(settings['afterIntroSeconds'] if i==0 else settings['betweenTurnsSeconds']));practice_turns.append({'actor':role,'role':role,'text':text})
-  if org.get('readQuestionAfterDialogue',group<=2):album.extend(synth(practice['prompt'],'adultFemale'))
-  if org.get('readChoices',group>2):
-   for opt in practice['options']:
-    practice_answer_role=practice.get('optionVoiceRole') or ('femaleStudent' if group==3 else 'youngMale')
-    album.extend(synth(opt['id']+'。','adultFemale'));album.extend(silence(.3));album.extend(synth(opt['text'],practice_answer_role));album.extend(silence(.8));practice_turns.append({'actor':'option-'+opt['id'],'role':practice_answer_role,'text':opt['text']})
-  album.extend(silence(settings['answerPauseSecondsByProblem'][str(group)]));practice_end=round(len(album)/48)
-  narration(practice['answerExplanationJa']);narration(org['scoredStartJa'])
-  orientation_segments.append({'role':'problem_instructions_example_demonstration','problem':group,'startMs':orientation_start,'endMs':round(len(album)/48),'exampleId':practice['id'],'exampleStartMs':practice_start,'exampleEndMs':practice_end,'exampleCount':1,'exampleTurns':practice_turns,'scored':False})
+  orientation_start=round(len(album)/48);narration(plan[group]);org=next(g for g in organization['groups'] if g['problem']==group)
+  if org.get('playExample',True):
+   practice=org['example'];practice_start=round(len(album)/48);practice_turns=[]
+   for i,(role,text) in enumerate(practice['script']):
+    album.extend(synth(text,role));album.extend(silence(settings['afterIntroSeconds'] if i==0 else settings['betweenTurnsSeconds']));practice_turns.append({'actor':role,'role':role,'text':text})
+   if org.get('readQuestionAfterDialogue',group<=2):album.extend(synth(practice['prompt'],'adultFemale'))
+   if org.get('readChoices',group>2):
+    for opt in practice['options']:
+     practice_answer_role=practice.get('optionVoiceRole') or ('femaleStudent' if group==3 else 'youngMale')
+     album.extend(synth(opt['id']+'。','adultFemale'));album.extend(silence(.3));album.extend(synth(opt['text'],practice_answer_role));album.extend(silence(.8));practice_turns.append({'actor':'option-'+opt['id'],'role':practice_answer_role,'text':opt['text']})
+   album.extend(silence(settings['answerPauseSecondsByProblem'][str(group)]));practice_end=round(len(album)/48)
+   narration(practice['answerExplanationJa']);narration(org['scoredStartJa'])
+   orientation_segments.append({'role':'problem_instructions_example_demonstration','problem':group,'startMs':orientation_start,'endMs':round(len(album)/48),'exampleId':practice['id'],'exampleStartMs':practice_start,'exampleEndMs':practice_end,'exampleCount':1,'exampleTurns':practice_turns,'scored':False})
+  else:
+   orientation_segments.append({'role':'problem_instructions_without_example','problem':group,'startMs':orientation_start,'endMs':round(len(album)/48),'exampleCount':0,'scored':False})
   group_questions=[q for q in exam['questions'] if q['section']=='listening' and q['group']==group]
   completed_dialogues=set()
   for q in group_questions:
@@ -126,6 +134,6 @@ try:
  assert master.read_bytes()==master_bytes, 'Master changed during synthesis; regenerate from the new snapshot.'
  assert organization_path.read_bytes()==organization_bytes, 'Organization changed during synthesis; regenerate from the new snapshot.'
  mp=save(f'{level}-original-{exam_number}-listening-draft',album)
- manifest={'examId':exam['examId'],'status':'generated_ai_unreviewed','masterSha256':hashlib.sha256(master_bytes).hexdigest(),'voiceCastingSha256':hashlib.sha256((root/'src/data/jlpt-original/voice-casting.json').read_bytes()).hexdigest(),'continuousAudioPath':str(mp.relative_to(root)),'continuousSha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'durationMs':round(len(album)/48),'targetDurationMs':3300000 if level=='n1' else 3000000,'matchesThirtyMinuteTarget':False,'durationMeasuredFromPcm':True,'continuousBitrateKbps':args.continuous_bitrate_kbps,'publisherReviewed':False,'nativeReviewCompleted':False,'perceptualApproval':False,'rightsReleaseReviewCompleted':False,'break':break_manifest,'organizationSha256':hashlib.sha256(organization_bytes).hexdigest(),'orientationSegments':orientation_segments,'examplesCount':len(organization['groups']),'instructions':plan,'settings':settings,'credits':[v['credit'] for v in roles.values()],'items':segments}
+ manifest={'examId':exam['examId'],'status':'generated_ai_unreviewed','masterSha256':hashlib.sha256(master_bytes).hexdigest(),'voiceCastingSha256':hashlib.sha256((root/'src/data/jlpt-original/voice-casting.json').read_bytes()).hexdigest(),'continuousAudioPath':str(mp.relative_to(root)),'continuousSha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'durationMs':round(len(album)/48),'targetDurationMs':3300000 if level=='n1' else 3000000,'matchesThirtyMinuteTarget':False,'durationMeasuredFromPcm':True,'continuousBitrateKbps':args.continuous_bitrate_kbps,'publisherReviewed':False,'nativeReviewCompleted':False,'perceptualApproval':False,'rightsReleaseReviewCompleted':False,'break':break_manifest,'organizationSha256':hashlib.sha256(organization_bytes).hexdigest(),'orientationSegments':orientation_segments,'shortenedIntroApplied':organization.get('openingRevision',{}).get('date')=='2026-10-31' and organization['groups'][0].get('playExample') is False,'examplesCount':sum(g.get('playExample',True) for g in organization['groups']),'instructions':plan,'settings':settings,'credits':[v['credit'] for v in roles.values()],'items':segments}
  (root/f'src/data/jlpt-original/{level}/{exam_number}/audio.manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'count':len(segments),'durationSeconds':len(album)/48000,'complete':True}),flush=True)
 finally:stop();log.close()
