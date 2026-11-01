@@ -1,3 +1,24 @@
+# Rà ngữ nghĩa và bảng/hình — ngày 01/11/2026
+
+Mốc hiện tại: 38 ngày học, 379 ý nguồn có bằng chứng, 321 câu hỏi. **Chưa đóng độ bao phủ toàn bộ từng đoạn của 117 trang.**
+
+- Đã rà quan hệ giữa 379 mô tả ý nguồn, đoạn dạy và bằng chứng câu hỏi. Đây là rà liên kết ngữ nghĩa của các ý hiện có, không phải chứng minh danh mục ý đã đầy đủ. Sửa 39 liên kết/bằng chứng quá rộng; thêm 31 câu hỏi, hiệu đính hai đáp án cũ. Một ý bối cảnh được hạ từ kiểm tra trực tiếp xuống `contextual_ai_checked`, không tiếp tục tính là được hỏi trực tiếp.
+- Mở lại trực quan 20 trang gốc có bảng, hình hoặc sơ đồ quan trọng; ghi 11 nhóm ý nghĩa: trạng thái phòng; thông tin đặt phòng; xác nhận check-in; khách mục tiêu/sản phẩm; tư thế; góc cúi chào; kính ngữ; ảnh bối cảnh món ăn; bố trí bữa Nhật; chín bước món Nhật; sáu bước món Tây và dụng cụ. Không sao chép hình nguồn.
+- Bổ sung rõ hai đoạn Nhật: xác nhận dự định đến ở thay vì chỉ thu thập số điện thoại; ba liên hệ sản phẩm/khách mục tiêu trong sơ đồ, kèm điều kiện không suy địa phương = phù hợp ăn chay.
+- Sửa ba hình học: bữa Nhật có chủ món và hai món phụ, không dùng dưa muối để thay một trong ba món; bữa Tây có cả vị trí dao nĩa đang ăn/ăn xong; hình kính ngữ thể hiện đủ ba nhóm. Sửa alt của hai biểu đồ doanh thu để không mô tả sơ đồ 40 phòng hoặc nhãn ADR không thực sự xuất hiện trong hình.
+- Hồ sơ đầu vào `semantic-review-authoring-20261101.json` được hợp vào sổ chuẩn `knowledge-ledger.json/semanticReview`; có revision, ID câu hỏi và hash hình. Các script kiểm tra chỉ xác minh tính khớp của bằng chứng, không tự chứng nhận ngữ nghĩa.
+- Dựng lại furigana, bài tổng hợp và sổ đối chiếu theo Nhật mới. Bản dịch hợp lệ còn 22/456 cặp; 217 cặp cũ và 217 cặp chưa có. Giữ bộ chặn revision, chưa dịch tiếp.
+
+## Phần chưa được đóng
+
+1. Đối chiếu đầy đủ từng khối nội dung với đơn vị kiến thức trên toàn bộ trang. Không đóng một trang chỉ vì đã rà hình hoặc có liên kết tới ý cùng chủ đề. Mọi cờ `allPageIdeasAccepted` vẫn false.
+2. Thứ tự và tên các món trong ảnh nguồn đã có đoạn dạy/câu hỏi; điều này chưa chứng minh kỹ năng nhận diện món ăn từ ảnh thực tế. Hồ sơ giữ riêng phần này, không tính bài hỏi thứ tự thành kiểm tra nhận diện hình.
+3. Nghiệm thu chuyên môn/bản ngữ, thời lượng học thực tế và thiết bị thật chưa được xác nhận. Rà AI và web không thay thế các việc này.
+
+Kiểm tra mới: cấu trúc, nguồn, furigana, bản dịch hiện có và bộ nạp đều PASS. Kết quả web cụ thể ở `semantic-browser-qa-20261101.json`; không nhận là Expo/native. Giữ các checkpoint cũ bên dưới làm lịch sử.
+
+---
+
 # Đối chiếu nguồn độc lập — cập nhật tiếp ngày 01/11/2026
 
 Đã bổ sung từ nguồn; **chưa đóng toàn bộ từng ý của 117 trang**. Mốc mới là 379 ý có bằng chứng AI trên 94 trang kiến thức, 38 ngày học và 290 câu hỏi. Có 637 liên kết nguồn trong sổ cũ; không dùng chúng làm mẫu số kiến thức. Chưa dịch mới trước khi chốt tiếng Nhật.

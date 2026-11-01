@@ -115,6 +115,14 @@ def make(lesson,config):
    for dx in [-43,32]:d.rectangle((x+dx,y-13,x+dx+10,y+13),outline=BLUE,width=2)
   arrow(d,(903,475),(925,423))
   text(d,(65,645),'近い席Aも選択肢。本人の希望を聞いてから案内する。',28)
+ elif kind=='honorific':
+  for x in [35,430,825]:d.rounded_rectangle((x,125,x+350,610),16,fill='white',outline='#b7c8c9',width=3)
+  for x,label in [(65,'尊敬語'),(460,'謙譲語'),(855,'丁寧語')]:text(d,(x,145),label,31)
+  person(d,135,235);arrow(d,(200,300),(290,235));text(d,(65,445),'相手の行動を敬う',25);text(d,(65,500),'お客様がいらっしゃる',23)
+  person(d,525,235,30);text(d,(460,445),'自分側の行動で敬意',25);text(d,(460,500),'係の者が伺う',24)
+  person(d,900,315);d.rounded_rectangle((850,220,1150,285),12,fill='#edf4ee',outline=GREEN,width=3)
+  text(d,(868,230),'です・ます・ございます',20);text(d,(855,475),'聞き手に丁寧に伝える',23)
+  text(d,(65,650),'誰の行動かと、聞き手への伝え方を区別する。',28)
  elif kind=='guiding':
   text(d,(65,105),'同じ進行方向を向いて案内する',30)
   arrow(d,(610,540),(610,185));text(d,(665,195),'進行方向',25)
@@ -122,18 +130,33 @@ def make(lesson,config):
   person(d,780,390);text(d,(750,590),'お客様',26)
   d.line((515,370,745,470),fill=GOLD,width=4);text(d,(605,390),'２～３歩',24)
  elif kind in ['washoku','western']:
-  d.rounded_rectangle((80,115,1120,590),20,fill='#e9dfc5',outline=GOLD,width=4)
+  d.rounded_rectangle((80,115,1120 if kind=='washoku' else 790,590),20,fill='#e9dfc5',outline=GOLD,width=4)
   def plate(cx,cy,label,r=70):
    d.ellipse((cx-r,cy-r,cx+r,cy+r),fill='white',outline=BLUE,width=4);text(d,(cx-r+8,cy-15),label,23)
   if kind=='washoku':
-   plate(380,440,'ご飯');plate(815,440,'汁物');plate(360,235,'副菜');plate(820,235,'主菜');plate(600,345,'漬物',48)
+   plate(380,440,'ご飯');plate(815,440,'汁物')
+   plate(310,235,'副菜1');plate(600,235,'副菜2');plate(890,235,'主菜')
+   text(d,(135,555),'三菜は主菜と副菜２品の例。香の物とは区別する。',22)
   else:
-   plate(600,365,'主皿',100);plate(310,200,'パン',60)
-   d.line((425,280,425,460),fill=BLUE,width=8);text(d,(325,485),'フォーク',26)
-   d.line((765,280,765,460),fill=BLUE,width=8);text(d,(700,485),'ナイフ',26)
-   d.line((900,300,900,460),fill=BLUE,width=8);d.ellipse((880,250,920,310),outline=BLUE,width=5);text(d,(860,485),'スプーン',26)
-   d.line((490,180,710,180),fill=BLUE,width=8);text(d,(510,120),'デザート用',23)
-  text(d,(485,640),'お客様の位置',30);arrow(d,(600,630),(600,585))
+   plate(435,365,'主皿',94);plate(230,235,'パン',49)
+   d.line((290,320,290,460),fill=BLUE,width=7);text(d,(205,490),'フォーク',23)
+   for dx in [-12,0,12]:d.line((290+dx,320,290+dx,346),fill=BLUE,width=3)
+   d.line((590,300,590,460),fill=BLUE,width=7);text(d,(550,490),'ナイフ',23)
+   d.line((715,325,715,460),fill=BLUE,width=7);d.ellipse((696,282,734,330),outline=BLUE,width=4);text(d,(665,490),'スプーン',23)
+   d.line((365,190,520,190),fill=BLUE,width=7);text(d,(360,130),'デザート用',23)
+   text(d,(145,550),'客側から見た左右。道具は外側から。',23)
+   # The old caption described these signs but the bitmap omitted them.
+   for cy,label in [(265,'食事中の目安'),(485,'終了の目安')]:
+    text(d,(840,cy-105),label,24)
+    d.ellipse((900,cy-66,1080,cy+66),fill='white',outline=BLUE,width=3)
+   d.line((976,238,945,302),fill=BLUE,width=6)
+   d.line((1005,238,1038,302),fill=BLUE,width=6)
+   for dx in [-7,0,7]:d.line((976+dx,238,970+dx,251),fill=BLUE,width=2)
+   d.line((985,484,1042,523),fill=BLUE,width=6)
+   d.line((995,472,1052,511),fill=BLUE,width=6)
+   text(d,(853,575),'下げる前に本人へ確認',22)
+  cx=600 if kind=='washoku' else 435
+  text(d,(cx-115,640),'お客様の位置',30);arrow(d,(cx,630),(cx,585))
  elif kind=='appearance':
   person(d,585,175);d.rectangle((535,260,645,350),fill='#adcbd4',outline=BLUE,width=4)
   for a,b,label in [((570,180),(285,150),'髪：清潔にまとめる'),((615,305),(830,260),'手：爪・傷を確認'),((545,300),(270,390),'制服：汚れを点検'),((585,352),(810,490),'靴：清潔・動きやすさ')]:

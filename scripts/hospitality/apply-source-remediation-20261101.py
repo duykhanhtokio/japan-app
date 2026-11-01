@@ -8,8 +8,10 @@ def write(p,d):p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
 planfile=Path(sys.argv[1]) if len(sys.argv)>1 else Path(__file__).with_name('source-remediation-20261101.json')
 plan=read(planfile)
 atoms=read(DOC/'source-atoms-authoring.json');fragments=read(DOC/'source-fragments-authoring.json')
-baseline='e952162df46ab200105deba02a3e7f04bfeaa123'
-assert not any(a['atomId']==plan['additions'][0]['atomId'] for a in atoms['atoms']),'Already applied'
+baseline=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+evidence_path=DOC/(planfile.stem+'-evidence.json')
+assert not evidence_path.exists(),'Already applied'
+if plan['additions']:assert not any(a['atomId']==plan['additions'][0]['atomId'] for a in atoms['atoms']),'Already applied'
 groups={g:read(DATA/(g+'.json')) for g in ['front','planning','service','restaurant','safety']}
 lessons={l['id']:l for d in groups.values() for l in d['lessons']};before=copy.deepcopy(lessons)
 changed=set();newquestions=[];newatoms=[]
@@ -48,8 +50,14 @@ for item in plan['additions']:
  for ref in sourceRefs:
   rows.append({'knowledge_id':kid,'source_id':ref['sourceId'],'source_page':{'pdf':ref['pdfPage'],'printed':ref['pdfPage']},'source_section':ref['locator'],'knowledge_summary':item['summary'],'level':l['level'],'competency':item['summary'],'lesson_id':l['id'],'section_id':section['id'],'question_ids':[q['id']],'image_ids':[l['illustration']['id']],'translation_status':{},'before_status':a['before']['teachingStatus'],'after_status':'authored_ai_unreviewed','evidence':f'src/data/hospitality/{g}.json#{l["id"]}/{section["id"]}','unresolved_issue':'source detail image coverage not independently accepted'})
  write(p,ledger)
-for item in plan['assessmentRepairs']:
+for item in plan.get('bodyRepairs',[])+plan['assessmentRepairs']:
  l=lessons[item['lesson']];changed.add(l['id']);targets=[a for a in atoms['atoms'] if a['atomId'] in item['atoms']]
+ assert len(targets)==len(item['atoms'])
+ if item.get('append'):
+  section=next(s for s in l['sections'] if s['id']==item['section']);section['body']+='\n\n'+item['append']
+  for a in targets:
+   a.setdefault('teachingRepairHistory',[]).append({'baselineCommit':baseline,'previousEvidence':a['after']['evidence'],'reason':item['reason']})
+   a['after']['evidence']={'lessonId':l['id'],'sectionId':section['id'],'quote':item['append']}
  ids=sorted(set(k for a in targets for qid in a['after']['questionIds'] for q in l['questions'] if q['id']==qid for k in q['knowledgeIds']))
  q=question(l,item['question'],ids)
  for a in targets:
@@ -68,12 +76,13 @@ for a in atoms['atoms']+newatoms:
   a['review']['revisionCarryForward']={'date':'2026-11-01','reason':'Original body text and question records preserved; source-specific detail/questions appended. Changed assessment bindings have explicit history.'}
 atoms['atoms']+=newatoms
 url='https://kakarikata.mhlw.go.jp/kakaritsuke/urgency.html'
-atoms.setdefault('supplementalOfficialSources',[]).append({'url':url,'checkedAt':'2026-11-01','use':'Reconfirmed urgent 119 escalation and no waiting for complete information; source2 p59 medical consultation detail restored.'})
+if any(i['atomId']=='HA2-059-04' for i in plan['additions']):
+ atoms.setdefault('supplementalOfficialSources',[]).append({'url':url,'checkedAt':'2026-11-01','use':'Reconfirmed urgent 119 escalation and no waiting for complete information; source2 p59 medical consultation detail restored.'})
 write(DOC/'source-atoms-authoring.json',atoms)
 (DOC/'source-fragments-authoring.json').write_text(json.dumps(fragments,ensure_ascii=False,separators=(',',':'))+'\n')
 for page in atoms['pages']:
  page['atomIds']=[a['atomId'] for a in atoms['atoms'] if any(r['sourceId']==page['sourceId'] and r['pdfPage']==page['pdfPage'] for r in a['sourceRefs'])]
 write(DOC/'source-atoms-authoring.json',atoms)
-write(DOC/(planfile.stem+'-evidence.json'),{'baselineCommit':baseline,'changedLessons':sorted(changed),'newSourceAtomIds':[a['atomId'] for a in newatoms],'newQuestionIds':newquestions,'sourceBlockAnchorsVerified':True,'sourceTextRedistributed':False,'allSourceKnowledgeCovered':False,'translationAction':'No new translation; changed Japanese revisions invalidate stale translations.','changes':[{'lessonId':lid,'beforeRevision':before[lid]['revision'],'afterRevision':current[lid]['revision']} for lid in sorted(changed)],'assessmentRepairs':plan['assessmentRepairs']})
+write(evidence_path,{'baselineCommit':baseline,'changedLessons':sorted(changed),'newSourceAtomIds':[a['atomId'] for a in newatoms],'newQuestionIds':newquestions,'sourceBlockAnchorsVerified':True,'sourceTextRedistributed':False,'allSourceKnowledgeCovered':False,'translationAction':'No new translation; changed Japanese revisions invalidate stale translations.','changes':[{'lessonId':lid,'beforeRevision':before[lid]['revision'],'afterRevision':current[lid]['revision']} for lid in sorted(changed)],'assessmentRepairs':plan['assessmentRepairs'],'bodyRepairs':plan.get('bodyRepairs',[])})
 subprocess.run(['node','scripts/hospitality/build.cjs'],cwd=ROOT,check=True)
 print(json.dumps({'changedLessons':len(changed),'newAtoms':len(newatoms),'newQuestions':len(newquestions)}))

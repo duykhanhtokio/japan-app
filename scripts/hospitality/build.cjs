@@ -39,6 +39,8 @@ if(fs.existsSync(fragmentFile)){
  canonicalLedger.sourceFragments=JSON.parse(fs.readFileSync(fragmentFile));
  canonicalLedger.coverageAuthority='sourceFragments account for source layout independently of authored lessons; sourceAtoms retain teaching/assessment evidence. Neither is exhaustive semantic acceptance.';
 }
+const semanticFile=path.join(out,'semantic-review-authoring-20261101.json');
+if(fs.existsSync(semanticFile))canonicalLedger.semanticReview=JSON.parse(fs.readFileSync(semanticFile));
 fs.writeFileSync(path.join(out,'knowledge-ledger.json'),JSON.stringify(canonicalLedger,null,2)+'\n');
 fs.writeFileSync(path.join(out,'daily-workload.json'),JSON.stringify({schemaVersion:1,days},null,2)+'\n');
 let loaders="import type {HotelTranslation} from './types';\nconst loaders:Record<string,()=>{lessons:HotelTranslation[]}>= {\n";
