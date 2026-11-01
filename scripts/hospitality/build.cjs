@@ -33,6 +33,12 @@ const atomFile=path.join(out,'source-atoms-authoring.json');
 const atomInput=fs.existsSync(atomFile)?JSON.parse(fs.readFileSync(atomFile)):null;
 const canonicalLedger={schemaVersion:atomInput?2:1,units:ledger,legacyCoverageIsNotAcceptance:true,coverageAuthority:'sourceAtoms contain the current source-first evidence; units retain historical authoring links only.'};
 if(atomInput){canonicalLedger.sourceAtoms=atomInput.atoms;canonicalLedger.sourceAudit={baselineCommit:atomInput.baselineCommit,scope:atomInput.scope,pages:atomInput.pages,allSourceKnowledgeCovered:false,translationAction:atomInput.translationAction,supplementalOfficialSources:atomInput.supplementalOfficialSources,sourceFigureDetailRechecks:atomInput.sourceFigureDetailRechecks||[],remainingAcceptanceRequirements:atomInput.remainingAcceptanceRequirements||[]};}
+const fragmentFile=path.join(out,'source-fragments-authoring.json');
+if(fs.existsSync(fragmentFile)){
+ canonicalLedger.schemaVersion=3;
+ canonicalLedger.sourceFragments=JSON.parse(fs.readFileSync(fragmentFile));
+ canonicalLedger.coverageAuthority='sourceFragments account for source layout independently of authored lessons; sourceAtoms retain teaching/assessment evidence. Neither is exhaustive semantic acceptance.';
+}
 fs.writeFileSync(path.join(out,'knowledge-ledger.json'),JSON.stringify(canonicalLedger,null,2)+'\n');
 fs.writeFileSync(path.join(out,'daily-workload.json'),JSON.stringify({schemaVersion:1,days},null,2)+'\n');
 let loaders="import type {HotelTranslation} from './types';\nconst loaders:Record<string,()=>{lessons:HotelTranslation[]}>= {\n";

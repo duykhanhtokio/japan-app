@@ -1,3 +1,23 @@
+# Đối chiếu nguồn độc lập — cập nhật tiếp ngày 01/11/2026
+
+Đã bổ sung từ nguồn; **chưa đóng toàn bộ từng ý của 117 trang**. Mốc mới là 379 ý có bằng chứng AI trên 94 trang kiến thức, 38 ngày học và 290 câu hỏi. Có 637 liên kết nguồn trong sổ cũ; không dùng chúng làm mẫu số kiến thức. Chưa dịch mới trước khi chốt tiếng Nhật.
+
+## Kết quả thực tế
+
+- Kiểm kê độc lập toàn bộ 117 trang từ hai PDF đúng hash: 4.047 khối chữ native, gồm chữ nhỏ, furigana, số và nhãn. Mỗi khối có ID, trang, tọa độ, hash và trạng thái. Hình raster và các nét vẽ vector được kiểm kê riêng. Đây là đơn vị bố cục, **không phải 4.047 ý kiến thức**. Chưa đánh dấu nghiệm thu ý nghĩa hàng loạt.
+- Đầu vào `source-fragments-authoring.json` được hợp vào **sổ chuẩn knowledge-ledger.json, schema 3**. Các khối lặp có số lần xuất hiện; không tự loại vì trùng. Giữ lý do loại 23 trang ngoài phạm vi kiến thức. Không đóng độ bao phủ từ số trang đã kiểm kê.
+- Bổ sung 10 ý chi tiết: lý do người phụ trách vắng mặt; khung giờ sử dụng phòng; ngoại lệ trứng/sữa trong mục chứng nhận của tài liệu năm 2024; nguyên liệu động vật không phải heo; khuyên khách đi khám và phân biệt với thông báo cấp cứu; lưới/băng buộc tóc; lưu ý về trang trí móng; thuật ngữ Hospitality; xu hướng bố trí concierge theo quy mô; ý nghĩa của inbound đối với kinh tế địa phương và giao lưu văn hóa. Mỗi ý mới có vị trí khối nguồn/hash, trạng thái trước, đoạn dạy, câu hỏi và revision. Ngoại lệ trứng/sữa không được diễn giải thành bảo đảm halal cho mọi món.
+- Bổ sung tiếng Nhật vào chín bài, thêm 14 câu hỏi, giữ toàn bộ ID cũ. Sửa bốn nhóm liên kết kiểm tra quá rộng: vệ sinh định kỳ; phòng cháy và đường thoát nạn; ba loại hình kinh doanh; vị trí **và** cách dùng các thiết bị an toàn. Bằng chứng câu hỏi cũ được giữ trong `assessmentRepairHistory`.
+- Thân bài Nhật đạt 35.675 ký tự. Đã dựng lại furigana đúng revision cho 38 bài và hai bài tổng hợp: 3.058 lượt văn bản, 25.831 lượt đoạn kanji. Đây chưa phải chứng nhận duyệt cách đọc/ngữ nghĩa bởi người bản ngữ.
+- Bản dịch hợp lệ: 32/456 cặp; 207 cặp cũ và 217 cặp chưa có. Năm cặp vừa trở nên cũ do câu hỏi Nhật của safety01 được bổ sung. Không hợp thức hóa chúng bằng cách chỉ đổi `sourceRevision`.
+- Các kiểm tra cấu trúc, ý nguồn, khối chữ nguồn, furigana, bộ nạp và trạng thái học đều PASS. Kết quả web mới ở `source-remediation-browser-qa-20261101.json`; không phải Expo/native hoặc thiết bị thật.
+
+Hồ sơ thay đổi: `source-remediation-20261101-evidence.json` và `source-remediation-extra-20261101-evidence.json`. Công cụ index/check-source-fragments cần PDF đúng hash bên ngoài repository; không đưa OCR, PDF hoặc hình nguồn vào ứng dụng. Script áp dụng từ chối thực hiện lại các ID đã có.
+
+Còn tiếp tục: rà ý nghĩa từng đoạn, bảng, hình chưa được giải quyết; tách các ý gộp và sửa câu hỏi gán quá rộng; sau đó chốt tiếng Nhật theo nhóm và cập nhật bản dịch. Chưa tuyên bố bao phủ tuyệt đối mọi ý hoặc hoàn thiện ngành.
+
+---
+
 # Checkpoint mới nhất —2026-11-01, Asia/Tokyo
 
 Phạm vi yêu cầu mới: đối chiếu từng ý117trang, bổ sung Nhật/câu/hình,12ngôn ngữ/furigana, rà khối lượng và ngữ nghĩa. **Chưa hoàn tất toàn bộ yêu cầu.** Số liệu dưới đây thay thế snapshot cũ; các đoạn lịch sử phía sau được giữ để truy vết.
