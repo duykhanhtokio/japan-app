@@ -1,9 +1,3 @@
-import part1 from './authoring-20261029/part1.json';
-import part2 from './authoring-20261029/part2.json';
-import part3 from './authoring-20261029/part3.json';
-import part4 from './authoring-20261029/part4.json';
-import part5 from './authoring-20261029/part5.json';
-import part6 from './authoring-20261029/part6.json';
 import type {FoodManufacturingLesson} from './index';
 import type {RubySegment} from '@/types/japanese-ruby';
 
@@ -13,18 +7,34 @@ type RawExam={id:string;level:string;kind:string;week:number;titleJa:string;revi
 type QuestionTranslation={sourceHash:string;prompt:string;options:string[];explanation:string;optionExplanations:string[]};
 type RubyEntry={sourceHash:string;fields:Record<string,RubySegment[]>};
 type Part={lessons:FoodManufacturingLesson[];translations:Record<string,Record<string,LessonTranslation>>;ruby:{lessons:Record<string,RubyEntry>};exams?:RawExam[];testTranslations?:Record<string,{questions:Record<string,QuestionTranslation>;examTitles:Record<string,{sourceHash:string;title:string}>}>;questionRuby?:{questions:Record<string,RubyEntry>}};
-const parts=[part1,part2,part3,part4,part5,part6] as unknown as Part[];
-/** Source-audit additions are additive; existing lesson/question identities remain stable. */
-export const supplementalLessons=parts.flatMap(part=>part.lessons);
-export const supplementalExams=parts.flatMap(part=>part.exams??[]);
-export const supplementalLessonRuby:Record<string,RubyEntry>=Object.assign({},...parts.map(part=>part.ruby.lessons));
-export const supplementalQuestionRuby:Record<string,RubyEntry>=Object.assign({},...parts.map(part=>part.questionRuby?.questions??{}));
+// Runtime packs separate Japanese, readings and each locale from authoring inputs.
+export const supplementalLessons=require('./runtime-supplemental/lessons.json') as FoodManufacturingLesson[];
+export const supplementalExams=require('./runtime-supplemental/exams.json') as RawExam[];
+export const supplementalLessonRuby=require('./runtime-supplemental/lesson-ruby.json') as Record<string,RubyEntry>;
+export const supplementalQuestionRuby=require('./runtime-supplemental/question-ruby.json') as Record<string,RubyEntry>;
 export const supplementalTranslations:Record<string,Record<string,LessonTranslation>>={};
 export const supplementalTestTranslations:Record<string,{questions:Record<string,QuestionTranslation>;examTitles:Record<string,{sourceHash:string;title:string}>}>={};
-for(const part of parts){
- for(const [locale,entries]of Object.entries(part.translations))supplementalTranslations[locale]={...supplementalTranslations[locale],...entries};
- for(const [locale,entries]of Object.entries(part.testTranslations??{})){
-  const prior=supplementalTestTranslations[locale];
-  supplementalTestTranslations[locale]={questions:{...prior?.questions,...entries.questions},examTitles:{...prior?.examTitles,...entries.examTitles}};
- }
-}
+Object.defineProperty(supplementalTranslations,'en',{enumerable:true,get:()=>require('./runtime-supplemental/lessons.en.json')});
+Object.defineProperty(supplementalTestTranslations,'en',{enumerable:true,get:()=>require('./runtime-supplemental/tests.en.json')});
+Object.defineProperty(supplementalTranslations,'vi',{enumerable:true,get:()=>require('./runtime-supplemental/lessons.vi.json')});
+Object.defineProperty(supplementalTestTranslations,'vi',{enumerable:true,get:()=>require('./runtime-supplemental/tests.vi.json')});
+Object.defineProperty(supplementalTranslations,'id',{enumerable:true,get:()=>require('./runtime-supplemental/lessons.id.json')});
+Object.defineProperty(supplementalTestTranslations,'id',{enumerable:true,get:()=>require('./runtime-supplemental/tests.id.json')});
+Object.defineProperty(supplementalTranslations,'zh-CN',{enumerable:true,get:()=>require('./runtime-supplemental/lessons.zh-CN.json')});
+Object.defineProperty(supplementalTestTranslations,'zh-CN',{enumerable:true,get:()=>require('./runtime-supplemental/tests.zh-CN.json')});
+Object.defineProperty(supplementalTranslations,'zh-TW',{enumerable:true,get:()=>require('./runtime-supplemental/lessons.zh-TW.json')});
+Object.defineProperty(supplementalTestTranslations,'zh-TW',{enumerable:true,get:()=>require('./runtime-supplemental/tests.zh-TW.json')});
+Object.defineProperty(supplementalTranslations,'hi',{enumerable:true,get:()=>require('./runtime-supplemental/lessons.hi.json')});
+Object.defineProperty(supplementalTestTranslations,'hi',{enumerable:true,get:()=>require('./runtime-supplemental/tests.hi.json')});
+Object.defineProperty(supplementalTranslations,'bn',{enumerable:true,get:()=>require('./runtime-supplemental/lessons.bn.json')});
+Object.defineProperty(supplementalTestTranslations,'bn',{enumerable:true,get:()=>require('./runtime-supplemental/tests.bn.json')});
+Object.defineProperty(supplementalTranslations,'ne',{enumerable:true,get:()=>require('./runtime-supplemental/lessons.ne.json')});
+Object.defineProperty(supplementalTestTranslations,'ne',{enumerable:true,get:()=>require('./runtime-supplemental/tests.ne.json')});
+Object.defineProperty(supplementalTranslations,'my',{enumerable:true,get:()=>require('./runtime-supplemental/lessons.my.json')});
+Object.defineProperty(supplementalTestTranslations,'my',{enumerable:true,get:()=>require('./runtime-supplemental/tests.my.json')});
+Object.defineProperty(supplementalTranslations,'th',{enumerable:true,get:()=>require('./runtime-supplemental/lessons.th.json')});
+Object.defineProperty(supplementalTestTranslations,'th',{enumerable:true,get:()=>require('./runtime-supplemental/tests.th.json')});
+Object.defineProperty(supplementalTranslations,'km',{enumerable:true,get:()=>require('./runtime-supplemental/lessons.km.json')});
+Object.defineProperty(supplementalTestTranslations,'km',{enumerable:true,get:()=>require('./runtime-supplemental/tests.km.json')});
+Object.defineProperty(supplementalTranslations,'tl',{enumerable:true,get:()=>require('./runtime-supplemental/lessons.tl.json')});
+Object.defineProperty(supplementalTestTranslations,'tl',{enumerable:true,get:()=>require('./runtime-supplemental/tests.tl.json')});

@@ -1,6 +1,7 @@
 import {Text} from 'react-native';
 import {backPrepared} from '@/components/ui/prepareSceneRoute';
-import {FoodManufacturingCourse} from '@/components/food-manufacturing/FoodManufacturingCourse';
+import {createDeferredCourse} from '@/components/tokutei/createDeferredCourse';
+const FoodManufacturingCourse=createDeferredCourse(()=>import('@/components/food-manufacturing/FoodManufacturingCourse').then(module=>module.FoodManufacturingCourse));
 import {useAppLanguage} from '@/context/LanguageContext';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';

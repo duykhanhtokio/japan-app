@@ -1,5 +1,6 @@
 import {Text} from 'react-native';
-import {RestaurantCourse} from '@/components/restaurant/RestaurantCourse';
+import {createDeferredCourse} from '@/components/tokutei/createDeferredCourse';
+const RestaurantCourse=createDeferredCourse(()=>import('@/components/restaurant/RestaurantCourse').then(module=>module.RestaurantCourse));
 import {backPrepared} from '@/components/ui/prepareSceneRoute';
 import {useAppLanguage} from '@/context/LanguageContext';
 import {useUserProfile} from '@/hooks/useUserProfile';

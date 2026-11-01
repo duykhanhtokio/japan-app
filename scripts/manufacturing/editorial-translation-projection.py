@@ -12,6 +12,11 @@ QUESTION_EDITORIAL='81032eb91a0a150f8aad5864f1259bd44a63a4c05037dd6c342e13b2f37f
 def historical_translation_loader(path,raw):
     assert path in HASHES,'Unknown editorial loader'
     before,after=HASHES[path];digest=hashlib.sha256(raw).hexdigest()
+    # Runtime-only locale split: reconstruct the exact predecessor for historical audits.
+    if path=='src/data/manufacturing/mocks.ts' and digest=='72c7c47572cbdf865ebb5f62e78e2790a3c063e236215cc3df759183f325368d':
+        raw=raw[:raw.index(b'\nfunction mockLocale(')].replace(b' const entries=mockLocale(locale);',b" const entries=require('./mock-translations.json').locales[locale] as Record<string,QuestionTranslation>|undefined;")
+        digest=hashlib.sha256(raw).hexdigest()
+        assert digest==QUESTION_EDITORIAL,'Locale split predecessor mismatch'
     if path=='src/data/manufacturing/mocks.ts' and digest==QUESTION_EDITORIAL:
         raw=(ROOT/'docs/ssw-workspace/manufacturing/batch35-continuation/exam-review/base-mocks.ts').read_bytes()
         assert hashlib.sha256(raw).hexdigest()==after,'Question editorial predecessor snapshot drift'

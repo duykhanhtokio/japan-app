@@ -1,6 +1,7 @@
 import {Text} from 'react-native';
 import {backPrepared} from '@/components/ui/prepareSceneRoute';
-import {AgricultureCourse} from '@/components/agriculture/AgricultureCourse';
+import {createDeferredCourse} from '@/components/tokutei/createDeferredCourse';
+const AgricultureCourse=createDeferredCourse(()=>import('@/components/agriculture/AgricultureCourse').then(module=>module.AgricultureCourse));
 import {useAppLanguage} from '@/context/LanguageContext';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';

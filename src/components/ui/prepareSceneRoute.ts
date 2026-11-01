@@ -3,6 +3,7 @@ import { japanAssets, regionMaps, type RegionMapId } from '@/data/world-map-conf
 import { prepareArtwork, isArtworkSource, type ArtworkSource } from './prepareArtwork';
 import { COMMON_UI_ARTWORK } from './common-artwork';
 import { HOME_ARTWORK } from './home-artwork';
+import { TOKUTEI_ARTWORK } from './tokutei-artwork';
 import { router } from 'expo-router';
 import { previousRoutePath, type NavigationState } from './navigation-path';
 
@@ -13,7 +14,7 @@ export const preparedRouteBackdrop = (path: string) => routeBackdrops.get(path);
 export async function prepareSceneRoute(path: string) {
   path = path.split(/[?#]/)[0].replace(/\/$/, '') || '/';
   // Warm the visible shared controls, never the transitive inventory of other screens.
-  const routeImages = path === '/home' ? HOME_ARTWORK : COMMON_UI_ARTWORK;
+  const routeImages = path === '/home' ? HOME_ARTWORK : /^\/specified-skills(?:\/|$)/.test(path) ? TOKUTEI_ARTWORK : COMMON_UI_ARTWORK;
   const additional: ArtworkSource[] = [];
   const { width, height } = Dimensions.get('window');
   const ratio = height ? width / height : .46;

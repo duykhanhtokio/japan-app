@@ -15,6 +15,7 @@ function evaluate(file, names) {
     .replace(/^export /gm, '');
   return vm.runInNewContext(source + `\n;({${names.join(',')}})`, {
     supplemental: file.endsWith('supplemental.ts') ? undefined : supplemental,
+    require(relative) { return JSON.parse(fs.readFileSync(path.resolve(path.dirname(file), relative), 'utf8')); },
     loadJson(relative) { return JSON.parse(fs.readFileSync(path.resolve(path.dirname(file), relative), 'utf8')); }
   });
 }

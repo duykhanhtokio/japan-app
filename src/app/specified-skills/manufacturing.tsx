@@ -1,6 +1,7 @@
 import {Text} from 'react-native';
 import {backPrepared} from '@/components/ui/prepareSceneRoute';
-import {ManufacturingCourse} from '@/components/manufacturing/ManufacturingCourse';
+import {createDeferredCourse} from '@/components/tokutei/createDeferredCourse';
+const ManufacturingCourse=createDeferredCourse(()=>import('@/components/manufacturing/ManufacturingCourse').then(module=>module.ManufacturingCourse));
 import {useAppLanguage} from '@/context/LanguageContext';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';

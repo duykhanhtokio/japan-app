@@ -5,7 +5,7 @@ import { prepareSceneRoute, cancelPreparedNavigation, registerNavigationStateRea
 import { DEVELOPMENT_FEATURES } from '@/config/development-features';
 import { useEffect, useRef, useState } from 'react';
 import { Stack, usePathname, useNavigationContainerRef } from 'expo-router';
-import { BackHandler } from 'react-native';
+import { BackHandler, Dimensions } from 'react-native';
 import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
 import { AppBackdrop } from '@/components/ui/AppBackdrop';
 import * as SplashScreen from 'expo-splash-screen';
@@ -46,8 +46,9 @@ export default function RootLayout() {
     // existing destination preparation when the learner navigates to them.
     const firstRoute = initialPathname === '/' && DEVELOPMENT_FEATURES.skipRegistration ? '/home' : initialPathname;
     const preparation = firstRoute === '/' ? prepareArtwork([
-      require('../../assets/app/welcome/welcome-japan-portrait-v2.png'),
-      require('../../assets/app/welcome/welcome-japan-landscape-v2.png'),
+      Dimensions.get('window').width > Dimensions.get('window').height
+        ? require('../../assets/app/welcome/welcome-japan-landscape-v2.png')
+        : require('../../assets/app/welcome/welcome-japan-portrait-v2.png'),
       require('../../assets/app/welcome/sakura-petal-welcome-v2.png'),
       require('../../assets/app/ui/royal-af/button-wide-v2.png'),
     ]) : prepareSceneRoute(firstRoute);

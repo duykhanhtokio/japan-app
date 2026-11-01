@@ -1,6 +1,7 @@
 import {View,Text} from 'react-native';
 import {backPrepared} from '@/components/ui/prepareSceneRoute';
-import {KensetsuCourse} from '@/components/kensetsu/KensetsuCourse';
+import {createDeferredCourse} from '@/components/tokutei/createDeferredCourse';
+const KensetsuCourse=createDeferredCourse(()=>import('@/components/kensetsu/KensetsuCourse').then(module=>module.KensetsuCourse));
 import {useAppLanguage} from '@/context/LanguageContext';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
