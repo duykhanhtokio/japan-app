@@ -20,6 +20,6 @@ const reader=fs.readFileSync('src/components/kensetsu/KensetsuCourse.tsx','utf8'
 assert(compactReader.includes('!reachedEnd&&!done'));assert(reader.includes('AsyncStorage.setItem(key'));
 assert(compactReader.includes('completionKey(learner,level,field)'));
 assert(!reader.includes('translation===c.id'));assert(reader.includes('kensetsu-reflections'));assert(reader.includes('resizeMode="contain"'));assert(!reader.slice(reader.indexOf('function Reader('),reader.indexOf('function Calendar(')).includes('RoyalContentPanel'));assert(reader.includes('testID="kensetsu-translation"'));assert(reader.includes('p.translations?.[language]'));assert(reader.includes('kensetsu-week-page'));assert(!reader.includes('kensetsu-resume'));
-assert(fs.readFileSync('src/app/specified-skills/kensetsu.tsx','utf8').includes('if(!__DEV__)'));
-const entry=fs.readFileSync('src/app/specified-skills/index.tsx','utf8');assert(/["']\/specified-skills\/kensetsu["']/.test(entry));
-console.log(`KENSETSU APP TEST DATA PASS: 55 weeks / 385 sessions / 3856 paragraphs; ${assetPaths.size} image files registered; development gate; native runtime not tested.`);
+assert(!fs.readFileSync('src/app/specified-skills/kensetsu.tsx','utf8').includes('if(!__DEV__)'));
+const entry=fs.readFileSync('src/app/specified-skills/index.tsx','utf8');assert(entry.includes("ja:'建設'")&&entry.includes('specifiedSkillRoute(ja)')&&fs.readFileSync('src/data/specified-skills-routes.ts','utf8').includes("'建設':'/specified-skills/kensetsu'"));
+console.log(`KENSETSU APP TEST DATA PASS: 55 weeks / 385 sessions / 3856 paragraphs; ${assetPaths.size} image files registered; publisher requested test access; native runtime not tested.`);
