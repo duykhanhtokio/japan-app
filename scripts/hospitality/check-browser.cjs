@@ -38,8 +38,19 @@ const mocks={
  for(const [width,height]of[[390,844],[844,390],[768,1024],[1440,900]])for(const id of['hotel-service-01','hotel-restaurant-03','hotel-planning-02']){await page.setViewportSize({width,height});await open(id);const fig=page.getByTestId('hotel-figure-'+id);await fig.scrollIntoViewIfNeeded();assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));const box=await fig.boundingBox();assert(box&&box.width<=width);if(width===390)await page.screenshot({path:path.join(out,`${id}-${width}x${height}.png`)});responsive++;}
  // Verify actual complete/stale-bound translation payloads, never a fallback.
  for(const locale of['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'])for(const group of['front','planning','service','restaurant','safety']){const file=path.join(root,`src/data/hospitality/translations/${locale}/${group}.json`);if(!translationSnapshot.has(locale+'/'+group))continue;for(const t of translationSnapshot.get(locale+'/'+group).lessons.slice(0,Number(process.env.HOTEL_QA_TRANSLATION_LIMIT||9999))){const l=find(t.id);if(t.sourceRevision!==l.revision)continue;await open(t.id,locale);await page.getByRole('button',{name:require('../../src/data/manufacturing/ui-translations.json').locales[locale].translationShow,exact:true}).click();const content=await page.locator('body').innerText();assert(content.includes(t.title)&&t.sections.every(s=>content.includes(s.body)),locale+'/'+t.id);translationPairs++;}}
+ // Ruby must render in the real reader at narrow/landscape/tablet/desktop widths.
+ let rubyCases=0;
+ for(const [width,height] of [[390,844],[844,390],[768,1024],[1440,900]])for(const id of ['hotel-service-04','hotel-safety-07']){
+  await page.setViewportSize({width,height});await open(id);await page.getByRole('button',{name:'ふりがなを表示',exact:true}).click();
+  await page.getByRole('button',{name:'ふりがなを隠す',exact:true}).waitFor();
+  const l=find(id);for(const section of l.sections)assert(await page.getByLabel(section.body,{exact:true}).count()>0,'missing ruby body '+id);
+  assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),'ruby horizontal overflow '+id);
+  for(const q of l.questions){const b=page.getByTestId(q.id);assert(await b.getByRole('button').count()===4);}
+  if(width===390)await page.screenshot({path:path.join(out,`${id}-ruby-${width}x${height}.png`)});
+  await page.getByRole('button',{name:'ふりがなを隠す',exact:true}).click();assert((await page.locator('body').innerText()).includes(l.sections[0].body));rubyCases++;
+ }
  // Actual absent translation path.
  const missing=catalog.find(e=>!translationSnapshot.has('km/'+e.group));if(missing){await open(missing.id,'km');await page.getByRole('button',{name:require('../../src/data/manufacturing/ui-translations.json').locales.km.translationShow,exact:true}).click();assert((await page.locator('body').innerText()).includes(require('../../src/data/manufacturing/ui-translations.json').locales.km.translationPending));}
- assert.deepEqual(errors,[]);const report={status:'PASS',harness:'isolated React Native Web; adapted platform chrome',readers,responsive,translationPairs,saveRestore:true,saveFailure:true,submissionAnswerSecrecy:true,physicalDeviceTested:false};fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));
+ assert.deepEqual(errors,[]);const report={status:'PASS',harness:'isolated React Native Web; adapted platform chrome',readers,responsive,translationPairs,rubyCases,saveRestore:true,saveFailure:true,submissionAnswerSecrecy:true,physicalDeviceTested:false};fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));
  }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1});

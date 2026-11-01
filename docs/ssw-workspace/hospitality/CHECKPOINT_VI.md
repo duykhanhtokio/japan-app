@@ -1,3 +1,21 @@
+# Checkpoint mới nhất —2026-11-01, Asia/Tokyo
+
+Phạm vi yêu cầu mới: đối chiếu từng ý117trang, bổ sung Nhật/câu/hình,12ngôn ngữ/furigana, rà khối lượng và ngữ nghĩa. **Chưa hoàn tất toàn bộ yêu cầu.** Số liệu dưới đây thay thế snapshot cũ; các đoạn lịch sử phía sau được giữ để truy vết.
+
+- Đã xác minh đúng byte/hash của hai PDF52+65trang. Hồ sơ `editorial-review-20261101.json` ghi từng trang, hash văn bản trích xuất, phân loại94trang kiến thức/23trang khác và các sourceAtom liên quan. Đây là kiểm kê và bằng chứng hiện tại, không biến369ýAI-candidate thành nghiệm thu không còn thiếu ý. Bằng chứng trực quan nguồn2026-10-31 được dẫn rõ là lịch sử, không nhận là mới xem lại117hình trong phiên này.
+-38ngày,276câu độc lập; giữ tất cảIDcũ. Thêm3câu riêng kiểm tra đồng phục, móng tay, biểu cảm; sửa các liên kết assessment tương ứng. Bổ sung một tình huống đọc sơ đồ A/B và1câu vận dụng cho service04. Phần Nhật cũ giữ nguyên; không tăng độ dài bằng diễn đạt lặp.
+-Service04 từ554→835ký tự thân bài,3→4câu. Tình huống phân biệt mong muốn gần cửa với yên tĩnh phía trong, yêu cầu xác minh ghế/lối đi; không dạy kỹ thuật trợ giúp cơ thể hoặc quy chuẩn ghế chung. Thay hình khái quát bằng ba tình huống không gian cụ thể, caption/alt khớp; đã xemPNG mới và contact sheet38ảnh.
+-Service04 đã có đủ12bản dịch đúngrevision, gồm6bản đầy đủ mới hi/bn/ne/my/th/km và12delta nội dung bổ sung. Giữ nguyên thuật ngữ/cách đọcNhật,IDvà vị trí đáp án. Toàn ngành37/456cặp hợp lệ, còn419cặp thiếu/đãcũ;202cặp cũ tiếp tục bị chặn. Không nângrevision bản dịch cũ nếu chưa dịch phần thay đổi.
+-Furigana ngoại tuyến cho38bài và2bài tổng hợp:2.976lượt văn bản,24.773lượt đoạnkanji có cách đọc, không có đoạnkanji bị bỏ đọc trong phạm vi bộkiểmtra. Dữ liệu tải theo nhóm, khoảng780KB; tokenizer không đưa vàoapp. Sửa các mặc định sai theo ngữ cảnh như一日、室、乳、鏡、四本、二本、何. Trình đọc có nút bật/tắt, áp dụng phần thân/mục tiêu/thuậtngữ/vídụ/thựchành/câu hỏi/lựa chọn/giải thích. Đây vẫn là ứng viên đọc từ từđiển có hiệuđínhAI, chưa duyệt bảnngữ toànbộ.
+- Khối lượng thân bài thực tế:34.147ký tự, nhỏ nhất584, trung vị835, lớn nhất2.097. Thống kê riêng từng ngày/track, mục tiêu, ví dụ, thực hành, câu hỏi và ảnh. Không suy25phút từ số chữ. Ngày safety07 dài hơn rõ rệt và vẫn cần đo thời gian người học; chưa đánh dấu lịch đã cân bằng hoàn toàn hoặc durationMeasured=true.
+- Check cấu trúc/nguồn/bản dịch hiện có/loader/state/furigana PASS. Kiểm thửbrowser riêng dùng reader thật, adapter nền tảng; bằng chứng mới nằm ở `browser-qa-20261101.json`. Không phải Expo/native hay thiết bị thật.
+
+Việc còn phải làm: nghiệm thu độc lập mức chia từng ý nguồn và ngữ nghĩa;419cặp dịch; duyệt ngữ cảnhfurigana toànbộ; nhãn trongảnh/alt theo ngônngữ và đánh giá ngữ nghĩa ảnh sâu hơn; đo thời gian/cân đối ngày thực tế. Các cờ expert/native/device và allSourceKnowledgeCovered vẫnfalse. Không gọi hoàn thiện toàn ngành.
+
+Công cụ tái lập: `build-readings.py` cần fugashi1.5.2 và unidic-lite1.0.8; `check-readings.cjs` kiểm tra căn chỉnh/revision/kanji. Hai script bổ sung service04 là thao tác migration đã áp dụng một lần; không dùng để ghi đè chỉnh sửa về sau. Nguồn PDF và render chỉ dùng đối chiếu, không phân phối trongapp.
+
+---
+
 # Tiến độ khách sạn —2026-10-31
 
 ## Phạm vi đã triển khai

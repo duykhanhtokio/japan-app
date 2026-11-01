@@ -88,6 +88,33 @@ def make(lesson,config):
   text(d,(712,455),'専門担当者：点検・原因確認',24)
   text(d,(58,590),'経路は実施設の消防計画で確認する。',28)
   text(d,(58,640),'交代時の監視の引継ぎと、専門担当者の保守は別の仕事。',28)
+ elif kind=='accessible-service':
+  # Spatially explicit examples rather than a generic wheelchair icon.
+  for x in [35,430,825]:
+   d.rounded_rectangle((x,120,x+350,595),16,fill='white',outline='#b7c8c9',width=3)
+  text(d,(62,140),'目の高さを合わせる',25)
+  symbol(d,'wheelchair',45,240)
+  d.ellipse((290,240,321,271),fill=GREEN)
+  d.line((306,279,285,345,325,390),fill=GREEN,width=9)
+  d.line((285,345,260,390),fill=GREEN,width=9)
+  d.line((189,255,290,255),fill=GOLD,width=3)
+  text(d,(65,450),'話しやすい位置を確認',23)
+  text(d,(456,140),'声で希望を尋ねる',25)
+  person(d,495,285);person(d,665,285,color=GREEN)
+  d.line((510,385,535,455),fill=GOLD,width=4)
+  d.rounded_rectangle((460,200,765,265),10,fill='#edf4ee',outline=GREEN,width=2)
+  text(d,(475,213),'お手伝いは必要ですか',23)
+  text(d,(457,495),'無言で行先を決めない',23)
+  text(d,(851,140),'希望する席を確認',25)
+  d.rectangle((850,230,1145,475),outline=BLUE,width=3)
+  d.rectangle((870,460,938,490),fill='white')
+  text(d,(850,520),'出入口',22)
+  for x,y,label in [(925,390,'A'),(1070,290,'B')]:
+   d.ellipse((x-27,y-27,x+27,y+27),fill='#e9dfc5',outline=GOLD,width=3)
+   text(d,(x-10,y-16),label,24)
+   for dx in [-43,32]:d.rectangle((x+dx,y-13,x+dx+10,y+13),outline=BLUE,width=2)
+  arrow(d,(903,475),(925,423))
+  text(d,(65,645),'近い席Aも選択肢。本人の希望を聞いてから案内する。',28)
  elif kind=='guiding':
   text(d,(65,105),'同じ進行方向を向いて案内する',30)
   arrow(d,(610,540),(610,185));text(d,(665,195),'進行方向',25)
