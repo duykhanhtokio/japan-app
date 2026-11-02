@@ -1,7 +1,7 @@
 {
   "status": "editorial_exact_span_screen_only",
   "date": "2026-11-02",
-  "normalization": "NFKC, remove non-word characters, compare within each source page",
+  "normalization": "NFKC, remove non-word characters; also remove inlinekana; within source page",
   "thresholdNormalizedCharacters": 22,
   "sourcePdfPages": [
     7,
@@ -131,25 +131,20 @@
     131
   ],
   "paragraphs": 112,
-  "allJapaneseStringsScreened": 260,
+  "allJapaneseStringsScreened": 263,
   "includes": [
-    "lesson titles",
-    "cluster titles",
-    "paragraphs",
-    "application prompts",
-    "image captions",
-    "ungraded coaching learningActivity",
-    "ungraded schedule reasoning learningActivity; also screened without inline kana",
-    "quality-evidence and neighbour-report activities, also screened without inline kana",
-    "three-management, factual-time-record and control-comparison activities, also screened without inline kana",
-    "three v2 source-ledger applications: scale comparison, 5S effect evidence and KY stage verification; also screened without inline kana"
+    "lesson/cluster titles",
+    "all112Japanese paragraphs",
+    "all50original prompts",
+    "all10depth activities including3expanded continuations",
+    "all7caption placements"
   ],
   "candidates": [],
   "rightsCertification": false,
   "semanticCoverageCertification": false,
+  "minimumSourceFontPoints": 10,
   "limitations": [
-    "Exact-span comparison does not detect paraphrase similarity or certify rights.",
-    "Source text extraction can omit figure labels, ruby and raster text."
-  ],
-  "minimumSourceFontPoints": 10
+    "Exact windows do not detect paraphrase similarity or establish rights.",
+    "PDF raster/table labels and extracted small fonts are not covered by this separate editorial screen; retained in source census."
+  ]
 }

@@ -56,3 +56,14 @@ Ba bài017/018/019 lên revision2, giữ nguyên toàn bộ đoạn, prompt và 
 Bảo toàn 112 đoạn/50 prompt cũ và mọi bản dịch cũ; 260 chuỗi Nhật được so trùng đoạn liên tiếp22ký tự với chữ nguồn chính, không có ứng viên; đây không phải duyệt quyền hoặc phát hiện mọi cách diễn đạt tương tự. Source region/element/hash gate PASS, thời lượng/chuyên môn/bản ngữ/thiết bị thật vẫn chưa đạt. Root phải lưu và xác minh remote trước khi tuyên bố bền vững.
 
 Phạm vi trạng thái v2 được làm rõ: unknown là chưa có mapping trong các đoạn/hoạt động 職長016–019 đã rà, không phải đã chứng minh thiếu toàn app. Mười một liên kết hoạt động chỉ đủ một phần; chi tiết quản lý hạn chế ra vào chưa rõ trong đoạn đã chọn. Các ngân hàng khác chưa được quét ngữ nghĩa toàn bộ cho71mục này.
+
+
+## Source coverage v2 — đợt2 từ d38397e, 2026-11-02
+
+Tiếp ba cụm017/018/019 bằng bài áp dụng quản lý thực sự: phân loại/ưu tiên biện pháp và phân công theo dõi thay đổi; năm vai trò5S và đánh giá→cải tiến; KY→thực hiện→báo cáo kinh nghiệm suýt tai nạn. Giữ completion revision2 và112đoạn/50prompt cũ; dùng contentRevision3, mở rộng36cặp dịch và thêm36cặp caption. Hai sơ đồ gốc có bytePNG1200×720, nối trực tiếp ba ngày này qua registry thật, không phải thiết kế công trường hoặc quy chuẩn an toàn.
+
+Sửa lỗi builder lấy nhầm hash nguồn cuối khi tra ứng viên bài. Tự xem vai trò đủ136trang cũ:28bìa/mục lục loại có lý do,108trang học còn phải đối chiếu ý. Pixel144dpi của text1k/text1l trang2–12giống nhau nhưng không nhập hai hash nguồn; chỉ phục hồi candidate. Không gọi108trang này là app thiếu kiến thức.
+
+Page92được xem và đối chiếu lại mọi vùng, sửa bbox bốn định nghĩa vốn lệch lên sơ đồ/đoạn trước; giữ đủ chữ nhỏ/ruby, sơ đồ bốn bậc và các mũi nối. Đây là trang instructional đầu tiên có semantic inventory và các ý đủ current evidence ở mức AI. Các trang89–100khác còn mở; riêngPDF90có mâu thuẫn severity6trong bảng với mô tả重症(hạng4ởPDF89), ghi blocker chứ không tự sửa.
+
+Canonical hiện72mục/27covered_ai/7blocked; một câu cũq18được tái dùng sau kiểm cả lựa chọn và đáp án cho hai điều kiện pháp lý/PPE, không thêm câu trùng. Ma trận1号→2号ghi rõ nền tảng dùng lại và phần trách nhiệm giám sát tăng thêm; không nhận đủ năng lực2号riêng cho ba nhánh. Nguồn toàn ngành vẫn mở, phần trămnull. Host72trường hợp kiểm cả hình mount qua registry; browserRNWebbuild đạt nhưng Chromium bịchặn socket, chưa cópixelruntime/native/Expo/thời lượng. Điều phối phải lưu và xác minhremote cho đợt này.

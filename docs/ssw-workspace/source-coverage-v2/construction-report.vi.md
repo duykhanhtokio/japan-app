@@ -1,33 +1,43 @@
-# Xây dựng — cơ chế nguồn → kiến thức → app v2
+# Xây dựng — nguồn → kiến thức → app v2
 
-## Nguồn và census
+Trạng thái tự kiểm AI ngày2026-11-02, đợt2 từ `d38397e7569b136777ba2c219ab0df56d9c4eee1`. Sổ nghiệm thu duy nhất là `construction.json`; các hồ sơ bên cạnh là bằng chứng, không có mẫu số tiến độ riêng.
 
-Đủ 17 PDF đã được đối chiếu byte/hash và số trang. Hai cặp trùng hoàn toàn được lưu qua alias, còn 15 nguồn/530 trang duy nhất từ 604 trang danh nghĩa. File text1k có source ID riêng vì khác hash; giống chữ chính với text1l không làm mất ảnh, chú thích hoặc bìa khỏi danh mục.
+## Kết quả có bằng chứng
 
-Mọi trang có artifact gzip gồm nguyên các khối chữ/ruby/nhãn nhỏ, vị trí ảnh và đối tượng vector dưới dạng hash/box/metadata; không đưa chữ hay ảnh nguồn vào repository. 115.623 phần tử vật lý là mẫu kiểm kê, không phải mẫu số kiến thức. 580 bằng chứng bài cũ và các ứng viên nối theo trang được giữ dưới dạng liên kết lịch sử/candidate, không tự chuyển thành direct.
+- Xác minh17PDF/604trang danh nghĩa,15hash/530trang duy nhất; giữ115.623phần tử vật lý kể cả chữ nhỏ/ruby/ảnh/vector. Không coi đây là115.623ý; không đưa chữ/ảnh/PDFnguồn vào Git.
+-72mục được phân rã có vùng nguồn chính xác;27mục đủ dạy và đánh giá ở mức AI,7blocker. Toàn bộ mẫu số ý vẫn mở, phần trămnull.
+- Trang leader92đạt đầy đủ kiểm kê ngữ nghĩa và bằng chứng app cho năm mục; đây là1trang instructional, không phải toàn bộ89–100hoặc530trang.
+-28trang bìa/mục lục được loại có lý do sau xem vai trò nguồn.136trang từng chưa liên kết nay có phân loại riêng:28điều hướng/xuất bản,108instructional cần tiếp đối chiếu ý.
+- text1k/text1l trang2–12có pixel144dpigiống nhau. Giữ hai sourcehashriêng; phục hồi ứng viên liên kết của trang6–12, không chuyển thành direct tự động.
+- Sửa builder lấy nhầm hash nguồn cuối khi tra liên kết legacy; mọi candidate tra đúng canonicalhash. Các liên kết vẫn là ứng viên, không bằng chứng bao phủ.
 
-## Tự kiểm ngữ nghĩa có giới hạn
+## Nội dung học đã thay đổi
 
-Nguồn leader PDF89–100 đã đọc chữ và xem trang; các bảng/ảnh trên89/90/94/99/100 được xem lớn. 71 mục độc lập được ghi trong canonical ledger với điều kiện, ngoại lệ, trạng thái trước/sau và JSON-pointer/hash tới app. Mỗi hàng bảng tham chiếu raster gốc chứa đúng bảng đó; việc cùng tham chiếu một raster không đồng nghĩa đóng cả bảng. Mọi phần tử vẫn giữ pending nơi chưa chứng minh đã kiểm hết nội dung của phần tử.
+017/018/019 có ba phần áp dụng tiếp nối, giữ nguyên nội dung và hoạt động trước đó:
 
-6 mục đủ bằng chứng dạy/đánh giá ở mức AI; 6 mục về mô hình ý thức/độ tin cậy giữ blocked. Sau tự rà, các đề xuất đóng về tra mức rủi ro, tự phát hiện nguy hiểm, tạo biện pháp và thao tác chỉ tay đã được hạ về partial: hoạt động cùng chủ đề không kiểm hết năng lực đó. Không trang nào được đánh dấu hoàn tất mọi ý, không tính phần trăm nguồn.
+1. Phân biệt loại/ưu tiên biện pháp, giao trách nhiệm và tái đánh giá sau đổi tuyến vận chuyển; giữ điều kiện pháp lý và nguy cơ hiếm nhưng nghiêm trọng.
+2. Phân biệt năm vai trò5S, kế hoạch tổ trưởng làm mẫu/giảng giải/thu đề xuất/đánh giá, dùng kết quả để cùng cải tiến.
+3. Nối KYtrước việc với thực hiện và báo cáo, dùng tình huống suýt va chạm tự tạo, phân biệt luyện tập với điều kiện thật trong ngày.
 
-Các trạng thái unknown chỉ có nghĩa chưa có mapping được chấp nhận trong phạm vi đã rà, không chứng minh app thiếu kiến thức đó. Phạm vi tự rà ở đây là đoạn và hoạt động cụ thể của 職長016–019; chưa rà hết ngân hàng câu hoặc mọi bài khác. Có 11 liên kết đánh giá chỉ đủ một phần. Locator quản lý/保護具 được sửa về đúng016-c2-p1; riêng chi tiết hạn chế ra vào vẫn partial.
+Đủ36cặp dịch mở rộng và36cặp caption đúng bảnNhật; kana mới đã kiểm. Completionrevision2giữ nguyên; contentRevision3ghi phần tăng thêm. Bảo toàn112đoạn/50prompt và mọi entrydịch cũ ngoài bindinghoạt động được kéo dài.
 
-## Nội dung app thực sự thay đổi
+Hai sơ đồ gốc dựng bằng hình học có kiểm soát,1200×720PNG: tuyến vận chuyển giao đường đi bộ và kệ vật liệu. Chúng nối ba ngày học qua registry thật, có caption/alt/mục tiêu/quyền và hash. Sơ đồ tuyến dùng chung017/019vì cùng quan hệ không gian cần đánh giá; không phải hình an toàn chung rải mọi ngày. Không quy định kích thước, sức chịu tải, khoảng cách an toàn hoặc quyền cho phép thi công.
 
-017/018/019 thêm 3 hoạt động có kana và 12 ngôn ngữ, giữ 112 đoạn/50 prompt cũ và mọi dịch cũ. Hoạt động017 dùng dữ kiện tự tạo2/3/4 để phân biệt phép cộng9 và phép nhân24, không cấp quyền thao tác thật. Hoạt động018 dạy rõ mục tiêu chất lượng/năng suất/nguyên giá rồi yêu cầu kiểm bằng chứng ngoài ảnh kệ. Hoạt động019 dùng trường hợp cửa nhận hàng/xe đẩy mới để phân biệt quan sát, trọng tâm, biện pháp và mục tiêu hành động.
+Ma trận `construction-one-to-two-go-depth-matrix.json` ghi ba nhóm nền1号→trách nhiệm giám sát2号 bằng exactselectors. Câu cũq18được đọc đủ câu/lựa chọn/đáp án và tái dùng cho điều kiện không bỏ biện pháp luật định và không coi PPElà toàn bộ kiểm soát. Không coi đổi khóa tiến độ hoặc dùng lại ngân hàng là đủ năng lực2号chuyên ngành.
+
+## Sửa lỗi nguồn và giới hạn
+
+- Tự kiểm page92phát hiện bbox cũ của bốn định nghĩa bị lệch lên sơ đồ/đoạn trước; đã sửa về tọa độ PDFthật, kiểm đủ sơ đồ bốn bậc/mũi nối, caption, ruby, header/footer và các object chỉ có khoảng trắng.
+- PDF90bảng cho severity6nhưng prose mô tả重症; PDF89ghép重程度với4. Đây là mâu thuẫn cần đính chính nguồn, được giữ blocked, không sao chép thành bài học hoặc tự sửa đáp án.
+- Sáu mục mô hình ý thức/độ tin cậy vẫn bị chặn vì chưa xác minh điều kiện và cơ sở. Không dạy thành ngưỡng y sinh hoặc tỷ lệ bảo đảm an toàn.
+- unknown nghĩa chưa có mapping trong phạm vi đã rà; không suy app thiếu. Tra số điểm/mức/độ khẩn cấp, chi tiết mọi nhãn5S/KYT, thao tác chỉ tay và chuyên ngành2号vẫn còn mở.
 
 ## Kiểm tra
 
-- Shared canonical validator: PASS 15 nguồn/530 trang, đủ reciprocal page–element–knowledge links và hash bằng chứng hiện tại.
-- Authored-data validator: PASS 28 bài/112 đoạn, 10 hoạt động tăng chiều sâu/120 cặp locale hiện có; ba bài001–003 giữ byte.
-- Actual KensetsuDayReader host: PASS72 trường hợp3bài×12locale×ngày/đêm, giữ thân bài cũ, ẩn dịch ban đầu, mở đúng locale, cuộn cuối trước hoàn thành, từ chối revision cũ. Đây là host có adapter, không phải browser/native.
-- Kiểm riêng bảo toàn: 3 bài cũ sau bỏ phần bổ sung khớp dữ liệu trước sửa; 11 pack chỉ thêm đúng3entry. Kana mới ghép đúng và không để kanji thiếu chú âm.
-- So260chuỗi Nhật và bản bỏkana với nguồn chính ở ngưỡng22ký tự:0ứng viên; không thay duyệt bản quyền/ngữ nghĩa.
+Guardian dữ liệu đạt28bài/112đoạn/50prompt,10hoạt động/120cặp locale; có7vị trí hình với6assetduy nhất. HostActualKensetsuDayReader72trường hợp kiểm bản dịch đúng locale, ẩn ban đầu, giữ bài cũ, cuộn cuối trước hoàn thành, từ chối overlaycũ và mount hình qua registry. Đây là hostRN/Imageadapter, không phải duyệt pixel.
 
-## Còn mở
+So263chuỗi Nhật, cả bản bỏkana, với chữ nguồn chính>=10pt:0ứng viên22ký tự liên tiếp. Đây là sàng lọc biên tập hẹp, không chứng nhận quyền hay ngữ nghĩa; không thay censusnhãn raster.
 
-Phân rã ngữ nghĩa đầy đủ530trang; 136trang chưa có liên kết trực tiếp ở sổ trước phải được rà vai trò/ý cụ thể. Cần đối chiếu các bảng/hình/đơn vị còn chưa đủ bằng chứng, đầy đủ năng lực2号 ngoài việc dùng lại1号, thực hành/an toàn, hình nhận diện, âm thanh, chuyên môn/bản ngữ/quyền, Expo/native và thời lượng người học. Tất cả cờ chấp nhận ngoài phạm vi kiểm AI giữ false.
+RNWebbundle của reader và bytePNGthật biên dịch được. Chromiummặc định thiếu executable; thử Chromiumđã cài bị lỗi socketOperation not permittedtrước khi mở trang. Vì vậy chưa nhận browserpixels,productionExpo/nativehoặc thiết bị thật. Giữ scriptđể chạy nơi hỗ trợ và lưu ảnh dọc/ngang/tablet/desktop. Chưa đo thời lượng thực học, chưa duyệt chuyên môn/bản ngữ/quyền; không nhận hoàn thành toàn ngành.
 
-Các file nguồn riêng nằm ngoài repo; builder tái tạo được từ directory17PDF đã pin hash. Điều phối lưu từ xa theo đợt và xác minh remote.
+Điều phối phải xác minh commit từ xa trước khi tuyên bố đợt2đã lưu bền.

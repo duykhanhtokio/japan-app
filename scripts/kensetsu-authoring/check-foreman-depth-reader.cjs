@@ -12,14 +12,14 @@ const mocks={
  '@/components/ui/RoyalSurface':`import React from 'react';export const ROYAL_FONT={body:'System',heading:'System'},ROYAL_LAYOUT={screenGutter:12};export const RoyalBackButton=()=>null;`,
  '@/components/ui/RoyalPanels':`import React from 'react';export const RoyalContentPanel=({children,style})=>React.createElement('View',{style},children);export const RoyalExplanationPanel=RoyalContentPanel;`,
  '@/components/ui/RoyalPageBackground':`import React from 'react';export default({children})=>React.createElement('View',{},children);`,
- '@/data/kensetsu':`export const fields=[],illustrations={},illustrationAspectRatios={};export const completionId=s=>s.id,completionKey=()=>'',restoreProgress=()=>({});`,
+ '@/data/kensetsu':`export {foremanIllustrations as illustrations,foremanIllustrationAspectRatios as illustrationAspectRatios} from ${JSON.stringify(path.join(root,'src/data/kensetsu/foreman-illustrations'))};export const fields=[];export const completionId=s=>s.id,completionKey=()=>'',restoreProgress=()=>({});`,
  '@/data/kensetsu/scope':`export const subjectLabels={};export const weeksForScope=()=>[],sessionsForScope=()=>[],sessionForScope=()=>undefined,studyDayForScope=()=>undefined,studyDayIdForSession=id=>id,studyDayCompletionIds=()=>[];`,
  './KensetsuReviewTests':`export const KensetsuReviewTests=()=>null;`,
 };
 const resolve=p=>{for(const suffix of ['.ts','.tsx','.json','/index.ts'])if(fs.existsSync(p+suffix))return p+suffix;throw Error(p);};
 const plugin={name:'foreman-reader-host',setup(build){
  build.onResolve({filter:/.*/},a=>{if(mocks[a.path])return{path:a.path,namespace:'host'};if(a.path==='react'||a.path.startsWith('react/'))return{path:a.path,external:true};if(a.path.startsWith('@/'))return{path:resolve(path.join(root,'src',a.path.slice(2)))};});
- build.onLoad({filter:/.*/,namespace:'host'},a=>({contents:mocks[a.path],loader:'tsx'}));
+ build.onLoad({filter:/.*/,namespace:'host'},a=>({contents:mocks[a.path],loader:'tsx',resolveDir:root}));
  build.onResolve({filter:/\.(webp|png|jpe?g)$/},a=>({path:a.path,namespace:'art'}));build.onLoad({filter:/.*/,namespace:'art'},()=>({contents:'export default 1;',loader:'js'}));
 }};
 const text=n=>typeof n==='string'?n:Array.isArray(n)?n.map(text).join(''):n&&typeof n==='object'?text(n.children):'';
@@ -34,6 +34,7 @@ const find=(t,id)=>{const n=t.root.findAll(x=>typeof x.type==='string'&&x.props.
    global.__tokuteiStorage.set('@japan_app_tokutei_reading_appearance_v1',mode);let t,completed=0;
    await act(async()=>{t=create(React.createElement(m.StudyAppearanceProvider,null,React.createElement(m.KensetsuDayReader,{session:s,done:false,ready:true,saving:false,language:locale,onComplete(){completed++;}})));await new Promise(setImmediate);});
    assert.equal(text(find(t,`kensetsu-source-${id}:learningActivity`).children),a.ja);
+   if([17,18,19].includes(number)){assert.equal(t.root.findAll(x=>typeof x.type==='string'&&x.props.testID==='kensetsu-study-image').length,1,'New illustration must mount through actual registry');}
    assert.equal(t.root.findAll(n=>typeof n.type==='string'&&n.props.testID===`kensetsu-localized-${id}:learningActivity`).length,0);
    assert.equal(find(t,'kensetsu-complete').props.disabled,true);assert.equal(completed,0);
    await act(async()=>find(t,'kensetsu-translation').props.onPress());
@@ -45,6 +46,6 @@ const find=(t,id)=>{const n=t.root.findAll(x=>typeof x.type==='string'&&x.props.
   }
   const stale=m.applyLessonTranslations(s,{sessionId:id,entries:{learningActivity:{sourceJa:a.ja+'変更',translations:{en:'stale'}}}});assert.equal(stale.clusters.find(c=>c.learningActivity).learningActivity.translations,undefined);
  }
- const report={date:'2026-11-02',status:'PASS_ACTUAL_FOREMAN_DAY_READER_HOST',sessions:numbers,localeModeCases:cases,translationHiddenInitially:true,selectedLocaleExact:true,priorTeachingRetained:true,explicitEndBeforeCompletion:true,staleActivityTranslationRejected:true,hostAdapters:['ReactNative','RoyalFrames','Backdrop','ImageLookup','unusedScopeAndReviewRoutes'],nativeDeviceTested:false,pixelsReviewed:false,releaseReady:false};
+ const report={date:'2026-11-02',status:'PASS_ACTUAL_FOREMAN_DAY_READER_HOST',sessions:numbers,localeModeCases:cases,translationHiddenInitially:true,selectedLocaleExact:true,priorTeachingRetained:true,explicitEndBeforeCompletion:true,staleActivityTranslationRejected:true,newIllustrationRegistryMounted:numbers.every(n=>[17,18,19].includes(n)),hostAdapters:['ReactNative','RoyalFrames','Backdrop','PNGImportHostValueWithActualAssetRegistry','unusedScopeAndReviewRoutes'],nativeDeviceTested:false,pixelsReviewed:false,releaseReady:false};
  if(process.env.FOREMAN_DEPTH_REPORT)fs.writeFileSync(path.resolve(root,process.env.FOREMAN_DEPTH_REPORT),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 })().catch(e=>{console.error(e);process.exit(1)});
