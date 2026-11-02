@@ -1,3 +1,11 @@
+# Hoàn tất bản dịch một bài — ngày 02/11/2026
+
+Đã hoàn tất đủ 12 ngôn ngữ cho toàn bộ `hotel-service-03` theo đúng revision Nhật `eb942d9ca15482ba6a25f88e5efd13a2a1994b1b2632df3a2ae1d61b28947e5c`: tiêu đề, 3 mục tiêu, 5 đoạn gồm tình huống 6 lượt thoại, 5 thuật ngữ, ví dụ, thực hành, 10 câu hỏi đủ lựa chọn/giải thích và caption/alt. Sáu bản cũ được rà và bổ sung; sáu bản hi/bn/ne/my/th/km được dịch đầy đủ mới. Giữ ID, đáp án và thuật ngữ/cách đọc Nhật. Không sửa Nhật, không coi fallback là bản dịch.
+
+Toàn ngành tăng từ 22 lên 34/456 cặp bài–ngôn ngữ đúng revision; còn 422 cặp thiếu hoặc cũ. Mọi bản mới vẫn `translated_ai_unreviewed`, chưa được duyệt bản ngữ hoặc chuyên môn. Kiểm tra bản dịch, bộ nạp, tính nhất quán ID/đáp án, nguồn và furigana PASS; bộ nạp vẫn từ chối revision cũ. Chi tiết tại `service03-12locale-20261102-evidence.json`. Không suy việc hoàn tất một bài thành hoàn tất ngành hoặc nghiệm thu thiết bị thật.
+
+---
+
 # Bổ sung bài Nhật và kiểm tra vận dụng — ngày 02/11/2026
 
 Đã bổ sung thật vào `hotel-service-03`: một tình huống Nhật độc lập gồm 6 lượt thoại về khách đang đợi người quen, cùng giải thích cách xác nhận mong muốn thay vì áp đặt việc dẫn đường; thêm hai câu hỏi `q09/q10` có bốn lựa chọn và giải thích. Tình huống được ghi rõ là hư cấu để vận dụng nguyên tắc おもてなし từ 1号 trang 33; không phải hội thoại chép từ PDF. Thân bài service03 tăng từ 779 lên 1201 ký tự, câu hỏi từ 8 lên 10. Toàn ngành hiện 323 câu độc lập.

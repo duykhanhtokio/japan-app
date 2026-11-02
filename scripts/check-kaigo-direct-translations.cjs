@@ -13,8 +13,10 @@ const text=t=>flatten(t.toJSON());
 // Ruby rows render base text separately from readings; line breaks use empty Views.
 const sourceParagraphText=(t,section,index)=>{
  const node=get(t,`kaigo-source-${section.id}-${index}`);
- if(index===0&&section.paragraphsJa[index]===section.japanese&&section.ruby?.length)
-  return node.children.map(part=>{assert.equal(typeof part,'object');const words=part.findAll(n=>n.type==='Text');return words.length?flatten(words.at(-1).children):'\n';}).join('');
+ const ruby=section.paragraphsRuby?.[index]?.length ? section.paragraphsRuby[index]
+  : index===0&&section.paragraphsJa[index]===section.japanese ? section.ruby : undefined;
+ if(ruby?.length)
+  return node.children.map((part,i)=>{assert.equal(typeof part,'object');const words=part.findAll(n=>n.type==='Text');if(ruby[i].readingKana)assert.equal(flatten(words[0].children),ruby[i].readingKana,'Exact kana stays above its base token');return words.length?flatten(words.at(-1).children):'\n';}).join('');
  return flatten(node.children);
 };
 const click=async(t,id)=>act(async()=>{const n=get(t,id);assert(!n.props.disabled,id);n.props.onPress();await new Promise(setImmediate);});

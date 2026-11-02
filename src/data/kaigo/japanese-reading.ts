@@ -2,6 +2,7 @@ import { kaigoCourse } from "./index";
 import { sectionsFor, type ReadingSection } from "./weekly-learning";
 import type { CatalogEntry, TopicId } from "./catalog";
 import { japaneseMasterSections, japaneseLessonKey, japaneseLessonMetadata } from './japanese-master';
+import type { RubyToken } from './types';
 
 export const topicTitlesJa: Record<TopicId, string> = {
   dignity: "尊厳と自立支援",
@@ -21,6 +22,7 @@ export const titleForDay = (entry: CatalogEntry) =>
 export type JapaneseReadingSection = ReadingSection & {
   headingJa: string;
   paragraphsJa: string[];
+  paragraphsRuby?: RubyToken[][];
   japaneseComplete: boolean;
   masterStatus?: string;
   figureCaptionsJa?: Record<string, string>;
@@ -39,6 +41,7 @@ export function japaneseSectionsFor(
       ...section,
       headingJa: master.headingJa,
       paragraphsJa: master.paragraphsJa,
+      paragraphsRuby: master.paragraphsRuby,
       japaneseComplete: true,
       masterStatus: master.editorialStatus,
       figureCaptionsJa: master.figureCaptionsJa,

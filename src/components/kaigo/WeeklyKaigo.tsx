@@ -562,7 +562,9 @@ export function DayReading({
               testID={`kaigo-source-${section.id}-${index}`}
               text={paragraph}
               tokens={
-                index === 0 && paragraph === section.japanese
+                section.paragraphsRuby?.[index]?.length
+                  ? section.paragraphsRuby[index]
+                  : index === 0 && paragraph === section.japanese
                   ? section.ruby
                   : undefined
               }

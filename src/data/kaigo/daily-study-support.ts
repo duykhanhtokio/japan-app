@@ -20,6 +20,7 @@ export function companionSectionsFor(entry: CatalogEntry): JapaneseReadingSectio
     if (!source || japaneseMasterRevision(source) !== revisions[id]) return [];
     return [{ id, heading: '', paragraphs: [], parentDay: entry.parentDay,
       headingJa: source.headingJa, paragraphsJa: source.paragraphsJa,
+      paragraphsRuby: source.paragraphsRuby,
       japaneseComplete: true, masterStatus: source.editorialStatus,
       figureCaptionsJa: source.figureCaptionsJa }];
   });
