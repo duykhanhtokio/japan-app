@@ -1,3 +1,11 @@
+# Tái lập và hoàn tất108cặp v9 — 03/11/2026
+
+Cả ba nhóm đã được tái lập bằng nội dung dịch thực tế và tự kiểm riêng: tổng108cặp/9444trường, 876bản câu hỏi dịch mới. `finalize-recovery-v9.cjs --apply` PASS, giữ348cặp ngoài phạm vi; áp dụng3chỉnh sửa tác giả muộn (TH/KM restaurant08 bỏ từ旬 chưa dịch, THsafety04 sửa lỗi gõ). Bản nguồn Nhật/catalog/sổ nguồn không đổi. Bản bàn giao được lưu theo nhóm để không phụ thuộc phiên tạm.
+
+`check-translations.cjs --require-complete` và loader thật PASS456/456, không còn cặp thiếu/cũ; revision cũ vàlocale không hỗ trợ bị từ chối. `git diff --check` PASS. Bằng chứng: recovery-v9/batch-1/2/3-integration.json, recovery-v9/final-integration.json và108sidecar tự kiểm. Giữ translated_ai_unreviewed; chưa duyệt bản ngữ/chuyên môn/thiết bị/thời lượng. Bao phủ nguồn vẫn100covered_ai/383known, mẫu số mở; phần ABC được bàn giao riêng để xử lý sau khi lưu đợt này. Không đồng nhất456bản dịch với bao phủ117trang. Log persistence sau commit là bằng chứng lưu từ xa.
+
+---
+
 # Tái lập v9 nhóm2 — 03/11/2026
 
 Planning06 và safety02/04 đủ36cặp/2604trường; thêm209bản câu hỏi dịch. Bộ tích hợp kiểm tra nested example/practice phát hiện EN/VI safety02 còn prompt và hai expectedPoints cũ: tác giả đã dịch đủ dữ kiện mới rồi tự rà toàn bộ nested arrays. Không dùng revision/hash mới để bỏ qua phần thiếu. Kiểm batch2, translations và loader thật PASS420/456, còn36thiếu-cũ; dữ liệu Nhật và sổ nguồn giữ nguyên. Bằng chứng recovery-v9/batch-2-integration.json. Mọi bản translated_ai_unreviewed, chưa có chứng nhận bản ngữ/chuyên môn/thiết bị/thời lượng. Log persistence sau commit xác nhận lưu đợt này.
