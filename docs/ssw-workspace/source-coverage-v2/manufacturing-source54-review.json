@@ -1,0 +1,260 @@
+{
+  "status": "AI_SELF_CHECKED_THREE_RECOGNITION_GROUPS_AND_COMPLETE_SOURCE72",
+  "groups": [
+    {
+      "packIndex": 0,
+      "group": "sample",
+      "units": [
+        {
+          "suffix": "extrema-location",
+          "statementJa": "膜厚の測定位置と局所値を対応させ、最小・最大を読み取る。",
+          "page": 72,
+          "bounds": [
+            0.07,
+            0.24
+          ],
+          "questionIndex": 0,
+          "conditionsJa": [
+            "独自試片の位置図と各点のμm値を照合する。"
+          ],
+          "exceptionsJa": [
+            "別位置の値と入れ替えない。"
+          ]
+        },
+        {
+          "suffix": "mean",
+          "statementJa": "同じ量・同じ単位の測定値の合計を、採用した測定数で割って平均を求める。",
+          "page": 72,
+          "bounds": [
+            0.25,
+            0.508
+          ],
+          "questionIndex": 1,
+          "conditionsJa": [
+            "五点の紙上例。局所値の合計と平均を区別する。"
+          ],
+          "exceptionsJa": [
+            "都合の悪い値を無断で削除しない。"
+          ]
+        },
+        {
+          "suffix": "local-limits",
+          "statementJa": "各位置の許容範囲を確認し、平均が範囲内でも下限未満や上限超過を見落とさない。",
+          "page": 72,
+          "bounds": [
+            0.07,
+            0.24
+          ],
+          "questionIndex": 2,
+          "conditionsJa": [
+            "教材の各点10～14μmを両端含む紙上条件として使う。"
+          ],
+          "exceptionsJa": [
+            "架空の条件を実製品の仕様としない。"
+          ]
+        },
+        {
+          "suffix": "mean-comparison",
+          "statementJa": "二試料の平均を同じ方法で計算して比較し、平均が等しくても局所値が同一とは判断しない。",
+          "page": 72,
+          "bounds": [
+            0.25,
+            0.508
+          ],
+          "newSource55": true,
+          "conditionsJa": [
+            "二組の各五点は同じμm単位で比較する独自の紙上例。"
+          ],
+          "exceptionsJa": [
+            "等しい平均を全点適合や同一分布の証明としない。"
+          ]
+        }
+      ]
+    },
+    {
+      "packIndex": 1,
+      "group": "instrument",
+      "units": [
+        {
+          "suffix": "xrf",
+          "statementJa": "蛍光X線の概念図で、試料を励起する入射X線と元素に関係するX線の検出を区別する。",
+          "page": 75,
+          "bounds": [
+            0.212,
+            0.279
+          ],
+          "questionIndex": 0,
+          "conditionsJa": [
+            "概念図での情報の役割を読む。"
+          ],
+          "exceptionsJa": [
+            "装置の実構造や操作権限を図から認定しない。"
+          ]
+        },
+        {
+          "suffix": "eddy-substrate",
+          "statementJa": "交流磁界を用いる概念図で、渦電流を導電性・非磁性基材側の現象として読む。",
+          "page": 75,
+          "bounds": [
+            0.137,
+            0.208
+          ],
+          "questionIndex": 1,
+          "conditionsJa": [
+            "図Bは非導電性皮膜と導電性非磁性基材を指定した例。"
+          ],
+          "exceptionsJa": [
+            "全積層品への適合保証としない。"
+          ]
+        },
+        {
+          "suffix": "calibration-fit",
+          "statementJa": "膜厚計を使う前に、基準試料・校正と基材/皮膜など試料条件の適合を照合する。",
+          "page": 74,
+          "bounds": [
+            0.102,
+            0.182
+          ],
+          "questionIndex": 2,
+          "conditionsJa": [
+            "教材の標準板による校正を出発点に、図は模式的で実機手順を指定しない。"
+          ],
+          "exceptionsJa": [
+            "μm表示や同じ原理名だけで適合・校正済みとしない。"
+          ]
+        }
+      ]
+    },
+    {
+      "packIndex": 2,
+      "group": "wetting",
+      "units": [
+        {
+          "suffix": "spread",
+          "statementJa": "はんだ濡れ性の観察教材で、面に沿って広がった付着を識別する。",
+          "page": 81,
+          "bounds": [
+            0.57,
+            0.66
+          ],
+          "questionIndex": 0,
+          "conditionsJa": [
+            "独自の同形試片を描いた見え方の例。"
+          ],
+          "exceptionsJa": [
+            "実加熱や浸漬条件を指定しない。"
+          ]
+        },
+        {
+          "suffix": "limited-observation",
+          "statementJa": "局所的な丸い付着と露出面の観察を、硬度や接合強さの測定・製品合否と区別する。",
+          "page": 81,
+          "bounds": [
+            0.57,
+            0.66
+          ],
+          "questionIndex": 1,
+          "conditionsJa": [
+            "見えている広がりの比較に限る。"
+          ],
+          "exceptionsJa": [
+            "画像だけで他性能を証明しない。"
+          ],
+          "additionalSource": {
+            "page": 80,
+            "bounds": [
+              0.69,
+              0.88
+            ]
+          }
+        },
+        {
+          "suffix": "sample-handling",
+          "statementJa": "濡れ性観察の後に試料識別と所定評価・判定手順を確認する。",
+          "page": 81,
+          "bounds": [
+            0.57,
+            0.66
+          ],
+          "questionIndex": 2,
+          "conditionsJa": [
+            "現行appの安全な確認方針。"
+          ],
+          "exceptionsJa": [
+            "源の濡れ性説明だけで完全な試料管理手順を認定しない。"
+          ],
+          "partial": true
+        }
+      ]
+    }
+  ],
+  "knowledgeIds": [
+    "mfg54-sample-extrema-location",
+    "mfg54-sample-mean",
+    "mfg54-sample-local-limits",
+    "mfg54-sample-mean-comparison",
+    "mfg54-instrument-xrf",
+    "mfg54-instrument-eddy-substrate",
+    "mfg54-instrument-calibration-fit",
+    "mfg54-wetting-spread",
+    "mfg54-wetting-limited-observation",
+    "mfg54-wetting-sample-handling"
+  ],
+  "sourcePagesFullyViewed": [
+    72,
+    74,
+    75,
+    80,
+    81,
+    182
+  ],
+  "source72FullInventory": {
+    "table6-1": "Every maximum/minimum/target-range/judgement cell in all3specimen rows checked. The app uses independent numbers, preserving lower/upper boundary reasoning.",
+    "formula": "Sum of same-unit measurements divided by count; source D/E means independently recomputed and compared.",
+    "table6-2": "Both rows, all5points, mean column and μm header self-compared; not copied as new app exercises.",
+    "figure6-7": "L-shaped specimen, five circled position markers and caption checked. App independently uses a100×60rectangle with different point layout and values.",
+    "remainingObjects": "Running header/footer/page label and vector/box background are navigation/decorative components; vector group also contains meaningful table/shape geometry and is retained as knowledge, not dropped.",
+    "newQuestionNeed": "Existing pack q02 only computed one mean. New source55 compares two independent five-point specimens, so this source comparison objective has its own assessment."
+  },
+  "source75_74Boundary": "XRF emitted-element information, eddy currents in conductive/nonmagnetic substrate, standard-plate calibration are bounded; no complete thickness-method source pages accepted.",
+  "source81Boundary": "Wetting spread and limited observation self-compared; specimen handling workflow remains partial, not silently accepted from the wetting paragraph.",
+  "source182Boundary": "Actual meter photograph and anodizing properties viewed; photo/whole hard-anodizing page not accepted from a conceptual instrument drawing.",
+  "actualAssetsViewedAndByteVerified": [
+    {
+      "id": "mfg38-sampling-map",
+      "path": "assets/manufacturing/recognition38/sampling-map.png",
+      "sha256": "53d55b42bfe8ac101d36f33293bbf967d27e06ad8294adcc14eca097a8a27717",
+      "bytes": 95313,
+      "pixelsManuallyViewed": true
+    },
+    {
+      "id": "mfg38-thickness-xrf",
+      "path": "assets/manufacturing/recognition38/thickness-xrf.png",
+      "sha256": "522968e9755fe749bb2b6f35a6d1b592a5242962ad4df2fc4edc78398008a1e0",
+      "bytes": 101132,
+      "pixelsManuallyViewed": true
+    },
+    {
+      "id": "mfg38-thickness-eddy",
+      "path": "assets/manufacturing/recognition38/thickness-eddy.png",
+      "sha256": "4785cba4f7320a4de9e2be0a6616c78cdb6cf6d4bffd7152ef353f9d0167fe5f",
+      "bytes": 108575,
+      "pixelsManuallyViewed": true
+    },
+    {
+      "id": "mfg38-wetting-observation",
+      "path": "assets/manufacturing/recognition38/wetting-observation.png",
+      "sha256": "961a6dec4f8882d89411e904b27f4abcd0597f2c98a52607e7a11c9553028671",
+      "bytes": 111707,
+      "pixelsManuallyViewed": true
+    }
+  ],
+  "sourceExamplesCopied": false,
+  "sourceImagesRepublished": false,
+  "all15RecognitionGroupsAccepted": false,
+  "allTranslationsSemanticallyReReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false
+}

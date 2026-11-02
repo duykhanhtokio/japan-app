@@ -7,7 +7,7 @@ def main():
  p=D/'manufacturing-region-dispositions.json';disp=json.loads(p.read_text());receipt=json.loads((D/'manufacturing-census-validation.json').read_text())
  # Keep the wrapped census disposition schema; no root-level element-ID keys.
  disp={k:v for k,v in disp.items() if k in ['schemaVersion','sector','basis','elements']}
- disp['basis']='Author source49/50/51/53 manual dispositions: three instructional overview pages,30explicit noninstructional exclusions and bounded technical claims.'
+ disp['basis']='Author source49–54 manual dispositions: four complete instructional pages,30explicit noninstructional exclusions and bounded technical/recognition claims.'
  assert isinstance(disp.get('elements'),dict)
  for row in receipt['artifacts']:
   path=R/row['path'];b=path.read_bytes();row.update(sha256=hashlib.sha256(b).hexdigest(),bytes=len(b));a=json.loads(gzip.decompress(b))

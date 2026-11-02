@@ -67,3 +67,16 @@ Sửa lỗi builder lấy nhầm hash nguồn cuối khi tra ứng viên bài. T
 Page92được xem và đối chiếu lại mọi vùng, sửa bbox bốn định nghĩa vốn lệch lên sơ đồ/đoạn trước; giữ đủ chữ nhỏ/ruby, sơ đồ bốn bậc và các mũi nối. Đây là trang instructional đầu tiên có semantic inventory và các ý đủ current evidence ở mức AI. Các trang89–100khác còn mở; riêngPDF90có mâu thuẫn severity6trong bảng với mô tả重症(hạng4ởPDF89), ghi blocker chứ không tự sửa.
 
 Canonical hiện72mục/27covered_ai/7blocked; một câu cũq18được tái dùng sau kiểm cả lựa chọn và đáp án cho hai điều kiện pháp lý/PPE, không thêm câu trùng. Ma trận1号→2号ghi rõ nền tảng dùng lại và phần trách nhiệm giám sát tăng thêm; không nhận đủ năng lực2号riêng cho ba nhánh. Nguồn toàn ngành vẫn mở, phần trămnull. Host72trường hợp kiểm cả hình mount qua registry; browserRNWebbuild đạt nhưng Chromium bịchặn socket, chưa cópixelruntime/native/Expo/thời lượng. Điều phối phải lưu và xác minhremote cho đợt này.
+
+
+## Source coverage v2 — đợt3 sau959bdb2a, 2026-11-02
+
+Đợt2đã được điều phối xác minh lưu959bdb2a8a78e0d2baf14af883aa82d444fa43d8. Tiếp đọc/xemleader101–108và111–115, thêm46đơn vị theo nguồn; canonicalhiện118mục/43covered_ai/7blocked, vẫn chưa có mẫu số đóng. Page104đủ danh mục năm nhóm/nguyên nhân và phân loại mọi phần tử, nhưng đánh giá đơn điệu còn mở nên không gọi đã bao phủ trang. Page92vẫn là một trang instructionalđủ dạy/đánh giá AI;28bìa/mục lục đã loại có lý do.
+
+Ba cụm19/20/22nối trực tiếp reader: xử lý near-misslặp lại/kiểm thực hiện/hiệu quả/phản hồi; chọn hỗ trợ theo nguyên nhân, kiểm năng lực người mới trước giao việc và hiểu đúng bàn giao; phối hợp bản vẽ cũ/mới, câu trả lời chưa cập nhật và giao diện với chuyên môn khác. Thêm36cặp dịch hoạt động,24cặp caption, haiPNGgốc cho20/22. Giữ112đoạn/50prompt, revisiontiến độ19=2/20=1/22=1; contentRevisionlần lượt4/2/2. Tổng12hoạt động/144cặp locale và9vị trí hình/8assetgốc, chưa đủ mọi ngày.
+
+Tìm và đọc appcũ trước khi thêm: shared379/382/383/307, q10-32/35/36. Chỉq35/q36được dùng trực tiếp cho các điều kiện khớp; không coiq32đóng mọi cách kiểm nhận diện. Hạ đánh giá đơn vị đọc specificationvềpartialvì câu chọn vật liệu không kiểm đủ yêu cầu phương pháp. Ma trận1号→2号có sáu nhóm trách nhiệm sâu hơn và exacthash, không nhận đủ2号riêng ngành.
+
+MHLWchính thức xác minh source108không được dùng thái độ/lỗi người bị hại để biện minh nhân cách tấn công; app21đã dạy/test đúng nên tái dùng. MHLWchỉ dẫn tuổi/khả năng bản2026áp dụng01-04-2026xác nhận đánh giá theo cá nhân/khối lượng và chuyên môn y tế, không dùng bản2020đã bãi bỏ làm quy định hiện tại. Không thayPDFnguồn. Nội dung đầy đủ lưuconstruction-official-comparisons.json.
+
+Các cờ native/domain/device/timevẫnfalse; browserchưa chạy vì blockerChromiumđã nêu đợt2. Chỉ báo đợt3đã lưu sauACKtừ điều phối.

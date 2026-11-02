@@ -1,3 +1,13 @@
+# Manufacturing source54–55 —2026-11-02
+
+Three successive recognition groups self-compared: sampling/extrema/means; thickness-instrument principles/fit; wetting observation. Fullsource72/74/75/80/81/182rasters and4actualappPNGs viewed. Complete technicalpage72inventory covers both tables/all5rows/all5pointmarkers/formula/captions; four bounded competencies now taught/assessed with original app numbers/layout. New source55adds1separate mean-comparison question/4distinct reasons/12targets/fullyannotatedJapanese, preserving every old bank/examID/revision. Other9questions reused after full option/reason/source/figure self-comparison. No copying source data/exercise/image.
+
+10newcanonicalunits,9coveredAI/1partial specimen-workflow claim (source81alone insufficient).110totalrows/77coveredAI(51reference+26competency)/1excludedparent;107directteaching/26directassessment.46visualpages/34complete semantic inventories=4instructionalcovered+30excluded. Remaining12of15recognitiongroups not accepted; technicalpages74/75/80/81/182remainpartial. Denominatoropen,coverage=null,whole574false.
+
+ActualRecognitionReader39locale+Attempt117flows; newsource55Attempt13flows/12targets/93negativeguards; captions/imagenodes/toggle/saveresume/revision/grading/rationalegating PASS. Strictnewhelper0diag,main/canonical/all574exactcensusrebuild PASS. No browser/productionExpo/physicaldevice/native/domain/time acceptance. See ../source-coverage-v2/manufacturing-source54-55-{REPORT.vi,validation,freeze}; source54plan/review andruntime receipts. Coordinator persistence pending. Freeze before helping hotelv6TH/KM.
+
+---
+
 # Manufacturing source53 — scoped historical33page acceptance,2026-11-02
 
 Directly viewed ALL30remaining full-page rasters:3covers/24TOC/3colophons. All3388retained elements now explicitly navigation/decorative with page-specific reasons; fingerprints/geometry/font/spans preserved. No technical destination page excluded, no raw source prose/image republished. Source53receipt includes individual source-text and private-render hashes/observed roles. Existing3electrical overview pages10–12remain covered reference in source50. Thus historical33page DISPOSITION completeAI=30excluded+3instructionalcovered; not33technicalmastery or574sourceclosure.

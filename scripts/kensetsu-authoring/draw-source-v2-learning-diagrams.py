@@ -29,3 +29,11 @@ d.text((215,350),'① 必要な数量を決める',font=f(27),fill='#193650');d.
 d.rectangle((490,520,710,590),fill='#b9ab93',outline='#655642',width=2)
 for a in [(520,545,560,565),(575,540,620,568),(637,542,680,562)]:d.line(a,fill='#755734',width=8)
 d.text((735,530),'切りくず',font=f(25),fill='#58432b');d.text((40,660),'清掃して終わり？　翌日の状態とルールの理解も確認する',font=f(28),fill='#193650');im.save(D/'shelf-five-roles.png')
+im=Image.new('RGB',(1200,720),'#f7f8fa');d=ImageDraw.Draw(im);d.text((40,25),'似た対象：返事と、対象の理解は同じ？',font=f(34),fill='#193650');d.text((40,80),'識別を考える模式図・操作や変更を指示する図ではありません',font=f(23),fill='#48596a')
+for x,label in [(300,'A12'),(850,'A21')]:
+ d.rectangle((x-35,170,x+35,555),fill='#aac3ca',outline='#3f5964',width=4);d.ellipse((x-85,300,x+85,470),fill='#d5e4e8',outline='#3f5964',width=5);d.ellipse((x-60,325,x+60,445),outline='#3f5964',width=9);d.line((x-60,385,x+60,385),fill='#3f5964',width=7);d.line((x,325,x,445),fill='#3f5964',width=7);d.rectangle((x-90,200,x+90,265),fill='white',outline='#193650',width=3);d.text((x-48,203),label,font=f(38),fill='#193650')
+d.text((55,605),'確認する情報：識別名・場所・適用時点・交代者への伝達',font=f(29),fill='#193650');d.text((55,660),'同じ色や似た名前だけで、対象を決めない',font=f(28),fill='#193650');im.save(D/'identification-handover.png')
+im=Image.new('RGB',(1200,720),'#faf9f4');d=ImageDraw.Draw(im);d.text((40,25),'二つの図書：版と取合いの確認',font=f(35),fill='#193650');d.text((40,80),'検討用の平面模式図・承認図や実際の寸法を示す図ではありません',font=f(23),fill='#48596a')
+for x,title in [(60,'平面図：旧版'),(650,'配管施工図：新版')]:
+ d.text((x+15,145),title,font=f(28),fill='#193650');d.rectangle((x,210,x+490,555),outline='#68757c',width=12);d.rectangle((x+210,310,x+280,450),fill='#929ba0',outline='#4b5256',width=3);d.text((x+205,470),'柱',font=f(26),fill='#424a4e')
+arrow(d,[(90,280),(510,280)],'#2677a5',width=16);arrow(d,[(680,380),(1100,380)],'#2677a5',width=16);d.rectangle((855,350,940,410),outline='#b44036',width=5);d.text((50,610),'経路が違う。柱との位置関係は、誰と何を照合する？',font=f(29),fill='#193650');d.text((50,660),'図書の整合を確認してから、施工図・手順・指示へ反映する',font=f(27),fill='#193650');im.save(D/'drawing-version-coordination.png')
