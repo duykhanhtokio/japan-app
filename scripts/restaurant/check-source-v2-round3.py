@@ -14,7 +14,7 @@ for level in ['1','2']:
  p=f'src/data/restaurant/source31/{level}.json';before=old(p);after=read(R/p)
  oq={q['id']:q for row in before['lessons'].values()for q in(row.get('exam')or{}).get('questions',[])};nq={q['id']:q for row in after['lessons'].values()for q in(row.get('exam')or{}).get('questions',[])}
  assert all(nq.get(id)==q for id,q in oq.items()),'Existing questions or readings changed'
- assert set(nq)-set(oq)==(ids if level=='1'else set());preserved.append(dict(level=level,questions=len(oq)));runtime_questions.update(nq)
+ assert (set(nq)-set(oq)) >= (ids if level=='1'else set());preserved.append(dict(level=level,questions=len(oq)));runtime_questions.update(nq)
  for lid,row in before['lessons'].items():
   for key in ['sections','figures','terms','references']:assert after['lessons'][lid][key]==row[key],(lid,key,'existing reader content changed')
 for q in a['questions']:
@@ -27,7 +27,7 @@ for q in a['questions']:
 locales=['vi','en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];preserved_locale={}
 for locale in locales:
  p=f'src/data/restaurant/source31/{locale}.json';before=old(p)['items'];after=read(R/p)['items'];assert all(after.get(id)==v for id,v in before.items()),locale
- assert set(after)-set(before)==ids,locale;preserved_locale[locale]=len(before)
+ assert (set(after)-set(before)) >= ids,locale;preserved_locale[locale]=len(before)
  targets=read(D/f'translations/{locale}/source-v2-r3-hygiene-20261102.json')['items'];assert set(targets)==ids
  for id,t in targets.items():
   assert after[id]==t and t['sourceHash']==canonical[id]['sourceHash'],(locale,id)

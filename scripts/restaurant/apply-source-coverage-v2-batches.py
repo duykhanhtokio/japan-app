@@ -52,7 +52,10 @@ def apply(result):
      v=canon[id];assert u['knowledgeId']in v['factIds'] or id in cross[u['knowledgeId']].get('questionIds',[]),(u['knowledgeId'],id,'Cross-objective reuse needs an explicit current fact binding');ae.append(evidence(str(CAN.relative_to(ROOT)),'/items/'+esc(id),v,r['assessmentReview']))
     else:
      path,ptr,v=oldq[id];ae.append(evidence(path,ptr,v,r['assessmentReview']))
-   assert te and ae;u.update(before=r['before'],teachingEvidence=te,assessmentEvidence=ae,conditionsJa=r['conditionsJa'],exceptionsJa=r['exceptionsJa'],after={'teaching':'present','assessment':'present'},assessmentRequirement='required',assessmentExemptionReason=None,status='covered_ai',expressionReview={'status':'independent_ai_checked','note':r['expressionReview']},sourceReview={'status':'self_checked_ai','conditionsChecked':True,'reviewRef':rr},unresolved=[])
+   assert te and ae
+   if r.get('statementJa'):
+    u['statementJa']=r['statementJa'];u['legacyScopeCorrection']=r['legacyScopeCorrection']
+   u.update(before=r['before'],teachingEvidence=te,assessmentEvidence=ae,conditionsJa=r['conditionsJa'],exceptionsJa=r['exceptionsJa'],after={'teaching':'present','assessment':'present'},assessmentRequirement='required',assessmentExemptionReason=None,status='covered_ai',expressionReview={'status':'independent_ai_checked','note':r['expressionReview']},sourceReview={'status':'self_checked_ai','conditionsChecked':True,'reviewRef':rr},unresolved=[])
   for inventory in review.get('pageInventories',[]):
    assert inventory['sourceTextAndVisualCompleteSelfReview'];sid=inventory['sourceId'];n=inventory['pdfPage'];p=pages[(sid,n)];file=p['regionCensus']['artifactPath'];assert file in docs
    ap=next(v for v in docs[file]['pages']if v['pdfPage']==n)

@@ -3,7 +3,7 @@
   "locale": "en",
   "shard": "integration",
   "canonicalFile": "docs/ssw-workspace/restaurant/source-closure31/canonical-ja.integration.json",
-  "canonicalSha256": "9e80049e48ad1c001aed62e3ba491b7adccd9153380de39b003bf9c944bc78d1",
+  "canonicalSha256": "1c9d6720dec0d6b0cb708fa9c156d28b0c67ebcdab9f0689c57e6232f456a795",
   "nativeReviewed": false,
   "domainReviewed": false,
   "items": {
@@ -1650,6 +1650,42 @@
         "(2,3,1) ≠ (2,1,3)",
         "(2,3,1) ≠ (3,2,1)",
         "(2,3,1) = (2,3,1)"
+      ]
+    },
+    "rst31-v2-r4-hyg-q001": {
+      "sourceHash": "0b00691fcda472155043555a4bcbe42d378cd118b0ca62e862c4ec378fd7e401",
+      "objective": "Match each problem with its corrective action.",
+      "stem": "Actions: A return/exchange; B investigate abnormal fridge temperature and adjust settings/request repair; C clean again and sanitize/disinfect as appropriate; D no food-handling work; E repeat correct handwashing. Match, in order: damaged packaging, abnormal fridge temperature, dirty utensils, dirty toilet, digestive symptoms, insufficient handwashing.",
+      "options": [
+        "A→B→D→C→C→E",
+        "B→A→C→C→D→E",
+        "A→B→C→C→D→E",
+        "A→B→C→C→E→D"
+      ],
+      "explanation": "Receiving defects require return/exchange; temperature abnormalities require checking cause and equipment. Clean and sanitize/disinfect utensils or toilets appropriately; stop food work for digestive symptoms and repeat inadequate handwashing. Heating does not automatically rescue every temperature-abused food.",
+      "reasons": [
+        "A/B/C/C/D/E≠A/B/D/C/C/E",
+        "A/B/C/C/D/E≠B/A/C/C/D/E",
+        "A/B/C/C/D/E＝A/B/C/C/D/E",
+        "A/B/C/C/D/E≠A/B/C/C/E/D"
+      ]
+    },
+    "rst31-v2-r4-hyg-q002": {
+      "sourceHash": "bf5ccfbe7627b8d125f9e2732819972048b03a4fe253009b796635b12e92315d",
+      "objective": "Link date, check item, problem and action in the record.",
+      "stem": "R = receiving; W = handwashing; × = a recorded failure. On 5/8 (8 May), damaged packaging was found and exchanged. On 5/9 (9 May), missed handwashing after the toilet was found and repeated correctly. Which record links dates and items without hiding failures?",
+      "options": [
+        "Mark all items good on both days, without notes",
+        "5/8:W×;5/9:R× + notes for each date",
+        "Combine them in next month’s unchecked cells",
+        "5/8:R×;5/9:W× + notes for each date"
+      ],
+      "explanation": "Record the actual date and item, with the observed problem and action in notes. Exchange or repeated washing does not erase the failure found. Never prefill unchecked dates.",
+      "reasons": [
+        "Do not omit a discovered problem after correction.",
+        "Swaps the items for 5/8:R and 5/9:W.",
+        "Use the actual date/item; do not fill unchecked cells.",
+        "Correctly links 5/8:R and 5/9:W."
       ]
     }
   }

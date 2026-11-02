@@ -1,3 +1,15 @@
+# Nhà hàng — tiếp nối ba nhóm nguồn và hồ sơ vệ sinh, 02/11/2026
+
+Từ mốc ea1b43c95: đối chiếu chữ/ảnh PDF vệ sinh1号 trang30/32/36, SHA khớp. Thêm2 câu độc lập về ghép6vấn đề–biện pháp và ghi nhận sự cố đúng ngày/mục; đủ24cặp dịch12ngôn ngữ,264trường và20trường chú âm mới. Nối riêng1câu phân loại quy trình đã có vào mục thành phần thực đơn sau khi rà năng lực, không tạo câu trùng chỉ để tăng số lượng. Giữ280câu bổ sung cũ,573bản ghi cũ mỗi locale, toàn bộ bài/câu gốc, hình, đoạn và dữ liệu người học.
+
+Sửa hẹp cách phát biểu ý nguồn trong sổ chuẩn: không gán điều kiện hôm trước cho mọi loại nước xốt; bảng xử lý sự cố chỉ chứng minh nguyên nhân/điều chỉnh/sửa thiết bị, không tự chứng minh thêm nghĩa vụ báo cáo. Nội dung và câu hỏi mới giữ rõ giới hạn không cứu mọi thực phẩm sai nhiệt độ chỉ bằng gia nhiệt. Ghi nhận lỗi không bị xóa chỉ vì đã đổi hàng/rửa tay lại.
+
+Kết quả:42ý covered_ai,295ý lịch sử còn thiếu đánh giá (298→295), sổ chuẩn còn316 assessment missing;575mục Nhật,282câu bổ sung,6900bản ghi/44256trường dịch. Hai số khoảng trống thuộc hai phạm vi khác nhau. Mẫu số toàn nguồn mở, phần trăm=null.
+
+PASS compiler strict12locale, strict targets, bảo toàn/đáp án/furigana lô4, ma trận639mục, v2registry và1235SSRrenders React/RNW.0cờ số mới;374cờ lịch sử giữ nguyên theo từng locale/id/field. Không coi SSR là browser/Expo/thiết bị hoặc thời lượng người học. Bằng chứng `source-coverage-v2/restaurant-r4-hygiene-validation-20261102.json` và `restaurant-r2-hygiene-records-source-review-20261102.json`. Lô đã đóng băng để root lưu; chỉ báo bền vững sau commit/push/fetch/WORK PERSISTENCE PASS.
+
+---
+
 # Nhà hàng — ba nhóm vệ sinh có nguồn, tiếp nối 02/11/2026
 
 Đọc chữ và ảnh PDF vệ sinh1号 trang25/27/30, đối chiếu SHA256 nguồn. Thêm3 câu tự soạn và36 cặp dịch đúng revision cho12 ngôn ngữ: hai giai đoạn ví dụ làm nguội Mỹ trong tài liệu cũ; không suy an toàn từ cá không có trong danh sách ví dụ Anisakis; phân loại riêng phần chính/xốt/gia vị theo quá trình thực tế2/3/1. Câu cuối nêu rõ phục vụ ngay và tái gia nhiệt trước phục vụ để tránh thiếu điều kiện. Không dùng ví dụ cũ làm quy định hiện hành chung.
