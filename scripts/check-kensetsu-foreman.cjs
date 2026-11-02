@@ -16,7 +16,7 @@ for(let n=1;n<=28;n++){
  useful(s.titleJa);useful(s.titleTranslations.vi);assert.equal(s.clusters.length,2);
  for(const ref of s.sourceReferences){assert.equal(ref.sourceId,ledger.sourceId);assert(ref.pdfPages.length);assert(ref.pdfPages.every(p=>Number.isInteger(p)&&p>=7&&p<=131));assert.deepEqual(ref.printedPages,ref.pdfPages.map(p=>p-6));}
  for(const c of s.clusters){
-  assert(!ids.has(c.id));ids.add(c.id);useful(c.titleJa);useful(c.titleTranslations.vi);assert.equal(c.paragraphs.length,2);
+  assert(!ids.has(c.id));ids.add(c.id);useful(c.titleJa);useful(c.titleTranslations.vi);assert.equal(c.paragraphs.length,n===22&&c.id.endsWith("-c1")?3:2);
   for(const p of c.paragraphs){assert(!paragraphIds.has(p.id));paragraphIds.add(p.id);useful(p.ja);useful(p.translations.vi);assert(!prose.has(p.ja),'Repeated Japanese paragraph');prose.add(p.ja);paragraphs++;}
   if(n>3){useful(c.applicationPromptJa);useful(c.applicationPromptTranslations.vi);prompts++;}
   if(c.illustration){const i=c.illustration;useful(i.captionJa);useful(i.captionTranslations.vi);assert(i.assetPath.startsWith('assets/kensetsu/foreman/'));const b=fs.readFileSync(path.join(root,i.assetPath));assert(b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])));assert.equal(b.readUInt32BE(16),1200);assert.equal(b.readUInt32BE(20),720);assert.equal(b.toString('ascii',b.length-8,b.length-4),'IEND');images++;}
@@ -62,7 +62,7 @@ for(const number of [12,13,14,15,16,17,18,19,20,22]){
   const entry=pack.sessions[id].entries.learningActivity;assert.equal(entry.sourceJa,activity.ja);useful(entry.translations[locale]);
  }
 }
-assert.equal(paragraphs,112);assert.equal(prompts,50);assert.equal(images,9);assert.equal(screen.paragraphs,paragraphs);assert.equal(screen.candidates.length,0);assert.equal(screen.rightsCertification,false);
+assert.equal(paragraphs,113);assert.equal(prompts,50);assert.equal(images,9);assert.equal(screen.paragraphs,paragraphs);assert.equal(screen.candidates.length,0);assert.equal(screen.rightsCertification,false);
 assert.equal(ledger.coverageDenominator,null);assert.equal(ledger.wholeSourceComplete,false);assert.equal(ledger.releaseReady,false);assert.equal(ledger.remainingTargetLocales.length,0);assert.equal(ledger.objectives.length,56);
 const report={date:'2026-11-02',status:'PASS_AUTHORED_DATA_AND_PRESERVATION',lessons:all.length,weeks:4,clusters:56,japaneseParagraphs:paragraphs,vietnameseParagraphs:paragraphs,newTranslatedApplicationPrompts:prompts,ungradedDepthActivities:12,depthActivityLocalePairs:144,workedScheduleEquationsChecked:39,instructionalIllustrationPlacements:images,originalDiagrams:8,originalThreeFilesBytePreserved:true,sourcePdfInRepository:false,wholeSourceCoverageConfirmed:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};
 fs.writeFileSync(path.join(dir,'content-qa-2026-11-02.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

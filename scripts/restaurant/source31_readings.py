@@ -7,7 +7,7 @@ import sys,json,collections,subprocess
 
 def apply_reviewed_question_overrides(rows,root):
  count=0
- for name in ['opsnext-reading-overrides-20261102.json','source-v2-reading-overrides-20261102.json','source-v2-round2-reading-overrides-20261102.json']:
+ for name in ['opsnext-reading-overrides-20261102.json','source-v2-reading-overrides-20261102.json','source-v2-round2-reading-overrides-20261102.json','source-v2-round3-reading-overrides-20261102.json']:
   path=root/'docs/ssw-workspace/restaurant/source-closure31/integration'/name
   if not path.is_file():continue
   receipt=json.loads(path.read_text());readings=receipt['readings']

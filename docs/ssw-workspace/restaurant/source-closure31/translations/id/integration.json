@@ -3,7 +3,7 @@
   "locale": "id",
   "shard": "integration",
   "canonicalFile": "docs/ssw-workspace/restaurant/source-closure31/canonical-ja.integration.json",
-  "canonicalSha256": "16940e81fabd712ae92d218f03502b05de6157d820d71d9218ffdcf96b96b367",
+  "canonicalSha256": "9e80049e48ad1c001aed62e3ba491b7adccd9153380de39b003bf9c944bc78d1",
   "items": {
     "rst31-hygiene2-noro-source-scope": {
       "sourceHash": "288d35c858b0cb11cd7f583c66947b6aa768da3003fa69f357b565ddf15f4db4",
@@ -1594,6 +1594,60 @@
         "Mempertahankan batas konteks tanpa mengubah ketidaktahuan menjadi fakta",
         "Populasi sama belum dipastikan",
         "Memperluas konteks lama ke semua keracunan kini"
+      ]
+    },
+    "rst31-v2-r3-hyg-q001": {
+      "sourceHash": "b1d373754134ee26b118bd90d6c809358514bd41b172faba063043d76ae1ee77",
+      "objective": "Bedakan dua tahap contoh pendinginan lama.",
+      "stem": "Urutan mana sesuai contoh pendinginan AS dalam teks lama? Ini bukan aturan terkini yang berlaku universal.",
+      "options": [
+        "≤21°C/2 h → ≤5°C/+4 h",
+        "21°C/2 h → 10°C/+4 h",
+        "21°C/4 h → 5°C/+2 h",
+        "5°C/2 h → 21°C/+4 h"
+      ],
+      "explanation": "Contoh lama: paling tinggi 21°C dalam 2 jam, lalu paling tinggi 5°C dalam 4 jam berikutnya. Periksa penerapan terkini secara terpisah; jangan mencampur batas.",
+      "reasons": [
+        "≤21°C/2 h → ≤5°C/+4 h",
+        "5°C ≠ 10°C",
+        "2 h / 4 h ≠ 4 h / 2 h",
+        "21°C → 5°C ≠ 5°C → 21°C"
+      ]
+    },
+    "rst31-v2-r3-hyg-q002": {
+      "sourceHash": "03e8f19e76fa2bc69e885d3749e507a59e80ab39977e0b3fbc9c912a4854d475",
+      "objective": "Jangan menganggap contoh ikan inang sebagai daftar aman.",
+      "stem": "Ikan yang dibeli tidak tercantum dalam contoh Anisakis. Apa yang dapat disimpulkan hanya dari ketiadaannya?",
+      "options": [
+        "Jeroannya boleh disajikan mentah",
+        "Pemeriksaan yang diperlukan tetap tidak boleh dilewatkan",
+        "Pemanasan tidak diperlukan",
+        "Tidak ada risiko"
+      ],
+      "explanation": "Spesies tersebut hanya contoh, bukan jaminan aman. Tidak tercantum bukan alasan melewatkan penyiapan atau pemeriksaan pembekuan/pemanasan yang diperlukan.",
+      "reasons": [
+        "Tidak tercantum tidak mengizinkan jeroan mentah.",
+        "Membedakan contoh dari jaminan aman.",
+        "Tidak tercantum tidak membuktikan pemanasan tidak perlu.",
+        "Tidak tercantum tidak membuktikan aman."
+      ]
+    },
+    "rst31-v2-r3-hyg-q003": {
+      "sourceHash": "fbd5ba8ec02a1ef3fb12b191877c6b739d5ce5e7213f56476ee797e969f87ad7",
+      "objective": "Kelompokkan setiap komponen berdasarkan proses nyata.",
+      "stem": "1 = tanpa pemanasan; 2 = dipanaskan lalu disajikan; 3 = dipanaskan, didinginkan lalu dipanaskan ulang. Urutkan: bagian utama dimasak hari ini dan segera disajikan, saus dimasak dan didinginkan kemarin lalu dipanaskan ulang sebelum disajikan, pelengkap mentah.",
+      "options": [
+        "1→2→3",
+        "2→1→3",
+        "3→2→1",
+        "2→3→1"
+      ],
+      "explanation": "Bagian utama adalah 2, saus yang dipanaskan/didinginkan kemarin 3, pelengkap mentah 1. Telusuri setiap komponen secara terpisah.",
+      "reasons": [
+        "(2,3,1) ≠ (1,2,3)",
+        "(2,3,1) ≠ (2,1,3)",
+        "(2,3,1) ≠ (3,2,1)",
+        "(2,3,1) = (2,3,1)"
       ]
     }
   }

@@ -1,3 +1,13 @@
+# Nhà hàng — ba nhóm vệ sinh có nguồn, tiếp nối 02/11/2026
+
+Đọc chữ và ảnh PDF vệ sinh1号 trang25/27/30, đối chiếu SHA256 nguồn. Thêm3 câu tự soạn và36 cặp dịch đúng revision cho12 ngôn ngữ: hai giai đoạn ví dụ làm nguội Mỹ trong tài liệu cũ; không suy an toàn từ cá không có trong danh sách ví dụ Anisakis; phân loại riêng phần chính/xốt/gia vị theo quá trình thực tế2/3/1. Câu cuối nêu rõ phục vụ ngay và tái gia nhiệt trước phục vụ để tránh thiếu điều kiện. Không dùng ví dụ cũ làm quy định hiện hành chung.
+
+Giữ277 câu bổ sung cũ và toàn bộ984 câu gốc, bài gốc, đoạn/hình/thuật ngữ bổ sung và570 bản ghi cũ mỗi locale. Thêm30 trường chú âm có căn chỉnh,36 cặp/396 trường dịch. Đóng hẹp3 ý với vùng nguồn và bằng chứng dạy/đánh giá trực tiếp;39 ý covered_ai trong sổ chuẩn1478 ý. Khoảng trống đánh giá theo sổ lịch sử301→298; sổ chuẩn còn319 assessment missing, không trộn hai mẫu số. Tổng source31 hiện280 câu và573 mục Nhật,6876 bản ghi/43992 trường dịch.
+
+PASS: compiler strict12locale; kiểm bảo toàn/đáp án/chú âm lô3; guard lô2; sổ source-coverage-v2; ma trận639mục; strict targets;1235render React/RNWSSR với12locale. Chưa browser/native.96cờ số mới ở lý do dùng so sánh số đã tự rà theo từng lựa chọn;278cờ lịch sử giữ nguyên, không nhận đã rà lại. Biên bản `source-coverage-v2/restaurant-r3-hygiene-validation-20261102.json`, nguồn `restaurant-r2-hygiene-followup-source-review-20261102.json`. Đã đóng băng thứ tự lựa chọn và các bản dịch mới, không đổi hash bản dịch cũ. Mẫu số nguồn vẫn mở, sourceCoveragePercent=null; không nghiệm thu toàn ngành, bản ngữ/chuyên môn, Expo/thiết bị hay thời lượng. Chỉ báo lưu sau root commit/push/fetch/WORK PERSISTENCE PASS.
+
+---
+
 # Nhà hàng — tiếp nối 2026-11-02: 319 ý còn thiếu đánh giá
 
 Đã thêm15câu gốc với180bản dịch đúngrevision cho12ngôn ngữ; nối21fact tới câu cũ sau đối chiếu chính xác năng lực, thay vì giữ9bản nháp trùng. Khoảng trống đánh giá355→319, tách riêng21fact tham chiếu đã loại khỏi phạm vi kiểm tra. Tổngsource31:255câu/545mục Nhật/6540bản ghi dịch/40620trường.

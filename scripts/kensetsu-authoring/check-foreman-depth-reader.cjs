@@ -40,7 +40,7 @@ const find=(t,id)=>{const n=t.root.findAll(x=>typeof x.type==='string'&&x.props.
    await act(async()=>find(t,'kensetsu-translation').props.onPress());
    assert.equal(text(find(t,`kensetsu-localized-${id}:learningActivity`).children),a.translations[locale]);
    for(const c of s.clusters)if(c.illustration){assert.equal(text(find(t,`kensetsu-localized-${c.id}:caption`).children),c.illustration.captionTranslations[locale],'Exact selected image caption locale');}
-   for(const c of s.clusters)for(const p of c.paragraphs)assert(text(t.toJSON()).includes(p.ja),'Existing teaching text remains visible');
+   for(const c of s.clusters)for(const p of c.paragraphs){assert(text(t.toJSON()).includes(p.ja),'Existing teaching text remains visible');assert.equal(text(find(t,`kensetsu-translation-${p.id}`).children),p.translations[locale],'Exact selected paragraph locale');}
    await act(async()=>{const r=find(t,'kensetsu-reader');r.props.onLayout({nativeEvent:{layout:{height:500}}});r.props.onContentSizeChange(430,1200);r.props.onScroll({nativeEvent:{layoutMeasurement:{height:500},contentSize:{height:1200},contentOffset:{y:700}}});});
    assert.equal(find(t,'kensetsu-complete').props.disabled,false);await act(async()=>find(t,'kensetsu-complete').props.onPress());assert.equal(completed,1);
    await act(async()=>t.unmount());cases++;

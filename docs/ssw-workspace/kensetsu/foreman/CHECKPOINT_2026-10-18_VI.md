@@ -80,3 +80,10 @@ Tìm và đọc appcũ trước khi thêm: shared379/382/383/307, q10-32/35/36. 
 MHLWchính thức xác minh source108không được dùng thái độ/lỗi người bị hại để biện minh nhân cách tấn công; app21đã dạy/test đúng nên tái dùng. MHLWchỉ dẫn tuổi/khả năng bản2026áp dụng01-04-2026xác nhận đánh giá theo cá nhân/khối lượng và chuyên môn y tế, không dùng bản2020đã bãi bỏ làm quy định hiện tại. Không thayPDFnguồn. Nội dung đầy đủ lưuconstruction-official-comparisons.json.
 
 Các cờ native/domain/device/timevẫnfalse; browserchưa chạy vì blockerChromiumđã nêu đợt2. Chỉ báo đợt3đã lưu sauACKtừ điều phối.
+
+
+## 2026-11-02 — bảng bản vẽ nguồn115: người lập, mục đích, người đọc
+
+Đọc và xemtoàntrang115/in109, đặcbiệt sáuôbảng. Bài022 thêm1đoạnđộc lập vàmởrộngprompt c1, đủ12ngônngữ gắnđúngNhật. Giữ112đoạncũ, promptcũ làtiền tố vàrevisiontiếnđộ1; contentRevision3. Tổng113đoạn,50prompt. Sáuýbảng códạy/đánhgiá trực tiếp (nămý mớiđóng), construction48/118covered_ai, mẫu sốmở và7blocker giữ. Khôngđóngtoàntrang115.
+
+Actualhostreader022 đạt24locale/ngàyđêm, đoạnNhật vàdịchđúnglocale, ẩndịch đầu, cuộncuối trước hoànthành, caption/hìnhregistry. Kiểm nguồn-v2 và authoreddata/preservation đạt. Đoạnmới sàng22ký tự chuẩnhoá trên131trang chữ>=10pt:0ứngviên, khôngchứngnhậnquyền. Hồsơconstruction-drawing115-followup-review/reader-validation.json. Khôngkiểmpixel/browser/native/chuyênmôn/bảnngữ/thờilượng. Rootcầnlưuvàxácminhremote.

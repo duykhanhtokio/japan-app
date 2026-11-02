@@ -24,6 +24,7 @@ def apply(result):
      selected=next(s['elementIds']for s in u['sourceRefs']if s['sourceId']==sid and s['pdfPage']==n);assert selected
     else:
      for e in ap['elements']:
+      if e['elementId'] in sel.get('elementIds',[]):selected.append(e['elementId'])
       if e['kind']!='text_span':continue
       block=int(re.search(r':t(\d+)-',e['elementId']).group(1));yes=False
       if 'textBlockRange'in sel:yes=sel['textBlockRange'][0]<=block<=sel['textBlockRange'][1]
