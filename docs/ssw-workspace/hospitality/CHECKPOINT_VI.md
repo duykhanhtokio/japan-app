@@ -1,3 +1,15 @@
+# Cơ chế nguồn → app v2 và vá nội dung — 02/11/2026
+
+Sổ chuẩn duy nhất cho độ bao phủ nguồn hiện tại là `../source-coverage-v2/hospitality.json`, theo hợp đồng chung. Đã xác minh hash hai PDF 52+65 trang; census đủ117 trang với16.381 vùng (gồm chữ nhỏ, ruby, hình, vector, bảng/cell). Census hình học không được dùng để suy ra đã lấy đủ kiến thức. 380 atom cũ không phải mẫu số cuối: phát hiện thêm định nghĩa revenue management thành đơn vị381. 22 trang được đọc văn bản và ảnh trang mới,74 đơn vị tự kiểm AI có evidence đúng vùng nguồn, đoạn bài và câu đánh giá;307 đơn vị kế thừa còn candidate/unknown. Chưa trang nào đóng semantic inventory, mẫu số mở, tỷ lệ để null và wholeSourceKnowledgeCovered=false.
+
+Vá thực sự các khoảng trống: thêm câu riêng về thông tin view/ẩm thực và nghĩa 空室/満室; nối lại câu có lời xin lỗi cho trường hợp không đáp ứng; thêm câu phân biệt account tag với hashtag. Viết lại cụm ví dụ nhu cầu khách bằng hai tình huống giả định độc lập, giữ điều kiện thực tế cơ sở/thực phẩm. Tổng câu323→326; giữ ID cũ, tất cả vị trí đáp án cũ và322 câu cũ nguyên lời (một câu ví dụ được viết lại). Không kết luận pháp lý từ kiểm tra biểu đạt.
+
+Hai bài planning01/04 ổn định Nhật nay đủ12 locale: sửa10 cặp cũ và tác giả14 cặp mới, toàn ngành149→173/456, còn283 cặp thiếu/cũ. Giữ272 bản bài ngoài phạm vi; mọi bản vẫn translated_ai_unreviewed. Tác giả hỗ trợ tự kiểm phần mình (hi/bn,ne/my,th/km), không rà chéo nội dung; khách sạn tự tác giả en/vi/id/zh-CN/zh-TW/tl và kiểm tích hợp cấu trúc. Furigana được tái tạo cho chữ mới, giữ các reading cũ đã có.
+
+Gate cấu trúc, source-atoms, readings, translations, loaders và canonical v2 PASS; `check-source-census-v2.cjs` kiểm giữ38 ID bài, đáp án cũ và đủ24 cặp planning. Chưa nghiệm thu toàn117 trang về ý nghĩa, mọi bảng/hình/chú thích, bản ngữ/chuyên môn, âm thanh, thời lượng thực học hoặc Expo production/thiết bị thật. Hướng tiếp theo: phân loại và tách ý còn lại theo vùng nguồn, viết JP độc lập và câu riêng, rồi mới dịch bài ổn định; không dùng census để đóng thiếu sót.
+
+---
+
 # Bài thứ năm và sáu đủ 12 ngôn ngữ — ngày 02/11/2026
 
 Hoàn tất tiếp `hotel-front-04` và `hotel-front-05`, đủ 12 ngôn ngữ theo đúng revision Nhật, toàn bộ 8 đoạn và 21 câu cùng các trường bài. Giữ concierge là xu hướng phân công theo quy mô, không biến thành nghĩa vụ; bổ sung thuật ngữ cashier và các câu riêng về vai trò, thông tin, nhân sự, cách nói điện thoại, hóa đơn/biên nhận, thuế theo điều kiện và chống tính trùng. Giữ tất cả ID/đáp án/thuật ngữ Nhật và nội dung ngoài hai bài.

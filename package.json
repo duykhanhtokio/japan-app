@@ -55,10 +55,11 @@
     "manufacturing:check": "node scripts/manufacturing/check.cjs",
     "manufacturing:recognition:build": "python3 scripts/manufacturing/build-recognition38.py",
     "manufacturing:device:prepare": "node scripts/manufacturing/create-device-qa.cjs",
-    "ssw:coverage:check": "node scripts/source-coverage-v2/check.cjs",
+    "ssw:coverage:check": "node scripts/source-coverage-v2/check.cjs && node scripts/source-coverage-v2/check-artifact-privacy.cjs",
     "ssw:coverage:report": "node scripts/source-coverage-v2/report.cjs",
     "ssw:coverage:require-complete": "node scripts/source-coverage-v2/check.cjs --require-covered",
-    "ssw:coverage:test": "node scripts/source-coverage-v2/check.test.cjs"
+    "ssw:coverage:test": "node scripts/source-coverage-v2/check.test.cjs",
+    "ssw:coverage:privacy": "node scripts/source-coverage-v2/check-artifact-privacy.cjs"
   },
   "private": true
 }

@@ -13,7 +13,7 @@
         {
           "id": "hotel-planning-01-needs",
           "title": "Tanyakan kebutuhan sebelum menentukan isi",
-          "body": "Perencanaan menggabungkan kamar, makanan, pengalaman lokal, dan sumber daya properti untuk kebutuhan kelompok tertentu. Produknya dapat berupa menginap, kunjungan sehari, atau acara makan siang. Sebelum menyebut fasilitas, pahami tujuan perjalanan, teman perjalanan, dan cara tamu ingin menikmati waktu. Ini membantu memperjelas nilai yang ditawarkan. Gunakan pertanyaan serta umpan balik tamu, bukan anggapan bahwa semua orang dalam kelompok menginginkan hal yang sama."
+          "body": "Perencanaan menghubungkan sumber daya fasilitas—kamar, makanan dan pengalaman setempat—dengan tujuan atau kesulitan nyata tamu sasaran. Produk dapat berupa menginap, penggunaan harian atau makan siang. Tanyakan tujuan perjalanan, pendamping, waktu yang tersedia dan kebutuhan makanan; jangan menetapkan keinginan hanya berdasarkan nama kelompok tamu.\n\nDalam latihan rekaan, sekelompok kecil tamu telah mengunjungi bengkel kerajinan setempat dan ingin beristirahat sekitar dua jam sebelum kegiatan berikutnya. Jika fasilitas menyediakan penggunaan harian, periksa tempat, jam, makanan dan minuman, harga serta kapasitas sebelum menyusun usulan istirahat. Dalam contoh lain, kelompok ingin makan siang saat berbelanja: tanyakan waktu dan pilihan makanan, lalu cocokkan dengan makan siang yang benar-benar dapat disediakan. Keduanya adalah asumsi latihan yang dibuat sendiri, bukan janji bahwa fasilitas tertentu menyediakan layanan tersebut.\n\nSetelah menyusun usulan, jelaskan kebutuhan siapa yang dipenuhi, apa yang diberikan dan syarat pelaksanaannya. Untuk pembatasan makanan, bahan setempat saja tidak membuktikan kesesuaian; periksa bahan dan cara pengolahan. Sesuaikan usulan sebelum ditawarkan apabila fasilitas, waktu atau harga belum cocok."
         },
         {
           "id": "hotel-planning-01-meal",
@@ -176,6 +176,81 @@
           "knowledgeIds": [
             "HK-planning-01-needs"
           ]
+        },
+        {
+          "id": "hotel-planning-01-q06",
+          "prompt": "Bagaimana menjelaskan uang yang dititipkan sebagai deposit?",
+          "choices": [
+            "Bedakan uang yang ditahan untuk menjamin penggunaan layanan dari harga kamar itu sendiri",
+            "Selalu menyebutnya tip tambahan",
+            "Menyebut seluruhnya layanan gratis",
+            "Tidak menjelaskan tujuan jumlah tersebut"
+          ],
+          "answerIndex": 0,
+          "explanation": "Jelaskan tujuan jumlah tersebut setelah mencocokkan penanganannya dengan bagian akuntansi.",
+          "knowledgeIds": [
+            "HK-planning-01-walkin"
+          ]
+        },
+        {
+          "id": "hotel-planning-01-q07",
+          "prompt": "Apa hubungan FIT dengan tamu yang kembali?",
+          "choices": [
+            "Keduanya selalu merupakan kategori yang sama",
+            "Cara mengatur perjalanan dan pengalaman menggunakan fasilitas berbeda, sehingga FIT dapat menjadi tamu yang kembali",
+            "FIT selalu tamu pertama kali",
+            "Hanya wisatawan rombongan yang dapat menjadi tamu berulang"
+          ],
+          "answerIndex": 1,
+          "explanation": "Cara menyusun perjalanan dan apakah seseorang pernah menggunakan fasilitas itu merupakan dua dasar pengelompokan yang berbeda.",
+          "knowledgeIds": [
+            "HK-planning-01-segments"
+          ]
+        },
+        {
+          "id": "hotel-planning-01-q08",
+          "prompt": "Apa perbedaan dasar paket satu malam dua kali makan dan B&B?",
+          "choices": [
+            "Yang pertama dua malam, yang kedua tanpa makanan",
+            "Keduanya selalu menggratiskan semua layanan",
+            "Yang pertama mencakup makan malam dan sarapan bersama penginapan, yang kedua sarapan",
+            "Keduanya pasti mencakup dua makan siang"
+          ],
+          "answerIndex": 2,
+          "explanation": "Periksa jumlah malam, jumlah makan dan layanan tambahan secara terpisah.",
+          "knowledgeIds": [
+            "HK-planning-01-meal"
+          ]
+        },
+        {
+          "id": "hotel-planning-01-q09",
+          "prompt": "Sekelompok kecil tamu selesai mengunjungi bengkel kerajinan lokal dan ingin beristirahat dua jam sebelum kegiatan berikutnya. Dalam latihan perencanaan rekaan ini, apa yang tepat?",
+          "choices": [
+            "Periksa tempat, jam, konsumsi, harga dan kapasitas, lalu susun usulan penggunaan harian yang sesuai",
+            "Anggap semua peserta pengalaman lokal ingin menginap",
+            "Anggap kunjungan bengkel saja membuktikan pembatasan makanan dapat dipenuhi",
+            "Jamin penggunaan dua jam tanpa memeriksa syarat penerimaan fasilitas"
+          ],
+          "answerIndex": 0,
+          "explanation": "Cocokkan tujuan nyata dengan kemampuan fasilitas, bukan hanya nama kelompok. Istirahat dua jam adalah asumsi soal ini. Periksa layanan nyata sebelum menyusun usulan.",
+          "knowledgeIds": [
+            "HK-planning-01-needs"
+          ]
+        },
+        {
+          "id": "hotel-planning-01-q10",
+          "prompt": "Lingkup produk mana yang sesuai dengan contoh perencanaan pada sumber?",
+          "choices": [
+            "Hanya produk menginap yang boleh direncanakan",
+            "Hanya menyusun jadwal petugas pembersihan kamar",
+            "Mencakup penggunaan harian atau prasmanan makan siang selain paket menginap",
+            "Hanya menyusun daftar nama tamu"
+          ],
+          "answerIndex": 2,
+          "explanation": "Sumber juga menyebut perencanaan penggunaan harian dan makan siang. Jangan membatasi perencanaan pada produk menginap.",
+          "knowledgeIds": [
+            "HK-planning-01-needs"
+          ]
         }
       ],
       "illustration": {
@@ -185,7 +260,7 @@
         "alt": "Perbandingan di sekitar kamar: makan malam dan sarapan, sarapan saja, menginap berturut-turut, serta penggunaan sehari.",
         "keyObjectiveId": "hotel-planning-01-objective"
       },
-      "sourceRevision": "b65fe2fe7af5020f990d490e785fd580cba69c9686e00bd718fc318f4bf25686",
+      "sourceRevision": "dc8ac37ff986ec5c649c75e551850c88aa0b2298a94f65fa6198ea8dd4d5a0c0",
       "status": "translated_ai_unreviewed",
       "title": "Menyusun paket menginap berdasarkan kebutuhan tamu"
     },
@@ -612,7 +687,7 @@
         {
           "id": "hotel-planning-04-local",
           "title": "Sampaikan daya tarik wilayah bersama",
-          "body": "Kerja sama asosiasi wisata dan bisnis lokal menjelaskan pengalaman di luar penginapan. Caranya antara lain memperkenalkan akun satu sama lain atau kampanye bersama. Konfirmasikan tanggal dan ketentuan agar unggahan tidak bertentangan. Menambah alasan mengunjungi wilayah juga mendukung penggunaan properti."
+          "body": "Kerja sama dengan asosiasi pariwisata dan usaha lokal dapat memperkenalkan daya tarik kawasan selain penginapan. Caranya antara lain memperkenalkan akun satu sama lain atau kampanye bersama. Pastikan waktu dan ketentuan dengan mitra agar unggahan tidak bertentangan. Menambah alasan untuk datang ke kawasan juga dapat mendukung penggunaan fasilitas. Penandaan akun merupakan salah satu cara menunjukkan akun mitra dari sebuah unggahan. Pastikan akun yang diperkenalkan dan ketentuan program bersama sebelum menggunakannya."
         },
         {
           "id": "hotel-planning-04-ugc",
@@ -745,6 +820,53 @@
           "knowledgeIds": [
             "HK-planning-04-analysis"
           ]
+        },
+        {
+          "id": "hotel-planning-04-q06",
+          "prompt": "Apa tujuan program partisipasi dengan hashtag bersama?",
+          "choices": [
+            "Memudahkan menemukan unggahan foto atau pengalaman tamu",
+            "Otomatis mendapat izin memakai ulang foto setelah menambahkan tag",
+            "Tidak perlu memeriksa ketentuan harga jika ada tag",
+            "Membuka semua informasi pribadi"
+          ],
+          "answerIndex": 0,
+          "explanation": "Menemukan unggahan dan memeriksa hak pemakaian ulang untuk iklan adalah dua tugas berbeda.",
+          "knowledgeIds": [
+            "HK-planning-04-ugc"
+          ]
+        },
+        {
+          "id": "hotel-planning-04-q07",
+          "prompt": "Tamu mengunggah pengalaman menginap di SNS. Tanggapan mana yang membangun interaksi sesuai sumber?",
+          "choices": [
+            "Mengabaikan unggahan dan hanya terus beriklan",
+            "Memakai foto publik untuk iklan tanpa izin",
+            "Memberi komentar atau reaksi sesuai kebijakan fasilitas dan menghargai percakapan",
+            "Selalu mengirim kalimat sama tanpa membaca isinya"
+          ],
+          "answerIndex": 2,
+          "explanation": "Sumber juga membahas komentar dan reaksi terhadap unggahan tamu. Berinteraksi tidak sama dengan memiliki izin menyalin foto atau materi lain.",
+          "knowledgeIds": [
+            "HK-planning-04-communication",
+            "HK-planning-04-local"
+          ]
+        },
+        {
+          "id": "hotel-planning-04-q08",
+          "prompt": "Unggahan memperkenalkan program bersama tempat pameran lokal. Apa tujuan menandai akun mitra?",
+          "choices": [
+            "Menunjukkan akun mitra dari unggahan",
+            "Menganggapnya fungsi untuk mengumpulkan unggahan tamu berdasarkan topik bersama",
+            "Menganggap isi mitra sebagai pengumuman resmi fasilitas tanpa memeriksa",
+            "Menjamin ketentuan sama walaupun syarat program berbeda"
+          ],
+          "answerIndex": 0,
+          "explanation": "Penandaan akun menunjukkan akun mitra dari unggahan. Bedakan dari hashtag bersama yang membantu menemukan unggahan. Periksa mitra, isi dan ketentuan program bersama.",
+          "knowledgeIds": [
+            "HK-planning-04-communication",
+            "HK-planning-04-local"
+          ]
         }
       ],
       "illustration": {
@@ -754,7 +876,7 @@
         "alt": "Hubungan unggahan foto properti dengan pertanyaan tamu, mitra wisata lokal, dan analitik.",
         "keyObjectiveId": "hotel-planning-04-objective"
       },
-      "sourceRevision": "d13d0574175c897e171925b7fa360cce84eee949aed45d4151e395b8f117d161",
+      "sourceRevision": "6bb547477ce7a6d88fbe32e5e29708f5de5b70408706d5a05ec53e23595451ea",
       "status": "translated_ai_unreviewed",
       "title": "Berkomunikasi melalui SNS dan belajar dari tanggapan"
     },

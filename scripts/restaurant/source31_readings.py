@@ -6,18 +6,26 @@ from pathlib import Path
 import sys,json,collections,subprocess
 
 def apply_reviewed_question_overrides(rows,root):
- path=root/'docs/ssw-workspace/restaurant/source-closure31/integration/opsnext-reading-overrides-20261102.json'
- if not path.is_file():return 0
- receipt=json.loads(path.read_text());readings=receipt['readings'];count=0
- for row in rows.values():
-  for q in (row.get('exam') or {}).get('questions',[]):
-   if not q['id'].startswith(receipt['questionIdPrefix']):continue
-   if q.get('sourceHash')!=receipt['questionSourceHashes'].get(q['id']):continue
-   sequences=[q['furigana']['stem'],q['furigana']['explanation'],*q['furigana']['options'],*q.get('reasonRuby',[])]
-   for sequence in sequences:
-    for segment in sequence:
-     if not segment.get('reading') and segment['text'] in readings:
-      segment['reading']=readings[segment['text']];count+=1
+ count=0
+ for name in ['opsnext-reading-overrides-20261102.json','source-v2-reading-overrides-20261102.json']:
+  path=root/'docs/ssw-workspace/restaurant/source-closure31/integration'/name
+  if not path.is_file():continue
+  receipt=json.loads(path.read_text());readings=receipt['readings']
+  for row in rows.values():
+   for section in row.get('sections',[]):
+    if section.get('sourceHash')!=receipt.get('sectionSourceHashes',{}).get(section['id']):continue
+    for sequence in section['furigana'].values():
+     for segment in sequence:
+      if not segment.get('reading') and segment['text'] in readings:
+       segment['reading']=readings[segment['text']];count+=1
+   for q in (row.get('exam') or {}).get('questions',[]):
+    if not q['id'].startswith(receipt['questionIdPrefix']):continue
+    if q.get('sourceHash')!=receipt['questionSourceHashes'].get(q['id']):continue
+    sequences=[q['furigana']['stem'],q['furigana']['explanation'],*q['furigana']['options'],*q.get('reasonRuby',[])]
+    for sequence in sequences:
+     for segment in sequence:
+      if not segment.get('reading') and segment['text'] in readings:
+       segment['reading']=readings[segment['text']];count+=1
  return count
 
 def annotate(rows, root):

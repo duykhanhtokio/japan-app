@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),Module=require('node:module');
+const root=path.resolve(__dirname,'../..'),{transformSync}=require('esbuild'),resolve=Module._resolveFilename;
+Module._resolveFilename=function(id,parent,...rest){let p=id==='react-native'?'react-native-web':id.startsWith('@/')?path.join(root,'src',id.slice(2)):id;if((p.startsWith('.')||path.isAbsolute(p))&&!path.extname(p)){for(const ext of ['.ts','.tsx']){const c=path.resolve(parent?path.dirname(parent.filename):root,p)+ext;if(fs.existsSync(c)){p=c;break;}}}return resolve.call(this,p,parent,...rest);};
+for(const ext of ['.ts','.tsx'])require.extensions[ext]=(m,file)=>m._compile(transformSync(fs.readFileSync(file,'utf8'),{loader:ext==='.tsx'?'tsx':'ts',format:'cjs',jsx:'automatic'}).code,file);
+const ruby=require(root+'/src/data/manufacturing/source49-readings.ts').manufacturingSource49Reading,
+ lesson=require(root+'/src/data/manufacturing/electrical.json').lessons.find(l=>l.id==='mfg1-electrical-l094'),patchPath=root+'/src/data/manufacturing/source49-thermal-clarification.json';
+assert(!require.cache[patchPath]);assert.equal(ruby({...lesson,id:'other'},'section-2','unrelated'),undefined);assert(!require.cache[patchPath]);
+const patch=require(patchPath),text=patch.wording.ja.after,parts=ruby(lesson,'section-2',text);assert(parts);assert.equal(parts.map(p=>p.text).join(''),text);
+for(const p of parts)if(/[一-龯々]/.test(p.text)){assert(p.reading);assert(/^[ぁ-ゖー]+$/.test(p.reading));}
+for(const [base,kana] of [['手動方式','しゅどうほうしき'],['設定値','せっていち'],['以上','いじょう'],['一定時間','いっていじかん'],['二種類','にしゅるい'],['金属板','きんぞくばん'],['貼り合わせた','はりあわせた']])assert(parts.some(p=>p.text===base&&p.reading===kana));
+let rejected=0;for(const [l,id,t] of [[{...lesson,sourceHash:'stale'},'section-2',text],[{...lesson,paragraphs:[]},'section-2',text],[lesson,'section-1',text],[lesson,'section-2',text+'changed'],[lesson,'section-2',undefined]]){assert.equal(ruby(l,id,t),undefined);rejected++;}
+const React=require('react'),{renderToStaticMarkup}=require('react-dom/server'),{Source49Japanese}=require(root+'/src/components/manufacturing/Source49Japanese.tsx');let rendered=0;
+for(const color of ['#111','#eee']){const html=renderToStaticMarkup(React.createElement(Source49Japanese,{lesson,paragraphId:'section-2',text,style:{color,fontSize:17,lineHeight:29}}));assert(html.includes('manufacturing-source49-ruby'));assert(html.includes('しゅどうほうしき'));assert(html.includes('きんぞくばん'));assert(html.includes('aria-label='));rendered++;}
+const fallback=renderToStaticMarkup(React.createElement(Source49Japanese,{lesson:{...lesson,id:'other'},paragraphId:'section-2',text:'unchanged',style:{fontSize:17}}));assert(fallback.includes('unchanged'));assert(!fallback.includes('manufacturing-source49-ruby'));
+console.log(JSON.stringify({status:'PASS',segments:parts.length,annotatedSegments:parts.filter(p=>p.reading).length,allKanjiAnnotated:true,contextReadingsChecked:7,staleCasesRejected:rejected,actualComponentSsr:rendered,preservedFallback:true,browserLayoutVerified:false,physicalDeviceTested:false}));

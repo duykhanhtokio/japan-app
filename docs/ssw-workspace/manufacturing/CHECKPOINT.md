@@ -1,3 +1,13 @@
+# Manufacturing source→app v2 — 2026-11-02
+
+Canonical acceptance view: `../source-coverage-v2/manufacturing.json`; other historical ledgers are provenance. All574page byte-backed census retains121195textspans including50056smallfont spans,871imageplacements,572vector-page groups and3links, with0font-based exclusions. Compressed region artifacts contain hashes/geometry, not source prose/pixels.57bounded atoms are active;267older coarser rows remain an index outside the denominator. Exact semantic/teaching/assessment dispositions replace page/topic-based closure. Only3bounded competencies currently meet covered_ai; denominator=open,coveragePercent=null,wholeSourceKnowledgeCovered=false.
+
+Fresh full-page visual reading mechanical89/electrical165/surface103. Source49 fixes4teaching facets in actual electrical094/section2:burnout-prevention purpose,manual signal reset after safety check,inclusive current/time conditions,andtwo bondedmetalplates. Japanese+12directtargets,independent effectiveJapanese revision;frozen core IDs/banks/progress retained.198rubysegments/66annotatedwords rendered only on matching source/text;all other paragraphs preserve prior Text output.13Readerflows/translationtoggle,55source-targetguards,13TextSSR,2rubycomponentSSR,5readingdriftguards,stricthelpertypes0diagnostics PASS. No new question claimed; precise assessment gaps remain open.
+
+Mainmanufacturing regression,source47and3calculation48groups PASS. New Reader bytes have exact invertible49projection/replay;unknown bytes reject without write;assembler replays49after40. Native primitive/storage/appearance adapters are explicit;no browser layout,physicaldevice,domain/nativeorlearnertime approval. See `../source-coverage-v2/manufacturing-REPORT.vi.md`,validation/census/source-review/typecheck receipts. Coordinator must persist and verify remote before claiming saved. No further manufacturing authoring runs after freeze.
+
+---
+
 # Manufacturing SSW1 — calculation48, three source-backed groups, 2026-11-02
 
 Integratedthreeoriginal calculationmodels with12newquestions/48distinctmathematicaloptionreasons/144question-localepairs and3readerextensions inJapanese+12targets. Mechanicaldensity123:materialvolumevsdeclaredcavity/inversevolume; electrical127:areaSIunits/R=ρℓ/S/length-area-diameter ratios; surface118/121:Faradaywithfictionalk,efficiency/timeinverse,totalmassvsareaunderfixeddeclaredconditions. Actualsourceelectrical127printsS[m²]correctly;superscriptlossisatextextractionissue,notasourceerror. Sourceexercise/imageexpressionnotcopied.

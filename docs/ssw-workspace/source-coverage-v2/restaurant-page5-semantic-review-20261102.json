@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "sector": "restaurant",
+  "sourceId": "rst-1-hygiene",
+  "pdfPage": 5,
+  "sourcePdfSha256": "640eaf4ae2a31ef047a4b6c74acb672c3ff2b04567c1f7e043217cf4f6ec1078",
+  "reviewer": "restaurant_v2_worker_self_review",
+  "sourceTextRead": true,
+  "wholePageVisualReviewed": true,
+  "semanticInventoryCompleteAi": true,
+  "reviewLimitation": "Complete page inventory means every retained source region has a semantic decision; it does not mean all teaching/assessment has been accepted. No native/domain acceptance.",
+  "newUnits": [
+    {
+      "knowledgeId": "rst-v2-hygiene1-contamination-consumer-symptoms",
+      "statementJa": "病原体に汚染された食品を人が食べることで、おう吐や下痢などの健康被害が起こり得る。",
+      "importance": "safety",
+      "conditionsJa": [
+        "細菌・ウイルスが付いた食品を食べた人への健康被害を説明する。",
+        "おう吐と下痢は例であり、すべての患者に同じ症状が出るとは教えない。"
+      ],
+      "exceptionsJa": [],
+      "teachingItemId": "rst-v2-hygiene1-a-consumer-symptoms",
+      "unresolved": "",
+      "assessmentQuestionId": "rst31-v2-hyg-q005",
+      "expressionNote": "New preparation-surface example, causal explanation, and distinct misconceptions independently authored. Symptom examples and uncertainty preserved; no source paragraph/table image reproduced. AI self-check, not legal certification."
+    },
+    {
+      "knowledgeId": "rst-v2-hygiene1-cause-specific-response",
+      "statementJa": "食中毒対策は原因の種類と特徴に合わせて選び、異なる原因の管理を取り違えない。",
+      "importance": "safety",
+      "conditionsJa": [
+        "細菌・ウイルス・化学物質・寄生虫の区分と各対策の関係を使う。"
+      ],
+      "exceptionsJa": [],
+      "teachingItemId": "rst31-hygiene1-a-taxonomy",
+      "unresolved": "Existing q262 directly assesses why different hazards need different controls, but its glass-versus-detergent example does not prove choosing controls for all four source cause classes. Reuse is partial; do not claim full assessment acceptance.",
+      "existingAssessmentQuestionIds": [
+        "rst-1-q262"
+      ]
+    }
+  ],
+  "textBlockDecisions": [
+    {
+      "from": 0,
+      "to": 19,
+      "knowledgeIds": [],
+      "classification": "navigation",
+      "reason": "Section title and ruby identify the section; no standalone factual assertion."
+    },
+    {
+      "from": 20,
+      "to": 34,
+      "knowledgeIds": [
+        "rst31-hygiene1-f-outbreak-workers",
+        "rst31-hygiene1-f-outbreak-supplier",
+        "rst31-hygiene1-f-outbreak-heat-storage"
+      ],
+      "classification": "knowledge",
+      "reason": "Introductory framing: hygiene failures are common causal routes, detailed by four following bullets."
+    },
+    {
+      "from": 35,
+      "to": 51,
+      "knowledgeIds": [
+        "rst31-hygiene1-f-outbreak-workers"
+      ],
+      "classification": "knowledge",
+      "reason": "Worker illness and inadequate hand washing."
+    },
+    {
+      "from": 52,
+      "to": 63,
+      "knowledgeIds": [
+        "rst31-hygiene1-f-outbreak-supplier"
+      ],
+      "classification": "knowledge",
+      "reason": "Upstream supplier hygiene."
+    },
+    {
+      "from": 64,
+      "to": 78,
+      "knowledgeIds": [
+        "rst31-hygiene1-f-outbreak-heat-storage"
+      ],
+      "classification": "knowledge",
+      "reason": "Inadequate heating and temperature management are separate routes."
+    },
+    {
+      "from": 79,
+      "to": 83,
+      "knowledgeIds": [],
+      "classification": "navigation",
+      "reason": "Subsection heading introduces the cause classification."
+    },
+    {
+      "from": 84,
+      "to": 95,
+      "knowledgeIds": [
+        "rst31-hygiene1-f-bacterial-taxonomy",
+        "rst31-hygiene1-f-viral-taxonomy",
+        "rst31-hygiene1-f-chemical-physical",
+        "rst31-hygiene1-f-parasite-taxonomy",
+        "rst-v2-hygiene1-cause-specific-response"
+      ],
+      "classification": "knowledge",
+      "reason": "Three table headers establish class / example agent / relevant controls; association retained."
+    },
+    {
+      "from": 96,
+      "to": 114,
+      "knowledgeIds": [
+        "rst31-hygiene1-f-bacterial-taxonomy",
+        "rst31-hygiene1-f-three-principles"
+      ],
+      "classification": "knowledge",
+      "reason": "Bacterial class, examples including O157, and its three prevention controls."
+    },
+    {
+      "from": 115,
+      "to": 126,
+      "knowledgeIds": [
+        "rst31-hygiene1-f-viral-taxonomy"
+      ],
+      "classification": "knowledge",
+      "reason": "Viral class, two example viruses, four controls."
+    },
+    {
+      "from": 127,
+      "to": 141,
+      "knowledgeIds": [
+        "rst31-hygiene1-f-chemical-physical"
+      ],
+      "classification": "knowledge",
+      "reason": "Chemical class, detergent/insecticide/pesticide examples and prevent attachment."
+    },
+    {
+      "from": 142,
+      "to": 153,
+      "knowledgeIds": [
+        "rst31-hygiene1-f-parasite-taxonomy"
+      ],
+      "classification": "knowledge",
+      "reason": "Parasite class, Anisakis/roundworm examples and attachment/inactivation controls."
+    },
+    {
+      "from": 154,
+      "to": 175,
+      "knowledgeIds": [
+        "rst-v2-hygiene1-contamination-consumer-symptoms"
+      ],
+      "classification": "knowledge",
+      "reason": "Causal definition: contaminated food consumed by people can cause vomiting/diarrhea and other health harm."
+    },
+    {
+      "from": 176,
+      "to": 201,
+      "knowledgeIds": [
+        "rst31-hygiene1-f-chemical-physical",
+        "rst-v2-hygiene1-contamination-consumer-symptoms"
+      ],
+      "classification": "knowledge",
+      "reason": "Sentence transition plus nonmicrobial harmful contamination: chemical examples and glass/metal fragments."
+    },
+    {
+      "from": 202,
+      "to": 218,
+      "knowledgeIds": [
+        "rst-v2-hygiene1-cause-specific-response"
+      ],
+      "classification": "knowledge",
+      "reason": "Select prevention suited to the characteristics of each cause class."
+    },
+    {
+      "from": 219,
+      "to": 235,
+      "knowledgeIds": [
+        "rst31-hygiene1-f-historic-statistics",
+        "rst-v2-hygiene1-cause-specific-response"
+      ],
+      "classification": "knowledge",
+      "reason": "Source-era above-90-percent statement motivates bacterial/viral countermeasure understanding; not a current incidence estimate."
+    },
+    {
+      "from": 236,
+      "to": 236,
+      "knowledgeIds": [],
+      "classification": "navigation",
+      "reason": "Printed page number 1, not PDF page index or instructional content."
+    }
+  ],
+  "nonTextDecision": {
+    "kinds": [
+      "vector",
+      "table"
+    ],
+    "classification": "knowledge",
+    "knowledgeIds": [
+      "rst31-hygiene1-f-bacterial-taxonomy",
+      "rst31-hygiene1-f-three-principles",
+      "rst31-hygiene1-f-viral-taxonomy",
+      "rst31-hygiene1-f-chemical-physical",
+      "rst31-hygiene1-f-parasite-taxonomy",
+      "rst-v2-hygiene1-cause-specific-response"
+    ],
+    "reason": "Twenty vector paths form the four-row, three-column table and its borders; the detected table duplicates that geometric grouping. Both are kept as source regions and linked to the row objectives, never counted as new knowledge units."
+  },
+  "tableCellAudit": {
+    "columns": [
+      "cause class",
+      "representative agents",
+      "main prevention"
+    ],
+    "rows": [
+      {
+        "classJa": "細菌性",
+        "examplesJa": [
+          "腸管出血性大腸菌（O157など）",
+          "サルモネラ属菌",
+          "ブドウ球菌"
+        ],
+        "controlsJa": [
+          "付着防止",
+          "増殖抑制",
+          "殺菌"
+        ]
+      },
+      {
+        "classJa": "ウイルス性",
+        "examplesJa": [
+          "ノロウイルス",
+          "E型肝炎ウイルス"
+        ],
+        "controlsJa": [
+          "付着防止",
+          "不活化",
+          "持込み防止",
+          "拡散防止"
+        ]
+      },
+      {
+        "classJa": "化学性",
+        "examplesJa": [
+          "洗剤",
+          "殺虫剤",
+          "農薬"
+        ],
+        "controlsJa": [
+          "化学物質の混入防止"
+        ]
+      },
+      {
+        "classJa": "寄生虫",
+        "examplesJa": [
+          "アニサキス",
+          "回虫"
+        ],
+        "controlsJa": [
+          "付着防止",
+          "失活"
+        ]
+      }
+    ],
+    "independentSummaryNotSourceTableReproduction": true
+  },
+  "imageAudit": "No raster image on this page. Table lines, labels, ruby, headings and footer all retained; no font-size exclusions."
+}

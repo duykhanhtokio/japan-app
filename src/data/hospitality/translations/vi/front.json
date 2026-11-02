@@ -2,7 +2,7 @@
   "lessons": [
     {
       "id": "hotel-front-01",
-      "sourceRevision": "c09c65355c50ec176cceb07c5de9809974e2344e3a803aa4d2c7c093732dfd5d",
+      "sourceRevision": "c3b57208573831ce11325b31faa7294cc670e1142573b4ac8e3387221752ada8",
       "status": "translated_ai_unreviewed",
       "title": "Kiểm tra điều kiện trước khi nhận đặt phòng",
       "reading": "よやくまえのかくにんとわかりやすいあんない",
@@ -156,8 +156,6 @@
           "answerIndex": 3,
           "explanation": "Thông tin địa phương cũng thuộc phạm vi hỗ trợ. Không trả lời phỏng đoán khi chưa rõ.",
           "knowledgeIds": [
-            "hotel-front-01-k0401-h1p007",
-            "hotel-front-01-k0401-h2p011",
             "hotel-front-01-k0402-h1p007",
             "hotel-front-01-k0402-h2p011"
           ]
@@ -236,6 +234,38 @@
             "hotel-front-01-k0201-h1p007",
             "hotel-front-01-k0201-h2p009",
             "hotel-front-01-k0201-h2p010",
+            "hotel-front-01-k0202-h1p007",
+            "hotel-front-01-k0202-h2p010"
+          ]
+        },
+        {
+          "id": "hotel-front-01-q09",
+          "prompt": "Khi tư vấn cho khách coi trọng cả cảnh quan và món ăn, cách nào phù hợp?",
+          "choices": [
+            "Chưa kiểm tra nhưng hứa mọi phòng đều có cảnh quan và món ăn giống nhau",
+            "Hỏi điều khách quan tâm, kiểm tra cảnh nhìn từ phòng và món ăn rồi giải thích",
+            "Không giải thích vì cho rằng cảnh quan và món ăn không liên quan đến đặt phòng",
+            "Chỉ thông báo lịch sự kiện địa phương rồi kết thúc câu trả lời"
+          ],
+          "answerIndex": 1,
+          "explanation": "Cảnh quan và món ăn cũng giúp khách quyết định đặt phòng. Hãy hỏi điều khách coi trọng và đối chiếu với phòng, gói đang bán. Không hứa đồng loạt những nội dung chưa kiểm tra.",
+          "knowledgeIds": [
+            "hotel-front-01-k0401-h1p007",
+            "hotel-front-01-k0401-h2p011"
+          ]
+        },
+        {
+          "id": "hotel-front-01-q10",
+          "prompt": "Cặp giải thích nào đúng về tình trạng có phòng để bán?",
+          "choices": [
+            "空室 là không còn phòng; 満室 là còn phòng",
+            "空室 là được ở miễn phí; 満室 là mọi phòng cùng giá",
+            "空室 là còn phòng có thể bán; 満室 là không còn phòng trống",
+            "空室 chỉ là đang dọn sau trả phòng; 満室 là có khách hủy đặt phòng"
+          ],
+          "answerIndex": 2,
+          "explanation": "空室 và 満室 phân biệt có thể cung cấp phòng vào ngày khách muốn ở hay không. Hai từ này tự chúng không mô tả giá hoặc tình trạng dọn phòng. Cần kiểm tra đúng ngày trước khi xác nhận đặt phòng.",
+          "knowledgeIds": [
             "hotel-front-01-k0202-h1p007",
             "hotel-front-01-k0202-h2p010"
           ]

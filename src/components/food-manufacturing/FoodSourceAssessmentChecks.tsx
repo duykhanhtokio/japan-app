@@ -13,13 +13,15 @@ import additions45 from '@/data/food-manufacturing/source-closure45.json';
 import additions46 from '@/data/food-manufacturing/source-closure46.json';
 import additions47 from '@/data/food-manufacturing/source-closure47.json';
 import additions48 from '@/data/food-manufacturing/source-closure48.json';
+import additions49 from '@/data/food-manufacturing/source-closure49.json';
+import additions50 from '@/data/food-manufacturing/source-closure50.json';
 import type {FoodManufacturingLesson} from '@/data/food-manufacturing';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 
 type RubyToken={text:string;reading?:string};
 type Translation={title:string;prompt:string;expectedPoints:string[];sourceHash:string};
 type RuntimeCheck={id:string;lessonId:string;lessonSourceHash:string;titleJa:string;promptJa:string;expectedPointsJa:string[];sourceHash:string;titleRuby:RubyToken[];promptRuby:RubyToken[];expectedPointsRuby:RubyToken[][];translations:Record<string,Translation>};
-const checks:RuntimeCheck[]=[...data.checks,...additions35.checks,...additions38.checks,...additions39.checks,...additions40.checks,...additions41.checks,...additions42.checks,...additions43.checks,...additions44.checks,...additions45.checks,...additions46.checks,...additions47.checks,...additions48.checks];
+const checks:RuntimeCheck[]=[...data.checks,...additions35.checks,...additions38.checks,...additions39.checks,...additions40.checks,...additions41.checks,...additions42.checks,...additions43.checks,...additions44.checks,...additions45.checks,...additions46.checks,...additions47.checks,...additions48.checks,...additions49.checks,...additions50.checks];
 function RubyLine({tokens,color,readingColor,heading=false}:{tokens:RubyToken[];color:string;readingColor:string;heading?:boolean}){
  return <View style={styles.line}>{tokens.map((token,i)=><View key={i} style={styles.word}><Text style={{color:readingColor,fontSize:10,lineHeight:14}}>{token.reading??' '}</Text><Text selectable style={{color,fontSize:heading?19:17,lineHeight:29,fontWeight:heading?'700':'400'}}>{token.text}</Text></View>)}</View>;
 }

@@ -45,6 +45,19 @@ def main():
   for name,dest in [('facts',facts),('additions',additions),('questions',questions),('figures',figures),('glossaryAdditions',terms),('officialReferenceLinks',references)]:
    for item in packet.get(name,[]):
     key=item['id'];assert key and key not in dest,(name,key);dest[key]={**item,'shard':shard}
+ # Source-reader additions leave the six authors' frozen packets unchanged.
+ teaching_path=DOC/'integration/source-v2-teaching-delta.json'
+ if teaching_path.is_file() and not args.export_only:
+  extension=read(teaching_path);inputhashes[str(teaching_path.relative_to(ROOT))]=hashlib.sha256(teaching_path.read_bytes()).hexdigest()
+  for fact in extension['facts']:
+   if fact['shard'] not in selected:continue
+   assert fact['id'] not in facts;facts[fact['id']]=fact
+   for uid in fact['unitIds']:
+    assert uid in allunits
+    allunits[uid]={**allunits[uid],'factIds':sorted(set(allunits[uid]['factIds']+[fact['id']]))}
+  for a in extension['additions']:
+   if a['shard'] not in selected:continue
+   assert a['id'] not in additions;additions[a['id']]=a
  # Root assessment-only extension leaves the six authors' frozen packets unchanged.
  assessment_path=DOC/'integration/assessment-delta.json'
  if assessment_path.is_file() and not args.export_only:

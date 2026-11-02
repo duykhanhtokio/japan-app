@@ -43,3 +43,16 @@ Ba bài lên revision2, giữ ID và toàn bộ thân bài, prompt, hình, ngu�
 Scriptbuild-foreman-source-region-register.py tạo chỉ mục131/131trang,1.921vùng chữ/hình cóbox/hash, kèm số đối tượng vector và ứng viên liên kết bài theo trang. Chữ ruby/đầu/chân trang giữ trong nhóm hình học để phân loại tiếp; không xuất văn bản/ảnh nguồn vào kho. Đây là chỉ mục cơ học, không phải1.921ý kiến thức hay bằng chứng đủ131trang. Mẫu số kiến thức vẫnnull,wholeSourceCompletevẫnfalse.
 
 ActualKensetsuDayReaderhostđạt72trường hợp3bài×12locale×2chế độ; ẩn dịch ban đầu, mở đúnglocale, giữ thân bài cũ, yêu cầu cuộn cuối trước hoàn thành và từ chốioverlaycũ. Đó không phảiExpo/native/pixel. Validator dữ liệu đạt28bài/112đoạn/50promptgốc/bốn sơ đồ; bảy hoạt động tăng chiều sâu hiện có84cặp locale. So257chuỗi Nhật và bản bỏkana với chữ nguồn>=10pt: không có ứng viên22ký tự; không chứng nhận quyền hoặc ngữ nghĩa. Không có duyệt chuyên môn/bản ngữ/thiết bị thật/thời lượng mới. Điều phối phảicommit/push/fetchvà xác minhremote trước tuyên bố lưu bền.
+
+
+## Source coverage v2 — 2026-11-02
+
+Áp dụng yêu cầu mới về đối chiếu từ nguồn tới app. Sổ nghiệm thu chuẩn là `docs/ssw-workspace/source-coverage-v2/construction.json`; các sổ cũ chỉ còn vai trò nguồn gốc bằng chứng. Đã xác minh lại đủ 17 PDF/604 trang danh nghĩa, 15 hash/530 trang duy nhất; text1k khác hash vẫn có source ID riêng, không tự nhập chung vì giống chữ chính. Census giữ 115.623 phần tử vật lý: 109.643 khối chữ kể cả ruby/nhãn nhỏ, 1.901 vị trí ảnh và 4.079 đối tượng vector. Chúng không phải số ý kiến thức; source text/ảnh/PDF không đưa vào Git.
+
+Đọc và xem PDF89–100 của leader, tách 71 mục kiến thức/điều kiện/tham khảo với liên kết vùng nguồn chính xác. Chỉ 6 mục đạt bằng chứng dạy và đánh giá ở mức tự kiểm AI; 6 mục mô hình ý thức/độ tin cậy giữ bị chặn vì chưa xác minh cơ sở và phạm vi áp dụng. Những bảng điểm, quan hệ tra mức rủi ro, kỹ năng tự phát hiện nguy hiểm hoặc đầy đủ thao tác chỉ tay chưa được đóng bằng một bài cùng chủ đề. Không trang nào được nâng thành đầy đủ mọi ý, mẫu số toàn ngành vẫn mở.
+
+Ba bài017/018/019 lên revision2, giữ nguyên toàn bộ đoạn, prompt và metadata cũ ngoài revision; thêm hoạt động độc lập có kana và 36 cặp dịch: so thang cộng/nhân với dữ kiện tự tạo; kiểm bằng chứng hiệu quả 5S, có dạy rõ mục tiêu chất lượng/năng suất/nguyên giá; kiểm bản ghi KY theo giai đoạn và giới hạn của hô khẩu hiệu. Không đưa ví dụ điểm9/24 thành quyền bắt đầu hoặc tiếp tục công việc. Actual day-reader host72 trường hợp PASS, ẩn/hiện đúng ngôn ngữ, giữ nội dung cũ, cuộn cuối trước hoàn thành và chặn overlay cũ.
+
+Bảo toàn 112 đoạn/50 prompt cũ và mọi bản dịch cũ; 260 chuỗi Nhật được so trùng đoạn liên tiếp22ký tự với chữ nguồn chính, không có ứng viên; đây không phải duyệt quyền hoặc phát hiện mọi cách diễn đạt tương tự. Source region/element/hash gate PASS, thời lượng/chuyên môn/bản ngữ/thiết bị thật vẫn chưa đạt. Root phải lưu và xác minh remote trước khi tuyên bố bền vững.
+
+Phạm vi trạng thái v2 được làm rõ: unknown là chưa có mapping trong các đoạn/hoạt động 職長016–019 đã rà, không phải đã chứng minh thiếu toàn app. Mười một liên kết hoạt động chỉ đủ một phần; chi tiết quản lý hạn chế ra vào chưa rõ trong đoạn đã chọn. Các ngân hàng khác chưa được quét ngữ nghĩa toàn bộ cho71mục này.

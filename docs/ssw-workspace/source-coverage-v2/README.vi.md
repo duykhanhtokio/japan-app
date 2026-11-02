@@ -15,6 +15,7 @@ PDF, chữ trích xuất và ảnh trang nguồn nằm ngoài kho công khai. S�
 ```
 node scripts/source-coverage-v2/check.test.cjs
 node scripts/source-coverage-v2/check.cjs
+node scripts/source-coverage-v2/check-artifact-privacy.cjs
 node scripts/source-coverage-v2/check.cjs --require-covered
 ```
 
@@ -27,3 +28,7 @@ Kiểm máy không chứng nhận ngữ nghĩa, bản ngữ, chuyên môn, quy�
 Bộ kiểm tra không tự đọc được ý nghĩa trang PDF từ các hash. Việc xác nhận trích xuất đầy đủ vẫn cần nguồn thật và receipt của tác giả; phân rã kiến thức vẫn cần đọc chữ/hình. Cờ duyệt chuyên môn/bản ngữ/người thật/thiết bị/thời lượng bật true phải có reviewEvidence hiện hành. Các kiểm tra máy là rào chắn chống đóng sai, không thay cho công việc đọc nguồn.
 
 `candidate`/`unknown` của nội dung kế thừa nghĩa là chưa đủ bằng chứng theo chuẩn định vị mới, không tự kết luận app thiếu ý đó. Báo riêng missing, partial, present và unknown; không gọi toàn bộ hàng đang mở là kiến thức bị bỏ sót. Danh sách lỗi thực sự phải dựa vào đối chiếu nguồn và bài.
+
+Quét payload của artifact giúp ngăn vô tình đưa chữ PDF, byte ảnh hoặc lệnh vector nguồn vào kho công khai. Đây là vệ sinh dữ liệu; không phải chứng nhận bản quyền và không thay việc kiểm biểu đạt của bài tự soạn.
+
+Báo riêng semanticInventoryPages (đã phân rã đủ vùng/ý) và instructionalPagesCoveredAi (các ý của trang đã có bằng chứng app đủ). excludedPagesAi là trang loại có lý do, không cộng thành trang kiến thức đã dạy.

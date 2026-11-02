@@ -14,6 +14,8 @@ import caption45 from '@/data/food-manufacturing/source-closure45.json';
 import caption46 from '@/data/food-manufacturing/source-closure46.json';
 import caption47 from '@/data/food-manufacturing/source-closure47.json';
 import caption48 from '@/data/food-manufacturing/source-closure48.json';
+import caption49 from '@/data/food-manufacturing/source-closure49.json';
+import {foodSourcePractice49} from '@/data/food-manufacturing/source-practice49';
 import captionSupplements from '@/data/food-manufacturing/source-closure31.json';
 import ui from '@/data/food-manufacturing/daily-ui-translations.json';
 import {foodManufacturingLesson,foodManufacturingTranslation,type FoodManufacturingLesson} from '@/data/food-manufacturing';
@@ -29,6 +31,7 @@ const figures:PracticeFigure[]=[
  ...foodSourcePractice37,
  ...foodSourcePractice43,
  ...foodSourcePractice46,
+ ...foodSourcePractice49,
  {id:'food-source-histogram-patterns',lessonId:'food-2-043',paragraphId:'p1',source:require('../../../assets/food-manufacturing/source-practice/histogram-patterns.webp'),aspectRatio:1584/1903},
  {id:'food-source-scatter-patterns',lessonId:'food-2-043',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/scatter-patterns.webp'),aspectRatio:1584/1423},
  {id:'food-source-risk-matrix',lessonId:'food-2-047',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/risk-matrix.webp'),aspectRatio:776/648},
@@ -45,7 +48,7 @@ export function FoodSourcePracticeVisuals({lesson,textColor,readingColor,languag
  const translated=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
  return <>{figures.filter(f=>f.lessonId===lesson.id&&(!f.lessonSourceHash||f.lessonSourceHash===lesson.sourceHash)).map(figure=>{
  const p=lesson.paragraphs.find(p=>p.id===figure.paragraphId);if(!p)return null;
- const captionSupplement=figure.captionSupplementId?[...captionSupplements.sections,...caption43.sections,...caption44.sections,...caption45.sections,...caption46.sections,...caption47.sections,...caption48.sections].find(s=>s.id===figure.captionSupplementId&&s.lessonSourceHash===lesson.sourceHash&&s.sourceHash===figure.captionSupplementSourceHash):null;
+ const captionSupplement=figure.captionSupplementId?[...captionSupplements.sections,...caption43.sections,...caption44.sections,...caption45.sections,...caption46.sections,...caption47.sections,...caption48.sections,...caption49.sections].find(s=>s.id===figure.captionSupplementId&&s.lessonSourceHash===lesson.sourceHash&&s.sourceHash===figure.captionSupplementSourceHash):null;
  if(figure.captionSupplementId&&!captionSupplement)return null;
  const supplementTranslation=captionSupplement&&showTranslation&&language!=='ja'?(captionSupplement.translations as Record<string,{title:string;sourceHash:string}>)[language]:null;
  const supplementTitle=supplementTranslation?.sourceHash===captionSupplement?.sourceHash?supplementTranslation?.title:null;

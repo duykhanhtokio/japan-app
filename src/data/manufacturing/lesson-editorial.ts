@@ -8,6 +8,7 @@ let toleranceClarification:Clarification|null=null;
 let qcPlanClarification:Clarification|null=null;
 let energyClarification:Clarification|null=null;
 let source47Clarification:Clarification|null=null;
+let source49Clarification:Clarification|null=null;
 
 /** Source-bound wording correction; frozen banks and learner/session IDs stay intact.
  * Both Japanese source and exact prior target wording must match. No locale fallback.
@@ -28,8 +29,11 @@ export function manufacturingLessonParagraph(lesson:ManufacturingLesson,paragrap
  const qcPlan=lesson.id==='mfg1-mechanical-lesson-011'&&paragraphId==='example';
  const energy=lesson.id==='mfg1-electrical-l068'&&paragraphId==='section-2';
  const source47=lesson.id==='mfg1-mechanical-lesson-080'&&paragraphId==='section-2';
- if(!dimension&&!tolerance&&!qcPlan&&!energy&&!source47&&(lesson.id!=='mfg1-mechanical-lesson-076'||paragraphId!=='section-3'))return text;
- const patch=source47
+ const source49=lesson.id==='mfg1-electrical-l094'&&paragraphId==='section-2';
+ if(!dimension&&!tolerance&&!qcPlan&&!energy&&!source47&&!source49&&(lesson.id!=='mfg1-mechanical-lesson-076'||paragraphId!=='section-3'))return text;
+ const patch=source49
+  ? source49Clarification??(source49Clarification=require('./source49-thermal-clarification.json') as Clarification)
+  : source47
   ? source47Clarification??(source47Clarification=require('./source47-clarification.json') as Clarification)
   : energy
   ? energyClarification??(energyClarification=require('./energy-practice.json').lessonPatch as Clarification)

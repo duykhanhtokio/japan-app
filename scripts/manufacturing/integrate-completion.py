@@ -240,5 +240,6 @@ def main():
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-runtime-extension38.py')],check=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-source-closure39.py')],check=True)
  subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-implementation40.py')],check=True)
+ subprocess.run([sys.executable,str(ROOT/'scripts/manufacturing/apply-source49-reader.py')],check=True)
  print(json.dumps({'lessons':len(all_lessons),'weeklyQuestions':len(all_questions),'weeks':progress['previewWeeksBySpecialty'],'translatedLessonPairs':progress['translatedLessonLocalePairs'],'translatedQuestionPairs':progress['translatedQuestionLocalePairs'],'completeDraftLocales':complete,'courseComplete':False}))
 if __name__=='__main__':main()

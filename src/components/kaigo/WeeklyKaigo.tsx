@@ -1,3 +1,4 @@
+import { CommunicationReaderChecks } from './CommunicationReaderChecks';
 import { useBackdropOcclusion } from '@/components/ui/AppBackdrop';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
@@ -576,6 +577,7 @@ export function DayReading({
             )}
             </View>
           ))}
+          <CommunicationReaderChecks day={entry.day} sectionId={section.id} language={language} translationOpen={translationOpen} JapaneseText={JapaneseText} Action={Action} />
           {!section.japaneseComplete && (
             <Text
               testID={`kaigo-source-pending-${section.id}`}

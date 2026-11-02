@@ -10,7 +10,7 @@ const ids=new Set(),paragraphIds=new Set(),prose=new Set(),all=[];let paragraphs
 const useful=s=>assert(typeof s==='string'&&s.trim().length>0,'Missing learner-facing text');
 for(let n=1;n<=28;n++){
  const s=read('session-'+String(n).padStart(3,'0')+'.json');all.push(s.id);assert.equal(s.id,'kensetsu-foreman-session-'+String(n).padStart(3,'0'));assert(!ids.has(s.id));ids.add(s.id);
- assert.equal(s.revision,[4,10,12,13,14,15,16].includes(n)?2:1);assert.deepEqual(s.applicableLevels,['2']);assert.deepEqual(s.applicableFields,['utilities','building','civil']);
+ assert.equal(s.revision,[4,10,12,13,14,15,16,17,18,19].includes(n)?2:1);assert.deepEqual(s.applicableLevels,['2']);assert.deepEqual(s.applicableFields,['utilities','building','civil']);
  assert.equal(s.status,'editorial_draft');assert.equal(s.durationMeasured,false);assert.equal(s.estimatedMinutes,null);assert.equal(s.appIntegrationReady,false);
  for(const k of ['domain','nativeJapanese','nativeVietnamese','rights'])assert.equal(s.review[k],false);
  useful(s.titleJa);useful(s.titleTranslations.vi);assert.equal(s.clusters.length,2);
@@ -52,7 +52,7 @@ for(const locale of ['en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl
  const pack=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/foreman-translations',locale+'.json')));
  checkScheduleEquations(pack.sessions['kensetsu-foreman-session-010'].entries.learningActivity.translations[locale]);
 }
-for(const number of [12,13,14,15,16]){
+for(const number of [12,13,14,15,16,17,18,19]){
  const id=`kensetsu-foreman-session-${String(number).padStart(3,'0')}`;
  const activity=read(`session-${String(number).padStart(3,'0')}.json`).clusters[1].learningActivity;
  useful(activity.ja);useful(activity.translations.vi);assert.equal(activity.graded,false);
@@ -64,5 +64,5 @@ for(const number of [12,13,14,15,16]){
 }
 assert.equal(paragraphs,112);assert.equal(prompts,50);assert.equal(images,4);assert.equal(screen.paragraphs,paragraphs);assert.equal(screen.candidates.length,0);assert.equal(screen.rightsCertification,false);
 assert.equal(ledger.coverageDenominator,null);assert.equal(ledger.wholeSourceComplete,false);assert.equal(ledger.releaseReady,false);assert.equal(ledger.remainingTargetLocales.length,0);assert.equal(ledger.objectives.length,56);
-const report={date:'2026-11-02',status:'PASS_AUTHORED_DATA_AND_PRESERVATION',lessons:all.length,weeks:4,clusters:56,japaneseParagraphs:paragraphs,vietnameseParagraphs:paragraphs,newTranslatedApplicationPrompts:prompts,ungradedDepthActivities:7,depthActivityLocalePairs:84,workedScheduleEquationsChecked:39,originalDiagrams:images,originalThreeFilesBytePreserved:true,sourcePdfInRepository:false,wholeSourceCoverageConfirmed:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};
+const report={date:'2026-11-02',status:'PASS_AUTHORED_DATA_AND_PRESERVATION',lessons:all.length,weeks:4,clusters:56,japaneseParagraphs:paragraphs,vietnameseParagraphs:paragraphs,newTranslatedApplicationPrompts:prompts,ungradedDepthActivities:10,depthActivityLocalePairs:120,workedScheduleEquationsChecked:39,originalDiagrams:images,originalThreeFilesBytePreserved:true,sourcePdfInRepository:false,wholeSourceCoverageConfirmed:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};
 fs.writeFileSync(path.join(dir,'content-qa-2026-11-02.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
