@@ -1,0 +1,907 @@
+{
+  "schemaVersion": 1,
+  "status": "authored_ai_pending_reader_integration",
+  "source": {
+    "sourceId": "AGR-S1",
+    "pdfPage": 10,
+    "sha256": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f"
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "checks": [
+    {
+      "id": "agr-reader-flowering-conditions-examples",
+      "knowledgeId": "agriculture-v6-s1p10-short-examples",
+      "lessonId": "agr-flowering",
+      "levels": [
+        "1",
+        "2"
+      ],
+      "promptJa": "トマト、イチゴ、キク、ホウレンソウを、花芽ができる条件で分けて説明してください。",
+      "modelAnswerJa": "トマトは、ある程度の成長後に規則的に花芽ができる例です。イチゴとキクは暗い時間が一定より長い条件、ホウレンソウは暗い時間が一定より短い条件の例です。具体的な共通時間数は、ここから決めません。",
+      "translations": {
+        "en": {
+          "prompt": "Classify tomato, strawberry, chrysanthemum and spinach by the conditions under which their flower buds form, and explain.",
+          "modelAnswer": "Tomato illustrates regular flower-bud formation after a certain amount of growth. Strawberry and chrysanthemum illustrate conditions with darkness longer than a certain duration; spinach illustrates darkness shorter than a certain duration. This does not establish one shared numerical duration.",
+          "translatedFrom": "ja"
+        },
+        "vi": {
+          "prompt": "Hãy phân loại cà chua, dâu tây, cúc và cải bó xôi theo điều kiện hình thành mầm hoa, rồi giải thích.",
+          "modelAnswer": "Cà chua là ví dụ hình thành mầm hoa theo quy luật sau khi sinh trưởng đến một mức nhất định. Dâu tây và cúc là ví dụ có thời gian tối dài hơn một ngưỡng nhất định; cải bó xôi có thời gian tối ngắn hơn một ngưỡng nhất định. Không suy ra một số giờ chung cụ thể từ phần này.",
+          "translatedFrom": "ja"
+        },
+        "id": {
+          "prompt": "Kelompokkan tomat, stroberi, krisan, dan bayam Jepang (horenso) menurut kondisi pembentukan bakal bunga, lalu jelaskan.",
+          "modelAnswer": "Tomat merupakan contoh pembentukan bakal bunga secara teratur setelah pertumbuhan tertentu. Stroberi dan krisan merupakan contoh dengan waktu gelap lebih panjang dari batas tertentu; horenso dengan waktu gelap lebih pendek dari batas tertentu. Penjelasan ini tidak menetapkan satu jumlah jam yang berlaku bersama.",
+          "translatedFrom": "ja"
+        },
+        "zh-CN": {
+          "prompt": "请按花芽形成的条件，对番茄、草莓、菊花和菠菜分类并说明。",
+          "modelAnswer": "番茄是在生长到一定程度后有规律地形成花芽的例子。草莓和菊花对应暗期长于一定时长的条件，菠菜对应暗期短于一定时长的条件。不能据此确定所有例子共用的具体小时数。",
+          "translatedFrom": "ja"
+        },
+        "zh-TW": {
+          "prompt": "請按花芽形成的條件，對番茄、草莓、菊花和菠菜分類並說明。",
+          "modelAnswer": "番茄是在生長到一定程度後有規律地形成花芽的例子。草莓和菊花對應暗期長於一定時長的條件，菠菜對應暗期短於一定時長的條件。不能據此確定所有例子共用的具體小時數。",
+          "translatedFrom": "ja"
+        },
+        "hi": {
+          "prompt": "टमाटर, स्ट्रॉबेरी, गुलदाउदी और पालक को फूल की कलियाँ बनने की परिस्थितियों के अनुसार अलग करके समझाइए।",
+          "modelAnswer": "टमाटर कुछ वृद्धि के बाद नियमित रूप से फूल की कलियाँ बनने का उदाहरण है। स्ट्रॉबेरी और गुलदाउदी में अँधेरे की अवधि एक निश्चित सीमा से लंबी होने की स्थिति, और पालक में उससे छोटी होने की स्थिति उदाहरण हैं। इससे सबके लिए एक समान निश्चित घंटों की संख्या तय नहीं होती।",
+          "translatedFrom": "ja"
+        },
+        "bn": {
+          "prompt": "টমেটো, স্ট্রবেরি, চন্দ্রমল্লিকা ও পালংশাককে ফুলের কুঁড়ি গঠনের শর্ত অনুযায়ী ভাগ করে বুঝিয়ে বলুন।",
+          "modelAnswer": "টমেটো নির্দিষ্ট মাত্রার বৃদ্ধির পর নিয়মিত ফুলের কুঁড়ি গঠনের উদাহরণ। স্ট্রবেরি ও চন্দ্রমল্লিকায় অন্ধকারের সময় একটি নির্দিষ্ট সীমার চেয়ে বেশি, আর পালংশাকে কম হওয়ার শর্ত উদাহরণ হিসেবে দেওয়া হয়েছে। এ থেকে সবার জন্য একই নির্দিষ্ট ঘণ্টার সংখ্যা নির্ধারণ করা যায় না।",
+          "translatedFrom": "ja"
+        },
+        "ne": {
+          "prompt": "गोलभेँडा, स्ट्रबेरी, गोदावरी र पालुङ्गोलाई फूलको कोपिला बन्ने सर्तअनुसार छुट्याएर बुझाउनुहोस्।",
+          "modelAnswer": "गोलभेँडा केही वृद्धि भएपछि नियमित रूपमा फूलको कोपिला बन्ने उदाहरण हो। स्ट्रबेरी र गोदावरी अँध्यारो समय निश्चित सीमाभन्दा लामो हुने सर्तका, र पालुङ्गो निश्चित सीमाभन्दा छोटो हुने सर्तको उदाहरण हो। यसबाट सबैका लागि एउटै निश्चित घण्टासङ्ख्या तोकिँदैन।",
+          "translatedFrom": "ja"
+        },
+        "my": {
+          "prompt": "ခရမ်းချဉ်သီး၊ စတော်ဘယ်ရီ၊ ဂန္ဓမာနှင့် ဟင်းနုနွယ်တို့ကို ပန်းဖူးဖြစ်ပေါ်သည့်အခြေအနေအလိုက် ခွဲ၍ရှင်းပြပါ။",
+          "modelAnswer": "ခရမ်းချဉ်သီးသည် အတိုင်းအတာတစ်ခုအထိကြီးထွားပြီးနောက် ပန်းဖူးမှန်မှန်ဖြစ်လာသည့်ဥပမာဖြစ်သည်။ စတော်ဘယ်ရီနှင့်ဂန္ဓမာသည် အမှောင်ချိန်က သတ်မှတ်ကြာချိန်တစ်ခုထက်ရှည်သောအခြေအနေ၊ ဟင်းနုနွယ်သည် ထိုသို့သောသတ်မှတ်ကြာချိန်ထက်တိုသောအခြေအနေ၏ဥပမာဖြစ်သည်။ ဤအကြောင်းမှ အားလုံးအတွက်တူညီသော နာရီအရေအတွက်ကို မဆုံးဖြတ်နိုင်ပါ။",
+          "translatedFrom": "ja"
+        },
+        "th": {
+          "prompt": "แบ่งมะเขือเทศ สตรอว์เบอร์รี เบญจมาศ และปวยเล้งตามเงื่อนไขการเกิดตาดอก แล้วอธิบาย",
+          "modelAnswer": "มะเขือเทศเป็นตัวอย่างที่เกิดตาดอกอย่างเป็นจังหวะหลังเติบโตถึงระดับหนึ่ง สตรอว์เบอร์รีและเบญจมาศเป็นตัวอย่างของเงื่อนไขที่ช่วงมืดยาวกว่าระยะหนึ่ง ส่วนปวยเล้งเป็นตัวอย่างที่ช่วงมืดสั้นกว่าระยะหนึ่ง ไม่สามารถใช้ส่วนนี้กำหนดจำนวนชั่วโมงตายตัวร่วมกันได้",
+          "translatedFrom": "ja"
+        },
+        "km": {
+          "prompt": "បែងចែកប៉េងប៉ោះ ស្ត្របឺរី ផ្កាគ្រីសាន់ធីម និងស្ពីណាចតាមលក្ខខណ្ឌបង្កើតពន្លកផ្កា ហើយពន្យល់។",
+          "modelAnswer": "ប៉េងប៉ោះជាឧទាហរណ៍បង្កើតពន្លកផ្កាទៀងទាត់ក្រោយលូតលាស់ដល់កម្រិតមួយ។ ស្ត្របឺរីនិងផ្កាគ្រីសាន់ធីមជាឧទាហរណ៍ដែលពេលងងឹតវែងជាងរយៈពេលកំណត់មួយ រីឯស្ពីណាចមានពេលងងឹតខ្លីជាងរយៈពេលកំណត់មួយ។ មិនអាចយកនេះទៅកំណត់ចំនួនម៉ោងជាក់លាក់ដូចគ្នាសម្រាប់ទាំងអស់បានទេ។",
+          "translatedFrom": "ja"
+        },
+        "tl": {
+          "prompt": "Igrupo at ipaliwanag ang kamatis, strawberry, krisantemo at espinaka ayon sa kondisyon ng pagbuo ng usbong ng bulaklak.",
+          "modelAnswer": "Halimbawa ang kamatis ng regular na pagbuo ng usbong ng bulaklak matapos ang sapat na paglaki. Ang strawberry at krisantemo ay mga halimbawa kapag mas mahaba sa isang takdang haba ang dilim; ang espinaka naman kapag mas maikli. Hindi nito itinatakda ang iisang tiyak na bilang ng oras para sa lahat.",
+          "translatedFrom": "ja"
+        }
+      },
+      "promptRuby": [
+        {
+          "text": "トマト、イチゴ、キク、ホウレンソウを、"
+        },
+        {
+          "text": "花芽",
+          "readingKana": "かが"
+        },
+        {
+          "text": "ができる"
+        },
+        {
+          "text": "条件",
+          "readingKana": "じょうけん"
+        },
+        {
+          "text": "で"
+        },
+        {
+          "text": "分",
+          "readingKana": "わ"
+        },
+        {
+          "text": "けて"
+        },
+        {
+          "text": "説明",
+          "readingKana": "せつめい"
+        },
+        {
+          "text": "してください。"
+        }
+      ],
+      "modelAnswerRuby": [
+        {
+          "text": "トマトは、ある"
+        },
+        {
+          "text": "程度",
+          "readingKana": "ていど"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "成長後",
+          "readingKana": "せいちょうご"
+        },
+        {
+          "text": "に"
+        },
+        {
+          "text": "規則的",
+          "readingKana": "きそくてき"
+        },
+        {
+          "text": "に"
+        },
+        {
+          "text": "花芽",
+          "readingKana": "かが"
+        },
+        {
+          "text": "ができる"
+        },
+        {
+          "text": "例",
+          "readingKana": "れい"
+        },
+        {
+          "text": "です。イチゴとキクは"
+        },
+        {
+          "text": "暗",
+          "readingKana": "くら"
+        },
+        {
+          "text": "い"
+        },
+        {
+          "text": "時間",
+          "readingKana": "じかん"
+        },
+        {
+          "text": "が"
+        },
+        {
+          "text": "一定",
+          "readingKana": "いってい"
+        },
+        {
+          "text": "より"
+        },
+        {
+          "text": "長",
+          "readingKana": "なが"
+        },
+        {
+          "text": "い"
+        },
+        {
+          "text": "条件",
+          "readingKana": "じょうけん"
+        },
+        {
+          "text": "、ホウレンソウは"
+        },
+        {
+          "text": "暗",
+          "readingKana": "くら"
+        },
+        {
+          "text": "い"
+        },
+        {
+          "text": "時間",
+          "readingKana": "じかん"
+        },
+        {
+          "text": "が"
+        },
+        {
+          "text": "一定",
+          "readingKana": "いってい"
+        },
+        {
+          "text": "より"
+        },
+        {
+          "text": "短",
+          "readingKana": "みじか"
+        },
+        {
+          "text": "い"
+        },
+        {
+          "text": "条件",
+          "readingKana": "じょうけん"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "例",
+          "readingKana": "れい"
+        },
+        {
+          "text": "です。"
+        },
+        {
+          "text": "具体的",
+          "readingKana": "ぐたいてき"
+        },
+        {
+          "text": "な"
+        },
+        {
+          "text": "共通時間数",
+          "readingKana": "きょうつうじかんすう"
+        },
+        {
+          "text": "は、ここから"
+        },
+        {
+          "text": "決",
+          "readingKana": "き"
+        },
+        {
+          "text": "めません。"
+        }
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "id": "agr-reader-flowering-environment-examples",
+      "knowledgeId": "agriculture-v2-AGR-K-FLOWERING-03",
+      "lessonId": "agr-flowering",
+      "levels": [
+        "1",
+        "2"
+      ],
+      "teachingJa": "環境反応の例を整理するときは、ダイコンとホウレンソウを作物欄に置き、温度と日長を別の観察欄にします。作物名と、何の条件に注目する説明なのかを一組にして読みます。",
+      "promptJa": "環境条件の変化に関係する花芽分化の型について、教材の二つの作物例と、分けて確認する環境条件を答えてください。",
+      "modelAnswerJa": "ダイコンとホウレンソウが例です。温度と日長を区別して確認します。低温と暗い時間の長さを同じ条件とはしません。",
+      "translations": {
+        "en": {
+          "teaching": "When organising examples of environmental responses, put Japanese radish and spinach in the crop column, with temperature and day length in separate observation columns. Read the crop name together with the condition being discussed.",
+          "prompt": "For flower-bud formation influenced by changing environmental conditions, name the two crop examples in the lesson and the environmental factors to check separately.",
+          "modelAnswer": "Japanese radish and spinach are examples. Check temperature and day length separately. Low temperature and the length of darkness are different conditions.",
+          "translatedFrom": "ja"
+        },
+        "vi": {
+          "teaching": "Khi sắp xếp ví dụ về phản ứng với môi trường, ghi củ cải trắng và cải bó xôi vào cột cây trồng, còn nhiệt độ và độ dài ngày vào hai cột quan sát riêng. Đọc tên cây cùng với điều kiện mà phần giải thích đang xét.",
+          "prompt": "Với kiểu phân hóa mầm hoa chịu ảnh hưởng của thay đổi môi trường, hãy nêu hai cây ví dụ trong bài và các yếu tố môi trường cần kiểm tra riêng.",
+          "modelAnswer": "Hai ví dụ là củ cải trắng và cải bó xôi. Kiểm tra riêng nhiệt độ và độ dài ngày. Không coi nhiệt độ thấp và độ dài thời gian tối là cùng một điều kiện.",
+          "translatedFrom": "ja"
+        },
+        "id": {
+          "teaching": "Saat menyusun contoh respons lingkungan, tulis lobak Jepang dan horenso pada kolom tanaman, serta suhu dan panjang hari pada kolom pengamatan terpisah. Baca nama tanaman bersama kondisi yang sedang dijelaskan.",
+          "prompt": "Untuk tipe pembentukan bakal bunga yang dipengaruhi perubahan lingkungan, sebutkan dua contoh tanaman dalam pelajaran serta faktor lingkungan yang harus diperiksa terpisah.",
+          "modelAnswer": "Contohnya lobak Jepang dan horenso. Periksa suhu dan panjang hari secara terpisah. Suhu rendah dan lama waktu gelap bukan kondisi yang sama.",
+          "translatedFrom": "ja"
+        },
+        "zh-CN": {
+          "teaching": "整理环境反应的例子时，把萝卜和菠菜放在作物栏，温度和日长分别放在不同的观察栏。要将作物名称与说明所关注的条件配对阅读。",
+          "prompt": "对于受环境条件变化影响的花芽分化类型，请说出教材的两种作物例子，以及需要分别核对的环境条件。",
+          "modelAnswer": "例子是萝卜和菠菜。分别核对温度与日长，不把低温和暗期长短当成同一条件。",
+          "translatedFrom": "ja"
+        },
+        "zh-TW": {
+          "teaching": "整理環境反應的例子時，把蘿蔔和菠菜放在作物欄，溫度和日長分別放在不同的觀察欄。要將作物名稱與說明所關注的條件配對閱讀。",
+          "prompt": "對於受環境條件變化影響的花芽分化類型，請說出教材的兩種作物例子，以及需要分別核對的環境條件。",
+          "modelAnswer": "例子是蘿蔔和菠菜。分別核對溫度與日長，不把低溫和暗期長短當成同一條件。",
+          "translatedFrom": "ja"
+        },
+        "hi": {
+          "teaching": "पर्यावरण की प्रतिक्रिया के उदाहरण व्यवस्थित करते समय फसल के खाने में जापानी मूली और पालक लिखें, तथा तापमान और दिन की अवधि के लिए अलग अवलोकन खाने रखें। फसल का नाम और बताई जा रही परिस्थिति साथ पढ़ें।",
+          "prompt": "पर्यावरण में बदलाव से प्रभावित फूल की कली विभेदन के प्रकार के लिए पाठ की दो फसलें और अलग-अलग जाँचे जाने वाले पर्यावरणीय कारक बताइए।",
+          "modelAnswer": "जापानी मूली और पालक उदाहरण हैं। तापमान और दिन की अवधि अलग जाँचें। कम तापमान और अँधेरे की अवधि को एक ही परिस्थिति न मानें।",
+          "translatedFrom": "ja"
+        },
+        "bn": {
+          "teaching": "পরিবেশগত প্রতিক্রিয়ার উদাহরণ সাজানোর সময় ফসলের ঘরে জাপানি মুলা ও পালংশাক লিখুন এবং তাপমাত্রা ও দিনের দৈর্ঘ্যের জন্য আলাদা পর্যবেক্ষণের ঘর রাখুন। ফসলের নামের সঙ্গে কোন শর্তটি ব্যাখ্যা করা হচ্ছে তা মিলিয়ে পড়ুন।",
+          "prompt": "পরিবেশের পরিবর্তনে প্রভাবিত ফুলের কুঁড়ি বিভেদনের ধরনটির জন্য পাঠের দুটি ফসলের উদাহরণ এবং আলাদাভাবে যাচাই করার পরিবেশগত বিষয় বলুন।",
+          "modelAnswer": "জাপানি মুলা ও পালংশাক উদাহরণ। তাপমাত্রা ও দিনের দৈর্ঘ্য আলাদা করে যাচাই করুন। কম তাপমাত্রা ও অন্ধকারের সময়ের দৈর্ঘ্যকে একই শর্ত ভাববেন না।",
+          "translatedFrom": "ja"
+        },
+        "ne": {
+          "teaching": "वातावरणीय प्रतिक्रियाका उदाहरण मिलाउँदा बालीको खण्डमा जापानी मुला र पालुङ्गो लेख्नुहोस्। तापक्रम र दिनको लम्बाइ छुट्टाछुट्टै अवलोकन खण्डमा राख्नुहोस्। बालीको नामसँग कुन सर्तको व्याख्या हो भन्ने जोडेर पढ्नुहोस्।",
+          "prompt": "वातावरण परिवर्तनले असर गर्ने फूलको कोपिला विभेदनको प्रकारका लागि पाठका दुई बालीका उदाहरण र अलग जाँच्ने वातावरणीय सर्त बताउनुहोस्।",
+          "modelAnswer": "जापानी मुला र पालुङ्गो उदाहरण हुन्। तापक्रम र दिनको लम्बाइ अलग जाँच्नुहोस्। न्यून तापक्रम र अँध्यारो समयको लम्बाइलाई एउटै सर्त नमान्नुहोस्।",
+          "translatedFrom": "ja"
+        },
+        "my": {
+          "teaching": "ပတ်ဝန်းကျင်တုံ့ပြန်မှုဥပမာများ စုစည်းရာတွင် သီးနှံကွက်၌ မုန်လာဥဖြူနှင့်ဟင်းနုနွယ်ကို ရေး၍ အပူချိန်နှင့်နေ့တာရှည်ချိန်ကို သီးခြားလေ့လာကွက်များတွင် ရေးပါ။ သီးနှံအမည်ကို မည်သည့်အခြေအနေရည်ညွှန်းထားသည်နှင့် တွဲဖတ်ပါ။",
+          "prompt": "ပတ်ဝန်းကျင်ပြောင်းလဲမှုနှင့်ဆိုင်သော ပန်းဖူးခွဲခြားဖွဲ့စည်းမှုအမျိုးအစားအတွက် သင်ခန်းစာမှသီးနှံဥပမာနှစ်ခုနှင့် သီးခြားစစ်ရမည့် ပတ်ဝန်းကျင်အခြေအနေများကို ပြောပါ။",
+          "modelAnswer": "မုန်လာဥဖြူနှင့်ဟင်းနုနွယ်တို့ဖြစ်သည်။ အပူချိန်နှင့်နေ့တာရှည်ချိန်ကို ခွဲစစ်ပါ။ အပူချိန်နိမ့်ခြင်းနှင့် အမှောင်ချိန်ရှည်တိုကို တူညီသောအခြေအနေဟု မသတ်မှတ်ပါနှင့်။",
+          "translatedFrom": "ja"
+        },
+        "th": {
+          "teaching": "เมื่อจัดตัวอย่างการตอบสนองต่อสิ่งแวดล้อม ให้ใส่หัวไชเท้าและปวยเล้งในช่องพืช และแยกช่องสังเกตอุณหภูมิกับความยาววัน อ่านชื่อพืชคู่กับเงื่อนไขที่คำอธิบายนั้นเน้น",
+          "prompt": "สำหรับการแยกตัวของตาดอกชนิดที่ได้รับอิทธิพลจากสิ่งแวดล้อมที่เปลี่ยนไป ให้บอกพืชสองตัวอย่างในบทเรียนและปัจจัยสิ่งแวดล้อมที่ต้องตรวจแยกกัน",
+          "modelAnswer": "ตัวอย่างคือหัวไชเท้าและปวยเล้ง ตรวจอุณหภูมิกับความยาววันแยกกัน ไม่ถือว่าอุณหภูมิต่ำกับความยาวของช่วงมืดเป็นเงื่อนไขเดียวกัน",
+          "translatedFrom": "ja"
+        },
+        "km": {
+          "teaching": "ពេលរៀបចំឧទាហរណ៍ឆ្លើយតបបរិស្ថាន ដាក់ឆៃថាវនិងស្ពីណាចក្នុងប្រអប់ដំណាំ ហើយដាក់សីតុណ្ហភាពនិងប្រវែងថ្ងៃក្នុងប្រអប់សង្កេតផ្សេងគ្នា។ អានឈ្មោះដំណាំជាគូជាមួយលក្ខខណ្ឌដែលកំពុងពន្យល់។",
+          "prompt": "ចំពោះប្រភេទបែងចែកពន្លកផ្កាដែលរងឥទ្ធិពលពីបរិស្ថានផ្លាស់ប្តូរ សូមប្រាប់ដំណាំឧទាហរណ៍ពីរក្នុងមេរៀន និងលក្ខខណ្ឌបរិស្ថានដែលត្រូវពិនិត្យដោយឡែក។",
+          "modelAnswer": "ឧទាហរណ៍គឺឆៃថាវនិងស្ពីណាច។ ពិនិត្យសីតុណ្ហភាពនិងប្រវែងថ្ងៃដោយឡែក។ កុំចាត់ទុកសីតុណ្ហភាពទាបនិងប្រវែងពេលងងឹតជាលក្ខខណ្ឌតែមួយ។",
+          "translatedFrom": "ja"
+        },
+        "tl": {
+          "teaching": "Sa pag-aayos ng mga halimbawa ng tugon sa kapaligiran, ilagay ang labanos at espinaka sa hanay ng pananim at paghiwalayin ang mga hanay ng temperatura at haba ng araw. Basahin ang pangalan ng pananim kasama ng kondisyong tinatalakay.",
+          "prompt": "Para sa uri ng pagbuo ng usbong ng bulaklak na naaapektuhan ng pagbabago sa kapaligiran, sabihin ang dalawang pananim na halimbawa sa aralin at ang mga kondisyong dapat suriin nang magkahiwalay.",
+          "modelAnswer": "Mga halimbawa ang labanos at espinaka. Suriin nang magkahiwalay ang temperatura at haba ng araw. Magkaibang kondisyon ang mababang temperatura at haba ng dilim.",
+          "translatedFrom": "ja"
+        }
+      },
+      "promptRuby": [
+        {
+          "text": "環境条件",
+          "readingKana": "かんきょうじょうけん"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "変化",
+          "readingKana": "へんか"
+        },
+        {
+          "text": "に"
+        },
+        {
+          "text": "関係",
+          "readingKana": "かんけい"
+        },
+        {
+          "text": "する"
+        },
+        {
+          "text": "花芽分化",
+          "readingKana": "かがぶんか"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "型",
+          "readingKana": "かた"
+        },
+        {
+          "text": "について、"
+        },
+        {
+          "text": "教材",
+          "readingKana": "きょうざい"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "二",
+          "readingKana": "ふた"
+        },
+        {
+          "text": "つの"
+        },
+        {
+          "text": "作物例",
+          "readingKana": "さくもつれい"
+        },
+        {
+          "text": "と、"
+        },
+        {
+          "text": "分",
+          "readingKana": "わ"
+        },
+        {
+          "text": "けて"
+        },
+        {
+          "text": "確認",
+          "readingKana": "かくにん"
+        },
+        {
+          "text": "する"
+        },
+        {
+          "text": "環境条件",
+          "readingKana": "かんきょうじょうけん"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "答",
+          "readingKana": "こた"
+        },
+        {
+          "text": "えてください。"
+        }
+      ],
+      "modelAnswerRuby": [
+        {
+          "text": "ダイコンとホウレンソウが"
+        },
+        {
+          "text": "例",
+          "readingKana": "れい"
+        },
+        {
+          "text": "です。"
+        },
+        {
+          "text": "温度",
+          "readingKana": "おんど"
+        },
+        {
+          "text": "と"
+        },
+        {
+          "text": "日長",
+          "readingKana": "にっちょう"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "区別",
+          "readingKana": "くべつ"
+        },
+        {
+          "text": "して"
+        },
+        {
+          "text": "確認",
+          "readingKana": "かくにん"
+        },
+        {
+          "text": "します。"
+        },
+        {
+          "text": "低温",
+          "readingKana": "ていおん"
+        },
+        {
+          "text": "と"
+        },
+        {
+          "text": "暗",
+          "readingKana": "くら"
+        },
+        {
+          "text": "い"
+        },
+        {
+          "text": "時間",
+          "readingKana": "じかん"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "長",
+          "readingKana": "なが"
+        },
+        {
+          "text": "さを"
+        },
+        {
+          "text": "同",
+          "readingKana": "おな"
+        },
+        {
+          "text": "じ"
+        },
+        {
+          "text": "条件",
+          "readingKana": "じょうけん"
+        },
+        {
+          "text": "とはしません。"
+        }
+      ],
+      "teachingRuby": [
+        {
+          "text": "環境反応",
+          "readingKana": "かんきょうはんのう"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "例",
+          "readingKana": "れい"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "整理",
+          "readingKana": "せいり"
+        },
+        {
+          "text": "するときは、ダイコンとホウレンソウを"
+        },
+        {
+          "text": "作物欄",
+          "readingKana": "さくもつらん"
+        },
+        {
+          "text": "に"
+        },
+        {
+          "text": "置",
+          "readingKana": "お"
+        },
+        {
+          "text": "き、"
+        },
+        {
+          "text": "温度",
+          "readingKana": "おんど"
+        },
+        {
+          "text": "と"
+        },
+        {
+          "text": "日長",
+          "readingKana": "にっちょう"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "別",
+          "readingKana": "べつ"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "観察欄",
+          "readingKana": "かんさつらん"
+        },
+        {
+          "text": "にします。"
+        },
+        {
+          "text": "作物名",
+          "readingKana": "さくもつめい"
+        },
+        {
+          "text": "と、"
+        },
+        {
+          "text": "何",
+          "readingKana": "なん"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "条件",
+          "readingKana": "じょうけん"
+        },
+        {
+          "text": "に"
+        },
+        {
+          "text": "注目",
+          "readingKana": "ちゅうもく"
+        },
+        {
+          "text": "する"
+        },
+        {
+          "text": "説明",
+          "readingKana": "せつめい"
+        },
+        {
+          "text": "なのかを"
+        },
+        {
+          "text": "一組",
+          "readingKana": "ひとくみ"
+        },
+        {
+          "text": "にして"
+        },
+        {
+          "text": "読",
+          "readingKana": "よ"
+        },
+        {
+          "text": "みます。"
+        }
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "id": "agr-reader-crop-pattern-comparison",
+      "knowledgeId": "agriculture-v2-AGR-K-CROP-PLAN-03",
+      "lessonId": "agr-crop-plan",
+      "levels": [
+        "1",
+        "2"
+      ],
+      "promptJa": "キャベツ・ダイコンでは播種時期をどう分ける例があり、施設のトマト・キュウリでは普通栽培と何を比べますか。",
+      "modelAnswerJa": "春まき・夏まき・秋まきの例があります。施設のトマト・キュウリでは、生育や収穫を普通栽培より早める促成と、遅らせる抑制を比べます。作型は、品種の選定や播種から収穫までの計画・技術を含みます。",
+      "translations": {
+        "en": {
+          "prompt": "What sowing-season categories are illustrated for cabbage and Japanese radish, and what is compared with ordinary cultivation for greenhouse tomatoes and cucumbers?",
+          "modelAnswer": "Examples include spring, summer and autumn sowing. For greenhouse tomatoes and cucumbers, compare forced cultivation that brings growth or harvest forward with retarded cultivation that delays it relative to ordinary cultivation. A cropping pattern includes variety selection and planning and techniques from sowing to harvest.",
+          "translatedFrom": "ja"
+        },
+        "vi": {
+          "prompt": "Với bắp cải và củ cải trắng, có những ví dụ phân loại theo mùa gieo nào? Với cà chua và dưa chuột trồng trong công trình, so sánh điều gì với cách trồng thông thường?",
+          "modelAnswer": "Có các ví dụ gieo mùa xuân, mùa hè và mùa thu. Với cà chua và dưa chuột trồng trong công trình, so sánh kiểu thúc sớm sinh trưởng hoặc thu hoạch với kiểu làm chậm hơn so với trồng thông thường. Kiểu canh tác bao gồm chọn giống, kế hoạch và kỹ thuật từ gieo đến thu hoạch.",
+          "translatedFrom": "ja"
+        },
+        "id": {
+          "prompt": "Apa contoh pengelompokan musim tanam untuk kubis dan lobak Jepang, dan apa yang dibandingkan dengan budidaya biasa pada tomat serta mentimun dalam bangunan budidaya?",
+          "modelAnswer": "Ada contoh penanaman musim semi, panas, dan gugur. Pada tomat dan mentimun dalam bangunan budidaya, bandingkan budidaya dipercepat yang memajukan pertumbuhan atau panen dengan budidaya ditunda yang memundurkannya dari budidaya biasa. Pola budidaya mencakup pemilihan varietas serta rencana dan teknik dari penaburan sampai panen.",
+          "translatedFrom": "ja"
+        },
+        "zh-CN": {
+          "prompt": "卷心菜和萝卜有哪些按播种季节划分的例子？设施番茄和黄瓜要与普通栽培比较什么？",
+          "modelAnswer": "有春播、夏播、秋播等例子。设施番茄和黄瓜要比较相对普通栽培提前生长或采收的促成栽培，以及推迟的抑制栽培。作型包括品种选择和从播种到采收的计划与技术。",
+          "translatedFrom": "ja"
+        },
+        "zh-TW": {
+          "prompt": "高麗菜和蘿蔔有哪些按播種季節劃分的例子？設施番茄和小黃瓜要與普通栽培比較什麼？",
+          "modelAnswer": "有春播、夏播、秋播等例子。設施番茄和小黃瓜要比較相對普通栽培提前生長或採收的促成栽培，以及推遲的抑制栽培。作型包括品種選擇和從播種到採收的計畫與技術。",
+          "translatedFrom": "ja"
+        },
+        "hi": {
+          "prompt": "पत्तागोभी और जापानी मूली में बुवाई के मौसम के कौन-से उदाहरण हैं? संरक्षित खेती के टमाटर और खीरे में सामान्य खेती से क्या तुलना करते हैं?",
+          "modelAnswer": "वसंत, गर्मी और पतझड़ की बुवाई के उदाहरण हैं। संरक्षित खेती के टमाटर और खीरे में सामान्य खेती से वृद्धि या कटाई पहले कराने वाली त्वरित खेती और बाद में कराने वाली विलंबित खेती की तुलना करते हैं। फसल पद्धति में किस्म का चयन तथा बुवाई से कटाई तक की योजना और तकनीक शामिल हैं।",
+          "translatedFrom": "ja"
+        },
+        "bn": {
+          "prompt": "বাঁধাকপি ও জাপানি মুলার বপনের ঋতুভিত্তিক কী কী উদাহরণ আছে? সুরক্ষিত স্থাপনায় টমেটো ও শসার চাষে সাধারণ চাষের সঙ্গে কী তুলনা করা হয়?",
+          "modelAnswer": "বসন্ত, গ্রীষ্ম ও শরতে বপনের উদাহরণ আছে। স্থাপনায় টমেটো ও শসার ক্ষেত্রে সাধারণ চাষের তুলনায় বৃদ্ধি বা ফসল তোলা এগিয়ে আনার চাষ এবং পিছিয়ে দেওয়ার চাষ তুলনা করা হয়। ফসল পদ্ধতিতে জাত নির্বাচন এবং বপন থেকে ফসল তোলা পর্যন্ত পরিকল্পনা ও কৌশল অন্তর্ভুক্ত।",
+          "translatedFrom": "ja"
+        },
+        "ne": {
+          "prompt": "बन्दाकोबी र जापानी मुलामा बीउ छर्ने मौसमका कस्ता उदाहरण छन्? संरक्षित संरचनाका गोलभेँडा र काँक्रोमा सामान्य खेतीसँग के तुलना गरिन्छ?",
+          "modelAnswer": "वसन्त, गर्मी र शरदमा बीउ छर्ने उदाहरण छन्। संरचनामा गोलभेँडा र काँक्रो खेती गर्दा सामान्य खेतीभन्दा वृद्धि वा कटानी अघि सार्ने शीघ्र खेती र पछि सार्ने ढिलो खेती तुलना गरिन्छ। खेती ढाँचामा जात छनोट तथा बीउ छर्नेदेखि कटानीसम्मका योजना र प्रविधि समावेश हुन्छन्।",
+          "translatedFrom": "ja"
+        },
+        "my": {
+          "prompt": "ဂေါ်ဖီနှင့်မုန်လာဥဖြူကို မျိုးစေ့ချရာသီအလိုက် မည်သည့်ဥပမာများခွဲထားသနည်း။ အဆောက်အအုံအတွင်းစိုက်သော ခရမ်းချဉ်သီးနှင့်သခွားကို ပုံမှန်စိုက်ပျိုးမှုနှင့် မည်သည်နှိုင်းယှဉ်သနည်း။",
+          "modelAnswer": "နွေဦး၊ နွေနှင့်ဆောင်းဦးမျိုးစေ့ချသည့်ဥပမာများရှိသည်။ အဆောက်အအုံအတွင်း ခရမ်းချဉ်သီးနှင့်သခွားတွင် ပုံမှန်ထက်ကြီးထွားမှု သို့မဟုတ် ရိတ်သိမ်းချိန်စောစေသော အမြန်စိုက်ပျိုးမှုနှင့် နောက်ကျစေသော နှောင့်နှေးစိုက်ပျိုးမှုတို့ကို နှိုင်းယှဉ်သည်။ စိုက်ပျိုးပုံစံတွင် မျိုးရွေးချယ်ခြင်း၊ မျိုးစေ့ချမှရိတ်သိမ်းအထိ အစီအစဉ်နှင့်နည်းပညာများ ပါဝင်သည်။",
+          "translatedFrom": "ja"
+        },
+        "th": {
+          "prompt": "กะหล่ำปลีกับหัวไชเท้ามีตัวอย่างแบ่งตามฤดูหว่านอย่างไร และมะเขือเทศกับแตงกวาในโรงเรือนเปรียบเทียบอะไรกับการปลูกปกติ",
+          "modelAnswer": "มีตัวอย่างหว่านฤดูใบไม้ผลิ ฤดูร้อน และฤดูใบไม้ร่วง สำหรับมะเขือเทศกับแตงกวาในโรงเรือน ให้เปรียบเทียบการปลูกเร่งให้เติบโตหรือเก็บเกี่ยวเร็วขึ้น กับการปลูกชะลอให้ช้าลงเมื่อเทียบกับการปลูกปกติ รูปแบบการปลูกรวมการเลือกพันธุ์ แผน และเทคนิคตั้งแต่หว่านจนเก็บเกี่ยว",
+          "translatedFrom": "ja"
+        },
+        "km": {
+          "prompt": "ស្ពៃក្តោបនិងឆៃថាវមានឧទាហរណ៍បែងតាមរដូវសាបព្រោះយ៉ាងណា? ប៉េងប៉ោះនិងត្រសក់ក្នុងរោងប្រៀបធៀបអ្វីនឹងការដាំធម្មតា?",
+          "modelAnswer": "មានឧទាហរណ៍សាបព្រោះនិទាឃរដូវ រដូវក្តៅ និងរដូវស្លឹកឈើជ្រុះ។ ប៉េងប៉ោះនិងត្រសក់ក្នុងរោងប្រៀបធៀបការដាំជំរុញឱ្យលូតលាស់ឬប្រមូលផលមុន និងការដាំពន្យារឱ្យយឺតជាងការដាំធម្មតា។ ទម្រង់ដាំរួមមានការជ្រើសពូជ ផែនការ និងបច្ចេកទេសពីសាបព្រោះដល់ប្រមូលផល។",
+          "translatedFrom": "ja"
+        },
+        "tl": {
+          "prompt": "Anong mga halimbawa ng panahon ng paghahasik ang ginagamit sa repolyo at labanos? Ano ang inihahambing sa karaniwang pagtatanim para sa kamatis at pipino sa pasilidad?",
+          "modelAnswer": "May mga halimbawa ng paghahasik sa tagsibol, tag-araw at taglagas. Sa kamatis at pipino sa pasilidad, ihambing ang pagpapasulong ng paglaki o ani at ang pagpapaliban nito kumpara sa karaniwang pagtatanim. Kasama sa sistema ng pagtatanim ang pagpili ng barayti at plano at pamamaraan mula paghahasik hanggang pag-aani.",
+          "translatedFrom": "ja"
+        }
+      },
+      "promptRuby": [
+        {
+          "text": "キャベツ・ダイコンでは"
+        },
+        {
+          "text": "播種時期",
+          "readingKana": "はしゅじき"
+        },
+        {
+          "text": "をどう"
+        },
+        {
+          "text": "分",
+          "readingKana": "わ"
+        },
+        {
+          "text": "ける"
+        },
+        {
+          "text": "例",
+          "readingKana": "れい"
+        },
+        {
+          "text": "があり、"
+        },
+        {
+          "text": "施設",
+          "readingKana": "しせつ"
+        },
+        {
+          "text": "のトマト・キュウリでは"
+        },
+        {
+          "text": "普通栽培",
+          "readingKana": "ふつうさいばい"
+        },
+        {
+          "text": "と"
+        },
+        {
+          "text": "何",
+          "readingKana": "なん"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "比",
+          "readingKana": "くら"
+        },
+        {
+          "text": "べますか。"
+        }
+      ],
+      "modelAnswerRuby": [
+        {
+          "text": "春",
+          "readingKana": "はる"
+        },
+        {
+          "text": "まき・"
+        },
+        {
+          "text": "夏",
+          "readingKana": "なつ"
+        },
+        {
+          "text": "まき・"
+        },
+        {
+          "text": "秋",
+          "readingKana": "あき"
+        },
+        {
+          "text": "まきの"
+        },
+        {
+          "text": "例",
+          "readingKana": "れい"
+        },
+        {
+          "text": "があります。"
+        },
+        {
+          "text": "施設",
+          "readingKana": "しせつ"
+        },
+        {
+          "text": "のトマト・キュウリでは、"
+        },
+        {
+          "text": "生育",
+          "readingKana": "せいいく"
+        },
+        {
+          "text": "や"
+        },
+        {
+          "text": "収穫",
+          "readingKana": "しゅうかく"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "普通栽培",
+          "readingKana": "ふつうさいばい"
+        },
+        {
+          "text": "より"
+        },
+        {
+          "text": "早",
+          "readingKana": "はや"
+        },
+        {
+          "text": "める"
+        },
+        {
+          "text": "促成",
+          "readingKana": "そくせい"
+        },
+        {
+          "text": "と、"
+        },
+        {
+          "text": "遅",
+          "readingKana": "おく"
+        },
+        {
+          "text": "らせる"
+        },
+        {
+          "text": "抑制",
+          "readingKana": "よくせい"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "比",
+          "readingKana": "くら"
+        },
+        {
+          "text": "べます。"
+        },
+        {
+          "text": "作型",
+          "readingKana": "さくがた"
+        },
+        {
+          "text": "は、"
+        },
+        {
+          "text": "品種",
+          "readingKana": "ひんしゅ"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "選定",
+          "readingKana": "せんてい"
+        },
+        {
+          "text": "や"
+        },
+        {
+          "text": "播種",
+          "readingKana": "はしゅ"
+        },
+        {
+          "text": "から"
+        },
+        {
+          "text": "収穫",
+          "readingKana": "しゅうかく"
+        },
+        {
+          "text": "までの"
+        },
+        {
+          "text": "計画",
+          "readingKana": "けいかく"
+        },
+        {
+          "text": "・"
+        },
+        {
+          "text": "技術",
+          "readingKana": "ぎじゅつ"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "含",
+          "readingKana": "ふく"
+        },
+        {
+          "text": "みます。"
+        }
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false
+    }
+  ]
+}

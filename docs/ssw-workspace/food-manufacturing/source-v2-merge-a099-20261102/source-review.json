@@ -1,0 +1,124 @@
+{
+  "status": "self_checked_technical_integration",
+  "workingBaselineCommit": "acee939e3152679797819fa4c729f6de5e47bfa2",
+  "preservedUpstreamCommit": "a099fa765c4d70b566af6da82b125c68c8209e34",
+  "gitPolicy": "Root owns integration branch commit/push and additional parents. Worker did not reset,stash,checkout,commit,push,or modify index/ref.",
+  "collision": {
+    "upstream": "source-closure55.json /food55-teaching /food55-check:1section126Japanesechars+1check1point/12locales",
+    "local": "source-closure55.json /sameIDs:1section390Japanesechars+1check5points/12locales",
+    "resolution": "Preserve local55/56/57byte-for-byte. Upstream body→source-closure58-upstream-a099.json, IDsfood58-upstream-a099-*,importc58a099; namespace prevents collision with a future independent58.",
+    "semanticPayloadPreserved": true,
+    "rubyPreserved": true,
+    "translationFieldsPreserved": true,
+    "originalUpstreamBody": "docs/ssw-workspace/food-manufacturing/source-v2-upstream-a099-20261102/original-source-closure55.json",
+    "renamedAuthor": "scripts/food-manufacturing/author-source58-upstream-a099.py",
+    "compatibilityEntrypoint": "scripts/food-manufacturing/author-source55.py now delegates namespaced58 and cannot overwrite local55."
+  },
+  "sourceCensus": {
+    "sourcePages": 251,
+    "objects": 88031,
+    "geometryProjectionSha256": "0e4d375b92874c1e8a49c429e6cd501d0fd22700692797ea02e39a18dd0895d9",
+    "projection": "SHA256 compact sorted-key JSON after removing only element.classification/knowledgeIds/reason; all other fields compared equal to original upstream",
+    "geometryEqual": true,
+    "noRegionsPruned": true
+  },
+  "canonicalReconciliation": {
+    "priorRows137": "93covered_ai+44candidate",
+    "upstreamRows": 9,
+    "commonPriorRowsIdentical": 102,
+    "newCoveredAddedByMerge": 0,
+    "resultRecords": 146,
+    "resultStates": {
+      "covered_ai": 93,
+      "duplicate": 8,
+      "candidate": 45
+    },
+    "duplicateAliases": {
+      "food-v2-line-balance-coordination": [],
+      "food-v2-yield-weight-denominator": [
+        "food-v2-yield-total-input-formula"
+      ],
+      "food-v2-yield-preparation-quality": [
+        "food-v2-prep-forced-yield-foreign-matter",
+        "food-v2-prep-vegetable-parts",
+        "food-v2-prep-fish-parts",
+        "food-v2-prep-meat-parts",
+        "food-v2-prep-unsuitable-damage"
+      ],
+      "food-v2-yield-preprocessed-input-exception": [
+        "food-v2-prep-purchased-exception"
+      ],
+      "food-v2-yield-cooking-evaporation": [
+        "food-v2-heating-evaporation-yield",
+        "food-v2-heating-quality-not-max"
+      ],
+      "food-v2-yield-added-water-over100": [
+        "food-v2-rice-specific-denominator",
+        "food-v2-yield-total-input-formula"
+      ],
+      "food-v2-yield-cooking-multiplier-context": [
+        "food-v2-rice-specific-denominator",
+        "food-v2-rice-water-softness-target"
+      ],
+      "food-v2-yield-high-quality-investigation": [
+        "food-v2-yield-both-extremes-investigate",
+        "food-v2-yield-high-input-water",
+        "food-v2-heating-quality-not-max"
+      ],
+      "food-v2-yield-low-target-investigation": [
+        "food-v2-yield-both-extremes-investigate",
+        "food-v2-prep-low-material-method-tool",
+        "food-v2-loss-production-mistake",
+        "food-v2-loss-container-residue",
+        "food-v2-loss-defective-products",
+        "food-v2-loss-drop-leak",
+        "food-v2-loss-overweight-control-precision",
+        "food-v2-loss-equipment-trouble"
+      ]
+    },
+    "basis": "Source102–106 and canonical objectives were independently read/authored in the local source55–57 work. Legacy summaries/subcases are represented by their existing canonical parts, not counted again because identifiers differ. This is source/objective reconciliation, not certification of another author’s app wording.",
+    "candidate": "food-v2-line-balance-coordination remains potentialDuplicate of existing WIP/adjacent-process objectives; whole-line scope uniqueness is not decided. No new direct evidence accepted.",
+    "denominator": "open",
+    "coveragePercent": null,
+    "wholeSourceKnowledgeCovered": false,
+    "instructionalPagesCoveredAi": [
+      93,
+      99,
+      101,
+      103,
+      104,
+      105
+    ],
+    "excludedPages": [
+      94
+    ]
+  },
+  "originalUpstreamAcceptancePreserved": {
+    "artifact": "docs/ssw-workspace/food-manufacturing/source-v2-upstream-a099-20261102/original-units.json",
+    "states": {
+      "covered_ai": 6,
+      "partial": 3
+    },
+    "note": "Original states remain historical author provenance, never silently replaced or counted as extra current coverage."
+  },
+  "reportMigration": {
+    "originalFolder": "source-v2-batch3-20261102 was used by both batches",
+    "preservedFolder": "docs/ssw-workspace/food-manufacturing/source-v2-upstream-a099-20261102",
+    "method": "Original upstream report bytes are copied as original-*; four noncolliding old lookups contain explicit movedTo redirects. Local batch3report/source-review/runtime retained.",
+    "checkpoint": "docs/ssw-workspace/food-manufacturing/source-v2-upstream-a099-20261102/original-CHECKPOINT-entry.md"
+  },
+  "validation": {
+    "technical": "technical-validation.json",
+    "runtime": "runtime-55-56-57-58.json:4sections/4checks/12points/96locale-pairs/28rubyfields/104SSRviews/8negative",
+    "generator": "Namespaced58 regenerates exactly with frozen original ruby lex,verified in private temp output.",
+    "daily": "96days/76canonical/18historical/76negative/96stale gate PASS after merge",
+    "limits": "SSR is not Expo production, browser image-pixel loading,physical device,expert/native review or measured duration."
+  },
+  "review": {
+    "crossWorkerSemanticAcceptance": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  }
+}

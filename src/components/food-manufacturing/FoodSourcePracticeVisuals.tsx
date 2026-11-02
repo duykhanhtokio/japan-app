@@ -18,6 +18,10 @@ import caption49 from '@/data/food-manufacturing/source-closure49.json';
 import {foodSourcePractice49} from '@/data/food-manufacturing/source-practice49';
 import {foodSourcePractice51} from '@/data/food-manufacturing/source-practice51';
 import {foodSourcePractice53} from '@/data/food-manufacturing/source-practice53';
+import {foodSourcePractice55} from '@/data/food-manufacturing/source-practice55';
+import {foodSourcePractice57} from '@/data/food-manufacturing/source-practice57';
+import caption55 from '@/data/food-manufacturing/source-closure55.json';
+import caption57 from '@/data/food-manufacturing/source-closure57.json';
 import caption51 from '@/data/food-manufacturing/source-closure51.json';
 import caption53 from '@/data/food-manufacturing/source-closure53.json';
 import captionSupplements from '@/data/food-manufacturing/source-closure31.json';
@@ -38,6 +42,8 @@ const figures:PracticeFigure[]=[
  ...foodSourcePractice49,
  ...foodSourcePractice51,
  ...foodSourcePractice53,
+ ...foodSourcePractice55,
+ ...foodSourcePractice57,
  {id:'food-source-histogram-patterns',lessonId:'food-2-043',paragraphId:'p1',source:require('../../../assets/food-manufacturing/source-practice/histogram-patterns.webp'),aspectRatio:1584/1903},
  {id:'food-source-scatter-patterns',lessonId:'food-2-043',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/scatter-patterns.webp'),aspectRatio:1584/1423},
  {id:'food-source-risk-matrix',lessonId:'food-2-047',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/risk-matrix.webp'),aspectRatio:776/648},
@@ -54,7 +60,7 @@ export function FoodSourcePracticeVisuals({lesson,textColor,readingColor,languag
  const translated=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
  return <>{figures.filter(f=>f.lessonId===lesson.id&&(!f.lessonSourceHash||f.lessonSourceHash===lesson.sourceHash)).map(figure=>{
  const p=lesson.paragraphs.find(p=>p.id===figure.paragraphId);if(!p)return null;
- const captionSupplement=figure.captionSupplementId?[...captionSupplements.sections,...caption43.sections,...caption44.sections,...caption45.sections,...caption46.sections,...caption47.sections,...caption48.sections,...caption49.sections,...caption51.sections,...caption53.sections].find(s=>s.id===figure.captionSupplementId&&s.lessonSourceHash===lesson.sourceHash&&s.sourceHash===figure.captionSupplementSourceHash):null;
+ const captionSupplement=figure.captionSupplementId?[...captionSupplements.sections,...caption43.sections,...caption44.sections,...caption45.sections,...caption46.sections,...caption47.sections,...caption48.sections,...caption49.sections,...caption51.sections,...caption53.sections,...caption55.sections,...caption57.sections].find(s=>s.id===figure.captionSupplementId&&s.lessonSourceHash===lesson.sourceHash&&s.sourceHash===figure.captionSupplementSourceHash):null;
  if(figure.captionSupplementId&&!captionSupplement)return null;
  const supplementTranslation=captionSupplement&&showTranslation&&language!=='ja'?(captionSupplement.translations as Record<string,{title:string;sourceHash:string}>)[language]:null;
  const supplementTitle=supplementTranslation?.sourceHash===captionSupplement?.sourceHash?supplementTranslation?.title:null;
