@@ -12,31 +12,33 @@
 - Quét payload vùng nguồn để chặn vô tình lưu raw PDF text, ảnh hoặc lệnh vector. Giữ PDF/ảnh trang/chữ trích nguồn ngoài kho công khai. Việc quét này không phải chứng nhận pháp lý.
 - Đã sửa trạng thái chưa có mapping thành unknown ở những nơi chưa đủ bằng chứng kết luận app thiếu. Không gọi candidate/unknown là thiếu kiến thức thực sự.
 
-## Số liệu máy đã kiểm
+## Số liệu đã lưu — đợt tiếp tục
 
-32 nguồn chuẩn hóa theo phạm vi từng ngành; tổng2.256 trang và508.877 vùng. Không coi số vùng là số ý kiến thức. Danh mục ý của mọi ngành còn mở.
+Mốc dữ liệu đã lưu: `66d22c9ff810543f266ee9b76dd3f57b0726bdcc`. Bảng này đọc từ ledger trong commit, không cộng nội dung các luồng đang soạn. Tỷ lệ toàn nguồn của cả7ngành vẫn `null`; mẫu số chưa đóng. `current-status.json` là báo cáo dẫn xuất của đợt trước và chỉ được làm mới khi các ledger hiện hành cùng ổn định.
 
-| Ngành | Trang census | Ý đang theo dõi | covered_ai có phạm vi | Trang đã phân rã đủ | Trang kiến thức có đủ bằng chứng app |
+32 nguồn chuẩn hóa,2.256trang và508.877vùng. Không coi số vùng là số ý kiến thức.
+
+| Ngành | Trang census | Ý đang theo dõi | covered_ai có phạm vi | Trang đã phân loại đủ, gồm loại trừ | Trang kiến thức có đủ bằng chứng app |
 |---|---:|---:|---:|---:|---:|
-| agriculture | 237 | 1369 | 1 | 0 | 0 |
-| manufacturing | 574 | 57 | 3 | 0 | 0 |
-| food | 251 | 96 | 16 | 1 | 0 |
-| restaurant | 271 | 1478 | 5 | 1 | 0 |
-| hospitality | 117 | 381 | 74 | 0 | 0 |
-| construction | 530 | 71 | 6 | 0 | 0 |
-| kaigo | 276 | 14 | 14 | 2 | 2 |
+| agriculture | 237 | 1398 | 42 | 2 | 2 |
+| manufacturing | 574 | 100 | 68 | 3 | 3 |
+| food | 251 | 102 | 58 | 4 | 3 |
+| restaurant | 271 | 1478 | 21 | 2 | 1 |
+| hospitality | 117 | 382 | 92 | 15 | 15 |
+| construction | 530 | 72 | 27 | 29 | 1 |
+| kaigo | 276 | 28 | 28 | 5 | 4 |
 
-Các số ý đang theo dõi có phạm vi khác nhau: một số là các ý đã đọc trực tiếp, một số là dữ liệu kế thừa chờ đối chiếu vùng. Không so sánh hay cộng ngang để tạo tỷ lệ hoàn thành chung. Nguồn sự thật là các ledger; current-status.json chỉ là báo cáo dẫn xuất kèm hash đầu vào.
+Các ý kế thừa và ý đọc trực tiếp có phạm vi khác nhau, không dùng số hàng làm tỷ lệ hoàn thành. Riêng68mục covered_ai của Sản xuất gồm51mục hướng dẫn tham khảo và17mục năng lực nghề; không đánh đồng hai loại. Unknown/candidate không chứng minh app thiếu nội dung.
 
-## Thay đổi app thực tế
+## Thay đổi app đã lưu trong lượt tiếp tục
 
-- **Nông nghiệp:** giữ quyết định55mục và35–55%; đọc lại tiểu mục độ ẩm của hai tài liệu,6ý có bằng chứng dạy và1đánh giá đúng. Không thêm mẫu số hay công thức tưới.
-- **Sản xuất:** sửa4mặt còn thiếu của bảo vệ nhiệt/reset/bimetal, đủ Nhật+12ngôn ngữ. Đoạn mới có furigana qua đường render hẹp,198segment/66reading. Giữ core và các bổ sung47/48. Không nhận47ý chưa đối chiếu câu thành thiếu câu toàn app.
-- **Thực phẩm:** thêm2phần dạy,2tự kiểm và1hình độc lập cho pattern quản đồ/năng suất;12ngôn ngữ/ruby. Giữ848câu/96ngày. Bảng/điều kiện còn chưa đủ đánh giá giữ partial/unknown.
-- **Nhà hàng:** thêm5câu và1bài độc lập, đủ12ngôn ngữ,52trườngruby; giữ255câu source31cũ và core. Đóng thêm4gap cũ:319→315. Đọc đủ từng vùng trang衛生p5 và phát hiện2ý ngoài sổ1.476; hiện1.478ý. Quan hệ người ăn–triệu chứng đã có bài/câu mới; nguyên tắc biện pháp theo nguyên nhân có bằng chứng từng phần, không coi đã kiểm hết bảng.
-- **Khách sạn:** sửa3liên kết/đánh giá, thêm3câu; viết lại ví dụ planning độc lập. Hai bài planning được hoàn thiện đủ12locale; valid149→173/456, còn283. Giữ38IDbài và đáp án cũ; ví dụ/câu cần độc lập được sửa có phạm vi.
-- **Xây dựng:** thêm3hoạt động職長017–019,36cặp dịch, giải thích5S theo mục tiêu. Rà71ý có phạm vi; chủ động hạ các liên kết đánh giá quá rộng.136trang chưa có liên kết và năng lực2号toàn diện vẫn chưa đóng.
-- **Kaigo:** chứng minh hash tuần3/4 lệch do metadata hình;127câu giữ nguyên. Sửa2đoạn truyền đạt/bảo mật,12locale/ruby. Thêm7short-answerchecks ngày169 theo style hiện hữu,ẩn đáp án trước mở. Kết hợp7câu tuần đã có với7check mới để14ý của PDF119–120 có bằng chứng; giữ toàn bộ687câu/IDs/đáp án/giải thích/scoring. Hai trang này đạt phạm vi đối chiếu AI, không suy ra276trang hoàn tất.
+- **Nông nghiệp:** giữ35–55% theo chỉ thị, không tạo mẫu số. Bốn bài tự kiểm độ ẩm mới và câu mock có sẵn đóng sáu ý độ ẩm. Tiếp tục đóng đủ hai trang60/80:42ý có dạy và đánh giá, gồm14ô nhiệt độ cây trồng và điều kiện ánh sáng; tổng7Readerchecks đủ12ngôn ngữ. Tách bảy nhóm cũ, giữ hồ sơ gốc và sửa các nguồn gán cả cụm trang để tránh đếm cha/con hoặc dẫn sai trang. Không đổi ngân hàng câu tuần/mock.
+- **Sản xuất:** đọc và đóng riêng ba trang hướng dẫn điện, thêm ba đoạn vào bài043 đủ12ngôn ngữ/furigana. Ánh xạ12năng lực tính khối lượng riêng, điện trở suất và Faraday với bài/câu có sẵn. Thêm hai câu về điều kiện dòng điện–thời gian đồng thời và cấu tạo bimetal, đủ12ngôn ngữ, lưu/khôi phục/chấm và ẩn giải thích trước nộp được kiểm trênhost. Ba mươi trang bìa/mục lục/cuối sách của mốc33còn đang xử lý riêng.
+- **Thực phẩm:** thêm bốn cụm51–54 về sáu mẫu biểu đồ kiểm soát còn thiếu, chi phí–kế hoạch, tỷ lệ/thời gian chuẩn/đồ thị và vận hành. Có bốn phần dạy, năm tự kiểm,23ý đáp án,12ngôn ngữ và hai hình mới có caption/alt.58ý có bằng chứng, ba trang93/99/101đóng mứcAI và trang94loại trừ có lý do. Giữ848câu và96ngày.
+- **Nhà hàng:** hai đợt vệ sinh/chế biến thêm13câu, một phần dạy, đủ12ngôn ngữ/furigana. Giữ toàn bộ260câu source31trước lượt này và core. Khoảng trống đánh giá cũ315→306;21mục tham khảo được tách riêng. Có21ý covered_ai và một trang chế biếnp13đóng toàn bộ chữ/hình/nhãn. Các câu có liên kết cũ nhưng chỉ kiểm một phần cũng đã được sửa bằng chứng hoặc bổ sung câu đúng năng lực.
+- **Khách sạn:** ba bài front06/07/08đủ36/36cặp dịch, valid173→209/456, còn247thiếu/cũ. Thêm một mục nguồn SNS–giao tiếp với khách–thương hiệu ngoài danh mục cũ, bổ sung Nhật/câu/12ngôn ngữ và đóng đúngý; tổng327câu,382ý theo dõi,92covered_ai,15trang kiến thức đóng mứcAI. Giữ38IDbài, đáp án cũ và bản dịch ngoài phạm vi. Các bài planning02/03/05đang soạn tiếp, chưa tính vào209.
+- **Xây dựng:** mở rộng ba cụm職長017–019,36cặp dịch mới,36caption và hai sơ đồ độc lập gắn đúng ba ngày. Thêm ma trận ba nhóm1号→2号 và dùng câu cũ khi kiểm đúngý.27ý covered_ai,28trang điều hướng loại trừ và trang92đóng toàn bộ vùng. Sửa locator bị lệch; ghi riêng mâu thuẫn mức độ rủi ro nguồn.136trang cũ đã phân loại vai trò,108trang kiến thức vẫn cần đối chiếu từngý. Giữcompletionrevision2và dữ liệu người học.
+- **Kaigo:** mở rộng từ14ý/trang119–120thành28ý/trang117–120, thêm haiReaderchecks ghi chép/5W1Hđủ12ngôn ngữ, kết hợp câu tuần có sẵn. Hiện9checks; bốn trang kiến thức đóng mứcAI và một trang phân cách loại trừ. Giữ nguyên687câu tuần,ID,lựa chọn,đáp án,giải thích và cách chấm. Trang112–116đang đối chiếu tiếp, chưa cộng vào mốc này.
 
 ## Kiểm tra và giới hạn
 
@@ -46,6 +48,6 @@ Các số ý đang theo dõi có phạm vi khác nhau: một số là các ý đ
 - Root chạy full Kaigo host trước phần Readerchecks:26tuần/176ngày/5.378đoạn/687câu; luồng chạy thêm7checks×12locale sau tích hợp. Bảo toàn ngân hàng tuần được xác nhận riêng.
 - Chưa có nghiệm thu native/domain, full Expo production, thiết bị thật hoặc thời lượng người học trong đợt này. Không đổi estimatedMinutes thành đo thực.
 
-## Việc còn tiếp tục
+## Việc còn tiếp tục theo các luồng đang thực thi
 
-Đọc và phân rã phần nguồn chưa được xác minh ngữ nghĩa; đóng từng đơn vị bằng dạy/đánh giá phù hợp, không tạo câu/bài trùng khi đã có bằng chứng. Ưu tiên các vùng bảng/hình/cảnh báo/điều kiện chưa được phân loại và các partial đã xác định phạm vi. Hoàn thiện315gap nhà hàng,283cặp dịch khách sạn, năng lực2号 và các blocker quyền/nguồn đã ghi. Sau đó nghiệm thu thời lượng, âm thanh, hình/bố cục và thiết bị bằng bằng chứng đúng loại.
+Đọc và phân rã phần nguồn chưa được xác minh ngữ nghĩa; đóng từng đơn vị bằng dạy/đánh giá phù hợp, không tạo câu/bài trùng khi đã có bằng chứng. Ưu tiên các vùng bảng/hình/cảnh báo/điều kiện chưa được phân loại và các partial đã xác định phạm vi. Hoàn thiện306gap nhà hàng,247cặp dịch khách sạn, năng lực2号 và các blocker quyền/nguồn đã ghi. Sau đó nghiệm thu thời lượng, âm thanh, hình/bố cục và thiết bị bằng bằng chứng đúng loại.
