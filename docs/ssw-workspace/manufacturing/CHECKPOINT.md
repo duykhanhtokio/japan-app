@@ -1,3 +1,13 @@
+# Manufacturing SSW1 — calculation48, three source-backed groups, 2026-11-02
+
+Integratedthreeoriginal calculationmodels with12newquestions/48distinctmathematicaloptionreasons/144question-localepairs and3readerextensions inJapanese+12targets. Mechanicaldensity123:materialvolumevsdeclaredcavity/inversevolume; electrical127:areaSIunits/R=ρℓ/S/length-area-diameter ratios; surface118/121:Faradaywithfictionalk,efficiency/timeinverse,totalmassvsareaunderfixeddeclaredconditions. Actualsourceelectrical127printsS[m²]correctly;superscriptlossisatextextractionissue,notasourceerror. Sourceexercise/imageexpressionnotcopied.
+
+Exactsource/Japanese-before/effective-target-beforeguards,canonicaltaught-afterbinding,oneJSONpermatchingreader,independentexamIDs/revisions;corebanksandprogressidentitiesunchanged. ThreegatesPASS:39lessonlocales/144questionlocalepairs,1008Qdrift/156paragraphdrift/144staletargetrejects,4/4gradingandrevision-resume pergroup. ActualprivateReader/AttemptharnessPASS39readerlocale+156questionlocaleflows,translationtoggle,answer/positionpersist/reopen,andallrationaleshiddenbeforensubmission/shownafter. Declarednative/storage/appearance/Royal/assetadapters;notbrowserlayout/image-load,productionExpo,nativephone,measuredworkloadornative/domaincertification.
+
+Read session-20261102/calculation48/REPORT.vi.md, source-review.json, build-validation.json, component-validation.json andruntime-*.json. Rebuildvia scripts/manufacturing/build-calculation48.py; scopedgates check-calculation48.cjs andcheck-calculation48-components.cjs. Whole574knowledge/sourcepageclosureandhuman/native/domain/deviceflagsremainfalse. Remote persistence must be verified by coordinator; no block49 started.
+
+---
+
 # Manufacturing SSW1 — source atoms47 and guarded reader details, 2026-11-02
 
 Verified exact three source PDF hashes and574physicalpages. Reconciled the33historical non-detail-view rows into3covers/24TOC/3colophons/3electrical instructional overview pages10–12; these are not33unprocessed technicalpages. Visually compared mechanical89,electrical10–12/165,surface103 and recorded57bounded atom comparisons,6exact question-to-paragraph bindings and22option/rationale meaning dispositions. Existing source exercise wording was not copied; no new duplicate questions. Whole-page and whole574knowledge closure remainfalse.

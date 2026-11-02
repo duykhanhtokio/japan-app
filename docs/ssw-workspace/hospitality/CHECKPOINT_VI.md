@@ -1,3 +1,15 @@
+# Bài thứ năm và sáu đủ 12 ngôn ngữ — ngày 02/11/2026
+
+Hoàn tất tiếp `hotel-front-04` và `hotel-front-05`, đủ 12 ngôn ngữ theo đúng revision Nhật, toàn bộ 8 đoạn và 21 câu cùng các trường bài. Giữ concierge là xu hướng phân công theo quy mô, không biến thành nghĩa vụ; bổ sung thuật ngữ cashier và các câu riêng về vai trò, thông tin, nhân sự, cách nói điện thoại, hóa đơn/biên nhận, thuế theo điều kiện và chống tính trùng. Giữ tất cả ID/đáp án/thuật ngữ Nhật và nội dung ngoài hai bài.
+
+Toàn ngành 125→149/456 cặp hợp lệ, còn 307 cặp thiếu/cũ. Đợt này sửa 17 cặp cũ, dịch mới 7 cặp. Luồng khách sạn tự biên soạn/kiểm phần của mình; luồng xây dựng hỗ trợ biên soạn và tự kiểm riêng front05 hi/bn/ne/my trong sidecar, điều phối khách sạn chỉ kiểm cấu trúc tích hợp. Không rà chéo nội dung giữa các tác giả.
+
+Check cấu trúc, bản dịch, loader thực tế149cặp, từ chối revision cũ và bảo toàn ngoài phạm vi PASS; diff-check PASS. Tổng đợt nối tiếp sáu bài tăng82→149 (+67cặp hợp lệ), gồm 23cặp dịch mới và44cặp cũ được sửa. Tất cả `translated_ai_unreviewed`. Bằng chứng `front04-front05-12locale-20261102-evidence.json`.
+
+Không có nghiệm thu toàn117trang, chuyên môn/bản ngữ, đo thời lượng hay thiết bị thật. Browser của điều phối không khởi chạy được do quyền sandbox nên không tính đạt. Nhật/hình không đổi.
+
+---
+
 # Bài thứ tư tiếp nối — ngày 02/11/2026
 
 `hotel-front-03` nay đủ 12 ngôn ngữ đúng revision Nhật: hoàn thiện 9 cặp cũ và dịch mới 3 cặp my/th/km. Dịch đủ 4 đoạn, 8 câu và toàn bộ trường bài; giữ điều kiện giờ nhận/trả chỉ là ví dụ, thời gian sử dụng phòng và yêu cầu vào sớm/gia hạn theo cơ sở/gói, không tự hứa vì cùng ngày. Nhật, ID, đáp án và thuật ngữ/cách đọc giữ nguyên.

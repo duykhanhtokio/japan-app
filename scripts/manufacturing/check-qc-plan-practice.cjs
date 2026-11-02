@@ -35,7 +35,8 @@ assert.deepEqual(exam.questions.map(q=>q.optionsJa.length),[4,4,4,4,2,2,2,2]);
 assert.deepEqual(exam.questions.map(q=>q.correctIndex),[0,2,1,3,1,0,1,0]);
 assert.equal(api.manufacturingQcPlanExams('electrical').length,0);
 const existing=supplement.manufacturingSupplementExams('mechanical');
-assert.deepEqual(existing.map(e=>e.id),[read('src/data/manufacturing/supplement-practice.json').id,'mfg1-tolerance-class-supplement',exam.id]);
+const previousIds=[read('src/data/manufacturing/supplement-practice.json').id,'mfg1-tolerance-class-supplement',exam.id];
+assert.deepEqual(existing.filter(e=>previousIds.includes(e.id)).map(e=>e.id),previousIds);
 const stable=v=>Array.isArray(v)?v.map(stable):v&&typeof v==='object'?Object.fromEntries(Object.keys(v).sort().map(k=>[k,stable(v[k])])):v;
 const baselineStems=new Set(['mechanical','electrical','surface'].flatMap(s=>read('src/data/manufacturing/'+s+'.json').checks.flatMap(e=>e.questions.map(q=>q.stemJa))));
 for(const q of exam.questions){

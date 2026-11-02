@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
-  "status": "METADATA_RECONCILIATION_PASS",
-  "scope": "Compared committed metadata only; no fresh source visual/domain/native/device/audio or duration certification.",
+  "status": "SOURCE_EXTENSION_AND_TWELVE_LOCALE_INTEGRITY_PASS",
+  "scope": "Inherited committed source facts and actual canonical lessons, not a new271page visual review.",
   "hierarchyUnits": 639,
   "decisionCounts": {
     "structural_aggregate": 113,
@@ -10,9 +10,9 @@
     "blocked": 2
   },
   "facts": 1476,
-  "factsWithoutDedicatedQuestion": 397,
+  "factsWithoutDedicatedQuestion": 319,
   "locales": 12,
-  "itemsPerLocale": 488,
+  "itemsPerLocale": 545,
   "durationRecords": 120,
   "complete": false,
   "inputSha256": {
@@ -24,18 +24,48 @@
   },
   "currentValidation": [
     {
+      "command": "python scripts/restaurant/build-source31.py --available-translations --require-complete-locales",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/restaurant/build-source31-matrix.py",
+      "result": "PASS639units/1476facts/255questions"
+    },
+    {
       "command": "python scripts/restaurant/check-source31-targets.py",
-      "exitCode": 0,
-      "result": "PASS:488canonicalItems/5856localeItems/33096visibleFields; all12 runtime packs match reviewed targets"
+      "result": "PASS545canonical/6540locale/40620fields"
     },
     {
-      "command": "node scripts/restaurant/check-daily-learning.cjs",
-      "exitCode": 1,
-      "result": "Environment/sparse checkout blocker: missing src/components/restaurant/RestaurantDailyLearning.tsx; no current daily renderer acceptance claimed."
+      "command": "NODE_PATH=\"$PWD/node_modules\" node scripts/restaurant/check-source31.cjs --require-locales",
+      "result": "PASS1235SSRrenders;255questions;145figureviews;stale-revisionrejection;historical8a0ebfe5preservation"
     },
     {
-      "command": "git diff --check -- docs/ssw-workspace/restaurant/closure-status.json docs/ssw-workspace/restaurant/status-reconciliation-20261102.json",
-      "exitCode": 0
+      "command": "scoped inline preservation/reading checks",
+      "result": "PASS530priorcanonical/6360priortargets/240priorruntimequestions+contextreadings+order;150newreadingfieldsliteralalignment;0unannotatedkanjisegments;0exactnewstemduplicates"
     }
-  ]
+  ],
+  "historicalBeforeOpsnext": {
+    "status": "METADATA_RECONCILIATION_PASS",
+    "scope": "Compared committed metadata only; no fresh source visual/domain/native/device/audio or duration certification.",
+    "factsWithoutDedicatedQuestion": 397,
+    "itemsPerLocale": 488,
+    "currentValidation": [
+      {
+        "command": "python scripts/restaurant/check-source31-targets.py",
+        "exitCode": 0,
+        "result": "PASS:488canonicalItems/5856localeItems/33096visibleFields; all12 runtime packs match reviewed targets"
+      },
+      {
+        "command": "node scripts/restaurant/check-daily-learning.cjs",
+        "exitCode": 1,
+        "result": "Environment/sparse checkout blocker: missing src/components/restaurant/RestaurantDailyLearning.tsx; no current daily renderer acceptance claimed."
+      },
+      {
+        "command": "git diff --check -- docs/ssw-workspace/restaurant/closure-status.json docs/ssw-workspace/restaurant/status-reconciliation-20261102.json",
+        "exitCode": 0
+      }
+    ]
+  },
+  "totalSource31Questions": 255,
+  "latestEvidence": "source-closure31/integration/opsnext-summary-20261102.json"
 }

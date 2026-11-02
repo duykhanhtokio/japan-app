@@ -5,6 +5,21 @@ Translation identities continue to bind the literal Japanese text, not annotatio
 from pathlib import Path
 import sys,json,collections,subprocess
 
+def apply_reviewed_question_overrides(rows,root):
+ path=root/'docs/ssw-workspace/restaurant/source-closure31/integration/opsnext-reading-overrides-20261102.json'
+ if not path.is_file():return 0
+ receipt=json.loads(path.read_text());readings=receipt['readings'];count=0
+ for row in rows.values():
+  for q in (row.get('exam') or {}).get('questions',[]):
+   if not q['id'].startswith(receipt['questionIdPrefix']):continue
+   if q.get('sourceHash')!=receipt['questionSourceHashes'].get(q['id']):continue
+   sequences=[q['furigana']['stem'],q['furigana']['explanation'],*q['furigana']['options'],*q.get('reasonRuby',[])]
+   for sequence in sequences:
+    for segment in sequence:
+     if not segment.get('reading') and segment['text'] in readings:
+      segment['reading']=readings[segment['text']];count+=1
+ return count
+
 def annotate(rows, root):
  engine=root/'scripts/restaurant/build-furigana.py'
  prefix=engine.read_text().split("if '--self-test' in sys.argv:",1)[0]

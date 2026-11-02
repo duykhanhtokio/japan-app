@@ -1,3 +1,13 @@
+# Nhà hàng — tiếp nối 2026-11-02: 319 ý còn thiếu đánh giá
+
+Đã thêm15câu gốc với180bản dịch đúngrevision cho12ngôn ngữ; nối21fact tới câu cũ sau đối chiếu chính xác năng lực, thay vì giữ9bản nháp trùng. Khoảng trống đánh giá355→319, tách riêng21fact tham chiếu đã loại khỏi phạm vi kiểm tra. Tổngsource31:255câu/545mục Nhật/6540bản ghi dịch/40620trường.
+
+Giữ nguyên530mục Nhật và6360mục dịch cũ,240câu source31 cùng chú âm/thứ tự; ngân hàng gốc và lưu tiến độ khớp mốc8a0ebfe5. Bổ sung chú âm theo ngữ cảnh cho150trường mới, không còn đoạnkanji thiếu chú âm trong15câu; không nhận nghiệm thu bản ngữ hoặc âm thanh. Compiler, ma trận vàstrict12localePASS;1235lượtReact/RNWSSR với thành phần thậtPASS. Đây không phải kiểmExpo/toànapp/thiếtbị thật/thời lượngngười học.
+
+Nguồn/hình/quyền sử dụng/sơ cứu còn mở;319ý chưa đóng. Bằng chứng: `source-closure31/integration/opsnext-summary-20261102.json` và `opsnext-preservation-20261102.json`. Nội dung đóng băng; chỉ được coi đã lưu sau root commit/push/fetch/persistence.
+
+---
+
 # Nhà hàng — source31 đủ12ngôn ngữ, 2026-10-31
 
 Đủ7tài liệu/271trang/639mục theo hồ sơ AI;1476fact;133giải thích,198câu,145lượt hình vào92bài. Đủ12×488=5856bản ghi/33096trường dịch khớp hash;278cờ số có biên bản AI theo đúng trường. Giữ120bài/984câu gốc và tiến độ. PASS1196render yêu cầu đủ locale,28entry/routecase, kiểm lưu/khôi phục, TypeScript; Expo phần bổ sung xuất iOS/Android/web và Chromium thực12locale/92bài/4viewport.

@@ -14,6 +14,10 @@ let source47Clarification:Clarification|null=null;
  * This clarifies an existing inspection principle, without adding an operating procedure.
  */
 export function manufacturingLessonParagraph(lesson:ManufacturingLesson,paragraphId:string,locale:string,text:string|undefined):string|undefined {
+ if((lesson.id==='mfg1-mechanical-lesson-023'&&paragraphId==='example')||(lesson.id==='mfg1-electrical-l068'&&paragraphId==='section-1')||(lesson.id==='mfg1-surface-lesson-028'&&paragraphId==='example')){
+  // eslint-disable-next-line @typescript-eslint/no-require-imports -- Defer the helper for unrelated study days.
+  return require('./calculation48').manufacturingCalculation48Paragraph(lesson,paragraphId,locale,text);
+ }
  if(['mfg1-electrical-l070','mfg1-electrical-l025','mfg1-electrical-l024'].includes(lesson.id)){
   const revised=require('./sequential-practice').manufacturingSequentialParagraph(lesson,paragraphId,locale,text);
   if(revised!==text)return revised;

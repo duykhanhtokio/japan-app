@@ -4,7 +4,15 @@ import json,hashlib,collections,random,argparse,re
 ROOT=Path(__file__).resolve().parents[2];DOC=ROOT/'docs/ssw-workspace/restaurant/source-closure31';DATA=ROOT/'src/data/restaurant';OUT=DATA/'source31'
 SHARDS=['hygiene1','cooking1','service1','hygiene2','operations2','cooking-service2'];LOCALES=['vi','en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']
 def read(p):return json.loads(p.read_text())
-def save(p,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+def preserve_key_order(previous,current):
+ if isinstance(previous,dict) and isinstance(current,dict):
+  return {k:preserve_key_order(previous.get(k),current[k]) for k in [*previous,*[k for k in current if k not in previous]] if k in current}
+ if isinstance(previous,list) and isinstance(current,list):
+  return [preserve_key_order(previous[i] if i<len(previous) else None,v) for i,v in enumerate(current)]
+ return current
+def save(p,d):
+ if p.is_file():d=preserve_key_order(read(p),d)
+ p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
 def stable(v):return json.dumps(v,ensure_ascii=False,sort_keys=True,separators=(',',':'))
 def digest(v):return hashlib.sha256(stable(v).encode()).hexdigest()
 def textsha(t):return hashlib.sha256(t.encode()).hexdigest()
@@ -162,9 +170,27 @@ def main():
   save(DOC/f'canonical-ja.{args.shards[0]}.json',dict(schemaVersion=1,selectedShards=selected,inputSha256=inputhashes,items=export_items))
   print('EXPORTED',args.shards[0],len(item_registry),'Japanese items');return
  # Reading candidates affect runtime revisions only; frozen Japanese translation exports stay stable.
- from source31_readings import annotate
+ # Preserve contextual readings and saved-question order when the literal canonical
+ # question revision is unchanged. Dictionary regeneration must not erase a reviewed
+ # reading such as 1品=いっぴん or reorder an existing practice session.
+ previous_rows={}
+ for level in ['1','2']:
+  path=OUT/f'{level}.json'
+  if path.is_file():previous_rows.update(read(path).get('lessons',{}))
+ from source31_readings import annotate,apply_reviewed_question_overrides
  save(DOC/'reading-candidates.json',annotate(rows,ROOT))
  for r in rows.values():
+  previous=previous_rows.get(r['lessonId'],{})
+  if r['exam'] and previous.get('exam'):
+   old_questions={q['id']:q for q in previous['exam']['questions']}
+   for q in r['exam']['questions']:
+    old=old_questions.get(q['id'])
+    if old and old.get('sourceHash')==q.get('sourceHash'):
+     for field in ['furigana','reasonRuby']:
+      if field in old:q[field]=old[field]
+   order={qid:i for i,qid in enumerate(old_questions)}
+   r['exam']['questions'].sort(key=lambda q:(order.get(q['id'],len(order)),q['id'] if q['id'] not in order else ''))
+  apply_reviewed_question_overrides({r['lessonId']:r},ROOT)
   if r['exam']:r['exam']['sourceHash']=digest({k:v for k,v in r['exam'].items() if k!='sourceHash'})
   r['sourceHash']=digest({k:v for k,v in r.items() if k!='sourceHash'})
  for level in ['1','2']:save(OUT/f'{level}.json',dict(schemaVersion=1,lessons={id:r for id,r in rows.items() if lessons[id]['level']==level}))

@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-02",
+  "status": "FROZEN_SELF_VALIDATED_REMOTE_PERSISTENCE_PENDING",
+  "sourceScope": "Inherited committed source facts and actual canonical lessons, not a new271page visual review.",
+  "groups": [
+    "D-quality-service",
+    "E-training-management",
+    "F-indicators-followup",
+    "G-existing-numerical-competencies",
+    "H-existing-training-competencies",
+    "I-existing-conditional-competencies",
+    "J-existing-hygiene-risk-competencies"
+  ],
+  "newQuestions": 15,
+  "exactExistingQuestionBindings": 21,
+  "assessmentGapsBefore": 355,
+  "assessmentGapsAfter": 319,
+  "referenceExcludedFactsStillWithoutQuestions": 21,
+  "totalSource31Questions": 255,
+  "canonicalItems": 545,
+  "totalLocaleRecords": 6540,
+  "totalVisibleTranslatedFields": 40620,
+  "newLocaleRecords": 180,
+  "locales": 12,
+  "newReadingFields": 150,
+  "newUnannotatedKanjiSegments": 0,
+  "priorRuntimeQuestionsAndReadingsPreserved": 240,
+  "priorCanonicalItemsPreserved": 530,
+  "priorLocaleItemsPreserved": 6360,
+  "duplicateDraftsRemoved": 9,
+  "remainingByShard": {
+    "hygiene1": 18,
+    "cooking1": 83,
+    "service1": 48,
+    "hygiene2": 68,
+    "operations2": 51,
+    "cooking-service2": 51
+  },
+  "runtime": {
+    "status": "PASS",
+    "renders": 1235,
+    "sections": 133,
+    "questions": 255,
+    "figures": 145,
+    "staleLessonRejected": true,
+    "staleQuestionRejected": true,
+    "canonicalContentAndProgressPreserved": true,
+    "locales": 12,
+    "completeTargetsRequired": true,
+    "browserTested": false,
+    "physicalDeviceTested": false
+  },
+  "strictTargetsEvidence": "translation-final-validation.json",
+  "selfReviewEvidence": "integration/opsnext-preservation-20261102.json",
+  "historicalPreservationBaseline": "8a0ebfe5f799847ac1fd590a3b610cb0837f7667",
+  "sessionPreservationBaseline": "ee7ac2b1434b0b049dd07de2b08d0aa5ad473dd7",
+  "frozenAuthoringSourceSha256": "52a5b66f01c97c8ab6dc416f4ac66b09f6794f6ac0e15fbccaa45ca16d5cc267",
+  "readingOverridesSha256": "327e4bfa83b81d66facb94f87c6d91e6c2e3aa92215c34af7ae3960fe8f35437",
+  "builderPreservesExistingContextReadingsAndQuestionOrder": true,
+  "authoringScriptsReproduction": "The two superseded24draft writers were removed. Dated translation writers are pinned to the exact final15item source snapshot and write only the assigned translation files; the explicit binding writer reproduces21baseline-verified bindings idempotently. Default compiler consumes frozen assessment-delta, not an authoring generator.",
+  "complete": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "audioReviewed": false,
+  "learnerDurationMeasured": false,
+  "sourceBlockedUnitsStillOpen": [
+    "rst-1-cooking-ref01",
+    "rst-1-service-k021"
+  ],
+  "additionalPracticalGapStillOpen": "rst-1-service-k065",
+  "checks": [
+    {
+      "command": "python scripts/restaurant/build-source31.py --available-translations --require-complete-locales",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/restaurant/build-source31-matrix.py",
+      "result": "PASS639units/1476facts/255questions"
+    },
+    {
+      "command": "python scripts/restaurant/check-source31-targets.py",
+      "result": "PASS545canonical/6540locale/40620fields"
+    },
+    {
+      "command": "NODE_PATH=\"$PWD/node_modules\" node scripts/restaurant/check-source31.cjs --require-locales",
+      "result": "PASS1235SSRrenders;255questions;145figureviews;stale-revisionrejection;historical8a0ebfe5preservation"
+    },
+    {
+      "command": "scoped inline preservation/reading checks",
+      "result": "PASS530priorcanonical/6360priortargets/240priorruntimequestions+contextreadings+order;150newreadingfieldsliteralalignment;0unannotatedkanjisegments;0exactnewstemduplicates"
+    }
+  ]
+}

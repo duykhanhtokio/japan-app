@@ -6,6 +6,7 @@ import {manufacturingToleranceExams,manufacturingToleranceTranslation} from './t
 import {manufacturingQcPlanExams,manufacturingQcPlanTranslation} from './qc-plan-practice';
 import {manufacturingEnergyExams,manufacturingEnergyTranslation} from './energy-practice';
 import {manufacturingSequentialExams,manufacturingSequentialTranslation} from './sequential-practice';
+import {manufacturingCalculation48Exams,manufacturingCalculation48Translation} from './calculation48';
 
 type DraftQuestion={id:string;guideParagraphId:string;correctIndex:number;stemJa:string;optionsJa:string[];explanationJa:string;sourceHash:string};
 type Draft={id:string;revision:string;guideId:string;guideSourceHash:string;titleJa:string;questions:DraftQuestion[];locales:Record<string,[string,string[],string][]>;localeSourceHashes:Record<string,string[]>;reasonPrefixes:Record<string,[string,string]>};
@@ -14,13 +15,14 @@ function draft():Draft{return cached??(cached=require('./supplement-practice.jso
 function currentGuide(){const d=draft();return manufacturingSourceGuides('mechanical').find(g=>g.id===d.guideId&&g.sourceHash===d.guideSourceHash);}
 /** An additive formative check. Existing weekly checks and saved attempts retain their identities. */
 export function manufacturingSupplementExams(specialty:Specialty):ManufacturingExam[]{
- if(specialty==='electrical')return [...manufacturingBooleanPracticeExams(specialty),...manufacturingEnergyExams(specialty),...manufacturingSequentialExams(specialty)];
- if(specialty!=='mechanical')return [];
- const tolerance=[...manufacturingToleranceExams(specialty),...manufacturingQcPlanExams(specialty)],d=draft(),guide=currentGuide();if(!guide)return tolerance;
+ if(specialty==='electrical')return [...manufacturingBooleanPracticeExams(specialty),...manufacturingEnergyExams(specialty),...manufacturingSequentialExams(specialty),...manufacturingCalculation48Exams(specialty)];
+ if(specialty!=='mechanical')return manufacturingCalculation48Exams(specialty);
+ const tolerance=[...manufacturingToleranceExams(specialty),...manufacturingQcPlanExams(specialty),...manufacturingCalculation48Exams(specialty)],d=draft(),guide=currentGuide();if(!guide)return tolerance;
  return [{id:d.id,revision:d.revision,titleJa:d.titleJa,kind:'weekly',officialSimulation:false,weekId:'supplement-caliper',questions:d.questions.map(q=>({id:q.id,sourceHash:q.sourceHash,lessonId:guide.id,stemJa:q.stemJa,optionsJa:q.optionsJa,correctIndex:q.correctIndex,optionReasonsJa:q.optionsJa.map((_,i)=>(i===q.correctIndex?'正解です。':'この選択肢は適切ではありません。')+q.explanationJa),sources:guide.sources}))},...tolerance];
 }
 /** No fallback to another target language; suppress entries when the source guide or question is stale. */
 export function manufacturingSupplementTranslation(question:ManufacturingQuestion,locale:string):QuestionTranslation|null{
+ if(question.id.startsWith('mfg1-calc48-'))return manufacturingCalculation48Translation(question,locale);
  if(question.id.startsWith('mfg1-sequential-'))return manufacturingSequentialTranslation(question,locale);
  if(question.id.startsWith('mfg1-energy-check-'))return manufacturingEnergyTranslation(question,locale);
  if(question.id.startsWith('mfg1-qc-plan-check-'))return manufacturingQcPlanTranslation(question,locale);
