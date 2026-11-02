@@ -1,3 +1,9 @@
+# Tái lập v9 nhóm2 — 03/11/2026
+
+Planning06 và safety02/04 đủ36cặp/2604trường; thêm209bản câu hỏi dịch. Bộ tích hợp kiểm tra nested example/practice phát hiện EN/VI safety02 còn prompt và hai expectedPoints cũ: tác giả đã dịch đủ dữ kiện mới rồi tự rà toàn bộ nested arrays. Không dùng revision/hash mới để bỏ qua phần thiếu. Kiểm batch2, translations và loader thật PASS420/456, còn36thiếu-cũ; dữ liệu Nhật và sổ nguồn giữ nguyên. Bằng chứng recovery-v9/batch-2-integration.json. Mọi bản translated_ai_unreviewed, chưa có chứng nhận bản ngữ/chuyên môn/thiết bị/thời lượng. Log persistence sau commit xác nhận lưu đợt này.
+
+---
+
 # Tái lập v9 nhóm1 — 03/11/2026
 
 Sau khi môi trường bị tạo lại, remote được xác nhận vẫn ở bb4eb47; bản v9 từng kiểm456cặp trong phiên cũ chưa được lưu, nên không được tính là checkpoint bền vững. Đã tái lập và tự kiểm nội dung từ bản Nhật, không tuyên bố khôi phục nguyên byte các bản mất. Bản bàn giao riêng được lưu trước khi tích hợp.

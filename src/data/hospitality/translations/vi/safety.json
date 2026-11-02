@@ -186,7 +186,7 @@
     },
     {
       "id": "hotel-safety-02",
-      "sourceRevision": "cb970c5bfd0fef2f81bb302b15683fa607ad571498251ef435e22fa9bdb31b92",
+      "sourceRevision": "e7c8918d36aa69d54fa4b7791a5722a49191d51e6e5471613fdf0000e2f5d2ed",
       "status": "translated_ai_unreviewed",
       "title": "Hành động an toàn khi cháy, động đất và cấp cứu",
       "reading": "かさい・じしん・きゅうびょうじのあんぜんこうどう",
@@ -219,6 +219,11 @@
           "id": "hotel-safety-02-s03",
           "title": "Báo cụ thể vị trí và tình hình cho 119",
           "body": "Khi có cháy hoặc cần xe cấp cứu, gọi 119. Bình tĩnh nêu địa chỉ cùng tên cơ sở, tầng và vị trí cụ thể, là cháy hay cấp cứu và tình hình quan sát được. Điều chưa biết thì không tự suy đoán để trả lời; hãy làm theo câu hỏi của tổng đài. Sau cuộc gọi, chia sẻ thông tin trong cơ sở và bố trí người đón, dẫn lực lượng cứu hộ từ cửa vào. Không tự mình chẩn đoán hoặc quyết định điều trị cho khách; thực hiện quy trình khẩn cấp và chỉ dẫn của tổng đài. Ghi người báo, thời điểm và người nhận bàn giao để việc hỏi lại không cản trở cứu hộ."
+        },
+        {
+          "id": "hotel-safety-02-s04",
+          "title": "Nói cụ thể tình trạng người bệnh khi gọi cấp cứu",
+          "body": "Khi gọi cấp cứu, sau khi nói địa điểm, hãy trình bày trong phạm vi biết được: ai gặp vấn đề, từ khi nào và đang trong tình trạng ra sao. Tổng đài viên có thể hỏi triệu chứng, tuổi, giới tính. Không nhầm tuổi đã xác nhận từ khách hoặc người đi cùng với tuổi đoán qua vẻ ngoài. Điều chưa rõ thì nói “Tôi chưa biết” và làm theo câu hỏi. Khi được hỏi về ý thức hoặc hô hấp, báo tình trạng đã xác nhận, không tự kết luận tên bệnh. Cũng cần cung cấp tên người gọi và số điện thoại có thể tiếp tục liên lạc. Ví dụ bài tập giả định: “Một khách đột nhiên thấy không khỏe tại phòng ăn tầng hai. Theo người đi cùng, khách sáu mươi lăm tuổi. Tôi xin báo những triệu chứng hiện đã xác nhận.” Luyện phân biệt địa điểm, tình trạng và căn cứ thông tin. Không luyện theo cách đợi thu thập đủ mọi thông tin rồi mới gọi. Nghe chỉ dẫn tổng đài viên, phân công nhân viên xung quanh làm những việc như đón lực lượng cấp cứu ở lối vào.\n\nTài liệu cấp 2 còn nêu việc khuyên khách đột nhiên không khỏe đi khám trong khả năng có thể. Theo quy trình cơ sở, phối hợp người phụ trách để hỗ trợ trao đổi việc đi khám hoặc hướng dẫn cơ sở y tế. Tuy nhiên, khi có tính khẩn cấp cao như bất thường hô hấp đột ngột, không đợi giới thiệu nơi khám hoặc hỏi đủ mọi mục mới gọi 119. Nhân viên không tự định bệnh, không khẳng định nhẹ rồi cản trở đi khám hoặc gọi cấp cứu; cần báo tình trạng đã xác nhận và làm theo tổng đài viên."
         }
       ],
       "terms": [
@@ -248,11 +253,13 @@
         ]
       },
       "practice": {
-        "prompt": "Tập nói thành tiếng thông tin sẽ báo cho 119 khi có ca cấp cứu trong cơ sở. Đồng thời giải thích phải thay đổi hành động thế nào nếu lửa đã lan tới trần.",
+        "prompt": "Tập nói thành tiếng thông tin sẽ báo cho 119 khi có ca cấp cứu trong cơ sở. Đồng thời giải thích phải thay đổi hành động thế nào nếu lửa đã lan tới trần. Tiếp theo, phân vai cấp cứu, người gọi và người đón ở lối vào; trình bày riêng địa chỉ, vị trí trong cơ sở, triệu chứng đã xác nhận, tuổi và thông tin tương tự, cùng thông tin liên lạc của người gọi. Với câu hỏi chưa rõ, trả lời mà không suy đoán.",
         "expectedPoints": [
           "Nêu cả địa chỉ và vị trí trong tòa nhà",
           "Trình bày sự việc quan sát được",
-          "Chọn thoát nạn thay vì tiếp tục chữa cháy"
+          "Chọn thoát nạn thay vì tiếp tục chữa cháy",
+          "Báo triệu chứng, tuổi và thông tin tương tự trong phạm vi đã xác nhận",
+          "Không bịa điều chưa rõ; làm theo câu hỏi và chỉ dẫn của tổng đài viên"
         ]
       },
       "questions": [
@@ -301,6 +308,67 @@
           "knowledgeIds": [
             "hotel-safety-02-s02-k01",
             "hotel-safety-02-s02-k02"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q04",
+          "prompt": "Tổng đài 119 hỏi tuổi của khách bị bệnh đột ngột nhưng chưa xác nhận được. Cách nào phù hợp?",
+          "choices": [
+            "Khẳng định tuổi chỉ dựa vào vẻ ngoài",
+            "Nói chưa rõ, báo triệu chứng và địa chỉ đã xác nhận, làm theo câu hỏi tổng đài viên",
+            "Cúp máy đến khi biết tuổi",
+            "Đoán tên bệnh thay cho tuổi"
+          ],
+          "answerIndex": 1,
+          "explanation": "Không biến suy đoán thành sự thật. Trả lời triệu chứng, tuổi trong phạm vi biết được, không trì hoãn liên lạc khẩn cấp để gom thông tin.",
+          "knowledgeIds": [
+            "hotel-safety-02-s03-k01"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q05",
+          "prompt": "Sau khi báo địa điểm, tổ hợp thông tin nào cần bổ sung theo câu hỏi tổng đài viên?",
+          "choices": [
+            "Chỉ nội dung quảng cáo gói lưu trú",
+            "Mục tiêu doanh thu và thâm niên nhân viên",
+            "Triệu chứng, tuổi và thông tin đã xác nhận cùng tên, thông tin liên lạc người gọi",
+            "Tên bệnh suy đoán và danh sách khách không liên quan"
+          ],
+          "answerIndex": 2,
+          "explanation": "Báo tình trạng người bệnh và người có thể liên lạc trong phạm vi biết được. Không tự định bệnh hoặc cung cấp thông tin cá nhân không liên quan.",
+          "knowledgeIds": [
+            "hotel-safety-02-s03-k01"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q06",
+          "prompt": "Về hướng dẫn đi khám và gọi 119 khi khách đột nhiên không khỏe, cách nào phù hợp?",
+          "choices": [
+            "Dù khẩn cấp vẫn đợi giới thiệu xong nơi khám mới gọi 119",
+            "Nhân viên định bệnh rồi mới khuyên đi khám",
+            "Hỗ trợ trao đổi việc đi khám, khi khẩn cấp thì gọi 119 mà không đợi giới thiệu hoặc thu thập đủ thông tin",
+            "Không kiểm tra tình trạng mà nói ai cũng bệnh nhẹ"
+          ],
+          "answerIndex": 2,
+          "explanation": "Khuyên đi khám và gọi khẩn cấp nhanh chóng có thể thực hiện song song. Không trì hoãn khi khẩn cấp, báo tình trạng đã xác nhận và làm theo tổng đài viên.",
+          "knowledgeIds": [
+            "hotel-source-detail-ha2-059-04"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q07",
+          "prompt": "Quyết định nào về chữa cháy ban đầu phù hợp với bài?",
+          "choices": [
+            "Thấy lửa nhỏ thì chữa mà không kiểm tra đường lui",
+            "Chỉ làm trong phạm vi đã được huấn luyện, có đường lui và bảo đảm an toàn; nếu khói, nhiệt hoặc đường lui nguy hiểm thì ngừng chữa và sơ tán",
+            "Lửa lan lên trần thì toàn bộ nhân viên thường phải tiếp tục dùng thiết bị chữa cháy trong nhà",
+            "Đợi chữa xong mới báo cháy và hướng dẫn sơ tán"
+          ],
+          "answerIndex": 1,
+          "explanation": "Đánh giá chữa cháy ban đầu và sơ tán dựa trên điều kiện an toàn. Không hiểu thành lệnh tiếp tục chữa trong nguy hiểm; thực hiện báo tin và sơ tán theo quy trình cơ sở.",
+          "knowledgeIds": [
+            "hotel-safety-02-s01-k01",
+            "hotel-safety-02-s01-k02"
           ]
         }
       ],
@@ -440,7 +508,7 @@
     },
     {
       "id": "hotel-safety-04",
-      "sourceRevision": "e29a8c30e8970e0279e81e61f91f5bb18bf0eea89b6062ebea4544d7a2939ab4",
+      "sourceRevision": "8cf38a99eb7fae14fe96d85a59885c2bd1165fe7de821a989f05729465250413",
       "status": "translated_ai_unreviewed",
       "title": "Tác phong vệ sinh và cơ sở sạch sẽ mỗi ngày",
       "reading": "まいにちのみだしなみとせいけつなかんない",
@@ -544,6 +612,108 @@
             "hotel-safety-04-s03-k01",
             "hotel-safety-04-s03-k02",
             "hotel-safety-04-s03-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q03",
+          "prompt": "Với tóc dài và đồng phục của nhân viên xử lý thực phẩm, cách nào phù hợp?",
+          "choices": [
+            "Chỉ chỉnh lúc đến làm, bẩn cũng không sửa",
+            "Giữ tóc, móng gọn gàng và đồng phục sạch, xử lý cả khi bị bẩn trong ca",
+            "Dùng nước hoa che vết bẩn đồng phục",
+            "Tóc ở phía khuất có thể chạm thực phẩm"
+          ],
+          "answerIndex": 1,
+          "explanation": "Giữ sạch trong suốt ca làm. Kiểm tra ngăn tóc lẫn vào thực phẩm và tình trạng đồng phục, không dùng mùi hương che bẩn.",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q04",
+          "prompt": "Đồng phục sạch nhưng có mùi nước hoa nồng. Cách nào phù hợp?",
+          "choices": [
+            "Nước hoa đắt tiền thì không sao",
+            "Không bưng món thì chắc chắn không sao",
+            "Ngoài việc sạch, cần tránh mùi nồng vì ảnh hưởng tiếp khách và bữa ăn",
+            "Đồng phục sạch thì không cần kiểm tra mùi"
+          ],
+          "answerIndex": 2,
+          "explanation": "Mùi hương ảnh hưởng sự thoải mái của khách và hương món ăn. Không thể chỉ xét độ sạch quần áo.",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q05",
+          "prompt": "Mùa ẩm, phát hiện dấu như nấm mốc trên tường. Cách nào phù hợp?",
+          "choices": [
+            "Khách không thấy thì không ghi nhận",
+            "Trộn thuốc ngoài nhiệm vụ để dùng",
+            "Cho rằng thời tiết không liên quan vệ sinh",
+            "Báo vị trí, tình trạng và xử lý theo quy trình làm sạch, phòng trừ của cơ sở"
+          ],
+          "answerIndex": 3,
+          "explanation": "Quan sát dấu nấm mốc, côn trùng liên quan nhiệt độ và độ ẩm rồi báo vị trí. Không tự chọn hoặc trộn hóa chất.",
+          "knowledgeIds": [
+            "hotel-safety-04-s03-k01",
+            "hotel-safety-04-s03-k02",
+            "hotel-safety-04-s03-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q06",
+          "prompt": "Khi kiểm tra giày và tư thế đứng chờ, cách nào phù hợp?",
+          "choices": [
+            "Giẫm gót giày để đi nhanh",
+            "Mang giày đúng, chỉnh lưng và dáng đứng để di chuyển vững vàng",
+            "Đồng phục sạch thì giày và động tác không liên quan",
+            "Không có khách thì đứng chắn lối đi"
+          ],
+          "answerIndex": 1,
+          "explanation": "Chỉnh trang gồm mang giày đúng, tư thế và động tác. Kiểm tra cả hình thức lẫn khả năng di chuyển vững vàng.",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q07",
+          "prompt": "Hướng dẫn về màu tóc và trang trí móng thế nào là phù hợp?",
+          "choices": [
+            "Giải thích lý do vệ sinh và tiêu chuẩn hình thức của cơ sở là một",
+            "Trang trí đắt tiền thì luôn cho phép",
+            "Phân biệt lý do vệ sinh với quy chuẩn cơ sở, kiểm tra tình trạng sạch phù hợp công việc",
+            "Tóc chạm thực phẩm cũng được nếu vẻ ngoài gọn"
+          ],
+          "answerIndex": 2,
+          "explanation": "Phân biệt lý do vệ sinh như sạch và ngăn dị vật với tiêu chuẩn hình thức của cơ sở.",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q08",
+          "prompt": "Nhân viên có thói quen súc họng cần quản lý vệ sinh thế nào?",
+          "choices": [
+            "Chỉ súc họng rồi bỏ rửa tay và làm sạch",
+            "Súc họng thì không cần báo sức khỏe",
+            "Trước khi chạm thực phẩm cũng không cần rửa tay",
+            "Không chỉ dựa súc họng, kết hợp rửa tay, làm sạch, báo sức khỏe theo mục đích"
+          ],
+          "answerIndex": 3,
+          "explanation": "Tài liệu không có nghĩa chỉ làm một thói quen là đủ. Duy trì các hành vi vệ sinh theo mục đích riêng.",
+          "knowledgeIds": [
+            "hotel-safety-04-s02-k01",
+            "hotel-safety-04-s02-k02",
+            "hotel-safety-04-s02-k03"
           ]
         }
       ],

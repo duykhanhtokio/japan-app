@@ -186,7 +186,7 @@
     },
     {
       "id": "hotel-safety-02",
-      "sourceRevision": "cb970c5bfd0fef2f81bb302b15683fa607ad571498251ef435e22fa9bdb31b92",
+      "sourceRevision": "e7c8918d36aa69d54fa4b7791a5722a49191d51e6e5471613fdf0000e2f5d2ed",
       "status": "translated_ai_unreviewed",
       "title": "Tindakan aman saat kebakaran, gempa, dan kegawatdaruratan medis",
       "reading": "かさい・じしん・きゅうびょうじのあんぜんこうどう",
@@ -219,6 +219,11 @@
           "id": "hotel-safety-02-s03",
           "title": "Sampaikan lokasi dan keadaan secara jelas kepada 119",
           "body": "Hubungi 119 untuk kebakaran atau ambulans. Sampaikan alamat selain nama fasilitas, lantai dan lokasi tepat, apakah kebakaran atau keadaan medis, serta kondisi yang terlihat. Jangan mengarang hal yang belum diketahui; jawab pertanyaan operator. Setelah panggilan, bagikan informasi dan atur petugas untuk memandu penolong dari pintu masuk. Jangan mendiagnosis atau memutuskan perawatan sendiri; ikuti prosedur darurat dan instruksi operator. Catat pelapor, waktu, dan penerima serah terima agar pemeriksaan berulang tidak menghambat pertolongan."
+        },
+        {
+          "id": "hotel-safety-02-s04",
+          "title": "Sampaikan keadaan orang secara konkret saat meminta ambulans",
+          "body": "Setelah lokasi, sampaikan siapa yang sakit, sejak kapan, dan bagaimana kondisinya sejauh diketahui. Operator dapat menanyakan gejala, usia, dan jenis kelamin. Bedakan usia yang dikonfirmasi kepada tamu atau pendamping dari dugaan penampilan. Katakan tidak tahu bila belum diketahui dan ikuti pertanyaan. Jika ditanya kesadaran atau napas, sampaikan kondisi yang diperiksa; jangan menetapkan diagnosis sendiri. Sampaikan juga nama penelepon dan nomor yang dapat dihubungi kembali. Dalam latihan fiktif, misalnya: “Tamu tiba-tiba sakit di ruang makan lantai dua. Menurut pendampingnya, usianya 65 tahun. Saya sampaikan gejala yang sudah diketahui.” Pisahkan lokasi, kondisi, dan dasar informasi. Jangan berlatih menunggu semua informasi terkumpul sebelum menelepon. Dengarkan instruksi dan bagi tugas seperti memandu petugas dari pintu masuk.\n\nSumber tingkat 2 juga menganjurkan agar tamu yang tiba-tiba sakit didorong mencari pemeriksaan medis sejauh mungkin. Sesuai prosedur fasilitas, koordinasikan dengan penanggung jawab untuk konsultasi dan informasi fasilitas medis. Namun, dalam kondisi mendesak seperti gangguan napas mendadak, jangan menunggu rujukan atau semua pertanyaan selesai sebelum menghubungi 119. Jangan mendiagnosis, menyatakan ringan, atau menghambat pemeriksaan maupun panggilan. Sampaikan kondisi terkonfirmasi dan ikuti operator."
         }
       ],
       "terms": [
@@ -248,11 +253,13 @@
         ]
       },
       "practice": {
-        "prompt": "Latih dengan suara keras informasi untuk 119 saat ada keadaan medis di fasilitas. Jelaskan juga perubahan tindakan ketika api mencapai langit-langit.",
+        "prompt": "Latih dengan suara keras informasi untuk 119 saat ada keadaan medis di fasilitas. Jelaskan juga perubahan tindakan ketika api mencapai langit-langit. Lalu bagi peran penolong medis, penelepon, dan pemandu pintu masuk. Sampaikan alamat, lokasi dalam gedung, gejala dan usia yang diketahui, serta kontak penelepon secara terpisah. Jawab tanpa menebak hal yang tidak diketahui.",
         "expectedPoints": [
           "Sebutkan alamat dan lokasi di dalam gedung",
           "Jelaskan fakta yang diamati",
-          "Pilih evakuasi, bukan melanjutkan pemadaman"
+          "Pilih evakuasi, bukan melanjutkan pemadaman",
+          "Sampaikan gejala dan usia sejauh diketahui",
+          "Jangan mengarang; ikuti pertanyaan dan instruksi operator"
         ]
       },
       "questions": [
@@ -301,6 +308,67 @@
           "knowledgeIds": [
             "hotel-safety-02-s02-k01",
             "hotel-safety-02-s02-k02"
+          ]
+        },
+        {
+          "prompt": "Operator 119 menanyakan usia tamu sakit, tetapi belum diketahui. Apa yang tepat?",
+          "choices": [
+            "Tetapkan usia dari penampilan",
+            "Katakan belum tahu, sampaikan gejala dan alamat yang diketahui, ikuti pertanyaan",
+            "Putuskan telepon sampai usia diketahui",
+            "Tebak diagnosis sebagai pengganti usia"
+          ],
+          "explanation": "Jangan jadikan dugaan fakta. Sampaikan yang diketahui; jangan menunda panggilan darurat untuk mengumpulkan informasi.",
+          "id": "hotel-safety-02-q04",
+          "answerIndex": 1,
+          "knowledgeIds": [
+            "hotel-safety-02-s03-k01"
+          ]
+        },
+        {
+          "prompt": "Setelah lokasi, informasi apa yang ditambahkan sesuai pertanyaan operator?",
+          "choices": [
+            "Hanya iklan paket",
+            "Target penjualan dan masa kerja",
+            "Gejala, usia yang diketahui, serta nama dan kontak penelepon",
+            "Diagnosis tebakan dan daftar tamu tak terkait"
+          ],
+          "explanation": "Sampaikan kondisi dan orang yang bisa dihubungi sejauh diketahui. Jangan menetapkan diagnosis atau memberi data pribadi tak terkait.",
+          "id": "hotel-safety-02-q05",
+          "answerIndex": 2,
+          "knowledgeIds": [
+            "hotel-safety-02-s03-k01"
+          ]
+        },
+        {
+          "prompt": "Bagaimana menghubungkan anjuran pemeriksaan medis dengan 119 bagi tamu tiba-tiba sakit?",
+          "choices": [
+            "Tunggu rujukan selesai meski darurat",
+            "Petugas menetapkan diagnosis dahulu",
+            "Bantu konsultasi pemeriksaan; jika mendesak hubungi 119 tanpa menunggu rujukan atau semua informasi",
+            "Sebut semua orang ringan tanpa memeriksa"
+          ],
+          "explanation": "Anjuran pemeriksaan dan panggilan cepat dapat berjalan bersama. Jangan menunda keadaan mendesak; sampaikan kondisi dan ikuti operator.",
+          "id": "hotel-safety-02-q06",
+          "answerIndex": 2,
+          "knowledgeIds": [
+            "hotel-source-detail-ha2-059-04"
+          ]
+        },
+        {
+          "prompt": "Apa pertimbangan pemadaman awal sesuai teks?",
+          "choices": [
+            "Api terlihat kecil berarti tidak perlu periksa jalur mundur",
+            "Hanya bila ada jalur mundur dan aman dengan metode terlatih; jika asap, panas, atau jalur berbahaya, hentikan dan evakuasi",
+            "Jika api di langit-langit semua petugas tetap memakai peralatan dalam gedung",
+            "Tunggu api padam sebelum menelepon dan evakuasi"
+          ],
+          "explanation": "Nilai kondisi aman untuk pemadaman atau evakuasi. Jangan artikan sebagai perintah terus memadamkan dalam bahaya; ikuti prosedur panggilan dan evakuasi.",
+          "id": "hotel-safety-02-q07",
+          "answerIndex": 1,
+          "knowledgeIds": [
+            "hotel-safety-02-s01-k01",
+            "hotel-safety-02-s01-k02"
           ]
         }
       ],
@@ -440,7 +508,7 @@
     },
     {
       "id": "hotel-safety-04",
-      "sourceRevision": "e29a8c30e8970e0279e81e61f91f5bb18bf0eea89b6062ebea4544d7a2939ab4",
+      "sourceRevision": "8cf38a99eb7fae14fe96d85a59885c2bd1165fe7de821a989f05729465250413",
       "status": "translated_ai_unreviewed",
       "title": "Kebersihan diri dan gedung setiap hari",
       "reading": "まいにちのみだしなみとせいけつなかんない",
@@ -544,6 +612,108 @@
             "hotel-safety-04-s03-k01",
             "hotel-safety-04-s03-k02",
             "hotel-safety-04-s03-k03"
+          ]
+        },
+        {
+          "prompt": "Apa yang tepat tentang rambut panjang dan seragam petugas makanan?",
+          "choices": [
+            "Rapikan hanya saat datang, abaikan kotoran berikutnya",
+            "Rapikan rambut dan kuku, jaga seragam bersih dan tangani kotoran selama bekerja",
+            "Tutupi kotoran dengan parfum",
+            "Rambut tak terlihat boleh menyentuh makanan"
+          ],
+          "explanation": "Jaga kebersihan selama bekerja, cegah rambut masuk makanan, periksa seragam; jangan tutupi kotoran dengan aroma.",
+          "id": "hotel-safety-04-q03",
+          "answerIndex": 1,
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "prompt": "Seragam bersih tetapi parfum sangat kuat. Apa yang tepat?",
+          "choices": [
+            "Parfum mahal tidak masalah",
+            "Pasti tidak masalah jika tidak membawa makanan",
+            "Selain kebersihan, pertimbangkan dampak pada layanan dan makanan, hindari aroma kuat",
+            "Seragam bersih berarti aroma tak perlu diperiksa"
+          ],
+          "explanation": "Aroma memengaruhi kenyamanan tamu dan aroma makanan. Kebersihan pakaian saja tidak cukup.",
+          "id": "hotel-safety-04-q04",
+          "answerIndex": 2,
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "prompt": "Saat lembap, ditemukan bekas seperti jamur di dinding. Apa yang tepat?",
+          "choices": [
+            "Tak perlu dicatat jika tersembunyi",
+            "Campur bahan kimia di luar tugas",
+            "Cuaca tidak terkait higiene",
+            "Laporkan lokasi dan kondisi, ikuti prosedur pembersihan dan pengendalian fasilitas"
+          ],
+          "explanation": "Perhatikan tanda jamur dan hama terkait suhu dan kelembapan. Laporkan lokasi, jangan memilih atau mencampur obat sendiri.",
+          "id": "hotel-safety-04-q05",
+          "answerIndex": 3,
+          "knowledgeIds": [
+            "hotel-safety-04-s03-k01",
+            "hotel-safety-04-s03-k02",
+            "hotel-safety-04-s03-k03"
+          ]
+        },
+        {
+          "prompt": "Apa yang diperiksa pada sepatu dan sikap berdiri saat menunggu?",
+          "choices": [
+            "Injak bagian tumit sepatu agar cepat",
+            "Pakai sepatu benar, tegakkan tubuh dan jaga sikap agar bergerak stabil",
+            "Seragam bersih berarti sepatu dan gerak tak terkait",
+            "Boleh menghalangi lorong jika tidak terlihat tamu"
+          ],
+          "explanation": "Penampilan mencakup sepatu, postur dan gerak. Periksa tampilan serta kestabilan gerak.",
+          "id": "hotel-safety-04-q06",
+          "answerIndex": 1,
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "prompt": "Bagaimana menjelaskan aturan warna rambut atau hiasan kuku?",
+          "choices": [
+            "Samakan alasan higiene dan standar penampilan fasilitas",
+            "Hiasan mahal pasti boleh",
+            "Bedakan alasan higiene dari aturan fasilitas; periksa kebersihan sesuai pekerjaan",
+            "Rambut boleh menyentuh makanan jika tampak rapi"
+          ],
+          "explanation": "Bedakan alasan higiene seperti kebersihan dan pencegahan benda asing dari standar tampilan fasilitas.",
+          "id": "hotel-safety-04-q07",
+          "answerIndex": 2,
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "prompt": "Petugas rutin berkumur. Apa higiene yang tepat?",
+          "choices": [
+            "Berkumur menggantikan cuci tangan dan pembersihan",
+            "Berkumur berarti tidak perlu lapor kondisi tubuh",
+            "Sebelum menyentuh makanan pun tidak perlu cuci tangan",
+            "Jangan hanya berkumur; gabungkan cuci tangan, pembersihan dan laporan kondisi sesuai tujuan"
+          ],
+          "explanation": "Satu kebiasaan yang disebut materi tidak berarti sudah cukup. Terus lakukan tindakan higiene menurut tujuannya.",
+          "id": "hotel-safety-04-q08",
+          "answerIndex": 3,
+          "knowledgeIds": [
+            "hotel-safety-04-s02-k01",
+            "hotel-safety-04-s02-k02",
+            "hotel-safety-04-s02-k03"
           ]
         }
       ],

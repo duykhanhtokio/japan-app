@@ -1246,6 +1246,8 @@
     },
     {
       "id": "hotel-planning-06",
+      "level": 2,
+      "title": "预测需求，评估价格与客房销量",
       "reading": "じゅようをよそくし、かかくとはんばいしつすうをはんだんする",
       "objectives": [
         {
@@ -1431,7 +1433,32 @@
           "knowledgeIds": [
             "HK-planning-06-transport"
           ]
+        },
+        {
+          "id": "hotel-planning-06-q07",
+          "prompt": "收益管理（イールドマネジメント）参考历史需求和销售动向时，应调整哪种组合？",
+          "choices": [
+            "销售单价与提供的客房数",
+            "仅看客人国籍与护照颜色",
+            "仅看餐盘位置与杯子高度",
+            "仅看制服颜色与休息室面积"
+          ],
+          "answerIndex": 0,
+          "explanation": "原资料把价格和提供房数都作为管理对象，不可缩减为仅靠降价提高出租率。",
+          "knowledgeIds": [
+            "HK-planning-06-calculation",
+            "HK-planning-06-profit"
+          ]
         }
+      ],
+      "knowledgeIds": [
+        "HK-planning-06-inventory",
+        "HK-planning-06-forecast",
+        "HK-planning-06-dynamic",
+        "HK-planning-06-yield",
+        "HK-planning-06-calculation",
+        "HK-planning-06-profit",
+        "HK-planning-06-transport"
       ],
       "illustration": {
         "id": "hotel-planning-06-illustration",
@@ -1440,9 +1467,13 @@
         "alt": "50间方案比较：A售30×15,000＝450,000日元，OCC60%，RevPAR9,000；B售40×12,000＝480,000，OCC80%，RevPAR9,600。",
         "keyObjectiveId": "hotel-planning-06-objective"
       },
-      "sourceRevision": "f159b13f4732a4c743ad3738258efc9acdb547a946143a499fd4196c4e5ff2fd",
-      "status": "translated_ai_unreviewed",
-      "title": "预测需求，评估价格与客房销量"
+      "estimatedMinutes": 25,
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false
+      },
+      "sourceRevision": "2487c50fc6bbcffd4f417bd6326614b8fd9d442c1d31f3b166e755535750a62c",
+      "status": "translated_ai_unreviewed"
     },
     {
       "id": "hotel-planning-07",

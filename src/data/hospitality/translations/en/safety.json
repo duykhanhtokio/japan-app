@@ -186,7 +186,7 @@
     },
     {
       "id": "hotel-safety-02",
-      "sourceRevision": "cb970c5bfd0fef2f81bb302b15683fa607ad571498251ef435e22fa9bdb31b92",
+      "sourceRevision": "e7c8918d36aa69d54fa4b7791a5722a49191d51e6e5471613fdf0000e2f5d2ed",
       "status": "translated_ai_unreviewed",
       "title": "Safe actions during fires, earthquakes and medical emergencies",
       "reading": "かさい・じしん・きゅうびょうじのあんぜんこうどう",
@@ -219,6 +219,11 @@
           "id": "hotel-safety-02-s03",
           "title": "Give 119 a specific location and situation",
           "body": "Call 119 for fire or ambulance assistance. Provide the address as well as the facility name, the floor and exact location, whether it is a fire or medical emergency, and what you can observe. Do not invent answers when unsure; follow the dispatcher’s questions. Share information within the facility and arrange for someone to guide responders from the entrance. Do not independently diagnose a guest or decide treatment: follow emergency procedures and dispatcher instructions. Record who reported, when and to whom the situation was handed over so repeated checks do not obstruct the response."
+        },
+        {
+          "id": "hotel-safety-02-s04",
+          "title": "Describe the person’s condition in a medical emergency call",
+          "body": "After explaining the location in a medical emergency call, describe who is affected, since when, and their condition as far as you know. The dispatcher may ask about symptoms, age and sex. Do not confuse an age confirmed with the person or companion with a guess from appearance. Say “I do not know” when necessary and follow the questions. If asked about consciousness or breathing, report the observed condition rather than deciding a diagnosis yourself. Also provide the caller’s name and a telephone number where they can still be reached. For example, in a fictional exercise, practice separating location, circumstances and the basis of information: “A guest suddenly became unwell in the dining venue on the second floor. Their companion says they are sixty-five. I will describe the symptoms I can currently confirm.” Do not practice waiting until every detail has been gathered before calling. Listen to the dispatcher and ask nearby staff to take roles such as meeting responders at the entrance.\n\nThe Type 2 source also recommends encouraging a suddenly unwell guest to seek medical attention as far as possible. Follow the facility procedure, coordinate with the responsible person and help with consultation or finding a medical institution. However, in a highly urgent situation such as sudden breathing abnormalities, do not wait to call 119 until referrals or the full interview are finished. Staff must not diagnose or declare the condition mild and obstruct medical attention or an emergency call. Report what is confirmed and follow dispatcher instructions."
         }
       ],
       "terms": [
@@ -248,11 +253,13 @@
         ]
       },
       "practice": {
-        "prompt": "Practise aloud what you would tell 119 about a medical emergency in the facility. Also explain what changes if flames reach the ceiling.",
+        "prompt": "Practise aloud what you would tell 119 about a medical emergency in the facility. Also explain what changes if flames reach the ceiling. Then assign the roles of emergency responder, caller and entrance guide, and separately convey the address, location inside the facility, confirmed symptoms, age and similar details, and the caller’s contact information. Answer questions about unknown details without guessing.",
         "expectedPoints": [
           "Identify both the address and the internal location",
           "Describe observed facts",
-          "Choose evacuation over continuing to fight the fire"
+          "Choose evacuation over continuing to fight the fire",
+          "Report symptoms, age and similar details as far as they have been confirmed",
+          "Do not invent unknown details; follow the dispatcher’s questions and instructions"
         ]
       },
       "questions": [
@@ -301,6 +308,67 @@
           "knowledgeIds": [
             "hotel-safety-02-s02-k01",
             "hotel-safety-02-s02-k02"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q04",
+          "prompt": "The 119 dispatcher asks an unwell guest’s age, which is not yet confirmed. What should you do?",
+          "choices": [
+            "State a definite age from appearance",
+            "Say it is unknown, report confirmed symptoms and location, and follow the dispatcher’s questions",
+            "Hang up until the age is known",
+            "Substitute a guessed diagnosis for the age"
+          ],
+          "answerIndex": 1,
+          "explanation": "Do not turn guesses into facts. Give symptoms and age as far as known and do not delay urgent contact to gather information.",
+          "knowledgeIds": [
+            "hotel-safety-02-s03-k01"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q05",
+          "prompt": "After the location, which information should be added in response to the dispatcher?",
+          "choices": [
+            "Only advertising copy for a stay package",
+            "Sales targets and staff seniority",
+            "Confirmed symptoms, age and similar details, plus the caller’s name and contact information",
+            "A guessed diagnosis and unrelated guests’ records"
+          ],
+          "answerIndex": 2,
+          "explanation": "Report the person’s condition and a reachable contact as far as known. Do not declare a diagnosis or provide unrelated personal information.",
+          "knowledgeIds": [
+            "hotel-safety-02-s03-k01"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q06",
+          "prompt": "How should medical referral and calling 119 be handled for a suddenly unwell guest?",
+          "choices": [
+            "Wait to call 119 even in an emergency until referral is finished",
+            "Staff must diagnose before recommending care",
+            "Help with medical consultation, and in urgent cases call 119 without waiting for referrals or all details",
+            "Describe everyone as mildly ill without checking"
+          ],
+          "answerIndex": 2,
+          "explanation": "Encouraging medical attention is compatible with prompt emergency contact. Do not delay urgent calls; report confirmed conditions and follow dispatcher instructions.",
+          "knowledgeIds": [
+            "hotel-source-detail-ha2-059-04"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q07",
+          "prompt": "Which decision about initial firefighting follows the lesson?",
+          "choices": [
+            "Fight a small-looking fire without checking an escape route",
+            "Attempt only within trained, safely manageable limits with an escape route; evacuate rather than continue if smoke, heat or escape-route danger develops",
+            "Once fire reaches the ceiling, all general staff must continue with indoor firefighting equipment",
+            "Delay calls and evacuation guidance until firefighting ends"
+          ],
+          "answerIndex": 1,
+          "explanation": "Judge initial firefighting and evacuation by safety conditions. Do not reinterpret the lesson as continued firefighting in danger; follow facility reporting and evacuation procedures.",
+          "knowledgeIds": [
+            "hotel-safety-02-s01-k01",
+            "hotel-safety-02-s01-k02"
           ]
         }
       ],
@@ -440,7 +508,7 @@
     },
     {
       "id": "hotel-safety-04",
-      "sourceRevision": "e29a8c30e8970e0279e81e61f91f5bb18bf0eea89b6062ebea4544d7a2939ab4",
+      "sourceRevision": "8cf38a99eb7fae14fe96d85a59885c2bd1165fe7de821a989f05729465250413",
       "status": "translated_ai_unreviewed",
       "title": "Daily personal hygiene and a clean building",
       "reading": "まいにちのみだしなみとせいけつなかんない",
@@ -544,6 +612,108 @@
             "hotel-safety-04-s03-k01",
             "hotel-safety-04-s03-k02",
             "hotel-safety-04-s03-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q03",
+          "prompt": "What is appropriate for long hair and uniforms when handling food?",
+          "choices": [
+            "Tidy them only before work and ignore later soiling",
+            "Keep hair and nails tidy, maintain a clean uniform and respond to soiling during work",
+            "Hide uniform dirt with perfume",
+            "Hair on an unseen side may touch food"
+          ],
+          "answerIndex": 1,
+          "explanation": "Maintain cleanliness throughout the shift. Check hair-contamination prevention and uniform condition; scent does not hide dirt.",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q04",
+          "prompt": "The uniform is clean but there is strong perfume. What is appropriate?",
+          "choices": [
+            "Expensive perfume is acceptable",
+            "It is always acceptable if the worker does not carry food",
+            "Separately from cleanliness, avoid strong fragrance because of its effect on service and dining",
+            "A clean uniform means scent needs no check"
+          ],
+          "answerIndex": 2,
+          "explanation": "Fragrance affects comfort and food aromas. Clothing cleanliness alone does not decide suitability.",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q05",
+          "prompt": "In humid weather, you find a mold-like mark on a wall. What should you do?",
+          "choices": [
+            "Do not record it if guests cannot see it",
+            "Mix chemicals outside your responsibility",
+            "Treat weather as unrelated to hygiene",
+            "Report the location and condition and follow facility cleaning and pest-control procedures"
+          ],
+          "answerIndex": 3,
+          "explanation": "Look for mold and pest signs associated with temperature and humidity and report their locations. Do not independently choose or mix chemicals.",
+          "knowledgeIds": [
+            "hotel-safety-04-s03-k01",
+            "hotel-safety-04-s03-k02",
+            "hotel-safety-04-s03-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q06",
+          "prompt": "What is appropriate when checking shoes and waiting posture?",
+          "choices": [
+            "Step on shoe heels and move quickly",
+            "Wear shoes correctly, straighten your back and standing posture, and ensure stable movement",
+            "Shoes and movements are irrelevant if the uniform is clean",
+            "Block the corridor when guests are absent"
+          ],
+          "answerIndex": 1,
+          "explanation": "Grooming includes correct shoe wear, posture and movement. Check appearance and stable movement together.",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q07",
+          "prompt": "How should guidance on hair color and nail decoration be given?",
+          "choices": [
+            "Explain hygiene reasons and facility appearance rules as identical",
+            "Always allow expensive decorations",
+            "Distinguish hygiene reasons from facility rules and confirm cleanliness suitable for the task",
+            "Hair may touch food if appearance is tidy"
+          ],
+          "answerIndex": 2,
+          "explanation": "Separate hygiene reasons such as cleanliness and contamination prevention from facility appearance standards.",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q08",
+          "prompt": "What is appropriate for a worker who habitually gargles?",
+          "choices": [
+            "Use gargling alone and skip handwashing and cleaning",
+            "Gargling removes the need to report illness",
+            "No washing is needed before touching food",
+            "Combine washing, cleaning and health reporting according to their purposes rather than relying on gargling alone"
+          ],
+          "answerIndex": 3,
+          "explanation": "The source does not mean one habit is sufficient. Continue hygiene actions suited to each purpose.",
+          "knowledgeIds": [
+            "hotel-safety-04-s02-k01",
+            "hotel-safety-04-s02-k02",
+            "hotel-safety-04-s02-k03"
           ]
         }
       ],

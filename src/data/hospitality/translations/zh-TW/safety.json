@@ -186,8 +186,7 @@
     },
     {
       "id": "hotel-safety-02",
-      "sourceRevision": "cb970c5bfd0fef2f81bb302b15683fa607ad571498251ef435e22fa9bdb31b92",
-      "status": "translated_ai_unreviewed",
+      "level": 1,
       "title": "火災、地震和急病時的安全行動",
       "reading": "かさい・じしん・きゅうびょうじのあんぜんこうどう",
       "objectives": [
@@ -201,7 +200,7 @@
         },
         {
           "id": "hotel-safety-02-o3",
-          "text": "整理撥打119時應報告的信息"
+          "text": "整理撥打119時應報告的資訊"
         }
       ],
       "sections": [
@@ -213,12 +212,17 @@
         {
           "id": "hotel-safety-02-s02",
           "title": "確認疏散路線是否安全",
-          "body": "火災時不要引導客人使用電梯，應遵循疏散計劃和廣播，前往安全的緊急樓梯等指定路線。有煙時降低姿勢，避免吸入煙霧。地震時，不要一律要求在仍搖晃時不觀察周圍就奔跑。先保護自身，再確認設施規程與道路情況後移動。樓梯也不一定安全；發現損壞或煙霧應報告負責人，不要把客人引向危險。"
+          "body": "火災時不要引導客人使用電梯，應遵循疏散計畫和廣播，前往安全的緊急樓梯等指定路線。有煙時降低姿勢，避免吸入煙霧。地震時，不要一律要求在仍搖晃時不觀察周圍就奔跑。先保護自身，再確認設施規程與道路情況後移動。樓梯也不一定安全；發現損壞或煙霧應報告負責人，不要把客人引向危險。"
         },
         {
           "id": "hotel-safety-02-s03",
           "title": "向119具體說明地點和情況",
-          "body": "火災或需要急救車時撥打119。除設施名稱外，冷靜說明地址、樓層和具體位置、是火災還是急救，以及觀察到的情況。不知道的不要編造，按調度員提問回答。通話後在設施內共享信息，安排人員在入口引導救援人員。不要獨自診斷或決定治療，應遵循應急規程和調度員指示。記錄報告人、時間和交接對象，避免重複確認妨礙救援。"
+          "body": "火災或需要急救車時撥打119。除設施名稱外，冷靜說明地址、樓層和具體位置、是火災還是急救，以及觀察到的情況。不知道的不要編造，按調度員提問回答。通話後在設施內共享資訊，安排人員在入口引導救援人員。不要獨自診斷或決定治療，應遵循應急規程和調度員指示。記錄報告人、時間和交接對象，避免重複確認妨礙救援。"
+        },
+        {
+          "id": "hotel-safety-02-s04",
+          "title": "急救通話中具體說明人的狀態",
+          "body": "急救通話中，說明地點後，還應在已知範圍內告知是誰、何時開始、處於什麼狀態。勤務中心人員可能詢問症狀、年齡、性別等。應區分向本人或同行者確認的年齡與憑外貌推測的年齡。不清楚就說「不知道」，按問題回答。詢問意識和呼吸時，也只報告已確認的狀態，不自行決定病名。還需告知通報人的姓名及之後仍可聯絡的電話號碼。例如在虛構練習中說：「二樓用餐區有客人突然不舒服。同行者說是六十五歲。我會說明目前已確認的症狀。」應區分地點、情況和資訊依據。練習時不應等全部資訊收齊才通報。聽從勤務中心人員指示，同時請周圍員工分擔入口引導等職責。\n\n2號資料還提出，對突然不舒服的客人，應盡可能建議到醫療機構就診。按設施處理流程與負責人合作，銜接就診諮詢或醫療機構介紹。但如突然呼吸異常等緊急性很高，不應等介紹完就診地點或問完所有項目才撥打119。員工不能擅自確定病名，或認定輕症而妨礙就診、通報；應報告已確認的狀態，聽從勤務中心人員指示。"
         }
       ],
       "terms": [
@@ -252,7 +256,9 @@
         "expectedPoints": [
           "同時給出地址和館內位置",
           "說明觀察到的事實",
-          "選擇撤離而非繼續滅火"
+          "選擇撤離而非繼續滅火",
+          "在已確認範圍內報告症狀、年齡等",
+          "不編造未知事項，遵循勤務中心人員提問和指示"
         ]
       },
       "questions": [
@@ -282,7 +288,7 @@
             "不回答問題就掛斷"
           ],
           "answerIndex": 0,
-          "explanation": "具體信息有助於救援方瞭解現場，應按調度員問題回答。",
+          "explanation": "具體資訊有助於救援方瞭解現場，應按調度員問題回答。",
           "knowledgeIds": [
             "hotel-safety-02-s03-k01"
           ]
@@ -292,7 +298,7 @@
           "prompt": "火災時哪種疏散引導合適？",
           "choices": [
             "讓所有人去最近的電梯",
-            "確認計劃與路線情況，引導到安全緊急樓梯等路線",
+            "確認計畫與路線情況，引導到安全緊急樓梯等路線",
             "讓所有客人回房等待",
             "認爲朝煙的方向走就有出口"
           ],
@@ -302,15 +308,91 @@
             "hotel-safety-02-s02-k01",
             "hotel-safety-02-s02-k02"
           ]
+        },
+        {
+          "id": "hotel-safety-02-q04",
+          "prompt": "119勤務中心人員詢問急病客人的年齡，目前還未確認。哪項合適？",
+          "choices": [
+            "只憑外貌確定年齡並回答",
+            "告知不清楚，回答已確認症狀和所在地，聽從勤務中心人員提問",
+            "知道年齡前先掛電話",
+            "推測病名來代替年齡"
+          ],
+          "answerIndex": 1,
+          "explanation": "未經確認的資訊不可把猜測當事實，應說明不清楚。症狀、年齡等在已知範圍內回答，不因收集資訊而延誤緊急通報。",
+          "knowledgeIds": [
+            "hotel-safety-02-s03-k01"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q05",
+          "prompt": "急救通報說明地點後，依勤務中心人員提問應補充哪些資訊？",
+          "choices": [
+            "僅住宿方案廣告",
+            "銷售目標和員工年資",
+            "已確認的症狀、年齡等，以及通報人的姓名和聯絡方式",
+            "推測的病名與無關客人的名冊"
+          ],
+          "answerIndex": 2,
+          "explanation": "在已知範圍內報告人的狀態和可聯絡的人員，不是擅自診斷或提供無關個人資訊。",
+          "knowledgeIds": [
+            "hotel-safety-02-s03-k01"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q06",
+          "prompt": "對突然不舒服的客人，就診指引與119通報應如何處理？",
+          "choices": [
+            "即使緊急，也等介紹完就診機構才撥119",
+            "員工決定病名後才建議就診",
+            "協助就診諮詢；緊急性高時，不等介紹或收齊全部資訊就撥119",
+            "不確認本人狀態，一律說是輕症"
+          ],
+          "answerIndex": 2,
+          "explanation": "建議就診與緊急時迅速通報可以同時落實。緊急性高時不要延誤，報告已確認的狀態並遵循勤務中心人員指示。",
+          "knowledgeIds": [
+            "hotel-source-detail-ha2-059-04"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q07",
+          "prompt": "考慮初期滅火時，哪項判斷符合正文？",
+          "choices": [
+            "火看似小就不檢查退路直接滅火",
+            "僅限有退路且能以受訓方法安全進行；煙熱或退路危險時不再滅火，轉為疏散",
+            "火到天花板後，所有一般員工繼續用室內消防設備滅火",
+            "滅火結束前不通報也不引導疏散"
+          ],
+          "answerIndex": 1,
+          "explanation": "應按安全條件判斷初期滅火和疏散，不可改讀為危險中繼續滅火，應按設施流程通報和疏散。",
+          "knowledgeIds": [
+            "hotel-safety-02-s01-k01",
+            "hotel-safety-02-s01-k02"
+          ]
         }
+      ],
+      "knowledgeIds": [
+        "hotel-safety-02-s01-k01",
+        "hotel-safety-02-s01-k02",
+        "hotel-safety-02-s02-k01",
+        "hotel-safety-02-s02-k02",
+        "hotel-safety-02-s03-k01",
+        "hotel-source-detail-ha2-059-04"
       ],
       "illustration": {
         "id": "hotel-safety-02-image",
         "kind": "evacuation-plan",
         "caption": "火災、地震和急救時的判斷與行動",
-        "alt": "顯示安全路線、緊急樓梯和報警所需信息的示意圖",
+        "alt": "顯示安全路線、緊急樓梯和報警所需資訊的示意圖",
         "keyObjectiveId": "hotel-safety-02-o1"
-      }
+      },
+      "estimatedMinutes": 25,
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false
+      },
+      "sourceRevision": "e7c8918d36aa69d54fa4b7791a5722a49191d51e6e5471613fdf0000e2f5d2ed",
+      "status": "translated_ai_unreviewed"
     },
     {
       "id": "hotel-safety-03",
@@ -440,8 +522,7 @@
     },
     {
       "id": "hotel-safety-04",
-      "sourceRevision": "e29a8c30e8970e0279e81e61f91f5bb18bf0eea89b6062ebea4544d7a2939ab4",
-      "status": "translated_ai_unreviewed",
+      "level": 1,
       "title": "日常儀容衛生與清潔館內環境",
       "reading": "まいにちのみだしなみとせいけつなかんない",
       "objectives": [
@@ -545,7 +626,120 @@
             "hotel-safety-04-s03-k02",
             "hotel-safety-04-s03-k03"
           ]
+        },
+        {
+          "id": "hotel-safety-04-q03",
+          "prompt": "食品作業員工的長髮與制服，應如何管理？",
+          "choices": [
+            "上班時整理一次即可，髒了也不處理",
+            "整理頭髮和指甲、保持制服清潔，工作中沾污也要處理",
+            "用香水掩蓋制服污垢",
+            "看不見一側的頭髮碰食品也沒關係"
+          ],
+          "answerIndex": 1,
+          "explanation": "工作中也要保持清潔，檢查頭髮混入風險和制服狀態，不以香味掩蓋污垢。",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q04",
+          "prompt": "制服乾淨，但香水味很濃。哪項合適？",
+          "choices": [
+            "香水貴就沒問題",
+            "不送菜就一定沒問題",
+            "除了清潔，還應考慮對服務和用餐的影響，避免濃烈香味",
+            "制服乾淨就不檢查氣味"
+          ],
+          "answerIndex": 2,
+          "explanation": "氣味影響客人舒適度與食物香味，不能只看衣服是否乾淨。",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q05",
+          "prompt": "潮濕季節，牆上發現疑似黴斑。哪項合適？",
+          "choices": [
+            "客人看不見就不記錄",
+            "混合使用超出職責範圍的藥劑",
+            "認為天氣與衛生無關",
+            "報告位置和狀態，按設施清潔、防治流程處理"
+          ],
+          "answerIndex": 3,
+          "explanation": "觀察溫濕度相關的黴菌、害蟲跡象，報告位置，不擅自選擇或混合藥劑。",
+          "knowledgeIds": [
+            "hotel-safety-04-s03-k01",
+            "hotel-safety-04-s03-k02",
+            "hotel-safety-04-s03-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q06",
+          "prompt": "檢查鞋子和待命姿勢時，哪項合適？",
+          "choices": [
+            "踩著鞋後跟趕快走",
+            "正確穿鞋，調整背部和站姿，保持能穩定行動的狀態",
+            "制服乾淨就與鞋子和動作無關",
+            "不在客人面前就可以堵住通道站著"
+          ],
+          "answerIndex": 1,
+          "explanation": "儀容也包括正確穿鞋、姿勢和動作，應兼顧外觀與穩定行動。",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q07",
+          "prompt": "指導髮色和指甲裝飾時，哪項合適？",
+          "choices": [
+            "把衛生理由與設施儀容標準說成同一回事",
+            "裝飾昂貴就一定允許",
+            "區分衛生理由與館內標準，確認清潔且適合工作",
+            "頭髮碰到食品也沒關係，只要外觀整齊"
+          ],
+          "answerIndex": 2,
+          "explanation": "應區分保持清潔、防止異物混入的衛生理由與外觀方面的設施標準。",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q08",
+          "prompt": "員工習慣漱口，其衛生管理應如何做？",
+          "choices": [
+            "只漱口，省略洗手清掃",
+            "漱口後無需報告身體狀態",
+            "接觸食品前也不用洗手",
+            "不單靠漱口，而按目的結合洗手、清掃與健康報告"
+          ],
+          "answerIndex": 3,
+          "explanation": "並非只做教材中一項習慣就足夠，應持續按各項目的落實衛生行為。",
+          "knowledgeIds": [
+            "hotel-safety-04-s02-k01",
+            "hotel-safety-04-s02-k02",
+            "hotel-safety-04-s02-k03"
+          ]
         }
+      ],
+      "knowledgeIds": [
+        "hotel-safety-04-s01-k01",
+        "hotel-safety-04-s01-k02",
+        "hotel-safety-04-s01-k03",
+        "hotel-safety-04-s02-k01",
+        "hotel-safety-04-s02-k02",
+        "hotel-safety-04-s02-k03",
+        "hotel-safety-04-s03-k01",
+        "hotel-safety-04-s03-k02",
+        "hotel-safety-04-s03-k03"
       ],
       "illustration": {
         "id": "hotel-safety-04-image",
@@ -553,7 +747,14 @@
         "caption": "日常儀容和清潔的判斷與行動",
         "alt": "顯示個人衛生檢查以及可見和後勤清掃區域的示意圖",
         "keyObjectiveId": "hotel-safety-04-o1"
-      }
+      },
+      "estimatedMinutes": 25,
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false
+      },
+      "sourceRevision": "8cf38a99eb7fae14fe96d85a59885c2bd1165fe7de821a989f05729465250413",
+      "status": "translated_ai_unreviewed"
     },
     {
       "id": "hotel-safety-05",

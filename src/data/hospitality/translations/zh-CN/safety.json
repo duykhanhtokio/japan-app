@@ -186,8 +186,7 @@
     },
     {
       "id": "hotel-safety-02",
-      "sourceRevision": "cb970c5bfd0fef2f81bb302b15683fa607ad571498251ef435e22fa9bdb31b92",
-      "status": "translated_ai_unreviewed",
+      "level": 1,
       "title": "火灾、地震和急病时的安全行动",
       "reading": "かさい・じしん・きゅうびょうじのあんぜんこうどう",
       "objectives": [
@@ -219,6 +218,11 @@
           "id": "hotel-safety-02-s03",
           "title": "向119具体说明地点和情况",
           "body": "火灾或需要急救车时拨打119。除设施名称外，冷静说明地址、楼层和具体位置、是火灾还是急救，以及观察到的情况。不知道的不要编造，按调度员提问回答。通话后在设施内共享信息，安排人员在入口引导救援人员。不要独自诊断或决定治疗，应遵循应急规程和调度员指示。记录报告人、时间和交接对象，避免重复确认妨碍救援。"
+        },
+        {
+          "id": "hotel-safety-02-s04",
+          "title": "急救通话中具体说明人的状态",
+          "body": "急救通话中，说明地点后，还应在已知范围内告知是谁、何时开始、处于什么状态。调度员可能询问症状、年龄、性别等。应区分向本人或同行者确认的年龄与凭外貌推测的年龄。不清楚就说“不知道”，按问题回答。询问意识和呼吸时，也只报告已确认的状态，不自行决定病名。还需告知报警人的姓名及之后仍可联系的电话号码。例如在虚构练习中说：“二楼用餐区有客人突然不舒服。同行者说是六十五岁。我会说明目前已确认的症状。”应区分地点、情况和信息依据。练习时不应等全部信息收齐才报警。听从调度员指示，同时请周围员工分担入口引导等职责。\n\n2号资料还提出，对突然不舒服的客人，应尽可能建议到医疗机构就诊。按设施处理流程与负责人合作，衔接就诊咨询或医疗机构介绍。但如突然呼吸异常等紧急性很高，不应等介绍完就诊地点或问完所有项目才拨打119。员工不能擅自确定病名，或认定轻症而妨碍就诊、通报；应报告已确认的状态，听从调度员指示。"
         }
       ],
       "terms": [
@@ -252,7 +256,9 @@
         "expectedPoints": [
           "同时给出地址和馆内位置",
           "说明观察到的事实",
-          "选择撤离而非继续灭火"
+          "选择撤离而非继续灭火",
+          "在已确认范围内报告症状、年龄等",
+          "不编造未知事项，遵循调度员提问和指示"
         ]
       },
       "questions": [
@@ -302,7 +308,76 @@
             "hotel-safety-02-s02-k01",
             "hotel-safety-02-s02-k02"
           ]
+        },
+        {
+          "id": "hotel-safety-02-q04",
+          "prompt": "119调度员询问急病客人的年龄，目前还未确认。哪项合适？",
+          "choices": [
+            "只凭外貌确定年龄并回答",
+            "告知不清楚，回答已确认症状和所在地，听从调度员提问",
+            "知道年龄前先挂电话",
+            "推测病名来代替年龄"
+          ],
+          "answerIndex": 1,
+          "explanation": "未经确认的信息不可把猜测当事实，应说明不清楚。症状、年龄等在已知范围内回答，不因收集信息而延误紧急通报。",
+          "knowledgeIds": [
+            "hotel-safety-02-s03-k01"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q05",
+          "prompt": "急救通报说明地点后，依调度员提问应补充哪些信息？",
+          "choices": [
+            "仅住宿方案广告",
+            "销售目标和员工年资",
+            "已确认的症状、年龄等，以及通报人的姓名和联系方式",
+            "推测的病名与无关客人的名册"
+          ],
+          "answerIndex": 2,
+          "explanation": "在已知范围内报告人的状态和可联系的人员，不是擅自诊断或提供无关个人信息。",
+          "knowledgeIds": [
+            "hotel-safety-02-s03-k01"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q06",
+          "prompt": "对突然不舒服的客人，就诊指引与119通报应如何处理？",
+          "choices": [
+            "即使紧急，也等介绍完就诊机构才拨119",
+            "员工决定病名后才建议就诊",
+            "协助就诊咨询；紧急性高时，不等介绍或收齐全部信息就拨119",
+            "不确认本人状态，一律说是轻症"
+          ],
+          "answerIndex": 2,
+          "explanation": "建议就诊与紧急时迅速通报可以同时落实。紧急性高时不要延误，报告已确认的状态并遵循调度员指示。",
+          "knowledgeIds": [
+            "hotel-source-detail-ha2-059-04"
+          ]
+        },
+        {
+          "id": "hotel-safety-02-q07",
+          "prompt": "考虑初期灭火时，哪项判断符合正文？",
+          "choices": [
+            "火看似小就不检查退路直接灭火",
+            "仅限有退路且能以受训方法安全进行；烟热或退路危险时不再灭火，转为疏散",
+            "火到天花板后，所有一般员工继续用室内消防设备灭火",
+            "灭火结束前不报警也不引导疏散"
+          ],
+          "answerIndex": 1,
+          "explanation": "应按安全条件判断初期灭火和疏散，不可改读为危险中继续灭火，应按设施流程报警和疏散。",
+          "knowledgeIds": [
+            "hotel-safety-02-s01-k01",
+            "hotel-safety-02-s01-k02"
+          ]
         }
+      ],
+      "knowledgeIds": [
+        "hotel-safety-02-s01-k01",
+        "hotel-safety-02-s01-k02",
+        "hotel-safety-02-s02-k01",
+        "hotel-safety-02-s02-k02",
+        "hotel-safety-02-s03-k01",
+        "hotel-source-detail-ha2-059-04"
       ],
       "illustration": {
         "id": "hotel-safety-02-image",
@@ -310,7 +385,14 @@
         "caption": "火灾、地震和急救时的判断与行动",
         "alt": "显示安全路线、紧急楼梯和报警所需信息的示意图",
         "keyObjectiveId": "hotel-safety-02-o1"
-      }
+      },
+      "estimatedMinutes": 25,
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false
+      },
+      "sourceRevision": "e7c8918d36aa69d54fa4b7791a5722a49191d51e6e5471613fdf0000e2f5d2ed",
+      "status": "translated_ai_unreviewed"
     },
     {
       "id": "hotel-safety-03",
@@ -440,8 +522,7 @@
     },
     {
       "id": "hotel-safety-04",
-      "sourceRevision": "e29a8c30e8970e0279e81e61f91f5bb18bf0eea89b6062ebea4544d7a2939ab4",
-      "status": "translated_ai_unreviewed",
+      "level": 1,
       "title": "日常仪容卫生与清洁馆内环境",
       "reading": "まいにちのみだしなみとせいけつなかんない",
       "objectives": [
@@ -545,7 +626,120 @@
             "hotel-safety-04-s03-k02",
             "hotel-safety-04-s03-k03"
           ]
+        },
+        {
+          "id": "hotel-safety-04-q03",
+          "prompt": "食品作业员工的长发与制服，应如何管理？",
+          "choices": [
+            "上班时整理一次即可，脏了也不处理",
+            "整理头发和指甲、保持制服清洁，工作中沾污也要处理",
+            "用香水掩盖制服污垢",
+            "看不见一侧的头发碰食品也没关系"
+          ],
+          "answerIndex": 1,
+          "explanation": "工作中也要保持清洁，检查头发混入风险和制服状态，不以香味掩盖污垢。",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q04",
+          "prompt": "制服干净，但香水味很浓。哪项合适？",
+          "choices": [
+            "香水贵就没问题",
+            "不送菜就一定没问题",
+            "除了清洁，还应考虑对服务和用餐的影响，避免浓烈香味",
+            "制服干净就不检查气味"
+          ],
+          "answerIndex": 2,
+          "explanation": "气味影响客人舒适度与食物香味，不能只看衣服是否干净。",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q05",
+          "prompt": "潮湿季节，墙上发现疑似霉斑。哪项合适？",
+          "choices": [
+            "客人看不见就不记录",
+            "混合使用超出职责范围的药剂",
+            "认为天气与卫生无关",
+            "报告位置和状态，按设施清洁、防治流程处理"
+          ],
+          "answerIndex": 3,
+          "explanation": "观察温湿度相关的霉菌、害虫迹象，报告位置，不擅自选择或混合药剂。",
+          "knowledgeIds": [
+            "hotel-safety-04-s03-k01",
+            "hotel-safety-04-s03-k02",
+            "hotel-safety-04-s03-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q06",
+          "prompt": "检查鞋子和待命姿势时，哪项合适？",
+          "choices": [
+            "踩着鞋后跟赶快走",
+            "正确穿鞋，调整背部和站姿，保持能稳定行动的状态",
+            "制服干净就与鞋子和动作无关",
+            "不在客人面前就可以堵住通道站着"
+          ],
+          "answerIndex": 1,
+          "explanation": "仪容也包括正确穿鞋、姿势和动作，应兼顾外观与稳定行动。",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q07",
+          "prompt": "指导发色和指甲装饰时，哪项合适？",
+          "choices": [
+            "把卫生理由与设施仪容标准说成同一回事",
+            "装饰昂贵就一定允许",
+            "区分卫生理由与馆内标准，确认清洁且适合工作",
+            "头发碰到食品也没关系，只要外观整齐"
+          ],
+          "answerIndex": 2,
+          "explanation": "应区分保持清洁、防止异物混入的卫生理由与外观方面的设施标准。",
+          "knowledgeIds": [
+            "hotel-safety-04-s01-k01",
+            "hotel-safety-04-s01-k02",
+            "hotel-safety-04-s01-k03"
+          ]
+        },
+        {
+          "id": "hotel-safety-04-q08",
+          "prompt": "员工习惯漱口，其卫生管理应如何做？",
+          "choices": [
+            "只漱口，省略洗手清扫",
+            "漱口后无需报告身体状态",
+            "接触食品前也不用洗手",
+            "不单靠漱口，而按目的结合洗手、清扫与健康报告"
+          ],
+          "answerIndex": 3,
+          "explanation": "并非只做教材中一项习惯就足够，应持续按各项目的落实卫生行为。",
+          "knowledgeIds": [
+            "hotel-safety-04-s02-k01",
+            "hotel-safety-04-s02-k02",
+            "hotel-safety-04-s02-k03"
+          ]
         }
+      ],
+      "knowledgeIds": [
+        "hotel-safety-04-s01-k01",
+        "hotel-safety-04-s01-k02",
+        "hotel-safety-04-s01-k03",
+        "hotel-safety-04-s02-k01",
+        "hotel-safety-04-s02-k02",
+        "hotel-safety-04-s02-k03",
+        "hotel-safety-04-s03-k01",
+        "hotel-safety-04-s03-k02",
+        "hotel-safety-04-s03-k03"
       ],
       "illustration": {
         "id": "hotel-safety-04-image",
@@ -553,7 +747,14 @@
         "caption": "日常仪容和清洁的判断与行动",
         "alt": "显示个人卫生检查以及可见和后勤清扫区域的示意图",
         "keyObjectiveId": "hotel-safety-04-o1"
-      }
+      },
+      "estimatedMinutes": 25,
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false
+      },
+      "sourceRevision": "8cf38a99eb7fae14fe96d85a59885c2bd1165fe7de821a989f05729465250413",
+      "status": "translated_ai_unreviewed"
     },
     {
       "id": "hotel-safety-05",
