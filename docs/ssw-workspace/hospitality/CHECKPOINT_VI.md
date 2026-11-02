@@ -1,3 +1,11 @@
+# Đối chiếu hai ý inbound — 03/11/2026
+
+Đọc chữ và ảnh trang27 PDF2号, xác minh SHA-256 nguồn. Xác nhận riêng HP2-027-01 (phân biệt inbound/FIT/VIP) và HP2-027-03 (kinh tế địa phương/giao lưu văn hóa) với đoạn dạy và q05/q09 hiện hành. Gắn vùng nguồn chính xác, liên kết hai chiều và receipt `recovery-v9/inbound-source-review.json`; giữ nguyên trạng thái trước. Không đổi bài Nhật, câu hỏi, bản dịch, furigana hoặc dữ liệu học viên.
+
+Sổ chuẩn104covered_ai/384known;280ý còn mở, mẫu số chưa chốt. Trang27 vẫn partial. Upsell HP2-027-02 giữ candidate: nguồn trang27 chưa chứng minh đủ điều kiện về thông báo phụ phí/quyền lựa chọn trong statement hiện có. Đây là tự kiểm AI, chưa duyệt chuyên môn/bản ngữ/thiết bị/thời lượng. Chỉ log persistence sau commit mới xác nhận lưu từ xa.
+
+---
+
 # Đối chiếu nguồn và bổ sung hai năng lực ABC — 03/11/2026
 
 Đã xác minh lại hash PDF2号(65trang) và đọc chữ/ảnh trang55. Khép khoảng trống HR2-055-06 bằng q09 phân biệt chỉ tiêu利益率 với số tiền lợi nhuận, không phủ nhận mục đích khác có thể dùng lợi nhuận tiền. Khi đọc lại phát hiện mục đích ABC (nhận diện món đóng góp lợi nhuận và cải thiện tỷ suất toàn cửa hàng) chưa được ghi riêng: thêm HSP2-055-abc-profitability-purpose, đoạn Nhật độc lập và q10 kiểm riêng mục đích. Tách đơn vị mới thay vì đóng bằng câu chung hoặc giữ mẫu số cũ.
