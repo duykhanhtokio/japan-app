@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "observedDateJapan": "2026-11-02",
+  "purpose": "Record actual capability limits before physical-device and learner-duration acceptance",
+  "platform": "Linux",
+  "capabilities": {
+    "adbFound": false,
+    "xcrunFound": false,
+    "usbBusForwarded": false,
+    "computerUseAvailable": false,
+    "systemChromiumFound": true,
+    "systemChromiumLaunchSucceeded": false
+  },
+  "attempts": [
+    {"command": "command -v adb; command -v xcrun; ls /dev/bus/usb", "result": "No adb/xcrun; USB bus directory absent"},
+    {"surface": "computer-use initialization", "result": "Kernel exited: required session directory is read-only"},
+    {"command": "node tools/qa/check-observation-browser.cjs", "result": "Bundled Playwright Chromium absent; system Chromium detected but launch blocked by socket Operation not permitted"}
+  ],
+  "physicalDeviceTestsExecuted": 0,
+  "realLearnerSessionsMeasured": 0,
+  "acceptance": {"physicalDeviceVerified": false, "learnerDurationMeasured": false},
+  "nextRequirement": "A connected physical iPhone/Android with the matching native development build and a real learner/operator session; use the observation collector and retain original evidence privately",
+  "syntheticUnitTestDurationsCountAsLearnerMeasurements": false
+}
