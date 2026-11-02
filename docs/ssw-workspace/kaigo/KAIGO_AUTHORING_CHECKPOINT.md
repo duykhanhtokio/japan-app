@@ -1553,3 +1553,10 @@ NguồnVIcanonical276trang/hash997bf...đã lấy và đối chiếu; đọc ch�
 Thêm hai đoạn và24bản dịch trực tiếp ởkaigo-depth-observation-evidence: ca muốn viết thư sau bữa trưa và đối chiếu bản ghiA/B. Tách mong muốn “lúc này” khỏi ý định cảngày, cảm xúc chưa kiểm, năng lực và kết quả chưa quan sát; giữ lịch sử khi mong muốn đổi. Đây là năng lực ghi chép theo thời điểm, khác ca bàn giao169vàca mệt/sốt cũ. Toàn bộkanji mới cótokenkana; giữ sáu đoạn cũ, mục bàn giao169,687câu,ID/ngày/hình/khóa tiến độ. Không thêm chỉ định hay sự kiện lâm sàng.
 
 NguồncanonicalVI/hash997bf...đúng; đọc12–14,116–120 vàxem12–14,117–120. Kiểm nguồn vềtựquyết vàghiđúnglời/thờigian, không dùng lại cảnhví/lởloét hoặc hình nguồn. Actualhost toàntuần25/12locales/ngàyđêm đạt168cases,1080cặp đoạn,336lời giải sau nộp; kiểmbase+kana vàstale-source. Adapter/backdrop/covercaption exception được ghi rõ; khôngnative/browser/pixel. Tổng hiện5375đoạnNhật/64500đoạndịch; mẫu số nguồn vẫnnull. RECORD_CHOICE_DEPTH_20261102.json ghi phạmvi/giới hạn. Rootcầncommit/push/fetch/remoteproof trước tuyênbốlưubền.
+
+
+## 2026-11-02 — nguồn PDF122–123: ý nghĩa di chuyển và ADL/IADL
+
+Đọc toàn văn và xem trực tiếp hai trang nguồn canonical (in120–121), giữ ảnh/PDF riêng. Nối7đơn vị với bàiNhật tuần15/ngày101 đã có; thêm2hoạt động tự giải thích không chấm điểm, đủkana và24cặp dịch trực tiếp. Nămý có dạy/đánhgiá ởmứcAI; haiđịnhnghĩa ADL/IADL vẫnthiếu câu kiểm riêng, không lấy câu nêu ví dụ để đóng địnhnghĩa. Kaigo v2 hiện62ý đãbiết/60covered_ai, mẫu số mở; khôngđónghai trang vì các chi tiết hình cònpending.
+
+Hostreader kiểm20hoạt động trên6ngày×12locale: ẩnđápán, mởdịch rõràng, đóng/mởđápán vàkana khớp. Khôngthay687câu tuần, IDngày, bàiNhật cũ hay khóa tiếnđộ. Hồsơkaigo-movement122-123-review/reader-validation.json. Khôngbrowserpixel/native/chuyênmôn/bảnngữ/thờilượng/nghiệmthu toànnguồn; rootcần lưu vàxácminhremote.

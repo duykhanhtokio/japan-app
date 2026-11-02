@@ -10,7 +10,7 @@ import fitz
 ROOT=Path(__file__).resolve().parents[2]
 BASE=ROOT/'docs/ssw-workspace/kensetsu'
 OUT=ROOT/'docs/ssw-workspace/source-coverage-v2'
-BASELINE='66d22c9ff810543f266ee9b76dd3f57b0726bdcc'
+BASELINE='f2ec9912ee6d9827db949ec73376fb60dee08647'
 LEADER='kensetsu-2go-foreman-leader-20250115'
 def sha(b):return hashlib.sha256(b).hexdigest()
 def encoded(v):return json.dumps(v,ensure_ascii=False,separators=(',',':')).encode()
@@ -75,11 +75,13 @@ def build(directory):
      e['knowledgeIds'].append(kid);ids.append(e['elementId'])
      # A physical block can also hold un-inventoried claims; keep pending until fully reviewed.
    assert ids,(kid,r)
-   refs.append({'sourceId':sid,'pdfPage':n,'elementIds':ids,'reviewedSubregionBbox':r.get('reviewedSubregionBbox',r['bbox'])})
+   refs.append({'sourceId':sid,'pdfPage':n,'elementIds':ids,'reviewedSubregionBbox':r.get('reviewedSubregionBbox',r['bbox']),**({'sourceContribution':r['sourceContribution']} if r.get('sourceContribution') else {})})
   u={k:v for k,v in row.items() if k not in ['sourceLocations','teachingSelectors','assessmentSelectors','imageSelectors']};u['sourceRefs']=refs
   u['teachingEvidence']=[evidence(*x) for x in row.get('teachingSelectors',[])];u['assessmentEvidence']=[evidence(*x) for x in row.get('assessmentSelectors',[])];u['imageEvidence']=[{**im,'sha256':sha((ROOT/im['path']).read_bytes()),'sha256Mode':'file','relation':'direct','semanticReviewed':True} for im in row.get('imageSelectors',[])]
   units.append(u)
  complete_by_page={(r['sourceId'],r['pdfPage']):r for r in authored.get('completePageInventories',[])}
+  # Explicit self-read page references may extend beyond the shared foreman PDF.
+ read_by_page={(r['sourceId'],r['pdfPage']):r for r in authored.get('sourceReadPageRefs',[])}
  for sid,a in artifacts.items():
   for ap in a['pages']:
    complete=complete_by_page.get((sid,ap['pdfPage']))
@@ -99,7 +101,7 @@ def build(directory):
      e['classification']='navigation';e['reason']=role['exclusionReason']
   target=OUT/f'construction-{sid}-regions.json.gz';target.write_bytes(gzip.compress(encoded(a),mtime=0));rel=str(target.relative_to(ROOT));digest=sha(target.read_bytes())
   for p in a['pages']:
-   n=p['pdfPage'];complete=complete_by_page.get((sid,n));ids=[u['knowledgeId'] for u in units if any(r['sourceId']==sid and r['pdfPage']==n for r in u['sourceRefs'])];reviewed=sid==LEADER and n in authored.get('sourceReadPages',list(range(89,101)))
+   n=p['pdfPage'];complete=complete_by_page.get((sid,n));ids=[u['knowledgeId'] for u in units if any(r['sourceId']==sid and r['pdfPage']==n for r in u['sourceRefs'])];reviewed=(sid,n) in read_by_page or (sid==LEADER and n in authored.get('sourceReadPages',list(range(89,101))))
    source_hash=next(source['sha256'] for source in source_map.values() if source['sourceId']==sid)
    legacy_keys=legacy_by_hash.get(source_hash,{}).get('pages',[])
    candidates=legacy_keys[n-1]['candidateRuntimeLessonEvidenceKeys'] if len(legacy_keys)>=n else []
@@ -109,7 +111,7 @@ def build(directory):
     peer=next(v for v in legacy_by_hash.values() if v.get('canonicalSourceId')=='kensetsu-src-01')
     for key in peer['pages'][n-1]['candidateRuntimeLessonEvidenceKeys']:
      navigation.append({'lessonId':runtime['lessonEvidence'][key]['lessonId'],'legacyEvidenceKey':key,'relation':'candidate','semanticReviewed':False,'viaVisibleEquivalentSourceId':'kensetsu-src-01','viaVisibleEquivalentPage':n,'verificationRef':'docs/ssw-workspace/source-coverage-v2/construction-unlinked-page-review.json'})
-   page_rows.append({'sourceId':sid,'pdfPage':n,'disposition':role['role'] if role else 'instructional' if reviewed else 'unclassified','exclusionReason':role['exclusionReason'] if excluded else None,'regionCensus':{'artifactPath':rel,'sha256':digest,'elementCount':len(p['elements']),'status':'visually_reviewed' if reviewed or excluded else 'extracted','visualReviewRef':role['reviewRef'] if excluded else ('docs/ssw-workspace/source-coverage-v2/construction-batch3-source-review.json' if n>100 else 'docs/ssw-workspace/source-coverage-v2/construction-source-review.json') if reviewed else None},'semanticInventory':{'status':'excluded' if excluded else 'complete_ai' if complete else 'partial' if reviewed else 'pending','reviewRef':role['reviewRef'] if excluded else complete['reviewRef'] if complete else ('docs/ssw-workspace/source-coverage-v2/construction-batch3-source-review.json' if n>100 else 'docs/ssw-workspace/source-coverage-v2/construction-source-review.json') if reviewed else None},'knowledgeIds':ids,'legacyLessonCandidates':navigation,'candidateLessonLinksProveKnowledgeCoverage':False})
+   page_rows.append({'sourceId':sid,'pdfPage':n,'disposition':role['role'] if role else 'instructional' if reviewed else 'unclassified','exclusionReason':role['exclusionReason'] if excluded else None,'regionCensus':{'artifactPath':rel,'sha256':digest,'elementCount':len(p['elements']),'status':'visually_reviewed' if reviewed or excluded else 'extracted','visualReviewRef':role['reviewRef'] if excluded else (read_by_page[(sid,n)]['reviewRef'] if (sid,n) in read_by_page else 'docs/ssw-workspace/source-coverage-v2/construction-batch3-source-review.json' if n>100 else 'docs/ssw-workspace/source-coverage-v2/construction-source-review.json') if reviewed else None},'semanticInventory':{'status':'excluded' if excluded else 'complete_ai' if complete else 'partial' if reviewed and ids else 'pending','reviewRef':role['reviewRef'] if excluded else complete['reviewRef'] if complete else (read_by_page[(sid,n)]['reviewRef'] if (sid,n) in read_by_page else 'docs/ssw-workspace/source-coverage-v2/construction-batch3-source-review.json' if n>100 else 'docs/ssw-workspace/source-coverage-v2/construction-source-review.json') if reviewed else None},'knowledgeIds':ids,'legacyLessonCandidates':navigation,'candidateLessonLinksProveKnowledgeCoverage':False})
  receipt={'date':'2026-11-02','files':source_receipts,'nominalFiles':17,'nominalPages':604,'canonicalPdfHashes':15,'canonicalPages':530,'byteDuplicateAliasesOnly':True,'differentHashText1kNotMergedWithText1l':True,'extractedOnlyNotSemanticCoverage':True}
  receipt['annotationScan']={'pdfAnnotations':sum(len(list(pg.annots() or [])) for d in docs.values() for pg in d),'linkAnnotations':sum(len(pg.get_links()) for d in docs.values() for pg in d),'formWidgets':sum(len(list(pg.widgets() or [])) for d in docs.values() for pg in d),'method':'All530uniquePDFpages scanned; any nonzero annotation count requires a further dedicated inventory rather than silent omission.'}
  assert not any(receipt['annotationScan'][k] for k in ['pdfAnnotations','linkAnnotations','formWidgets']), 'Annotation inputs require inventory'

@@ -15,3 +15,8 @@ Ma trận chuẩn hóa580bản ghi bằng chứng bài thực tế cóparagraphI
 Phạm vi2号hiện dựa trên quyết định dùng lại学科/実技1号và nguồn職長riêngleader131trang. Chưa có ma trận từng ý hoàn chỉnh chứng minh đủ năng lực2号, chưa được gọi các bộ xác nhận kiến thức dùng lại là đề2号chính thức. Ba hoạt động014–016đã được xử lý riêng trong checkpoint職長; lượt này không tạo nội dung trùng hoặc câu để đạt chỉ tiêu.
 
 Tái tạo bằng `node scripts/kensetsu-authoring/check-2go-runtime-source-matrix.cjs`, rồi `python scripts/kensetsu-authoring/build-2go-source-capability-matrix.py SOURCE_DIRECTORY LEADER_PDF`. Cần dependenciesesbuild; có thể đặt `TOKUTEI_QA_MODULES` tới thư mục chứa dependencies. Kiểm cấu trúc, nguồn byte và mức dùng lại đã đạt; toàn bộ ý nguồn, chuyên môn/bản ngữ/quyền, ảnh/âm thanh,Expo/nativevà thời lượng vẫn chưa nghiệm thu. Điều phối phảicommit/push/fetchvà xác minhremotecho các tệp mới.
+
+
+## Đợt 4 tự kiểm — 7d
+
+Đọc/xem toàn 16 trang 7d; sổ canonical hiện 199 đơn vị/89 covered_ai/7 blocker, không có phần trăm vì mẫu số ý chưa đóng. 69 trang đã xem, 32 kiểm kê ý, 1 trang instructional phủ đủ. Bổ sung 4 cụm 006/009/014/016 JP+12, giữ ID/revision tiến độ; 3 hình độc lập, 288 quan sát ô số không tính thành kiến thức. Gate/guardian/host96 ca PASS; chuyên gia/native/Expo/thiết bị/thời lượng chưa nghiệm thu. Xem construction-batch4-* và construction-report.vi.md; tiếp tục 7k và phần 2号 còn mở.

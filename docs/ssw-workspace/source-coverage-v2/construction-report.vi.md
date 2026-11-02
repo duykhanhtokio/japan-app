@@ -1,17 +1,28 @@
 # Xây dựng — nguồn → kiến thức → app v2
 
-Trạng thái tự kiểm AI ngày2026-11-02, đợt3 từ `66d22c9ff810543f266ee9b76dd3f57b0726bdcc`. Sổ nghiệm thu duy nhất là `construction.json`; các hồ sơ bên cạnh là bằng chứng, không có mẫu số tiến độ riêng.
+Trạng thái tự kiểm AI ngày2026-11-02, đợt4 từ `f2ec9912ee6d9827db949ec73376fb60dee08647`. Sổ nghiệm thu duy nhất là `construction.json`; các hồ sơ bên cạnh là bằng chứng, không có mẫu số tiến độ riêng.
 
 ## Kết quả có bằng chứng
 
 - Xác minh17PDF/604trang danh nghĩa,15hash/530trang duy nhất; giữ115.623phần tử vật lý kể cả chữ nhỏ/ruby/ảnh/vector. Không coi đây là115.623ý; không đưa chữ/ảnh/PDFnguồn vào Git.
--118mục được phân rã có vùng nguồn chính xác;43mục đủ dạy và đánh giá ở mức AI,7blocker. Toàn bộ mẫu số ý vẫn mở, phần trămnull.
+-199 mục được phân rã có vùng nguồn chính xác; 89 mục đủ dạy và đánh giá ở mức AI, 7 blocker. Toàn bộ mẫu số ý vẫn mở, phần trămnull.
 - Trang leader92đạt đầy đủ kiểm kê ngữ nghĩa và bằng chứng app cho năm mục; đây là1trang instructional, không phải toàn bộ89–100hoặc530trang.
 -28trang bìa/mục lục được loại có lý do sau xem vai trò nguồn.136trang từng chưa liên kết nay có phân loại riêng:28điều hướng/xuất bản,108instructional cần tiếp đối chiếu ý.
 - text1k/text1l trang2–12có pixel144dpigiống nhau. Giữ hai sourcehashriêng; phục hồi ứng viên liên kết của trang6–12, không chuyển thành direct tự động.
 - Sửa builder lấy nhầm hash nguồn cuối khi tra liên kết legacy; mọi candidate tra đúng canonicalhash. Các liên kết vẫn là ứng viên, không bằng chứng bao phủ.
 
-## Nội dung học đã thay đổi
+## Đợt 4 — 7d và năng lực giám sát
+
+Đã tự đọc và xem đủ 16 trang 7d, thêm 81 đơn vị chuẩn hoá; các khái niệm human-error trùng được gắn thêm nguồn vào đơn vị cũ. Hai trang 15–16 có kiểm kê ý hoàn chỉnh; trạng thái này không đồng nghĩa mọi đánh giá đều đạt. Gate hiện có 69 trang đã xem, 32 trang kiểm kê ngữ nghĩa, chỉ 1 trang instructional phủ đủ; không suy ra phủ toàn 530 trang.
+
+- Soạn mới/mở rộng 006/009/014/016 bằng tiếng Nhật có đọc kanji và 12 ngôn ngữ: giáo dục đầu vào và báo cáo元方; cấm găng đúng điều kiện cuốn vào lưỡi quay; chọn quần áo tránh hút/giữ nhiệt; tách điều kiện chọn harness và điều kiện giáo dục đặc biệt. Giữ revision hoàn thành/ID và mọi đoạn/câu hỏi cũ.
+- Ba hình hình học độc lập cho hiện trường đầu vào, điều kiện cuốn găng, điều kiện làm/nghỉ nóng. Tổng 12 vị trí/11 hình; không sao ảnh nguồn, không coi sơ đồ là biện pháp thi công đã duyệt.
+- Đọc 288 ô số của ba bảng, có tọa độ/font/hash từng quan sát. Chữ bảng 5.22pt vẫn được giữ. Đây là dữ liệu kiểm kê, không phải 288 kiến thức đã dạy; không gán tổng cột chọn lọc thành bảng nguyên nhân đầy đủ. Chưa đối chiếu toàn bộ ô lịch sử với thống kê sơ cấp.
+- Đối chiếu MHLW chính thức, giữ nguyên PDF lịch sử và ghi riêng đính chính nhiệt, glove, harness. Điều kiện giáo dục 2m là bổ sung chính thức, không giả rằng có trong 7d12.
+- Guardian PASS 14 hoạt động × 12 ngôn ngữ; host reader PASS 96 ca (4 bài × 12 ngôn ngữ × ngày/đêm), giữ dạy cũ, ẩn dịch ban đầu, cuộn cuối mới hoàn thành, chặn overlay cũ và gắn hình qua registry thật. Không phải kiểm thử pixel/Expo/thiết bị. Sàng lọc 272 chuỗi Nhật với nguồn leader: 0 cụm trùng 22 ký tự theo phép sàng lọc; không phải chứng nhận bản quyền/toàn nguồn.
+- Gate: dạy present139/partial3/unknown57; đánh giá present89/partial10/unknown100; missing0. Unknown là chưa có bằng chứng đủ trong phạm vi rà, không phải khẳng định app thiếu. Tiếp tục 7k và các trang 2号 chưa có mapping; nhóm cũ có cùng từ khóa không được tự nhận đủ năng lực giám sát.
+
+## Nội dung học các đợt trước (hồ sơ lịch sử)
 
 017/018/019 có ba phần áp dụng tiếp nối, giữ nguyên nội dung và hoạt động trước đó:
 

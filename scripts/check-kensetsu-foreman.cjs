@@ -14,7 +14,7 @@ for(let n=1;n<=28;n++){
  assert.equal(s.status,'editorial_draft');assert.equal(s.durationMeasured,false);assert.equal(s.estimatedMinutes,null);assert.equal(s.appIntegrationReady,false);
  for(const k of ['domain','nativeJapanese','nativeVietnamese','rights'])assert.equal(s.review[k],false);
  useful(s.titleJa);useful(s.titleTranslations.vi);assert.equal(s.clusters.length,2);
- for(const ref of s.sourceReferences){assert.equal(ref.sourceId,ledger.sourceId);assert(ref.pdfPages.length);assert(ref.pdfPages.every(p=>Number.isInteger(p)&&p>=7&&p<=131));assert.deepEqual(ref.printedPages,ref.pdfPages.map(p=>p-6));}
+ for(const ref of s.sourceReferences){assert(ref.pdfPages.length);if(ref.sourceId===ledger.sourceId){assert(ref.pdfPages.every(p=>Number.isInteger(p)&&p>=7&&p<=131));assert.deepEqual(ref.printedPages,ref.pdfPages.map(p=>p-6));}else{assert.equal(ref.sourceId,'kensetsu-src-7d');assert([6,9,14,16].includes(n));assert(ref.pdfPages.every(p=>Number.isInteger(p)&&p>=1&&p<=16));assert.deepEqual(ref.printedPages,ref.pdfPages.map(p=>p+174));}}
  for(const c of s.clusters){
   assert(!ids.has(c.id));ids.add(c.id);useful(c.titleJa);useful(c.titleTranslations.vi);assert.equal(c.paragraphs.length,2);
   for(const p of c.paragraphs){assert(!paragraphIds.has(p.id));paragraphIds.add(p.id);useful(p.ja);useful(p.translations.vi);assert(!prose.has(p.ja),'Repeated Japanese paragraph');prose.add(p.ja);paragraphs++;}
@@ -52,7 +52,7 @@ for(const locale of ['en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl
  const pack=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/foreman-translations',locale+'.json')));
  checkScheduleEquations(pack.sessions['kensetsu-foreman-session-010'].entries.learningActivity.translations[locale]);
 }
-for(const number of [12,13,14,15,16,17,18,19,20,22]){
+for(const number of [6,9,12,13,14,15,16,17,18,19,20,22]){
  const id=`kensetsu-foreman-session-${String(number).padStart(3,'0')}`;
  const activity=read(`session-${String(number).padStart(3,'0')}.json`).clusters[1].learningActivity;
  useful(activity.ja);useful(activity.translations.vi);assert.equal(activity.graded,false);
@@ -62,7 +62,7 @@ for(const number of [12,13,14,15,16,17,18,19,20,22]){
   const entry=pack.sessions[id].entries.learningActivity;assert.equal(entry.sourceJa,activity.ja);useful(entry.translations[locale]);
  }
 }
-assert.equal(paragraphs,112);assert.equal(prompts,50);assert.equal(images,9);assert.equal(screen.paragraphs,paragraphs);assert.equal(screen.candidates.length,0);assert.equal(screen.rightsCertification,false);
+assert.equal(paragraphs,112);assert.equal(prompts,50);assert.equal(images,12);assert.equal(screen.paragraphs,paragraphs);assert.equal(screen.candidates.length,0);assert.equal(screen.rightsCertification,false);
 assert.equal(ledger.coverageDenominator,null);assert.equal(ledger.wholeSourceComplete,false);assert.equal(ledger.releaseReady,false);assert.equal(ledger.remainingTargetLocales.length,0);assert.equal(ledger.objectives.length,56);
-const report={date:'2026-11-02',status:'PASS_AUTHORED_DATA_AND_PRESERVATION',lessons:all.length,weeks:4,clusters:56,japaneseParagraphs:paragraphs,vietnameseParagraphs:paragraphs,newTranslatedApplicationPrompts:prompts,ungradedDepthActivities:12,depthActivityLocalePairs:144,workedScheduleEquationsChecked:39,instructionalIllustrationPlacements:images,originalDiagrams:8,originalThreeFilesBytePreserved:true,sourcePdfInRepository:false,wholeSourceCoverageConfirmed:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};
+const report={date:'2026-11-02',status:'PASS_AUTHORED_DATA_AND_PRESERVATION',lessons:all.length,weeks:4,clusters:56,japaneseParagraphs:paragraphs,vietnameseParagraphs:paragraphs,newTranslatedApplicationPrompts:prompts,ungradedDepthActivities:14,depthActivityLocalePairs:168,workedScheduleEquationsChecked:39,instructionalIllustrationPlacements:images,originalDiagrams:11,originalThreeFilesBytePreserved:true,sourcePdfInRepository:false,wholeSourceCoverageConfirmed:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};
 fs.writeFileSync(path.join(dir,'content-qa-2026-11-02.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

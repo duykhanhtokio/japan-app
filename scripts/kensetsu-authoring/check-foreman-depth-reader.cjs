@@ -34,7 +34,7 @@ const find=(t,id)=>{const n=t.root.findAll(x=>typeof x.type==='string'&&x.props.
    global.__tokuteiStorage.set('@japan_app_tokutei_reading_appearance_v1',mode);let t,completed=0;
    await act(async()=>{t=create(React.createElement(m.StudyAppearanceProvider,null,React.createElement(m.KensetsuDayReader,{session:s,done:false,ready:true,saving:false,language:locale,onComplete(){completed++;}})));await new Promise(setImmediate);});
    assert.equal(text(find(t,`kensetsu-source-${id}:learningActivity`).children),a.ja);
-   if([17,18,19,20,22].includes(number)){assert.equal(t.root.findAll(x=>typeof x.type==='string'&&x.props.testID==='kensetsu-study-image').length,1,'New illustration must mount through actual registry');}
+   if([6,9,14,16,17,18,19,20,22].includes(number)){assert.equal(t.root.findAll(x=>typeof x.type==='string'&&x.props.testID==='kensetsu-study-image').length,s.clusters.filter(c=>c.illustration).length,'Every illustration must mount through actual registry');}
    assert.equal(t.root.findAll(n=>typeof n.type==='string'&&n.props.testID===`kensetsu-localized-${id}:learningActivity`).length,0);
    assert.equal(find(t,'kensetsu-complete').props.disabled,true);assert.equal(completed,0);
    await act(async()=>find(t,'kensetsu-translation').props.onPress());
@@ -49,6 +49,6 @@ const find=(t,id)=>{const n=t.root.findAll(x=>typeof x.type==='string'&&x.props.
  }
  const inputPaths=[...numbers.map(n=>'docs/ssw-workspace/kensetsu/foreman/session-'+String(n).padStart(3,'0')+'.json'),...locales.filter(l=>l!=='vi').map(l=>'src/data/kensetsu/foreman-translations/'+l+'.json'),'src/data/kensetsu/foreman-illustrations.ts','src/data/kensetsu/localization.ts','src/components/kensetsu/KensetsuCourse.tsx'];
  const inputHashes=inputPaths.map(p=>({path:p,sha256:require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex')}));
- const report={date:'2026-11-02',inputHashes,status:'PASS_ACTUAL_FOREMAN_DAY_READER_HOST',sessions:numbers,localeModeCases:cases,translationHiddenInitially:true,selectedLocaleExact:true,priorTeachingRetained:true,explicitEndBeforeCompletion:true,staleActivityTranslationRejected:true,selectedCaptionLocaleExact:true,newIllustrationRegistryMounted:numbers.every(n=>[17,18,19,20,22].includes(n)),hostAdapters:['ReactNative','RoyalFrames','Backdrop','PNGImportHostValueWithActualAssetRegistry','unusedScopeAndReviewRoutes'],nativeDeviceTested:false,pixelsReviewed:false,releaseReady:false};
+ const report={date:'2026-11-02',inputHashes,status:'PASS_ACTUAL_FOREMAN_DAY_READER_HOST',sessions:numbers,localeModeCases:cases,translationHiddenInitially:true,selectedLocaleExact:true,priorTeachingRetained:true,explicitEndBeforeCompletion:true,staleActivityTranslationRejected:true,selectedCaptionLocaleExact:true,newIllustrationRegistryMounted:numbers.every(n=>[6,9,14,16,17,18,19,20,22].includes(n)),hostAdapters:['ReactNative','RoyalFrames','Backdrop','PNGImportHostValueWithActualAssetRegistry','unusedScopeAndReviewRoutes'],nativeDeviceTested:false,pixelsReviewed:false,releaseReady:false};
  if(process.env.FOREMAN_DEPTH_REPORT)fs.writeFileSync(path.resolve(root,process.env.FOREMAN_DEPTH_REPORT),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 })().catch(e=>{console.error(e);process.exit(1)});
