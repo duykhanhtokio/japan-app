@@ -24,4 +24,6 @@ Các lỗi được chặn gồm: thiếu trang/vùng so với bản kiểm kê 
 
 Kiểm máy không chứng nhận ngữ nghĩa, bản ngữ, chuyên môn, quyền, bố cục, thiết bị hay thời lượng. Mỗi mức phải có hồ sơ riêng. Không đưa sổ nguồn hoặc PDF vào dependency khởi động ứng dụng.
 
-Bộ kiểm tra không tự đọc được ý nghĩa trang PDF từ các hash. Việc xác nhận trích xuất đầy đủ vẫn cần nguồn thật và receipt của tác giả; phân rã kiến thức vẫn cần đọc chữ/hình. Các kiểm tra máy là rào chắn chống đóng sai, không thay cho công việc đọc nguồn.
+Bộ kiểm tra không tự đọc được ý nghĩa trang PDF từ các hash. Việc xác nhận trích xuất đầy đủ vẫn cần nguồn thật và receipt của tác giả; phân rã kiến thức vẫn cần đọc chữ/hình. Cờ duyệt chuyên môn/bản ngữ/người thật/thiết bị/thời lượng bật true phải có reviewEvidence hiện hành. Các kiểm tra máy là rào chắn chống đóng sai, không thay cho công việc đọc nguồn.
+
+`candidate`/`unknown` của nội dung kế thừa nghĩa là chưa đủ bằng chứng theo chuẩn định vị mới, không tự kết luận app thiếu ý đó. Báo riêng missing, partial, present và unknown; không gọi toàn bộ hàng đang mở là kiến thức bị bỏ sót. Danh sách lỗi thực sự phải dựa vào đối chiếu nguồn và bài.

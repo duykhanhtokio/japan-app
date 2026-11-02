@@ -43,9 +43,17 @@ function validateSector(root,ledger){
   if(e.relation==='direct'){need(e.semanticReviewed===true&&nonempty(e.reviewNote),'DIRECT_EVIDENCE_REVIEW',e.path);if(['teaching','assessment'].includes(kind)&&e.sha256Mode==='file'){need(nonempty(e.locator)&&typeof e.quote==='string'&&e.quote.length>=12,'DIRECT_EVIDENCE_LOCATOR',e.path);need(cached.bytes.toString('utf8').includes(e.quote),'EVIDENCE_QUOTE_MISSING',e.path);}if(kind==='image'){need(!cached.bytes.subarray(0,100).toString().startsWith('version https://git-lfs.github.com/spec/v1'),'IMAGE_IS_LFS_POINTER',e.path);need(nonempty(e.keyObjectiveId)&&nonempty(e.caption)&&nonempty(e.alt)&&nonempty(e.rights),'IMAGE_METADATA',e.path);}}
   return e.relation==='direct'&&e.semanticReviewed;
  }
+ function checkReview(review,reviewEvidence,label){
+  need(review&&typeof review==='object','REVIEW_FIELDS',label);
+  for(const flag of ['domainReviewed','nativeReviewed','humanReviewed','physicalDeviceTested','learnerDurationMeasured']){
+   if(Object.hasOwn(review,flag))need(typeof review[flag]==='boolean','REVIEW_FLAG',`${label}/${flag}`);
+   if(review[flag]===true){const refs=reviewEvidence?.[flag];need(Array.isArray(refs)&&refs.length>0,'UNSUPPORTED_REVIEW_CLAIM',`${label}/${flag}`);need(refs.map(e=>evidence(e,'review')).some(Boolean),'UNSUPPORTED_REVIEW_CLAIM',`${label}/${flag}`);}
+  }
+ }
+ checkReview(ledger.review,ledger.reviewEvidence,ledger.sector);
  let covered=0,teaching=0,assessed=0,excluded=0,duplicates=0,blocked=0;
  for(const u of units.values()){
-  const id=u.knowledgeId;need(nonempty(u.statementJa),'KNOWLEDGE_STATEMENT',id);need(Array.isArray(u.sourceRefs)&&u.sourceRefs.length>0,'KNOWLEDGE_SOURCE',id);need(['core','safety','supporting','reference'].includes(u.importance),'IMPORTANCE',id);need(['knowledge','duplicate','excluded','blocked'].includes(u.classification),'KNOWLEDGE_CLASS',id);need(['candidate','partial','covered_ai','duplicate','excluded','blocked'].includes(u.status),'UNIT_STATUS',id);need(Array.isArray(u.conditionsJa)&&Array.isArray(u.exceptionsJa)&&Array.isArray(u.unresolved),'UNIT_FIELDS',id);
+  const id=u.knowledgeId;checkReview(u.review,u.reviewEvidence,id);need(nonempty(u.statementJa),'KNOWLEDGE_STATEMENT',id);need(Array.isArray(u.sourceRefs)&&u.sourceRefs.length>0,'KNOWLEDGE_SOURCE',id);need(['core','safety','supporting','reference'].includes(u.importance),'IMPORTANCE',id);need(['knowledge','duplicate','excluded','blocked'].includes(u.classification),'KNOWLEDGE_CLASS',id);need(['candidate','partial','covered_ai','duplicate','excluded','blocked'].includes(u.status),'UNIT_STATUS',id);need(Array.isArray(u.conditionsJa)&&Array.isArray(u.exceptionsJa)&&Array.isArray(u.unresolved),'UNIT_FIELDS',id);
   for(const state of ['before','after'])for(const field of ['teaching','assessment'])need(u[state]&&['unknown','missing','partial','present'].includes(u[state][field]),'UNIT_STATE',`${id}/${state}/${field}`);
   let exact=true;
   for(const r of u.sourceRefs){const key=`${r.sourceId}:${r.pdfPage}`,p=pages.get(key);need(p,'UNKNOWN_SOURCE_PAGE',`${id}/${key}`);need(Array.isArray(r.elementIds),'SOURCE_ELEMENTS',id);if(!r.elementIds.length)exact=false;need(p.knowledgeIds.includes(id),'MISSING_PAGE_UNIT_BACKLINK',`${id}/${key}`);for(const eid of r.elementIds){const e=elements.get(eid);need(e&&e.pageKey===key,'UNKNOWN_SOURCE_ELEMENT',`${id}/${eid}`);need(e.knowledgeIds.includes(id),'MISSING_ELEMENT_UNIT_BACKLINK',`${id}/${eid}`);}}
@@ -56,7 +64,7 @@ function validateSector(root,ledger){
   if(u.status==='covered_ai'){need(u.classification==='knowledge'&&exact,'COVERED_SOURCE_NOT_EXACT',id);need(t&&u.after.teaching==='present','COVERED_TEACHING',id);need((a&&u.after.assessment==='present')||u.assessmentRequirement==='not_required','COVERED_ASSESSMENT',id);need(u.expressionReview.status==='independent_ai_checked'&&nonempty(u.expressionReview.note),'COVERED_EXPRESSION',id);need(u.unresolved.length===0,'COVERED_UNRESOLVED',id);need(u.sourceReview?.status==='self_checked_ai'&&u.sourceReview.conditionsChecked===true&&nonempty(u.sourceReview.reviewRef),'COVERED_SOURCE_REVIEW',id);covered++;}
   if(u.status==='duplicate'){need(u.classification==='duplicate'&&units.has(u.duplicateOf)&&u.duplicateOf!==id,'DUPLICATE_TARGET',id);need(!['duplicate','excluded','blocked'].includes(units.get(u.duplicateOf).classification),'DUPLICATE_CHAIN',id);need(nonempty(u.dispositionReason),'DUPLICATE_REASON',id);duplicates++;}
   if(u.status==='excluded'){need(u.classification==='excluded'&&nonempty(u.dispositionReason),'UNIT_EXCLUSION',id);need(u.importance==='reference','CORE_EXCLUDED',id);excluded++;}
-  if(u.status==='blocked')blocked++;
+  if(u.status==='blocked'||u.classification==='blocked')blocked++;
  }
  // Reciprocal links prevent counters, orphan regions, or whole-page matches pretending to close facts.
  for(const p of pages.values())for(const id of p.knowledgeIds)need(units.get(id).sourceRefs.some(r=>r.sourceId===p.sourceId&&r.pdfPage===p.pdfPage),'ORPHAN_PAGE_UNIT',id);
@@ -65,10 +73,12 @@ function validateSector(root,ledger){
  const inventoried=semanticPages===expectedPages&&[...sourceIds.values()].every(s=>s.byteVerified)&&ledger.unresolved.length===0;
  if(ledger.denominator.status==='inventoried_ai')need(inventoried,'FALSE_DENOMINATOR_COMPLETE',ledger.sector);
  const mandatory=[...units.values()].filter(u=>u.classification==='knowledge');
- const fullyCovered=inventoried&&ledger.denominator.status==='inventoried_ai'&&mandatory.length>0&&mandatory.every(u=>u.status==='covered_ai')&&blocked===0;
+ const fullyCovered=inventoried&&ledger.denominator.status==='inventoried_ai'&&mandatory.length>0&&mandatory.every(u=>u.status==='covered_ai')&&[...units.values()].every(u=>['covered_ai','excluded','duplicate'].includes(u.status))&&blocked===0;
  need(typeof ledger.wholeSourceKnowledgeCovered==='boolean','WHOLE_COVERAGE_FLAG',ledger.sector);if(ledger.wholeSourceKnowledgeCovered)need(fullyCovered,'FALSE_WHOLE_COVERAGE',ledger.sector);
  const percent=ledger.denominator.status==='inventoried_ai'?Math.round(10000*covered/Math.max(1,mandatory.length))/100:null;
- return {status:'PASS_REGISTRY_CONTRACT',sector:ledger.sector,sources:sourceIds.size,sourcePages:expectedPages,censusPages,visualPages,semanticInventoryPages:semanticPages,regions:regionCount,knowledgeUnits:units.size,teachingDirect:teaching,assessmentDirect:assessed,coveredAi:covered,duplicates,excluded,blocked,sourceCoveragePercent:percent,fullyCovered,expertOrNativeAcceptanceInferred:false};
+ const teachingStates=Object.fromEntries(['unknown','missing','partial','present'].map(state=>[state,[...units.values()].filter(u=>u.after.teaching===state).length]));
+ const assessmentStates=Object.fromEntries(['unknown','missing','partial','present'].map(state=>[state,[...units.values()].filter(u=>u.after.assessment===state).length]));
+ return {status:'PASS_REGISTRY_CONTRACT',sector:ledger.sector,sources:sourceIds.size,sourcePages:expectedPages,censusPages,visualPages,semanticInventoryPages:semanticPages,regions:regionCount,knowledgeUnits:units.size,teachingDirect:teaching,assessmentDirect:assessed,teachingStates,assessmentStates,coveredAi:covered,duplicates,excluded,blocked,sourceCoveragePercent:percent,fullyCovered,expertOrNativeAcceptanceInferred:false};
 }
 function validateFile(root,file){return validateSector(root,readJSON(safe(root,file)));}
 module.exports={validateSector,validateFile,readJSON,pointer,hash,SECTORS};

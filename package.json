@@ -54,7 +54,11 @@
     "dev:voice": "node scripts/dialogue-voice/dev.cjs",
     "manufacturing:check": "node scripts/manufacturing/check.cjs",
     "manufacturing:recognition:build": "python3 scripts/manufacturing/build-recognition38.py",
-    "manufacturing:device:prepare": "node scripts/manufacturing/create-device-qa.cjs"
+    "manufacturing:device:prepare": "node scripts/manufacturing/create-device-qa.cjs",
+    "ssw:coverage:check": "node scripts/source-coverage-v2/check.cjs",
+    "ssw:coverage:report": "node scripts/source-coverage-v2/report.cjs",
+    "ssw:coverage:require-complete": "node scripts/source-coverage-v2/check.cjs --require-covered",
+    "ssw:coverage:test": "node scripts/source-coverage-v2/check.test.cjs"
   },
   "private": true
 }

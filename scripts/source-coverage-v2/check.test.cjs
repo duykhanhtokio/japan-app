@@ -29,6 +29,10 @@ try{
  reject('false complete census',x=>{x.pages[0].semanticInventory.status='partial';},'FALSE_DENOMINATOR_COMPLETE');
  reject('false 100 percent with open denominator',x=>x.denominator.status='open','FALSE_WHOLE_COVERAGE');
  reject('missing source bytes cannot freeze denominator',x=>x.sources[0].byteVerified=false,'FALSE_DENOMINATOR_COMPLETE');
+ reject('unsupported human review claim',x=>x.review.humanReviewed=true,'UNSUPPORTED_REVIEW_CLAIM');
+ reject('unsupported native review claim',x=>x.review.nativeReviewed=true,'UNSUPPORTED_REVIEW_CLAIM');
+ reject('unsupported measured learner time',x=>x.review.learnerDurationMeasured=true,'UNSUPPORTED_REVIEW_CLAIM');
+ reject('unsupported unit expert review',x=>x.knowledgeUnits[0].review.domainReviewed=true,'UNSUPPORTED_REVIEW_CLAIM');
  reject('path traversal',x=>x.knowledgeUnits[0].teachingEvidence[0].path='../lesson.json','UNSAFE_PATH');
  const partial=copy(baseline);partial.denominator.status='open';partial.pages[0].semanticInventory.status='partial';partial.wholeSourceKnowledgeCovered=false;partial.knowledgeUnits[0].status='partial';const result=validateSector(dir,partial);assert.equal(result.sourceCoveragePercent,null);assert.equal(result.fullyCovered,false);checks++;
  console.log(JSON.stringify({status:'PASS_ADVERSARIAL_COVERAGE_GATE',checks,smallFontRetained:true,compressedArtifactsVerified:true,semanticAcceptanceNotInferredFromCounts:true}));
