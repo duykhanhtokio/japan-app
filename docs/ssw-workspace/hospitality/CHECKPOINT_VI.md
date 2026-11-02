@@ -1,3 +1,11 @@
+# Hoàn tất bản dịch bài kính ngữ — ngày 02/11/2026
+
+Đã hoàn tất đủ 12 ngôn ngữ cho toàn bộ `hotel-service-02` theo revision Nhật `00dcc624507593ecc0ebfa4c7929a7e64431e3b92e25028b0efe4aa3a8b64761`: tiêu đề, 2 mục tiêu, 3 đoạn, 5 thuật ngữ, ví dụ, thực hành, 5 câu hỏi đủ lựa chọn/giải thích và caption/alt. Sáu bản cũ được rà và bổ sung hai câu còn thiếu cùng alt sơ đồ ba cột; sáu bản hi/bn/ne/my/th/km được dịch đầy đủ mới. Giữ ID, đáp án, thuật ngữ/cách đọc và câu ví dụ Nhật. Không sửa Nhật.
+
+Toàn ngành tăng 34→46/456 cặp đúng revision; còn 410 cặp thiếu hoặc cũ. Mọi bản mới là `translated_ai_unreviewed`, chưa duyệt bản ngữ/chuyên môn. Validator bản dịch, loader, ID/đáp án/thuật ngữ, nguồn và furigana PASS; loader vẫn chặn revision cũ. Bằng chứng: `service02-12locale-20261102-evidence.json`. Chưa hoàn tất toàn ngành hoặc kiểm thử thiết bị thật.
+
+---
+
 # Hoàn tất bản dịch một bài — ngày 02/11/2026
 
 Đã hoàn tất đủ 12 ngôn ngữ cho toàn bộ `hotel-service-03` theo đúng revision Nhật `eb942d9ca15482ba6a25f88e5efd13a2a1994b1b2632df3a2ae1d61b28947e5c`: tiêu đề, 3 mục tiêu, 5 đoạn gồm tình huống 6 lượt thoại, 5 thuật ngữ, ví dụ, thực hành, 10 câu hỏi đủ lựa chọn/giải thích và caption/alt. Sáu bản cũ được rà và bổ sung; sáu bản hi/bn/ne/my/th/km được dịch đầy đủ mới. Giữ ID, đáp án và thuật ngữ/cách đọc Nhật. Không sửa Nhật, không coi fallback là bản dịch.
