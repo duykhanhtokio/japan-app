@@ -1,3 +1,11 @@
+# Tái lập v9 nhóm1 — 03/11/2026
+
+Sau khi môi trường bị tạo lại, remote được xác nhận vẫn ở bb4eb47; bản v9 từng kiểm456cặp trong phiên cũ chưa được lưu, nên không được tính là checkpoint bền vững. Đã tái lập và tự kiểm nội dung từ bản Nhật, không tuyên bố khôi phục nguyên byte các bản mất. Bản bàn giao riêng được lưu trước khi tích hợp.
+
+Nhóm restaurant04/05/08 hoàn tất36cặp/3108trường, bổ sung288bản câu hỏi dịch. `recover-v9-batch.cjs 1 --apply` và loader thật PASS384/456,72thiếu-cũ; giữ378bản ngoài phạm vi có sẵn, toàn bộ Nhật/catalog/sổ nguồn không đổi. Metadata sidecar Nepal/Myanmar đã được tác giả sửa từ schema Nhật sang sourceRevision/status bản dịch trước tích hợp. Không nới kiểm tra để chấp nhận dữ liệu sai schema. Bằng chứng: recovery-v9/batch-1-integration.json và các sidecar tự kiểm theo ngôn ngữ. Mọi bản mới translated_ai_unreviewed; không nhận duyệt bản ngữ/chuyên môn/thiết bị/thời lượng. Source vẫn100covered_ai/383known, mẫu số mở. Chỉ log persistence sau commit chứng minh trạng thái lưu.
+
+---
+
 # Khôi phục checkpoint và hoàn thiện restaurant01/02/03 — 02/11/2026, v8
 
 Tiếp tục từ baseline `d03ead72b51c3ef5888f687e00d860ec7ba6dbe5` trên `recovery/jlpt-n3-n1`; baseline đã đạt WORK PERSISTENCE PASS. Khôi phục checkout chọn lọc sau lỗi tải toàn bộ repository, bảo toàn mã nguồn và nội dung Nhật. Sáu tác giả phụ trách hai ngôn ngữ mỗi người, tự kiểm ba bài liên tiếp, không rà chéo ngữ nghĩa.
