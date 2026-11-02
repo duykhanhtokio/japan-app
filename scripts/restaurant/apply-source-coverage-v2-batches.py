@@ -6,7 +6,7 @@ def sha(x):return hashlib.sha256(x).hexdigest()
 def digest(v):return sha(json.dumps(v,ensure_ascii=False,separators=(',',':')).encode())
 def esc(x):return str(x).replace('~','~0').replace('/','~1')
 def apply(result):
- units={u['knowledgeId']:u for u in result['knowledgeUnits']};pages={(p['sourceId'],p['pdfPage']):p for p in result['pages']};sources={s['sourceId']:s for s in result['sources']};canon=json.loads(CAN.read_text())['items'];docs={};oldq={}
+ units={u['knowledgeId']:u for u in result['knowledgeUnits']};pages={(p['sourceId'],p['pdfPage']):p for p in result['pages']};sources={s['sourceId']:s for s in result['sources']};canon=json.loads(CAN.read_text())['items'];docs={};oldq={};cross=json.loads((CAN.parent/'unit-crosswalk.json').read_text())['facts']
  for level in ['1','2']:
   path=f'src/data/restaurant/exams.{level}.ja.json'
   for i,exam in enumerate(json.loads((ROOT/path).read_text())['exams']):
@@ -48,7 +48,7 @@ def apply(result):
    ae=[]
    for id in r['questionIds']:
     if id in canon:
-     v=canon[id];assert u['knowledgeId']in v['factIds'];ae.append(evidence(str(CAN.relative_to(ROOT)),'/items/'+esc(id),v,r['assessmentReview']))
+     v=canon[id];assert u['knowledgeId']in v['factIds'] or id in cross[u['knowledgeId']].get('questionIds',[]),(u['knowledgeId'],id,'Cross-objective reuse needs an explicit current fact binding');ae.append(evidence(str(CAN.relative_to(ROOT)),'/items/'+esc(id),v,r['assessmentReview']))
     else:
      path,ptr,v=oldq[id];ae.append(evidence(path,ptr,v,r['assessmentReview']))
    assert te and ae;u.update(before=r['before'],teachingEvidence=te,assessmentEvidence=ae,conditionsJa=r['conditionsJa'],exceptionsJa=r['exceptionsJa'],after={'teaching':'present','assessment':'present'},assessmentRequirement='required',assessmentExemptionReason=None,status='covered_ai',expressionReview={'status':'independent_ai_checked','note':r['expressionReview']},sourceReview={'status':'self_checked_ai','conditionsChecked':True,'reviewRef':rr},unresolved=[])

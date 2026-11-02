@@ -18,7 +18,7 @@ for s in sections:
   seq=s['furigana'][key];assert ''.join(z['text']for z in seq)==s[key+'Ja'];assert not any(re.search('[一-龯]',z['text'])and not z.get('reading')for z in seq),(s['id'],seq);fields+=1
 assert preserved==260
 persisted_counts={}
-for revision in ['beb6a9de8c84350e6c22de13bceed24eb14bdf7f','840cced254aeff1d1aef1e6671953538b36c17d2']:
+for revision in ['beb6a9de8c84350e6c22de13bceed24eb14bdf7f','840cced254aeff1d1aef1e6671953538b36c17d2','04186871758b3eaaabcf0537c0d3937250da2fbf']:
  count=0
  for level in ['1','2']:
   rel=f'src/data/restaurant/source31/{level}.json';old=json.loads(subprocess.check_output(['git','show',revision+':'+rel],cwd=R));now=read(R/rel);oq={q['id']:q for row in old['lessons'].values()for q in(row.get('exam')or{}).get('questions',[])};nq={q['id']:q for row in now['lessons'].values()for q in(row.get('exam')or{}).get('questions',[])};assert all(nq.get(id)==q for id,q in oq.items()),(revision,'Persisted batch question changed');count+=len(oq)
