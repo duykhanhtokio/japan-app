@@ -1,3 +1,13 @@
+# Manufacturing source56 —2026-11-02
+
+Three more recognition groups self-compared: jig holding/contact/coating; indicator colour correspondence; relative metal/H ordering and oxide-film limitation. Fullsource67/96/110/114/180rasters and4actualappPNGs viewed;sourcePDFhashverified. Reused10existingquestions after boundedoption/reason checks; no duplicatequestions/content/ID/revision/state edits.
+
+11newcanonicalunits=9covered_ai/2partialprocedural-scopeclaims.121totalrows/86covered_ai(51reference+35competency),118directteaching/35directassessment.110olderrows preserved.51visualpages;34completeinventories=4instructionalcovered+30excluded unchanged; no newwholepageclosure. Nine recognitiongroupsremainunreviewedv2; two newpartialfacets and priorpartialfacets remain open. Denominatoropen,coverage=null,whole574false.
+
+Canonicalgate andexact574pagecensusrebuildPASS. No newruntime/device/native/domain/time acceptance; allappcontentunchanged. See ../source-coverage-v2/manufacturing-source56-{review,REPORT.vi,validation}. Rootremote persistence pending. Preserve this batch before other sector help.
+
+---
+
 # Manufacturing source54–55 —2026-11-02
 
 Three successive recognition groups self-compared: sampling/extrema/means; thickness-instrument principles/fit; wetting observation. Fullsource72/74/75/80/81/182rasters and4actualappPNGs viewed. Complete technicalpage72inventory covers both tables/all5rows/all5pointmarkers/formula/captions; four bounded competencies now taught/assessed with original app numbers/layout. New source55adds1separate mean-comparison question/4distinct reasons/12targets/fullyannotatedJapanese, preserving every old bank/examID/revision. Other9questions reused after full option/reason/source/figure self-comparison. No copying source data/exercise/image.
