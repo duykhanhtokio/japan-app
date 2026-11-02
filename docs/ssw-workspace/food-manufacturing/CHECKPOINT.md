@@ -1,3 +1,7 @@
+# Source38: applied color-reporting practice —2026-11-02
+
+Source PDFs recovered and manifest hashes verified; visually inspected2号PDF65–66. Added one independently worded supervisor scenario and one3-point self-check to food-2-015/week3day3, where qualitative/quantitative theory existed but no color-reference practice did. Integrated via source-closure38.json and existing daily Reader components, with12translations/24pairs and7explicit ruby fields. Existing96day IDs/848exam questions/revisions/progress retained. Actual component SSR26cases and2stale/wrong-lesson cases PASS; current848question receipts and96day diagram/preservation checks PASS. See source-closure-20261102/REPORT38.vi.md and pinned before/after evidence. Source/native/domain/device/duration completeness not certified; root persistence gate remains.
+
 # Newly executed candidate acceptance —2026-11-02
 
 See `ACCEPTANCE_20261102.md`. Restored scoped QA dependencies and tracked food assets/source; actual lesson/question ruby loaders, TSX compilation, 8,480-field/1,696-case SSR, state, adapter, figure37 and 96-day diagram/companion validation now rerun successfully at source snapshot57ac691. Fixed the daily validator's stale pre-source-correction preservation baseline using18 exact hash-pinned historical snapshots and76 changed-byte rejection probes; learner content unchanged. Full Expo/browser/device/native/domain/duration/source certification remains unclaimed. Root commit/push/fetch verification still required.

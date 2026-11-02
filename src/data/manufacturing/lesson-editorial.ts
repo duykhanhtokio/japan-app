@@ -5,6 +5,7 @@ type Clarification={lessonId:string;paragraphId:string;sourceHash:string;wording
 let clarification:Clarification|null=null;
 let dimensionClarification:Clarification|null=null;
 let toleranceClarification:Clarification|null=null;
+let qcPlanClarification:Clarification|null=null;
 
 /** Source-bound wording correction; frozen banks and learner/session IDs stay intact.
  * Both Japanese source and exact prior target wording must match. No locale fallback.
@@ -14,8 +15,11 @@ export function manufacturingLessonParagraph(lesson:ManufacturingLesson,paragrap
  if(lesson.id==='mfg1-electrical-l075')return manufacturingBooleanParagraph(lesson,paragraphId,locale,text);
  const dimension=lesson.id==='mfg1-mechanical-lesson-046'&&paragraphId==='section-2';
  const tolerance=lesson.id==='mfg1-mechanical-lesson-021'&&paragraphId==='decision';
- if(!dimension&&!tolerance&&(lesson.id!=='mfg1-mechanical-lesson-076'||paragraphId!=='section-3'))return text;
- const patch=tolerance
+ const qcPlan=lesson.id==='mfg1-mechanical-lesson-011'&&paragraphId==='example';
+ if(!dimension&&!tolerance&&!qcPlan&&(lesson.id!=='mfg1-mechanical-lesson-076'||paragraphId!=='section-3'))return text;
+ const patch=qcPlan
+  ? qcPlanClarification??(qcPlanClarification=require('./qc-plan-practice.json').lessonPatch as Clarification)
+  : tolerance
   ? toleranceClarification??(toleranceClarification=require('./tolerance-practice.json').lessonPatch as Clarification)
   : dimension
   ? dimensionClarification??(dimensionClarification=require('./dimension-editorial.json') as Clarification)
