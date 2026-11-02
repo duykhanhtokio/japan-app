@@ -467,16 +467,31 @@
           "knowledgeIds": [
             "HK-planning-02-pricing"
           ]
+        },
+        {
+          "id": "hotel-planning-02-q08",
+          "prompt": "When comparing a busy long holiday with a quiet season, which understanding follows the source?",
+          "choices": [
+            "Demand and occupancy change by season, so examine data under comparable conditions",
+            "Every property has the same occupancy all year",
+            "Costs are always zero in busy periods",
+            "An unsold quiet-season room-night can be added to tomorrow's stock"
+          ],
+          "answerIndex": 0,
+          "explanation": "The source describes occupancy trends around long holidays and major breaks. It does not guarantee a full house on a particular date.",
+          "knowledgeIds": [
+            "HK-planning-02-comparison"
+          ]
         }
       ],
       "illustration": {
         "id": "hotel-planning-02-illustration",
         "kind": "occupancy-revenue",
         "caption": "The meaning changes depending on whether room revenue is divided by rooms sold or rooms available.",
-        "alt": "Room grid with 30 of 40 rooms sold, showing OCC 75%, ADR ¥12,000 and RevPAR ¥9,000 and their calculation links.",
+        "alt": "Three cards compare formulas for the same day:40available rooms,30sold and ¥360,000room revenue, giving OCC75%, ADR¥12,000and RevPAR¥9,000.",
         "keyObjectiveId": "hotel-planning-02-objective"
       },
-      "sourceRevision": "9ca3e34afecffdbeeca304efb79b50af668be9a2166081a1732485ee1802f695",
+      "sourceRevision": "2602db22cb5acb1db44eca21a3a5f0dd17f234e8541f6d4bf1d466c38480524f",
       "status": "translated_ai_unreviewed",
       "title": "Calculate OCC, ADR and RevPAR on the same basis"
     },
@@ -646,6 +661,96 @@
           "knowledgeIds": [
             "HK-planning-03-feedback"
           ]
+        },
+        {
+          "id": "hotel-planning-03-q06",
+          "prompt": "Which combination is appropriate when checking a property-information page?",
+          "choices": [
+            "Check only the appearance of photos",
+            "Leave the text unchanged when prices change",
+            "Make the reservation entrance hard to find",
+            "Match rates, rooms and equipment, maps and access, and photo descriptions to the actual offering"
+          ],
+          "answerIndex": 3,
+          "explanation": "Check content, findability and consistent updates together.",
+          "knowledgeIds": [
+            "HK-planning-03-information"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q07",
+          "prompt": "Which explanation of direct-booking benefits and actual conditions is appropriate?",
+          "choices": [
+            "All operating costs are always zero for direct bookings",
+            "It may reduce intermediary commission, but actual booking conditions must be checked",
+            "Only agency reservations are direct bookings",
+            "Conditions need not be checked on any channel"
+          ],
+          "answerIndex": 1,
+          "explanation": "Check the booking route, costs and conditions separately.",
+          "knowledgeIds": [
+            "HK-planning-03-booking"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q08",
+          "prompt": "How should customer feedback be used to improve the website?",
+          "choices": [
+            "Keep only scores and ignore the comments",
+            "Feedback is unnecessary if expired campaigns are removed",
+            "Collect unclear information and service complaints, then reflect them in updates and improvements",
+            "Determine satisfaction only from the number of photos"
+          ],
+          "answerIndex": 2,
+          "explanation": "Understand what was actually difficult to follow and examine both information and service.",
+          "knowledgeIds": [
+            "HK-planning-03-feedback"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q09",
+          "prompt": "Which approach fits publicity's purpose and the communication of a property's strengths?",
+          "choices": [
+            "Repeat only the word luxury",
+            "Advertise services that do not exist",
+            "Good stakeholder relationships are irrelevant",
+            "Communicate activities and products to build understanding and trust, and make distinctive strengths concrete"
+          ],
+          "answerIndex": 3,
+          "explanation": "Communicate real value accurately to develop stakeholder understanding and trust.",
+          "knowledgeIds": [
+            "HK-planning-03-publicity"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q10",
+          "prompt": "What additional information does the Level 2 source list for a property's website?",
+          "choices": [
+            "Publishing guests' personal details",
+            "Checking nearby sightseeing information and using it to guide stays that include the local area",
+            "Describing finished events as ongoing",
+            "Asserting an unverified transport timetable"
+          ],
+          "answerIndex": 1,
+          "explanation": "The Level 2 source also includes nearby sightseeing. Treat it as information distinct from room details or booking channels.",
+          "knowledgeIds": [
+            "HK-planning-03-information"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q11",
+          "prompt": "Guests report they cannot proceed to book their desired date on the property's website. What improvement is appropriate?",
+          "choices": [
+            "More photos remove the need for a reservation entrance",
+            "Writing direct booking is enough",
+            "Change only the OTA name without checking",
+            "Check and clarify the entrance and operations from date selection to application and confirmation"
+          ],
+          "answerIndex": 3,
+          "explanation": "Being able to use online booking differs from knowing its name. Check the flow that lets guests reserve according to their plans.",
+          "knowledgeIds": [
+            "HK-planning-03-booking"
+          ]
         }
       ],
       "illustration": {
@@ -655,7 +760,7 @@
         "alt": "Mobile website layout showing links between room and rate information, access information and a reservation form.",
         "keyObjectiveId": "hotel-planning-03-objective"
       },
-      "sourceRevision": "1cd3877c2d7f802a52399d0d40fe8168d3576804904d8e90c09b47e2c64ec25e",
+      "sourceRevision": "9fa70e9156318f2f48fe9777f736e358b7ab4037ada18f680d9080c75507adc0",
       "status": "translated_ai_unreviewed",
       "title": "Check a website from information search to booking"
     },
@@ -923,12 +1028,12 @@
         {
           "id": "hotel-planning-05-commission",
           "title": "Do not treat commission rates as fixed rules",
-          "body": "OTA commission is not necessarily identical across channels or amounts sold. The reference mentions approximately 8–15% of sales, treated here as an example in the 2024 text. Do not apply it to an estimate without checking the current contract and calculation basis. Exercises must state the assumed rate and amount to which it applies."
+          "body": "OTA commission is not necessarily identical across channels or amounts sold. The reference mentions approximately 8–15% of sales, treated here as an example in the 2024 text. Do not apply it to an estimate without checking the current contract and calculation basis. Exercises must state the assumed rate and amount to which it applies. For example, if an exercise specifies eligible sales of ¥20,000 and a 10% commission, ¥20,000×0.10＝¥2,000. This 10% is an assumption, not the rate of an actual contract."
         },
         {
           "id": "hotel-planning-05-inbound",
           "title": "Inbound, FIT and VIP are different classifications",
-          "body": "Inbound refers to tourism or business involving travelers arriving from overseas. FIT describes how a trip is arranged; VIP is a category for guests requiring special treatment at the property. These are different dimensions: an overseas independent traveler may also be a property VIP. Share the actual information and service needed, not just the label."
+          "body": "Inbound refers to tourism or business involving travelers arriving from overseas. FIT describes how a trip is arranged; VIP is a category for guests requiring special treatment at the property. These are different dimensions: an overseas independent traveler may also be a property VIP. Share the actual information and service needed, not just the label.\n\nThe Level 2 source also notes inbound tourism's role in supporting the local economy and cultural exchange. Consider receiving overseas travelers not only as room sales, but through connections with local shops, experiences and transport. This is not a formula guaranteeing that profit or cultural exchange increases in the same proportion as visitor numbers. Specify what local attractions to introduce and what experiences the plan will offer."
         },
         {
           "id": "hotel-planning-05-upsell",
@@ -1066,6 +1171,66 @@
           "knowledgeIds": [
             "HK-planning-05-inbound"
           ]
+        },
+        {
+          "id": "hotel-planning-05-q06",
+          "prompt": "Which description of an OTA is appropriate?",
+          "choices": [
+            "Only the name of fire equipment inside a property",
+            "An online travel agency handling travel products and accommodation services",
+            "Only the name of room-cleaning supplies",
+            "An administrative agency setting accounting rules for every property"
+          ],
+          "answerIndex": 1,
+          "explanation": "Check the route's difference from direct booking and the actual contractual commission.",
+          "knowledgeIds": [
+            "HK-planning-05-channels"
+          ]
+        },
+        {
+          "id": "hotel-planning-05-q07",
+          "prompt": "An exercise assumes eligible sales of ¥20,000 and a 10% commission. What is the commission?",
+          "choices": [
+            "¥200",
+            "¥10,000",
+            "¥2,000",
+            "Every current OTA necessarily charges this same amount"
+          ],
+          "answerIndex": 2,
+          "explanation": "20,000×0.10＝2,000yen. These are explicit exercise conditions, not the rate of a current contract.",
+          "knowledgeIds": [
+            "HK-planning-05-commission"
+          ]
+        },
+        {
+          "id": "hotel-planning-05-q08",
+          "prompt": "What should you do when explaining direct-booking benefits or a best-rate guarantee?",
+          "choices": [
+            "Check the property's specified period, conditions and actual benefits",
+            "Assert everything is always cheapest with direct booking",
+            "Set surcharges without checking the benefits",
+            "Assume the word OTA reveals every contract's contents"
+          ],
+          "answerIndex": 0,
+          "explanation": "Even as a selling point, explain the conditions actually offered.",
+          "knowledgeIds": [
+            "HK-planning-05-channels"
+          ]
+        },
+        {
+          "id": "hotel-planning-05-q09",
+          "prompt": "Which understanding of inbound tourism's significance follows the Level 2 source?",
+          "choices": [
+            "It relates to the local economy and cultural exchange, but effects are not a uniform figure or profit guarantee",
+            "Overseas travelers never use local shops",
+            "Doubling guest numbers necessarily doubles profit",
+            "Cultural exchange only means cleaning rooms more often"
+          ],
+          "answerIndex": 0,
+          "explanation": "Local economic activity and cultural exchange are examples in the source. Understand the planning perspective without making unsupported promises of specific results.",
+          "knowledgeIds": [
+            "hotel-source-detail-hp2-027-03"
+          ]
         }
       ],
       "illustration": {
@@ -1075,7 +1240,7 @@
         "alt": "Diagram linking guests through a direct booking engine or OTA into PMS, then to room and accounting information.",
         "keyObjectiveId": "hotel-planning-05-objective"
       },
-      "sourceRevision": "834df902e4fa5a353feac7d2ba8a90d21062ebc15d8c5a77fc5db5c6a4bffc5c",
+      "sourceRevision": "650f96939e5ea1c44a184269f589a837eeb631cb13af030c3f86cb79af9d9d30",
       "status": "translated_ai_unreviewed",
       "title": "Connect booking channels, systems and sales proposals"
     },

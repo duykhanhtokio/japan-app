@@ -1,3 +1,15 @@
+# Hoàn tất planning02/03/05 đủ12ngôn ngữ — 02/11/2026
+
+Ba bài Nhật ổn định về OCC/ADR/RevPAR, website và PMS/OTA/đề xuất bán nay đủ36/36cặp đúngrevision. Hoàn thiện15cặp cũ và tác giả21cặp mới, toàn ngành209→245/456hợp lệ; còn211cặp thiếu/cũ. Nhật,327câu,ID/đáp án và furigana giữ nguyên. Tác giả khách sạn tự soạnHI/BN/TL9fullpairs/795trường và5locale delta; Food tự soạnNE/MY6pairs, MFG tự soạnTH/KM6pairs. Không rà chéo ngữ nghĩa giữa tác giả; tích hợp kiểm schema/IDs/revision/đáp án/bảo toàn.
+
+Đọc đối chiếu toàn bộ các trường bài phát hiện19cặp tiêu đề–thân đoạn zh-TW cũ vẫn là giản thể: đã tác giả lại trực tiếp bằng phồn thể, kèm3tiêu đề bài. Sửa5alt của hình chỉ số từ mô tả lưới phòng cũ sang3thẻ công thức đúng Nhật, đủ40phòng có thể bán/30đã bán/360000yên. Bổ sung55bản câu đang thiếu và10đoạn điều kiện về bài tính phí/ý nghĩa inbound. Không chỉ thayrevision để hợp thức hóa bản dịch cũ.
+
+Kiểm đủ3180trường dịch của36cặp, giữ34bài planning ngoài phạm vi và85bản câu cũ. Tự kiểm795trường fullHI/BN/TL khớp đa tập số theo từngfield; giữ75％→0.75, tránh chia0, tách doanh thu phòng/ăn/cửa hàng và phí/lợi nhuận.8–15％là ví dụ nguồn2024, không phải mọi hợp đồng hiện hành;10％trên20000yên là giả định bài, ra2000yên. Các luồng tự kiểm phần mình; tất cả translated_ai_unreviewed.
+
+Nguồn chuẩn vẫn92covered/382known,15trang semantic/covered_ai,26visual/117census; mẫu số mở, không cộng bản dịch thành độ bao phủ nguồn. Gaps khác tiếp tục theo nguồn trước khi chốt bài Nhật. Bằng chứng `planning235-v5-integration-evidence.json`, `source-v5-own-translation-authoring.json`, checker `check-planning235-v5.cjs`; manifest/hash đợt riêng. Chưa nghiệm thu bản ngữ/chuyên môn/thiết bị/thời lượng.
+
+---
+
 # Đóng khoảng trống mục đích SNS và hai trang — 02/11/2026
 
 Khoảng trống `HSP1-025-sns-brand-purpose` đã được xử lý thật: thêm đoạn Nhật độc lập liên hệ trao đổi khách với giá trị lưu trú/thương hiệu, thêm `hotel-planning-04-q09`, đủ12 bản dịch đúng revision và furigana cho chữ mới. Không dùng câu branding chung để đóng ý SNS. Tổng326→327câu; 209/456cặp dịch hợp lệ giữ nguyên, còn247cặp thiếu/cũ. Bảo toàn104 bản câu cũ của13bản Nhật/dịch,43bài planning ngoài phạm vi và559entry cách đọc không đổi. Revision planning04 mới `7e1d71529fd8f302096b41b49519c764caae1644af24b14ed2d1a323c1ed6a29`.

@@ -499,6 +499,794 @@
         "alt": "Ugnayan ng impormasyon na nakasentro sa photo post ng pasilidad, kasama ang tanong ng bisita, samahan ng turismo at grap ng pagsusuri.",
         "keyObjectiveId": "hotel-planning-04-objective"
       }
+    },
+    {
+      "id": "hotel-planning-02",
+      "level": 1,
+      "title": "Kuwentahin ang OCC, ADR at RevPAR sa magkatugmang kondisyon",
+      "reading": "おーしーしー・えーでぃーあーる・れぶぱーをおなじじょうけんでけいさんする",
+      "objectives": [
+        {
+          "id": "hotel-planning-02-objective",
+          "text": "Maipagkaiba ang nabentang kuwarto, kuwartong maaaring ibenta at kita sa kuwarto, at makuwenta ang tatlong panukat gamit ang tamang porsiyento."
+        }
+      ],
+      "sections": [
+        {
+          "id": "hotel-planning-02-scope",
+          "title": "Itugma ang saklaw at panahon ng kuwenta",
+          "body": "Hiwalay na itala ang bilang ng nabenta, bilang ng maaaring ibenta at kita sa kuwarto. Sa paghahambing ng resulta ngayong araw, dapat parehong araw at saklaw ng kuwarto ang numerator at denominator. Sa mga halimbawa, lahat ng kuwarto ay maaaring ibenta at walang dagdag na kondisyon sa kanselasyon, libreng kuwarto o buwis. Huwag idagdag ang benta ng pagkain o tindahan sa kita sa kuwarto. Huwag ihambing ang magkaibang kondisyon sa numero lamang."
+        },
+        {
+          "id": "hotel-planning-02-occ",
+          "title": "Tingnan sa OCC ang paggamit ng kuwarto",
+          "body": "OCC ang occupancy rate. Sa halimbawa, nabentang kuwarto÷maaaring ibentang kuwarto×100 ang porsiyento. Kung30sa40ang nabenta,30÷40×100＝75％. Linawin kung tantiya habang nagrereserba o aktuwal na bentahan matapos ang pananatili ang gamit. Inilalarawan ng sanggunian ang reserved rooms at kabuuang kuwarto; huwag paghaluin ang forecast at aktuwal na resulta."
+        },
+        {
+          "id": "hotel-planning-02-adr",
+          "title": "Nabentang kuwarto ang denominator ng ADR",
+          "body": "ADR ang karaniwang presyo kada nabentang kuwarto. Sa halimbawa, kita sa kuwarto÷bilang ng nabenta. Kung360,000yen ang kita mula30kuwarto,360,000÷30＝12,000yen/kuwarto. Kapag isinama ang10hindi nabenta sa denominator, iba na sa ADR ang kahulugan. Hindi sapat ang mataas na ADR upang sabihing pinakamalaki na ang kabuuang kita o tubo ng pasilidad."
+        },
+        {
+          "id": "hotel-planning-02-revpar",
+          "title": "RevPAR at pagbabago ng porsiyento sa decimal",
+          "body": "RevPAR ang kita sa kuwarto kada kuwartong maaaring ibenta. Sa halimbawa,360,000÷40＝9,000yen/kuwarto. Sa parehong kondisyon, maaari ring ADR×decimal na OCC:12,000×0.75＝9,000. Kapag75ang ginawang multiplier sa halip na75％,100beses ang mali. Kung numerong porsiyento ang gagamitin,12,000×75÷100ang kuwenta."
+        },
+        {
+          "id": "hotel-planning-02-rounding",
+          "title": "Tiyakin ang unit at pag-round",
+          "body": "Porsiyento ang OCC; yen/kuwarto ang ADR at RevPAR sa halimbawa. Panatilihin ang eksaktong halaga sa gitnang hakbang at mag-round sa itinakdang digit sa huli. Kapag zero ang nabentang kuwarto, hindi makukuwenta ang ADR na kita÷nabenta; huwag gumawa ng numero sa pag-divide sa zero. Itala ang araw, bilang ng kuwarto, kita at unit upang maulit ng ibang kawani ang kuwenta."
+        },
+        {
+          "id": "hotel-planning-02-comparison",
+          "title": "Huwag magpasya sa isang panukat",
+          "body": "Magkaiba ang demand sa abala at matumal na panahon kaya maaaring magbago ang occupancy. Kung ibababa ang presyo para mapuno lamang, makaaapekto ang pagbaba ng rate sa kita. Kahit mataas ang rate, maaari namang bumaba ang kabuuang kita kung malaki ang ibinaba ng nabentang kuwarto. Tingnan nang magkakasama ang OCC, ADR at RevPAR at ipaliwanag mula sa presyo at dami ng benta."
+        },
+        {
+          "id": "hotel-planning-02-pricing",
+          "title": "Mga batayang termino sa demand at presyo",
+          "body": "Dynamic pricing ang pagbabago ng presyo ayon sa reservation at bakanteng kuwarto. Revenue management ang pag-iisip ng presyo at paraan ng pagbebenta ayon sa demand, dahil hindi maiimbak para bukas ang pagkakataong magbenta ng isang gabing hindi nabenta ngayon. Hindi layunin sa sarili ang basta pagtaas o pagbaba ng presyo. Tingnan ang occupancy at rate at ang magiging resulta sa ibinigay na kondisyon."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "客室稼働率",
+          "reading": "きゃくしつかどうりつ",
+          "meaning": "Panukat ng pagbebenta o paggamit bilang proporsiyon ng bilang ng kuwarto."
+        },
+        {
+          "ja": "客室平均単価",
+          "reading": "きゃくしつへいきんたんか",
+          "meaning": "Karaniwang kita kada nabentang kuwarto."
+        },
+        {
+          "ja": "販売可能客室",
+          "reading": "はんばいかのうきゃくしつ",
+          "meaning": "Kuwartong maaaring ibenta sa panahong kinukuwenta."
+        },
+        {
+          "ja": "百分率",
+          "reading": "ひゃくぶんりつ",
+          "meaning": "Proporsiyong ipinahahayag na100ang kabuuan."
+        },
+        {
+          "ja": "繁忙期",
+          "reading": "はんぼうき",
+          "meaning": "Panahong mataas ang demand sa paggamit."
+        },
+        {
+          "ja": "閑散期",
+          "reading": "かんさんき",
+          "meaning": "Panahong mas mababa ang demand sa paggamit."
+        }
+      ],
+      "example": {
+        "situation": "Maaaring ibenta ang lahat ng50kuwarto sa isang araw.40ang nabenta at480,000yen ang kita sa kuwarto. May hiwalay na60,000yen na benta sa pagkain.",
+        "steps": [
+          "OCC＝40÷50×100＝80％.",
+          "ADR＝480,000÷40＝12,000yen/kuwarto.",
+          "RevPAR＝480,000÷50＝9,600yen/kuwarto.",
+          "Pagsuri:12,000×0.80＝9,600. Huwag idagdag ang60,000yen ng pagkain."
+        ]
+      },
+      "practice": {
+        "prompt": "45sa60kuwarto ang nabenta at540,000yen ang kita sa kuwarto. Hanapin ang OCC, ADR at RevPAR at ipaliwanag ang magkaibang denominator.",
+        "expectedPoints": [
+          "OCC＝75％.",
+          "ADR＝12,000yen/kuwarto.",
+          "RevPAR＝9,000yen/kuwarto.",
+          "45nabenta ang divisor ng ADR;60maaaring ibenta ang divisor ng RevPAR."
+        ]
+      },
+      "questions": [
+        {
+          "id": "hotel-planning-02-q01",
+          "prompt": "Lahat ng40kuwarto ay maaaring ibenta at30ang nabenta sa parehong araw. Ano ang OCC?",
+          "choices": [
+            "30％",
+            "40％",
+            "75％",
+            "133％"
+          ],
+          "answerIndex": 2,
+          "explanation": "30÷40×100＝75％. Parehong araw at saklaw ng kuwarto ang gamitin.",
+          "knowledgeIds": [
+            "HK-planning-02-scope",
+            "HK-planning-02-occ"
+          ]
+        },
+        {
+          "id": "hotel-planning-02-q02",
+          "prompt": "30kuwarto ang nabenta at360,000yen ang kita sa kuwarto. Ano ang ADR?",
+          "choices": [
+            "9,000yen/kuwarto",
+            "12,000yen/kuwarto",
+            "360,000yen/kuwarto",
+            "30yen/kuwarto"
+          ],
+          "answerIndex": 1,
+          "explanation": "Hatiin ang kita sa30nabenta:360,000÷30＝12,000yen/kuwarto.",
+          "knowledgeIds": [
+            "HK-planning-02-adr"
+          ]
+        },
+        {
+          "id": "hotel-planning-02-q03",
+          "prompt": "Aling formula ang RevPAR kung ADR12,000yen at OCC75％?",
+          "choices": [
+            "12,000×75",
+            "12,000÷0.75",
+            "12,000＋75",
+            "12,000×0.75"
+          ],
+          "answerIndex": 3,
+          "explanation": "Gamitin bilang0.75ang75％.9,000yen/kuwarto ang resulta.",
+          "knowledgeIds": [
+            "HK-planning-02-revpar"
+          ]
+        },
+        {
+          "id": "hotel-planning-02-q04",
+          "prompt": "40sa50kuwarto ang nabenta.480,000yen ang kita sa kuwarto at20,000yen sa tindahan. Ano ang RevPAR sa halimbawa?",
+          "choices": [
+            "9,600yen/kuwarto",
+            "10,000yen/kuwarto",
+            "12,000yen/kuwarto",
+            "12,500yen/kuwarto"
+          ],
+          "answerIndex": 0,
+          "explanation": "480,000yen na kita sa kuwarto lamang ang hahatiin sa50maaaring ibenta. Hindi kasama ang tindahan.",
+          "knowledgeIds": [
+            "HK-planning-02-scope",
+            "HK-planning-02-revpar"
+          ]
+        },
+        {
+          "id": "hotel-planning-02-q05",
+          "prompt": "Ano ang tama sa ADR kung zero ang nabentang kuwarto?",
+          "choices": [
+            "Hatiin sa zero.",
+            "Palitan nang sariling pasya ang nabenta ng1.",
+            "Italang hindi makukuha sa karaniwang division dahil zero ang denominator.",
+            "Gawing aktuwal na resulta ngayon ang halaga kahapon."
+          ],
+          "answerIndex": 2,
+          "explanation": "Hindi maaaring mag-divide sa zero. Itala ang dahilan ng kawalan ng kuwenta at huwag gawing aktuwal ang kathang halaga.",
+          "knowledgeIds": [
+            "HK-planning-02-rounding"
+          ]
+        },
+        {
+          "id": "hotel-planning-02-q06",
+          "prompt": "Tumaas ang ADR matapos magtaas ng presyo ngunit bumaba ang nabentang kuwarto. Ano ang tamang pagtingin?",
+          "choices": [
+            "Tiyak na tumaas ang tubo dahil sa ADR lamang.",
+            "Suriin din ang OCC at RevPAR sa parehong panahon at saklaw.",
+            "Burahin ang tala ng nabentang kuwarto.",
+            "Idagdag ang porsiyento na parang yen."
+          ],
+          "answerIndex": 1,
+          "explanation": "Tingnan ang rate at dami. Ang panukat ng kuwarto ay hindi panukat ng tubong kasama ang gastos.",
+          "knowledgeIds": [
+            "HK-planning-02-comparison"
+          ]
+        },
+        {
+          "id": "hotel-planning-02-q07",
+          "prompt": "Ano ang pares para sa pagbabago ng presyo ayon sa reservation/bakante at pamamahala ng kita ayon sa pagkakataong maibenta ang kuwarto sa araw na iyon?",
+          "choices": [
+            "Una＝dynamic pricing／ikalawa＝revenue management",
+            "Una＝walk-in／ikalawa＝deposito",
+            "Una＝B＆B／ikalawa＝review",
+            "Una＝magkakasunod na gabi／ikalawa＝VIP"
+          ],
+          "answerIndex": 0,
+          "explanation": "Dynamic pricing ang konsepto ng pagbabago ng presyo. Revenue management ang pamamahala ayon sa demand at pagkakataong magbenta.",
+          "knowledgeIds": [
+            "HK-planning-02-pricing"
+          ]
+        },
+        {
+          "id": "hotel-planning-02-q08",
+          "prompt": "Aling pag-unawa ang ayon sa sanggunian sa paghahambing ng abalang mahabang bakasyon at matumal na panahon?",
+          "choices": [
+            "Nagbabago ang demand at occupancy ayon sa panahon, kaya ihambing ang datos sa parehong kondisyon",
+            "Pareho ang occupancy ng lahat ng pasilidad buong taon",
+            "Tiyak na zero ang gastos sa abalang panahon",
+            "Maidaragdag bukas sa imbentaryo ang hindi nabentang gabi ngayon"
+          ],
+          "answerIndex": 0,
+          "explanation": "Inilalarawan ng sanggunian ang mga uso sa mahabang bakasyon. Hindi ito garantiya na puno sa isang tiyak na araw.",
+          "knowledgeIds": [
+            "HK-planning-02-comparison"
+          ]
+        }
+      ],
+      "knowledgeIds": [
+        "HK-planning-02-scope",
+        "HK-planning-02-occ",
+        "HK-planning-02-adr",
+        "HK-planning-02-revpar",
+        "HK-planning-02-rounding",
+        "HK-planning-02-comparison",
+        "HK-planning-02-pricing"
+      ],
+      "illustration": {
+        "id": "hotel-planning-02-illustration",
+        "kind": "occupancy-revenue",
+        "caption": "Nag-iiba ang kahulugan ayon sa paghahati ng kita sa nabenta o sa maaaring ibentang kuwarto.",
+        "alt": "Tatlong card ng formula para sa parehong araw:40maaaring ibenta,30nabenta at360000yen na kita; OCC75％, ADR12000yen at RevPAR9000yen.",
+        "keyObjectiveId": "hotel-planning-02-objective"
+      },
+      "estimatedMinutes": 25,
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false
+      },
+      "sourceRevision": "2602db22cb5acb1db44eca21a3a5f0dd17f234e8541f6d4bf1d466c38480524f",
+      "status": "translated_ai_unreviewed"
+    },
+    {
+      "id": "hotel-planning-03",
+      "level": 1,
+      "title": "Suriin ang website na umaakay sa reservation",
+      "reading": "よやくにつながるうぇぶさいとをてんけんする",
+      "objectives": [
+        {
+          "id": "hotel-planning-03-objective",
+          "text": "Masuri ang impormasyon ng pasilidad, daan sa reservation at mga update mula sa pangangailangan ng bisita sa impormasyon."
+        }
+      ],
+      "sections": [
+        {
+          "id": "hotel-planning-03-publicity",
+          "title": "Kausap at layunin ng public relations",
+          "body": "Ipinababatid ng public relations ang gawain ng pasilidad o kumpanya upang magpalago ng pag-unawa at tiwala. Kabilang ang manlalakbay, kasosyo sa negosyo, kawani, komunidad at shareholder. Para makaakit ng bisita, ipaliwanag nang kongkreto ang kaibahan ng sariling lakas sa iba. Bukod sa sariling pahayag, nakatutulong din ang review ng mga gumamit upang makilala ang pasilidad."
+        },
+        {
+          "id": "hotel-planning-03-navigation",
+          "title": "Narating ba ang kailangang impormasyon?",
+          "body": "Gawing madaling makita ang presyo, kuwarto, access at reservation sa website. Kahit maganda ang hitsura, mahirap mag-book kung hindi malaman kung saan titingnan ang vacancy. Isipin ang sarili bilang aktuwal na gumagamit; hanapin ang kailangan at suriin ang ayos ng pahina at mga salita ng gabay."
+        },
+        {
+          "id": "hotel-planning-03-information",
+          "title": "Impormasyong nagpapababa ng alinlangan bago mag-book",
+          "body": "Ayusin ang room at building facilities, presyo, mapa at transport access. Tinutulungan ng larawan at video na maisip ang gamit ng kuwarto, common area at paligid. Kapag nagbago ang kagamitan o presyo, sabay na baguhin ang teksto at paglalarawan ng larawan. Kasama sa level2reference ang kalapit na turismo para sa gabay sa pananatiling may ugnay sa rehiyon."
+        },
+        {
+          "id": "hotel-planning-03-booking",
+          "title": "Online at direktang reservation",
+          "body": "Ang booking function ng sariling site ang daan para makapag-apply sa gustong iskedyul. Direct booking ang diretsong pagreserba sa pasilidad nang walang travel agency o OTA. Maaaring mabawasan ang intermediary commission, ngunit dapat malinaw ang kondisyon at confirmation screen. Alamin ang pinanggalingang channel at tiyaking walang salungat na impormasyon para sa parehong kuwarto."
+        },
+        {
+          "id": "hotel-planning-03-seo",
+          "title": "Search at kalidad ng nilalaman",
+          "body": "SEO ang pagsisikap na mas madaling matagpuan sa search ang pahina ng taong nangangailangan nito. Gumamit ng salitang akma sa pasilidad at nilalamang sumasagot sa tanong. Hindi nalulutas ng listahan lamang ng keyword ang kulang na paliwanag ng presyo o kagamitan. Suriin ang pagkakatagpo at pagiging kapaki-pakinabang ng mababasang impormasyon pagkatapos dumating sa site."
+        },
+        {
+          "id": "hotel-planning-03-feedback",
+          "title": "Ipagpatuloy ang update at pagpapabuti",
+          "body": "Mangolekta ng opinyon upang malaman ang malabong impormasyon at reklamo sa kuwarto o serbisyo. Regular na suriin ang presyo, kampanya at gabay; huwag iwan ang natapos na alok. Itala ang responsable, petsa at binago para madali ang handover. Hindi basta pag-update ang layunin; panatilihing magagamit ng bisita ang wastong impormasyon."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "広報",
+          "reading": "こうほう",
+          "meaning": "Gawaing nagpapakilala sa gawain at impormasyon upang maunawaan ang pasilidad."
+        },
+        {
+          "ja": "ステークホルダー",
+          "reading": "すてーくほるだー",
+          "meaning": "Tao o organisasyong may kaugnayan sa gawain ng kumpanya o pasilidad."
+        },
+        {
+          "ja": "ダイレクトブッキング",
+          "reading": "だいれくとぶっきんぐ",
+          "meaning": "Direktang reservation sa pasilidad nang walang intermediary company."
+        },
+        {
+          "ja": "SEO",
+          "reading": "えすいーおー",
+          "meaning": "Pagpapabuti upang mas madaling makita sa search."
+        },
+        {
+          "ja": "口コミ",
+          "reading": "くちこみ",
+          "meaning": "Pagbabahagi ng gumagamit ng sariling karanasan o pagsusuri sa iba."
+        },
+        {
+          "ja": "更新",
+          "reading": "こうしん",
+          "meaning": "Pagpapalit ng inilathalang nilalaman upang maging napapanahon."
+        }
+      ],
+      "example": {
+        "situation": "Nagbago ang oras ng bus mula sa istasyon ngunit luma pa ang gabay sa site.",
+        "steps": [
+          "Tiyakin ang kaibahan ng kasalukuyang access at inilathalang gabay.",
+          "Ilista ang teksto, paliwanag sa paligid ng mapa at kaugnay na pahina para itama.",
+          "Ilagay ang tamang gabay sa madaling makita bago mag-book.",
+          "Itala ang petsa at pagbabago at ipaalam din sa inquiry staff."
+        ]
+      },
+      "practice": {
+        "prompt": "Bilang unang besita, hanapin nang sunod ang presyo, room facilities, access at reservation. Magbigay ng dalawang pagpapabuti.",
+        "expectedPoints": [
+          "Sabihin nang kongkreto kung makikita ang kailangan.",
+          "Isulat ang kondisyong hindi sapat ipakita sa larawan.",
+          "Suriin ang lumang presyo at natapos na alok."
+        ]
+      },
+      "questions": [
+        {
+          "id": "hotel-planning-03-q01",
+          "prompt": "Ano ang tama tungkol sa kausap ng public relations?",
+          "choices": [
+            "Bisita lamang, hindi komunidad.",
+            "Walang kaugnayan sa pag-unawa ng kawani.",
+            "Shareholder lamang, hindi manlalakbay.",
+            "Kasama ang manlalakbay, kasosyo, kawani at lokal na tao."
+          ],
+          "answerIndex": 3,
+          "explanation": "Nagpapalago ito ng pag-unawa ng iba't ibang stakeholder, hindi limitado sa pagbebenta.",
+          "knowledgeIds": [
+            "HK-planning-03-publicity"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q02",
+          "prompt": "Maganda ang larawan ngunit hindi makita ang presyo at reservation. Ano ang unahin?",
+          "choices": [
+            "Dagdagan lamang ang larawan.",
+            "Baguhin ang ayos ng impormasyon at gabay.",
+            "Alisin ang presyo.",
+            "Sabihin lamang ang booking sa magtatanong."
+          ],
+          "answerIndex": 1,
+          "explanation": "Mahalaga ang daan sa impormasyon; hindi sapat ang hitsura lamang.",
+          "knowledgeIds": [
+            "HK-planning-03-navigation",
+            "HK-planning-03-information"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q03",
+          "prompt": "Ano ang angkop na paliwanag ng SEO?",
+          "choices": [
+            "Ayusin ang salita at nilalaman para mas madaling makita sa search.",
+            "Laging hatiin sa dalawa ang presyo.",
+            "Telepono lamang ang reservation.",
+            "Ulitin nang walang saysay ang salita at tapos na."
+          ],
+          "answerIndex": 0,
+          "explanation": "Pagsamahin ang pagpapadaling matagpuan at kalidad ng kapaki-pakinabang na nilalaman.",
+          "knowledgeIds": [
+            "HK-planning-03-seo"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q04",
+          "prompt": "Ano ang direktang pag-book mula sariling site sa pasilidad?",
+          "choices": [
+            "OCC",
+            "ADR",
+            "Direct booking",
+            "Ulat sa shareholder"
+          ],
+          "answerIndex": 2,
+          "explanation": "Walang intermediary company sa direktang reservation sa pasilidad.",
+          "knowledgeIds": [
+            "HK-planning-03-booking"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q05",
+          "prompt": "Naiwan sa site ang natapos na plano. Ano ang pinakaangkop?",
+          "choices": [
+            "Iwan hanggang may mag-book.",
+            "I-update habang sinusuri ang tugma sa ibang pahina at ipaalam sa kaugnay na tao.",
+            "Palitan lamang ang kulay ng larawan.",
+            "Itama lamang sa magtatanong."
+          ],
+          "answerIndex": 1,
+          "explanation": "Kailangan ang regular na maintenance at pare-parehong gabay ayon sa update.",
+          "knowledgeIds": [
+            "HK-planning-03-feedback"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q06",
+          "prompt": "Aling kombinasyon ang tama sa pag-inspeksiyon ng facility information?",
+          "choices": [
+            "Hitsura lamang ng larawan",
+            "Hindi baguhin ang teksto kahit nagbago ang presyo",
+            "Pahirapan ang daan sa reservation",
+            "Itugma sa aktuwal ang presyo, kuwarto/kagamitan, mapa/access at paglalarawan ng larawan"
+          ],
+          "answerIndex": 3,
+          "explanation": "Suriin ang nilalaman, dali ng paghahanap at pagtutugma ng update.",
+          "knowledgeIds": [
+            "HK-planning-03-information"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q07",
+          "prompt": "Aling paliwanag ng bentahe at aktuwal na kondisyon ng direct booking ang tama?",
+          "choices": [
+            "Laging zero ang lahat ng gastos sa gawain",
+            "Maaaring mabawasan ang intermediary commission ngunit tiyakin ang aktuwal na booking conditions",
+            "Agency booking lamang ang direct booking",
+            "Hindi na kailangang tingnan ang kondisyon sa alinmang channel"
+          ],
+          "answerIndex": 1,
+          "explanation": "Hiwalay na tiyakin ang channel, gastos at kondisyon.",
+          "knowledgeIds": [
+            "HK-planning-03-booking"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q08",
+          "prompt": "Paano gamitin ang opinyon ng customer sa site improvement?",
+          "choices": [
+            "Score lang ang itabi at huwag basahin ang opinyon",
+            "Hindi na kailangan ang opinyon basta burado ang tapos na kampanya",
+            "Kunin ang malabong impormasyon at reklamo sa serbisyo at gamitin sa update at pagpapabuti",
+            "Bilang lang ng larawan ang sukatan ng kasiyahan"
+          ],
+          "answerIndex": 2,
+          "explanation": "Unawain kung saan nahirapan at suriin kapwa ang impormasyon at serbisyo.",
+          "knowledgeIds": [
+            "HK-planning-03-feedback"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q09",
+          "prompt": "Ano ang tamang layunin ng public relations at pagpapakita ng lakas?",
+          "choices": [
+            "Ulitin lang ang salitang marangya",
+            "Ibalita ang serbisyong wala naman",
+            "Walang kaugnayan ang magandang relasyon sa stakeholder",
+            "Ipakilala ang gawain at produkto para sa pag-unawa at tiwala, at linawin ang naiibang lakas"
+          ],
+          "answerIndex": 3,
+          "explanation": "Iparating ang tunay na halaga upang bumuo ng pag-unawa at tiwala.",
+          "knowledgeIds": [
+            "HK-planning-03-publicity"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q10",
+          "prompt": "Anong dagdag na facility information sa website ang binabanggit ng level2reference?",
+          "choices": [
+            "Ilathala ang personal na impormasyon ng bisita",
+            "Tiyakin ang kalapit na turismo at gamitin sa gabay na may kaugnay na rehiyon",
+            "Ipakitang tuloy ang natapos na event",
+            "Tiyakin daw ang hindi nasuring iskedyul ng transportasyon"
+          ],
+          "answerIndex": 1,
+          "explanation": "Kasama sa level2reference ang kalapit na turismo. Ihiwalay itong uri ng impormasyon sa room details at booking channel.",
+          "knowledgeIds": [
+            "HK-planning-03-information"
+          ]
+        },
+        {
+          "id": "hotel-planning-03-q11",
+          "prompt": "May puna na hindi makatuloy sa booking ng gustong araw sa sariling site. Ano ang tamang pagpapabuti?",
+          "choices": [
+            "Hindi kailangan ang booking entrance basta may dagdag na larawan",
+            "Sapat nang isulat ang direct booking",
+            "Palitan lang ang pangalan ng OTA nang hindi sinusuri",
+            "Suriin at linawin ang daan at operasyon mula pagpili ng araw hanggang application at confirmation"
+          ],
+          "answerIndex": 3,
+          "explanation": "Magkaiba ang paggamit ng online booking at pagkilala sa pangalan nito. Suriin ang daloy para makapagreserba ayon sa plano ng gumagamit.",
+          "knowledgeIds": [
+            "HK-planning-03-booking"
+          ]
+        }
+      ],
+      "knowledgeIds": [
+        "HK-planning-03-publicity",
+        "HK-planning-03-navigation",
+        "HK-planning-03-information",
+        "HK-planning-03-booking",
+        "HK-planning-03-seo",
+        "HK-planning-03-feedback"
+      ],
+      "illustration": {
+        "id": "hotel-planning-03-illustration",
+        "kind": "website-journey",
+        "caption": "Tiyakin ang kailangang impormasyon sa paghahanap, paghahambing at reservation.",
+        "alt": "Ugnayan ng mga screen mula sa smartphone facility page patungong kuwarto at presyo, access at reservation form.",
+        "keyObjectiveId": "hotel-planning-03-objective"
+      },
+      "estimatedMinutes": 25,
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false
+      },
+      "sourceRevision": "9fa70e9156318f2f48fe9777f736e358b7ab4037ada18f680d9080c75507adc0",
+      "status": "translated_ai_unreviewed"
+    },
+    {
+      "id": "hotel-planning-05",
+      "level": 2,
+      "title": "Iugnay ang booking channel at system para pamahalaan ang alok",
+      "reading": "よやくけいろとしすてむをつなぎ、はんばいていあんをかんりする",
+      "objectives": [
+        {
+          "id": "hotel-planning-05-objective",
+          "text": "Maipagkaiba ang PMS, booking engine at OTA at makabuo ng alok na akma sa guest group at dagdag na halaga."
+        }
+      ],
+      "sections": [
+        {
+          "id": "hotel-planning-05-pms",
+          "title": "Pinagsasama ng PMS ang impormasyon sa operasyon",
+          "body": "PMS ang Property Management System: software para sa reservation, front desk, room status, guest information at accounting. Magkaiba ang kailangan ng mga departamento ngunit nakasisira sa handover ang salungat na tala. Sa pagpili at paggamit, tingnan ang kakayahang akma sa laki at gawain ng pasilidad. Hindi ibig sabihin ng PMS na pareho ang lahat ng produkto."
+        },
+        {
+          "id": "hotel-planning-05-engine",
+          "title": "Ihiwalay ang booking engine sa PMS",
+          "body": "Tumatanggap ng reservation sa sariling website ang booking engine. Panloob na operasyon ang PMS, samantalang booking entrance ang pangunahing tungkulin ng engine. Makatutulong ang pagkakaiba upang hiwalay na imbestigahan ang hindi makapagpadalang bisita at hindi tugmang panloob na room information. Tiyakin sa aktuwal na setup ang koneksiyon at oras ng update."
+        },
+        {
+          "id": "hotel-planning-05-channels",
+          "title": "Tungkulin ng OTA at direct booking",
+          "body": "OTA ang travel agency na humahawak sa travel products at accommodation online. Iba ang channel ng kontrata at komisyon nito sa direct booking sa sariling site. Maaaring mabawasan ang intermediary commission sa direktang booking at maialok na lakas ang perks o presyo. Ngunit tiyakin ang aktuwal na itinakda ng pasilidad bago ipaliwanag ang best-rate guarantee o perks."
+        },
+        {
+          "id": "hotel-planning-05-commission",
+          "title": "Huwag gawing nakapirming tuntunin ang komisyon",
+          "body": "Hindi pare-pareho ang OTA referral commission sa lahat ng channel o halaga. May humigit-kumulang8～15％sa sanggunian; dito ay halimbawa ito mula sa2024edition. Huwag gamitin sa tantiya nang hindi tinitingnan ang kasalukuyang kontrata at base amount. Sa pagsasanay, tukuyin ang rate at halagang saklaw bilang palagay ng tanong. Kung20,000yen ang saklaw at10％ang komisyon,20,000×0.10＝2,000yen. Palagay lang ang10％at hindi aktuwal na rate ng kontrata."
+        },
+        {
+          "id": "hotel-planning-05-inbound",
+          "title": "Inbound, FIT at VIP",
+          "body": "Inbound ang turismo o negosyong kaugnay ng manlalakbay mula sa ibang bansa. FIT ang paraan ng pagbuo ng biyahe; VIP ang guest category na nangangailangan ng espesyal na tugon ayon sa pasilidad. Hindi iisang batayan ng pag-uuri. Maaaring independent traveler mula ibang bansa at VIP din ang isang bisita. Ibahagi sa kawani hindi lamang ang tawag kundi ang eksaktong gabay o serbisyong kailangan.\n\nBinabanggit din ng level2reference ang kaugnayan ng inbound sa lokal na ekonomiya at palitan ng kultura. Tingnan ang pagtanggap sa dayuhang bisita hindi lamang sa room sales kundi sa lokal na tindahan, karanasan at transportasyon. Hindi ito formula na tiyak na tataas sa parehong proporsiyon ang tubo o palitan kapag dumami ang bisita. Linawin kung anong lokal na bagay at karanasan ang isasama sa plano."
+        },
+        {
+          "id": "hotel-planning-05-upsell",
+          "title": "Ialok ang upsell kasama ng dagdag na halaga",
+          "body": "Upselling ang pag-aalok ng mas mataas na produkto o serbisyo upang mapili ito. Kung mas mataas na uri ng kuwarto, ipaliwanag kung paano nakatutulong ang lawak o kagamitan sa layunin ng bisita. Huwag kumpirmahin ang pagbabago nang hindi sinasabi ang dagdag na presyo o ipilit ang hindi akma. Hayaang magpasya ang bisita at iparating ang pinili sa kaugnay na departamento."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "PMS",
+          "reading": "ぴーえむえす",
+          "meaning": "System para sa impormasyon ng operasyon gaya ng booking, kuwarto at accounting."
+        },
+        {
+          "ja": "ブッキングエンジン",
+          "reading": "ぶっきんぐえんじん",
+          "meaning": "Paraan ng pagtanggap ng reservation sa sariling website."
+        },
+        {
+          "ja": "OTA",
+          "reading": "おーてぃーえー",
+          "meaning": "Online travel agency para sa travel products at accommodation bookings."
+        },
+        {
+          "ja": "送客手数料",
+          "reading": "そうきゃくてすうりょう",
+          "meaning": "Komisyong ibinabayad ayon sa kontrata ng referral o sales."
+        },
+        {
+          "ja": "インバウンド",
+          "reading": "いんばうんど",
+          "meaning": "Turismo o negosyo kaugnay ng bisitang mula sa ibang bansa."
+        },
+        {
+          "ja": "VIP",
+          "reading": "ぶいあいぴー",
+          "meaning": "Kategorya ng bisitang nangangailangan ng espesyal na tugon sa pasilidad."
+        },
+        {
+          "ja": "アップセル",
+          "reading": "あっぷせる",
+          "meaning": "Paraan ng pag-aalok ng mas mataas na produktong may dagdag na halaga."
+        }
+      ],
+      "example": {
+        "situation": "Bisita mula sariling site ang nagtanong tungkol sa matagal na paggamit ng kuwarto para sa trabaho.",
+        "steps": [
+          "Hiwalay na tiyakin ang booking entrance at panloob na booking record.",
+          "Siyasatin ang akmang opsiyon gaya ng mas mataas na kuwartong may malaking mesa.",
+          "Kongkretong ipaliwanag ang kaibahan sa kasalukuyang kuwarto at dagdag na presyo.",
+          "Itugma ang pinili ng bisita sa reservation, room at accounting teams."
+        ]
+      },
+      "practice": {
+        "prompt": "Ihiwalay ang hindi makapag-book sa site at ang hindi tugmang accounting matapos mag-book. Anong system o staff ang titingnan?",
+        "expectedPoints": [
+          "Engine ang booking entrance; PMS ang panloob na pamamahala.",
+          "Tiyakin ang aktuwal na paraan ng koneksiyon.",
+          "Tingnan sa kontrata at sales conditions ang OTA fees at perks."
+        ]
+      },
+      "questions": [
+        {
+          "id": "hotel-planning-05-q01",
+          "prompt": "Ano ang namamahala sa reservation, room status at accounting information?",
+          "choices": [
+            "Hashtag",
+            "PMS",
+            "OCC",
+            "Review"
+          ],
+          "answerIndex": 1,
+          "explanation": "PMS ang system ng impormasyon ng operasyon ng pasilidad.",
+          "knowledgeIds": [
+            "HK-planning-05-pms"
+          ]
+        },
+        {
+          "id": "hotel-planning-05-q02",
+          "prompt": "Ano ang pangunahing tungkulin ng booking engine?",
+          "choices": [
+            "Magtakda ng dami ng SNS post.",
+            "Tiyak na pataasin ang ADR.",
+            "Tumanggap ng reservation sa sariling site.",
+            "Linisin ang lahat ng kuwarto."
+          ],
+          "answerIndex": 2,
+          "explanation": "Booking entrance ang engine; iba sa panloob na pamamahala ng PMS.",
+          "knowledgeIds": [
+            "HK-planning-05-engine"
+          ]
+        },
+        {
+          "id": "hotel-planning-05-q03",
+          "prompt": "Ano ang tama sa pagtatantiya ng OTA commission?",
+          "choices": [
+            "Tiyakin ang rate at base amount sa kasalukuyang kontrata.",
+            "Laging8％sa bawat kontrata.",
+            "Laging15％kapag may benta.",
+            "Wala nang pagsusuri basta nasa range ng sanggunian."
+          ],
+          "answerIndex": 0,
+          "explanation": "Huwag gawing pangkalahatang kontrata ang range ng sanggunian. Tiyakin ang aktuwal na kontrata.",
+          "knowledgeIds": [
+            "HK-planning-05-channels",
+            "HK-planning-05-commission"
+          ]
+        },
+        {
+          "id": "hotel-planning-05-q04",
+          "prompt": "Alin ang angkop na upsell?",
+          "choices": [
+            "Lumipat ng kuwarto nang walang paliwanag ng presyo.",
+            "Paulit-ulit pilitin ang tumanggi.",
+            "Sabihing magkaiba ang parehong kagamitan.",
+            "Ipaliwanag ang akmang benepisyo at dagdag na bayad, saka hayaang pumili ang bisita."
+          ],
+          "answerIndex": 3,
+          "explanation": "Ipakita kung paano nakatutulong ang dagdag na halaga at linawin ang presyo at pagpili.",
+          "knowledgeIds": [
+            "HK-planning-05-upsell"
+          ]
+        },
+        {
+          "id": "hotel-planning-05-q05",
+          "prompt": "Ano ang tama tungkol sa inbound, FIT at VIP?",
+          "choices": [
+            "Laging magkapareho ang tatlo.",
+            "Maaaring VIP din ang independent traveler mula ibang bansa.",
+            "Pangalan ng booking system ang FIT.",
+            "Hindi kailangang tanungin ang nais ng VIP."
+          ],
+          "answerIndex": 1,
+          "explanation": "Magkaibang batayan ang lugar, travel style at service category kaya maaari silang magsabay.",
+          "knowledgeIds": [
+            "HK-planning-05-inbound"
+          ]
+        },
+        {
+          "id": "hotel-planning-05-q06",
+          "prompt": "Alin ang paliwanag ng OTA?",
+          "choices": [
+            "Pangalan lamang ng fire equipment ng pasilidad",
+            "Travel agency sa internet para sa travel products at accommodation",
+            "Pangalan lamang ng room-cleaning supplies",
+            "Ahensiyang nagtatakda ng accounting rules ng lahat ng pasilidad"
+          ],
+          "answerIndex": 1,
+          "explanation": "Tiyakin ang pagkakaiba ng channel sa direct booking at ang komisyon sa aktuwal na kontrata.",
+          "knowledgeIds": [
+            "HK-planning-05-channels"
+          ]
+        },
+        {
+          "id": "hotel-planning-05-q07",
+          "prompt": "Sa palagay ng pagsasanay,20,000yen ang base sales at10％ang komisyon. Magkano?",
+          "choices": [
+            "200yen",
+            "10,000yen",
+            "2,000yen",
+            "Lahat ng kasalukuyang OTA ay tiyak na pareho nito"
+          ],
+          "answerIndex": 2,
+          "explanation": "20,000×0.10＝2,000yen. Tahasang kondisyon ito ng pagsasanay, hindi rate ng kasalukuyang kontrata.",
+          "knowledgeIds": [
+            "HK-planning-05-commission"
+          ]
+        },
+        {
+          "id": "hotel-planning-05-q08",
+          "prompt": "Ano ang tama sa pagpapaliwanag ng direct-booking perks o best-rate guarantee?",
+          "choices": [
+            "Tiyakin ang itinakdang panahon, kondisyon at aktuwal na perks ng pasilidad",
+            "Sabihing laging pinakamura ang lahat sa direct booking",
+            "Magtakda ng dagdag na bayad nang hindi tinitingnan ang perks",
+            "Alamin ang lahat ng kontrata mula sa salitang OTA lamang"
+          ],
+          "answerIndex": 0,
+          "explanation": "Kahit gamiting lakas sa pagbebenta, ipaliwanag ang kondisyong aktuwal na maibibigay.",
+          "knowledgeIds": [
+            "HK-planning-05-channels"
+          ]
+        },
+        {
+          "id": "hotel-planning-05-q09",
+          "prompt": "Ano ang tamang pag-unawa sa kabuluhan ng inbound ayon sa level2reference?",
+          "choices": [
+            "Kaugnay ng lokal na ekonomiya at palitan ng kultura, ngunit huwag gawing iisang numero o garantiya ng tubo ang epekto",
+            "Hindi kailanman gumagamit ng lokal na tindahan ang dayuhan",
+            "Tiyak na doble ang tubo kung doble ang bisita",
+            "Ang palitan ng kultura ay dagdag na paglilinis lamang"
+          ],
+          "answerIndex": 0,
+          "explanation": "Halimbawa ng sanggunian ang lokal na ekonomiya at palitan ng kultura. Gamitin sa pagpaplano at huwag mangako ng resulta nang walang batayan.",
+          "knowledgeIds": [
+            "hotel-source-detail-hp2-027-03"
+          ]
+        }
+      ],
+      "knowledgeIds": [
+        "HK-planning-05-pms",
+        "HK-planning-05-engine",
+        "HK-planning-05-channels",
+        "HK-planning-05-commission",
+        "HK-planning-05-inbound",
+        "HK-planning-05-upsell",
+        "hotel-source-detail-hp2-027-03"
+      ],
+      "illustration": {
+        "id": "hotel-planning-05-illustration",
+        "kind": "booking-systems",
+        "caption": "Ihiwalay ang booking entrance ng bisita at ang system ng panloob na impormasyon.",
+        "alt": "Mula sa bisita, magkahiwalay ang sariling booking engine at OTA, saka nagtatagpo sa PMS at kumokonekta sa room at accounting information.",
+        "keyObjectiveId": "hotel-planning-05-objective"
+      },
+      "estimatedMinutes": 25,
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false
+      },
+      "sourceRevision": "650f96939e5ea1c44a184269f589a837eeb631cb13af030c3f86cb79af9d9d30",
+      "status": "translated_ai_unreviewed"
     }
   ]
 }

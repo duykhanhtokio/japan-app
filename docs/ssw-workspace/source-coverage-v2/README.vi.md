@@ -32,3 +32,14 @@ Bộ kiểm tra không tự đọc được ý nghĩa trang PDF từ các hash. 
 Quét payload của artifact giúp ngăn vô tình đưa chữ PDF, byte ảnh hoặc lệnh vector nguồn vào kho công khai. Đây là vệ sinh dữ liệu; không phải chứng nhận bản quyền và không thay việc kiểm biểu đạt của bài tự soạn.
 
 Báo riêng semanticInventoryPages (đã phân rã đủ vùng/ý) và instructionalPagesCoveredAi (các ý của trang đã có bằng chứng app đủ). excludedPagesAi là trang loại có lý do, không cộng thành trang kiến thức đã dạy.
+# Báo cáo khi sáu luồng làm song song
+
+`npm run ssw:coverage:report` đọc một snapshot bất biến từ commit HEAD, gồm ledger, vùng nguồn và đúng các tệp bằng chứng của commit đó. Trường `committedSnapshot` ghi SHA; các thay đổi chưa commit và tệp không được theo dõi không được dùng làm bằng chứng cho mốc này. Lệnh không tự xác nhận SHA đã lên remote; vẫn phải chạy cửa kiểm tra persistence.
+
+Để cập nhật báo cáo dẫn xuất sau một đợt đã lưu:
+
+```bash
+npm run ssw:coverage:report -- --out docs/ssw-workspace/source-coverage-v2/current-status.json
+```
+
+Có thể chọn một commit cụ thể bằng `node scripts/source-coverage-v2/report.cjs --ref <SHA>`. Khi cần chẩn đoán dữ liệu đang sửa, chạy trực tiếp không có `--ref`; kết quả đó là working tree, không phải mốc đã lưu. Không dùng báo cáo working tree để tính các phần chưa persist là đã hoàn thành. Snapshot chỉ sao chép tạm đúng phụ thuộc ledger và tự dọn sau khi kiểm tra; không xuất toàn bộ kho hay PDF nguồn.
