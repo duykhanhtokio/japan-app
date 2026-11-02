@@ -1,3 +1,15 @@
+# Đóng khoảng trống mục đích SNS và hai trang — 02/11/2026
+
+Khoảng trống `HSP1-025-sns-brand-purpose` đã được xử lý thật: thêm đoạn Nhật độc lập liên hệ trao đổi khách với giá trị lưu trú/thương hiệu, thêm `hotel-planning-04-q09`, đủ12 bản dịch đúng revision và furigana cho chữ mới. Không dùng câu branding chung để đóng ý SNS. Tổng326→327câu; 209/456cặp dịch hợp lệ giữ nguyên, còn247cặp thiếu/cũ. Bảo toàn104 bản câu cũ của13bản Nhật/dịch,43bài planning ngoài phạm vi và559entry cách đọc không đổi. Revision planning04 mới `7e1d71529fd8f302096b41b49519c764caae1644af24b14ed2d1a323c1ed6a29`.
+
+Đã phân loại toàn bộ vùng của1号p25 và2号p31, gồm sáu nhóm vận hành, mục đích đầu trang, ruby, heading, navigator, bullet/vector, raster nền và cell do detector; hai trang đạt complete_ai/covered ở phạm vi tự kiểm AI. Sổ chuẩn hiện92đơn vị covered,290candidate, tổng382known nhưng mẫu số vẫn mở;15trang đóngsemantic/covered_ai,26visual và117census. Chưa có bản ngữ/chuyên môn, thời lượng hay thiết bị thật.
+
+Kiểm cấu trúc, source-atoms, canonical nguồn, bảo toàn SNS, readings, translations, loader và36cặp front678 đều PASS. Bằng chứng `source-v4-sns-review.json`, dữ liệu tác giả `source-v4-sns-gap-authoring.json`, kiểm tra `check-sns-gap-v4.cjs`. Tái dựng census cần chạy build-source-census-v2.py → close-reviewed-pages-v3.py → close-sns-gap-v4.cjs; các bước đóng trang dùng map nghĩa được đọc cụ thể, không đóng tự động từ hình học.
+
+Gói ba bài ổn định tiếp theo: planning02/03/05, packet `source-v5-planning235-translation-source.json` và265field/locale trong flatten-fields; chưa tính bản dịch gói mới là đã xong. Manifest đợt SNS được điều phối lưu riêng trước đợt dịch tiếp.
+
+---
+
 # Đợt tiếp nối front06/07/08 và semantic nguồn — 02/11/2026
 
 Hoàn tất ba bài Nhật ổn định `hotel-front-06`, `hotel-front-07`, `hotel-front-08` đủ12 locale đúng revision. Nhật, câu/đáp án/ID và furigana hiện hành giữ nguyên; thêm bản dịch của các câu đã có, bổ sung điều kiện về lý do vắng mặt trong đoạn điện thoại. Không dùng thay revision đơn thuần: tám locale cũ được đọc đối chiếu và sửa56 bản câu cùng8 đoạn điều kiện; bốn locale còn lại được tác giả đầy đủ trực tiếp từ packet Nhật bởi điều phối, tự kiểm và bàn giao sidecar.
