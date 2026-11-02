@@ -1,3 +1,13 @@
+# Agriculture source continuation — 2026-11-02, close eleven explicit gaps
+
+Resolved the previous11partial atoms: five missing assessments (poor storage, two seed-processing purposes, naked-seed definition and spinach example) and six1号sowingroute gaps. Four new ungraded retrieval checks add48explicit locale prompts and full context ruby. Three visible teaching supplements appear in already scheduled readers; the1号sowing supplement is in `agr-germination`, while the old2号route remains unchanged. Current lesson/calendar IDs and learner state are preserved.
+
+Read source2page81 completely, assigned every body/ruby/numeric span and classified the20navigation spans plus one decorative chapter circle explicitly. All174regions are classified. Added one previously unseparated storage-extension fact, and preserved three repeated historical groups as resolved provenance rather than duplicate knowledge. Canonical state:1425known,78covered_ai,3complete semantic pages; denominator remains open and the source coverage percentage remains null. Page61F1 and other pending sources have not been closed.
+
+Evidence: `../source-coverage-v2/agriculture-seed-gaps-v5-source-review.json` and `agriculture-seed-gaps-v5-validation.json`. Scoped source/preservation, canonical ledger, previous source-group regressions and reader host14checks/12locales/2levels PASS. All241lessonobjects,12locale lessontranslationfiles,1227weekly/mockquestions, calendar and10oldreader checks remain unchanged. Host fixtures are not productionExpo, native/domain review, real-device testing or learner-duration measurement; those acceptance flags remain false. Root must persist this completed batch and verify the remote before starting another ledger batch.
+
+---
+
 # Agriculture source continuation — 2026-11-02, storage/processing/sowing
 
 Three source-backed groups self-reviewed from the private, SHA-verified1号/2号PDFs: storage/longevity, processed seeds, and sowing patterns/examples. Added35atomic source objectives with exact text/ruby element links:24covered_ai and11partial. Nineteen crop-to-longevity associations now have direct retrieval evidence. Six old non-atomic storage labels are preserved in canonical legacy-resolution records rather than counted again. Full-page semantic closure remains only the existing2pages; pages61/62/81 were visually inspected but retain unresolved regions and are NOT closed.

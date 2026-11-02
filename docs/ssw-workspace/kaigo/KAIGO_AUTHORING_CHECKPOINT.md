@@ -1560,3 +1560,10 @@ NguồncanonicalVI/hash997bf...đúng; đọc12–14,116–120 vàxem12–14,117
 Đọc toàn văn và xem trực tiếp hai trang nguồn canonical (in120–121), giữ ảnh/PDF riêng. Nối7đơn vị với bàiNhật tuần15/ngày101 đã có; thêm2hoạt động tự giải thích không chấm điểm, đủkana và24cặp dịch trực tiếp. Nămý có dạy/đánhgiá ởmứcAI; haiđịnhnghĩa ADL/IADL vẫnthiếu câu kiểm riêng, không lấy câu nêu ví dụ để đóng địnhnghĩa. Kaigo v2 hiện62ý đãbiết/60covered_ai, mẫu số mở; khôngđónghai trang vì các chi tiết hình cònpending.
 
 Hostreader kiểm20hoạt động trên6ngày×12locale: ẩnđápán, mởdịch rõràng, đóng/mởđápán vàkana khớp. Khôngthay687câu tuần, IDngày, bàiNhật cũ hay khóa tiếnđộ. Hồsơkaigo-movement122-123-review/reader-validation.json. Khôngbrowserpixel/native/chuyênmôn/bảnngữ/thờilượng/nghiệmthu toànnguồn; rootcần lưu vàxácminhremote.
+
+
+## 2026-11-02 — tiếp mốcea1b43c95: kiểm riêng định nghĩaADL/IADL
+
+Đọc/xemlạiPDF123/in121/hash997bf386, thêm1prompt tựgiải thích vềnghĩaADL/IADL, khôngchỉ kểvídụ. Modelanswer đủhaiđịnhnghĩa,12bảndịch trực tiếp vàkana; giữ20checkcũ và687câutuần. Haiý địnhnghĩa từpartial→covered_ai;62/62ý đãbiết códạy/đánhgiá, nhưng mẫu sốtoànsách vẫn mở vàkhôngđóngtrang123 vì nhãnhình cònpending.
+
+Hostreader21check trên6ngày×12locale đạt ẩnlờiđáp/mởdịch theo ngônngữ/đóngmởđápán/kana. Hồsơkaigo-adl-iadl-definition-review/reader-validation.json. KhôngthayID/ngày/khóa tiếnđộ hayJapanese-master; khôngnative/pixel/chuyênmôn/bảnngữ/thờilượng. Rootlưuvàxácminhremote trước báolưubền.

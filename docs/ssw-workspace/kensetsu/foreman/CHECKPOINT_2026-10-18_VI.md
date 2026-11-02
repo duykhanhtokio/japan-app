@@ -87,3 +87,10 @@ Các cờ native/domain/device/timevẫnfalse; browserchưa chạy vì blockerCh
 Đọc và xemtoàntrang115/in109, đặcbiệt sáuôbảng. Bài022 thêm1đoạnđộc lập vàmởrộngprompt c1, đủ12ngônngữ gắnđúngNhật. Giữ112đoạncũ, promptcũ làtiền tố vàrevisiontiếnđộ1; contentRevision3. Tổng113đoạn,50prompt. Sáuýbảng códạy/đánhgiá trực tiếp (nămý mớiđóng), construction48/118covered_ai, mẫu sốmở và7blocker giữ. Khôngđóngtoàntrang115.
 
 Actualhostreader022 đạt24locale/ngàyđêm, đoạnNhật vàdịchđúnglocale, ẩndịch đầu, cuộncuối trước hoànthành, caption/hìnhregistry. Kiểm nguồn-v2 và authoreddata/preservation đạt. Đoạnmới sàng22ký tự chuẩnhoá trên131trang chữ>=10pt:0ứngviên, khôngchứngnhậnquyền. Hồsơconstruction-drawing115-followup-review/reader-validation.json. Khôngkiểmpixel/browser/native/chuyênmôn/bảnngữ/thờilượng. Rootcầnlưuvàxácminhremote.
+
+
+## 2026-11-02 — tiếp mốcea1b43c95: thiết kế và chỉdẫn kỹthuật
+
+Đọc toànvăn vàxemPDF111–113/in105–107. Haiđợttrongbài022: bổsung toànthể基本設計vàpromptchọn4loạibảnvẽ; bổsung phạmvi共通仕様書/lĩnhvực kỹthuật, vai trò特記仕様書trong積算vàpromptphânbiệt vậtliệu/phươngpháp/phạmvi. Haiđoạn vàhaiprompt cóphầnmới, đủ48cặptrường–locale; kana trongphầnNhật mới. Giữ113đoạn/50prompt, mọi tiền tố cũ, revisiontiếnđộ1; contentRevision4. Nguồn111ghép実施設計với施工図trongngoặc, nhưng115phânbiệt; appgiữphânbiệt đúngvai, khônggộp.
+
+Chíný đãbiết códạy/đánhgiá hiệnhành:57/118covered_ai,7blocker/mẫu sốmởgiữ. Khôngđóngtoàntrang hoặc2号riêngngành. Actualreader022đạt24locale/ngàyđêm, đúngmọiđoạn/promptdịch, ẩndịch đầu, cuộncuối/hoànthành, captionhình. Sàng268chuỗiNhật hiệnhành với131trang chữ>=10pt, bỏinlinekana:0ứngviên22kýtự, khôngchứngnhậnquyền. Source-v2/authoredpreservation đạt; khôngpixel/native/chuyênmôn/bảnngữ/thờilượng. Rootlưuvàxácminhremote.
