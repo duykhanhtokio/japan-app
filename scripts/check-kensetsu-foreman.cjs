@@ -10,7 +10,7 @@ const ids=new Set(),paragraphIds=new Set(),prose=new Set(),all=[];let paragraphs
 const useful=s=>assert(typeof s==='string'&&s.trim().length>0,'Missing learner-facing text');
 for(let n=1;n<=28;n++){
  const s=read('session-'+String(n).padStart(3,'0')+'.json');all.push(s.id);assert.equal(s.id,'kensetsu-foreman-session-'+String(n).padStart(3,'0'));assert(!ids.has(s.id));ids.add(s.id);
- assert.equal(s.revision,1);assert.deepEqual(s.applicableLevels,['2']);assert.deepEqual(s.applicableFields,['utilities','building','civil']);
+ assert.equal(s.revision,n===4?2:1);assert.deepEqual(s.applicableLevels,['2']);assert.deepEqual(s.applicableFields,['utilities','building','civil']);
  assert.equal(s.status,'editorial_draft');assert.equal(s.durationMeasured,false);assert.equal(s.estimatedMinutes,null);assert.equal(s.appIntegrationReady,false);
  for(const k of ['domain','nativeJapanese','nativeVietnamese','rights'])assert.equal(s.review[k],false);
  useful(s.titleJa);useful(s.titleTranslations.vi);assert.equal(s.clusters.length,2);
@@ -23,6 +23,15 @@ for(let n=1;n<=28;n++){
  }
 }
 const weekly=[];for(let n=1;n<=4;n++){const w=read('week-'+String(n).padStart(3,'0')+'.json');assert.equal(w.sessionIds.length,7);weekly.push(...w.sessionIds);}assert.deepEqual(weekly,all);
+// Revision2 adds one source-bound coaching application; its locale overlays
+// must refer to that exact Japanese activity, independently of older prose.
+const coaching=read('session-004.json').clusters[1].learningActivity;
+useful(coaching.ja);useful(coaching.translations.vi);assert.equal(coaching.graded,false);
+for(const locale of ['en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']){
+ const pack=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/foreman-translations',locale+'.json')));
+ const entry=pack.sessions['kensetsu-foreman-session-004'].entries.learningActivity;
+ assert.equal(entry.sourceJa,coaching.ja);useful(entry.translations[locale]);
+}
 assert.equal(paragraphs,112);assert.equal(prompts,50);assert.equal(images,4);assert.equal(screen.paragraphs,paragraphs);assert.equal(screen.candidates.length,0);assert.equal(screen.rightsCertification,false);
 assert.equal(ledger.coverageDenominator,null);assert.equal(ledger.wholeSourceComplete,false);assert.equal(ledger.releaseReady,false);assert.equal(ledger.remainingTargetLocales.length,0);assert.equal(ledger.objectives.length,56);
 const report={date:'2026-10-18',status:'PASS_AUTHORED_DATA_AND_PRESERVATION',lessons:all.length,weeks:4,clusters:56,japaneseParagraphs:paragraphs,vietnameseParagraphs:paragraphs,newTranslatedApplicationPrompts:prompts,originalDiagrams:images,originalThreeFilesBytePreserved:true,sourcePdfInRepository:false,wholeSourceCoverageConfirmed:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};

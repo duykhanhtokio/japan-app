@@ -15,3 +15,9 @@ Kiểm tra được lưu trong `content-qa-2026-10-18.json`, `scope-host-qa-2026
 `expression-screen.json` đối chiếu250chuỗi Nhật của28bài với chữ nguồn, chuẩn hóaNFKC và tìm chuỗi trùng liên tiếp22ký tự: không có ứng viên. Chữ hình/raster có thể thiếu trong trích xuất; kiểm tra này không chứng nhận quyền tác giả hoặc phát hiện mọi cách diễn đạt gần giống.
 
 Việc còn lại: lập mẫu số nguồn đầy đủ từng ý và rà hình còn lại; bổ sung ý thiếu nếu có; đo thời gian và điều chỉnh nhóm bài; dịch11ngôn ngữ còn lại; duyệt chuyên môn, tiếng Nhật, tiếng Việt và quyền; kiểm traExpo/native. Tất cả cờ duyệt và releaseReady vẫnfalse. Các công việc thực hành trước đó được giữ nguyên tại commit nền8e694f3a, không coi việc chuyển sang職長 là hoàn tất cuộc rà224bài.
+
+## Tiếp nối 2026-11-02
+
+Đã lấy lại đúng byte nguồn leader131trang với SHA256 đã ghi, đọc và xem trực quan PDF17–24. Mốc chỉ đọc7–16 trong SOURCE_INTAKE_2GO là lịch sử; mốc28bài ở trên vẫn giữ. Không soạn lại nội dung đã có. Bài004 lên revision2, giữ ID và toàn bộ đoạn/câu vận dụng cũ; thêm một hoạt động không chấm điểm giúp người học nối mục tiêu coaching, hỗ trợ, thời điểm kiểm tra và phản hồi vào tình huống bỏ sót bản sửa đổi bản vẽ. Hoạt động có12bản dịch trực tiếp từ Nhật, chưa duyệt bản ngữ. Không thêm yêu cầu kỹ thuật/pháp lý mới.
+
+Kiểm dữ liệu và bảo toàn ba bài001–003 PASS; chạy chính foreman data/locale adapter bằng esbuild đạt28bài,12ngôn ngữ hoạt động mới, giữ thứ tự tuần và từ chối bản dịch khi Nhật không khớp. Rà chuỗi chuẩn hóa22ký tự trên251chuỗi Nhật và131trang nguồn không có ứng viên; không thay duyệt quyền hoặc kiểm diễn đạt gần. Tổng trang từng xem trực quan trong ledger là35; không có nghĩa131trang đã duyệt. Chi tiết COACHING_DEPTH_20261102.json. Bao phủ ý nguồn đầy đủ, thời lượng người học, duyệt chuyên môn/bản ngữ/quyền vàExpo/native vẫn chưa nghiệm thu. Root cần commit/push/fetch và xác minh đúng remote trước tuyên bố lưu bền.

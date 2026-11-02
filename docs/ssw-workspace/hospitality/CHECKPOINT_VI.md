@@ -1,3 +1,13 @@
+# Bổ sung bài Nhật và kiểm tra vận dụng — ngày 02/11/2026
+
+Đã bổ sung thật vào `hotel-service-03`: một tình huống Nhật độc lập gồm 6 lượt thoại về khách đang đợi người quen, cùng giải thích cách xác nhận mong muốn thay vì áp đặt việc dẫn đường; thêm hai câu hỏi `q09/q10` có bốn lựa chọn và giải thích. Tình huống được ghi rõ là hư cấu để vận dụng nguyên tắc おもてなし từ 1号 trang 33; không phải hội thoại chép từ PDF. Thân bài service03 tăng từ 779 lên 1201 ký tự, câu hỏi từ 8 lên 10. Toàn ngành hiện 323 câu độc lập.
+
+Ý `HS1-033-12` nay có câu hỏi trực tiếp về mục đích và vận dụng; giữ lịch sử trạng thái contextual trước đó. Đã cập nhật revision, bản biên soạn, sổ chuẩn, danh mục, thống kê ngày và furigana ngoại tuyến. Nhật sửa nên các bản dịch cũ vẫn bị chặn; không đổi revision dịch để hợp thức hóa. Toàn ngành vẫn 22/456 cặp dịch hợp lệ.
+
+Kiểm tra cấu trúc, source-atoms, semantic-review, furigana và bản dịch hiện có PASS. Đây chưa phải nghiệm thu toàn bộ 117 trang, duyệt chuyên môn/bản ngữ, đo thời lượng hoặc kiểm thử thiết bị thật. Bằng chứng: `omotenashi-application-20261102-evidence.json`.
+
+---
+
 # Đối chiếu hẹp nguồn — ngày 02/11/2026
 
 Đã mở lại PDF đúng hash và xem trực quan trang 33 của 1号. Tách thêm ý `HS1-033-12` về おもてなし và sự hài lòng khi lưu trú, vốn đã được dạy tại `hotel-service-03-notice` nhưng chưa có mục nguồn độc lập. Sổ chuẩn hiện có 380 ý được ghi nhận; số câu giữ 321. Đây là bổ sung kế toán nguồn, không phải tăng nội dung học.

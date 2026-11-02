@@ -26,7 +26,7 @@ async function load(overrides={}){
  assert.deepEqual(a.restoreTestAttempt(JSON.stringify(attempt),exam),attempt);assert.equal(a.restoreTestAttempt(JSON.stringify(attempt),{...exam,revision:'stale'}),null);
  assert.equal(a.gradeTest(exam,exam.questions.map(q=>q.correctIndex)).correct,8);assert.equal(a.gradeTest(exam,Array(8).fill(null)).unanswered,8);
  assert.notEqual(a.manufacturingExamKey('a','mechanical',exam.id),a.manufacturingExamKey('b','mechanical',exam.id));
- const stale=JSON.parse(JSON.stringify(d));stale.guideSourceHash='0'.repeat(64);const b=await load({'supplement-practice.json':stale});assert.deepEqual(b.manufacturingSupplementExams('mechanical'),[]);assert.equal(b.manufacturingSupplementTranslation(exam.questions[0],'vi'),null);
+ const stale=JSON.parse(JSON.stringify(d));stale.guideSourceHash='0'.repeat(64);const b=await load({'supplement-practice.json':stale});assert.equal(b.manufacturingSupplementExams('mechanical').some(e=>e.id===d.id),false);assert.equal(b.manufacturingSupplementExams('mechanical').some(e=>e.id==='mfg1-tolerance-class-supplement'),true);assert.equal(b.manufacturingSupplementTranslation(exam.questions[0],'vi'),null);
  const badTarget=JSON.parse(JSON.stringify(d));badTarget.localeSourceHashes.vi[0]='0'.repeat(64);const c=await load({'supplement-practice.json':badTarget});assert.equal(c.manufacturingSupplementTranslation(exam.questions[0],'vi'),null);
  console.log(JSON.stringify({status:'PASS',questions:8,translationPairs:pairs,balancedAnswers:counts,staleGuideSuppressed:true,staleTargetSuppressed:true,staleAttemptRejected:true,originalWeeklyQuestionsPreserved:456,nativeReviewed:false,domainReviewed:false}));
 })().catch(e=>{console.error(e);process.exitCode=1});

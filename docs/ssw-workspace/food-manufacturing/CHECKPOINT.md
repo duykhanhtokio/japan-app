@@ -1,3 +1,7 @@
+# Newly executed candidate acceptance —2026-11-02
+
+See `ACCEPTANCE_20261102.md`. Restored scoped QA dependencies and tracked food assets/source; actual lesson/question ruby loaders, TSX compilation, 8,480-field/1,696-case SSR, state, adapter, figure37 and 96-day diagram/companion validation now rerun successfully at source snapshot57ac691. Fixed the daily validator's stale pre-source-correction preservation baseline using18 exact hash-pinned historical snapshots and76 changed-byte rejection probes; learner content unchanged. Full Expo/browser/device/native/domain/duration/source certification remains unclaimed. Root commit/push/fetch verification still required.
+
 # Daily workload and instructional figures —2026-10-31
 
 Latest candidate: `daily-fix-20261031/manifest.json`; apply `../DAILY_LEARNING_AND_IMAGE_REQUIREMENTS_VI.md`.96stable days remain,94gain same-topic existing companion paragraphs/activities;96have objective-bound original diagrams from35new small WebP assets. All canonical data,12draft translation texts,848questions/revisions and saved-progress keys remain byte-identical. Identity day map and final validation/browser evidence are in the session folder. New UI headings/close labels have36draft translations. No measured30minute/native/domain/device/release approval claimed. Remote persistence requires root publication/fetch and exact commit verification; this checkpoint is not proof by itself. Earlier entries below are historical.
