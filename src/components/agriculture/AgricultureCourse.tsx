@@ -1,3 +1,4 @@
+import {MoistureReaderChecks} from './MoistureReaderChecks';
 import {DailyCompanionReadings,DailyLearningFigure} from './DailyLearningSupport';
 import {AgricultureExamIllustration,hasAgricultureExamIllustration} from './AgricultureExamIllustration';
 import {ConceptDiagrams} from './ConceptDiagrams';
@@ -74,6 +75,7 @@ function Reader({lesson,language,onBack,onComplete,saving,saveError,level}:{leve
  {lesson.paragraphs.map(p=><View key={p.id} style={[s.section,{borderColor:colors.border}]}><Text style={[s.heading,{color:colors.text}]}>{p.titleJa}</Text><Text selectable style={[s.body,{color:colors.text}]}>{p.textJa}</Text>{show&&t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}</View>)}
  {lesson.id==='agr-rice'&&<RiceProcess/>}{lesson.id==='agr-organs'&&<OrgansDiagram/>}{lesson.id==='agr-sowing-design'&&!hasRecognitionImage(lesson.id,lesson.sourceHash,'sowing-patterns',level)&&<SowingDiagram/>}<ConceptDiagrams lessonId={lesson.id} colors={colors} level={level}/>
  <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} colors={colors} level={level}/>
+ <MoistureReaderChecks lessonId={lesson.id} level={level} language={language} showTranslation={show} Button={Button}/>
  <DailyLearningFigure lesson={lesson} level={level} colors={colors}/>
  <DailyCompanionReadings lesson={lesson} level={level} language={language} showTranslation={show} colors={colors}/>
  <Text style={[s.heading,{color:colors.text}]}>用語</Text>{lesson.terms.map(term=><Text key={term.ja} style={[s.body,{color:colors.text}]}>{term.ja}（{term.reading}）</Text>)}

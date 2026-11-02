@@ -1587,6 +1587,341 @@
       ],
       "day": 169,
       "sectionId": "kaigo-depth-team-handoff"
+    },
+    {
+      "id": "kaigo-reader-record-same-day",
+      "knowledgeId": "kaigo-v3-record-same-day",
+      "day": 169,
+      "sectionId": "kaigo-depth-team-handoff",
+      "promptJa": "記録を数日後にまとめる予定です。記憶が確かなうちに残すため、いつ記録しますか。",
+      "modelAnswerJa": "その日のうちに、できるだけ速やかに記録します。",
+      "translations": {
+        "en": {
+          "prompt": "You plan to write records several days later. When should you record information while your memory is clear?",
+          "modelAnswer": "Record it on the same day, as promptly as possible.",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "vi": {
+          "prompt": "Bạn dự định vài ngày sau mới ghi chép. Để lưu khi còn nhớ rõ, cần ghi vào lúc nào?",
+          "modelAnswer": "Ghi trong ngày hôm đó, càng sớm càng tốt.",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "id": {
+          "prompt": "Anda berencana menulis catatan beberapa hari kemudian. Kapan sebaiknya mencatat saat ingatan masih jelas?",
+          "modelAnswer": "Catat pada hari yang sama, sesegera mungkin.",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "zh-CN": {
+          "prompt": "你打算几天后再集中记录。为了趁记忆清楚时留下信息，应何时记录？",
+          "modelAnswer": "应在当天尽快记录。",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "zh-TW": {
+          "prompt": "你打算幾天後再集中記錄。為了趁記憶清楚時留下資訊，應何時記錄？",
+          "modelAnswer": "應在當天儘快記錄。",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "hi": {
+          "prompt": "आप कई दिन बाद एक साथ रिकॉर्ड लिखने की सोच रहे हैं। याद साफ रहते जानकारी कब लिखनी चाहिए?",
+          "modelAnswer": "उसी दिन, जितनी जल्दी हो सके लिखें।",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "bn": {
+          "prompt": "আপনি কয়েক দিন পরে একসঙ্গে নথি লিখবেন ভাবছেন। স্মৃতি স্পষ্ট থাকতে কখন লিখবেন?",
+          "modelAnswer": "সেই দিনই যত দ্রুত সম্ভব লিখবেন।",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "ne": {
+          "prompt": "केही दिनपछि एकैचोटि अभिलेख लेख्ने सोच छ। सम्झना स्पष्ट रहँदै जानकारी कहिले लेख्ने?",
+          "modelAnswer": "सोही दिन सकेसम्म चाँडै लेख्ने।",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "my": {
+          "prompt": "ရက်အနည်းငယ်ကြာမှ မှတ်တမ်းစုရေးရန် စီစဉ်ထားသည်။ မှတ်ဉာဏ်ရှင်းနေစဉ် ဘယ်အချိန် မှတ်တမ်းတင်သင့်သနည်း။",
+          "modelAnswer": "ထိုနေ့အတွင်း တတ်နိုင်သမျှ အမြန်ဆုံး မှတ်တမ်းတင်ပါ။",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "th": {
+          "prompt": "คุณวางแผนเขียนบันทึกรวมกันอีกหลายวัน ควรบันทึกเมื่อใดขณะที่ยังจำได้ชัดเจน",
+          "modelAnswer": "บันทึกภายในวันนั้นโดยเร็วที่สุด",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "km": {
+          "prompt": "អ្នកគ្រោងសរសេរកំណត់ត្រារួមគ្នាប៉ុន្មានថ្ងៃក្រោយ។ ដើម្បីកត់ពេលនៅចាំច្បាស់ តើគួរកត់ពេលណា?",
+          "modelAnswer": "កត់នៅថ្ងៃនោះឱ្យបានឆាប់តាមដែលអាចធ្វើបាន។",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "tl": {
+          "prompt": "Plano mong isulat ang mga tala makalipas ang ilang araw. Kailan dapat itala habang malinaw pa ang alaala?",
+          "modelAnswer": "Itala sa araw ding iyon, sa lalong madaling panahon.",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        }
+      },
+      "review": {
+        "selfReviewedAi": true,
+        "domainReviewed": false,
+        "nativeReviewed": false
+      },
+      "promptRuby": [
+        {
+          "text": "記録",
+          "readingKana": "きろく"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "数日後",
+          "readingKana": "すうじつご"
+        },
+        {
+          "text": "にまとめる"
+        },
+        {
+          "text": "予定",
+          "readingKana": "よてい"
+        },
+        {
+          "text": "です。"
+        },
+        {
+          "text": "記憶",
+          "readingKana": "きおく"
+        },
+        {
+          "text": "が"
+        },
+        {
+          "text": "確かな",
+          "readingKana": "たしかな"
+        },
+        {
+          "text": "うちに残す",
+          "readingKana": "うちにのこす"
+        },
+        {
+          "text": "ため、いつ"
+        },
+        {
+          "text": "記録",
+          "readingKana": "きろく"
+        },
+        {
+          "text": "しますか。"
+        }
+      ],
+      "modelAnswerRuby": [
+        {
+          "text": "その"
+        },
+        {
+          "text": "日",
+          "readingKana": "ひ"
+        },
+        {
+          "text": "のうちに、できるだけ"
+        },
+        {
+          "text": "速やか",
+          "readingKana": "すみやか"
+        },
+        {
+          "text": "に"
+        },
+        {
+          "text": "記録",
+          "readingKana": "きろく"
+        },
+        {
+          "text": "します。"
+        }
+      ]
+    },
+    {
+      "id": "kaigo-reader-record-5w1h",
+      "knowledgeId": "kaigo-v3-record-5w1h",
+      "day": 169,
+      "sectionId": "kaigo-depth-team-handoff",
+      "promptJa": "5W1Hで記録を整理するとき、六つの確認点は何ですか。",
+      "modelAnswerJa": "いつ、どこで、誰が、何を、なぜ、どのように、です。理由が不明なら推測で埋めません。",
+      "translations": {
+        "en": {
+          "prompt": "What six points organize a record using 5W1H?",
+          "modelAnswer": "When, where, who, what, why and how. Do not fill an unknown reason with a guess.",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "vi": {
+          "prompt": "Sáu điểm cần xác nhận khi sắp xếp ghi chép theo5W1H là gì?",
+          "modelAnswer": "Khi nào, ở đâu, ai, điều gì, tại sao và như thế nào. Nếu chưa rõ lý do thì không điền bằng suy đoán.",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "id": {
+          "prompt": "Apa enam pokok untuk menyusun catatan dengan5W1H?",
+          "modelAnswer": "Kapan, di mana, siapa, apa, mengapa dan bagaimana. Jangan mengisi alasan yang belum diketahui dengan dugaan.",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "zh-CN": {
+          "prompt": "用5W1H整理记录时，六个确认点是什么？",
+          "modelAnswer": "何时、何地、谁、什么、为何、如何。理由不明时，不用推测填补。",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "zh-TW": {
+          "prompt": "用5W1H整理記錄時，六個確認點是什麼？",
+          "modelAnswer": "何時、何地、誰、什麼、為何、如何。理由不明時，不用推測填補。",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "hi": {
+          "prompt": "5W1H से रिकॉर्ड व्यवस्थित करने के छह बिंदु क्या हैं?",
+          "modelAnswer": "कब, कहाँ, कौन, क्या, क्यों और कैसे। कारण अज्ञात हो तो अनुमान से न भरें।",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "bn": {
+          "prompt": "5W1H অনুযায়ী নথি সাজানোর ছয়টি বিষয় কী?",
+          "modelAnswer": "কখন, কোথায়, কে, কী, কেন এবং কীভাবে। কারণ অজানা হলে অনুমান দিয়ে পূরণ করবেন না।",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "ne": {
+          "prompt": "5W1H अनुसार अभिलेख मिलाउने छवटा बुँदा के हुन्?",
+          "modelAnswer": "कहिले, कहाँ, को, के, किन र कसरी। कारण थाहा नभए अनुमानले नभरिने।",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "my": {
+          "prompt": "5W1H ဖြင့် မှတ်တမ်းစီစဉ်ရာတွင် အချက်ခြောက်ချက်က ဘာတွေလဲ။",
+          "modelAnswer": "ဘယ်အချိန်၊ ဘယ်နေရာ၊ ဘယ်သူ၊ ဘာ၊ ဘာကြောင့်နှင့် ဘယ်လို ဖြစ်သည်။ အကြောင်းရင်းမသိလျှင် ခန့်မှန်းချက်ဖြင့် မဖြည့်ပါနှင့်။",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "th": {
+          "prompt": "เมื่อจัดบันทึกตาม5W1H จุดตรวจสอบหกข้อคืออะไร",
+          "modelAnswer": "เมื่อไร ที่ไหน ใคร อะไร ทำไม และอย่างไร หากไม่ทราบเหตุผลอย่าเติมด้วยการคาดเดา",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "km": {
+          "prompt": "តើចំណុចប្រាំមួយសម្រាប់រៀបចំកំណត់ត្រាតាម5W1Hមានអ្វីខ្លះ?",
+          "modelAnswer": "ពេលណា នៅឯណា អ្នកណា អ្វី ហេតុអ្វី និងយ៉ាងដូចម្តេច។ បើមិនដឹងមូលហេតុ កុំបំពេញដោយការស្មាន។",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        },
+        "tl": {
+          "prompt": "Ano ang anim na punto sa pag-aayos ng tala gamit ang5W1H?",
+          "modelAnswer": "Kailan, saan, sino, ano, bakit at paano. Huwag punan ng hula ang hindi alam na dahilan.",
+          "translatedFrom": "ja",
+          "nativeReviewed": false
+        }
+      },
+      "review": {
+        "selfReviewedAi": true,
+        "domainReviewed": false,
+        "nativeReviewed": false
+      },
+      "promptRuby": [
+        {
+          "text": "5W1Hで"
+        },
+        {
+          "text": "記録",
+          "readingKana": "きろく"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "整理",
+          "readingKana": "せいり"
+        },
+        {
+          "text": "するとき、"
+        },
+        {
+          "text": "六つ",
+          "readingKana": "むっつ"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "確認点",
+          "readingKana": "かくにんてん"
+        },
+        {
+          "text": "は"
+        },
+        {
+          "text": "何",
+          "readingKana": "なん"
+        },
+        {
+          "text": "ですか。"
+        }
+      ],
+      "modelAnswerRuby": [
+        {
+          "text": "いつ、どこで、"
+        },
+        {
+          "text": "誰",
+          "readingKana": "だれ"
+        },
+        {
+          "text": "が、"
+        },
+        {
+          "text": "何を",
+          "readingKana": "なにを"
+        },
+        {
+          "text": "、なぜ、どのように、です。"
+        },
+        {
+          "text": "理由",
+          "readingKana": "りゆう"
+        },
+        {
+          "text": "が"
+        },
+        {
+          "text": "不明",
+          "readingKana": "ふめい"
+        },
+        {
+          "text": "なら"
+        },
+        {
+          "text": "推測",
+          "readingKana": "すいそく"
+        },
+        {
+          "text": "で"
+        },
+        {
+          "text": "埋め",
+          "readingKana": "うめ"
+        },
+        {
+          "text": "ません。"
+        }
+      ]
     }
   ]
 }
