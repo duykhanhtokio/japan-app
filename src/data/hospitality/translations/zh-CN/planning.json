@@ -18,7 +18,7 @@
         {
           "id": "hotel-planning-01-meal",
           "title": "一泊两餐与B&B",
-          "body": "一泊两餐套餐包含一晚住宿、晚餐和早餐。B&B是bed and breakfast，即住宿加早餐。预订含早餐的客房，不一定包含晚餐。介绍价格时应分别说明具体包含哪一餐，不能只说“含餐”就结束。"
+          "body": "一泊两餐套餐包含一晚住宿、晚餐和早餐。B&B是bed and breakfast，即住宿加早餐。预订含早餐的客房，不一定包含晚餐。介绍价格时应分别说明具体包含哪一餐，不能只说“含餐”就结束。\n\n参照资料把一晚两餐介绍为主要由日式旅馆销售的套餐，把B＆B介绍为主要由酒店销售。这并不限定只能由该类设施提供。无论哪种设施，都应核实实际套餐的餐食和条件后再介绍。"
         },
         {
           "id": "hotel-planning-01-consecutive",
@@ -28,7 +28,7 @@
         {
           "id": "hotel-planning-01-walkin",
           "title": "未预订到店与押金",
-          "body": "Walk-in指未提前预订，直接到店申请使用服务。不能当作已确认的预订，应先核对当时的空房和接待条件。押金也称deposit，是为保证使用等目的暂收的钱款。应与房费本身区分，按照会计流程说明这笔钱的用途。"
+          "body": "Walk-in指未提前预订，直接到店申请使用服务。不能当作已确认的预订，应先核对当时的空房和接待条件。押金也称deposit，是为保证使用等目的暂收的钱款。应与房费本身区分，按照会计流程说明这笔钱的用途。\n\n参考资料通常建议提前预订，但并非必须拒绝所有未预订来客的规则。"
         },
         {
           "id": "hotel-planning-01-inclusive",
@@ -251,6 +251,21 @@
           "knowledgeIds": [
             "HK-planning-01-needs"
           ]
+        },
+        {
+          "id": "hotel-planning-01-q11",
+          "prompt": "怎样正确理解资料所说的主要提供设施？",
+          "choices": [
+            "一晚两餐只能由酒店提供，B＆B只能由日式旅馆提供",
+            "无需确认一晚两餐是否包含晚餐",
+            "设施叫酒店时，B＆B早餐必定免费",
+            "理解为资料介绍一晚两餐主要在日式旅馆、B＆B主要在酒店，并核实实际套餐"
+          ],
+          "answerIndex": 3,
+          "explanation": "资料列举主要提供设施的例子，并非限定某类设施的定义，也不保证价格和餐食条件。分别确认餐食组合及实际销售条件。",
+          "knowledgeIds": [
+            "HK-planning-01-meal"
+          ]
         }
       ],
       "illustration": {
@@ -260,7 +275,7 @@
         "alt": "围绕客房对比晚餐加早餐、仅早餐、连住与日间使用的示意图。",
         "keyObjectiveId": "hotel-planning-01-objective"
       },
-      "sourceRevision": "dc8ac37ff986ec5c649c75e551850c88aa0b2298a94f65fa6198ea8dd4d5a0c0",
+      "sourceRevision": "f71299c340ecae89e6ab7c9a21fe04dc0fb7b633d7879e8e5c6b63d87ad91f31",
       "status": "translated_ai_unreviewed",
       "title": "从客人需求出发设计住宿套餐"
     },
@@ -287,7 +302,7 @@
         {
           "id": "hotel-planning-02-adr",
           "title": "ADR以售出客房为分母",
-          "body": "ADR是每间已售客房的平均客房收入。例题用客房收入÷售出客房数。30间产生360,000日元，则为12,000日元／间。把10间未售客房也放入分母，含义就不同了。ADR高并不单独证明设施总收入或利润已最大化。"
+          "body": "ADR是每间已售客房的平均客房收入。例题用客房收入÷售出客房数。30间产生360,000日元，则为12,000日元／间。把10间未售客房也放入分母，含义就不同了。ADR高并不单独证明设施总收入或利润已最大化。\n\n发现ADR较低时，应调查需求、供给或设定价格等可能因素。不要只凭ADR断定原因，应核对同一期间的预订、售出房数及销售条件。"
         },
         {
           "id": "hotel-planning-02-revpar",
@@ -482,6 +497,21 @@
           "knowledgeIds": [
             "HK-planning-02-comparison"
           ]
+        },
+        {
+          "id": "hotel-planning-02-q09",
+          "prompt": "员工断言ADR低证明原因是定价失败。按资料和正文，应如何核实？",
+          "choices": [
+            "仅ADR就能确定原因",
+            "丢弃预订及售出房数记录",
+            "把商店销售加入客房收入让ADR显得更高",
+            "把供需及价格条件作为可能因素，结合同期预订和销售实绩研究原因"
+          ],
+          "answerIndex": 3,
+          "explanation": "资料说明低ADR可能与供需或价格设定有关。ADR本身不能证明原因，还须确认记录与条件，也不要混淆平均单价和利润判断。",
+          "knowledgeIds": [
+            "HK-planning-02-adr"
+          ]
         }
       ],
       "illustration": {
@@ -491,7 +521,7 @@
         "alt": "三张卡片在同一天可售40间、售出30间、客房收入360000日元的条件下，对比OCC75％、ADR12000日元、RevPAR9000日元的公式。",
         "keyObjectiveId": "hotel-planning-02-objective"
       },
-      "sourceRevision": "2602db22cb5acb1db44eca21a3a5f0dd17f234e8541f6d4bf1d466c38480524f",
+      "sourceRevision": "99a0cf3ac6758bbcfe1bd5a4ead3f9fe37784af6327d7e8cb0aa8f929565e83e",
       "status": "translated_ai_unreviewed",
       "title": "在相同条件下计算OCC、ADR和RevPAR"
     },
@@ -508,7 +538,7 @@
         {
           "id": "hotel-planning-03-publicity",
           "title": "公关对象与目的",
-          "body": "公关通过传达设施或企业活动来培养理解和信任。对象不仅是旅行者，还包括合作方、员工、当地居民、股东等。吸引客人时，应具体说明设施优势与其他设施的区别。除了自行发布的信息，曾入住客人的评价也会让新客认识设施。"
+          "body": "公关通过传达设施或企业活动来培养理解和信任。对象不仅是旅行者，还包括合作方、员工、当地居民、股东等。吸引客人时，应具体说明设施优势与其他设施的区别。除了自行发布的信息，曾入住客人的评价也会让新客认识设施。\n\n还要考虑各媒体的角色。SNS带来让许多人看到并认识设施的机会；自有网站也是回头客直接确认设施价格、企划等信息的场所。这不表示每个人都会看到SNS，或网站只有回头客使用。整理向谁传达什么，并统一已核实的最新信息。"
         },
         {
           "id": "hotel-planning-03-navigation",
@@ -751,6 +781,21 @@
           "knowledgeIds": [
             "HK-planning-03-booking"
           ]
+        },
+        {
+          "id": "hotel-planning-03-q12",
+          "prompt": "考虑向初次认识设施的人宣传，并向回头客提供信息。哪种媒体角色理解合适？",
+          "choices": [
+            "利用SNS提供广泛认识的机会，并利用网站让回头客也可直接确认设施信息",
+            "只要发SNS所有旅行者必定看到",
+            "网站价格不向非回头客展示",
+            "同时使用两者时价格和活动日期可以不同"
+          ],
+          "answerIndex": 0,
+          "explanation": "资料列出SNS被看到的机会及自有网站向回头客传递信息的作用，不保证所有人都收到，也不限定对象。媒体间价格、期间与条件也须一致。",
+          "knowledgeIds": [
+            "HK-planning-03-publicity"
+          ]
         }
       ],
       "illustration": {
@@ -760,7 +805,7 @@
         "alt": "手机网站布局，连接客房价格、交通信息和预订表单。",
         "keyObjectiveId": "hotel-planning-03-objective"
       },
-      "sourceRevision": "9fa70e9156318f2f48fe9777f736e358b7ab4037ada18f680d9080c75507adc0",
+      "sourceRevision": "f284dba66511350d14dce09669ce6f93234886a5b16b90457a2991c2ab186a8e",
       "status": "translated_ai_unreviewed",
       "title": "从查信息到预订检查网站"
     },

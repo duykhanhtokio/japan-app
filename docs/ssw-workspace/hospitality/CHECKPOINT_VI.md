@@ -1,3 +1,13 @@
+# V7: đóng 5 ý nguồn và bảo toàn 12 ngôn ngữ — 02/11/2026
+
+Đã bổ sung trực tiếp bằng cách diễn đạt độc lập 5 ý còn thiếu: loại cơ sở thường cung cấp hai gói ăn; giả thuyết cần kiểm tra khi ADR thấp; vai trò SNS và website đối với nhận biết/tái sử dụng. Thêm 3 câu Nhật và 36 bản câu dịch, cập nhật 36 cặp của planning01/02/03 đúng revision. Bổ sung điều kiện khuyến nghị đặt trước vào phần walk-in, dùng câu kiểm tra cũ phù hợp, không tạo đơn vị trùng. Giữ nguyên 328 câu Nhật cũ, 348 câu dịch cũ, 325 bài dịch ngoài phạm vi và 568 mục furigana cũ còn dùng. Nhật hiện 331 câu; dịch vẫn 276/456 hợp lệ, còn 180 cặp thiếu/cũ.
+
+Canonical hiện 390 đơn vị đã biết = 128 covered_ai + 262 candidate/unknown; không còn 5 missing đã ghi rõ của đợt trước. Đóng thêm 6 trang thành 25 trang semantic/covered_ai, 31 trang rà trực quan, census đủ 117 trang. Đây gồm toàn bộ 22 trang đọc ban đầu và 3 trang bổ sung; chưa chứng minh đầy đủ toàn bộ 117 trang. Mẫu số mở, tỷ lệ null, wholeSourceKnowledgeCovered=false.
+
+Reader thật đã được dựng headless 72 lượt (3 bài × 12 ngôn ngữ × 2 trạng thái): nội dung/câu/đáp án hiển thị; giải thích chỉ hiện sau nộp; dùng furigana đúng revision. Kiểm state thật xác nhận tách revision và lưu bản ghi cũ trong archive. Adapter hình/theme/storage được cô lập; chưa kiểm layout/hình, Expo production hoặc thiết bị thật. Các gate nguồn, bảo toàn, cấu trúc, furigana, dịch, loader, state đều PASS. Native/domain/time=false. Bằng chứng source-v7-five-clauses-authoring.json, source-v7-five-clauses-review.json; check-five-clauses-v7.cjs và check-reader-five-clauses-v7.cjs. Điều phối lưu manifest; tác giả không commit/push.
+
+---
+
 # V6: planning06/07/service06 trọn12ngôn ngữ và đối chiếu nguồn — 02/11/2026
 
 Hoàn tất36cặp của3bài (20cặp fullmới,16cặp cũ được đối chiếu/sửa), toàn ngành245→276/456hợp lệ, còn180cặp thiếu/cũ. Có5cặp planning07 đã hợp lệ trước đó rồi tạmstale khi thêm câu nguồn, nên mức tăng ròng31không phải36. Food tự tác giảNE/MY6fullpairs; MFG tự tác giảTH/KM6fullpairs; Khách sạn tự tác giảHI/BN6full+TL2full và16cặp cũ. Không rà chéo ngữ nghĩa tác giả, tích hợp kiểm schema/IDs/revision/đáp án/bảo toàn.

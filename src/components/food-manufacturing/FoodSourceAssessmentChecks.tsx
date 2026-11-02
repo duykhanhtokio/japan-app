@@ -23,13 +23,16 @@ import additions55 from '@/data/food-manufacturing/source-closure55.json';
 import additions56 from '@/data/food-manufacturing/source-closure56.json';
 import additions57 from '@/data/food-manufacturing/source-closure57.json';
 import c58a099 from '@/data/food-manufacturing/source-closure58-upstream-a099.json';
+import c59f8119 from '@/data/food-manufacturing/source-closure59-f8119.json';
+import c60f8119 from '@/data/food-manufacturing/source-closure60-f8119.json';
+import c61f8119 from '@/data/food-manufacturing/source-closure61-f8119.json';
 import type {FoodManufacturingLesson} from '@/data/food-manufacturing';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 
 type RubyToken={text:string;reading?:string};
 type Translation={title:string;prompt:string;expectedPoints:string[];sourceHash:string};
 type RuntimeCheck={id:string;lessonId:string;lessonSourceHash:string;titleJa:string;promptJa:string;expectedPointsJa:string[];sourceHash:string;titleRuby:RubyToken[];promptRuby:RubyToken[];expectedPointsRuby:RubyToken[][];translations:Record<string,Translation>};
-const checks:RuntimeCheck[]=[...data.checks,...additions35.checks,...additions38.checks,...additions39.checks,...additions40.checks,...additions41.checks,...additions42.checks,...additions43.checks,...additions44.checks,...additions45.checks,...additions46.checks,...additions47.checks,...additions48.checks,...additions49.checks,...additions50.checks,...additions51.checks,...additions52.checks,...additions53.checks,...additions54.checks,...additions55.checks,...additions56.checks,...additions57.checks,...c58a099.checks];
+const checks:RuntimeCheck[]=[...data.checks,...additions35.checks,...additions38.checks,...additions39.checks,...additions40.checks,...additions41.checks,...additions42.checks,...additions43.checks,...additions44.checks,...additions45.checks,...additions46.checks,...additions47.checks,...additions48.checks,...additions49.checks,...additions50.checks,...additions51.checks,...additions52.checks,...additions53.checks,...additions54.checks,...additions55.checks,...additions56.checks,...additions57.checks,...c58a099.checks,...c59f8119.checks,...c60f8119.checks,...c61f8119.checks];
 function RubyLine({tokens,color,readingColor,heading=false}:{tokens:RubyToken[];color:string;readingColor:string;heading?:boolean}){
  return <View style={styles.line}>{tokens.map((token,i)=><View key={i} style={styles.word}><Text style={{color:readingColor,fontSize:10,lineHeight:14}}>{token.reading??' '}</Text><Text selectable style={{color,fontSize:heading?19:17,lineHeight:29,fontWeight:heading?'700':'400'}}>{token.text}</Text></View>)}</View>;
 }

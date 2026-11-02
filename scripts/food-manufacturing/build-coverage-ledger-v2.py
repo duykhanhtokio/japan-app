@@ -186,6 +186,8 @@ exec(compile((R/'scripts/food-manufacturing/apply-source55-57-ledger.py').read_t
 
 exec(compile((R/'scripts/food-manufacturing/apply-source58-upstream-a099-ledger.py').read_text(),'apply-source58-upstream-a099-ledger.py','exec'))
 
+exec(compile((R/'scripts/food-manufacturing/apply-source59-61-f8119-ledger.py').read_text(),'apply-source59-61-f8119-ledger.py','exec'))
+
 # Only the visually read chapter divider is excluded; all its extracted objects
 # are individually assigned a reason, not discarded by short-text heuristics.
 for e in regions['ssw2']['pages'][93]['elements']:
@@ -197,12 +199,12 @@ for key,doc in regions.items():
  path=O/f'food-{key}-regions.json.gz';path.write_bytes(gzip.compress((json.dumps(doc,ensure_ascii=False,separators=(',',':'))+'\n').encode(),mtime=0));filehash=sha(path.read_bytes());sid=doc['sourceId']
  sources.append({'sourceId':sid,'sha256':doc['sourceSha256'],'pdfPages':doc['pdfPages'],'aliases':[key], 'byteVerified':True,'verificationRef':RECEIPT})
  for p in doc['pages']:
-  n=p['pdfPage'];reviewed=key=='ssw2' and 92<=n<=106
+  n=p['pdfPage'];reviewed=key=='ssw2' and 92<=n<=110
   ids=[u['knowledgeId'] for u in units if any(r['sourceId']==sid and r['pdfPage']==n for r in u['sourceRefs'])]
   pages.append({'sourceId':sid,'pdfPage':n,'disposition':'navigation' if key=='ssw2' and n==94 else ('instructional' if reviewed else 'unclassified'),
     'exclusionReason':'Chapter divider/title and publication footer only; checked as text and page image.' if key=='ssw2' and n==94 else None,
-    'regionCensus':{'artifactPath':str(path.relative_to(R)),'sha256':filehash,'elementCount':len(p['elements']),'status':'visually_reviewed' if reviewed else 'extracted','visualReviewRef':BATCH3_RECEIPT if reviewed and n in [103,104,105,106] else (BATCH_RECEIPT if reviewed and n in [93,99,101,102] else (RECEIPT if reviewed else None))},
-    'semanticInventory':{'status':'excluded' if key=='ssw2' and n==94 else ('complete_ai' if key=='ssw2' and n in [93,99,101,103,104,105] else ('partial' if ids else 'pending')),'reviewRef':BATCH3_RECEIPT if reviewed and n in [102,103,104,105,106] else (BATCH_RECEIPT if reviewed and n in [93,99,101,103,104,105] else (RECEIPT if reviewed else None))},'knowledgeIds':ids})
+    'regionCensus':{'artifactPath':str(path.relative_to(R)),'sha256':filehash,'elementCount':len(p['elements']),'status':'visually_reviewed' if reviewed else 'extracted','visualReviewRef':BATCH4_RECEIPT if reviewed and n in [102,106,107,108,109,110] else (BATCH3_RECEIPT if reviewed and n in [103,104,105,106] else (BATCH_RECEIPT if reviewed and n in [93,99,101,102] else (RECEIPT if reviewed else None)))},
+    'semanticInventory':{'status':'excluded' if key=='ssw2' and n==94 else ('complete_ai' if key=='ssw2' and n in [93,99,101,102,103,104,105,106,107] else ('partial' if ids else 'pending')),'reviewRef':BATCH4_RECEIPT if reviewed and n in [102,106,107,108,109,110] else (BATCH3_RECEIPT if reviewed and n in [102,103,104,105,106] else (BATCH_RECEIPT if reviewed and n in [93,99,101,102,103,104,105,106,107] else (RECEIPT if reviewed else None)))},'knowledgeIds':ids})
 ledger={'schemaVersion':2,'sector':'food','baselineCommit':BASE,'sources':sources,'pages':pages,'knowledgeUnits':units,
  'denominator':{'status':'open','reviewNote':'251 pages and every extracted PDF object are inventoried, but semantic enumeration remains partial. Geometric elements and imported historical rows are not unique knowledge or an acceptance denominator.'},
  'wholeSourceKnowledgeCovered':False,'review':{'domainReviewed':False,'nativeReviewed':False,'physicalDeviceTested':False,'learnerDurationMeasured':False},

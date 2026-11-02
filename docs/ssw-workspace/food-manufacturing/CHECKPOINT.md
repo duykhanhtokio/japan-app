@@ -1,3 +1,13 @@
+# Source-first batch4 f8119 — 2026-11-02
+
+Đã tự đọc đầy đủ source102/106–108 và đối chiếu từng vùng; source102/106/107 không còn vùng chờ phân loại, đóng ở mức AI. Source108 còn phần稼働率 chưa phân rã; 109–110 mới đọc trực quan, chưa nghiệm thu ngữ nghĩa. Census 251 trang/88.031 đối tượng giữ nguyên, không lọc ruby/chú thích theo font hay từ khóa.
+
+Bổ sung ba nhóm `source-closure59/60/61-f8119`: phân biệt tốc độ riêng/toàn tuyến và nhánh chuẩn bị ngày sau; suy luận khối lượng tốt có điều kiện, mẫu số từng công đoạn/nhân tỷ lệ và không kết luận từ số lỗi; so sánh hai mẫu số và giá gạo phân bổ với điều kiện chi phí minh bạch. 3 bài/3 check/6 ý đáp án, JP + 12 locale, ruby đầy đủ; 2 hình tự vẽ số liệu độc lập. Không đổi 848 câu/96 ngày/ID tiến độ.
+
+Canonical: 155 records = 103 covered_ai + 8 alias + 44 candidate; tăng 10 covered gồm 1 candidate tự đọc và 9 objective mới, không cộng bản trùng. Hai công thức stage đã có bài/câu được ghi baseline present; đây là bổ sung chứng cứ đối chiếu, không phải kết luận app đã thiếu. 9 trang nội dung complete_ai + 1 trang phân cách excluded. Denominator vẫn mở, coverage percent null, chưa đủ toàn nguồn. Source100 sai nhãn đơn vị vẫn được giữ hồ sơ.
+
+Checks: source contract PASS; component SSR 78 views/6 negative; figure SSR 26/4 negative; 72 cặp dịch/18 ruby fields; hình/điều kiện/số học tự kiểm; 848 receipts, 96 ngày preservation PASS. Chưa nghiệm thu người bản ngữ/chuyên gia, phát âm, Expo production/thiết bị thật hay thời lượng thực học. Receipt/manifest trong `source-v2-batch4-20261102/`. Tiếp phần稼働率 và các trang còn mở sau persist.
+
 # Technical union of upstreama099 + local55–57 — 2026-11-02
 
 Preserved both app bodies:local55–57byte hashes unchanged;upstream55renamed to source-closure58-upstream-a099.json/food58-upstream-a099-* with c58a099 import and exact original translations/ruby. Canonical146records:93covered_ai/8duplicatealiases/45candidate;no extra covered count. Original9upstreamstates retained in historical provenance;whole-line uniqueness remains candidatepotentialDuplicate. Source geometry251p/88031objects unchanged;6instructionalpages+divider94 AI states retained,denominator open/null. Technical,104SSR/8negative,unique61section/27check IDs and96day preservation PASS. See `source-v2-merge-a099-20261102/REPORT.vi.md`/source-review/freeze-manifest. Root integration branch persistence required;worker did not mutate Gitindex/ref.
