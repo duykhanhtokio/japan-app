@@ -1,3 +1,15 @@
+# Đợt tiếp nối front06/07/08 và semantic nguồn — 02/11/2026
+
+Hoàn tất ba bài Nhật ổn định `hotel-front-06`, `hotel-front-07`, `hotel-front-08` đủ12 locale đúng revision. Nhật, câu/đáp án/ID và furigana hiện hành giữ nguyên; thêm bản dịch của các câu đã có, bổ sung điều kiện về lý do vắng mặt trong đoạn điện thoại. Không dùng thay revision đơn thuần: tám locale cũ được đọc đối chiếu và sửa56 bản câu cùng8 đoạn điều kiện; bốn locale còn lại được tác giả đầy đủ trực tiếp từ packet Nhật bởi điều phối, tự kiểm và bàn giao sidecar.
+
+Sổ chuẩn `../source-coverage-v2/hospitality.json` đã có13 trang đóng semantic/covered_ai sau phân loại từng vùng, 26 trang được đọc trực quan,91 đơn vị có nguồn–bài–đánh giá trực tiếp. Phát hiện riêng mục đích SNS gắn trao đổi khách với xây dựng thương hiệu chưa có trong380atom cũ: giữ đơn vị mới `HSP1-025-sns-brand-purpose` ở trạng thái partial, chưa chấp nhận câu chung về branding để đóng mục đích SNS. Tổng382 đơn vị đã ghi nhận vẫn là danh mục mở:91covered,290candidate,1partial; không coi382 là mẫu số cuối. Tất cả117trang vẫn có census16.381vùng, bao gồm chữ nhỏ/ruby/hình/vector/bảng/cell.
+
+13trang đóng:1号p5–8,p15,p24;2号p8–12,p20,p30. Có hồ sơ block/body, ruby, heading/navigation và hình/bảng giả do detector; giữ mọi vùng, loại vì ý nghĩa cụ thể. Đối chiếu thêm2号p16/p22 về tiếp nhận riêng, thông tin khách, giám sát chất lượng, chi phí/lợi nhuận/KPI và đồ thất lạc; chỉ nối câu cũ khi kiểm đúng năng lực. Trang còn vùng chưa giải quyết vẫn partial, không đóng theo số atom.
+
+Bằng chứng: `source-v3-page-closure-review.json`, `source-v3-open-gaps.json`, packet `source-v2-front678-translation-source.json`; checker `check-front678-v3.cjs` kiểm bảo toàn bài Nhật/đáp án, bản dịch cũ ngoài phần bổ sung và trọn36cặp khi dùng `--require-36`. Chưa có native/domain/device/duration acceptance; phiên bản mới vẫn translated_ai_unreviewed. Kết quả tích hợp36/36cặp PASS; toàn ngành173→209/456 hợp lệ, còn247cặp thiếu/cũ. Manifest/hash: `front678-v3-batch-manifest.json`; receipt `front678-v3-integration-evidence.json`. Chưa commit/push bởi tác giả, chờ điều phối lưu đợt.
+
+---
+
 # Cơ chế nguồn → app v2 và vá nội dung — 02/11/2026
 
 Sổ chuẩn duy nhất cho độ bao phủ nguồn hiện tại là `../source-coverage-v2/hospitality.json`, theo hợp đồng chung. Đã xác minh hash hai PDF 52+65 trang; census đủ117 trang với16.381 vùng (gồm chữ nhỏ, ruby, hình, vector, bảng/cell). Census hình học không được dùng để suy ra đã lấy đủ kiến thức. 380 atom cũ không phải mẫu số cuối: phát hiện thêm định nghĩa revenue management thành đơn vị381. 22 trang được đọc văn bản và ảnh trang mới,74 đơn vị tự kiểm AI có evidence đúng vùng nguồn, đoạn bài và câu đánh giá;307 đơn vị kế thừa còn candidate/unknown. Chưa trang nào đóng semantic inventory, mẫu số mở, tỷ lệ để null và wholeSourceKnowledgeCovered=false.

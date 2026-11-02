@@ -1427,7 +1427,7 @@
     },
     {
       "id": "hotel-front-06",
-      "sourceRevision": "b1e3d61ae9194878a91beda25e7aed206a9d2d38a3c9629925d6f149420f8733",
+      "sourceRevision": "6eb647c579bc1a5e6ff4ae4c9009ad287513cc6f434fea1f63ed7cb773636edc",
       "status": "translated_ai_unreviewed",
       "title": "Pag-aayos ng sabayang reservation at pagpapasa ng tawag",
       "reading": "よやくがかさなったときのちょうせいとでんわのひきつぎ",
@@ -1460,7 +1460,7 @@
         {
           "id": "hotel-front-06-s04",
           "title": "Pamamahala ng hold at tawag kapag wala ang responsable",
-          "body": "Kung matagal ang hold para sa transfer, bumalik sa kausap at ipaliwanag ang kalagayan ng pagsusuri. Kapag wala ang responsable, humingi ng paumanhin dahil hindi agad maikonekta. Sagutin ang kayang hawakan, ngunit huwag mangako sa bagay na responsable lang ang nakaaalam. Sabihin ang nasuring oras ng availability, itanong kung kailangan ng callback, at maikling itala ang contact at pakay. Layuning hindi paulit-ulit ang paliwanag ng tumatawag."
+          "body": "Kung matagal ang hold para sa transfer, bumalik sa kausap at ipaliwanag ang kalagayan ng pagsusuri. Kapag wala ang responsable, humingi ng paumanhin dahil hindi agad maikonekta. Sagutin ang kayang hawakan, ngunit huwag mangako sa bagay na responsable lang ang nakaaalam. Sabihin ang nasuring oras ng availability, itanong kung kailangan ng callback, at maikling itala ang contact at pakay. Layuning hindi paulit-ulit ang paliwanag ng tumatawag.\n\nSa usaping ang responsable lamang ang makasasagot, bukod sa pagsabing wala siya, ipaliwanag ang dahilan ng pagliban at oras na maaari siyang tumugon hangga’t natiyak ang mga ito. Huwag gumawa ng dahilan gaya ng “nasa pulong” kung hindi alam; tiyakin kung anong impormasyon ang maaaring sabihin ng pasilidad. Pagkatapos ay itanong ang nais na callback, contact at pakay. Ang pagpapaliwanag ng pagliban ay hindi paglalahad ng detalyadong pribadong kalagayan ng empleyado."
         }
       ],
       "terms": [
@@ -1585,6 +1585,70 @@
             "Tiyak na may pagkain"
           ],
           "explanation": "Alamin ang saklaw at kondisyon ng bawat produkto."
+        },
+        {
+          "id": "hotel-front-06-q06",
+          "prompt": "Sino ang humahawak sa reservation ng panunuluyan sa telepono o internet?",
+          "choices": [
+            "Reservation staff",
+            "Pangpahid ng mantikilya",
+            "Prutas na panghimagas",
+            "FL ratio"
+          ],
+          "answerIndex": 0,
+          "explanation": "Iugnay ang pangalan ng tungkulin sa pagpapaliwanag ng presyo, kuwarto at package.",
+          "knowledgeIds": [
+            "hotel-front-06-k0301-h2p011",
+            "hotel-front-06-k0302-h2p011"
+          ]
+        },
+        {
+          "id": "hotel-front-06-q07",
+          "prompt": "Responsable sa reservation lamang ang makasasagot ngunit wala siya at hindi alam ang dahilan. Ano ang nararapat?",
+          "choices": [
+            "Hulaan at sabihing nasa pulong",
+            "Humingi ng paumanhin dahil hindi agad maikonekta, tiyakin ang maibabahaging dahilan at oras ng pagtugon, at itanong ang callback, contact at pakay",
+            "Ibaba ang telepono nang hindi tinatanong ang pakay",
+            "Siyasatin at ikuwento ang kaniyang pribadong buhay"
+          ],
+          "answerIndex": 1,
+          "explanation": "Inilalarawan ng sanggunian ang pagsabi ng dahilan at oras ng pagtugon bago tiyakin ang callback, contact at pakay. Huwag gumawa ng dahilan o magbahagi ng labis na pribadong detalye.",
+          "knowledgeIds": [
+            "hotel-source-detail-hf2-011-07"
+          ]
+        },
+        {
+          "id": "hotel-front-06-q08",
+          "prompt": "Alin ang pares para sa sadyang pagtanggap nang higit sa kuwarto dahil sa inaasahang kanselasyon, at dobleng reservation sa isang kuwarto dahil sa management error?",
+          "choices": [
+            "Una ay walk-in, ikalawa ay magkakasunod na gabi",
+            "Una ay overbooking, ikalawa ay double booking",
+            "Una ay upsell, ikalawa ay deposito",
+            "Pareho silang laging nangangahulugang kulang ang paglilinis"
+          ],
+          "answerIndex": 1,
+          "explanation": "Pinaghihiwalay ng sanggunian ang sales decision na overbooking at pagdoble dahil sa system o management error. Suriin ang sanhi at termino nang hiwalay sa tugon kapag hindi matanggap ang bisita.",
+          "knowledgeIds": [
+            "hotel-front-06-k0201-h2p010",
+            "hotel-front-06-k0202-h2p010"
+          ]
+        },
+        {
+          "id": "hotel-front-06-q09",
+          "prompt": "Wala ang responsable ngunit kaya mong sagutin nang tama ang pakay. Alin ang naaayon sa aralin?",
+          "choices": [
+            "Walang ibang hahawak kahit alam ang sagot",
+            "Magsalita nang tiyak kahit hindi alam",
+            "Hawakan ang kayang sagutin at ihiwalay ang para lamang sa responsable para sa pagtiyak at handover",
+            "Sabihin lamang na wala siya at ibaba ang telepono"
+          ],
+          "answerIndex": 2,
+          "explanation": "Ipagkaiba ang kayang hawakan at ang nangangailangan sa responsable. Hindi ibig sabihin ng pagliban na tatanggihan ang lahat.",
+          "knowledgeIds": [
+            "hotel-front-06-k0401-h2p011",
+            "hotel-front-06-k0402-h2p011",
+            "hotel-front-06-k0403-h2p011"
+          ]
         }
       ],
       "illustration": {
@@ -1748,6 +1812,22 @@
           ],
           "answerIndex": 0,
           "explanation": "May kaugnayan ang talaan sa pagsisiyasat ng nakahahawang sakit at pag-iwas sa labag sa batas na gawain. Kailangang pangalagaan ang personal na impormasyong nakatala rito."
+        },
+        {
+          "id": "hotel-front-07-q07",
+          "prompt": "Ano ang dapat isaalang-alang sa pag-check in ng VIP?",
+          "choices": [
+            "Huwag talakayin ang detalyadong iskedyul sa harap ng iba at magbigay ng indibidwal na pagtanggap kung kailangan",
+            "Ibrodkast ang buong iskedyul",
+            "Ibigay ang impormasyon nang walang pagtiyak sa nagsasabing kaibigan",
+            "Hindi kailangan ang pahintulot sa dagdag na bayad para sa mahalagang bisita"
+          ],
+          "answerIndex": 0,
+          "explanation": "Mahalaga ang privacy sa pagtanggap ng VIP. Hiwalay na tiyakin ang indibidwal na pagtanggap, pahintulot sa may bayad na pagbabago at pagbabahagi sa ikatlong panig.",
+          "knowledgeIds": [
+            "hotel-front-07-k0301-h2p016",
+            "hotel-front-07-k0302-h2p016"
+          ]
         }
       ],
       "illustration": {
@@ -1757,7 +1837,7 @@
         "alt": "Sa reception, tumatanggap ng paliwanag sa kagamitan ang bisitang naka-wheelchair. Tinitiyak ang pahintulot sa bayad at inililihim ang impormasyon ng kuwarto sa ibang tao.",
         "keyObjectiveId": "hotel-front-07-o1"
       },
-      "sourceRevision": "158143051731c0b75ba4624bca2365e22f32ffbdcc778bea37c8305337afbf8f",
+      "sourceRevision": "120d38ef938009d07ae7301663b9f0fae646ea5f3c7f0883cce07d3d10e0774c",
       "status": "translated_ai_unreviewed"
     },
     {
@@ -1896,6 +1976,40 @@
           ],
           "answerIndex": 0,
           "explanation": "Mga batayan sa pamamahala ang KPI. Kailangan ding malaman ang mga gastos at tubo."
+        },
+        {
+          "id": "hotel-front-08-q06",
+          "prompt": "May nakitang relo sa kuwarto. Paano ito dapat ipasa?",
+          "choices": [
+            "Ibigay nang walang pagtiyak sa sinumang nag-aangkin",
+            "Itago ayon sa pamamaraan, itala ang kalagayan ng pagkakita at empleyado, at ipasa sa namamahala",
+            "Gumawa ng patakarang dapat itapon ngayong araw",
+            "Ilathala sa labas ang talaan ng bisita upang hanapin ang may-ari"
+          ],
+          "answerIndex": 1,
+          "explanation": "Sundin ang pamamaraan ng pag-iingat at pagtatala. Kung hindi malinaw ang pagkilala o pag-uulat, itanong sa namamahala; huwag gumawa ng pambansang deadline na wala sa sanggunian.",
+          "knowledgeIds": [
+            "hotel-front-08-k0301-h2p022",
+            "hotel-front-08-k0302-h1p009",
+            "hotel-front-08-k0302-h2p013"
+          ]
+        },
+        {
+          "id": "hotel-front-08-q07",
+          "prompt": "Alin ang mga halimbawang gastusin na kailangang maunawaan sa front-desk management ayon sa sanggunian?",
+          "choices": [
+            "Occupancy, average rate at bilang ng available na kuwarto lamang",
+            "Paggawa, gamit na nauubos at komisyon sa pagbebenta ng kuwarto",
+            "Benta sa panunuluyan, tindahan at pagkain lamang",
+            "Pangalan, oras ng dating at numero ng kuwarto lamang"
+          ],
+          "answerIndex": 1,
+          "explanation": "Gastusin ang paggawa, gamit na nauubos at sales commission. Ipagkaiba ang mga ito sa revenue, performance indicators at impormasyon ng bisita.",
+          "knowledgeIds": [
+            "hotel-front-08-k0201-h2p022",
+            "hotel-front-08-k0202-h2p022",
+            "hotel-front-08-k0203-h2p022"
+          ]
         }
       ],
       "illustration": {
@@ -1905,7 +2019,7 @@
         "alt": "Diagram ng tatlong bahagi ng pagsusuri ng namamahala at ng relong inilalagay sa kahong pang-ingat, may tala ng lugar at oras ng pagkakita, bago ipasa sa may pananagutan.",
         "keyObjectiveId": "hotel-front-08-o1"
       },
-      "sourceRevision": "1888d8cb551e254f9523ec07b768682552f6445aa3b776a98cdfa32b7e6a20ff",
+      "sourceRevision": "814482fe57a99a3628d22c01816c5b2442c8dd7196319471cfc47ea3208ca279",
       "status": "translated_ai_unreviewed"
     }
   ]

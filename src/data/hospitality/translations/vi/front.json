@@ -1427,7 +1427,7 @@
     },
     {
       "id": "hotel-front-06",
-      "sourceRevision": "b1e3d61ae9194878a91beda25e7aed206a9d2d38a3c9629925d6f149420f8733",
+      "sourceRevision": "6eb647c579bc1a5e6ff4ae4c9009ad287513cc6f434fea1f63ed7cb773636edc",
       "status": "translated_ai_unreviewed",
       "title": "Điều phối khi trùng đặt phòng và bàn giao điện thoại",
       "reading": "よやくがかさなったときのちょうせいとでんわのひきつぎ",
@@ -1460,7 +1460,7 @@
         {
           "id": "hotel-front-06-s04",
           "title": "Quản lý giữ máy và người phụ trách vắng mặt",
-          "body": "Nếu giữ máy lâu để chuyển cho nhân viên khác, cần quay lại cuộc gọi và báo tình hình. Khi người phụ trách vắng, xin lỗi vì chưa nối ngay được. Nếu tự xử lý được thì tiếp nhận; nếu chỉ người đó mới xác nhận được, không trả lời khẳng định thay. Cung cấp thông tin đã kiểm tra như khi nào có thể trả lời, hỏi có cần gọi lại không, ghi gọn liên hệ và nội dung. Mục tiêu bàn giao là khách không phải lặp đi lặp lại cùng một giải thích."
+          "body": "Nếu giữ máy lâu để chuyển cho nhân viên khác, cần quay lại cuộc gọi và báo tình hình. Khi người phụ trách vắng, xin lỗi vì chưa nối ngay được. Nếu tự xử lý được thì tiếp nhận; nếu chỉ người đó mới xác nhận được, không trả lời khẳng định thay. Cung cấp thông tin đã kiểm tra như khi nào có thể trả lời, hỏi có cần gọi lại không, ghi gọn liên hệ và nội dung. Mục tiêu bàn giao là khách không phải lặp đi lặp lại cùng một giải thích.\n\nVới việc chỉ người phụ trách mới xử lý được, ngoài thông báo họ vắng mặt, cần giải thích lý do vắng và thời điểm có thể trả lời trong phạm vi đã xác nhận. Không tự bịa “đang họp” khi chưa biết lý do; kiểm tra thông tin cơ sở được phép thông báo. Sau đó hỏi khách có muốn được gọi lại không, xác nhận liên hệ và nội dung. Giải thích lý do vắng không đồng nghĩa kể chi tiết đời tư của nhân viên."
         }
       ],
       "terms": [
@@ -1585,6 +1585,70 @@
             "hotel-front-06-k0301-h2p011",
             "hotel-front-06-k0302-h2p011"
           ]
+        },
+        {
+          "id": "hotel-front-06-q06",
+          "prompt": "Ai phụ trách đặt lưu trú qua điện thoại hoặc internet?",
+          "choices": [
+            "Nhân viên đặt phòng",
+            "Dao phết bơ",
+            "Món trái cây",
+            "Tỷ lệ FL"
+          ],
+          "answerIndex": 0,
+          "explanation": "Liên hệ tên vị trí đặt phòng với việc hướng dẫn giá, phòng và gói dịch vụ.",
+          "knowledgeIds": [
+            "hotel-front-06-k0301-h2p011",
+            "hotel-front-06-k0302-h2p011"
+          ]
+        },
+        {
+          "id": "hotel-front-06-q07",
+          "prompt": "Chỉ nhân viên đặt phòng mới trả lời được việc này nhưng họ đang vắng. Bạn chưa biết lý do. Nên làm gì?",
+          "choices": [
+            "Đoán rằng họ đang họp rồi thông báo",
+            "Xin lỗi vì chưa nối ngay được, kiểm tra lý do vắng được phép thông báo và giờ có thể trả lời, hỏi nhu cầu gọi lại, liên hệ và nội dung",
+            "Vì họ vắng nên cúp máy mà không hỏi nội dung",
+            "Tìm hiểu và kể chi tiết đời tư của họ"
+          ],
+          "answerIndex": 1,
+          "explanation": "Nguồn nêu trình tự thông báo lý do vắng và thời điểm có thể xử lý rồi xác nhận gọi lại, liên hệ và nội dung. Không tự tạo lý do hoặc tiết lộ quá mức chuyện riêng.",
+          "knowledgeIds": [
+            "hotel-source-detail-hf2-011-07"
+          ]
+        },
+        {
+          "id": "hotel-front-06-q08",
+          "prompt": "Cặp nào đúng cho việc chủ động nhận quá số phòng dự kiến có hủy, và trùng cùng phòng do lỗi quản lý?",
+          "choices": [
+            "Trước là walk-in, sau là ở nhiều đêm",
+            "Trước là overbooking, sau là double booking",
+            "Trước là upsell, sau là tiền cọc",
+            "Cả hai luôn có nghĩa là phòng chưa được dọn đủ"
+          ],
+          "answerIndex": 1,
+          "explanation": "Nguồn phân biệt nhận quá phòng trong kinh doanh với đặt trùng do lỗi hệ thống hoặc quản lý. Cần kiểm tra nguyên nhân và thuật ngữ riêng với xử lý khi không thể nhận khách.",
+          "knowledgeIds": [
+            "hotel-front-06-k0201-h2p010",
+            "hotel-front-06-k0202-h2p010"
+          ]
+        },
+        {
+          "id": "hotel-front-06-q09",
+          "prompt": "Người phụ trách vắng nhưng bạn có thể trả lời chính xác. Cách nào phù hợp bài?",
+          "choices": [
+            "Người khác tuyệt đối không xử lý, kể cả biết rõ",
+            "Khẳng định tự tin cả điều chưa biết",
+            "Tiếp nhận phần tự xử lý được; phần cần đúng người phụ trách thì tách ra xác minh và bàn giao",
+            "Chỉ nói họ vắng rồi cúp máy"
+          ],
+          "answerIndex": 2,
+          "explanation": "Phân biệt việc bản thân xử lý được với việc cần đúng người phụ trách. Vắng mặt không có nghĩa từ chối tất cả.",
+          "knowledgeIds": [
+            "hotel-front-06-k0401-h2p011",
+            "hotel-front-06-k0402-h2p011",
+            "hotel-front-06-k0403-h2p011"
+          ]
         }
       ],
       "illustration": {
@@ -1597,7 +1661,7 @@
     },
     {
       "id": "hotel-front-07",
-      "sourceRevision": "158143051731c0b75ba4624bca2365e22f32ffbdcc778bea37c8305337afbf8f",
+      "sourceRevision": "120d38ef938009d07ae7301663b9f0fae646ea5f3c7f0883cce07d3d10e0774c",
       "status": "translated_ai_unreviewed",
       "title": "Hỗ trợ riêng khi nhận phòng và thông tin của khách",
       "reading": "こべつのとうちゃくたいおうとおきゃくさまじょうほう",
@@ -1776,6 +1840,22 @@
             "hotel-front-07-k0102-h2p016",
             "hotel-front-07-k0103-h2p016"
           ]
+        },
+        {
+          "id": "hotel-front-07-q07",
+          "prompt": "Cần lưu ý gì khi làm thủ tục cho khách VIP?",
+          "choices": [
+            "Không nói lịch trình chi tiết trước người khác; tiếp nhận riêng khi cần",
+            "Phát toàn bộ lịch trình qua loa",
+            "Giao thông tin không xác minh cho người tự xưng bạn",
+            "Khách quan trọng thì không cần đồng ý khoản phí thêm"
+          ],
+          "answerIndex": 0,
+          "explanation": "Riêng tư quan trọng khi đón VIP. Tiếp nhận riêng, đồng ý thay đổi có phí và cung cấp thông tin cho người thứ ba phải được kiểm tra riêng.",
+          "knowledgeIds": [
+            "hotel-front-07-k0301-h2p016",
+            "hotel-front-07-k0302-h2p016"
+          ]
         }
       ],
       "illustration": {
@@ -1788,7 +1868,7 @@
     },
     {
       "id": "hotel-front-08",
-      "sourceRevision": "1888d8cb551e254f9523ec07b768682552f6445aa3b776a98cdfa32b7e6a20ff",
+      "sourceRevision": "814482fe57a99a3628d22c01816c5b2442c8dd7196319471cfc47ea3208ca279",
       "status": "translated_ai_unreviewed",
       "title": "Quản lý lễ tân và bàn giao đồ thất lạc",
       "reading": "ふろんとかんりとわすれもののひきつぎ",
@@ -1940,6 +2020,40 @@
           ],
           "answerIndex": 0,
           "explanation": "KPI là dữ liệu quản lý, vẫn phải nắm chi phí và lợi nhuận.",
+          "knowledgeIds": [
+            "hotel-front-08-k0201-h2p022",
+            "hotel-front-08-k0202-h2p022",
+            "hotel-front-08-k0203-h2p022"
+          ]
+        },
+        {
+          "id": "hotel-front-08-q06",
+          "prompt": "Tìm thấy đồng hồ đeo tay trong phòng. Cách bàn giao nào phù hợp?",
+          "choices": [
+            "Giao ngay không kiểm tra cho người tự nhận",
+            "Bảo quản theo quy trình cơ sở, ghi hoàn cảnh phát hiện và người phụ trách, bàn giao người có trách nhiệm",
+            "Tự đặt hạn bắt buộc vứt trong ngày",
+            "Công khai sổ khách để tìm chủ"
+          ],
+          "answerIndex": 1,
+          "explanation": "Theo quy trình bảo quản và ghi chép của cơ sở. Chưa rõ xác minh người nhận hay điều kiện báo thì hỏi người phụ trách, không tự tạo hạn chung cả nước khi nguồn không nêu.",
+          "knowledgeIds": [
+            "hotel-front-08-k0301-h2p022",
+            "hotel-front-08-k0302-h1p009",
+            "hotel-front-08-k0302-h2p013"
+          ]
+        },
+        {
+          "id": "hotel-front-08-q07",
+          "prompt": "Nhóm ví dụ chi phí nào quản lý lễ tân cần nắm theo nguồn?",
+          "choices": [
+            "Chỉ tỷ lệ lấp phòng, giá bình quân và số phòng sẵn bán",
+            "Nhân công, vật tư tiêu hao, hoa hồng bán phòng",
+            "Chỉ doanh thu phòng, cửa hàng và bữa ăn",
+            "Chỉ tên khách, giờ đến, số phòng"
+          ],
+          "answerIndex": 1,
+          "explanation": "Nhân công, vật tư tiêu hao và hoa hồng bán là chi phí. Không nhầm với doanh thu, chỉ số hoạt động hoặc thông tin khách.",
           "knowledgeIds": [
             "hotel-front-08-k0201-h2p022",
             "hotel-front-08-k0202-h2p022",

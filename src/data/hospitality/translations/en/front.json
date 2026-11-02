@@ -1427,7 +1427,7 @@
     },
     {
       "id": "hotel-front-06",
-      "sourceRevision": "b1e3d61ae9194878a91beda25e7aed206a9d2d38a3c9629925d6f149420f8733",
+      "sourceRevision": "6eb647c579bc1a5e6ff4ae4c9009ad287513cc6f434fea1f63ed7cb773636edc",
       "status": "translated_ai_unreviewed",
       "title": "Resolving overlapping bookings and handing over calls",
       "reading": "よやくがかさなったときのちょうせいとでんわのひきつぎ",
@@ -1460,7 +1460,7 @@
         {
           "id": "hotel-front-06-s04",
           "title": "Manage holds and unavailable staff",
-          "body": "If a call transfer requires a long hold, return to the line and explain the situation. If the responsible employee is unavailable, apologise that you cannot connect the caller immediately. Handle the matter yourself if it is within your ability, but do not assert an answer that only that employee can confirm. Give confirmed information such as when the employee can respond, ask whether a callback is needed, and briefly record the contact details and reason for calling. Aim for a handover that avoids making the caller repeat everything."
+          "body": "If a call transfer requires a long hold, return to the line and explain the situation. If the responsible employee is unavailable, apologise that you cannot connect the caller immediately. Handle the matter yourself if it is within your ability, but do not assert an answer that only that employee can confirm. Give confirmed information such as when the employee can respond, ask whether a callback is needed, and briefly record the contact details and reason for calling. Aim for a handover that avoids making the caller repeat everything.\n\nFor matters that only the responsible employee can handle, explain the confirmed reason for their absence and the time they can respond, as well as stating that they are unavailable. Do not invent a reason such as “in a meeting” when you do not know. Check what information the property may disclose. Then ask whether a callback is wanted, and record the contact details and matter. Explaining an absence does not mean sharing detailed private circumstances of the employee."
         }
       ],
       "terms": [
@@ -1585,6 +1585,70 @@
             "hotel-front-06-k0301-h2p011",
             "hotel-front-06-k0302-h2p011"
           ]
+        },
+        {
+          "id": "hotel-front-06-q06",
+          "prompt": "Which employee handles accommodation reservations by telephone or online?",
+          "choices": [
+            "Reservation staff",
+            "Butter spreader",
+            "Fruit course",
+            "FL ratio"
+          ],
+          "answerIndex": 0,
+          "explanation": "Connect the name of the reservation role with explaining prices, rooms and packages.",
+          "knowledgeIds": [
+            "hotel-front-06-k0301-h2p011",
+            "hotel-front-06-k0302-h2p011"
+          ]
+        },
+        {
+          "id": "hotel-front-06-q07",
+          "prompt": "A matter can only be answered by the reservation employee, who is absent. You do not know why. What should you do?",
+          "choices": [
+            "Guess that they are in a meeting",
+            "Apologise for not connecting immediately, confirm what may be said about the absence and response time, and ask about a callback, contact details and the matter",
+            "Hang up without asking the matter",
+            "Investigate and describe their private life"
+          ],
+          "answerIndex": 1,
+          "explanation": "The source describes explaining the absence and available time before arranging a callback and recording the matter. Do not invent reasons or disclose excessive private information.",
+          "knowledgeIds": [
+            "hotel-source-detail-hf2-011-07"
+          ]
+        },
+        {
+          "id": "hotel-front-06-q08",
+          "prompt": "Which pair correctly describes intentional excess reservations anticipating cancellations, and overlapping reservations for one room caused by a management error?",
+          "choices": [
+            "Walk-in, then consecutive nights",
+            "Overbooking, then double booking",
+            "Upselling, then deposit",
+            "Both always mean insufficient room cleaning"
+          ],
+          "answerIndex": 1,
+          "explanation": "The source distinguishes a sales decision to overbook from duplication caused by system or management errors. Check causes and terminology separately from the response when a guest cannot be accommodated.",
+          "knowledgeIds": [
+            "hotel-front-06-k0201-h2p010",
+            "hotel-front-06-k0202-h2p010"
+          ]
+        },
+        {
+          "id": "hotel-front-06-q09",
+          "prompt": "The responsible employee is absent, but you can answer the matter accurately. Which approach follows the lesson?",
+          "choices": [
+            "Never handle anything when the responsible employee is absent",
+            "Give confident answers even when you do not know",
+            "Handle what is within your ability and separate matters requiring the responsible employee for confirmation and handover",
+            "Say only that they are absent, then hang up"
+          ],
+          "answerIndex": 2,
+          "explanation": "Distinguish what you can handle from matters requiring that employee. Absence does not mean refusing every request.",
+          "knowledgeIds": [
+            "hotel-front-06-k0401-h2p011",
+            "hotel-front-06-k0402-h2p011",
+            "hotel-front-06-k0403-h2p011"
+          ]
         }
       ],
       "illustration": {
@@ -1597,7 +1661,7 @@
     },
     {
       "id": "hotel-front-07",
-      "sourceRevision": "158143051731c0b75ba4624bca2365e22f32ffbdcc778bea37c8305337afbf8f",
+      "sourceRevision": "120d38ef938009d07ae7301663b9f0fae646ea5f3c7f0883cce07d3d10e0774c",
       "status": "translated_ai_unreviewed",
       "title": "Individual arrival needs and guest information",
       "reading": "こべつのとうちゃくたいおうとおきゃくさまじょうほう",
@@ -1776,6 +1840,22 @@
             "hotel-front-07-k0102-h2p016",
             "hotel-front-07-k0103-h2p016"
           ]
+        },
+        {
+          "id": "hotel-front-07-q07",
+          "prompt": "What should you consider when checking in a VIP?",
+          "choices": [
+            "Avoid discussing detailed plans in front of others and provide individual reception when necessary",
+            "Announce the entire itinerary over the public-address system",
+            "Give information to anyone claiming to be a friend without checking",
+            "Consent to additional charges is unnecessary for important guests"
+          ],
+          "answerIndex": 0,
+          "explanation": "Privacy matters for VIP reception. Individual handling, consent to paid changes and disclosure to third parties require separate checks.",
+          "knowledgeIds": [
+            "hotel-front-07-k0301-h2p016",
+            "hotel-front-07-k0302-h2p016"
+          ]
         }
       ],
       "illustration": {
@@ -1788,7 +1868,7 @@
     },
     {
       "id": "hotel-front-08",
-      "sourceRevision": "1888d8cb551e254f9523ec07b768682552f6445aa3b776a98cdfa32b7e6a20ff",
+      "sourceRevision": "814482fe57a99a3628d22c01816c5b2442c8dd7196319471cfc47ea3208ca279",
       "status": "translated_ai_unreviewed",
       "title": "Front-desk management and handing over lost property",
       "reading": "ふろんとかんりとわすれもののひきつぎ",
@@ -1940,6 +2020,40 @@
           ],
           "answerIndex": 0,
           "explanation": "KPIs inform management, while costs and profit also need to be understood.",
+          "knowledgeIds": [
+            "hotel-front-08-k0201-h2p022",
+            "hotel-front-08-k0202-h2p022",
+            "hotel-front-08-k0203-h2p022"
+          ]
+        },
+        {
+          "id": "hotel-front-08-q06",
+          "prompt": "A wristwatch was found in a guest room. How should you hand it over?",
+          "choices": [
+            "Give it without checking to whoever claims it",
+            "Store it under property procedures, record the finding circumstances and employee, and hand it to the responsible person",
+            "Invent a rule that it must be discarded today",
+            "Publish the guest register externally to find the owner"
+          ],
+          "answerIndex": 1,
+          "explanation": "Follow the property’s storage and recording procedures. If identity checks or reporting conditions are unclear, confirm with the responsible person; do not invent a nationwide deadline absent from the source.",
+          "knowledgeIds": [
+            "hotel-front-08-k0301-h2p022",
+            "hotel-front-08-k0302-h1p009",
+            "hotel-front-08-k0302-h2p013"
+          ]
+        },
+        {
+          "id": "hotel-front-08-q07",
+          "prompt": "Which combination gives examples of costs that front-desk management should understand, consistent with the source?",
+          "choices": [
+            "Only room occupancy, average rate and available rooms",
+            "Labour, consumables and room-sales commissions",
+            "Only accommodation, shop and meal sales",
+            "Only the guest name, arrival time and room number"
+          ],
+          "answerIndex": 1,
+          "explanation": "Labour, consumables and sales commissions are costs. Distinguish them from revenue, performance indicators and guest information.",
           "knowledgeIds": [
             "hotel-front-08-k0201-h2p022",
             "hotel-front-08-k0202-h2p022",

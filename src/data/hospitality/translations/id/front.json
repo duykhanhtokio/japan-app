@@ -1427,7 +1427,7 @@
     },
     {
       "id": "hotel-front-06",
-      "sourceRevision": "b1e3d61ae9194878a91beda25e7aed206a9d2d38a3c9629925d6f149420f8733",
+      "sourceRevision": "6eb647c579bc1a5e6ff4ae4c9009ad287513cc6f434fea1f63ed7cb773636edc",
       "status": "translated_ai_unreviewed",
       "title": "Mengatasi benturan reservasi dan meneruskan telepon",
       "reading": "よやくがかさなったときのちょうせいとでんわのひきつぎ",
@@ -1460,7 +1460,7 @@
         {
           "id": "hotel-front-06-s04",
           "title": "Mengelola penahanan telepon dan ketidakhadiran petugas",
-          "body": "Jika penahanan telepon untuk meneruskan ke staf lain menjadi lama, kembali ke telepon dan jelaskan status pemeriksaan. Jika petugas tidak ada, minta maaf karena belum dapat menyambungkan. Tangani urusan yang mampu Anda jawab, tetapi jangan memberi kepastian atas hal yang hanya diketahui petugas tersebut. Sampaikan informasi yang telah dipastikan seperti waktu tersedia, tanyakan apakah perlu menelepon kembali, dan catat kontak serta urusan secara ringkas. Usahakan serah terima yang tidak membuat penelepon menjelaskan hal sama berulang kali."
+          "body": "Jika penahanan telepon untuk meneruskan ke staf lain menjadi lama, kembali ke telepon dan jelaskan status pemeriksaan. Jika petugas tidak ada, minta maaf karena belum dapat menyambungkan. Tangani urusan yang mampu Anda jawab, tetapi jangan memberi kepastian atas hal yang hanya diketahui petugas tersebut. Sampaikan informasi yang telah dipastikan seperti waktu tersedia, tanyakan apakah perlu menelepon kembali, dan catat kontak serta urusan secara ringkas. Usahakan serah terima yang tidak membuat penelepon menjelaskan hal sama berulang kali.\n\nUntuk urusan yang hanya dapat ditangani petugas tersebut, selain menyatakan ketidakhadirannya, jelaskan alasan dan waktu ia dapat merespons sejauh sudah dipastikan. Jangan mengarang “sedang rapat” jika tidak tahu alasannya; pastikan informasi yang boleh disampaikan oleh fasilitas. Kemudian tanyakan keinginan untuk dihubungi kembali, kontak dan urusannya. Menjelaskan ketidakhadiran bukan berarti menceritakan kehidupan pribadi pegawai secara terperinci."
         }
       ],
       "terms": [
@@ -1585,6 +1585,70 @@
             "Mengatakan makanan pasti termasuk"
           ],
           "explanation": "Periksa lingkup penggunaan dan ketentuan setiap produk."
+        },
+        {
+          "id": "hotel-front-06-q06",
+          "prompt": "Siapa yang menangani reservasi penginapan melalui telepon atau internet?",
+          "choices": [
+            "Petugas reservasi",
+            "Pisau pengoles mentega",
+            "Hidangan buah",
+            "Rasio FL"
+          ],
+          "answerIndex": 0,
+          "explanation": "Hubungkan nama peran reservasi dengan penjelasan tarif, kamar dan paket.",
+          "knowledgeIds": [
+            "hotel-front-06-k0301-h2p011",
+            "hotel-front-06-k0302-h2p011"
+          ]
+        },
+        {
+          "id": "hotel-front-06-q07",
+          "prompt": "Hanya petugas reservasi yang dapat menjawab urusan ini, tetapi ia tidak ada. Alasannya belum diketahui. Apa yang tepat?",
+          "choices": [
+            "Menebak ia sedang rapat lalu mengatakannya",
+            "Meminta maaf belum dapat menyambungkan, memastikan alasan yang boleh disampaikan dan waktu merespons, lalu menanyakan panggilan balik, kontak serta urusan",
+            "Menutup telepon tanpa menanyakan urusan",
+            "Menyelidiki dan menjelaskan kehidupan pribadinya"
+          ],
+          "answerIndex": 1,
+          "explanation": "Sumber menjelaskan alasan ketidakhadiran dan waktu respons sebelum memastikan panggilan balik, kontak dan urusan. Jangan mengarang alasan atau membagikan urusan pribadi berlebihan.",
+          "knowledgeIds": [
+            "hotel-source-detail-hf2-011-07"
+          ]
+        },
+        {
+          "id": "hotel-front-06-q08",
+          "prompt": "Pasangan mana menjelaskan reservasi berlebih yang disengaja dengan perkiraan pembatalan, lalu reservasi ganda satu kamar akibat kesalahan pengelolaan?",
+          "choices": [
+            "Walk-in lalu menginap beberapa malam",
+            "Overbooking lalu double booking",
+            "Upselling lalu deposit",
+            "Keduanya selalu berarti kamar kurang dibersihkan"
+          ],
+          "answerIndex": 1,
+          "explanation": "Sumber membedakan kelebihan reservasi sebagai keputusan penjualan dari penggandaan akibat kesalahan sistem atau pengelolaan. Periksa sebab dan istilah terpisah dari penanganan saat tamu tidak dapat diterima.",
+          "knowledgeIds": [
+            "hotel-front-06-k0201-h2p010",
+            "hotel-front-06-k0202-h2p010"
+          ]
+        },
+        {
+          "id": "hotel-front-06-q09",
+          "prompt": "Petugas tidak ada, tetapi Anda mampu menjawab urusan dengan tepat. Pendekatan mana sesuai pelajaran?",
+          "choices": [
+            "Selain petugas itu tidak boleh menangani apa pun meski tahu",
+            "Menjawab yakin meskipun tidak tahu",
+            "Menangani yang mampu dijawab dan memisahkan hal yang memerlukan petugas itu untuk konfirmasi serta serah terima",
+            "Hanya mengatakan tidak ada lalu menutup telepon"
+          ],
+          "answerIndex": 2,
+          "explanation": "Bedakan urusan yang mampu ditangani sendiri dari yang memerlukan petugas tersebut. Ketidakhadiran bukan berarti semua harus ditolak.",
+          "knowledgeIds": [
+            "hotel-front-06-k0401-h2p011",
+            "hotel-front-06-k0402-h2p011",
+            "hotel-front-06-k0403-h2p011"
+          ]
         }
       ],
       "illustration": {
@@ -1597,7 +1661,7 @@
     },
     {
       "id": "hotel-front-07",
-      "sourceRevision": "158143051731c0b75ba4624bca2365e22f32ffbdcc778bea37c8305337afbf8f",
+      "sourceRevision": "120d38ef938009d07ae7301663b9f0fae646ea5f3c7f0883cce07d3d10e0774c",
       "status": "translated_ai_unreviewed",
       "title": "Pelayanan kedatangan individual dan informasi tamu",
       "reading": "こべつのとうちゃくたいおうとおきゃくさまじょうほう",
@@ -1776,6 +1840,22 @@
             "Daftar tidak perlu dikelola setelah dibuat"
           ],
           "explanation": "Daftar tamu terkait penyelidikan infeksi dan pencegahan tindakan melanggar hukum; informasi pribadinya harus dikelola dengan tepat."
+        },
+        {
+          "id": "hotel-front-07-q07",
+          "prompt": "Apa yang perlu diperhatikan saat menerima tamu VIP?",
+          "choices": [
+            "Tidak membicarakan jadwal rinci di depan orang lain dan menerima secara individual bila perlu",
+            "Mengumumkan seluruh jadwal lewat pengeras suara",
+            "Memberi informasi tanpa konfirmasi kepada orang yang mengaku teman",
+            "Tamu penting tidak memerlukan persetujuan biaya tambahan"
+          ],
+          "answerIndex": 0,
+          "explanation": "Privasi penting dalam penerimaan VIP. Penanganan individual, persetujuan perubahan berbayar dan pemberian informasi ke pihak ketiga diperiksa terpisah.",
+          "knowledgeIds": [
+            "hotel-front-07-k0301-h2p016",
+            "hotel-front-07-k0302-h2p016"
+          ]
         }
       ],
       "illustration": {
@@ -1788,7 +1868,7 @@
     },
     {
       "id": "hotel-front-08",
-      "sourceRevision": "1888d8cb551e254f9523ec07b768682552f6445aa3b776a98cdfa32b7e6a20ff",
+      "sourceRevision": "814482fe57a99a3628d22c01816c5b2442c8dd7196319471cfc47ea3208ca279",
       "status": "translated_ai_unreviewed",
       "title": "Pengelolaan resepsionis dan serah terima barang tertinggal",
       "reading": "ふろんとかんりとわすれもののひきつぎ",
@@ -1945,6 +2025,40 @@
             "Jika ada penjualan, laba pasti sama jumlahnya"
           ],
           "explanation": "KPI merupakan bahan pengelolaan; pemahaman biaya dan laba juga diperlukan."
+        },
+        {
+          "id": "hotel-front-08-q06",
+          "prompt": "Jam tangan ditemukan di kamar. Bagaimana serah terima yang tepat?",
+          "choices": [
+            "Memberikannya tanpa pemeriksaan kepada siapa pun yang mengaku pemilik",
+            "Menyimpan sesuai prosedur fasilitas, mencatat keadaan penemuan dan petugas, lalu menyerahkan ke penanggung jawab",
+            "Mengarang batas harus dibuang hari ini",
+            "Mempublikasikan daftar tamu untuk mencari pemilik"
+          ],
+          "answerIndex": 1,
+          "explanation": "Ikuti prosedur penyimpanan dan pencatatan fasilitas. Jika pemeriksaan identitas atau syarat pelaporan belum jelas, tanyakan penanggung jawab; jangan mengarang tenggat nasional yang tidak ada di sumber.",
+          "knowledgeIds": [
+            "hotel-front-08-k0301-h2p022",
+            "hotel-front-08-k0302-h1p009",
+            "hotel-front-08-k0302-h2p013"
+          ]
+        },
+        {
+          "id": "hotel-front-08-q07",
+          "prompt": "Kelompok contoh biaya mana sesuai sumber untuk dipahami pengelola resepsionis?",
+          "choices": [
+            "Hanya okupansi, tarif rata-rata dan jumlah kamar tersedia",
+            "Tenaga kerja, barang habis pakai dan komisi penjualan kamar",
+            "Hanya penjualan penginapan, toko dan makanan",
+            "Hanya nama tamu, waktu tiba dan nomor kamar"
+          ],
+          "answerIndex": 1,
+          "explanation": "Tenaga kerja, barang habis pakai dan komisi penjualan adalah biaya. Bedakan dari pendapatan, indikator kinerja dan informasi tamu.",
+          "knowledgeIds": [
+            "hotel-front-08-k0201-h2p022",
+            "hotel-front-08-k0202-h2p022",
+            "hotel-front-08-k0203-h2p022"
+          ]
         }
       ],
       "illustration": {
