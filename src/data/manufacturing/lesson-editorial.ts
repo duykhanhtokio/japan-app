@@ -3,6 +3,7 @@ import {manufacturingBooleanParagraph} from './boolean-editorial';
 
 type Clarification={lessonId:string;paragraphId:string;sourceHash:string;wording:Record<string,{before:string;after:string}>};
 let clarification:Clarification|null=null;
+let dimensionClarification:Clarification|null=null;
 
 /** Source-bound wording correction; frozen banks and learner/session IDs stay intact.
  * Both Japanese source and exact prior target wording must match. No locale fallback.
@@ -10,8 +11,11 @@ let clarification:Clarification|null=null;
  */
 export function manufacturingLessonParagraph(lesson:ManufacturingLesson,paragraphId:string,locale:string,text:string|undefined):string|undefined {
  if(lesson.id==='mfg1-electrical-l075')return manufacturingBooleanParagraph(lesson,paragraphId,locale,text);
- if(lesson.id!=='mfg1-mechanical-lesson-076'||paragraphId!=='section-3')return text;
- const patch=clarification??(clarification=require('./lesson-editorial.json') as Clarification);
+ const dimension=lesson.id==='mfg1-mechanical-lesson-046'&&paragraphId==='section-2';
+ if(!dimension&&(lesson.id!=='mfg1-mechanical-lesson-076'||paragraphId!=='section-3'))return text;
+ const patch=dimension
+  ? dimensionClarification??(dimensionClarification=require('./dimension-editorial.json') as Clarification)
+  : clarification??(clarification=require('./lesson-editorial.json') as Clarification);
  const original=lesson.paragraphs.find(p=>p.id===paragraphId);
  const target=Object.prototype.hasOwnProperty.call(patch.wording,locale)?patch.wording[locale]:undefined;
  if(patch.lessonId!==lesson.id||patch.paragraphId!==paragraphId||patch.sourceHash!==lesson.sourceHash

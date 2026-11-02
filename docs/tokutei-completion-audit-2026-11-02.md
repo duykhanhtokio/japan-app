@@ -24,3 +24,19 @@ Never treat missing evidence as zero or VERIFIED. Do not silently overwrite orig
 - Japanese editorial approval precedes translations; all 12 languages checked.
 - Furigana/audio/media verified; each lesson meets agreed duration and illustration standard.
 - Expo bundle, iOS and Android smoke tests passed on the integration branch.
+
+## Six-lane reconciliation of current evidence
+
+Baseline inspected: recovery/jlpt-n3-n1 at dfd0223d45a934eb33a29197f66f3b2e248b7b26. The historical queues above remain the requested scope, not an assertion that every historical deficit is still open. None of the following counts constitutes whole-sector acceptance.
+
+| Sector | Current evidence | Remaining acceptance gap |
+|---|---|---|
+| Agriculture | Final source-resolution records account for all 55 historical items. Actual bank contains 20 forms/800 questions, including the 16 added forms/640 questions; structural and current lesson/hash links checked. | Full semantic review, native/domain review and measured learner duration. Soil moisture 35–55% remains excluded as a numeric target because its denominator is unresolved. |
+| Manufacturing | Three original PDFs recovered and hash-checked, totaling 574 pages. Fifteen recognition groups delivered. | Inventory is not atomic closure: current summary records zero whole-page knowledge closures. Source p94 and p97 contain concrete teaching gaps identified by visual comparison. Real equipment identification remains unaccepted. |
+| Food manufacturing | Newer source-closure records already report the 76-page visual review. Current scoped checks passed 96 lessons/848 questions/12 locales, 848 current question receipts, 292 source decisions, and translation adapter acceptance/rejection checks. | Exhaustive decomposition and full source coverage remain explicitly false; current validators and independent semantic/device/duration checks are required. Do not reopen the old visual queue solely from its historical count. |
+| Restaurant | Source-closure31 accounts for 639 units/1,476 facts, including 198 added questions. | Two blocked facts and one image gap remain; 397 facts lack a dedicated question. Native/audio/device/duration acceptance remains pending. Checkpoint30 status must be reconciled without discarding its history. |
+| Hospitality | Feature-branch records inventory all 117 pages, with 38 days, 379 evidenced source ideas and 321 questions. | Full paragraph/table/figure closure is false. Feature-branch translation status has 22/456 current pairs, 217 stale and 217 missing; compare integrated files before authoring. |
+| Construction | Current intake contains 17 files; corresponding 1号 theory/practical reuse for 2号 is publisher-authorized. Six bank files/1,148 question objects passed scoped structural checks. Daily remediation records images for 440 days. | Complete source-atom coverage, including the leader source whose read-status covers only PDF pages7–16. Authorized reuse does not certify exhaustive coverage. Native/domain/device/duration acceptance is pending. |
+| Care | Direct inspection of week06–26 question files found 367 structurally valid questions with four choices, four rationales and valid answer indices. | Final scope resolution supersedes the six historical pending records: two source errors, two exclusions and two replacements; pendingBlockingSourceDetails is zero. This editorial closure does not prove exhaustive coverage; native/domain/device/duration checks remain pending. |
+
+Source evidence is in each sector's existing source-resolution/source-closure and daily-remediation ledgers. Mechanical checks establish structural properties only. Feature-branch observations must not silently replace newer integrated evidence. No simulator or real-device acceptance was performed by this reconciliation.

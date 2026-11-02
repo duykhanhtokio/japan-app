@@ -1,3 +1,13 @@
+# Đối chiếu hẹp nguồn — ngày 02/11/2026
+
+Đã mở lại PDF đúng hash và xem trực quan trang 33 của 1号. Tách thêm ý `HS1-033-12` về おもてなし và sự hài lòng khi lưu trú, vốn đã được dạy tại `hotel-service-03-notice` nhưng chưa có mục nguồn độc lập. Sổ chuẩn hiện có 380 ý được ghi nhận; số câu giữ 321. Đây là bổ sung kế toán nguồn, không phải tăng nội dung học.
+
+Ý mới chỉ được ghi `contextual_ai_checked`: các câu hỏi về thao tác tiếp khách gần đó không được tính thành kiểm tra trực tiếp nguyên tắc おもてなし. Chưa nghiệm thu toàn trang 33 hoặc toàn bộ 117 trang. Không sửa Nhật/runtime nên không thay revision, bản dịch hoặc furigana. Bằng chứng khối nguồn/hash tại `source-accounting-20261102-evidence.json`.
+
+Bản dịch vẫn 22/456 cặp hợp lệ; 217 cũ và 217 thiếu. Nghiệm thu chuyên môn/bản ngữ, đo thời lượng và thiết bị thật vẫn chưa được xác nhận.
+
+---
+
 # Rà ngữ nghĩa và bảng/hình — ngày 01/11/2026
 
 Mốc hiện tại: 38 ngày học, 379 ý nguồn có bằng chứng, 321 câu hỏi. **Chưa đóng độ bao phủ toàn bộ từng đoạn của 117 trang.**

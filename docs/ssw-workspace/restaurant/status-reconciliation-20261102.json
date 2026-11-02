@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-02",
+  "status": "METADATA_RECONCILIATION_PASS",
+  "scope": "Compared committed metadata only; no fresh source visual/domain/native/device/audio or duration certification.",
+  "hierarchyUnits": 639,
+  "decisionCounts": {
+    "structural_aggregate": 113,
+    "covered_after_additions": 289,
+    "covered_existing": 235,
+    "blocked": 2
+  },
+  "facts": 1476,
+  "factsWithoutDedicatedQuestion": 397,
+  "locales": 12,
+  "itemsPerLocale": 488,
+  "durationRecords": 120,
+  "complete": false,
+  "inputSha256": {
+    "source-closure31/knowledge-matrix.json": "07eac5029ae0f46e69ffdf462870a23b2f8b22d200150802f27c944c0cd1c5a7",
+    "source-closure31/evidence-qa.json": "71dbdbdf98714ecb944b847a69ac92cf66c700aa970cc80aff51e98da22c9565",
+    "source-closure31/integration-review.json": "a1b771a36c59e6d85d45cca6837b7be6c3903f4437536ba3d28096f5133e6ceb",
+    "source-closure31/translation-final-validation.json": "535b2a6100a1319986c6da25c6857df2a0e6fdf64b6d160ae3d91ae59cc88429",
+    "source-closure31/acceptance/learning-duration-observations.json": "5756e0e1d6419a126c9ece514a23615d902ee16be3e2244539e46baad5d34280"
+  },
+  "currentValidation": [
+    {
+      "command": "python scripts/restaurant/check-source31-targets.py",
+      "exitCode": 0,
+      "result": "PASS:488canonicalItems/5856localeItems/33096visibleFields; all12 runtime packs match reviewed targets"
+    },
+    {
+      "command": "node scripts/restaurant/check-daily-learning.cjs",
+      "exitCode": 1,
+      "result": "Environment/sparse checkout blocker: missing src/components/restaurant/RestaurantDailyLearning.tsx; no current daily renderer acceptance claimed."
+    },
+    {
+      "command": "git diff --check -- docs/ssw-workspace/restaurant/closure-status.json docs/ssw-workspace/restaurant/status-reconciliation-20261102.json",
+      "exitCode": 0
+    }
+  ]
+}
