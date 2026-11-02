@@ -90,6 +90,7 @@ def build(source_dir):
  import importlib.util
  spec=importlib.util.spec_from_file_location('restaurant_v2_reviews',ROOT/'scripts/restaurant/apply-source-coverage-v2-reviews.py');mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
  if (OUT/'restaurant-review-20261102.json').exists():result=mod.apply(result)
+ spec=importlib.util.spec_from_file_location('restaurant_v2_batches',ROOT/'scripts/restaurant/apply-source-coverage-v2-batches.py');mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod);result=mod.apply(result)
  return result
 
 def main():

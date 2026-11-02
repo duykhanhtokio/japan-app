@@ -58,6 +58,11 @@ def main():
   for a in extension['additions']:
    if a['shard'] not in selected:continue
    assert a['id'] not in additions;additions[a['id']]=a
+  for binding in extension.get('factBindings',[]):
+   fid=binding['factId']
+   if fid not in facts:continue
+   assert all(id in additions for id in binding['additionIds'])
+   facts[fid]={**facts[fid],'additionIds':sorted(set(facts[fid].get('additionIds',[])+binding['additionIds']))}
  # Root assessment-only extension leaves the six authors' frozen packets unchanged.
  assessment_path=DOC/'integration/assessment-delta.json'
  if assessment_path.is_file() and not args.export_only:
