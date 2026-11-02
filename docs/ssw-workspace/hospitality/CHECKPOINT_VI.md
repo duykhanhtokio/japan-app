@@ -1,3 +1,17 @@
+# Khôi phục checkpoint và hoàn thiện restaurant01/02/03 — 02/11/2026, v8
+
+Tiếp tục từ baseline `d03ead72b51c3ef5888f687e00d860ec7ba6dbe5` trên `recovery/jlpt-n3-n1`; baseline đã đạt WORK PERSISTENCE PASS. Khôi phục checkout chọn lọc sau lỗi tải toàn bộ repository, bảo toàn mã nguồn và nội dung Nhật. Sáu tác giả phụ trách hai ngôn ngữ mỗi người, tự kiểm ba bài liên tiếp, không rà chéo ngữ nghĩa.
+
+Ba bài `hotel-restaurant-01/02/03` nay đủ36/36cặp đúngrevision: bổ sung18bản đầy đủ mới và sửa18bản cũ bằng nội dung dịch thực tế, không chỉ thayhash. Kiểm3108trường dịch và bổ sung288bản câu hỏi; giữ thứ tự/ID/đáp án/knowledgeIds/cách đọc. Bổ sung các đoạn còn thiếu về Hospitality, nụ cười và chỉnh trang cá nhân trong bài01; tác giả phồn thể sửa cách dùng theo ngữ cảnh và ghi rõ thay đổi câu cũ. Tất cả `translated_ai_unreviewed`.
+
+Kiểm tích hợp `node scripts/hospitality/check-continuation-v8.cjs` PASS:36cặp/3108trường,54cặp nhà hàng ngoài phạm vi giữ nguyên, các nhóm dịch khác và bản Nhật/catalog/sổ nguồn chuẩn giữ nguyên. Sáu receipt `continuation-v8-<nhóm ngôn ngữ>.json` có hash từng cặp. Sai hash bàn giao phồn thể03 được tác giả tái hiện là do kiểm tra dùng bản sao nông làm thay đổi mảng trong bộ nhớ; đã tự kiểm lại lựa chọn/giải thích, sửa receipt theo byte cuối, không đổi nội dung dịch để vượt kiểm tra.
+
+`check-translations.cjs` và loader thật `check-translation-loaders.cjs` PASS348/456cặp, từ chối108cặp thiếu/cũ, revision cũ vàlocale không hỗ trợ. `daily-workload.json` chỉ cập nhật trạng thái dịch của ba ngày liên quan; không đổi khối lượng, mục tiêu, hình hoặc cờ nghiệm thu. `git diff --check` PASS. Bằng chứng tổng hợp: `continuation-v8-integration.json`.
+
+Còn108cặp thiếu/cũ: planning06; restaurant04/05/08; safety02/04/06/07/08, mỗi bài12ngôn ngữ. Bao phủ nguồn giữ nguyên100covered_ai/383known, mẫu số mở; riêngABC `HR2-055-06` vẫnpartial. Chưa nghiệm thu bản ngữ/chuyên môn, thiết bị thật, Expo/native hoặc thời lượng thực học. Môi trường hiện tại không có `adb`/`xcrun`; kiểm loader không thay cho thử điện thoại thật. Đợt hoàn chỉnh do điều phối commit/push và xác minh từ xa; chỉ log WORK PERSISTENCE PASS sau commit mới là bằng chứng lưu đợt này.
+
+---
+
 # Ba bài nhà hàng khách sạn và đối chiếu nguồn quản lý — 02/11/2026, v7
 
 Hoàn tất `hotel-restaurant-06/07/09` đủ36/36cặp đúngrevision,18bản đầyđủ mới và18bản cũ được bổsung thật. Toàn ngành276→312/456cặp hợp lệ (+36),còn144thiếu/cũ;2532trường dịch được kiểm cấu trúc. Tác giả khách sạn tự rà và bổsung sáu locale cũ,soạnHI/BN6fullpairs; các tác giả hỗtrợ tự soạn/tựkiểmTH,KM,NE,MYmỗi người3fullpairs. Không rà chéo ngữnghĩa; mọi bản `translated_ai_unreviewed`.
