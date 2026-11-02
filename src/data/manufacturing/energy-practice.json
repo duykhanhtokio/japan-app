@@ -1,0 +1,1633 @@
+{
+  "schemaVersion": 1,
+  "id": "mfg1-electrical-energy-supplement",
+  "revision": "mfg-energy-20261102-v1",
+  "titleJa": "電力と電力量：区間ごとの計算（8問）",
+  "lessonPatch": {
+    "lessonId": "mfg1-electrical-l068",
+    "paragraphId": "section-2",
+    "sourceHash": "37fa285ec2bb91c45010b17187dc0689d772b24bab1a1b4937db97f1daca2601",
+    "wording": {
+      "ja": {
+        "before": "直流抵抗ではP=VI=I²R=V²/Rで電力Wを求めます。電力量は電力と時間の積でWhなどになります。12V、60ΩならI=0.2A、P=2.4Wです。30分では1.2Whで、WとWhは別の量です。",
+        "after": "直流抵抗ではP=VI=I²R=V²/Rで電力Wを求めます。電力量は電力と時間の積でWhなどになります。12V、60ΩならI=0.2A、P=2.4Wです。30分では1.2Whで、WとWhは別の量です。\n\n電力が途中で変わる場合は、区間ごとに電力量を求めて足します。次は計算だけの架空の直流モデルで、実機の運転指示ではありません。\n運転区間：一定の18 V、0.5 Aを20分間\n待機区間：一定の3 Wを40分間\nほかの区間や消費は含めません。運転電力は18×0.5＝9 W、時間は20/60＝1/3 hなので3 Whです。待機は40/60＝2/3 hより2 Wh、合計5 Wh＝0.005 kWhになります。Wをそのまま足すのでなく、各区間の時間を掛けてからWhを足します。\n全体は1時間なので平均電力は5 Wh÷1 h＝5 Wです。最大の9 Wと平均の5 Wを区別します。同じ条件を2回繰り返すなら電力量は10 Whです。待機の時間が不明なら合計電力量も確定できません。時間を分のままhの式へ入れず、単位と計算に含めた範囲を残します。料金、効率、交流の力率や部品の適合は、この紙上計算から推定しません。"
+      },
+      "en": {
+        "before": "For a DC resistor, P=VI=I²R=V²/R gives power in W. Energy is power multiplied by time, in Wh or similar units. At 12 V and 60 Ω, I=0.2 A and P=2.4 W; over 30 minutes this is 1.2 Wh. W and Wh are different quantities.",
+        "after": "For a DC resistor, P=VI=I²R=V²/R gives power in W. Energy is power multiplied by time, in Wh or similar units. At 12 V and 60 Ω, I=0.2 A and P=2.4 W; over 30 minutes this is 1.2 Wh. W and Wh are different quantities.\n\nWhen power changes, calculate energy for each interval and add the results. This is a fictional DC calculation model, not an instruction for operating equipment.\nActive interval: constant 18 V and 0.5 A for 20 minutes\nStandby interval: constant 3 W for 40 minutes\nNo other interval or consumption is included. Active power is 18×0.5=9 W; 20/60=1/3 h gives 3 Wh. Standby lasts 40/60=2/3 h and uses 2 Wh. Total energy is 5 Wh=0.005 kWh. Multiply by each interval’s duration before adding Wh; do not just add W.\nThe whole cycle is 1 hour, so average power is 5 Wh/1 h=5 W, distinct from the maximum 9 W. Two identical cycles use 10 Wh. If standby duration is unknown, total energy is unknown too. Convert minutes to hours and record units and scope. Do not infer tariffs, efficiency, AC power factor or component suitability."
+      },
+      "vi": {
+        "before": "Điện trở một chiều có P=VI=I²R=V²/R, công suất đơn vị W. Điện năng bằng công suất nhân thời gian, dùng Wh chẳng hạn. Với 12 V, 60 Ω: I=0,2 A, P=2,4 W; trong 30 phút là 1,2 Wh. W và Wh là hai đại lượng khác.",
+        "after": "Điện trở một chiều có P=VI=I²R=V²/R, công suất đơn vị W. Điện năng bằng công suất nhân thời gian, dùng Wh chẳng hạn. Với 12 V, 60 Ω: I=0,2 A, P=2,4 W; trong 30 phút là 1,2 Wh. W và Wh là hai đại lượng khác.\n\nKhi công suất thay đổi, tính điện năng từng khoảng rồi cộng lại. Đây là mô hình tính toán điện một chiều giả định, không phải chỉ dẫn vận hành thiết bị.\nKhoảng hoạt động: 18 V và 0,5 A không đổi trong 20 phút\nKhoảng chờ: 3 W không đổi trong 40 phút\nKhông tính khoảng hay tiêu thụ nào khác. Công suất hoạt động là 18×0,5=9 W; 20/60=1/3 h nên điện năng 3 Wh. Chờ 40/60=2/3 h tiêu thụ 2 Wh; tổng 5 Wh=0,005 kWh. Phải nhân với thời gian từng khoảng rồi cộng Wh, không chỉ cộng các số W.\nTổng thời gian là 1 giờ nên công suất trung bình 5 Wh/1 h=5 W, khác mức lớn nhất 9 W. Lặp hai chu kỳ giống nhau dùng 10 Wh. Chưa biết thời gian chờ thì chưa xác định tổng điện năng. Đổi phút sang giờ, giữ đơn vị và phạm vi tính. Không suy ra giá điện, hiệu suất, hệ số công suất xoay chiều hay khả năng sử dụng linh kiện."
+      },
+      "id": {
+        "before": "ResistorDC: P=VI=I²R=V²/R dalam W. Energi adalah daya×waktu, misalnyaWh.12 V,60Ω memberi 0.2 A,2.4 W; 30 menit 1.2 Wh. W/Whberbeda besaran.",
+        "after": "ResistorDC: P=VI=I²R=V²/R dalam W. Energi adalah daya×waktu, misalnyaWh.12 V,60Ω memberi 0.2 A,2.4 W; 30 menit 1.2 Wh. W/Whberbeda besaran.\n\nJika daya berubah, hitung energi setiap interval lalu jumlahkan. Ini model hitungan DC fiktif, bukan petunjuk pengoperasian alat.\nInterval aktif: tetap 18 V dan 0,5 A selama 20 menit\nInterval siaga: tetap 3 W selama 40 menit\nTidak ada interval atau konsumsi lain. Daya aktif 18×0,5=9 W; 20/60=1/3 h menghasilkan 3 Wh. Siaga 40/60=2/3 h menghasilkan 2 Wh, total 5 Wh=0,005 kWh. Kalikan durasi tiap interval sebelum menjumlahkan Wh, bukan sekadar menjumlahkan W.\nSatu siklus berlangsung 1 jam, jadi daya rata-rata 5 Wh/1 h=5 W, berbeda dari maksimum 9 W. Dua siklus identik memakai 10 Wh. Jika durasi siaga tidak diketahui, energi total belum pasti. Ubah menit ke jam dan catat satuan serta lingkup. Jangan simpulkan tarif, efisiensi, faktor daya AC atau kecocokan komponen."
+      },
+      "zh-CN": {
+        "before": "直流电阻P=VI=I²R=V²/R求W；电能是功率乘时间，可用Wh。12V、60Ω时I=0.2A、P=2.4W；30分钟1.2Wh。W与Wh是不同量。",
+        "after": "直流电阻P=VI=I²R=V²/R求W；电能是功率乘时间，可用Wh。12V、60Ω时I=0.2A、P=2.4W；30分钟1.2Wh。W与Wh是不同量。\n\n功率随时间变化时，应分段计算电能再相加。以下是假设的直流计算模型，不是设备运行指令。\n工作段：恒定18 V、0.5 A，持续20分钟\n待机段：恒定3 W，持续40分钟\n不计其他时段或消耗。工作功率18×0.5=9 W，20/60=1/3 h，电能3 Wh。待机40/60=2/3 h，电能2 Wh；合计5 Wh=0.005 kWh。先乘各段时间，再相加Wh，不能只相加W。\n全周期1小时，平均功率5 Wh/1 h=5 W，与最大功率9 W不同。相同条件重复两次为10 Wh。待机时间未知时，总电能也不能确定。分钟应换算成小时，并保留单位和计算范围。不由此推断电价、效率、交流功率因数或元件适用性。"
+      },
+      "zh-TW": {
+        "before": "直流電阻可用P=VI=I²R=V²/R求功率W。電能為功率乘時間，以Wh等表示。12V、60Ω時I=0.2A，P=2.4W；使用30分鐘為1.2Wh。W與Wh是不同物理量。",
+        "after": "直流電阻可用P=VI=I²R=V²/R求功率W。電能為功率乘時間，以Wh等表示。12V、60Ω時I=0.2A，P=2.4W；使用30分鐘為1.2Wh。W與Wh是不同物理量。\n\n功率隨時間變化時，應分段計算電能再相加。以下是假設的直流計算模型，不是設備運轉指令。\n工作段：恆定18 V、0.5 A，持續20分鐘\n待機段：恆定3 W，持續40分鐘\n不計其他時段或消耗。工作功率18×0.5=9 W，20/60=1/3 h，電能3 Wh。待機40/60=2/3 h，電能2 Wh；合計5 Wh=0.005 kWh。先乘各段時間，再相加Wh，不能只相加W。\n全週期1小時，平均功率5 Wh/1 h=5 W，與最大功率9 W不同。相同條件重複兩次為10 Wh。待機時間未知時，總電能也不能確定。分鐘應換算成小時，並保留單位和計算範圍。不由此推斷電價、效率、交流功率因數或元件適用性。"
+      },
+      "hi": {
+        "before": "DC प्रतिरोध P =VI =I²R =V²/R, W। ऊर्जा शक्ति × समय Wh।12 V,60 Ω में0.2 A,2.4 W और30 मिनट1.2 Wh। दोनों अलग।",
+        "after": "DC प्रतिरोध P =VI =I²R =V²/R, W। ऊर्जा शक्ति × समय Wh।12 V,60 Ω में0.2 A,2.4 W और30 मिनट1.2 Wh। दोनों अलग।\n\nशक्ति बदलने पर प्रत्येक समय-अंतराल की ऊर्जा निकालकर जोड़ें। यह काल्पनिक DC गणना मॉडल है, उपकरण चलाने का निर्देश नहीं।\nसक्रिय अंतराल: स्थिर 18 V और 0.5 A, 20 मिनट\nप्रतीक्षा अंतराल: स्थिर 3 W, 40 मिनट\nअन्य समय या खपत शामिल नहीं है। सक्रिय शक्ति 18×0.5=9 W; 20/60=1/3 h से ऊर्जा 3 Wh। प्रतीक्षा 40/60=2/3 h से 2 Wh; कुल 5 Wh=0.005 kWh। पहले हर अंतराल की अवधि से गुणा करें, फिर Wh जोड़ें; केवल W न जोड़ें।\nपूरा चक्र 1 घंटा है, इसलिए औसत शक्ति 5 Wh/1 h=5 W है, अधिकतम 9 W से अलग। दो समान चक्रों में 10 Wh लगते हैं। प्रतीक्षा की अवधि अज्ञात हो तो कुल ऊर्जा तय नहीं होती। मिनट को घंटे में बदलें और इकाई व दायरा लिखें। इससे शुल्क, दक्षता, AC पावर फैक्टर या पुर्जे की उपयुक्तता न निकालें।"
+      },
+      "bn": {
+        "before": "DC রোধে P=VI=I²R=V²/R শক্তিহার W; সময়ের গুণে শক্তি Wh। 12 V,60 Ω-তে I=0.2 A,P=2.4 W; 30 মিনিটে 1.2 Wh। W/Wh আলাদা।",
+        "after": "DC রোধে P=VI=I²R=V²/R শক্তিহার W; সময়ের গুণে শক্তি Wh। 12 V,60 Ω-তে I=0.2 A,P=2.4 W; 30 মিনিটে 1.2 Wh। W/Wh আলাদা।\n\nক্ষমতা বদলালে প্রতিটি সময়খণ্ডের শক্তি হিসাব করে যোগ করুন। এটি কাল্পনিক DC গণনা, যন্ত্র চালানোর নির্দেশ নয়।\nসক্রিয় সময়: স্থির 18 V ও 0.5 A, 20 মিনিট\nঅপেক্ষার সময়: স্থির 3 W, 40 মিনিট\nঅন্য সময় বা খরচ নেই। সক্রিয় ক্ষমতা 18×0.5=9 W; 20/60=1/3 h থেকে শক্তি 3 Wh। অপেক্ষা 40/60=2/3 h থেকে 2 Wh; মোট 5 Wh=0.005 kWh। আগে প্রতিটি সময়খণ্ডের সময় দিয়ে গুণ করুন, তারপর Wh যোগ করুন; শুধু W যোগ নয়।\nপুরো চক্র 1 ঘণ্টা, তাই গড় ক্ষমতা 5 Wh/1 h=5 W, সর্বোচ্চ 9 W থেকে আলাদা। একই চক্র দুবার হলে 10 Wh। অপেক্ষার সময় অজানা হলে মোট শক্তিও অনির্দিষ্ট। মিনিটকে ঘণ্টায় বদলে একক ও পরিসর লিখুন। এ থেকে মূল্যহার, দক্ষতা, AC পাওয়ার ফ্যাক্টর বা যন্ত্রাংশের উপযুক্ততা ধরে নেবেন না।"
+      },
+      "ne": {
+        "before": "DC प्रतिरोधमा P=VI=I²R=V²/R बाट शक्ति W निकालिन्छ। विद्युत् ऊर्जा शक्ति र समयको गुणनफल हो र Wh आदिमा व्यक्त हुन्छ। 12V र 60Ω मा I=0.2A र P=2.4W हुन्छ। 30 मिनेटमा 1.2Wh हुन्छ। W र Wh फरक परिमाण हुन्।",
+        "after": "DC प्रतिरोधमा P=VI=I²R=V²/R बाट शक्ति W निकालिन्छ। विद्युत् ऊर्जा शक्ति र समयको गुणनफल हो र Wh आदिमा व्यक्त हुन्छ। 12V र 60Ω मा I=0.2A र P=2.4W हुन्छ। 30 मिनेटमा 1.2Wh हुन्छ। W र Wh फरक परिमाण हुन्।\n\nशक्ति फेरिँदा हरेक समयखण्डको ऊर्जा निकालेर जोड्नुहोस्। यो काल्पनिक DC गणना हो, उपकरण चलाउने निर्देशन होइन।\nसक्रिय खण्ड: स्थिर 18 V र 0.5 A, 20 मिनेट\nप्रतीक्षा खण्ड: स्थिर 3 W, 40 मिनेट\nअन्य समय वा खपत समावेश छैन। सक्रिय शक्ति 18×0.5=9 W; 20/60=1/3 h बाट ऊर्जा 3 Wh। प्रतीक्षा 40/60=2/3 h बाट 2 Wh; जम्मा 5 Wh=0.005 kWh। पहिले हरेक खण्डको अवधिले गुणा गरी Wh जोड्नुहोस्; W मात्र नजोड्नुहोस्।\nपूरा चक्र 1 घण्टा भएकाले औसत शक्ति 5 Wh/1 h=5 W हुन्छ, अधिकतम 9 W भन्दा फरक। समान चक्र दुईपटक हुँदा 10 Wh हुन्छ। प्रतीक्षा अवधि अज्ञात भए कुल ऊर्जा निश्चित हुँदैन। मिनेटलाई घण्टामा बदल्नुहोस् र एकाइ तथा दायरा लेख्नुहोस्। यसबाट शुल्क, दक्षता, AC पावर फ्याक्टर वा पुर्जाको उपयुक्तता ननिकाल्नुहोस्।"
+      },
+      "my": {
+        "before": "DC ခုခံပစ္စည်းအတွက် P=VI=I²R=V²/R ဖြင့် ပါဝါ W ကို ရသည်။ လျှပ်စစ်စွမ်းအင်သည် ပါဝါနှင့် အချိန်မြှောက်ခြင်းဖြစ်၍ Wh စသည်ဖြင့် ဖော်ပြသည်။ 12V၊ 60Ω လျှင် I=0.2A၊ P=2.4W ဖြစ်သည်။ မိနစ် 30 တွင် 1.2Wh ဖြစ်သည်။ W နှင့် Wh သည် မတူသောပမာဏဖြစ်သည်။",
+        "after": "DC ခုခံပစ္စည်းအတွက် P=VI=I²R=V²/R ဖြင့် ပါဝါ W ကို ရသည်။ လျှပ်စစ်စွမ်းအင်သည် ပါဝါနှင့် အချိန်မြှောက်ခြင်းဖြစ်၍ Wh စသည်ဖြင့် ဖော်ပြသည်။ 12V၊ 60Ω လျှင် I=0.2A၊ P=2.4W ဖြစ်သည်။ မိနစ် 30 တွင် 1.2Wh ဖြစ်သည်။ W နှင့် Wh သည် မတူသောပမာဏဖြစ်သည်။\n\nပါဝါပြောင်းလဲလျှင် အချိန်ပိုင်းတစ်ခုချင်း၏ စွမ်းအင်ကိုတွက်ပြီး ပေါင်းပါ။ ဤသည် စိတ်ကူးယဉ် DC တွက်ချက်မှုဖြစ်ပြီး စက်မောင်းညွှန်ကြားချက် မဟုတ်ပါ။\nအလုပ်လုပ်ချိန်: 18 V၊ 0.5 A အတည်၊ 20 မိနစ်\nစောင့်ချိန်: 3 W အတည်၊ 40 မိနစ်\nအခြားအချိန် သို့မဟုတ် သုံးစွဲမှု မပါပါ။ အလုပ်ပါဝါ 18×0.5=9 W၊ 20/60=1/3 h ကြောင့် စွမ်းအင် 3 Wh။ စောင့်ချိန် 40/60=2/3 h ကြောင့် 2 Wh၊ စုစုပေါင်း 5 Wh=0.005 kWh။ အချိန်တစ်ပိုင်းစီနှင့်မြှောက်ပြီး Wh ကိုပေါင်းပါ၊ W များကိုသာ မပေါင်းပါနှင့်။\nစက်ဝန်းတစ်ခု 1 နာရီဖြစ်၍ ပျမ်းမျှပါဝါ 5 Wh/1 h=5 W ဖြစ်ပြီး အများဆုံး 9 W နှင့်မတူပါ။ တူညီစက်ဝန်းနှစ်ကြိမ်မှာ 10 Wh ဖြစ်သည်။ စောင့်ချိန်မသိလျှင် စုစုပေါင်းစွမ်းအင် မသတ်မှတ်နိုင်ပါ။ မိနစ်ကို နာရီပြောင်းပြီး ယူနစ်နှင့်နယ်ပယ် မှတ်သားပါ။ ကုန်ကျနှုန်း၊ ထိရောက်မှု၊ AC power factor သို့မဟုတ် အစိတ်အပိုင်းသင့်လျော်မှုကို မခန့်မှန်းပါနှင့်။"
+      },
+      "th": {
+        "before": "ตัวต้านทาน DC ใช้ P=VI=I²R=V²/R หากำลัง W พลังงานเป็นผลคูณกำลังกับเวลา เช่น Wh ที่ 12 V และ 60 Ω จะมี I=0.2 A และ P=2.4 W ใช้ 30 นาทีได้ 1.2 Wh โดย W กับ Wh เป็นคนละปริมาณ",
+        "after": "ตัวต้านทาน DC ใช้ P=VI=I²R=V²/R หากำลัง W พลังงานเป็นผลคูณกำลังกับเวลา เช่น Wh ที่ 12 V และ 60 Ω จะมี I=0.2 A และ P=2.4 W ใช้ 30 นาทีได้ 1.2 Wh โดย W กับ Wh เป็นคนละปริมาณ\n\nเมื่อกำลังเปลี่ยน ให้คำนวณพลังงานแต่ละช่วงแล้วรวมกัน นี่คือแบบคำนวณ DC สมมุติ ไม่ใช่คำสั่งเดินเครื่อง\nช่วงทำงาน: คงที่ 18 V และ 0.5 A นาน 20 นาที\nช่วงรอ: คงที่ 3 W นาน 40 นาที\nไม่รวมช่วงหรือการใช้พลังงานอื่น กำลังทำงาน 18×0.5=9 W เวลา 20/60=1/3 h จึงได้ 3 Wh ช่วงรอ 40/60=2/3 h ได้ 2 Wh รวม 5 Wh=0.005 kWh ต้องคูณเวลาของแต่ละช่วงก่อนบวก Wh ไม่ใช่บวก W อย่างเดียว\nรอบทั้งหมด 1 ชั่วโมง จึงมีกำลังเฉลี่ย 5 Wh/1 h=5 W ต่างจากค่าสูงสุด 9 W ทำซ้ำสองรอบเหมือนกันใช้ 10 Wh หากไม่ทราบเวลารอ ก็ยังหาพลังงานรวมแน่นอนไม่ได้ แปลงนาทีเป็นชั่วโมงและจดหน่วยกับขอบเขต อย่าอนุมานค่าไฟ ประสิทธิภาพ ตัวประกอบกำลัง AC หรือความเหมาะสมของชิ้นส่วน"
+      },
+      "km": {
+        "before": "ក្នុងរេស៊ីស្តង់DC រកអានុភាពWដោយP=VI=I²R=V²/R។ ថាមពលអគ្គិសនីជាផលគុណអានុភាពនិងពេល ជាឯកតាWhជាដើម។ 12Vនិង60ΩបានI=0.2A,P=2.4W។ រយៈពេល30នាទីគឺ1.2Wh ហើយWនិងWhជាបរិមាណខុស។",
+        "after": "ក្នុងរេស៊ីស្តង់DC រកអានុភាពWដោយP=VI=I²R=V²/R។ ថាមពលអគ្គិសនីជាផលគុណអានុភាពនិងពេល ជាឯកតាWhជាដើម។ 12Vនិង60ΩបានI=0.2A,P=2.4W។ រយៈពេល30នាទីគឺ1.2Wh ហើយWនិងWhជាបរិមាណខុស។\n\nពេលអានុភាពផ្លាស់ប្ដូរ ត្រូវគណនាថាមពលតាមផ្នែកពេលវេលា រួចបូក។ នេះជាគំរូគណនា DC ស្មាន មិនមែនសេចក្ដីណែនាំដំណើរការម៉ាស៊ីនទេ។\nផ្នែកដំណើរការ: ថេរ 18 V និង 0.5 A រយៈពេល 20 នាទី\nផ្នែករង់ចាំ: ថេរ 3 W រយៈពេល 40 នាទី\nមិនមានពេល ឬការប្រើផ្សេងទៀតទេ។ អានុភាពដំណើរការ 18×0.5=9 W ពេល 20/60=1/3 h ដូច្នេះថាមពល 3 Wh។ រង់ចាំ 40/60=2/3 h បាន 2 Wh សរុប 5 Wh=0.005 kWh។ ត្រូវគុណពេលរាល់ផ្នែកមុនបូក Wh មិនមែនបូកតែ W ទេ។\nមួយវដ្តមាន 1 ម៉ោង ដូច្នេះអានុភាពមធ្យម 5 Wh/1 h=5 W ខុសពីអតិបរមា 9 W។ ធ្វើពីរវដ្តដូចគ្នាប្រើ 10 Wh។ បើមិនដឹងពេលរង់ចាំ ក៏មិនអាចកំណត់ថាមពលសរុបបាន។ ប្ដូរនាទីជាម៉ោង ហើយកត់ឯកតា និងវិសាលភាព។ កុំសន្និដ្ឋានថ្លៃ ប្រសិទ្ធភាព កត្តាអានុភាព AC ឬភាពសមស្របគ្រឿងបន្លាស់។"
+      },
+      "tl": {
+        "before": "Sa DC resistor, P=VI=I² R=V²/R para sa W. Energy ay power×time sa Wh. Sa 12 V, 60Ω, I=0.2 A, P=2.4 W. Sa 30 minuto, 1.2 Wh; magkaiba ang W at Wh.",
+        "after": "Sa DC resistor, P=VI=I² R=V²/R para sa W. Energy ay power×time sa Wh. Sa 12 V, 60Ω, I=0.2 A, P=2.4 W. Sa 30 minuto, 1.2 Wh; magkaiba ang W at Wh.\n\nKapag nagbabago ang power, kalkulahin ang energy sa bawat interval at pagsamahin. Kathang DC calculation ito, hindi tagubilin sa pagpapatakbo.\nAktibo: constant na 18 V at 0.5 A sa loob ng 20 minuto\nStandby: constant na 3 W sa loob ng 40 minuto\nWalang ibang interval o konsumo. Active power: 18×0.5=9 W; 20/60=1/3 h kaya 3 Wh. Standby: 40/60=2/3 h kaya 2 Wh; kabuuan 5 Wh=0.005 kWh. I-multiply muna ang oras ng bawat interval bago pagsamahin ang Wh; huwag W lamang ang idagdag.\nIsang oras ang buong cycle, kaya average power ay 5 Wh/1 h=5 W, iba sa maximum na 9 W. Dalawang parehong cycle ay 10 Wh. Kung hindi alam ang standby duration, hindi tiyak ang total energy. I-convert ang minuto sa oras at itala ang unit at saklaw. Huwag maghinuha ng singil, efficiency, AC power factor o kaangkupan ng piyesa."
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "mfg1-energy-check-01",
+      "lessonId": "mfg1-electrical-l068",
+      "stemJa": "一定（いってい）の直流（ちょくりゅう）18 V、0.5 Aの紙上（しじょう）モデルです。運転中（うんてんちゅう）の電力（でんりょく）はどれですか。",
+      "optionsJa": [
+        "9 W",
+        "36 W",
+        "9 Wh",
+        "0.009 W"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "電力は18×0.5＝9 Wです。",
+        "18を0.5で割るのでなく、電圧と電流を掛けます。",
+        "求める量は電力Wで、時間を含むWhではありません。",
+        "9 Wを0.009 Wへ換算する根拠はありません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 119,
+          "printedPage": 110
+        }
+      ],
+      "sourceHash": "ab309eff4c78765ec341005fd5f6c828651f7f2cf027a746aa1928c3e1cf19c5"
+    },
+    {
+      "id": "mfg1-energy-check-02",
+      "lessonId": "mfg1-electrical-l068",
+      "stemJa": "電力量（でんりょくりょう）の式（しき）へ入（い）れるため、20分（ぷん）をhへ直（なお）します。正（ただ）しいのはどれですか。",
+      "optionsJa": [
+        "0.20 h",
+        "20 h",
+        "1/3 h",
+        "3 h"
+      ],
+      "correctIndex": 2,
+      "optionReasonsJa": [
+        "0.20時間は12分であり、20分ではありません。",
+        "20分を20時間として入れてはいけません。",
+        "20÷60＝1/3 hです。",
+        "3 hでは180分となり、元の時間と違います。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 119,
+          "printedPage": 110
+        }
+      ],
+      "sourceHash": "4ea680188ca0e52e96476f6dd0d8e001ae52fa9edbade1c2ba1fb2b31b916d2e"
+    },
+    {
+      "id": "mfg1-energy-check-03",
+      "lessonId": "mfg1-electrical-l068",
+      "stemJa": "一定（いってい）の9 Wを20分（ぷん）使（つか）う紙上（しじょう）モデルの電力量（でんりょくりょう）はどれですか。",
+      "optionsJa": [
+        "180 Wh",
+        "3 Wh",
+        "27 Wh",
+        "9 Wh"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "分をそのままhとして掛けた180 Whは誤りです。",
+        "9×20/60＝3 Whです。",
+        "9を1/3で割らず、時間を掛けます。",
+        "9 Whは9 Wを1時間使った量で、20分の量ではありません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 119,
+          "printedPage": 110
+        }
+      ],
+      "sourceHash": "6220af9d8fb65fb0a7259910367af79d13f659cc365236b94aea08f9a953cfc9"
+    },
+    {
+      "id": "mfg1-energy-check-04",
+      "lessonId": "mfg1-electrical-l068",
+      "stemJa": "一定（いってい）の3 Wを40分（ぷん）使（つか）う待機区間（たいきくかん）の電力量（でんりょくりょう）はどれですか。",
+      "optionsJa": [
+        "120 Wh",
+        "0.12 Wh",
+        "3 Wh",
+        "2 Wh"
+      ],
+      "correctIndex": 3,
+      "optionReasonsJa": [
+        "40分を40時間として扱った値です。",
+        "40分を0.04時間として扱ってはいけません。",
+        "3 Whは3 Wを1時間使った場合の量です。",
+        "3×40/60＝2 Whです。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 119,
+          "printedPage": 110
+        }
+      ],
+      "sourceHash": "e40e749af892e7ce791eed8cb6175c1273542bd2381600d3ac91d523f3451ce9"
+    },
+    {
+      "id": "mfg1-energy-check-05",
+      "lessonId": "mfg1-electrical-l068",
+      "stemJa": "運転区間（うんてんくかん）3 Whと待機区間（たいきくかん）2 Whだけを含（ふく）むモデルです。合計（ごうけい）5 Wh＝0.005 kWhは正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "同じ単位の電力量を足すと5 Whで、1000 Wh＝1 kWhより0.005 kWhです。",
+        "区間ごとのWhは足すことができ、この換算も正しいです。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 119,
+          "printedPage": 110
+        }
+      ],
+      "sourceHash": "482e80f47d7e157d250ede027ea9ca3d9b9d6c7f2049bad399b8d02cd0d9e9fc"
+    },
+    {
+      "id": "mfg1-energy-check-06",
+      "lessonId": "mfg1-electrical-l068",
+      "stemJa": "20分（ぷん）9 W、40分3 W、合計（ごうけい）1時間（じかん）のモデルでは、平均電力（へいきんでんりょく）も最大（さいだい）の9 Wになる、という説明（せつめい）は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "9 Wは最大値であり、全時間の平均ではありません。",
+        "平均は合計5 Wh÷1 h＝5 Wです。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 119,
+          "printedPage": 110
+        }
+      ],
+      "sourceHash": "48da174258eb92ce9461e018cfeb00638b65b38d97ddf301432b76a9ce418444"
+    },
+    {
+      "id": "mfg1-energy-check-07",
+      "lessonId": "mfg1-electrical-l068",
+      "stemJa": "同（おな）じ条件（じょうけん）の1時間（じかん）サイクルが1回（かい）5 Whです。2回なら10 Whになる、という計算（けいさん）は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "電力量は5 Whを2回分足して10 Whです。",
+        "同じ条件の電力量を2回分足すことができます。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 119,
+          "printedPage": 110
+        }
+      ],
+      "sourceHash": "ad20dfa8fc3e119425fff56bd576f814e19f6ba795062e0ceab4701fb4c4cdd9"
+    },
+    {
+      "id": "mfg1-energy-check-08",
+      "lessonId": "mfg1-electrical-l068",
+      "stemJa": "運転区間（うんてんくかん）は3 Wh、待機電力（たいきでんりょく）は3 Wですが、待機時間（たいきじかん）は不明（ふめい）です。それでも合計（ごうけい）を5 Whと確定（かくてい）してよいですか。",
+      "optionsJa": [
+        "よい",
+        "よくない"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "待機の電力量に必要な時間が欠けています。",
+        "待機時間を確認しない限り、合計電力量は確定できません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 119,
+          "printedPage": 110
+        }
+      ],
+      "sourceHash": "02410880b6e08a3b7a4e86d4855c052539ac62f7d178a174fb6aca2a6d902f2d"
+    }
+  ],
+  "locales": {
+    "en": {
+      "mfg1-energy-check-01": {
+        "sourceHash": "ab309eff4c78765ec341005fd5f6c828651f7f2cf027a746aa1928c3e1cf19c5",
+        "stem": "A fictional model has constant DC 18 V and 0.5 A. What is its active power?",
+        "options": [
+          "9 W",
+          "36 W",
+          "9 Wh",
+          "0.009 W"
+        ],
+        "reasons": [
+          "Power is 18×0.5=9 W.",
+          "Multiply voltage and current; do not divide 18 by 0.5.",
+          "The requested quantity is power in W, not energy in Wh.",
+          "There is no basis for changing 9 W to 0.009 W."
+        ]
+      },
+      "mfg1-energy-check-02": {
+        "sourceHash": "4ea680188ca0e52e96476f6dd0d8e001ae52fa9edbade1c2ba1fb2b31b916d2e",
+        "stem": "Convert 20 minutes to h for the energy formula. Which is correct?",
+        "options": [
+          "0.20 h",
+          "20 h",
+          "1/3 h",
+          "3 h"
+        ],
+        "reasons": [
+          "0.20 h is 12 minutes, not 20.",
+          "Do not enter 20 minutes as 20 hours.",
+          "20/60=1/3 h.",
+          "3 h is 180 minutes, a different duration."
+        ]
+      },
+      "mfg1-energy-check-03": {
+        "sourceHash": "6220af9d8fb65fb0a7259910367af79d13f659cc365236b94aea08f9a953cfc9",
+        "stem": "What energy does a fictional constant 9 W model use in 20 minutes?",
+        "options": [
+          "180 Wh",
+          "3 Wh",
+          "27 Wh",
+          "9 Wh"
+        ],
+        "reasons": [
+          "180 Wh wrongly treats minutes as hours.",
+          "9×20/60=3 Wh.",
+          "Multiply by 1/3 h; do not divide by it.",
+          "9 Wh is 9 W for 1 hour, not 20 minutes."
+        ]
+      },
+      "mfg1-energy-check-04": {
+        "sourceHash": "e40e749af892e7ce791eed8cb6175c1273542bd2381600d3ac91d523f3451ce9",
+        "stem": "What energy is used during constant 3 W standby for 40 minutes?",
+        "options": [
+          "120 Wh",
+          "0.12 Wh",
+          "3 Wh",
+          "2 Wh"
+        ],
+        "reasons": [
+          "This treats 40 minutes as 40 hours.",
+          "40 minutes must not be treated as 0.04 h.",
+          "3 Wh is 3 W for 1 hour.",
+          "3×40/60=2 Wh."
+        ]
+      },
+      "mfg1-energy-check-05": {
+        "sourceHash": "482e80f47d7e157d250ede027ea9ca3d9b9d6c7f2049bad399b8d02cd0d9e9fc",
+        "stem": "Only active energy 3 Wh and standby energy 2 Wh are included. Is total energy 5 Wh=0.005 kWh correct?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "Add the two energies to get 5 Wh; 1000 Wh=1 kWh gives 0.005 kWh.",
+          "The interval energies can be added, and this conversion is correct."
+        ]
+      },
+      "mfg1-energy-check-06": {
+        "sourceHash": "48da174258eb92ce9461e018cfeb00638b65b38d97ddf301432b76a9ce418444",
+        "stem": "For 20 minutes at 9 W and 40 minutes at 3 W, total 1 hour, is average power also the maximum 9 W?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "9 W is the maximum, not the average over the whole time.",
+          "Average power is total 5 Wh/1 h=5 W."
+        ]
+      },
+      "mfg1-energy-check-07": {
+        "sourceHash": "ad20dfa8fc3e119425fff56bd576f814e19f6ba795062e0ceab4701fb4c4cdd9",
+        "stem": "One identical 1-hour cycle uses 5 Wh. Is 10 Wh for two cycles correct?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "Add two amounts of 5 Wh to obtain 10 Wh.",
+          "Energy can be added for two cycles under the same conditions."
+        ]
+      },
+      "mfg1-energy-check-08": {
+        "sourceHash": "02410880b6e08a3b7a4e86d4855c052539ac62f7d178a174fb6aca2a6d902f2d",
+        "stem": "Active energy is 3 Wh and standby power is 3 W, but standby duration is unknown. May total energy still be fixed at 5 Wh?",
+        "options": [
+          "Allowed",
+          "Not allowed"
+        ],
+        "reasons": [
+          "The duration needed for standby energy is missing.",
+          "Total energy cannot be fixed until standby duration is known."
+        ]
+      }
+    },
+    "vi": {
+      "mfg1-energy-check-01": {
+        "sourceHash": "ab309eff4c78765ec341005fd5f6c828651f7f2cf027a746aa1928c3e1cf19c5",
+        "stem": "Mô hình giả định có điện một chiều 18 V và 0,5 A không đổi. Công suất hoạt động là bao nhiêu?",
+        "options": [
+          "9 W",
+          "36 W",
+          "9 Wh",
+          "0.009 W"
+        ],
+        "reasons": [
+          "Công suất 18×0,5=9 W.",
+          "Nhân điện áp với dòng điện, không chia 18 cho 0,5.",
+          "Đại lượng cần tìm là công suất W, không phải điện năng Wh.",
+          "Không có căn cứ đổi 9 W thành 0,009 W."
+        ]
+      },
+      "mfg1-energy-check-02": {
+        "sourceHash": "4ea680188ca0e52e96476f6dd0d8e001ae52fa9edbade1c2ba1fb2b31b916d2e",
+        "stem": "Đổi 20 phút sang h để dùng trong công thức điện năng. Giá trị nào đúng?",
+        "options": [
+          "0.20 h",
+          "20 h",
+          "1/3 h",
+          "3 h"
+        ],
+        "reasons": [
+          "0,20 h là 12 phút, không phải 20 phút.",
+          "Không đưa 20 phút vào thành 20 giờ.",
+          "20/60=1/3 h.",
+          "3 h là 180 phút, khác thời gian đã cho."
+        ]
+      },
+      "mfg1-energy-check-03": {
+        "sourceHash": "6220af9d8fb65fb0a7259910367af79d13f659cc365236b94aea08f9a953cfc9",
+        "stem": "Mô hình giả định dùng 9 W không đổi trong 20 phút tiêu thụ bao nhiêu điện năng?",
+        "options": [
+          "180 Wh",
+          "3 Wh",
+          "27 Wh",
+          "9 Wh"
+        ],
+        "reasons": [
+          "180 Wh là do coi phút thành giờ.",
+          "9×20/60=3 Wh.",
+          "Phải nhân với 1/3 h, không chia cho thời gian.",
+          "9 Wh là dùng 9 W trong 1 giờ, không phải 20 phút."
+        ]
+      },
+      "mfg1-energy-check-04": {
+        "sourceHash": "e40e749af892e7ce791eed8cb6175c1273542bd2381600d3ac91d523f3451ce9",
+        "stem": "Khoảng chờ 3 W không đổi trong 40 phút dùng bao nhiêu điện năng?",
+        "options": [
+          "120 Wh",
+          "0.12 Wh",
+          "3 Wh",
+          "2 Wh"
+        ],
+        "reasons": [
+          "Giá trị này coi 40 phút thành 40 giờ.",
+          "Không coi 40 phút là 0,04 h.",
+          "3 Wh là dùng 3 W trong 1 giờ.",
+          "3×40/60=2 Wh."
+        ]
+      },
+      "mfg1-energy-check-05": {
+        "sourceHash": "482e80f47d7e157d250ede027ea9ca3d9b9d6c7f2049bad399b8d02cd0d9e9fc",
+        "stem": "Chỉ tính điện năng hoạt động 3 Wh và chờ 2 Wh. Tổng 5 Wh=0,005 kWh có đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "Cộng hai điện năng được 5 Wh; 1000 Wh=1 kWh nên bằng 0,005 kWh.",
+          "Điện năng từng khoảng cộng được và phép đổi này đúng."
+        ]
+      },
+      "mfg1-energy-check-06": {
+        "sourceHash": "48da174258eb92ce9461e018cfeb00638b65b38d97ddf301432b76a9ce418444",
+        "stem": "Mô hình 20 phút ở 9 W và 40 phút ở 3 W, tổng 1 giờ. Công suất trung bình cũng bằng lớn nhất 9 W có đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "9 W là mức lớn nhất, không phải trung bình cả thời gian.",
+          "Trung bình là tổng 5 Wh/1 h=5 W."
+        ]
+      },
+      "mfg1-energy-check-07": {
+        "sourceHash": "ad20dfa8fc3e119425fff56bd576f814e19f6ba795062e0ceab4701fb4c4cdd9",
+        "stem": "Một chu kỳ 1 giờ cùng điều kiện dùng 5 Wh. Hai chu kỳ dùng 10 Wh có đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "Cộng hai lượng 5 Wh được 10 Wh.",
+          "Có thể cộng điện năng hai chu kỳ cùng điều kiện."
+        ]
+      },
+      "mfg1-energy-check-08": {
+        "sourceHash": "02410880b6e08a3b7a4e86d4855c052539ac62f7d178a174fb6aca2a6d902f2d",
+        "stem": "Điện năng hoạt động 3 Wh, công suất chờ 3 W nhưng chưa biết thời gian chờ. Có được chốt tổng là 5 Wh không?",
+        "options": [
+          "Được",
+          "Không được"
+        ],
+        "reasons": [
+          "Thiếu thời gian cần để tính điện năng chờ.",
+          "Chưa xác nhận thời gian chờ thì chưa xác định được tổng điện năng."
+        ]
+      }
+    },
+    "id": {
+      "mfg1-energy-check-01": {
+        "sourceHash": "ab309eff4c78765ec341005fd5f6c828651f7f2cf027a746aa1928c3e1cf19c5",
+        "stem": "Model fiktif memiliki DC tetap 18 V dan 0,5 A. Berapa daya aktifnya?",
+        "options": [
+          "9 W",
+          "36 W",
+          "9 Wh",
+          "0.009 W"
+        ],
+        "reasons": [
+          "Daya 18×0,5=9 W.",
+          "Kalikan tegangan dan arus, bukan 18 dibagi 0,5.",
+          "Yang diminta daya W, bukan energi Wh.",
+          "Tidak ada dasar mengubah 9 W menjadi 0,009 W."
+        ]
+      },
+      "mfg1-energy-check-02": {
+        "sourceHash": "4ea680188ca0e52e96476f6dd0d8e001ae52fa9edbade1c2ba1fb2b31b916d2e",
+        "stem": "Ubah 20 menit menjadi h untuk rumus energi. Mana yang benar?",
+        "options": [
+          "0.20 h",
+          "20 h",
+          "1/3 h",
+          "3 h"
+        ],
+        "reasons": [
+          "0,20 h adalah 12 menit, bukan 20.",
+          "Jangan memasukkan 20 menit sebagai 20 jam.",
+          "20/60=1/3 h.",
+          "3 h adalah 180 menit, berbeda dari durasi semula."
+        ]
+      },
+      "mfg1-energy-check-03": {
+        "sourceHash": "6220af9d8fb65fb0a7259910367af79d13f659cc365236b94aea08f9a953cfc9",
+        "stem": "Berapa energi model fiktif 9 W tetap selama 20 menit?",
+        "options": [
+          "180 Wh",
+          "3 Wh",
+          "27 Wh",
+          "9 Wh"
+        ],
+        "reasons": [
+          "180 Wh keliru karena menit dianggap jam.",
+          "9×20/60=3 Wh.",
+          "Kalikan dengan 1/3 h, bukan membaginya.",
+          "9 Wh adalah 9 W selama 1 jam, bukan 20 menit."
+        ]
+      },
+      "mfg1-energy-check-04": {
+        "sourceHash": "e40e749af892e7ce791eed8cb6175c1273542bd2381600d3ac91d523f3451ce9",
+        "stem": "Berapa energi siaga tetap 3 W selama 40 menit?",
+        "options": [
+          "120 Wh",
+          "0.12 Wh",
+          "3 Wh",
+          "2 Wh"
+        ],
+        "reasons": [
+          "Nilai ini menganggap 40 menit sebagai 40 jam.",
+          "40 menit bukan 0,04 h.",
+          "3 Wh adalah 3 W selama 1 jam.",
+          "3×40/60=2 Wh."
+        ]
+      },
+      "mfg1-energy-check-05": {
+        "sourceHash": "482e80f47d7e157d250ede027ea9ca3d9b9d6c7f2049bad399b8d02cd0d9e9fc",
+        "stem": "Hanya energi aktif 3 Wh dan siaga 2 Wh yang dihitung. Benarkah total 5 Wh=0,005 kWh?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "Jumlahnya 5 Wh; 1000 Wh=1 kWh menghasilkan 0,005 kWh.",
+          "Energi antarinterval dapat dijumlahkan dan konversi ini benar."
+        ]
+      },
+      "mfg1-energy-check-06": {
+        "sourceHash": "48da174258eb92ce9461e018cfeb00638b65b38d97ddf301432b76a9ce418444",
+        "stem": "Selama 20 menit dayanya 9 W dan 40 menit 3 W, total 1 jam. Benarkah daya rata-rata juga maksimum 9 W?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "9 W adalah maksimum, bukan rata-rata seluruh waktu.",
+          "Rata-rata adalah total 5 Wh/1 h=5 W."
+        ]
+      },
+      "mfg1-energy-check-07": {
+        "sourceHash": "ad20dfa8fc3e119425fff56bd576f814e19f6ba795062e0ceab4701fb4c4cdd9",
+        "stem": "Satu siklus 1 jam dengan kondisi sama memakai 5 Wh. Benarkah dua siklus memakai 10 Wh?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "Dua energi 5 Wh dijumlahkan menjadi 10 Wh.",
+          "Energi dua siklus dengan kondisi sama dapat dijumlahkan."
+        ]
+      },
+      "mfg1-energy-check-08": {
+        "sourceHash": "02410880b6e08a3b7a4e86d4855c052539ac62f7d178a174fb6aca2a6d902f2d",
+        "stem": "Energi aktif 3 Wh dan daya siaga 3 W, tetapi durasi siaga tidak diketahui. Bolehkah total tetap dinyatakan 5 Wh?",
+        "options": [
+          "Boleh",
+          "Tidak boleh"
+        ],
+        "reasons": [
+          "Durasi untuk menghitung energi siaga belum ada.",
+          "Total energi belum pasti sebelum durasi siaga diketahui."
+        ]
+      }
+    },
+    "zh-CN": {
+      "mfg1-energy-check-01": {
+        "sourceHash": "ab309eff4c78765ec341005fd5f6c828651f7f2cf027a746aa1928c3e1cf19c5",
+        "stem": "虚构模型为恒定直流18 V、0.5 A。工作功率是多少？",
+        "options": [
+          "9 W",
+          "36 W",
+          "9 Wh",
+          "0.009 W"
+        ],
+        "reasons": [
+          "功率为18×0.5=9 W。",
+          "应把电压和电流相乘，不是18除以0.5。",
+          "所求为功率W，不是电能Wh。",
+          "没有依据把9 W改为0.009 W。"
+        ]
+      },
+      "mfg1-energy-check-02": {
+        "sourceHash": "4ea680188ca0e52e96476f6dd0d8e001ae52fa9edbade1c2ba1fb2b31b916d2e",
+        "stem": "为代入电能公式，把20分钟换算为h，哪项正确？",
+        "options": [
+          "0.20 h",
+          "20 h",
+          "1/3 h",
+          "3 h"
+        ],
+        "reasons": [
+          "0.20 h是12分钟，不是20分钟。",
+          "不能将20分钟当作20小时。",
+          "20/60=1/3 h。",
+          "3 h为180分钟，与原时长不同。"
+        ]
+      },
+      "mfg1-energy-check-03": {
+        "sourceHash": "6220af9d8fb65fb0a7259910367af79d13f659cc365236b94aea08f9a953cfc9",
+        "stem": "虚构模型以恒定9 W使用20分钟，电能是多少？",
+        "options": [
+          "180 Wh",
+          "3 Wh",
+          "27 Wh",
+          "9 Wh"
+        ],
+        "reasons": [
+          "180 Wh错误地把分钟当小时。",
+          "9×20/60=3 Wh。",
+          "应乘1/3 h，不是除以它。",
+          "9 Wh是9 W使用1小时，不是20分钟。"
+        ]
+      },
+      "mfg1-energy-check-04": {
+        "sourceHash": "e40e749af892e7ce791eed8cb6175c1273542bd2381600d3ac91d523f3451ce9",
+        "stem": "恒定3 W待机40分钟，电能是多少？",
+        "options": [
+          "120 Wh",
+          "0.12 Wh",
+          "3 Wh",
+          "2 Wh"
+        ],
+        "reasons": [
+          "该值把40分钟当成40小时。",
+          "40分钟不能当成0.04 h。",
+          "3 Wh是3 W使用1小时。",
+          "3×40/60=2 Wh。"
+        ]
+      },
+      "mfg1-energy-check-05": {
+        "sourceHash": "482e80f47d7e157d250ede027ea9ca3d9b9d6c7f2049bad399b8d02cd0d9e9fc",
+        "stem": "仅含工作电能3 Wh和待机电能2 Wh。总计5 Wh=0.005 kWh是否正确？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "两段相加为5 Wh，1000 Wh=1 kWh，因此为0.005 kWh。",
+          "分段电能可以相加，且该换算正确。"
+        ]
+      },
+      "mfg1-energy-check-06": {
+        "sourceHash": "48da174258eb92ce9461e018cfeb00638b65b38d97ddf301432b76a9ce418444",
+        "stem": "20分钟9 W，40分钟3 W，总共1小时。平均功率也等于最大9 W，这对吗？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "9 W是最大值，不是全时段平均。",
+          "平均功率为总计5 Wh/1 h=5 W。"
+        ]
+      },
+      "mfg1-energy-check-07": {
+        "sourceHash": "ad20dfa8fc3e119425fff56bd576f814e19f6ba795062e0ceab4701fb4c4cdd9",
+        "stem": "同条件1小时周期用5 Wh，两个周期用10 Wh，对吗？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "两次5 Wh相加得到10 Wh。",
+          "相同条件的两个周期电能可以相加。"
+        ]
+      },
+      "mfg1-energy-check-08": {
+        "sourceHash": "02410880b6e08a3b7a4e86d4855c052539ac62f7d178a174fb6aca2a6d902f2d",
+        "stem": "工作电能3 Wh，待机功率3 W，但待机时长未知，仍可确定总计5 Wh吗？",
+        "options": [
+          "可以",
+          "不可以"
+        ],
+        "reasons": [
+          "缺少计算待机电能所需的时间。",
+          "未确认待机时长前不能确定总电能。"
+        ]
+      }
+    },
+    "zh-TW": {
+      "mfg1-energy-check-01": {
+        "sourceHash": "ab309eff4c78765ec341005fd5f6c828651f7f2cf027a746aa1928c3e1cf19c5",
+        "stem": "虛構模型為恆定直流18 V、0.5 A。工作功率是多少？",
+        "options": [
+          "9 W",
+          "36 W",
+          "9 Wh",
+          "0.009 W"
+        ],
+        "reasons": [
+          "功率為18×0.5=9 W。",
+          "應把電壓和電流相乘，不是18除以0.5。",
+          "所求為功率W，不是電能Wh。",
+          "沒有依據把9 W改為0.009 W。"
+        ]
+      },
+      "mfg1-energy-check-02": {
+        "sourceHash": "4ea680188ca0e52e96476f6dd0d8e001ae52fa9edbade1c2ba1fb2b31b916d2e",
+        "stem": "為代入電能公式，把20分鐘換算為h，哪項正確？",
+        "options": [
+          "0.20 h",
+          "20 h",
+          "1/3 h",
+          "3 h"
+        ],
+        "reasons": [
+          "0.20 h是12分鐘，不是20分鐘。",
+          "不能將20分鐘當作20小時。",
+          "20/60=1/3 h。",
+          "3 h為180分鐘，與原時長不同。"
+        ]
+      },
+      "mfg1-energy-check-03": {
+        "sourceHash": "6220af9d8fb65fb0a7259910367af79d13f659cc365236b94aea08f9a953cfc9",
+        "stem": "虛構模型以恆定9 W使用20分鐘，電能是多少？",
+        "options": [
+          "180 Wh",
+          "3 Wh",
+          "27 Wh",
+          "9 Wh"
+        ],
+        "reasons": [
+          "180 Wh錯誤地把分鐘當小時。",
+          "9×20/60=3 Wh。",
+          "應乘1/3 h，不是除以它。",
+          "9 Wh是9 W使用1小時，不是20分鐘。"
+        ]
+      },
+      "mfg1-energy-check-04": {
+        "sourceHash": "e40e749af892e7ce791eed8cb6175c1273542bd2381600d3ac91d523f3451ce9",
+        "stem": "恆定3 W待機40分鐘，電能是多少？",
+        "options": [
+          "120 Wh",
+          "0.12 Wh",
+          "3 Wh",
+          "2 Wh"
+        ],
+        "reasons": [
+          "該值把40分鐘當成40小時。",
+          "40分鐘不能當成0.04 h。",
+          "3 Wh是3 W使用1小時。",
+          "3×40/60=2 Wh。"
+        ]
+      },
+      "mfg1-energy-check-05": {
+        "sourceHash": "482e80f47d7e157d250ede027ea9ca3d9b9d6c7f2049bad399b8d02cd0d9e9fc",
+        "stem": "僅含工作電能3 Wh和待機電能2 Wh。總計5 Wh=0.005 kWh是否正確？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "兩段相加為5 Wh，1000 Wh=1 kWh，因此為0.005 kWh。",
+          "分段電能可以相加，且該換算正確。"
+        ]
+      },
+      "mfg1-energy-check-06": {
+        "sourceHash": "48da174258eb92ce9461e018cfeb00638b65b38d97ddf301432b76a9ce418444",
+        "stem": "20分鐘9 W，40分鐘3 W，總共1小時。平均功率也等於最大9 W，這對嗎？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "9 W是最大值，不是全時段平均。",
+          "平均功率為總計5 Wh/1 h=5 W。"
+        ]
+      },
+      "mfg1-energy-check-07": {
+        "sourceHash": "ad20dfa8fc3e119425fff56bd576f814e19f6ba795062e0ceab4701fb4c4cdd9",
+        "stem": "同條件1小時週期用5 Wh，兩個週期用10 Wh，對嗎？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "兩次5 Wh相加得到10 Wh。",
+          "相同條件的兩個週期電能可以相加。"
+        ]
+      },
+      "mfg1-energy-check-08": {
+        "sourceHash": "02410880b6e08a3b7a4e86d4855c052539ac62f7d178a174fb6aca2a6d902f2d",
+        "stem": "工作電能3 Wh，待機功率3 W，但待機時長未知，仍可確定總計5 Wh嗎？",
+        "options": [
+          "可以",
+          "不可以"
+        ],
+        "reasons": [
+          "缺少計算待機電能所需的時間。",
+          "未確認待機時長前不能確定總電能。"
+        ]
+      }
+    },
+    "hi": {
+      "mfg1-energy-check-01": {
+        "sourceHash": "ab309eff4c78765ec341005fd5f6c828651f7f2cf027a746aa1928c3e1cf19c5",
+        "stem": "काल्पनिक मॉडल में स्थिर DC 18 V और 0.5 A है। सक्रिय शक्ति कितनी है?",
+        "options": [
+          "9 W",
+          "36 W",
+          "9 Wh",
+          "0.009 W"
+        ],
+        "reasons": [
+          "शक्ति 18×0.5=9 W है।",
+          "वोल्टेज और धारा गुणा करें, 18 को 0.5 से न भागें।",
+          "माँगी गई मात्रा शक्ति W है, ऊर्जा Wh नहीं।",
+          "9 W को 0.009 W बनाने का आधार नहीं है।"
+        ]
+      },
+      "mfg1-energy-check-02": {
+        "sourceHash": "4ea680188ca0e52e96476f6dd0d8e001ae52fa9edbade1c2ba1fb2b31b916d2e",
+        "stem": "ऊर्जा सूत्र के लिए 20 मिनट को h में बदलें। क्या सही है?",
+        "options": [
+          "0.20 h",
+          "20 h",
+          "1/3 h",
+          "3 h"
+        ],
+        "reasons": [
+          "0.20 h का अर्थ 12 मिनट है, 20 नहीं।",
+          "20 मिनट को 20 घंटे न मानें।",
+          "20/60=1/3 h।",
+          "3 h का अर्थ 180 मिनट है, अलग अवधि।"
+        ]
+      },
+      "mfg1-energy-check-03": {
+        "sourceHash": "6220af9d8fb65fb0a7259910367af79d13f659cc365236b94aea08f9a953cfc9",
+        "stem": "काल्पनिक मॉडल में स्थिर 9 W को 20 मिनट उपयोग करने की ऊर्जा कितनी है?",
+        "options": [
+          "180 Wh",
+          "3 Wh",
+          "27 Wh",
+          "9 Wh"
+        ],
+        "reasons": [
+          "180 Wh में मिनट को गलत ढंग से घंटा माना गया है।",
+          "9×20/60=3 Wh।",
+          "1/3 h से गुणा करें, भाग न दें।",
+          "9 Wh का अर्थ 9 W को 1 घंटा उपयोग करना है, 20 मिनट नहीं।"
+        ]
+      },
+      "mfg1-energy-check-04": {
+        "sourceHash": "e40e749af892e7ce791eed8cb6175c1273542bd2381600d3ac91d523f3451ce9",
+        "stem": "स्थिर 3 W की 40 मिनट प्रतीक्षा में ऊर्जा कितनी है?",
+        "options": [
+          "120 Wh",
+          "0.12 Wh",
+          "3 Wh",
+          "2 Wh"
+        ],
+        "reasons": [
+          "यह 40 मिनट को 40 घंटे मानता है।",
+          "40 मिनट को 0.04 h न मानें।",
+          "3 Wh का अर्थ 3 W को 1 घंटा उपयोग करना है।",
+          "3×40/60=2 Wh।"
+        ]
+      },
+      "mfg1-energy-check-05": {
+        "sourceHash": "482e80f47d7e157d250ede027ea9ca3d9b9d6c7f2049bad399b8d02cd0d9e9fc",
+        "stem": "केवल सक्रिय ऊर्जा 3 Wh और प्रतीक्षा ऊर्जा 2 Wh शामिल हैं। क्या कुल 5 Wh=0.005 kWh सही है?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "दोनों का योग 5 Wh है; 1000 Wh=1 kWh से 0.005 kWh मिलता है।",
+          "अंतरालों की ऊर्जा जोड़ सकते हैं और रूपांतरण सही है।"
+        ]
+      },
+      "mfg1-energy-check-06": {
+        "sourceHash": "48da174258eb92ce9461e018cfeb00638b65b38d97ddf301432b76a9ce418444",
+        "stem": "20 मिनट 9 W और 40 मिनट 3 W, कुल 1 घंटा। क्या औसत शक्ति भी अधिकतम 9 W है?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "9 W अधिकतम है, पूरी अवधि का औसत नहीं।",
+          "औसत शक्ति कुल 5 Wh/1 h=5 W है।"
+        ]
+      },
+      "mfg1-energy-check-07": {
+        "sourceHash": "ad20dfa8fc3e119425fff56bd576f814e19f6ba795062e0ceab4701fb4c4cdd9",
+        "stem": "समान शर्तों का 1 घंटे का चक्र 5 Wh उपयोग करता है। क्या दो चक्रों में 10 Wh सही है?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "दो बार 5 Wh जोड़ने पर 10 Wh है।",
+          "समान शर्तों के दो चक्रों की ऊर्जा जोड़ सकते हैं।"
+        ]
+      },
+      "mfg1-energy-check-08": {
+        "sourceHash": "02410880b6e08a3b7a4e86d4855c052539ac62f7d178a174fb6aca2a6d902f2d",
+        "stem": "सक्रिय ऊर्जा 3 Wh और प्रतीक्षा शक्ति 3 W है, पर प्रतीक्षा अवधि अज्ञात है। क्या फिर भी कुल 5 Wh तय कर सकते हैं?",
+        "options": [
+          "अनुमति है",
+          "अनुमति नहीं"
+        ],
+        "reasons": [
+          "प्रतीक्षा ऊर्जा के लिए आवश्यक अवधि नहीं दी गई है।",
+          "प्रतीक्षा अवधि जाने बिना कुल ऊर्जा तय नहीं हो सकती।"
+        ]
+      }
+    },
+    "bn": {
+      "mfg1-energy-check-01": {
+        "sourceHash": "ab309eff4c78765ec341005fd5f6c828651f7f2cf027a746aa1928c3e1cf19c5",
+        "stem": "কাল্পনিক মডেলে স্থির DC 18 V ও 0.5 A। সক্রিয় ক্ষমতা কত?",
+        "options": [
+          "9 W",
+          "36 W",
+          "9 Wh",
+          "0.009 W"
+        ],
+        "reasons": [
+          "ক্ষমতা 18×0.5=9 W।",
+          "ভোল্টেজ ও কারেন্ট গুণ করুন; 18-কে 0.5 দিয়ে ভাগ নয়।",
+          "চাওয়া রাশি ক্ষমতা W, শক্তি Wh নয়।",
+          "9 W-কে 0.009 W করার ভিত্তি নেই।"
+        ]
+      },
+      "mfg1-energy-check-02": {
+        "sourceHash": "4ea680188ca0e52e96476f6dd0d8e001ae52fa9edbade1c2ba1fb2b31b916d2e",
+        "stem": "শক্তির সূত্রের জন্য 20 মিনিটকে h-এ বদলান। কোনটি সঠিক?",
+        "options": [
+          "0.20 h",
+          "20 h",
+          "1/3 h",
+          "3 h"
+        ],
+        "reasons": [
+          "0.20 h হলো 12 মিনিট, 20 নয়।",
+          "20 মিনিটকে 20 ঘণ্টা ধরবেন না।",
+          "20/60=1/3 h।",
+          "3 h হলো 180 মিনিট, আলাদা সময়।"
+        ]
+      },
+      "mfg1-energy-check-03": {
+        "sourceHash": "6220af9d8fb65fb0a7259910367af79d13f659cc365236b94aea08f9a953cfc9",
+        "stem": "কাল্পনিক মডেলে স্থির 9 W-এ 20 মিনিটে কত শক্তি ব্যবহৃত হয়?",
+        "options": [
+          "180 Wh",
+          "3 Wh",
+          "27 Wh",
+          "9 Wh"
+        ],
+        "reasons": [
+          "180 Wh ভুলভাবে মিনিটকে ঘণ্টা ধরে।",
+          "9×20/60=3 Wh।",
+          "1/3 h দিয়ে গুণ করুন, ভাগ নয়।",
+          "9 Wh হলো 9 W-এ 1 ঘণ্টা, 20 মিনিট নয়।"
+        ]
+      },
+      "mfg1-energy-check-04": {
+        "sourceHash": "e40e749af892e7ce791eed8cb6175c1273542bd2381600d3ac91d523f3451ce9",
+        "stem": "স্থির 3 W অপেক্ষায় 40 মিনিটে কত শক্তি লাগে?",
+        "options": [
+          "120 Wh",
+          "0.12 Wh",
+          "3 Wh",
+          "2 Wh"
+        ],
+        "reasons": [
+          "এতে 40 মিনিটকে 40 ঘণ্টা ধরা হয়েছে।",
+          "40 মিনিটকে 0.04 h ধরবেন না।",
+          "3 Wh হলো 3 W-এ 1 ঘণ্টা।",
+          "3×40/60=2 Wh।"
+        ]
+      },
+      "mfg1-energy-check-05": {
+        "sourceHash": "482e80f47d7e157d250ede027ea9ca3d9b9d6c7f2049bad399b8d02cd0d9e9fc",
+        "stem": "শুধু সক্রিয় শক্তি 3 Wh ও অপেক্ষার শক্তি 2 Wh আছে। মোট 5 Wh=0.005 kWh কি সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "যোগ করলে 5 Wh; 1000 Wh=1 kWh থেকে 0.005 kWh।",
+          "সময়খণ্ডের শক্তি যোগ করা যায় এবং রূপান্তরটি সঠিক।"
+        ]
+      },
+      "mfg1-energy-check-06": {
+        "sourceHash": "48da174258eb92ce9461e018cfeb00638b65b38d97ddf301432b76a9ce418444",
+        "stem": "20 মিনিট 9 W ও 40 মিনিট 3 W, মোট 1 ঘণ্টা। গড় ক্ষমতাও সর্বোচ্চ 9 W কি?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "9 W সর্বোচ্চ, পুরো সময়ের গড় নয়।",
+          "গড় ক্ষমতা মোট 5 Wh/1 h=5 W।"
+        ]
+      },
+      "mfg1-energy-check-07": {
+        "sourceHash": "ad20dfa8fc3e119425fff56bd576f814e19f6ba795062e0ceab4701fb4c4cdd9",
+        "stem": "একই শর্তের 1 ঘণ্টার চক্রে 5 Wh লাগে। দুই চক্রে 10 Wh কি সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "দুবার 5 Wh যোগ করলে 10 Wh।",
+          "একই শর্তের দুই চক্রের শক্তি যোগ করা যায়।"
+        ]
+      },
+      "mfg1-energy-check-08": {
+        "sourceHash": "02410880b6e08a3b7a4e86d4855c052539ac62f7d178a174fb6aca2a6d902f2d",
+        "stem": "সক্রিয় শক্তি 3 Wh ও অপেক্ষার ক্ষমতা 3 W, কিন্তু অপেক্ষার সময় অজানা। তবু মোট 5 Wh নির্দিষ্ট করা যাবে?",
+        "options": [
+          "যায়",
+          "যায় না"
+        ],
+        "reasons": [
+          "অপেক্ষার শক্তি হিসাবের প্রয়োজনীয় সময় নেই।",
+          "অপেক্ষার সময় না জেনে মোট শক্তি নির্দিষ্ট করা যায় না।"
+        ]
+      }
+    },
+    "ne": {
+      "mfg1-energy-check-01": {
+        "sourceHash": "ab309eff4c78765ec341005fd5f6c828651f7f2cf027a746aa1928c3e1cf19c5",
+        "stem": "काल्पनिक मोडेलमा स्थिर DC 18 V र 0.5 A छ। सक्रिय शक्ति कति हो?",
+        "options": [
+          "9 W",
+          "36 W",
+          "9 Wh",
+          "0.009 W"
+        ],
+        "reasons": [
+          "शक्ति 18×0.5=9 W हो।",
+          "भोल्टेज र करेन्ट गुणा गर्नुहोस्; 18 लाई 0.5 ले नभाग्नुहोस्।",
+          "मागिएको शक्ति W हो, ऊर्जा Wh होइन।",
+          "9 W लाई 0.009 W बनाउने आधार छैन।"
+        ]
+      },
+      "mfg1-energy-check-02": {
+        "sourceHash": "4ea680188ca0e52e96476f6dd0d8e001ae52fa9edbade1c2ba1fb2b31b916d2e",
+        "stem": "ऊर्जा सूत्रका लागि 20 मिनेटलाई h मा बदल्नुहोस्। कुन सही हो?",
+        "options": [
+          "0.20 h",
+          "20 h",
+          "1/3 h",
+          "3 h"
+        ],
+        "reasons": [
+          "0.20 h भनेको 12 मिनेट हो, 20 होइन।",
+          "20 मिनेटलाई 20 घण्टा नमान्नुहोस्।",
+          "20/60=1/3 h।",
+          "3 h भनेको 180 मिनेट हो, फरक अवधि।"
+        ]
+      },
+      "mfg1-energy-check-03": {
+        "sourceHash": "6220af9d8fb65fb0a7259910367af79d13f659cc365236b94aea08f9a953cfc9",
+        "stem": "काल्पनिक मोडेलमा स्थिर 9 W ले 20 मिनेटमा कति ऊर्जा प्रयोग गर्छ?",
+        "options": [
+          "180 Wh",
+          "3 Wh",
+          "27 Wh",
+          "9 Wh"
+        ],
+        "reasons": [
+          "180 Wh ले मिनेटलाई गलत रूपमा घण्टा मान्छ।",
+          "9×20/60=3 Wh।",
+          "1/3 h ले गुणा गर्नुहोस्, नभाग्नुहोस्।",
+          "9 Wh भनेको 9 W एक घण्टा हो, 20 मिनेट होइन।"
+        ]
+      },
+      "mfg1-energy-check-04": {
+        "sourceHash": "e40e749af892e7ce791eed8cb6175c1273542bd2381600d3ac91d523f3451ce9",
+        "stem": "स्थिर 3 W प्रतीक्षामा 40 मिनेटमा कति ऊर्जा लाग्छ?",
+        "options": [
+          "120 Wh",
+          "0.12 Wh",
+          "3 Wh",
+          "2 Wh"
+        ],
+        "reasons": [
+          "यसले 40 मिनेटलाई 40 घण्टा मान्छ।",
+          "40 मिनेटलाई 0.04 h नमान्नुहोस्।",
+          "3 Wh भनेको 3 W एक घण्टा हो।",
+          "3×40/60=2 Wh।"
+        ]
+      },
+      "mfg1-energy-check-05": {
+        "sourceHash": "482e80f47d7e157d250ede027ea9ca3d9b9d6c7f2049bad399b8d02cd0d9e9fc",
+        "stem": "सक्रिय ऊर्जा 3 Wh र प्रतीक्षा ऊर्जा 2 Wh मात्र छन्। कुल 5 Wh=0.005 kWh सही हो?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "दुवै जोड्दा 5 Wh; 1000 Wh=1 kWh बाट 0.005 kWh हुन्छ।",
+          "समयखण्डका ऊर्जा जोड्न मिल्छ र यो रूपान्तरण सही छ।"
+        ]
+      },
+      "mfg1-energy-check-06": {
+        "sourceHash": "48da174258eb92ce9461e018cfeb00638b65b38d97ddf301432b76a9ce418444",
+        "stem": "20 मिनेट 9 W र 40 मिनेट 3 W, जम्मा 1 घण्टा। औसत शक्ति पनि अधिकतम 9 W हुन्छ?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "9 W अधिकतम हो, पूरा समयको औसत होइन।",
+          "औसत शक्ति कुल 5 Wh/1 h=5 W हो।"
+        ]
+      },
+      "mfg1-energy-check-07": {
+        "sourceHash": "ad20dfa8fc3e119425fff56bd576f814e19f6ba795062e0ceab4701fb4c4cdd9",
+        "stem": "समान सर्तको 1 घण्टाको चक्रमा 5 Wh लाग्छ। दुई चक्रमा 10 Wh सही हो?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "दुईपटक 5 Wh जोड्दा 10 Wh हुन्छ।",
+          "समान सर्तका दुई चक्रको ऊर्जा जोड्न मिल्छ।"
+        ]
+      },
+      "mfg1-energy-check-08": {
+        "sourceHash": "02410880b6e08a3b7a4e86d4855c052539ac62f7d178a174fb6aca2a6d902f2d",
+        "stem": "सक्रिय ऊर्जा 3 Wh र प्रतीक्षा शक्ति 3 W छ, तर प्रतीक्षा अवधि अज्ञात छ। तैपनि कुल 5 Wh निश्चित गर्न मिल्छ?",
+        "options": [
+          "मिल्छ",
+          "मिल्दैन"
+        ],
+        "reasons": [
+          "प्रतीक्षा ऊर्जा गणनाका लागि आवश्यक समय छैन।",
+          "प्रतीक्षा अवधि नथाहासम्म कुल ऊर्जा निश्चित हुँदैन।"
+        ]
+      }
+    },
+    "my": {
+      "mfg1-energy-check-01": {
+        "sourceHash": "ab309eff4c78765ec341005fd5f6c828651f7f2cf027a746aa1928c3e1cf19c5",
+        "stem": "စိတ်ကူးယဉ်မော်ဒယ်တွင် DC 18 V၊ 0.5 A အတည်ဖြစ်သည်။ အလုပ်ပါဝါ ဘယ်လောက်လဲ။",
+        "options": [
+          "9 W",
+          "36 W",
+          "9 Wh",
+          "0.009 W"
+        ],
+        "reasons": [
+          "ပါဝါမှာ 18×0.5=9 W ဖြစ်သည်။",
+          "ဗို့အားနှင့်လျှပ်စီးကိုမြှောက်ပါ၊ 18 ကို 0.5 ဖြင့်မစားပါနှင့်။",
+          "မေးသည်မှာ ပါဝါ W ဖြစ်ပြီး စွမ်းအင် Wh မဟုတ်ပါ။",
+          "9 W ကို 0.009 W ပြောင်းရန်အကြောင်းမရှိပါ။"
+        ]
+      },
+      "mfg1-energy-check-02": {
+        "sourceHash": "4ea680188ca0e52e96476f6dd0d8e001ae52fa9edbade1c2ba1fb2b31b916d2e",
+        "stem": "စွမ်းအင်ပုံသေနည်းအတွက် 20 မိနစ်ကို h ပြောင်းပါ။ ဘာမှန်သနည်း။",
+        "options": [
+          "0.20 h",
+          "20 h",
+          "1/3 h",
+          "3 h"
+        ],
+        "reasons": [
+          "0.20 h သည် 12 မိနစ်ဖြစ်ပြီး 20 မိနစ်မဟုတ်ပါ။",
+          "20 မိနစ်ကို 20 နာရီဟု မထည့်ပါနှင့်။",
+          "20/60=1/3 h ဖြစ်သည်။",
+          "3 h သည် 180 မိနစ်ဖြစ်၍ အချိန်မတူပါ။"
+        ]
+      },
+      "mfg1-energy-check-03": {
+        "sourceHash": "6220af9d8fb65fb0a7259910367af79d13f659cc365236b94aea08f9a953cfc9",
+        "stem": "စိတ်ကူးယဉ်မော်ဒယ်တွင် 9 W အတည်ကို 20 မိနစ်သုံးလျှင် စွမ်းအင်ဘယ်လောက်လဲ။",
+        "options": [
+          "180 Wh",
+          "3 Wh",
+          "27 Wh",
+          "9 Wh"
+        ],
+        "reasons": [
+          "180 Wh သည် မိနစ်ကို နာရီဟုမှားတွက်ထားသည်။",
+          "9×20/60=3 Wh ဖြစ်သည်။",
+          "1/3 h နှင့်မြှောက်ရမည်၊ မစားရပါ။",
+          "9 Wh သည် 9 W ကို 1 နာရီသုံးခြင်းဖြစ်ပြီး 20 မိနစ်မဟုတ်ပါ။"
+        ]
+      },
+      "mfg1-energy-check-04": {
+        "sourceHash": "e40e749af892e7ce791eed8cb6175c1273542bd2381600d3ac91d523f3451ce9",
+        "stem": "3 W အတည်ဖြင့် 40 မိနစ်စောင့်ချိန်တွင် စွမ်းအင်ဘယ်လောက်လဲ။",
+        "options": [
+          "120 Wh",
+          "0.12 Wh",
+          "3 Wh",
+          "2 Wh"
+        ],
+        "reasons": [
+          "40 မိနစ်ကို 40 နာရီဟုတွက်ထားသည်။",
+          "40 မိနစ်ကို 0.04 h ဟု မယူပါနှင့်။",
+          "3 Wh သည် 3 W ကို 1 နာရီသုံးခြင်းဖြစ်သည်။",
+          "3×40/60=2 Wh ဖြစ်သည်။"
+        ]
+      },
+      "mfg1-energy-check-05": {
+        "sourceHash": "482e80f47d7e157d250ede027ea9ca3d9b9d6c7f2049bad399b8d02cd0d9e9fc",
+        "stem": "အလုပ်စွမ်းအင် 3 Wh နှင့် စောင့်စွမ်းအင် 2 Wh သာပါသည်။ စုစုပေါင်း 5 Wh=0.005 kWh မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "နှစ်ခုပေါင်း 5 Wh၊ 1000 Wh=1 kWh ကြောင့် 0.005 kWh ဖြစ်သည်။",
+          "အချိန်ပိုင်းစွမ်းအင်များ ပေါင်းနိုင်ပြီး ပြောင်းလဲမှုလည်းမှန်သည်။"
+        ]
+      },
+      "mfg1-energy-check-06": {
+        "sourceHash": "48da174258eb92ce9461e018cfeb00638b65b38d97ddf301432b76a9ce418444",
+        "stem": "20 မိနစ် 9 W နှင့် 40 မိနစ် 3 W၊ စုစုပေါင်း 1 နာရီဖြစ်သည်။ ပျမ်းမျှပါဝါလည်း အများဆုံး 9 W ဖြစ်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "9 W သည် အများဆုံးဖြစ်ပြီး တစ်ချိန်လုံးပျမ်းမျှမဟုတ်ပါ။",
+          "ပျမ်းမျှပါဝါမှာ စုစုပေါင်း 5 Wh/1 h=5 W ဖြစ်သည်။"
+        ]
+      },
+      "mfg1-energy-check-07": {
+        "sourceHash": "ad20dfa8fc3e119425fff56bd576f814e19f6ba795062e0ceab4701fb4c4cdd9",
+        "stem": "တူညီအခြေအနေရှိ 1 နာရီစက်ဝန်းတစ်ခုမှာ 5 Wh သုံးသည်။ နှစ်ကြိမ် 10 Wh မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "5 Wh နှစ်ကြိမ်ပေါင်းလျှင် 10 Wh ဖြစ်သည်။",
+          "တူညီစက်ဝန်းနှစ်ကြိမ်၏ စွမ်းအင် ပေါင်းနိုင်သည်။"
+        ]
+      },
+      "mfg1-energy-check-08": {
+        "sourceHash": "02410880b6e08a3b7a4e86d4855c052539ac62f7d178a174fb6aca2a6d902f2d",
+        "stem": "အလုပ်စွမ်းအင် 3 Wh၊ စောင့်ပါဝါ 3 W ဖြစ်သော်လည်း စောင့်ချိန်မသိပါ။ စုစုပေါင်း 5 Wh ဟုသတ်မှတ်နိုင်ပါသလား။",
+        "options": [
+          "ရသည်",
+          "မရပါ"
+        ],
+        "reasons": [
+          "စောင့်စွမ်းအင်တွက်ရန်လိုသော အချိန်မပါပါ။",
+          "စောင့်ချိန်မသိသမျှ စုစုပေါင်းစွမ်းအင် မသတ်မှတ်နိုင်ပါ။"
+        ]
+      }
+    },
+    "th": {
+      "mfg1-energy-check-01": {
+        "sourceHash": "ab309eff4c78765ec341005fd5f6c828651f7f2cf027a746aa1928c3e1cf19c5",
+        "stem": "แบบสมมุติมี DC คงที่ 18 V และ 0.5 A กำลังทำงานเท่าไร",
+        "options": [
+          "9 W",
+          "36 W",
+          "9 Wh",
+          "0.009 W"
+        ],
+        "reasons": [
+          "กำลังคือ 18×0.5=9 W",
+          "ต้องคูณแรงดันกับกระแส ไม่ใช่หาร 18 ด้วย 0.5",
+          "ถามกำลัง W ไม่ใช่พลังงาน Wh",
+          "ไม่มีเหตุผลให้เปลี่ยน 9 W เป็น 0.009 W"
+        ]
+      },
+      "mfg1-energy-check-02": {
+        "sourceHash": "4ea680188ca0e52e96476f6dd0d8e001ae52fa9edbade1c2ba1fb2b31b916d2e",
+        "stem": "แปลง 20 นาทีเป็น h เพื่อใช้สูตรพลังงาน ข้อใดถูก",
+        "options": [
+          "0.20 h",
+          "20 h",
+          "1/3 h",
+          "3 h"
+        ],
+        "reasons": [
+          "0.20 h คือ 12 นาที ไม่ใช่ 20",
+          "อย่าใส่ 20 นาทีเป็น 20 ชั่วโมง",
+          "20/60=1/3 h",
+          "3 h คือ 180 นาที ต่างจากเวลาเดิม"
+        ]
+      },
+      "mfg1-energy-check-03": {
+        "sourceHash": "6220af9d8fb65fb0a7259910367af79d13f659cc365236b94aea08f9a953cfc9",
+        "stem": "แบบสมมุติใช้กำลังคงที่ 9 W นาน 20 นาที ใช้พลังงานเท่าไร",
+        "options": [
+          "180 Wh",
+          "3 Wh",
+          "27 Wh",
+          "9 Wh"
+        ],
+        "reasons": [
+          "180 Wh เกิดจากถือว่านาทีเป็นชั่วโมงผิด",
+          "9×20/60=3 Wh",
+          "ต้องคูณด้วย 1/3 h ไม่ใช่หาร",
+          "9 Wh คือใช้ 9 W นาน 1 ชั่วโมง ไม่ใช่ 20 นาที"
+        ]
+      },
+      "mfg1-energy-check-04": {
+        "sourceHash": "e40e749af892e7ce791eed8cb6175c1273542bd2381600d3ac91d523f3451ce9",
+        "stem": "ช่วงรอกำลังคงที่ 3 W นาน 40 นาที ใช้พลังงานเท่าไร",
+        "options": [
+          "120 Wh",
+          "0.12 Wh",
+          "3 Wh",
+          "2 Wh"
+        ],
+        "reasons": [
+          "ค่านี้ถือว่า 40 นาทีเป็น 40 ชั่วโมง",
+          "ห้ามถือว่า 40 นาทีเป็น 0.04 h",
+          "3 Wh คือใช้ 3 W นาน 1 ชั่วโมง",
+          "3×40/60=2 Wh"
+        ]
+      },
+      "mfg1-energy-check-05": {
+        "sourceHash": "482e80f47d7e157d250ede027ea9ca3d9b9d6c7f2049bad399b8d02cd0d9e9fc",
+        "stem": "มีเฉพาะพลังงานทำงาน 3 Wh และรอ 2 Wh รวม 5 Wh=0.005 kWh ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "รวมกันเป็น 5 Wh และ 1000 Wh=1 kWh จึงได้ 0.005 kWh",
+          "พลังงานแต่ละช่วงบวกกันได้ และแปลงหน่วยถูก"
+        ]
+      },
+      "mfg1-energy-check-06": {
+        "sourceHash": "48da174258eb92ce9461e018cfeb00638b65b38d97ddf301432b76a9ce418444",
+        "stem": "20 นาทีที่ 9 W กับ 40 นาทีที่ 3 W รวม 1 ชั่วโมง กำลังเฉลี่ยเท่ากับสูงสุด 9 W ด้วยหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "9 W คือสูงสุด ไม่ใช่เฉลี่ยตลอดเวลา",
+          "กำลังเฉลี่ยคือรวม 5 Wh/1 h=5 W"
+        ]
+      },
+      "mfg1-energy-check-07": {
+        "sourceHash": "ad20dfa8fc3e119425fff56bd576f814e19f6ba795062e0ceab4701fb4c4cdd9",
+        "stem": "รอบ 1 ชั่วโมงภายใต้เงื่อนไขเดียวกันใช้ 5 Wh สองรอบใช้ 10 Wh ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "บวก 5 Wh สองครั้งได้ 10 Wh",
+          "บวกพลังงานสองรอบภายใต้เงื่อนไขเดียวกันได้"
+        ]
+      },
+      "mfg1-energy-check-08": {
+        "sourceHash": "02410880b6e08a3b7a4e86d4855c052539ac62f7d178a174fb6aca2a6d902f2d",
+        "stem": "พลังงานทำงาน 3 Wh กำลังรอ 3 W แต่ไม่ทราบเวลารอ ยังระบุรวม 5 Wh แน่นอนได้หรือไม่",
+        "options": [
+          "ได้",
+          "ไม่ได้"
+        ],
+        "reasons": [
+          "ขาดเวลาที่ต้องใช้คำนวณพลังงานรอ",
+          "ยังระบุพลังงานรวมแน่นอนไม่ได้จนกว่าจะทราบเวลารอ"
+        ]
+      }
+    },
+    "km": {
+      "mfg1-energy-check-01": {
+        "sourceHash": "ab309eff4c78765ec341005fd5f6c828651f7f2cf027a746aa1928c3e1cf19c5",
+        "stem": "គំរូស្មានមាន DC ថេរ 18 V និង 0.5 A។ អានុភាពដំណើរការប៉ុន្មាន?",
+        "options": [
+          "9 W",
+          "36 W",
+          "9 Wh",
+          "0.009 W"
+        ],
+        "reasons": [
+          "អានុភាពគឺ 18×0.5=9 W។",
+          "គុណតង់ស្យុងនិងចរន្ត មិនមែនចែក 18 នឹង 0.5 ទេ។",
+          "សំណួរសួរអានុភាព W មិនមែនថាមពល Wh ទេ។",
+          "គ្មានមូលហេតុប្ដូរ 9 W ទៅ 0.009 W ទេ។"
+        ]
+      },
+      "mfg1-energy-check-02": {
+        "sourceHash": "4ea680188ca0e52e96476f6dd0d8e001ae52fa9edbade1c2ba1fb2b31b916d2e",
+        "stem": "ប្ដូរ 20 នាទីទៅ h សម្រាប់រូបមន្តថាមពល។ មួយណាត្រឹមត្រូវ?",
+        "options": [
+          "0.20 h",
+          "20 h",
+          "1/3 h",
+          "3 h"
+        ],
+        "reasons": [
+          "0.20 h ជា 12 នាទី មិនមែន 20 ទេ។",
+          "កុំយក 20 នាទីជាធ្វើ 20 ម៉ោង។",
+          "20/60=1/3 h។",
+          "3 h ជា 180 នាទី ខុសពីពេលដើម។"
+        ]
+      },
+      "mfg1-energy-check-03": {
+        "sourceHash": "6220af9d8fb65fb0a7259910367af79d13f659cc365236b94aea08f9a953cfc9",
+        "stem": "គំរូស្មានប្រើអានុភាពថេរ 9 W រយៈពេល 20 នាទី។ ថាមពលប៉ុន្មាន?",
+        "options": [
+          "180 Wh",
+          "3 Wh",
+          "27 Wh",
+          "9 Wh"
+        ],
+        "reasons": [
+          "180 Wh គឺយកនាទីជាម៉ោងដោយខុស។",
+          "9×20/60=3 Wh។",
+          "ត្រូវគុណនឹង 1/3 h មិនមែនចែកទេ។",
+          "9 Wh គឺ 9 W រយៈពេល 1 ម៉ោង មិនមែន 20 នាទីទេ។"
+        ]
+      },
+      "mfg1-energy-check-04": {
+        "sourceHash": "e40e749af892e7ce791eed8cb6175c1273542bd2381600d3ac91d523f3451ce9",
+        "stem": "រង់ចាំអានុភាពថេរ 3 W រយៈពេល 40 នាទី ប្រើថាមពលប៉ុន្មាន?",
+        "options": [
+          "120 Wh",
+          "0.12 Wh",
+          "3 Wh",
+          "2 Wh"
+        ],
+        "reasons": [
+          "តម្លៃនេះយក 40 នាទីជាធ្វើ 40 ម៉ោង។",
+          "កុំយក 40 នាទីជាធ្វើ 0.04 h។",
+          "3 Wh គឺ 3 W រយៈពេល 1 ម៉ោង។",
+          "3×40/60=2 Wh។"
+        ]
+      },
+      "mfg1-energy-check-05": {
+        "sourceHash": "482e80f47d7e157d250ede027ea9ca3d9b9d6c7f2049bad399b8d02cd0d9e9fc",
+        "stem": "មានតែថាមពលដំណើរការ 3 Wh និងរង់ចាំ 2 Wh។ សរុប 5 Wh=0.005 kWh ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "បូកបាន 5 Wh ហើយ 1000 Wh=1 kWh ដូច្នេះបាន 0.005 kWh។",
+          "ថាមពលតាមផ្នែកអាចបូកបាន ហើយការប្ដូរឯកតានេះត្រឹមត្រូវ។"
+        ]
+      },
+      "mfg1-energy-check-06": {
+        "sourceHash": "48da174258eb92ce9461e018cfeb00638b65b38d97ddf301432b76a9ce418444",
+        "stem": "20 នាទី 9 W និង 40 នាទី 3 W សរុប 1 ម៉ោង។ អានុភាពមធ្យមក៏ស្មើអតិបរមា 9 W ដែរឬទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "9 W ជាអតិបរមា មិនមែនមធ្យមពេញពេលទេ។",
+          "អានុភាពមធ្យមគឺសរុប 5 Wh/1 h=5 W។"
+        ]
+      },
+      "mfg1-energy-check-07": {
+        "sourceHash": "ad20dfa8fc3e119425fff56bd576f814e19f6ba795062e0ceab4701fb4c4cdd9",
+        "stem": "មួយវដ្ត 1 ម៉ោងមានលក្ខខណ្ឌដូចគ្នាប្រើ 5 Wh។ ពីរវដ្តប្រើ 10 Wh ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "បូក 5 Wh ពីរដងបាន 10 Wh។",
+          "អាចបូកថាមពលពីរវដ្តដែលមានលក្ខខណ្ឌដូចគ្នា។"
+        ]
+      },
+      "mfg1-energy-check-08": {
+        "sourceHash": "02410880b6e08a3b7a4e86d4855c052539ac62f7d178a174fb6aca2a6d902f2d",
+        "stem": "ថាមពលដំណើរការ 3 Wh អានុភាពរង់ចាំ 3 W ប៉ុន្តែមិនដឹងពេលរង់ចាំ។ អាចកំណត់សរុប 5 Wh បានទេ?",
+        "options": [
+          "បាន",
+          "មិនបាន"
+        ],
+        "reasons": [
+          "ខ្វះពេលដែលត្រូវការគណនាថាមពលរង់ចាំ។",
+          "មិនអាចកំណត់ថាមពលសរុបរហូតដល់ដឹងពេលរង់ចាំ។"
+        ]
+      }
+    },
+    "tl": {
+      "mfg1-energy-check-01": {
+        "sourceHash": "ab309eff4c78765ec341005fd5f6c828651f7f2cf027a746aa1928c3e1cf19c5",
+        "stem": "Ang kathang modelo ay constant DC na 18 V at 0.5 A. Ano ang active power?",
+        "options": [
+          "9 W",
+          "36 W",
+          "9 Wh",
+          "0.009 W"
+        ],
+        "reasons": [
+          "Power ay 18×0.5=9 W.",
+          "I-multiply ang voltage at current; huwag 18 na hinati sa 0.5.",
+          "Power na W ang tanong, hindi energy na Wh.",
+          "Walang batayan para gawing 0.009 W ang 9 W."
+        ]
+      },
+      "mfg1-energy-check-02": {
+        "sourceHash": "4ea680188ca0e52e96476f6dd0d8e001ae52fa9edbade1c2ba1fb2b31b916d2e",
+        "stem": "I-convert ang 20 minuto sa h para sa energy formula. Alin ang tama?",
+        "options": [
+          "0.20 h",
+          "20 h",
+          "1/3 h",
+          "3 h"
+        ],
+        "reasons": [
+          "12 minuto ang 0.20 h, hindi 20.",
+          "Huwag gawing 20 oras ang 20 minuto.",
+          "20/60=1/3 h.",
+          "180 minuto ang 3 h, iba sa orihinal."
+        ]
+      },
+      "mfg1-energy-check-03": {
+        "sourceHash": "6220af9d8fb65fb0a7259910367af79d13f659cc365236b94aea08f9a953cfc9",
+        "stem": "Gaano karaming energy ang gamit ng kathang constant na 9 W sa 20 minuto?",
+        "options": [
+          "180 Wh",
+          "3 Wh",
+          "27 Wh",
+          "9 Wh"
+        ],
+        "reasons": [
+          "Maling ginagawang oras ang minuto sa 180 Wh.",
+          "9×20/60=3 Wh.",
+          "I-multiply sa 1/3 h, huwag hatiin dito.",
+          "9 Wh ay 9 W sa 1 oras, hindi 20 minuto."
+        ]
+      },
+      "mfg1-energy-check-04": {
+        "sourceHash": "e40e749af892e7ce791eed8cb6175c1273542bd2381600d3ac91d523f3451ce9",
+        "stem": "Ano ang energy sa constant na 3 W standby sa 40 minuto?",
+        "options": [
+          "120 Wh",
+          "0.12 Wh",
+          "3 Wh",
+          "2 Wh"
+        ],
+        "reasons": [
+          "Ginagawa nitong 40 oras ang 40 minuto.",
+          "Hindi 0.04 h ang 40 minuto.",
+          "3 Wh ay 3 W sa 1 oras.",
+          "3×40/60=2 Wh."
+        ]
+      },
+      "mfg1-energy-check-05": {
+        "sourceHash": "482e80f47d7e157d250ede027ea9ca3d9b9d6c7f2049bad399b8d02cd0d9e9fc",
+        "stem": "Active energy na 3 Wh at standby na 2 Wh lamang ang kasama. Tama ba ang kabuuang 5 Wh=0.005 kWh?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "5 Wh ang suma; dahil 1000 Wh=1 kWh, katumbas ito ng 0.005 kWh.",
+          "Maaaring pagsamahin ang energy ng mga interval at tama ang conversion."
+        ]
+      },
+      "mfg1-energy-check-06": {
+        "sourceHash": "48da174258eb92ce9461e018cfeb00638b65b38d97ddf301432b76a9ce418444",
+        "stem": "20 minuto sa 9 W at 40 minuto sa 3 W, kabuuang 1 oras. Ang average power ba ay maximum na 9 W din?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "Maximum ang 9 W, hindi average sa buong oras.",
+          "Average power ay kabuuang 5 Wh/1 h=5 W."
+        ]
+      },
+      "mfg1-energy-check-07": {
+        "sourceHash": "ad20dfa8fc3e119425fff56bd576f814e19f6ba795062e0ceab4701fb4c4cdd9",
+        "stem": "5 Wh ang isang 1-hour cycle na pareho ang kondisyon. Tama ba ang 10 Wh sa dalawang cycle?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "Dalawang 5 Wh ay 10 Wh.",
+          "Maaaring pagsamahin ang energy ng dalawang cycle na pareho ang kondisyon."
+        ]
+      },
+      "mfg1-energy-check-08": {
+        "sourceHash": "02410880b6e08a3b7a4e86d4855c052539ac62f7d178a174fb6aca2a6d902f2d",
+        "stem": "Active energy ay 3 Wh at standby power ay 3 W, ngunit hindi alam ang standby duration. Maaari pa bang itakdang 5 Wh ang kabuuan?",
+        "options": [
+          "Maaari",
+          "Hindi maaari"
+        ],
+        "reasons": [
+          "Kulang ang oras na kailangan para sa standby energy.",
+          "Hindi tiyak ang total energy hangga’t hindi alam ang standby duration."
+        ]
+      }
+    }
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "physicalDeviceVerified": false
+}

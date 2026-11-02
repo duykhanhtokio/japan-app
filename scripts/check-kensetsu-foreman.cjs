@@ -10,7 +10,7 @@ const ids=new Set(),paragraphIds=new Set(),prose=new Set(),all=[];let paragraphs
 const useful=s=>assert(typeof s==='string'&&s.trim().length>0,'Missing learner-facing text');
 for(let n=1;n<=28;n++){
  const s=read('session-'+String(n).padStart(3,'0')+'.json');all.push(s.id);assert.equal(s.id,'kensetsu-foreman-session-'+String(n).padStart(3,'0'));assert(!ids.has(s.id));ids.add(s.id);
- assert.equal(s.revision,n===4?2:1);assert.deepEqual(s.applicableLevels,['2']);assert.deepEqual(s.applicableFields,['utilities','building','civil']);
+ assert.equal(s.revision,n===4||n===10?2:1);assert.deepEqual(s.applicableLevels,['2']);assert.deepEqual(s.applicableFields,['utilities','building','civil']);
  assert.equal(s.status,'editorial_draft');assert.equal(s.durationMeasured,false);assert.equal(s.estimatedMinutes,null);assert.equal(s.appIntegrationReady,false);
  for(const k of ['domain','nativeJapanese','nativeVietnamese','rights'])assert.equal(s.review[k],false);
  useful(s.titleJa);useful(s.titleTranslations.vi);assert.equal(s.clusters.length,2);
@@ -32,7 +32,27 @@ for(const locale of ['en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl
  const entry=pack.sessions['kensetsu-foreman-session-004'].entries.learningActivity;
  assert.equal(entry.sourceJa,coaching.ja);useful(entry.translations[locale]);
 }
+const schedule=read('session-010.json').clusters[1].learningActivity;
+useful(schedule.ja);useful(schedule.translations.vi);assert.equal(schedule.graded,false);
+for(const locale of ['en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']){
+ const pack=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/foreman-translations',locale+'.json')));
+ const entry=pack.sessions['kensetsu-foreman-session-010'].entries.learningActivity;
+ assert.equal(entry.sourceJa,schedule.ja);useful(entry.translations[locale]);
+}
+function checkScheduleEquations(text){
+ const normalized=text.replace(/[①②③]/gu,';').normalize('NFKC').replace(/\([ぁ-ゖー]+\)/gu,'').replace(/\s/g,'');
+ const parallel=[...normalized.matchAll(/(\d+)\+max\((\d+),(\d+)\)\+(\d+)=(\d+)/g)];
+ const sequential=[...normalized.matchAll(/(\d+)\+(\d+)\+(\d+)\+(\d+)=(\d+)/g)];
+ assert.equal(parallel.length,2);assert.equal(sequential.length,1);
+ for(const m of parallel){const[a,b,c,d,result]=m.slice(1).map(Number);assert.equal(a+Math.max(b,c)+d,result,'Parallel worked equation');}
+ for(const m of sequential){const[a,b,c,d,result]=m.slice(1).map(Number);assert.equal(a+b+c+d,result,'Sequential worked equation');}
+}
+checkScheduleEquations(schedule.ja);checkScheduleEquations(schedule.translations.vi);
+for(const locale of ['en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']){
+ const pack=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/foreman-translations',locale+'.json')));
+ checkScheduleEquations(pack.sessions['kensetsu-foreman-session-010'].entries.learningActivity.translations[locale]);
+}
 assert.equal(paragraphs,112);assert.equal(prompts,50);assert.equal(images,4);assert.equal(screen.paragraphs,paragraphs);assert.equal(screen.candidates.length,0);assert.equal(screen.rightsCertification,false);
 assert.equal(ledger.coverageDenominator,null);assert.equal(ledger.wholeSourceComplete,false);assert.equal(ledger.releaseReady,false);assert.equal(ledger.remainingTargetLocales.length,0);assert.equal(ledger.objectives.length,56);
-const report={date:'2026-10-18',status:'PASS_AUTHORED_DATA_AND_PRESERVATION',lessons:all.length,weeks:4,clusters:56,japaneseParagraphs:paragraphs,vietnameseParagraphs:paragraphs,newTranslatedApplicationPrompts:prompts,originalDiagrams:images,originalThreeFilesBytePreserved:true,sourcePdfInRepository:false,wholeSourceCoverageConfirmed:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};
-fs.writeFileSync(path.join(dir,'content-qa-2026-10-18.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+const report={date:'2026-11-02',status:'PASS_AUTHORED_DATA_AND_PRESERVATION',lessons:all.length,weeks:4,clusters:56,japaneseParagraphs:paragraphs,vietnameseParagraphs:paragraphs,newTranslatedApplicationPrompts:prompts,ungradedDepthActivities:2,depthActivityLocalePairs:24,workedScheduleEquationsChecked:39,originalDiagrams:images,originalThreeFilesBytePreserved:true,sourcePdfInRepository:false,wholeSourceCoverageConfirmed:false,domainReviewed:false,nativeReviewed:false,releaseReady:false};
+fs.writeFileSync(path.join(dir,'content-qa-2026-11-02.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
