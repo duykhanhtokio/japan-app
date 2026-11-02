@@ -1,3 +1,17 @@
+# Ba bài ổn định tiếp nối đủ12ngôn ngữ — 02/11/2026, đợt v6
+
+Hoàn tất `hotel-planning-07`, `hotel-service-01`, `hotel-service-06` đủ36/36cặp theo đúngrevisionNhật. Tăng245→276/456cặp hợp lệ (+31), còn180cặp thiếu/cũ:19cặp được tác giả đầy đủ mới,12cặp cũ được bổ sung nội dung thực sự;5cặp planning07 đã hợp lệ giữ nguyên. Không đổi Nhật,327câu,ID,đáp án hoặc furigana. Ba bài có3480trường dịch được kiểm cấu trúc;102bản câu còn thiếu của sáu locale cũ được dịch đủ lựa chọn và giải thích.
+
+Tác giả khách sạn tự biên soạnHI/BN6fullpairs,TLplanning07và12delta service; các luồng hỗ trợ tự biên soạn và tự kiểm TH3,KM3,NE/MY6fullpairs. Không rà chéo ngữ nghĩa. Bằng chứng tự kiểm: `source-v6-own-authoring.json`, `source-v6-th-own-authoring.json`, `source-v6-km-own-authoring.json`, `source-v6-ne-my-own-authoring.json`. Các câu Nhật là mục tiêu học vẫn đi kèm bản giải nghĩa khi cần. Giữ điều kiện6–15là ghi nhận nguồn,không phải nghĩa vụ/số tối ưu phổ quát; giữ15/30/45độ,thứ tự nói→cúi chào,quy định xác minh/mởkhóa của cơ sở,phân biệt tìm đồ/cảnhsát khi nghi vụviệc với thươngtíchnặng/xe cấpcứu và kếtquả trước không bỏ diễnbiến.
+
+Tự rà bản phồn thể sửa cách dùng `確認項目`, `開鎖權限`, `聯絡對象` trong hai đoạn service06và giải thíchq03;83bản câu cũ khác giữ nguyên,113cặp ngoài phạm vi trong các file planning/service giữ nguyên. Toàn bộ bản mới `translated_ai_unreviewed`; không tínhfallback hoặc đổihashđơnthuần.
+
+Kiểm `check-three-lessons-v6.cjs`PASS36cặp/3480trường, bảo toànNhật và ngoài phạm vi; `check-translations.cjs`PASS276cặp hiện có (complete=false); loaderthậtPASS276,180thiếu/cũ trảnull,revisioncũ vàlocale không hỗtrợ bị chặn. `check.cjs`PASS38bài/327câu về cấu trúc. Hồ sơ tích hợp `three-lessons-v6-integration-evidence.json`. Không dùng chỉ sốvisuallegacy của checker để thay nghiệmthu nguồn chuẩn.
+
+Độ bao phủ nguồn không đổi:92covered_ai/382known,290candidate;15trang complete_ai,11partial,91pending trong117trang;mẫu số mở,wholeSourceKnowledgeCovered=false. Không nghiệmthu chuyênmôn/bảnngữ,thiếtbị thật,Expo/native hoặc đo thời lượng trong đợt dịch này. Đợt đãđóng tệp chờ điều phối commit/push/xácminh; chưa tự nhận đãlưu từxa.
+
+---
+
 # Hoàn tất planning02/03/05 đủ12ngôn ngữ — 02/11/2026
 
 Ba bài Nhật ổn định về OCC/ADR/RevPAR, website và PMS/OTA/đề xuất bán nay đủ36/36cặp đúngrevision. Hoàn thiện15cặp cũ và tác giả21cặp mới, toàn ngành209→245/456hợp lệ; còn211cặp thiếu/cũ. Nhật,327câu,ID/đáp án và furigana giữ nguyên. Tác giả khách sạn tự soạnHI/BN/TL9fullpairs/795trường và5locale delta; Food tự soạnNE/MY6pairs, MFG tự soạnTH/KM6pairs. Không rà chéo ngữ nghĩa giữa tác giả; tích hợp kiểm schema/IDs/revision/đáp án/bảo toàn.
