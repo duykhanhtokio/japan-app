@@ -1,3 +1,15 @@
+# Đối chiếu nguồn và bổ sung hai năng lực ABC — 03/11/2026
+
+Đã xác minh lại hash PDF2号(65trang) và đọc chữ/ảnh trang55. Khép khoảng trống HR2-055-06 bằng q09 phân biệt chỉ tiêu利益率 với số tiền lợi nhuận, không phủ nhận mục đích khác có thể dùng lợi nhuận tiền. Khi đọc lại phát hiện mục đích ABC (nhận diện món đóng góp lợi nhuận và cải thiện tỷ suất toàn cửa hàng) chưa được ghi riêng: thêm HSP2-055-abc-profitability-purpose, đoạn Nhật độc lập và q10 kiểm riêng mục đích. Tách đơn vị mới thay vì đóng bằng câu chung hoặc giữ mẫu số cũ.
+
+Hai câu mới và đoạn bổ sung đủ12ngôn ngữ theo revision mới; vẫn456/456cặp hợp lệ. Giữ328câu Nhật cũ, ID/đáp án/lịch và mọi bản dịch cũ, chỉ nối nội dung được tác giả tự dịch mới. Tổng330câu/38bài. Giữ715entry furigana cũ, bổ sung13entry và kiểm alignment/revision toàn bộ. Sổ nguồn chuẩn102covered_ai/384known, 282candidate; mẫu số mở, sourceCoveragePercent=null, fullyCovered=false. Không kết luận đã bao phủ117trang hoặc toàn ngành.
+
+PASS: canonical source contract, reciprocal region/knowledge references, source-atoms adapters, lesson structure, readings, complete translations, runtime loader, source-payload hygiene, git diff--check. Bảo toàn riêng bằng check-recovered-abc.cjs: mọi câu Nhật cũ và trường dịch cũ giữ nguyên, chỉ thêm đoạn/q09/q10; runtime revision isolation và lưu/khôi phục archive đã được kiểm. Với bài09 đổi revision, lượt cũ được giữ trong lịch sử, revision mới yêu cầu làm lại theo cơ chế có sẵn. Không tuyên bố completion của revision cũ tự chuyển sang revision mới.
+
+Bằng chứng: recovery-v9/abc-source-review.json và abc-integration.json; bộ tái lập recover-abc-gap.cjs. Source PDF/ảnh trang vẫn là đầu vào riêng, không đưa vào app/Git. Vẫn chưa có duyệt chuyên môn/bản ngữ, Expo/native/thiết bị thật hoặc thời lượng thực học. Chỉ log WORK PERSISTENCE PASS sau commit xác nhận lưu đợt này.
+
+---
+
 # Tái lập và hoàn tất108cặp v9 — 03/11/2026
 
 Cả ba nhóm đã được tái lập bằng nội dung dịch thực tế và tự kiểm riêng: tổng108cặp/9444trường, 876bản câu hỏi dịch mới. `finalize-recovery-v9.cjs --apply` PASS, giữ348cặp ngoài phạm vi; áp dụng3chỉnh sửa tác giả muộn (TH/KM restaurant08 bỏ từ旬 chưa dịch, THsafety04 sửa lỗi gõ). Bản nguồn Nhật/catalog/sổ nguồn không đổi. Bản bàn giao được lưu theo nhóm để không phụ thuộc phiên tạm.
