@@ -27,16 +27,23 @@ const loaders:Record<string,()=>{lessons:HotelTranslation[]}>= {
  'zh-TW/safety':()=>require('./translations/zh-TW/safety.json'),
  'hi/front':()=>require('./translations/hi/front.json'),
  'hi/service':()=>require('./translations/hi/service.json'),
+ 'hi/safety':()=>require('./translations/hi/safety.json'),
  'bn/front':()=>require('./translations/bn/front.json'),
  'bn/service':()=>require('./translations/bn/service.json'),
+ 'bn/safety':()=>require('./translations/bn/safety.json'),
  'ne/front':()=>require('./translations/ne/front.json'),
  'ne/service':()=>require('./translations/ne/service.json'),
+ 'ne/safety':()=>require('./translations/ne/safety.json'),
  'my/service':()=>require('./translations/my/service.json'),
+ 'my/safety':()=>require('./translations/my/safety.json'),
  'th/service':()=>require('./translations/th/service.json'),
+ 'th/safety':()=>require('./translations/th/safety.json'),
  'km/service':()=>require('./translations/km/service.json'),
+ 'km/safety':()=>require('./translations/km/safety.json'),
  'tl/front':()=>require('./translations/tl/front.json'),
  'tl/service':()=>require('./translations/tl/service.json'),
  'tl/restaurant':()=>require('./translations/tl/restaurant.json'),
+ 'tl/safety':()=>require('./translations/tl/safety.json'),
 };
 export function loadHotelTranslation(id:string,language:string,revision:string):HotelTranslation|null {
  const group=id.split('-')[1],load=loaders[`${language}/${group}`];if(!load)return null;const t=load().lessons.find(t=>t.id===id);return t?.sourceRevision===revision?t:null;

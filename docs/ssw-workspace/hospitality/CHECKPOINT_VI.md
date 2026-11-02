@@ -1,3 +1,13 @@
+# Hoàn tất liên tiếp ba bài × 12 ngôn ngữ — ngày 02/11/2026
+
+Đã hoàn tất lần lượt `hotel-service-05` (điện thoại/khiếu nại), `hotel-safety-01` (phòng ngừa/chuẩn bị khẩn cấp) và `hotel-safety-05` (thiết bị/tiết kiệm tài nguyên), mỗi bài đủ 12 ngôn ngữ theo đúng revision Nhật. Phạm vi mỗi bản gồm tiêu đề, mục tiêu, toàn bộ đoạn, thuật ngữ, ví dụ, thực hành, mọi câu hỏi/lựa chọn/giải thích và caption/alt. Tổng phạm vi ba bài là 10 đoạn Nhật và 16 câu độc lập; không tính bản dịch thành câu mới.
+
+Thêm 36 cặp hợp lệ: hoàn thiện 16 cặp cũ và dịch mới 20 cặp chưa có. Toàn ngành tăng 46→82/456, còn 374 cặp thiếu/cũ. Không sửa Nhật hoặc các bài khác; giữ nguyên các bản service02/service03 đã hoàn tất. Không dùng fallback để tính đủ. Tất cả vẫn `translated_ai_unreviewed`.
+
+Đã kiểm tra từng bài trước chuyển bài kế, rồi chạy một lượt kiểm tra chung: bản dịch, loader, từ chối revision cũ, nguồn, furigana, semantic và bảo toàn nội dung ngoài phạm vi đều PASS. Đây không phải duyệt bản ngữ/chuyên môn, chứng minh đầy đủ 117 trang hoặc kiểm thử thiết bị thật. Bằng chứng: `three-lessons-12locale-20261102-evidence.json`.
+
+---
+
 # Hoàn tất bản dịch bài kính ngữ — ngày 02/11/2026
 
 Đã hoàn tất đủ 12 ngôn ngữ cho toàn bộ `hotel-service-02` theo revision Nhật `00dcc624507593ecc0ebfa4c7929a7e64431e3b92e25028b0efe4aa3a8b64761`: tiêu đề, 2 mục tiêu, 3 đoạn, 5 thuật ngữ, ví dụ, thực hành, 5 câu hỏi đủ lựa chọn/giải thích và caption/alt. Sáu bản cũ được rà và bổ sung hai câu còn thiếu cùng alt sơ đồ ba cột; sáu bản hi/bn/ne/my/th/km được dịch đầy đủ mới. Giữ ID, đáp án, thuật ngữ/cách đọc và câu ví dụ Nhật. Không sửa Nhật.

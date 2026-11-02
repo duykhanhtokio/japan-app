@@ -4,13 +4,16 @@ import data from '@/data/food-manufacturing/source-assessment34.json';
 import additions35 from '@/data/food-manufacturing/source-assessment35.json';
 import additions38 from '@/data/food-manufacturing/source-closure38.json';
 import additions39 from '@/data/food-manufacturing/source-closure39.json';
+import additions40 from '@/data/food-manufacturing/source-closure40.json';
+import additions41 from '@/data/food-manufacturing/source-closure41.json';
+import additions42 from '@/data/food-manufacturing/source-closure42.json';
 import type {FoodManufacturingLesson} from '@/data/food-manufacturing';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 
 type RubyToken={text:string;reading?:string};
 type Translation={title:string;prompt:string;expectedPoints:string[];sourceHash:string};
 type RuntimeCheck={id:string;lessonId:string;lessonSourceHash:string;titleJa:string;promptJa:string;expectedPointsJa:string[];sourceHash:string;titleRuby:RubyToken[];promptRuby:RubyToken[];expectedPointsRuby:RubyToken[][];translations:Record<string,Translation>};
-const checks:RuntimeCheck[]=[...data.checks,...additions35.checks,...additions38.checks,...additions39.checks];
+const checks:RuntimeCheck[]=[...data.checks,...additions35.checks,...additions38.checks,...additions39.checks,...additions40.checks,...additions41.checks,...additions42.checks];
 function RubyLine({tokens,color,readingColor,heading=false}:{tokens:RubyToken[];color:string;readingColor:string;heading?:boolean}){
  return <View style={styles.line}>{tokens.map((token,i)=><View key={i} style={styles.word}><Text style={{color:readingColor,fontSize:10,lineHeight:14}}>{token.reading??' '}</Text><Text selectable style={{color,fontSize:heading?19:17,lineHeight:29,fontWeight:heading?'700':'400'}}>{token.text}</Text></View>)}</View>;
 }

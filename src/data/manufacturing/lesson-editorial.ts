@@ -13,6 +13,10 @@ let energyClarification:Clarification|null=null;
  * This clarifies an existing inspection principle, without adding an operating procedure.
  */
 export function manufacturingLessonParagraph(lesson:ManufacturingLesson,paragraphId:string,locale:string,text:string|undefined):string|undefined {
+ if(['mfg1-electrical-l070','mfg1-electrical-l025','mfg1-electrical-l024'].includes(lesson.id)){
+  const revised=require('./sequential-practice').manufacturingSequentialParagraph(lesson,paragraphId,locale,text);
+  if(revised!==text)return revised;
+ }
  if(lesson.id==='mfg1-electrical-l075')return manufacturingBooleanParagraph(lesson,paragraphId,locale,text);
  const dimension=lesson.id==='mfg1-mechanical-lesson-046'&&paragraphId==='section-2';
  const tolerance=lesson.id==='mfg1-mechanical-lesson-021'&&paragraphId==='decision';

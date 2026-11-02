@@ -62,3 +62,16 @@ Construction foreman010 adds three independent schedule what-if cases with worke
 Restaurant added eight distinct service-judgment questions and96 translated question records across six existing lessons; dedicated-question gaps decreased387→379. Original498 canonical items and prior locale records were preserved; exact locale and focused adapter/SSR checks passed.
 
 Whole-source closure, contextual/native/domain acceptance, physical-device tests, audio and measured learner duration remain open.
+
+## Publisher throughput update: three sequential groups per worker
+
+The six-worker policy is now required by AGENTS.md and SIX_AI_SEQUENTIAL_WORK_POLICY_VI.md. The assigned three-group lists were executed sequentially within each lane, with scoped checks before moving on. No content cross-review between workers was required; coordinator verification concerns integration, file scope and remote persistence. Eighteen work groups were completed, not eighteen whole-source certifications.
+
+- Agriculture: original-PDF proof for17 conditional/numeric questions over9 visually inspected pages; eight further level2 overlap candidates rewritten; eight actual rasters reviewed and three daily companion contexts corrected across four scheduled occurrences. 800-question and369-schedule structural guards passed; no invented numeric repairs.
+- Manufacturing: Kirchhoff8, binary8 and IC/signal11 questions, total27, with78 choice rationales and324 translated question pairs. Source pages130–131,145,141–143 support bounded claims; original banks and demand-driven readers remain guarded.
+- Food: three worked teaching sections and six applied checks on missed inspection/ATP limits, many-to-many lot traceability and company-wide quality assurance. Twelve expected points,108 translation pairs,30 ruby fields; original96lesson/848question identities preserved.
+- Restaurant: three clusters of eight questions each; dedicated-question gaps decreased379→371→363→355. New24questions have288 locale records;530 canonicalitems and6,360 locale records passed version gates, with506 prior items preserved.
+- Hotel: three Japanese-stable lessons completed in12 locales, adding36 validlesson-locale pairs. Total current82/456,374 incomplete/stale pairs remain; Japanese source bytes and already completed lessons were preserved.
+- Construction/care: foreman012 evidence interpretation, foreman013 complaint/fact/hypothesis separation, and care170 time-scoped resident choice/written record. Forty-eight translated units added with kana/ruby;216 focused reader cases passed;687 care question contents preserved.
+
+Per-sector receipts record the precise source pages, authored units, tests and exclusions. The broader source-atom, native/domain, audio, physical-device and measured-duration acceptance gaps remain open. No numerical delivery target can override these limits.

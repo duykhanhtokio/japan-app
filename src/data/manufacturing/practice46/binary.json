@@ -1,0 +1,1633 @@
+{
+  "schemaVersion": 1,
+  "id": "mfg1-sequential-binary-supplement",
+  "revision": "mfg46-binary-v1",
+  "titleJa": "二進数：位・桁上がり・表現範囲（8問）",
+  "lessonPatch": {
+    "lessonId": "mfg1-electrical-l025",
+    "paragraphId": "section-2",
+    "sourceHash": "f6c61e108c840e7b1ccf9794a4da7c366703a38c3368945803d9310c31a1aa37",
+    "wording": {
+      "ja": {
+        "before": "二進数は0と1を使い、右から1、2、4、8…という重みを持ちます。十進数の10は十ですが、二進数の10は1×2+0×1=2です。同じ文字列でも基数が違えば値が違うため、二進数か十進数かを明示します。\n例えば二進数1101は1×8+1×4+0×2+1×1=13です。使っている桁の重みだけを足すと確認できます。0を飛ばして数字をつなげたり、十進数の1101として読んだりしません。",
+        "after": "二進数は0と1を使い、右から1、2、4、8…という重みを持ちます。十進数の10は十ですが、二進数の10は1×2+0×1=2です。同じ文字列でも基数が違えば値が違うため、二進数か十進数かを明示します。\n例えば二進数1101は1×8+1×4+0×2+1×1=13です。使っている桁の重みだけを足すと確認できます。0を飛ばして数字をつなげたり、十進数の1101として読んだりしません。\n\n表の対応を使うだけでなく、符号なし整数という条件で位の重みを確かめます。右から2⁰、2¹、2²…なので、二進数10100は16＋4＝20です。十進数を戻すときも、重みの和に分けて20＝16＋4→10100と検算します。6桁なら左端の重みは2⁵＝32で、桁数6そのものではありません。\n先頭の0を加えても符号なしの数値は同じで、00110と110は共に6です。ただし品番等の文字列や固定長の記録を、数値が同じという理由で削ってはいけません。二進数の桁として使えるのは0と1だけで、2等を見つけても推測で置換せず記録形式を確認します。\n二進数では1＋1＝10と桁上がりします。桁を制限しない計算では111＋1＝1000です。符号なし4ビットは0000から1111で、最大値15、状態数16となります。最大値と状態数を分け、固定4ビットの装置へ5桁の結果をそのまま入れたり、桁を勝手に切り捨てたりしません。符号付きや別の符号化なら別の指定が必要です。"
+      },
+      "en": {
+        "before": "Binary uses 0 and 1, with place weights 1, 2, 4, 8… from the right. Decimal 10 is ten, but binary 10 is 1 × 2 + 0 × 1 = 2. The same written digits mean different values in different bases, so identify binary or decimal explicitly.\nFor example, binary 1101 is 1 × 8 + 1 × 4 + 0 × 2 + 1 × 1 = 13. Add the weights of the occupied places to check. Do not join digits after skipping zeros or read it as decimal 1101.",
+        "after": "Binary uses 0 and 1, with place weights 1, 2, 4, 8… from the right. Decimal 10 is ten, but binary 10 is 1 × 2 + 0 × 1 = 2. The same written digits mean different values in different bases, so identify binary or decimal explicitly.\nFor example, binary 1101 is 1 × 8 + 1 × 4 + 0 × 2 + 1 × 1 = 13. Add the weights of the occupied places to check. Do not join digits after skipping zeros or read it as decimal 1101.\n\nUse unsigned-integer place values, not table lookup alone. From the right the weights are 2⁰,2¹,2²…; 10100₂=16+4=20₁₀, and 20=16+4 converts back to 10100₂. In six digits the leftmost weight is 2⁵=32, not six. Leading zeros preserve unsigned value: 00110₂=110₂=6. They may still matter in identifiers or fixed-width records, so do not delete them. Only 0 and 1 are binary digits; check an invalid entry instead of guessing. Carry gives 1+1=10₂ and, without a width limit, 111₂+1=1000₂. Unsigned four-bit values run 0–15: maximum15, sixteen states. Do not truncate or enter a five-bit result into a four-bit field without its specification; signed encodings need separate rules."
+      },
+      "vi": {
+        "before": "Nhị phân dùng 0 và 1, có trọng số từ phải là 1,2,4,8… Thập phân 10 là mười, nhưng nhị phân 10 bằng 1×2+0×1=2. Cùng chữ số nhưng cơ số khác sẽ có giá trị khác, nên phải ghi rõ nhị phân hay thập phân.\nVí dụ nhị phân 1101=1×8+1×4+0×2+1×1=13. Cộng trọng số của các vị trí có giá trị 1 để kiểm tra. Không bỏ số 0 rồi ghép chữ số, hoặc đọc thành số thập phân 1101.",
+        "after": "Nhị phân dùng 0 và 1, có trọng số từ phải là 1,2,4,8… Thập phân 10 là mười, nhưng nhị phân 10 bằng 1×2+0×1=2. Cùng chữ số nhưng cơ số khác sẽ có giá trị khác, nên phải ghi rõ nhị phân hay thập phân.\nVí dụ nhị phân 1101=1×8+1×4+0×2+1×1=13. Cộng trọng số của các vị trí có giá trị 1 để kiểm tra. Không bỏ số 0 rồi ghép chữ số, hoặc đọc thành số thập phân 1101.\n\nDùng trọng số từng vị của số nguyên không dấu, không chỉ tra bảng. Từ phải là2⁰,2¹,2²…;10100₂=16+4=20₁₀ và đổi ngược20=16+4→10100₂. Sáu vị thì trọng số trái nhất2⁵=32, không phải6. Thêm0 đầu không đổi giá trị không dấu:00110₂=110₂=6. Nhưng0 có thể quan trọng trong mã hay hồ sơ độ dài cố định, không tự xóa. Chữ số nhị phân chỉ có0 và1; gặp số không hợp lệ phải xác nhận, không đoán sửa. Phép nhớ là1+1=10₂; không giới hạn độ dài thì111₂+1=1000₂. Bốn bit không dấu có giá trị0–15: lớn nhất15, có16 trạng thái. Không tự cắt hay đưa kết quả5bit vào trường4bit; kiểu có dấu cần quy tắc riêng."
+      },
+      "id": {
+        "before": "Bilangan biner menggunakan 0 dan 1, dengan bobot dari kanan 1, 2, 4, 8, dan seterusnya. Angka 10 desimal bernilai sepuluh, tetapi 10 biner bernilai 1 × 2 + 0 × 1 = 2. Teks angka sama dapat bernilai berbeda jika basisnya berbeda; nyatakan apakah biner atau desimal.\nSebagai contoh, 1101 biner adalah 1 × 8 + 1 × 4 + 0 × 2 + 1 × 1 = 13. Periksa dengan menjumlahkan bobot posisi yang bernilai satu. Jangan menghapus nol dan menyambungkan angka yang tersisa, ataupun membacanya sebagai 1101 desimal.",
+        "after": "Bilangan biner menggunakan 0 dan 1, dengan bobot dari kanan 1, 2, 4, 8, dan seterusnya. Angka 10 desimal bernilai sepuluh, tetapi 10 biner bernilai 1 × 2 + 0 × 1 = 2. Teks angka sama dapat bernilai berbeda jika basisnya berbeda; nyatakan apakah biner atau desimal.\nSebagai contoh, 1101 biner adalah 1 × 8 + 1 × 4 + 0 × 2 + 1 × 1 = 13. Periksa dengan menjumlahkan bobot posisi yang bernilai satu. Jangan menghapus nol dan menyambungkan angka yang tersisa, ataupun membacanya sebagai 1101 desimal.\n\nGunakan bobot posisi bilangan bulat tak bertanda, bukan tabel saja. Dari kanan2⁰,2¹,2²…;10100₂=16+4=20₁₀ dan20=16+4 kembali menjadi10100₂. Pada enam digit, bobot paling kiri2⁵=32, bukan6. Nol awal tidak mengubah nilai:00110₂=110₂=6, tetapi dapat penting dalam kode atau catatan lebar tetap; jangan hapus. Digit biner hanya0 dan1; konfirmasikan entri tidak sah, jangan menebak koreksi. Carry memberi1+1=10₂; tanpa batas lebar,111₂+1=1000₂. Empat bit tak bertanda mencakup0–15: maksimum15,16 keadaan. Jangan memangkas atau memasukkan hasil5bit ke kolom4bit tanpa ketentuan; pengkodean bertanda perlu aturan tersendiri."
+      },
+      "zh-CN": {
+        "before": "二进制用0和1，从右起权重为1、2、4、8……十进制10是十，二进制10则是1×2＋0×1＝2。相同字符串在不同基数下值不同，须注明二或十进制。\n如二进制1101＝1×8＋1×4＋0×2＋1×1＝13。可将为1的位权相加验算，不要跳过0拼接数字，也不要按十进制1101读取。",
+        "after": "二进制用0和1，从右起权重为1、2、4、8……十进制10是十，二进制10则是1×2＋0×1＝2。相同字符串在不同基数下值不同，须注明二或十进制。\n如二进制1101＝1×8＋1×4＋0×2＋1×1＝13。可将为1的位权相加验算，不要跳过0拼接数字，也不要按十进制1101读取。\n\n按无符号整数的位权理解，不只查表。从右起为2⁰、2¹、2²…；10100₂=16+4=20₁₀，反向20=16+4→10100₂。六位数最左权重2⁵=32，不是6。前导0不改数值：00110₂=110₂=6，但标识符或固定长度记录的0不可擅删。二进制仅用0、1；发现无效数字先核实，不能猜改。进位1+1=10₂，不限位数时111₂+1=1000₂。无符号4位范围0–15，最大15、状态数16。不能擅自截断或把5位结果写入4位字段；有符号编码须另查规定。"
+      },
+      "zh-TW": {
+        "before": "二進位制用0和1，從右起權重為1、2、4、8……十進位制10是十，二進位制10則是1×2＋0×1＝2。相同字串在不同基數下值不同，須註明二或十進位制。\n如二進位制1101＝1×8＋1×4＋0×2＋1×1＝13。可將為1的位權相加驗算，不要跳過0拼接數字，也不要按十進位制1101讀取。",
+        "after": "二進位制用0和1，從右起權重為1、2、4、8……十進位制10是十，二進位制10則是1×2＋0×1＝2。相同字串在不同基數下值不同，須註明二或十進位制。\n如二進位制1101＝1×8＋1×4＋0×2＋1×1＝13。可將為1的位權相加驗算，不要跳過0拼接數字，也不要按十進位制1101讀取。\n\n按無符號整數的位權理解，不只查表。從右起為2⁰、2¹、2²…；10100₂=16+4=20₁₀，反向20=16+4→10100₂。六位數最左權重2⁵=32，不是6。前導0不改數值：00110₂=110₂=6，但識別碼或固定長度紀錄的0不可擅刪。二進位僅用0、1；發現無效數字先核實，不能猜改。進位1+1=10₂，不限位數時111₂+1=1000₂。無符號4位範圍0–15，最大15、狀態數16。不能擅自截斷或把5位結果寫入4位欄位；有符號編碼須另查規定。"
+      },
+      "hi": {
+        "before": "द्विआधारी में 0 और 1 तथा दाईं ओर से 1, 2, 4, 8… के स्थान मान हैं। दशमलव 10 दस है लेकिन द्विआधारी 10 = 1 × 2 + 0 × 1 = 2 है। समान अंक-श्रृंखला का आधार अलग हो तो मान अलग है; द्विआधारी या दशमलव स्पष्ट करें।\nजैसे द्विआधारी 1101 = 1 × 8 + 1 × 4 + 0 × 2 + 1 × 1 = 13। केवल 1 वाले स्थानों का मान जोड़कर जाँचें। 0 हटाकर अंक न जोड़ें और दशमलव 1101 की तरह न पढ़ें।",
+        "after": "द्विआधारी में 0 और 1 तथा दाईं ओर से 1, 2, 4, 8… के स्थान मान हैं। दशमलव 10 दस है लेकिन द्विआधारी 10 = 1 × 2 + 0 × 1 = 2 है। समान अंक-श्रृंखला का आधार अलग हो तो मान अलग है; द्विआधारी या दशमलव स्पष्ट करें।\nजैसे द्विआधारी 1101 = 1 × 8 + 1 × 4 + 0 × 2 + 1 × 1 = 13। केवल 1 वाले स्थानों का मान जोड़कर जाँचें। 0 हटाकर अंक न जोड़ें और दशमलव 1101 की तरह न पढ़ें।\n\nकेवल तालिका नहीं, अचिह्नित पूर्णांक के स्थान-मूल्य देखें। दाएँ से2⁰,2¹,2²…;10100₂=16+4=20₁₀ और उलटा20=16+4→10100₂। छह अंकों में सबसे बाएँ भार2⁵=32 है,6 नहीं। शुरुआती शून्य से मान नहीं बदलता:00110₂=110₂=6, पर पहचान या निश्चित-चौड़ाई रिकॉर्ड से शून्य न हटाएँ। बाइनरी में केवल0 और1 हैं; गलत अंक की पुष्टि करें, अनुमान से न बदलें। कैरी1+1=10₂ देता है; चौड़ाई सीमा बिना111₂+1=1000₂। अचिह्नित4बिट0–15 हैं: अधिकतम15,16 अवस्थाएँ।5बिट परिणाम को4बिट में न काटें या भरें; चिह्नित एन्कोडिंग के अलग नियम चाहिए।"
+      },
+      "bn": {
+        "before": "বাইনারিতে 0 ও 1, ডান থেকে ওজন 1,2,4,8…। দশমিক 10 দশ, কিন্তু বাইনারি 10 হলো 1×2+0×1=2। একই লেখায় ভিত্তি বদলালে মান বদলায়, তাই বাইনারি না দশমিক স্পষ্ট করুন।\nযেমন বাইনারি 1101 হলো 1×8+1×4+0×2+1×1=13। ব্যবহৃত স্থানের ওজন যোগ করে দেখা যায়। 0 বাদ দিয়ে অঙ্ক জোড়া বা দশমিক 1101 হিসেবে পড়বেন না।",
+        "after": "বাইনারিতে 0 ও 1, ডান থেকে ওজন 1,2,4,8…। দশমিক 10 দশ, কিন্তু বাইনারি 10 হলো 1×2+0×1=2। একই লেখায় ভিত্তি বদলালে মান বদলায়, তাই বাইনারি না দশমিক স্পষ্ট করুন।\nযেমন বাইনারি 1101 হলো 1×8+1×4+0×2+1×1=13। ব্যবহৃত স্থানের ওজন যোগ করে দেখা যায়। 0 বাদ দিয়ে অঙ্ক জোড়া বা দশমিক 1101 হিসেবে পড়বেন না।\n\nশুধু সারণি নয়, চিহ্নবিহীন পূর্ণসংখ্যার স্থানমান দেখুন। ডান থেকে2⁰,2¹,2²…;10100₂=16+4=20₁₀ এবং উল্টো20=16+4→10100₂। ছয় অঙ্কে বাঁয়ের ওজন2⁵=32,6 নয়। শুরুর শূন্য মান বদলায় না:00110₂=110₂=6; তবে পরিচিতি বা নির্দিষ্ট দৈর্ঘ্যের রেকর্ডের শূন্য মুছবেন না। বাইনারিতে শুধু0 ও1; ভুল অঙ্ক অনুমানে না বদলে যাচাই করুন। ক্যারি1+1=10₂; দৈর্ঘ্যসীমা ছাড়া111₂+1=1000₂। চিহ্নবিহীন4বিট0–15: সর্বোচ্চ15,16 অবস্থা।5বিট ফল4বিটে কেটে বা ঢুকিয়ে দেবেন না; চিহ্নযুক্ত এনকোডিংয়ে আলাদা নিয়ম লাগে।"
+      },
+      "ne": {
+        "before": "द्विआधारीमा 0 र 1 प्रयोग हुन्छन्। दायाँबाट 1, 2, 4, 8… भार हुन्छ। दशमलव 10 दस हो तर द्विआधारी 10 भने 1×2+0×1=2 हो। उही लेखाइ भए पनि आधार फरक हुँदा मान फरक हुने भएकाले कुन आधार हो स्पष्ट गर्नुहोस्।\nद्विआधारी 1101 भने 1×8+1×4+0×2+1×1=13 हो। प्रयोग भएका स्थानको भार मात्र जोडेर जाँचिन्छ। 0 छोडेर अङ्क जोड्ने वा दशमलव 1101 पढ्ने नगर्नुहोस्।",
+        "after": "द्विआधारीमा 0 र 1 प्रयोग हुन्छन्। दायाँबाट 1, 2, 4, 8… भार हुन्छ। दशमलव 10 दस हो तर द्विआधारी 10 भने 1×2+0×1=2 हो। उही लेखाइ भए पनि आधार फरक हुँदा मान फरक हुने भएकाले कुन आधार हो स्पष्ट गर्नुहोस्।\nद्विआधारी 1101 भने 1×8+1×4+0×2+1×1=13 हो। प्रयोग भएका स्थानको भार मात्र जोडेर जाँचिन्छ। 0 छोडेर अङ्क जोड्ने वा दशमलव 1101 पढ्ने नगर्नुहोस्।\n\nतालिका मात्र होइन, चिह्नरहित पूर्णाङ्कको स्थानमान हेर्नुहोस्। दायाँबाट2⁰,2¹,2²…;10100₂=16+4=20₁₀ र उल्टो20=16+4→10100₂। छ अङ्कमा बायाँको भार2⁵=32 हो,6 होइन। अगाडिका शून्यले मान बदल्दैन:00110₂=110₂=6; तर पहिचान वा निश्चित चौडाइको अभिलेखमा शून्य नमेट्नुहोस्। बाइनरीमा0 र1 मात्र हुन्छन्; गलत अङ्क अनुमानले नबदली पुष्टि गर्नुहोस्। क्यारी1+1=10₂ हुन्छ; चौडाइ सीमा नभए111₂+1=1000₂। चिह्नरहित4बिट0–15: अधिकतम15,16 अवस्था।5बिट नतिजालाई4बिटमा नकाट्नुहोस् वा नराख्नुहोस्; चिह्नसहितको सङ्केतनका फरक नियम चाहिन्छ।"
+      },
+      "my": {
+        "before": "ဒွိကိန်းသည် 0 နှင့် 1 သုံး၍ ညာမှ 1၊ 2၊ 4၊ 8… နေရာတန်ဖိုးရှိသည်။ ဒသမ 10 သည် ဆယ်၊ ဒွိကိန်း 10 သည် 1×2+0×1=2 ဖြစ်သည်။ စာသားတူလည်း အခြေကိန်းကွာလျှင် တန်ဖိုးကွာ၍ ဒွိလား ဒသမလား ရှင်းပြပါ။\nဥပမာ ဒွိကိန်း 1101 သည် 1×8+1×4+0×2+1×1=13 ဖြစ်သည်။ အသုံးပြုနေရာအလေးများသာ ပေါင်း၍စစ်နိုင်သည်။ 0 ကိုကျော်၍ ဂဏန်းဆက်ခြင်းနှင့် ဒသမ 1101 အဖြစ်ဖတ်ခြင်း မလုပ်ပါနှင့်။",
+        "after": "ဒွိကိန်းသည် 0 နှင့် 1 သုံး၍ ညာမှ 1၊ 2၊ 4၊ 8… နေရာတန်ဖိုးရှိသည်။ ဒသမ 10 သည် ဆယ်၊ ဒွိကိန်း 10 သည် 1×2+0×1=2 ဖြစ်သည်။ စာသားတူလည်း အခြေကိန်းကွာလျှင် တန်ဖိုးကွာ၍ ဒွိလား ဒသမလား ရှင်းပြပါ။\nဥပမာ ဒွိကိန်း 1101 သည် 1×8+1×4+0×2+1×1=13 ဖြစ်သည်။ အသုံးပြုနေရာအလေးများသာ ပေါင်း၍စစ်နိုင်သည်။ 0 ကိုကျော်၍ ဂဏန်းဆက်ခြင်းနှင့် ဒသမ 1101 အဖြစ်ဖတ်ခြင်း မလုပ်ပါနှင့်။\n\nဇယားကြည့်ရုံမဟုတ်ဘဲ အပေါင်းအနုတ်လက္ခဏာမပါသည့် ကိန်းပြည့်၏နေရာတန်ဖိုးကိုကြည့်ပါ။ ညာမှ2⁰,2¹,2²…;10100₂=16+4=20₁₀ နှင့်ပြန်လှန်20=16+4→10100₂။ ခြောက်လုံးတွင်ဘယ်ဆုံးတန်ဖိုး2⁵=32 ဖြစ်ပြီး6မဟုတ်ပါ။ ရှေ့သုညကတန်ဖိုးမပြောင်းပါ:00110₂=110₂=6၊ သို့သော်ကုဒ်နှင့်သတ်မှတ်အရှည်မှတ်တမ်းမှ သုညမဖျက်ပါနှင့်။ နှစ်လီတွင်0နှင့်1သာသုံး၍ မမှန်သောကိန်းကိုခန့်မှန်းမပြင်ပါနှင့်။ ဆယ်တင်1+1=10₂၊ အရှည်မကန့်သတ်လျှင်111₂+1=1000₂။ လက္ခဏာမပါ4bitမှာ0–15၊ အများဆုံး15နှင့်အခြေအနေ16ဖြစ်သည်။5bitရလဒ်ကို4bitသို့မဖြတ်မထည့်ပါနှင့်။ လက္ခဏာပါကုဒ်အတွက် သီးခြားစည်းမျဉ်းလိုသည်။"
+      },
+      "th": {
+        "before": "เลขฐานสองใช้ 0 กับ 1 โดยมีน้ำหนักจากขวาเป็น 1, 2, 4, 8… เลขฐานสิบ 10 คือสิบ แต่เลขฐานสอง 10 คือ 1×2+0×1=2 แม้อักขระเดียวกัน หากฐานต่าง ค่าก็ต่าง จึงต้องระบุว่าเป็นฐานสองหรือฐานสิบ\nเช่น ฐานสอง 1101 คือ 1×8+1×4+0×2+1×1=13 ตรวจได้ด้วยการบวกน้ำหนักเฉพาะหลักที่เป็น 1 อย่าข้าม 0 แล้วนำตัวเลขมาต่อกัน หรืออ่านเป็นเลขฐานสิบ 1101",
+        "after": "เลขฐานสองใช้ 0 กับ 1 โดยมีน้ำหนักจากขวาเป็น 1, 2, 4, 8… เลขฐานสิบ 10 คือสิบ แต่เลขฐานสอง 10 คือ 1×2+0×1=2 แม้อักขระเดียวกัน หากฐานต่าง ค่าก็ต่าง จึงต้องระบุว่าเป็นฐานสองหรือฐานสิบ\nเช่น ฐานสอง 1101 คือ 1×8+1×4+0×2+1×1=13 ตรวจได้ด้วยการบวกน้ำหนักเฉพาะหลักที่เป็น 1 อย่าข้าม 0 แล้วนำตัวเลขมาต่อกัน หรืออ่านเป็นเลขฐานสิบ 1101\n\nใช้ค่าน้ำหนักหลักของจำนวนเต็มไม่มีเครื่องหมาย ไม่ใช่ดูตารางอย่างเดียว จากขวาคือ2⁰,2¹,2²…;10100₂=16+4=20₁₀ และย้อน20=16+4→10100₂ หกหลักมีน้ำหนักซ้ายสุด2⁵=32 ไม่ใช่6 ศูนย์นำหน้าไม่เปลี่ยนค่า:00110₂=110₂=6 แต่ห้ามลบศูนย์ในรหัสหรือบันทึกความยาวตายตัวเอง ฐานสองใช้เพียง0และ1 พบเลขผิดให้ตรวจ ไม่เดาแก้ การทดคือ1+1=10₂ หากไม่จำกัดหลัก111₂+1=1000₂ แบบไม่มีเครื่องหมาย4บิตมีค่า0–15 สูงสุด15 จำนวนสถานะ16 อย่าตัดหรือใส่ผล5บิตลงช่อง4บิตเอง แบบมีเครื่องหมายต้องใช้กฎต่างหาก"
+      },
+      "km": {
+        "before": "លេខគោលពីរប្រើ0និង1 ហើយមានទម្ងន់ពីស្ដាំ1,2,4,8…។ 10ក្នុងគោលដប់ជាដប់ ប៉ុន្តែ10ក្នុងគោលពីរគឺ1×2+0×1=2។ អក្សរលេខដូចគ្នាក៏តម្លៃខុសបើគោលខុស ដូច្នេះត្រូវបញ្ជាក់គោលពីរឬគោលដប់។\nឧទាហរណ៍គោលពីរ1101គឺ1×8+1×4+0×2+1×1=13។ អាចផ្ទៀងដោយបូកតែទម្ងន់ខ្ទង់ប្រើ។ កុំរំលង0ហើយភ្ជាប់លេខ ឬអានជាគោលដប់1101។",
+        "after": "លេខគោលពីរប្រើ0និង1 ហើយមានទម្ងន់ពីស្ដាំ1,2,4,8…។ 10ក្នុងគោលដប់ជាដប់ ប៉ុន្តែ10ក្នុងគោលពីរគឺ1×2+0×1=2។ អក្សរលេខដូចគ្នាក៏តម្លៃខុសបើគោលខុស ដូច្នេះត្រូវបញ្ជាក់គោលពីរឬគោលដប់។\nឧទាហរណ៍គោលពីរ1101គឺ1×8+1×4+0×2+1×1=13។ អាចផ្ទៀងដោយបូកតែទម្ងន់ខ្ទង់ប្រើ។ កុំរំលង0ហើយភ្ជាប់លេខ ឬអានជាគោលដប់1101។\n\nប្រើទម្ងន់ខ្ទង់នៃចំនួនគត់គ្មានសញ្ញា មិនមើលតែតារាងទេ។ ពីស្ដាំ2⁰,2¹,2²…;10100₂=16+4=20₁₀ ហើយត្រឡប់20=16+4→10100₂។ ប្រាំមួយខ្ទង់មានទម្ងន់ឆ្វេងបំផុត2⁵=32 មិនមែន6។ សូន្យខាងមុខមិនប្ដូរតម្លៃ:00110₂=110₂=6 ប៉ុន្តែកុំលុបសូន្យក្នុងលេខសម្គាល់ឬកំណត់ត្រាប្រវែងថេរ។ គោលពីរប្រើតែ0និង1 ឃើញខ្ទង់មិនត្រឹមត្រូវត្រូវផ្ទៀង មិនស្មានកែ។ ការត្រា1+1=10₂ ហើយមិនកំណត់ខ្ទង់111₂+1=1000₂។4ប៊ីតគ្មានសញ្ញាមាន0–15 អតិបរមា15 និង16ស្ថានភាព។ កុំកាត់ឬដាក់លទ្ធផល5ប៊ីតក្នុងប្រអប់4ប៊ីត។ កូដមានសញ្ញាត្រូវការច្បាប់ផ្សេង។"
+      },
+      "tl": {
+        "before": "Gumagamit ang binary ng 0 at 1, na may bigat mula kanan na 1, 2, 4, 8… Ang decimal na 10 ay sampu, ngunit binary na 10 ay 1×2+0×1=2. Kahit parehong string, iba ang halaga kung iba ang base; tukuyin kung binary o decimal.\nHalimbawa, binary 1101 ay 1×8+1×4+0×2+1×1=13. Tiyakin sa pagdaragdag lamang ng mga posisyong ginagamit. Huwag laktawan ang zero at pagdugtungin ang digit o basahing decimal 1101.",
+        "after": "Gumagamit ang binary ng 0 at 1, na may bigat mula kanan na 1, 2, 4, 8… Ang decimal na 10 ay sampu, ngunit binary na 10 ay 1×2+0×1=2. Kahit parehong string, iba ang halaga kung iba ang base; tukuyin kung binary o decimal.\nHalimbawa, binary 1101 ay 1×8+1×4+0×2+1×1=13. Tiyakin sa pagdaragdag lamang ng mga posisyong ginagamit. Huwag laktawan ang zero at pagdugtungin ang digit o basahing decimal 1101.\n\nGamitin ang place weights ng unsigned integer, hindi table lookup lamang. Mula kanan2⁰,2¹,2²…;10100₂=16+4=20₁₀ at pabalik20=16+4→10100₂. Sa anim na digit,2⁵=32 ang kaliwang weight, hindi6. Hindi binabago ng leading zeros ang value:00110₂=110₂=6; ngunit huwag magtanggal ng zeros sa identifier o fixed-width record.0 at1 lang ang binary digits; tiyakin ang invalid entry, huwag hulaan. Carry:1+1=10₂; kung walang width limit,111₂+1=1000₂. Unsigned4bit ay0–15: maximum15,16states. Huwag putulin o ipasok ang5bit result sa4bit field nang walang tuntunin; may hiwalay na patakaran ang signed encoding."
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "mfg1-sequential-binary-01",
+      "lessonId": "mfg1-electrical-l025",
+      "stemJa": "符号（ふごう）なし二進数（にしんすう）10110を十進数（じっしんすう）へ直（なお）すとどれですか。",
+      "optionsJa": [
+        "22",
+        "20",
+        "26",
+        "10110"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "16＋4＋2＝22です。",
+        "10100なら20ですが、10110には2の位もあります。",
+        "8の位は0なので26ではありません。",
+        "基数を区別し、十進数10110として読みません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 145,
+          "printedPage": 136
+        }
+      ],
+      "sourceHash": "8d15b7cee6f0f17d6e34e03c94e0f6ed64d23f9c010abbc65465d6322e6852b3"
+    },
+    {
+      "id": "mfg1-sequential-binary-02",
+      "lessonId": "mfg1-electrical-l025",
+      "stemJa": "十進数（じっしんすう）25を符号（ふごう）なし二進数（にしんすう）で表（あらわ）すとどれですか。",
+      "optionsJa": [
+        "10101₂",
+        "11010₂",
+        "11001₂",
+        "10011₂"
+      ],
+      "correctIndex": 2,
+      "optionReasonsJa": [
+        "10101は16＋4＋1＝21です。",
+        "11010は16＋8＋2＝26です。",
+        "25＝16＋8＋1なので11001です。",
+        "10011は16＋2＋1＝19です。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 145,
+          "printedPage": 136
+        }
+      ],
+      "sourceHash": "08b4285e3e4538c18e8e43f4a2f8f07452f17de38fe06a4481d7dda8da37fffa"
+    },
+    {
+      "id": "mfg1-sequential-binary-03",
+      "lessonId": "mfg1-electrical-l025",
+      "stemJa": "6桁（けた）の符号（ふごう）なし二進数（にしんすう）100000の左端（ひだりはし）の重（おも）みはどれですか。",
+      "optionsJa": [
+        "16",
+        "32",
+        "64",
+        "6"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "16は右から5番目の重みです。",
+        "右から6番目は2⁵＝32です。",
+        "64は右から7番目の重みです。",
+        "桁数6と位の重みは別です。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 145,
+          "printedPage": 136
+        }
+      ],
+      "sourceHash": "2aa367e3593eff9006ca5903415aa6fb4dffa28a431309498ee1c4cd77ab18c5"
+    },
+    {
+      "id": "mfg1-sequential-binary-04",
+      "lessonId": "mfg1-electrical-l025",
+      "stemJa": "符号（ふごう）なし二進数（にしんすう）000101の数値（すうち）は十進数（じっしんすう）でどれですか。",
+      "optionsJa": [
+        "101",
+        "0",
+        "1",
+        "5"
+      ],
+      "correctIndex": 3,
+      "optionReasonsJa": [
+        "101という十進数として読みません。",
+        "先頭0があっても全体が0にはなりません。",
+        "4の位も1なので1だけではありません。",
+        "4＋1＝5です。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 145,
+          "printedPage": 136
+        }
+      ],
+      "sourceHash": "44f0b206de58779e836c80ca354520e778e412e8adc866492580120ce3a0e644"
+    },
+    {
+      "id": "mfg1-sequential-binary-05",
+      "lessonId": "mfg1-electrical-l025",
+      "stemJa": "102は0、1だけを使（つか）った有効（ゆうこう）な二進数（にしんすう）である、は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "2は二進数の桁として使えません。",
+        "桁に2があるため、二進数として有効ではありません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 145,
+          "printedPage": 136
+        }
+      ],
+      "sourceHash": "fbfe699a928297d4a8b9d33cc7f1e22e4bc6883b04b7dd02eecc96a603f8dfd0"
+    },
+    {
+      "id": "mfg1-sequential-binary-06",
+      "lessonId": "mfg1-electrical-l025",
+      "stemJa": "桁数（けたすう）を制限（せいげん）しない符号（ふごう）なし計算（けいさん）で1111₂＋1＝10000₂は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "15＋1＝16で、16は二進数10000です。",
+        "二進数の桁上がりを行うと10000になります。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 145,
+          "printedPage": 136
+        }
+      ],
+      "sourceHash": "c676ce616743d2c567805800ee3482082fd57f7a4b99c3e81fad4f8d2a213342"
+    },
+    {
+      "id": "mfg1-sequential-binary-07",
+      "lessonId": "mfg1-electrical-l025",
+      "stemJa": "符号（ふごう）なし4ビットの最大値（さいだいち）は十進数（じっしんすう）16である、は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "最大1111は8＋4＋2＋1＝15です。",
+        "2⁴−1＝15であり、状態数16とは別です。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 145,
+          "printedPage": 136
+        }
+      ],
+      "sourceHash": "1e110a6701f490317f7eed931387523c0c9582360a449c1d368c20be397cb518"
+    },
+    {
+      "id": "mfg1-sequential-binary-08",
+      "lessonId": "mfg1-electrical-l025",
+      "stemJa": "符号（ふごう）なし4ビットは0も含（ふく）めて16通（とお）りの状態（じょうたい）を表（あらわ）せる、は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "0から15までで16通りです。",
+        "各ビットに2通りなので2⁴＝16通りです。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 145,
+          "printedPage": 136
+        }
+      ],
+      "sourceHash": "bda40b7b1dd5e8d20bff757bb8af7e7217c9e92e03068310695e348b5cab93da"
+    }
+  ],
+  "locales": {
+    "en": {
+      "mfg1-sequential-binary-01": {
+        "sourceHash": "8d15b7cee6f0f17d6e34e03c94e0f6ed64d23f9c010abbc65465d6322e6852b3",
+        "stem": "Convert unsigned binary10110 to decimal.",
+        "options": [
+          "22",
+          "20",
+          "26",
+          "10110"
+        ],
+        "reasons": [
+          "10110₂=16+4+2=22₁₀.",
+          "10100₂=20;10110₂=22.",
+          "10110₂:8×0;16+4+2=22.",
+          "10110₂≠10110₁₀;16+4+2=22."
+        ]
+      },
+      "mfg1-sequential-binary-02": {
+        "sourceHash": "08b4285e3e4538c18e8e43f4a2f8f07452f17de38fe06a4481d7dda8da37fffa",
+        "stem": "Which unsigned binary form represents decimal25?",
+        "options": [
+          "10101₂",
+          "11010₂",
+          "11001₂",
+          "10011₂"
+        ],
+        "reasons": [
+          "10101₂=16+4+1=21.",
+          "11010₂=16+8+2=26.",
+          "11001₂=16+8+1=25.",
+          "10011₂=16+2+1=19."
+        ]
+      },
+      "mfg1-sequential-binary-03": {
+        "sourceHash": "2aa367e3593eff9006ca5903415aa6fb4dffa28a431309498ee1c4cd77ab18c5",
+        "stem": "What is the leftmost place weight in six-digit unsigned binary100000?",
+        "options": [
+          "16",
+          "32",
+          "64",
+          "6"
+        ],
+        "reasons": [
+          "2⁴=16;2⁵=32.",
+          "2⁽⁶⁻¹⁾=2⁵=32.",
+          "2⁶=64;2⁵=32.",
+          "6≠2⁽⁶⁻¹⁾;2⁵=32."
+        ]
+      },
+      "mfg1-sequential-binary-04": {
+        "sourceHash": "44f0b206de58779e836c80ca354520e778e412e8adc866492580120ce3a0e644",
+        "stem": "What decimal value is unsigned binary000101?",
+        "options": [
+          "101",
+          "0",
+          "1",
+          "5"
+        ],
+        "reasons": [
+          "000101₂≠101₁₀;4+1=5.",
+          "000101₂:4×1+1×1≠0.",
+          "000101₂:4+1≠1.",
+          "000101₂=101₂=4+1=5."
+        ]
+      },
+      "mfg1-sequential-binary-05": {
+        "sourceHash": "fbfe699a928297d4a8b9d33cc7f1e22e4bc6883b04b7dd02eecc96a603f8dfd0",
+        "stem": "Is102 a valid binary numeral using only0 and1?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "2∉{0,1}.",
+          "{1,0,2}⊄{0,1};2∉{0,1}."
+        ]
+      },
+      "mfg1-sequential-binary-06": {
+        "sourceHash": "c676ce616743d2c567805800ee3482082fd57f7a4b99c3e81fad4f8d2a213342",
+        "stem": "Without a width limit, is unsigned1111₂+1=10000₂ correct?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "1111₂=15;15+1=16=10000₂.",
+          "1+1=10₂;1111₂+1=10000₂."
+        ]
+      },
+      "mfg1-sequential-binary-07": {
+        "sourceHash": "1e110a6701f490317f7eed931387523c0c9582360a449c1d368c20be397cb518",
+        "stem": "Is the maximum unsigned4-bit value decimal16?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "1111₂=8+4+2+1=15≠16.",
+          "2⁴−1=15≠16."
+        ]
+      },
+      "mfg1-sequential-binary-08": {
+        "sourceHash": "bda40b7b1dd5e8d20bff757bb8af7e7217c9e92e03068310695e348b5cab93da",
+        "stem": "Can unsigned4-bit data represent16states, including zero?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "0000₂…1111₂↔0…15;15−0+1=16.",
+          "2×2×2×2=2⁴=16."
+        ]
+      }
+    },
+    "vi": {
+      "mfg1-sequential-binary-01": {
+        "sourceHash": "8d15b7cee6f0f17d6e34e03c94e0f6ed64d23f9c010abbc65465d6322e6852b3",
+        "stem": "Đổi nhị phân không dấu10110 sang thập phân.",
+        "options": [
+          "22",
+          "20",
+          "26",
+          "10110"
+        ],
+        "reasons": [
+          "10110₂=16+4+2=22₁₀.",
+          "10100₂=20;10110₂=22.",
+          "10110₂:8×0;16+4+2=22.",
+          "10110₂≠10110₁₀;16+4+2=22."
+        ]
+      },
+      "mfg1-sequential-binary-02": {
+        "sourceHash": "08b4285e3e4538c18e8e43f4a2f8f07452f17de38fe06a4481d7dda8da37fffa",
+        "stem": "Dạng nhị phân không dấu nào biểu thị thập phân25?",
+        "options": [
+          "10101₂",
+          "11010₂",
+          "11001₂",
+          "10011₂"
+        ],
+        "reasons": [
+          "10101₂=16+4+1=21.",
+          "11010₂=16+8+2=26.",
+          "11001₂=16+8+1=25.",
+          "10011₂=16+2+1=19."
+        ]
+      },
+      "mfg1-sequential-binary-03": {
+        "sourceHash": "2aa367e3593eff9006ca5903415aa6fb4dffa28a431309498ee1c4cd77ab18c5",
+        "stem": "Trọng số trái nhất của nhị phân không dấu sáu vị100000 là bao nhiêu?",
+        "options": [
+          "16",
+          "32",
+          "64",
+          "6"
+        ],
+        "reasons": [
+          "2⁴=16;2⁵=32.",
+          "2⁽⁶⁻¹⁾=2⁵=32.",
+          "2⁶=64;2⁵=32.",
+          "6≠2⁽⁶⁻¹⁾;2⁵=32."
+        ]
+      },
+      "mfg1-sequential-binary-04": {
+        "sourceHash": "44f0b206de58779e836c80ca354520e778e412e8adc866492580120ce3a0e644",
+        "stem": "Nhị phân không dấu000101 có giá trị thập phân nào?",
+        "options": [
+          "101",
+          "0",
+          "1",
+          "5"
+        ],
+        "reasons": [
+          "000101₂≠101₁₀;4+1=5.",
+          "000101₂:4×1+1×1≠0.",
+          "000101₂:4+1≠1.",
+          "000101₂=101₂=4+1=5."
+        ]
+      },
+      "mfg1-sequential-binary-05": {
+        "sourceHash": "fbfe699a928297d4a8b9d33cc7f1e22e4bc6883b04b7dd02eecc96a603f8dfd0",
+        "stem": "102 là số nhị phân hợp lệ chỉ dùng0 và1, đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "2∉{0,1}.",
+          "{1,0,2}⊄{0,1};2∉{0,1}."
+        ]
+      },
+      "mfg1-sequential-binary-06": {
+        "sourceHash": "c676ce616743d2c567805800ee3482082fd57f7a4b99c3e81fad4f8d2a213342",
+        "stem": "Không giới hạn số vị, phép không dấu1111₂+1=10000₂ đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "1111₂=15;15+1=16=10000₂.",
+          "1+1=10₂;1111₂+1=10000₂."
+        ]
+      },
+      "mfg1-sequential-binary-07": {
+        "sourceHash": "1e110a6701f490317f7eed931387523c0c9582360a449c1d368c20be397cb518",
+        "stem": "Giá trị lớn nhất của4bit không dấu là thập phân16, đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "1111₂=8+4+2+1=15≠16.",
+          "2⁴−1=15≠16."
+        ]
+      },
+      "mfg1-sequential-binary-08": {
+        "sourceHash": "bda40b7b1dd5e8d20bff757bb8af7e7217c9e92e03068310695e348b5cab93da",
+        "stem": "4bit không dấu biểu thị16trạng thái kể cả0, đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "0000₂…1111₂↔0…15;15−0+1=16.",
+          "2×2×2×2=2⁴=16."
+        ]
+      }
+    },
+    "id": {
+      "mfg1-sequential-binary-01": {
+        "sourceHash": "8d15b7cee6f0f17d6e34e03c94e0f6ed64d23f9c010abbc65465d6322e6852b3",
+        "stem": "Ubah biner tak bertanda10110 menjadi desimal.",
+        "options": [
+          "22",
+          "20",
+          "26",
+          "10110"
+        ],
+        "reasons": [
+          "10110₂=16+4+2=22₁₀.",
+          "10100₂=20;10110₂=22.",
+          "10110₂:8×0;16+4+2=22.",
+          "10110₂≠10110₁₀;16+4+2=22."
+        ]
+      },
+      "mfg1-sequential-binary-02": {
+        "sourceHash": "08b4285e3e4538c18e8e43f4a2f8f07452f17de38fe06a4481d7dda8da37fffa",
+        "stem": "Bentuk biner tak bertanda mana mewakili desimal25?",
+        "options": [
+          "10101₂",
+          "11010₂",
+          "11001₂",
+          "10011₂"
+        ],
+        "reasons": [
+          "10101₂=16+4+1=21.",
+          "11010₂=16+8+2=26.",
+          "11001₂=16+8+1=25.",
+          "10011₂=16+2+1=19."
+        ]
+      },
+      "mfg1-sequential-binary-03": {
+        "sourceHash": "2aa367e3593eff9006ca5903415aa6fb4dffa28a431309498ee1c4cd77ab18c5",
+        "stem": "Berapa bobot paling kiri biner tak bertanda enam digit100000?",
+        "options": [
+          "16",
+          "32",
+          "64",
+          "6"
+        ],
+        "reasons": [
+          "2⁴=16;2⁵=32.",
+          "2⁽⁶⁻¹⁾=2⁵=32.",
+          "2⁶=64;2⁵=32.",
+          "6≠2⁽⁶⁻¹⁾;2⁵=32."
+        ]
+      },
+      "mfg1-sequential-binary-04": {
+        "sourceHash": "44f0b206de58779e836c80ca354520e778e412e8adc866492580120ce3a0e644",
+        "stem": "Berapa nilai desimal biner tak bertanda000101?",
+        "options": [
+          "101",
+          "0",
+          "1",
+          "5"
+        ],
+        "reasons": [
+          "000101₂≠101₁₀;4+1=5.",
+          "000101₂:4×1+1×1≠0.",
+          "000101₂:4+1≠1.",
+          "000101₂=101₂=4+1=5."
+        ]
+      },
+      "mfg1-sequential-binary-05": {
+        "sourceHash": "fbfe699a928297d4a8b9d33cc7f1e22e4bc6883b04b7dd02eecc96a603f8dfd0",
+        "stem": "Apakah102 bilangan biner sah yang hanya memakai0 dan1?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "2∉{0,1}.",
+          "{1,0,2}⊄{0,1};2∉{0,1}."
+        ]
+      },
+      "mfg1-sequential-binary-06": {
+        "sourceHash": "c676ce616743d2c567805800ee3482082fd57f7a4b99c3e81fad4f8d2a213342",
+        "stem": "Tanpa batas lebar, benarkah1111₂+1=10000₂ tak bertanda?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "1111₂=15;15+1=16=10000₂.",
+          "1+1=10₂;1111₂+1=10000₂."
+        ]
+      },
+      "mfg1-sequential-binary-07": {
+        "sourceHash": "1e110a6701f490317f7eed931387523c0c9582360a449c1d368c20be397cb518",
+        "stem": "Benarkah nilai maksimum4bit tak bertanda adalah desimal16?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "1111₂=8+4+2+1=15≠16.",
+          "2⁴−1=15≠16."
+        ]
+      },
+      "mfg1-sequential-binary-08": {
+        "sourceHash": "bda40b7b1dd5e8d20bff757bb8af7e7217c9e92e03068310695e348b5cab93da",
+        "stem": "Dapatkah4bit tak bertanda mewakili16keadaan termasuk nol?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "0000₂…1111₂↔0…15;15−0+1=16.",
+          "2×2×2×2=2⁴=16."
+        ]
+      }
+    },
+    "zh-CN": {
+      "mfg1-sequential-binary-01": {
+        "sourceHash": "8d15b7cee6f0f17d6e34e03c94e0f6ed64d23f9c010abbc65465d6322e6852b3",
+        "stem": "把无符号二进制10110转换为十进制。",
+        "options": [
+          "22",
+          "20",
+          "26",
+          "10110"
+        ],
+        "reasons": [
+          "10110₂=16+4+2=22₁₀.",
+          "10100₂=20;10110₂=22.",
+          "10110₂:8×0;16+4+2=22.",
+          "10110₂≠10110₁₀;16+4+2=22."
+        ]
+      },
+      "mfg1-sequential-binary-02": {
+        "sourceHash": "08b4285e3e4538c18e8e43f4a2f8f07452f17de38fe06a4481d7dda8da37fffa",
+        "stem": "哪个无符号二进制表示十进制25？",
+        "options": [
+          "10101₂",
+          "11010₂",
+          "11001₂",
+          "10011₂"
+        ],
+        "reasons": [
+          "10101₂=16+4+1=21.",
+          "11010₂=16+8+2=26.",
+          "11001₂=16+8+1=25.",
+          "10011₂=16+2+1=19."
+        ]
+      },
+      "mfg1-sequential-binary-03": {
+        "sourceHash": "2aa367e3593eff9006ca5903415aa6fb4dffa28a431309498ee1c4cd77ab18c5",
+        "stem": "六位无符号二进制100000最左位的权重是多少？",
+        "options": [
+          "16",
+          "32",
+          "64",
+          "6"
+        ],
+        "reasons": [
+          "2⁴=16;2⁵=32.",
+          "2⁽⁶⁻¹⁾=2⁵=32.",
+          "2⁶=64;2⁵=32.",
+          "6≠2⁽⁶⁻¹⁾;2⁵=32."
+        ]
+      },
+      "mfg1-sequential-binary-04": {
+        "sourceHash": "44f0b206de58779e836c80ca354520e778e412e8adc866492580120ce3a0e644",
+        "stem": "无符号二进制000101的十进制值是多少？",
+        "options": [
+          "101",
+          "0",
+          "1",
+          "5"
+        ],
+        "reasons": [
+          "000101₂≠101₁₀;4+1=5.",
+          "000101₂:4×1+1×1≠0.",
+          "000101₂:4+1≠1.",
+          "000101₂=101₂=4+1=5."
+        ]
+      },
+      "mfg1-sequential-binary-05": {
+        "sourceHash": "fbfe699a928297d4a8b9d33cc7f1e22e4bc6883b04b7dd02eecc96a603f8dfd0",
+        "stem": "102是只使用0和1的有效二进制数，正确吗？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "2∉{0,1}.",
+          "{1,0,2}⊄{0,1};2∉{0,1}."
+        ]
+      },
+      "mfg1-sequential-binary-06": {
+        "sourceHash": "c676ce616743d2c567805800ee3482082fd57f7a4b99c3e81fad4f8d2a213342",
+        "stem": "不限位数的无符号运算1111₂+1=10000₂，正确吗？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "1111₂=15;15+1=16=10000₂.",
+          "1+1=10₂;1111₂+1=10000₂."
+        ]
+      },
+      "mfg1-sequential-binary-07": {
+        "sourceHash": "1e110a6701f490317f7eed931387523c0c9582360a449c1d368c20be397cb518",
+        "stem": "无符号4位最大值是十进制16，正确吗？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "1111₂=8+4+2+1=15≠16.",
+          "2⁴−1=15≠16."
+        ]
+      },
+      "mfg1-sequential-binary-08": {
+        "sourceHash": "bda40b7b1dd5e8d20bff757bb8af7e7217c9e92e03068310695e348b5cab93da",
+        "stem": "无符号4位包括零可以表示16种状态，正确吗？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "0000₂…1111₂↔0…15;15−0+1=16.",
+          "2×2×2×2=2⁴=16."
+        ]
+      }
+    },
+    "zh-TW": {
+      "mfg1-sequential-binary-01": {
+        "sourceHash": "8d15b7cee6f0f17d6e34e03c94e0f6ed64d23f9c010abbc65465d6322e6852b3",
+        "stem": "把無符號二進位10110轉換為十進位。",
+        "options": [
+          "22",
+          "20",
+          "26",
+          "10110"
+        ],
+        "reasons": [
+          "10110₂=16+4+2=22₁₀.",
+          "10100₂=20;10110₂=22.",
+          "10110₂:8×0;16+4+2=22.",
+          "10110₂≠10110₁₀;16+4+2=22."
+        ]
+      },
+      "mfg1-sequential-binary-02": {
+        "sourceHash": "08b4285e3e4538c18e8e43f4a2f8f07452f17de38fe06a4481d7dda8da37fffa",
+        "stem": "哪個無符號二進位表示十進位25？",
+        "options": [
+          "10101₂",
+          "11010₂",
+          "11001₂",
+          "10011₂"
+        ],
+        "reasons": [
+          "10101₂=16+4+1=21.",
+          "11010₂=16+8+2=26.",
+          "11001₂=16+8+1=25.",
+          "10011₂=16+2+1=19."
+        ]
+      },
+      "mfg1-sequential-binary-03": {
+        "sourceHash": "2aa367e3593eff9006ca5903415aa6fb4dffa28a431309498ee1c4cd77ab18c5",
+        "stem": "六位無符號二進位100000最左位的權重是多少？",
+        "options": [
+          "16",
+          "32",
+          "64",
+          "6"
+        ],
+        "reasons": [
+          "2⁴=16;2⁵=32.",
+          "2⁽⁶⁻¹⁾=2⁵=32.",
+          "2⁶=64;2⁵=32.",
+          "6≠2⁽⁶⁻¹⁾;2⁵=32."
+        ]
+      },
+      "mfg1-sequential-binary-04": {
+        "sourceHash": "44f0b206de58779e836c80ca354520e778e412e8adc866492580120ce3a0e644",
+        "stem": "無符號二進位000101的十進位值是多少？",
+        "options": [
+          "101",
+          "0",
+          "1",
+          "5"
+        ],
+        "reasons": [
+          "000101₂≠101₁₀;4+1=5.",
+          "000101₂:4×1+1×1≠0.",
+          "000101₂:4+1≠1.",
+          "000101₂=101₂=4+1=5."
+        ]
+      },
+      "mfg1-sequential-binary-05": {
+        "sourceHash": "fbfe699a928297d4a8b9d33cc7f1e22e4bc6883b04b7dd02eecc96a603f8dfd0",
+        "stem": "102是只使用0和1的有效二進位數，正確嗎？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "2∉{0,1}.",
+          "{1,0,2}⊄{0,1};2∉{0,1}."
+        ]
+      },
+      "mfg1-sequential-binary-06": {
+        "sourceHash": "c676ce616743d2c567805800ee3482082fd57f7a4b99c3e81fad4f8d2a213342",
+        "stem": "不限位數的無符號運算1111₂+1=10000₂，正確嗎？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "1111₂=15;15+1=16=10000₂.",
+          "1+1=10₂;1111₂+1=10000₂."
+        ]
+      },
+      "mfg1-sequential-binary-07": {
+        "sourceHash": "1e110a6701f490317f7eed931387523c0c9582360a449c1d368c20be397cb518",
+        "stem": "無符號4位最大值是十進位16，正確嗎？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "1111₂=8+4+2+1=15≠16.",
+          "2⁴−1=15≠16."
+        ]
+      },
+      "mfg1-sequential-binary-08": {
+        "sourceHash": "bda40b7b1dd5e8d20bff757bb8af7e7217c9e92e03068310695e348b5cab93da",
+        "stem": "無符號4位包括零可以表示16種狀態，正確嗎？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "0000₂…1111₂↔0…15;15−0+1=16.",
+          "2×2×2×2=2⁴=16."
+        ]
+      }
+    },
+    "hi": {
+      "mfg1-sequential-binary-01": {
+        "sourceHash": "8d15b7cee6f0f17d6e34e03c94e0f6ed64d23f9c010abbc65465d6322e6852b3",
+        "stem": "अचिह्नित बाइनरी10110 को दशमलव में बदलें।",
+        "options": [
+          "22",
+          "20",
+          "26",
+          "10110"
+        ],
+        "reasons": [
+          "10110₂=16+4+2=22₁₀.",
+          "10100₂=20;10110₂=22.",
+          "10110₂:8×0;16+4+2=22.",
+          "10110₂≠10110₁₀;16+4+2=22."
+        ]
+      },
+      "mfg1-sequential-binary-02": {
+        "sourceHash": "08b4285e3e4538c18e8e43f4a2f8f07452f17de38fe06a4481d7dda8da37fffa",
+        "stem": "दशमलव25 का अचिह्नित बाइनरी रूप कौन-सा है?",
+        "options": [
+          "10101₂",
+          "11010₂",
+          "11001₂",
+          "10011₂"
+        ],
+        "reasons": [
+          "10101₂=16+4+1=21.",
+          "11010₂=16+8+2=26.",
+          "11001₂=16+8+1=25.",
+          "10011₂=16+2+1=19."
+        ]
+      },
+      "mfg1-sequential-binary-03": {
+        "sourceHash": "2aa367e3593eff9006ca5903415aa6fb4dffa28a431309498ee1c4cd77ab18c5",
+        "stem": "छह अंकों के अचिह्नित बाइनरी100000 में सबसे बाएँ स्थान का भार कितना है?",
+        "options": [
+          "16",
+          "32",
+          "64",
+          "6"
+        ],
+        "reasons": [
+          "2⁴=16;2⁵=32.",
+          "2⁽⁶⁻¹⁾=2⁵=32.",
+          "2⁶=64;2⁵=32.",
+          "6≠2⁽⁶⁻¹⁾;2⁵=32."
+        ]
+      },
+      "mfg1-sequential-binary-04": {
+        "sourceHash": "44f0b206de58779e836c80ca354520e778e412e8adc866492580120ce3a0e644",
+        "stem": "अचिह्नित बाइनरी000101 का दशमलव मान क्या है?",
+        "options": [
+          "101",
+          "0",
+          "1",
+          "5"
+        ],
+        "reasons": [
+          "000101₂≠101₁₀;4+1=5.",
+          "000101₂:4×1+1×1≠0.",
+          "000101₂:4+1≠1.",
+          "000101₂=101₂=4+1=5."
+        ]
+      },
+      "mfg1-sequential-binary-05": {
+        "sourceHash": "fbfe699a928297d4a8b9d33cc7f1e22e4bc6883b04b7dd02eecc96a603f8dfd0",
+        "stem": "क्या102 केवल0 और1 वाला वैध बाइनरी अंकन है?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "2∉{0,1}.",
+          "{1,0,2}⊄{0,1};2∉{0,1}."
+        ]
+      },
+      "mfg1-sequential-binary-06": {
+        "sourceHash": "c676ce616743d2c567805800ee3482082fd57f7a4b99c3e81fad4f8d2a213342",
+        "stem": "चौड़ाई सीमा बिना अचिह्नित1111₂+1=10000₂ सही है?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "1111₂=15;15+1=16=10000₂.",
+          "1+1=10₂;1111₂+1=10000₂."
+        ]
+      },
+      "mfg1-sequential-binary-07": {
+        "sourceHash": "1e110a6701f490317f7eed931387523c0c9582360a449c1d368c20be397cb518",
+        "stem": "अचिह्नित4बिट का अधिकतम दशमलव16 है, सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "1111₂=8+4+2+1=15≠16.",
+          "2⁴−1=15≠16."
+        ]
+      },
+      "mfg1-sequential-binary-08": {
+        "sourceHash": "bda40b7b1dd5e8d20bff757bb8af7e7217c9e92e03068310695e348b5cab93da",
+        "stem": "अचिह्नित4बिट शून्य सहित16अवस्थाएँ दिखा सकते हैं, सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "0000₂…1111₂↔0…15;15−0+1=16.",
+          "2×2×2×2=2⁴=16."
+        ]
+      }
+    },
+    "bn": {
+      "mfg1-sequential-binary-01": {
+        "sourceHash": "8d15b7cee6f0f17d6e34e03c94e0f6ed64d23f9c010abbc65465d6322e6852b3",
+        "stem": "চিহ্নবিহীন বাইনারি10110 দশমিকে বদলান।",
+        "options": [
+          "22",
+          "20",
+          "26",
+          "10110"
+        ],
+        "reasons": [
+          "10110₂=16+4+2=22₁₀.",
+          "10100₂=20;10110₂=22.",
+          "10110₂:8×0;16+4+2=22.",
+          "10110₂≠10110₁₀;16+4+2=22."
+        ]
+      },
+      "mfg1-sequential-binary-02": {
+        "sourceHash": "08b4285e3e4538c18e8e43f4a2f8f07452f17de38fe06a4481d7dda8da37fffa",
+        "stem": "দশমিক25-এর চিহ্নবিহীন বাইনারি রূপ কোনটি?",
+        "options": [
+          "10101₂",
+          "11010₂",
+          "11001₂",
+          "10011₂"
+        ],
+        "reasons": [
+          "10101₂=16+4+1=21.",
+          "11010₂=16+8+2=26.",
+          "11001₂=16+8+1=25.",
+          "10011₂=16+2+1=19."
+        ]
+      },
+      "mfg1-sequential-binary-03": {
+        "sourceHash": "2aa367e3593eff9006ca5903415aa6fb4dffa28a431309498ee1c4cd77ab18c5",
+        "stem": "ছয় অঙ্কের চিহ্নবিহীন বাইনারি100000-এর বাঁয়ের স্থানমান কত?",
+        "options": [
+          "16",
+          "32",
+          "64",
+          "6"
+        ],
+        "reasons": [
+          "2⁴=16;2⁵=32.",
+          "2⁽⁶⁻¹⁾=2⁵=32.",
+          "2⁶=64;2⁵=32.",
+          "6≠2⁽⁶⁻¹⁾;2⁵=32."
+        ]
+      },
+      "mfg1-sequential-binary-04": {
+        "sourceHash": "44f0b206de58779e836c80ca354520e778e412e8adc866492580120ce3a0e644",
+        "stem": "চিহ্নবিহীন বাইনারি000101-এর দশমিক মান কত?",
+        "options": [
+          "101",
+          "0",
+          "1",
+          "5"
+        ],
+        "reasons": [
+          "000101₂≠101₁₀;4+1=5.",
+          "000101₂:4×1+1×1≠0.",
+          "000101₂:4+1≠1.",
+          "000101₂=101₂=4+1=5."
+        ]
+      },
+      "mfg1-sequential-binary-05": {
+        "sourceHash": "fbfe699a928297d4a8b9d33cc7f1e22e4bc6883b04b7dd02eecc96a603f8dfd0",
+        "stem": "102 কি শুধু0 ও1 দিয়ে গঠিত বৈধ বাইনারি সংখ্যা?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "2∉{0,1}.",
+          "{1,0,2}⊄{0,1};2∉{0,1}."
+        ]
+      },
+      "mfg1-sequential-binary-06": {
+        "sourceHash": "c676ce616743d2c567805800ee3482082fd57f7a4b99c3e81fad4f8d2a213342",
+        "stem": "দৈর্ঘ্যসীমা ছাড়া চিহ্নবিহীন1111₂+1=10000₂ সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "1111₂=15;15+1=16=10000₂.",
+          "1+1=10₂;1111₂+1=10000₂."
+        ]
+      },
+      "mfg1-sequential-binary-07": {
+        "sourceHash": "1e110a6701f490317f7eed931387523c0c9582360a449c1d368c20be397cb518",
+        "stem": "চিহ্নবিহীন4বিটের সর্বোচ্চ দশমিক16, সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "1111₂=8+4+2+1=15≠16.",
+          "2⁴−1=15≠16."
+        ]
+      },
+      "mfg1-sequential-binary-08": {
+        "sourceHash": "bda40b7b1dd5e8d20bff757bb8af7e7217c9e92e03068310695e348b5cab93da",
+        "stem": "চিহ্নবিহীন4বিট শূন্যসহ16অবস্থা বোঝায়, সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "0000₂…1111₂↔0…15;15−0+1=16.",
+          "2×2×2×2=2⁴=16."
+        ]
+      }
+    },
+    "ne": {
+      "mfg1-sequential-binary-01": {
+        "sourceHash": "8d15b7cee6f0f17d6e34e03c94e0f6ed64d23f9c010abbc65465d6322e6852b3",
+        "stem": "चिह्नरहित बाइनरी10110 लाई दशमलवमा बदल्नुहोस्।",
+        "options": [
+          "22",
+          "20",
+          "26",
+          "10110"
+        ],
+        "reasons": [
+          "10110₂=16+4+2=22₁₀.",
+          "10100₂=20;10110₂=22.",
+          "10110₂:8×0;16+4+2=22.",
+          "10110₂≠10110₁₀;16+4+2=22."
+        ]
+      },
+      "mfg1-sequential-binary-02": {
+        "sourceHash": "08b4285e3e4538c18e8e43f4a2f8f07452f17de38fe06a4481d7dda8da37fffa",
+        "stem": "दशमलव25 को चिह्नरहित बाइनरी रूप कुन हो?",
+        "options": [
+          "10101₂",
+          "11010₂",
+          "11001₂",
+          "10011₂"
+        ],
+        "reasons": [
+          "10101₂=16+4+1=21.",
+          "11010₂=16+8+2=26.",
+          "11001₂=16+8+1=25.",
+          "10011₂=16+2+1=19."
+        ]
+      },
+      "mfg1-sequential-binary-03": {
+        "sourceHash": "2aa367e3593eff9006ca5903415aa6fb4dffa28a431309498ee1c4cd77ab18c5",
+        "stem": "छ अङ्कको चिह्नरहित बाइनरी100000 मा बायाँको स्थानभार कति हो?",
+        "options": [
+          "16",
+          "32",
+          "64",
+          "6"
+        ],
+        "reasons": [
+          "2⁴=16;2⁵=32.",
+          "2⁽⁶⁻¹⁾=2⁵=32.",
+          "2⁶=64;2⁵=32.",
+          "6≠2⁽⁶⁻¹⁾;2⁵=32."
+        ]
+      },
+      "mfg1-sequential-binary-04": {
+        "sourceHash": "44f0b206de58779e836c80ca354520e778e412e8adc866492580120ce3a0e644",
+        "stem": "चिह्नरहित बाइनरी000101 को दशमलव मान कति हो?",
+        "options": [
+          "101",
+          "0",
+          "1",
+          "5"
+        ],
+        "reasons": [
+          "000101₂≠101₁₀;4+1=5.",
+          "000101₂:4×1+1×1≠0.",
+          "000101₂:4+1≠1.",
+          "000101₂=101₂=4+1=5."
+        ]
+      },
+      "mfg1-sequential-binary-05": {
+        "sourceHash": "fbfe699a928297d4a8b9d33cc7f1e22e4bc6883b04b7dd02eecc96a603f8dfd0",
+        "stem": "102 केवल0 र1 प्रयोग गर्ने वैध बाइनरी हो, सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "2∉{0,1}.",
+          "{1,0,2}⊄{0,1};2∉{0,1}."
+        ]
+      },
+      "mfg1-sequential-binary-06": {
+        "sourceHash": "c676ce616743d2c567805800ee3482082fd57f7a4b99c3e81fad4f8d2a213342",
+        "stem": "चौडाइ सीमा बिना चिह्नरहित1111₂+1=10000₂ सही हो?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "1111₂=15;15+1=16=10000₂.",
+          "1+1=10₂;1111₂+1=10000₂."
+        ]
+      },
+      "mfg1-sequential-binary-07": {
+        "sourceHash": "1e110a6701f490317f7eed931387523c0c9582360a449c1d368c20be397cb518",
+        "stem": "चिह्नरहित4बिटको अधिकतम दशमलव16 हो, सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "1111₂=8+4+2+1=15≠16.",
+          "2⁴−1=15≠16."
+        ]
+      },
+      "mfg1-sequential-binary-08": {
+        "sourceHash": "bda40b7b1dd5e8d20bff757bb8af7e7217c9e92e03068310695e348b5cab93da",
+        "stem": "चिह्नरहित4बिटले शून्यसहित16अवस्था देखाउन सक्छ, सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "0000₂…1111₂↔0…15;15−0+1=16.",
+          "2×2×2×2=2⁴=16."
+        ]
+      }
+    },
+    "my": {
+      "mfg1-sequential-binary-01": {
+        "sourceHash": "8d15b7cee6f0f17d6e34e03c94e0f6ed64d23f9c010abbc65465d6322e6852b3",
+        "stem": "လက္ခဏာမပါနှစ်လီ10110ကိုဆယ်လီပြောင်းပါ။",
+        "options": [
+          "22",
+          "20",
+          "26",
+          "10110"
+        ],
+        "reasons": [
+          "10110₂=16+4+2=22₁₀.",
+          "10100₂=20;10110₂=22.",
+          "10110₂:8×0;16+4+2=22.",
+          "10110₂≠10110₁₀;16+4+2=22."
+        ]
+      },
+      "mfg1-sequential-binary-02": {
+        "sourceHash": "08b4285e3e4538c18e8e43f4a2f8f07452f17de38fe06a4481d7dda8da37fffa",
+        "stem": "ဆယ်လီ25ကိုပြသောလက္ခဏာမပါနှစ်လီမှာ ဘာလဲ။",
+        "options": [
+          "10101₂",
+          "11010₂",
+          "11001₂",
+          "10011₂"
+        ],
+        "reasons": [
+          "10101₂=16+4+1=21.",
+          "11010₂=16+8+2=26.",
+          "11001₂=16+8+1=25.",
+          "10011₂=16+2+1=19."
+        ]
+      },
+      "mfg1-sequential-binary-03": {
+        "sourceHash": "2aa367e3593eff9006ca5903415aa6fb4dffa28a431309498ee1c4cd77ab18c5",
+        "stem": "ခြောက်လုံးလက္ခဏာမပါနှစ်လီ100000၏ဘယ်ဆုံးနေရာတန်ဖိုးမှာ ဘာလဲ။",
+        "options": [
+          "16",
+          "32",
+          "64",
+          "6"
+        ],
+        "reasons": [
+          "2⁴=16;2⁵=32.",
+          "2⁽⁶⁻¹⁾=2⁵=32.",
+          "2⁶=64;2⁵=32.",
+          "6≠2⁽⁶⁻¹⁾;2⁵=32."
+        ]
+      },
+      "mfg1-sequential-binary-04": {
+        "sourceHash": "44f0b206de58779e836c80ca354520e778e412e8adc866492580120ce3a0e644",
+        "stem": "လက္ခဏာမပါနှစ်လီ000101၏ဆယ်လီတန်ဖိုးမှာ ဘာလဲ။",
+        "options": [
+          "101",
+          "0",
+          "1",
+          "5"
+        ],
+        "reasons": [
+          "000101₂≠101₁₀;4+1=5.",
+          "000101₂:4×1+1×1≠0.",
+          "000101₂:4+1≠1.",
+          "000101₂=101₂=4+1=5."
+        ]
+      },
+      "mfg1-sequential-binary-05": {
+        "sourceHash": "fbfe699a928297d4a8b9d33cc7f1e22e4bc6883b04b7dd02eecc96a603f8dfd0",
+        "stem": "102သည်0နှင့်1သာပါသော မှန်ကန်နှစ်လီလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "2∉{0,1}.",
+          "{1,0,2}⊄{0,1};2∉{0,1}."
+        ]
+      },
+      "mfg1-sequential-binary-06": {
+        "sourceHash": "c676ce616743d2c567805800ee3482082fd57f7a4b99c3e81fad4f8d2a213342",
+        "stem": "အရှည်မကန့်သတ်လျှင် လက္ခဏာမပါ1111₂+1=10000₂မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "1111₂=15;15+1=16=10000₂.",
+          "1+1=10₂;1111₂+1=10000₂."
+        ]
+      },
+      "mfg1-sequential-binary-07": {
+        "sourceHash": "1e110a6701f490317f7eed931387523c0c9582360a449c1d368c20be397cb518",
+        "stem": "လက္ခဏာမပါ4bit၏အများဆုံးဆယ်လီ16ဖြစ်ခြင်း မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "1111₂=8+4+2+1=15≠16.",
+          "2⁴−1=15≠16."
+        ]
+      },
+      "mfg1-sequential-binary-08": {
+        "sourceHash": "bda40b7b1dd5e8d20bff757bb8af7e7217c9e92e03068310695e348b5cab93da",
+        "stem": "လက္ခဏာမပါ4bitသည်သုညအပါ16အခြေအနေပြနိုင်ခြင်း မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "0000₂…1111₂↔0…15;15−0+1=16.",
+          "2×2×2×2=2⁴=16."
+        ]
+      }
+    },
+    "th": {
+      "mfg1-sequential-binary-01": {
+        "sourceHash": "8d15b7cee6f0f17d6e34e03c94e0f6ed64d23f9c010abbc65465d6322e6852b3",
+        "stem": "แปลงฐานสองไม่มีเครื่องหมาย10110เป็นฐานสิบ",
+        "options": [
+          "22",
+          "20",
+          "26",
+          "10110"
+        ],
+        "reasons": [
+          "10110₂=16+4+2=22₁₀.",
+          "10100₂=20;10110₂=22.",
+          "10110₂:8×0;16+4+2=22.",
+          "10110₂≠10110₁₀;16+4+2=22."
+        ]
+      },
+      "mfg1-sequential-binary-02": {
+        "sourceHash": "08b4285e3e4538c18e8e43f4a2f8f07452f17de38fe06a4481d7dda8da37fffa",
+        "stem": "รูปฐานสองไม่มีเครื่องหมายใดแทนฐานสิบ25",
+        "options": [
+          "10101₂",
+          "11010₂",
+          "11001₂",
+          "10011₂"
+        ],
+        "reasons": [
+          "10101₂=16+4+1=21.",
+          "11010₂=16+8+2=26.",
+          "11001₂=16+8+1=25.",
+          "10011₂=16+2+1=19."
+        ]
+      },
+      "mfg1-sequential-binary-03": {
+        "sourceHash": "2aa367e3593eff9006ca5903415aa6fb4dffa28a431309498ee1c4cd77ab18c5",
+        "stem": "น้ำหนักหลักซ้ายสุดของฐานสองไม่มีเครื่องหมายหกหลัก100000คือเท่าไร",
+        "options": [
+          "16",
+          "32",
+          "64",
+          "6"
+        ],
+        "reasons": [
+          "2⁴=16;2⁵=32.",
+          "2⁽⁶⁻¹⁾=2⁵=32.",
+          "2⁶=64;2⁵=32.",
+          "6≠2⁽⁶⁻¹⁾;2⁵=32."
+        ]
+      },
+      "mfg1-sequential-binary-04": {
+        "sourceHash": "44f0b206de58779e836c80ca354520e778e412e8adc866492580120ce3a0e644",
+        "stem": "ฐานสองไม่มีเครื่องหมาย000101มีค่าฐานสิบเท่าไร",
+        "options": [
+          "101",
+          "0",
+          "1",
+          "5"
+        ],
+        "reasons": [
+          "000101₂≠101₁₀;4+1=5.",
+          "000101₂:4×1+1×1≠0.",
+          "000101₂:4+1≠1.",
+          "000101₂=101₂=4+1=5."
+        ]
+      },
+      "mfg1-sequential-binary-05": {
+        "sourceHash": "fbfe699a928297d4a8b9d33cc7f1e22e4bc6883b04b7dd02eecc96a603f8dfd0",
+        "stem": "102เป็นฐานสองที่ถูกต้องซึ่งใช้เพียง0และ1หรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "2∉{0,1}.",
+          "{1,0,2}⊄{0,1};2∉{0,1}."
+        ]
+      },
+      "mfg1-sequential-binary-06": {
+        "sourceHash": "c676ce616743d2c567805800ee3482082fd57f7a4b99c3e81fad4f8d2a213342",
+        "stem": "ไม่จำกัดหลัก แบบไม่มีเครื่องหมาย1111₂+1=10000₂ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "1111₂=15;15+1=16=10000₂.",
+          "1+1=10₂;1111₂+1=10000₂."
+        ]
+      },
+      "mfg1-sequential-binary-07": {
+        "sourceHash": "1e110a6701f490317f7eed931387523c0c9582360a449c1d368c20be397cb518",
+        "stem": "ค่าสูงสุดไม่มีเครื่องหมาย4บิตคือฐานสิบ16ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "1111₂=8+4+2+1=15≠16.",
+          "2⁴−1=15≠16."
+        ]
+      },
+      "mfg1-sequential-binary-08": {
+        "sourceHash": "bda40b7b1dd5e8d20bff757bb8af7e7217c9e92e03068310695e348b5cab93da",
+        "stem": "ไม่มีเครื่องหมาย4บิตแทน16สถานะรวมศูนย์ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "0000₂…1111₂↔0…15;15−0+1=16.",
+          "2×2×2×2=2⁴=16."
+        ]
+      }
+    },
+    "km": {
+      "mfg1-sequential-binary-01": {
+        "sourceHash": "8d15b7cee6f0f17d6e34e03c94e0f6ed64d23f9c010abbc65465d6322e6852b3",
+        "stem": "ប្ដូរគោលពីរគ្មានសញ្ញា10110ទៅគោលដប់។",
+        "options": [
+          "22",
+          "20",
+          "26",
+          "10110"
+        ],
+        "reasons": [
+          "10110₂=16+4+2=22₁₀.",
+          "10100₂=20;10110₂=22.",
+          "10110₂:8×0;16+4+2=22.",
+          "10110₂≠10110₁₀;16+4+2=22."
+        ]
+      },
+      "mfg1-sequential-binary-02": {
+        "sourceHash": "08b4285e3e4538c18e8e43f4a2f8f07452f17de38fe06a4481d7dda8da37fffa",
+        "stem": "ទម្រង់គោលពីរគ្មានសញ្ញាណាតំណាងគោលដប់25?",
+        "options": [
+          "10101₂",
+          "11010₂",
+          "11001₂",
+          "10011₂"
+        ],
+        "reasons": [
+          "10101₂=16+4+1=21.",
+          "11010₂=16+8+2=26.",
+          "11001₂=16+8+1=25.",
+          "10011₂=16+2+1=19."
+        ]
+      },
+      "mfg1-sequential-binary-03": {
+        "sourceHash": "2aa367e3593eff9006ca5903415aa6fb4dffa28a431309498ee1c4cd77ab18c5",
+        "stem": "ទម្ងន់ខ្ទង់ឆ្វេងបំផុតនៃគោលពីរគ្មានសញ្ញាប្រាំមួយខ្ទង់100000ប៉ុន្មាន?",
+        "options": [
+          "16",
+          "32",
+          "64",
+          "6"
+        ],
+        "reasons": [
+          "2⁴=16;2⁵=32.",
+          "2⁽⁶⁻¹⁾=2⁵=32.",
+          "2⁶=64;2⁵=32.",
+          "6≠2⁽⁶⁻¹⁾;2⁵=32."
+        ]
+      },
+      "mfg1-sequential-binary-04": {
+        "sourceHash": "44f0b206de58779e836c80ca354520e778e412e8adc866492580120ce3a0e644",
+        "stem": "គោលពីរគ្មានសញ្ញា000101មានតម្លៃគោលដប់ប៉ុន្មាន?",
+        "options": [
+          "101",
+          "0",
+          "1",
+          "5"
+        ],
+        "reasons": [
+          "000101₂≠101₁₀;4+1=5.",
+          "000101₂:4×1+1×1≠0.",
+          "000101₂:4+1≠1.",
+          "000101₂=101₂=4+1=5."
+        ]
+      },
+      "mfg1-sequential-binary-05": {
+        "sourceHash": "fbfe699a928297d4a8b9d33cc7f1e22e4bc6883b04b7dd02eecc96a603f8dfd0",
+        "stem": "102ជាគោលពីរត្រឹមត្រូវដែលប្រើតែ0និង1ទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "2∉{0,1}.",
+          "{1,0,2}⊄{0,1};2∉{0,1}."
+        ]
+      },
+      "mfg1-sequential-binary-06": {
+        "sourceHash": "c676ce616743d2c567805800ee3482082fd57f7a4b99c3e81fad4f8d2a213342",
+        "stem": "មិនកំណត់ខ្ទង់ គ្មានសញ្ញា1111₂+1=10000₂ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "1111₂=15;15+1=16=10000₂.",
+          "1+1=10₂;1111₂+1=10000₂."
+        ]
+      },
+      "mfg1-sequential-binary-07": {
+        "sourceHash": "1e110a6701f490317f7eed931387523c0c9582360a449c1d368c20be397cb518",
+        "stem": "តម្លៃអតិបរមា4ប៊ីតគ្មានសញ្ញាគឺគោលដប់16 ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "1111₂=8+4+2+1=15≠16.",
+          "2⁴−1=15≠16."
+        ]
+      },
+      "mfg1-sequential-binary-08": {
+        "sourceHash": "bda40b7b1dd5e8d20bff757bb8af7e7217c9e92e03068310695e348b5cab93da",
+        "stem": "4ប៊ីតគ្មានសញ្ញាអាចតំណាង16ស្ថានភាពរាប់ទាំងសូន្យ ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "0000₂…1111₂↔0…15;15−0+1=16.",
+          "2×2×2×2=2⁴=16."
+        ]
+      }
+    },
+    "tl": {
+      "mfg1-sequential-binary-01": {
+        "sourceHash": "8d15b7cee6f0f17d6e34e03c94e0f6ed64d23f9c010abbc65465d6322e6852b3",
+        "stem": "I-convert ang unsigned binary10110 sa decimal.",
+        "options": [
+          "22",
+          "20",
+          "26",
+          "10110"
+        ],
+        "reasons": [
+          "10110₂=16+4+2=22₁₀.",
+          "10100₂=20;10110₂=22.",
+          "10110₂:8×0;16+4+2=22.",
+          "10110₂≠10110₁₀;16+4+2=22."
+        ]
+      },
+      "mfg1-sequential-binary-02": {
+        "sourceHash": "08b4285e3e4538c18e8e43f4a2f8f07452f17de38fe06a4481d7dda8da37fffa",
+        "stem": "Aling unsigned binary ang kumakatawan sa decimal25?",
+        "options": [
+          "10101₂",
+          "11010₂",
+          "11001₂",
+          "10011₂"
+        ],
+        "reasons": [
+          "10101₂=16+4+1=21.",
+          "11010₂=16+8+2=26.",
+          "11001₂=16+8+1=25.",
+          "10011₂=16+2+1=19."
+        ]
+      },
+      "mfg1-sequential-binary-03": {
+        "sourceHash": "2aa367e3593eff9006ca5903415aa6fb4dffa28a431309498ee1c4cd77ab18c5",
+        "stem": "Ano ang weight ng kaliwang digit sa anim-na-digit na unsigned binary100000?",
+        "options": [
+          "16",
+          "32",
+          "64",
+          "6"
+        ],
+        "reasons": [
+          "2⁴=16;2⁵=32.",
+          "2⁽⁶⁻¹⁾=2⁵=32.",
+          "2⁶=64;2⁵=32.",
+          "6≠2⁽⁶⁻¹⁾;2⁵=32."
+        ]
+      },
+      "mfg1-sequential-binary-04": {
+        "sourceHash": "44f0b206de58779e836c80ca354520e778e412e8adc866492580120ce3a0e644",
+        "stem": "Ano ang decimal value ng unsigned binary000101?",
+        "options": [
+          "101",
+          "0",
+          "1",
+          "5"
+        ],
+        "reasons": [
+          "000101₂≠101₁₀;4+1=5.",
+          "000101₂:4×1+1×1≠0.",
+          "000101₂:4+1≠1.",
+          "000101₂=101₂=4+1=5."
+        ]
+      },
+      "mfg1-sequential-binary-05": {
+        "sourceHash": "fbfe699a928297d4a8b9d33cc7f1e22e4bc6883b04b7dd02eecc96a603f8dfd0",
+        "stem": "Valid binary ba ang102 na0 at1 lamang ang gamit?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "2∉{0,1}.",
+          "{1,0,2}⊄{0,1};2∉{0,1}."
+        ]
+      },
+      "mfg1-sequential-binary-06": {
+        "sourceHash": "c676ce616743d2c567805800ee3482082fd57f7a4b99c3e81fad4f8d2a213342",
+        "stem": "Kung walang width limit, tama ba ang unsigned1111₂+1=10000₂?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "1111₂=15;15+1=16=10000₂.",
+          "1+1=10₂;1111₂+1=10000₂."
+        ]
+      },
+      "mfg1-sequential-binary-07": {
+        "sourceHash": "1e110a6701f490317f7eed931387523c0c9582360a449c1d368c20be397cb518",
+        "stem": "Tama bang decimal16 ang maximum na unsigned4bit?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "1111₂=8+4+2+1=15≠16.",
+          "2⁴−1=15≠16."
+        ]
+      },
+      "mfg1-sequential-binary-08": {
+        "sourceHash": "bda40b7b1dd5e8d20bff757bb8af7e7217c9e92e03068310695e348b5cab93da",
+        "stem": "Tama bang may16states ang unsigned4bit kasama ang zero?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "0000₂…1111₂↔0…15;15−0+1=16.",
+          "2×2×2×2=2⁴=16."
+        ]
+      }
+    }
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "physicalDeviceVerified": false
+}
