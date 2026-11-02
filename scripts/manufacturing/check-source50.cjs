@@ -1,0 +1,19 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),Module=require('node:module'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'../..'),{transformSync}=require('esbuild'),resolve=Module._resolveFilename;
+Module._resolveFilename=function(id,parent,...rest){let p=id.startsWith('@/')?path.join(root,'src',id.slice(2)):id;if((p.startsWith('.')||path.isAbsolute(p))&&!path.extname(p)){const c=path.resolve(parent?path.dirname(parent.filename):root,p)+'.ts';if(fs.existsSync(c))p=c;}return resolve.call(this,p,parent,...rest);};
+require.extensions['.ts']=(m,file)=>m._compile(transformSync(fs.readFileSync(file,'utf8'),{loader:'ts',format:'cjs'}).code,file);
+const patchPath=root+'/src/data/manufacturing/source50-overview.json',course=require(root+'/src/data/manufacturing/electrical.json'),lesson=course.lessons.find(l=>l.id==='mfg1-electrical-l043'),snapshot=JSON.stringify(course),dispatch=require(root+'/src/data/manufacturing/lesson-editorial.ts').manufacturingLessonParagraph,ruby=require(root+'/src/data/manufacturing/source49-readings.ts').manufacturingSource49Reading;
+assert(!require.cache[patchPath]);assert.equal(dispatch({...lesson,id:'other'},'section-1','ja','unrelated'),'unrelated');assert(!require.cache[patchPath]);
+const patch=require(patchPath),translations=require(root+'/src/data/manufacturing/translations.ts'),locales=['ja',...require(root+'/docs/ssw-workspace/manufacturing/approved-scope.json').targetLocales];let flows=0,negatives=0,segments=0,annotated=0;
+for(const p of patch.paragraphs){
+ assert.deepEqual(Object.keys(p.wording).sort(),[...locales].sort());assert.equal(p.effectiveJapaneseSha256,crypto.createHash('sha256').update(JSON.stringify(p.wording.ja.after)).digest('hex'));
+ const parts=ruby(lesson,p.paragraphId,p.wording.ja.after);assert(parts);segments+=parts.length;annotated+=parts.filter(s=>s.reading).length;for(const s of parts.slice(1))if(/[一-龯々]/.test(s.text))assert(s.reading);
+ for(const loc of locales){const w=p.wording[loc],raw=loc==='ja'?lesson.paragraphs.find(x=>x.id===p.paragraphId).textJa:translations.manufacturingTranslation(lesson,loc).paragraphs.find(x=>x.id===p.paragraphId).text;assert.equal(raw,w.before);assert.equal(dispatch(lesson,p.paragraphId,loc,raw),w.after);flows++;
+  for(const [l,id,text]of [[{...lesson,sourceHash:'stale'},p.paragraphId,raw],[{...lesson,paragraphs:[]},p.paragraphId,raw],[lesson,'unrelated',raw],[lesson,p.paragraphId,raw+'changed']]){assert.equal(dispatch(l,id,loc,text),text);negatives++;}
+ }
+ for(const loc of ['xx','toString','__proto__']){assert.equal(dispatch(lesson,p.paragraphId,loc,p.wording.ja.before),p.wording.ja.before);negatives++;}
+ for(const [l,id,text]of [[{...lesson,sourceHash:'stale'},p.paragraphId,p.wording.ja.after],[lesson,p.paragraphId,p.wording.ja.after+'changed'],[lesson,'unrelated',p.wording.ja.after]]){assert.equal(ruby(l,id,text),undefined);negatives++;}
+}
+for(const [word,reading]of [['治工具','じこうぐ'],['製袋','せいたい'],['手積','てづ'],['剥奪','はくだつ'],['回転','かいてん']])assert(patch.paragraphs.some(p=>p.wording.ja.ruby.some(s=>s.text===word&&s.reading===reading)));
+for(const p of patch.paragraphs){const old=p.wording.ja.after;p.wording.ja.after+='changed';for(const loc of locales){const w=p.wording[loc];assert.equal(dispatch(lesson,p.paragraphId,loc,w.before),w.before);negatives++;}p.wording.ja.after=old;const t=p.wording.vi,hash=t.effectiveJapaneseSha256;t.effectiveJapaneseSha256='stale';assert.equal(dispatch(lesson,p.paragraphId,'vi',t.before),t.before);t.effectiveJapaneseSha256=hash;negatives++;}
+assert.equal(JSON.stringify(course),snapshot);console.log(JSON.stringify({status:'PASS_SOURCE50',groups:3,paragraphLocalePairs:flows,negativeGuards:negatives,rubySegments:segments,newAnnotatedSegments:annotated,newJapaneseKanjiAnnotated:true,preservedOldBodyWithoutNewReadingClaims:true,sourceDate:'2026-07',currentEligibilityVerified:false,frozenCoreUnchanged:true,newQuestions:0}));

@@ -4,6 +4,7 @@ type Payload={lessonId:string;paragraphId:string;sourceHash:string;wording:{ja:{
 let payload:Payload|undefined;
 /** New source49 text only; unrelated readers never initialize its payload. */
 export function manufacturingSource49Reading(lesson:ManufacturingLesson,paragraphId:string,text:string|undefined):Source49Segment[]|undefined {
+ if(lesson.id==='mfg1-electrical-l043')return require('./source50-overview').manufacturingSource50Reading(lesson,paragraphId,text);
  if(lesson.id!=='mfg1-electrical-l094'||paragraphId!=='section-2'||typeof text!=='string')return undefined;
  // eslint-disable-next-line @typescript-eslint/no-require-imports -- Scope to one source-bound paragraph.
  const p=payload??(payload=require('./source49-thermal-clarification.json') as Payload);

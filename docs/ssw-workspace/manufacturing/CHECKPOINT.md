@@ -1,3 +1,13 @@
+# Manufacturing source50–52 — 2026-11-02
+
+Completed three successive overview groups (electrical PDF10–12) with full AI page inventory and3guarded additions to existing lesson043, Japanese+12targets,217new ruby annotations.51historical administrative/study reference claims covered_ai with explicit assessment exemptions;31job-membership children replace1excluded coarse container. Current application eligibility/sanctions are not certified. No schedule/core/learnerID change.
+
+Continued three formula groups:12existing calculation48 competencies/questions now have exact current teaching/assessment evidence; mechanical123/electrical127/surface118 remain partial,121 boundary read only. Then authored2new electrical165 questions/8distinct reasons/24targetpairs for BOTH inclusive current/time boundaries and two bonded unlike-expansion plates; all new kanji have readings. Separate exam/revision, exact source49 teaching guard, old banks and attempts preserved.
+
+Canonical100rows/68coveredAI(51reference+17competency)/1excludedparent/97directteaching/17directassessment; denominatoropen,coverage=null,whole574false.13Readerflows+26Attemptflows,216+182negativeguards,stricthelpers0diag,main/3calculation48/source49ruby/censusbyte-regression PASS. No browser/productionExpo/physicaldevice/native/domain/time approval. See ../source-coverage-v2/manufacturing-batch50-52-REPORT.vi.md and validation/freeze manifests. Coordinator remote persistence pending; stop snapshot mutation at freeze while preparing any next batch privately.
+
+---
+
 # Manufacturing source→app v2 — 2026-11-02
 
 Canonical acceptance view: `../source-coverage-v2/manufacturing.json`; other historical ledgers are provenance. All574page byte-backed census retains121195textspans including50056smallfont spans,871imageplacements,572vector-page groups and3links, with0font-based exclusions. Compressed region artifacts contain hashes/geometry, not source prose/pixels.57bounded atoms are active;267older coarser rows remain an index outside the denominator. Exact semantic/teaching/assessment dispositions replace page/topic-based closure. Only3bounded competencies currently meet covered_ai; denominator=open,coveragePercent=null,wholeSourceKnowledgeCovered=false.

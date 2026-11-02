@@ -183,6 +183,8 @@ def main():
     'allPageIdeasInventoried':False,'sourceExpressionCopied':False,'sourceImagesRepublished':False,
     'humanReviewed':False,'nativeReviewed':False,'domainReviewed':False,'physicalDeviceTested':False,'learnerDurationMeasured':False}
  (OUT/'manufacturing-source-review.json').write_text(json.dumps(review,ensure_ascii=False,indent=2)+'\n')
- print(json.dumps({'pages':len(pages),'boundedUnits':len(units),'legacyCandidatesNotAddedToDenominator':len(legacy_index),'coveredAi':sum(u['status']=='covered_ai' for u in units),'source49TeachingRepairs':4}))
+ for replay in ['extend-source50-registry.py','extend-source51-registry.py','extend-source52-registry.py','sync-source-v2-artifacts.py']:
+  subprocess.run(['python3',str(ROOT/'scripts/manufacturing'/replay)],cwd=ROOT,check=True)
+ print(json.dumps({'legacyBasePages':len(pages),'boundedUnits':len(units),'legacyCandidatesNotAddedToDenominator':len(legacy_index),'coveredAi':sum(u['status']=='covered_ai' for u in units),'source49TeachingRepairs':4}))
 
 if __name__=='__main__':main()
