@@ -183,7 +183,7 @@ def main():
     'allPageIdeasInventoried':False,'sourceExpressionCopied':False,'sourceImagesRepublished':False,
     'humanReviewed':False,'nativeReviewed':False,'domainReviewed':False,'physicalDeviceTested':False,'learnerDurationMeasured':False}
  (OUT/'manufacturing-source-review.json').write_text(json.dumps(review,ensure_ascii=False,indent=2)+'\n')
- for replay in ['extend-source50-registry.py','extend-source51-registry.py','extend-source52-registry.py','extend-source53-registry.py','extend-source54-registry.py','extend-source56-registry.cjs','sync-source-v2-artifacts.py']:
+ for replay in ['extend-source50-registry.py','extend-source51-registry.py','extend-source52-registry.py','extend-source53-registry.py','extend-source54-registry.py','extend-source56-registry.cjs','extend-source57-registry.cjs','sync-source-v2-artifacts.py']:
   subprocess.run(['node' if replay.endswith('.cjs') else 'python3',str(ROOT/'scripts/manufacturing'/replay)],cwd=ROOT,check=True)
  print(json.dumps({'legacyBasePages':len(pages),'boundedUnits':len(units),'legacyCandidatesNotAddedToDenominator':len(legacy_index),'coveredAi':sum(u['status']=='covered_ai' for u in units),'source49TeachingRepairs':4}))
 

@@ -38,7 +38,7 @@
       byPhaseMs[s.phase] += s.activeMs;
     }
     const activeMs = Object.values(byPhaseMs).reduce((a, b) => a + b, 0);
-    return { byPhaseMs, activeMs, activeMinutes: activeMs / 60000, targetMinutes: 30, targetIsNotMeasuredAcceptance: true };
+    return { byPhaseMs, activeMs, activeMinutes: activeMs / 60000, targetMinutes: null, targetRequiresCourseContract: true, targetIsNotMeasuredAcceptance: true };
   }
   function finish(session, now) {
     if (session.status === 'finished') throw Error('Session already finished');

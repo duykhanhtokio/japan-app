@@ -1,3 +1,19 @@
+# Ba bài nhà hàng khách sạn và đối chiếu nguồn quản lý — 02/11/2026, v7
+
+Hoàn tất `hotel-restaurant-06/07/09` đủ36/36cặp đúngrevision,18bản đầyđủ mới và18bản cũ được bổsung thật. Toàn ngành276→312/456cặp hợp lệ (+36),còn144thiếu/cũ;2532trường dịch được kiểm cấu trúc. Tác giả khách sạn tự rà và bổsung sáu locale cũ,soạnHI/BN6fullpairs; các tác giả hỗtrợ tự soạn/tựkiểmTH,KM,NE,MYmỗi người3fullpairs. Không rà chéo ngữnghĩa; mọi bản `translated_ai_unreviewed`.
+
+Dịch đủ54câu cũ còn thiếu trên sáu locale,thêm các đoạn điều kiện về làm sạch/khửtrùng,không tự trộn hóa chất hoặc dùng nồngđộ chưa xácnhận,vídụ norovirus tháng11–2đi kèm vệsinh quanh năm. Khôi phục chi tiết lau bàn/ghế trong đápán đóngcửa của sáu bản cũ. Sửa lờiTagalog gây hiểu thành “dụngcụ mới bị rơi” thành dụngcụ mới thay đồ đãrơi và các cáchdùng phồnthể như項目/流程/對象/類型/品質.11bản câu cũ có sửa có ghi hash riêng;61bản câu cũ khác và36cặp ngoài phạmvi giữ nguyên.
+
+Đã đọc chữ và ảnh trang thật2号p55,kiểm hash PDF. Phát hiện nguồn yêu cầu chỉtiêuABC `利益率` trong khi Nhật cũ chỉ ghi `利益`: sửa đúng điểm đó trước khi đồngbộ12bản dịch. Đồng thời nguồn nêu mục tiêu tăng doanhthu/lợinhuận hoạtđộng và quảnlý chi phí bên cạnh dịchvụ khách; câuNhật cũ chỉ nêu “xemxét” các đại lượng. Đã thêm cách giải thích độc lập rõ mục tiêu và `hotel-restaurant-09-q08` kiểm đúng tổhợp này,đủ12bản dịch. Tổng327→328câu;327câuNhật cũ/ID/đápán giữ nguyên. Revision09cuối `05ea8e785116b047969429e1be04d4bf591ba15ede6b1a47dfa5fb473667ed91`.
+
+Nguồn chuẩn tăng92→100đơnvị `covered_ai` (7mục cũ+1mục tiêu mới),tổng382→383ý đãghi nhận. RiêngABC `HR2-055-06` giữ `partial`:câuq4kiểm chọn chỉtiêu/kỳ nhưng chưa trực tiếp phânbiệt tỷsuất lợinhuận với sốtiền lợinhuận; không đóng bằng câu cùng chủđề. Toàn bộ192vùng của trang55đã phânloại tựkiểm,bao gồm47khối chữ,128span và17vector điềuhướng; không bỏ ruby/chữnhỏ. Trang55đạt kiểm kê ngữnghĩa nhưng chưa đóng kiếnthức vì mụcABC cònmở. Tổng27trang visual/16semantic,15trang nguồn đãđóng ở mứcAI;282candidate,1partial,100covered. Mẫu số vẫn mở,wholeSourceKnowledgeCovered=false;không suy tỷlệ bao phủ từ bản dịch.
+
+Furigana ngoại tuyến cậpnhật cho hai đoạn đổi vàq08;giữ707entry cáchđọc cũ không đổi và nguyênnội dung năm nhómreadingkhác. Hai bài tổnghợp25câu không đổi. Kiểm nguồnchuẩn,source-atoms,cấu trúc38bài/328câu,furigana,bản dịch hiệncó,bộloader thật312cặp/từchối144thiếu-cũ và kiểmbảotoànv7đềuPASS. Các phép tính32/58/30/65% kiểmđộc lập;giữ58%=0.58,không chia0,không suy42%lợinhuận từFL58%,30/60là mốcthamkhảo.
+
+Bằngchứng: `restaurant679-v7-integration-evidence.json`, `source-v7-management-review.json`,năm receipt tácgiả `source-v7-*-authoring.json`;tái lập nguồn bằng `close-management-source-v7.cjs`,kiểm tíchhợp bằng `check-restaurant679-v7.cjs`. Không nghiệmthu bảnngữ/chuyênmôn,thiếtbịthật hoặc thời lượng trong đợt này. Đợt đãđóng tệp chờ điều phối lưu/xácminh từxa;chưa tự nhận đãpush.
+
+---
+
 # Ba bài ổn định tiếp nối đủ12ngôn ngữ — 02/11/2026, đợt v6
 
 Hoàn tất `hotel-planning-07`, `hotel-service-01`, `hotel-service-06` đủ36/36cặp theo đúngrevisionNhật. Tăng245→276/456cặp hợp lệ (+31), còn180cặp thiếu/cũ:19cặp được tác giả đầy đủ mới,12cặp cũ được bổ sung nội dung thực sự;5cặp planning07 đã hợp lệ giữ nguyên. Không đổi Nhật,327câu,ID,đáp án hoặc furigana. Ba bài có3480trường dịch được kiểm cấu trúc;102bản câu còn thiếu của sáu locale cũ được dịch đủ lựa chọn và giải thích.

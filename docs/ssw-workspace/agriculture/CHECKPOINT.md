@@ -1,3 +1,13 @@
+# Agriculture bounded F1 continuation — 2026-11-02
+
+One additional source-backed group maps the F1/fixed-variety section of1号page61 and2号page15: eight exact atomic objectives, seven covered_ai and one explicit partial for self-seeding assessment. Five older non-atomic labels are preserved in legacy-resolution records, without duplicate knowledge credit. One new reader retrieval check asks F1 use, the fixed-variety definition and both regional examples, with12explicit prompts and full ruby; answers reuse current independent lesson paragraphs and their exact revision-valid translations.
+
+Canonical state is1428known/85covered_ai, with86direct teachings and85direct assessments. Three fully reviewed semantic pages remain unchanged; neitherpage61norpage15is closed. The source denominator remains open. The biological self-seeding possibility is taught with the existing no-blanket-permission limit, but its dedicated assessment remains missing. Origin-versus-processing and composite historical objectives remain candidate.
+
+PASS: bounded source/old-object preservation validator, canonical ledger contract, prior environment regression and reader host15checks/12locales/2levels. Old14checks, all241lessonobjects,12locale lessonfiles,1227bankquestions, calendar and all canonical knowledge outside the five resolved legacy labels are unchanged. Evidence: `../source-coverage-v2/agriculture-f1-source61-v6-review.json` and `agriculture-f1-source61-v6-validation.json`. No new assets, source redistribution, device/duration/domain/native/productionExpo acceptance claimed. Root must verify remote persistence of this completed unit.
+
+---
+
 # Agriculture source continuation — 2026-11-02, close eleven explicit gaps
 
 Resolved the previous11partial atoms: five missing assessments (poor storage, two seed-processing purposes, naked-seed definition and spinach example) and six1号sowingroute gaps. Four new ungraded retrieval checks add48explicit locale prompts and full context ruby. Three visible teaching supplements appear in already scheduled readers; the1号sowing supplement is in `agr-germination`, while the old2号route remains unchanged. Current lesson/calendar IDs and learner state are preserved.

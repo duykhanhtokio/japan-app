@@ -9,6 +9,7 @@ assert.throws(() => Q.segment(s, 'japanese', 60000, 0, 500));
 Q.segment(s, 'japanese', 60000, 0, 60000);
 Q.segment(s, 'questions', 30000, 120000, 150000);
 assert.equal(Q.summary(s).activeMinutes, 1.5);
+assert.equal(Q.summary(s).targetMinutes, null, 'The collector must not invent a duration target for every course');
 Q.recover(s, 300000);
 assert.equal(Q.summary(s).activeMinutes, 1.5, 'reload/recovery gap is not learning time');
 assert.equal(s.status, 'paused');
