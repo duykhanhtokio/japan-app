@@ -6,6 +6,10 @@ import {foodSourcePractice34} from '@/data/food-manufacturing/source-practice34'
 import {foodSourcePractice35} from '@/data/food-manufacturing/source-practice35';
 import {foodSourcePractice36} from '@/data/food-manufacturing/source-practice36';
 import {foodSourcePractice37} from '@/data/food-manufacturing/source-practice37';
+import {foodSourcePractice43} from '@/data/food-manufacturing/source-practice43';
+import caption43 from '@/data/food-manufacturing/source-closure43.json';
+import caption44 from '@/data/food-manufacturing/source-closure44.json';
+import caption45 from '@/data/food-manufacturing/source-closure45.json';
 import captionSupplements from '@/data/food-manufacturing/source-closure31.json';
 import ui from '@/data/food-manufacturing/daily-ui-translations.json';
 import {foodManufacturingLesson,foodManufacturingTranslation,type FoodManufacturingLesson} from '@/data/food-manufacturing';
@@ -19,6 +23,7 @@ const figures:PracticeFigure[]=[
  ...foodSourcePractice35,
  ...foodSourcePractice36,
  ...foodSourcePractice37,
+ ...foodSourcePractice43,
  {id:'food-source-histogram-patterns',lessonId:'food-2-043',paragraphId:'p1',source:require('../../../assets/food-manufacturing/source-practice/histogram-patterns.webp'),aspectRatio:1584/1903},
  {id:'food-source-scatter-patterns',lessonId:'food-2-043',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/scatter-patterns.webp'),aspectRatio:1584/1423},
  {id:'food-source-risk-matrix',lessonId:'food-2-047',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/risk-matrix.webp'),aspectRatio:776/648},
@@ -35,11 +40,11 @@ export function FoodSourcePracticeVisuals({lesson,textColor,readingColor,languag
  const translated=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
  return <>{figures.filter(f=>f.lessonId===lesson.id&&(!f.lessonSourceHash||f.lessonSourceHash===lesson.sourceHash)).map(figure=>{
  const p=lesson.paragraphs.find(p=>p.id===figure.paragraphId);if(!p)return null;
- const captionSupplement=figure.captionSupplementId?captionSupplements.sections.find(s=>s.id===figure.captionSupplementId&&s.lessonSourceHash===lesson.sourceHash&&s.sourceHash===figure.captionSupplementSourceHash):null;
+ const captionSupplement=figure.captionSupplementId?[...captionSupplements.sections,...caption43.sections,...caption44.sections,...caption45.sections].find(s=>s.id===figure.captionSupplementId&&s.lessonSourceHash===lesson.sourceHash&&s.sourceHash===figure.captionSupplementSourceHash):null;
  if(figure.captionSupplementId&&!captionSupplement)return null;
  const supplementTranslation=captionSupplement&&showTranslation&&language!=='ja'?(captionSupplement.translations as Record<string,{title:string;sourceHash:string}>)[language]:null;
  const supplementTitle=supplementTranslation?.sourceHash===captionSupplement?.sourceHash?supplementTranslation?.title:null;
- const headingOnly=figure.id.startsWith('food-source32-')||figure.id.startsWith('food-source37-');
+ const headingOnly=figure.id.startsWith('food-source32-')||figure.id.startsWith('food-source37-')||figure.id.startsWith('food-source43-');
  return <View key={figure.id} testID={figure.id} style={s.figure}>
  {captionSupplement?<View accessible accessibilityRole="header" accessibilityLabel={captionSupplement.titleJa} style={s.rubyLine}>{captionSupplement.titleRuby.map((token,i)=><View key={i} style={s.word}><Text style={{color:readingColor,fontSize:11,lineHeight:15}}>{'reading' in token?token.reading:' '}</Text><Text selectable style={{color:textColor,fontSize:19,lineHeight:30,fontWeight:'700'}}>{token.text}</Text></View>)}</View>:<FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.titleJa`} text={p.titleJa} color={textColor} readingColor={readingColor} heading/>}
  {!headingOnly&&<FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.textJa`} text={p.textJa} color={textColor} readingColor={readingColor}/>}

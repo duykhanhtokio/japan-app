@@ -8,6 +8,7 @@ module.exports = async function compile(root, modules, jsonSnapshots = new Map()
   const esbuild = dependency("esbuild"),
     fixture = require("./fixtures.cjs");
   const mocks = {
+    "@/components/ui/AppBackdrop": `export const useBackdropOcclusion=()=>{};`,
     "react-native": `import React,{forwardRef,useImperativeHandle} from 'react'; export const View='View',Text='Text',Pressable='Pressable',Image='Image',TextInput='TextInput';export const ScrollView=forwardRef((props,ref)=>{useImperativeHandle(ref,()=>({scrollTo(){}}));return React.createElement('ScrollView',props,props.children)});export const Modal=props=>props.visible?React.createElement('Modal',props,props.children):null;export const StyleSheet={create:x=>x,absoluteFill:{position:'absolute',left:0,right:0,top:0,bottom:0},absoluteFillObject:{position:'absolute',left:0,right:0,top:0,bottom:0},flatten:x=>Object.assign({},...[x].flat(Infinity).filter(Boolean))};export const useWindowDimensions=()=>globalThis.__tokuteiViewport??({width:430,height:932,fontScale:1});export const AppState={currentState:'active',addEventListener:()=>({remove(){}})};`,
     "@react-native-async-storage/async-storage": `export default {getItem:async key=>globalThis.__tokuteiStorage.get(key)??null,setItem:async(key,value)=>{if(globalThis.__tokuteiFailSave)throw Error('save failure');globalThis.__tokuteiStorage.set(key,value)},getAllKeys:async()=>[...globalThis.__tokuteiStorage.keys()]};`,
     "react-native-safe-area-context": `export const useSafeAreaInsets=()=>({top:59,bottom:34,left:0,right:0});`,
@@ -53,8 +54,8 @@ module.exports = async function compile(root, modules, jsonSnapshots = new Map()
     },
   };
   function resolve(p) {
-    for (const suffix of [".ts", ".tsx", ".json", "/index.ts"])
-      if (fs.existsSync(p + suffix)) return p + suffix;
+    for (const suffix of ["", ".ts", ".tsx", ".json", "/index.ts"])
+      if (fs.existsSync(p + suffix) && fs.statSync(p + suffix).isFile()) return p + suffix;
     throw Error(p);
   }
   const entries = [

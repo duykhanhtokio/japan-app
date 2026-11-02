@@ -6,13 +6,16 @@ import additions39 from '@/data/food-manufacturing/source-closure39.json';
 import additions40 from '@/data/food-manufacturing/source-closure40.json';
 import additions41 from '@/data/food-manufacturing/source-closure41.json';
 import additions42 from '@/data/food-manufacturing/source-closure42.json';
+import additions43 from '@/data/food-manufacturing/source-closure43.json';
+import additions44 from '@/data/food-manufacturing/source-closure44.json';
+import additions45 from '@/data/food-manufacturing/source-closure45.json';
 import type {FoodManufacturingLesson} from '@/data/food-manufacturing';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 import {FoodSourceAssessmentChecks} from './FoodSourceAssessmentChecks';
 
 /** Separate source-bound additions preserve original lesson completion revisions. */
 export function FoodClosureSupplements({lesson,language,showTranslation,textColor,readingColor}:{lesson:FoodManufacturingLesson;language:string;showTranslation:boolean;textColor:string;readingColor:string}){
- return <>{[...data.sections,...additions34.sections,...additions38.sections,...additions39.sections,...additions40.sections,...additions41.sections,...additions42.sections].filter(s=>s.lessonId===lesson.id&&s.lessonSourceHash===lesson.sourceHash).map(section=>{
+ return <>{[...data.sections,...additions34.sections,...additions38.sections,...additions39.sections,...additions40.sections,...additions41.sections,...additions42.sections,...additions43.sections,...additions44.sections,...additions45.sections].filter(s=>s.lessonId===lesson.id&&s.lessonSourceHash===lesson.sourceHash).map(section=>{
  const candidate=(section.translations as Record<string,{title:string;text:string;sourceHash:string}>)[language];
  const t=candidate?.sourceHash===section.sourceHash?candidate:null;
  return <View key={section.id} testID={section.id} style={styles.section}>

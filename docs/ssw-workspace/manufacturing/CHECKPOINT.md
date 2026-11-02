@@ -1,3 +1,13 @@
+# Manufacturing SSW1 — source atoms47 and guarded reader details, 2026-11-02
+
+Verified exact three source PDF hashes and574physicalpages. Reconciled the33historical non-detail-view rows into3covers/24TOC/3colophons/3electrical instructional overview pages10–12; these are not33unprocessed technicalpages. Visually compared mechanical89,electrical10–12/165,surface103 and recorded57bounded atom comparisons,6exact question-to-paragraph bindings and22option/rationale meaning dispositions. Existing source exercise wording was not copied; no new duplicate questions. Whole-page and whole574knowledge closure remainfalse.
+
+Integrated8missing mechanical table7-1 teaching details into actual lesson080/section2 through source47-clarification.json, Japanese+12targets. Exact canonical sourceHash/Japanese-before/effective-target-before guards, deferred payload loading and frozen core/session IDs preserved. Focused source47check PASS13effective-target/renderedRNWebTextSSR cases and55negative guards; notbrowserlayout/native-device acceptance. Source atom records retain before47status and explicit guarded supplement binding. Remaining exam reference details, photo component identification/manual-reset detail and all-source semantic/visual/assessment coverage are explicit, notclosed by metadata.
+
+Read session-20261102/atomic47/REPORT.vi.md, historical33.json, thethree atomfiles, question-bindings.json and validation.json. Reproduce source audit with scripts/manufacturing/audit-source-atoms47.py using source PDFs outsideGit. Runtime gate scripts/manufacturing/check-source47.cjs. Native/domain/device/duration/whole-source acceptance remainsfalse. Coordinator must verify remote persistence before claiming saved.
+
+---
+
 # Manufacturing SSW1 — source closure audit39, six owned lanes, 2026-10-31
 
 Exact3PDFhashes verified; all574physicalpages classified(169mechanical/198electrical/207surface), with headings/TOC/prose/table/formula/image/vector extraction receipts, retainedlowtextpages andsourceexerciseobjectives. Sharedsource-closure-20261031/coverage-matrix.json joins267bounded semanticunitoccurrences(107historical+160new;mechanical183/electrical39/surface45), exactsourcehash/page/region and authoredparagraph/term/question links with explicit candidatevsreview states. This is NOT an exhaustive knowledge denominator or wholepageclosure. New semantic sourcecomparisons remain bounded; no sourceprose/PDF/images redistributed. ExistingTOCmatrix retained as structuralhistory.
