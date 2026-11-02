@@ -6,7 +6,11 @@ def sha(x):return hashlib.sha256(x).hexdigest()
 def digest(v):return sha(json.dumps(v,ensure_ascii=False,separators=(',',':')).encode())
 def esc(x):return str(x).replace('~','~0').replace('/','~1')
 def apply(result):
- units={u['knowledgeId']:u for u in result['knowledgeUnits']};pages={(p['sourceId'],p['pdfPage']):p for p in result['pages']};sources={s['sourceId']:s for s in result['sources']};canon=json.loads(CAN.read_text())['items'];docs={}
+ units={u['knowledgeId']:u for u in result['knowledgeUnits']};pages={(p['sourceId'],p['pdfPage']):p for p in result['pages']};sources={s['sourceId']:s for s in result['sources']};canon=json.loads(CAN.read_text())['items'];docs={};oldq={}
+ for level in ['1','2']:
+  path=f'src/data/restaurant/exams.{level}.ja.json'
+  for i,exam in enumerate(json.loads((ROOT/path).read_text())['exams']):
+   for j,q in enumerate(exam['questions']):oldq[q['id']]=(path,f'/exams/{i}/questions/{j}',q)
  def evidence(path,ptr,value,note):return dict(path=path,jsonPointer=ptr,sha256=digest(value),sha256Mode='json-value',relation='direct',semanticReviewed=True,reviewNote=note)
  for receipt in sorted(OUT.glob('restaurant-r2-*-source-review-*.json')):
   review=json.loads(receipt.read_text());assert review['status']=='self_checked_ai' and review['sourceTextRead'] and review['sourceVisualReviewed'];rr=str(receipt.relative_to(ROOT))
@@ -41,8 +45,27 @@ def apply(result):
     path=f"src/data/restaurant/lessons.{ref['level']}.ja.json";ls=json.loads((ROOT/path).read_text())['lessons'];i=next(i for i,l in enumerate(ls)if l['id']==ref['lessonId']);j=next(j for j,p in enumerate(ls[i]['paragraphs'])if p['id']==ref['paragraphId']);te.append(evidence(path,f'/lessons/{i}/paragraphs/{j}/textJa',ls[i]['paragraphs'][j]['textJa'],r['teachingReview']))
    ae=[]
    for id in r['questionIds']:
-    v=canon[id];assert u['knowledgeId']in v['factIds'];ae.append(evidence(str(CAN.relative_to(ROOT)),'/items/'+esc(id),v,r['assessmentReview']))
+    if id in canon:
+     v=canon[id];assert u['knowledgeId']in v['factIds'];ae.append(evidence(str(CAN.relative_to(ROOT)),'/items/'+esc(id),v,r['assessmentReview']))
+    else:
+     path,ptr,v=oldq[id];ae.append(evidence(path,ptr,v,r['assessmentReview']))
    assert te and ae;u.update(before=r['before'],teachingEvidence=te,assessmentEvidence=ae,conditionsJa=r['conditionsJa'],exceptionsJa=r['exceptionsJa'],after={'teaching':'present','assessment':'present'},assessmentRequirement='required',assessmentExemptionReason=None,status='covered_ai',expressionReview={'status':'independent_ai_checked','note':r['expressionReview']},sourceReview={'status':'self_checked_ai','conditionsChecked':True,'reviewRef':rr},unresolved=[])
+  for inventory in review.get('pageInventories',[]):
+   assert inventory['sourceTextAndVisualCompleteSelfReview'];sid=inventory['sourceId'];n=inventory['pdfPage'];p=pages[(sid,n)];file=p['regionCensus']['artifactPath'];assert file in docs
+   ap=next(v for v in docs[file]['pages']if v['pdfPage']==n)
+   for e in ap['elements']:
+    if e['kind']=='text_span':
+     center=(e['bbox'][1]+e['bbox'][3])/2;choices=[b for b in inventory['textYBands']if b['yMin']<=center<b['yMax']];assert len(choices)==1,(e['elementId'],center);decision=choices[0];ids=decision['knowledgeIds'];cl=decision['classification'];reason=decision['reason']
+     if decision.get('panelLabels'):
+      x=(e['bbox'][0]+e['bbox'][2])/2;index=sum(x>=boundary for boundary in inventory['panelXBoundaries']);ids=[inventory['imagePanelKnowledgeIds'][index]]
+    elif e['kind']=='image':
+     index=int(e['elementId'].rsplit(':i',1)[1]);ids=[inventory['imagePanelKnowledgeIds'][index]];cl='knowledge';reason='Individually source-viewed action panel; links factual preparation action, not artwork appearance or an additional unique knowledge count.'
+    else:raise AssertionError(('Unexpected full-page element requires manual classification',e['elementId']))
+    e.update(classification=cl,knowledgeIds=ids,reason=reason)
+    for uid in ids:
+     u=units[uid];assert u['status']=='covered_ai';ref=next(s for s in u['sourceRefs']if s['sourceId']==sid and s['pdfPage']==n);ref['elementIds']=sorted(set(ref['elementIds']+[e['elementId']]))
+     if uid not in p['knowledgeIds']:p['knowledgeIds'].append(uid)
+   p['knowledgeIds'].sort();p['semanticInventory']={'status':'complete_ai','reviewRef':rr};p['regionCensus']['status']='visually_reviewed';p['regionCensus']['visualReviewRef']=rr;p['disposition']='instructional'
  for rel,d in docs.items():
   path=ROOT/rel;path.write_bytes(gzip.compress(json.dumps(d,ensure_ascii=False,separators=(',',':')).encode(),mtime=0));h=sha(path.read_bytes())
   for p in result['pages']:

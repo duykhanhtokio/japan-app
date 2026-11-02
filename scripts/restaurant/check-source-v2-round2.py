@@ -17,6 +17,12 @@ for s in sections:
  for key in ['title','text']:
   seq=s['furigana'][key];assert ''.join(z['text']for z in seq)==s[key+'Ja'];assert not any(re.search('[一-龯]',z['text'])and not z.get('reading')for z in seq),(s['id'],seq);fields+=1
 assert preserved==260
+persisted_counts={}
+for revision in ['beb6a9de8c84350e6c22de13bceed24eb14bdf7f']:
+ count=0
+ for level in ['1','2']:
+  rel=f'src/data/restaurant/source31/{level}.json';old=json.loads(subprocess.check_output(['git','show',revision+':'+rel],cwd=R));now=read(R/rel);oq={q['id']:q for row in old['lessons'].values()for q in(row.get('exam')or{}).get('questions',[])};nq={q['id']:q for row in now['lessons'].values()for q in(row.get('exam')or{}).get('questions',[])};assert all(nq.get(id)==q for id,q in oq.items()),(revision,'Persisted batch question changed');count+=len(oq)
+ persisted_counts[revision]=count
 c=read(D/'canonical-ja.json')['items'];cross=read(D/'unit-crosswalk.json');legacygaps=[id for id,f in cross['facts'].items()if not id.startswith('rst-v2-')and not f.get('questionIds')and not f.get('crossShardQuestionIds')and f['decision']!='reference_excluded'];excluded=[id for id,f in cross['facts'].items()if f['decision']=='reference_excluded'];assert len(excluded)==21
 for authoring in sorted((D/'integration').glob('source-v2-r2-*-authoring-20261102.json')):
  a=read(authoring)
@@ -26,5 +32,5 @@ for authoring in sorted((D/'integration').glob('source-v2-r2-*-authoring-2026110
  for locale in ['vi','en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']:
   t=read(D/'translations'/locale/(authoring.name.replace('-authoring','')));assert len(t['items'])==len(a['questions'])+len(a.get('additions',[]))
   for id,v in t['items'].items():assert v['sourceHash']==c[id]['sourceHash']
-report=dict(status='PASS',baselineCommit=BASE,preBatchQuestionsPreserved=preserved,coreLessonsAndExamsPreserved=True,newQuestions=len(new),newSections=len(sections),newRubyFields=fields,unknownNewKanjiSegments=0,legacyAssessmentGaps=len(legacygaps),referenceExclusions=len(excluded),nativeReviewed=False,domainReviewed=False,physicalDeviceTested=False)
+report=dict(status='PASS',baselineCommit=BASE,preBatchQuestionsPreserved=preserved,persistedBatchQuestionCountsPreserved=persisted_counts,coreLessonsAndExamsPreserved=True,newQuestions=len(new),newSections=len(sections),newRubyFields=fields,unknownNewKanjiSegments=0,legacyAssessmentGaps=len(legacygaps),referenceExclusions=len(excluded),nativeReviewed=False,domainReviewed=False,physicalDeviceTested=False)
 p=R/'docs/ssw-workspace/source-coverage-v2/restaurant-r2-delta-guard-20261102.json';p.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps(report))
