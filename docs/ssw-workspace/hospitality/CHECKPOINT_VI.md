@@ -1,3 +1,23 @@
+# Bài thứ tư tiếp nối — ngày 02/11/2026
+
+`hotel-front-03` nay đủ 12 ngôn ngữ đúng revision Nhật: hoàn thiện 9 cặp cũ và dịch mới 3 cặp my/th/km. Dịch đủ 4 đoạn, 8 câu và toàn bộ trường bài; giữ điều kiện giờ nhận/trả chỉ là ví dụ, thời gian sử dụng phòng và yêu cầu vào sớm/gia hạn theo cơ sở/gói, không tự hứa vì cùng ngày. Nhật, ID, đáp án và thuật ngữ/cách đọc giữ nguyên.
+
+Toàn ngành 113→125/456 cặp hợp lệ, còn 331 cặp thiếu/cũ. Kiểm cấu trúc 12 cặp, bản dịch và loader thực tế PASS; revision cũ vẫn bị từ chối. Tất cả vẫn `translated_ai_unreviewed`; không có chứng nhận bản ngữ/chuyên môn, đo thời lượng, kiểm thử thiết bị thật hoặc nghiệm thu toàn nguồn. Bằng chứng `front03-12locale-20261102-evidence.json`.
+
+---
+
+# Ba bài tiếp theo đủ 12 ngôn ngữ — ngày 02/11/2026
+
+Đã hoàn tất lần lượt `hotel-safety-03` (thông tin cá nhân/hỗ trợ/補助犬), `hotel-front-01` (xác nhận trước đặt phòng) và `hotel-front-02` (thông tin đặt phòng/thay đổi). Mỗi bài đủ 12 bản dịch rõ ràng theo revision Nhật hiện hành, gồm tiêu đề, mục tiêu, toàn bộ đoạn, thuật ngữ, ví dụ, thực hành, mọi câu hỏi/lựa chọn/giải thích và caption/alt. Giữ Nhật, ID, cách đọc thuật ngữ và vị trí đáp án. Không tính fallback hay đổi revision để hợp thức hóa nội dung cũ.
+
+Tăng 82→113/456 cặp hợp lệ: dịch mới 13 cặp, sửa đầy đủ 18 cặp cũ; còn 343 cặp thiếu/cũ. Bổ sung đúng các chi tiết giường single/twin, tên reception, phạm vi thay đổi/hủy và xác nhận ý định đến thay vì chỉ lấy liên hệ. Giữ nguyên các bản dịch ngoài ba bài. Mọi bản mới vẫn `translated_ai_unreviewed`.
+
+Kiểm tra cấu trúc, source-atoms, furigana, semantic bindings và loader thực tế PASS. Loader tải 113 cặp đúng revision và trả null cho 343 cặp thiếu/cũ; revision cũ tiếp tục bị chặn. Kiểm tra riêng 36 cặp của ba bài và bảo toàn nội dung ngoài phạm vi PASS. Bằng chứng: `three-more-lessons-12locale-20261102-evidence.json`.
+
+Đây không phải nghiệm thu bản ngữ/chuyên môn, đóng từng đoạn/bảng/hình của 117 trang, đo thời gian học hay kiểm thử thiết bị thật. Nhật và hình không được sửa trong đợt này; trạng thái thiếu sót nguồn/ngữ nghĩa/hình/thời lượng vẫn giữ nguyên.
+
+---
+
 # Hoàn tất liên tiếp ba bài × 12 ngôn ngữ — ngày 02/11/2026
 
 Đã hoàn tất lần lượt `hotel-service-05` (điện thoại/khiếu nại), `hotel-safety-01` (phòng ngừa/chuẩn bị khẩn cấp) và `hotel-safety-05` (thiết bị/tiết kiệm tài nguyên), mỗi bài đủ 12 ngôn ngữ theo đúng revision Nhật. Phạm vi mỗi bản gồm tiêu đề, mục tiêu, toàn bộ đoạn, thuật ngữ, ví dụ, thực hành, mọi câu hỏi/lựa chọn/giải thích và caption/alt. Tổng phạm vi ba bài là 10 đoạn Nhật và 16 câu độc lập; không tính bản dịch thành câu mới.

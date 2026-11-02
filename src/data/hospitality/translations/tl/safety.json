@@ -377,6 +377,132 @@
       },
       "sourceRevision": "3e8b50b16d4619da04958b21d1cabcd57b5ace18e8876cd5f875b7a73d8e0091",
       "status": "translated_ai_unreviewed"
+    },
+    {
+      "id": "hotel-safety-03",
+      "sourceRevision": "0502f9b36c82a0adb16839e24a28ff6cf6f407d602c2e05fb7cd643ef4735837",
+      "status": "translated_ai_unreviewed",
+      "title": "Pangalagaan ang bisita sa pamamagitan ng impormasyon at angkop na tulong",
+      "reading": "じょうほうとはいりょでおきゃくさまをまもる",
+      "objectives": [
+        {
+          "id": "hotel-safety-03-o1",
+          "text": "Pumili ng kilos na pumipigil sa pagtagas ng personal na impormasyon"
+        },
+        {
+          "id": "hotel-safety-03-o2",
+          "text": "Tanungin mismo ang bisita tungkol sa kailangang tulong"
+        },
+        {
+          "id": "hotel-safety-03-o3",
+          "text": "Huwag ituring na karaniwang alagang hayop ang assistance dog"
+        }
+      ],
+      "sections": [
+        {
+          "id": "hotel-safety-03-s01",
+          "title": "Bahagi rin ng kaligtasan ang pangalan at address",
+          "body": "Kasama sa gawaing pangkaligtasan ang pagprotekta sa impormasyon, hindi lamang pag-iwas sa pinsala. Kapag humahawak ng pangalan, address o lugar ng panunuluyan, bantayang hindi nakikita ng iba ang screen o papel at hindi nila naririnig ang usapan. Kapag may nagtatanong ng numero ng silid o kung naroon ang isang tao, huwag ipalagay na awtorisado siya dahil lamang sa kanyang salaysay; sundin ang pamamaraan ng pasilidad sa pagtiyak. Iulat agad sa responsable ang naiwan o maling napadalang dokumento, huwag itago, at pigilan ang paglawak ng pinsala. Kahit para sa trabaho, huwag gumamit ng hindi pinahintulutang kagamitan o mag-uwi ng impormasyon."
+        },
+        {
+          "id": "hotel-safety-03-s02",
+          "title": "Tanungin ang mismong tao tungkol sa tulong",
+          "body": "Huwag ipalagay na walang kayang gawin ang matanda o may kapansanang bisita batay lamang sa hitsura. Sabihing “Mangyaring sabihin kung kailangan ninyo ng tulong,” at tiyakin mismo sa kanya kung anong tulong ang nais niya. Ibigay ang tiyak na alam tungkol sa mga baitang o daanan. Huwag galawin ang katawan o pantulong na kagamitan nang walang pahintulot; tiyakin ang nais at ligtas na paraan bago makipag-ugnayan sa nakatalagang kawani. Sa paghahanda sa paglikas, limitahan din ang pagbabahagi ng detalye ng tulong sa mga kawani na kailangang makaalam."
+        },
+        {
+          "id": "hotel-safety-03-s03",
+          "title": "Pagtanggap sa bisitang may assistance dog",
+          "body": "Ang mga asong gabay sa paningin, tumutulong sa pisikal na gawain at sa pandinig ay assistance dogs para sa mga taong may kapansanan; hindi sila karaniwang alagang hayop. Bilang prinsipyo, tinatanggap ng hotel at ryokan ang pagsama nila sa ilalim ng batas ng Japan sa assistance dogs para sa mga taong may pisikal na kapansanan. Kung kailangan, magalang na suriin ang marka o sertipikasyon. Kahit kailangang isaalang-alang ang allergy ng ibang bisita, huwag agad tanggihan ang lahat; ang responsable ang magtitiyak sa tao at sitwasyon at mag-aayos. Hindi dapat magpasya ang karaniwang kawani tungkol sa legal na eksepsiyon dahil sa hindi maiiwasang dahilan gamit lamang ang patakarang “bawal ang hayop” para sa mga pet."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "個人情報",
+          "reading": "こじんじょうほう",
+          "meaning": "Impormasyon tungkol sa isang tiyak na tao"
+        },
+        {
+          "ja": "漏えい",
+          "reading": "ろうえい",
+          "meaning": "Pagdating ng impormasyon sa taong hindi dapat sabihan"
+        },
+        {
+          "ja": "補助犬",
+          "reading": "ほじょけん",
+          "meaning": "Asong gabay sa paningin, tumutulong sa pisikal na gawain o sa pandinig"
+        }
+      ],
+      "example": {
+        "situation": "Dumating ang bisitang may asong gabay sa hotel na bawal ang pet.",
+        "steps": [
+          "Huwag tumanggi batay lamang sa pangkalahatang patakaran sa pet.",
+          "Kung kailangan, magalang na suriin ang marka o sertipikasyon ng assistance dog.",
+          "Tiyakin sa bisita ang nais na gabay o tulong.",
+          "Ipaalam sa responsable ang mga sitwasyong nangangailangan ng pagsasaayos."
+        ]
+      },
+      "practice": {
+        "prompt": "Ipaliwanag ang unang dapat tiyakin sa dalawang sitwasyon: may ibang bisitang nagtatanong ng numero ng silid ng nanunuluyan, at may gumagamit ng wheelchair na humihingi ng payo sa paggalaw.",
+        "expectedPoints": [
+          "Pamamaraan ng pagtiyak para sa personal na impormasyon",
+          "Tulong na nais mismo ng tao",
+          "Hindi paghusga batay lamang sa hitsura o salaysay"
+        ]
+      },
+      "questions": [
+        {
+          "id": "hotel-safety-03-q01",
+          "prompt": "May nagsasabing kakilala siya ng nanunuluyan at nagtatanong ng numero ng silid. Ano ang angkop?",
+          "choices": [
+            "Sabihin ang numero dahil mukhang malapit sila",
+            "Sundin ang pagtiyak ng pasilidad at huwag basta ibigay ang numero",
+            "Ibigay pati ang address",
+            "Magtanong sa SNS"
+          ],
+          "answerIndex": 1,
+          "explanation": "Protektado rin ang impormasyon sa panunuluyan. Huwag maghayag batay lamang sa paliwanag ng nagtatanong.",
+          "knowledgeIds": [
+            "hotel-safety-03-s01-k01"
+          ]
+        },
+        {
+          "id": "hotel-safety-03-q02",
+          "prompt": "Ano ang unang tugon sa bisitang maaaring mangailangan ng tulong?",
+          "choices": [
+            "Tanungin ang mismong tao kung anong tulong ang nais",
+            "Galawin ang katawan nang hindi nagtatanong",
+            "Sa kasama lamang magpaliwanag at huwag pansinin ang tao",
+            "Magbigay ng iisang tulong sa lahat"
+          ],
+          "answerIndex": 0,
+          "explanation": "Iba-iba ang kailangang tulong ng bawat tao. Tiyakin ang kanyang nais.",
+          "knowledgeIds": [
+            "hotel-safety-03-s02-k01"
+          ]
+        },
+        {
+          "id": "hotel-safety-03-q03",
+          "prompt": "Ano ang angkop sa bisitang may assistance dog?",
+          "choices": [
+            "Ilapat nang walang pagkakaiba ang iisang patakaran sa lahat ng aso",
+            "Agad tumanggi dahil bawal ang pet",
+            "Unawain ang prinsipyo ng pagtanggap at gawin ang kailangang pagtiyak at pagsasaayos",
+            "Laging tumanggi dahil sa dagdag na paglilinis"
+          ],
+          "answerIndex": 2,
+          "explanation": "Huwag ipagkamali ang assistance dog sa pet. Gawin ang kailangang pagtiyak; ang responsable ang hahatol sa natatanging kalagayan.",
+          "knowledgeIds": [
+            "hotel-safety-03-s03-k01"
+          ]
+        }
+      ],
+      "illustration": {
+        "id": "hotel-safety-03-image",
+        "kind": "guest-safety",
+        "caption": "Mga pasya at kilos sa pagprotekta sa bisita gamit ang impormasyon at angkop na tulong",
+        "alt": "Diagram ng ugnayan ng dapat tiyakin at angkop na tugon sa proteksiyon ng impormasyon at tulong",
+        "keyObjectiveId": "hotel-safety-03-o1"
+      }
     }
   ]
 }
