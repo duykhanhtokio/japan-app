@@ -1232,7 +1232,7 @@
         {
           "id": "hotel-service-06-investigate",
           "title": "Menyelidiki sebagai penanggung jawab",
-          "body": "Jika Anda penanggung jawab, jangan hanya menerima laporan: telusuri letak masalah dan pilih respons. Untuk kebisingan malam hari, selidiki penyebab sebelum menilai. Saat ada perselisihan antartamu, dengarkan kedua pihak dengan tenang. Jika dompet atau barang berharga hilang, tanyakan kejadian dan cari sejauh mungkin. Hubungi polisi jika dicurigai pencurian atau tindak pidana lain. Sebaliknya, cedera berat memerlukan pengaturan ambulans segera. Jangan menyamakan semua kejadian sebagai satu jenis penanganan keluhan; keadaan berbeda memerlukan tindakan dan pihak yang dihubungi berbeda."
+          "body": "Saat laporan sampai kepada penanggung jawab, bedakan kebutuhan bantuan luar yang mendesak dari kebutuhan memeriksa fakta sebelum memutuskan. Untuk cedera berat, segera atur ambulans. Jika barang berharga hilang, tanyakan kejadian dan cari sejauh mungkin; hubungi polisi bila ada dugaan pencurian atau unsur perkara. Jangan menetapkan pelaku atau penyebab sebelum memeriksa. Dengarkan kedua tamu dengan tenang saat berselisih, dan selidiki sebab kebisingan malam. Dari informasi terkumpul, penanggung jawab menentukan letak masalah dan respons yang sesuai. Latih penjelasan tentang apa yang diperiksa dan alasan keputusan, bukan berhenti setelah menerima laporan."
         },
         {
           "id": "hotel-service-06-improve",
@@ -1385,6 +1385,92 @@
             "hs-svc-2-042-investigate-05",
             "hs-svc-2-042-investigate-06"
           ]
+        },
+        {
+          "id": "hotel-service-06-q06",
+          "prompt": "Posisi kaki dasar mana ditunjukkan sumber tingkat2?",
+          "choices": [
+            "Tumit dirapatkan dan ujung kaki sedikit terbuka",
+            "Terus mengangkat tumit",
+            "Menyilangkan kaki untuk menghalangi lorong",
+            "Kaki tidak terkait postur"
+          ],
+          "answerIndex": 0,
+          "explanation": "Periksa kaki bersama punggung dan tangan, lalu jelaskan bagian yang perlu diperbaiki kepada staf.",
+          "knowledgeIds": [
+            "hs-svc-2-037-stance-01"
+          ]
+        },
+        {
+          "id": "hotel-service-06-q07",
+          "prompt": "Bagaimana membimbing staf melayani budaya atau agama berbeda?",
+          "choices": [
+            "Menganggap makanan semua orang berkebangsaan sama seragam",
+            "Tidak menetapkan dari kebangsaan; pastikan keinginan individu dan bagikan informasi perlu",
+            "Memaksa semua mengikuti layanan biasa tanpa syarat",
+            "Tidak menanyakan keinginan"
+          ],
+          "answerIndex": 1,
+          "explanation": "Periksa kebutuhan orang tersebut, bukan hanya nama kategorinya.",
+          "knowledgeIds": [
+            "hs-svc-2-041-coaching-01",
+            "hs-svc-2-041-coaching-02"
+          ]
+        },
+        {
+          "id": "hotel-service-06-q08",
+          "prompt": "Apa respons penanggung jawab terhadap keluhan bising malam?",
+          "choices": [
+            "Menyalahkan kamar sebelah tanpa mendengar",
+            "Menghapus laporan karena bukan urusannya",
+            "Menyelidiki sebab dan keadaan sebelum memutuskan",
+            "Menangani semuanya seperti pencurian"
+          ],
+          "answerIndex": 2,
+          "explanation": "Selidiki isi masalah dan sebab untuk memilih kontak serta tindakan.",
+          "knowledgeIds": [
+            "hs-svc-2-042-investigate-01",
+            "hs-svc-2-042-investigate-02",
+            "hs-svc-2-042-investigate-03",
+            "hs-svc-2-042-investigate-04",
+            "hs-svc-2-042-investigate-05",
+            "hs-svc-2-042-investigate-06"
+          ]
+        },
+        {
+          "id": "hotel-service-06-q09",
+          "prompt": "Apa yang tepat setelah penilaian buruk tentang menginap?",
+          "choices": [
+            "Menghapus skor tanpa berbagi",
+            "Cukup satu petugas tahu",
+            "Menganggap semua salah tamu",
+            "Berbagi isi dalam bagian lalu memikirkan sebab dan perbaikan"
+          ],
+          "answerIndex": 3,
+          "explanation": "Hubungkan dengan perbaikan nyata agar tidak terulang pada sif lain.",
+          "knowledgeIds": [
+            "hs-svc-2-042-improve-01",
+            "hs-svc-2-042-improve-02",
+            "hs-svc-2-042-improve-03"
+          ]
+        },
+        {
+          "id": "hotel-service-06-q10",
+          "prompt": "Apa yang diperiksa tentang parkir pengguna kursi roda menurut sumber tingkat2?",
+          "choices": [
+            "Mengarahkan ke tempat jauh dan sempit tanpa pemeriksaan",
+            "Memilih hanya dari kebangsaan",
+            "Memeriksa tempat cukup lebar dekat fasilitas dan memberi panduan sesuai individu",
+            "Parkir tidak terkait bila tinggi mata sudah sama"
+          ],
+          "answerIndex": 2,
+          "explanation": "Pisahkan perhatian komunikasi dari panduan fasilitas mobilitas.",
+          "knowledgeIds": [
+            "hs-svc-2-040-access-01",
+            "hs-svc-2-040-access-02",
+            "hs-svc-2-040-access-03",
+            "hs-svc-2-041-access-04"
+          ]
         }
       ],
       "knowledgeIds": [
@@ -1420,7 +1506,7 @@
         "nativeReviewed": false
       },
       "status": "translated_ai_unreviewed",
-      "sourceRevision": "3639262b9c3ba0ea7c95ca7a2ece23b7e4fa5ffe06ababd55de14525046a09aa"
+      "sourceRevision": "55e39bd72b13344c63512084ad918d541651785e740b104a4bd81decef68bab6"
     }
   ]
 }

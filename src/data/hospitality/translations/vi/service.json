@@ -1232,7 +1232,7 @@
         {
           "id": "hotel-service-06-investigate",
           "title": "Điều tra tình huống với vai trò người phụ trách",
-          "body": "Nếu chính mình là người phụ trách, không chỉ nhận báo cáo mà cần tìm vấn đề nằm ở đâu rồi chọn cách xử lý. Với phản ánh tiếng ồn ban đêm, điều tra nguyên nhân trước khi quyết định. Khi khách mâu thuẫn với nhau, bình tĩnh nghe cả hai phía. Khi khách mất ví hoặc vật quý, hỏi diễn biến và tìm kiếm trong phạm vi có thể. Nếu nghi có trộm cắp hoặc dấu hiệu vụ việc hình sự, cần liên hệ cảnh sát. Trong khi đó, nếu khách bị thương nặng, phải nhanh chóng bố trí xe cấp cứu. Đừng gộp mọi sự việc thành cùng một loại xử lý phản ánh; nội dung khác nhau đòi hỏi cách xử lý và đầu mối liên hệ khác nhau."
+          "body": "Khi nhận báo cáo, người phụ trách cần phân biệt việc phải gọi hỗ trợ bên ngoài khẩn cấp với việc cần xác minh rồi quyết định. Báo có chấn thương nặng thì khẩn trương bố trí xe cấp cứu. Nếu khách không tìm thấy đồ quý, hỏi diễn biến và tìm trong khả năng; nghi có trộm hay tính chất vụ việc thì liên hệ cảnh sát. Với nội dung cần điều tra, chưa xác minh thì không kết luận người gây ra hoặc nguyên nhân. Tranh chấp giữa khách cần bình tĩnh nghe cả hai bên; tiếng ồn ban đêm cần tìm nguyên nhân. Người phụ trách dùng thông tin thu thập để xác định vấn đề và chọn cách xử lý phù hợp. Luyện trình bày đã xác minh gì và lý do quyết định, không dừng ở việc nhận báo cáo."
         },
         {
           "id": "hotel-service-06-improve",
@@ -1385,6 +1385,92 @@
             "hs-svc-2-042-investigate-05",
             "hs-svc-2-042-investigate-06"
           ]
+        },
+        {
+          "id": "hotel-service-06-q06",
+          "prompt": "Tư thế bàn chân cơ bản mà2号nêu là gì?",
+          "choices": [
+            "Khép gót, mở mũi chân nhẹ",
+            "Luôn nhón gót",
+            "Bắt chéo chân chắn lối đi",
+            "Bàn chân không liên quan tư thế"
+          ],
+          "answerIndex": 0,
+          "explanation": "Kiểm cả chân cùng lưng và tay, chỉ rõ cho cấp dưới vị trí cần chỉnh.",
+          "knowledgeIds": [
+            "hs-svc-2-037-stance-01"
+          ]
+        },
+        {
+          "id": "hotel-service-06-q07",
+          "prompt": "Hướng dẫn phục vụ khách khác văn hóa, tôn giáo thế nào?",
+          "choices": [
+            "Cùng quốc tịch thì mặc định cùng món",
+            "Không quyết bằng quốc tịch; hỏi mong muốn cá nhân rồi chia sẻ thông tin cần thiết",
+            "Buộc làm theo quy trình thường lệ vô điều kiện",
+            "Không hỏi khách muốn gì"
+          ],
+          "answerIndex": 1,
+          "explanation": "Xác minh nhu cầu của chính người đó thay vì chỉ dựa tên nhóm.",
+          "knowledgeIds": [
+            "hs-svc-2-041-coaching-01",
+            "hs-svc-2-041-coaching-02"
+          ]
+        },
+        {
+          "id": "hotel-service-06-q08",
+          "prompt": "Người phụ trách nhận phản ánh tiếng ồn ban đêm nên làm gì?",
+          "choices": [
+            "Chưa nghe đã đổ cho phòng bên",
+            "Xóa báo cáo vì không phải việc mình",
+            "Điều tra nguyên nhân, tình hình rồi quyết cách xử lý",
+            "Coi tất cả giống vụ trộm"
+          ],
+          "answerIndex": 2,
+          "explanation": "Tìm hiểu nội dung và nguyên nhân để chọn liên hệ, xử lý phù hợp.",
+          "knowledgeIds": [
+            "hs-svc-2-042-investigate-01",
+            "hs-svc-2-042-investigate-02",
+            "hs-svc-2-042-investigate-03",
+            "hs-svc-2-042-investigate-04",
+            "hs-svc-2-042-investigate-05",
+            "hs-svc-2-042-investigate-06"
+          ]
+        },
+        {
+          "id": "hotel-service-06-q09",
+          "prompt": "Nên làm gì khi có đánh giá xấu về lưu trú?",
+          "choices": [
+            "Chỉ xóa điểm, không chia sẻ",
+            "Một người biết là đủ",
+            "Mặc định mọi lỗi do khách",
+            "Chia sẻ trong bộ phận và xem nguyên nhân, cách cải thiện"
+          ],
+          "answerIndex": 3,
+          "explanation": "Gắn với cải thiện cụ thể để không lặp ở ca khác.",
+          "knowledgeIds": [
+            "hs-svc-2-042-improve-01",
+            "hs-svc-2-042-improve-02",
+            "hs-svc-2-042-improve-03"
+          ]
+        },
+        {
+          "id": "hotel-service-06-q10",
+          "prompt": "Theo2号, cần kiểm gì về nơi đỗ xe cho người dùng xe lăn?",
+          "choices": [
+            "Chưa kiểm đã chỉ chỗ xa, hẹp",
+            "Quyết chỗ theo quốc tịch",
+            "Kiểm chỗ đủ rộng, gần cơ sở rồi hướng dẫn phù hợp nhu cầu khách",
+            "Chỉ cần ngang tầm mắt, bãi xe không liên quan"
+          ],
+          "answerIndex": 2,
+          "explanation": "Tách lưu ý giao tiếp với hướng dẫn tiện ích hỗ trợ di chuyển.",
+          "knowledgeIds": [
+            "hs-svc-2-040-access-01",
+            "hs-svc-2-040-access-02",
+            "hs-svc-2-040-access-03",
+            "hs-svc-2-041-access-04"
+          ]
         }
       ],
       "knowledgeIds": [
@@ -1420,7 +1506,7 @@
         "nativeReviewed": false
       },
       "status": "translated_ai_unreviewed",
-      "sourceRevision": "3639262b9c3ba0ea7c95ca7a2ece23b7e4fa5ffe06ababd55de14525046a09aa"
+      "sourceRevision": "55e39bd72b13344c63512084ad918d541651785e740b104a4bd81decef68bab6"
     }
   ]
 }

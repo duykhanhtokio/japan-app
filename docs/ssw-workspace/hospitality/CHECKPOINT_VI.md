@@ -1,3 +1,17 @@
+# V6: planning06/07/service06 trọn12ngôn ngữ và đối chiếu nguồn — 02/11/2026
+
+Hoàn tất36cặp của3bài (20cặp fullmới,16cặp cũ được đối chiếu/sửa), toàn ngành245→276/456hợp lệ, còn180cặp thiếu/cũ. Có5cặp planning07 đã hợp lệ trước đó rồi tạmstale khi thêm câu nguồn, nên mức tăng ròng31không phải36. Food tự tác giảNE/MY6fullpairs; MFG tự tác giảTH/KM6fullpairs; Khách sạn tự tác giảHI/BN6full+TL2full và16cặp cũ. Không rà chéo ngữ nghĩa tác giả, tích hợp kiểm schema/IDs/revision/đáp án/bảo toàn.
+
+Đọc đủ nguồn2号p25–28,p32,p37,p40–42;28atom cũ được gắn chính xác vùng nguồn và câu phù hợp. Viết lại đoạn điều tra service06 theo khung khẩn cấp/hỗ trợ ngoài/xác minh thay vì giữ cùng chuỗi ví dụ của nguồn. Thêm planning07-q07 kiểm ba lợi ích branding được tách thành3đơn vị: nhận biết, cơ hội tái sử dụng, được chọn ngoài giá; luôn giữ tính khả năng, không bảo đảm lợi nhuận. Nhật327→328câu; giữ nguyên327câu Nhật cũ và vị trí đáp án. Giữ90bản câu dịch cũ,114bài dịch ngoài phạm vi và các entry furigana cũ còn dùng. Tác giả lại20cặp tiêu đề–thân đoạn phồn thể và cập nhật12bản đoạn điều tra theo Nhật mới.
+
+Canonical nguồn hiện390known=123covered_ai+262candidate+5missing;19trang đóngsemantic/covered_ai,31visual/117census.5clause được phát hiện ngoài380atom cũ còn thiếu thật: hai ví dụ loại cơ sở thường cung cấp gói ăn, khả năng nguyên nhân ADR thấp và hai vai trò kênh truyền thông. Giữ từng vùng và blocker rõ, không dùng câu chung để đóng. Mẫu số mở và tỷ lệ null; chưa nghiệm thu toàn117trang. Đã kiểm trang chính thức JTA cập nhật2026-04-30 để xác nhận phạm vi dạy kiểm đăng ký theo chủ thể/giao dịch,không kết luận quyền kinh doanh của cơ sở.
+
+Gate canonical/cấu trúc/source-atoms/readings/translations/loader/preservation đều PASS, đủ2964trường của36cặp. Bằng chứng `planning67-service6-v6-integration-evidence.json`,`source-v6-review.json`,`source-v6-japanese-changes.json`; checker `check-planning67-service6-v6.cjs`. Mọi bản vẫn translated_ai_unreviewed, native/domain/device/duration=false. Chưa commit/push bởi tác giả; điều phối lưu manifest/hash riêng.
+
+Đợt tiếp đã privateprep Nhật độc lập+3câu riêng+12ngôn ngữ cho5clause nguồn còn thiếu, chưa tích hợp để giữ snapshotV6 ổn định. Sau khi lưuV6 mới áp dụng và đóng6trang còn mở trong22trang đọc ban đầu; không thay đổi packetV6 trong khi tác giả dịch.
+
+---
+
 # Hoàn tất planning02/03/05 đủ12ngôn ngữ — 02/11/2026
 
 Ba bài Nhật ổn định về OCC/ADR/RevPAR, website và PMS/OTA/đề xuất bán nay đủ36/36cặp đúngrevision. Hoàn thiện15cặp cũ và tác giả21cặp mới, toàn ngành209→245/456hợp lệ; còn211cặp thiếu/cũ. Nhật,327câu,ID/đáp án và furigana giữ nguyên. Tác giả khách sạn tự soạnHI/BN/TL9fullpairs/795trường và5locale delta; Food tự soạnNE/MY6pairs, MFG tự soạnTH/KM6pairs. Không rà chéo ngữ nghĩa giữa tác giả; tích hợp kiểm schema/IDs/revision/đáp án/bảo toàn.
