@@ -1,3 +1,13 @@
+# Agriculture source continuation — 2026-11-02, storage/processing/sowing
+
+Three source-backed groups self-reviewed from the private, SHA-verified1号/2号PDFs: storage/longevity, processed seeds, and sowing patterns/examples. Added35atomic source objectives with exact text/ruby element links:24covered_ai and11partial. Nineteen crop-to-longevity associations now have direct retrieval evidence. Six old non-atomic storage labels are preserved in canonical legacy-resolution records rather than counted again. Full-page semantic closure remains only the existing2pages; pages61/62/81 were visually inspected but retain unresolved regions and are NOT closed.
+
+Three ungraded reader retrieval checks add36explicit locale prompts; model answers reuse the current independently authored lesson paragraphs and their revision-valid12locale translations. Existing lessons, translations, calendar, learner IDs, all1227weekly/mockquestions and the original7reader checks are unchanged. The three questions are reached through the actual scheduled reader; sowing currently belongs to2号, and the1号route deficit remains explicit for six source atoms. Five further atoms need direct assessment. No full-source percentage is established.
+
+Canonical ledger:1427known units,66covered_ai; denominator open. Evidence and limitations: `../source-coverage-v2/agriculture-seed-storage-processing-sowing-v4-review.json` and `agriculture-seed-storage-processing-sowing-v4-validation.json`. Scoped source/preservation validator, previous environment regression, canonical coverage contract and reader host casesPASS. Host fixtures do not certify productionExpo, physical devices, domain/native review or measured learner duration. Root must commit/push/fetch and verify persistence before this becomes a durable checkpoint.
+
+---
+
 # Current agriculture checkpoint — 2026-10-31, final10 source decisions
 
 Latest: `session-20261031-final-source-resolution/manifest.json` and `progress.json`. Runtime: **241 Japanese lessons,1363 mapped units,2892 AI-draft lesson-locale pairs,186 rasters,427 weekly questions and20 mock forms/800 questions.** Nine lessons and108 locale bindings were refreshed;180 translation fields patched; one hygiene paragraph added. All1227 assessment contents remain unchanged;50 source bindings and15 bank revisions were updated.

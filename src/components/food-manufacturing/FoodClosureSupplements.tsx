@@ -18,13 +18,14 @@ import additions51 from '@/data/food-manufacturing/source-closure51.json';
 import additions52 from '@/data/food-manufacturing/source-closure52.json';
 import additions53 from '@/data/food-manufacturing/source-closure53.json';
 import additions54 from '@/data/food-manufacturing/source-closure54.json';
+import additions55 from '@/data/food-manufacturing/source-closure55.json';
 import type {FoodManufacturingLesson} from '@/data/food-manufacturing';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 import {FoodSourceAssessmentChecks} from './FoodSourceAssessmentChecks';
 
 /** Separate source-bound additions preserve original lesson completion revisions. */
 export function FoodClosureSupplements({lesson,language,showTranslation,textColor,readingColor}:{lesson:FoodManufacturingLesson;language:string;showTranslation:boolean;textColor:string;readingColor:string}){
- return <>{[...data.sections,...additions34.sections,...additions38.sections,...additions39.sections,...additions40.sections,...additions41.sections,...additions42.sections,...additions43.sections,...additions44.sections,...additions45.sections,...additions46.sections,...additions47.sections,...additions48.sections,...additions49.sections,...additions50.sections,...additions51.sections,...additions52.sections,...additions53.sections,...additions54.sections].filter(s=>s.lessonId===lesson.id&&s.lessonSourceHash===lesson.sourceHash).map(section=>{
+ return <>{[...data.sections,...additions34.sections,...additions38.sections,...additions39.sections,...additions40.sections,...additions41.sections,...additions42.sections,...additions43.sections,...additions44.sections,...additions45.sections,...additions46.sections,...additions47.sections,...additions48.sections,...additions49.sections,...additions50.sections,...additions51.sections,...additions52.sections,...additions53.sections,...additions54.sections,...additions55.sections].filter(s=>s.lessonId===lesson.id&&s.lessonSourceHash===lesson.sourceHash).map(section=>{
  const candidate=(section.translations as Record<string,{title:string;text:string;sourceHash:string}>)[language];
  const t=candidate?.sourceHash===section.sourceHash?candidate:null;
  return <View key={section.id} testID={section.id} style={styles.section}>
