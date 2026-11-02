@@ -3,7 +3,7 @@
   "locale": "vi",
   "shard": "integration",
   "canonicalFile": "docs/ssw-workspace/restaurant/source-closure31/canonical-ja.integration.json",
-  "canonicalSha256": "f81481260a25e2497e8f3229c59b3898c2f6c226cb9520d0d181a4b9e3be891d",
+  "canonicalSha256": "faab08612f441629a3773d77cad6dd40d77a82f797af1580079242413a687d5b",
   "nativeReviewed": false,
   "domainReviewed": false,
   "items": {
@@ -1519,6 +1519,60 @@
         "Tránh đồng thời và chuyển việc trong trạng thái sạch",
         "Tách bàn không cho phép làm đồng thời",
         "Không chỉ dựa vết bẩn nhìn thấy"
+      ]
+    },
+    "rst31-v2-r2-svc-q001": {
+      "sourceHash": "503c15e4fe2478d676498b7ee94ed3099116e1624045ab22c2380d146325190c",
+      "objective": "Nhận diện vật vốn không được có trong thực phẩm.",
+      "stem": "Phát hiện mảnh giấy trong món ăn. Cách hiểu nào đúng về dị vật?",
+      "options": [
+        "Không gây thương tích thì không gọi là dị vật",
+        "Chỉ kim loại mới là dị vật",
+        "Vật mềm không phải dị vật",
+        "Đó vốn không phải thứ có trong món nên cần xác nhận là dị vật"
+      ],
+      "explanation": "Dị vật là thứ vốn không được có trong thực phẩm đó. Không quyết định chỉ theo độ cứng hay đã gây thương tích chưa.",
+      "reasons": [
+        "Cần xử lý là dị vật trước cả khi gây thương tích",
+        "Mảnh giấy và vật không phải kim loại cũng gồm trong đó",
+        "Cũng có dị vật mềm",
+        "Đúng định nghĩa thứ vốn không thuộc thực phẩm"
+      ]
+    },
+    "rst31-v2-r2-svc-q002": {
+      "sourceHash": "cc2694c71321c637671462d2ffaa5cd63f4828f5d6e0fa9b6bfc9ed236f82d27",
+      "objective": "Phân biệt ví dụ dị vật cứng và mềm.",
+      "stem": "Lập danh sách kiểm dị vật. Phân nhóm nào đúng với ví dụ trong nguồn?",
+      "options": [
+        "Tất cả đều cứng nên không cần nhóm mềm",
+        "Tất cả đều mềm nên không cần xét nguy cơ thương tích",
+        "Đá, kim loại, kính, nhựa cứng là cứng; côn trùng, tóc, màng nhựa, giấy là mềm",
+        "Đá, kim loại là mềm; tóc, giấy là cứng"
+      ],
+      "explanation": "Nguồn phân biệt ví dụ vật cứng và mềm. Dị vật mềm cũng không được bỏ qua xử lý lẫn vào thực phẩm.",
+      "reasons": [
+        "Cũng cần phân loại ví dụ mềm",
+        "Bỏ qua dị vật cứng và nguy cơ thương tích",
+        "Ghép đúng ví dụ đại diện của cả hai nhóm",
+        "Đảo ngược ví dụ cứng và mềm"
+      ]
+    },
+    "rst31-v2-r2-svc-q003": {
+      "sourceHash": "d1618650f937679f8255f644e6b7182c5d5a6160d9f19e4518645bed5473fc8c",
+      "objective": "Xem xét đổi người, địa điểm, thời điểm khi khiếu nại khó giải quyết.",
+      "stem": "Đã cùng người phụ trách xử lý nhưng khách vẫn rất bất mãn. Nên xem xét gì?",
+      "options": [
+        "Thời gian luôn giải quyết được nên ngừng báo cáo",
+        "Đổi nơi thì không cần xác minh nội dung",
+        "Xem xét đổi người, nơi hoặc thời điểm trao đổi, cần thì xin lỗi thêm lúc khách rời quán",
+        "Chỉ lặp lại lời giải thích với giọng lớn hơn"
+      ],
+      "explanation": "Khi một cách chưa giải quyết được, cùng người phụ trách xem lại cách xử lý. Thay đổi không thay cho xác minh vấn đề và lời xin lỗi cần thiết.",
+      "reasons": [
+        "Không kết luận thời gian luôn giải quyết được",
+        "Đổi nơi vẫn phải xác minh nội dung khiếu nại",
+        "Xem xét phương án xử lý và xin lỗi cần thiết",
+        "Chỉ nói to lặp lại không phải xem lại phương pháp"
       ]
     }
   }

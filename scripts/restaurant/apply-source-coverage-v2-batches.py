@@ -28,6 +28,8 @@ def apply(result):
       block=int(re.search(r':t(\d+)-',e['elementId']).group(1));yes=False
       if 'textBlockRange'in sel:yes=sel['textBlockRange'][0]<=block<=sel['textBlockRange'][1]
       if 'textYRange'in sel:yes|=sel['textYRange'][0]<=e['bbox'][1] and e['bbox'][3]<=sel['textYRange'][1]
+      if 'textBox'in sel:
+       x0,y0,x1,y1=sel['textBox'];a,b,c,d=e['bbox'];yes|=x0<=a and y0<=b and c<=x1 and d<=y1
       if yes:selected.append(e['elementId'])
     assert selected,(r['knowledgeId'],sel)
     for e in ap['elements']:
@@ -70,4 +72,6 @@ def apply(result):
   path=ROOT/rel;path.write_bytes(gzip.compress(json.dumps(d,ensure_ascii=False,separators=(',',':')).encode(),mtime=0));h=sha(path.read_bytes())
   for p in result['pages']:
    if p['regionCensus']['artifactPath']==rel:p['regionCensus']['sha256']=h
+ if units.get('rst-v2-hygiene1-cause-specific-response',{}).get('status')=='covered_ai':
+  result['unresolved']=[s for s in result['unresolved']if not s.startswith('Two additional page-5 source objectives found')]
  result['sourceReaderBatchReceipts']=[str(p.relative_to(ROOT))for p in sorted(OUT.glob('restaurant-r2-*-source-review-*.json'))];return result

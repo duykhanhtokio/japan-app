@@ -16,9 +16,12 @@ export function CommunicationReaderChecks({ day, sectionId, language, translatio
   if (!checks.length) return null;
   return <View testID="kaigo-communication-reader-checks">
     {checks.map(check => {
-      const translation = (check.translations as Record<string, { prompt: string; modelAnswer: string }>)[language];
+      const translation = (check.translations as Record<string, { prompt: string; modelAnswer: string; teaching?: string }>)[language];
       const answerOpen = !!opened[check.id];
+      const teaching = check as {teachingJa?: string; teachingRuby?: RubyToken[]};
       return <View key={check.id} testID={check.id}>
+        {teaching.teachingJa && <JapaneseText text={teaching.teachingJa} tokens={teaching.teachingRuby} testID={`${check.id}-teaching`} />}
+        {translationOpen && translation?.teaching && <TranslationText testID={`${check.id}-teaching-translation`}>{translation.teaching}</TranslationText>}
         <JapaneseText text={check.promptJa} tokens={check.promptRuby} testID={`${check.id}-prompt`} />
         {translationOpen && translation && <TranslationText testID={`${check.id}-translation`}>{translation.prompt}</TranslationText>}
         <Action title={answerOpen ? '答えを閉じる' : '答えを確認する'} testID={`${check.id}-toggle`}
