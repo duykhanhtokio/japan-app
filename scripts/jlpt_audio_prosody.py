@@ -28,6 +28,54 @@ def validate_voice_catalog(speakers, casting):
             raise ValueError('Engine does not match the approved voice: ' + role['name'])
 
 
+def acquire_engine_slot(root, *, blocking=True, slots=2):
+    """Bound all batch/direct renders to two engines; honor legacy slot zero."""
+    import fcntl
+    import time
+    if slots not in (1, 2):
+        raise ValueError('Only one or two production engines are supported')
+    folder = Path(root) / 'docs/jlpt-workspace/audio-prosody-candidates'
+    folder.mkdir(parents=True, exist_ok=True)
+    while True:
+        for number in range(slots):
+            name = 'voicevox-engine.lock' if number == 0 else 'voicevox-engine-1.lock'
+            handle = (folder / name).open('a')
+            try:
+                fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                return handle
+            except BlockingIOError:
+                handle.close()
+            except BaseException:
+                handle.close()
+                raise
+        if not blocking:
+            raise BlockingIOError('All production engine slots are occupied')
+        time.sleep(.25)
+
+
+def acquire_render_lock(output, level, number):
+    """Serialize direct and batch renderer invocations for one candidate form."""
+    import fcntl
+    folder = Path(output) / 'form-locks'
+    folder.mkdir(parents=True, exist_ok=True)
+    handle = (folder / f'{level}-{int(number):02d}.render.lock').open('a')
+    fcntl.flock(handle.fileno(), fcntl.LOCK_EX)
+    return handle
+
+
+def reuse_rendered_candidate(root, output, profile, level, number):
+    manifest = Path(output) / f'src/data/jlpt-original/{level}/{int(number):02d}/audio.manifest.json'
+    if not manifest.is_file():
+        return False
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('prosody_reuse_validation', Path(root) / 'scripts/prepare-jlpt-prosody-batch.py')
+    batch = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(batch)
+    row = next(row for row in batch.inventory(profile) if row['level'] == level and row['number'] == int(number))
+    batch.validate_candidate(row, Path(output), profile)
+    return True
+
+
 def load_profile(path):
     profile = json.loads(Path(path).read_text())
     if profile.get('schemaVersion') != 1 or not profile.get('revision'):

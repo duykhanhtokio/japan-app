@@ -6,7 +6,7 @@ import tempfile
 from unittest.mock import patch
 import importlib.util
 from pathlib import Path
-from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts, speech_query_text, validate_voice_catalog
+from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts, speech_query_text, validate_voice_catalog, acquire_engine_slot
 spec = importlib.util.spec_from_file_location('prosody_batch', Path(__file__).with_name('prepare-jlpt-prosody-batch.py'))
 batch = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(batch)
@@ -106,6 +106,31 @@ class ProsodyTests(unittest.TestCase):
         catalog[0]['styles'][0]['name'] = '別のスタイル'
         with self.assertRaisesRegex(ValueError, 'approved voice'):
             validate_voice_catalog(catalog, casting)
+
+    def test_global_two_engine_bound_and_legacy_slot_compatibility(self):
+        with tempfile.TemporaryDirectory() as directory:
+            with acquire_engine_slot(directory, blocking=False, slots=1):
+                with self.assertRaises(BlockingIOError):
+                    acquire_engine_slot(directory, blocking=False, slots=1)
+                with acquire_engine_slot(directory, blocking=False):
+                    with self.assertRaises(BlockingIOError):
+                        acquire_engine_slot(directory, blocking=False)
+            with acquire_engine_slot(directory, blocking=False):
+                pass
+            with self.assertRaises(ValueError):
+                acquire_engine_slot(directory, slots=3)
+
+    def test_form_lock_prevents_duplicate_work_across_reports(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            row = {'level': 'n3', 'number': 1}
+            with batch.acquire_form_lock(output, row, blocking=False):
+                with self.assertRaises(BlockingIOError):
+                    batch.acquire_form_lock(output, row, blocking=False)
+                with batch.acquire_form_lock(output, {'level': 'n3', 'number': 2}, blocking=False):
+                    pass
+            with batch.acquire_form_lock(output, row, blocking=False):
+                pass
 
     def test_unnormalized_candidates_are_rejected_before_audio_installation(self):
         row = {'level': 'n5', 'number': 1, 'masterSha256': 'master', 'organizationSha256': 'org', 'castingSha256': 'casting'}

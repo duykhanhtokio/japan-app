@@ -137,6 +137,20 @@ def acquire_report_lock(target):
     return handle
 
 
+def acquire_form_lock(output, row, *, blocking=True):
+    """Different reports must never synthesize the same form concurrently."""
+    import fcntl
+    folder = output / 'form-locks'
+    folder.mkdir(parents=True, exist_ok=True)
+    handle = (folder / f"{row['level']}-{row['number']:02d}.lock").open('a')
+    try:
+        fcntl.flock(handle.fileno(), fcntl.LOCK_EX | (0 if blocking else fcntl.LOCK_NB))
+    except BaseException:
+        handle.close()
+        raise
+    return handle
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--render', action='store_true')
@@ -166,7 +180,7 @@ def main():
     target.parent.mkdir(parents=True, exist_ok=True)
     # Retain this handle until main returns; competing runs must not overwrite
     # one another's progress while subprocesses continue rendering.
-    report_lock = acquire_report_lock(target) if args.render else None
+    report_lock = acquire_report_lock(target)
     save = lambda: target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     save()
     if args.render and not ready:
@@ -178,35 +192,36 @@ def main():
         cache = candidate_root(ROOT, args.cache_dir, args.profile)
         cache.mkdir(parents=True, exist_ok=True)
         def render(index, row):
-            check_snapshot(row)
-            reusable = completed_candidate(row, output, profile)
-            if reusable is not None:
+            with acquire_form_lock(output, row):
+                check_snapshot(row)
+                reusable = completed_candidate(row, output, profile)
+                if reusable is not None:
+                    with lock:
+                        row.update(reusable)
+                        row['reusedValidatedCandidate'] = True
+                        report['renderedCandidates'] += 1
+                        save()
+                        print(json.dumps({'renderedCandidates': report['renderedCandidates'],
+                                          'examId': row['examId'], 'reusedValidatedCandidate': True}), flush=True)
+                    return
+                generator = 'generate-jlpt-original-audio.py' if row['level'] in ('n5', 'n4', 'n3') else 'generate-jlpt-original-n2-audio.py'
+                log_path = output / f"{row['level']}-{row['number']:02d}.log"
                 with lock:
-                    row.update(reusable)
-                    row['reusedValidatedCandidate'] = True
+                    row['status'] = 'rendering'
+                    row['logPath'] = str(log_path.relative_to(ROOT))
+                    save()
+                with log_path.open('w') as log:
+                    subprocess.run([sys.executable, str(ROOT / 'scripts' / generator), '--engine', str(engine),
+                                    '--level', row['level'], '--exam-number', str(row['number']), '--port', str(args.port + index),
+                                    '--cpu-threads', str(args.cpu_threads), '--restart-every', str(args.restart_every),
+                                    '--cache-dir', str(cache), '--continuous-bitrate-kbps', str(row['continuousBitrateKbps']),
+                                    '--prosody-profile', args.profile, '--candidate-dir', args.candidate_dir], cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=True)
+                result = validate_candidate(row, output, profile)
+                with lock:
+                    row.update(result)
                     report['renderedCandidates'] += 1
                     save()
-                    print(json.dumps({'renderedCandidates': report['renderedCandidates'],
-                                      'examId': row['examId'], 'reusedValidatedCandidate': True}), flush=True)
-                return
-            generator = 'generate-jlpt-original-audio.py' if row['level'] in ('n5', 'n4', 'n3') else 'generate-jlpt-original-n2-audio.py'
-            log_path = output / f"{row['level']}-{row['number']:02d}.log"
-            with lock:
-                row['status'] = 'rendering'
-                row['logPath'] = str(log_path.relative_to(ROOT))
-                save()
-            with log_path.open('w') as log:
-                subprocess.run([sys.executable, str(ROOT / 'scripts' / generator), '--engine', str(engine),
-                                '--level', row['level'], '--exam-number', str(row['number']), '--port', str(args.port + index),
-                                '--cpu-threads', str(args.cpu_threads), '--restart-every', str(args.restart_every),
-                                '--cache-dir', str(cache), '--continuous-bitrate-kbps', str(row['continuousBitrateKbps']),
-                                '--prosody-profile', args.profile, '--candidate-dir', args.candidate_dir], cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=True)
-            result = validate_candidate(row, output, profile)
-            with lock:
-                row.update(result)
-                report['renderedCandidates'] += 1
-                save()
-                print(json.dumps({'renderedCandidates': report['renderedCandidates'], 'examId': row['examId'], 'durationMs': result['durationMs']}), flush=True)
+                    print(json.dumps({'renderedCandidates': report['renderedCandidates'], 'examId': row['examId'], 'durationMs': result['durationMs']}), flush=True)
         failures = []
         with ThreadPoolExecutor(max_workers=args.jobs) as executor:
             futures = {executor.submit(render, i, row): row for i, row in enumerate(rows)}
