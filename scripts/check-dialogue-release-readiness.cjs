@@ -97,11 +97,12 @@ async function main() {
     ...fs.readdirSync(path.join(root, 'docs/localization-workspace/naturalness-review-2026-11-03'))
       .filter(name => /^kanazawa-\d{2}-\d{2}\.json$/.test(name)).sort()
       .map(name => 'docs/localization-workspace/naturalness-review-2026-11-03/' + name),
-    ...(fs.existsSync(path.join(root, 'docs/localization-workspace/context-parallel-2026-11-03'))
-      ? fs.readdirSync(path.join(root, 'docs/localization-workspace/context-parallel-2026-11-03'))
+    ...fs.readdirSync(path.join(root, 'docs/localization-workspace'), {withFileTypes: true})
+      .filter(entry => entry.isDirectory() && /^context-parallel-2026-11-03(?:-round\d+)?$/.test(entry.name))
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .flatMap(entry => fs.readdirSync(path.join(root, 'docs/localization-workspace', entry.name))
         .filter(name => /^worker[1-6]\.json$/.test(name)).sort()
-        .map(name => 'docs/localization-workspace/context-parallel-2026-11-03/' + name)
-      : []),
+        .map(name => 'docs/localization-workspace/' + entry.name + '/' + name)),
   ];
   const reviewed = new Map();
   let reviewedFields = 0;
