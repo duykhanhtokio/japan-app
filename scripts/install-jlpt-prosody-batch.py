@@ -148,7 +148,9 @@ def main():
     except BaseException:
         for target, backup in reversed(journal):
             if backup:
-                atomic_copy(backup, target)
+                # Backups share the target filesystem. Restore by rename so
+                # rollback still succeeds if a failed copy exhausted space.
+                os.replace(backup, target)
             else:
                 target.unlink(missing_ok=True)
         raise
