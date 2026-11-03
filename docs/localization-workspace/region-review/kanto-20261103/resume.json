@@ -1,70 +1,52 @@
 {
   "status": "PARTIAL_AI_CONTEXT_REVIEW_CHECKPOINT",
   "regionTotal": 1681,
-  "reviewedScenarios": 1024,
-  "newScenariosThisContinuation": 111,
-  "remainingScenarios": 657,
-  "changedTranslationFields": 4030,
-  "changedSourceMetadataFields": 336,
-  "sourceHintAmendments": 28,
-  "runtimeMetadataAmendments": 56,
-  "reviewedFields": 196608,
-  "previousVerifiedKantoCommit": "d2d5925bf6bfc0d8a822ea6e389596979d9cd511",
+  "reviewedScenarios": 1403,
+  "newScenariosThisContinuation": 1215,
+  "remainingScenarios": 278,
+  "changedTranslationFields": 5877,
+  "changedSourceMetadataFields": 648,
+  "sourceHintAmendments": 54,
+  "runtimeMetadataAmendments": 108,
+  "reviewedFields": 269376,
+  "previousVerifiedKantoCommit": "f112456f09",
   "workersStopped": true,
   "workers": [
     {
       "worker": 1,
-      "reviewed": 172,
-      "remaining": 109,
-      "newScenarios": 19,
-      "newChanges": 40,
-      "nextScenarioId": "SC-LOC-JP-08227-03-001",
-      "stopped": true
+      "reviewed": 243,
+      "remaining": 48,
+      "nextScenarioId": "SC-LOC-JP-12202-02-001"
     },
     {
       "worker": 2,
-      "reviewed": 157,
-      "remaining": 123,
-      "newScenarios": 19,
-      "newChanges": 30,
-      "nextScenarioId": "SC-LOC-TKY-MURAYAMA-05-001",
-      "stopped": true
+      "reviewed": 210,
+      "remaining": 50,
+      "nextScenarioId": "SC-LOC-JP-10210-08-001"
     },
     {
       "worker": 3,
-      "reviewed": 132,
-      "remaining": 148,
-      "newScenarios": 17,
-      "newChanges": 18,
-      "nextScenarioId": "SC-LOC-TKY-OTA-02-001",
-      "stopped": true
+      "reviewed": 190,
+      "remaining": 50,
+      "nextScenarioId": "SC-LOC-JP-10212-02-001"
     },
     {
       "worker": 4,
-      "reviewed": 214,
-      "remaining": 66,
-      "newScenarios": 16,
-      "newChanges": 25,
-      "nextScenarioId": "SC-LOC-EXP-002-001",
-      "stopped": true
+      "reviewed": 294,
+      "remaining": 46,
+      "nextScenarioId": "SC-LOC-JP-12208-02-001"
     },
     {
       "worker": 5,
-      "reviewed": 150,
-      "remaining": 130,
-      "newScenarios": 22,
-      "newChanges": 8,
-      "nextScenarioId": "SC-LOC-TKY-SUMIDA-04-001",
-      "stopped": true
+      "reviewed": 207,
+      "remaining": 43,
+      "nextScenarioId": "SC-LOC-TKY-SUMIDA-04-001"
     },
     {
       "worker": 6,
-      "reviewed": 199,
-      "remaining": 81,
-      "newScenarios": 18,
-      "newChanges": 16,
-      "nextScenarioId": "SC-LOC-JP-09210-06-001",
-      "stopped": true
+      "reviewed": 259,
+      "remaining": 41,
+      "nextScenarioId": "SC-LOC-JP-11246-06-001"
     }
   ],
   "sourceIssues": [
@@ -138,18 +120,6 @@
       "resolutionArtifact": "sourceHintAmendments and runtimeMetadataAmendments in this receipt"
     },
     {
-      "scenarioId": "SC-LOC-SIT-KAWAGUCHI-07-001",
-      "turnIds": [
-        "DLG-SC-LOC-SIT-KAWAGUCHI-07-001-SHARED-04",
-        "DLG-SC-LOC-SIT-KAWAGUCHI-07-001-SHARED-06",
-        "DLG-SC-LOC-SIT-KAWAGUCHI-07-001-SHARED-08"
-      ],
-      "field": "hintJa",
-      "status": "SOURCE_HINT_TURN_ALIGNMENT_PENDING",
-      "blocksFullAcceptance": true,
-      "detail": "Hint04 distinguishes gift/pickup dates stated02, hint06 asks unavailable storage explained04, hint08 asks same-day collection change spoken06, while actual08 confirms bouquet/card. Targets mirror canonical; source owner alignment needed."
-    },
-    {
       "scenarioId": "SC-CHB-NARITA-001",
       "batch": "111",
       "turnId": "DLG-SC-CHB-NARITA-001-SHARED-02",
@@ -192,39 +162,6 @@
       "detail": "まだ券を受け取りましたか uses まだ with completed-action question; context and reply establish already-collected tickets, normally もう or すでに. Spoken source preserved to avoid text/audio divergence; target interpretation follows explicit yes and ticket possession."
     },
     {
-      "scenarioId": "SC-LOC-SIT-KOSHIGAYA-06-001",
-      "field": "hintJa",
-      "turnIds": [
-        "DLG-SC-LOC-SIT-KOSHIGAYA-06-001-SHARED-02",
-        "DLG-SC-LOC-SIT-KOSHIGAYA-06-001-SHARED-04",
-        "DLG-SC-LOC-SIT-KOSHIGAYA-06-001-SHARED-08"
-      ],
-      "status": "SOURCE_HINT_TURN_PHASE_MISMATCH",
-      "blocksFullAcceptance": true,
-      "detail": "Hint02 asks whether supplement missing while speech02 explains loose-page mistake; hint04 asks to explain mistake while speech04 reports finding it; hint08 asks to request number check while speech08 acknowledges already-confirmed set and future borrowing count. All target hints mirror Japanese. No source/audio change."
-    },
-    {
-      "scenarioId": "SC-LOC-SIT-TOKOROZAWA-03-001",
-      "field": "hintJa",
-      "turns": [
-        "06",
-        "08"
-      ],
-      "status": "SOURCE_HINT_TURN_PHASE_MISMATCH",
-      "blocksFullAcceptance": true,
-      "detail": "Hint06 requests comparison of cover/edition although spoken06 asks old-stock and new-edition mapping; hint08 requests old-stock/mapping although spoken08 commits to asking friend about class suitability. Targets follow Japanese hints; no source/audio change."
-    },
-    {
-      "scenarioId": "SC-SIT-TOKOROZAWA-001",
-      "field": "hintJa",
-      "turns": [
-        "08"
-      ],
-      "status": "SOURCE_HINT_TURN_PHASE_MISMATCH",
-      "blocksFullAcceptance": true,
-      "detail": "Hint08 asks learner to request near route, but spoken08 acknowledges already supplied outer walkway and corrects companion meeting gate. Translations preserve source; spoken/audio unchanged."
-    },
-    {
       "scenarioId": "SC-LOC-JP-09205-02-001",
       "turnId": "DLG-SC-LOC-JP-09205-02-001-SHARED-02",
       "field": "hintJa",
@@ -262,6 +199,10 @@
   "sourceAccepted": false,
   "verification": "Verify current checkpoint remotely before claiming durable persistence.",
   "newScenariosSincePreviousCheckpoint": 219,
-  "stopReason": "DURABLE_CHECKPOINT_BARRIER",
-  "stopDetail": "All six independent owners stopped after complete readings for checkpoint persistence; continue next pending IDs after remote verification."
+  "stopReason": "MODEL_SERVICE_CAPACITY",
+  "stopDetail": "Workers1 and5 returned: Selected model is at capacity. No model retries; all six workers stopped after preserving completed evidence.",
+  "authoringInputTaskAmendments": 54,
+  "evidenceBackupBranch": "recovery/kanto-evidence-20261103",
+  "ownershipTransferArtifact": "ownership-transfer-checkpoint-1403.json",
+  "receiptEncoding": "context-review-archive-v1"
 }

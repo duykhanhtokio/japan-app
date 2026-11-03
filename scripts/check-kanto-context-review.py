@@ -1,6 +1,7 @@
 """Validate revision-bound worker evidence; --sync updates shared ledgers."""
 import argparse
 import hashlib
+import gzip
 import json
 from pathlib import Path
 
@@ -10,7 +11,21 @@ LOCALES = {'vi','en','id','tl','zh-CN','zh-TW','hi','bn','ne','my','th','km'}
 QUEUE = ROOT / 'docs/localization-workspace/naturalness-review-2026-10-25/prefecture-queue.json'
 
 def read(p):
-    return json.loads(Path(p).read_text())
+    data = json.loads(Path(p).read_text())
+    if isinstance(data, dict) and data.get('schemaVersion') == 'context-review-archive-v1':
+        archive = data['archivePath']
+        assert archive.startswith('docs/localization-workspace/region-review/kanto-20261103/') and '..' not in Path(archive).parts
+        zipped = (ROOT / archive).read_bytes()
+        assert hashlib.sha256(zipped).hexdigest() == data['archiveSha256']
+        raw = gzip.decompress(zipped)
+        assert hashlib.sha256(raw).hexdigest() == data['uncompressedSha256']
+        data = json.loads(raw)
+    if isinstance(data, dict) and data.get('reviewFieldEncoding') == 'tuple-v1':
+        keys = ('turnId', 'field', 'sourceSha256', 'targetSha256')
+        for row in data['reviews']:
+            row['fields'] = [dict(zip(keys, f)) if isinstance(f, list) else f for f in row['fields']]
+        del data['reviewFieldEncoding']
+    return data
 
 def write(p, data):
     Path(p).write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
@@ -29,6 +44,8 @@ def main():
     members = {s for c in prefecture['cities'] for key in ('sentenceTaskReviewedScenarioIds','pendingSentenceTaskScenarioIds') for s in c[key]}
     owned, complete, changed, workers = {}, set(), {}, []
     owned_scenarios_by_batch = {}
+    input_amendments = []
+    reviewed_by_worker = {}
     for number in range(1,7):
         assignment = read(BASE / f'assignment-{number}.json')
         assigned = {s for g in assignment['groups'] for s in g['scenarios']}
@@ -46,6 +63,8 @@ def main():
         assert receipt.get('nativeReviewed') is False
         assert receipt.get('semanticCrossReview',False) is False
         scenarios = receipt.get('scenarios',receipt.get('completedScenarioIds',[]))
+        reviewed_by_worker[number] = set(scenarios)
+        input_amendments.extend(dict(amendment, worker=number) for amendment in receipt.get('authoringInputAmendments', []))
         assert set(scenarios) <= assigned
         assert len(scenarios) == len(set(scenarios))
         notes = receipt.get('scenarioNotes', receipt.get('scenarioConclusions', receipt.get('scenarioFindings', {})))
@@ -121,6 +140,37 @@ def main():
         canonical = json.dumps(scope, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
         baseline_hash = baseline_hashes[path]['ownedScopeCanonicalSha256']
         assert sha(canonical) == baseline_hash, ('unexplained modification',path)
+    input_log = BASE/'authoring-input-integration.json'
+    if input_log.exists():
+        input_amendments.extend(read(input_log)['changes'])
+    if input_amendments:
+        import re
+        baselines = read(BASE/'authoring-input-baselines.json')['files']
+        by_path = {}
+        seen_inputs = set()
+        for amendment in input_amendments:
+            sid, worker = amendment['scenarioId'], amendment['worker']
+            path, pointer = amendment['path'], amendment['jsonPointer']
+            assert sid in reviewed_by_worker[worker] and amendment['selfSemanticApproved'] is True
+            assert path.startswith('scripts/dialogue-authoring/') and '..' not in Path(path).parts
+            assert re.fullmatch('/'+re.escape(sid)+r'/tasks/\d+/1', pointer), pointer
+            assert (path,pointer) not in seen_inputs
+            seen_inputs.add((path,pointer))
+            assert sha(amendment['before']) == amendment['beforeSha256']
+            assert sha(amendment['after']) == amendment['afterSha256']
+            by_path.setdefault(path, []).append(amendment)
+        for path, amendments in by_path.items():
+            original = read(ROOT/path)
+            for amendment in reversed(amendments):
+                parts = amendment['jsonPointer'].split('/')[1:]
+                value = original
+                for part in parts[:-1]:
+                    value = value[int(part)] if isinstance(value,list) else value[part]
+                key = int(parts[-1]) if isinstance(value,list) else parts[-1]
+                assert value[key] == amendment['after'], (path, amendment['jsonPointer'])
+                value[key] = amendment['before']
+            canonical = json.dumps(original,ensure_ascii=False,sort_keys=True,separators=(',',':'))
+            assert sha(canonical) == baselines[path]['canonicalSha256'], ('unexplained authoring edit',path)
     previous = {s for c in prefecture['cities'] for s in c['sentenceTaskReviewedScenarioIds']}
     if args.sync:
         # Batch000 also has the historical per-scenario sentence mirror.
@@ -185,7 +235,7 @@ def main():
             region_row['remainingScenarios'] = region_row['totalScenarios'] - region_row['contextReviewedScenarios']
             region_row['status'] = 'COMPLETE' if not region_row['remainingScenarios'] else ('IN_PROGRESS' if region_row['contextReviewedScenarios'] else 'NOT_STARTED')
         write(plan_path,plan)
-    report={'status':'PASS','region':'kanto','regionTotal':len(members),'contextReviewed':len(previous|complete),'remaining':len(members-(previous|complete)),'workers':workers,'reviewedFields':len(complete)*192,'changedFields':sum(len(c) for c in changed.values()),'changedLocaleFiles':len(changed),'changedTranslationFields':sum(w.get('changedTranslationFields',0) for w in workers),'changedSourceMetadataFields':sum(w.get('changedSourceMetadataFields',0) for w in workers),'sourceHintAmendments':sum(w.get('sourceHintAmendments',0) for w in workers),'runtimeMetadataAmendments':sum(w.get('runtimeMetadataAmendments',0) for w in workers),'nativeReviewed':False,'semanticCrossReview':False,'deviceVerified':False,'priorReviewedIdsPreserved':True}
+    report={'status':'PASS','region':'kanto','regionTotal':len(members),'contextReviewed':len(previous|complete),'remaining':len(members-(previous|complete)),'workers':workers,'reviewedFields':len(complete)*192,'changedFields':sum(len(c) for c in changed.values()),'changedLocaleFiles':len(changed),'changedTranslationFields':sum(w.get('changedTranslationFields',0) for w in workers),'changedSourceMetadataFields':sum(w.get('changedSourceMetadataFields',0) for w in workers),'sourceHintAmendments':sum(w.get('sourceHintAmendments',0) for w in workers),'runtimeMetadataAmendments':sum(w.get('runtimeMetadataAmendments',0) for w in workers),'authoringInputTaskAmendments':len(input_amendments),'nativeReviewed':False,'semanticCrossReview':False,'deviceVerified':False,'priorReviewedIdsPreserved':True}
     if args.sync:
         write(BASE/'integration-qa.json',report)
     print(json.dumps(report,ensure_ascii=False))

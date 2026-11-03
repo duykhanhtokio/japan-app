@@ -5,14 +5,14 @@ const result=esbuild.buildSync({entryPoints:[path.join(root,'src/services/dialog
 const hostRequire=Object.assign(require,{context(dir,recursive,pattern){
  const full=path.resolve(root,'src/services',dir),files=[];
  function walk(parent,prefix=''){for(const e of fs.readdirSync(parent,{withFileTypes:true})){const k=prefix+e.name;if(e.isDirectory()){if(recursive)walk(path.join(parent,e.name),k+'/');}else if(pattern.test(k))files.push('./'+k);}}
- walk(full);const modules=new Map();const context=key=>{if(!modules.has(key))modules.set(key,JSON.parse(fs.readFileSync(path.join(full,key),'utf8')));return modules.get(key);};context.keys=()=>files;return context;
+ walk(full);const cache=new Map();const context=key=>{if(!cache.has(key)){cache.set(key,JSON.parse(fs.readFileSync(path.join(full,key),'utf8')));if(cache.size>32)cache.delete(cache.keys().next().value);}return cache.get(key);};context.keys=()=>files;return context;
 }});
 const box={exports:{}};new Function('module','exports','require',result.outputFiles[0].text)(box,box.exports,hostRequire);
 const base=path.join(root,'docs/localization-workspace/region-review/kanto-20261103');
-let scenarios=0,fields=0,runtimeMetadataFields=0,sourceHints=0;const idx=JSON.parse(fs.readFileSync(path.join(root,'src/data/dialogue-content/locale-batch-index.json')));
+let scenarios=0,fields=0,runtimeMetadataFields=0,sourceHints=0;const idx=JSON.parse(fs.readFileSync(path.join(root,'src/data/dialogue-content/locale-batch-index.json')));const seen=new Set();
 for(let w=1;w<=6;w++){
- const receipt=JSON.parse(fs.readFileSync(path.join(base,`worker-${w}.json`))),cache=new Map();
- for(const review of receipt.reviews){const sid=review.scenarioId;if(!cache.has(sid)){cache.set(sid,box.exports.loadDialogueTurns(sid));scenarios++;}
+ const receipt=require('./lib/dialogue-context-receipts.cjs').expandContextReceipt(JSON.parse(fs.readFileSync(path.join(base,`worker-${w}.json`)))),cache=new Map();
+ for(const review of receipt.reviews){const sid=review.scenarioId;if(!cache.has(sid)){cache.set(sid,box.exports.loadDialogueTurns(sid));if(cache.size>16)cache.delete(cache.keys().next().value);if(!seen.has(sid)){seen.add(sid);scenarios++;}}
   const turns=cache.get(sid);assert.equal(turns.length,11);
   const pack=JSON.parse(fs.readFileSync(path.join(root,`src/data/dialogue-content/locale-batches/${review.locale}/${idx[sid]}.json`)));
   for(const field of review.fields){const turn=turns.find(t=>t.id===field.turnId),entry=pack.scenarios[sid].turns[field.turnId];assert(turn);const actual=field.field==='translation'?(turn.npc||turn.player).translations[review.locale]:turn.player.hintTranslations[review.locale];assert.equal(actual,entry[field.field]);fields++;}
