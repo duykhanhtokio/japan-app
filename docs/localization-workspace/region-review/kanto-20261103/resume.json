@@ -1,52 +1,52 @@
 {
   "status": "PARTIAL_AI_CONTEXT_REVIEW_CHECKPOINT",
   "regionTotal": 1681,
-  "reviewedScenarios": 326,
-  "newScenariosThisContinuation": 138,
-  "remainingScenarios": 1355,
-  "changedTranslationFields": 1982,
-  "changedSourceMetadataFields": 168,
-  "sourceHintAmendments": 14,
-  "runtimeMetadataAmendments": 28,
-  "reviewedFields": 62592,
-  "previousVerifiedKantoCommit": "a4eac3dd687248515476205a9593093cb83af0af",
+  "reviewedScenarios": 545,
+  "newScenariosThisContinuation": 357,
+  "remainingScenarios": 1136,
+  "changedTranslationFields": 2721,
+  "changedSourceMetadataFields": 336,
+  "sourceHintAmendments": 28,
+  "runtimeMetadataAmendments": 56,
+  "reviewedFields": 104640,
+  "previousVerifiedKantoCommit": "6ca968aca91306a48fafd60221113f80021e8bf0",
   "workersStopped": true,
   "workers": [
     {
       "worker": 1,
-      "reviewed": 52,
-      "remaining": 229,
-      "nextScenarioId": "SC-LOC-SIT-KAWAGOE-02-001"
+      "reviewed": 90,
+      "remaining": 191,
+      "nextScenarioId": "SC-LOC-JP-08207-04-001"
     },
     {
       "worker": 2,
-      "reviewed": 38,
-      "remaining": 242,
-      "nextScenarioId": "SC-LOC-EXP-033-001"
+      "reviewed": 63,
+      "remaining": 217,
+      "nextScenarioId": "SC-LOC-SIT-KAWAGUCHI-05-001"
     },
     {
       "worker": 3,
-      "reviewed": 39,
-      "remaining": 241,
-      "nextScenarioId": "SC-LOC-CHB-NARITA-05-001"
+      "reviewed": 71,
+      "remaining": 209,
+      "nextScenarioId": "SC-LOC-SIT-KOSHIGAYA-05-001"
     },
     {
       "worker": 4,
-      "reviewed": 75,
-      "remaining": 205,
+      "reviewed": 133,
+      "remaining": 147,
       "nextScenarioId": "SC-LOC-012-11-001"
     },
     {
       "worker": 5,
-      "reviewed": 46,
-      "remaining": 234,
-      "nextScenarioId": "SC-LOC-KNG-HIRATSUKA-04-001"
+      "reviewed": 71,
+      "remaining": 209,
+      "nextScenarioId": "SC-LOC-TCG-NIKKO-08-001"
     },
     {
       "worker": 6,
-      "reviewed": 76,
-      "remaining": 204,
-      "nextScenarioId": "SC-LOC-TKY-MACHIDA-03-001"
+      "reviewed": 117,
+      "remaining": 163,
+      "nextScenarioId": "SC-LOC-JP-08225-06-001"
     }
   ],
   "sourceIssues": [
@@ -130,6 +130,29 @@
       "resolution": "Source/runtime hint, required goal, evaluation and 12 locale hint anchors/translations synchronized and self-reviewed against four adjacent turns. Spoken Japanese unchanged."
     },
     {
+      "scenarioId": "SC-LOC-CHB-NARITA-06-001",
+      "turnIds": [
+        "DLG-SC-LOC-CHB-NARITA-06-001-SHARED-02",
+        "DLG-SC-LOC-CHB-NARITA-06-001-SHARED-04"
+      ],
+      "status": "LOCAL_SOURCE_AMBIGUITY_AUDIO_ALIGNMENT_IF_CHANGED",
+      "reason": "Lượt02 nói số tài khoản có trên tờ giấy này; lượt04 nói giấy từ bạn chỉ có tên ngân hàng. Có thể hai tờ khác nhau nhưng văn cảnh không xác định; giữ nguyên spokenJA và dịch, cần chốt cùng audio trước khi sửa.",
+      "contextEvidence": {
+        "turn02": "はい。口座番号はこの紙にありますが、支店は空港支店だったと思います。",
+        "turn04": "友人からもらった紙には銀行名しかありません。似た支店名を聞いた記憶で補おうとしていました。",
+        "turn06": "メッセージは送れますが、返事はすぐ来ないかもしれません。確認中は振込を進めないでください。",
+        "turn10": "分かりました。正式な振込先と期限を確認し、情報がそろってから手続きします。"
+      },
+      "assessment": "Người chơi thừa nhận đang lấp thông tin bằng trí nhớ và chuyển sang xác minh; lượt04 có thể là tự đính chính thông tin giấy nhưng không nói rõ, cũng không xác nhận hai tờ khác nhau. Không coi đây là mâu thuẫn chắc chắn; giữ như ambiguity local, không tự sửa.",
+      "beforeSha256": {
+        "turn02": "f8342604ae9052fad4d2c60421f06c29d10a4b21c2c686a8047b2b28eff61a91",
+        "turn04": "41c6113240adb8b77772f6e74a6ed357ec8d7ebc7ea2a54c2b6ea54646af8ffe",
+        "turn06": "3c27ccc590ccdf16c733238a6107a6e70d8e3285df8e9e9c01f40574e3fe9542",
+        "turn10": "0a53fe04dfebdea6cf3fcf914cda8b7e862007cc89316ef034f1b800badf3222"
+      },
+      "proposal": "Nếu publisher muốn làm rõ, thêm ý đính chính ở lượt04 hoặc xác định hai giấy; mọi sửa spokenJA phải đồng bộ audio/subtitles. Không áp dụng proposal."
+    },
+    {
       "scenarioId": "SC-LOC-011-01-001",
       "turnId": "DLG-SC-LOC-011-01-001-SHARED-10",
       "field": "hintJa",
@@ -150,5 +173,6 @@
   "nativeReviewed": false,
   "semanticCrossReview": false,
   "sourceAccepted": false,
-  "verification": "Verify current commit remotely before claiming durable persistence."
+  "verification": "Verify current commit remotely before claiming durable persistence.",
+  "newScenariosSincePreviousCheckpoint": 219
 }
