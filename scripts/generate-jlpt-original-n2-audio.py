@@ -8,7 +8,7 @@ from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint
 ap=argparse.ArgumentParser();ap.add_argument('--level',choices=['n2','n1'],default='n2');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--cpu-threads',type=int,default=2);ap.add_argument('--restart-every',type=int,choices=range(1,513),default=6);ap.add_argument('--engine',required=True);ap.add_argument('--prosody-profile');ap.add_argument('--candidate-dir');ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--cache-only',action='store_true',help='Reassemble approved cached speech without starting or calling VOICEVOX');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[24,32,40,48,64,96],default=96);args=ap.parse_args();level=args.level;exam_number=f'{args.exam_number:02d}'
 root=Path(__file__).resolve().parent.parent;master=root/f'src/data/jlpt-original/{level}/{exam_number}/master.ja.json';master_bytes=master.read_bytes();exam=json.loads(master_bytes);casting=json.loads((root/'src/data/jlpt-original/voice-casting.json').read_text());settings={**casting['settings'],**casting.get('levelPacing',{}).get(level,{})};roles=casting['roles'];organization_path=root/f'src/data/jlpt-original/{level}/{exam_number}/listening-organization.ja.json';organization_bytes=organization_path.read_bytes();organization=json.loads(organization_bytes)
 render_root=candidate_root(root,args.candidate_dir,args.prosody_profile);prosody=load_profile(root/args.prosody_profile) if args.prosody_profile else None;engine_version=None
-inference_limit=min(prosody.get('inferenceMaxMoras',160),80 if level=='n1' else 160) if prosody else None
+inference_limit=min(prosody.get('inferenceMaxMoras',160),64 if level=='n1' else 160) if prosody else None
 if prosody and getattr(args,'cache_only',False):raise ValueError('Prosody candidates require real re-synthesis, not legacy cache-only assembly')
 render_guard=None
 if prosody:
@@ -68,6 +68,8 @@ def synth(text,role,mode='dialogue'):
    pcm_parts=[]
    for part_index,part in enumerate(query_parts(q,inference_limit)):
     if part_index and level=='n1':stop();start()
+    if level=='n1':
+     (work/'inference-part.json').write_text(json.dumps({'cacheKey':key,'speakerId':sid,'partIndex':part_index,'moras':sum(len(p['moras']) for p in part['accent_phrases']),'phrases':len(part['accent_phrases']),'cpuThreads':args.cpu_threads,'configuredLimit':inference_limit}))
     encoded=req('/synthesis?speaker='+str(sid),json.dumps(part).encode())
     with wave.open(io.BytesIO(encoded)) as w:
      assert (w.getframerate(),w.getnchannels(),w.getsampwidth())==(24000,1,2)
