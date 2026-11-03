@@ -7,13 +7,17 @@ import sys,json,collections,subprocess
 
 def apply_reviewed_question_overrides(rows,root):
  count=0
- for name in ['opsnext-reading-overrides-20261102.json','source-v2-reading-overrides-20261102.json','source-v2-round2-reading-overrides-20261102.json','source-v2-round3-reading-overrides-20261102.json','source-v2-round4-reading-overrides-20261102.json','source-v2-round5-reading-overrides-20261103.json','source-v2-round6-reading-overrides-20261103.json']:
+ for name in ['opsnext-reading-overrides-20261102.json','source-v2-reading-overrides-20261102.json','source-v2-round2-reading-overrides-20261102.json','source-v2-round3-reading-overrides-20261102.json','source-v2-round4-reading-overrides-20261102.json','source-v2-round5-reading-overrides-20261103.json','source-v2-round6-reading-overrides-20261103.json','source-v2-round7-reading-overrides-20261103.json','source-v2-round8-reading-overrides-20261103.json']:
   path=root/'docs/ssw-workspace/restaurant/source-closure31/integration'/name
   if not path.is_file():continue
   receipt=json.loads(path.read_text());readings=receipt['readings']
   for row in rows.values():
    for section in row.get('sections',[]):
     if section.get('sourceHash')!=receipt.get('sectionSourceHashes',{}).get(section['id']):continue
+    if section['id'] in receipt.get('sectionRubyFields',{}):
+     supplied=receipt['sectionRubyFields'][section['id']]
+     for key,text in [('title',section['titleJa']),('text',section['textJa'])]:assert ''.join(t['text'] for t in supplied[key])==text
+     section['furigana']=supplied
     for sequence in section['furigana'].values():
      for segment in sequence:
       if segment['text'] in receipt.get('forceReadings',{}):
@@ -23,6 +27,10 @@ def apply_reviewed_question_overrides(rows,root):
    for q in (row.get('exam') or {}).get('questions',[]):
     if not q['id'].startswith(receipt['questionIdPrefix']):continue
     if q.get('sourceHash')!=receipt['questionSourceHashes'].get(q['id']):continue
+    if q['id'] in receipt.get('questionRubyFields',{}):
+     supplied=receipt['questionRubyFields'][q['id']]
+     for text,seq in [(q['stemJa'],supplied['stem']),(q['explanationJa'],supplied['explanation']),*zip(q['optionsJa'],supplied['options']),*zip(q['optionReasonsJa'],supplied['reasons'])]:assert ''.join(t['text'] for t in seq)==text
+     q['furigana']={key:supplied[key] for key in ['stem','options','explanation']};q['reasonRuby']=supplied['reasons']
     sequences=[q['furigana']['stem'],q['furigana']['explanation'],*q['furigana']['options'],*q.get('reasonRuby',[])]
     for sequence in sequences:
      for segment in sequence:

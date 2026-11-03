@@ -1,3 +1,4 @@
+import {manufacturingSource62Exams,manufacturingSource62Translation} from './source62-bounded';
 import type {ManufacturingExam,ManufacturingQuestion,Specialty} from './index';
 import type {QuestionTranslation} from './translations';
 import {manufacturingSourceGuides} from './source-guides';
@@ -19,13 +20,14 @@ function draft():Draft{return cached??(cached=require('./supplement-practice.jso
 function currentGuide(){const d=draft();return manufacturingSourceGuides('mechanical').find(g=>g.id===d.guideId&&g.sourceHash===d.guideSourceHash);}
 /** An additive formative check. Existing weekly checks and saved attempts retain their identities. */
 export function manufacturingSupplementExams(specialty:Specialty):ManufacturingExam[]{
- if(specialty==='electrical')return [...manufacturingBooleanPracticeExams(specialty),...manufacturingEnergyExams(specialty),...manufacturingSequentialExams(specialty),...manufacturingCalculation48Exams(specialty),...manufacturingSource52Exams(specialty)];
- if(specialty!=='mechanical')return [...manufacturingSource60Exams(specialty),...manufacturingCalculation48Exams(specialty),...manufacturingSource55Exams(specialty)];
+ if(specialty==='electrical')return [...manufacturingSource62Exams(specialty),...manufacturingBooleanPracticeExams(specialty),...manufacturingEnergyExams(specialty),...manufacturingSequentialExams(specialty),...manufacturingCalculation48Exams(specialty),...manufacturingSource52Exams(specialty)];
+ if(specialty!=='mechanical')return [...manufacturingSource62Exams(specialty),...manufacturingSource60Exams(specialty),...manufacturingCalculation48Exams(specialty),...manufacturingSource55Exams(specialty)];
  const tolerance=[...manufacturingSource57Exams(specialty),...manufacturingToleranceExams(specialty),...manufacturingQcPlanExams(specialty),...manufacturingCalculation48Exams(specialty)],d=draft(),guide=currentGuide();if(!guide)return tolerance;
  return [{id:d.id,revision:d.revision,titleJa:d.titleJa,kind:'weekly',officialSimulation:false,weekId:'supplement-caliper',questions:d.questions.map(q=>({id:q.id,sourceHash:q.sourceHash,lessonId:guide.id,stemJa:q.stemJa,optionsJa:q.optionsJa,correctIndex:q.correctIndex,optionReasonsJa:q.optionsJa.map((_,i)=>(i===q.correctIndex?'正解です。':'この選択肢は適切ではありません。')+q.explanationJa),sources:guide.sources}))},...tolerance];
 }
 /** No fallback to another target language; suppress entries when the source guide or question is stale. */
 export function manufacturingSupplementTranslation(question:ManufacturingQuestion,locale:string):QuestionTranslation|null{
+ if(question.id.startsWith('mfg1-source62-'))return manufacturingSource62Translation(question,locale);
  if(question.id.startsWith('mfg1-source60-'))return manufacturingSource60Translation(question,locale);
  if(question.id.startsWith('mfg1-source57-'))return manufacturingSource57Translation(question,locale);
  if(question.id.startsWith('mfg1-source55-mean-'))return manufacturingSource55Translation(question,locale);

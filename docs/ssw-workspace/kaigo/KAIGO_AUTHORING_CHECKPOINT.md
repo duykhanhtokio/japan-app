@@ -1578,3 +1578,10 @@ Bốn facet mới còn candidate: mục tiêu sống theo bản thân, khó khă
 ### PDF109 — sửa lỗi câu Nhật khi tiếp quản, 03/11/2026
 
 Hoạt động consent mới bị mất phần kana và dấu câu trong script cũ do xử lý chuỗi đơn như tuple. Đã khôi phục nguyên ý câu hỏi thông tin cần cung cấp và hỗ trợ sau quyết định; lời đáp giữ đủ lựa chọn, lợi/bất lợi, tự chọn, tôn trọng và hỗ trợ thực hiện. Ruby mới đầy đủ; 12 bản dịch đối chiếu với Nhật hoàn chỉnh. Bốn hash đánh giá nối lại sau kiểm nghĩa, không dùng đổi hash để thay kiểm nội dung. Guard bắt câu hỏng dù ruby ghép khớp. Actual reader host chạy lại đạt22hoạt động/12ngôn ngữ trên7ngày; không đổi21hoạt động trước,26bank/687câu hoặcJapanese master. Chi tiết bản cuối tại `source-coverage-v2/construction-kaigo-batch5-REPORT.vi.md`; chuyên môn/bản ngữ/thiết bị/thời lượng vẫn chưa nghiệm thu.
+
+
+## 2026-11-03 — source109: bốn ý còn lại và ràng buộc bản dịch
+
+Tiếp nền f72e3e6c. Đọc lại đầy đủ hướng dẫn/chuẩn/plan vàcheckpoint lịch sử theo từng phần, đối chiếu lại ảnhsource109/in107/hashcanonical. Thêm ba hoạt động độc lập có phần dạy, prompt vàmodel: ngày126 lựa chọn nghe nhạc/đọc sách theo đời sống本人; ngày127 phương pháp giao tiếp cá nhân khi tênbệnh giống nhau; ngày127 đọc ý nghĩaICT theo bối cảnh xuất bản2025, không suy tỷ lệ hiệnnay/hiệu quả/mức phùhợp toàn bộ. Ba hoạt động có36bản dịch trực tiếp, đầyđủruby; hashNhật ràngbuộc từng bản dịch, component không hiện bản lỗi hash. Bốn candidatev6→covered_ai;70/70ý đãghi có dạy/đánhgiá, nhưng mẫu số276trang cònmở vàkhôngphải100%toànsách.
+
+Giữ nguyên22hoạtđộngtrước, Japanese master,26bank/687câu vàID/ngày/state. Ảnhngày126/127 hiệntại được xem lại; ghi rõ ảnhngữcảnh chứ không minhhoạ kỹthuật/ICTvận hành. Kiểm readerhost25check/12locale trên7ngày,6ca riêng sourcehash mới/cũ; chưanative/browserpixel/thờilượngthựchọc hoặcâmthanh. Hồsơconstruction-kaigo-batch6-source-review/structural-validation/daily-audit vàkaigo-batch6-revision-reader-validation.json. Rootlưu vàxácminhremote; chưaghi đãđẩy.

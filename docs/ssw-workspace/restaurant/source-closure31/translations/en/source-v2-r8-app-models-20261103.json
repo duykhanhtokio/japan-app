@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "locale": "en",
+  "status": "translated_ai_unreviewed",
+  "items": {
+    "rst31-v2-r8-ops-a-models": {
+      "sourceHash": "7f22bbd3b763c886598bbf61158aa34b8b3dc5ba772fd228ce40d19ec3690d58",
+      "title": "Rules and calculation assumptions at this practice restaurant",
+      "text": "At this practice restaurant, next-visit vouchers cannot be combined with points; check the expiry printed on the voucher before use. These are store settings, not nationwide rules.\nFor one delivery order: sales2,000yen−food700−container100−delivery fee400＝800yen remaining. Other expenses are excluded, so this is not the whole restaurant’s final profit.\nAt this practice restaurant, do not reveal individual visit history to companions or third parties while greeting guests. Refer necessary disclosure requests to the manager. Consent and legal exceptions require separate consideration; this does not declare every conversation illegal."
+    },
+    "rst31-v2-r8-ops-q001": {
+      "sourceHash": "c87d52d7b8c214287c70ab71a9c59f63eac8f414c942a5a4f8899080f078445c",
+      "objective": "Explain the stated store conditions.",
+      "stem": "The practice voucher says “cannot combine with points; see voucher expiry.” Which guidance is correct?",
+      "options": [
+        "Say combination is always allowed at every restaurant nationwide.",
+        "Say it never expires despite the printed expiry.",
+        "Ignore this voucher and promise combination is allowed.",
+        "Explain no combination and checking the printed expiry before use."
+      ],
+      "explanation": "Follow this store’s no-combination and expiry settings. Other stores may differ.",
+      "reasons": [
+        "Mistakes a store setting for a nationwide rule.",
+        "Changes a stated expiry into unlimited use.",
+        "Contradicts this voucher’s no-combination condition.",
+        "Explains both stated conditions."
+      ]
+    },
+    "rst31-v2-r8-ops-q002": {
+      "sourceHash": "cf5aa4555829d2173ba3f41db66521a3534cd42a906317d034c7e02d0e00c529",
+      "objective": "Subtract stated costs and respect the amount’s scope.",
+      "stem": "One order: sales2,000yen, food700, container100, delivery fee400. Subtract only these three expenses. Which amount and explanation are correct?",
+      "options": [
+        "1,200yen: omit the delivery fee and call it final profit.",
+        "800yen: final profit after every expense, including rent.",
+        "800yen: the remainder under these assumptions, not the restaurant’s final profit.",
+        "1,600yen: do not subtract food or container costs."
+      ],
+      "explanation": "2,000−700−100−400＝800yen. Only these three expenses are subtracted; rent and other expenses are outside this example.",
+      "reasons": [
+        "Does not subtract the400yen delivery fee.",
+        "Claims uncalculated expenses were also deducted.",
+        "Both arithmetic and limited expense scope are correct.",
+        "Does not subtract food700yen and container100yen."
+      ]
+    },
+    "rst31-v2-r8-ops-q003": {
+      "sourceHash": "b71421c7480770b0e593dfdd38e075f7ca56c73f17758950bfdaaa248e6d7da0",
+      "objective": "Apply this store’s visit-history policy.",
+      "stem": "This practice store does not reveal individual visit history to third parties while greeting guests. A companion asks about it. What should staff do?",
+      "options": [
+        "Reveal history without conditions because you recognize the face.",
+        "Assume a companion automatically has the guest’s consent and disclose it.",
+        "Say all guest conversation is illegal, so nothing may be said.",
+        "Do not reveal it there; ask the manager about necessary action."
+      ],
+      "explanation": "Follow this store scenario: do not reveal history there; refer necessary disclosure requests to the manager. Data-consent and exception checks are separate; not every conversation is illegal.",
+      "reasons": [
+        "Recognizing a face does not justify unconditional disclosure.",
+        "Companion status alone does not establish the guest’s consent.",
+        "Confuses handling individual information with banning every conversation.",
+        "Follows this store rule and manager confirmation."
+      ]
+    }
+  }
+}

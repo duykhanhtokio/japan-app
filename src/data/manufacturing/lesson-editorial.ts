@@ -15,6 +15,7 @@ let source49Clarification:Clarification|null=null;
  * This clarifies an existing inspection principle, without adding an operating procedure.
  */
 export function manufacturingLessonParagraph(lesson:ManufacturingLesson,paragraphId:string,locale:string,text:string|undefined):string|undefined {
+ if(lesson.id==='mfg1-surface-lesson-013'&&paragraphId==='section-2')return require('./source62-bounded').manufacturingSource62Paragraph(lesson,paragraphId,locale,text);
  if(['mfg1-surface-lesson-008','mfg1-surface-lesson-061'].includes(lesson.id))return require('./source60-buff').manufacturingSource60Paragraph(lesson,paragraphId,locale,text);
  if(['mfg1-mechanical-lesson-072','mfg1-mechanical-lesson-041','mfg1-mechanical-lesson-049'].includes(lesson.id))return require('./source57-mechanical').manufacturingSource57Paragraph(lesson,paragraphId,locale,text);
  if(lesson.id==='mfg1-electrical-l043')return require('./source50-overview').manufacturingSource50Paragraph(lesson,paragraphId,locale,text);

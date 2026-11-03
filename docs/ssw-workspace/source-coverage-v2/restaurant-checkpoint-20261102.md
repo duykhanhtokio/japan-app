@@ -1,3 +1,38 @@
+# Nhà hàng — r8 bổ sung căn cứ cho3điều kiện app,03/11/2026
+
+Tiếp phần r7:3app-claim extensions đã có `grounded_ai` theo phạm vi riêng, **không** gán cho PDF thi và không nâng số ý PDF đạt.
+
+1. Điểm thưởng/phiếu: quy tắc rõ của cửa hàng giả định, không phải điều kiện toàn Nhật. Có hướng dẫn đọc hạn trên phiếu và câu kiểm điều kiện riêng.
+2. Phí giao hàng/lợi nhuận: mô hình độc lập2.000−700−100−400＝800yên. Chỉ trừ3chi phí đã cho; không gọi số dư này là lợi nhuận cuối của toàn quán.
+3. Lịch sử ghé của khách: quy tắc tiếp khách của cửa hàng giả định, có chuyển người phụ trách khi cần. Đã đọc hướng dẫn chính thức hiện hành của個人情報保護委員会,通則編2-1/2-8/3-6-1,ngày03/11/2026. Giữ điều kiện nhận diện cá nhân, nguyên tắc đồng ý và ngoại lệ; không nói mọi hội thoại đều trái luật.
+
+R7+r8 thêm2đoạn học và6câu,96cặp dịch/840trường và64trường ruby; giữ nguyên287câu trước r7 cùng đáp án/readings/thứ tự, gồm5câu r5/r6. BảnMyanmar chỉ sửa4trường thuật ngữ đã ghi receipt. Source31 hiện588canonical items/7056bản ghi ngôn ngữ/45756trường;1481facts trong crosswalk gồm3app-model facts được gắn loại riêng, không phải1481ý nguồn đã nghiệm thu.
+
+Gate hiện hành: `check-source-v2-round8.cjs` PASS; strict12locale/matrix/v2contract PASS. SSR13ngôn ngữ cả phần r8 PASS; browser viewport vẫn bị chặn bởi quyền socket. Ngày2号tuần6/ngày6 có1763ký tự Nhật theo lịch, giữ hình marketing; mục tiêu30phút chưa đo. Không có audio binding của reader này; chưa nghiệm thu nghe hoặc thiết bị thật.
+
+Sổ PDF giữ60covered_ai/1479mục,1excluded/1418mục nguồn còn mở, mẫu số mở. Ba app extensions có chứng cứ theo mô hình riêng, vẫn chưa có duyệt chuyên gia/bản ngữ. Giữ khóa hoàn thành bài nền; đề bổ sung mở rộng tạo revision/key mới, không xóa bản ghi cũ và không tuyên bố chuyển tự động lượt dở. Các số `provenance_pending` trong hồ sơ r7 là snapshot lịch sử, thay bằng kết quả r8 này. Root xử lý release/commit/push/persistence.
+
+---
+
+# Nhà hàng — đối chiếu hai chiều r7,03/11/2026
+
+Mốc bảo toàn `f72e3e6cc36c1b407aace4b0e47a23a63ca7cdaa`. Đọc chữ và ảnh nguồn2号店舗運営trang21–22; hash nguồn không đổi. Hoàn thiện3nhóm: phát phiếu khi thanh toán; mục đích điểm thưởng/WEB宅配 và giới hạn nguồn; khách quen–QSC–giới thiệu truyền miệng.
+
+- Đóng5ý nguồn `f034/f035/f037/f040/f042` bằng3câu mới và1đoạn học mới; tái sử dụngq018đúng phạm vi cho điểm thưởng và kênh giao hàng.
+- Giữ nguyên3điều kiện app nhưng tách khỏi kết luận về nguồn: điều kiện phiếu/điểm thưởng; phí giao hàng và lợi nhuận; không tiết lộ lịch sử ghé của khách. Theo dõi bằng `appClaimExtensions` trong chính sổ chuẩn, trạng thái `provenance_pending`; không gọi3điều kiện này làcovered. Giữ nguyên câu cũ và diễn đạt gốc trong lịch sử chỉnh phạm vi.
+- Trang22là雇用管理, không phải đoạnQSC/khách mới; bỏ liên kết trang sai kế thừa sau khi đọc toàn trang, lưu lý do và liên kết cũ. Không suy nghiệm thu nội dung luật lao động.
+- Đủ48cặp dịch mới/420trường và32trường ruby theo revision. Có override nguyên trường cho `来た/来て/来たい=き`, `来る=く`. Làm rõ4trường tiếngMyanmar củaq018về điểm thưởng; Nhật/đáp án/hash gốc không đổi. Chưa duyệt bản ngữ.
+- Bảo toàn287câu trước r7, gồm5câu r5/r6, toàn bộ bài/ảnh/thuật ngữ và khóa hoàn thành bài nền. Thêm câu làm đổi revision đề bổ sung: bản ghi cũ vẫn lưu nguyên ở khóa cũ; không tuyên bố tự chuyển lượt làm dở sang revision mở rộng.
+- Ngày2号tuần6/ngày6 thực sự mở được đoạn mới, thân bài Nhật theo lịch tăng1339→1487ký tự. Giữ hình độc lập `rst-daily-marketing` phù hợp mục tiêu so sánh hiệu quả trước/sau; không coi ký tự là30phút đã đo.
+
+Kiểm tra r7 hẹp, strict12locale và v2contract PASS. RNWeb SSR hiển thị đúng13ngôn ngữ gồm Nhật. Chromium không khởi động được vì `socket() Operation not permitted`, nên chưa có viewport/screenshot mới và không có kiểm thiết bị thật. Trình học trong phạm vi này chưa có audio binding/playback; ruby không thay thế nghiệm thu nghe. Chưa có chuyên gia, bản ngữ, thời lượng đo thực hoặc toàn nguồn.
+
+Sổ hiện1479mục,60covered_ai,1excluded,1418mục nguồn còn mở; thêm3app-claim extensions còn cần chứng cứ phù hợp. Mẫu số vẫn mở. Source31 hiện137đoạn/290câu bổ sung/584canonical items;7008bản ghi ngôn ngữ,45336trường. Đây là số biên dịch, không phải tỷ lệ bao phủ.
+
+Tiếp tục theo các mục còn mở và3app constraints; cần nguồn phù hợp hoặc chính sách cửa hàng được xác định rõ cho từng điều kiện. Root xử lý thử phát hành, commit/push và persistence. Chưa tự nhận đã lưu từ xa.
+
+---
+
 # Nhà hàng — hoàn thiện ba nhóm và tiếp quản r5/r6,03/11/2026
 
 Mốc đối chiếu bảo toàn: `4832f53f8407298126fa43c104a266972f2a3831`. Tiếp quản phần r5 đã sinh, tự đọc nguồn chữ/ảnh2号店舗運営trang7/12/20; hash nguồn33trang khớp `6c9d1d11108cb4bc114cdf653f2c1061a7f6606dfd4933119a15bc599a98225f`.

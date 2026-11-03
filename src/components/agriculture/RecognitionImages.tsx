@@ -3,6 +3,7 @@ import {ZoomableFigure} from './ZoomableFigure';
 import data from '@/data/agriculture/recognition-images.json';
 
 const assets:Record<string,ImageSourcePropType>={
+ "nursery-v9-crop-groups":require('../../../assets/agriculture/nursery-v9/nursery-crop-groups.png'),
  "cabbage":require('../../../assets/agriculture/recognition/cabbage-v1.webp'),
  "chinese-cabbage":require('../../../assets/agriculture/recognition/chinese-cabbage-v1.webp'),
  "lettuce":require('../../../assets/agriculture/recognition/lettuce-v1.webp'),

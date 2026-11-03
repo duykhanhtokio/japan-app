@@ -24,13 +24,14 @@ import additions57 from '@/data/food-manufacturing/source-closure57.json';
 import additions58 from '@/data/food-manufacturing/source-closure58.json';
 import additions62 from '@/data/food-manufacturing/source-closure62.json';
 import additions64 from '@/data/food-manufacturing/source-closure64.json';
+import additions65 from '@/data/food-manufacturing/source-closure65.json';
 import type {FoodManufacturingLesson} from '@/data/food-manufacturing';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 import {FoodSourceAssessmentChecks} from './FoodSourceAssessmentChecks';
 
 /** Separate source-bound additions preserve original lesson completion revisions. */
 export function FoodClosureSupplements({lesson,language,showTranslation,textColor,readingColor}:{lesson:FoodManufacturingLesson;language:string;showTranslation:boolean;textColor:string;readingColor:string}){
- return <>{[...data.sections,...additions34.sections,...additions38.sections,...additions39.sections,...additions40.sections,...additions41.sections,...additions42.sections,...additions43.sections,...additions44.sections,...additions45.sections,...additions46.sections,...additions47.sections,...additions48.sections,...additions49.sections,...additions50.sections,...additions51.sections,...additions52.sections,...additions53.sections,...additions54.sections,...additions55.sections,...additions56.sections,...additions57.sections,...additions58.sections,...additions62.sections,...additions64.sections].filter(s=>s.lessonId===lesson.id&&s.lessonSourceHash===lesson.sourceHash).map(section=>{
+ return <>{[...data.sections,...additions34.sections,...additions38.sections,...additions39.sections,...additions40.sections,...additions41.sections,...additions42.sections,...additions43.sections,...additions44.sections,...additions45.sections,...additions46.sections,...additions47.sections,...additions48.sections,...additions49.sections,...additions50.sections,...additions51.sections,...additions52.sections,...additions53.sections,...additions54.sections,...additions55.sections,...additions56.sections,...additions57.sections,...additions58.sections,...additions62.sections,...additions64.sections,...additions65.sections].filter(s=>s.lessonId===lesson.id&&s.lessonSourceHash===lesson.sourceHash).map(section=>{
  const candidate=(section.translations as Record<string,{title:string;text:string;sourceHash:string}>)[language];
  const t=candidate?.sourceHash===section.sourceHash?candidate:null;
  return <View key={section.id} testID={section.id} style={styles.section}>

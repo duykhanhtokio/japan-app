@@ -5,392 +5,7 @@ import { foremanSessions, foremanWeeks } from './foreman';
 import { differentialIllustrations, differentialIllustrationAspectRatios } from './differential-illustrations';
 import reusePolicy from './reuse-policy.json';
 import { fieldPracticalSessions, fieldPracticalWeeks } from './field-practical';
-import translations379 from './translations/session-379.json';
-import translations380 from './translations/session-380.json';
-import translations381 from './translations/session-381.json';
-import translations382 from './translations/session-382.json';
-import translations383 from './translations/session-383.json';
-import translations384 from './translations/session-384.json';
-import translations385 from './translations/session-385.json';
-import translations372 from './translations/session-372.json';
-import translations373 from './translations/session-373.json';
-import translations374 from './translations/session-374.json';
-import translations375 from './translations/session-375.json';
-import translations376 from './translations/session-376.json';
-import translations377 from './translations/session-377.json';
-import translations378 from './translations/session-378.json';
-import translations365 from './translations/session-365.json';
-import translations366 from './translations/session-366.json';
-import translations367 from './translations/session-367.json';
-import translations368 from './translations/session-368.json';
-import translations369 from './translations/session-369.json';
-import translations370 from './translations/session-370.json';
-import translations371 from './translations/session-371.json';
-import translations358 from './translations/session-358.json';
-import translations359 from './translations/session-359.json';
-import translations360 from './translations/session-360.json';
-import translations361 from './translations/session-361.json';
-import translations362 from './translations/session-362.json';
-import translations363 from './translations/session-363.json';
-import translations364 from './translations/session-364.json';
-import translations351 from './translations/session-351.json';
-import translations352 from './translations/session-352.json';
-import translations353 from './translations/session-353.json';
-import translations354 from './translations/session-354.json';
-import translations355 from './translations/session-355.json';
-import translations356 from './translations/session-356.json';
-import translations357 from './translations/session-357.json';
-import translations344 from './translations/session-344.json';
-import translations345 from './translations/session-345.json';
-import translations346 from './translations/session-346.json';
-import translations347 from './translations/session-347.json';
-import translations348 from './translations/session-348.json';
-import translations349 from './translations/session-349.json';
-import translations350 from './translations/session-350.json';
-import translations337 from './translations/session-337.json';
-import translations338 from './translations/session-338.json';
-import translations339 from './translations/session-339.json';
-import translations340 from './translations/session-340.json';
-import translations341 from './translations/session-341.json';
-import translations342 from './translations/session-342.json';
-import translations343 from './translations/session-343.json';
-import translations330 from './translations/session-330.json';
-import translations331 from './translations/session-331.json';
-import translations332 from './translations/session-332.json';
-import translations333 from './translations/session-333.json';
-import translations334 from './translations/session-334.json';
-import translations335 from './translations/session-335.json';
-import translations336 from './translations/session-336.json';
-import translations323 from './translations/session-323.json';
-import translations324 from './translations/session-324.json';
-import translations325 from './translations/session-325.json';
-import translations326 from './translations/session-326.json';
-import translations327 from './translations/session-327.json';
-import translations328 from './translations/session-328.json';
-import translations329 from './translations/session-329.json';
-import translations316 from './translations/session-316.json';
-import translations317 from './translations/session-317.json';
-import translations318 from './translations/session-318.json';
-import translations319 from './translations/session-319.json';
-import translations320 from './translations/session-320.json';
-import translations321 from './translations/session-321.json';
-import translations322 from './translations/session-322.json';
-import translations309 from './translations/session-309.json';
-import translations310 from './translations/session-310.json';
-import translations311 from './translations/session-311.json';
-import translations312 from './translations/session-312.json';
-import translations313 from './translations/session-313.json';
-import translations314 from './translations/session-314.json';
-import translations315 from './translations/session-315.json';
-import translations302 from './translations/session-302.json';
-import translations303 from './translations/session-303.json';
-import translations304 from './translations/session-304.json';
-import translations305 from './translations/session-305.json';
-import translations306 from './translations/session-306.json';
-import translations307 from './translations/session-307.json';
-import translations308 from './translations/session-308.json';
-import translations295 from './translations/session-295.json';
-import translations296 from './translations/session-296.json';
-import translations297 from './translations/session-297.json';
-import translations298 from './translations/session-298.json';
-import translations299 from './translations/session-299.json';
-import translations300 from './translations/session-300.json';
-import translations301 from './translations/session-301.json';
-import translations288 from './translations/session-288.json';
-import translations289 from './translations/session-289.json';
-import translations290 from './translations/session-290.json';
-import translations291 from './translations/session-291.json';
-import translations292 from './translations/session-292.json';
-import translations293 from './translations/session-293.json';
-import translations294 from './translations/session-294.json';
-import translations281 from './translations/session-281.json';
-import translations282 from './translations/session-282.json';
-import translations283 from './translations/session-283.json';
-import translations284 from './translations/session-284.json';
-import translations285 from './translations/session-285.json';
-import translations286 from './translations/session-286.json';
-import translations287 from './translations/session-287.json';
-import translations274 from './translations/session-274.json';
-import translations275 from './translations/session-275.json';
-import translations276 from './translations/session-276.json';
-import translations277 from './translations/session-277.json';
-import translations278 from './translations/session-278.json';
-import translations279 from './translations/session-279.json';
-import translations280 from './translations/session-280.json';
-import translations267 from './translations/session-267.json';
-import translations268 from './translations/session-268.json';
-import translations269 from './translations/session-269.json';
-import translations270 from './translations/session-270.json';
-import translations271 from './translations/session-271.json';
-import translations272 from './translations/session-272.json';
-import translations273 from './translations/session-273.json';
-import translations260 from './translations/session-260.json';
-import translations261 from './translations/session-261.json';
-import translations262 from './translations/session-262.json';
-import translations263 from './translations/session-263.json';
-import translations264 from './translations/session-264.json';
-import translations265 from './translations/session-265.json';
-import translations266 from './translations/session-266.json';
-import translations253 from './translations/session-253.json';
-import translations254 from './translations/session-254.json';
-import translations255 from './translations/session-255.json';
-import translations256 from './translations/session-256.json';
-import translations257 from './translations/session-257.json';
-import translations258 from './translations/session-258.json';
-import translations259 from './translations/session-259.json';
-import translations246 from './translations/session-246.json';
-import translations247 from './translations/session-247.json';
-import translations248 from './translations/session-248.json';
-import translations249 from './translations/session-249.json';
-import translations250 from './translations/session-250.json';
-import translations251 from './translations/session-251.json';
-import translations252 from './translations/session-252.json';
-import translations239 from './translations/session-239.json';
-import translations240 from './translations/session-240.json';
-import translations241 from './translations/session-241.json';
-import translations242 from './translations/session-242.json';
-import translations243 from './translations/session-243.json';
-import translations244 from './translations/session-244.json';
-import translations245 from './translations/session-245.json';
-import translations232 from './translations/session-232.json';
-import translations233 from './translations/session-233.json';
-import translations234 from './translations/session-234.json';
-import translations235 from './translations/session-235.json';
-import translations236 from './translations/session-236.json';
-import translations237 from './translations/session-237.json';
-import translations238 from './translations/session-238.json';
-import translations225 from './translations/session-225.json';
-import translations226 from './translations/session-226.json';
-import translations227 from './translations/session-227.json';
-import translations228 from './translations/session-228.json';
-import translations229 from './translations/session-229.json';
-import translations230 from './translations/session-230.json';
-import translations231 from './translations/session-231.json';
-import translations218 from './translations/session-218.json';
-import translations219 from './translations/session-219.json';
-import translations220 from './translations/session-220.json';
-import translations221 from './translations/session-221.json';
-import translations222 from './translations/session-222.json';
-import translations223 from './translations/session-223.json';
-import translations224 from './translations/session-224.json';
-import translations211 from './translations/session-211.json';
-import translations212 from './translations/session-212.json';
-import translations213 from './translations/session-213.json';
-import translations214 from './translations/session-214.json';
-import translations215 from './translations/session-215.json';
-import translations216 from './translations/session-216.json';
-import translations217 from './translations/session-217.json';
-import translations204 from './translations/session-204.json';
-import translations205 from './translations/session-205.json';
-import translations206 from './translations/session-206.json';
-import translations207 from './translations/session-207.json';
-import translations208 from './translations/session-208.json';
-import translations209 from './translations/session-209.json';
-import translations210 from './translations/session-210.json';
-import translations197 from './translations/session-197.json';
-import translations198 from './translations/session-198.json';
-import translations199 from './translations/session-199.json';
-import translations200 from './translations/session-200.json';
-import translations201 from './translations/session-201.json';
-import translations202 from './translations/session-202.json';
-import translations203 from './translations/session-203.json';
-import translations190 from './translations/session-190.json';
-import translations191 from './translations/session-191.json';
-import translations192 from './translations/session-192.json';
-import translations193 from './translations/session-193.json';
-import translations194 from './translations/session-194.json';
-import translations195 from './translations/session-195.json';
-import translations196 from './translations/session-196.json';
-import translations183 from './translations/session-183.json';
-import translations184 from './translations/session-184.json';
-import translations185 from './translations/session-185.json';
-import translations186 from './translations/session-186.json';
-import translations187 from './translations/session-187.json';
-import translations188 from './translations/session-188.json';
-import translations189 from './translations/session-189.json';
-import translations176 from './translations/session-176.json';
-import translations177 from './translations/session-177.json';
-import translations178 from './translations/session-178.json';
-import translations179 from './translations/session-179.json';
-import translations180 from './translations/session-180.json';
-import translations181 from './translations/session-181.json';
-import translations182 from './translations/session-182.json';
-import translations169 from './translations/session-169.json';
-import translations170 from './translations/session-170.json';
-import translations171 from './translations/session-171.json';
-import translations172 from './translations/session-172.json';
-import translations173 from './translations/session-173.json';
-import translations174 from './translations/session-174.json';
-import translations175 from './translations/session-175.json';
-import translations162 from './translations/session-162.json';
-import translations163 from './translations/session-163.json';
-import translations164 from './translations/session-164.json';
-import translations165 from './translations/session-165.json';
-import translations166 from './translations/session-166.json';
-import translations167 from './translations/session-167.json';
-import translations168 from './translations/session-168.json';
-import translations155 from './translations/session-155.json';
-import translations156 from './translations/session-156.json';
-import translations157 from './translations/session-157.json';
-import translations158 from './translations/session-158.json';
-import translations159 from './translations/session-159.json';
-import translations160 from './translations/session-160.json';
-import translations161 from './translations/session-161.json';
-import translations154 from './translations/session-154.json';
-import translations153 from './translations/session-153.json';
-import translations152 from './translations/session-152.json';
-import translations151 from './translations/session-151.json';
-import translations150 from './translations/session-150.json';
-import translations149 from './translations/session-149.json';
-import translations148 from './translations/session-148.json';
-import translations147 from './translations/session-147.json';
-import translations146 from './translations/session-146.json';
-import translations145 from './translations/session-145.json';
-import translations144 from './translations/session-144.json';
-import translations143 from './translations/session-143.json';
-import translations142 from './translations/session-142.json';
-import translations141 from './translations/session-141.json';
-import translations140 from './translations/session-140.json';
-import translations139 from './translations/session-139.json';
-import translations138 from './translations/session-138.json';
-import translations137 from './translations/session-137.json';
-import translations136 from './translations/session-136.json';
-import translations135 from './translations/session-135.json';
-import translations134 from './translations/session-134.json';
-import translations133 from './translations/session-133.json';
-import translations132 from './translations/session-132.json';
-import translations131 from './translations/session-131.json';
-import translations130 from './translations/session-130.json';
-import translations129 from './translations/session-129.json';
-import translations128 from './translations/session-128.json';
-import translations127 from './translations/session-127.json';
-import translations126 from './translations/session-126.json';
-import translations125 from './translations/session-125.json';
-import translations124 from './translations/session-124.json';
-import translations123 from './translations/session-123.json';
-import translations122 from './translations/session-122.json';
-import translations121 from './translations/session-121.json';
-import translations120 from './translations/session-120.json';
-import translations119 from './translations/session-119.json';
-import translations118 from './translations/session-118.json';
-import translations117 from './translations/session-117.json';
-import translations116 from './translations/session-116.json';
-import translations115 from './translations/session-115.json';
-import translations114 from './translations/session-114.json';
-import translations113 from './translations/session-113.json';
-import translations112 from './translations/session-112.json';
-import translations111 from './translations/session-111.json';
-import translations110 from './translations/session-110.json';
-import translations109 from './translations/session-109.json';
-import translations108 from './translations/session-108.json';
-import translations107 from './translations/session-107.json';
-import translations106 from './translations/session-106.json';
-import translations105 from './translations/session-105.json';
-import translations104 from './translations/session-104.json';
-import translations103 from './translations/session-103.json';
-import translations102 from './translations/session-102.json';
-import translations101 from './translations/session-101.json';
-import translations100 from './translations/session-100.json';
-import translations099 from './translations/session-099.json';
-import translations098 from './translations/session-098.json';
-import translations097 from './translations/session-097.json';
-import translations096 from './translations/session-096.json';
-import translations095 from './translations/session-095.json';
-import translations094 from './translations/session-094.json';
-import translations093 from './translations/session-093.json';
-import translations092 from './translations/session-092.json';
-import translations091 from './translations/session-091.json';
-import translations090 from './translations/session-090.json';
-import translations089 from './translations/session-089.json';
-import translations088 from './translations/session-088.json';
-import translations087 from './translations/session-087.json';
-import translations086 from './translations/session-086.json';
-import translations085 from './translations/session-085.json';
-import translations084 from './translations/session-084.json';
-import translations083 from './translations/session-083.json';
-import translations082 from './translations/session-082.json';
-import translations081 from './translations/session-081.json';
-import translations080 from './translations/session-080.json';
-import translations079 from './translations/session-079.json';
-import translations078 from './translations/session-078.json';
-import translations077 from './translations/session-077.json';
-import translations076 from './translations/session-076.json';
-import translations075 from './translations/session-075.json';
-import translations074 from './translations/session-074.json';
-import translations073 from './translations/session-073.json';
-import translations072 from './translations/session-072.json';
-import translations071 from './translations/session-071.json';
-import translations070 from './translations/session-070.json';
-import translations069 from './translations/session-069.json';
-import translations068 from './translations/session-068.json';
-import translations067 from './translations/session-067.json';
-import translations066 from './translations/session-066.json';
-import translations065 from './translations/session-065.json';
-import translations064 from './translations/session-064.json';
-import translations063 from './translations/session-063.json';
-import translations062 from './translations/session-062.json';
-import translations061 from './translations/session-061.json';
-import translations060 from './translations/session-060.json';
-import translations059 from './translations/session-059.json';
-import translations058 from './translations/session-058.json';
-import translations057 from './translations/session-057.json';
-import translations056 from './translations/session-056.json';
-import translations055 from './translations/session-055.json';
-import translations054 from './translations/session-054.json';
-import translations053 from './translations/session-053.json';
-import translations052 from './translations/session-052.json';
-import translations051 from './translations/session-051.json';
-import translations050 from './translations/session-050.json';
-import translations049 from './translations/session-049.json';
-import translations048 from './translations/session-048.json';
-import translations047 from './translations/session-047.json';
-import translations046 from './translations/session-046.json';
-import translations045 from './translations/session-045.json';
-import translations044 from './translations/session-044.json';
-import translations043 from './translations/session-043.json';
-import translations042 from './translations/session-042.json';
-import translations041 from './translations/session-041.json';
-import translations040 from './translations/session-040.json';
-import translations039 from './translations/session-039.json';
-import translations038 from './translations/session-038.json';
-import translations037 from './translations/session-037.json';
-import translations036 from './translations/session-036.json';
-import translations035 from './translations/session-035.json';
-import translations034 from './translations/session-034.json';
-import translations033 from './translations/session-033.json';
-import translations032 from './translations/session-032.json';
-import translations031 from './translations/session-031.json';
-import translations030 from './translations/session-030.json';
-import translations029 from './translations/session-029.json';
-import translations028 from './translations/session-028.json';
-import translations027 from './translations/session-027.json';
-import translations026 from './translations/session-026.json';
-import translations025 from './translations/session-025.json';
-import translations024 from './translations/session-024.json';
-import translations023 from './translations/session-023.json';
-import translations022 from './translations/session-022.json';
-import translations021 from './translations/session-021.json';
-import translations020 from './translations/session-020.json';
-import translations019 from './translations/session-019.json';
-import translations018 from './translations/session-018.json';
-import translations017 from './translations/session-017.json';
-import translations016 from './translations/session-016.json';
-import translations015 from './translations/session-015.json';
-import translations014 from './translations/session-014.json';
-import translations013 from './translations/session-013.json';
-import translations012 from './translations/session-012.json';
-import translations011 from './translations/session-011.json';
-import translations010 from './translations/session-010.json';
-import translations009 from './translations/session-009.json';
-import translations008 from './translations/session-008.json';
-import translations007 from './translations/session-007.json';
-import translations006 from './translations/session-006.json';
-import translations005 from './translations/session-005.json';
-import translations004 from './translations/session-004.json';
-import translations003 from './translations/session-003.json';
-import translations002 from './translations/session-002.json';
-import translations001 from './translations/session-001.json';
-import {applyLessonTranslations,type TranslationBundle} from './localization';
+import {deferLessonTranslations,type TranslationBundle} from './localization';
 import {weeklyIllustrations,weeklyIllustrationAspectRatios} from './weekly-illustrations';
 import type {ImageSourcePropType} from 'react-native';
 import session001 from '../../../docs/ssw-workspace/kensetsu/shared-session-001.json';
@@ -854,9 +469,394 @@ export type Week={id:string;titleJa:string;sessionIds:string[]};
 export const fields:{id:Field;title:string}[]=[{id:'utilities',title:'ライフライン・設備'},{id:'building',title:'建築'},{id:'civil',title:'土木'}];
 
 const sourceSessions:Session[]=[...foremanSessions,...fieldPracticalSessions,session001,session002,session003,session004,session005,session006,session007,session008,session009,session010,session011,session012,session013,session014,session015,session016,session017,session018,session019,session020,session021,session022,session023,session024,session025,session026,session027,session028,session029,session030,session031,session032,session033,session034,session035,session036,session037,session038,session039,session040,session041,session042,session043,session044,session045,session046,session047,session048,session049,session050,session051,session052,session053,session054,session055,session056,session057,session058,session059,session060,session061,session062,session063,session064,session065,session066,session067,session068,session069,session070,session071,session072,session073,session074,session075,session076,session077,session078,session079,session080,session081,session082,session083,session084,session085,session086,session087,session088,session089,session090,session091,session092,session093,session094,session095,session096,session097,session098,session099,session100,session101,session102,session103,session104,session105,session106,session107,session108,session109,session110,session111,session112,session113,session114,session115,session116,session117,session118,session119,session120,session121,session122,session123,session124,session125,session126,session127,session128,session129,session130,session131,session132,session133,session134,session135,session136,session137,session138,session139,session140,session141,session142,session143,session144,session145,session146,session147,session148,session149,session150,session151,session152,session153,session154,session155,session156,session157,session158,session159,session160,session161,session162,session163,session164,session165,session166,session167,session168,session169,session170,session171,session172,session173,session174,session175,session176,session177,session178,session179,session180,session181,session182,session183,session184,session185,session186,session187,session188,session189,session190,session191,session192,session193,session194,session195,session196,session197,session198,session199,session200,session201,session202,session203,session204,session205,session206,session207,session208,session209,session210,session211,session212,session213,session214,session215,session216,session217,session218,session219,session220,session221,session222,session223,session224,session225,session226,session227,session228,session229,session230,session231,session232,session233,session234,session235,session236,session237,session238,session239,session240,session241,session242,session243,session244,session245,session246,session247,session248,session249,session250,session251,session252,session253,session254,session255,session256,session257,session258,session259,session260,session261,session262,session263,session264,session265,session266,session267,session268,session269,session270,session271,session272,session273,session274,session275,session276,session277,session278,session279,session280,session281,session282,session283,session284,session285,session286,session287,session288,session289,session290,session291,session292,session293,session294,session295,session296,session297,session298,session299,session300,session301,session302,session303,session304,session305,session306,session307,session308,session309,session310,session311,session312,session313,session314,session315,session316,session317,session318,session319,session320,session321,session322,session323,session324,session325,session326,session327,session328,session329,session330,session331,session332,session333,session334,session335,session336,session337,session338,session339,session340,session341,session342,session343,session344,session345,session346,session347,session348,session349,session350,session351,session352,session353,session354,session355,session356,session357,session358,session359,session360,session361,session362,session363,session364,session365,session366,session367,session368,session369,session370,session371,session372,session373,session374,session375,session376,session377,session378,session379,session380,session381,session382,session383,session384,session385] as unknown as Session[];
-const translationBundles:TranslationBundle[]=[translations001,translations002,translations003,translations004,translations005,translations006,translations007,translations008,translations009,translations010,translations011,translations012,translations013,translations014,translations015,translations016,translations017,translations018,translations019,translations020,translations021,translations022,translations023,translations024,translations025,translations026,translations027,translations028,translations029,translations030,translations031,translations032,translations033,translations034,translations035,translations036,translations037,translations038,translations039,translations040,translations041,translations042,translations043,translations044,translations045,translations046,translations047,translations048,translations049,translations050,translations051,translations052,translations053,translations054,translations055,translations056,translations057,translations058,translations059,translations060,translations061,translations062,translations063,translations064,translations065,translations066,translations067,translations068,translations069,translations070,translations071,translations072,translations073,translations074,translations075,translations076,translations077,translations078,translations079,translations080,translations081,translations082,translations083,translations084,translations085,translations086,translations087,translations088,translations089,translations090,translations091,translations092,translations093,translations094,translations095,translations096,translations097,translations098,translations099,translations100,translations101,translations102,translations103,translations104,translations105,translations106,translations107,translations108,translations109,translations110,translations111,translations112,translations113,translations114,translations115,translations116,translations117,translations118,translations119,translations120,translations121,translations122,translations123,translations124,translations125,translations126,translations127,translations128,translations129,translations130,translations131,translations132,translations133,translations134,translations135,translations136,translations137,translations138,translations139,translations140,translations141,translations142,translations143,translations144,translations145,translations146,translations147,translations148,translations149,translations150,translations151,translations152,translations153,translations154,translations155,translations156,translations157,translations158,translations159,translations160,translations161,translations162,translations163,translations164,translations165,translations166,translations167,translations168,translations169,translations170,translations171,translations172,translations173,translations174,translations175,translations176,translations177,translations178,translations179,translations180,translations181,translations182,translations183,translations184,translations185,translations186,translations187,translations188,translations189,translations190,translations191,translations192,translations193,translations194,translations195,translations196,translations197,translations198,translations199,translations200,translations201,translations202,translations203,translations204,translations205,translations206,translations207,translations208,translations209,translations210,translations211,translations212,translations213,translations214,translations215,translations216,translations217,translations218,translations219,translations220,translations221,translations222,translations223,translations224,translations225,translations226,translations227,translations228,translations229,translations230,translations231,translations232,translations233,translations234,translations235,translations236,translations237,translations238,translations239,translations240,translations241,translations242,translations243,translations244,translations245,translations246,translations247,translations248,translations249,translations250,translations251,translations252,translations253,translations254,translations255,translations256,translations257,translations258,translations259,translations260,translations261,translations262,translations263,translations264,translations265,translations266,translations267,translations268,translations269,translations270,translations271,translations272,translations273,translations274,translations275,translations276,translations277,translations278,translations279,translations280,translations281,translations282,translations283,translations284,translations285,translations286,translations287,translations288,translations289,translations290,translations291,translations292,translations293,translations294,translations295,translations296,translations297,translations298,translations299,translations300,translations301,translations302,translations303,translations304,translations305,translations306,translations307,translations308,translations309,translations310,translations311,translations312,translations313,translations314,translations315,translations316,translations317,translations318,translations319,translations320,translations321,translations322,translations323,translations324,translations325,translations326,translations327,translations328,translations329,translations330,translations331,translations332,translations333,translations334,translations335,translations336,translations337,translations338,translations339,translations340,translations341,translations342,translations343,translations344,translations345,translations346,translations347,translations348,translations349,translations350,translations351,translations352,translations353,translations354,translations355,translations356,translations357,translations358,translations359,translations360,translations361,translations362,translations363,translations364,translations365,translations366,translations367,translations368,translations369,translations370,translations371,translations372,translations373,translations374,translations375,translations376,translations377,translations378,translations379,translations380,translations381,translations382,translations383,translations384,translations385];
-const translationBySession=new Map(translationBundles.map(b=>[b.sessionId,b]));
-export const sessions:Session[]=sourceSessions.map(session=>{const bundle=translationBySession.get(session.id);return bundle?applyLessonTranslations(session,bundle):session;});
+const translationLoaders:Record<string,()=>TranslationBundle>={
+ "kensetsu-common-session-001":()=>require("./translations/session-001.json"),
+ "kensetsu-common-session-002":()=>require("./translations/session-002.json"),
+ "kensetsu-common-session-003":()=>require("./translations/session-003.json"),
+ "kensetsu-common-session-004":()=>require("./translations/session-004.json"),
+ "kensetsu-common-session-005":()=>require("./translations/session-005.json"),
+ "kensetsu-common-session-006":()=>require("./translations/session-006.json"),
+ "kensetsu-common-session-007":()=>require("./translations/session-007.json"),
+ "kensetsu-common-session-008":()=>require("./translations/session-008.json"),
+ "kensetsu-common-session-009":()=>require("./translations/session-009.json"),
+ "kensetsu-common-session-010":()=>require("./translations/session-010.json"),
+ "kensetsu-common-session-011":()=>require("./translations/session-011.json"),
+ "kensetsu-common-session-012":()=>require("./translations/session-012.json"),
+ "kensetsu-common-session-013":()=>require("./translations/session-013.json"),
+ "kensetsu-common-session-014":()=>require("./translations/session-014.json"),
+ "kensetsu-common-session-015":()=>require("./translations/session-015.json"),
+ "kensetsu-common-session-016":()=>require("./translations/session-016.json"),
+ "kensetsu-common-session-017":()=>require("./translations/session-017.json"),
+ "kensetsu-common-session-018":()=>require("./translations/session-018.json"),
+ "kensetsu-common-session-019":()=>require("./translations/session-019.json"),
+ "kensetsu-common-session-020":()=>require("./translations/session-020.json"),
+ "kensetsu-common-session-021":()=>require("./translations/session-021.json"),
+ "kensetsu-common-session-022":()=>require("./translations/session-022.json"),
+ "kensetsu-common-session-023":()=>require("./translations/session-023.json"),
+ "kensetsu-common-session-024":()=>require("./translations/session-024.json"),
+ "kensetsu-common-session-025":()=>require("./translations/session-025.json"),
+ "kensetsu-common-session-026":()=>require("./translations/session-026.json"),
+ "kensetsu-common-session-027":()=>require("./translations/session-027.json"),
+ "kensetsu-common-session-028":()=>require("./translations/session-028.json"),
+ "kensetsu-common-session-029":()=>require("./translations/session-029.json"),
+ "kensetsu-common-session-030":()=>require("./translations/session-030.json"),
+ "kensetsu-common-session-031":()=>require("./translations/session-031.json"),
+ "kensetsu-common-session-032":()=>require("./translations/session-032.json"),
+ "kensetsu-common-session-033":()=>require("./translations/session-033.json"),
+ "kensetsu-common-session-034":()=>require("./translations/session-034.json"),
+ "kensetsu-common-session-035":()=>require("./translations/session-035.json"),
+ "kensetsu-common-session-036":()=>require("./translations/session-036.json"),
+ "kensetsu-common-session-037":()=>require("./translations/session-037.json"),
+ "kensetsu-common-session-038":()=>require("./translations/session-038.json"),
+ "kensetsu-common-session-039":()=>require("./translations/session-039.json"),
+ "kensetsu-common-session-040":()=>require("./translations/session-040.json"),
+ "kensetsu-common-session-041":()=>require("./translations/session-041.json"),
+ "kensetsu-common-session-042":()=>require("./translations/session-042.json"),
+ "kensetsu-common-session-043":()=>require("./translations/session-043.json"),
+ "kensetsu-common-session-044":()=>require("./translations/session-044.json"),
+ "kensetsu-common-session-045":()=>require("./translations/session-045.json"),
+ "kensetsu-common-session-046":()=>require("./translations/session-046.json"),
+ "kensetsu-common-session-047":()=>require("./translations/session-047.json"),
+ "kensetsu-common-session-048":()=>require("./translations/session-048.json"),
+ "kensetsu-common-session-049":()=>require("./translations/session-049.json"),
+ "kensetsu-common-session-050":()=>require("./translations/session-050.json"),
+ "kensetsu-common-session-051":()=>require("./translations/session-051.json"),
+ "kensetsu-common-session-052":()=>require("./translations/session-052.json"),
+ "kensetsu-common-session-053":()=>require("./translations/session-053.json"),
+ "kensetsu-common-session-054":()=>require("./translations/session-054.json"),
+ "kensetsu-common-session-055":()=>require("./translations/session-055.json"),
+ "kensetsu-common-session-056":()=>require("./translations/session-056.json"),
+ "kensetsu-common-session-057":()=>require("./translations/session-057.json"),
+ "kensetsu-common-session-058":()=>require("./translations/session-058.json"),
+ "kensetsu-common-session-059":()=>require("./translations/session-059.json"),
+ "kensetsu-common-session-060":()=>require("./translations/session-060.json"),
+ "kensetsu-common-session-061":()=>require("./translations/session-061.json"),
+ "kensetsu-common-session-062":()=>require("./translations/session-062.json"),
+ "kensetsu-common-session-063":()=>require("./translations/session-063.json"),
+ "kensetsu-common-session-064":()=>require("./translations/session-064.json"),
+ "kensetsu-common-session-065":()=>require("./translations/session-065.json"),
+ "kensetsu-common-session-066":()=>require("./translations/session-066.json"),
+ "kensetsu-common-session-067":()=>require("./translations/session-067.json"),
+ "kensetsu-common-session-068":()=>require("./translations/session-068.json"),
+ "kensetsu-common-session-069":()=>require("./translations/session-069.json"),
+ "kensetsu-common-session-070":()=>require("./translations/session-070.json"),
+ "kensetsu-common-session-071":()=>require("./translations/session-071.json"),
+ "kensetsu-common-session-072":()=>require("./translations/session-072.json"),
+ "kensetsu-common-session-073":()=>require("./translations/session-073.json"),
+ "kensetsu-common-session-074":()=>require("./translations/session-074.json"),
+ "kensetsu-common-session-075":()=>require("./translations/session-075.json"),
+ "kensetsu-common-session-076":()=>require("./translations/session-076.json"),
+ "kensetsu-common-session-077":()=>require("./translations/session-077.json"),
+ "kensetsu-common-session-078":()=>require("./translations/session-078.json"),
+ "kensetsu-common-session-079":()=>require("./translations/session-079.json"),
+ "kensetsu-common-session-080":()=>require("./translations/session-080.json"),
+ "kensetsu-common-session-081":()=>require("./translations/session-081.json"),
+ "kensetsu-common-session-082":()=>require("./translations/session-082.json"),
+ "kensetsu-common-session-083":()=>require("./translations/session-083.json"),
+ "kensetsu-common-session-084":()=>require("./translations/session-084.json"),
+ "kensetsu-common-session-085":()=>require("./translations/session-085.json"),
+ "kensetsu-common-session-086":()=>require("./translations/session-086.json"),
+ "kensetsu-common-session-087":()=>require("./translations/session-087.json"),
+ "kensetsu-common-session-088":()=>require("./translations/session-088.json"),
+ "kensetsu-common-session-089":()=>require("./translations/session-089.json"),
+ "kensetsu-common-session-090":()=>require("./translations/session-090.json"),
+ "kensetsu-common-session-091":()=>require("./translations/session-091.json"),
+ "kensetsu-common-session-092":()=>require("./translations/session-092.json"),
+ "kensetsu-common-session-093":()=>require("./translations/session-093.json"),
+ "kensetsu-common-session-094":()=>require("./translations/session-094.json"),
+ "kensetsu-common-session-095":()=>require("./translations/session-095.json"),
+ "kensetsu-common-session-096":()=>require("./translations/session-096.json"),
+ "kensetsu-common-session-097":()=>require("./translations/session-097.json"),
+ "kensetsu-common-session-098":()=>require("./translations/session-098.json"),
+ "kensetsu-common-session-099":()=>require("./translations/session-099.json"),
+ "kensetsu-common-session-100":()=>require("./translations/session-100.json"),
+ "kensetsu-common-session-101":()=>require("./translations/session-101.json"),
+ "kensetsu-common-session-102":()=>require("./translations/session-102.json"),
+ "kensetsu-common-session-103":()=>require("./translations/session-103.json"),
+ "kensetsu-common-session-104":()=>require("./translations/session-104.json"),
+ "kensetsu-common-session-105":()=>require("./translations/session-105.json"),
+ "kensetsu-common-session-106":()=>require("./translations/session-106.json"),
+ "kensetsu-common-session-107":()=>require("./translations/session-107.json"),
+ "kensetsu-common-session-108":()=>require("./translations/session-108.json"),
+ "kensetsu-common-session-109":()=>require("./translations/session-109.json"),
+ "kensetsu-common-session-110":()=>require("./translations/session-110.json"),
+ "kensetsu-common-session-111":()=>require("./translations/session-111.json"),
+ "kensetsu-common-session-112":()=>require("./translations/session-112.json"),
+ "kensetsu-common-session-113":()=>require("./translations/session-113.json"),
+ "kensetsu-common-session-114":()=>require("./translations/session-114.json"),
+ "kensetsu-common-session-115":()=>require("./translations/session-115.json"),
+ "kensetsu-common-session-116":()=>require("./translations/session-116.json"),
+ "kensetsu-common-session-117":()=>require("./translations/session-117.json"),
+ "kensetsu-common-session-118":()=>require("./translations/session-118.json"),
+ "kensetsu-common-session-119":()=>require("./translations/session-119.json"),
+ "kensetsu-common-session-120":()=>require("./translations/session-120.json"),
+ "kensetsu-common-session-121":()=>require("./translations/session-121.json"),
+ "kensetsu-common-session-122":()=>require("./translations/session-122.json"),
+ "kensetsu-common-session-123":()=>require("./translations/session-123.json"),
+ "kensetsu-common-session-124":()=>require("./translations/session-124.json"),
+ "kensetsu-common-session-125":()=>require("./translations/session-125.json"),
+ "kensetsu-common-session-126":()=>require("./translations/session-126.json"),
+ "kensetsu-common-session-127":()=>require("./translations/session-127.json"),
+ "kensetsu-common-session-128":()=>require("./translations/session-128.json"),
+ "kensetsu-common-session-129":()=>require("./translations/session-129.json"),
+ "kensetsu-common-session-130":()=>require("./translations/session-130.json"),
+ "kensetsu-common-session-131":()=>require("./translations/session-131.json"),
+ "kensetsu-common-session-132":()=>require("./translations/session-132.json"),
+ "kensetsu-common-session-133":()=>require("./translations/session-133.json"),
+ "kensetsu-common-session-134":()=>require("./translations/session-134.json"),
+ "kensetsu-common-session-135":()=>require("./translations/session-135.json"),
+ "kensetsu-common-session-136":()=>require("./translations/session-136.json"),
+ "kensetsu-common-session-137":()=>require("./translations/session-137.json"),
+ "kensetsu-common-session-138":()=>require("./translations/session-138.json"),
+ "kensetsu-common-session-139":()=>require("./translations/session-139.json"),
+ "kensetsu-common-session-140":()=>require("./translations/session-140.json"),
+ "kensetsu-common-session-141":()=>require("./translations/session-141.json"),
+ "kensetsu-common-session-142":()=>require("./translations/session-142.json"),
+ "kensetsu-common-session-143":()=>require("./translations/session-143.json"),
+ "kensetsu-common-session-144":()=>require("./translations/session-144.json"),
+ "kensetsu-common-session-145":()=>require("./translations/session-145.json"),
+ "kensetsu-common-session-146":()=>require("./translations/session-146.json"),
+ "kensetsu-common-session-147":()=>require("./translations/session-147.json"),
+ "kensetsu-common-session-148":()=>require("./translations/session-148.json"),
+ "kensetsu-common-session-149":()=>require("./translations/session-149.json"),
+ "kensetsu-common-session-150":()=>require("./translations/session-150.json"),
+ "kensetsu-common-session-151":()=>require("./translations/session-151.json"),
+ "kensetsu-common-session-152":()=>require("./translations/session-152.json"),
+ "kensetsu-common-session-153":()=>require("./translations/session-153.json"),
+ "kensetsu-common-session-154":()=>require("./translations/session-154.json"),
+ "kensetsu-common-session-155":()=>require("./translations/session-155.json"),
+ "kensetsu-common-session-156":()=>require("./translations/session-156.json"),
+ "kensetsu-common-session-157":()=>require("./translations/session-157.json"),
+ "kensetsu-common-session-158":()=>require("./translations/session-158.json"),
+ "kensetsu-common-session-159":()=>require("./translations/session-159.json"),
+ "kensetsu-common-session-160":()=>require("./translations/session-160.json"),
+ "kensetsu-common-session-161":()=>require("./translations/session-161.json"),
+ "kensetsu-common-session-162":()=>require("./translations/session-162.json"),
+ "kensetsu-common-session-163":()=>require("./translations/session-163.json"),
+ "kensetsu-common-session-164":()=>require("./translations/session-164.json"),
+ "kensetsu-common-session-165":()=>require("./translations/session-165.json"),
+ "kensetsu-common-session-166":()=>require("./translations/session-166.json"),
+ "kensetsu-common-session-167":()=>require("./translations/session-167.json"),
+ "kensetsu-common-session-168":()=>require("./translations/session-168.json"),
+ "kensetsu-common-session-169":()=>require("./translations/session-169.json"),
+ "kensetsu-common-session-170":()=>require("./translations/session-170.json"),
+ "kensetsu-common-session-171":()=>require("./translations/session-171.json"),
+ "kensetsu-common-session-172":()=>require("./translations/session-172.json"),
+ "kensetsu-common-session-173":()=>require("./translations/session-173.json"),
+ "kensetsu-common-session-174":()=>require("./translations/session-174.json"),
+ "kensetsu-common-session-175":()=>require("./translations/session-175.json"),
+ "kensetsu-common-session-176":()=>require("./translations/session-176.json"),
+ "kensetsu-common-session-177":()=>require("./translations/session-177.json"),
+ "kensetsu-common-session-178":()=>require("./translations/session-178.json"),
+ "kensetsu-common-session-179":()=>require("./translations/session-179.json"),
+ "kensetsu-common-session-180":()=>require("./translations/session-180.json"),
+ "kensetsu-common-session-181":()=>require("./translations/session-181.json"),
+ "kensetsu-common-session-182":()=>require("./translations/session-182.json"),
+ "kensetsu-common-session-183":()=>require("./translations/session-183.json"),
+ "kensetsu-common-session-184":()=>require("./translations/session-184.json"),
+ "kensetsu-common-session-185":()=>require("./translations/session-185.json"),
+ "kensetsu-common-session-186":()=>require("./translations/session-186.json"),
+ "kensetsu-common-session-187":()=>require("./translations/session-187.json"),
+ "kensetsu-common-session-188":()=>require("./translations/session-188.json"),
+ "kensetsu-common-session-189":()=>require("./translations/session-189.json"),
+ "kensetsu-common-session-190":()=>require("./translations/session-190.json"),
+ "kensetsu-common-session-191":()=>require("./translations/session-191.json"),
+ "kensetsu-common-session-192":()=>require("./translations/session-192.json"),
+ "kensetsu-common-session-193":()=>require("./translations/session-193.json"),
+ "kensetsu-common-session-194":()=>require("./translations/session-194.json"),
+ "kensetsu-common-session-195":()=>require("./translations/session-195.json"),
+ "kensetsu-common-session-196":()=>require("./translations/session-196.json"),
+ "kensetsu-common-session-197":()=>require("./translations/session-197.json"),
+ "kensetsu-common-session-198":()=>require("./translations/session-198.json"),
+ "kensetsu-common-session-199":()=>require("./translations/session-199.json"),
+ "kensetsu-common-session-200":()=>require("./translations/session-200.json"),
+ "kensetsu-common-session-201":()=>require("./translations/session-201.json"),
+ "kensetsu-common-session-202":()=>require("./translations/session-202.json"),
+ "kensetsu-common-session-203":()=>require("./translations/session-203.json"),
+ "kensetsu-common-session-204":()=>require("./translations/session-204.json"),
+ "kensetsu-common-session-205":()=>require("./translations/session-205.json"),
+ "kensetsu-common-session-206":()=>require("./translations/session-206.json"),
+ "kensetsu-common-session-207":()=>require("./translations/session-207.json"),
+ "kensetsu-common-session-208":()=>require("./translations/session-208.json"),
+ "kensetsu-common-session-209":()=>require("./translations/session-209.json"),
+ "kensetsu-common-session-210":()=>require("./translations/session-210.json"),
+ "kensetsu-common-session-211":()=>require("./translations/session-211.json"),
+ "kensetsu-common-session-212":()=>require("./translations/session-212.json"),
+ "kensetsu-common-session-213":()=>require("./translations/session-213.json"),
+ "kensetsu-common-session-214":()=>require("./translations/session-214.json"),
+ "kensetsu-common-session-215":()=>require("./translations/session-215.json"),
+ "kensetsu-common-session-216":()=>require("./translations/session-216.json"),
+ "kensetsu-common-session-217":()=>require("./translations/session-217.json"),
+ "kensetsu-common-session-218":()=>require("./translations/session-218.json"),
+ "kensetsu-common-session-219":()=>require("./translations/session-219.json"),
+ "kensetsu-common-session-220":()=>require("./translations/session-220.json"),
+ "kensetsu-common-session-221":()=>require("./translations/session-221.json"),
+ "kensetsu-common-session-222":()=>require("./translations/session-222.json"),
+ "kensetsu-common-session-223":()=>require("./translations/session-223.json"),
+ "kensetsu-common-session-224":()=>require("./translations/session-224.json"),
+ "kensetsu-common-session-225":()=>require("./translations/session-225.json"),
+ "kensetsu-common-session-226":()=>require("./translations/session-226.json"),
+ "kensetsu-common-session-227":()=>require("./translations/session-227.json"),
+ "kensetsu-common-session-228":()=>require("./translations/session-228.json"),
+ "kensetsu-common-session-229":()=>require("./translations/session-229.json"),
+ "kensetsu-common-session-230":()=>require("./translations/session-230.json"),
+ "kensetsu-common-session-231":()=>require("./translations/session-231.json"),
+ "kensetsu-common-session-232":()=>require("./translations/session-232.json"),
+ "kensetsu-common-session-233":()=>require("./translations/session-233.json"),
+ "kensetsu-common-session-234":()=>require("./translations/session-234.json"),
+ "kensetsu-common-session-235":()=>require("./translations/session-235.json"),
+ "kensetsu-common-session-236":()=>require("./translations/session-236.json"),
+ "kensetsu-common-session-237":()=>require("./translations/session-237.json"),
+ "kensetsu-common-session-238":()=>require("./translations/session-238.json"),
+ "kensetsu-common-session-239":()=>require("./translations/session-239.json"),
+ "kensetsu-common-session-240":()=>require("./translations/session-240.json"),
+ "kensetsu-common-session-241":()=>require("./translations/session-241.json"),
+ "kensetsu-common-session-242":()=>require("./translations/session-242.json"),
+ "kensetsu-common-session-243":()=>require("./translations/session-243.json"),
+ "kensetsu-common-session-244":()=>require("./translations/session-244.json"),
+ "kensetsu-common-session-245":()=>require("./translations/session-245.json"),
+ "kensetsu-common-session-246":()=>require("./translations/session-246.json"),
+ "kensetsu-common-session-247":()=>require("./translations/session-247.json"),
+ "kensetsu-common-session-248":()=>require("./translations/session-248.json"),
+ "kensetsu-common-session-249":()=>require("./translations/session-249.json"),
+ "kensetsu-common-session-250":()=>require("./translations/session-250.json"),
+ "kensetsu-common-session-251":()=>require("./translations/session-251.json"),
+ "kensetsu-common-session-252":()=>require("./translations/session-252.json"),
+ "kensetsu-common-session-253":()=>require("./translations/session-253.json"),
+ "kensetsu-common-session-254":()=>require("./translations/session-254.json"),
+ "kensetsu-common-session-255":()=>require("./translations/session-255.json"),
+ "kensetsu-common-session-256":()=>require("./translations/session-256.json"),
+ "kensetsu-common-session-257":()=>require("./translations/session-257.json"),
+ "kensetsu-common-session-258":()=>require("./translations/session-258.json"),
+ "kensetsu-common-session-259":()=>require("./translations/session-259.json"),
+ "kensetsu-common-session-260":()=>require("./translations/session-260.json"),
+ "kensetsu-common-session-261":()=>require("./translations/session-261.json"),
+ "kensetsu-common-session-262":()=>require("./translations/session-262.json"),
+ "kensetsu-common-session-263":()=>require("./translations/session-263.json"),
+ "kensetsu-common-session-264":()=>require("./translations/session-264.json"),
+ "kensetsu-common-session-265":()=>require("./translations/session-265.json"),
+ "kensetsu-common-session-266":()=>require("./translations/session-266.json"),
+ "kensetsu-common-session-267":()=>require("./translations/session-267.json"),
+ "kensetsu-common-session-268":()=>require("./translations/session-268.json"),
+ "kensetsu-common-session-269":()=>require("./translations/session-269.json"),
+ "kensetsu-common-session-270":()=>require("./translations/session-270.json"),
+ "kensetsu-common-session-271":()=>require("./translations/session-271.json"),
+ "kensetsu-common-session-272":()=>require("./translations/session-272.json"),
+ "kensetsu-common-session-273":()=>require("./translations/session-273.json"),
+ "kensetsu-common-session-274":()=>require("./translations/session-274.json"),
+ "kensetsu-common-session-275":()=>require("./translations/session-275.json"),
+ "kensetsu-common-session-276":()=>require("./translations/session-276.json"),
+ "kensetsu-common-session-277":()=>require("./translations/session-277.json"),
+ "kensetsu-common-session-278":()=>require("./translations/session-278.json"),
+ "kensetsu-common-session-279":()=>require("./translations/session-279.json"),
+ "kensetsu-common-session-280":()=>require("./translations/session-280.json"),
+ "kensetsu-common-session-281":()=>require("./translations/session-281.json"),
+ "kensetsu-common-session-282":()=>require("./translations/session-282.json"),
+ "kensetsu-common-session-283":()=>require("./translations/session-283.json"),
+ "kensetsu-common-session-284":()=>require("./translations/session-284.json"),
+ "kensetsu-common-session-285":()=>require("./translations/session-285.json"),
+ "kensetsu-common-session-286":()=>require("./translations/session-286.json"),
+ "kensetsu-common-session-287":()=>require("./translations/session-287.json"),
+ "kensetsu-common-session-288":()=>require("./translations/session-288.json"),
+ "kensetsu-common-session-289":()=>require("./translations/session-289.json"),
+ "kensetsu-common-session-290":()=>require("./translations/session-290.json"),
+ "kensetsu-common-session-291":()=>require("./translations/session-291.json"),
+ "kensetsu-common-session-292":()=>require("./translations/session-292.json"),
+ "kensetsu-common-session-293":()=>require("./translations/session-293.json"),
+ "kensetsu-common-session-294":()=>require("./translations/session-294.json"),
+ "kensetsu-common-session-295":()=>require("./translations/session-295.json"),
+ "kensetsu-common-session-296":()=>require("./translations/session-296.json"),
+ "kensetsu-common-session-297":()=>require("./translations/session-297.json"),
+ "kensetsu-common-session-298":()=>require("./translations/session-298.json"),
+ "kensetsu-common-session-299":()=>require("./translations/session-299.json"),
+ "kensetsu-common-session-300":()=>require("./translations/session-300.json"),
+ "kensetsu-common-session-301":()=>require("./translations/session-301.json"),
+ "kensetsu-common-session-302":()=>require("./translations/session-302.json"),
+ "kensetsu-common-session-303":()=>require("./translations/session-303.json"),
+ "kensetsu-common-session-304":()=>require("./translations/session-304.json"),
+ "kensetsu-common-session-305":()=>require("./translations/session-305.json"),
+ "kensetsu-common-session-306":()=>require("./translations/session-306.json"),
+ "kensetsu-common-session-307":()=>require("./translations/session-307.json"),
+ "kensetsu-common-session-308":()=>require("./translations/session-308.json"),
+ "kensetsu-common-session-309":()=>require("./translations/session-309.json"),
+ "kensetsu-common-session-310":()=>require("./translations/session-310.json"),
+ "kensetsu-common-session-311":()=>require("./translations/session-311.json"),
+ "kensetsu-common-session-312":()=>require("./translations/session-312.json"),
+ "kensetsu-common-session-313":()=>require("./translations/session-313.json"),
+ "kensetsu-common-session-314":()=>require("./translations/session-314.json"),
+ "kensetsu-common-session-315":()=>require("./translations/session-315.json"),
+ "kensetsu-common-session-316":()=>require("./translations/session-316.json"),
+ "kensetsu-common-session-317":()=>require("./translations/session-317.json"),
+ "kensetsu-common-session-318":()=>require("./translations/session-318.json"),
+ "kensetsu-common-session-319":()=>require("./translations/session-319.json"),
+ "kensetsu-common-session-320":()=>require("./translations/session-320.json"),
+ "kensetsu-common-session-321":()=>require("./translations/session-321.json"),
+ "kensetsu-common-session-322":()=>require("./translations/session-322.json"),
+ "kensetsu-common-session-323":()=>require("./translations/session-323.json"),
+ "kensetsu-common-session-324":()=>require("./translations/session-324.json"),
+ "kensetsu-common-session-325":()=>require("./translations/session-325.json"),
+ "kensetsu-common-session-326":()=>require("./translations/session-326.json"),
+ "kensetsu-common-session-327":()=>require("./translations/session-327.json"),
+ "kensetsu-common-session-328":()=>require("./translations/session-328.json"),
+ "kensetsu-common-session-329":()=>require("./translations/session-329.json"),
+ "kensetsu-common-session-330":()=>require("./translations/session-330.json"),
+ "kensetsu-common-session-331":()=>require("./translations/session-331.json"),
+ "kensetsu-common-session-332":()=>require("./translations/session-332.json"),
+ "kensetsu-common-session-333":()=>require("./translations/session-333.json"),
+ "kensetsu-common-session-334":()=>require("./translations/session-334.json"),
+ "kensetsu-common-session-335":()=>require("./translations/session-335.json"),
+ "kensetsu-common-session-336":()=>require("./translations/session-336.json"),
+ "kensetsu-common-session-337":()=>require("./translations/session-337.json"),
+ "kensetsu-common-session-338":()=>require("./translations/session-338.json"),
+ "kensetsu-common-session-339":()=>require("./translations/session-339.json"),
+ "kensetsu-common-session-340":()=>require("./translations/session-340.json"),
+ "kensetsu-common-session-341":()=>require("./translations/session-341.json"),
+ "kensetsu-common-session-342":()=>require("./translations/session-342.json"),
+ "kensetsu-common-session-343":()=>require("./translations/session-343.json"),
+ "kensetsu-common-session-344":()=>require("./translations/session-344.json"),
+ "kensetsu-common-session-345":()=>require("./translations/session-345.json"),
+ "kensetsu-common-session-346":()=>require("./translations/session-346.json"),
+ "kensetsu-common-session-347":()=>require("./translations/session-347.json"),
+ "kensetsu-common-session-348":()=>require("./translations/session-348.json"),
+ "kensetsu-common-session-349":()=>require("./translations/session-349.json"),
+ "kensetsu-common-session-350":()=>require("./translations/session-350.json"),
+ "kensetsu-common-session-351":()=>require("./translations/session-351.json"),
+ "kensetsu-common-session-352":()=>require("./translations/session-352.json"),
+ "kensetsu-common-session-353":()=>require("./translations/session-353.json"),
+ "kensetsu-common-session-354":()=>require("./translations/session-354.json"),
+ "kensetsu-common-session-355":()=>require("./translations/session-355.json"),
+ "kensetsu-common-session-356":()=>require("./translations/session-356.json"),
+ "kensetsu-common-session-357":()=>require("./translations/session-357.json"),
+ "kensetsu-common-session-358":()=>require("./translations/session-358.json"),
+ "kensetsu-common-session-359":()=>require("./translations/session-359.json"),
+ "kensetsu-common-session-360":()=>require("./translations/session-360.json"),
+ "kensetsu-common-session-361":()=>require("./translations/session-361.json"),
+ "kensetsu-common-session-362":()=>require("./translations/session-362.json"),
+ "kensetsu-common-session-363":()=>require("./translations/session-363.json"),
+ "kensetsu-common-session-364":()=>require("./translations/session-364.json"),
+ "kensetsu-common-session-365":()=>require("./translations/session-365.json"),
+ "kensetsu-common-session-366":()=>require("./translations/session-366.json"),
+ "kensetsu-common-session-367":()=>require("./translations/session-367.json"),
+ "kensetsu-common-session-368":()=>require("./translations/session-368.json"),
+ "kensetsu-common-session-369":()=>require("./translations/session-369.json"),
+ "kensetsu-common-session-370":()=>require("./translations/session-370.json"),
+ "kensetsu-common-session-371":()=>require("./translations/session-371.json"),
+ "kensetsu-common-session-372":()=>require("./translations/session-372.json"),
+ "kensetsu-common-session-373":()=>require("./translations/session-373.json"),
+ "kensetsu-common-session-374":()=>require("./translations/session-374.json"),
+ "kensetsu-common-session-375":()=>require("./translations/session-375.json"),
+ "kensetsu-common-session-376":()=>require("./translations/session-376.json"),
+ "kensetsu-common-session-377":()=>require("./translations/session-377.json"),
+ "kensetsu-common-session-378":()=>require("./translations/session-378.json"),
+ "kensetsu-common-session-379":()=>require("./translations/session-379.json"),
+ "kensetsu-common-session-380":()=>require("./translations/session-380.json"),
+ "kensetsu-common-session-381":()=>require("./translations/session-381.json"),
+ "kensetsu-common-session-382":()=>require("./translations/session-382.json"),
+ "kensetsu-common-session-383":()=>require("./translations/session-383.json"),
+ "kensetsu-common-session-384":()=>require("./translations/session-384.json"),
+ "kensetsu-common-session-385":()=>require("./translations/session-385.json"),
+};
+export const sessions:Session[]=sourceSessions.map(session=>{const load=translationLoaders[session.id];return load?deferLessonTranslations(session,load):session;});
 export const weeks:Week[]=[...foremanWeeks,week001,week002,week003,week004,week005,week006,week007,week008,week009,week010,week011,week012,week013,week014,week015,week016,week017,week018,week019,week020,week021,week022,week023,week024,week025,week026,week027,week028,week029,week030,week031,week032,week033,week034,week035,week036,week037,week038,week039,week040,week041,week042,week043,week044,week045,week046,week047,week048,week049,week050,week051,week052,week053,week054,week055,...fieldPracticalWeeks];
 
 export const sessionById=new Map(sessions.map(s=>[s.id,s]));

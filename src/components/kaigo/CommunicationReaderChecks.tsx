@@ -16,7 +16,9 @@ export function CommunicationReaderChecks({ day, sectionId, language, translatio
   if (!checks.length) return null;
   return <View testID="kaigo-communication-reader-checks">
     {checks.map(check => {
-      const translation = (check.translations as Record<string, { prompt: string; modelAnswer: string; teaching?: string }>)[language];
+      const sourceHash = (check as { sourceJapaneseSha256?: string }).sourceJapaneseSha256;
+      const candidate = (check.translations as Record<string, { prompt: string; modelAnswer: string; teaching?: string; sourceJapaneseSha256?: string }>)[language];
+      const translation = !sourceHash || candidate?.sourceJapaneseSha256 === sourceHash ? candidate : undefined;
       const answerOpen = !!opened[check.id];
       const teaching = check as {teachingJa?: string; teachingRuby?: RubyToken[]};
       return <View key={check.id} testID={check.id}>

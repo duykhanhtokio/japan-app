@@ -1,3 +1,17 @@
+# Ba nhóm khẩn cấp và rà ngôn ngữ theo phạm vi — 03/11/2026
+
+Baseline `f72e3e6c`. Đối chiếu hai chiều và khép 18 ý ở mức tự kiểm AI qua ba nhóm tuần tự: chuẩn bị theo nơi làm việc (7), phòng ngừa cháy/bảo vệ chức năng thiết bị (5), sơ tán và thông tin gọi hỗ trợ (6). Đọc chữ và ảnh nguồn 1号46–48, 2号58–61; gắn đúng hash/bbox từng vùng. 165→183/384 ý đã biết, còn 201 ý mở. Không khép cả trang hoặc đổi mẫu số sang hoàn tất.
+
+Phát hiện hai khoảng trống thật: câu cũ q01 chưa kiểm riêng tài liệu ứng phó của cơ sở; đoạn/câu sơ tán cũ mới nói rõ không dùng thang máy khi cháy, chưa kiểm riêng trường hợp động đất. Đã bổ sung `hotel-safety-01-q06`, `hotel-safety-02-q08` và câu Nhật về sơ tán sau động đất. Soạn trực tiếp 24 bản câu hỏi và 12 câu bổ sung theo 12 ngôn ngữ; bổ sung thủ công 13 entry furigana. 336 câu/38 bài, 456/456 cặp dịch đúng revision. Giữ nguyên 334 câu Nhật cũ, 456 cặp trường dịch cũ và 3.029 entry reading; hai revision mới lưu lịch sử lượt cũ và yêu cầu làm lại, không tự chuyển hoàn thành.
+
+Rà ngữ nghĩa có giới hạn rõ: 18 ý nguồn Nhật, 24 bản câu hỏi mới và 36 đoạn dịch đã chọn trên 12 ngôn ngữ (chuẩn bị thiết bị/tài liệu; giới hạn chữa cháy ban đầu; sơ tán cháy/động đất). Không gọi kiểm cấu trúc 456 cặp là chứng nhận ngữ nghĩa toàn bộ. Hướng dẫn công khai của 観光庁 về dừng chữa cháy khi lửa tới trần, gọi119 và chỉ dẫn sơ tán được đọc để kiểm phạm vi; không thêm chỉ dẫn thực hành chưa có căn cứ.
+
+Kiểm lịch thực: 38 ngày có PNG byte thật, hash và liên kết nạp theo bài; trung vị thân Nhật 919,5 ký tự, không ngày nào dưới nửa trung vị. Đây chỉ là sàng lọc khối lượng, không phải đo thời lượng. Hai hình safety01/02 đã xem và tự kiểm phù hợp mục tiêu, cập nhật bằng chứng trong image-manifest và daily-workload. Chưa duyệt hiển thị responsive/thiết bị thật cho lượt này. Bộ đọc khách sạn hiện chưa có liên kết recording/player: nghiệm thu âm thanh vẫn chưa hoàn tất; kiểm revision văn bản không thay cho kiểm âm thanh.
+
+PASS: sổ chuẩn, cấu trúc bài/câu, readings alignment/revision, source-atoms, 456 bản dịch/loader thật, state và kiểm bảo toàn bổ sung `check-emergency-source.cjs`. Receipt `recovery-v9/emergency-source-review.json`, `emergency-validation.json`, `emergency-language-daily-audit.json` ghi phạm vi và giới hạn. Chưa duyệt chuyên môn/bản ngữ, thiết bị thật, âm thanh hoặc thời lượng thực học. Điều phối lưu và xác minh remote trước khi báo đã lưu.
+
+---
+
 # Tiếp quản và nghiệm thu ba nhóm phục vụ — 03/11/2026
 
 Đã tiếp quản phần đang dở tại baseline `4832f53f`, giữ nguyên các thay đổi hợp lệ. Ba nhóm nguồn hoàn tất tuần tự: điện thoại/khiếu nại (6 ý), tư thế tiếp khách (4 ý), hướng dẫn và hỗ trợ khách (12 ý). Đọc lại chữ và ảnh 7 trang thuộc cả hai PDF; sổ chuẩn có vùng nguồn chính xác, liên kết hai chiều và bằng chứng bài/câu hiện hành. Hai trang chữ thuần 1号34 và 2号41 đã phân loại đủ 305 phần tử, gồm ruby, spans và thành phần điều hướng; không suy ra khép toàn bộ các trang còn lại.

@@ -4371,7 +4371,6 @@
         "reviewRef": null
       },
       "knowledgeIds": [
-        "rst31-operations2-f042",
         "rst31-operations2-f043",
         "rst31-operations2-f044",
         "rst31-operations2-f045",
@@ -97511,8 +97510,10 @@
         }
       ],
       "legacyExternalSourceRefs": [],
-      "statementJa": "再来店用割引券は会計時に案内し、当日値引きへ取り違えないよう条件と目的を共有する。",
-      "conditionsJa": [],
+      "statementJa": "再来店向けの割引券を今回のレジ精算時に渡し、当日だけの値引きと目的を区別する。",
+      "conditionsJa": [
+        "この施策は再来店を促す目的の券であり、入店時の当日値引き全般を禁止する意味ではない。"
+      ],
       "exceptionsJa": [],
       "importance": "core",
       "classification": "knowledge",
@@ -97521,38 +97522,29 @@
         "assessment": "present"
       },
       "after": {
-        "teaching": "partial",
-        "assessment": "partial"
+        "teaching": "present",
+        "assessment": "present"
       },
       "teachingEvidence": [
         {
-          "path": "src/data/restaurant/lessons.2.ja.json",
-          "jsonPointer": "/lessons/35/paragraphs/3/textJa",
-          "sha256": "e1fb3958ac036c98d9909c569e8f8fde5a78fd9385ceacfcdc436c116c6ed372",
+          "path": "src/data/restaurant/source31/2.json",
+          "jsonPointer": "/lessons/rst-2-ops-06/sections/0",
+          "sha256": "d17b1e35a8df7bbde0b4f631a03759a504b4264eaf4b625cc27ad89d4be9e4c7",
           "sha256Mode": "json-value",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "q258 tests next-visit voucher mistaken as same-day discount. Current paragraph3 says checkout revisit guidance without explicitly teaching voucher delivery timing; teaching remains partial for that exact source step."
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "New scheduled supplement explicitly teaches checkout handoff, next-visit purpose and the same-day-discount distinction."
         }
       ],
       "assessmentEvidence": [
         {
-          "path": "src/data/restaurant/exams.2.ja.json",
-          "sha256": "e85600b4664867a47f0d7bd825feb8a978e10d7952134510816cede4f64a4ce3",
-          "sha256Mode": "file",
-          "locator": "stemJa/optionsJa/correctIndex/explanationJa",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "Legacy question evidence retained without dropping its locator. It is not exact v2 semantic acceptance. q110 furigana-only repair: mathematical 積=せき; all semantic content/sourceHash/answers preserved."
-        },
-        {
-          "path": "src/data/restaurant/exams.2.ja.json",
-          "jsonPointer": "/exams/6/questions/17",
-          "sha256": "f82a462b376905a8b4194618f579717ae778c09e0bd528f7e73af964dd4ec6a9",
+          "path": "src/data/restaurant/source31/2.json",
+          "jsonPointer": "/lessons/rst-2-ops-06/exam/questions/3",
+          "sha256": "0bf9eb049b2e71f5b85a583dfacb4cc30cc0c0c89a8a75479124835d530ee904",
           "sha256Mode": "json-value",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "q258 tests next-visit voucher mistaken as same-day discount. Current paragraph3 says checkout revisit guidance without explicitly teaching voucher delivery timing; teaching remains partial for that exact source step."
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "New question requires both checkout timing and next-visit purpose; the distractors separately change timing, omit handoff or misstate the use occasion."
         }
       ],
       "imageEvidence": [],
@@ -97560,12 +97552,10 @@
       "assessmentExemptionReason": null,
       "expressionReview": {
         "status": "independent_ai_checked",
-        "note": "Teaching reorganizes operational concepts and uses original numerical/guest scenarios. Source terms/formulas are retained; no source prose/diagram is redistributed. q258 tests next-visit voucher mistaken as same-day discount. Current paragraph3 says checkout revisit guidance without explicitly teaching voucher delivery timing; teaching remains partial for that exact source step."
+        "note": "Source fact and precondition retained in independently stated teaching/scenarios. Any extra app constraint is preserved separately with pending provenance, not silently discarded or accepted as source content."
       },
-      "status": "partial",
-      "unresolved": [
-        "q258 tests next-visit voucher mistaken as same-day discount. Current paragraph3 says checkout revisit guidance without explicitly teaching voucher delivery timing; teaching remains partial for that exact source step."
-      ],
+      "status": "covered_ai",
+      "unresolved": [],
       "legacyImageEvidence": [],
       "legacyRefs": [
         {
@@ -97586,8 +97576,16 @@
       "sourceReview": {
         "status": "self_checked_ai",
         "conditionsChecked": true,
-        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-operations-review-20261103.json"
-      }
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r7-claim-review-20261103.json"
+      },
+      "legacyScopeCorrection": {
+        "originalStatementJa": "再来店用割引券は会計時に案内し、当日値引きへ取り違えないよう条件と目的を共有する。",
+        "reason": "Separate the exact source-supported atom from additional app instructions; original constraints are retained in appClaimExtensions and unchanged runtime paragraphs.",
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r7-claim-review-20261103.json"
+      },
+      "appClaimExtensionIds": [
+        "rst-app-terms-points-voucher"
+      ]
     },
     {
       "knowledgeId": "rst31-operations2-f035",
@@ -97614,7 +97612,7 @@
         }
       ],
       "legacyExternalSourceRefs": [],
-      "statementJa": "ポイント制度は複数回来店を促し、割引券と合わせる場合も条件を明確にする。",
+      "statementJa": "ポイント制度は複数回の来店を促し、割引券も再来店を促す別の施策である。",
       "conditionsJa": [],
       "exceptionsJa": [],
       "importance": "core",
@@ -97625,7 +97623,7 @@
       },
       "after": {
         "teaching": "present",
-        "assessment": "partial"
+        "assessment": "present"
       },
       "teachingEvidence": [
         {
@@ -97635,27 +97633,28 @@
           "sha256Mode": "json-value",
           "relation": "direct",
           "semanticReviewed": true,
-          "reviewNote": "Runtime q018 tests points for repeat visits. It does not test clear conditions when points and a coupon are combined; that added operational condition also needs support beyond the brief source description."
+          "reviewNote": "Direct only for loyalty points encouraging repeat visits; combination-use conditions are separately tracked as an app extension, not supported by this p21 passage.",
+          "quote": "ポイントをためて使う仕組みは繰り返す来店につなげ"
         }
       ],
       "assessmentEvidence": [
-        {
-          "path": "docs/ssw-workspace/restaurant/source-closure31/canonical-ja.json",
-          "jsonPointer": "/items/rst31-operations2-q018",
-          "sha256": "d3c21a7915a7ee70347c4046857f613d27800c2ed1fda56c712a262edf69b241",
-          "sha256Mode": "json-value",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "Runtime q018 tests points for repeat visits. It does not test clear conditions when points and a coupon are combined; that added operational condition also needs support beyond the brief source description."
-        },
         {
           "path": "src/data/restaurant/source31/2.json",
           "jsonPointer": "/lessons/rst-2-ops-06/exam/questions/0",
           "sha256": "2570fd05cae2d9be3984a3dae412df88d1cb664f2f6c61916ea469ef7d04b58c",
           "sha256Mode": "json-value",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "Runtime q018 tests points for repeat visits. It does not test clear conditions when points and a coupon are combined; that added operational condition also needs support beyond the brief source description."
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Existing four-purpose matching question assigns loyalty points to repeat visits. Reuse is exact for the narrowed source atom, not acceptance of combination-use conditions."
+        },
+        {
+          "path": "src/data/restaurant/source31/2.json",
+          "jsonPointer": "/lessons/rst-2-ops-06/exam/questions/3",
+          "sha256": "0bf9eb049b2e71f5b85a583dfacb4cc30cc0c0c89a8a75479124835d530ee904",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "The separate coupon question directly tests the coupon repeat-visit purpose. Together these questions cover two tools for repeat visits without claiming rules for simultaneous use."
         }
       ],
       "imageEvidence": [],
@@ -97663,12 +97662,10 @@
       "assessmentExemptionReason": null,
       "expressionReview": {
         "status": "independent_ai_checked",
-        "note": "Teaching reorganizes operational concepts and uses original numerical/guest scenarios. Source terms/formulas are retained; no source prose/diagram is redistributed. Runtime q018 tests points for repeat visits. It does not test clear conditions when points and a coupon are combined; that added operational condition also needs support beyond the brief source description."
+        "note": "Source fact and precondition retained in independently stated teaching/scenarios. Any extra app constraint is preserved separately with pending provenance, not silently discarded or accepted as source content."
       },
-      "status": "partial",
-      "unresolved": [
-        "Runtime q018 tests points for repeat visits. It does not test clear conditions when points and a coupon are combined; that added operational condition also needs support beyond the brief source description."
-      ],
+      "status": "covered_ai",
+      "unresolved": [],
       "legacyImageEvidence": [],
       "legacyRefs": [
         {
@@ -97689,8 +97686,16 @@
       "sourceReview": {
         "status": "self_checked_ai",
         "conditionsChecked": true,
-        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-operations-review-20261103.json"
-      }
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r7-claim-review-20261103.json"
+      },
+      "legacyScopeCorrection": {
+        "originalStatementJa": "ポイント制度は複数回来店を促し、割引券と合わせる場合も条件を明確にする。",
+        "reason": "Separate the exact source-supported atom from additional app instructions; original constraints are retained in appClaimExtensions and unchanged runtime paragraphs.",
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r7-claim-review-20261103.json"
+      },
+      "appClaimExtensionIds": [
+        "rst-app-terms-points-voucher"
+      ]
     },
     {
       "knowledgeId": "rst31-operations2-f036",
@@ -97821,7 +97826,7 @@
         }
       ],
       "legacyExternalSourceRefs": [],
-      "statementJa": "WEB注文と宅配は来店しない客にも販売する経路で、手数料を含む利益を確認する。",
+      "statementJa": "WEBで受注して宅配する経路は、来店しない客にも販売し、新規顧客との接点を増やせる。",
       "conditionsJa": [],
       "exceptionsJa": [],
       "importance": "core",
@@ -97832,7 +97837,7 @@
       },
       "after": {
         "teaching": "present",
-        "assessment": "partial"
+        "assessment": "present"
       },
       "teachingEvidence": [
         {
@@ -97842,27 +97847,19 @@
           "sha256Mode": "json-value",
           "relation": "direct",
           "semanticReviewed": true,
-          "reviewNote": "Runtime q018 directly tests web delivery to customers not visiting. Source passage and that question do not cover the additional fee/profit-check condition in the compound statement; do not infer it from channel recognition."
+          "reviewNote": "Direct only for the web-order/delivery channel serving non-visiting guests. Fees and profit review remain a separately tracked unverified app extension.",
+          "quote": "WEB注文と宅配は来店しない客にも販売する経路"
         }
       ],
       "assessmentEvidence": [
-        {
-          "path": "docs/ssw-workspace/restaurant/source-closure31/canonical-ja.json",
-          "jsonPointer": "/items/rst31-operations2-q018",
-          "sha256": "d3c21a7915a7ee70347c4046857f613d27800c2ed1fda56c712a262edf69b241",
-          "sha256Mode": "json-value",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "Runtime q018 directly tests web delivery to customers not visiting. Source passage and that question do not cover the additional fee/profit-check condition in the compound statement; do not infer it from channel recognition."
-        },
         {
           "path": "src/data/restaurant/source31/2.json",
           "jsonPointer": "/lessons/rst-2-ops-06/exam/questions/0",
           "sha256": "2570fd05cae2d9be3984a3dae412df88d1cb664f2f6c61916ea469ef7d04b58c",
           "sha256Mode": "json-value",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "Runtime q018 directly tests web delivery to customers not visiting. Source passage and that question do not cover the additional fee/profit-check condition in the compound statement; do not infer it from channel recognition."
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Existing four-purpose matching directly assigns web delivery to customers not visiting. It does not assess fee-inclusive profit and is not used to close that extension."
         }
       ],
       "imageEvidence": [],
@@ -97870,12 +97867,10 @@
       "assessmentExemptionReason": null,
       "expressionReview": {
         "status": "independent_ai_checked",
-        "note": "Teaching reorganizes operational concepts and uses original numerical/guest scenarios. Source terms/formulas are retained; no source prose/diagram is redistributed. Runtime q018 directly tests web delivery to customers not visiting. Source passage and that question do not cover the additional fee/profit-check condition in the compound statement; do not infer it from channel recognition."
+        "note": "Source fact and precondition retained in independently stated teaching/scenarios. Any extra app constraint is preserved separately with pending provenance, not silently discarded or accepted as source content."
       },
-      "status": "partial",
-      "unresolved": [
-        "Runtime q018 directly tests web delivery to customers not visiting. Source passage and that question do not cover the additional fee/profit-check condition in the compound statement; do not infer it from channel recognition."
-      ],
+      "status": "covered_ai",
+      "unresolved": [],
       "legacyImageEvidence": [],
       "legacyRefs": [
         {
@@ -97896,8 +97891,16 @@
       "sourceReview": {
         "status": "self_checked_ai",
         "conditionsChecked": true,
-        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-operations-review-20261103.json"
-      }
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r7-claim-review-20261103.json"
+      },
+      "legacyScopeCorrection": {
+        "originalStatementJa": "WEB注文と宅配は来店しない客にも販売する経路で、手数料を含む利益を確認する。",
+        "reason": "Separate the exact source-supported atom from additional app instructions; original constraints are retained in appClaimExtensions and unchanged runtime paragraphs.",
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r7-claim-review-20261103.json"
+      },
+      "appClaimExtensionIds": [
+        "rst-app-delivery-fees-profit"
+      ]
     },
     {
       "knowledgeId": "rst31-operations2-f038",
@@ -98134,8 +98137,10 @@
         }
       ],
       "legacyExternalSourceRefs": [],
-      "statementJa": "固定客の顔や好みを覚え感謝を伝えつつ、個人的来店歴を他人へ明かさない。",
-      "conditionsJa": [],
+      "statementJa": "品質を落とさないことを前提に、固定客の顔・好みの料理や席を覚えて来店への感謝を伝える。",
+      "conditionsJa": [
+        "顔や好みを覚えることは品質を落とす理由にしない。"
+      ],
       "exceptionsJa": [],
       "importance": "core",
       "classification": "knowledge",
@@ -98145,35 +98150,18 @@
       },
       "after": {
         "teaching": "present",
-        "assessment": "partial"
+        "assessment": "present"
       },
       "teachingEvidence": [
         {
           "path": "src/data/restaurant/lessons.2.ja.json",
-          "jsonPointer": "/lessons/35/paragraphs/2/textJa",
-          "sha256": "2efdc84fdbcf8431b3c5ad105a186bc0f53e13af464807df1023320b91c0306f",
+          "jsonPointer": "/lessons/35/paragraphs/0/textJa",
+          "sha256": "2b67623b89a16da05cb90066178f090622ad8327ef3c2a7a097d882b27c535dd",
           "sha256Mode": "json-value",
           "relation": "direct",
           "semanticReviewed": true,
-          "reviewNote": "The source supports remembering regular guests and preferences and thanking them. Privacy/non-disclosure is an additional condition not established by this passage; week06-q01 principally tests reducing dependence on one employee, not the complete stated competency."
-        },
-        {
-          "path": "src/data/restaurant/lessons.2.ja.json",
-          "jsonPointer": "/lessons/35/paragraphs/6/textJa",
-          "sha256": "c234377123542c01424ecd6e6358685511cd67ad2235a7b5e7b56b031fb3344f",
-          "sha256Mode": "json-value",
-          "relation": "direct",
-          "semanticReviewed": true,
-          "reviewNote": "The source supports remembering regular guests and preferences and thanking them. Privacy/non-disclosure is an additional condition not established by this passage; week06-q01 principally tests reducing dependence on one employee, not the complete stated competency."
-        },
-        {
-          "path": "docs/ssw-workspace/restaurant/source-closure31/canonical-ja.json",
-          "jsonPointer": "/items/rst31-operations2-qsca-and-repeat",
-          "sha256": "f9d48c08c3b135a081d95bf5b73e2c31582262894b69330fc1e5b877fee67aef",
-          "sha256Mode": "json-value",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "The source supports remembering regular guests and preferences and thanking them. Privacy/non-disclosure is an additional condition not established by this passage; week06-q01 principally tests reducing dependence on one employee, not the complete stated competency."
+          "reviewNote": "Quality maintenance is the explicit precondition retained for the regular-guest objective.",
+          "quote": "再来店を増やすには品質と接客を維持し"
         },
         {
           "path": "src/data/restaurant/source31/2.json",
@@ -98182,27 +98170,19 @@
           "sha256Mode": "json-value",
           "relation": "direct",
           "semanticReviewed": true,
-          "reviewNote": "The source supports remembering regular guests and preferences and thanking them. Privacy/non-disclosure is an additional condition not established by this passage; week06-q01 principally tests reducing dependence on one employee, not the complete stated competency."
+          "reviewNote": "Direct only for remembering regular guests/favorite seats/dishes and thanking them; does not establish the separate privacy rule.",
+          "quote": "固定客の顔や希望の席・料理を覚えて感謝を伝え"
         }
       ],
       "assessmentEvidence": [
         {
-          "path": "src/data/restaurant/exams.2.ja.json",
-          "sha256": "e85600b4664867a47f0d7bd825feb8a978e10d7952134510816cede4f64a4ce3",
-          "sha256Mode": "file",
-          "locator": "stemJa/optionsJa/correctIndex/explanationJa",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "Legacy question evidence retained without dropping its locator. It is not exact v2 semantic acceptance. q110 furigana-only repair: mathematical 積=せき; all semantic content/sourceHash/answers preserved."
-        },
-        {
-          "path": "src/data/restaurant/exams.2.ja.json",
-          "jsonPointer": "/exams/15/questions/0",
-          "sha256": "c31b67bf9bb4d7af114239458c37c5ca829970b834d5008d0856f12006278e4f",
+          "path": "src/data/restaurant/source31/2.json",
+          "jsonPointer": "/lessons/rst-2-ops-06/exam/questions/4",
+          "sha256": "e050dc54db69cd7dcad79e73be474c843e2034d894983c7ebeafdb0cfae7d3bb",
           "sha256Mode": "json-value",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "The source supports remembering regular guests and preferences and thanking them. Privacy/non-disclosure is an additional condition not established by this passage; week06-q01 principally tests reducing dependence on one employee, not the complete stated competency."
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "New question combines quality maintenance, recognizing face/preferences, and thanks. It does not certify a privacy rule or allow unilateral ordering."
         }
       ],
       "imageEvidence": [],
@@ -98210,12 +98190,10 @@
       "assessmentExemptionReason": null,
       "expressionReview": {
         "status": "independent_ai_checked",
-        "note": "Teaching reorganizes operational concepts and uses original numerical/guest scenarios. Source terms/formulas are retained; no source prose/diagram is redistributed. The source supports remembering regular guests and preferences and thanking them. Privacy/non-disclosure is an additional condition not established by this passage; week06-q01 principally tests reducing dependence on one employee, not the complete stated competency."
+        "note": "Source fact and precondition retained in independently stated teaching/scenarios. Any extra app constraint is preserved separately with pending provenance, not silently discarded or accepted as source content."
       },
-      "status": "partial",
-      "unresolved": [
-        "The source supports remembering regular guests and preferences and thanking them. Privacy/non-disclosure is an additional condition not established by this passage; week06-q01 principally tests reducing dependence on one employee, not the complete stated competency."
-      ],
+      "status": "covered_ai",
+      "unresolved": [],
       "legacyImageEvidence": [],
       "legacyRefs": [
         {
@@ -98236,8 +98214,16 @@
       "sourceReview": {
         "status": "self_checked_ai",
         "conditionsChecked": true,
-        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-operations-review-20261103.json"
-      }
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r7-claim-review-20261103.json"
+      },
+      "legacyScopeCorrection": {
+        "originalStatementJa": "固定客の顔や好みを覚え感謝を伝えつつ、個人的来店歴を他人へ明かさない。",
+        "reason": "Separate the exact source-supported atom from additional app instructions; original constraints are retained in appClaimExtensions and unchanged runtime paragraphs.",
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r7-claim-review-20261103.json"
+      },
+      "appClaimExtensionIds": [
+        "rst-app-regular-visit-privacy"
+      ]
     },
     {
       "knowledgeId": "rst31-operations2-f041",
@@ -98398,16 +98384,13 @@
             "rst-2-operations:p21:t25-8-0",
             "rst-2-operations:p21:t26-0-0"
           ]
-        },
-        {
-          "sourceId": "rst-2-operations",
-          "pdfPage": 22,
-          "elementIds": []
         }
       ],
       "legacyExternalSourceRefs": [],
-      "statementJa": "新規客にはQSC全体の体験を整えて再来店と推奨へつなぐ。",
-      "conditionsJa": [],
+      "statementJa": "新規客のQSC全体の体験を整えて再来店を促し、友人や知人への推奨は別の新規客の来店機会につながる。",
+      "conditionsJa": [
+        "再来店や新規客の来店を保証するものではなく、つながる可能性として扱う。"
+      ],
       "exceptionsJa": [],
       "importance": "core",
       "classification": "knowledge",
@@ -98417,27 +98400,9 @@
       },
       "after": {
         "teaching": "present",
-        "assessment": "partial"
+        "assessment": "present"
       },
       "teachingEvidence": [
-        {
-          "path": "src/data/restaurant/lessons.2.ja.json",
-          "jsonPointer": "/lessons/35/paragraphs/0/textJa",
-          "sha256": "2b67623b89a16da05cb90066178f090622ad8327ef3c2a7a097d882b27c535dd",
-          "sha256Mode": "json-value",
-          "relation": "direct",
-          "semanticReviewed": true,
-          "reviewNote": "q018 tests improving QSC/visit experience to gain repeat visits. It does not test the separate recommendation/word-of-mouth mechanism in the statement; keep the compound assessment partial."
-        },
-        {
-          "path": "docs/ssw-workspace/restaurant/source-closure31/canonical-ja.json",
-          "jsonPointer": "/items/rst31-operations2-qsca-and-repeat",
-          "sha256": "f9d48c08c3b135a081d95bf5b73e2c31582262894b69330fc1e5b877fee67aef",
-          "sha256Mode": "json-value",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "q018 tests improving QSC/visit experience to gain repeat visits. It does not test the separate recommendation/word-of-mouth mechanism in the statement; keep the compound assessment partial."
-        },
         {
           "path": "src/data/restaurant/source31/2.json",
           "jsonPointer": "/lessons/rst-2-ops-01/sections/1",
@@ -98445,27 +98410,18 @@
           "sha256Mode": "json-value",
           "relation": "direct",
           "semanticReviewed": true,
-          "reviewNote": "q018 tests improving QSC/visit experience to gain repeat visits. It does not test the separate recommendation/word-of-mouth mechanism in the statement; keep the compound assessment partial."
+          "reviewNote": "Direct for QSC experience, repeat visit and recommendations creating opportunities for new guests. Source p21 establishes friend/acquaintance word of mouth; SNS-specific reach is not certified by this evidence."
         }
       ],
       "assessmentEvidence": [
         {
-          "path": "src/data/restaurant/exams.2.ja.json",
-          "sha256": "e85600b4664867a47f0d7bd825feb8a978e10d7952134510816cede4f64a4ce3",
-          "sha256Mode": "file",
-          "locator": "stemJa/optionsJa/correctIndex/explanationJa",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "Legacy question evidence retained without dropping its locator. It is not exact v2 semantic acceptance. q110 furigana-only repair: mathematical 積=せき; all semantic content/sourceHash/answers preserved."
-        },
-        {
-          "path": "src/data/restaurant/exams.2.ja.json",
-          "jsonPointer": "/exams/0/questions/17",
-          "sha256": "964f76fc2874264dc9231852f3ad2b8ae107ac22fcd3ca4ab2afadbe6618a0a0",
+          "path": "src/data/restaurant/source31/2.json",
+          "jsonPointer": "/lessons/rst-2-ops-06/exam/questions/5",
+          "sha256": "8c890f60458d12e6eb378fac759cd92328c233d05a23cf6bbdc5f6c9ba3e5205",
           "sha256Mode": "json-value",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "q018 tests improving QSC/visit experience to gain repeat visits. It does not test the separate recommendation/word-of-mouth mechanism in the statement; keep the compound assessment partial."
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "New original first-visit/return/friend scenario requires identifying both mechanisms and rejects guaranteed visits."
         }
       ],
       "imageEvidence": [],
@@ -98473,12 +98429,10 @@
       "assessmentExemptionReason": null,
       "expressionReview": {
         "status": "independent_ai_checked",
-        "note": "Teaching reorganizes operational concepts and uses original numerical/guest scenarios. Source terms/formulas are retained; no source prose/diagram is redistributed. q018 tests improving QSC/visit experience to gain repeat visits. It does not test the separate recommendation/word-of-mouth mechanism in the statement; keep the compound assessment partial."
+        "note": "Source fact and precondition retained in independently stated teaching/scenarios. Any extra app constraint is preserved separately with pending provenance, not silently discarded or accepted as source content."
       },
-      "status": "partial",
-      "unresolved": [
-        "q018 tests improving QSC/visit experience to gain repeat visits. It does not test the separate recommendation/word-of-mouth mechanism in the statement; keep the compound assessment partial."
-      ],
+      "status": "covered_ai",
+      "unresolved": [],
       "legacyImageEvidence": [],
       "legacyRefs": [
         {
@@ -98499,8 +98453,27 @@
       "sourceReview": {
         "status": "self_checked_ai",
         "conditionsChecked": true,
-        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-operations-review-20261103.json"
-      }
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r7-claim-review-20261103.json"
+      },
+      "sourceReferenceCorrections": [
+        {
+          "removedRefs": [
+            {
+              "sourceId": "rst-2-operations",
+              "pdfPage": 22,
+              "elementIds": []
+            }
+          ],
+          "reason": "Full text/image review: p21 closes customer management; p22 starts employment management, with no occurrence of this QSC/recommendation atom. Historical page-range association was overbroad.",
+          "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r7-claim-review-20261103.json"
+        }
+      ],
+      "legacyScopeCorrection": {
+        "originalStatementJa": "新規客にはQSC全体の体験を整えて再来店と推奨へつなぐ。",
+        "reason": "Separate the exact source-supported atom from additional app instructions; original constraints are retained in appClaimExtensions and unchanged runtime paragraphs.",
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r7-claim-review-20261103.json"
+      },
+      "appClaimExtensionIds": []
     },
     {
       "knowledgeId": "rst31-operations2-f043",
@@ -135693,7 +135666,8 @@
     "301 legacy assessment gaps remain separately tracked until a reviewed change is integrated.",
     "21 reference-excluded facts remain separate from assessment gaps.",
     "Source term うぐいす骨/ほほ骨, five official-mark rights and offline first-aid practical acceptance remain open.",
-    "Census preserves ruby, captions and small text; no full semantic acceptance is inferred from geometry."
+    "Census preserves ruby, captions and small text; no full semantic acceptance is inferred from geometry.",
+    "Three app constraints now have bounded independent policy/calculation/PPC-guidance grounding; this does not enlarge exam-PDF coverage or certify native/domain/device/learner-time acceptance."
   ],
   "legacySummary": {
     "hierarchyUnits": 639,
@@ -135721,5 +135695,264 @@
     "docs/ssw-workspace/source-coverage-v2/restaurant-r2-hygiene-records-source-review-20261102.json",
     "docs/ssw-workspace/source-coverage-v2/restaurant-r2-hygiene-source-review-20261102.json",
     "docs/ssw-workspace/source-coverage-v2/restaurant-r2-service-source-review-20261102.json"
+  ],
+  "appClaimExtensions": [
+    {
+      "claimId": "rst-app-terms-points-voucher",
+      "statementJa": "割引券の利用条件と、ポイント・割引券を併用する場合の条件を明確にする。",
+      "sourceKnowledgeIds": [
+        "rst31-operations2-f034",
+        "rst31-operations2-f035"
+      ],
+      "status": "grounded_ai",
+      "sourceSupport": "independent_app_model_not_exam_pdf",
+      "teachingEvidence": [
+        {
+          "path": "src/data/restaurant/source31/2.json",
+          "jsonPointer": "/lessons/rst-2-ops-06/sections/1",
+          "sha256": "388abf9180fa71d293c6bc92752cd394dc60d1ca0d5ca6fe8420d936dd7e285e",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "この練習店に限る。併用不可と券面期限は設定した条件であり、全国共通ではない。 Exact current scheduled model paragraph; original unqualified app clauses are retained in legacyTeachingEvidence."
+        }
+      ],
+      "assessmentAcceptance": true,
+      "unresolved": [],
+      "constraintsRetainedInApp": true,
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false,
+        "physicalDeviceTested": false
+      },
+      "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r8-app-provenance-20261103.json",
+      "legacyTeachingEvidence": [
+        {
+          "path": "src/data/restaurant/lessons.2.ja.json",
+          "jsonPointer": "/lessons/35/paragraphs/5/textJa",
+          "sha256": "84d39b73ed61e22f1795dd961d9c2d3302e9489d521b3356dff3538d7da56815",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "App instruction retained, not verified as a source p21 point/coupon condition.",
+          "quote": "割引券と組み合わせる場合は利用条件を明確にする。"
+        }
+      ],
+      "beforeGrounding": {
+        "status": "provenance_pending",
+        "sourceSupport": "not_established_by_operations_p21",
+        "unresolved": [
+          "Appropriate operational/consumer-policy provenance or a clearly scoped authored store rule must establish use/combination conditions; the brief p21 purpose statements do not."
+        ]
+      },
+      "scopeJa": "この練習店に限る。併用不可と券面期限は設定した条件であり、全国共通ではない。",
+      "provenance": {
+        "kind": "authored_store_policy",
+        "modelDefinition": {
+          "pointsAndVoucherCombination": "not_allowed_in_this_practice_store",
+          "expiry": "read_the_actual_voucher_before_use",
+          "universalRuleClaimed": false
+        },
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r8-app-provenance-20261103.json",
+        "officialSource": null
+      },
+      "assessmentEvidence": [
+        {
+          "path": "src/data/restaurant/source31/2.json",
+          "jsonPointer": "/lessons/rst-2-ops-06/exam/questions/6",
+          "sha256": "85633bbe387de4dcd0e1d612f9dfff54b84db97bb0a88c27c09d5b97a345e905",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Original scenario assesses this exact model and explicitly rejects unbounded or universal conclusions."
+        }
+      ]
+    },
+    {
+      "claimId": "rst-app-delivery-fees-profit",
+      "statementJa": "WEB宅配の評価では手数料などを含めた利益を確認する。",
+      "sourceKnowledgeIds": [
+        "rst31-operations2-f037"
+      ],
+      "status": "grounded_ai",
+      "sourceSupport": "independent_app_model_not_exam_pdf",
+      "teachingEvidence": [
+        {
+          "path": "src/data/restaurant/source31/2.json",
+          "jsonPointer": "/lessons/rst-2-ops-06/sections/1",
+          "sha256": "388abf9180fa71d293c6bc92752cd394dc60d1ca0d5ca6fe8420d936dd7e285e",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "一件、同じ対象範囲の売上から明示した三費用だけを引く。ほかの費用を控除済みの最終利益とは呼ばない。 Exact current scheduled model paragraph; original unqualified app clauses are retained in legacyTeachingEvidence."
+        }
+      ],
+      "assessmentAcceptance": true,
+      "unresolved": [],
+      "constraintsRetainedInApp": true,
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false,
+        "physicalDeviceTested": false
+      },
+      "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r8-app-provenance-20261103.json",
+      "legacyTeachingEvidence": [
+        {
+          "path": "src/data/restaurant/lessons.2.ja.json",
+          "jsonPointer": "/lessons/35/paragraphs/5/textJa",
+          "sha256": "84d39b73ed61e22f1795dd961d9c2d3302e9489d521b3356dff3538d7da56815",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Fee/profit extension retained for further app-to-source verification; p21 only establishes sales channel/reach.",
+          "quote": "手数料などを含めて利益を確認する。"
+        },
+        {
+          "path": "src/data/restaurant/lessons.2.ja.json",
+          "jsonPointer": "/lessons/35/paragraphs/2/textJa",
+          "sha256": "2efdc84fdbcf8431b3c5ad105a186bc0f53e13af464807df1023320b91c0306f",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Related current app instruction retained; not promoted to p21 source acceptance.",
+          "quote": "割引で注文が増えても原価や宅配手数料が高ければ利益が減り得る。"
+        }
+      ],
+      "beforeGrounding": {
+        "status": "provenance_pending",
+        "sourceSupport": "not_established_by_operations_p21",
+        "unresolved": [
+          "Ground fee treatment in the applicable fee contract/accounting model and independently checked derivation; do not attribute fee/profit details to the p21 delivery sentence."
+        ]
+      },
+      "scopeJa": "一件、同じ対象範囲の売上から明示した三費用だけを引く。ほかの費用を控除済みの最終利益とは呼ばない。",
+      "provenance": {
+        "kind": "independent_bounded_calculation",
+        "modelDefinition": {
+          "sales": 2000,
+          "foodCost": 700,
+          "containerCost": 100,
+          "deliveryFee": 400,
+          "currency": "JPY",
+          "remaining": 800,
+          "excludesOtherCosts": true,
+          "finalRestaurantProfitClaimed": false
+        },
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r8-app-provenance-20261103.json",
+        "officialSource": null
+      },
+      "assessmentEvidence": [
+        {
+          "path": "src/data/restaurant/source31/2.json",
+          "jsonPointer": "/lessons/rst-2-ops-06/exam/questions/7",
+          "sha256": "4fbb78f679467500449fd09afc6e0377c1bbe266733c4ba6d43a8e0b2d272de5",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Original scenario assesses this exact model and explicitly rejects unbounded or universal conclusions."
+        }
+      ]
+    },
+    {
+      "claimId": "rst-app-regular-visit-privacy",
+      "statementJa": "常連の個人的な来店歴を連れや他人の前で明かさない。",
+      "sourceKnowledgeIds": [
+        "rst31-operations2-f040"
+      ],
+      "status": "grounded_ai",
+      "sourceSupport": "independent_app_model_not_exam_pdf",
+      "teachingEvidence": [
+        {
+          "path": "src/data/restaurant/source31/2.json",
+          "jsonPointer": "/lessons/rst-2-ops-06/sections/1",
+          "sha256": "388abf9180fa71d293c6bc92752cd394dc60d1ca0d5ca6fe8420d936dd7e285e",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "この練習店のあいさつ場面での非開示と責任者への相談。法令・同意・例外の適用を店員が断定せず、すべての会話を違法としない。 Exact current scheduled model paragraph; original unqualified app clauses are retained in legacyTeachingEvidence."
+        }
+      ],
+      "assessmentAcceptance": true,
+      "unresolved": [],
+      "constraintsRetainedInApp": true,
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false,
+        "physicalDeviceTested": false
+      },
+      "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r8-app-provenance-20261103.json",
+      "legacyTeachingEvidence": [
+        {
+          "path": "src/data/restaurant/lessons.2.ja.json",
+          "jsonPointer": "/lessons/35/paragraphs/2/textJa",
+          "sha256": "2efdc84fdbcf8431b3c5ad105a186bc0f53e13af464807df1023320b91c0306f",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Privacy instruction retained in the app; the regular-guest p21 passage does not establish it.",
+          "quote": "常連の好みは覚えても、連れの前で個人的な来店歴を話さない。"
+        },
+        {
+          "path": "src/data/restaurant/lessons.2.ja.json",
+          "jsonPointer": "/lessons/35/paragraphs/6/textJa",
+          "sha256": "c234377123542c01424ecd6e6358685511cd67ad2235a7b5e7b56b031fb3344f",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Repeated privacy instruction retained, without false source acceptance.",
+          "quote": "来店歴を人前で話さない。"
+        }
+      ],
+      "beforeGrounding": {
+        "status": "provenance_pending",
+        "sourceSupport": "not_established_by_operations_p21",
+        "unresolved": [
+          "Appropriate privacy guidance or explicit store policy must establish this additional constraint; the source only covers quality, remembering preferences and thanks. No legal claim is inferred."
+        ]
+      },
+      "scopeJa": "この練習店のあいさつ場面での非開示と責任者への相談。法令・同意・例外の適用を店員が断定せず、すべての会話を違法としない。",
+      "provenance": {
+        "kind": "official_guidance_plus_authored_store_policy",
+        "modelDefinition": {
+          "greetingSceneDisclosure": false,
+          "necessaryDisclosureRequest": "refer_to_manager",
+          "allConversationsIllegal": false,
+          "officialBackground": {
+            "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/",
+            "publisher": "個人情報保護委員会",
+            "retrievedOn": "2026-11-03",
+            "sections": [
+              "2-1",
+              "2-8",
+              "3-6-1"
+            ],
+            "reviewNote": "Identification depends on context. Personal-data third-party provision has prior-consent principle and exceptions. The specific greeting/manager escalation rule is an authored store policy, not a universal prohibition or a quotation from the exam PDF."
+          }
+        },
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-r8-app-provenance-20261103.json",
+        "officialSource": {
+          "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/",
+          "publisher": "個人情報保護委員会",
+          "retrievedOn": "2026-11-03",
+          "sections": [
+            "2-1",
+            "2-8",
+            "3-6-1"
+          ],
+          "reviewNote": "Identification depends on context. Personal-data third-party provision has prior-consent principle and exceptions. The specific greeting/manager escalation rule is an authored store policy, not a universal prohibition or a quotation from the exam PDF."
+        }
+      },
+      "assessmentEvidence": [
+        {
+          "path": "src/data/restaurant/source31/2.json",
+          "jsonPointer": "/lessons/rst-2-ops-06/exam/questions/8",
+          "sha256": "65c8e34483b82b42db6c319dc84ffa3108e4862ab456471b6e4d1269d812b033",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Original scenario assesses this exact model and explicitly rejects unbounded or universal conclusions."
+        }
+      ]
+    }
   ]
 }
