@@ -35,3 +35,7 @@ Các utterance và đoạn câu nghe thật đang được dựng trong cây can
 `python3 scripts/prepare-jlpt-prosody-batch.py --render --engine /duong/dan/thuc/den/engine/run --jobs 2 --cpu-threads 2 --restart-every 24 --report docs/checkpoints/jlpt-prosody-20261103/actual-run.json`
 
 Sau khi đủ 30 candidate hợp lệ, `python3 scripts/install-jlpt-prosody-batch.py` kiểm lại toàn bộ file/hash/PCM/nguồn; thêm `--install` mới thay bộ audio và đồng bộ duration/timeline/master metadata/opening bell. Installer chặn bộ thiếu đề, giữ nội dung/đáp án/ID/giọng, có backup và rollback nếu ghi lỗi; các cờ nghiệm thu con người/bản ngữ vẫn false. Đây là công cụ đã kiểm thử, **chưa phải bằng chứng đã tích hợp**. Không có cổng xin duyệt pilot; tiếp tục đủ 30 theo yêu cầu người dùng.
+
+## Bản thu thật hoàn tất đầu tiên
+
+N5 01: 1723416 ms; N5 02: 1652069 ms. Mỗi đề 24/24 câu, toàn bộ MP3 giải mã PCM khớp mốc, hash/giọng/kịch bản/thứ tự lựa chọn/cửa sổ trả lời và nhạc nghỉ đúng 60000 ms đạt. Bản thu candidate và manifest được lưu cùng checkpoint `completed-candidates.json`; không lưu cache WAV/engine/bản dở vào Git. Tiếp tục 28 đề còn lại; 0/30 audio mới được tích hợp runtime; chưa nghiệm thu nghe/người bản ngữ.
