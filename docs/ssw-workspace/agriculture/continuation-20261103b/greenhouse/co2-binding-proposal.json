@@ -1,0 +1,653 @@
+{
+  "schemaVersion": 1,
+  "operation": "bind_original_pending_reader_evidence",
+  "originalPacketSha256": "053fd69ad5383fed47df1d8011ccd9e620ed9861071305bf40e1f848f5e0b544",
+  "readerPayload": {
+    "id": "agr-reader-facility-co2-two-shortage-contexts",
+    "knowledgeId": "agriculture-v2-AGR-K-F40-FACILITY-ENV-03",
+    "lessonId": "agr-f40-facility-environment-equipment",
+    "levels": [
+      "2"
+    ],
+    "promptJa": "にさんかたんそがふそくするばあいとして、どのふたつのさいばいじょうきょうがあげられていますか。ふそくしたときのえいきょうも、かならずおこるときめつけずにせつめいしましょう。",
+    "modelAnswerJa": "冬は日中に施設を閉め切る時間が長くなりがちです。2号資料は、このような冬期の栽培や養液栽培で炭酸ガスが不足し、光合成が抑えられて成長が悪くなる場合を挙げています。冬なら必ず不足するという断定ではなく、掲載された場面と影響の関係を読みます。",
+    "translations": {
+      "en": {
+        "prompt": "Which two cultivation situations does the lesson name as cases where carbon dioxide may become insufficient, and what effect can that shortage have? Keep the statement conditional.",
+        "modelAnswer": "In winter, greenhouses tend to remain closed for longer during daytime. The Level 2 source gives winter cultivation under such conditions and nutrient-solution cultivation as situations where CO2 may become insufficient, suppressing photosynthesis and growth. Read the stated situation and effect; it does not say every winter crop always lacks CO2.",
+        "translatedFrom": "ja"
+      },
+      "vi": {
+        "prompt": "Bài học nêu hai bối cảnh canh tác nào có thể thiếu khí CO₂, và sự thiếu hụt có thể gây ảnh hưởng gì? Hãy giữ đúng ý “có thể”, không khẳng định luôn xảy ra.",
+        "modelAnswer": "Mùa đông, nhà kính thường được đóng kín lâu hơn vào ban ngày. Tài liệu 2号 nêu canh tác mùa đông trong bối cảnh này và canh tác bằng dung dịch dinh dưỡng là những trường hợp có thể thiếu CO2, làm quang hợp và sinh trưởng bị hạn chế. Cần đọc đúng quan hệ giữa bối cảnh và ảnh hưởng, không hiểu mọi cây trồng mùa đông đều chắc chắn thiếu CO2.",
+        "translatedFrom": "ja"
+      },
+      "id": {
+        "prompt": "Dua situasi budidaya apa yang disebut pelajaran sebagai keadaan yang dapat kekurangan karbon dioksida, dan apa dampaknya? Pertahankan sifat kemungkinan, bukan kepastian.",
+        "modelAnswer": "Pada musim dingin, rumah kaca cenderung tertutup lebih lama pada siang hari. Sumber Level 2 memberi contoh budidaya musim dingin tersebut dan budidaya larutan nutrisi sebagai keadaan yang dapat kekurangan CO2 sehingga fotosintesis dan pertumbuhan terhambat. Ini hubungan keadaan dan dampak, bukan kepastian bahwa semua tanaman musim dingin kekurangan CO2.",
+        "translatedFrom": "ja"
+      },
+      "zh-CN": {
+        "prompt": "课文列出哪两种可能发生二氧化碳不足的栽培情境？不足可能产生什么影响？请保留“可能”的条件性。",
+        "modelAnswer": "冬季设施白天往往长时间关闭。2号资料列举这种冬季栽培及营养液栽培可能缺少二氧化碳，导致光合作用受抑、生长变差。应理解所列场景与影响的关系，而非断言冬季作物必然不足。",
+        "translatedFrom": "ja"
+      },
+      "zh-TW": {
+        "prompt": "課文列出哪兩種可能發生二氧化碳不足的栽培情境？不足可能產生什麼影響？請保留「可能」的條件性。",
+        "modelAnswer": "冬季設施白天往往長時間關閉。2號資料列舉這類冬季栽培及養液栽培可能缺少二氧化碳，導致光合作用受抑、生長變差。應理解所列情境與影響的關係，而非斷言冬季作物必然不足。",
+        "translatedFrom": "ja"
+      },
+      "hi": {
+        "prompt": "पाठ में किन दो खेती की स्थितियों में कार्बन डाइऑक्साइड की कमी हो सकती है, और उस कमी का क्या प्रभाव हो सकता है? इसे संभावना के रूप में बताइए, निश्चित परिणाम के रूप में नहीं।",
+        "modelAnswer": "सर्दियों में ग्रीनहाउस दिन में अधिक देर बंद रहने लगता है। स्तर 2 का स्रोत ऐसी सर्दियों की खेती और पोषक-घोल खेती में CO2 की कमी से प्रकाश-संश्लेषण व वृद्धि दबने की संभावना बताता है। बताई स्थिति और प्रभाव का संबंध पढ़ें; हर सर्दियों की फसल में निश्चित कमी नहीं कही गई है।",
+        "translatedFrom": "ja"
+      },
+      "bn": {
+        "prompt": "পাঠে চাষের কোন দুটি পরিস্থিতিতে কার্বন ডাই-অক্সাইডের ঘাটতি হতে পারে বলা হয়েছে, এবং সেই ঘাটতির কী প্রভাব হতে পারে? একে সম্ভাবনা হিসেবেই বলুন, নিশ্চিত ফল হিসেবে নয়।",
+        "modelAnswer": "শীতে গ্রিনহাউস দিনের বেলায় বেশিক্ষণ বন্ধ থাকে। স্তর ২-এর উৎস এমন শীতের চাষ ও পুষ্টিদ্রবণ চাষে CO2 কমে সালোকসংশ্লেষ ও বৃদ্ধি বাধা পাওয়ার সম্ভাবনা জানায়। পরিস্থিতি ও প্রভাবের সম্পর্ক বুঝুন; সব শীতের ফসলে অবশ্যই ঘাটতি হয় বলা হয়নি।",
+        "translatedFrom": "ja"
+      },
+      "ne": {
+        "prompt": "पाठमा खेतीका कुन दुई अवस्थामा कार्बन डाइअक्साइडको कमी हुन सक्छ भनिएको छ, र त्यसले कस्तो असर पार्न सक्छ? निश्चित नतिजा नभई सम्भावनाका रूपमा बताउनुहोस्।",
+        "modelAnswer": "जाडोमा हरितगृह दिउँसो लामो समय बन्द रहन सक्छ। स्तर २को स्रोतले यस्तो जाडो खेती वा पोषक घोल खेतीमा CO2कम भई प्रकाशसंश्लेषण र वृद्धि दबिन सक्ने बताउँछ। अवस्था र प्रभावको सम्बन्ध पढ्नुहोस्; हरेक जाडो बालीमा अनिवार्य कमी हुन्छ भनेको होइन।",
+        "translatedFrom": "ja"
+      },
+      "my": {
+        "prompt": "သင်ခန်းစာတွင် ကာဗွန်ဒိုင်အောက်ဆိုဒ် နည်းပါးနိုင်သည့် စိုက်ပျိုးမှုအခြေအနေနှစ်မျိုးမှာ အဘယ်နည်း။ နည်းပါးမှုကြောင့် မည်သည့်အကျိုးဆက် ဖြစ်နိုင်သနည်း။ မဖြစ်မနေဖြစ်သည်ဟု မဆိုဘဲ ဖြစ်နိုင်ခြေအဖြစ် ရှင်းပြပါ။",
+        "modelAnswer": "ဆောင်းတွင် အပင်ရုံကို နေ့ခင်းပိုကြာစွာ ပိတ်ထားတတ်သည်။ ထိုသို့သောဆောင်းစိုက်ပျိုးမှုနှင့် အာဟာရရည်စိုက်ပျိုးမှုတွင် CO2မလုံလောက်၍ အစာချက်လုပ်မှုနှင့် ကြီးထွားမှုကျဆင်းနိုင်ကြောင်း အဆင့်၂ကဆိုသည်။ အခြေအနေနှင့်အကျိုးဆက်ကို တွဲဖတ်ပါ။ ဆောင်းသီးနှံအားလုံး အမြဲCO2နည်းသည်ဟု မဆိုပါ။",
+        "translatedFrom": "ja"
+      },
+      "th": {
+        "prompt": "บทเรียนระบุสถานการณ์เพาะปลูกสองแบบใดที่อาจขาดคาร์บอนไดออกไซด์ และการขาดอาจส่งผลอย่างไร ให้คงความหมายว่าอาจเกิดขึ้น ไม่ใช่เกิดขึ้นเสมอ",
+        "modelAnswer": "ฤดูหนาวมักปิดโรงเรือนนานขึ้นในเวลากลางวัน เอกสารระดับ 2 ยกการปลูกฤดูหนาวแบบนี้และการปลูกด้วยสารละลายธาตุอาหารเป็นกรณีที่อาจขาด CO2 ทำให้สังเคราะห์แสงและเจริญเติบโตลดลง อ่านความสัมพันธ์ระหว่างสถานการณ์กับผล ไม่ได้บอกว่าพืชฤดูหนาวทุกต้นขาดเสมอ",
+        "translatedFrom": "ja"
+      },
+      "km": {
+        "prompt": "មេរៀនលើកឡើងពីស្ថានភាពដាំដុះពីរប្រភេទណាដែលអាចខ្វះកាបូនឌីអុកស៊ីត ហើយការខ្វះនេះអាចប៉ះពាល់អ្វីខ្លះ? ចូររក្សាន័យថា «អាច» មិនមែនតែងតែកើតឡើងទេ។",
+        "modelAnswer": "រដូវរងា ផ្ទះដាំអាចបិទយូរនៅពេលថ្ងៃ។ ឯកសារកម្រិត២លើកការដាំរដូវរងាបែបនេះ និងការដាំដោយទឹកសារធាតុចិញ្ចឹម ជាករណីអាចខ្វះ CO2 បណ្តាលឱ្យរស្មីសំយោគនិងការលូតលាស់ថយ។ អានទំនាក់ទំនងស្ថានភាពនិងផលប៉ះពាល់ មិនមែនដំណាំរដូវរងាទាំងអស់ខ្វះជានិច្ចទេ។",
+        "translatedFrom": "ja"
+      },
+      "tl": {
+        "prompt": "Anong dalawang sitwasyon ng pagtatanim ang binabanggit sa aralin na maaaring kulang sa carbon dioxide, at ano ang maaaring epekto ng kakulangang iyon? Panatilihing posibilidad ang paliwanag, hindi tiyak na pangyayari.",
+        "modelAnswer": "Sa taglamig, madalas mas matagal na nakasara ang greenhouse sa araw. Ibinibigay ng Level 2 ang ganitong pagtatanim sa taglamig at pagtatanim sa nutrient solution bilang mga sitwasyong maaaring kulang sa CO2, na nakababawas sa potosintesis at paglago. Basahin ang ugnayan ng sitwasyon at epekto; hindi sinasabing lahat ng pananim sa taglamig ay laging kulang.",
+        "translatedFrom": "ja"
+      }
+    },
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "answerOrigin": {
+      "parts": [
+        {
+          "lessonId": "agr-f40-facility-environment-equipment",
+          "paragraphIds": [
+            "agr-f40-facility-environment-equipment-p3"
+          ],
+          "sourceHash": "be7c883397aa8ea3483b4783173977ed9841b02082821a4be0208dc1a9253031"
+        }
+      ]
+    },
+    "promptRuby": [
+      {
+        "text": "にさんかたんそがふそくするばあいとして、どのふたつのさいばいじょうきょうがあげられていますか。ふそくしたときのえいきょうも、かならずおこるときめつけずにせつめいしましょう。"
+      }
+    ],
+    "modelAnswerRuby": [
+      {
+        "text": "冬",
+        "readingKana": "ふゆ"
+      },
+      {
+        "text": "は"
+      },
+      {
+        "text": "日中",
+        "readingKana": "にっちゅう"
+      },
+      {
+        "text": "に"
+      },
+      {
+        "text": "施設",
+        "readingKana": "しせつ"
+      },
+      {
+        "text": "を"
+      },
+      {
+        "text": "閉",
+        "readingKana": "し"
+      },
+      {
+        "text": "め"
+      },
+      {
+        "text": "切",
+        "readingKana": "き"
+      },
+      {
+        "text": "る"
+      },
+      {
+        "text": "時間",
+        "readingKana": "じかん"
+      },
+      {
+        "text": "が"
+      },
+      {
+        "text": "長",
+        "readingKana": "なが"
+      },
+      {
+        "text": "くなりがちです。2"
+      },
+      {
+        "text": "号資料",
+        "readingKana": "ごうしりょう"
+      },
+      {
+        "text": "は、このような"
+      },
+      {
+        "text": "冬期",
+        "readingKana": "とうき"
+      },
+      {
+        "text": "の"
+      },
+      {
+        "text": "栽培",
+        "readingKana": "さいばい"
+      },
+      {
+        "text": "や"
+      },
+      {
+        "text": "養液栽培",
+        "readingKana": "ようえきさいばい"
+      },
+      {
+        "text": "で"
+      },
+      {
+        "text": "炭酸",
+        "readingKana": "たんさん"
+      },
+      {
+        "text": "ガスが"
+      },
+      {
+        "text": "不足",
+        "readingKana": "ふそく"
+      },
+      {
+        "text": "し、"
+      },
+      {
+        "text": "光合成",
+        "readingKana": "こうごうせい"
+      },
+      {
+        "text": "が"
+      },
+      {
+        "text": "抑",
+        "readingKana": "おさ"
+      },
+      {
+        "text": "えられて"
+      },
+      {
+        "text": "成長",
+        "readingKana": "せいちょう"
+      },
+      {
+        "text": "が"
+      },
+      {
+        "text": "悪",
+        "readingKana": "わる"
+      },
+      {
+        "text": "くなる"
+      },
+      {
+        "text": "場合",
+        "readingKana": "ばあい"
+      },
+      {
+        "text": "を"
+      },
+      {
+        "text": "挙",
+        "readingKana": "あ"
+      },
+      {
+        "text": "げています。"
+      },
+      {
+        "text": "冬",
+        "readingKana": "ふゆ"
+      },
+      {
+        "text": "なら"
+      },
+      {
+        "text": "必",
+        "readingKana": "かなら"
+      },
+      {
+        "text": "ず"
+      },
+      {
+        "text": "不足",
+        "readingKana": "ふそく"
+      },
+      {
+        "text": "するという"
+      },
+      {
+        "text": "断定",
+        "readingKana": "だんてい"
+      },
+      {
+        "text": "ではなく、"
+      },
+      {
+        "text": "掲載",
+        "readingKana": "けいさい"
+      },
+      {
+        "text": "された"
+      },
+      {
+        "text": "場面",
+        "readingKana": "ばめん"
+      },
+      {
+        "text": "と"
+      },
+      {
+        "text": "影響",
+        "readingKana": "えいきょう"
+      },
+      {
+        "text": "の"
+      },
+      {
+        "text": "関係",
+        "readingKana": "かんけい"
+      },
+      {
+        "text": "を"
+      },
+      {
+        "text": "読",
+        "readingKana": "よ"
+      },
+      {
+        "text": "みます。"
+      }
+    ]
+  },
+  "readerAppendIndex": 30,
+  "readerPayloadSha256": "afce7bd18c5cd59e6e2db754714370e3fa2c2d993c3a391a7c37d4430cf1359d",
+  "readerBeforeFileSha256": "762ca054e04c148cae69265b42473658112dad72fd3f5ed978c959163949b163",
+  "canonicalReplacement": {
+    "knowledgeId": "agriculture-v2-AGR-K-F40-FACILITY-ENV-03",
+    "beforeSha256": "3dc8f478bd6bbef0409db76a2f02e32dbcbb47e57bf881b211548172e5a86bc5",
+    "beforeStatus": "partial",
+    "after": {
+      "knowledgeId": "agriculture-v2-AGR-K-F40-FACILITY-ENV-03",
+      "sourceRefs": [
+        {
+          "sourceId": "AGR-S2",
+          "pdfPage": 90,
+          "elementIds": [
+            "AGR-S2:p90:e58",
+            "AGR-S2:p90:e59",
+            "AGR-S2:p90:e60",
+            "AGR-S2:p90:e61",
+            "AGR-S2:p90:e62",
+            "AGR-S2:p90:e63",
+            "AGR-S2:p90:e64",
+            "AGR-S2:p90:e65",
+            "AGR-S2:p90:e66",
+            "AGR-S2:p90:e67",
+            "AGR-S2:p90:e68",
+            "AGR-S2:p90:e69",
+            "AGR-S2:p90:e70",
+            "AGR-S2:p90:e71",
+            "AGR-S2:p90:e72",
+            "AGR-S2:p90:e73",
+            "AGR-S2:p90:e74",
+            "AGR-S2:p90:e75",
+            "AGR-S2:p90:e76",
+            "AGR-S2:p90:e77",
+            "AGR-S2:p90:e78",
+            "AGR-S2:p90:e79",
+            "AGR-S2:p90:e80",
+            "AGR-S2:p90:e81",
+            "AGR-S2:p90:e82",
+            "AGR-S2:p90:e83",
+            "AGR-S2:p90:e84",
+            "AGR-S2:p90:e85",
+            "AGR-S2:p90:e86",
+            "AGR-S2:p90:e87",
+            "AGR-S2:p90:e88",
+            "AGR-S2:p90:e89",
+            "AGR-S2:p90:e90",
+            "AGR-S2:p90:e91",
+            "AGR-S2:p90:e92",
+            "AGR-S2:p90:e93",
+            "AGR-S2:p90:e94",
+            "AGR-S2:p90:e95",
+            "AGR-S2:p90:e96",
+            "AGR-S2:p90:e97",
+            "AGR-S2:p90:e98",
+            "AGR-S2:p90:e99",
+            "AGR-S2:p90:e100",
+            "AGR-S2:p90:e101",
+            "AGR-S2:p90:e102",
+            "AGR-S2:p90:e103",
+            "AGR-S2:p90:e104",
+            "AGR-S2:p90:e105",
+            "AGR-S2:p90:e106",
+            "AGR-S2:p90:e107",
+            "AGR-S2:p90:e108",
+            "AGR-S2:p90:e109",
+            "AGR-S2:p90:e110",
+            "AGR-S2:p90:e111",
+            "AGR-S2:p90:e112",
+            "AGR-S2:p90:e113",
+            "AGR-S2:p90:e114",
+            "AGR-S2:p90:e115",
+            "AGR-S2:p90:e116",
+            "AGR-S2:p90:e117",
+            "AGR-S2:p90:e118",
+            "AGR-S2:p90:e119",
+            "AGR-S2:p90:e120",
+            "AGR-S2:p90:e121",
+            "AGR-S2:p90:e122",
+            "AGR-S2:p90:e123",
+            "AGR-S2:p90:e124",
+            "AGR-S2:p90:e125",
+            "AGR-S2:p90:e126",
+            "AGR-S2:p90:e128",
+            "AGR-S2:p90:e130",
+            "AGR-S2:p90:e132",
+            "AGR-S2:p90:e134",
+            "AGR-S2:p90:e136",
+            "AGR-S2:p90:e138",
+            "AGR-S2:p90:e140",
+            "AGR-S2:p90:e142",
+            "AGR-S2:p90:e144",
+            "AGR-S2:p90:e146",
+            "AGR-S2:p90:e148",
+            "AGR-S2:p90:e150",
+            "AGR-S2:p90:e152",
+            "AGR-S2:p90:e154",
+            "AGR-S2:p90:e156",
+            "AGR-S2:p90:e158",
+            "AGR-S2:p90:e160",
+            "AGR-S2:p90:e162",
+            "AGR-S2:p90:e164",
+            "AGR-S2:p90:e467",
+            "AGR-S2:p90:e468",
+            "AGR-S2:p90:e469",
+            "AGR-S2:p90:e470",
+            "AGR-S2:p90:e471"
+          ]
+        }
+      ],
+      "statementJa": "冬期の長時間閉鎖や養液栽培では二酸化炭素不足により光合成と生長が抑制される場合がある。",
+      "conditionsJa": [
+        "資料の説明範囲に限定し、濃度・供給量・薬剤条件を独自に指定しない。"
+      ],
+      "exceptionsJa": [],
+      "importance": "core",
+      "classification": "knowledge",
+      "before": {
+        "teaching": "unknown",
+        "assessment": "unknown"
+      },
+      "after": {
+        "teaching": "present",
+        "assessment": "present"
+      },
+      "teachingEvidence": [
+        {
+          "path": "src/data/agriculture/lessons.ja.json",
+          "jsonPointer": "/lessons/209/paragraphs/2/textJa",
+          "sha256": "beb583ef27b0fc6faef31f6ea98a62409170499d70a598ad24a3e02f0bf9d3f5",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Existing independently authored Japanese paragraph self-read against rendered original page, including scope/condition. No text regenerated."
+        }
+      ],
+      "assessmentEvidence": [
+        {
+          "path": "src/data/agriculture/mock-exams.ja.json",
+          "jsonPointer": "/exams/18/questions/5",
+          "sha256": "e15aa4d020c6dd9f0f31d2e0f765386df6351bc939895f7d9e032f85ea185aeb",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Read current prompt, all options and rationales; exact facet is elicited, not mere topic match."
+        },
+        {
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Explicitly elicits both cultivation cases plus conditional photosynthesis/growth consequences. Exact original reader payload hash bound after append; no semantic changes.",
+          "path": "src/data/agriculture/reader-moisture-checks.json",
+          "jsonPointer": "/checks/30",
+          "sha256": "afce7bd18c5cd59e6e2db754714370e3fa2c2d993c3a391a7c37d4430cf1359d",
+          "sha256Mode": "json-value"
+        }
+      ],
+      "imageEvidence": [],
+      "assessmentRequirement": "required",
+      "assessmentExemptionReason": null,
+      "expressionReview": {
+        "status": "independent_ai_checked",
+        "note": "Existing app-authored teaching and questions preserve the bounded source claim/conditions using independent explanation and original distractors; source image/prose not redistributed."
+      },
+      "status": "covered_ai",
+      "unresolved": [],
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false,
+        "physicalDeviceTested": false
+      },
+      "legacyRefs": {
+        "path": "docs/ssw-workspace/agriculture/knowledge-ledger.json",
+        "id": "AGR-K-F40-FACILITY-ENV-03",
+        "lessonIds": [
+          "agr-f40-facility-environment-equipment"
+        ],
+        "questionIds": [
+          "agr-2-m09-q06"
+        ]
+      },
+      "sourceReview": {
+        "status": "self_checked_ai",
+        "conditionsChecked": true,
+        "reviewRef": "docs/ssw-workspace/agriculture/parallel-continuation-20261103/facility/packet.json"
+      }
+    },
+    "before": {
+      "knowledgeId": "agriculture-v2-AGR-K-F40-FACILITY-ENV-03",
+      "sourceRefs": [
+        {
+          "sourceId": "AGR-S2",
+          "pdfPage": 90,
+          "elementIds": [
+            "AGR-S2:p90:e58",
+            "AGR-S2:p90:e59",
+            "AGR-S2:p90:e60",
+            "AGR-S2:p90:e61",
+            "AGR-S2:p90:e62",
+            "AGR-S2:p90:e63",
+            "AGR-S2:p90:e64",
+            "AGR-S2:p90:e65",
+            "AGR-S2:p90:e66",
+            "AGR-S2:p90:e67",
+            "AGR-S2:p90:e68",
+            "AGR-S2:p90:e69",
+            "AGR-S2:p90:e70",
+            "AGR-S2:p90:e71",
+            "AGR-S2:p90:e72",
+            "AGR-S2:p90:e73",
+            "AGR-S2:p90:e74",
+            "AGR-S2:p90:e75",
+            "AGR-S2:p90:e76",
+            "AGR-S2:p90:e77",
+            "AGR-S2:p90:e78",
+            "AGR-S2:p90:e79",
+            "AGR-S2:p90:e80",
+            "AGR-S2:p90:e81",
+            "AGR-S2:p90:e82",
+            "AGR-S2:p90:e83",
+            "AGR-S2:p90:e84",
+            "AGR-S2:p90:e85",
+            "AGR-S2:p90:e86",
+            "AGR-S2:p90:e87",
+            "AGR-S2:p90:e88",
+            "AGR-S2:p90:e89",
+            "AGR-S2:p90:e90",
+            "AGR-S2:p90:e91",
+            "AGR-S2:p90:e92",
+            "AGR-S2:p90:e93",
+            "AGR-S2:p90:e94",
+            "AGR-S2:p90:e95",
+            "AGR-S2:p90:e96",
+            "AGR-S2:p90:e97",
+            "AGR-S2:p90:e98",
+            "AGR-S2:p90:e99",
+            "AGR-S2:p90:e100",
+            "AGR-S2:p90:e101",
+            "AGR-S2:p90:e102",
+            "AGR-S2:p90:e103",
+            "AGR-S2:p90:e104",
+            "AGR-S2:p90:e105",
+            "AGR-S2:p90:e106",
+            "AGR-S2:p90:e107",
+            "AGR-S2:p90:e108",
+            "AGR-S2:p90:e109",
+            "AGR-S2:p90:e110",
+            "AGR-S2:p90:e111",
+            "AGR-S2:p90:e112",
+            "AGR-S2:p90:e113",
+            "AGR-S2:p90:e114",
+            "AGR-S2:p90:e115",
+            "AGR-S2:p90:e116",
+            "AGR-S2:p90:e117",
+            "AGR-S2:p90:e118",
+            "AGR-S2:p90:e119",
+            "AGR-S2:p90:e120",
+            "AGR-S2:p90:e121",
+            "AGR-S2:p90:e122",
+            "AGR-S2:p90:e123",
+            "AGR-S2:p90:e124",
+            "AGR-S2:p90:e125",
+            "AGR-S2:p90:e126",
+            "AGR-S2:p90:e128",
+            "AGR-S2:p90:e130",
+            "AGR-S2:p90:e132",
+            "AGR-S2:p90:e134",
+            "AGR-S2:p90:e136",
+            "AGR-S2:p90:e138",
+            "AGR-S2:p90:e140",
+            "AGR-S2:p90:e142",
+            "AGR-S2:p90:e144",
+            "AGR-S2:p90:e146",
+            "AGR-S2:p90:e148",
+            "AGR-S2:p90:e150",
+            "AGR-S2:p90:e152",
+            "AGR-S2:p90:e154",
+            "AGR-S2:p90:e156",
+            "AGR-S2:p90:e158",
+            "AGR-S2:p90:e160",
+            "AGR-S2:p90:e162",
+            "AGR-S2:p90:e164",
+            "AGR-S2:p90:e467",
+            "AGR-S2:p90:e468",
+            "AGR-S2:p90:e469",
+            "AGR-S2:p90:e470",
+            "AGR-S2:p90:e471"
+          ]
+        }
+      ],
+      "statementJa": "冬期の長時間閉鎖や養液栽培では二酸化炭素不足により光合成と生長が抑制される場合がある。",
+      "conditionsJa": [
+        "資料の説明範囲に限定し、濃度・供給量・薬剤条件を独自に指定しない。"
+      ],
+      "exceptionsJa": [],
+      "importance": "core",
+      "classification": "knowledge",
+      "before": {
+        "teaching": "unknown",
+        "assessment": "unknown"
+      },
+      "after": {
+        "teaching": "present",
+        "assessment": "partial"
+      },
+      "teachingEvidence": [
+        {
+          "path": "src/data/agriculture/lessons.ja.json",
+          "jsonPointer": "/lessons/209/paragraphs/2/textJa",
+          "sha256": "beb583ef27b0fc6faef31f6ea98a62409170499d70a598ad24a3e02f0bf9d3f5",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Existing independently authored Japanese paragraph self-read against rendered original page, including scope/condition. No text regenerated."
+        }
+      ],
+      "assessmentEvidence": [
+        {
+          "path": "src/data/agriculture/mock-exams.ja.json",
+          "jsonPointer": "/exams/18/questions/5",
+          "sha256": "e15aa4d020c6dd9f0f31d2e0f765386df6351bc939895f7d9e032f85ea185aeb",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Read current prompt, all options and rationales; exact facet is elicited, not mere topic match."
+        }
+      ],
+      "imageEvidence": [],
+      "assessmentRequirement": "required",
+      "assessmentExemptionReason": null,
+      "expressionReview": {
+        "status": "independent_ai_checked",
+        "note": "Existing app-authored teaching and questions preserve the bounded source claim/conditions using independent explanation and original distractors; source image/prose not redistributed."
+      },
+      "status": "partial",
+      "unresolved": [
+        "Winter closed-house case is directly assessed; hydroponic cultivation case is taught but no direct elicitation was found in selected assessments."
+      ],
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false,
+        "physicalDeviceTested": false
+      },
+      "legacyRefs": {
+        "path": "docs/ssw-workspace/agriculture/knowledge-ledger.json",
+        "id": "AGR-K-F40-FACILITY-ENV-03",
+        "lessonIds": [
+          "agr-f40-facility-environment-equipment"
+        ],
+        "questionIds": [
+          "agr-2-m09-q06"
+        ]
+      },
+      "sourceReview": {
+        "status": "self_checked_ai",
+        "conditionsChecked": true,
+        "reviewRef": "docs/ssw-workspace/agriculture/parallel-completion-20261103/facility/patch-proposal.json"
+      }
+    }
+  },
+  "limits": "If other additions are integrated first, recompute only JSON pointer from actual final check ID index; content hash remains unchanged."
+}
