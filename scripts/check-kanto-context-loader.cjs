@@ -5,7 +5,7 @@ const result=esbuild.buildSync({entryPoints:[path.join(root,'src/services/dialog
 const hostRequire=Object.assign(require,{context(dir,recursive,pattern){
  const full=path.resolve(root,'src/services',dir),files=[];
  function walk(parent,prefix=''){for(const e of fs.readdirSync(parent,{withFileTypes:true})){const k=prefix+e.name;if(e.isDirectory()){if(recursive)walk(path.join(parent,e.name),k+'/');}else if(pattern.test(k))files.push('./'+k);}}
- walk(full);const context=key=>JSON.parse(fs.readFileSync(path.join(full,key),'utf8'));context.keys=()=>files;return context;
+ walk(full);const modules=new Map();const context=key=>{if(!modules.has(key))modules.set(key,JSON.parse(fs.readFileSync(path.join(full,key),'utf8')));return modules.get(key);};context.keys=()=>files;return context;
 }});
 const box={exports:{}};new Function('module','exports','require',result.outputFiles[0].text)(box,box.exports,hostRequire);
 const base=path.join(root,'docs/localization-workspace/region-review/kanto-20261103');
