@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "645375339e6266fbf7a65f0ee178ef7061eb6761",
+  "target": "src/components/agriculture/AgricultureCourse.tsx",
+  "targetFileSha256": "2cb27a92b6e96193659e250f62e84dd6b5694373a2959c4729d53fb4b415fd5a",
+  "prepend": "import {AgricultureParagraphRuby} from './AgricultureParagraphRuby';\n",
+  "replace": {
+    "before": "<Text selectable style={[s.body,{color:colors.text}]}>{p.textJa}</Text>",
+    "after": "<AgricultureParagraphRuby lesson={lesson} paragraphId={p.id} text={p.textJa} level={level} color={colors.text} readingColor={colors.muted}/>",
+    "expectedOccurrences": 1
+  },
+  "newFiles": [
+    {
+      "from": "docs/ssw-workspace/agriculture/continuation-20261103c/daily/proposed/contextual-reading.cjs",
+      "to": "src/data/agriculture/contextual-reading.cjs"
+    },
+    {
+      "from": "docs/ssw-workspace/agriculture/continuation-20261103c/daily/proposed/AgricultureParagraphRuby.tsx",
+      "to": "src/components/agriculture/AgricultureParagraphRuby.tsx"
+    }
+  ]
+}
