@@ -18,3 +18,15 @@ Chỉ record sau khi thực đọc ngữ cảnh Nhật và trọn 11 câu/5 gợ
 12 ngôn ngữ. Worker tự rà; không kiểm chéo. Aggregate `worker-N.json` là
 tổng hợp chính xác các `workerN-partNNNN.json`; bộ kiểm tra không cộng
 trùng part và aggregate. Giữ cờ chưa duyệt bản ngữ và ghi riêng vấn đề nguồn.
+
+Kiểm tra bộ nạp thật với bộ nhớ giới hạn và dữ liệu JSON nạp trực tiếp:
+
+```bash
+NODE_OPTIONS=--max-old-space-size=384 node scripts/check-kinki-context-loader.cjs --out docs/localization-workspace/region-review/kinkifinal-20261103/runtime-kinki-qa.json
+```
+
+Kiểm tra này bao phủ cấu trúc/dữ liệu của 1.115 bài Kinki, đủ 12 ngôn ngữ,
+hiragana và binding giọng. Số bài đã rà ngữ cảnh lấy riêng từ receipt và
+queue; dữ liệu được nạp thành công không tự trở thành đã rà ngữ nghĩa.
+Khi ổ làm việc được thu gọn theo Kinki, giữ đủ locale batch của toàn vùng;
+Git vẫn lưu đầy đủ corpus. Kiểm tra toàn corpus cần materialize các lô khác.
