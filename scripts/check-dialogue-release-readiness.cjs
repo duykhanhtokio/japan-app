@@ -7,6 +7,7 @@ const assert = require('node:assert/strict');
 const {root, read, locales, validateBatch, hash} = require('./lib/dialogue-translation-validation.cjs');
 const digest = text => crypto.createHash('sha256').update(text).digest('hex');
 const args = process.argv.slice(2);
+const contextOnly = args.includes('--context-only');
 
 async function main() {
   const built = await require('esbuild').build({
@@ -48,10 +49,15 @@ async function main() {
   const index = read('src/data/dialogue-content/locale-batch-index.json');
   assert.deepEqual(new Set(Object.keys(index)), canonical, 'Translation index differs from canonical corpus');
   const batches = [...new Set(Object.values(index))].sort();
+  const batchArgumentAt = args.indexOf('--batches');
+  const checkedBatches = contextOnly
+    ? [...new Set(batchArgumentAt >= 0 ? args[batchArgumentAt + 1].split(',').filter(Boolean) : [])].sort()
+    : batches;
+  for (const batch of checkedBatches) assert(batches.includes(batch), 'Unknown requested batch ' + batch);
   const progress = read('docs/localization-workspace/DIALOGUE_TRANSLATION_PROGRESS.json');
   const receipts = new Map(progress.completedBatches.map(b => [b.batch, b]));
   let sentences = 0, hints = 0;
-  for (const batch of batches) {
+  for (const batch of checkedBatches) {
     const checked = validateBatch(batch), receipt = receipts.get(batch);
     assert(receipt, 'Missing coverage manifest batch ' + batch);
     assert.equal(checked.sourceSha256, receipt.sourceSha256, 'Stale source manifest ' + batch);
@@ -61,7 +67,7 @@ async function main() {
   const cast = read('src/data/dialogue-content/npc-voice-casting.json');
   const voices = read('src/data/jlpt-original/voice-casting.json');
   let npc = 0, player = 0, ruby = 0, packed = 0;
-  for (const sid of canonical) {
+  for (const sid of contextOnly ? [] : canonical) {
     const scenario = runtime.getLifeScenarioById(sid);
     const category = (runtime.getLifeLocationById(scenario.locationId)?.category ?? '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     assert(!cast.unverifiedCategories.includes(category), 'Unverified voice category ' + category);
@@ -164,11 +170,14 @@ async function main() {
   assert(canonical.has(queue.nextScenarioId) && !reviewed.has(queue.nextScenarioId), 'Next queue scenario is absent/already reviewed');
   assert.equal(index[queue.nextScenarioId], queue.nextBatch, 'Next queue batch is incorrect');
   const report = {
-    status: 'PASS_TECHNICAL_COVERAGE_RELEASE_INCOMPLETE',
+    status: contextOnly ? 'PASS_CONTEXT_RECEIPTS_AND_SCOPED_BATCHES_RELEASE_INCOMPLETE' : 'PASS_TECHNICAL_COVERAGE_RELEASE_INCOMPLETE',
+    validationScope: contextOnly ? 'All contextual receipts plus explicitly requested batches; no corpus-wide hiragana/audio assertion.' : 'Whole-corpus technical coverage',
+    checkedTranslationBatches: checkedBatches,
     canonicalScenarios: canonical.size, batches: batches.length, targetLocales: locales,
-    turnTranslations: sentences, hintTranslations: hints,
-    currentSourceBoundHiraganaTurns: ruby, npcTurns: npc, playerTurns: player,
-    currentSourceAndVoicePackedNpcTurns: packed,
+    turnTranslations: contextOnly ? null : sentences, hintTranslations: contextOnly ? null : hints,
+    scopedTurnTranslations: sentences, scopedHintTranslations: hints,
+    currentSourceBoundHiraganaTurns: contextOnly ? null : ruby, npcTurns: contextOnly ? null : npc, playerTurns: contextOnly ? null : player,
+    currentSourceAndVoicePackedNpcTurns: contextOnly ? null : packed,
     contextReview: {revisionBoundScenariosAll12Locales: fullyReviewed, revisionBoundFields: reviewedFields, revisionAmendedFields: amendments.count, remainingScenarios: canonical.size - fullyReviewed, nextScenarioId: queue.nextScenarioId, nextBatch: queue.nextBatch, queueMatchesReceipts: true, scope: 'AI sentence/task review only; known issues remain.'},
     nativeReviewed: false, nativePronunciationApproved: false, nativeDeviceVerified: false,
     releaseAccepted: false,
