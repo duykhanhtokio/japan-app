@@ -161,6 +161,7 @@ for batch in manifest['completedBatches']:
 write(manifestpath, manifest)
 progress = read(OUT / 'progress.json')
 progress.update(reviewed=len(reviewed), remaining=1064-len(reviewed), fields=len(reviewed)*192, repairs=repairs)
+progress['status'] = 'AI_CONTEXT_REVIEW_COMPLETE_NOT_NATIVE_CERTIFIED' if len(reviewed) == 1064 else 'IN_PROGRESS'
 for w in progress['workers']:
     owned = {sid for sid, owner in owners.items() if owner == w['worker']}
     w['reviewed'] = len(owned & reviewed)

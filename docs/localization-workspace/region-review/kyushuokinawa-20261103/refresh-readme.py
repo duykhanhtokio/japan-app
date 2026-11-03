@@ -5,8 +5,9 @@ root = pathlib.Path(__file__).resolve().parent
 p = json.loads((root/'progress.json').read_text())
 names = ['Fukuoka', 'Saga + Nagasaki', 'Kumamoto', 'Oita + Miyazaki', 'Kagoshima', 'Okinawa']
 text = '# Kyushu & Okinawa — rà ngữ cảnh đủ 12 ngôn ngữ\n\n'
-text += f"**{p['reviewed']}/1.064 bài** có receipt/hash hợp lệ trong cây dữ liệu này. Còn **{p['remaining']} bài**; chưa hoàn tất vùng. **Okinawa101/101** giữ nguyên.\n\n"
-text += 'Sáu phạm vi độc lập, không kiểm chéo ngữ nghĩa. Fukuoka chia hai tập ID không giao nhau; các phạm vi khác là Saga–Nagasaki, Kumamoto, Oita–Miyazaki và Kagoshima. Giữ nguyên byte receipt cũ; điều phối chỉ kiểm sở hữu, cấu trúc, guard và hash.\n\n'
+state = 'đã hoàn tất rà ngữ cảnh AI đủ12ngôn ngữ' if p['remaining'] == 0 else 'chưa hoàn tất vùng'
+text += f"**{p['reviewed']}/1.064 bài** có receipt/hash hợp lệ trong cây dữ liệu này. Còn **{p['remaining']} bài**; {state}. **Okinawa101/101** giữ nguyên.\n\n"
+text += 'Sáu phạm vi độc lập, không kiểm chéo ngữ nghĩa. Phân công theo các tập ID không giao nhau; AI đã xong chuyển sang ID chưa rà của các phạm vi còn lại. Giữ nguyên byte receipt cũ; điều phối chỉ kiểm sở hữu, cấu trúc, guard và hash.\n\n'
 text += '| Phạm vi | Đã rà/tổng | Còn |\n|---|---:|---:|\n'
 for w, name in zip(p['workers'], names):
     text += f"|{name}|{w['reviewed']}/{w['assigned']}|{len(w['pendingScenarioIds'])}|\n"
