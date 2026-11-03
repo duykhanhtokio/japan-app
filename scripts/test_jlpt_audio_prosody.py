@@ -195,6 +195,30 @@ class ProsodyTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             query_parts(q, 0)
 
+    def test_long_clauses_do_not_accumulate_past_the_inference_ceiling(self):
+        q = copy.deepcopy(self.query)
+        phrase = copy.deepcopy(q['accent_phrases'][0])
+        phrase['moras'] = [copy.deepcopy(phrase['moras'][0]) for _ in range(90)]
+        phrase['accent'] = 1
+        self.assertIsNotNone(phrase.get('pause_mora'))
+        q['accent_phrases'] = [copy.deepcopy(phrase) for _ in range(3)]
+        parts = query_parts(q, 160)
+        self.assertEqual([len(part['accent_phrases']) for part in parts], [1, 1, 1])
+        self.assertEqual([p for part in parts for p in part['accent_phrases']], q['accent_phrases'])
+        # An indivisible long clause stays intact instead of cutting speech
+        # at an arbitrary mora and changing its pronunciation/accent.
+        self.assertEqual(len(query_parts(q, 80)), 3)
+
+    def test_linked_installation_keeps_audio_when_candidate_is_atomically_replaced(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source, target, replacement = (Path(directory) / name for name in ('candidate.mp3', 'installed.mp3', 'replacement.mp3'))
+            source.write_bytes(b'verified recording')
+            installer.atomic_copy(source, target, link=True)
+            replacement.write_bytes(b'future separate recording')
+            replacement.replace(source)
+            self.assertEqual(target.read_bytes(), b'verified recording')
+            self.assertEqual(source.read_bytes(), b'future separate recording')
+
     def test_candidate_must_not_write_live_assets(self):
         for target in ('assets/jlpt-original', '..', '/tmp/prosody-output'):
             with self.assertRaises(ValueError):

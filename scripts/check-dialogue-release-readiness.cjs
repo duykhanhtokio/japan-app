@@ -181,8 +181,13 @@ async function main() {
   assert.deepEqual(new Set(queuedReviewed), new Set(reviewed.keys()), 'Queue and revision-bound review receipts differ');
   assert.equal(queue.aiSentenceTaskReviewedScenarios, fullyReviewed, 'Stale reviewed queue total');
   assert.equal(queue.remainingSentenceTaskScenarios, canonical.size - fullyReviewed, 'Stale remaining queue total');
-  assert(canonical.has(queue.nextScenarioId) && !reviewed.has(queue.nextScenarioId), 'Next queue scenario is absent/already reviewed');
-  assert.equal(index[queue.nextScenarioId], queue.nextBatch, 'Next queue batch is incorrect');
+  if (fullyReviewed === canonical.size) {
+    assert.equal(queue.nextScenarioId, null, 'Completed corpus must have no next scenario');
+    assert.equal(queue.nextBatch, null, 'Completed corpus must have no next batch');
+  } else {
+    assert(canonical.has(queue.nextScenarioId) && !reviewed.has(queue.nextScenarioId), 'Next queue scenario is absent/already reviewed');
+    assert.equal(index[queue.nextScenarioId], queue.nextBatch, 'Next queue batch is incorrect');
+  }
   const report = {
     status: 'PASS_TECHNICAL_COVERAGE_RELEASE_INCOMPLETE',
     canonicalScenarios: canonical.size, batches: batches.length, targetLocales: locales,

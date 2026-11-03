@@ -226,11 +226,26 @@ def query_parts(query, max_moras):
     if not isinstance(max_moras, int) or isinstance(max_moras, bool) or max_moras < 1:
         raise ValueError('Invalid inference part size')
     phrases = query['accent_phrases']
-    groups, current, count = [], [], 0
+    # Build indivisible pause-delimited spans first. Cutting only AFTER a
+    # threshold could join a nearly full part to another long clause and
+    # greatly exceed the intended inference memory bound.
+    spans, current = [], []
     for phrase in phrases:
         current.append(phrase)
-        count += len(phrase['moras'])
-        if count >= max_moras and phrase.get('pause_mora') is not None:
+        if phrase.get('pause_mora') is not None:
+            spans.append(current)
+            current = []
+    if current:
+        spans.append(current)
+    groups, current, count = [], [], 0
+    for span in spans:
+        size = sum(len(phrase['moras']) for phrase in span)
+        if current and count + size > max_moras:
+            groups.append(current)
+            current, count = [], 0
+        current.extend(span)
+        count += size
+        if count >= max_moras:
             groups.append(current)
             current, count = [], 0
     if current:

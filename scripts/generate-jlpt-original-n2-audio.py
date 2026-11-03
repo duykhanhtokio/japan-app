@@ -8,6 +8,7 @@ from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint
 ap=argparse.ArgumentParser();ap.add_argument('--level',choices=['n2','n1'],default='n2');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--cpu-threads',type=int,default=2);ap.add_argument('--restart-every',type=int,choices=range(1,513),default=6);ap.add_argument('--engine',required=True);ap.add_argument('--prosody-profile');ap.add_argument('--candidate-dir');ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--cache-only',action='store_true',help='Reassemble approved cached speech without starting or calling VOICEVOX');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[24,32,40,48,64,96],default=96);args=ap.parse_args();level=args.level;exam_number=f'{args.exam_number:02d}'
 root=Path(__file__).resolve().parent.parent;master=root/f'src/data/jlpt-original/{level}/{exam_number}/master.ja.json';master_bytes=master.read_bytes();exam=json.loads(master_bytes);casting=json.loads((root/'src/data/jlpt-original/voice-casting.json').read_text());settings={**casting['settings'],**casting.get('levelPacing',{}).get(level,{})};roles=casting['roles'];organization_path=root/f'src/data/jlpt-original/{level}/{exam_number}/listening-organization.ja.json';organization_bytes=organization_path.read_bytes();organization=json.loads(organization_bytes)
 render_root=candidate_root(root,args.candidate_dir,args.prosody_profile);prosody=load_profile(root/args.prosody_profile) if args.prosody_profile else None;engine_version=None
+inference_limit=min(prosody.get('inferenceMaxMoras',160),80 if level=='n1' else 160) if prosody else None
 if prosody and getattr(args,'cache_only',False):raise ValueError('Prosody candidates require real re-synthesis, not legacy cache-only assembly')
 render_guard=None
 if prosody:
@@ -65,7 +66,8 @@ def synth(text,role,mode='dialogue'):
   q=json.loads(req('/audio_query?'+urllib.parse.urlencode({'speaker':sid,'text':speech_query_text(text)}),b''));q=apply_query(q,prosody,level,mode) if prosody else dict(q,speedScale=settings['speedScale'],outputSamplingRate=24000,outputStereo=False)
   if prosody:
    pcm_parts=[]
-   for part in query_parts(q,prosody.get('inferenceMaxMoras',160)):
+   for part_index,part in enumerate(query_parts(q,inference_limit)):
+    if part_index and level=='n1':stop();start()
     encoded=req('/synthesis?speaker='+str(sid),json.dumps(part).encode())
     with wave.open(io.BytesIO(encoded)) as w:
      assert (w.getframerate(),w.getnchannels(),w.getsampwidth())==(24000,1,2)
@@ -193,6 +195,7 @@ try:
   manifest['legacyTimingReference']=manifest.pop('settings')
   manifest['settings']={'mode':'per-utterance-prosody-candidate','answerPauseSecondsByProblem':settings['answerPauseSecondsByProblem'],'afterIntroSeconds':settings['afterIntroSeconds']}
   manifest['prosody']={'profile':prosody,'profileSha256':fingerprint(prosody),'engineVersion':engine_version,'candidateOnly':True,'installedInApp':False,'playbackReviewed':False,'textNormalization':SPOKEN_TEXT_NORMALIZATION,'renderRevision':prosody['revision']+'/'+SPOKEN_TEXT_NORMALIZATION}
+ if prosody:manifest['prosody'].update(inferenceMaxMorasApplied=inference_limit,restartBetweenInferenceParts=level=='n1')
  manifest_path=render_root/f'src/data/jlpt-original/{level}/{exam_number}/audio.manifest.json';manifest_path.parent.mkdir(parents=True,exist_ok=True)
  manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'count':len(segments),'durationSeconds':len(album)/48000,'complete':True}),flush=True)
 except BaseException:
