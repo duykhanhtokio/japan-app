@@ -1,19 +1,67 @@
 {
   "status": "PASS",
   "worker": 1,
-  "reviewedScenarios": 10,
-  "reviewedFields": 1920,
-  "changedFields": 104,
-  "remainingScenarios": 271,
-  "nextScenarioId": "SC-LOC-011-02-001",
-  "nextBatch": "022",
+  "reviewedScenarios": 33,
+  "reviewedFields": 6336,
+  "changedFields": 228,
+  "remainingScenarios": 248,
+  "nextScenarioId": "SC-LOC-EXP-028-001",
+  "nextBatch": "117",
   "nativeReviewed": false,
   "semanticCrossReview": false,
   "sourceIssues": [
     {
       "scenarioId": "SC-LOC-008-07-001",
-      "turn": "04",
-      "issue": "Japanese hint says 年払い保険 (annual insurance); spoken Japanese only specifies 車の保険 (car insurance). Preserved canonical source; extra hint specificity not independently verified."
+      "turnId": "DLG-SC-LOC-008-07-001-SHARED-04",
+      "field": "hintJa",
+      "issue": "Japanese hint says annual insurance (年払い保険), whereas spoken source specifies only car insurance (車の保険); annual payment frequency is not established in dialogue.",
+      "blocksFullAcceptance": true,
+      "status": "SOURCE_ALIGNMENT_UNRESOLVED",
+      "canonicalEdited": false
+    },
+    {
+      "scenarioId": "SC-LOC-011-02-001",
+      "turnId": "DLG-SC-LOC-011-02-001-SHARED-08",
+      "field": "hintJa",
+      "issue": "Japanese hint asks to show own-device ticket and arrange reunion, whereas spoken turn says companion stays seated while player alone retrieves earplugs.",
+      "blocksFullAcceptance": true,
+      "status": "SOURCE_ALIGNMENT_UNRESOLVED",
+      "canonicalEdited": false
+    },
+    {
+      "scenarioId": "SC-LOC-011-04-001",
+      "turnId": "DLG-SC-LOC-011-04-001-SHARED-06",
+      "field": "hintJa",
+      "issue": "Japanese hint asks contact to other department, whereas spoken turn asks internal-medicine reception to be informed of second appointment.",
+      "blocksFullAcceptance": true,
+      "status": "SOURCE_ALIGNMENT_UNRESOLVED",
+      "canonicalEdited": false
+    },
+    {
+      "scenarioId": "SC-LOC-011-05-001",
+      "turnId": "DLG-SC-LOC-011-05-001-SHARED-10",
+      "field": "hintJa",
+      "issue": "Japanese hint broadly asks correction of unfound-item information, whereas spoken turn requests only licence marked found after collection and other items remain missing.",
+      "blocksFullAcceptance": true,
+      "status": "SOURCE_ALIGNMENT_UNRESOLVED",
+      "canonicalEdited": false
+    },
+    {
+      "scenarioId": "SC-LOC-011-09-001",
+      "turnId": "DLG-SC-LOC-011-09-001-SHARED-10",
+      "field": "hintJa",
+      "issue": "Japanese hint says replacement date (差替え日), whereas spoken turn says dates received (届いた日); exact event date differs.",
+      "blocksFullAcceptance": true,
+      "status": "SOURCE_ALIGNMENT_UNRESOLVED",
+      "canonicalEdited": false
     }
-  ]
+  ],
+  "sourceIssueScenarioCount": 5,
+  "writeState": "STOPPED_AT_COMPLETE_SCENARIO",
+  "completedBatches": [
+    "016",
+    "022",
+    "028"
+  ],
+  "partialBatch": "117"
 }

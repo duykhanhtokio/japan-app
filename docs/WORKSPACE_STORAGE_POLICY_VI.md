@@ -12,3 +12,5 @@
 8. Cuối phiên: kiểm tra lại dung lượng, dừng tiến trình do phiên khởi chạy, ghi nhận commit đã xác minh và phần còn dở. Nếu thiếu quyền push/mạng hoặc chưa xác minh được, giữ dữ liệu và báo chặn; không xóa kết quả để lấy chỗ.
 
 Push không tự giải phóng ổ đĩa. Việc dọn là bước riêng sau xác minh. Không tự dọn thư mục thuộc phiên/người khác chỉ vì dung lượng lớn.
+
+9. Khi lưu bằng GitHub connector thay Git push: chia nhỏ dữ liệu truyền, ghép đủ rồi parse/kiểm hash trước khi gửi; không dùng output có dấu cắt ngắn hoặc head/tail thay cho file gốc. Sau khi tạo tree trên GitHub, SHA tree phải bằng đúng SHA tree cục bộ đã kiểm chứng trước khi cập nhật ref. Mã commit có thể khác do metadata, nhưng nội dung tree không được khác. Nếu phát hiện JSON bị cắt giữa chừng, chỉ khôi phục từ bản đầy đủ có đối chiếu hash/dấu vết rõ ràng rồi chạy lại validator trước khi lưu.
