@@ -8,11 +8,11 @@ Khi worker đã ngừng ghi, chạy `python scripts/check-kanto-context-review.p
 
 ## Checkpoint hiện tại
 
-Đã đọc thực **545/1.681 bài × 12 ngôn ngữ**, **104.640 trường**. Lượt tiếp tục từ mốc188 thêm **357 bài**, cụm vừa chốt từ326 thêm **219 bài**. Còn **1.136 bài**. Tích lũy sửa **2.721 trường dịch**, **336 metadata hintJa trong lô dịch**, **28 hint Nhật** và **56 goal/evaluationNotes** tương ứng; không đổi lời thoại nói, IDs, ruby hay âm thanh. Mỗi bài chỉ count một lần; phần có bằng chứng hợp lệ được giữ lại. `resume.json` ghi điểm tiếp tục độc quyền của sáu phạm vi.
+Đã đọc thực **707/1.681 bài × 12 ngôn ngữ**, **135.744 trường**. Giữ nguyên 545 bài tại checkpoint `47a8aad37`, thêm **162 ID mới**, không cộng lại 10 ID trùng vừa xuất hiện từ phiên trước. Còn **974 bài**. Tích lũy sửa **3.321 trường dịch**, **336 metadata hintJa**, **28 hint Nhật** và **56 goal/evaluationNotes**; không đổi lời thoại nói, IDs, ruby hay âm thanh. `continuation-union-qa.json` ghi phép hợp bằng chứng và `resume.json` ghi điểm tiếp tục của sáu phạm vi độc lập.
 
 Chủ phạm vi đọc JP và đủ12locale, tự sửa và tự kiểm; coordinator chỉ tích hợp/kiểm hash, không kiểm chéo ngữ nghĩa. Các hint lệch lượt được đồng bộ nguồn Nhật, runtime,12bản dịch và mục tiêu đánh giá. Hai cảnh báo cũ được đóng bằng toàn ngữ cảnh, không sửa tùy tiện. Patch do người rà gốc đã phê duyệt được phiên thay thế áp dụng kỹ thuật với before/hash khớp, không đếm lại.
 
-Còn một vấn đề số tờ giấy ở NPC `SC-LOC-TKY-005-001` cần chốt canonical spoken Japanese đồng thời audio. `SC-LOC-CHB-NARITA-06-001` lưu mơ hồ thông tin tài khoản trên giấy, chưa khẳng định là lỗi chắc chắn; mọi thay spokenJA nếu cần đều phải đồng bộ audio. Hai mục local này không chặn rà các bài khác, không được coi đã nghiệm thu nguồn sạch. Bản ngữ/phát âm/thiết bị/phát hành vẫn riêng biệt.
+Còn một vấn đề số tờ giấy ở NPC `SC-LOC-TKY-005-001` cần chốt canonical spoken Japanese đồng thời audio. `SC-LOC-CHB-NARITA-06-001` lưu mơ hồ thông tin tài khoản trên giấy, chưa khẳng định là lỗi chắc chắn; mọi thay spokenJA nếu cần đều phải đồng bộ audio. Thêm câu Nhật chưa tự nhiên `まだ券を受け取りましたか` ở `SC-LOC-JP-14210-01-001`, turn03; chưa sửa spokenJA/audio. Các mục local này không chặn rà các bài khác, không được coi đã nghiệm thu nguồn sạch. Bản ngữ/phát âm/thiết bị/phát hành vẫn riêng biệt.
 
 `baseline-file-hashes.json` bảo vệ toàn bộ kịch bản Kanto được giao trong2.136tệp locale: replay ngược mọi thay đổi rồi so owned-scope hash và metadata, không phụ thuộc Git object cũ. Bài của vùng khác trong lô giáp ranh được kiểm bằng receipt riêng. `sourceHintAmendments` và `runtimeMetadataAmendments` xác minh thay đổi hint và đúnghai field đánh giá được phép. Sharedhint mirrors chỉ coordinator đồng bộ từ patch chủ phạm vi đã duyệt.
 
