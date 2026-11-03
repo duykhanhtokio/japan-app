@@ -1,7 +1,7 @@
 // Mechanical integration only; semantic review remains with each owning worker.
 const fs = require('node:fs');
 const assert = require('node:assert/strict');
-const {read, hash, locales} = require('./lib/dialogue-translation-validation.cjs');
+const {read, hash, locales, validateBatch} = require('./lib/dialogue-translation-validation.cjs');
 const {expandContextReceipt} = require('./lib/dialogue-context-receipts.cjs');
 const base = 'docs/localization-workspace/region-review/chugoku/session-001/';
 const assignment = read(base + 'assignment.json');
@@ -11,9 +11,16 @@ const queue = read(queuePath), plan = read(planPath);
 const prefectures = new Set(['PRF-031','PRF-032','PRF-033','PRF-034','PRF-035']);
 const members = new Set(queue.prefectures.filter(p => prefectures.has(p.prefectureId)).flatMap(p => p.cities.flatMap(c => [...c.sentenceTaskReviewedScenarioIds, ...c.pendingSentenceTaskScenarioIds])));
 assert.equal(members.size, assignment.regionTotal);
+const assignedIds=assignment.workers.flatMap(w=>w.scenarioIds);
+assert.equal(new Set(assignedIds).size,assignedIds.length,'Overlapping worker scenarios');
+assert.deepEqual(new Set([...assignedIds,...assignment.preservedReviewedScenarioIds]),members,'Incomplete region assignment');
+const batchIndex=read('src/data/dialogue-content/locale-batch-index.json');
+for(const worker of assignment.workers) for(const sid of worker.scenarioIds) assert.equal(assignment.batchOwners[batchIndex[sid]],worker.worker,'Shared batch ownership');
+assert.equal(assignment.semanticCrossReview,false);
+assert.equal(assignment.nativeReviewed,false);
 const preserved = new Set(assignment.preservedReviewedScenarioIds);
 const changedPacks = new Map();
-const seen = new Set(), batches = new Set(), workers = [], receipts = [];
+const seen = new Set(), batches = new Set(), workers = [], receipts = [], sourceIssues = [];
 for (let worker = 1; worker <= 6; worker++) {
   let count = 0, changes = 0;
   for (const file of fs.readdirSync(base).filter(f => new RegExp(`^worker${worker}-part[0-9]{4}\\.json$`).test(f)).sort()) {
@@ -24,6 +31,7 @@ for (let worker = 1; worker <= 6; worker++) {
     for (const row of raw.entries) {
       assert(members.has(row.scenarioId)); assert(!preserved.has(row.scenarioId), 'Previously reviewed scenario repeated'); assert(!seen.has(row.scenarioId), 'Duplicate scenario');
       seen.add(row.scenarioId); batches.add(row.batch); count++;
+      if(row.sourceIssues?.length) sourceIssues.push({scenarioId:row.scenarioId,issues:row.sourceIssues});
     }
     assert.equal(receipt.reviews.length, raw.entries.length * 12);
     for (const change of raw.changes) {
@@ -51,6 +59,7 @@ for (const [path,changes] of changedPacks) {
 }
 // Check complete affected packs without fetching unrelated source assets.
 for (const batch of batches) {
+  validateBatch(batch);
   const source = read(`docs/localization-workspace/sources/dialogue-batch-${batch}.ja.json`);
   for (const locale of locales) {
     const pack = read(`src/data/dialogue-content/locale-batches/${locale}/${batch}.json`);
@@ -90,6 +99,14 @@ for (const r of plan.regions) {
   r.status = r.remainingScenarios ? (r.contextReviewedScenarios ? 'IN_PROGRESS' : 'NOT_STARTED') : 'AI_CONTEXT_REVIEWED_NOT_NATIVE_CERTIFIED';
 }
 const region = plan.regions.find(r=>r.regionId==='chugoku');
+plan.activeRegionId='chugoku';
+plan.proposedOrder=['chugoku',...plan.proposedOrder.filter(r=>r!=='chugoku')];
+const nextPrefecture=[...queue.prefectures.filter(p=>prefectures.has(p.prefectureId)),...queue.prefectures.filter(p=>!prefectures.has(p.prefectureId))].find(p=>p.cities.some(c=>c.pendingSentenceTaskScenarioIds.length));
+if(nextPrefecture){
+  const sid=nextPrefecture.cities.flatMap(c=>c.pendingSentenceTaskScenarioIds)[0];
+  queue.activePrefectureId=nextPrefecture.prefectureId;queue.activePrefectureNameJa=nextPrefecture.nameJa;
+  queue.nextScenarioId=sid;queue.nextBatch=read('src/data/dialogue-content/locale-batch-index.json')[sid];
+}
 const manifestPath = 'docs/localization-workspace/DIALOGUE_TRANSLATION_PROGRESS.json';
 const manifest = read(manifestPath);
 for (const batch of batches) {
@@ -100,6 +117,6 @@ for (const batch of batches) {
     const file = entry.files.find(f=>f.path===path); assert(file); file.sha256=hash(path);
   }
 }
-const progress = {region:'chugoku', status:region.remainingScenarios ? 'IN_PROGRESS_NOT_REGION_COMPLETE' : 'AI_CONTEXT_REVIEWED_NOT_NATIVE_CERTIFIED',total:members.size,reviewed:region.contextReviewedScenarios,remaining:region.remainingScenarios,workers,receipts,nativeReviewed:false,semanticCrossReview:false};
+const progress = {region:'chugoku', status:region.remainingScenarios ? 'IN_PROGRESS_NOT_REGION_COMPLETE' : 'AI_CONTEXT_REVIEWED_NOT_NATIVE_CERTIFIED',total:members.size,reviewed:region.contextReviewedScenarios,remaining:region.remainingScenarios,workers,receipts,reviewedFields:seen.size*192,changedFields:workers.reduce((n,w)=>n+w.changedFields,0),sourceIssues,nativeReviewed:false,semanticCrossReview:false};
 if (process.argv.includes('--write')) for (const [path,data] of [[queuePath,queue],[planPath,plan],[manifestPath,manifest],[base+'progress.json',progress]]) fs.writeFileSync(path,JSON.stringify(data,null,2)+'\n');
 console.log(JSON.stringify({status:'MECHANICAL_RECEIPT_AND_PACK_VALIDATION_PASS',...progress,receipts:receipts.length}));
