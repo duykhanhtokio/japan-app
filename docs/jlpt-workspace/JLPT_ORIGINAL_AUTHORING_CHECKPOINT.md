@@ -726,3 +726,7 @@ Resolved earlier engine blocker using the official VOICEVOX0.25.2 CPU release (a
 ## 2026-11-03 — first two complete real prosody candidates
 
 N5 01 and02 fully re-synthesized using approved four voices;24/24 scored responses each. Actual decoded lengths1723416ms and1652069ms; full decoded timeline/hash/turn text/roles/options/answer windows/exact60000ms break PASS. Candidate MP3s/manifests and completed-only snapshot persist separately; no installed audio or canonical master/manifest changes. Other28 forms continue; human/native/perceptual flagsfalse. Do not call app audio revised until all30 installation and remote verification.
+
+## 2026-11-03 — further complete prosody recordings
+
+jpapp-n5-original-03-v1, jpapp-n5-original-04-v1: complete real synthesis and decoded audio validation. 4/30 candidates complete; 0/30 newly installed. Preserve all text/keys/voices/answer windows/exact60000ms break. Human/native/perceptual approval false. Publication requires remote verification.
