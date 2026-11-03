@@ -1,12 +1,12 @@
 {
   "status": "PASS",
   "worker": 6,
-  "scenarios": 37,
-  "reviewedFields": 7104,
-  "changedFields": 130,
-  "changedLocaleFiles": 45,
-  "pending": 243,
-  "nextScenarioId": "SC-GNM-TAKASAKI-001",
+  "scenarios": 76,
+  "reviewedFields": 14592,
+  "changedFields": 241,
+  "changedLocaleFiles": 73,
+  "pending": 204,
+  "nextScenarioId": "SC-LOC-TKY-MACHIDA-03-001",
   "nativeReviewed": false,
   "semanticCrossReview": false,
   "sourceIssues": [
@@ -15,7 +15,16 @@
       "turnId": "DLG-SC-LOC-011-01-001-SHARED-10",
       "field": "hintJa",
       "issue": "Hint uses 改札名 (ticket-gate name), but current waiting place and turn10 sentence specify 出口名 (east-exit name). Targets faithfully inherit gate-name hint; canonical alignment needs JP-authorized correction.",
-      "status": "SOURCE_HINT_ALIGNMENT_PENDING",
+      "status": "RESOLVED_BY_ORIGINAL_OWNER_APPROVED_HINT_ALIGNMENT",
+      "blocksFullAcceptance": false,
+      "resolution": "Applied original worker6 semantic-approved proposal mechanically after all before hashes matched; no new semantic cross review or recount."
+    },
+    {
+      "scenarioId": "SC-LOC-TKY-005-001",
+      "turnId": "DLG-SC-LOC-TKY-005-001-SHARED-11",
+      "field": "sourceJa",
+      "issue": "Turn02 says current instruction sheet was lost; only old sheet and current bag established. Turn09 merely permits consultation about preparing a new sheet and turn10 states future receipt, but turn11 asks to retain two sheets as they are. Second available sheet not established; preserve targets and seek JP-authorized clarification.",
+      "status": "SOURCE_DOCUMENT_COUNT_ALIGNMENT_PENDING",
       "blocksFullAcceptance": true
     }
   ]

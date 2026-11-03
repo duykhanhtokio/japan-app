@@ -78,10 +78,33 @@ def main():
             path,sid,tid,key = change['path'],change['scenarioId'],change['turnId'],change['field']
             assert sid in scenarios
             assert path == f"src/data/dialogue-content/locale-batches/{change['locale']}/{idx[sid]}.json"
-            assert key in ('translation','hintTranslation')
+            assert key in ('translation','hintTranslation','hintJa')
             assert read(ROOT/path)['scenarios'][sid]['turns'][tid][key] == change['after']
             changed.setdefault(path,[]).append(change)
-        workers.append({'worker':number,'reviewed':len(scenarios),'pending':len(assigned)-len(scenarios),'fields':len(scenarios)*192,'changedFields':len(receipt['changes']),'receiptSha256':hashlib.sha256(receipt_path.read_bytes()).hexdigest()})
+        for amendment in receipt.get('sourceHintAmendments', []):
+            sid, tid = amendment['scenarioId'], amendment['turnId']
+            assert sid in scenarios and amendment['selfSemanticApproved'] is True
+            source_path = ROOT / f'docs/localization-workspace/sources/dialogue-batch-{idx[sid]}.ja.json'
+            assert read(source_path)['scenarios'][sid]['turns'][tid]['hintJa'] == amendment['afterHintJa']
+            assert amendment['beforeHintJa'] != amendment['afterHintJa']
+            for locale in LOCALES:
+                matches = [c for c in receipt['changes'] if c['scenarioId']==sid and c['turnId']==tid and c['locale']==locale and c['field']=='hintJa']
+                assert len(matches)==1 and matches[0]['before']==amendment['beforeHintJa'] and matches[0]['after']==amendment['afterHintJa']
+        for amendment in receipt.get('runtimeMetadataAmendments', []):
+            sid, tid, field_path = amendment['scenarioId'], amendment['turnId'], amendment['fieldPath']
+            assert sid in scenarios and amendment['selfSemanticApproved'] is True
+            assert field_path in ('player.requiredSemanticComponents.goal', 'player.evaluationNotes')
+            expected_path = f'src/data/generated/dialogues/{sid}.json'
+            assert amendment['path'] == expected_path
+            data = read(ROOT / expected_path)
+            turns = data if isinstance(data, list) else data.get('shared', data.get('N5'))
+            current = next(turn for turn in turns if turn['id'] == tid)
+            for key in field_path.split('.'):
+                current = current[key]
+            assert current == amendment['after'] and amendment['before'] != amendment['after']
+            assert sha(amendment['before']) == amendment['beforeSha256']
+            assert sha(amendment['after']) == amendment['afterSha256']
+        workers.append({'worker':number,'reviewed':len(scenarios),'pending':len(assigned)-len(scenarios),'fields':len(scenarios)*192,'changedFields':len(receipt['changes']),'changedTranslationFields':sum(c['field'] in ('translation','hintTranslation') for c in receipt['changes']),'changedSourceMetadataFields':sum(c['field']=='hintJa' for c in receipt['changes']),'sourceHintAmendments':len(receipt.get('sourceHintAmendments',[])),'runtimeMetadataAmendments':len(receipt.get('runtimeMetadataAmendments',[])),'receiptSha256':hashlib.sha256(receipt_path.read_bytes()).hexdigest()})
     assert sum(len(read(BASE/f'assignment-{n}.json')['groups']) for n in range(1,7)) == len(owned)
     # Every Kanto-owned scenario in a changed file must be explained exactly.
     # Boundary batches may also contain another region's independently reviewed cases.
@@ -130,7 +153,11 @@ def main():
         progress_path=ROOT/'docs/localization-workspace/DIALOGUE_TRANSLATION_PROGRESS.json'
         progress=read(progress_path)
         synced=set()
+        changed_batches = {Path(path).stem for path in changed}
         for batch in progress['completedBatches']:
+            if batch['batch'] in changed_batches:
+                source_file = ROOT / f"docs/localization-workspace/sources/dialogue-batch-{batch['batch']}.ja.json"
+                batch['sourceSha256'] = hashlib.sha256(source_file.read_bytes()).hexdigest()
             for entry in batch['files']:
                 if entry['path'] in changed:
                     entry['sha256']=hashlib.sha256((ROOT/entry['path']).read_bytes()).hexdigest()
@@ -158,7 +185,7 @@ def main():
             region_row['remainingScenarios'] = region_row['totalScenarios'] - region_row['contextReviewedScenarios']
             region_row['status'] = 'COMPLETE' if not region_row['remainingScenarios'] else ('IN_PROGRESS' if region_row['contextReviewedScenarios'] else 'NOT_STARTED')
         write(plan_path,plan)
-    report={'status':'PASS','region':'kanto','regionTotal':len(members),'contextReviewed':len(previous|complete),'remaining':len(members-(previous|complete)),'workers':workers,'reviewedFields':len(complete)*192,'changedFields':sum(len(c) for c in changed.values()),'changedLocaleFiles':len(changed),'nativeReviewed':False,'semanticCrossReview':False,'deviceVerified':False,'priorReviewedIdsPreserved':True}
+    report={'status':'PASS','region':'kanto','regionTotal':len(members),'contextReviewed':len(previous|complete),'remaining':len(members-(previous|complete)),'workers':workers,'reviewedFields':len(complete)*192,'changedFields':sum(len(c) for c in changed.values()),'changedLocaleFiles':len(changed),'changedTranslationFields':sum(w.get('changedTranslationFields',0) for w in workers),'changedSourceMetadataFields':sum(w.get('changedSourceMetadataFields',0) for w in workers),'sourceHintAmendments':sum(w.get('sourceHintAmendments',0) for w in workers),'runtimeMetadataAmendments':sum(w.get('runtimeMetadataAmendments',0) for w in workers),'nativeReviewed':False,'semanticCrossReview':False,'deviceVerified':False,'priorReviewedIdsPreserved':True}
     if args.sync:
         write(BASE/'integration-qa.json',report)
     print(json.dumps(report,ensure_ascii=False))

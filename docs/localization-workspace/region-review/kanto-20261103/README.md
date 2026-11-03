@@ -8,10 +8,12 @@ Khi worker đã ngừng ghi, chạy `python scripts/check-kanto-context-review.p
 
 ## Checkpoint hiện tại
 
-Đã thực đọc **188/1.681 bài × 12 ngôn ngữ**, **36.096 trường**; sửa **1.389 trường** trong **203 tệp lô dịch**. Lượt tiếp tục thêm **131 bài** so với mốc 57 bài đã xác minh trên GitHub ở `80054e5876`. Còn **1.493 bài**, vùng chưa hoàn tất. Sáu worker đã dừng tại bài hoàn chỉnh; `resume.json` ghi điểm tiếp tục riêng. Không rà lại phần có bằng chứng hợp lệ.
+Đã đọc thực **326/1.681 bài × 12 ngôn ngữ**, **62.592 trường**; lượt tiếp tục thêm **138 bài**, giữ bằng chứng cũ hợp lệ. Còn **1.355 bài**. Tích lũy sửa **1.982 trường dịch**, **168 trường metadata nguồn trong lô dịch**, **14 hint Nhật** và **28 trường goal/evaluationNotes** tương ứng; không thay lời thoại nói, IDs, ruby hay âm thanh. `resume.json` ghi điểm tiếp tục của sáu phạm vi độc lập.
 
-Có **6 điểm căn chỉnh nguồn Nhật** chưa chốt, lưu riêng trong receipt/resume; số bài đã đọc bằng AI không chứng minh nghiệm thu nguồn/bản ngữ/phát âm/thiết bị. Giữ các kết quả Hokkaido và Tohoku đồng thời đã được tích hợp.
+Các hint sai được chủ phạm vi tự đọc và duyệt, đồng bộ bản Nhật/app/12locale/metadata đánh giá; coordinator chỉ tích hợp/kiểm hash, không kiểm chéo ngữ nghĩa. Hai cảnh báo cũ được đóng bằng ngữ cảnh đầy đủ, không sửa tùy tiện. Các sửa nguồn do worker gốc phê duyệt có artifact trước/sau và hash; phiên thay thế chỉ áp dụng kỹ thuật, không đếm lại bài.
 
-`baseline-file-hashes.json` lưu dấu vết đầu vào và hash chuẩn của toàn bộ kịch bản Kanto được giao trong 2.136 tệp locale. Validator replay thay đổi ngược và so hash phạm vi sở hữu, kiểm cả metadata tệp; không phụ thuộc commit chỉ có trong bản clone cũ. Một lô giáp vùng có thể chứa bài của vùng khác; các bài đó được kiểm bằng receipt tương ứng, không ghi đè bằng dữ liệu Kanto.
+Còn một vấn đề local trong `SC-LOC-TKY-005-001`: lời NPC về hai tờ giấy cần chốt đồng thời canonical Japanese và bản thu âm/phụ đề liên quan. Chưa thay spokenJA để tránh bản chữ khác audio. Việc này không chặn tiếp các bài còn lại và không được coi là đã nghiệm thu nguồn. Bản ngữ, phát âm, thiết bị và phát hành vẫn tách riêng.
 
-Git trực tiếp ở môi trường này thiếu thông tin đăng nhập; kết nối GitHub đã lưu cây nội dung tương đương mốc `0ade4fc175`, sau hợp nhất công việc đồng thời. Đối với checkpoint hiện tại, chỉ xác nhận lưu bền sau fetch và `WORK PERSISTENCE PASS`; xem commit thực tế thay vì dựa vào mã commit lịch sử cục bộ.
+`baseline-file-hashes.json` lưu dấu vết đầu vào và hash chuẩn của toàn bộ kịch bản Kanto được giao trong 2.136 tệp locale. Validator replay thay đổi ngược và so hash phạm vi sở hữu, kiểm cả metadata tệp; không cần các commit chỉ có trong clone cũ. Một lô giáp vùng có thể chứa bài khác; các bài đó được kiểm bằng receipt riêng. `sourceHintAmendments` bảo vệ thay đổi hint; `runtimeMetadataAmendments` chỉ cho phép goal/evaluationNotes. Shared hint mirrors do coordinator đồng bộ bằng patch chủ phạm vi đã duyệt.
+
+Git trực tiếp ở môi trường này thiếu credential; dùng GitHub connector, chia nhỏ truyền dữ liệu, bắt buộc SHA tree từ xa bằng đúng tree cục bộ đã kiểm chứng. Giữ mọi cập nhật đồng thời. Chỉ xác nhận lưu sau fetch và `WORK PERSISTENCE PASS`.
