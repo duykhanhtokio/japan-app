@@ -8,9 +8,9 @@ Khi worker đã ngừng ghi, chạy `python scripts/check-kanto-context-review.p
 
 ## Checkpoint hiện tại
 
-Đã đọc thực **1.403/1.681 bài ×12 ngôn ngữ**, **269.376 trường**. Còn **278 bài**. Tích lũy sửa **5.877 trường dịch**, **648 metadata hintJa**, **54 hint Nhật**, **108 goal/evaluationNotes**, **54 authoring task**. Không đổi spokenJA/audio. Giữ tất cả bằng chứng hợp lệ, không đếm lại.
+Đã đọc thực **1.411/1.681 bài ×12 ngôn ngữ**, **270,912 trường**. Còn **270 bài**. Giữ toàn bộ checkpoint đồng thời1.403bài và khôi phục8bài thiếu từ bằng chứng cục bộ đầy đủ đã đọc thật. Hash nguồn và đích của96receipt/1.536trường khớp;20trường dịch được khôi phục. Không rà lại/cộng trùng; không kiểm chéo ngữ nghĩa. `recovered-eight-evidence-20261103.json` ghi nguồn gốc8bài; `local-1288-preserved-evidence.json.gz` giữ phần bằng chứng lịch sử khác phiên bản, kèm tham chiếu các receipt giống hệt đang có trong archive từGitHub. Không đổi spokenJA/audio.
 
-Sau sự cố làm mới môi trường, hợp và khôi phục bằng chứng từ bản GitHub, gói truyền còn giữ và đúng chủ phạm vi còn actual context. Chỉ phục hồi với nguyên văn/ghi chú/sửa đổi khớp và replay baseline, không dùng số đếm để tạo review. Còn8bài worker5 thiếu bằng chứng cũ được giữ pending cho đến có đủ bằng chứng; chúng không thuộc1403. Gói raw và gzip dự phòng đã lên nhánh recovery/kanto-evidence-20261103, mốc1339 đã WORK PERSISTENCE PASS.
+Sau sự cố làm mới môi trường, hợp và khôi phục bằng chứng từ bản GitHub, gói truyền còn giữ và đúng chủ phạm vi còn actual context. Chỉ phục hồi với nguyên văn/ghi chú/sửa đổi khớp và replay baseline, không dùng số đếm để tạo review. Tám bài worker5 từng thiếu đã được phục hồi bằng hồ sơ đầy đủ khớp hash; nay thuộc1.411bài. Gói raw và gzip dự phòng đã lên nhánh recovery/kanto-evidence-20261103, mốc1339 đã WORK PERSISTENCE PASS.
 
 Chuyển sáu lô hoàn toàn chưa có review hợp lệ để cân bằng phần còn lại **48/50/50/46/43/41**. Không chuyển bài đã có bằng chứng. Xem ownership-transfer-checkpoint-1388.json, ownership-transfer-checkpoint-1403.json và resume.json. Ownership tổng hiện291/260/240/340/250/300.
 
