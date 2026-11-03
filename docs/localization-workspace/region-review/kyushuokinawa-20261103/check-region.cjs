@@ -9,6 +9,7 @@ const {validateBatch,locales} = require(path.join(root,'scripts/lib/dialogue-tra
 const index = read('src/data/dialogue-content/locale-batch-index.json');
 const ids = new Map(); let fields=0,repairs=0;
 const cache = new Map();
+const validatedBatches = new Set();
 const receiptFiles=fs.readdirSync(__dirname).filter(f=>/^worker-[1-6](?:-part-\d+)?\.json$/.test(f)).sort();
 const rowKeys=new Set();
 for(const file of receiptFiles) {
@@ -19,7 +20,11 @@ for(const file of receiptFiles) {
     assert(!rowKeys.has(rowKey),`Duplicate receipt ${rowKey}`);rowKeys.add(rowKey);
     const batch=index[row.scenarioId];
     if(!cache.has(batch)) {
-      validateBatch(batch);
+      if(!validatedBatches.has(batch)) {
+        validateBatch(batch);validatedBatches.add(batch);
+      }
+      // Bound retained locale packs as coverage grows; receipts remain exhaustive.
+      if(cache.size>=3)cache.delete(cache.keys().next().value);
       cache.set(batch,{source:read(`docs/localization-workspace/sources/dialogue-batch-${batch}.ja.json`),
         targets:Object.fromEntries(locales.map(l=>[l,read(`src/data/dialogue-content/locale-batches/${l}/${batch}.json`)]))});
     }
@@ -45,7 +50,7 @@ const queued=new Set(q.prefectures.filter(p=>Number(p.prefectureId.slice(-3))>=4
   .flatMap(p=>p.cities.flatMap(c=>c.sentenceTaskReviewedScenarioIds)));
 assert.deepEqual(queued,new Set(ids.keys()));
 const report={status:'PASS_KYUSHU_OKINAWA_SOURCE_TARGET_BINDINGS',reviewedScenarios:ids.size,
-  reviewedFields:fields,repairs,validatedBatches:cache.size,total:1064,remaining:1064-ids.size,
+  reviewedFields:fields,repairs,validatedBatches:validatedBatches.size,total:1064,remaining:1064-ids.size,
   nativeReviewed:false,releaseAccepted:false,
   corpusGate:'NOT_RUN_BY_THIS_SCOPED_CHECK',
   scope:'Only this region; use check-dialogue-release-readiness.cjs for the complete corpus.',
