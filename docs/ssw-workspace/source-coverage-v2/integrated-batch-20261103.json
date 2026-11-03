@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-03",
+  "baseCommit": "3a3d48504673f4bc793bd8acf1c32368ed558c7f",
+  "scope": "Six self-review streams covering seven Tokutei sectors. Each stream completed at least three bounded groups; no cross-author semantic review is inferred.",
+  "newlySourceCoveredAi": 86,
+  "newlySourceCoveredAiBySector": {
+    "agriculture": 2,
+    "manufacturing": 12,
+    "food": 40,
+    "restaurant": 8,
+    "hospitality": 15,
+    "construction": 9,
+    "kaigo": 0
+  },
+  "sourceDenominators": "open for every sector; known-unit counts do not represent complete source coverage",
+  "sourceStatusPath": "docs/ssw-workspace/source-coverage-v2/integrated-status-20261103.json",
+  "sourceAllLedgersValid": true,
+  "allSourceKnowledgeCovered": false,
+  "preservation": "Sector-specific checks preserve old IDs, exam banks, locale fields and learner-state contracts; added content uses explicit bindings and version isolation where required.",
+  "runtimeEvidence": {
+    "agriculture": "48 host cases using actual reader/course/state with explicit adapters; 2 reader checks x12locales x2levels.",
+    "food": "182 SSR views and14negative cases; three added self-checks and36explicit locale records; existing848exam questions/96days/state preserved.",
+    "construction": "48 host locale-mode cases for the two extended foreman sessions.",
+    "kaigo": "72 host day/locale cases with252check appearances; repaired three corrupted Japanese/ruby checks, preserving existing translations and26weekly question files.",
+    "hospitality": "333questions;456/456revision-valid translated lesson pairs; added timing question and12locale records; actual state archive/restore preservation.",
+    "manufacturing": "144question-locale and36caption records;123data/state guards; reused existing assessments for12new source-bound competencies.",
+    "restaurant": "120lessons/984questions/12locales;7622contextual reading fields aligned; corrected multiplication reading for積 without changing question text/answer/sourceHash."
+  },
+  "reviewLimits": {
+    "expertAcceptance": false,
+    "nativeSpeakerAcceptance": false,
+    "physicalDeviceTestedInThisBatch": false,
+    "learnerTimeMeasuredInThisBatch": false,
+    "allAudioReviewed": false,
+    "hostTestsAreNotDeviceOrPixelAcceptance": true
+  },
+  "macSync": {
+    "script": "scripts/sync-tokutei-mac.sh",
+    "remoteControlAvailable": false,
+    "macUpdatedInThisSession": false,
+    "rule": "User must execute guarded sync in the actual Mac clone; it refuses dirty tracked work or divergent history."
+  },
+  "publication": "Root uploads exact file blobs, verifies their Git object IDs and the complete staged tree, updates the remote branch with a parent lease, then fetches/fast-forwards and runs the persistence gate. The resulting enclosing commit is the snapshot identity."
+}

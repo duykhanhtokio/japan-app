@@ -1,3 +1,13 @@
+# Ba nhóm phục vụ và đồ uống — 03/11/2026
+
+Baseline nội dungc25e4e2, điều phối tự lưu đợt này sau tích hợp. Ba nhóm nguồn được thực hiện tuần tự, mỗi nhóm có validator: (1) tư thế/giao tiếp tiếp cận/khóa phòng/hướng dẫn nhân viên,2号tr37/40/41; (2) đề xuất đồ uống, nguyên liệu/cách phục vụ sake, giống nho/địa danh và地産地消,tr48/49; (3) chức năngバタースプレッダー,tr51. Đọc chữ và xem cả6ảnh trang, xác minh bytePDF và30vùng chữ (hash+bbox); không đưa sourceprose hay ảnhPDF vàoGit. Các phần tử vùng chuẩn p37/p49/p51 được đối chiếu bbox vì chỉ sốtext-only bị lệch khi trang cóảnh.
+
+Khép15ý ởmức tự kiểmAI:128→143covered_ai/384known;241ý cònmở, mẫu số chưa chốt, mọi trang mới vẫnpartial chứ khôngnâng whole-page. Tái dùng câu cũ khi đúng năng lực, ghi rõ thành phần được kiểm; khôngsuy từ giải thích sang đã đánh giá. Rà HR2-048-01 phát hiện q1 chỉ kiểm món/sở thích, chưa kiểm chọnthờiđiểm: thêm hotel-restaurant-08-q11 tự soạn về đợi hết phầngiới thiệu món trước khixác nhậnnhu cầu và đềxuất. Đủ12bản dịch câu mới và6chuỗi furigana.333câu/38bài;456/456cặp dịch hợp lệ và loader thậtđềuPASS, chưaduyệt bảnngữ.
+
+Bảo toàn332câu Nhật cũ,456cặp trường dịch cũ và3017entryreading. Chỉ bàirestaurant08đổi revision vìcâu mới thực tế; bindingnguyên tử được cậpnhật sau khikiểm quote/snapshotcâu cũ nguyên vẹn. Đã kiểm trạngthái lượt học cũ đượcarchive/khôiphục, revision mới yêu cầu làm lại. Khôngbáo đã đồngbộMac, Expo/native, thiếtbịthật, âmthanh, chuyênmôn hoặc thờilượng thựchọc. Bằngchứng service-drinks-source-review.json, service-drinks-validation.json trong recovery-v9; scripts/hospitality/check-service-drinks-source.cjs kiểm bảo toàn/phạmvi. Điều phối xácminh remote trước khi côngbố đãlưu.
+
+---
+
 # Đối chiếu quản lý và phục vụ — 03/11/2026
 
 Tiếp tục từ224378c đã WORK PERSISTENCE PASS. Đọc chữ và ảnh7trang2号:26,28,32,42,44,45,47; xác minh hash PDF. Rà24ý:22ý có đủ bài/câu hiện hành,2ý phát hiện thiếu đánh giá và đã bổ sung thật. Phạm vi gồm OTA/PMS/booking engine, dự báo/yield,4khái niệm marketing, xử lý nguyên nhân khiếu nại, vai trò quản lý và phục vụ nhà hàng. HR2-047-05 bổ sung liên kết đoạn hỗ trợ theo nguyện vọng, không chỉ giữ đoạn trách nhiệm chung.

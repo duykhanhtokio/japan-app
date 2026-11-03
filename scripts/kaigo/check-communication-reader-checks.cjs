@@ -2,6 +2,7 @@ const assert=require('node:assert/strict'),path=require('node:path'),fs=require(
 const root=path.resolve(__dirname,'../..'),modules=process.env.TOKUTEI_QA_MODULES||root;const dep=n=>require(require.resolve(n,{paths:[modules]}));const React=dep('react'),renderer=dep('react-test-renderer'),{act}=renderer;
 global.IS_REACT_ACT_ENVIRONMENT=true;global.__tokuteiStorage=new Map();global.requestAnimationFrame=fn=>setTimeout(fn,0);global.cancelAnimationFrame=clearTimeout;
 const data=JSON.parse(fs.readFileSync(path.join(root,'src/data/kaigo/reader-communication-checks.json')));const langs=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
+require('./check-reader-text-integrity.cjs').validate(data);
 function nodes(t,id){return t.root.findAll(n=>typeof n.type==='string'&&n.props.testID===id);}async function click(t,id){const n=nodes(t,id);assert(n.length,id);await act(async()=>{n[0].props.onPress();await new Promise(setImmediate);});}
 (async()=>{const m=await require('../tokutei-ui-qa/compile.cjs')(root,modules);
 for(const row of data.checks){assert(Number.isInteger(row.day)&&row.day>0&&row.sectionId);assert.deepEqual(Object.keys(row.translations).sort(),[...langs].sort());for(const [field,text] of [['promptRuby','promptJa'],['modelAnswerRuby','modelAnswerJa'],...(row.teachingJa?[['teachingRuby','teachingJa']]:[]) ]){assert.equal(row[field].map(t=>t.text).join(''),row[text]);for(const t of row[field])if(/[\p{Script=Han}々]/u.test(t.text))assert(t.readingKana&&/^[\p{Script=Hiragana}ー]+$/u.test(t.readingKana),t.text);} }

@@ -8,7 +8,7 @@ const packs=[43,44,45].map(n=>({n,pack:read(`src/data/food-manufacturing/source-
 let rubyFields=0,pairs=0,answerPoints=0;
 function ruby(s,t){assert.equal(t.map(x=>x.text).join(''),s);for(const x of t)if(/\p{Script=Han}/u.test(x.text))assert(/^[ぁ-ゖー]+$/.test(x.reading));rubyFields++;}
 for(const {n,pack} of packs){
- assert.equal(pack.sections.length,1);assert.equal(pack.checks.length,n===43?2:1);
+ assert.equal(pack.sections.length,1);assert.equal(pack.checks.length,n===43?4:n===44?2:1);
  const lesson=lessons.find(l=>l.id===pack.sections[0].lessonId);
  for(const x of [...pack.sections,...pack.checks]){
   assert.equal(x.lessonSourceHash,lesson.sourceHash);for(const k of ['humanReviewed','nativeReviewed','domainReviewed'])assert.equal(x[k],false);
@@ -29,6 +29,11 @@ const sections=[...read('src/data/food-manufacturing/source-closure34.json').sec
 for(const row of remediation.records){const before=matrix.records.find(r=>r.id===row.atomicId);assert(before);assert.equal(before.status,row.before.status);const t=sections.find(s=>s.id===row.after.teachingId),c=checks.find(c=>c.id===row.after.checkId);assert(t&&c);assert.equal(t.sourceHash,row.after.teachingSourceHash);assert.equal(c.sourceHash,row.after.checkSourceHash);assert.equal(c.lessonSourceHash,row.after.lessonSourceHash);assert.equal(c.lessonId,row.after.lessonId);}
 for(const {pack} of packs)for(const item of [...pack.sections,...pack.checks])for(const tokens of [item.titleRuby,item.ruby,item.promptRuby,...(item.expectedPointsRuby||[])].filter(Boolean))for(const token of tokens)if(token.text==='台型')assert.equal(token.reading,'だいけい');
 assert.equal(9-4,5,'Read existing line-graph weeks2=9 and3=4: decrease5');
+assert.equal(9-2,7,'Focused bar comparison: Y9 minus Z2 =7');
+assert.equal(12+6+2,20);assert.deepEqual([12/20*100,18/20*100,20/20*100],[60,90,100]);
+const pareto=packs[0].pack.checks.find(c=>c.id==='food60-pareto-twoaxes');assert(pareto);for(const t of Object.values(pareto.translations)){for(const v of ['A','B','C','12','6','2'])assert(t.prompt.includes(v));for(const v of ['20','60','90','100'])assert(t.expectedPoints[1].includes(v));}
+assert(packs[1].pack.checks.some(c=>c.id==='food61-broad-bins'));
+const added=packs[0].pack.checks.find(c=>c.id==='food59-bar-comparison');assert(added);for(const t of Object.values(added.translations)){for(const v of ['X','Y','Z','4','9','2'])assert(t.prompt.includes(v));for(const v of ['9','2','7'])assert(t.expectedPoints[0].includes(v));}
 const figures=read('docs/ssw-workspace/food-manufacturing/atomic-qc-20261102/figures43-45.json');
 assert.deepEqual(figures.syntheticHistogram44Total,figures.syntheticHistogram44Groups[0].map((_,i)=>figures.syntheticHistogram44Groups.reduce((n,a)=>n+a[i],0)));
 for(const f of figures.records){const b=fs.readFileSync(path.join(root,f.path));assert.equal(b.slice(0,4).toString(),'RIFF');assert.equal(b.slice(8,12).toString(),'WEBP');assert.equal(crypto.createHash('sha256').update(b).digest('hex'),f.sha256);assert.equal(b.length,f.bytes);assert.equal(f.translatedCaptionLocales,12);}
@@ -54,6 +59,6 @@ for(const f of figures.records){const b=fs.readFileSync(path.join(root,f.path));
  }
  }
  delete global.__food43Reveal;
- const result={status:'PASS',teachingSections:3,openResponseChecks:4,answerPoints,translationPairs:pairs,translatedAnswerPoints:answerPoints*12,alignedRubyFields:rubyFields,actualComponentSsrViews:views,staleOrWrongLessonRejections:negative,originalControlledFigures:3,sourceHashBinding:true,answersHiddenUntilReveal:true,testOnlyRevealInjection:true,browserTested:false,physicalDeviceTested:false,measuredLearnerTime:false,domainReviewed:false,nativeReviewed:false};
- fs.writeFileSync(path.join(root,'docs/ssw-workspace/food-manufacturing/atomic-qc-20261102/validation43-45.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
+ const result={status:'PASS',teachingSections:3,openResponseChecks:7,answerPoints,translationPairs:pairs,translatedAnswerPoints:answerPoints*12,alignedRubyFields:rubyFields,actualComponentSsrViews:views,staleOrWrongLessonRejections:negative,originalControlledFigures:3,sourceHashBinding:true,answersHiddenUntilReveal:true,testOnlyRevealInjection:true,browserTested:false,physicalDeviceTested:false,measuredLearnerTime:false,domainReviewed:false,nativeReviewed:false};
+ const oi=process.argv.indexOf('--out'),report=oi>=0?process.argv[oi+1]:'docs/ssw-workspace/food-manufacturing/atomic-qc-20261102/validation43-45.json';assert(report);fs.writeFileSync(path.join(root,report),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
 })().catch(e=>{console.error(e);process.exitCode=1;});

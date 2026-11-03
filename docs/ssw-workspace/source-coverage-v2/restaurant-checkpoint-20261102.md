@@ -1,3 +1,13 @@
+# Nhà hàng — tiếp ba nhóm vận hành,03/11/2026
+
+Tự đọc chữ/ảnh PDF2号店舗運営trang7/8/12/20/21, xác minh hash6c9d1d… đúng nguồn33trang. Rà18ý trong3nhóm: nhân thời; công thức nguyên giá; kênh bán/tái ghé.8ý đủ bằng chứng trực tiếp,10ý giữpartial với khoảng trống cụ thể (không chỉ cùng chủ đề). Sổ hiện50covered_ai/1478known,1428ý còn mở; mẫu số chưa chốt. Các mốc5covered_ai/315gaps bên dưới là lịch sử cũ, không dùng làm số hiện hành.
+
+Bổ sung mapping thật tới runtime source31 thay vì chỉ canonical-ja đầu vào; f013 có thêm nguồntrang8 cho vai trò coarseprofit làm nguồn nhân công. f014/f015/f016 vẫn chưa kiểm đủ bước/công thức; f007 chỉ kiểm số học chưa kiểm khác biệt fullservice; f030 chưa kiểm tích lũy/phân lớp; f034 thiếu đoạn dạy chính xác thời điểm phát coupon; cácfacetkhác ghi trongreceipt. Không biến việc viết lại vấn đề thành đã hoàn tất.
+
+Sửa1ruby thật ởq110: “積” trong phép nhân人数×時間 phải đọcせき, không phảiつ. Giữ nguyên mọi chữNhật/ID/đápán/sourceHash và dữ liệu dịch; thêm exact-field context override để lầnbuildsau không tái phát. Hash evidence thayđổi chỉ vìbytefurigana được ghi rõ, không biến candidate thành đã duyệt. Receipt restaurant-operations-review-20261103.json giữ trạng thái trước/sau từngý; không đưa nguồnPDF/chữ/ảnh vàoGit. Chưa códomain/native/device/duration. Root điều phối lưu; chưa tự nhận persistence.
+
+---
+
 # Nhà hàng — cơ chế nguồn → ứng dụng, 2026-11-02
 
 Base: `5ff65af0fe2ec63eb0b47c250212fd5dcc7c3c6a`. Chưa commit/push. Không thay đổi luồng giao diện.

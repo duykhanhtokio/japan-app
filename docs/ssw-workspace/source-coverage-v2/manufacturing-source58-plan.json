@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "batch": "source58",
+  "sourceId": "mfg1-surface-source",
+  "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+  "groups": [
+    {
+      "key": "electrical",
+      "pack": 0,
+      "pages": [
+        125,
+        126,
+        135
+      ],
+      "scope": "Only five conventional symbols/polarity, the stated right-screw current direction and the left-hand motor-force example; source exercises, field-change relations, generator right-hand rule and all electrical installation/safety remain unaccepted.",
+      "units": [
+        {
+          "key": "symbols",
+          "q": 0,
+          "statement": "抵抗・コンデンサ・接地・電池・交流電源の五つの慣用図記号を形状から区別する。",
+          "conditions": [
+            "図のA〜Eはapp独自の並びであり、実配線図や全規格の記号一覧ではない。"
+          ],
+          "refs": [
+            {
+              "page": 125,
+              "y": [
+                0.145,
+                0.245
+              ],
+              "locator": "Figure9-1 five symbols and their labels, all five label/shape correspondences read"
+            }
+          ]
+        },
+        {
+          "key": "battery-polarity",
+          "q": 1,
+          "statement": "資料の電池記号では長い線が正極、短い線が負極に対応する。",
+          "conditions": [
+            "図Eの長短線と正負表示を対応させる。記号カードの文字Eを極性としない。"
+          ],
+          "refs": [
+            {
+              "page": 125,
+              "y": [
+                0.15,
+                0.24
+              ],
+              "x": [
+                0.61,
+                0.71
+              ],
+              "locator": "Figure9-1 battery symbol, unequal plates and plus/minus labels"
+            }
+          ]
+        },
+        {
+          "key": "right-screw",
+          "q": 2,
+          "statement": "紙面から手前へ向かう直線の慣用電流では、周囲の磁界を右ねじの対応で反時計回りと考える。",
+          "conditions": [
+            "appが示す紙面手前向き電流という条件に限定する。逆向きの電流へ同じ答えを流用しない。"
+          ],
+          "refs": [
+            {
+              "page": 126,
+              "y": [
+                0.44,
+                0.76
+              ],
+              "locator": "Section1.4(2), figures9-2/9-3: straight-current field and right-screw rotation/advance correspondence"
+            }
+          ]
+        },
+        {
+          "key": "left-hand",
+          "q": 3,
+          "statement": "フレミング左手では人差指を磁界、中指を電流、親指を力に対応させ、appの磁界右・電流手前の条件で力を上向きと読む。",
+          "conditions": [
+            "三方向を互いに直交させる。発電を表す右手則と混同しない。実機を操作できることの認定ではない。"
+          ],
+          "refs": [
+            {
+              "page": 135,
+              "y": [
+                0.23,
+                0.75
+              ],
+              "locator": "Section4.1(1) left-hand description and LEFT drawing in figure9-10; right-hand generator diagram not accepted here"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "taxonomy",
+      "pack": 1,
+      "pages": [
+        139,
+        141
+      ],
+      "scope": "Four tested classification facets only. Other coating types/subtypes, all substrate rows, thickness ranges and all application purposes stay open; visual reading of the complete table does not mean full assessment.",
+      "units": [
+        {
+          "key": "anodic-oxide",
+          "q": 0,
+          "statement": "陽極酸化は金属表面を酸化させて酸化皮膜を形成する系列として区別する。",
+          "conditions": [
+            "アルミニウム等は資料の基材例であり、全材質が同じ条件で処理できることを保証しない。"
+          ],
+          "refs": [
+            {
+              "page": 139,
+              "y": [
+                0.37,
+                0.43
+              ],
+              "locator": "Section1.2 anodic-oxidation definition"
+            },
+            {
+              "page": 141,
+              "y": [
+                0.22,
+                0.53
+              ],
+              "locator": "Table10-1 anodic-oxidation row: substrate examples and oxide coating"
+            }
+          ]
+        },
+        {
+          "key": "wet-subtypes",
+          "q": 1,
+          "statement": "資料のめっき分類図で湿式めっきの下位に電気めっきと無電解めっきを置く。",
+          "conditions": [
+            "PVD・CVDはこの図では乾式の下位。分類は処理条件や作業許可を与えない。"
+          ],
+          "refs": [
+            {
+              "page": 139,
+              "y": [
+                0.55,
+                0.86
+              ],
+              "locator": "Figure10-1 plating subtree: wet -> electric/electroless; dry -> PVD/CVD"
+            }
+          ]
+        },
+        {
+          "key": "conversion",
+          "q": 2,
+          "statement": "化成処理をリン酸塩等の化合物皮膜をつくる系列とし、塗装下地などの目的と対応させる。",
+          "conditions": [
+            "酸化皮膜・金属皮膜・樹脂皮膜と同一視しない。塗装下地は表の機能例であり全工程共通の保証ではない。"
+          ],
+          "refs": [
+            {
+              "page": 139,
+              "y": [
+                0.4,
+                0.47
+              ],
+              "locator": "Section1.2 chemical-conversion definition"
+            },
+            {
+              "page": 141,
+              "y": [
+                0.22,
+                0.53
+              ],
+              "locator": "Table10-1 chemical-conversion row, compound film and paint-base function"
+            }
+          ]
+        },
+        {
+          "key": "paint-resin",
+          "q": 3,
+          "statement": "塗装を樹脂皮膜の系列として読み、木材等の基材例と対応させる。",
+          "conditions": [
+            "表にある基材例を全材料共通の適合保証としない。膜厚の例を温度等の設定値にしない。"
+          ],
+          "refs": [
+            {
+              "page": 141,
+              "y": [
+                0.22,
+                0.53
+              ],
+              "locator": "Table10-1 painting row: resin film and metal/resin/wood examples; no process settings inferred"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "sequence",
+      "pack": 2,
+      "pages": [
+        157,
+        170
+      ],
+      "scope": "Only electric/hot-dip route recognition, optional undercoat/post-treatment, drying order before molten bath and separate rinse/dry roles. All chemistry, concentrations/temperature/time/current, real-operation permission and complete pretreatment selection remain open.",
+      "units": [
+        {
+          "key": "route-comparison",
+          "q": 0,
+          "statement": "appの二つの工程モデルを、主めっきと工程間水洗の電気めっき、および乾燥後に溶融浴へ進む溶融めっきとして区別する。",
+          "conditions": [
+            "独自モデルのA/B対応を読む学習であり、全製品に共通する現場レシピではない。"
+          ],
+          "refs": [
+            {
+              "page": 157,
+              "y": [
+                0.64,
+                0.84
+              ],
+              "locator": "Figure11-2 electrical-plating treatment route"
+            },
+            {
+              "page": 170,
+              "y": [
+                0.17,
+                0.4
+              ],
+              "locator": "Figure11-12 hot-dip route: flux/drying/plating/cooling/finishing"
+            }
+          ]
+        },
+        {
+          "key": "optional-stages",
+          "q": 1,
+          "statement": "教材の電気めっき工程図で下地めっきと後処理を必要に応じた工程として区別する。",
+          "conditions": [
+            "破線を作業者が自由に省略してよい意味にしない。実物では承認仕様で要否を確認する。"
+          ],
+          "refs": [
+            {
+              "page": 157,
+              "y": [
+                0.27,
+                0.41
+              ],
+              "locator": "Section(6): post-treatment is performed when needed"
+            },
+            {
+              "page": 157,
+              "y": [
+                0.64,
+                0.84
+              ],
+              "locator": "Figure11-2 dashed undercoat and post-treatment boxes"
+            }
+          ]
+        },
+        {
+          "key": "dry-before-bath",
+          "q": 2,
+          "statement": "溶融めっきの教材工程図では、フラックス処理の後、溶融めっきの前に乾燥を置く。",
+          "conditions": [
+            "水洗したので乾いたと判断せず、appモデルの乾燥確認を読む。実物の指定乾燥条件や操業可否は別に確認する。"
+          ],
+          "refs": [
+            {
+              "page": 170,
+              "y": [
+                0.17,
+                0.4
+              ],
+              "locator": "Figure11-12: flux -> drying -> hot-dip plating, exact arrow order"
+            }
+          ]
+        },
+        {
+          "key": "rinse-versus-dry",
+          "q": 3,
+          "statement": "水洗は前工程の処理液を洗い流す役割、乾燥は表面の水分を除く役割として区別する。",
+          "conditions": [
+            "工程名だけで実物の洗浄品質や乾燥完了を保証しない。指定方法と条件は別に確認する。"
+          ],
+          "refs": [
+            {
+              "page": 157,
+              "y": [
+                0.42,
+                0.64
+              ],
+              "locator": "Sections(7) drying and (8) rinsing, separate material-removal purposes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
