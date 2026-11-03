@@ -4,6 +4,8 @@ type Payload={lessonId:string;paragraphId:string;sourceHash:string;wording:{ja:{
 let payload:Payload|undefined;
 /** New source49 text only; unrelated readers never initialize its payload. */
 export function manufacturingSource49Reading(lesson:ManufacturingLesson,paragraphId:string,text:string|undefined):Source49Segment[]|undefined {
+ if(lesson.id==='mfg1-surface-lesson-013'&&paragraphId==='section-2')return require('./source62-bounded').manufacturingSource62Reading(lesson,paragraphId,text);
+ if(lesson.id==='mfg1-mechanical-lesson-080'&&paragraphId==='section-2')return require('./source61-readings').manufacturingSource61Reading(lesson,paragraphId,text);
  if(['mfg1-surface-lesson-008','mfg1-surface-lesson-061'].includes(lesson.id))return require('./source60-buff').manufacturingSource60Reading(lesson,paragraphId,text);
  if(['mfg1-mechanical-lesson-072','mfg1-mechanical-lesson-041','mfg1-mechanical-lesson-049'].includes(lesson.id))return require('./source57-mechanical').manufacturingSource57Reading(lesson,paragraphId,text);
  if(lesson.id==='mfg1-electrical-l043')return require('./source50-overview').manufacturingSource50Reading(lesson,paragraphId,text);

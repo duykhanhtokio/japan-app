@@ -25,7 +25,7 @@ d.line((500,460,300,200),fill='#247b9b',width=5);d.line((900,460,700,730),fill='
 d.text((220,140),'加熱',font=ft(40),fill='#173b50');d.text((650,755),'冷却',font=ft(40),fill='#173b50')
 d.line((400,330,200,330),fill='#247b9b',width=4);d.text((100,285),'温度',font=ft(36),fill='#173b50')
 d.line((800,595,1010,595),fill='#247b9b',width=4);d.text((1030,565),'温度',font=ft(36),fill='#173b50')
-d.text((60,825),'枝は原因候補：工程ごとの現物・記録で確かめる',font=ft(30),fill='#173b50');im.save(out/'factor-process-context.webp',quality=90)
+d.text((60,825),'枝は原因候補：同名でも工程を分けて確認する',font=ft(30),fill='#173b50');im.save(out/'factor-process-context.webp',quality=90)
 rows=[];lines=['import type {ImageSourcePropType} from "react-native";','export const foodSourcePractice46: {id:string;lessonId:string;lessonSourceHash:string;paragraphId:string;source:ImageSourcePropType;width:number;height:number;aspectRatio:number;captionSupplementId:string;captionSupplementSourceHash:string;altJa:string}[] = [']
 for n,f,pid in [(47,'control-line-names','p3'),(48,'factor-process-context','p3')]:
  s=json.loads((D/f'source-closure{n}.json').read_text())['sections'][0];a={'id':'food-source46-'+f,'lessonId':s['lessonId'],'lessonSourceHash':s['lessonSourceHash'],'paragraphId':pid,'width':1400,'height':900,'captionSupplementId':s['id'],'captionSupplementSourceHash':s['sourceHash'],'altJa':s['titleJa']+'。'+s['textJa']}

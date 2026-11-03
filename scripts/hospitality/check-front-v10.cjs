@@ -69,7 +69,10 @@ for(const row of integration.translations){
 }
 for(const r of [receipt.review,sourceReceipt.review,evacuation.review,integration.review])for(const v of Object.values(r))assert.equal(v,false);
 const result=validateFile(root,'docs/ssw-workspace/source-coverage-v2/hospitality.json');
-assert.equal(result.coveredAi,175);assert.equal(result.sourceCoveragePercent,null);assert.equal(result.fullyCovered,false);
+const emergencyReceipt=read('docs/ssw-workspace/hospitality/recovery-v9/emergency-source-review.json');
+const expectedCovered=new Set([...old('docs/ssw-workspace/source-coverage-v2/hospitality.json').knowledgeUnits.filter(u=>u.status==='covered_ai').map(u=>u.knowledgeId),...sourceReceipt.units.map(u=>u.knowledgeId),evacuation.knowledgeId,...emergencyReceipt.units.map(u=>u.knowledgeId)]);
+assert.deepEqual(ledger.knowledgeUnits.filter(u=>u.status==='covered_ai').map(u=>u.knowledgeId).sort(),[...expectedCovered].sort(),'Preserve exact union of original, front and emergency accepted IDs');
+assert.equal(result.coveredAi,expectedCovered.size);assert.equal(result.sourceCoveragePercent,null);assert.equal(result.fullyCovered,false);
 const vm=require('node:vm'),{stripTypeScriptTypes}=require('node:module');
 const state=stripTypeScriptTypes(fs.readFileSync('src/services/hospitality-study-state.ts','utf8')).replaceAll('export ','');
 const box={};vm.createContext(box);vm.runInContext(state+'\nglobalThis.api={hotelRecord,updateHotelRecord,restoreHotelProgress};',box);
@@ -79,4 +82,4 @@ assert.equal(next.completed,false);assert.equal(next.submitted,false);assert.equ
 const updated=box.api.updateHotelRecord(progress,'hotel-front-03',next);
 assert.equal(JSON.stringify(updated.archive['hotel-front-03'][integration.oldRevision]),JSON.stringify(oldRecord));
 assert.equal(JSON.stringify(box.api.restoreHotelProgress(JSON.stringify(updated))),JSON.stringify(updated));
-console.log(JSON.stringify({status:'PASS',sourceGroups:3,newlyCoveredAi:10,coveredAi:175,openKnownUnits:209,localeQuestionReviews:36,newTranslatedQuestions:12,newReadingEntries:6,furiganaCorrections:5,chineseWordingCorrections:2,nativeOrDomainCertification:false,deviceOrDurationCertification:false}));
+console.log(JSON.stringify({status:'PASS',sourceGroups:3,newlyCoveredAi:10,coveredAi:result.coveredAi,openKnownUnits:ledger.knowledgeUnits.length-result.coveredAi,localeQuestionReviews:36,newTranslatedQuestions:12,newReadingEntries:6,furiganaCorrections:5,chineseWordingCorrections:2,nativeOrDomainCertification:false,deviceOrDurationCertification:false}));

@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-03",
+  "baselineCommit": "f72e3e6cc36c1b407aace4b0e47a23a63ca7cdaa",
+  "reviewType": "worker_source_to_app_and_app_to_source_self_review",
+  "requiredKaigoDocuments": [
+    {
+      "path": "docs/ssw-workspace/kaigo/KAIGO_AUTHORING_RULES.md",
+      "sha256": "e8199ca0c795b2808c88667c09468be76b71690889251bee9949f35457aafd8a"
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/KAIGO_LANGUAGE_STYLE_GUIDE.md",
+      "sha256": "85de381d9f604cd9ee5d8efbbd0ee37ef1fbdd3746983f58a0ae13efa741956a"
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/KAIGO_AUTHORING_CHECKPOINT.md",
+      "sha256": "0db71868a11a3755b09d680fef1296fa679403e99e8cf8199604d2ae950f6aee"
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/approved-plan.json",
+      "sha256": "57a89257b71d08b6180f3e44639543639a7ac2b7c13b3a4ef848a1ff2fb6dd44"
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/language-style-policy.json",
+      "sha256": "403d09ecfd03fe78f7cc9ed8d639ecd4b1e178c43e4405d81ef035f41a35dcc5"
+    }
+  ],
+  "sources": [
+    {
+      "sector": "kaigo",
+      "sourceId": "KAI-VI-2025",
+      "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+      "pdfPagesReviewed": [
+        109
+      ],
+      "sourcePixelsOrProsePublished": false
+    },
+    {
+      "sector": "construction",
+      "sourceId": "kensetsu-2go-foreman-leader-20250115",
+      "sha256": "fa094327913a14047de32ad734b552d6911af281566076ec327e50608c5106f7",
+      "pdfPagesReviewed": [
+        89,
+        90
+      ],
+      "sourcePixelsOrProsePublished": false
+    }
+  ],
+  "groups": [
+    {
+      "group": 1,
+      "sector": "kaigo",
+      "scope": "source109own-life + individual communication",
+      "newActivities": [
+        "kaigo-reader-own-life-choice",
+        "kaigo-reader-individual-communication"
+      ],
+      "closedKnownFacets": [
+        "kaigo-v6-consent-own-life",
+        "kaigo-v6-consent-communication-difficulty",
+        "kaigo-v6-consent-individual-method"
+      ],
+      "conditions": "Illness/disability can, not invariably does, hinder communication; a diagnosis alone does not specify individual methods. Own-life decisions remain the focus."
+    },
+    {
+      "group": 2,
+      "sector": "kaigo",
+      "scope": "source109ICT context",
+      "newActivities": [
+        "kaigo-reader-ict-source-scope"
+      ],
+      "closedKnownFacets": [
+        "kaigo-v6-consent-ict-context"
+      ],
+      "conditions": "March2025textbook context; no present adoption percentage, guaranteed effectiveness or universal suitability."
+    },
+    {
+      "group": 3,
+      "sector": "construction",
+      "scope": "source89additive formula + source90scale lookup and contradiction audit",
+      "closedKnownFacets": [
+        "construction-v2-risk-addition-example",
+        "construction-v2-risk-level-example-I",
+        "construction-v2-risk-level-example-II",
+        "construction-v2-risk-level-example-III",
+        "construction-v2-risk-level-example-IV"
+      ],
+      "independentTriples": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          4
+        ],
+        [
+          4,
+          6,
+          6
+        ]
+      ],
+      "totals": [
+        3,
+        6,
+        12,
+        16
+      ],
+      "expectedLevels": [
+        "I",
+        "II",
+        "III",
+        "IV"
+      ],
+      "sourceTableDiscrepancy": "Source89severitytable: fatal6/heavy4. Source90workedtable usesseverity6 while prose saysheavy. Retainedblocked; no silent correction. New exercise does not reuse that workedexample.",
+      "all7BlockersRetained": true,
+      "sourceRangeLimit": "13–20is the source table band; chosen validsource-scoretriple4+6+6totals16. No impossible17–20component combination fabricated.",
+      "reboundExistingActivityEvidence": 13
+    }
+  ],
+  "bidirectionalBoundaries": [
+    "All new occupational assertions map to the inspected source pages; source-specific scoring andICTpublication scope explicit.",
+    "New scenario facts are independently authored teaching cases, not claims about real individuals.",
+    "Existing22reader checks,687weekly questions,Japanese master/daily IDs/state and priorforeman018019kept.",
+    "No native/expert/domain/rightscertification,book-wide coverage or learner timing inferred."
+  ],
+  "review": {
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  }
+}

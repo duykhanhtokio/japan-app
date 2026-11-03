@@ -1,6 +1,6 @@
 // Bounded preservation/evidence gate; not native, expert, device or source-completeness acceptance.
 const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),assert=require('node:assert/strict'),crypto=require('node:crypto');
-const root=path.resolve(__dirname,'../..'),base='2aa8c72ef0dc475250631f222b3e3c7d0da7e3e9',D='docs/ssw-workspace/restaurant/source-closure31/',id='rst31-v2-coupon-checkout-20261103',qid='rst31-v2-coupon-timing-q001';
+const root=path.resolve(__dirname,'../..'),base=process.env.RESTAURANT_SEMANTIC_BASE_REF||'2aa8c72ef0dc475250631f222b3e3c7d0da7e3e9',D='docs/ssw-workspace/restaurant/source-closure31/',id='rst31-v2-coupon-checkout-20261103',qid='rst31-v2-coupon-timing-q001';
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8')),old=p=>JSON.parse(cp.execFileSync('git',['show',`${base}:${p}`],{cwd:root,maxBuffer:32*1024*1024})),sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 const receipt=read(D+'translation-reasons-remediation-20261103.json'),canonical=read(D+'canonical-ja.json').items;
 assert.equal(receipt.reviews.length,96);assert.equal(receipt.nativeReviewed,false);assert.equal(receipt.domainReviewed,false);

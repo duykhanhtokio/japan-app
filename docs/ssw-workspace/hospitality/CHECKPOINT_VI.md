@@ -1,3 +1,13 @@
+# Hợp nhất hai đợt khách sạn đồng thời — 03/11/2026
+
+Đối chiếu ba phía từ `e4ea4f4d` tới thay đổi lễ tân trên remote `126c53d7`, đồng thời giữ đợt khẩn cấp của nhánh tích hợp. Nội dung lễ tân và an toàn nằm ở các bài/ý khác nhau; hợp nhất theo ID ổn định, không chọn đè cả sổ. Giữ cả hai ghi chú checkpoint; hợp nhất vùng trang theo elementId rồi tính lại hash file vùng cho sổ chuẩn.
+
+Giữ thêm 10 ý lễ tân đã tự kiểm từ nhánh remote, câu `hotel-front-03-q09` và 12 bản dịch, hai sửa từ phồn thể cùng năm sửa cách đọc; bảo toàn 18 ý và hai câu khẩn cấp ở nhánh tích hợp. Kết quả hợp nhất: 193/384 ý covered_ai, còn 191 ý mở; 337 câu/38 bài, 456/456 cặp dịch đúng revision. Mẫu số nguồn vẫn mở, không kết luận bao phủ toàn ngành.
+
+Đã xem lại sáu trang nguồn của đợt lễ tân, đối chiếu 62 tham chiếu chữ theo hash/bbox và nội dung câu sơ tán mới/12 bản dịch. Kiểm cả hai bộ front-v10 và emergency: giữ đúng hợp các knowledgeId, sửa số tổng cố định cũ thành phép kiểm tập ID của hai đợt, không nới điều kiện thành “ít nhất”. Các receipt tác giả cũ giữ phạm vi lịch sử của chúng; receipt `recovery-v9/front-emergency-reconciliation-126c.json` ghi hiện trạng kết hợp. PASS sổ chuẩn, cấu trúc, readings, nguồn/bản dịch/loader và state. Nghiệm thu chuyên môn, bản ngữ, âm thanh, thiết bị thật và thời lượng vẫn chưa hoàn tất.
+
+---
+
 # Đóng thiếu sót đường sơ tán vừa phát hiện — 03/11/2026, v10 bổ sung
 
 Không dừng ở ghi nhận thiếu sót HF1-012-03: bổ sung hotel-front-03-q09 tự soạn, phương án đúng kiểm riêng cả vị trí cửa thoát hiểm và đường sơ tán từ phòng đến cửa đó. Giữ tám câu cũ và mọi nội dung Nhật đã có; cập nhật đủ12bản dịch trực tiếp, thêm6entry furigana thủ công. Chỉ front03 đổi revision từ0094eea… sang3c440f6e… sau khi xác nhận toàn bộ bài/câu cũ nguyên vẹn; binding source-atoms, catalog và reading được cập nhật theo thay đổi thật. Hai nguồn1号p12/2号p17 đã đọc chữ/ảnh và tái kiểmhash/bbox bốn vùng dùng cho ý này. Không khẳng định người học đã thành thạo sơ tán thực tế.
@@ -17,6 +27,20 @@ Từ baseline `2aa8c72ef`, xác minh hash cả hai PDF và đọc chữ/ảnh s�
 Rà ngữ nghĩa có giới hạn q01/q02/q03 của front01 trên 12 ngôn ngữ (36 bản câu, mỗi bản gồm đề/bốn lựa chọn/giải thích). Sửa hai lỗi phồn thể: 專案→項目 trong khoản tính thêm và 隻有→只有. Rà 18 chuỗi Nhật của ba câu, sửa năm span furigana: 希望日 dùng きぼうび (hai chỗ), 言う dùng いう (ba chỗ). Giữ mọi câu/đáp án/ID/revision và tất cả nội dung ngoài phạm vi; trạng thái bản dịch vẫn translated_ai_unreviewed. Đây chưa phải rà toàn bộ 38 bài hoặc duyệt bản ngữ.
 
 PASS: ba lượt sổ chuẩn từng nhóm; check-front-v10 (bảo toàn phạm vi và hash), check-readings, check-translations --require-complete (456/456, thiếu/cũ0), diff--check phạm vi. Receipt front-source-v10-review-20261103.json và front-locale-reading-v10-review-20261103.json ghi nguồn/bằng chứng/hash; script review-front-source-v10.py tái lập ba nhóm từ PDF riêng. Chưa kiểm âm thanh, hình trong reader, thiết bị thật, chuyên môn/bản ngữ hoặc thời lượng thực học. Điều phối phải commit/push/xác minh remote trước khi công bố đã lưu.
+
+---
+
+# Ba nhóm khẩn cấp và rà ngôn ngữ theo phạm vi — 03/11/2026
+
+Baseline `f72e3e6c`. Đối chiếu hai chiều và khép 18 ý ở mức tự kiểm AI qua ba nhóm tuần tự: chuẩn bị theo nơi làm việc (7), phòng ngừa cháy/bảo vệ chức năng thiết bị (5), sơ tán và thông tin gọi hỗ trợ (6). Đọc chữ và ảnh nguồn 1号46–48, 2号58–61; gắn đúng hash/bbox từng vùng. 165→183/384 ý đã biết, còn 201 ý mở. Không khép cả trang hoặc đổi mẫu số sang hoàn tất.
+
+Phát hiện hai khoảng trống thật: câu cũ q01 chưa kiểm riêng tài liệu ứng phó của cơ sở; đoạn/câu sơ tán cũ mới nói rõ không dùng thang máy khi cháy, chưa kiểm riêng trường hợp động đất. Đã bổ sung `hotel-safety-01-q06`, `hotel-safety-02-q08` và câu Nhật về sơ tán sau động đất. Soạn trực tiếp 24 bản câu hỏi và 12 câu bổ sung theo 12 ngôn ngữ; bổ sung thủ công 13 entry furigana. 336 câu/38 bài, 456/456 cặp dịch đúng revision. Giữ nguyên 334 câu Nhật cũ, 456 cặp trường dịch cũ và 3.029 entry reading; hai revision mới lưu lịch sử lượt cũ và yêu cầu làm lại, không tự chuyển hoàn thành.
+
+Rà ngữ nghĩa có giới hạn rõ: 18 ý nguồn Nhật, 24 bản câu hỏi mới và 36 đoạn dịch đã chọn trên 12 ngôn ngữ (chuẩn bị thiết bị/tài liệu; giới hạn chữa cháy ban đầu; sơ tán cháy/động đất). Không gọi kiểm cấu trúc 456 cặp là chứng nhận ngữ nghĩa toàn bộ. Hướng dẫn công khai của 観光庁 về dừng chữa cháy khi lửa tới trần, gọi119 và chỉ dẫn sơ tán được đọc để kiểm phạm vi; không thêm chỉ dẫn thực hành chưa có căn cứ.
+
+Kiểm lịch thực: 38 ngày có PNG byte thật, hash và liên kết nạp theo bài; trung vị thân Nhật 919,5 ký tự, không ngày nào dưới nửa trung vị. Đây chỉ là sàng lọc khối lượng, không phải đo thời lượng. Hai hình safety01/02 đã xem và tự kiểm phù hợp mục tiêu, cập nhật bằng chứng trong image-manifest và daily-workload. Chưa duyệt hiển thị responsive/thiết bị thật cho lượt này. Bộ đọc khách sạn hiện chưa có liên kết recording/player: nghiệm thu âm thanh vẫn chưa hoàn tất; kiểm revision văn bản không thay cho kiểm âm thanh.
+
+PASS: sổ chuẩn, cấu trúc bài/câu, readings alignment/revision, source-atoms, 456 bản dịch/loader thật, state và kiểm bảo toàn bổ sung `check-emergency-source.cjs`. Receipt `recovery-v9/emergency-source-review.json`, `emergency-validation.json`, `emergency-language-daily-audit.json` ghi phạm vi và giới hạn. Chưa duyệt chuyên môn/bản ngữ, thiết bị thật, âm thanh hoặc thời lượng thực học. Điều phối lưu và xác minh remote trước khi báo đã lưu.
 
 ---
 

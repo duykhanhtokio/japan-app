@@ -1,13 +1,3 @@
-## 2026-11-03 — V10 nursery/graft/seedling source continuation
-
-Visually self-read SHA-verified S1 PDF75–76 and S2 PDF17–19. Three successive groups close nine existing candidate units with precise body/ruby element references, current Japanese teaching and dedicated existing assessments: nursery containers/material/size, rootstock/scion roles, and seedling vigour/fine-root/pest observations. Canonical state: 1,441 known units, 121 covered_ai; source denominator remains open, percentage null. Four complete semantic pages and three instructionally covered pages are unchanged; none of these five pages is fully closed.
-
-Corrected the reversed Japanese wrong-option rationale in `agr-1-m01-q25`; its exam revision is now `v1-3def18cfd49d4a19`. Existing IDs/history remain, while incompatible saved attempts follow the existing version rejection. The runtime renders Japanese reasons directly; there is no stored translated, ruby or audio reason payload for this field. All 241 lessons, 2,892 lesson-locale records, 23 reader checks and 1,226 other question objects are preserved.
-
-PASS: canonical ledger, scoped V10 preservation, general Agriculture data/state check, mock schema/balance/revisions, and current dependency checks. Current dependency audit covers 369 scheduled days with figure metadata links and zero measured learner days. It indexes exact accepted paragraph evidence without inferring every sentence claim is source-covered. Physical rasters, all-locale semantics, native/domain review, device/Expo and learner duration remain unaccepted. Evidence: `../source-coverage-v2/agriculture-nursery-graft-health-v10-{review,validation}.json` and `agriculture-current-dependencies-20261103.json`.
-
-The historical assessment inventory regeneration is blocked by pre-existing stale lesson/weekly editorial review hashes, plus the changed mock input. Do not merely update those approval hashes. Its old question hash is historical; the canonical current ledger binds the repaired question. Future work must reconcile the broader index with preserved review decisions and actual changed inputs. No remote persistence is claimed by this local checkpoint; root must commit/push/fetch and verify.
-
 ## 2026-11-03 — V9 integrated source facets, frozen for parent publish
 
 Parent baseline: `1d80a8d967d2e06b6b20c0ec2bd85536a77137c2`. Retained incoming V8 three canonical units, three activities and receipts/scripts unchanged. Added 22 distinct covered facets across source2 pages14–16 and source1 counterparts12–13. Two historical nursery labels resolve as aliases to published V8 field-period and machine-hand units and do not add denominator counts. Original before records remain in `legacyResolvedGroups`.

@@ -36,23 +36,24 @@ for(const f of figures.newFigures){const b=fs.readFileSync(path.join(root,f.path
 const oldFigure=fs.readFileSync(path.join(root,'assets/food-manufacturing/source-practice36/histogram-bin-comparison.webp'));assert.equal(oldFigure.slice(8,12).toString(),'WEBP');
 (async()=>{
  const esbuild=require('esbuild'),out=fs.mkdtempSync(path.join(os.tmpdir(),'food46-'));
- await esbuild.build({stdin:{contents:"export {FoodClosureSupplements} from './src/components/food-manufacturing/FoodClosureSupplements';",resolveDir:root},bundle:true,platform:'node',format:'cjs',jsx:'automatic',external:['react','react/jsx-runtime'],outfile:path.join(out,'entry.cjs'),plugins:[{name:'scoped-food-ssr',setup(b){
+ await esbuild.build({stdin:{contents:"export {FoodClosureSupplements} from './src/components/food-manufacturing/FoodClosureSupplements';",resolveDir:root},bundle:true,platform:'node',format:'cjs',jsx:'automatic',external:['react','react/jsx-runtime'],outfile:path.join(out,'entry.cjs'),loader:{'.webp':'dataurl'},plugins:[{name:'scoped-food-ssr',setup(b){
  b.onResolve({filter:/^react-native$/},()=>({path:require.resolve('react-native-web')}));
  b.onResolve({filter:/^@\/components\/tokutei\/StudyAppearance$/},()=>({path:'translation',namespace:'adapter'}));
  b.onLoad({filter:/.*/,namespace:'adapter'},()=>({contents:"import React from 'react';export const TranslationText=({children})=><div>{children}</div>;",loader:'tsx',resolveDir:root}));
  b.onResolve({filter:/^@\//},a=>({path:path.join(root,'src',a.path.slice(2))}));
  b.onLoad({filter:/FoodSourceAssessmentChecks\.tsx$/},a=>({contents:fs.readFileSync(a.path,'utf8').replace('useState(false)','useState(Boolean(globalThis.__food46Reveal))'),loader:'tsx',resolveDir:path.dirname(a.path)}));
  }}]});
+ const plain=s=>s.replace(/&#x27;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
  const React=require('react'),{renderToStaticMarkup}=require('react-dom/server'),{FoodClosureSupplements}=require(path.join(out,'entry.cjs'));let views=0,negative=0;
  for(const {pack} of packs){const s=pack.sections[0],lesson=lessons.find(l=>l.id===s.lessonId);for(const c of pack.checks){
   for(const language of ['ja',...locales])for(const show of [false,true]){
    global.__food46Reveal=show;
-   const html=renderToStaticMarkup(React.createElement(FoodClosureSupplements,{lesson,language,showTranslation:true,textColor:'#222',readingColor:'#555'}));
+   const html=plain(renderToStaticMarkup(React.createElement(FoodClosureSupplements,{lesson,language,showTranslation:true,textColor:'#222',readingColor:'#555'})));
    assert(html.includes(`data-testid="${s.id}"`));assert(html.includes(`data-testid="${c.id}"`));assert.equal(html.includes(`data-testid="${c.id}-points"`),show);
    if(language!=='ja'){assert(html.includes(s.translations[language].title));assert(html.includes(s.translations[language].text));assert(html.includes(c.translations[language].prompt));if(show)c.translations[language].expectedPoints.forEach(p=>assert(html.includes(p)));}
    views++;
   }
-  for(const altered of [{...lesson,sourceHash:'stale'},{...lesson,id:'wrong'}]){const html=renderToStaticMarkup(React.createElement(FoodClosureSupplements,{lesson:altered,language:'vi',showTranslation:true,textColor:'#222',readingColor:'#555'}));assert(!html.includes(`data-testid="${s.id}"`));assert(!html.includes(`data-testid="${c.id}"`));negative++;}
+  for(const altered of [{...lesson,sourceHash:'stale'},{...lesson,id:'wrong'}]){const html=plain(renderToStaticMarkup(React.createElement(FoodClosureSupplements,{lesson:altered,language:'vi',showTranslation:true,textColor:'#222',readingColor:'#555'})));assert(!html.includes(`data-testid="${s.id}"`));assert(!html.includes(`data-testid="${c.id}"`));negative++;}
  }
  }
  delete global.__food46Reveal;

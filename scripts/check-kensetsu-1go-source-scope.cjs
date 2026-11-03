@@ -104,9 +104,34 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  const settle=async fn=>act(async()=>{if(fn)fn();await Promise.resolve();await Promise.resolve();});
  const host=(id,type='Pressable')=>renderer.root.findAll(n=>n.type===type&&n.props.testID===id);
  const click=async id=>{const n=host(id)[0];assert(n,'Missing '+id);assert(!n.props.disabled,'Disabled '+id);await settle(()=>n.props.onPress());};
+ const dayMappings=new Map();
+ const dayButton=(id,level,field,subject='practical')=>{
+  const mapped=m.studyDayIdForSession(id,level,field,subject),view=m.studyDayForScope(id,level,field,subject),original=m.sessionForScope(id,level,field,subject);
+  assert(view&&original,'Required lesson remains in the actual scheduled reader: '+id);
+  for(const p of original.clusters.flatMap(c=>c.paragraphs))assert(view.clusters.flatMap(c=>c.paragraphs).includes(p),'Grouped reader preserves exact scoped paragraph: '+p.id);
+  assert(m.studyDayCompletionIds(id,level,field,subject).includes(m.completionId(original)),'Keep individual completion ID: '+id);
+  if(mapped!==id)dayMappings.set(`${level}:${field}:${subject}:${id}`,{level,field,subject,previousSessionId:id,scheduledDayId:mapped});
+  return 'kensetsu-day-'+Number(mapped.split('-').pop());
+ };
  const mount=async(language="vi")=>settle(()=>{renderer=TR.create(React.createElement(m.KensetsuCourse,{learner:'reuse-learner',language,onBack(){}}));});
  const unmount=async()=>settle(()=>renderer.unmount());
  await mount();await click('kensetsu-level-2');assert.equal(host('kensetsu-field-building').length,1);await click('kensetsu-field-building');assert.equal(host('kensetsu-mode-foreman-study').length,1);await click('kensetsu-mode-practical-tests');await click('kensetsu-test-exam-01');await unmount();
+ // Oct31 intentionally grouped former building day024 into day005 with day051.
+ // Restore by the old ID, verify its full current content/12translations, and keep r1 history.
+ let formerDay24Cases=0;
+ const legacy24='kensetsu-building-practical-session-024';
+ for(const level of ['1','2'])for(const locale of ['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl']){
+  const field='building',lesson24=m.sessionForScope(legacy24,level,field,'practical'),mapped=m.studyDayIdForSession(legacy24,level,field,'practical');
+  assert.equal(mapped,'kensetsu-building-practical-session-005');
+  const key=m.completionKey('reuse-learner',level,field),oldId=legacy24+':r1',required=m.studyDayCompletionIds(legacy24,level,field,'practical');
+  globalThis.__scopeStorage.set(key,JSON.stringify({[oldId]:true}));
+  globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:legacy24,view:'days',offset:0}));
+  await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click(dayButton(legacy24,level,field));await click('kensetsu-translation');
+  for(const p of lesson24.clusters.flatMap(c=>c.paragraphs)){assert(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes(p.ja)).length,p.id);assert(host('kensetsu-translation-'+p.id,'Text').some(n=>n.children.includes(p.translations[locale])),p.id+':'+locale);}
+  assert(host('kensetsu-complete')[0].props.disabled,'Former r1 must not auto-complete revised/grouped day');
+  await settle(()=>host('kensetsu-reader','ScrollView')[0].props.onScroll({nativeEvent:{contentOffset:{y:2000},layoutMeasurement:{height:844},contentSize:{height:2200}}}));await click('kensetsu-complete');
+  const saved=JSON.parse(globalThis.__scopeStorage.get(key));assert(saved[oldId],'Keep former r1');for(const id of required)assert(saved[id],'Explicit end-completion saves each grouped member ID');await unmount();formerDay24Cases++;
+ }
  const paragraphPolicy=JSON.parse(fs.readFileSync(path.join(root,'src/data/kensetsu/paragraph-reuse-policy.json')));
  let inlineTranslationChecks=0,inlineReaderCases=0;
  for(const spec of paragraphPolicy.supplements)for(const field of spec.fields){
@@ -123,7 +148,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
    const key=m.completionKey('reuse-learner',level,field);
    globalThis.__scopeStorage.set(key,JSON.stringify({[m.completionId(original)]:true}));
    globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:spec.targetSessionId,view:'days',offset:0}));
-   await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-day-'+Number(spec.targetSessionId.split('-').pop()));
+   await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click(dayButton(spec.targetSessionId,level,field));
    assert.equal(m.restoreProgress(JSON.stringify({[m.completionId(original)]:true}))[m.completionId(view)],undefined);
    assert.equal(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes('✓ 学習済み · 戻る')).length,0);
    await click('kensetsu-translation');
@@ -140,7 +165,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   assert.strictEqual(m.sessionForScope(mekiri.id,level,field,'practical'),mekiri);
   const key=m.completionKey('reuse-learner',level,field);globalThis.__scopeStorage.set(key,JSON.stringify({[mekiri.id+':r1']:true}));
   globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:mekiri.id,view:'days',offset:0}));
-  await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-day-263');
+  await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click(dayButton('kensetsu-common-session-263',level,field));
   assert(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes(mekiriP.ja)).length);
   assert.equal(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes('✓ 学習済み · 戻る')).length,0);await click('kensetsu-translation');
   assert(host('kensetsu-translation-'+mekiriP.id,'Text').some(n=>n.children.includes(mekiriP.translations[locale])));
@@ -165,7 +190,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
    const history={[old]:true,...(oldScoped?{[oldScoped]:true}:{})};
    const retained=m.restoreProgress(JSON.stringify(history));for(const id of Object.keys(history))assert(retained[id],id);assert.equal(retained[m.completionId(fieldLesson)],undefined);
    const key=m.completionKey('reuse-learner',level,field);globalThis.__scopeStorage.set(key,JSON.stringify(history));globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:lesson.id,view:'days',offset:0}));
-   await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-day-'+number);
+   await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click(dayButton(lesson.id,level,field));
    for(const p of repairedParagraphs)assert(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes(p.ja)).length,p.id);
    assert.equal(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes('✓ 学習済み · 戻る')).length,0);await click('kensetsu-translation');for(const p of repairedParagraphs)assert(host('kensetsu-translation-'+p.id,'Text').some(n=>n.children.includes(p.translations[locale])),p.id);
    await unmount();sourceGapReaderCases++;
@@ -184,7 +209,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
    const scopedRetained=m.restoreProgress(JSON.stringify({[scopedPrevious]:true}));assert(scopedRetained[scopedPrevious]);assert.equal(scopedRetained[m.completionId(lesson)],undefined);
    const retained=m.restoreProgress(JSON.stringify({[previous]:true}));assert(retained[previous]);assert.equal(retained[m.completionId(lesson)],undefined);
    const key=m.completionKey('reuse-learner',level,field);globalThis.__scopeStorage.set(key,JSON.stringify({[previous]:true,[scopedPrevious]:true}));globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:lesson.id,view:'days',offset:0}));
-   await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-day-'+Number(lesson.id.split('-').pop()));
+   await mount(locale);if(level==='2')await click('kensetsu-level-2');await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click(dayButton(lesson.id,level,field));
    assert.equal(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes('✓ 学習済み · 戻る')).length,0);await click('kensetsu-translation');
    for(const pid of repair.addedParagraphIds){const p=lesson.clusters.flatMap(c=>c.paragraphs).find(p=>p.id===pid);assert(p);assert(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes(p.ja)).length);assert(host('kensetsu-translation-'+pid,'Text').some(n=>n.children.includes(p.translations[locale])));}
    await unmount();differentialRepairReaderCases++;
@@ -197,7 +222,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
   const key=m.completionKey('reuse-learner','1',field);
   // An old calendar index must not restore the wrong week after sharing changes the list.
   globalThis.__scopeStorage.set(key+':navigation:practical:v2',JSON.stringify({week:0,lastId:view.sessionId,view:'days',offset:0}));
-  await mount();await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-day-'+Number(view.sessionId.split('-').pop()));
+  await mount();await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click(dayButton(view.sessionId,'1',field));
   const original=JSON.parse(fs.readFileSync(path.join(root,'docs/ssw-workspace/kensetsu',view.sessionId.includes('-building-')?'building':'civil','practical','session-'+view.sessionId.split('-').pop()+'.json')));
   for(const cluster of original.clusters)for(const paragraph of cluster.paragraphs){
    const found=renderer.root.findAll(n=>n.type==='Text'&&n.children.includes(paragraph.ja)).length>0;
@@ -210,7 +235,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  for(const field of ['building','civil']){
   const key=m.completionKey('reuse-learner','1',field),retired=policy.retiredSessionIds.find(id=>id.includes('-'+field+'-'))+':r1';
   globalThis.__scopeStorage.set(key,JSON.stringify({[retired]:true}));globalThis.__scopeStorage.delete(key+':navigation:practical:v2');
-  await mount();await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-week-1');await click('kensetsu-day-162');
+  await mount();await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-week-1');await click(dayButton('kensetsu-common-session-162','1',field));
   const lesson=m.sessionById.get('kensetsu-common-session-162');assert(renderer.root.findAll(n=>n.type==='Text'&&n.children.includes(lesson.clusters[0].paragraphs[0].ja)).length>0);
   assert(host('kensetsu-complete')[0].props.disabled);
   await settle(()=>host('kensetsu-reader','ScrollView')[0].props.onScroll({nativeEvent:{contentOffset:{y:2000},layoutMeasurement:{height:844},contentSize:{height:2200}}}));await click('kensetsu-complete');
@@ -259,7 +284,7 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
    assert(lesson.titleTranslations?.[locale]);
    for(const c of lesson.clusters){assert(c.titleTranslations?.[locale]);assert(c.illustration?.captionTranslations?.[locale]);assert(m.illustrations[c.illustration.assetPath]);for(const term of c.terms??[])assert(term.translations?.[locale],term.ja+':'+locale);}
    globalThis.__scopeStorage.set(m.completionKey('reuse-learner','1',field)+':navigation:practical:v2',JSON.stringify({week:0,lastId:view.sessionId,view:'days',offset:0}));
-   await mount(locale);await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click('kensetsu-day-'+Number(view.sessionId.split('-').pop()));
+   await mount(locale);await click('kensetsu-field-'+field);await click('kensetsu-mode-practical-study');await click(dayButton(view.sessionId,'1',field));
    await click('kensetsu-translation');
    for(const c of lesson.clusters)for(const paragraph of c.paragraphs){
     const expected=paragraph.translations?.[locale];assert(expected&&expected!==paragraph.ja,paragraph.id+':'+locale);
@@ -277,6 +302,6 @@ const dep=name=>require(require.resolve(name,{paths:[modules]}));
  const revised=m.sessionById.get('kensetsu-common-session-263');assert.equal(revised.revision,2);
  for(const p of revised.clusters.flatMap(c=>c.paragraphs))if(authorized.preservedCanonicalParagraphHashes[p.id])assert.equal(crypto.createHash('sha256').update(p.ja).digest('hex'),authorized.preservedCanonicalParagraphHashes[p.id]);
  const progress=m.restoreProgress(JSON.stringify({[revised.id+':r1']:true}));assert(progress[revised.id+':r1']);assert.equal(progress[m.completionId(revised)],undefined);
- const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:108,civil:104},distinctCanonicalLessonsReused:109,activeCanonicalAndDeltaRecords:456,foremanRecords:m.sessionsForScope('2','building','foreman').length,totalActiveRecords:m.sessions.length,additionalFactViews:71,uniqueAdditionalParagraphs:167+addedDeltaParagraphs,additionalParagraphRenderChecks:deltaParagraphsRendered,excludedParagraphChecks:excludedParagraphsAbsent,sharedAdditionalFactViewsLinkedIntoCivil:32,duplicateParagraphsRemovedFromNineUniqueViews:37,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:67,scopedQuestions:scopeRows,targetLocales:locales,localeParagraphRenderChecks,additionalDiagrams:71,differentialPngFilesVerified,newInstructionalParagraphsAuthored:5+authorized.addedCanonicalParagraphs.length-(authorized.paragraphReorganizations?.length??0),sourceReconciliationAuthoredParagraphs:authorized.addedCanonicalParagraphs.length-(authorized.paragraphReorganizations?.length??0),losslessParagraphSplits:authorized.paragraphReorganizations?.length??0,sourceReconciliationAddedParagraphs:authorized.addedCanonicalParagraphs.length,newQuestionsAuthored:0,originalLessonTranslationAndQuestionInputsBytePreserved:unchangedInputs,intentionallyRevisedInputs:authorized.files.length,originalQuestionPayloadsUnchanged:authorized.originalQuestionPayloadsUnchanged,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoSharedContent:true,actualHostComponentFlow:true,newSupplementaryTestHostSubmissionFields:2,newTheory40QuestionHostSubmissionFields:3,theory40QuestionHostSubmissions,fullAdditionalTheoryForms:5,additionalTheoryQuestions:235,additionalPracticalQuestions:104,additionalUtilitiesQuestions:165,additionalSharedFieldQuestions:208,additionalCivilSpecificQuestions:22,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
+ const report={status:'PASS_SOURCE_BOUND_REUSE_DEDUP_AND_ACTUAL_HOST_FLOW',sharedCanonicalLessonsPerField:{building:108,civil:104},distinctCanonicalLessonsReused:109,activeCanonicalAndDeltaRecords:456,foremanRecords:m.sessionsForScope('2','building','foreman').length,totalActiveRecords:m.sessions.length,additionalFactViews:71,uniqueAdditionalParagraphs:167+addedDeltaParagraphs,additionalParagraphRenderChecks:deltaParagraphsRendered,excludedParagraphChecks:excludedParagraphsAbsent,sharedAdditionalFactViewsLinkedIntoCivil:32,duplicateParagraphsRemovedFromNineUniqueViews:37,fullyRetiredDraftLessons:5,retiredDraftParagraphs:30,totalPriorDraftParagraphsRemovedFromActiveReader:67,scopedQuestions:scopeRows,targetLocales:locales,localeParagraphRenderChecks,additionalDiagrams:71,differentialPngFilesVerified,newInstructionalParagraphsAuthored:5+authorized.addedCanonicalParagraphs.length-(authorized.paragraphReorganizations?.length??0),sourceReconciliationAuthoredParagraphs:authorized.addedCanonicalParagraphs.length-(authorized.paragraphReorganizations?.length??0),losslessParagraphSplits:authorized.paragraphReorganizations?.length??0,sourceReconciliationAddedParagraphs:authorized.addedCanonicalParagraphs.length,newQuestionsAuthored:0,originalLessonTranslationAndQuestionInputsBytePreserved:unchangedInputs,intentionallyRevisedInputs:authorized.files.length,originalQuestionPayloadsUnchanged:authorized.originalQuestionPayloadsUnchanged,canonicalLessonTranslationsAndArtworkReusedByReference:true,archivedDraftCompletionPreservedWithoutMarkingReplacementLessons:true,navigationRestoredByStableLessonId:true,utilitiesSpecificSourceLessonsNotInOtherFields:true,twoGoSharedContent:true,actualHostComponentFlow:true,formerDay24Cases,formerDay24ScheduledAs:'kensetsu-building-practical-session-005',formerDay24ContentAnd12LocalesVisible:true,formerR1AndAllGroupedCompletionIdsRetained:true,mergedDayMappings:[...dayMappings.values()],newSupplementaryTestHostSubmissionFields:2,newTheory40QuestionHostSubmissionFields:3,theory40QuestionHostSubmissions,fullAdditionalTheoryForms:5,additionalTheoryQuestions:235,additionalPracticalQuestions:104,additionalUtilitiesQuestions:165,additionalSharedFieldQuestions:208,additionalCivilSpecificQuestions:22,nativeDeviceTested:false,browserScreenshots:false,wholeSourceCoverageConfirmed:false,releaseReady:false};
  if(process.env.KENSETSU_SCOPE_QA_REPORT)fs.writeFileSync(process.env.KENSETSU_SCOPE_QA_REPORT,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 })().catch(e=>{console.error(e);process.exit(1)});
