@@ -112,7 +112,7 @@ async function main() {
       .filter(name => /^worker-[1-6]\.json$/.test(name)).sort()
       .map(name => flatRegionBase + '/' + session.name + '/' + name));
   }
-  for (const regionId of ['chubu', 'tohoku']) {
+  for (const regionId of ['chubu', 'tohoku', 'chugoku']) {
   const regionBase = 'docs/localization-workspace/region-review/' + regionId;
   if (fs.existsSync(path.join(root, regionBase))) {
     for (const session of fs.readdirSync(path.join(root, regionBase)).filter(name => /^session-\d{3}$/.test(name)).sort()) {
