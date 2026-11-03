@@ -60,7 +60,9 @@
     "ssw:coverage:report": "node scripts/source-coverage-v2/report.cjs --ref HEAD",
     "ssw:coverage:require-complete": "node scripts/source-coverage-v2/check.cjs --require-covered",
     "ssw:coverage:test": "node scripts/source-coverage-v2/check.test.cjs && node scripts/source-coverage-v2/report.test.cjs",
-    "ssw:coverage:privacy": "node scripts/source-coverage-v2/check-artifact-privacy.cjs"
+    "ssw:coverage:privacy": "node scripts/source-coverage-v2/check-artifact-privacy.cjs",
+    "life:content:build": "node scripts/build-life-content-buckets.cjs",
+    "life:content:check": "node scripts/check-on-demand-content.cjs"
   },
   "private": true
 }
