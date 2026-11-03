@@ -17,8 +17,24 @@ async function main() {
     ].map(p => `export * from ${JSON.stringify(path.join(root, p))}`).join('\n'), resolveDir: root},
     bundle: true, write: false, platform: 'node', format: 'cjs', logLevel: 'error',
     alias: {'@': path.join(root, 'src')},
+    // Keep curriculum JSON outside generated JS: compiling the entire corpus
+    // duplicates it in the bundle, parser and runtime and can exhaust QA memory.
+    plugins: [{name:'qa-lazy-json', setup(build) {
+      build.onResolve({filter:/\.json$/}, input => ({
+        path: input.path.startsWith('@/') ? path.join(root,'src',input.path.slice(2)) : path.resolve(input.resolveDir,input.path),
+        external:true,
+      }));
+    }}],
   });
-  const actualRequire = Object.assign(name => require(name), {
+  const jsonCache = new Map();
+  const actualRequire = Object.assign(name => {
+    if (!path.isAbsolute(name) || !name.endsWith('.json')) return require(name);
+    if (!jsonCache.has(name)) {
+      jsonCache.set(name, JSON.parse(fs.readFileSync(name, 'utf8')));
+      if (jsonCache.size > 32) jsonCache.delete(jsonCache.keys().next().value);
+    }
+    return jsonCache.get(name);
+  }, {
     context(directory, recursive, pattern) {
       const base = path.resolve(root, 'src/services', directory), files = {}, cache = new Map();
       function scan(dir, prefix = '.') {
