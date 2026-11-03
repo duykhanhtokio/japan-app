@@ -109,6 +109,18 @@ def validate_candidate(row, output, profile):
             'perceptualApproval': False, 'installedInApp': False}
 
 
+def completed_candidate(row, output, profile):
+    """Reuse only a complete candidate that passes current inputs and PCM checks.
+
+    An invalid existing manifest is an explicit local failure, never permission
+    to overwrite a previously completed recording or silently mark it passed.
+    """
+    manifest = output / f"src/data/jlpt-original/{row['level']}/{row['number']:02d}/audio.manifest.json"
+    if not manifest.is_file():
+        return None
+    return validate_candidate(row, output, profile)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--render', action='store_true')
@@ -144,6 +156,16 @@ def main():
         cache.mkdir(parents=True, exist_ok=True)
         def render(index, row):
             check_snapshot(row)
+            reusable = completed_candidate(row, output, profile)
+            if reusable is not None:
+                with lock:
+                    row.update(reusable)
+                    row['reusedValidatedCandidate'] = True
+                    report['renderedCandidates'] += 1
+                    save()
+                    print(json.dumps({'renderedCandidates': report['renderedCandidates'],
+                                      'examId': row['examId'], 'reusedValidatedCandidate': True}), flush=True)
+                return
             generator = 'generate-jlpt-original-audio.py' if row['level'] in ('n5', 'n4', 'n3') else 'generate-jlpt-original-n2-audio.py'
             log_path = output / f"{row['level']}-{row['number']:02d}.log"
             with lock:
