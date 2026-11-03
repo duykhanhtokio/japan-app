@@ -7,6 +7,7 @@ const digest = s => crypto.createHash('sha256').update(s).digest('hex');
 const base = 'docs/localization-workspace/hokkaido-context-2026-11-03/';
 const queuePath = 'docs/localization-workspace/naturalness-review-2026-10-25/prefecture-queue.json';
 const queue = read(queuePath), index = read('src/data/dialogue-content/locale-batch-index.json');
+const planPath = 'docs/localization-workspace/region-review/plan.json', plan = read(planPath);
 const hk = queue.prefectures.find(p => p.prefectureId === 'PRF-001');
 const member = new Set(hk.cities.flatMap(c => [...c.sentenceTaskReviewedScenarioIds, ...c.pendingSentenceTaskScenarioIds]));
 const reviewed = new Map(), batchIds = new Set(), workers = [];
@@ -60,7 +61,7 @@ queue.remainingSentenceTaskScenarios = queue.canonicalScenarios - queue.aiSenten
 queue.order = ['PRF-001', ...queue.order.filter(id => id !== 'PRF-001')];
 const active = queue.order.map(id => queue.prefectures.find(p => p.prefectureId === id)).find(p => p.pendingSentenceTaskScenarios);
 queue.activePrefectureId = active.prefectureId;
-queue.activePrefectureNameJa = active.prefectureId === 'PRF-001' ? '北海道' : queue.activePrefectureNameJa;
+queue.activePrefectureNameJa = plan.regions.flatMap(r => r.prefectures).find(p => p.prefectureId === active.prefectureId).nameJa;
 queue.nextScenarioId = active.cities.flatMap(c => c.pendingSentenceTaskScenarioIds)[0];
 queue.nextBatch = index[queue.nextScenarioId];
 const manifestPath = 'docs/localization-workspace/DIALOGUE_TRANSLATION_PROGRESS.json', manifest = read(manifestPath);
@@ -69,7 +70,6 @@ for (const batch of batchIds) {
   assert(existing); existing.sourceSha256 = checked.sourceSha256;
   for (const file of checked.files) existing.files.find(f => f.path === file.path).sha256 = file.sha256;
 }
-const planPath = 'docs/localization-workspace/region-review/plan.json', plan = read(planPath);
 plan.activeRegionId = 'hokkaido';
 plan.fullContextReviewedScenarios = queue.aiSentenceTaskReviewedScenarios;
 plan.remainingContextScenarios = queue.remainingSentenceTaskScenarios;
@@ -79,11 +79,11 @@ for (const r of plan.regions) {
   r.remainingScenarios = r.totalScenarios - r.contextReviewedScenarios;
   r.status = r.remainingScenarios === 0 ? 'AI_CONTEXT_REVIEWED_NOT_NATIVE_CERTIFIED' : r.contextReviewedScenarios ? 'IN_PROGRESS' : 'NOT_STARTED';
 }
-const output = {status:'REVISION_BOUND_AI_REVIEW_PARTIAL', region:'hokkaido', total:member.size, contextReviewed:hk.aiSentenceTaskReviewedScenarios, remaining:hk.pendingSentenceTaskScenarios, workers, nativeReviewed:false, semanticCrossReview:false};
+const output = {status:hk.pendingSentenceTaskScenarios ? 'REVISION_BOUND_AI_REVIEW_PARTIAL' : 'REVISION_BOUND_AI_CONTEXT_REVIEW_COMPLETE_NOT_NATIVE_CERTIFIED', region:'hokkaido', total:member.size, contextReviewed:hk.aiSentenceTaskReviewedScenarios, remaining:hk.pendingSentenceTaskScenarios, workers, nativeReviewed:false, semanticCrossReview:false};
 for (const [p,x] of [[queuePath,queue],[manifestPath,manifest],[planPath,plan],[base+'progress.json',output]]) fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
 const lines = [
   '# Rà ngữ cảnh hội thoại Hokkaido — 03/11/2026', '',
-  `Đã có bằng chứng AI cho **${output.contextReviewed}/${output.total} bài**, còn **${output.remaining} bài**. Chưa hoàn tất vùng.`, '',
+  `Đã có bằng chứng AI cho **${output.contextReviewed}/${output.total} bài**, còn **${output.remaining} bài**. ${output.remaining ? 'Chưa hoàn tất vùng.' : 'Hoàn tất lượt rà AI câu thoại/gợi ý đủ 12 ngôn ngữ; các vấn đề nguồn và nghiệm thu còn phân biệt riêng.'}`, '',
   'Sáu AI sở hữu các lô riêng theo số lô modulo 6; không kiểm chéo ngữ nghĩa. Giữ các bằng chứng hợp lệ trước đó. Chỉ cộng bài đã đọc ngữ cảnh Nhật cùng toàn bộ 11 câu thoại và 5 gợi ý trong đủ 12 ngôn ngữ; sàng lọc không tăng số này.', '',
   '| AI | Bài đã rà | Trường đã rà | Trường sửa |',
   '| --- | ---: | ---: | ---: |',
