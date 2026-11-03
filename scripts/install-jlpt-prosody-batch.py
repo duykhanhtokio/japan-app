@@ -72,14 +72,20 @@ def metadata(master, organization, candidate, previous, prefix, profile):
     return master, organization, manifest
 
 
-def atomic_copy(source, target):
+def atomic_copy(source, target, *, link=False):
     target.parent.mkdir(parents=True, exist_ok=True)
     temporary = None
     try:
         with tempfile.NamedTemporaryFile(dir=target.parent, delete=False) as out:
             temporary = Path(out.name)
-            with source.open('rb') as data:
-                shutil.copyfileobj(data, out)
+        if link:
+            temporary.unlink()
+            try:
+                os.link(source, temporary)
+            except OSError:
+                shutil.copyfile(source, temporary)
+        else:
+            shutil.copyfile(source, temporary)
         os.replace(temporary, target)
     finally:
         if temporary:
@@ -92,6 +98,7 @@ def main():
     parser.add_argument('--profile', default=batch.PROFILE)
     parser.add_argument('--candidate-dir', default=batch.CANDIDATES)
     parser.add_argument('--install', action='store_true')
+    parser.add_argument('--link-audio', action='store_true', help='Reuse verified candidate MP3 storage on the same filesystem; fall back to copying. Candidate renderers publish replacements atomically.')
     args = parser.parse_args()
     profile = load_profile(ROOT / args.profile)
     output = candidate_root(ROOT, args.candidate_dir, args.profile)
@@ -139,10 +146,11 @@ def main():
                 backup.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(target, backup)
             journal.append((target, backup))
-            atomic_copy(source, target)
+            atomic_copy(source, target, link=args.link_audio and target.suffix == '.mp3')
         for row in rows:
             row['installedInApp'] = True
         report.update(installedNewAudioForms=30, status='30_audio_forms_installed_human_listening_pending')
+        report['installationStorageMode'] = 'linked_verified_audio_with_copy_fallback' if args.link_audio else 'copied_audio'
         (stage / 'installed-report.json').write_bytes(encoded(report))
         atomic_copy(stage / 'installed-report.json', ROOT / args.report)
     except BaseException:
