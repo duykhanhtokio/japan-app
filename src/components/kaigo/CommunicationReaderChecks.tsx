@@ -2,6 +2,7 @@ import { useState, type ComponentType } from 'react';
 import { View } from 'react-native';
 import { TranslationText } from '@/components/tokutei/StudyAppearance';
 import data from '@/data/kaigo/reader-communication-checks.json';
+import { getCommunicationReaderTranslation } from '@/data/kaigo/reader-communication-localization';
 import type { RubyToken } from '@/data/kaigo/types';
 
 type Props = {
@@ -16,7 +17,7 @@ export function CommunicationReaderChecks({ day, sectionId, language, translatio
   if (!checks.length) return null;
   return <View testID="kaigo-communication-reader-checks">
     {checks.map(check => {
-      const translation = (check.translations as Record<string, { prompt: string; modelAnswer: string; teaching?: string }>)[language];
+      const translation = getCommunicationReaderTranslation(check, language);
       const answerOpen = !!opened[check.id];
       const teaching = check as {teachingJa?: string; teachingRuby?: RubyToken[]};
       return <View key={check.id} testID={check.id}>

@@ -98,7 +98,7 @@ async function end(tree, id) {
     onBack() {},
   });
   await click(t, "kensetsu-field-utilities");
-  await click(t, "kensetsu-mode-study");
+  await click(t, "kensetsu-mode-theory-study");
   await click(t, "kensetsu-week-1");
   await click(t, "kensetsu-day-1");
   assert(!text(t).includes("BẢN_DỊCH_TEST"));
@@ -121,7 +121,7 @@ async function end(tree, id) {
     onBack() {},
   });
   await click(t, "kensetsu-field-utilities");
-  await click(t, "kensetsu-mode-study");
+  await click(t, "kensetsu-mode-theory-study");
   await click(t, "kensetsu-week-1");
   await click(t, "kensetsu-day-1");
   await end(t, "kensetsu-reader");
@@ -222,6 +222,7 @@ async function end(tree, id) {
   assert.equal(m.readingPeriod(18), "day");
   assert.equal(m.readingPeriod(19), "night");
   assert.equal(m.readingPeriod(6), "night");
+  const scheduledSections = entry => [...m.dailyPrimarySections(entry, m.japaneseSectionsFor(entry)), ...m.companionSectionsFor(entry)];
   const days = m.kaigoCatalog.map((entry) => {
     const old = m.sectionsFor(entry),
       next = m.japaneseSectionsFor(entry);
@@ -230,11 +231,13 @@ async function end(tree, id) {
       assert.equal(section.id, next[i].id);
       assert.deepEqual(section.paragraphs, next[i].paragraphs);
     });
+    const scheduled = scheduledSections(entry);
     return {
       day: entry.day,
-      sections: next.length,
-      completeJapanese: next.filter((s) => s.japaneseComplete).length,
-      missingJapanese: next.filter((s) => !s.japaneseComplete).map((s) => s.id),
+      sections: scheduled.length,
+      originalSections: next.length,
+      completeJapanese: scheduled.filter((s) => s.japaneseComplete).length,
+      missingJapanese: scheduled.filter((s) => !s.japaneseComplete).map((s) => s.id),
     };
   });
   const report = {
@@ -269,9 +272,13 @@ async function end(tree, id) {
       await click(t, `kaigo-calendar-day-${slot.day}`);
       raw(t);
       assert(!/[À-ÖØ-öø-ÿĂăĐđĨĩŨũƠơƯư\u1EA0-\u1EF9]/u.test(text(t)), `Day ${slot.day}: translation leaked before explicit action`);
-      const sections = m.japaneseSectionsFor(slot.entry);
+      const sections = scheduledSections(slot.entry);
       for (const section of sections) {
-        assert.equal(hosts(t, `kaigo-reading-section-${section.id}`).length, 1);
+        assert.equal(hosts(t, `kaigo-reading-section-${section.id}`).length, 1, `Day ${slot.day}: expected reading section ${section.id}`);
+        // Reference glossaries are collapsed by default. Exercise their real
+        // action before checking paragraph translations inside the disclosure.
+        const referenceId = `kaigo-reference-${section.id}`;
+        if (hosts(t, referenceId).length) await click(t, referenceId);
       }
       await click(t, "kaigo-translation");
       raw(t);

@@ -8,6 +8,10 @@ module.exports = async function compile(root, modules, jsonSnapshots = new Map()
   const esbuild = dependency("esbuild"),
     fixture = require("./fixtures.cjs");
   const mocks = {
+    // This suite tests reader/progress behavior with one bounded lesson. Scope
+    // filtering and full curricula have separate data tests; do not accidentally
+    // mix the fixture index with production scoped lesson lists.
+    "@/data/kensetsu/scope": `const session=${JSON.stringify(fixture.fixtureSession)};export const subjectLabels={theory:'学科',practical:'実技',foreman:'職長'};export const sessionsForScope=()=>[session];export const sessionForScope=id=>id===session.id?session:undefined;export const studyDayForScope=sessionForScope;export const studyDayIdForSession=id=>id;export const studyDayCompletionIds=id=>[id];export const weeksForScope=()=>[{id:'week-01',titleJa:'安全確認',sessionIds:[session.id]}];`,
     "@/components/ui/AppBackdrop": `export const useBackdropOcclusion=()=>{};`,
     "react-native": `import React,{forwardRef,useImperativeHandle} from 'react'; export const View='View',Text='Text',Pressable='Pressable',Image='Image',TextInput='TextInput';export const ScrollView=forwardRef((props,ref)=>{useImperativeHandle(ref,()=>({scrollTo(){}}));return React.createElement('ScrollView',props,props.children)});export const Modal=props=>props.visible?React.createElement('Modal',props,props.children):null;export const StyleSheet={create:x=>x,absoluteFill:{position:'absolute',left:0,right:0,top:0,bottom:0},absoluteFillObject:{position:'absolute',left:0,right:0,top:0,bottom:0},flatten:x=>Object.assign({},...[x].flat(Infinity).filter(Boolean))};export const useWindowDimensions=()=>globalThis.__tokuteiViewport??({width:430,height:932,fontScale:1});export const AppState={currentState:'active',addEventListener:()=>({remove(){}})};`,
     "@react-native-async-storage/async-storage": `export default {getItem:async key=>globalThis.__tokuteiStorage.get(key)??null,setItem:async(key,value)=>{if(globalThis.__tokuteiFailSave)throw Error('save failure');globalThis.__tokuteiStorage.set(key,value)},getAllKeys:async()=>[...globalThis.__tokuteiStorage.keys()]};`,
@@ -63,6 +67,7 @@ module.exports = async function compile(root, modules, jsonSnapshots = new Map()
     "src/components/kensetsu/KensetsuReviewTests",
     "src/components/kaigo/KaigoCourse",
     "src/data/kaigo/japanese-reading",
+    "src/data/kaigo/daily-study-support",
     "src/data/kaigo/japanese-master",
     "src/data/kaigo/catalog",
     "src/data/kaigo/weekly-learning",

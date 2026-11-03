@@ -1,3 +1,25 @@
+# Đóng thiếu sót đường sơ tán vừa phát hiện — 03/11/2026, v10 bổ sung
+
+Không dừng ở ghi nhận thiếu sót HF1-012-03: bổ sung hotel-front-03-q09 tự soạn, phương án đúng kiểm riêng cả vị trí cửa thoát hiểm và đường sơ tán từ phòng đến cửa đó. Giữ tám câu cũ và mọi nội dung Nhật đã có; cập nhật đủ12bản dịch trực tiếp, thêm6entry furigana thủ công. Chỉ front03 đổi revision từ0094eea… sang3c440f6e… sau khi xác nhận toàn bộ bài/câu cũ nguyên vẹn; binding source-atoms, catalog và reading được cập nhật theo thay đổi thật. Hai nguồn1号p12/2号p17 đã đọc chữ/ảnh và tái kiểmhash/bbox bốn vùng dùng cho ý này. Không khẳng định người học đã thành thạo sơ tán thực tế.
+
+Hiện175/384ýđãbiết covered_ai (tăng10so với baseline165), còn209ý mở. Mẫu số toàn nguồn chưa chốt, sourceCoveragePercent=null. Tổng335câu/38bài,456/456cặp dịch đúngrevision. PASS: canonical source contract, source-atoms, reading alignment/revision, complete translations, loader thật và check-front-v10. Bảo toàn mọi trường dịch cũ, tám câu cũ và entry đọc cũ ngoài năm span đã hiệu đính; test runtime xác nhận lịch sử hoàn thành revision cũ được archive/restore và revision mới cần làm lại. check.cjs tổng quát bị chặn vì sparse checkout chưa cóhotel-front-01.png; không đổi hình và không coi việc thiếu tệp là nghiệm thu hiển thị. Không thử lại Expo/native/thiết bị/âmthanh/thờilượng, không duyệt chuyênmôn/bảnngữ.
+
+Receipt:front-evacuation-v10-question.json (Nhật và12bản dịch), front-evacuation-v10-integration.json (revision/bảo toàn), front-evacuation-v10-source-review.json (nguồn/bằng chứng). Ba nhóm nguồn trước đó vẫn giữ lịch sử174/210tại thời điểm kiểm; sổ chuẩn hiện tại175/209cóhiệulực. Điều phối phải xác minhremote trước khi công bốđãlưu.
+
+---
+
+# Ba nhóm lễ tân và rà bản dịch/cách đọc — 03/11/2026, v10
+
+Từ baseline `2aa8c72ef`, xác minh hash cả hai PDF và đọc chữ/ảnh sáu trang: 1号9/11/12, 2号13/15/17. Ba nhóm được xử lý tuần tự, kiểm sổ sau mỗi nhóm: hủy/điều chỉnh đặt phòng (2 ý), đón khách và đối chiếu đặt phòng (3 ý), giao khóa/thông tin sử dụng/giờ nhận trả phòng (4 ý). Chín ý có vùng nguồn chính xác, hash/bbox kiểm trực tiếp, bằng chứng bài/câu hiện hành và liên kết hai chiều. Giữ giới hạn nhiều trường hợp/điều kiện của cơ sở, không biến giờ ví dụ thành quy tắc toàn quốc. Không sửa Nhật hoặc revision, không phát sinh bản dịch cũ.
+
+`covered_ai` 165→174/384 ý đã biết; còn 210 ý mở, mẫu số toàn nguồn vẫn mở và sourceCoveragePercent=null. Sáu trang chỉ được rà theo các ý được chỉ rõ; không đóng toàn trang. Phát hiện riêng HF1-012-03: đoạn dạy có lối thoát và đường sơ tán nhưng phương án đúng q02 chỉ nêu lối thoát; từ đường sơ tán nằm ở phương án sai chưa đủ để coi kiểm tra trực tiếp năng lực này. Giữ candidate, ghi rõ thiếu sót trong receipt, không gộp đóng vào nhóm giao khóa.
+
+Rà ngữ nghĩa có giới hạn q01/q02/q03 của front01 trên 12 ngôn ngữ (36 bản câu, mỗi bản gồm đề/bốn lựa chọn/giải thích). Sửa hai lỗi phồn thể: 專案→項目 trong khoản tính thêm và 隻有→只有. Rà 18 chuỗi Nhật của ba câu, sửa năm span furigana: 希望日 dùng きぼうび (hai chỗ), 言う dùng いう (ba chỗ). Giữ mọi câu/đáp án/ID/revision và tất cả nội dung ngoài phạm vi; trạng thái bản dịch vẫn translated_ai_unreviewed. Đây chưa phải rà toàn bộ 38 bài hoặc duyệt bản ngữ.
+
+PASS: ba lượt sổ chuẩn từng nhóm; check-front-v10 (bảo toàn phạm vi và hash), check-readings, check-translations --require-complete (456/456, thiếu/cũ0), diff--check phạm vi. Receipt front-source-v10-review-20261103.json và front-locale-reading-v10-review-20261103.json ghi nguồn/bằng chứng/hash; script review-front-source-v10.py tái lập ba nhóm từ PDF riêng. Chưa kiểm âm thanh, hình trong reader, thiết bị thật, chuyên môn/bản ngữ hoặc thời lượng thực học. Điều phối phải commit/push/xác minh remote trước khi công bố đã lưu.
+
+---
+
 # Tiếp quản và nghiệm thu ba nhóm phục vụ — 03/11/2026
 
 Đã tiếp quản phần đang dở tại baseline `4832f53f`, giữ nguyên các thay đổi hợp lệ. Ba nhóm nguồn hoàn tất tuần tự: điện thoại/khiếu nại (6 ý), tư thế tiếp khách (4 ý), hướng dẫn và hỗ trợ khách (12 ý). Đọc lại chữ và ảnh 7 trang thuộc cả hai PDF; sổ chuẩn có vùng nguồn chính xác, liên kết hai chiều và bằng chứng bài/câu hiện hành. Hai trang chữ thuần 1号34 và 2号41 đã phân loại đủ 305 phần tử, gồm ruby, spans và thành phần điều hướng; không suy ra khép toàn bộ các trang còn lại.

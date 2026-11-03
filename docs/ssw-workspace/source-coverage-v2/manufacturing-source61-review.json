@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-03",
+  "baselineCommit": "2aa8c72ef0dc475250631f222b3e3c7d0da7e3e9",
+  "ledgerBeforeSha256": "6a4834f5cfc6ea92a71d3c2ddeba48f484f0f61e0c690cf3c5b3071da1b60cfc",
+  "sources": [
+    {
+      "sourceId": "mfg1-mechanical-source",
+      "sha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPages": 169,
+      "pdfPage": 89,
+      "pageTextSha256": "7d7350a9019c101f265aeb9ae4d2ac9ef1fa014303dbfb83cabdbfdf01be77a8",
+      "privateRasterSha256": "4063df44e7b84bc25e6594379ff249344fb1365eff60039d6f4226953a5f2e71",
+      "selfViewedWholePage": true,
+      "sourceProseOrPixelsRepublished": false
+    },
+    {
+      "sourceId": "mfg1-surface-source",
+      "sha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPages": 207,
+      "pdfPage": 103,
+      "pageTextSha256": "9d2133bffac374bc42479294933e68b3d7cdc7b86336ebabf073146891dafa73",
+      "privateRasterSha256": "09c7e9b060f67abf68e6b2a819f29f8207d1f9e30a17b9a326daeb7129a84ed4",
+      "selfViewedWholePage": true,
+      "sourceProseOrPixelsRepublished": false
+    },
+    {
+      "sourceId": "mfg1-electrical-source",
+      "sha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPages": 198,
+      "pdfPage": 165,
+      "pageTextSha256": "53f29a83050999d82a2f57b21fd2e45b4baa7aa2d3e7bdec02af1e02c93071f1",
+      "privateRasterSha256": "32239dcf46fb5f43b08a2d36259bb61f78fab7490e1e9658f9700bbb7b7012ef",
+      "selfViewedWholePage": true,
+      "sourceProseOrPixelsRepublished": false
+    }
+  ],
+  "groups": [
+    {
+      "name": "mechanical-cutting-plane-and-hatching",
+      "ids": [
+        "mfg47-mechanical-cut-shape",
+        "mfg47-mechanical-hatch-role"
+      ],
+      "source": "mfg1-mechanical-source",
+      "page": 89,
+      "notes": "New question explicitly distinguishes thin one-dot chain form plus thick ends/direction changes. Reused sectional-view question tests material cut-surface role; it does not establish exact solid-line hatching appearance. All four old options/reasons self-compared. Hatch-shape remains open."
+    },
+    {
+      "name": "electrical-manual-reset-and-drawing-motion",
+      "ids": [
+        "mfg47-electrical-reset",
+        "mfg47-mechanical-phantom-motion"
+      ],
+      "source": "mfg1-electrical-source",
+      "page": 165,
+      "notes": "New conditional textbook question checks safety before manual signal reset, not automatic reset or repeated restarting; not a universal device procedure or hands-on approval. Existing electrical drawing question directly distinguishes moving-position phantom lines from hatching; cross-specialty assessment location remains explicit, not a claim that every mechanical weekly test now contains it."
+    },
+    {
+      "name": "surface-solution-roles-and-precipitation",
+      "ids": [
+        "mfg47-surface-solute",
+        "mfg47-surface-solvent",
+        "mfg47-surface-solution",
+        "mfg47-surface-precipitate"
+      ],
+      "source": "mfg1-surface-source",
+      "page": 103,
+      "notes": "New P/Q/R paper model independently tests all three roles and uniform resulting liquid with distinct permutations. Reused aqueous AgCl question assesses recognition of precipitation only: given ions/colour do not assess separate ionic-reaction or colour-specific facts. Source printed missing chloride charge is not copied as correct notation."
+    }
+  ],
+  "changedUnits": [
+    {
+      "knowledgeId": "mfg47-mechanical-cut-shape",
+      "beforeStatus": "partial",
+      "beforeAfter": {
+        "teaching": "present",
+        "assessment": "unknown"
+      },
+      "beforeUnresolved": [
+        "Direct assessment is not established within the imported source47 question mappings; the complete app question bank has not been exhaustively searched for this claim."
+      ],
+      "assessmentPath": "src/data/manufacturing/source61-assessments.json",
+      "assessmentPointer": "/rows/0/question",
+      "assessmentSha256": "b0bf045cb1c9adc3d10b4791f77059f4efe19fea302313d61f4df910aa5d30b9",
+      "selfReview": "New question explicitly distinguishes thin one-dot chain form plus thick ends/direction changes. Reused sectional-view question tests material cut-surface role; it does not establish exact solid-line hatching appearance. All four old options/reasons self-compared. Hatch-shape remains open."
+    },
+    {
+      "knowledgeId": "mfg47-electrical-reset",
+      "beforeStatus": "partial",
+      "beforeAfter": {
+        "teaching": "present",
+        "assessment": "unknown"
+      },
+      "beforeUnresolved": [
+        "Direct assessment is not established within the imported source47 question mappings; the complete app question bank has not been exhaustively searched for this claim."
+      ],
+      "assessmentPath": "src/data/manufacturing/source61-assessments.json",
+      "assessmentPointer": "/rows/1/question",
+      "assessmentSha256": "66a2355bd2598bf398395938e07def69e75052af5f39ac9b0457ad0641c43446",
+      "selfReview": "New conditional textbook question checks safety before manual signal reset, not automatic reset or repeated restarting; not a universal device procedure or hands-on approval. Existing electrical drawing question directly distinguishes moving-position phantom lines from hatching; cross-specialty assessment location remains explicit, not a claim that every mechanical weekly test now contains it."
+    },
+    {
+      "knowledgeId": "mfg47-surface-solute",
+      "beforeStatus": "partial",
+      "beforeAfter": {
+        "teaching": "present",
+        "assessment": "unknown"
+      },
+      "beforeUnresolved": [
+        "Direct assessment is not established within the imported source47 question mappings; the complete app question bank has not been exhaustively searched for this claim."
+      ],
+      "assessmentPath": "src/data/manufacturing/source61-assessments.json",
+      "assessmentPointer": "/rows/2/question",
+      "assessmentSha256": "5cb08030457e9802e3f930aa2bd5d04c6374fe01c48abad81583166f67e3f7ce",
+      "selfReview": "New P/Q/R paper model independently tests all three roles and uniform resulting liquid with distinct permutations. Reused aqueous AgCl question assesses recognition of precipitation only: given ions/colour do not assess separate ionic-reaction or colour-specific facts. Source printed missing chloride charge is not copied as correct notation."
+    },
+    {
+      "knowledgeId": "mfg47-surface-solvent",
+      "beforeStatus": "partial",
+      "beforeAfter": {
+        "teaching": "present",
+        "assessment": "unknown"
+      },
+      "beforeUnresolved": [
+        "Direct assessment is not established within the imported source47 question mappings; the complete app question bank has not been exhaustively searched for this claim."
+      ],
+      "assessmentPath": "src/data/manufacturing/source61-assessments.json",
+      "assessmentPointer": "/rows/2/question",
+      "assessmentSha256": "5cb08030457e9802e3f930aa2bd5d04c6374fe01c48abad81583166f67e3f7ce",
+      "selfReview": "New P/Q/R paper model independently tests all three roles and uniform resulting liquid with distinct permutations. Reused aqueous AgCl question assesses recognition of precipitation only: given ions/colour do not assess separate ionic-reaction or colour-specific facts. Source printed missing chloride charge is not copied as correct notation."
+    },
+    {
+      "knowledgeId": "mfg47-surface-solution",
+      "beforeStatus": "partial",
+      "beforeAfter": {
+        "teaching": "present",
+        "assessment": "unknown"
+      },
+      "beforeUnresolved": [
+        "Direct assessment is not established within the imported source47 question mappings; the complete app question bank has not been exhaustively searched for this claim."
+      ],
+      "assessmentPath": "src/data/manufacturing/source61-assessments.json",
+      "assessmentPointer": "/rows/2/question",
+      "assessmentSha256": "5cb08030457e9802e3f930aa2bd5d04c6374fe01c48abad81583166f67e3f7ce",
+      "selfReview": "New P/Q/R paper model independently tests all three roles and uniform resulting liquid with distinct permutations. Reused aqueous AgCl question assesses recognition of precipitation only: given ions/colour do not assess separate ionic-reaction or colour-specific facts. Source printed missing chloride charge is not copied as correct notation."
+    },
+    {
+      "knowledgeId": "mfg47-mechanical-hatch-role",
+      "beforeStatus": "partial",
+      "beforeAfter": {
+        "teaching": "present",
+        "assessment": "unknown"
+      },
+      "beforeUnresolved": [
+        "Direct assessment is not established within the imported source47 question mappings; the complete app question bank has not been exhaustively searched for this claim."
+      ],
+      "assessmentPath": "src/data/manufacturing/mechanical.json",
+      "assessmentPointer": "/checks/6/questions/2",
+      "assessmentSha256": "00905c9af40dac0e97e02c3c3196962220a6532b971dbc279776e9f0cdb669ff",
+      "selfReview": "New question explicitly distinguishes thin one-dot chain form plus thick ends/direction changes. Reused sectional-view question tests material cut-surface role; it does not establish exact solid-line hatching appearance. All four old options/reasons self-compared. Hatch-shape remains open."
+    },
+    {
+      "knowledgeId": "mfg47-mechanical-phantom-motion",
+      "beforeStatus": "partial",
+      "beforeAfter": {
+        "teaching": "present",
+        "assessment": "unknown"
+      },
+      "beforeUnresolved": [
+        "Direct assessment is not established within the imported source47 question mappings; the complete app question bank has not been exhaustively searched for this claim."
+      ],
+      "assessmentPath": "src/data/manufacturing/electrical.json",
+      "assessmentPointer": "/checks/12/questions/1",
+      "assessmentSha256": "cf3b63537c3d67cd67af1759d4b58daaa4c7e658b44528d77fdfa9752d7908e2",
+      "selfReview": "New conditional textbook question checks safety before manual signal reset, not automatic reset or repeated restarting; not a universal device procedure or hands-on approval. Existing electrical drawing question directly distinguishes moving-position phantom lines from hatching; cross-specialty assessment location remains explicit, not a claim that every mechanical weekly test now contains it."
+    },
+    {
+      "knowledgeId": "mfg47-surface-precipitate",
+      "beforeStatus": "partial",
+      "beforeAfter": {
+        "teaching": "present",
+        "assessment": "partial"
+      },
+      "beforeUnresolved": [
+        "Direct assessment is not established within the imported source47 question mappings; the complete app question bank has not been exhaustively searched for this claim."
+      ],
+      "assessmentPath": "src/data/manufacturing/surface.json",
+      "assessmentPointer": "/checks/1/questions/5",
+      "assessmentSha256": "28cb420c98e3918e2daeb204860e99307a1e0553205846b30818e94aed27a250",
+      "selfReview": "New P/Q/R paper model independently tests all three roles and uniform resulting liquid with distinct permutations. Reused aqueous AgCl question assesses recognition of precipitation only: given ions/colour do not assess separate ionic-reaction or colour-specific facts. Source printed missing chloride charge is not copied as correct notation."
+    }
+  ],
+  "newQuestions": 3,
+  "newQuestionLocalePairs": 36,
+  "questionLocaleSemanticScope": "AI self-review of the new bounded questions; no native certification; canonical Japanese and existing terminology retained. No whole-bank or whole-locale semantic acceptance inferred.",
+  "newLessonProse": 0,
+  "figuresChanged": 0,
+  "audioVerified": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "wholeSourceCovered": false,
+  "coveredAiBefore": 113,
+  "coveredAiAfter": 121
+}

@@ -3,7 +3,7 @@
   "locale": "id",
   "shard": "integration",
   "canonicalFile": "docs/ssw-workspace/restaurant/source-closure31/canonical-ja.integration.json",
-  "canonicalSha256": "756e14b84dfcc344cb3556ba47813120d8c9cc621099b10abf9515c6c1bc158e",
+  "canonicalSha256": "475fc8407074a9cfc7104102a2d79a931750f89e90ba1c8308d231415785440e",
   "items": {
     "rst31-hygiene2-noro-source-scope": {
       "sourceHash": "288d35c858b0cb11cd7f583c66947b6aa768da3003fa69f357b565ddf15f4db4",
@@ -1608,10 +1608,10 @@
       ],
       "explanation": "Contoh lama: paling tinggi 21°C dalam 2 jam, lalu paling tinggi 5°C dalam 4 jam berikutnya. Periksa penerapan terkini secara terpisah; jangan mencampur batas.",
       "reasons": [
-        "≤21°C/2 h → ≤5°C/+4 h",
-        "5°C ≠ 10°C",
-        "2 h / 4 h ≠ 4 h / 2 h",
-        "21°C → 5°C ≠ 5°C → 21°C"
+        "Sesuai dengan dua tahap yang dijelaskan dalam bahan.",
+        "Suhu akhir belum mencapai 5°C atau lebih rendah.",
+        "Waktu untuk kedua tahap tertukar.",
+        "Urutan suhunya terbalik."
       ]
     },
     "rst31-v2-r3-hyg-q002": {
@@ -1644,10 +1644,10 @@
       ],
       "explanation": "Bagian utama adalah 2, saus yang dipanaskan/didinginkan kemarin 3, pelengkap mentah 1. Telusuri setiap komponen secara terpisah.",
       "reasons": [
-        "(2,3,1) ≠ (1,2,3)",
-        "(2,3,1) ≠ (2,1,3)",
-        "(2,3,1) ≠ (3,2,1)",
-        "(2,3,1) = (2,3,1)"
+        "Proses untuk hidangan utama, saus, dan pelengkap semuanya tidak sesuai.",
+        "Proses untuk saus dan pelengkap mentah tertukar.",
+        "Proses untuk hidangan utama dan saus tertukar.",
+        "Ketiga proses dibedakan dengan benar."
       ]
     },
     "rst31-v2-r4-hyg-q001": {
@@ -1774,6 +1774,29 @@
         "30%hanya persentase Y, bukan kumulatif mulai X.",
         "Menjumlahkan X dan Y, membagi dengan total, lalu menerapkan batas.",
         "80%melampaui batas A latihan. Peringkat saja tidak menentukan kategori."
+      ]
+    },
+    "rst31-v2-coupon-checkout-20261103": {
+      "sourceHash": "90f622dd837a12b9bbcf58448172f5e4b31c67e85abaa792c1ca74de2d5fa942",
+      "title": "Waktu menyerahkan kupon untuk kunjungan berikutnya",
+      "text": "Kupon diskon yang bertujuan mendorong kunjungan kembali diberikan saat pembayaran di kasir. Jika diberikan saat pelanggan datang lalu dipakai pada tagihan hari itu, kupon hanya menjadi diskon langsung, bukan alasan untuk kembali. Dalam latihan ini, kasir menyerahkan kupon saat pembayaran dan menjelaskan bahwa kupon berlaku untuk kunjungan berikutnya."
+    },
+    "rst31-v2-coupon-timing-q001": {
+      "sourceHash": "2a10ae63df327536152fa15556700ef52428dfa9872e44d0aafaa3e54dbccac2",
+      "objective": "Pilih waktu pemberian kupon untuk kunjungan berikutnya.",
+      "stem": "Restoran menyiapkan kupon diskon untuk kunjungan berikutnya. Kapan staf sebaiknya menyerahkan kupon kepada pelanggan?",
+      "options": [
+        "Segera saat pelanggan datang",
+        "Saat mencatat pesanan",
+        "Saat pembayaran di kasir",
+        "Saat dapur mulai memasak"
+      ],
+      "explanation": "Kupon untuk mendorong kunjungan kembali diberikan saat pembayaran di kasir. Hindari salah menganggap kupon yang diberikan saat datang sebagai diskon hari itu.",
+      "reasons": [
+        "Berikan saat pembayaran, bukan saat pelanggan datang.",
+        "Berikan saat pembayaran, bukan saat mencatat pesanan.",
+        "Sesuai dengan pemberian kupon kunjungan kembali saat pembayaran.",
+        "Berikan saat pelanggan membayar, bukan saat memasak dimulai."
       ]
     }
   }

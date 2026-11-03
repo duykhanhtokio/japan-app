@@ -1,8 +1,8 @@
 {
   "status": "PASS_AI_CONTEXT_REVIEWS",
-  "screenSha256": "7cd043df6ae2aca960b13f59cab224782dbef45eaa832ab1e74ea5feb16e3159",
-  "screenFlags": 278,
-  "matchedCount": 278,
+  "screenSha256": "b150b278855bd14073ab4cf7e51827891dca00546539bd086fb248031912962d",
+  "screenFlags": 284,
+  "matchedCount": 284,
   "unmatched": [],
   "matched": [
     {
@@ -94,6 +94,60 @@
       "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/receipts/vi-en/numeric-dispositions-all7shards.json",
       "decision": "accepted_semantic_equivalence",
       "contextNote": "Japanese written denominations 一万/五千/千/二千 and 一/五/十/五十/百/五百 become target digits. Vietnamese uses dot thousands separators, English commas. Note denominations 10,000/5,000/1,000/2,000, coins 1/5/10/50/100/500 and holes 5/50 are preserved; 2024 remains issue year. 二千 repeated in Japanese is one linked English sentence, not omitted information."
+    },
+    {
+      "locale": "vi",
+      "id": "rst31-v2-r5-ops-q001",
+      "field": "options[3]",
+      "targetFieldSha256": "a96278024bc80e9d585e743f1ff481bd1aff2b6622a5358ac9e9b03be0abb3aa",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/vi/numeric-context-20261103.json",
+      "decision": "equivalent_decimal_comma_ai",
+      "contextNote": "Vietnamese decimal comma 0,68% equals Japanese 0.68%; this is the same distractor, not 68%."
+    },
+    {
+      "locale": "vi",
+      "id": "rst31-v2-r5-ops-q001",
+      "field": "reasons[3]",
+      "targetFieldSha256": "bcc97d5afe636f7593d880cfc7318d8a9dc4bcf7beabb16fe59265104f4f050b",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/vi/numeric-context-20261103.json",
+      "decision": "equivalent_decimal_comma_ai",
+      "contextNote": "Vietnamese 0,68 is decimal ratio 0.68 and is explicitly converted to 68%; the Japanese distinction is retained."
+    },
+    {
+      "locale": "vi",
+      "id": "rst31-v2-r5-ops-q002",
+      "field": "options[3]",
+      "targetFieldSha256": "652c2740d7d00287ead4e5f0058c1849dc39736203bd889818cbd7262667e6a4",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/vi/numeric-context-20261103.json",
+      "decision": "equivalent_decimal_comma_ai",
+      "contextNote": "Vietnamese 333,3% is Japanese approximately 333.3%; wrong answer remains the same."
+    },
+    {
+      "locale": "vi",
+      "id": "rst31-v2-r5-ops-q002",
+      "field": "reasons[0]",
+      "targetFieldSha256": "683f46a8b3d1c3750e59f497d68cea49635a8714b34df9d6f9f5db60468442e2",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/vi/numeric-context-20261103.json",
+      "decision": "equivalent_decimal_comma_ai",
+      "contextNote": "Vietnamese 0,3 equals Japanese 0.3; 240/800=0.3=30%, not3%, is retained."
+    },
+    {
+      "locale": "vi",
+      "id": "rst31-v2-r5-ops-q003",
+      "field": "reasons[3]",
+      "targetFieldSha256": "19d8b943ea7f3e570ad690d9fef0a90151e440991bf49b1468b26f19367996f9",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/vi/numeric-context-20261103.json",
+      "decision": "equivalent_decimal_comma_ai",
+      "contextNote": "Vietnamese 0,3 equals0.3, conversion30% and instruction not to multiply again by100 are retained."
+    },
+    {
+      "locale": "vi",
+      "id": "rst31-v2-r6-ops-q001",
+      "field": "options[3]",
+      "targetFieldSha256": "b51d778900206ee638832bf5540b79932b252fa595941ce175a51ef825ce0c15",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/vi/numeric-context-20261103.json",
+      "decision": "equivalent_decimal_comma_ai",
+      "contextNote": "Vietnamese 0,2 equals0.2 people/labor-hour; reverse-division distractor stays incorrect; no answer change."
     },
     {
       "locale": "en",
@@ -1621,9 +1675,9 @@
       "id": "rst31-cs2-allergy-update",
       "field": "text",
       "targetFieldSha256": "237f999028e2d737728bf9e1d456bdbbbe839e044d2180294de3acf4740e2643",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Japanese month digits are written as named months:April=अप्रिल/មេសា/เมษายน/ဧပြီ,March=मार्च/មីនា/มีนาคม/မတ်,October=अक्टोबर/តុលា/ตุลาคม/အောက်တိုဘာ. Exact year,day or end-of-month is retained; no numeric omission."
+      "contextNote": "Named months preserve numeric Japanese dates: April4=ဧပြီ/เมษายน; March3=မတ်/มีนาคม; October10=အောက်တိုဘာ/ตุลาคม. Year/day/end-of-month retained."
     },
     {
       "locale": "my",
@@ -1666,36 +1720,36 @@
       "id": "rst31-hygiene2-a006",
       "field": "text",
       "targetFieldSha256": "67e035a9919caaabad7f8fd7c1e8706389a37b103bf295a337af25c4cf47def9",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Japanese month digits are written as named months:April=अप्रिल/មេសា/เมษายน/ဧပြီ,March=मार्च/មីនា/มีนาคม/မတ်,October=अक्टोबर/តុលា/ตุลาคม/အောက်တိုဘာ. Exact year,day or end-of-month is retained; no numeric omission."
+      "contextNote": "Named months preserve numeric Japanese dates: April4=ဧပြီ/เมษายน; March3=မတ်/มีนาคม; October10=အောက်တိုဘာ/ตุลาคม. Year/day/end-of-month retained."
     },
     {
       "locale": "my",
       "id": "rst31-hygiene2-figure-reference-form-exercise",
       "field": "caption",
       "targetFieldSha256": "d241275c6b76bf39453fcb944a7f8a90a9f6c11cc25d2318b7fb9996db93cd49",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Burmeseသုံးချက် means3items; denominator-exclusion and achieved score retained."
+      "contextNote": "3項目 retained as Burmese သုံးချက် (three items)."
     },
     {
       "locale": "my",
       "id": "rst31-hygiene2-figure-reference-form-exercise",
       "field": "alt",
       "targetFieldSha256": "d241275c6b76bf39453fcb944a7f8a90a9f6c11cc25d2318b7fb9996db93cd49",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Burmeseသုံးချက် means3items; denominator-exclusion and achieved score retained."
+      "contextNote": "3項目 retained as Burmese သုံးချက် (three items)."
     },
     {
       "locale": "my",
       "id": "rst31-hygiene2-q024",
       "field": "stem",
       "targetFieldSha256": "8f11ba963e04c03f7e4193438f9bde1ef5d7bcffcc78c2bae1b3f2e7dfc7909b",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Japanese month digits are written as named months:April=अप्रिल/មេសា/เมษายน/ဧပြီ,March=मार्च/មីនា/มีนาคม/မတ်,October=अक्टोबर/តុលា/ตุลาคม/အောက်တိုဘာ. Exact year,day or end-of-month is retained; no numeric omission."
+      "contextNote": "Named months preserve numeric Japanese dates: April4=ဧပြီ/เมษายน; March3=မတ်/มีนาคม; October10=အောက်တိုဘာ/ตุลาคม. Year/day/end-of-month retained."
     },
     {
       "locale": "my",
@@ -1711,72 +1765,72 @@
       "id": "rst31-hygiene2-q024",
       "field": "explanation",
       "targetFieldSha256": "e9cc70ff2197c7872f3c9e6d9f0fd779e6b7b86afdc2c44f3d4d0ab96007d26e",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Japanese month digits are written as named months:April=अप्रिल/មេសា/เมษายน/ဧပြီ,March=मार्च/មីនា/มีนาคม/မတ်,October=अक्टोबर/តុលា/ตุลาคม/အောက်တိုဘာ. Exact year,day or end-of-month is retained; no numeric omission."
+      "contextNote": "Named months preserve numeric Japanese dates: April4=ဧပြီ/เมษายน; March3=မတ်/มีนาคม; October10=အောက်တိုဘာ/ตุลาคม. Year/day/end-of-month retained."
     },
     {
       "locale": "my",
       "id": "rst31-hygiene2-q024",
       "field": "reasons[0]",
       "targetFieldSha256": "e9cc70ff2197c7872f3c9e6d9f0fd779e6b7b86afdc2c44f3d4d0ab96007d26e",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Japanese month digits are written as named months:April=अप्रिल/មេសា/เมษายน/ဧပြီ,March=मार्च/មីនា/มีนาคม/မတ်,October=अक्टोबर/តុលា/ตุลาคม/အောက်တိုဘာ. Exact year,day or end-of-month is retained; no numeric omission."
+      "contextNote": "Named months preserve numeric Japanese dates: April4=ဧပြီ/เมษายน; March3=မတ်/มีนาคม; October10=အောက်တိုဘာ/ตุลาคม. Year/day/end-of-month retained."
     },
     {
       "locale": "my",
       "id": "rst31-hygiene2-noro-source-scope",
       "field": "title",
       "targetFieldSha256": "17e4be9b2f1e06bd4267dc95454c62b677714918be35f875b529653f1a0f41b9",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "8割 is eight in ten written asဆယ်ပုံရှစ်ပုံ orแปดในสิบ; November11 is named နိုဝင်ဘာ/พฤศจิกายน. Historical date and causal-scope distinctions retained."
+      "contextNote": "8割 is written naturally as eight in ten (ဆယ်ပုံရှစ်ပုံ / แปดในสิบ); November11 is named နိုဝင်ဘာ / พฤศจิกายน. Both numeric scope and date retained."
     },
     {
       "locale": "my",
       "id": "rst31-hygiene2-noro-source-scope",
       "field": "text",
       "targetFieldSha256": "fc3b2f3a9772804b285f2c3878ad8ebab71d7c89af84a37efaa1672f066e2d73",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "8割 is eight in ten written asဆယ်ပုံရှစ်ပုံ orแปดในสิบ; November11 is named နိုဝင်ဘာ/พฤศจิกายน. Historical date and causal-scope distinctions retained."
+      "contextNote": "8割 is written naturally as eight in ten (ဆယ်ပုံရှစ်ပုံ / แปดในสิบ); November11 is named နိုဝင်ဘာ / พฤศจิกายน. Both numeric scope and date retained."
     },
     {
       "locale": "my",
       "id": "rst31-hygiene2-q049",
       "field": "stem",
       "targetFieldSha256": "625557b40862ab070f37264db36c709c9af13979a4b6902556c4e40de2fdfca4",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "8割 is eight in ten written asဆယ်ပုံရှစ်ပုံ orแปดในสิบ; November11 is named နိုဝင်ဘာ/พฤศจิกายน. Historical date and causal-scope distinctions retained."
+      "contextNote": "8割 is written naturally as eight in ten (ဆယ်ပုံရှစ်ပုံ / แปดในสิบ); November11 is named နိုဝင်ဘာ / พฤศจิกายน. Both numeric scope and date retained."
     },
     {
       "locale": "my",
       "id": "rst31-hygiene2-q049",
       "field": "options[0]",
       "targetFieldSha256": "3c909191b28639b5cc888014421966d68cac02660159c775edef1a4e91d8b632",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "8割 is eight in ten written asဆယ်ပုံရှစ်ပုံ orแปดในสิบ; November11 is named နိုဝင်ဘာ/พฤศจิกายน. Historical date and causal-scope distinctions retained."
+      "contextNote": "8割 is written naturally as eight in ten (ဆယ်ပုံရှစ်ပုံ / แปดในสิบ); November11 is named နိုဝင်ဘာ / พฤศจิกายน. Both numeric scope and date retained."
     },
     {
       "locale": "my",
       "id": "rst31-hygiene2-q049",
       "field": "options[1]",
       "targetFieldSha256": "5bfcbb004e0ecd2dd28a73e6b09484483bf3444d1a5b3d87751d4e62ca9f1104",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "8割 is eight in ten written asဆယ်ပုံရှစ်ပုံ orแปดในสิบ; November11 is named နိုဝင်ဘာ/พฤศจิกายน. Historical date and causal-scope distinctions retained."
+      "contextNote": "8割 is written naturally as eight in ten (ဆယ်ပုံရှစ်ပုံ / แปดในสิบ); November11 is named နိုဝင်ဘာ / พฤศจิกายน. Both numeric scope and date retained."
     },
     {
       "locale": "my",
       "id": "rst31-hygiene2-q049",
       "field": "options[2]",
       "targetFieldSha256": "2f622841c141b1680af7653fb9de5574a1026b6e6162bb71739fb630c57785b2",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "8割 is eight in ten written asဆယ်ပုံရှစ်ပုံ orแปดในสิบ; November11 is named နိုဝင်ဘာ/พฤศจิกายน. Historical date and causal-scope distinctions retained."
+      "contextNote": "8割 is written naturally as eight in ten (ဆယ်ပုံရှစ်ပုံ / แปดในสิบ); November11 is named နိုဝင်ဘာ / พฤศจิกายน. Both numeric scope and date retained."
     },
     {
       "locale": "my",
@@ -1819,45 +1873,45 @@
       "id": "rst31-cs2-allergy-update",
       "field": "text",
       "targetFieldSha256": "7c230bd76957823e0c1fb715031730648f5682e71f51c4ca31bd5ae6850f5896",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Japanese month digits are written as named months:April=अप्रिल/មេសា/เมษายน/ဧပြီ,March=मार्च/មីនា/มีนาคม/မတ်,October=अक्टोबर/តុលា/ตุลาคม/အောက်တိုဘာ. Exact year,day or end-of-month is retained; no numeric omission."
+      "contextNote": "Named months preserve numeric Japanese dates: April4=ဧပြီ/เมษายน; March3=မတ်/มีนาคม; October10=အောက်တိုဘာ/ตุลาคม. Year/day/end-of-month retained."
     },
     {
       "locale": "th",
       "id": "rst31-cs2-mop-window",
       "field": "text",
       "targetFieldSha256": "c3218363cadb2c2e3ef74efe927efe0ba3e30c403d8201d368609aeecd6e54ad",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Thaiเลขแปด expresses numeral8 for figure-eight mopping movement."
+      "contextNote": "Figure-eight movement retained as Thai เลขแปด, not a missing eight."
     },
     {
       "locale": "th",
       "id": "rst31-cs2-fig-mop-window",
       "field": "caption",
       "targetFieldSha256": "bdb673a88538b1663b311d9b0fefbd5d2d8d74547e736f41bd97da13d01064fd",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Thaiเลขแปด expresses numeral8 for figure-eight mopping movement."
+      "contextNote": "Figure-eight movement retained as Thai เลขแปด, not a missing eight."
     },
     {
       "locale": "th",
       "id": "rst31-cooking-service2-q030",
       "field": "objective",
       "targetFieldSha256": "3961a7b8c916ce540a694844c3d21305bb6d1f86a638b15ea54ad67479461e1c",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Thaiเลขแปด expresses numeral8 for figure-eight mopping movement."
+      "contextNote": "Figure-eight movement retained as Thai เลขแปด, not a missing eight."
     },
     {
       "locale": "th",
       "id": "rst31-cooking-service2-q030",
       "field": "options[1]",
       "targetFieldSha256": "ea67a8ebc4f11e10f5a69d735fbe6080fcf7a7e7492b866052612092585e4e3d",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Thaiเลขแปด expresses numeral8 for figure-eight mopping movement."
+      "contextNote": "Figure-eight movement retained as Thai เลขแปด, not a missing eight."
     },
     {
       "locale": "th",
@@ -1900,18 +1954,18 @@
       "id": "rst31-hygiene2-a006",
       "field": "text",
       "targetFieldSha256": "9b478fc4cd3787ad638fef3b1b91fdb71492a0e829ba35d5ab95ab2e9279a3a3",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Japanese month digits are written as named months:April=अप्रिल/មេសា/เมษายน/ဧပြီ,March=मार्च/មីនា/มีนาคม/မတ်,October=अक्टोबर/តុលា/ตุลาคม/အောက်တိုဘာ. Exact year,day or end-of-month is retained; no numeric omission."
+      "contextNote": "Named months preserve numeric Japanese dates: April4=ဧပြီ/เมษายน; March3=မတ်/มีนาคม; October10=အောက်တိုဘာ/ตุลาคม. Year/day/end-of-month retained."
     },
     {
       "locale": "th",
       "id": "rst31-hygiene2-q024",
       "field": "stem",
       "targetFieldSha256": "686b6e1730aae898b767516eba3d1ad57046c154fdd7985e96ef9d88ce646464",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Japanese month digits are written as named months:April=अप्रिल/មេសា/เมษายน/ဧပြီ,March=मार्च/មីនា/มีนาคม/မတ်,October=अक्टोबर/តុលា/ตุลาคม/အောက်တိုဘာ. Exact year,day or end-of-month is retained; no numeric omission."
+      "contextNote": "Named months preserve numeric Japanese dates: April4=ဧပြီ/เมษายน; March3=မတ်/มีนาคม; October10=အောက်တိုဘာ/ตุลาคม. Year/day/end-of-month retained."
     },
     {
       "locale": "th",
@@ -1927,81 +1981,81 @@
       "id": "rst31-hygiene2-q024",
       "field": "explanation",
       "targetFieldSha256": "71e2eb4c2a7ff4f4564089497fe1d2f1567473c203abe70baaff1b339919ed99",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Japanese month digits are written as named months:April=अप्रिल/មេសា/เมษายน/ဧပြီ,March=मार्च/មីនា/มีนาคม/မတ်,October=अक्टोबर/តុលា/ตุลาคม/အောက်တိုဘာ. Exact year,day or end-of-month is retained; no numeric omission."
+      "contextNote": "Named months preserve numeric Japanese dates: April4=ဧပြီ/เมษายน; March3=မတ်/มีนาคม; October10=အောက်တိုဘာ/ตุลาคม. Year/day/end-of-month retained."
     },
     {
       "locale": "th",
       "id": "rst31-hygiene2-q024",
       "field": "reasons[0]",
       "targetFieldSha256": "71e2eb4c2a7ff4f4564089497fe1d2f1567473c203abe70baaff1b339919ed99",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Japanese month digits are written as named months:April=अप्रिल/មេសា/เมษายน/ဧပြီ,March=मार्च/មីនា/มีนาคม/မတ်,October=अक्टोबर/តុលា/ตุลาคม/အောက်တိုဘာ. Exact year,day or end-of-month is retained; no numeric omission."
+      "contextNote": "Named months preserve numeric Japanese dates: April4=ဧပြီ/เมษายน; March3=မတ်/มีนาคม; October10=အောက်တိုဘာ/ตุลาคม. Year/day/end-of-month retained."
     },
     {
       "locale": "th",
       "id": "rst31-hygiene2-noro-source-scope",
       "field": "title",
       "targetFieldSha256": "8339a93583699191e4cdeea67fff42fbd7162811245662a5de2bdbb005aeb6e2",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "8割 is eight in ten written asဆယ်ပုံရှစ်ပုံ orแปดในสิบ; November11 is named နိုဝင်ဘာ/พฤศจิกายน. Historical date and causal-scope distinctions retained."
+      "contextNote": "8割 is written naturally as eight in ten (ဆယ်ပုံရှစ်ပုံ / แปดในสิบ); November11 is named နိုဝင်ဘာ / พฤศจิกายน. Both numeric scope and date retained."
     },
     {
       "locale": "th",
       "id": "rst31-hygiene2-noro-source-scope",
       "field": "text",
       "targetFieldSha256": "e82051d584905615577d426f7bb326ad872400f685f73f6b5746c349735db31f",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "8割 is eight in ten written asဆယ်ပုံရှစ်ပုံ orแปดในสิบ; November11 is named နိုဝင်ဘာ/พฤศจิกายน. Historical date and causal-scope distinctions retained."
+      "contextNote": "8割 is written naturally as eight in ten (ဆယ်ပုံရှစ်ပုံ / แปดในสิบ); November11 is named နိုဝင်ဘာ / พฤศจิกายน. Both numeric scope and date retained."
     },
     {
       "locale": "th",
       "id": "rst31-hygiene2-q049",
       "field": "stem",
       "targetFieldSha256": "53a4494bc29e6c68aee28625e44ab84b99db5b3d5e6bcbd4e26f2ad4d81de131",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "8割 is eight in ten written asဆယ်ပုံရှစ်ပုံ orแปดในสิบ; November11 is named နိုဝင်ဘာ/พฤศจิกายน. Historical date and causal-scope distinctions retained."
+      "contextNote": "8割 is written naturally as eight in ten (ဆယ်ပုံရှစ်ပုံ / แปดในสิบ); November11 is named နိုဝင်ဘာ / พฤศจิกายน. Both numeric scope and date retained."
     },
     {
       "locale": "th",
       "id": "rst31-hygiene2-q049",
       "field": "options[0]",
       "targetFieldSha256": "a510f9cac249ead616da9509730097ef3943417102d28283aadf8e26a74c5a04",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "8割 is eight in ten written asဆယ်ပုံရှစ်ပုံ orแปดในสิบ; November11 is named နိုဝင်ဘာ/พฤศจิกายน. Historical date and causal-scope distinctions retained."
+      "contextNote": "8割 is written naturally as eight in ten (ဆယ်ပုံရှစ်ပုံ / แปดในสิบ); November11 is named နိုဝင်ဘာ / พฤศจิกายน. Both numeric scope and date retained."
     },
     {
       "locale": "th",
       "id": "rst31-hygiene2-q049",
       "field": "options[1]",
       "targetFieldSha256": "8403a2bfa45365f0ee155d243fde3843d82e538b0b84fedd47c423f60f53e5d1",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "8割 is eight in ten written asဆယ်ပုံရှစ်ပုံ orแปดในสิบ; November11 is named နိုဝင်ဘာ/พฤศจิกายน. Historical date and causal-scope distinctions retained."
+      "contextNote": "8割 is written naturally as eight in ten (ဆယ်ပုံရှစ်ပုံ / แปดในสิบ); November11 is named နိုဝင်ဘာ / พฤศจิกายน. Both numeric scope and date retained."
     },
     {
       "locale": "th",
       "id": "rst31-hygiene2-q049",
       "field": "options[2]",
       "targetFieldSha256": "ef153b0e1928bba07d12a4f54b93abb2db9673389d0940d071c30550ff2e2683",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "8割 is eight in ten written asဆယ်ပုံရှစ်ပုံ orแปดในสิบ; November11 is named နိုဝင်ဘာ/พฤศจิกายน. Historical date and causal-scope distinctions retained."
+      "contextNote": "8割 is written naturally as eight in ten (ဆယ်ပုံရှစ်ပုံ / แปดในสิบ); November11 is named နိုဝင်ဘာ / พฤศจิกายน. Both numeric scope and date retained."
     },
     {
       "locale": "th",
       "id": "rst31-service1-a011",
       "field": "text",
       "targetFieldSha256": "88d7b23d6e481d2dc60b86c6b46fe3bff49954c113b26c22aeb8fdabbe4e672e",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Japanese month digits are written as named months:April=अप्रिल/មេសា/เมษายน/ဧပြီ,March=मार्च/មីនា/มีนาคม/မတ်,October=अक्टोबर/តុលា/ตุลาคม/အောက်တိုဘာ. Exact year,day or end-of-month is retained; no numeric omission."
+      "contextNote": "Named months preserve numeric Japanese dates: April4=ဧပြီ/เมษายน; March3=မတ်/มีนาคม; October10=အောက်တိုဘာ/ตุลาคม. Year/day/end-of-month retained."
     },
     {
       "locale": "th",
@@ -2017,18 +2071,18 @@
       "id": "rst31-service1-mof-1000-r",
       "field": "caption",
       "targetFieldSha256": "11913c31f5fbde5eb2f028430b9e412b08dec50fcb2c61fc935c524ee12ead1a",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Japanese title富嶽三十六景 already contains36 as word numeral; target36 is same artwork series, not an added count. Denomination/year retained."
+      "contextNote": "36 is explicitly present as Japanese word numeral 三十六 in artwork-series title; target uses Arabic36. Denomination and source-year retained."
     },
     {
       "locale": "th",
       "id": "rst31-service1-mof-1000-r",
       "field": "alt",
       "targetFieldSha256": "0d5b0d0c147aa317c58c7ea63410c9dab1401deee36f27caa7919eaff1db2080",
-      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/current-numeric-dispositions.json",
+      "receipt": "docs/ssw-workspace/restaurant/source-closure31/translations/my-th-receipts/number-dispositions.json",
       "decision": "valid_equivalent",
-      "contextNote": "Japanese title富嶽三十六景 already contains36 as word numeral; target36 is same artwork series, not an added count. Denomination/year retained."
+      "contextNote": "36 is explicitly present as Japanese word numeral 三十六 in artwork-series title; target uses Arabic36. Denomination and source-year retained."
     },
     {
       "locale": "th",

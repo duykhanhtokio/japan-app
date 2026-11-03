@@ -97512,7 +97512,9 @@
       ],
       "legacyExternalSourceRefs": [],
       "statementJa": "再来店用割引券は会計時に案内し、当日値引きへ取り違えないよう条件と目的を共有する。",
-      "conditionsJa": [],
+      "conditionsJa": [
+        "再来店を促す目的の割引券をレジ精算時に渡す。入店時の配布を単なる当日値引きへ取り違えない。"
+      ],
       "exceptionsJa": [],
       "importance": "core",
       "classification": "knowledge",
@@ -97521,38 +97523,38 @@
         "assessment": "present"
       },
       "after": {
-        "teaching": "partial",
-        "assessment": "partial"
+        "teaching": "present",
+        "assessment": "present"
       },
       "teachingEvidence": [
         {
-          "path": "src/data/restaurant/lessons.2.ja.json",
-          "jsonPointer": "/lessons/35/paragraphs/3/textJa",
-          "sha256": "e1fb3958ac036c98d9909c569e8f8fde5a78fd9385ceacfcdc436c116c6ed372",
+          "path": "src/data/restaurant/source31/2.json",
+          "jsonPointer": "/lessons/rst-2-ops-06/sections/0/textJa",
+          "sha256": "e977a98dd6d640073cab3ab5f811d7c69e76894e13a32cc6fb84a34458a0438a",
           "sha256Mode": "json-value",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "q258 tests next-visit voucher mistaken as same-day discount. Current paragraph3 says checkout revisit guidance without explicitly teaching voucher delivery timing; teaching remains partial for that exact source step."
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Read text and rendered PDF p21 (4)(5); this independent checkout handover scenario explicitly teaches register-checkout timing and the return-visit purpose. Original exercise, not source-prose reproduction."
         }
       ],
       "assessmentEvidence": [
         {
           "path": "src/data/restaurant/exams.2.ja.json",
-          "sha256": "e85600b4664867a47f0d7bd825feb8a978e10d7952134510816cede4f64a4ce3",
-          "sha256Mode": "file",
-          "locator": "stemJa/optionsJa/correctIndex/explanationJa",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "Legacy question evidence retained without dropping its locator. It is not exact v2 semantic acceptance. q110 furigana-only repair: mathematical 積=せき; all semantic content/sourceHash/answers preserved."
-        },
-        {
-          "path": "src/data/restaurant/exams.2.ja.json",
           "jsonPointer": "/exams/6/questions/17",
           "sha256": "f82a462b376905a8b4194618f579717ae778c09e0bd528f7e73af964dd4ec6a9",
           "sha256Mode": "json-value",
-          "relation": "candidate",
-          "semanticReviewed": false,
-          "reviewNote": "q258 tests next-visit voucher mistaken as same-day discount. Current paragraph3 says checkout revisit guidance without explicitly teaching voucher delivery timing; teaching remains partial for that exact source step."
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "Unchanged q258 tests next-visit purpose and prevention of accidental same-day discount."
+        },
+        {
+          "path": "src/data/restaurant/source31/2.json",
+          "jsonPointer": "/lessons/rst-2-ops-06/exam/questions/3",
+          "sha256": "db5bf5b0ce74ccec3876f3d499c9f69f5144a839691ecec5d8042832b91d8fad",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "New independently authored question directly selects register checkout over arrival/order/cooking; exact PDFp21 timing step."
         }
       ],
       "imageEvidence": [],
@@ -97560,12 +97562,10 @@
       "assessmentExemptionReason": null,
       "expressionReview": {
         "status": "independent_ai_checked",
-        "note": "Teaching reorganizes operational concepts and uses original numerical/guest scenarios. Source terms/formulas are retained; no source prose/diagram is redistributed. q258 tests next-visit voucher mistaken as same-day discount. Current paragraph3 says checkout revisit guidance without explicitly teaching voucher delivery timing; teaching remains partial for that exact source step."
+        "note": "Original restaurant decision scenario and independently phrased teaching assess source-supported timing and purpose without reproducing the source sentence structure or example."
       },
-      "status": "partial",
-      "unresolved": [
-        "q258 tests next-visit voucher mistaken as same-day discount. Current paragraph3 says checkout revisit guidance without explicitly teaching voucher delivery timing; teaching remains partial for that exact source step."
-      ],
+      "status": "covered_ai",
+      "unresolved": [],
       "legacyImageEvidence": [],
       "legacyRefs": [
         {
@@ -97586,7 +97586,7 @@
       "sourceReview": {
         "status": "self_checked_ai",
         "conditionsChecked": true,
-        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-operations-review-20261103.json"
+        "reviewRef": "docs/ssw-workspace/source-coverage-v2/restaurant-coupon-source-review-20261103.json"
       }
     },
     {

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "2aa8c72ef0dc475250631f222b3e3c7d0da7e3e9",
+  "groups": [
+    {
+      "scope": "construction_and_kaigo_current_evidence",
+      "construction": {
+        "status": "PASS_REGISTRY_CONTRACT",
+        "sourcePages": 530,
+        "knowledgeUnits": 125,
+        "coveredAi": 72,
+        "blocked": 7,
+        "fullyCovered": false
+      },
+      "kaigo": {
+        "status": "PASS_REGISTRY_CONTRACT",
+        "sourcePages": 276,
+        "knowledgeUnits": 70,
+        "coveredAi": 66,
+        "fullyCovered": false
+      }
+    },
+    {
+      "scope": "kaigo_reader_revision_defect",
+      "before": "22 reader checks displayed locale text without comparing current Japanese to its translation source snapshot.",
+      "after": "All 264 existing locale pairs remain available for the bound Japanese snapshot; changed prompt, answer or teaching text suppresses old translations without hiding Japanese.",
+      "japaneseOrTranslationsReauthored": false,
+      "bindingPairs": 264,
+      "mutationsRejected": 1377,
+      "nativeOrSemanticAcceptance": false
+    },
+    {
+      "scope": "kaigo_actual_course_host",
+      "readerChecks": 22,
+      "locales": 12,
+      "scheduledDays": [
+        169,
+        127,
+        139,
+        140,
+        128,
+        101,
+        126
+      ],
+      "currentFlow": "PASS",
+      "controlledNewerJapaneseSnapshot": "PASS_KAIGO_STALE_READER_TRANSLATION_HOST",
+      "physicalDeviceTested": false,
+      "pixelRenderingTested": false
+    }
+  ],
+  "sourceReread": {
+    "sourceSha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+    "pdfPages": [
+      109
+    ],
+    "visualSelfReviewAi": true,
+    "remainingKnowledgeIds": [
+      "kaigo-v6-consent-own-life",
+      "kaigo-v6-consent-communication-difficulty",
+      "kaigo-v6-consent-individual-method",
+      "kaigo-v6-consent-ict-context"
+    ],
+    "disposition": "Source facts confirmed; exact complete current teaching and assessments remain candidate. No title match or structural test used to close them."
+  },
+  "otherChecks": [
+    "PASS_KAIGO_READER_TEXT_INTEGRITY:22 checks",
+    "PASS content revision integrity:21 lessons,105 questions,88 rubrics,84 scenario cases",
+    "KAIGO MASTER TRANSLATIONS PASS:12 selected languages"
+  ],
+  "limits": [
+    "The source denominator remains open in both canonical ledgers.",
+    "Source coverage, native/expert acceptance, audio, physical-device and measured learner-time gates remain open.",
+    "New binding snapshot records existing Japanese versions only and does not certify existing translations."
+  ],
+  "changedFileSha256": {
+    "src/components/kaigo/CommunicationReaderChecks.tsx": "d55c20d43703a1dba5abd846421c9f5fb4842b2708b6caca129143dd6f761d3e",
+    "src/data/kaigo/reader-communication-localization.ts": "a8c7a33dcfbeca05bd117ac0165e919c594bd52f43f9631ab0691ec93642021f",
+    "src/data/kaigo/reader-communication-translation-sources.json": "65d0c55b65db0fc0514ad9ff79edd7d1db432955dfd7e1dc7c930507742a4d43",
+    "scripts/kaigo/check-reader-translation-binding.cjs": "e39c497f60229dd54fc844916b55bd45d19d54ce915205f901c4922b4a3fb9d4",
+    "scripts/kaigo/check-reader-stale-translation-host.cjs": "1138ea44a0b1287026eeb0046561ce76ea09406aeaac21ee903696a7fac31a22"
+  }
+}

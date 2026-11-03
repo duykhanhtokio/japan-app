@@ -3,7 +3,7 @@
   "locale": "en",
   "shard": "integration",
   "canonicalFile": "docs/ssw-workspace/restaurant/source-closure31/canonical-ja.integration.json",
-  "canonicalSha256": "756e14b84dfcc344cb3556ba47813120d8c9cc621099b10abf9515c6c1bc158e",
+  "canonicalSha256": "475fc8407074a9cfc7104102a2d79a931750f89e90ba1c8308d231415785440e",
   "nativeReviewed": false,
   "domainReviewed": false,
   "items": {
@@ -1610,10 +1610,10 @@
       ],
       "explanation": "The historical example is at most 21°C within 2 hours, then at most 5°C within another 4 hours. Check current applicability separately; do not mix limits.",
       "reasons": [
-        "≤21°C/2 h → ≤5°C/+4 h",
-        "5°C ≠ 10°C",
-        "2 h / 4 h ≠ 4 h / 2 h",
-        "21°C → 5°C ≠ 5°C → 21°C"
+        "This matches the two stages described in the source.",
+        "The final temperature has not reached 5°C or below.",
+        "The times for the two stages are reversed.",
+        "The temperature sequence is reversed."
       ]
     },
     "rst31-v2-r3-hyg-q002": {
@@ -1646,10 +1646,10 @@
       ],
       "explanation": "The main dish is 2, yesterday’s heated/cooled sauce is 3, and raw garnish is 1. Trace each component separately.",
       "reasons": [
-        "(2,3,1) ≠ (1,2,3)",
-        "(2,3,1) ≠ (2,1,3)",
-        "(2,3,1) ≠ (3,2,1)",
-        "(2,3,1) = (2,3,1)"
+        "The processes for the main dish, sauce and garnish are all incorrect.",
+        "The processes for the sauce and raw garnish are reversed.",
+        "The processes for the main dish and sauce are reversed.",
+        "All three processes are correctly distinguished."
       ]
     },
     "rst31-v2-r4-hyg-q001": {
@@ -1776,6 +1776,29 @@
         "30%is Y’s individual share, not the cumulative share from X.",
         "Adds X and Y, divides by the total and applies the stated bands.",
         "80%exceeds the exercise’s A band. Rank alone does not set the category."
+      ]
+    },
+    "rst31-v2-coupon-checkout-20261103": {
+      "sourceHash": "90f622dd837a12b9bbcf58448172f5e4b31c67e85abaa792c1ca74de2d5fa942",
+      "title": "When to hand over a return-visit coupon",
+      "text": "Hand over a discount coupon intended to encourage a return visit at register checkout. If it is handed out on arrival and applied to that day's bill, it becomes an immediate discount rather than a reason to return. In this exercise, the cashier hands it over during payment and explains that it is for the next visit."
+    },
+    "rst31-v2-coupon-timing-q001": {
+      "sourceHash": "2a10ae63df327536152fa15556700ef52428dfa9872e44d0aafaa3e54dbccac2",
+      "objective": "Choose when to hand over a return-visit coupon.",
+      "stem": "A restaurant prepares discount coupons for the next visit. When should staff hand a coupon to the guest?",
+      "options": [
+        "Immediately on arrival",
+        "When taking the order",
+        "During register checkout",
+        "When the kitchen starts cooking"
+      ],
+      "explanation": "Hand over a return-visit coupon during register checkout. Avoid confusing an arrival-time handout with a discount for that day.",
+      "reasons": [
+        "Hand it over at checkout, rather than on arrival.",
+        "Hand it over at checkout, rather than when taking the order.",
+        "This matches handing over a return-visit coupon at checkout.",
+        "Hand it over at the guest's checkout, rather than when cooking starts."
       ]
     }
   }
