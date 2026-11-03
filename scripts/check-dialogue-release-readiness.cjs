@@ -109,7 +109,7 @@ async function main() {
   for (const session of fs.readdirSync(path.join(root, flatRegionBase), {withFileTypes: true})
       .filter(entry => entry.isDirectory() && /^[a-z]+-\d{8}$/.test(entry.name)).sort((a,b) => a.name.localeCompare(b.name))) {
     reviewFiles.push(...fs.readdirSync(path.join(root, flatRegionBase, session.name))
-      .filter(name => /^worker-[1-6]\.json$/.test(name)).sort()
+      .filter(name => /^worker-[1-9]\d*\.json$/.test(name)).sort()
       .map(name => flatRegionBase + '/' + session.name + '/' + name));
   }
   for (const regionId of ['chubu', 'tohoku', 'chugoku']) {
