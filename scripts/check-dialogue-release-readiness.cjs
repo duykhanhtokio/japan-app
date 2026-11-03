@@ -104,6 +104,9 @@ async function main() {
         .filter(name => (entry.name.endsWith('-recovered') ? /^batch-\d{3}\.json$/ : /^worker[1-6]\.json$/).test(name)).sort()
         .map(name => 'docs/localization-workspace/' + entry.name + '/' + name)),
   ];
+  const amendments = require('./lib/dialogue-review-amendments.cjs').loadReviewAmendments({
+    read, hash, digest, reviewFiles, exists: p => fs.existsSync(path.join(root, p)),
+  });
   const reviewed = new Map();
   let reviewedFields = 0;
   for (const file of reviewFiles) {
@@ -118,7 +121,10 @@ async function main() {
         const source = field.field === 'hintTranslation' ? data.hint : (t.speaker === 'NPC' ? data.textJa : data.recommendedAnswerJa);
         const target = field.field === 'hintTranslation' ? data.hintTranslations[row.locale] : data.translations[row.locale];
         assert.equal(digest(source), field.sourceSha256, 'Stale contextual source ' + file + ':' + field.turnId);
-        assert.equal(digest(target), field.targetSha256, 'Stale contextual target ' + file + ':' + field.turnId);
+        const expectedTarget = amendments.resolve({reviewReceiptPath: file, scenarioId: row.scenarioId,
+          locale: row.locale, turnId: field.turnId, field: field.field,
+          sourceSha256: field.sourceSha256, previousTargetSha256: field.targetSha256});
+        assert.equal(digest(target), expectedTarget, 'Stale contextual target ' + file + ':' + field.turnId);
         seen.add(field.turnId + ':' + field.field); reviewedFields++;
       }
       assert.equal(seen.size, 16, 'Review omits sentence/task fields ' + row.scenarioId);
@@ -126,6 +132,7 @@ async function main() {
       reviewed.get(row.scenarioId).add(row.locale);
     }
   }
+  amendments.assertAllUsed();
   const fullyReviewed = [...reviewed.values()].filter(s => locales.every(l => s.has(l))).length;
   const queue = read('docs/localization-workspace/naturalness-review-2026-10-25/prefecture-queue.json');
   const queuedReviewed = queue.prefectures.flatMap(p => p.cities.flatMap(c => c.sentenceTaskReviewedScenarioIds));
@@ -141,7 +148,7 @@ async function main() {
     turnTranslations: sentences, hintTranslations: hints,
     currentSourceBoundHiraganaTurns: ruby, npcTurns: npc, playerTurns: player,
     currentSourceAndVoicePackedNpcTurns: packed,
-    contextReview: {revisionBoundScenariosAll12Locales: fullyReviewed, revisionBoundFields: reviewedFields, remainingScenarios: canonical.size - fullyReviewed, nextScenarioId: queue.nextScenarioId, nextBatch: queue.nextBatch, queueMatchesReceipts: true, scope: 'AI sentence/task review only; known issues remain.'},
+    contextReview: {revisionBoundScenariosAll12Locales: fullyReviewed, revisionBoundFields: reviewedFields, revisionAmendedFields: amendments.count, remainingScenarios: canonical.size - fullyReviewed, nextScenarioId: queue.nextScenarioId, nextBatch: queue.nextBatch, queueMatchesReceipts: true, scope: 'AI sentence/task review only; known issues remain.'},
     nativeReviewed: false, nativePronunciationApproved: false, nativeDeviceVerified: false,
     releaseAccepted: false,
     acceptanceBlockers: [
@@ -151,7 +158,7 @@ async function main() {
       'Pronunciation/listening review is not established by clip identity or decoder checks.',
       'Native iOS/Android device playback, layout and measured navigation performance remain unverified.',
     ],
-    evidenceSha256: Object.fromEntries(reviewFiles.map(p => [p, hash(p)])),
+    evidenceSha256: Object.fromEntries([...reviewFiles, ...amendments.evidenceFiles].map(p => [p, hash(p)])),
   };
   const outputAt = args.indexOf('--out');
   if (outputAt >= 0) fs.writeFileSync(path.resolve(args[outputAt + 1]), JSON.stringify(report, null, 2) + '\n');
