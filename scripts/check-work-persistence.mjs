@@ -34,7 +34,7 @@ const remoteBranch = upstream.slice(separator + 1);
 const localHead = git(['rev-parse', 'HEAD']);
 
 try {
-  git(['fetch', remote, remoteBranch]);
+  git(['fetch', '--filter=blob:none', '--no-tags', remote, remoteBranch]);
 } catch {
   fail(`cannot fetch ${remote}/${remoteBranch}`);
 }
