@@ -8,7 +8,7 @@ Khi worker đã ngừng ghi, chạy `python scripts/check-kanto-context-review.p
 
 ## Checkpoint hiện tại
 
-Đã đọc thực **889/1.681 bài × 12 ngôn ngữ**, **170.688 trường**. Giữ nguyên 707 bài tại checkpoint `d1bc810b6`, thêm **182 ID mới**; toàn phiên thêm 344 ID duy nhất sau mốc545. Còn **792 bài**. Tích lũy sửa **3.816 trường dịch**, **336 metadata hintJa**, **28 hint Nhật** và **56 goal/evaluationNotes**. Không đổi lời thoại nói, IDs, ruby hay âm thanh. Bằng chứng trước được giữ nguyên. Phiên dừng vì hai worker gặp `Selected model is at capacity`; cả sáu đã dừng, không thử lại hay chạy ngầm. `capacity-stop-qa.json` ghi kiểm tra phần đã hoàn tất và `resume.json` ghi điểm tiếp tục.
+Đã đọc thực **913/1.681 bài × 12 ngôn ngữ**, **175.296 trường**. Giữ nguyên 889 bài từ checkpoint trước, thêm **24 ID mới**, sửa **77 trường dịch/gợi ý** trong lượt tiếp tục. Còn **768 bài**. Tích lũy sửa **3.893 trường dịch**, **336 metadata hintJa**, **28 hint Nhật** và **56 goal/evaluationNotes**. Lượt này không đổi nguồn Nhật hoặc âm thanh. Cả sáu worker đã dừng; không chạy ngầm. Publisher đã cho phép đẩy các kết quả Kanto tiếp theo lên `duykhanhtokio/japan-app`, nhánh `recovery/jlpt-n3-n1`. `resume.json` giữ điểm tiếp tục và các vấn đề nguồn chưa giải quyết.
 
 Chủ phạm vi đọc JP và đủ12locale, tự sửa và tự kiểm; coordinator chỉ tích hợp/kiểm hash, không kiểm chéo ngữ nghĩa. Các hint lệch lượt được đồng bộ nguồn Nhật, runtime,12bản dịch và mục tiêu đánh giá. Hai cảnh báo cũ được đóng bằng toàn ngữ cảnh, không sửa tùy tiện. Patch do người rà gốc đã phê duyệt được phiên thay thế áp dụng kỹ thuật với before/hash khớp, không đếm lại.
 
