@@ -12,9 +12,10 @@ import shutil
 import subprocess
 import sys
 import threading
+import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from jlpt_audio_prosody import load_profile, fingerprint, speech_settings, candidate_root, SPOKEN_TEXT_NORMALIZATION
+from jlpt_audio_prosody import load_profile, fingerprint, speech_settings, candidate_root, SPOKEN_TEXT_NORMALIZATION, prune_generated_wave_cache
 
 ROOT = Path(__file__).resolve().parent.parent
 PROFILE = 'src/data/jlpt-original/prosody-candidate.json'
@@ -101,7 +102,10 @@ def validate_candidate(row, output, profile):
     full = (ROOT / manifest['continuousAudioPath']).resolve()
     assert output in full.parents and digest(full) == manifest['continuousSha256']
     # Decode the complete real recording; a manifest duration alone is not proof.
-    decoded = full.with_suffix('.validation.pcm')
+    # Different reports/direct callers may validate the same immutable MP3.
+    # Their decoder output must never truncate or unlink one another's file.
+    with tempfile.NamedTemporaryFile(dir=full.parent, prefix='decode-', suffix='.validation.pcm', delete=False) as temporary:
+        decoded = Path(temporary.name)
     try:
         subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(full), '-f', 's16le', '-ac', '1', '-ar', '24000', str(decoded)], check=True)
         milliseconds = round(decoded.stat().st_size / 48)
@@ -158,12 +162,15 @@ def main():
     parser.add_argument('--profile', default=PROFILE)
     parser.add_argument('--candidate-dir', default=CANDIDATES)
     parser.add_argument('--cache-dir', default=TURN_CACHE)
+    parser.add_argument('--cache-limit-mb', type=int, default=256)
     parser.add_argument('--report', default=QUEUE)
     parser.add_argument('--port', type=int, default=50128)
     parser.add_argument('--jobs', type=int, choices=range(1, 5), default=1)
     parser.add_argument('--cpu-threads', type=int, choices=range(1, 5), default=2)
     parser.add_argument('--restart-every', type=int, choices=range(1, 513), default=6)
     args = parser.parse_args()
+    if args.cache_limit_mb < 64:
+        parser.error('--cache-limit-mb must be at least 64')
     profile = load_profile(ROOT / args.profile)
     output = candidate_root(ROOT, args.candidate_dir, args.profile)
     engine = Path(args.engine).expanduser().resolve() if args.engine else None
@@ -191,6 +198,12 @@ def main():
         output.mkdir(parents=True, exist_ok=True)
         cache = candidate_root(ROOT, args.cache_dir, args.profile)
         cache.mkdir(parents=True, exist_ok=True)
+        def maintain_cache():
+            result = prune_generated_wave_cache(ROOT, cache, args.cache_limit_mb * 1024 * 1024)
+            with lock:
+                report['cacheMaintenance'] = result
+                save()
+        maintain_cache()
         def render(index, row):
             with acquire_form_lock(output, row):
                 check_snapshot(row)
@@ -222,6 +235,7 @@ def main():
                     report['renderedCandidates'] += 1
                     save()
                     print(json.dumps({'renderedCandidates': report['renderedCandidates'], 'examId': row['examId'], 'durationMs': result['durationMs']}), flush=True)
+            maintain_cache()
         failures = []
         with ThreadPoolExecutor(max_workers=args.jobs) as executor:
             futures = {executor.submit(render, i, row): row for i, row in enumerate(rows)}

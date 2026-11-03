@@ -1,6 +1,8 @@
 # Active original-listening rework
 
-Current producer: `prepare-jlpt-prosody-batch.py --render`, one job, four CPU threads, restart after 24 new utterances. A shared engine-slot lock serializes batch and direct render commands. The OS-held `actual-run.json.lock` prevents concurrent writers (including inventory-only commands); do not start a second producer for that report. Never infer a live process from this document alone.
+Production protocol: one writer per report and one writer per form. Read a live command/report before claiming a process is running. Shared engine slots allow two short-form engines; N3/N2/N1 use both slots exclusively. CPU threads/restart intervals adapt to available memory without changing the speech profile. Private generated WAV cache is bounded (default target256 MiB, configurable); cleanup takes both engine slots and never touches canonical MP3s or source data. Reused complete recordings are decoded and validated rather than rebuilt. Decoder temporary files are unique across concurrent validators.
+
+The OS-held report lock also covers inventory commands; do not start a second writer for an active report. Older reports may retain historical rendering statuses after their writer exits.
 
 Current candidate root: `docs/jlpt-workspace/audio-prosody-candidates/20261103-normalized-v2`. The older `20261103-v1` candidates are historical, uninstalled trials; eleven complete trials were preserved remotely before the layout-space correction. They are not valid replacements under the current validator.
 
