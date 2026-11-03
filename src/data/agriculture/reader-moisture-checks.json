@@ -8450,6 +8450,353 @@
         "agriculture-v2-AGR-K-NURSERY-05",
         "agriculture-v2-AGR-K-SOWING-DESIGN-06"
       ]
+    },
+    {
+      "id": "agr-reader-rice-classification-relations",
+      "knowledgeId": "agriculture-v2-AGR-K-RICE-02",
+      "lessonId": "agr-rice",
+      "levels": [
+        "1",
+        "2"
+      ],
+      "promptJa": "イネのふたつのグループ、アジアイネのふたつのグループ、にほんでちゅうしんとなるグループをせつめいしましょう。",
+      "modelAnswerJa": "世界で育てられるイネには、アジアイネとアフリカイネがあります。アジアイネはインディカとジャポニカに大別され、日本の栽培ではジャポニカが中心です。",
+      "translations": {
+        "en": {
+          "prompt": "Explain the two groups of cultivated rice, the two main groups of Asian rice, and which group predominates in Japan.",
+          "modelAnswer": "Cultivated rice includes Asian rice and African rice. Asian rice is broadly divided into indica and japonica; japonica is the main type grown in Japan.",
+          "translatedFrom": "ja"
+        },
+        "vi": {
+          "prompt": "Hãy giải thích hai nhóm lúa được trồng, hai nhóm chính của lúa châu Á và nhóm chủ yếu được trồng tại Nhật.",
+          "modelAnswer": "Lúa được trồng trên thế giới gồm lúa châu Á và lúa châu Phi. Lúa châu Á được chia chủ yếu thành indica và japonica; tại Nhật Bản, japonica là nhóm được trồng phổ biến.",
+          "translatedFrom": "ja"
+        },
+        "id": {
+          "prompt": "Jelaskan dua kelompok padi yang dibudidayakan, dua kelompok utama padi Asia, dan kelompok yang dominan di Jepang.",
+          "modelAnswer": "Padi yang dibudidayakan di dunia mencakup padi Asia dan padi Afrika. Padi Asia secara umum dibagi menjadi indica dan japonica; japonica merupakan jenis utama yang ditanam di Jepang.",
+          "translatedFrom": "ja"
+        },
+        "zh-CN": {
+          "prompt": "请说明栽培稻的两个类群、亚洲稻的两大类群，以及日本主要栽培的类群。",
+          "modelAnswer": "世界上栽培的稻包括亚洲栽培稻和非洲栽培稻。亚洲栽培稻主要分为籼稻和粳稻，日本种植的稻以粳稻为主。",
+          "translatedFrom": "ja"
+        },
+        "zh-TW": {
+          "prompt": "請說明栽培稻的兩個類群、亞洲稻的兩大類群，以及日本主要栽培的類群。",
+          "modelAnswer": "世界上栽培的稻包括亞洲栽培稻與非洲栽培稻。亞洲栽培稻主要分為秈稻與粳稻，日本種植的稻以粳稻為主。",
+          "translatedFrom": "ja"
+        },
+        "hi": {
+          "prompt": "खेती किए जाने वाले धान के दो समूह, एशियाई धान के दो मुख्य समूह और जापान में प्रमुख समूह समझाइए।",
+          "modelAnswer": "दुनिया में उगाए जाने वाले धान में एशियाई और अफ्रीकी धान शामिल हैं। एशियाई धान को मुख्यतः इंडिका और जापोनिका में बाँटा जाता है। जापान में जापोनिका प्रमुख है।",
+          "translatedFrom": "ja"
+        },
+        "bn": {
+          "prompt": "চাষ করা ধানের দুটি গোষ্ঠী, এশীয় ধানের দুটি প্রধান গোষ্ঠী এবং জাপানে প্রধানত চাষ করা গোষ্ঠী ব্যাখ্যা করুন।",
+          "modelAnswer": "বিশ্বে চাষ করা ধানের মধ্যে এশীয় ধান ও আফ্রিকান ধান রয়েছে। এশীয় ধান প্রধানত ইন্ডিকা ও জাপোনিকা—এই দুই ভাগে বিভক্ত। জাপানে মূলত জাপোনিকা চাষ হয়।",
+          "translatedFrom": "ja"
+        },
+        "ne": {
+          "prompt": "खेती गरिने धानका दुई समूह, एसियाली धानका दुई मुख्य समूह र जापानमा मुख्य रूपमा खेती गरिने समूह बताउनुहोस्।",
+          "modelAnswer": "विश्वमा खेती गरिने धानमा एसियाली धान र अफ्रिकी धान पर्छन्। एसियाली धान मुख्यतः इन्डिका र जापोनिकामा विभाजित हुन्छ। जापानमा जापोनिका प्रमुख रूपमा लगाइन्छ।",
+          "translatedFrom": "ja"
+        },
+        "my": {
+          "prompt": "စိုက်ပျိုးသော စပါးအုပ်စုနှစ်မျိုး၊ အာရှစပါး၏ အဓိကအုပ်စုနှစ်မျိုးနှင့် ဂျပန်တွင် အဓိကစိုက်ပျိုးသောအုပ်စုကို ရှင်းပြပါ။",
+          "modelAnswer": "ကမ္ဘာပေါ်တွင် စိုက်ပျိုးသော စပါး၌ အာရှစပါးနှင့် အာဖရိကစပါး ပါဝင်သည်။ အာရှစပါးကို အဓိကအားဖြင့် indica နှင့် japonica ဟူ၍ ခွဲထားပြီး ဂျပန်နိုင်ငံတွင် japonica ကို အများဆုံးစိုက်ပျိုးသည်။",
+          "translatedFrom": "ja"
+        },
+        "th": {
+          "prompt": "อธิบายข้าวที่เพาะปลูกสองกลุ่ม กลุ่มหลักสองกลุ่มของข้าวเอเชีย และกลุ่มที่ปลูกเป็นหลักในญี่ปุ่น",
+          "modelAnswer": "ข้าวที่ปลูกทั่วโลกมีทั้งข้าวเอเชียและข้าวแอฟริกา ข้าวเอเชียแบ่งหลัก ๆ เป็นอินดิกาและจาโปนิกา โดยญี่ปุ่นปลูกจาโปนิกาเป็นหลัก",
+          "translatedFrom": "ja"
+        },
+        "km": {
+          "prompt": "ចូរពន្យល់អំពីក្រុមស្រូវដាំដុះទាំងពីរ ក្រុមសំខាន់ទាំងពីររបស់ស្រូវអាស៊ី និងក្រុមដែលដាំដុះជាចម្បងនៅជប៉ុន។",
+          "modelAnswer": "ស្រូវដែលដាំនៅលើពិភពលោកមានស្រូវអាស៊ី និងស្រូវអាហ្វ្រិក។ ស្រូវអាស៊ីចែកជាចម្បងជា indica និង japonica ហើយនៅជប៉ុនគេដាំ japonica ជាចម្បង។",
+          "translatedFrom": "ja"
+        },
+        "tl": {
+          "prompt": "Ipaliwanag ang dalawang pangkat ng palay na itinatanim, ang dalawang pangunahing pangkat ng palay sa Asya, at ang pangkat na pangunahing itinatanim sa Japan.",
+          "modelAnswer": "Kabilang sa itinatanim na palay sa mundo ang Asian rice at African rice. Ang Asian rice ay pangunahing nahahati sa indica at japonica; japonica ang pangunahing itinatanim sa Japan.",
+          "translatedFrom": "ja"
+        }
+      },
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "promptRuby": [
+        {
+          "text": "イネのふたつのグループ、アジアイネのふたつのグループ、にほんでちゅうしんとなるグループをせつめいしましょう。"
+        }
+      ],
+      "modelAnswerRuby": [
+        {
+          "text": "世界",
+          "readingKana": "せかい"
+        },
+        {
+          "text": "で"
+        },
+        {
+          "text": "育",
+          "readingKana": "そだ"
+        },
+        {
+          "text": "てられるイネには、"
+        },
+        {
+          "text": "アジアイネ",
+          "readingKana": "アジアイネ"
+        },
+        {
+          "text": "と"
+        },
+        {
+          "text": "アフリカイネ",
+          "readingKana": "アフリカイネ"
+        },
+        {
+          "text": "があります。"
+        },
+        {
+          "text": "アジアイネ",
+          "readingKana": "アジアイネ"
+        },
+        {
+          "text": "はインディカとジャポニカに"
+        },
+        {
+          "text": "大別",
+          "readingKana": "たいべつ"
+        },
+        {
+          "text": "され、"
+        },
+        {
+          "text": "日本",
+          "readingKana": "にほん"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "栽培",
+          "readingKana": "さいばい"
+        },
+        {
+          "text": "ではジャポニカが"
+        },
+        {
+          "text": "中心",
+          "readingKana": "ちゅうしん"
+        },
+        {
+          "text": "です。"
+        }
+      ],
+      "answerOrigin": {
+        "parts": [
+          {
+            "lessonId": "agr-rice",
+            "paragraphIds": [
+              "agr-rice-p2"
+            ],
+            "sourceHash": "082543983ec36686dab7ba6d1d0f76c43156b06db90ef54e9430fe2d128abf28"
+          }
+        ]
+      }
+    },
+    {
+      "id": "agr-reader-rice-feed-processing-uses",
+      "knowledgeId": "agriculture-v2-AGR-K-RICE-04",
+      "lessonId": "agr-rice",
+      "levels": [
+        "1",
+        "2"
+      ],
+      "promptJa": "こめをそのままたいてたべるいがいの、ふたつのつかいみちをくべつしてせつめいしましょう。",
+      "modelAnswerJa": "米の用途は、そのまま炊いて食べることだけではありません。家畜の飼料にする米や、米粉などに加工する米も作られています。用途によって区分して整理しましょう。",
+      "translations": {
+        "en": {
+          "prompt": "Explain both uses of rice other than cooking it directly for people, and distinguish the use categories.",
+          "modelAnswer": "Rice is not only cooked and eaten as grain. Some rice is grown for livestock feed, while some is processed into products such as rice flour. Organize these uses into separate categories.",
+          "translatedFrom": "ja"
+        },
+        "vi": {
+          "prompt": "Hãy giải thích cả hai công dụng của gạo ngoài việc nấu ăn trực tiếp cho người, đồng thời phân biệt các nhóm theo mục đích sử dụng.",
+          "modelAnswer": "Gạo không chỉ được nấu để ăn. Có loại được trồng làm thức ăn chăn nuôi và có loại dùng để chế biến thành bột gạo hoặc sản phẩm khác. Hãy phân loại rõ theo mục đích sử dụng.",
+          "translatedFrom": "ja"
+        },
+        "id": {
+          "prompt": "Jelaskan kedua kegunaan beras selain dimasak langsung untuk manusia, dan bedakan kategori penggunaannya.",
+          "modelAnswer": "Beras tidak hanya dimasak untuk dimakan. Ada padi yang ditanam untuk pakan ternak dan ada yang diolah menjadi tepung beras atau produk lain. Kelompokkan berdasarkan penggunaannya.",
+          "translatedFrom": "ja"
+        },
+        "zh-CN": {
+          "prompt": "请说明稻米除直接煮食以外的两种用途，并区分用途类别。",
+          "modelAnswer": "稻米不只是煮熟后供人食用。也有专门用于家畜饲料的稻米，以及用于制作米粉等产品的加工用稻米。学习时应按用途分别整理。",
+          "translatedFrom": "ja"
+        },
+        "zh-TW": {
+          "prompt": "請說明稻米除直接煮食以外的兩種用途，並區分用途類別。",
+          "modelAnswer": "稻米不只是煮熟後供人食用。也有供家畜飼料使用的稻米，以及加工成米粉等產品的稻米。請依用途分別整理。",
+          "translatedFrom": "ja"
+        },
+        "hi": {
+          "prompt": "लोगों के लिए सीधे पकाने के अलावा चावल के दोनों उपयोग समझाइए और उपयोग की श्रेणियों में अंतर बताइए।",
+          "modelAnswer": "चावल केवल पकाकर खाने के लिए नहीं उगाया जाता। कुछ धान पशुओं के चारे के लिए और कुछ चावल का आटा जैसे उत्पाद बनाने के लिए उगाया जाता है। उपयोग के अनुसार अलग-अलग श्रेणियाँ बनाएँ।",
+          "translatedFrom": "ja"
+        },
+        "bn": {
+          "prompt": "মানুষের খাবার হিসেবে সরাসরি রান্না করা ছাড়া চালের দুটি ব্যবহার ব্যাখ্যা করুন এবং ব্যবহারের শ্রেণিগুলি আলাদা করুন।",
+          "modelAnswer": "চাল শুধু রান্না করে খাওয়ার জন্য ব্যবহৃত হয় না। পশুখাদ্যের জন্যও ধান চাষ হয়; আবার চালের গুঁড়ার মতো পণ্য তৈরির জন্যও ধান চাষ করা হয়। ব্যবহার অনুযায়ী ভাগ করুন।",
+          "translatedFrom": "ja"
+        },
+        "ne": {
+          "prompt": "मानिसका लागि सिधै पकाउनेबाहेक चामलका दुवै उपयोग बताउनुहोस् र उपयोगका वर्ग छुट्याउनुहोस्।",
+          "modelAnswer": "चामल पकाएर खानका लागि मात्र उत्पादन गरिँदैन। केही धान पशुदानाका लागि र केही चामलको पिठोजस्ता वस्तु बनाउनका लागि लगाइन्छ। प्रयोगका आधारमा छुट्टाछुट्टै वर्गमा राख्नुहोस्।",
+          "translatedFrom": "ja"
+        },
+        "my": {
+          "prompt": "လူစားရန် တိုက်ရိုက်ချက်ပြုတ်ခြင်းအပြင် ဆန်၏ အသုံးနှစ်မျိုးကို ရှင်းပြပြီး အသုံးအမျိုးအစားများကို ခွဲခြားပါ။",
+          "modelAnswer": "ဆန်ကို ချက်စားရန်အတွက်သာ စိုက်ပျိုးခြင်းမဟုတ်ပါ။ တိရစ္ဆာန်အစာအတွက်လည်းကောင်း၊ ဆန်မှုန့်ကဲ့သို့ ကုန်ပစ္စည်းများ ထုတ်လုပ်ရန်လည်းကောင်း စိုက်ပျိုးကြသည်။ အသုံးပြုရည်ရွယ်ချက်အလိုက် ခွဲခြားပါ။",
+          "translatedFrom": "ja"
+        },
+        "th": {
+          "prompt": "อธิบายการใช้ข้าวทั้งสองแบบนอกเหนือจากการหุงให้คนกินโดยตรง และแยกประเภทตามการใช้งาน",
+          "modelAnswer": "ข้าวไม่ได้ปลูกเพื่อหุงรับประทานเท่านั้น ยังมีข้าวสำหรับเป็นอาหารสัตว์และข้าวสำหรับแปรรูปเป็นแป้งข้าวหรือผลิตภัณฑ์อื่น ควรจัดกลุ่มตามการใช้งาน",
+          "translatedFrom": "ja"
+        },
+        "km": {
+          "prompt": "ចូរពន្យល់ការប្រើប្រាស់អង្ករទាំងពីរប្រភេទ ក្រៅពីចម្អិនឱ្យមនុស្សបរិភោគដោយផ្ទាល់ ហើយបែងចែកប្រភេទតាមការប្រើប្រាស់។",
+          "modelAnswer": "អង្ករមិនត្រឹមតែប្រើដាំបាយបរិភោគទេ។ មានស្រូវដែលដាំសម្រាប់ចំណីសត្វ និងសម្រាប់កែច្នៃជាម្សៅអង្ករ ឬផលិតផលផ្សេងៗ។ ត្រូវរៀបចំតាមគោលបំណងប្រើប្រាស់។",
+          "translatedFrom": "ja"
+        },
+        "tl": {
+          "prompt": "Ipaliwanag ang dalawang gamit ng bigas bukod sa direktang pagluluto nito para kainin ng tao, at pag-ibahin ang mga kategorya ayon sa gamit.",
+          "modelAnswer": "Hindi lamang para lutuin at kainin ang bigas. May palay na itinatanim para sa pakain ng hayop at mayroon para gawing harina ng bigas o iba pang produkto. Iuri ayon sa gamit.",
+          "translatedFrom": "ja"
+        }
+      },
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "promptRuby": [
+        {
+          "text": "こめをそのままたいてたべるいがいの、ふたつのつかいみちをくべつしてせつめいしましょう。"
+        }
+      ],
+      "modelAnswerRuby": [
+        {
+          "text": "米",
+          "readingKana": "こめ"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "用途",
+          "readingKana": "ようと"
+        },
+        {
+          "text": "は、そのまま"
+        },
+        {
+          "text": "炊",
+          "readingKana": "た"
+        },
+        {
+          "text": "いて"
+        },
+        {
+          "text": "食",
+          "readingKana": "た"
+        },
+        {
+          "text": "べることだけではありません。"
+        },
+        {
+          "text": "家畜",
+          "readingKana": "かちく"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "飼料",
+          "readingKana": "しりょう"
+        },
+        {
+          "text": "にする"
+        },
+        {
+          "text": "米",
+          "readingKana": "こめ"
+        },
+        {
+          "text": "や、"
+        },
+        {
+          "text": "米粉",
+          "readingKana": "こめこ"
+        },
+        {
+          "text": "などに"
+        },
+        {
+          "text": "加工",
+          "readingKana": "かこう"
+        },
+        {
+          "text": "する"
+        },
+        {
+          "text": "米",
+          "readingKana": "こめ"
+        },
+        {
+          "text": "も"
+        },
+        {
+          "text": "作",
+          "readingKana": "つく"
+        },
+        {
+          "text": "られています。"
+        },
+        {
+          "text": "用途",
+          "readingKana": "ようと"
+        },
+        {
+          "text": "によって"
+        },
+        {
+          "text": "区分",
+          "readingKana": "くぶん"
+        },
+        {
+          "text": "して"
+        },
+        {
+          "text": "整理",
+          "readingKana": "せいり"
+        },
+        {
+          "text": "しましょう。"
+        }
+      ],
+      "answerOrigin": {
+        "parts": [
+          {
+            "lessonId": "agr-rice",
+            "paragraphIds": [
+              "agr-rice-p4"
+            ],
+            "sourceHash": "082543983ec36686dab7ba6d1d0f76c43156b06db90ef54e9430fe2d128abf28"
+          }
+        ]
+      }
     }
   ],
   "checkAliases": {
