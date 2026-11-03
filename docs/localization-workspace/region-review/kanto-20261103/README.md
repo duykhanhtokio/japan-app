@@ -25,3 +25,7 @@ Còn một vấn đề số tờ giấy ở NPC `SC-LOC-TKY-005-001` cần chố
 Dùng một checkout chung, sáu phạm vi độc lập. Fetch partial `blob:none` để không kéo media JLPT ngoài scope. GitHub connector cần truyền từng phần và bắt buộc treeSHA bằng chính xác local tree đã kiểm. Giữ mọi commit đồng thời, không force push; chỉ xác nhận lưu sau fetch và WORK PERSISTENCE PASS.
 
 Nhập thêm15bài đã có bằng chứng đầy đủ từ commit công bố đồng thời, không rà lại hoặc cộng trùng. Các phương án public đã duyệt được giữ theo quy tắc cơ học, lưu cả hai lịch sử; không kiểm chéo ngữ nghĩa.
+
+## Bảo toàn công việc đồng thời
+
+Giữ nguyên bộ bằng chứng1.681bài đã công bố hợp lệ. Công việc song song của sáu phạm vi được lưu đầy đủ ở nhánh `recovery/kanto-audit-c30d225ca48e-20261103`, commit `084a22ec4972a58facc622cb73f920bce65ec67f`; không kiểm chéo ngữ nghĩa hoặc ghi đè các bài đã đạt. [Provenance](parallel-work-c30d225ca48e.json) và [ghi chú nguyên bản của chủ phạm vi](parallel-work-c30d225ca48e-source-findings.json) giữ trace đầy đủ.
