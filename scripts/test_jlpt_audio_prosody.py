@@ -2,6 +2,8 @@ import ast
 import copy
 import json
 import unittest
+import tempfile
+from unittest.mock import patch
 import importlib.util
 from pathlib import Path
 from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts
@@ -140,6 +142,24 @@ class ProsodyTests(unittest.TestCase):
             self.assertEqual((master, org, candidate), before)
         with self.assertRaises(ValueError):
             installer.installed_path(prefix + '/../other.mp3', prefix)
+
+    def test_resume_validates_complete_candidates_and_preserves_invalid_ones(self):
+        row = {'level': 'n5', 'number': 1}
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            with patch.object(batch, 'validate_candidate') as validate:
+                self.assertIsNone(batch.completed_candidate(row, output, self.profile))
+                validate.assert_not_called()
+                manifest = output / 'src/data/jlpt-original/n5/01/audio.manifest.json'
+                manifest.parent.mkdir(parents=True)
+                manifest.write_text('{}')
+                validate.return_value = {'status': 'rendered_candidate_needs_listening'}
+                self.assertEqual(batch.completed_candidate(row, output, self.profile), validate.return_value)
+                validate.assert_called_once_with(row, output, self.profile)
+                validate.side_effect = AssertionError('profile or PCM mismatch')
+                with self.assertRaisesRegex(AssertionError, 'profile or PCM mismatch'):
+                    batch.completed_candidate(row, output, self.profile)
+                self.assertEqual(manifest.read_text(), '{}')
 
     def test_both_renderers_wire_candidate_and_boundary_controls(self):
         for name in ('generate-jlpt-original-audio.py', 'generate-jlpt-original-n2-audio.py'):
