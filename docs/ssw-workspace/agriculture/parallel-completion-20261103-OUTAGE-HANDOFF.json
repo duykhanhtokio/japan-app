@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "status": "BLOCKED_ENVIRONMENT_UNAVAILABLE_NOT_INTEGRATED",
+  "sector": "agriculture",
+  "dateTokyo": "2026-11-03",
+  "userInstruction": "Six independent AI workers complete agriculture using publisher requirements; no semantic cross-review, preserve valid work and 35–55% instruction; no background processes.",
+  "requirements": "docs/ssw-workspace/source-coverage-v2/PUBLISHER_REQUIREMENTS_VI.md",
+  "lastVerifiedContentCommit": "650f13e13d13de705654a0d1647329b37a4d414c",
+  "lastFetchedBaseline": "fc2ee309694cea246affb22c90887b3ae0c98150",
+  "baselineCoveredAi": 120,
+  "proposedCoveredAiIncrease": 44,
+  "proposalCountIsNotAccepted": true,
+  "lanes": [
+    {
+      "lane": "rice",
+      "groups": 3,
+      "proposedCoveredAi": 13,
+      "newReaderChecks": 1,
+      "localArtifacts": "docs/ssw-workspace/agriculture/parallel-completion-20261103/rice/",
+      "visualPages": [
+        [
+          "AGR-S1",
+          7
+        ],
+        [
+          "AGR-S1",
+          46
+        ],
+        [
+          "AGR-S1",
+          47
+        ],
+        [
+          "AGR-S1",
+          48
+        ],
+        [
+          "AGR-S1",
+          49
+        ]
+      ],
+      "remaining": "Source2/chart/photo/leaf-diagram scope not accepted."
+    },
+    {
+      "lane": "soil",
+      "groups": 4,
+      "proposedCoveredAi": 5,
+      "newReaderChecks": 2,
+      "localArtifacts": "docs/ssw-workspace/agriculture/parallel-completion-20261103/soil/",
+      "notes": "First and second packets validated by worker; proposed third packet was NOT created. Existing 35–55% paragraph retained; no invented denominator."
+    },
+    {
+      "lane": "vegetables",
+      "groups": 3,
+      "proposedCoveredAi": 2,
+      "proposedPartial": 1,
+      "newReaderChecks": 1,
+      "localArtifacts": "docs/ssw-workspace/agriculture/parallel-completion-20261103/vegetables/",
+      "notes": "Level1 vacuum precooling supplement only; level2 already has teaching and three assessments. Do not claim vacuum entirely absent. Preserve root/stem and seed decisions."
+    },
+    {
+      "lane": "facility",
+      "groups": 3,
+      "proposedCoveredAi": 12,
+      "proposedPartial": 1,
+      "newReaderChecks": 1,
+      "localArtifacts": "docs/ssw-workspace/agriculture/parallel-completion-20261103/facility/",
+      "notes": "Reuse15 existing questions; source2 pp51,52,89,90 inspected. Second CO2 packet was NOT created; hydroponic facet remains partial."
+    },
+    {
+      "lane": "fruit",
+      "groups": 3,
+      "proposedCoveredAi": 12,
+      "newReaderChecks": 0,
+      "localArtifacts": "docs/ssw-workspace/agriculture/parallel-completion-20261103/fruit/",
+      "notes": "2classification,6flower coldchain,4bagging units proposed using current direct teaching/assessment;144 locale revision/presence cases checked, not semantic certification."
+    },
+    {
+      "lane": "daily",
+      "groups": 3,
+      "proposedCoveredAi": 0,
+      "localArtifacts": "docs/ssw-workspace/agriculture/parallel-completion-20261103/daily/",
+      "notes": "427weekly+800mock structural/revision checks pass;12 explicit compatible historical bindings.369 scheduled occurrences have figure metadata;211 unique assets;0 measured-duration days.2892 lesson-locale pairs valid, not question-translation acceptance."
+    }
+  ],
+  "integration": {
+    "attempted": true,
+    "result": "Unknown: execution session10542 produced no result before exec-server transport disconnected. Do not assume shared mutations, successful validation, or saved packets.",
+    "script": "scripts/agriculture/integrate-parallel-completion-20261103.cjs",
+    "knownMissingAtAttempt": "Vegetable canonical updates were not yet included. Original integration script must not be blindly rerun after partial execution.",
+    "readerCheckAdditionsProposed": 5,
+    "localePromptPairsProposed": 60,
+    "fixtureRepair": "scripts/agriculture/check-moisture-reader-checks-v2.cjs uses agr-rice as no-check fixture; change only sentinel to __no_agriculture_reader_checks__."
+  },
+  "baselineValidation": {
+    "status": "PASS_REGISTRY_CONTRACT",
+    "coveredAi": 120,
+    "knowledgeUnits": 1443,
+    "sourcePages": 237,
+    "fullyCovered": false
+  },
+  "sourceFiles": {
+    "oneGo": {
+      "libraryFileId": "libfile_76bb5b27cf688191b1059222ea26282f",
+      "sha256": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f"
+    },
+    "twoGo": {
+      "libraryFileId": "libfile_384af4553030819198fff37d52ffc933",
+      "sha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12"
+    },
+    "hashesVerified": true
+  },
+  "recovery": [
+    "Recover original workspace uncommitted packets if runtime becomes available; inspect git status before any mutation.",
+    "If packets are not recoverable, regenerate from original PDFs and current canonical source/lesson evidence; handoff is not a replacement for exact worker evidence.",
+    "Integrate source/page reciprocal links and revision-bound reader changes, preserve prior120 covered_ai units.",
+    "Run canonical validator and scoped dependencies/reader checks, inspect current diff, publish through expected-parent GitHub lease with exact local/remote tree equality.",
+    "Do not count44 proposed closures or5 checks until integrated and remote-verified."
+  ],
+  "wholeSourceKnowledgeCovered": false,
+  "sourceCoveragePercent": null,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "background": "Five workers completed; remaining soil worker interrupted after environment outage. No background work authorized."
+}
