@@ -3,7 +3,7 @@ const data=require('./reader-moisture-checks.json');
 const hasHan=text=>/[\p{Script=Han}々]/u.test(text);
 function alignedTokens(text,tokens){
  if(!Array.isArray(tokens)||!tokens.length)return false;
- return tokens.every(t=>t&&typeof t.text==='string'&&t.text.length>0&&(!hasHan(t.text)||typeof t.readingKana==='string'&&/^[\p{Script=Hiragana}\p{Script=Katakana}ー\s]+$/u.test(t.readingKana)))&&tokens.map(t=>t.text).join('')===text;
+ return tokens.every(t=>t&&typeof t.text==='string'&&t.text.length>0&&(!hasHan(t.text)||typeof t.readingKana==='string'&&t.readingKana.trim().length>0&&/^[\p{Script=Hiragana}\p{Script=Katakana}ー\s]+$/u.test(t.readingKana)))&&tokens.map(t=>t.text).join('')===text;
 }
 function createParagraphRubyLookup(checks){
  return function paragraphRuby(lesson,paragraphId,text,level){

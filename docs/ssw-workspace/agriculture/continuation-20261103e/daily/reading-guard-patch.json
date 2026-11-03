@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "target": "src/data/agriculture/contextual-reading.cjs",
+  "targetFileSha256": "270520a5b0c8189584755a4124150ca1569002b8256cd9ad0765f944b2fff1ee",
+  "replace": {
+    "before": "typeof t.readingKana==='string'&&/^[",
+    "after": "typeof t.readingKana==='string'&&t.readingKana.trim().length>0&&/^[",
+    "expectedOccurrences": 1
+  },
+  "reason": "Whitespace-only strings pass the current kana-or-whitespace regex. They provide no pronunciation; reject them and preserve canonical plain text fallback. No readings are generated."
+}
