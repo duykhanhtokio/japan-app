@@ -7,7 +7,9 @@ OUT.mkdir(parents=True,exist_ok=True)
 def read(p): return json.loads(p.read_text())
 def write(p,d):
     p.parent.mkdir(parents=True,exist_ok=True)
-    p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+    temp=p.with_name(p.name+'.kyushu-tmp')
+    temp.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+    temp.replace(p)
 def digest(s): return hashlib.sha256(s.encode()).hexdigest()
 queuepath=ROOT/'docs/localization-workspace/naturalness-review-2026-10-25/prefecture-queue.json'
 q=read(queuepath)
@@ -15,7 +17,8 @@ index=read(ROOT/'src/data/dialogue-content/locale-batch-index.json')
 locales=set(q['supportingLocales'])
 owned={1:{'PRF-040'},2:{'PRF-041','PRF-042'},3:{'PRF-043'},4:{'PRF-044','PRF-045'},5:{'PRF-046'},6:{'PRF-047'}}
 assigned={w:[s for p in q['prefectures'] if p['prefectureId'] in ids for c in p['cities'] for s in c['sentenceTaskReviewedScenarioIds']+c['pendingSentenceTaskScenarioIds']] for w,ids in owned.items()}
-packs={}; changed=set(); allreviewed=set(); allchanges=[]
+priorReviewed={s for p in q['prefectures'] if int(p['prefectureId'][-3:])>=40 for c in p['cities'] for s in c['sentenceTaskReviewedScenarioIds']}
+packs={}; changed=set(); allreviewed=set(); allchanges=[]; receiptWrites=[]; proposalKeys=set()
 for w in range(1,7):
     rows={}; issues=[]; notes=[]
     folder=WORK/f'worker{w}'
@@ -29,9 +32,18 @@ for w in range(1,7):
             rows[row['scenarioId'],row['locale']]=row
     sids={sid for sid,loc in rows if {l for s,l in rows if s==sid}==locales}
     proposals=read(folder/'proposals.json')
+    previousPath=OUT/f'worker-{w}.json'
+    if previousPath.exists():
+        proposed={(p['path'],p['scenarioId'],p['turnId'],p['field']):(p['before'],p['after']) for p in proposals}
+        for p in read(previousPath)['changes']:
+            key=(p['path'],p['scenarioId'],p['turnId'],p['field'])
+            assert proposed.get(key)==(p['before'],p['after']), ('previous correction log lost or changed',key)
     applied=[]
     for prop in proposals:
         if prop['scenarioId'] not in sids: continue
+        key=(prop['path'],prop['scenarioId'],prop['turnId'],prop['field'])
+        assert key not in proposalKeys, ('duplicate proposal',key)
+        proposalKeys.add(key)
         path=prop['path']; assert path.startswith('src/data/dialogue-content/locale-batches/')
         if path not in packs: packs[path]=read(ROOT/path)
         turn=packs[path]['scenarios'][prop['scenarioId']]['turns'][prop['turnId']]
@@ -57,8 +69,10 @@ for w in range(1,7):
             row['nativeReviewed']=False
             validrows.append(row)
     receipt={'status':'AI_CONTEXT_REVIEWED_NOT_NATIVE_CERTIFIED','nativeReviewed':False,'worker':w,'scenarios':sorted(sids),'scope':'Full Japanese context and all12 sentence/task sets; no native, metadata, device or release certification.','reviewedFields':len(sids)*192,'changedFields':len(applied),'reviews':validrows,'changes':applied,'reviewCriteria':notes,'sourceIssues':issues}
-    write(OUT/f'worker-{w}.json',receipt)
+    receiptWrites.append((OUT/f'worker-{w}.json',receipt))
     allreviewed.update(sids);allchanges+=applied
+assert priorReviewed <= allreviewed, ('existing valid evidence would be dropped', sorted(priorReviewed-allreviewed))
+for p,receipt in receiptWrites:write(p,receipt)
 for p in changed:write(ROOT/p,packs[p])
 for p in q['prefectures']:
     for c in p['cities']:

@@ -43,9 +43,8 @@ assert.deepEqual(queued,new Set(ids.keys()));
 const report={status:'PASS_KYUSHU_OKINAWA_SOURCE_TARGET_BINDINGS',reviewedScenarios:ids.size,
   reviewedFields:fields,repairs,validatedBatches:cache.size,total:1064,remaining:1064-ids.size,
   nativeReviewed:false,releaseAccepted:false,
-  corpusGate:'BLOCKED_BY_INVALID_EXISTING_SHIKOKU_RECEIPT_JSON',
-  invalidExistingReceipts:['worker-1.json','worker-3.json','worker-4.json','worker-5.json']
-    .map(p=>'docs/localization-workspace/region-review/shikoku-20261103/'+p),
-  remoteIntegrationBaseline:'4196b82f9590e97f4020e9b34c1865e550dc8a7f'};
+  corpusGate:'NOT_RUN_BY_THIS_SCOPED_CHECK',
+  scope:'Only this region; use check-dialogue-release-readiness.cjs for the complete corpus.',
+  originalRemoteIntegrationBaseline:'4196b82f9590e97f4020e9b34c1865e550dc8a7f'};
 fs.writeFileSync(path.join(__dirname,'integration-qa.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report));
