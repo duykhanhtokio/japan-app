@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "baselineCommit": "4a28498c41af62c06086134f6d68ebc007baac3a",
+  "requirements": "docs/ssw-workspace/source-coverage-v2/PUBLISHER_REQUIREMENTS_VI.md",
+  "canonicalLedger": "docs/ssw-workspace/source-coverage-v2/agriculture.json",
+  "scope": "Rice introduction: source text versus six Japanese teaching paragraphs and seven selected assessments. No whole-page visual acceptance.",
+  "source": {
+    "sourceId": "AGR-S1",
+    "pdfPage": 7,
+    "sha256": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+    "access": "Library original PDF page text read; returned image pointer was not rendered as pixels. Other source references not accepted by this receipt."
+  },
+  "teachingEvidence": [
+    {
+      "path": "src/data/agriculture/lessons.ja.json",
+      "jsonPointer": "/lessons/0/paragraphs/0/textJa",
+      "sha256": "4c9e0d058e1ef70859502bee5c775489f72c75f19a9bc3e12564210a8a1ba681"
+    },
+    {
+      "path": "src/data/agriculture/lessons.ja.json",
+      "jsonPointer": "/lessons/0/paragraphs/1/textJa",
+      "sha256": "d97e1dc43302e2fb8d9954bc0bf30d3ea91ee529a8952254761d9fa83728c154"
+    },
+    {
+      "path": "src/data/agriculture/lessons.ja.json",
+      "jsonPointer": "/lessons/0/paragraphs/2/textJa",
+      "sha256": "fa96506d05d9b1caaf253648e631fe8b751c25c6892f60c44a44287710a0f71e"
+    },
+    {
+      "path": "src/data/agriculture/lessons.ja.json",
+      "jsonPointer": "/lessons/0/paragraphs/3/textJa",
+      "sha256": "728c0cfb56eecf5eb30305b29a80e446473582acf4d30109708e6242a1976f2d"
+    },
+    {
+      "path": "src/data/agriculture/lessons.ja.json",
+      "jsonPointer": "/lessons/0/paragraphs/4/textJa",
+      "sha256": "f8c03f5d1c3148662d14661b875796ce22b4b5c25b0f11d219b55960a8252a03"
+    },
+    {
+      "path": "src/data/agriculture/lessons.ja.json",
+      "jsonPointer": "/lessons/0/paragraphs/5/textJa",
+      "sha256": "89dc7d35eca246f1366c2104606bcb4030f9cc6b045a1e6f07a267fe0105a11d"
+    }
+  ],
+  "assessmentEvidence": [
+    {
+      "id": "agr-1-m02-q01",
+      "path": "src/data/agriculture/mock-exams.ja.json",
+      "jsonPointer": "/exams/1/questions/0",
+      "sha256": "f4fa9a20319da33f7382f12d9cb949bb2cd8f38991109dca42d8af0c8a756d3a",
+      "lessonRevisionCurrent": true
+    },
+    {
+      "id": "agr-1-w01-q01",
+      "path": "src/data/agriculture/weekly-checks.ja.json",
+      "jsonPointer": "/exams/0/questions/0",
+      "sha256": "48aa353471635fb72b71db861fe24ef47e78426a9011c614421ead2fb11a3329",
+      "lessonRevisionCurrent": true
+    },
+    {
+      "id": "agr-1-w01-q02",
+      "path": "src/data/agriculture/weekly-checks.ja.json",
+      "jsonPointer": "/exams/0/questions/1",
+      "sha256": "00400602904715d4e7cb5755a613d6bf3dcc606acea2e5fd342d8309f6230ca0",
+      "lessonRevisionCurrent": true
+    },
+    {
+      "id": "agr-1-m02-q04",
+      "path": "src/data/agriculture/mock-exams.ja.json",
+      "jsonPointer": "/exams/1/questions/3",
+      "sha256": "50b9a9b4d23f02db285f262acfb11ea5028362fae0b4c0319ce7ad5b55bd6f20",
+      "lessonRevisionCurrent": true
+    },
+    {
+      "id": "agr-1-w01-q03",
+      "path": "src/data/agriculture/weekly-checks.ja.json",
+      "jsonPointer": "/exams/0/questions/2",
+      "sha256": "fdbaf3c39326380e0cf25630fdee51cc2dbb28e4eea5bd10e981291a4dfe2e56",
+      "lessonRevisionCurrent": true
+    },
+    {
+      "id": "agr-1-m04-q15",
+      "path": "src/data/agriculture/mock-exams.ja.json",
+      "jsonPointer": "/exams/3/questions/14",
+      "sha256": "3dcdc2ee76df05d3cd8039d64dc969d340f8a117461d50a794762b372a14f744",
+      "lessonRevisionCurrent": true
+    },
+    {
+      "id": "agr-1-m04-q20",
+      "path": "src/data/agriculture/mock-exams.ja.json",
+      "jsonPointer": "/exams/3/questions/19",
+      "sha256": "986632b1528658f854b9223291a9329927b8faafd7ca5f47a8af92e9039a0c7d",
+      "lessonRevisionCurrent": true
+    }
+  ],
+  "findings": [
+    {
+      "knowledgeId": "agriculture-v2-AGR-K-RICE-01",
+      "finding": "Existing plant/harvest-product question directly assesses the lesson objective. Grain-shape image question is not substitute evidence for this objective.",
+      "status": "TEXT_RECONCILIATION_ONLY_NOT_COVERED_AI"
+    },
+    {
+      "knowledgeId": "agriculture-v2-AGR-K-RICE-02",
+      "finding": "Existing question assesses Japonica in Japan, but not the complete Asian/African and Indica/Japonica classification relationships. Retain partial assessment scope.",
+      "status": "TEXT_RECONCILIATION_ONLY_NOT_COVERED_AI"
+    },
+    {
+      "knowledgeId": "agriculture-v2-AGR-K-RICE-03",
+      "finding": "Two existing questions assess husk removal and polishing; keep harvesting/threshing distinctions separate.",
+      "status": "TEXT_RECONCILIATION_ONLY_NOT_COVERED_AI"
+    },
+    {
+      "knowledgeId": "agriculture-v2-AGR-K-RICE-04",
+      "finding": "Existing question directly assesses processing-use rice; feed-use association is in a distractor rationale, not an independently elicited response.",
+      "status": "TEXT_RECONCILIATION_ONLY_NOT_COVERED_AI"
+    },
+    {
+      "knowledgeId": "agriculture-v2-AGR-K-RICE-05",
+      "finding": "Existing question assesses mechanization across multiple annual operations.",
+      "status": "TEXT_RECONCILIATION_ONLY_NOT_COVERED_AI"
+    },
+    {
+      "knowledgeId": "agriculture-v2-AGR-K-RICE-06",
+      "finding": "Lesson summary repeats earlier objectives; assess duplication before adding another knowledge denominator item.",
+      "status": "TEXT_RECONCILIATION_ONLY_NOT_COVERED_AI"
+    }
+  ],
+  "nextActions": [
+    "Render source page and identify exact source elements before promoting canonical units.",
+    "Inventory the vegetable/fruit sections and rice photographs on the same source page separately.",
+    "Inspect existing assessment coverage before adding classification/feed-use checks; preserve current IDs.",
+    "Inspect 12 revision-bound lesson/question locales and actual reader flow before closing the group."
+  ],
+  "newlyCoveredAi": 0,
+  "canonicalLedgerChanged": false,
+  "sourceCoveragePercent": null,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false
+}
