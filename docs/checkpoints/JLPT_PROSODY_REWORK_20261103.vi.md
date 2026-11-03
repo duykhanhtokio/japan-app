@@ -39,3 +39,15 @@ Sau khi đủ 30 candidate hợp lệ, `python3 scripts/install-jlpt-prosody-bat
 ## Bản thu thật hoàn tất đầu tiên
 
 N5 01: 1723416 ms; N5 02: 1652069 ms. Mỗi đề 24/24 câu, toàn bộ MP3 giải mã PCM khớp mốc, hash/giọng/kịch bản/thứ tự lựa chọn/cửa sổ trả lời và nhạc nghỉ đúng 60000 ms đạt. Bản thu candidate và manifest được lưu cùng checkpoint `completed-candidates.json`; không lưu cache WAV/engine/bản dở vào Git. Tiếp tục 28 đề còn lại; 0/30 audio mới được tích hợp runtime; chưa nghiệm thu nghe/người bản ngữ.
+
+## Sửa ngắt thừa do dấu cách trình bày trong bản thử
+
+Đối chiếu AudioQuery thật của câu tình huống đầu N5 01 (speaker118, engine0.25.2): giữ dấu cách học liệu tạo10 pause-mora; bỏ riêng ASCII space tạo2 pause-mora. Cả hai có13 accent phrases và cùng chuỗi chữ mora. Thời lượng phoneme dự đoán10,435s/6,314s là số từ query, không phải nghiệm thu nghe. Nhánh cũ đã bỏ dấu cách; bản thử ban đầu đã vô tình giữ chúng, nên cần sửa trước khi đưa vào app.
+
+Đã đưa lại quy tắc bỏ ASCII space chỉ cho đầu vào engine; giữ nguyên toàn bộ chữ Nhật/học liệu. Cache gắn cả nguồn viết và đầu vào nói khi khác nhau, nên không dùng nhầm WAV có ngắt thừa; query không đổi được tái dùng an toàn. Manifest/report có normalizer ID và render revision riêng. Validator từ chối candidate cũ thiếu quy tắc này. Giữ nguyên cải tiến resume vừa có trên nhánh và bổ sung khóa report chống hai tiến trình ghi đồng thời. Kiểm đúng engine version và đủ bốn speaker/style đã chọn mỗi lần engine khởi động.
+
+14 nhóm unittest và khóa UI10/10 đạt. Lượt thu mới dùng cây `20261103-normalized-v2`, cùng cache có hash;11 candidate cũ được giữ như lịch sử thử, chưa từng cài vào app. Đang dựng lại đủ30 candidate theo quy tắc đúng; không dùng số11 cũ làm bằng chứng đã sửa xong. Xem `jlpt-prosody-20261103/ACTIVE_RUN.md` và `layout-space-probe.json`.
+
+## Giới hạn tài nguyên lượt thu
+
+N3 có các lần engine đóng kết nối; chưa có đủ bằng chứng để quy lỗi OOM. Chuyển sang một job/bốn CPU threads, dùng khóa engine chung cho lệnh batch và lệnh dựng trực tiếp. Engine con thuộc renderer được dừng và thu hồi chắc chắn, kể cả khi không thoát sau SIGTERM; log lỗi ghi exit code. Khóa report cũng áp dụng cho lệnh kiểm kê để không ghi đè tiến độ đang chạy.15 nhóm test kỹ thuật đạt;12 candidate normalized đã hoàn chỉnh trước bước này, vẫn0 bản mới cài vào app. Không đổi profile/giọng/nhịp chỉ vì giới hạn CPU.

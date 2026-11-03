@@ -120,6 +120,17 @@ class ProsodyTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 acquire_engine_slot(directory, slots=3)
 
+    def test_long_form_engine_excludes_both_slots_without_leaking_locks(self):
+        with tempfile.TemporaryDirectory() as directory:
+            with acquire_engine_slot(directory, blocking=False, exclusive=True):
+                with self.assertRaises(BlockingIOError):
+                    acquire_engine_slot(directory, blocking=False)
+            with acquire_engine_slot(directory, blocking=False):
+                with self.assertRaises(BlockingIOError):
+                    acquire_engine_slot(directory, blocking=False, exclusive=True)
+                with acquire_engine_slot(directory, blocking=False):
+                    pass
+
     def test_form_lock_prevents_duplicate_work_across_reports(self):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)

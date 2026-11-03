@@ -20,6 +20,7 @@ def main():
     parser.add_argument('--stage', action='store_true')
     args = parser.parse_args()
     report = json.loads((ROOT / 'docs/checkpoints/jlpt-prosody-20261103/actual-run.json').read_text())
+    assert report.get('textNormalization') == batch.SPOKEN_TEXT_NORMALIZATION, 'Only the current normalized pass may be checkpointed'
     done = [row for row in report['forms'] if row['status'] == 'rendered_candidate_needs_listening']
     fresh, paths = [], []
     for row in done:
@@ -31,6 +32,7 @@ def main():
         manifest = json.loads((ROOT / manifest_path).read_text())
         assert manifest['prosody']['candidateOnly'] and not manifest['prosody']['installedInApp']
         assert manifest['prosody']['profileSha256'] == report['profileSha256']
+        assert manifest['prosody'].get('textNormalization') == report['textNormalization']
         assert manifest['continuousSha256'] == row['continuousSha256']
         for item in [manifest['break'], *manifest['items']]:
             assert batch.digest(ROOT / item['path']) == item['sha256']
@@ -48,6 +50,7 @@ def main():
         technical = json.loads((ROOT / technical_path).read_text())
         technical.update(realAudioRendered=len(done), completedFormIds=[row['examId'] for row in done],
                          completedListeningResponses=sum(row['listeningResponses'] for row in done),
+                         validNormalizedCandidateForms=len(done),
                          newAudioInstalled=0)
         (ROOT / technical_path).write_text(json.dumps(technical, ensure_ascii=False, indent=2) + '\n')
         checkpoint = 'docs/jlpt-workspace/JLPT_ORIGINAL_AUTHORING_CHECKPOINT.md'
@@ -59,7 +62,8 @@ def main():
                       'Human/native/perceptual approval false. Publication requires remote verification.\n')
         paths.extend([snapshot_path, technical_path, checkpoint])
         subprocess.run(['git', 'add', '--sparse', '--', *sorted(set(paths))], cwd=ROOT, check=True)
-    print(json.dumps({'completeForms': len(done), 'freshForms': fresh, 'staged': bool(args.stage and fresh)}))
+    print(json.dumps({'completeForms': len(done), 'freshForms': fresh, 'staged': bool(args.stage and fresh),
+                      'stagedPaths': sorted(set(paths)) if args.stage and fresh else []}))
 
 
 if __name__ == '__main__':

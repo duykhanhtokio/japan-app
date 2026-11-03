@@ -28,7 +28,7 @@ def validate_voice_catalog(speakers, casting):
             raise ValueError('Engine does not match the approved voice: ' + role['name'])
 
 
-def acquire_engine_slot(root, *, blocking=True, slots=2):
+def acquire_engine_slot(root, *, blocking=True, slots=2, exclusive=False):
     """Bound all batch/direct renders to two engines; honor legacy slot zero."""
     import fcntl
     import time
@@ -36,6 +36,17 @@ def acquire_engine_slot(root, *, blocking=True, slots=2):
         raise ValueError('Only one or two production engines are supported')
     folder = Path(root) / 'docs/jlpt-workspace/audio-prosody-candidates'
     folder.mkdir(parents=True, exist_ok=True)
+    if exclusive:
+        from contextlib import ExitStack
+        stack = ExitStack()
+        try:
+            for name in ('voicevox-engine.lock', 'voicevox-engine-1.lock'):
+                handle = stack.enter_context((folder / name).open('a'))
+                fcntl.flock(handle.fileno(), fcntl.LOCK_EX | (0 if blocking else fcntl.LOCK_NB))
+            return stack
+        except BaseException:
+            stack.close()
+            raise
     while True:
         for number in range(slots):
             name = 'voicevox-engine.lock' if number == 0 else 'voicevox-engine-1.lock'

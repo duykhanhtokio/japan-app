@@ -149,7 +149,7 @@ engine_guard=None
 try:
  if not getattr(args,'cache_only',False):
   print('Waiting for the shared VOICEVOX production slot',flush=True)
-  engine_guard=acquire_engine_slot(root)
+  engine_guard=acquire_engine_slot(root,exclusive=level in ('n3','n2','n1'))
  start();album=bytearray(silence(1));segments=[];used=[];break_manifest=None;orientation_segments=[]
  def narration(text):
   album.extend(synth(text,'adultFemale','narration'));album.extend(silence(settings['betweenTurnsSeconds']))

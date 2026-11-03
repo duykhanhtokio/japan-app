@@ -750,3 +750,11 @@ jpapp-n4-original-03-v1, jpapp-n4-original-04-v1: complete real synthesis and de
 ## 2026-11-03 — N4 06 direct synthesis completed
 
 N4 06 independently completed actual synthesis:28/28 responses,1941476ms decoded PCM,approved voices/scripts/choice order/response windows and60000ms music verified.11/30 complete candidates;0/30 installed. Direct receipt:n4-06-direct-run.json; original live batch may still list this form rendering until its own completion. Human/native/perceptual reviewfalse. Preserve ongoing N4 05 and other work.
+
+## 2026-11-03 — correct pedagogical-space pauses before installation
+
+Actual0.25.2/speaker118 AudioQuery probe: first N5 situation has13 accent phrases in both inputs, but10 pause moras with written layout spaces versus2 without; mora text sequence unchanged. Initial candidates accidentally retained spaces unlike the approved legacy renderer. Eleven preserved trials remain historical/uninstalled, not current-valid replacement audio. Restore ASCII-space normalization for engine input only; keep all written text. Bind changed effective input in WAV cache key, reuse truly unchanged queries, verify exact engine/four voice styles, reject old unnormalized candidates, retain validated-resume behavior, and lock the progress report against concurrent producers. Fourteen focused tests/UI10/10 PASS. New complete30 run uses20261103-normalized-v2 and the existing safely keyed turn cache. App audio/master/manifests unchanged; native/human/perceptual flagsfalse. Do not publish old count11 as completed normalized replacements.
+
+## 2026-11-03 — serialize production engines; preserve valid recordings
+
+N3 local engine disconnects prompted one render job/four CPU threads; no unproven OOM claim. Shared engine-slot lock covers batch and direct commands, report lock covers inventory writes too, and owned child shutdown escalates to kill after bounded termination.15 focused tests pass. Existing12 normalized recordings remain valid candidates; no app audio installed. Keep approved voices/profile/content/answers/session identities and exact60s rest. Continue remaining forms, then revision-consistent integration and remote verification.
