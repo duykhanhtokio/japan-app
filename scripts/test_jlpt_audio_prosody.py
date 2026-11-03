@@ -1,0 +1,113 @@
+import ast
+import copy
+import json
+import unittest
+import importlib.util
+from pathlib import Path
+from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root
+spec = importlib.util.spec_from_file_location('prosody_batch', Path(__file__).with_name('prepare-jlpt-prosody-batch.py'))
+batch = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(batch)
+inventory = batch.inventory
+
+
+ROOT = Path(__file__).resolve().parent.parent
+
+
+class ProsodyTests(unittest.TestCase):
+    def setUp(self):
+        self.profile = load_profile(ROOT / 'src/data/jlpt-original/prosody-candidate.json')
+        self.query = {'speedScale': .9, 'intonationScale': 1, 'prePhonemeLength': .1, 'postPhonemeLength': .1,
+                      'accent_phrases': [{'accent': 2, 'is_interrogative': True,
+                                          'moras': [{'text': 'カ', 'pitch': 5, 'vowel_length': .1}],
+                                          'pause_mora': {'text': '、', 'vowel_length': .4}},
+                                         {'accent': 1, 'moras': [], 'pause_mora': None}]}
+
+    def test_preserves_engine_phonemes_accents_and_question_flag(self):
+        before = copy.deepcopy(self.query)
+        for level in self.profile['levels']:
+            for mode in ('dialogue', 'narration'):
+                q = apply_query(self.query, self.profile, level, mode)
+                self.assertEqual(q['accent_phrases'][0]['moras'], before['accent_phrases'][0]['moras'])
+                self.assertEqual(q['accent_phrases'][0]['accent'], 2)
+                self.assertIs(q['accent_phrases'][0]['is_interrogative'], True)
+                self.assertAlmostEqual(q['accent_phrases'][0]['pause_mora']['vowel_length'], .38)
+                self.assertEqual(q['outputSamplingRate'], 24000)
+                self.assertIs(q['outputStereo'], False)
+        self.assertEqual(self.query, before)
+
+    def test_cache_binds_all_effective_inputs(self):
+        key = lambda p=self.profile, text='会いましょう。', speaker=118, engine='0.25.2', level='n5', mode='dialogue': cache_key(text, speaker, engine, p, level, mode)
+        old = key()
+        variants = [key(text='会いましょう？'), key(text='会い ましょう。'), key(speaker=21), key(engine='0.25.3'), key(level='n1'), key(mode='narration')]
+        for section, field in [('query', 'postPhonemeLength'), ('query', 'dialogueIntonation'), ('boundary', 'questionExtraSeconds')]:
+            p = copy.deepcopy(self.profile)
+            p[section][field] += .01
+            variants.append(key(p=p))
+        self.assertTrue(all(x != old for x in variants))
+        self.assertEqual(len(set(variants)), len(variants))
+        self.assertEqual(old, key(p=json.loads(json.dumps(self.profile, sort_keys=True))))
+        with self.assertRaises(ValueError):
+            key(engine='')
+
+    def test_distinct_boundaries_and_exact_time_conversion(self):
+        for level in self.profile['levels']:
+            plain = turn_pause(self.profile, level, 'そうです。', 'a', 'b')
+            question = turn_pause(self.profile, level, 'どうですか？', 'a', 'b')
+            hesitation = turn_pause(self.profile, level, 'それは…', 'a', 'b')
+            same = turn_pause(self.profile, level, 'そうです。', 'a', 'a')
+            self.assertLess(same, plain)
+            self.assertLess(plain, question)
+            self.assertLess(question, hesitation)
+            self.assertEqual(turn_pause(self.profile, level, '終わり。', 'a', None), .5)
+            # 24000 Hz × seconds × 2 bytes = 48 bytes per millisecond.
+            self.assertEqual(round(plain * 24000) * 2, round(plain * 1000) * 48)
+        self.assertEqual(60 * 24000, 1440000)
+        self.assertEqual(60000, self.profile['midListeningMusicMs'])
+
+    def test_candidate_must_not_write_live_assets(self):
+        for target in ('assets/jlpt-original', '..', '/tmp/prosody-output'):
+            with self.assertRaises(ValueError):
+                candidate_root(ROOT, target, 'profile.json')
+        with self.assertRaises(ValueError):
+            candidate_root(ROOT, None, 'profile.json')
+        with self.assertRaises(ValueError):
+            candidate_root(ROOT, 'docs/jlpt-workspace/audio-prosody-candidates/test', None)
+        self.assertEqual(candidate_root(ROOT, None, None), ROOT)
+        self.assertEqual(candidate_root(ROOT, 'docs/jlpt-workspace/audio-prosody-candidates/test', 'profile.json').parent.name, 'audio-prosody-candidates')
+
+    def test_rejects_missing_engine_fields(self):
+        q = copy.deepcopy(self.query)
+        del q['accent_phrases']
+        with self.assertRaises(ValueError):
+            apply_query(q, self.profile, 'n5', 'dialogue')
+        q = copy.deepcopy(self.query)
+        q['accent_phrases'][0]['pause_mora']['vowel_length'] = float('nan')
+        with self.assertRaises(ValueError):
+            apply_query(q, self.profile, 'n5', 'dialogue')
+
+    def test_full_original_corpus_queue_without_audio_claims(self):
+        rows = inventory(self.profile)
+        self.assertEqual(len(rows), 30)
+        self.assertEqual(len({r['examId'] for r in rows}), 30)
+        self.assertEqual(sum(r['listeningResponses'] for r in rows), 882)
+        for level in self.profile['levels']:
+            self.assertEqual(len([r for r in rows if r['level'] == level]), 6)
+        self.assertTrue(all(not r['installedInApp'] and not r['perceptualApproval'] for r in rows))
+
+    def test_both_renderers_wire_candidate_and_boundary_controls(self):
+        for name in ('generate-jlpt-original-audio.py', 'generate-jlpt-original-n2-audio.py'):
+            source = (ROOT / 'scripts' / name).read_text()
+            ast.parse(source)
+            self.assertIn('render_root=candidate_root(', source)
+            self.assertIn('key=cache_key(', source)
+            self.assertIn('q=apply_query(', source)
+            self.assertEqual(source.count('silence(script_gap('), 2)
+            self.assertIn("if index==0:return settings['afterIntroSeconds']", source)
+            self.assertIn("if not prosody:return settings['betweenTurnsSeconds']", source)
+            self.assertIn("manifest_path=render_root/", source)
+            self.assertIn("assert music_end-music_start==60000", source)
+
+
+if __name__ == '__main__':
+    unittest.main()
