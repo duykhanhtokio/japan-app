@@ -8,4 +8,10 @@ Khi worker đã ngừng ghi, chạy `python scripts/check-kanto-context-review.p
 
 ## Checkpoint hiện tại
 
-Đã thực đọc 57/1.681 bài × 12 ngôn ngữ, 10.944 trường; sửa 653 trường trong 88 tệp lô dịch. Còn 1.624 bài, vùng chưa hoàn tất. Sáu worker đã dừng ghi. `resume.json` ghi điểm tiếp tục; 494 bài có bằng chứng trước đó được giữ nguyên. Hash/phạm vi và loader thực đạt; chưa nghiệm thu bản ngữ/thiết bị. Một điểm chưa rõ của nguồn Nhật ở `SC-LOC-008-07-001` được giữ riêng. Commit chỉ có cục bộ do bộ duyệt tự động chặn đẩy GitHub; chưa có bằng chứng lưu từ xa cho lượt Kanto.
+Đã thực đọc **188/1.681 bài × 12 ngôn ngữ**, **36.096 trường**; sửa **1.389 trường** trong **203 tệp lô dịch**. Lượt tiếp tục thêm **131 bài** so với mốc 57 bài đã xác minh trên GitHub ở `80054e5876`. Còn **1.493 bài**, vùng chưa hoàn tất. Sáu worker đã dừng tại bài hoàn chỉnh; `resume.json` ghi điểm tiếp tục riêng. Không rà lại phần có bằng chứng hợp lệ.
+
+Có **6 điểm căn chỉnh nguồn Nhật** chưa chốt, lưu riêng trong receipt/resume; số bài đã đọc bằng AI không chứng minh nghiệm thu nguồn/bản ngữ/phát âm/thiết bị. Giữ các kết quả Hokkaido và Tohoku đồng thời đã được tích hợp.
+
+`baseline-file-hashes.json` lưu dấu vết đầu vào và hash chuẩn của toàn bộ kịch bản Kanto được giao trong 2.136 tệp locale. Validator replay thay đổi ngược và so hash phạm vi sở hữu, kiểm cả metadata tệp; không phụ thuộc commit chỉ có trong bản clone cũ. Một lô giáp vùng có thể chứa bài của vùng khác; các bài đó được kiểm bằng receipt tương ứng, không ghi đè bằng dữ liệu Kanto.
+
+Git trực tiếp ở môi trường này thiếu thông tin đăng nhập; kết nối GitHub đã lưu cây nội dung tương đương mốc `0ade4fc175`, sau hợp nhất công việc đồng thời. Đối với checkpoint hiện tại, chỉ xác nhận lưu bền sau fetch và `WORK PERSISTENCE PASS`; xem commit thực tế thay vì dựa vào mã commit lịch sử cục bộ.
