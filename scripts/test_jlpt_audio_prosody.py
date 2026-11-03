@@ -132,8 +132,8 @@ class ProsodyTests(unittest.TestCase):
 
     def test_resource_limits_preserve_requested_ceiling_and_adapt_to_memory(self):
         mib = 1024 * 1024
-        self.assertEqual(runtime_synthesis_limits(4, 24, 1700 * mib), (1, 1))
-        self.assertEqual(runtime_synthesis_limits(4, 24, 3000 * mib), (1, 1))
+        self.assertEqual(runtime_synthesis_limits(4, 24, 1700 * mib), (2, 1))
+        self.assertEqual(runtime_synthesis_limits(4, 24, 3000 * mib), (2, 1))
         self.assertEqual(runtime_synthesis_limits(4, 24, 5000 * mib), (2, 6))
         self.assertEqual(runtime_synthesis_limits(1, 3, 1700 * mib), (1, 1))
 

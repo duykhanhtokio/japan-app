@@ -131,8 +131,10 @@ def runtime_synthesis_limits(cpu_threads, restart_every, available_bytes=None):
             available_bytes = int(fields['MemAvailable'].split()[0]) * 1024
         except (OSError, KeyError, ValueError):
             available_bytes = 0
-    if available_bytes < 4096 * 1024 * 1024:
+    if available_bytes < 1536 * 1024 * 1024:
         return min(cpu_threads, 1), 1
+    if available_bytes < 4096 * 1024 * 1024:
+        return min(cpu_threads, 2), 1
     if available_bytes < 6144 * 1024 * 1024:
         return min(cpu_threads, 2), min(restart_every, 6)
     return cpu_threads, restart_every
