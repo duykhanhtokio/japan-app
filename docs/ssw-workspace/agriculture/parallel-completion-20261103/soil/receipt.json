@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "lane": "soil-fertilizer-water",
+  "canonicalLedger": "docs/ssw-workspace/source-coverage-v2/agriculture.json",
+  "groups": [
+    {
+      "id": "soil-ph-meter",
+      "sourcePages": [
+        "AGR-S1:18",
+        "AGR-S1:19",
+        "AGR-S1:20"
+      ],
+      "result": "Retain current three-phase mapping and insertion/wait/stability questions; no duplicate added. Add bounded retrieval of special-soil phase examples absent from existing dedicated prompts."
+    },
+    {
+      "id": "fertilizer-nitrogen",
+      "sourcePages": [
+        "AGR-S1:22",
+        "AGR-S1:23"
+      ],
+      "result": "Retain phosphorus/potassium questions. Add retrieval requiring nitrogen deficiency/excess examples, because existing nitrogen question tests diagnostic caution rather than both symptom associations."
+    },
+    {
+      "id": "water-range-preservation",
+      "sourcePages": [
+        "AGR-S2:80"
+      ],
+      "result": "35–55% already present in agr-vegwork-environment-p6 and agr-reader-moisture-range. Preserve all content and covered moisture units; no denominator or irrigation formula introduced."
+    }
+  ],
+  "sourceTextRead": true,
+  "sourceVisualPixelsInspected": true,
+  "newlyCoveredAi": 0,
+  "sourceCoveragePercent": null,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "additions": 2,
+  "localePromptPairs": 24,
+  "sharedFilesChanged": false,
+  "sourceByteHashesVerified": true,
+  "visuallyInspectedPages": [
+    "AGR-S1:18",
+    "AGR-S1:19",
+    "AGR-S1:20",
+    "AGR-S1:22",
+    "AGR-S1:23",
+    "AGR-S2:28",
+    "AGR-S2:29",
+    "AGR-S2:80"
+  ],
+  "visualScope": "Actual source PNGs inspected with view_image. Whole-page closure remains false: only named clauses are proposed for exact source binding; unrelated tables, diagrams and captions remain open.",
+  "canonicalProposals": 2,
+  "expectedNewlyCoveredAiAfterRootIntegration": 2
+}

@@ -1,0 +1,848 @@
+{
+  "schemaVersion": 1,
+  "patches": [
+    {
+      "operation": "append_reader_check",
+      "target": "src/data/agriculture/reader-moisture-checks.json",
+      "beforeIdAbsent": "agr-reader-soil-special-three-phases",
+      "sourcePages": [
+        "AGR-S1:18"
+      ],
+      "teachingPointer": "/lessons/226/paragraphs/1/textJa",
+      "teachingSha256": "0767ff40b6f08220bbb6ee2bbb4c7997912b68fd9221d8bb22ba2d280a474a40",
+      "value": {
+        "id": "agr-reader-soil-special-three-phases",
+        "knowledgeId": "agriculture-v2-AGR-K-F40-SOIL-COMPARE-02",
+        "lessonId": "agr-f40-soil-source-comparisons",
+        "levels": [
+          "1",
+          "2"
+        ],
+        "promptJa": "くろボクどと、ちかすいいのたかいすいでんでは、さんそうのわりあいにどのようなちがいがありますか。きょうざいのれいとしてせつめいしましょう。",
+        "modelAnswerJa": "黒ボク土は通常、固相率28%以下、気相率15～20%以上です。地下水位の高い水田の気相率は10%以下です。三相の分布は土壌によって異なります。",
+        "translations": {
+          "en": {
+            "prompt": "In the material’s examples, how do the three-phase proportions differ for Andosols and paddy soils with a high groundwater table?",
+            "modelAnswer": "Black volcanic-ash soil usually has a solid fraction of 28% or less and a gas fraction of 15–20% or more. Paddy soils with a high groundwater level have a gas fraction of 10% or less. The distribution of the three phases differs with the soil.",
+            "translatedFrom": "ja"
+          },
+          "vi": {
+            "prompt": "Trong các ví dụ của tài liệu, tỷ lệ ba pha của đất Andosol và đất ruộng lúa có mực nước ngầm cao khác nhau như thế nào?",
+            "modelAnswer": "Đất đen nguồn gốc tro núi lửa thường có tỷ lệ phần rắn không quá 28%, tỷ lệ phần khí từ 15–20% trở lên. Ruộng lúa có mực nước ngầm cao có tỷ lệ phần khí không quá 10%. Tỷ lệ ba phần thay đổi tùy loại đất.",
+            "translatedFrom": "ja"
+          },
+          "id": {
+            "prompt": "Dalam contoh materi, bagaimana perbedaan proporsi tiga fase pada tanah Andosol dan tanah sawah dengan muka air tanah tinggi?",
+            "modelAnswer": "Tanah hitam abu vulkanik biasanya memiliki fraksi padat paling tinggi 28% dan fraksi gas 15–20% atau lebih. Tanah sawah dengan muka air tanah tinggi memiliki fraksi gas paling tinggi 10%. Pembagian tiga fase berbeda menurut tanahnya.",
+            "translatedFrom": "ja"
+          },
+          "zh-CN": {
+            "prompt": "在教材的例子中，黑火山灰土与地下水位高的水田土壤，其三相比例有什么不同？",
+            "modelAnswer": "黑火山灰土的固相率通常为28%以下，气相率为15～20%以上。地下水位高的水田气相率为10%以下。土壤不同，三相的分布也不同。",
+            "translatedFrom": "ja"
+          },
+          "zh-TW": {
+            "prompt": "在教材的例子中，黑火山灰土與地下水位高的水田土壤，其三相比率有何不同？",
+            "modelAnswer": "黑火山灰土的固相率通常為28%以下，氣相率為15～20%以上。地下水位高的水田氣相率為10%以下。土壤不同，三相的分布也不同。",
+            "translatedFrom": "ja"
+          },
+          "hi": {
+            "prompt": "पाठ्य सामग्री के उदाहरणों में, एंडोसोल और ऊँचे भूजल स्तर वाले धान के खेत की मिट्टी में तीन अवस्थाओं के अनुपात कैसे अलग हैं?",
+            "modelAnswer": "काली ज्वालामुखीय राख वाली मिट्टी में सामान्यतः ठोस अंश 28% या कम और गैसीय अंश 15–20% या अधिक होता है। ऊँचे भूजल स्तर वाले धान के खेतों में गैसीय अंश 10% या कम होता है। मिट्टी के अनुसार तीनों अवस्थाओं का अनुपात अलग होता है।",
+            "translatedFrom": "ja"
+          },
+          "bn": {
+            "prompt": "পাঠ্যসামগ্রীর উদাহরণে অ্যান্ডোসল মাটি ও উঁচু ভূগর্ভস্থ পানির স্তরযুক্ত ধানক্ষেতের মাটির তিন দশার অনুপাত কীভাবে আলাদা?",
+            "modelAnswer": "কালো আগ্নেয় ছাইয়ের মাটিতে সাধারণত কঠিন অংশ 28% বা কম এবং গ্যাসীয় অংশ 15–20% বা বেশি। ভূগর্ভস্থ পানির স্তর উঁচু এমন ধানক্ষেতে গ্যাসীয় অংশ 10% বা কম। মাটিভেদে তিনটি অংশের অনুপাত আলাদা হয়।",
+            "translatedFrom": "ja"
+          },
+          "ne": {
+            "prompt": "पाठ्यसामग्रीका उदाहरणमा एन्डोसोल माटो र भूमिगत पानीको तह माथि भएको धानखेतको माटोमा तीन अवस्थाका अनुपात कसरी फरक छन्?",
+            "modelAnswer": "कालो ज्वालामुखीय खरानीको माटोमा सामान्यतः ठोस अंश 28% वा कम र ग्यास अंश 15–20% वा बढी हुन्छ। भूमिगत पानीको सतह उच्च भएका धानखेतमा ग्यास अंश 10% वा कम हुन्छ। माटोअनुसार तीन अवस्थाको अनुपात फरक हुन्छ।",
+            "translatedFrom": "ja"
+          },
+          "my": {
+            "prompt": "သင်ခန်းစာပါ ဥပမာများအရ Andosol မြေနှင့် မြေအောက်ရေမျက်နှာပြင်မြင့်သော လယ်မြေတို့၏ အစိုင်အခဲ၊ အရည်နှင့် လေ အချိုးများ မည်သို့ကွာခြားသနည်း။",
+            "modelAnswer": "မီးတောင်ပြာအခြေခံ အနက်ရောင်မြေတွင် ပုံမှန်အားဖြင့် အစိုင်အခဲအချိုး 28% သို့မဟုတ် ယင်းထက်နည်းပြီး၊ လေအချိုး 15–20% သို့မဟုတ် ယင်းထက်များသည်။ မြေအောက်ရေမျက်နှာပြင်မြင့်သော စပါးခင်းတွင် လေအချိုး 10% သို့မဟုတ် ယင်းထက်နည်းသည်။ မြေအမျိုးအစားအလိုက် အစိတ်အပိုင်းသုံးမျိုး၏ အချိုးကွာခြားသည်။",
+            "translatedFrom": "ja"
+          },
+          "th": {
+            "prompt": "ในตัวอย่างของเอกสาร สัดส่วนสามสถานะของดินแอนโดซอลกับดินนาที่มีระดับน้ำใต้ดินสูงแตกต่างกันอย่างไร",
+            "modelAnswer": "ดินดำจากเถ้าภูเขาไฟโดยทั่วไปมีสัดส่วนของแข็งไม่เกิน 28% และสัดส่วนอากาศตั้งแต่ 15–20% ขึ้นไป นาที่มีระดับน้ำใต้ดินสูงมีสัดส่วนอากาศไม่เกิน 10% สัดส่วนของทั้งสามส่วนแตกต่างกันตามดิน",
+            "translatedFrom": "ja"
+          },
+          "km": {
+            "prompt": "ក្នុងឧទាហរណ៍នៃឯកសារ តើសមាមាត្របីផ្នែករបស់ដី Andosol និងដីស្រែដែលមានកម្រិតទឹកក្រោមដីខ្ពស់ ខុសគ្នាយ៉ាងដូចម្តេច?",
+            "modelAnswer": "ដីខ្មៅពីផេះភ្នំភ្លើងជាធម្មតាមានសមាមាត្រផ្នែករឹង 28% ឬតិចជាងនេះ និងផ្នែកខ្យល់ចាប់ពី 15–20% ឡើងទៅ។ ស្រែដែលមានកម្រិតទឹកក្រោមដីខ្ពស់មានផ្នែកខ្យល់ 10% ឬតិចជាងនេះ។ សមាមាត្រផ្នែកទាំងបីខុសគ្នាតាមដី។",
+            "translatedFrom": "ja"
+          },
+          "tl": {
+            "prompt": "Sa mga halimbawa ng materyal, paano nagkakaiba ang proporsyon ng tatlong bahagi ng Andosol at ng lupang palayan na mataas ang antas ng tubig sa ilalim ng lupa?",
+            "modelAnswer": "Karaniwang 28% o mas mababa ang bahaging solido at 15–20% o higit pa ang bahaging hangin ng itim na lupang mula sa abong bulkan. Sa palayang mataas ang lebel ng tubig sa ilalim ng lupa, 10% o mas mababa ang bahaging hangin. Nagkakaiba ang hatian ng tatlong bahagi ayon sa lupa.",
+            "translatedFrom": "ja"
+          }
+        },
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "answerOrigin": {
+          "parts": [
+            {
+              "lessonId": "agr-f40-soil-source-comparisons",
+              "paragraphIds": [
+                "agr-f40-soil-source-comparisons-p2"
+              ],
+              "sourceHash": "9eb5991fe1e581f34600f6e6ba23fc764c083d44e1a45c2ad3f7a558a097fa73"
+            }
+          ]
+        },
+        "promptRuby": [
+          {
+            "text": "くろボクどと、ちかすいいのたかいすいでんでは、さんそうのわりあいにどのようなちがいがありますか。きょうざいのれいとしてせつめいしましょう。"
+          }
+        ],
+        "modelAnswerRuby": [
+          {
+            "text": "黒ボク土",
+            "readingKana": "くろボクど"
+          },
+          {
+            "text": "は"
+          },
+          {
+            "text": "通常",
+            "readingKana": "つうじょう"
+          },
+          {
+            "text": "、"
+          },
+          {
+            "text": "固相率",
+            "readingKana": "こそうりつ"
+          },
+          {
+            "text": "28%"
+          },
+          {
+            "text": "以下",
+            "readingKana": "いか"
+          },
+          {
+            "text": "、"
+          },
+          {
+            "text": "気相率",
+            "readingKana": "きそうりつ"
+          },
+          {
+            "text": "15～20%"
+          },
+          {
+            "text": "以上",
+            "readingKana": "いじょう"
+          },
+          {
+            "text": "です。"
+          },
+          {
+            "text": "地下水位",
+            "readingKana": "ちかすいい"
+          },
+          {
+            "text": "の"
+          },
+          {
+            "text": "高",
+            "readingKana": "たか"
+          },
+          {
+            "text": "い"
+          },
+          {
+            "text": "水田",
+            "readingKana": "すいでん"
+          },
+          {
+            "text": "の"
+          },
+          {
+            "text": "気相率",
+            "readingKana": "きそうりつ"
+          },
+          {
+            "text": "は10%"
+          },
+          {
+            "text": "以下",
+            "readingKana": "いか"
+          },
+          {
+            "text": "です。"
+          },
+          {
+            "text": "三相",
+            "readingKana": "さんそう"
+          },
+          {
+            "text": "の"
+          },
+          {
+            "text": "分布",
+            "readingKana": "ぶんぷ"
+          },
+          {
+            "text": "は"
+          },
+          {
+            "text": "土壌",
+            "readingKana": "どじょう"
+          },
+          {
+            "text": "によって"
+          },
+          {
+            "text": "異",
+            "readingKana": "こと"
+          },
+          {
+            "text": "なります。"
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "AGR-S1",
+          "pdfPage": 18,
+          "elementIds": [
+            "AGR-S1:p18:e165",
+            "AGR-S1:p18:e166",
+            "AGR-S1:p18:e167",
+            "AGR-S1:p18:e168",
+            "AGR-S1:p18:e169",
+            "AGR-S1:p18:e170",
+            "AGR-S1:p18:e171",
+            "AGR-S1:p18:e172",
+            "AGR-S1:p18:e173",
+            "AGR-S1:p18:e174",
+            "AGR-S1:p18:e175",
+            "AGR-S1:p18:e176",
+            "AGR-S1:p18:e177",
+            "AGR-S1:p18:e178",
+            "AGR-S1:p18:e179",
+            "AGR-S1:p18:e180",
+            "AGR-S1:p18:e181",
+            "AGR-S1:p18:e182",
+            "AGR-S1:p18:e183",
+            "AGR-S1:p18:e184",
+            "AGR-S1:p18:e185",
+            "AGR-S1:p18:e186",
+            "AGR-S1:p18:e187",
+            "AGR-S1:p18:e188",
+            "AGR-S1:p18:e189",
+            "AGR-S1:p18:e190",
+            "AGR-S1:p18:e191",
+            "AGR-S1:p18:e192",
+            "AGR-S1:p18:e193",
+            "AGR-S1:p18:e194",
+            "AGR-S1:p18:e195",
+            "AGR-S1:p18:e196",
+            "AGR-S1:p18:e197",
+            "AGR-S1:p18:e198",
+            "AGR-S1:p18:e199",
+            "AGR-S1:p18:e200",
+            "AGR-S1:p18:e201",
+            "AGR-S1:p18:e202",
+            "AGR-S1:p18:e203",
+            "AGR-S1:p18:e204",
+            "AGR-S1:p18:e205",
+            "AGR-S1:p18:e206",
+            "AGR-S1:p18:e207",
+            "AGR-S1:p18:e208",
+            "AGR-S1:p18:e209",
+            "AGR-S1:p18:e210",
+            "AGR-S1:p18:e211",
+            "AGR-S1:p18:e212",
+            "AGR-S1:p18:e213",
+            "AGR-S1:p18:e214",
+            "AGR-S1:p18:e215",
+            "AGR-S1:p18:e216",
+            "AGR-S1:p18:e217",
+            "AGR-S1:p18:e218",
+            "AGR-S1:p18:e219",
+            "AGR-S1:p18:e220",
+            "AGR-S1:p18:e221",
+            "AGR-S1:p18:e222",
+            "AGR-S1:p18:e223",
+            "AGR-S1:p18:e224",
+            "AGR-S1:p18:e225",
+            "AGR-S1:p18:e226",
+            "AGR-S1:p18:e227",
+            "AGR-S1:p18:e228",
+            "AGR-S1:p18:e229",
+            "AGR-S1:p18:e230",
+            "AGR-S1:p18:e231"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "append_reader_check",
+      "target": "src/data/agriculture/reader-moisture-checks.json",
+      "beforeIdAbsent": "agr-reader-soil-nitrogen-deficit-excess",
+      "sourcePages": [
+        "AGR-S1:22",
+        "AGR-S1:23"
+      ],
+      "teachingPointer": "/lessons/25/paragraphs/3/textJa",
+      "teachingSha256": "b0d09f65042c3137d37aff02251765f0bcc5b325eca4e55ff3b62ca407ee69d6",
+      "value": {
+        "id": "agr-reader-soil-nitrogen-deficit-excess",
+        "knowledgeId": "agriculture-v2-AGR-K-FERTILIZER-NUTRIENTS-04",
+        "lessonId": "agr-fertilizer-nutrients",
+        "levels": [
+          "1",
+          "2"
+        ],
+        "promptJa": "ちっそがふそくしたときと、おおすぎるときのれいをくべつし、しょうじょうだけでげんいんをだんていできないりゆうもせつめいしましょう。",
+        "modelAnswerJa": "窒素が多すぎると軟弱に育ちやすくなります。不足については、1号資料では下葉からの黄化、2号資料では葉色が薄くなることなどが挙げられています。こうした例だけで、目の前の症状の原因を一つに断定しないようにします。",
+        "translations": {
+          "en": {
+            "prompt": "Distinguish the examples of nitrogen deficiency and excess, and explain why symptoms alone cannot establish the cause.",
+            "modelAnswer": "Excess nitrogen tends to produce weak, soft growth. For deficiency, the Level 1 material mentions yellowing from lower leaves, while Level 2 includes pale leaf colour. These examples alone do not establish a single cause for symptoms in front of you.",
+            "translatedFrom": "ja"
+          },
+          "vi": {
+            "prompt": "Hãy phân biệt các ví dụ thiếu và thừa đạm, đồng thời giải thích vì sao không thể xác định nguyên nhân chỉ từ triệu chứng.",
+            "modelAnswer": "Quá nhiều nitơ dễ làm cây phát triển yếu mềm. Về thiếu nitơ, tài liệu cấp 1 nêu vàng lá bắt đầu từ lá dưới, còn cấp 2 có nêu màu lá nhạt đi. Chỉ các ví dụ này không đủ để khẳng định duy nhất một nguyên nhân cho triệu chứng đang quan sát.",
+            "translatedFrom": "ja"
+          },
+          "id": {
+            "prompt": "Bedakan contoh kekurangan dan kelebihan nitrogen, lalu jelaskan mengapa gejala saja tidak cukup untuk memastikan penyebabnya.",
+            "modelAnswer": "Nitrogen yang berlebihan cenderung menyebabkan pertumbuhan lunak dan lemah. Untuk kekurangan, materi Tingkat 1 menyebut daun menguning mulai dari bagian bawah, sedangkan Tingkat 2 menyebut antara lain warna daun memucat. Contoh tersebut saja tidak cukup untuk memastikan satu penyebab gejala yang sedang dilihat.",
+            "translatedFrom": "ja"
+          },
+          "zh-CN": {
+            "prompt": "请区分缺氮和氮过量的症状例，并说明为什么不能仅凭症状断定原因。",
+            "modelAnswer": "氮过多容易使植株生长柔弱。关于缺氮，1号资料举出下部叶片开始黄化，2号资料则包括叶色变浅。不能仅凭这些例子，就把眼前症状的原因断定为一种。",
+            "translatedFrom": "ja"
+          },
+          "zh-TW": {
+            "prompt": "請區分缺氮和氮過量的症狀例，並說明為何不能僅憑症狀斷定原因。",
+            "modelAnswer": "氮過多容易使植株長得柔弱。氮不足方面，1號資料提到從下位葉開始黃化，2號資料則包括葉色變淡。這些例子本身不足以把眼前症狀的原因斷定為一種。",
+            "translatedFrom": "ja"
+          },
+          "hi": {
+            "prompt": "नाइट्रोजन की कमी और अधिकता के उदाहरणों में अंतर बताइए तथा समझाइए कि केवल लक्षणों से कारण तय क्यों नहीं किया जा सकता।",
+            "modelAnswer": "बहुत अधिक नाइट्रोजन से नरम और कमजोर वृद्धि की प्रवृत्ति होती है। कमी के लिए स्तर 1 में निचली पत्तियों से पीलापन और स्तर 2 में पत्तियों का रंग हल्का होना जैसे उदाहरण हैं। केवल इन उदाहरणों से सामने के लक्षणों का एक निश्चित कारण तय न करें।",
+            "translatedFrom": "ja"
+          },
+          "bn": {
+            "prompt": "নাইট্রোজেনের ঘাটতি ও অতিরিক্ততার উদাহরণ আলাদা করুন এবং শুধু লক্ষণ দেখে কারণ নিশ্চিত করা যায় না কেন তা ব্যাখ্যা করুন।",
+            "modelAnswer": "নাইট্রোজেন বেশি হলে নরম ও দুর্বল বৃদ্ধি হওয়ার প্রবণতা থাকে। ঘাটতির উদাহরণে লেভেল 1-এ নিচের পাতা থেকে হলুদ হওয়া এবং লেভেল 2-এ পাতার রং ফিকে হওয়ার কথা আছে। শুধু এসব উদাহরণ দেখে সামনে দেখা লক্ষণের কারণ একটিই বলে নিশ্চিত করবেন না।",
+            "translatedFrom": "ja"
+          },
+          "ne": {
+            "prompt": "नाइट्रोजनको कमी र अधिकताका उदाहरण छुट्याउनुहोस् र लक्षणबाट मात्र कारण किन निश्चित गर्न सकिँदैन भनेर बताउनुहोस्।",
+            "modelAnswer": "नाइट्रोजन धेरै हुँदा बिरुवा कमजोर र नरम रूपमा बढ्न सक्छ। कमीबारे स्तर 1 ले तल्ला पातबाट पहेँलो हुने र स्तर 2 ले पातको रङ फिक्का हुनेजस्ता उदाहरण दिन्छ। यिनकै आधारमा देखिएको लक्षणको कारण एउटै हो भनेर नठोकुवा गर्नुहोस्।",
+            "translatedFrom": "ja"
+          },
+          "my": {
+            "prompt": "နိုက်ထရိုဂျင်ချို့တဲ့မှုနှင့် လွန်ကဲမှု၏ ဥပမာများကို ခွဲခြားပြီး ရောဂါလက္ခဏာများတစ်ခုတည်းဖြင့် အကြောင်းရင်းကို အတည်မပြုနိုင်သည့်အကြောင်း ရှင်းပြပါ။",
+            "modelAnswer": "နိုက်ထရိုဂျင်များလွန်းလျှင် အပင်ပျော့ညံ့စွာကြီးတတ်သည်။ ချို့တဲ့မှုအတွက် အဆင့် 1 တွင် အောက်ရွက်မှဝါလာခြင်း၊ အဆင့် 2 တွင် အရွက်အရောင်ဖျော့ခြင်းစသည့်ဥပမာရှိသည်။ ဥပမာများတစ်ခုတည်းဖြင့် လက်ရှိလက္ခဏာ၏အကြောင်းရင်းကို တစ်မျိုးတည်းအတည်မပြုပါနှင့်။",
+            "translatedFrom": "ja"
+          },
+          "th": {
+            "prompt": "แยกตัวอย่างอาการขาดและได้รับไนโตรเจนมากเกินไป พร้อมอธิบายเหตุใดจึงสรุปสาเหตุจากอาการเพียงอย่างเดียวไม่ได้",
+            "modelAnswer": "ไนโตรเจนมากเกินทำให้พืชเติบโตอ่อนแอได้ ส่วนการขาด เอกสารระดับ 1 ยกการเหลืองเริ่มจากใบล่าง ขณะที่ระดับ 2 ยกสีใบจางลง เป็นต้น อย่าใช้ตัวอย่างเหล่านี้เพียงอย่างเดียวฟันธงว่าอาการที่เห็นมีสาเหตุเดียว",
+            "translatedFrom": "ja"
+          },
+          "km": {
+            "prompt": "ចូរបែងចែកឧទាហរណ៍នៃការខ្វះ និងលើសអាសូត ហើយពន្យល់ថាហេតុអ្វីមិនអាចកំណត់មូលហេតុតាមរោគសញ្ញាតែមួយមុខបាន។",
+            "modelAnswer": "អាសូតច្រើនពេកងាយធ្វើឱ្យរុក្ខជាតិលូតលាស់ទន់ខ្សោយ។ ចំពោះខ្វះ ឯកសារកម្រិត 1 និយាយពីស្លឹកក្រោមចាប់ផ្តើមលឿង ខណៈកម្រិត 2 មានឧទាហរណ៍ពណ៌ស្លឹកស្រាល។ កុំយកឧទាហរណ៍ទាំងនេះតែមួយមកសន្និដ្ឋានថារោគសញ្ញាដែលឃើញមានមូលហេតុតែមួយ។",
+            "translatedFrom": "ja"
+          },
+          "tl": {
+            "prompt": "Pag-ibahin ang mga halimbawa ng kakulangan at labis na nitrogen, at ipaliwanag kung bakit hindi matitiyak ang sanhi mula sa mga sintomas lamang.",
+            "modelAnswer": "Ang labis na nitrogen ay malamang na magdulot ng malambot at mahinang paglaki. Sa kakulangan, binabanggit ng Antas 1 ang paninilaw mula sa ibabang dahon, at ng Antas 2 ang pagkupas ng kulay ng dahon, bukod sa iba pa. Hindi sapat ang mga halimbawang ito upang tiyaking iisa ang sanhi ng aktuwal na sintomas.",
+            "translatedFrom": "ja"
+          }
+        },
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "answerOrigin": {
+          "parts": [
+            {
+              "lessonId": "agr-fertilizer-nutrients",
+              "paragraphIds": [
+                "agr-fertilizer-nutrients-p4"
+              ],
+              "sourceHash": "8ee2a583b39a2aef773e82669ddbaef65c3e60f9b6c6fa1cc809f7efb7c292ba"
+            }
+          ]
+        },
+        "promptRuby": [
+          {
+            "text": "ちっそがふそくしたときと、おおすぎるときのれいをくべつし、しょうじょうだけでげんいんをだんていできないりゆうもせつめいしましょう。"
+          }
+        ],
+        "modelAnswerRuby": [
+          {
+            "text": "窒素",
+            "readingKana": "ちっそ"
+          },
+          {
+            "text": "が"
+          },
+          {
+            "text": "多",
+            "readingKana": "おお"
+          },
+          {
+            "text": "すぎると"
+          },
+          {
+            "text": "軟弱",
+            "readingKana": "なんじゃく"
+          },
+          {
+            "text": "に"
+          },
+          {
+            "text": "育",
+            "readingKana": "そだ"
+          },
+          {
+            "text": "ちやすくなります。"
+          },
+          {
+            "text": "不足",
+            "readingKana": "ふそく"
+          },
+          {
+            "text": "については、1"
+          },
+          {
+            "text": "号資料",
+            "readingKana": "ごうしりょう"
+          },
+          {
+            "text": "では"
+          },
+          {
+            "text": "下葉",
+            "readingKana": "したば"
+          },
+          {
+            "text": "からの"
+          },
+          {
+            "text": "黄化",
+            "readingKana": "おうか"
+          },
+          {
+            "text": "、2"
+          },
+          {
+            "text": "号資料",
+            "readingKana": "ごうしりょう"
+          },
+          {
+            "text": "では"
+          },
+          {
+            "text": "葉色",
+            "readingKana": "はいろ"
+          },
+          {
+            "text": "が"
+          },
+          {
+            "text": "薄",
+            "readingKana": "うす"
+          },
+          {
+            "text": "くなることなどが"
+          },
+          {
+            "text": "挙",
+            "readingKana": "あ"
+          },
+          {
+            "text": "げられています。こうした"
+          },
+          {
+            "text": "例",
+            "readingKana": "れい"
+          },
+          {
+            "text": "だけで、"
+          },
+          {
+            "text": "目",
+            "readingKana": "め"
+          },
+          {
+            "text": "の"
+          },
+          {
+            "text": "前",
+            "readingKana": "まえ"
+          },
+          {
+            "text": "の"
+          },
+          {
+            "text": "症状",
+            "readingKana": "しょうじょう"
+          },
+          {
+            "text": "の"
+          },
+          {
+            "text": "原因",
+            "readingKana": "げんいん"
+          },
+          {
+            "text": "を"
+          },
+          {
+            "text": "一",
+            "readingKana": "ひと"
+          },
+          {
+            "text": "つに"
+          },
+          {
+            "text": "断定",
+            "readingKana": "だんてい"
+          },
+          {
+            "text": "しないようにします。"
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "AGR-S1",
+          "pdfPage": 23,
+          "elementIds": [
+            "AGR-S1:p23:e5",
+            "AGR-S1:p23:e6",
+            "AGR-S1:p23:e7",
+            "AGR-S1:p23:e8",
+            "AGR-S1:p23:e9",
+            "AGR-S1:p23:e10",
+            "AGR-S1:p23:e11",
+            "AGR-S1:p23:e12",
+            "AGR-S1:p23:e13",
+            "AGR-S1:p23:e14",
+            "AGR-S1:p23:e15",
+            "AGR-S1:p23:e16",
+            "AGR-S1:p23:e17",
+            "AGR-S1:p23:e18",
+            "AGR-S1:p23:e19",
+            "AGR-S1:p23:e20",
+            "AGR-S1:p23:e21",
+            "AGR-S1:p23:e22",
+            "AGR-S1:p23:e23",
+            "AGR-S1:p23:e24",
+            "AGR-S1:p23:e25",
+            "AGR-S1:p23:e26",
+            "AGR-S1:p23:e29",
+            "AGR-S1:p23:e31",
+            "AGR-S1:p23:e33",
+            "AGR-S1:p23:e35",
+            "AGR-S1:p23:e37",
+            "AGR-S1:p23:e39",
+            "AGR-S1:p23:e41",
+            "AGR-S1:p23:e43",
+            "AGR-S1:p23:e45",
+            "AGR-S1:p23:e47",
+            "AGR-S1:p23:e49",
+            "AGR-S1:p23:e51",
+            "AGR-S1:p23:e53",
+            "AGR-S1:p23:e55",
+            "AGR-S1:p23:e57"
+          ]
+        },
+        {
+          "sourceId": "AGR-S2",
+          "pdfPage": 29,
+          "elementIds": [
+            "AGR-S2:p29:e25",
+            "AGR-S2:p29:e26",
+            "AGR-S2:p29:e27",
+            "AGR-S2:p29:e28",
+            "AGR-S2:p29:e29",
+            "AGR-S2:p29:e30",
+            "AGR-S2:p29:e31",
+            "AGR-S2:p29:e32",
+            "AGR-S2:p29:e33",
+            "AGR-S2:p29:e34",
+            "AGR-S2:p29:e35",
+            "AGR-S2:p29:e36",
+            "AGR-S2:p29:e37",
+            "AGR-S2:p29:e38",
+            "AGR-S2:p29:e39",
+            "AGR-S2:p29:e40",
+            "AGR-S2:p29:e41",
+            "AGR-S2:p29:e42",
+            "AGR-S2:p29:e43",
+            "AGR-S2:p29:e44",
+            "AGR-S2:p29:e45",
+            "AGR-S2:p29:e46",
+            "AGR-S2:p29:e47",
+            "AGR-S2:p29:e48",
+            "AGR-S2:p29:e49",
+            "AGR-S2:p29:e50",
+            "AGR-S2:p29:e51",
+            "AGR-S2:p29:e52",
+            "AGR-S2:p29:e53",
+            "AGR-S2:p29:e54",
+            "AGR-S2:p29:e55",
+            "AGR-S2:p29:e56",
+            "AGR-S2:p29:e57",
+            "AGR-S2:p29:e58",
+            "AGR-S2:p29:e59",
+            "AGR-S2:p29:e60",
+            "AGR-S2:p29:e61",
+            "AGR-S2:p29:e62",
+            "AGR-S2:p29:e63",
+            "AGR-S2:p29:e64",
+            "AGR-S2:p29:e65",
+            "AGR-S2:p29:e66",
+            "AGR-S2:p29:e67",
+            "AGR-S2:p29:e68",
+            "AGR-S2:p29:e69",
+            "AGR-S2:p29:e70",
+            "AGR-S2:p29:e71",
+            "AGR-S2:p29:e72",
+            "AGR-S2:p29:e73",
+            "AGR-S2:p29:e74",
+            "AGR-S2:p29:e75",
+            "AGR-S2:p29:e76",
+            "AGR-S2:p29:e77",
+            "AGR-S2:p29:e78",
+            "AGR-S2:p29:e79",
+            "AGR-S2:p29:e80",
+            "AGR-S2:p29:e81",
+            "AGR-S2:p29:e82",
+            "AGR-S2:p29:e83",
+            "AGR-S2:p29:e84",
+            "AGR-S2:p29:e85"
+          ]
+        }
+      ]
+    }
+  ],
+  "canonicalUpdates": [
+    {
+      "knowledgeId": "agriculture-v2-AGR-K-F40-SOIL-COMPARE-02",
+      "proposedStatus": "covered_ai_after_integration_validation",
+      "statementJa": "土壌の種類や地下水位によって三相の割合は異なり、資料は黒ボク土と地下水位の高い水田の例を示す。",
+      "sourceRefs": [
+        {
+          "sourceId": "AGR-S1",
+          "pdfPage": 18,
+          "elementIds": [
+            "AGR-S1:p18:e165",
+            "AGR-S1:p18:e166",
+            "AGR-S1:p18:e167",
+            "AGR-S1:p18:e168",
+            "AGR-S1:p18:e169",
+            "AGR-S1:p18:e170",
+            "AGR-S1:p18:e171",
+            "AGR-S1:p18:e172",
+            "AGR-S1:p18:e173",
+            "AGR-S1:p18:e174",
+            "AGR-S1:p18:e175",
+            "AGR-S1:p18:e176",
+            "AGR-S1:p18:e177",
+            "AGR-S1:p18:e178",
+            "AGR-S1:p18:e179",
+            "AGR-S1:p18:e180",
+            "AGR-S1:p18:e181",
+            "AGR-S1:p18:e182",
+            "AGR-S1:p18:e183",
+            "AGR-S1:p18:e184",
+            "AGR-S1:p18:e185",
+            "AGR-S1:p18:e186",
+            "AGR-S1:p18:e187",
+            "AGR-S1:p18:e188",
+            "AGR-S1:p18:e189",
+            "AGR-S1:p18:e190",
+            "AGR-S1:p18:e191",
+            "AGR-S1:p18:e192",
+            "AGR-S1:p18:e193",
+            "AGR-S1:p18:e194",
+            "AGR-S1:p18:e195",
+            "AGR-S1:p18:e196",
+            "AGR-S1:p18:e197",
+            "AGR-S1:p18:e198",
+            "AGR-S1:p18:e199",
+            "AGR-S1:p18:e200",
+            "AGR-S1:p18:e201",
+            "AGR-S1:p18:e202",
+            "AGR-S1:p18:e203",
+            "AGR-S1:p18:e204",
+            "AGR-S1:p18:e205",
+            "AGR-S1:p18:e206",
+            "AGR-S1:p18:e207",
+            "AGR-S1:p18:e208",
+            "AGR-S1:p18:e209",
+            "AGR-S1:p18:e210",
+            "AGR-S1:p18:e211",
+            "AGR-S1:p18:e212",
+            "AGR-S1:p18:e213",
+            "AGR-S1:p18:e214",
+            "AGR-S1:p18:e215",
+            "AGR-S1:p18:e216",
+            "AGR-S1:p18:e217",
+            "AGR-S1:p18:e218",
+            "AGR-S1:p18:e219",
+            "AGR-S1:p18:e220",
+            "AGR-S1:p18:e221",
+            "AGR-S1:p18:e222",
+            "AGR-S1:p18:e223",
+            "AGR-S1:p18:e224",
+            "AGR-S1:p18:e225",
+            "AGR-S1:p18:e226",
+            "AGR-S1:p18:e227",
+            "AGR-S1:p18:e228",
+            "AGR-S1:p18:e229",
+            "AGR-S1:p18:e230",
+            "AGR-S1:p18:e231"
+          ]
+        }
+      ],
+      "teachingEvidenceFromPatch": 0,
+      "assessmentEvidenceFromAppendedCheck": "agr-reader-soil-special-three-phases",
+      "conditionsJa": [
+        "数値は掲載資料の条件付きの例であり、全ての土壌に一律の設定値として使わない。"
+      ],
+      "pageClosure": false
+    },
+    {
+      "knowledgeId": "agriculture-v2-AGR-K-FERTILIZER-NUTRIENTS-04",
+      "proposedStatus": "covered_ai_after_integration_validation",
+      "statementJa": "窒素過剰で軟弱になりやすく、不足時の症状例は1号で下葉の黄化、2号で葉色の低下などである。",
+      "sourceRefs": [
+        {
+          "sourceId": "AGR-S1",
+          "pdfPage": 23,
+          "elementIds": [
+            "AGR-S1:p23:e5",
+            "AGR-S1:p23:e6",
+            "AGR-S1:p23:e7",
+            "AGR-S1:p23:e8",
+            "AGR-S1:p23:e9",
+            "AGR-S1:p23:e10",
+            "AGR-S1:p23:e11",
+            "AGR-S1:p23:e12",
+            "AGR-S1:p23:e13",
+            "AGR-S1:p23:e14",
+            "AGR-S1:p23:e15",
+            "AGR-S1:p23:e16",
+            "AGR-S1:p23:e17",
+            "AGR-S1:p23:e18",
+            "AGR-S1:p23:e19",
+            "AGR-S1:p23:e20",
+            "AGR-S1:p23:e21",
+            "AGR-S1:p23:e22",
+            "AGR-S1:p23:e23",
+            "AGR-S1:p23:e24",
+            "AGR-S1:p23:e25",
+            "AGR-S1:p23:e26",
+            "AGR-S1:p23:e29",
+            "AGR-S1:p23:e31",
+            "AGR-S1:p23:e33",
+            "AGR-S1:p23:e35",
+            "AGR-S1:p23:e37",
+            "AGR-S1:p23:e39",
+            "AGR-S1:p23:e41",
+            "AGR-S1:p23:e43",
+            "AGR-S1:p23:e45",
+            "AGR-S1:p23:e47",
+            "AGR-S1:p23:e49",
+            "AGR-S1:p23:e51",
+            "AGR-S1:p23:e53",
+            "AGR-S1:p23:e55",
+            "AGR-S1:p23:e57"
+          ]
+        },
+        {
+          "sourceId": "AGR-S2",
+          "pdfPage": 29,
+          "elementIds": [
+            "AGR-S2:p29:e25",
+            "AGR-S2:p29:e26",
+            "AGR-S2:p29:e27",
+            "AGR-S2:p29:e28",
+            "AGR-S2:p29:e29",
+            "AGR-S2:p29:e30",
+            "AGR-S2:p29:e31",
+            "AGR-S2:p29:e32",
+            "AGR-S2:p29:e33",
+            "AGR-S2:p29:e34",
+            "AGR-S2:p29:e35",
+            "AGR-S2:p29:e36",
+            "AGR-S2:p29:e37",
+            "AGR-S2:p29:e38",
+            "AGR-S2:p29:e39",
+            "AGR-S2:p29:e40",
+            "AGR-S2:p29:e41",
+            "AGR-S2:p29:e42",
+            "AGR-S2:p29:e43",
+            "AGR-S2:p29:e44",
+            "AGR-S2:p29:e45",
+            "AGR-S2:p29:e46",
+            "AGR-S2:p29:e47",
+            "AGR-S2:p29:e48",
+            "AGR-S2:p29:e49",
+            "AGR-S2:p29:e50",
+            "AGR-S2:p29:e51",
+            "AGR-S2:p29:e52",
+            "AGR-S2:p29:e53",
+            "AGR-S2:p29:e54",
+            "AGR-S2:p29:e55",
+            "AGR-S2:p29:e56",
+            "AGR-S2:p29:e57",
+            "AGR-S2:p29:e58",
+            "AGR-S2:p29:e59",
+            "AGR-S2:p29:e60",
+            "AGR-S2:p29:e61",
+            "AGR-S2:p29:e62",
+            "AGR-S2:p29:e63",
+            "AGR-S2:p29:e64",
+            "AGR-S2:p29:e65",
+            "AGR-S2:p29:e66",
+            "AGR-S2:p29:e67",
+            "AGR-S2:p29:e68",
+            "AGR-S2:p29:e69",
+            "AGR-S2:p29:e70",
+            "AGR-S2:p29:e71",
+            "AGR-S2:p29:e72",
+            "AGR-S2:p29:e73",
+            "AGR-S2:p29:e74",
+            "AGR-S2:p29:e75",
+            "AGR-S2:p29:e76",
+            "AGR-S2:p29:e77",
+            "AGR-S2:p29:e78",
+            "AGR-S2:p29:e79",
+            "AGR-S2:p29:e80",
+            "AGR-S2:p29:e81",
+            "AGR-S2:p29:e82",
+            "AGR-S2:p29:e83",
+            "AGR-S2:p29:e84",
+            "AGR-S2:p29:e85"
+          ]
+        }
+      ],
+      "teachingEvidenceFromPatch": 1,
+      "assessmentEvidenceFromAppendedCheck": "agr-reader-soil-nitrogen-deficit-excess",
+      "conditionsJa": [
+        "症状例だけで現場の原因を窒素不足又は過剰に確定せず、追加施肥量も決めない。"
+      ],
+      "pageClosure": false
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "target": "scripts/agriculture/check-moisture-reader-checks-v2.cjs",
+  "before": "lessonId:'agr-rice'",
+  "after": "lessonId:'__no_agriculture_reader_checks__'",
+  "expectedOccurrences": 1,
+  "actualOccurrences": 0,
+  "reason": "agr-rice now legitimately has reader checks. The wrong-lesson fixture must use a sentinel with no checks, preserving actual rice activities and negative visibility coverage.",
+  "fixtureLessonHasChecks": true
+}
