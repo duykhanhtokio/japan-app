@@ -104,6 +104,14 @@ async function main() {
         .filter(name => (entry.name.endsWith('-recovered') ? /^batch-\d{3}\.json$/ : /^worker[1-6]\.json$/).test(name)).sort()
         .map(name => 'docs/localization-workspace/' + entry.name + '/' + name)),
   ];
+  // Flat region sessions use whole-scenario receipts from exclusive batch owners.
+  const flatRegionBase = 'docs/localization-workspace/region-review';
+  for (const session of fs.readdirSync(path.join(root, flatRegionBase), {withFileTypes: true})
+      .filter(entry => entry.isDirectory() && /^[a-z]+-\d{8}$/.test(entry.name)).sort((a,b) => a.name.localeCompare(b.name))) {
+    reviewFiles.push(...fs.readdirSync(path.join(root, flatRegionBase, session.name))
+      .filter(name => /^worker-[1-6]\.json$/.test(name)).sort()
+      .map(name => flatRegionBase + '/' + session.name + '/' + name));
+  }
   const regionBase = 'docs/localization-workspace/region-review/chubu';
   if (fs.existsSync(path.join(root, regionBase))) {
     for (const session of fs.readdirSync(path.join(root, regionBase)).filter(name => /^session-\d{3}$/.test(name)).sort()) {
@@ -115,12 +123,17 @@ async function main() {
   const amendments = require('./lib/dialogue-review-amendments.cjs').loadReviewAmendments({
     read, hash, digest, reviewFiles, exists: p => fs.existsSync(path.join(root, p)),
   });
+  // The newer independent Hokkaido session reread overlapping cases. Keep the
+  // original receipts as history; validate/count each case from its latest receipt.
+  const renewedHokkaido = new Set(reviewFiles.filter(file => file.includes('/hokkaido-context-2026-11-03/'))
+    .flatMap(file => read(file).reviews.map(row => row.scenarioId)));
   const reviewed = new Map();
   let reviewedFields = 0;
   for (const file of reviewFiles) {
     const receipt = require('./lib/dialogue-context-receipts.cjs').expandContextReceipt(read(file));
     assert.equal(receipt.nativeReviewed, false);
     for (const row of receipt.reviews) {
+      if (file.includes('/region-review/hokkaido-20261103/') && renewedHokkaido.has(row.scenarioId)) continue;
       assert(canonical.has(row.scenarioId));
       const turns = new Map(runtime.loadDialogueTurns(row.scenarioId).map(t => [t.id, t]));
       const seen = new Set();
