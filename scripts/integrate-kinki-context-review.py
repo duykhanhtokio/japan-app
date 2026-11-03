@@ -110,15 +110,20 @@ def main():
     queue['aiSentenceTaskReviewedScenarios']=sum(p['aiSentenceTaskReviewedScenarios'] for p in queue['prefectures'])
     queue['remainingSentenceTaskScenarios']=queue['canonicalScenarios']-queue['aiSentenceTaskReviewedScenarios']
     active=next((p for p in prefectures if p['pendingSentenceTaskScenarios']),None)
+    if active is None:
+        by_id={p['prefectureId']:p for p in queue['prefectures']}
+        active=next((by_id[pid] for pid in queue['order'] if pid in by_id and by_id[pid]['pendingSentenceTaskScenarios']),None)
     if active:
         queue['activePrefectureId']=active['prefectureId']
-        queue['activePrefectureNameJa']=next(p['nameJa'] for p in region['prefectures'] if p['prefectureId']==active['prefectureId'])
+        queue['activePrefectureNameJa']=next(p['nameJa'] for r in plan['regions'] for p in r['prefectures'] if p['prefectureId']==active['prefectureId'])
         queue['nextScenarioId']=next(s for c in active['cities'] for s in c['pendingSentenceTaskScenarioIds'])
         queue['nextBatch']=index[queue['nextScenarioId']]
+    else:
+        queue.update(activePrefectureId=None,activePrefectureNameJa=None,nextScenarioId=None,nextBatch=None)
     for b in manifest['completedBatches']:
         for f in b['files']:
             if f['path'] in changes: f['sha256']=filehash(f['path'])
-    plan['activeRegionId']='kinki'
+    plan['activeRegionId']=next((r['regionId'] for r in plan['regions'] if active and any(p['prefectureId']==active['prefectureId'] for p in r['prefectures'])),None)
     plan['fullContextReviewedScenarios']=queue['aiSentenceTaskReviewedScenarios']
     plan['remainingContextScenarios']=queue['remainingSentenceTaskScenarios']
     for r in plan['regions']:
