@@ -2,6 +2,8 @@
 import argparse
 import hashlib
 import gzip
+from functools import lru_cache
+from copy import deepcopy
 import json
 from pathlib import Path
 
@@ -10,6 +12,7 @@ BASE = ROOT / 'docs/localization-workspace/region-review/kanto-20261103'
 LOCALES = {'vi','en','id','tl','zh-CN','zh-TW','hi','bn','ne','my','th','km'}
 QUEUE = ROOT / 'docs/localization-workspace/naturalness-review-2026-10-25/prefecture-queue.json'
 
+@lru_cache(maxsize=128)
 def read(p):
     data = json.loads(Path(p).read_text())
     if isinstance(data, dict) and data.get('schemaVersion') == 'context-review-archive-v1':
@@ -129,7 +132,7 @@ def main():
     # Boundary batches may also contain another region's independently reviewed cases.
     baseline_hashes = read(BASE/'baseline-file-hashes.json')['files']
     for path, changes in changed.items():
-        original = read(ROOT/path)
+        original = deepcopy(read(ROOT/path))
         for change in reversed(changes):
             turn = original['scenarios'][change['scenarioId']]['turns'][change['turnId']]
             assert turn[change['field']] == change['after']
@@ -160,7 +163,7 @@ def main():
             assert sha(amendment['after']) == amendment['afterSha256']
             by_path.setdefault(path, []).append(amendment)
         for path, amendments in by_path.items():
-            original = read(ROOT/path)
+            original = deepcopy(read(ROOT/path))
             for amendment in reversed(amendments):
                 parts = amendment['jsonPointer'].split('/')[1:]
                 value = original
