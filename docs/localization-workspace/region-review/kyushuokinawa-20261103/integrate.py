@@ -32,12 +32,19 @@ for w in range(1,7):
             rows[row['scenarioId'],row['locale']]=row
     sids={sid for sid,loc in rows if {l for s,l in rows if s==sid}==locales}
     proposals=read(folder/'proposals.json')
-    previousPath=OUT/f'worker-{w}.json'
-    if previousPath.exists():
-        proposed={(p['path'],p['scenarioId'],p['turnId'],p['field']):(p['before'],p['after']) for p in proposals}
-        for p in read(previousPath)['changes']:
+    previousFiles=sorted(OUT.glob(f'worker-{w}*.json'))
+    previousRows={}; previousKeys=set()
+    proposed={(p['path'],p['scenarioId'],p['turnId'],p['field']):(p['before'],p['after']) for p in proposals}
+    for previousPath in previousFiles:
+        previous=read(previousPath)
+        for row in previous['reviews']:
+            key=(row['scenarioId'],row['locale'])
+            assert rows.get(key)==row, ('previous receipt lost or changed',key)
+            previousRows[key]=row
+        for p in previous['changes']:
             key=(p['path'],p['scenarioId'],p['turnId'],p['field'])
             assert proposed.get(key)==(p['before'],p['after']), ('previous correction log lost or changed',key)
+            previousKeys.add(key)
     applied=[]
     for prop in proposals:
         if prop['scenarioId'] not in sids: continue
@@ -69,7 +76,18 @@ for w in range(1,7):
             row['nativeReviewed']=False
             validrows.append(row)
     receipt={'status':'AI_CONTEXT_REVIEWED_NOT_NATIVE_CERTIFIED','nativeReviewed':False,'worker':w,'scenarios':sorted(sids),'scope':'Full Japanese context and all12 sentence/task sets; no native, metadata, device or release certification.','reviewedFields':len(sids)*192,'changedFields':len(applied),'reviews':validrows,'changes':applied,'reviewCriteria':notes,'sourceIssues':issues}
-    receiptWrites.append((OUT/f'worker-{w}.json',receipt))
+    newrows=[r for r in validrows if (r['scenarioId'],r['locale']) not in previousRows]
+    if newrows:
+        newids={r['scenarioId'] for r in newrows}
+        receipt['reviews']=newrows
+        receipt['scenarios']=sorted(newids)
+        receipt['reviewedFields']=len(newids)*192
+        receipt['changes']=[p for p in applied if (p['path'],p['scenarioId'],p['turnId'],p['field']) not in previousKeys]
+        receipt['changedFields']=len(receipt['changes'])
+        receipt['storage']='Additive receipt; previous receipt files retained byte-for-byte.'
+        part=1
+        while (OUT/f'worker-{w}-part-{part:04d}.json').exists():part+=1
+        receiptWrites.append((OUT/f'worker-{w}-part-{part:04d}.json',receipt))
     allreviewed.update(sids);allchanges+=applied
 assert priorReviewed <= allreviewed, ('existing valid evidence would be dropped', sorted(priorReviewed-allreviewed))
 for p,receipt in receiptWrites:write(p,receipt)

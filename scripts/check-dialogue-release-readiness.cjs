@@ -127,7 +127,7 @@ async function main() {
     reviewFiles.push(...fs.readdirSync(path.join(root, flatRegionBase, session.name))
       // Later independent work groups can retain worker numbers beyond 1–6.
       // Validate every numbered receipt; numbering is not concurrency or approval.
-      .filter(name => /^worker-[1-9]\d*\.json$/.test(name)).sort()
+      .filter(name => /^worker-[1-9]\d*(?:-part-\d+)?\.json$/.test(name)).sort()
       .map(name => flatRegionBase + '/' + session.name + '/' + name));
   }
   for (const regionId of ['chubu', 'tohoku', 'chugoku']) {

@@ -9,10 +9,14 @@ const {validateBatch,locales} = require(path.join(root,'scripts/lib/dialogue-tra
 const index = read('src/data/dialogue-content/locale-batch-index.json');
 const ids = new Map(); let fields=0,repairs=0;
 const cache = new Map();
-for(let worker=1;worker<=6;worker++) {
-  const receipt=JSON.parse(fs.readFileSync(path.join(__dirname,`worker-${worker}.json`),'utf8'));
+const receiptFiles=fs.readdirSync(__dirname).filter(f=>/^worker-[1-6](?:-part-\d+)?\.json$/.test(f)).sort();
+const rowKeys=new Set();
+for(const file of receiptFiles) {
+  const receipt=JSON.parse(fs.readFileSync(path.join(__dirname,file),'utf8'));
   assert.equal(receipt.nativeReviewed,false);
   for(const row of receipt.reviews) {
+    const rowKey=row.scenarioId+':'+row.locale;
+    assert(!rowKeys.has(rowKey),`Duplicate receipt ${rowKey}`);rowKeys.add(rowKey);
     const batch=index[row.scenarioId];
     if(!cache.has(batch)) {
       validateBatch(batch);
