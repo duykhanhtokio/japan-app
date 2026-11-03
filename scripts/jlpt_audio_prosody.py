@@ -3,6 +3,7 @@ import copy
 import hashlib
 import json
 import math
+import re
 from pathlib import Path
 
 SPOKEN_TEXT_NORMALIZATION = 'strip-ascii-layout-spaces-v1'
@@ -64,6 +65,36 @@ def acquire_engine_slot(root, *, blocking=True, slots=2, exclusive=False):
         time.sleep(.25)
 
 
+def prune_generated_wave_cache(root, cache, limit_bytes):
+    """Bound reproducible WAV cache without touching recordings or source data."""
+    root, cache = Path(root).resolve(), Path(cache).resolve()
+    allowed = root / 'docs/jlpt-workspace/audio-prosody-candidates'
+    if allowed not in cache.parents or not isinstance(limit_bytes, int) or limit_bytes <= 0:
+        raise ValueError('Unsafe generated cache cleanup scope')
+    with acquire_engine_slot(root, exclusive=True):
+        files = []
+        for path in cache.glob('*.wav'):
+            if re.fullmatch(r'[a-f0-9]{64}\.wav', path.name) and path.is_file():
+                stat = path.stat()
+                files.append((stat.st_mtime_ns, path.name, stat.st_size, path))
+        total = sum(row[2] for row in files)
+        before, removed = total, 0
+        for modified, name, size, path in sorted(files):
+            if total <= limit_bytes:
+                break
+            try:
+                stat = path.stat()
+                if (stat.st_mtime_ns, stat.st_size) != (modified, size):
+                    continue
+                path.unlink()
+                total -= size
+                removed += 1
+            except FileNotFoundError:
+                pass
+        return {'beforeBytes': before, 'remainingBytes': total, 'removedFiles': removed,
+                'freedBytes': before - total, 'limitBytes': limit_bytes}
+
+
 def acquire_render_lock(output, level, number):
     """Serialize direct and batch renderer invocations for one candidate form."""
     import fcntl
@@ -85,6 +116,21 @@ def reuse_rendered_candidate(root, output, profile, level, number):
     row = next(row for row in batch.inventory(profile) if row['level'] == level and row['number'] == int(number))
     batch.validate_candidate(row, Path(output), profile)
     return True
+
+
+def runtime_synthesis_limits(cpu_threads, restart_every, available_bytes=None):
+    """Keep inference below current memory pressure without changing speech."""
+    if available_bytes is None:
+        try:
+            fields = dict(line.split(':', 1) for line in Path('/proc/meminfo').read_text().splitlines())
+            available_bytes = int(fields['MemAvailable'].split()[0]) * 1024
+        except (OSError, KeyError, ValueError):
+            available_bytes = 0
+    if available_bytes < 2560 * 1024 * 1024:
+        return min(cpu_threads, 1), min(restart_every, 6)
+    if available_bytes < 4096 * 1024 * 1024:
+        return min(cpu_threads, 2), min(restart_every, 12)
+    return cpu_threads, restart_every
 
 
 def load_profile(path):

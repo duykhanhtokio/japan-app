@@ -6,7 +6,7 @@ import tempfile
 from unittest.mock import patch
 import importlib.util
 from pathlib import Path
-from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts, speech_query_text, validate_voice_catalog, acquire_engine_slot
+from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts, speech_query_text, validate_voice_catalog, acquire_engine_slot, runtime_synthesis_limits
 spec = importlib.util.spec_from_file_location('prosody_batch', Path(__file__).with_name('prepare-jlpt-prosody-batch.py'))
 batch = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(batch)
@@ -20,6 +20,29 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 class ProsodyTests(unittest.TestCase):
+    def test_cleanup_bounds_generated_cache_without_touching_assets(self):
+        import os
+        from jlpt_audio_prosody import prune_generated_wave_cache
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            cache = root / 'docs/jlpt-workspace/audio-prosody-candidates/test/cache'
+            cache.mkdir(parents=True)
+            files = []
+            for i in range(3):
+                path = cache / (str(i) * 64 + '.wav')
+                path.write_bytes(b'cache' * 20)
+                os.utime(path, ns=(i + 1, i + 1))
+                files.append(path)
+            unrelated = cache / 'user-recording.wav'
+            unrelated.write_bytes(b'preserve unrelated bytes')
+            result = prune_generated_wave_cache(root, cache, 200)
+            self.assertFalse(files[0].exists())
+            self.assertTrue(all(path.exists() for path in files[1:]))
+            self.assertEqual(unrelated.read_bytes(), b'preserve unrelated bytes')
+            self.assertEqual(result['freedBytes'], 100)
+            with self.assertRaises(ValueError):
+                prune_generated_wave_cache(root, root / 'assets/jlpt-original', 200)
+
     def setUp(self):
         self.profile = load_profile(ROOT / 'src/data/jlpt-original/prosody-candidate.json')
         self.query = {'speedScale': .9, 'intonationScale': 1, 'prePhonemeLength': .1, 'postPhonemeLength': .1,
@@ -106,6 +129,13 @@ class ProsodyTests(unittest.TestCase):
         catalog[0]['styles'][0]['name'] = '別のスタイル'
         with self.assertRaisesRegex(ValueError, 'approved voice'):
             validate_voice_catalog(catalog, casting)
+
+    def test_resource_limits_preserve_requested_ceiling_and_adapt_to_memory(self):
+        mib = 1024 * 1024
+        self.assertEqual(runtime_synthesis_limits(4, 24, 1700 * mib), (1, 6))
+        self.assertEqual(runtime_synthesis_limits(4, 24, 3000 * mib), (2, 12))
+        self.assertEqual(runtime_synthesis_limits(4, 24, 5000 * mib), (4, 24))
+        self.assertEqual(runtime_synthesis_limits(1, 3, 1700 * mib), (1, 3))
 
     def test_global_two_engine_bound_and_legacy_slot_compatibility(self):
         with tempfile.TemporaryDirectory() as directory:
