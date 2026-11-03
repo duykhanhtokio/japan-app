@@ -98,7 +98,7 @@ async function main() {
       .filter(name => /^kanazawa-\d{2}-\d{2}\.json$/.test(name)).sort()
       .map(name => 'docs/localization-workspace/naturalness-review-2026-11-03/' + name),
     ...fs.readdirSync(path.join(root, 'docs/localization-workspace'), {withFileTypes: true})
-      .filter(entry => entry.isDirectory() && /^context-parallel-2026-11-03(?:-round\d+|-recovered)?$/.test(entry.name))
+      .filter(entry => entry.isDirectory() && /^(?:context-parallel-2026-11-03(?:-round\d+|-recovered)?|hokkaido-context-2026-11-03)$/.test(entry.name))
       .sort((a, b) => a.name.localeCompare(b.name))
       .flatMap(entry => fs.readdirSync(path.join(root, 'docs/localization-workspace', entry.name))
         .filter(name => (entry.name.endsWith('-recovered') ? /^batch-\d{3}\.json$/ : /^worker[1-6]\.json$/).test(name)).sort()
