@@ -1,31 +1,49 @@
-# Dialogue contextual continuation —2026-11-03
+# Rà ngữ cảnh hội thoại — 03/11/2026
 
-Current progress:41/7,128 complete sentence/task sets reviewed in all12 locales;
-7,087 remain. This continuation adds8 scenarios,1,536 fields and16 targeted
-repairs. The first Kanazawa scenario was completed in the preceding commit.
-Japanese, stable IDs, turn order, audio, UI and native-review flags are preserved.
+**Đã rà thêm 20 bài ở đủ 12 ngôn ngữ, chưa hoàn tất toàn bộ corpus.**
+Tiến độ tăng từ 33 lên **53/7.128 bài**; còn **7.075 bài**.
+Cụm Kanazawa đạt **21/21 bài** trong phạm vi câu thoại và gợi ý.
 
-Read complete Japanese premises/exchanges plus all12 sentence/task sets for
-Kanazawa02–09. Receipts record every reviewed source/target hash and every
-before/after edit. Coverage-manifest hashes are synchronized only for edited
-locale files. No blanket semantic or native certification is claimed.
+## Nội dung đã xử lý
 
-Corrections clarify viewpoint/path instructions, photograph framing and contact
-methods, distinguish receiving medical preparation instructions from giving
-them, correct Bengali contact grammar, avoid translating a garment beneath a
-jacket as underwear, distinguish head removal from complete fish deboning,
-and repair a Thai indirect-question ending. Medical preparation and household
-eligibility remain fictional dialogue contexts; no new real-world rules added.
+Đã đọc trọn tình huống và đoạn hội thoại tiếng Nhật, rồi đối chiếu từng câu
+và gợi ý của đủ 12 ngôn ngữ cho Kanazawa 02–21: **3.840 trường**, **99 sửa đổi**.
+Năm receipt `kanazawa-02-05.json` đến `kanazawa-18-21.json` ghi hash từng
+nguồn/đích đã rà cùng mọi giá trị trước/sau. Tiếng Nhật, ID, thứ tự lượt,
+hình, âm thanh, giao diện và cờ chưa duyệt bản ngữ được giữ nguyên.
+Chỉ đồng bộ hash manifest của các file dịch đã sửa.
 
-Known issues:Japanese jacket dialogue changes from outer/inner layers to
-上下(top/bottom); retained and recorded. Learner-gender forms in existing
-Hindi/Thai/Khmer targets require a corpus-wide speaker/profile policy.
-AI context review with such findings is not source/native/release approval.
+Các sửa đổi gồm: góc quan sát và phạm vi lối đi; cửa sổ ngoài khung ảnh;
+nhận hướng dẫn chuẩn bị xét nghiệm thay vì tự đưa hướng dẫn; liên lạc khác
+với gọi điện; áo mặc dưới áo khoác khác với đồ lót; bỏ đầu cá khác với bỏ
+hết xương; xưng hô trung tính cho Sato; danh tính người gửi lời cầu nguyện;
+đồ ướt và túi bị rò nước; tư thế nằm khác với kết luận đang ngủ; và dùng
+cùng phiên bản bản vẽ thay vì sửa hình học cho các bản giống nhau.
 
-Next:SC-LOC-017-10-001,batch035. Continue the remaining Kanazawa scenarios,
-then remaining Ishikawa cities,using the canonical prefecture queue. This
-continuation does not claim completion of the remaining7,087 scenarios.
+## Giới hạn còn mở
 
-Validation:source/ID/speaker/task binding checks for batches034 and035 pass
-in all12 locales. `runtime-qa.json` exercises the real loader and checks all
-current contextual receipt hashes as well as full-corpus structural coverage.
+Receipt ghi riêng các vấn đề tiếng Nhật: lớp áo ngoài/trong rồi chuyển sang
+上下; nhiệm vụ báo người tiếp quản đã đồng ý nhưng câu nói mới chỉ xác nhận
+đã nhờ; và cách hiểu mệnh đề 友人だけに送るか先に聞きます. Các điểm này chưa
+được coi là đã chốt nguồn. Cách xưng hô theo giới tính người chơi ở một số
+ngôn ngữ còn cần chính sách profile thống nhất. Rà AI không phải duyệt bản ngữ.
+Metadata, kiểm thử thiết bị và nghiệm thu phát hành nằm ngoài kết quả này.
+
+## Kiểm tra
+
+Ba lô 034, 035, 036 khớp nguồn/ID/role/gợi ý ở đủ 12 ngôn ngữ. Bộ kiểm tra
+thực sự chạy qua loader toàn corpus, xác minh hash tất cả 10.176 trường đã
+rà từ các phiên, đối chiếu queue với receipt và kiểm tra tiếp 7.128 bài còn
+đủ dịch, hiragana và binding âm thanh. Các quyết định xử lý cũ vẫn không
+có mục pending/stale. Khóa giao diện JLPT 10/10 giữ nguyên.
+
+```bash
+node scripts/check-dialogue-release-readiness.cjs --technical-only --out /tmp/dialogue-runtime-qa.json
+```
+
+## Điểm tiếp tục
+
+`SC-LOC-JP-17205-01-001`, lô **460**, thành phố **Suzu (珠洲市)**.
+Queue chính: `../naturalness-review-2026-10-25/prefecture-queue.json`.
+Suzu, Hakui, Kahoku, Hakusan, Nomi và Nonoichi còn 48 bài tại Ishikawa.
+Toàn corpus còn 7.075 bài cần rà ngữ cảnh đủ 12 ngôn ngữ.

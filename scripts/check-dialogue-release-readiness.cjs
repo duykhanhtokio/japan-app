@@ -121,13 +121,21 @@ async function main() {
     }
   }
   const fullyReviewed = [...reviewed.values()].filter(s => locales.every(l => s.has(l))).length;
+  const queue = read('docs/localization-workspace/naturalness-review-2026-10-25/prefecture-queue.json');
+  const queuedReviewed = queue.prefectures.flatMap(p => p.cities.flatMap(c => c.sentenceTaskReviewedScenarioIds));
+  assert.equal(new Set(queuedReviewed).size, queuedReviewed.length, 'Scenario appears twice in reviewed queue');
+  assert.deepEqual(new Set(queuedReviewed), new Set(reviewed.keys()), 'Queue and revision-bound review receipts differ');
+  assert.equal(queue.aiSentenceTaskReviewedScenarios, fullyReviewed, 'Stale reviewed queue total');
+  assert.equal(queue.remainingSentenceTaskScenarios, canonical.size - fullyReviewed, 'Stale remaining queue total');
+  assert(canonical.has(queue.nextScenarioId) && !reviewed.has(queue.nextScenarioId), 'Next queue scenario is absent/already reviewed');
+  assert.equal(index[queue.nextScenarioId], queue.nextBatch, 'Next queue batch is incorrect');
   const report = {
     status: 'PASS_TECHNICAL_COVERAGE_RELEASE_INCOMPLETE',
     canonicalScenarios: canonical.size, batches: batches.length, targetLocales: locales,
     turnTranslations: sentences, hintTranslations: hints,
     currentSourceBoundHiraganaTurns: ruby, npcTurns: npc, playerTurns: player,
     currentSourceAndVoicePackedNpcTurns: packed,
-    contextReview: {revisionBoundScenariosAll12Locales: fullyReviewed, revisionBoundFields: reviewedFields, remainingScenarios: canonical.size - fullyReviewed, scope: 'AI sentence/task review only; known issues remain.'},
+    contextReview: {revisionBoundScenariosAll12Locales: fullyReviewed, revisionBoundFields: reviewedFields, remainingScenarios: canonical.size - fullyReviewed, nextScenarioId: queue.nextScenarioId, nextBatch: queue.nextBatch, queueMatchesReceipts: true, scope: 'AI sentence/task review only; known issues remain.'},
     nativeReviewed: false, nativePronunciationApproved: false, nativeDeviceVerified: false,
     releaseAccepted: false,
     acceptanceBlockers: [
