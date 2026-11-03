@@ -1,16 +1,16 @@
 # Kyushu & Okinawa — rà ngữ cảnh đủ 12 ngôn ngữ
 
-**873/1.064 bài** có receipt/hash hợp lệ trong cây dữ liệu này. Còn **191 bài**; chưa hoàn tất vùng. **Okinawa101/101** giữ nguyên.
+**920/1.064 bài** có receipt/hash hợp lệ trong cây dữ liệu này. Còn **144 bài**; chưa hoàn tất vùng. **Okinawa101/101** giữ nguyên.
 
 Sáu phạm vi độc lập, không kiểm chéo ngữ nghĩa. Fukuoka chia hai tập ID không giao nhau; các phạm vi khác là Saga–Nagasaki, Kumamoto, Oita–Miyazaki và Kagoshima. Giữ nguyên byte receipt cũ; điều phối chỉ kiểm sở hữu, cấu trúc, guard và hash.
 
 | Phạm vi | Đã rà/tổng | Còn |
 |---|---:|---:|
-|Fukuoka|230/245|15|
-|Saga + Nagasaki|163/210|47|
-|Kumamoto|104/125|21|
-|Oita + Miyazaki|141/218|77|
-|Kagoshima|134/165|31|
+|Fukuoka|243/245|2|
+|Saga + Nagasaki|169/210|41|
+|Kumamoto|106/125|19|
+|Oita + Miyazaki|158/218|60|
+|Kagoshima|143/165|22|
 |Okinawa|101/101|0|
 
 Tiếp tục đúng pendingScenarioIds, trừ mọi ID có receipt đầy đủ trong staging. Trước khi chuyển nhóm mới phải xác minh GitHub bằng check-work-persistence; commit cục bộ không thay thế bằng chứng lưu từ xa. Người dùng đã cho phép đẩy các kết quả Kyushu & Okinawa tiếp theo lên duykhanhtokio/japan-app, nhánh recovery/jlpt-n3-n1.
