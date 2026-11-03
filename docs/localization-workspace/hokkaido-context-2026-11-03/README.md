@@ -1,16 +1,16 @@
 # Rà ngữ cảnh hội thoại Hokkaido — 03/11/2026
 
-Đã có bằng chứng AI cho **144/299 bài**, còn **155 bài**. Chưa hoàn tất vùng.
+Đã có bằng chứng AI cho **242/299 bài**, còn **57 bài**. Chưa hoàn tất vùng.
 
-Sáu AI sở hữu các lô riêng theo số lô modulo 6; không kiểm chéo ngữ nghĩa. Giữ các bằng chứng hợp lệ trước đó. Chỉ cộng bài đã đọc ngữ cảnh Nhật cùng toàn bộ 11 câu thoại và 5 gợi ý trong đủ 12 ngôn ngữ; sàng lọc không tăng số này.
+Sáu AI sở hữu các lô riêng, phân công theo assignment.json (ban đầu theo số lô modulo 6, chỉ chuyển lô chưa đọc khi cân lại việc); không kiểm chéo ngữ nghĩa. Giữ các bằng chứng hợp lệ trước đó. Chỉ cộng bài đã đọc ngữ cảnh Nhật cùng toàn bộ 11 câu thoại và 5 gợi ý trong đủ 12 ngôn ngữ; sàng lọc không tăng số này.
 
 | AI | Bài đã rà | Trường đã rà | Trường sửa |
 | --- | ---: | ---: | ---: |
-| 1 | 20 | 3840 | 82 |
-| 2 | 23 | 4416 | 77 |
-| 3 | 35 | 6720 | 130 |
-| 4 | 24 | 4608 | 34 |
-| 5 | 21 | 4032 | 42 |
-| 6 | 21 | 4032 | 28 |
+| 1 | 33 | 6336 | 151 |
+| 2 | 39 | 7488 | 126 |
+| 3 | 58 | 11136 | 161 |
+| 4 | 42 | 8064 | 42 |
+| 5 | 34 | 6528 | 90 |
+| 6 | 36 | 6912 | 42 |
 
 Receipt worker1–6 ghi hash nguồn/đích và sửa đổi. assignment.json cố định phạm vi; progress.json và queue chuẩn ghi phần còn lại. Các vấn đề nguồn ghi riêng trong receipt. Bản dịch vẫn translated_ai_unreviewed; rà AI không phải duyệt bản ngữ, nghiệm thu phát âm, thiết bị hoặc phát hành.

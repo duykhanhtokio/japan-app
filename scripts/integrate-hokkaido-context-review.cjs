@@ -5,11 +5,15 @@ const {read, hash, locales, validateBatch} = require('./lib/dialogue-translation
 const crypto = require('node:crypto');
 const digest = s => crypto.createHash('sha256').update(s).digest('hex');
 const base = 'docs/localization-workspace/hokkaido-context-2026-11-03/';
+const assignment = read(base + 'assignment.json');
 const queuePath = 'docs/localization-workspace/naturalness-review-2026-10-25/prefecture-queue.json';
 const queue = read(queuePath), index = read('src/data/dialogue-content/locale-batch-index.json');
 const planPath = 'docs/localization-workspace/region-review/plan.json', plan = read(planPath);
 const hk = queue.prefectures.find(p => p.prefectureId === 'PRF-001');
 const member = new Set(hk.cities.flatMap(c => [...c.sentenceTaskReviewedScenarioIds, ...c.pendingSentenceTaskScenarioIds]));
+const assignedIds = assignment.workers.flatMap(w => w.scenarioIds);
+assert.equal(new Set(assignedIds).size, assignedIds.length, 'Overlapping scenario assignment');
+assert.deepEqual([...new Set(assignedIds)].sort(), [...member].sort(), 'Assignment omits region scenarios');
 const reviewed = new Map(), batchIds = new Set(), workers = [];
 const sources = new Map(), targets = new Map();
 const get = (cache, p) => { if (!cache.has(p)) cache.set(p, read(p)); return cache.get(p); };
@@ -17,12 +21,14 @@ for (let worker = 1; worker <= 6; worker++) {
   const p = base + `worker${worker}.json`;
   if (!fs.existsSync(p)) continue;
   const receipt = read(p);
+  const owner = assignment.workers.find(w => w.worker === worker);
   assert.equal(receipt.nativeReviewed, false, p);
   const ownIds = new Set();
   for (const row of receipt.reviews) {
     assert(member.has(row.scenarioId), 'Outside Hokkaido');
     const batch = index[row.scenarioId];
-    assert.equal(Number(batch) % 6, worker - 1, 'Wrong batch owner');
+    assert(owner.scenarioIds.includes(row.scenarioId), 'Wrong scenario owner');
+    assert.equal(assignment.batchOwners?.[batch] ?? Number(batch) % 6 + 1, worker, 'Wrong batch owner');
     assert(locales.includes(row.locale));
     const source = get(sources, `docs/localization-workspace/sources/dialogue-batch-${batch}.ja.json`).scenarios[row.scenarioId];
     const target = get(targets, `src/data/dialogue-content/locale-batches/${row.locale}/${batch}.json`).scenarios[row.scenarioId];
@@ -43,7 +49,9 @@ for (let worker = 1; worker <= 6; worker++) {
     ownIds.add(row.scenarioId); batchIds.add(batch);
   }
   for (const id of ownIds) assert(locales.every(l => reviewed.get(id + ':' + l) === worker), 'Incomplete12-locale review');
+  assert.deepEqual([...new Set(receipt.scenarios)].sort(), [...ownIds].sort(), 'Receipt scenario list differs from field evidence');
   assert.equal(receipt.reviewedFields, ownIds.size * 192);
+  assert.equal(receipt.changedFields, receipt.changes.length, 'Stale worker change count');
   workers.push({worker, scenarios: ownIds.size, fields: ownIds.size * 192, changes: receipt.changes.length, receipt: p, sha256: hash(p)});
 }
 const newIds = new Set([...reviewed.keys()].map(k => k.slice(0, k.lastIndexOf(':'))));
@@ -84,7 +92,7 @@ for (const [p,x] of [[queuePath,queue],[manifestPath,manifest],[planPath,plan],[
 const lines = [
   '# Rà ngữ cảnh hội thoại Hokkaido — 03/11/2026', '',
   `Đã có bằng chứng AI cho **${output.contextReviewed}/${output.total} bài**, còn **${output.remaining} bài**. ${output.remaining ? 'Chưa hoàn tất vùng.' : 'Hoàn tất lượt rà AI câu thoại/gợi ý đủ 12 ngôn ngữ; các vấn đề nguồn và nghiệm thu còn phân biệt riêng.'}`, '',
-  'Sáu AI sở hữu các lô riêng theo số lô modulo 6; không kiểm chéo ngữ nghĩa. Giữ các bằng chứng hợp lệ trước đó. Chỉ cộng bài đã đọc ngữ cảnh Nhật cùng toàn bộ 11 câu thoại và 5 gợi ý trong đủ 12 ngôn ngữ; sàng lọc không tăng số này.', '',
+  'Sáu AI sở hữu các lô riêng, phân công theo assignment.json (ban đầu theo số lô modulo 6, chỉ chuyển lô chưa đọc khi cân lại việc); không kiểm chéo ngữ nghĩa. Giữ các bằng chứng hợp lệ trước đó. Chỉ cộng bài đã đọc ngữ cảnh Nhật cùng toàn bộ 11 câu thoại và 5 gợi ý trong đủ 12 ngôn ngữ; sàng lọc không tăng số này.', '',
   '| AI | Bài đã rà | Trường đã rà | Trường sửa |',
   '| --- | ---: | ---: | ---: |',
   ...workers.map(w => `| ${w.worker} | ${w.scenarios} | ${w.fields} | ${w.changes} |`), '',
