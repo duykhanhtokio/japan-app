@@ -40,6 +40,31 @@ def main():
     members={s for p in prefectures for c in p['cities'] for k in ['sentenceTaskReviewedScenarioIds','pendingSentenceTaskScenarioIds'] for s in c[k]}
     previous={s for p in prefectures for c in p['cities'] for s in c['sentenceTaskReviewedScenarioIds']}
     complete=set(); owners={};changes={};workers=[];cache={};source_issues=set()
+    amendment_path=BASE/'source-amendments.json'
+    amendments=read(amendment_path)['amendments'] if amendment_path.exists() else []
+    amendment_packs={}
+    amended_sources=set()
+    for amendment in amendments:
+        sid,tid,batch=amendment['scenarioId'],amendment['turnId'],amendment['batch']
+        assert sid in members and index[sid]==batch
+        assert amendment['before']!=amendment['after'] and len(amendment['reason'])>=30
+        source_path=f'docs/localization-workspace/sources/dialogue-batch-{batch}.ja.json'
+        original=json.loads(subprocess.check_output(['git','show',BASELINE+':'+source_path],cwd=ROOT))
+        assert original['scenarios'][sid]['turns'][tid]['sourceJa']==amendment['before']
+        original['scenarios'][sid]['turns'][tid]['sourceJa']=amendment['after']
+        assert original==read(source_path), ('Unexplained source edit',source_path)
+        runtime_path=amendment['runtimePath']
+        assert runtime_path==f'src/data/generated/dialogues/{sid}.json'
+        original=json.loads(subprocess.check_output(['git','show',BASELINE+':'+runtime_path],cwd=ROOT))
+        turn=next(t for t in original['shared'] if t['id']==tid)
+        assert turn[amendment['runtimeSide']]['recommendedAnswerJa' if amendment['runtimeSide']=='player' else 'textJa']==amendment['before']
+        turn[amendment['runtimeSide']]['recommendedAnswerJa' if amendment['runtimeSide']=='player' else 'textJa']=amendment['after']
+        assert original==read(runtime_path), ('Unexplained runtime edit',runtime_path)
+        assert amendment['audioReviewStatus']=='pending_after_text_correction'
+        amended_sources.add(source_path)
+        for locale in LOCALES:
+            path=f'src/data/dialogue-content/locale-batches/{locale}/{batch}.json'
+            amendment_packs.setdefault(path,[]).append(amendment)
     def cached(p):
         if p not in cache: cache[p]=read(p)
         return cache[p]
@@ -89,14 +114,23 @@ def main():
             changes.setdefault(path,[]).append(change)
         workers.append({'worker':n,'reviewed':len(rows),'fields':len(rows)*192,'changedFields':len(edits),'receiptSha256':filehash(BASE/f'worker-{n}.json')})
     # Reconstruct every changed pack from Git plus the exact recorded edits.
-    for path,edits in changes.items():
+    for path in changes.keys()|amendment_packs.keys():
+        edits=changes.get(path,[])
         old=json.loads(subprocess.check_output(['git','show',BASELINE+':'+path],cwd=ROOT))
+        for amendment in amendment_packs.get(path,[]):
+            turn=old['scenarios'][amendment['scenarioId']]['turns'][amendment['turnId']]
+            assert turn['sourceJa']==amendment['before']
+            turn['sourceJa']=amendment['after']
         for edit in edits:
             t=old['scenarios'][edit['scenarioId']]['turns'][edit['turnId']]
             assert t[edit['field']]==edit['before'], ('Wrong before',path)
             t[edit['field']]=edit['after']
         if args.comparison_ref:
             old=json.loads(subprocess.check_output(['git','show',args.comparison_ref+':'+path],cwd=ROOT))
+            for amendment in amendment_packs.get(path,[]):
+                turn=old['scenarios'][amendment['scenarioId']]['turns'][amendment['turnId']]
+                assert turn['sourceJa'] in (amendment['before'],amendment['after'])
+                turn['sourceJa']=amendment['after']
             for edit in edits:
                 t=old['scenarios'][edit['scenarioId']]['turns'][edit['turnId']]
                 assert t[edit['field']] in (edit['before'],edit['after']), ('Concurrent field conflict',path)
@@ -123,8 +157,10 @@ def main():
     else:
         queue.update(activePrefectureId=None,activePrefectureNameJa=None,nextScenarioId=None,nextBatch=None)
     for b in manifest['completedBatches']:
+        source_path=f"docs/localization-workspace/sources/dialogue-batch-{b['batch']}.ja.json"
+        if source_path in amended_sources: b['sourceSha256']=filehash(source_path)
         for f in b['files']:
-            if f['path'] in changes: f['sha256']=filehash(f['path'])
+            if f['path'] in changes or f['path'] in amendment_packs: f['sha256']=filehash(f['path'])
     plan['activeRegionId']=next((r['regionId'] for r in plan['regions'] if active and any(p['prefectureId']==active['prefectureId'] for p in r['prefectures'])),None)
     plan['fullContextReviewedScenarios']=queue['aiSentenceTaskReviewedScenarios']
     plan['remainingContextScenarios']=queue['remainingSentenceTaskScenarios']
@@ -134,7 +170,7 @@ def main():
         r['contextReviewedScenarios']=sum(p['contextReviewedScenarios'] for p in r['prefectures'])
         r['remainingScenarios']=r['totalScenarios']-r['contextReviewedScenarios']
         r['status']='IN_PROGRESS' if r['remainingScenarios'] and r['contextReviewedScenarios'] else ('NOT_STARTED' if r['remainingScenarios'] else 'AI_CONTEXT_REVIEWED_NOT_NATIVE_CERTIFIED')
-    report={'status':'MECHANICAL_RECEIPT_VALIDATION_PASS','region':'kinki','total':len(members),'reviewed':len(previous|complete),'remaining':len(members-(previous|complete)),'sessionReviewed':len(complete),'sessionReadScenarios':sum(w['reviewed'] for w in workers),'sourceIssueScenarioIds':sorted(source_issues),'reviewedFields':len(complete)*192,'changedFields':sum(len(e) for e in changes.values()),'workers':workers,'nativeReviewed':False,'semanticCrossReview':False,'priorReviewedIdsPreserved':True}
+    report={'status':'MECHANICAL_RECEIPT_VALIDATION_PASS','region':'kinki','total':len(members),'reviewed':len(previous|complete),'remaining':len(members-(previous|complete)),'sessionReviewed':len(complete),'sessionReadScenarios':sum(w['reviewed'] for w in workers),'sourceIssueScenarioIds':sorted(source_issues),'japaneseSourceCorrections':len(amendments),'audioPendingScenarioIds':sorted({a['scenarioId'] for a in amendments}),'reviewedFields':len(complete)*192,'changedFields':sum(len(e) for e in changes.values()),'workers':workers,'nativeReviewed':False,'semanticCrossReview':False,'priorReviewedIdsPreserved':True}
     if args.write:
         for p,data in [(qp,queue),(pp,plan),(mp,manifest),(BASE/'progress.json',report)]: write(p,data)
     print(json.dumps(report))
