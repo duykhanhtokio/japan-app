@@ -57,11 +57,17 @@ for worker in range(1, 7):
     assigned = set(read(folder / 'assigned.json'))
     assert not assignment_union & assigned, 'overlapping worker assignments'
     assignment_union |= assigned
+    if not assigned:
+        continue
     if not (folder / 'receipt.json').exists():
         continue
     draft = read(folder / 'receipt.json')
     assert draft['nativeReviewed'] is False
-    published_owner = 1 if worker == 6 else worker
+    # A replacement wave may give an idle AI a disjoint part of another
+    # prefecture. Published ownership follows scenario IDs, not process names.
+    assigned_owners = {owners[sid] for sid in assigned}
+    assert len(assigned_owners) == 1, 'each draft folder needs one canonical owner'
+    published_owner = assigned_owners.pop()
     rows = {(r['scenarioId'], r['locale']): r for r in draft['reviews']}
     assert len(rows) == len(draft['reviews'])
     ids = {sid for sid, loc in rows}
