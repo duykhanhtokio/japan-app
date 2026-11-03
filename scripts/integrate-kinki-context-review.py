@@ -19,9 +19,16 @@ def write(p, data):
     (ROOT / p).write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n')
 
 def main():
+    global BASE, BASELINE
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
+    parser.add_argument('--session', default='docs/localization-workspace/region-review/kinki-20261103')
+    parser.add_argument('--baseline', default=BASELINE)
+    parser.add_argument('--comparison-ref', help='Preserve concurrent pack edits from this verified Git ref')
     args=parser.parse_args()
+    BASE=ROOT / args.session
+    assert BASE.resolve().is_relative_to((ROOT/'docs/localization-workspace/region-review').resolve())
+    BASELINE=args.baseline
     index=read('src/data/dialogue-content/locale-batch-index.json')
     qp='docs/localization-workspace/naturalness-review-2026-10-25/prefecture-queue.json'
     pp='docs/localization-workspace/region-review/plan.json'
@@ -86,6 +93,12 @@ def main():
             t=old['scenarios'][edit['scenarioId']]['turns'][edit['turnId']]
             assert t[edit['field']]==edit['before'], ('Wrong before',path)
             t[edit['field']]=edit['after']
+        if args.comparison_ref:
+            old=json.loads(subprocess.check_output(['git','show',args.comparison_ref+':'+path],cwd=ROOT))
+            for edit in edits:
+                t=old['scenarios'][edit['scenarioId']]['turns'][edit['turnId']]
+                assert t[edit['field']] in (edit['before'],edit['after']), ('Concurrent field conflict',path)
+                t[edit['field']]=edit['after']
         assert old==cached(path), ('Unexplained pack edit',path)
     for p in prefectures:
         for c in p['cities']:
