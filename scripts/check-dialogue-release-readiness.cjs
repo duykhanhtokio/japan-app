@@ -104,13 +104,21 @@ async function main() {
         .filter(name => (entry.name.endsWith('-recovered') ? /^batch-\d{3}\.json$/ : /^worker[1-6]\.json$/).test(name)).sort()
         .map(name => 'docs/localization-workspace/' + entry.name + '/' + name)),
   ];
+  const regionBase = 'docs/localization-workspace/region-review/chubu';
+  if (fs.existsSync(path.join(root, regionBase))) {
+    for (const session of fs.readdirSync(path.join(root, regionBase)).filter(name => /^session-\d{3}$/.test(name)).sort()) {
+      reviewFiles.push(...fs.readdirSync(path.join(root, regionBase, session))
+        .filter(name => /^worker[1-6]-part\d{4}\.json$/.test(name)).sort()
+        .map(name => regionBase + '/' + session + '/' + name));
+    }
+  }
   const amendments = require('./lib/dialogue-review-amendments.cjs').loadReviewAmendments({
     read, hash, digest, reviewFiles, exists: p => fs.existsSync(path.join(root, p)),
   });
   const reviewed = new Map();
   let reviewedFields = 0;
   for (const file of reviewFiles) {
-    const receipt = read(file);
+    const receipt = require('./lib/dialogue-context-receipts.cjs').expandContextReceipt(read(file));
     assert.equal(receipt.nativeReviewed, false);
     for (const row of receipt.reviews) {
       assert(canonical.has(row.scenarioId));
