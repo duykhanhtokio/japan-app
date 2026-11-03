@@ -1,0 +1,20 @@
+// Adds two focused missing assessments to the frozen owner proposal; no shared writes.
+const fs=require('fs'),assert=require('assert/strict'),vm=require('vm');
+const dir='docs/ssw-workspace/agriculture/continuation-20261103f/orchard/';
+const packet=JSON.parse(fs.readFileSync(dir+'unit-updates.json'));
+const lessons=JSON.parse(fs.readFileSync('src/data/agriculture/lessons.ja.json')).lessons;
+const texts=JSON.parse(fs.readFileSync(dir+'additive-texts.json'));
+const code=fs.readFileSync(dir+'build.cjs','utf8');const dictionary=vm.runInNewContext('('+code.match(/const dictionary=(\{[^\n]+\});/)[1]+')');
+Object.assign(dictionary,{'人工受粉':'じんこうじゅふん','摘花':'てきか','防除':'ぼうじょ','花粉':'かふん','付ける':'つける','被害':'ひがい','備える':'そなえる','一つ':'ひとつ','作業':'さぎょう','全て':'すべて','終わる':'おわる','果樹園':'かじゅえん','線路':'せんろ','沿って':'そって','運ぶ':'はこぶ','方式':'ほうしき','車両':'しゃりょう','運搬':'うんぱん','名称':'めいしょう','乗車':'じょうしゃ','積載量':'せきさいりょう','決められます':'きめられます','沿う':'そう','運搬車':'うんぱんしゃ','見た目':'みため','可否':'かひ','決める':'きめる'});
+const dk=Object.keys(dictionary).sort((a,b)=>b.length-a.length);function ruby(t){const out=[];let i=0;while(i<t.length){const k=dk.find(k=>t.startsWith(k,i));if(k){out.push({text:k,readingKana:dictionary[k]});i+=k.length;}else{let j=i+1;while(j<t.length&&!dk.some(k=>t.startsWith(k,j)))j++;const s=t.slice(i,j);assert(!/[\p{Script=Han}々]/u.test(s),'Unmapped '+s);out.push({text:s});i=j;}}return out;}
+const specs={apple:{suffix:'CITRUS-APPLE-GRAPE-03',lesson:'agr-fruit-manage-citrus-apple-grape',pis:[2]},transport:{suffix:'MATERIALS-MACHINES-05',lesson:'agr-fruit-manage-materials-machines',pis:[4]}};
+for(const [k,t]of Object.entries(texts)){
+ const spec=specs[k],l=lessons.find(l=>l.id===spec.lesson),u=packet.updates.find(u=>u.knowledgeId.endsWith(spec.suffix));assert(u);assert.equal(u.after.status,'partial');
+ const translations=Object.fromEntries(Object.entries(t.translations).map(([lc,[prompt,modelAnswer]])=>[lc,{prompt,modelAnswer,translatedFrom:'ja'}]));assert.equal(Object.keys(translations).length,12);
+ const row={id:'agr-reader-orchard-f-'+k,knowledgeId:u.knowledgeId,lessonId:l.id,levels:l.levels,promptJa:t.promptJa,modelAnswerJa:t.modelAnswerJa,promptRuby:ruby(t.promptJa),modelAnswerRuby:ruby(t.modelAnswerJa),translations,nativeReviewed:false,domainReviewed:false,sourceRefs:u.after.sourceRefs,answerOrigin:{parts:[{lessonId:l.id,paragraphIds:spec.pis.map(i=>l.paragraphs[i].id),sourceHash:l.sourceHash}],sourceBoundSupplement:true}};
+ for(const f of ['prompt','modelAnswer'])assert.equal(row[f+'Ruby'].map(x=>x.text).join(''),row[f+'Ja']);assert(!packet.readerAdditions.some(c=>c.id===row.id));packet.readerAdditions.push(row);
+ u.after.assessmentEvidence.push({checkId:row.id,relation:'direct',semanticReviewed:true,reviewNote:'Owner-authored second-pass retrieval directly asks the previously missing job/transport distinction and bounded operating-condition caution, rather than treating the older single-topic question as whole-unit evidence.'});u.after.after.assessment='present';u.after.status='covered_ai';u.after.unresolved=[];
+}
+fs.writeFileSync(dir+'unit-updates.json',JSON.stringify(packet,null,2)+'\n');
+for(const f of ['source-review.json','validation.json']){const d=JSON.parse(fs.readFileSync(dir+f));d.proposedCoveredUnits=35;d.coveredUnits=35;d.newReaderChecks=5;d.newChecks=5;d.newLocalePairs=60;d.newCheckLocalePairs=60;d.partialUnits=f==='source-review.json'?packet.updates.filter(u=>u.after.status==='partial').map(u=>({knowledgeId:u.knowledgeId,unresolved:u.after.unresolved})):1;d.additivePass={closed:['CITRUS-APPLE-GRAPE-03','MATERIALS-MACHINES-05'],remaining:'MATERIALS-MACHINES-06 needs specific regulator-purpose teaching and assessment; hand tools/weather evidence is not accepted as that whole paragraph.',newRetrievals:2,translationPairs:24};fs.writeFileSync(dir+f,JSON.stringify(d,null,2)+'\n');}
+console.log(JSON.stringify({reviewed:packet.updates.length,covered:packet.updates.filter(x=>x.after.status==='covered_ai').length,partial:packet.updates.filter(x=>x.after.status==='partial').length,checks:packet.readerAdditions.length,localePairs:packet.readerAdditions.length*12}));

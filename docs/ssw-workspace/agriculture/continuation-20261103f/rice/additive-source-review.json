@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "worker": "rice",
+  "sourceId": "AGR-S2",
+  "sourceSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+  "sourceTextAndPixelsSelfInspected": true,
+  "pdfPages": [
+    63,
+    64,
+    67,
+    68,
+    70
+  ],
+  "groups": [
+    {
+      "name": "種子構造・移植用育苗・催芽三状態",
+      "units": 3
+    },
+    {
+      "name": "飼料用の連携・評価軸・費用の統合",
+      "units": 2
+    },
+    {
+      "name": "収穫後工程と水田管理の区別",
+      "units": 2
+    }
+  ],
+  "newlyCoveredAi": 2,
+  "retainedPartial": 5,
+  "knowledgeIds": [
+    "agriculture-v2-AGR-K-RICEWORK-SEED-01",
+    "agriculture-v2-AGR-K-RICEWORK-NURSERY-01",
+    "agriculture-v2-AGR-K-RICEWORK-SOAKING-05",
+    "agriculture-v2-AGR-K-RICEWORK-FEED-06",
+    "agriculture-v2-AGR-K-PAR11-RICEVEG-FEED-DETAILS-06",
+    "agriculture-v2-AGR-K-RICEWORK-HARVEST-06",
+    "agriculture-v2-AGR-K-RICEWORK-PROCESSING-06"
+  ],
+  "partialReasons": [
+    {
+      "knowledgeId": "agriculture-v2-AGR-K-RICEWORK-NURSERY-01",
+      "remaining": [
+        "育苗箱の操作順を問う既存問題だけでは、直播との区別と移植用苗を育てる目的を直接評価した証拠が不足する。"
+      ]
+    },
+    {
+      "knowledgeId": "agriculture-v2-AGR-K-RICEWORK-SOAKING-05",
+      "remaining": [
+        "ハト胸約1mmの名称を問う既存問題は、三状態を実際に見分ける読図評価にはならない。独立図と三状態を対応させる評価が必要。"
+      ]
+    },
+    {
+      "knowledgeId": "agriculture-v2-AGR-K-RICEWORK-FEED-06",
+      "remaining": [
+        "利用部位・加工形態・収穫段階の比較活動だけでは、生産側と利用側の協力や費用の観点を直接評価できない。"
+      ]
+    },
+    {
+      "knowledgeId": "agriculture-v2-AGR-K-RICEWORK-HARVEST-06",
+      "remaining": [
+        "既存の収穫活動は刈取り・脱穀ともみすりを分けるが、乾燥から調整・出荷までの全段階を含む説明と直接評価の対応は未完了。"
+      ]
+    },
+    {
+      "knowledgeId": "agriculture-v2-AGR-K-RICEWORK-PROCESSING-06",
+      "remaining": [
+        "既存活動は田に残る物を別の流れにするが、切り株・わらの分解促進と雑草への作用という目的を十分評価する根拠が不足する。"
+      ]
+    }
+  ],
+  "sourceCoveragePercent": null,
+  "wholeSourceKnowledgeCovered": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false
+}
