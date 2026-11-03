@@ -4,9 +4,9 @@ Status: IN_PROGRESS. This checkpoint does not certify the corpus.
 
 Active resume authority: `prefecture-queue.json`. Work by prefecture, then city,
 then complete scenario sets across all 12 target locales. Ishikawa PRF-017 has
-101 scenarios across 11 cities; Kaga, Komatsu, Nanao and Wajima now have all
-32 sentence/task sets context-reviewed. Metadata, Japanese author issues and
-visual/native review are distinct and unfinished. Next: SC-LOC-017-01-001,
+101 scenarios across 11 cities; Kaga, Komatsu, Nanao and Wajima have32 sentence/task sets context-reviewed; the first Kanazawa
+set adds one, for33 total. Metadata, Japanese author issues and
+visual/native review are distinct and unfinished. Next: SC-LOC-017-02-001,
 batch 034 (Kanazawa).
 
 Publisher scope: all 7,128 Japanese scenarios and all 12 target locales,
@@ -160,3 +160,15 @@ starting SC-LOC-017-01-001, then the other six Ishikawa cities (48 scenarios).
 Corpus sentence/task progress is 32/7,128. Metadata, other learning/UI content,
 source issues, native review and device/browser visual validation remain open.
 This checkpoint is not a statement that the prefecture or corpus is finished.
+
+
+## Current-source release audit —2026-11-03
+
+See `../release-audit-2026-11-03/README.md`. Revalidated all714 batches and
+1,368,576 target sentence/task fields. The first Kanazawa scenario now has
+192 revision-bound AI-reviewed fields and seven targeted repairs. The queue is
+33/7,128 reviewed scenario sets;7,095 remain. `kanazawa-01-context-review.json`
+records remaining learner-gender wording issues. Native review, metadata
+localization, whole-corpus semantics and native device acceptance remain open.
+Next: SC-LOC-017-02-001, batch034. Do not count full structural coverage as
+full semantic approval.

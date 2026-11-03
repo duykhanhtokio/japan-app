@@ -23,3 +23,28 @@ TOKUTEI_QA_MODULES=/path/to/node_modules node scripts/dialogue-voice/check.cjs /
 The generator defaults to all missing lines if --limit is omitted. Every clip is atomic and resumable, keyed by engine/version, voice ID, source Japanese, source-bound kana and synthesis settings; MP3 hashes are verified on reuse. Registry updates are atomic. Engine subprocess is always stopped at exit. On this host the temporary restored official0.25.2 engine is /tmp/dialogue-voicevox/linux-cpu-x64/run. It was downloaded from https://github.com/VOICEVOX/voicevox_engine/releases/download/0.25.2/voicevox_engine-linux-cpu-x64-0.25.2.7z.001 and extracted using py7zr. Host engine/cache paths are temporary, not durable deliverables.
 
 Next: generate and persist remaining audio in bounded complete units; audit pronunciation (especially previously corrected homographs and proper names); native-device playback and interruptions. Full-corpus asset download/installation size must be measured and a distribution strategy implemented before declaring a production-ready whole-corpus audio release. This initial static asset registry demonstrates correct playback/casting, not a claim that bundling tens of thousands of MP3s is a release-ready distribution strategy. No generator or other background worker is left running by this checkpoint.
+
+
+## Current-source verification —2026-11-03
+
+This inventory supersedes the historical24-clip/33-binding counts above.
+Factory run40181116462 completed successfully. The current committed release
+manifest is complete:7,128 scenarios,42,768 NPC bindings,42,158 unique clips
+and96 MP3 packs (1,585,851,408 bytes;73.419 audio hours). All current Japanese,
+source-bound kana, character roles, speaker IDs, engine/settings identities,
+clip offsets and uploaded asset size/SHA256 digests match. The GitHub audio
+asset release remains tagged prerelease. These are technical coverage facts,
+not listening or app-release approval.
+
+Four current clips, one per approved voice, were downloaded by exact byte
+range and decoder-tested: HTTP206, expected byte counts/durations, non-silent.
+This does not establish human listening, accent accuracy, or native playback.
+`factory/check-playback.cjs` passes seek, boundary, interruption, cancellation
+and no learner engine request for packed audio. Native iOS/Android playback
+and whole-corpus pronunciation review remain unverified.
+
+Reproduce after preparing the current plan:
+`python3 scripts/dialogue-voice/check-release.py --plan /path/to/current-plan.json
+--assets-json /path/to/fresh-github-release.json`. Without the optional snapshot,
+the validator checks local bindings but does not claim a new remote asset check.
+Detailed evidence: `release-audit-2026-11-03/`.
