@@ -71,6 +71,11 @@ def prune_generated_wave_cache(root, cache, limit_bytes):
     allowed = root / 'docs/jlpt-workspace/audio-prosody-candidates'
     if allowed not in cache.parents or not isinstance(limit_bytes, int) or limit_bytes <= 0:
         raise ValueError('Unsafe generated cache cleanup scope')
+    current = sum(path.stat().st_size for path in cache.glob('*.wav')
+                  if re.fullmatch(r'[a-f0-9]{64}\.wav', path.name) and path.is_file())
+    if current <= limit_bytes:
+        return {'beforeBytes': current, 'remainingBytes': current, 'removedFiles': 0,
+                'freedBytes': 0, 'limitBytes': limit_bytes}
     with acquire_engine_slot(root, exclusive=True):
         files = []
         for path in cache.glob('*.wav'):
@@ -126,10 +131,10 @@ def runtime_synthesis_limits(cpu_threads, restart_every, available_bytes=None):
             available_bytes = int(fields['MemAvailable'].split()[0]) * 1024
         except (OSError, KeyError, ValueError):
             available_bytes = 0
-    if available_bytes < 2560 * 1024 * 1024:
-        return min(cpu_threads, 1), min(restart_every, 6)
     if available_bytes < 4096 * 1024 * 1024:
-        return min(cpu_threads, 2), min(restart_every, 12)
+        return min(cpu_threads, 1), 1
+    if available_bytes < 6144 * 1024 * 1024:
+        return min(cpu_threads, 2), min(restart_every, 6)
     return cpu_threads, restart_every
 
 

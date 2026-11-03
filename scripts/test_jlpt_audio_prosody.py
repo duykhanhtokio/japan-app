@@ -132,10 +132,10 @@ class ProsodyTests(unittest.TestCase):
 
     def test_resource_limits_preserve_requested_ceiling_and_adapt_to_memory(self):
         mib = 1024 * 1024
-        self.assertEqual(runtime_synthesis_limits(4, 24, 1700 * mib), (1, 6))
-        self.assertEqual(runtime_synthesis_limits(4, 24, 3000 * mib), (2, 12))
-        self.assertEqual(runtime_synthesis_limits(4, 24, 5000 * mib), (4, 24))
-        self.assertEqual(runtime_synthesis_limits(1, 3, 1700 * mib), (1, 3))
+        self.assertEqual(runtime_synthesis_limits(4, 24, 1700 * mib), (1, 1))
+        self.assertEqual(runtime_synthesis_limits(4, 24, 3000 * mib), (1, 1))
+        self.assertEqual(runtime_synthesis_limits(4, 24, 5000 * mib), (2, 6))
+        self.assertEqual(runtime_synthesis_limits(1, 3, 1700 * mib), (1, 1))
 
     def test_global_two_engine_bound_and_legacy_slot_compatibility(self):
         with tempfile.TemporaryDirectory() as directory:
