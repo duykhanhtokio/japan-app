@@ -1,0 +1,40 @@
+{
+  "status": "DISK_PAUSE_HANDOFF_NOT_COMPLETED_REVIEWS",
+  "reason": "disk became full; space recovered to2.8GB before persistence",
+  "partialReadState": {
+    "worker2": {
+      "ids": [
+        "SC-LOC-JP-15206-01-001",
+        "SC-LOC-JP-15206-02-001"
+      ],
+      "japaneseRead": true,
+      "localesRead": []
+    },
+    "worker3": {
+      "ids": [
+        "SC-LOC-NIG-JOETSU-03-001",
+        "SC-LOC-NIG-JOETSU-04-001"
+      ],
+      "japaneseRead": true,
+      "localesRead": []
+    },
+    "worker4": {
+      "ids": [
+        "SC-LOC-JP-23226-04-001",
+        "SC-LOC-JP-23226-05-001"
+      ],
+      "japaneseRead": true,
+      "localesRead": [
+        "en",
+        "vi",
+        "id",
+        "tl",
+        "zh-CN",
+        "zh-TW"
+      ]
+    }
+  },
+  "wholeScenarioAttestation": false,
+  "countsAsReviewedScenarios": 0,
+  "resume": "Reuse read state only within same owner context. Fresh context must read actual pending bodies before attestation; never rereview completed receipts."
+}

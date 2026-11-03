@@ -30,3 +30,7 @@ python3 scripts/dialogue-region-review.py record 1 --input /tmp/worker1-read-gro
 `record` kiểm ownership, giá trị trước sửa, đủ 12 attestation và lưu phần bằng chứng bất biến `worker1-part0001.json`. Định dạng gọn tách 16 hash nguồn chung khỏi 12×16 hash đích; không thay việc đọc thật bằng hashing. Kiểm tra triển khai mở rộng lại đúng từng trường và đối chiếu nội dung hiện hành, metadata Nhật, ownership và độ phủ. Test fixture chỉ chạy trong bộ nhớ, không được lưu hoặc tính là bài đã rà.
 
 Không sửa receipt cũ và không tính lại bài đã có bằng chứng. Intent PREPARED phải được phục hồi có kiểm tra, không ghi đè bỏ dở. Điều phối viên chốt các mốc lưu có kiểm tra trong khi mục tiêu toàn vùng vẫn mở; chỉ ghi hoàn tất Chubu khi có đủ 1.432/1.432 bài có receipt hợp lệ, pending=0. Rà AI, nguồn chưa rõ, duyệt bản ngữ, thiết bị và nghiệm thu phát hành là các trạng thái riêng.
+
+## Đồng thời nhiều vùng
+
+Checkpoint Chubu dùng nhánh `review/chubu-context-20261103` để bảo toàn tiến độ trong khi các phiên vùng khác cập nhật nhánh chung. Cuối vùng hợp nhất vào `recovery/jlpt-n3-n1` và kiểm tra hợp nhất. Mỗi checkpoint kiểm toàn bộ receipt ngữ cảnh cùng các lô nguồn/đích liên quan bằng `--context-only --batches`; báo cáo nêu rõ không kiểm lại âm thanh/hiragana toàn corpus ở bước này. Kiểm toàn corpus mặc định giữ nguyên và được chạy tại mốc nghiệm thu vùng. Không tăng số bài hoàn tất chỉ vì tạo checkpoint.

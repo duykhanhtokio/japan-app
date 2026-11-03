@@ -1,7 +1,22 @@
-# Rà hội thoại theo region
+# Tổng hợp rà ngữ cảnh hội thoại — 03/11/2026
 
-Áp dụng yêu cầu chuyển từ phân lô rải nhiều vùng sang hoàn tất từng region. Cả6AI tập trung một region đang làm, chia nhóm thành phố/bài độc lập; không kiểm chéo ngữ nghĩa. Quyền ghi file lô dịch phải độc quyền dù một lô chứa bài của nhiều nhóm. Cân lại việc chưa đọc trong cùng vùng trước khi chuyển vùng.
+Đã hợp nhất các mốc hoàn tất vào cùng một cây dữ liệu: **7.128/7.128 bài, đủ 12 ngôn ngữ; còn 0 bài**. Kiểm tra cơ học nguồn/bản dịch đối chiếu với bằng chứng hiện hành: **1.368.576 trường PASS**. Không rà lại hay kiểm chéo ngữ nghĩa.
 
-Yêu cầu mới nhất: tập trung Hokkaido bằng6AI độc lập. Giữ phần Chubu/Kinki đã có bằng chứng; các vùng tiếp theo theo plan.json. Đây là thứ tự triển khai, không tuyên bố đã khởi chạy worker trong lượt kiểm kê. Mỗi lần tiếp tục phải tính lại số liệu từ queue chuẩn; plan.json chỉ là snapshot.
+| Vùng | Đã rà | Còn lại |
+|---|---:|---:|
+| Hokkaido | 299/299 | 0 |
+| Tohoku | 702/702 | 0 |
+| Kanto | 1.681/1.681 | 0 |
+| Chubu | 1.432/1.432 | 0 |
+| Kinki/Kansai | 1.115/1.115 | 0 |
+| Chugoku | 479/479 | 0 |
+| Shikoku | 356/356 | 0 |
+| Kyushu & Okinawa | 1.064/1.064 | 0 |
 
-Sàng lọc nhanh đã phủ cả8vùng. Mốc cũ có448 bài:Chubu439 vàKinki9. Lượt Hokkaido thêm46 bài; tổng hiện tại494/7.128. Chưa region nào hoàn tất rà sâu. Chỉ chốt vùng khi mọi bài có receipt hiện hành; vẫn phân biệt nguồn chưa rõ, bản ngữ, phát âm và thiết bị. Không làm lại các bài đã có bằng chứng hợp lệ.
+Các mốc nguồn: nhánh tích hợp `8e7c44933414dfab58d88b956a891fcf86e724aa`; Chubu `9cc7e069be1ab87684fc94a5ff4ae91e006ea14b`; Kinki `21580b3bbd89db21539e148185aaea56d5f1580f`; Chugoku `daed580e2a75f87802983758b50d7d0c38b8f1f3`.
+
+Giữ nguyên toàn bộ receipt/assignment đã lưu trên nhánh tích hợp. Khi có bản sửa đồng thời, giữ cả hai lịch sử; bài đã có bằng chứng trên nhánh tích hợp giữ nội dung hiện hành, bài còn thiếu lấy toàn bộ bản đã rà từ đúng nhánh vùng. `union-validation-20261103.json` ghi bằng chứng hiện hành theo từng bài/ngôn ngữ. Các hồ sơ cũ không khớp phiên bản được giữ làm lịch sử, không tự tạo bằng chứng mới hoặc cộng trùng. Một trường sửa đã có hồ sơ bổ sung được đối chiếu qua chuỗi amendment có hash.
+
+Chạy `node --max-old-space-size=384 scripts/check-dialogue-regional-union.cjs` để kiểm tra lại. Bảng `plan.json` và hàng đợi chuẩn đã đồng bộ; các báo cáo phiên con là checkpoint lịch sử, không phải tổng hiện hành.
+
+Đây là hoàn tất rà ngữ cảnh bằng AI. Các vấn đề nguồn Nhật đã ghi nhận, nghiệm thu bản ngữ, âm thanh, furigana/hiển thị và thiết bị vẫn riêng biệt; không đánh dấu chứng nhận phát hành. Không có worker chạy ngầm.

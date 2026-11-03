@@ -7,6 +7,7 @@ const assert = require('node:assert/strict');
 const {root, read, locales, validateBatch, hash} = require('./lib/dialogue-translation-validation.cjs');
 const digest = text => crypto.createHash('sha256').update(text).digest('hex');
 const args = process.argv.slice(2);
+const contextOnly = args.includes('--context-only');
 
 async function main() {
   const built = await require('esbuild').build({
@@ -64,10 +65,15 @@ async function main() {
   const index = read('src/data/dialogue-content/locale-batch-index.json');
   assert.deepEqual(new Set(Object.keys(index)), canonical, 'Translation index differs from canonical corpus');
   const batches = [...new Set(Object.values(index))].sort();
+  const batchArgumentAt = args.indexOf('--batches');
+  const checkedBatches = contextOnly
+    ? [...new Set(batchArgumentAt >= 0 ? args[batchArgumentAt + 1].split(',').filter(Boolean) : [])].sort()
+    : batches;
+  for (const batch of checkedBatches) assert(batches.includes(batch), 'Unknown requested batch ' + batch);
   const progress = read('docs/localization-workspace/DIALOGUE_TRANSLATION_PROGRESS.json');
   const receipts = new Map(progress.completedBatches.map(b => [b.batch, b]));
   let sentences = 0, hints = 0;
-  for (const batch of batches) {
+  for (const batch of checkedBatches) {
     const checked = validateBatch(batch), receipt = receipts.get(batch);
     assert(receipt, 'Missing coverage manifest batch ' + batch);
     assert.equal(checked.sourceSha256, receipt.sourceSha256, 'Stale source manifest ' + batch);
@@ -77,7 +83,7 @@ async function main() {
   const cast = read('src/data/dialogue-content/npc-voice-casting.json');
   const voices = read('src/data/jlpt-original/voice-casting.json');
   let npc = 0, player = 0, ruby = 0, packed = 0;
-  for (const sid of canonical) {
+  for (const sid of contextOnly ? [] : canonical) {
     const scenario = runtime.getLifeScenarioById(sid);
     const category = (runtime.getLifeLocationById(scenario.locationId)?.category ?? '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     assert(!cast.unverifiedCategories.includes(category), 'Unverified voice category ' + category);
@@ -105,75 +111,17 @@ async function main() {
       } else player++;
     }
   }
-  const reviewFiles = [
-    'docs/localization-workspace/naturalness-review-2026-10-25/context-pass-02.json',
-    'docs/localization-workspace/naturalness-review-2026-10-25/prefecture-pass-03.json',
-    'docs/localization-workspace/naturalness-review-2026-10-25/prefecture-pass-04.json',
-    'docs/localization-workspace/release-audit-2026-11-03/kanazawa-01-context-review.json',
-    ...fs.readdirSync(path.join(root, 'docs/localization-workspace/naturalness-review-2026-11-03'))
-      .filter(name => /^kanazawa-\d{2}-\d{2}\.json$/.test(name)).sort()
-      .map(name => 'docs/localization-workspace/naturalness-review-2026-11-03/' + name),
-    ...fs.readdirSync(path.join(root, 'docs/localization-workspace'), {withFileTypes: true})
-      .filter(entry => entry.isDirectory() && /^(?:context-parallel-2026-11-03(?:-round\d+|-recovered)?|hokkaido-context-2026-11-03)$/.test(entry.name))
-      .sort((a, b) => a.name.localeCompare(b.name))
-      .flatMap(entry => fs.readdirSync(path.join(root, 'docs/localization-workspace', entry.name))
-        .filter(name => (entry.name.endsWith('-recovered') ? /^batch-\d{3}\.json$/ : /^worker[1-6]\.json$/).test(name)).sort()
-        .map(name => 'docs/localization-workspace/' + entry.name + '/' + name)),
-  ];
-  // Flat region sessions use whole-scenario receipts from exclusive batch owners.
-  const flatRegionBase = 'docs/localization-workspace/region-review';
-  for (const session of fs.readdirSync(path.join(root, flatRegionBase), {withFileTypes: true})
-      .filter(entry => entry.isDirectory() && /^[a-z]+-\d{8}$/.test(entry.name)).sort((a,b) => a.name.localeCompare(b.name))) {
-    reviewFiles.push(...fs.readdirSync(path.join(root, flatRegionBase, session.name))
-      // Later independent work groups can retain worker numbers beyond 1–6.
-      // Validate every numbered receipt; numbering is not concurrency or approval.
-      .filter(name => /^worker-[1-9]\d*(?:-part-\d+)?\.json$/.test(name)).sort()
-      .map(name => flatRegionBase + '/' + session.name + '/' + name));
-  }
-  for (const regionId of ['chubu', 'tohoku', 'chugoku']) {
-  const regionBase = 'docs/localization-workspace/region-review/' + regionId;
-  if (fs.existsSync(path.join(root, regionBase))) {
-    for (const session of fs.readdirSync(path.join(root, regionBase)).filter(name => /^session-\d{3}$/.test(name)).sort()) {
-      reviewFiles.push(...fs.readdirSync(path.join(root, regionBase, session))
-        .filter(name => /^worker[1-6]-part\d{4}\.json$/.test(name)).sort()
-        .map(name => regionBase + '/' + session + '/' + name));
-    }
-  }
-  }
-  const amendments = require('./lib/dialogue-review-amendments.cjs').loadReviewAmendments({
-    read, hash, digest, reviewFiles, exists: p => fs.existsSync(path.join(root, p)),
-  });
-  // The newer independent Hokkaido session reread overlapping cases. Keep the
-  // original receipts as history; validate/count each case from its latest receipt.
-  const renewedHokkaido = new Set(reviewFiles.filter(file => file.includes('/hokkaido-context-2026-11-03/'))
-    .flatMap(file => read(file).reviews.map(row => row.scenarioId)));
-  const reviewed = new Map();
-  let reviewedFields = 0;
-  for (const file of reviewFiles) {
-    const receipt = require('./lib/dialogue-context-receipts.cjs').expandContextReceipt(read(file));
-    assert.equal(receipt.nativeReviewed, false);
-    for (const row of receipt.reviews) {
-      if (file.includes('/region-review/hokkaido-20261103/') && renewedHokkaido.has(row.scenarioId)) continue;
-      assert(canonical.has(row.scenarioId));
-      const turns = new Map(runtime.loadDialogueTurns(row.scenarioId).map(t => [t.id, t]));
-      const seen = new Set();
-      for (const field of row.fields) {
-        const t = turns.get(field.turnId), data = t.speaker === 'NPC' ? t.npc : t.player;
-        const source = field.field === 'hintTranslation' ? data.hint : (t.speaker === 'NPC' ? data.textJa : data.recommendedAnswerJa);
-        const target = field.field === 'hintTranslation' ? data.hintTranslations[row.locale] : data.translations[row.locale];
-        assert.equal(digest(source), field.sourceSha256, 'Stale contextual source ' + file + ':' + field.turnId);
-        const expectedTarget = amendments.resolve({reviewReceiptPath: file, scenarioId: row.scenarioId,
-          locale: row.locale, turnId: field.turnId, field: field.field,
-          sourceSha256: field.sourceSha256, previousTargetSha256: field.targetSha256});
-        assert.equal(digest(target), expectedTarget, 'Stale contextual target ' + file + ':' + field.turnId);
-        seen.add(field.turnId + ':' + field.field); reviewedFields++;
-      }
-      assert.equal(seen.size, 16, 'Review omits sentence/task fields ' + row.scenarioId);
-      if (!reviewed.has(row.scenarioId)) reviewed.set(row.scenarioId, new Set());
-      reviewed.get(row.scenarioId).add(row.locale);
-    }
-  }
-  amendments.assertAllUsed();
+  // Historical duplicate receipts remain immutable. Count only receipts bound to
+  // the selected current source/target revision, including verified amendments.
+  const unionRun = require('node:child_process').spawnSync(process.execPath,
+    ['--max-old-space-size=384', 'scripts/check-dialogue-regional-union.cjs'],
+    {cwd:root,encoding:'utf8',maxBuffer:1024*1024});
+  assert.equal(unionRun.status,0,unionRun.stdout + unionRun.stderr);
+  const union = read('docs/localization-workspace/region-review/union-validation-20261103.json');
+  assert.equal(union.status,'PASS');
+  const reviewed = new Map(Object.keys(union.evidence).map(sid=>[sid,new Set(locales)]));
+  const reviewedFields = union.fields;
+  const amendments = {count:union.revisionAmendedFields};
   const fullyReviewed = [...reviewed.values()].filter(s => locales.every(l => s.has(l))).length;
   const queue = read('docs/localization-workspace/naturalness-review-2026-10-25/prefecture-queue.json');
   const queuedReviewed = queue.prefectures.flatMap(p => p.cities.flatMap(c => c.sentenceTaskReviewedScenarioIds));
@@ -189,16 +137,19 @@ async function main() {
     assert.equal(index[queue.nextScenarioId], queue.nextBatch, 'Next queue batch is incorrect');
   }
   const report = {
-    status: 'PASS_TECHNICAL_COVERAGE_RELEASE_INCOMPLETE',
+    status: contextOnly ? 'PASS_CONTEXT_RECEIPTS_AND_SCOPED_BATCHES_RELEASE_INCOMPLETE' : 'PASS_TECHNICAL_COVERAGE_RELEASE_INCOMPLETE',
+    validationScope: contextOnly ? 'All contextual receipts plus explicitly requested batches; no corpus-wide hiragana/audio assertion.' : 'Whole-corpus technical coverage',
+    checkedTranslationBatches: checkedBatches,
     canonicalScenarios: canonical.size, batches: batches.length, targetLocales: locales,
-    turnTranslations: sentences, hintTranslations: hints,
-    currentSourceBoundHiraganaTurns: ruby, npcTurns: npc, playerTurns: player,
-    currentSourceAndVoicePackedNpcTurns: packed,
+    turnTranslations: contextOnly ? null : sentences, hintTranslations: contextOnly ? null : hints,
+    scopedTurnTranslations: sentences, scopedHintTranslations: hints,
+    currentSourceBoundHiraganaTurns: contextOnly ? null : ruby, npcTurns: contextOnly ? null : npc, playerTurns: contextOnly ? null : player,
+    currentSourceAndVoicePackedNpcTurns: contextOnly ? null : packed,
     contextReview: {revisionBoundScenariosAll12Locales: fullyReviewed, revisionBoundFields: reviewedFields, revisionAmendedFields: amendments.count, remainingScenarios: canonical.size - fullyReviewed, nextScenarioId: queue.nextScenarioId, nextBatch: queue.nextBatch, queueMatchesReceipts: true, scope: 'AI sentence/task review only; known issues remain.'},
     nativeReviewed: false, nativePronunciationApproved: false, nativeDeviceVerified: false,
     releaseAccepted: false,
     acceptanceBlockers: [
-      'Full-corpus contextual semantic review remains incomplete.',
+      'AI context review is complete; source, native, audio and device acceptance remain separate.',
       'Independent native-speaker review has not been performed.',
       'Scenario metadata translation/display integration remains unfinished.',
       'Pronunciation/listening review is not established by clip identity or decoder checks.',
