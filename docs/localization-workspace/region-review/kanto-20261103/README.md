@@ -1,6 +1,6 @@
 # Kanto — rà ngữ cảnh 12 ngôn ngữ
 
-Phạm vi 1.681 bài, 7 tỉnh/thành (PRF-008 đến PRF-014). Sáu AI có quyền sở hữu độc lập theo lô: 291/260/240/340/250/300 bài; tổng 178 lô. Không kiểm chéo ngữ nghĩa. Mốc đầu vào `7dfefea18ca037b06798b1e03154b3f175b5eceb`; giữ nguyên bằng chứng trước đó. Kanto chưa có bài đã rà đủ ở mốc đầu vào.
+Phạm vi 1.681 bài, 7 tỉnh/thành (PRF-008 đến PRF-014). Sáu AI có quyền sở hữu độc lập theo lô: 291/260/240/320/260/310 bài; tổng 178 lô. Không kiểm chéo ngữ nghĩa. Mốc đầu vào `7dfefea18ca037b06798b1e03154b3f175b5eceb`; giữ nguyên bằng chứng trước đó. Kanto chưa có bài đã rà đủ ở mốc đầu vào.
 
 Chỉ bài đã thực đọc tiếng Nhật và đủ 12 ngôn ngữ, có receipt hash từng câu/gợi ý và ghi chú riêng, mới tính rà ngữ cảnh bằng AI. Các bài chưa đọc vẫn nằm trong assignment; phân công không chứng minh hoàn tất. `worker-1.json` đến `worker-6.json` được ghi tăng dần, không thay cho chứng nhận bản ngữ, phát âm, thiết bị hoặc phát hành. Các điểm chưa rõ trong nguồn Nhật được ghi riêng, không tự sửa nguồn để che vấn đề.
 
@@ -8,11 +8,11 @@ Khi worker đã ngừng ghi, chạy `python scripts/check-kanto-context-review.p
 
 ## Checkpoint hiện tại
 
-Đã đọc thực **1.411/1.681 bài ×12 ngôn ngữ**, **270,912 trường**. Còn **270 bài**. Giữ toàn bộ checkpoint đồng thời1.403bài và khôi phục8bài thiếu từ bằng chứng cục bộ đầy đủ đã đọc thật. Hash nguồn và đích của96receipt/1.536trường khớp;20trường dịch được khôi phục. Không rà lại/cộng trùng; không kiểm chéo ngữ nghĩa. `recovered-eight-evidence-20261103.json` ghi nguồn gốc8bài; `local-1288-preserved-evidence.json.gz` giữ phần bằng chứng lịch sử khác phiên bản, kèm tham chiếu các receipt giống hệt đang có trong archive từGitHub. Không đổi spokenJA/audio.
+Đã đọc thực **1.681/1.681 bài ×12 ngôn ngữ**, **322.752 trường**; còn **0 bài chưa rà**. Giữ toàn bộ bằng chứng hợp lệ; thêm270bài sau checkpoint1.411, không cộng trùng. Tích lũy6.458trường dịch/gợi ý và924metadata hintJa đã sửa;77hint nguồn,154mục tiêu/ghi chú runtime và77task authoring được đồng bộ bởi đúng chủ phạm vi. Portable hash/replay và loader thực PASS. Sáu phạm vi hoàn tất291/260/240/320/260/310 và đã dừng ghi; không kiểm chéo, không chạy ngầm. Còn **5 điểm nguồn lời thoại/âm thanh** được ghi rõ trong `open-source-audio-issues.json`; đây là hoàn tất rà ngữ cảnh bằngAI, không phải nghiệm thu nguồn sạch, bản ngữ, âm thanh, thiết bị hoặc phát hành.
 
 Sau sự cố làm mới môi trường, hợp và khôi phục bằng chứng từ bản GitHub, gói truyền còn giữ và đúng chủ phạm vi còn actual context. Chỉ phục hồi với nguyên văn/ghi chú/sửa đổi khớp và replay baseline, không dùng số đếm để tạo review. Tám bài worker5 từng thiếu đã được phục hồi bằng hồ sơ đầy đủ khớp hash; nay thuộc1.411bài. Gói raw và gzip dự phòng đã lên nhánh recovery/kanto-evidence-20261103, mốc1339 đã WORK PERSISTENCE PASS.
 
-Chuyển sáu lô hoàn toàn chưa có review hợp lệ để cân bằng phần còn lại **48/50/50/46/43/41**. Không chuyển bài đã có bằng chứng. Xem ownership-transfer-checkpoint-1388.json, ownership-transfer-checkpoint-1403.json và resume.json. Ownership tổng hiện291/260/240/340/250/300.
+Các lần chuyển lô chỉ áp dụng cho bài hoàn toàn chưa đọc, không chuyển quyền sở hữu bằng chứng đã hoàn tất. `ownership-transfer-final-batches-20261103.json` ghi lần cân bằng cuối; sáu phạm vi đều còn0bài. Các checkpoint1388/1403 giữ vai trò lịch sử.
 
 Receipt đầy đủ được nén gzip losslessly, small JSON wrapper giữ hashes của archive và nguyên bản. Cả validator Python, loader và thư viện global tự kiểm hash rồi giải nén. Trước khi cho worker ghi tiếp, sau persistence chạy python scripts/kanto-receipt-transport.py expand. Không dùng receipt wrapper như bằng chứng hash-only: mọi reviews/notes/before-after nguyên bản vẫn nằm đầy đủ trong archive.
 

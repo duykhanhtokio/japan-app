@@ -1,56 +1,63 @@
 {
-  "status": "PARTIAL_AI_CONTEXT_REVIEW_CHECKPOINT",
+  "status": "COMPLETE_AI_CONTEXT_REVIEW_WITH_SOURCE_AUDIO_BLOCKERS",
   "regionTotal": 1681,
-  "reviewedScenarios": 1411,
-  "newScenariosThisContinuation": 8,
-  "remainingScenarios": 270,
-  "changedTranslationFields": 5877,
-  "changedSourceMetadataFields": 648,
-  "sourceHintAmendments": 54,
-  "runtimeMetadataAmendments": 108,
-  "reviewedFields": 270912,
-  "previousVerifiedKantoCommit": "fa836e81d75c6e8daf0ad4af18bee929eab092bb",
+  "reviewedScenarios": 1681,
+  "newScenariosThisContinuation": 270,
+  "remainingScenarios": 0,
+  "changedTranslationFields": 6458,
+  "changedSourceMetadataFields": 924,
+  "sourceHintAmendments": 77,
+  "runtimeMetadataAmendments": 154,
+  "reviewedFields": 322752,
+  "previousVerifiedKantoCommit": "ec8e6c85fa319722b1b8b791d2673392192e3382",
   "workersStopped": true,
   "workers": [
     {
       "worker": 1,
-      "reviewed": 243,
-      "remaining": 48,
-      "nextScenarioId": "SC-LOC-JP-12202-02-001"
+      "reviewed": 291,
+      "remaining": 0,
+      "nextScenarioId": null,
+      "stopped": true
     },
     {
       "worker": 2,
-      "reviewed": 210,
-      "remaining": 50,
-      "nextScenarioId": "SC-LOC-JP-10210-08-001"
+      "reviewed": 260,
+      "remaining": 0,
+      "nextScenarioId": null,
+      "stopped": true
     },
     {
       "worker": 3,
-      "reviewed": 190,
-      "remaining": 50,
-      "nextScenarioId": "SC-LOC-JP-10212-02-001"
+      "reviewed": 240,
+      "remaining": 0,
+      "nextScenarioId": null,
+      "stopped": true
     },
     {
       "worker": 4,
-      "reviewed": 294,
-      "remaining": 46,
-      "nextScenarioId": "SC-LOC-JP-12208-02-001"
+      "reviewed": 320,
+      "remaining": 0,
+      "nextScenarioId": null,
+      "stopped": true
     },
     {
       "worker": 5,
-      "reviewed": 215,
-      "remaining": 35,
-      "nextScenarioId": "SC-LOC-JP-11207-07-001"
+      "reviewed": 260,
+      "remaining": 0,
+      "nextScenarioId": null,
+      "stopped": true
     },
     {
       "worker": 6,
-      "reviewed": 259,
-      "remaining": 41,
-      "nextScenarioId": "SC-LOC-JP-11246-06-001"
+      "reviewed": 310,
+      "remaining": 0,
+      "nextScenarioId": null,
+      "stopped": true
     }
   ],
   "sourceIssues": [
     {
+      "worker": 1,
       "scenarioId": "SC-LOC-008-07-001",
       "turnId": "DLG-SC-LOC-008-07-001-SHARED-04",
       "field": "hintJa",
@@ -63,6 +70,7 @@
       "resolutionArtifact": "sourceHintAmendments and runtimeMetadataAmendments in this receipt"
     },
     {
+      "worker": 1,
       "scenarioId": "SC-LOC-011-02-001",
       "turnId": "DLG-SC-LOC-011-02-001-SHARED-08",
       "field": "hintJa",
@@ -79,6 +87,7 @@
       "resolution": "Read entire dialogue again. Turn06 establishes own-phone ticket;07 asks companion contact;08 says companion waits at seat and player returns;10 confirms own-ticket exit and return. Hint08 summarizes established ticket ownership and reunion coordination, without contradicting any state. It need not repeat spoken08 verbatim. No canonical correction needed."
     },
     {
+      "worker": 1,
       "scenarioId": "SC-LOC-011-04-001",
       "turnId": "DLG-SC-LOC-011-04-001-SHARED-06",
       "field": "hintJa",
@@ -91,6 +100,7 @@
       "resolutionArtifact": "sourceHintAmendments and runtimeMetadataAmendments in this receipt"
     },
     {
+      "worker": 1,
       "scenarioId": "SC-LOC-011-05-001",
       "turnId": "DLG-SC-LOC-011-05-001-SHARED-10",
       "field": "hintJa",
@@ -108,6 +118,7 @@
       "resolution": "Read entire dialogue again. Only licence found is fixed in03/04;08 separates licence-record update from continued wallet/cards inquiry;10 requests licence-only found status after collection;11 confirms keeping others missing. Hint10 is a broad task summary of collection vs lost-property-record maintenance, not an instruction to mark other items found. No canonical correction needed."
     },
     {
+      "worker": 1,
       "scenarioId": "SC-LOC-011-09-001",
       "turnId": "DLG-SC-LOC-011-09-001-SHARED-10",
       "field": "hintJa",
@@ -120,6 +131,114 @@
       "resolutionArtifact": "sourceHintAmendments and runtimeMetadataAmendments in this receipt"
     },
     {
+      "worker": 1,
+      "scenarioId": "SC-LOC-JP-11219-06-001",
+      "turnIds": [
+        "DLG-SC-LOC-JP-11219-06-001-SHARED-04",
+        "DLG-SC-LOC-JP-11219-06-001-SHARED-06",
+        "DLG-SC-LOC-JP-11219-06-001-SHARED-08"
+      ],
+      "field": "hintJa",
+      "status": "RESOLVED_BY_ORIGINAL_OWNER_APPROVED_HINT_AND_TASK_ALIGNMENT",
+      "blocksFullAcceptance": false,
+      "issue": "Hint04 asks why workplace was proposed although response04 clarifies actual residence; hint06 asks difference from residence while06 shows home-address document; hint08 asks showing home document while08 discusses separate mailing request. Targets faithfully inherit source hints. Canonical hint/runtime alignment required; spokenJA/audio unchanged.",
+      "previousStatus": "SOURCE_HINT_TURN_ALIGNMENT_PENDING",
+      "canonicalEdited": true,
+      "resolutionArtifact": "sourceHintAmendments/runtimeMetadataAmendments and worker-1-authoring-input-proposals.json",
+      "evidenceTurns": [
+        "DLG-SC-LOC-JP-11219-06-001-SHARED-04",
+        "DLG-SC-LOC-JP-11219-06-001-SHARED-06",
+        "DLG-SC-LOC-JP-11219-06-001-SHARED-08"
+      ]
+    },
+    {
+      "worker": 1,
+      "scenarioId": "SC-LOC-JP-11219-08-001",
+      "turnIds": [
+        "DLG-SC-LOC-JP-11219-08-001-SHARED-06",
+        "DLG-SC-LOC-JP-11219-08-001-SHARED-10"
+      ],
+      "field": "hintJa",
+      "status": "RESOLVED_BY_ORIGINAL_OWNER_APPROVED_HINT_AND_TASK_ALIGNMENT",
+      "blocksFullAcceptance": false,
+      "issue": "Hint06 asks showing current location, but response06 selects route at junction. Hint10 asks saying companion will be notified, but response10 says already contacted and confirms west-exit route. Target hints faithfully inherit source; canonical instructional alignment needed; spokenJA/audio unchanged.",
+      "previousStatus": "SOURCE_HINT_TURN_ALIGNMENT_PENDING",
+      "canonicalEdited": true,
+      "resolutionArtifact": "sourceHintAmendments/runtimeMetadataAmendments and worker-1-authoring-input-proposals.json",
+      "evidenceTurns": [
+        "DLG-SC-LOC-JP-11219-08-001-SHARED-06",
+        "DLG-SC-LOC-JP-11219-08-001-SHARED-10"
+      ]
+    },
+    {
+      "worker": 1,
+      "scenarioId": "SC-LOC-JP-11221-01-001",
+      "turnIds": [
+        "DLG-SC-LOC-JP-11221-01-001-SHARED-04"
+      ],
+      "field": "hintJa",
+      "status": "RESOLVED_BY_ORIGINAL_OWNER_APPROVED_HINT_AND_TASK_ALIGNMENT",
+      "blocksFullAcceptance": false,
+      "issue": "Hint04 asks timetable category question; spoken04 instead explains weekday-timetable mistake after staff clarified category03. Targets faithfully inherit source; canonical hint/runtime alignment needed, spokenJA/audio unchanged.",
+      "previousStatus": "SOURCE_HINT_TURN_ALIGNMENT_PENDING",
+      "canonicalEdited": true,
+      "resolutionArtifact": "sourceHintAmendments/runtimeMetadataAmendments and worker-1-authoring-input-proposals.json",
+      "evidenceTurns": [
+        "DLG-SC-LOC-JP-11221-01-001-SHARED-04"
+      ]
+    },
+    {
+      "worker": 1,
+      "scenarioId": "SC-LOC-JP-11221-02-001",
+      "turnIds": [
+        "DLG-SC-LOC-JP-11221-02-001-SHARED-06",
+        "DLG-SC-LOC-JP-11221-02-001-SHARED-08"
+      ],
+      "field": "hintJa",
+      "status": "RESOLVED_BY_ORIGINAL_OWNER_APPROVED_HINT_AND_TASK_ALIGNMENT",
+      "blocksFullAcceptance": false,
+      "issue": "Hint06 asks comparison of issue/submission dates while spoken06 separates unchanged address from issue-age requirement and requests new copy; hint08 asks confirming need for new issue while spoken08 verifies type/fields and nextweek submission. All12 target hints preserve source; canonical alignment needs review, spokenJA/audio unchanged.",
+      "previousStatus": "SOURCE_HINT_TURN_ALIGNMENT_PENDING",
+      "canonicalEdited": true,
+      "resolutionArtifact": "sourceHintAmendments/runtimeMetadataAmendments and worker-1-authoring-input-proposals.json",
+      "evidenceTurns": [
+        "DLG-SC-LOC-JP-11221-02-001-SHARED-06",
+        "DLG-SC-LOC-JP-11221-02-001-SHARED-08"
+      ]
+    },
+    {
+      "worker": 1,
+      "scenarioId": "SC-LOC-JP-11221-03-001",
+      "turnIds": [
+        "DLG-SC-LOC-JP-11221-03-001-SHARED-02",
+        "DLG-SC-LOC-JP-11221-03-001-SHARED-04"
+      ],
+      "field": "hintJa",
+      "status": "RESOLVED_BY_ORIGINAL_OWNER_APPROVED_HINT_AND_TASK_ALIGNMENT",
+      "blocksFullAcceptance": false,
+      "issue": "Hint02 asks medical-history meaning while spoken02 explains repeated current symptoms; hint04 asks explaining repeated current symptoms while04 instead reports hospitalization and unknown Japanese disease name. Target hints faithfully mirror canonical source. Align canonical hints/runtime without altering spokenJA/audio.",
+      "previousStatus": "SOURCE_HINT_TURN_ALIGNMENT_PENDING",
+      "canonicalEdited": true,
+      "resolutionArtifact": "sourceHintAmendments/runtimeMetadataAmendments and worker-1-authoring-input-proposals.json",
+      "evidenceTurns": [
+        "DLG-SC-LOC-JP-11221-03-001-SHARED-02",
+        "DLG-SC-LOC-JP-11221-03-001-SHARED-04"
+      ]
+    },
+    {
+      "worker": 1,
+      "scenarioId": "SC-LOC-JP-12225-02-001",
+      "turnIds": [
+        "DLG-SC-LOC-JP-12225-02-001-SHARED-06",
+        "DLG-SC-LOC-JP-12225-02-001-SHARED-08"
+      ],
+      "field": "sourceJa",
+      "status": "SOURCE_SPOKEN_CONTRADICTION_AUDIO_ALIGNMENT_PENDING",
+      "blocksFullAcceptance": true,
+      "issue": "Spoken06 explicitly says 写しの裏にも記載があります (information on reverse of copy), while spoken08 says 持ってきた写しは表だけでした (brought copy only front). All12 target translations faithfully preserve contradictory referents. Likely original/copy referent needs source-owner decision; do not silently change spokenJA because audio/ruby/pack alignment required."
+    },
+    {
+      "worker": 3,
       "scenarioId": "SC-CHB-NARITA-001",
       "batch": "111",
       "turnId": "DLG-SC-CHB-NARITA-001-SHARED-02",
@@ -130,6 +249,7 @@
       "resolution": "Source/runtime hint, required goal, evaluation and 12 locale hint anchors/translations synchronized and self-reviewed against four adjacent turns. Spoken Japanese unchanged."
     },
     {
+      "worker": 3,
       "scenarioId": "SC-LOC-CHB-NARITA-06-001",
       "turnIds": [
         "DLG-SC-LOC-CHB-NARITA-06-001-SHARED-02",
@@ -153,6 +273,7 @@
       "proposal": "Nếu publisher muốn làm rõ, thêm ý đính chính ở lượt04 hoặc xác định hai giấy; mọi sửa spokenJA phải đồng bộ audio/subtitles. Không áp dụng proposal."
     },
     {
+      "worker": 3,
       "scenarioId": "SC-LOC-JP-14210-01-001",
       "batch": "438",
       "turnId": "DLG-SC-LOC-JP-14210-01-001-SHARED-03",
@@ -162,21 +283,80 @@
       "detail": "まだ券を受け取りましたか uses まだ with completed-action question; context and reply establish already-collected tickets, normally もう or すでに. Spoken source preserved to avoid text/audio divergence; target interpretation follows explicit yes and ticket possession."
     },
     {
+      "worker": 3,
+      "scenarioId": "SC-LOC-JP-11215-06-001",
+      "turnIds": [
+        "DLG-SC-LOC-JP-11215-06-001-SHARED-04",
+        "DLG-SC-LOC-JP-11215-06-001-SHARED-06",
+        "DLG-SC-LOC-JP-11215-06-001-SHARED-08"
+      ],
+      "field": "hintJa",
+      "status": "RESOLVED_SOURCE_HINT_AND_RUNTIME_TASK_AMENDED",
+      "blocksFullAcceptance": false,
+      "detail": "Full dialogue read: hint04 applicant return versus spoken04 asking whether sibling may sign; hint06 asks allowed proxy-writing scope versus spoken06 leaves signature blank and waits; hint08 decides signature by applicant versus spoken08 requests time for sister understanding/checking translation. All12locale hints faithfully retain these displaced source tasks. No spokenJA/audio changes required; source/runtime+12hints need synchronized owner alignment.",
+      "resolution": "Owner aligned all3 displacedhinttasks andruntimegoals/evaluation+12locale metadata/hinttranslations; spokenJA/audio unchanged; cumulative mirrorpatch emitted."
+    },
+    {
+      "worker": 3,
+      "scenarioId": "SC-LOC-JP-11224-04-001",
+      "turnIds": [
+        "DLG-SC-LOC-JP-11224-04-001-SHARED-04",
+        "DLG-SC-LOC-JP-11224-04-001-SHARED-06",
+        "DLG-SC-LOC-JP-11224-04-001-SHARED-08"
+      ],
+      "field": "hintJa",
+      "status": "RESOLVED_SOURCE_HINT_AND_RUNTIME_TASK_AMENDED",
+      "blocksFullAcceptance": false,
+      "detail": "Hints lag dialogue:04 asks lostreceipt explanation already02 while answer04 givesMondayafternoon/3keys/yellowtag;06 asks date/item already04 whileanswer06 asks requiredlookupinfo withoutreceiptnumber;08 asks requiredinfo already06 whileanswer08 suppliesoldname/phone andpreventsnewreport.12localehints faithfulsource; source/runtime+12hint alignmentpending. SpokenJA/audio unchanged.",
+      "resolution": "Owner aligned all3 displacedhinttasks andruntimegoals/evaluation+12locale metadata/hinttranslations; spokenJA/audio unchanged; cumulative mirrorpatch emitted."
+    },
+    {
+      "worker": 3,
+      "scenarioId": "SC-LOC-JP-11232-08-001",
+      "turnIds": [
+        "DLG-SC-LOC-JP-11232-08-001-SHARED-02",
+        "DLG-SC-LOC-JP-11232-08-001-SHARED-06",
+        "DLG-SC-LOC-JP-11232-08-001-SHARED-07"
+      ],
+      "status": "SPOKEN_JA_PARKING_LOCATION_AMBIGUITY_AUDIO_ALIGNMENT_IF_CHANGED",
+      "blocksFullAcceptance": true,
+      "detail": "Spoken02 states bicycle at parking byentranceused;06 specifiespondside,07 sayspondside separate fromentrancesidelocation. Couldbe correction ofinitialmistake but not explicitly acknowledged, location continuity ambiguous.12localesfaithful; speech/audio unchanged, requirecanonical spokenJAdecision plusaudio ifclarified."
+    },
+    {
+      "worker": 4,
       "scenarioId": "SC-LOC-JP-09205-02-001",
       "turnId": "DLG-SC-LOC-JP-09205-02-001-SHARED-02",
       "field": "hintJa",
       "issue": "Hint asks to show two household notices (二通の世帯宛て通知を示し), but turn04 explicitly says wife’s notice was left at home. Spoken JA and translations retained; source-author clarification needed.",
-      "status": "needs-source-review"
+      "status": "resolved-own-hint-amendment",
+      "resolution": "Turn04 explicitly states that the wife’s notice was left at home. Turn02 reports that she also received the same notice and asks about one person handling both; it does not show two notices. Updated source/runtime hint, goal/evaluation, all twelve locale hints and existing review hashes without changing spoken Japanese."
     },
     {
+      "worker": 5,
       "scenarioId": "SC-LOC-JP-13207-06-001",
       "turnId": "DLG-SC-LOC-JP-13207-06-001-SHARED-02",
       "field": "hintJa",
-      "status": "SOURCE_HINT_SPECIFICITY_AMBIGUITY",
+      "status": "RESOLVED_OWN_HINT_TASK_ALIGNMENT",
       "detail": "hintJa says 同額の二つ but spoken source02 establishes same shop with two displayed amounts, not expressly equal amounts;08 names1200yen for one known use only. Pending/final statuses suggest possible duplicate view but exact equality is not explicitly established. Targets preserve canonical hint; no source/audio change.",
-      "blocksSourceAcceptance": true
+      "blocksSourceAcceptance": false,
+      "blocksFullAcceptance": false,
+      "resolution": "Unsupported equality removed from own hint/task; two same-shop entries retained in source/runtime and12locale hints; mirror/authoring proposals emitted."
     },
     {
+      "worker": 5,
+      "scenarioId": "SC-LOC-JP-11218-03-001",
+      "turnIds": [
+        "DLG-SC-LOC-JP-11218-03-001-SHARED-08",
+        "DLG-SC-LOC-JP-11218-03-001-SHARED-10"
+      ],
+      "field": "hintJa",
+      "status": "RESOLVED_OWN_HINT_TASK_ALIGNMENT",
+      "blocksFullAcceptance": false,
+      "issue": "Hint08 says submit required documents at counter but spoken08 waits with documents and ticket until called; hint10 says confirm waiting after reception while spoken10 clarifies registration unfinished and waits for number. All12target hints faithfully inherit source; source/runtime hint alignment pending.",
+      "resolution": "Own source/runtime hints, goals/evaluation and12locale hint metadata aligned to spoken08/10; mirror/authoring proposals emitted."
+    },
+    {
+      "worker": 6,
       "scenarioId": "SC-LOC-011-01-001",
       "turnId": "DLG-SC-LOC-011-01-001-SHARED-10",
       "field": "hintJa",
@@ -186,6 +366,7 @@
       "resolution": "Applied original worker6 semantic-approved proposal mechanically after all before hashes matched; no new semantic cross review or recount."
     },
     {
+      "worker": 6,
       "scenarioId": "SC-LOC-TKY-005-001",
       "turnId": "DLG-SC-LOC-TKY-005-001-SHARED-11",
       "field": "sourceJa",
@@ -197,12 +378,13 @@
   "nativeReviewed": false,
   "semanticCrossReview": false,
   "sourceAccepted": false,
-  "verification": "Verify current checkpoint remotely before claiming durable persistence.",
-  "newScenariosSincePreviousCheckpoint": 219,
-  "stopReason": "DURABLE_RECONCILIATION_CHECKPOINT",
-  "stopDetail": "Preserved concurrent1403 checkpoint and restored8 local-only fully read scenes with matching source/target hashes; no semantic cross-review.",
-  "authoringInputTaskAmendments": 54,
+  "verification": "Require remote tree equality and WORK PERSISTENCE PASS; no native/device/audio/release certification.",
+  "newScenariosSincePreviousCheckpoint": 270,
+  "stopReason": "ALL_KANTO_SCENARIOS_AI_CONTEXT_REVIEWED",
+  "stopDetail": "All six independent scopes complete. Five spoken-source ambiguities/naturalness issues remain explicit; speech and audio were preserved. Coordinator technical validation and remote persistence only.",
+  "authoringInputTaskAmendments": 77,
   "evidenceBackupBranch": "recovery/kanto-evidence-20261103",
   "ownershipTransferArtifact": "ownership-transfer-checkpoint-1403.json",
-  "receiptEncoding": "context-review-archive-v1"
+  "receiptEncoding": "context-review-archive-v1",
+  "openSourceAudioIssues": 5
 }
