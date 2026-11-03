@@ -1,0 +1,181 @@
+{
+  "status": "PARTIAL_AI_CONTEXT_REVIEW_CHECKPOINT",
+  "regionTotal": 1681,
+  "reviewedScenarios": 1164,
+  "newScenariosThisContinuation": 976,
+  "remainingScenarios": 517,
+  "changedTranslationFields": 5286,
+  "changedSourceMetadataFields": 636,
+  "sourceHintAmendments": 53,
+  "runtimeMetadataAmendments": 106,
+  "reviewedFields": 223488,
+  "previousVerifiedKantoCommit": "47a8aad377277fcf253cf8d6cc2d4c1862e625f7",
+  "workersStopped": true,
+  "workers": [
+    {
+      "worker": 1,
+      "reviewed": 191,
+      "remaining": 90,
+      "nextScenarioId": "SC-LOC-JP-09214-02-001"
+    },
+    {
+      "worker": 2,
+      "reviewed": 159,
+      "remaining": 121,
+      "nextScenarioId": "SC-TKY-MURAYAMA-001"
+    },
+    {
+      "worker": 3,
+      "reviewed": 146,
+      "remaining": 134,
+      "nextScenarioId": "SC-LOC-JP-08211-04-001"
+    },
+    {
+      "worker": 4,
+      "reviewed": 250,
+      "remaining": 30,
+      "nextScenarioId": "SC-LOC-TKY-SHIBUYA-18-001"
+    },
+    {
+      "worker": 5,
+      "reviewed": 187,
+      "remaining": 93,
+      "nextScenarioId": "SC-LOC-JP-09205-07-001"
+    },
+    {
+      "worker": 6,
+      "reviewed": 231,
+      "remaining": 49,
+      "nextScenarioId": "SC-LOC-JP-11219-04-001"
+    }
+  ],
+  "sourceIssues": [
+    {
+      "scenarioId": "SC-LOC-008-07-001",
+      "turnId": "DLG-SC-LOC-008-07-001-SHARED-04",
+      "field": "hintJa",
+      "issue": "Japanese hint says annual insurance (年払い保険), whereas spoken source specifies only car insurance (車の保険); annual payment frequency is not established in dialogue.",
+      "blocksFullAcceptance": false,
+      "status": "RESOLVED_BY_ORIGINAL_OWNER_APPROVED_HINT_AND_TASK_ALIGNMENT",
+      "canonicalEdited": false,
+      "selfRecheck": "Entire dialogue re-read; unsupported annual-payment frequency remains (00807), direct message-recipient differs despite later conditional inter-staff coordination (01104), or replacement-event date not shown equivalent to arrival date (01109). Minimal hint correction proposed.",
+      "previousStatus": "SOURCE_ALIGNMENT_UNRESOLVED",
+      "resolutionArtifact": "sourceHintAmendments and runtimeMetadataAmendments in this receipt"
+    },
+    {
+      "scenarioId": "SC-LOC-011-02-001",
+      "turnId": "DLG-SC-LOC-011-02-001-SHARED-08",
+      "field": "hintJa",
+      "issue": "Japanese hint asks to show own-device ticket and arrange reunion, whereas spoken turn says companion stays seated while player alone retrieves earplugs.",
+      "blocksFullAcceptance": false,
+      "status": "CLOSED_CONTEXT_SUPPORTED",
+      "canonicalEdited": false,
+      "evidenceTurns": [
+        "06",
+        "07",
+        "08",
+        "10"
+      ],
+      "resolution": "Read entire dialogue again. Turn06 establishes own-phone ticket;07 asks companion contact;08 says companion waits at seat and player returns;10 confirms own-ticket exit and return. Hint08 summarizes established ticket ownership and reunion coordination, without contradicting any state. It need not repeat spoken08 verbatim. No canonical correction needed."
+    },
+    {
+      "scenarioId": "SC-LOC-011-04-001",
+      "turnId": "DLG-SC-LOC-011-04-001-SHARED-06",
+      "field": "hintJa",
+      "issue": "Japanese hint asks contact to other department, whereas spoken turn asks internal-medicine reception to be informed of second appointment.",
+      "blocksFullAcceptance": false,
+      "status": "RESOLVED_BY_ORIGINAL_OWNER_APPROVED_HINT_AND_TASK_ALIGNMENT",
+      "canonicalEdited": false,
+      "selfRecheck": "Entire dialogue re-read; unsupported annual-payment frequency remains (00807), direct message-recipient differs despite later conditional inter-staff coordination (01104), or replacement-event date not shown equivalent to arrival date (01109). Minimal hint correction proposed.",
+      "previousStatus": "SOURCE_ALIGNMENT_UNRESOLVED",
+      "resolutionArtifact": "sourceHintAmendments and runtimeMetadataAmendments in this receipt"
+    },
+    {
+      "scenarioId": "SC-LOC-011-05-001",
+      "turnId": "DLG-SC-LOC-011-05-001-SHARED-10",
+      "field": "hintJa",
+      "issue": "Japanese hint broadly asks correction of unfound-item information, whereas spoken turn requests only licence marked found after collection and other items remain missing.",
+      "blocksFullAcceptance": false,
+      "status": "CLOSED_CONTEXT_SUPPORTED",
+      "canonicalEdited": false,
+      "evidenceTurns": [
+        "03",
+        "04",
+        "08",
+        "10",
+        "11"
+      ],
+      "resolution": "Read entire dialogue again. Only licence found is fixed in03/04;08 separates licence-record update from continued wallet/cards inquiry;10 requests licence-only found status after collection;11 confirms keeping others missing. Hint10 is a broad task summary of collection vs lost-property-record maintenance, not an instruction to mark other items found. No canonical correction needed."
+    },
+    {
+      "scenarioId": "SC-LOC-011-09-001",
+      "turnId": "DLG-SC-LOC-011-09-001-SHARED-10",
+      "field": "hintJa",
+      "issue": "Japanese hint says replacement date (差替え日), whereas spoken turn says dates received (届いた日); exact event date differs.",
+      "blocksFullAcceptance": false,
+      "status": "RESOLVED_BY_ORIGINAL_OWNER_APPROVED_HINT_AND_TASK_ALIGNMENT",
+      "canonicalEdited": false,
+      "selfRecheck": "Entire dialogue re-read; unsupported annual-payment frequency remains (00807), direct message-recipient differs despite later conditional inter-staff coordination (01104), or replacement-event date not shown equivalent to arrival date (01109). Minimal hint correction proposed.",
+      "previousStatus": "SOURCE_ALIGNMENT_UNRESOLVED",
+      "resolutionArtifact": "sourceHintAmendments and runtimeMetadataAmendments in this receipt"
+    },
+    {
+      "scenarioId": "SC-CHB-NARITA-001",
+      "batch": "111",
+      "turnId": "DLG-SC-CHB-NARITA-001-SHARED-02",
+      "field": "hintJa",
+      "type": "SOURCE_HINT_TASK_MISMATCH",
+      "status": "RESOLVED_SOURCE_HINT_AND_RUNTIME_TASK_AMENDED",
+      "detail": "Turn02 expected player still asks for Airport Station based on misread hotel access directions, but hintJa instructs clarifying hotel rather than station; that correction only happens at turn04. All 12 target hints faithfully follow conflicting Japanese hint. Needs Japanese authoring decision and synchronized 12-locale hint update; no unilateral source edit made.",
+      "resolution": "Source/runtime hint, required goal, evaluation and 12 locale hint anchors/translations synchronized and self-reviewed against four adjacent turns. Spoken Japanese unchanged."
+    },
+    {
+      "scenarioId": "SC-LOC-CHB-NARITA-06-001",
+      "turnIds": [
+        "DLG-SC-LOC-CHB-NARITA-06-001-SHARED-02",
+        "DLG-SC-LOC-CHB-NARITA-06-001-SHARED-04"
+      ],
+      "status": "LOCAL_SOURCE_AMBIGUITY_AUDIO_ALIGNMENT_IF_CHANGED",
+      "reason": "Lượt02 nói số tài khoản có trên tờ giấy này; lượt04 nói giấy từ bạn chỉ có tên ngân hàng. Có thể hai tờ khác nhau nhưng văn cảnh không xác định; giữ nguyên spokenJA và dịch, cần chốt cùng audio trước khi sửa.",
+      "contextEvidence": {
+        "turn02": "はい。口座番号はこの紙にありますが、支店は空港支店だったと思います。",
+        "turn04": "友人からもらった紙には銀行名しかありません。似た支店名を聞いた記憶で補おうとしていました。",
+        "turn06": "メッセージは送れますが、返事はすぐ来ないかもしれません。確認中は振込を進めないでください。",
+        "turn10": "分かりました。正式な振込先と期限を確認し、情報がそろってから手続きします。"
+      },
+      "assessment": "Người chơi thừa nhận đang lấp thông tin bằng trí nhớ và chuyển sang xác minh; lượt04 có thể là tự đính chính thông tin giấy nhưng không nói rõ, cũng không xác nhận hai tờ khác nhau. Không coi đây là mâu thuẫn chắc chắn; giữ như ambiguity local, không tự sửa.",
+      "beforeSha256": {
+        "turn02": "f8342604ae9052fad4d2c60421f06c29d10a4b21c2c686a8047b2b28eff61a91",
+        "turn04": "41c6113240adb8b77772f6e74a6ed357ec8d7ebc7ea2a54c2b6ea54646af8ffe",
+        "turn06": "3c27ccc590ccdf16c733238a6107a6e70d8e3285df8e9e9c01f40574e3fe9542",
+        "turn10": "0a53fe04dfebdea6cf3fcf914cda8b7e862007cc89316ef034f1b800badf3222"
+      },
+      "proposal": "Nếu publisher muốn làm rõ, thêm ý đính chính ở lượt04 hoặc xác định hai giấy; mọi sửa spokenJA phải đồng bộ audio/subtitles. Không áp dụng proposal."
+    },
+    {
+      "scenarioId": "SC-LOC-011-01-001",
+      "turnId": "DLG-SC-LOC-011-01-001-SHARED-10",
+      "field": "hintJa",
+      "issue": "Hint uses 改札名 (ticket-gate name), but current waiting place and turn10 sentence specify 出口名 (east-exit name). Targets faithfully inherit gate-name hint; canonical alignment needs JP-authorized correction.",
+      "status": "RESOLVED_BY_ORIGINAL_OWNER_APPROVED_HINT_ALIGNMENT",
+      "blocksFullAcceptance": false,
+      "resolution": "Applied original worker6 semantic-approved proposal mechanically after all before hashes matched; no new semantic cross review or recount."
+    },
+    {
+      "scenarioId": "SC-LOC-TKY-005-001",
+      "turnId": "DLG-SC-LOC-TKY-005-001-SHARED-11",
+      "field": "sourceJa",
+      "issue": "Turn02 says current instruction sheet was lost; only old sheet and current bag established. Turn09 merely permits consultation about preparing a new sheet and turn10 states future receipt, but turn11 asks to retain two sheets as they are. Second available sheet not established; preserve targets and seek JP-authorized clarification.",
+      "status": "SOURCE_DOCUMENT_COUNT_ALIGNMENT_PENDING",
+      "blocksFullAcceptance": true
+    }
+  ],
+  "nativeReviewed": false,
+  "semanticCrossReview": false,
+  "sourceAccepted": false,
+  "verification": "Verify current commit remotely before claiming durable persistence.",
+  "newScenariosSincePreviousCheckpoint": 219,
+  "authoringInputTaskAmendments": 53,
+  "ownershipTransferArtifact": null,
+  "checkpointMode": "IMMUTABLE_SNAPSHOT_WHILE_SIX_WORKERS_CONTINUE_UNREAD_SCOPES"
+}
