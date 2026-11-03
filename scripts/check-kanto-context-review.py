@@ -197,6 +197,9 @@ def main():
         queue['aiSentenceTaskReviewedScenarios']=sum(p['aiSentenceTaskReviewedScenarios'] for p in queue['prefectures'])
         queue['remainingSentenceTaskScenarios']=queue['canonicalScenarios']-queue['aiSentenceTaskReviewedScenarios']
         pending=[s for c in prefecture['cities'] for s in c['pendingSentenceTaskScenarioIds']]
+        if not pending:
+            # Completing Kanto must preserve a valid handoff for the remaining corpus.
+            pending=[s for p in queue['prefectures'] for c in p['cities'] for s in c['pendingSentenceTaskScenarioIds']]
         queue['nextScenarioId']=pending[0] if pending else None
         queue['nextBatch']=idx[pending[0]] if pending else None
         write(QUEUE,queue)

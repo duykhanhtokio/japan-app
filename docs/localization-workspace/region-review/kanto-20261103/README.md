@@ -1,27 +1,28 @@
-# Kanto — rà ngữ cảnh 12 ngôn ngữ
+# Kanto — hoàn tất rà ngữ cảnh bằng sáu AI
 
-Phạm vi 1.681 bài, 7 tỉnh/thành (PRF-008 đến PRF-014). Sáu AI có quyền sở hữu độc lập theo lô: 291/260/240/340/250/300 bài; tổng 178 lô. Không kiểm chéo ngữ nghĩa. Mốc đầu vào `7dfefea18ca037b06798b1e03154b3f175b5eceb`; giữ nguyên bằng chứng trước đó. Kanto chưa có bài đã rà đủ ở mốc đầu vào.
+Đã đọc thực **1.681/1.681 hội thoại**, mỗi bài đủ **11 lượt +5 hint Nhật và12locale**: vi,en,id,tl,zh-CN,zh-TW,hi,bn,ne,my,th,km. Tổng **322.752 trường** được kiểm bằng hash và loader thực. Không còn bài pending; không kiểm chéo ngữ nghĩa. Bằng chứng hợp lệ từ mọi checkpoint/cập nhật đồng thời được giữ, không đếm hoặc rà lại.
 
-Chỉ bài đã thực đọc tiếng Nhật và đủ 12 ngôn ngữ, có receipt hash từng câu/gợi ý và ghi chú riêng, mới tính rà ngữ cảnh bằng AI. Các bài chưa đọc vẫn nằm trong assignment; phân công không chứng minh hoàn tất. `worker-1.json` đến `worker-6.json` được ghi tăng dần, không thay cho chứng nhận bản ngữ, phát âm, thiết bị hoặc phát hành. Các điểm chưa rõ trong nguồn Nhật được ghi riêng, không tự sửa nguồn để che vấn đề.
+| Chủ phạm vi | Bài đã rà | Trường đã kiểm | Pending |
+|---|---:|---:|---:|
+| 1 | 291 | 55,872 | 0 |
+| 2 | 250 | 48,000 | 0 |
+| 3 | 240 | 46,080 | 0 |
+| 4 | 340 | 65,280 | 0 |
+| 5 | 250 | 48,000 | 0 |
+| 6 | 310 | 59,520 | 0 |
 
-Khi worker đã ngừng ghi, chạy `python scripts/check-kanto-context-review.py --sync` để kiểm chứng quyền sở hữu, độ đủ 12 ngôn ngữ, hash và mọi thay đổi, rồi đồng bộ queue/manifest. Chạy `TOKUTEI_QA_MODULES=<dependencies> node scripts/check-kanto-context-loader.cjs` để kiểm văn bản qua loader thực. Chỉ chốt vùng khi đủ 1.681 bài có bằng chứng hợp lệ.
+Tích lũy sửa **6.361 trường dịch**, **696 metadata hintJa**, **58 hint Nhật**, **116 goal/evaluationNotes** và **58 task authoring**. Đồng bộ60hint mirrors từ patch/bằng chứng chủ phạm vi. Không thay lời thoại nói, IDs hoặc audio. Chỉ chuyển nguyên lô chưa được đọc để cân bằng; mọi lần chuyển có artifact riêng, gồm [ownership-transfer-final-tail.json](ownership-transfer-final-tail.json).
 
-## Checkpoint hiện tại
+## Bằng chứng và kiểm tra
 
-Đã đọc thực **1.403/1.681 bài ×12 ngôn ngữ**, **269.376 trường**. Còn **278 bài**. Tích lũy sửa **5.877 trường dịch**, **648 metadata hintJa**, **54 hint Nhật**, **108 goal/evaluationNotes**, **54 authoring task**. Không đổi spokenJA/audio. Giữ tất cả bằng chứng hợp lệ, không đếm lại.
+- [integration-qa.json](integration-qa.json): quyền sở hữu, đủ12locale/16fields, hashes hiện tại, reverse replay tới baseline, source-hint/runtime/authoring amendments.
+- [loader-qa.json](loader-qa.json): dữ liệu dịch và metadata qua loader thực.
+- [global-technical-qa.json](global-technical-qa.json): kiểm tra kỹ thuật toàn kho và queue hợp các bằng chứng; không đồng nghĩa nghiệm thu phát hành.
+- [source-issues-open.json](source-issues-open.json): **7 ghi chú nguồn do chủ phạm vi báo**, trong đó4 mục được chính chủ phạm vi đánh dấu chặn nghiệm thu đầy đủ. Coordinator giữ và tổng hợp, không tự kết luận lại ngữ nghĩa. Các thay đổi spokenJA nếu cần phải đồng bộ nguồn, bản dịch/ruby và audio.
+- [resume.json](resume.json): sáu phạm vi đã dừng, mỗi phạm vi pending0.
 
-Sau sự cố làm mới môi trường, hợp và khôi phục bằng chứng từ bản GitHub, gói truyền còn giữ và đúng chủ phạm vi còn actual context. Chỉ phục hồi với nguyên văn/ghi chú/sửa đổi khớp và replay baseline, không dùng số đếm để tạo review. Còn8bài worker5 thiếu bằng chứng cũ được giữ pending cho đến có đủ bằng chứng; chúng không thuộc1403. Gói raw và gzip dự phòng đã lên nhánh recovery/kanto-evidence-20261103, mốc1339 đã WORK PERSISTENCE PASS.
+Receipt đầy đủ nằm trong worker-N.evidence.json.gz; worker-N.json là wrapper có SHA256 của cả archive và nguyên bản. Python validator, loader và thư viện global kiểm hashes rồi giải nén. [receipt-transport-normalization.json](receipt-transport-normalization.json) xác minh roundtrip byte-for-byte, không bỏ reviews/notes/before-after. Nếu cần tiếp chỉnh sửa, chỉ coordinator chạy python scripts/kanto-receipt-transport.py expand khi toàn bộ worker đã ngừng; không reset các thay đổi biểu diễn sau expand.
 
-Chuyển sáu lô hoàn toàn chưa có review hợp lệ để cân bằng phần còn lại **48/50/50/46/43/41**. Không chuyển bài đã có bằng chứng. Xem ownership-transfer-checkpoint-1388.json, ownership-transfer-checkpoint-1403.json và resume.json. Ownership tổng hiện291/260/240/340/250/300.
+Sau lần môi trường bị làm mới, bằng chứng được cứu từ GitHub, gói còn giữ và nguyên văn/ghi chú/sửa đổi của đúng AI đã đọc, không dựng review từ số đếm. Những mục thiếu bằng chứng đã được phục hồi hoặc đọc đủ trước khi tính vào1.681. Các gói dự phòng ở nhánh recovery/kanto-evidence-20261103; mốc1.497 đã WORK PERSISTENCE PASS. Mốc main trước đó1.403: fa836e81d75c6e8daf0ad4af18bee929eab092bb.
 
-Receipt đầy đủ được nén gzip losslessly, small JSON wrapper giữ hashes của archive và nguyên bản. Cả validator Python, loader và thư viện global tự kiểm hash rồi giải nén. Trước khi cho worker ghi tiếp, sau persistence chạy python scripts/kanto-receipt-transport.py expand. Không dùng receipt wrapper như bằng chứng hash-only: mọi reviews/notes/before-after nguyên bản vẫn nằm đầy đủ trong archive.
-
-Chủ phạm vi đọc JP và đủ12locale, tự sửa và tự kiểm; coordinator chỉ tích hợp/kiểm hash, không kiểm chéo ngữ nghĩa. Các hint lệch lượt được đồng bộ nguồn Nhật, runtime,12bản dịch và mục tiêu đánh giá. Hai cảnh báo cũ được đóng bằng toàn ngữ cảnh, không sửa tùy tiện. Patch do người rà gốc đã phê duyệt được phiên thay thế áp dụng kỹ thuật với before/hash khớp, không đếm lại.
-
-Còn một vấn đề số tờ giấy ở NPC `SC-LOC-TKY-005-001` cần chốt canonical spoken Japanese đồng thời audio. `SC-LOC-CHB-NARITA-06-001` lưu mơ hồ thông tin tài khoản trên giấy, chưa khẳng định là lỗi chắc chắn; mọi thay spokenJA nếu cần đều phải đồng bộ audio. Thêm câu Nhật chưa tự nhiên `まだ券を受け取りましたか` ở `SC-LOC-JP-14210-01-001`, turn03; chưa sửa spokenJA/audio. Các mục local này không chặn rà các bài khác, không được coi đã nghiệm thu nguồn sạch. Bản ngữ/phát âm/thiết bị/phát hành vẫn riêng biệt.
-
-`baseline-file-hashes.json` bảo vệ toàn bộ kịch bản Kanto được giao trong2.136tệp locale: replay ngược mọi thay đổi rồi so owned-scope hash và metadata, không phụ thuộc Git object cũ. Bài của vùng khác trong lô giáp ranh được kiểm bằng receipt riêng. `sourceHintAmendments` và `runtimeMetadataAmendments` xác minh thay đổi hint và đúnghai field đánh giá được phép. Sharedhint mirrors chỉ coordinator đồng bộ từ patch chủ phạm vi đã duyệt.
-
-Dùng một checkout chung, sáu phạm vi độc lập. Fetch partial `blob:none` để không kéo media JLPT ngoài scope. GitHub connector cần truyền từng phần và bắt buộc treeSHA bằng chính xác local tree đã kiểm. Giữ mọi commit đồng thời, không force push; chỉ xác nhận lưu sau fetch và WORK PERSISTENCE PASS.
-
-Nhập thêm15bài đã có bằng chứng đầy đủ từ commit công bố đồng thời, không rà lại hoặc cộng trùng. Các phương án public đã duyệt được giữ theo quy tắc cơ học, lưu cả hai lịch sử; không kiểm chéo ngữ nghĩa.
+Baseline target portable tại [baseline-file-hashes.json](baseline-file-hashes.json); authoring có [authoring-input-baselines.json](authoring-input-baselines.json) và [authoring-input-integration.json](authoring-input-integration.json). Giữ các lịch sử Git và bằng chứng đồng thời; không force push. Native review, phát âm/nghe, thiết bị và release approval chưa được chứng nhận bởi đợt rà AI này.
