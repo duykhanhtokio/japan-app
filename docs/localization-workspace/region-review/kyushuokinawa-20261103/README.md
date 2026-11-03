@@ -1,16 +1,16 @@
 # Kyushu & Okinawa — rà ngữ cảnh đủ 12 ngôn ngữ
 
-**593/1.064 bài** có receipt/hash hợp lệ. Còn **471 bài**; chưa hoàn tất vùng.
+**654/1.064 bài** có receipt/hash hợp lệ. Còn **410 bài**; chưa hoàn tất vùng. **Okinawa101/101** đã rà AI đủ12ngôn ngữ.
 
-Giữ nguyên byte mọi receipt cũ. Sáu phạm vi độc lập, không kiểm chéo ngữ nghĩa. Điều phối kiểm quyền sở hữu, cấu trúc, guard và hash. Chỉ nhận ID pending chưa có bằng chứng hợp lệ. Phiên AI hết ngữ cảnh được thay bằng phiên mới cùng phạm vi; không tính bản ghi trùng là bài mới.
+Sáu phạm vi độc lập, không kiểm chéo ngữ nghĩa. Điều phối kiểm quyền sở hữu, cấu trúc, guard và hash. Giữ nguyên byte mọi receipt cũ; không nhận bản ghi trùng để thay đổi bằng chứng đã chốt. Phiên AI hết dung lượng được thay bằng phiên mới cùng phạm vi. Lượt này dừng sau khi phiên thay thế mới báo không đủ dung lượng xử lý; mọi worker đã dừng, không chạy ngầm.
 
 | AI | Phạm vi | Đã rà/tổng | Còn |
 |---|---|---:|---:|
-|1|Fukuoka|105/245|140|
-|2|Saga + Nagasaki|123/210|87|
-|3|Kumamoto|86/125|39|
-|4|Oita + Miyazaki|85/218|133|
-|5|Kagoshima|105/165|60|
-|6|Okinawa|89/101|12|
+|1|Fukuoka|117/245|128|
+|2|Saga + Nagasaki|138/210|72|
+|3|Kumamoto|91/125|34|
+|4|Oita + Miyazaki|93/218|125|
+|5|Kagoshima|114/165|51|
+|6|Okinawa|101/101|0|
 
 Tiếp tục đúng pendingScenarioIds, trừ mọi ID có receipt đầy đủ trong staging. Check-region kiểm12×16trường/bài, hash và queue riêng vùng. Rà AI không thay cho duyệt bản ngữ, metadata, âm thanh, thiết bị hoặc nghiệm thu phát hành. Không tính sàng lọc là rà ngữ nghĩa.
