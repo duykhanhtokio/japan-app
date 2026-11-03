@@ -25,6 +25,22 @@ function targetPack(batch, locale) {
 }
 
 function expandContextReceipt(receipt) {
+  if (receipt.schemaVersion === 'context-review-archive-v1') {
+    const fs = require('node:fs'), path = require('node:path');
+    const root = path.resolve(__dirname, '../..');
+    assert(receipt.archivePath.startsWith('docs/localization-workspace/region-review/kanto-20261103/'));
+    assert(!receipt.archivePath.split('/').includes('..'));
+    const zipped = fs.readFileSync(path.join(root, receipt.archivePath));
+    assert.equal(digest(zipped), receipt.archiveSha256, 'Changed evidence archive');
+    const raw = require('node:zlib').gunzipSync(zipped);
+    assert.equal(digest(raw), receipt.uncompressedSha256, 'Changed expanded evidence');
+    return expandContextReceipt(JSON.parse(raw.toString('utf8')));
+  }
+  if (receipt.reviewFieldEncoding === 'tuple-v1') {
+    const keys = ['turnId', 'field', 'sourceSha256', 'targetSha256'];
+    for (const row of receipt.reviews) row.fields = row.fields.map(f => Array.isArray(f) ? Object.fromEntries(keys.map((k, n) => [k, f[n]])) : f);
+    delete receipt.reviewFieldEncoding;
+  }
   if (receipt.schemaVersion !== 'context-review-compact-v1') return receipt;
   assert.equal(receipt.nativeReviewed, false);
   assert.equal(receipt.wholeScenarioAll12Read, true);
