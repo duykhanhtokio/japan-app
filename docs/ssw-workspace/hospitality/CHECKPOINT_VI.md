@@ -1,3 +1,27 @@
+# Tiếp quản và nghiệm thu ba nhóm phục vụ — 03/11/2026
+
+Đã tiếp quản phần đang dở tại baseline `4832f53f`, giữ nguyên các thay đổi hợp lệ. Ba nhóm nguồn hoàn tất tuần tự: điện thoại/khiếu nại (6 ý), tư thế tiếp khách (4 ý), hướng dẫn và hỗ trợ khách (12 ý). Đọc lại chữ và ảnh 7 trang thuộc cả hai PDF; sổ chuẩn có vùng nguồn chính xác, liên kết hai chiều và bằng chứng bài/câu hiện hành. Hai trang chữ thuần 1号34 và 2号41 đã phân loại đủ 305 phần tử, gồm ruby, spans và thành phần điều hướng; không suy ra khép toàn bộ các trang còn lại.
+
+Phát hiện câu cũ q03 chưa kiểm riêng thành phần bụng trong tư thế: giữ câu cũ và nối `hotel-service-01-q17`, đủ 12 bản dịch đúng revision và 6 chuỗi furigana mới. Bảo toàn 333 câu Nhật cũ, 456 cặp dịch cũ và 3.023 entry reading cũ. Chỉ bài service01 đổi revision; kiểm lưu/khôi phục archive xác nhận lượt học cũ vẫn được giữ và revision mới cần làm lại. Tổng hiện có 334 câu/38 bài, 456/456 cặp dịch hợp lệ.
+
+Tự kiểm nguồn đạt 165/384 ý đã biết (tăng 22), còn 219 ý mở; mẫu số vẫn mở, sourceCoveragePercent=null, không kết luận bao phủ toàn bộ 117 trang. PASS: check-multisource-service, sổ chuẩn source-coverage-v2, check.cjs, check-readings, check-translations --require-complete, loader thật và diff--check phạm vi khách sạn.
+
+Đã build harness route/reader thật sang web; Chromium bị môi trường chặn khi tạo socket (`Operation not permitted`), nên lượt này chưa có bằng chứng render mới. Không dùng build thành công thay cho kiểm hiển thị. Chưa nghiệm thu thiết bị thật, âm thanh, chuyên môn/bản ngữ hoặc thời lượng thực học. Chi tiết: `recovery-v9/multisource-service-validation.json` và `multisource-takeover-validation.json`. Điều phối lưu đợt hoàn chỉnh và xác minh remote trước khi báo đã lưu.
+
+---
+
+# Phục hồi hai nguồn và nghiệm thu từng trang — 03/11/2026, đợt2
+
+Tiếp từ4832f53đãđược điều phối xác minhremote. Phục hồiPDF1gốc52trang từtệpđãlưu,hash5e991b…khớp canonical;PDF2hashcũng được kiểm. Đọc chữ/xem7trang ởhai nguồn:1号30/33/34,2号37/40/41/42. Ba nhóm thực hiện liên tiếp:6ýđiệnthoại/khiếunại,4ýtưthế,12ýhướngdẫn/di chuyển/đồvật/nhucầu/おもてなし.22ýmớiđủmaphai chiều:143→165covered_ai/384known,219ýcònmở. Bổsungsource2p40chocanonicalHS1-033-12sauđọcđoạncorroborating;khôngtăngmẫusốhaythayID.
+
+Hai trang đã hoàn tấtsemanticinventory thực sự:1号p34và2号p41,305object(73textblocks,210spans,22vectors). Toànbộhash/bboxđược táikiểmtrực tiếp từPDF, bao gồmruby vàvectornav; từng vùng đượcphânloại/gắnýhoặclýdoloại/trùng. Mọiýnghềnghiệp quan trọng của2trangcóđoạndạy/câuphùhợp hiệnhành. Semanticinventory toànngành16→18trang,khôngnângtoàn117trang. Ảnhnguồn/đoạnvănnguồn khôngđưavàoGit.
+
+Ràtưthế phát hiện q03chưakiểm bụng trongcụm背中・お腹・あご・肩. Thêmhotel-service-01-q17,12bản dịch và6chuỗireadingtựsoạn,giữmọi333câuNhậtcũ/456cặptrườngdịchcũ/3023entryreading. Tổng334câu/38bài;456/456bản dịch vàloaderthậtPASS,thiếu/cũ0. Chỉservice01đổi revisiondoquestionmới; quote/snapshotcũđược kiểmtrước khi cậpbinding. Archive/restorenhớlượt cũ vàyêucầulàmlạirevisionmới đãkiểm.
+
+Receipt:recovery-v9/multisource-service-review.json, multisource-posture-integration.json, multisource-service-validation.json. Sourcepercentagevẫnnull,mẫusốopen;chưa duyệtchuyênmôn/bảnngữ,thiếtbịthật,âmthanhhoặcthờilượngthựchọc. Điều phối tựpublish/verifyremote trước côngbốđãlưu;khôngnhậnđãđồngbộMac.
+
+---
+
 # Ba nhóm phục vụ và đồ uống — 03/11/2026
 
 Baseline nội dungc25e4e2, điều phối tự lưu đợt này sau tích hợp. Ba nhóm nguồn được thực hiện tuần tự, mỗi nhóm có validator: (1) tư thế/giao tiếp tiếp cận/khóa phòng/hướng dẫn nhân viên,2号tr37/40/41; (2) đề xuất đồ uống, nguyên liệu/cách phục vụ sake, giống nho/địa danh và地産地消,tr48/49; (3) chức năngバタースプレッダー,tr51. Đọc chữ và xem cả6ảnh trang, xác minh bytePDF và30vùng chữ (hash+bbox); không đưa sourceprose hay ảnhPDF vàoGit. Các phần tử vùng chuẩn p37/p49/p51 được đối chiếu bbox vì chỉ sốtext-only bị lệch khi trang cóảnh.
