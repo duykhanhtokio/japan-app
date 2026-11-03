@@ -738,3 +738,11 @@ jpapp-n5-original-05-v1, jpapp-n5-original-06-v1: complete real synthesis and de
 ## 2026-11-03 — further complete prosody recordings
 
 jpapp-n4-original-01-v1, jpapp-n4-original-02-v1: complete real synthesis and decoded audio validation. 8/30 candidates complete; 0/30 newly installed. Preserve all text/keys/voices/answer windows/exact60000ms break. Human/native/perceptual approval false. Publication requires remote verification.
+
+## 2026-11-03 — further complete prosody recordings
+
+jpapp-n4-original-03-v1, jpapp-n4-original-04-v1: complete real synthesis and decoded audio validation. 10/30 candidates complete; 0/30 newly installed. Preserve all text/keys/voices/answer windows/exact60000ms break. Human/native/perceptual approval false. Publication requires remote verification.
+
+## 2026-11-03 — further complete prosody recordings
+
+jpapp-n4-original-03-v1, jpapp-n4-original-04-v1: complete real synthesis and decoded audio validation. 10/30 candidates complete; 0/30 newly installed. Preserve all text/keys/voices/answer windows/exact60000ms break. Human/native/perceptual approval false. Publication requires remote verification.
