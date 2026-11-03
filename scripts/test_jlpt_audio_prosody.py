@@ -6,7 +6,7 @@ import tempfile
 from unittest.mock import patch
 import importlib.util
 from pathlib import Path
-from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts
+from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts, speech_query_text, validate_voice_catalog
 spec = importlib.util.spec_from_file_location('prosody_batch', Path(__file__).with_name('prepare-jlpt-prosody-batch.py'))
 batch = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(batch)
@@ -69,6 +69,51 @@ class ProsodyTests(unittest.TestCase):
             self.assertEqual(round(plain * 24000) * 2, round(plain * 1000) * 48)
         self.assertEqual(60 * 24000, 1440000)
         self.assertEqual(60000, self.profile['midListeningMusicMs'])
+
+    def test_layout_spaces_do_not_become_extra_breath_pauses_or_stale_cache(self):
+        text = '家で 女の 人と 男の 人が 話しています。'
+        original = text
+        spoken = speech_query_text(text)
+        self.assertEqual(spoken, '家で女の人と男の人が話しています。')
+        self.assertEqual(text, original)
+        self.assertEqual(speech_query_text('一、二。　三？'), '一、二。　三？')
+        key = lambda source, query=None: cache_key(source, 118, '0.25.2', self.profile, 'n5', 'narration', query_text=query)
+        self.assertNotEqual(key(text), key(text, spoken))
+        self.assertNotEqual(key(text, spoken), key(text + ' ', spoken))
+        self.assertEqual(key(spoken), key(spoken, spoken))
+        with self.assertRaises(ValueError):
+            key(text, '別の文です。')
+
+    def test_one_renderer_owns_a_progress_report_until_its_handle_closes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            target = Path(directory) / 'report.json'
+            target.write_text('preserve existing progress')
+            first = batch.acquire_report_lock(target)
+            try:
+                with self.assertRaisesRegex(RuntimeError, 'Another renderer'):
+                    batch.acquire_report_lock(target)
+            finally:
+                first.close()
+            with batch.acquire_report_lock(target):
+                self.assertEqual(target.read_text(), 'preserve existing progress')
+
+    def test_engine_catalog_must_contain_the_exact_four_approved_voice_styles(self):
+        casting = json.loads((ROOT / 'src/data/jlpt-original/voice-casting.json').read_text())
+        catalog = [{'name': role['name'], 'styles': [{'id': role['speakerId'], 'name': role['style']}]} for role in casting['roles'].values()]
+        validate_voice_catalog(catalog, casting)
+        with self.assertRaisesRegex(ValueError, 'approved voice'):
+            validate_voice_catalog(catalog[:-1], casting)
+        catalog[0]['styles'][0]['name'] = '別のスタイル'
+        with self.assertRaisesRegex(ValueError, 'approved voice'):
+            validate_voice_catalog(catalog, casting)
+
+    def test_unnormalized_candidates_are_rejected_before_audio_installation(self):
+        row = {'level': 'n5', 'number': 1, 'masterSha256': 'master', 'organizationSha256': 'org', 'castingSha256': 'casting'}
+        manifest = {'masterSha256': 'master', 'organizationSha256': 'org', 'voiceCastingSha256': 'casting',
+                    'prosody': {'profileSha256': fingerprint(self.profile)}}
+        with patch.object(batch, 'check_snapshot'), patch.object(Path, 'read_text', return_value=json.dumps(manifest)):
+            with self.assertRaisesRegex(AssertionError, 'Unnormalized'):
+                batch.validate_candidate(row, ROOT / 'unused-candidates', self.profile)
 
     def test_bounded_inference_keeps_all_phrases_and_pauses(self):
         q = copy.deepcopy(self.query)

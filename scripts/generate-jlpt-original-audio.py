@@ -4,7 +4,7 @@ No external text service; no legacy exam inputs. Generated audio requires human 
 """
 import argparse,array,hashlib,io,json,math,os,subprocess,tempfile,time,urllib.parse,urllib.request,wave
 from pathlib import Path
-from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts
+from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts, speech_query_text, SPOKEN_TEXT_NORMALIZATION, validate_voice_catalog
 ap=argparse.ArgumentParser();ap.add_argument('--level',choices=['n5','n4','n3'],default='n5');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--cpu-threads',type=int,default=2);ap.add_argument('--restart-every',type=int,choices=range(1,513),default=6);ap.add_argument('--engine',required=True);ap.add_argument('--prosody-profile');ap.add_argument('--candidate-dir');ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[40,48,64,96],default=96);args=ap.parse_args();level=args.level;exam_number=f'{args.exam_number:02d}'
 root=Path(__file__).resolve().parent.parent;master=root/f'src/data/jlpt-original/{level}/{exam_number}/master.ja.json';master_bytes=master.read_bytes();exam=json.loads(master_bytes);casting=json.loads((root/'src/data/jlpt-original/voice-casting.json').read_text());settings={**casting['settings'],**casting.get('levelPacing',{}).get(level,{})};roles=casting['roles'];organization_path=root/f'src/data/jlpt-original/{level}/{exam_number}/listening-organization.ja.json';organization_bytes=organization_path.read_bytes();organization=json.loads(organization_bytes)
 render_root=candidate_root(root,args.candidate_dir,args.prosody_profile);prosody=load_profile(root/args.prosody_profile) if args.prosody_profile else None;engine_version=None
@@ -29,10 +29,12 @@ def start():
  global proc
  proc=subprocess.Popen([args.engine,'--host','127.0.0.1','--port',str(args.port),'--cpu_num_threads',str(args.cpu_threads)],cwd=str(Path(args.engine).parent),stdout=log,stderr=log)
  for _ in range(80):
-  try: req('/speakers');return
+  try: catalog=json.loads(req('/speakers'))
   except Exception:
    if proc.poll() is not None:raise RuntimeError('VOICEVOX stopped')
-   time.sleep(.25)
+   time.sleep(.25);continue
+  if prosody:validate_voice_catalog(catalog,casting)
+  return
  raise RuntimeError('Startup timeout')
 def stop():
  if proc and proc.poll() is None:proc.terminate();proc.wait(timeout=15)
@@ -48,14 +50,16 @@ def synth(text,role,mode='dialogue'):
  global new_synthesis_count,engine_version
  sid=roles[role]['speakerId']
  if prosody:
-  if engine_version is None:engine_version=json.loads(req('/version'))
-  key=cache_key(text,sid,engine_version,prosody,level,mode)
+  if engine_version is None:
+   engine_version=json.loads(req('/version'))
+   if engine_version!=casting['engine']['version']:raise ValueError('Engine version differs from approved casting')
+  key=cache_key(text,sid,engine_version,prosody,level,mode,query_text=speech_query_text(text))
  else:
   text=text.replace(' ','');key=hashlib.sha256(json.dumps([text,sid,settings['speedScale']],ensure_ascii=False).encode()).hexdigest()
  p=cache/(key+'.wav')
  if not p.exists():
   if new_synthesis_count and new_synthesis_count%args.restart_every==0:stop();start()
-  q=json.loads(req('/audio_query?'+urllib.parse.urlencode({'speaker':sid,'text':text}),b''));q=apply_query(q,prosody,level,mode) if prosody else dict(q,speedScale=settings['speedScale'],outputSamplingRate=24000,outputStereo=False)
+  q=json.loads(req('/audio_query?'+urllib.parse.urlencode({'speaker':sid,'text':speech_query_text(text)}),b''));q=apply_query(q,prosody,level,mode) if prosody else dict(q,speedScale=settings['speedScale'],outputSamplingRate=24000,outputStereo=False)
   if prosody:
    pcm_parts=[]
    for part in query_parts(q,prosody.get('inferenceMaxMoras',160)):
@@ -190,7 +194,7 @@ try:
   manifest['currentMasterSha256']=hashlib.sha256(master_bytes).hexdigest()
   manifest['legacyTimingReference']=manifest.pop('settings')
   manifest['settings']={'mode':'per-utterance-prosody-candidate','answerPauseSecondsByProblem':settings['answerPauseSecondsByProblem'],'afterIntroSeconds':settings['afterIntroSeconds']}
-  manifest['prosody']={'profile':prosody,'profileSha256':fingerprint(prosody),'engineVersion':engine_version,'candidateOnly':True,'installedInApp':False,'playbackReviewed':False}
+  manifest['prosody']={'profile':prosody,'profileSha256':fingerprint(prosody),'engineVersion':engine_version,'candidateOnly':True,'installedInApp':False,'playbackReviewed':False,'textNormalization':SPOKEN_TEXT_NORMALIZATION,'renderRevision':prosody['revision']+'/'+SPOKEN_TEXT_NORMALIZATION}
  manifest_path=render_root/f'src/data/jlpt-original/{level}/{exam_number}/audio.manifest.json';manifest_path.parent.mkdir(parents=True,exist_ok=True)
  manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'count':len(segments),'durationSeconds':len(album)/48000,'complete':True}),flush=True)
 finally:stop();log.close()

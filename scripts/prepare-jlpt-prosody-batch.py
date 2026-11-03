@@ -14,12 +14,13 @@ import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from jlpt_audio_prosody import load_profile, fingerprint, speech_settings, candidate_root
+from jlpt_audio_prosody import load_profile, fingerprint, speech_settings, candidate_root, SPOKEN_TEXT_NORMALIZATION
 
 ROOT = Path(__file__).resolve().parent.parent
 PROFILE = 'src/data/jlpt-original/prosody-candidate.json'
 QUEUE = 'docs/checkpoints/jlpt-prosody-20261103/work-queue.json'
-CANDIDATES = 'docs/jlpt-workspace/audio-prosody-candidates/20261103-v1'
+CANDIDATES = 'docs/jlpt-workspace/audio-prosody-candidates/20261103-normalized-v2'
+TURN_CACHE = 'docs/jlpt-workspace/audio-prosody-candidates/20261103-v1/shared-turn-cache'
 
 
 def digest(path):
@@ -49,6 +50,7 @@ def inventory(profile):
                            'continuousBitrateKbps': audio['continuousBitrateKbps'],
                            'listeningResponses': len(questions), 'questionIds': [q['id'] for q in questions],
                            'approvedSpeakers': {k: v['speakerId'] for k, v in casting['roles'].items()},
+                           'expectedEngineVersion': casting['engine']['version'],
                            'candidateNarration': speech_settings(profile, level, 'narration'),
                            'candidateDialogue': speech_settings(profile, level, 'dialogue'),
                            'responseWindowsSeconds': casting['levelPacing'][level]['answerPauseSecondsByProblem'],
@@ -74,6 +76,8 @@ def validate_candidate(row, output, profile):
     assert manifest['organizationSha256'] == row['organizationSha256']
     assert manifest['voiceCastingSha256'] == row['castingSha256']
     assert manifest['prosody']['profileSha256'] == fingerprint(profile)
+    assert manifest['prosody'].get('textNormalization') == SPOKEN_TEXT_NORMALIZATION, 'Unnormalized learning-text spaces are not valid replacement audio'
+    assert manifest['prosody']['engineVersion'] == row['expectedEngineVersion'], 'Engine version differs from approved casting'
     assert manifest['prosody']['candidateOnly'] and not manifest['prosody']['installedInApp']
     for flag in ('publisherReviewed', 'nativeReviewCompleted', 'perceptualApproval', 'rightsReleaseReviewCompleted'):
         assert manifest[flag] is False
@@ -121,12 +125,25 @@ def completed_candidate(row, output, profile):
     return validate_candidate(row, output, profile)
 
 
+def acquire_report_lock(target):
+    """An OS-held lock releases even when a rendering process is interrupted."""
+    import fcntl
+    handle = target.with_name(target.name + '.lock').open('a')
+    try:
+        fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError as error:
+        handle.close()
+        raise RuntimeError('Another renderer owns this report; keep its valid work: ' + str(target)) from error
+    return handle
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--render', action='store_true')
     parser.add_argument('--engine')
     parser.add_argument('--profile', default=PROFILE)
     parser.add_argument('--candidate-dir', default=CANDIDATES)
+    parser.add_argument('--cache-dir', default=TURN_CACHE)
     parser.add_argument('--report', default=QUEUE)
     parser.add_argument('--port', type=int, default=50128)
     parser.add_argument('--jobs', type=int, choices=range(1, 5), default=1)
@@ -140,19 +157,25 @@ def main():
     rows = inventory(profile)
     report = {'schemaVersion': 1, 'scope': '30 original forms; no historical exam changes',
               'profileSha256': fingerprint(profile), 'profileStatus': profile['status'],
+              'textNormalization': SPOKEN_TEXT_NORMALIZATION, 'candidateDirectory': str(output.relative_to(ROOT)),
               'engineExecutableAvailable': bool(ready), 'renderedCandidates': 0, 'installedNewAudioForms': 0,
               'status': 'ready_for_explicit_render' if ready else 'blocked_missing_synthesis_engine', 'forms': rows}
     target = (ROOT / args.report).resolve()
     if ROOT not in target.parents:
         raise ValueError('Report must stay inside this checkout')
     target.parent.mkdir(parents=True, exist_ok=True)
+    # Retain this handle until main returns; competing runs must not overwrite
+    # one another's progress while subprocesses continue rendering.
+    report_lock = acquire_report_lock(target) if args.render else None
     save = lambda: target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     save()
     if args.render and not ready:
         raise RuntimeError('No executable VOICEVOX engine; no audio or app manifest was changed')
     if args.render:
+        assert report_lock is not None
         lock = threading.Lock()
-        cache = output / 'shared-turn-cache'
+        output.mkdir(parents=True, exist_ok=True)
+        cache = candidate_root(ROOT, args.cache_dir, args.profile)
         cache.mkdir(parents=True, exist_ok=True)
         def render(index, row):
             check_snapshot(row)

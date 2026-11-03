@@ -5,6 +5,28 @@ import json
 import math
 from pathlib import Path
 
+SPOKEN_TEXT_NORMALIZATION = 'strip-ascii-layout-spaces-v1'
+
+
+def speech_query_text(text):
+    """Match the approved Japanese renderer's treatment of layout spaces.
+
+    Keep the written source unchanged. ASCII spaces in beginner learning text
+    are not requested breath pauses; OpenJTalk otherwise inserts pause moras.
+    """
+    normalized = text.replace(' ', '')
+    if not normalized:
+        raise ValueError('Empty spoken query')
+    return normalized
+
+
+def validate_voice_catalog(speakers, casting):
+    available = {style['id']: (speaker['name'], style['name'])
+                 for speaker in speakers for style in speaker['styles']}
+    for role in casting['roles'].values():
+        if available.get(role['speakerId']) != (role['name'], role['style']):
+            raise ValueError('Engine does not match the approved voice: ' + role['name'])
+
 
 def load_profile(path):
     profile = json.loads(Path(path).read_text())
@@ -68,11 +90,18 @@ def apply_query(query, profile, level, mode):
     return result
 
 
-def cache_key(text, speaker_id, engine_version, profile, level, mode):
+def cache_key(text, speaker_id, engine_version, profile, level, mode, query_text=None):
     if not engine_version:
         raise ValueError('Actual engine version is required for the new cache')
     data = {'text': text, 'speaker': speaker_id, 'engineVersion': engine_version, 'profile': profile,
             'level': level, 'mode': mode, 'querySettings': speech_settings(profile, level, mode)}
+    if query_text is not None:
+        if query_text != speech_query_text(text):
+            raise ValueError('Unexpected spoken text normalization')
+        if query_text != text:
+            # Unchanged queries can reuse verified WAVs. Changed queries bind
+            # BOTH the written source and the actual engine input in the key.
+            data.update(queryText=query_text, textNormalization=SPOKEN_TEXT_NORMALIZATION)
     return hashlib.sha256(json.dumps(data, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
 
 
