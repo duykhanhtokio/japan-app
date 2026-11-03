@@ -94,6 +94,9 @@ async function main() {
     'docs/localization-workspace/naturalness-review-2026-10-25/prefecture-pass-03.json',
     'docs/localization-workspace/naturalness-review-2026-10-25/prefecture-pass-04.json',
     'docs/localization-workspace/release-audit-2026-11-03/kanazawa-01-context-review.json',
+    ...fs.readdirSync(path.join(root, 'docs/localization-workspace/naturalness-review-2026-11-03'))
+      .filter(name => /^kanazawa-\d{2}-\d{2}\.json$/.test(name)).sort()
+      .map(name => 'docs/localization-workspace/naturalness-review-2026-11-03/' + name),
   ];
   const reviewed = new Map();
   let reviewedFields = 0;

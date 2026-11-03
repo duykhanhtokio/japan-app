@@ -3,11 +3,12 @@
 Status: IN_PROGRESS. This checkpoint does not certify the corpus.
 
 Active resume authority: `prefecture-queue.json`. Work by prefecture, then city,
-then complete scenario sets across all 12 target locales. Ishikawa PRF-017 has
-101 scenarios across 11 cities; Kaga, Komatsu, Nanao and Wajima have32 sentence/task sets context-reviewed; the first Kanazawa
-set adds one, for33 total. Metadata, Japanese author issues and
-visual/native review are distinct and unfinished. Next: SC-LOC-017-02-001,
-batch 034 (Kanazawa).
+then complete scenario sets across all12 target locales. Ishikawa PRF-017 has
+101 scenarios across11 cities. Kaga, Komatsu, Nanao and Wajima have32 reviewed
+sentence/task sets; Kanazawa currently adds9, for41 total. This is revision-bound
+AI review, not native certification. Metadata/source/profile/native/device
+issues remain separate. Next: SC-LOC-017-10-001, batch035.
+Details: `../naturalness-review-2026-11-03/README.md`.
 
 Publisher scope: all 7,128 Japanese scenarios and all 12 target locales,
 including dialogue, task hints, scenario metadata, other learning content and
