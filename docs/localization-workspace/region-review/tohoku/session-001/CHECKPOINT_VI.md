@@ -1,11 +1,9 @@
 # Checkpoint Tohoku — 2026-11-03
 
-Đã rà ngữ cảnh Nhật và đủ 12 bộ câu/gợi ý: **216/702 bài**; còn **486 bài**. Sáu AI độc lập, không kiểm chéo; 118 receipt gắn hash; 274 trường dịch/gợi ý được sửa. Không phải nghiệm thu bản ngữ, nguồn, thiết bị hoặc phát hành.
+Đã rà Nhật và đủ12 bộ câu/gợi ý: **304/702 bài**; còn **398**. Sáu AI độc lập, không kiểm chéo; 168 receipt; 445 trường được sửa. Chưa phải duyệt bản ngữ/nguồn/thiết bị.
 
-Đã ghi quy trình lưu GitHub và thu gọn vào `docs/WORKSPACE_STORAGE_POLICY_VI.md`, có liên kết từ AGENTS và hướng dẫn bắt đầu phiên. Checkout chỉ tải dữ liệu cần cho vùng, không tải cả docs/assets hoặc tạo sáu clone.
+Giữ assignment bất biến và receipt còn hợp lệ. Tiếp tục theo status của từng worker bằng biến DIALOGUE_REVIEW_SESSION=docs/localization-workspace/region-review/tohoku/session-001. Đọc source-issues.json; không tự sửa Nhật/metadata trong lượt rà bản dịch.
 
-Đã tạm dừng sau đơn vị hoàn chỉnh khi ổ dùng chung giảm còn khoảng 811MB trống. Không có bài đọc dở chưa ghi receipt. Sau khi điều phối xác minh lưu remote, dọn snapshot tạm; giữ một checkout gọn nếu tiếp tục dùng. Không xóa công việc phiên khác.
+Áp dụng docs/WORKSPACE_STORAGE_POLICY_VI.md: xác minh remote trước khi dọn; không xóa công việc phiên khác.
 
-Tiếp tục bằng `DIALOGUE_REVIEW_SESSION=docs/localization-workspace/region-review/tohoku/session-001 python3 scripts/dialogue-region-review.py status N` (N=1..6). Không sửa assignment hoặc receipt cũ. Giữ nguyên mọi bài có bằng chứng còn hợp lệ. Đọc source-issues.json trước khi tiếp tục; chưa sửa tiếng Nhật/metadata trong lượt rà bản dịch.
-
-Điều phối chạy `node scripts/integrate-tohoku-context-review.cjs --write` sau khi nhận nhóm mới; hợp nhất các thay đổi remote trước khi ghi tổng hợp và kiểm tra persistence trước khi dọn.
+Lượt tiếp tục kết thúc do một worker gặp lỗi dịch vụ “Selected model is at capacity”. Không đổi model hoặc tự thử lại; các worker khác chốt các bài đã đọc đủ rồi dừng. Không tính bài đọc dở. Có thể tiếp tục từ status khi dịch vụ hoạt động trở lại.
