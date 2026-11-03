@@ -1,51 +1,51 @@
 {
   "status": "PARTIAL_AI_CONTEXT_REVIEW_CHECKPOINT",
   "regionTotal": 1681,
-  "reviewedScenarios": 707,
-  "newScenariosThisContinuation": 162,
-  "remainingScenarios": 974,
-  "changedTranslationFields": 3321,
+  "reviewedScenarios": 889,
+  "newScenariosThisContinuation": 182,
+  "remainingScenarios": 792,
+  "changedTranslationFields": 3816,
   "changedSourceMetadataFields": 336,
   "sourceHintAmendments": 28,
   "runtimeMetadataAmendments": 56,
-  "reviewedFields": 135744,
-  "previousVerifiedKantoCommit": "47a8aad37",
+  "reviewedFields": 170688,
+  "previousVerifiedKantoCommit": "d1bc810b60594149e729eb492deab6d8e79ac783",
   "workersStopped": true,
   "workers": [
     {
       "worker": 1,
-      "reviewed": 120,
-      "remaining": 161,
+      "reviewed": 145,
+      "remaining": 136,
       "nextScenarioId": "SC-LOC-JP-08207-04-001"
     },
     {
       "worker": 2,
-      "reviewed": 93,
-      "remaining": 187,
+      "reviewed": 133,
+      "remaining": 147,
       "nextScenarioId": "SC-LOC-SIT-KAWAGUCHI-05-001"
     },
     {
       "worker": 3,
-      "reviewed": 93,
-      "remaining": 187,
+      "reviewed": 111,
+      "remaining": 169,
       "nextScenarioId": "SC-LOC-SIT-KOSHIGAYA-05-001"
     },
     {
       "worker": 4,
-      "reviewed": 153,
-      "remaining": 127,
+      "reviewed": 193,
+      "remaining": 87,
       "nextScenarioId": "SC-LOC-012-11-001"
     },
     {
       "worker": 5,
-      "reviewed": 101,
-      "remaining": 179,
+      "reviewed": 127,
+      "remaining": 153,
       "nextScenarioId": "SC-LOC-TCG-NIKKO-08-001"
     },
     {
       "worker": 6,
-      "reviewed": 147,
-      "remaining": 133,
+      "reviewed": 180,
+      "remaining": 100,
       "nextScenarioId": "SC-LOC-JP-08225-06-001"
     }
   ],
@@ -162,6 +162,21 @@
       "detail": "まだ券を受け取りましたか uses まだ with completed-action question; context and reply establish already-collected tickets, normally もう or すでに. Spoken source preserved to avoid text/audio divergence; target interpretation follows explicit yes and ticket possession."
     },
     {
+      "scenarioId": "SC-LOC-JP-09205-02-001",
+      "turnId": "DLG-SC-LOC-JP-09205-02-001-SHARED-02",
+      "field": "hintJa",
+      "issue": "Hint asks to show two household notices (二通の世帯宛て通知を示し), but turn04 explicitly says wife’s notice was left at home. Spoken JA and translations retained; source-author clarification needed.",
+      "status": "needs-source-review"
+    },
+    {
+      "scenarioId": "SC-LOC-JP-13207-06-001",
+      "turnId": "DLG-SC-LOC-JP-13207-06-001-SHARED-02",
+      "field": "hintJa",
+      "status": "SOURCE_HINT_SPECIFICITY_AMBIGUITY",
+      "detail": "hintJa says 同額の二つ but spoken source02 establishes same shop with two displayed amounts, not expressly equal amounts;08 names1200yen for one known use only. Pending/final statuses suggest possible duplicate view but exact equality is not explicitly established. Targets preserve canonical hint; no source/audio change.",
+      "blocksSourceAcceptance": true
+    },
+    {
       "scenarioId": "SC-LOC-011-01-001",
       "turnId": "DLG-SC-LOC-011-01-001-SHARED-10",
       "field": "hintJa",
@@ -183,5 +198,7 @@
   "semanticCrossReview": false,
   "sourceAccepted": false,
   "verification": "Verify current checkpoint remotely before claiming durable persistence.",
-  "newScenariosSincePreviousCheckpoint": 219
+  "newScenariosSincePreviousCheckpoint": 219,
+  "stopReason": "MODEL_SERVICE_CAPACITY",
+  "stopDetail": "Workers1 and5 returned: Selected model is at capacity. No model retries; all six workers stopped after preserving completed evidence."
 }
