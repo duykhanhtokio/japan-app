@@ -34,3 +34,7 @@ The helper checks the repository/branch, refuses tracked local changes or diverg
 ## Verified initial automatic save
 
 `4832f53f8407298126fa43c104a266972f2a3831` saved the first seven-sector batch by this route. All 106 blob hashes and its complete tree matched the local snapshot, followed by a fast-forward and `WORK PERSISTENCE PASS`. See `source-coverage-v2/integrated-batch-20261103.json` and `integrated-status-20261103.json` for its bounded results and remaining work.
+
+## Session isolation
+
+Use a checkout inside the current conversation workspace. Do not automatically mutate a checkout owned by another conversation. If unexpected packets or question IDs appear, preserve that checkout and replay only author-owned, hash-bound inputs in an isolated checkout. Preserve incoming remote commits; never replace newer remote data with an older batch snapshot. Use a parent lease when publishing and deduplicate source facets against already published IDs.
