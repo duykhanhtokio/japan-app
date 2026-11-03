@@ -1,0 +1,3022 @@
+{
+  "reviewer": 6,
+  "sourceRevision": "fc2ee309694cea246affb22c90887b3ae0c98150",
+  "nativeReviewed": false,
+  "scope": "Only eligible genuinely changed current targets; original indexes retained. Other drafts already have corrected valid proof and are not rereviewed.",
+  "caseCount": 30,
+  "fieldCount": 226,
+  "cases": [
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-06-001",
+      "metadata": {
+        "name": "料理教室で生肉用の道具を取り違えずに準備する",
+        "situation": "嬉野市の架空の料理教室で、参加者がサラダ係を希望するが、生肉の下準備も同じ台で行うと知る。講師と道具と作業場所を分け、肉に触れた後の衛生手順を確かめる。色分けはこの教室の設定。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "サラダ係を希望し、赤いまな板できゅうりを切ってよいか尋ねる。",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "今日はこちらの台で、鶏肉の下準備とサラダ作りをします。どちらを担当したいですか。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "サラダを作りたいです。この赤いまな板の上で、きゅうりを切ってもいいですか。",
+          "hintJa": "サラダ係を希望し、赤いまな板できゅうりを切ってよいか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "赤いまな板は鶏肉用です。野菜には白いまな板を使います。こちらへ移して、右側で切ってください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "白いまな板を右側へ移します。包丁にも赤い印がありますが、これは肉用の包丁でしょうか。",
+          "hintJa": "白いまな板を右へ移すと伝え、赤い印の包丁が肉用か確認する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "ええ。白い印の付いた包丁を使ってください。肉用の道具は左側に置き、野菜用の道具と分けます。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "さっき鶏肉の袋を開けるのを手伝いました。野菜を触る前に手を洗ってきます。エプロンも替えたほうがいいですか。",
+          "hintJa": "鶏肉の袋を開けるのを手伝ったので手を洗うと伝え、エプロンも交換すべきか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "手は石けんで洗ってください。エプロンに肉の汁が付いていますね。予備と交換しましょう。洗った手で古いエプロンを触らないよう、先に外してください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "古いエプロンを外してから手を洗い、新しい物を着ます。切ったきゅうりを入れるボウルは、棚から取っていいですか。",
+          "hintJa": "古いエプロンを外して手を洗い、新しい物を着る順序を確認し、棚のボウルを使ってよいか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "はい、棚の乾いたボウルを使ってください。肉の汁が飛ばないよう、切った野菜は台の右端に置きましょう。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "野菜は右端のボウルに入れ、肉用の道具を借りずに作業します。準備ができたら、切り始める前に見てもらいます。",
+          "hintJa": "野菜を右端のボウルに入れて肉用の道具は借りず、切り始める前に準備を見てもらうと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "わかりました。手洗いを済ませたら呼んでください。では、またあとで。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "bn",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-04",
+          "field": "hintTranslation",
+          "currentTarget": "বলুন যে সাদা কাটার বোর্ড ডান দিকে সরাবেন, এবং লাল চিহ্নের ছুরিটি মাংসের জন্য কি না নিশ্চিত করুন। জাপানি ভাষায় বলুন।",
+          "sourceSha256": "7357d2f2db323ace1f172da69783bb4169c2705d41859f94442a47381eb18f41",
+          "targetSha256": "fa8e03c85fee3a83b833b5e155a608002aa919da2164ed45b2068f7beae38ea4",
+          "priorTargetSha256": "2cac9c0f133e314012d3c36a7a8d96fc9fdc1a3b397a98afc4bd3cac2caeb865",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/bn/216.json",
+          "index": 1
+        },
+        {
+          "locale": "bn",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-06",
+          "field": "hintTranslation",
+          "currentTarget": "বলুন যে মুরগির ব্যাগ খুলতে সাহায্য করেছেন বলে সবজি ছোঁয়ার আগে হাত ধোবেন, এবং এপ্রোনও বদলানো উচিত কি না জিজ্ঞেস করুন। জাপানি ভাষায় বলুন।",
+          "sourceSha256": "71bd5c5f9db72b8b9d00c8198f9be7af7a3ab4aeb28d893ea9dec11410994dee",
+          "targetSha256": "119466d13cb257421ef65e4e62f4b24cea291c593348b9f0e77ea2f360a8d174",
+          "priorTargetSha256": "579b3d53cec90dbda3afeeb0f9a1a70985fb59007f148f9647dfaef846fc187b",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/bn/216.json",
+          "index": 2
+        },
+        {
+          "locale": "my",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-06",
+          "field": "translation",
+          "currentTarget": "စောစောက ကြက်သားအိတ်ဖွင့်ဖို့ ကူညီခဲ့ပါတယ်။ အသီးအရွက်တွေ မထိခင် လက်ဆေးသွားပါမယ်။ ခါးစည်းလည်း လဲသင့်ပါသလား။",
+          "sourceSha256": "7bdf655f5bd13e8606d2a3a9d878c738ba18c4fe21498426c221c6c21e0b90ab",
+          "targetSha256": "db13ef48d60840ac901558dae776ae993adb0a9b394b49f030cc8dae1517fcfe",
+          "priorTargetSha256": "53b9e8ca98ea3e9bcdc19e0ea59422aac2868c37b5821d4ac700b53b08452cce",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/my/216.json",
+          "index": 3
+        },
+        {
+          "locale": "my",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-09",
+          "field": "translation",
+          "currentTarget": "ရပါတယ်၊ စင်ပေါ်က ခြောက်သွေ့တဲ့ ဇလုံကို သုံးပါ။ အသားရည် မစင်အောင် လှီးပြီးတဲ့ အသီးအရွက်တွေကို ခုံရဲ့ ညာဘက်အစွန်းမှာ ထားကြရအောင်။",
+          "sourceSha256": "def7c8d25658a6afa71fd70460fa39c957bca4e16f1d58fd13c9cf40ef83f39f",
+          "targetSha256": "a61848fce0a745ca3a4c75a30e83d3767051c7283b7eafa657d5529961ccdacf",
+          "priorTargetSha256": "6a31cfd6a2672f1f2be6fe317a42ca8823205dea71befc993a3353f7298b3bd2",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/my/216.json",
+          "index": 4
+        },
+        {
+          "locale": "my",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-06-001-SHARED-10",
+          "field": "translation",
+          "currentTarget": "အသီးအရွက်တွေကို ညာဘက်အစွန်းက ဇလုံထဲထည့်ပြီး အသားအတွက်သုံးတဲ့ ကိရိယာတွေကို မငှားဘဲ အလုပ်လုပ်ပါမယ်။ ပြင်ဆင်ပြီးရင် မလှီးခင် ကြည့်ပေးဖို့ ခေါ်ပါမယ်။",
+          "sourceSha256": "7fb95f2ae2e9708c9fe7ca495757ae4bd92a0b668a9ebd6b6e325138d0ed5619",
+          "targetSha256": "5ab25bc35402fbab634963276eca8a9f1dc7df243c7cef13b89d0f0c7c8d3db9",
+          "priorTargetSha256": "67d461e1d656c1e130addee8aaf031a9844f2eff84f3c882fae9d2b0e71e6898",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/my/216.json",
+          "index": 5
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-07-001",
+      "metadata": {
+        "name": "タクシーで旅館の坂を避けられる降車場所を相談する",
+        "situation": "嬉野市の架空のタクシー乗り場で、足を痛めた客が旅館の裏門付近の地図を見せる。運転手と正面玄関への入口を確かめ、段差の少ない降車場所とゆっくり降りる希望を伝える。旅館の入口情報はこの場面の設定。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "予約画面で宿泊先を示し、地図は裏門だが足を痛めていて坂を上れないと説明する。",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "お乗りになりますか。荷物は後ろに入れますので、行き先を教えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "宿泊先は、この予約画面の旅館です。地図は裏門を示しているのですが、足を痛めていて坂を上れません。",
+          "hintJa": "予約画面で宿泊先を示し、地図は裏門だが足を痛めていて坂を上れないと説明する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "裏門からは上り坂になりますね。正面玄関の案内は、予約画面にありませんか。車を回せる入口を確かめたいのですが。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "下の案内に、車で来る人は正面玄関へ、と書いてあります。この写真の門が入口のようです。",
+          "hintJa": "予約案内に車は正面玄関へと書かれていると伝え、入口の門の写真を示す。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "この門なら、正面の車寄せまで入れます。そこで降りれば長い坂を歩かずに済みます。車寄せへ向かってよろしいですか。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "車寄せまでお願いします。降りた所から玄関までは、階段を使わずに行けますか。",
+          "hintJa": "車寄せまでの乗車を依頼し、そこから玄関へ階段を使わずに行けるか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "案内写真では、右側にスロープが写っていますね。到着したら、スロープの入口に近い場所で停められるか確認します。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "ありがとうございます。入口で停められなければ、無理に近づかず旅館の人を呼んでもらえますか。",
+          "hintJa": "入口で停車できなければ無理に近づかず、旅館の人を呼んでほしいと頼む。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "はい。安全に停められる所から、旅館の方に声をかけます。乗り降りは急がなくて大丈夫ですよ。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "では、その方法でお願いします。着いたら料金を払ってから、ゆっくり降ります。荷物は降りたあとに受け取ります。",
+          "hintJa": "提案された方法で依頼し、到着後は支払いを済ませてゆっくり降り、荷物はその後で受け取ると伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "承知しました。足元にお気をつけてお乗りください。ご乗車ありがとうございます。それでは、旅館へ出発いたします。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "bn",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-02",
+          "field": "hintTranslation",
+          "currentTarget": "বুকিংয়ের পর্দা দেখিয়ে থাকার জায়গা জানান। ব্যাখ্যা করুন যে মানচিত্র পেছনের গেট দেখালেও পায়ে চোট পাওয়ায় আপনি ঢাল বেয়ে উঠতে পারেন না। জাপানি ভাষায় বলুন।",
+          "sourceSha256": "31de9798f472da4dec61c23ef402b52ca6b9a53104a54d36500c4293b4393c95",
+          "targetSha256": "dc63af60205122b5fe1ef46ca4df1dd57ad314b51c552ebf43911f8fa460f286",
+          "priorTargetSha256": "6fa7fc0d3bd68d262f933e35bcf4d45a635ed3e6d14ebb706fe961d69bdeff63",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/bn/216.json",
+          "index": 20
+        },
+        {
+          "locale": "zh-CN",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-03",
+          "field": "translation",
+          "currentTarget": "从后门过去需要上坡。预约页面有正门的说明吗？我想确认汽车能开进去的入口。",
+          "sourceSha256": "72b1ca6b169531f5772859b89c50054de6bc1704171fdc66d79a8a20807db3ff",
+          "targetSha256": "f6266af5f8c773685a2b3942636fc3fe9061713b8b8f2e6bd366baeab3c665d9",
+          "priorTargetSha256": "f4933fff1d70870bfa86eacf8e083bf07db9c7ae7cee122870460f90e81ae38c",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/zh-CN/216.json",
+          "index": 37
+        },
+        {
+          "locale": "zh-TW",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-05",
+          "field": "translation",
+          "currentTarget": "從這個門可以開到正門的上下車處。在那裡下車就不用走長坡。要往上下車處去嗎？",
+          "sourceSha256": "8dbcc2ec8fb7e12e73fb4a2b1ac9d9681da74411c250283f260337cff254f841",
+          "targetSha256": "f622453f28e2c5973eb297ac28cc3c98b8a2621de1cb7c08c16e96a647c0c7f7",
+          "priorTargetSha256": "05d6e2d2810af150ccbc87601823a889f9258e1b31c2cf869d88103099cd7743",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/216.json",
+          "index": 38
+        },
+        {
+          "locale": "zh-TW",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-07-001-SHARED-06",
+          "field": "translation",
+          "currentTarget": "請送到上下車處。從下車的地方到旅館入口，可以不用走樓梯嗎？",
+          "sourceSha256": "b1f724be034771adaa9b00e1006919ac70014724dce93624367168e4224188e4",
+          "targetSha256": "b991ad9ff01e49f3a2f14608466f9d39778a6775d60180eff7067043d25d6b4c",
+          "priorTargetSha256": "a55c9605de5206f5754019c3718acdc32073bd7e9f508ffc00e29c9abadbf5c6",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/216.json",
+          "index": 39
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-OIT-BEPPU-001",
+      "metadata": {
+        "name": "入浴券にタオルが含まれると思い込まない",
+        "situation": "別府市にひもづく架空の入浴施設。利用者は購入済みの入浴券にタオルも含まれると思っているが、券面と売場の表示は別だと分かる。宿に置いた私物を取りに戻る案と購入を比べ、今日はタオルの購入を希望して受付で確認する。実在の施設の備品、料金、再入場条件や効能は示さない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "入浴券で利用するがタオルは中で受け取れると思い持参していないと伝える。",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-OIT-BEPPU-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "入浴券をお持ちですね。お入りになる前に、確認したいことはございますか。"
+        },
+        "DLG-SC-OIT-BEPPU-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "この券で入るつもりです。タオルは中で受け取れると思って、何も持ってきませんでした。",
+          "hintJa": "入浴券で利用するがタオルは中で受け取れると思い持参していないと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-OIT-BEPPU-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "券面には入浴券とだけ書かれています。タオルの表示は、こちらの売場に別に出ています。"
+        },
+        "DLG-SC-OIT-BEPPU-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "タオル付きの券だと思っていました。この表示は借りる物ですか、それとも持ち帰れる物ですか。",
+          "hintJa": "券にタオルが含まれると思っていたと説明し、別の表示が貸出か販売か尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-OIT-BEPPU-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "こちらは販売用のタオルという表示です。お手元の券に含まれる物とは分けてご覧ください。"
+        },
+        "DLG-SC-OIT-BEPPU-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "自分のタオルは宿に置いてきました。取りに戻るか迷っていますが、今日はここで一枚買いたいです。",
+          "hintJa": "私物のタオルは宿にあり、取りに戻る案もあるが今日は一枚購入したいと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-OIT-BEPPU-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "では、お求めになる品をこちらでご確認ください。購入する前に、表示について読みにくい所はありますか。"
+        },
+        "DLG-SC-OIT-BEPPU-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "小さい方を一枚にします。入浴券とは別に支払うということですね。タオルの分の金額を、ここで確認したいです。",
+          "hintJa": "小さいタオル一枚を選び、入浴券と別払いであることと当該価格を確認する。日本語で伝えてください。"
+        },
+        "DLG-SC-OIT-BEPPU-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "はい、別のお支払いになります。この品の価格はこちらです。こちらの表示でよろしいですか。"
+        },
+        "DLG-SC-OIT-BEPPU-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "表示を確認しました。このタオルを一枚買ってから入ります。券だけで受け取れる物ではないと分かりました。",
+          "hintJa": "表示を読んで一枚の購入を決め、入浴券だけでは受け取れないと確認する。日本語で伝えてください。"
+        },
+        "DLG-SC-OIT-BEPPU-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "承りました。タオルのお会計はこちらで伺います。入浴券もなくさずお持ちください。それでは、お会計へどうぞ。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-01",
+          "field": "translation",
+          "currentTarget": "तपाईंसँग नुहाउने टिकट रहेछ। भित्र पस्नुअघि पुष्टि गर्न चाहनुभएको कुनै कुरा छ?",
+          "sourceSha256": "7ca71f0789986015883d58be9db56f3629a25e88297b4fb89b6ce3b8cad3174d",
+          "targetSha256": "b5ad6b8d77cdc5e0ecde22f4cb803ccad00ba2096da7832f91ccb71db13cf4ca",
+          "priorTargetSha256": "5028c98fa139853073e759f573906c40840dde3d93469e86f6f6064965fe8274",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 73
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-02",
+          "field": "translation",
+          "currentTarget": "म यो टिकट लिएर भित्र पस्ने सोचमा छु। तौलिया भित्र पाइन्छ भन्ने ठानेर केही पनि ल्याएको छैन।",
+          "sourceSha256": "a498fe61796ff4fdb7c7e756c30c26ebf986a17af3bbb30a82f2cb5be9d5d414",
+          "targetSha256": "b7082294975037d508a317edaa70d966d22c2f486e96e7c7cc584c75ad3b4b57",
+          "priorTargetSha256": "ec7290c32fcbf89c4695567a48b87ffedfd422a4a9b18ae3416c9935ef1027b6",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 74
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-02",
+          "field": "hintTranslation",
+          "currentTarget": "नुहाउने टिकट प्रयोग गर्ने तर भित्र तौलिया पाइन्छ भन्ने ठानेर साथमा नल्याएको कुरा बताउनुहोस्। जापानीमा भन्नुहोस्।",
+          "sourceSha256": "81eb6223b1a538385746b63e106b3a8872b09c3e411e8601710e15cd0be0c3d1",
+          "targetSha256": "f53ff9ad99f2c2449021182ca542ae3e2a920fd117c3018b84da46c702985d24",
+          "priorTargetSha256": "145b6261550504f206e2945a766038dbd9f8d10be671db9263ce993fdcfc1ab4",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 75
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-03",
+          "field": "translation",
+          "currentTarget": "टिकटमा नुहाउने टिकट भनेर मात्रै लेखिएको छ। तौलियाको सूचना भने यहाँको बिक्री कक्षमा छुट्टै राखिएको छ।",
+          "sourceSha256": "09fbd0a8c3752ee34d4be4fc6c2d9bc6e558349a5dd10bb08c8fdd7a2722b288",
+          "targetSha256": "8921593ed08c32bb3d15182dee7a18cf94f5c98f21d13ddf54887819c4e9bc78",
+          "priorTargetSha256": "48246b95dec82ede6ecb445a4d63e94143c8c9e759579008b1b6b22b3a39a134",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 76
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-04",
+          "field": "translation",
+          "currentTarget": "टिकटमा तौलिया पनि समावेश छ भन्ने ठानेको थिएँ। यो सूचनामा देखाइएको तौलिया सापट लिने हो कि घर लैजान मिल्ने हो?",
+          "sourceSha256": "3c44680c8cfdbfb405908f21d94131f794b9fcdd534a494181db075f6a8da54c",
+          "targetSha256": "a36c5dfc5255e28c48b3f10fc0b2213cf122c716fe743ca2c692c7a27e9bbdc9",
+          "priorTargetSha256": "a221ac14a206f0881c334ac67371823ca5bd0a646ae88a5ba1b4eb1c0cb55fac",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 77
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-04",
+          "field": "hintTranslation",
+          "currentTarget": "टिकटमा तौलिया पनि समावेश छ भन्ने ठानेको बुझाउँदै छुट्टै सूचनामा देखाइएको तौलिया भाडामा दिने हो कि बिक्री गर्ने हो भनेर सोध्नुहोस्। जापानीमा भन्नुहोस्।",
+          "sourceSha256": "b32894e68e8a09cf70d0a18b7f235faccc168fe850f414790587f5900b546dae",
+          "targetSha256": "a02698a9fa805ea8985d37bd07a0ace424bd5f4e9699da6f62238a23d3fde255",
+          "priorTargetSha256": "f922fb4fb0e554321e9aea2d29989a7da2ab77591c340fddb1c828e8b4a5fdf5",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 78
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-05",
+          "field": "translation",
+          "currentTarget": "यो सूचनामा बिक्रीका लागि तौलिया भनेर लेखिएको छ। यसलाई तपाईंसँग भएको टिकटमा समावेश चीजहरूभन्दा छुट्टै बुझ्नुहोस्।",
+          "sourceSha256": "37db7bb423a9860fac0c5b3d0a90ef9f10b438cd6984af57bab7c7c223da9df0",
+          "targetSha256": "d0a812906a7bf384b1f5dd5d730ea002c56941111d6c898325bd89cd8eb3889b",
+          "priorTargetSha256": "9ea9d47b89af2c1b307f94d7d8e94238707f7130fee1b526491a8d10ccd6f59e",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 79
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-06",
+          "field": "translation",
+          "currentTarget": "आफ्नो तौलिया बस्ने ठाउँमै छोडेर आएको छु। लिन फर्कने कि भनेर सोच्दै छु, तर आज यहाँ एउटा किन्न चाहन्छु।",
+          "sourceSha256": "8fe96101e79574f3b180b15f2f4801eeec435d7d898d39c3005dadf3741ef774",
+          "targetSha256": "c194c5d4c90e6830ce78afc5958279b72003b0ee7ec63c66f836b89825c4fd0f",
+          "priorTargetSha256": "cc16557195f3601deb8f40b9ef7a1c7b3838e6e1495bff323a7f77a2793da4a8",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 80
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-06",
+          "field": "hintTranslation",
+          "currentTarget": "आफ्नो तौलिया बस्ने ठाउँमा रहेको, लिन फर्कने विकल्प पनि भए पनि आज यहाँ एउटा किन्न चाहेको कुरा बताउनुहोस्। जापानीमा भन्नुहोस्।",
+          "sourceSha256": "c22bd8ddedd5b8339dac3dfbec267839ac494e47fb0d664800620a98fac0978b",
+          "targetSha256": "483ed8d08b7d7c24544e9db45441821f2180c14e34450493ef7c69cc5c6beffa",
+          "priorTargetSha256": "4d2f73cf1f89c5b05072a0c49386b11c2f034b775f9adf5f8a8b1c5dd647aff2",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 81
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-07",
+          "field": "translation",
+          "currentTarget": "त्यसो भए किन्न चाहनुभएको सामान यहाँ हेर्नुहोस्। किन्नुअघि सूचनामा पढ्न गाह्रो भएको कुनै भाग छ?",
+          "sourceSha256": "47f26d6e41e65e75766ed7d1272068568b924b4b3e14bcaa4cc5ca6e37429d6f",
+          "targetSha256": "82283c6d4f2038de3f0fe82f38771c61a2d9609f6cb8414f4a11f32ead8718b7",
+          "priorTargetSha256": "3e747abd8ae085eb04e18865fadbcbf1a5b5e2cbe3669451c25be1f798fd7915",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 82
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-08",
+          "field": "translation",
+          "currentTarget": "सानो तौलिया एउटा लिन्छु। यसको पैसा नुहाउने टिकटभन्दा छुट्टै तिर्नुपर्ने रहेछ, है? तौलियाको मूल्य यहीँ पुष्टि गर्न चाहन्छु।",
+          "sourceSha256": "6d1367d1f3a2bc9f394dd2b1c13951cafa9559919b1d0e3658161100c2b817ba",
+          "targetSha256": "fd2db7981cefefaee79745515af4101d304d776413d9dbd65aad3443cee10f9e",
+          "priorTargetSha256": "5e9c399b6dadac8b472700aeb5f8f82aa383ccf5fb1034a7c9865be4835a81b3",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 83
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-08",
+          "field": "hintTranslation",
+          "currentTarget": "सानो तौलिया एउटा छानेर नुहाउने टिकटभन्दा छुट्टै भुक्तानी गर्नुपर्ने कुरा र त्यही सामानको मूल्य पुष्टि गर्नुहोस्। जापानीमा भन्नुहोस्।",
+          "sourceSha256": "a600454f04d8a35c2a9958d5d04a568a8af2708b2f3aff9962f2ba86c3807874",
+          "targetSha256": "bca093ab513c8f891afcb8ce0b392a43ab0ed4126db408d1b083bebc2a216a9b",
+          "priorTargetSha256": "1b636b3387f659acb6dd056de28f67960b68be1167b1035935d4ee7527ea88fc",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 84
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-10",
+          "field": "translation",
+          "currentTarget": "मैले सूचना हेरेँ। यो तौलिया एउटा किनेर भित्र पस्छु। नुहाउने टिकट मात्रै देखाएर पाउने सामान होइन भन्ने बुझेँ।",
+          "sourceSha256": "84ab19447331cb966ae6951dd7d5a849d10a55144ff8954d387b20fdc11f2ae2",
+          "targetSha256": "30d8d71211433873f5c11b15dde9eb9406a2c23254e60bbd9c728d820e940ace",
+          "priorTargetSha256": "155225f93755d2c59d86c661b94b2c5570c0b8bfd38317b927625d89cc3c16a6",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 85
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-10",
+          "field": "hintTranslation",
+          "currentTarget": "सूचना पढेर तौलिया एउटा किन्ने निर्णय गरेको र नुहाउने टिकट मात्रै देखाएर तौलिया नपाइने कुरा पुष्टि गर्नुहोस्। जापानीमा भन्नुहोस्।",
+          "sourceSha256": "0d1ee991da211e10c25ee27f150dd090e48f2d45a72dd120f2d6472efedec82f",
+          "targetSha256": "020426a144527dba7dbfbf13b1f308debb4db8b4171b3515a8d60ebd58057150",
+          "priorTargetSha256": "d426a3f9f78fa0d4de555e8251641b3c0819ea90200a2c9a827bbc3fd8b09cae",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 86
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-OIT-BEPPU-001-SHARED-11",
+          "field": "translation",
+          "currentTarget": "बुझेँ। तौलियाको भुक्तानी यहाँ लिन्छौँ। नुहाउने टिकट पनि नहराउने गरी आफूसँग राख्नुहोस्। अब भुक्तानीका लागि यहाँ आउनुहोस्।",
+          "sourceSha256": "1944568b2284b40d914caf196293165c4f892b0b01fb69ca3af776c4d02a31c3",
+          "targetSha256": "c9ed037723131774d5e7911ffe68aa3b72e02d49994205a7928afb47b029ad07",
+          "priorTargetSha256": "cf36e876deea551e0c97f866f5de6d03f499824771051184199e69cfe31bdadd",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/199.json",
+          "index": 87
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-JP-41207-01-001",
+      "metadata": {
+        "name": "持ち手が壊れた荷物を運べる経路を聞く",
+        "situation": "佐賀県鹿島市の架空の鉄道駅。キャリーケースの伸縮式持ち手が壊れた客が、階段を避ける移動方法を駅員に相談する。ホーム番号、設備配置、列車案内はこの学習場面だけの設定で、実際の駅設備ではない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "ケースの持ち手の故障と二番ホームへの階段なしの経路を尋ねる",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-JP-41207-01-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "その荷物、運びにくそうですね。どちらのホームへ行かれますか。"
+        },
+        "DLG-SC-LOC-JP-41207-01-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "二番ホームに行きたいんですが、ケースの持ち手が引き出せなくなりました。階段を使わずに行けますか。",
+          "hintJa": "ケースの持ち手の故障と二番ホームへの階段なしの経路を尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-41207-01-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "改札を入って右にエレベーターがあります。上の通路を渡って、向こう側のエレベーターで降りられますよ。"
+        },
+        "DLG-SC-LOC-JP-41207-01-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "ケースを横にして持っています。改札では、荷物を持ち上げずに通れる幅の広い通路がありますか。",
+          "hintJa": "ケースを横向きで持っていると伝え、広い改札通路を尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-41207-01-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "こちらの有人通路をお通りください。切符は私が確認します。車輪が転がるなら、床に置いていただいて大丈夫です。"
+        },
+        "DLG-SC-LOC-JP-41207-01-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "車輪は動きます。途中で止まって持ち直しても、後ろの人の邪魔にならない場所はありますか。",
+          "hintJa": "車輪が動くと伝え、荷物を持ち直せる場所を確認する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-41207-01-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "エレベーターを降りた先に待合スペースがあります。出入口をふさがないよう、そちらで持ち直してください。"
+        },
+        "DLG-SC-LOC-JP-41207-01-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "次の列車まで五分しかありません。急いで運ぶのは不安なので、一本後にしてもいいでしょうか。",
+          "hintJa": "五分では不安なため一本後の列車を使えるか相談する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-41207-01-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "お持ちの切符は列車指定ではないので、後の列車にも使えます。発車時刻はこの表示でご確認ください。"
+        },
+        "DLG-SC-LOC-JP-41207-01-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "では一本後にします。有人通路から入ってエレベーターを使い、待合スペースで荷物を整えます。",
+          "hintJa": "後の列車を選び、有人通路とエレベーターと待合スペースを使うと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-41207-01-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "切符を確認しました。こちらからどうぞ。無理に急がず、足元にもお気をつけください。それでは、いってらっしゃいませ。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "km",
+          "turnId": "DLG-SC-LOC-JP-41207-01-001-SHARED-10",
+          "field": "translation",
+          "currentTarget": "អ៊ីចឹងខ្ញុំនឹងជ្រើសជើងក្រោយ។ ខ្ញុំនឹងចូលតាមច្រកដែលមានបុគ្គលិក ប្រើលីហ្វ ហើយរៀបវ៉ាលីនៅកន្លែងរង់ចាំ។",
+          "sourceSha256": "89e4a5e436cf3de32103b2f554b84f1b29d01774c7bc8f1c31545a09252993a6",
+          "targetSha256": "09568ba02472c607d45e42d34b3e5afc8423c5d2b34d92a0a4f27ab258fe10bf",
+          "priorTargetSha256": "a92f80c67b0dcddbe0d598fc848e648bceffa4238df6c4b6c51de51c8e9d9151",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/km/669.json",
+          "index": 90
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-LOC-JP-41207-01-001-SHARED-07",
+          "field": "translation",
+          "currentTarget": "लिफ्टबाट ओर्लेर बाहिर निस्केपछि अगाडि प्रतीक्षा गर्ने ठाउँ छ। प्रवेश र निकास नछेकी त्यहाँ सामान समात्ने तरिका मिलाउनुहोस्।",
+          "sourceSha256": "6b164f9aefee51e28bbe175b07b81e5261b0a41de0ed724e9c30989cbde308ab",
+          "targetSha256": "5981fdcc1ff8d00acf3ed722b884c066b9470df79838491cdafda0043472edf2",
+          "priorTargetSha256": "504198c4146e5406dae22f53f3543def940fcacbeb191866649c467702f8f49f",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/ne/669.json",
+          "index": 91
+        },
+        {
+          "locale": "th",
+          "turnId": "DLG-SC-LOC-JP-41207-01-001-SHARED-03",
+          "field": "translation",
+          "currentTarget": "หลังผ่านประตูตรวจตั๋วจะมีลิฟต์อยู่ทางขวาครับ ข้ามทางเดินชั้นบนไป แล้วใช้ลิฟต์อีกฝั่งลงได้",
+          "sourceSha256": "91276b06ae7c78f8eeaeb28cea60bfd689ca5d5c31a4532a56ef8d14e4b6f92c",
+          "targetSha256": "57cd7523e3f7d7b252895d3c4322cc89cada9e0918511f6a863c659affb05235",
+          "priorTargetSha256": "cdaa842182e2685565d5d67d3a813975f98a401f08a44fcb72d8c14579530b13",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/th/669.json",
+          "index": 92
+        },
+        {
+          "locale": "th",
+          "turnId": "DLG-SC-LOC-JP-41207-01-001-SHARED-05",
+          "field": "translation",
+          "currentTarget": "กรุณาใช้ช่องทางที่มีเจ้าหน้าที่ตรงนี้ครับ ผมจะตรวจตั๋วให้ ถ้าล้อยังหมุนได้ วางกระเป๋าลงบนพื้นได้เลยครับ",
+          "sourceSha256": "d8f4f2c25278929c440aecc5371261df3f5769322d6c7c9f3d588e99f0654d7a",
+          "targetSha256": "ee6554eadfa7b1835ba56dc36a0602014f6a76d9001bc616e7d575f805da420a",
+          "priorTargetSha256": "0c804bb63e6c43e67e7a8bfa55f1dc2b5bd6c92c92b0942384671713fafb4d82",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/th/669.json",
+          "index": 93
+        },
+        {
+          "locale": "th",
+          "turnId": "DLG-SC-LOC-JP-41207-01-001-SHARED-07",
+          "field": "translation",
+          "currentTarget": "เมื่อลงจากลิฟต์แล้ว จะมีพื้นที่รออยู่ข้างหน้าครับ กรุณาจัดท่าถือกระเป๋าที่นั่นโดยไม่ขวางทางเข้าออก",
+          "sourceSha256": "6b164f9aefee51e28bbe175b07b81e5261b0a41de0ed724e9c30989cbde308ab",
+          "targetSha256": "973cd8878e1d421cf880a24b9744cc9065527c0af6528b707398159355e82186",
+          "priorTargetSha256": "b9308042d7c8b3f5ee70799da7d45399c5e0aa14b09f86e03cc567c47161c141",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/th/669.json",
+          "index": 94
+        },
+        {
+          "locale": "th",
+          "turnId": "DLG-SC-LOC-JP-41207-01-001-SHARED-10",
+          "field": "translation",
+          "currentTarget": "งั้นฉันจะเลือกขบวนถัดจากขบวนที่จะถึงค่ะ จะเข้าช่องทางที่มีเจ้าหน้าที่ ใช้ลิฟต์ แล้วจัดกระเป๋าในพื้นที่รอ",
+          "sourceSha256": "89e4a5e436cf3de32103b2f554b84f1b29d01774c7bc8f1c31545a09252993a6",
+          "targetSha256": "813296094dd5638f89a21bfec47452e9359ced46fb48eee17bc32fef15c417e2",
+          "priorTargetSha256": "166e2388ef3f1eb173e18893122c536255b79ffc3b85801a030fc7145030cf4b",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/th/669.json",
+          "index": 95
+        },
+        {
+          "locale": "zh-CN",
+          "turnId": "DLG-SC-LOC-JP-41207-01-001-SHARED-08",
+          "field": "translation",
+          "currentTarget": "距离下一班列车只有五分钟。我担心搬着行李赶车太着急，可以坐再下一班吗？",
+          "sourceSha256": "dced8326e67b0d61bf87099aa5193e2cf1acd5c84de4363795bc4640e702f9b7",
+          "targetSha256": "7c241d7577d6374297d41f0e4a1112830d3900b3641a8680191be18d9971712e",
+          "priorTargetSha256": "9181d572cd4be88e882d8375bff4e0291126fe109c295db8796a017c60d7088b",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/zh-CN/669.json",
+          "index": 98
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-KARATSU-08-001",
+      "metadata": {
+        "name": "隣の卓の飲み物を明細から外してもらう",
+        "situation": "唐津市の架空の居酒屋で二人の会計をする。金額、分割会計、記録確認の結果はこの会話の学習用設定。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "六百円のウーロン茶に心当たりがないと伝え、注文記録を確認してもらう",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "お会計ですね。お二人の明細はこちらです。合計四千八百円になります。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "この六百円のウーロン茶が気になります。私たちは温かいお茶を二つ頼んだだけなので、注文の記録を見ていただけますか。",
+          "hintJa": "六百円のウーロン茶に心当たりがないと伝え、注文記録を確認してもらう。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "確認したところ、隣の卓のウーロン茶がこちらに入っていました。申し訳ありません。六百円を引きます。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "では四千二百円ですね。友人と半分ずつ払いたいのですが、別々に支払えますか。",
+          "hintJa": "合計四千二百円を確認し、半分ずつ別々に払えるか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "はい、この会計では二回に分けてお受けできます。お一人二千百円です。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "私は現金二千百円、友人はカードでも大丈夫ですか。",
+          "hintJa": "自分は現金二千百円、友人はカードで払えるか確認する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "大丈夫です。先に現金を頂いて、残りをカードで処理します。こちらで一緒にお待ちください。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "こちらが私の二千百円です。友人にもここに来てもらいます。レシートは二人分で一枚になりますか。",
+          "hintJa": "自分の二千百円を渡し、友人を呼び、レシートの枚数を尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "現金、確かに頂きました。カードの支払いも終わりましたので、お店のレシート一枚とカードの控えをお渡しします。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "ありがとうございます。訂正後のレシートに四千二百円とありますね。カードの控えは友人に渡します。",
+          "hintJa": "訂正後の四千二百円を確認し、カード控えを友人に渡すと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "お手数をお掛けしました。出口の段差にお気を付けください。ありがとうございました。おやすみなさい。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "km",
+          "turnId": "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-09",
+          "field": "translation",
+          "currentTarget": "យើងបានទទួលសាច់ប្រាក់ហើយ។ ការបង់តាមកាតក៏រួចរាល់ ដូច្នេះយើងនឹងប្រគល់បង្កាន់ដៃហាងមួយសន្លឹក និងបង្កាន់ដៃបង់ប្រាក់តាមកាត។",
+          "sourceSha256": "1154b83bbfc34e1791c0c6194fb12a5f967b25ebc0cb9523fd2656bb059865eb",
+          "targetSha256": "a7cd3b1004f3c2cd6c0509b3517fece83b4e7958d5b2385d1eb4caec6ea791fb",
+          "priorTargetSha256": "38a7bc0e6d6a725c07160e1b9b60bd67f095ad6475e9f10bbb5b7623127156b0",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/km/215.json",
+          "index": 110
+        },
+        {
+          "locale": "km",
+          "turnId": "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-10",
+          "field": "translation",
+          "currentTarget": "អរគុណ។ បង្កាន់ដៃដែលកែរួចសរសេរថា បួនពាន់ពីររយយ៉េន មែនទេ។ ខ្ញុំនឹងប្រគល់បង្កាន់ដៃបង់ប្រាក់តាមកាតឱ្យមិត្ត។",
+          "sourceSha256": "7da442ba07d0f6b1be4c9ea0e7417be55dccb200994c4b49e0bfd7bfdbac5c07",
+          "targetSha256": "de32926c54728f6cc6737c53c66f039e78eeea069e0b5469c6e304608a9373e9",
+          "priorTargetSha256": "3301add414ae9b0249ef418403529a76bdae0b469da5825fbc89a845bf229fc6",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/km/215.json",
+          "index": 111
+        },
+        {
+          "locale": "km",
+          "turnId": "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-10",
+          "field": "hintTranslation",
+          "currentTarget": "សូមបញ្ជាក់ថាបន្ទាប់ពីកែ សរុបគឺបួនពាន់ពីររយយ៉េន ហើយប្រាប់ថានឹងប្រគល់បង្កាន់ដៃបង់ប្រាក់តាមកាតឱ្យមិត្ត។ សូមនិយាយជាភាសាជប៉ុន។",
+          "sourceSha256": "942ce144c9c75dd33aade8cdc868bebbf67e6a0f49a3ba1cd925a2dfecfce6f7",
+          "targetSha256": "fd6f92670485caeb172546a0d727316eb7e52af23dcc7a080d0aab70202a46bc",
+          "priorTargetSha256": "dd769798b7709bf188098a1e5ed75f544dd2a98640d493fd46f2fa81ad6ef207",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/km/215.json",
+          "index": 112
+        },
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-04",
+          "field": "hintTranslation",
+          "currentTarget": "Tiyakin na 4,200 yen ang kabuuan at itanong kung puwedeng magbayad nang magkahiwalay, tigkalahati. Sabihin ito sa Japanese.",
+          "sourceSha256": "8c3d23e84efc7cbe7880e1292bfd055f474c556262ec7b9f98e275c341fa1c70",
+          "targetSha256": "35e85524f4e429cd13f45b11de3eae558c1b600f3dbed2e23cc3dd8b73442d76",
+          "priorTargetSha256": "f8465681bb097b2f78ae61f795c66e979dbed8c14e6bab914051d0caf51dddd3",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/tl/215.json",
+          "index": 114
+        },
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-10",
+          "field": "hintTranslation",
+          "currentTarget": "Tiyakin na 4,200 yen ang nasa itinamang resibo at sabihin na ibibigay sa kaibigan ang card slip. Sabihin ito sa Japanese.",
+          "sourceSha256": "942ce144c9c75dd33aade8cdc868bebbf67e6a0f49a3ba1cd925a2dfecfce6f7",
+          "targetSha256": "e3f7c715cc3b8de5d2e8f59242e1c6562658f05e2e8c15165eb2b30cc4ab5954",
+          "priorTargetSha256": "8ad83cc4e87dcf0f23ff11ba772306219b9df7b2f70faa67d496a2af2ed94b85",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/tl/215.json",
+          "index": 115
+        },
+        {
+          "locale": "zh-TW",
+          "turnId": "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-02",
+          "field": "hintTranslation",
+          "currentTarget": "表示不記得點過六百日圓的烏龍茶，並請對方確認點餐紀錄。請用日語表達。",
+          "sourceSha256": "2daca3daf5b0ec7d46cde199c0836a3a6c976af09bdb5b914d837a9c2c3753d1",
+          "targetSha256": "d25ad5db40d364a64d1781b897de4eb807b46bcb02a6c2305005451d99462ba9",
+          "priorTargetSha256": "a4d427aec48db77a89a79c0f24993bb8753b8ce831cc0a9a64395df68e7b2131",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/215.json",
+          "index": 118
+        },
+        {
+          "locale": "zh-TW",
+          "turnId": "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-06",
+          "field": "hintTranslation",
+          "currentTarget": "詢問自己付現金兩千一百日圓、朋友刷卡是否可以。請用日語表達。",
+          "sourceSha256": "a5c1d48185ea609af47c66e0b0d10fe1deb0d8d9d74f3fbb3b480925524adbec",
+          "targetSha256": "211b04aa7809ff0b592a27173399fb6a06f1a9c3c0182430b2fcba48dc22ce01",
+          "priorTargetSha256": "f7355e74a5c894b08079b8f073bdd00dbde611ba7068cf2aefae8317c4333db5",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/215.json",
+          "index": 119
+        },
+        {
+          "locale": "zh-TW",
+          "turnId": "DLG-SC-LOC-SAG-KARATSU-08-001-SHARED-08",
+          "field": "hintTranslation",
+          "currentTarget": "交付自己的兩千一百日圓，請朋友過來，並詢問收據會有幾張。請用日語表達。",
+          "sourceSha256": "9af27e9bb2ad96d2ed4227ccf49d30be84e8f337dd019810c1e28445e9527cb4",
+          "targetSha256": "c16c2e9fdd0819698581d5ff1d049de7f42b1cda1e25ce82d034e3dbc21a7e35",
+          "priorTargetSha256": "5ced531ad935574bff293925ebce40be70b21282de5693aebe8c210231946132",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/215.json",
+          "index": 120
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-KGS-SATSUMASENDAI-06-001",
+      "metadata": {
+        "name": "税額の通知と思った封筒が資料提出の依頼かを確かめる",
+        "situation": "架空の税務相談窓口。封筒の表面だけで支払い通知と思った客が、同封文書の件名と記入欄を職員に見せる。税額・申告義務・提出期限の変更を確定する場面ではない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "封筒から支払い通知と思ったが文書件名は資料追加提出だったと説明する",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "税の封筒をお持ちですね。同封されている文書の件名を見せていただけますか。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "封筒だけ見て、お金を払う通知だと思って来ました。中の文書には「資料の追加提出について」とあります。",
+          "hintJa": "封筒から支払い通知と思ったが文書件名は資料追加提出だったと説明する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "件名は資料の提出をお願いする内容ですね。ただ、具体的に何を求めているかは本文も確認しましょう。添付の用紙はありますか。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "用紙が二枚あります。一枚目は名前を書けますが、二枚目の「対象期間」がどの期間なのかわかりません。",
+          "hintJa": "用紙二枚があり名前は書けるが二枚目の対象期間が不明と伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "書類ごとに対象期間を確認する必要があります。お手元の資料には、対応しそうな期間が書かれていますか。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "勤務先の資料に開始と終了の月はありますが、同じ期間を指すか判断できません。この用紙の担当に照合してもらいたいです。",
+          "hintJa": "勤務先資料に開始終了月はあるが一致するか不明で担当の照合を頼む。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "件名と連絡欄を見て、照合する担当を確認します。わからない期間を推測して記入するのは待ってください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "期間の欄は空けたまま相談します。提出日が近いので、不明な箇所がある場合の連絡方法も聞きたいです。",
+          "hintJa": "対象期間は推測で書かず、提出日が近いため不明箇所の連絡方法も聞きたいと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "その点も担当へ引き継ぎます。相談しただけで提出日が延びるわけではありません。封筒と用紙はすべてお持ちですね。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "封筒と二枚の用紙、勤務先の資料を一緒に見せます。期間の照合と、提出日までに何を連絡するかを担当に尋ねます。",
+          "hintJa": "封筒・二枚の用紙・勤務先資料を提示し、期間照合と提出日までの連絡内容を尋ねると伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "では書類一式をお手元に置いてお待ちください。本文の連絡先を確認し、ご質問の二点を伝えて取り次ぎます。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-07",
+          "field": "translation",
+          "currentTarget": "विषय और संपर्क का खाना देखकर पता करेंगे कि मिलान के लिए कौन-सा प्रभारी ज़िम्मेदार है। जिस अवधि का पता नहीं है, उसका अनुमान लगाकर अभी न भरें।",
+          "sourceSha256": "3fef52f9ced32d637f9d01a26472e34afa5e7b643c4eff670151c645135ab354",
+          "targetSha256": "fe0a11ed74c14047e2f7bec44954841a1afabb6c08b342cd79885d661c02b6af",
+          "priorTargetSha256": "bcf4036ec2e08ad12ec476a54e161866dc602af1bb22d5535dd8539143d67de6",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/hi/162.json",
+          "index": 121
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-07",
+          "field": "translation",
+          "currentTarget": "विषय र सम्पर्क विवरणको खण्ड हेरेर मिलाउने जिम्मेवार कर्मचारी को हो पुष्टि गर्छु। नबुझेको अवधि अनुमान गरेर अहिले नलेख्नुहोस्।",
+          "sourceSha256": "3fef52f9ced32d637f9d01a26472e34afa5e7b643c4eff670151c645135ab354",
+          "targetSha256": "00ebc86960869f1d493fc6abf712cb0303b614bfb0d07cd05ec1e2332dadc6db",
+          "priorTargetSha256": "4df740831b2b9a8b43b86f716f3019fe121810891d2a9f394467d48def67fad7",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/ne/162.json",
+          "index": 122
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-08",
+          "field": "translation",
+          "currentTarget": "अवधिको खण्ड खाली राखेरै सल्लाह लिन्छु। बुझाउने मिति नजिक भएकाले नबुझेका भाग भए कसरी सम्पर्क गर्ने भन्ने पनि सोध्न चाहन्छु।",
+          "sourceSha256": "109b02808749e507a911a468b669689599e6dccf031973166b90ad2428a175af",
+          "targetSha256": "2ffd8c619efa88a603e883be6bcdd029ed973fef5f691b4da12a63cb273490be",
+          "priorTargetSha256": "ddd6797119da2b7577da6fd1314b4a0dae351649c080d687ff1b55261c7e6d57",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/ne/162.json",
+          "index": 123
+        },
+        {
+          "locale": "zh-CN",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-04",
+          "field": "translation",
+          "currentTarget": "有两张表。第一张姓名我会填，但不知道第二张的“适用期间”究竟指哪段时间。",
+          "sourceSha256": "0b2fe2fd63b4a7fc9dac3992ed1001395c3e74cc2da7ce24a7e8f4adec3184f8",
+          "targetSha256": "a87f727adb6ae7181665662a52bb3a127972769ed5b1ddc79e196089e70b0dd6",
+          "priorTargetSha256": "9bb1b5af572a672ed7ce25759a7e2e7a90768ba10802dea6633b8b8e49d9c728",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/zh-CN/162.json",
+          "index": 124
+        },
+        {
+          "locale": "zh-CN",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-04",
+          "field": "hintTranslation",
+          "currentTarget": "请用日语说明，有两张表，姓名会填，但不明白第二张的适用期间。",
+          "sourceSha256": "7834484c4c81f03219fc6f8fc11fc7fd68d01ded5012e0da3f68c657cc5046d7",
+          "targetSha256": "8e1d5e03dfa4712de4800f2e18a563538e9b97a793201ea4eeeb7df0aa16b7b0",
+          "priorTargetSha256": "86d8a3e4470b96b13be9cf9d3aba76a1736388e71429c0d2e7e2ddadee5293cb",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/zh-CN/162.json",
+          "index": 125
+        },
+        {
+          "locale": "zh-CN",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-05",
+          "field": "translation",
+          "currentTarget": "需要按每份文件分别确认适用期间。您手头的资料上，有写可能对应的期间吗？",
+          "sourceSha256": "3694dc773abbb1a7462600b92e42fcb47ab0fd09b90dfec58c42d7b87e2ff477",
+          "targetSha256": "ac39ba31e33731c839dc3c9c5775402c3adf46faf830ecbe751ebbcbab5ef2a7",
+          "priorTargetSha256": "b5c2d24221d1889daacb79641907fc56683a37777a3ca60e52ab474cd0aab32b",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/zh-CN/162.json",
+          "index": 126
+        },
+        {
+          "locale": "zh-CN",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-08",
+          "field": "hintTranslation",
+          "currentTarget": "请用日语说明，不会猜填适用期间，提交日期近了，也想了解如何联系咨询不明之处。",
+          "sourceSha256": "b38cc2703b0c193645fc4dbf264a937c6e3c00be183f77ab9e45b45d3be9ee5c",
+          "targetSha256": "d575975619d3b0cabb83d63656f7db8bc0056e70d23d82bf3127644fcebc8217",
+          "priorTargetSha256": "57fb4f20f04812f15ff2d857bd22f706437cf1f18c01a187d5952bd4abc94819",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/zh-CN/162.json",
+          "index": 127
+        },
+        {
+          "locale": "zh-TW",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-04",
+          "field": "translation",
+          "currentTarget": "有兩張表單。第一張的姓名我會填，但第二張的「適用期間」是指哪段時間，我不清楚。",
+          "sourceSha256": "0b2fe2fd63b4a7fc9dac3992ed1001395c3e74cc2da7ce24a7e8f4adec3184f8",
+          "targetSha256": "b40b764c7ecf2b112bda8529ee314e8bf19c716b7bd9a7791c1a9f23b7f723d2",
+          "priorTargetSha256": "4117464a35cae79972716dcfe3b7c946cb7e6a00e7fbfe09da909057b0493fd6",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/162.json",
+          "index": 128
+        },
+        {
+          "locale": "zh-TW",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-04",
+          "field": "hintTranslation",
+          "currentTarget": "請用日語說明有兩張表單，姓名會填，但不清楚第二張的適用期間。",
+          "sourceSha256": "7834484c4c81f03219fc6f8fc11fc7fd68d01ded5012e0da3f68c657cc5046d7",
+          "targetSha256": "15e0bf5f20a91fda0d66363485b3290eee583929d2050843dadc037e79b8753b",
+          "priorTargetSha256": "dadced6608fd16556d53dbb3a1bfc0cf988f72c741d7f8e4a72a81f2b8f9787a",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/162.json",
+          "index": 129
+        },
+        {
+          "locale": "zh-TW",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-06-001-SHARED-05",
+          "field": "translation",
+          "currentTarget": "需要逐份文件確認適用期間。您手邊的資料有寫可能相對應的期間嗎？",
+          "sourceSha256": "3694dc773abbb1a7462600b92e42fcb47ab0fd09b90dfec58c42d7b87e2ff477",
+          "targetSha256": "c4b2a37b06e5ac123e6c2fabad7fb70b3cfcce1454090051eed767db7bb503c3",
+          "priorTargetSha256": "558114162bfe370b0532dd8665281686f7f1e873ad5a6c389c95e4413c52cee9",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/162.json",
+          "index": 130
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-URESHINO-03-001",
+      "metadata": {
+        "name": "急須を持っていない人へのお茶の贈り物を選ぶ",
+        "situation": "嬉野市の架空のお茶専門店で、客が日本茶に不慣れな友人への贈り物を選ぶ。茶葉の商品からマグカップで淹れられるティーバッグへ希望を変え、個数と淹れ方を確かめる。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "友人はマグカップで紅茶を飲み、日本茶の急須は持っていないと思うと説明する。",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "贈り物をお探しですか。こちらは茶葉の詰め合わせですが、差し上げる方は急須をお使いになりますか。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "友人は紅茶をマグカップで飲んでいます。日本茶の急須は持っていないと思います。",
+          "hintJa": "友人はマグカップで紅茶を飲み、日本茶の急須は持っていないと思うと説明する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "それなら、このティーバッグはいかがでしょう。茶葉を別の道具でこす必要がありません。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "これなら友人も使えそうです。一袋で、二人分のマグカップに淹れられますか。",
+          "hintJa": "ティーバッグなら使えそうだと伝え、一袋で二人分のマグカップに淹れられるか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "一袋で一杯分です。二人で飲むときは、それぞれのカップに一袋ずつ入れてください。箱には十袋入っています。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "二人が毎晩飲むなら五日分ですね。もう少し楽しめるように、同じ物を二箱ください。",
+          "hintJa": "十袋では二人で五日分になると確認し、長く楽しめるよう同じ商品を二箱注文する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "二箱承りました。お湯は沸かした直後ではなく、少し冷まして注ぐと、渋くなりにくいですよ。淹れ方の紙もお付けします。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "日本語の説明を読めない友人なので、紙にはカップの絵もありますか。",
+          "hintJa": "友人が日本語の説明を読めないと伝え、淹れ方の紙にカップの絵があるか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "あります。お湯を注いで一分待ち、袋を取り出すまでが絵になっています。袋を入れたままにしないよう、伝えてあげてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "その絵を見せながら、飲む前に袋を取り出すよう説明します。二箱を一つの贈り物にして、説明の紙も一緒に入れてください。",
+          "hintJa": "飲む前に袋を取り出すことを絵で説明すると伝え、二箱と説明の紙を一つに包むよう頼む。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "二箱と説明の紙を一緒にお包みしました。お友達にも気に入っていただけるといいですね。ありがとうございました。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-07",
+          "field": "translation",
+          "currentTarget": "दो डिब्बे, जी। पानी उबलते ही न डालें; उसे थोड़ा ठंडा होने देकर डालेंगे तो चाय कम कसैली होगी। बनाने की विधि का कागज़ भी दूँगा।",
+          "sourceSha256": "c7b06959b1a9d8ea46b96fd68d6843325800973b8677fbfaaa5edf5f9c05cd6e",
+          "targetSha256": "bb08028fff5d2d70a118033d7f62b55d934dfe6b1adcb2d3244e92342da378ad",
+          "priorTargetSha256": "876057e3f817d79c23d4f51fa057a0e5a0134d99b13d03f04df77e64a216b9a6",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/hi/216.json",
+          "index": 131
+        },
+        {
+          "locale": "my",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-01",
+          "field": "translation",
+          "currentTarget": "လက်ဆောင်ရှာနေတာလား။ ဒီဟာက လက်ဖက်ခြောက်အစုံပါ။ လက်ဆောင်လက်ခံမယ့်သူက လက်ဖက်ရည်အိုး သုံးပါသလား။",
+          "sourceSha256": "0c3c22576449064f3f4026562d6587f7e5c66004fdfdede811b42daf03c67273",
+          "targetSha256": "2f00cf33a711d07a2958f1073bda359b6f0243b3f3d1c6167a1c85b97d900fc8",
+          "priorTargetSha256": "2168fb2bfaec1bc4a7d879de6f757567e4d301764e642b193800234a44439c36",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/my/216.json",
+          "index": 132
+        },
+        {
+          "locale": "my",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-02",
+          "field": "translation",
+          "currentTarget": "သူငယ်ချင်းက မတ်ခွက်နဲ့ ဘလက်တီး သောက်ပါတယ်။ ဂျပန်လက်ဖက်ရည်ဖျော်တဲ့ အိုးတော့ မရှိဘူးလို့ ထင်ပါတယ်။",
+          "sourceSha256": "29c5a320b3373a33401e9aa8c160446189e8cd577697966c6e50093c0f5442ad",
+          "targetSha256": "1c565874d1d360a66ed4377abc6029d1291f2cecc0eee1a0d6205174ec1fda43",
+          "priorTargetSha256": "89a96918c0a031833c6d9b317665067a9bdb224348fb33076d69b1c9b0c136d2",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/my/216.json",
+          "index": 133
+        },
+        {
+          "locale": "my",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-02",
+          "field": "hintTranslation",
+          "currentTarget": "သူငယ်ချင်းက မတ်ခွက်နဲ့ ဘလက်တီး သောက်ပြီး ဂျပန်လက်ဖက်ရည်အိုး မရှိဘူးလို့ ထင်ကြောင်း ရှင်းပြပါ။ ဂျပန်လို ပြောပါ။",
+          "sourceSha256": "c0352d91a5951cbd930540d4dc6afdc1650f2c94b3d248c05fe983bacdad3ec3",
+          "targetSha256": "27a4c66937f47cc93243d9d76889e742a50a3f41e91519fd3e481b005dedfc25",
+          "priorTargetSha256": "bb0b5ca92d909a263131c73d2ba316f436e514075c6055235c61831b5f992a96",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/my/216.json",
+          "index": 134
+        },
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-LOC-SAG-URESHINO-03-001-SHARED-04",
+          "field": "hintTranslation",
+          "currentTarget": "Sabihin na magagamit ng kaibigan ang tea bag at itanong kung ang isang bag ay puwedeng itimpla para sa dalawang mug ng dalawang tao. Sabihin ito sa Japanese.",
+          "sourceSha256": "3f522d63f212ecb8bd5135e2b6999de5facd7fd91e40f8b69d17d24f8056975f",
+          "targetSha256": "595bfa0f45bc6ca9e15ca40d230c1746642955cd695fd472a0a564eb7628ea2a",
+          "priorTargetSha256": "3a1ce0b8fb4f2f4d9f36d35cc9d50501d3fba19d577db1e42e1c42d6310ea781",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/tl/216.json",
+          "index": 139
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-KGS-SATSUMASENDAI-07-001",
+      "metadata": {
+        "name": "農具の修理受付で刃先に触れず担当範囲を聞く",
+        "situation": "架空の農具準備・修理受付工房で、作業者が工房スタッフに受付記録と修理担当の区別を確認する。農作業前の道具準備という仕事目的を保ち、圃場・刃物・機械の操作手順は教えない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "受付記録の担当だが切れにくいはさみを試す作業まで含むか聞く",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "今日は農具を使う前の相談を受け付けます。戻ってきた道具の記録をお願いしたいのですが、担当の説明は受けましたか。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "受付の記録と聞きましたが、切れにくいというはさみを自分で試すところまで担当するのでしょうか。",
+          "hintJa": "受付記録の担当だが切れにくいはさみを試す作業まで含むか聞く。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "切れ味を試したり修理したりする担当ではありません。使った方の申告を聞いて、道具を特定する情報を記録します。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "では実際には切らず、「切れにくいとの申告」と書きます。道具の番号札が外れている場合は、何を記録しますか。",
+          "hintJa": "実際に切らず申告として記録し、番号札が外れた場合の記入内容を尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "番号は推測せず、外れていることを記録して私へ知らせてください。持ち主がわかるかも、聞ける範囲で確かめましょう。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "持ち主の名前は聞けますが、似たはさみが二本あります。番号札をどちらかに付け直すのは待ちます。",
+          "hintJa": "持ち主の名は聞けるが似たはさみ二本で区別がつかず札の付け直しを待つと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "はい、私が確認します。刃先に触れて違いを調べたり、開閉して確かめたりしないでください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "見た目で決めず、二本あることだけを報告します。修理が終わったと相手に伝えるのも、私の担当ではないですね。",
+          "hintJa": "見た目で決めず二本あると報告し、修理完了の案内も担当外か確認する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "そのとおりです。修理の判断や完了の案内は修理担当が行います。受付で引き継ぐ内容は整理できましたか。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "持ち主の申告、切れにくいという相談、番号札が外れて二本を特定できない点を記録し、修理担当へ引き継ぎます。",
+          "hintJa": "持ち主の申告・切れにくさ・札なしで二本を特定できない点を記録して修理担当へ引き継ぐと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "その内容で記録を一緒に確認しましょう。道具には手を加えず、今の二本の照合は私に任せて、記録用紙をこちらへお願いします。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-01",
+          "field": "translation",
+          "currentTarget": "आज खेती के औज़ार इस्तेमाल करने से पहले के सवाल लेंगे। लौटाए गए औज़ारों का रिकॉर्ड रखने की ज़िम्मेदारी आपको देना चाहता हूँ; क्या प्रभारी ने समझाया है?",
+          "sourceSha256": "c34a1e5e63d2fc996fec3c2fcb008ac37adb09b64f6b059947df6054511c31a7",
+          "targetSha256": "b90de23f3b1a4e21f101e2feccce680042c447ff7afc39716f0482b1a55bf822",
+          "priorTargetSha256": "13f9665ceeb7b6fac1b8d06f8532abd02fa398f602199000c48c556df48e0933",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/hi/162.json",
+          "index": 140
+        },
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-02",
+          "field": "translation",
+          "currentTarget": "मैंने इसे स्वागत पर रिकॉर्ड का काम सुना था, लेकिन क्या ठीक से न काटने वाली बताई गई कैंची को खुद जाँचने का काम भी मेरा है?",
+          "sourceSha256": "5edba339d8bc2e795ed6449fab0bc50f0aec93d7a9e9cb4e3b959c9b51e81056",
+          "targetSha256": "db159941b6170ea20ccdf0533f546bc27176cc1825e87e3e5d5bbbc83cfbbf97",
+          "priorTargetSha256": "48d9a4a550bb8d6f3efddea14cc23449cc391b8f78933c71c71973b3647da3e0",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/hi/162.json",
+          "index": 141
+        },
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-02",
+          "field": "hintTranslation",
+          "currentTarget": "जापानी में पूछें कि स्वागत का रिकॉर्ड रखने में ठीक से न काटने वाली कैंची आज़माना भी शामिल है या नहीं।",
+          "sourceSha256": "f193a9f466e01f0d7b0862696ee502e0d609f6889fa739735f19f3ca3948224a",
+          "targetSha256": "a93e58941a4a5e3104c571e8e468a8eadcfc202002500d17fcdc611c84d301b7",
+          "priorTargetSha256": "57d2d97ee35835b278bc25f416145c64174b33d10feae4b917775864058b8b9a",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/hi/162.json",
+          "index": 142
+        },
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-04",
+          "field": "translation",
+          "currentTarget": "तो असल में काटकर नहीं देखूँगा, बल्कि “ठीक से न काटने की शिकायत” लिखूँगा। औज़ार की संख्या का टैग निकला हो तो क्या दर्ज करूँ?",
+          "sourceSha256": "19d205c7a70b10cc3e2b0f2de46469bf811d2d40239b7d7e6f0a12209586b24f",
+          "targetSha256": "c21107b69ee4f91c511f54837158f0efa5744e2496fdaca7f6ff1ab57b6b10b8",
+          "priorTargetSha256": "6771ee02844309d6cbca3b152cf57bf3ce7103ca70120c9f94879c63408d50c7",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/hi/162.json",
+          "index": 143
+        },
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-10",
+          "field": "translation",
+          "currentTarget": "मालिक की बात, ठीक से न काटने की शिकायत और टैग निकला होने से दोनों की पहचान न हो पाने की बात दर्ज करके मरम्मत प्रभारी को दूँगा।",
+          "sourceSha256": "4e70097220a2598a334cfe942266949df918ce4d6f704e5995a10ee2a7c66b92",
+          "targetSha256": "c5a026581b451bbeb6078806043bd533004c220dddf4ca9719a735578bd46dbf",
+          "priorTargetSha256": "cede6420d451bf914eba06a84f4f33676c31b3a7bd30c42f06fcff95033336fd",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/hi/162.json",
+          "index": 144
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-01",
+          "field": "translation",
+          "currentTarget": "आज कृषि औजार प्रयोग गर्नुअघिको सल्लाह लिन्छौं। फिर्ता आएका औजारको अभिलेख राख्ने जिम्मा तपाईंलाई दिन चाहन्छु, जिम्मेवार कर्मचारीको व्याख्या लिनुभयो?",
+          "sourceSha256": "c34a1e5e63d2fc996fec3c2fcb008ac37adb09b64f6b059947df6054511c31a7",
+          "targetSha256": "75729c90b5a33ab61a060e5748758de01c470cd6eea3e78d4be979380635140a",
+          "priorTargetSha256": "41301bd6499d95cee193d686b11bc701e1d19db9f86fccdb943123bd5900eabd",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/ne/162.json",
+          "index": 145
+        },
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-04",
+          "field": "translation",
+          "currentTarget": "Hindi ko ito aktuwal na gagamiting pamputol; isusulat kong “Iniulat na mahina ang putol.” Kung natanggal ang tag ng numero, ano ang dapat kong itala?",
+          "sourceSha256": "19d205c7a70b10cc3e2b0f2de46469bf811d2d40239b7d7e6f0a12209586b24f",
+          "targetSha256": "8cfca5e035982e885a3a5fad0464078bf5350b85199bfdde24285b67c7992ddf",
+          "priorTargetSha256": "0f66ed10dcaa9c1f6d176eb9b8a7ac2ed6a434a23a30f559710bbc2e9403bdc0",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/tl/162.json",
+          "index": 147
+        },
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-07-001-SHARED-10",
+          "field": "translation",
+          "currentTarget": "Itatala ko ang sinabi ng may-ari, ang reklamong hindi maayos pumutol ang gunting, at ang hindi matukoy kung alin sa dalawang gunting dahil natanggal ang tag, saka ipapasa sa namamahala sa pagkukumpuni.",
+          "sourceSha256": "4e70097220a2598a334cfe942266949df918ce4d6f704e5995a10ee2a7c66b92",
+          "targetSha256": "386cb905bb0d18e0930696f5d1c259bdba64074edcef7f653633a5a2bd8d573b",
+          "priorTargetSha256": "f3ef2c0ef743927788c5472783183bfd1659ae9206762136cb248c39a8b1fe18",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/tl/162.json",
+          "index": 148
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-TOSU-07-001",
+      "metadata": {
+        "name": "濡れた階段を避けて展望を楽しむ",
+        "situation": "鳥栖の架空の展望施設で、雨上がりに歩く距離を短くしたい観光客が案内係に相談し、階段を使わず入口近くの屋根付きテラスで眺めることを選ぶ。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "靴が滑りやすいため階段を避けたいと伝え入口近くで景色を見られるか尋ねる",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "階段は雨でまだ濡れています。上の展望台まで行かれるご予定ですか。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "景色は見たいのですが、靴の底が滑りやすいので階段は避けたいです。入口の近くでも見られますか。",
+          "hintJa": "靴が滑りやすいため階段を避けたいと伝え入口近くで景色を見られるか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "入口横に屋根付きのテラスがあります。階段なしで行けますが、上ほど広くは見渡せません。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "今日は広さより歩きやすさを優先します。テラスまで、どちらの道を通ればいいですか。",
+          "hintJa": "見渡せる広さより歩きやすさを優先すると伝えテラスへの道を尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "右手の平らな通路です。途中の排水溝の周りは濡れているので、左側に寄って歩いてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "右の通路で、溝のところは左に寄るのですね。連れが荷物を置けるベンチはテラスにありますか。",
+          "hintJa": "右の通路で溝の付近は左に寄ると確認し荷物を置けるベンチがあるか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "ベンチはあります。ただ、今は座面も濡れているので、荷物は手に持っていただく方がよさそうです。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "では、荷物は私が持ちます。眺めている間に雨が強くなったら、同じ道で入口まで戻れますか。",
+          "hintJa": "荷物は自分が持つと決め雨が強くなったとき同じ道で入口へ戻れるか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "はい、同じ通路を戻れます。テラスの屋根から出ずに様子を見て、足元に注意して戻ってください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "階段へは行かず、テラスから眺めます。帰りも右の平らな通路を使い、ベンチには荷物を置きません。",
+          "hintJa": "階段へ行かずテラスで眺め帰りも平らな通路を使いベンチに荷物を置かないとまとめる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "その回り方でどうぞ。無理をせず、短い時間でも景色を楽しんでくださいね。お気をつけて、いってらっしゃいませ。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "bn",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-06",
+          "field": "translation",
+          "currentTarget": "ডান দিকের পথ নেব, আর নালার কাছে বাঁ দিক ঘেঁষে হাঁটব, তাই তো? বারান্দায় সঙ্গীর জিনিস রাখার বেঞ্চ আছে?",
+          "sourceSha256": "aa08650e2d6c2aaaf3351a70936c2a9063a48f1803c47654ed6b3fa7e53477ad",
+          "targetSha256": "1e7df66894e98b6743fa807dd0f1141c720a6f3e9c61693ae6cd3e91f11fecc9",
+          "priorTargetSha256": "2422c11f623ec48c1b2f01cb8880a7e33b99a0541460096df652dc00cace4f3a",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/bn/216.json",
+          "index": 149
+        },
+        {
+          "locale": "id",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-05",
+          "field": "translation",
+          "currentTarget": "Lorong datar di sebelah kanan. Area di sekitar saluran pembuangan sepanjang jalan masih basah, jadi berjalanlah merapat ke sisi kiri di bagian itu.",
+          "sourceSha256": "dcb22c32340b826492f52d67780024ecf1196af095631995a356e2ca31ed1779",
+          "targetSha256": "361da8a512ff68fadff1750985bce0de1722651ac901c7f4efbbd05ce1a9ac2c",
+          "priorTargetSha256": "b459be8b4c364bd3b22860409d34a26b468d935d58bcd771fbfdc90e585a2559",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/id/216.json",
+          "index": 151
+        },
+        {
+          "locale": "km",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-06",
+          "field": "translation",
+          "currentTarget": "ដើរតាមផ្លូវខាងស្តាំ ហើយត្រង់កន្លែងលូ ដើរអែបខាងឆ្វេង មែនទេ។ តើនៅរានហាលមានកៅអីវែងឱ្យអ្នកមកជាមួយដាក់អីវ៉ាន់ទេ?",
+          "sourceSha256": "aa08650e2d6c2aaaf3351a70936c2a9063a48f1803c47654ed6b3fa7e53477ad",
+          "targetSha256": "9f0f73b5812aaf90591f406499a1b3a6f899c479f4cdee759ad6aeb1fab5268b",
+          "priorTargetSha256": "709b662161480f964db738c4909d699e5316bbfa6134d32bac5a405d91c71c90",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/km/216.json",
+          "index": 152
+        },
+        {
+          "locale": "km",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-06",
+          "field": "hintTranslation",
+          "currentTarget": "សូមបញ្ជាក់ថាដើរតាមផ្លូវខាងស្តាំ ហើយនៅជិតលូដើរអែបខាងឆ្វេង រួចសួរថាមានកៅអីសម្រាប់ដាក់អីវ៉ាន់ឬអត់។ សូមនិយាយជាភាសាជប៉ុន។",
+          "sourceSha256": "2e58f846df0f0ed0217272fdb497afa21bc39af88d89733aeac57746e0167669",
+          "targetSha256": "fb10ae29c51855990fd5f93142bf52945e75eefc5ae1ac65ee16d6eff8298fe0",
+          "priorTargetSha256": "27a0c45b506b0df308f74274b8b35f72526e7057a2c5f269ae5efea508327923",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/km/216.json",
+          "index": 153
+        },
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-05",
+          "field": "translation",
+          "currentTarget": "Ang patag na daanan po sa kanan. Basa ang paligid ng kanal sa dinaanan, kaya sa kaliwang gilid po maglakad sa bahaging iyon.",
+          "sourceSha256": "dcb22c32340b826492f52d67780024ecf1196af095631995a356e2ca31ed1779",
+          "targetSha256": "53330b3e35c916e5c8562e6e47d7350c5aec29c267a0f4b5d9d0b48ea8cf4933",
+          "priorTargetSha256": "e735085d1831013a784ca4dd91a8ec77ef97282cf38550e225ff5b4ce0bdb5db",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/tl/216.json",
+          "index": 154
+        },
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-06",
+          "field": "hintTranslation",
+          "currentTarget": "Tiyaking ang kanang daanan ang gagamitin at sa kaliwang gilid maglalakad malapit sa kanal, at itanong kung may bangkong mapaglalagyan ng gamit. Sabihin ito sa Japanese.",
+          "sourceSha256": "2e58f846df0f0ed0217272fdb497afa21bc39af88d89733aeac57746e0167669",
+          "targetSha256": "ae3bfff525d6b9dc1b6776c758a1035792a89784223b5a625fe58d700d783fb9",
+          "priorTargetSha256": "af3d3a0d390ba8747487ee2aa9942ac91fbf6d6d5c03cb3d84db6337f82a1b22",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/tl/216.json",
+          "index": 155
+        },
+        {
+          "locale": "vi",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-07-001-SHARED-05",
+          "field": "translation",
+          "currentTarget": "Lối đi bằng phẳng bên tay phải. Dọc đường, khu vực quanh rãnh thoát nước đang ướt nên khi đến đó hãy đi sát bên trái.",
+          "sourceSha256": "dcb22c32340b826492f52d67780024ecf1196af095631995a356e2ca31ed1779",
+          "targetSha256": "1061b4b76170aa54034f6926c44730275dd5fbaffc7340f84fac4a5a65ee816a",
+          "priorTargetSha256": "aa92241285c67aeb49d53b2d3fc4ac81ba097c004cb37574421a890c2daeb145",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/vi/216.json",
+          "index": 156
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-KUM-YATSUSHIRO-02-001",
+      "metadata": {
+        "name": "古い会場図の矢印をそのまま使わない",
+        "situation": "架空の行事準備室。案内板を運ぶ手伝いに来た人が、持参した会場図の版違いに気づく。来場者経路の案内を独断で変えず、更新版と担当表示を受け取る。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "案内板の運搬担当と伝え、持参図の矢印で進んでよいか尋ねる",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "準備のお手伝いですね。案内板を扱う係の方でしょうか。お持ちの紙を見せていただけますか。"
+        },
+        "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "入口に立てる板を運ぶ担当だと聞きました。この図の矢印に沿って持っていけばいいでしょうか。",
+          "hintJa": "案内板の運搬担当と伝え、持参図の矢印で進んでよいか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "その紙には前回の開催名が入っていますね。今回は受付の配置が変わっているので、先に今日の図へ替えましょう。"
+        },
+        "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "同じ行事だから使えると思っていました。前の入口に人を案内しないよう、古い図は作業用から分けておきます。",
+          "hintJa": "前回の図を今回用と思った誤りを認め、古い図を分ける。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "こちらが今回の図です。板の運搬係と、来場者をご案内する係は別になっています。今お願いするのは準備だけです。"
+        },
+        "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "では、板を運び終えても、自分で来場者の通り道を決めたり、矢印の向きを変えたりはしないのですね。",
+          "hintJa": "準備係と来場者案内係を区別し、経路や矢印を自分で変えないと確認する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "はい。設置先は担当と合わせます。荷物を持って移動する前に、通路を使ってよいかも私から確認します。"
+        },
+        "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "今は通路の確認待ちなので、この場所で板の名前と担当札を合わせます。移動してよいという返事が来るまでは運び出しません。",
+          "hintJa": "移動許可を待つ間、今の場所で板名と担当札を照合すると述べる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "その準備をお願いします。図の版と板の名前が合ったら、まだ運搬していないことも次の係へ伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "今日の図と担当札は合いました。板はまだここにあり、通路の返事を待っていることを引き継ぎます。",
+          "hintJa": "更新図と担当札の照合済み、板は未運搬で通路の返事待ちと引き継ぐ。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "ありがとうございます。その状態で受け取りました。運搬の声かけはこちらからします。ひとまずご案内は以上です。では、また後ほど。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-01",
+          "field": "translation",
+          "currentTarget": "आप तैयारी में मदद करने आए हैं। क्या आप दिशासूचक बोर्ड के ज़िम्मेदार व्यक्ति हैं? अपना कागज़ दिखाएँगे?",
+          "sourceSha256": "c22c19ccb3d270e8cb5e039bf5852afbb66672a19b4e17abc9566b276a0296de",
+          "targetSha256": "77f8014630ef2b08caf634bbb1dc0f98291a588b5ca11c8cce8b0718b21746db",
+          "priorTargetSha256": "0162aeb05713d48658b1aeb66bcdb11fd4882e8fc484217634bbf1d7181bb542",
+          "sourceWorker": 3,
+          "path": "src/data/dialogue-content/locale-batches/hi/173.json",
+          "index": 157
+        },
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-02",
+          "field": "hintTranslation",
+          "currentTarget": "जापानी में बताएँ कि आप बोर्ड ढोने के ज़िम्मेदार व्यक्ति हैं और पूछें कि साथ लाए नक्शे के तीरों पर चलें या नहीं।",
+          "sourceSha256": "0f995c83ea617d250229c508d239c76d19630d6a88398381a029c20c432dcaf7",
+          "targetSha256": "848c8e99d3e10ee6e58e87270025ab597a7bf573144f2701564b39ae420ebfc0",
+          "priorTargetSha256": "5b72cd142ec1db432fbdc62c4e0f1b6d3bf66a1016f165a09cd6f0743c2af4b1",
+          "sourceWorker": 3,
+          "path": "src/data/dialogue-content/locale-batches/hi/173.json",
+          "index": 158
+        },
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-05",
+          "field": "translation",
+          "currentTarget": "यह इस बार का नक्शा है। बोर्ड ढोने और आगंतुकों को रास्ता बताने के ज़िम्मेदार व्यक्ति अलग हैं। अभी आपको सिर्फ तैयारी करनी है।",
+          "sourceSha256": "3fe04af0a53bd13d808bcd6879654f75ca33f1d253c80b08e9512d7178fc0553",
+          "targetSha256": "9b0bdd213c855a379880eac0149ab63e8abfb85832ce20071c3fbb4cc7c536f4",
+          "priorTargetSha256": "25fa1dcfb567064749393bd70246ffb1ae8551f5a85688887fdd47246ef9e5a2",
+          "sourceWorker": 3,
+          "path": "src/data/dialogue-content/locale-batches/hi/173.json",
+          "index": 159
+        },
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-06",
+          "field": "hintTranslation",
+          "currentTarget": "जापानी में तैयारी और आगंतुकों के मार्गदर्शन के ज़िम्मेदार व्यक्ति अलग होने तथा रास्ता या तीर खुद न बदलने की पुष्टि करें।",
+          "sourceSha256": "265264e25fe0305b1b150b25b46ce2500540274492cdb7158713e053576bfe68",
+          "targetSha256": "f1d27e0a7f7b97927b253b5b61cb030570681c878d6c4210b8a29333c7f07caa",
+          "priorTargetSha256": "2018ec1f9d35f69d63918527923af064086e2eb75c81b7c088aeb865cb445487",
+          "sourceWorker": 3,
+          "path": "src/data/dialogue-content/locale-batches/hi/173.json",
+          "index": 160
+        },
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-07",
+          "field": "translation",
+          "currentTarget": "जी। लगाने की जगह ज़िम्मेदार व्यक्ति से मिलाकर तय करेंगे। सामान उठाकर चलने से पहले मैं यह भी पूछूँगा कि रास्ता इस्तेमाल कर सकते हैं या नहीं।",
+          "sourceSha256": "80d0cc3a69959c9e6f2c8f0cbdb2fa95acd49809b019c855585090aaa698ce00",
+          "targetSha256": "4109cd658329f1c4c5acac3d3c4f0aa451b280e37964ef24d6e39cf14f369961",
+          "priorTargetSha256": "a994b51c2e7098e0e8d5514b2d9f5a6a5e3e46d0d0fcbd774bc7143f46314a5d",
+          "sourceWorker": 3,
+          "path": "src/data/dialogue-content/locale-batches/hi/173.json",
+          "index": 161
+        },
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-09",
+          "field": "translation",
+          "currentTarget": "यही तैयारी करें। नक्शे का संस्करण और बोर्ड का नाम मिल जाए तो अगले ज़िम्मेदार व्यक्ति को यह भी बताएँ कि बोर्ड अभी ढोया नहीं गया है।",
+          "sourceSha256": "e76eb386f99e95d1a83d88c85c7b4062f3cadc7e892a1b1f3ea540652d45fbc2",
+          "targetSha256": "1ee1ed61a00af0879859ad274292c946993a297bf9786561766b935a06aae69b",
+          "priorTargetSha256": "f642074b404038f4a7021ad881c21eda7731c547140aff6ad299c74a572e72cb",
+          "sourceWorker": 3,
+          "path": "src/data/dialogue-content/locale-batches/hi/173.json",
+          "index": 162
+        },
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KUM-YATSUSHIRO-02-001-SHARED-10",
+          "field": "translation",
+          "currentTarget": "आज का नक्शा और जिम्मेदारी का लेबल मेल खा गए हैं। अगले ज़िम्मेदार व्यक्ति को बताऊँगा कि बोर्ड अभी यहीं है और रास्ते के जवाब का इंतज़ार है।",
+          "sourceSha256": "399d0ad8b479ac0568fd9e19fe17101fe029afc8c69f62f131ca80a627df7a5a",
+          "targetSha256": "277ad456bb640143e0d8fff62421da0d16ccd6fcae68698e3b2083a34f01ce1b",
+          "priorTargetSha256": "795ad9a2c545ccaf07f49402c13ef99e1f113378265ae3b6d4dcecb415f36061",
+          "sourceWorker": 3,
+          "path": "src/data/dialogue-content/locale-batches/hi/173.json",
+          "index": 163
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-TOSU-04-001",
+      "metadata": {
+        "name": "失くした在留カードの届け出内容をまとめる",
+        "situation": "鳥栖の交番を想定した学習場面で、在留カードを失くした人が警察官に最後に見た場所と特徴を伝える。再交付手続きは別の担当機関で確認し、警察での受付番号を記録する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "在留カードを失くしたと伝え交番で代わりのカードをもらえるか尋ねる",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "どうされましたか。なくした物のご相談でしょうか。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "在留カードを失くしました。今日はカードを見せる予定があったのですが、交番で代わりのカードをもらえますか。",
+          "hintJa": "在留カードを失くしたと伝え交番で代わりのカードをもらえるか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "ここで在留カードの再交付はできませんが、紛失の届け出は伺えます。最後にカードを見たのはいつ、どこですか。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "昨日の夕方、倉庫の休憩室で財布から出しました。今朝確認すると、財布はあるのにカードだけありませんでした。",
+          "hintJa": "昨日夕方に倉庫の休憩室でカードを出し財布は残っていると説明する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "カードだけですね。お名前と連絡先を確認します。カードの番号が分かる控えはありますか。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "スマートフォンに両面の写真があります。名前と番号はこれで確認できますが、住所は最近変わっています。",
+          "hintJa": "カード両面の写真があり名前と番号を確認できるが住所は変わったと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "現在の住所も伺って記録します。再交付の必要書類は担当の入管窓口で確認してください。届け出の受付番号は控えておいてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "新しい住所はこちらです。受付番号を電話で伝えるとき、聞き間違えそうなので紙に書いてもらえますか。",
+          "hintJa": "現在の住所を示し受付番号を紙に書いてもらうよう頼む。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "こちらに書きました。見つかった場合に連絡できる電話番号も確認できました。控えの内容に間違いはありませんか。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "名前と今の住所、電話番号は合っています。この控えを持って、再交付の手続きを担当窓口に確認します。",
+          "hintJa": "控えの名前と住所と電話番号が正しいと確認し再交付は担当窓口に問い合わせると伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "お届けの内容を受け付けました。カードが見つかった場合もご連絡ください。それでは、お気をつけてお帰りください。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "bn",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-10",
+          "field": "translation",
+          "currentTarget": "নাম, বর্তমান ঠিকানা ও ফোন নম্বর ঠিক আছে। এই কপি নিয়ে সংশ্লিষ্ট কাউন্টারে কার্ড পুনরায় ইস্যুর প্রক্রিয়া সম্পর্কে জিজ্ঞেস করব।",
+          "sourceSha256": "f9784b3092dc905720a979fab34f4d98eb71fe3d569314554e0826e05517258a",
+          "targetSha256": "77e3e63e3ccd66e2f83608dc9b4ed645c22a1e275d1f299b6f42fb05f8f13a87",
+          "priorTargetSha256": "6e8a57c2bff397a21d7dbb58d2e27e9d8ac123837bcf2f5d89524fb9750de5b4",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/bn/215.json",
+          "index": 164
+        },
+        {
+          "locale": "bn",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-10",
+          "field": "hintTranslation",
+          "currentTarget": "নিশ্চিত করুন যে কপিতে নাম, বর্তমান ঠিকানা ও ফোন নম্বর ঠিক আছে, এবং বলুন যে পুনরায় ইস্যুর বিষয়ে সংশ্লিষ্ট কাউন্টারে জিজ্ঞেস করবেন। জাপানি ভাষায় বলুন।",
+          "sourceSha256": "6abcba79d71335d945d65fb5ed55a9f1578144b38af9ca7e0f1a297276de7677",
+          "targetSha256": "43c27852c98b52e111132461575a71bce3f6eec5d4ea2bc751ac17d7979977bb",
+          "priorTargetSha256": "a48d645b5b29d0805149905ff24ee5c3e4e9b004fcd82decc95ded890f90eac2",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/bn/215.json",
+          "index": 165
+        },
+        {
+          "locale": "my",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-06",
+          "field": "translation",
+          "currentTarget": "ဖုန်းထဲမှာ ကတ်ရဲ့ ရှေ့နောက်နှစ်ဖက် ဓာတ်ပုံရှိပါတယ်။ နာမည်နဲ့ ကတ်နံပါတ်ကို ဒီပုံတွေကနေ စစ်နိုင်ပေမဲ့ လိပ်စာက မကြာသေးခင်က ပြောင်းထားပါတယ်။",
+          "sourceSha256": "e6f344f1dc1912b09f76d5e515e74520f2aeffe537464c3a86fd2e02eebf5b94",
+          "targetSha256": "536a87617680965eea7feb53248a4d6e3cd0e18ca3dd3850c0678f1ab51c2449",
+          "priorTargetSha256": "77f9d8cd376f9ec36a37ce7a6118a694d7a29617d4280f8a3f6fae9c42724de6",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/my/215.json",
+          "index": 166
+        },
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-04",
+          "field": "hintTranslation",
+          "currentTarget": "Ipaliwanag na kahapon ng hapon ay inilabas mo ang card sa pitaka sa pahingahan ng bodega, at naroon pa rin ang pitaka. Sabihin ito sa Japanese.",
+          "sourceSha256": "83061164488c756dd25fb1ce5d5bdabc5385678a8c413a46f2a15c3c99b5b7df",
+          "targetSha256": "735b73dcc557f79f192d9651ce75b5dcb5809f71eff25af2ceed042505d33b84",
+          "priorTargetSha256": "b455acfd4ad33a4777769e0ebc6bf18bb3199b65e1101e01299db7561235ae44",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/tl/215.json",
+          "index": 167
+        },
+        {
+          "locale": "zh-TW",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-04-001-SHARED-04",
+          "field": "hintTranslation",
+          "currentTarget": "說明昨天傍晚在倉庫休息室從錢包拿出卡片，而錢包仍在。請用日語表達。",
+          "sourceSha256": "83061164488c756dd25fb1ce5d5bdabc5385678a8c413a46f2a15c3c99b5b7df",
+          "targetSha256": "2479f397767c54f49e6ab1318db1d0d11379e4658cff5da3c2ea5307a1cc358d",
+          "priorTargetSha256": "cef347720d640652690b155fd036251b9621705e550439d8fee704fb4175eb5d",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/215.json",
+          "index": 170
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-OKN-URASOE-001",
+      "metadata": {
+        "name": "洗える通勤用バッグを予算内で選ぶ",
+        "situation": "浦添市を舞台にした架空の衣料雑貨店。客は弁当箱を入れるバッグを二種類から選ぶ。価格・付属品・洗濯表示はこの場面だけの設定。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "自転車通勤と汁漏れの可能性を伝え、水洗いできるバッグを求める",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-OKN-URASOE-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "その二つのバッグで迷っていらっしゃいますか。お使いになる場面を伺えますか。"
+        },
+        "DLG-SC-OKN-URASOE-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "自転車通勤で使います。弁当の汁がこぼれることもあるので、洗える方を探しています。",
+          "hintJa": "自転車通勤と汁漏れの可能性を伝え、水洗いできるバッグを求める。日本語で伝えてください。"
+        },
+        "DLG-SC-OKN-URASOE-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "紺色は手洗いできますが、茶色は水洗い不可です。紺色の中に、お弁当箱が収まるか確かめましょうか。"
+        },
+        "DLG-SC-OKN-URASOE-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "空の弁当箱を持ってきました。底を平らにしたまま入るか試してもいいですか。",
+          "hintJa": "持参した空の弁当箱を平らに入れる試用許可を得る。日本語で伝えてください。"
+        },
+        "DLG-SC-OKN-URASOE-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "どうぞ。横にするとふたが傾きますが、この向きなら収まりますね。ただ、保冷機能はありません。"
+        },
+        "DLG-SC-OKN-URASOE-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "別の保冷袋に入れて使います。その袋も入るように、幅をあと二センチほど確保できますか。",
+          "hintJa": "保冷袋を使う予定を伝え、幅を二センチ広げられるか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-OKN-URASOE-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "側面のボタンを外すと広がります。バッグは三千二百円、取り外せる肩ひもは別売りで八百円です。"
+        },
+        "DLG-SC-OKN-URASOE-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "上限は三千五百円なので、肩ひもは付けません。持ち手だけでも肩に掛けられますか。",
+          "hintJa": "三千五百円の予算から肩ひもを外し、持ち手を肩に掛けられるか聞く。日本語で伝えてください。"
+        },
+        "DLG-SC-OKN-URASOE-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "薄手の上着なら掛けられます。鏡の前でお試しください。持ち手の付け根が当たらないでしょうか。"
+        },
+        "DLG-SC-OKN-URASOE-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "当たりませんし、箱も傾きません。この紺色をバッグだけで買います。",
+          "hintJa": "持ち手と箱の安定を確かめ、紺色のバッグ本体だけを購入する。日本語で伝えてください。"
+        },
+        "DLG-SC-OKN-URASOE-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "では、肩ひもなしで三千二百円のお会計です。手洗いの表示も残してお使いください。ありがとうございました。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "bn",
+          "turnId": "DLG-SC-OKN-URASOE-001-SHARED-05",
+          "field": "translation",
+          "currentTarget": "অবশ্যই। আড়াআড়ি রাখলে ঢাকনা কাত হয়, তবে এই দিকে রাখলে ধরে। তবে ব্যাগে ঠান্ডা ধরে রাখার ব্যবস্থা নেই।",
+          "sourceSha256": "29fb9d7aede04bad1837642d1ee5f00ca2886c7e7e9a52a9dccb3f3b2d4a6277",
+          "targetSha256": "42b738ca73f71d5a1cfb1f9049b3804d9bbfa4dbc7ef7ccb8a192c52c5030328",
+          "priorTargetSha256": "3329404a4363605b7d7719e83f34805259d2122e5bd26d3107b0b43c66b5c1a3",
+          "sourceWorker": 6,
+          "path": "src/data/dialogue-content/locale-batches/bn/205.json",
+          "index": 171
+        },
+        {
+          "locale": "km",
+          "turnId": "DLG-SC-OKN-URASOE-001-SHARED-03",
+          "field": "translation",
+          "currentTarget": "ខៀវចាស់អាចលាងដោយដៃ តែត្នោតមិនអាចលាងទឹក។ តោះពិនិត្យថាប្រអប់បាយចូលកាបូបខៀវចាស់បានឬអត់?",
+          "sourceSha256": "ca7965a2c0293b55575e353bcb3afd6333e9581745a2c23aa1851a236d27a6fd",
+          "targetSha256": "430b8f275f03a1320843e9e1f70871804a9145ba475684206a57a2fbb9090382",
+          "priorTargetSha256": "7d2ca816f9b37d82cab8a5b70f8769ea1f3a5dbcdc3dc05e670f15d74544ae2c",
+          "sourceWorker": 6,
+          "path": "src/data/dialogue-content/locale-batches/km/205.json",
+          "index": 172
+        },
+        {
+          "locale": "km",
+          "turnId": "DLG-SC-OKN-URASOE-001-SHARED-11",
+          "field": "translation",
+          "currentTarget": "អ៊ីចឹងគិតប្រាក់បីពាន់ពីររយយ៉េន ដោយគ្មានខ្សែស្មា។ សូមរក្សាស្លាកណែនាំលាងដោយដៃពេលប្រើ។ អរគុណ។",
+          "sourceSha256": "eadcf18ebef9331d3a5b8b7cef9f91a71d58be65cbe27d1b25c8a2397bb46fff",
+          "targetSha256": "49f3a718ea5e57dc3408525e9951e4bf1ce478776c7e41c4060097ae300d03e6",
+          "priorTargetSha256": "975df86c4317fbf54f9770d45edba99713111d7e919b3db4999f3f8f29e45ae4",
+          "sourceWorker": 6,
+          "path": "src/data/dialogue-content/locale-batches/km/205.json",
+          "index": 173
+        },
+        {
+          "locale": "my",
+          "turnId": "DLG-SC-OKN-URASOE-001-SHARED-03",
+          "field": "translation",
+          "currentTarget": "နက်ပြာကိုလက်ဖြင့်ဆေးကြောနိုင်ပေမဲ့အညိုကိုရေနဲ့ဆေးမရပါဘူး။ နက်ပြာထဲထမင်းဘူးဆံ့မဆံ့စစ်ကြမလား။",
+          "sourceSha256": "ca7965a2c0293b55575e353bcb3afd6333e9581745a2c23aa1851a236d27a6fd",
+          "targetSha256": "3b264d376cb9bff5e5fbcca9deffc59fba2b1e0b15d739676a1f56f931e7104a",
+          "priorTargetSha256": "a7e0d2bf8353c4a0818eca17c2a187de23a3bec4e650e237e44238d946595db1",
+          "sourceWorker": 6,
+          "path": "src/data/dialogue-content/locale-batches/my/205.json",
+          "index": 174
+        },
+        {
+          "locale": "my",
+          "turnId": "DLG-SC-OKN-URASOE-001-SHARED-11",
+          "field": "translation",
+          "currentTarget": "ဒါဆိုပခုံးကြိုးမပါသုံးထောင့်နှစ်ရာရှင်းပါမယ်။ လက်ဖြင့်ဆေးကြောရန်ညွှန်ကြားချက်ပါတဲ့တံဆိပ်လည်းသိမ်းသုံးပါ။ ကျေးဇူးတင်ပါတယ်။",
+          "sourceSha256": "eadcf18ebef9331d3a5b8b7cef9f91a71d58be65cbe27d1b25c8a2397bb46fff",
+          "targetSha256": "f9bd7a738a78926c5cf60ce89593643586ef4867d38ec28e0138b5b84be1a3af",
+          "priorTargetSha256": "6fa9ed9dae9a812ed98cc957b08705330c4f194b1a990e6f4d0163b3588c4305",
+          "sourceWorker": 6,
+          "path": "src/data/dialogue-content/locale-batches/my/205.json",
+          "index": 175
+        },
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-OKN-URASOE-001-SHARED-07",
+          "field": "translation",
+          "currentTarget": "Lalapad po kapag binuksan ang mga butones sa gilid. Tatlong libo at dalawang daan ang bag; walong daan ang hiwalay na natatanggal na strap.",
+          "sourceSha256": "2e41fb5d4d4f780d331231138997a24572971f3a064608637444f355997012bc",
+          "targetSha256": "eb2b93b5fc044428c2463138e879f215c2dca4a3a8c09c1595ad865bdd350939",
+          "priorTargetSha256": "ce429a1ececac4d3be647c7fabbcc4ea605995b488c1424a83d68ac4ce1ec1cd",
+          "sourceWorker": 6,
+          "path": "src/data/dialogue-content/locale-batches/tl/205.json",
+          "index": 176
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-KARATSU-06-001",
+      "metadata": {
+        "name": "花火の帰りに迷わない集合場所を決める",
+        "situation": "唐津市を題材にした架空の花火会場。案内担当が友人との合流を助ける。会場配置、出口、帰路は実イベントの情報ではない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "未到着の友人と終了後にも会いやすい場所を先に決めたいと伝える",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "お連れの方をお探しですか。案内図はこちらにあります。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "友人はまだ来ていません。花火が終わってからも会いやすい場所を、先に決めておきたいです。",
+          "hintJa": "未到着の友人と終了後にも会いやすい場所を先に決めたいと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "観覧席の番号なら場所を伝えやすいですよ。お友達には、ご自分の席の番号を送れますか。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "立って見る場所なので席の番号がありません。屋台の前で待ち合わせるのはどうでしょうか。",
+          "hintJa": "席番号がない事情を説明し、屋台前の待ち合わせを提案する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "屋台の前は列ができるので避けた方がよさそうです。この図の北側にある案内所なら、看板が目印になります。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "北側の案内所を友人に伝えます。帰りは南の出口を使うつもりですが、案内所から行けますか。",
+          "hintJa": "北側の案内所を集合場所にし、南の出口へ行けるか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "会場の中央を通れば行けます。ただ、帰りに混む時は係員が別の道へ案内することもあります。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "そうなったら係員の案内に従います。混雑で友人と離れた場合も、北側の案内所へ戻っていいでしょうか。",
+          "hintJa": "混雑時の誘導に従い、離れた時に案内所へ戻れるか聞く。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "会場内で戻れるかは、その時の通行案内を確認してください。戻れなければ案内所にこだわらず、友人と電話で次の場所を決めましょう。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "合流前は北側の案内所、帰りに離れたら電話で相談することにします。今のうちに図も撮って送ります。",
+          "hintJa": "最初は案内所、帰りは電話相談と決め、図を友人へ送ると伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "それなら伝わりやすいですね。楽しい時間をお過ごしください。いってらっしゃい。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "bn",
+          "turnId": "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-06",
+          "field": "translation",
+          "currentTarget": "বন্ধুকে উত্তরের তথ্যকেন্দ্রের কথা জানাব। ফেরার সময় দক্ষিণের বেরোনোর পথ ব্যবহার করতে চাই; তথ্যকেন্দ্র থেকে সেখানে যাওয়া যাবে?",
+          "sourceSha256": "ffb75b6c8da0e58a2ed485caf119b6eaf7308b54503b379d586867cdaee9de2c",
+          "targetSha256": "bd8c02f2c78d1169f341f10bc07ea5d79e9dcecdfcfff1764e80e912cdfbd760",
+          "priorTargetSha256": "f88fcb2634026decf56040b1b1400ce85eda9d2c83d9091964d2eef88c8c60e6",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/bn/215.json",
+          "index": 178
+        },
+        {
+          "locale": "vi",
+          "turnId": "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-09",
+          "field": "translation",
+          "currentTarget": "Anh/chị hãy xem hướng dẫn đi lại lúc đó để biết có quay lại được trong khu tổ chức hay không. Nếu không quay lại được, đừng cố đến quầy thông tin; hãy gọi điện cho bạn để thống nhất địa điểm gặp tiếp theo.",
+          "sourceSha256": "26c5e42a77599fd0dc933babb7c8304bff20c3d5645eea1486fabc8659ea5a98",
+          "targetSha256": "d91e18933c622ea5ee93f0c4d7e88d71f77636d9673a7b587e858077a2794155",
+          "priorTargetSha256": "9a77a5c8f0c9ba7df71d8872f924d565c0f9a6f9d6088108164631d289036e90",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/vi/215.json",
+          "index": 179
+        },
+        {
+          "locale": "vi",
+          "turnId": "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-10",
+          "field": "translation",
+          "currentTarget": "Vậy lần đầu chúng tôi sẽ gặp ở quầy thông tin phía bắc. Nếu lạc nhau lúc về thì sẽ gọi điện bàn lại. Bây giờ tôi cũng sẽ chụp bản đồ rồi gửi cho bạn.",
+          "sourceSha256": "827d6a55787d27171d4a55bb293811aa67276e460111104a537f10ea723aaf3a",
+          "targetSha256": "8bee184551bce772e62718107a43ebe611cf1b52bda3794379c2393263e5175c",
+          "priorTargetSha256": "b72ae3dd358cadea8dd8f9c57afd1be7c394b0880d5f8c01a4f319f4cf49d4d9",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/vi/215.json",
+          "index": 180
+        },
+        {
+          "locale": "zh-TW",
+          "turnId": "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-02",
+          "field": "hintTranslation",
+          "currentTarget": "說明朋友還沒到，並表示想先約好一個煙火結束後也容易會合的地方。請用日語表達。",
+          "sourceSha256": "f2e7bb84d1c5896ac5d074c10575b7beae0e5d4d615364614a1c475037434727",
+          "targetSha256": "512d5a29079d8d51021258d49d594d64efb2434dcbd68dd306f0b768b3233a57",
+          "priorTargetSha256": "44b1b836efbc4d889e9b85d14cdbd4315e2c328605840645baee656276f436e1",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/215.json",
+          "index": 181
+        },
+        {
+          "locale": "zh-TW",
+          "turnId": "DLG-SC-LOC-SAG-KARATSU-06-001-SHARED-10",
+          "field": "hintTranslation",
+          "currentTarget": "表示第一次在北側服務處會合，回程走散時再打電話商量，並會把導覽圖傳給朋友。請用日語表達。",
+          "sourceSha256": "e817471f8de4a0bfd92af475345c7a7eb065fd0126472a20dad418cf370efa3b",
+          "targetSha256": "235076897c59ebf928755f20e4e9f14bc35a78e1b0dbb00e69962aa88343b972",
+          "priorTargetSha256": "322e582a7b1f7370cdbe6495389dc22469d82d6e78cfa4e829017738492ee84d",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/215.json",
+          "index": 182
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-OIT-USA-05-001",
+      "metadata": {
+        "name": "履歴書の相談を通訳希望付きで予約申し込みする",
+        "situation": "架空の公的就労相談窓口で、就職相談員に履歴書の相談予約を申し込む。空き枠と通訳は未確定であり、採用・給付・在留資格についての判断は扱わない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "応募先は決まっており、職歴欄を書く相談の予約を希望すると伝える",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-OIT-USA-05-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "お仕事探しのご相談ですね。求人を探す相談と、応募書類の相談では、どちらをご希望ですか。"
+        },
+        "DLG-SC-LOC-OIT-USA-05-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "応募先は決まっています。履歴書の職歴欄をうまく書けないので、書類の相談を予約したいです。",
+          "hintJa": "応募先は決まっており、職歴欄を書く相談の予約を希望すると伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-USA-05-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "職歴欄の相談ですね。書きかけの履歴書や、以前のお仕事の内容がわかるメモはありますか。"
+        },
+        "DLG-SC-LOC-OIT-USA-05-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "履歴書は持っていますが、前の会社で担当した仕事を日本語にできていません。母語のメモでも相談できますか。",
+          "hintJa": "履歴書はあるが仕事の説明を訳せず、母語のメモで相談可能か尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-USA-05-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "まずメモの言語を教えてください。通訳などの支援を手配できるか、予約枠と合わせて確認します。"
+        },
+        "DLG-SC-LOC-OIT-USA-05-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "ベトナム語です。午前は仕事があるので、午後の相談とベトナム語の通訳を希望します。",
+          "hintJa": "メモはベトナム語と伝え、午前勤務のため午後と通訳を希望する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-USA-05-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "承りました。通訳の都合でご希望に沿えない場合もあります。返答は電話と窓口での受け取りのどちらがよいですか。"
+        },
+        "DLG-SC-LOC-OIT-USA-05-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "電話では日時を聞き間違えそうです。窓口で返答を受け取り、日時を紙に書いていただきたいです。",
+          "hintJa": "電話での日時の聞き違いを心配し、窓口で紙による返答を希望する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-USA-05-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "では、結果を窓口で受け取る希望として申し込みを預かります。現時点では日時も通訳も確定していません。"
+        },
+        "DLG-SC-LOC-OIT-USA-05-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "今日は申し込みだけですね。次に窓口へ来たとき、日時と通訳の有無を確認し、履歴書と仕事のメモを持参します。",
+          "hintJa": "予約は未確定の申し込みと理解し、次回は日時と通訳を確認して履歴書とメモを持参すると伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-USA-05-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "はい。その二点をお尋ねください。申込内容の控えをお渡ししますので、お帰りの前にご覧ください。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "id",
+          "turnId": "DLG-SC-LOC-OIT-USA-05-001-SHARED-06",
+          "field": "translation",
+          "currentTarget": "Bahasa Vietnam. Saya bekerja pada pagi hari, jadi menginginkan konsultasi setelah tengah hari serta juru bahasa Vietnam.",
+          "sourceSha256": "26932a08ad3f3a6b1a94e284c473e213735094540f7771ac392e8377c47cb4c6",
+          "targetSha256": "2a1cfad5a83c70ce657713903ba78ed0ec1b4b3e8c73098832b23fb89b0165b8",
+          "priorTargetSha256": "1f5451491ca130490947ccfbcb5a293fe8abd1601626fc9f7a3f1299f0278af1",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/id/201.json",
+          "index": 184
+        },
+        {
+          "locale": "id",
+          "turnId": "DLG-SC-LOC-OIT-USA-05-001-SHARED-06",
+          "field": "hintTranslation",
+          "currentTarget": "Sampaikan bahwa catatan berbahasa Vietnam dan Anda menginginkan konsultasi setelah tengah hari serta juru bahasa Vietnam karena bekerja pada pagi hari. Sampaikan dalam bahasa Jepang.",
+          "sourceSha256": "6ce46716a138ad2631e73a718d86b5bb557512cbfce584bbf12b693815235056",
+          "targetSha256": "71c637d3610417bbeea6fb62e78672d450b267d20af65c298893d58ceae2302b",
+          "priorTargetSha256": "981171dffd1c30aa3e405f5ff2d3ec5ca27fc6149ffa25166919c9c28cdf15e4",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/id/201.json",
+          "index": 185
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-LOC-OIT-USA-05-001-SHARED-08",
+          "field": "translation",
+          "currentTarget": "फोनमा मिति र समय गलत सुन्छु कि जस्तो लाग्छ। काउन्टरमा जवाफ लिन चाहन्छु र मिति तथा समय कागजमा लेखिदिन अनुरोध गर्छु।",
+          "sourceSha256": "39fce39045e7a903031faadaf5f932b6861cb3e1b2f5869dfc62e3da27663a79",
+          "targetSha256": "9b5d6e0cdadc9ad909e0160d586ab04f4235981df11a48b156c77aade6a91a4d",
+          "priorTargetSha256": "13cc118d6a6c7ebb41be461e5dff07774950c51cc5518f19df424b28c688521d",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/ne/201.json",
+          "index": 186
+        },
+        {
+          "locale": "vi",
+          "turnId": "DLG-SC-LOC-OIT-USA-05-001-SHARED-04",
+          "field": "translation",
+          "currentTarget": "Tôi có mang sơ yếu lý lịch, nhưng chưa diễn đạt được bằng tiếng Nhật công việc phụ trách ở công ty trước. Tôi có thể dùng ghi chú bằng tiếng mẹ đẻ để được tư vấn không?",
+          "sourceSha256": "c84539b57df0d0b27404693afc9b86b9ff83f0cd3518f5dccb4ccc66bc1bbb9f",
+          "targetSha256": "46a99f0f0038146c5e90614fd37ff178a0ccffa08e85c53426da195df7cd24d1",
+          "priorTargetSha256": "a92f5abd93e1553ada16ef4d8474b6bd5021656bb32861e0e2b36ac2b76756ff",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/vi/201.json",
+          "index": 187
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-KGS-KIRISHIMA-07-001",
+      "metadata": {
+        "name": "麺を少なくする一杯と普通の一杯を分ける",
+        "situation": "架空のラーメン店。二人の客の一人は麺を少なくしたいが、薄味にする希望と聞き取られる。味と麺量を区別し、自分だけ少量で友人は普通量と改めて確認する。単品二杯の内容を復唱して注文する。実在店舗の量、価格や変更条件を示さない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "同じラーメン二つで、自分の方だけ少なめにできるか尋ねる。",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "お二人で召し上がるラーメンは、それぞれお決まりになりましたか。"
+        },
+        "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "はい。同じラーメンを二つですが、私の方だけ少なめにできるか知りたいです。",
+          "hintJa": "同じラーメン二つで、自分の方だけ少なめにできるか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "お味を薄めにするご希望でしょうか。それとも、ほかの変更ですか。"
+        },
+        "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "味ではなく、麺の量を少なくしたいです。友人は普通の量を希望しています。",
+          "hintJa": "薄味ではなく麺量を減らしたく、友人は普通量だと説明する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "麺の量のご希望ですね。この料理はご飯付きのセットもありますが、今回はどちらをお考えですか。"
+        },
+        "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "ご飯は付けず、二人とも単品にします。私は麺だけを少なくできるか、確認してから注文したいです。",
+          "hintJa": "二人ともご飯なしの単品にし、自分の麺量変更を確認後に注文すると伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "今日は麺を少なくする対応ができます。少なめの一杯は、ご本人の分ですね。もう一杯の量も改めて伺えますか。"
+        },
+        "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "少なめは私の一杯だけです。友人の一杯は普通の量で、どちらも単品です。",
+          "hintJa": "少なめは本人の一杯だけで、友人は普通量、どちらも単品と改めて確認する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "麺少なめの単品が一杯、普通の単品が一杯ですね。料金は、それぞれこちらの表示でご確認ください。"
+        },
+        "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "表示を確認しました。その二杯をお願いします。少なめの方は私が受け取り、友人の普通の一杯と取り違えないようにします。",
+          "hintJa": "各表示を確認し二杯を注文して、少なめを自分が受け取り普通量と区別すると伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "承知しました。麺量の違う単品を一杯ずつで、ご注文をお受けします。お出しする際にもお声掛けしますので、そのままお待ちください。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-02",
+          "field": "hintTranslation",
+          "currentTarget": "जापानी में पूछें कि एक ही प्रकार के दो रामेन में से केवल आपके रामेन की मात्रा कम की जा सकती है या नहीं।",
+          "sourceSha256": "9696469824955b9789c0bff5b876c8423fdd3e65c62b5c30cfa24dda38ae12d7",
+          "targetSha256": "debf8add5be36e5e1b428fa88f0c7bec0cd3b89acdd195c1e0620e94ff2de9f3",
+          "priorTargetSha256": "0d160bc7b75383758c9b3a294019ea6c1fd34a1ac54689989e14b6c3797c8f57",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/hi/161.json",
+          "index": 188
+        },
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-06",
+          "field": "hintTranslation",
+          "currentTarget": "जापानी में बताएँ कि दोनों बिना चावल केवल रामेन लेंगे और अपने रामेन में नूडल्स कम करने की पुष्टि के बाद ऑर्डर करेंगे।",
+          "sourceSha256": "d13ce116108ed6fe0cea428555c87ffd0d56a81223ebae68aed2078e790f207a",
+          "targetSha256": "881f45b29cd87b915fca7ef61d779e5dd1f9b39e4de3d260dd6b976eacdcae9e",
+          "priorTargetSha256": "9ae42b52fcaf4b1947468986e25c697938d6131218618ba4d4be670966e6ff62",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/hi/161.json",
+          "index": 189
+        },
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-08",
+          "field": "hintTranslation",
+          "currentTarget": "जापानी में फिर पुष्टि करें कि केवल आपके कटोरे में कम नूडल्स होंगे, दोस्त के कटोरे में सामान्य मात्रा होगी और दोनों रामेन बिना सेट के होंगे।",
+          "sourceSha256": "3da49b9290fa3f001730704d41cdc81bdce759e2ab1da0c1b7b199e5849ff3af",
+          "targetSha256": "39fd5589d2bb887bfb78e3ebd67a22aaa0312f33587a51850c204f7d6530b38b",
+          "priorTargetSha256": "415ccfd1709222898375d6843129ee35f33d2a78bff05c7a289295ee65e24613",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/hi/161.json",
+          "index": 190
+        },
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-02",
+          "field": "translation",
+          "currentTarget": "Opo. Dalawang mangkok po ng parehong ramen, pero gusto kong malaman kung maaaring bawasan lamang ang dami ng sa akin.",
+          "sourceSha256": "9107524ec36030ed09de8bdfad7be05b8392a5b258231ba0ab8caa43673f0463",
+          "targetSha256": "7887089ad9c5c84c80e18142ed00911753e799ae1862982b5b8469326bcd74dd",
+          "priorTargetSha256": "ba135ebe8ae72a4b9779f5d2105eff36b0e489d200e3fb4746856aa3f5657679",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/tl/161.json",
+          "index": 191
+        },
+        {
+          "locale": "vi",
+          "turnId": "DLG-SC-LOC-KGS-KIRISHIMA-07-001-SHARED-04",
+          "field": "hintTranslation",
+          "currentTarget": "Hãy giải thích bằng tiếng Nhật rằng bạn muốn ít mì chứ không phải vị nhạt, còn người bạn đi cùng muốn lượng bình thường.",
+          "sourceSha256": "378d4e8cf95a9a1ba38a5325b81a1626d0d0b07e9839a00c64eb97c51e1b68d2",
+          "targetSha256": "c45b3b9abf3158c5118d6170d9dd8532ab70ca5883da186e36f7f0c6df2308de",
+          "priorTargetSha256": "8b8b7f28ec579dc20b0a2ab32845e1087cfa03bb1c4518a4ba3f42b4059673d6",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/vi/161.json",
+          "index": 192
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-OIT-NAKATSU-001",
+      "metadata": {
+        "name": "別添えと思ったたれが既にかかっている",
+        "situation": "中津市を背景にした架空の持帰り弁当店。弁当のたれとご飯量、注文内容は対話内の仮定で、実在店のメニューや変更規定を示さない。客は未会計の注文について、たれを外せるという思い込みを訂正する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "赤いたれは別袋と思っていたことと辛い物が苦手なことを伝え、かけずに用意できるか尋ねる。",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-OIT-NAKATSU-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "こちらのお弁当をご希望ですね。受取り前に、内容で確認したいことはありますか。"
+        },
+        "DLG-SC-OIT-NAKATSU-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "写真の赤いたれは別の袋だと思って選びました。辛いのが苦手なので、かけずに用意できるか聞きたいです。",
+          "hintJa": "赤いたれは別袋と思っていたことと辛い物が苦手なことを伝え、かけずに用意できるか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-OIT-NAKATSU-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "この品は、調理の段階でたれを合わせています。今からたれだけを外すことはできません。まだ会計前ですが、別の品をご覧になりますか。"
+        },
+        "DLG-SC-OIT-NAKATSU-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "取り除くことはお願いせず、別の弁当を見ます。味の濃さも気になるので、二つの候補の違いを教えてください。",
+          "hintJa": "たれの除去は頼まず別の弁当を選ぶと述べ、二候補の味の濃さの違いを尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-OIT-NAKATSU-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "こちらは甘いたれ、もう一方は塩味という案内です。辛さの感じ方は人によりますので、材料については調理担当にも聞けます。"
+        },
+        "DLG-SC-OIT-NAKATSU-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "甘いたれのほうについて、唐辛子を使っているか確認してもらえますか。辛くないという言葉だけで決めたくありません。",
+          "hintJa": "甘いたれに唐辛子を使うか調理担当へ確認を依頼し、辛くないとの表現だけでは決めないと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-OIT-NAKATSU-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "その点を聞いてきます。ご飯の量は、普通量でお考えでしょうか。"
+        },
+        "DLG-SC-OIT-NAKATSU-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "ご飯は少なめを希望します。おかずも減るのか、ご飯だけ変えられるのかを分けて知りたいです。",
+          "hintJa": "ご飯少なめを希望し、おかずまで減るか、ご飯だけの変更かを分けて尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-OIT-NAKATSU-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "ご飯だけの変更ができるかと、料金への影響を合わせて確認します。お箸は必要ですか。"
+        },
+        "DLG-SC-OIT-NAKATSU-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "家で食べるので箸は要りません。材料と量の返事を聞いてから、注文を確定します。",
+          "hintJa": "自宅で食べるので箸不要と答え、材料と量の返事を聞いてから注文確定すると伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-OIT-NAKATSU-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "では、会計には進めず二点を確認します。こちらの候補を控えましたので、少しお待ちください。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-OIT-NAKATSU-001-SHARED-08",
+          "field": "hintTranslation",
+          "currentTarget": "Humiling ng mas kaunting kanin at itanong nang magkahiwalay kung mababawasan din ang ulam o kung kanin lamang ang puwedeng baguhin. Sabihin ito sa Japanese.",
+          "sourceSha256": "1e43402625e1f1697925a40ccf974cf92fcaa8376d38cb8ccebb0236adb4cb75",
+          "targetSha256": "32f747bc207308c86d76fe407c6c265c8b14d9166f7aa8b384cb9fc96e4c996e",
+          "priorTargetSha256": "02a146db8b14fac1c767fa984444081c2c62c18236f2a160b22717422eb3a3d6",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/tl/200.json",
+          "index": 195
+        },
+        {
+          "locale": "vi",
+          "turnId": "DLG-SC-OIT-NAKATSU-001-SHARED-02",
+          "field": "translation",
+          "currentTarget": "Tôi chọn vì tưởng nước xốt đỏ trong ảnh được để trong túi riêng. Tôi không ăn được cay nên muốn hỏi có thể chuẩn bị món mà không rưới xốt không.",
+          "sourceSha256": "aa5d52132d7ba650a4de303cd1a8d49c935db465e6dd4482c2028c7615484435",
+          "targetSha256": "91d83337072594d9955d0cbd2773273e313ea6ef7e2cafe876cae63797563994",
+          "priorTargetSha256": "24e45ebfa07eab3c9368e719327c3078a2bcc7da39de6353ac551d52722b5d67",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/vi/200.json",
+          "index": 197
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-JP-47205-04-001",
+      "metadata": {
+        "name": "見当たらない自転車の特徴と未確認事項を分ける",
+        "situation": "架空の学習用警察相談窓口。駐輪場と店も架空で、盗難の断定や発見の保証をせず、本人の観察と確認予定を整理する。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "昨夜八時と今朝七時の状況、場所の取り違えの可能性を伝える",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-JP-47205-04-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "自転車がなくなったとのことですが、最後に見た時と、なくなったと気付いた時を教えてください。"
+        },
+        "DLG-SC-LOC-JP-47205-04-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "昨夜八時に店の裏の駐輪場に置き、今朝七時に戻ったらありませんでした。場所を間違えた可能性もあります。",
+          "hintJa": "昨夜八時と今朝七時の状況、場所の取り違えの可能性を伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-47205-04-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "その間のことはまだ分からないのですね。駐輪場の管理者には確認しましたか。"
+        },
+        "DLG-SC-LOC-JP-47205-04-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "店がまだ開いていなくて、確認できていません。入口に移動先の案内があったかも、もう一度見ます。",
+          "hintJa": "店が開いておらず管理者へ未確認と説明し、移動先の掲示を見直すと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-47205-04-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "確認できたことと、まだ分からないことを分けて伺います。自転車の色や目印はありますか。"
+        },
+        "DLG-SC-LOC-JP-47205-04-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "銀色で、後ろのかごに青いひもを結んでいます。車体を写した写真と、防犯登録の控えがあります。",
+          "hintJa": "銀色と青いひもの特徴を伝え、写真と防犯登録の控えがあると申し出る。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-47205-04-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "その写真と控えを見せてください。鍵の状態は、最後に見た時どうでしたか。"
+        },
+        "DLG-SC-LOC-JP-47205-04-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "後輪の鍵をかけたのは覚えていますが、別のワイヤー錠を使ったかは思い出せません。",
+          "hintJa": "後輪の施錠は覚えているがワイヤー錠の使用は不確かと区別する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-47205-04-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "覚えていない部分はそのままで結構です。店に確認した結果は、こちらへお知らせいただけますか。"
+        },
+        "DLG-SC-LOC-JP-47205-04-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "管理者に移動の有無を聞いて、結果を連絡します。その時のために、この相談窓口の連絡先を控えたいです。",
+          "hintJa": "管理者への確認結果を連絡すると伝え、相談窓口の連絡先を求める。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-47205-04-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "連絡先の紙をお渡しします。確認結果を伺ってから、必要な届け出をご案内します。道中、お気をつけてお帰りください。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "th",
+          "turnId": "DLG-SC-LOC-JP-47205-04-001-SHARED-06",
+          "field": "translation",
+          "currentTarget": "สีเงิน มีเชือกสีฟ้าผูกที่ตะกร้าหลังครับ มีรูปจักรยานกับสำเนาทะเบียนป้องกันการขโมยด้วย",
+          "sourceSha256": "0f127581ba99e279c2589133ce54fb668d5250c15c37430e4091b340a6e71cc0",
+          "targetSha256": "9e7b2b7b2403fdc4488ec83f52cd4480e66170cfd7737c9365eb16f6be944cef",
+          "priorTargetSha256": "3f37f01e9b5a55b6ce0d5a9b47f5dd019d7498b440e9607bd9c5fbc2926cd3be",
+          "sourceWorker": 6,
+          "path": "src/data/dialogue-content/locale-batches/th/708.json",
+          "index": 198
+        },
+        {
+          "locale": "vi",
+          "turnId": "DLG-SC-LOC-JP-47205-04-001-SHARED-06",
+          "field": "translation",
+          "currentTarget": "Xe màu bạc, có một sợi dây xanh dương buộc ở giỏ sau. Tôi có ảnh chụp xe và bản lưu đăng ký chống trộm.",
+          "sourceSha256": "0f127581ba99e279c2589133ce54fb668d5250c15c37430e4091b340a6e71cc0",
+          "targetSha256": "edda7349cb650b5a1b5292ff4a7445b17e1e89b4a5f595a3e7bd86c825f9fb36",
+          "priorTargetSha256": "ddc225771332d7891b54dc9978b504ef9ddadbf6c1ce16dea59bfe06428e3173",
+          "sourceWorker": 6,
+          "path": "src/data/dialogue-content/locale-batches/vi/708.json",
+          "index": 200
+        },
+        {
+          "locale": "vi",
+          "turnId": "DLG-SC-LOC-JP-47205-04-001-SHARED-06",
+          "field": "hintTranslation",
+          "currentTarget": "Hãy mô tả bằng tiếng Nhật xe màu bạc và sợi dây xanh dương, rồi cho biết bạn có ảnh xe và bản lưu đăng ký chống trộm.",
+          "sourceSha256": "50840ec34e04a06127b81eff341584bd1ab9e4daaee671b8d4c3e90ceb7ea254",
+          "targetSha256": "5da3fad4d545b310e7a2c1e1d7d02d1257d414461f6df5841d1886489fe344fa",
+          "priorTargetSha256": "6c5137fe4e3c32889f393c55a8674ff50b0de8d9a622aa5e8fc5eaada65dc842",
+          "sourceWorker": 6,
+          "path": "src/data/dialogue-content/locale-batches/vi/708.json",
+          "index": 201
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-SAG-TOSU-08-001",
+      "metadata": {
+        "name": "税の二枚の書類を混同せず相談する",
+        "situation": "鳥栖の税務署申告窓口を想定した学習場面で、会社からの源泉徴収票と市役所からの住民税通知を持参した人が、問い合わせ先と質問事項を分けて整理する。個別の税額や納付方法は決定しない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "会社と市役所の書類で金額が違い同じ税を二回払うのか心配と伝える",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "二枚の書類をお持ちですね。どの点を確認したいですか。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "会社でもらった紙と市役所から届いた紙で金額が違います。同じ税金を二回払うことになるのか心配です。",
+          "hintJa": "会社と市役所の書類で金額が違い同じ税を二回払うのか心配と伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "まず書類の名前を読みましょう。会社の紙と市役所の紙は、それぞれ何と書いてありますか。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "会社の方は源泉徴収票、市役所の方は市民税・県民税の通知書です。どちらも税金の紙だと思ってまとめて持ってきました。",
+          "hintJa": "会社は源泉徴収票で市役所は市民税県民税通知と名前を読み上げる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "源泉徴収票にある所得税と、市の通知書にある住民税は別の税です。通知の金額については、発行した市役所の担当へ確認してください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "では、市の通知書は市役所に聞きます。源泉徴収票は手元に置いておけばよいですか。",
+          "hintJa": "市の通知は市役所へ聞くと確認し源泉徴収票を保管すべきか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "所得税の確認に使う書類ですから、保管してください。今日、源泉徴収票について確かめたい項目はありますか。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "名前の下にある住所が引っ越す前のままです。申告の相談をするときに、そのまま持ってきてもいいのでしょうか。",
+          "hintJa": "源泉徴収票の住所が転居前のままと説明し申告相談に持参できるか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "書類を捨てたりご自分で書き換えたりせず、勤務先へ住所の記載について確認してください。申告の相談時には転居したことも説明してください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "勤務先には住所の記載を、市役所には住民税の通知を確認します。申告を相談するときは、この票と転居の事情を伝えます。",
+          "hintJa": "勤務先へ住所記載を市役所へ住民税を確認し申告相談では票と転居の事情を示すとまとめる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "問い合わせる内容を分けられましたね。両方の書類をなくさないよう保管してください。今日のご相談はここまでです。お気をつけてお帰りください。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-09",
+          "field": "translation",
+          "currentTarget": "दस्तावेज़ न फेंकें और उसमें ख़ुद बदलाव न करें। उसमें दर्ज पते के बारे में अपने कार्यस्थल से पुष्टि करें। कर रिटर्न की सलाह लेते समय यह भी बताएँ कि आपने घर बदला है।",
+          "sourceSha256": "f9e75316a53113de7e488f0eab1ce1b0cfa33ef4e6cc043979bcb110517ddcc6",
+          "targetSha256": "1e401ca56aa1b79f50c10e7d76fb6dd9855e6e4b35448841cc94c96496f37d07",
+          "priorTargetSha256": "1d78f709ae6d18fb94ac77da15b2f077e89be996bbfd4189f5571a0bba1de3ba",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/hi/216.json",
+          "index": 202
+        },
+        {
+          "locale": "my",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-09",
+          "field": "translation",
+          "currentTarget": "စာရွက်ကို မပစ်ပါနဲ့၊ ကိုယ်တိုင်လည်း ပြန်မရေးပါနဲ့။ စာရွက်ပေါ်က လိပ်စာရေးထားပုံနဲ့ ပတ်သက်ပြီး အလုပ်လုပ်တဲ့ကုမ္ပဏီကို မေးမြန်းပါ။ အခွန်ကြေညာရေး တိုင်ပင်တဲ့အခါ အိမ်ပြောင်းထားကြောင်းကိုလည်း ရှင်းပြပါ။",
+          "sourceSha256": "f9e75316a53113de7e488f0eab1ce1b0cfa33ef4e6cc043979bcb110517ddcc6",
+          "targetSha256": "825711ca33d07642aad41357ebf67b8b67d5bdb1a9603dd3058791600a85b993",
+          "priorTargetSha256": "3712f49f4c53efe5765ed8e64d008c5ba79c358d9e726b6cada6b71a06b2db86",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/my/216.json",
+          "index": 203
+        },
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-10",
+          "field": "hintTranslation",
+          "currentTarget": "Ibuod na itatanong sa employer ang pagkakasulat ng address at sa city hall ang resident tax notice; sa filing consultation ay ipapakita ang certificate at ipapaliwanag ang paglipat ng tirahan. Sabihin ito sa Japanese.",
+          "sourceSha256": "10e3a41a5689a2cc1ef627d78bc8fb3416da3efe7d0e3c75f6c597b5b048ca84",
+          "targetSha256": "a609a73a29c1328725190a0def157b604d140ad366762b4e8f05984000cbd09e",
+          "priorTargetSha256": "11bb16aaea7ad44085dfa678a7857d87880438cf9bdd822ef8f33a35dec1ac9c",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/tl/216.json",
+          "index": 204
+        },
+        {
+          "locale": "zh-TW",
+          "turnId": "DLG-SC-LOC-SAG-TOSU-08-001-SHARED-02",
+          "field": "hintTranslation",
+          "currentTarget": "說明公司和市公所的文件金額不同，並表示擔心同一種稅會繳兩次。請用日語表達。",
+          "sourceSha256": "ec04669e655c5299149c891072284b669c90cf7a7374e25e39eb8178d3f94763",
+          "targetSha256": "26b307b2483b453bbd139a0ed041913886e13d2983a44b30d14028ca975f4537",
+          "priorTargetSha256": "a6fe4de7c08bfeab7c5696c78cfd48d8ce42ca2f3ae9ce060a9b2a5fd888b1a7",
+          "sourceWorker": 2,
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/216.json",
+          "index": 205
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-KUM-HITOYOSHI-07-001",
+      "metadata": {
+        "name": "加熱用の表示に気づき、今夜食べる野菜を選び直す",
+        "situation": "人吉市の架空の食品スーパー青果コーナー。加熱調理用のカット野菜、サラダ用商品の原材料と小袋表示は架空の商品設定。商品の安全性やアレルギーへの適合を保証しない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "火を使わず食べる予定だったと伝え、未開封の加熱用商品から選び直したいと申し出る。",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "その野菜は加熱調理用の表示がありますが、今晩はどんな料理になさいますか。"
+        },
+        "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "今日は火を使わずに食べるつもりでした。袋を開ける前に気づけてよかったです。別の商品を見たいです。",
+          "hintJa": "火を使わず食べる予定だったと伝え、未開封の加熱用商品から選び直したいと申し出る。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "では、こちらのサラダ用の棚をご案内します。味付け済みと、ドレッシングが別の物があります。"
+        },
+        "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "ドレッシングが別の物がいいです。玉ねぎの香りが苦手なので、この袋の原材料も読めますか。",
+          "hintJa": "ドレッシング別添えを希望し、玉ねぎの香りが苦手なため原材料表示の確認を頼む。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "原材料欄にはキャベツとにんじんとあります。添付の小袋には別の原材料欄があるので、そちらもご覧ください。"
+        },
+        "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "小袋は野菜とは別の表示なのですね。味付けを自分でしたいので、小袋の付かない商品はありますか。",
+          "hintJa": "小袋には別表示があると確認し、自分で味付けするため小袋の付かない野菜を尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "同じ棚に野菜だけの商品があります。大袋と小袋では量が違いますが、何人で召し上がりますか。"
+        },
+        "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "今夜は私一人です。残す量を増やしたくないので、小袋を一つ選びます。",
+          "hintJa": "一人で今夜食べると伝え、残りを増やさないよう小袋一つを選ぶ。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "こちらですね。裏の保存方法と期限をご確認ください。開封後について分からない記載はありますか。"
+        },
+        "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "開封後の注意も読みました。今日はこの小袋だけ買い、加熱用の袋は未開封のままお戻しします。",
+          "hintJa": "開封後の注意を読んだと伝え、選んだ小袋のみ購入し最初の加熱用袋を未開封で返す。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "最初の商品はこちらで売場へ戻します。こちらの小袋をレジへお持ちください。ありがとうございました。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-11",
+          "field": "translation",
+          "currentTarget": "पहला उत्पाद हम बिक्री वाले शेल्फ़ पर वापस रख देंगे। कृपया यह छोटी थैली कैश काउंटर पर ले जाएँ। धन्यवाद।",
+          "sourceSha256": "c2cfd34226c8c1b4cda1d19708ab45f0c8cd5dff74ef0bc3f7c23676f75203d3",
+          "targetSha256": "d8f3e91be919fa6bc4756f92ee665f29d355acaf398307c0a3b458c32aaffa43",
+          "priorTargetSha256": "6b8444ac1077d5b3223d6aec1c913d30df50fc003ac67bbb63864f1373df0903",
+          "sourceWorker": 3,
+          "path": "src/data/dialogue-content/locale-batches/hi/172.json",
+          "index": 206
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-03",
+          "field": "translation",
+          "currentTarget": "त्यसो भए सलादका लागि राखिएको यो तख्ता देखाउँछु। मसला मिसाइएका र ड्रेसिङ छुट्टै भएका पाइन्छन्।",
+          "sourceSha256": "96a2aec872415887707bae1bec8895e813430ede97ebe229d7e4024abbc5795a",
+          "targetSha256": "071144f4beb927f19b9f495acadc4ed95d4220a77f707bd86c3ba7c39bc2f5e1",
+          "priorTargetSha256": "f7d5d500dd06d2c0aa1863918793e4cd71e938ab8f1b82c05046623e7eb0acd8",
+          "sourceWorker": 3,
+          "path": "src/data/dialogue-content/locale-batches/ne/172.json",
+          "index": 207
+        },
+        {
+          "locale": "ne",
+          "turnId": "DLG-SC-LOC-KUM-HITOYOSHI-07-001-SHARED-11",
+          "field": "translation",
+          "currentTarget": "सुरुको सामान हामीले बिक्रीको तख्तामा फर्काउँछौँ। यो सानो प्याकेट क्यास काउन्टरमा लैजानुहोस्। धन्यवाद।",
+          "sourceSha256": "c2cfd34226c8c1b4cda1d19708ab45f0c8cd5dff74ef0bc3f7c23676f75203d3",
+          "targetSha256": "5f91ffca901c5112c6ead68b6f921d115b2e92e4608f84b4e59af95915e1e437",
+          "priorTargetSha256": "9002c3c9634af222ed147fb0e137846519f2d32f7032e68ed56aa3a030ad483c",
+          "sourceWorker": 3,
+          "path": "src/data/dialogue-content/locale-batches/ne/172.json",
+          "index": 208
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-JP-47205-01-001",
+      "metadata": {
+        "name": "荷物を持って段差のない乗り場へ向かう",
+        "situation": "宜野湾市を背景とする架空の学習用バスターミナル。乗り場や設備の配置、出発時刻は会話内の仮定であり、実在の交通案内ではない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "予約票の便を示し、重いスーツケースのため階段を避ける経路を尋ねる",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-JP-47205-01-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "大きなお荷物ですね。ご利用の便が分かるものをお持ちですか。"
+        },
+        "DLG-SC-LOC-JP-47205-01-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "この予約票のバスに乗ります。スーツケースが重いので、階段を通らない行き方を教えてください。",
+          "hintJa": "予約票の便を示し、重いスーツケースのため階段を避ける経路を尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-47205-01-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "こちらの便は二階の四番乗り場です。右のエレベーターが使えますが、今は少し列ができています。"
+        },
+        "DLG-SC-LOC-JP-47205-01-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "出発まで二十分あります。エレベーターを待っても、乗り場へ間に合いそうですか。",
+          "hintJa": "出発まで二十分と伝え、エレベーター待ちを含めて間に合うか尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-47205-01-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "普段なら移動に五分ほどですが、待ち時間は読めません。列の係員に出発時刻を伝えていただけます。"
+        },
+        "DLG-SC-LOC-JP-47205-01-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "先に係員に声をかけます。荷物を横に置いて待てる場所はありますか。",
+          "hintJa": "係員に時刻を伝えると決め、荷物を横に置ける待機場所を尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-47205-01-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "列の入口横に待機場所があります。ご家族はいらっしゃいますか。一緒に並ばれると案内しやすいです。"
+        },
+        "DLG-SC-LOC-JP-47205-01-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "母はあちらの椅子に座っています。母も歩くのが遅いので、二人で待機場所へ移動します。",
+          "hintJa": "椅子にいる母は歩くのが遅いと伝え、二人で待機場所へ移ると説明する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-47205-01-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "お二人ですね。乗り場までの介助が必要でしたら、係員にご相談ください。私からも状況を伝えます。"
+        },
+        "DLG-SC-LOC-JP-47205-01-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "荷物を運ぶのは自分でできますが、母の歩く速さに合わせて乗り場まで案内していただきたいです。",
+          "hintJa": "荷物は自分で運べると伝え、母の歩く速さに合わせた乗り場案内を依頼する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-JP-47205-01-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "そのご希望を係員に伝えます。まずお母様と待機場所でお待ちください。お気をつけていってらっしゃいませ。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "bn",
+          "turnId": "DLG-SC-LOC-JP-47205-01-001-SHARED-10",
+          "field": "translation",
+          "currentTarget": "মালপত্র নিজে বহন করতে পারি, তবে মায়ের হাঁটার গতিতে আমাদের বাসে ওঠার জায়গা পর্যন্ত পথ দেখিয়ে নিয়ে গেলে ভালো হয়।",
+          "sourceSha256": "30091c2742965b4fc9ccbdfdeb01e31ae820673887a4c0bb249e32136c7ae1bb",
+          "targetSha256": "a9386addf04cfe3fece12d1d2e5c6cb00210ed6c9483d42359f729e3c5754d19",
+          "priorTargetSha256": "ca50ba85604e67b30ef4aeed827933d5af93b278910dfa2dd1947a7d46e1edbe",
+          "sourceWorker": 6,
+          "path": "src/data/dialogue-content/locale-batches/bn/708.json",
+          "index": 209
+        },
+        {
+          "locale": "th",
+          "turnId": "DLG-SC-LOC-JP-47205-01-001-SHARED-10",
+          "field": "translation",
+          "currentTarget": "ผมขนสัมภาระเองได้ แต่อยากให้ช่วยพาไปถึงช่องขึ้นรถโดยเดินตามความเร็วของแม่ครับ",
+          "sourceSha256": "30091c2742965b4fc9ccbdfdeb01e31ae820673887a4c0bb249e32136c7ae1bb",
+          "targetSha256": "49f7ffe944a7c35167cefd467594e586c86f81b548dae3929a6b9cb2391d3b66",
+          "priorTargetSha256": "8b959bb400775c29a11720f408fe8b956c439f9a6c26426ef5b844bc5ebd76c4",
+          "sourceWorker": 6,
+          "path": "src/data/dialogue-content/locale-batches/th/708.json",
+          "index": 211
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-OIT-BEPPU-06-001",
+      "metadata": {
+        "name": "体験の開始時刻と自由見学を比べる",
+        "situation": "架空の観光案内カウンター。利用者は半日で展示も制作体験も回りたいが、案内の体験は開始時刻のあるものと分かる。作ることより道具を見ることを優先し、移動と帰りの予定に余裕を残すため展示一か所を候補にする。実在施設、当日の営業、交通経路や予約条件は示さない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "展示と制作体験を半日で回り、午後には駅へ戻りたいと相談する。",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "お持ちの案内で、気になる見学や体験はございますか。"
+        },
+        "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "この展示と制作体験を両方見たいです。午後には駅へ戻るので、それまでの半日で回れると思っていました。",
+          "hintJa": "展示と制作体験を半日で回り、午後には駅へ戻りたいと相談する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "制作体験の欄には開始時刻の表示があります。いつ行ってもすぐ参加できるという案内ではないようですね。"
+        },
+        "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "自由に立ち寄れると思っていました。開始まで待つ時間と、体験そのものの時間も予定に入れるのですね。",
+          "hintJa": "体験は自由参加と思っていたが、開始待ちと体験時間も予定に含めると確認する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "そうですね。移動や休憩も含めて考えましょう。作品を作ることと、展示の道具を見ることでは、どちらを優先なさいますか。"
+        },
+        "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "今回は道具をじっくり見たいです。作る体験は外して、展示を一か所に絞ればよさそうです。",
+          "hintJa": "今回は制作より展示の道具をじっくり見ることを優先し、展示一か所に絞ると述べる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "展示を候補にしましょう。自由見学の条件や当日の営業は、出掛ける前に見学先へ確認が必要です。歩く距離についてもご希望はありますか。"
+        },
+        "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "長い距離を続けて歩くのは避けたいです。往復の移動方法と、途中で休める場所も含めて比べたいです。",
+          "hintJa": "長い連続歩行を避け、往復の移動方法と休憩場所を含めて比較したいと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "案内図では移動の候補を整理できますが、実際の運行や所要時間は別にお確かめください。帰りの予定を先にメモしておきましょう。"
+        },
+        "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "駅へ戻りたい時刻を先に書きます。展示の見学条件と往復の移動を確認してから、その一か所へ行くか決めます。",
+          "hintJa": "駅へ戻る時刻を先に記し、見学条件と往復の移動を確認してから行先を決めると述べる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "展示を優先する案にまとまりましたね。確認前の候補と決定した予定を分けて、この案内をお持ちください。どうぞよい時間をお過ごしください。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "id",
+          "turnId": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-02",
+          "field": "translation",
+          "currentTarget": "Saya ingin melihat pameran ini dan ikut kegiatan membuat karya. Saya harus kembali ke stasiun setelah tengah hari, jadi saya kira keduanya bisa dilakukan dalam setengah hari sebelumnya.",
+          "sourceSha256": "3ac0a0b9fddb4b1ead0f3617121ca5d3276255c4ff6cd15621d9597841509cf4",
+          "targetSha256": "a3870374833c397035f86390d086edac32fed3d8bb0beb0c50cc7802c1a81b54",
+          "priorTargetSha256": "18b89eff9e8228bcc1d47b7e96006be959e2e2900af1ea82334048c65cc15f04",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/id/200.json",
+          "index": 215
+        },
+        {
+          "locale": "id",
+          "turnId": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-02",
+          "field": "hintTranslation",
+          "currentTarget": "Sampaikan bahwa Anda ingin mengunjungi pameran dan kegiatan membuat karya dalam setengah hari, serta kembali ke stasiun setelah tengah hari. Sampaikan dalam bahasa Jepang.",
+          "sourceSha256": "6aca9c2c6477ead69a37f860a165faf53362fbc272e25c4411d727a4726f2ca0",
+          "targetSha256": "9ffa31207f58fb30dd99da841125e1d1ab90a212b2c3aac50a11d13155d0e671",
+          "priorTargetSha256": "e6dbcd275e7251f1ed173a5dabc306c0db51b5ee496c384f59f3f812a57594c6",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/id/200.json",
+          "index": 216
+        },
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-LOC-OIT-BEPPU-06-001-SHARED-01",
+          "field": "translation",
+          "currentTarget": "May lugar po bang gustong bisitahin o gawaing gustong subukan mula sa gabay na dala ninyo?",
+          "sourceSha256": "1a876a33d8ee154b0b2e68c139bf57762960405e2759db02c4ea457fd44e8056",
+          "targetSha256": "8feb8db8eaa34a9251cb71adce48f8c315721f7f93f19bfd74eba478f395162c",
+          "priorTargetSha256": "d688e6c7352592925794a8838119c65ba088cde8bbe6450958b9346b288c1cb5",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/tl/200.json",
+          "index": 217
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-KUM-ASO-08-001",
+      "metadata": {
+        "name": "別の卓の注文が混ざった明細を直す",
+        "situation": "架空の居酒屋の会計窓口。頼んでいない追加料理が明細に載っており、店員が他卓の記録混入を確認して訂正する。二人の利用者は店への支払を一人にまとめ、二人の精算は後で行うと決める。実在店の料金や分割会計規約を示さない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "二人分の会計で、注文していない追加の揚げ物が明細にあると指摘する。",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-KUM-ASO-08-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "お食事はお済みですね。お会計の前に、こちらの明細をご覧いただけますか。"
+        },
+        "DLG-SC-LOC-KUM-ASO-08-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "二人で食べた分を確かめたいです。この追加の揚げ物は、私たちは頼んでいません。",
+          "hintJa": "二人分の会計で、注文していない追加の揚げ物が明細にあると指摘する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-ASO-08-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "卓の番号と注文記録を調べます。最初にお頼みの揚げ物は、お持ちしましたか。"
+        },
+        "DLG-SC-LOC-KUM-ASO-08-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "最初の一皿は食べました。明細にはもう一皿載っているので、その追加分だけ確かめてください。",
+          "hintJa": "最初の一皿は食べたが二皿目を頼んでいないため、追加分を確認してほしいと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-ASO-08-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "お待たせしました。別の卓の追加分が混ざっていました。そちらを外して明細を作り直します。"
+        },
+        "DLG-SC-LOC-KUM-ASO-08-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "訂正後の合計を見せてください。友人と分ける相談をしたいので、まだ支払いは待っていただけますか。",
+          "hintJa": "訂正後の合計を求め、友人との精算相談が済むまで支払を待ってほしいと頼む。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-ASO-08-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "訂正した明細はこちらです。お二人でご相談が済みましたら、お支払いを伺います。"
+        },
+        "DLG-SC-LOC-KUM-ASO-08-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "友人とは後で精算することにしました。店への支払いは、私が二人分まとめます。",
+          "hintJa": "友人とは後で精算し、店へは自分が二人分まとめて払うと決める。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-ASO-08-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "まとめてのお支払いですね。この合計に間違いがなければ、お会計いたします。"
+        },
+        "DLG-SC-LOC-KUM-ASO-08-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "追加の一皿が外れているのを確認しました。二人分はこの合計で払い、明細とレシートを持ち帰ります。",
+          "hintJa": "追加分削除を確認し、訂正後合計で支払い明細とレシートを持ち帰ると伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KUM-ASO-08-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "訂正した明細とレシートをお渡しします。確認にお時間をいただき失礼しました。またお食事にいらしてください。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KUM-ASO-08-001-SHARED-09",
+          "field": "translation",
+          "currentTarget": "दोनों का भुगतान एक साथ करेंगे, सही है? यदि यह कुल रकम सही है, तो मैं भुगतान की प्रक्रिया पूरी कर देता हूँ।",
+          "sourceSha256": "0dccfd9f8b81347e9c2edebfb3b5bb8cbacdd1aa043704e6cd7658150c6ecf33",
+          "targetSha256": "9199d8afab1a251b58675d7af673cc1cdb8e8e924c18d03430031c9c32385905",
+          "priorTargetSha256": "c50179c0f8da32376bbbb7d07c4aa996c512ed62b1c6ce16b6ceae991eb6fa08",
+          "sourceWorker": 3,
+          "path": "src/data/dialogue-content/locale-batches/hi/172.json",
+          "index": 218
+        },
+        {
+          "locale": "vi",
+          "turnId": "DLG-SC-LOC-KUM-ASO-08-001-SHARED-06",
+          "field": "translation",
+          "currentTarget": "Cho tôi xem tổng tiền sau khi sửa nhé. Tôi muốn bàn với bạn về việc chia tiền, nên có thể chờ chúng tôi bàn xong rồi mới thanh toán được không?",
+          "sourceSha256": "618e3155a4bc132ebd3f074514d1a1b324fc9a657e81f392fa3d1e4143d957bd",
+          "targetSha256": "5ca9041803d4fd37915c510fca8d49dc9a84a668a2afe06f2bdc1f73f1a48473",
+          "priorTargetSha256": "b04c6812a69ce03e93569b566bfab47bc6581e3748e82842eb9502591b7ec5b1",
+          "sourceWorker": 3,
+          "path": "src/data/dialogue-content/locale-batches/vi/172.json",
+          "index": 219
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-OIT-NAKATSU-02-001",
+      "metadata": {
+        "name": "停止理由のない引継ぎをそのまま受けない",
+        "situation": "中津市を背景にした架空の部品製造工場。交代時に機械停止の記録があるが理由が空白で、新担当者は異常の解消や再開許可を推測しない。同僚と責任者への連絡事項を整理する。機械の操作や修理手順は教えない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "停止印があって理由が空白だと示し、不明なまま引継げるか相談する。",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-OIT-NAKATSU-02-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "交代の引継ぎ表をお渡しします。担当する設備について、気になる記載はありますか。"
+        },
+        "DLG-SC-LOC-OIT-NAKATSU-02-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "停止の印はありますが、理由の欄が空白です。止めた理由が分からないまま引き受けてよいのか確認したいです。",
+          "hintJa": "停止印があって理由が空白だと示し、不明なまま引継げるか相談する。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-NAKATSU-02-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "その空欄は責任者に確認しましょう。前の担当者から、再開について何か聞いていますか。"
+        },
+        "DLG-SC-LOC-OIT-NAKATSU-02-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "「あとで動かす」とだけ聞きました。誰が確認して再開を決めるのかまでは聞けていません。",
+          "hintJa": "あとで動かすとの発言だけで、確認者や再開判断者は聞いていないと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-NAKATSU-02-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "その言葉だけを再開の許可とはしません。設備を特定できる番号は、記録と現物で同じですか。"
+        },
+        "DLG-SC-LOC-OIT-NAKATSU-02-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "記録は三号機ですが、私が引き継ぐと聞いたのは四号機です。停止理由の件と、対象番号の違いを両方伝えたいです。",
+          "hintJa": "記録の三号機と担当と聞いた四号機の違いを示し、停止理由と併せて報告したいと述べる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-NAKATSU-02-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "番号が食い違うなら、どちらの設備の話かも含めて照会します。ご自身が触れた箇所はありますか。"
+        },
+        "DLG-SC-LOC-OIT-NAKATSU-02-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "表示を外から見ただけで、操作部には触っていません。番号を合わせようとして勝手に記録も直していません。",
+          "hintJa": "外から表示を見ただけで操作部には触らず、記録番号も自己判断で直していないと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-NAKATSU-02-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "そのままの記録を添えて私から責任者へ連絡します。返事までの担当は、どのようにしておきますか。"
+        },
+        "DLG-SC-LOC-OIT-NAKATSU-02-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "機械の操作は引き受けず、先に責任者から担当設備と再開の判断者を説明してもらいたいです。",
+          "hintJa": "操作を引き受けず、担当設備と再開判断者の説明を責任者に求める。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-OIT-NAKATSU-02-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "その希望も伝えます。引継ぎ完了とは付けず、説明がそろってから改めて確認しましょう。いったんお待ちください。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "tl",
+          "turnId": "DLG-SC-LOC-OIT-NAKATSU-02-001-SHARED-06",
+          "field": "translation",
+          "currentTarget": "Number three po ang nasa tala, pero number four ang sinabing ako ang hahawak. Gusto kong ipaalam kapwa ang hindi nakasulat na dahilan ng paghinto at ang hindi magtugmang numero.",
+          "sourceSha256": "0fbf814926b60562794a95055354d3b2b629ccf9d79183234b6e9c6dff0f7bbf",
+          "targetSha256": "3b93e10b8b699f1d45e39c00928f5483de6313980c9d5509fb5bc3f0a3168a99",
+          "priorTargetSha256": "f87178e389c35ca737a98eb95d171a0b8e34b2e64e2aca13f27abf2d7ab436cf",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/tl/200.json",
+          "index": 222
+        },
+        {
+          "locale": "vi",
+          "turnId": "DLG-SC-LOC-OIT-NAKATSU-02-001-SHARED-06",
+          "field": "translation",
+          "currentTarget": "Ghi chép là máy số ba nhưng tôi nghe sẽ nhận máy số bốn. Tôi muốn báo cả việc ô lý do dừng để trống và số thiết bị không khớp.",
+          "sourceSha256": "0fbf814926b60562794a95055354d3b2b629ccf9d79183234b6e9c6dff0f7bbf",
+          "targetSha256": "7d772d9b04f493d77ca768864a2501d4f7567e31d1d2a2e4ef1225ac89dbe42e",
+          "priorTargetSha256": "927bc019b77fce0c9f67bd29c67f1805ad4320dc0495b7b172f3e46a4e47c228",
+          "sourceWorker": 4,
+          "path": "src/data/dialogue-content/locale-batches/vi/200.json",
+          "index": 223
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-KGS-SATSUMASENDAI-02-001",
+      "metadata": {
+        "name": "工事中の昇降設備を避けて駅の案内窓口で待つ",
+        "situation": "架空の駅で、大きな荷物を持つ旅行者が駅員に移動支援を相談する。改札・昇降設備・列車の案内は仮定で、実在駅の構内図や接続を示さず、乗車への間に合いを保証しない。",
+        "learningObjective": "用件と状況を具体的に伝え、聞き返しと確認を行い、次の行動を決める。",
+        "playerGoal": "乗換改札へ行きたいが案内図のエレベーター前が工事囲いだったと伝える",
+        "npcGoal": "確認できる内容と未確認の条件を区別し、相談に応じて次の行動を案内する。",
+        "description": null
+      },
+      "japaneseTurns": {
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-02-001-SHARED-01": {
+          "speaker": "NPC",
+          "sourceJa": "どちらの改札へ向かわれますか。大きなお荷物がありますね。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-02-001-SHARED-02": {
+          "speaker": "PLAYER",
+          "sourceJa": "乗り換えの改札へ行きたいです。案内図のエレベーターに向かったのですが、前に工事の囲いがありました。",
+          "hintJa": "乗換改札へ行きたいが案内図のエレベーター前が工事囲いだったと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-02-001-SHARED-03": {
+          "speaker": "NPC",
+          "sourceJa": "その設備は今使えません。囲いの中へは入らず、別の設備を使う経路を確認します。出発までの時間はおわかりですか。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-02-001-SHARED-04": {
+          "speaker": "PLAYER",
+          "sourceJa": "切符ではあと二十分ほどです。遠回りになっても階段は使わずに行きたいのですが、間に合うと考えてよいですか。",
+          "hintJa": "出発まで約二十分で階段を避けたいと伝え、遠回りでも間に合うと考えてよいか聞く。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-02-001-SHARED-05": {
+          "speaker": "NPC",
+          "sourceJa": "混雑もあるので、間に合うとはお約束できません。別のエレベーターまで係員の案内が必要か、ここから問い合わせます。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-02-001-SHARED-06": {
+          "speaker": "PLAYER",
+          "sourceJa": "荷物を持って行ったり来たりするのは難しいので、案内が決まるまでここで待ちたいです。座れる場所は近くにありますか。",
+          "hintJa": "荷物を持って往復するのが難しく、案内が決まるまで待つ椅子を尋ねる。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-02-001-SHARED-07": {
+          "speaker": "NPC",
+          "sourceJa": "この窓口横に椅子があります。案内の返答はそちらでお伝えできますが、荷物はご自身でお持ちください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-02-001-SHARED-08": {
+          "speaker": "PLAYER",
+          "sourceJa": "荷物は自分の横に置き、窓口横の椅子で待ちます。乗れなかった場合の切符の相談も、今の窓口でできますか。",
+          "hintJa": "荷物を自分で保持して窓口横で待ち、乗れなかった場合の切符の相談先を聞く。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-02-001-SHARED-09": {
+          "speaker": "NPC",
+          "sourceJa": "切符の扱いは別の担当に確認します。移動の案内と切符の条件は分けてお伝えし、変更できるとはまだお約束しません。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-02-001-SHARED-10": {
+          "speaker": "PLAYER",
+          "sourceJa": "では先に移動の案内を待ち、切符については別の返答を聞きます。工事中の設備へ戻ったり、急いで階段を使ったりはしません。",
+          "hintJa": "移動と切符の返答を分けて待ち、工事設備へ戻らず階段も急いで使わないと伝える。日本語で伝えてください。"
+        },
+        "DLG-SC-LOC-KGS-SATSUMASENDAI-02-001-SHARED-11": {
+          "speaker": "NPC",
+          "sourceJa": "承知しました。まず移動担当へ連絡します。切符をお手元に置いて、横の椅子でお待ちください。"
+        }
+      },
+      "fields": [
+        {
+          "locale": "hi",
+          "turnId": "DLG-SC-LOC-KGS-SATSUMASENDAI-02-001-SHARED-10",
+          "field": "hintTranslation",
+          "currentTarget": "जापानी में बताएँ कि मार्गदर्शन और टिकट के बारे में अलग-अलग जवाबों की प्रतीक्षा करेंगे तथा निर्माण स्थल पर नहीं लौटेंगे और जल्दबाज़ी में सीढ़ियाँ नहीं लेंगे।",
+          "sourceSha256": "a69c172d8ed3653dc30ed4ac87db7f0dfb505578c9f41fa3941f833a143326a4",
+          "targetSha256": "c6a0727f9289564086b9967f66b961e88608dbd26a31d69a9f1aa239e7c68cb1",
+          "priorTargetSha256": "edb52a1c264b71cc1d629f0c19bd9ec0177e6e9599a8105e913ad9949ec7c76e",
+          "sourceWorker": 5,
+          "path": "src/data/dialogue-content/locale-batches/hi/161.json",
+          "index": 225
+        }
+      ]
+    }
+  ]
+}

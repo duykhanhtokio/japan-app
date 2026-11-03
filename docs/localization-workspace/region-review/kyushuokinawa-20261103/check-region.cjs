@@ -9,8 +9,8 @@ const {validateBatch,locales} = require(path.join(root,'scripts/lib/dialogue-tra
 const index = read('src/data/dialogue-content/locale-batch-index.json');
 const ids = new Map(); let fields=0,repairs=0;
 const cache = new Map();
-for(let worker=1;worker<=6;worker++) {
-  const receipt=JSON.parse(fs.readFileSync(path.join(__dirname,`worker-${worker}.json`),'utf8'));
+for(const filename of fs.readdirSync(__dirname).filter(n=>/^worker-[1-9]\d*\.json$/.test(n)).sort()) {
+  const receipt=JSON.parse(fs.readFileSync(path.join(__dirname,filename),'utf8'));
   assert.equal(receipt.nativeReviewed,false);
   for(const row of receipt.reviews) {
     const batch=index[row.scenarioId];
