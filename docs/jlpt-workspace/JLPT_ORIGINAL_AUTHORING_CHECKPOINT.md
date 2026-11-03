@@ -746,3 +746,7 @@ jpapp-n4-original-03-v1, jpapp-n4-original-04-v1: complete real synthesis and de
 ## 2026-11-03 — further complete prosody recordings
 
 jpapp-n4-original-03-v1, jpapp-n4-original-04-v1: complete real synthesis and decoded audio validation. 10/30 candidates complete; 0/30 newly installed. Preserve all text/keys/voices/answer windows/exact60000ms break. Human/native/perceptual approval false. Publication requires remote verification.
+
+## 2026-11-03 — N4 06 direct synthesis completed
+
+N4 06 independently completed actual synthesis:28/28 responses,1941476ms decoded PCM,approved voices/scripts/choice order/response windows and60000ms music verified.11/30 complete candidates;0/30 installed. Direct receipt:n4-06-direct-run.json; original live batch may still list this form rendering until its own completion. Human/native/perceptual reviewfalse. Preserve ongoing N4 05 and other work.
