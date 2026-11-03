@@ -1,5 +1,22 @@
-# Tohoku — rà ngữ cảnh đủ 12 ngôn ngữ
+# Tohoku — hoàn tất lượt rà ngữ cảnh AI đủ 12 ngôn ngữ
 
-Yêu cầu tiếp tục của người dùng: 6 AI độc lập, không kiểm chéo ngữ nghĩa; giữ mọi receipt hợp lệ. Queue hiện hành có 702 bài chưa có receipt đủ ngữ cảnh. Assignment bất biến chia theo lô dịch độc quyền, không theo tỉnh vì có lô chứa nhiều tỉnh. Không sửa bài ngoài scenarioIds được giao dù cùng file.
+Đã rà **702/702 bài**, còn **0 bài**. Có 430 phần bằng chứng gắn hash và 606 trường được sửa.
 
-Dùng `DIALOGUE_REVIEW_SESSION=docs/localization-workspace/region-review/tohoku/session-001 python3 scripts/dialogue-region-review.py status 1` và các lệnh context/targets/record như session Chubu. Chỉ record sau khi thực sự đọc ngữ cảnh Nhật và đủ 12 bộ câu/gợi ý. Hash không thay việc đọc. Tiếp tục đến hết phạm vi hoặc chặn thực tế; mỗi phần nhỏ là mốc lưu, không phải hoàn tất vùng. AI review không phải native/source/device approval. Không sửa assignment sau receipt đầu tiên. Điều phối kiểm tra tích hợp/persistence, không kiểm chéo nội dung.
+Sáu AI chia quyền ghi độc lập theo lô, tự kiểm tra phần mình; không kiểm chéo ngữ nghĩa. Giữ nguyên assignment và bằng chứng hợp lệ cũ.
+
+| AI | Bài đã rà | Còn lại | Trường đã sửa |
+| --- | ---: | ---: | ---: |
+| 1 | 117 | 0 | 58 |
+| 2 | 118 | 0 | 133 |
+| 3 | 116 | 0 | 90 |
+| 4 | 116 | 0 | 184 |
+| 5 | 116 | 0 | 47 |
+| 6 | 119 | 0 | 94 |
+
+Có **22 bài ghi vấn đề nguồn/metadata** trong source-issues.json. Lượt đọc AI hoàn tất không chứng nhận những vấn đề đó đã được sửa, không thay duyệt bản ngữ, phát âm, thiết bị hoặc nghiệm thu phát hành.
+
+Đối chiếu ngữ cảnh Nhật, 11 câu và 5 gợi ý với đủ12 ngôn ngữ cho mỗi receipt. Validator kiểm hash từng trường, metadata ngữ cảnh, ownership, độ phủ và schema pack; không dùng hashing để thay việc đọc.
+
+Kiểm tra lại bằng `node scripts/integrate-tohoku-context-review.cjs`. Khi dữ liệu nguồn/đích thay đổi phải xác minh lại receipt liên quan, không tự giữ số hoàn tất khi hash không còn khớp.
+
+Áp dụng docs/WORKSPACE_STORAGE_POLICY_VI.md; chỉ dọn file tạm sau khi xác minh commit trên remote.
