@@ -1,3 +1,13 @@
+# Đối chiếu quản lý và phục vụ — 03/11/2026
+
+Tiếp tục từ224378c đã WORK PERSISTENCE PASS. Đọc chữ và ảnh7trang2号:26,28,32,42,44,45,47; xác minh hash PDF. Rà24ý:22ý có đủ bài/câu hiện hành,2ý phát hiện thiếu đánh giá và đã bổ sung thật. Phạm vi gồm OTA/PMS/booking engine, dự báo/yield,4khái niệm marketing, xử lý nguyên nhân khiếu nại, vai trò quản lý và phục vụ nhà hàng. HR2-047-05 bổ sung liên kết đoạn hỗ trợ theo nguyện vọng, không chỉ giữ đoạn trách nhiệm chung.
+
+Hai bổ sung độc lập: hotel-service-06-q11 kiểm việc tìm nguyên nhân và quyết định cách xử lý SAU khi nghe kết quả; hotel-restaurant-07-q08 kiểm riêng đĩa đã dùng, ly rỗng và nhu cầu gọi thêm món/đồ uống. Đã dịch trực tiếp đủ24bản câu mới/12ngôn ngữ, tự kiểm nội dung và giữ translated_ai_unreviewed. Tổng332câu,38bài; mọi330câu Nhật và trường dịch cũ được bảo toàn. Furigana bổ sung thủ công cho12chuỗi, bảo toàn toàn bộentry cũ. Hai bài córevision mới thực sự; câu/bài cũ cùng hash không bị tự viết lại. Chỉ cập nhật binding nguyên tử sau khi xác nhận đoạn dạy và snapshot câu cũ vẫn nguyên vẹn. Lượt học cũ phải tiếp tục được lưu theo revision cũ, không chuyển thành đã hoàn tất revision mới.
+
+Sổ128covered_ai/384known;256ý mở. Mẫu số chưa chốt, các trang vẫn nghiệm thu từng phần. HP2-026-01 vàHP2-027-02 còn cần căn cứ bổ trợ cho điều kiện ngoài định nghĩa nguồn. Receipt recovery-v9/operations-source-review.json giữ trạng thái trước, trạng thái thiếu được phát hiện và bổ sung sau; operations-assessment-integration.json ghi hash/câu/revision/bảo toàn từngbài. Chưa duyệt chuyên môn/bản ngữ/thiết bị/thời lượng. Chỉ xác minh remote mới được tính lưuGitHub; bundle bàn giao không thay cho remote.
+
+---
+
 # Đối chiếu hai ý inbound — 03/11/2026
 
 Đọc chữ và ảnh trang27 PDF2号, xác minh SHA-256 nguồn. Xác nhận riêng HP2-027-01 (phân biệt inbound/FIT/VIP) và HP2-027-03 (kinh tế địa phương/giao lưu văn hóa) với đoạn dạy và q05/q09 hiện hành. Gắn vùng nguồn chính xác, liên kết hai chiều và receipt `recovery-v9/inbound-source-review.json`; giữ nguyên trạng thái trước. Không đổi bài Nhật, câu hỏi, bản dịch, furigana hoặc dữ liệu học viên.
