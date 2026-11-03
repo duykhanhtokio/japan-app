@@ -40,9 +40,9 @@ def main():
                 folder = ROOT / f"src/data/jlpt-original/{row['level']}/{row['number']:02d}"
                 if row['examId'] not in maps:
                     items = load(folder / 'audio.manifest.json')['items']
-                    mapping = {}
+                    mapping, turn_map = {}, {}
                     for position, item in enumerate(items, 1):
-                        for turn in item['turns']:
+                        for turn_index, turn in enumerate(item['turns'], 1):
                             role, text = turn if isinstance(turn, list) else (turn.get('role'), turn.get('text'))
                             if role not in casting['roles'] or not isinstance(text, str):
                                 continue
@@ -50,7 +50,8 @@ def main():
                                 key = cache_key(text, casting['roles'][role]['speakerId'], casting['engine']['version'],
                                                 profile, row['level'], mode, query_text=speech_query_text(text))
                                 mapping.setdefault(key, set()).add(position)
-                    maps[row['examId']] = (mapping, len(items))
+                                turn_map.setdefault(key, []).append({'question': position, 'turn': turn_index, 'total': len(item['turns'])})
+                    maps[row['examId']] = (mapping, len(items), turn_map)
                 part_file = ROOT / f"docs/jlpt-workspace/audio-prosody-candidates/20261103-normalized-v2/docs/jlpt-workspace/original/{row['level']}-{row['number']:02d}/audio/inference-part.json"
                 log = (ROOT / row.get('logPath', '')).resolve()
                 log_time = 0
@@ -63,9 +64,9 @@ def main():
                         entry['questionTotal'] = int(ticks[-1][2])
                 if part_file.exists() and part_file.stat().st_mtime >= log_time:
                     part = load(part_file)
-                    mapping, total = maps[row['examId']]
+                    mapping, total, turn_map = maps[row['examId']]
                     entry.update(questionPositions=sorted(mapping.get(part['cacheKey'], [])), questionTotal=total,
-                                 inferencePart=part['partIndex'] + 1, partMoras=part['moras'])
+                                 inferencePart=part['partIndex'] + 1, partMoras=part['moras'], turns=turn_map.get(part['cacheKey'], []))
                 state['active'].append(entry)
             if state != previous:
                 print(json.dumps(state, ensure_ascii=False), flush=True)
