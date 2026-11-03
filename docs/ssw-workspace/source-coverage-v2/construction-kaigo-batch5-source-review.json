@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "batch": "construction-kaigo-batch5",
+  "reviewType": "self_checked_ai",
+  "takeoverDate": "2026-11-03",
+  "baselineCommit": "4832f53f8407298126fa43c104a266972f2a3831",
+  "sources": [
+    {
+      "sector": "construction",
+      "sourceId": "kensetsu-2go-foreman-leader-20250115",
+      "sha256": "fa094327913a14047de32ad734b552d6911af281566076ec327e50608c5106f7",
+      "pdfPagesReviewed": [
+        94,
+        101
+      ],
+      "privateSourceBytesPublished": false
+    },
+    {
+      "sector": "kaigo",
+      "sourceId": "KAI-VI-2025",
+      "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+      "pdfPagesReviewed": [
+        109
+      ],
+      "privateSourceBytesPublished": false
+    }
+  ],
+  "groups": [
+    {
+      "sector": "construction",
+      "pdfPage": 94,
+      "printedPage": 88,
+      "visualInputSha256": "af0584282f01920afbb6886d0eab4e429cd77a5c0f8b8ae6f499bd231ab94272",
+      "scope": "Full page and 148 primitives, including eight-goal 5S diagram and small ruby.",
+      "findings": [
+        "Corrected autonomy/teamwork/leadership source spans.",
+        "Diagram goals link to image element b147 rather than unrelated paragraph text.",
+        "Three additional independently stated facets retained as candidate; no app completeness inferred.",
+        "Page begins/ends with continuation; source94 is inventoried, not a claim to close adjacent93/95.",
+        "Takeover completed independent 5S role/application appendix inJapanese+12locales;3new facets now covered_ai, not whole-page teaching acceptance."
+      ],
+      "appChanges": [
+        "docs/ssw-workspace/kensetsu/foreman/session-018.json",
+        "src/data/kensetsu/foreman-translations/{en,id,zh-CN,zh-TW,hi,bn,ne,my,th,km,tl}.json"
+      ]
+    },
+    {
+      "sector": "construction",
+      "pdfPage": 101,
+      "printedPage": 95,
+      "visualInputSha256": "213e860ffe49c8ad8316ad85b06483999060d680e6c589790d4c3add301dae25",
+      "scope": "Full page and 190 primitives, including historical ratio diagram, five reporting categories, purposes, analysis, mandatory consideration and feedback.",
+      "findings": [
+        "Existing report category knowledge retained.",
+        "Four additional independently stated facets retained as candidates: risk/problem solution; analysis/prevention; every report considered; historical diagram categories.",
+        "Important-first scheduling must not become permission to discard other reports.",
+        "Heinrich categories retained as source model; never site prediction.",
+        "Takeover completed independent two-report priority/application appendix inJapanese+12locales;3new facets now covered_ai. Historical diagram category facet remains candidate."
+      ],
+      "appChanges": [
+        "docs/ssw-workspace/kensetsu/foreman/session-019.json",
+        "src/data/kensetsu/foreman-translations/{en,id,zh-CN,zh-TW,hi,bn,ne,my,th,km,tl}.json"
+      ]
+    },
+    {
+      "sector": "kaigo",
+      "pdfPage": 109,
+      "printedPage": 107,
+      "visualInputSha256": "6d07751c8d7827eaba908e1f3c8ab69de2e675d74890d8a4713757561a3dc38d",
+      "scope": "Full page and49primitives, eight knowledge facets: decision support5 and individualized communication3.",
+      "findings": [
+        "Four facets have exact current teaching and one explicit independent reader check atday126, section kaigo-atomic-listening-consent.",
+        "Remaining own-life/illness-disability/individual-method/ICT facets remain candidates; no page acceptance inferred.",
+        "Recovered complete Japanese from intended text after inherited string/tuple indexing corruption; ruby and all12 existing direct translations checked against restored meaning.",
+        "New retrieval prompt asks required information and support after a decision, not consent inferred from explanation alone."
+      ],
+      "appChanges": [
+        "src/data/kaigo/reader-communication-checks.json"
+      ],
+      "conditionsChecked": true
+    }
+  ],
+  "classificationLimits": [
+    "Headings/running chapter/page labels are navigation or restate the inventoried objective.",
+    "Vectors with no additional labels or relationships are decorative; informative diagrams are knowledge.",
+    "Complete_ai is source inventory only. Both denominator statuses remain open; coverage percentage is not established."
+  ],
+  "preservation": {
+    "existing21ReaderChecks": true,
+    "existing26WeeklyBanks": true,
+    "existing687WeeklyQuestions": true,
+    "foreman018019AndTranslations": "All pre-existing fields/text retained; only learningActivity appendices andcontentRevision+1, with exact-prefix projection verification."
+  },
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  },
+  "remaining": "1new construction historical-diagram facet and4new Kaigo facets remain candidates; existing construction blockers7 retained. All-source denominators remain open.",
+  "reboundActivityEvidenceCount": 68
+}

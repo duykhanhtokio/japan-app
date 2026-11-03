@@ -13,6 +13,12 @@ function validate(data){
  for(const row of [examples,meaning])for(const key of ['promptJa','modelAnswerJa'])for(const term of ['ADL','IADL'])assert(row[key].includes(term),`${row.id}: lost concept label ${term}`);
  for(const term of ['移動','食事','着替え','排泄','入浴','金銭管理','買い物','洗濯','交通機関','通信機器'])assert(examples.modelAnswerJa.includes(term),`Lost source example ${term}`);
  for(const term of ['自立','日常生活動作','家庭','地域','維持'])assert(meaning.modelAnswerJa.includes(term),`Lost definition component ${term}`);
+ const consent=data.checks.find(c=>c.id==='kaigo-reader-consent-decision-support');
+ if(consent){
+  assert.equal(consent.promptJa,'本人が選ぶために、どのような情報を伝え、決定後はどう支えますか。','Consent prompt must retain complete Japanese wording');
+  assert.equal(consent.modelAnswerJa,'選択肢とそれぞれの利点・不利益を分かりやすく伝えます。本人が自分の意思で選べるよう支え、その決定を尊重して実現を支援します。','Consent answer must retain all decision-support steps');
+  for(const tokens of [consent.promptRuby,consent.modelAnswerRuby])for(const token of tokens)if(token.readingKana!==undefined)assert(/[\p{Script=Han}々]/u.test(token.text),'Kana-only text must not acquire invented ruby');
+ }
  return true;
 }
 module.exports={validate};

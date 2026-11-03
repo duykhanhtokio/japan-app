@@ -1,4 +1,4 @@
-import {StyleSheet,Text,View} from 'react-native';
+import {Image,StyleSheet,Text,View} from 'react-native';
 import data from '@/data/food-manufacturing/source-closure31.json';
 import additions34 from '@/data/food-manufacturing/source-closure34.json';
 import additions38 from '@/data/food-manufacturing/source-closure38.json';
@@ -22,18 +22,21 @@ import additions55 from '@/data/food-manufacturing/source-closure55.json';
 import additions56 from '@/data/food-manufacturing/source-closure56.json';
 import additions57 from '@/data/food-manufacturing/source-closure57.json';
 import additions58 from '@/data/food-manufacturing/source-closure58.json';
+import additions62 from '@/data/food-manufacturing/source-closure62.json';
+import additions64 from '@/data/food-manufacturing/source-closure64.json';
 import type {FoodManufacturingLesson} from '@/data/food-manufacturing';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 import {FoodSourceAssessmentChecks} from './FoodSourceAssessmentChecks';
 
 /** Separate source-bound additions preserve original lesson completion revisions. */
 export function FoodClosureSupplements({lesson,language,showTranslation,textColor,readingColor}:{lesson:FoodManufacturingLesson;language:string;showTranslation:boolean;textColor:string;readingColor:string}){
- return <>{[...data.sections,...additions34.sections,...additions38.sections,...additions39.sections,...additions40.sections,...additions41.sections,...additions42.sections,...additions43.sections,...additions44.sections,...additions45.sections,...additions46.sections,...additions47.sections,...additions48.sections,...additions49.sections,...additions50.sections,...additions51.sections,...additions52.sections,...additions53.sections,...additions54.sections,...additions55.sections,...additions56.sections,...additions57.sections,...additions58.sections].filter(s=>s.lessonId===lesson.id&&s.lessonSourceHash===lesson.sourceHash).map(section=>{
+ return <>{[...data.sections,...additions34.sections,...additions38.sections,...additions39.sections,...additions40.sections,...additions41.sections,...additions42.sections,...additions43.sections,...additions44.sections,...additions45.sections,...additions46.sections,...additions47.sections,...additions48.sections,...additions49.sections,...additions50.sections,...additions51.sections,...additions52.sections,...additions53.sections,...additions54.sections,...additions55.sections,...additions56.sections,...additions57.sections,...additions58.sections,...additions62.sections,...additions64.sections].filter(s=>s.lessonId===lesson.id&&s.lessonSourceHash===lesson.sourceHash).map(section=>{
  const candidate=(section.translations as Record<string,{title:string;text:string;sourceHash:string}>)[language];
  const t=candidate?.sourceHash===section.sourceHash?candidate:null;
  return <View key={section.id} testID={section.id} style={styles.section}>
  <View accessible accessibilityRole="header" accessibilityLabel={section.titleJa} style={styles.line}>{section.titleRuby.map((token,i)=><View key={i} style={styles.word}><Text style={{color:readingColor,fontSize:11,lineHeight:15}}>{'reading' in token?token.reading:' '}</Text><Text selectable style={{color:textColor,fontSize:19,lineHeight:30,fontWeight:'700'}}>{token.text}</Text></View>)}</View>
  <View accessible accessibilityLabel={section.textJa} style={styles.line}>{section.ruby.map((token,i)=><View key={i} style={styles.word}><Text style={{color:readingColor,fontSize:10,lineHeight:14}}>{'reading' in token?token.reading:' '}</Text><Text selectable style={{color:textColor,fontSize:17,lineHeight:29}}>{token.text}</Text></View>)}</View>
+ {section.id==='food64-teaching'&&<Image testID="food64-original-histogram" source={require('../../../assets/food-manufacturing/source-practice64/same-centre-different-spread.webp')} accessibilityLabel={section.textJa} resizeMode="contain" style={{width:'100%',aspectRatio:1200/960,height:undefined}}/>}
  {showTranslation&&language!=='ja'&&t&&<TranslationText>{t.title}{'\n'}{t.text}</TranslationText>}
  </View>;
  })}<FoodSourceAssessmentChecks lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor} readingColor={readingColor}/></>;

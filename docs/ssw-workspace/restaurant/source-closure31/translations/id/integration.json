@@ -3,7 +3,7 @@
   "locale": "id",
   "shard": "integration",
   "canonicalFile": "docs/ssw-workspace/restaurant/source-closure31/canonical-ja.integration.json",
-  "canonicalSha256": "1c9d6720dec0d6b0cb708fa9c156d28b0c67ebcdab9f0689c57e6232f456a795",
+  "canonicalSha256": "756e14b84dfcc344cb3556ba47813120d8c9cc621099b10abf9515c6c1bc158e",
   "items": {
     "rst31-hygiene2-noro-source-scope": {
       "sourceHash": "288d35c858b0cb11cd7f583c66947b6aa768da3003fa69f357b565ddf15f4db4",
@@ -1684,6 +1684,96 @@
         "Menukar butir untuk 5/8:R dan 5/9:W.",
         "Gunakan tanggal/butir aktual; jangan isi sel yang belum diperiksa.",
         "Menghubungkan 5/8:R dan 5/9:W dengan benar."
+      ]
+    },
+    "rst31-v2-r5-ops-q001": {
+      "sourceHash": "0bb927e49bcbea7311c093b2ea4d8bcab49b5480396a538d48395e358a93cead",
+      "objective": "Menghitung hubungan rasio biaya dan margin laba kotor dengan dasar penjualan yang sama.",
+      "stem": "Rasio biaya berdasarkan penjualan pada periode yang sama adalah 32%. Berapa margin laba kotornya?",
+      "options": [
+        "68%",
+        "32%",
+        "132%",
+        "0,68%"
+      ],
+      "explanation": "Dengan penyebut penjualan yang sama, jumlah kedua rasio adalah 100%. Jadi 100 − 32 = 68%.",
+      "reasons": [
+        "100 − 32 = 68%, bagian yang tersisa dari penjualan yang sama.",
+        "Ini hanya mengulang rasio biaya, bukan margin laba kotor.",
+        "Kedua rasio berjumlah 100%; bukan menambahkan 32 pada 100.",
+        "0,68 adalah proporsi desimal yang setara dengan 68%."
+      ]
+    },
+    "rst31-v2-r5-ops-q002": {
+      "sourceHash": "de145920ca58d88d62f33827e6c3af38a820301c42dfd7d96ead539aa1f8b042",
+      "objective": "Membagi biaya standar satu menu dengan harga jual menu itu untuk memperoleh persentase.",
+      "stem": "Biaya standar satu menu adalah 240 yen dan harga jualnya 800 yen. Berapa rasio biaya standar individualnya?",
+      "options": [
+        "3%",
+        "30%",
+        "70%",
+        "Sekitar 333,3%"
+      ],
+      "explanation": "Biaya standar menu ÷ harga jual menu × 100: 240 ÷ 800 × 100 = 30%.",
+      "reasons": [
+        "240 ÷ 800 = 0,3, yaitu 30%, bukan 3%.",
+        "240 ÷ 800 × 100 = 30%.",
+        "70% adalah margin laba kotor pada kondisi ini, bukan rasio biaya yang diminta.",
+        "Membagi harga jual dengan biaya membalik pembilang dan penyebut."
+      ]
+    },
+    "rst31-v2-r5-ops-q003": {
+      "sourceHash": "cb443f2b759d647bc66f0ff7afc79a0cbbcaad1d763db537f97d47a14a849ba8",
+      "objective": "Membagi biaya standar bulanan berbobot jumlah penjualan dengan penjualan bulan yang sama.",
+      "stem": "Dalam satu bulan terjual 30 porsi menu A (biaya standar 200 yen) dan 20 porsi menu B (biaya standar 300 yen). Penjualan kedua menu berjumlah 40.000 yen. Berapa rasio biaya standar bulanannya?",
+      "options": [
+        "12%",
+        "50%",
+        "30%",
+        "3.000%"
+      ],
+      "explanation": "Biaya standar bulanan = 200 × 30 + 300 × 20 = 12.000 yen. Bagi dengan penjualan bulan dan dua menu yang sama: 12.000 ÷ 40.000 × 100 = 30%.",
+      "reasons": [
+        "Jumlah uang 12.000 yen tidak dapat langsung dianggap sebagai 12%.",
+        "30 + 20 = 50 porsi adalah jumlah terjual, bukan rasio 50%.",
+        "Jumlahkan biaya standar dikali jumlah terjual, lalu bagi dengan penjualan terkait pada bulan yang sama.",
+        "Desimal 0,3 sama dengan 30%; tidak perlu dikalikan 100 lagi."
+      ]
+    },
+    "rst31-v2-r6-ops-q001": {
+      "sourceHash": "0f962bd19a14e6622eb301a0430dbfb5102843a98008df39f4e5549a39a2ad0e",
+      "objective": "Hitung pelanggan per jam-orang dengan mempertimbangkan perbedaan layanan.",
+      "stem": "Pada hari yang sama, restoran layanan penuh melayani200pelanggan dengan total40jam-orang. Perhitungan dan penilaian mana yang tepat?",
+      "options": [
+        "5pelanggan/jam-orang. Pertimbangkan waktu pelayanan meja; angka lebih rendah dari model layanan lain belum membuktikan inefisiensi.",
+        "200pelanggan/jam-orang. Nilai dari jumlah pelanggan tanpa jam-orang.",
+        "5pelanggan/jam-orang. Angka lebih rendah selalu berarti tidak efisien, apa pun model layanannya.",
+        "0,2pelanggan/jam-orang. Bagi jam-orang dengan jumlah pelanggan."
+      ],
+      "explanation": "200÷40＝5pelanggan/jam-orang. Pelayanan meja juga memerlukan waktu kerja, sehingga perbedaan angka antarmodel layanan saja tidak menentukan efisiensi.",
+      "reasons": [
+        "Menggunakan pelanggan÷jam-orang dan mempertimbangkan waktu layanan.",
+        "Tanpa jam-orang sebagai penyebut, ini bukan pelanggan per jam-orang.",
+        "Hitungannya benar, tetapi perbedaan layanan diabaikan.",
+        "Pembilang dan penyebut terbalik. Bagi pelanggan dengan jam-orang."
+      ]
+    },
+    "rst31-v2-r6-ops-q002": {
+      "sourceHash": "3afb0bd5ad1c4c425e49e27f5def2b6cfe1fd417409d248cb9c435395bb5a0ef",
+      "objective": "Hitung persentase penjualan kumulatif dan gunakan batas ABC latihan.",
+      "stem": "Penjualan periode sama: X50.000yen, Y30.000yen, Z20.000yen. Urutkan menurun. Untuk latihan ini, kumulatif akhir baris≤70%adalahA,>70%sampai90%adalahB,>90%adalahC. Berapa kumulatif dan kategori Y?",
+      "options": [
+        "100%, C. Gunakan total semua produk sebagai kumulatif Y.",
+        "30%, A. Gunakan persentase Y sendiri sebagai kumulatif.",
+        "80%, B. Batas ini untuk latihan; perusahaan dapat memakai batas berbeda.",
+        "80%, A. Produk urutan kedua adalah A tanpa melihat kumulatif."
+      ],
+      "explanation": "Total100.000yen. Sampai Y, kumulatif50.000＋30.000＝80.000yen atau80%, sehingga B menurut batas latihan. Batas dapat berbeda menurut perusahaan.",
+      "reasons": [
+        "100%adalah kumulatif sampai Z, bukan sampai Y.",
+        "30%hanya persentase Y, bukan kumulatif mulai X.",
+        "Menjumlahkan X dan Y, membagi dengan total, lalu menerapkan batas.",
+        "80%melampaui batas A latihan. Peringkat saja tidak menentukan kategori."
       ]
     }
   }

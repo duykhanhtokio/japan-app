@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "locale": "id",
+  "status": "translated_ai_unreviewed",
+  "items": {
+    "rst31-v2-r6-ops-q001": {
+      "sourceHash": "0f962bd19a14e6622eb301a0430dbfb5102843a98008df39f4e5549a39a2ad0e",
+      "objective": "Hitung pelanggan per jam-orang dengan mempertimbangkan perbedaan layanan.",
+      "stem": "Pada hari yang sama, restoran layanan penuh melayani200pelanggan dengan total40jam-orang. Perhitungan dan penilaian mana yang tepat?",
+      "options": [
+        "5pelanggan/jam-orang. Pertimbangkan waktu pelayanan meja; angka lebih rendah dari model layanan lain belum membuktikan inefisiensi.",
+        "200pelanggan/jam-orang. Nilai dari jumlah pelanggan tanpa jam-orang.",
+        "5pelanggan/jam-orang. Angka lebih rendah selalu berarti tidak efisien, apa pun model layanannya.",
+        "0,2pelanggan/jam-orang. Bagi jam-orang dengan jumlah pelanggan."
+      ],
+      "explanation": "200÷40＝5pelanggan/jam-orang. Pelayanan meja juga memerlukan waktu kerja, sehingga perbedaan angka antarmodel layanan saja tidak menentukan efisiensi.",
+      "reasons": [
+        "Menggunakan pelanggan÷jam-orang dan mempertimbangkan waktu layanan.",
+        "Tanpa jam-orang sebagai penyebut, ini bukan pelanggan per jam-orang.",
+        "Hitungannya benar, tetapi perbedaan layanan diabaikan.",
+        "Pembilang dan penyebut terbalik. Bagi pelanggan dengan jam-orang."
+      ]
+    },
+    "rst31-v2-r6-ops-q002": {
+      "sourceHash": "3afb0bd5ad1c4c425e49e27f5def2b6cfe1fd417409d248cb9c435395bb5a0ef",
+      "objective": "Hitung persentase penjualan kumulatif dan gunakan batas ABC latihan.",
+      "stem": "Penjualan periode sama: X50.000yen, Y30.000yen, Z20.000yen. Urutkan menurun. Untuk latihan ini, kumulatif akhir baris≤70%adalahA,>70%sampai90%adalahB,>90%adalahC. Berapa kumulatif dan kategori Y?",
+      "options": [
+        "100%, C. Gunakan total semua produk sebagai kumulatif Y.",
+        "30%, A. Gunakan persentase Y sendiri sebagai kumulatif.",
+        "80%, B. Batas ini untuk latihan; perusahaan dapat memakai batas berbeda.",
+        "80%, A. Produk urutan kedua adalah A tanpa melihat kumulatif."
+      ],
+      "explanation": "Total100.000yen. Sampai Y, kumulatif50.000＋30.000＝80.000yen atau80%, sehingga B menurut batas latihan. Batas dapat berbeda menurut perusahaan.",
+      "reasons": [
+        "100%adalah kumulatif sampai Z, bukan sampai Y.",
+        "30%hanya persentase Y, bukan kumulatif mulai X.",
+        "Menjumlahkan X dan Y, membagi dengan total, lalu menerapkan batas.",
+        "80%melampaui batas A latihan. Peringkat saja tidak menentukan kategori."
+      ]
+    }
+  }
+}

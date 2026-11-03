@@ -3,7 +3,7 @@
   "locale": "en",
   "shard": "integration",
   "canonicalFile": "docs/ssw-workspace/restaurant/source-closure31/canonical-ja.integration.json",
-  "canonicalSha256": "1c9d6720dec0d6b0cb708fa9c156d28b0c67ebcdab9f0689c57e6232f456a795",
+  "canonicalSha256": "756e14b84dfcc344cb3556ba47813120d8c9cc621099b10abf9515c6c1bc158e",
   "nativeReviewed": false,
   "domainReviewed": false,
   "items": {
@@ -1686,6 +1686,96 @@
         "Swaps the items for 5/8:R and 5/9:W.",
         "Use the actual date/item; do not fill unchecked cells.",
         "Correctly links 5/8:R and 5/9:W."
+      ]
+    },
+    "rst31-v2-r5-ops-q001": {
+      "sourceHash": "0bb927e49bcbea7311c093b2ea4d8bcab49b5480396a538d48395e358a93cead",
+      "objective": "Calculate the relationship between cost ratio and gross margin using the same sales denominator.",
+      "stem": "The cost ratio is 32%, based on sales for the same period. What is the gross margin?",
+      "options": [
+        "68%",
+        "32%",
+        "132%",
+        "0.68%"
+      ],
+      "explanation": "With the same sales denominator, the two percentages total 100%. Thus 100 − 32 = 68%.",
+      "reasons": [
+        "100 − 32 = 68%, the remaining share of the same sales.",
+        "This repeats the cost ratio instead of giving the gross margin.",
+        "The ratios must add to 100%; adding 32 to 100 uses the wrong relationship.",
+        "0.68 is the decimal proportion, equivalent to 68%."
+      ]
+    },
+    "rst31-v2-r5-ops-q002": {
+      "sourceHash": "de145920ca58d88d62f33827e6c3af38a820301c42dfd7d96ead539aa1f8b042",
+      "objective": "Divide one dish's standard cost by its selling price and express it as a percentage.",
+      "stem": "A dish has a standard cost of 240 yen and a selling price of 800 yen. What is its individual standard cost ratio?",
+      "options": [
+        "3%",
+        "30%",
+        "70%",
+        "About 333.3%"
+      ],
+      "explanation": "Use the dish's standard cost ÷ its selling price × 100: 240 ÷ 800 × 100 = 30%.",
+      "reasons": [
+        "240 ÷ 800 = 0.3, which is 30%, not 3%.",
+        "240 ÷ 800 × 100 = 30%.",
+        "70% is the gross margin under these conditions, not the requested cost ratio.",
+        "Dividing price by cost reverses the numerator and denominator."
+      ]
+    },
+    "rst31-v2-r5-ops-q003": {
+      "sourceHash": "cb443f2b759d647bc66f0ff7afc79a0cbbcaad1d763db537f97d47a14a849ba8",
+      "objective": "Divide the sales-quantity-weighted monthly standard cost by sales for that month.",
+      "stem": "In one month, 30 portions of dish A (standard cost 200 yen) and 20 portions of dish B (standard cost 300 yen) were sold. Sales for these two dishes were 40,000 yen. What is the monthly standard cost ratio?",
+      "options": [
+        "12%",
+        "50%",
+        "30%",
+        "3,000%"
+      ],
+      "explanation": "Monthly standard cost is 200 × 30 + 300 × 20 = 12,000 yen. Divide by sales for the same month and two dishes: 12,000 ÷ 40,000 × 100 = 30%.",
+      "reasons": [
+        "The amount 12,000 yen cannot simply be read as 12%.",
+        "30 + 20 = 50 portions is a sales quantity, not a 50% ratio.",
+        "Add standard cost multiplied by quantity, then divide by the relevant sales for the same month.",
+        "The decimal 0.3 equals 30%; multiplying by 100 a second time is unnecessary."
+      ]
+    },
+    "rst31-v2-r6-ops-q001": {
+      "sourceHash": "0f962bd19a14e6622eb301a0430dbfb5102843a98008df39f4e5549a39a2ad0e",
+      "objective": "Calculate customers per staff-hour while accounting for service differences.",
+      "stem": "A full-service restaurant served200customers with40staff-hours on the same day. Which calculation and judgment are appropriate?",
+      "options": [
+        "5customers/staff-hour. Consider time spent on table service; a lower figure than a different service model does not alone prove inefficiency.",
+        "200customers/staff-hour. Judge by customer count without staff-hours.",
+        "5customers/staff-hour. A lower figure always means inefficiency, whatever the service model.",
+        "0.2customers/staff-hour. Divide staff-hours by customers."
+      ],
+      "explanation": "200÷40＝5customers/staff-hour. Table service takes labor time, so figures from different service models cannot alone establish good or bad efficiency.",
+      "reasons": [
+        "Uses customers÷staff-hours and considers time needed for service.",
+        "Without staff-hours as the denominator, this is not customers per staff-hour.",
+        "The calculation is right, but the service difference is ignored.",
+        "The numerator and denominator are reversed. Divide customers by staff-hours."
+      ]
+    },
+    "rst31-v2-r6-ops-q002": {
+      "sourceHash": "3afb0bd5ad1c4c425e49e27f5def2b6cfe1fd417409d248cb9c435395bb5a0ef",
+      "objective": "Calculate cumulative sales share and apply the stated ABC practice bands.",
+      "stem": "Same-period sales: X50,000yen, Y30,000yen, Z20,000yen. Sort by descending sales. For this exercise, cumulative share at row end≤70%isA,>70%to90%isB,>90%isC. What are Y’s cumulative share and category?",
+      "options": [
+        "100%, C. Use the total for every product as Y’s cumulative share.",
+        "30%, A. Use Y’s individual share as its cumulative share.",
+        "80%, B. These are exercise bands; a business may use different bands.",
+        "80%, A. The second-ranked product is A regardless of cumulative share."
+      ],
+      "explanation": "Total sales are100,000yen. Through Y, cumulative sales are50,000＋30,000＝80,000yen, or80%; this is B under the exercise bands. Bands vary by business.",
+      "reasons": [
+        "100%is cumulative through Z, not through Y.",
+        "30%is Y’s individual share, not the cumulative share from X.",
+        "Adds X and Y, divides by the total and applies the stated bands.",
+        "80%exceeds the exercise’s A band. Rank alone does not set the category."
       ]
     }
   }

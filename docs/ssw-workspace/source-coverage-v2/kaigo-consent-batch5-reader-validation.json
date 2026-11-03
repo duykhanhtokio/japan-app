@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-03",
+  "status": "PASS_KAIGO_CONSENT_READER_HOST_AND_TEXT_GUARD",
+  "inputPaths": [
+    {
+      "path": "src/data/kaigo/reader-communication-checks.json",
+      "sha256": "f6a9d0bf0b4db3ed7a152dd6f6e5e3d6579b3726a464321ef8bb19fb3c127f6b"
+    },
+    {
+      "path": "src/components/kaigo/KaigoCourse.tsx",
+      "sha256": "2ef8d9366f46ae18bd452f48339d68acf6b0a199f0cde37181c3e7c72e2116d9"
+    },
+    {
+      "path": "scripts/kaigo/check-reader-text-integrity.cjs",
+      "sha256": "96ed672aff2764d41f9c05ab3a391ef32f5917d88a786821e738859a66d9d254"
+    },
+    {
+      "path": "scripts/kaigo/check-communication-reader-checks.cjs",
+      "sha256": "59d1d142262615b7c8917fdcb9221f6e429eaba73281d961f111ec2a48b1cbb6"
+    }
+  ],
+  "hostCommand": "TOKUTEI_QA_MODULES=<existing private QA dependencies> node scripts/kaigo/check-communication-reader-checks.cjs",
+  "checkedDays": [
+    169,
+    127,
+    139,
+    140,
+    128,
+    101,
+    126
+  ],
+  "localeCount": 12,
+  "dayLocaleCases": 84,
+  "checks": 22,
+  "checkAppearances": 264,
+  "sectionRouting": true,
+  "answersInitiallyHidden": true,
+  "exactSelectedTranslations": true,
+  "answerRevealAndClose": true,
+  "rubyReconstruction": true,
+  "inheritedMatchingButCorruptJapaneseRejected": true,
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "pixelsReviewed": false,
+    "learnerDurationMeasured": false
+  }
+}

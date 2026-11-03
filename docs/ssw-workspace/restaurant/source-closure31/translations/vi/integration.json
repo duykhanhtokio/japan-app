@@ -3,7 +3,7 @@
   "locale": "vi",
   "shard": "integration",
   "canonicalFile": "docs/ssw-workspace/restaurant/source-closure31/canonical-ja.integration.json",
-  "canonicalSha256": "1c9d6720dec0d6b0cb708fa9c156d28b0c67ebcdab9f0689c57e6232f456a795",
+  "canonicalSha256": "756e14b84dfcc344cb3556ba47813120d8c9cc621099b10abf9515c6c1bc158e",
   "nativeReviewed": false,
   "domainReviewed": false,
   "items": {
@@ -1686,6 +1686,96 @@
         "Đảo mục của 5/8:R và 5/9:W.",
         "Ghi đúng ngày/mục thực tế, không điền ô chưa kiểm tra.",
         "Ghép đúng 5/8:R và 5/9:W."
+      ]
+    },
+    "rst31-v2-r5-ops-q001": {
+      "sourceHash": "0bb927e49bcbea7311c093b2ea4d8bcab49b5480396a538d48395e358a93cead",
+      "objective": "Tính quan hệ giữa tỷ lệ giá vốn và tỷ suất lợi nhuận gộp trên cùng doanh thu.",
+      "stem": "Tỷ lệ giá vốn tính trên doanh thu cùng kỳ là 32%. Tỷ suất lợi nhuận gộp là bao nhiêu?",
+      "options": [
+        "68%",
+        "32%",
+        "132%",
+        "0,68%"
+      ],
+      "explanation": "Khi có cùng mẫu số là doanh thu, tổng hai tỷ lệ là 100%. Do đó 100 − 32 = 68%.",
+      "reasons": [
+        "100 − 32 = 68%, là phần tỷ trọng còn lại của cùng doanh thu.",
+        "Đây là tỷ lệ giá vốn, chưa phải tỷ suất lợi nhuận gộp.",
+        "Hai tỷ lệ phải cộng lại bằng 100%; không lấy 100 cộng thêm 32.",
+        "0,68 là tỷ lệ dạng thập phân, tương đương 68%."
+      ]
+    },
+    "rst31-v2-r5-ops-q002": {
+      "sourceHash": "de145920ca58d88d62f33827e6c3af38a820301c42dfd7d96ead539aa1f8b042",
+      "objective": "Lấy giá vốn tiêu chuẩn riêng của món chia cho giá bán món đó rồi đổi ra phần trăm.",
+      "stem": "Một món có giá vốn tiêu chuẩn 240 yên và giá bán 800 yên. Tỷ lệ giá vốn tiêu chuẩn riêng của món là bao nhiêu?",
+      "options": [
+        "3%",
+        "30%",
+        "70%",
+        "Khoảng 333,3%"
+      ],
+      "explanation": "Tính giá vốn tiêu chuẩn của món ÷ giá bán món đó × 100: 240 ÷ 800 × 100 = 30%.",
+      "reasons": [
+        "240 ÷ 800 = 0,3, tương đương 30%, không phải 3%.",
+        "240 ÷ 800 × 100 = 30%.",
+        "70% là tỷ suất lợi nhuận gộp trong điều kiện này, không phải tỷ lệ giá vốn cần tìm.",
+        "Lấy giá bán chia cho giá vốn là đảo ngược tử số và mẫu số."
+      ]
+    },
+    "rst31-v2-r5-ops-q003": {
+      "sourceHash": "cb443f2b759d647bc66f0ff7afc79a0cbbcaad1d763db537f97d47a14a849ba8",
+      "objective": "Tính tổng giá vốn tiêu chuẩn theo số lượng bán rồi chia cho doanh thu cùng tháng.",
+      "stem": "Trong cùng một tháng, bán 30 suất món A (giá vốn tiêu chuẩn 200 yên) và 20 suất món B (giá vốn tiêu chuẩn 300 yên). Doanh thu hai món là 40.000 yên. Tỷ lệ giá vốn tiêu chuẩn tháng là bao nhiêu?",
+      "options": [
+        "12%",
+        "50%",
+        "30%",
+        "3.000%"
+      ],
+      "explanation": "Giá vốn tiêu chuẩn tháng là 200 × 30 + 300 × 20 = 12.000 yên. Chia cho doanh thu cùng tháng của đúng hai món: 12.000 ÷ 40.000 × 100 = 30%.",
+      "reasons": [
+        "Không thể lấy số tiền 12.000 yên rồi coi là 12%.",
+        "30 + 20 = 50 suất là số lượng bán, không thể coi ngay là tỷ lệ 50%.",
+        "Cộng giá vốn tiêu chuẩn nhân số lượng bán rồi chia cho doanh thu tương ứng cùng tháng.",
+        "0,3 tương đương 30%; không cần nhân thêm 100 lần nữa."
+      ]
+    },
+    "rst31-v2-r6-ops-q001": {
+      "sourceHash": "0f962bd19a14e6622eb301a0430dbfb5102843a98008df39f4e5549a39a2ad0e",
+      "objective": "Tính số khách trên một giờ công và xét sự khác biệt về hình thức phục vụ.",
+      "stem": "Trong cùng một ngày, nhà hàng phục vụ tại bàn có200khách và tổng40giờ công. Cách tính và nhận định nào phù hợp?",
+      "options": [
+        "5khách/giờ công. Cần xét thời gian phục vụ tại bàn; chỉ thấp hơn quán có hình thức phục vụ khác chưa chứng minh hiệu suất kém.",
+        "200khách/giờ công. Chỉ xét số khách, không dùng giờ công.",
+        "5khách/giờ công. Thấp hơn quán khác thì luôn kém hiệu quả, bất kể hình thức phục vụ.",
+        "0,2khách/giờ công. Lấy giờ công chia số khách."
+      ],
+      "explanation": "200÷40＝5khách/giờ công. Phục vụ tại bàn cũng cần giờ công, nên không thể chỉ dựa vào chênh lệch chỉ số giữa hai hình thức phục vụ để kết luận tốt hay kém.",
+      "reasons": [
+        "Dùng số khách÷tổng giờ công và xét thời gian cần cho dịch vụ.",
+        "Không có tổng giờ công ở mẫu nên đây không phải số khách trên giờ công.",
+        "Tính đúng nhưng bỏ qua khác biệt về hình thức phục vụ.",
+        "Đảo tử số và mẫu số. Phải lấy số khách chia tổng giờ công."
+      ]
+    },
+    "rst31-v2-r6-ops-q002": {
+      "sourceHash": "3afb0bd5ad1c4c425e49e27f5def2b6cfe1fd417409d248cb9c435395bb5a0ef",
+      "objective": "Tính tỷ trọng doanh thu lũy kế và phân nhóm ABC theo điều kiện bài tập.",
+      "stem": "Doanh thu cùng kỳ: X50.000yên, Y30.000yên, Z20.000yên. Xếp giảm dần. Bài tập quy định lũy kế cuối dòng≤70%làA,>70%đến90%làB,>90%làC. Tỷ trọng lũy kế và nhóm của Y là gì?",
+      "options": [
+        "100%・C. Coi tổng toàn bộ sản phẩm là lũy kế đến Y.",
+        "30%・A. Coi tỷ trọng riêng của Y là tỷ trọng lũy kế.",
+        "80%・B. Đây là ngưỡng bài tập; doanh nghiệp có thể dùng ngưỡng khác.",
+        "80%・A. Xếp thứ hai nên luôn thuộc A, không xét lũy kế."
+      ],
+      "explanation": "Tổng100.000yên. Lũy kế đến Y là50.000＋30.000＝80.000yên, tức80%, thuộc B theo điều kiện bài tập. Ngưỡng có thể thay đổi theo doanh nghiệp.",
+      "reasons": [
+        "100%là lũy kế đến Z, không phải cuối dòng Y.",
+        "30%chỉ là tỷ trọng riêng của Y, chưa cộng dồn từ X.",
+        "Cộng doanh thu X và Y, chia tổng rồi áp dụng ngưỡng đã cho.",
+        "80%vượt ngưỡng A của bài tập. Không phân nhóm chỉ theo thứ hạng."
       ]
     }
   }

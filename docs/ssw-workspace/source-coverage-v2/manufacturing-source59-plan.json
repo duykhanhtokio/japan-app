@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "batch": "source59",
+  "baselineCommit": "4832f53f8407298126fa43c104a266972f2a3831",
+  "sourceId": "mfg1-surface-source",
+  "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+  "groups": [
+    {
+      "key": "area",
+      "pack": 0,
+      "pages": [
+        159,
+        160
+      ],
+      "scope": "Three assessed relations only: two broad faces versus all faces of a specified model, and rack/barrel/continuous arrangement. Actual electrical contacts, anode properties, operating current and whole source pages remain outside this bounded review.",
+      "units": [
+        {
+          "key": "two-broad-faces",
+          "q": 0,
+          "statement": "対象面に端面を含めない計算と、六面をすべて含める計算を区別し、指定した二つの広い面の面積を求める。",
+          "conditions": [
+            "appの穴なし60×40×2mm例では広い二面は2×60×40=4800mm²。源資料の異なる形状・値をコピーせず、対象面の条件を明示する。"
+          ],
+          "refs": [
+            {
+              "page": 159,
+              "y": [
+                0.38,
+                0.75
+              ],
+              "locator": "Section(4) cathode surface area and figure11-3 explicitly excluding end faces; app uses independent rectangular dimensions"
+            }
+          ]
+        },
+        {
+          "key": "six-faces",
+          "q": 1,
+          "statement": "厚さのある直方体で六面が対象なら、広い二面に四側面を加えて表面積を求める。",
+          "conditions": [
+            "穴・接点の除外がないapp例では4800+2×(60+40)×2=5200mm²。実物では指定対象面と接点を確認する。"
+          ],
+          "refs": [
+            {
+              "page": 160,
+              "y": [
+                0.05,
+                0.38
+              ],
+              "locator": "Figure11-4 includes end-face contributions in total surface area; source numeric example and app dimensions deliberately differ"
+            }
+          ]
+        },
+        {
+          "key": "arrangement",
+          "q": 2,
+          "statement": "個別に吊るラック、容器を回転させるバレル、巻材を連続的に送るフープの方式を図から対応させる。",
+          "conditions": [
+            "模型の保持・移動の違いを読む。実物の接続、接点、通電、材質適合や運転操作を認定しない。"
+          ],
+          "refs": [
+            {
+              "page": 160,
+              "y": [
+                0.39,
+                0.87
+              ],
+              "locator": "Rack/barrel/hoop descriptions and figures11-5/11-6; three arrangements and their different workpiece handling"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "defects",
+      "pack": 1,
+      "pages": [
+        164,
+        165,
+        170,
+        204
+      ],
+      "scope": "Three appearance distinctions only. No acceptance of all pinhole/pit/blister causes, contamination sources, polishing settings or diagnosis from real-product photographs.",
+      "units": [
+        {
+          "key": "unplated-discolored",
+          "q": 0,
+          "statement": "一部に皮膜がない不めっきと、皮膜の一部の色が変わる変色を観察名として区別する。",
+          "conditions": [
+            "合成図の観察名を対応させる学習であり、図の色や形だけで原因または製品合否を確定しない。"
+          ],
+          "refs": [
+            {
+              "page": 164,
+              "y": [
+                0.38,
+                0.68
+              ],
+              "locator": "Section(2) discoloration and figure11-8, distinguish visible colour change from its possible causes"
+            },
+            {
+              "page": 165,
+              "y": [
+                0.49,
+                0.79
+              ],
+              "locator": "Section(4) unplated portion and figure11-10, absent coating in part of substrate"
+            }
+          ]
+        },
+        {
+          "key": "gloss-scratch",
+          "q": 1,
+          "statement": "光沢が弱い状態と線状のスクラッチを、同じ照明条件の模型で別々に観察する。",
+          "conditions": [
+            "外観模型は光沢測定値や原因の特定ではない。特定の酸化や洗浄不良へ自動的に結び付けない。"
+          ],
+          "refs": [
+            {
+              "page": 204,
+              "y": [
+                0.06,
+                0.49
+              ],
+              "locator": "Sections(3) insufficient gloss and (4) scratches, with source photo11-11 as a bounded appearance reference"
+            }
+          ]
+        },
+        {
+          "key": "local-overpolish",
+          "q": 2,
+          "statement": "バフ止まりを、同じ位置が研磨され続けてへこみや光沢むら等を生じる不良として読み、モーター停止と混同しない。",
+          "conditions": [
+            "独立した局所跡の模型を読む。実際の原因確認や変更条件は記録・承認手順で確認する。"
+          ],
+          "refs": [
+            {
+              "page": 204,
+              "y": [
+                0.53,
+                0.82
+              ],
+              "locator": "Section(5) repeated polishing at the same position and figure13-12; motor-stopped interpretation is not the source meaning"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "buff",
+      "pack": 2,
+      "pages": [
+        186,
+        190,
+        191,
+        195,
+        196,
+        197,
+        202
+      ],
+      "scope": "Three tested principles only: previous-stage deep scratches, limits of grit/roughness/colour inference, and combined gloss/burr-scratch-removal purposes. Whole-page186 inventory is recorded separately, including unresolved definition/material/quality-effect facets.",
+      "units": [
+        {
+          "key": "residual-scratches",
+          "q": 0,
+          "statement": "粗い傷が残ったまま細かい段階へ進んだことだけで仕上げ完了とせず、前工程の傷と指定評価を確認する。",
+          "conditions": [
+            "appの深い谷は独立した比較模型。粒度名を検査合格の保証とせず、実物を無断で強く研磨しない。"
+          ],
+          "refs": [
+            {
+              "page": 202,
+              "y": [
+                0.71,
+                0.85
+              ],
+              "locator": "Section3.1(5), previous-process scratches and downstream quality dependence"
+            },
+            {
+              "page": 191,
+              "y": [
+                0.62,
+                0.84
+              ],
+              "locator": "Figure13-3 progression from rough to smoother surface; app deliberately adds a residual deep valley to test the condition"
+            }
+          ]
+        },
+        {
+          "key": "grit-not-guarantee",
+          "q": 1,
+          "statement": "番手情報と実測表面粗さを同じ保証値にせず、研磨剤の色や通称だけで全製品の成分も確定しない。",
+          "conditions": [
+            "表13-1の番手・Raは目安の範囲。赤棒の歴史的な粒子説明の違いからも、現用品は製品識別や指定評価を確認する。"
+          ],
+          "refs": [
+            {
+              "page": 197,
+              "y": [
+                0.05,
+                0.69
+              ],
+              "locator": "Table13-1 all four rows: grit and Ra explicitly labelled approximate ranges, not a conversion function"
+            },
+            {
+              "page": 195,
+              "y": [
+                0.27,
+                0.51
+              ],
+              "locator": "Red-bar subsection distinguishes historically used iron oxide from the described silica example; no universal current composition inferred"
+            }
+          ]
+        },
+        {
+          "key": "buff-purposes",
+          "q": 2,
+          "statement": "バフ研磨の目的として光沢を整えることとバリ・傷を除去することの両方を区別して挙げる。",
+          "conditions": [
+            "停止工具のapp模型は回転中の清掃・調整や実演を許可せず、押付け力・回転数も指定しない。"
+          ],
+          "refs": [
+            {
+              "page": 186,
+              "y": [
+                0.55,
+                0.87
+              ],
+              "locator": "Section1.1 purposes: (1) gloss and (2) burr/scratch removal; exact page inventory binds each source region separately"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

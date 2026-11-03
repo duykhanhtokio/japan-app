@@ -199,6 +199,11 @@ def main():
  save(DOC/'reading-candidates.json',annotate(rows,ROOT))
  for r in rows.values():
   previous=previous_rows.get(r['lessonId'],{})
+  previous_sections={s['id']:s for s in previous.get('sections',[])}
+  for section in r['sections']:
+   prior=previous_sections.get(section['id'])
+   if prior and prior.get('sourceHash')==section.get('sourceHash') and 'furigana' in prior:
+    section['furigana']=prior['furigana']
   if r['exam'] and previous.get('exam'):
    old_questions={q['id']:q for q in previous['exam']['questions']}
    for q in r['exam']['questions']:

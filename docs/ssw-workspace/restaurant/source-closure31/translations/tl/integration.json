@@ -3,7 +3,7 @@
   "locale": "tl",
   "shard": "integration",
   "canonicalFile": "docs/ssw-workspace/restaurant/source-closure31/canonical-ja.integration.json",
-  "canonicalSha256": "1c9d6720dec0d6b0cb708fa9c156d28b0c67ebcdab9f0689c57e6232f456a795",
+  "canonicalSha256": "756e14b84dfcc344cb3556ba47813120d8c9cc621099b10abf9515c6c1bc158e",
   "items": {
     "rst31-hygiene2-noro-source-scope": {
       "sourceHash": "288d35c858b0cb11cd7f583c66947b6aa768da3003fa69f357b565ddf15f4db4",
@@ -1684,6 +1684,96 @@
         "Pinagpalit ang pagsusuri para sa 5/8:R at 5/9:W.",
         "Gamitin ang tunay na petsa/pagsusuri; huwag punan ang hindi pa nasuri.",
         "Tamang ugnayan ng 5/8:R at 5/9:W."
+      ]
+    },
+    "rst31-v2-r5-ops-q001": {
+      "sourceHash": "0bb927e49bcbea7311c093b2ea4d8bcab49b5480396a538d48395e358a93cead",
+      "objective": "Kuwentahin ang ugnayan ng cost ratio at gross profit margin gamit ang iisang sales denominator.",
+      "stem": "Ang cost ratio batay sa benta sa parehong panahon ay32%. Magkano ang gross profit margin?",
+      "options": [
+        "68%",
+        "32%",
+        "132%",
+        "0.68%"
+      ],
+      "explanation": "Kapag pareho ang sales denominator,100%ang kabuuan ng dalawang ratio. Kaya100−32＝68%.",
+      "reasons": [
+        "100−32＝68%, ang natitirang bahagi ng parehong benta.",
+        "Inulit lang nito ang cost ratio, hindi ang gross profit margin.",
+        "Dapat100%ang kabuuan; hindi idinadagdag ang32sa100.",
+        "Ang0.68ay decimal na proporsiyon, katumbas ng68%."
+      ]
+    },
+    "rst31-v2-r5-ops-q002": {
+      "sourceHash": "de145920ca58d88d62f33827e6c3af38a820301c42dfd7d96ead539aa1f8b042",
+      "objective": "Hatiin ang standard cost ng isang putahe sa selling price nito at gawing porsiyento.",
+      "stem": "Ang standard cost ng isang putahe ay240yen at ang selling price ay800yen. Magkano ang individual standard cost ratio?",
+      "options": [
+        "3%",
+        "30%",
+        "70%",
+        "Mga333.3%"
+      ],
+      "explanation": "Standard cost ng putahe÷selling price nito×100:240÷800×100＝30%.",
+      "reasons": [
+        "240÷800＝0.3, katumbas ng30%, hindi3%.",
+        "240÷800×100＝30%.",
+        "Ang70%ay gross profit margin sa kondisyong ito, hindi ang cost ratio na hinihingi.",
+        "Binaligtad ang numerator at denominator dahil selling price ang hinati sa cost."
+      ]
+    },
+    "rst31-v2-r5-ops-q003": {
+      "sourceHash": "cb443f2b759d647bc66f0ff7afc79a0cbbcaad1d763db537f97d47a14a849ba8",
+      "objective": "Pagsamahin ang buwanang standard cost ayon sa dami ng nabenta at hatiin sa benta sa parehong buwan.",
+      "stem": "Sa isang buwan,30serving ng putaheA(standard cost200yen)at20serving ng putaheB(standard cost300yen)ang nabenta.40,000yen ang benta ng dalawang putaheng ito. Magkano ang monthly standard cost ratio?",
+      "options": [
+        "12%",
+        "50%",
+        "30%",
+        "3,000%"
+      ],
+      "explanation": "Buwanang standard cost＝200×30＋300×20＝12,000yen. Hatiin sa benta sa parehong buwan para sa dalawang putahe:12,000÷40,000×100＝30%.",
+      "reasons": [
+        "Hindi maaaring ituring na12%ang halagang12,000yen.",
+        "Ang30＋20＝50serving ay dami ng nabenta, hindi agad50%na ratio.",
+        "Pagsamahin ang standard cost na minultiply sa dami, saka hatiin sa kaugnay na benta sa parehong buwan.",
+        "Ang decimal na0.3ay30%; hindi na kailangang ulitin ang pag-multiply sa100."
+      ]
+    },
+    "rst31-v2-r6-ops-q001": {
+      "sourceHash": "0f962bd19a14e6622eb301a0430dbfb5102843a98008df39f4e5549a39a2ad0e",
+      "objective": "Kuwentahin ang customer bawat oras ng paggawa at isaalang-alang ang pagkakaiba ng serbisyo.",
+      "stem": "Sa parehong araw,200customer at40kabuuang oras ng paggawa ang naitala sa full-service restaurant. Aling kuwenta at pasya ang angkop?",
+      "options": [
+        "5customer/oras ng paggawa. Isaalang-alang ang oras sa table service; hindi sapat ang mas mababang bilang kaysa sa ibang service model para sabihing hindi episyente.",
+        "200customer/oras ng paggawa. Bilang lang ng customer ang gamitin, walang oras ng paggawa.",
+        "5customer/oras ng paggawa. Ang mas mababang bilang ay laging hindi episyente, anuman ang serbisyo.",
+        "0.2customer/oras ng paggawa. Hatiin ang oras ng paggawa sa customer."
+      ],
+      "explanation": "200÷40＝5customer/oras ng paggawa. Gumagamit din ng oras ang table service, kaya hindi matitiyak ang kahusayan batay lamang sa pagkakaiba ng bilang sa magkaibang service model.",
+      "reasons": [
+        "Ginagamit ang customer÷kabuuang oras ng paggawa at isinasaalang-alang ang oras para sa serbisyo.",
+        "Walang oras ng paggawa bilang denominator, kaya hindi ito customer bawat oras ng paggawa.",
+        "Tama ang kuwenta, pero hindi isinaalang-alang ang pagkakaiba ng serbisyo.",
+        "Baligtad ang numerator at denominator. Customer ang hahatiin sa oras ng paggawa."
+      ]
+    },
+    "rst31-v2-r6-ops-q002": {
+      "sourceHash": "3afb0bd5ad1c4c425e49e27f5def2b6cfe1fd417409d248cb9c435395bb5a0ef",
+      "objective": "Kuwentahin ang cumulative sales share at gamitin ang ABC bands ng pagsasanay.",
+      "stem": "Benta sa parehong panahon:X50,000yen,Y30,000yen,Z20,000yen. Ayusin mula pinakamalaki. Sa pagsasanay, ang cumulative share sa dulo ng row≤70%ayA,>70%hanggang90%ayB,>90%ayC. Ano ang cumulative share at kategorya ngY?",
+      "options": [
+        "100%, C. Ituring na cumulative hanggangY ang kabuuan ng lahat ng produkto.",
+        "30%, A. Ituring na cumulative share ang sariling share ngY.",
+        "80%, B. Mga hangganan ito ng pagsasanay; maaaring iba ang gamitin ng negosyo.",
+        "80%, A. Ikalawa kayaA, anuman ang cumulative share."
+      ],
+      "explanation": "100,000yen ang kabuuan. HanggangY,50,000＋30,000＝80,000yen o80%ang cumulative sales, kayaBsa kundisyon ng pagsasanay. Maaaring mag-iba ang hangganan ayon sa negosyo.",
+      "reasons": [
+        "100%ay cumulative hanggangZ, hindi hanggangY.",
+        "30%ay share ngYlamang, hindi cumulative mulaX.",
+        "Pinagsama angXatY, hinati sa kabuuan, saka ginamit ang itinakdang hangganan.",
+        "Lampas saAhangganan ng pagsasanay ang80%. Hindi sapat ang ranggo para itakda ang kategorya."
       ]
     }
   }

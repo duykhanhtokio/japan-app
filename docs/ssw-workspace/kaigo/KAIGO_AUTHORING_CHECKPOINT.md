@@ -1567,3 +1567,14 @@ Hostreader kiểm20hoạt động trên6ngày×12locale: ẩnđápán, mởdịc
 Đọc/xemlạiPDF123/in121/hash997bf386, thêm1prompt tựgiải thích vềnghĩaADL/IADL, khôngchỉ kểvídụ. Modelanswer đủhaiđịnhnghĩa,12bảndịch trực tiếp vàkana; giữ20checkcũ và687câutuần. Haiý địnhnghĩa từpartial→covered_ai;62/62ý đãbiết códạy/đánhgiá, nhưng mẫu sốtoànsách vẫn mở vàkhôngđóngtrang123 vì nhãnhình cònpending.
 
 Hostreader21check trên6ngày×12locale đạt ẩnlờiđáp/mởdịch theo ngônngữ/đóngmởđápán/kana. Hồsơkaigo-adl-iadl-definition-review/reader-validation.json. KhôngthayID/ngày/khóa tiếnđộ hayJapanese-master; khôngnative/pixel/chuyênmôn/bảnngữ/thờilượng. Rootlưuvàxácminhremote trước báolưubền.
+
+## 2026-11-03 — PDF109: giải thích, lựa chọn và hỗ trợ quyết định
+
+Nền `4832f53` đã lưu đợt sửa ba chuỗi Nhật/ruby di chuyển/ADL/IADL bị mất ký tự; guard mới kiểm cả kana Latin và nhãn khái niệm, không chỉ ghép lại chuỗi. Đợt này đọc chữ và xem PDF109/in107, kiểm kê đủ36text spans+13vectors:8facet, không phải một ánh xạ theo chủ đề. Bốn facet có dạy/đánh giá riêng: nêu lựa chọn, giải thích lợi/bất lợi,本人 tự chọn và tôn trọng/hỗ trợ thực hiện quyết định. Một reader check mới ngày126/tuần18, `kaigo-atomic-listening-consent`, có Nhật/ruby và12bản dịch trực tiếp. Giữ21check cũ,26tuần/687câu, IDs/ngày/state/revisions vàJapanese master.
+
+Bốn facet mới còn candidate: mục tiêu sống theo bản thân, khó khăn giao tiếp do bệnh/khuyết tật, phương pháp theo từng người, bối cảnh ICT của năm xuất bản. Không coi cùng chủ đề là bằng chứng trực tiếp; không phát biểu mới về tỷ lệ dùngICT hiện nay. Kaigo70known/66covered_ai, kiểm kê ngữ nghĩa11trang nhưng app-covered toàn trang vẫn9; mẫu số276trang còn mở, phần trămnull. Hồ sơ `source-coverage-v2/construction-kaigo-batch5-source-review.json`. Actual Kaigo host reader84day/locale cases/264check appearances đạt ẩn/mở/đóng đáp án, dịch rõ ràng vàruby. Khôngbrowser/native/device/domain/native-language/duration acceptance. Root phụ trách lưu, đẩy vàxácminhremote.
+
+
+### PDF109 — sửa lỗi câu Nhật khi tiếp quản, 03/11/2026
+
+Hoạt động consent mới bị mất phần kana và dấu câu trong script cũ do xử lý chuỗi đơn như tuple. Đã khôi phục nguyên ý câu hỏi thông tin cần cung cấp và hỗ trợ sau quyết định; lời đáp giữ đủ lựa chọn, lợi/bất lợi, tự chọn, tôn trọng và hỗ trợ thực hiện. Ruby mới đầy đủ; 12 bản dịch đối chiếu với Nhật hoàn chỉnh. Bốn hash đánh giá nối lại sau kiểm nghĩa, không dùng đổi hash để thay kiểm nội dung. Guard bắt câu hỏng dù ruby ghép khớp. Actual reader host chạy lại đạt22hoạt động/12ngôn ngữ trên7ngày; không đổi21hoạt động trước,26bank/687câu hoặcJapanese master. Chi tiết bản cuối tại `source-coverage-v2/construction-kaigo-batch5-REPORT.vi.md`; chuyên môn/bản ngữ/thiết bị/thời lượng vẫn chưa nghiệm thu.

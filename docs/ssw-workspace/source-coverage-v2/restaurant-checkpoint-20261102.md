@@ -1,3 +1,20 @@
+# Nhà hàng — hoàn thiện ba nhóm và tiếp quản r5/r6,03/11/2026
+
+Mốc đối chiếu bảo toàn: `4832f53f8407298126fa43c104a266972f2a3831`. Tiếp quản phần r5 đã sinh, tự đọc nguồn chữ/ảnh2号店舗運営trang7/12/20; hash nguồn33trang khớp `6c9d1d11108cb4bc114cdf653f2c1061a7f6606dfd4933119a15bc599a98225f`.
+
+- Nhóm1: hoàn thiện3câu nguyên giá còn dở: bù nguyên giá–tỷ suất lãi gộp; nguyên giá chuẩn từng món/giá bán; tổng nguyên giá tháng có trọng số/chính doanh thu tháng đó.
+- Nhóm2: thêm1câu tính200khách/40giờ công và xét thời gian phục vụ tại bàn; không đánh đồng chỉ số thấp với kém hiệu quả khi khác hình thức phục vụ.
+- Nhóm3: thêm1câu tính lũy kế doanh thuX/Y/Z và phân nhómABC theo ngưỡng luyện tập; giữ rõ ngưỡng tùy doanh nghiệp.
+- Đủ5câu mới,60cặp dịch theo revision và660trường dịch;50trường ruby mới được căn chỉnh, kiểm từ theo ngữ cảnh. Bảo toàn nguyên282câu cũ, thứ tự câu, đáp án, ruby, mọi bài/ảnh/thuật ngữ cũ và dịch cũ. Dịch AI chưa duyệt bản ngữ.
+- Sổ v2 hiện1479mục,55covered_ai,1excluded,1423mục còn mở; mẫu số nguồn vẫn mở, không có tỷ lệ bao phủ. Một mục loại và phân vùng trang12 là phần tiếp quản cuối phiên cũ, không tính thành ý đóng mới của r6. Tự kiểm mới đóng5ý, từ50lên55.
+- Source31 biên dịch639hierarchy units/1478facts/136sections/287supplement questions;580canonical items và6960bản ghi ngôn ngữ với44916trường dịch. Đây là số biên dịch, không phải bằng chứng toàn nguồn đã nghiệm thu.
+
+Bằng chứng hẹp: `restaurant-r5-cost-assessment-review-20261103.json`, `restaurant-r6-labor-abc-review-20261103.json`, `restaurant-r5-r6-validation-20261103.json`; giữ nguyên receipt r5 phiên cũ và trạng thái trước/sau. V2contract và strict12locale gate PASS. Kiểm render dùng mốc bảo toàn hiện hành qua `RESTAURANT_SOURCE31_BASE_REF`; mốc lịch sử8a0ebfe5không có trong clone nông hiện tại. Kiểm render không chứng minh thiết bị thật hoặc thời lượng học.
+
+Tiếp theo: f034 thiếu bước phát phiếu tại thanh toán; rà các ý/bảng/hình chưa đủ bằng chứng, đặc biệt các mục an toàn/nhãn chính thức/うぐいす骨–ほほ骨. Không đóng toàn trang vì một công thức đạt. Chưa có chuyên gia, bản ngữ, thiết bị thật hay thời lượng đo thực. Root xử lý commit/push và xác minh persistence; chưa tự nhận đã lưu từ xa.
+
+---
+
 # Nhà hàng — tiếp ba nhóm vận hành,03/11/2026
 
 Tự đọc chữ/ảnh PDF2号店舗運営trang7/8/12/20/21, xác minh hash6c9d1d… đúng nguồn33trang. Rà18ý trong3nhóm: nhân thời; công thức nguyên giá; kênh bán/tái ghé.8ý đủ bằng chứng trực tiếp,10ý giữpartial với khoảng trống cụ thể (không chỉ cùng chủ đề). Sổ hiện50covered_ai/1478known,1428ý còn mở; mẫu số chưa chốt. Các mốc5covered_ai/315gaps bên dưới là lịch sử cũ, không dùng làm số hiện hành.

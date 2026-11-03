@@ -1,5 +1,6 @@
 /** Supplement binding, stale-revision rejection and React/RNW rendering; no device certification. */
 const fs=require('fs'),path=require('path'),assert=require('assert/strict'),crypto=require('crypto'),cp=require('child_process');
+const baselineRef=process.env.RESTAURANT_SOURCE31_BASE_REF||'8a0ebfe5';
 const root=path.resolve(__dirname,'../..'),out=process.env.RESTAURANT_SOURCE31_QA_DIR||'/tmp/restaurant-source31-qa';fs.mkdirSync(out,{recursive:true});
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 (async()=>{
@@ -24,6 +25,6 @@ const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
    sections+=row.sections.length;
   }
  }
- for(const p of ['src/services/restaurant-study-state.ts',...['1','2'].flatMap(l=>[`src/data/restaurant/lessons.${l}.ja.json`,`src/data/restaurant/exams.${l}.ja.json`])])assert(fs.readFileSync(path.join(root,p)).equals(cp.execFileSync('git',['show','8a0ebfe5:'+p],{cwd:root,maxBuffer:30e6})),p);
- const result={status:'PASS',renders,sections,questions,figures,staleLessonRejected:true,staleQuestionRejected:true,canonicalContentAndProgressPreserved:true,locales:12,completeTargetsRequired:process.argv.includes('--require-locales'),browserTested:false,physicalDeviceTested:false};fs.writeFileSync(path.join(root,'docs/ssw-workspace/restaurant/source-closure31/integration-qa.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
+ for(const p of ['src/services/restaurant-study-state.ts',...['1','2'].flatMap(l=>[`src/data/restaurant/lessons.${l}.ja.json`,`src/data/restaurant/exams.${l}.ja.json`])])assert(fs.readFileSync(path.join(root,p)).equals(cp.execFileSync('git',['show',baselineRef+':'+p],{cwd:root,maxBuffer:30e6})),p);
+ const result={status:'PASS',baselineRef,renders,sections,questions,figures,staleLessonRejected:true,staleQuestionRejected:true,canonicalContentAndProgressPreserved:true,locales:12,completeTargetsRequired:process.argv.includes('--require-locales'),browserTested:false,physicalDeviceTested:false};fs.writeFileSync(path.join(root,'docs/ssw-workspace/restaurant/source-closure31/integration-qa.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
 })().catch(e=>{console.error(e);process.exitCode=1});
