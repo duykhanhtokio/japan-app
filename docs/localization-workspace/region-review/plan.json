@@ -1,0 +1,444 @@
+{
+  "mode": "REGION_FIRST_CONTEXT_REVIEW",
+  "baselineCommit": "c70dd54c7f35956fda4ae329d8785d00eb31c9cf",
+  "canonicalQueue": "docs/localization-workspace/naturalness-review-2026-10-25/prefecture-queue.json",
+  "regionMapping": "src/data/world-regions.ts",
+  "activeRegionId": "chubu",
+  "proposedOrder": [
+    "chubu",
+    "kinki",
+    "hokkaido",
+    "tohoku",
+    "kanto",
+    "chugoku",
+    "shikoku",
+    "kyushu"
+  ],
+  "workers": 6,
+  "semanticCrossReview": false,
+  "nativeReviewed": false,
+  "fullContextReviewedScenarios": 448,
+  "remainingContextScenarios": 6680,
+  "fastScreenedScenarios": 7128,
+  "rules": [
+    "Recompute current membership and counts from canonical queue before each work group; this file is a snapshot.",
+    "All six workers focus on active region and own disjoint city/scenario groups; exclusive ownership of any shared locale-batch file.",
+    "Finish Japanese context plus all12 sentence/task sets for each new context-review receipt.",
+    "Retain all prior valid receipts; resolve file ownership before work, not after concurrent edits.",
+    "Do not move to another region merely because one small group finishes; rebalance unread work within active region.",
+    "A region is complete only when all its current scenarios have valid full-context receipts; source/native/device acceptance remain separate.",
+    "Fast-screening completion never increases the full-context count.",
+    "Persist sensible completed batches while keeping whole-region acceptance separate."
+  ],
+  "regions": [
+    {
+      "regionId": "hokkaido",
+      "prefectures": [
+        {
+          "prefectureId": "PRF-001",
+          "nameJa": "北海道",
+          "nameEn": "Hokkaido",
+          "totalScenarios": 299,
+          "contextReviewedScenarios": 0
+        }
+      ],
+      "totalScenarios": 299,
+      "contextReviewedScenarios": 0,
+      "remainingScenarios": 299,
+      "status": "NOT_STARTED",
+      "fastScreenedScenarios": 299
+    },
+    {
+      "regionId": "tohoku",
+      "prefectures": [
+        {
+          "prefectureId": "PRF-002",
+          "nameJa": "青森県",
+          "nameEn": "Aomori",
+          "totalScenarios": 93,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-003",
+          "nameJa": "岩手県",
+          "nameEn": "Iwate",
+          "totalScenarios": 125,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-004",
+          "nameJa": "宮城県",
+          "nameEn": "Miyagi",
+          "totalScenarios": 133,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-005",
+          "nameJa": "秋田県",
+          "nameEn": "Akita",
+          "totalScenarios": 117,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-006",
+          "nameJa": "山形県",
+          "nameEn": "Yamagata",
+          "totalScenarios": 117,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-007",
+          "nameJa": "福島県",
+          "nameEn": "Fukushima",
+          "totalScenarios": 117,
+          "contextReviewedScenarios": 0
+        }
+      ],
+      "totalScenarios": 702,
+      "contextReviewedScenarios": 0,
+      "remainingScenarios": 702,
+      "status": "NOT_STARTED",
+      "fastScreenedScenarios": 702
+    },
+    {
+      "regionId": "kanto",
+      "prefectures": [
+        {
+          "prefectureId": "PRF-008",
+          "nameJa": "茨城県",
+          "nameEn": "Ibaraki",
+          "totalScenarios": 269,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-009",
+          "nameJa": "栃木県",
+          "nameEn": "Tochigi",
+          "totalScenarios": 125,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-010",
+          "nameJa": "群馬県",
+          "nameEn": "Gunma",
+          "totalScenarios": 109,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-011",
+          "nameJa": "埼玉県",
+          "nameEn": "Saitama",
+          "totalScenarios": 333,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-012",
+          "nameJa": "千葉県",
+          "nameEn": "Chiba",
+          "totalScenarios": 309,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-013",
+          "nameJa": "東京都",
+          "nameEn": "Tokyo",
+          "totalScenarios": 373,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-014",
+          "nameJa": "神奈川県",
+          "nameEn": "Kanagawa",
+          "totalScenarios": 163,
+          "contextReviewedScenarios": 0
+        }
+      ],
+      "totalScenarios": 1681,
+      "contextReviewedScenarios": 0,
+      "remainingScenarios": 1681,
+      "status": "NOT_STARTED",
+      "fastScreenedScenarios": 1681
+    },
+    {
+      "regionId": "chubu",
+      "prefectures": [
+        {
+          "prefectureId": "PRF-015",
+          "nameJa": "新潟県",
+          "nameEn": "Niigata",
+          "totalScenarios": 173,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-016",
+          "nameJa": "富山県",
+          "nameEn": "Toyama",
+          "totalScenarios": 93,
+          "contextReviewedScenarios": 3
+        },
+        {
+          "prefectureId": "PRF-017",
+          "nameJa": "石川県",
+          "nameEn": "Ishikawa",
+          "totalScenarios": 101,
+          "contextReviewedScenarios": 80
+        },
+        {
+          "prefectureId": "PRF-018",
+          "nameJa": "福井県",
+          "nameEn": "Fukui",
+          "totalScenarios": 85,
+          "contextReviewedScenarios": 43
+        },
+        {
+          "prefectureId": "PRF-019",
+          "nameJa": "山梨県",
+          "nameEn": "Yamanashi",
+          "totalScenarios": 112,
+          "contextReviewedScenarios": 62
+        },
+        {
+          "prefectureId": "PRF-020",
+          "nameJa": "長野県",
+          "nameEn": "Nagano",
+          "totalScenarios": 173,
+          "contextReviewedScenarios": 125
+        },
+        {
+          "prefectureId": "PRF-021",
+          "nameJa": "岐阜県",
+          "nameEn": "Gifu",
+          "totalScenarios": 181,
+          "contextReviewedScenarios": 97
+        },
+        {
+          "prefectureId": "PRF-022",
+          "nameJa": "静岡県",
+          "nameEn": "Shizuoka",
+          "totalScenarios": 197,
+          "contextReviewedScenarios": 29
+        },
+        {
+          "prefectureId": "PRF-023",
+          "nameJa": "愛知県",
+          "nameEn": "Aichi",
+          "totalScenarios": 317,
+          "contextReviewedScenarios": 0
+        }
+      ],
+      "totalScenarios": 1432,
+      "contextReviewedScenarios": 439,
+      "remainingScenarios": 993,
+      "status": "IN_PROGRESS",
+      "fastScreenedScenarios": 1432
+    },
+    {
+      "regionId": "kinki",
+      "prefectures": [
+        {
+          "prefectureId": "PRF-024",
+          "nameJa": "三重県",
+          "nameEn": "Mie",
+          "totalScenarios": 125,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-025",
+          "nameJa": "滋賀県",
+          "nameEn": "Shiga",
+          "totalScenarios": 117,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-026",
+          "nameJa": "京都府",
+          "nameEn": "Kyoto",
+          "totalScenarios": 133,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-027",
+          "nameJa": "大阪府",
+          "nameEn": "Osaka",
+          "totalScenarios": 277,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-028",
+          "nameJa": "兵庫県",
+          "nameEn": "Hyogo",
+          "totalScenarios": 245,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-029",
+          "nameJa": "奈良県",
+          "nameEn": "Nara",
+          "totalScenarios": 117,
+          "contextReviewedScenarios": 9
+        },
+        {
+          "prefectureId": "PRF-030",
+          "nameJa": "和歌山県",
+          "nameEn": "Wakayama",
+          "totalScenarios": 101,
+          "contextReviewedScenarios": 0
+        }
+      ],
+      "totalScenarios": 1115,
+      "contextReviewedScenarios": 9,
+      "remainingScenarios": 1106,
+      "status": "IN_PROGRESS",
+      "fastScreenedScenarios": 1115
+    },
+    {
+      "regionId": "chugoku",
+      "prefectures": [
+        {
+          "prefectureId": "PRF-031",
+          "nameJa": "鳥取県",
+          "nameEn": "Tottori",
+          "totalScenarios": 40,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-032",
+          "nameJa": "島根県",
+          "nameEn": "Shimane",
+          "totalScenarios": 64,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-033",
+          "nameJa": "岡山県",
+          "nameEn": "Okayama",
+          "totalScenarios": 133,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-034",
+          "nameJa": "広島県",
+          "nameEn": "Hiroshima",
+          "totalScenarios": 125,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-035",
+          "nameJa": "山口県",
+          "nameEn": "Yamaguchi",
+          "totalScenarios": 117,
+          "contextReviewedScenarios": 0
+        }
+      ],
+      "totalScenarios": 479,
+      "contextReviewedScenarios": 0,
+      "remainingScenarios": 479,
+      "status": "NOT_STARTED",
+      "fastScreenedScenarios": 479
+    },
+    {
+      "regionId": "shikoku",
+      "prefectures": [
+        {
+          "prefectureId": "PRF-036",
+          "nameJa": "徳島県",
+          "nameEn": "Tokushima",
+          "totalScenarios": 77,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-037",
+          "nameJa": "香川県",
+          "nameEn": "Kagawa",
+          "totalScenarios": 77,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-038",
+          "nameJa": "愛媛県",
+          "nameEn": "Ehime",
+          "totalScenarios": 101,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-039",
+          "nameJa": "高知県",
+          "nameEn": "Kochi",
+          "totalScenarios": 101,
+          "contextReviewedScenarios": 0
+        }
+      ],
+      "totalScenarios": 356,
+      "contextReviewedScenarios": 0,
+      "remainingScenarios": 356,
+      "status": "NOT_STARTED",
+      "fastScreenedScenarios": 356
+    },
+    {
+      "regionId": "kyushu",
+      "prefectures": [
+        {
+          "prefectureId": "PRF-040",
+          "nameJa": "福岡県",
+          "nameEn": "Fukuoka",
+          "totalScenarios": 245,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-041",
+          "nameJa": "佐賀県",
+          "nameEn": "Saga",
+          "totalScenarios": 93,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-042",
+          "nameJa": "長崎県",
+          "nameEn": "Nagasaki",
+          "totalScenarios": 117,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-043",
+          "nameJa": "熊本県",
+          "nameEn": "Kumamoto",
+          "totalScenarios": 125,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-044",
+          "nameJa": "大分県",
+          "nameEn": "Oita",
+          "totalScenarios": 125,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-045",
+          "nameJa": "宮崎県",
+          "nameEn": "Miyazaki",
+          "totalScenarios": 93,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-046",
+          "nameJa": "鹿児島県",
+          "nameEn": "Kagoshima",
+          "totalScenarios": 165,
+          "contextReviewedScenarios": 0
+        },
+        {
+          "prefectureId": "PRF-047",
+          "nameJa": "沖縄県",
+          "nameEn": "Okinawa",
+          "totalScenarios": 101,
+          "contextReviewedScenarios": 0
+        }
+      ],
+      "totalScenarios": 1064,
+      "contextReviewedScenarios": 0,
+      "remainingScenarios": 1064,
+      "status": "NOT_STARTED",
+      "fastScreenedScenarios": 1064
+    }
+  ]
+}
