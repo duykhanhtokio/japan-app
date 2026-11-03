@@ -1,20 +1,16 @@
 # Kyushu & Okinawa — rà ngữ cảnh đủ 12 ngôn ngữ
 
-**462/1.064 bài** có receipt/hash hợp lệ. Còn **602 bài**; chưa hoàn tất vùng.
+**502/1.064 bài** có receipt/hash hợp lệ tại checkpoint cục bộ. Còn **562 bài**; chưa hoàn tất vùng.
 
-Giữ nguyên bằng chứng248 bài đã lưu tại038728741. Sáu phạm vi độc lập, không kiểm chéo ngữ nghĩa. Điều phối chỉ kiểm quyền sở hữu, cấu trúc, guard và hash. Không tính sàng lọc tự động. Rà AI không thay cho duyệt bản ngữ, nguồn Nhật, metadata, âm thanh, thiết bị hoặc nghiệm thu phát hành.
+Mốc GitHub đã xác minh trong phiên:462 bài tại2696054ec. Lượt này khôi phục25 bài có bằng chứng hợp lệ từ checkpoint cục bộ409, không rà lại;6 AI độc lập rà mới15 bài,184 sửa đổi. Giữ nguyên byte mọi receipt cũ. Không kiểm chéo ngữ nghĩa; điều phối chỉ kiểm quyền sở hữu, cấu trúc, guard và hash. Push bị auto-review từ chối quyền; chưa xác minh lưu GitHub cho kết quả mới.
 
 | AI | Phạm vi | Đã rà/tổng | Còn |
 |---|---|---:|---:|
-|1|Fukuoka|86/245|159|
-|2|Saga + Nagasaki|82/210|128|
-|3|Kumamoto|72/125|53|
-|4|Oita + Miyazaki|70/218|148|
-|5|Kagoshima|79/165|86|
-|6|Okinawa|73/101|28|
+|1|Fukuoka|89/245|156|
+|2|Saga + Nagasaki|102/210|108|
+|3|Kumamoto|79/125|46|
+|4|Oita + Miyazaki|77/218|141|
+|5|Kagoshima|81/165|84|
+|6|Okinawa|74/101|27|
 
-Bằng chứng mới nằm trong `worker-N-part-NNNN.json`; giữ nguyên byte các file cũ. Khi tiếp tục, nạp TOÀN BỘ `worker-N*.json` của AI tương ứng vào input, giữ đủ reviews và changes. Integrator kiểm bằng chứng cũ không mất/đổi trước khi ghi phần mới.
-
-Tiếp tục từ pendingScenarioIds. SourceIssues ghi riêng. `check-region.cjs` kiểm12×16 trường/bài, hash và queue của vùng; không thay cho kiểm toàn corpus. `runtime-qa.json` là mốc lịch sử theo đúng file.
-
-Lưu lên duykhanhtokio/japan-app, nhánh recovery/jlpt-n3-n1 đã được người dùng cho phép. Chỉ xác nhận lưu sau check-work-persistence.mjs.
+Tiếp tục từ pendingScenarioIds, trừ mọi ID có receipt đầy đủ trong staging. Nạp toàn bộ worker-N*.json của đúng AI và giữ đủ reviews/changes trước khi tích hợp. check-region.cjs kiểm12×16 trường/bài, hash và queue riêng vùng. Không tính sàng lọc là rà ngữ nghĩa. Rà AI không thay cho duyệt bản ngữ, metadata, âm thanh, thiết bị hoặc nghiệm thu phát hành.
