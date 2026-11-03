@@ -7,10 +7,12 @@ read Japanese context and all twelve target sets; it never infers semantic revie
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SESSION = ROOT / 'docs/localization-workspace/region-review/chubu/session-001'
+SESSION = ROOT / os.environ.get('DIALOGUE_REVIEW_SESSION', 'docs/localization-workspace/region-review/chubu/session-001')
+assert SESSION.resolve().is_relative_to((ROOT / 'docs/localization-workspace/region-review').resolve()), 'Invalid review session'
 LOCALES = ['en', 'vi', 'id', 'tl', 'zh-CN', 'zh-TW', 'hi', 'bn', 'ne', 'my', 'th', 'km']
 
 
