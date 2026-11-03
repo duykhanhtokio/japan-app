@@ -1,0 +1,50 @@
+{
+  "status": "SCREENING_COMPLETE_NOT_FULL_CONTEXT_REVIEW",
+  "cluster": "001",
+  "selectedScenarios": 1000,
+  "screenedFields": 192000,
+  "selectionSha256": "bd77f24bc8f36ad430fba02dfc16907d2bd59e657d41a41c28ae6673d96e96d5",
+  "initialSignalRecords": 251,
+  "initialUniqueFlaggedUnits": 251,
+  "reusedCurrentRevisionDecisions": 251,
+  "priorDecisionRecordsByDisposition": {
+    "acceptable": 243,
+    "fixed": 8
+  },
+  "novelOrStaleUnits": 0,
+  "newlyAdjudicatedUnits": 0,
+  "confirmedNewErrors": 0,
+  "newFixes": 0,
+  "deferredUnits": 0,
+  "unprocessedOverflowUnits": 0,
+  "finalSignalRecords": 251,
+  "finalUnresolvedCandidates": 0,
+  "fullyContextReviewedScenarios": 448,
+  "fullContextCountIncrement": 0,
+  "nativeReviewed": false,
+  "semanticReviewComplete": false,
+  "workerPacketsDispatched": 0,
+  "workerPolicy": "Only novel/stale signals; up to6 disjoint workers,30 units per packet,max2 bounded waves; no duplicate review or implicit acceptance of overflow. No packets required this cluster.",
+  "adjudicationLogSha256": {
+    "docs/localization-workspace/quality-workspace/adjudications/dialogue_ne_my.json": "edf2fae68f232460c655425b4affb3fea729cb2a40c56d645ca4575b6557f066",
+    "docs/localization-workspace/quality-workspace/adjudications/dialogue_th_km.json": "a25e94a0595683cdc7d3bad9808250ebe9f9cd27b9b3f4c9d272d1961a0a7c01",
+    "docs/localization-workspace/quality-workspace/adjudications/dialogue_hi_bn.json": "076d369d5cfb6148055ef99eab5851b6419f9bbdc69e0f62eb6ddc8c2dadb5bd",
+    "docs/localization-workspace/quality-workspace/adjudications/dialogue_zh.json": "ea200b834afc67b5543fa6c2965c25b4d3a7a0eab36dfe532123d066e5662629",
+    "docs/localization-workspace/quality-workspace/adjudications/dialogue_en_vi.json": "0a9c713b40b44165e5aaf0f77a23deeb4b7e13e767f912b950cb60a5bf101a6b",
+    "docs/localization-workspace/quality-workspace/adjudications/dialogue_id_tl.json": "de82950312028cce8dedd35e9265291f475789aad73581c346b66f2ad0c762c1"
+  },
+  "tests": [
+    "subset2 scenarios=384fields",
+    "duplicate and unknown selections rejected",
+    "initial/final selection and signal totals match",
+    "all251 historical decisions match current source/target hashes and rules",
+    "selected1000 disjoint from448 full-context reviews"
+  ],
+  "limitations": [
+    "Unflagged content is not certified semantically correct.",
+    "Current accepted flags remain visible as signals, not confirmed errors.",
+    "Reused historical decisions are not newly performed review."
+  ],
+  "initialFinalInventoryMatches": true,
+  "screenedInventorySha256": "596a5f86fcd41cfd4f41ed1b362834aafae073022fbdfac8c54bb442c993e4e8"
+}

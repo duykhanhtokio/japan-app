@@ -70,13 +70,21 @@ def owner_for(batch, locale, policy):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', required=True)
+    parser.add_argument('--scenario-ids', help='JSON list or selection object containing scenarioIds; screening only')
     args = parser.parse_args()
     out = Path(args.out).resolve()
     out.mkdir(parents=True, exist_ok=True)
     base = ROOT / 'docs/localization-workspace'
     policy = read(base / 'DIALOGUE_TRANSLATION_OWNERSHIP.json')
     index = read(ROOT / 'src/data/dialogue-content/locale-batch-index.json')
-    batches = sorted(set(index.values()))
+    selected = None
+    if args.scenario_ids:
+        selection = json.loads(Path(args.scenario_ids).read_text(encoding='utf-8'))
+        selected_ids = selection if isinstance(selection, list) else selection['scenarioIds']
+        assert selected_ids and len(selected_ids) == len(set(selected_ids)), 'Empty/duplicate selection'
+        selected = set(selected_ids)
+        assert selected <= set(index), 'Unknown scenario in selection'
+    batches = sorted({index[sid] for sid in selected} if selected is not None else set(index.values()))
     counts = collections.Counter()
     by_locale = collections.defaultdict(collections.Counter)
     by_owner = collections.defaultdict(collections.Counter)
@@ -100,7 +108,7 @@ def main():
         for batch in batches:
             source_path = base / 'sources' / f'dialogue-batch-{batch}.ja.json'
             source = read(source_path)
-            seen_scenarios.update(source['scenarios'])
+            seen_scenarios.update(sid for sid in source['scenarios'] if selected is None or sid in selected)
             for locale in LOCALES:
                 relative = f'src/data/dialogue-content/locale-batches/{locale}/{batch}.json'
                 path = ROOT / relative
@@ -111,6 +119,8 @@ def main():
                 assert pack['status'] == 'translated_ai_unreviewed' and pack['nativeReviewed'] is False
                 assert set(pack['scenarios']) == set(source['scenarios'])
                 for sid, scenario in source['scenarios'].items():
+                    if selected is not None and sid not in selected:
+                        continue
                     actual = pack['scenarios'][sid]['turns']
                     assert set(actual) == set(scenario['turns'])
                     for tid, original in scenario['turns'].items():
@@ -175,10 +185,12 @@ def main():
                 for record in group['refs']:
                     emit(dict(record), ['many_sources_same_utterance_signal'])
 
-    assert seen_scenarios == set(index)
+    assert seen_scenarios == (selected if selected is not None else set(index))
     summary = {'status': 'SCREENING_SIGNALS_REQUIRE_AUTHOR_ADJUDICATION',
                'baselineCommit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
                'canonicalScenarios': len(index), 'batches': len(batches),
+               'screenedScenarios': len(seen_scenarios),
+               'selectionSha256': digest('\n'.join(sorted(seen_scenarios))),
                'screenedFileCount': len(INVENTORY),
                'inventorySha256': digest('\n'.join(k+'\0'+v for k,v in sorted(INVENTORY.items()))),
                'coverage': dict(counts), 'byLocale': dict(by_locale), 'byOwner': dict(by_owner),
@@ -189,7 +201,7 @@ def main():
     (out / 'screening-inventory.json').write_text(json.dumps(INVENTORY, sort_keys=True, indent=2) + '\n', encoding='utf-8')
     (out / 'screening-summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     (out / 'screening-packs.json').write_text(json.dumps(pack_summary, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(json.dumps({'scenarios': len(index), 'batches': len(batches), 'counts': dict(counts), 'flaggedPacks': len(pack_summary), 'byOwner': dict(by_owner)}, ensure_ascii=False))
+    print(json.dumps({'scenarios': len(seen_scenarios), 'canonicalScenarios': len(index), 'batches': len(batches), 'counts': dict(counts), 'flaggedPacks': len(pack_summary), 'byOwner': dict(by_owner)}, ensure_ascii=False))
 
 
 if __name__ == '__main__':
