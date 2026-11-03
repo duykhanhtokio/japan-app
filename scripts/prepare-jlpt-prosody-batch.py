@@ -11,6 +11,8 @@ import os
 import shutil
 import subprocess
 import sys
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from jlpt_audio_prosody import load_profile, fingerprint, speech_settings, candidate_root
 
@@ -115,6 +117,9 @@ def main():
     parser.add_argument('--candidate-dir', default=CANDIDATES)
     parser.add_argument('--report', default=QUEUE)
     parser.add_argument('--port', type=int, default=50128)
+    parser.add_argument('--jobs', type=int, choices=range(1, 5), default=1)
+    parser.add_argument('--cpu-threads', type=int, choices=range(1, 5), default=2)
+    parser.add_argument('--restart-every', type=int, choices=range(1, 513), default=6)
     args = parser.parse_args()
     profile = load_profile(ROOT / args.profile)
     output = candidate_root(ROOT, args.candidate_dir, args.profile)
@@ -134,18 +139,46 @@ def main():
     if args.render and not ready:
         raise RuntimeError('No executable VOICEVOX engine; no audio or app manifest was changed')
     if args.render:
-        for row in rows:
+        lock = threading.Lock()
+        cache = output / 'shared-turn-cache'
+        cache.mkdir(parents=True, exist_ok=True)
+        def render(index, row):
             check_snapshot(row)
             generator = 'generate-jlpt-original-audio.py' if row['level'] in ('n5', 'n4', 'n3') else 'generate-jlpt-original-n2-audio.py'
-            subprocess.run([sys.executable, str(ROOT / 'scripts' / generator), '--engine', str(engine),
-                            '--level', row['level'], '--exam-number', str(row['number']), '--port', str(args.port),
-                            '--continuous-bitrate-kbps', str(row['continuousBitrateKbps']),
-                            '--prosody-profile', args.profile, '--candidate-dir', args.candidate_dir], cwd=ROOT, check=True)
-            row.update(validate_candidate(row, output, profile))
-            report['renderedCandidates'] += 1
-            save()
-        report['status'] = '30_candidates_rendered_listening_and_integration_pending'
+            log_path = output / f"{row['level']}-{row['number']:02d}.log"
+            with lock:
+                row['status'] = 'rendering'
+                row['logPath'] = str(log_path.relative_to(ROOT))
+                save()
+            with log_path.open('w') as log:
+                subprocess.run([sys.executable, str(ROOT / 'scripts' / generator), '--engine', str(engine),
+                                '--level', row['level'], '--exam-number', str(row['number']), '--port', str(args.port + index),
+                                '--cpu-threads', str(args.cpu_threads), '--restart-every', str(args.restart_every),
+                                '--cache-dir', str(cache), '--continuous-bitrate-kbps', str(row['continuousBitrateKbps']),
+                                '--prosody-profile', args.profile, '--candidate-dir', args.candidate_dir], cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=True)
+            result = validate_candidate(row, output, profile)
+            with lock:
+                row.update(result)
+                report['renderedCandidates'] += 1
+                save()
+                print(json.dumps({'renderedCandidates': report['renderedCandidates'], 'examId': row['examId'], 'durationMs': result['durationMs']}), flush=True)
+        failures = []
+        with ThreadPoolExecutor(max_workers=args.jobs) as executor:
+            futures = {executor.submit(render, i, row): row for i, row in enumerate(rows)}
+            for future in as_completed(futures):
+                row = futures[future]
+                try:
+                    future.result()
+                except Exception as error:
+                    with lock:
+                        row['status'] = 'render_or_validation_failed'
+                        row['error'] = str(error)
+                        failures.append(row['examId'])
+                        save()
+        report['status'] = '30_candidates_rendered_listening_and_integration_pending' if not failures else 'partial_render_with_local_failures'
         save()
+        if failures:
+            raise RuntimeError('Local render/validation failures: ' + ', '.join(failures))
     print(json.dumps({'status': report['status'], 'forms': len(rows), 'renderedCandidates': report['renderedCandidates'],
                       'installedNewAudioForms': 0, 'profileStatus': profile['status']}))
 

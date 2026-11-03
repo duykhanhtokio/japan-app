@@ -23,6 +23,9 @@ def load_profile(path):
             raise ValueError('Candidate profile cannot claim listening acceptance')
     if profile['midListeningMusicMs'] != 60000:
         raise ValueError('Preserve exact 60000 ms instrumental rest')
+    limit = profile.get('inferenceMaxMoras', 160)
+    if isinstance(limit, bool) or not isinstance(limit, int) or not 8 <= limit <= 512:
+        raise ValueError('Invalid inference part size')
     for section in ('query', 'boundary'):
         for key, value in profile[section].items():
             if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0 or value > 2:
@@ -71,6 +74,38 @@ def cache_key(text, speaker_id, engine_version, profile, level, mode):
     data = {'text': text, 'speaker': speaker_id, 'engineVersion': engine_version, 'profile': profile,
             'level': level, 'mode': mode, 'querySettings': speech_settings(profile, level, mode)}
     return hashlib.sha256(json.dumps(data, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+
+
+def query_parts(query, max_moras):
+    """Bound inference memory at existing pause boundaries, not character cuts.
+
+    Compute pronunciation/accent from the complete utterance first. Retain every
+    resulting phrase and pause, and add no extra edge silence between parts.
+    """
+    if not isinstance(max_moras, int) or isinstance(max_moras, bool) or max_moras < 1:
+        raise ValueError('Invalid inference part size')
+    phrases = query['accent_phrases']
+    groups, current, count = [], [], 0
+    for phrase in phrases:
+        current.append(phrase)
+        count += len(phrase['moras'])
+        if count >= max_moras and phrase.get('pause_mora') is not None:
+            groups.append(current)
+            current, count = [], 0
+    if current:
+        groups.append(current)
+    if not groups:
+        return [copy.deepcopy(query)]
+    parts = []
+    for i, phrases in enumerate(groups):
+        part = copy.deepcopy(query)
+        part['accent_phrases'] = copy.deepcopy(phrases)
+        if i:
+            part['prePhonemeLength'] = 0
+        if i != len(groups) - 1:
+            part['postPhonemeLength'] = 0
+        parts.append(part)
+    return parts
 
 
 def turn_pause(profile, level, text, actor, next_actor):

@@ -1,21 +1,53 @@
 {
   "schemaVersion": 1,
-  "revision": "natural-pacing-candidate-20261103-v1",
+  "revision": "natural-pacing-candidate-20261103-v2",
   "status": "ai_proposed_unheard",
   "scope": "30 independent original forms only; preserve approved speaker identities and exam content",
   "levels": {
-    "n5": {"dialogueSpeed": 0.94, "narrationSpeed": 0.94, "turnSeconds": 0.40},
-    "n4": {"dialogueSpeed": 0.96, "narrationSpeed": 0.95, "turnSeconds": 0.36},
-    "n3": {"dialogueSpeed": 0.99, "narrationSpeed": 0.97, "turnSeconds": 0.32},
-    "n2": {"dialogueSpeed": 1.02, "narrationSpeed": 0.99, "turnSeconds": 0.28},
-    "n1": {"dialogueSpeed": 1.04, "narrationSpeed": 1.00, "turnSeconds": 0.26}
+    "n5": {
+      "dialogueSpeed": 0.94,
+      "narrationSpeed": 0.94,
+      "turnSeconds": 0.4
+    },
+    "n4": {
+      "dialogueSpeed": 0.96,
+      "narrationSpeed": 0.95,
+      "turnSeconds": 0.36
+    },
+    "n3": {
+      "dialogueSpeed": 0.99,
+      "narrationSpeed": 0.97,
+      "turnSeconds": 0.32
+    },
+    "n2": {
+      "dialogueSpeed": 1.02,
+      "narrationSpeed": 0.99,
+      "turnSeconds": 0.28
+    },
+    "n1": {
+      "dialogueSpeed": 1.04,
+      "narrationSpeed": 1.0,
+      "turnSeconds": 0.26
+    }
   },
-  "query": {"prePhonemeLength": 0.04, "postPhonemeLength": 0.06, "narrationIntonation": 1.00, "dialogueIntonation": 1.05, "pauseMoraScale": 0.95},
-  "boundary": {"questionExtraSeconds": 0.08, "hesitationExtraSeconds": 0.15, "sameActorReductionSeconds": 0.06, "beforePromptSeconds": 0.50},
+  "query": {
+    "prePhonemeLength": 0.04,
+    "postPhonemeLength": 0.06,
+    "narrationIntonation": 1.0,
+    "dialogueIntonation": 1.05,
+    "pauseMoraScale": 0.95
+  },
+  "boundary": {
+    "questionExtraSeconds": 0.08,
+    "hesitationExtraSeconds": 0.15,
+    "sameActorReductionSeconds": 0.06,
+    "beforePromptSeconds": 0.5
+  },
   "answerWindows": "preserve existing levelPacing values",
   "midListeningMusicMs": 60000,
   "humanReviewed": false,
   "nativeReviewed": false,
   "perceptualApproval": false,
-  "note": "These are render candidates, not measured or publisher-approved natural speech. Engine accent phrases are preserved; pronunciation corrections still require per-script listening. No timing padding to reach a target."
+  "note": "These are render candidates, not measured or publisher-approved natural speech. Engine accent phrases are preserved; pronunciation corrections still require per-script listening. No timing padding to reach a target.",
+  "inferenceMaxMoras": 160
 }

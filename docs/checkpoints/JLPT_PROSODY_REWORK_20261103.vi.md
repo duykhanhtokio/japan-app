@@ -22,14 +22,16 @@ Các số trên là đề xuất AI để dựng thử sau phản hồi, **khôn
 
 ## Kiểm tra và blocker
 
-Đạt 7 nhóm unittest: bảo toàn cấu trúc query, cache đổi theo mọi đầu vào, ranh giới khác nhau/đổi đơn vị đúng, chặn ghi live, từ chối query không tương thích, đủ 30 đề và nối cả hai renderer. Python compile/CLI và khóa UI JLPT 10/10 đạt. Đây là kiểm mã/metadata, không phải nghe âm thanh.
+Đạt 9 nhóm unittest (bổ sung chia inference và đồng bộ metadata không đổi nội dung): bảo toàn cấu trúc query, cache đổi theo mọi đầu vào, ranh giới khác nhau/đổi đơn vị đúng, chặn ghi live, từ chối query không tương thích, đủ 30 đề và nối cả hai renderer. Python compile/CLI và khóa UI JLPT 10/10 đạt. Đây là kiểm mã/metadata, không phải nghe âm thanh.
 
-Môi trường phiên có ffmpeg nhưng không tìm thấy executable VOICEVOX trong các vị trí đã kiểm; hai cổng local 50021/50128 không có engine trả lời. Vì vậy **0/30 bản thu mới được dựng, 0/30 bản nghe mới được cài vào app**. Không sửa file âm thanh, 30 master, 30 manifest đang dùng, lịch sử đề thật, thông số phát của runner hay session người học. Không tuyên bố tự nhiên/đúng phát âm/người bản ngữ đã duyệt.
+Đã khắc phục việc thiếu engine: tải bản CPU x64 chính thức VOICEVOX 0.25.2, kiểm SHA-256 archive `bab016a966131b89bad398e7b898f8c742617dc80a7da49bf494cd07133dbc7a`, chạy executable và đối chiếu đủ speaker ID 8/118/11/21. Preflight tổng hợp thật câu mở đầu, giải mã được 11008 ms mono 24 kHz. Engine chỉ dùng sản xuất audio, người học không cần cài.
 
-## Tiếp tục khi có máy tổng hợp giọng
+Lượt chạy bốn engine gặp ngắt kết nối local; chưa có bằng chứng đủ để khẳng định nguyên nhân OOM. Đã thêm chia inference tại pause-mora có sẵn sau khi tính accent/mora cho toàn câu; không cắt ký tự/âm tiết hay thêm khoảng đầu/cuối giữa các phần. WAV cache ghi atomically để các lượt không đọc file dở. Profile v2 gắn cấu hình chia phần vào hash cache. Batch giới hạn số job/CPU, log từng đề, theo dõi RSS/HWM và tiếp tục các đề khác khi một đề lỗi. Lượt hiện tại dùng hai job và restart sau 24 utterance mới.
 
-Kiểm kê: `python3 scripts/prepare-jlpt-prosody-batch.py`.
+Các utterance và đoạn câu nghe thật đang được dựng trong cây candidate. **Checkpoint này chưa xác nhận hoàn tất bản thu mới nào và chưa cài audio mới vào app (0/30)**. Báo cáo tiến độ local riêng: `docs/checkpoints/jlpt-prosody-20261103/actual-run.json`; không dùng trạng thái đang chạy làm bằng chứng hoàn tất. Chưa sửa master/audio manifest đang dùng hoặc file nghe runtime; không tuyên bố chất lượng tự nhiên/ngữ nghĩa/phát âm đã nghiệm thu.
 
-Dựng thật: `python3 scripts/prepare-jlpt-prosody-batch.py --render --engine /duong/dan/thuc/den/engine/run`.
+## Lệnh dựng và tích hợp
 
-Không đưa đường dẫn ví dụ này vào lệnh chạy nếu chưa xác định executable thật. Engine chỉ dùng trên máy sản xuất audio; app/người học tiếp tục phát file đã thu sẵn, không cần cài VOICEVOX. Sau dựng, nghe và chỉnh từng câu/giọng/cách đọc, rồi cập nhật audio, duration, timeline, master metadata/manifest và adapter theo một revision nhất quán trước khi tích hợp. Chưa có bước nào trong phần này được báo hoàn thành.
+`python3 scripts/prepare-jlpt-prosody-batch.py --render --engine /duong/dan/thuc/den/engine/run --jobs 2 --cpu-threads 2 --restart-every 24 --report docs/checkpoints/jlpt-prosody-20261103/actual-run.json`
+
+Sau khi đủ 30 candidate hợp lệ, `python3 scripts/install-jlpt-prosody-batch.py` kiểm lại toàn bộ file/hash/PCM/nguồn; thêm `--install` mới thay bộ audio và đồng bộ duration/timeline/master metadata/opening bell. Installer chặn bộ thiếu đề, giữ nội dung/đáp án/ID/giọng, có backup và rollback nếu ghi lỗi; các cờ nghiệm thu con người/bản ngữ vẫn false. Đây là công cụ đã kiểm thử, **chưa phải bằng chứng đã tích hợp**. Không có cổng xin duyệt pilot; tiếp tục đủ 30 theo yêu cầu người dùng.

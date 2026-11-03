@@ -4,11 +4,14 @@ import json
 import unittest
 import importlib.util
 from pathlib import Path
-from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root
+from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts
 spec = importlib.util.spec_from_file_location('prosody_batch', Path(__file__).with_name('prepare-jlpt-prosody-batch.py'))
 batch = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(batch)
 inventory = batch.inventory
+install_spec = importlib.util.spec_from_file_location('prosody_install', Path(__file__).with_name('install-jlpt-prosody-batch.py'))
+installer = importlib.util.module_from_spec(install_spec)
+install_spec.loader.exec_module(installer)
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -65,6 +68,20 @@ class ProsodyTests(unittest.TestCase):
         self.assertEqual(60 * 24000, 1440000)
         self.assertEqual(60000, self.profile['midListeningMusicMs'])
 
+    def test_bounded_inference_keeps_all_phrases_and_pauses(self):
+        q = copy.deepcopy(self.query)
+        phrase = q['accent_phrases'][0]
+        q['accent_phrases'] = [copy.deepcopy(phrase) for _ in range(10)]
+        parts = query_parts(q, 3)
+        self.assertGreater(len(parts), 1)
+        self.assertEqual([p for part in parts for p in part['accent_phrases']], q['accent_phrases'])
+        self.assertEqual(parts[0]['prePhonemeLength'], q['prePhonemeLength'])
+        self.assertEqual(parts[-1]['postPhonemeLength'], q['postPhonemeLength'])
+        self.assertTrue(all(p['prePhonemeLength'] == 0 for p in parts[1:]))
+        self.assertTrue(all(p['postPhonemeLength'] == 0 for p in parts[:-1]))
+        with self.assertRaises(ValueError):
+            query_parts(q, 0)
+
     def test_candidate_must_not_write_live_assets(self):
         for target in ('assets/jlpt-original', '..', '/tmp/prosody-output'):
             with self.assertRaises(ValueError):
@@ -94,6 +111,35 @@ class ProsodyTests(unittest.TestCase):
         for level in self.profile['levels']:
             self.assertEqual(len([r for r in rows if r['level'] == level]), 6)
         self.assertTrue(all(not r['installedInApp'] and not r['perceptualApproval'] for r in rows))
+
+    def test_install_metadata_preserves_all_authored_content_and_answers(self):
+        prefix = 'docs/jlpt-workspace/audio-prosody-candidates/test'
+        for row in inventory(self.profile):
+            folder = ROOT / f"src/data/jlpt-original/{row['level']}/{row['number']:02d}"
+            master, org, old = (json.loads((folder / file).read_text()) for file in
+                ('master.ja.json', 'listening-organization.ja.json', 'audio.manifest.json'))
+            candidate = copy.deepcopy(old)
+            candidate['durationMs'] -= 1234
+            candidate['orientationSegments'][0]['endMs'] -= 123
+            candidate['prosody'] = {'profile': self.profile, 'profileSha256': fingerprint(self.profile)}
+            candidate['continuousAudioPath'] = prefix + '/' + candidate['continuousAudioPath']
+            candidate['break']['path'] = prefix + '/' + candidate['break']['path']
+            for item in candidate['items']:
+                item['path'] = prefix + '/' + item['path']
+            before = copy.deepcopy((master, org, candidate))
+            new_master, new_org, manifest = installer.metadata(master, org, candidate, old, prefix, self.profile)
+            self.assertEqual({k: v for k, v in master.items() if k != 'audio'}, {k: v for k, v in new_master.items() if k != 'audio'})
+            self.assertEqual({k: v for k, v in org.items() if k != 'openingBell'}, {k: v for k, v in new_org.items() if k != 'openingBell'})
+            self.assertEqual(new_master['audio']['durationMs'], candidate['durationMs'])
+            self.assertEqual(manifest['currentMasterSha256'], installer.hashlib.sha256(installer.encoded(new_master)).hexdigest())
+            self.assertEqual(manifest['organizationSha256'], installer.hashlib.sha256(installer.encoded(new_org)).hexdigest())
+            self.assertTrue(manifest['prosody']['installedInApp'])
+            self.assertFalse(manifest['prosody']['candidateOnly'])
+            self.assertFalse(new_master['audio']['perceptualApproval'])
+            self.assertEqual([i['turns'] for i in manifest['items']], [i['turns'] for i in old['items']])
+            self.assertEqual((master, org, candidate), before)
+        with self.assertRaises(ValueError):
+            installer.installed_path(prefix + '/../other.mp3', prefix)
 
     def test_both_renderers_wire_candidate_and_boundary_controls(self):
         for name in ('generate-jlpt-original-audio.py', 'generate-jlpt-original-n2-audio.py'):

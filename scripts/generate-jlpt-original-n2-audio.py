@@ -2,10 +2,10 @@
 Usage: python scripts/generate-jlpt-original-n2-audio.py --engine /path/to/engine/run
 No external text service; no legacy exam inputs. Generated audio requires human review.
 """
-import argparse,array,hashlib,io,json,math,subprocess,time,urllib.parse,urllib.request,wave
+import argparse,array,hashlib,io,json,math,os,subprocess,tempfile,time,urllib.parse,urllib.request,wave
 from pathlib import Path
-from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root
-ap=argparse.ArgumentParser();ap.add_argument('--level',choices=['n2','n1'],default='n2');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--cpu-threads',type=int,default=2);ap.add_argument('--engine',required=True);ap.add_argument('--prosody-profile');ap.add_argument('--candidate-dir');ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--cache-only',action='store_true',help='Reassemble approved cached speech without starting or calling VOICEVOX');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[24,32,40,48,64,96],default=96);args=ap.parse_args();level=args.level;exam_number=f'{args.exam_number:02d}'
+from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts
+ap=argparse.ArgumentParser();ap.add_argument('--level',choices=['n2','n1'],default='n2');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--cpu-threads',type=int,default=2);ap.add_argument('--restart-every',type=int,choices=range(1,513),default=6);ap.add_argument('--engine',required=True);ap.add_argument('--prosody-profile');ap.add_argument('--candidate-dir');ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--cache-only',action='store_true',help='Reassemble approved cached speech without starting or calling VOICEVOX');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[24,32,40,48,64,96],default=96);args=ap.parse_args();level=args.level;exam_number=f'{args.exam_number:02d}'
 root=Path(__file__).resolve().parent.parent;master=root/f'src/data/jlpt-original/{level}/{exam_number}/master.ja.json';master_bytes=master.read_bytes();exam=json.loads(master_bytes);casting=json.loads((root/'src/data/jlpt-original/voice-casting.json').read_text());settings={**casting['settings'],**casting.get('levelPacing',{}).get(level,{})};roles=casting['roles'];organization_path=root/f'src/data/jlpt-original/{level}/{exam_number}/listening-organization.ja.json';organization_bytes=organization_path.read_bytes();organization=json.loads(organization_bytes)
 render_root=candidate_root(root,args.candidate_dir,args.prosody_profile);prosody=load_profile(root/args.prosody_profile) if args.prosody_profile else None;engine_version=None
 if prosody and getattr(args,'cache_only',False):raise ValueError('Prosody candidates require real re-synthesis, not legacy cache-only assembly')
@@ -27,7 +27,7 @@ def start():
  raise RuntimeError('Startup timeout')
 def stop():
  if proc and proc.poll() is None:proc.terminate();proc.wait(timeout=15)
-def req(path,data=None):return http.open(urllib.request.Request('http://127.0.0.1:'+str(args.port)+path,data=data,headers={'Content-Type':'application/json'}),timeout=120).read()
+def req(path,data=None):return http.open(urllib.request.Request('http://127.0.0.1:'+str(args.port)+path,data=data,headers={'Content-Type':'application/json'}),timeout=600).read()
 def silence(sec):return b'\0'*round(24000*sec)*2
 cache=Path(args.cache_dir) if args.cache_dir else work/'turn-cache';cache.mkdir(parents=True,exist_ok=True);new_synthesis_count=0
 def script_gap(script,index):
@@ -46,9 +46,29 @@ def synth(text,role,mode='dialogue'):
  p=cache/(key+'.wav')
  if not p.exists():
   if args.cache_only:raise RuntimeError("Missing cached speech for "+role+": "+key)
-  if new_synthesis_count and new_synthesis_count%6==0:stop();start()
+  if new_synthesis_count and new_synthesis_count%args.restart_every==0:stop();start()
   q=json.loads(req('/audio_query?'+urllib.parse.urlencode({'speaker':sid,'text':text}),b''));q=apply_query(q,prosody,level,mode) if prosody else dict(q,speedScale=settings['speedScale'],outputSamplingRate=24000,outputStereo=False)
-  p.write_bytes(req('/synthesis?speaker='+str(sid),json.dumps(q).encode()));new_synthesis_count+=1
+  if prosody:
+   pcm_parts=[]
+   for part in query_parts(q,prosody.get('inferenceMaxMoras',160)):
+    encoded=req('/synthesis?speaker='+str(sid),json.dumps(part).encode())
+    with wave.open(io.BytesIO(encoded)) as w:
+     assert (w.getframerate(),w.getnchannels(),w.getsampwidth())==(24000,1,2)
+     pcm_parts.append(w.readframes(w.getnframes()))
+   assembled=io.BytesIO()
+   with wave.open(assembled,'wb') as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(24000);w.writeframes(b''.join(pcm_parts))
+   data=assembled.getvalue()
+  else:data=req('/synthesis?speaker='+str(sid),json.dumps(q).encode())
+  temporary=None
+  try:
+   with tempfile.NamedTemporaryFile(dir=cache,suffix='.wav.tmp',delete=False) as f:temporary=Path(f.name);f.write(data)
+   temporary.replace(p);new_synthesis_count+=1
+   status=Path(f'/proc/{proc.pid}/status')
+   if status.exists():
+    memory={line.split(':')[0]:line.split(':',1)[1].strip() for line in status.read_text().splitlines() if line.startswith(('VmRSS:','VmHWM:'))}
+    (work/'engine-memory.json').write_text(json.dumps({'newUtterances':new_synthesis_count,**memory}))
+  finally:
+   if temporary is not None:temporary.unlink(missing_ok=True)
  with wave.open(str(p)) as w:
   assert (w.getframerate(),w.getnchannels(),w.getsampwidth())==(24000,1,2)
   pcm=w.readframes(w.getnframes());assert max(abs(v) for v in array.array('h',pcm))>100
@@ -96,7 +116,7 @@ try:
   if org.get('playExample',True):
    practice=org['example'];practice_start=round(len(album)/48);practice_turns=[]
    for i,(role,text) in enumerate(practice['script']):
-    album.extend(synth(text,role));album.extend(silence(script_gap(practice['script'],i)));practice_turns.append({'actor':role,'role':role,'text':text})
+    album.extend(synth(text,role,'narration' if i==0 else 'dialogue'));album.extend(silence(script_gap(practice['script'],i)));practice_turns.append({'actor':role,'role':role,'text':text})
    if org.get('readQuestionAfterDialogue',group<=2):album.extend(synth(practice['prompt'],'adultFemale','narration'))
    if org.get('readChoices',group>2):
     for opt in practice['options']:
@@ -120,7 +140,7 @@ try:
    frames=bytearray(synth(numbers+'です。','adultFemale','narration'));frames.extend(silence(.5));turns=[];response_windows=[]
    for i,(role,text) in enumerate(q['script']):
     assert role in roles
-    frames.extend(synth(text,role));frames.extend(silence(script_gap(q['script'],i)));turns.append({'actor':role,'role':role,'text':text})
+    frames.extend(synth(text,role,'narration' if i==0 else 'dialogue'));frames.extend(silence(script_gap(q['script'],i)));turns.append({'actor':role,'role':role,'text':text})
    for response in siblings:
     question_start_ms=round(len(frames)/48)
     if org.get('readQuestionAfterDialogue',False):
@@ -137,7 +157,7 @@ try:
    for response in siblings:
     segments.append({'questionId':response['id'],'group':group,'number':response['number'],'path':str(mp.relative_to(root)),'startMs':begin,'endMs':end,'durationMs':round(len(frames)/48),'sha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'playbackReviewed':False,'turns':turns,'sharedDialogueId':shared,'responseWindows':response_windows})
    print(f'{len(segments)}/{sum(x["section"]=="listening" for x in exam["questions"])} problem {key}, {len(siblings)} scored responses',flush=True)
-   if len(segments)%6==0 and len(segments)<sum(x['section']=='listening' for x in exam['questions']):stop();start()
+   if len(segments)%args.restart_every==0 and len(segments)<sum(x['section']=='listening' for x in exam['questions']):stop();start()
   if group==2:
    before=round(len(album)/48);album.extend(synth('問題二はここまでです。これから一分間休みます。','adultFemale','narration'))
    music_start=round(len(album)/48);music=original_rest_music();music_file=save('original-instrumental-rest-60s',music);album.extend(music);music_end=round(len(album)/48)
