@@ -39,7 +39,7 @@ def main():
     prefectures=[p for p in queue['prefectures'] if p['prefectureId'] in pids]
     members={s for p in prefectures for c in p['cities'] for k in ['sentenceTaskReviewedScenarioIds','pendingSentenceTaskScenarioIds'] for s in c[k]}
     previous={s for p in prefectures for c in p['cities'] for s in c['sentenceTaskReviewedScenarioIds']}
-    complete=set(); owners={};changes={};workers=[];cache={}
+    complete=set(); owners={};changes={};workers=[];cache={};source_issues=set()
     def cached(p):
         if p not in cache: cache[p]=read(p)
         return cache[p]
@@ -50,6 +50,8 @@ def main():
         if receipt.get('schemaVersion')=='context-review-compact-v1':
             receipt=json.loads(subprocess.check_output(['node','-e',
                 'const {expandContextReceipt}=require("./scripts/lib/dialogue-context-receipts.cjs");process.stdout.write(JSON.stringify(expandContextReceipt(require(process.argv[1]))));',str(path)],cwd=ROOT))
+        blocked={e['scenarioId'] for e in receipt.get('entries',[]) if e.get('sourceIssues')}
+        source_issues.update(blocked)
         assert receipt['nativeReviewed'] is False
         assert receipt.get('wholeScenarioAll12Read') is True
         rows={}
@@ -73,7 +75,7 @@ def main():
                 assert digest(target[tid][k])==f['targetSha256'], (sid,locale,tid,k)
         for sid,ls in rows.items():
             assert ls==LOCALES and sid not in complete
-            complete.add(sid)
+            if sid not in blocked: complete.add(sid)
         assert receipt['reviewedScenarios']==len(rows)
         assert receipt['reviewedFields']==len(rows)*192
         edits=receipt.get('changes',receipt.get('corrections',[]))
@@ -132,7 +134,7 @@ def main():
         r['contextReviewedScenarios']=sum(p['contextReviewedScenarios'] for p in r['prefectures'])
         r['remainingScenarios']=r['totalScenarios']-r['contextReviewedScenarios']
         r['status']='IN_PROGRESS' if r['remainingScenarios'] and r['contextReviewedScenarios'] else ('NOT_STARTED' if r['remainingScenarios'] else 'AI_CONTEXT_REVIEWED_NOT_NATIVE_CERTIFIED')
-    report={'status':'MECHANICAL_RECEIPT_VALIDATION_PASS','region':'kinki','total':len(members),'reviewed':len(previous|complete),'remaining':len(members-(previous|complete)),'sessionReviewed':len(complete),'reviewedFields':len(complete)*192,'changedFields':sum(len(e) for e in changes.values()),'workers':workers,'nativeReviewed':False,'semanticCrossReview':False,'priorReviewedIdsPreserved':True}
+    report={'status':'MECHANICAL_RECEIPT_VALIDATION_PASS','region':'kinki','total':len(members),'reviewed':len(previous|complete),'remaining':len(members-(previous|complete)),'sessionReviewed':len(complete),'sessionReadScenarios':sum(w['reviewed'] for w in workers),'sourceIssueScenarioIds':sorted(source_issues),'reviewedFields':len(complete)*192,'changedFields':sum(len(e) for e in changes.values()),'workers':workers,'nativeReviewed':False,'semanticCrossReview':False,'priorReviewedIdsPreserved':True}
     if args.write:
         for p,data in [(qp,queue),(pp,plan),(mp,manifest),(BASE/'progress.json',report)]: write(p,data)
     print(json.dumps(report))
