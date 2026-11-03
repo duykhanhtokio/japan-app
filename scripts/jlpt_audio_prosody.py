@@ -240,6 +240,23 @@ def query_parts(query, max_moras):
     groups, current, count = [], [], 0
     for span in spans:
         size = sum(len(phrase['moras']) for phrase in span)
+        if size > max_moras:
+            # Prefer breath boundaries. When one whole clause exceeds the
+            # budget, fall back to complete accent phrases; never cut moras.
+            if current:
+                groups.append(current)
+                current, count = [], 0
+            for phrase in span:
+                phrase_size = len(phrase['moras'])
+                if current and count + phrase_size > max_moras:
+                    groups.append(current)
+                    current, count = [], 0
+                current.append(phrase)
+                count += phrase_size
+                if count >= max_moras:
+                    groups.append(current)
+                    current, count = [], 0
+            continue
         if current and count + size > max_moras:
             groups.append(current)
             current, count = [], 0
@@ -289,3 +306,37 @@ def candidate_root(root, candidate_dir, profile_path):
     if target != allowed and allowed not in target.parents:
         raise ValueError('Candidate output must stay under docs/jlpt-workspace/audio-prosody-candidates')
     return target
+
+
+def complete_sentence_units(text):
+    """Split only at terminal punctuation, preserving all source characters."""
+    import re
+    units = re.findall(r'.+?(?:[。！？!?]+[」』）】]*|$)', text, flags=re.S)
+    if not units or ''.join(units) != text:
+        raise ValueError('Sentence query units must preserve the full source')
+    return units
+
+
+def merge_sentence_queries(queries):
+    """Remove the validated context-only final vowel from nonfinal queries.
+
+    The context vowel forces the engine to supply its actual sentence pause.
+    It never reaches speech synthesis; pronunciation and pauses remain engine
+    output for complete source sentences, not manually invented phonemes.
+    """
+    if not queries:
+        raise ValueError('No sentence queries')
+    result = copy.deepcopy(queries[0])
+    phrases = []
+    for index, query in enumerate(queries):
+        current = copy.deepcopy(query['accent_phrases'])
+        if index < len(queries) - 1:
+            if (len(current) < 2
+                    or [m['text'] for m in current[-1]['moras']] != ['ア']
+                    or current[-2].get('pause_mora') is None):
+                raise ValueError('Engine did not isolate the context-only vowel and source sentence pause')
+            current.pop()
+        phrases.extend(current)
+    result['accent_phrases'] = phrases
+    result['kana'] = None
+    return result

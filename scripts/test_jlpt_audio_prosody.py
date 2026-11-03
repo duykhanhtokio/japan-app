@@ -6,7 +6,7 @@ import tempfile
 from unittest.mock import patch
 import importlib.util
 from pathlib import Path
-from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts, speech_query_text, validate_voice_catalog, acquire_engine_slot, runtime_synthesis_limits
+from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts, speech_query_text, validate_voice_catalog, acquire_engine_slot, runtime_synthesis_limits, complete_sentence_units, merge_sentence_queries
 spec = importlib.util.spec_from_file_location('prosody_batch', Path(__file__).with_name('prepare-jlpt-prosody-batch.py'))
 batch = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(batch)
@@ -208,6 +208,38 @@ class ProsodyTests(unittest.TestCase):
         # An indivisible long clause stays intact instead of cutting speech
         # at an arbitrary mora and changing its pronunciation/accent.
         self.assertEqual(len(query_parts(q, 80)), 3)
+
+    def test_long_clause_without_breaths_uses_whole_accent_boundaries(self):
+        q = copy.deepcopy(self.query)
+        phrase = copy.deepcopy(q['accent_phrases'][0])
+        phrase['pause_mora'] = None
+        q['accent_phrases'] = [copy.deepcopy(phrase) for _ in range(170)]
+        parts = query_parts(q, 64)
+        self.assertTrue(all(sum(len(p['moras']) for p in part['accent_phrases']) <= 64 for part in parts))
+        self.assertEqual([p for part in parts for p in part['accent_phrases']], q['accent_phrases'])
+        self.assertTrue(all(part['prePhonemeLength'] == 0 for part in parts[1:]))
+        self.assertTrue(all(part['postPhonemeLength'] == 0 for part in parts[:-1]))
+
+    def test_sentence_queries_preserve_all_characters_and_engine_pauses(self):
+        text = '「大丈夫ですか？」確認します。次に進みます。'
+        units = complete_sentence_units(text)
+        self.assertEqual(''.join(units), text)
+        self.assertEqual(units, ['「大丈夫ですか？」', '確認します。', '次に進みます。'])
+        query = copy.deepcopy(self.query)
+        actual = copy.deepcopy(query['accent_phrases'][0])
+        context = copy.deepcopy(query['accent_phrases'][1])
+        context['moras'] = [{'text': 'ア', 'pitch': 4, 'vowel_length': .1}]
+        first = dict(query, accent_phrases=[actual, context])
+        last = dict(query, accent_phrases=[copy.deepcopy(actual)])
+        before = copy.deepcopy((first, last))
+        merged = merge_sentence_queries([first, last])
+        self.assertEqual(merged['accent_phrases'], [actual, actual])
+        self.assertEqual((first, last), before)
+        self.assertEqual(merged['prePhonemeLength'], query['prePhonemeLength'])
+        self.assertEqual(merged['postPhonemeLength'], query['postPhonemeLength'])
+        first['accent_phrases'][-1]['moras'][0]['text'] = 'イ'
+        with self.assertRaises(ValueError):
+            merge_sentence_queries([first, last])
 
     def test_linked_installation_keeps_audio_when_candidate_is_atomically_replaced(self):
         with tempfile.TemporaryDirectory() as directory:
