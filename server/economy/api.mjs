@@ -42,8 +42,10 @@ const handler = async (req,res) => {
     const userId = auth(req);
     if (req.method === 'GET' && url.pathname === '/v1/economy/me') {
       const result = await pool.query('SELECT available_points,held_points FROM economy_wallets WHERE user_id=$1',[userId]);
+      const entitlement = await pool.query("SELECT 1 FROM economy_entitlements WHERE user_id=$1 AND expires_at > now() AND revoked_at IS NULL LIMIT 1",[userId]);
+      const premiumVerified = entitlement.rowCount > 0;
       // No client-side premium claims: premium remains locked until server-verified entitlements are available.
-      return send(res,200,{plan:'free',premiumVerified:false,availablePoints:Number(result.rows[0]?.available_points || 0),heldPoints:Number(result.rows[0]?.held_points || 0),redemptionEnabled:false});
+      return send(res,200,{plan:premiumVerified ? 'premium' : 'free',premiumVerified,availablePoints:Number(result.rows[0]?.available_points || 0),heldPoints:Number(result.rows[0]?.held_points || 0),redemptionEnabled:false});
     }
     if (req.method === 'GET' && url.pathname === '/v1/economy/transactions') {
       const result = await pool.query('SELECT id,kind,delta_points,created_at FROM economy_ledger WHERE user_id=$1 ORDER BY created_at DESC LIMIT 50',[userId]);
