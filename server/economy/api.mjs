@@ -53,7 +53,7 @@ const handler = async (req,res) => {
       // Do not credit time reported by the device. Record untrusted evidence for later verification.
       const data = await body(req);
       if (typeof data.activity !== 'string' || !['jlpt','dialogue','daily','weekly','monthly'].includes(data.activity)) return send(res,400,{error:'Invalid activity'});
-      if (typeof data.sessionId !== 'string' || !/^[a-zA-Z0-9_-]{8,100}$/.test(data.sessionId)) return send(res,400,{error:'Invalid sessionId'});
+      if (typeof data.sessionId !== 'string' || !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(data.sessionId)) return send(res,400,{error:'Invalid sessionId'});
       await transaction(async db => {
         await db.query('INSERT INTO economy_wallets(user_id) VALUES($1) ON CONFLICT DO NOTHING',[userId]);
         await db.query("INSERT INTO economy_learning_sessions(id,user_id,activity,verified_seconds,credited_points,verification_version) VALUES($1,$2,$3,0,0,'pending-v1') ON CONFLICT DO NOTHING",[data.sessionId,userId,data.activity]);
