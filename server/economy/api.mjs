@@ -1,6 +1,5 @@
 import { createServer } from 'node:http';
-import { createHmac, timingSafeEqual, randomUUID } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { createHmac, timingSafeEqual } from 'node:crypto';
 import pg from 'pg';
 
 /* Private API. Requires externally verified identity and subscription entitlements.
@@ -8,7 +7,7 @@ import pg from 'pg';
 const { Pool } = pg;
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: process.env.PGSSL === 'true' ? { rejectUnauthorized: true } : undefined });
 const secret = process.env.ECONOMY_AUTH_SECRET;
-if (!secret || secret.length < 32 || !process.env.DATABASE_URL) throw Error('Set DATABASE_URL and ECONOMY_AUTH_SECRET (>=32 chars)');
+if (!secret || secret.length < 32 || !process.env.DATABASE_URL || !process.env.ECONOMY_AUTH_ISSUER) throw Error('Set DATABASE_URL and ECONOMY_AUTH_SECRET (>=32 chars)');
 const port = Number(process.env.PORT || 8787);
 function send(res, code, obj) { res.writeHead(code, { 'content-type':'application/json', 'cache-control':'no-store' }); res.end(JSON.stringify(obj)); }
 function auth(req) {
@@ -21,6 +20,7 @@ function auth(req) {
   const a = Buffer.from(expected), b = Buffer.from(sig);
   if (a.length !== b.length || !timingSafeEqual(a,b)) throw Object.assign(Error('Unauthorized'), { status:401 });
   const data = JSON.parse(Buffer.from(payload,'base64url').toString('utf8'));
+  if (data.iss !== process.env.ECONOMY_AUTH_ISSUER || data.aud !== 'japan-app-economy') throw Object.assign(Error('Unauthorized'), { status:401 });
   if (typeof data.sub !== 'string' || !/^[a-zA-Z0-9:_-]{1,128}$/.test(data.sub) || !Number.isSafeInteger(data.exp) || data.exp <= Math.floor(Date.now()/1000)) throw Object.assign(Error('Unauthorized'), { status:401 });
   return data.sub;
 }
@@ -38,7 +38,8 @@ async function transaction(fn) {
 const handler = async (req,res) => {
   try {
     const url = new URL(req.url || '/', 'http://localhost');
-    if (req.method === 'GET' && url.pathname === '/health') return send(res,200,{ok:true});
+    if (req.method === 'GET' && url.pathname === '/health') return send(res,200,{ok:true,service:'economy'});
+    if (req.method === 'GET' && url.pathname === '/ready') { await pool.query('SELECT 1'); return send(res,200,{ready:true}); }
     const userId = auth(req);
     if (req.method === 'GET' && url.pathname === '/v1/economy/me') {
       const result = await pool.query('SELECT available_points,held_points FROM economy_wallets WHERE user_id=$1',[userId]);
