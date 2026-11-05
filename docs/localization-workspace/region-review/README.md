@@ -20,3 +20,9 @@ Giữ nguyên toàn bộ receipt/assignment đã lưu trên nhánh tích hợp. 
 Chạy `node --max-old-space-size=384 scripts/check-dialogue-regional-union.cjs` để kiểm tra lại. Bảng `plan.json` và hàng đợi chuẩn đã đồng bộ; các báo cáo phiên con là checkpoint lịch sử, không phải tổng hiện hành.
 
 Đây là hoàn tất rà ngữ cảnh bằng AI. Các vấn đề nguồn Nhật đã ghi nhận, nghiệm thu bản ngữ, âm thanh, furigana/hiển thị và thiết bị vẫn riêng biệt; không đánh dấu chứng nhận phát hành. Không có worker chạy ngầm.
+
+## Xác nhận đóng hạng mục — 05/11/2026
+
+Trên dữ liệu hiện hành, đã chạy lại `check-dialogue-regional-union.cjs`: **PASS, 7.128/7.128 bài × 12 ngôn ngữ, 1.368.576 trường, còn 0 bài**. Tập ID trong hàng đợi chuẩn khớp đúng bằng chứng hợp nhất; không có ID trùng hoặc ID chờ. Hạng mục **rà ngữ cảnh AI Hội thoại được đóng hoàn tất**; không rà lại và không tính các checkpoint trung gian thành việc còn thiếu.
+
+Báo cáo `release-audit-2026-11-03/readiness.json` trước đây còn ghi 33/7.128; đã đồng bộ riêng `contextReview` sang số hợp nhất. Đã xóa con trỏ bài/tỉnh/lô tiếp theo còn sót trong hàng đợi hoàn tất. Các kết quả kỹ thuật khác trong báo cáo cũ giữ nguyên phạm vi kiểm tra ban đầu, không coi là vừa kiểm thử lại. Nghiệm thu nguồn Nhật, bản ngữ, phát âm, hiển thị và thiết bị vẫn giữ trạng thái riêng.
