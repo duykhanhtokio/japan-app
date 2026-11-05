@@ -53,10 +53,10 @@ export function eligibleReferralRewardYen(kind: Plan, e: ReferralEvidence): numb
   if (e.rewardAlreadyIssued || e.isSelfReferral) return 0;
   if (![e.accountAgeDays, e.validLearningHours, e.paidMonths].every(Number.isFinite)) return 0;
   if (kind === 'free') {
-    return e.accountAgeDays > ECONOMY_POLICY.referral.free.minimumElapsedDays &&
+    return e.accountAgeDays >= ECONOMY_POLICY.referral.free.minimumElapsedDays &&
       e.validLearningHours >= ECONOMY_POLICY.referral.free.minimumValidHours ? 100 : 0;
   }
-  return e.paidMonths > ECONOMY_POLICY.referral.premium.minimumPaidMonths &&
+  return e.paidMonths >= ECONOMY_POLICY.referral.premium.minimumPaidMonths &&
     e.validLearningHours >= ECONOMY_POLICY.referral.premium.minimumValidHours ? 500 : 0;
 }
 export function shouldOfferAd(plan: Plan, activity: Activity, completed: boolean, adsToday: number): boolean {
