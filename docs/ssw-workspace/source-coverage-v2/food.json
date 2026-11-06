@@ -15080,12 +15080,12 @@
           ]
         }
       ],
-      "statementJa": "同じ尺度の軸別比較と面積だけの順位を区別する。",
-      "statementVi": "Dùng cùng thang và so từng trục để nhận ra điểm mạnh yếu; không xếp hạng chỉ bằng diện tích.",
+      "statementJa": "複数対象を共通のチャートの軸ごとに比較し、得意・不得意の違いを読む。",
+      "statementVi": "So sánh từng trục của nhiều đối tượng trên cùng biểu đồ để nhận ra điểm mạnh/yếu.",
       "conditionsJa": [],
       "exceptionsJa": [],
       "importance": "supporting",
-      "classification": "knowledge",
+      "classification": "duplicate",
       "before": {
         "teaching": "unknown",
         "assessment": "unknown"
@@ -15123,7 +15123,7 @@
         "status": "independent_ai_checked",
         "note": "App-authored explanations, fictitious data and application prompts checked against factual source meaning; no source prose or source image reproduced. Source radar diagram and text compare separate traits on matching axes; existing A/B0–5 self-check35 asks each axis and equal value, avoiding a topic-only link."
       },
-      "status": "partial",
+      "status": "duplicate",
       "legacyRefs": [
         {
           "path": "docs/ssw-workspace/food-manufacturing/atomic-qc-20261102/matrix.json",
@@ -15131,9 +15131,7 @@
           "index": 12
         }
       ],
-      "unresolved": [
-        "Source85 per-axis comparison is separately accepted in food-v2-radar-axis-compare. The additional area-only overall-ranking caution remains an app extension without an independent corroborating source in the available PDF; do not claim the whole inherited compound is source-covered."
-      ],
+      "unresolved": [],
       "review": {
         "domainReviewed": false,
         "nativeReviewed": false,
@@ -15141,8 +15139,8 @@
       },
       "sourceReview": {
         "status": "self_checked_ai",
-        "conditionsChecked": false,
-        "reviewRef": "docs/ssw-workspace/food-manufacturing/source-audit65-20261103/source-app-review.json"
+        "conditionsChecked": true,
+        "reviewRef": "docs/ssw-workspace/food-manufacturing/radar-claim-split-20261106.json"
       },
       "claimDecomposition": {
         "sourceSupportedStatementJa": "複数対象の特性値を共通のチャートの軸ごとに比較し、得意・不得意の違いを読む。",
@@ -15150,9 +15148,14 @@
           "food-v2-radar-axis-compare"
         ],
         "appExtensionJa": "面積だけで総合順位を決めず、評価条件を確認する。",
-        "appExtensionSourceStatus": "separate_corroboration_missing",
-        "sourcePage85DoesNotExplicitlyStateAreaRankingRule": true
-      }
+        "appExtensionSourceStatus": "not_source_accepted_pending_separate_corroboration",
+        "sourcePage85DoesNotExplicitlyStateAreaRankingRule": true,
+        "resolution": "source_supported_duplicate_and_separate_unverified_app_extension",
+        "appExtensionId": "food-app-extension-radar-area-ranking"
+      },
+      "legacyCompoundStatementJa": "同じ尺度の軸別比較と面積だけの順位を区別する。",
+      "duplicateOf": "food-v2-radar-axis-compare",
+      "dispositionReason": "Source-supported per-axis comparison is already represented by food-v2-radar-axis-compare with current direct teaching/assessment evidence. The unsupported area-ranking remainder is separately tracked as an unaccepted app extension."
     },
     {
       "knowledgeId": "food-v2-legacy-qc1-014",
@@ -24253,7 +24256,28 @@
   "unresolved": [
     "All pages outside the explicitly self-read scope still need source-first semantic inventory.",
     "Exact original cell/table/formula/caption roles are pending unless explicitly assigned; vector paths and glyph blocks are not knowledge.",
-    "The44historical QC rows now have bounded source-region assignments;4compound claims remain partial, with exact missing source support or assessment recorded per unit. This does not inventory every idea on those pages.",
-    "Reverse audit of every app claim, terminology/audio/native/device and measured-duration work remains open."
+    "Reverse audit of every app claim, terminology/audio/native/device and measured-duration work remains open.",
+    "Legacy compound radar claim is split: its source-backed part duplicates food-v2-radar-axis-compare; area-ranking extension remains separately source_corroboration_pending and unaccepted. This is provenance correction, not new source coverage."
+  ],
+  "appExtensions": [
+    {
+      "extensionId": "food-app-extension-radar-area-ranking",
+      "legacyParentKnowledgeId": "food-v2-legacy-qc1-013",
+      "statementJa": "面積だけで総合順位を決めず、評価条件を確認する。",
+      "status": "source_corroboration_pending",
+      "includedInSourceCoverageDenominator": false,
+      "sourcePage85ExplicitlySupportsThisClaim": false,
+      "teachingStatus": "not_separately_taught",
+      "assessmentLocation": {
+        "path": "src/data/food-manufacturing/source-assessment35.json",
+        "jsonPointer": "/checks/1/expectedPointsJa/3"
+      },
+      "remaining": "Keep the existing assessment wording as an authored application caution. It is not an accepted mandatory source claim; independent supporting provenance and dedicated teaching remain required before claiming this extension complete.",
+      "review": {
+        "domainReviewed": false,
+        "nativeReviewed": false,
+        "physicalDeviceTested": false
+      }
+    }
   ]
 }
