@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-06",
+  "baseCommit": "b413db935fd7ed2a87109a3c652e5162e6622484",
+  "status": "partial_acceptance_not_release_complete",
+  "codeChanges": false,
+  "adapterValidation": {
+    "count": 30,
+    "passed": 30,
+    "commands": [
+      {
+        "command": "node scripts/check-jlpt-original-n1-01-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n1-02-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n1-03-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n1-04-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n1-05-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n1-06-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n2-01-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n2-02-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n2-03-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n2-04-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n2-05-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n2-06-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n3-01-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n3-02-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n3-03-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n3-04-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n3-05-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n3-06-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n4-01-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n4-02-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n4-03-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n4-04-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n4-05-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n4-06-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n5-01-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n5-02-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n5-03-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n5-04-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n5-05-adapter.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/check-jlpt-original-n5-06-adapter.mjs",
+        "exitCode": 0
+      }
+    ],
+    "environmentRemediation": "Materialized exactly84 referenced original illustration files and listening-start-overrides.json from existing Git objects. No question/audio regeneration or broad asset checkout."
+  },
+  "uiLock": {
+    "command": "node scripts/check-jlpt-approved-ui-lock.mjs",
+    "passed": true,
+    "matchedLockedFiles": 10
+  },
+  "typeScript": {
+    "compilerVersion": "5.9.2",
+    "dependencyRoot": "/tmp/jlpt-qa-deps",
+    "syntaxTranspileFiles": 30,
+    "syntaxErrors": 0,
+    "semanticFullAppNoEmit": "not_run_missing_expo_and_react_dependency_tree",
+    "fullLint": "not_run_missing_expo_eslint_and_eslint_config_expo",
+    "note": "Syntax transpilation is not semantic typechecking. No full dependency installation was performed."
+  },
+  "browser": {
+    "command": "JAPAN_UI_BROWSER_PATH=/usr/bin/chromium node scripts/check-jlpt-original-n5-01-browser-audio.cjs",
+    "exitCode": 1,
+    "status": "blocked_before_page_creation",
+    "error": "FATAL:chrome/browser/process_singleton_posix.cc:297 Check failed: . socket() failed: Operation not permitted (1)",
+    "scope": "Existing Chromium asset playback test; launch failed. No playback, image decode, screenshot, full-router or native device acceptance claimed."
+  },
+  "scoringSourceHashes": {
+    "src/components/jlpt/N1OfficialTrial.tsx": "79e2a9f066232aab1c4485e060eb247dba8f573d22c7cc09f3c5087125c02f5e",
+    "src/services/learning-economy.ts": "6d4e724788a0c1a75da7a2dc4572522ec87caa86370680df31e16e9e96231149"
+  },
+  "remaining": [
+    "Semantic focused/full-app TypeScript and lint with application dependencies",
+    "Actual browser runner plus opening/play/pause/music-end/resume/screenshots",
+    "Native iOS and Android checks",
+    "All30 newly revised recordings integration and post-install regression; currently six revised N1 candidates missing"
+  ]
+}
