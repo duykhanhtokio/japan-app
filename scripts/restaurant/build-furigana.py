@@ -467,7 +467,7 @@ for x in packs.values():
   for t in l.get('terms',[]):
    if HAN.search(t['ja']):lookup[t['ja']]=hira(t['reading'])
 # Do not annotate context-sensitive isolated words using arbitrary one-reading defaults.
-for ambiguous in ('生','方','間','後','前','上','下','中','日','月','分','人','本','行','開','空','角','一','二','三','四','五','六','七','八','九','十','何','等','度','食'):
+for ambiguous in ('生','方','間','後','前','上','下','中','日','月','分','人','本','行','開','空','角','柄','一','二','三','四','五','六','七','八','九','十','何','等','度','食'):
  lookup.pop(ambiguous,None)
 byfirst=collections.defaultdict(list)
 for s,r in lookup.items():byfirst[s[0]].append((s,r))
@@ -521,7 +521,7 @@ if '--self-test' in sys.argv:
  cases.update({'仕上げ後に':'しあげごに','盛付け後に':'もりつけごに','手洗い後に':'てあらいごに','詰替え後も':'つめかえごも','仕上げ時の':'しあげじの','盛付け時に':'もりつけじに','受入れ時の':'うけいれじの','切り替え時は':'きりかえじは','品切れ時は':'しなぎれじは','洗った後に':'あらったあとに','困った時は':'こまったときは','前の日':'まえのひ','魚の':'さかなの','蒸し器':'むしき'})
  for source,expected in cases.items():
   tokens=ruby(source);assert ''.join(t.get('reading',t['text']) for t in tokens)==expected,(source,tokens)
- for source in ('事故事例集','紫外線未知群','4分の1','3.5℃','行った','行って'):
+ for source in ('事故事例集','紫外線未知群','4分の1','3.5℃','行った','行って','柄'):
   tokens=ruby(source);assert not any(t.get('reading') for t in tokens),(source,tokens)
  for source in ('14分野','１４分野'):
   tokens=ruby(source);assert not any(t.get('reading') and t['text'].endswith('分') for t in tokens),(source,tokens)

@@ -1,3 +1,11 @@
+# Làm lại để phục hồi nội dung — 06/11/2026
+
+Tiếp từ GitHub đã xác minh `74af5a75b`; không khôi phục nguyên commit `d72833f84`. Ba cụm sửa furigana có nguồn: 希望日 (1号p7), 日本酒 và 米 trong danh sách nguyên liệu (2号p48). Đọc chữ/ảnh hai trang, hash PDF khớp danh mục. Sửa 3 lỗi gốc, 16 span tại 15 entry reading độc lập, tương ứng 18 lần lỗi trong 17 trường hiển thị của 3 bài học/2 mock, gồm 5 lần xuất hiện câu hỏi (4 ID câu gốc; mock dùng lại ID). Một alt có hai lỗi nên không cộng thành hai trường độc lập. Giữ đúng các entry 希望日 đã sửa trước và toàn bộ đợt 宿泊日 đã lên remote.
+
+Chỉ sửa lớp furigana và bộ tạo: thêm hai từ ghép, giới hạn 米=こめ theo danh sách nguyên liệu; giữ 米飯=べいはん. Nhật, ID, đáp án, revision bài và 12 bản dịch không đổi byte. Không bổ sung câu mới, không đóng trang kiểm kê hay tăng số ý covered_ai. PASS alignment 38 bài, liên kết source-atoms, so sánh đảo ngược từng span, và thử bộ tạo thật theo ngữ cảnh. Không chạy tái tạo toàn khóa; chưa nghiệm thu bản ngữ/thiết bị/thời lượng. Receipt: `source-reading-rebuild-20261106.json`; điều phối phải commit và xác minh remote trước khi báo đã lưu.
+
+---
+
 # Hợp nhất hai đợt khách sạn đồng thời — 03/11/2026
 
 Đối chiếu ba phía từ `e4ea4f4d` tới thay đổi lễ tân trên remote `126c53d7`, đồng thời giữ đợt khẩn cấp của nhánh tích hợp. Nội dung lễ tân và an toàn nằm ở các bài/ý khác nhau; hợp nhất theo ID ổn định, không chọn đè cả sổ. Giữ cả hai ghi chú checkpoint; hợp nhất vùng trang theo elementId rồi tính lại hash file vùng cho sổ chuẩn.

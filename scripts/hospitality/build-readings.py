@@ -24,6 +24,10 @@ def write(p,d):
 lexicon={
  # Hotel-1 PDF p8/p9: read the whole date compound, not 日=ひ.
  '宿泊日':'しゅくはくび',
+ # Hotel-1 p7 / Hotel-2 p10: desired accommodation date.
+ '希望日':'きぼうび',
+ # Hotel-2 p48 beverage name, not the dictionary's 日本=ニッポン default.
+ '日本酒':'にほんしゅ',
  '一汁三菜':'いちじゅうさんさい','水菓子':'みずがし','香の物':'こうのもの',
  '椀盛':'わんもり','燗酒':'かんざけ','冷酒':'れいしゅ','食物':'しょくもつ',
  '次亜塩素酸ナトリウム':'じあえんそさんなとりうむ',
@@ -60,6 +64,13 @@ def tokens(text):
         result.append({'text':m.group(),'reading':hira(lexicon[m.group()])})
         cursor=m.end()
     result+=dictionary(text[cursor:])
+    # Hotel-2 p48: raw rice among sake ingredients is こめ. Apply on the
+    # full text after lexicon splitting so 麹 matches do not hide the context.
+    cursor=0
+    for t in result:
+        if t['text']=='米' and text.startswith('米・麹・水',cursor):
+            t['reading']='こめ'
+        cursor+=len(t['text'])
     assert ''.join(t['text'] for t in result)==text
     return result
 unknown={}

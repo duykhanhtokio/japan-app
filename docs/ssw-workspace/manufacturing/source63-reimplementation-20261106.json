@@ -1,0 +1,454 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-06",
+  "recoveryMode": "reimplemented_from_verified_GitHub_not_recovered_d72833f84",
+  "baselineCommit": "74af5a75ba38146a0dc764512aaa503678449f18",
+  "source": {
+    "documentId": "mfg1-mechanical-source",
+    "sha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+    "pdfPagesRead": [
+      88,
+      89
+    ],
+    "printedPages": [
+      80,
+      81
+    ],
+    "visualReviewPage": 89,
+    "locator": "Table7-1: outline, dimension, extension and hidden-line rows. PDF88 read for thickness context.",
+    "visualRenderSha256": "6c4e15a04f0fe74ee0b75070ca44079579e5731cf9cc3f11ebeb618c284e011c"
+  },
+  "groups": [
+    {
+      "key": "outline",
+      "gap": "No direct assessment bound for visible outline/thick continuous-line combination.",
+      "questionId": "mfg1-source63-drawing-outline"
+    },
+    {
+      "key": "dimension",
+      "gap": "No direct assessment bound for thin continuous dimension lines and the distinct figure-extension role of extension lines.",
+      "questionId": "mfg1-source63-drawing-dimension"
+    },
+    {
+      "key": "hidden",
+      "gap": "Old related question did not test BOTH thin and thick dashed alternatives together with invisible-outline purpose.",
+      "questionId": "mfg1-source63-drawing-hidden"
+    }
+  ],
+  "actualChanges": {
+    "assessmentGapsFixed": 4,
+    "groupsImplemented": 3,
+    "newQuestions": 3,
+    "newQuestionLocalePairs": 36,
+    "japaneseFieldsWithInlineReadings": 27,
+    "existingTeachingParagraphsReused": 2,
+    "teachingParagraphsChanged": 0,
+    "existingQuestionsChanged": 0,
+    "existingLearnerIdsChanged": 0
+  },
+  "inventory": {
+    "sourcePagesRead": 2,
+    "sourcePagesNewlyClosed": 0,
+    "denominatorStatus": "open",
+    "sourceCoveragePercent": null,
+    "wholeSourceKnowledgeCovered": false
+  },
+  "review": {
+    "selfCheckedAi": true,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  },
+  "checks": [
+    {
+      "command": "node scripts/manufacturing/check-source63.cjs --receipt",
+      "result": "PASS; 3 groups,36 question-locale pairs,27 fully annotated Japanese fields,282 negative guards; grading/restore/revision checked; 144 unrelated ledger units and all old core/mocks/61/62 payloads preserved."
+    },
+    {
+      "command": "node scripts/source-coverage-v2/check.cjs docs/ssw-workspace/source-coverage-v2/manufacturing.json",
+      "result": "PASS_REGISTRY_CONTRACT;148units,131covered_ai;574census pages,35semanticInventory pages unchanged;sourceCoveragePercent=null;fullyCovered=false."
+    },
+    {
+      "command": "TypeScript5.9.2 strict source63 helper virtual-type harness",
+      "result": "PASS;0diagnostics;actual exported type declarations;not full-app typecheck."
+    },
+    {
+      "command": "git diff --check -- owned manufacturing scope",
+      "result": "PASS"
+    }
+  ],
+  "changes": [
+    {
+      "knowledgeId": "mfg47-mechanical-outline",
+      "before": {
+        "knowledgeId": "mfg47-mechanical-outline",
+        "sourceRefs": [
+          {
+            "sourceId": "mfg1-mechanical-source",
+            "pdfPage": 89,
+            "elementIds": [
+              "mfg2-mechanical-p089-text-008",
+              "mfg2-mechanical-p089-text-009",
+              "mfg2-mechanical-p089-text-010",
+              "mfg2-mechanical-p089-text-011",
+              "mfg2-mechanical-p089-text-012",
+              "mfg2-mechanical-p089-text-013",
+              "mfg2-mechanical-p089-text-014",
+              "mfg2-mechanical-p089-text-015",
+              "mfg2-mechanical-p089-text-016",
+              "mfg2-mechanical-p089-text-017",
+              "mfg2-mechanical-p089-text-018"
+            ],
+            "sourceLocator": "table7-1/外形線",
+            "manualRegionBBox": [
+              0.12,
+              0.1,
+              0.9,
+              0.138
+            ]
+          }
+        ],
+        "statementJa": "可視輪郭を太い実線で示す。",
+        "legacyStatementJa": "可視輪郭を太い実線で示す。",
+        "conditionsJa": [],
+        "exceptionsJa": [],
+        "importance": "core",
+        "classification": "knowledge",
+        "before": {
+          "teaching": "present",
+          "assessment": "unknown"
+        },
+        "legacyTeachingStatus": "taught",
+        "legacyBefore47Status": null,
+        "after": {
+          "teaching": "present",
+          "assessment": "unknown"
+        },
+        "teachingEvidence": [
+          {
+            "path": "src/data/manufacturing/mechanical.json",
+            "jsonPointer": "/lessons/19/paragraphs/2/textJa",
+            "sha256": "6c4ea8e14055003c7ebf32cfb82bf1d9cd539edf83c37dd9f74ee5c5cdc3412e",
+            "sha256Mode": "json-value",
+            "relation": "direct",
+            "semanticReviewed": true,
+            "reviewNote": "Self-compared claim against actual current Japanese teaching; reference is to app-authored wording."
+          }
+        ],
+        "assessmentEvidence": [],
+        "imageEvidence": [],
+        "assessmentRequirement": "required",
+        "assessmentExemptionReason": null,
+        "expressionReview": {
+          "status": "independent_ai_checked",
+          "note": "Concise factual objective and existing independently authored app example; source page image, exercise and prose are not republished."
+        },
+        "sourceReview": {
+          "status": "self_checked_ai",
+          "conditionsChecked": true,
+          "reviewRef": "docs/ssw-workspace/source-coverage-v2/manufacturing-source-review.json"
+        },
+        "status": "partial",
+        "unresolved": [
+          "Direct assessment is not established within the imported source47 question mappings; the complete app question bank has not been exhaustively searched for this claim."
+        ],
+        "v2InitialTeachingFinding": null,
+        "legacyRefs": [
+          {
+            "path": "docs/ssw-workspace/manufacturing/session-20261102/atomic47/mechanical-atoms.json",
+            "jsonPointer": "/atoms/0"
+          }
+        ],
+        "review": {
+          "domainReviewed": false,
+          "nativeReviewed": false,
+          "physicalDeviceTested": false
+        }
+      },
+      "newQuestionId": "mfg1-source63-drawing-outline"
+    },
+    {
+      "knowledgeId": "mfg47-mechanical-dimension",
+      "before": {
+        "knowledgeId": "mfg47-mechanical-dimension",
+        "sourceRefs": [
+          {
+            "sourceId": "mfg1-mechanical-source",
+            "pdfPage": 89,
+            "elementIds": [
+              "mfg2-mechanical-p089-text-019",
+              "mfg2-mechanical-p089-text-020",
+              "mfg2-mechanical-p089-text-021",
+              "mfg2-mechanical-p089-text-025",
+              "mfg2-mechanical-p089-text-026",
+              "mfg2-mechanical-p089-text-027",
+              "mfg2-mechanical-p089-text-028"
+            ],
+            "sourceLocator": "table7-1/寸法線",
+            "manualRegionBBox": [
+              0.12,
+              0.135,
+              0.9,
+              0.173
+            ]
+          }
+        ],
+        "statementJa": "寸法の記入は細い実線を用いる。",
+        "legacyStatementJa": "寸法の記入は細い実線を用いる。",
+        "conditionsJa": [],
+        "exceptionsJa": [],
+        "importance": "core",
+        "classification": "knowledge",
+        "before": {
+          "teaching": "present",
+          "assessment": "unknown"
+        },
+        "legacyTeachingStatus": "taught",
+        "legacyBefore47Status": null,
+        "after": {
+          "teaching": "present",
+          "assessment": "unknown"
+        },
+        "teachingEvidence": [
+          {
+            "path": "src/data/manufacturing/mechanical.json",
+            "jsonPointer": "/lessons/19/paragraphs/2/textJa",
+            "sha256": "6c4ea8e14055003c7ebf32cfb82bf1d9cd539edf83c37dd9f74ee5c5cdc3412e",
+            "sha256Mode": "json-value",
+            "relation": "direct",
+            "semanticReviewed": true,
+            "reviewNote": "Self-compared claim against actual current Japanese teaching; reference is to app-authored wording."
+          }
+        ],
+        "assessmentEvidence": [],
+        "imageEvidence": [],
+        "assessmentRequirement": "required",
+        "assessmentExemptionReason": null,
+        "expressionReview": {
+          "status": "independent_ai_checked",
+          "note": "Concise factual objective and existing independently authored app example; source page image, exercise and prose are not republished."
+        },
+        "sourceReview": {
+          "status": "self_checked_ai",
+          "conditionsChecked": true,
+          "reviewRef": "docs/ssw-workspace/source-coverage-v2/manufacturing-source-review.json"
+        },
+        "status": "partial",
+        "unresolved": [
+          "Direct assessment is not established within the imported source47 question mappings; the complete app question bank has not been exhaustively searched for this claim."
+        ],
+        "v2InitialTeachingFinding": null,
+        "legacyRefs": [
+          {
+            "path": "docs/ssw-workspace/manufacturing/session-20261102/atomic47/mechanical-atoms.json",
+            "jsonPointer": "/atoms/1"
+          }
+        ],
+        "review": {
+          "domainReviewed": false,
+          "nativeReviewed": false,
+          "physicalDeviceTested": false
+        }
+      },
+      "newQuestionId": "mfg1-source63-drawing-dimension"
+    },
+    {
+      "knowledgeId": "mfg47-mechanical-extension",
+      "before": {
+        "knowledgeId": "mfg47-mechanical-extension",
+        "sourceRefs": [
+          {
+            "sourceId": "mfg1-mechanical-source",
+            "pdfPage": 89,
+            "elementIds": [
+              "mfg2-mechanical-p089-text-022",
+              "mfg2-mechanical-p089-text-023",
+              "mfg2-mechanical-p089-text-024",
+              "mfg2-mechanical-p089-text-029",
+              "mfg2-mechanical-p089-text-030",
+              "mfg2-mechanical-p089-text-031",
+              "mfg2-mechanical-p089-text-032",
+              "mfg2-mechanical-p089-text-033",
+              "mfg2-mechanical-p089-text-034",
+              "mfg2-mechanical-p089-text-035",
+              "mfg2-mechanical-p089-text-036",
+              "mfg2-mechanical-p089-text-037",
+              "mfg2-mechanical-p089-text-038",
+              "mfg2-mechanical-p089-text-039"
+            ],
+            "sourceLocator": "table7-1/寸法補助線",
+            "manualRegionBBox": [
+              0.12,
+              0.17,
+              0.9,
+              0.231
+            ]
+          }
+        ],
+        "statementJa": "寸法補助線は図形から寸法を引き出す役割。",
+        "legacyStatementJa": "寸法補助線は図形から寸法を引き出す役割。",
+        "conditionsJa": [],
+        "exceptionsJa": [],
+        "importance": "core",
+        "classification": "knowledge",
+        "before": {
+          "teaching": "present",
+          "assessment": "unknown"
+        },
+        "legacyTeachingStatus": "taught_by_source47_reader_appendix",
+        "legacyBefore47Status": "partial_role_detail",
+        "after": {
+          "teaching": "present",
+          "assessment": "unknown"
+        },
+        "teachingEvidence": [
+          {
+            "path": "src/data/manufacturing/source47-clarification.json",
+            "jsonPointer": "/wording/ja/after",
+            "sha256": "66c734db1cba6336f077732fbaf7e73509ff5deeaa4ec56c50313b7cc941f1f7",
+            "sha256Mode": "json-value",
+            "relation": "direct",
+            "semanticReviewed": true,
+            "reviewNote": "Self-compared claim against actual current Japanese teaching; reference is to app-authored wording."
+          }
+        ],
+        "assessmentEvidence": [],
+        "imageEvidence": [],
+        "assessmentRequirement": "required",
+        "assessmentExemptionReason": null,
+        "expressionReview": {
+          "status": "independent_ai_checked",
+          "note": "Concise factual objective and existing independently authored app example; source page image, exercise and prose are not republished."
+        },
+        "sourceReview": {
+          "status": "self_checked_ai",
+          "conditionsChecked": true,
+          "reviewRef": "docs/ssw-workspace/source-coverage-v2/manufacturing-source-review.json"
+        },
+        "status": "partial",
+        "unresolved": [
+          "Direct assessment is not established within the imported source47 question mappings; the complete app question bank has not been exhaustively searched for this claim."
+        ],
+        "v2InitialTeachingFinding": null,
+        "legacyRefs": [
+          {
+            "path": "docs/ssw-workspace/manufacturing/session-20261102/atomic47/mechanical-atoms.json",
+            "jsonPointer": "/atoms/2"
+          }
+        ],
+        "review": {
+          "domainReviewed": false,
+          "nativeReviewed": false,
+          "physicalDeviceTested": false
+        }
+      },
+      "newQuestionId": "mfg1-source63-drawing-dimension"
+    },
+    {
+      "knowledgeId": "mfg47-mechanical-hidden",
+      "before": {
+        "knowledgeId": "mfg47-mechanical-hidden",
+        "sourceRefs": [
+          {
+            "sourceId": "mfg1-mechanical-source",
+            "pdfPage": 89,
+            "elementIds": [
+              "mfg2-mechanical-p089-text-040",
+              "mfg2-mechanical-p089-text-041",
+              "mfg2-mechanical-p089-text-042",
+              "mfg2-mechanical-p089-text-043",
+              "mfg2-mechanical-p089-text-044",
+              "mfg2-mechanical-p089-text-045",
+              "mfg2-mechanical-p089-text-046",
+              "mfg2-mechanical-p089-text-047",
+              "mfg2-mechanical-p089-text-048",
+              "mfg2-mechanical-p089-text-049",
+              "mfg2-mechanical-p089-text-050",
+              "mfg2-mechanical-p089-text-051",
+              "mfg2-mechanical-p089-text-052",
+              "mfg2-mechanical-p089-text-053",
+              "mfg2-mechanical-p089-text-054",
+              "mfg2-mechanical-p089-text-055",
+              "mfg2-mechanical-p089-text-056"
+            ],
+            "sourceLocator": "table7-1/隠れ線",
+            "manualRegionBBox": [
+              0.12,
+              0.23,
+              0.9,
+              0.291
+            ]
+          }
+        ],
+        "statementJa": "不可視輪郭は破線。表は細線と太線の両方を許す。",
+        "legacyStatementJa": "不可視輪郭は破線。表は細線と太線の両方を許す。",
+        "conditionsJa": [],
+        "exceptionsJa": [],
+        "importance": "core",
+        "classification": "knowledge",
+        "before": {
+          "teaching": "present",
+          "assessment": "unknown"
+        },
+        "legacyTeachingStatus": "taught_by_source47_reader_appendix",
+        "legacyBefore47Status": "partial_thickness_alternatives",
+        "after": {
+          "teaching": "present",
+          "assessment": "partial"
+        },
+        "teachingEvidence": [
+          {
+            "path": "src/data/manufacturing/source47-clarification.json",
+            "jsonPointer": "/wording/ja/after",
+            "sha256": "66c734db1cba6336f077732fbaf7e73509ff5deeaa4ec56c50313b7cc941f1f7",
+            "sha256Mode": "json-value",
+            "relation": "direct",
+            "semanticReviewed": true,
+            "reviewNote": "Self-compared claim against actual current Japanese teaching; reference is to app-authored wording."
+          }
+        ],
+        "assessmentEvidence": [
+          {
+            "path": "src/data/manufacturing/completion37/mechanical.json",
+            "jsonPointer": "/checks/4/questions/2",
+            "sha256": "be131681d7a27cf54ff56b8632da212c769686e5811cc5de7313e8878006d6d0",
+            "sha256Mode": "json-value",
+            "relation": "candidate",
+            "semanticReviewed": false,
+            "reviewNote": "Historical question is related; the entire atomic condition is not established as assessed."
+          }
+        ],
+        "imageEvidence": [],
+        "assessmentRequirement": "required",
+        "assessmentExemptionReason": null,
+        "expressionReview": {
+          "status": "independent_ai_checked",
+          "note": "Concise factual objective and existing independently authored app example; source page image, exercise and prose are not republished."
+        },
+        "sourceReview": {
+          "status": "self_checked_ai",
+          "conditionsChecked": true,
+          "reviewRef": "docs/ssw-workspace/source-coverage-v2/manufacturing-source-review.json"
+        },
+        "status": "partial",
+        "unresolved": [
+          "Direct assessment is not established within the imported source47 question mappings; the complete app question bank has not been exhaustively searched for this claim."
+        ],
+        "v2InitialTeachingFinding": null,
+        "legacyRefs": [
+          {
+            "path": "docs/ssw-workspace/manufacturing/session-20261102/atomic47/mechanical-atoms.json",
+            "jsonPointer": "/atoms/3"
+          }
+        ],
+        "review": {
+          "domainReviewed": false,
+          "nativeReviewed": false,
+          "physicalDeviceTested": false
+        }
+      },
+      "newQuestionId": "mfg1-source63-drawing-hidden"
+    }
+  ]
+}

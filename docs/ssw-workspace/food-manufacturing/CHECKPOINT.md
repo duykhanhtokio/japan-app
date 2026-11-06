@@ -1,3 +1,7 @@
+# Làm lại để phục hồi nội dung từ GitHub — 2026-11-06
+
+Không khôi phục commit `d72833f84`. Từ baseline GitHub `74af5a75b`, đối chiếu trực tiếp 4 trang nguồn: 1号52 và 2号43/86/125. Sửa 2 lỗi đọc rõ (点検日:てんけんひ→てんけんび; 不良率を:ふりょうひきを→ふりょうりつを) và đồng bộ 切傷 với cách đọc nghề せっしょう của nguồn/thuật ngữ bài học; không coi きりきず sai trong mọi ngữ cảnh. Tổng 4 trường ruby/3 câu, qua exact question/field overrides trong offline loader. Nội dung Nhật, đáp án, ID, sourceHash, bản dịch, raw ruby packs và dữ liệu học giữ nguyên. Actual loader PASS848câu/8480trường,8476trườngkhôngđổi,16960stale/misalignment rejection; lesson ruby PASS96bài/996trường. Không đóng trang kiểm kê mới, không %hoàn thiện. Receipt: `source-readings-rebuild-20261106.json`. Native/domain/device/thời lượng vẫn chưa nghiệm thu; root phải commit/push/xác minh.
+
 # Source QC83→85 /86→88 /89→91, 2026-11-03
 
 Đã tựđọc chữ/ảnh9trang, khép40ý hẹp trong44candidateQC lịch sử; canonical113known/109covered_ai/4partial.4partial không phải toàn bộýcònthiếu251trang; mẫu số vẫnopen/null, không đóng thêm trang. Thêm3check (so sánhcột,hai trục/tíchlũyPareto,lớpquárộng) với36bản dịch/144trường/12ruby, sửa3reading値ね→あたい và giữ概算値・測定値đọcち. ActualSSR182views/14negativePASS;848câu/96ngày/state nguyênbyte. Chi tiết và4gap:source-v2-batch5-20261103/REPORT.vi.md,remaining-four.json; chưa native/domain/device/audio/duration/fullsource. Root persistence required.

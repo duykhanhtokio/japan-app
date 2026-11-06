@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-06",
+  "workKind": "redo_for_content_recovery",
+  "missingCommit": "d72833f84",
+  "missingCommitRecovered": false,
+  "baselineCommit": "74af5a75ba38146a0dc764512aaa503678449f18",
+  "lexicalAuthority": {
+    "url": "https://www.kanjipedia.jp/kotoba/0006209700",
+    "publisher": "公益財団法人 日本漢字能力検定協会",
+    "scope": "The reading え denotes an implement handle or grip; がら denotes other senses and is inappropriate in these three tool contexts.",
+    "openedAndRead": true
+  },
+  "sourcesRead": [
+    {
+      "documentId": "rst-1-cooking",
+      "sha256": "faac56d3d4e80874b6b02acb7adbde0d269cf18094683fecd4397ca63d3ee7ac",
+      "pagesRead": [
+        5,
+        6,
+        7,
+        8,
+        28,
+        29,
+        30
+      ],
+      "visualReviewedPages": [
+        30
+      ]
+    },
+    {
+      "documentId": "rst-1-service",
+      "sha256": "6925524e35f2d825befd88dc91640fd1fc9ef0ae3ec550009e401806d13d6153",
+      "pagesRead": [
+        15
+      ],
+      "visualReviewedPages": [
+        15
+      ]
+    },
+    {
+      "documentId": "rst-2-service",
+      "sha256": "e0390e21ea8a5316aab2b8ec9f6d791848327fb057b6d3ad826060fecb79939c",
+      "pagesRead": [
+        17,
+        18
+      ],
+      "visualReviewedPages": [
+        17,
+        18
+      ]
+    }
+  ],
+  "actualFixes": {
+    "rootPronunciationErrors": 1,
+    "fieldOccurrencesRepaired": 3,
+    "lessonRecordsAffected": 1,
+    "questionRecordsAffected": 2,
+    "teachingSemanticGapsClosed": 0,
+    "newQuestions": 0,
+    "translationsChanged": 0,
+    "reasonTranslationsUnchanged": "Canonical Japanese wording, IDs, answers, semantic sourceHash and translations remain unchanged; only the separate furigana layer is corrected.",
+    "independentWorkGroupsCompleted": 1,
+    "note": "The three context records repair one shared root pronunciation error; they are not counted as three independent work groups or three semantic gaps."
+  },
+  "groups": [
+    {
+      "group": "utensil-selection",
+      "recordId": "rst-1-cook-14",
+      "path": "src/data/restaurant/lessons.1.ja.json",
+      "jsonPath": [
+        "lessons",
+        29,
+        "paragraphs",
+        2,
+        "furigana"
+      ],
+      "fieldSha256": "5e59c9d8baa0f84614dfd08c4ec2eeacde35efcc76321c9c812621c9ad5494b7",
+      "start": 78,
+      "end": 79,
+      "surface": "柄",
+      "beforeReading": "がら",
+      "afterReading": "え",
+      "sourceContext": {
+        "documentId": "rst-1-cooking",
+        "pdfPages": [
+          28,
+          29,
+          30
+        ]
+      },
+      "semanticJapaneseAndSourceHashPreserved": true
+    },
+    {
+      "group": "cutlery-arrangement",
+      "recordId": "rst-1-q171",
+      "path": "src/data/restaurant/exams.1.ja.json",
+      "jsonPath": [
+        "exams",
+        4,
+        "questions",
+        10,
+        "furigana",
+        "options",
+        1
+      ],
+      "fieldSha256": "387b7059d230657c6bf6d1cd419da06aa74c38fd324c481aed8ced4e782d1502",
+      "start": 2,
+      "end": 3,
+      "surface": "柄",
+      "beforeReading": "がら",
+      "afterReading": "え",
+      "sourceContext": {
+        "documentId": "rst-1-service",
+        "pdfPages": [
+          15
+        ]
+      },
+      "semanticJapaneseAndSourceHashPreserved": true
+    },
+    {
+      "group": "cleaning-demonstration",
+      "recordId": "rst-2-q371",
+      "path": "src/data/restaurant/exams.2.ja.json",
+      "jsonPath": [
+        "exams",
+        9,
+        "questions",
+        10,
+        "furigana",
+        "options",
+        3
+      ],
+      "fieldSha256": "28de7eaf3db471a4a37893b17f35e68a9037ee3654b7d42af855286084aaccc8",
+      "start": 0,
+      "end": 1,
+      "surface": "柄",
+      "beforeReading": "がら",
+      "afterReading": "え",
+      "sourceContext": {
+        "documentId": "rst-2-service",
+        "pdfPages": [
+          17,
+          18
+        ]
+      },
+      "semanticJapaneseAndSourceHashPreserved": true
+    }
+  ],
+  "generatorProtection": "Remove ambiguous isolated 柄 from generic lookup; keep the three repairs bound to exact field hashes and offsets in context-readings.json. No full reading regeneration.",
+  "sourceInventory": {
+    "newPagesClosed": 0,
+    "coveragePercentage": null,
+    "wholeSectorComplete": false
+  },
+  "review": {
+    "aiContextChecked": true,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  },
+  "checks": {
+    "eachGroupBeforeAfterOnlyIntendedToken": true,
+    "contextReadingAlignment": "PASS:7622 canonical fields;0 uncovered;1141 exact-context hashes;1420 exact spans",
+    "reviewedPriorPronunciationPreservation": "PASS:88 historical pronunciation repairs and6 translation fixes preserved",
+    "beforeSnapshotComparison": "PASS:3 runtime data files differ only in3 intended reading tokens; all unrelated context records unchanged.",
+    "generatorSelfTest": "PASS:42 cases; includes ambiguous isolated 柄 rejection",
+    "newExactFieldOverrides": 2,
+    "sourceHashesMatchInventoryAndPrivatePdf": true
+  },
+  "evidenceRebinding": {
+    "reason": "Three exact furigana-only corrections alter file hashes and containing JSON-value hashes. Rebinding occurs only after checking each old binding against HEAD and proving all canonical Japanese, options, correct indices, explanations, sourceHash, IDs and review fields remain byte-equivalent at the JSON value level when furigana is excluded.",
+    "bindingsUpdated": 688,
+    "fileBindings": 685,
+    "jsonValueBindings": 3,
+    "counts": {
+      "src/data/restaurant/exams.1.ja.json#file": 404,
+      "src/data/restaurant/exams.1.ja.json#json-value": 2,
+      "src/data/restaurant/exams.2.ja.json#file": 281,
+      "src/data/restaurant/exams.2.ja.json#json-value": 1
+    },
+    "files": [
+      {
+        "path": "src/data/restaurant/exams.1.ja.json",
+        "oldSha256": "eacbd6694a29b3b321be174737c37e71543901d3796ec8b9fa74fa4f9c13fef8",
+        "newSha256": "0150524942806fa4a22e55d6f96db237d9f1d57c1e654b7c050fd49f04d0e20a",
+        "onlyRawJsonChange": {
+          "path": "/exams/4/questions/10/furigana/options/1/1/reading",
+          "before": "がら",
+          "after": "え"
+        }
+      },
+      {
+        "path": "src/data/restaurant/exams.2.ja.json",
+        "oldSha256": "e85600b4664867a47f0d7bd825feb8a978e10d7952134510816cede4f64a4ce3",
+        "newSha256": "2633293d1db66690e0cc37b06aca20abc61b382bb39a9986aade25d9ea673ff0",
+        "onlyRawJsonChange": {
+          "path": "/exams/9/questions/10/furigana/options/3/0/reading",
+          "before": "がら",
+          "after": "え"
+        }
+      },
+      {
+        "path": "src/data/restaurant/lessons.1.ja.json",
+        "oldSha256": "590392c42e522ae3f3b465ad881d2b80b3d198809f3306ffbeb1e4d044a99f16",
+        "newSha256": "74df8ce32b897d3786db6a244e884d1fd584ab2cd366d361496804b00e21d508",
+        "onlyRawJsonChange": {
+          "path": "/lessons/29/paragraphs/2/furigana/40/reading",
+          "before": "がら",
+          "after": "え"
+        }
+      }
+    ],
+    "jsonValueRows": [
+      {
+        "knowledgeId": "rst31-service1-cutlery-place-01",
+        "evidenceKind": "assessmentEvidence",
+        "evidenceIndex": 3,
+        "path": "src/data/restaurant/exams.1.ja.json",
+        "mode": "json-value",
+        "jsonPointer": "/exams/4/questions/10",
+        "oldSha256": "82c4f192174286bc8eb30fb4fa93239b033aae3c0702de50fbbdac786723744a",
+        "newSha256": "714085aad1c5ba9b35ffe25049a8815932ff75139f5c242624fa6b834eea63be"
+      },
+      {
+        "knowledgeId": "rst31-service1-cutlery-place-02",
+        "evidenceKind": "assessmentEvidence",
+        "evidenceIndex": 3,
+        "path": "src/data/restaurant/exams.1.ja.json",
+        "mode": "json-value",
+        "jsonPointer": "/exams/4/questions/10",
+        "oldSha256": "82c4f192174286bc8eb30fb4fa93239b033aae3c0702de50fbbdac786723744a",
+        "newSha256": "714085aad1c5ba9b35ffe25049a8815932ff75139f5c242624fa6b834eea63be"
+      },
+      {
+        "knowledgeId": "rst31-cs2-f-s059",
+        "evidenceKind": "assessmentEvidence",
+        "evidenceIndex": 1,
+        "path": "src/data/restaurant/exams.2.ja.json",
+        "mode": "json-value",
+        "jsonPointer": "/exams/9/questions/10",
+        "oldSha256": "ffa543a12ed2ebadf8ef8d70286fb49cd813773994eac71bfee41f9ac54ac6ac",
+        "newSha256": "1983c363b8c5ab29c6cbeee02d33c596345d2ab4cd4a8658233d37f5d6094c9e"
+      }
+    ],
+    "allOldEvidenceHashesVerifiedAgainstHead": true,
+    "allSemanticFieldsAndSourceHashesPreserved": true,
+    "onlySha256FieldsChangedInLedger": true,
+    "statusesDenominatorAndReviewFlagsPreserved": true,
+    "newCoveredUnits": 0
+  }
+}

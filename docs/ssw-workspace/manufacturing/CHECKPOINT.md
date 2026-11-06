@@ -1,3 +1,13 @@
+# Phục hồi nội dung từ GitHub — source63, 06/11/2026
+
+Đây là **làm lại để phục hồi nội dung**, không phải lấy lại commit `d72833f84`. Baseline đã xác minh `74af5a75b`. Đọc chữ nguồn cơ khí PDF88–89 (in80–81), trực tiếp xem toàn ảnh bảng7-1 trang89 và kiểm SHA256 tài liệu. Ba nhóm đã sửa tuần tự: ngoại hình thấy/nét liền đậm; nét kích thước–đường gióng/nét liền mảnh với vai trò khác nhau; đường khuất/nét đứt mảnh hoặc đậm cùng mục đích chỉ hình không nhìn thấy.
+
+Tái dùng đúng hai đoạn dạy hiện có ở bài020 và080; không thêm đoạn lặp, không đổi bài nền, ngân hàng, ID hoặc lịch sử học cũ. Tạo3câu tự soạn riêng,12lý do riêng và36cặp câu–ngôn ngữ trực tiếp;27trường Nhật có đọc kèm. Nối qua danh mục bổ sung/runner hiện hành với ID vàrevision riêng; nguồn hoặc câu lệch sẽ chặn câu/bản dịch, khôngfallback. Khép4thiếu sót đánh giá có sẵn: outline,dimension,extension,hidden.144unitkhác giữ nguyên; tổng148unit/131covered_ai/15partial/1candidate/1excluded, mẫu số nguồn vẫn mở,coveragePercent=null. Đây không phải tỷ lệ hoàn thiện574trang.
+
+Đã đọc2trang để đối chiếu; **0trang kiểm kê mới được đóng**. PASS3nhóm,36targetpairs,27rubyfields,282negativeguards, chấm/lưu/khôi phục/loại revision cũ; canonicalcontractPASS; stricthelper0diagnostic. Không kiểmExpo/bố cục thiết bị thật, chưa duyệt chuyên môn/bản ngữ hoặc đo thời lượng. Hồ sơ: source63-reimplementation-20261106.json,source63-validation-20261106.json,source63-typecheck-20261106.json; script check-source63.cjs. Điều phối phảicommit và xác minhGitHub trước khi báo đã lưu.
+
+---
+
 # Manufacturing source57 —2026-11-02
 
 Three assessmentgaps addressed aftercrossbankreusecheck. Core072 getsboundedmajorurbanfire/open-spacerefugerole;core049getsexpliciteither-memberacceptablearrowomissioncondition. Core041ALREADYteacheslever-directionerror:reuseunchanged,assessmentonly. TwoJPextensions+24targetparagraphs/newreadings,3separateoriginalquestions/12distinctreasons/36questiontargets;348newtargetfields,not360newfields. Existingmock/weekly/recognitionquestions retained anddistinctobjectivesrecorded. No completion37patches ornewstudyday.
