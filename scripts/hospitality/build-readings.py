@@ -22,6 +22,8 @@ def write(p,d):
 # Whole compounds take priority over dictionary segmentation. Glossary entries
 # below supplement these with the canonical author-supplied term readings.
 lexicon={
+ # Hotel-1 PDF p8/p9: read the whole date compound, not 日=ひ.
+ '宿泊日':'しゅくはくび',
  '一汁三菜':'いちじゅうさんさい','水菓子':'みずがし','香の物':'こうのもの',
  '椀盛':'わんもり','燗酒':'かんざけ','冷酒':'れいしゅ','食物':'しょくもつ',
  '次亜塩素酸ナトリウム':'じあえんそさんなとりうむ',
