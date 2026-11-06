@@ -1,3 +1,15 @@
+# Source64 — ba nhóm đánh giá nét bản vẽ, 06/11/2026
+
+Tiếp tục làm lại để phục hồi nội dung từ GitHub; không khôi phục `d72833f84`. Tái dùng PDF cơ khí89/in81 đã kiểm hash và đọc chữ/ảnh bảng7-1, cùng đoạn source47 đang hiển thị bài080. Đã tìm các ngân hàng Nhật và đọc đầy đủ bảy kết quả liên quan: câu cũ về vị trí dụng cụ/vị trí di chuyển, phân biệt với ngoại hình, hình dạng nét cắt không kiểm trực tiếp bảy ý còn mở này. Giữ mọi câu cũ.
+
+Ba nhóm tự kiểm tuần tự: (1)bốn câu riêng cho nét tưởng tượng biểu diễn chi tiết kế bên, trước/sau gia công, phần lặp, phần trước mặt cắt; (2)một câu cho cả hai dạng đường ngắt và ranh giới lược bỏ; (3)một câu đọc vị trí mặt cắt từ đường chỉ vị trí cắt trên hình tương ứng. Tổng6câu mới,24lý do riêng,72cặp dịch trực tiếp/12ngôn ngữ và54trường Nhật có đọc. Tái dùng đoạn dạy đầy đủ đã có, không thêm bài/đoạn lặp hoặc đổi ngân hàng/ID cũ.
+
+Khép7ý partial sẵn có;148ý hiện138covered_ai/8partial/1candidate/1excluded.141ý khác giữ nguyên. Tái đối chiếu1trang đã đọc trước,0trang nguồn mới và0trang kiểm kê mới được đóng. Mẫu số574trang vẫn mở vàcoveragePercent=null. Không gọi16hàng còn mở ban đầu là toàn bộ khối lượng nguồn.
+
+PASS3nhóm/72targetpairs/54rubyfields/547negativeguards và grading/save/restore/stale; source63 cũ vẫn PASS qua phép chiếu predecessor chính xác7hàng64, không nới144hàng giữ nguyên; canonicalcontractPASS; stricthelper0diagnostic. Không kiểm bố cục/Expo/thiết bị thật/bản ngữ/chuyên môn/thời lượng. Hồ sơ source64-{reimplementation,validation,typecheck,freeze}-20261106.json; coordinator phải lưu GitHub và xác minh trước khi thông báo đã lưu.
+
+---
+
 # Phục hồi nội dung từ GitHub — source63, 06/11/2026
 
 Đây là **làm lại để phục hồi nội dung**, không phải lấy lại commit `d72833f84`. Baseline đã xác minh `74af5a75b`. Đọc chữ nguồn cơ khí PDF88–89 (in80–81), trực tiếp xem toàn ảnh bảng7-1 trang89 và kiểm SHA256 tài liệu. Ba nhóm đã sửa tuần tự: ngoại hình thấy/nét liền đậm; nét kích thước–đường gióng/nét liền mảnh với vai trò khác nhau; đường khuất/nét đứt mảnh hoặc đậm cùng mục đích chỉ hình không nhìn thấy.

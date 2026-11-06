@@ -1,3 +1,13 @@
+# Ba cụm nguồn và sửa đánh giá thanh toán — 06/11/2026
+
+Làm lại để phục hồi nội dung từ baseline GitHub `689001b50d5998987c74e853fc30f74e425a4b29`, không khôi phục commit `d72833f84`. Đọc chữ/ảnh 10 trang: 1号13/14/16/17/32 và 2号18/19/21/22/39. Ba nhóm tuần tự: lễ tân và liên bộ phận (12 ý), trả phòng và đối chiếu thanh toán (8 ý), cách nói và kính ngữ (6 ý). Sổ chuẩn 193→219 covered_ai trong 384 ý đã biết, còn165candidate; không đóng thêm trang kiểm kê, mẫu số mở, tỷ lệ vẫnnull. Giữ193ýđãđạt nguyên vẹn.
+
+Phát hiện thiếu HF1-017-04: q06 chỉ kiểm thứ tự bảng kê/thanh toán/biên lai, chưa kiểm số tiền thực trả khớp. Thêm `hotel-front-05-q10` với dữ kiện tự soạn 12,000yên bảng kê/10,000yên giao dịch, yêu cầu đối chiếu và xác nhận chênh2,000yên. Đủ12bản dịch trực tiếp,6chuỗi furigana mới;338câu/38bài,456/456cặp dịch đúngrevision. Giữ337câuNhật và trườngdịch cũ, mọientryreading cũ; chỉfront05 đổirevision. Sửa bindingHF1-014-09 từ câu chỉ nêu職種 sangq09 kiểm兼務/tùyquymô. HF1-017-06 vẫncandidate: q04chưa kiểm riêng phân biệtservicechargevàtip, không đóng bằng câu cùngchủđề.
+
+PASS sổchuẩn,source-atoms,readings,translations,loader,state/archive/restore,phépso sánh bảo toànvàdiffcheck. Checkstructure độc lập xácnhận38bài/338câu/revision/choices;checkc.cjs tổngquát cần38ảnh chưa materialized, không nhận là kiểmhình hoặc thiếtbị. Khôngnative/domain/device/timeacceptance. Receipt `rebuild-source-groups-20261106.json`, `rebuild-payment-20261106-integration.json`; điều phối phải xác minh remote trước khi báo đãlưu.
+
+---
+
 # Làm lại để phục hồi nội dung — 06/11/2026
 
 Tiếp từ GitHub đã xác minh `74af5a75b`; không khôi phục nguyên commit `d72833f84`. Ba cụm sửa furigana có nguồn: 希望日 (1号p7), 日本酒 và 米 trong danh sách nguyên liệu (2号p48). Đọc chữ/ảnh hai trang, hash PDF khớp danh mục. Sửa 3 lỗi gốc, 16 span tại 15 entry reading độc lập, tương ứng 18 lần lỗi trong 17 trường hiển thị của 3 bài học/2 mock, gồm 5 lần xuất hiện câu hỏi (4 ID câu gốc; mock dùng lại ID). Một alt có hai lỗi nên không cộng thành hai trường độc lập. Giữ đúng các entry 希望日 đã sửa trước và toàn bộ đợt 宿泊日 đã lên remote.

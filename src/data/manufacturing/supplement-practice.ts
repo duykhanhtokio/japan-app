@@ -1,5 +1,6 @@
 import {manufacturingSource61Exams,manufacturingSource61Translation} from './source61-assessments';
 import {manufacturingSource63Exams,manufacturingSource63Translation} from './source63-drawing';
+import {manufacturingSource64Exams,manufacturingSource64Translation} from './source64-line-roles';
 import {manufacturingSource62Exams,manufacturingSource62Translation} from './source62-bounded';
 import type {ManufacturingExam,ManufacturingQuestion,Specialty} from './index';
 import type {QuestionTranslation} from './translations';
@@ -24,11 +25,12 @@ function currentGuide(){const d=draft();return manufacturingSourceGuides('mechan
 export function manufacturingSupplementExams(specialty:Specialty):ManufacturingExam[]{
  if(specialty==='electrical')return [...manufacturingSource61Exams(specialty),...manufacturingSource62Exams(specialty),...manufacturingBooleanPracticeExams(specialty),...manufacturingEnergyExams(specialty),...manufacturingSequentialExams(specialty),...manufacturingCalculation48Exams(specialty),...manufacturingSource52Exams(specialty)];
  if(specialty!=='mechanical')return [...manufacturingSource61Exams(specialty),...manufacturingSource62Exams(specialty),...manufacturingSource60Exams(specialty),...manufacturingCalculation48Exams(specialty),...manufacturingSource55Exams(specialty)];
- const tolerance=[...manufacturingSource63Exams(specialty),...manufacturingSource61Exams(specialty),...manufacturingSource62Exams(specialty),...manufacturingSource57Exams(specialty),...manufacturingToleranceExams(specialty),...manufacturingQcPlanExams(specialty),...manufacturingCalculation48Exams(specialty)],d=draft(),guide=currentGuide();if(!guide)return tolerance;
+ const tolerance=[...manufacturingSource64Exams(specialty),...manufacturingSource63Exams(specialty),...manufacturingSource61Exams(specialty),...manufacturingSource62Exams(specialty),...manufacturingSource57Exams(specialty),...manufacturingToleranceExams(specialty),...manufacturingQcPlanExams(specialty),...manufacturingCalculation48Exams(specialty)],d=draft(),guide=currentGuide();if(!guide)return tolerance;
  return [{id:d.id,revision:d.revision,titleJa:d.titleJa,kind:'weekly',officialSimulation:false,weekId:'supplement-caliper',questions:d.questions.map(q=>({id:q.id,sourceHash:q.sourceHash,lessonId:guide.id,stemJa:q.stemJa,optionsJa:q.optionsJa,correctIndex:q.correctIndex,optionReasonsJa:q.optionsJa.map((_,i)=>(i===q.correctIndex?'正解です。':'この選択肢は適切ではありません。')+q.explanationJa),sources:guide.sources}))},...tolerance];
 }
 /** No fallback to another target language; suppress entries when the source guide or question is stale. */
 export function manufacturingSupplementTranslation(question:ManufacturingQuestion,locale:string):QuestionTranslation|null{
+ if(question.id.startsWith('mfg1-source64-'))return manufacturingSource64Translation(question,locale);
  if(question.id.startsWith('mfg1-source63-'))return manufacturingSource63Translation(question,locale);
  if(question.id.startsWith('mfg1-source61-'))return manufacturingSource61Translation(question,locale);
  if(question.id.startsWith('mfg1-source62-'))return manufacturingSource62Translation(question,locale);
