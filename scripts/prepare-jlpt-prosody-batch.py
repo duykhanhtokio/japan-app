@@ -68,12 +68,70 @@ def check_snapshot(row):
     assert digest(ROOT / 'src/data/jlpt-original/voice-casting.json') == row['castingSha256']
 
 
+def written_only_rebind_evidence(row, manifest, base_ref):
+    """Prove an old recording still matches after printed-only corrections.
+
+    The recording master hash is immutable. Git provides the exact original
+    input; only written question fields may differ, never their IDs or keys.
+    All listening questions, passages, casting and organization must be equal.
+    """
+    folder = f"src/data/jlpt-original/{row['level']}/{row['number']:02d}"
+    commit = subprocess.check_output(['git', 'rev-parse', '--verify', base_ref + '^{commit}'], cwd=ROOT, text=True).strip()
+    def original(relative):
+        return subprocess.check_output(['git', 'show', commit + ':' + relative], cwd=ROOT)
+    master_path = folder + '/master.ja.json'
+    old_bytes = original(master_path)
+    assert hashlib.sha256(old_bytes).hexdigest() == manifest['masterSha256'], 'Recording master is not the supplied Git source'
+    previous = json.loads(old_bytes)
+    current = json.loads((ROOT / master_path).read_text())
+    assert {k: v for k, v in previous.items() if k != 'questions'} == {k: v for k, v in current.items() if k != 'questions'}, 'A non-question master field changed'
+    old_questions, new_questions = previous['questions'], current['questions']
+    assert len(old_questions) == len(new_questions)
+    changed = []
+    for old, new in zip(old_questions, new_questions):
+        for key in ('id', 'section', 'group', 'number', 'correctOptionId'):
+            assert old[key] == new[key], 'Question identity, order or key changed'
+        if old['section'] == 'listening':
+            assert old == new, 'Listening content changed; re-synthesis is required'
+        elif old != new:
+            changed.append(old['id'])
+    assert changed, 'No written-only correction to rebind'
+    for relative, expected in [(folder + '/listening-organization.ja.json', row['organizationSha256']),
+                               ('src/data/jlpt-original/voice-casting.json', row['castingSha256'])]:
+        assert hashlib.sha256(original(relative)).hexdigest() == expected, 'Organization or casting changed since recording'
+    return {'schemaVersion': 1, 'sourceCommit': commit, 'recordingMasterSha256': manifest['masterSha256'],
+            'currentMasterSha256': row['masterSha256'], 'organizationSha256': row['organizationSha256'],
+            'voiceCastingSha256': row['castingSha256'], 'changedWrittenQuestionIds': changed,
+            'listeningContentUnchanged': True, 'audioRegenerated': False}
+
+
+def rebind_candidate_written_only(row, output, base_ref):
+    check_snapshot(row)
+    path = output / f"src/data/jlpt-original/{row['level']}/{row['number']:02d}/audio.manifest.json"
+    manifest = json.loads(path.read_text())
+    evidence = written_only_rebind_evidence(row, manifest, base_ref)
+    manifest['currentMasterSha256'] = row['masterSha256']
+    manifest['writtenOnlyRebind'] = evidence
+    # Preserve the original recording master SHA and every audio/timing field.
+    temporary = path.with_suffix('.rebind.tmp')
+    try:
+        temporary.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
+        os.replace(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return evidence
+
+
 def validate_candidate(row, output, profile):
     check_snapshot(row)
     rel = f"src/data/jlpt-original/{row['level']}/{row['number']:02d}/audio.manifest.json"
     manifest = json.loads((output / rel).read_text())
     baseline = json.loads((ROOT / rel).read_text())
-    assert manifest['masterSha256'] == row['masterSha256']
+    if manifest['masterSha256'] != row['masterSha256']:
+        evidence = manifest.get('writtenOnlyRebind')
+        assert evidence is not None, 'Candidate needs a verified written-only metadata rebind'
+        assert manifest.get('currentMasterSha256') == row['masterSha256']
+        assert evidence == written_only_rebind_evidence(row, manifest, evidence['sourceCommit']), 'Written-only provenance changed'
     assert manifest['organizationSha256'] == row['organizationSha256']
     assert manifest['voiceCastingSha256'] == row['castingSha256']
     assert manifest['prosody']['profileSha256'] == fingerprint(profile)
@@ -158,6 +216,8 @@ def acquire_form_lock(output, row, *, blocking=True):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--render', action='store_true')
+    parser.add_argument('--validate-existing', action='store_true', help='Validate preserved recordings without synthesis or installation')
+    parser.add_argument('--rebind-written-only-from', help='With --validate-existing, verify printed-only corrections against this exact Git source')
     parser.add_argument('--engine')
     parser.add_argument('--profile', default=PROFILE)
     parser.add_argument('--candidate-dir', default=CANDIDATES)
@@ -169,6 +229,10 @@ def main():
     parser.add_argument('--cpu-threads', type=int, choices=range(1, 5), default=2)
     parser.add_argument('--restart-every', type=int, choices=range(1, 513), default=6)
     args = parser.parse_args()
+    if args.render and args.validate_existing:
+        parser.error('--render and --validate-existing are mutually exclusive')
+    if args.rebind_written_only_from and not args.validate_existing:
+        parser.error('--rebind-written-only-from requires --validate-existing')
     if args.cache_limit_mb < 64:
         parser.error('--cache-limit-mb must be at least 64')
     profile = load_profile(ROOT / args.profile)
@@ -179,8 +243,11 @@ def main():
     report = {'schemaVersion': 1, 'scope': '30 original forms; no historical exam changes',
               'profileSha256': fingerprint(profile), 'profileStatus': profile['status'],
               'textNormalization': SPOKEN_TEXT_NORMALIZATION, 'candidateDirectory': str(output.relative_to(ROOT)),
-              'engineExecutableAvailable': bool(ready), 'renderedCandidates': 0, 'installedNewAudioForms': 0,
-              'status': 'ready_for_explicit_render' if ready else 'blocked_missing_synthesis_engine', 'forms': rows}
+              'engineExecutableAvailable': None if args.validate_existing and not args.engine else bool(ready),
+              'engineAvailabilityAssessed': bool(args.engine), 'synthesisRequested': args.render,
+              'renderedCandidates': 0, 'installedNewAudioForms': 0,
+              'status': ('validating_preserved_candidates_without_synthesis' if args.validate_existing else
+                         'ready_for_explicit_render' if ready else 'blocked_missing_synthesis_engine'), 'forms': rows}
     target = (ROOT / args.report).resolve()
     if ROOT not in target.parents:
         raise ValueError('Report must stay inside this checkout')
@@ -190,6 +257,30 @@ def main():
     report_lock = acquire_report_lock(target)
     save = lambda: target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     save()
+    if args.validate_existing:
+        failures = []
+        for row in rows:
+            path = output / f"src/data/jlpt-original/{row['level']}/{row['number']:02d}/audio.manifest.json"
+            if not path.is_file():
+                row['status'] = 'missing_complete_candidate'
+                continue
+            try:
+                manifest = json.loads(path.read_text())
+                if args.rebind_written_only_from and manifest['masterSha256'] != row['masterSha256']:
+                    row['writtenOnlyRebind'] = rebind_candidate_written_only(row, output, args.rebind_written_only_from)
+                row.update(validate_candidate(row, output, profile))
+                report['renderedCandidates'] += 1
+                row['reusedValidatedCandidate'] = True
+            except Exception as error:
+                row.update(status='candidate_validation_failed', error=str(error))
+                failures.append(row['examId'])
+            save()
+        report['missingCandidateExamIds'] = [row['examId'] for row in rows if row['status'] == 'missing_complete_candidate']
+        report['status'] = ('30_existing_candidates_validated_integration_pending' if report['renderedCandidates'] == 30
+                            else 'preserved_candidates_validated_missing_or_invalid_forms')
+        save()
+        if failures:
+            raise RuntimeError('Existing candidate validation failures: ' + ', '.join(failures))
     if args.render and not ready:
         raise RuntimeError('No executable VOICEVOX engine; no audio or app manifest was changed')
     if args.render:

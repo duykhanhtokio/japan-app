@@ -92,6 +92,16 @@ def atomic_copy(source, target, *, link=False):
             temporary.unlink(missing_ok=True)
 
 
+def require_complete_batch(rows):
+    expected = {f'jpapp-{level}-original-{number:02d}-v1' for level in ('n5', 'n4', 'n3', 'n2', 'n1') for number in range(1, 7)}
+    actual = [row['examId'] for row in rows]
+    if len(actual) != 30 or len(set(actual)) != 30 or set(actual) != expected:
+        raise ValueError('Installation requires exactly the canonical 30 original forms')
+    incomplete = [row['examId'] for row in rows if row['status'] != 'rendered_candidate_needs_listening']
+    if incomplete:
+        raise ValueError('No audio installed: complete validated candidates are missing for ' + ', '.join(incomplete))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--report', default='docs/checkpoints/jlpt-prosody-20261103/actual-run.json')
@@ -105,8 +115,7 @@ def main():
     report = json.loads((ROOT / args.report).read_text())
     assert report['profileSha256'] == fingerprint(profile)
     rows = report['forms']
-    assert len(rows) == 30 and len({row['examId'] for row in rows}) == 30
-    assert all(row['status'] == 'rendered_candidate_needs_listening' for row in rows), 'All 30 recordings must be complete before installation'
+    require_complete_batch(rows)
     prefix = str(output.relative_to(ROOT))
     stage = output / 'integration-stage'
     writes = {}

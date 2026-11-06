@@ -113,7 +113,14 @@ export function navigateWithPreparedArtwork(path: string, navigate: () => void, 
       resolve();
     }, 180);
   })]);
-  return Promise.all([boundedArtwork, Promise.resolve().then(() => prepareState?.())]).then(() => {
+  const requiredState = Promise.resolve().then(async () => {
+    if (/^\/(N[1-5])\/test\/?(?:[?#].*)?$/.test(path)) {
+      const { prepareOriginalJlptAudioForRoute } = require('@/services/jlpt-original-audio-preparation') as typeof import('@/services/jlpt-original-audio-preparation');
+      await prepareOriginalJlptAudioForRoute(path);
+    }
+    return prepareState?.();
+  });
+  return Promise.all([boundedArtwork, requiredState]).then(() => {
     if (intent !== navigationIntent) return false;
     navigate();
     return true;
