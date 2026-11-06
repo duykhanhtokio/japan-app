@@ -1,6 +1,6 @@
 import diagrams from './diagrams.json';
 import type {RestaurantLesson,RestaurantLevel,RestaurantExam,RestaurantLocale,RestaurantQuestion,RestaurantDiagram,RestaurantGlossaryEntry} from './types';
-export type * from './types';
+export type {RestaurantLevel, RestaurantTopic, ReadingSegment, RestaurantSource, RestaurantLesson, RestaurantQuestion, RestaurantExam, RestaurantLessonTranslation, RestaurantQuestionTranslation, RestaurantGlossaryEntry, RestaurantGlossaryTranslation, RestaurantLocale, RestaurantDiagram} from './types';
 export {RESTAURANT_CONTENT_VERSION} from './types';
 // Keep module evaluation small on the industry/level selector. Load only the chosen level.
 const lessonLoaders:Record<RestaurantLevel,()=>{lessons:RestaurantLesson[]}>={

@@ -1,9 +1,13 @@
 {
   "schemaVersion": 1,
   "dateJst": "2026-11-06",
-  "baseCommit": "b413db935fd7ed2a87109a3c652e5162e6622484",
-  "status": "partial_acceptance_not_release_complete",
-  "codeChanges": false,
+  "baseCommit": "689001b50d5998987c74e853fc30f74e425a4b29",
+  "status": "technical_typecheck_lint_adapter_scoring_pass_device_and_new_audio_pending",
+  "codeChanges": [
+    "src/components/kaigo/WeeklyKaigo.tsx",
+    "src/components/hospitality/HospitalityCourse.tsx",
+    "src/data/restaurant/index.ts"
+  ],
   "adapterValidation": {
     "count": 30,
     "passed": 30,
@@ -141,9 +145,20 @@
     "dependencyRoot": "/tmp/jlpt-qa-deps",
     "syntaxTranspileFiles": 30,
     "syntaxErrors": 0,
-    "semanticFullAppNoEmit": "not_run_missing_expo_and_react_dependency_tree",
-    "fullLint": "not_run_missing_expo_eslint_and_eslint_config_expo",
-    "note": "Syntax transpilation is not semantic typechecking. No full dependency installation was performed."
+    "semanticFullAppNoEmit": "PASS",
+    "fullLint": "PASS",
+    "note": "Initial default ~2 GiB V8 heap exhausted. Single 4096 MiB retry completed and identified baseline technical errors, corrected narrowly; final run completed with zero errors. Full app semantic typecheck genuinely executed, not inferred from transpilation.",
+    "fullAppCommand": "NODE_OPTIONS=--max-old-space-size=4096 npx --no-install tsc --noEmit --pretty false",
+    "fullAppExitCode": 0,
+    "fullAppErrors": 0,
+    "focusedStrictCommand": "node node_modules/typescript/lib/tsc.js --noEmit --pretty false --project /tmp/jlpt-focused-tsconfig.json",
+    "focusedStrictFiles": 35,
+    "focusedStrictStatus": "PASS",
+    "focusedStrictScope": "Thirty adapters plus original audio revision/preparation, economy, credits component and settings; actual dependency types; no mocked type declarations",
+    "fullLintCommand": "npm run lint",
+    "fullLintExitCode": 0,
+    "fullLintErrors": 0,
+    "fullLintWarnings": 135
   },
   "browser": {
     "command": "JAPAN_UI_BROWSER_PATH=/usr/bin/chromium node scripts/check-jlpt-original-n5-01-browser-audio.cjs",
@@ -157,9 +172,47 @@
     "src/services/learning-economy.ts": "6d4e724788a0c1a75da7a2dc4572522ec87caa86370680df31e16e9e96231149"
   },
   "remaining": [
-    "Semantic focused/full-app TypeScript and lint with application dependencies",
-    "Actual browser runner plus opening/play/pause/music-end/resume/screenshots",
-    "Native iOS and Android checks",
-    "All30 newly revised recordings integration and post-install regression; currently six revised N1 candidates missing"
-  ]
+    "Actual browser runner/device acceptance; this worker Chromium launch blocked before page creation",
+    "All thirty revised recordings and post-install regression; six revised N1 not complete at this worker acceptance point",
+    "Final coordinator commit/push/fetch and remote-persistence gate"
+  ],
+  "baselineGateFixes": {
+    "scope": "Coordinator-authorized technical fixes only; no lesson/question wording, answers or audio changes",
+    "files": [
+      "src/components/kaigo/WeeklyKaigo.tsx",
+      "src/components/hospitality/HospitalityCourse.tsx",
+      "src/data/restaurant/index.ts"
+    ],
+    "beforeSha256": {
+      "src/components/kaigo/WeeklyKaigo.tsx": "fcbf68642485f1eb5f939dd0a6c736076aad7775cc3293a23e2303e887883a33",
+      "src/components/hospitality/HospitalityCourse.tsx": "b4cce38c20d967b69b770df42246b0b036aeb2df7431f6d4cf6d8a920681f855",
+      "src/data/restaurant/index.ts": "f9d917a87d9391ea0e89c0daf1596233a1fd62da6188b0d04a34bacef75449fb"
+    },
+    "afterSha256": {
+      "src/components/kaigo/WeeklyKaigo.tsx": "eeb84e2c23f73fef2ec4c96a920763d7dced8b01c6a57cc5ffcdbb0ea6e3add6",
+      "src/components/hospitality/HospitalityCourse.tsx": "f8313bfd66d7e91770f6d4fa72150760a5a958180fa031ec8ff78528d1c4e313",
+      "src/data/restaurant/index.ts": "81ee080eca4a2eaa9f9a843d7064d785733034df5e1f268c1f52dd5955c445e7"
+    },
+    "details": [
+      "Add stable testID to two JapaneseText instances",
+      "Map study-day navigation to mock route for mock catalog entries and day route for lesson/atomic/language entries",
+      "Move identical Hospitality Button children payload into nested JSX",
+      "Replace restaurant type-star re-export with explicit thirteen type exports while preserving the single runtime content-version export"
+    ]
+  },
+  "dependencySetup": {
+    "command": "npm ci --ignore-scripts --no-audit --no-fund --prefer-offline",
+    "exitCode": 0,
+    "addedPackages": 961,
+    "elapsedSecondsReportedByNpm": 22,
+    "nodeModulesSize": "522 MiB",
+    "packageJsonAndLockHashesUnchanged": true,
+    "scope": "One shared repo node_modules; no duplicate app dependency tree"
+  },
+  "sourceMaterialization": {
+    "codeFiles": 559,
+    "directlyReferencedJsonFiles": 2322,
+    "srcSize": "308 MiB",
+    "note": "Source/typecheck inputs only, not entire media tree or all JSON blobs"
+  }
 }

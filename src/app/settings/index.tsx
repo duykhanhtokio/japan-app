@@ -1,4 +1,5 @@
 import { EffectsSettings } from '@/components/effects/EffectsSettings';
+import { JlptVoiceCredits } from '@/components/jlpt/JlptVoiceCredits';
 import { backPrepared } from '@/components/ui/prepareSceneRoute';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 
@@ -166,6 +167,7 @@ export default function SettingsScreen() {
                     </Text>
                 </Pressable>
                 <EffectsSettings />
+                <JlptVoiceCredits />
             </ScrollView>
 
             {modalVisible && <Modal

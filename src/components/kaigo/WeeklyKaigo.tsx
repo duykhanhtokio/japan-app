@@ -503,12 +503,12 @@ export function DayReading({
         第{Math.ceil(entry.day / 7)}週 · 目安30分
       </Text>
       {figures.length === 0 && contextVisual && <>
-        <JapaneseText text={contextVisual.keyObjectiveJa} />
+        <JapaneseText text={contextVisual.keyObjectiveJa} testID={`kaigo-context-objective-${entry.day}`} />
         {translationOpen && lessonTranslation && <TranslationText>{lessonTranslation.objectives[contextVisual.keyObjectiveIndex]}</TranslationText>}
       </>}
       {figures.length > 0 ? figures.map(figure => (
         <View key={figure.id} testID={`kaigo-knowledge-figure-${entry.day}-${figure.id}`}>
-          <JapaneseText text={figure.titleJa} />
+          <JapaneseText text={figure.titleJa} testID={`kaigo-figure-title-${entry.day}-${figure.id}`} />
           <Pressable accessibilityRole="button" accessibilityLabel={figure.altJa} onPress={() => setExpandedFigure(expandedFigure === figure.id ? null : figure.id)}>
             <ScrollView horizontal={expandedFigure === figure.id} contentContainerStyle={{ flexGrow: 1 }} maximumZoomScale={3} minimumZoomScale={1}>
               <Image source={figure.source} accessibilityLabel={figure.altJa} resizeMode="contain"
@@ -956,7 +956,9 @@ export function WeeklyKaigo({
                     onMock={(id) => open({ kind: "mock", id })}
                     onStudyDay={(day) => {
                       const target = kaigoCatalog.find(e => e.day === day);
-                      if (target) open({ kind: target.kind, id: target.id, day: target.day });
+                      if (target) open(target.kind === "mock"
+                        ? { kind: "mock", id: target.id }
+                        : { kind: "day", day: target.day });
                     }}
                   />
                   <View testID="kaigo-day-completion-footer">

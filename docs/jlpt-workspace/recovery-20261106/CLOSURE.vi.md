@@ -13,6 +13,8 @@
 
 ## Chưa được đóng hoàn thiện
 
+Cập nhật tiếp tục: đã bổ sung credit bốn giọng nhìn thấy trực tiếp trong Settings; kiểm tra SSR 13 ngôn ngữ đạt. Đã sửa các lỗi kỹ thuật TypeScript/lint nền ở WeeklyKaigo, HospitalityCourse và restaurant/index, không sửa học liệu. Kiểm tra TypeScript toàn app exit 0; lint exit 0, không lỗi và còn 135 cảnh báo. Chi tiết mới nằm trong `runtime-acceptance.json` và log `runtime-full-*`. Theo yêu cầu tiếp tục hoàn thiện, sáu bản N1 đang được dựng lại từ master hiện hành, tái dùng cache; chưa có thêm bản N1 hoàn chỉnh được nghiệm thu hoặc cài vào app ở thời điểm cập nhật này. Trang kiểm thử HTTPS riêng tư đang được chuẩn bị để tháo chặn browser, không phải phát hành app công khai.
+
 - Sáu bản nghe N1 đã sửa của phiên trước chưa được tìm lại. 30 bản nghe đang dùng vẫn được giữ; thiếu ở đây là sáu bản sửa giọng mới, không phải sáu đề bị mất toàn bộ.
 - Chưa đủ bộ thay thế 30/30 nên audio installation và timeline activation vẫn bị chặn có chủ đích.
 - Chưa nghe nghiệm thu độ tự nhiên; chưa có kiểm thử phát nghe/giao diện trên app thật và thiết bị iOS/Android cho bộ mới. Không dùng kết quả Node/Python thay thế các bằng chứng này.
