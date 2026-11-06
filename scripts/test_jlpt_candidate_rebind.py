@@ -124,6 +124,65 @@ class CompleteSetTests(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, 'Incomplete installation'):
             builder.require_installed_set({'forms': rows, 'installedNewAudioForms': 30})
 
+    def test_failed_live_write_rolls_back_prior_canonical_writes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            output = root / 'candidates'
+            originals = {}
+            rows = self.rows()
+            for row in rows:
+                identity = row['examId'].split('-')
+                row.update(level=identity[1], number=int(identity[3]))
+                folder = f"src/data/jlpt-original/{row['level']}/{row['number']:02d}"
+                live = root / folder
+                live.mkdir(parents=True)
+                for name, content in [('master.ja.json', {'examId': row['examId'], 'audio': {'state': 'old'}}),
+                                      ('listening-organization.ja.json', {}), ('audio.manifest.json', {'state': 'old'})]:
+                    path = live / name
+                    path.write_text(json.dumps(content))
+                    originals[path] = path.read_bytes()
+                asset = f"assets/jlpt-original/{row['level']}/{row['number']:02d}/audio/"
+                paths = ['candidates/' + asset + name for name in ('full.mp3', 'music.mp3')]
+                for relative in paths:
+                    source = root / relative
+                    source.parent.mkdir(parents=True, exist_ok=True)
+                    source.write_bytes(b'replacement-test-recording')
+                    canonical = root / relative.removeprefix('candidates/')
+                    canonical.parent.mkdir(parents=True, exist_ok=True)
+                    canonical.write_bytes(b'old-test-recording')
+                    originals[canonical] = canonical.read_bytes()
+                candidate = output / folder / 'audio.manifest.json'
+                candidate.parent.mkdir(parents=True)
+                candidate.write_text(json.dumps({'continuousAudioPath': paths[0], 'break': {'path': paths[1]}, 'items': []}))
+            report = root / 'report.json'
+            report.write_text(json.dumps({'profileSha256': 'test-profile', 'forms': rows}))
+            originals[report] = report.read_bytes()
+            copy = installer.atomic_copy
+            calls = 0
+            def fail_third_write(source, target, **kwargs):
+                nonlocal calls
+                calls += 1
+                if calls == 3:
+                    raise OSError('injected disk write failure')
+                return copy(source, target, **kwargs)
+            def metadata(master, organization, candidate, previous, prefix, profile):
+                result = copy_module.deepcopy(master)
+                result['audio'] = {'state': 'new'}
+                return result, organization, {'state': 'new'}
+            import copy as copy_module
+            with patch.object(installer, 'ROOT', root), patch.object(installer.batch, 'ROOT', root), \
+                 patch.object(installer, 'load_profile', return_value={}), \
+                 patch.object(installer, 'fingerprint', return_value='test-profile'), \
+                 patch.object(installer, 'candidate_root', return_value=output), \
+                 patch.object(installer.batch, 'validate_candidate'), patch.object(installer.batch, 'check_snapshot'), \
+                 patch.object(installer, 'metadata', side_effect=metadata), \
+                 patch.object(installer, 'atomic_copy', side_effect=fail_third_write), \
+                 patch('sys.argv', ['install', '--report', 'report.json', '--install']):
+                with self.assertRaisesRegex(OSError, 'injected disk write failure'):
+                    installer.main()
+            self.assertEqual(calls, 3)
+            self.assertTrue(all(path.read_bytes() == content for path, content in originals.items()))
+
 
 if __name__ == '__main__':
     unittest.main()
