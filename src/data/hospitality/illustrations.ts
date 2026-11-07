@@ -1,6 +1,6 @@
 import type {ImageSourcePropType} from 'react-native';
 const figures:Record<string,()=>ImageSourcePropType>={
- 'hotel-front-01':()=>require('../../../assets/app/hospitality/hotel-front-01.png'),
+ 'hotel-front-01':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-01.webp'),
  'hotel-front-02':()=>require('../../../assets/app/hospitality/hotel-front-02.png'),
  'hotel-front-03':()=>require('../../../assets/app/hospitality/hotel-front-03.png'),
  'hotel-front-04':()=>require('../../../assets/app/hospitality/hotel-front-04.png'),
@@ -40,3 +40,5 @@ const figures:Record<string,()=>ImageSourcePropType>={
  'hotel-safety-08':()=>require('../../../assets/app/hospitality/hotel-safety-08.png'),
 };
 export function hotelIllustration(id:string):ImageSourcePropType|null{return figures[id]?.()??null;}
+
+export {hotelIllustrationAlt} from './royal-illustration-metadata';
