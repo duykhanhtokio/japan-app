@@ -1,0 +1,146 @@
+{
+  "unit": "week01-actual-native-visible-content-readings",
+  "status": "passed",
+  "week": 1,
+  "level": "2",
+  "sourceFields": [
+    {
+      "lessonId": "agr-climate",
+      "sourceHash": "ddcee332204a8d627b6c832c733ad7721ef9efedf32ee880a205f1fbfae7bb7b",
+      "revision": "v1",
+      "fields": [
+        "spatial:title",
+        "spatial:caption",
+        "paragraphTitle:agr-climate-p3",
+        "region:0",
+        "region:1",
+        "tendency:0",
+        "tendency:1",
+        "paragraph:agr-climate-p3",
+        "paragraph:agr-climate-p6"
+      ],
+      "count": 9
+    },
+    {
+      "lessonId": "agr-statistics",
+      "sourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7",
+      "revision": "v1",
+      "fields": [
+        "title",
+        "legend:0",
+        "legend:1",
+        "legend:2",
+        "legend:3",
+        "legend:4",
+        "remainder",
+        "paragraph:agr-statistics-p2",
+        "paragraph:agr-statistics-p1"
+      ],
+      "count": 9
+    }
+  ],
+  "changes": [
+    "Added18 exact current native visible-content readings across existing climate and2019statistics supports.",
+    "Separate reader validates canonical source/revision/course, exact source text, aligned kana and complete current native source signature including climate asset references and statistics chart values.",
+    "Existing DailyInstructionDiagram callers retain default metadata; only winter supplies equivalent source-bound title/caption nodes. Existing heading reader and all quiz visibility paths unchanged."
+  ],
+  "validation": {
+    "currentNativeFields": 18,
+    "currentNativeLessonCourses": 2,
+    "actualDailyAndNativeRenders": 69,
+    "negativeSourceAssetSignatureRevisionTextKanaForeignCourseChecks": 80,
+    "languageModes": 13,
+    "currentHistoricalPercentages": [
+      24,
+      20,
+      9,
+      4,
+      43
+    ],
+    "controlledCourseCurrentRenders": 62,
+    "controlledCourseRejects": 153,
+    "sourceCanonicalAndExistingDataPacksUnmodified": true,
+    "questionCallerSearch": "Statistics2019Figure, WinterClimateFigure and WinterSpatialReference have only DailyLearningSupport production callers; DailyInstructionDiagram callers are DailyLearningSupport/WinterSpatialReference. No question component caller changed.",
+    "canonicalV2LedgerRefCheck": "Existing ledger not materialized locally; root check requested without child Git read."
+  },
+  "sourceEvidence": {
+    "documentId": "AGR-S2",
+    "pdfPage": 3,
+    "printedPage": 1,
+    "additionalStatisticsSourcePages": [
+      4,
+      7,
+      8
+    ],
+    "sourceSHA256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+    "priorNativeClimateReceipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-climate-native-qa.json",
+    "priorSpatialRetentionReceipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-flower-legend-climate-retention-qa.json",
+    "kanaContextReview": [
+      "日本海側にほんかいがわ /太平洋側たいへいようがわ",
+      "模式断面もしきだんめん /圃場ほじょう /気象予報きしょうよほう",
+      "農業産出額のうぎょうさんしゅつがく /作付面積さくつけめんせき /重量じゅうりょう",
+      "2019年ねん /平成へいせい30年ねん /花きかき"
+    ],
+    "meaning": "Regional tendencies remain distinct from daily forecasts. Statistics remain historical2019output percentages, not area/weight or current-year values. No canonical Japanese, data, art, labels, chart values or translations changed."
+  },
+  "distinctRemainingBakedLabelUnit": {
+    "assetPath": "assets/agriculture/daily-learning-20261031/winter-climate.png",
+    "sha256": "cee9ba0cf4d20ff0ce58dd0e11c409a1c7f8fa8323e97b726fc68a06217cf7ef",
+    "verifiedImmutableConnectorCommit": "1e9fa08b8",
+    "labels": [
+      "冬の地域差の模式断面",
+      "日本海側：雪",
+      "太平洋側：晴天・乾燥"
+    ],
+    "currentReadableCompanionLabels": 0,
+    "plannedCompanionLabels": 3,
+    "pixelInspection": "Existing verified PNG and matching SVG inspected; no edit or new pixel/source acceptance claimed."
+  },
+  "excludedControls": [
+    "図を拡大 (2 controls; UI, not18figure-content fields)"
+  ],
+  "limits": {
+    "nativeWholeWeekComplete": false,
+    "allNativeFieldsComplete": false,
+    "allDailyTargetCaptionsComplete": false,
+    "wholeSourceComplete": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false,
+    "bakedLabelsIncludedIn18": false
+  },
+  "fileSha256": {
+    "src/components/agriculture/NativeFigureReadingSource.ts": "97aefd1e082d6fd086699e839a2e5fe6d1da8beb95d2e5fec7671ff6ac92397d",
+    "src/components/agriculture/AgricultureNativeFigureRuby.tsx": "d1ec79d502cf9ee73c35733fdf231089858ca02a841cec575eec4e248b411ab2",
+    "src/data/agriculture/native-figure-readings.json": "96588d330aec7e59094e706ad903ab4859cd96a0358a4db325b379b3f4972941",
+    "src/components/agriculture/DailyInstructionDiagram.tsx": "4a04e0a557057afef1e52c19a465881bf1b803647d020ab227deaa81b23dedd9",
+    "src/components/agriculture/WinterSpatialReference.tsx": "dd7ccb63324a757f71446ea86a0a222d808874bc52b2c32c21197eafc8d8dea1",
+    "src/components/agriculture/WinterClimateFigure.tsx": "082169bac72b0f2af164980c919db127e3a43aae417149928e5179f6994941eb",
+    "src/components/agriculture/Statistics2019Figure.tsx": "a2d7fe8ad3f757129f5356302cd146d8766a2420434c9e025beace88395d19e2",
+    "scripts/agriculture/check-native-week01-readings.cjs": "957190caf4419516bed24eb1a13c012e07ce5141a40608faf1e3f7a4c6469f65"
+  },
+  "rootCanonicalEvidenceReferenceCheck": {
+    "repositoryRef": "1e9fa08b86e41d68180312a401ac650a85a35939",
+    "ledgerPath": "docs/ssw-workspace/source-coverage-v2/agriculture.json",
+    "ledgerGitSha": "15092f3db288259a0ec93b2cf4f4727647becb23",
+    "schemaVersion": 2,
+    "knowledgeUnitCount": 1443,
+    "paths": [
+      "src/components/agriculture/NativeFigureReadingSource.ts",
+      "src/components/agriculture/AgricultureNativeFigureRuby.tsx",
+      "src/data/agriculture/native-figure-readings.json",
+      "src/components/agriculture/DailyInstructionDiagram.tsx",
+      "src/components/agriculture/WinterSpatialReference.tsx",
+      "src/components/agriculture/WinterClimateFigure.tsx",
+      "src/components/agriculture/Statistics2019Figure.tsx",
+      "scripts/agriculture/check-native-week01-readings.cjs",
+      "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-native-visible-readings-qa.json"
+    ],
+    "matchedReferenceCount": 0,
+    "matches": [],
+    "flagsUnchanged": true,
+    "currentIndexBlobMatchesImmutableLedger": true,
+    "requiresLedgerUpdate": false,
+    "reviewFlagsChanged": false
+  }
+}

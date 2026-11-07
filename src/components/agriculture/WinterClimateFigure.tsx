@@ -1,3 +1,4 @@
+import {AgricultureNativeFigureRuby} from './AgricultureNativeFigureRuby';
 import {Text,View} from 'react-native';
 import {ZoomableFigure} from './ZoomableFigure';
 const appearance=require('../../../assets/agriculture/royal-weekly-20261107/week01/winter-farm-comparison.webp');
@@ -10,24 +11,25 @@ export function WinterClimateFigure({lesson,level,language,showTranslation,trans
  if(level!=='2'||lesson.id!==data.lessonId||lesson.sourceHash!==data.sourceHash)return null;
  const winter=lesson.paragraphs.find(p=>p.id==='agr-climate-p3'),limit=lesson.paragraphs.find(p=>p.id==='agr-climate-p6');
  if(!winter||!limit)return null;
+ const readingContext={lessonId:lesson.id,lessonSourceHash:lesson.sourceHash,lessonRevision:lesson.revision,level,color:colors.translationText};
  const t=showTranslation&&translation?.sourceHash===data.sourceHash?translation:null;
  const localized=t?(data.labels as Record<string,Labels>)[language]:undefined;
  const alt=localized&&t?.paragraphs[winter.id]?t.paragraphs[winter.id]:winter.textJa;
  return <View testID="agri-native-winter-climate" style={{gap:12,marginVertical:12}}>
-  <Text style={{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'}}>{winter.titleJa}</Text>
+  <AgricultureNativeFigureRuby {...readingContext} field={`paragraphTitle:${winter.id}`} text={winter.titleJa} style={{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'}}/>
   {!!localized&&<Text testID="agri-climate-localized-title" style={{color:colors.translationText,fontSize:17,lineHeight:28}}>{t?.paragraphTitles[winter.id]}</Text>}
   <ZoomableFigure source={appearance} width={data.appearanceAsset.width} height={data.appearanceAsset.height} altJa={alt} testID="agri-royal-winter-farm-examples" colors={colors} allowExpandedView/>
   <View accessible accessibilityRole="image" accessibilityLabel={alt} testID="agri-climate-regional-comparison" style={{flexDirection:'row',flexWrap:'wrap',gap:14}}>
    {data.labels.ja.regions.map((region,i)=><View key={region} testID={`agri-climate-region-${i}`} style={{flexBasis:230,flexGrow:1,padding:16,borderWidth:1,borderColor:colors.border,borderRadius:12,gap:10}}>
     <View importantForAccessibility="no" style={{height:8,borderRadius:4,backgroundColor:i===0?'#688a9b':'#c4a354'}}/>
-    <Text style={{color:colors.translationText,fontWeight:'700',fontSize:19,lineHeight:29}}>{region}</Text>
-    <Text style={{color:colors.translationText,fontSize:17,lineHeight:28}}>{data.labels.ja.tendencies[i]}</Text>
+    <AgricultureNativeFigureRuby {...readingContext} field={`region:${i}`} text={region} style={{color:colors.translationText,fontWeight:'700',fontSize:19,lineHeight:29}}/>
+    <AgricultureNativeFigureRuby {...readingContext} field={`tendency:${i}`} text={data.labels.ja.tendencies[i]} style={{color:colors.translationText,fontSize:17,lineHeight:28}}/>
     {!!localized&&<Text testID={`agri-climate-localized-region-${i}`} style={{color:colors.translationText,fontSize:17,lineHeight:28}}>{localized.regions[i]}{'\n'}{localized.tendencies[i]}</Text>}
    </View>)}
   </View>
-  <Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{winter.textJa}</Text>
+  <AgricultureNativeFigureRuby {...readingContext} field={`paragraph:${winter.id}`} text={winter.textJa} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/>
   {!!t&&<Text testID="agri-climate-localized-explanation" style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{t.paragraphs[winter.id]}</Text>}
-  <Text testID="agri-climate-regional-limit" style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{limit.textJa}</Text>
+  <View testID="agri-climate-regional-limit"><AgricultureNativeFigureRuby {...readingContext} field={`paragraph:${limit.id}`} text={limit.textJa} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/></View>
   {!!t&&<Text testID="agri-climate-localized-limit" style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{t.paragraphs[limit.id]}</Text>}
   <Text style={{color:colors.translationText,fontSize:14,lineHeight:23}}>AGR-S2 · p.1</Text>
  </View>;
