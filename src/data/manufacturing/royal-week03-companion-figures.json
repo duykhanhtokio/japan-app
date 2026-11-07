@@ -1710,6 +1710,184 @@
         }
       ],
       "introducedWeek": 9
+    },
+    "mfg1-electrical-l001": {
+      "sourceHash": "9b570e190c07fe071d90bf8e89256cedff531d6ad52480009d9144812b426855",
+      "captionJa": "mm と mm² を区別する。\n電線・端子・圧着工具を一組として照合する。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "端子台のねじに取り付けられる端子でも、電線の太さが適合しなければ正しく接続できません。電線の種類、導体の太さ、端子の適用範囲、圧着工具の指定を別々に確認します。見た目だけで組合せを決めないことが大切です。\n単線の直径を示す mm と、より線の断面積を示す mm² は同じ量ではありません。例えば 1.25 mm² の表示を見て、直径 1.25 mm 用の刃をそのまま選ぶことはできません。工具の適用表で、その電線に使える位置を調べます。",
+        "section-2": "ワイヤストリッパは絶縁被覆を取り除くための工具です。刃が深すぎると導体を傷つけ、浅すぎると被覆が残ります。加工後は素線の切断、傷、むき長さを作業標準と照合します。\n圧着はペンチで端子を押しつぶす作業ではありません。指定された端子と適合工具を使って接続し、仕上がりを決められた方法で確認します。端子が付いたという事実だけで合格にしません。"
+      },
+      "images": [
+        {
+          "id": "electrical-day01-wire-tools",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/electrical-day01-wire-tools.webp",
+          "width": 1536,
+          "height": 1024,
+          "sha256": "1f712460308add8ac57c8508ec91e6e7e31423581032baedd1d0fa60206cc59b",
+          "existingAssetReused": true
+        }
+      ],
+      "introducedWeek": 10
+    },
+    "mfg1-electrical-l015": {
+      "sourceHash": "25d7da40236abfd57e0e62fafda205a46a321d258e83fad5905f178fb6ce31bb",
+      "captionJa": "導電・磁性・絶縁は役割が違う。正誤表を反映し、材料と使用条件を組み合わせて確認する。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "導電材料は電流を流す部分に使い、銅やアルミニウムなどは用途に応じて電線に使われます。磁性材料は磁気の働きを利用する部分に使い、変圧器の鉄心などが例です。絶縁材料は電気を通しにくく、導体間などを隔てる役割を持ちます。同じ部品の中でも、それぞれ別の材料が必要です。\n導電性が高いからすべての条件で最適とは限りません。重量、加工性、温度、機械的強度、接続方法などを合わせて確認します。アルミニウムは電気を通しても、鉄と同じ磁性材料として扱うことはできません。",
+        "section-2": "絶縁材料も過熱や汚れ、傷、劣化などで性能が変わります。耐熱クラスや使用温度、環境、必要な厚さなどを仕様で確認します。見た目が樹脂やゴムだから安全、と判断してはいけません。\n本教材では2026年10月1日の正誤表を反映します。元PDFの印刷70ページにある無機絶縁材料の例から「天然ゴム」を除き、無機の例はマイカ、セラミックとします。天然ゴムを無機材料と分類して覚えないようにします。"
+      },
+      "images": [
+        {
+          "id": "electrical-day15-material-roles",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/electrical-day15-material-roles.webp",
+          "width": 1536,
+          "height": 1024,
+          "sha256": "3623349caba629d40110610f030dbac5cea49abb48cdd2ca3bc1f2a3679d4001",
+          "existingAssetReused": true
+        }
+      ],
+      "introducedWeek": 10
+    },
+    "mfg1-electrical-l018": {
+      "sourceHash": "e31e735cd6be75ceadc82390e397911487373abb684564fe38ea8925180e562b",
+      "captionJa": "ダイオードは方向性を持つ。整流の基本動作、取付け方向、実部品の定格を区別する。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "ダイオードはアノードAとカソードKという二つの端子を持つ半導体部品です。基本的な説明では、アノードからカソードへ向かう側が順方向で、逆の側は電流を通しにくい方向です。単に線が二本ある部品として、どちら向きに付けても同じとは考えません。\n実部品には順方向電圧、許容電流、逆方向の耐圧などの条件があります。「逆方向は何があっても完全に電流ゼロ」と決めつけず、仕様範囲で使用します。ツェナーダイオードなど、種類によって意図する働きも異なります。",
+        "section-2": "交流では電圧の向きが繰り返し変わります。ダイオードの方向性を利用すると、片側の向きに対応する電流を取り出すことができ、これを整流の基本として考えます。取り出した波形が直ちに一定の平らな直流になるとは限りません。\n取付けでは回路図のA・K、部品の極性表示、基板の表示を照合します。帯や印の意味は部品資料で確認し、形が似ているという理由で向きを決めません。極性の不一致を見つけたら、通電前に保留して確認します。"
+      },
+      "images": [
+        {
+          "id": "electrical-day18-diode-half-wave",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.png",
+          "width": 1400,
+          "height": 1000,
+          "sha256": "e6dc6a0153637187ffbdd6034d8fc0fa99b40a75f234ef4ccbd836b1a95d5c8e",
+          "existingAssetReused": true,
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.svg",
+          "svgSha256": "a58a675d7388a402c7ff246c118701a62761abf460cc1a92a8c51ed48045b134"
+        }
+      ],
+      "introducedWeek": 10
+    },
+    "mfg1-electrical-l022": {
+      "sourceHash": "a680c5bfcdaace4358439016b5305ee47889bdadc534f139ef7639c53c75b82f",
+      "captionJa": "コイルは電流と磁気、コンデンサは電荷の蓄積を利用する。仕様の照合と残留エネルギーの確認を省かない。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "コイルは電線を巻いた部品で、磁性体の芯を使うものもあります。電流と磁気の関係を利用する点が特徴です。コンデンサは導体を絶縁物で隔てた構造を持ち、電荷を蓄えます。外観の大きさや端子の数だけでは、この二つや抵抗器の役割を判断できません。\nコンデンサには電解、セラミック、フィルムなどがあり、容量、定格電圧、極性、使用温度などの条件が違います。同じ容量というだけで別の種類を交換品にしないようにします。電解コンデンサなど極性を持つものは、部品資料と実装方向を照合します。",
+        "section-2": "理想的なコンデンサを抵抗を通して直流電源につなぐと、充電中には電流が流れ、十分に充電された定常状態では電流が流れなくなるという基本を考えます。これは理想化した説明で、実部品の漏れ電流や故障を無視した安全保証ではありません。\n電源を切ってもコンデンサに電荷が残る場合があります。電源スイッチが切れていることと、回路に危険なエネルギーが残っていないことは別です。放電の方法や待ち時間を自己流で決めず、職場の手順に従います。"
+      },
+      "images": [
+        {
+          "id": "electrical-day-022",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/daily40/electrical/electrical-day-022.png",
+          "width": 1400,
+          "height": 900,
+          "sha256": "4245b3194c4866de5b58aa99005d41854e9e868f051bbe05c6f10b1f40004202",
+          "existingAssetReused": true,
+          "svgFile": "assets/manufacturing/daily40/electrical/electrical-day-022.svg",
+          "svgSha256": "0a59ef42b92c154ca21cf7cbbda96208fc938df3599bfec9fd486cbc9da5ec74"
+        }
+      ],
+      "introducedWeek": 10
+    },
+    "mfg1-electrical-l095": {
+      "sourceHash": "b35aac25a5434e4d01dcaf35c62e96e044312d27ea3d831e48afb78f96bf198f",
+      "captionJa": "回転機と変圧器を構造と条件で照合するでは、名称だけでなく構造・用途・適用条件を照合する。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "三相誘導機にはかご形と巻線形の回転子があります。スターデルタの始動電流低減は、同じ線間電圧で適合する三相巻線を比較した条件の説明です。始動トルクも変わるため、電流が下がるから全負荷に使えるとはいえません。始動法と巻線端子、定格、負荷、保護を一緒に照合します。",
+        "section-2": "エンコーダは回転角や直線変位を符号化するセンサです。サーボは検出値を戻し、指令との差を補正して位置・速度・トルク等を制御します。送り速度の要求と巻取りトルクの要求を区別し、位置のずれを速度だけの増加で直そうとしません。"
+      },
+      "images": [
+        {
+          "id": "companion-motor-servo-feedback-selected",
+          "paragraphId": "section-2",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week10/technical/companion-motor-servo-feedback-selected.png",
+          "width": 1440,
+          "height": 1000,
+          "sha256": "8c04eb29076dd32e3c2ab521ecf6ffe344f2c7bd290fa8c8f3fa490063df782f",
+          "existingAssetReused": false,
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week10/technical/companion-motor-servo-feedback-selected.svg",
+          "svgSha256": "eea98f73c07d9d20a5557a4b3abfcb65dba74db7046a0adaa1ef5ef6812c195e"
+        }
+      ],
+      "introducedWeek": 10
+    },
+    "mfg1-electrical-completion37-scope": {
+      "sourceHash": "0c854e705c157e76e30e102faf832e7444bcb1a5f4dfeab1b44e1933cd20ab83",
+      "captionJa": "同時観測数、帯域、標本化、記録容量を別の条件として説明する。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "入力チャネル数は、複数の信号を同時に観測するときの確認項目です。二つの信号の時間関係を見たい場面で、一つの入力を順番に切り替えた記録を、同時に観測した結果と扱いません。必要な信号数と使える入力の条件を仕様で照合します。",
+        "section-2": "周波数帯域は、どの程度の速い信号まで観測できるかに関わります。サンプリングレートは一秒当たりに信号をデータへ変換する回数に関わります。両者は別の性能なので、サンプリングレートの数字が大きいだけで帯域の不足が解消するとは判断しません。"
+      },
+      "images": [
+        {
+          "id": "companion-scope-channels-bandwidth-sampling",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week10/technical/companion-scope-channels-bandwidth-sampling.png",
+          "width": 1440,
+          "height": 1000,
+          "sha256": "530b76980f8ad3b3046004729904c8ecef1364794ffd376b0f346d696cb9e7b4",
+          "existingAssetReused": false,
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week10/technical/companion-scope-channels-bandwidth-sampling.svg",
+          "svgSha256": "5c580c21f7701827fc7eb7d996311f587b6f8406926561e7509343cbd0c6b05a"
+        }
+      ],
+      "introducedWeek": 10
+    },
+    "mfg1-electrical-completion37-resistance": {
+      "sourceHash": "a808c99bdc1c34c32e0d696f0216b31b6b3b9ede1a51cabb6fa6a557f9ee2037",
+      "captionJa": "教材の二つの方法名とR=V/Iを区別し、測定系の影響を一律の補正式へ変えない。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "教材は抵抗測定の方法としてブリッジ法と電圧降下法を挙げます。ここでは方法の名称を区別します。該当する説明にはブリッジ回路の詳細な構成や調整手順は示されていないため、名前だけを根拠に実回路を組みません。古い方法との比較を、現在の全機器の使用割合や優劣の証明として扱いません。",
+        "section-2": "電圧降下法では、対象に対応する電圧Vと電流Iを測り、抵抗RをR=V/Iで求めます。独立した紙上例で0.30Vと15mAなら、15mA=0.015Aとして0.30÷0.015=20Ωです。これは与えた測定値を使う計算であり、実機の安全な接続や対象の真値を保証する例ではありません。"
+      },
+      "images": [
+        {
+          "id": "companion-resistance-drop-20ohm",
+          "paragraphId": "section-2",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week10/technical/companion-resistance-drop-20ohm.png",
+          "width": 1440,
+          "height": 1000,
+          "sha256": "af768f6a51ed2e4c0c1922d8617d9d84823cc22c8a7a3df7a44b6d0ebacdf666",
+          "existingAssetReused": false,
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week10/technical/companion-resistance-drop-20ohm.svg",
+          "svgSha256": "fb3f471f4feee172235b93459a67aae33d5921ce7eaff7ed9d709fcf4ee73111"
+        }
+      ],
+      "introducedWeek": 10
     }
   }
 }

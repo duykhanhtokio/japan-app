@@ -1,6 +1,13 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week10/technical/surface-day66-burette-difference.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week10/technical/surface-day66-burette-difference.png");
+  case "assets/manufacturing/royal-weekly-20261107/week10/technical/electrical-day70-kirchhoff-checks.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week10/technical/electrical-day70-kirchhoff-checks.png");
+  case "assets/manufacturing/royal-weekly-20261107/week09/technical/companion-electrical69-period-phase-selected.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week09/technical/companion-electrical69-period-phase-selected.png");
+  case "assets/manufacturing/royal-weekly-20261107/week10/technical/electrical-day68-resistance-power-energy.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week10/technical/electrical-day68-resistance-power-energy.png");
+  case "assets/manufacturing/royal-weekly-20261107/week10/electrical-day65-cooled-joint-material-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week10/electrical-day65-cooled-joint-material-review.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week10/mechanical-day70-context-learning-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week10/mechanical-day70-context-learning-review.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week10/technical/mechanical-day69-separate-exam-conditions.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week10/technical/mechanical-day69-separate-exam-conditions.png");
   case "assets/manufacturing/royal-weekly-20261107/week09/technical/surface-day62-stagnation-edge-peel.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week09/technical/surface-day62-stagnation-edge-peel.png");
   case "assets/manufacturing/royal-weekly-20261107/week09/electrical-day57-circular-material-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week09/electrical-day57-circular-material-review.webp");
   case "assets/manufacturing/royal-weekly-20261107/week09/mechanical-day60-instruction-revision-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week09/mechanical-day60-instruction-revision-review.webp");
