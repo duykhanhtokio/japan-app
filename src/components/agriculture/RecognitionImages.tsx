@@ -101,7 +101,7 @@ const assets:Record<string,ImageSourcePropType>={
  "crop-fruits-atlas-v1":require('../../../assets/agriculture/completion-40/rice/crop-fruits-atlas-v1.png'),
  "crop-leaves-atlas-v1":require('../../../assets/agriculture/completion-40/rice/crop-leaves-atlas-v1.png'),
  "crop-herbs-legumes-atlas-v1":require('../../../assets/agriculture/completion-40/rice/crop-herbs-legumes-atlas-v1.png'),
- "crop-lotus-atlas-v1":require('../../../assets/agriculture/completion-40/rice/crop-lotus-atlas-v1.png'),
+ "crop-lotus-atlas-v1":require('../../../assets/agriculture/royal-weekly-20261107/week02/lotus-above-water-and-rhizome.webp'),
  "rice-machines-scenes-v1":require('../../../assets/agriculture/completion-40/rice/rice-machines-scenes-v1.png'),
  "agri-use-states-atlas-v1":require('../../../assets/agriculture/completion-40/rice/agri-use-states-atlas-v1.png'),
  "vegetable-seeds-atlas-v1":require('../../../assets/agriculture/completion-40/rice/vegetable-seeds-atlas-v1.png'),
