@@ -5,19 +5,19 @@ import type {HotelLesson} from '../../data/hospitality/types';
 import {loadHotelTranslation} from '../../data/hospitality/translation-loaders';
 import {hotelMealGuideLabels,HOTEL_MEAL_GUIDE_REVISIONS} from '../../data/hospitality/meal-visual-guide-labels';
 export function hotelMealLayout(id:string){
- if(id==='hotel-restaurant-03')return [{key:'rice',x:.25,y:.70},{key:'soup',x:.75,y:.70},{key:'side',x:.25,y:.25},{key:'main',x:.75,y:.25}];
+ if(id==='hotel-restaurant-03')return [{key:'rice',x:.25,y:.70},{key:'soup',x:.75,y:.70},{key:'side',x:.25,y:.25},{key:'main',x:.75,y:.25},{key:'sideSecond',x:.50,y:.25}];
  if(id==='hotel-restaurant-04')return [{key:'fork',x:.18,y:.52},{key:'knife',x:.72,y:.52},{key:'spoon',x:.87,y:.52},{key:'bread',x:.20,y:.15},{key:'dessert',x:.50,y:.15}];
  return [{key:'food',x:.23,y:.45},{key:'drink',x:.77,y:.45}];
 }
 export function HotelMealLayoutGuide({lesson,language}:{lesson:HotelLesson;language:string}){
  if(HOTEL_MEAL_GUIDE_REVISIONS[lesson.id]!==lesson.revision)return null;
  const material=language==='ja'?lesson:loadHotelTranslation(lesson.id,language,lesson.revision);if(!material)return null;
- const t=hotelMealGuideLabels(language),nodes=hotelMealLayout(lesson.id),ids=lesson.id==='hotel-restaurant-02'?['hotel-restaurant-02-s1','hotel-restaurant-02-s2']:lesson.id==='hotel-restaurant-03'?['hotel-restaurant-03-s1','hotel-restaurant-03-s2']:['hotel-restaurant-04-s1','hotel-restaurant-04-s2'];
- return <View testID={`${lesson.id}-native-meal-layout`} style={s.root}><Text style={s.title}>{material.illustration.caption}</Text><View accessibilityRole="image" accessibilityLabel={`${t.guest}: ${nodes.map((node,index)=>`${index+1} ${t[node.key]}`).join('; ')}`} style={s.diagram}>
+ const t=hotelMealGuideLabels(language),label=(key:string)=>t[key==='sideSecond'?'side':key],nodes=hotelMealLayout(lesson.id),ids=lesson.id==='hotel-restaurant-02'?['hotel-restaurant-02-s1','hotel-restaurant-02-s2']:lesson.id==='hotel-restaurant-03'?['hotel-restaurant-03-s1','hotel-restaurant-03-s2']:['hotel-restaurant-04-s1','hotel-restaurant-04-s2'];
+ return <View testID={`${lesson.id}-native-meal-layout`} style={s.root}><Text style={s.title}>{material.illustration.caption}</Text><View accessibilityRole="image" accessibilityLabel={`${t.guest}: ${nodes.map((node,index)=>`${index+1} ${label(node.key)}`).join('; ')}`} style={s.diagram}>
  {lesson.id==='hotel-restaurant-04'&&<View style={s.plate}/>}
  {nodes.map((node,index)=><View key={node.key} style={[s.marker,{left:`${node.x*100}%`,top:`${node.y*100}%`}]}><Text style={s.markerText}>{index+1}</Text></View>)}
  <View style={s.guest}><Text style={s.text}>↑ {t.guest}</Text></View></View>
- {nodes.map((node,index)=><Text key={node.key} style={s.text}>{index+1} · {t[node.key]}</Text>)}
+ {nodes.map((node,index)=><Text key={node.key} style={s.text}>{index+1} · {label(node.key)}</Text>)}
  {lesson.id==='hotel-restaurant-04'&&<><View style={s.signalRow}>{[{key:'eating',pair:false},{key:'finished',pair:true}].map(item=><View key={item.key} style={s.signalCard}><Text style={s.text}>{t[item.key]}</Text><View style={s.signalPlate}><View style={[s.utensil,{left:item.pair?'48%':'30%',transform:[{rotate:item.pair?'-40deg':'32deg'}]}]}/><View style={[s.utensil,{left:item.pair?'60%':'60%',transform:[{rotate:item.pair?'-40deg':'-32deg'}]}]}/></View></View>)}</View></>}
  {ids.map(id=>material.sections.find(section=>section.id===id)).filter(Boolean).map(section=><View key={section!.id} style={s.source}><Text style={s.title}>{section!.title}</Text><Text style={s.text}>{section!.body}</Text></View>)}</View>;
 }
