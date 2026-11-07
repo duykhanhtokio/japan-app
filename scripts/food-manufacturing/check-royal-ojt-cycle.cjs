@@ -51,6 +51,9 @@ for(const [word,ref] of Object.entries(data.rubyProvenance)){
  else{const canonical=index.foodManufacturingLessons.find(l=>l.id===ref.lessonId);assert.equal(canonical.sourceHash,ref.sourceHash);let entry;for(let i=1;i<=6;i++){const pack=JSON.parse(fs.readFileSync(path.join(root,`src/data/food-manufacturing/ruby/lessons-0${i}.json`),'utf8'));entry=pack.lessons[ref.lessonId]??entry;}assert(entry.fields[ref.field].some(p=>p.text===word&&p.reading===ref.reading));}
 }
 assert.equal(selfAuthored,1,'Only the disclosed ordinary-word reading is newly authored');
+const assertCompound=parts=>{assert.equal(parts.find(part=>part.text==='習得済み')?.reading,'しゅうとくずみ');assert(!parts.some(part=>part.text==='済み'&&part.reading==='すみ'));};
+assertCompound(data.lines.find(line=>line.id==='closure1').ruby);
+assert.throws(()=>assertCompound([{text:'習得済み',reading:'しゅうとくすみ'}]),'Old standalone reading must fail');
 const escape=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
 const render=(actual,language,showTranslation=true)=>renderToStaticMarkup(React.createElement(ojt.FoodRoyalOjtCycle,{lesson:actual,language,showTranslation}));
 let contexts=0,callerContexts=0;
@@ -65,4 +68,4 @@ for(const language of ['ja',...locales]){
 forcedExpanded=undefined;
 const oldRevision=data.locales.vi.sourceHash;try{data.locales.vi.sourceHash='old-chart-text';const html=render(lesson,'vi');assert(!html.includes(escape(data.locales.vi.lines.closure1)));assert(html.includes(escape(data.lines.find(l=>l.id==='closure1').ja)));}finally{data.locales.vi.sourceHash=oldRevision;}
 for(const width of [200,320,559,560,1024]){allocatedWidth=width;cardStyles.length=0;render(lesson,'vi');assert.equal(cardStyles.length,4);for(const styles of cardStyles){const s=Object.assign({},...styles);assert.equal(s.minWidth,0);assert.equal(s.maxWidth,'100%');assert.equal(s.flexBasis,width>=560?'45%':'100%');assert(parseFloat(s.flexBasis)/100*width<=width);}}
-console.log('PASS23 unchanged Japanese strings,276 explicit revision-bound locale lines,60 reading-provenance tokens, '+contexts+' native current/invalid contexts, '+callerContexts+' actual inline+zoom caller contexts and5 allocated-width structural layouts. Existing source-reused readings plus disclosed1 ordinary AI reading; no device/native/domain acceptance.');
+console.log('PASS23 unchanged Japanese strings,276 explicit revision-bound locale lines,current reading-provenance tokens, '+contexts+' native current/invalid contexts, '+callerContexts+' actual inline+zoom caller contexts and5 allocated-width structural layouts. Existing source-reused readings plus disclosed1 ordinary AI reading; no device/native/domain acceptance.');

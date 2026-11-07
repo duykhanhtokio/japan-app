@@ -19,13 +19,13 @@ export function royalOpenStrokeGeometry(width:number,height:number) {
  return {left:36*scale,right:36*scale,top:38*scale,bottom:22*scale,radius:140*scale};
 }
 /** Nine raster slices: corners keep their proportions while straight edges extend. */
-export default function RoyalPaperPanel({children,style,tone='paper',borderOnly=false}:PropsWithChildren<{style?:StyleProp<ViewStyle>;tone?:'paper'|'hud';borderOnly?:boolean;immediateBorder?:boolean}>) {
+export default function RoyalPaperPanel({children,style,tone='paper',borderOnly=false,testID}:PropsWithChildren<{style?:StyleProp<ViewStyle>;tone?:'paper'|'hud';borderOnly?:boolean;immediateBorder?:boolean;testID?:string}>) {
  const hud=tone==='hud';
  // Every border uses pre-cropped slices on its first render. Home retains its
  // approved 36px corners; no measured full-source artwork or secondary fill.
  const slices=borderOnly?OPEN_FRAME_SLICES:hud?HUD_FRAME_SLICES:PAPER_FRAME_SLICES;
  const cx=hud&&!borderOnly?30:36,cy=borderOnly?144*36/330:hud?15:24;
- return <View pointerEvents={borderOnly?'none':'auto'} style={[s.panel,style,{backgroundColor:'transparent'}]}>
+ return <View testID={testID} pointerEvents={borderOnly?'none':'auto'} style={[s.panel,style,{backgroundColor:'transparent'}]}>
   <View pointerEvents="none" style={StyleSheet.absoluteFillObject}>{slices.map((source,index)=>{
    const cell=borderOnly&&index>=4?index+1:index,row=Math.floor(cell/3),col=cell%3;
    const horizontal=col===0?{left:0,width:cx}:col===2?{right:0,width:cx}:{left:cx,right:cx};

@@ -34,8 +34,8 @@ import ui from '@/data/food-manufacturing/daily-ui-translations.json';
 import {foodManufacturingLesson,foodManufacturingTranslation,type FoodManufacturingLesson} from '@/data/food-manufacturing';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 import {FoodLessonRuby} from './FoodLessonRuby';
-import {FoodRoyalOjtCycle} from './FoodRoyalOjtCycle';
-import {FoodRoyalChemicalSafety} from './FoodRoyalChemicalSafety';
+import {FoodRoyalOjtCycle,foodRoyalOjtCycleFor} from './FoodRoyalOjtCycle';
+import {FoodRoyalChemicalSafety,foodRoyalChemicalSafetyFor} from './FoodRoyalChemicalSafety';
 type PracticeFigure={id:string;lessonId:string;paragraphId:string;source:ImageSourcePropType;aspectRatio:number;width?:number;height?:number;lessonSourceHash:string;altJa?:string;captionSupplementId?:string;captionSupplementSourceHash?:string};
 const figures:PracticeFigure[]=[
  ...foodSourcePractice32,
@@ -62,7 +62,7 @@ export function foodSourcePracticeFigureMatches(lesson:FoodManufacturingLesson,f
 }
 function technicalSourceRecord(lesson:FoodManufacturingLesson,figure:PracticeFigure){return [...technical7.figures,...technical8.figures].find(record=>record.id===figure.id&&record.lessonId===lesson.id&&record.sourceHash===lesson.sourceHash);}
 function technicalSourcePack(id:string){return technical7.figures.some(record=>record.id===id)?technical7:technical8;}
-function technicalSourceTranslation(lesson:FoodManufacturingLesson,figure:PracticeFigure,language:string){const record=technicalSourceRecord(lesson,figure),pack=record?technicalSourcePack(record.id):null,labels=language==='ja'?pack?.keysJa:(pack?.locales as Record<string,string[]>|undefined)?.[language];if(!record||!labels)return null;const topology=figure.id==='food-source32-organisation'?`${labels[3]}: ${labels[0]} ↔ ${labels[2]} A/B · ${labels[4]}: ${labels[0]} ↔ ${labels[1]} ↔ ${labels[2]} A/B`:figure.id==='food-source37-flow-zones'?`${labels[13]} A+B → ${labels[20]} → ${labels[21]} → ${labels[22]} → ${labels[23]} → ${labels[24]} → ${labels[25]} · ${labels[14]} → ${labels[24]}`:'';return `${record.terms.map(term=>`${'prefix' in term?term.prefix+' · ':''}${labels[term.index]}`).join('。')}。${record.exact}${topology?`。${topology}`:''}`;}
+function technicalSourceTranslation(lesson:FoodManufacturingLesson,figure:PracticeFigure,language:string){if(figure.id==='food-source33-ojt-cycle'){const native=foodRoyalOjtCycleFor(lesson,language,language!=='ja');return (language==='ja'?native?.lines.map(line=>line.ja):native?.lines.map(line=>native.translated?.[line.id]).filter(Boolean))?.join('。')??null;}if(figure.id==='food-source33-chemical-ppe'){const native=foodRoyalChemicalSafetyFor(lesson,language,language!=='ja');return (language==='ja'?native?.lines.map(line=>line.ja):native?.translated)?.join('。')??null;}const record=technicalSourceRecord(lesson,figure),pack=record?technicalSourcePack(record.id):null,labels=language==='ja'?pack?.keysJa:(pack?.locales as Record<string,string[]>|undefined)?.[language];if(!record||!labels)return null;const topology=figure.id==='food-source32-organisation'?`${labels[3]}: ${labels[0]} ↔ ${labels[2]} A/B · ${labels[4]}: ${labels[0]} ↔ ${labels[1]} ↔ ${labels[2]} A/B`:figure.id==='food-source37-flow-zones'?`${labels[13]} A+B → ${labels[20]} → ${labels[21]} → ${labels[22]} → ${labels[23]} → ${labels[24]} → ${labels[25]} · ${labels[14]} → ${labels[24]}`:'';return `${record.terms.map(term=>`${'prefix' in term?term.prefix+' · ':''}${labels[term.index]}`).join('。')}。${record.exact}${topology?`。${topology}`:''}`;}
 
 /** Keep inline/zoom descriptions tied to the same current source and caption revision. */
 export function foodSourcePracticeDescription(lesson:FoodManufacturingLesson,figure:PracticeFigure,language:string,showTranslation:boolean){

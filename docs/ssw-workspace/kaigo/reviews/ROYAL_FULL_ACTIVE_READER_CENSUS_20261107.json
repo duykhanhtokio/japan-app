@@ -3,8 +3,8 @@
   "sector": "kaigo",
   "reviewedBaseline": "9adfe8361464cf6a4693aee6d4fb689fa1768fa1",
   "freshEquivalentKaigoParent": "2241b86fc716aaf5a865746c573d5135dff937d0",
-  "status": "existing_supported_authoring_scope_exhausted_final_persistence_pending",
-  "allExistingSupportedAuthoringScopeExhausted": true,
+  "status": "existing_active_illustration_bindings_and_readings_self_checked_persistence_pass_external_gates_open",
+  "allExistingSupportedAuthoringScopeExhausted": false,
   "humanReviewed": false,
   "nativeReviewed": false,
   "domainReviewed": false,
@@ -25,7 +25,8 @@
       "activeInlineUses": 4,
       "questionImageFields": []
     },
-    "limits": "Counts describe current reachable source-bound assets and AI self-checks, not completed domain, official-exam, browser/device, human/native or whole-private-PDF coverage acceptance."
+    "limits": "Current active illustration bindings and AI source/render/reading self-checks only. All canonical prose furigana remains incomplete as recorded separately. Human/native/domain/browser/device/time and complete-private-source coverage are not accepted.",
+    "authoringScope": "All active Kaigo illustration bindings only"
   },
   "finalRepairs": [
     {
@@ -66,6 +67,13 @@
   ],
   "readerProof": {
     "days": 176,
+    "actualIllustrationReadingRequests": 6174,
+    "actualCaptionRubyViews": 2785,
+    "nativeRubyViews": 3501,
+    "unboundIllustrationRequests": [],
+    "illustrationRubyExactFields": 348,
+    "illustrationRubyStaleGuards": 348,
+    "roleCaptionGuards": 65,
     "localizedContextAltCases": 2112,
     "translationStaleGuards": 24,
     "localeRenders": 2288,
@@ -2269,16 +2277,20 @@
     }
   },
   "inputSha256": {
-    "src/components/kaigo/WeeklyKaigo.tsx": "e16b6fa597e2b0f31c2e46254fc23e7a52e60fd4d8ec1f2828f96a33897971a2",
-    "src/components/kaigo/KaigoRoyalTechnicalFigure.tsx": "f9654960d86302a639878afad8016d294a96ab1c9f761aefca88582bcc29b632",
-    "src/components/kaigo/KaigoHandRegionFigure.tsx": "21f512e8154d4b910f15a120408a731899fe3215875ed149111edee08a65c843",
-    "src/components/kaigo/KaigoAnatomyTermsFigure.tsx": "b16b8e44cd87a304ade70c7a55e0c61a872a4d652bdf81407cfbf52533b2878f",
+    "src/components/kaigo/WeeklyKaigo.tsx": "a94d67919ecfc8f814a606cd36b24f793b22b08523697a65f5e89b2165ccde25",
+    "src/components/kaigo/KaigoRoyalTechnicalFigure.tsx": "6af5db0034d2f77fb0f7bba329dba11587f19cc7a84178e0c7177e1743a821c2",
+    "src/components/kaigo/KaigoHandRegionFigure.tsx": "38454ee66e18cfe122fdd4a1571d2bb5f8ccf943eb3d89edc92953f8dbc7687a",
+    "src/components/kaigo/KaigoAnatomyTermsFigure.tsx": "35e65c94baff650d9a4e34635859ab1e87b612c036adb0a00109f0542a27edba",
     "src/data/kaigo/daily-knowledge-visuals.json": "7313400a793ca421c22ce30f96aafe273d6e1fb5a37c0554db8accc278374db9",
     "src/data/kaigo/daily-knowledge-visuals.ts": "fcb9c75e5b2915ec6134bac4d470e7ebc9d061c9da82e7af6cd772f5a3be0525",
     "src/data/kaigo/royal-inline-figures.ts": "f51f3db39a8e460ea8473bed20b89a79443701e263065bf9a439c9a6fcc6d46c",
-    "src/data/kaigo/royal-weekly-art.ts": "284e8b5dc6deee0f1469b6372b7e4561c50abbae88ab381504b46befb88ff94b",
+    "src/data/kaigo/royal-weekly-art.ts": "25497dd156e499ad3b79c37a36ce7af1b9b0a6463d18668db43421142dd0d5bc",
     "src/data/kaigo/royal-technical-labels.json": "8271971422391a618436e2e8eb7ff840ee25ad1a721a3987263d70984192e462",
-    "src/data/kaigo/anatomy-term-labels.json": "d2333026750f5914820ce568ee9cad0dff28c6a97a11f18571434c0be35e0a62"
+    "src/data/kaigo/anatomy-term-labels.json": "d2333026750f5914820ce568ee9cad0dff28c6a97a11f18571434c0be35e0a62",
+    "src/components/kaigo/KaigoIllustrationText.tsx": "77dcf225c11418d6f6398ed65e5ba0ee595329074ae375c92add3e532067b8d8",
+    "src/data/kaigo/illustration-caption-overrides.json": "570046cc111d90f84b05655650b7f57c4f29cc1c13b0c2f4650214327df72835",
+    "src/data/kaigo/illustration-readings.ts": "250cfcb934390bf8aaa6b06420af992f9dc66aa64f7695b24961049e64a06c81",
+    "src/data/kaigo/illustration-readings.json": "99b870f69687d90ec72854848537d63e8ac06353fed21d7f2ad998b270a3f3a7"
   },
   "invariance": {
     "all176DailyVisualRowsAndFigureDefinitionsOverridesUnchanged": true,
@@ -2294,13 +2306,27 @@
     "Native term legend accompanies unchanged Japanese annotations for163/164; male-washing operation in private source197 remains ambiguous and excluded.",
     "Hand-region artwork does not reproduce two-tone microbial-risk legend or prove a full hygiene technique.",
     "Unsupported legacy side-lying pressure panel has zero active occurrences and is excluded; four actual inline routes use source-backed controlled figures.",
-    "ReactDOMServer with RN adapters exercises actual production components, not a real browser, native app or physical device."
+    "ReactDOMServer with RN adapters exercises actual production components, not a real browser, native app or physical device.",
+    "Six explicit master ruby arrays were not a full prose reading census: actual production adds52 legacy fallbacks, and5430 reachable prose paragraphs render plain. See separate debt receipt."
   ],
   "openGates": [
-    "Final persistence gate",
     "Independent human/native/domain review",
     "Real browser/native/physical device acceptance",
     "Learner duration",
     "Source denominator and complete official coverage remain open"
-  ]
+  ],
+  "persistencePassCommit": "b5ad5bccec452f6fb24c3b42c2a62ffc85a84c56",
+  "allExistingSupportedIllustrationBindingsExhausted": true,
+  "allCanonicalProseFuriganaComplete": false,
+  "completionScope": "Continuous policy authorizes all active illustration bindings only. Previous broad authoring/prose-furigana completion language is withdrawn.",
+  "legacyProseRubyDebtReceipt": "ROYAL_LEGACY_PROSE_RUBY_COVERAGE_DEBT_20261107.json",
+  "illustrationReadingReceipt": "ROYAL_ILLUSTRATION_READING_OVERLAYS_20261107.json",
+  "currentIllustrationReadingReviewedParent": "9dd9d14b65ff118d72ecee88999ff84f03f01ee0",
+  "readingCoverageScope": {
+    "activeIllustrationExactJapaneseFields": 348,
+    "activeIllustrationOccurrences": 364,
+    "legacyCanonicalProseFuriganaComplete": false,
+    "legacyCanonicalProseCoverageDebtReceipt": "ROYAL_LEGACY_PROSE_RUBY_COVERAGE_DEBT_20261107.json"
+  },
+  "illustrationReadingPersistencePassCommit": "e20d2e7e3d3da71dc13f024b87bea919a70bfd9e"
 }

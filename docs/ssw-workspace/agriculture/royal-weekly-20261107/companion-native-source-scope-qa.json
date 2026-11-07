@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "baseCommit": "61bcfa9edc38061afcab261171f95569357b5e0b",
+  "beforeBlobSha": {
+    "src/components/agriculture/DailyLearningSupport.tsx": "6d7c871cfd8bfab9b8dd8eb7409dc7ee8456b7a8",
+    "scripts/agriculture/check-companion-native-scope.cjs": null,
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/active-reader-native-scope-inventory.json": null,
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/companion-native-source-scope-qa.json": null
+  },
+  "scope": "Actual native related-reader paragraph scope; current reader/source/asset/quiz graph inventory",
+  "actualFailureBeforeFix": {
+    "parentLessonId": "agr-f40-general-light-scope-comparison",
+    "companionLessonId": "agr-plant-balance",
+    "selectedParagraphIds": [
+      "agr-plant-balance-p1",
+      "agr-plant-balance-p2",
+      "agr-plant-balance-p3"
+    ],
+    "beforeBehavior": "Actual DailyCompanionReadings renders selected p1–p3 prose, then invokes a complete native process block with transpiration and root absorption flows from unselected p5–p6. Production runtime fixture failed because the full block was present.",
+    "canonicalTitle": "The existing broad companion lesson title stays unchanged; scope assertion concerns complete flows/block, not individual words in that title."
+  },
+  "sourceAssessment": "Current canonical p1–p3 cover photosynthesis inputs, carbohydrate production and respiration; p5 covers transpiration and p6 root uptake. Existing NativeProcessDiagram contains all corresponding flows. An indivisible full block requires the full paragraph selection; no per-flow semantic remapping or source changes introduced.",
+  "change": [
+    "Forward actual selected paragraph IDs from DailyCompanionReadings to DailyLearningFigure.",
+    "For a native process context with a partial explicit selection, omit its indivisible full native block; retain selected prose.",
+    "No explicit selection or a complete selection keeps the existing full block.",
+    "Existing appropriate statistics subset containing chart dependencies p1/p2 remains visible."
+  ],
+  "preserved": [
+    "allsourceandtranslationJSON",
+    "allnativeprocesscode/data/flows",
+    "allimagesandassetmaps",
+    "allquizcontent",
+    "externalDrainageMethodComparison/FertilizerNative and other current main native routes",
+    "all main-reader native content"
+  ],
+  "qa": {
+    "actualPartialCompanionRenders": 52,
+    "sourceScope": "Both active course levels ×13existingnative languages ×translationtoggle; selectedthreeJapaneseparagraphs stay visible, complete unselected process flows absent. Related prose translation is an irrelevant adapter returningnull; actualnative renderer/data handles its own existinglocales.",
+    "actualMainNativeRenders": 78,
+    "otherCases": [
+      "explicit complete paragraph selections still render native block",
+      "valid statistics companion subset retained"
+    ],
+    "strictTypes": "Actual changed DailyLearningSupport, actualNativeProcessDiagram/index/JSON and exact actual related-reader caller strict-compile; malformed paragraphIds type rejected. Unrelated child components represented by adapters and minimalRNambient;notwholeapp.",
+    "diffCheck": "PASS"
+  },
+  "inventory": {
+    "path": "docs/ssw-workspace/agriculture/royal-weekly-20261107/active-reader-native-scope-inventory.json",
+    "counts": {
+      "lessons": 241,
+      "canonicalWeeks": 99,
+      "recognitionFigures": 188,
+      "nativeContexts": 13,
+      "companionEdges": 21,
+      "nativeCompanionEdges": 2,
+      "quizImageReferences": 81
+    },
+    "findings": {
+      "assetMapOrSourceMismatches": [
+        "agr-f40-general-thinning-comparison",
+        "agr-royal-fruit-thinning-stages-v1"
+      ],
+      "quizMechanicalMismatches": []
+    },
+    "limits": "All-active metadata edges inventory, not a new semantic/pixel review of188existingfigures or81quizuses. Declared hashes do not claim allbitmapbytes freshlydecoded."
+  },
+  "pendingActualIntegrationGaps": [
+    "agr-f40-general-thinning-comparison",
+    "agr-royal-fruit-thinning-stages-v1"
+  ],
+  "duplicateWorkRetired": "Unpublished drainage native draft moved privately after fresh external comparison arrived. No competing native/locale/art draft is included.",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "durationTested": false,
+  "wholeWeekComplete": false,
+  "releaseReady": false
+}

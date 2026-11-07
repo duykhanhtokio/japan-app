@@ -1,3 +1,5 @@
+import captionOverrides from './illustration-caption-overrides.json';
+import {japaneseLessonMetadata,japaneseLessonRevision} from './japanese-master';
 import type {ImageSourcePropType} from 'react-native';
 
 /** Day-scoped replacements preserve shared legacy art IDs and captions. */
@@ -529,4 +531,8 @@ export const kaigoRoyalWeeklyCaptions:Record<number,Record<string,string>>={
     "tl": "Pakinggan ang hiling ng anak na babae na talakayin ang listahan at ipasa sa responsableng kawani, hiwalay sa pahintulot ng taong wala roon."
   }
 };
-export function royalCaptionForStudyDay(day:number,language='ja'){return kaigoRoyalWeeklyCaptions[day]?.[language];}
+export function royalCaptionForStudyDay(day:number,language='ja'){
+ const override=captionOverrides.days[String(day) as keyof typeof captionOverrides.days];
+ if(override){const lesson=japaneseLessonMetadata[override.sourceLessonKey];return lesson && japaneseLessonRevision(lesson)===override.sourceLessonRevision ? (override.captions as Record<string,string>)[language] : undefined;}
+ return kaigoRoyalWeeklyCaptions[day]?.[language];
+}

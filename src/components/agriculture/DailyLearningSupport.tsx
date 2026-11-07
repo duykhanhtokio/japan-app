@@ -28,7 +28,7 @@ export function agricultureDailyCompanions(lesson:AgricultureLesson,level:Agricu
  if(sourceVersions[lesson.id]!==lesson.sourceHash)return [];
  return (pairs[lesson.id]||[]).flatMap(p=>{const l=agricultureLesson(p.lessonId,level);return l&&l.sourceHash===p.sourceHash?[{lesson:l,paragraphIds:p.paragraphIds}]:[];});
 }
-export function DailyLearningFigure({lesson,level,colors,includeExisting=false,language='ja',showTranslation=false}:{lesson:AgricultureLesson;level:AgricultureLevel;colors:Colors;includeExisting?:boolean;language?:string;showTranslation?:boolean}){
+export function DailyLearningFigure({lesson,level,colors,includeExisting=false,language='ja',showTranslation=false,paragraphIds}:{lesson:AgricultureLesson;level:AgricultureLevel;colors:Colors;includeExisting?:boolean;language?:string;showTranslation?:boolean;paragraphIds?:string[]}){
  if(!lesson.levels.includes(level))return null;
  const b=bindings[lesson.id],d=diagrams[lesson.id];
  const currentBinding=b?.lessonSourceHash===lesson.sourceHash&&b.scopeLevels.includes(level)?b:null;
@@ -39,7 +39,10 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
  if(lesson.id==='agr-plant-responses')return <PlantResponseFigure lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  if(isFertilizerNativeContext(lesson.id))return <FertilizerNativeFigure lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  if(lesson.id==='agr-drainage-comparison')return <DrainageMethodComparison lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
- if(isNativeProcessContext(lesson.id))return <NativeProcessDiagram lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ if(isNativeProcessContext(lesson.id)){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <NativeProcessDiagram lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
  if(d&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><DailyInstructionDiagram kind={d.kind as DailyDiagramKind} title={d.titleJa} caption={d.captionJa} alt={d.altJa} colors={colors}/></View>;
  const f=currentBinding?figures.images.find(f=>f.id===currentBinding.figureId&&f.assetSha256===currentBinding.assetSha256):includeExisting?figures.images.find(f=>f.lessonIds.includes(lesson.id)&&f.lessonSourceHashes[lesson.id as keyof typeof f.lessonSourceHashes]===lesson.sourceHash&&f.scopeLevels.includes(level)):null;
  if(f?.id==='agr-f40-general-cropping-example-flow')return <CropCalendarFigure lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
@@ -70,7 +73,7 @@ export function DailyCompanionReadings({lesson,level,language,showTranslation,co
  {entries.map(({lesson:l,paragraphIds})=>{const t=showTranslation?agricultureTranslation(l,language):null;return <View key={l.id} style={{gap:10}}>
  <Text style={{color:colors.text,fontSize:19,lineHeight:29,fontWeight:'700'}}>{l.titleJa}</Text>
  {l.paragraphs.filter(p=>paragraphIds.includes(p.id)).map(p=><View key={p.id} style={{gap:6}}><Text style={{color:colors.text,fontSize:17,lineHeight:28,fontWeight:'700'}}>{p.titleJa}</Text><Text selectable style={{color:colors.text,fontSize:17,lineHeight:29}}>{p.textJa}</Text>{t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}</View>)}
- <DailyLearningFigure lesson={l} level={level} colors={colors} includeExisting language={language} showTranslation={showTranslation}/>
+ <DailyLearningFigure lesson={l} level={level} colors={colors} includeExisting language={language} showTranslation={showTranslation} paragraphIds={paragraphIds}/>
  </View>;})}
  </View>;
 }

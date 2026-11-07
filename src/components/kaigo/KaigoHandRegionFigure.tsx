@@ -1,5 +1,6 @@
+import {KaigoIllustrationText as Text} from './KaigoIllustrationText';
 import React from 'react';
-import {Image,Text,View,type ImageSourcePropType} from 'react-native';
+import {Image,View,type ImageSourcePropType} from 'react-native';
 
 /** Controlled locations on the original 1536x1024 art base; colors identify regions, not risk or counts. */
 export const handRegionPoints=[{x:71.5,y:12.7},{x:68.4,y:37.1},{x:86.3,y:46.9},{x:28.65,y:73.6}];

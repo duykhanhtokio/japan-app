@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "scope": "Current existing Kaigo scheduled weekly/daily illustration layer; separate from 30-mock closure",
+  "basisCensusCommit": "008690398ee063f47dc04f840407eaf02bab4077",
+  "basisReceipt": "docs/ssw-workspace/kaigo/reviews/ROYAL_COORDINATED_ACTIVE_READER_CENSUS_20261107.json",
+  "currentInputHashes": [
+    {
+      "path": "src/components/kaigo/WeeklyKaigo.tsx",
+      "sha256": "ae346b68b30b2a4e67f908d90fce221eb4b41ec788d8d13747ac3534413e96d1"
+    },
+    {
+      "path": "src/data/kaigo/daily-knowledge-visuals.json",
+      "sha256": "fc8027f73c93df86a997d67930c42384edf052aed5ec8463704c926896f23535"
+    },
+    {
+      "path": "src/data/kaigo/daily-knowledge-visuals.ts",
+      "sha256": "862a4a58a4efe151bc19501f1b62c59302581fab220f8e9165f10e4b96e3acb3"
+    },
+    {
+      "path": "src/data/kaigo/royal-weekly-art.ts",
+      "sha256": "e4041064f44a4e85691bac9d15b4c3ed39a0540685c29c59bf3c1fe355bba5c2"
+    }
+  ],
+  "deltaResolverChecks": {
+    "issues": [],
+    "existingDays": 176,
+    "existingWeeks": 26,
+    "currentLessonBindings": 176,
+    "staleLessonRejections": 176,
+    "currentTechnicalBindings": 29,
+    "staleSectionRejections": 29,
+    "currentInlineBindings": 4,
+    "rasterUses": 209,
+    "selectedUniqueRasters": 152,
+    "selectedPriorRasterPaths": 151,
+    "selectedNewRasterPaths": 1,
+    "all152PriorAssetGitBlobsStillUnchangedInIntegrationHead": true,
+    "note": "All old blobs remaining is provenance only. Actual selected-set comparison separately confirms 151 prior paths plus one new replacement, not 152 old plus one."
+  },
+  "selectedPathDelta": {
+    "removedFromActiveSelection": [
+      "assets/kaigo/royal-weekly-20261107/week10/day70-pupil-comparison-controlled.webp"
+    ],
+    "addedToActiveSelection": [
+      "assets/kaigo/royal-weekly-20261107/week10/day70-pupil-directions-controlled.webp"
+    ],
+    "changedDay": 70,
+    "replacementSha256": "fe1dc1ba03174dfdd81c460f5228fc600d2eeaf7527fa16e77e7487ca9d9b1d1",
+    "replacementDimensions": [
+      1536,
+      1024
+    ],
+    "replacementValidation": "Own day70 source/pixel/native-label checks retained; final encoded asset hash verified again."
+  },
+  "otherMergedDeltas": [
+    "Day68 retains same selected brain raster with native localized dispatch.",
+    "Day69 adds source-guarded native autonomic-heart comparison without adding a raster.",
+    "Day140 preserves identical picture-board bytes with narrower source/objective disclosure and 13 captions.",
+    "Day161 retains same selected hand raster with narrower positional-map caveat; incoming day171 dispatch preserved.",
+    "Incoming later-week source bindings, objectives and figure dispatch retained."
+  ],
+  "qa": {
+    "method": "Replayed only production census resolver/source-guard portion, before DayReading SSR; no broad unchanged SSR replay. Earlier changed-input integration SSR receipts remain separate.",
+    "command": "KAIGO_CENSUS_OUTPUT_DIR=/workspace/scratch/27bcf35a8742/kaigo-integration-31c7/weekly-delta NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/27bcf35a8742/kaigo-integration-31c7/weekly-delta-resolver.cjs",
+    "fixtureSha256": "0fcaf3df298185847d342a19cb81f6a20b5a6af025f328a2e661b47ce5548981",
+    "resultSha256": "da7a3a66574fe0f1b1df1ca474a16349c26a3a3db5a0b468946674dc234a4a79"
+  },
+  "supportedExistingWeeklyIllustrationScopePreserved": true,
+  "missingCurrentExistingUnitIdentified": false,
+  "wholeSourceKnowledgeCovered": false,
+  "sourceCoveragePercent": null,
+  "sourceDenominator": "open",
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "browserTested": false,
+  "physicalDeviceTested": false,
+  "releaseReady": false,
+  "incremental089Reconciliation": {
+    "priorInputHashes": [
+      {
+        "path": "src/components/kaigo/WeeklyKaigo.tsx",
+        "sha256": "9d9ceb4ab5c3579a06a974bc0ecbe0d864b2847be1dc1e698d256c4b717cfec1"
+      },
+      {
+        "path": "src/data/kaigo/daily-knowledge-visuals.json",
+        "sha256": "fc8027f73c93df86a997d67930c42384edf052aed5ec8463704c926896f23535"
+      },
+      {
+        "path": "src/data/kaigo/daily-knowledge-visuals.ts",
+        "sha256": "862a4a58a4efe151bc19501f1b62c59302581fab220f8e9165f10e4b96e3acb3"
+      },
+      {
+        "path": "src/data/kaigo/royal-weekly-art.ts",
+        "sha256": "6984fb6dafed64870f3ac4439576525757f0b7ed54486b4089881e06369b3ce9"
+      }
+    ],
+    "conflictResolution": "Kept both own day69 autonomic native import and incoming illustrationRubyTokensFor import. All incoming title/art/inline caption ruby calls retained; own68/69/161 dispatch preserved.",
+    "changedBehavior": "Exact inventoried ruby for figure titles/captions and native labels; five source-revision-bound caption overrides. No daily resolver metadata/source/asset selection change.",
+    "captionOverrideDays": [
+      "8",
+      "9",
+      "10",
+      "11",
+      "14"
+    ],
+    "ownDay140CaptionNotOverridden": true,
+    "narrowChecks": {
+      "exactRubyEntriesAndStaleTextRejections": 348,
+      "nativeWrapperSsrCases": 3,
+      "changedComponentTsParses": 4,
+      "weeklyRubyCallSites": 4,
+      "mergeMarkersAbsent": true,
+      "ownDispatchPreserved": true
+    },
+    "checkerSha256": "9b667fca693635f5d33ad05cc53aec5676bedd57595dcd4e0996c6db4e18aa4d",
+    "noFull176or988Replay": true
+  }
+}

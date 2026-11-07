@@ -1,5 +1,6 @@
+import {KaigoIllustrationText as Text} from './KaigoIllustrationText';
 import React from 'react';
-import {Image,Text,View,type ImageSourcePropType} from 'react-native';
+import {Image,View,type ImageSourcePropType} from 'react-native';
 import translations from '@/data/kaigo/anatomy-term-labels.json';
 export function KaigoAnatomyTermsFigure({source,kind,language='ja',expanded=false}:{source:ImageSourcePropType;kind:'colon'|'male';language?:string;expanded?:boolean}){
  const ja=translations.ja, tr=(translations as Record<string,typeof ja>)[language]??ja;

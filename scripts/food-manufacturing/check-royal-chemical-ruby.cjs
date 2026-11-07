@@ -47,6 +47,9 @@ for(const [word,ref] of Object.entries(readings.rubyProvenance)){
  if(ref.file){const j=JSON.parse(fs.readFileSync(path.join(root,'src/data/food-manufacturing',ref.file),'utf8'));const p=ref.jsonPointer.split('/').slice(1).reduce((x,key)=>x[key.replace(/~1/g,'/').replace(/~0/g,'~')],j);assert.equal(p.text,word);assert.equal(p.reading,ref.reading);}
  else{const current=index.foodManufacturingLessons.find(l=>l.id===ref.lessonId);assert.equal(current.sourceHash,ref.sourceHash);assert(allReadings[ref.lessonId].fields[ref.field].some(p=>p.text===word&&p.reading===ref.reading));}
 }
+const assertCompound=parts=>{assert.equal(parts.find(part=>part.text==='承認済み')?.reading,'しょうにんずみ');assert(!parts.some(part=>part.text==='済み'&&part.reading==='すみ'));};
+assertCompound(readings.lines.find(line=>line.id==='verifyAndReport').ruby);
+assert.throws(()=>assertCompound([{text:'承認済み',reading:'しょうにんすみ'}]),'Old standalone reading must fail');
 const escape=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
 const render=(actual,language)=>renderToStaticMarkup(React.createElement(chemical.FoodRoyalChemicalSafety,{lesson:actual,language,showTranslation:true}));let contexts=0,callerContexts=0;
 for(const language of ['ja',...locales]){

@@ -56,6 +56,13 @@ const sources:Record<string,ReturnType<typeof require>>={
  get 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-transport-pause-report.webp'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-transport-pause-report.webp');},
  get 'assets/manufacturing/diagrams/batch23-mechanical-caliper-contacts.png'(){return require('../../../assets/manufacturing/diagrams/batch23-mechanical-caliper-contacts.png');},
  get 'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-knoop-plan.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-knoop-plan.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week09/technical/companion-surface008-coating-methods-selected.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week09/technical/companion-surface008-coating-methods-selected.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week09/technical/companion-electrical69-period-phase-selected.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week09/technical/companion-electrical69-period-phase-selected.png');},
+ get 'assets/manufacturing/daily40/electrical/electrical-day-013.png'(){return require('../../../assets/manufacturing/daily40/electrical/electrical-day-013.png');},
+ get 'assets/manufacturing/daily40/mechanical/day-021.png'(){return require('../../../assets/manufacturing/daily40/mechanical/day-021.png');},
+ get 'assets/manufacturing/diagrams/qc-control-plan.png'(){return require('../../../assets/manufacturing/diagrams/qc-control-plan.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-fit-clearance-source.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-fit-clearance-source.png');},
+
 };
 const imageParagraphIds=(item:Figure)=>item.paragraphIds??(item.paragraphId?[item.paragraphId]:[]);
 function registration(lessonId:string,paragraphIds:string[]):Entry|null{
@@ -106,6 +113,8 @@ export function Week03CompanionFigure({lesson,paragraphIds,language,showTranslat
 /** Preserve the full legacy supplement figure unless an exact scoped replacement is registered. */
 export function ScopedManufacturingCompanionFigures({lesson,paragraphIds,language,showTranslation}:{lesson:ManufacturingLesson;paragraphIds:string[];language:string;showTranslation:boolean}){
  const registered=Object.prototype.hasOwnProperty.call(data.lessons,lesson.id),full=lesson.paragraphs.map(p=>p.id),fullSelection=full.length===paragraphIds.length&&full.every((id,i)=>id===paragraphIds[i]);
- const row=registration(lesson.id,paragraphIds),scoped=['mfg1-mechanical-completion37-lesson-003','mfg1-mechanical-completion37-lesson-005','mfg1-mechanical-completion37-lesson-007','mfg1-surface-completion37-lesson-003','mfg1-surface-completion37-lesson-006','mfg1-surface-completion37-lesson-008'].includes(lesson.id),replaceLegacy=scoped&&(row?!row.retainedExistingFigure:(registered&&!fullSelection));
+ const row=registration(lesson.id,paragraphIds),scoped=['mfg1-mechanical-completion37-lesson-003','mfg1-mechanical-completion37-lesson-005','mfg1-mechanical-completion37-lesson-007','mfg1-mechanical-completion37-lesson-006','mfg1-surface-completion37-lesson-003','mfg1-surface-completion37-lesson-006','mfg1-surface-completion37-lesson-008'].includes(lesson.id),replaceLegacy=scoped&&(row?!row.retainedExistingFigure:(registered&&!fullSelection));
+ // A scoped full reader must not revive its legacy image after the current Japanese body fails its guard.
+ if(scoped&&row&&(row.sourceHash!==lesson.sourceHash||row.captionJa!==lesson.summaryJa||row.paragraphIds.some(id=>{const p=lesson.paragraphs.find(p=>p.id===id);return !p||manufacturingLessonParagraph(lesson,id,'ja',p.textJa)!==row.expectedParagraphsJa[id];})))return null;
  return <>{!replaceLegacy&&<CompletionManufacturingDiagrams lesson={lesson} language={language} showTranslation={showTranslation}/>}<Week03CompanionFigure lesson={lesson} paragraphIds={paragraphIds} language={language} showTranslation={showTranslation}/></>;
 }
