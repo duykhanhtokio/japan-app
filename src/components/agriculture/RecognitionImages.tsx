@@ -72,7 +72,7 @@ const assets:Record<string,ImageSourcePropType>={
  "irrigation-destinations":require('../../../assets/agriculture/diagrams/irrigation-destinations-v1.png'),
  "irrigation-tools":require('../../../assets/agriculture/diagrams/irrigation-tools-v1.png'),
  "soil-aggregate-comparison":require('../../../assets/agriculture/diagrams/soil-aggregate-comparison-v1.png'),
- "f40-general-thinning-comparison":require('../../../assets/agriculture/royal-weekly-20261107/week02/thinning-botanical-comparison-v2.webp'),
+ "f40-general-thinning-comparison":require('../../../assets/agriculture/completion-40/general/agr-f40-general-thinning-comparison.png'),
  "f40-general-nursery-forms":require('../../../assets/agriculture/completion-40/general/agr-f40-general-nursery-forms.png'),
  "f40-general-seeder":require('../../../assets/agriculture/royal-weekly-20261107/week02/hand-pushed-single-row-seeder.webp'),
  "f40-general-tractor-seeder":require('../../../assets/agriculture/completion-40/general/agr-f40-general-tractor-seeder.png'),
@@ -116,7 +116,7 @@ const assets:Record<string,ImageSourcePropType>={
  "rice-combine":require('../../../assets/agriculture/completion-40/safety/rice-combine.png'),
  "leek-harvester":require('../../../assets/agriculture/completion-40/safety/leek-harvester.png'),
  "potato-digger":require('../../../assets/agriculture/completion-40/safety/potato-digger.png'),
- "tunnel-direct-cover":require('../../../assets/agriculture/completion-40/safety/tunnel-direct-cover.png'),
+ "tunnel-direct-cover":require('../../../assets/agriculture/royal-weekly-20261107/tunnel-direct-cover-royal-v1.webp'),
  "mulch-materials":require('../../../assets/agriculture/completion-40/safety/mulch-materials.png'),
  "rotary-mulcher":require('../../../assets/agriculture/completion-40/safety/rotary-mulcher.png'),
  "pheromone-dispenser":require('../../../assets/agriculture/completion-40/safety/pheromone-dispenser.png'),
@@ -193,7 +193,6 @@ const assets:Record<string,ImageSourcePropType>={
  "agr-fig-f40-facility-soil-graft-equipment-appearance-v1":require('../../../assets/agriculture/completion-40/facility-soil-support/graft-equipment-appearance-v1.png'),
  "agr-fig-f40-facility-soil-graft-preparation-and-view-sequence-v1":require('../../../assets/agriculture/completion-40/facility-soil-support/graft-preparation-and-view-sequence-v1.png'),
  "f40-facility-support-carnation-greenhouse-level1":require('../../../assets/agriculture/completion-40/visual-safety/carnation-greenhouse-level1.png'),
- "royal-fruit-thinning-stages-v1":require('../../../assets/agriculture/royal-weekly-20261107/week29/fruit-thinning-stages-v1.webp'),
 };
 export function getAgricultureFigureAsset(assetKey:string) {return assets[assetKey];}
 type RecognitionImage={
