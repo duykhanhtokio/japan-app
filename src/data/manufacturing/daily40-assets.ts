@@ -1,6 +1,7 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day01-stop-report.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/mechanical-day01-stop-report.webp");
   case "assets/manufacturing/daily40/electrical/electrical-day-001.png":return require("../../../assets/manufacturing/daily40/electrical/electrical-day-001.png");
   case "assets/manufacturing/daily40/electrical/electrical-day-002.png":return require("../../../assets/manufacturing/daily40/electrical/electrical-day-002.png");
   case "assets/manufacturing/daily40/electrical/electrical-day-003.png":return require("../../../assets/manufacturing/daily40/electrical/electrical-day-003.png");
