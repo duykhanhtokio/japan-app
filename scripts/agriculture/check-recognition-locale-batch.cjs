@@ -30,7 +30,8 @@ for(const f of selected){
  for(const lid of f.lessonIds){assert.equal(entry.lessonSourceHashes[lid],lessons.get(lid).sourceHash);assert.equal(entry.lessonRevisions[lid],lessons.get(lid).revision);}
  for(const language of languages){const t=entry.locales[language],limit=registry.limits[t.limitKey];assert(limit);assert.equal(limit.sourceJapanese,f.limitJa);for(const key of ['title','alt','observation'])assert.equal(typeof t[key],'string');assert(t.title.trim()&&t.alt.trim()&&t.observation.trim()&&limit.locales[language]?.trim());}
 }
-const cache=new Map();
+const cache=new Map(),lazyModules=new Map();
+function lazy(name){if(!lazyModules.has(name))lazyModules.set(name,new Proxy({},{get(_target,key){return load(name)[key];}}));return lazyModules.get(name);}
 function load(name){
  if(cache.has(name))return cache.get(name).exports;
  const tsx=path.join(root,'src/components/agriculture',name+'.tsx');
@@ -42,15 +43,9 @@ function load(name){
   if(id==='@/data/agriculture/recognition-images.json')return data;
   if(id==='@/data/agriculture/recognition-image-locales.json')return registry;
   if(id==='@/data/agriculture/image-readings.json')return JSON.parse(read('src/data/agriculture/image-readings.json'));
-  if(id==='./AgricultureImageRuby')return load('AgricultureImageRuby');
-  if(id==='./ZoomableFigure')return load('ZoomableFigure');
-  if(id==='./SprayerPartSupport')return load('SprayerPartSupport');
-  if(id==='./FigureSourceMarks')return load('FigureSourceMarks');
-  if(id==='@/data/agriculture/sprayer-part-support.json')return JSON.parse(read('src/data/agriculture/sprayer-part-support.json'));
-  if(id==='@/data/agriculture/lessons.ja.json')return JSON.parse(read('src/data/agriculture/lessons.ja.json'));
-  if(id==='./CropCalendarFigure')return {};// Not used by standalone soil/irrigation plates.
-  if(id==='./FlowerLegendFigure')return {};// Not used by these standalone appearance plates.
   if(/\.(png|webp)$/.test(id))return sources.get(path.basename(id))||{uri:'asset://'+id};
+  if(id.startsWith('@/data/agriculture/')&&id.endsWith('.json'))return JSON.parse(read(id.slice(2)));
+  if(id.startsWith('./'))return lazy(id.slice(2));
   return original(id);
  };
  loaded._compile(code,filename);return loaded.exports;
