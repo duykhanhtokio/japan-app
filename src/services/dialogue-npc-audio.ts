@@ -1,4 +1,5 @@
-import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
+import { Asset } from 'expo-asset';
+import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-audio';
 import Constants from 'expo-constants';
 import { AppState, Platform } from 'react-native';
 import { npcAudioRelease, packedRecordingFor } from './dialogue-audio-packs';
@@ -59,6 +60,7 @@ export function speak(text: string, options: Options) {
  const recording = recordingFor(text, { scenarioId, turnId, category });
  const fail = () => {
   if (token !== generation) return;
+  generation++;
   release();
   options.onError?.();
  };
@@ -125,7 +127,26 @@ export function speak(text: string, options: Options) {
    play({uri:server+result.url});
   }).catch(fail).finally(()=>clearTimeout(timeout));
  };
- // Complete releases resolve every NPC through pre-generated recordings.
- if (recording) play(recording.source, recording.durationMs, 'startMs' in recording ? recording.startMs : 0, !('startMs' in recording));
- else requestLive();
+ // Native decoders must seek within a local, fully downloaded pack. GitHub
+ // releases redirect to attachment URLs; do not rely on streaming/remote seeking.
+ const prepare = async () => {
+  try {
+   await setAudioModeAsync({allowsRecording:false,playsInSilentMode:true,shouldPlayInBackground:false});
+   if (token !== generation) return;
+   if (!recording) { requestLive(); return; }
+   let source = recording.source;
+   if (Platform.OS !== 'web' && typeof source === 'object' && /^https?:/.test(source.uri)) {
+    watchdog = setTimeout(fail, 60000);
+    const asset = Asset.fromURI(source.uri);
+    await asset.downloadAsync();
+    if (token !== generation) return;
+    if (watchdog) clearTimeout(watchdog); watchdog = null;
+    if (!asset.localUri) { fail(); return; }
+    source = {uri:asset.localUri};
+   }
+   if (token !== generation) return;
+   play(source, recording.durationMs, 'startMs' in recording ? recording.startMs : 0, !('startMs' in recording));
+  } catch { fail(); }
+ };
+ void prepare();
 }
