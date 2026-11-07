@@ -1,3 +1,4 @@
+import { runLearningAction } from './daily-learning.mjs';
 import { createServer } from 'node:http';
 import { createHmac, timingSafeEqual } from 'node:crypto';
 import pg from 'pg';
@@ -41,6 +42,11 @@ const handler = async (req,res) => {
     if (req.method === 'GET' && url.pathname === '/health') return send(res,200,{ok:true,service:'economy'});
     if (req.method === 'GET' && url.pathname === '/ready') { await pool.query('SELECT 1'); return send(res,200,{ready:true}); }
     const userId = auth(req);
+    if (req.method === 'POST' && /^\/v1\/learning\/(account|daily|complete|exchange|unlock|access|start|submit)$/.test(url.pathname)) {
+      const data = await body(req);
+      try { return send(res,200,await transaction(db => runLearningAction(db,userId,url.pathname.split('/').at(-1),data))); }
+      catch (error) { if (!error.status && !error.code) error.status = 400; throw error; }
+    }
     if (req.method === 'GET' && url.pathname === '/v1/economy/me') {
       const result = await pool.query('SELECT available_points,held_points FROM economy_wallets WHERE user_id=$1',[userId]);
       const entitlement = await pool.query("SELECT 1 FROM economy_entitlements WHERE user_id=$1 AND expires_at > now() AND revoked_at IS NULL LIMIT 1",[userId]);
