@@ -56,10 +56,10 @@
     "scripts/manufacturing/check-final-primary-reading-integration.cjs": "0743569151e0b79032f3e8f3d496d9585b417da096d61be598a7f2d5a78dd097"
   },
   "limits": [
-    "Sparse day94/day95 asset payload unavailable locally; incoming bindings preserved, no fresh blob/pixel claim.",
     "No fresh native/domain/device approval.",
     "No unchanged whole238/1742 census rerun.",
-    "Private remaining Janome drafts stay unaccepted."
+    "Private remaining Janome drafts stay unaccepted.",
+    "Accepted active day94/day95 bytes verified against parent hydrated primary proof; no fresh pixel review."
   ],
   "rootImmutableAssetByteVerification": {
     "performedAfterOwnerChecks": true,
@@ -88,5 +88,21 @@
       }
     ],
     "scope": "Raw bytes and dimensions verified after source-owner binding checks; earlier sparse availability limitation is superseded only for these two files. No fresh pixel, domain or device approval inferred."
-  }
+  },
+  "acceptedPrimaryActiveAssetBytes": [
+    {
+      "path": "assets/manufacturing/royal-weekly-20261107/week14/electrical-day95-motor-transformer-cutaway.webp",
+      "sha256": "8e09ebcb29beced6f0925e7b44b4272166353ffc0df699a50b893fbfdfedf8aa",
+      "bytes": 318684,
+      "matchesParentVerifiedAcceptedPrimaryBlob": true,
+      "freshPixelReview": false
+    },
+    {
+      "path": "assets/manufacturing/royal-weekly-20261107/week14/technical/electrical-day94-contactor-thermal-cutaway.png",
+      "sha256": "c373466ec5019650009f70ef1cb06bb7a8cc6b79eca0c315ca7af2e3664852ea",
+      "bytes": 271721,
+      "matchesParentVerifiedAcceptedPrimaryBlob": true,
+      "freshPixelReview": false
+    }
+  ]
 }
