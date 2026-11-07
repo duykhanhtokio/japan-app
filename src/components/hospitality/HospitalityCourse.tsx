@@ -2,6 +2,7 @@ import type React from 'react';
 import {HotelJapaneseText} from './HotelJapaneseText';
 import {HotelPracticeFloorplan} from './HotelPracticeFloorplan';
 import {HotelRevenueExample} from './HotelRevenueExample';
+import {HotelFoodHandoffGuide} from './HotelFoodHandoffGuide';
 import {HotelMealLayoutGuide} from './HotelMealLayoutGuide';
 import {HotelRevenueComparison} from './HotelRevenueComparison';
 import {HotelServiceVisualGuide} from './HotelServiceVisualGuide';
@@ -58,7 +59,8 @@ function Reader({lesson,language,record,disabled,onChange}:{lesson:HotelLesson;l
  {lesson.id==='hotel-planning-02'&&<HotelRevenueExample language={language}/>}
  {['hotel-service-01','hotel-service-02','hotel-service-03'].includes(lesson.id)&&<HotelServiceVisualGuide lesson={lesson} language={language}/>}
  {['hotel-service-04','hotel-planning-05'].includes(lesson.id)&&<HotelHospitalityRoleGuide lesson={lesson} language={language}/>}
- {['hotel-restaurant-02','hotel-restaurant-03'].includes(lesson.id)&&<HotelMealLayoutGuide lesson={lesson} language={language}/>}
+ {['hotel-restaurant-02','hotel-restaurant-03','hotel-restaurant-04'].includes(lesson.id)&&<HotelMealLayoutGuide lesson={lesson} language={language}/>}
+ {lesson.id==='hotel-restaurant-05'&&<HotelFoodHandoffGuide lesson={lesson} language={language}/>}
  {lesson.id==='hotel-planning-06'&&<HotelRevenueComparison lesson={lesson} language={language}/>}
  {lesson.terms.length>0&&heading(t('terms'))}{lesson.terms.map((term,i)=><View key={`${term.ja}:${i}`}>{body(`${term.ja}（${term.reading}）`)}{body(term.meaning)}{translation&&<TranslationText>{translation.terms[i]?.meaning}</TranslationText>}</View>)}
  {lesson.example.situation&&heading(hospitalityLabel(language,2))}{body(lesson.example.situation)}{lesson.example.steps.map((step,i)=><View key={i}>{body(`${i+1}.`)}{body(step)}{translation&&<TranslationText>{translation.example.steps[i]}</TranslationText>}</View>)}{translation&&<TranslationText>{translation.example.situation}</TranslationText>}

@@ -1,5 +1,50 @@
 // Descriptions of the active replacement pixels; lesson knowledge/revisions stay independent.
 const currentImageAlt:Record<string,Record<string,string>> = {
+  "hotel-restaurant-06": {
+  "ja": "営業前後のレストランで、係員が卓上備品と清掃状態を確認し、別の係員と記録を照合する。",
+  "en": "Restaurant staff check table supplies and cleanliness and compare records during opening or closing preparation.",
+  "vi": "Nhân viên nhà hàng kiểm tra đồ dùng bàn ăn, vệ sinh và đối chiếu ghi chép khi chuẩn bị mở hoặc đóng cửa.",
+  "id": "Petugas restoran memeriksa perlengkapan meja dan kebersihan serta mencocokkan catatan saat persiapan buka atau tutup.",
+  "zh-CN": "餐厅员工在营业前后检查桌面用品与清洁情况，并核对记录。",
+  "zh-TW": "餐廳員工在營業前後檢查桌面用品與清潔情況，並核對紀錄。",
+  "hi": "रेस्तराँ कर्मचारी खोलने या बंद करने की तैयारी में मेज की सामग्री, सफाई और रिकॉर्ड की जाँच करते हैं।",
+  "bn": "খোলা বা বন্ধের প্রস্তুতিতে রেস্তোরাঁর কর্মীরা টেবিলের সরঞ্জাম, পরিচ্ছন্নতা ও নথি যাচাই করছেন।",
+  "ne": "रेस्टुरेन्ट कर्मचारीले खोल्ने वा बन्द गर्ने तयारीमा टेबलका सामग्री, सरसफाइ र अभिलेख जाँच्छन्।",
+  "my": "စားသောက်ဆိုင်ဝန်ထမ်းများက ဆိုင်ဖွင့်ချိန် သို့မဟုတ် ပိတ်ချိန်ပြင်ဆင်ရာတွင် စားပွဲပစ္စည်း၊ သန့်ရှင်းမှုနှင့် မှတ်တမ်းများကိုစစ်ဆေးသည်။",
+  "th": "พนักงานร้านอาหารตรวจอุปกรณ์บนโต๊ะ ความสะอาด และบันทึกระหว่างเตรียมเปิดหรือปิดร้าน",
+  "km": "បុគ្គលិកភោជនីយដ្ឋានពិនិត្យសម្ភារៈតុ ភាពស្អាត និងកំណត់ត្រា ពេលរៀបចំបើកឬបិទហាង។",
+  "tl": "Sinusuri ng mga kawani ang gamit sa mesa, kalinisan, at mga tala sa paghahanda bago magbukas o matapos magsara."
+},
+  "hotel-restaurant-05": {
+  "ja": "レストラン責任者と調理人が記録を照合し、配膳前の係員が説明を聞く。",
+  "en": "A restaurant supervisor and chef check a record while a server listens before serving a covered dish.",
+  "vi": "Quản lý nhà hàng và đầu bếp đối chiếu ghi chép, nhân viên lắng nghe trước khi phục vụ món có nắp đậy.",
+  "id": "Penyelia restoran dan koki mencocokkan catatan sementara petugas mendengarkan sebelum menyajikan hidangan tertutup.",
+  "zh-CN": "餐厅主管与厨师核对记录，服务员在上带盖菜肴前听取说明。",
+  "zh-TW": "餐廳主管與廚師核對紀錄，服務員在上帶蓋菜餚前聽取說明。",
+  "hi": "रेस्तराँ पर्यवेक्षक और रसोइया रिकॉर्ड जाँचते हैं; ढका व्यंजन परोसने से पहले कर्मचारी निर्देश सुनता है।",
+  "bn": "রেস্তোরাঁর তত্ত্বাবধায়ক ও রাঁধুনি নথি মিলিয়ে দেখছেন; ঢাকা পদ পরিবেশনের আগে কর্মী নির্দেশ শুনছেন।",
+  "ne": "रेस्टुरेन्ट सुपरभाइजर र भान्सेले अभिलेख मिलाउँछन्; ढाकिएको परिकार परोस्नुअघि कर्मचारीले निर्देशन सुन्छन्।",
+  "my": "စားသောက်ဆိုင်ကြီးကြပ်သူနှင့် စားဖိုမှူးက မှတ်တမ်းကိုတိုက်စစ်ပြီး ဝန်ထမ်းက အဖုံးပါဟင်းလျာမတည်ခင်းမီ ရှင်းပြချက်ကိုနားထောင်သည်။",
+  "th": "หัวหน้าร้านอาหารกับเชฟตรวจสอบบันทึก ขณะที่พนักงานฟังคำอธิบายก่อนเสิร์ฟอาหารที่ปิดฝา",
+  "km": "អ្នកគ្រប់គ្រងភោជនីយដ្ឋាននិងចុងភៅផ្ទៀងផ្ទាត់កំណត់ត្រា ហើយបុគ្គលិកស្ដាប់ការណែនាំមុនបម្រើម្ហូបមានគម្រប។",
+  "tl": "Sinusuri ng superbisor at chef ang tala habang nakikinig ang server bago ihain ang pagkaing may takip."
+},
+  "hotel-restaurant-04": {
+  "ja": "客側から見た洋食の配膳例。皿の左にフォーク、右にナイフとスプーン、左上にパン皿、上にデザート用具を置く。",
+  "en": "A guest-side example Western setting: fork left, knife and spoon right, bread plate upper left, and dessert utensils above the plate.",
+  "vi": "Ví dụ bàn ăn Âu nhìn từ phía khách: nĩa bên trái, dao và thìa bên phải, đĩa bánh mì trên trái, dụng cụ tráng miệng phía trên.",
+  "id": "Contoh tata meja Barat dari sisi tamu: garpu kiri, pisau dan sendok kanan, piring roti kiri atas, alat pencuci mulut di atas piring.",
+  "zh-CN": "客人视角的西餐摆台示例：叉在左，刀匙在右，面包盘在左上，甜点餐具在餐盘上方。",
+  "zh-TW": "客人視角的西餐擺臺示例：叉在左，刀匙在右，麵包盤在左上，甜點餐具在餐盤上方。",
+  "hi": "अतिथि की ओर से पश्चिमी मेज का उदाहरण: काँटा बाएँ, चाकू और चम्मच दाएँ, ब्रेड प्लेट ऊपर बाएँ और मिठाई के बर्तन प्लेट के ऊपर।",
+  "bn": "অতিথির দিক থেকে পাশ্চাত্য টেবিলের উদাহরণ: বাঁয়ে কাঁটাচামচ, ডানে ছুরি ও চামচ, ওপরের বাঁয়ে রুটির প্লেট, প্লেটের ওপরে মিষ্টান্নের বাসন।",
+  "ne": "अतिथिको दिशाबाट पश्चिमी टेबलको उदाहरण: बायाँ काँटा, दायाँ चक्कु र चम्चा, माथि बायाँ पाउरोटीको प्लेट र थालमाथि मिठाईका भाँडा।",
+  "my": "ဧည့်သည်ဘက်မှမြင်ရသော အနောက်တိုင်းစားပွဲနမူနာတွင် ဘယ်ဘက်၌ခက်ရင်း၊ ညာဘက်၌ဓားနှင့်ဇွန်း၊ ဘယ်အပေါ်၌ပေါင်မုန့်ပန်းကန်နှင့် ပန်းကန်အပေါ်၌အချိုပွဲကိရိယာများရှိသည်။",
+  "th": "ตัวอย่างการจัดโต๊ะแบบตะวันตกจากฝั่งแขก ส้อมซ้าย มีดและช้อนขวา จานขนมปังบนซ้าย และอุปกรณ์ของหวานเหนือจาน",
+  "km": "ឧទាហរណ៍តុអាហារបែបលោកខាងលិចពីខាងភ្ញៀវ៖ សមខាងឆ្វេង កាំបិតនិងស្លាបព្រាខាងស្ដាំ ចាននំប៉័ងខាងឆ្វេងលើ និងឧបករណ៍បង្អែមនៅលើចាន។",
+  "tl": "Halimbawang ayos ng mesa mula sa bisita: tinidor sa kaliwa, kutsilyo at kutsara sa kanan, plato ng tinapay sa itaas na kaliwa, at kubyertos ng panghimagas sa itaas."
+},
   "hotel-restaurant-03": {
   "ja": "客側から見て手前左にご飯、手前右に汁物、奥に副菜と主菜を配した和食の一例。",
   "en": "A Japanese meal example from the guest’s side has rice at front left, soup at front right, and side and main dishes behind.",
