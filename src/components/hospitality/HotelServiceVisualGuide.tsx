@@ -30,7 +30,7 @@ function Bow({degrees,description}:{degrees:number;description:string}){
 }
 export function HotelServiceVisualGuide({lesson,language}:{lesson:HotelLesson;language:string}){
  const l=hotelServiceGuideLabels(language),material=language==='ja'?lesson:loadHotelTranslation(lesson.id,language,lesson.revision),[width,setWidth]=useState(280),{fontScale}=useWindowDimensions(),scale=Math.max(1,fontScale||1);
- if(!material||HOTEL_SERVICE_GUIDE_REVISIONS[lesson.id]!==lesson.revision)return null;
+ if(!material||!HOTEL_SERVICE_GUIDE_REVISIONS[lesson.id]||HOTEL_SERVICE_GUIDE_REVISIONS[lesson.id]!==lesson.revision)return null;
  const heading=<Text style={s.title}>{material.illustration.caption}</Text>;
  if(lesson.id==='hotel-service-01')return <View testID="hotel-service-01-native-guide" style={s.root}>{heading}<Text style={s.text}>{l.upright}</Text>{[15,30,45].map((degrees,i)=><View key={degrees} style={s.card}><Text style={s.title}>{lesson.terms[i].ja} · ≈{degrees}°</Text><Bow degrees={degrees} description={material.terms[i].meaning}/><Text style={s.text}>{material.terms[i].meaning}</Text></View>)}<Text style={s.text}>{l.bowCaveat}</Text></View>;
  if(lesson.id==='hotel-service-02')return <View testID="hotel-service-02-native-guide" style={s.root}>{heading}{['お客様がいらっしゃいます','係の者が伺います','です・ます・ございます'].map((example,i)=><View key={example} style={s.card}><Text style={s.title}>{lesson.terms[i].ja}</Text><Text style={s.text}>{material.terms[i].meaning}</Text><Text selectable style={s.example}>{example}</Text></View>)}</View>;

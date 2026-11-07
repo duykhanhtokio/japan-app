@@ -77,7 +77,7 @@ const assets:Record<string,ImageSourcePropType>={
  "f40-general-seeder":require('../../../assets/agriculture/royal-weekly-20261107/week02/hand-pushed-single-row-seeder.webp'),
  "f40-general-tractor-seeder":require('../../../assets/agriculture/completion-40/general/agr-f40-general-tractor-seeder.png'),
  "f40-general-transplanter":require('../../../assets/agriculture/completion-40/general/agr-f40-general-transplanter.png'),
- "f40-general-hand-planting":require('../../../assets/agriculture/completion-40/general/agr-f40-general-hand-planting.png'),
+ "f40-general-hand-planting":require('../../../assets/agriculture/royal-weekly-20261107/week02/hand-planting-rootball-support.webp'),
  "f40-general-row-plant-spacing":require('../../../assets/agriculture/completion-40/general/agr-f40-general-row-plant-spacing.png'),
  "f40-general-graft-connections":require('../../../assets/agriculture/completion-40/general/agr-f40-general-graft-connections.png'),
  "f40-general-planting-checks":require('../../../assets/agriculture/completion-40/general/agr-f40-general-planting-checks.png'),

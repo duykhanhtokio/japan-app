@@ -40,6 +40,7 @@ function load(name){
   if(id==='@/data/agriculture/recognition-images.json')return data;
   if(id==='@/data/agriculture/recognition-image-locales.json')return registry;
   if(id==='./ZoomableFigure')return load('ZoomableFigure');
+  if(id==='./CropCalendarFigure')return {};// Not invoked by standalone appearance plates.
   if(id==='./FlowerLegendFigure')return {};// Not used by these standalone appearance plates.
   if(/\.(png|webp)$/.test(id))return sources.get(path.basename(id))||{uri:'asset://'+id};
   return original(id);

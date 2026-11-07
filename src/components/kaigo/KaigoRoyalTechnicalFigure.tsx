@@ -12,7 +12,10 @@ export const royalTechnicalLeaders:Record<Kind,Point[]>={
  digestive:[{anchor:[15, 13],target:[50, 14.8]},{anchor:[15, 30],target:[50, 28]},{anchor:[88, 37],target:[56, 41]},{anchor:[15, 63],target:[50, 61]},{anchor:[88, 65],target:[60.1, 62]},{anchor:[88, 83],target:[50, 83]},{anchor:[15, 90],target:[50, 87]}],
 
  nervous:[{anchor:[14,17],target:[50,20]},{anchor:[14,47],target:[50,45]},{anchor:[88,66],target:[60.5,55.7]}],
- pupils:[{anchor:[25,15],target:[28.65,51.76]},{anchor:[75,15],target:[71.35,51.76]}],
+ pupils:[
+  {anchor:[27,22],target:[27.34375,49.8046875]}, // central pupil, schematic dilation
+  {anchor:[73,22],target:[72.65625,49.8046875]}, // same iris scale, smaller pupil
+ ],
  oralOwnership:[
   {anchor:[12,22],target:[38,64]}, // name on the container body itself
   {anchor:[90,25],target:[72,50]}, // separately placed unverified lid
