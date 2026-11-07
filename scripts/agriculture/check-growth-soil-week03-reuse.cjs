@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const assert=require('node:assert/strict'),path=require('node:path'),rt=require('./actual-figure-test-runtime.cjs')(path.resolve(__dirname,'../..')),{React,renderToStaticMarkup,lessons}=rt,{agricultureGrowthSoilReading:read}=rt.component('AgricultureGrowthSoilRuby'),{DailyLearningFigure}=rt.component('DailyLearningSupport'),registry=rt.read('src/data/agriculture/growth-soil-native-readings.json'),colors={text:'#111',translation:'#fff',translationText:'#111',border:'#777'},langs=['ja','en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','km','th','tl'];let renders=0,guards=0,fields=0;
-for(const [provider,e]of Object.entries(registry.providers)){
+for(const [provider,e]of Object.entries(registry.providers).filter(([p])=>!p.startsWith('process:'))){
  const name=provider==='soil-groups'?'SoilGroupComparison':'PlantResponseFigure',Component=rt.component(name)[name],l=lessons.find(x=>x.id===e.lessonId),marker=f=>`agri-native-growth-soil-ruby-${provider}-${f}"`,props={lessonId:l.id,lessonSourceHash:l.sourceHash,lessonRevision:l.revision,colors},render=(level,extra={})=>renderToStaticMarkup(React.createElement(Component,{...props,level,language:'ja',...extra}));fields+=Object.keys(e.fields).length;
  for(const level of e.levels){for(const language of langs){const flags={language,showTranslation:language!=='ja'},html=render(level,flags),daily=renderToStaticMarkup(React.createElement(DailyLearningFigure,{lesson:l,level,colors,...flags}));for(const f of Object.keys(e.fields)){assert(html.includes(marker(f)),provider+'/'+f);assert(daily.includes(marker(f)),provider+'/daily/'+f);}if(provider==='plant-response')assert(daily.includes('agri-native-figure-ruby-agr-plant-balance-'));renders+=2;}}
  for(const level of ['', '3','unknown']){assert.equal(render(level),'');guards++;}
@@ -12,4 +12,4 @@ for(const [provider,e]of Object.entries(registry.providers)){
  for(const key of ['sourceSnapshot','canonicalJapanese']){const old=e[key];e[key]={};assert(!render(e.levels[0]).includes('agri-native-growth-soil-ruby-'));e[key]=old;guards++;}
  const old=l.paragraphs[0].textJa;l.paragraphs[0].textJa+=' stale';assert(!render(e.levels[0]).includes('agri-native-growth-soil-ruby-'));l.paragraphs[0].textJa=old;guards++;
 }
-assert.equal(fields,24);assert.deepEqual(Object.keys(registry.providers),['plant-response','soil-groups']);console.log(JSON.stringify({pass:true,sourceBoundReusedFields:fields,actualCourseContexts:3,actualDirectDailyRenders:renders,guards,languageModes:13,nestedProcessPreserved:true,newArtOrPixelApproval:false}));
+assert.equal(fields,24);assert(Object.hasOwn(registry.providers,'plant-response')&&Object.hasOwn(registry.providers,'soil-groups'));console.log(JSON.stringify({pass:true,sourceBoundReusedFields:fields,actualCourseContexts:3,actualDirectDailyRenders:renders,guards,languageModes:13,nestedProcessPreserved:true,newArtOrPixelApproval:false}));

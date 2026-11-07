@@ -19,6 +19,16 @@
       "provider": "crop-calendar",
       "fields": 31,
       "actualContexts": 4
+    },
+    {
+      "registry": "growth-soil-native-readings.json",
+      "fields": 41,
+      "providers": [
+        "plant-response",
+        "soil-groups",
+        "process:agr-par11-general-gas-transport"
+      ],
+      "actualContexts": 5
     }
   ],
   "nextSourceBoundGroups": [
@@ -27,14 +37,14 @@
       "fields": 11,
       "actualContexts": 2,
       "week": 3,
-      "state": "incoming reuse comparison nominated"
+      "state": "accepted source payload reused with current actual direct/Daily guards; source-specific reading cohort complete"
     },
     {
       "component": "PlantResponseFigure",
       "fields": 13,
       "actualContexts": 1,
       "week": 3,
-      "state": "incoming reuse comparison nominated; nested Process17 already accepted"
+      "state": "accepted source payload reused with current actual direct/Daily guards; source-specific reading cohort complete"
     },
     {
       "component": "NativeProcessDiagram",
@@ -44,7 +54,7 @@
         "1": 28,
         "2": 32
       },
-      "state": "pending source-specific reading record; do not reuse plant-balance binding blindly"
+      "state": "accepted source payload reused with current actual direct/Daily guards; source-specific reading cohort complete"
     },
     {
       "component": "ConceptDiagrams",
@@ -57,7 +67,8 @@
       ],
       "actualContexts": 8,
       "declaredFieldsBeforeHanEligibility": 47,
-      "state": "pending actual field/source and incoming support comparison"
+      "state": "exact current five sourceSnapshots and six lesson bindings matched; actual caller eligibility/weekly source acceptance pending",
+      "incomingAcceptedReadingFields": 46
     },
     {
       "component": "GrassCutterMechanismFigure",
