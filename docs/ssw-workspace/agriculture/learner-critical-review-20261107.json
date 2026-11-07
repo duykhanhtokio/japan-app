@@ -21,6 +21,45 @@
       "examId": "agr-1-w01-check",
       "oldRevision": "v1-75fed5865c6e36a4",
       "newRevision": "v1-70fcf6970625388e"
+    },
+    {
+      "id": "seedling-figure-horizontal-layout",
+      "category": "question_image_mismatch",
+      "rootErrors": 1,
+      "affectedIllustrationIds": [
+        "agr-ghe-e",
+        "agr-2-m09-figure-q30"
+      ],
+      "affectedQuestionIds": [
+        "agr-1-m07-q24",
+        "agr-1-m07-q40",
+        "agr-2-m09-q30"
+      ],
+      "actualImageLayout": "Three seedlings in one horizontal row, A left / B middle / C right.",
+      "oldOverlayLayout": "Two columns with lower-left C; masks crossed seedling bodies.",
+      "fix": "Move labels and explanation masks to three horizontal columns, preserve plant pixels; change q30 upper-right to center B and reasons to left A/right C.",
+      "sourceAssetPath": "assets/agriculture/completion-40/facility/seedling-condition-comparison.png",
+      "sourceAssetSha256": "530dccec9164666bd78673cf232321ad0b17e01962f3bdac63c4a55116f525f4",
+      "newIllustrationRevision": "v2-layout-20261107",
+      "examRevisions": [
+        {
+          "id": "agr-1-m07",
+          "before": "v1-70b02a70b6e32484",
+          "after": "v1-511c720f862b6559"
+        },
+        {
+          "id": "agr-2-m09",
+          "before": "v1-cdc3d56497e587ad",
+          "after": "v1-31d684f645ad818a"
+        }
+      ],
+      "validation": {
+        "allMockRevisions": "PASS",
+        "allOptionsAnswersLessonBindingsPreserved": "PASS",
+        "targetPixelImageInspected": true,
+        "maskCompositeInspected": true,
+        "physicalAppRenderTested": false
+      }
     }
   ],
   "questionTranslations": "No question-ID entries in agriculture lesson locale file en.json; Japanese weekly bank changed only. Full multilingual question UI audit not claimed.",
@@ -44,10 +83,170 @@
       "mockQuestions": 800,
       "duplicateOptionOrInvalidIndexFound": 0
     },
-    "semanticReviewAllQuestions": false
+    "semanticReviewAllQuestions": false,
+    "mockRevisions": "PASS",
+    "changedMockQuestions": [
+      "agr-1-m07-q24",
+      "agr-1-m07-q40",
+      "agr-2-m09-q30"
+    ]
   },
   "wholeSectorAccepted": false,
   "nativeReviewed": false,
   "domainReviewed": false,
-  "physicalDeviceTested": false
+  "physicalDeviceTested": false,
+  "groups": [
+    {
+      "group": 1,
+      "scope": "Rice uses and first-week general questions",
+      "questionIds": [
+        "agr-1-w01-q01",
+        "agr-1-w01-q02",
+        "agr-1-w01-q03",
+        "agr-1-w01-q04",
+        "agr-1-w01-q05",
+        "agr-1-w01-q06",
+        "agr-1-w01-q07",
+        "agr-1-w01-q08",
+        "agr-2-w01-q01",
+        "agr-2-w01-q02",
+        "agr-2-w01-q03",
+        "agr-2-w01-q04",
+        "agr-2-w01-q05",
+        "agr-2-w01-q06",
+        "agr-2-w01-q07",
+        "agr-2-w01-q08",
+        "agr-2-w01-q09",
+        "agr-2-w01-q10",
+        "agr-2-w01-q11",
+        "agr-2-w01-q12"
+      ],
+      "semanticQuestionsReviewed": 20,
+      "confirmedRootErrorsFixed": 1
+    },
+    {
+      "group": 2,
+      "scope": "Explicit numerical/unit/dilution question screening; algebra in fertilizer and percentage arithmetic checked; source-bound agronomic values not globally certified",
+      "questionIds": [
+        "agr-2-w01-q06",
+        "agr-par03-fertilizer-q10",
+        "agr-par03-fertilizer-q11",
+        "agr-par03-fertilizer-q12",
+        "agr-par03-fertilizer-q13",
+        "agr-ricework-weekly-q11",
+        "agr-par11-soil-q01",
+        "agr-par11-soil-q04",
+        "agr-par12-flower-q01",
+        "agr-par12-flower-q04",
+        "agr-s30-label-detail-q02",
+        "agr-1-m03-q37",
+        "agr-1-m06-q30",
+        "agr-1-m08-q34",
+        "agr-2-m01-q08",
+        "agr-2-m01-q24",
+        "agr-2-m01-q30",
+        "agr-2-m01-q34",
+        "agr-2-m03-q31",
+        "agr-2-m05-q11",
+        "agr-2-m05-q12",
+        "agr-2-m05-q13",
+        "agr-2-m05-q14",
+        "agr-2-m05-q32",
+        "agr-2-m05-q33",
+        "agr-2-m05-q34",
+        "agr-2-m08-q23",
+        "agr-2-m08-q24",
+        "agr-2-m08-q25",
+        "agr-2-m08-q26",
+        "agr-2-m08-q27",
+        "agr-2-m10-q13",
+        "agr-2-m10-q14"
+      ],
+      "questionsScreened": 33,
+      "confirmedAdditionalErrors": 0,
+      "translationPairsSemanticallyChecked": [
+        {
+          "lessonId": "agr-soil-ph-measure",
+          "locales": [
+            "en",
+            "vi"
+          ],
+          "paragraphsPerLocale": 6
+        },
+        {
+          "lessonId": "agr-fertilizer-quantity",
+          "locales": [
+            "en",
+            "vi"
+          ],
+          "paragraphsPerLocale": 6
+        },
+        {
+          "lessonId": "agr-safety-machine-preparation",
+          "locales": [
+            "vi"
+          ],
+          "paragraphsPerLocale": 7
+        }
+      ]
+    },
+    {
+      "group": 3,
+      "scope": "Actual source image visual inspection for fruit and leaf/root atlases, positions matched against linked question stems and correct answers",
+      "questionIds": [
+        "agr-1-m03-q15",
+        "agr-1-m03-q33",
+        "agr-1-m04-q05",
+        "agr-1-m04-q13",
+        "agr-1-m04-q39",
+        "agr-1-m05-q06",
+        "agr-1-m05-q24",
+        "agr-1-m06-q17",
+        "agr-1-m06-q33",
+        "agr-1-m06-q35"
+      ],
+      "questionsVisuallyMatched": 10,
+      "assets": [
+        {
+          "path": "assets/agriculture/completion-40/rice/crop-fruits-atlas-v1.png",
+          "sha256": "312b93edc2b445a1c7fcb33f9b74ef0e1c8a251b1d1f09bb1037131cc5d4088c"
+        },
+        {
+          "path": "assets/agriculture/completion-40/rice/crop-leaves-atlas-v1.png",
+          "sha256": "144724ab5392d597ea1e0245adf7cb1036e2dc1fc0511b56f5b0f7113cc82ef5"
+        }
+      ],
+      "confirmedMismatches": 0,
+      "renderedAppMaskAcceptance": false
+    }
+  ],
+  "limits": [
+    "Structural scan of 1227 questions does not establish single semantic correctness for every question.",
+    "10 atlas-linked questions plus the seedling diagram were matched to actual pixels. Five facility source assets were also inspected; other image questions and real app rendering remain unaccepted.",
+    "Only bounded en/vi paragraph pairs reviewed; 12-locale semantic review remains incomplete.",
+    "No source coverage percentage or whole-sector release acceptance inferred."
+  ],
+  "additionalVisualReview": {
+    "sourceAssetsInspected": 5,
+    "scope": "Facility roof/connected-house/eave/ventilation/measurement/seedling figures",
+    "confirmedRootMismatchFixed": 1,
+    "otherAssetsNotCertified": true
+  },
+  "canonicalEvidenceRebinding": {
+    "coverageStatusesChanged": false,
+    "reviewFlagsChanged": false,
+    "denominatorChanged": false,
+    "changes": [
+      {
+        "ledgerPointer": "/knowledgeUnits/3/assessmentEvidence/0",
+        "path": "src/data/agriculture/weekly-checks.ja.json",
+        "jsonPointer": "/exams/0/questions/2",
+        "questionId": "agr-1-w01-q03",
+        "oldSha256": "fdbaf3c39326380e0cf25630fdee51cc2dbb28e4eea5bd10e981291a4dfe2e56",
+        "newSha256": "c27b3c8264e1ed7d1de024057e20c8624aa5303cb7aad0cf574425e6aafeb3f1"
+      }
+    ],
+    "preexistingStaleEvidence": [],
+    "meaning": "Rebind only exact changed question values after checking preserved learning objective, answers, options and lesson bindings. No new source coverage claimed."
+  }
 }
