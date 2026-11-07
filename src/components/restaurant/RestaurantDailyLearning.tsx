@@ -110,6 +110,7 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-2-cook-06':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-05-instrument-withdrawal-handwash-supplies.webp'),aspectRatio:1671/941},
  'rst-2-cook-05':{source:require('../../../assets/restaurant/royal-weekly-20261107/week02/rst-1-hyg-06-refrigerator-actual-temperature-hold.webp'),aspectRatio:1670/941},
  'rst-1-cook-04':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-2-hyg-13-clean-first-covered-drip-contained-thaw.webp'),aspectRatio:1752/897},
  'rst-1-cook-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-1-cook-01-shank-tenderloin-use-comparison.webp'),aspectRatio:1.5},
