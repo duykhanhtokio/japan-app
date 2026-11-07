@@ -1,5 +1,6 @@
+import {HotelGuideText as Text} from './HotelGuideText';
 import React,{useState} from 'react';
-import {View,Text,StyleSheet,useWindowDimensions} from 'react-native';
+import {View,StyleSheet,useWindowDimensions} from 'react-native';
 import type {HotelLesson} from '../../data/hospitality/types';
 import {hotelPracticeMapLabels} from '../../data/hospitality/practice-floorplan-labels';
 export const HOTEL_PRACTICE_FLOORPLAN_REVISION='3c440f6ebd275fa8c6ae49a04eab30a5193b7b95d33c36a85828631ebf667cb3';

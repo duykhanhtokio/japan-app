@@ -1,5 +1,6 @@
+import {HotelGuideText as Text} from './HotelGuideText';
 import React from 'react';
-import {Image,View,Text,StyleSheet} from 'react-native';
+import {Image,View,StyleSheet} from 'react-native';
 import type {HotelLesson} from '../../data/hospitality/types';
 import {loadHotelTranslation} from '../../data/hospitality/translation-loaders';
 import {hotelSafetyGuideLabels,HOTEL_SAFETY_GUIDE_REVISION} from '../../data/hospitality/safety-visual-guide-labels';

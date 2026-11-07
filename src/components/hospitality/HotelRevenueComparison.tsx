@@ -1,5 +1,6 @@
+import {HotelGuideText as Text} from './HotelGuideText';
 import React from 'react';
-import {View,Text,StyleSheet} from 'react-native';
+import {View,StyleSheet} from 'react-native';
 import type {HotelLesson} from '../../data/hospitality/types';
 import {loadHotelTranslation} from '../../data/hospitality/translation-loaders';
 import {hotelRevenueLabels} from '../../data/hospitality/revenue-example-labels';

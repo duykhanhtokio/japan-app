@@ -1,5 +1,6 @@
+import {HotelGuideText as Text} from './HotelGuideText';
 import React from 'react';
-import {View,Text,StyleSheet} from 'react-native';
+import {View,StyleSheet} from 'react-native';
 import type {HotelLesson} from '../../data/hospitality/types';
 import {hotelRevenueLabels,HOTEL_REVENUE_EXAMPLE as values} from '../../data/hospitality/revenue-example-labels';
 export const HOTEL_REVENUE_EXAMPLE_REVISION='2602db22cb5acb1db44eca21a3a5f0dd17f234e8541f6d4bf1d466c38480524f';

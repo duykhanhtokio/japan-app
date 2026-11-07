@@ -1,5 +1,6 @@
+import {HotelGuideText as Text} from './HotelGuideText';
 import React from 'react';
-import {View,Text,StyleSheet} from 'react-native';
+import {View,StyleSheet} from 'react-native';
 import type {HotelLesson} from '../../data/hospitality/types';
 import {loadHotelTranslation} from '../../data/hospitality/translation-loaders';
 export const HOTEL_FOOD_COST_REVISION='7cbc7c26d133daf5ff1c8c1c59d1cfcee594e8d5e0ea3dfe175b0cfb4bcc0fba';

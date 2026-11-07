@@ -1,3 +1,4 @@
+import {HotelGuideReadingProvider} from './HotelGuideText';
 import {HotelTwoRouteGuide} from './HotelTwoRouteGuide';
 import {HotelFoodCostComparison} from './HotelFoodCostComparison';
 import {HotelMarketSelectionGuide} from './HotelMarketSelectionGuide';
@@ -59,17 +60,17 @@ function Reader({lesson,language,record,disabled,onChange}:{lesson:HotelLesson;l
  {heading(hospitalityLabel(language,1))}{lesson.objectives.map((o,i)=><View key={o.id}>{body(o.text)}{translation&&<TranslationText>{translation.objectives[i]?.text}</TranslationText>}</View>)}
  {lesson.sections.map((section,i)=><View key={section.id} style={[s.section,{borderColor:colors.border}]}>{heading(section.title)}{body(section.body)}{translation&&<TranslationText>{translation.sections[i]?.title}{'\n'}{translation.sections[i]?.body}</TranslationText>}</View>)}
  {figure&&<View testID={`hotel-figure-${lesson.id}`}><Pressable accessibilityRole="button" accessibilityLabel={t('imageZoom')} onPress={()=>setZoom(true)}><Image source={figure} accessibilityLabel={hotelIllustrationAlt(lesson.id,language,lesson.illustration.alt)} resizeMode="contain" style={[s.figure,hotelIllustrationAspectRatio(lesson.id)?{aspectRatio:hotelIllustrationAspectRatio(lesson.id)}:undefined]}/></Pressable>{body(lesson.illustration.caption)}{translation&&<TranslationText>{translation.illustration.caption}</TranslationText>}</View>}
- {lesson.id==='hotel-front-03'&&<HotelPracticeFloorplan lesson={lesson} language={language}/>}
- {lesson.id==='hotel-planning-02'&&<HotelRevenueExample lesson={lesson} language={language}/>}
- {['hotel-service-01','hotel-service-02','hotel-service-03'].includes(lesson.id)&&<HotelServiceVisualGuide lesson={lesson} language={language}/>}
- {['hotel-service-04','hotel-planning-05'].includes(lesson.id)&&<HotelHospitalityRoleGuide lesson={lesson} language={language}/>}
- {['hotel-restaurant-02','hotel-restaurant-03','hotel-restaurant-04'].includes(lesson.id)&&<HotelMealLayoutGuide lesson={lesson} language={language}/>}
- {lesson.id==='hotel-restaurant-05'&&<HotelFoodHandoffGuide lesson={lesson} language={language}/>}
- {lesson.id==='hotel-planning-07'&&<HotelMarketSelectionGuide lesson={lesson} language={language}/>}
- {lesson.id==='hotel-restaurant-09'&&<HotelFoodCostComparison lesson={lesson} language={language}/>}
- {lesson.id==='hotel-safety-07'&&<HotelTwoRouteGuide lesson={lesson} language={language}/>}
- {lesson.id==='hotel-planning-06'&&<HotelRevenueComparison lesson={lesson} language={language}/>}
- {lesson.id==='hotel-safety-02'&&<HotelSafetyDecisionGuide lesson={lesson} language={show?language:'ja'}/>}
+ {lesson.id==='hotel-front-03'&&<HotelGuideReadingProvider lessonId={lesson.id} revision={lesson.revision} language={language} enabled={ruby}><HotelPracticeFloorplan lesson={lesson} language={language}/></HotelGuideReadingProvider>}
+ {lesson.id==='hotel-planning-02'&&<HotelGuideReadingProvider lessonId={lesson.id} revision={lesson.revision} language={language} enabled={ruby}><HotelRevenueExample lesson={lesson} language={language}/></HotelGuideReadingProvider>}
+ {['hotel-service-01','hotel-service-02','hotel-service-03'].includes(lesson.id)&&<HotelGuideReadingProvider lessonId={lesson.id} revision={lesson.revision} language={language} enabled={ruby}><HotelServiceVisualGuide lesson={lesson} language={language}/></HotelGuideReadingProvider>}
+ {['hotel-service-04','hotel-planning-05'].includes(lesson.id)&&<HotelGuideReadingProvider lessonId={lesson.id} revision={lesson.revision} language={language} enabled={ruby}><HotelHospitalityRoleGuide lesson={lesson} language={language}/></HotelGuideReadingProvider>}
+ {['hotel-restaurant-02','hotel-restaurant-03','hotel-restaurant-04'].includes(lesson.id)&&<HotelGuideReadingProvider lessonId={lesson.id} revision={lesson.revision} language={language} enabled={ruby}><HotelMealLayoutGuide lesson={lesson} language={language}/></HotelGuideReadingProvider>}
+ {lesson.id==='hotel-restaurant-05'&&<HotelGuideReadingProvider lessonId={lesson.id} revision={lesson.revision} language={language} enabled={ruby}><HotelFoodHandoffGuide lesson={lesson} language={language}/></HotelGuideReadingProvider>}
+ {lesson.id==='hotel-planning-07'&&<HotelGuideReadingProvider lessonId={lesson.id} revision={lesson.revision} language={language} enabled={ruby}><HotelMarketSelectionGuide lesson={lesson} language={language}/></HotelGuideReadingProvider>}
+ {lesson.id==='hotel-restaurant-09'&&<HotelGuideReadingProvider lessonId={lesson.id} revision={lesson.revision} language={language} enabled={ruby}><HotelFoodCostComparison lesson={lesson} language={language}/></HotelGuideReadingProvider>}
+ {lesson.id==='hotel-safety-07'&&<HotelGuideReadingProvider lessonId={lesson.id} revision={lesson.revision} language={language} enabled={ruby}><HotelTwoRouteGuide lesson={lesson} language={language}/></HotelGuideReadingProvider>}
+ {lesson.id==='hotel-planning-06'&&<HotelGuideReadingProvider lessonId={lesson.id} revision={lesson.revision} language={language} enabled={ruby}><HotelRevenueComparison lesson={lesson} language={language}/></HotelGuideReadingProvider>}
+ {lesson.id==='hotel-safety-02'&&<HotelGuideReadingProvider lessonId={lesson.id} revision={lesson.revision} language={show?language:'ja'} enabled={ruby}><HotelSafetyDecisionGuide lesson={lesson} language={show?language:'ja'}/></HotelGuideReadingProvider>}
  {lesson.terms.length>0&&heading(t('terms'))}{lesson.terms.map((term,i)=><View key={`${term.ja}:${i}`}>{body(`${term.ja}（${term.reading}）`)}{body(term.meaning)}{translation&&<TranslationText>{translation.terms[i]?.meaning}</TranslationText>}</View>)}
  {lesson.example.situation&&heading(hospitalityLabel(language,2))}{body(lesson.example.situation)}{lesson.example.steps.map((step,i)=><View key={i}>{body(`${i+1}.`)}{body(step)}{translation&&<TranslationText>{translation.example.steps[i]}</TranslationText>}</View>)}{translation&&<TranslationText>{translation.example.situation}</TranslationText>}
  {heading(t('activity'))}{body(lesson.practice.prompt)}{translation&&<TranslationText>{translation.practice.prompt}</TranslationText>}
