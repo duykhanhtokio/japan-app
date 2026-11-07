@@ -1,3 +1,4 @@
+import {recognitionCaptionDisplay} from '@/data/manufacturing/recognition-caption-readings';
 import {ManufacturingIllustrationText} from './ManufacturingIllustrationText';
 import {RecognitionOccupationalOverview} from './RecognitionOccupationalOverview';
 import {useState} from 'react';
@@ -28,7 +29,7 @@ export function RecognitionReader({lesson,language,onBack,onComplete,saving,save
  return <><TokuteiHeader title={pack.titleJa} onBack={onBack}/><ScrollView contentContainerStyle={{padding:16,paddingBottom:36,gap:12,width:'100%',maxWidth:1100,alignSelf:'center'}}>
   <ReadingAppearanceControl/>
   {language!=='ja'&&<Pressable accessibilityRole="button" onPress={()=>setShow(value=>!value)} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:16}}>{t(show?'translationHide':'translationShow')}</Text></Pressable>}
-  <ManufacturingIllustrationText readingLanguage="ja" selectable style={{color:colors.text,fontSize:17,lineHeight:29}}>{pack.captionJa}</ManufacturingIllustrationText>
+  <RecognitionCaptionText lesson={lesson} pack={pack} color={colors.text}/>
   {caption&&<TranslationText>{caption}</TranslationText>}
   {show&&language!=='ja'&&!caption&&<TranslationText>{t('translationPending')}</TranslationText>}
   <RecognitionOccupationalOverview pack={pack} language={language} showTranslation={show}/>
@@ -43,4 +44,10 @@ export function RecognitionQuestionFigures({question,language}:{question:Manufac
  if(!found)return null;
  // Exact image bindings select quiz assets only. No pack caption or rationale is rendered here.
  return <View testID="manufacturing-recognition-question-images"><Figures pack={found.pack} assets={found.assets} language={language} quiz/></View>;
+}
+
+function RecognitionCaptionText({lesson,pack,color}:{lesson:ManufacturingLesson;pack:RecognitionPack;color:string}){
+ const display=recognitionCaptionDisplay(lesson,pack),style={color,fontSize:17,lineHeight:29};if(!display)return <Text selectable style={style}>{pack.captionJa}</Text>;
+ const pieces=display.parts.flatMap(p=>p.reading?[p]:p.text.split(/(\n)/).filter(Boolean).map(text=>({text})));
+ return <View accessible accessibilityLabel={display.text} testID={`manufacturing-recognition-caption-ruby-${pack.id}`} style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}>{pieces.map((p,i)=>p.text==='\n'?<View key={i} accessible={false} style={{width:'100%',height:6}}/>:<View key={i} style={{alignItems:'center',maxWidth:'100%',minWidth:0}}><Text style={{fontSize:10,lineHeight:14,color}}>{'reading'in p?p.reading:' '}</Text><Text selectable style={style}>{p.text}</Text></View>)}</View>;
 }
