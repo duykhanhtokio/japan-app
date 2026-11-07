@@ -6,6 +6,24 @@ type Labels={practice:string;sleeve:string;thimble:string;position:string;inRang
 type LocalizedLesson={sourceHash:string;title:string;exampleTitle:string;exampleText:string;structureTitle?:string;structureText?:string};
 const locales=require('@/data/manufacturing/royal-week01-technical-locales.json').locales as Record<string,{labels:Labels;lessons:Record<string,LocalizedLesson>}>;
 const revisions:Record<string,string>={
+ "mfg1-mechanical-lesson-071":"45ca487a156d62c145b008a85710657c543dc1179e4f4c83eabbac5e80f5ac21",
+ "mfg1-mechanical-lesson-072":"53fa49bf8402fdb1dc23bc3956e20901e906a250d63de7b0a688c8e3f6ebb103",
+ "mfg1-mechanical-lesson-073":"1628bb9c538060b75bf2a5d70361aeb00c05d792d73300905f8d6274dbffdf2b",
+ "mfg1-mechanical-lesson-074":"6725581d21460c1da19b735979fcefeed88573f49f7cd4546cf63b50f557bc78",
+ "mfg1-mechanical-lesson-075":"80a747f91c28b9340f03c953160e65d5a625d0342db5fe150a364ab708bc3eaa",
+ "mfg1-mechanical-lesson-076":"00cbd05fe53785d0c7df7106290053a176bea7577b1ceaac888f7afa3b4e4d43",
+ "mfg1-mechanical-lesson-077":"4caa5c8178dc3f530f71cf7d78045138c45f1649c899d84ac66cc960a8fc7a73",
+ "mfg1-electrical-l071":"d99438ff6de3ea74ebce53fd03707467e62759206566ed9fe53e1897c1385686",
+ "mfg1-electrical-l072":"aa213598332b37cded6bc5c111231b9e6ae94d7de76cbd4ad174f8fac3927460",
+ "mfg1-electrical-l073":"e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1",
+ "mfg1-electrical-l074":"aa3bf37030bd09585e1ff4baf543ab4c1ec11f7be57a52d6d3ffa8c331bd90db",
+ "mfg1-electrical-l075":"25b343d5c17e0f1c6341bbb74624260be811dd15aa757a4eb8207cec69466d89",
+ "mfg1-electrical-l076":"da01dd1203b38cd444550c258b608849799ca0724a520cf934b0e36601be8489",
+ "mfg1-electrical-l077":"614284c4181587733b9090e0984f94cf23ab20ea4d46b2619f26c39cc9d52024",
+ "mfg1-surface-lesson-071":"aeed8683518ebc61a91e29e96f861760717bcd96870236b02ba9d2b9f34020eb",
+ "mfg1-surface-lesson-072":"f1dfb2d86c8a808346b268c5d41eb623d88cc47767ccc887a1395a79ac4e4b29",
+ "mfg1-surface-lesson-073":"6e01d7d938adbb12677f4ea609782517594fccdbcaf050d253a0b3b9b7a3e540",
+
  "mfg1-mechanical-lesson-064":"39778432e4fc1ae09db487d4012f817cf2cf57d5b85d568ab67219995e3bf245",
  "mfg1-mechanical-lesson-065":"e04486274c1f9bda82964f1c9ec8829d29d4c4d411107702681b4bb8d114edeb",
  "mfg1-mechanical-lesson-066":"26db2d9eec3cfb0dd0f470e5a49c2933abf245524df4cf12a48038e8faa7305b",
@@ -250,6 +268,11 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
   <Text style={heading}>{target.exampleTitle}</Text><Text style={body}>{target.exampleText}</Text>
  </View>;
  if(["mfg1-mechanical-lesson-064", "mfg1-mechanical-lesson-065", "mfg1-mechanical-lesson-066", "mfg1-mechanical-lesson-067", "mfg1-mechanical-lesson-068", "mfg1-mechanical-lesson-069", "mfg1-mechanical-lesson-070", "mfg1-electrical-l064", "mfg1-electrical-l065", "mfg1-electrical-l066", "mfg1-electrical-l067", "mfg1-electrical-l068", "mfg1-electrical-l069", "mfg1-electrical-l070", "mfg1-surface-lesson-064", "mfg1-surface-lesson-065", "mfg1-surface-lesson-066", "mfg1-surface-lesson-067", "mfg1-surface-lesson-068", "mfg1-surface-lesson-069", "mfg1-surface-lesson-070"].includes(lesson.id))return <View testID="manufacturing-native-week10-technical" style={border}>
+  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <Text style={heading}>{target.structureTitle}</Text><Text style={body}>{target.structureText}</Text>
+  <Text style={heading}>{target.exampleTitle}</Text><Text style={body}>{target.exampleText}</Text>
+ </View>;
+ if(["mfg1-mechanical-lesson-071", "mfg1-mechanical-lesson-072", "mfg1-mechanical-lesson-073", "mfg1-mechanical-lesson-074", "mfg1-mechanical-lesson-075", "mfg1-mechanical-lesson-076", "mfg1-mechanical-lesson-077", "mfg1-electrical-l071", "mfg1-electrical-l072", "mfg1-electrical-l073", "mfg1-electrical-l074", "mfg1-electrical-l075", "mfg1-electrical-l076", "mfg1-electrical-l077", "mfg1-surface-lesson-071", "mfg1-surface-lesson-072", "mfg1-surface-lesson-073"].includes(lesson.id))return <View testID="manufacturing-native-week11-technical" style={border}>
   <Text style={heading}>{labels.practice} · {target.title}</Text>
   <Text style={heading}>{target.structureTitle}</Text><Text style={body}>{target.structureText}</Text>
   <Text style={heading}>{target.exampleTitle}</Text><Text style={body}>{target.exampleText}</Text>

@@ -1,6 +1,9 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week11/technical/electrical-day75-truth-law-verification.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week11/technical/electrical-day75-truth-law-verification.png");
+  case "assets/manufacturing/royal-weekly-20261107/week06/companions/electrical-analog-range-twenty-of-fifty.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week06/companions/electrical-analog-range-twenty-of-fifty.png");
+  case "assets/manufacturing/royal-weekly-20261107/week11/technical/mechanical-day74-measure-count-sample.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week11/technical/mechanical-day74-measure-count-sample.png");
   case "assets/manufacturing/royal-weekly-20261107/week10/technical/surface-day66-burette-difference.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week10/technical/surface-day66-burette-difference.png");
   case "assets/manufacturing/royal-weekly-20261107/week10/technical/electrical-day70-kirchhoff-checks.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week10/technical/electrical-day70-kirchhoff-checks.png");
   case "assets/manufacturing/royal-weekly-20261107/week09/technical/companion-electrical69-period-phase-selected.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week09/technical/companion-electrical69-period-phase-selected.png");
