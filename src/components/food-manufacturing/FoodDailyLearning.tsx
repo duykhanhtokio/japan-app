@@ -50,10 +50,11 @@ export function FoodDailyLearning({lesson,language,showTranslation,textColor,rea
  const [expanded,setExpanded]=useState(false),labels=showTranslation&&language!=='ja'?(ui.locales as Record<string,{compare:string;explain:string;close:string}>)[language]:undefined;
  const binding=foodDailyBinding(lesson);if(!binding)return null;
  const p=lesson.paragraphs.find(p=>p.id===binding.captionParagraphId)!,t=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
+ const imageDescription=`${p.titleJa}。${p.textJa}${t?`。${t.paragraphTitles[p.id]}。${t.paragraphs[p.id]}`:''}`;
  const royalImage=foodRoyalWeeklyImageFor(lesson),native=foodRoyalWeek2NativeFor(lesson),source=royalImage?.source??(native?undefined:drawings[binding.diagramKind]);
  return <View testID={`food-daily-learning-${lesson.id}`} style={s.section}>
  {(source||native)&&<View testID={`food-daily-diagram-${lesson.id}`} style={s.figure}>
- {source&&<Pressable accessibilityRole="button" accessibilityLabel={`${p.titleJa}・拡大`} onPress={()=>setExpanded(true)}><Image testID={royalImage?.replacesIllustrationId} source={source} resizeMode="contain" accessibilityLabel={`${p.titleJa}。${p.textJa}${t?`。${t.paragraphTitles[p.id]}。${t.paragraphs[p.id]}`:''}`} style={[s.image,royalImage?{aspectRatio:royalImage.width/royalImage.height}:null]}/></Pressable>}
+ {source&&<Pressable accessibilityRole="button" accessibilityLabel={`${p.titleJa}・拡大${t?` · ${t.paragraphTitles[p.id]}`:''}`} onPress={()=>setExpanded(true)}><Image testID={royalImage?.replacesIllustrationId} source={source} resizeMode="contain" accessibilityLabel={imageDescription} style={[s.image,royalImage?{aspectRatio:royalImage.width/royalImage.height}:null]}/></Pressable>}
  {native&&<FoodRoyalWeek2Native lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor}/>}
  <FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.titleJa`} text={p.titleJa} color={textColor} readingColor={readingColor} heading/>
  <FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.textJa`} text={p.textJa} color={textColor} readingColor={readingColor}/>
@@ -69,7 +70,7 @@ export function FoodDailyLearning({lesson,language,showTranslation,textColor,rea
  </View>)}
  {includeActivity&&<View style={s.paragraph}><Text style={[s.heading,{color:textColor}]}>比較して説明する</Text>{labels&&<TranslationText>{labels.explain}</TranslationText>}<FoodLessonRuby lesson={peer} field="activityJa" text={peer.activityJa} color={textColor} readingColor={readingColor}/>{pt&&<TranslationText>{pt.activity}</TranslationText>}</View>}
  </View>;})}
- <Modal visible={expanded} animationType="none" onRequestClose={()=>setExpanded(false)}><View style={{flex:1,backgroundColor:'#fffaf0',paddingTop:36}}><Pressable accessibilityRole="button" accessibilityLabel="図を閉じる" onPress={()=>setExpanded(false)} style={{padding:16}}><Text style={{color:'#233c4c',fontSize:18}}>図を閉じる{labels?` · ${labels.close}`:''}</Text></Pressable><ScrollView horizontal><ScrollView style={{width:1200}}><Image source={source} resizeMode="contain" accessibilityLabel={p.titleJa} style={{width:1200,height:royalImage?1200*royalImage.height/royalImage.width:760}}/></ScrollView></ScrollView></View></Modal>
+ <Modal visible={expanded} animationType="none" onRequestClose={()=>setExpanded(false)}><View style={{flex:1,backgroundColor:'#fffaf0',paddingTop:36}}><Pressable accessibilityRole="button" accessibilityLabel={`図を閉じる${labels?` · ${labels.close}`:''}`} onPress={()=>setExpanded(false)} style={{padding:16}}><Text style={{color:'#233c4c',fontSize:18}}>図を閉じる{labels?` · ${labels.close}`:''}</Text></Pressable><ScrollView horizontal><ScrollView style={{width:1200}}><Image source={source} resizeMode="contain" accessibilityLabel={imageDescription} style={{width:1200,height:royalImage?1200*royalImage.height/royalImage.width:760}}/></ScrollView></ScrollView></View></Modal>
  </View>;
 }
 const s=StyleSheet.create({section:{gap:18,paddingVertical:14},figure:{gap:12},image:{width:'100%',height:undefined,aspectRatio:1200/760,alignSelf:'center'},companion:{gap:10,paddingTop:18,borderTopWidth:1,borderColor:'#bda36a'},heading:{fontSize:18,lineHeight:28,fontWeight:'700'},paragraph:{gap:8,paddingVertical:10}});
