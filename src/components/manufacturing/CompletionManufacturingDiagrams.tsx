@@ -4,6 +4,7 @@ import type {SupplementalDiagram} from '@/data/manufacturing/supplemental-diagra
 import {SupplementalFigure} from './SupplementalManufacturingDiagrams';
 
 const sources:Record<string,ReturnType<typeof require>>={
+ 'mechanical-drawing-full-nine-lines.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-drawing-full-nine-lines.png'),
  'royal-mechanical-machine-recognition-20261107.webp':require('../../../assets/manufacturing/diagrams/royal-mechanical-machine-recognition-20261107.webp'),
  'batch37-mechanical-drawing.png':require('../../../assets/manufacturing/diagrams/batch37-mechanical-drawing.png'),
  'batch37-mechanical-features.png':require('../../../assets/manufacturing/diagrams/batch37-mechanical-features.png'),
