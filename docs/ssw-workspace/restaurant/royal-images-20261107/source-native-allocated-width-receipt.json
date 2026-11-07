@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "sector": "restaurant",
+  "scope": "Allocated-width measurement for current native source-linked technical figures",
+  "status": "SELF_CHECKED_READY_PENDING_COORDINATOR_PERSISTENCE",
+  "problem": "The raster wrapper measured its allocated width, but native technical figures returned through a different wrapper without onLayout. In a nested container their width therefore stayed at viewport minus32 instead of the actual allocation.",
+  "change": "The native technical wrapper now uses the identical existing positive-finite onLayout measurement rule. Explicit zoom width remains authoritative. Diagram geometry, source identity/caption checks, translations and images are unchanged.",
+  "validation": {
+    "beforeReproduction": "Actual SourcePicture31 native branch at390 viewport defaulted to358 and had no allocated-width measurement callback.",
+    "after": "Actual SourcePicture31 callback updates subsequent native figure width to an allocated280. Zero and NaN events leave280 unchanged. Explicit960 zoom width remains960 despite280 layout event.",
+    "actualModuleScope": "TypeScript-transpiled SourcePicture31 and technical selector with exact source-row fixture; React props/state and RN adapters. No browser/device claim.",
+    "localizedZoomRegression": "PASS changed SourcePicture31 dependency through actual SourceSupplement→SourcePicture31→native technical adapter SSR. Current VI caption once and labels visible when enabled; hidden/stale caption rules retained.",
+    "preservation": "Reverting only added native wrapper onLayout restores prior SHA2569a20a7c3815015af0b1aea5c8e4c826c4687b51b54a8d87c73ea8153ce143d40. Existing raster handler unchanged.",
+    "ledgerDependencyAudit": "Canonical restaurant ledger blob16cdf6d52facc03189973734cc406f1dd0d9141f has zero evidence paths referencing RestaurantSourcePictures.tsx.",
+    "diffCheck": "PASS scoped git diff --check"
+  },
+  "fileSha256": {
+    "src/components/restaurant/RestaurantSourcePictures.tsx": "4d79b2dee8bcbd0480b87c6ce861305fe2b740771d8ca11a0356eaa208d84cbd"
+  },
+  "newImagesGenerated": 0,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "wholeSectorComplete": false
+}
