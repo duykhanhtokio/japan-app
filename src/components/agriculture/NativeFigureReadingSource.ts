@@ -7,6 +7,9 @@ import {winterSpatialBakedSource} from './WinterSpatialLabelSource';
 import rice from '@/data/agriculture/rice-process-labels.json';
 import fruit from '@/data/agriculture/fruit-tree-comparison-alt.json';
 import flowers from '@/data/agriculture/flower-appearance-figure.json';
+import organs from '@/data/agriculture/organ-classification-locales.json';
+import inlineBindings from '@/data/agriculture/inline-diagram-source-bindings.json';
+import {organClassificationLabels,ORGAN_CLASSIFICATION_JA} from './OrganClassificationLabels';
 
 export const STATISTICS_REMAINDER_JA='その他：100 − (24 + 20 + 9 + 4) = 43%';
 export const RICE_NATIVE_TITLE_JA='もみ・玄米・白米';
@@ -61,6 +64,11 @@ export function nativeFigureReadingSource(lessonId:string){
   if(flowers.schemaVersion!==1||flowers.lessonId!==lessonId||flowers.sourceHash!==l.sourceHash||paragraphs.some(p=>!p))return null;
   const fields:Record<string,string>={title:FLOWER_APPEARANCE_TITLE_JA,...Object.fromEntries(flowers.labels.ja.groups.map((s,i)=>['group:'+i,s])),...Object.fromEntries(paragraphs.map(p=>['paragraph:'+p!.id,p!.textJa])),limit:flowers.labels.ja.limit};
   return {fields,signature:JSON.stringify({lessonId,sourceHash:l.sourceHash,revision:l.revision,fields,asset:flowers.asset,labelsJa:flowers.labels.ja})};
+ }
+ if(lessonId==='agr-organs'){
+  if(!l.levels.some(level=>organClassificationLabels(l.id,l.sourceHash,l.revision,level,'ja',ORGAN_CLASSIFICATION_JA)))return null;
+  const fields:Record<string,string>=Object.fromEntries(ORGAN_CLASSIFICATION_JA.rows.flatMap(([title,items],i)=>[[`rowTitle:${i}`,title],[`rowItems:${i}`,items]]));
+  return {fields,signature:JSON.stringify({lessonId,sourceHash:l.sourceHash,revision:l.revision,fields,binding:inlineBindings.organs,sourceJapanese:organs.sourceJapanese,levels:organs.levels})};
  }
  return null;
 }

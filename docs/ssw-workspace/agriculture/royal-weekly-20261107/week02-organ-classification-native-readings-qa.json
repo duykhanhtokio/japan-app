@@ -1,0 +1,100 @@
+{
+  "unit": "week02-inline-organ-classification-native-readings",
+  "status": "passed",
+  "week": 2,
+  "lessonId": "agr-organs",
+  "levels": [
+    "1",
+    "2"
+  ],
+  "sourceHash": "b6860139509b2eb4052e64097e6f3baee60de8e838b1a69b380637c53edd05a9",
+  "revision": "v1",
+  "fields": [
+    "rowTitle:0",
+    "rowItems:0",
+    "rowTitle:1",
+    "rowItems:1"
+  ],
+  "changes": [
+    "Extracted the actual inline organ-classification caller into a pure source-bound component while forwarding the unchanged Reader layout styles.",
+    "Added4 currentJA source/context-bound readings; preserved original role labels/items, colors, IDs and all12locales.",
+    "Malformed/unknown label locales safely fall back toJapanese. Canonical course rejection precedes figure rendering."
+  ],
+  "validation": {
+    "newNativeFields": 4,
+    "currentCourseContexts": 2,
+    "actualRenders": 29,
+    "sourceRevisionCourseTextKanaLocaleNegatives": 32,
+    "languageModes": 13,
+    "actualReaderCallSites": 1,
+    "existingStylesForwarded": true,
+    "priorNativeFieldsStillCurrent": 36,
+    "sourceJAAndExistingLocalesUnchanged": true,
+    "questionCallerChanged": false,
+    "canonicalV2LedgerCheck": "Root reference check requested; no child Git read."
+  },
+  "sourceEvidence": {
+    "documentId": "AGR-S2",
+    "pdfPage": 9,
+    "printedPage": 7,
+    "sourceSHA256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+    "existingSourceBinding": "src/data/agriculture/inline-diagram-source-bindings.json:organs",
+    "existingLocalePack": "src/data/agriculture/organ-classification-locales.json",
+    "originalVisibleJapanese": [
+      [
+        "栄養器官",
+        "葉 · 茎 · 根"
+      ],
+      [
+        "生殖器官",
+        "花 · 果実"
+      ]
+    ],
+    "kanaReview": [
+      "栄養器官えいようきかん",
+      "生殖器官せいしょくきかん",
+      "葉は /茎くき /根ね /花はな /果実かじつ"
+    ],
+    "scope": "Same existing role-classification examples; no new organ categories, quantities, growth conditions, art or source prose."
+  },
+  "currentKnownNativeReadingRegistry": {
+    "lessonEntries": 6,
+    "fieldRecords": 40,
+    "scope": "Implemented source-bound native fields only; not all native eligibility or closure."
+  },
+  "limits": {
+    "wholeWeekNativeComplete": false,
+    "allNativeFieldsComplete": false,
+    "allDailyTargetCaptionsComplete": false,
+    "wholeSourceComplete": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false
+  },
+  "fileSha256": {
+    "src/components/agriculture/OrganClassificationDiagram.tsx": "5d5671dfe80e70a219c53186230214de5d9f5feaee8d2546d8566366baa43d3f",
+    "src/components/agriculture/OrganClassificationLabels.ts": "7ce33f5647b98bf0e5ba954e9f5e9b572bccd646b786c7835717301bd60bc404",
+    "src/components/agriculture/NativeFigureReadingSource.ts": "bf87eaf1f2cd38b38671dd3395dce817fffa6959beeda53d0a1784113b8a0b1e",
+    "src/components/agriculture/AgricultureCourse.tsx": "e92880b09a5f04af904b2dae61ad6b5ad2ef1c575554ad51849b04931a6557d8",
+    "src/data/agriculture/native-figure-readings.json": "5aaadeb0c2abf386b91bafb598e1355384656c4cf759f187ee04dc5bfea6eee8",
+    "scripts/agriculture/check-organ-classification-readings.cjs": "c446094c6e9132d0816e0f529bb9ebf14980dad157c0e26b2e3923b47ee40e92"
+  },
+  "rootCanonicalEvidenceReferenceCheck": {
+    "ledgerPath": "docs/ssw-workspace/source-coverage-v2/agriculture.json",
+    "ledgerGitSha": "15092f3db288259a0ec93b2cf4f4727647becb23",
+    "knowledgeUnitCount": 1443,
+    "paths": [
+      "src/components/agriculture/OrganClassificationDiagram.tsx",
+      "src/components/agriculture/OrganClassificationLabels.ts",
+      "src/components/agriculture/NativeFigureReadingSource.ts",
+      "src/components/agriculture/AgricultureCourse.tsx",
+      "src/data/agriculture/native-figure-readings.json",
+      "scripts/agriculture/check-organ-classification-readings.cjs",
+      "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-organ-classification-native-readings-qa.json"
+    ],
+    "matchedReferences": 0,
+    "requiresLedgerUpdate": false,
+    "flagsUnchanged": true,
+    "currentIndexBlobMatchesImmutableLedger": true
+  }
+}
