@@ -1,18 +1,19 @@
-import { useCallback, useState } from 'react';
+import RewardNotice from '@/daily-learning/RewardNotice';
+import { useCallback, useEffect, useState } from 'react';
 import { useFocusEffect, router } from 'expo-router';
-import { ActivityIndicator, Alert, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, AppState, Pressable, StyleSheet, Text, View } from 'react-native';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import DailyWordMatch from '@/daily-learning/DailyWordMatch';
 import type { LearningSnapshot, Match, Challenge } from '@/daily-learning/types';
-import { learningAction, learningOperationId, savePendingMatch, pendingMatches } from '@/services/daily-learning-client';
+import { learningAction, learningTransaction, savePendingMatch, pendingMatches, learningServerNow } from '@/services/daily-learning-client';
 import { useAppLanguage } from '@/context/LanguageContext';
 
 export default function TasksScreen() {
     const {language}=useAppLanguage();
+    const [reward,setReward]=useState<'key'|'ticket'|null>(null);
     const [snapshot,setSnapshot]=useState<LearningSnapshot|null>(null),[attempts,setAttempts]=useState<Match[]>([]);
     const [practice,setPractice]=useState<Challenge|null>(null);
     const [loading,setLoading]=useState(false),[status,setStatus]=useState(''),[playing,setPlaying]=useState(false);
-    const [exchangeId,setExchangeId]=useState<string|null>(null);
     const refresh=useCallback(async()=>{
         setLoading(true);
         try {const value=await learningAction('daily',{locale:language});const pending=await pendingMatches(value.state.challenge!);setAttempts(pending);setSnapshot(value);setPractice(null);setStatus('');
@@ -22,18 +23,20 @@ export default function TasksScreen() {
         }finally{setLoading(false);}
     },[language]);
     useFocusEffect(useCallback(()=>{void refresh();},[refresh]));
+    useEffect(()=>{const sub=AppState.addEventListener('change',state=>{if(state==='active')void refresh();});return()=>sub.remove();},[refresh]);
+    useEffect(()=>{if(!snapshot)return;const now=learningServerNow()??snapshot.serverNow;const next=Math.floor((now+9*3600000)/86400000+1)*86400000-9*3600000;const timer=setTimeout(()=>{void refresh();},Math.max(1,next-now));return()=>clearTimeout(timer);},[snapshot?.serverNow,refresh]);
     const challenge=practice??snapshot?.state.challenge;
     async function onMatches(matches:Match[],complete:boolean){
         if(!challenge)return;setAttempts(matches);
         if(practice){const local=await import('@/daily-learning/practice');await local.savePractice(challenge,matches);if(complete)setStatus('Đã hoàn thành lượt luyện tập. Chỉ nhiệm vụ được máy chủ cấp và xác minh mới nhận thưởng.');return;}
         await savePendingMatch(challenge,matches);
         if(!complete)return;
-        try {const next=await learningAction('complete',{day:challenge.day,matches});setSnapshot(next);setStatus('Đã hoàn thành nhiệm vụ hôm nay.');if(next.result.keyAwarded)Alert.alert('Nhận chìa khóa','Bạn đã hoàn thành đủ 7 ngày cộng dồn và nhận 1 chìa khóa.');}
+        try {const next=await learningAction('complete',{day:challenge.day,matches});setSnapshot(next);setStatus('Đã hoàn thành nhiệm vụ hôm nay.');if(next.result.keyAwarded)setReward('key');}
         catch(error){setStatus('Đã lưu bài ghép, đang chờ xác minh trực tuyến. '+(error as Error).message);}
     }
     async function exchange(){
-        const operationId=exchangeId??learningOperationId();setExchangeId(operationId);setLoading(true);
-        try{const next=await learningAction('exchange',{operationId});setSnapshot(next);setExchangeId(null);if(next.result.ticketAwarded&&!next.result.replayed)Alert.alert('Đã nhận 1 vé vàng','Dùng vé mở một đề gốc JLPT trong 7 ngày.');}
+        setLoading(true);
+        try{const next=await learningTransaction('exchange');setSnapshot(next);if(next.result.ticketAwarded&&!next.result.replayed)setReward('ticket');}
         catch(error){setStatus((error as Error).message);}finally{setLoading(false);}
     }
     return <SafeAreaView style={s.page}>
@@ -49,6 +52,7 @@ export default function TasksScreen() {
             <Pressable onPress={()=>{void refresh();}} style={s.button}><Text style={s.buttonText}>Đồng bộ lại</Text></Pressable>
         </View>}
         {!!status&&<Text accessibilityLiveRegion="polite" style={s.status}>{playing?(practice?'Luyện tập · chưa cấp thưởng':'Tiến độ đã lưu; đồng bộ khi trực tuyến'):status}</Text>}
+        <RewardNotice reward={reward} onClose={()=>setReward(null)}/>
     </SafeAreaView>;
 }
 const s=StyleSheet.create({page:{flex:1,paddingHorizontal:12,paddingBottom:6,backgroundColor:'#f5eedf',gap:6},header:{flexDirection:'row',alignItems:'center',gap:12,height:57},back:{fontSize:32,color:'#172b43',paddingHorizontal:8},title:{fontSize:19,fontWeight:'700',color:'#172b43'},note:{fontSize:12,color:'#66552e'},overview:{flex:1,gap:18,justifyContent:'center',padding:12},copy:{fontSize:16,lineHeight:23,color:'#273e51'},wallet:{flexDirection:'row',justifyContent:'space-between'},count:{fontSize:19,fontWeight:'700',color:'#72501f'},button:{padding:14,borderRadius:12,backgroundColor:'#e5c77d',alignItems:'center'},buttonText:{color:'#172b43',fontSize:16,fontWeight:'700'},disabled:{opacity:.45},status:{fontSize:12,lineHeight:16,color:'#744326',paddingVertical:4}});

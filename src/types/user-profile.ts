@@ -12,6 +12,7 @@ export type UserProfile = {
     name: string;
 
     level: string;
+    initialLevel?: string;
 
     country: string;
 

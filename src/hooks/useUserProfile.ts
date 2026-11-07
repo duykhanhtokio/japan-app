@@ -62,6 +62,9 @@ export function useUserProfile() {
                 nextProfile: UserProfile
             ) => {
                 try {
+                    const old = await AsyncStorage.getItem(STORAGE_KEY);
+                    const previous = old ? JSON.parse(old) : null;
+                    nextProfile = { ...nextProfile, initialLevel: previous?.initialLevel || previous?.level || nextProfile.level };
                     await AsyncStorage.setItem(
                         STORAGE_KEY,
                         JSON.stringify(

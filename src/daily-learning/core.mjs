@@ -70,7 +70,10 @@ export function accessTo(state, examId, now, premiumUntil = 0, runId) {
 }
 export function exchangeKeys(state, operationId) {
     if (!operationId || operationId.length > 100) throw Error('Invalid transaction ID');
-    if (state.receipts[operationId]) return { ...state.receipts[operationId], replayed: true };
+    if (Object.hasOwn(state.receipts,operationId)) {
+        if(state.receipts[operationId].kind !== 'exchange') throw Error('Transaction ID already used');
+        return { ...state.receipts[operationId], replayed: true };
+    }
     if (state.keys < 4) throw Error('Four keys required');
     state.keys -= 4; state.tickets += 1;
     return state.receipts[operationId] = { kind: 'exchange', ticketAwarded: true };
@@ -78,8 +81,8 @@ export function exchangeKeys(state, operationId) {
 export function unlockExam(state, examId, now, premiumUntil, operationId, catalog) {
     if (!catalog.some(e=>e.id===examId) || !originalExam(examId)) throw Error('Tickets only open original exams');
     if (!operationId || operationId.length > 100) throw Error('Invalid transaction ID');
-    if (state.receipts[operationId]) {
-        if (state.receipts[operationId].examId !== examId) throw Error('Transaction ID already used');
+    if (Object.hasOwn(state.receipts,operationId)) {
+        if (state.receipts[operationId].kind !== 'unlock' || state.receipts[operationId].examId !== examId) throw Error('Transaction ID already used');
         return { ...state.receipts[operationId], replayed: true };
     }
     if (accessTo(state,examId,now,premiumUntil).allowed) return { kind: 'already-open', examId, expiresAt: state.grants[examId]??null };

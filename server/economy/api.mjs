@@ -25,9 +25,9 @@ function auth(req) {
   if (typeof data.sub !== 'string' || !/^[a-zA-Z0-9:_-]{1,128}$/.test(data.sub) || !Number.isSafeInteger(data.exp) || data.exp <= Math.floor(Date.now()/1000)) throw Object.assign(Error('Unauthorized'), { status:401 });
   return data.sub;
 }
-async function body(req) {
+async function body(req, limit = 8192) {
   let raw = '';
-  for await (const part of req) { raw += part; if (raw.length > 8192) throw Object.assign(Error('Payload too large'), { status:413 }); }
+  for await (const part of req) { raw += part; if (raw.length > limit) throw Object.assign(Error('Payload too large'), { status:413 }); }
   try { return JSON.parse(raw); } catch { throw Object.assign(Error('Invalid JSON'), { status:400 }); }
 }
 async function transaction(fn) {
@@ -43,7 +43,7 @@ const handler = async (req,res) => {
     if (req.method === 'GET' && url.pathname === '/ready') { await pool.query('SELECT 1'); return send(res,200,{ready:true}); }
     const userId = auth(req);
     if (req.method === 'POST' && /^\/v1\/learning\/(account|daily|complete|exchange|unlock|access|start|submit)$/.test(url.pathname)) {
-      const data = await body(req);
+      const data = await body(req, 65536);
       try { return send(res,200,await transaction(db => runLearningAction(db,userId,url.pathname.split('/').at(-1),data))); }
       catch (error) { if (!error.status && !error.code) error.status = 400; throw error; }
     }

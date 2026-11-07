@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import { createState,ensureChallenge,recordMatches,exchangeKeys,unlockExam,accessTo,startRun,submitRun,WEEK_MS } from '../../src/daily-learning/core.mjs';
-import { runLearningAction } from './daily-learning.mjs';
+import { runLearningAction, loadDailyWords } from './daily-learning.mjs';
 const require = createRequire(import.meta.url);
 const {newDb}=require(process.env.LEARNING_PG_MEM ?? 'pg-mem');
 const catalog=[{id:'n5-2011-12-exam-01',level:'N5'},{id:'n5-2012-12-exam-02',level:'N5'},{id:'jpapp-n5-original-01-v1',level:'N5'}];
@@ -39,4 +39,10 @@ test('database handler persists immutable free exam and deduplicated exchanges a
  const initial=a.state.freeExamId;
  const b=await runLearningAction(db,'alice','account',{level:'N3',locale:'en'},{now});assert.equal(b.state.freeExamId,initial);assert.equal(b.state.initialLevel,'N5');assert.equal(b.state.level,'N3');
  const c=await runLearningAction(db,'bob','account',{level:'N4'},{now});assert.notEqual(c.state.freeExamId,initial);await db.end();
+});
+
+test('all five levels and thirteen app languages have ten unambiguous localized cards',()=>{
+ for(const locale of ['vi','en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl','ja']) for(const level of ['N5','N4','N3','N2','N1']) {
+  const state={...createState('N5',catalog),level};const ch=ensureChallenge(state,loadDailyWords(locale),now,locale);assert.equal(ch.words.length,10);for(const field of ['word','reading','meaning'])assert.equal(new Set(ch.words.map(w=>w[field])).size,10);
+ }
 });

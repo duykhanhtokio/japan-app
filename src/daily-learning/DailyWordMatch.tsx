@@ -16,7 +16,8 @@ export default function DailyWordMatch({challenge,initialAttempts=[],onChange}:P
     function choose(col:number,id:string) {
         const next=[...selected];next[col]=id;setSelected(next);
         if(next.some(x=>x===null))return;
-        const tuple=next as Match,good=checkMatch(challenge,tuple),updated=[...attempts,tuple];
+        const tuple=next as Match,good=checkMatch(challenge,tuple);
+        const updated=[...attempts.filter(t=>checkMatch(challenge,t)),...attempts.filter(t=>!checkMatch(challenge,t)).slice(-189),tuple];
         setAttempts(updated);setSelected([null,null,null]);setFeedback(good?'✓':'Thử lại · もう一度');
         const matched=new Set([...completed,...(good?[tuple[0]]:[])]);
         onChange(updated,matched.size===10);

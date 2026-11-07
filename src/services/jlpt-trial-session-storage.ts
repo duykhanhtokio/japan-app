@@ -1,8 +1,10 @@
+import { archiveSubmittedSession } from './jlpt-submitted-archive';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { N1_2012_07_SESSION_KEY } from '@/data/jlpt-official/n1-2012-07-trial';
 
 export type N1TrialSession = {
   version: 4;
+  accessRunId?: string;
   answers: Record<string, string>;
   mode: 'exam' | 'practice';
   status: 'not_started' | 'in_progress' | 'submitted' | 'reviewing';
@@ -28,6 +30,7 @@ export async function loadJlptTrialSession(storageKey: string): Promise<N1TrialS
     }
     return {
       version: 4,
+      accessRunId: typeof value.accessRunId === 'string' ? value.accessRunId : undefined,
       answers: value.answers,
       mode: value.mode,
       started: !!value.started,
@@ -56,9 +59,12 @@ export async function loadJlptTrialSession(storageKey: string): Promise<N1TrialS
 export async function saveJlptTrialSession(storageKey: string, session: Omit<N1TrialSession, 'version' | 'updatedAt'>) {
   const value: N1TrialSession = { ...session, version: 4, updatedAt: new Date().toISOString() };
   await AsyncStorage.setItem(storageKey, JSON.stringify(value));
+  await archiveSubmittedSession(storageKey, value);
 }
 
 export async function clearJlptTrialSession(storageKey: string) {
+  const previous = await loadJlptTrialSession(storageKey);
+  if (previous?.submitted) await archiveSubmittedSession(storageKey, previous);
   await AsyncStorage.removeItem(storageKey);
 }
 

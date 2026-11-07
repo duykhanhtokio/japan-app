@@ -29,7 +29,7 @@ export async function runLearningAction(db, userId, action, data, options = {}) 
     const words = options.words ?? loadDailyWords;
     if (!LEVELS.includes(data.level)) throw Object.assign(Error('Choose your JLPT level'),{status:400});
     // New account's immutable initial choice is committed atomically; changing levels cannot reassign its free exam.
-    await db.query('INSERT INTO learning_accounts(user_id,state) VALUES($1,$2) ON CONFLICT DO NOTHING',[userId,JSON.stringify(createState(data.level,catalog))]);
+    await db.query('INSERT INTO learning_accounts(user_id,state) VALUES($1,$2) ON CONFLICT DO NOTHING',[userId,JSON.stringify(createState(data.initialLevel??data.level,catalog))]);
     const row = await db.query('SELECT state FROM learning_accounts WHERE user_id=$1 FOR UPDATE',[userId]);
     const state = typeof row.rows[0].state === 'string' ? JSON.parse(row.rows[0].state) : row.rows[0].state;
     const entitlement = await db.query('SELECT expires_at FROM economy_entitlements WHERE user_id=$1 AND revoked_at IS NULL',[userId]);
@@ -42,7 +42,13 @@ export async function runLearningAction(db, userId, action, data, options = {}) 
     else if (action === 'unlock') result = unlockExam(state,data.examId,now,premiumUntil,data.operationId,catalog);
     else if (action === 'access') result = accessTo(state,data.examId,now,premiumUntil,data.runId);
     else if (action === 'start') result = startRun(state,data.examId,data.runId,now,premiumUntil,catalog);
-    else if (action === 'submit') result = submitRun(state,data.examId,data.runId,now,premiumUntil);
+    else if (action === 'submit') {
+        const session=data.session;
+        if(!session?.submitted || !session.result || !session.submittedAt || !session.answers) throw Error('Invalid submitted session');
+        result = submitRun(state,data.examId,data.runId,now,premiumUntil);
+        state.archives ??= {}; state.archives[data.examId] ??= {};
+        state.archives[data.examId][data.runId] ??= session;
+    }
     else if (action !== 'account') throw Object.assign(Error('Unknown learning action'),{status:404});
     await db.query('UPDATE learning_accounts SET state=$2,updated_at=now() WHERE user_id=$1',[userId,JSON.stringify(state)]);
     return { serverNow:now, premiumUntil:Number.isFinite(premiumUntil)?premiumUntil:0, state, result };
