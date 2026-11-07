@@ -3,6 +3,7 @@ import type {FoodManufacturingLesson} from './index';
 export type FoodRoyalWeeklyImage={lessonId:string;sourceHash:string;captionParagraphId:string;source:ImageSourcePropType;width:number;height:number;replacesIllustrationId?:string};
 /** Lesson-specific Royal illustrations; preserve shared historical diagram families. */
 export const foodRoyalWeeklyImages:FoodRoyalWeeklyImage[]=[
+ {lessonId:'food-2-011',sourceHash:'a6df144f10218582c1f9fa640f3b63267bb3578bea391156ead8f66b82d608a8',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/hygiene-and-process-controls.webp'),width:1536,height:1024},
  {lessonId:'food-1-008',sourceHash:'fcf88fc7f6cb2365c4938fc81838062ed3d72f005a6f9da543d23d5bc439d28a',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week02/health-report-before-entry.webp'),width:1536,height:1024},
  {lessonId:'food-1-009',sourceHash:'7c1ef186d875df2248b237c5e34ff1c5468ec525efca5a4c952aa5ea7d1581f5',captionParagraphId:'p2',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week02/cleaning-and-maintained-hygiene.webp'),width:1536,height:1024},
  {lessonId:'food-1-007',sourceHash:'70fa471e0244c379489e2dd6a04116936152661f414ed67a521da11fb83a8be1',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/role-model-hygiene.webp'),width:1536,height:1024},

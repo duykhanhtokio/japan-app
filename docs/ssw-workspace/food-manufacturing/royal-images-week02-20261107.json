@@ -5,7 +5,7 @@
   "dateJst": "2026-11-07",
   "baselineCommit": "4bf9a95345b8218a4356eb6d39b1acf6d7c379b8",
   "policy": "docs/ssw-workspace/image-royal-overhaul-20261107/policy.json",
-  "status": "group1_validated_ready_for_remote_persistence",
+  "status": "group2_zero_generation_validated_ready_for_remote_persistence",
   "scope": [
     {
       "lessonId": "food-1-007",
@@ -126,7 +126,7 @@
       "objectiveJa": "一般衛生管理と重要管理点の役割を、製品と工程の違いから説明できる。",
       "captionParagraphId": "p1",
       "originalDiagramKind": "control",
-      "royalDailyImageIntegrated": false
+      "royalDailyImageIntegrated": true
     },
     {
       "lessonId": "food-2-012",
@@ -205,9 +205,9 @@
       "method": "existing_valid_royal_asset_reuse"
     }
   ],
-  "completedDailyImageUnits": 4,
+  "completedDailyImageUnits": 5,
   "newDailyRasterCount": 2,
-  "reusedDailyRasterCount": 2,
+  "reusedDailyRasterCount": 3,
   "nativeHazardReuse": {
     "lessonIds": [
       "food-1-008",
@@ -292,18 +292,16 @@
     "food-2-008",
     "food-2-009",
     "food-2-010",
-    "food-2-011",
     "food-2-012"
   ],
   "remainingSupplementalFigures": [
-    "food-illustration-storage-hazards-example (keepincorrectexamplewarning)",
-    "food-source33-chemical-ppe (preserveexactPPE/no-mixingconditions)"
+    "food-illustration-storage-hazards-example (keepincorrectexamplewarning)"
   ],
   "weekComplete": false,
   "deviceReviewed": false,
   "releaseReady": false,
   "validation": {
-    "actualProductionRegistry": "PASS16currentbindings =12week1+4week2; exactsourcehash/caption/assetpaths; stalehashrejected;week3+0overrides",
+    "actualProductionRegistry": "PASS17currentbindings =12week1+5week2; exactsourcehash/caption/assetpaths; stalehashrejected;week3+0overrides",
     "reuseDedup": "PASS existing010illustrationIDmetadata preserved; activeImage testID transferred; oneactualdailyimage instead of duplicatebasefigure; unrelated012incorrectexamplewarning unchanged",
     "nativeHazardSsr": "PASS2week2readercontexts ×13displaylanguages (canonicalJP+12locales), exactlabels/notes andnativeimagewrappers; unrelatedlaterconcepts unchanged; metadata/textadapters only, notbrowserpixels",
     "newAndReusedAssets": "PASS2new+2reused WebPs decoded/dimensions/SHA256; eachactuallypixelopened",
@@ -316,5 +314,59 @@
     "Globalbrowserdevice rendering restriction alreadyrecorded; pixelinspection and focusedSSR evidence only.",
     "Reuseexistingvalidart is not newlygeneratedart or wholeweekcompletion."
   ],
-  "remotePersistence": "Coordinator to saveverifiedgroup immediately; no week3generation before supportedweek2units/blockers persisted."
+  "remotePersistence": "Coordinator to saveverifiedgroup immediately; no week3generation before supportedweek2units/blockers persisted.",
+  "zeroGenerationGroup": {
+    "baselineCommit": "2d47836ae1f1293867db1e729e09184a37aa1790",
+    "units": [
+      {
+        "lessonId": "food-2-011",
+        "sourceHash": "a6df144f10218582c1f9fa640f3b63267bb3578bea391156ead8f66b82d608a8",
+        "captionParagraphId": "p1",
+        "asset": "assets/food-manufacturing/royal-weekly-20261107/week01/hygiene-and-process-controls.webp",
+        "reason": "Same complementary general hygiene and necessary CCP objectives; exact lesson caption retains risk analysis and not every process is a CCP."
+      },
+      {
+        "figureId": "food-source33-chemical-ppe",
+        "asset": "assets/food-manufacturing/royal-weekly-20261107/week01/chemical-required-rinse.webp",
+        "nativeText": [
+          "薬剤作業：保護と禁止を分ける",
+          "食品用の手袋と、薬剤作業で指定される保護具を混同しない。",
+          "身体を守る",
+          "保護メガネ → 目",
+          "指定の手袋 → 手",
+          "エプロン → 身体",
+          "用途に合う物を正しく着ける",
+          "混ぜてはいけない",
+          "塩素系洗剤 ＋ 酸性洗剤",
+          "→ 有害なガスの危険",
+          "保護具があっても",
+          "混ぜて使わない",
+          "作業前に説明する",
+          "「何を守るか」と「してはいけないこと」を別々に答える。",
+          "指定・表示・承認済み手順を確認し、不明なら責任者へ。",
+          "保護具だけで薬剤の誤使用を安全にできるわけではない。"
+        ],
+        "reason": "Visible goggles, chemical gloves and apron. Original exact chart text preserved inline and zoom, including no mixing and PPE does not make misuse safe."
+      }
+    ],
+    "newRasterCount": 0,
+    "deviceVerified": false,
+    "sourceDomainApproved": false,
+    "validation": {
+      "checkedAtUtc": "2026-11-07T05:56:27.690425+00:00",
+      "registry": "PASS17 exact current bindings, stale rejected, week3+0 override, week1 preserved, 010 dedup/stable figure ID, 012 incorrect warning preserved",
+      "nativePpe": "All 16 original Japanese chart lines preserved as selectable native text inline and zoom; chemical source33 lesson/hash/p2 unchanged; original old raster preserved on disk. TSX parse PASS. No generated safety text.",
+      "downstreamGuardProof": {
+        "unchangedCanonicalPaths": [
+          "src/data/food-manufacturing/index.ts",
+          "src/data/food-manufacturing/lessons.1.ja.json",
+          "src/data/food-manufacturing/lessons.2.ja.json",
+          "src/data/food-manufacturing/exams.ja.json"
+        ],
+        "method": "git diff --quiet BASE -- paths PASS; index explicit lesson sourceHash and exam text-derived revisions unaffected by image metadata. No revision bypass or exam edits.",
+        "source33": "Existing figure lessonSourceHash remains exact current food-1-012 hash. Reader canonical-base guard plus per-figure sourceHash guard unchanged."
+      },
+      "limitations": "No browser/device pixels, native speaker, external domain/source or locale semantic certification."
+    }
+  }
 }
