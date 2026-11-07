@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "scope": "Second bounded three-scene mock repair batch",
+  "status": "self_checked_frozen_for_persistence",
+  "bindings": [
+    {
+      "questionId": "kaigo-skills-mock-01-q44",
+      "figureKey": "skills-practical-04",
+      "publicQuestionRevision": "ja-master-v1-c3954169",
+      "assetPath": "assets/kaigo/royal-mock-20261107/skills-practical-04.webp",
+      "width": 1536,
+      "height": 1024,
+      "markers": [
+        {
+          "label": "R",
+          "x": 25,
+          "y": 20
+        },
+        {
+          "label": "S",
+          "x": 74,
+          "y": 18
+        }
+      ],
+      "assetSha256": "89a766d84e92e76215fc58a2fe4e7c81686a3eb79cd87c254597f25394813ab0"
+    },
+    {
+      "questionId": "kaigo-skills-mock-03-q41",
+      "figureKey": "s03-night",
+      "publicQuestionRevision": "ja-master-v1-83128591",
+      "assetPath": "assets/kaigo/royal-mock-20261107/s03-night.webp",
+      "width": 1536,
+      "height": 1024,
+      "markers": [
+        {
+          "label": "A",
+          "x": 43,
+          "y": 43
+        },
+        {
+          "label": "B",
+          "x": 50,
+          "y": 73
+        },
+        {
+          "label": "C",
+          "x": 79,
+          "y": 36
+        }
+      ],
+      "assetSha256": "7555fadccbf97d88fae34b177419eb9c13321080d244df9892290341281b3ccd"
+    },
+    {
+      "questionId": "kaigo-skills-mock-03-q43",
+      "figureKey": "s03-privacy",
+      "publicQuestionRevision": "ja-master-v1-f88a3d27",
+      "assetPath": "assets/kaigo/royal-mock-20261107/s03-privacy.webp",
+      "width": 1536,
+      "height": 1024,
+      "markers": [
+        {
+          "label": "A",
+          "x": 29,
+          "y": 48
+        },
+        {
+          "label": "B",
+          "x": 75,
+          "y": 65
+        },
+        {
+          "label": "C",
+          "x": 57,
+          "y": 54
+        }
+      ],
+      "assetSha256": "ee4562800121bd2fd772f91dc8fafbc2dca8d28a2effc2a99177452ccfca4a2b"
+    }
+  ],
+  "sources": {
+    "privatePdfSha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+    "s03-night": {
+      "pdfPages": [
+        28,
+        204
+      ],
+      "internalPages": [
+        26,
+        202
+      ],
+      "observed": "Trip cable and person-specific safe environment."
+    },
+    "s03-privacy": {
+      "pdfPages": [
+        18,
+        191
+      ],
+      "internalPages": [
+        16,
+        189
+      ],
+      "observed": "Dignity, privacy and bathing environment. Empty room only; no procedure depicted."
+    },
+    "skills-practical-04": {
+      "pdfPages": [
+        173,
+        174
+      ],
+      "internalPages": [
+        171,
+        172
+      ],
+      "observed": "Resident preference, clothing selection and consent."
+    }
+  },
+  "art": "Three independently generated text-free Royal vocational illustrations; exact native A/B/C or R/S markers added separately. No answer or staff action depicted.",
+  "selfChecks": {
+    "finalEncodedPixelsOpened": 3,
+    "decodedWebp1536x1024AndRecordedSha256": 3,
+    "nativeMarkerPreviewAt390pxOpened": true,
+    "actualMockExamPreSubmissionRenders": 3,
+    "actualMockExamSubmittedLocaleRenders": 39,
+    "stalePublicConditionMutationsRejected": 18,
+    "actualMockExamStaleNegativeCase": {
+      "count": 1,
+      "noRoyalUri": true,
+      "noLegacyTextTileUri": true,
+      "noAnswerLeak": true
+    },
+    "previousThreeBindingsUnchanged": true,
+    "quizAnswerAttemptKeysUnchanged": true,
+    "neutralPreSubmissionJapaneseAlt": true,
+    "submitted13LocaleAltPipelineReused": true
+  },
+  "testCommand": "KAIGO_MOCK_KEYS=s03-night,s03-privacy,skills-practical-04 NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/kaigo/check-royal-mock-scene-bindings.cjs",
+  "staleTestCommand": "KAIGO_MOCK_KEYS=s03-night,s03-privacy,skills-practical-04 KAIGO_MOCK_STALE_ONLY=1 NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/kaigo/check-royal-mock-scene-bindings.cjs",
+  "files": [
+    {
+      "path": "assets/kaigo/royal-mock-20261107/skills-practical-04.webp",
+      "sha256": "89a766d84e92e76215fc58a2fe4e7c81686a3eb79cd87c254597f25394813ab0"
+    },
+    {
+      "path": "assets/kaigo/royal-mock-20261107/s03-night.webp",
+      "sha256": "7555fadccbf97d88fae34b177419eb9c13321080d244df9892290341281b3ccd"
+    },
+    {
+      "path": "assets/kaigo/royal-mock-20261107/s03-privacy.webp",
+      "sha256": "ee4562800121bd2fd772f91dc8fafbc2dca8d28a2effc2a99177452ccfca4a2b"
+    },
+    {
+      "path": "src/data/kaigo/royal-mock-figures.json",
+      "sha256": "d1ea9f9771ab05fb10c831a4f5770bbd521f839f233bdf7d0d300771c7c11d3b"
+    },
+    {
+      "path": "src/data/kaigo/royal-mock-figures.ts",
+      "sha256": "771278b8406f6ed14ee4e932c1e86f30477cb4c3a553eb7a7e2356a838d48858"
+    },
+    {
+      "path": "scripts/kaigo/check-royal-mock-scene-bindings.cjs",
+      "sha256": "a747269e974c4ad5400df84eabf2295ffde67c0aaa630e34c5533a3aa5e2bd93"
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/reviews/ROYAL_MOCK_VISUAL_AUDIT_20261107.json",
+      "sha256": "0a974db54a4e475996e97a75ac110198a715276597f2029517564a57690233a6"
+    }
+  ],
+  "wholeExistingMockIllustrationScopeCompleted": false,
+  "nextAction": "Persist bounded batch, then complete full-question and precise-figure audit of remaining 24 current mock bindings.",
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "browserTested": false,
+  "physicalDeviceTested": false,
+  "releaseReady": false
+}
