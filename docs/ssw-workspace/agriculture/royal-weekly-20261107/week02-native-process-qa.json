@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "unit": "week02-native-process-and-existing-gas-alias",
+  "baselineCommit": "bf6ac13474f8a768850f1f595be318eb2ab3855b",
+  "readyPaths": [
+    "src/components/agriculture/NativeProcessDiagram.tsx",
+    "src/data/agriculture/native-process-diagrams.json",
+    "src/components/agriculture/DailyLearningSupport.tsx",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-native-process-qa.json"
+  ],
+  "status": "authoring-self-check-passed; external acceptance open",
+  "sourceReview": {
+    "primaryPdfPixelsViewed": [
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 10,
+        "printedPage": 4
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 12,
+        "printedPage": 10
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 64,
+        "printedPage": 58
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 83,
+        "printedPage": 81
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 9,
+        "printedPage": 3
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 11,
+        "printedPage": 9
+      }
+    ],
+    "sourcePdfs": {
+      "AGR-S1": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+      "AGR-S2": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12"
+    },
+    "correction": "Original plant raster missing subscript glyphs replaced by controlled native ASCII CO2/O2/H2O. Water and nutrients remain separate; light, gases, carbohydrate and water vapor have distinct directed qualitative flows. Respiration direction differs from photosynthesis.",
+    "photoperiod": "Illustrative day/night bands, night lighting only as source-backed autumn-chrysanthemum flowering-delay example. Widths have no numerical hour or time-ratio meaning; no all-crop rule.",
+    "artClassification": "Exact source-bound technical diagram; not a new occupational illustration or source-photo acceptance."
+  },
+  "bindings": {
+    "agr-plant-balance": {
+      "kind": "plant-flow",
+      "sourceHash": "d5a1d900c6bf3b83324114ed58f1c540d63d0a7296cab2e91c17004691c724a5",
+      "revision": "v1",
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "assetSha256": "549d4245c962e06a6bd5d8ad148cb9936142d88be66aba55beea0cfe2fced48f"
+    },
+    "agr-flowering": {
+      "kind": "photoperiod",
+      "sourceHash": "4d57dba7c9477a4e9f74bdd38926d28278c0b050558ef863dd6ead598f3e8e15",
+      "revision": "v1",
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "assetSha256": "b7532fd2f0f1019ec1b204eeb9651d1a13c3921c857dc895d0c04eb654534985"
+    },
+    "agr-par11-general-gas-transport": {
+      "kind": "plant-flow",
+      "sourceHash": "3caa13e28376f5277640bbc548da7f0ea0e69193772553d2b7c563185e3a3259",
+      "revision": "v1",
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "assetSha256": "549d4245c962e06a6bd5d8ad148cb9936142d88be66aba55beea0cfe2fced48f"
+    }
+  },
+  "checks": {
+    "actualDailySelectorNativeRenders": 78,
+    "locales": 13,
+    "contexts": 3,
+    "levels": [
+      "1",
+      "2"
+    ],
+    "japaneseAlwaysRetained": true,
+    "hiddenJapaneseFallbackRenders": 78,
+    "negativeSourceRevisionImageJapaneseScopeLocaleChecks": 69,
+    "directedPlantFlows": 11,
+    "strictTypeScript": "PASS actual NativeProcessDiagram and real JSON, minimal React/RN ambient types; not full app typecheck",
+    "scripts": [
+      "/workspace/scratch/b72f4a7f6a62/week02-audit/check-native-process.cjs",
+      "/workspace/scratch/b72f4a7f6a62/week02-audit/check-process-types.cjs"
+    ],
+    "rendererScope": "Actual DailyLearningFigure/NativeProcessDiagram with React Native Web SSR; unrelated agriculture service/StudyAppearance isolated; static image URI adapters only",
+    "sourceJapaneseLessons": "byte-identical to baseline HEAD",
+    "examData": "never modified by this unit; no new exam route or alt hookup",
+    "controlledDiagramMetadata": "all 3 current source contexts identical to HEAD; unrelated daily figure binding materialization left untouched",
+    "reverseOwnDailyPatch": "exact baseline HEAD"
+  },
+  "nativeReviewerAccepted": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "wholeWeekComplete": false,
+  "wholeSectorComplete": false,
+  "remaining": [
+    "week02 thinning: 12-locale full recognition metadata and all controlled figure labels",
+    "week02 active inline organ classification: source-bound 13-locale labels/alt",
+    "coherent week02 census then all remaining existing scheduled weeks/241 unique lessons; retain adequate existing art and diagrams"
+  ],
+  "sha256": {
+    "src/components/agriculture/NativeProcessDiagram.tsx": "f22868ab4ea4008d1478153fa1439c0ed0d35be4d4362a6d744e868c65966981",
+    "src/data/agriculture/native-process-diagrams.json": "f3d2b3b36562d0947ed160b61ed82ac2b236781ebd87d078ccb52507cdffba2c",
+    "src/components/agriculture/DailyLearningSupport.tsx": "a76ecbb398fd1e01ed99192b98bfee13922c4d88fad93f9ec5b8580b77aa720b"
+  }
+}
