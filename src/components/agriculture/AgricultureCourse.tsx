@@ -1,3 +1,4 @@
+import {FruitTreeComparison} from './FruitTreeComparison';
 import {RiceProcessFigure} from './RiceProcessFigure';
 import {AgricultureParagraphRuby} from './AgricultureParagraphRuby';
 import {MoistureReaderChecks} from './MoistureReaderChecks';
@@ -75,6 +76,7 @@ function Reader({lesson,language,onBack,onComplete,saving,saveError,level}:{leve
  <Text style={[s.body,{color:colors.text}]}>{lesson.objectiveJa}</Text>{show&&t&&<TranslationText>{t.title}{'\n'}{t.objective}</TranslationText>}
  {lesson.paragraphs.map(p=><View key={p.id} style={[s.section,{borderColor:colors.border}]}><Text style={[s.heading,{color:colors.text}]}>{p.titleJa}</Text><AgricultureParagraphRuby lesson={lesson} paragraphId={p.id} text={p.textJa} level={level} color={colors.text} readingColor={colors.muted}/>{show&&t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}</View>)}
  {lesson.id==='agr-rice'&&<RiceProcess/>}{lesson.id==='agr-organs'&&<OrgansDiagram/>}{lesson.id==='agr-sowing-design'&&!hasRecognitionImage(lesson.id,lesson.sourceHash,'sowing-patterns',level)&&<SowingDiagram/>}<ConceptDiagrams lessonId={lesson.id} colors={colors} level={level}/>
+ <FruitTreeComparison lesson={lesson} translation={t} showTranslation={show} colors={colors}/>
  <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} colors={colors} level={level}/>
  <MoistureReaderChecks lessonId={lesson.id} level={level} language={language} showTranslation={show} Button={Button}/>
  <DailyLearningFigure lesson={lesson} level={level} colors={colors}/>
