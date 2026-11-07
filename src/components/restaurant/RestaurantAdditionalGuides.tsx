@@ -1,3 +1,4 @@
+import {RoyalRestaurantProcessingArtwork,restaurantHasProcessingArtwork} from './RoyalRestaurantProcessingArtwork';
 import fishMain from '@/data/restaurant/royal-fish-parts.json';
 import dailyMain from '@/data/restaurant/daily-learning.json';
 import canonicalFishLessons from '@/data/restaurant/lessons.1.ja.json';
@@ -47,8 +48,8 @@ function BoneFrame(){
 }
 function Processing({forms,results,language,translated}:{forms:Form[];results:Label[];language:string;translated:boolean}){
  return <>
-  <View testID="restaurant-three-part-result" style={s.grid}>{results.map((item,i)=><View key={item.id} style={s.resultCard}>{i===1?<BoneFrame/>:<View style={s.smallCanvas}><FishShape state="fillet"/></View>}<LabelText item={item} language={language} translated={translated}/></View>)}</View>
-  <View style={s.grid}>{forms.map(item=><View key={item.id} testID={`restaurant-fish-state-${item.id}`} style={s.formCard}><View accessible accessibilityLabel={item.descriptionJa} style={s.smallCanvas}><FishShape state={item.id}/></View><LabelText item={item} language={language} translated={translated}/><RestaurantReading text={item.descriptionJa} segments={item.descriptionSegments}/>{translated&&item.descriptionTranslations[language]&&<TranslationText>{item.descriptionTranslations[language]}</TranslationText>}</View>)}</View>
+  <View testID="restaurant-three-part-result" style={s.grid}>{results.map((item,i)=><View key={item.id} style={s.resultCard}>{restaurantHasProcessingArtwork()?<RoyalRestaurantProcessingArtwork state={item.id} label={translated&&item.translations[language]?`${item.labelJa} / ${item.translations[language]}`:item.labelJa}/>:i===1?<BoneFrame/>:<View style={s.smallCanvas}><FishShape state="fillet"/></View>}<LabelText item={item} language={language} translated={translated}/></View>)}</View>
+  <View style={s.grid}>{forms.map(item=><View key={item.id} testID={`restaurant-fish-state-${item.id}`} style={s.formCard}><View accessible accessibilityLabel={item.descriptionJa} style={restaurantHasProcessingArtwork()?{width:'100%'}:s.smallCanvas}>{restaurantHasProcessingArtwork()?<RoyalRestaurantProcessingArtwork state={item.id} label={translated&&item.descriptionTranslations[language]?`${item.descriptionJa} / ${item.descriptionTranslations[language]}`:item.descriptionJa}/>:<FishShape state={item.id}/>}</View><LabelText item={item} language={language} translated={translated}/><RestaurantReading text={item.descriptionJa} segments={item.descriptionSegments}/>{translated&&item.descriptionTranslations[language]&&<TranslationText>{item.descriptionTranslations[language]}</TranslationText>}</View>)}</View>
  </>;
 }
 function Measurement({instruments,language,translated}:{instruments:Label[];language:string;translated:boolean}){
