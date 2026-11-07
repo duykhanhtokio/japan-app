@@ -6,6 +6,28 @@ type Labels={practice:string;sleeve:string;thimble:string;position:string;inRang
 type LocalizedLesson={sourceHash:string;title:string;exampleTitle:string;exampleText:string;structureTitle?:string;structureText?:string};
 const locales=require('@/data/manufacturing/royal-week01-technical-locales.json').locales as Record<string,{labels:Labels;lessons:Record<string,LocalizedLesson>}>;
 const revisions:Record<string,string>={
+ "mfg1-mechanical-lesson-036":"15f0cd63df1fed4ff5dcaa62d749c3542e27ed3f559d316844ee07afebb23737",
+ "mfg1-mechanical-lesson-037":"20a068c1e06483d42d2f533d349feedbbfae23cba4f4bc2c9650490cce34c7c3",
+ "mfg1-mechanical-lesson-038":"285ca25559d9a78529d4e2221b051b2b509d8723fc17cf144a4e35e6739ebdc5",
+ "mfg1-mechanical-lesson-039":"0d0bb43ee698811c4dbdeb9a23ef5b6356f2f2192c4054a2cfed644934cb5378",
+ "mfg1-mechanical-lesson-040":"ba18f9c4ac3ca23e7121fb9e9da6783ed0d194336ca57c8f286bd5211d624412",
+ "mfg1-mechanical-lesson-041":"f8b0a120d407afefb46b21e2d781142c26b0f579b0dbaaef632c0bb327448781",
+ "mfg1-mechanical-lesson-042":"70aff6b5237e4c071417b0644bb9121aa4c1a48a87eb8823233fb43953ec858a",
+ "mfg1-electrical-l036":"dc84097f99b1a21c3d04786cae4b136580c0977ad941e049ac9d3ebe947bb005",
+ "mfg1-electrical-l037":"72a7d3c677b4ed2db79aac5f2113f984afe1168b5ff6b62a4fc69ab46491a6ba",
+ "mfg1-electrical-l038":"9174292d60f625cc88610a75529c488ca10d7f97444b7ba2c36559e75d10a6e2",
+ "mfg1-electrical-l039":"c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+ "mfg1-electrical-l040":"5b8b51ad3e16c58e382165caa850fa608d676470e6b2e3b34644746767f1829b",
+ "mfg1-electrical-l041":"5ca418118abb4b5e7807aff1689ded494dd2d9c02a00d66961d3a6e10a4a899f",
+ "mfg1-electrical-l042":"aeb1b6dad2facb358bd2ca6388cd1947fe758e5e0ee221ba6301fba817a19bfc",
+ "mfg1-surface-lesson-036":"8ba88aca0af9d357d6324ae5cae34d7d39ee89871a452255b8de5ad1651f103d",
+ "mfg1-surface-lesson-037":"ae0cca90254baeae0b5abe578f1df070510a5af5a1d015812a13b8aafedb46ae",
+ "mfg1-surface-lesson-038":"a00178622274907eac62c7070e07e660a8b999d6e7678a458ae4685c53ece07d",
+ "mfg1-surface-lesson-039":"a42237cadb8e99f979b63477039bff09f7df105b04965ed3cc79cd792422030c",
+ "mfg1-surface-lesson-040":"a5a5a504c25909dffe0d6721eb911868639dfcff5f2b6a36c82219bb92e58b01",
+ "mfg1-surface-lesson-041":"84b96496dc28e026c14440a9e4f27ff1a8fe8972aff7eeaf0201a026026902db",
+ "mfg1-surface-lesson-042":"c9c4c244e974e62a87149ae4d335feda8047ce9993ba5764ed030bbe418a69d1",
+
  "mfg1-mechanical-lesson-029":"e2440d55bce19dc237fd96444ac2999491b9475fa9be0d6884bbdf289d3ca0b5",
  "mfg1-mechanical-lesson-030":"c2c8323578794527d2e2a243e3b384aeac2977d43d846c198230e11f768a03de",
  "mfg1-mechanical-lesson-031":"a1d45f1b6370313e08ea9120c6a849ccb2f48e4af08bea9586d2ba90522805b4",
@@ -115,6 +137,11 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
   <Text style={heading}>{target.exampleTitle}</Text><Text style={body}>{target.exampleText}</Text>
  </View>;
  if(["mfg1-mechanical-lesson-029", "mfg1-mechanical-lesson-030", "mfg1-mechanical-lesson-031", "mfg1-mechanical-lesson-032", "mfg1-mechanical-lesson-033", "mfg1-mechanical-lesson-034", "mfg1-mechanical-lesson-035", "mfg1-electrical-l029", "mfg1-electrical-l030", "mfg1-electrical-l031", "mfg1-electrical-l032", "mfg1-electrical-l033", "mfg1-electrical-l034", "mfg1-electrical-l035", "mfg1-surface-lesson-029", "mfg1-surface-lesson-030", "mfg1-surface-lesson-031", "mfg1-surface-lesson-032", "mfg1-surface-lesson-033", "mfg1-surface-lesson-034", "mfg1-surface-lesson-035"].includes(lesson.id))return <View testID="manufacturing-native-week05-technical" style={border}>
+  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <Text style={heading}>{target.structureTitle}</Text><Text style={body}>{target.structureText}</Text>
+  <Text style={heading}>{target.exampleTitle}</Text><Text style={body}>{target.exampleText}</Text>
+ </View>;
+ if(["mfg1-mechanical-lesson-036", "mfg1-mechanical-lesson-037", "mfg1-mechanical-lesson-038", "mfg1-mechanical-lesson-039", "mfg1-mechanical-lesson-040", "mfg1-mechanical-lesson-041", "mfg1-mechanical-lesson-042", "mfg1-electrical-l036", "mfg1-electrical-l037", "mfg1-electrical-l038", "mfg1-electrical-l039", "mfg1-electrical-l040", "mfg1-electrical-l041", "mfg1-electrical-l042", "mfg1-surface-lesson-036", "mfg1-surface-lesson-037", "mfg1-surface-lesson-038", "mfg1-surface-lesson-039", "mfg1-surface-lesson-040", "mfg1-surface-lesson-041", "mfg1-surface-lesson-042"].includes(lesson.id))return <View testID="manufacturing-native-week06-technical" style={border}>
   <Text style={heading}>{labels.practice} · {target.title}</Text>
   <Text style={heading}>{target.structureTitle}</Text><Text style={body}>{target.structureText}</Text>
   <Text style={heading}>{target.exampleTitle}</Text><Text style={body}>{target.exampleText}</Text>

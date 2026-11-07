@@ -206,7 +206,21 @@
         "section-2": "架空の一日分の件数を、異物12件、色むら6件、傷4件、その他2件とします。合計24件なので、異物は50%、異物と色むらまでの累積は75%です。パレート図では件数の棒と累積比率の線を読み分けます。「異物が50%」は今回分類した件数の割合で、全製品の半分が不良という意味ではありません。分母と集計期間を必ず確認します。",
         "section-3": "ヒストグラムは測定値を区間に分けた度数分布、管理図は時間順の変化、散布図は二つの量の組合せを見る道具です。特性要因図は結果に関わる原因候補を整理しますが、図に書いた候補が実証された原因になったわけではありません。散布図の関連から因果を断定したり、時間順を捨てた分布だけで発生時刻を特定したりしません。",
         "section-4": "独立した紙上例で、製品仕様を20～30、工程の管理限界を23～26と与えます。測定値26.8は仕様範囲内でも上側管理限界を超えています。製品が直ちに不合格と断定することと、工程の異常を調べることは別です。管理限界を超えたら、指定された異常対応と対象品の扱いを確認し、限界線を勝手に広げて帳尻を合わせません。"
-      }
+      },
+      "bindingScopes": [
+        [
+          "section-1",
+          "section-4"
+        ],
+        [
+          "section-1",
+          "section-2"
+        ],
+        [
+          "section-2",
+          "section-3"
+        ]
+      ]
     },
     "mfg1-surface-completion37-lesson-007": {
       "sourceHash": "bdbb969c016068e3f9411b17a7b693ade4ff8e18d1cd3c6a3f6dcb29d4d26811",
@@ -269,6 +283,9 @@
         ],
         [
           "section-4"
+        ],
+        [
+          "section-1"
         ]
       ]
     },
@@ -575,6 +592,86 @@
         }
       ],
       "introducedWeek": 5
+    },
+    "mfg1-electrical-l073": {
+      "sourceHash": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1",
+      "captionJa": "レンジ・機能・回路への影響を照合して測定する。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "アナログ計器は選んだレンジと対応する目盛で読みます。フルスケール50の目盛で20を示し電流レンジ25mAなら10mAです。抵抗目盛は非直線で倍率を掛け、レンジ変更ごとのゼロ調整を確認します。鏡と指針を重ねて視差を抑えます。",
+        "section-2": "DMMには交流電流を直接測れる機種もあるため、全テスターが測れないとは一般化しません。クランプメーターは導体を囲んで電流を測り、測定方式、AC/DC対応、囲む導体、定格を確認します。消費電力を電流値だけで直接読めるとは考えません。"
+      },
+      "images": [
+        {
+          "id": "electrical-analog-range-twenty-of-fifty",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week06/companions/electrical-analog-range-twenty-of-fifty.png",
+          "width": 1440,
+          "height": 1000,
+          "sha256": "f85a530bfb1156dc1167803bc6cfff51e705396171486ad575abed522e09b3bf",
+          "existingAssetReused": false,
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week06/companions/electrical-analog-range-twenty-of-fifty.svg",
+          "svgSha256": "d44942394814e3042f7679b6f76c2fa847c095803cbb8c9d4cfc21c8188ef8e5",
+          "rights": {
+            "origin": "original_code_authored_controlled_diagram",
+            "humanReviewed": false,
+            "nativeReviewed": false,
+            "domainReviewed": false
+          }
+        }
+      ],
+      "introducedWeek": 6
+    },
+    "mfg1-electrical-completion37-thermocouple": {
+      "sourceHash": "9ea12bc736541093e83c6f1ce7dc1f74369842d50c49c3469f38748732cad5cf",
+      "captionJa": "異種金属と温度差の原理を説明し、基準側と使用範囲の条件を確認する。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "熱電対では異なる金属の組合せによる熱起電力を温度測定へ利用します。概念図のT1を計測する側、T2を計器側として読むとき、T1だけでなくT2の扱いも結果へ関わります。一本の金属の色や形だけで温度が決まるという説明ではありません。",
+        "section-2": "計器側の基準をどう扱うか、基準接点の補償をどう行うかは、測定系の指定で確認します。二種類の金属と二つの温度を描いた図だけでは、実機の全配線や補償方法、電圧の正負を確定できません。種類、極性、補償導線と計器設定を一組として照合します。"
+      },
+      "images": [
+        {
+          "id": "batch36-thermocouple",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/diagrams/batch36-thermocouple.png",
+          "width": 1400,
+          "height": 1000,
+          "sha256": "2529dd2a8c5069e9f9f1ca2b54fda5bc137e140dce354f773b5386cdcfa02956",
+          "existingAssetReused": true
+        }
+      ],
+      "introducedWeek": 6
+    },
+    "mfg1-electrical-completion37-hall": {
+      "sourceHash": "1108151b5508f9253e14a9da72e860f7964473c52455c2b38a6d0c8abd916520",
+      "captionJa": "電流・磁界・ホール電圧が互いに直交する概念と、符号や端子の条件を分ける。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "ホール効果の概念では、物質へ電流を流し、その電流と垂直な磁界を加えると、電流と磁界の両方へ直交する方向に電圧が現れます。電流の方向、磁界の方向、現れる電圧の方向を同じ矢印として扱わず、三方向に分けて図を読みます。",
+        "section-2": "電流を紙面の左右、磁界を紙面に垂直な方向とした概念図なら、ホール電圧は紙面の上下方向に対応します。この説明は三つの方向の関係を示すもので、上下のどちらが正かを無条件に決めるものではありません。正負や実端子の対応は素子の仕様と条件で確認します。"
+      },
+      "images": [
+        {
+          "id": "batch36-hall",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/diagrams/batch36-hall.png",
+          "width": 1400,
+          "height": 1000,
+          "sha256": "5c6f81552116a5f5d62555dd9442e5eb86e92d471bc4f924a4488dab5c1faba6",
+          "existingAssetReused": true
+        }
+      ],
+      "introducedWeek": 6
     }
   }
 }

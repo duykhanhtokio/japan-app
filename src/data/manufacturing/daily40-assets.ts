@@ -1,6 +1,14 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week06/surface-day40-zinc-white-product-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week06/surface-day40-zinc-white-product-review.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week06/surface-day38-new-lot-check-record.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week06/surface-day38-new-lot-check-record.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week06/surface-day36-jig-identity-hold.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week06/surface-day36-jig-identity-hold.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week06/surface-day42-six-volt-series-parallel.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week06/surface-day42-six-volt-series-parallel.png");
+  case "assets/manufacturing/royal-weekly-20261107/week06/surface-day41-millivolt-milliamp-four-ohm.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week06/surface-day41-millivolt-milliamp-four-ohm.png");
+  case "assets/manufacturing/royal-weekly-20261107/week06/surface-day37-equal-defect-rates.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week06/surface-day37-equal-defect-rates.png");
+  case "assets/manufacturing/royal-weekly-20261107/week06/electrical-day39-four-measured-quantities.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week06/electrical-day39-four-measured-quantities.png");
+  case "assets/manufacturing/royal-weekly-20261107/week06/mechanical-day36-ph-redox-roles.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week06/mechanical-day36-ph-redox-roles.png");
   case "assets/manufacturing/royal-weekly-20261107/week05/electrical-day33-hydraulic-control-roles.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week05/electrical-day33-hydraulic-control-roles.png");
   case "assets/manufacturing/royal-weekly-20261107/week05/surface-day35-robot-entry-hold.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week05/surface-day35-robot-entry-hold.webp");
   case "assets/manufacturing/royal-weekly-20261107/week05/surface-day34-buff-history-separation.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week05/surface-day34-buff-history-separation.webp");

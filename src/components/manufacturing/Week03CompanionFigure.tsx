@@ -12,6 +12,9 @@ import data from '@/data/manufacturing/royal-week03-companion-figures.json';
 type Figure={id:string;paragraphId?:string;paragraphIds?:string[];assetFile:string;width:number;height:number;labels?:Record<string,string>};
 type Entry={sourceHash:string;captionJa:string;paragraphIds:string[];bindingScopes?:string[][];expectedParagraphsJa:Record<string,string>;nativeParagraphIds?:string[];expectedNativeParagraphsJa?:Record<string,string>;images:Figure[];exactSelectionOnly?:boolean;retainedExistingFigure?:boolean;fullReader?:Entry};
 const sources:Record<string,ReturnType<typeof require>>={
+ 'assets/manufacturing/diagrams/batch36-hall.png':require('../../../assets/manufacturing/diagrams/batch36-hall.png'),
+ 'assets/manufacturing/diagrams/batch36-thermocouple.png':require('../../../assets/manufacturing/diagrams/batch36-thermocouple.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week06/companions/electrical-analog-range-twenty-of-fifty.png':require('../../../assets/manufacturing/royal-weekly-20261107/week06/companions/electrical-analog-range-twenty-of-fifty.png'),
  'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-vblock-micrometer-selected.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-vblock-micrometer-selected.png'),
  'assets/manufacturing/royal-weekly-20261107/week05/companions/electrical-leakage-protection-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week05/companions/electrical-leakage-protection-roles.png'),
  'assets/manufacturing/royal-weekly-20261107/week04/companions/surface-test-purpose-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week04/companions/surface-test-purpose-roles.png'),
