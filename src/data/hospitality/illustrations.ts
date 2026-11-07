@@ -7,7 +7,7 @@ const figures:Record<string,()=>ImageSourcePropType>={
  'hotel-front-05':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-05.webp'),
  'hotel-front-06':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-06.webp'),
  'hotel-front-07':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-07.webp'),
- 'hotel-front-08':()=>require('../../../assets/app/hospitality/hotel-front-08.png'),
+ 'hotel-front-08':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week02/hotel-front-08.webp'),
  'hotel-planning-01':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-planning-01.webp'),
  'hotel-planning-02':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-planning-02.webp'),
  'hotel-planning-03':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week02/hotel-planning-03.webp'),

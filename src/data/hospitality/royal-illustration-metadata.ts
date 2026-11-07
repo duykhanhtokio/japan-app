@@ -1,35 +1,35 @@
 // Descriptions of the active replacement pixels; lesson knowledge/revisions stay independent.
 const currentImageAlt:Record<string,Record<string,string>> = {
   "hotel-planning-04": {
-  "ja": "ホテル担当者二人が、庭園の写真投稿とコメント欄をスマートフォンとパソコンで確認しています。",
-  "en": "Two hotel employees review a garden photo post and its comment fields on a smartphone and laptop.",
-  "vi": "Hai nhân viên khách sạn kiểm tra bài đăng ảnh khu vườn và phần bình luận trên điện thoại và máy tính xách tay.",
-  "id": "Dua staf hotel memeriksa unggahan foto taman dan kolom komentarnya pada ponsel serta laptop.",
-  "zh-CN": "两名酒店员工在手机和笔记本电脑上查看庭园照片帖子及评论栏。",
-  "zh-TW": "兩名旅館員工在手機和筆記型電腦上查看庭園照片貼文及留言欄。",
-  "hi": "होटल के दो कर्मचारी स्मार्टफोन और लैपटॉप पर बगीचे की फोटो वाली पोस्ट तथा उसके टिप्पणी क्षेत्रों को देख रहे हैं।",
-  "bn": "হোটেলের দুই কর্মী স্মার্টফোন ও ল্যাপটপে বাগানের ছবির পোস্ট এবং মন্তব্যের ঘর পরীক্ষা করছেন।",
-  "ne": "होटलका दुई कर्मचारीले स्मार्टफोन र ल्यापटपमा बगैँचाको तस्बिर पोस्ट र टिप्पणीका ठाउँ जाँच्दै छन्।",
-  "my": "ဟိုတယ်ဝန်ထမ်းနှစ်ဦးက စမတ်ဖုန်းနှင့် လက်ပ်တော့ပေါ်ရှိ ဥယျာဉ်ဓာတ်ပုံပို့စ်နှင့် မှတ်ချက်နေရာများကို စစ်ဆေးနေသည်။",
-  "th": "พนักงานโรงแรมสองคนตรวจโพสต์รูปสวนและช่องความคิดเห็นบนสมาร์ตโฟนกับแล็ปท็อป",
-  "km": "បុគ្គលិកសណ្ឋាគារពីរនាក់ពិនិត្យការបង្ហោះរូបសួន និងប្រអប់មតិយោបល់នៅលើទូរសព្ទឆ្លាតវៃនិងកុំព្យូទ័រយួរដៃ។",
-  "tl": "Sinusuri ng dalawang kawani ng hotel ang post na may larawan ng hardin at mga puwang ng komento sa smartphone at laptop."
-},
+    "ja": "ホテル担当者二人が、庭園の写真投稿とコメント欄をスマートフォンとパソコンで確認しています。",
+    "en": "Two hotel employees review a garden photo post and its comment fields on a smartphone and laptop.",
+    "vi": "Hai nhân viên khách sạn kiểm tra bài đăng ảnh khu vườn và phần bình luận trên điện thoại và máy tính xách tay.",
+    "id": "Dua staf hotel memeriksa unggahan foto taman dan kolom komentarnya pada ponsel serta laptop.",
+    "zh-CN": "两名酒店员工在手机和笔记本电脑上查看庭园照片帖子及评论栏。",
+    "zh-TW": "兩名旅館員工在手機和筆記型電腦上查看庭園照片貼文及留言欄。",
+    "hi": "होटल के दो कर्मचारी स्मार्टफोन और लैपटॉप पर बगीचे की फोटो वाली पोस्ट तथा उसके टिप्पणी क्षेत्रों को देख रहे हैं।",
+    "bn": "হোটেলের দুই কর্মী স্মার্টফোন ও ল্যাপটপে বাগানের ছবির পোস্ট এবং মন্তব্যের ঘর পরীক্ষা করছেন।",
+    "ne": "होटलका दुई कर्मचारीले स्मार्टफोन र ल्यापटपमा बगैँचाको तस्बिर पोस्ट र टिप्पणीका ठाउँ जाँच्दै छन्।",
+    "my": "ဟိုတယ်ဝန်ထမ်းနှစ်ဦးက စမတ်ဖုန်းနှင့် လက်ပ်တော့ပေါ်ရှိ ဥယျာဉ်ဓာတ်ပုံပို့စ်နှင့် မှတ်ချက်နေရာများကို စစ်ဆေးနေသည်။",
+    "th": "พนักงานโรงแรมสองคนตรวจโพสต์รูปสวนและช่องความคิดเห็นบนสมาร์ตโฟนกับแล็ปท็อป",
+    "km": "បុគ្គលិកសណ្ឋាគារពីរនាក់ពិនិត្យការបង្ហោះរូបសួន និងប្រអប់មតិយោបល់នៅលើទូរសព្ទឆ្លាតវៃនិងកុំព្យូទ័រយួរដៃ។",
+    "tl": "Sinusuri ng dalawang kawani ng hotel ang post na may larawan ng hardin at mga puwang ng komento sa smartphone at laptop."
+  },
   "hotel-planning-03": {
-  "ja": "ホテル担当者二人が、客室設備の資料と、客室写真・地図・カレンダー・予約入口を示すウェブ画面を照合しています。",
-  "en": "Two hotel employees compare room information with a website showing a room photo, map, calendar and reservation entry.",
-  "vi": "Hai nhân viên khách sạn đối chiếu tài liệu tiện nghi phòng với trang web có ảnh phòng, bản đồ, lịch và lối vào đặt phòng.",
-  "id": "Dua staf hotel membandingkan informasi kamar dengan situs yang menampilkan foto kamar, peta, kalender dan akses reservasi.",
-  "zh-CN": "两名酒店员工将客房设备资料与显示客房照片、地图、日历和预订入口的网站画面对照。",
-  "zh-TW": "兩名旅館員工將客房設備資料與顯示客房照片、地圖、月曆和訂房入口的網站畫面對照。",
-  "hi": "होटल के दो कर्मचारी कमरे की जानकारी का मिलान उस वेबसाइट से कर रहे हैं जिसमें कमरे की फोटो, नक्शा, कैलेंडर और आरक्षण का प्रवेश दिखता है।",
-  "bn": "হোটেলের দুই কর্মী কক্ষের তথ্যের সঙ্গে কক্ষের ছবি, মানচিত্র, ক্যালেন্ডার ও বুকিংয়ের প্রবেশপথ দেখানো ওয়েবসাইট মিলিয়ে দেখছেন।",
-  "ne": "होटलका दुई कर्मचारीले कोठाको जानकारीलाई कोठाको तस्बिर, नक्सा, पात्रो र बुकिङ प्रवेश देखाउने वेबसाइटसँग तुलना गर्दै छन्।",
-  "my": "ဟိုတယ်ဝန်ထမ်းနှစ်ဦးက အခန်းအချက်အလက်ကို အခန်းဓာတ်ပုံ၊ မြေပုံ၊ ပြက္ခဒိန်နှင့် ကြိုတင်မှာယူရန်နေရာပါသော ဝဘ်ဆိုက်နှင့် နှိုင်းယှဉ်နေသည်။",
-  "th": "พนักงานโรงแรมสองคนเปรียบเทียบข้อมูลห้องพักกับเว็บไซต์ที่แสดงรูปห้อง แผนที่ ปฏิทิน และทางเข้าสู่การจอง",
-  "km": "បុគ្គលិកសណ្ឋាគារពីរនាក់ប្រៀបធៀបព័ត៌មានបន្ទប់នឹងគេហទំព័រដែលបង្ហាញរូបបន្ទប់ ផែនទី ប្រតិទិន និងច្រកកក់បន្ទប់។",
-  "tl": "Inihahambing ng dalawang kawani ng hotel ang impormasyon ng kuwarto sa website na may larawan ng kuwarto, mapa, kalendaryo at pasukan sa reserbasyon."
-},
+    "ja": "ホテル担当者二人が、客室設備の資料と、客室写真・地図・カレンダー・予約入口を示すウェブ画面を照合しています。",
+    "en": "Two hotel employees compare room information with a website showing a room photo, map, calendar and reservation entry.",
+    "vi": "Hai nhân viên khách sạn đối chiếu tài liệu tiện nghi phòng với trang web có ảnh phòng, bản đồ, lịch và lối vào đặt phòng.",
+    "id": "Dua staf hotel membandingkan informasi kamar dengan situs yang menampilkan foto kamar, peta, kalender dan akses reservasi.",
+    "zh-CN": "两名酒店员工将客房设备资料与显示客房照片、地图、日历和预订入口的网站画面对照。",
+    "zh-TW": "兩名旅館員工將客房設備資料與顯示客房照片、地圖、月曆和訂房入口的網站畫面對照。",
+    "hi": "होटल के दो कर्मचारी कमरे की जानकारी का मिलान उस वेबसाइट से कर रहे हैं जिसमें कमरे की फोटो, नक्शा, कैलेंडर और आरक्षण का प्रवेश दिखता है।",
+    "bn": "হোটেলের দুই কর্মী কক্ষের তথ্যের সঙ্গে কক্ষের ছবি, মানচিত্র, ক্যালেন্ডার ও বুকিংয়ের প্রবেশপথ দেখানো ওয়েবসাইট মিলিয়ে দেখছেন।",
+    "ne": "होटलका दुई कर्मचारीले कोठाको जानकारीलाई कोठाको तस्बिर, नक्सा, पात्रो र बुकिङ प्रवेश देखाउने वेबसाइटसँग तुलना गर्दै छन्।",
+    "my": "ဟိုတယ်ဝန်ထမ်းနှစ်ဦးက အခန်းအချက်အလက်ကို အခန်းဓာတ်ပုံ၊ မြေပုံ၊ ပြက္ခဒိန်နှင့် ကြိုတင်မှာယူရန်နေရာပါသော ဝဘ်ဆိုက်နှင့် နှိုင်းယှဉ်နေသည်။",
+    "th": "พนักงานโรงแรมสองคนเปรียบเทียบข้อมูลห้องพักกับเว็บไซต์ที่แสดงรูปห้อง แผนที่ ปฏิทิน และทางเข้าสู่การจอง",
+    "km": "បុគ្គលិកសណ្ឋាគារពីរនាក់ប្រៀបធៀបព័ត៌មានបន្ទប់នឹងគេហទំព័រដែលបង្ហាញរូបបន្ទប់ ផែនទី ប្រតិទិន និងច្រកកក់បន្ទប់។",
+    "tl": "Inihahambing ng dalawang kawani ng hotel ang impormasyon ng kuwarto sa website na may larawan ng kuwarto, mapa, kalendaryo at pasukan sa reserbasyon."
+  },
   "hotel-front-01": {
     "ja": "宿泊希望日を聞く受付担当者と予約情報を確認する担当者。客室と朝食の例を併せて示すイラスト。",
     "en": "A receptionist asks about the desired stay dates while a colleague checks reservation information, with examples of a guest room and breakfast.",
@@ -164,6 +164,21 @@ const currentImageAlt:Record<string,Record<string,string>> = {
     "th": "พนักงานโรงแรมกับผู้จัดการแยกตรวจบันทึกห้องพักและรายได้ด้วยเครื่องคิดเลข ข้อมูลและสูตรที่แน่นอนแสดงเป็นข้อความใต้ภาพ",
     "km": "បុគ្គលិកសណ្ឋាគារនិងអ្នកគ្រប់គ្រងពិនិត្យកំណត់ត្រាបន្ទប់និងចំណូលដោយឡែក ដោយប្រើម៉ាស៊ីនគិតលេខ។ ទិន្នន័យនិងរូបមន្តជាក់លាក់បង្ហាញជាអក្សរនៅក្រោមរូបភាព។",
     "tl": "Magkahiwalay na sinusuri ng kawani at tagapamahala ang mga rekord ng kuwarto at kita gamit ang calculator. Nasa teksto sa ilalim ng larawan ang eksaktong datos at mga pormula."
+  },
+  "hotel-front-08": {
+    "ja": "発見した腕時計をトレーに載せ、担当者が記録し、責任者と保管箱への引継ぎを確認するイラスト。",
+    "en": "A found wristwatch rests on a tray while staff record it and check storage-box handoff with a supervisor.",
+    "vi": "Đồng hồ tìm thấy đặt trên khay; nhân viên ghi lại và xác nhận với người phụ trách việc bàn giao vào hộp bảo quản.",
+    "id": "Jam tangan temuan diletakkan di baki sementara staf mencatatnya dan memeriksa penyerahan ke kotak penyimpanan bersama pengawas.",
+    "zh-CN": "找到的手表放在托盘上，工作人员记录物品，并与负责人确认移交保管箱。",
+    "zh-TW": "找到的手錶放在托盤上，工作人員記錄物品，並與負責人確認移交保管箱。",
+    "hi": "मिली हुई कलाई घड़ी ट्रे पर है। कर्मचारी उसका रिकॉर्ड लिखकर पर्यवेक्षक के साथ भंडारण बॉक्स में हस्तांतरण जाँच रहे हैं।",
+    "bn": "পাওয়া হাতঘড়ি ট্রেতে রাখা। কর্মী তা নথিভুক্ত করে তত্ত্বাবধায়কের সঙ্গে সংরক্ষণ বাক্সে হস্তান্তর যাচাই করছেন।",
+    "ne": "फेला परेको नाडीघडी ट्रेमा छ। कर्मचारीले अभिलेख लेख्दै पर्यवेक्षकसँग भण्डारण बाकसमा हस्तान्तरण जाँच्दै छन्।",
+    "my": "တွေ့ရှိသောလက်ပတ်နာရီကို ဗန်းပေါ်တွင်ထားသည်။ ဝန်ထမ်းက မှတ်တမ်းတင်ပြီး ကြီးကြပ်သူနှင့်အတူ သိမ်းဆည်းရေးသေတ္တာသို့ လွှဲပြောင်းမှုကို စစ်ဆေးနေသည်။",
+    "th": "นาฬิกาข้อมือที่พบวางบนถาด พนักงานบันทึกและตรวจการส่งต่อไปเก็บในกล่องร่วมกับผู้รับผิดชอบ",
+    "km": "នាឡិកាដៃដែលរកឃើញដាក់លើថាស។ បុគ្គលិកកត់ត្រា ហើយបញ្ជាក់ការប្រគល់ទៅប្រអប់រក្សាទុកជាមួយអ្នកទទួលខុសត្រូវ។",
+    "tl": "Nasa tray ang natagpuang relo. Itinatala ito ng kawani at kinukumpirma sa superbisor ang paglilipat sa kahon ng imbakan."
   }
 };
 export function hotelIllustrationAlt(id:string,language:string,fallback:string):string {
