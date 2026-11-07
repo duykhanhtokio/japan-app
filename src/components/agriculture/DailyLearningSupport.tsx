@@ -1,3 +1,4 @@
+import {SafetyLabelChecklist} from './SafetyLabelChecklist';
 import {OrchardSoilMachineObjectives} from './OrchardSoilMachineObjectives';
 import {PesticideLabelFields} from './PesticideLabelFields';
 import {PesticideFormulationComparison} from './PesticideFormulationComparison';
@@ -50,6 +51,10 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
   return <FruitManagementSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  }
  if(!lesson.levels.includes(level))return null;
+ if(lesson.id==='agr-safety-label-fields-2'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <SafetyLabelChecklist lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
  if(lesson.id==='agr-f40-flower-add-orchard-base'){
   if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
   return <OrchardSoilMachineObjectives lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
