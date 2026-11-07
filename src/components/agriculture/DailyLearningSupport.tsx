@@ -12,6 +12,7 @@ import {CropCalendarFigure} from './CropCalendarFigure';
 import {SoilGroupComparison} from './SoilGroupComparison';
 import {CropClassificationFigure} from './CropClassificationFigure';
 import {PlantResponseFigure} from './PlantResponseFigure';
+import {FertilizerNativeFigure,isFertilizerNativeContext} from './FertilizerNativeFigure';
 import {NativeProcessDiagram,isNativeProcessContext} from './NativeProcessDiagram';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 type Colors={text:string;translation:string;translationText:string;border:string};
@@ -35,6 +36,7 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
  if(lesson.id==='agr-soil-groups')return <SoilGroupComparison lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  if(lesson.id==='agr-crop-types')return <CropClassificationFigure lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  if(lesson.id==='agr-plant-responses')return <PlantResponseFigure lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ if(isFertilizerNativeContext(lesson.id))return <FertilizerNativeFigure lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  if(isNativeProcessContext(lesson.id))return <NativeProcessDiagram lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  if(d&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><DailyInstructionDiagram kind={d.kind as DailyDiagramKind} title={d.titleJa} caption={d.captionJa} alt={d.altJa} colors={colors}/></View>;
  const f=currentBinding?figures.images.find(f=>f.id===currentBinding.figureId&&f.assetSha256===currentBinding.assetSha256):includeExisting?figures.images.find(f=>f.lessonIds.includes(lesson.id)&&f.lessonSourceHashes[lesson.id as keyof typeof f.lessonSourceHashes]===lesson.sourceHash&&f.scopeLevels.includes(level)):null;
