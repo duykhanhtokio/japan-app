@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "f367e33ba972eb87160c5ce18e9c21ee00a85b07",
+  "scope": "Five current batch36 supplemental illustration Japanese captions; exact offline readings only",
+  "routes": [
+    "SupplementalFigure visible Japanese caption only",
+    "Quiz hideCaption continues to omit caption/readings",
+    "Unregistered captions keep unchanged text"
+  ],
+  "implementation": "Reuse hasAlignedRuby validator and established Source49 word/reading layout while keeping each supplied caption text style, original aria label, native translations and image bytes. Exact full caption lookup with complete kanji reading gate; stale/partial entries fall back to original caption.",
+  "readingBasis": {
+    "existingCanonicalTerms": [
+      "本尺=ほんじゃく",
+      "副尺=ふくしゃく",
+      "熱起電力=ねつきでんりょく"
+    ],
+    "commonReadings": "Whole compounds and inflected stems reviewed in each exact caption context; no character-by-character readings",
+    "captionCount": 5,
+    "segments": 188,
+    "annotatedKanjiSegments": 92
+  },
+  "qa": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/manufacturing/check-illustration-caption-readings.cjs",
+    "legacySupplementalRows": 5,
+    "legacyCompletionRows": 6,
+    "actualLocaleReaderContexts": 117,
+    "nativeCaptionContexts": 108,
+    "staleSourceRejections": 117,
+    "completeKanjiCaptionRenders": 5,
+    "expandedHiddenQuizCaptionRegressions": 5,
+    "partialAndStaleFallbackChecks": 10,
+    "recognitionRegression": "793 quiz locale renders,61expanded,732native translations,427stale inputs,208study galleries,39overviews,26source60/62; actual33mock exams1320occurrences0resolver images all still pass",
+    "adapterNote": "Actual React SSR/modules with RN DOM and StyleSheet identity/flatten adapters; no translation/reading data stub. No device or whole-app typecheck claim."
+  },
+  "inputBlobMap": {
+    "src/data/manufacturing/supplemental-diagrams.ts": "ab4211b0ecb658b30f3307d3a484d384e945dbb3",
+    "src/data/manufacturing/supplemental-diagrams.json": "f0964a7c7ef3718edc424b28a1e948a3f943fc74",
+    "src/data/manufacturing/supplemental-diagram-translations.json": "b417e5415feccaf21d8716fe32cbd1eb29a070cb",
+    "src/components/manufacturing/CompletionManufacturingDiagrams.tsx": "8c48ae392ec8adfd6557db19d4d7776fd5fb619c",
+    "src/data/manufacturing/completion37/diagrams.json": "9cf485bbcabb31dfdd957bc7c2afff533258aef8"
+  },
+  "nextOpen": [
+    "22 direct-diagram captions",
+    "Remaining shared learning captions: main,completion,recognition,Source60/62,overviews",
+    "Royal238 native title/body fields and companion/native headings/body",
+    "Early24 special main routes"
+  ],
+  "allExistingContentComplete": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceAcceptance": false
+}

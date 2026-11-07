@@ -1,3 +1,4 @@
+import {IllustrationJapanese} from './IllustrationJapanese';
 import {useState} from 'react';
 import {Image,Modal,Pressable,ScrollView,Text,View,useWindowDimensions} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -24,7 +25,7 @@ export function SupplementalFigure({item,language,showTranslation,imageSource,tr
  const button=(key:'imageZoom'|'imageClose',action:()=>void)=><Pressable accessibilityRole="button" accessibilityLabel={hideCaption?manufacturingUi(language,key):`${manufacturingUi(language,key)} · ${item.captionJa.split('。')[0]}`} onPress={action} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:16,textAlign:'center'}}>{manufacturingUi(language,key)}</Text></Pressable>;
  return <View style={{gap:8,marginVertical:12}}>
   <Image testID={`manufacturing-supplemental-${item.id}`} source={source} accessibilityLabel={label} resizeMode="contain" style={{width:'100%',aspectRatio:ratio}}/>
-  {!hideCaption&&<Text selectable style={{color:colors.muted,fontSize:15,lineHeight:25}}>{item.captionJa}</Text>}
+  {!hideCaption&&<IllustrationJapanese text={item.captionJa} style={{color:colors.muted,fontSize:15,lineHeight:25}}/>}
   {!hideCaption&&target&&<Text selectable style={{color:colors.translationText,backgroundColor:colors.translation,padding:12,borderRadius:8,fontSize:15,lineHeight:25}}>{target}</Text>}
   {button('imageZoom',()=>setExpanded(true))}
   <Modal visible={expanded} animationType="none" onRequestClose={close}><View style={{flex:1,paddingTop:insets.top,paddingBottom:insets.bottom,paddingLeft:insets.left,paddingRight:insets.right,backgroundColor:colors.background}}>
