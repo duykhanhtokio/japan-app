@@ -1,12 +1,12 @@
 import {Text,View,type StyleProp,type TextStyle} from 'react-native';
 import data from '@/data/agriculture/image-readings.json';
 type Token={text:string;readingKana?:string};
-type Entry={assetSha256:string;lessonSourceHashes:Record<string,string>;lessonRevisions:Record<string,string>;fields:Record<string,{sourceJapanese:string;tokens:Token[]}>};
+type Entry={assetSha256:string;lessonSourceHashes:Record<string,string>;lessonRevisions:Record<string,string>;fields:Record<string,{sourceJapanese:string;tokens:Token[];targetLessonId?:string}>};
 const registry=data as {schemaVersion:number;studyOnly:boolean;entries:Record<string,Entry>};
 const han=(s:string)=>/[\p{Script=Han}々]/u.test(s);
 export function agricultureImageReading({imageId,assetSha256,lessonId,lessonSourceHash,lessonRevision,field,text}:{imageId:string;assetSha256:string;lessonId:string;lessonSourceHash:string;lessonRevision?:string;field:string;text:string}){
  const e=registry.entries[imageId],f=e?.fields[field];
- if(registry.schemaVersion!==1||!registry.studyOnly||!lessonRevision||!e||e.assetSha256!==assetSha256||e.lessonSourceHashes[lessonId]!==lessonSourceHash||e.lessonRevisions[lessonId]!==lessonRevision||!f||f.sourceJapanese!==text||!Array.isArray(f.tokens)||!f.tokens.length||f.tokens.map(t=>t.text).join('')!==text||!f.tokens.every(t=>typeof t.text==='string'&&!!t.text&&(!han(t.text)||(typeof t.readingKana==='string'&&!!t.readingKana&&/^[\p{Script=Hiragana}\p{Script=Katakana}ー\s]+$/u.test(t.readingKana)))))return null;
+ if(registry.schemaVersion!==1||!registry.studyOnly||!lessonRevision||!e||e.assetSha256!==assetSha256||e.lessonSourceHashes[lessonId]!==lessonSourceHash||e.lessonRevisions[lessonId]!==lessonRevision||!f||(f.targetLessonId!==undefined&&f.targetLessonId!==lessonId)||f.sourceJapanese!==text||!Array.isArray(f.tokens)||!f.tokens.length||f.tokens.map(t=>t.text).join('')!==text||!f.tokens.every(t=>typeof t.text==='string'&&!!t.text&&(!han(t.text)||(typeof t.readingKana==='string'&&!!t.readingKana&&/^[\p{Script=Hiragana}\p{Script=Katakana}ー\s]+$/u.test(t.readingKana)))))return null;
  return f.tokens;
 }
 /** Offline image-caption readings only. Unknown/stale fields keep canonical Japanese. */

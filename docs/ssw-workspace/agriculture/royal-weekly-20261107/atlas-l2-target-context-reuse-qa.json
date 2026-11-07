@@ -1,0 +1,120 @@
+{
+  "unit": "atlas-l2-target-context-caption-reading",
+  "figureId": "agr-fig-f40-vegetable-seeds-atlas-v1",
+  "targetLessonId": "agr-s30-plant-detail",
+  "sourceHashDiagnosticCorrection": {
+    "figureExpectedTargetSourceHash": "b18ec043ee4a32d0d1e9e82aa3af976ba85c063752f3c67beca9454562477af5",
+    "currentCanonicalTargetSourceHash": "b18ec043ee4a32d0d1e9e82aa3af976ba85c063752f3c67beca9454562477af5",
+    "equal": true,
+    "cause": "Direct figure scope L1-only versus canonical target L2-only; not a stale SHA.",
+    "historicalReceiptsUnchanged": true
+  },
+  "courseBoundaries": {
+    "directRecognitionScope": [
+      "1"
+    ],
+    "directRecognitionL2StillRejected": true,
+    "existingDailyL2OverrideRetained": true,
+    "requiredTargetParagraphs": [
+      "agr-s30-plant-detail-p5",
+      "agr-s30-plant-detail-p6"
+    ],
+    "supportedTargetKnowledgeIds": [
+      "AGR-K-S30-PLANT-DETAIL-05",
+      "AGR-K-S30-PLANT-DETAIL-06"
+    ]
+  },
+  "sourceEvidence": {
+    "assetSha256": "4c8157b88a6b3ee8fe969ed62bb3a748cb365e404a73d1de1d00d2930868ddaf",
+    "exactAssetBytesViewed": true,
+    "assetContent": "Six crop-name seed panels only; no light/dark-germination labels.",
+    "appearanceReference": {
+      "documentId": "AGR-S1",
+      "pdfPage": 62,
+      "printedPage": 56,
+      "role": "Seed-observation competency; independent examples, not six source-photo reproduction."
+    },
+    "targetReference": {
+      "documentId": "AGR-S2",
+      "pdfPage": 13,
+      "printedPage": 11,
+      "role": "Light-germinating/light-loving carrot+lettuce; dark-germinating/light-avoiding radish+tomato+watermelon."
+    },
+    "cucumber": "Pictured appearance is explicitly excluded from that L2 classification list; no germination response/soil-cover amount inferred."
+  },
+  "changes": {
+    "targetJapaneseCaption": 1,
+    "targetLocaleCaptions": 12,
+    "targetOnlyReadingFields": 1,
+    "optionalPerFieldTargetLessonGuard": true,
+    "optionalRequiredParagraphGuard": true,
+    "canonicalLessonsChanged": false,
+    "figureRegistryChanged": false,
+    "outerLocaleRegistryChanged": false,
+    "assetOrDirectScopeChanged": false
+  },
+  "validation": {
+    "actualCurrentTargetReaderRenders": 14,
+    "languagesIncludingJapanese": 13,
+    "newSourceAssetRevisionTextParagraphLevelWrongContextNegatives": 21,
+    "existingDailyRegressionRoutes": 6,
+    "existingDailyJAPlus12LocaleRenders": 91,
+    "existingDailyStaleUnknownContextNegatives": 39,
+    "existingNozzleAndPheromoneL2OverridePreserved": true,
+    "commands": [
+      "node scripts/agriculture/check-atlas-l2-target-reuse.cjs",
+      "node scripts/agriculture/check-daily-image-readings.cjs",
+      "node scripts/agriculture/check-active-outer-metadata.cjs"
+    ],
+    "activeOuterMetadataProof": {
+      "records": 188,
+      "currentCanonicalSourceContexts": 264,
+      "actualSelectorChecks": 3168,
+      "localizedDeclaredLabelContexts": 2688,
+      "directScopeExcludedAliases": 1,
+      "sourceHashMismatchAliases": 0,
+      "currentTargetBoundDailyReuseAliases": 1
+    },
+    "requiredCanonicalV2ReferencesToChangedRuntimePaths": 0
+  },
+  "currentActualCensus": {
+    "registryRecords": 188,
+    "localeEntries": 188,
+    "canonicalLessonCourseContexts": 369,
+    "currentSourceScheduleFigureCandidates": 188,
+    "activeLiteralAssetMapMismatches": 0,
+    "activeFigureRecords": 188,
+    "inactiveFigureRecords": 0,
+    "studyActiveRecords": 188,
+    "studyRecordsWithMissingLocales": 0,
+    "studyRecordsWithMissingReadingFields": 92,
+    "studyRecordsOnDailyPlainTextRoute": 24,
+    "studyRecordsWithSomeDailyVisibleReadingGaps": 58,
+    "studyRecordsWithTargetReuseCaptionLocaleGaps": 53,
+    "examQuestionReferences": 81,
+    "validExamRouteContexts": 81,
+    "invalidExamRouteContexts": 0,
+    "nativeDailyBranches": 91,
+    "readingRegistryRecords": 113,
+    "actualVisibleHanGapRecords": 76,
+    "missingVisibleHanFields": 321,
+    "accessibilityAltOnlyInformationalRecords": 16
+  },
+  "limits": {
+    "wholeSourceComplete": false,
+    "nativeInternalFieldsComplete": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false,
+    "note": "Actual React Native Web server reader with URI adapters. Deliberately unsupported directL2 remains excluded; only reviewed Daily target route is supported. Outer metadata remains complete; visible Han readings/native bodies/daily captions still open."
+  },
+  "fileSha256": {
+    "src/components/agriculture/AgricultureImageRuby.tsx": "002160c0510cbde62628bb438d31423081f84bfcc8db01c95aef208c2d72f542",
+    "src/components/agriculture/DailyLearningSupport.tsx": "aad0b9d85a284176f9df9b89d98f393012acabc2921dfa487e77294940054531",
+    "src/data/agriculture/daily-learning-support.json": "01b82954ce88cf73920389355a3f810f659f1a8f15549c9c8848c8860d40abe0",
+    "src/data/agriculture/image-readings.json": "a500668a800c2e0ce8658e608e6ba849dcb70f174b250d138347172a50f5728f",
+    "scripts/agriculture/check-atlas-l2-target-reuse.cjs": "4352d57467327d94d65a105e3e44c41be74d96033a02da7fe704183d12e0d2d7",
+    "scripts/agriculture/check-active-outer-metadata.cjs": "403deb4b484c84c3e4cb7ed3cc05e0e9687ad5078e96714eb4ae1e5452ca82cd",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/active-global-caption-reading-route-census.json": "5dce0b93067db6f6bfc837d4ee7d44bf697d812f940d4f362215f650a59c4bb0"
+  }
+}

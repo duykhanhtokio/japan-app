@@ -31,7 +31,7 @@ import {TranslationText} from '@/components/tokutei/StudyAppearance';
 type Colors={text:string;translation:string;translationText:string;border:string};
 type Companion={lessonId:string;sourceHash:string;paragraphIds:string[]};
 type ReuseCaption={sourceJapanese:string;figureId:string;assetSha256:string;lessonSourceHash:string;lessonRevision:string;locales:Record<string,string>};
-type Binding={lessonSourceHash:string;figureId:string;assetSha256:string;scopeLevels:string[];reuseReasonJa:string;reuseCaption?:ReuseCaption};
+type Binding={lessonSourceHash:string;figureId:string;assetSha256:string;scopeLevels:string[];reuseReasonJa:string;reuseCaption?:ReuseCaption;requiredParagraphIds?:string[]};
 type Diagram={kind:string;titleJa:string;captionJa:string;altJa:string;lessonSourceHash:string};
 const pairs=support.companionReadings as Record<string,Companion[]>;
 const sourceVersions=support.sourceVersions as Record<string,string>;
@@ -81,6 +81,7 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
  }
 
  const b=bindings[lesson.id],d=diagrams[lesson.id];
+ if(b?.lessonSourceHash===lesson.sourceHash&&b.scopeLevels.includes(level)&&paragraphIds&&b.requiredParagraphIds?.some(id=>!paragraphIds.includes(id)))return null;
  const currentBinding=b?.lessonSourceHash===lesson.sourceHash&&b.scopeLevels.includes(level)?b:null;
  if(level==='2'&&lesson.id==='agr-climate'&&d?.kind==='winter-climate'&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><WinterSpatialReference lesson={lesson} level={level} diagram={d} language={language} showTranslation={showTranslation} colors={colors}/><WinterClimateFigure lesson={lesson} level={level} language={language} showTranslation={showTranslation} translation={showTranslation?agricultureTranslation(lesson,language):null} colors={colors}/></View>;
  if(level==='2'&&lesson.id==='agr-statistics'&&d?.kind==='statistics-2019'&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><Statistics2019Figure lesson={lesson} level={level} language={language} showTranslation={showTranslation} translation={showTranslation?agricultureTranslation(lesson,language):null} colors={colors}/></View>;
