@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "sector": "restaurant",
+  "scope": "Preserve current weekly source-figure identity for weeks01–06; no new art or weekly completion claimed",
+  "baselineCommit": "4d49d9dcc7b358884effe387008c738c42c55863",
+  "problem": "Alternate art membership trusted only canonical figure id/sourceHash; current caption,alt,crop,quiz safety or asset metadata edited before sourceHash regeneration did not invalidate stale incoming figures.",
+  "change": "Five existing production selectors compare all typed SourceFigure31 fields against the current canonical pack figure through shared comparator. Existing binding and row revision guards remain.",
+  "checks": {
+    "productionSelectors": 5,
+    "currentBindingsRetained": 78,
+    "canonicalMetadataMutationRejections": 624,
+    "changedMetadata": [
+      "captionJa",
+      "altJa",
+      "assetFile",
+      "sha256",
+      "width",
+      "height",
+      "quizSafe",
+      "cropBox"
+    ],
+    "babelParseModules": 6,
+    "sourceLedger": "99 exact file SHA changes only across week03–06; deep comparison proved every other field unchanged",
+    "fullSourceLedgerCheck": "Not completed: sparse checkout lacks docs/ssw-workspace/restaurant/source-closure31/canonical-ja.json. No whole-source acceptance claimed.",
+    "device": "No device/browser validation; selector logic only",
+    "diffCheck": "PASS scoped"
+  },
+  "files": [
+    {
+      "path": "src/components/restaurant/RestaurantFigureIdentity.ts",
+      "sha256": "3ff3e59536e517dda155a57bc6ab92945429631a19da235ff202efc85fb7d13c"
+    },
+    {
+      "path": "src/components/restaurant/RoyalRestaurantSourceFigures.ts",
+      "sha256": "091c0766733ef539cae58ec6f02ee466816fd3fcbd7e048c7be7461383c5f10a"
+    },
+    {
+      "path": "src/components/restaurant/RestaurantWeek03TechnicalFigures.tsx",
+      "sha256": "f73c48795e087647bff1cfcd9fdc0c35a47a40e782ed190493712e8cc60bd326"
+    },
+    {
+      "path": "src/components/restaurant/RestaurantWeek04TechnicalFigures.tsx",
+      "sha256": "a8962919aa1107bfb5a1d5fdb4d30b4cf9c086cf44acaaa3fc47408bd4a8d462"
+    },
+    {
+      "path": "src/components/restaurant/RestaurantWeek05TechnicalFigures.tsx",
+      "sha256": "cc03eedbfcba07a9ed9f4f57ca5bc8225a623099d4a5829bfadff657e639183f"
+    },
+    {
+      "path": "src/components/restaurant/RestaurantWeek06TechnicalFigures.tsx",
+      "sha256": "056a9c148e5a03e63c4be2db38174f85ee3bcc20f558f6b8a45bae01aab9f48e"
+    },
+    {
+      "path": "scripts/restaurant/check-current-figure-identity.cjs",
+      "sha256": "1c966a782d9f52418435c957561e8cb1df0e9980a6551b2d35df34c737bd3975"
+    }
+  ],
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "wholeSectorComplete": false
+  }
+}
