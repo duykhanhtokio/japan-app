@@ -4,6 +4,7 @@ import data from '@/data/manufacturing/native-label-readings.json';
 type Part={text:string;reading?:string};
 const registry=data as {schemaVersion:number;revision:string;studyOnly:boolean;lessonSourceHashes:Record<string,string>;additionalPracticeLessonSourceHashes?:Record<string,string>;fields:Record<string,{sourceJapanese:string;parts:Part[]}>};
 /** Canonical lookup shares existing lesson payloads; no repeated per-field full-body copies. */
+export function hasManufacturingNativeLabelRegistration(id:string,field:string):boolean{return !!registry.fields[field]&&!!(registry.lessonSourceHashes[id]||(field==='practice'?registry.additionalPracticeLessonSourceHashes?.[id]:undefined));}
 export function manufacturingNativeLabelReading(lesson:ManufacturingLesson,field:string,text:string):Part[]|undefined{
  const f=registry.fields[field];
  if(registry.schemaVersion!==1||registry.revision!=='native-labels-20261107-v3'||!registry.studyOnly||(registry.lessonSourceHashes[lesson.id]??(field==='practice'?registry.additionalPracticeLessonSourceHashes?.[lesson.id]:undefined))!==lesson.sourceHash||!f||f.sourceJapanese!==text)return;

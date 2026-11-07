@@ -8,6 +8,7 @@ import data from '@/data/manufacturing/native-heading-readings.json';
 type Part={text:string;reading?:string};
 type Entry={sourceHash:string;canonicalParagraphs:unknown;canonicalTitleJa:string;canonicalSummaryJa:string;fields:Record<string,{sourceJapanese:string;parts:Part[]}>};
 const registry=data as {schemaVersion:number;revision:string;studyOnly:boolean;entries:Record<string,Entry>};
+export function hasManufacturingSourceFieldRegistration(id:string,field:string):boolean{return !!registry.entries[id]?.fields[field]||hasManufacturingNativeBodyReading(id,field)||hasManufacturingReviewedNativeField(id,field);}
 export function manufacturingIllustrationReading(lesson:ManufacturingLesson,field:string,text:string|undefined):Part[]|undefined{
  if(!manufacturingNativeFieldCurrent(lesson,field,text))return;
  const reviewed=manufacturingReviewedNativeFieldReading(lesson,field,text);if(reviewed)return reviewed;
