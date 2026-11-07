@@ -20,7 +20,7 @@ export const weeklyIllustrations:Record<string,ImageSourcePropType>={
  'assets/kensetsu/weekly/w010-learning-2-v1.webp':require('../../../assets/kensetsu/weekly/w010-learning-2-v1.webp'),
  'assets/kensetsu/weekly/w011-learning-1-v1.webp':require('../../../assets/kensetsu/royal-weekly-20261107/week11/w011-learning-1-royal-v2.webp'),
  'assets/kensetsu/weekly/w011-learning-2-v1.webp':require('../../../assets/kensetsu/royal-weekly-20261107/week11/w011-learning-2-royal-v2.webp'),
- 'assets/kensetsu/weekly/w012-learning-1-v1.webp':require('../../../assets/kensetsu/weekly/w012-learning-1-v1.webp'),
+ 'assets/kensetsu/weekly/w012-learning-1-v1.webp':require('../../../assets/kensetsu/royal-weekly-20261107/week12/w012-learning-1-royal-v2.webp'),
  'assets/kensetsu/weekly/w012-learning-2-v1.webp':require('../../../assets/kensetsu/weekly/w012-learning-2-v1.webp'),
  'assets/kensetsu/weekly/w013-learning-1-v1.webp':require('../../../assets/kensetsu/weekly/w013-learning-1-v1.webp'),
  'assets/kensetsu/weekly/w013-learning-2-v2.webp':require('../../../assets/kensetsu/weekly/w013-learning-2-v2.webp'),
