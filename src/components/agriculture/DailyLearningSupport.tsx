@@ -1,3 +1,4 @@
+import {GrainPurposeComparison} from './GrainPurposeComparison';
 import {SafetyLabelChecklist} from './SafetyLabelChecklist';
 import {OrchardSoilMachineObjectives} from './OrchardSoilMachineObjectives';
 import {PesticideLabelFields} from './PesticideLabelFields';
@@ -51,6 +52,10 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
   return <FruitManagementSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  }
  if(!lesson.levels.includes(level))return null;
+ if(lesson.id==='agr-par12-riceveg-grain-purpose'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <GrainPurposeComparison lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
  if(lesson.id==='agr-safety-label-fields-2'){
   if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
   return <SafetyLabelChecklist lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
