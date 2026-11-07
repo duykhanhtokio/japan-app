@@ -1,4 +1,6 @@
 import {Text,View} from 'react-native';
+import {ZoomableFigure} from './ZoomableFigure';
+const appearance=require('../../../assets/agriculture/royal-weekly-20261107/week01/winter-farm-comparison.webp');
 import data from '@/data/agriculture/winter-climate-figure.json';
 import type {AgricultureLesson} from '@/data/agriculture';
 import type {AgricultureTranslation} from '@/data/agriculture/translations';
@@ -14,6 +16,7 @@ export function WinterClimateFigure({lesson,level,language,showTranslation,trans
  return <View testID="agri-native-winter-climate" style={{gap:12,marginVertical:12}}>
   <Text style={{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'}}>{winter.titleJa}</Text>
   {!!localized&&<Text testID="agri-climate-localized-title" style={{color:colors.translationText,fontSize:17,lineHeight:28}}>{t?.paragraphTitles[winter.id]}</Text>}
+  <ZoomableFigure source={appearance} width={data.appearanceAsset.width} height={data.appearanceAsset.height} altJa={alt} testID="agri-royal-winter-farm-examples" colors={colors} allowExpandedView/>
   <View accessible accessibilityRole="image" accessibilityLabel={alt} testID="agri-climate-regional-comparison" style={{flexDirection:'row',flexWrap:'wrap',gap:14}}>
    {data.labels.ja.regions.map((region,i)=><View key={region} testID={`agri-climate-region-${i}`} style={{flexBasis:230,flexGrow:1,padding:16,borderWidth:1,borderColor:colors.border,borderRadius:12,gap:10}}>
     <View importantForAccessibility="no" style={{height:8,borderRadius:4,backgroundColor:i===0?'#688a9b':'#c4a354'}}/>
