@@ -1,3 +1,4 @@
+import { royalInlineFigure } from '@/data/kaigo/royal-inline-figures';
 import {KaigoRoyalTechnicalFigure} from './KaigoRoyalTechnicalFigure';
 import {KaigoHandRegionFigure} from './KaigoHandRegionFigure';
 import {kaigoRoyalWeeklyArt,royalCaptionForStudyDay} from '@/data/kaigo/royal-weekly-art';
@@ -618,9 +619,11 @@ export function DayReading({
           ))}
           </>}
           </>}
-          {section.figureKeys?.map((figure) => (
+          {section.figureKeys?.map((figure) => {
+            const royalFigure=royalInlineFigure(entry.day,section.id,figure.key);
+            return (
             <View key={figure.key}>
-              <Image
+              {royalFigure ? <ScrollView horizontal={expandedFigure===figure.key} contentContainerStyle={{flexGrow:1}}><KaigoRoyalTechnicalFigure kind={royalFigure.kind} source={royalFigure.source} language={translationOpen ? language : 'ja'} expanded={expandedFigure===figure.key} /></ScrollView> : <Image
                 source={kaigoDepthFigures[figure.key]}
                 resizeMode="contain"
                 style={{
@@ -628,19 +631,20 @@ export function DayReading({
                   aspectRatio: 800 / 660,
                   maxHeight: 320,
                 }}
-              />
+              />}
+              {royalFigure && <Action title="図を拡大・縮小" testID={`kaigo-inline-zoom-${entry.day}-${figure.key}`} onPress={() => setExpandedFigure(expandedFigure===figure.key?null:figure.key)} />}
               {section.figureCaptionsJa?.[figure.key] && (
                 <JapaneseText text={section.figureCaptionsJa[figure.key]} testID={`kaigo-figure-caption-${section.id}-${figure.key}`} />
               )}
               {translationOpen && translation?.figureCaptions?.[figure.key] && (
                 <TranslationText testID={`kaigo-figure-caption-translation-${section.id}-${figure.key}`}>{translation.figureCaptions[figure.key]}</TranslationText>
               )}
-              {section.masterStatus && (
+              {section.masterStatus && !royalFigure && (
                 <Text style={[s.meta, { color: colors.muted }]}>図中の文字は旧版です。日本語ラベルを確認中です。</Text>
               )}
               {!section.masterStatus && translated(figure.captionVi)}
             </View>
-          ))}
+          );})}
         </View>
       );})}
       {form && (

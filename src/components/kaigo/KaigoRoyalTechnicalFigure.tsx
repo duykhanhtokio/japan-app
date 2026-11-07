@@ -2,10 +2,16 @@ import React,{useState} from 'react';
 import {Image,Text,View,type ImageSourcePropType} from 'react-native';
 import translations from '@/data/kaigo/royal-technical-labels.json';
 
-type Kind='brain'|'respiratory'|'muscles';
+type Kind='brain'|'respiratory'|'muscles'|'posture';
 type Point={anchor:[number,number];target:[number,number]};
 /** Percent coordinates on each independently authored 1536x1024 base. Endpoints are manually source-checked. */
 export const royalTechnicalLeaders:Record<Kind,Point[]>={
+ posture:[
+  {anchor:[8,18],target:[33,38]}, // chest-front cushion
+  {anchor:[91,45],target:[61,41]}, // cushion under lower right leg
+  {anchor:[91,20],target:[53,35]}, // separate cushion between legs
+  {anchor:[91,71],target:[57,84]}, // cushion directly below flexed knees
+ ],
  brain:[
   {anchor:[5,15],target:[35,20]}, // cerebrum
   {anchor:[5,40],target:[48,46]}, // diencephalon
@@ -39,7 +45,7 @@ export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=fa
  const tr=(translations as Record<string,typeof ja>)[language]??ja;
  const bilingual=(original:string,translated:string)=>tr===ja?original:original+' / '+translated;
  const labels=ja[kind].map((label,i)=>bilingual(label,tr[kind][i]));
- const view=kind==='brain'?bilingual(ja.brainView,tr.brainView):kind==='muscles'?bilingual(ja.musclesView,tr.musclesView):bilingual(ja.respiratoryView,tr.respiratoryView);
+ const view=kind==='posture'?bilingual(ja.postureView,tr.postureView):kind==='brain'?bilingual(ja.brainView,tr.brainView):kind==='muscles'?bilingual(ja.musclesView,tr.musclesView):bilingual(ja.respiratoryView,tr.respiratoryView);
  return <View testID={`kaigo-royal-${kind}`} style={{width:expanded?1000:'100%'}}>
   <Text style={{fontSize:16,color:'#243d4d',padding:8}}>{view}</Text>
   <View onLayout={event=>setWidth(event.nativeEvent.layout.width)} style={{width:'100%',aspectRatio:1.5}}>
@@ -58,7 +64,7 @@ export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=fa
   <View style={{padding:8,gap:6}}>
    {labels.map((label,i)=><Text key={i} style={{fontSize:16,color:'#243d4d'}}>{i+1} · {label}</Text>)}
    {kind==='brain'&&<Text style={{fontSize:15,color:'#243d4d'}}>{bilingual(ja.brainstem,tr.brainstem)}</Text>}
-   <Text style={{fontSize:14,lineHeight:21,color:'#526674'}}>{kind==='muscles'?bilingual(ja.musclesScope,tr.musclesScope):bilingual(ja.scope,tr.scope)}</Text>
+   <Text style={{fontSize:14,lineHeight:21,color:'#526674'}}>{kind==='posture'?bilingual(ja.postureScope,tr.postureScope):kind==='muscles'?bilingual(ja.musclesScope,tr.musclesScope):bilingual(ja.scope,tr.scope)}</Text>
   </View>
  </View>;
 }
