@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "reviewedBaseline": "80d1334d59a0be9e37e5fb79d2157d261ed72807",
+  "readyPaths": [
+    "src/data/agriculture/daily-controlled-native-support.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/daily-bulb-seed-controlled-locales-readings-qa.json"
+  ],
+  "scope": "Two actual bulb-organ and parent/F1 relationship technical fallback diagrams, source-bound JA+12 title/caption/alt and exact burnt-label accessible legend, whole-field Japanese readings. No generic lesson prose, no quiz changes, no raster or geometry changes.",
+  "newHanFields": 12,
+  "JA12Fields": 14,
+  "translatedTargets": 168,
+  "sourceProof": [
+    {
+      "kind": "bulb",
+      "lessonIds": [
+        "agr-flower-work-organs"
+      ],
+      "assetSnapshot": {
+        "assetPath": "assets/agriculture/daily-learning-20261031/bulb.png",
+        "assetSha256": "af7bac753da752c50922fb849840fa35e38b44e9f36b3858a4e098d39a63562f",
+        "width": 1160,
+        "height": 660
+      },
+      "actualHanFields": 6,
+      "localeFieldCount": 7
+    },
+    {
+      "kind": "seed-cross",
+      "lessonIds": [
+        "agr-seed-f1-fixed",
+        "agr-s1-vegetable-quality-improvements"
+      ],
+      "assetSnapshot": {
+        "assetPath": "assets/agriculture/daily-learning-20261031/seed-cross.png",
+        "assetSha256": "f2ced330428491817a365cabd3817267f6c9af043e3614ec65c0366765e07915",
+        "width": 1160,
+        "height": 660
+      },
+      "actualHanFields": 6,
+      "localeFieldCount": 7
+    }
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseAccepted": false,
+  "proofLimits": [
+    "Actual RNW full Daily child renders using immutable fresh tracked dependencies; no full app or native-device acceptance.",
+    "Raster Japanese remains unchanged. Adjacent source-bound native legends supply accessible localized readings and interpretation."
+  ],
+  "phoneticReview": [
+    "鱗茎りんけい, 肥厚ひこう, 葉は, 茎くき, 根ね; 鱗茎の中なか is the actual positional context.",
+    "固定種こていしゅ, 交配こうはい, 一代目いちだいめ; 種たね in exact種を袋で混ぜる seed context, not種しゅ classification."
+  ],
+  "invariants": {
+    "bulbThickenedLeavesShortStemRootsNotSingleRoot": true,
+    "notAllStorageOrganTypesSameStructure": true,
+    "F1DifferentParentsFirstGenerationNotSeedMix": true,
+    "noUniversalAppearanceYieldEffectGuarantee": true
+  },
+  "tests": {
+    "status": "PASS",
+    "actualFieldContexts": 24,
+    "negativeReadingGuards": 384,
+    "actual13LocaleDailyFullChildRoutes": 52,
+    "hiddenTranslationRoutes": 52,
+    "ChineseSameHanPlain": 8,
+    "fullJAAssetWholeImageAndNativeRejects": 24,
+    "partialCaptionScopeChecks": 8,
+    "strictActualCalleeGraph": "PASS zero diagnostics; actual current callee/import JSON graph plus extracted caller JSX, narrow ambient leaf declarations, not full app",
+    "commands": [
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-daily-bulb-seed.cjs",
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-daily-bulb-seed-types.cjs"
+    ]
+  },
+  "scopeNotes": [
+    "Two lessons/four level-contexts. Exact technical organ cross-section and parent/F1 relationship roles, not plant/species photographic recognition or whole lesson coverage from one diagram.",
+    "Bulb figure relevant p1/p2 and seed relation p1/p2/p3 required; unrelated later lesson paragraphs do not unnecessarily block valid partial figure. Full current canonical Japanese snapshot guards still reject same-hash edits anywhere.",
+    "Two asset SHAs and original dimensions retained exactly. No diagram geometry, canonical lesson text, IDs, source revisions, quiz or progress edits."
+  ]
+}
