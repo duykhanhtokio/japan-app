@@ -18,6 +18,8 @@ export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspec
  15:{source:require('../../../assets/kaigo/royal-weekly-20261107/week03/day15-before-departure.webp'),aspectRatio:1536/1024},
  16:{source:require('../../../assets/kaigo/royal-weekly-20261107/week03/day16-route-roles.webp'),aspectRatio:1536/1024},
  17:{source:require('../../../assets/kaigo/royal-weekly-20261107/week03/day17-plan-before-assistance.webp'),aspectRatio:1536/1024},
+ 18:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day14-rest-request-handoff.webp'),aspectRatio:1536/1024},
+ 21:{source:require('../../../assets/kaigo/royal-weekly-20261107/week03/day17-plan-before-assistance.webp'),aspectRatio:1536/1024},
 };
 
 /** Image-specific captions; canonical lesson and progress revisions remain unchanged. */
@@ -126,6 +128,36 @@ export const kaigoRoyalWeeklyCaptions:Record<number,Record<string,string>>={
     "km": "បុគ្គលិកពិនិត្យផែនការ និងអ្នកដែលបានចាត់តាំង ហើយបញ្ជាក់ស្ថានភាពបច្ចុប្បន្នមុនចាប់ផ្ដើមជួយ។",
     "zh-CN": "工作人员核对计划和负责人员，并在开始协助前确认当前状况。",
     "zh-TW": "工作人員核對計畫和負責人員，並在開始協助前確認目前狀況。"
+  },
+  "18": {
+    "ja": "本人の休みたいという言葉と、まだ確認していないことを看護師に伝えます。",
+    "en": "The caregiver tells the nurse the person’s request to rest and what has not yet been checked.",
+    "vi": "Nhân viên báo với điều dưỡng lời người đó muốn nghỉ và những điều chưa kiểm tra.",
+    "id": "Petugas menyampaikan kepada perawat permintaan orang tersebut untuk beristirahat dan hal yang belum diperiksa.",
+    "zh-CN": "工作人员向护士转达本人想休息的话，以及尚未确认的事项。",
+    "zh-TW": "工作人員向護理師轉達本人想休息的話，以及尚未確認的事項。",
+    "hi": "देखभालकर्मी नर्स को व्यक्ति की आराम करने की इच्छा और अभी जाँची न गई बातें बताती हैं।",
+    "bn": "পরিচর্যাকর্মী নার্সকে ব্যক্তির বিশ্রাম চাওয়ার কথা এবং এখনো যাচাই না করা বিষয় জানান।",
+    "ne": "हेरचाहकर्मीले व्यक्तिको आराम गर्ने चाहना र अझै जाँच नभएका कुरा नर्सलाई बताउँछन्।",
+    "my": "ပြုစုစောင့်ရှောက်သူက ကာယကံရှင်၏ အနားယူလိုသည့်စကားနှင့် မစစ်ဆေးရသေးသည့်အချက်များကို သူနာပြုထံ ပြောပြသည်။",
+    "th": "เจ้าหน้าที่บอกพยาบาลถึงคำขอพักของเจ้าตัวและสิ่งที่ยังไม่ได้ตรวจสอบ",
+    "km": "បុគ្គលិកប្រាប់គិលានុបដ្ឋាយិកាអំពីពាក្យសុំសម្រាករបស់សាមីខ្លួន និងចំណុចដែលមិនទាន់បានពិនិត្យ។",
+    "tl": "Ipinababatid ng tagapag-alaga sa nars ang kahilingan ng tao na magpahinga at ang mga hindi pa nasusuri."
+  },
+  "21": {
+    "ja": "職員は最新の連絡を確かめ、本人の希望と支援計画を確認してから準備します。",
+    "en": "Staff check the latest information and confirm the person’s wishes and support plan before preparing.",
+    "vi": "Nhân viên kiểm tra thông tin mới nhất, xác nhận nguyện vọng và kế hoạch hỗ trợ của người đó rồi mới chuẩn bị.",
+    "id": "Petugas memeriksa informasi terbaru dan memastikan keinginan serta rencana dukungan orang tersebut sebelum bersiap.",
+    "zh-CN": "工作人员核实最新通知，确认本人意愿和支持计划后再准备。",
+    "zh-TW": "工作人員核實最新通知，確認本人意願和支持計畫後再準備。",
+    "hi": "कर्मचारी नवीनतम सूचना जाँचते हैं और तैयारी से पहले व्यक्ति की इच्छा तथा सहायता योजना की पुष्टि करते हैं।",
+    "bn": "কর্মীরা সর্বশেষ তথ্য যাচাই করেন এবং প্রস্তুতির আগে ব্যক্তির ইচ্ছা ও সহায়তার পরিকল্পনা নিশ্চিত করেন।",
+    "ne": "कर्मचारीले पछिल्लो जानकारी जाँच्छन् र तयारी गर्नुअघि व्यक्तिको चाहना र सहायता योजना पुष्टि गर्छन्।",
+    "my": "ဝန်ထမ်းများက နောက်ဆုံးသတင်းကို စစ်ဆေးပြီး ပြင်ဆင်မှုမပြုမီ ကာယကံရှင်၏ ဆန္ဒနှင့် အကူအညီအစီအစဉ်ကို အတည်ပြုသည်။",
+    "th": "เจ้าหน้าที่ตรวจข้อมูลล่าสุดและยืนยันความต้องการของเจ้าตัวกับแผนช่วยเหลือก่อนเตรียมการ",
+    "km": "បុគ្គលិកពិនិត្យព័ត៌មានចុងក្រោយ ហើយបញ្ជាក់បំណងរបស់សាមីខ្លួន និងផែនការជំនួយ មុនពេលត្រៀម។",
+    "tl": "Sinusuri ng mga kawani ang pinakabagong impormasyon at tinitiyak ang kagustuhan at plano ng suporta ng tao bago maghanda."
   }
 };
 export function royalCaptionForStudyDay(day:number,language='ja'){return kaigoRoyalWeeklyCaptions[day]?.[language];}
