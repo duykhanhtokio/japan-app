@@ -3,6 +3,9 @@ import type {FoodManufacturingLesson} from './index';
 export type FoodRoyalWeeklyImage={lessonId:string;sourceHash:string;captionParagraphId:string;source:ImageSourcePropType;width:number;height:number};
 /** Lesson-specific Royal illustrations; preserve shared historical diagram families. */
 export const foodRoyalWeeklyImages:FoodRoyalWeeklyImage[]=[
+ {lessonId:'food-1-004',sourceHash:'6911628f4a2d61b097b0f80bf1e32061bc485ac2b5813ab7cef692949a4aa2a8',captionParagraphId:'p2',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/allergen-utensil-separation.webp'),width:1536,height:1024},
+ {lessonId:'food-1-005',sourceHash:'298acfaa70a42605cf77973fb655a3e1cae8c1114a4ab3590310330e0e161d11',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/chemical-required-rinse.webp'),width:1536,height:1024},
+ {lessonId:'food-1-006',sourceHash:'5d2fd13ee866967e7835db2fa5b5a8e0601319f031f8d94eda10d24a071c0a7e',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/invisible-microbiological-risk.webp'),width:1536,height:1024},
  {lessonId:'food-1-001',sourceHash:'284c6c7a65f3beb574969d905952457a741488f04cb44b876b113e680780b5a0',captionParagraphId:'p2',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/worker-and-consumer-safety.webp'),width:1536,height:1024},
  {lessonId:'food-1-003',sourceHash:'9bd216b9c3c11e32803f28f3f6740c34b8c96e35e6e56c0fd482054def3c7029',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/hard-foreign-material.webp'),width:1536,height:1024},
  {lessonId:'food-2-004',sourceHash:'2ed9be5fafb15925e54cf1c17f76098f28507111ee25cbc03e9b0835bbd313d3',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/tailored-training-support.webp'),width:1536,height:1024},
