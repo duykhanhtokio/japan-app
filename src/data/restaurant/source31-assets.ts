@@ -1,6 +1,7 @@
 /** Lazy literal image modules; no image is loaded merely by importing this module. */
 export function source31AssetByFile(file:string):number|null{
  switch(file){
+ case "assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-02-wall-cleaning-context.webp":return require("../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-02-wall-cleaning-context.webp");
  case "assets/restaurant/source31/hygiene1/temperature-paths.png":return require("../../../assets/restaurant/source31/hygiene1/temperature-paths.png");
  case "assets/restaurant/source31/hygiene1/general-record-worked.png":return require("../../../assets/restaurant/source31/hygiene1/general-record-worked.png");
  case "assets/restaurant/source31/hygiene1/five-process-plan.png":return require("../../../assets/restaurant/source31/hygiene1/five-process-plan.png");

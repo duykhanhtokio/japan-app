@@ -12,7 +12,17 @@ export function sourcePictureFrame31(figure:SourceFigure31,width:number){
 export function SourcePicture31({figure,label,width}:{figure:SourceFigure31;label:string;width?:number}){
  const window=useWindowDimensions(),[measured,setMeasured]=useState(0),image=sourceFigureAsset31(figure),frame=sourcePictureFrame31(figure,width??(measured||Math.max(1,window.width-32)));
  if(!image||!frame)return null;
- return <View testID={`source31-picture-${figure.id}`} onLayout={event=>{const next=event.nativeEvent.layout.width;if(!width&&Number.isFinite(next)&&next>0)setMeasured(next);}} style={{width:width??'100%',height:frame.height,overflow:'hidden',position:'relative'}}><Image testID={`source31-image-${figure.id}`} source={image} accessibilityLabel={label} resizeMode="contain" style={{position:'absolute',width:frame.imageWidth,height:frame.imageHeight,left:frame.left,top:frame.top}}/></View>;
+ const wallRange=figure.id==='rst31-hygiene2-figure-wall-cleaning-range'&&figure.sourceHash==='1b811f050b8ae0fa61fba4c558aeeb875f1132752d1b5abd94b3eddad63d0ac6';
+ const picture=<View testID={`source31-picture-${figure.id}`} onLayout={event=>{const next=event.nativeEvent.layout.width;if(!width&&Number.isFinite(next)&&next>0)setMeasured(next);}} style={{width:width??'100%',height:frame.height,overflow:'hidden',position:'relative'}}><Image testID={`source31-image-${figure.id}`} source={image} accessibilityLabel={label} resizeMode="contain" style={{position:'absolute',width:frame.imageWidth,height:frame.imageHeight,left:frame.left,top:frame.top}}/></View>;
+ if(!wallRange)return picture;
+ return <View style={{width:width??'100%',gap:12}}>{picture}<WallCleaningRange31 label={label}/></View>;
+}
+/** Schematic scale is controlled in code: lower 1m band is 80px, independent of the illustrative scene. */
+export function WallCleaningRange31({label}:{label:string}){
+ return <View testID="source31-wall-range-measurement" accessible accessibilityRole="image" accessibilityLabel={label} style={{height:154,width:'100%',maxWidth:680,alignSelf:'center',flexDirection:'row',alignItems:'flex-end',padding:12,backgroundColor:'#fffaf0',borderRadius:8}}>
+ <View style={{width:72,height:80,borderRightWidth:2,borderColor:'#9c6336',justifyContent:'center',marginBottom:0}}><Text style={{color:'#173c4b',fontSize:20,fontWeight:'600'}}>1m</Text><View style={{position:'absolute',right:-7,top:0,width:12,borderTopWidth:2,borderColor:'#9c6336'}}/><View style={{position:'absolute',right:-7,bottom:0,width:12,borderTopWidth:2,borderColor:'#9c6336'}}/></View>
+ <View style={{flex:1,height:128,marginLeft:14,borderLeftWidth:1,borderRightWidth:1,borderColor:'#b9c7cd',backgroundColor:'#edf1f1'}}><View style={{position:'absolute',left:0,right:0,bottom:0,height:80,backgroundColor:'#f1d9a9',borderTopWidth:1,borderTopColor:'#b88c4a'}}/><View style={{position:'absolute',left:0,right:0,bottom:0,borderBottomWidth:3,borderColor:'#173c4b'}}/></View>
+ </View>;
 }
 export function SourceFigureGallery31({figures,language,showTranslation,onZoom}:{figures:SourceFigure31[];language:string;showTranslation:boolean;onZoom:(id:string)=>void}){
  const [selected,setSelected]=useState(0),{colors}=useStudyAppearance(),teaching=figures.filter(f=>!f.quizSafe),paged=teaching.length>6,index=Math.min(selected,Math.max(0,teaching.length-1)),shown=paged?teaching.slice(index,index+1):teaching;
