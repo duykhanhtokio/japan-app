@@ -7,8 +7,16 @@ const own=(o:object,k:string)=>Object.prototype.hasOwnProperty.call(o,k);
 function figures(lesson:ManufacturingLesson):Record<string,DailyFigure40>{
  switch(lesson.specialty){case 'mechanical':return require('./daily40/mechanical.json').lessons;case 'electrical':return require('./daily40/electrical.json').lessons;case 'surface':return require('./daily40/surface.json').lessons;default:return {};}
 }
+/** A saved hash alone cannot validate a mutated scheduled objective or paragraph. */
+export function dailyBodyCurrent40(lesson:ManufacturingLesson):boolean{
+ if(!/^mfg1-(?:mechanical-lesson-|electrical-l|surface-lesson-)(?:03[6-9]|04[0-2])$/.test(lesson.id))return true;
+ const rows=require('./royal-week06-body-bindings.json').lessons as Record<string,{sourceHash:string;objectiveJa:string;paragraphs:ManufacturingLesson['paragraphs']}>;
+ const saved=own(rows,lesson.id)?rows[lesson.id]:null;
+ return !!saved&&saved.sourceHash===lesson.sourceHash&&saved.objectiveJa===lesson.objectiveJa&&JSON.stringify(saved.paragraphs)===JSON.stringify(lesson.paragraphs);
+}
 /** Exact current lesson revision; metadata never substitutes for an image asset. */
 export function dailyFigure40(lesson:ManufacturingLesson):DailyFigure40|null{
+ if(!dailyBodyCurrent40(lesson))return null;
  const rows=figures(lesson),row=own(rows,lesson.id)?rows[lesson.id]:null;
  return row&&row.lessonId===lesson.id&&row.lessonSourceHash===lesson.sourceHash&&row.captionJa===lesson.summaryJa&&row.altJa===lesson.titleJa&&row.width>0&&row.height>0?row:null;
 }
