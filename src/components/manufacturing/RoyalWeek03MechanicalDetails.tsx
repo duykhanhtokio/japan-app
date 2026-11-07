@@ -1,4 +1,5 @@
-import {Text,View} from 'react-native';
+import {ManufacturingIllustrationText as Text} from './ManufacturingIllustrationText';
+import {View} from 'react-native';
 import type {ManufacturingLesson} from '@/data/manufacturing';
 import {useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 
@@ -10,7 +11,7 @@ export function RoyalWeek03MechanicalDetails({lesson,language='ja'}:{lesson:Manu
  if(lesson.id!==data.lessonId||lesson.sourceHash!==data.sourceHash)return null;
  const target=Object.prototype.hasOwnProperty.call(data.locales,language)?data.locales[language]:data.locales.ja;
  return <View testID="manufacturing-native-test-measurement-views" style={{gap:8,padding:14,borderWidth:1,borderColor:colors.border,borderRadius:10}}>
-  {target.items.map(item=><Text key={item.number} style={{color:colors.text,fontSize:17,lineHeight:29}}>{item.number} · {item.text}{item.view?`（${item.view}）`:''}</Text>)}
-  <Text style={{color:colors.muted,fontSize:15,lineHeight:25}}>{target.scope}</Text>
+  {target.items.map(item=><Text readingLanguage={target===data.locales.ja?'ja':language} key={item.number} style={{color:colors.text,fontSize:17,lineHeight:29}}>{item.number} · {item.text}{item.view?`（${item.view}）`:''}</Text>)}
+  <Text readingLanguage={target===data.locales.ja?'ja':language} style={{color:colors.muted,fontSize:15,lineHeight:25}}>{target.scope}</Text>
  </View>;
 }

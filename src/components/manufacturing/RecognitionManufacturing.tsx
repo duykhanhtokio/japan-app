@@ -1,3 +1,4 @@
+import {ManufacturingIllustrationText} from './ManufacturingIllustrationText';
 import {RecognitionOccupationalOverview} from './RecognitionOccupationalOverview';
 import {useState} from 'react';
 import {Pressable,ScrollView,Text,View} from 'react-native';
@@ -27,13 +28,13 @@ export function RecognitionReader({lesson,language,onBack,onComplete,saving,save
  return <><TokuteiHeader title={pack.titleJa} onBack={onBack}/><ScrollView contentContainerStyle={{padding:16,paddingBottom:36,gap:12,width:'100%',maxWidth:1100,alignSelf:'center'}}>
   <ReadingAppearanceControl/>
   {language!=='ja'&&<Pressable accessibilityRole="button" onPress={()=>setShow(value=>!value)} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:16}}>{t(show?'translationHide':'translationShow')}</Text></Pressable>}
-  <Text selectable style={{color:colors.text,fontSize:17,lineHeight:29}}>{pack.captionJa}</Text>
+  <ManufacturingIllustrationText readingLanguage="ja" selectable style={{color:colors.text,fontSize:17,lineHeight:29}}>{pack.captionJa}</ManufacturingIllustrationText>
   {caption&&<TranslationText>{caption}</TranslationText>}
   {show&&language!=='ja'&&!caption&&<TranslationText>{t('translationPending')}</TranslationText>}
   <RecognitionOccupationalOverview pack={pack} language={language} showTranslation={show}/>
   <Figures pack={pack} assets={teaching.length?teaching:pack.assets} language={language}/>
   {saveError&&<Text accessibilityRole="alert" style={{color:colors.text}}>{t('saveError')}</Text>}
-  <Pressable accessibilityRole="button" disabled={saving} accessibilityState={{disabled:saving}} onPress={onComplete} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:17,textAlign:'center'}}>{t(saving?'saving':'complete')}</Text></Pressable>
+  <Pressable accessibilityRole="button" disabled={saving} accessibilityState={{disabled:saving}} onPress={onComplete} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><ManufacturingIllustrationText readingLanguage={language} style={{color:colors.text,fontSize:17,textAlign:'center'}}>{t(saving?'saving':'complete')}</ManufacturingIllustrationText></Pressable>
  </ScrollView></>;
 }
 

@@ -1,6 +1,7 @@
 import {IllustrationJapanese} from './IllustrationJapanese';
+import {ManufacturingIllustrationText as Text} from './ManufacturingIllustrationText';
 import {useState} from 'react';
-import {Image,Modal,Pressable,ScrollView,Text,View,useWindowDimensions} from 'react-native';
+import {Image,Modal,Pressable,ScrollView,View,useWindowDimensions} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import {manufacturingUi} from '@/data/manufacturing/ui';
@@ -60,8 +61,8 @@ function DiagramFrame({lessonId,lessonSourceHash,language='ja',showTranslation=f
  const ratio=item.width/item.height;
  const candidate=captionData.locales[language as keyof typeof captionData.locales]?.[lessonId as keyof typeof captionData.locales.en];
  const translated=candidate&&showTranslation&&candidate.sourceJa===item.altJa?candidate.text:null;
- const zoomWidth=Math.max(960,width,item.width),button=(label:string,action:()=>void)=><Pressable accessibilityRole="button" accessibilityLabel={label} onPress={action} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:16,textAlign:'center'}}>{label}</Text></Pressable>;
- return <View style={{gap:8}}><Image testID={secondary?"manufacturing-technical-diagram-2":"manufacturing-technical-diagram"} accessibilityLabel={translated??item.altJa} source={item.source} resizeMode="contain" style={{width:'100%',aspectRatio:ratio}}/><IllustrationJapanese text={item.altJa} style={{fontSize:15,lineHeight:25,color:colors.muted}}/>{translated&&<Text style={{fontSize:15,lineHeight:25,color:colors.translationText,backgroundColor:colors.translation,padding:12,borderRadius:8}}>{translated}</Text>}{button(manufacturingUi(language,'imageZoom')+(secondary?' 2':''),()=>setExpanded(true))}
+ const zoomWidth=Math.max(960,width,item.width),button=(label:string,action:()=>void)=><Pressable accessibilityRole="button" accessibilityLabel={label} onPress={action} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text readingLanguage={language} style={{color:colors.text,fontSize:16,textAlign:'center'}}>{label}</Text></Pressable>;
+ return <View style={{gap:8}}><Image testID={secondary?"manufacturing-technical-diagram-2":"manufacturing-technical-diagram"} accessibilityLabel={translated??item.altJa} source={item.source} resizeMode="contain" style={{width:'100%',aspectRatio:ratio}}/><IllustrationJapanese text={item.altJa} style={{fontSize:15,lineHeight:25,color:colors.muted}}/>{translated&&<Text readingLanguage={language} style={{fontSize:15,lineHeight:25,color:colors.translationText,backgroundColor:colors.translation,padding:12,borderRadius:8}}>{translated}</Text>}{button(manufacturingUi(language,'imageZoom')+(secondary?' 2':''),()=>setExpanded(true))}
  <Modal visible={expanded} animationType="none" onRequestClose={()=>setExpanded(false)}><View style={{flex:1,paddingTop:i.top,paddingBottom:i.bottom,paddingLeft:i.left,paddingRight:i.right,backgroundColor:colors.background}}><View style={{padding:12}}>{button(manufacturingUi(language,'imageClose')+(secondary?' 2':''),()=>setExpanded(false))}</View><ScrollView style={{flex:1}}><ScrollView horizontal nestedScrollEnabled style={{width:'100%'}}><Image testID={secondary?"manufacturing-expanded-diagram-2":"manufacturing-expanded-diagram"} accessibilityLabel={translated??item.altJa} source={item.source} resizeMode="contain" style={{width:zoomWidth,height:zoomWidth/ratio}}/></ScrollView></ScrollView></View></Modal>
  </View>;
 }
