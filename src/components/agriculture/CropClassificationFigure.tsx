@@ -1,3 +1,4 @@
+import {AgricultureCropClassificationRuby} from './AgricultureCropClassificationRuby';
 import {Text,View} from 'react-native';
 import data from '@/data/agriculture/crop-classification-native.json';
 import content from '@/data/agriculture/lessons.ja.json';
@@ -14,16 +15,17 @@ export function cropClassificationLabels(lessonId:string,sourceHash:string,revis
 export function CropClassificationFigure({lessonId,lessonSourceHash,lessonRevision,level,language='ja',showTranslation=false,colors}:{lessonId:string;lessonSourceHash:string;lessonRevision?:string;level?:string;language?:string;showTranslation?:boolean;colors:Colors}){
  const ja=cropClassificationLabels(lessonId,lessonSourceHash,lessonRevision,level,'ja');
  if(!ja)return null;
+ const ruby=(field:string,value:string,style:import('react-native').StyleProp<import('react-native').TextStyle>)=><AgricultureCropClassificationRuby lesson={content.lessons.find(l=>l.id===lessonId)!} level={level!} language="ja" field={field} text={value} style={style} color={colors.translationText}/>;
  const t=showTranslation&&language!=='ja'?cropClassificationLabels(lessonId,lessonSourceHash,lessonRevision,level,language):null,active=t||ja;
- const text={color:colors.translationText,fontSize:16,lineHeight:27},label=(key:string)=><View style={{gap:3}}><Text style={{...text,fontWeight:'700'}}>{ja.labels[key]}</Text>{!!t&&<Text style={text}>{t.labels[key]}</Text>}</View>;
+ const text={color:colors.translationText,fontSize:16,lineHeight:27},label=(key:string)=><View style={{gap:3}}>{ruby(`label:${key}`,ja.labels[key],{...text,fontWeight:'700'})}{!!t&&<Text testID={`agri-crop-classification-localized-label-${key}`} style={text}>{t.labels[key]}</Text>}</View>;
  const relations=data.branches.map(b=>`${active.labels.crop} → ${active.labels[b.parent]} → ${b.children.map(k=>active.labels[k]).join(' / ')}`).join('\n');
  return <View testID="agri-native-crop-classification" style={{gap:14,padding:12,marginVertical:12,borderWidth:1,borderColor:colors.border,borderRadius:10}}>
-  <Text style={{...text,fontSize:19,fontWeight:'700'}}>{ja.title}</Text>{!!t&&<Text testID="agri-crop-classification-localized-title" style={text}>{t.title}</Text>}
+  {ruby('title',ja.title,{...text,fontSize:19,fontWeight:'700'})}{!!t&&<Text testID="agri-crop-classification-localized-title" style={text}>{t.title}</Text>}
   <View accessible accessibilityRole="image" accessibilityLabel={`${active.alt}\n${relations}`} style={{gap:12}}>
    {label('crop')}
    <View style={{marginLeft:12,paddingLeft:16,borderLeftWidth:2,borderColor:colors.border,gap:18}}>{data.branches.map(b=><View key={b.parent} testID={`agri-crop-branch-${b.parent}`} style={{gap:8}}>{label(b.parent)}<View style={{marginLeft:12,paddingLeft:16,borderLeftWidth:2,borderColor:colors.border,gap:10}}>{b.children.map(k=><View key={k} testID={`agri-crop-category-${k}`} style={{borderTopWidth:1,borderColor:colors.border,paddingTop:6}}>{label(k)}</View>)}</View></View>)}</View>
   </View>
-  {data.paragraphIds.map(id=><View key={id} style={{gap:5}}><Text style={{...text,fontWeight:'700'}}>{ja.paragraphTitles[id]}</Text><Text style={text}>{ja.paragraphs[id]}</Text>{!!t&&<><Text style={{...text,fontWeight:'700'}}>{t.paragraphTitles[id]}</Text><Text style={text}>{t.paragraphs[id]}</Text></>}</View>)}
+  {data.paragraphIds.map(id=><View key={id} style={{gap:5}}>{ruby(`paragraphTitle:${id}`,ja.paragraphTitles[id],{...text,fontWeight:'700'})}{ruby(`paragraph:${id}`,ja.paragraphs[id],text)}{!!t&&<><Text style={{...text,fontWeight:'700'}}>{t.paragraphTitles[id]}</Text><Text style={text}>{t.paragraphs[id]}</Text></>}</View>)}
   <Text style={{...text,fontSize:14}}>AGR-S2 · PDF p.10 / p.8</Text>
  </View>;
 }
