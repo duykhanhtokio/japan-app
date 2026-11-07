@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "baseCommit": "3262260df5002104c5e776b9be56600476ce979c",
+  "scope": "Existing source64 histogram zoom text contrast only",
+  "status": "ai_self_reviewed_ready_for_remote_persistence",
+  "lessonId": "food-2-021",
+  "sourceHash": "ade1274e1f97c56590f312f3131d51e3452b917fb7e8d399d093b9c7fd82b74f",
+  "figureId": "food64-original-histogram",
+  "independentCaption": {
+    "id": "food64-teaching",
+    "sourceHash": "4f2cf3ebdfa7bc6f2d9d65967347a9b36aa0a96e869976c084ac4e8e010631fa",
+    "fileBlobUnchanged": "73a9e6c7a5e7c507288334397a79f1a7f36e9998"
+  },
+  "problem": "The zoom fixes its canvas to ivory #fffaf0 but inherited the surrounding night reader's light Japanese text/ruby colors. Actual night palette text #e4d9c5 yielded contrast 1.3429310401855354 on that canvas.",
+  "change": "Only the zoom close label, Japanese title/body ink and their ruby ink now use #183044 / #687078 on the fixed ivory canvas (five style properties). Inline Japanese text remains theme-aware. All existing source/independent caption guards, IDs, Japanese/localized alt and localized close labels remain.",
+  "translationTextAudit": {
+    "actualSource": "src/components/tokutei/StudyAppearance.tsx",
+    "blobUnchanged": "5d9154a07fe5da820a677b188a7d8615e6698961",
+    "finding": "TranslationText already sets its own translation surface and matching translationText ink from the reading palette. It is preserved unchanged; the regression renders this actual component under actual day/night palettes.",
+    "day": {
+      "background": "#e7dfcf",
+      "ink": "#3e382f"
+    },
+    "night": {
+      "background": "#302c26",
+      "ink": "#d7cbb6"
+    }
+  },
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/food-manufacturing/check-source64-zoom-ink.cjs",
+    "before": "FAIL actual night Japanese ink #e4d9c5 on #fffaf0 contrast 1.3429310401855354",
+    "after": "PASS",
+    "actualComponentContexts": 26,
+    "coverage": "Actual source64 component, actual TranslationText and day/night palette values, Japanese+12 locales, expanded zoom, explicit ink/background contrast>=4.5 for all zoom Text nodes, original Japanese+translated descriptions/alt, localized close labels, theme-aware inline text. Existing lesson-revision, independent-caption-revision and locator negative guards remain effective.",
+    "minimumZoomTextContrast": 4.831725353533739,
+    "adapters": "Structural React SSR/RN style adapters, forced expanded state and selected appearance context. Unrelated closure packs and assessment UI isolated. This is source/style contrast verification, not browser/device screenshot verification.",
+    "diffCheck": "PASS scoped diff --check"
+  },
+  "preserved": [
+    "Histogram asset bytes and exact quantity/source content",
+    "All source, translation, ruby and assessment data",
+    "Inline theme colors",
+    "All current source64 locator/revision guards",
+    "Royal registry, lesson-week cursor and historical receipts"
+  ],
+  "beforeBlobSHAs": {
+    "src/components/food-manufacturing/FoodClosureSupplements.tsx": "ef89b4eac53f9b88415d4a20920e61341eaeea50",
+    "scripts/food-manufacturing/check-source64-zoom-ink.cjs": null,
+    "docs/ssw-workspace/food-manufacturing/royal-week04-source64-zoom-ink-20261107.json": null
+  },
+  "acceptance": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false,
+    "releaseReady": false,
+    "globalSourceAcceptance": false
+  },
+  "next": "After persistence continue existing current supported integration frontier, retaining explicit unresolved reading debt."
+}
