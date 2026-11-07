@@ -10,8 +10,22 @@ import {SupplementalFigure} from './SupplementalManufacturingDiagrams';
 import data from '@/data/manufacturing/royal-week03-companion-figures.json';
 
 type Figure={id:string;paragraphId?:string;paragraphIds?:string[];assetFile:string;width:number;height:number;labels?:Record<string,string>};
-type Entry={sourceHash:string;captionJa:string;paragraphIds:string[];bindingScopes?:string[][];expectedParagraphsJa:Record<string,string>;nativeParagraphIds?:string[];expectedNativeParagraphsJa?:Record<string,string>;images:Figure[];exactSelectionOnly?:boolean;retainedExistingFigure?:boolean;fullReader?:Entry};
+type Entry={sourceHash:string;captionJa:string;paragraphIds:string[];bindingScopes?:string[][];expectedParagraphsJa:Record<string,string>;nativeParagraphIds?:string[];expectedNativeParagraphsJa?:Record<string,string>;images:Figure[];exactSelectionOnly?:boolean;exactBindingScopes?:boolean;selectionBoundImages?:boolean;retainedExistingFigure?:boolean;fullReader?:Entry};
 const sources:Record<string,ReturnType<typeof require>>={
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-record.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-record.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-pareto.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-pareto.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-histogram.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-histogram.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-control.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-control.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-scatter.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-scatter.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-fishbone.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-fishbone.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-thermometer.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-thermometer.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-hydrometer.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-hydrometer.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-burette.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-burette.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-pipette.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-pipette.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-methods.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-methods.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-corrosion-paths.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-corrosion-paths.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-pinhole-path.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-pinhole-path.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-anodic-layers.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-anodic-layers.png'),
  'assets/manufacturing/diagrams/ohms-law.png':require('../../../assets/manufacturing/diagrams/ohms-law.png'),
  'assets/manufacturing/royal-weekly-20261107/week02/electrical-day08-inspection-hold.webp':require('../../../assets/manufacturing/royal-weekly-20261107/week02/electrical-day08-inspection-hold.webp'),
  'assets/manufacturing/royal-weekly-20261107/week02/electrical-day09-shortage-report.webp':require('../../../assets/manufacturing/royal-weekly-20261107/week02/electrical-day09-shortage-report.webp'),
@@ -45,7 +59,8 @@ const sources:Record<string,ReturnType<typeof require>>={
 const imageParagraphIds=(item:Figure)=>item.paragraphIds??(item.paragraphId?[item.paragraphId]:[]);
 function registration(lessonId:string,paragraphIds:string[]):Entry|null{
  const main=(data.lessons as Record<string,Entry>)[lessonId];
- for(const row of [main,main?.fullReader])if(row&&row.paragraphIds.length>0&&(row.exactSelectionOnly?row.paragraphIds.length===paragraphIds.length&&row.paragraphIds.every((id,i)=>id===paragraphIds[i]):(row.bindingScopes??[row.paragraphIds]).some(scope=>scope.length>0&&scope.every(id=>paragraphIds.includes(id)))))return row;
+ const exact=(scope:string[])=>scope.length===paragraphIds.length&&scope.every((id,i)=>id===paragraphIds[i]);
+ for(const row of [main,main?.fullReader])if(row&&row.paragraphIds.length>0&&(row.exactSelectionOnly?exact(row.paragraphIds):(row.bindingScopes??[row.paragraphIds]).some(scope=>scope.length>0&&(row.exactBindingScopes?exact(scope):scope.every(id=>paragraphIds.includes(id))))))return row;
  return null;
 }
 /** A registered exact selection takes precedence over broader legacy art, including when source drift makes its renderer fail closed. */
@@ -71,6 +86,7 @@ export function Week03CompanionFigure({lesson,paragraphIds,language,showTranslat
   </View>
   {row.images.map(item=>{
    const source=Object.prototype.hasOwnProperty.call(sources,item.assetFile)?sources[item.assetFile]:undefined,ids=imageParagraphIds(item),selected=ids.map(id=>lesson.paragraphs.find(p=>p.id===id));
+   if(row.selectionBoundImages&&ids.some(id=>!paragraphIds.includes(id)))return null;
    if(!source||!ids.length||selected.some(p=>!p)||ids.some(id=>!row.paragraphIds.includes(id))||!(item.width>0&&item.height>0))return null;
    const targets=ids.map(id=>translated?.paragraphs.find(p=>p.id===id));
    const captionJa=selected.map(p=>manufacturingLessonParagraph(lesson,p!.id,'ja',p!.textJa)??p!.textJa).join('\n\n');
@@ -89,6 +105,6 @@ export function Week03CompanionFigure({lesson,paragraphIds,language,showTranslat
 /** Preserve the full legacy supplement figure unless an exact scoped replacement is registered. */
 export function ScopedManufacturingCompanionFigures({lesson,paragraphIds,language,showTranslation}:{lesson:ManufacturingLesson;paragraphIds:string[];language:string;showTranslation:boolean}){
  const registered=Object.prototype.hasOwnProperty.call(data.lessons,lesson.id),full=lesson.paragraphs.map(p=>p.id),fullSelection=full.length===paragraphIds.length&&full.every((id,i)=>id===paragraphIds[i]);
- const row=registration(lesson.id,paragraphIds),scoped=['mfg1-mechanical-completion37-lesson-003','mfg1-mechanical-completion37-lesson-005','mfg1-mechanical-completion37-lesson-007'].includes(lesson.id),replaceLegacy=scoped&&(row?!row.retainedExistingFigure:(registered&&!fullSelection));
+ const row=registration(lesson.id,paragraphIds),scoped=['mfg1-mechanical-completion37-lesson-003','mfg1-mechanical-completion37-lesson-005','mfg1-mechanical-completion37-lesson-007','mfg1-surface-completion37-lesson-003','mfg1-surface-completion37-lesson-006','mfg1-surface-completion37-lesson-008'].includes(lesson.id),replaceLegacy=scoped&&(row?!row.retainedExistingFigure:(registered&&!fullSelection));
  return <>{!replaceLegacy&&<CompletionManufacturingDiagrams lesson={lesson} language={language} showTranslation={showTranslation}/>}<Week03CompanionFigure lesson={lesson} paragraphIds={paragraphIds} language={language} showTranslation={showTranslation}/></>;
 }

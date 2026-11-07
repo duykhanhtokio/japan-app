@@ -228,14 +228,110 @@
       "captionJa": "分母、期間、測定量、時間順を確認する。管理限界と仕様限界、原因候補と確認された原因を分ける。",
       "paragraphIds": [
         "section-1",
+        "section-2",
+        "section-3",
         "section-4"
       ],
       "expectedParagraphsJa": {
         "section-1": "学習用記録を「工程：外観確認、管理項目：異物の付着、方法：指定照明と限度見本、頻度：ロット開始時と変更後、異常時：対象品を区分し責任者へ連絡」と設定します。何を、どう、いつ、異常ならどうするかを分けて読みます。確認頻度を作業者の都合で省略したり、記録だけを後でまとめて作ったりしません。この記録は独立した紙上例で、実職場の標準ではありません。",
+        "section-2": "架空の一日分の件数を、異物12件、色むら6件、傷4件、その他2件とします。合計24件なので、異物は50%、異物と色むらまでの累積は75%です。パレート図では件数の棒と累積比率の線を読み分けます。「異物が50%」は今回分類した件数の割合で、全製品の半分が不良という意味ではありません。分母と集計期間を必ず確認します。",
+        "section-3": "ヒストグラムは測定値を区間に分けた度数分布、管理図は時間順の変化、散布図は二つの量の組合せを見る道具です。特性要因図は結果に関わる原因候補を整理しますが、図に書いた候補が実証された原因になったわけではありません。散布図の関連から因果を断定したり、時間順を捨てた分布だけで発生時刻を特定したりしません。",
         "section-4": "独立した紙上例で、製品仕様を20～30、工程の管理限界を23～26と与えます。測定値26.8は仕様範囲内でも上側管理限界を超えています。製品が直ちに不合格と断定することと、工程の異常を調べることは別です。管理限界を超えたら、指定された異常対応と対象品の扱いを確認し、限界線を勝手に広げて帳尻を合わせません。"
       },
-      "images": [],
-      "retainedExistingFigure": true,
+      "images": [
+        {
+          "id": "surface-qc-record",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-record.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-record.svg",
+          "width": 1000,
+          "height": 1120,
+          "sha256": "748b5e9596d71f7ceed78ab4ebf55c8b086f082079245886cf5bd3022421e4aa",
+          "svgSha256": "33e516474869a79975fc19d76de2dc4a2a364866ba3f49954ab613480a55f5dc",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-qc.svg",
+          "viewBox": "35 155 500 560",
+          "typographyOverrides": {},
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        },
+        {
+          "id": "surface-qc-pareto",
+          "paragraphId": "section-2",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-pareto.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-pareto.svg",
+          "width": 1000,
+          "height": 1120,
+          "sha256": "834779095027ac05609b421f829cc5cfa51121a3a2a2a8fc6e19f1b7b55880ef",
+          "svgSha256": "83de6effc4b13f7dc3fe5d403ae433b82cdb6e015ea771f674e5d1173c5f9ff6",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-qc.svg",
+          "viewBox": "550 155 500 560",
+          "typographyOverrides": {
+            "② パレート図：件数と比率": 23,
+            "合計24件／最初の二分類＝75%": 20
+          },
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        },
+        {
+          "id": "surface-qc-histogram",
+          "paragraphId": "section-3",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-histogram.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-histogram.svg",
+          "width": 1000,
+          "height": 1120,
+          "sha256": "7604397aa1ecc1e8be555f217643f337bd163e77fd96899cfc65c7b9bf19be18",
+          "svgSha256": "f7db7a235a55f574b5f2f7ed3088636dfc50d3ac6746ddeb4b8a7561344ee0af",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-qc.svg",
+          "viewBox": "1065 155 500 560",
+          "typographyOverrides": {},
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        },
+        {
+          "id": "surface-qc-control",
+          "paragraphId": "section-4",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-control.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-control.svg",
+          "width": 1000,
+          "height": 1120,
+          "sha256": "6f71633b7ec973282c19d4d1af76069ff5918301f86a50b32eaa64e3dfcce8cd",
+          "svgSha256": "69431d268ecc77e10aacf86f694c0b4d9b0b21df06e47e80bf9cbd55b0cdf429",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-qc.svg",
+          "viewBox": "35 765 500 560",
+          "typographyOverrides": {},
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        },
+        {
+          "id": "surface-qc-scatter",
+          "paragraphId": "section-3",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-scatter.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-scatter.svg",
+          "width": 1000,
+          "height": 1120,
+          "sha256": "203c067f1daf30c606577b52c2d6831ebced43455844fbac99dfdcc9ba60a83e",
+          "svgSha256": "2ceccdd038c900b5e4ac48ba59048e67cb2b13c3f65b90667ce1a07779360ff1",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-qc.svg",
+          "viewBox": "550 765 500 560",
+          "typographyOverrides": {
+            "⑤ 散布図：二量の対応": 23
+          },
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        },
+        {
+          "id": "surface-qc-fishbone",
+          "paragraphId": "section-3",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-fishbone.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-fishbone.svg",
+          "width": 1000,
+          "height": 1120,
+          "sha256": "459d65d0d1ad8e8d3a4bcf47f8393ff19c15f404a92ecdd5076046b1b0a68a8c",
+          "svgSha256": "f0ac46975d658f7314d678c08e5d607b04c6684274808f0d095686cf9f1812a1",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-qc.svg",
+          "viewBox": "1065 765 500 560",
+          "typographyOverrides": {
+            "⑥ 特性要因図：原因候補": 23
+          },
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        }
+      ],
+      "retainedExistingFigure": false,
       "nativeParagraphIds": [
         "section-1",
         "section-2",
@@ -261,7 +357,42 @@
           "section-2",
           "section-3"
         ]
-      ]
+      ],
+      "exactBindingScopes": true,
+      "selectionBoundImages": true,
+      "fullReader": {
+        "sourceHash": "0d2ac0c7e94acd39886ad536f83d38d29fda29b4c60fd1678bf53c04da98c587",
+        "captionJa": "分母、期間、測定量、時間順を確認する。管理限界と仕様限界、原因候補と確認された原因を分ける。",
+        "paragraphIds": [
+          "section-1",
+          "section-2",
+          "section-3",
+          "section-4"
+        ],
+        "expectedParagraphsJa": {
+          "section-1": "学習用記録を「工程：外観確認、管理項目：異物の付着、方法：指定照明と限度見本、頻度：ロット開始時と変更後、異常時：対象品を区分し責任者へ連絡」と設定します。何を、どう、いつ、異常ならどうするかを分けて読みます。確認頻度を作業者の都合で省略したり、記録だけを後でまとめて作ったりしません。この記録は独立した紙上例で、実職場の標準ではありません。",
+          "section-2": "架空の一日分の件数を、異物12件、色むら6件、傷4件、その他2件とします。合計24件なので、異物は50%、異物と色むらまでの累積は75%です。パレート図では件数の棒と累積比率の線を読み分けます。「異物が50%」は今回分類した件数の割合で、全製品の半分が不良という意味ではありません。分母と集計期間を必ず確認します。",
+          "section-3": "ヒストグラムは測定値を区間に分けた度数分布、管理図は時間順の変化、散布図は二つの量の組合せを見る道具です。特性要因図は結果に関わる原因候補を整理しますが、図に書いた候補が実証された原因になったわけではありません。散布図の関連から因果を断定したり、時間順を捨てた分布だけで発生時刻を特定したりしません。",
+          "section-4": "独立した紙上例で、製品仕様を20～30、工程の管理限界を23～26と与えます。測定値26.8は仕様範囲内でも上側管理限界を超えています。製品が直ちに不合格と断定することと、工程の異常を調べることは別です。管理限界を超えたら、指定された異常対応と対象品の扱いを確認し、限界線を勝手に広げて帳尻を合わせません。"
+        },
+        "images": [],
+        "retainedExistingFigure": true,
+        "nativeParagraphIds": [
+          "section-1",
+          "section-2",
+          "section-3",
+          "section-4"
+        ],
+        "expectedNativeParagraphsJa": {
+          "section-1": "学習用記録を「工程：外観確認、管理項目：異物の付着、方法：指定照明と限度見本、頻度：ロット開始時と変更後、異常時：対象品を区分し責任者へ連絡」と設定します。何を、どう、いつ、異常ならどうするかを分けて読みます。確認頻度を作業者の都合で省略したり、記録だけを後でまとめて作ったりしません。この記録は独立した紙上例で、実職場の標準ではありません。",
+          "section-2": "架空の一日分の件数を、異物12件、色むら6件、傷4件、その他2件とします。合計24件なので、異物は50%、異物と色むらまでの累積は75%です。パレート図では件数の棒と累積比率の線を読み分けます。「異物が50%」は今回分類した件数の割合で、全製品の半分が不良という意味ではありません。分母と集計期間を必ず確認します。",
+          "section-3": "ヒストグラムは測定値を区間に分けた度数分布、管理図は時間順の変化、散布図は二つの量の組合せを見る道具です。特性要因図は結果に関わる原因候補を整理しますが、図に書いた候補が実証された原因になったわけではありません。散布図の関連から因果を断定したり、時間順を捨てた分布だけで発生時刻を特定したりしません。",
+          "section-4": "独立した紙上例で、製品仕様を20～30、工程の管理限界を23～26と与えます。測定値26.8は仕様範囲内でも上側管理限界を超えています。製品が直ちに不合格と断定することと、工程の異常を調べることは別です。管理限界を超えたら、指定された異常対応と対象品の扱いを確認し、限界線を勝手に広げて帳尻を合わせません。"
+        },
+        "exactBindingScopes": false,
+        "selectionBoundImages": true,
+        "exactSelectionOnly": true
+      }
     },
     "mfg1-surface-completion37-lesson-007": {
       "sourceHash": "bdbb969c016068e3f9411b17a7b693ade4ff8e18d1cd3c6a3f6dcb29d4d26811",
@@ -296,15 +427,62 @@
       "sourceHash": "e17a09d99688d56b781a52c0523a2c46f31254fed711cf30d62e2d0a1d544956",
       "captionJa": "模型は概念を区別する道具。電荷、移動経路、方式、実設備の条件を混同しない。",
       "paragraphIds": [
+        "section-1",
         "section-2",
-        "section-3"
+        "section-3",
+        "section-4"
       ],
       "expectedParagraphsJa": {
+        "section-1": "局部電池による腐食は、異種金属の接触や表面の状態差と、電解質を含む環境が関係します。電子は金属などの導電経路を通り、液中ではイオンの移動が電荷の移動に関わります。ピンホールがあると水などが基材へ届く経路になります。金属の反応しやすさの並びだけで、全ての環境での腐食速度や酸への溶け方を断定せず、保護皮膜と実際の液・温度も考えます。",
         "section-2": "代表的な多孔質皮膜では、孔を含む領域と基材側の緻密なバリア層を分けて考えます。模式図のセル形状や孔の寸法は全ての実皮膜を同じ形で保証するものではありません。自然酸化膜の説明を、全ての酸・アルカリに耐えて反応しないという意味に広げず、処理皮膜とも区別します。塗装などによる被覆、電気防食、材料自体の耐食性改善も、それぞれ異なる防食の考え方です。",
-        "section-3": "Al→Al³⁺＋3e⁻では電子を失う酸化、2H⁺＋2e⁻→H₂では電子を受け取る還元を読みます。ただし、陽極酸化の模式的な水や酸化物の式を、液中に存在する全化学種や反応機構の完全な説明にはしません。上付きの電荷が欠けた印刷や抽出結果は、そのまま反応式として採用せず、確認済みの資料へ戻ります。電子矢印を液中の電子の流れや実設備の配線図に読み替えません。"
+        "section-3": "Al→Al³⁺＋3e⁻では電子を失う酸化、2H⁺＋2e⁻→H₂では電子を受け取る還元を読みます。ただし、陽極酸化の模式的な水や酸化物の式を、液中に存在する全化学種や反応機構の完全な説明にはしません。上付きの電荷が欠けた印刷や抽出結果は、そのまま反応式として採用せず、確認済みの資料へ戻ります。電子矢印を液中の電子の流れや実設備の配線図に読み替えません。",
+        "section-4": "静電塗装は帯電に関わる力を利用する方法ですが、全設備で基材へ正の電源を直接つなぐという配線指示ではありません。電着塗装にはアニオン方式とカチオン方式があり、品物がどちらの電極になるかは方式で異なります。粉体塗装は粉末状塗料の付着と加熱による塗膜形成、焼付けは塗膜を加熱して硬化させる工程として区別します。樹脂の系列、水性・溶剤系、一液・二液という名称だけで耐久性の順位や混合・温度条件を決めません。"
       },
-      "images": [],
-      "retainedExistingFigure": true,
+      "images": [
+        {
+          "id": "surface-corrosion-paths",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-corrosion-paths.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-corrosion-paths.svg",
+          "width": 1530,
+          "height": 355,
+          "sha256": "b7511f3334e8adb4cd466268ddc0586bf53307e218277c8279d20ed9df5f0ac9",
+          "svgSha256": "cfbc51bfc2fe12a72e5a32fe30cb2745ef35604dcc36336a84786f6815cc1cae",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-corrosion.svg",
+          "viewBox": "35 155 1530 355",
+          "typographyOverrides": {},
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        },
+        {
+          "id": "surface-pinhole-path",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-pinhole-path.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-pinhole-path.svg",
+          "width": 1530,
+          "height": 350,
+          "sha256": "cd8eb8aced28a66226a538ee40715e9a3531f93713ea424b7e285b5e5da88590",
+          "svgSha256": "0d3b1f25909e2034d124c3e4ccba75732f6a28946486bb1b5e04885211af68b8",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-corrosion.svg",
+          "viewBox": "35 525 1530 350",
+          "typographyOverrides": {},
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        },
+        {
+          "id": "surface-anodic-layers",
+          "paragraphId": "section-2",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-anodic-layers.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-anodic-layers.svg",
+          "width": 1530,
+          "height": 450,
+          "sha256": "9dd74d158681e1403ba83af205719f42b33720f3db954a4486ac4e2f614371e1",
+          "svgSha256": "60e6aa2d84df7e2b621dc0cd94c32e4d9874d6bc316066225a562bf214325427",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-corrosion.svg",
+          "viewBox": "35 890 1530 450",
+          "typographyOverrides": {},
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        }
+      ],
+      "retainedExistingFigure": false,
       "nativeParagraphIds": [
         "section-1",
         "section-2",
@@ -319,16 +497,55 @@
       },
       "bindingScopes": [
         [
+          "section-1"
+        ],
+        [
+          "section-1",
+          "section-2"
+        ],
+        [
           "section-2",
           "section-3"
         ],
         [
           "section-4"
-        ],
-        [
-          "section-1"
         ]
-      ]
+      ],
+      "exactBindingScopes": true,
+      "selectionBoundImages": true,
+      "fullReader": {
+        "sourceHash": "e17a09d99688d56b781a52c0523a2c46f31254fed711cf30d62e2d0a1d544956",
+        "captionJa": "模型は概念を区別する道具。電荷、移動経路、方式、実設備の条件を混同しない。",
+        "paragraphIds": [
+          "section-1",
+          "section-2",
+          "section-3",
+          "section-4"
+        ],
+        "expectedParagraphsJa": {
+          "section-1": "局部電池による腐食は、異種金属の接触や表面の状態差と、電解質を含む環境が関係します。電子は金属などの導電経路を通り、液中ではイオンの移動が電荷の移動に関わります。ピンホールがあると水などが基材へ届く経路になります。金属の反応しやすさの並びだけで、全ての環境での腐食速度や酸への溶け方を断定せず、保護皮膜と実際の液・温度も考えます。",
+          "section-2": "代表的な多孔質皮膜では、孔を含む領域と基材側の緻密なバリア層を分けて考えます。模式図のセル形状や孔の寸法は全ての実皮膜を同じ形で保証するものではありません。自然酸化膜の説明を、全ての酸・アルカリに耐えて反応しないという意味に広げず、処理皮膜とも区別します。塗装などによる被覆、電気防食、材料自体の耐食性改善も、それぞれ異なる防食の考え方です。",
+          "section-3": "Al→Al³⁺＋3e⁻では電子を失う酸化、2H⁺＋2e⁻→H₂では電子を受け取る還元を読みます。ただし、陽極酸化の模式的な水や酸化物の式を、液中に存在する全化学種や反応機構の完全な説明にはしません。上付きの電荷が欠けた印刷や抽出結果は、そのまま反応式として採用せず、確認済みの資料へ戻ります。電子矢印を液中の電子の流れや実設備の配線図に読み替えません。",
+          "section-4": "静電塗装は帯電に関わる力を利用する方法ですが、全設備で基材へ正の電源を直接つなぐという配線指示ではありません。電着塗装にはアニオン方式とカチオン方式があり、品物がどちらの電極になるかは方式で異なります。粉体塗装は粉末状塗料の付着と加熱による塗膜形成、焼付けは塗膜を加熱して硬化させる工程として区別します。樹脂の系列、水性・溶剤系、一液・二液という名称だけで耐久性の順位や混合・温度条件を決めません。"
+        },
+        "images": [],
+        "retainedExistingFigure": true,
+        "nativeParagraphIds": [
+          "section-1",
+          "section-2",
+          "section-3",
+          "section-4"
+        ],
+        "expectedNativeParagraphsJa": {
+          "section-1": "局部電池による腐食は、異種金属の接触や表面の状態差と、電解質を含む環境が関係します。電子は金属などの導電経路を通り、液中ではイオンの移動が電荷の移動に関わります。ピンホールがあると水などが基材へ届く経路になります。金属の反応しやすさの並びだけで、全ての環境での腐食速度や酸への溶け方を断定せず、保護皮膜と実際の液・温度も考えます。",
+          "section-2": "代表的な多孔質皮膜では、孔を含む領域と基材側の緻密なバリア層を分けて考えます。模式図のセル形状や孔の寸法は全ての実皮膜を同じ形で保証するものではありません。自然酸化膜の説明を、全ての酸・アルカリに耐えて反応しないという意味に広げず、処理皮膜とも区別します。塗装などによる被覆、電気防食、材料自体の耐食性改善も、それぞれ異なる防食の考え方です。",
+          "section-3": "Al→Al³⁺＋3e⁻では電子を失う酸化、2H⁺＋2e⁻→H₂では電子を受け取る還元を読みます。ただし、陽極酸化の模式的な水や酸化物の式を、液中に存在する全化学種や反応機構の完全な説明にはしません。上付きの電荷が欠けた印刷や抽出結果は、そのまま反応式として採用せず、確認済みの資料へ戻ります。電子矢印を液中の電子の流れや実設備の配線図に読み替えません。",
+          "section-4": "静電塗装は帯電に関わる力を利用する方法ですが、全設備で基材へ正の電源を直接つなぐという配線指示ではありません。電着塗装にはアニオン方式とカチオン方式があり、品物がどちらの電極になるかは方式で異なります。粉体塗装は粉末状塗料の付着と加熱による塗膜形成、焼付けは塗膜を加熱して硬化させる工程として区別します。樹脂の系列、水性・溶剤系、一液・二液という名称だけで耐久性の順位や混合・温度条件を決めません。"
+        },
+        "exactBindingScopes": false,
+        "selectionBoundImages": true,
+        "exactSelectionOnly": true
+      }
     },
     "mfg1-electrical-completion37-lcr": {
       "sourceHash": "bfb4c1708da1b3ede83e0780584195239a6566840612150cf22489d05856c1fb",
@@ -630,15 +847,92 @@
       "sourceHash": "58bc7a539e23c41699f91da7210087a090d741a0a6b331aa2004b2b0efc30c90",
       "captionJa": "測る方式、読む位置、換算条件、指示薬の種類をそろえる。架空の学習用換算を実液へ流用しない。",
       "paragraphIds": [
+        "section-1",
+        "section-2",
         "section-3",
         "section-4"
       ],
       "expectedParagraphsJa": {
+        "section-1": "熱電対式は異種金属による熱起電力、白金抵抗体式は温度に応じた電気抵抗の変化を利用するセンサー方式です。液柱式は液体の膨張による液面の位置を読みます。測る方式と、液を温めたり冷やしたりする装置の役割を分けます。冷却蛇管、槽外の熱交換装置、投入式ヒーターという名称だけでは、実際の材質や耐薬品性、使用可能条件を決められません。",
+        "section-2": "比重計は液に浮かぶ位置から目盛りを読む器具です。比重と濃度の対応は物質の種類、温度、校正条件に依存します。別の液の換算曲線をそのまま使いません。指定された紙上モデルで比重1.10が濃度180g/L、比重1.14が220g/Lと与えられ、間を直線で扱う条件なら、1.12は200g/Lに対応します。この架空モデルを実液の換算表には使いません。",
         "section-3": "資料の比重計例ではメニスカスの上側を読み、透明な液のビューレットやホールピペットの例では下側を標線に合わせています。器具の種類、液の見え方、校正法と指定の読取り方法を確認し、常に上、常に下と暗記しません。視線を指定位置と同じ高さに置き、斜め上や下からの見かけのずれを避けます。",
         "section-4": "フェノールフタレインでは無色から赤色系、メチルオレンジでは赤色系から黄色系、BTBでは黄色・緑色・青色という呈色の違いを学びます。それぞれ変色する範囲が異なるため、無色なら必ず中性、赤色ならどの試薬でも酸性とは判断しません。滴定では反応と終点の範囲に合う指示薬を選び、pH試験紙はその製品の色見本と条件で読みます。"
       },
-      "images": [],
-      "retainedExistingFigure": true,
+      "images": [
+        {
+          "id": "surface-instruments-thermometer",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-thermometer.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-thermometer.svg",
+          "width": 1000,
+          "height": 1120,
+          "sha256": "af549bc77a5e7b3e2905e3ce4ede30fa96d2cfa14431c6d7bb157b2340ea9c5e",
+          "svgSha256": "3078f4b0d3c211099cf4110a17dcb7382f4fb932aa12a04e7f7f4b5e3cb9d647",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-instruments.svg",
+          "viewBox": "35 155 500 560",
+          "typographyOverrides": {},
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        },
+        {
+          "id": "surface-instruments-hydrometer",
+          "paragraphId": "section-3",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-hydrometer.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-hydrometer.svg",
+          "width": 1000,
+          "height": 1120,
+          "sha256": "57731f1036514b18a634664c69fa60e5ad0bbe4695261b22f9b8beb8dc802f72",
+          "svgSha256": "2ec70ae042ad47e10ad79da55fce23a720e077724bd752aa5df30820223c4f96",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-instruments.svg",
+          "viewBox": "550 155 500 560",
+          "typographyOverrides": {},
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        },
+        {
+          "id": "surface-instruments-burette",
+          "paragraphId": "section-3",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-burette.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-burette.svg",
+          "width": 1000,
+          "height": 1120,
+          "sha256": "ea91441f49c3862af6824c84f428616750d0d399ffd1c62169f668353820a346",
+          "svgSha256": "2323d2979bc9b29aa622315a6f19106d90e542694342e231024430fe948a6739",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-instruments.svg",
+          "viewBox": "1065 155 500 560",
+          "typographyOverrides": {
+            "③ ビューレット：下縁の例": 23
+          },
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        },
+        {
+          "id": "surface-instruments-pipette",
+          "paragraphId": "section-3",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-pipette.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-pipette.svg",
+          "width": 1000,
+          "height": 1120,
+          "sha256": "da1336a61e31bf65f91e7a78f53d7e7e4b1438408106d58a244b8c50676d11c7",
+          "svgSha256": "9a0f4afb958d718f14e7edf0ea71ac9cf3380d6136984bc80f0b517b8c6e9594",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-instruments.svg",
+          "viewBox": "35 765 500 560",
+          "typographyOverrides": {},
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        },
+        {
+          "id": "surface-instruments-methods",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-methods.png",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-methods.svg",
+          "width": 1000,
+          "height": 1120,
+          "sha256": "1aadbdf9ab243bd062d27748c591e3cd3a95bea0848308029c6f140106ba2966",
+          "svgSha256": "59ad1f1d640d7b5de35cbfbeed68aea64a429cc9bc8abc54897370140921b57c",
+          "originalSvg": "assets/manufacturing/diagrams/batch37-surface-instruments.svg",
+          "viewBox": "1065 765 500 560",
+          "typographyOverrides": {},
+          "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+        }
+      ],
+      "retainedExistingFigure": false,
       "introducedWeek": 4,
       "nativeParagraphIds": [
         "section-1",
@@ -651,6 +945,125 @@
         "section-2": "比重計は液に浮かぶ位置から目盛りを読む器具です。比重と濃度の対応は物質の種類、温度、校正条件に依存します。別の液の換算曲線をそのまま使いません。指定された紙上モデルで比重1.10が濃度180g/L、比重1.14が220g/Lと与えられ、間を直線で扱う条件なら、1.12は200g/Lに対応します。この架空モデルを実液の換算表には使いません。",
         "section-3": "資料の比重計例ではメニスカスの上側を読み、透明な液のビューレットやホールピペットの例では下側を標線に合わせています。器具の種類、液の見え方、校正法と指定の読取り方法を確認し、常に上、常に下と暗記しません。視線を指定位置と同じ高さに置き、斜め上や下からの見かけのずれを避けます。",
         "section-4": "フェノールフタレインでは無色から赤色系、メチルオレンジでは赤色系から黄色系、BTBでは黄色・緑色・青色という呈色の違いを学びます。それぞれ変色する範囲が異なるため、無色なら必ず中性、赤色ならどの試薬でも酸性とは判断しません。滴定では反応と終点の範囲に合う指示薬を選び、pH試験紙はその製品の色見本と条件で読みます。"
+      },
+      "bindingScopes": [
+        [
+          "section-3",
+          "section-4"
+        ],
+        [
+          "section-1",
+          "section-3"
+        ]
+      ],
+      "exactBindingScopes": true,
+      "selectionBoundImages": true,
+      "fullReader": {
+        "sourceHash": "58bc7a539e23c41699f91da7210087a090d741a0a6b331aa2004b2b0efc30c90",
+        "captionJa": "測る方式、読む位置、換算条件、指示薬の種類をそろえる。架空の学習用換算を実液へ流用しない。",
+        "paragraphIds": [
+          "section-1",
+          "section-2",
+          "section-3",
+          "section-4"
+        ],
+        "expectedParagraphsJa": {
+          "section-1": "熱電対式は異種金属による熱起電力、白金抵抗体式は温度に応じた電気抵抗の変化を利用するセンサー方式です。液柱式は液体の膨張による液面の位置を読みます。測る方式と、液を温めたり冷やしたりする装置の役割を分けます。冷却蛇管、槽外の熱交換装置、投入式ヒーターという名称だけでは、実際の材質や耐薬品性、使用可能条件を決められません。",
+          "section-2": "比重計は液に浮かぶ位置から目盛りを読む器具です。比重と濃度の対応は物質の種類、温度、校正条件に依存します。別の液の換算曲線をそのまま使いません。指定された紙上モデルで比重1.10が濃度180g/L、比重1.14が220g/Lと与えられ、間を直線で扱う条件なら、1.12は200g/Lに対応します。この架空モデルを実液の換算表には使いません。",
+          "section-3": "資料の比重計例ではメニスカスの上側を読み、透明な液のビューレットやホールピペットの例では下側を標線に合わせています。器具の種類、液の見え方、校正法と指定の読取り方法を確認し、常に上、常に下と暗記しません。視線を指定位置と同じ高さに置き、斜め上や下からの見かけのずれを避けます。",
+          "section-4": "フェノールフタレインでは無色から赤色系、メチルオレンジでは赤色系から黄色系、BTBでは黄色・緑色・青色という呈色の違いを学びます。それぞれ変色する範囲が異なるため、無色なら必ず中性、赤色ならどの試薬でも酸性とは判断しません。滴定では反応と終点の範囲に合う指示薬を選び、pH試験紙はその製品の色見本と条件で読みます。"
+        },
+        "images": [
+          {
+            "id": "surface-instruments-thermometer",
+            "paragraphId": "section-1",
+            "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-thermometer.png",
+            "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-thermometer.svg",
+            "width": 1000,
+            "height": 1120,
+            "sha256": "af549bc77a5e7b3e2905e3ce4ede30fa96d2cfa14431c6d7bb157b2340ea9c5e",
+            "svgSha256": "3078f4b0d3c211099cf4110a17dcb7382f4fb932aa12a04e7f7f4b5e3cb9d647",
+            "originalSvg": "assets/manufacturing/diagrams/batch37-surface-instruments.svg",
+            "viewBox": "35 155 500 560",
+            "typographyOverrides": {},
+            "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+          },
+          {
+            "id": "surface-instruments-hydrometer",
+            "paragraphId": "section-2",
+            "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-hydrometer.png",
+            "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-hydrometer.svg",
+            "width": 1000,
+            "height": 1120,
+            "sha256": "57731f1036514b18a634664c69fa60e5ad0bbe4695261b22f9b8beb8dc802f72",
+            "svgSha256": "2ec70ae042ad47e10ad79da55fce23a720e077724bd752aa5df30820223c4f96",
+            "originalSvg": "assets/manufacturing/diagrams/batch37-surface-instruments.svg",
+            "viewBox": "550 155 500 560",
+            "typographyOverrides": {},
+            "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+          },
+          {
+            "id": "surface-instruments-burette",
+            "paragraphId": "section-3",
+            "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-burette.png",
+            "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-burette.svg",
+            "width": 1000,
+            "height": 1120,
+            "sha256": "ea91441f49c3862af6824c84f428616750d0d399ffd1c62169f668353820a346",
+            "svgSha256": "2323d2979bc9b29aa622315a6f19106d90e542694342e231024430fe948a6739",
+            "originalSvg": "assets/manufacturing/diagrams/batch37-surface-instruments.svg",
+            "viewBox": "1065 155 500 560",
+            "typographyOverrides": {
+              "③ ビューレット：下縁の例": 23
+            },
+            "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+          },
+          {
+            "id": "surface-instruments-pipette",
+            "paragraphId": "section-3",
+            "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-pipette.png",
+            "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-pipette.svg",
+            "width": 1000,
+            "height": 1120,
+            "sha256": "da1336a61e31bf65f91e7a78f53d7e7e4b1438408106d58a244b8c50676d11c7",
+            "svgSha256": "9a0f4afb958d718f14e7edf0ea71ac9cf3380d6136984bc80f0b517b8c6e9594",
+            "originalSvg": "assets/manufacturing/diagrams/batch37-surface-instruments.svg",
+            "viewBox": "35 765 500 560",
+            "typographyOverrides": {},
+            "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+          },
+          {
+            "id": "surface-instruments-methods",
+            "paragraphId": "section-1",
+            "assetFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-methods.png",
+            "svgFile": "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-instruments-methods.svg",
+            "width": 1000,
+            "height": 1120,
+            "sha256": "1aadbdf9ab243bd062d27748c591e3cd3a95bea0848308029c6f140106ba2966",
+            "svgSha256": "59ad1f1d640d7b5de35cbfbeed68aea64a429cc9bc8abc54897370140921b57c",
+            "originalSvg": "assets/manufacturing/diagrams/batch37-surface-instruments.svg",
+            "viewBox": "1065 765 500 560",
+            "typographyOverrides": {},
+            "origin": "Source-bounded existing project vector viewport; unchanged diagram geometry and strings; listed font-size-only repairs prevent cropped text clipping"
+          }
+        ],
+        "retainedExistingFigure": false,
+        "introducedWeek": 4,
+        "nativeParagraphIds": [
+          "section-1",
+          "section-2",
+          "section-3",
+          "section-4"
+        ],
+        "expectedNativeParagraphsJa": {
+          "section-1": "熱電対式は異種金属による熱起電力、白金抵抗体式は温度に応じた電気抵抗の変化を利用するセンサー方式です。液柱式は液体の膨張による液面の位置を読みます。測る方式と、液を温めたり冷やしたりする装置の役割を分けます。冷却蛇管、槽外の熱交換装置、投入式ヒーターという名称だけでは、実際の材質や耐薬品性、使用可能条件を決められません。",
+          "section-2": "比重計は液に浮かぶ位置から目盛りを読む器具です。比重と濃度の対応は物質の種類、温度、校正条件に依存します。別の液の換算曲線をそのまま使いません。指定された紙上モデルで比重1.10が濃度180g/L、比重1.14が220g/Lと与えられ、間を直線で扱う条件なら、1.12は200g/Lに対応します。この架空モデルを実液の換算表には使いません。",
+          "section-3": "資料の比重計例ではメニスカスの上側を読み、透明な液のビューレットやホールピペットの例では下側を標線に合わせています。器具の種類、液の見え方、校正法と指定の読取り方法を確認し、常に上、常に下と暗記しません。視線を指定位置と同じ高さに置き、斜め上や下からの見かけのずれを避けます。",
+          "section-4": "フェノールフタレインでは無色から赤色系、メチルオレンジでは赤色系から黄色系、BTBでは黄色・緑色・青色という呈色の違いを学びます。それぞれ変色する範囲が異なるため、無色なら必ず中性、赤色ならどの試薬でも酸性とは判断しません。滴定では反応と終点の範囲に合う指示薬を選び、pH試験紙はその製品の色見本と条件で読みます。"
+        },
+        "exactBindingScopes": false,
+        "selectionBoundImages": true,
+        "exactSelectionOnly": true
       }
     },
     "mfg1-surface-source-guide-electrode-reactions": {
