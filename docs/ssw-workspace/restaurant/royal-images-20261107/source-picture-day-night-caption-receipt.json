@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "sector": "restaurant",
+  "scope": "Active sourcegallery/zoom Japanese captions and native technical diagram paper surfaces across weeks03–06 andRoyal alternates",
+  "baseSourceCommit": "6abc6da4977f083f2ff6f90237eddf29a629c0bb",
+  "status": "SELF_CHECKED_READY_PENDING_COORDINATOR_PERSISTENCE",
+  "problem": "FiveSourcePicture31branchesusedfixednavycaption#173450 onactualnightreading/zoombackground#24221e. Week05footerandweek06technicalnativelabelsalsofixedink withoutconsistentpapersurface.",
+  "change": "Japanese nativecaptions nowuse existingapprovedStudyAppearance.colors.text. Fourtechnicalrenderers get dedicated lightpaper backing aroundtechnicalcontent only; captions stay outside andtheme-aware. Existingpaper-backed measurementcompanions remainunchanged.",
+  "canonicalKnowledgeOrImageChanges": false,
+  "generationCalls": 0,
+  "preservation": {
+    "sourceFigureIdsAndQuizIdentities": true,
+    "japaneseAndTranslationCaptionContent": true,
+    "cropGeometryAndAssetReferences": true,
+    "nativeTechnicalNamesNumbersAndGraphValues": true,
+    "sourceAndCaptionRevisionSelectors": true,
+    "learnerAndExamState": true
+  },
+  "ledgerDependencyCheck": {
+    "ledger": "docs/ssw-workspace/source-coverage-v2/restaurant.json",
+    "currentHeadRecursiveReferenceMatchesToChangedRenderer": 0,
+    "activeDataReferenceMatches": 0,
+    "ledgerChanged": false,
+    "coverageFlagsOrIdsChanged": false
+  },
+  "validation": {
+    "command": "NODE_PATH=<qa-runtime>/node_modules node scripts/restaurant/check-source-picture-appearance.cjs <beforeSourceExtractedFromBaseCommit>",
+    "actualCurrentRowBoundFixtures": [
+      "week03:rst31-hygiene1-fig-temperature-paths",
+      "week04:rst31-hygiene1-fig-general-record-worked",
+      "week05:rst31-cs2-fig-emergency-roles",
+      "week06:rst31-cooking1-fig-machine-gas",
+      "royal:rst31-hygiene1-fig-handwash-motion-atlas"
+    ],
+    "actualTranspiledRNAdapterSSR": "PASSall5activebranches day/night JA+12locales, inline320 andzoom960,captionpalettesourcedfromactualStudyAppearancefile,technicalpaperbacking",
+    "beforeAfterRegression": "Reproducedfixednavycaptionatnightbefore; aftertextmatchesapprovednightpalette. Captioncontentunchangedinalltestedlocales.",
+    "allNeutralQuizIdsRetained": 3,
+    "neutralQuizRegression": "PASS all3neutralquizidentities,crops,andfullSSRmarkupunchangedat320/960day/night;noextra caption,surface oranswertextintroduced.",
+    "diagnosticErrors": 0,
+    "diffCheck": "PASS scoped",
+    "actualPhysicalDeviceTested": false,
+    "browserAdapterVisualAcceptance": false
+  },
+  "fileSha256": {
+    "src/components/restaurant/RestaurantSourcePictures.tsx": "7b8f45483ddd247d2c10142be7103bf2992db3a5862751bb51d716330091cce5",
+    "scripts/restaurant/check-source-picture-appearance.cjs": "b7501f9fa9bcced4321c0fcd823c2317a0a95c0b40889c7e188e834c3c9d97f9"
+  },
+  "beforeRendererSha256": "d891bb2a4c05f5b3385718eb0d777fdda273d52f76a5e0b0864200b521f46872",
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "learnerDurationMeasured": false,
+  "wholeSourceKnowledgeCovered": false,
+  "wholeIllustrationScopeComplete": false
+}
