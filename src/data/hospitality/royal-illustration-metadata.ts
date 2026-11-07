@@ -1,5 +1,35 @@
 // Descriptions of the active replacement pixels; lesson knowledge/revisions stay independent.
 const currentImageAlt:Record<string,Record<string,string>> = {
+  "hotel-restaurant-09": {
+  "ja": "レストラン責任者が調理人と記録を照合し、食材費と人件費を確認する。",
+  "en": "A restaurant supervisor checks records with a chef while reviewing food and labour costs.",
+  "vi": "Quản lý nhà hàng đối chiếu ghi chép với đầu bếp, kiểm tra chi phí thực phẩm và nhân công.",
+  "id": "Penyelia restoran mencocokkan catatan dengan koki sambil meninjau biaya bahan dan tenaga kerja.",
+  "zh-CN": "餐厅主管与厨师核对记录，检查食材和人工成本。",
+  "zh-TW": "餐廳主管與廚師核對紀錄，檢查食材和人力成本。",
+  "hi": "रेस्तराँ पर्यवेक्षक रसोइए के साथ रिकॉर्ड मिलाकर खाद्य और श्रम लागत जाँचता है।",
+  "bn": "রেস্তোরাঁর তত্ত্বাবধায়ক রাঁধুনির সঙ্গে নথি মিলিয়ে খাদ্য ও শ্রম ব্যয় যাচাই করছেন।",
+  "ne": "रेस्टुरेन्ट सुपरभाइजरले भान्सेसँग अभिलेख मिलाएर खाद्य तथा श्रम लागत जाँच्छन्।",
+  "my": "စားသောက်ဆိုင်ကြီးကြပ်သူက စားဖိုမှူးနှင့် မှတ်တမ်းတိုက်စစ်ကာ အစားအစာနှင့်လုပ်အားကုန်ကျစရိတ်ကိုစစ်သည်။",
+  "th": "หัวหน้าร้านอาหารตรวจบันทึกกับเชฟเพื่อทบทวนต้นทุนอาหารและแรงงาน",
+  "km": "អ្នកត្រួតពិនិត្យភោជនីយដ្ឋានផ្ទៀងផ្ទាត់កំណត់ត្រាជាមួយចុងភៅ ដើម្បីពិនិត្យថ្លៃម្ហូបនិងពលកម្ម។",
+  "tl": "Sinusuri ng superbisor at chef ang mga tala tungkol sa gastos sa pagkain at paggawa."
+},
+  "hotel-restaurant-08": {
+  "ja": "ホテルレストランの係員が客の好みを聞き、飲み物の選択肢を説明する。",
+  "en": "A hotel restaurant server asks about guest preferences and explains drink options.",
+  "vi": "Nhân viên nhà hàng khách sạn hỏi sở thích của khách và giải thích lựa chọn đồ uống.",
+  "id": "Petugas restoran hotel menanyakan selera tamu dan menjelaskan pilihan minuman.",
+  "zh-CN": "酒店餐厅员工询问客人喜好，并解释饮品选择。",
+  "zh-TW": "飯店餐廳員工詢問旅客喜好，並解釋飲品選擇。",
+  "hi": "होटल रेस्तराँ कर्मचारी अतिथि की पसंद पूछकर पेय विकल्प समझाता है।",
+  "bn": "হোটেল রেস্তোরাঁর কর্মী অতিথির পছন্দ জেনে পানীয়ের বিকল্প বোঝাচ্ছেন।",
+  "ne": "होटल रेस्टुरेन्ट कर्मचारीले अतिथिको रुचि सोधेर पेयका विकल्प बुझाउँछन्।",
+  "my": "ဟိုတယ်စားသောက်ဆိုင်ဝန်ထမ်းက ဧည့်သည်အကြိုက်ကိုမေးပြီး သောက်စရာရွေးချယ်စရာများကိုရှင်းပြသည်။",
+  "th": "พนักงานร้านอาหารโรงแรมถามความชอบของแขกและอธิบายตัวเลือกเครื่องดื่ม",
+  "km": "បុគ្គលិកភោជនីយដ្ឋានសណ្ឋាគារសួរចំណូលចិត្តភ្ញៀវ ហើយពន្យល់ជម្រើសភេសជ្ជៈ។",
+  "tl": "Tinatanong ng server ang gusto ng bisita at ipinapaliwanag ang pagpipiliang inumin."
+},
   "hotel-restaurant-07": {
   "ja": "レストラン係員が車いすの客本人に希望を伺い、通路とテーブル周囲の広さを確認する。",
   "en": "A restaurant server asks a wheelchair user about their wishes and checks aisle and table space.",

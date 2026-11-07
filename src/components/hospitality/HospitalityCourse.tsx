@@ -1,3 +1,4 @@
+import {HotelFoodCostComparison} from './HotelFoodCostComparison';
 import {HotelMarketSelectionGuide} from './HotelMarketSelectionGuide';
 import type React from 'react';
 import {HotelJapaneseText} from './HotelJapaneseText';
@@ -64,6 +65,7 @@ function Reader({lesson,language,record,disabled,onChange}:{lesson:HotelLesson;l
  {['hotel-restaurant-02','hotel-restaurant-03','hotel-restaurant-04'].includes(lesson.id)&&<HotelMealLayoutGuide lesson={lesson} language={language}/>}
  {lesson.id==='hotel-restaurant-05'&&<HotelFoodHandoffGuide lesson={lesson} language={language}/>}
  {lesson.id==='hotel-planning-07'&&<HotelMarketSelectionGuide lesson={lesson} language={language}/>}
+ {lesson.id==='hotel-restaurant-09'&&<HotelFoodCostComparison lesson={lesson} language={language}/>}
  {lesson.id==='hotel-planning-06'&&<HotelRevenueComparison lesson={lesson} language={language}/>}
  {lesson.id==='hotel-safety-02'&&<HotelSafetyDecisionGuide lesson={lesson} language={show?language:'ja'}/>}
  {lesson.terms.length>0&&heading(t('terms'))}{lesson.terms.map((term,i)=><View key={`${term.ja}:${i}`}>{body(`${term.ja}（${term.reading}）`)}{body(term.meaning)}{translation&&<TranslationText>{translation.terms[i]?.meaning}</TranslationText>}</View>)}

@@ -1,0 +1,13 @@
+import React from 'react';
+import {View,Text,StyleSheet} from 'react-native';
+import type {HotelLesson} from '../../data/hospitality/types';
+import {loadHotelTranslation} from '../../data/hospitality/translation-loaders';
+export const HOTEL_FOOD_COST_REVISION='7cbc7c26d133daf5ff1c8c1c59d1cfcee594e8d5e0ea3dfe175b0cfb4bcc0fba';
+export function hotelFoodCostValues(sales:number,food:number,labour:number){if(sales<=0)return null;return {foodRate:food/sales*100,flRate:(food+labour)/sales*100,foodPart:food/sales,labourPart:labour/sales};}
+export function HotelFoodCostComparison({lesson,language}:{lesson:HotelLesson;language:string}){
+ if(lesson.id!=='hotel-restaurant-09'||lesson.revision!==HOTEL_FOOD_COST_REVISION)return null;
+ const material=language==='ja'?lesson:loadHotelTranslation(lesson.id,language,lesson.revision);if(!material)return null;
+ const v=hotelFoodCostValues(2000000,640000,520000)!;
+ return <View testID="hotel-restaurant-09-native-cost-comparison" style={s.root}><Text style={s.title}>{material.illustration.caption}</Text><Text selectable style={s.formula}>2,000,000 JPY = 100%</Text>{['hotel-restaurant-09-s2','hotel-restaurant-09-s3'].map((id,index)=>{const section=material.sections.find(x=>x.id===id);return section?<View key={id} style={s.card}><Text style={s.title}>{section.title}</Text><Text selectable style={s.formula}>{index===0?'640,000 ÷ 2,000,000 × 100 = 32%':'(640,000 + 520,000) ÷ 2,000,000 × 100 = 58%'}</Text>{index===1&&<Text selectable style={s.formula}>58% = 0.58</Text>}<View style={s.bar}><View style={[s.food,{width:`${v.foodRate}%`}]}/>{index===1&&<View style={[s.labour,{width:`${v.labourPart*100}%`}]}/>}</View><Text style={s.text}>{section.body}</Text></View>:null;})}{['hotel-restaurant-09-s1','hotel-restaurant-09-s4'].map(id=>{const section=material.sections.find(x=>x.id===id);return section?<View key={id} style={s.card}><Text style={s.title}>{section.title}</Text><Text style={s.text}>{section.body}</Text></View>:null;})}</View>;
+}
+const s=StyleSheet.create({root:{width:'100%',gap:12,padding:12,marginVertical:16,backgroundColor:'#faf8f1',borderRadius:8},title:{fontSize:18,lineHeight:28,fontWeight:'700',color:'#243c50'},text:{fontSize:14,lineHeight:23,color:'#243c50'},formula:{fontSize:16,lineHeight:27,color:'#204f70',flexShrink:1},card:{width:'100%',gap:10,padding:10,borderWidth:1,borderColor:'#a9bcc2',borderRadius:6},bar:{width:'100%',height:32,flexDirection:'row',backgroundColor:'#dce4e8',borderWidth:1,borderColor:'#a9bcc2'},food:{height:'100%',backgroundColor:'#31546d'},labour:{height:'100%',backgroundColor:'#b38b4f'}});
