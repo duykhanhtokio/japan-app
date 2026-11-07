@@ -20,4 +20,10 @@ export const foodManagementTeachingData={
  productivity:{standard:{people:3,hours:2,outputKg:180},actual:{people:4,hours:2,outputKg:200}},
  progress:{actualKg:[80,85,75,50],planKg:[70,70,70,70]},
 };
-export function foodManagementVisualsFor(lesson:FoodManufacturingLesson){return foodManagementVisuals.filter(v=>v.lessonId===lesson.id&&v.sourceHash===lesson.sourceHash);}
+/** A technical figure must retain its exact current caption; never substitute an activity for a missing paragraph. */
+function hasManagementCaption(lesson:FoodManufacturingLesson,field:string){
+ const nonempty=(value:unknown)=>typeof value==='string'&&value.trim().length>0;
+ if(field==='activityJa')return nonempty(lesson.activityJa);
+ return lesson.paragraphs.some(p=>field===`paragraphs.${p.id}`&&nonempty(p.titleJa)&&nonempty(p.textJa));
+}
+export function foodManagementVisualsFor(lesson:FoodManufacturingLesson){return foodManagementVisuals.filter(v=>v.lessonId===lesson.id&&v.sourceHash===lesson.sourceHash&&hasManagementCaption(lesson,v.captionField));}
