@@ -1,7 +1,8 @@
+import {AgricultureImageRuby} from './AgricultureImageRuby';
 import localeData from '@/data/agriculture/recognition-image-locales.json';
 import {FlowerLegendFigure} from './FlowerLegendFigure';
 import {CropCalendarFigure} from './CropCalendarFigure';
-import {StyleSheet,Text,View,type ImageSourcePropType} from 'react-native';
+import {StyleSheet,Text,View,type ImageSourcePropType,type StyleProp,type TextStyle} from 'react-native';
 import {ZoomableFigure} from './ZoomableFigure';
 import data from '@/data/agriculture/recognition-images.json';
 
@@ -233,16 +234,16 @@ export function recognitionImageTranslation(item:RecognitionImage,lessonId:strin
 
 export function RecognitionImages({lessonId,lessonSourceHash,colors,level,language='ja',showTranslation=false,lessonRevision}:{lessonId:string;lessonSourceHash:string;colors:Colors;level?:string;language?:string;showTranslation?:boolean;lessonRevision?:string}) {
  const visible=images.filter(item=>matchesLesson(item,lessonId,lessonSourceHash,level));
- return <>{visible.map(item=>{const t=showTranslation?recognitionImageTranslation(item,lessonId,lessonSourceHash,lessonRevision,language):null;return <View key={item.id} testID={item.id} style={[s.figure,{backgroundColor:colors.translation,borderColor:colors.border}]}>
-  <Text style={[s.title,{color:colors.translationText}]}>{item.titleJa}</Text>
+ return <>{visible.map(item=>{const t=showTranslation?recognitionImageTranslation(item,lessonId,lessonSourceHash,lessonRevision,language):null;const ruby=(field:string,text:string,style:StyleProp<TextStyle>)=><AgricultureImageRuby imageId={item.id} assetSha256={item.assetSha256||''} lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} field={field} text={text} style={style} color={colors.translationText}/>;return <View key={item.id} testID={item.id} style={[s.figure,{backgroundColor:colors.translation,borderColor:colors.border}]}>
+  {ruby('title',item.titleJa,[s.title,{color:colors.translationText}])}
   {!!t&&<Text testID={`${item.id}-localized-title`} style={[s.title,{color:colors.translationText}]}>{t.title}</Text>}
   {item.id==='agr-f40-general-cropping-example-flow'?<CropCalendarFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language={language} showTranslation={showTranslation} includeMetadata={false} colors={colors}/>:item.id==='agr-f40-general-flower-legend-reader'?<FlowerLegendFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} colors={colors}/>:<ZoomableFigure source={assets[item.assetKey]} width={item.width} height={item.height} altJa={t?.alt||item.altJa} testID={item.id} colors={colors} allowExpandedView={item.allowExpandedView}/>}
-  {!!item.labelsJa?.length&&<View style={{gap:4}}>{item.labelsJa.map((label,index)=><Text key={`${index}-${label}`} style={[s.body,{color:colors.translationText}]}>{label}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`}>{'\n'}{t?.labels?.[index]}</Text>}</Text>)}</View>}
+  {!!item.labelsJa?.length&&<View style={{gap:4}}>{item.labelsJa.map((label,index)=><View key={`${index}-${label}`}>{ruby(`label:${index}`,label,[s.body,{color:colors.translationText}])}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`} style={[s.body,{color:colors.translationText}]}>{t.labels[index]}</Text>}</View>)}</View>}
   <Text style={[s.label,{color:colors.translationText}]}>観察の手掛かり</Text>
-  <Text style={[s.body,{color:colors.translationText}]}>{item.observationJa}</Text>
+  {ruby('observation',item.observationJa,[s.body,{color:colors.translationText}])}
   {!!t&&<Text testID={`${item.id}-localized-observation`} style={[s.body,{color:colors.translationText}]}>{t.observation}</Text>}
   <Text style={[s.label,{color:colors.translationText}]}>見分けるときの限界</Text>
-  <Text style={[s.body,{color:colors.translationText}]}>{item.limitJa}</Text>
+  {ruby('limit',item.limitJa,[s.body,{color:colors.translationText}])}
   {!!t&&<Text testID={`${item.id}-localized-limit`} style={[s.body,{color:colors.translationText}]}>{t.limit}</Text>}
  </View>;})}</>;
 }
