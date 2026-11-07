@@ -419,6 +419,21 @@ const currentImageAlt:Record<string,Record<string,string>> = {
     "th": "หัวหน้ารับฟังรายงาน ตรวจบันทึก และแจ้งแนวทางรับมือกับการปรับปรุงให้ทีมทราบ",
     "km": "អ្នកត្រួតពិនិត្យទទួលរបាយការណ៍ពីបុគ្គលិក ពិនិត្យកំណត់ត្រា ហើយចែករំលែកវិធីដោះស្រាយនិងកែលម្អជាមួយក្រុម។",
     "tl": "Tumatanggap ang superbisor ng ulat, nagsusuri ng tala, at ibinabahagi sa pangkat ang pagtugon at pagpapabuti."
+  },
+  "hotel-safety-02": {
+    "ja": "ホテルの館内訓練で、手引きを持つ指導者が非常階段への経路を示し、従業員が確認する。初期消火の限界と避難条件は、下の模式図と文字で別に示します。",
+    "en": "During a hotel drill, an instructor with a manual shows staff the route to a stairwell. Initial-firefighting limits and evacuation conditions are shown separately in the schematic guide below.",
+    "vi": "Trong buổi diễn tập khách sạn, người hướng dẫn cầm tài liệu chỉ đường tới cầu thang để nhân viên kiểm tra. Giới hạn chữa cháy ban đầu và điều kiện thoát nạn được nêu riêng trong sơ đồ và chữ bên dưới.",
+    "id": "Dalam latihan hotel, instruktur membawa panduan dan menunjukkan jalur ke tangga untuk diperiksa staf. Batas pemadaman awal serta kondisi evakuasi dijelaskan terpisah pada skema dan teks di bawah.",
+    "zh-CN": "酒店演练中，指导人员拿着手册，向员工指出通往楼梯的路线。初期灭火的限度与疏散条件在下方示意图及文字中另行说明。",
+    "zh-TW": "旅館演練中，指導人員拿著手冊，向員工指出通往樓梯的路線。初期滅火的限度與疏散條件在下方示意圖及文字中另行說明。",
+    "hi": "होटल अभ्यास में पुस्तिका लिए प्रशिक्षक कर्मचारियों को सीढ़ियों का मार्ग दिखाता है। प्रारंभिक अग्निशमन की सीमा और निकासी की शर्तें नीचे के चित्र व पाठ में अलग दी गई हैं।",
+    "bn": "হোটেলের মহড়ায় নির্দেশিকা হাতে প্রশিক্ষক কর্মীদের সিঁড়ির পথ দেখাচ্ছেন। প্রাথমিক অগ্নিনির্বাপণের সীমা ও বেরিয়ে যাওয়ার শর্ত নিচের ধারণামূলক চিত্র ও পাঠ্যে আলাদা দেখানো হয়েছে।",
+    "ne": "होटलको अभ्यासमा पुस्तिका लिएका प्रशिक्षकले कर्मचारीलाई भर्‍याङतर्फको बाटो देखाउँछन्। सुरुवाती आगो निभाउने सीमा र निस्कने सर्त तलका अवधारणात्मक चित्र र पाठमा छुट्टै छन्।",
+    "my": "ဟိုတယ်လေ့ကျင့်မှုတွင် လမ်းညွှန်စာအုပ်ကိုင်ထားသူက ဝန်ထမ်းများအား လှေကားသို့ သွားရာလမ်းကို ပြနေသည်။ ကနဦးမီးငြှိမ်းသတ်မှုအကန့်အသတ်နှင့် ထွက်ခွာရမည့်အခြေအနေများကို အောက်ပါသဘောတရားပုံနှင့်စာသားတွင် သီးခြားပြထားသည်။",
+    "th": "ในการซ้อมของโรงแรม ผู้สอนถือคู่มือและชี้ทางไปบันไดให้พนักงานตรวจสอบ ขอบเขตการดับไฟระยะแรกและเงื่อนไขการอพยพแสดงแยกในภาพแนวคิดกับข้อความด้านล่าง",
+    "km": "ក្នុងការហ្វឹកហាត់សណ្ឋាគារ អ្នកបង្ហាត់កាន់សៀវភៅណែនាំបង្ហាញផ្លូវទៅជណ្តើរឱ្យបុគ្គលិកពិនិត្យ។ ដែនកំណត់នៃការពន្លត់ដំបូងនិងលក្ខខណ្ឌជម្លៀសបង្ហាញដោយឡែកក្នុងរូបសង្ខេបនិងអក្សរខាងក្រោម។",
+    "tl": "Sa pagsasanay sa hotel, may manwal na itinuturo ng tagapagsanay sa kawani ang daan patungo sa hagdan. Hiwalay na ipinapakita sa gabay sa ibaba ang limitasyon ng paunang pag-apula at kondisyon ng paglikas."
   }
 };
 export function hotelIllustrationAlt(id:string,language:string,fallback:string):string {

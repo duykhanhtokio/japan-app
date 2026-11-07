@@ -5,6 +5,7 @@ import {HotelPracticeFloorplan} from './HotelPracticeFloorplan';
 import {HotelRevenueExample} from './HotelRevenueExample';
 import {HotelFoodHandoffGuide} from './HotelFoodHandoffGuide';
 import {HotelMealLayoutGuide} from './HotelMealLayoutGuide';
+import {HotelSafetyDecisionGuide} from './HotelSafetyDecisionGuide';
 import {HotelRevenueComparison} from './HotelRevenueComparison';
 import {HotelServiceVisualGuide} from './HotelServiceVisualGuide';
 import {HotelHospitalityRoleGuide} from './HotelHospitalityRoleGuide';
@@ -64,6 +65,7 @@ function Reader({lesson,language,record,disabled,onChange}:{lesson:HotelLesson;l
  {lesson.id==='hotel-restaurant-05'&&<HotelFoodHandoffGuide lesson={lesson} language={language}/>}
  {lesson.id==='hotel-planning-07'&&<HotelMarketSelectionGuide lesson={lesson} language={language}/>}
  {lesson.id==='hotel-planning-06'&&<HotelRevenueComparison lesson={lesson} language={language}/>}
+ {lesson.id==='hotel-safety-02'&&<HotelSafetyDecisionGuide lesson={lesson} language={show?language:'ja'}/>}
  {lesson.terms.length>0&&heading(t('terms'))}{lesson.terms.map((term,i)=><View key={`${term.ja}:${i}`}>{body(`${term.ja}（${term.reading}）`)}{body(term.meaning)}{translation&&<TranslationText>{translation.terms[i]?.meaning}</TranslationText>}</View>)}
  {lesson.example.situation&&heading(hospitalityLabel(language,2))}{body(lesson.example.situation)}{lesson.example.steps.map((step,i)=><View key={i}>{body(`${i+1}.`)}{body(step)}{translation&&<TranslationText>{translation.example.steps[i]}</TranslationText>}</View>)}{translation&&<TranslationText>{translation.example.situation}</TranslationText>}
  {heading(t('activity'))}{body(lesson.practice.prompt)}{translation&&<TranslationText>{translation.practice.prompt}</TranslationText>}
