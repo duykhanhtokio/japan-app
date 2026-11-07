@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "reviewedBaseline": "eae1100f07ca351119c9674cb1b12c6a47f00177",
+  "readyPaths": [
+    "src/data/agriculture/daily-controlled-native-support.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/daily-soil-scales-controlled-locales-readings-qa.json"
+  ],
+  "scope": "Two actual soil pH/particle-ratio technical fallback charts across five current lessons, source-bound JA+12 title/caption/alt and exact burnt-label accessible legend, whole-field Japanese readings. No generic lesson prose, no quiz changes, no raster or geometry changes.",
+  "newHanFields": 12,
+  "JA12Fields": 14,
+  "translatedTargets": 168,
+  "sourceProof": [
+    {
+      "kind": "ph-axis",
+      "lessonIds": [
+        "agr-soil-detail-crop-ph-table",
+        "agr-fruit-detail-ph-columns",
+        "agr-fruit-detail-ph-groups-2",
+        "agr-f40-soil-source-comparisons"
+      ],
+      "assetSnapshot": {
+        "assetPath": "assets/agriculture/daily-learning-20261031/ph-axis.png",
+        "assetSha256": "0ffe14d183ca0ffcf5e011976bfa02e5ffae54b985aac00e6de5dae8953fcf4a",
+        "width": 1160,
+        "height": 660
+      },
+      "actualHanFields": 7,
+      "localeFieldCount": 8
+    },
+    {
+      "kind": "soil-fraction",
+      "lessonIds": [
+        "agr-par11-soil-clay-percentage"
+      ],
+      "assetSnapshot": {
+        "assetPath": "assets/agriculture/daily-learning-20261031/soil-fraction.png",
+        "assetSha256": "7852e844c302b7e5319096769a0c339be13821cdc15250bc28ef781aa0719a12",
+        "width": 1160,
+        "height": 660
+      },
+      "actualHanFields": 5,
+      "localeFieldCount": 6
+    }
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseAccepted": false,
+  "proofLimits": [
+    "Actual RNW full Daily child renders using immutable fresh tracked dependencies; no full app or native-device acceptance.",
+    "Raster Japanese remains unchanged. Adjacent source-bound native legends supply accessible localized readings and interpretation."
+  ],
+  "phoneticReview": [
+    "酸性側さんせいがわ; アルカリ性側せいがわ suffix; 中性ちゅうせい, 尺度しゃくど, 粒径りゅうけい, 粘土ねんど, 質量百分率しつりょうひゃくぶんりつ.",
+    "Exact whole-field review only; no numeric counter or proper-name inference."
+  ],
+  "invariants": {
+    "pHNeutral": 7,
+    "pHTicks": [
+      0,
+      2,
+      4,
+      6,
+      7,
+      8,
+      10,
+      12,
+      14
+    ],
+    "noPFOrECScale": true,
+    "noCropOptimumInferred": true,
+    "particleCountAndAreaNotMassPercentage": true,
+    "soilPictureNotMeasuredFraction": true
+  },
+  "tests": {
+    "status": "PASS",
+    "actualFieldContexts": 59,
+    "negativeReadingGuards": 944,
+    "actual13LocaleDailyFullChildRoutes": 117,
+    "hiddenTranslationRoutes": 117,
+    "ChineseSameHanPlain": 18,
+    "fullJAAssetWholeImageAndNativeRejects": 54,
+    "partialCaptionScopeChecks": 18,
+    "strictActualCalleeGraph": "PASS zero diagnostics; actual callee plus import graph/JSON and extracted caller JSX, narrow ambient leaf declarations, not full app",
+    "commands": [
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-daily-soil-scales.cjs",
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-daily-soil-scales-types.cjs"
+    ]
+  },
+  "scopeNotes": [
+    "Five lessons, nine level-contexts. Four pH source lessons stay distinct; f40 source-comparison chart requires its actual p3 (two source classification descriptions not conflated).",
+    "All existing registry entries preserved exactly; two current asset SHA verified from immutable baseline bytes.",
+    "Adjacent exact-source legend text mirrors all meaningful Japanese burnt labels, preserving pH0..14 scale and neutral7; no in-bitmap ruby claim."
+  ]
+}
