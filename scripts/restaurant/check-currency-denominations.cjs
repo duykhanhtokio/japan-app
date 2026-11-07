@@ -12,5 +12,7 @@ for(const b of data.bindings){
  for(const mutation of [{quizSafe:true},{cropBox:{x:0,y:0,width:10,height:10}},{sourceHash:'0'.repeat(64)},{captionJa:'changed caption'}]){const changed={...figure,...mutation};assert.equal(f.restaurantCurrencyDenomination(changed),null);assert.equal(f.restaurantCurrencyLabel(changed,'設問の図'),'設問の図');neutral++;}
  const old=canonical.captionJa;canonical.captionJa='changed current canonical caption';assert.equal(f.restaurantCurrencyDenomination(figure),null);canonical.captionJa=old;neutral++;
 }
-const other=packs.lessons[data.lessonId].figures.find(x=>!data.bindings.some(b=>b.figure.id===x.id));assert.equal(f.restaurantCurrencyDenomination(other),null);
-assert.equal(data.bindings.length,6);console.log(`PASS currency reader identification: ${current} exactfigure/locale cases; ${neutral} quiz/crop/stale cases remain neutral; other note unchanged`);
+const canonicalIds=packs.lessons[data.lessonId].figures.map(x=>x.id).sort(),boundIds=data.bindings.map(b=>b.figure.id).sort();
+assert.deepEqual(boundIds,canonicalIds,'Every current official currency face must have exactly one identification binding');
+const other=Object.values(packs.lessons).flatMap(row=>row.figures).find(x=>!data.bindings.some(b=>b.figure.id===x.id));assert(other,'Need an unrelated canonical teaching figure');assert.equal(f.restaurantCurrencyDenomination(other),null);
+console.log(`PASS currency reader identification: ${current} exactfigure/locale cases; ${neutral} quiz/crop/stale cases remain neutral; other note unchanged`);

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "scope": "Current exported Kaigo instructional-image family inventory; evidence reconciliation, no new pixel review or whole-sector acceptance inferred",
+  "baseline": "6303986ed040a7d7e1d870a1c0d0ef2cb6438abb",
+  "families": [
+    {
+      "family": "Scheduled DayReading",
+      "scope": "176 days/26 weeks; includes context, technical, anatomy and inline section figures",
+      "imageOccurrences": 209,
+      "uniqueEncodedAssets": 152,
+      "sourceBoundFigureUses": 29,
+      "inlineBindings": 4,
+      "evidence": "ROYAL_COORDINATED_ACTIVE_READER_CENSUS_20261107.json plus named week01–26 source/pixel receipts",
+      "limits": "Census mechanical counts alone are not pixel review; retain separate original weekly evidence"
+    },
+    {
+      "family": "MockExam",
+      "forms": 12,
+      "skillsForms": 6,
+      "japaneseForms": 6,
+      "bindings": 30,
+      "encodedAssets": 29,
+      "nativeTables": 1,
+      "proof": "ROYAL_MOCK_VISUAL_AUDIT_20261107.json currentOwnerAudit explicitly records all29 active encoded pixels opened and all30 effective public questions/options/rationales read; supersedes earlier contact-sheet-only screening",
+      "retainedRatherThanRepeated": true
+    },
+    {
+      "family": "WeeklyAssessment",
+      "questions": 687,
+      "imageFields": [],
+      "evidence": "Actual current WeeklyKaigo assessment branch plus persisted census"
+    },
+    {
+      "family": "Glossary/technical legacy gallery",
+      "active": false,
+      "reason": "KnowledgeFigure/LessonIllustration/term reference branches belong to unexported LegacyKaigoCourse; exported KaigoCourse invokes WeeklyKaigo. Active technical figures are included in DayReading above."
+    }
+  ],
+  "mockReceiptReconciliation": {
+    "originalRegistrySha256": "427eab3a4550c24927eed30ef0b15e73da779f7c2a12e8392e52ebac22b3b158",
+    "currentRegistrySha256": "aa04c847ceeaab33396a7048b294193709901e3174d94c9143512a5a13b8bb6c",
+    "onlyChangedRows": [
+      "s03-night",
+      "s03-privacy"
+    ],
+    "explainingCommit": "a81894df2c3f156b4bd58f2152fdcc42ffe4d1cf",
+    "change": "Night B y73→79.2; privacy C(57,54)→(64,54.3); object marker alignment only",
+    "retainedProof": "ROYAL_MOCK_THREE_ASSET_PIXEL_GUARD_RECONCILIATION_20261107.json",
+    "otherFourRuntimeInputHashesMatchOriginalCensus": true
+  },
+  "newImageryGenerated": false,
+  "unnecessaryDuplicateReviewPerformed": false,
+  "newConcreteDefectEstablished": false,
+  "wholeKaigoAccepted": false,
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false
+}
