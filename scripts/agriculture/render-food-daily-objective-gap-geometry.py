@@ -51,11 +51,15 @@ def layout(e,x,y,w):
  if s.get('flex-direction')=='row':
   groups=[[]];used=0
   for c in children:
-   basis=num(style(c),'flex-basis',inner)
-   if groups[-1] and used+gap+basis>inner:groups.append([]);used=0
+   basis=num(style(c),'flex-basis',num(style(c),'width',inner))
+   if s.get('flex-wrap')=='wrap' and groups[-1] and used+gap+basis>inner:groups.append([]);used=0
    groups[-1].append((c,min(inner,basis)));used+=min(inner,basis)+(gap if used else 0)
   for group in groups:
-   total=sum(b for _,b in group)+gap*(len(group)-1);extra=max(0,inner-total);grow=sum(num(style(c),'flex-grow') for c,_ in group);cx=x+pl+bw;line=[]
+   total=sum(b for _,b in group)+gap*(len(group)-1)
+   if total>inner:
+    shrink=sum(b*num(style(c),'flex-shrink') for c,b in group)
+    if shrink:group=[(c,max(1,b-(total-inner)*b*num(style(c),'flex-shrink')/shrink)) for c,b in group];total=sum(b for _,b in group)+gap*(len(group)-1)
+   extra=max(0,inner-total);grow=sum(num(style(c),'flex-grow') for c,_ in group);cx=x+pl+bw;line=[]
    for c,b in group:
     cw=b+(extra*num(style(c),'flex-grow')/grow if grow else 0);v=layout(c,cx,cy,cw);line.append(v);cx+=cw+gap
    height=max((v['h'] for v in line),default=0)
@@ -72,6 +76,8 @@ def draw(n,p):
  if s.get('background-color'):p.rectangle([x,y,x+w,y+h],fill=s['background-color'])
  if num(s,'border-width'):p.rounded_rectangle([x,y,x+w,y+h],radius=num(s,'border-radius')*scale,outline=s.get('border-color','#B38432'),width=max(1,round(num(s,'border-width')*scale)))
  if num(s,'border-bottom-width'):p.line([x,y+h,x+w,y+h],fill=s.get('border-color','#B38432'),width=max(1,round(num(s,'border-bottom-width')*scale)))
+ if num(s,'border-top-width'):p.line([x,y,x+w,y],fill=s.get('border-color','#B38432'),width=max(1,round(num(s,'border-top-width')*scale)))
+ if num(s,'border-left-width'):p.line([x,y,x,y+h],fill=s.get('border-color','#B38432'),width=max(1,round(num(s,'border-left-width')*scale)))
  if n['tag']=='span':
   for i,l in enumerate(n['lines']):
    xx=x;yy=y+i*n['lineheight']*scale
@@ -79,10 +85,10 @@ def draw(n,p):
     f=font(n['font'],m);p.text((xx,yy),t,font=f,fill=s.get('color','#173750'),anchor='lt');xx+=f.getlength(t)
  for c in n['children']:draw(c,p)
 results=[]
-for html in [Q/'1-vi-375.html',Q/'2-vi-375.html',Q/'2-my-375.html',Q/'2-vi-1440.html']:
+for html in [Q/'1-vi-375.html',Q/'2-vi-375.html',Q/'2-my-375.html',Q/'2-vi-1440.html',Q/'3-vi-375.html',Q/'3-vi-1440.html',Q/'4-vi-375.html',Q/'4-my-375.html',Q/'4-vi-1440.html',Q/'5-vi-375.html',Q/'5-vi-1440.html']:
  raw=html.read_text();width=int(re.search(r'width:(\d+)px',raw)[1]);e=ET.fromstring(raw).find('body')[0];tree=layout(e,12,12,width-24);height=round(tree['h']+24);im=Image.new('RGB',(width*scale,height*scale),'#FFFAEF');draw(tree,ImageDraw.Draw(im));out=html.with_suffix('.geometry.png');im.save(out)
  # Separate scroll-view slices aid actual inspection without claiming browser screenshots.
  for i,top in enumerate(range(0,im.height,2400)):im.crop((0,top,im.width,min(im.height,top+2400))).save(html.with_name(html.stem+f'.slice-{i+1}.png'))
  results.append({'actualSSRInput':html.name,'geometryOutput':out.name,'width':width,'contentHeight':height,'method':'RN structural-host source styles, explicit flex-wrap/line-height/font measurement approximation; not browser/native rendering'})
 assert not overflow,overflow
-(Q/'geometry-result.json').write_text(json.dumps({'PASS':True,'textOverflowCount':0,'cases':results},indent=2)+'\n');print('PASS4 faithful source-driven geometry previews;0 measured text overflow;not browser screenshots')
+(Q/'geometry-result.json').write_text(json.dumps({'PASS':True,'textOverflowCount':0,'cases':results},indent=2)+'\n');print('PASS11 faithful source-driven geometry previews;0 measured text overflow;not browser screenshots')

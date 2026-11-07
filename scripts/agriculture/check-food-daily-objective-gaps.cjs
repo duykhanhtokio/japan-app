@@ -50,10 +50,12 @@ assert.equal(api.isFoodDailyObjectiveGapContext('unknown'),false);
 for(const [index,id] of ids.entries()){
  const e=data.entries[id],l=content.lessons.find(l=>l.id===id),good=[id,l.sourceHash,l.revision,e.scopeLevels[0]];
  assert.deepEqual(e.lessonSnapshot,l);
- for(const language of ['ja',...languages]){
+ const headLessons=JSON.parse(cp.execFileSync('git',['show','HEAD:src/data/agriculture/lessons.ja.json'],{cwd:root,encoding:'utf8',maxBuffer:32*1024*1024}));assert.deepEqual(e.lessonSnapshot,headLessons.lessons.find(x=>x.id===id));
+ for(const lang of languages){const exact=JSON.parse(cp.execFileSync('git',['show',`HEAD:src/data/agriculture/translations/${lang}.json`],{cwd:root,encoding:'utf8',maxBuffer:32*1024*1024}));assert.deepEqual(e.canonicalTranslations[lang],exact[id]);}
+ for(const scopeLevel of e.scopeLevels)for(const language of ['ja',...languages]){
   assert(api.foodDailyObjectiveGapLabels(...good,language));
   for(const showTranslation of [false,true])for(const [width,height] of [[375,812],[812,375],[768,1024],[1440,900]]){
-   const html=server.renderToStaticMarkup(React.createElement(api.FoodDailyObjectiveGapSupport,{lessonId:id,lessonSourceHash:l.sourceHash,lessonRevision:l.revision,level:good[3],language,showTranslation,colors}));
+   const html=server.renderToStaticMarkup(React.createElement(api.FoodDailyObjectiveGapSupport,{lessonId:id,lessonSourceHash:l.sourceHash,lessonRevision:l.revision,level:scopeLevel,language,showTranslation,colors}));
    assert(html.includes(`food-daily-gap-${e.kind}`));
    assert.equal((html.match(/data-testid="gap-source-paragraph"/g)||[]).length,l.paragraphs.length);
    const count=(html.match(/data-testid="gap-translated-paragraph"/g)||[]).length;
@@ -63,20 +65,22 @@ for(const [index,id] of ids.entries()){
     for(const key of ['return','treatment'])assert(html.includes(`gap-node-${key}`));
     assert(html.indexOf('gap-node-bed')<html.indexOf('gap-node-return'));
     assert(!html.includes('→')); // vertical arrows preserve order through narrow wrapping
-   }else{
+   }else if(e.kind==='conditional'){
     assert(html.includes('gap-branch-removeAll')&&html.includes('gap-branch-retainSome'));
     assert.equal((html.match(/gap-label-weakYoung/g)||[]).length,1);
-   }
+   }else if(e.kind==='matrix'){assert.equal((html.match(/gap-matrix-row-/g)||[]).length,6);}
+   else if(e.kind==='sequence'){assert(html.includes('gap-two-cut-relation'));assert(html.indexOf('gap-label-separate')<html.indexOf('gap-label-trim'));assert(html.includes('gap-ripening-harvest')&&html.includes('gap-ripening-postRipen'));}
+   else {assert.equal((html.match(/gap-format-/g)||[]).length,3);}
    if(['vi','my'].includes(language)&&showTranslation&&[375,1440].includes(width))fs.writeFileSync(path.join(out,`${index+1}-${language}-${width}.html`),`<html><body><div style="width:${width}px">${html}</div></body></html>`);
    renders++;
   }
  }
- for(const args of [[id,'stale',l.revision,good[3]],[id,l.sourceHash,'stale',good[3]],[id,l.sourceHash,undefined,good[3]],[id,l.sourceHash,l.revision,'1'],['unknown',...good.slice(1)],[...good,[]]]){assert.equal(api.foodDailyObjectiveGapEntry(...args),null);rejects++;}
+ for(const args of [[id,'stale',l.revision,good[3]],[id,l.sourceHash,'stale',good[3]],[id,l.sourceHash,undefined,good[3]],[id,l.sourceHash,l.revision,'9'],['unknown',...good.slice(1)],[...good,[]]]){assert.equal(api.foodDailyObjectiveGapEntry(...args),null);rejects++;}
  if(l.paragraphs.length>1){assert.equal(api.foodDailyObjectiveGapEntry(...good,[l.paragraphs[0].id]),null);rejects++;}
  for(const mutate of [x=>{x.lessons.find(l=>l.id===id).paragraphs[0].textJa+='変';},x=>{x.lessons.find(l=>l.id===id).objectiveJa+='変';},x=>{x.lessons.find(l=>l.id===id).levels=['1'];}]){
   const changed=clone(content);mutate(changed);assert.equal(compile({content:changed}).foodDailyObjectiveGapEntry(...good),null);rejects++;
  }
- for(const mutate of [d=>{d.schemaVersion=9;},d=>{d.studyOnly=false;},d=>{d.kind='other';},d=>{d.entries[id].kind='other';},d=>{d.locales.ja.scope+='変更';},d=>{d.readingsKana.scope='漢字';}]){
+ for(const mutate of [d=>{d.schemaVersion=9;},d=>{d.studyOnly=false;},d=>{d.kind='other';},d=>{d.entries[id].kind='other';},d=>{d.locales.ja.scope+='変更';},d=>{d.readingsKana.scope='漢字';},d=>{d.entries[id].sourceRefs[0].pdfPage=1;},d=>{d.entries[id].scopeLevels=['9'];}]){
   const changed=clone(data);mutate(changed);assert.equal(compile({data:changed}).foodDailyObjectiveGapEntry(...good),null);rejects++;
  }
  for(const language of languages){

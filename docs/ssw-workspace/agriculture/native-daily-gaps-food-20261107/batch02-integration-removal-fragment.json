@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "baseHead": "ed647974f919006bb82b474df062696d69a4ad07",
+  "componentPath": "src/components/agriculture/FoodDailyObjectiveGapSupport.tsx",
+  "dataPath": "src/data/agriculture/food-daily-objective-gaps.json",
+  "onlyNewContexts": [
+    "agr-facility-structure-cover-functions-2",
+    "agr-fruit-manage-harvest",
+    "agr-flower-work-production"
+  ],
+  "existingBatch01ContextsPreserved": [
+    "agr-facility-env-solution-circulation-2",
+    "agr-f40-facility-fruit-bud-options2"
+  ],
+  "routeInstruction": "Reuse batch01 guarded FoodDailyObjectiveGapSupport/isFoodDailyObjectiveGapContext route, before figureBindings lookup and after level guard. The same component permits three additional exact lesson IDs. Do not duplicate route or replace other native delegates. Full current source paragraphs required internally.",
+  "importIfAbsent": "import {FoodDailyObjectiveGapSupport,isFoodDailyObjectiveGapContext} from './FoodDailyObjectiveGapSupport';",
+  "route": "if(isFoodDailyObjectiveGapContext(lesson.id)) return <FoodDailyObjectiveGapSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors} paragraphIds={paragraphIds}/>;",
+  "bindingRemovals": [
+    {
+      "lessonId": "agr-facility-structure-cover-functions-2",
+      "expectedBefore": {
+        "lessonSourceHash": "db6e175a56d4a2ae9de94ef14431d894cfca3afae40abf97c7dbd7b10a59edd7",
+        "figureId": "agr-recognition-nonwoven-cover-v1",
+        "assetSha256": "5f5af6098c5064c6bf51428866e8413be709d7b6e3aa15ba165c209553855712",
+        "keyObjectiveId": "AGR-K-FACILITY-STRUCTURE-COVER-FUNCTIONS-2-01",
+        "objectiveJa": "散光・遮熱・紫外線カットなどの機能を区別し、利点だけでなく受粉昆虫や保管条件への影響も説明できる。",
+        "reuseReasonJa": "「被覆の機能と栽培上の組合せ」で扱う対象を、既存の「不織布の外観例」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+        "scopeLevels": [
+          "2"
+        ],
+        "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
+      },
+      "expectedSourceHash": "db6e175a56d4a2ae9de94ef14431d894cfca3afae40abf97c7dbd7b10a59edd7",
+      "operation": "Delete only wrong figureBindings key after exact expectedBefore equality and sourceHash guard. If absent leave absent. Abort/reconcile changed binding. Preserve figure asset/registry/locales/valid other uses."
+    },
+    {
+      "lessonId": "agr-fruit-manage-harvest",
+      "expectedBefore": {
+        "lessonSourceHash": "7a084817669ce2738faa9acc41373d013c3e006fafeb811e1ad702d51b2e9b39",
+        "figureId": "agr-f40-flower-harvest-v1",
+        "assetSha256": "fb6c64d61058190570924d77d4b2ef720cadbdf4a66044a95ecc2e72c42ab5ad",
+        "keyObjectiveId": "AGR-K-FRUIT-MANAGE-HARVEST-01",
+        "objectiveJa": "樹上での成熟と収穫後の追熟を区別し、ウンシュウミカンの二度切りの順序を説明できる。",
+        "reuseReasonJa": "「収穫時の熟度とミカンの切り方」で扱う対象を、既存の「果実の収穫判断に使う三つの道具」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+        "scopeLevels": [
+          "1",
+          "2"
+        ],
+        "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
+      },
+      "expectedSourceHash": "7a084817669ce2738faa9acc41373d013c3e006fafeb811e1ad702d51b2e9b39",
+      "operation": "Delete only wrong figureBindings key after exact expectedBefore equality and sourceHash guard. If absent leave absent. Abort/reconcile changed binding. Preserve figure asset/registry/locales/valid other uses."
+    },
+    {
+      "lessonId": "agr-flower-work-production",
+      "expectedBefore": {
+        "lessonSourceHash": "0e655024a0b20abb9de646a95e44d4b1f6c6ad5efbd02a00e6f69024010d44ba",
+        "figureId": "agr-f40-facility-support-greenhouse-flowers-b",
+        "assetSha256": "3a63aba44c3fc6414823b2a6239514af257bab23e6dfa8ff5b898fbc8c555933",
+        "keyObjectiveId": "AGR-K-FLOWER-WORK-PRODUCTION-01",
+        "objectiveJa": "切り花・鉢花・花壇苗を分け、資料の栽培期間や費用の比較を条件付きの計画資料として読める。",
+        "reuseReasonJa": "「花きの出荷形態と栽培計画」で扱う対象を、既存の「トルコギキョウとスプレーカーネーション」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+        "scopeLevels": [
+          "2"
+        ],
+        "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
+      },
+      "expectedSourceHash": "0e655024a0b20abb9de646a95e44d4b1f6c6ad5efbd02a00e6f69024010d44ba",
+      "operation": "Delete only wrong figureBindings key after exact expectedBefore equality and sourceHash guard. If absent leave absent. Abort/reconcile changed binding. Preserve figure asset/registry/locales/valid other uses."
+    }
+  ],
+  "preserve": "Accepted photographic/occupational primaries, valid native routes, completion IDs and all valid former image uses. No broad image deletion.",
+  "sharedFilesEdited": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "physicalDeviceTested": false,
+  "releaseAccepted": false
+}
