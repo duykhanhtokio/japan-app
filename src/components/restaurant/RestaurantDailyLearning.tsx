@@ -108,6 +108,9 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-2-hyg-06':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-06-abnormal-water-stop-report.webp'),aspectRatio:1672/941},
+ 'rst-2-hyg-05':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-05-instrument-withdrawal-handwash-supplies.webp'),aspectRatio:1671/941},
+ 'rst-2-hyg-04':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-04-disinfection-dry-protected-storage.webp'),aspectRatio:1671/941},
  'rst-2-hyg-03':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-03-detergent-material-label-check.webp'),aspectRatio:1672/941},
  'rst-2-hyg-02':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-02-facility-cleaning-priorities.webp'),aspectRatio:1672/941},
  'rst-2-hyg-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-01-haccp-observation-verification.webp'),aspectRatio:1672/941},
