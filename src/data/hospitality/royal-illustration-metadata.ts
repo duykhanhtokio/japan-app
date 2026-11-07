@@ -389,6 +389,21 @@ const currentImageAlt:Record<string,Record<string,string>> = {
     "th": "ผู้วางแผนโรงแรมสองคนเปรียบเทียบแฟ้มตามจุดประสงค์การเดินทางสามแบบ เลือกตัวอย่างเที่ยวสวน แล้วใช้ภาพเดียวกันบนเว็บไซต์ โทรศัพท์ และเอกสารประชาสัมพันธ์",
     "km": "អ្នករៀបចំផែនការសណ្ឋាគារពីរនាក់ប្រៀបធៀបសំណុំឯកសារគោលបំណងធ្វើដំណើរបីប្រភេទ ជ្រើសឧទាហរណ៍ទស្សនាសួន ហើយប្រើរូបដូចគ្នាលើគេហទំព័រ ទូរសព្ទ និងឯកសារផ្សព្វផ្សាយ។",
     "tl": "Inihahambing ng dalawang tagaplano ng hotel ang tatlong folder ng layunin sa paglalakbay, pinipili ang halimbawang pagbisita sa hardin, at ginagamit ang parehong larawan sa website, telepono at materyal sa publisidad."
+  },
+  "hotel-safety-01": {
+    "ja": "ホテルの訓練で、指導者が通路の消火器と火災報知設備の場所を示し、従業員が手引きを見ながら記録する。機器の操作手順を示す図ではありません。",
+    "en": "During hotel training, an instructor points out an extinguisher and fire-alarm equipment while a staff member checks a manual and takes notes. No operating procedure is shown.",
+    "vi": "Trong buổi huấn luyện khách sạn, người hướng dẫn chỉ vị trí bình chữa cháy và thiết bị báo cháy; nhân viên xem tài liệu và ghi chép. Ảnh không hướng dẫn thao tác thiết bị.",
+    "id": "Dalam pelatihan hotel, instruktur menunjukkan lokasi alat pemadam dan alarm kebakaran, sementara staf memeriksa panduan dan mencatat. Gambar tidak menunjukkan prosedur pengoperasian.",
+    "zh-CN": "酒店培训中，指导人员指出灭火器和火灾报警设备的位置，员工查看手册并记录。图片不展示设备操作步骤。",
+    "zh-TW": "旅館訓練中，指導人員指出滅火器和火災警報設備的位置，員工查看手冊並記錄。圖片不展示設備操作步驟。",
+    "hi": "होटल प्रशिक्षण में प्रशिक्षक अग्निशामक और अग्नि-अलार्म उपकरण का स्थान बताते हैं तथा कर्मचारी पुस्तिका देखकर नोट लेते हैं। उपकरण चलाने की प्रक्रिया नहीं दिखाई गई है।",
+    "bn": "হোটেলের প্রশিক্ষণে প্রশিক্ষক অগ্নিনির্বাপক ও অগ্নিসংকেত সরঞ্জামের অবস্থান দেখাচ্ছেন, আর কর্মী নির্দেশিকা দেখে নোট নিচ্ছেন। সরঞ্জাম চালানোর পদ্ধতি দেখানো হয়নি।",
+    "ne": "होटल प्रशिक्षणमा प्रशिक्षकले अग्निनियन्त्रक र आगलागी सूचना उपकरणको स्थान देखाउँछन् र कर्मचारीले पुस्तिका हेर्दै टिपोट गर्छन्। उपकरण चलाउने प्रक्रिया देखाइएको छैन।",
+    "my": "ဟိုတယ်လေ့ကျင့်ရေးတွင် သင်ကြားသူက မီးသတ်ဘူးနှင့် မီးသတိပေးကိရိယာ၏ တည်နေရာကို ပြပြီး ဝန်ထမ်းက လမ်းညွှန်စာအုပ်ကိုကြည့်ကာ မှတ်စုရေးနေသည်။ ကိရိယာအသုံးပြုအဆင့်များကို မပြထားပါ။",
+    "th": "ในการฝึกอบรมโรงแรม ผู้สอนชี้ตำแหน่งถังดับเพลิงและอุปกรณ์แจ้งเหตุเพลิงไหม้ ขณะที่พนักงานดูคู่มือและจดบันทึก ภาพไม่ได้แสดงขั้นตอนใช้อุปกรณ์",
+    "km": "ក្នុងការហ្វឹកហាត់សណ្ឋាគារ អ្នកបង្ហាត់បង្ហាញទីតាំងបំពង់ពន្លត់អគ្គិភ័យ និងឧបករណ៍រោទិ៍អគ្គិភ័យ ខណៈបុគ្គលិកមើលសៀវភៅណែនាំនិងកត់ត្រា។ រូបនេះមិនបង្ហាញជំហានប្រើឧបករណ៍ទេ។",
+    "tl": "Sa pagsasanay sa hotel, itinuturo ng tagapagsanay ang kinaroroonan ng pamatay-sunog at alarma habang tumitingin sa manwal at nagtatala ang kawani. Walang ipinapakitang hakbang sa paggamit."
   }
 };
 export function hotelIllustrationAlt(id:string,language:string,fallback:string):string {

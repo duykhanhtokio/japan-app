@@ -30,7 +30,7 @@ const figures:Record<string,()=>ImageSourcePropType>={
  'hotel-restaurant-07':()=>require('../../../assets/app/hospitality/hotel-restaurant-07.png'),
  'hotel-restaurant-08':()=>require('../../../assets/app/hospitality/hotel-restaurant-08.png'),
  'hotel-restaurant-09':()=>require('../../../assets/app/hospitality/hotel-restaurant-09.png'),
- 'hotel-safety-01':()=>require('../../../assets/app/hospitality/hotel-safety-01.png'),
+ 'hotel-safety-01':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week03/hotel-safety-01.webp'),
  'hotel-safety-02':()=>require('../../../assets/app/hospitality/hotel-safety-02.png'),
  'hotel-safety-03':()=>require('../../../assets/app/hospitality/hotel-safety-03.png'),
  'hotel-safety-04':()=>require('../../../assets/app/hospitality/hotel-safety-04.png'),
