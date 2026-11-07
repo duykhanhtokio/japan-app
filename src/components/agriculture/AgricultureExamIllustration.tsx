@@ -29,7 +29,7 @@ export function AgricultureExamIllustration({id,revision,level,questionSource,co
  const resolved=resolve(id,revision,level,questionSource);
  if(!resolved)return <Text accessibilityRole="alert" style={{color:colors.text,fontSize:17,lineHeight:29}}>参考図を読み込めません。</Text>;
  const {item,figure,source}=resolved;
- return <View testID={`exam-figure-${id}`} style={{width:'100%',maxWidth:720,alignSelf:'center',padding:12,borderWidth:1,borderRadius:10,borderColor:colors.border,backgroundColor:colors.translation,gap:8}}>
+ return <View testID={`exam-figure-${id}`} style={{width:'100%',maxWidth:720,minWidth:0,flexShrink:1,alignSelf:'center',padding:12,borderWidth:1,borderRadius:10,borderColor:colors.border,backgroundColor:colors.translation,gap:8}}>
   <Text style={{fontSize:17,lineHeight:27,color:colors.translationText}}>{item.titleJa}</Text>
   <ZoomableFigure source={source} width={figure.width} height={figure.height} altJa={item.altJa} testID={`exam-figure-${id}`} colors={colors} masks={item.masks} allowExpandedView/>
  </View>;

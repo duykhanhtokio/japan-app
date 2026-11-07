@@ -25,14 +25,14 @@ export function CropCalendarFigure({lessonId,lessonSourceHash,lessonRevision,lev
  const t=showTranslation&&language!=='ja'?cropCalendarLabels(lessonId,lessonSourceHash,lessonRevision,level,language):null;
  const labels=t||ja;
  const alt=[labels.alt,...data.rows.map(row=>rowParts(row,labels).join(' → ')),labels.observation,labels.limit].join('\n');
- return <View testID="agri-native-crop-calendar" style={{gap:12,marginVertical:12}}>
+ return <View testID="agri-native-crop-calendar" style={{minWidth:0,maxWidth:'100%',flexShrink:1,gap:12,marginVertical:12}}>
   {includeMetadata&&<Text style={{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'}}>{ja.title}</Text>}
   {!!t&&<Text testID="agri-crop-calendar-localized-title" style={{color:colors.translationText,fontSize:18,lineHeight:28,fontWeight:'700'}}>{t.title}</Text>}
   <View accessible accessibilityRole="image" accessibilityLabel={alt} testID="agri-crop-calendar-seven-source-rows" style={{gap:12}}>
    {data.rows.map(row=>{const original=rowParts(row,ja),translated=t?rowParts(row,t):null;return <View key={row.id} testID={`agri-crop-calendar-row-${row.id}`} style={{gap:8,paddingVertical:12,borderBottomWidth:1,borderColor:colors.border}}>
     <Text style={{color:colors.translationText,fontSize:17,lineHeight:28,fontWeight:'700'}}>{original[0]}</Text>
     {!!translated&&<Text style={{color:colors.translationText,fontSize:17,lineHeight:28}}>{translated[0]}</Text>}
-    <View style={{flexDirection:'row',flexWrap:'wrap',gap:12}}>{original.slice(1).map((text,i)=><View key={i} style={{flexBasis:180,flexGrow:1,gap:4}}><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{text}</Text>{!!translated&&<Text testID={`agri-crop-calendar-row-${row.id}-localized-${i}`} style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated[i+1]}</Text>}</View>)}</View>
+    <View style={{flexDirection:'row',flexWrap:'wrap',gap:12}}>{original.slice(1).map((text,i)=><View key={i} style={{flexBasis:180,flexGrow:1,minWidth:0,maxWidth:'100%',flexShrink:1,gap:8}}><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{text}</Text>{!!translated&&<Text testID={`agri-crop-calendar-row-${row.id}-localized-${i}`} style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated[i+1]}</Text>}</View>)}</View>
    </View>;})}
   </View>
   {includeMetadata&&<><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{ja.observation}</Text><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{ja.limit}</Text></>}

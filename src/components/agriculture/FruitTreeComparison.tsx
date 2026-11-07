@@ -19,11 +19,11 @@ export function FruitTreeComparison({lesson,translation,showTranslation,language
  const localizedAlt=showTranslation&&translated&&figureAlt.sourceHash===lesson.sourceHash
   ?(figureAlt.alt as Record<string,string>)[language]:undefined;
  const alt=localizedAlt||figureAlt.alt.ja;
- return <View testID="agri-royal-fruit-tree-comparison" style={{gap:10,marginVertical:16}}>
+ return <View testID="agri-royal-fruit-tree-comparison" style={{minWidth:0,maxWidth:'100%',flexShrink:1,gap:10,marginVertical:12}}>
   <Text style={{color:colors.text,fontSize:19,lineHeight:29,fontWeight:'700'}}>{introduction.titleJa}</Text>
   <ZoomableFigure source={source} width={1774} height={887} altJa={alt} testID="agri-royal-fruit-tree-comparison" colors={colors} allowExpandedView/>
   <View style={{flexDirection:'row',flexWrap:'wrap',gap:12}}>
-   {examples.map(example=><View key={example.id} testID={`agri-tree-class-${example.id}`} style={{flexGrow:1,flexBasis:220,gap:6}}>
+   {examples.map(example=><View key={example.id} testID={`agri-tree-class-${example.id}`} style={{flexGrow:1,flexBasis:220,minWidth:0,maxWidth:'100%',flexShrink:1,gap:8}}>
     <Text style={{color:colors.text,fontSize:17,lineHeight:28,fontWeight:'700'}}>{example.paragraph!.titleJa}（{example.treeJa}）</Text>
     <Text style={{color:colors.text,fontSize:16,lineHeight:27}}>{example.paragraph!.textJa}</Text>
     {showTranslation&&translated&&<Text testID={`agri-tree-class-translation-${example.id}`} style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.paragraphTitles[example.id]}{'\n'}{translated.paragraphs[example.id]}</Text>}
