@@ -143,6 +143,13 @@ const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
  'rst-1-hyg-02':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-1-hyg-02-prevention-principles.webp'),aspectRatio:1671/941},
  'rst-1-hyg-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-1-hyg-01-hazard-classes.webp'),aspectRatio:1672/941},
 };
+/** Raster art follows the lesson revision independently of the daily reading binding.
+ * A rebound lesson must not silently keep artwork reviewed for an earlier source revision.
+ */
+export function restaurantRoyalDailyAsset(lesson:Pick<RestaurantLesson,'id'|'sourceHash'>){
+ const current=dailyData.royalRasterOverrides.find(o=>o.lessonId===lesson.id&&o.sourceHash===lesson.sourceHash);
+ return current?royalDailyAssets[lesson.id]:undefined;
+}
 const labels:Record<string,{figure:string;note:string;companion:string}>={
  ja:{figure:'図で確かめる',note:'学習用の模式図です。寸法・数量・時間・安全限界を図の比率から判断しないでください。本文の条件と照合してください。',companion:'関連する場面と照合する'},
  en:{figure:'Check the illustration',note:'Schematic learning figure. Do not infer dimensions, quantities, times or safety limits from its proportions. Check the conditions in the text.',companion:'Compare a related situation'},
@@ -160,7 +167,7 @@ const labels:Record<string,{figure:string;note:string;companion:string}>={
 };
 export function RestaurantDailyFigure({lesson,language,showTranslation}:{lesson:RestaurantLesson;language:string;showTranslation:boolean}){
  const b=bindingFor(lesson),{colors}=useStudyAppearance();if(!b)return null;
- const royal=royalDailyAssets[lesson.id],marks=royal?[]:restaurantDailyDrawing(b.figureId.replace('rst-daily-',''));if(!royal&&!marks.length)return null;
+ const royal=restaurantRoyalDailyAsset(lesson),marks=royal?[]:restaurantDailyDrawing(b.figureId.replace('rst-daily-',''));if(!royal&&!marks.length)return null;
  const ui=labels[language]||labels.ja,t=restaurantLessonTranslation(lesson,language);
  return <View testID={`restaurant-daily-figure-${lesson.id}`} style={[s.figure,{borderColor:colors.border}]}>
   <RestaurantReading heading text={labels.ja.figure} segments={figureHeading}/>{showTranslation&&language!=='ja'&&<TranslationText>{ui.figure}</TranslationText>}

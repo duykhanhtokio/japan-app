@@ -1,0 +1,25 @@
+const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert');
+const root=path.resolve(__dirname,'../..');
+const React=require('react'),server=require('react-dom/server'),ts=require('typescript');
+const daily=JSON.parse(fs.readFileSync(root+'/src/data/restaurant/daily-learning.json'));
+const lessons=[1,2].flatMap(level=>JSON.parse(fs.readFileSync(root+`/src/data/restaurant/lessons.${level}.ja.json`)).lessons);
+const source=fs.readFileSync(root+'/src/components/restaurant/RestaurantDailyLearning.tsx','utf8');
+const compiled=ts.transpileModule(source,{reportDiagnostics:true,compilerOptions:{jsx:ts.JsxEmit.React,module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020}});
+assert(!(compiled.diagnostics||[]).some(d=>d.category===ts.DiagnosticCategory.Error));
+const flat=s=>Array.isArray(s)?Object.assign({},...s.filter(Boolean).map(flat)):s;
+const rn=tag=>props=>React.createElement(tag,{style:flat(props.style)},props.children);
+const native={View:rn('div'),Text:rn('span'),Image:props=>React.createElement('img',{src:props.source,'data-testid':props.testID,alt:props.accessibilityLabel,style:flat(props.style)}),StyleSheet:{create:x=>x}};
+const moduleExports={};
+const req=name=>name==='react'?React:name==='react-native'?native:name.endsWith('daily-learning.json')?{default:daily}:name.endsWith('StudyAppearance')?{TranslationText:rn('span'),useStudyAppearance:()=>({colors:{border:'#bb9f62',text:'#243745'}})}:name==='@/data/restaurant'?{restaurantLesson:(id,level)=>lessons.find(l=>l.id===id&&l.level===level),restaurantLessonTranslation:()=>null}:name==='./RestaurantReading'?{RestaurantReading:props=>React.createElement('span',null,props.text)}:name.startsWith('../../../assets/')?name:(()=>{throw Error(name)})();
+vm.runInNewContext(compiled.outputText,{exports:moduleExports,require:req,React,console});
+const l=lessons.find(l=>l.id==='rst-1-hyg-16');
+const u=daily.royalRasterOverrides.find(x=>x.lessonId===l.id);assert(u);
+const render=x=>server.renderToStaticMarkup(React.createElement(moduleExports.RestaurantDailyFigure,{lesson:x,language:'ja',showTranslation:false}));
+const good=render(l);assert(good.includes(u.asset));assert(good.includes(l.objectiveJa));
+assert.equal(render({...l,sourceHash:'stale'}),'');
+assert(!render(lessons.find(l=>l.id==='rst-1-cook-01')).includes(u.asset));
+assert.equal(u.sourceHash,l.sourceHash);assert(daily.bindings.some(x=>x.lessonId===l.id&&x.sourceHash===l.sourceHash));
+
+assert.equal(require('crypto').createHash('sha256').update(fs.readFileSync(root+'/'+u.asset)).digest('hex'),u.sha256);
+assert.equal(require('crypto').createHash('sha256').update(source).digest('hex'),daily.renderSourceSha256);
+const b=daily.bindings.find(b=>b.lessonId===l.id),original=b.sourceHash;b.sourceHash='future-revision';assert(!render({...l,sourceHash:'future-revision'}).includes(u.asset));b.sourceHash=original;const o=daily.royalRasterOverrides.find(o=>o.lessonId===l.id),originalOverride=o.sourceHash;o.sourceHash='stale-raster';assert(!render(l).includes(u.asset));o.sourceHash=originalOverride;for(const o of daily.royalRasterOverrides){const l=lessons.find(l=>l.id===o.lessonId);assert(moduleExports.restaurantRoyalDailyAsset(l),o.lessonId);}console.log('PASS: future canonical+binding rejects stale art, stale override rejects art, all current art entries retained.');

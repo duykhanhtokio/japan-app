@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "sector": "restaurant",
+  "scope": "Current-source guard for all existing Royal daily raster overrides",
+  "baseRemoteCommit": "f6c80e96788d5498583817a012e56a241dfaa1eb",
+  "status": "SELF_CHECKED_READY_PENDING_COORDINATOR_PERSISTENCE",
+  "problem": "Previously the reading binding could be updated to a new canonical sourceHash while the ID-only raster map continued displaying artwork reviewed for the earlier revision.",
+  "change": "Royal raster selection now additionally requires a raster override with the current canonical lesson ID and sourceHash. When the art revision is stale, the existing controlled drawing remains the fallback; no prior art/lesson identity is removed.",
+  "validation": {
+    "reproducedBefore": true,
+    "currentRoyalEntriesRetained": 34,
+    "actualRendererAdapterSSR": {
+      "currentHygiene16RasterAndObjective": "PASS",
+      "staleLessonBindingRejected": "PASS",
+      "neighborSelectionUnchanged": "PASS",
+      "futureCanonicalAndBindingWithStaleRasterRejected": "PASS",
+      "staleRasterOverrideRejected": "PASS"
+    },
+    "portableCheckCommand": "node scripts/restaurant/check-royal-daily-revision.cjs",
+    "portableCheckDependencies": "Existing React, react-dom and TypeScript packages; run with qa-runtime NODE_PATH in this sparse checkout.",
+    "typescriptTranspileDiagnostics": 0,
+    "rendererMetadataHash": "PASS",
+    "assetHash": "PASS",
+    "dataPreservation": "Byte-reconstructing prior JSON with only the renderer hash reverted reproduces prior SHA256 bfc89f824a5f4b76a3e9456b78060b8c4d9c61140168b432cb85db8eb232b6b9.",
+    "rendererPreservation": "Removing only the new pure revision guard and reverting its call reproduces prior renderer SHA25603fccfb8e7c702e7c3c74bf50b3219f5820ca671e07c4aafada3f775c973b102.",
+    "ledgerDependencyAudit": "Canonical restaurant ledger blob16cdf6d52facc03189973734cc406f1dd0d9141f has zero evidence paths referencing RestaurantDailyLearning.tsx. No ledger modification.",
+    "diffCheck": "PASS scoped git diff --check"
+  },
+  "fileSha256": {
+    "src/components/restaurant/RestaurantDailyLearning.tsx": "44dedd8835060fa3ba47133ddc69469ca737592d8c17f84122ce6eb869f6c685",
+    "src/data/restaurant/daily-learning.json": "2205ac6dced8c4eaaf233cb68cda7d542f729f2493db91ffe36310c0419c91e0",
+    "scripts/restaurant/check-royal-daily-revision.cjs": "3722197cb93d9086109c55ea2b5e4a3d5e3aa6b5eca31eb5c4c285147d2f02bc"
+  },
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "newImagesGenerated": 0,
+  "wholeSectorComplete": false
+}
