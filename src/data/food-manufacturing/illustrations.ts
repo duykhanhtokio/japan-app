@@ -1,5 +1,6 @@
 import type {ImageSourcePropType} from 'react-native';
 import type {FoodManufacturingLesson} from './index';
+import {foodRoyalWeeklyImageFor} from './royal-weekly-images';
 
 export type FoodIllustration={
  id:string;
@@ -24,5 +25,6 @@ export const foodIllustrations:FoodIllustration[]=[
 ];
 
 export function foodIllustrationsFor(lesson:FoodManufacturingLesson){
- return foodIllustrations.filter(figure=>figure.lessonId===lesson.id&&figure.sourceHash===lesson.sourceHash&&lesson.paragraphs.some(p=>p.id===figure.captionParagraphId));
+ const movedToDaily=foodRoyalWeeklyImageFor(lesson)?.replacesIllustrationId;
+ return foodIllustrations.filter(figure=>figure.id!==movedToDaily&&figure.lessonId===lesson.id&&figure.sourceHash===lesson.sourceHash&&lesson.paragraphs.some(p=>p.id===figure.captionParagraphId));
 }

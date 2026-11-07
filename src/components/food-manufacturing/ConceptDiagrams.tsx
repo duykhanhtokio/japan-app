@@ -7,13 +7,13 @@ const royalWeek1Hazards:Record<string,ImageSourcePropType>={
  '2':require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/chemical-required-rinse.webp'),
  '3':require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/invisible-microbiological-risk.webp'),
 };
-const royalWeek1Lessons=new Set(['food-1-003','food-1-004','food-1-005','food-1-006']);
+const royalHazardLessons=new Set(['food-1-003','food-1-004','food-1-005','food-1-006','food-1-008','food-2-007']);
 type DiagramTranslation={title:string;description:string;nodeLabels:Record<string,string>;edgeLabels:string[];note:string};
 export function FoodConceptDiagrams({lessonId,textColor,language,showTranslation}:{lessonId:string;textColor:string;language:string;showTranslation:boolean}){
  return <>{data.diagrams.filter(d=>d.lessonIds.includes(lessonId as never)).map(d=>{
  const translated=(d.translations as Record<string,DiagramTranslation>)[language];
  const t=showTranslation&&language!=='ja'?translated:undefined;
- const royalHazards=d.id==='food-hazards'&&royalWeek1Lessons.has(lessonId);
+ const royalHazards=d.id==='food-hazards'&&royalHazardLessons.has(lessonId);
  return <View key={d.id} testID={d.id} style={s.diagram} accessible accessibilityLabel={`${d.titleJa}。${d.descriptionJa}。${d.noteJa}${t?`。${t.title}。${t.description}。${t.note}`:''}`}>
  <Text style={[s.title,{color:textColor}]}>{d.titleJa}</Text>{t&&<TranslationText>{t.title}</TranslationText>}
  <Text style={[s.body,{color:textColor}]}>{d.descriptionJa}</Text>{t&&<TranslationText>{t.description}</TranslationText>}

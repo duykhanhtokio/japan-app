@@ -51,7 +51,7 @@ export function FoodDailyLearning({lesson,language,showTranslation,textColor,rea
  const royalImage=foodRoyalWeeklyImageFor(lesson),source=royalImage?.source??drawings[binding.diagramKind];
  return <View testID={`food-daily-learning-${lesson.id}`} style={s.section}>
  {source&&<View testID={`food-daily-diagram-${lesson.id}`} style={s.figure}>
- <Pressable accessibilityRole="button" accessibilityLabel={`${p.titleJa}・拡大`} onPress={()=>setExpanded(true)}><Image source={source} resizeMode="contain" accessibilityLabel={`${p.titleJa}。${p.textJa}${t?`。${t.paragraphTitles[p.id]}。${t.paragraphs[p.id]}`:''}`} style={[s.image,royalImage?{aspectRatio:royalImage.width/royalImage.height}:null]}/></Pressable>
+ <Pressable accessibilityRole="button" accessibilityLabel={`${p.titleJa}・拡大`} onPress={()=>setExpanded(true)}><Image testID={royalImage?.replacesIllustrationId} source={source} resizeMode="contain" accessibilityLabel={`${p.titleJa}。${p.textJa}${t?`。${t.paragraphTitles[p.id]}。${t.paragraphs[p.id]}`:''}`} style={[s.image,royalImage?{aspectRatio:royalImage.width/royalImage.height}:null]}/></Pressable>
  <FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.titleJa`} text={p.titleJa} color={textColor} readingColor={readingColor} heading/>
  <FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.textJa`} text={p.textJa} color={textColor} readingColor={readingColor}/>
  {t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}
