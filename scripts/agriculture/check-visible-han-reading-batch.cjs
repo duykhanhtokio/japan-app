@@ -7,7 +7,7 @@ const registry=rt.read('src/data/agriculture/recognition-images.json'),all=regis
 const han=s=>/[\p{Script=Han}々]/u.test(s);let renders=0,contexts=0,negatives=0,fieldContexts=0,fields=0;
 for(const target of plan.figures){const f=all.find(x=>x.id===target.figureId),entry=readings.entries[f?.id];assert(f&&entry);assert.equal(entry.assetSha256,f.assetSha256);registry.images=[f];const texts={title:f.titleJa,observation:f.observationJa,limit:f.limitJa,...Object.fromEntries((f.labelsJa||[]).map((text,i)=>['label:'+i,text]))};
  const expected=Object.keys(texts).filter(k=>han(texts[k]));assert.deepEqual([...target.fields].sort(),expected.sort(),'Batch must cover all current visible Han fields for '+f.id);fields+=expected.length;
- const marker=field=>'agri-image-ruby-'+f.id+'-'+field;
+ const marker=field=>'agri-image-ruby-'+f.id+'-'+field+'"';
  const render=(l,level,extra={})=>renderToStaticMarkup(React.createElement(RecognitionImages,{lessonId:l.id,lessonSourceHash:l.sourceHash,lessonRevision:l.revision,level,colors,language:'ja',showTranslation:false,...extra}));
  let representative;for(const id of f.lessonIds){const l=lessons.find(x=>x.id===id);if(!l||l.sourceHash!==f.lessonSourceHashes[id])continue;for(const level of f.scopeLevels.filter(x=>l.levels.includes(x))){contexts++;representative||={l,level};const html=render(l,level);for(const field of expected){assert(html.includes(marker(field)),`${f.id}/${id}/${level}/${field}`);assert(agricultureImageReading({imageId:f.id,assetSha256:f.assetSha256,lessonId:id,lessonSourceHash:l.sourceHash,lessonRevision:l.revision,field,text:texts[field]}));fieldContexts++;}renders++;}
  if(!f.scopeLevels.some(x=>l.levels.includes(x)))continue;
