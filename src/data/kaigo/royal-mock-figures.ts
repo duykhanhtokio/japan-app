@@ -4,6 +4,9 @@ import data from './royal-mock-figures.json';
 import type {MockQuestion} from './types';
 export type PublicMockFigureQuestion=Pick<MockQuestion,'id'|'promptJa'|'optionsJa'|'passageJa'|'figureKey'|'figureDescriptionJa'>;
 const sources:Record<string,ImageSourcePropType>={
+ 's03-night':require('../../../assets/kaigo/royal-mock-20261107/s03-night.webp'),
+ 's03-privacy':require('../../../assets/kaigo/royal-mock-20261107/s03-privacy.webp'),
+ 'skills-practical-04':require('../../../assets/kaigo/royal-mock-20261107/skills-practical-04.webp'),
  's02-bath':require('../../../assets/kaigo/royal-mock-20261107/s02-bath.webp'),
  's02-call':require('../../../assets/kaigo/royal-mock-20261107/s02-call.webp'),
  's02-laundry':require('../../../assets/kaigo/royal-mock-20261107/s02-laundry.webp'),
