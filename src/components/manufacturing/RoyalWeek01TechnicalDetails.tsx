@@ -6,6 +6,7 @@ type Labels={practice:string;sleeve:string;thimble:string;position:string;inRang
 type LocalizedLesson={sourceHash:string;title:string;exampleTitle:string;exampleText:string;structureTitle?:string;structureText?:string};
 const locales=require('@/data/manufacturing/royal-week01-technical-locales.json').locales as Record<string,{labels:Labels;lessons:Record<string,LocalizedLesson>}>;
 const revisions:Record<string,string>={
+ 'mfg1-surface-lesson-010':'5af27b4e06505d5542bfe0003988ef628d1e222886b305c43eed0938cc51007e',
  'mfg1-electrical-l004':'ed8991b0b74fd0ee53acaefe01df73626d5bd64d6cac7aada260b37598f11bd9',
  'mfg1-surface-lesson-003':'732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7',
  'mfg1-surface-lesson-005':'ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7',
@@ -23,6 +24,14 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
  const body={color:colors.text,fontSize:17,lineHeight:29};
  const heading={...body,fontWeight:'700' as const};
  const border={borderWidth:1,borderColor:colors.border,borderRadius:10,padding:14,gap:10};
+ if(lesson.id==='mfg1-surface-lesson-010')return <View testID="manufacturing-native-titration-example" style={border}>
+  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <Text style={heading}>13.2 mL − 1.2 mL ＝ 12.0 mL</Text>
+  <Text style={body}>HCl ＋ NaOH → NaCl ＋ H₂O · 1：1</Text>
+  <Text style={body}>0.100 mol/L × 0.0120 L ＝ 0.00120 mol</Text>
+  <Text style={heading}>0.00120 mol ÷ 0.0100 L ＝ 0.120 mol/L</Text>
+  <Text style={body}>{target.exampleText}</Text>
+ </View>;
  if(lesson.id==='mfg1-electrical-l004')return <View testID="manufacturing-native-micrometer-example" style={border}>
   <Text style={heading}>{labels.practice} · {target.title}</Text>
   <Text style={body}>{labels.sleeve}：6 mm ＋ 0.5 mm ＝ 6.5 mm</Text>
