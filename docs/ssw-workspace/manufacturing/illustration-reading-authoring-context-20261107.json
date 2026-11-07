@@ -3,7 +3,7 @@
   "status": "AI authoring inventory; whole-field context comparison required before native entry activation; human/native/domain review pending",
   "runtimeTokenizer": false,
   "vendoredDictionary": false,
-  "fields": 1692,
+  "fields": 1693,
   "sourceLessonHashes": {
     "mfg1-mechanical-lesson-001": "1af8a71b73db3e1a1fb54d3d5a2493e49a926f85b8cd3d4fd260fb93515870ad",
     "mfg1-mechanical-lesson-002": "e1fd5d7b1db081c770649554e8226ae111d9ed386c017321a660cd744e496e2d",
@@ -418,8 +418,8 @@
       "text": "サーマルは電流と継続時間による発熱で動作するため、一瞬の変化と継続する過負荷を区別します。バイメタルは二種金属の熱膨張差で曲がる部材です。動作後は原因と安全を確認して承認された復帰を行い、リセットを繰り返して動かし続けません。\nこの組合せで確認する保護目的は、電動機が過負荷で焼損することを防ぐ点です。教材が説明する信号の復帰は手動方式で、安全を先に確認する条件があります。実機では機種の仕様と承認された手順を照合し、この記述だけを根拠に復帰設定を変更しません。\n過負荷検出は、電流が設定値以上で、一定時間以上続くという条件を合わせて読みます。バイメタルは熱膨張率の異なる二種類の金属板を貼り合わせた構造として捉えます。"
     }
   ],
-  "corpusSha256": "b827adfe42d046c34d54bd58a2c84a6c4fc5602f89437e12c569edc0798dfdff",
-  "readingDataSha256": "f5eb372d4eea094d5742dc30b0dea3f5b3be062a05cdbcfa9efd143279c7f096",
+  "corpusSha256": "1693f9b3ab8d650e7ac44f08e3e36c5a50a944dd85f076ba080d05608d0aba5b",
+  "readingDataSha256": "b9929bb99baa1f5c45a9374a37b01756694797341a04bb94379f27f557668fce",
   "runtimeRule": "Exact complete source string, aligned valid kana tokens, explicit Japanese only AND per-entry contextReview=ai_whole_field_compared. Unreviewed automatic entries render original plain Japanese. Reviewed27caption records remain independent and active.",
   "remainingProfessionalAcceptance": [
     "native pronunciation review",
@@ -2166,15 +2166,15 @@
   },
   "corpusHashDefinition": "UTF-8 compact JSON array of sorted nativeEntries exact sourceJa keys; includes retained unreviewed old source snapshots",
   "currentContextReview": {
-    "receipt": "docs/ssw-workspace/manufacturing/royal-native-week03-readings-20261107.json",
-    "reviewedSourceRows": 39,
-    "distinctDisplayedStrings": 196,
-    "actualFieldInstances": 197,
-    "uniqueReviewedNativeEntries": 168,
-    "unreviewedNativeEntryRecords": 1524,
+    "receipt": "docs/ssw-workspace/manufacturing/royal-native-week04-readings-20261107.json",
+    "reviewedSourceRows": 60,
+    "distinctDisplayedStrings": 301,
+    "actualFieldInstances": 302,
+    "uniqueReviewedNativeEntries": 254,
+    "unreviewedNativeEntryRecords": 1439,
     "originalReviewedCaptionRecords": 27,
-    "nativeOnlyClarification": "S014 実品→実際の品物; E016 四帯/二帯/三帯目→4本の色帯/2本/3本目; canonical prose and12target rows unchanged",
-    "remaining": "Continue Royalweek04–14, then all other active native/caption/companion/early special fields; retained stored snapshots are not a rendered-field denominator",
+    "nativeOnlyClarification": "S014 実品→実際の品物; E016 四帯/二帯/三帯目→4本の色帯/2本/3本目; M025 源資料→元の資料; canonical prose and12target rows unchanged",
+    "remaining": "Continue Royalweek05–14, then all other active native/caption/companion/early special fields; retained stored snapshots are not a rendered-field denominator",
     "nativeReviewed": false,
     "domainReviewed": false,
     "sourceGroups": {
@@ -2196,15 +2196,27 @@
         "contextCorrectionOccurrences": 41,
         "correctedFields": 27,
         "nativeOnlyClarifiedFields": 2
+      },
+      "week04": {
+        "receipt": "docs/ssw-workspace/manufacturing/royal-native-week04-readings-20261107.json",
+        "sourceRows": 21,
+        "displayedStrings": 105,
+        "actualFieldInstances": 105,
+        "uniqueReviewedNativeEntries": 87,
+        "newlyReviewedEntries": 86,
+        "priorExactStringsReused": 1,
+        "contextCorrectionOccurrences": 16,
+        "correctedFields": 14,
+        "nativeOnlyClarifiedFields": 1
       }
     }
   },
   "remainingImplementationWork": [
-    "Ordered Royalweek04–14 whole-field context comparison, then all other active illustration routes",
+    "Ordered Royalweek05–14 whole-field context comparison, then all other active illustration routes",
     "Existing Royalweek03 extra mechanical technical/companion fields remain separate until actual context review"
   ],
   "currentSourceInputSha256": {
-    "src/data/manufacturing/royal-week01-technical-locales.json": "0150390210e0560aca3b641d10e7ad72b7bfa6b79aade59d2b1df8e0021299a0",
+    "src/data/manufacturing/royal-week01-technical-locales.json": "e180353c2a40a8027f91e898784a8c018a3f4c74da990aeada2bbd6805683ec4",
     "src/data/manufacturing/illustration-readings.ts": "3596672f27d7e35d40dfda9939a84df60ee6d1c2b646cf632c62670d821bf124",
     "src/components/manufacturing/RoyalWeek01TechnicalDetails.tsx": "f794cd2735cd5ce798093eae9e85c73620ef0f8752ac9efe7daac75e63a273dc",
     "src/components/manufacturing/ManufacturingIllustrationText.tsx": "75fb5073f471544a79a680923825bbfacee4938986cf3bd7c197143000b1ac39"
@@ -2461,6 +2473,136 @@
         ],
         "corrections": {
           "一点鎖線": 1
+        }
+      }
+    ],
+    "week04": [
+      {
+        "sourceJaSha256": "bba85eca9f084acf45987e211bc9211d3b7f0b39058ee183769756f585771628",
+        "lessonIds": [
+          "mfg1-electrical-l027"
+        ],
+        "corrections": {
+          "異音": 1
+        }
+      },
+      {
+        "sourceJaSha256": "b3cb844a6b7aa0f774211acb5f90d21dd0c322848b784b7961b54c78af3aa433",
+        "lessonIds": [
+          "mfg1-mechanical-lesson-022"
+        ],
+        "corrections": {
+          "異音": 1
+        }
+      },
+      {
+        "sourceJaSha256": "9ab7791d5c491d513b845a49e30da29ba92cbd8493f38b1d531d1b03e1933b74",
+        "lessonIds": [
+          "mfg1-surface-lesson-023"
+        ],
+        "corrections": {
+          "前処理": 1
+        }
+      },
+      {
+        "sourceJaSha256": "6a9aa2609288c3b8148bfe51b4abe698bbdf8f8620acd7c8c08ca7de89dc3869",
+        "lessonIds": [
+          "mfg1-electrical-l023"
+        ],
+        "corrections": {
+          "三本": 1
+        }
+      },
+      {
+        "sourceJaSha256": "1ea6771bf27579685fe66f00443880d117c845c38bf63ea1c3f83c85edb388f1",
+        "lessonIds": [
+          "mfg1-electrical-l025"
+        ],
+        "corrections": {
+          "読取音": 1
+        }
+      },
+      {
+        "sourceJaSha256": "098770986c0b6465a03e6c995253c8e9664d2dd6735ea2495331290f7cfe08dc",
+        "lessonIds": [
+          "mfg1-surface-lesson-027"
+        ],
+        "corrections": {
+          "強電解質": 1
+        }
+      },
+      {
+        "sourceJaSha256": "71ca65da6f85ddfad241049cee4fbbd7e7a2571d5aadd6dd26eeef28f4f2b5a5",
+        "lessonIds": [
+          "mfg1-electrical-l027"
+        ],
+        "corrections": {
+          "給脂条件": 1
+        }
+      },
+      {
+        "sourceJaSha256": "d2008afc61f2b808e508b02056518405cabd68c940415a258a364c861f7e4764",
+        "lessonIds": [
+          "mfg1-surface-lesson-026"
+        ],
+        "corrections": {
+          "治具跡": 1,
+          "打痕": 1
+        }
+      },
+      {
+        "sourceJaSha256": "328a9667b2843e4c5d2707a9cf622d772348ebfeafaf4e36ed6ce7c4bc52830b",
+        "lessonIds": [
+          "mfg1-surface-lesson-027"
+        ],
+        "corrections": {
+          "放す": 1
+        }
+      },
+      {
+        "sourceJaSha256": "bdc0fa7444bff8965677d7e8f2105040415277c241288ed0e7678b2a4bbfd7af",
+        "lessonIds": [
+          "mfg1-electrical-l027"
+        ],
+        "corrections": {
+          "給脂箇所": 1
+        }
+      },
+      {
+        "sourceJaSha256": "9a93f823ca76eba4f3f04399196d9dc5e0850c985498964f61205b1aff53a9d2",
+        "lessonIds": [
+          "mfg1-mechanical-lesson-028"
+        ],
+        "corrections": {
+          "触針式": 1
+        }
+      },
+      {
+        "sourceJaSha256": "cb930c4252c7cd0336f25596549a021e0a9f08ad3478e76d11d83d96747be17a",
+        "lessonIds": [
+          "mfg1-mechanical-lesson-026"
+        ],
+        "corrections": {
+          "砥粒": 1
+        }
+      },
+      {
+        "sourceJaSha256": "63c609600068b4a3c43303f068d567c4616bec292fa5d1884551e28238b63de5",
+        "lessonIds": [
+          "mfg1-surface-lesson-024"
+        ],
+        "corrections": {
+          "測色計": 1,
+          "昼光": 1
+        }
+      },
+      {
+        "sourceJaSha256": "6c88ccb24de0f0b643d2efb8099cbb8bcc99bbd1b3acff6b1332b1b66614c40d",
+        "lessonIds": [
+          "mfg1-surface-lesson-024"
+        ],
+        "corrections": {
+          "測色値": 1
         }
       }
     ]
