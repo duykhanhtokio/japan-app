@@ -1,5 +1,65 @@
 // Descriptions of the active replacement pixels; lesson knowledge/revisions stay independent.
 const currentImageAlt:Record<string,Record<string,string>> = {
+  "hotel-restaurant-07": {
+  "ja": "レストラン係員が車いすの客本人に希望を伺い、通路とテーブル周囲の広さを確認する。",
+  "en": "A restaurant server asks a wheelchair user about their wishes and checks aisle and table space.",
+  "vi": "Nhân viên nhà hàng hỏi nguyện vọng của khách dùng xe lăn và kiểm tra lối đi, khoảng trống quanh bàn.",
+  "id": "Petugas restoran menanyakan keinginan pengguna kursi roda dan memeriksa ruang lorong serta meja.",
+  "zh-CN": "餐厅员工询问轮椅客人的意愿，并检查通道和餐桌周围空间。",
+  "zh-TW": "餐廳員工詢問輪椅旅客的意願，並檢查通道和餐桌周圍空間。",
+  "hi": "रेस्तराँ कर्मचारी व्हीलचेयर उपयोगकर्ता की इच्छा पूछकर गलियारे और मेज के आसपास की जगह जाँचता है।",
+  "bn": "রেস্তোরাঁ কর্মী হুইলচেয়ার ব্যবহারকারীর ইচ্ছা জেনে চলার পথ ও টেবিলের স্থান যাচাই করছেন।",
+  "ne": "रेस्टुरेन्ट कर्मचारीले ह्वीलचेयर प्रयोगकर्ताको इच्छा सोधेर बाटो र टेबल वरिपरिको ठाउँ जाँच्छन्।",
+  "my": "စားသောက်ဆိုင်ဝန်ထမ်းက ဘီးတပ်ကုလားထိုင်အသုံးပြုသူ၏ဆန္ဒကိုမေးပြီး လမ်းနှင့်စားပွဲဝန်းကျင်နေရာကိုစစ်သည်။",
+  "th": "พนักงานร้านอาหารถามความต้องการของผู้ใช้รถเข็นและตรวจพื้นที่ทางเดินกับรอบโต๊ะ",
+  "km": "បុគ្គលិកភោជនីយដ្ឋានសួរបំណងរបស់អ្នកប្រើរទេះរុញ ហើយពិនិត្យច្រកដើរនិងកន្លែងជុំវិញតុ។",
+  "tl": "Tinatanong ng server ang nais ng gumagamit ng wheelchair at sinusuri ang daanan at espasyo sa mesa."
+},
+  "hotel-safety-05": {
+  "ja": "係員が脚が破損したいすに客が近づかないよう範囲を確保し、担当者へ状態を報告する。",
+  "en": "An employee keeps guests away from a chair with a damaged leg and reports its condition to the responsible staff member.",
+  "vi": "Nhân viên giữ khách tránh xa ghế bị hỏng chân và báo tình trạng cho người phụ trách.",
+  "id": "Petugas menjauhkan tamu dari kursi berkaki rusak dan melaporkan kondisinya kepada penanggung jawab.",
+  "zh-CN": "员工隔开椅脚损坏的椅子周边，避免客人靠近，并向负责人报告情况。",
+  "zh-TW": "員工隔開椅腳損壞的椅子周邊，避免旅客靠近，並向負責人報告情況。",
+  "hi": "कर्मचारी अतिथियों को टूटी टाँग वाली कुर्सी से दूर रखता है और जिम्मेदार कर्मचारी को स्थिति बताता है।",
+  "bn": "কর্মী অতিথিদের ভাঙা পায়ার চেয়ার থেকে দূরে রেখে দায়িত্বপ্রাপ্ত কর্মীকে অবস্থা জানাচ্ছেন।",
+  "ne": "कर्मचारीले अतिथिलाई खुट्टा बिग्रिएको कुर्सीबाट टाढा राखेर जिम्मेवार व्यक्तिलाई अवस्था बताउँछन्।",
+  "my": "ဝန်ထမ်းက ဧည့်သည်များကို ခြေထောက်ပျက်နေသောကုလားထိုင်အနီးမကပ်စေဘဲ တာဝန်ရှိသူအားအခြေအနေသတင်းပို့သည်။",
+  "th": "พนักงานกันแขกออกจากเก้าอี้ที่ขาชำรุดและรายงานสภาพให้ผู้รับผิดชอบทราบ",
+  "km": "បុគ្គលិករក្សាភ្ញៀវឱ្យឆ្ងាយពីកៅអីដែលខូចជើង ហើយរាយការណ៍ស្ថានភាពទៅអ្នកទទួលខុសត្រូវ។",
+  "tl": "Inilalayo ng kawani ang bisita sa silyang sira ang paa at iniuulat ang kalagayan sa responsableng tauhan."
+},
+  "hotel-safety-04": {
+  "ja": "係員がバックヤードで手を洗い、別の係員が清掃箇所と通路の安全を確認する。",
+  "en": "One employee washes hands in a back-of-house sink while another checks cleaning areas and a clear passage.",
+  "vi": "Một nhân viên rửa tay ở khu hậu cần, người khác kiểm tra chỗ vệ sinh và an toàn lối đi.",
+  "id": "Seorang petugas mencuci tangan di area belakang sementara petugas lain memeriksa area pembersihan dan jalur yang aman.",
+  "zh-CN": "一名员工在后台洗手，另一名员工检查清洁区域与通道安全。",
+  "zh-TW": "一名員工在後場洗手，另一名員工檢查清潔區域與通道安全。",
+  "hi": "एक कर्मचारी पीछे के कार्यक्षेत्र में हाथ धोता है और दूसरा सफाई क्षेत्रों तथा रास्ते की सुरक्षा जाँचता है।",
+  "bn": "একজন কর্মী পেছনের কর্মস্থলে হাত ধুচ্ছেন, অন্যজন পরিচ্ছন্নতার স্থান ও পথের নিরাপত্তা যাচাই করছেন।",
+  "ne": "एक कर्मचारीले पछाडिको कार्यक्षेत्रमा हात धुन्छन् र अर्कोले सरसफाइ क्षेत्र तथा बाटोको सुरक्षा जाँच्छन्।",
+  "my": "ဝန်ထမ်းတစ်ဦးက နောက်ဘက်လုပ်ငန်းခွင်၌ လက်ဆေးပြီး အခြားတစ်ဦးက သန့်ရှင်းရေးနေရာနှင့်လမ်းကြောင်းဘေးကင်းမှုကိုစစ်သည်။",
+  "th": "พนักงานคนหนึ่งล้างมือในพื้นที่หลังบ้าน อีกคนตรวจพื้นที่ทำความสะอาดและความปลอดภัยของทางเดิน",
+  "km": "បុគ្គលិកម្នាក់លាងដៃនៅផ្នែកខាងក្រោយ ហើយម្នាក់ទៀតពិនិត្យតំបន់សម្អាតនិងសុវត្ថិភាពផ្លូវដើរ។",
+  "tl": "Naghuhugas ng kamay ang isang kawani sa likurang lugar habang sinusuri ng isa ang paglilinis at ligtas na daanan."
+},
+  "hotel-safety-03": {
+  "ja": "フロント係員が書類と画面を周囲から見えない向きに置き、車いすの客本人に支援の希望を伺う。",
+  "en": "A receptionist keeps records and screen away from public view and asks a wheelchair user what support they want.",
+  "vi": "Lễ tân giữ hồ sơ và màn hình tránh tầm nhìn người khác, hỏi khách dùng xe lăn muốn được hỗ trợ gì.",
+  "id": "Resepsionis melindungi catatan dan layar dari pandangan umum serta menanyakan bantuan yang diinginkan pengguna kursi roda.",
+  "zh-CN": "前台员工将记录和屏幕避开公众视线，并询问轮椅客人希望得到何种帮助。",
+  "zh-TW": "櫃檯員工將紀錄和螢幕避開公眾視線，並詢問輪椅旅客希望得到何種協助。",
+  "hi": "स्वागतकर्मी रिकॉर्ड और स्क्रीन को लोगों की नज़र से दूर रखकर व्हीलचेयर उपयोगकर्ता से वांछित सहायता पूछता है।",
+  "bn": "অভ্যর্থনাকর্মী নথি ও পর্দা জনসমক্ষে আড়াল করে হুইলচেয়ার ব্যবহারকারীর কাঙ্ক্ষিত সহায়তা জানতে চান।",
+  "ne": "रिसेप्सन कर्मचारीले अभिलेख र स्क्रिन सार्वजनिक नजरबाट जोगाएर ह्वीलचेयर प्रयोगकर्तालाई चाहिएको सहयोग सोध्छन्।",
+  "my": "ဧည့်ကြိုက မှတ်တမ်းနှင့်ဖန်သားပြင်ကို အများမမြင်အောင်ထားပြီး ဘီးတပ်ကုလားထိုင်အသုံးပြုသူအား လိုအပ်သည့်အကူအညီကိုမေးသည်။",
+  "th": "พนักงานต้อนรับเก็บเอกสารและหน้าจอให้พ้นสายตาคนอื่น และถามผู้ใช้รถเข็นว่าต้องการความช่วยเหลือใด",
+  "km": "អ្នកទទួលភ្ញៀវដាក់ឯកសារនិងអេក្រង់ឱ្យផុតពីភ្នែកសាធារណៈ ហើយសួរអ្នកប្រើរទេះរុញអំពីជំនួយដែលចង់បាន។",
+  "tl": "Inilalayo ng receptionist sa pampublikong tingin ang mga tala at screen at tinatanong ang gumagamit ng wheelchair kung anong tulong ang nais."
+},
   "hotel-restaurant-06": {
     "ja": "営業前後のレストランで、係員が卓上備品と清掃状態を確認し、別の係員と記録を照合する。",
     "en": "Restaurant staff check table supplies and cleanliness and compare records during opening or closing preparation.",
@@ -421,20 +481,20 @@ const currentImageAlt:Record<string,Record<string,string>> = {
     "tl": "Tumatanggap ang superbisor ng ulat, nagsusuri ng tala, at ibinabahagi sa pangkat ang pagtugon at pagpapabuti."
   },
   "hotel-safety-02": {
-    "ja": "ホテルの館内訓練で、手引きを持つ指導者が非常階段への経路を示し、従業員が確認する。初期消火の限界と避難条件は、下の模式図と文字で別に示します。",
-    "en": "During a hotel drill, an instructor with a manual shows staff the route to a stairwell. Initial-firefighting limits and evacuation conditions are shown separately in the schematic guide below.",
-    "vi": "Trong buổi diễn tập khách sạn, người hướng dẫn cầm tài liệu chỉ đường tới cầu thang để nhân viên kiểm tra. Giới hạn chữa cháy ban đầu và điều kiện thoát nạn được nêu riêng trong sơ đồ và chữ bên dưới.",
-    "id": "Dalam latihan hotel, instruktur membawa panduan dan menunjukkan jalur ke tangga untuk diperiksa staf. Batas pemadaman awal serta kondisi evakuasi dijelaskan terpisah pada skema dan teks di bawah.",
-    "zh-CN": "酒店演练中，指导人员拿着手册，向员工指出通往楼梯的路线。初期灭火的限度与疏散条件在下方示意图及文字中另行说明。",
-    "zh-TW": "旅館演練中，指導人員拿著手冊，向員工指出通往樓梯的路線。初期滅火的限度與疏散條件在下方示意圖及文字中另行說明。",
-    "hi": "होटल अभ्यास में पुस्तिका लिए प्रशिक्षक कर्मचारियों को सीढ़ियों का मार्ग दिखाता है। प्रारंभिक अग्निशमन की सीमा और निकासी की शर्तें नीचे के चित्र व पाठ में अलग दी गई हैं।",
-    "bn": "হোটেলের মহড়ায় নির্দেশিকা হাতে প্রশিক্ষক কর্মীদের সিঁড়ির পথ দেখাচ্ছেন। প্রাথমিক অগ্নিনির্বাপণের সীমা ও বেরিয়ে যাওয়ার শর্ত নিচের ধারণামূলক চিত্র ও পাঠ্যে আলাদা দেখানো হয়েছে।",
-    "ne": "होटलको अभ्यासमा पुस्तिका लिएका प्रशिक्षकले कर्मचारीलाई भर्‍याङतर्फको बाटो देखाउँछन्। सुरुवाती आगो निभाउने सीमा र निस्कने सर्त तलका अवधारणात्मक चित्र र पाठमा छुट्टै छन्।",
-    "my": "ဟိုတယ်လေ့ကျင့်မှုတွင် လမ်းညွှန်စာအုပ်ကိုင်ထားသူက ဝန်ထမ်းများအား လှေကားသို့ သွားရာလမ်းကို ပြနေသည်။ ကနဦးမီးငြှိမ်းသတ်မှုအကန့်အသတ်နှင့် ထွက်ခွာရမည့်အခြေအနေများကို အောက်ပါသဘောတရားပုံနှင့်စာသားတွင် သီးခြားပြထားသည်။",
-    "th": "ในการซ้อมของโรงแรม ผู้สอนถือคู่มือและชี้ทางไปบันไดให้พนักงานตรวจสอบ ขอบเขตการดับไฟระยะแรกและเงื่อนไขการอพยพแสดงแยกในภาพแนวคิดกับข้อความด้านล่าง",
-    "km": "ក្នុងការហ្វឹកហាត់សណ្ឋាគារ អ្នកបង្ហាត់កាន់សៀវភៅណែនាំបង្ហាញផ្លូវទៅជណ្តើរឱ្យបុគ្គលិកពិនិត្យ។ ដែនកំណត់នៃការពន្លត់ដំបូងនិងលក្ខខណ្ឌជម្លៀសបង្ហាញដោយឡែកក្នុងរូបសង្ខេបនិងអក្សរខាងក្រោម។",
-    "tl": "Sa pagsasanay sa hotel, may manwal na itinuturo ng tagapagsanay sa kawani ang daan patungo sa hagdan. Hiwalay na ipinapakita sa gabay sa ibaba ang limitasyon ng paunang pag-apula at kondisyon ng paglikas."
-  }
+  "ja": "ホテルの館内訓練で、手引きを持つ指導者が非常階段への経路を示し、従業員が確認する。初期消火の限界と避難条件は、下の模式図と文字で別に示します。",
+  "en": "During a hotel drill, an instructor with a manual shows staff the route to a stairwell. Initial-firefighting limits and evacuation conditions are shown separately in the schematic guide below.",
+  "vi": "Trong buổi diễn tập khách sạn, người hướng dẫn cầm tài liệu chỉ đường tới cầu thang để nhân viên kiểm tra. Giới hạn chữa cháy ban đầu và điều kiện thoát nạn được nêu riêng trong sơ đồ và chữ bên dưới.",
+  "id": "Dalam latihan hotel, instruktur membawa panduan dan menunjukkan jalur ke tangga untuk diperiksa staf. Batas pemadaman awal serta kondisi evakuasi dijelaskan terpisah pada skema dan teks di bawah.",
+  "zh-CN": "酒店演练中，指导人员拿着手册，向员工指出通往楼梯的路线。初期灭火的限度与疏散条件在下方示意图及文字中另行说明。",
+  "zh-TW": "旅館演練中，指導人員拿著手冊，向員工指出通往樓梯的路線。初期滅火的限度與疏散條件在下方示意圖及文字中另行說明。",
+  "hi": "होटल अभ्यास में पुस्तिका लिए प्रशिक्षक कर्मचारियों को सीढ़ियों का मार्ग दिखाता है। प्रारंभिक अग्निशमन की सीमा और निकासी की शर्तें नीचे के चित्र व पाठ में अलग दी गई हैं।",
+  "bn": "হোটেলের মহড়ায় নির্দেশিকা হাতে প্রশিক্ষক কর্মীদের সিঁড়ির পথ দেখাচ্ছেন। প্রাথমিক অগ্নিনির্বাপণের সীমা ও বেরিয়ে যাওয়ার শর্ত নিচের ধারণামূলক চিত্র ও পাঠ্যে আলাদা দেখানো হয়েছে।",
+  "ne": "होटलको अभ्यासमा पुस्तिका लिएका प्रशिक्षकले कर्मचारीलाई भर्‍याङतर्फको बाटो देखाउँछन्। सुरुवाती आगो निभाउने सीमा र निस्कने सर्त तलका अवधारणात्मक चित्र र पाठमा छुट्टै छन्।",
+  "my": "ဟိုတယ်လေ့ကျင့်မှုတွင် လမ်းညွှန်စာအုပ်ကိုင်ထားသူက ဝန်ထမ်းများအား လှေကားသို့ သွားရာလမ်းကို ပြနေသည်။ ကနဦးမီးငြှိမ်းသတ်မှုအကန့်အသတ်နှင့် ထွက်ခွာရမည့်အခြေအနေများကို အောက်ပါသဘောတရားပုံနှင့်စာသားတွင် သီးခြားပြထားသည်။",
+  "th": "ในการซ้อมของโรงแรม ผู้สอนถือคู่มือและชี้ทางไปบันไดให้พนักงานตรวจสอบ ขอบเขตการดับไฟระยะแรกและเงื่อนไขการอพยพแสดงแยกในภาพแนวคิดกับข้อความด้านล่าง",
+  "km": "ក្នុងការហ្វឹកហាត់សណ្ឋាគារ អ្នកបង្ហាត់កាន់សៀវភៅណែនាំបង្ហាញផ្លូវទៅជណ្តើរឱ្យបុគ្គលិកពិនិត្យ។ ដែនកំណត់នៃការពន្លត់ដំបូងនិងលក្ខខណ្ឌជម្លៀសបង្ហាញដោយឡែកក្នុងរូបសង្ខេបនិងអក្សរខាងក្រោម។",
+  "tl": "Sa pagsasanay sa hotel, may manwal na itinuturo ng tagapagsanay sa kawani ang daan patungo sa hagdan. Hiwalay na ipinapakita sa gabay sa ibaba ang limitasyon ng paunang pag-apula at kondisyon ng paglikas."
+}
 };
 export function hotelIllustrationAlt(id:string,language:string,fallback:string):string {
  const descriptions=currentImageAlt[id];
