@@ -1,3 +1,4 @@
+import {PesticideLabelFields} from './PesticideLabelFields';
 import {PesticideFormulationComparison} from './PesticideFormulationComparison';
 import {CoolingCuringComparison} from './CoolingCuringComparison';
 import {AgricultureImageRuby} from './AgricultureImageRuby';
@@ -48,6 +49,10 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
   return <FruitManagementSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  }
  if(!lesson.levels.includes(level))return null;
+ if(lesson.id==='agr-s30-label-detail'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <PesticideLabelFields lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
  if(lesson.id==='agr-pesticide-formulation-reading-2'){
   if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
   return <PesticideFormulationComparison lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;

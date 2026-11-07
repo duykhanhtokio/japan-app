@@ -32,7 +32,7 @@ for(const override of [{sourceHash:'stale'},{revision:'stale'}]){assert.equal(da
 const condition=data.labels.ja[10];data.labels.ja[10]='カボチャ：高温多湿';assert.equal(daily(l),'');data.labels.ja[10]=condition;guards++;
 const original=l.paragraphs[0].textJa;l.paragraphs[0].textJa+='changed';assert.equal(daily(l),'');l.paragraphs[0].textJa=original;guards++;
 assert.equal(daily(l,'vi',{level:'1'}),'');guards++;
-for(const id of ['agr-s30-label-detail','agr-f40-flower-add-orchard-base']){assert(!support.figureBindings[id]);assert.equal(daily(lessons.lessons.find(l=>l.id===id)),'');guards++;}
+for(const id of ['agr-f40-flower-add-orchard-base']){assert(!support.figureBindings[id]);assert.equal(daily(lessons.lessons.find(l=>l.id===id)),'');guards++;}
 const figures=json('src/data/agriculture/recognition-images.json').images;
 for(const id of ['agr-f40-flower-harvest-v1','agr-f40-safety-media-pesticide-source-conditions','agr-f40-flower-materials-v1'])assert(figures.find(f=>f.id===id)?.lessonIds.length,'valid original primary asset usage preserved');
 console.log(`PASS cooling-curing: ${renders} actual daily/component locale renders, six differentiated diagram panels and11 labels, ${guards} source/level/paragraph/wrong-objective guards; three original primary assets preserved.`);
