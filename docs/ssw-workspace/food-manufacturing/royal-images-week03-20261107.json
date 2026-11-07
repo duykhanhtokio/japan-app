@@ -5,7 +5,7 @@
   "dateJst": "2026-11-07",
   "baselineCommit": "ff7199544a237a18f1bdd37fd3f08e28a46c7d4a",
   "sourceAuditStartedAtCommit": "df65991ec3a26e7b469cbbba2953e83940b6b29a",
-  "status": "week3_group1_validated_ready_for_remote_persistence",
+  "status": "week3_group2_verified_ready_for_remote_persistence",
   "policy": "docs/ssw-workspace/image-royal-overhaul-20261107/policy.json",
   "scope": [
     {
@@ -54,7 +54,7 @@
       "captionParagraphId": "p1",
       "captionJa": "手袋は、食品を汚染しないように使う道具です。破れた物や合わない物を使わず、原料や製品の切替え、休憩後、段ボールに触れた後など、必要な場面で交換します。清潔な食品を扱う前に、前の作業の危害要因を持ち込まないことが目的です。",
       "originalDiagramKind": "zones",
-      "royalDailyVisualIntegrated": false
+      "royalDailyVisualIntegrated": true
     },
     {
       "lessonId": "food-1-017",
@@ -66,7 +66,7 @@
       "captionParagraphId": "p1",
       "captionJa": "届いた原料は、注文書などと照らし合わせ、種類、規格、数量を確かめます。包装、期限、保存方法、品温、外観やにおいも確認します。検査が決められている原料は、合格したことを確認して受け入れます。",
       "originalDiagramKind": "receipt",
-      "royalDailyVisualIntegrated": false
+      "royalDailyVisualIntegrated": true
     },
     {
       "lessonId": "food-1-018",
@@ -138,7 +138,7 @@
       "captionParagraphId": "p1",
       "captionJa": "検査は目的に合う精度の機器を使い、訓練を受けた担当者が決めた手順で行います。温度計やタイマー、はかりは指定された校正状態を確認します。時刻や方法を守れなかった場合は、その事実を報告し、実施したことにして記録を埋めません。",
       "originalDiagramKind": "calibration",
-      "royalDailyVisualIntegrated": false
+      "royalDailyVisualIntegrated": true
     },
     {
       "lessonId": "food-2-018",
@@ -415,5 +415,64 @@
     "limitations": "AI objective/pixel self-review plus mechanical and source guard tests are not originalPDF/domain, native-speaker, independent all-locale semantic, browser/device or release certification."
   },
   "remainingSupplementalFigures": [],
-  "remotePersistence": "Freeze first bounded3daily (1new+2reuse), await coordinator remote save before any further week3unit. No week4."
+  "remotePersistence": "Group1 saved ceaaf6c; group2 six exact paths frozen awaiting coordinator remote save; week3 still incomplete.",
+  "group2": {
+    "scope": [
+      "food-1-016",
+      "food-1-017",
+      "food-2-017"
+    ],
+    "assets": [
+      {
+        "lessonId": "food-1-016",
+        "sourceHash": "8fd36b8f0c4727491cf798fabfb8d060b843d55de93123607a6edc88ce6ee850",
+        "captionParagraphId": "p1",
+        "path": "assets/food-manufacturing/royal-weekly-20261107/week03/glove-change.webp",
+        "sha256": "84450f41a9558b042e2f767687e464e0d0aa4d1fe18b4f7fa789fd311645211e",
+        "bytes": 182362,
+        "width": 1536,
+        "height": 1024,
+        "method": "built_in_imagegen_new_raster",
+        "nativeOutput": "/workspace/scratch/b72f4a7f6a62/generated_images/exec-68291352-0490-4d93-bd49-f25192bce8e3.png",
+        "pixelReview": "Actually opened PNG: coherent Royal drawn factory context, no thresholds/results baked in; source paragraph remains exact localized native caption."
+      },
+      {
+        "lessonId": "food-1-017",
+        "sourceHash": "015fae1990980d7f3601be2120749a961f5e502ca5f6a024677c8209ef808b43",
+        "captionParagraphId": "p1",
+        "path": "assets/food-manufacturing/royal-weekly-20261107/week03/receiving-inspection.webp",
+        "sha256": "8695d0a653d2341d3244942ea59d21fccb3ff84a47d315da6d49925a73e3dc96",
+        "bytes": 303846,
+        "width": 1536,
+        "height": 1024,
+        "method": "built_in_imagegen_new_raster",
+        "nativeOutput": "/workspace/scratch/b72f4a7f6a62/generated_images/exec-08e3d9ac-e4fc-4e55-8854-ed2cb9f1375b.png",
+        "pixelReview": "Actually opened PNG: coherent Royal drawn factory context, no thresholds/results baked in; source paragraph remains exact localized native caption."
+      },
+      {
+        "lessonId": "food-2-017",
+        "sourceHash": "eaaa5dbcceb6e955edb18166d469235807ee2dbcb4a2608c63c6c9bfad39bf3a",
+        "captionParagraphId": "p1",
+        "path": "assets/food-manufacturing/royal-weekly-20261107/week03/instrument-status-record-check.webp",
+        "sha256": "3329ef06dc3ba5073554e369dfbb249105b31680f23a71af15c8d0caec0f659b",
+        "bytes": 233372,
+        "width": 1536,
+        "height": 1024,
+        "method": "built_in_imagegen_new_raster",
+        "nativeOutput": "/workspace/scratch/b72f4a7f6a62/generated_images/exec-ed13ec8e-9156-42e0-93f2-e70b4a58bc31.png",
+        "pixelReview": "Actually opened PNG: coherent Royal drawn factory context, no thresholds/results baked in; source paragraph remains exact localized native caption."
+      }
+    ],
+    "limitations": "Contextual illustration only: no claim to demonstrate all receiving inspections, glove-change procedure or instrument recalibration. Full source localized captions authoritative.",
+    "verification": {
+      "registry": "PASS27 exact current daily raster bindings; all paths exist; exact daily caption IDs; stale hash rejected; week4+ overrides zero. Harness old console label24 is stale; actual assertion27.",
+      "productionReader": "PASS78 actual production FoodDailyLearning contexts: six week03 units × Japanese+12 locales, current full captions via real production resolver; sourcehash/missingcaption negatives for all six. Harness old console label39 is stale; loop six units. RN-web SSR with ruby-text and asset-metadata adapters, no browser image pixel claim.",
+      "regressions": "PASS52 previous native/daily contexts plus13 chemicalchart and incorrectstorage warning contexts. Existing 014 stable ID/dedup and distinct 015 p2 supplement retained.",
+      "art": "All three new native PNGs actually opened,1536x1024; lossily encoded WebP90/method6 without compositing. No readable thresholds/tolerances/results embedded. Receiving dock outside production caps have some side hair; not presented as production-entry attire. Calibration scene is status check beforeuse, not actual recalibration."
+    },
+    "generationPrompts": {
+      "food3-glove-change": "Use case: scientific-educational. Landscape1536x1024, Royal A+F2.5D adult Japanese vocational textbook illustration. Match attached construction reference only for controlled dark ink outlines, painted/celshaded adult faces, dimensional convincing materials, no photographic skin or CGI. Foodfactory hygienic glove change station, no exposed food or active machinery. A worker in fully hair-covering white hood and mask covering nose/chin has removed previous gloves after a cardboard-handling task; old crumpled blue gloves are isolated in a closed-lid waste bin with footpedal just beside station, cardboard boxes stay far behind a clear zone boundary. Foreground worker has clean dry BARE hands and is carefully taking ONE fresh blue disposable glove from a clean wall dispenser by its cuff; show this distinct action clearly with plausible hands, no used glove beingwashed, no touchingface/mask, no reused dirtygloves, no gloves on barefloor. Another clean glove remains in dispenser; no clocks or temperatures. Clean coat cuffs, gloves for task only, no jewelry. No readable text, numbers, arrows, inset panels, decorative frame, sparkle/checkmark, branding or watermark. Image illustrates fresh glove preparation at task transition; exact source caption separately explains when change is required, not universal donning technique. Warm ivory room, restrained navy accents; realistic adult proportions; action central90percent.",
+      "food3-receiving-inspection": "Use case: scientific-educational. Landscape1536x1024 Royal A+F2.5D adult Japanese vocational foodfactory illustration. Match supplied style reference drawn navyinkcontours, painted/celshading and adult natural stylized faces; NOT photograph/photorealCG. At clean sheltered RECEIVING inspection dock outsideproduction, an adult receivingworker compares a closed intact ingredient carton on stainless trolley with a plain paper deliveryrecord held on clipboard. A second adultworker inspects another sealed carton exterior/label visually; label has only blank lines and simple unlettered foodshape, no actual terms/numbers. Separate protected small inspection table shows an infrared handheld instrument resting UNUSED, no invented numericreadings or implied validation method. Focus on physically comparing record and actual package for correct item/quantity/condition before acceptance. Clean workclothes, caps coveringhair, no exposed food, no barehand contact with ingredient, no chemicalbottles, no stamping approved or universal passcriteria. Do not show crates of openmeat, do not claim visualcheck replaces prescribed laboratoryinspection. No arrows, text, numerals, speechbubble, frames, watermark, checkbox icons. Warm ivory/navy presentation, believable stainlesssteel/cardboard materials, detailed occupational scene fullyvisible central90percent."
+    }
+  }
 }
