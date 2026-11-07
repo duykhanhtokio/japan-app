@@ -108,6 +108,9 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-1-hyg-11':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-1-hyg-11-thumb-fingertip-wash-paper-dry.webp'),aspectRatio:1920/819},
+ 'rst-1-hyg-13':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-1-hyg-13-salad-service-covered-cold-storage.webp'),aspectRatio:1752/897},
+ 'rst-1-hyg-14':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-01-haccp-observation-verification.webp'),aspectRatio:1672/941},
  'rst-2-hyg-11':{source:require('../../../assets/restaurant/royal-weekly-20261107/week02/rst-2-hyg-11-recall-trace-held-lot-cold-transport.webp'),aspectRatio:1670/942},
  'rst-2-hyg-10':{source:require('../../../assets/restaurant/royal-weekly-20261107/week02/rst-2-hyg-10-allergen-replacement-label-handoff.webp'),aspectRatio:1671/941},
  'rst-2-hyg-08':{source:require('../../../assets/restaurant/royal-weekly-20261107/week02/rst-2-hyg-08-waste-segregation-drain-contained.webp'),aspectRatio:1671/941},
