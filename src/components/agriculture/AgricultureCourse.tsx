@@ -79,7 +79,7 @@ function Reader({lesson,language,onBack,onComplete,saving,saveError,level}:{leve
  <FruitTreeComparison lesson={lesson} translation={t} showTranslation={show} language={language} colors={colors}/>
  <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} colors={colors} level={level}/>
  <MoistureReaderChecks lessonId={lesson.id} level={level} language={language} showTranslation={show} Button={Button}/>
- <DailyLearningFigure lesson={lesson} level={level} colors={colors}/>
+ <DailyLearningFigure lesson={lesson} level={level} colors={colors} language={language} showTranslation={show}/>
  <DailyCompanionReadings lesson={lesson} level={level} language={language} showTranslation={show} colors={colors}/>
  <Text style={[s.heading,{color:colors.text}]}>用語</Text>{lesson.terms.map(term=><Text key={term.ja} style={[s.body,{color:colors.text}]}>{term.ja}（{term.reading}）</Text>)}
  <Text style={[s.heading,{color:colors.text}]}>整理して説明する</Text><Text style={[s.body,{color:colors.text}]}>{lesson.activityJa}</Text>{show&&t&&<TranslationText>{t.activity}</TranslationText>}

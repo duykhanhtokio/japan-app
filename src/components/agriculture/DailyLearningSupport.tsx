@@ -5,6 +5,7 @@ import figures from '@/data/agriculture/recognition-images.json';
 import {getAgricultureFigureAsset} from './RecognitionImages';
 import {ZoomableFigure} from './ZoomableFigure';
 import {DailyInstructionDiagram,type DailyDiagramKind} from './DailyInstructionDiagram';
+import {Statistics2019Figure} from './Statistics2019Figure';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 type Colors={text:string;translation:string;translationText:string;border:string};
 type Companion={lessonId:string;sourceHash:string;paragraphIds:string[]};
@@ -18,8 +19,9 @@ export function agricultureDailyCompanions(lesson:AgricultureLesson,level:Agricu
  if(sourceVersions[lesson.id]!==lesson.sourceHash)return [];
  return (pairs[lesson.id]||[]).flatMap(p=>{const l=agricultureLesson(p.lessonId,level);return l&&l.sourceHash===p.sourceHash?[{lesson:l,paragraphIds:p.paragraphIds}]:[];});
 }
-export function DailyLearningFigure({lesson,level,colors,includeExisting=false}:{lesson:AgricultureLesson;level:AgricultureLevel;colors:Colors;includeExisting?:boolean}){
+export function DailyLearningFigure({lesson,level,colors,includeExisting=false,language='ja',showTranslation=false}:{lesson:AgricultureLesson;level:AgricultureLevel;colors:Colors;includeExisting?:boolean;language?:string;showTranslation?:boolean}){
  const b=bindings[lesson.id],d=diagrams[lesson.id];
+ if(level==='2'&&lesson.id==='agr-statistics'&&d?.kind==='statistics-2019'&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><Statistics2019Figure lesson={lesson} level={level} language={language} showTranslation={showTranslation} translation={showTranslation?agricultureTranslation(lesson,language):null} colors={colors}/></View>;
  if(d&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><DailyInstructionDiagram kind={d.kind as DailyDiagramKind} title={d.titleJa} caption={d.captionJa} alt={d.altJa} colors={colors}/></View>;
  const f=b?.lessonSourceHash===lesson.sourceHash?figures.images.find(f=>f.id===b.figureId&&f.assetSha256===b.assetSha256&&b.scopeLevels.includes(level)):includeExisting?figures.images.find(f=>f.lessonIds.includes(lesson.id)&&f.lessonSourceHashes[lesson.id as keyof typeof f.lessonSourceHashes]===lesson.sourceHash&&f.scopeLevels.includes(level)):null;
  const asset=f?getAgricultureFigureAsset(f.assetKey):null;
@@ -39,7 +41,7 @@ export function DailyCompanionReadings({lesson,level,language,showTranslation,co
  {entries.map(({lesson:l,paragraphIds})=>{const t=showTranslation?agricultureTranslation(l,language):null;return <View key={l.id} style={{gap:10}}>
  <Text style={{color:colors.text,fontSize:19,lineHeight:29,fontWeight:'700'}}>{l.titleJa}</Text>
  {l.paragraphs.filter(p=>paragraphIds.includes(p.id)).map(p=><View key={p.id} style={{gap:6}}><Text style={{color:colors.text,fontSize:17,lineHeight:28,fontWeight:'700'}}>{p.titleJa}</Text><Text selectable style={{color:colors.text,fontSize:17,lineHeight:29}}>{p.textJa}</Text>{t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}</View>)}
- <DailyLearningFigure lesson={l} level={level} colors={colors} includeExisting/>
+ <DailyLearningFigure lesson={l} level={level} colors={colors} includeExisting language={language} showTranslation={showTranslation}/>
  </View>;})}
  </View>;
 }
