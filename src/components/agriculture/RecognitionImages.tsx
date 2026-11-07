@@ -1,3 +1,4 @@
+import paragraphPlacement from '@/data/agriculture/image-paragraph-placement.json';
 import {DilutionExampleFigure} from './DilutionExampleFigure';
 import {agricultureFigureSourceMarks} from './FigureSourceMarks';
 import {SprayerPartSupport} from './SprayerPartSupport';
@@ -205,6 +206,7 @@ type RecognitionImage={
  titleJa:string;altJa:string;observationJa:string;limitJa:string;
  labelsJa?:string[];scopeLevels?:string[];
  allowExpandedView?:boolean;
+ creation?:unknown;kind?:string;paragraphIds?:string[];
  assetKey:string;width:number;height:number;assetSha256?:string;
 };
 type Colors={text:string;translation:string;translationText:string;border:string};
@@ -236,12 +238,20 @@ export function recognitionImageTranslation(item:RecognitionImage,lessonId:strin
  return {title:t.title,alt:t.alt,observation:t.observation,limit:limit.locales[language],...(t.labels?{labels:t.labels}:{})};
 }
 
-export function RecognitionImages({lessonId,lessonSourceHash,colors,level,language='ja',showTranslation=false,lessonRevision}:{lessonId:string;lessonSourceHash:string;colors:Colors;level?:string;language?:string;showTranslation?:boolean;lessonRevision?:string}) {
- const visible=images.filter(item=>matchesLesson(item,lessonId,lessonSourceHash,level));
+
+const compactFigureKeys=new Set(["agripoly-film", "apple", "asian-pear", "blueberry", "broccoli-clubroot", "cabbage", "cabbage-sclerotinia", "cabbage-soft-rot", "carrot", "chestnut", "chinese-cabbage", "cucumber", "cucumber-downy-mildew", "cucumber-powdery-mildew", "daikon", "eggplant", "equipment-manual-shoulder-sprayer", "equipment-portable-brush-cutter", "equipment-powered-backpack-sprayer", "equipment-ride-on-mower", "equipment-speed-sprayer", "equipment-walkbehind-hammer-mower", "f40-facility-support-carnation-greenhouse-level1", "f40-facility-support-greenhouse-auto-sprayer", "f40-facility-support-greenhouse-heater-co2", "f40-facility-support-greenhouse-insect-light-appearance", "f40-flower-platform", "f40-flower-unshu", "f40-general-hand-planting", "f40-general-seeder", "f40-general-tractor-seeder", "f40-general-transplanter", "grapes", "indica-brown-rice", "insect-net", "japonica-brown-rice", "kiwi", "leek-harvester", "lettuce", "loquat", "machine-clothing", "management-positions", "manual-backpack-sprayer", "negi-rust", "nonwoven-cover", "onion", "peach", "persimmon", "pest-aphid-eggplant", "pest-cabbage-caterpillar", "pest-leafminer-wakegi-damage", "pest-mite-cucumber-damage", "pest-pepper-bug", "pest-sweetpotato-weevil", "pest-thrips-wakegi", "pest-whitefly-tomato", "pesticide-clothing", "potato", "potato-digger", "pvc-cover-film", "rice-combine", "rotary-mulcher", "shade-cloth", "spinach", "strawberry-gray-mold", "sweet-potato", "tomato", "tomato-late-blight", "tool-adjustable-wrench", "tool-box-end-wrench", "tool-hex-keys", "tool-open-end-spanner", "tool-screwdrivers", "tool-socket-wrench", "unshu-mikan", "yuzu"]);
+export function recognitionImagePresentation(item:{assetKey:string}):'recognition'|'diagram'{return compactFigureKeys.has(item.assetKey)?'recognition':'diagram';}
+export function recognitionImageParagraph(item:{id:string},lessonId:string,sourceHash:string){
+ const entry=(paragraphPlacement as Record<string,{sourceHash:string;paragraphs:Record<string,string>}>)[lessonId];
+ return entry?.sourceHash===sourceHash?entry.paragraphs[item.id]:undefined;
+}
+
+export function RecognitionImages({lessonId,lessonSourceHash,colors,level,language='ja',showTranslation=false,lessonRevision,paragraphId,unplacedOnly=false}:{lessonId:string;lessonSourceHash:string;colors:Colors;level?:string;language?:string;showTranslation?:boolean;lessonRevision?:string;paragraphId?:string;unplacedOnly?:boolean}) {
+ const visible=images.filter(item=>matchesLesson(item,lessonId,lessonSourceHash,level)&&(!paragraphId&&!unplacedOnly||paragraphId===recognitionImageParagraph(item,lessonId,lessonSourceHash)||unplacedOnly&&!recognitionImageParagraph(item,lessonId,lessonSourceHash)));
  return <>{visible.map(item=>{const t=showTranslation?recognitionImageTranslation(item,lessonId,lessonSourceHash,lessonRevision,language):null;const ruby=(field:string,text:string,style:StyleProp<TextStyle>)=><AgricultureImageRuby imageId={item.id} assetSha256={item.assetSha256||''} lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} field={field} text={text} style={style} color={colors.translationText}/>;return <View key={item.id} testID={item.id} style={[s.figure,{backgroundColor:colors.translation,borderColor:colors.border}]}>
   {ruby('title',item.titleJa,[s.title,{color:colors.translationText}])}
   {!!t&&<Text testID={`${item.id}-localized-title`} style={[s.title,{color:colors.translationText}]}>{t.title}</Text>}
-  {item.id==='agr-f40-safety-media-volume-factor-mass'?<DilutionExampleFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} alt={t?.alt||item.altJa} colors={colors} renderLabel={index=><View>{ruby(`label:${index}`,item.labelsJa?.[index]||'',[s.body,{color:colors.translationText}])}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`} style={[s.body,{color:colors.translationText}]}>{t.labels[index]}</Text>}</View>}/> :item.id==='agr-f40-general-cropping-example-flow'?<CropCalendarFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language={language} showTranslation={showTranslation} includeMetadata={false} colors={colors}/>:item.id==='agr-f40-general-flower-legend-reader'?<FlowerLegendFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} colors={colors}/>:<ZoomableFigure source={assets[item.assetKey]} width={item.width} height={item.height} altJa={t?.alt||item.altJa} testID={item.id} colors={colors} allowExpandedView={item.allowExpandedView} marks={agricultureFigureSourceMarks(item)}/>}
+  {item.id==='agr-f40-safety-media-volume-factor-mass'?<DilutionExampleFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} alt={t?.alt||item.altJa} colors={colors} renderLabel={index=><View>{ruby(`label:${index}`,item.labelsJa?.[index]||'',[s.body,{color:colors.translationText}])}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`} style={[s.body,{color:colors.translationText}]}>{t.labels[index]}</Text>}</View>}/> :item.id==='agr-f40-general-cropping-example-flow'?<CropCalendarFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language={language} showTranslation={showTranslation} includeMetadata={false} colors={colors}/>:item.id==='agr-f40-general-flower-legend-reader'?<FlowerLegendFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} colors={colors}/>:<ZoomableFigure source={assets[item.assetKey]} width={item.width} height={item.height} altJa={t?.alt||item.altJa} testID={item.id} colors={colors} presentation={recognitionImagePresentation(item)} allowExpandedView marks={agricultureFigureSourceMarks(item)}/>}
   {item.id==='agr-f40-safety-media-sprayer-parts'?<SprayerPartSupport lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} assetSha256={item.assetSha256||''} alt={t?.alt||item.altJa} colors={colors} renderLabel={index=><View>{ruby(`label:${index}`,item.labelsJa?.[index]||'',[s.body,{color:colors.translationText}])}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`} style={[s.body,{color:colors.translationText}]}>{t.labels[index]}</Text>}</View>}/>:item.id==='agr-f40-safety-media-volume-factor-mass'?null:!!item.labelsJa?.length&&<View style={{gap:4}}>{item.labelsJa.map((label,index)=><View key={`${index}-${label}`}>{ruby(`label:${index}`,label,[s.body,{color:colors.translationText}])}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`} style={[s.body,{color:colors.translationText}]}>{t.labels[index]}</Text>}</View>)}</View>}
   <AgricultureImageHeading kind="observation" style={[s.label,{color:colors.translationText}]} color={colors.translationText}/>
   {ruby('observation',item.observationJa,[s.body,{color:colors.translationText}])}
@@ -253,7 +263,7 @@ export function RecognitionImages({lessonId,lessonSourceHash,colors,level,langua
 }
 
 const s=StyleSheet.create({
- figure:{width:'100%',maxWidth:720,alignSelf:'center',marginVertical:16,padding:16,gap:10,borderWidth:1,borderRadius:12},
+ figure:{width:'100%',maxWidth:720,minWidth:0,flexShrink:1,alignSelf:'center',marginVertical:12,padding:12,gap:10,borderWidth:1,borderRadius:12},
  title:{fontSize:20,lineHeight:31,fontWeight:'700'},
  label:{fontSize:17,lineHeight:28,fontWeight:'700',marginTop:4},
  body:{fontSize:17,lineHeight:29},

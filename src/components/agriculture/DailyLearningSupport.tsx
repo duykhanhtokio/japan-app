@@ -14,7 +14,7 @@ import {Text,View} from 'react-native';
 import {agricultureLesson,agricultureTranslation,type AgricultureLesson,type AgricultureLevel} from '@/data/agriculture';
 import support from '@/data/agriculture/daily-learning-support.json';
 import figures from '@/data/agriculture/recognition-images.json';
-import {RecognitionImages,getAgricultureFigureAsset,recognitionImageTranslation} from './RecognitionImages';
+import {RecognitionImages,getAgricultureFigureAsset,recognitionImageTranslation,recognitionImagePresentation} from './RecognitionImages';
 import {ZoomableFigure} from './ZoomableFigure';
 import {DailyInstructionDiagram,type DailyDiagramKind} from './DailyInstructionDiagram';
 import {Statistics2019Figure} from './Statistics2019Figure';
@@ -116,11 +116,11 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
  })[0]:null;
  const asset=f?getAgricultureFigureAsset(f.assetKey):null;
  const imageReadingContext={imageId:f?.id??'',assetSha256:f?.assetSha256??'',lessonId:lesson.id,lessonSourceHash:lesson.sourceHash,lessonRevision:lesson.revision,color:colors.translationText};
- return f&&asset?<View testID={`agri-daily-support-${lesson.id}`} style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10,gap:10}}>
+ return f&&asset?<View testID={`agri-daily-support-${lesson.id}`} style={{width:'100%',minWidth:0,alignSelf:'center',padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10,gap:10}}>
  <AgricultureImageRuby {...imageReadingContext} field="title" text={f.titleJa} style={{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'}}/>
  {!!translated&&<Text testID={`agri-daily-support-${lesson.id}-localized-title`} style={{color:colors.translationText,fontSize:18,lineHeight:28,fontWeight:'700'}}>{translated.title}</Text>}
- <ZoomableFigure source={asset} width={f.width} height={f.height} altJa={translated?.alt||f.altJa} testID={`agri-daily-support-${lesson.id}`} colors={colors} allowExpandedView/>
- <Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{currentBinding?.reuseReasonJa||f.observationJa}</Text>
+ <ZoomableFigure source={asset} width={f.width} height={f.height} altJa={translated?.alt||f.altJa} testID={`agri-daily-support-${lesson.id}`} colors={colors} presentation={recognitionImagePresentation(f)} allowExpandedView/>
+ {!!currentBinding?.reuseReasonJa&&currentBinding.reuseReasonJa!==f.observationJa&&<Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{currentBinding.reuseReasonJa}</Text>}
  <AgricultureImageRuby {...imageReadingContext} field="observation" text={f.observationJa} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/>
  <AgricultureImageRuby {...imageReadingContext} field="limit" text={f.limitJa} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/>
  {!!translated&&<View testID={`agri-daily-support-${lesson.id}-localized-metadata`} style={{gap:6}}><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.observation}</Text><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.limit}</Text>{!!translated.labels?.length&&f.labelsJa?.map((label,i)=><View key={i} style={{gap:3}}><AgricultureImageRuby {...imageReadingContext} field={`label:${i}`} text={label} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/><Text testID={`agri-daily-support-${lesson.id}-localized-label-${i}`} style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.labels![i]}</Text></View>)}</View>}
@@ -132,10 +132,17 @@ export function DailyCompanionReadings({lesson,level,language,showTranslation,co
  return <View testID={`agri-daily-context-${lesson.id}`} style={{gap:12,marginTop:12,borderTopWidth:1,borderColor:colors.border,paddingTop:18}}>
  <Text style={{color:colors.text,fontSize:20,lineHeight:30,fontWeight:'700'}}>関連する基礎と合わせて考える</Text>
  <Text style={{color:colors.text,fontSize:16,lineHeight:27}}>この日の短い補足を理解するため、同じ主題の基礎を抜き出して確認します。別の授業を自動で完了にはしません。</Text>
- {entries.map(({lesson:l,paragraphIds})=>{const t=showTranslation?agricultureTranslation(l,language):null;return <View key={l.id} style={{gap:10}}>
+ {entries.map(({lesson:l,paragraphIds})=>{
+ const t=showTranslation?agricultureTranslation(l,language):null;
+ const displayed=l.paragraphs.filter(p=>paragraphIds.includes(p.id));
+ const binding=bindings[l.id];
+ const currentBinding=binding?.lessonSourceHash===l.sourceHash&&binding.scopeLevels.includes(level)?binding:null;
+ const figure=currentBinding?figures.images.find(f=>f.id===currentBinding.figureId&&f.assetSha256===currentBinding.assetSha256):figures.images.find(f=>f.lessonIds.includes(l.id)&&f.lessonSourceHashes[l.id as keyof typeof f.lessonSourceHashes]===l.sourceHash&&f.scopeLevels.includes(level));
+ const imageParagraphIds=(figure as {paragraphIds?:string[]}|undefined)?.paragraphIds??[];
+ const anchor=displayed.find(p=>imageParagraphIds.includes(p.id))?.id??displayed[displayed.length-1]?.id;
+ return <View key={l.id} style={{width:'100%',minWidth:0,gap:10}}>
  <Text style={{color:colors.text,fontSize:19,lineHeight:29,fontWeight:'700'}}>{l.titleJa}</Text>
- {l.paragraphs.filter(p=>paragraphIds.includes(p.id)).map(p=><View key={p.id} style={{gap:6}}><Text style={{color:colors.text,fontSize:17,lineHeight:28,fontWeight:'700'}}>{p.titleJa}</Text><Text selectable style={{color:colors.text,fontSize:17,lineHeight:29}}>{p.textJa}</Text>{t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}</View>)}
- <DailyLearningFigure lesson={l} level={level} colors={colors} includeExisting language={language} showTranslation={showTranslation} paragraphIds={paragraphIds}/>
+ {displayed.map(p=><View key={p.id} style={{width:'100%',minWidth:0,gap:6}}><Text style={{color:colors.text,fontSize:17,lineHeight:28,fontWeight:'700'}}>{p.titleJa}</Text><Text selectable style={{color:colors.text,fontSize:17,lineHeight:29}}>{p.textJa}</Text>{t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}{p.id===anchor&&<DailyLearningFigure lesson={l} level={level} colors={colors} includeExisting language={language} showTranslation={showTranslation} paragraphIds={paragraphIds}/>}</View>)}
  </View>;})}
  </View>;
 }
