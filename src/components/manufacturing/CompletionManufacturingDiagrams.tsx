@@ -1,3 +1,4 @@
+import {manufacturingIllustrationCaptionReading} from '@/data/manufacturing/illustration-caption-readings';
 import type {ManufacturingLesson} from '@/data/manufacturing';
 import {manufacturingCompletionLessonTranslation} from '@/data/manufacturing/completion37';
 import type {SupplementalDiagram} from '@/data/manufacturing/supplemental-diagrams';
@@ -23,5 +24,5 @@ export function CompletionManufacturingDiagrams({lesson,language,showTranslation
  const target=showTranslation?manufacturingCompletionLessonTranslation(lesson,language):null;
  return <>{items.filter(item=>item.lessonId===lesson.id&&item.lessonSourceHash===lesson.sourceHash&&item.captionJa===lesson.summaryJa
   &&Number.isFinite(item.width)&&item.width>0&&Number.isFinite(item.height)&&item.height>0
-  &&Object.prototype.hasOwnProperty.call(sources,item.assetFile)).map(item=><SupplementalFigure key={item.id} item={item} language={language} showTranslation={showTranslation} imageSource={sources[item.assetFile]} translatedCaption={target?.summary??null}/>)}</>;
+  &&Object.prototype.hasOwnProperty.call(sources,item.assetFile)).map(item=><SupplementalFigure key={item.id} item={item} japaneseCaptionRuby={manufacturingIllustrationCaptionReading(lesson,item)} language={language} showTranslation={showTranslation} imageSource={sources[item.assetFile]} translatedCaption={target?.summary??null}/>)}</>;
 }
