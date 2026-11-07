@@ -2,6 +2,14 @@ import type {ImageSourcePropType} from 'react-native';
 
 /** Day-scoped replacements preserve shared legacy art IDs and captions. */
 export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspectRatio:number}>={
+ 71:{source:require('../../../assets/kaigo/paragraphs/kaigo-move-01-knowledge-1-v1.webp'),aspectRatio:1619/971},
+ 72:{source:require('../../../assets/kaigo/paragraphs/kaigo-move-01-summary-v1.webp'),aspectRatio:1619/971},
+ 73:{source:require('../../../assets/kaigo/paragraphs/kaigo-move-01-knowledge-2-v1.webp'),aspectRatio:1619/971},
+ 74:{source:require('../../../assets/kaigo/paragraphs/kaigo-eating-01-knowledge-3-v1.webp'),aspectRatio:1619/971},
+ 75:{source:require('../../../assets/kaigo/paragraphs/kaigo-eating-07-knowledge-0-v1.webp'),aspectRatio:1619/971},
+ 76:{source:require('../../../assets/kaigo/paragraphs/excretion-01-knowledge-1-v1.webp'),aspectRatio:1619/971},
+ 77:{source:require('../../../assets/kaigo/paragraphs/kaigo-eating-06-knowledge-1-v1.webp'),aspectRatio:1619/971},
+
  64:{source:require('../../../assets/kaigo/paragraphs/kaigo-week2-02-knowledge-0-v1.webp'),aspectRatio:1619/971},
  67:{source:require('../../../assets/kaigo/paragraphs/kaigo-week2-01-knowledge-2-v1.webp'),aspectRatio:1619/971},
  68:{source:require('../../../assets/kaigo/paragraphs/kaigo-week2-01-knowledge-4-v1.webp'),aspectRatio:1619/971},

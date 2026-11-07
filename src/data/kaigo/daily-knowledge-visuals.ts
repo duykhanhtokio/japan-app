@@ -32,6 +32,14 @@ const sources: Record<string, ImageSourcePropType> = {
 type DayFigureOverride={assetPath:string;assetSha256:string;width:number;height:number;rights:string;aiVisualReview:string;altJa?:string};
 const dayOverrides:Record<string,Record<string,DayFigureOverride>>=data.dayFigureOverrides;
 const daySources:Record<string,ImageSourcePropType>={
+ '71:skeleton':require('../../../assets/kaigo/royal-weekly-20261107/week11/skeleton-regions-controlled.webp'),
+ '72:skeleton':require('../../../assets/kaigo/royal-weekly-20261107/week11/skeleton-regions-controlled.webp'),
+ '74:eye':require('../../../assets/kaigo/royal-weekly-20261107/week11/eye-structures-controlled.webp'),
+ '75:heart':require('../../../assets/kaigo/royal-weekly-20261107/week11/circulation-flow-controlled.webp'),
+ '76:digestive':require('../../../assets/kaigo/royal-weekly-20261107/week11/digestive-route-controlled.webp'),
+ '73:muscles':require('../../../assets/kaigo/royal-weekly-20261107/week03/day15-muscle-regions-controlled.webp'),
+ '77:endocrine':require('../../../assets/kaigo/royal-weekly-20261107/week04/day27-endocrine-regions-controlled.webp'),
+
  '67:nervous':require('../../../assets/kaigo/royal-weekly-20261107/week10/day67-nervous-distribution-controlled.webp'),
  '70:pupils':require('../../../assets/kaigo/royal-weekly-20261107/week10/day70-pupil-comparison-controlled.webp'),
  '37:oral-ownership':require('../../../assets/kaigo/royal-weekly-20261107/week06/day37-oral-ownership-controlled.webp'),

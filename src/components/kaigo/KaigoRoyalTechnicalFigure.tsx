@@ -2,10 +2,15 @@ import React,{useState} from 'react';
 import {Image,Text,View,type ImageSourcePropType} from 'react-native';
 import translations from '@/data/kaigo/royal-technical-labels.json';
 
-type Kind='brain'|'respiratory'|'muscles'|'posture'|'wheelchair'|'pressure'|'eating'|'endocrine'|'urinary'|'oralOwnership'|'skin'|'grooming'|'nervous'|'pupils';
+type Kind='brain'|'respiratory'|'muscles'|'posture'|'wheelchair'|'pressure'|'eating'|'endocrine'|'urinary'|'oralOwnership'|'skin'|'grooming'|'nervous'|'pupils'|'skeleton'|'eye'|'heart'|'digestive';
 type Point={anchor:[number,number];target:[number,number]};
 /** Percent coordinates on each independently authored 1536x1024 base. Endpoints are manually source-checked. */
 export const royalTechnicalLeaders:Record<Kind,Point[]>={
+ skeleton:[{anchor:[15, 12],target:[31.9, 14]},{anchor:[15, 28],target:[31.9, 34]},{anchor:[15, 37],target:[26.5, 36]},{anchor:[48, 44],target:[31.9, 44]},{anchor:[12, 47],target:[26.3, 35]},{anchor:[11, 60],target:[24.1, 50]},{anchor:[45, 60],target:[25.8, 50]},{anchor:[15, 73],target:[29.2, 63]},{anchor:[90, 71],target:[73.8, 73.2]}],
+ eye:[{anchor:[15, 18],target:[32.94, 49.3]},{anchor:[90, 16],target:[72.2, 46]},{anchor:[90, 84],target:[80, 63]}],
+ heart:[{anchor:[15, 31],target:[38.4, 42]},{anchor:[15, 66],target:[38.4, 61]},{anchor:[90, 31],target:[59.9, 42]},{anchor:[90, 66],target:[59.9, 61]},{anchor:[15, 10],target:[22, 27]},{anchor:[90, 10],target:[78.1, 27]},{anchor:[50, 6],target:[50, 15.6]},{anchor:[50, 96],target:[50, 86.5]}],
+ digestive:[{anchor:[15, 13],target:[50, 14.8]},{anchor:[15, 30],target:[50, 28]},{anchor:[88, 37],target:[56, 41]},{anchor:[15, 63],target:[50, 61]},{anchor:[88, 65],target:[60.1, 62]},{anchor:[88, 83],target:[50, 83]},{anchor:[15, 90],target:[50, 87]}],
+
  nervous:[{anchor:[14,17],target:[50,20]},{anchor:[14,47],target:[50,45]},{anchor:[88,66],target:[60.5,55.7]}],
  pupils:[{anchor:[25,15],target:[28.65,51.76]},{anchor:[75,15],target:[71.35,51.76]}],
  oralOwnership:[
@@ -111,7 +116,7 @@ export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=fa
  const tr=(translations as Record<string,typeof ja>)[language]??ja;
  const bilingual=(original:string,translated:string)=>tr===ja?original:original+' / '+translated;
  const labels=ja[kind].map((label,i)=>bilingual(label,tr[kind][i]));
- const view=kind==='nervous'?bilingual(ja.nervousView,tr.nervousView):kind==='pupils'?bilingual(ja.pupilsView,tr.pupilsView):kind==='oralOwnership'?bilingual(ja.oralOwnershipView,tr.oralOwnershipView):kind==='skin'?bilingual(ja.skinView,tr.skinView):kind==='grooming'?bilingual(ja.groomingView,tr.groomingView):kind==='urinary'?bilingual(ja.urinaryView,tr.urinaryView):kind==='endocrine'?bilingual(ja.endocrineView,tr.endocrineView):kind==='eating'?bilingual(ja.eatingView,tr.eatingView):kind==='pressure'?bilingual(ja.pressureView,tr.pressureView):kind==='wheelchair'?bilingual(ja.wheelchairView,tr.wheelchairView):kind==='posture'?bilingual(ja.postureView,tr.postureView):kind==='brain'?bilingual(ja.brainView,tr.brainView):kind==='muscles'?bilingual(ja.musclesView,tr.musclesView):bilingual(ja.respiratoryView,tr.respiratoryView);
+ const view=kind==='skeleton'?bilingual(ja.skeletonView,tr.skeletonView):kind==='eye'?bilingual(ja.eyeView,tr.eyeView):kind==='heart'?bilingual(ja.heartView,tr.heartView):kind==='digestive'?bilingual(ja.digestiveView,tr.digestiveView):kind==='nervous'?bilingual(ja.nervousView,tr.nervousView):kind==='pupils'?bilingual(ja.pupilsView,tr.pupilsView):kind==='oralOwnership'?bilingual(ja.oralOwnershipView,tr.oralOwnershipView):kind==='skin'?bilingual(ja.skinView,tr.skinView):kind==='grooming'?bilingual(ja.groomingView,tr.groomingView):kind==='urinary'?bilingual(ja.urinaryView,tr.urinaryView):kind==='endocrine'?bilingual(ja.endocrineView,tr.endocrineView):kind==='eating'?bilingual(ja.eatingView,tr.eatingView):kind==='pressure'?bilingual(ja.pressureView,tr.pressureView):kind==='wheelchair'?bilingual(ja.wheelchairView,tr.wheelchairView):kind==='posture'?bilingual(ja.postureView,tr.postureView):kind==='brain'?bilingual(ja.brainView,tr.brainView):kind==='muscles'?bilingual(ja.musclesView,tr.musclesView):bilingual(ja.respiratoryView,tr.respiratoryView);
  return <View testID={`kaigo-royal-${kind}`} style={{width:expanded?1000:'100%'}}>
   <Text style={{fontSize:16,color:'#243d4d',padding:8}}>{view}</Text>
   <View onLayout={event=>setWidth(event.nativeEvent.layout.width)} style={{width:'100%',aspectRatio:1.5}}>
