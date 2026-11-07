@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "unit": "complete-sector-concept-callsite-audit-and-real-json-map-type-fix",
+  "baselineCommit": "2d662b9c9bd285c02416c835152ffad5dd1327db",
+  "status": "self_checked_ready_for_immediate_persistence",
+  "problem": "Focused TypeScript check against real heterogeneous diagram JSON raised TS2352: inferred absent lesson-map keys may beundefined and cannot be cast toRecord<string,string>. Babel runtime transpilation had not caught this type error.",
+  "fix": "Permit undefined for missing keys in the metadata map type:Record<string,string|undefined>. The required caller sourceHash/level contract and every runtime guard, render expression and layout stay byte-equivalent.",
+  "actualCallerAudit": {
+    "inventoryScope": "All currentTSX under src/components/agriculture and src/components/tokutei plus actual src/app/specified-skills/agriculture.tsx route; metadata-only selective materialization, no media/global repository fetch.",
+    "inventory": [
+      {
+        "sha": "4ba12b2992e4029c0fc374c1365ea554504eacd0",
+        "path": "src/app/specified-skills/agriculture.tsx"
+      },
+      {
+        "sha": "f03849e82678b4a246e6d81ea68788ecc356b8f0",
+        "path": "src/components/agriculture/AgricultureCourse.tsx"
+      },
+      {
+        "sha": "309bcfc2c8e27f86742e1103133fa9afd367c9a3",
+        "path": "src/components/agriculture/AgricultureExamIllustration.tsx"
+      },
+      {
+        "sha": "4aad582e57e8e2fadf90abe525c69007cdaa657d",
+        "path": "src/components/agriculture/AgricultureParagraphRuby.tsx"
+      },
+      {
+        "sha": "aea2e5d9b5396c5feaa6e3e01d955df4bdc8d815",
+        "path": "src/components/agriculture/ConceptDiagrams.tsx"
+      },
+      {
+        "sha": "b085505ca2d6077c753d81d14e32420bd98e1cab",
+        "path": "src/components/agriculture/DailyInstructionDiagram.tsx"
+      },
+      {
+        "sha": "aaf3dd7d46fc0ca16507bc10eeb791949dd9d77e",
+        "path": "src/components/agriculture/DailyLearningSupport.tsx"
+      },
+      {
+        "sha": "0cc690efe006948c87cffa0ab7100986c653bbb6",
+        "path": "src/components/agriculture/FlowerAppearanceFigure.tsx"
+      },
+      {
+        "sha": "a69e7fcb1f51735da08feb77f68f4378e09b0836",
+        "path": "src/components/agriculture/FlowerLegendFigure.tsx"
+      },
+      {
+        "sha": "a51ec4bb98641957550b2327dfec4596bd069a43",
+        "path": "src/components/agriculture/FruitTreeComparison.tsx"
+      },
+      {
+        "sha": "39ea31d38a9c65f008d2d387c26f47718878fae2",
+        "path": "src/components/agriculture/MoistureReaderChecks.tsx"
+      },
+      {
+        "sha": "2a6b807baee08dfbe772986da8542762a3203ff4",
+        "path": "src/components/agriculture/RecognitionImages.tsx"
+      },
+      {
+        "sha": "fa0f428898208a0784b5b16e4c0d6ae957df9469",
+        "path": "src/components/agriculture/RiceProcessFigure.tsx"
+      },
+      {
+        "sha": "dcb3c78debcaf98480730fffe85f8840fe994938",
+        "path": "src/components/agriculture/Statistics2019Figure.tsx"
+      },
+      {
+        "sha": "d5396f432335aa5538c8a29bdfd6cf702712dc44",
+        "path": "src/components/agriculture/WinterClimateFigure.tsx"
+      },
+      {
+        "sha": "383b851071e8bf7e4669b950fd6f551504c78cac",
+        "path": "src/components/agriculture/ZoomableFigure.tsx"
+      },
+      {
+        "sha": "5d9154a07fe5da820a677b188a7d8615e6698961",
+        "path": "src/components/tokutei/StudyAppearance.tsx"
+      },
+      {
+        "sha": "aafb025201df86cf27085e69daf8b8038a192505",
+        "path": "src/components/tokutei/TokuteiChrome.tsx"
+      },
+      {
+        "sha": "599d93f247df0962d9e45083f0c147656b2cfcef",
+        "path": "src/components/tokutei/createDeferredCourse.tsx"
+      }
+    ],
+    "fileCount": 19,
+    "actualCallsites": [
+      {
+        "path": "src/components/agriculture/AgricultureCourse.tsx",
+        "line": 84,
+        "requiredProps": [
+          "lessonId",
+          "lessonSourceHash",
+          "level",
+          "colors"
+        ],
+        "allForwarded": true
+      }
+    ],
+    "missingCallsites": 0
+  },
+  "beforeComponentSha256": "fcb148f156fa36ccbbfc3732e4a406be5647f475fae90822e6b6b02b7af6b2e2",
+  "afterSha256": {
+    "src/components/agriculture/ConceptDiagrams.tsx": "739802ea769574df771e05156c1ec5f3a403f9cc1d9621cdba45480ebdc6e435",
+    "scripts/agriculture/check-concept-callsite-contract.cjs": "d3b0ae2a5737be38fc23745c8d4a83213d42c3a8b4a0620be8dfe4997325c100"
+  },
+  "validation": {
+    "focusedCommand": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/agriculture/check-concept-callsite-contract.cjs",
+    "focusedResult": "PASS19files/1actualcaller; real production ConceptDiagrams implementation + realdiagramJSON + actual caller argument expressions typecheck. Two negative fixtures dropping sourceHash or level produce required-prop diagnostics.",
+    "focusedLimit": "Minimal React/RNambient declarations isolate this prop contract, so this is not an entire app/Expo dependency typecheck.",
+    "runtimeCommand": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/agriculture/check-concept-source-guards.cjs",
+    "runtimeResult": "PASS5actualdiagrams/8currentrenders/69negativecases aftertypefix.",
+    "preservation": "Reversing only typeunion edit yields byte-exact before component. No caller/runtime/data/image/Japanese/translation/question/state changes.",
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false
+  },
+  "wholeSectorComplete": false,
+  "nextAction": "Persist+verify this immediate typehotfix, then resume disjoint missing week01locale tail IDs with fresh remote presence check."
+}

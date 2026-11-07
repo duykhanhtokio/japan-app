@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "scope": "Complete directdiagram sourceHash callerintegration for companionreader",
+  "issue": "The direct-diagram guard added requiredlessonSourceHash. Maincourse callerwasupdated, but companionreader callsite wasnotinitiallymaterialized/updated. Current companionIDsareunsupported bydirectfigures, so visualoutputstayedempty, but requiredTypeScriptpropwasmissing.",
+  "fix": "ManufacturingDailySupport passescompanion.sourceHash fromits alreadyrevisionbound selector. Regressionasserts bothmainandcompanioncaller supplytheircurrentcanonicalrevision. No newfigure/sourceclaim orUIredesign.",
+  "beforeCallerSha256": "633bec2f2d6a0f8791cb0943b844b421fb893173d1f72e421f887a7ba89f3f16",
+  "checks": {
+    "productionDirectDiagramRegression": "273validlocaleRenders/286images and546wrong/missingrevisions; unchanged expectedmarkup",
+    "callerIntegration": "Mainlesson.sourceHash andcompanion.sourceHash asserted",
+    "broadTypecheck": "notclaimed; onlytargetedcomponent/testchecks",
+    "focusedTypeScriptSemanticGate": {
+      "command": "node scripts/manufacturing/check-direct-diagram-callers-types.cjs",
+      "relevantProductionTsxInventory": 16,
+      "actualApiCallers": 2,
+      "actualResolvedCanonicalHashTypes": [
+        "lesson.sourceHash:string",
+        "companion.sourceHash:string"
+      ],
+      "currentApiDiagnostics": 0,
+      "baselineMissingRequiredPropDetected": true,
+      "scope": "ActualproductioncomponentfunctionsignatureandactualcallerJSXsemanticcheck; platformdeclarationsadapted; no app-wide tsc claim"
+    },
+    "sectorCallsiteAudit": "CompletecurrentManufacturingcomponentinventory scannedviaGitHubconnector, then currenttracked16TSXfiles scannedbyportabletypegate. ExactlymainCourse andDailySupport invokeactualdirectdiagramAPI."
+  },
+  "status": "self_checked_ready_for_root_persistence",
+  "frozenUtc": "2026-11-07T08:26:21.974624+00:00",
+  "files": [
+    {
+      "path": "src/components/manufacturing/ManufacturingDailySupport.tsx",
+      "sha256": "8a82fb276ee7c19dc5624e849b31dbb76b3c1bef58024b63f9c8a0fcf71e8fdf"
+    },
+    {
+      "path": "scripts/manufacturing/check-direct-diagram-revision-guards.cjs",
+      "sha256": "fd2fb1cbc6cbbb728f70a48dd68ec93c03086ec728b1477deeed1578694417e8"
+    },
+    {
+      "path": "scripts/manufacturing/check-direct-diagram-callers-types.cjs",
+      "sha256": "85b156c11c727beb06b0806d00b2a9331dbdf445d43b739c53af6fbe943edbfe"
+    }
+  ]
+}

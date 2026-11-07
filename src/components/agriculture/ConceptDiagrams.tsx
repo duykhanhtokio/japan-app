@@ -2,7 +2,7 @@ import {Fragment} from 'react';
 import {StyleSheet,Text,View} from 'react-native';
 import data from '@/data/agriculture/diagrams.json';
 
-type Diagram={id:string;lessonIds:string[];scopeLevels?:string[];lessonSourceHashes:Record<string,string>;titleJa:string;altJa:string;kind:'comparison'|'sequence';panels:{titleJa:string;bodyJa:string}[]};
+type Diagram={id:string;lessonIds:string[];scopeLevels?:string[];lessonSourceHashes:Record<string,string|undefined>;titleJa:string;altJa:string;kind:'comparison'|'sequence';panels:{titleJa:string;bodyJa:string}[]};
 type Colors={text:string;translation:string;translationText:string;border:string};
 const diagrams=data.diagrams as Diagram[];
 
