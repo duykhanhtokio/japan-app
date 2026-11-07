@@ -1,3 +1,4 @@
+import {RiceProcessFigure} from './RiceProcessFigure';
 import {AgricultureParagraphRuby} from './AgricultureParagraphRuby';
 import {MoistureReaderChecks} from './MoistureReaderChecks';
 import {DailyCompanionReadings,DailyLearningFigure} from './DailyLearningSupport';
@@ -24,9 +25,8 @@ function Surface({children,reading=false}:PropsWithChildren<{reading?:boolean}>)
  return reading?<View style={{flex:1,backgroundColor:colors.background}}>{body}</View>:<RoyalPageBackground>{body}</RoyalPageBackground>;
 }
 function RiceProcess() {
- return <View accessibilityLabel="もみからもみ殻を取り除くと玄米になり、精米すると白米になります。" style={s.diagram}>
- {['もみ','もみ殻を除く →','玄米','精米する →','白米'].map((name,i)=><View key={name} style={[s.stage,{backgroundColor:i%2===0?['#e5be6f','#ead0a0','#fff8e6'][i/2]:'transparent'}]}><Text style={{fontSize:16,color:'#302c26',textAlign:'center'}}>{name}</Text></View>)}
- </View>;
+ const {colors}=useStudyAppearance();
+ return <RiceProcessFigure colors={colors}/>;
 }
 function OrgansDiagram() {
  return <View style={s.diagram} accessibilityLabel="栄養器官は葉・茎・根、生殖器官は花・果実です。">
