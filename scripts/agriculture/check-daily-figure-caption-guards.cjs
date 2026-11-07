@@ -14,6 +14,7 @@ loaded.require=id=>{
  if(id==='@/data/agriculture/daily-learning-support.json')return support;
  if(id==='@/data/agriculture/recognition-images.json')return figures;
  if(id==='./RecognitionImages')return {getAgricultureFigureAsset:key=>({uri:`https://example.invalid/${key}`})};
+ if(id==='./WinterSpatialReference')return {WinterSpatialReference:()=>React.createElement('span',null,support.controlledDiagrams['agr-climate'].titleJa)};
  if(id==='./ZoomableFigure')return {ZoomableFigure:props=>React.createElement('span',{'data-figure-alt':props.altJa})};
  if(id==='react'||id.startsWith('react/'))return actualRequire(id);
  return {};

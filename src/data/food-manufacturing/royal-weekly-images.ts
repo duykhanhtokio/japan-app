@@ -3,6 +3,7 @@ import type {FoodManufacturingLesson} from './index';
 export type FoodRoyalWeeklyImage={lessonId:string;sourceHash:string;captionParagraphId:string;source:ImageSourcePropType;width:number;height:number;replacesIllustrationId?:string};
 /** Lesson-specific Royal illustrations; preserve shared historical diagram families. */
 export const foodRoyalWeeklyImages:FoodRoyalWeeklyImage[]=[
+ {lessonId:'food-1-025',sourceHash:'906dbe8162a5c81479357f05114a236a005da4d4e1611a5e7c04e5f7b8f76eda',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week03/hazard-analysis-planning.webp'),width:1536,height:1024},
  {lessonId:'food-2-019',sourceHash:'700a08ae7d111ef125c231f79d2a6eb970ec8af2f37c69038a7629881de92eac',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week04/lot-record-link-check.webp'),width:1536,height:1024},
  {lessonId:'food-1-022',sourceHash:'71b670df557c33cdb5bda8f903114991a6295a14f9c3fec72a5604d676720619',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week04/cooling-condition-check.webp'),width:1536,height:1024},
  {lessonId:'food-1-023',sourceHash:'4fae6ea71ddf9ca444a7a31f9830a213520e841abc23d81ead76a934d0854a7e',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week04/clean-packaging-contact-check.webp'),width:1536,height:1024},

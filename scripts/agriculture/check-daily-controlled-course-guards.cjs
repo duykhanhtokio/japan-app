@@ -17,6 +17,7 @@ loaded.require=id=>{
  if(id==='./DailyInstructionDiagram')return {DailyInstructionDiagram:props=>React.createElement('span',null,props.title)};
  if(id==='./Statistics2019Figure')return {Statistics2019Figure:()=>React.createElement('span',null,support.controlledDiagrams['agr-statistics'].titleJa)};
  if(id==='./WinterClimateFigure')return {WinterClimateFigure:()=>null};
+ if(id==='./WinterSpatialReference')return {WinterSpatialReference:()=>React.createElement('span',null,support.controlledDiagrams['agr-climate'].titleJa)};
  if(id==='./ZoomableFigure')return {ZoomableFigure:props=>React.createElement('span',{'data-figure-alt':props.altJa})};
  if(id==='react'||id.startsWith('react/'))return actualRequire(id);
  return {};

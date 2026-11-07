@@ -73,7 +73,7 @@ const assets:Record<string,ImageSourcePropType>={
  "soil-aggregate-comparison":require('../../../assets/agriculture/diagrams/soil-aggregate-comparison-v1.png'),
  "f40-general-thinning-comparison":require('../../../assets/agriculture/completion-40/general/agr-f40-general-thinning-comparison.png'),
  "f40-general-nursery-forms":require('../../../assets/agriculture/completion-40/general/agr-f40-general-nursery-forms.png'),
- "f40-general-seeder":require('../../../assets/agriculture/completion-40/general/agr-f40-general-seeder.png'),
+ "f40-general-seeder":require('../../../assets/agriculture/royal-weekly-20261107/week02/hand-pushed-single-row-seeder.webp'),
  "f40-general-tractor-seeder":require('../../../assets/agriculture/completion-40/general/agr-f40-general-tractor-seeder.png'),
  "f40-general-transplanter":require('../../../assets/agriculture/completion-40/general/agr-f40-general-transplanter.png'),
  "f40-general-hand-planting":require('../../../assets/agriculture/completion-40/general/agr-f40-general-hand-planting.png'),

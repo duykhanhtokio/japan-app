@@ -1,6 +1,10 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week03/mechanical-day16-ndt-locations.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/mechanical-day16-ndt-locations.png");
+  case "assets/manufacturing/royal-weekly-20261107/week03/mechanical-day17-parallax-conditions.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/mechanical-day17-parallax-conditions.png");
+  case "assets/manufacturing/royal-weekly-20261107/week03/mechanical-day18-vernier-005.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/mechanical-day18-vernier-005.png");
+
   case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day20-logic-truth-tables.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day20-logic-truth-tables.png");
   case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.png");
   case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day16-resistor-four-band.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day16-resistor-four-band.png");
