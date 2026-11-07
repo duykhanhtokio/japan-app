@@ -15,6 +15,9 @@ export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspec
  12:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day12-uncertain-appointment.webp'),aspectRatio:1536/1024},
  13:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day13-wet-floor-report.webp'),aspectRatio:1536/1024},
  14:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day14-rest-request-handoff.webp'),aspectRatio:1536/1024},
+ 15:{source:require('../../../assets/kaigo/royal-weekly-20261107/week03/day15-before-departure.webp'),aspectRatio:1536/1024},
+ 16:{source:require('../../../assets/kaigo/royal-weekly-20261107/week03/day16-route-roles.webp'),aspectRatio:1536/1024},
+ 17:{source:require('../../../assets/kaigo/royal-weekly-20261107/week03/day17-plan-before-assistance.webp'),aspectRatio:1536/1024},
 };
 
 /** Image-specific captions; canonical lesson and progress revisions remain unchanged. */
@@ -108,6 +111,21 @@ export const kaigoRoyalWeeklyCaptions:Record<number,Record<string,string>>={
     "km": "ដោយមិនរំកិលខ្នើយ បុគ្គលិកប្រាប់គិលានុបដ្ឋាយិកាអំពីរបៀបដែលលោកស្រីម៉ូរីកាវ៉ាអង្គុយ និងពាក្យដែលគាត់បាននិយាយ។",
     "zh-CN": "不移动靠垫，护理人员向护士转达观察到的森川女士坐着时的情况和她本人的话。",
     "zh-TW": "不移動靠墊，照護人員向護理師轉達觀察到的森川女士坐著時的情況和她本人的話。"
+  },
+  "17": {
+    "ja": "計画と担当者を確かめ、援助を始める前に現在の状態を確認します。",
+    "en": "Staff check the plan and assigned personnel, and confirm the current condition before beginning assistance.",
+    "vi": "Nhân viên kiểm tra kế hoạch và người được phân công, rồi xác nhận tình trạng hiện tại trước khi bắt đầu hỗ trợ.",
+    "id": "Petugas memeriksa rencana dan penanggung jawab, lalu memastikan kondisi saat ini sebelum mulai membantu.",
+    "tl": "Sinusuri ng mga kawani ang plano at mga nakatalagang tao, at kinukumpirma ang kasalukuyang kalagayan bago magsimula ng tulong.",
+    "th": "เจ้าหน้าที่ตรวจสอบแผนและผู้รับผิดชอบ พร้อมยืนยันสภาพปัจจุบันก่อนเริ่มช่วยเหลือ",
+    "ne": "कर्मचारीले योजना र तोकिएका व्यक्तिहरू जाँच्छन् र सहायता सुरु गर्नुअघि हालको अवस्था पुष्टि गर्छन्।",
+    "hi": "कर्मचारी योजना और नियुक्त कर्मियों की जाँच करते हैं तथा सहायता शुरू करने से पहले वर्तमान स्थिति की पुष्टि करते हैं।",
+    "bn": "কর্মীরা পরিকল্পনা ও দায়িত্বপ্রাপ্ত ব্যক্তিদের যাচাই করেন এবং সহায়তা শুরুর আগে বর্তমান অবস্থা নিশ্চিত করেন।",
+    "my": "ဝန်ထမ်းများက အစီအစဉ်နှင့် တာဝန်ပေးထားသူများကို စစ်ဆေးပြီး ကူညီမှုမစမီ လက်ရှိအခြေအနေကို အတည်ပြုသည်။",
+    "km": "បុគ្គលិកពិនិត្យផែនការ និងអ្នកដែលបានចាត់តាំង ហើយបញ្ជាក់ស្ថានភាពបច្ចុប្បន្នមុនចាប់ផ្ដើមជួយ។",
+    "zh-CN": "工作人员核对计划和负责人员，并在开始协助前确认当前状况。",
+    "zh-TW": "工作人員核對計畫和負責人員，並在開始協助前確認目前狀況。"
   }
 };
 export function royalCaptionForStudyDay(day:number,language='ja'){return kaigoRoyalWeeklyCaptions[day]?.[language];}
