@@ -110,6 +110,12 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-2-cook-05':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-cook-05-equipment-stop-report.webp'),aspectRatio:1.5},
+ 'rst-2-cook-06':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-cook-06-scale-container-tare-coaching.webp'),aspectRatio:1.5},
+ 'rst-2-cook-07':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-cook-07-hazard-removal-clear-route.webp'),aspectRatio:1.5},
+ 'rst-2-cook-08':{source:require('../../../assets/restaurant/royal-weekly-20261107/week02/rst-2-hyg-10-allergen-replacement-label-handoff.webp'),aspectRatio:1.77577045696068},
+ 'rst-2-svc-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-svc-01-qsca-dining-inspection.webp'),aspectRatio:1.5},
+ 'rst-2-svc-02':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-svc-02-seat-preference-listening.webp'),aspectRatio:1.7768331562167907},
  'rst-1-cook-04':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-2-hyg-13-clean-first-covered-drip-contained-thaw.webp'),aspectRatio:1752/897},
  'rst-1-cook-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-1-cook-01-shank-tenderloin-use-comparison.webp'),aspectRatio:1.5},
  'rst-1-hyg-16':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-1-hyg-16-observed-delivery-record.webp'),aspectRatio:1.5},

@@ -1,5 +1,9 @@
+import fishMain from '@/data/restaurant/royal-fish-parts.json';
+import dailyMain from '@/data/restaurant/daily-learning.json';
+import canonicalFishLessons from '@/data/restaurant/lessons.1.ja.json';
+import royalWeek04 from '@/data/restaurant/royal-week04-technical.json';
 import {useState} from 'react';
-import {Text,View,StyleSheet,type ViewStyle} from 'react-native';
+import {Image,Text,View,StyleSheet,type ViewStyle} from 'react-native';
 import guideData from '@/data/restaurant/additional-guides.json';
 import {useStudyAppearance,TranslationText} from '@/components/tokutei/StudyAppearance';
 import {RestaurantReading} from './RestaurantReading';
@@ -10,6 +14,9 @@ type Point=Label&{x:number;y:number;targetX:number;targetY:number};
 type Form=Label&{descriptionJa:string;descriptionSegments:Segment[];descriptionTranslations:Record<string,string>};
 type Guide={id:string;lessonIds:string[];titleJa:string;titleSegments:Segment[];titleTranslations:Record<string,string>;noteJa:string;noteSegments:Segment[];noteTranslations:Record<string,string>;labels?:Point[];forms?:Form[];results?:Label[];instruments?:Label[]};
 const guides=guideData.guides as Guide[];
+const nativeFishMainActive=dailyMain.bindings.some(b=>b.lessonId===fishMain.lessonId&&b.sourceHash===fishMain.lessonSourceHash)&&canonicalFishLessons.lessons.some(l=>l.id===fishMain.lessonId&&l.sourceHash===fishMain.lessonSourceHash);
+const royalAnatomy=JSON.stringify(guideData.guides.find(g=>g.id==='anatomy'))===JSON.stringify(royalWeek04.anatomyGuide);
+const wholeFish=require('../../../assets/restaurant/royal-weekly-20261107/week03/fish-body-objects.webp');
 const pct=(n:number)=>`${n}%` as `${number}%`;
 const ink='#315b63',body='#a5cdd1',fin='#6c9eaa',flesh='#e7af83';
 function LabelText({item,language,translated}:{item:Label;language:string;translated:boolean}){
@@ -31,7 +38,7 @@ function FishShape({state='round'}:{state?:string}){
 function FishAnatomy({labels}:{labels:Point[]}){
  const [width,setWidth]=useState(320),height=width/1.9;
  return <View testID="restaurant-fish-anatomy-drawing" accessible accessibilityLabel="魚の側面図。頭は右、尾は左。番号は下の部位一覧に対応します。" onLayout={e=>setWidth(e.nativeEvent.layout.width)} style={[s.canvas,{aspectRatio:1.9}]}>
-  <FishShape/>
+  {royalAnatomy?<View testID="restaurant-royal-anatomy-art" style={{position:'absolute',left:0,top:'10%',width:'100%',height:width*480/1199,overflow:'hidden'}}><Image source={wholeFish} resizeMode="contain" style={{position:'absolute',left:0,top:0,width,height:width*1312/1199}}/></View>:<FishShape/>}
   {labels.map((p,i)=>{const x=p.x*width/100,y=p.y*height/100,tx=p.targetX*width/100,ty=p.targetY*height/100,dx=tx-x,dy=ty-y,length=Math.hypot(dx,dy);const line:ViewStyle={position:'absolute',left:(x+tx)/2-length/2,top:(y+ty)/2,width:length,height:1,backgroundColor:ink,transform:[{rotate:`${Math.atan2(dy,dx)*180/Math.PI}deg`}]};return <View key={p.id} accessible={false} style={StyleSheet.absoluteFill}><View style={line}/><View style={[s.number,{left:x-10,top:y-10}]}><Text allowFontScaling={false} style={s.numberText}>{i+1}</Text></View></View>;})}
  </View>;
 }
@@ -55,7 +62,7 @@ function Measurement({instruments,language,translated}:{instruments:Label[];lang
 }
 export function RestaurantAdditionalGuides({lessonId,language,showTranslation}:{lessonId:string;language:string;showTranslation:boolean}){
  const {colors}=useStudyAppearance(),translated=showTranslation&&language!=='ja';
- return <>{guides.filter(g=>g.lessonIds.includes(lessonId)).map(g=><View key={g.id} testID={`restaurant-additional-${g.id}`} style={[s.box,{borderColor:colors.border}]}>
+ return <>{guides.filter(g=>g.lessonIds.includes(lessonId)&&!(g.id==='anatomy'&&nativeFishMainActive)).map(g=><View key={g.id} testID={`restaurant-additional-${g.id}`} style={[s.box,{borderColor:colors.border}]}>
   <RestaurantReading heading text={g.titleJa} segments={g.titleSegments}/>{translated&&g.titleTranslations[language]&&<TranslationText>{g.titleTranslations[language]}</TranslationText>}
   {g.id==='anatomy'&&g.labels&&<><FishAnatomy labels={g.labels}/><View style={s.grid}>{g.labels.map((item,i)=><View key={item.id} testID={`restaurant-fish-label-${item.id}`} style={s.legend}><Text style={[s.legendNumber,{color:colors.text}]}>{i+1}.</Text><View style={{flex:1,minWidth:0}}><LabelText item={item} language={language} translated={translated}/></View></View>)}</View></>}
   {g.id==='processing'&&g.forms&&g.results&&<Processing forms={g.forms} results={g.results} language={language} translated={translated}/>}

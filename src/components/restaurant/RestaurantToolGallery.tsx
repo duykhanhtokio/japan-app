@@ -1,3 +1,4 @@
+import {RoyalRestaurantToolArtwork,restaurantRoyalToolBinding} from './RoyalRestaurantToolArtwork';
 import {View,StyleSheet,type ViewStyle} from 'react-native';
 import galleryData from '@/data/restaurant/tool-gallery.json';
 import {useStudyAppearance,TranslationText} from '@/components/tokutei/StudyAppearance';
@@ -121,6 +122,8 @@ function drawing(id:string):Mark[]{
  return a;
 }
 export function RestaurantToolDrawing({id,label}:{id:string;label:string}){
+ const royal=<RoyalRestaurantToolArtwork id={id} label={label}/>;
+ if(restaurantRoyalToolBinding(id))return <View testID={`restaurant-tool-drawing-${id}`} style={{width:'100%',maxWidth:300,alignSelf:'center'}}>{royal}</View>;
  const marks=drawing(id);
  return <View testID={`restaurant-tool-drawing-${id}`} accessible accessibilityRole="image" accessibilityLabel={label} style={s.canvas}>
   {marks.map((m,i)=>{const style:ViewStyle={position:'absolute',left:pct(m.x),top:pct(m.y),width:pct(m.w),height:pct(m.h),backgroundColor:m.fill,borderRadius:m.radius??0,borderColor:m.stroke,borderWidth:m.stroke?m.lineWidth??1:0,transform:m.rotate?[{rotate:`${m.rotate}deg`}]:undefined};return <View key={i} accessible={false} style={style}/>;})}
