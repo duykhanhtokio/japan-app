@@ -2,7 +2,11 @@ import type {ImageSourcePropType} from 'react-native';
 
 /** Day-scoped replacements preserve shared legacy art IDs and captions. */
 export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspectRatio:number}>={
- 49:{source:require('../../../assets/kaigo/paragraphs/excretion-06-summary-v1.webp'),aspectRatio:1620/971},
+ 43:{source:require('../../../assets/kaigo/royal-weekly-20261107/week07/day43-towel-participation-choice.webp'),aspectRatio:1536/1024},
+ 44:{source:require('../../../assets/kaigo/royal-weekly-20261107/week07/day44-linen-scope-agreement.webp'),aspectRatio:1536/1024},
+ 45:{source:require('../../../assets/kaigo/paragraphs/excretion-06-summary-v1.webp'),aspectRatio:1620/971},
+ 46:{source:require('../../../assets/kaigo/paragraphs/excretion-06-summary-v1.webp'),aspectRatio:1620/971},
+ 49:{source:require('../../../assets/kaigo/royal-weekly-20261107/week07/day49-family-list-consultation.webp'),aspectRatio:1536/1024},
  37:{source:require('../../../assets/kaigo/paragraphs/excretion-03-dialogue-v1.webp'),aspectRatio:1619/972},
  38:{source:require('../../../assets/kaigo/royal-weekly-20261107/week06/day38-bathroom-inspection.webp'),aspectRatio:1536/1024},
  39:{source:require('../../../assets/kaigo/paragraphs/excretion-03-summary-v1.webp'),aspectRatio:1619/971},
@@ -35,21 +39,6 @@ export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspec
 
 /** Image-specific captions; canonical lesson and progress revisions remain unchanged. */
 export const kaigoRoyalWeeklyCaptions:Record<number,Record<string,string>>={
-  "49": {
-    "ja": "家族から聞いた相談の希望と、本人の選択が未確認であることを分けて申し送ります。本人の同意や本の受渡しが済んだことを示す絵ではありません。",
-    "en": "Staff distinguish the family’s request for a consultation from the person’s choice, which remains unconfirmed, during handoff. The image does not show the person’s consent or completed transfer of books.",
-    "vi": "Khi bàn giao, nhân viên phân biệt mong muốn được tư vấn của gia đình với lựa chọn chưa được xác nhận của người được chăm sóc. Hình không thể hiện người đó đã đồng ý hoặc đã giao nhận sách.",
-    "id": "Saat serah terima, petugas membedakan permintaan keluarga untuk berkonsultasi dari pilihan orang tersebut yang belum dipastikan. Gambar tidak menunjukkan persetujuan orang tersebut atau penyerahan buku yang sudah selesai.",
-    "zh-CN": "交接时，工作人员分清家属提出的咨询愿望与本人尚未确认的选择。此图不表示本人已同意或书籍交接已完成。",
-    "zh-TW": "交接時，工作人員分清家屬提出的諮詢意願與本人尚未確認的選擇。此圖不表示本人已同意或書籍交接已完成。",
-    "hi": "हस्तांतरण में कर्मचारी परिवार की परामर्श की इच्छा और व्यक्ति के अभी अपुष्ट चुनाव को अलग बताते हैं। चित्र व्यक्ति की सहमति या पुस्तकों का पूरा हस्तांतरण नहीं दिखाता।",
-    "bn": "হস্তান্তরের সময় কর্মীরা পরিবারের পরামর্শের অনুরোধ এবং ব্যক্তির এখনো যাচাই না হওয়া পছন্দ আলাদা করে জানান। ছবিতে ব্যক্তির সম্মতি বা বই হস্তান্তর সম্পন্ন হওয়া দেখানো হয় না।",
-    "ne": "हस्तान्तरणमा कर्मचारीले परिवारको परामर्श चाहना र व्यक्तिको पुष्टि हुन बाँकी छनोट छुट्याउँछन्। चित्रले व्यक्तिको सहमति वा पुस्तक हस्तान्तरण पूरा भएको देखाउँदैन।",
-    "my": "ဝန်ထမ်းများက မိသားစု၏ ဆွေးနွေးတိုင်ပင်လိုသောဆန္ဒနှင့် ကာယကံရှင်၏ မစစ်ရသေးသောရွေးချယ်မှုကို ခွဲခြားလွှဲပြောင်းသည်။ ဤပုံသည် ကာယကံရှင်သဘောတူပြီးခြင်း သို့မဟုတ် စာအုပ်လွှဲပေးပြီးခြင်းကို မပြပါ။",
-    "th": "เจ้าหน้าที่ส่งต่อโดยแยกความต้องการขอปรึกษาของครอบครัวจากการเลือกของเจ้าตัวที่ยังไม่ยืนยัน ภาพไม่ได้แสดงว่าเจ้าตัวให้ความยินยอมแล้วหรือส่งมอบหนังสือเสร็จแล้ว",
-    "km": "ពេលប្រគល់ព័ត៌មាន បុគ្គលិកបែងចែកបំណងគ្រួសារចង់ពិគ្រោះពីជម្រើសរបស់សាមីខ្លួនដែលមិនទាន់បញ្ជាក់។ រូបនេះមិនបង្ហាញថាសាមីខ្លួនយល់ព្រម ឬការប្រគល់សៀវភៅបានបញ្ចប់ទេ។",
-    "tl": "Sa handoff, ibinubukod ng mga kawani ang kahilingan ng pamilya na kumonsulta sa hindi pa tiyak na pasiya ng tao. Hindi ipinapakita ng larawan na pumayag na ang tao o tapos na ang pagpapasa ng mga aklat."
-  },
   "36": {
     "ja": "本人が上着の袖を見て選び、職員は着替えを始めずに選択を支えます。",
     "en": "The resident examines the jacket sleeve and chooses, while the caregiver supports her choice without starting to dress her.",
@@ -289,6 +278,111 @@ export const kaigoRoyalWeeklyCaptions:Record<number,Record<string,string>>={
     "th": "เจ้าหน้าที่ดูแลตรวจแยกว่ากล่องที่ได้รับอนุญาตให้ดูว่างอยู่และเจ้าของหวีไม่มีเครื่องหมายยังไม่ยืนยัน",
     "km": "បុគ្គលិកថែទាំពិនិត្យដាច់ដោយឡែកថាប្រអប់ដែលបានអនុញ្ញាតឱ្យមើលទទេ និងម្ចាស់ក្រាសគ្មានសញ្ញាមិនទាន់បញ្ជាក់។",
     "tl": "Hiwalay na tinitiyak ng kawani sa pangangalaga na walang laman ang pinahintulutang kahon at hindi pa tiyak ang may-ari ng suklay na walang marka."
+  },
+  "43": {
+    "ja": "作業を始める前に、本人が選んだタオル二枚をたたむ範囲と、中止の希望を確かめます。",
+    "en": "Before work begins, confirm the person's choice to fold two towels and the wish to stop.",
+    "vi": "Trước khi bắt đầu, xác nhận lựa chọn gấp hai khăn và mong muốn dừng của người sử dụng.",
+    "id": "Sebelum mulai, pastikan pilihan orang tersebut untuk melipat dua handuk dan keinginan untuk berhenti.",
+    "zh-CN": "开始前，确认本人选择折叠两条毛巾的范围及停止的意愿。",
+    "zh-TW": "開始前，確認本人選擇摺疊兩條毛巾的範圍及停止的意願。",
+    "hi": "काम शुरू करने से पहले, व्यक्ति की दो तौलिये मोड़ने की पसंद और रुकने की इच्छा की पुष्टि करें।",
+    "bn": "কাজ শুরুর আগে ব্যক্তির দুটি তোয়ালে ভাঁজ করার পছন্দ এবং থামার ইচ্ছা নিশ্চিত করুন।",
+    "ne": "काम सुरु गर्नुअघि व्यक्तिले दुईवटा तौलिया पट्याउन रोजेको दायरा र रोक्ने इच्छा पुष्टि गर्नुहोस्।",
+    "my": "အလုပ်မစမီ မျက်နှာသုတ်ပဝါနှစ်ထည် ခေါက်ရန် ရွေးချယ်ထားသည့်အတိုင်းအတာနှင့် ရပ်လိုသည့်ဆန္ဒကို အတည်ပြုပါ။",
+    "th": "ก่อนเริ่มงาน ยืนยันขอบเขตที่เจ้าตัวเลือกพับผ้าขนหนูสองผืนและความต้องการหยุด",
+    "km": "មុនចាប់ផ្តើមការងារ បញ្ជាក់ជម្រើសបត់កន្សែងពីររបស់សាមីខ្លួន និងបំណងចង់ឈប់។",
+    "tl": "Bago magsimula, tiyakin ang piniling pagtupi ng dalawang tuwalya at ang kagustuhang huminto."
+  },
+  "44": {
+    "ja": "名前の札で分ける希望と、触らない範囲を本人に確認します。",
+    "en": "Confirm with the person how to sort by name tags and which areas must remain untouched.",
+    "vi": "Hỏi người sử dụng cách phân loại theo thẻ tên và những phần không được chạm vào.",
+    "id": "Pastikan cara memilah menurut label nama dan bagian yang tidak boleh disentuh bersama orang tersebut.",
+    "zh-CN": "向本人确认按姓名标签分类的意愿，以及不可触碰的范围。",
+    "zh-TW": "向本人確認按姓名標籤分類的意願，以及不可觸碰的範圍。",
+    "hi": "व्यक्ति से नाम की पर्चियों के अनुसार छाँटने की इच्छा और न छूने वाले हिस्सों की पुष्टि करें।",
+    "bn": "নামের ট্যাগ অনুযায়ী সাজানোর ইচ্ছা এবং কোন অংশে হাত দেওয়া যাবে না তা ব্যক্তির কাছে নিশ্চিত করুন।",
+    "ne": "नामको ट्यागअनुसार छुट्याउने इच्छा र नछुने भाग व्यक्तिसँग पुष्टि गर्नुहोस्।",
+    "my": "အမည်တံဆိပ်အလိုက် ခွဲရန်ဆန္ဒနှင့် မထိရမည့်နေရာများကို ကာယကံရှင်ထံ အတည်ပြုပါ။",
+    "th": "ยืนยันกับเจ้าตัวเรื่องการแยกตามป้ายชื่อและส่วนที่ห้ามแตะต้อง",
+    "km": "បញ្ជាក់ជាមួយសាមីខ្លួនអំពីការបែងចែកតាមស្លាកឈ្មោះ និងកន្លែងដែលមិនត្រូវប៉ះ។",
+    "tl": "Tiyakin sa tao ang pag-uuri ayon sa pangalan sa etiketa at ang mga bahaging hindi gagalawin."
+  },
+  "45": {
+    "ja": "二枚の案内を照合し、変わった会場と変わらない日時を分けて確認します。",
+    "en": "Compare the two notices, distinguishing the changed venue from the unchanged date and time.",
+    "vi": "Đối chiếu hai thông báo, phân biệt địa điểm thay đổi với ngày giờ không đổi.",
+    "id": "Bandingkan dua pengumuman, bedakan tempat yang berubah dari tanggal dan waktu yang tetap.",
+    "zh-CN": "对照两份通知，区分已变更的会场和未变更的日期时间。",
+    "zh-TW": "對照兩份通知，區分已變更的會場和未變更的日期時間。",
+    "hi": "दो सूचनाओं की तुलना कर बदले हुए स्थान को अपरिवर्तित तारीख और समय से अलग पहचानें।",
+    "bn": "দুটি বিজ্ঞপ্তি মিলিয়ে বদলে যাওয়া স্থান এবং অপরিবর্তিত তারিখ ও সময় আলাদা করুন।",
+    "ne": "दुई सूचना तुलना गरेर बदलिएको स्थान र नबदलिएको मिति तथा समय छुट्याउनुहोस्।",
+    "my": "ကြေညာချက်နှစ်စောင်ကို နှိုင်းယှဉ်၍ ပြောင်းသွားသောနေရာနှင့် မပြောင်းသောရက်၊ အချိန်ကို ခွဲခြားပါ။",
+    "th": "เทียบประกาศสองฉบับ แยกสถานที่ที่เปลี่ยนจากวันและเวลาที่ไม่เปลี่ยน",
+    "km": "ប្រៀបធៀបសេចក្តីជូនដំណឹងពីរ ដោយបែងចែកទីកន្លែងដែលបានប្តូរ និងកាលបរិច្ឆេទម៉ោងដែលមិនប្តូរ។",
+    "tl": "Ihambing ang dalawang abiso; ihiwalay ang nagbagong lugar sa hindi nagbagong petsa at oras."
+  },
+  "46": {
+    "ja": "洗濯物の確認メモを照合し、一枚の端で確認したことと未確認の物を分けて報告します。",
+    "en": "Compare the laundry notes and report what was checked at one towel's edge separately from unchecked items.",
+    "vi": "Đối chiếu ghi chú đồ giặt, báo cáo riêng phần mép một khăn đã kiểm tra và những đồ chưa kiểm tra.",
+    "id": "Bandingkan catatan cucian; laporkan hasil pemeriksaan ujung satu handuk terpisah dari barang yang belum diperiksa.",
+    "zh-CN": "对照洗衣检查记录，分别报告一条毛巾边缘已检查的情况及尚未检查的物品。",
+    "zh-TW": "對照洗衣檢查紀錄，分別報告一條毛巾邊緣已檢查的情況及尚未檢查的物品。",
+    "hi": "धुले कपड़ों के नोट मिलाकर एक तौलिये के किनारे की जाँच और बिना जाँची वस्तुओं की अलग रिपोर्ट दें।",
+    "bn": "কাপড় ধোয়ার নোট মিলিয়ে একটি তোয়ালের কিনারা পরীক্ষা করা এবং পরীক্ষা না করা জিনিস আলাদা করে জানান।",
+    "ne": "धुलाईका टिपोट मिलाएर एउटा तौलियाको छेउ जाँचेको कुरा र नजाँचिएका सामान छुट्टै रिपोर्ट गर्नुहोस्।",
+    "my": "အဝတ်လျှော်စစ်ဆေးမှတ်စုများကို တိုက်စစ်ပြီး ပဝါတစ်ထည်၏ အနားစစ်ဆေးချက်နှင့် မစစ်ရသေးသောပစ္စည်းများကို ခွဲ၍တင်ပြပါ။",
+    "th": "เทียบบันทึกตรวจผ้าซัก รายงานสิ่งที่ตรวจตรงขอบผ้าหนึ่งผืนแยกจากของที่ยังไม่ได้ตรวจ",
+    "km": "ផ្ទៀងផ្ទាត់កំណត់ត្រាបោកគក់ ហើយរាយការណ៍ការពិនិត្យគែមកន្សែងមួយដាច់ពីវត្ថុដែលមិនទាន់ពិនិត្យ។",
+    "tl": "Ihambing ang tala ng labahin; iulat nang hiwalay ang nasuri sa gilid ng isang tuwalya at ang mga hindi pa nasuri."
+  },
+  "47": {
+    "ja": "職員同士で、確認した対応とまだ分からないことを分けて追加報告します。",
+    "en": "Staff give an additional report, separating confirmed actions from what remains unknown.",
+    "vi": "Nhân viên báo cáo bổ sung, phân biệt việc xử lý đã xác nhận với điều chưa rõ.",
+    "id": "Staf memberi laporan tambahan, memisahkan tindakan yang dipastikan dari hal yang belum diketahui.",
+    "zh-CN": "工作人员补充报告，区分已确认的应对和仍未知的事项。",
+    "zh-TW": "工作人員補充報告，區分已確認的應對和仍未知的事項。",
+    "hi": "कर्मचारी अतिरिक्त रिपोर्ट में पुष्टि की गई कार्रवाई और अज्ञात बातों को अलग रखें।",
+    "bn": "কর্মীরা অতিরিক্ত প্রতিবেদনে নিশ্চিত ব্যবস্থা ও অজানা বিষয় আলাদা করে জানান।",
+    "ne": "कर्मचारीले थप रिपोर्टमा पुष्टि गरिएको कार्य र अझै अज्ञात कुरा छुट्याउँछन्।",
+    "my": "ဝန်ထမ်းများက အတည်ပြုထားသောဆောင်ရွက်ချက်နှင့် မသိရသေးသောအချက်ကို ခွဲ၍ ထပ်မံတင်ပြသည်။",
+    "th": "เจ้าหน้าที่รายงานเพิ่มเติมโดยแยกการดำเนินการที่ยืนยันแล้วจากสิ่งที่ยังไม่ทราบ",
+    "km": "បុគ្គលិករាយការណ៍បន្ថែម ដោយបែងចែកសកម្មភាពដែលបានបញ្ជាក់ និងអ្វីដែលមិនទាន់ដឹង។",
+    "tl": "Sa karagdagang ulat ng mga kawani, ihiwalay ang natiyak na tugon sa mga hindi pa alam."
+  },
+  "48": {
+    "ja": "次の連絡の担当と期限を確認し、伝達の完了とは分けて申し送ります。",
+    "en": "Confirm who will make the next contact and by when, separately from completed communication.",
+    "vi": "Xác nhận người phụ trách liên lạc tiếp theo và thời hạn, tách biệt với việc truyền đạt đã hoàn tất.",
+    "id": "Pastikan penanggung jawab kontak berikutnya dan tenggatnya, terpisah dari komunikasi yang telah selesai.",
+    "zh-CN": "确认下次联络的负责人及期限，与传达已经完成分开交接。",
+    "zh-TW": "確認下次聯絡的負責人及期限，與傳達已經完成分開交接。",
+    "hi": "अगले संपर्क के जिम्मेदार व्यक्ति और समय सीमा की पुष्टि करें; इसे संदेश पहुँच जाने से अलग रखें।",
+    "bn": "পরবর্তী যোগাযোগের দায়িত্ব ও সময়সীমা নিশ্চিত করুন; বার্তা পৌঁছানো সম্পন্ন হওয়া থেকে আলাদা রাখুন।",
+    "ne": "अर्को सम्पर्क गर्ने जिम्मेवार व्यक्ति र समयसीमा पुष्टि गरी सन्देश पुगेको अवस्थाबाट छुट्टै हस्तान्तरण गर्नुहोस्।",
+    "my": "နောက်ဆက်သွယ်မည့် တာဝန်ခံနှင့် သတ်မှတ်ချိန်ကို အတည်ပြုပြီး သတင်းရောက်ပြီးခြင်းနှင့် ခွဲ၍လွှဲပြောင်းပါ။",
+    "th": "ยืนยันผู้รับผิดชอบการติดต่อครั้งต่อไปและกำหนดเวลา แยกจากการส่งสารเสร็จสิ้น",
+    "km": "បញ្ជាក់អ្នកទទួលខុសត្រូវទាក់ទងបន្ទាប់ និងពេលកំណត់ ដាច់ពីការបញ្ជូនព័ត៌មានរួចរាល់។",
+    "tl": "Tiyakin ang responsable sa susunod na pakikipag-ugnayan at ang takdang oras; ihiwalay ito sa natapos na pagpaparating."
+  },
+  "49": {
+    "ja": "娘から一覧についての相談希望を聞き、同席していない本人の同意とは分けて担当者へつなぎます。",
+    "en": "Hear the daughter's request to discuss a list and pass it to the responsible worker, separately from the absent person's consent.",
+    "vi": "Nghe con gái đề nghị trao đổi về danh sách và chuyển đến người phụ trách, tách biệt với sự đồng ý của người sử dụng đang vắng mặt.",
+    "id": "Dengarkan permintaan putri untuk membahas daftar dan teruskan kepada petugas terkait, terpisah dari persetujuan orang yang tidak hadir.",
+    "zh-CN": "听取女儿希望讨论清单的请求并转达负责人，与不在场本人的同意分开处理。",
+    "zh-TW": "聽取女兒希望討論清單的請求並轉達負責人，與不在場本人的同意分開處理。",
+    "hi": "बेटी की सूची पर चर्चा करने की इच्छा सुनकर जिम्मेदार कर्मचारी को बताएँ; इसे अनुपस्थित व्यक्ति की सहमति से अलग रखें।",
+    "bn": "মেয়ের তালিকা নিয়ে আলোচনার অনুরোধ শুনে দায়িত্বপ্রাপ্ত কর্মীকে জানান; অনুপস্থিত ব্যক্তির সম্মতি থেকে আলাদা রাখুন।",
+    "ne": "छोरीको सूचीबारे छलफल गर्ने अनुरोध सुनेर जिम्मेवार कर्मचारीलाई दिनुहोस्; अनुपस्थित व्यक्तिको सहमतिबाट छुट्याउनुहोस्।",
+    "my": "သမီး၏ စာရင်းအကြောင်းဆွေးနွေးလိုမှုကို နားထောင်၍ တာဝန်ခံထံလွှဲပါ။ မရှိနေသောကာယကံရှင်၏ သဘောတူညီချက်နှင့် ခွဲခြားပါ။",
+    "th": "รับฟังคำขอของลูกสาวที่จะปรึกษาเรื่องรายการแล้วส่งต่อผู้รับผิดชอบ แยกจากความยินยอมของเจ้าตัวที่ไม่ได้อยู่ด้วย",
+    "km": "ស្តាប់សំណើរបស់កូនស្រីចង់ពិភាក្សាបញ្ជី ហើយបញ្ជូនទៅអ្នកទទួលខុសត្រូវ ដាច់ពីការយល់ព្រមរបស់សាមីខ្លួនដែលមិននៅទីនោះ។",
+    "tl": "Pakinggan ang hiling ng anak na babae na talakayin ang listahan at ipasa sa responsableng kawani, hiwalay sa pahintulot ng taong wala roon."
   }
 };
 export function royalCaptionForStudyDay(day:number,language='ja'){return kaigoRoyalWeeklyCaptions[day]?.[language];}
