@@ -47,7 +47,7 @@ npm run check
 
 Đã tìm, xem và tái sử dụng `assets/app/ui/royal-af/mission-key-v1.png` cho thông báo nhận chìa. Vé vàng cũ và hiệu ứng cũ chưa được xác định qua danh mục tài nguyên, lịch sử Git khả dụng, tìm kiếm hồ sơ trước đó và tìm kiếm ảnh. Không kết luận file lịch sử không tồn tại.
 
-Hiện thông báo nhận vé là phần trình bày bằng chữ/màu có hiệu ứng opacity/scale, chỉ chạy sau xác nhận giao dịch; KHÔNG phải mẫu vé cũ đã phục hồi hoặc mẫu artwork được duyệt. Cần tìm/nhận đúng asset để hoàn tất mỹ thuật này.
+Cập nhật theo yêu cầu mới ngày 2026-11-07: đã tạo vé vàng mới theo Royal A+F 2.5D và gắn vào hiệu ứng nhận vé. Đây là thiết kế mới được yêu cầu, không phải mẫu cũ được phục hồi. Asset: `assets/app/ui/royal-af/golden-ticket-royal-v1.webp`; receipt: `GOLDEN_TICKET_ROYAL_20261107.json`. Hiệu ứng vẫn chỉ chạy sau giao dịch xác nhận. Chưa kiểm tra Simulator bản mới.
 
 ## Chặn phát hành còn thực tế
 
@@ -56,6 +56,6 @@ Hiện thông báo nhận vé là phần trình bày bằng chữ/màu có hiệ
 3. Cần nối sản phẩm thuê bao và xác minh Apple/Google, mua/khôi phục/hủy/hoàn tiền, cập nhật `economy_entitlements`. Chưa có thanh toán thật trong lượt này; không dựng trạng thái Premium giả.
 4. Cần quy trình gắn hồ sơ đăng ký ban đầu và import lịch sử legacy đúng chủ khi có auth thật. Dữ liệu cũ vẫn còn riêng trên thiết bị; không âm thầm chuyển vào một tài khoản mới.
 5. Kiểm tra iPhone/Android/landscape và cỡ chữ thực tế. Chromium local bị từ chối socket; tải headless shell không thành công; trình duyệt cloud không truy cập được localhost. Chưa có screenshot hợp lệ và chưa xác nhận board không tràn ở mọi kích thước. Không gắn cờ native/device/release PASS.
-6. Tìm đúng mẫu vé vàng cũ, giao diện/hiệu ứng đã duyệt. Tài nguyên chìa đã xác minh; tài nguyên vé chưa xác minh.
+6. Yêu cầu tìm vé cũ được thay bằng yêu cầu tạo lại vé mới. Đã tạo và tích hợp asset; còn kiểm tra hiển thị/hiệu ứng trên thiết bị.
 
 Khi auth/backend chưa cấu hình: quyền thi mới không được giả lập mở, số dư chìa/vé hiển thị chưa xác minh, nhiệm vụ chỉ luyện tập. Do đó chưa thể coi phiên bản này đủ điều kiện phát hành tính năng thương mại.
