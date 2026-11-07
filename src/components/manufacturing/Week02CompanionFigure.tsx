@@ -1,5 +1,5 @@
-import {ManufacturingIllustrationText as Text} from './ManufacturingIllustrationText';
-import {View} from 'react-native';
+import {Text as PlainText,View,StyleSheet,type StyleProp,type TextStyle} from 'react-native';
+import {week02CompanionReading} from '@/data/manufacturing/week02-companion-readings';
 import type {ManufacturingLesson} from '@/data/manufacturing';
 import {useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import {SupplementalFigure} from './SupplementalManufacturingDiagrams';
@@ -28,10 +28,16 @@ export function Week02CompanionFigure({lesson,paragraphIds,language,showTranslat
  const target=row.locales[locale]??row.locales.ja;
  if(!target||target.sourceHash!==lesson.sourceHash||!sources[row.assetFile])return null;
  return <View testID={`manufacturing-week02-companion-figure-${lesson.id}`} style={{gap:12}}>
-  <SupplementalFigure item={{id:'week02-companion-'+lesson.id,lessonId:lesson.id,lessonSourceHash:lesson.sourceHash,assetFile:row.assetFile,width:row.width,height:row.height,captionJa:row.captionJa,scopeLimits:['controlled_conceptual_figure_only']}} imageSource={sources[row.assetFile]} imageAlt={target.summary} language={language} showTranslation={showTranslation} translatedCaption={showTranslation&&language!=='ja'?target.summary:null}/>
+  <SupplementalFigure item={{id:'week02-companion-'+lesson.id,lessonId:lesson.id,lessonSourceHash:lesson.sourceHash,assetFile:row.assetFile,width:row.width,height:row.height,captionJa:row.captionJa,scopeLimits:['controlled_conceptual_figure_only']}} japaneseCaptionRuby={week02CompanionReading(lesson,'caption',row.captionJa)??null} imageSource={sources[row.assetFile]} imageAlt={target.summary} language={language} showTranslation={showTranslation} translatedCaption={showTranslation&&language!=='ja'?target.summary:null}/>
   <View testID={`manufacturing-week02-companion-native-${lesson.id}`} style={{gap:8,padding:14,borderWidth:1,borderColor:colors.border,borderRadius:10}}>
-   <Text readingLanguage={target===row.locales.ja?'ja':locale} style={{fontSize:18,lineHeight:30,fontWeight:'700',color:colors.text}}>{target.title}</Text>
-   {target.paragraphs.map(p=><View key={p.id} style={{gap:6}}><Text readingLanguage={target===row.locales.ja?'ja':locale} style={{fontSize:17,lineHeight:29,fontWeight:'600',color:colors.text}}>{p.title}</Text><Text readingLanguage={target===row.locales.ja?'ja':locale} selectable style={{fontSize:17,lineHeight:29,color:colors.text}}>{p.text}</Text></View>)}
+   <Week02SourceText lesson={lesson} field="title" text={target.title} enabled={target===row.locales.ja} style={{fontSize:18,lineHeight:30,fontWeight:'700',color:colors.text}}/>
+   {target.paragraphs.map(p=><View key={p.id} style={{gap:6}}><Week02SourceText lesson={lesson} field={p.id+":title"} text={p.title} enabled={target===row.locales.ja} style={{fontSize:17,lineHeight:29,fontWeight:'600',color:colors.text}}/><Week02SourceText lesson={lesson} field={p.id+":text"} text={p.text} enabled={target===row.locales.ja} style={{fontSize:17,lineHeight:29,color:colors.text}}/></View>)}
   </View>
  </View>;
+}
+
+function Week02SourceText({lesson,field,text,enabled,style}:{lesson:ManufacturingLesson;field:string;text:string;enabled:boolean;style?:StyleProp<TextStyle>}){
+ const parts=enabled?week02CompanionReading(lesson,field,text):undefined;if(!parts)return <PlainText selectable style={style}>{text}</PlainText>;
+ const color=StyleSheet.flatten(style)?.color,pieces=parts.flatMap(p=>p.reading?[p]:p.text.split(/(\n)/).filter(Boolean).map(text=>({text})));
+ return <View accessible accessibilityLabel={text} testID={`manufacturing-week02-ruby-${lesson.id}-${field}`} style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}>{pieces.map((p,i)=>p.text==='\n'?<View key={i} accessible={false} style={{width:'100%',height:6}}/>:<View key={i} style={{alignItems:'center',maxWidth:'100%',minWidth:0}}><PlainText style={{fontSize:10,lineHeight:14,color}}>{'reading'in p?p.reading:' '}</PlainText><PlainText selectable style={style}>{p.text}</PlainText></View>)}</View>;
 }
