@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "unit": "week02-thinning-study-metadata",
+  "baselineCommit": "6365fe9c22c05d7e8c63cb39531ec5845090dbfd",
+  "readyPaths": [
+    "src/data/agriculture/recognition-images.json",
+    "src/data/agriculture/recognition-image-locales.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-thinning-locales-qa.json"
+  ],
+  "figureId": "agr-f40-general-thinning-comparison",
+  "referenceAssetSha256": "3f7c2f541262d6787672f65012371877e52ab55c8506dd04376ba96af9a7e931",
+  "sourcePrimaryPagesViewed": [
+    {
+      "documentId": "AGR-S1",
+      "pdfPage": 12,
+      "printedPage": 6
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 15,
+      "printedPage": 13
+    }
+  ],
+  "sourceJapanesePreserved": true,
+  "existing32LocaleRows": "exact latest HEAD including valid incoming seeder image binding; no snapshot rollback",
+  "existing187RecognitionRows": "exact latest HEAD except 11 source-bound labelsJa added to the existing thinning record; original four Japanese fields/IDs/hashes/levels/dimensions/assets unchanged",
+  "translations": "12 direct Japanese-source locales: full title, alt, observation, limit and all 11 unique visible diagram labels. Etiolation describes elongated growth without asserting a single cause.",
+  "checks": {
+    "actualRecognitionRenders": 24,
+    "contexts": 2,
+    "localizedLabelOccurrences": 264,
+    "staleHiddenDependencyLimitNegatives": 58,
+    "sourceJAandCurrentAssetBinding": "PASS",
+    "strictComponentTypes": "PASS actual RecognitionImages import graph and real JSON, minimal React/RN ambient declarations",
+    "actualRenderer": "React Native Web actual RecognitionImages and ZoomableFigure; actual selected PNG bytes; unused FlowerLegend/CropCalendar exports isolated and unrelated raster imports URI-adapted",
+    "noExamRefsToFigure": true,
+    "examDataModified": false,
+    "scripts": [
+      "/workspace/scratch/b72f4a7f6a62/week02-audit/check-thinning.cjs",
+      "scripts/agriculture/check-recognition-locale-types.cjs"
+    ]
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "releaseReady": false,
+  "sourcePhotoObjectiveComplete": false,
+  "remaining": [
+    "week02 source-bound inline organ classification locale/alt",
+    "week02 coherent supported census and next existing weeks"
+  ],
+  "sha256": {
+    "src/data/agriculture/recognition-images.json": "c279b91f03f322a1b0f6061f022711b60a3df51e5e9be94b0669c4deb1ebf60e",
+    "src/data/agriculture/recognition-image-locales.json": "f320b098ab140d7cc399463f4b4359085c43c5b70cc3a67e0c71b83e2e4f8df5"
+  }
+}
