@@ -73,7 +73,7 @@ const assets:Record<string,ImageSourcePropType>={
  "irrigation-destinations":require('../../../assets/agriculture/diagrams/irrigation-destinations-v1.png'),
  "irrigation-tools":require('../../../assets/agriculture/diagrams/irrigation-tools-v1.png'),
  "soil-aggregate-comparison":require('../../../assets/agriculture/diagrams/soil-aggregate-comparison-v1.png'),
- "f40-general-thinning-comparison":require('../../../assets/agriculture/completion-40/general/agr-f40-general-thinning-comparison.png'),
+ "f40-general-thinning-comparison":require('../../../assets/agriculture/royal-weekly-20261107/week02/thinning-botanical-comparison-v2.webp'),
  "f40-general-nursery-forms":require('../../../assets/agriculture/completion-40/general/agr-f40-general-nursery-forms.png'),
  "f40-general-seeder":require('../../../assets/agriculture/royal-weekly-20261107/week02/hand-pushed-single-row-seeder.webp'),
  "f40-general-tractor-seeder":require('../../../assets/agriculture/completion-40/general/agr-f40-general-tractor-seeder.png'),
@@ -127,7 +127,7 @@ const assets:Record<string,ImageSourcePropType>={
  "machine-clothing":require('../../../assets/agriculture/royal-weekly-20261107/machine-work-clothing-royal-v1.webp'),
  "machine-control-names":require('../../../assets/agriculture/royal-weekly-20261107/machine-control-names-royal-v1.webp'),
  "pesticide-clothing":require('../../../assets/agriculture/royal-weekly-20261107/pesticide-work-clothing-royal-v1.webp'),
- "sprayer-parts":require('../../../assets/agriculture/royal-weekly-20261107/week09/sprayer-parts-appearance-royal-v1.webp'),
+ "sprayer-parts":require('../../../assets/agriculture/completion-40/safety/sprayer-parts.png'),
  "power-connector-examples":require('../../../assets/agriculture/completion-40/safety/power-connector-examples.png'),
  "fuel-container-source-sign":require('../../../assets/agriculture/completion-40/safety/fuel-container-source-sign.png'),
  "ladder-hazards":require('../../../assets/agriculture/completion-40/safety/ladder-hazards.png'),
@@ -194,6 +194,7 @@ const assets:Record<string,ImageSourcePropType>={
  "agr-fig-f40-facility-soil-graft-equipment-appearance-v1":require('../../../assets/agriculture/completion-40/facility-soil-support/graft-equipment-appearance-v1.png'),
  "agr-fig-f40-facility-soil-graft-preparation-and-view-sequence-v1":require('../../../assets/agriculture/completion-40/facility-soil-support/graft-preparation-and-view-sequence-v1.png'),
  "f40-facility-support-carnation-greenhouse-level1":require('../../../assets/agriculture/completion-40/visual-safety/carnation-greenhouse-level1.png'),
+ "royal-fruit-thinning-stages-v1":require('../../../assets/agriculture/royal-weekly-20261107/week29/fruit-thinning-stages-v1.webp'),
 };
 export function getAgricultureFigureAsset(assetKey:string) {return assets[assetKey];}
 type RecognitionImage={

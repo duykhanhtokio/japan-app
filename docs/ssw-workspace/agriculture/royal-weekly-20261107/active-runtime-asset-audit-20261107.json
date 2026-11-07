@@ -1,0 +1,1987 @@
+{
+  "date": "2026-11-07",
+  "snapshot": "6303986ed040a7d7e1d870a1c0d0ef2cb6438abb",
+  "type": "active_figure_runtime_asset_mapping_audit",
+  "sourceInputs": "All registry, component, reuse and exam metadata read via exact same immutable git snapshot. No stale working metadata used.",
+  "coverage": {
+    "recognitionRows": 188,
+    "actualRequireKeysBefore": 187,
+    "duplicateRequireKeys": 0,
+    "pathMatchesBefore": 186,
+    "concreteRuntimeRegressions": 2,
+    "afterPatchAll188PathsMatch": true,
+    "snapshotVerifiedCacheSha256": 173,
+    "uncachedSha256Pending": 15,
+    "uncachedFetch": "Partial-clone fetch slow; stopped. No unverified byte acceptance inferred."
+  },
+  "repairs": [
+    {
+      "id": "agr-f40-general-thinning-comparison",
+      "before": "Actual require old completion40 PNG despite current Royal week02 metadata",
+      "after": "assets/agriculture/royal-weekly-20261107/week02/thinning-botanical-comparison-v2.webp"
+    },
+    {
+      "id": "agr-royal-fruit-thinning-stages-v1",
+      "before": "Missing actual require key caused matchesLesson to reject figure",
+      "after": "assets/agriculture/royal-weekly-20261107/week29/fruit-thinning-stages-v1.webp"
+    }
+  ],
+  "families": {
+    "recognitionRaster": {
+      "component": "RecognitionImages.tsx",
+      "registry": "recognition-images.json",
+      "rows": 188,
+      "nativeOverrides": [
+        "CropCalendarFigure",
+        "FlowerLegendFigure"
+      ]
+    },
+    "dailyReusable": {
+      "component": "DailyLearningSupport.tsx",
+      "registry": "daily-learning-support.json",
+      "bindings": 98,
+      "companionGroups": 21,
+      "controlledBindings": 43,
+      "dispatch": [
+        "PestFoundationSupport",
+        "MulchColorSupport",
+        "FruitManagementSupport",
+        "WinterSpatialReference",
+        "WinterClimateFigure",
+        "Statistics2019Figure",
+        "SoilGroupComparison",
+        "CropClassificationFigure",
+        "PlantResponseFigure",
+        "FertilizerNativeFigure",
+        "DrainageMethodComparison",
+        "NativeProcessDiagram",
+        "DailyInstructionDiagram"
+      ],
+      "processEntries": 3,
+      "fertilizerEntries": 4
+    },
+    "courseNative": {
+      "component": "AgricultureCourse.tsx",
+      "families": [
+        "RiceProcessFigure",
+        "OrgansDiagram",
+        "SowingDiagram fallback",
+        "FruitTreeComparison",
+        "FlowerAppearanceFigure",
+        "ConceptDiagrams"
+      ],
+      "conceptRows": 5,
+      "inlineSourceBindingFamilies": [
+        "organs",
+        "sowing"
+      ]
+    },
+    "quiz": {
+      "component": "AgricultureExamIllustration.tsx",
+      "registry": "exam-illustrations.json",
+      "entries": 63,
+      "path": "Shared getAgricultureFigureAsset resolves real require; source hash and scope guards; label masks applied by ZoomableFigure."
+    }
+  },
+  "reuseHashChecks": {
+    "dailyBindings": 98,
+    "examReferences": 63,
+    "mismatches": 0,
+    "scope": "Static registry source/figure hashes only, not source objective visual acceptance."
+  },
+  "validation": {
+    "mapping": "PASS188 actual literal require paths equal188 active declared paths after2-line integration fix",
+    "thinning": "PASS13 actual source-bound daily renders with realWebP +5guards",
+    "fruitStages": "PASS13 actualprimary +13companion renders with realWebP +43guards",
+    "testAdapters": "Actual RecognitionImages/ZoomableFigure/AgricultureImageRuby compiled; real readings data. Unused incoming PestFoundation/MulchColor/FruitManagement/Drainage modules scoped stubs only.",
+    "diffCheck": "PASS"
+  },
+  "limits": {
+    "wholeSectorComplete": false,
+    "pixelReviewPerformedThisAudit": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "humanReviewed": false,
+    "releaseReady": false,
+    "countsAreAcceptance": false
+  },
+  "rows": [
+    {
+      "id": "agr-recognition-cabbage-v1",
+      "assetKey": "cabbage",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/cabbage.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/cabbage.webp",
+      "snapshotBlob": "d7a9c82565d21e1e5b88e0eb1c638fbff529918e",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "b849822d0666c64b840dbd534edcc65a65dd764a55c47addb9c235ce86295e8a"
+    },
+    {
+      "id": "agr-recognition-chinese-cabbage-v1",
+      "assetKey": "chinese-cabbage",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/chinese-cabbage.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/chinese-cabbage.webp",
+      "snapshotBlob": "731225e779fdaad7a6761d173f2512fed7039a94",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "f0a123cd8b13a20af7eae6f0c0de4a3b202429b39a97a79cb784479a9a323990"
+    },
+    {
+      "id": "agr-recognition-lettuce-v1",
+      "assetKey": "lettuce",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/lettuce.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/lettuce.webp",
+      "snapshotBlob": "411bd6304cfb4722f2952a29f3802efce86cb383",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-spinach-v1",
+      "assetKey": "spinach",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/spinach.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/spinach.webp",
+      "snapshotBlob": "36c2b9dab7872674c8223f17e5d9158596e4226b",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "dc735a1b6f2dd8ff1326edd5b9d6083bff72ca399661893a35b4c3493c0b7e4f"
+    },
+    {
+      "id": "agr-recognition-onion-v1",
+      "assetKey": "onion",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/onion.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/onion.webp",
+      "snapshotBlob": "67250c6290c491ec478e371bb83389abbed3401f",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "4487512030cb646c85b2979b4546b47a37e4492bbdda177acfc3d67bfb25b532"
+    },
+    {
+      "id": "agr-recognition-daikon-v1",
+      "assetKey": "daikon",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/daikon.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/daikon.webp",
+      "snapshotBlob": "672d91334f1e49cf70937bd247604c022747b08e",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "d6d90ad531b7615629c092b53de85f03a6349be41a31aa49b5410f47b1dd66ca"
+    },
+    {
+      "id": "agr-recognition-indica-brown-rice-v1",
+      "assetKey": "indica-brown-rice",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/indica-brown-rice.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/indica-brown-rice.webp",
+      "snapshotBlob": "9c318729862e1845b570d23c40d96ec8e56fb3db",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-japonica-brown-rice-v1",
+      "assetKey": "japonica-brown-rice",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/japonica-brown-rice.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/japonica-brown-rice.webp",
+      "snapshotBlob": "69282210d04bd31ccbd871c9bf5810b0aa05361a",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-plant-organ-positions-v1",
+      "assetKey": "plant-organ-positions",
+      "requirePath": "assets/agriculture/recognition/plant-organ-positions-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/plant-organ-positions-v1.webp",
+      "snapshotBlob": "4f57b28d1e62b23eee77bbca727f887857d5fcfb",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "1a0768ed64dc6c0bc33751f030c08b534d89088ebe26a40a2f1ee98cc6128c3a"
+    },
+    {
+      "id": "agr-recognition-sowing-patterns-v1",
+      "assetKey": "sowing-patterns",
+      "requirePath": "assets/agriculture/recognition/sowing-patterns-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/sowing-patterns-v1.webp",
+      "snapshotBlob": "22ea6e5dbb5bd5a9beb857c5edb3ac8dc05de1b2",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "6a5fe02bff458bcab6d34a360eccd2e795c97900923c1df03e24eb52fb20d92f"
+    },
+    {
+      "id": "agr-recognition-soil-handtest-states-v1",
+      "assetKey": "soil-handtest-states",
+      "requirePath": "assets/agriculture/recognition/soil-handtest-states-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/soil-handtest-states-v1.webp",
+      "snapshotBlob": "c7cd37517654a872f0bc9987c52da945ce4fad6b",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "2f26d16c34c3a3840c11291afb79c68d0c3742709635e728151d84406467fd7b"
+    },
+    {
+      "id": "agr-recognition-nursery-containers-v1",
+      "assetKey": "nursery-containers",
+      "requirePath": "assets/agriculture/recognition/nursery-containers-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/nursery-containers-v1.webp",
+      "snapshotBlob": "e84768b65edb3e01dea0e0723b898401c2d2d345",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "c362195b398d937a60e56c8e91cf22dc862444239bfead626761a9b675a88a32"
+    },
+    {
+      "id": "agr-recognition-potato-v1",
+      "assetKey": "potato",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/potato.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/potato.webp",
+      "snapshotBlob": "f22dbfa6d860c7f2f75307245d99b9f946e5ac7d",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "58c13d08dcf9ae0542551dc713a2194d309dd70692d4622f60f2891bda95174e"
+    },
+    {
+      "id": "agr-recognition-sweet-potato-v1",
+      "assetKey": "sweet-potato",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/sweet-potato.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/sweet-potato.webp",
+      "snapshotBlob": "309ed3c1bde0427ec42d24bbc31ed0bac9e59e19",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-carrot-v1",
+      "assetKey": "carrot",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/carrot.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/carrot.webp",
+      "snapshotBlob": "c005e0f9ff229440eaf4069b8cd1b045df1e9f43",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "b01f254b71fc37ed0d7e8222ad0b97294abab36f5d0909823ceac4752ff2f6eb"
+    },
+    {
+      "id": "agr-recognition-tomato-v1",
+      "assetKey": "tomato",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/tomato.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/tomato.webp",
+      "snapshotBlob": "74105d450b28adfb8b87c35b26964873e67b90b3",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "d6ec3a0ef03f547506c8b210e8e182327accaa2fa7778857828792e786556e13"
+    },
+    {
+      "id": "agr-recognition-eggplant-v1",
+      "assetKey": "eggplant",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/eggplant.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/eggplant.webp",
+      "snapshotBlob": "87de0cc6acc9876c79608cb053058b9cca34ec83",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "1abb821f48512e4b0e63ac286ad9d2ebf89b2949c5bd7cd3f01941a5b1c7c697"
+    },
+    {
+      "id": "agr-recognition-cucumber-v1",
+      "assetKey": "cucumber",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/cucumber.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/cucumber.webp",
+      "snapshotBlob": "358a0910690585879075fbea2912a9d6f29b4407",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "084c4a7f2208890f97a52e6a99cc077578e5c26cc32a913d1a19dfd05d746404"
+    },
+    {
+      "id": "agr-recognition-apple-v1",
+      "assetKey": "apple",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/apple.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/apple.webp",
+      "snapshotBlob": "4cba1ae71610f3c2c388a4816cf1a1a7a1db11ff",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-grapes-v1",
+      "assetKey": "grapes",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/grapes.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/grapes.webp",
+      "snapshotBlob": "ff9a03e65a7925085a99f7f9c32a2c531536c56a",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-persimmon-v1",
+      "assetKey": "persimmon",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/persimmon.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/persimmon.webp",
+      "snapshotBlob": "4084bd500124bc42a377b588e51e79915076308b",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "b03bcfb0e225e851fc389d1061074db5a72e0f6ce33b094e2968786b7c838678"
+    },
+    {
+      "id": "agr-recognition-asian-pear-v1",
+      "assetKey": "asian-pear",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/asian-pear.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/asian-pear.webp",
+      "snapshotBlob": "1e2bd781954d59e88ebdaed571b3e6c96bdf33cf",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-peach-v1",
+      "assetKey": "peach",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/peach.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/peach.webp",
+      "snapshotBlob": "e4fb2fa3a7e37375b630ce2be8ef1aabadd37fe3",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-chestnut-v1",
+      "assetKey": "chestnut",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/chestnut.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/chestnut.webp",
+      "snapshotBlob": "2069db8708adeb3330151120434eb612d4d94d13",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-kiwi-v1",
+      "assetKey": "kiwi",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/kiwi.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/kiwi.webp",
+      "snapshotBlob": "181529055014833bfe123772ca689b5c2bd4cdfa",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-blueberry-v1",
+      "assetKey": "blueberry",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/blueberry.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/blueberry.webp",
+      "snapshotBlob": "827001f8a81d90243a0a1a921ca54872f605cdb9",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-unshu-mikan-v1",
+      "assetKey": "unshu-mikan",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/unshu-mikan.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/unshu-mikan.webp",
+      "snapshotBlob": "a7b11ab0d28680a09eb32a9f5ff4d54f752e15cd",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-yuzu-v1",
+      "assetKey": "yuzu",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/yuzu.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/yuzu.webp",
+      "snapshotBlob": "331ea70c3c47dbc341923c48dd82f6bdc8cdcfcb",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-loquat-v1",
+      "assetKey": "loquat",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/loquat.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/loquat.webp",
+      "snapshotBlob": "4165226f3469b94d69667dfa04835362111034df",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-recognition-pvc-cover-film-v1",
+      "assetKey": "pvc-cover-film",
+      "requirePath": "assets/agriculture/recognition/pvc-cover-film-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/pvc-cover-film-v1.webp",
+      "snapshotBlob": "ab654b67961a6e1bce9355293774ff8e642d6d85",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "e36449d1d4064f6c4bbeed6611772db47174647be8bdb17fbd835664f57f8b28"
+    },
+    {
+      "id": "agr-recognition-agripoly-film-v1",
+      "assetKey": "agripoly-film",
+      "requirePath": "assets/agriculture/recognition/agripoly-film-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/agripoly-film-v1.webp",
+      "snapshotBlob": "2fa9c623f9ca3a9f0596174ca7753d1f2291552e",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "3abc4aea4969a3152cf9abc0cc686b77fe25577fc8a58327ee99e47fda363336"
+    },
+    {
+      "id": "agr-recognition-nonwoven-cover-v1",
+      "assetKey": "nonwoven-cover",
+      "requirePath": "assets/agriculture/recognition/nonwoven-cover-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/nonwoven-cover-v1.webp",
+      "snapshotBlob": "d7af270b898b02c626b1cd885e13b5275f5d402b",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "5f5af6098c5064c6bf51428866e8413be709d7b6e3aa15ba165c209553855712"
+    },
+    {
+      "id": "agr-recognition-shade-cloth-v1",
+      "assetKey": "shade-cloth",
+      "requirePath": "assets/agriculture/recognition/shade-cloth-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/shade-cloth-v1.webp",
+      "snapshotBlob": "4d0eef0458b9baf98e8cef40bd6f7caca1ec19c0",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "79150787e0d2a115a2682a8398c7c216d33aba99c2fce0bad4698c1b15520c19"
+    },
+    {
+      "id": "agr-recognition-insect-net-v1",
+      "assetKey": "insect-net",
+      "requirePath": "assets/agriculture/recognition/insect-net-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/insect-net-v1.webp",
+      "snapshotBlob": "369005d54b00eda6124e999e55e138372a2b5e8f",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "9086e2ced0340fda5a02dc768e9134718fc2059a949dd9bfb384ad5faaa7744d"
+    },
+    {
+      "id": "agr-recognition-strawberry-gray-mold-v1",
+      "assetKey": "strawberry-gray-mold",
+      "requirePath": "assets/agriculture/recognition/strawberry-gray-mold-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/strawberry-gray-mold-v1.webp",
+      "snapshotBlob": "1e6e37b7c82a57a771315e02e0c584c63b1b96ce",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "0dc9f71964ac73976c84fc09c2a5d542a7f9eb8b239562ed2b4c29456e255abf"
+    },
+    {
+      "id": "agr-recognition-cabbage-sclerotinia-v1",
+      "assetKey": "cabbage-sclerotinia",
+      "requirePath": "assets/agriculture/recognition/cabbage-sclerotinia-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/cabbage-sclerotinia-v1.webp",
+      "snapshotBlob": "1633eab913ddd816bbdaa351c8b739cebca19b36",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "22d59daaee6ca7ec84084d40e8a1e636407e4bc5d9094cde935bf678c0b9f06e"
+    },
+    {
+      "id": "agr-recognition-cabbage-soft-rot-v1",
+      "assetKey": "cabbage-soft-rot",
+      "requirePath": "assets/agriculture/recognition/cabbage-soft-rot-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/cabbage-soft-rot-v1.webp",
+      "snapshotBlob": "5bd8864c0509f82cf53b23f4cd1696a47b7d1f60",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "c25402728fc0103793e991923198c266963dbc7291868a15218d3e8080871d6d"
+    },
+    {
+      "id": "agr-recognition-cucumber-powdery-mildew-v1",
+      "assetKey": "cucumber-powdery-mildew",
+      "requirePath": "assets/agriculture/recognition/cucumber-powdery-mildew-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/cucumber-powdery-mildew-v1.webp",
+      "snapshotBlob": "6782bc1ef31eae7bc5690d59f4fca9871e46d0d7",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "59ff666cc8f94543b4de6282c8ed00734611634f273b6b20bbcd31c7a17921e8"
+    },
+    {
+      "id": "agr-recognition-cucumber-downy-mildew-v1",
+      "assetKey": "cucumber-downy-mildew",
+      "requirePath": "assets/agriculture/recognition/cucumber-downy-mildew-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/cucumber-downy-mildew-v1.webp",
+      "snapshotBlob": "9650eca62a357208ba1da5c5ea62e7998946cd07",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "ce3a08aa9a4b7ce266b2feff2b907536f60b063312256210d8feaf2f977c63a0"
+    },
+    {
+      "id": "agr-recognition-tomato-late-blight-v1",
+      "assetKey": "tomato-late-blight",
+      "requirePath": "assets/agriculture/recognition/tomato-late-blight-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/tomato-late-blight-v1.webp",
+      "snapshotBlob": "16a3ceba30fd983c0ccb48bba62355028c8bc498",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "dfbde579480ce483a60295e738ff3ca03f5761ba38abc1863daf145bf2232274"
+    },
+    {
+      "id": "agr-recognition-negi-rust-v1",
+      "assetKey": "negi-rust",
+      "requirePath": "assets/agriculture/recognition/negi-rust-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/negi-rust-v1.webp",
+      "snapshotBlob": "06b370cae3b6cd4b717c27a1e37d41e822042631",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "0636b357ac70bdf194b87ead115643c1cafa6d39ed3dc416dfbf1fd3dd685937"
+    },
+    {
+      "id": "agr-recognition-broccoli-clubroot-v1",
+      "assetKey": "broccoli-clubroot",
+      "requirePath": "assets/agriculture/recognition/broccoli-clubroot-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/broccoli-clubroot-v1.webp",
+      "snapshotBlob": "c275aafc784ee111bed0f8aafec9ef52c2226f0d",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "fc0aa7fe933b9a25209354400edf1b3efbd79f6ad049472b05c5beeecb91d69d"
+    },
+    {
+      "id": "agr-recognition-pest-thrips-wakegi-v1",
+      "assetKey": "pest-thrips-wakegi",
+      "requirePath": "assets/agriculture/recognition/pest-thrips-wakegi-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/pest-thrips-wakegi-v1.webp",
+      "snapshotBlob": "4b995dec128766cf81d65cdd6614ec4aefccd76e",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "68a0d4c6b0d9e8d32e0acd3869fb151991266f4caeb41dc25279c25a50d494e5"
+    },
+    {
+      "id": "agr-recognition-pest-leafminer-wakegi-damage-v1",
+      "assetKey": "pest-leafminer-wakegi-damage",
+      "requirePath": "assets/agriculture/recognition/pest-leafminer-wakegi-damage-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/pest-leafminer-wakegi-damage-v1.webp",
+      "snapshotBlob": "fea272b8b9bd09ed2b7f327516a2ab87c5491118",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "fdd78c0d0a440921d2025f1404013fb47a8354c8c06ce5a08fa98b97ac6b549b"
+    },
+    {
+      "id": "agr-recognition-pest-mite-cucumber-damage-v1",
+      "assetKey": "pest-mite-cucumber-damage",
+      "requirePath": "assets/agriculture/recognition/pest-mite-cucumber-damage-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/pest-mite-cucumber-damage-v1.webp",
+      "snapshotBlob": "df0cea37ac7f5fa5aeaf28c9f6122d24405f2217",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "c89b78d6315a54d4d16b93afd2eabc6f9a8be01719fc8f114f6c25cc3d6e2006"
+    },
+    {
+      "id": "agr-recognition-pest-aphid-eggplant-v1",
+      "assetKey": "pest-aphid-eggplant",
+      "requirePath": "assets/agriculture/recognition/pest-aphid-eggplant-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/pest-aphid-eggplant-v1.webp",
+      "snapshotBlob": "9c9b5191e3a50454d44323fc2257098a735480f5",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "c91ab18c863eea41cbf02e63bd7dc2ce96c06d79b4c385dd9d56b13be11d4793"
+    },
+    {
+      "id": "agr-recognition-pest-cabbage-caterpillar-v1",
+      "assetKey": "pest-cabbage-caterpillar",
+      "requirePath": "assets/agriculture/recognition/pest-cabbage-caterpillar-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/pest-cabbage-caterpillar-v1.webp",
+      "snapshotBlob": "b2479488d23e8f12eb6e5299a4b7187e79774dc8",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "5428f32c2d7ef764de3b9d8ab5822d2df3bb240cec47a85a521867be04349720"
+    },
+    {
+      "id": "agr-recognition-pest-whitefly-tomato-v1",
+      "assetKey": "pest-whitefly-tomato",
+      "requirePath": "assets/agriculture/recognition/pest-whitefly-tomato-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/pest-whitefly-tomato-v1.webp",
+      "snapshotBlob": "e1fc5cc54f062d735760b9fb455b37dae96d4db0",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "2e055c294e074185b4f5f099450dda149fbb5dfb7fb92c92aacb1806f1e719a3"
+    },
+    {
+      "id": "agr-recognition-pest-sweetpotato-weevil-v1",
+      "assetKey": "pest-sweetpotato-weevil",
+      "requirePath": "assets/agriculture/recognition/pest-sweetpotato-weevil-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/pest-sweetpotato-weevil-v1.webp",
+      "snapshotBlob": "1cdbdfa526774d810c54347c914fce930c30777e",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "778189468c7c8c146de6203ab3e59c760db280558a971c27c4954f20c2ab91fc"
+    },
+    {
+      "id": "agr-recognition-pest-pepper-bug-v1",
+      "assetKey": "pest-pepper-bug",
+      "requirePath": "assets/agriculture/recognition/pest-pepper-bug-v1.webp",
+      "declaredPath": "assets/agriculture/recognition/pest-pepper-bug-v1.webp",
+      "snapshotBlob": "f28dc97ace43c47d22dae9fd135e0f35dadb0735",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "cecc49ffc5501550c326bf5c84a11c005bbdfcc660180106b89bb8160f3c3d31"
+    },
+    {
+      "id": "agr-equipment-manual-shoulder-sprayer-v1",
+      "assetKey": "equipment-manual-shoulder-sprayer",
+      "requirePath": "assets/agriculture/equipment/manual-shoulder-sprayer-v1.png",
+      "declaredPath": "assets/agriculture/equipment/manual-shoulder-sprayer-v1.png",
+      "snapshotBlob": "09341c79c0e42cdb9b8c399a8d71fa28670ac496",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "8cfd02f070962b06e6407d4c08337bb4e8c14921dc545e121fdfb812f536c0e4"
+    },
+    {
+      "id": "agr-equipment-powered-backpack-sprayer-v1",
+      "assetKey": "equipment-powered-backpack-sprayer",
+      "requirePath": "assets/agriculture/equipment/powered-backpack-sprayer-v1.png",
+      "declaredPath": "assets/agriculture/equipment/powered-backpack-sprayer-v1.png",
+      "snapshotBlob": "a17380ec46c7c5e55a514ef2ca4276b5c3d32c7e",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "de7e83b72d8945097fb41f5f33eb5992ce0ee3e69290e869d2f04500ccde04a7"
+    },
+    {
+      "id": "agr-equip-speed-sprayer-v1",
+      "assetKey": "equipment-speed-sprayer",
+      "requirePath": "assets/agriculture/equipment/speed-sprayer-v1.png",
+      "declaredPath": "assets/agriculture/equipment/speed-sprayer-v1.png",
+      "snapshotBlob": "84c26e64e6c17ed35c061b76c2c94e6def770e2f",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "1366ccdadf9df708e48328b837048653784f0ea22265010464d9eb048fe0aaca"
+    },
+    {
+      "id": "agr-equipment-portable-brush-cutter-v1",
+      "assetKey": "equipment-portable-brush-cutter",
+      "requirePath": "assets/agriculture/equipment/portable-brush-cutter-v1.png",
+      "declaredPath": "assets/agriculture/equipment/portable-brush-cutter-v1.png",
+      "snapshotBlob": "8bcf31bdd85f4dd8ebfc16e96ced92e1d687723d",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "08bdee615f5634c9dfcfdbac9d656b68755955a3cd3ed446a17ab7c0b28e0206"
+    },
+    {
+      "id": "walkbehind-hammer-mower-v1",
+      "assetKey": "equipment-walkbehind-hammer-mower",
+      "requirePath": "assets/agriculture/equipment/walkbehind-hammer-mower-v1.png",
+      "declaredPath": "assets/agriculture/equipment/walkbehind-hammer-mower-v1.png",
+      "snapshotBlob": "79f5254cf6ab38f4f7a7c3216d164e7b57457cc8",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "df5b84131488f2938f0a37aeefef40a6ab1190ed597057320ddb16b538de7b7f"
+    },
+    {
+      "id": "agr-equipment-ride-on-mower-v1",
+      "assetKey": "equipment-ride-on-mower",
+      "requirePath": "assets/agriculture/equipment/ride-on-mower-v1.png",
+      "declaredPath": "assets/agriculture/equipment/ride-on-mower-v1.png",
+      "snapshotBlob": "d8e9f6a9c674060fb0e10013d98143d9e00b910a",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "1935b55d53be2c98ff210633708da40d823814c032ff783d4efb66bd6ed1c0b5"
+    },
+    {
+      "id": "agr-recognition-socket-wrench-v1",
+      "assetKey": "tool-socket-wrench",
+      "requirePath": "assets/agriculture/tools/socket-wrench-v1.png",
+      "declaredPath": "assets/agriculture/tools/socket-wrench-v1.png",
+      "snapshotBlob": "acd57d11bb70eaf4b8c8e0f82157bb31661856ca",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "77d73c688fc5600ebf82af94e7deb23dfe3c853b08648334ab18c053d6d8683f"
+    },
+    {
+      "id": "agr-recognition-open-end-spanner-v1",
+      "assetKey": "tool-open-end-spanner",
+      "requirePath": "assets/agriculture/tools/open-end-spanner-v1.png",
+      "declaredPath": "assets/agriculture/tools/open-end-spanner-v1.png",
+      "snapshotBlob": "dd255408de0ae985d6f05766d0f52a9c60d6037a",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "747e79cd34873330ac9e589f9dcda62c38f3f8a46c69bb6d60ed109410cab0b3"
+    },
+    {
+      "id": "agr-tools33-box-end-wrench-v1",
+      "assetKey": "tool-box-end-wrench",
+      "requirePath": "assets/agriculture/tools/box-end-wrench-v1.png",
+      "declaredPath": "assets/agriculture/tools/box-end-wrench-v1.png",
+      "snapshotBlob": "8135f82c2c65a7d967910dc2223e8fadbc1d3c5c",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "487b35599d7003962a53e03791efa8f6f199d49a64f1f97f9fffb27109069751"
+    },
+    {
+      "id": "agr-tool-screwdrivers-v1",
+      "assetKey": "tool-screwdrivers",
+      "requirePath": "assets/agriculture/tools/screwdrivers-v1.png",
+      "declaredPath": "assets/agriculture/tools/screwdrivers-v1.png",
+      "snapshotBlob": "95a6df26cea21850ee88b957cd74bd3224894ba1",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "c546f1cea1d31a1e7571ac88fc9efd8cd4a79c60983bc58ed0e05a39dab48c7f"
+    },
+    {
+      "id": "agr-recognition-adjustable-wrench-v1",
+      "assetKey": "tool-adjustable-wrench",
+      "requirePath": "assets/agriculture/tools/adjustable-wrench-v1.png",
+      "declaredPath": "assets/agriculture/tools/adjustable-wrench-v1.png",
+      "snapshotBlob": "4cb46203495b83f37fa8d1c7346643d7a14b19af",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "c17a91d10a4ec7c8e5a4d25d3baf627753f094cb53dbd888b10ad1d031a6180b"
+    },
+    {
+      "id": "agr-recognition-hex-keys-v1",
+      "assetKey": "tool-hex-keys",
+      "requirePath": "assets/agriculture/tools/hex-keys-v1.png",
+      "declaredPath": "assets/agriculture/tools/hex-keys-v1.png",
+      "snapshotBlob": "35529e3a589cdabebaf5fcc0024bb2c4a3bedb07",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "6e64854d063700b634a57022fdf23cb3f7994e8d7bec077b66bd42a54411b46b"
+    },
+    {
+      "id": "agr-fig-irrigation-destinations-v1",
+      "assetKey": "irrigation-destinations",
+      "requirePath": "assets/agriculture/diagrams/irrigation-destinations-v1.png",
+      "declaredPath": "assets/agriculture/diagrams/irrigation-destinations-v1.png",
+      "snapshotBlob": "3d0c27befd04b5f90c3d4d6243a9156ba76c8024",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "b05baa02429602026430d0819b9dae655447177117870bbf2bc7eda38fd6d0ec"
+    },
+    {
+      "id": "agr-recognition-irrigation-tools-v1",
+      "assetKey": "irrigation-tools",
+      "requirePath": "assets/agriculture/diagrams/irrigation-tools-v1.png",
+      "declaredPath": "assets/agriculture/diagrams/irrigation-tools-v1.png",
+      "snapshotBlob": "fc92184526c30428b2c6df272d52e7001f3a7edc",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "54b7dcad47fe356992abfcd76374e8a4ec86e3b3d889210a3891ac5cd319021e"
+    },
+    {
+      "id": "agr-fig-soil-aggregate-comparison-v1",
+      "assetKey": "soil-aggregate-comparison",
+      "requirePath": "assets/agriculture/diagrams/soil-aggregate-comparison-v1.png",
+      "declaredPath": "assets/agriculture/diagrams/soil-aggregate-comparison-v1.png",
+      "snapshotBlob": "be186b30cf0876ced5738f7449cabd2ec336345f",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "590dde03b890b5e45de80e284905b6b718368f5390fb73b6c494de0c1823a88a"
+    },
+    {
+      "id": "agr-f40-general-thinning-comparison",
+      "assetKey": "f40-general-thinning-comparison",
+      "requirePath": "assets/agriculture/completion-40/general/agr-f40-general-thinning-comparison.png",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week02/thinning-botanical-comparison-v2.webp",
+      "snapshotBlob": "7ae4a0975f83471b82e540f48a6ceed1203a1d12",
+      "cachedBytesVerified": false,
+      "issues": [
+        "require_path_differs_metadata"
+      ],
+      "declaredBytesSha256": "05a50ddbdc2fb726cd505606eed64f6834c1f12ecc452111cd647ec94a42b618",
+      "declaredBytesSnapshotVerified": true
+    },
+    {
+      "id": "agr-f40-general-nursery-forms",
+      "assetKey": "f40-general-nursery-forms",
+      "requirePath": "assets/agriculture/completion-40/general/agr-f40-general-nursery-forms.png",
+      "declaredPath": "assets/agriculture/completion-40/general/agr-f40-general-nursery-forms.png",
+      "snapshotBlob": "84e9918ecd6e5301f93aa8f700a9f379346198be",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "703f63f337681853013c24f73e845bed023df5db3f42eecc0d958ddf31e46b69"
+    },
+    {
+      "id": "agr-f40-general-seeder",
+      "assetKey": "f40-general-seeder",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week02/hand-pushed-single-row-seeder.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week02/hand-pushed-single-row-seeder.webp",
+      "snapshotBlob": "ccc4b8cb066a201ba4e4f79a9905b4efd603abde",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "640b78fa08723f713d308ec9b30b66299469ce46ac95b439e9904a771aa5c4e3"
+    },
+    {
+      "id": "agr-f40-general-tractor-seeder",
+      "assetKey": "f40-general-tractor-seeder",
+      "requirePath": "assets/agriculture/completion-40/general/agr-f40-general-tractor-seeder.png",
+      "declaredPath": "assets/agriculture/completion-40/general/agr-f40-general-tractor-seeder.png",
+      "snapshotBlob": "48233509598bede1e00968d6f010d8bf2cd3e859",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "188999cf42abf2ccff2d03687659cc255e18f05f30af843d155841cfcefdcc07"
+    },
+    {
+      "id": "agr-f40-general-transplanter",
+      "assetKey": "f40-general-transplanter",
+      "requirePath": "assets/agriculture/completion-40/general/agr-f40-general-transplanter.png",
+      "declaredPath": "assets/agriculture/completion-40/general/agr-f40-general-transplanter.png",
+      "snapshotBlob": "96f12bb6107607517500ee5d43fa657f95fa8d36",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "2ae2b9b317a1d6849bd6f416eb87a0fd02dbab659a4b9690073daa6a45a228fe"
+    },
+    {
+      "id": "agr-f40-general-hand-planting",
+      "assetKey": "f40-general-hand-planting",
+      "requirePath": "assets/agriculture/completion-40/general/agr-f40-general-hand-planting.png",
+      "declaredPath": "assets/agriculture/completion-40/general/agr-f40-general-hand-planting.png",
+      "snapshotBlob": "4cc9ca81b6a089762ede5a31d121d879ead61329",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "e1b7c012b3e1b938e3ebfebe1d603c610ae4046230c5eaa7c63d36b4bcb6594e"
+    },
+    {
+      "id": "agr-f40-general-row-plant-spacing",
+      "assetKey": "f40-general-row-plant-spacing",
+      "requirePath": "assets/agriculture/completion-40/general/agr-f40-general-row-plant-spacing.png",
+      "declaredPath": "assets/agriculture/completion-40/general/agr-f40-general-row-plant-spacing.png",
+      "snapshotBlob": "7a626c464f5265654db7eab5497ddf3cbb5aba52",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "7bd536d5159b78f1568f924302c59987886b8a28440f04a2106c7c5ba0b928af"
+    },
+    {
+      "id": "agr-f40-general-graft-connections",
+      "assetKey": "f40-general-graft-connections",
+      "requirePath": "assets/agriculture/completion-40/general/agr-f40-general-graft-connections.png",
+      "declaredPath": "assets/agriculture/completion-40/general/agr-f40-general-graft-connections.png",
+      "snapshotBlob": "1124cacbbf2cd842cee5cb1ed9c6bd482b0186ca",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "81df0dc7a84fcd125c2edabf4bd10160c69fb8dc87a60f8383be009743fc3768"
+    },
+    {
+      "id": "agr-f40-general-planting-checks",
+      "assetKey": "f40-general-planting-checks",
+      "requirePath": "assets/agriculture/completion-40/general/agr-f40-general-planting-checks.png",
+      "declaredPath": "assets/agriculture/completion-40/general/agr-f40-general-planting-checks.png",
+      "snapshotBlob": "56ce4de8e8ae9695f333330ecabdadb63891ece9",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "575af19c3616b71362d39d6f9ec282446c5b6fbe073b4343e5648b50e36ddc31"
+    },
+    {
+      "id": "agr-f40-general-cropping-example-flow",
+      "assetKey": "f40-general-cropping-example-flow",
+      "requirePath": "assets/agriculture/completion-40/general/agr-f40-general-cropping-example-flow.png",
+      "declaredPath": "assets/agriculture/completion-40/general/agr-f40-general-cropping-example-flow.png",
+      "snapshotBlob": "379003f46feec54906c66da3d425cfa9159a7a50",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "d7f4a363ac393ef40c74d61a9d0fd0a2033c158647b388350f72b6caa15ccdd8"
+    },
+    {
+      "id": "agr-f40-general-flower-legend-reader",
+      "assetKey": "f40-general-flower-legend-reader",
+      "requirePath": "assets/agriculture/completion-40/general/agr-f40-general-flower-legend-reader.png",
+      "declaredPath": "assets/agriculture/completion-40/general/agr-f40-general-flower-legend-reader.png",
+      "snapshotBlob": "8297113c116e87f73b570895383a588a55d26fbe",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "46a1376701ebd24d912bbf9ffeedfccd4492cd366d3220e036b8f8c806653d0f"
+    },
+    {
+      "id": "agr-recognition-fertilizer-forms-appearance-v1",
+      "assetKey": "agr-recognition-fertilizer-forms-appearance-v1",
+      "requirePath": "assets/agriculture/completion-40/soil/fertilizer-forms-appearance-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/soil/fertilizer-forms-appearance-v1.png",
+      "snapshotBlob": "2eb480a09ba634edc3a27ee62f6a4b2a3818ccb3",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "adc5b77fcf9f99d4d156e489b82f52e9b3d252da2f61f2394bb124acd1271d02"
+    },
+    {
+      "id": "agr-recognition-soil-tools-appearance-v1",
+      "assetKey": "agr-recognition-soil-tools-appearance-v1",
+      "requirePath": "assets/agriculture/completion-40/soil/soil-tools-appearance-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/soil/soil-tools-appearance-v1.png",
+      "snapshotBlob": "3da95a198b2c6e75f7f33e6ba2c1a1c666ac5c72",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "dcad7d3cbe2b35eea5f83491edda5a71da7e8a779bcf16a067ebf281c3d7dbe3"
+    },
+    {
+      "id": "agr-recognition-tractors-appearance-v1",
+      "assetKey": "agr-recognition-tractors-appearance-v1",
+      "requirePath": "assets/agriculture/completion-40/soil/tractors-appearance-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/soil/tractors-appearance-v1.png",
+      "snapshotBlob": "ed1a52655b9fe10a013b96e176ab4c1af5e11e55",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "60d5323f98be4e6a0ee86f4ae941c03bbb291d1546c6105dc2a2bea402165abc"
+    },
+    {
+      "id": "agr-recognition-spreaders-ridgers-appearance-v1",
+      "assetKey": "agr-recognition-spreaders-ridgers-appearance-v1",
+      "requirePath": "assets/agriculture/completion-40/soil/spreaders-ridgers-appearance-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/soil/spreaders-ridgers-appearance-v1.png",
+      "snapshotBlob": "6f69da68721745ceca8d1c3af83d10045e3df1e3",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "10addc019463986a597adfc668e2c689ca35d042020d7c87a2e9323418ea346e"
+    },
+    {
+      "id": "agr-recognition-amendments-appearance-v1",
+      "assetKey": "agr-recognition-amendments-appearance-v1",
+      "requirePath": "assets/agriculture/completion-40/soil/amendments-appearance-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/soil/amendments-appearance-v1.png",
+      "snapshotBlob": "d88f9e13b7fc79d98a97538a6314f9f7cd763946",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "d7609d8b87612d8bf734e463f172e03c30d471a6bd74e8f2025a2ab6fe15c408"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "assetKey": "agr-fig-soil-three-factor-relations-v1",
+      "requirePath": "assets/agriculture/completion-40/soil/soil-three-factor-relations-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/soil/soil-three-factor-relations-v1.png",
+      "snapshotBlob": "da1ef238ab09537f9e3f53c83984a206d754ae36",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "93142059bb8356df7312302d76ccadef52f10b159f43a1d221eed867ea9163fa"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "assetKey": "agr-fig-rotation-two-year-examples-v1",
+      "requirePath": "assets/agriculture/completion-40/soil/rotation-two-year-examples-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/soil/rotation-two-year-examples-v1.png",
+      "snapshotBlob": "5e977456ff408ed1da3df044a99da8c356c6ed46",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "864ee7462fca20fcd207253fa21bd0df8714b8625bf3f9605481116ab13f064a"
+    },
+    {
+      "id": "agr-fig-nutrient-entry-routes-v2",
+      "assetKey": "agr-fig-nutrient-entry-routes-v2",
+      "requirePath": "assets/agriculture/completion-40/soil/nutrient-entry-routes-v2.png",
+      "declaredPath": "assets/agriculture/completion-40/soil/nutrient-entry-routes-v2.png",
+      "snapshotBlob": "2decb346a093e96c1bec5b1aa056c882cfca2daa",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "3424b357aae69696d00280886e38e901b369bc1f45ce0735e76d7f76bdf90b68"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "assetKey": "agr-fig-ridge-dimensions-v1",
+      "requirePath": "assets/agriculture/completion-40/soil/ridge-dimensions-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/soil/ridge-dimensions-v1.png",
+      "snapshotBlob": "32f84ad12d0417118f1472f4d0c3f0e4d47e70e2",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "8867b90541d4b152249093f2ae1f131bbfa812582ca179ae52999e49b0dcbdf1"
+    },
+    {
+      "id": "agr-fig-f40-rice-leaf-positions-v1",
+      "assetKey": "rice-seedling-leaf-positions-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/rice-seedling-leaf-positions-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/rice-seedling-leaf-positions-v1.png",
+      "snapshotBlob": "4a9404c12149268c6177b32c38e551b548b4eeb9",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "f68b367dca149edfa47a86774e7eb07cdb739ff1a8837090a343aaf4187e6a0c"
+    },
+    {
+      "id": "agr-fig-f40-rice-grain-structure-v1",
+      "assetKey": "rice-grain-structure-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/rice-grain-structure-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/rice-grain-structure-v1.png",
+      "snapshotBlob": "2604ff33ff2ae1a35719db4d6292198ff716b70b",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "f9be1fb55cc402405ad21a12ae790e4a5713affa6e3e3afd59ff5384a72fa396"
+    },
+    {
+      "id": "agr-fig-f40-rice-pregermination-v1",
+      "assetKey": "rice-pregermination-states-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/rice-pregermination-states-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/rice-pregermination-states-v1.png",
+      "snapshotBlob": "4c45134cfd3c11f3401c4d91dd1ecc8cbbcd96e6",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "e1c0485410c4667d62943dd14cc5cc6c4a8abf3d7515eba509560ccc46149e41"
+    },
+    {
+      "id": "agr-fig-f40-sowing-spacing-v1",
+      "assetKey": "sowing-and-plant-spacing-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/sowing-and-plant-spacing-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/sowing-and-plant-spacing-v1.png",
+      "snapshotBlob": "9654e38c9f48f6c4826e71e306bf8511dd95e282",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "f8b1b2212ed4f1c27911e028c62add81b6c84474b89bb33b5ea9d06f7288050b"
+    },
+    {
+      "id": "agr-fig-f40-rice-feed-parts-v1",
+      "assetKey": "rice-feed-parts-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/rice-feed-parts-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/rice-feed-parts-v1.png",
+      "snapshotBlob": "fcd526bc7c30a6e0411ec79cdfc5a7321192f7d1",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "588c848be6657481298918b32aadc0a3d705b7432c57b235f90f6bfb79489c57"
+    },
+    {
+      "id": "agr-fig-f40-rice-calendar-comparison-v1",
+      "assetKey": "rice-calendar-comparison-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/rice-calendar-comparison-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/rice-calendar-comparison-v1.png",
+      "snapshotBlob": "5b3295f8d799c5c8ef9662a640a581c8a3535803",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "d19cb184017e325ab9ecdf773f081db143343c580c976cff949a38f3aec93191"
+    },
+    {
+      "id": "agr-fig-f40-rice-soaking-position-v1",
+      "assetKey": "rice-soaking-position-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/rice-soaking-position-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/rice-soaking-position-v1.png",
+      "snapshotBlob": "f8d93be47f6b6a50ae0340942d3c05d64c5bb069",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "01ed61f1ee33d23a491ddd862659cc51dd5d4135324d6edbdef8028dff3000bb"
+    },
+    {
+      "id": "agr-fig-f40-crop-fruits-atlas-v1",
+      "assetKey": "crop-fruits-atlas-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/crop-fruits-atlas-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/crop-fruits-atlas-v1.png",
+      "snapshotBlob": "33a6c52dd6ae5bf30aeeabdb1f9d072882735446",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "312b93edc2b445a1c7fcb33f9b74ef0e1c8a251b1d1f09bb1037131cc5d4088c"
+    },
+    {
+      "id": "agr-fig-f40-crop-leaves-atlas-v1",
+      "assetKey": "crop-leaves-atlas-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/crop-leaves-atlas-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/crop-leaves-atlas-v1.png",
+      "snapshotBlob": "abd7638ffa8cc08982362010427d5e428376c513",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "144724ab5392d597ea1e0245adf7cb1036e2dc1fc0511b56f5b0f7113cc82ef5"
+    },
+    {
+      "id": "agr-fig-f40-crop-herbs-legumes-atlas-v1",
+      "assetKey": "crop-herbs-legumes-atlas-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/crop-herbs-legumes-atlas-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/crop-herbs-legumes-atlas-v1.png",
+      "snapshotBlob": "6aada74647dae8814b9bb48e241992698a9fa77a",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "fcd81655f2747318655068214d48874ab1d9c799b31496bbe98bdabb133c22f1"
+    },
+    {
+      "id": "agr-fig-f40-crop-lotus-atlas-v1",
+      "assetKey": "crop-lotus-atlas-v1",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week02/lotus-above-water-and-rhizome.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week02/lotus-above-water-and-rhizome.webp",
+      "snapshotBlob": "25bd3752473cb944518c8fce1cd0bb9657240787",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "13a4bb226cd62a599c8a74360b65561cee57134c5bebd86b0f359fae34df5cb6"
+    },
+    {
+      "id": "agr-fig-f40-rice-machines-scenes-v1",
+      "assetKey": "rice-machines-scenes-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/rice-machines-scenes-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/rice-machines-scenes-v1.png",
+      "snapshotBlob": "f64d7f5ad6d52ca02330760d2d7fee2989ae4c3b",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "6b6f7e353889d931e7fb6ab2d4018365f1997cbf3a85fa866110725fd0545dcb"
+    },
+    {
+      "id": "agr-fig-f40-agri-use-states-atlas-v1",
+      "assetKey": "agri-use-states-atlas-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/agri-use-states-atlas-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/agri-use-states-atlas-v1.png",
+      "snapshotBlob": "77e83539089d56c039590a95abbf4320d92a4f43",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "73d44a8220f56156c6006741ca4fbf9f70457cc21d8c1842cc140bb9e41d0f66"
+    },
+    {
+      "id": "agr-fig-f40-vegetable-seeds-atlas-v1",
+      "assetKey": "vegetable-seeds-atlas-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/vegetable-seeds-atlas-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/vegetable-seeds-atlas-v1.png",
+      "snapshotBlob": "2f503c19dd2aaacf1430d9bf7d04f4e265cf3b04",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "4c8157b88a6b3ee8fe969ed62bb3a748cb365e404a73d1de1d00d2930868ddaf"
+    },
+    {
+      "id": "agr-fig-f40-processed-seeds-atlas-v1",
+      "assetKey": "processed-seeds-atlas-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/processed-seeds-atlas-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/processed-seeds-atlas-v1.png",
+      "snapshotBlob": "7ff71929982c7f4333972ac84efe8c355655a2f1",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "17ea733ee0c65cd217a42af91a281d70460e5e0e1af0f9605d1eb4cfea9e494e"
+    },
+    {
+      "id": "agr-fig-f40-field-crop-parts-atlas-v1",
+      "assetKey": "field-crop-parts-atlas-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/field-crop-parts-atlas-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/field-crop-parts-atlas-v1.png",
+      "snapshotBlob": "2126f2eed55177ff296b92e2cd60ab5588e838da",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "ecd36f8e3620dbfabd9bbd820c2a0529bf14a7d41cd1da32418615a1a6e7a3f9"
+    },
+    {
+      "id": "agr-fig-f40-rice-pest-symptom-reference-v1",
+      "assetKey": "rice-pest-symptom-reference-v1",
+      "requirePath": "assets/agriculture/completion-40/rice/rice-pest-symptom-reference-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/rice/rice-pest-symptom-reference-v1.png",
+      "snapshotBlob": "a4f84a7ad9843410997665b7839e7924fad150b1",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "c2106012c526fedd9838bb20dbccc4014a4ddc72d0d5cfb38c526de8ea76d193"
+    },
+    {
+      "id": "agr-f40-safety-media-management-positions",
+      "assetKey": "management-positions",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/management-positions-royal-v1.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/management-positions-royal-v1.webp",
+      "snapshotBlob": "e744a57602d0d8ce6461722ef2e291b761701f10",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "265a5eb3a24a582ec0fb3c3863ff1c65400b344ff184ebb7bd470afa61393e3b"
+    },
+    {
+      "id": "agr-f40-safety-media-pollination-target",
+      "assetKey": "pollination-target",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/pollination-target-royal-v1.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/pollination-target-royal-v1.webp",
+      "snapshotBlob": "ed42d811b455c393f62711a537889446b5bf70b8",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "f64497b37a676dee31a84a27f2022bf5741699011051d7c0a11d560b1bc84a33"
+    },
+    {
+      "id": "agr-f40-safety-media-figure-eight-tie",
+      "assetKey": "figure-eight-tie",
+      "requirePath": "assets/agriculture/completion-40/safety/figure-eight-tie.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/figure-eight-tie.png",
+      "snapshotBlob": "5bd1bb6b8b0a22aac51cb62446eb1c393bb029bd",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "cd8b7902a7346d4400dac585ef38df626a4b610ab86d54eedc5d3c6c264a7771"
+    },
+    {
+      "id": "agr-f40-safety-media-harvest-handtools",
+      "assetKey": "harvest-handtools",
+      "requirePath": "assets/agriculture/completion-40/safety/harvest-handtools.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/harvest-handtools.png",
+      "snapshotBlob": "c4a7ddbd839e174d307185a1d151391c9c46704f",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "86ea39eb7f65afc2cde5632ed71c00c47a8314b8e1fe37d501e3c966832ba1d0"
+    },
+    {
+      "id": "agr-f40-safety-media-rice-combine",
+      "assetKey": "rice-combine",
+      "requirePath": "assets/agriculture/completion-40/safety/rice-combine.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/rice-combine.png",
+      "snapshotBlob": "1ef57ca5e9394f3ae244c950637c3928b1aace1e",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "e476e815710aeeafda2357140757f4f4e7504f53d74ce1d9d79448d5a3cdadc3"
+    },
+    {
+      "id": "agr-f40-safety-media-leek-harvester",
+      "assetKey": "leek-harvester",
+      "requirePath": "assets/agriculture/completion-40/safety/leek-harvester.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/leek-harvester.png",
+      "snapshotBlob": "a466a524bbdd70cf0c1de36c317795c15fdbe217",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "0620307ff2aa497d5dd76afae853277f8fde29d2a43238806cdb217bc9b90732"
+    },
+    {
+      "id": "agr-f40-safety-media-potato-digger",
+      "assetKey": "potato-digger",
+      "requirePath": "assets/agriculture/completion-40/safety/potato-digger.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/potato-digger.png",
+      "snapshotBlob": "78608b4bb41be4f59aaba9058832927e139e819b",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "faa1f6c428eac8a37a0d2102f606e8d27f2e1d469a780e1a4af7f91f0393851e"
+    },
+    {
+      "id": "agr-f40-safety-media-tunnel-direct-cover",
+      "assetKey": "tunnel-direct-cover",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/tunnel-direct-cover-royal-v1.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/tunnel-direct-cover-royal-v1.webp",
+      "snapshotBlob": "5368eaa56eb18000b8df45944d7220b362d9f366",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "05d8e03ed1bf428df069c285cc70fbbcc2a6574853de7a60ebe453bc4dbecdea"
+    },
+    {
+      "id": "agr-f40-safety-media-mulch-materials",
+      "assetKey": "mulch-materials",
+      "requirePath": "assets/agriculture/completion-40/safety/mulch-materials.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/mulch-materials.png",
+      "snapshotBlob": "ddb93ad2bb45a087ae1d2ff3fddb662a6bf44e7a",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "ee2244ca19628891d1f6d96e813ec3a54d8382da9f47dc227d554ba9d7881745"
+    },
+    {
+      "id": "agr-f40-safety-media-rotary-mulcher",
+      "assetKey": "rotary-mulcher",
+      "requirePath": "assets/agriculture/completion-40/safety/rotary-mulcher.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/rotary-mulcher.png",
+      "snapshotBlob": "b5e8d326a15eca43a154dbd3f805892d09b05d8e",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "31423fc9179e34d6a429e0c3e6cb3ec7deb7ab0056ada2c1fab6aa90e557d1aa"
+    },
+    {
+      "id": "agr-f40-safety-media-pheromone-dispenser",
+      "assetKey": "pheromone-dispenser",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/pheromone-dispenser-appearance-royal-v1.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/pheromone-dispenser-appearance-royal-v1.webp",
+      "snapshotBlob": "92a60ac5c97c49f841cd29631ae7430a39511c23",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "cae52b78504ee9fec6c2e631cb34236cc357d3d4ad71b360b4a60cc5a4723927"
+    },
+    {
+      "id": "agr-f40-safety-media-cultivation-hilling",
+      "assetKey": "cultivation-hilling",
+      "requirePath": "assets/agriculture/completion-40/safety/cultivation-hilling.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/cultivation-hilling.png",
+      "snapshotBlob": "65fd58211e9a0619021a0b64870ed0d8b0dc8b0e",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "2ee5a23a90d1575761adaccdfaa96fbac6eef4307dd6037fd023a468730d4620"
+    },
+    {
+      "id": "agr-f40-safety-media-nozzle-source-examples",
+      "assetKey": "nozzle-source-examples",
+      "requirePath": "assets/agriculture/completion-40/safety/nozzle-source-examples.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/nozzle-source-examples.png",
+      "snapshotBlob": "2cdc0411ab2bb63d60965b52228e5f1759c8dd75",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "8698067a512bb8774d2bf72cfbe92cd155c324f38ef951da5b0377af92ba132b"
+    },
+    {
+      "id": "agr-f40-safety-media-manual-backpack-sprayer",
+      "assetKey": "manual-backpack-sprayer",
+      "requirePath": "assets/agriculture/completion-40/safety/manual-backpack-sprayer.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/manual-backpack-sprayer.png",
+      "snapshotBlob": "572f0e77533f1d823db6cfa29f8450ca6bda0d79",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "f2b13968eb8617d6f9b4a87a0d95a1d28ad27a5f9341bffa82a9626ecf994b1f"
+    },
+    {
+      "id": "agr-f40-safety-media-machine-clothing",
+      "assetKey": "machine-clothing",
+      "requirePath": "assets/agriculture/completion-40/safety/machine-clothing.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/machine-clothing.png",
+      "snapshotBlob": "0268fbd38b32bca0a618a10b49d6230e11968647",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "0d1a11456d2c7aa2bb090786031f58c80f73f14d3a35ce36a28b8a3b45338efd"
+    },
+    {
+      "id": "agr-f40-safety-media-machine-control-names",
+      "assetKey": "machine-control-names",
+      "requirePath": "assets/agriculture/completion-40/safety/machine-control-names.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/machine-control-names.png",
+      "snapshotBlob": "fb011d2b36cf37b8d209ea07b1f6c7ed8c17031f",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "149d365ec6dc756ff51942d67a2219cd0c094659257f88d32fd99279cd873634"
+    },
+    {
+      "id": "agr-f40-safety-media-pesticide-clothing",
+      "assetKey": "pesticide-clothing",
+      "requirePath": "assets/agriculture/completion-40/safety/pesticide-clothing.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/pesticide-clothing.png",
+      "snapshotBlob": "09ac5cde46f7252b8ebc4801ed8cf0f110ac3fa7",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "89d0932d094d072e1da336dcbc5efbe06ae5b25812c8e2d033a06769f73459f2"
+    },
+    {
+      "id": "agr-f40-safety-media-sprayer-parts",
+      "assetKey": "sprayer-parts",
+      "requirePath": "assets/agriculture/completion-40/safety/sprayer-parts.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/sprayer-parts.png",
+      "snapshotBlob": "56495991de84ea55607ec74c16507c39b47bf739",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "b6de11ab06bbf2c237a1a30fad0a157f91e818828e9f7f7409ebf6b9e96b25d7"
+    },
+    {
+      "id": "agr-f40-safety-media-power-connector-examples",
+      "assetKey": "power-connector-examples",
+      "requirePath": "assets/agriculture/completion-40/safety/power-connector-examples.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/power-connector-examples.png",
+      "snapshotBlob": "0c54a6eb9d6ddeeed01199bd1badd04a364552e3",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "4a5bc73d670948d52904beca5c6fde9b58c2efe066c1915fbea010165d226239"
+    },
+    {
+      "id": "agr-f40-safety-media-fuel-container-source-sign",
+      "assetKey": "fuel-container-source-sign",
+      "requirePath": "assets/agriculture/completion-40/safety/fuel-container-source-sign.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/fuel-container-source-sign.png",
+      "snapshotBlob": "b749bae823682c4093d2106b597d360a577a0385",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "ba7594b1c617e9715624c7c4c78100389c94c2b4e97ca8251599f648413cfdef"
+    },
+    {
+      "id": "agr-f40-safety-media-ladder-hazards",
+      "assetKey": "ladder-hazards",
+      "requirePath": "assets/agriculture/completion-40/safety/ladder-hazards.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/ladder-hazards.png",
+      "snapshotBlob": "7969221b1784b9b4506a85f19584b5c989000b0a",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "7e9ea9642d6130c1b7c23788094e12f885573e58dfb88a96ad0352f6e5315233"
+    },
+    {
+      "id": "agr-f40-safety-media-leaf-fruit-source-reference",
+      "assetKey": "leaf-fruit-source-reference",
+      "requirePath": "assets/agriculture/completion-40/safety/leaf-fruit-source-reference.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/leaf-fruit-source-reference.png",
+      "snapshotBlob": "9cf3ba72eb02161530f97167b5dfaddac93bbeea",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "3edf6f51f380d4d170dc97e33e811fd4d0e723aa0835e9a581568a16a2b341ad"
+    },
+    {
+      "id": "agr-f40-safety-media-volume-factor-mass",
+      "assetKey": "volume-factor-mass",
+      "requirePath": "assets/agriculture/completion-40/safety/volume-factor-mass.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/volume-factor-mass.png",
+      "snapshotBlob": "aacaa07c922fd7ec214b8bfbd143daa9139fdf10",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "764ccbd2122b3ac1fd759d8d8ad260ac2714943a4da65c535ec9c43058ed363c"
+    },
+    {
+      "id": "agr-f40-safety-media-tractor-source-conditions",
+      "assetKey": "tractor-source-conditions",
+      "requirePath": "assets/agriculture/completion-40/safety/tractor-source-conditions.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/tractor-source-conditions.png",
+      "snapshotBlob": "3e44708f4dbecf424fafee907f485a1efea7ce68",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "e3cda492f94bc58b5cd90a757b98692c4a3b44fa4b0b2d0f2c9266855b05d474"
+    },
+    {
+      "id": "agr-f40-safety-media-cultivator-source-sequence",
+      "assetKey": "cultivator-source-sequence",
+      "requirePath": "assets/agriculture/completion-40/safety/cultivator-source-sequence.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/cultivator-source-sequence.png",
+      "snapshotBlob": "300b5072c718af886da2bf90e3adc56b1d6bd56c",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "0235d637555a28b35798122913d0782769f029aee8175d6a046d74258171914c"
+    },
+    {
+      "id": "agr-f40-safety-media-brushcutter-source-sequence",
+      "assetKey": "brushcutter-source-sequence",
+      "requirePath": "assets/agriculture/completion-40/safety/brushcutter-source-sequence.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/brushcutter-source-sequence.png",
+      "snapshotBlob": "0764a3e13772288e86ab38104164e0117f8246e5",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "62663d734f976c1108ae4c12cbffcc3fca3395380c479e7f4c209e401fbca96f"
+    },
+    {
+      "id": "agr-f40-safety-media-fuel-source-mapping",
+      "assetKey": "fuel-source-mapping",
+      "requirePath": "assets/agriculture/completion-40/safety/fuel-source-mapping.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/fuel-source-mapping.png",
+      "snapshotBlob": "8969f2254fa28c018167d274b1009a0d13a93b0b",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "80d4560882b7e73524a112cfc24d337bcfc2762a30a673ad53206c96817a34ac"
+    },
+    {
+      "id": "agr-f40-safety-media-source-extra-details",
+      "assetKey": "source-extra-details",
+      "requirePath": "assets/agriculture/completion-40/safety/source-extra-details.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/source-extra-details.png",
+      "snapshotBlob": "d6b2707fcf154c219afa4df1e4db8410c54c12a9",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "7675cec236ab0f85ea67e7abe02aa0f93c1e7a300655e60c262e34228a16c4ec"
+    },
+    {
+      "id": "agr-f40-safety-media-pesticide-source-conditions",
+      "assetKey": "pesticide-source-conditions",
+      "requirePath": "assets/agriculture/completion-40/safety/pesticide-source-conditions.png",
+      "declaredPath": "assets/agriculture/completion-40/safety/pesticide-source-conditions.png",
+      "snapshotBlob": "399dd6bfc7a00296ec93d03d3ad03d0028971f90",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "a80131732eb5b0a0e0e67ee9536562635250b1719968c2eb3343d330dc288e29"
+    },
+    {
+      "id": "agr-f40-flower-harvest-v1",
+      "assetKey": "f40-flower-harvest",
+      "requirePath": "assets/agriculture/completion-40/flower/agr-f40-flower-harvest-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/flower/agr-f40-flower-harvest-v1.png",
+      "snapshotBlob": "32c4cc2d709d443481189b62e9c657b703229d86",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "fb6c64d61058190570924d77d4b2ef720cadbdf4a66044a95ecc2e72c42ab5ad"
+    },
+    {
+      "id": "agr-f40-flower-graft-positions-v1",
+      "assetKey": "f40-flower-graft-positions",
+      "requirePath": "assets/agriculture/completion-40/flower/agr-f40-flower-graft-positions-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/flower/agr-f40-flower-graft-positions-v1.png",
+      "snapshotBlob": "ada48800653a490139e71379eee8391d467b21c6",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "a84f7d4aa547414bf4bc87204cbb154c5cba7f55a8b951bf1991c6b27e8cca57"
+    },
+    {
+      "id": "agr-f40-flower-unshu-v1",
+      "assetKey": "f40-flower-unshu",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/week01/unshu-mikan-flower.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week01/unshu-mikan-flower.webp",
+      "snapshotBlob": "4d932046221e350bddce1f6599c6a5827bee46af",
+      "cachedBytesVerified": false,
+      "issues": []
+    },
+    {
+      "id": "agr-f40-flower-cluster-dip-v1",
+      "assetKey": "f40-flower-cluster-dip",
+      "requirePath": "assets/agriculture/completion-40/flower/agr-f40-flower-cluster-dip-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/flower/agr-f40-flower-cluster-dip-v1.png",
+      "snapshotBlob": "34b0a8ae2e7769eacefd55bdb375eec1d525ea18",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "11e68479ad43cfb42f6e432f674976ae753baef2333da242a5c4f729bbdcc582"
+    },
+    {
+      "id": "agr-f40-flower-materials-v1",
+      "assetKey": "f40-flower-materials",
+      "requirePath": "assets/agriculture/completion-40/flower/agr-f40-flower-materials-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/flower/agr-f40-flower-materials-v1.png",
+      "snapshotBlob": "0d77b861c90be2d795d03eca6b14fd330e07ac1c",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "fcd1e72c10ccb2b72c58160a28acc2965e0e3bc3cc7586d9637b792902b8d688"
+    },
+    {
+      "id": "agr-f40-flower-platform-v1",
+      "assetKey": "f40-flower-platform",
+      "requirePath": "assets/agriculture/completion-40/flower/agr-f40-flower-platform-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/flower/agr-f40-flower-platform-v1.png",
+      "snapshotBlob": "9b337f62eff3f5fc3115bdf0df22dc4042fd6655",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "8f4cd4d64a81e23d982e6bb8591585d7df7cf74caf9d4aff34efacba20742421"
+    },
+    {
+      "id": "agr-f40-flower-transport-v1",
+      "assetKey": "f40-flower-transport",
+      "requirePath": "assets/agriculture/completion-40/flower/agr-f40-flower-transport-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/flower/agr-f40-flower-transport-v1.png",
+      "snapshotBlob": "3dbc446144d65cad15672fb9714a97b7a8c055b6",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "8755e198528d8e206bfb48484ac55c36ff2fb7f5984de29b61a741c41efd14c2"
+    },
+    {
+      "id": "agr-f40-flower-tools-v1",
+      "assetKey": "f40-flower-tools",
+      "requirePath": "assets/agriculture/completion-40/flower/agr-f40-flower-tools-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/flower/agr-f40-flower-tools-v1.png",
+      "snapshotBlob": "6177a06943b2bc24a1ccf504b140017227ba0413",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "e5f2e5248b13423f21750006eb317ae90a8e8699d19c55f2c5515e7f73e42ef8"
+    },
+    {
+      "id": "agr-f40-flower-soil-profiles-v1",
+      "assetKey": "f40-flower-soil-profiles",
+      "requirePath": "assets/agriculture/completion-40/flower/agr-f40-flower-soil-profiles-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/flower/agr-f40-flower-soil-profiles-v1.png",
+      "snapshotBlob": "dd4a2b5eac387d9244ffc42410dc2206a162cba2",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "3c270a0b7b8deca971d94b17ea3a6752dccca9c32902f6fa823a00c9a6dcaa92"
+    },
+    {
+      "id": "agr-f40-facility-single-house-roof-profiles",
+      "assetKey": "agr-f40-facility-single-house-roof-profiles",
+      "requirePath": "assets/agriculture/completion-40/facility/single-house-roof-profiles.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/single-house-roof-profiles.png",
+      "snapshotBlob": "247ec0210be30dece1d3d31e4e510d1753964eae",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "5e1d5b1901b17eba691a8618da9bc72233629b11aabe6883547e60d6cca64fb8"
+    },
+    {
+      "id": "agr-f40-facility-connected-house-eave-height",
+      "assetKey": "agr-f40-facility-connected-house-eave-height",
+      "requirePath": "assets/agriculture/completion-40/facility/connected-house-eave-height.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/connected-house-eave-height.png",
+      "snapshotBlob": "5c295b0b19b9a2cd25bf891f21b17119575d5ce9",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "4d1c1e10e7ff09b8468746e08ee6cf89397ed428c7f34021baaafaa1570c6237"
+    },
+    {
+      "id": "agr-f40-ventilation-label-positions",
+      "assetKey": "agr-f40-ventilation-label-positions",
+      "requirePath": "assets/agriculture/completion-40/facility/ventilation-label-positions.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/ventilation-label-positions.png",
+      "snapshotBlob": "f9fe54aca187cec0917ef237465a3b54736d44c0",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "e49cdc1b73401a843b73d911063bfcacd100051b737d6581fa393841bbd0b534"
+    },
+    {
+      "id": "agr-f40-seedling-measurement-leaves",
+      "assetKey": "agr-f40-seedling-measurement-leaves",
+      "requirePath": "assets/agriculture/completion-40/facility/seedling-measurement-leaves.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/seedling-measurement-leaves.png",
+      "snapshotBlob": "196c145f665aded3a6b68fe8c823852f08f3c323",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "a6586d0dba5c05ac0eb90ba44d90eb39e29fff3f0b659db40fe662a18fa6a367"
+    },
+    {
+      "id": "agr-f40-seedling-condition-comparison",
+      "assetKey": "agr-f40-seedling-condition-comparison",
+      "requirePath": "assets/agriculture/completion-40/facility/seedling-condition-comparison.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/seedling-condition-comparison.png",
+      "snapshotBlob": "cdf6abb26da59ec6f6f32a32c760c8b3671504c0",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "530dccec9164666bd78673cf232321ad0b17e01962f3bdac63c4a55116f525f4"
+    },
+    {
+      "id": "agr-f40-hydroponic-media-types",
+      "assetKey": "agr-f40-hydroponic-media-types",
+      "requirePath": "assets/agriculture/completion-40/facility/hydroponic-media-types.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/hydroponic-media-types.png",
+      "snapshotBlob": "0c7a2de9356bffd319206398b7948787aa446ecb",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "3c90bd072761c2ab6762b4f35027ea33f6634c255f967bf97b24549071376e33"
+    },
+    {
+      "id": "agr-f40-hydroponic-system-positions",
+      "assetKey": "agr-f40-hydroponic-system-positions",
+      "requirePath": "assets/agriculture/completion-40/facility/hydroponic-system-positions.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/hydroponic-system-positions.png",
+      "snapshotBlob": "7bd20490ba78f3051e3d8c07211d89d4dfa77364",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "2b3f1bcdaa9e744f9ce1c70bc59738b3c149c9916e31f10e39fdeff41c202e77"
+    },
+    {
+      "id": "agr-f40-graft-stem-section-labels",
+      "assetKey": "agr-f40-graft-stem-section-labels",
+      "requirePath": "assets/agriculture/completion-40/facility/graft-stem-section-labels.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/graft-stem-section-labels.png",
+      "snapshotBlob": "f1607989d9f9637eda0fefc41f58441f32e31665",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "a14bbf424098a60dbf03a43f750268cc3dfa6660a930e8485427467400cef934"
+    },
+    {
+      "id": "agr-f40-fruit-tree-form-profiles",
+      "assetKey": "agr-f40-fruit-tree-form-profiles",
+      "requirePath": "assets/agriculture/completion-40/facility/fruit-tree-form-profiles.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/fruit-tree-form-profiles.png",
+      "snapshotBlob": "0bddbf741d2b6c9e4600544b67f6131b463e58f2",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "8a6cec724365497ace032043d5ea393280870d2674aa9700147bfed28b255871"
+    },
+    {
+      "id": "agr-f40-fruit-mainstem-scaffold-labels",
+      "assetKey": "agr-f40-fruit-mainstem-scaffold-labels",
+      "requirePath": "assets/agriculture/completion-40/facility/fruit-mainstem-scaffold-labels.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/fruit-mainstem-scaffold-labels.png",
+      "snapshotBlob": "82fb364b447431a118be20ca26453467ef33ab32",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "755a2255fb3d8450b1a6881a1bf89da42d6c1eb4a78f12416f16a84c00586ff8"
+    },
+    {
+      "id": "agr-f40-t-budding-concept-stages",
+      "assetKey": "agr-f40-t-budding-concept-stages",
+      "requirePath": "assets/agriculture/completion-40/facility/t-budding-concept-stages.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/t-budding-concept-stages.png",
+      "snapshotBlob": "24cf0783580a8968e9329b3cc06aed6b7d058728",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "ae7af81466bac022ead8f2ef039a86d89f52cd13b5bc9a280f9e8c50242f6d41"
+    },
+    {
+      "id": "agr-f40-graft-planting-union-position",
+      "assetKey": "agr-f40-graft-planting-union-position",
+      "requirePath": "assets/agriculture/completion-40/facility/graft-planting-union-position.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/graft-planting-union-position.png",
+      "snapshotBlob": "5f50f6d5243bb2285683518a19e66507e904e8c2",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "eb2c06665e6da930bc2d5a49dae41628ff4826e3a8799cba69ecc4cd590dda69"
+    },
+    {
+      "id": "agr-f40-propagation-method-concepts",
+      "assetKey": "agr-f40-propagation-method-concepts",
+      "requirePath": "assets/agriculture/completion-40/facility/propagation-method-concepts.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/propagation-method-concepts.png",
+      "snapshotBlob": "b26d91030685849656dffb40193df7103334d326",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "b0c8cbdb9bb56fccade708159c73ce33bd93f7f8c844384f32c3cd40c4432da0"
+    },
+    {
+      "id": "agr-f40-branch-graft-type-profiles",
+      "assetKey": "agr-f40-branch-graft-type-profiles",
+      "requirePath": "assets/agriculture/completion-40/facility/branch-graft-type-profiles.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/branch-graft-type-profiles.png",
+      "snapshotBlob": "fada7efc0b622b070a27347bf962b82021fe2d29",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "58ce60cf88e315766eb50d59da432fbb894385e7c1f880928599c22385fa18bd"
+    },
+    {
+      "id": "agr-f40-graft-source-example-dimensions",
+      "assetKey": "agr-f40-graft-source-example-dimensions",
+      "requirePath": "assets/agriculture/completion-40/facility/graft-source-example-dimensions.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/graft-source-example-dimensions.png",
+      "snapshotBlob": "e21cf961aa95d7e84de2fd288166ada08427d9d3",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "895ad5a850aaf35f13e4d001e21bac1ab8e5cc374b5a06e0fd27edfe2baf8eb5"
+    },
+    {
+      "id": "agr-f40-pruning-branch-position-glossary",
+      "assetKey": "agr-f40-pruning-branch-position-glossary",
+      "requirePath": "assets/agriculture/completion-40/facility/pruning-branch-position-glossary.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/pruning-branch-position-glossary.png",
+      "snapshotBlob": "2a51f6ce0f4ded8c2a4cea72acca0ab1d59300ac",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "5a8e9093a7b99069e0caa8d7b108d2673210ffffe5592cc6336a7ced08c30466"
+    },
+    {
+      "id": "agr-f40-pear-thinning-shape-examples",
+      "assetKey": "agr-f40-pear-thinning-shape-examples",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/pear-thinning-shape-examples-royal-v1.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/pear-thinning-shape-examples-royal-v1.webp",
+      "snapshotBlob": "18e8417fbeb6c09b47089b0b3b0d18ba133c1c73",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "d780ac7e5e9ab1fe9b5d7e59d0e04fcfdb8841c13ad83a3038c5016662b61bc5"
+    },
+    {
+      "id": "agr-f40-satsuma-thinning-target-examples",
+      "assetKey": "agr-f40-satsuma-thinning-target-examples",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/satsuma-thinning-target-examples-royal-v1.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/satsuma-thinning-target-examples-royal-v1.webp",
+      "snapshotBlob": "27389848cc7a0a1b7b348e14260b3c91d6810f3e",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "9bb64a0b395453150bde19a5ecd0172290950950b653bae1104ff809d9b630c2"
+    },
+    {
+      "id": "agr-f40-tomato-temperature-source-comparison",
+      "assetKey": "agr-f40-tomato-temperature-source-comparison",
+      "requirePath": "assets/agriculture/completion-40/facility/tomato-temperature-source-comparison.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/tomato-temperature-source-comparison.png",
+      "snapshotBlob": "0414be1d5a8a8ac4efa8f1f30a7f156cdad8a8f9",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "6dda2a78048a8036e749f088d6e510dd6224e45fcfcdc6acc4bedf8e6b61746d"
+    },
+    {
+      "id": "agr-f40-cover-lifetime-source-comparison",
+      "assetKey": "agr-f40-cover-lifetime-source-comparison",
+      "requirePath": "assets/agriculture/completion-40/facility/cover-lifetime-source-comparison.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/cover-lifetime-source-comparison.png",
+      "snapshotBlob": "7dc3a6872927a7b161ace3f255ceb3446049fc66",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "8cb911c63ac1fc1488a1be515f35c09cddcde55c3b97eb601071979d8333ae94"
+    },
+    {
+      "id": "agr-f40-pf-source-range-comparison",
+      "assetKey": "agr-f40-pf-source-range-comparison",
+      "requirePath": "assets/agriculture/completion-40/facility/pf-source-range-comparison.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/pf-source-range-comparison.png",
+      "snapshotBlob": "5c057ff5b5a5661350f95482ca2d16556c44128d",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "b38baf421c3b149d77c46d4cea41fb39ba1b8e010860c77f771cc21a9d65eb4b"
+    },
+    {
+      "id": "agr-f40-temperature-instrument-source-examples",
+      "assetKey": "agr-f40-temperature-instrument-source-examples",
+      "requirePath": "assets/agriculture/completion-40/facility/temperature-instrument-source-examples.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/temperature-instrument-source-examples.png",
+      "snapshotBlob": "49c000c5066f958964dc379e4cde397c785a9696",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "83e777c5438ed6732ce98b4dc47c254b3f9e1175541c936c49711c6dd56b9401"
+    },
+    {
+      "id": "agr-f40-soil-moisture-instrument-forms",
+      "assetKey": "agr-f40-soil-moisture-instrument-forms",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/soil-moisture-instrument-forms-royal-v1.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/soil-moisture-instrument-forms-royal-v1.webp",
+      "snapshotBlob": "a2c14c6ca97ac12411482b9ccfeb328e0db1f373",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "3fe04026684a4d1120585598e9ff8e8062220cc66d6bf77c343059b6a41b4e8a"
+    },
+    {
+      "id": "agr-f40-fruit-lifecycle-source-regions",
+      "assetKey": "agr-f40-fruit-lifecycle-source-regions",
+      "requirePath": "assets/agriculture/completion-40/facility/fruit-lifecycle-source-regions.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/fruit-lifecycle-source-regions.png",
+      "snapshotBlob": "94ddb425766f7d885dfbd2cf44510d9f0d14c1b1",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "55a3227118d7f3c2bf855007c541c9360c28900d06436616c2fc1710ed874c9c"
+    },
+    {
+      "id": "agr-f40-fruit-nursery-species-leaf-examples",
+      "assetKey": "agr-f40-fruit-nursery-species-leaf-examples",
+      "requirePath": "assets/agriculture/completion-40/facility/fruit-nursery-species-leaf-examples.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/fruit-nursery-species-leaf-examples.png",
+      "snapshotBlob": "add791d7def882f298f8c04143afd1f725daa315",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "b38bcd2da00028abe2582aad6d4c33af677414be52aa51dffdf64fac22e732cb"
+    },
+    {
+      "id": "agr-f40-fruit-branch-age-source-types",
+      "assetKey": "agr-f40-fruit-branch-age-source-types",
+      "requirePath": "assets/agriculture/completion-40/facility/fruit-branch-age-source-types.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/fruit-branch-age-source-types.png",
+      "snapshotBlob": "8d6ea670888b35375a195c9c568fe31cc5f9286e",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "8239707b6f545cb50d6c883a970995061ed05ba9c6e5ae8b9afcd52e266e161f"
+    },
+    {
+      "id": "agr-f40-fruit-pruning-cut-position-examples",
+      "assetKey": "agr-f40-fruit-pruning-cut-position-examples",
+      "requirePath": "assets/agriculture/completion-40/facility/fruit-pruning-cut-position-examples.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/fruit-pruning-cut-position-examples.png",
+      "snapshotBlob": "d929e2ed3d5fec8ba04372a526e7184857615495",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "8ca11bcfcf3fbca5f771bf817fa3540f626fa671bec3b942d5fdd031f5fe8ef3"
+    },
+    {
+      "id": "agr-f40-fruit-pollination-tool-appearance-examples",
+      "assetKey": "agr-f40-fruit-pollination-tool-appearance-examples",
+      "requirePath": "assets/agriculture/completion-40/facility/fruit-pollination-tool-appearance-examples.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/fruit-pollination-tool-appearance-examples.png",
+      "snapshotBlob": "2411927d46e7c5f98789a5eba514a4f3c7f5931b",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "9334469477dcd897c9e0ec0e190693e0d3f25d26734f061271f60e6e134497e7"
+    },
+    {
+      "id": "agr-f40-citrus-uninjured-injured-source-pair",
+      "assetKey": "agr-f40-citrus-uninjured-injured-source-pair",
+      "requirePath": "assets/agriculture/royal-weekly-20261107/citrus-rind-injury-pair-royal-v1.webp",
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/citrus-rind-injury-pair-royal-v1.webp",
+      "snapshotBlob": "7dda8829c6b9b9c46a940176550c7b0b6e237b86",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "fd84f0e73887feaca8bd5504f44f63b628779cfaa9c791a806dba2aae193a607"
+    },
+    {
+      "id": "agr-f40-peach-grape-bag-appearance",
+      "assetKey": "agr-f40-peach-grape-bag-appearance",
+      "requirePath": "assets/agriculture/completion-40/facility/peach-grape-bag-appearance.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/peach-grape-bag-appearance.png",
+      "snapshotBlob": "f3ae8930be6bdbdde44289ba784390c122eabe0d",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "b7fb69d58761493b7e879147c03feb6f6f82fbd89f43bf7b1661fb15eeed5218"
+    },
+    {
+      "id": "agr-f40-peach-bagging-source-stages",
+      "assetKey": "agr-f40-peach-bagging-source-stages",
+      "requirePath": "assets/agriculture/completion-40/facility/peach-bagging-source-stages.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/peach-bagging-source-stages.png",
+      "snapshotBlob": "000e26ac708a01e37a7db366c83adaa2941446cc",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "062791827fb59fd31ef25fa1520c7bfe129cb01b2413c1e5222bda630c475333"
+    },
+    {
+      "id": "agr-f40-grape-bagging-source-stages",
+      "assetKey": "agr-f40-grape-bagging-source-stages",
+      "requirePath": "assets/agriculture/completion-40/facility/grape-bagging-source-stages.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/grape-bagging-source-stages.png",
+      "snapshotBlob": "fc753c55262f02883d21ffe7af2f25094fcdca51",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "454cf20e6030633d7546688b759720aa398b66c57b7e43351b913f8701713001"
+    },
+    {
+      "id": "agr-f40-graft-cambium-contact-corrected-v2",
+      "assetKey": "agr-f40-graft-cambium-contact-corrected-v2",
+      "requirePath": "assets/agriculture/completion-40/facility/graft-cambium-contact-corrected-v2.png",
+      "declaredPath": "assets/agriculture/completion-40/facility/graft-cambium-contact-corrected-v2.png",
+      "snapshotBlob": "1eea94c1e0c99d368f2b50268671086ec8c38e08",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "7af096299c9bfafc3c9c46aa34e9d84f845d53014c9445d859445aa927968679"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-crops",
+      "assetKey": "f40-facility-support-greenhouse-crops",
+      "requirePath": "assets/agriculture/completion-40/facility-safety-support/greenhouse-crops.png",
+      "declaredPath": "assets/agriculture/completion-40/facility-safety-support/greenhouse-crops.png",
+      "snapshotBlob": "b5603665eb9cbe1fb00778a61d57f13223749d8a",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "f130d6892992ef53352acc31b4753620cceac04a09ebb2d365e38525f057ac4c"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-flowers-a",
+      "assetKey": "f40-facility-support-greenhouse-flowers-a",
+      "requirePath": "assets/agriculture/completion-40/facility-safety-support/greenhouse-flowers-a.png",
+      "declaredPath": "assets/agriculture/completion-40/facility-safety-support/greenhouse-flowers-a.png",
+      "snapshotBlob": "eabccdb1c4ef489a5364e7c507ad0e9c77739da1",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "b7ac4d1d346ea9100d3c1a2be80f0633e1acb096c4155168945a147a32b7300b"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-flowers-b",
+      "assetKey": "f40-facility-support-greenhouse-flowers-b",
+      "requirePath": "assets/agriculture/completion-40/facility-safety-support/greenhouse-flowers-b.png",
+      "declaredPath": "assets/agriculture/completion-40/facility-safety-support/greenhouse-flowers-b.png",
+      "snapshotBlob": "ff63a69136aa43de10536a833dbe03273c4b7a41",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "f2ac7596740da2d58af2a73ce9147eb31a1feacaaf64adea59ff0dda96d83023"
+    },
+    {
+      "id": "agr-f40-facility-support-rain-shelter-roof-only",
+      "assetKey": "f40-facility-support-rain-shelter-roof-only",
+      "requirePath": "assets/agriculture/completion-40/facility-safety-support/rain-shelter-roof-only.png",
+      "declaredPath": "assets/agriculture/completion-40/facility-safety-support/rain-shelter-roof-only.png",
+      "snapshotBlob": "d48b1d0bc6badf8cb23233ff159cde22249462d5",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "784f99ceca939c0b13801207f22e38e82d503a197b2dcbff0dae8803d1e20eb6"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-heater-co2",
+      "assetKey": "f40-facility-support-greenhouse-heater-co2",
+      "requirePath": "assets/agriculture/completion-40/facility-safety-support/greenhouse-heater-co2.png",
+      "declaredPath": "assets/agriculture/completion-40/facility-safety-support/greenhouse-heater-co2.png",
+      "snapshotBlob": "75ae53e583ca10bd1ac643e5faf5d121a921ae92",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "50d1f39b996aa023cadc457ab82601b725087ce4178dd757a60e6517b278cd23"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-auto-sprayer",
+      "assetKey": "f40-facility-support-greenhouse-auto-sprayer",
+      "requirePath": "assets/agriculture/completion-40/facility-safety-support/greenhouse-auto-sprayer.png",
+      "declaredPath": "assets/agriculture/completion-40/facility-safety-support/greenhouse-auto-sprayer.png",
+      "snapshotBlob": "b16bd299b889df562dc938a573dfd1108bf735a9",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "d910622c9333e9b09b0bc7b2853145af7aa257abe50678b768fb51470ccaf043"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-insect-light-appearance",
+      "assetKey": "f40-facility-support-greenhouse-insect-light-appearance",
+      "requirePath": "assets/agriculture/completion-40/facility-safety-support/greenhouse-insect-light-appearance.png",
+      "declaredPath": "assets/agriculture/completion-40/facility-safety-support/greenhouse-insect-light-appearance.png",
+      "snapshotBlob": "f616d84e170d290ff42fc54b5211f43c98aee214",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "7bd4e90749ec4c1793ab384f9a9a71e37e271dd95e49a1440012d56c3209b1ad"
+    },
+    {
+      "id": "agr-f40-facility-support-tomato-blossom-end-appearance",
+      "assetKey": "f40-facility-support-tomato-blossom-end-appearance",
+      "requirePath": "assets/agriculture/completion-40/facility-safety-support/tomato-blossom-end-appearance.png",
+      "declaredPath": "assets/agriculture/completion-40/facility-safety-support/tomato-blossom-end-appearance.png",
+      "snapshotBlob": "d0534ea5cc7beb98a45b2534f7bb385353fefb94",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "5025f893c34491a9596d2e7884e18d657c7b1d46c5879304a684fc3aa25e251b"
+    },
+    {
+      "id": "agr-f40-facility-support-nursery-place-container-types",
+      "assetKey": "f40-facility-support-nursery-place-container-types",
+      "requirePath": "assets/agriculture/completion-40/facility-safety-support/nursery-place-container-types.png",
+      "declaredPath": "assets/agriculture/completion-40/facility-safety-support/nursery-place-container-types.png",
+      "snapshotBlob": "c75584713d9942d5bfb6f27e783f82732f6a9e03",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "76577bcf59ecd14bae9e3794a17912525c0de1161f2cbe0e2fad6ca3076cebe5"
+    },
+    {
+      "id": "agr-f40-facility-support-paper-pot-connected-cells",
+      "assetKey": "f40-facility-support-paper-pot-connected-cells",
+      "requirePath": "assets/agriculture/completion-40/facility-safety-support/paper-pot-connected-cells.png",
+      "declaredPath": "assets/agriculture/completion-40/facility-safety-support/paper-pot-connected-cells.png",
+      "snapshotBlob": "4fd00532618c8df12571490d687687b390a79ae0",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "ba0ff8fe7d21e38b89609ca4d6503af06c1ed90db80436ab22c2cb3ec5f52490"
+    },
+    {
+      "id": "agr-fig-f40-facility-soil-graft-equipment-appearance-v1",
+      "assetKey": "agr-fig-f40-facility-soil-graft-equipment-appearance-v1",
+      "requirePath": "assets/agriculture/completion-40/facility-soil-support/graft-equipment-appearance-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/facility-soil-support/graft-equipment-appearance-v1.png",
+      "snapshotBlob": "4706e31f48c9e537a554704c77a19d58160af5f4",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "87649bd4ce4836a7407b1daa07c9d410aea082ff2321a21d531b61145430c103"
+    },
+    {
+      "id": "agr-fig-f40-facility-soil-graft-preparation-and-view-sequence-v1",
+      "assetKey": "agr-fig-f40-facility-soil-graft-preparation-and-view-sequence-v1",
+      "requirePath": "assets/agriculture/completion-40/facility-soil-support/graft-preparation-and-view-sequence-v1.png",
+      "declaredPath": "assets/agriculture/completion-40/facility-soil-support/graft-preparation-and-view-sequence-v1.png",
+      "snapshotBlob": "7f327a19435a9a34704a0749e075e23c1155d355",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "b891dc0101c6a08cdd7980a270aa489dc173c6eba18629613a229e37b1ccff9c"
+    },
+    {
+      "id": "agr-f40-facility-support-carnation-greenhouse-level1",
+      "assetKey": "f40-facility-support-carnation-greenhouse-level1",
+      "requirePath": "assets/agriculture/completion-40/visual-safety/carnation-greenhouse-level1.png",
+      "declaredPath": "assets/agriculture/completion-40/visual-safety/carnation-greenhouse-level1.png",
+      "snapshotBlob": "d48982150ceb05c70b545d0c3b204d3975d53c08",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "9f25dd189a649af5d8766ab32d99889df427305082081a42ba0453fd2dd25c75"
+    },
+    {
+      "id": "agr-v9-nursery-crop-groups",
+      "assetKey": "nursery-v9-crop-groups",
+      "requirePath": "assets/agriculture/nursery-v9/nursery-crop-groups.png",
+      "declaredPath": "assets/agriculture/nursery-v9/nursery-crop-groups.png",
+      "snapshotBlob": "3eabaf9a5b62ba6a1fbdf693bc71322d6b7a4b85",
+      "cachedBytesVerified": true,
+      "issues": [],
+      "declaredBytesSha256": "94e71934f13960834c51720ddf44874cbdd1c78c649ef5a13ecb456f60a33461"
+    },
+    {
+      "id": "agr-royal-fruit-thinning-stages-v1",
+      "assetKey": "royal-fruit-thinning-stages-v1",
+      "requirePath": null,
+      "declaredPath": "assets/agriculture/royal-weekly-20261107/week29/fruit-thinning-stages-v1.webp",
+      "snapshotBlob": null,
+      "cachedBytesVerified": false,
+      "issues": [
+        "missing_require_key"
+      ],
+      "declaredBytesSha256": "dd055f2c0c468c3dc69816bba1eeafe1a322b29aa52e7a3b4bc49020419f4152",
+      "declaredBytesSnapshotVerified": true
+    }
+  ],
+  "repairRebase": {
+    "origin": "8db5f842",
+    "scope": "Only2literalrequirefixes reapplied to exactincomingcomponent; every other line byte-preserved including ruby and new cases.",
+    "inventorySnapshotUnchanged": "6303986ed040a7d7e1d870a1c0d0ef2cb6438abb"
+  }
+}

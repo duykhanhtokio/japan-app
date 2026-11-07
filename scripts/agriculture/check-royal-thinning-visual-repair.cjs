@@ -25,7 +25,7 @@ function load(name){
   if(['./RecognitionImages','./ZoomableFigure'].includes(id))return load(id.slice(2));
   if(id==='./FertilizerNativeFigure')return {isFertilizerNativeContext:()=>false};
   if(id==='./NativeProcessDiagram')return {isNativeProcessContext:()=>false};
-  if(['./DrainageMethodComparison','./DailyInstructionDiagram','./Statistics2019Figure','./WinterClimateFigure','./WinterSpatialReference','./CropCalendarFigure','./SoilGroupComparison','./CropClassificationFigure','./PlantResponseFigure','./FlowerLegendFigure','@/components/tokutei/StudyAppearance'].includes(id))return {};
+  if(['./DrainageMethodComparison','./PestFoundationSupport','./MulchColorSupport','./FruitManagementSupport','./DrainageMethodComparison','./DailyInstructionDiagram','./Statistics2019Figure','./WinterClimateFigure','./WinterSpatialReference','./CropCalendarFigure','./SoilGroupComparison','./CropClassificationFigure','./PlantResponseFigure','./FlowerLegendFigure','@/components/tokutei/StudyAppearance'].includes(id))return {};
   if(/\.(png|webp)$/.test(id))return path.basename(id)===path.basename(f.assetPath)?asset:{uri:'asset://'+id};
   return original(id);
  };m._compile(code,filename);return m.exports;
