@@ -224,6 +224,51 @@ const currentImageAlt:Record<string,Record<string,string>> = {
     "th": "พนักงานนำทางด้านหน้าซ้ายของแขก เดินทิศเดียวกันและใส่ใจจังหวะเดิน ผังด้านล่างแสดงตำแหน่งและระยะประมาณสองถึงสามก้าว",
     "km": "បុគ្គលិកដើរណែនាំនៅមុខឆ្វេងភ្ញៀវ ទៅទិសដូចគ្នា និងយកចិត្តទុកដាក់ល្បឿន។ រូបខាងក្រោមបង្ហាញទីតាំង និងប្រហែលពីរទៅបីជំហាន។",
     "tl": "Gumagabay ang kawani sa unahang kaliwa ng bisita, sa parehong direksiyon at ayon sa bilis niya. Ipinapakita sa ibaba ang posisyon at tinatayang dalawa hanggang tatlong hakbang."
+  },
+  "hotel-service-04": {
+    "ja": "レストランの入口で、従業員が車いすの客と同じ目の高さで話し、本人の希望する席を尋ねています。練習用の席A・Bの配置は画像下の図で示します。",
+    "en": "At a restaurant entrance, staff speak at a wheelchair-using guest’s eye level and ask their seat preference. Practice seats A and B are shown in the diagram below.",
+    "vi": "Tại cửa nhà hàng, nhân viên nói chuyện ngang tầm mắt với khách dùng xe lăn và hỏi khách muốn ngồi đâu. Sơ đồ dưới ảnh trình bày ghế A và B để luyện tập.",
+    "id": "Di pintu restoran, staf berbicara setinggi mata tamu pengguna kursi roda dan menanyakan pilihan kursi. Kursi latihan A dan B ditunjukkan pada diagram di bawah.",
+    "zh-CN": "在餐厅入口，员工与使用轮椅的客人保持相近视线高度，询问其座位意愿。练习座位A、B的布局在下图显示。",
+    "zh-TW": "在餐廳入口，員工與使用輪椅的客人保持相近視線高度，詢問其座位意願。練習座位A、B的配置在下圖顯示。",
+    "hi": "रेस्तराँ के प्रवेश पर कर्मचारी व्हीलचेयर उपयोगकर्ता अतिथि की आँखों की ऊँचाई पर बात करके पसंद की सीट पूछ रहा है। अभ्यास की A और B सीट नीचे चित्र में हैं।",
+    "bn": "রেস্তোরাঁর প্রবেশে কর্মী হুইলচেয়ার ব্যবহারকারী অতিথির চোখের উচ্চতায় কথা বলে পছন্দের আসন জানতে চাইছেন। অনুশীলনের A ও B আসন নিচের চিত্রে আছে।",
+    "ne": "रेस्टुराँको प्रवेशमा कर्मचारीले ह्वीलचेयर प्रयोगकर्ता अतिथिको आँखाको उचाइमा कुरा गरेर रोजेको सिट सोध्दै छन्। अभ्यासका A र B सिट तल चित्रमा छन्।",
+    "my": "စားသောက်ဆိုင်ဝင်ပေါက်တွင် ဝန်ထမ်းက ဘီးတပ်ကုလားထိုင်သုံးဧည့်သည်နှင့် မျက်လုံးအမြင့်တူစွာ ပြောဆို၍ ထိုင်ခုံဆန္ဒကို မေးနေသည်။ လေ့ကျင့်ရေးထိုင်ခုံ A နှင့် B ကို အောက်ပုံတွင် ပြထားသည်။",
+    "th": "ที่ทางเข้าร้านอาหาร พนักงานพูดในระดับสายตาของแขกที่ใช้รถเข็นและถามความต้องการเรื่องที่นั่ง ผังด้านล่างแสดงที่นั่ง A และ B สำหรับฝึก",
+    "km": "នៅច្រកចូលភោជនីយដ្ឋាន បុគ្គលិកនិយាយស្មើកម្ពស់ភ្នែកភ្ញៀវប្រើរទេះរុញ ហើយសួរបំណងអំពីកៅអី។ កៅអីហាត់ A និង B បង្ហាញក្នុងរូបខាងក្រោម។",
+    "tl": "Sa pasukan ng restawran, kausap ng kawani ang bisitang gumagamit ng wheelchair sa kapantay na tingin at tinatanong ang nais na upuan. Nasa diagram sa ibaba ang A at B para sa pagsasanay."
+  },
+  "hotel-service-05": {
+    "ja": "電話で客の話を聞きながらメモを取る従業員と、聞き取った事実を責任者へ報告する場面。",
+    "en": "Staff take notes while listening to a guest by phone, then report the facts to a supervisor.",
+    "vi": "Nhân viên vừa nghe khách qua điện thoại vừa ghi chép, sau đó báo sự việc đã xác nhận cho người phụ trách.",
+    "id": "Staf mencatat sambil mendengarkan tamu melalui telepon, lalu melaporkan fakta kepada atasan.",
+    "zh-CN": "员工通过电话听取客人陈述并记录，然后向负责人报告已确认的事实。",
+    "zh-TW": "員工透過電話聽取客人陳述並記錄，然後向負責人報告已確認的事實。",
+    "hi": "कर्मचारी फोन पर अतिथि की बात सुनते हुए नोट लिखता है और फिर पर्यवेक्षक को तथ्यों की रिपोर्ट करता है।",
+    "bn": "কর্মী ফোনে অতিথির কথা শুনে নোট লিখছেন এবং পরে তত্ত্বাবধায়ককে তথ্য জানাচ্ছেন।",
+    "ne": "कर्मचारीले फोनमा अतिथिको कुरा सुन्दै नोट लेख्छन् र पछि पर्यवेक्षकलाई तथ्य रिपोर्ट गर्छन्।",
+    "my": "ဝန်ထမ်းက ဧည့်သည်၏ဖုန်းစကားကို နားထောင်ရင်း မှတ်တမ်းရေးပြီး နောက်တွင် အချက်အလက်များကို ကြီးကြပ်သူထံ တင်ပြနေသည်။",
+    "th": "พนักงานจดบันทึกขณะฟังแขกทางโทรศัพท์ แล้วรายงานข้อเท็จจริงต่อผู้รับผิดชอบ",
+    "km": "បុគ្គលិកកត់ត្រាពេលស្តាប់ភ្ញៀវតាមទូរសព្ទ រួចរាយការណ៍ការពិតទៅអ្នកទទួលខុសត្រូវ។",
+    "tl": "Nagtatala ang kawani habang nakikinig sa bisita sa telepono, saka iniuulat ang mga katotohanan sa superbisor."
+  },
+  "hotel-planning-05": {
+    "ja": "予約担当者と責任者が、お客様向けの予約画面と施設内部の管理表を区別して確認しています。PMS等の役割と仮定の計算例は画像下の図と文字で示します。",
+    "en": "Reservation staff and a manager compare guest-facing booking screens with an internal management table. System roles and a hypothetical calculation appear below.",
+    "vi": "Nhân viên đặt phòng và người quản lý phân biệt màn hình đặt chỗ dành cho khách với bảng quản lý nội bộ. Vai trò hệ thống và phép tính giả định nằm ở phần bên dưới.",
+    "id": "Petugas reservasi dan manajer membedakan layar pemesanan tamu dari tabel pengelolaan internal. Peran sistem dan perhitungan hipotetis ada di bawah.",
+    "zh-CN": "预订人员与负责人区分客人使用的预订页面和设施内部管理表。系统角色与假设计算例在下方图文中显示。",
+    "zh-TW": "訂房人員與負責人區分客人使用的訂房畫面和設施內部管理表。系統角色與假設計算例在下方圖文顯示。",
+    "hi": "आरक्षण कर्मचारी और प्रबंधक अतिथि के बुकिंग स्क्रीन को आंतरिक प्रबंधन तालिका से अलग जाँचते हैं। प्रणालियों की भूमिका और काल्पनिक गणना नीचे हैं।",
+    "bn": "বুকিং কর্মী ও ব্যবস্থাপক অতিথির বুকিং স্ক্রিন এবং অভ্যন্তরীণ ব্যবস্থাপনার ছক আলাদা করে দেখছেন। ব্যবস্থার ভূমিকা ও অনুমানভিত্তিক হিসাব নিচে আছে।",
+    "ne": "बुकिङ कर्मचारी र प्रबन्धकले अतिथिका बुकिङ स्क्रिन र आन्तरिक व्यवस्थापन तालिका छुट्याएर जाँच्दै छन्। प्रणालीका भूमिका र काल्पनिक गणना तल छन्।",
+    "my": "ကြိုတင်မှာယူမှုဝန်ထမ်းနှင့် မန်နေဂျာက ဧည့်သည်သုံးဘွတ်ကင်မျက်နှာပြင်နှင့် အတွင်းစီမံခန့်ခွဲမှုဇယားကို ခွဲ၍ စစ်ဆေးနေသည်။ စနစ်အခန်းကဏ္ဍနှင့် ယူဆတွက်ချက်မှုကို အောက်တွင် ပြထားသည်။",
+    "th": "พนักงานจองกับผู้จัดการแยกตรวจหน้าจอจองสำหรับแขกและตารางจัดการภายใน บทบาทระบบและตัวอย่างคำนวณสมมติแสดงด้านล่าง",
+    "km": "បុគ្គលិកកក់បន្ទប់និងអ្នកគ្រប់គ្រងបែងចែកពិនិត្យអេក្រង់កក់សម្រាប់ភ្ញៀវ និងតារាងគ្រប់គ្រងខាងក្នុង។ តួនាទីប្រព័ន្ធនិងគណនាសន្មតបង្ហាញខាងក្រោម។",
+    "tl": "Inihihiwalay ng kawani at tagapamahala ang booking screen ng bisita sa talaan ng pamamahala sa loob ng hotel. Nasa ibaba ang papel ng mga sistema at halimbawang kalkulasyon."
   }
 };
 export function hotelIllustrationAlt(id:string,language:string,fallback:string):string {
