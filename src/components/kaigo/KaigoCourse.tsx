@@ -1,3 +1,4 @@
+import {KaigoMockRoyalFigure} from './KaigoMockRoyalFigure';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { translationForMockQuestion, translationForMockTitle } from '@/data/kaigo/japanese-mock-translations';
 import {WeeklyKaigo} from './WeeklyKaigo';
@@ -9,7 +10,6 @@ import {RoyalContentPanel,RoyalExplanationPanel} from '@/components/ui/RoyalPane
 import {RoyalBackButton,ROYAL_FONT} from '@/components/ui/RoyalSurface';
 import {kaigoCourse,kaigoAtomicKnowledge,kaigoDailyPlan,kaigoLanguageSupplements} from '@/data/kaigo';
 import {kaigoDepthFigures} from '@/data/kaigo/depth-figures';
-import {kaigoFigures} from '@/data/kaigo/figures';
 import {kaigoCatalog,kaigoTopics,kaigoWeeks,activityLabel,searchCatalog,validSelection,type StudySelection,type TopicId} from '@/data/kaigo/catalog';
 import {illustrationFor} from '@/data/kaigo/lesson-illustrations';
 import type {KnowledgeProbe,LanguageTask,Lesson,MockForm,RubyToken,TransferStep} from '@/data/kaigo/types';
@@ -153,12 +153,9 @@ function MockExam({ form: originalForm, active }: { form: MockForm; active: bool
           )}
           {review && translationOpen && mockTranslation?.passage && <TranslationText testID="kaigo-mock-passage-translation">{mockTranslation.passage}</TranslationText>}
           {!!q.figureKey && (
-            <Image
-              accessibilityLabel={q.figureDescriptionJa}
-              source={kaigoFigures[q.figureKey]}
-              resizeMode="contain"
-              style={s.figure}
-            />
+            <KaigoMockRoyalFigure question={q}
+              translatedAlt={review && translationOpen ? mockTranslation?.figureDescription : undefined}
+              style={s.figure} />
           )}
           {!!q.figureDescriptionJa && (
             <Ruby
