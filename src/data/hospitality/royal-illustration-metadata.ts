@@ -89,6 +89,51 @@ const currentImageAlt:Record<string,Record<string,string>> = {
     "th": "พนักงานจองห้องกับผู้จัดการตรวจสอบบันทึก ขณะที่เพื่อนร่วมงานประสานทางโทรศัพท์ แผ่นพับโรงแรมอื่นแสดงว่ากำลังตรวจสอบทางเลือก ไม่ได้ยืนยันว่ามีห้องแล้ว",
     "km": "បុគ្គលិកកក់បន្ទប់និងអ្នកគ្រប់គ្រងពិនិត្យកំណត់ត្រា ខណៈមិត្តរួមការងារសម្របសម្រួលតាមទូរសព្ទ។ សៀវភៅផ្សព្វផ្សាយសណ្ឋាគារផ្សេងបង្ហាញការពិនិត្យជម្រើសជំនួស មិនមែនបញ្ជាក់ថាបានបន្ទប់រួចទេ។",
     "tl": "Sinusuri ng kawani ng reserbasyon at tagapamahala ang rekord habang nakikipag-ugnayan sa telepono ang katrabaho. Ang polyeto ng ibang hotel ay nagpapakitang sinusuri ang alternatibo, hindi patunay na may nakuhang kuwarto na."
+  },
+  "hotel-front-07": {
+    "ja": "受付担当者が車椅子の客本人と話し、客室の写真を見ながら希望を聞いています。記録はスタッフ側で扱われています。",
+    "en": "A receptionist speaks directly with a wheelchair-using guest and asks about preferences using room photos. Records are handled on the staff side.",
+    "vi": "Lễ tân trao đổi trực tiếp với khách dùng xe lăn, xem ảnh phòng và hỏi mong muốn của khách. Hồ sơ được xử lý ở phía nhân viên.",
+    "id": "Resepsionis berbicara langsung dengan tamu pengguna kursi roda dan menanyakan keinginan sambil melihat foto kamar. Catatan ditangani di sisi staf.",
+    "zh-CN": "前台人员直接与使用轮椅的客人交谈，查看客房照片并询问其需求。记录在员工侧处理。",
+    "zh-TW": "櫃檯人員直接與使用輪椅的客人交談，查看客房照片並詢問其需求。紀錄在員工側處理。",
+    "hi": "रिसेप्शन कर्मचारी व्हीलचेयर का उपयोग करने वाले अतिथि से सीधे बात करके कमरे की तस्वीरों के सहारे उनकी इच्छा पूछ रहा है। रिकॉर्ड कर्मचारियों की ओर रखे गए हैं।",
+    "bn": "রিসেপশনের কর্মী হুইলচেয়ার ব্যবহারকারী অতিথির সঙ্গে সরাসরি কথা বলে কক্ষের ছবি দেখে তাঁর পছন্দ জানতে চাইছেন। রেকর্ড কর্মীদের দিকে রাখা হয়েছে।",
+    "ne": "रिसेप्सन कर्मचारीले ह्वीलचेयर प्रयोग गर्ने अतिथिसँग सीधै कुरा गरी कोठाका तस्बिरबाट उहाँको चाहना सोध्दै छन्। अभिलेख कर्मचारीपट्टि राखिएको छ।",
+    "my": "ဧည့်ကြိုဝန်ထမ်းက ဘီးတပ်ကုလားထိုင်သုံးဧည့်သည်ကို တိုက်ရိုက်မေးမြန်းပြီး အခန်းဓာတ်ပုံများဖြင့် ဧည့်သည်၏ဆန္ဒကို နားထောင်နေသည်။ မှတ်တမ်းများကို ဝန်ထမ်းဘက်တွင် ကိုင်တွယ်သည်။",
+    "th": "พนักงานต้อนรับพูดกับแขกที่ใช้รถเข็นโดยตรง ดูรูปห้องพักและถามความต้องการ เอกสารถูกจัดการในฝั่งพนักงาน",
+    "km": "បុគ្គលិកទទួលភ្ញៀវនិយាយផ្ទាល់ជាមួយភ្ញៀវប្រើរទេះរុញ ហើយសួរពីបំណងដោយមើលរូបបន្ទប់។ កំណត់ត្រាត្រូវបានគ្រប់គ្រងនៅខាងបុគ្គលិក។",
+    "tl": "Direktang nakikipag-usap ang receptionist sa bisitang gumagamit ng wheelchair at nagtatanong ng nais niya gamit ang mga larawan ng kuwarto. Nasa panig ng staff ang mga rekord."
+  },
+  "hotel-planning-01": {
+    "ja": "宿泊企画の担当者が客の希望を聞き、客室、朝食、夕食、日中の休憩場所の写真を分けて比較するイラスト。",
+    "en": "Hotel planning staff ask guests about their needs while comparing separate photos of a room, breakfast, dinner and a daytime lounge.",
+    "vi": "Nhân viên lên phương án lưu trú hỏi nhu cầu của khách, so sánh riêng ảnh phòng, bữa sáng, bữa tối và nơi nghỉ ban ngày.",
+    "id": "Staf perencanaan hotel menanyakan kebutuhan tamu sambil membandingkan foto kamar, sarapan, makan malam, dan ruang istirahat siang secara terpisah.",
+    "zh-CN": "酒店企划人员询问客人的需求，分别比较客房、早餐、晚餐及日间休息场所的照片。",
+    "zh-TW": "旅館企劃人員詢問客人的需求，分別比較客房、早餐、晚餐及日間休息場所的照片。",
+    "hi": "होटल योजना कर्मचारी अतिथियों की जरूरतें पूछते हुए कमरे, नाश्ते, रात के भोजन और दिन में आराम की जगह की अलग तस्वीरें तुलना कर रहे हैं।",
+    "bn": "হোটেলের পরিকল্পনা কর্মীরা অতিথির চাহিদা জেনে কক্ষ, সকালের খাবার, রাতের খাবার ও দিনের বিশ্রামস্থলের আলাদা ছবি তুলনা করছেন।",
+    "ne": "होटल योजना कर्मचारीले अतिथिका आवश्यकता सोध्दै कोठा, बिहानको खाना, बेलुकाको खाना र दिनमा आराम गर्ने ठाउँका छुट्टाछुट्टै तस्बिर तुलना गर्दै छन्।",
+    "my": "ဟိုတယ်အစီအစဉ်ရေးဆွဲသူများက ဧည့်သည်၏လိုအပ်ချက်ကို မေးမြန်းပြီး အခန်း၊ နံနက်စာ၊ ညစာနှင့် နေ့ခင်းအနားယူရာနေရာ ဓာတ်ပုံများကို သီးခြားနှိုင်းယှဉ်နေသည်။",
+    "th": "พนักงานวางแผนโรงแรมถามความต้องการของแขกและเปรียบเทียบรูปห้องพัก อาหารเช้า อาหารเย็น และพื้นที่พักช่วงกลางวันแยกกัน",
+    "km": "បុគ្គលិករៀបចំផែនការសណ្ឋាគារសួរតម្រូវការភ្ញៀវ ហើយប្រៀបធៀបរូបបន្ទប់ អាហារពេលព្រឹក អាហារពេលល្ងាច និងកន្លែងសម្រាកពេលថ្ងៃដោយឡែក។",
+    "tl": "Tinatanong ng hotel planning staff ang pangangailangan ng mga bisita habang magkahiwalay na inihahambing ang mga larawan ng kuwarto, almusal, hapunan at pahingahan sa araw."
+  },
+  "hotel-planning-02": {
+    "ja": "ホテルの担当者と責任者が客室の記録と売上の記録を区別し、計算機を使って確認するイラスト。正確な数値と式は画像下に文字で示します。",
+    "en": "Hotel staff and a manager compare separate room and revenue records using a calculator. Exact data and formulas appear as text below the image.",
+    "vi": "Nhân viên khách sạn cùng người quản lý phân biệt hồ sơ phòng và doanh thu, dùng máy tính để kiểm tra. Số liệu và công thức chính xác nằm ở phần chữ bên dưới ảnh.",
+    "id": "Staf hotel dan manajer membandingkan catatan kamar dan pendapatan secara terpisah dengan kalkulator. Data dan rumus tepat ditampilkan sebagai teks di bawah gambar.",
+    "zh-CN": "酒店人员与负责人区分客房记录和收入记录，使用计算器进行核对。准确数据与公式在图片下方以文字显示。",
+    "zh-TW": "旅館人員與負責人區分客房紀錄和收入紀錄，使用計算機核對。準確資料與公式在圖片下方以文字顯示。",
+    "hi": "होटल कर्मचारी और प्रबंधक कमरे तथा राजस्व के अलग रिकॉर्ड कैलकुलेटर से जाँच रहे हैं। सटीक आँकड़े और सूत्र चित्र के नीचे पाठ में हैं।",
+    "bn": "হোটেলের কর্মী ও ব্যবস্থাপক কক্ষ এবং রাজস্বের আলাদা রেকর্ড ক্যালকুলেটর দিয়ে যাচাই করছেন। সঠিক তথ্য ও সূত্র ছবির নিচে পাঠ্যে দেখানো হয়েছে।",
+    "ne": "होटल कर्मचारी र प्रबन्धकले कोठा र आम्दानीका अलग अभिलेख क्यालकुलेटरबाट जाँच्दै छन्। सही तथ्याङ्क र सूत्र चित्रको तल पाठमा दिइएको छ।",
+    "my": "ဟိုတယ်ဝန်ထမ်းနှင့် မန်နေဂျာက အခန်းနှင့် ရောင်းရငွေမှတ်တမ်းများကို သီးခြားခွဲ၍ ဂဏန်းတွက်စက်ဖြင့် စစ်ဆေးနေသည်။ အတိအကျကိန်းဂဏန်းနှင့် ဖော်မြူလာများကို ပုံအောက်တွင် စာသားဖြင့် ပြထားသည်။",
+    "th": "พนักงานโรงแรมกับผู้จัดการแยกตรวจบันทึกห้องพักและรายได้ด้วยเครื่องคิดเลข ข้อมูลและสูตรที่แน่นอนแสดงเป็นข้อความใต้ภาพ",
+    "km": "បុគ្គលិកសណ្ឋាគារនិងអ្នកគ្រប់គ្រងពិនិត្យកំណត់ត្រាបន្ទប់និងចំណូលដោយឡែក ដោយប្រើម៉ាស៊ីនគិតលេខ។ ទិន្នន័យនិងរូបមន្តជាក់លាក់បង្ហាញជាអក្សរនៅក្រោមរូបភាព។",
+    "tl": "Magkahiwalay na sinusuri ng kawani at tagapamahala ang mga rekord ng kuwarto at kita gamit ang calculator. Nasa teksto sa ilalim ng larawan ang eksaktong datos at mga pormula."
   }
 };
 export function hotelIllustrationAlt(id:string,language:string,fallback:string):string {
