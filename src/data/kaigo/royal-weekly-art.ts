@@ -2,6 +2,7 @@ import type {ImageSourcePropType} from 'react-native';
 
 /** Day-scoped replacements preserve shared legacy art IDs and captions. */
 export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspectRatio:number}>={
+ 150:{source:require('../../../assets/kaigo/paragraphs/excretion-05-knowledge-0-v1.webp'),aspectRatio:1619/971},
  134:{source:require('../../../assets/kaigo/paragraphs/foundation-04-privacy-consent-v1.webp'),aspectRatio:1619/971},
 
  112:{source:require('../../../assets/kaigo/paragraphs/kaigo-depth-05-v1.webp'),aspectRatio:1619/971},
@@ -68,6 +69,21 @@ export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspec
 
 /** Image-specific captions; canonical lesson and progress revisions remain unchanged. */
 export const kaigoRoyalWeeklyCaptions:Record<number,Record<string,string>>={
+ 150:{
+  "ja": "本人と職員が話し合う場面です。説明についての希望と条件を確かめます。案内の向きや設定変更の完了を示す絵ではありません。",
+  "en": "The person and worker talk together to check wishes and conditions for explanations. The picture does not show route direction or a completed setting change.",
+  "vi": "Người được chăm sóc và nhân viên trao đổi để xác nhận mong muốn và điều kiện khi giải thích. Hình không cho biết hướng chỉ đường hoặc việc đổi cài đặt đã xong.",
+  "id": "Orang tersebut dan petugas berbicara untuk memastikan keinginan serta syarat penjelasan. Gambar tidak menunjukkan arah rute atau perubahan pengaturan yang selesai.",
+  "zh-CN": "本人与人员交谈，确认说明的意愿与条件。图片并不表示路线方向或设置变更已完成。",
+  "zh-TW": "本人與人員交談，確認說明的希望與條件。圖片並不表示路線方向或設定變更已完成。",
+  "hi": "व्यक्ति और कर्मचारी बातचीत करके समझाने के बारे में इच्छा और शर्तें जाँचते हैं। चित्र रास्ते की दिशा या सेटिंग का बदलाव पूरा होना नहीं दिखाता।",
+  "bn": "ব্যক্তি ও কর্মী কথা বলে ব্যাখ্যা সম্পর্কে ইচ্ছা ও শর্ত নিশ্চিত করেন। ছবি পথের দিক বা সেটিং বদল শেষ হওয়া দেখায় না।",
+  "ne": "उहाँ र कर्मचारी कुरा गर्दै बुझाउनेबारे इच्छा र सर्त पुष्टि गर्छन्। चित्रले बाटोको दिशा वा सेटिङ परिवर्तन सकिएको देखाउँदैन।",
+  "my": "ကာယကံရှင်နှင့်ဝန်ထမ်းက ရှင်းပြမှုအတွက် ဆန္ဒနှင့်အခြေအနေကို စကားပြော၍စစ်ပါသည်။ ပုံသည် လမ်းညွှန်ဦးတည်ရာ သို့မဟုတ် ဆက်တင်ပြောင်းပြီးခြင်းကို မပြပါ။",
+  "th": "เจ้าตัวกับเจ้าหน้าที่พูดคุยเพื่อตรวจความต้องการและเงื่อนไขในการอธิบาย ภาพไม่ได้แสดงทิศทางเส้นทางหรือการเปลี่ยนการตั้งค่าที่เสร็จแล้ว",
+  "km": "សាមីខ្លួន និងបុគ្គលិកនិយាយគ្នា ដើម្បីបញ្ជាក់បំណង និងលក្ខខណ្ឌនៃការពន្យល់។ រូបនេះមិនបង្ហាញទិសផ្លូវ ឬការប្តូរការកំណត់រួចទេ។",
+  "tl": "Nag-uusap ang tao at kawani upang tiyakin ang kagustuhan at mga kondisyon sa pagpapaliwanag. Hindi ipinakikita ng larawan ang direksiyon ng daan o natapos na pagbabago ng setting."
+},
   "50": {
     "ja": "部屋で本人の参加条件を聞く場面です。帰りの支援と時刻は確認前で、参加も出発も決まっていません。",
     "en": "In the room, staff listen to the person’s conditions for joining. Return support and timing remain unconfirmed; neither participation nor departure is decided.",
