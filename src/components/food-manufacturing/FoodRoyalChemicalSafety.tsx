@@ -1,3 +1,4 @@
+import {FoodRoyalNativeLabel} from './FoodRoyalNativeLabel';
 import {StyleSheet,Text,View} from 'react-native';
 import data from '@/data/food-manufacturing/royal-chemical-safety-translations.json';
 import type {FoodManufacturingLesson} from '@/data/food-manufacturing';
@@ -12,7 +13,7 @@ export function foodRoyalChemicalSafetyFor(lesson:FoodManufacturingLesson,langua
 export function FoodRoyalChemicalSafety({lesson,language,showTranslation}:{lesson:FoodManufacturingLesson;language:string;showTranslation:boolean}){
  const content=foodRoyalChemicalSafetyFor(lesson,language,showTranslation);if(!content)return null;
  return <View testID="food-royal-chemical-safety-text" style={s.root}>{content.lines.map((line,i)=><View key={line.id} testID={`food-royal-chemical-${line.id}`} style={s.line}>
- <Text selectable style={[s.body,([0,2,7,12].includes(i))&&s.heading]}>{line.ja}</Text>
+ <FoodRoyalNativeLabel lesson={lesson} text={line.ja} color="#263c4c" size={[0,2,7,12].includes(i)?19:16} strong={[0,2,7,12].includes(i)}/>
  {content.translated&&<Text selectable style={s.translation}>{content.translated[i]}</Text>}
  </View>)}</View>;
 }

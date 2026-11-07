@@ -1,3 +1,4 @@
+import {FoodRoyalNativeLabel} from './FoodRoyalNativeLabel';
 import {StyleSheet,Text,View} from 'react-native';
 import {foodManufacturingTranslation,type FoodManufacturingLesson} from '@/data/food-manufacturing';
 import {foodRoyalWeek2NativeFor} from '@/data/food-manufacturing/royal-week2-native';
@@ -14,7 +15,7 @@ export function FoodRoyalWeek2Native({lesson,language,showTranslation,textColor}
  return <View testID={`food-royal-native-${lesson.id}`} style={s.root}>
  {labels.ja.map((label,i)=><View key={label} style={s.step}>
  <View testID={`food-royal-native-${lesson.id}-${i+1}`} style={s.card}>
- <Text selectable style={[s.label,{color:textColor}]}>{binding.kind==='hygiene-targets'?'':`${i+1}. `}{label}</Text>
+ <FoodRoyalNativeLabel lesson={lesson} text={`${binding.kind==='hygiene-targets'?'':`${i+1}. `}${label}`} color={textColor}/>
  {translated?.[i]&&<Text selectable style={[s.translation,{color:textColor}]}>{translated[i]}</Text>}
  </View>{sequence&&i<labels.ja.length-1&&<Text accessibilityLabel={`${i+1} → ${i+2}`} style={[s.arrow,{color:textColor}]}>↓</Text>}
  </View>)}
