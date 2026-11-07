@@ -11,6 +11,8 @@ import data from '@/data/manufacturing/royal-week03-companion-figures.json';
 type Figure={id:string;paragraphId:string;assetFile:string;width:number;height:number;labels?:Record<string,string>};
 type Entry={sourceHash:string;captionJa:string;paragraphIds:string[];expectedParagraphsJa:Record<string,string>;nativeParagraphIds?:string[];expectedNativeParagraphsJa?:Record<string,string>;images:Figure[]};
 const sources:Record<string,ReturnType<typeof require>>={
+ 'assets/manufacturing/royal-weekly-20261107/week04/companions/surface-test-purpose-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week04/companions/surface-test-purpose-roles.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week04/companions/surface-electrode-electron-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week04/companions/surface-electrode-electron-roles.png'),
  'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-caliper-three-checks.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-caliper-three-checks.png'),
  'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-tolerance-dimension-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-tolerance-dimension-roles.png'),
  'assets/manufacturing/royal-weekly-20261107/week03/companions/electrical-lcr-measurement-flow.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/electrical-lcr-measurement-flow.png'),
