@@ -2,7 +2,8 @@ import { Text } from '@/components/app/LocalizedText';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
 import RoyalPageBackground from '@/components/ui/RoyalPageBackground';
-import { useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
+import { useFocusEffect } from 'expo-router';
 
 import {
     Image,
@@ -22,8 +23,7 @@ import RoyalPaperPanel from '@/components/ui/RoyalPaperPanel';
 import { ROYAL_LAYOUT, ROYAL_FONT } from '@/components/ui/RoyalSurface';
 import { useUserProfile } from '@/hooks/useUserProfile';
 import { getGameProgress } from '@/services/progress-storage';
-import { getJlptProgress } from '@/services/jlpt-progress-storage';
-import learningProgressIds from '@/data/generated/learning-progress-ids.json';
+import { getJlptExamProgress, initialJlptExamProgress } from '@/services/jlpt-exam-progress';
 import { RANK_COLORS, RANKS, type LearningEconomy } from '@/services/learning-economy';
 import { syncJlptQualification } from '@/services/sync-jlpt-qualification';
 
@@ -51,10 +51,6 @@ type LevelItem = {
     bodyColor: string;
 };
 
-const LEVEL_CONTENT_IDS = Object.fromEntries(
-    Object.entries(learningProgressIds).map(([level, ids]) => [level, new Set(ids)]),
-) as Record<LevelItem['level'], Set<string>>;
-
 const levels: LevelItem[] = [
     {
         level: 'N5',
@@ -63,13 +59,12 @@ const levels: LevelItem[] = [
         titleEn: 'Beginner',
         titleVi: 'Tiếng Nhật nhập môn',
 
-        requirement:
-            'Đã hoàn thành 12 / 24 bài học',
+        requirement: 'Miễn phí',
 
         progressText:
-            '12 / 24',
+            `0 / ${initialJlptExamProgress.N5.total}`,
 
-        progressPercent: 50,
+        progressPercent: 0,
 
         unlocked: true,
 
@@ -83,11 +78,10 @@ const levels: LevelItem[] = [
         titleEn: 'Elementary',
         titleVi: 'Tiếng Nhật sơ cấp',
 
-        requirement:
-            'Yêu cầu đạt 500 XP',
+        requirement: 'Miễn phí',
 
         progressText:
-            '0 / 30',
+            `0 / ${initialJlptExamProgress.N4.total}`,
 
         progressPercent: 0,
 
@@ -103,11 +97,10 @@ const levels: LevelItem[] = [
         titleEn: 'Intermediate',
         titleVi: 'Tiếng Nhật trung cấp',
 
-        requirement:
-            'Yêu cầu đạt 2,000 XP',
+        requirement: 'Miễn phí',
 
         progressText:
-            '0 / 40',
+            `0 / ${initialJlptExamProgress.N3.total}`,
 
         progressPercent: 0,
 
@@ -123,11 +116,10 @@ const levels: LevelItem[] = [
         titleEn: 'Pre-Advanced',
         titleVi: 'Tiếng Nhật trung cao cấp',
 
-        requirement:
-            'Yêu cầu đạt 5,000 XP',
+        requirement: 'Miễn phí',
 
         progressText:
-            '0 / 45',
+            `0 / ${initialJlptExamProgress.N2.total}`,
 
         progressPercent: 0,
 
@@ -143,11 +135,10 @@ const levels: LevelItem[] = [
         titleEn: 'Advanced',
         titleVi: 'Tiếng Nhật cao cấp',
 
-        requirement:
-            'Yêu cầu đạt 10,000 XP',
+        requirement: 'Miễn phí',
 
         progressText:
-            '0 / 50',
+            `0 / ${initialJlptExamProgress.N1.total}`,
 
         progressPercent: 0,
 
@@ -164,24 +155,25 @@ export default function LearnScreen() {
     const [economy,setEconomy] = useState<LearningEconomy|null>(null);
     const [helpVisible,setHelpVisible] = useState(false);
 
-    useEffect(() => {
-        void Promise.all([getGameProgress(), getJlptProgress(), syncJlptQualification()]).then(([game, learning, ledger]) => {
+    useFocusEffect(useCallback(() => {
+        let active = true;
+        void Promise.all([getGameProgress(), getJlptExamProgress(), syncJlptQualification()]).then(([game, exams, ledger]) => {
+            if (!active) return;
             setEconomy(ledger);
             setStats({ xp: game.stats.xp, coins: game.stats.coins, conversationCredits: game.stats.conversationCredits });
             setRuntimeLevels(levels.map((item) => {
-                const levelIds = LEVEL_CONTENT_IDS[item.level];
-                const completed = learning.learnedIds.filter((id) => levelIds.has(id) || (item.level === 'N5' && id.startsWith('kana:'))).length;
-                const total = Number(item.progressText.split('/')[1]?.trim()) || 1;
+                const { completed, total } = exams[item.level];
                 return {
                     ...item,
                     unlocked: true,
-                    progressText: `${Math.min(completed, total)} / ${total}`,
-                    progressPercent: Math.min(100, Math.round((completed / total) * 100)),
-                    requirement: `Miễn phí • ${completed} nội dung đã hoàn thành`,
+                    progressText: `${completed} / ${total}`,
+                    progressPercent: total ? Math.round((completed / total) * 100) : 0,
+                    requirement: `Miễn phí • ${completed} đề đã nộp / ${total} đề`,
                 };
             }));
-        });
-    }, []);
+        }).catch(error => console.log('Load JLPT exam progress error:', error));
+        return () => { active = false; };
+    }, []));
     const currentTarget = economy?.officialRank ? NEXT_JLPT_LEVEL[economy.officialRank] as keyof typeof RANK_COLORS : 'N5';
     const qualifiedCount = Object.keys(economy?.passed[currentTarget]??{}).length;
     function openLevel(
