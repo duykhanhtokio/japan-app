@@ -1,3 +1,4 @@
+import {AgricultureSafetyThreeRuby} from './AgricultureSafetyThreeRuby';
 import {Text,View} from 'react-native';
 import data from '@/data/agriculture/pesticide-formulation-comparison.json';
 import content from '@/data/agriculture/lessons.ja.json';
@@ -15,12 +16,13 @@ export function pesticideFormulationLabels(id:string,hash:string,revision:string
 /** Source table comparison only: no preparation-method column, rates or product recommendations. */
 export function PesticideFormulationComparison({lessonId,lessonSourceHash,lessonRevision,level,language='ja',showTranslation=false,colors}:{lessonId:string;lessonSourceHash:string;lessonRevision?:string;level?:string;language?:string;showTranslation?:boolean;colors:Colors}){
  const ja=pesticideFormulationLabels(lessonId,lessonSourceHash,lessonRevision,level,'ja');if(!ja)return null;
+ const ruby=(field:string,value:string,style:{color:string;fontSize:number;lineHeight:number;fontWeight?:'700'})=><AgricultureSafetyThreeRuby provider="formulation" lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language="ja" field={field} text={value} style={style} color={colors.translationText}/>;
  const t=showTranslation&&language!=='ja'?pesticideFormulationLabels(lessonId,lessonSourceHash,lessonRevision,level,language):null;
  const text={color:colors.translationText,fontSize:16,lineHeight:27},box={borderWidth:1,borderColor:colors.border,borderRadius:8,padding:10,gap:8};
  const label=(i:number)=><View style={{gap:3}}><View accessible accessibilityLabel={ja.labels[i]} style={{alignItems:'flex-start'}}><Text style={{color:colors.translationText,fontSize:10,lineHeight:14}}>{kana[i]}</Text><Text style={text}>{ja.labels[i]}</Text></View>{!!t&&<Text testID={`agri-formulation-label-${i}`} style={text}>{t.labels[i]}</Text>}</View>;
- return <View testID="agri-native-formulation-comparison" style={{...box,marginVertical:12,gap:14}}><Text style={{...text,fontSize:19,fontWeight:'700'}}>{ja.title}</Text>{!!t&&<Text style={text}>{t.title}</Text>}
+ return <View testID="agri-native-formulation-comparison" style={{...box,marginVertical:12,gap:14}}>{ruby('title',ja.title,{...text,fontSize:19,fontWeight:'700'})}{!!t&&<Text testID="agri-formulation-localized-title" style={text}>{t.title}</Text>}
   <View accessibilityRole="image" accessibilityLabel={(t||ja).alt} style={{gap:12}}>{rows.map((row,index)=><View key={index} testID={`agri-formulation-row-${index}`} style={box}><View style={{backgroundColor:'#f8f0df',padding:8,gap:5}}>{label(0)}{label(row[0])}</View><View style={{flexDirection:'row',flexWrap:'wrap',gap:10}}>{[1,2,3].map(column=><View key={column} testID={`agri-formulation-cell-${index}-${column}`} style={{flexGrow:1,flexBasis:180,minWidth:0,gap:6,padding:8,borderTopWidth:1,borderColor:colors.border}}>{label(column)}{label(row[column])}</View>)}</View></View>)}</View>
-  {data.paragraphIds.map(id=><View key={id} style={{gap:5}}><Text style={{...text,fontWeight:'700'}}>{ja.paragraphTitles[id]}</Text><Text style={text}>{ja.paragraphs[id]}</Text>{!!t&&<><Text style={{...text,fontWeight:'700'}}>{t.paragraphTitles[id]}</Text><Text style={text}>{t.paragraphs[id]}</Text></>}</View>)}
+  {data.paragraphIds.map(id=><View key={id} style={{gap:5}}>{ruby(`paragraphTitle:${id}`,ja.paragraphTitles[id],{...text,fontWeight:'700'})}{ruby(`paragraph:${id}`,ja.paragraphs[id],text)}{!!t&&<><Text style={{...text,fontWeight:'700'}}>{t.paragraphTitles[id]}</Text><Text style={text}>{t.paragraphs[id]}</Text></>}</View>)}
   <Text style={{...text,fontSize:14}}>AGR-S2 · PDF p.48 / p.46</Text>
  </View>;
 }

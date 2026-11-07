@@ -1,3 +1,4 @@
+import {AgricultureSafetyThreeRuby} from './AgricultureSafetyThreeRuby';
 import {Text,View} from 'react-native';
 import data from '@/data/agriculture/pesticide-label-fields.json';
 import content from '@/data/agriculture/lessons.ja.json';
@@ -15,12 +16,13 @@ export function pesticideLabelFields(id:string,hash:string,revision:string|undef
 /** Separate source-label record fields, not a real product label or current approval. */
 export function PesticideLabelFields({lessonId,lessonSourceHash,lessonRevision,level,language='ja',showTranslation=false,colors}:{lessonId:string;lessonSourceHash:string;lessonRevision?:string;level?:string;language?:string;showTranslation?:boolean;colors:Colors}){
  const ja=pesticideLabelFields(lessonId,lessonSourceHash,lessonRevision,level,'ja');if(!ja)return null;
+ const ruby=(field:string,value:string,style:{color:string;fontSize:number;lineHeight:number;fontWeight?:'700'})=><AgricultureSafetyThreeRuby provider="pesticide-label" lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language="ja" field={field} text={value} style={style} color={colors.translationText}/>;
  const t=showTranslation&&language!=='ja'?pesticideLabelFields(lessonId,lessonSourceHash,lessonRevision,level,language):null;
  const text={color:colors.translationText,fontSize:16,lineHeight:27},box={borderWidth:1,borderColor:colors.border,borderRadius:8,padding:10,gap:8};
- return <View testID="agri-native-label-fields" style={{...box,marginVertical:12,gap:14}}><Text style={{...text,fontSize:19,fontWeight:'700'}}>{ja.title}</Text>{!!t&&<Text style={text}>{t.title}</Text>}
-  {groups.map((group,index)=>{const id=data.paragraphIds[index];return <View key={index} testID={`agri-label-field-group-${index}`} style={box}><Text style={{...text,fontWeight:'700'}}>{ja.paragraphTitles[id]}</Text>{!!t&&<Text style={text}>{t.paragraphTitles[id]}</Text>}
+ return <View testID="agri-native-label-fields" style={{...box,marginVertical:12,gap:14}}>{ruby('title',ja.title,{...text,fontSize:19,fontWeight:'700'})}{!!t&&<Text testID="agri-pesticide-label-localized-title" style={text}>{t.title}</Text>}
+  {groups.map((group,index)=>{const id=data.paragraphIds[index];return <View key={index} testID={`agri-label-field-group-${index}`} style={box}>{ruby(`paragraphTitle:${id}`,ja.paragraphTitles[id],{...text,fontWeight:'700'})}{!!t&&<Text style={text}>{t.paragraphTitles[id]}</Text>}
    <View accessibilityRole="image" accessibilityLabel={(t||ja).paragraphTitles[id]} style={{flexDirection:'row',flexWrap:'wrap',gap:10}}>{group.map(i=><View key={i} testID={`agri-label-distinct-field-${i}`} style={{...box,flexGrow:1,flexBasis:150,minWidth:0,backgroundColor:'#f8f0df'}}><View accessible accessibilityLabel={ja.labels[i]} style={{alignItems:'flex-start'}}><Text style={{color:colors.translationText,fontSize:10,lineHeight:14}}>{kana[i]}</Text><Text style={text}>{ja.labels[i]}</Text></View>{!!t&&<Text testID={`agri-label-localized-field-${i}`} style={text}>{t.labels[i]}</Text>}</View>)}</View>
-   <Text style={text}>{ja.paragraphs[id]}</Text>{!!t&&<Text style={text}>{t.paragraphs[id]}</Text>}
+   {ruby(`paragraph:${id}`,ja.paragraphs[id],text)}{!!t&&<Text style={text}>{t.paragraphs[id]}</Text>}
   </View>;})}
   <Text style={{...text,fontSize:14}}>AGR-S2 · PDF p.55 / p.53 · PDF p.56 / p.54</Text>
  </View>;
