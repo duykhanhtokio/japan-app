@@ -31,12 +31,12 @@ export function RestaurantMealPlacement({lessonId,language,showTranslation}:{les
   {t&&<TranslationText>{t.title}</TranslationText>}
   <RestaurantReading text={placementData.viewpointJa} segments={[{text:'お客様',reading:'おきゃくさま'},{text:'から'},{text:'見',reading:'み'},{text:'た'},{text:'向',reading:'む'},{text:'き'}]}/>{t&&<TranslationText>{t.viewpoint}</TranslationText>}
   <View style={[s.tray,{borderColor:colors.border}]}>
-   <Text style={[s.direction,{color:colors.muted}]}>{placementData.backJa}{t?` / ${t.back}`:''}</Text>
+   <View style={{alignItems:'center',gap:4}}><RestaurantReading text={placementData.backJa} segments={[{text:'奥',reading:'おく'}]}/>{t&&<TranslationText>{t.back}</TranslationText>}</View>
    <View testID="restaurant-meal-back-row" style={s.row}>{placementData.back.map(cell)}</View>
    <View testID="restaurant-meal-front-row" style={s.row}>{placementData.front.map(cell)}</View>
-   <Text style={[s.direction,{color:colors.muted}]}>{placementData.frontJa}{t?` / ${t.front}`:''}</Text>
+   <View style={{alignItems:'center',gap:4}}><RestaurantReading text={placementData.frontJa} segments={[{text:'手前',reading:'てまえ'}]}/>{t&&<TranslationText>{t.front}</TranslationText>}</View>
   </View>
-  <Text style={[s.orientation,{color:colors.text}]}>{placementData.guestJa}{t?` / ${t.guest}`:''}</Text>
+  <View style={{alignItems:'center',gap:4}}><RestaurantReading text={placementData.guestJa} segments={[{text:'お客様',reading:'おきゃくさま'},{text:'はこちら'}]}/>{t&&<TranslationText>{t.guest}</TranslationText>}</View>
   <RestaurantReading text={placementData.captionJa} segments={[{text:'基本的',reading:'きほんてき'},{text:'な'},{text:'一例',reading:'いちれい'},{text:'です。'},{text:'器',reading:'うつわ'},{text:'の'},{text:'形',reading:'かたち'},{text:'・'},{text:'料理',reading:'りょうり'},{text:'の'},{text:'内容',reading:'ないよう'},{text:'・'},{text:'配膳順',reading:'はいぜんじゅん'},{text:'は、'},{text:'店',reading:'みせ'},{text:'の'},{text:'見本',reading:'みほん'},{text:'と'},{text:'献立',reading:'こんだて'},{text:'で'},{text:'確認',reading:'かくにん'},{text:'します。'}]}/>{t&&<TranslationText>{t.caption}</TranslationText>}
  </View>;
 }

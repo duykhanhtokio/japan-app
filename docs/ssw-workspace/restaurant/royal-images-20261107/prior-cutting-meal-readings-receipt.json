@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "self_checked_pending_parent_remote_save",
+  "scope": "post-week native cutting/meal visual reading fields",
+  "baseline": "1b218ef5efe8f9f15fe632cbd553583509fdf450",
+  "changes": [
+    "Cutting guide existing heading and caption now carry exact aligned authored Japanese readings",
+    "Meal diagram back/front/guest directions now carry exact aligned Japanese readings with unchanged native translations paired below",
+    "No generated art, source words, translated strings, cutting marks, food object crops or guest-perspective food order changed"
+  ],
+  "validation": {
+    "command": "node scripts/restaurant/check-prior-guide-visual-readings.cjs",
+    "repairedFields": 5,
+    "actualComponentJa12SsrRenders": 26,
+    "allCuttingShapeIds": 16,
+    "guestPerspectiveBackBeforeFront": true,
+    "eslint": "PASS"
+  },
+  "files": {
+    "src/components/restaurant/RestaurantCuttingGuide.tsx": "e8b5c65292569ef8af9a2eec4957787284de95dcc21fd6d70c1edae69c6ff1bc",
+    "src/components/restaurant/RestaurantMealPlacement.tsx": "2477859fb0883dae200815b1081c947e92b327c3c8d7aa69dc0bbdc3699b21c5",
+    "scripts/restaurant/check-prior-guide-visual-readings.cjs": "666a7ec25f2cabff3ffa7ac7fd1e89d7d614ddd85c988942f9b010f6bebac5b7"
+  },
+  "acceptance": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "browserRenderReviewed": false
+  }
+}
