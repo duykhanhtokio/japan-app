@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "unit": "week03-supported-five-locale-records-and-native-correction",
+  "baselineCommit": "4d49d9dcc7b358884effe387008c738c42c55863",
+  "readyPaths": [
+    "src/data/agriculture/recognition-images.json",
+    "src/data/agriculture/recognition-image-locales.json",
+    "src/components/agriculture/DailyLearningSupport.tsx",
+    "src/components/agriculture/SoilGroupComparison.tsx",
+    "src/data/agriculture/soil-group-comparison.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/week03-locales-native-reader-qa.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/week03-supported-authoring-census-qa.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/full-existing-week-image-queue.json"
+  ],
+  "recognitionBindings": [
+    {
+      "figureId": "agr-recognition-soil-handtest-states-v1",
+      "assetSha256": "2f26d16c34c3a3840c11291afb79c68d0c3742709635e728151d84406467fd7b",
+      "sourceContextIds": [
+        "agr-soil-texture",
+        "agr-par11-soil-handtest-profile"
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "pairedLabelsPerLocale": 3,
+      "targetLocales": 12
+    },
+    {
+      "figureId": "agr-fig-irrigation-destinations-v1",
+      "assetSha256": "b05baa02429602026430d0819b9dae655447177117870bbf2bc7eda38fd6d0ec",
+      "sourceContextIds": [
+        "agr-water-methods"
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "pairedLabelsPerLocale": 3,
+      "targetLocales": 12
+    },
+    {
+      "figureId": "agr-recognition-irrigation-tools-v1",
+      "assetSha256": "54b7dcad47fe356992abfcd76374e8a4ec86e3b3d889210a3891ac5cd319021e",
+      "sourceContextIds": [
+        "agr-water-methods",
+        "agr-water-equipment-2"
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "pairedLabelsPerLocale": 4,
+      "targetLocales": 12
+    },
+    {
+      "figureId": "agr-fig-soil-aggregate-comparison-v1",
+      "assetSha256": "590dde03b890b5e45de80e284905b6b718368f5390fb73b6c494de0c1823a88a",
+      "sourceContextIds": [
+        "agr-soil-structure"
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "pairedLabelsPerLocale": 3,
+      "targetLocales": 12
+    },
+    {
+      "figureId": "agr-fig-soil-three-factor-relations-v1",
+      "assetSha256": "93142059bb8356df7312302d76ccadef52f10b159f43a1d221eed867ea9163fa",
+      "sourceContextIds": [
+        "agr-soil-building"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "pairedLabelsPerLocale": 12,
+      "targetLocales": 12
+    }
+  ],
+  "sourceReview": {
+    "primaryPdfPagesViewed": {
+      "AGR-S1": [
+        15,
+        17,
+        18
+      ],
+      "AGR-S2": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    "privatePixelRenders": "/workspace/scratch/b72f4a7f6a62/week03-audit",
+    "assetPixels": "all5 source-bound assets viewed; soil hand-test/irrigation destinations/soil aggregate/three-factor exact technical diagrams and detailed irrigation-tool art retained; no generation",
+    "captionCorrection": "Only soil-three-factor observationJa/limitJa replaced incorrect year/crop/month-axis boilerplate with primary-source overlap relationships and non-quantitative limits; all canonical Japanese lesson prose unchanged",
+    "nativeCorrection": "agr-soil-groups previously selected aggregate-structure diagram unrelated to its four soil groups. Study selector now shows exact four-row source classification comparison, retaining current canonical6Japanese+12locale paragraphs verbatim and source/meaning/revision guards. No invented geographic map, profile photograph or art-completion inference."
+  },
+  "checks": {
+    "actualRecognitionTargetLocaleRenders": 144,
+    "recognitionSourceCourseContexts": 12,
+    "recognitionSourceImageJARevisionLocaleNegativeChecks": 342,
+    "pairedLabelOccurrences": 576,
+    "actualDailyGenericRenders": 130,
+    "actualDailyNativeFourGroupRenders": 26,
+    "totalDailyRenders": 156,
+    "hiddenJapaneseFallbacks": 156,
+    "dailySourceContextImageRevisionNegatives": 50,
+    "nativeSourceJapaneseScopeLocaleNegatives": 18,
+    "strictTypeScript": "PASS actual DailyLearningSupport import graph including new native component and actual JSON; current canonical lesson type and current translation interface, minimal React/RN/service ambient declarations; not full app typecheck",
+    "renderer": "Actual RNW RecognitionImages/ZoomableFigure and DailyLearningFigure/SoilGroupComparison; exact canonical ID+level agricultureLesson adapter; unrelated translation/StudyAppearance isolated. Recognition selected PNG/WebP bytes supplied; other imports static URI adapters. No full course/device rendering.",
+    "prior33LocaleRowsAndLimits": "exact latest HEAD; valid incoming seeder binding retained",
+    "existing187RecognitionRows": "only one scoped metadata row changed as detailed; no asset paths/bytes, IDs, lesson source tuples or scope changed",
+    "exam": "Actual agr-2-m08-figure-q06 pre-submission render: generic alt, normalized masks top39.5%/89%, heights8.5%/10%, no Japanese/English drip-tube name or localized-study metadata. Pixel mask proof viewed; active question stem/options/correctIndex3/ID unchanged and right-lower drip depiction matches.",
+    "quizAndProgressFilesModified": false,
+    "scripts": [
+      "/workspace/scratch/b72f4a7f6a62/week03-audit/check-daily-locales.cjs",
+      "/workspace/scratch/b72f4a7f6a62/week03-audit/check-soil-groups.cjs",
+      "/workspace/scratch/b72f4a7f6a62/week03-audit/check-daily-types.cjs",
+      "/workspace/scratch/b72f4a7f6a62/week03-audit/check-irrigation-exam.cjs",
+      "/workspace/scratch/b72f4a7f6a62/week02-audit/check-thinning.cjs"
+    ]
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "sourcePhotoObjectiveComplete": false,
+  "releaseReady": false,
+  "sha256": {
+    "src/data/agriculture/recognition-images.json": "43503e5f59c62b7845ca44e2f6da01b5bcdc59ce0cff181c716f70c60cf94188",
+    "src/data/agriculture/recognition-image-locales.json": "fc7723c5b07aab1c3c742c2613108a8fc30fc215e06ac0c958dd1ef3cb61aca3",
+    "src/components/agriculture/DailyLearningSupport.tsx": "a73ed5d5eda968ccc0324382d366f3778e0a824741982cac8901c18c517f77ac",
+    "src/components/agriculture/SoilGroupComparison.tsx": "6d98cbda68bef785da3255b50fe6eaea8cb18079697ebe8eca5b89538ddf12c0",
+    "src/data/agriculture/soil-group-comparison.json": "df108627c27a13465c22b04e6b9091af413ac4d3e57a8dad0ae0225fe807453e"
+  }
+}
