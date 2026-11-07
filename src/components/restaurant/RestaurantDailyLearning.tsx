@@ -108,6 +108,7 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-1-cook-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-1-cook-01-shank-tenderloin-use-comparison.webp'),aspectRatio:1.5},
  'rst-1-hyg-16':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-1-hyg-16-observed-delivery-record.webp'),aspectRatio:1.5},
  'rst-2-cook-03':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-2-cook-03-portion-preparation-coaching.webp'),aspectRatio:1.5},
  'rst-2-cook-04':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-2-cook-04-cooking-service-sequence.webp'),aspectRatio:1.5},
@@ -150,6 +151,8 @@ export function restaurantRoyalDailyAsset(lesson:Pick<RestaurantLesson,'id'|'sou
  const current=dailyData.royalRasterOverrides.find(o=>o.lessonId===lesson.id&&o.sourceHash===lesson.sourceHash);
  return current?royalDailyAssets[lesson.id]:undefined;
 }
+type RoyalDailyTeachingCaption={textJa:string;sourceHash:string;furigana:{text:string;reading?:string}[];translations:Record<string,{sourceHash:string;text:string}>};
+const teachingCaptionFor=(lesson:RestaurantLesson)=>(dailyData.royalRasterOverrides as {lessonId:string;sourceHash:string;teachingCaption?:RoyalDailyTeachingCaption}[]).find(o=>o.lessonId===lesson.id&&o.sourceHash===lesson.sourceHash)?.teachingCaption;
 const labels:Record<string,{figure:string;note:string;companion:string}>={
  ja:{figure:'図で確かめる',note:'学習用の模式図です。寸法・数量・時間・安全限界を図の比率から判断しないでください。本文の条件と照合してください。',companion:'関連する場面と照合する'},
  en:{figure:'Check the illustration',note:'Schematic learning figure. Do not infer dimensions, quantities, times or safety limits from its proportions. Check the conditions in the text.',companion:'Compare a related situation'},
@@ -169,9 +172,11 @@ export function RestaurantDailyFigure({lesson,language,showTranslation}:{lesson:
  const b=bindingFor(lesson),{colors}=useStudyAppearance();if(!b)return null;
  const royal=restaurantRoyalDailyAsset(lesson),marks=royal?[]:restaurantDailyDrawing(b.figureId.replace('rst-daily-',''));if(!royal&&!marks.length)return null;
  const ui=labels[language]||labels.ja,t=restaurantLessonTranslation(lesson,language);
+ const caption=royal?teachingCaptionFor(lesson):undefined,targetCaption=caption?.translations[language];
  return <View testID={`restaurant-daily-figure-${lesson.id}`} style={[s.figure,{borderColor:colors.border}]}>
   <RestaurantReading heading text={labels.ja.figure} segments={figureHeading}/>{showTranslation&&language!=='ja'&&<TranslationText>{ui.figure}</TranslationText>}
   {royal?<Image testID={`restaurant-royal-figure-${lesson.id}`} source={royal.source} accessibilityLabel={showTranslation&&t?t.objective:lesson.objectiveJa} resizeMode="cover" style={[s.royalCanvas,{aspectRatio:royal.aspectRatio}]}/>:(<View accessible accessibilityRole="image" accessibilityLabel={showTranslation&&t?t.objective:lesson.objectiveJa} style={s.canvas}>{marks.map((m,i)=><View key={i} pointerEvents="none" style={{position:'absolute',left:pct(m.x),top:pct(m.y),width:pct(m.w),height:pct(m.h),backgroundColor:m.fill,borderRadius:m.radius??0,borderWidth:m.stroke?1:0,borderColor:m.stroke,transform:m.rotate?[{rotate:`${m.rotate}deg`}]:undefined} as ViewStyle}/>)}</View>)}
+  {caption&&<View style={{gap:8}}><RestaurantReading text={caption.textJa} segments={caption.furigana} terms={lesson.terms}/>{showTranslation&&language!=='ja'&&targetCaption?.sourceHash===caption.sourceHash&&<TranslationText>{targetCaption.text}</TranslationText>}</View>}
   <RestaurantReading text={lesson.objectiveJa} segments={lesson.furigana?.objective} terms={lesson.terms}/>{showTranslation&&t&&<TranslationText>{t.objective}</TranslationText>}
   <RestaurantReading text={labels.ja.note} segments={noteSegments}/>{showTranslation&&language!=='ja'&&<TranslationText>{ui.note}</TranslationText>}
  </View>;
