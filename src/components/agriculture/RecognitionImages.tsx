@@ -214,16 +214,20 @@ export function hasRecognitionImage(lessonId:string,lessonSourceHash:string,asse
  return images.some(item=>item.assetKey===assetKey&&matchesLesson(item,lessonId,lessonSourceHash,level));
 }
 
-type ImageLocale={title:string;alt:string;observation:string;limitKey:string};
-type LocaleEntry={sourceJapanese:{title:string;alt:string;observation:string;limit:string};assetSha256:string;lessonSourceHashes:Record<string,string>;lessonRevisions:Record<string,string>;locales:Record<string,ImageLocale>};
+type ImageLocale={title:string;alt:string;observation:string;limitKey:string;labels?:string[]};
+type LocaleEntry={sourceJapanese:{title:string;alt:string;observation:string;limit:string};assetSha256:string;lessonSourceHashes:Record<string,string>;lessonRevisions:Record<string,string>;sourceLabelsJa?:string[];locales:Record<string,ImageLocale>};
 const localeRegistry=localeData as {schemaVersion:number;studyOnly:boolean;entries:Record<string,LocaleEntry>;limits:Record<string,{sourceJapanese:string;locales:Record<string,string>}>};
 export function recognitionImageTranslation(item:RecognitionImage,lessonId:string,lessonSourceHash:string,lessonRevision:string|undefined,language:string){
  const entry=localeRegistry.entries[item.id],t=entry?.locales[language],limit=t?localeRegistry.limits[t.limitKey]:null;
+ const needsLabelMapping=!!(item.labelsJa?.length||entry?.sourceLabelsJa?.length||t?.labels?.length);
+ const labelsMatch=!needsLabelMapping||(Array.isArray(item.labelsJa)&&Array.isArray(entry?.sourceLabelsJa)&&Array.isArray(t?.labels)
+  &&entry.sourceLabelsJa.length===item.labelsJa.length&&t.labels.length===item.labelsJa.length
+  &&entry.sourceLabelsJa.every((label,i)=>label===item.labelsJa?.[i])&&t.labels.every(label=>typeof label==='string'&&!!label.trim()));
  if(localeRegistry.schemaVersion!==1||!localeRegistry.studyOnly||!entry||!t||!limit||!lessonRevision
   ||item.lessonSourceHashes[lessonId]!==lessonSourceHash||entry.assetSha256!==item.assetSha256||entry.lessonSourceHashes[lessonId]!==lessonSourceHash||entry.lessonRevisions[lessonId]!==lessonRevision
   ||entry.sourceJapanese.title!==item.titleJa||entry.sourceJapanese.alt!==item.altJa||entry.sourceJapanese.observation!==item.observationJa||entry.sourceJapanese.limit!==item.limitJa
-  ||limit.sourceJapanese!==item.limitJa||!t.title||!t.alt||!t.observation||!limit.locales[language])return null;
- return {title:t.title,alt:t.alt,observation:t.observation,limit:limit.locales[language]};
+  ||limit.sourceJapanese!==item.limitJa||!t.title||!t.alt||!t.observation||!limit.locales[language]||!labelsMatch)return null;
+ return {title:t.title,alt:t.alt,observation:t.observation,limit:limit.locales[language],...(t.labels?{labels:t.labels}:{})};
 }
 
 export function RecognitionImages({lessonId,lessonSourceHash,colors,level,language='ja',showTranslation=false,lessonRevision}:{lessonId:string;lessonSourceHash:string;colors:Colors;level?:string;language?:string;showTranslation?:boolean;lessonRevision?:string}) {
@@ -232,7 +236,7 @@ export function RecognitionImages({lessonId,lessonSourceHash,colors,level,langua
   <Text style={[s.title,{color:colors.translationText}]}>{item.titleJa}</Text>
   {!!t&&<Text testID={`${item.id}-localized-title`} style={[s.title,{color:colors.translationText}]}>{t.title}</Text>}
   {item.id==='agr-f40-general-flower-legend-reader'?<FlowerLegendFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} colors={colors}/>:<ZoomableFigure source={assets[item.assetKey]} width={item.width} height={item.height} altJa={t?.alt||item.altJa} testID={item.id} colors={colors} allowExpandedView={item.allowExpandedView}/>}
-  {!!item.labelsJa?.length&&<View style={{gap:4}}>{item.labelsJa.map((label,index)=><Text key={`${index}-${label}`} style={[s.body,{color:colors.translationText}]}>{label}</Text>)}</View>}
+  {!!item.labelsJa?.length&&<View style={{gap:4}}>{item.labelsJa.map((label,index)=><Text key={`${index}-${label}`} style={[s.body,{color:colors.translationText}]}>{label}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`}>{'\n'}{t?.labels?.[index]}</Text>}</Text>)}</View>}
   <Text style={[s.label,{color:colors.translationText}]}>観察の手掛かり</Text>
   <Text style={[s.body,{color:colors.translationText}]}>{item.observationJa}</Text>
   {!!t&&<Text testID={`${item.id}-localized-observation`} style={[s.body,{color:colors.translationText}]}>{t.observation}</Text>}

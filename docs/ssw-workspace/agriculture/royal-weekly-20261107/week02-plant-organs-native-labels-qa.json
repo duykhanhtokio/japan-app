@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "unit": "week02-source-bound-plant-organs-native-paired-seven-labels",
+  "baselineCommit": "ebf8e97e3f94b787c45042752ef60a52dae44fb1",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "freshPrewriteCheck": {
+    "localeBlob": "b5162af522c041a89ce545119e4246108497ee19",
+    "rendererBlob": "2a6b807baee08dfbe772986da8542762a3203ff4",
+    "targetLocaleRowMissing": true,
+    "all26ExistingCoreLocaleRowsPreserved": true
+  },
+  "sourceReview": {
+    "documents": [
+      {
+        "documentId": "AGR-S1",
+        "sha256": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+        "pdfPage": 8,
+        "printedPage": 2
+      },
+      {
+        "documentId": "AGR-S2",
+        "sha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+        "pdfPage": 9,
+        "printedPage": 7
+      }
+    ],
+    "actualSourcePagePixelsOpened": true,
+    "currentLesson": "agr-organs",
+    "lessonSourceHash": "b6860139509b2eb4052e64097e6f3baee60de8e838b1a69b380637c53edd05a9",
+    "currentCanonicalParagraphsRead": true,
+    "actualExistingImagePixelsOpened": true,
+    "imageSha256": "1a0768ed64dc6c0bc33751f030c08b534d89088ebe26a40a2f1ee98cc6128c3a",
+    "imageDimensions": [
+      1000,
+      1250
+    ],
+    "independentSelfReview": "Source labels establish main-axis terminal bud, leaf-axil lateral bud, leaf, stem, root and flower; source text independently identifies fruit as a reproductive organ. Existing original controlled image adds a fruit example and seven explicit leaders. Each leader endpoint, current JA label order, exact alt/observation/limit and current lesson were compared. No crop-specific shape, universal fruit position or cultivation/safety inference introduced.",
+    "noSourcePixelsRedistributed": true
+  },
+  "change": {
+    "localeRowsAdded": 1,
+    "languages": 12,
+    "sourceBoundNativeLabels": 84,
+    "captionFieldsPerLanguage": [
+      "title",
+      "alt",
+      "observation",
+      "limit"
+    ],
+    "sourceLabelOrder": [
+      "頂芽",
+      "側芽",
+      "葉",
+      "茎",
+      "根",
+      "花",
+      "果実"
+    ],
+    "rendering": "Japanese labels stay visible; when translation is enabled and source/asset/lesson/revision and7-label snapshots agree, native translated labels appear paired below the unchanged controlled Japanese image. Embedded Japanese pixels and all leader geometry remain unchanged.",
+    "guards": "Reject missing/reordered Japanese label snapshot, missing/blank translated labels, stale canonical figure text, changed imageSHA, stale/missing lesson source or revision, or missing matching limit. Other26label-free locale row output remains unchanged.",
+    "newBitmapAssets": 0
+  },
+  "translationSelfReview": "Each of12target rows authored directly against canonicalJapanese. Reviewed above/belowground, main-axis tip versus leafaxil,7labelcorrespondence, negative generalization/cultivation limits and source identity. AIselfreview only; not native/domain certification.",
+  "beforeSha256": {
+    "src/components/agriculture/RecognitionImages.tsx": "5cc62cf5497b1b52e46fd2d07c0b8ca86e619f32e782b0fc86796eb57d35eecf",
+    "src/data/agriculture/recognition-image-locales.json": "c573a1ea2b0034e51aa5058d11b6954b5afe94c268955c5fa1bb1271e0d88beb",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/full-existing-week-image-queue.json": "095a5ef8b4c0b8b04570f6f894ecf685c034c3c69bb5ab97a10a6ca35436ff18"
+  },
+  "afterSha256": {
+    "src/components/agriculture/RecognitionImages.tsx": "ae4a5dc7efed994f99d3bceffae9f2739e6c79de0e347ce45b8230e30bb05a67",
+    "src/data/agriculture/recognition-image-locales.json": "8748e5c54abb2ae9d6d653768aeed15bc5d6980e53c45901305068eb8aadccb7",
+    "scripts/agriculture/check-recognition-locale-batch.cjs": "5337bb2b933a94e8655ebe741e41650fcd984d1275a2020df16b3fbda8ed0ed0",
+    "scripts/agriculture/check-recognition-locale-types.cjs": "e73f2d6543a031975a01427af9e1c8d303817df26d1a44b260c040b2d8b9a6c2",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/full-existing-week-image-queue.json": "856d988a8fb74f28171ecf15cbc338b77089a9171f180844ca14c7fef7c5060c"
+  },
+  "validation": {
+    "actualComponentCommand": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/agriculture/check-recognition-locale-batch.cjs agr-recognition-plant-organ-positions-v1",
+    "actualComponentResult": "PASS2source-bound lesson/course contexts;24actual12locale renders, each with7nativepairedlabels;58stale/hidden/dependency/limit/labelcount/order/blank rejection checks. CanonicalJapanese and actualunchangedWebP retained.",
+    "focusedTypeCommand": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/agriculture/check-recognition-locale-types.cjs",
+    "focusedTypeResult": "PASSstrictTypeScript for actualRecognitionImages+ZoomableFigure+FlowerLegendFigure and real3JSONinputs, using minimalReact/RNambient declarations. Not an entireapp typecheck.",
+    "coreRegression": "Actual production selectors26records/312pairs and52stale source/revision rejects remainPASS.",
+    "assetIntegrity": "ExistingWebP fullSHA and Pillow1000x1250decode PASS; no redraw,replacement or sourceimagereproduction.",
+    "adapters": "ActualRNW/ReactDOMServer,actualcurrentmetadata+selectedWebP bytes; unselectedrasters are declaredURIadapters and uninvokedFlowerLegend module isolated. No browser/device/nativefont/interaction acceptance.",
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  },
+  "preserved": "Remove onlynewplantlocale+newlimit and localeJSON deep-equals exactcurrentexternal26row file. CanonicalJapanese/imagebytes/IDs/sourcehashes/lessonrevisions/questions/learnerstate unchanged. Study-only translations never enter exam image renderer; exam asset map/bytes/masks unchanged.",
+  "wholeWeekComplete": false,
+  "wholeSectorComplete": false,
+  "wholeSourceKnowledgeCovered": false,
+  "releaseReady": false,
+  "nextAction": "Persist+verify, then source-bound12locale support for already-generated lotus atlas; freshcheck concurrentrows beforeedit and no extraimagegeneration withoutactualmissingneed."
+}
