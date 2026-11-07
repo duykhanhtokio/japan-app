@@ -33,7 +33,8 @@ for(const f of selected){
 const cache=new Map();
 function load(name){
  if(cache.has(name))return cache.get(name).exports;
- const filename=path.join(root,'src/components/agriculture',name+'.tsx');
+ const tsx=path.join(root,'src/components/agriculture',name+'.tsx');
+ const filename=fs.existsSync(tsx)?tsx:path.join(root,'src/components/agriculture',name+'.ts');
  const code=transformSync(fs.readFileSync(filename,'utf8'),{filename,babelrc:false,configFile:false,plugins:[['@babel/plugin-transform-typescript',{isTSX:true,allExtensions:true}],['@babel/plugin-transform-react-jsx',{runtime:'automatic'}],'@babel/plugin-transform-modules-commonjs']}).code;
  const loaded=new Module(filename,module);loaded.filename=filename;loaded.paths=Module._nodeModulePaths(path.dirname(filename));cache.set(name,loaded);const original=loaded.require.bind(loaded);
  loaded.require=id=>{
@@ -43,6 +44,10 @@ function load(name){
   if(id==='@/data/agriculture/image-readings.json')return JSON.parse(read('src/data/agriculture/image-readings.json'));
   if(id==='./AgricultureImageRuby')return load('AgricultureImageRuby');
   if(id==='./ZoomableFigure')return load('ZoomableFigure');
+  if(id==='./SprayerPartSupport')return load('SprayerPartSupport');
+  if(id==='./FigureSourceMarks')return load('FigureSourceMarks');
+  if(id==='@/data/agriculture/sprayer-part-support.json')return JSON.parse(read('src/data/agriculture/sprayer-part-support.json'));
+  if(id==='@/data/agriculture/lessons.ja.json')return JSON.parse(read('src/data/agriculture/lessons.ja.json'));
   if(id==='./CropCalendarFigure')return {};// Not used by standalone soil/irrigation plates.
   if(id==='./FlowerLegendFigure')return {};// Not used by these standalone appearance plates.
   if(/\.(png|webp)$/.test(id))return sources.get(path.basename(id))||{uri:'asset://'+id};
@@ -62,6 +67,7 @@ for(const f of selected){
    for(const language of languages){
     const t=recognitionImageTranslation(f,lid,l.sourceHash,l.revision,language);assert(t,`${f.id}/${lid}/${language}`);
     const html=render(f,l,level,language);
+    assert(html.includes(sources.get(path.basename(f.assetPath)).uri),`exact registered pixels missing from actual Image ${f.id}`);
     assert(html.includes(`data-testid="${f.id}-localized-title"`));
     for(const key of ['title','alt','observation','limit'])assert(html.includes(escape(t[key])),`missing actual ${key} ${f.id}/${language}`);
     assert(html.includes(escape(f.titleJa))&&html.includes(escape(f.observationJa))&&html.includes(escape(f.limitJa)),'canonical Japanese must remain visible');
