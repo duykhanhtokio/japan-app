@@ -11,7 +11,7 @@ const labels:Record<string,string[]>={
     "Hypothetical learning diagram; not an actual facility plan or a guarantee of safety."
   ],
   "vi": [
-    "Phòng khách",
+    "Phòng lưu trú",
     "Cầu thang",
     "Sơ đồ giả định để học; không phải sơ đồ cơ sở thực tế hay bảo đảm an toàn."
   ],

@@ -1,0 +1,27 @@
+{
+  "baseCommit": "4a4803b03ad2029e83b60b02b92bd378192b8877",
+  "beforeBlobSha": {
+    "src/data/hospitality/route-guide-labels.ts": "b4c631c0835278374f7e109b2d6d384117dcbec0",
+    "docs/ssw-workspace/hospitality/safety07-vietnamese-origin-label-20261107.json": null
+  },
+  "issue": "Vietnamese safety07 origin label used Phòng khách (living room) for Japanese 客室 / English Guest room.",
+  "change": {
+    "locale": "vi",
+    "before": "Phòng khách",
+    "after": "Phòng lưu trú"
+  },
+  "evidence": [
+    "Current safety07 source section hotel-safety-07-s05 identifies the origin as 客室.",
+    "Existing front03 practice-floorplan guestRoom Vietnamese label is Phòng lưu trú.",
+    "Actual HotelTwoRouteGuide uses route label index zero for origin and accessibility description."
+  ],
+  "validation": [
+    "Actual safety07 Vietnamese SSR contains Phòng lưu trú and excludes Phòng khách.",
+    "All other labels, locale entries, stairs and hypothetical-plan caveat unchanged.",
+    "Active native contract:208 locale renders,792 rejection cases,11 actual caller probes/22 invalid signatures."
+  ],
+  "limitations": [
+    "Narrow terminology correction, not native-language certification across all labels.",
+    "No device/browser or source-domain acceptance claimed."
+  ]
+}
