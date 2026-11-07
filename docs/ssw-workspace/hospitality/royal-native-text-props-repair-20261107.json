@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "reviewedBaseline": "4d49d9dcc7b358884effe387008c738c42c55863",
+  "scope": "Hospitality native guide text only; existing 38 weekly illustrations retained.",
+  "groups": [
+    {
+      "id": "preserve-accessibility-props",
+      "change": "Forward existing accessibility settings from HotelGuideText through ruby wrapper to the accessible root; retain explicit custom label/hint/role/language/visibility."
+    },
+    {
+      "id": "preserve-selection",
+      "change": "Preserve selectable=false and selectable=true on visible Japanese text when ruby is enabled; legacy reader defaults stay selectable."
+    },
+    {
+      "id": "prevent-ruby-duplicate-announcements",
+      "change": "Exclude ruby annotation and glyph children from separate accessibility focus while the root exposes the original Japanese string."
+    }
+  ],
+  "checks": {
+    "method": "Babel-transpiled actual TSX components and actual source-bound reading data, React server render with a React Native primitive prop capture shim.",
+    "modes": [
+      "ruby enabled",
+      "ruby disabled",
+      "Vietnamese context",
+      "stale revision"
+    ],
+    "accessibilityPropsChecked": [
+      "accessible",
+      "accessibilityLabel",
+      "accessibilityHint",
+      "accessibilityRole",
+      "accessibilityLanguage",
+      "accessibilityElementsHidden",
+      "importantForAccessibility"
+    ],
+    "selectableFalseAndLegacyTrue": true,
+    "explicitRootPropsPreserved": true,
+    "rubyAnnotationAndGlyphChildrenAccessibleFalse": true,
+    "sourceContentRevisionsUnchanged": true,
+    "gitDiffCheck": true
+  },
+  "files": [
+    {
+      "path": "src/components/hospitality/HotelJapaneseText.tsx",
+      "beforeSha256": "d11a0e9fc39cb93663d8c6c217b5fc5d4fbbe7e20a9730756a1f987b0df70a32",
+      "afterSha256": "59353a087f77e6aedc95b9615503a1998647f5a3e01244be93f4be901a81f2ca"
+    },
+    {
+      "path": "src/components/hospitality/HotelGuideText.tsx",
+      "beforeSha256": "c0a0f0ca7f5b46367ee69369062d882a53f0195bf31fba5abbb41fa62c5e8fc7",
+      "afterSha256": "83f5a4e309713d24b2a391aa1c57dcf580e02988ef513f6349e251bcf9e77476"
+    }
+  ],
+  "acceptance": {
+    "physicalDeviceTested": false,
+    "screenReaderTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "wholeSectorComplete": false
+  },
+  "remaining": "Weekly image queue has zero remaining unique targets at inspected baseline; actual screen reader/device verification and source acceptance gates remain open."
+}
