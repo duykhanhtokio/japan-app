@@ -82,6 +82,7 @@ async function checkQualifications() {
   const savedKeys = [exams[0].storageKey, `${exams[1].storageKey}:attempt-history:v1`];
   const context = {
     qualificationMetadata: exams,
+    learningStorageKeys: async () => savedKeys, loadSubmittedArchive: async () => [],
     AsyncStorage: { getAllKeys: async () => savedKeys },
     loadLearningEconomy: async () => ledger,
     loadJlptTrialSession: async key => { calls.push(key); return { submitted: true, result: { correct: 8, total: 10 } }; },

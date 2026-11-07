@@ -1,3 +1,4 @@
+import { learningStorageKey } from './learning-storage-scope';
 import { archiveSubmittedSession } from './jlpt-submitted-archive';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { N1_2012_07_SESSION_KEY } from '@/data/jlpt-official/n1-2012-07-trial';
@@ -19,9 +20,9 @@ export type N1TrialSession = {
   updatedAt: string;
 };
 
-export async function loadJlptTrialSession(storageKey: string): Promise<N1TrialSession | null> {
+export async function loadJlptTrialSession(storageKey: string, physicalKey?: string): Promise<N1TrialSession | null> {
   try {
-    const raw = await AsyncStorage.getItem(storageKey);
+    const raw = await AsyncStorage.getItem(physicalKey ?? await learningStorageKey(storageKey));
     if (!raw) return null;
     const value = JSON.parse(raw) as Partial<Omit<N1TrialSession, 'version'>> & { version?: number };
     if (![1, 2, 3, 4].includes(value.version ?? 0) || !value.answers || (value.mode !== 'exam' && value.mode !== 'practice')) {
@@ -57,15 +58,17 @@ export async function loadJlptTrialSession(storageKey: string): Promise<N1TrialS
 }
 
 export async function saveJlptTrialSession(storageKey: string, session: Omit<N1TrialSession, 'version' | 'updatedAt'>) {
+  const physicalKey = await learningStorageKey(storageKey);
   const value: N1TrialSession = { ...session, version: 4, updatedAt: new Date().toISOString() };
-  await AsyncStorage.setItem(storageKey, JSON.stringify(value));
-  await archiveSubmittedSession(storageKey, value);
+  await AsyncStorage.setItem(physicalKey, JSON.stringify(value));
+  await archiveSubmittedSession(storageKey, value, physicalKey);
 }
 
 export async function clearJlptTrialSession(storageKey: string) {
-  const previous = await loadJlptTrialSession(storageKey);
-  if (previous?.submitted) await archiveSubmittedSession(storageKey, previous);
-  await AsyncStorage.removeItem(storageKey);
+  const physicalKey = await learningStorageKey(storageKey);
+  const previous = await loadJlptTrialSession(storageKey, physicalKey);
+  if (previous?.submitted) await archiveSubmittedSession(storageKey, previous, physicalKey);
+  await AsyncStorage.removeItem(physicalKey);
 }
 
 export const loadN1TrialSession = () => loadJlptTrialSession(N1_2012_07_SESSION_KEY);

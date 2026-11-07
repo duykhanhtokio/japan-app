@@ -13,6 +13,7 @@ const code = stripTypeScriptTypes(source).replace(/^import[^;]+;\s*/gm, '').repl
 const keys = [], histories = new Map(), calls = [];
 const context = {
     qualificationMetadata: metadata, RANKS: ranks,
+    learningStorageKeys: async () => keys, loadSubmittedArchive: async () => [],
     AsyncStorage: { getAllKeys: async () => keys },
     loadJlptAttemptSummary: async key => { calls.push(key); return histories.get(key) ?? { attempts: 0 }; },
 };

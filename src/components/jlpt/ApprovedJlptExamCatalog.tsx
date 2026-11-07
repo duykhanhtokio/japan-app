@@ -1,3 +1,4 @@
+import { subscribeLearningIdentity, learningStoragePrefix } from '@/services/learning-storage-scope';
 import JlptAccessNotice from './JlptAccessNotice';
 import { learningAction, learningTransaction, learningServerNow } from '@/services/daily-learning-client';
 import { loadSubmittedArchive } from '@/services/jlpt-submitted-archive';
@@ -31,6 +32,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
   async function refreshAccess(){try{setAccessSnapshot(await learningAction('account'));setAccessMessage('');}catch(error){setAccessMessage((error as Error).message);}}
   const [selected, setSelected] = useState<Choice | null>(null);
   useEffect(()=>{if(!selected)void refreshAccess();},[selected]);
+  useEffect(()=>subscribeLearningIdentity(()=>{setSelected(null);setHistory(null);setAccessSnapshot(null);void refreshAccess();}),[]);
   const [summaries, setSummaries] = useState<Record<string, JlptAttemptSummary>>({});
   const activeExamExit = useRef<(() => void) | null>(null);
   const choices = useMemo<Choice[]>(() => {
@@ -68,11 +70,13 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
   }), [navigation, selected]);
 
   async function openHistory(choice:Choice){
+    const scope=await learningStoragePrefix();
     const current=await loadJlptTrialSession(choice.exam.storageKey);
     const local=await loadSubmittedArchive(choice.exam.storageKey);
     const cloud=Object.values(accessSnapshot?.state.archives?.[choice.exam.id]??{});
     const sessions=[...new Map([...cloud,...local,...(current?.submitted?[current]:[])].filter(s=>s.submitted&&s.result&&s.submittedAt).map(s=>[s.submittedAt,s])).values()].sort((a,b)=>String(b.submittedAt).localeCompare(String(a.submittedAt)));
     if(!sessions.length){Alert.alert('JLPT','Chưa có bài đã nộp được lưu cho đề này.');return;}
+    if(scope!==await learningStoragePrefix())return;
     setHistory({choice,sessions});
   }
   async function showChoice(choice:Choice,session:N1TrialSession|null,reviewOnly=false){
@@ -82,6 +86,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
   async function openChoice(choice:Choice){
     if(opening.current)return;opening.current=true;
     try{
+      const scope=await learningStoragePrefix();
       const session=await loadJlptTrialSession(choice.exam.storageKey);
       const archives=await loadSubmittedArchive(choice.exam.storageKey);
       const cloud=accessSnapshot?.state.archives?.[choice.exam.id];
@@ -89,6 +94,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
       let allowed=false;
       try { const result=await learningAction('access',{examId:choice.exam.id,runId:session?.submitted?undefined:session?.accessRunId});setAccessSnapshot(result);allowed=!!result.result.allowed; }
       catch(error){setAccessMessage((error as Error).message);}
+      if(scope!==await learningStoragePrefix())return;
       if(allowed){await showChoice(choice,session);return;}
       const original=/^n[1-5]-\d{4}-\d{2}-exam-\d+$/.test(choice.exam.id);
       Alert.alert('JLPT',original?'Đề gốc cần 1 vé vàng để mở trong 7 ngày hoặc Premium.':'Đề app tự soạn thuộc Premium 3.000¥/tháng.',[

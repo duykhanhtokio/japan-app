@@ -1,3 +1,4 @@
+import { subscribeLearningIdentity } from '@/services/learning-storage-scope';
 import RewardNotice from '@/daily-learning/RewardNotice';
 import { useCallback, useEffect, useState } from 'react';
 import { useFocusEffect, router } from 'expo-router';
@@ -22,6 +23,7 @@ export default function TasksScreen() {
             try{const local=await import('@/daily-learning/practice');const value=await local.loadPractice(language);setPractice(value.challenge);setAttempts(value.attempts);}catch(practiceError){setStatus((practiceError as Error).message);}
         }finally{setLoading(false);}
     },[language]);
+    useEffect(()=>subscribeLearningIdentity(()=>{setSnapshot(null);setPractice(null);setAttempts([]);setPlaying(false);setReward(null);void refresh();}),[refresh]);
     useFocusEffect(useCallback(()=>{void refresh();},[refresh]));
     useEffect(()=>{const sub=AppState.addEventListener('change',state=>{if(state==='active')void refresh();});return()=>sub.remove();},[refresh]);
     useEffect(()=>{if(!snapshot)return;const now=learningServerNow()??snapshot.serverNow;const next=Math.floor((now+9*3600000)/86400000+1)*86400000-9*3600000;const timer=setTimeout(()=>{void refresh();},Math.max(1,next-now));return()=>clearTimeout(timer);},[snapshot?.serverNow,refresh]);

@@ -1,11 +1,14 @@
+import qualificationMetadata from '@/data/jlpt-qualification-metadata.json';
+import { archiveSubmittedSession } from './jlpt-submitted-archive';
+import { setLearningIdentityProvider, resolveLearningIdentity, type LearningIdentity } from './learning-storage-scope';
+export type { LearningIdentity } from './learning-storage-scope';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { Level, LearningSnapshot, Challenge, Match } from '@/daily-learning/types';
 
-export type LearningIdentity = {userId:string;token:string};
 let identityGeneration=0;
-let identityProvider: (()=>Promise<LearningIdentity|null>) | undefined;
+
 /** Trusted login integration point. Never populate with email, local profile IDs or a shared secret. */
-export function configureLearningIdentityProvider(provider:()=>Promise<LearningIdentity|null>) { identityGeneration+=1; identityProvider=provider; clock=null; pendingTransactions.clear(); }
+export function configureLearningIdentityProvider(provider:()=>Promise<LearningIdentity|null>) { identityGeneration+=1; setLearningIdentityProvider(provider); clock=null; pendingTransactions.clear(); }
 export const learningOperationId = () => `learning-${Date.now()}-${Math.random().toString(36).slice(2)}-${Math.random().toString(36).slice(2)}`;
 let clock: {server:number;monotonic:number}|null=null;
 export function learningServerNow() { return clock ? clock.server + performance.now()-clock.monotonic : null; }
@@ -13,7 +16,7 @@ export async function learningAction(action:string,data:Record<string,unknown>={
     const endpoint=process.env.EXPO_PUBLIC_ECONOMY_API_URL;
     if(!endpoint || !/^https:\/\//.test(endpoint)) throw Error('Máy chủ nhiệm vụ chưa được cấu hình.');
     const generation=identityGeneration;
-    const identity=await identityProvider?.();
+    const identity=await resolveLearningIdentity();
     if(expectedUserId&&identity?.userId!==expectedUserId)throw Error('Tài khoản đã thay đổi. Vui lòng thử lại.');
     if(!identity?.userId || !identity.token) throw Error('Cần kết nối đăng nhập bảo mật để đồng bộ nhiệm vụ và quyền thi.');
     const raw=await AsyncStorage.getItem('@japan_app_user_profile');
@@ -28,20 +31,26 @@ export async function learningAction(action:string,data:Record<string,unknown>={
         const value=await response.json();
         if(!response.ok) throw Error(value.error??`Learning API ${response.status}`);
         if(!Number.isFinite(value.serverNow)||!value.state?.freeExamId) throw Error('Phản hồi máy chủ không hợp lệ.');
-        const currentIdentity=await identityProvider?.();
+        const currentIdentity=await resolveLearningIdentity();
         if(generation!==identityGeneration||currentIdentity?.userId!==identity.userId)throw Error('Tài khoản đã thay đổi. Vui lòng đồng bộ lại.');
         clock={server:value.serverNow,monotonic:performance.now()};
+        if(action==='account') {
+            for(const exam of qualificationMetadata) for(const session of Object.values(value.state.archives?.[exam.id]??{})) {
+                await archiveSubmittedSession(exam.storageKey,session as import('./jlpt-trial-session-storage').N1TrialSession,'@learning-user:'+encodeURIComponent(identity.userId)+':'+exam.storageKey);
+            }
+        }
+        if(generation!==identityGeneration || (await resolveLearningIdentity())?.userId!==identity.userId)throw Error('Tài khoản đã thay đổi. Vui lòng đồng bộ lại.');
         await AsyncStorage.setItem('@learning-snapshot:'+identity.userId,JSON.stringify(value));
         return value as LearningSnapshot;
     } finally {clearTimeout(timeout);}
 }
 export async function savePendingMatch(challenge:Challenge,matches:Match[]) {
-    const identity=await identityProvider?.();
+    const identity=await resolveLearningIdentity();
     if(!identity) return;
     await AsyncStorage.setItem('@learning-pending:'+identity.userId,JSON.stringify({day:challenge.day,matches}));
 }
 export async function pendingMatches(challenge:Challenge):Promise<Match[]> {
-    const identity=await identityProvider?.();if(!identity)return [];
+    const identity=await resolveLearningIdentity();if(!identity)return [];
     const raw=await AsyncStorage.getItem('@learning-pending:'+identity.userId);if(!raw)return [];
     try {const p=JSON.parse(raw);return p.day===challenge.day&&Array.isArray(p.matches)?p.matches:[];}catch{return [];}
 }
@@ -52,7 +61,7 @@ export function learningTransaction(action:'exchange'|'unlock',data:Record<strin
     const intent=action+':'+String(data.examId??'');
     const pending=pendingTransactions.get(intent);if(pending)return pending;
     const request=(async()=>{
-        const identity=await identityProvider?.();if(!identity)throw Error('Cần đăng nhập bảo mật.');
+        const identity=await resolveLearningIdentity();if(!identity)throw Error('Cần đăng nhập bảo mật.');
         const key='@learning-operation:'+identity.userId+':'+intent;
         const operationId=await AsyncStorage.getItem(key)??learningOperationId();
         await AsyncStorage.setItem(key,operationId);
