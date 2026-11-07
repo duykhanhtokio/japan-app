@@ -1,3 +1,4 @@
+import week07 from '@/data/restaurant/royal-week07-technical.json';
 import {RoyalRestaurantProcessingArtwork,restaurantHasProcessingArtwork} from './RoyalRestaurantProcessingArtwork';
 import fishMain from '@/data/restaurant/royal-fish-parts.json';
 import dailyMain from '@/data/restaurant/daily-learning.json';
@@ -16,6 +17,7 @@ type Form=Label&{descriptionJa:string;descriptionSegments:Segment[];descriptionT
 type Guide={id:string;lessonIds:string[];titleJa:string;titleSegments:Segment[];titleTranslations:Record<string,string>;noteJa:string;noteSegments:Segment[];noteTranslations:Record<string,string>;labels?:Point[];forms?:Form[];results?:Label[];instruments?:Label[]};
 const guides=guideData.guides as Guide[];
 const nativeFishMainActive=dailyMain.bindings.some(b=>b.lessonId===fishMain.lessonId&&b.sourceHash===fishMain.lessonSourceHash)&&canonicalFishLessons.lessons.some(l=>l.id===fishMain.lessonId&&l.sourceHash===fishMain.lessonSourceHash);
+const royalMeasurementActive=()=>JSON.stringify(guideData.guides.find(g=>g.id==='measurement'))===JSON.stringify(week07.measurementGuideSnapshot)&&canonicalFishLessons.lessons.some(l=>l.id===week07.measurementLessonId&&l.sourceHash===week07.measurementLessonSourceHash);
 const royalAnatomy=JSON.stringify(guideData.guides.find(g=>g.id==='anatomy'))===JSON.stringify(royalWeek04.anatomyGuide);
 const wholeFish=require('../../../assets/restaurant/royal-weekly-20261107/week03/fish-body-objects.webp');
 const pct=(n:number)=>`${n}%` as `${number}%`;
@@ -53,10 +55,11 @@ function Processing({forms,results,language,translated}:{forms:Form[];results:La
  </>;
 }
 function Measurement({instruments,language,translated}:{instruments:Label[];language:string;translated:boolean}){
+ const royalMeasurement=royalMeasurementActive();
  return <View style={s.grid}>{instruments.map((item,i)=><View key={item.id} testID={`restaurant-measure-${item.id}`} style={s.formCard}>
-  <View accessible accessibilityLabel={i===0?'中心温度計の先端が食品の中心に入る模式図。':'赤外線放射温度計が食品の表面を測る模式図。'} style={[s.smallCanvas,{height:150}]}>
-   <View style={s.food}/>
-   {i===0?<><View style={s.probeHandle}><View style={s.blankDisplay}/></View><View style={s.probe}/><View style={[s.measurePoint,{top:'68%'}]}/></>:<><View style={s.infraredHead}><View style={s.blankDisplay}/></View><View style={s.infraredGrip}/><View style={s.beam}/><View style={[s.measurePoint,{top:'47%'}]}/></>}
+  <View accessible accessibilityLabel={royalMeasurement?(translated?(week07.measurementAlts as Record<string,string[]>)[language]?.[i]:undefined)??week07.measurementAlts.ja[i]:i===0?'中心温度計の先端が食品の中心に入る模式図。':'赤外線放射温度計が食品の表面を測る模式図。'} style={[s.smallCanvas,{height:150}]}>
+   <View testID="restaurant-measure-food" style={s.food}/>
+   {i===0?<><View style={[s.probeHandle,royalMeasurement&&{left:'43.5%'}]}><View style={s.blankDisplay}/></View><View testID="restaurant-measure-probe-line" style={[s.probe,royalMeasurement&&{left:'50.5%',height:'36%',transform:[{translateX:-1.5}]}]}/><View testID="restaurant-measure-core-point" style={[s.measurePoint,royalMeasurement?{left:'50.5%',top:'69%',transform:[{translateX:-5},{translateY:-5}]}:{top:'68%'}]}/></>:<><View style={s.infraredHead}><View style={s.blankDisplay}/></View><View style={s.infraredGrip}/><View testID="restaurant-measure-infrared-line" style={[s.beam,royalMeasurement&&{left:'50.5%',height:'24%',transform:[{translateX:-.5}]}]}/><View testID="restaurant-measure-surface-point" style={[s.measurePoint,royalMeasurement?{left:'50.5%',top:'48%',transform:[{translateX:-5},{translateY:-5}]}:{top:'47%'}]}/></>}
   </View>
   <LabelText item={item} language={language} translated={translated}/>
  </View>)}</View>;

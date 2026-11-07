@@ -110,6 +110,15 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-1-cook-16':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-16-split-load-trolley-assistance.webp'),aspectRatio:1.5},
+ 'rst-1-cook-17':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-17-blade-enclosed-preclean-briefing.webp'),aspectRatio:1.5},
+ 'rst-1-cook-18':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-18-chipped-bowl-segregation.webp'),aspectRatio:1.5},
+ 'rst-1-cook-19':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-19-fire-exit-role-precheck.webp'),aspectRatio:1.5},
+ 'rst-2-ops-07':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-07-truthful-attendance-record-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-08':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-08-new-staff-onboarding-preparation.webp'),aspectRatio:1.5},
+ 'rst-1-cook-15':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-cook-06-scale-container-tare-coaching.webp'),aspectRatio:1.5},
+ 'rst-2-ops-09':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-1-cook-14-utensil-task-matching.webp'),aspectRatio:1.5},
+ 'rst-2-ops-10':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-19-fire-exit-role-precheck.webp'),aspectRatio:1.5},
  'rst-1-cook-11':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-1-cook-11-ready-to-eat-clean-tongs.webp'),aspectRatio:1.5},
  'rst-1-cook-12':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-1-cook-12-equipment-purpose-comparison.webp'),aspectRatio:1.5},
  'rst-1-cook-14':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-1-cook-14-utensil-task-matching.webp'),aspectRatio:1.5},
