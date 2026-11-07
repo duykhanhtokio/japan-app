@@ -3,6 +3,7 @@ import type {FoodManufacturingLesson} from './index';
 export type FoodRoyalWeeklyImage={lessonId:string;sourceHash:string;captionParagraphId:string;source:ImageSourcePropType;width:number;height:number;replacesIllustrationId?:string};
 /** Lesson-specific Royal illustrations; preserve shared historical diagram families. */
 export const foodRoyalWeeklyImages:FoodRoyalWeeklyImage[]=[
+ {lessonId:'food-1-022',sourceHash:'71b670df557c33cdb5bda8f903114991a6295a14f9c3fec72a5604d676720619',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week04/cooling-condition-check.webp'),width:1536,height:1024},
  {lessonId:'food-1-019',sourceHash:'ec8c6608c7d00db04e84714386b1253609aee86b48d99216131634e257895766',captionParagraphId:'p3',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week04/fifo-label-order-check.webp'),width:1536,height:1024},
  {lessonId:'food-1-020',sourceHash:'ab646d36c4911902a081e6755a38bdd7e6d2da07521fc38d452cfcee499ffad8',captionParagraphId:'p2',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week04/designated-thaw-package-check.webp'),width:1536,height:1024},
  {lessonId:'food-1-021',sourceHash:'30c66404249e414249446aa0afea543906d1903d668ba92a6c90c3a9b2108797',captionParagraphId:'p2',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week04/product-centre-heating-check.webp'),width:1536,height:1024},

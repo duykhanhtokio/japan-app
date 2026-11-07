@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "week": 4,
+  "dateJst": "2026-11-07",
+  "scope": "One current food-1-022 day4 p1 cooling-condition illustration",
+  "baseRegistryBlobSha": "8d942d873eed5089eb55f7b66e83c8f921552a75",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "binding": {
+    "lessonId": "food-1-022",
+    "sourceHash": "71b670df557c33cdb5bda8f903114991a6295a14f9c3fec72a5604d676720619",
+    "captionParagraphId": "p1",
+    "keyObjectiveId": "food-1-022.p1",
+    "objectiveJa": "加熱後の冷却では、指定された方法と開始・終了時刻、中心温度などの条件を確認する。",
+    "sourceRefs": [
+      {
+        "document": "ssw1",
+        "pdfPage": 38,
+        "printedPage": 33,
+        "section": "冷却・薬剤殺菌・急速冷凍"
+      },
+      {
+        "document": "ssw1",
+        "pdfPage": 39,
+        "printedPage": 34,
+        "section": "冷却・薬剤殺菌・急速冷凍"
+      }
+    ]
+  },
+  "asset": {
+    "path": "assets/food-manufacturing/royal-weekly-20261107/week04/cooling-condition-check.webp",
+    "sha256": "1f9dad961e44cf962736b6091ce916dc3a19c094178af6adb298ab2a8a11e0d5",
+    "bytes": 193274,
+    "width": 1536,
+    "height": 1024,
+    "generation": "built_in_imagegen",
+    "nativeOutput": "/workspace/scratch/0d83607b09ec/generated_images/exec-9837f431-2698-4ad7-8a28-f871c69aca41.png",
+    "reference": "assets/kensetsu/daily-fix-20261031/coordination.webp",
+    "referencePurpose": "Accepted drawn rendering style only",
+    "encoding": "WebP quality88 method6; no compositing or content edits"
+  },
+  "pixelSelfReview": "Native PNG and encoded WebP actually opened. Single coherent hygienic cooling-area scene: fully hooded/masked adults, gloved probe centred in cooked-vegetable tray, connected blank-display instrument and separate record keeper; spaced clean trays and closed cabinet. No raw-food adjacency, chemical bottles, invented time/temperature values or text. Occupational context illustrates monitoring a workplace-designated cooling process, not a universal cooling method or certification that this product is safe. Exact Japanese plus revision-matched localized p1 outside art carries conditions.",
+  "generationPrompt": "Royal A+F2.5D adult Japanese vocational illustration,1536x1024; construction reference for controlled ink contours/painted shading/material depth only. New hygienic designated cooling-area scene, fully hooded and masked worker checks cleaned centre-temperature probe in a small cooked-vegetable tray on cooling trolley; supervisor records cooling conditions on blank-line log. No raw food, chemicals, numbers, clocks, gauges, text, arrows, checkmarks, bands or frames. Closed cooling cabinet, shallow separated trays. No claim of universal method or guaranteed result; exact source captions remain native outside image.",
+  "validation": {
+    "command": "node scripts/food-manufacturing/check-royal-week04.cjs food-1-022",
+    "result": "PASS actual production Royal registry and FoodDailyLearning in13 Japanese/localized contexts, exact p1 Japanese+sourceHash-matched locale caption/alt, chosen source in inline+expanded views, actual WebP bytes, unique binding, sourceHash and missing-caption negative guards.",
+    "priorBindings": "Text equality after removing the single new022row confirms every previous binding is unchanged, including food1-019/020/021 and all native registrations.",
+    "adapters": "ReactNativeWeb structural SSR, ruby-text and deterministic Image source adapters; Modal forced visible only for expanded-structure checks. No browser/device pixel acceptance.",
+    "diffCheck": "PASS scoped git diff --check"
+  },
+  "canonicalSourceChanged": false,
+  "nativePlotDataChanged": false,
+  "newRasterAssets": 1,
+  "acceptance": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false,
+    "wholeSectorComplete": false
+  },
+  "next": "After coordinator WORK PERSISTENCE PASS, fresh-check registry and continue first missing week04 binding. Preserve external completed units."
+}
