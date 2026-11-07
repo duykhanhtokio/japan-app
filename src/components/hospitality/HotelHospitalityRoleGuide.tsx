@@ -7,7 +7,7 @@ import {hotelRoleGuideLabels,HOTEL_ROLE_GUIDE_REVISIONS} from '../../data/hospit
 export function hotelSeatingGeometry(width:number,scale=1){return {A:{x:width*.25,y:185*scale},B:{x:width*.72,y:70*scale},door:{x:width*.22,y:280*scale},height:280*scale,radius:18*scale};}
 export function HotelHospitalityRoleGuide({lesson,language}:{lesson:HotelLesson;language:string}){
  const t=hotelRoleGuideLabels(language),material=language==='ja'?lesson:loadHotelTranslation(lesson.id,language,lesson.revision),[width,setWidth]=useState(280),{fontScale}=useWindowDimensions(),scale=Math.max(1,fontScale||1);
- if(!material||HOTEL_ROLE_GUIDE_REVISIONS[lesson.id]!==lesson.revision)return null;
+ if(!material||!HOTEL_ROLE_GUIDE_REVISIONS[lesson.id]||HOTEL_ROLE_GUIDE_REVISIONS[lesson.id]!==lesson.revision)return null;
  if(lesson.id==='hotel-service-04'){
   const g=hotelSeatingGeometry(width,scale);
   return <View testID="hotel-service-04-native-seat-guide" style={s.root}><Text style={s.title}>{material.illustration.caption}</Text><View accessible accessibilityRole="image" accessibilityLabel={`${t.nearSeat}; ${t.farSeat}. ${t.seatingCaveat}`} onLayout={e=>setWidth(e.nativeEvent.layout.width)} style={[s.room,{height:g.height}]}>

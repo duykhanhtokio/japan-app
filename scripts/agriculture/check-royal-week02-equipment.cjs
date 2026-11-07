@@ -28,13 +28,16 @@ function load(name){
  loaded.require=id=>{
   if(id==='react-native')return require('react-native-web');
   if(id==='@/data/agriculture/recognition-images.json')return data;
+  if(id==='./NativeProcessDiagram')return load('NativeProcessDiagram');
+  if(id==='@/data/agriculture/native-process-diagrams.json')return JSON.parse(read('src/data/agriculture/native-process-diagrams.json'));
+  if(id==='@/data/agriculture/lessons.ja.json')return JSON.parse(read('src/data/agriculture/lessons.ja.json'));
   if(id==='@/data/agriculture/recognition-image-locales.json')return localeData;
   if(id==='./ZoomableFigure')return load('ZoomableFigure');
   if(id==='./RecognitionImages')return load('RecognitionImages');
   if(id==='@/data/agriculture/exam-illustrations.json')return JSON.parse(read('src/data/agriculture/exam-illustrations.json'));
   if(id==='@/data/agriculture/daily-learning-support.json')return JSON.parse(read('src/data/agriculture/daily-learning-support.json'));
   if(id==='@/data/agriculture')return {agricultureTranslation:()=>null};
-  if(['./DailyInstructionDiagram','./Statistics2019Figure','./WinterClimateFigure','./WinterSpatialReference','@/components/tokutei/StudyAppearance'].includes(id))return {};
+  if(['./DailyInstructionDiagram','./Statistics2019Figure','./WinterClimateFigure','./WinterSpatialReference','./CropCalendarFigure','@/components/tokutei/StudyAppearance'].includes(id))return {};
   if(id==='./FlowerLegendFigure')return {};// Not invoked by the two selected lotus lesson contexts.
   if(/\.(png|webp)$/.test(id))return id.endsWith(path.basename(figure.assetPath))?actualSource:{uri:'asset://'+id};
   return original(id);
@@ -63,9 +66,11 @@ for(const [lessonId,b] of Object.entries(daily.figureBindings).filter(([_,b])=>b
  for(const level of b.scopeLevels){const html=renderToStaticMarkup(React.createElement(DailyLearningFigure,{lesson,level,colors}));assert(html.includes('data:image/webp;base64,'));assert(html.includes(b.reuseReasonJa));positive++;}
 }
 const exam=JSON.parse(read('src/data/agriculture/exam-illustrations.json'));
-const {AgricultureExamIllustration,hasAgricultureExamIllustration}=load('AgricultureExamIllustration');
 for(const item of exam.illustrations.filter(i=>i.figureId===figure.id)){
+ const {AgricultureExamIllustration,hasAgricultureExamIllustration}=load('AgricultureExamIllustration');
+ const question=[...JSON.parse(read('src/data/agriculture/mock-exams.ja.json')).exams,...JSON.parse(read('src/data/agriculture/weekly-checks.ja.json')).exams].flatMap(e=>e.questions).find(q=>q.illustrationId===item.id);assert(question,'missing source-bound question');
+ const questionSource={lessonId:question.lessonId,lessonSourceHash:question.lessonSourceHash};
  assert.equal(item.sourceAssetSha256,figure.assetSha256);assert.deepEqual(item.masks,[],'new art requires full reassessment of nonempty masks');
- for(const level of item.scopeLevels){assert(hasAgricultureExamIllustration(item.id,item.revision,level));const html=renderToStaticMarkup(React.createElement(AgricultureExamIllustration,{id:item.id,revision:item.revision,level,colors}));assert(html.includes('data:image/webp;base64,'));assert(!html.includes(figure.titleJa),'teaching label leaked into exam');positive++;assert(!hasAgricultureExamIllustration(item.id,'stale',level));negative++;}
+ for(const level of item.scopeLevels){assert(hasAgricultureExamIllustration(item.id,item.revision,level,questionSource));const html=renderToStaticMarkup(React.createElement(AgricultureExamIllustration,{id:item.id,revision:item.revision,level,questionSource,colors}));assert(html.includes('data:image/webp;base64,'));assert(!html.includes(figure.titleJa),'teaching label leaked into exam');positive++;assert(!hasAgricultureExamIllustration(item.id,'stale',level,questionSource));negative++;assert(!hasAgricultureExamIllustration(item.id,item.revision,level,{...questionSource,lessonSourceHash:'0'.repeat(64)}));negative++;}
 }
 console.log(`PASS royal equipment ${figure.id}: ${positive} actual production recognition/daily/exam renders with verified WebP; ${negative} source/scope/revision rejection cases. No pixel/device/domain certification.`);

@@ -13,6 +13,13 @@ loaded.require=id=>{
  if(id==='react-native')return require('react-native-web');
  if(id==='@/data/agriculture/daily-learning-support.json')return support;
  if(id==='@/data/agriculture/recognition-images.json')return figures;
+ if(id==='./NativeProcessDiagram'){
+  const nativePath=path.join(root,'src/components/agriculture/NativeProcessDiagram.tsx');
+  const nativeCode=transformSync(fs.readFileSync(nativePath,'utf8'),{filename:nativePath,babelrc:false,configFile:false,plugins:[['@babel/plugin-transform-typescript',{isTSX:true,allExtensions:true}],['@babel/plugin-transform-react-jsx',{runtime:'automatic'}],'@babel/plugin-transform-modules-commonjs']}).code;
+  const native=new Module(nativePath,module);native.filename=nativePath;native.paths=Module._nodeModulePaths(path.dirname(nativePath));const nativeRequire=native.require.bind(native);
+  native.require=key=>key==='react-native'?require('react-native-web'):key==='@/data/agriculture/native-process-diagrams.json'?JSON.parse(fs.readFileSync(path.join(root,'src/data/agriculture/native-process-diagrams.json'))):key==='@/data/agriculture/daily-learning-support.json'?support:nativeRequire(key);
+  native._compile(nativeCode,nativePath);return native.exports;
+ }
  if(id==='./RecognitionImages')return {getAgricultureFigureAsset:key=>({uri:`https://example.invalid/${key}`})};
  if(id==='./DailyInstructionDiagram')return {DailyInstructionDiagram:props=>React.createElement('span',null,props.title)};
  if(id==='./Statistics2019Figure')return {Statistics2019Figure:()=>React.createElement('span',null,support.controlledDiagrams['agr-statistics'].titleJa)};

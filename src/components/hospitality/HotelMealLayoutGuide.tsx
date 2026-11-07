@@ -10,7 +10,7 @@ export function hotelMealLayout(id:string){
  return [{key:'food',x:.23,y:.45},{key:'drink',x:.77,y:.45}];
 }
 export function HotelMealLayoutGuide({lesson,language}:{lesson:HotelLesson;language:string}){
- if(HOTEL_MEAL_GUIDE_REVISIONS[lesson.id]!==lesson.revision)return null;
+ if(!HOTEL_MEAL_GUIDE_REVISIONS[lesson.id]||HOTEL_MEAL_GUIDE_REVISIONS[lesson.id]!==lesson.revision)return null;
  const material=language==='ja'?lesson:loadHotelTranslation(lesson.id,language,lesson.revision);if(!material)return null;
  const t=hotelMealGuideLabels(language),nodes=hotelMealLayout(lesson.id),ids=lesson.id==='hotel-restaurant-02'?['hotel-restaurant-02-s1','hotel-restaurant-02-s2']:lesson.id==='hotel-restaurant-03'?['hotel-restaurant-03-s1','hotel-restaurant-03-s2']:['hotel-restaurant-04-s1','hotel-restaurant-04-s2'];
  return <View testID={`${lesson.id}-native-meal-layout`} style={s.root}><Text style={s.title}>{material.illustration.caption}</Text><View accessibilityRole="image" accessibilityLabel={`${t.guest}: ${nodes.map((node,index)=>`${index+1} ${t[node.key]}`).join('; ')}`} style={s.diagram}>

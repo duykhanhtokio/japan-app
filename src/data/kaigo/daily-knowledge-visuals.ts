@@ -44,7 +44,8 @@ const daySources:Record<string,ImageSourcePropType>={
  '77:endocrine':require('../../../assets/kaigo/royal-weekly-20261107/week04/day27-endocrine-regions-controlled.webp'),
 
  '67:nervous':require('../../../assets/kaigo/royal-weekly-20261107/week10/day67-nervous-distribution-controlled.webp'),
- '70:pupils':require('../../../assets/kaigo/royal-weekly-20261107/week10/day70-pupil-comparison-controlled.webp'),
+ '68:brain':require('../../../assets/kaigo/royal-weekly-20261107/week02/day08-brain-base.webp'),
+ '70:pupils':require('../../../assets/kaigo/royal-weekly-20261107/week10/day70-pupil-directions-controlled.webp'),
  '37:oral-ownership':require('../../../assets/kaigo/royal-weekly-20261107/week06/day37-oral-ownership-controlled.webp'),
  '38:skin':require('../../../assets/kaigo/royal-weekly-20261107/week06/day38-skin-structure-controlled.webp'),
  '39:grooming':require('../../../assets/kaigo/royal-weekly-20261107/week06/day39-grooming-identification-controlled.webp'),
