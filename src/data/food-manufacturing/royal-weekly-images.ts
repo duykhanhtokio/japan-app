@@ -3,6 +3,8 @@ import type {FoodManufacturingLesson} from './index';
 export type FoodRoyalWeeklyImage={lessonId:string;sourceHash:string;captionParagraphId:string;source:ImageSourcePropType;width:number;height:number;replacesIllustrationId?:string};
 /** Lesson-specific Royal illustrations; preserve shared historical diagram families. */
 export const foodRoyalWeeklyImages:FoodRoyalWeeklyImage[]=[
+ {lessonId:'food-2-009',sourceHash:'e197cffffbd806bc320584baf7d936b67c4246c900f882f10cca64aac432ed67',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/hygiene-and-process-controls.webp'),width:1536,height:1024},
+ {lessonId:'food-2-012',sourceHash:'9ceccfb809ac2c0a08597e103768f37c46361a3efa09e217e46c9b50febb12dd',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week03/hazard-analysis-planning.webp'),width:1536,height:1024},
  {lessonId:'food-1-018',sourceHash:'7a181b55230e19d69bf659f581f264ecde0adaf913b142393db997b6ad9c94f3',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week03/storage-condition-comparison.webp'),width:1536,height:1024},
  {lessonId:'food-2-013',sourceHash:'6869e36666dbf8f0bef535628124b2e28df23ba6dc5971403c597fe944ba1a17',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week03/hazard-analysis-planning.webp'),width:1536,height:1024},
  {lessonId:'food-2-014',sourceHash:'ad66ab84d54d3c5aee14f6be0af463332fa81eaf8068bf87f0cb2617e9021f18',captionParagraphId:'p2',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week03/retrievable-hygiene-records.webp'),width:1536,height:1024},
