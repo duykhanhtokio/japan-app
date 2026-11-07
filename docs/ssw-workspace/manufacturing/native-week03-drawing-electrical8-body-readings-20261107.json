@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "status": "AI_CONTEXT_REVIEWED_SOURCE_BOUND",
+  "sourceWeek": 3,
+  "actualNewFields": 8,
+  "actualSourceRows": 5,
+  "fieldKinds": {
+    "exampleText": 4,
+    "structureText": 4
+  },
+  "entries": [
+    {
+      "lessonId": "mfg1-mechanical-lesson-020",
+      "field": "exampleText",
+      "sourceJapanese": "尺度2:1の部品図で、ある部分の寸法が12と指示されています。その部分は図上では約24 mmに見えるかもしれませんが、実寸の指示は12 mmです。一方、実寸計算の練習として「尺度1:5で図上30 mm」と条件が与えられたなら、実物は30×5＝150 mmです。寸法指示を読む場面と、尺度の計算練習を分けます。",
+      "sourceHash": "d093d570d5b0a9a12428523e25be3ba8375577f612c2c85f1810397662eca666"
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-020",
+      "field": "structureText",
+      "sourceJapanese": "尺度1:1は現尺、2:1は実物の二倍に描く倍尺、1:2は半分に描く縮尺です。図面に記入された寸法数値は、尺度にかかわらず対象の実際の寸法を示します。拡大表示や印刷サイズが変わることもあるため、画面や紙を定規で測った長さだけで加工寸法を決めません。\n\n見える輪郭は太い実線、寸法線や寸法補助線は細い実線、見えない輪郭は破線、中心は通常細い一点鎖線で示します。中心線を外形と見誤ると形状を取り違えます。部品図は部品加工、組立図は組立て、配置図は設備などの位置の理解に使い、目的に合う図面と版を確認します。",
+      "sourceHash": "d093d570d5b0a9a12428523e25be3ba8375577f612c2c85f1810397662eca666"
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-021",
+      "field": "structureText",
+      "sourceJapanese": "寸法には許される範囲があり、その上限と下限の差が公差です。基準寸法に正負の許容差を付けた表示では、上の値が上の許容差、下の値が下の許容差です。符号を落とさず加えて限界寸法を求めます。上下の数値を見た目だけで絶対値として足し引きしないようにします。\n\nφは直径、Rは半径、tは厚さを表します。φ10とR10は同じ大きさではなく、R10の円なら直径は20です。公差クラスの大文字は穴、小文字は軸に用いられ、数値範囲は対応表などで確認します。文字の位置だけから実際のはめあい状態を断定せず、組み合わせる穴と軸の限界寸法を調べます。",
+      "sourceHash": "7f588a7c67b86e7ad773e48af595bd25d8ce8d0f9a4b1feb6b0107d4bdd930a1"
+    },
+    {
+      "lessonId": "mfg1-electrical-l015",
+      "field": "exampleText",
+      "sourceJapanese": "変圧器の学習模型では、電流を流す巻線、磁束が通る鉄心、巻線を隔てる絶縁部分で役割が違います。巻線に導電材料、鉄心に適切な磁性材料、隔てる部分に適切な絶縁材料を使います。具体的な材質や温度定格は仕様で決めるもので、模型の説明だけで実製品の代替材料を選びません。",
+      "sourceHash": "25d7da40236abfd57e0e62fafda205a46a321d258e83fad5905f178fb6ce31bb"
+    },
+    {
+      "lessonId": "mfg1-electrical-l016",
+      "field": "exampleText",
+      "sourceJapanese": "橙・橙・茶・金の四帯なら、有効数字は33、乗数は10¹、許容差は±5%です。33×10=330 Ωで、公称値は0.330 kΩとも表せます。色の数字をすべて横につなげて331 Ωとするのは誤りです。三帯目は桁をつなぐ数字ではなく、掛ける数を決めます。",
+      "sourceHash": "51f6e5bb168cd2a249b1464289b25b0250ee9ca98d0da790de78b2a55cc21dc0"
+    },
+    {
+      "lessonId": "mfg1-electrical-l016",
+      "field": "structureText",
+      "sourceJapanese": "四帯の一般的なカラー表示では、最初の二帯が有効数字、三帯目が乗数、最後が許容差を示します。黒0、茶1、赤2、橙3、黄4、緑5、青6、紫7、灰8、白9という数字の対応を使います。金の許容差は±5%、銀は±10%です。\n帯の数が違う部品や特殊な表示に、この読み方をそのまま適用しません。読む向きや帯の意味が曖昧なら部品仕様を確認します。焼けて色が変わった部品を、見える色だけで元の値だと断定することも避けます。\n\n許容差は公称値に対してどれだけの違いを許すかという表示です。例えば公称330 Ωで±5%なら、330×0.05=16.5 Ωなので、313.5～346.5 Ωが計算上の範囲です。実際の受入判定は、測定条件と部品仕様に従います。\n抵抗値が同じでも、消費できる電力、使用温度、寸法などが同じとは限りません。カラーコードから抵抗値を読めたことだけで、別の抵抗器に交換できるとは判断しません。",
+      "sourceHash": "51f6e5bb168cd2a249b1464289b25b0250ee9ca98d0da790de78b2a55cc21dc0"
+    },
+    {
+      "lessonId": "mfg1-electrical-l017",
+      "field": "exampleText",
+      "sourceJapanese": "同じ1 kΩと2 kΩを12 Vへ並列接続すると、電流はそれぞれ12 mAと6 mA、全体で18 mAです。合成は(1000×2000)/(1000+2000)=約666.7 Ωです。直列のときと同じ部品でも全電流は大きく変わります。これらは理想計算であり、実接続では電源容量、部品定格、発熱、保護を確認する必要があります。",
+      "sourceHash": "42bdff3e0759e2d01d348391465d41b9dea1edc600922d8541b54e4833420065"
+    },
+    {
+      "lessonId": "mfg1-electrical-l017",
+      "field": "structureText",
+      "sourceJapanese": "二つの抵抗を一本道に直列接続すると、同じ電流が両方を流れます。合成抵抗はR=R1+R2で、各抵抗の電圧はV1=IR1、V2=IR2です。電源電圧は二つの電圧の和になります。\n並列では両端が同じ二点につながるので、各抵抗に同じ電圧がかかります。枝ごとの電流はI1=V/R1、I2=V/R2で、全電流はその和です。二抵抗の合成抵抗はR=R1R2/(R1+R2)となり、正の抵抗なら小さい方の抵抗よりさらに小さくなります。\n\n理想的な12 V直流電源に、1 kΩと2 kΩを直列につなぐ計算をします。合成は3 kΩ=3000 Ω、電流は12÷3000=0.004 A=4 mAです。電圧は1 kΩ側が4 V、2 kΩ側が8 Vで、4+8=12 Vと確認できます。抵抗が大きい方に大きい電圧が分かれます。",
+      "sourceHash": "42bdff3e0759e2d01d348391465d41b9dea1edc600922d8541b54e4833420065"
+    }
+  ],
+  "sourceEvidence": {
+    "acceptedWholeTechnicalTerms": "Current saved companion registry exact一点鎖線いってんさせん/大文字おおもじ/導電材料どうでんざいりょう/定格ていかく/一本いっぽん. Context arrays manually compared; no generic substring runtime rule.",
+    "standardAIContextReadings": "一本道いっぽんみち and document版はん are AI-authored whole-field context decisions, no independent native approval."
+  },
+  "limits": "No unreviewed Janome exposure, no content/number edits, no native/domain/device approval.",
+  "baselineActualCallerCensus": {
+    "visibleBindings": 1171,
+    "full": 123,
+    "plain": 1046,
+    "partial": 2,
+    "kind": "historical actual caller census; no repeated full census"
+  },
+  "boundedDeltaDerivedCoverage": {
+    "previous51SavedFields": 51,
+    "thisCohort": 8,
+    "full": 182,
+    "plain": 987,
+    "partial": 2,
+    "uniquePlainStrings": 923
+  },
+  "implementation": "Data-only extension of source-week03 registry. Existing exact fullcanonical/currentfield guards and actual body callers unchanged. No raw Janome or unchecked primary entries exposed.",
+  "checks": {
+    "actualBodyFields": 8,
+    "actualSourceRows": 5,
+    "canonicalExactFieldNegatives": 56,
+    "all12TranslatedHtmlStyleByteIdentical": 60,
+    "actualStaleBodyPlainFallbacks": 8,
+    "technicalContextRegressions": 6,
+    "malformedRegisteredActualPlainFallbacks": 4,
+    "heldMainScaleExampleRemainsPlain": true,
+    "kind": "bounded actual Royal caller SSR delta; no whole census/native device/pixel approval"
+  },
+  "payloadSha256": {
+    "src/data/manufacturing/native-reviewed-week03-fields.json": "d0a5d69b475616c0da221e301c21d65cbad04ce81c573a1eeef630d96d25e401",
+    "scripts/manufacturing/check-native-week03-drawing-electrical8-body-readings.cjs": "c213cfa9de356e19f7f8699c33b0b1c9fc0ef9995e82d90667282f22e68dec88"
+  },
+  "eligibility": {
+    "plainCurrentFields": 987,
+    "hanEligiblePlainFields": 986,
+    "legitimateNoHanPlainFields": [
+      {
+        "lessonId": "mfg1-electrical-l076",
+        "field": "title",
+        "sourceJapanese": "スイッチ・センサ・リレーとSSR"
+      }
+    ],
+    "method": "Existing1171actualcaller matrix minus bounded59accepted delta, not wholeSSR rerun. Kana/Latin-only title needs no ruby."
+  }
+}
