@@ -1,12 +1,14 @@
 import {restaurantLesson,type RestaurantLesson} from '@/data/restaurant';
 import {Image,Text,View,StyleSheet} from 'react-native';
 import placementData from '@/data/restaurant/meal-placement.json';
+import picklesArtwork from '@/data/restaurant/royal-meal-pickles-artwork.json';
 import {useStudyAppearance,TranslationText} from '@/components/tokutei/StudyAppearance';
 import {RestaurantReading} from './RestaurantReading';
 
 type MealTranslation={sourceHash:string;title:string;viewpoint:string;back:string;front:string;guest:string;caption:string;labels:Record<string,string>;positions:Record<string,string>};
 type MealItem={id:string;labelJa:string;segments:{text:string;reading?:string}[];positionJa:string;kind:string};
 const mealFood=require('../../../assets/restaurant/royal-weekly-20261107/week08/meal-food-objects.webp');
+const picklesImage=require('../../../assets/restaurant/royal-weekly-20261107/week08/meal-pickles-object-royal-v2.webp');
 const foodCells:Record<string,number>={rice:0,soup:1,main:2,side:3,middle:4};
 const translations=placementData.translations as Record<string,MealTranslation>;
 const lessonHashes=placementData.lessonSourceHashes as Record<string,string>;
@@ -14,6 +16,7 @@ export function restaurantHasMealPlacement(lesson:Pick<RestaurantLesson,'id'|'so
 const sourceSignature=()=>JSON.stringify({titleJa:placementData.titleJa,viewpointJa:placementData.viewpointJa,backJa:placementData.backJa,frontJa:placementData.frontJa,guestJa:placementData.guestJa,captionJa:placementData.captionJa,back:placementData.back,front:placementData.front});
 /** Independently drawn teaching marks. Guest perspective; never mirror the tray to the server's view. */
 function Dish({kind}:{kind:string}){
+ if(kind==='pickles'){if(placementData.sourceRevision!==picklesArtwork.mealSourceRevision||sourceSignature()!==picklesArtwork.mealSourceSignature)return null;return <View testID="restaurant-meal-object-pickles" accessible={false} style={{width:'100%',maxWidth:84,aspectRatio:1,overflow:'hidden',position:'relative'}}><Image source={picklesImage} accessible={false} resizeMode="contain" style={{width:'100%',height:'100%'}}/></View>;}
  const soup=kind==='soup',rice=kind==='rice',main=kind==='main';
  const cell=foodCells[kind];if(cell!==undefined)return <View testID={`restaurant-meal-object-${kind}`} accessible={false} style={{width:'100%',maxWidth:84,aspectRatio:1,overflow:'hidden',position:'relative'}}><Image source={mealFood} accessible={false} resizeMode="contain" style={{position:'absolute',width:'300%',height:'200%',left:`${-(cell%3)*100}%`,top:`${-Math.floor(cell/3)*100}%`}}/></View>;
  return <View accessible={false} importantForAccessibility="no-hide-descendants" style={[s.dish,{width:main?62:48,height:main?31:36,borderRadius:main?5:24,backgroundColor:soup?'#703d2c':rice?'#fff8df':'#b9d3c5',borderColor:soup?'#4a251d':'#708d7c'}]}><View style={{width:main?42:29,height:main?12:19,borderRadius:main?5:14,backgroundColor:soup?'#be8b4e':rice?'#fffdf4':kind==='pickles'?'#799b4a':main?'#d9ac69':'#658744'}}/></View>;

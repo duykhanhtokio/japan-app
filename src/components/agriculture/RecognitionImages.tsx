@@ -127,7 +127,7 @@ const assets:Record<string,ImageSourcePropType>={
  "machine-clothing":require('../../../assets/agriculture/royal-weekly-20261107/machine-work-clothing-royal-v1.webp'),
  "machine-control-names":require('../../../assets/agriculture/royal-weekly-20261107/machine-control-names-royal-v1.webp'),
  "pesticide-clothing":require('../../../assets/agriculture/royal-weekly-20261107/pesticide-work-clothing-royal-v1.webp'),
- "sprayer-parts":require('../../../assets/agriculture/completion-40/safety/sprayer-parts.png'),
+ "sprayer-parts":require('../../../assets/agriculture/royal-weekly-20261107/week09/sprayer-parts-appearance-royal-v1.webp'),
  "power-connector-examples":require('../../../assets/agriculture/completion-40/safety/power-connector-examples.png'),
  "fuel-container-source-sign":require('../../../assets/agriculture/completion-40/safety/fuel-container-source-sign.png'),
  "ladder-hazards":require('../../../assets/agriculture/completion-40/safety/ladder-hazards.png'),

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "status": "actual_pixels_self_checked_pending_parent_remote_save",
+  "scope": "Actual missing pickles object image on existing guest-perspective meal illustration",
+  "baseline": "a7ff28c2b9ccdb1615e9a6fe0c792ed05cecffe7",
+  "actualDefect": {
+    "path": "src/components/restaurant/RestaurantMealPlacement.tsx",
+    "prior": "Current meal front row has pickles but source atlas sixthcell is blank and foodCells omits pickles; active Dish(pickles) fell back to a green primitive rectangle/oval while other5foods were detailed images",
+    "correction": "Dedicated original Royal2.5D pickled vegetable dish sprite now renders only current pickles branch; unchanged5 original atlas crops and bytes"
+  },
+  "generation": {
+    "engine": "built-in image_gen",
+    "asset": "assets/restaurant/royal-weekly-20261107/week08/meal-pickles-object-royal-v2.webp",
+    "width": 1254,
+    "height": 1254,
+    "sha256": "54dec1f4909e778a33346403c95a3a73b5f7148d97c27f3489497803a7a92492",
+    "bytes": 335398,
+    "promptSummary": "Single small pale Japanese ceramic side dish with understated blue rim, yellow pickled-daikon halfmoons and green cucumber pickle rounds; warm ivory, tactile RoyalA+F2.5D; no text/numbers/utensils/people."
+  },
+  "actualPixelReview": {
+    "status": "self_checked_ai_actual_pixels",
+    "observation": "Complete shallow ceramic dish,3yellow daikon halfmoon slices and3green cucumber rounds visible, warmivory framing, no clipped essential food or text. Generic illustrative pickles, no measured serving claim."
+  },
+  "validation": {
+    "command": "node scripts/restaurant/check-meal-pickles-object.cjs",
+    "actualComponentJa12SsrRenders": 13,
+    "realBitmapObjects": 6,
+    "unchangedOriginalAtlasCells": 5,
+    "newPicklesObject": 1,
+    "guestPerspective": "back[side,middle,main],front[rice,pickles,soup] unchanged",
+    "componentFlowLabelsTranslationsStyles": "byte-identical to currentHEAD",
+    "sourceRevisionAndExactSignatureBinding": "PASS",
+    "eslint": "PASS",
+    "diffCheck": "PASS"
+  },
+  "files": {
+    "src/components/restaurant/RestaurantMealPlacement.tsx": "d25254678ffffb45fc977c92a30e83ef1c066e421bc4e89ba174df4ecbed9844",
+    "src/data/restaurant/royal-meal-pickles-artwork.json": "0ee7352382a3f6437cdec8930951b59ab1f5df580293007418aa8bd216ca69b7",
+    "scripts/restaurant/check-meal-pickles-object.cjs": "29625b703f4409955265729408f50f194d3f1c7d8f516e1bc630fd6c292c427a",
+    "assets/restaurant/royal-weekly-20261107/week08/meal-pickles-object-royal-v2.webp": "54dec1f4909e778a33346403c95a3a73b5f7148d97c27f3489497803a7a92492"
+  },
+  "acceptance": {
+    "actualPixelsSelfReviewedAi": true,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "browserRenderReviewed": false
+  },
+  "limits": [
+    "Generic food-position illustration, not a recipe or actual portion/food safety certification",
+    "Browser screenshot launch unavailable in this sandbox; direct pixels and declared component SSR only"
+  ]
+}
