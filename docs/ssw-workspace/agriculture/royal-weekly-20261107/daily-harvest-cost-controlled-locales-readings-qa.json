@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "reviewedBaseline": "8780d538b4eb58f6fc9869e77301f2df2b7bc049",
+  "readyPaths": [
+    "src/data/agriculture/daily-controlled-native-support.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/daily-harvest-cost-controlled-locales-readings-qa.json"
+  ],
+  "scope": "Two actual harvest-calendar and qualitative planting-material-cost/labor diagrams, source-bound JA+12 title/caption/alt and exact burnt-label/date/category interpretations, whole-field Japanese readings. No generic lesson prose, no quiz changes, no raster or geometry changes.",
+  "newHanFields": 30,
+  "JA12Fields": 32,
+  "translatedTargets": 384,
+  "sourceProof": [
+    {
+      "kind": "harvest-calendar",
+      "lessonIds": [
+        "agr-fruit-detail-harvest-calendar"
+      ],
+      "assetSnapshot": {
+        "assetPath": "assets/agriculture/daily-learning-20261031/harvest-calendar.png",
+        "assetSha256": "e4b2010803635e1416b739170ba3ca5675b679c5a1ffedc0590209184d16db2a",
+        "width": 1160,
+        "height": 660
+      },
+      "actualHanFields": 16,
+      "localeFieldCount": 17
+    },
+    {
+      "kind": "cost-labour",
+      "lessonIds": [
+        "agr-flower-details-economic-rows"
+      ],
+      "assetSnapshot": {
+        "assetPath": "assets/agriculture/daily-learning-20261031/cost-labour.png",
+        "assetSha256": "31acd3e3ad79ef497f27fdade228e575382452977a018f4b4ca3e7f0828f5433",
+        "width": 1160,
+        "height": 660
+      },
+      "actualHanFields": 14,
+      "localeFieldCount": 15
+    }
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseAccepted": false,
+  "proofLimits": [
+    "Actual RNW full Daily child renders using immutable fresh tracked dependencies; no full app or native-device acceptance.",
+    "Raster Japanese remains unchanged. Adjacent source-bound native legends supply accessible localized readings and interpretation."
+  ],
+  "phoneticReview": [
+    "Gregorian month field readings explicitly reviewed:6月ろくがつ,7月しちがつ,8月はちがつ,9月くがつ,10月じゅうがつ,11月じゅういちがつ,12月じゅうにがつ.",
+    "上旬じょうじゅん,中旬ちゅうじゅん,下旬げじゅん; ellipsis上・中・下旬 usesじょう/ちゅう/げじゅん, not positionalうえ/なか. No numeric-day dates inferred.",
+    "六品目ろくひんもく counts six crop categories, not ordinal sixth dish; 品目 primary counter distinction https://www.tofugu.com/japanese/japanese-counters-list/ .",
+    "一・二年草いち/にねんそう is annual/biennial class; 種苗費しゅびょうひ, 労力ろうりょく, 高低分類こうていぶんるい, 比例尺度ひれいしゃくど. 円えん is currency in cost caption, unlike circle円 in ratio schematic."
+  ],
+  "invariants": {
+    "sourceHarvestPeriods": [
+      "モモ：6月下旬～8月下旬",
+      "ブドウ：8月中旬～10月上旬",
+      "リンゴ：9月上旬～11月中旬",
+      "ナシ／ニホンナシ：8月中旬～11月下旬",
+      "カキ：9月下旬～12月上旬",
+      "温州ミカン：10月中旬～12月上旬"
+    ],
+    "sourceRowNamesNashiNihonnashiNotWesternPear": true,
+    "noUniversalWorkDatesOrRipenessJudgment": true,
+    "annualBiennial": [
+      "seedstock cost low",
+      "labor more"
+    ],
+    "bulbous": [
+      "seedstock cost high",
+      "labor less"
+    ],
+    "barsQualitativeNotMoneyOrTimeScale": true,
+    "noCurrentPricesProfitOrHoursInferred": true
+  },
+  "tests": {
+    "status": "PASS",
+    "actualFieldContexts": 46,
+    "negativeReadingGuards": 736,
+    "actual13LocaleFullChildRoutes": 39,
+    "hiddenTranslationRoutes": 39,
+    "ChineseSameHanPlain": 6,
+    "actualChineseMonthLabel6月PlainWithJapanesePrimaryRuby": 4,
+    "fullJAAssetWholeImageAndNativeRejects": 18,
+    "partialCaptionScopeChecks": 6,
+    "eachMutableNegativeRestoredPositive": true,
+    "strictActualCalleeGraph": "PASS zero diagnostics; actual current callee/import JSON graph plus extracted actual caller JSX, narrow ambient leaf declarations only, not full app",
+    "allPriorRegistryEntriesExactPreserved": true,
+    "commands": [
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-harvest-cost.cjs",
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-harvest-cost-types.cjs"
+    ]
+  },
+  "scopeNotes": [
+    "Two lessons/three level-contexts, the final two original kinds in the previously verified48fallback-context inventory. This is not entire-application acceptance: final allreachable/direct/reuse-caption/quiz/zoom inventory remains.",
+    "Calendar actual retained bars were visually checked against all six exact source month/旬 endpoint pairs. Each of12 locale ranges preserves early/mid/late period endpoints; no day numbers, equal-duration claims, local work dates or ripeness judgment inferred.",
+    "Nashi/Nihonnashi source-row distinction is retained as Japanese pear, not transferred to Western pear.",
+    "Cost diagram compares only annual/biennial and bulbous groups from currentp2/p4; paired accessible interpretations retain lowcost/morelabor versus highcost/lesslabor. No market-price/other-groups/all-objective claim from these two bars.",
+    "Both asset bytes/dimensions/geometry/source text/metadata/IDs/revisions/questions/progress untouched. Only registry append and this receipt are written.",
+    "No UI-adapter or expanded-view change is mixed into this semantic unit; that authorized step follows separately."
+  ],
+  "all12TargetMeaningReview": {
+    "harvestEndpointLabels": true,
+    "costLaborOpposingCategoryDirections": true,
+    "qualitativeNotCurrencyHoursOrProfit": true
+  }
+}
