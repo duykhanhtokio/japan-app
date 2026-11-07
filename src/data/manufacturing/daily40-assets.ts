@@ -1,6 +1,9 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week02/surface-day09-hydrometer-conditions.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week02/surface-day09-hydrometer-conditions.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week02/electrical-day09-shortage-report.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week02/electrical-day09-shortage-report.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week02/mechanical-day09-shipping-requirements.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week02/mechanical-day09-shipping-requirements.webp");
   case "assets/manufacturing/royal-weekly-20261107/week02/surface-day08-buff-scratch-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week02/surface-day08-buff-scratch-review.webp");
   case "assets/manufacturing/royal-weekly-20261107/week02/electrical-day08-inspection-hold.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week02/electrical-day08-inspection-hold.webp");
   case "assets/manufacturing/royal-weekly-20261107/week02/mechanical-day08-unreadable-label.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week02/mechanical-day08-unreadable-label.webp");
