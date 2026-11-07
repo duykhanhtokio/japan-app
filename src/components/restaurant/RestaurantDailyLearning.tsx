@@ -115,6 +115,10 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-1-hyg-17':{source:require('../../../assets/restaurant/royal-weekly-20261107/week12/rst-1-hyg-17-egg-liver-cooking-verification.webp'),aspectRatio:1.5},
+ 'rst-1-hyg-18':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-01-haccp-observation-verification.webp'),aspectRatio:1.7768331562167907},
+ 'rst-1-cook-20':{source:require('../../../assets/restaurant/royal-weekly-20261107/week10/rst-1-svc-13-meal-ingredient-explanation.webp'),aspectRatio:1.5},
+ 'rst-1-svc-21':{source:require('../../../assets/restaurant/royal-weekly-20261107/week09/rst-1-svc-09-menu-choice-order-confirmation.webp'),aspectRatio:1.5},
  'rst-1-svc-16':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-06-closing-chair-zone-check.webp'),aspectRatio:1.5},
  'rst-1-svc-17':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-07-cash-transaction-dual-check.webp'),aspectRatio:1.5},
  'rst-1-svc-18':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-08-complaint-fact-listening.webp'),aspectRatio:1.5},
