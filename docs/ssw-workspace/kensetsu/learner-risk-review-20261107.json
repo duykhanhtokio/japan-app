@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "baselineCommit": "7454b9a749ea4e67713833466da780803773c51b",
+  "sector": "construction",
+  "scope": "Targeted learner-facing explanation ambiguity; not full-bank domain acceptance",
+  "runtimeEvidence": "src/components/kensetsu/KensetsuReviewTests.tsx:399-400 renders q.explanationJa directly; option rationale array not rendered separately",
+  "finding": "Unlabeled concatenation of correct rationale and critiques of wrong options can appear to contradict the correct answer. Labels bind existing explanations to displayed option indices.",
+  "changedQuestionIds": [
+    "kensetsu-review-v2-01-q01",
+    "kensetsu-review-v2-01-q08",
+    "kensetsu-review-v2-01-q10",
+    "kensetsu-review-v2-01-q13",
+    "kensetsu-review-v2-01-q21",
+    "kensetsu-review-v2-01-q23",
+    "kensetsu-review-v2-01-q30",
+    "kensetsu-review-v2-01-q33",
+    "kensetsu-review-v2-02-q10",
+    "kensetsu-review-v2-02-q14"
+  ],
+  "rootCauseCount": 1,
+  "affectedQuestions": 10,
+  "knowledgeAnswersChoicesIdsAndRevisionsPreserved": true,
+  "beforeSha256": "07ad3bd44f1ce8d6f96170be340765390567a0f776735c00c5bb2e656b6e10a7",
+  "afterSha256": "c3cb8ffdcbd866c9e9fbb96065a1a1afa7da4a4850c2d4ed4ee5414716ececfd",
+  "checks": {
+    "jsonParse": "PASS",
+    "onlyExplanationFieldsChanged": "PASS",
+    "allExistingRationalesPreserved": "PASS"
+  },
+  "semanticReviewScope": {
+    "mainBankFirstExam": 40,
+    "theoryFirstTwoExams": 80,
+    "utilitiesFirstExam": 40,
+    "differentialFirstThreeExams": 66,
+    "archivedFieldPractical": 14
+  },
+  "automatedOnly": {
+    "theoryUtilitiesDifferentialQuestionsCheckedForExactDuplicateOptionsAndAnswerIndexRange": 504,
+    "findings": 0,
+    "mainBankQuestionsCheckedForExactDuplicateOptionsAndAnswerIndexRange": 400,
+    "mainBankFindings": []
+  },
+  "limits": [
+    "Other main-bank questions not fully semantically reviewed",
+    "No claim of source-wide fact verification",
+    "Translations and image pixels not fully reviewed",
+    "No native/domain/physical-device acceptance",
+    "No knowledge or numeric correction made without source proof; this patch changes explanation attribution only."
+  ],
+  "workGroups": [
+    {
+      "group": 1,
+      "scope": "Main exam 01: all 40 prompts/options/answers/explanations; 2 targeted questions from exam02",
+      "fixes": "10 ambiguous unlabeled mixed explanations; 1 repeated root pattern"
+    },
+    {
+      "group": 2,
+      "scope": "Theory first80, utilities first40, differential first66 question text plus archived practical14",
+      "result": "No additional confirmed wrong/multiple answers or contradictory explanations in this bounded pass; not source-domain certification"
+    },
+    {
+      "group": 3,
+      "scope": "JA→VI paragraph meaning for sessions001,038,039 (8+12+12 paragraphs)",
+      "result": "32 paragraph pairs checked; no confirmed meaning-changing translation error; other locales not accepted"
+    }
+  ],
+  "questionImageScope": {
+    "mainBankQuestionImageReferences": 0,
+    "lessonImagePixelsReviewed": 0,
+    "meaning": "No direct image fields in main question objects; lesson illustrations remain unreviewed visually."
+  }
+}
