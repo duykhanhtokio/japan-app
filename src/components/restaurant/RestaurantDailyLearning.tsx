@@ -110,6 +110,17 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-1-cook-11':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-1-cook-11-ready-to-eat-clean-tongs.webp'),aspectRatio:1.5},
+ 'rst-1-cook-12':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-1-cook-12-equipment-purpose-comparison.webp'),aspectRatio:1.5},
+ 'rst-1-cook-14':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-1-cook-14-utensil-task-matching.webp'),aspectRatio:1.5},
+ 'rst-2-ops-02':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-2-ops-02-sales-labor-record-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-03':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-2-ops-03-inventory-delivery-cost-records.webp'),aspectRatio:1.5},
+ 'rst-2-ops-04':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-2-ops-04-staffing-skill-rest-planning.webp'),aspectRatio:1.5},
+ 'rst-2-ops-06':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-2-ops-06-menu-feedback-performance-review.webp'),aspectRatio:1.5},
+ 'rst-1-cook-10':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-1-cook-09-frying-batch-supervision.webp'),aspectRatio:1.5},
+ 'rst-2-ops-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-svc-01-qsca-dining-inspection.webp'),aspectRatio:1.5},
+ 'rst-1-cook-13':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-cook-05-equipment-stop-report.webp'),aspectRatio:1.5},
+ 'rst-2-ops-05':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-2-ops-03-inventory-delivery-cost-records.webp'),aspectRatio:1.5},
  'rst-2-cook-07':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-cook-07-hazard-removal-clear-route.webp'),aspectRatio:1.5},
  'rst-2-cook-08':{source:require('../../../assets/restaurant/royal-weekly-20261107/week02/rst-2-hyg-10-allergen-replacement-label-handoff.webp'),aspectRatio:1.77577045696068},
  'rst-2-svc-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-svc-01-qsca-dining-inspection.webp'),aspectRatio:1.5},
