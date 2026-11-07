@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "timezone": "Asia/Tokyo",
+  "scope": "Exclusive 116 disjoint daily technical assets; six rasters viewed in three successive groups. Does not cover weekly/differential/foreman artwork.",
+  "baselineCommit": "6303986ed040a7d7e1d870a1c0d0ef2cb6438abb",
+  "sources": [
+    {
+      "sourceId": "kensetsu-src-03",
+      "sha256": "afe4fad78ff8c8ce25267473eae196a9c94bb2156aa3d8edf5674fd0e2f25344",
+      "pdfPagesActuallyViewed": [
+        9,
+        10,
+        11,
+        12,
+        37,
+        38
+      ],
+      "printedPages": [
+        34,
+        35,
+        36,
+        37,
+        62,
+        63
+      ]
+    },
+    {
+      "sourceId": "kensetsu-src-05",
+      "sha256": "c53d189f90cc8129fd69eb803c6b98e08e2342a8edb84c354c40388af3a16063",
+      "pdfPagesActuallyViewed": [
+        16
+      ],
+      "printedPages": [
+        111
+      ]
+    },
+    {
+      "sourceId": "kensetsu-src-06",
+      "sha256": "d7808c03e5ba9a94d4f10d060b5ac84a0b780aa5de478e69e0c2e52f3faf4398",
+      "pdfPagesActuallyViewed": [
+        30
+      ],
+      "printedPages": [
+        164
+      ]
+    }
+  ],
+  "currentOfficialCorroboration": {
+    "url": "https://www.ntt-east.co.jp/tekigou/kousei.html",
+    "checkedDate": "2026-11-07",
+    "scope": "Transmission-path, switching and communication-power equipment are distinct categories; no topology or tester operation inferred."
+  },
+  "groups": [
+    {
+      "assets": [
+        {
+          "logicalAssetBefore": "assets/kensetsu/daily-technical/network.png",
+          "viewedSha256": "a55542eb09958e4459f63e67649bb47fccdf71ff7a64d5dbd2ab7d3387c81b55",
+          "actualRasterViewed": true,
+          "dimensions": [
+            1000,
+            650
+          ]
+        }
+      ],
+      "lessonScope": [
+        "common053",
+        "common087",
+        "common199",
+        "common352"
+      ],
+      "decision": "repair",
+      "defect": "Two relay boxes connected through a rectangle labeled tester falsely imply a tester is a permanent in-series communication device. Source05 identifies LAN tester as a cable checking tool; source03 separates media, equipment and communication power.",
+      "repair": "Four separate illustrated roles with no inter-role wiring. LAN tester shown as checking tool. Port topology, operational instructions, ratings and test acceptance are not asserted.",
+      "assetAfter": "assets/kensetsu/daily-technical-reviewed-20261107/network-role-v2.png",
+      "assetAfterSha256": "4431bc5ec75d18f5dc7c31ed36e42d35e477803487da8d709e7b6a8bedf8ec89",
+      "actualAfterRasterViewed": true,
+      "allFourBindingsSelfCheckedAgainstCurrentLesson": true
+    },
+    {
+      "assets": [
+        {
+          "logicalAssetBefore": "assets/kensetsu/daily-technical/air.png",
+          "viewedSha256": "d05688474c1f36bcf0107c96a96a360c00cf4e245c4d62ffe5b03aae4ce499c9",
+          "actualRasterViewed": true,
+          "dimensions": [
+            1000,
+            650
+          ]
+        },
+        {
+          "logicalAssetBefore": "assets/kensetsu/daily-technical/insulation.png",
+          "viewedSha256": "79e1629b1e3bb7ab9dd304db7a1f36369b36963fa1cd7be364f1fc8fb5e31f8f",
+          "actualRasterViewed": true,
+          "dimensions": [
+            1000,
+            650
+          ]
+        }
+      ],
+      "lessonScope": [
+        "common054",
+        "common055"
+      ],
+      "decision": "retain",
+      "verifiedGeometry": "Airflow arrows both point through filter then fan in bounded illustrative duct; no universal equipment arrangement asserted. Insulation leader endpoints land respectively on outside layer, insulation annulus, pipe wall and bore edge; retained correct drawing."
+    },
+    {
+      "assets": [
+        {
+          "logicalAssetBefore": "assets/kensetsu/daily-technical/waternet.png",
+          "viewedSha256": "08396c5c49bdf5716abda51c446bf54e090a8e4b3b5b01927da15d4f1e1cb8d0",
+          "actualRasterViewed": true,
+          "dimensions": [
+            1000,
+            650
+          ]
+        },
+        {
+          "logicalAssetBefore": "assets/kensetsu/daily-technical/gas.png",
+          "viewedSha256": "621bae1cbd5ce0e973a595e5b6c2c58a54470e039ca179b00af1f2ec2010e679",
+          "actualRasterViewed": true,
+          "dimensions": [
+            1000,
+            650
+          ]
+        },
+        {
+          "logicalAssetBefore": "assets/kensetsu/daily-technical/sprinkler.png",
+          "viewedSha256": "87d69082ed2e76df82bed984187c95ef4fe910609406913ccb8b8adc040fe45e",
+          "actualRasterViewed": true,
+          "dimensions": [
+            1000,
+            650
+          ]
+        }
+      ],
+      "lessonScope": [
+        "common051",
+        "common052",
+        "common056"
+      ],
+      "decision": "retain_bounded_scope",
+      "verifiedGeometry": "Supply/drain paths remain separate; no cross-connection shown. Sprinkler discharge arrows point downward from head; schematic caveat retained. Gas image distinguishes liquid and gas regions and marks a bounded supply-state illustration, without specifying gas type or plant topology; retained as state comparison only, not source LNG supply-chain topology proof."
+    }
+  ],
+  "bindingIntegrity": {
+    "figureIdsPreserved": 117,
+    "bindingRowsPreserved": 406,
+    "networkBindingSessionIds": [
+      "kensetsu-common-session-053",
+      "kensetsu-common-session-087",
+      "kensetsu-common-session-199",
+      "kensetsu-common-session-352"
+    ],
+    "canonicalJapaneseOrTranslationsChanged": false,
+    "bindingParagraphHashesChanged": false,
+    "captionAndAlt": "Runtime still uses each matching canonical session title and its existing12 direct translations. Authoring-register title/alt updated to describe new picture.",
+    "registryAndAssetHash": "verified exact",
+    "newDimensions": [
+      1400,
+      875
+    ],
+    "newAspectRatio": 1.6
+  },
+  "sourceGuidanceForWeeklyArtist": {
+    "common050": "Source03 PDF9 printed34 supports generation/transmission/substation/distribution/building/board functional sequence, but no universal terminal or circuit topology. No daily figure binds common050.",
+    "common053": "Source03 PDF11 printed36 supports signal media/equipment/power distinctions. This new picture establishes roles only, not physical connections."
+  },
+  "review": {
+    "aiActualRasterSelfReview": true,
+    "sourceActualPageSelfReview": true,
+    "browserRendered": false,
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "learnerDurationMeasured": false
+  },
+  "remaining": "110 daily assets have not been visually reviewed by this worker. Retained air/insulation/waternet/gas/sprinkler have bounded selected source03 lesson review, not all other reuse-source acceptance. Canonical source denominator remains open. Browser/device and all-locale visual wrapping remain pending."
+}
