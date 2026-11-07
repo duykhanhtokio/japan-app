@@ -10,6 +10,8 @@ const sources: Record<string, ImageSourcePropType> = {
   muscles: require('../../../assets/kaigo/daily-fix-20261031/muscles.png'),
   endocrine: require('../../../assets/kaigo/daily-fix-20261031/endocrine.png'),
   nervous: require('../../../assets/kaigo/daily-fix-20261031/nervous.png'),
+  'brain-royal-week02': require('../../../assets/kaigo/royal-weekly-20261107/week02/day08-brain-base.webp'),
+  'respiratory-royal-week02': require('../../../assets/kaigo/royal-weekly-20261107/week02/day09-respiratory-base.webp'),
   brain: require('../../../assets/kaigo/daily-fix-20261031/brain.png'),
   respiratory: require('../../../assets/kaigo/daily-fix-20261031/respiratory.png'),
   skeleton: require('../../../assets/kaigo/daily-fix-20261031/skeleton.png'),

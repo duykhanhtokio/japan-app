@@ -1,0 +1,55 @@
+import React,{useState} from 'react';
+import {Image,Text,View,type ImageSourcePropType} from 'react-native';
+import translations from '@/data/kaigo/royal-technical-labels.json';
+
+type Kind='brain'|'respiratory';
+type Point={anchor:[number,number];target:[number,number]};
+/** Percent coordinates on each independently authored 1536x1024 base. Endpoints are manually source-checked. */
+export const royalTechnicalLeaders:Record<Kind,Point[]>={
+ brain:[
+  {anchor:[5,15],target:[35,20]}, // cerebrum
+  {anchor:[5,40],target:[48,46]}, // diencephalon
+  {anchor:[95,78],target:[68,72]}, // cerebellum
+  {anchor:[5,60],target:[50,56]}, // midbrain above pons
+  {anchor:[5,76],target:[47,68]}, // pons ventral bulge
+  {anchor:[5,92],target:[52,82]}, // medulla below pons
+ ],
+ respiratory:[
+  {anchor:[5,6],target:[18,34]}, // nasal cavity in side view
+  {anchor:[48,12],target:[28.5,47]}, // pharynx posterior to oral cavity
+  {anchor:[48,88],target:[27.5,73]}, // larynx above trachea
+  {anchor:[95,7],target:[74.7,25]}, // trachea in front view
+  {anchor:[95,45],target:[68,49]}, // main bronchus entering lung
+  {anchor:[95,92],target:[92,68]}, // lung tissue
+ ],
+};
+export const royalTechnicalLabels=translations;
+export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=false}:{kind:Kind;source:ImageSourcePropType;language?:string;expanded?:boolean}){
+ const [width,setWidth]=useState(360);
+ const ja=translations.ja;
+ const tr=(translations as Record<string,typeof ja>)[language]??ja;
+ const bilingual=(original:string,translated:string)=>tr===ja?original:original+' / '+translated;
+ const labels=ja[kind].map((label,i)=>bilingual(label,tr[kind][i]));
+ const view=kind==='brain'?bilingual(ja.brainView,tr.brainView):bilingual(ja.respiratoryView,tr.respiratoryView);
+ return <View testID={`kaigo-royal-${kind}`} style={{width:expanded?1000:'100%'}}>
+  <Text style={{fontSize:16,color:'#243d4d',padding:8}}>{view}</Text>
+  <View onLayout={event=>setWidth(event.nativeEvent.layout.width)} style={{width:'100%',aspectRatio:1.5}}>
+   <Image source={source} accessibilityLabel={view} resizeMode="contain" style={{width:'100%',height:'100%'}} />
+   {royalTechnicalLeaders[kind].map((point,i)=>{
+    const ax=point.anchor[0]*width/100,ay=point.anchor[1]*width/150;
+    const tx=point.target[0]*width/100,ty=point.target[1]*width/150;
+    const length=Math.hypot(tx-ax,ty-ay),angle=Math.atan2(ty-ay,tx-ax)*180/Math.PI;
+    return <React.Fragment key={i}>
+     <View pointerEvents="none" style={{position:'absolute',left:(ax+tx-length)/2,top:(ay+ty)/2-0.75,width:length,height:1.5,backgroundColor:'#243d4d',transform:[{rotate:`${angle}deg`}]}} />
+     <View pointerEvents="none" style={{position:'absolute',left:`${point.target[0]}%`,top:`${point.target[1]}%`,width:7,height:7,marginLeft:-3.5,marginTop:-3.5,borderRadius:4,backgroundColor:'#243d4d'}} />
+     <View accessible accessibilityLabel={`${i+1}: ${labels[i]}`} style={{position:'absolute',left:`${point.anchor[0]}%`,top:`${point.anchor[1]}%`,width:24,height:24,marginLeft:-12,marginTop:-12,borderRadius:12,backgroundColor:'#243d4d',alignItems:'center',justifyContent:'center'}}><Text style={{fontSize:13,fontWeight:'700',color:'#fff8e9'}}>{i+1}</Text></View>
+    </React.Fragment>;
+   })}
+  </View>
+  <View style={{padding:8,gap:6}}>
+   {labels.map((label,i)=><Text key={i} style={{fontSize:16,color:'#243d4d'}}>{i+1} · {label}</Text>)}
+   {kind==='brain'&&<Text style={{fontSize:15,color:'#243d4d'}}>{bilingual(ja.brainstem,tr.brainstem)}</Text>}
+   <Text style={{fontSize:14,lineHeight:21,color:'#526674'}}>{bilingual(ja.scope,tr.scope)}</Text>
+  </View>
+ </View>;
+}
