@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const assert=require('node:assert/strict'),path=require('node:path'),rt=require('./actual-figure-test-runtime.cjs')(path.resolve(__dirname,'../..')),{React,renderToStaticMarkup,lessons}=rt,{agricultureNutrientDrainageReading:read}=rt.component('AgricultureNutrientDrainageRuby'),{DailyLearningFigure}=rt.component('DailyLearningSupport'),registry=rt.read('src/data/agriculture/nutrient-drainage-native-readings.json'),colors={text:'#111',translation:'#fff',translationText:'#111',border:'#777'},langs=['ja','en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','km','th','tl'];let renders=0,guards=0,fields=0;
-for(const [provider,e]of Object.entries(registry.providers)){
+for(const [provider,e]of Object.entries(registry.providers).filter(([p])=>!process.env.AGR_PROVIDER||p===process.env.AGR_PROVIDER)){
  const name=provider.startsWith('fertilizer:')?'FertilizerNativeFigure':'DrainageMethodComparison',Component=rt.component(name)[name],l=lessons.find(x=>x.id===e.lessonId),marker=f=>`agri-native-nutrient-drainage-ruby-${provider}-${f}"`,props={lessonId:l.id,lessonSourceHash:l.sourceHash,lessonRevision:l.revision,colors},render=(level,extra={})=>renderToStaticMarkup(React.createElement(Component,{...props,level,language:'ja',...extra}));fields+=Object.keys(e.fields).length;
  for(const level of e.levels){for(const language of langs){const flags={language,showTranslation:language!=='ja'},html=render(level,flags),daily=renderToStaticMarkup(React.createElement(DailyLearningFigure,{lesson:l,level,colors,...flags}));for(const f of Object.keys(e.fields)){assert(html.includes(marker(f)),provider+'/'+f);assert(daily.includes(marker(f)),provider+'/daily/'+f);}renders+=2;}}
  for(const level of ['', '3','unknown']){assert.equal(render(level),'');guards++;}
@@ -12,4 +12,4 @@ for(const [provider,e]of Object.entries(registry.providers)){
  for(const key of ['sourceSnapshot','canonicalJapanese']){const old=e[key];e[key]={};assert(!render(e.levels[0]).includes('agri-native-nutrient-drainage-ruby-'));e[key]=old;guards++;}
  const old=l.paragraphs[0].textJa;l.paragraphs[0].textJa+=' stale';assert(!render(e.levels[0]).includes('agri-native-nutrient-drainage-ruby-'));l.paragraphs[0].textJa=old;guards++;
 }
-console.log(JSON.stringify({pass:true,sourceBoundReusedFields:fields,actualCourseContexts:Object.values(registry.providers).reduce((n,e)=>n+e.levels.length,0),actualDirectDailyRenders:renders,guards,languageModes:13,sourceLocalesPreserved:true,newArtOrPixelApproval:false}));
+console.log(JSON.stringify({pass:true,sourceBoundReusedFields:fields,actualCourseContexts:Object.entries(registry.providers).filter(([p])=>!process.env.AGR_PROVIDER||p===process.env.AGR_PROVIDER).reduce((n,[p,e])=>n+e.levels.length,0),actualDirectDailyRenders:renders,guards,languageModes:13,sourceLocalesPreserved:true,newArtOrPixelApproval:false}));
