@@ -1,3 +1,4 @@
+import {manufacturingMainCaptionReading,hasManufacturingMainCaptionReading} from '@/data/manufacturing/main-caption-readings';
 import {caliperCaptionDisplay,isCaliperCaptionDisplayRegistered} from '@/data/manufacturing/caliper-caption-display';
 import {RoyalWeek03MechanicalDetails} from './RoyalWeek03MechanicalDetails';
 import {RoyalWeek01TechnicalDetails} from './RoyalWeek01TechnicalDetails';
@@ -13,6 +14,6 @@ export function DailyManufacturingFigure({lesson,language,showTranslation}:{less
  const image=dailyAsset40(lesson);if(!image)return null;
  const target=showTranslation?dailyCaption40(lesson,language):null;
  const captionDisplay=caliperCaptionDisplay(lesson,row),captionJa=captionDisplay?.text??row.captionJa;
- const captionRuby=isCaliperCaptionDisplayRegistered(lesson.id)?captionDisplay?.parts??null:undefined;
+ const captionRuby=isCaliperCaptionDisplayRegistered(lesson.id)?captionDisplay?.parts??null:hasManufacturingMainCaptionReading(lesson.id)?manufacturingMainCaptionReading(lesson,row)??null:undefined;
  return <><SupplementalFigure item={{id:row.assetId,lessonId:lesson.id,lessonSourceHash:lesson.sourceHash,assetFile:row.assetFile,width:row.width,height:row.height,captionJa,scopeLimits:[]}} japaneseCaptionRuby={captionRuby} imageSource={image} imageAlt={target?.alt??row.altJa} language={language} showTranslation={showTranslation} translatedCaption={target?.caption??null}/><RoyalWeek01TechnicalDetails lesson={lesson} language={showTranslation?language:'ja'}/><RoyalWeek03MechanicalDetails lesson={lesson} language={showTranslation?language:'ja'}/></>;
 }
