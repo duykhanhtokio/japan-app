@@ -108,6 +108,9 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-1-hyg-05':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-1-hyg-05-receiving-damaged-package-hold.webp'),aspectRatio:1672/941},
+ 'rst-1-hyg-04':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-1-hyg-04-virus-parasite-histamine-contexts.webp'),aspectRatio:1672/941},
+ 'rst-1-hyg-03':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-1-hyg-03-bacterial-source-categories.webp'),aspectRatio:1671/941},
  'rst-1-hyg-02':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-1-hyg-02-prevention-principles.webp'),aspectRatio:1671/941},
  'rst-1-hyg-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-1-hyg-01-hazard-classes.webp'),aspectRatio:1672/941},
 };
