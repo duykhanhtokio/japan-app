@@ -39,13 +39,15 @@ const cases=[
  ['food-source-normal-bands','food-2-042','p1'],['food-source-cause-bars','food-2-042','p4'],
 ];
 const locales=['ja','en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];let contexts=0;
-const render=(lesson,language)=>renderToStaticMarkup(React.createElement(reader.FoodSourcePracticeVisuals,{lesson,language,showTranslation:true,textColor:'#183044',readingColor:'#687078'}));
+const placement=(lesson,id)=>{const week7=load(path.join(root,'src/data/food-manufacturing/royal-week7-native.ts')).foodRoyalWeek7NativeFor(lesson),week8=load(path.join(root,'src/data/food-manufacturing/royal-week8-native.ts')).foodRoyalWeek8NativeFor(lesson);const promoted=week7?.kind==='normal'?'food-source-normal-bands':week8?.mainFigureId;return !!promoted&&id===promoted;};
+const render=(lesson,language,dailyPlacement=placement(lesson,forcedExpanded?.id))=>renderToStaticMarkup(React.createElement(reader.FoodSourcePracticeVisuals,{lesson,language,showTranslation:true,textColor:'#183044',readingColor:'#687078',dailyPlacement}));
 for(const [id,lessonId,paragraphId] of cases){
  const lesson=index.foodManufacturingLessons.find(l=>l.id===lessonId);assert(lesson);
  const fixture={id,lessonId,paragraphId,lessonSourceHash:lesson.sourceHash,source:{uri:'old-object-must-not-be-trusted.webp'},aspectRatio:1};
  for(const language of locales){
   forcedExpanded=fixture;let html=render(lesson,language);
   assert(html.includes('data-testid="'+id+'"'));assert(html.includes('data-testid="food-source-practice-zoom"'),'Current registered source figure remains expandable');assert(!html.includes('old-object-must-not-be-trusted.webp'),'Zoom must resolve current registry bytes instead of retaining old object source');contexts++;
+  const opposite=render(lesson,language,!placement(lesson,id));assert(!opposite.includes('data-testid="'+id+'"'),'Promoted main and supplementary figure placements must not duplicate');assert(!opposite.includes('data-testid="food-source-practice-zoom"'),'A selection outside the current placement must close');contexts++;
   const other=index.foodManufacturingLessons.find(l=>l.id!==lessonId&&l.level===lesson.level);
   html=render(other,language);assert(!html.includes('data-testid="food-source-practice-zoom"'),id+' stale selection from another lesson must close');contexts++;
   for(const scenario of ['missing','blank-title','blank-body','stale']){

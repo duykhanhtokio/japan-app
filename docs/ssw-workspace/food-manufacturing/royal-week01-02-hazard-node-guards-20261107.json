@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "baseCommit": "96342a03df42d4fbd9523f4ef65f3392d89e3b44",
+  "scope": "Existing weeks01–02 Royal hazard-node accessibility, source/node guards and load-error fallback",
+  "status": "ai_self_reviewed_ready_for_remote_persistence",
+  "concurrentWorkPreserved": {
+    "baselineComponentBlob": "61dba79c4dd4afcec37385acbbc9b8475ded1b87",
+    "retained": "Newer localized inline/zoom descriptions, full canonical lesson paragraphs plus sourceHash-matched lesson translations, existing six pinned lesson revisions and selection identity including diagram ID. Overlapping local localization/zoom draft discarded; no ownership-based replacement."
+  },
+  "changes": [
+    "Require all p1/p2/p3 source paragraphs to be present/nonempty before activating any contextual Royal node photo; all six pinned revisions have these exact caption IDs.",
+    "Require known node ID, unchanged canonical Japanese node meaning and an existing asset source before showing/selecting a photo.",
+    "Scope failed-image state by lesson/revision/diagram/node. Actual onError hides only that context image and closes its zoom; native Japanese/localized classification remains and other nodes/lessons remain available.",
+    "Set the interactive hazard diagram parent accessible=false so its child photo buttons remain individually accessible; preserve grouping on static native diagrams."
+  ],
+  "sourceContext": {
+    "diagramId": "food-hazards",
+    "diagramDataBlobUnchanged": "4225dda5fc03b58e5a938316b9fb1aedffdcd5f7",
+    "lessons": [
+      "food-1-003",
+      "food-1-004",
+      "food-1-005",
+      "food-1-006",
+      "food-1-008",
+      "food-2-007"
+    ],
+    "nodeMeanings": {
+      "1": "物理的危害要因\n硬い異物など",
+      "2": "化学的危害要因\n有害な化学物質など",
+      "3": "生物的危害要因\n有害な微生物など"
+    },
+    "meaning": "Existing contextual examples retained; exact native classifications, caution that classification alone does not establish safety, full source descriptions and canonical locale translations remain authoritative."
+  },
+  "assetsUnchanged": [
+    {
+      "path": "assets/food-manufacturing/royal-weekly-20261107/week01/hard-foreign-material.webp",
+      "gitBlobSha": "4a183e5a203fa804d3674ae1ad7c05879ce1fa6f",
+      "sha256": "4acdbfd13c8ead4ba0c2e8fe1cb88a107e2166416091da76adb907e2eb7abe75",
+      "bytes": 255136
+    },
+    {
+      "path": "assets/food-manufacturing/royal-weekly-20261107/week01/chemical-required-rinse.webp",
+      "gitBlobSha": "9284e74633d55efd77ce0a4be9ed641dbe296fcf",
+      "sha256": "ee1d4dff5bafd0981c09ff68f0fee7bae25689e77ffe540c736236024fa96fc3",
+      "bytes": 315580
+    },
+    {
+      "path": "assets/food-manufacturing/royal-weekly-20261107/week01/invisible-microbiological-risk.webp",
+      "gitBlobSha": "29c94582800a7d01f6324537e1e5aba67671b158",
+      "sha256": "b418f01ad9406e15a7c15f5f0a3f3fb462ec1749d5f7ddfeb8fd18354b6c5c14",
+      "bytes": 290926
+    }
+  ],
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/food-manufacturing/check-hazard-node-localized-zoom.cjs",
+    "result": "PASS",
+    "actualInlineContexts": 78,
+    "actualSelectedZoomContexts": 234,
+    "translationOffContexts": 18,
+    "staleLessonRevisionContexts": 6,
+    "coverage": "Actual production ConceptDiagrams through Babel/React, actual current six canonical lessons, actual production translation guard and actual canonical locale packs, real existing WebP bytes. Japanese+12locale inline/selected zoom retains node labels, full source paragraphs, matching lesson translations, caution and close labels. Dark surrounding ink cannot leak into ivory zoom.",
+    "negativeCases": [
+      "Every stale lesson revision disables all Royal nodes while retaining native classification",
+      "Empty source and absent required p1 disable all Royal nodes",
+      "Unknown node ID and changed native node meaning do not bind old art",
+      "Stale selected lesson/revision identity cannot open zoom",
+      "Actual onError for each of three images hides only failed context photo, closes zoom, keeps native classification; next lesson remains unaffected",
+      "Existing food2-007 outer/daily duplicate suppression remains"
+    ],
+    "adapters": "Controlled state and RN structural adapters; unrelated TranslationText styling isolated because this unit changes no theme component. Actual production foodManufacturingTranslation function is compiled, not reimplemented. This is source/runtime structural QA, not browser/device/native acceptance.",
+    "diffCheck": "PASS scoped diff --check"
+  },
+  "beforeBlobSHAs": {
+    "src/components/food-manufacturing/ConceptDiagrams.tsx": "61dba79c4dd4afcec37385acbbc9b8475ded1b87",
+    "scripts/food-manufacturing/check-hazard-node-localized-zoom.cjs": null,
+    "docs/ssw-workspace/food-manufacturing/royal-week01-02-hazard-node-guards-20261107.json": null
+  },
+  "preserved": [
+    "All image/source/translation/diagram/ruby bytes",
+    "Current multilingual localized zoom and full source descriptions",
+    "All unrelated native diagrams and weekly main placements",
+    "Registry, week queue/cursor and historical receipts"
+  ],
+  "generationCalls": 0,
+  "acceptance": {
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false,
+    "releaseReady": false,
+    "globalSourceAcceptance": false
+  },
+  "next": "After persistence continue latest supported queue; retain unresolved context-specific Japanese reading debt explicitly."
+}

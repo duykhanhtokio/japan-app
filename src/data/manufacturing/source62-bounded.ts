@@ -35,10 +35,12 @@ export function manufacturingSource62Reading(lesson:ManufacturingLesson,id:strin
 
 /** Literal caller asset identity; metadata cannot silently retarget a different raster. */
 const acceptedFigure={"path":"assets/manufacturing/source62/switch-roles.png","sha256":"a31c71c215dece7c5d51f35054dbba736388f7fe101af5481c140be82b17813b","width":1200,"height":680};
-export function manufacturingSource62Figure(lesson:ManufacturingLesson,locale:string):{image:NonNullable<Row['image']>;captionJa:string;caption:string|null}|null{
+export function manufacturingSource62Figure(lesson:ManufacturingLesson,locale:string):{image:NonNullable<Row['image']>;captionJa:string;caption:string|null;captionRuby?:Source49Segment[]}|null{
  if(lesson.id!=='mfg1-electrical-l094')return null;
  const r=rows().find(r=>r.key==='reset');if(!r||!r.image||!current(r,lesson))return null;
  if(r.image.path!==acceptedFigure.path||r.image.sha256!==acceptedFigure.sha256||r.image.width!==acceptedFigure.width||r.image.height!==acceptedFigure.height)return null;
  const target=Object.prototype.hasOwnProperty.call(r.wording,locale)?r.wording[locale]:undefined;
- return {image:{...r.image},captionJa:r.wording.ja.after,caption:locale!=='ja'&&target?.effectiveJapaneseSha256===r.effectiveJapaneseSha256?target.after:null};
+ const captionRuby=require('./source49-readings').manufacturingSource49Reading(lesson,r.paragraphId,r.wording.ja.after) as Source49Segment[]|undefined;
+ const caption=locale!=='ja'&&target?.effectiveJapaneseSha256===r.effectiveJapaneseSha256&&typeof target.before==='string'&&typeof target.after==='string'&&target.after.startsWith(target.before+'\n')&&target.after.slice(target.before.length+1).trim()?target.after:null;
+ return {image:{...r.image},captionJa:r.wording.ja.after,caption,captionRuby};
 }

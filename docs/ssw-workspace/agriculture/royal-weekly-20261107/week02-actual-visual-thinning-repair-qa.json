@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "unit": "week02-actual-visual-inspection-and-thinning-repair",
+  "baselineCommit": "2fb8bfb108fd0e345a62638fedec355ac8c146cf",
+  "status": "ai_self_checked_not_domain_device_or_release_accepted",
+  "inspectionMethod": "Opened actual original full raster pixels using view_image, compared current Japanese figure metadata and current source-bound scheduled lesson paragraphs; opened generated output and final encodedWebP. Then rechecked the two exact private primary source pages visually before final persistence; no source denominator/page closure claimed.",
+  "sequentialGroups": [
+    {
+      "order": 1,
+      "figureId": "agr-f40-general-tractor-seeder",
+      "disposition": "retain",
+      "observed": "Detailed tractor-mounted seed hopper, multiple flexible seed tubes and near-ground seeding parts visible; no seedling tray. Matches agr-germination seed-sowing appearance objective; retain bounded product/operation limits."
+    },
+    {
+      "order": 2,
+      "figureId": "agr-f40-general-transplanter",
+      "disposition": "retain",
+      "observed": "Detailed seedling tray, wheels and near-ground planting units visible; distinguishable from seed drill. Retain as generic recognition, not assembly/operation validation."
+    },
+    {
+      "order": 3,
+      "figureId": "agr-f40-general-hand-planting",
+      "disposition": "retain",
+      "observed": "Gloved hands hold seedling root plug near planting hole; operator outside bed and planted seedlings visible. Matches hand-planting appearance; no inferred depth/posture/root-handling certification."
+    },
+    {
+      "order": 4,
+      "figureId": "agr-f40-general-thinning-comparison",
+      "disposition": "replace",
+      "beforeDefect": "Repeated flat ellipse primitives substituted for occupational botanical illustration; small leaf-damage dots/holes had weak instructional visibility. Existing controlled schematic retained in Git, no deletion.",
+      "after": "Original Royal A+F2.5D botanical four-panel comparison; leaf veins, natural leaves, visible long internodes between true-leaf nodes, conspicuous missing leaf margins/holes, crowded-versus-separated seedlings. Exact four Japanese headings inspected; no invented cause, dates, distances or universally prescribed removal counts. Existing Japanese/12locale captions and limits retained."
+    }
+  ],
+  "generatedAsset": {
+    "path": "assets/agriculture/royal-weekly-20261107/week02/thinning-botanical-comparison-v2.webp",
+    "sha256": "05a50ddbdc2fb726cd505606eed64f6834c1f12ecc452111cd647ec94a42b618",
+    "bytes": 482882,
+    "width": 1536,
+    "height": 1024,
+    "tool": "built-in image_gen.imagegen",
+    "referenceInputs": null,
+    "promptSpec": "Original scientific-educational Royal A+F2.5D ivory/gold four equal comparison panels: weak versus vigorous seedling; long true-leaf internodes versus compact; visible irregular missing leaf edges/hole versus intact; three crowded versus two separated seedlings. Detailed organic botanical leaves, soil, soft shadows. Exact headings 生育が弱い苗 / 節間が長い苗（徒長） / 葉の異常・食害の跡 / 苗の間隔が密. No other text, numbers, arrows, crosses, checkmarks, diagnosis or prescribed spacing. No source image input.",
+    "conversion": "Generated1536x1024PNG encoded WebP quality92; same canvas/no crop."
+  },
+  "priorAsset": {
+    "assetPath": "assets/agriculture/completion-40/general/agr-f40-general-thinning-comparison.png",
+    "assetSha256": "3f7c2f541262d6787672f65012371877e52ab55c8506dd04376ba96af9a7e931",
+    "width": 1240,
+    "height": 1000,
+    "creation": "original_controlled_svg_font_outline_layout_no_source_image_input",
+    "kind": "controlled_comparison_diagram"
+  },
+  "concreteDependentCorrections": {
+    "removedMisleadingSeedlingBindings": {
+      "agr-management-detail-staged-thinning": {
+        "lessonSourceHash": "1981d9bc4fa30de753bec63af06ca796b644269e930a2f785181be316e22217c",
+        "figureId": "agr-f40-general-thinning-comparison",
+        "assetSha256": "3f7c2f541262d6787672f65012371877e52ab55c8506dd04376ba96af9a7e931",
+        "keyObjectiveId": "AGR-K-MANAGEMENT-DETAIL-STAGED-THINNING-01",
+        "objectiveJa": "予備摘果から仕上げ摘果への順序を説明し、隔年結果への対応と葉果比の読み方を区別できる。",
+        "reuseReasonJa": "「生理落果を見ながら進める摘果」で扱う対象を、既存の「間引きで比べる苗の状態」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+        "scopeLevels": [
+          "2"
+        ],
+        "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
+      },
+      "agr-f40-safety-cultivation-details": {
+        "lessonSourceHash": "8e8bc062af9fc3856822823f0319349b0ac9dfbe62a0dbf70c145141cb87449a",
+        "figureId": "agr-f40-general-thinning-comparison",
+        "assetSha256": "3f7c2f541262d6787672f65012371877e52ab55c8506dd04376ba96af9a7e931",
+        "keyObjectiveId": "AGR-K-F40-SAFETY-CULTIVATION-01",
+        "objectiveJa": "枝葉管理、受粉、収穫後の生理、被覆資材の対象と働きを区別し、資料の例と現場で別に確認する条件を説明できる。",
+        "reuseReasonJa": "本文の対象を「間引きで比べる苗の状態」で観察し、作業・利用の違いを説明します。図は本文にない条件を追加するものではありません。",
+        "scopeLevels": [
+          "2"
+        ],
+        "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
+      }
+    },
+    "retainedTerminologyBinding": "agr-f40-flower-add-terms-photo1: wording now explicitly limits reference to seedling thinning and excludes branch-year/fruit/other classification claims; hash updated to new art."
+  },
+  "openObjectiveImageGaps": [
+    {
+      "lessonId": "agr-management-detail-staged-thinning",
+      "reason": "Fruit pre-thinning/final thinning, physiological fruit drop and leaf-to-fruit units are not depicted by seedling thinning. Need source-supported fruit illustration."
+    },
+    {
+      "lessonId": "agr-f40-safety-cultivation-details",
+      "reason": "Branch/axillary bud, pollination/postharvest/cover material objectives not depicted by seedling thinning. Need appropriate source-supported objective image."
+    }
+  ],
+  "checks": {
+    "actualRecognitionRenders": 24,
+    "sourceBoundRecognitionContexts": 2,
+    "recognitionStaleHiddenDependencyNegatives": 58,
+    "actualDailyLocalizedRenders": 13,
+    "wrongObjectiveOrStaleSourceRejections": 5,
+    "strictComponentTypes": "PASS actual RecognitionImages graph with real JSON, minimal React/RN declarations; not whole app",
+    "gitDiffCheck": "PASS",
+    "sourcePixels": "Retained exact originals inspected; final generated encodedWebP separately opened",
+    "scripts": [
+      "scripts/agriculture/check-recognition-locale-batch.cjs agr-f40-general-thinning-comparison",
+      "scripts/agriculture/check-royal-thinning-visual-repair.cjs",
+      "scripts/agriculture/check-recognition-locale-types.cjs"
+    ]
+  },
+  "preservation": "All learner IDs/schedules/questions/Japanese lesson hashes and translated title/alt/observation/limits unchanged. Four visible label translations reused exactly from prior11-label arrays. New asset binding only; old source SVG/raster files preserved as history. No sourcePDF, source screenshot or extracted source prose committed.",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "wholeWeekComplete": false,
+  "wholeSectorComplete": false,
+  "releaseReady": false,
+  "labelBinding": "Actual embedded headings are exactly the four current labelsJa. Reused the corresponding four existing translations in12locales without retranslation. Historical seven explanatory/candidate/before-after labels are not claimed as visible in the new artwork; observation, limitations and Japanese lesson text retain the instructional meaning.",
+  "concurrentReconciliation": {
+    "base": "27dbef319ffce768a1b4feb3bab70187a37e9f57",
+    "remote": "27dbef319ffce768a1b4feb3bab70187a37e9f57",
+    "paths": [
+      "recognition-images.json",
+      "recognition-image-locales.json",
+      "daily-learning-support.json"
+    ],
+    "localChanges": "thinning figure raster/metadata, matching locale hash/four label arrays, two wrong-objective binding removals and one bounded terminology rebind",
+    "remoteChangesPreserved": "soil-three-factor figure + locale entry retained exact remote; agr-soil-biological-2 daily binding retained exact remote",
+    "overlappingConflicts": false,
+    "sourceHashConflicts": false
+  },
+  "primarySourceVisualRecheck": [
+    {
+      "documentId": "AGR-S1",
+      "sha256": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+      "pdfPage": 12,
+      "printedPage": 6
+    },
+    {
+      "documentId": "AGR-S2",
+      "sha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+      "pdfPage": 15,
+      "printedPage": 13
+    }
+  ],
+  "primarySourceRecheckScope": "Source gives poor growth, elongated growth, abnormal/eaten leaves and excess/crowded seedlings; new four-panel botanical expression preserves those observation categories independently, with no copied page pixels/crosses or prescribed counts."
+}

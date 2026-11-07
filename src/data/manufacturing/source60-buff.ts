@@ -41,11 +41,14 @@ export function manufacturingSource60Translation(q:ManufacturingQuestion,locale:
 /** Literal caller asset identity; metadata cannot silently retarget a different raster. */
 const acceptedFigure={"path":"assets/manufacturing/source60/buff-roles.png","sha256":"977c9a16741ba8df84f65f8632ac2d914c57ff1add7e03f819a787138ac0991e","width":1200,"height":680};
 /** No target-language fallback; figure captions use the checked paragraph extension. */
-export function manufacturingSource60Figure(lesson:ManufacturingLesson,locale:string):{image:NonNullable<Row['image']>;captionJa:string;caption:string|null}|null{
+export function manufacturingSource60Figure(lesson:ManufacturingLesson,locale:string):{image:NonNullable<Row['image']>;captionJa:string;caption:string|null;captionRuby?:Source49Segment[]}|null{
  if(lesson.id!=='mfg1-surface-lesson-008')return null;
  const row=rows().find(r=>r.key==='definition');
  if(!row||!row.image||!current(row,lesson))return null;
  if(row.image.path!==acceptedFigure.path||row.image.sha256!==acceptedFigure.sha256||row.image.width!==acceptedFigure.width||row.image.height!==acceptedFigure.height)return null;
  const ja=row.wording.ja,target=Object.prototype.hasOwnProperty.call(row.wording,locale)?row.wording[locale]:undefined;
- return {image:{...row.image},captionJa:ja.after.slice(ja.before.length+1),caption:locale!=='ja'&&target?.effectiveJapaneseSha256===row.effectiveJapaneseSha256?target.after.slice(target.before.length+1):null};
+ const captionJa=ja.after.slice(ja.before.length+1),fullRuby=manufacturingSource60Reading(lesson,row.paragraphId,row.canonicalTaughtAfter);
+ const captionRuby=fullRuby?.[1]?.text==='\n'&&fullRuby.slice(2).map(p=>p.text).join('')===captionJa?fullRuby.slice(2):undefined;
+ const translated=locale!=='ja'&&target?.effectiveJapaneseSha256===row.effectiveJapaneseSha256&&typeof target.before==='string'&&typeof target.after==='string'&&target.after.startsWith(target.before+'\n')?target.after.slice(target.before.length+1):null;
+ return {image:{...row.image},captionJa,caption:translated?.trim()?translated:null,captionRuby};
 }

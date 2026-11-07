@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "scope": "ExistingverifiedJapanese imagecaption readings: Source60buff andSource62switch roles",
+  "confirmedBefore": "Bothcaptionpayloads alreadycontainedvalidatedruby (49fullbuffparts/198switchparts), butSupplementalFigure renderedimagecaptions onlyasplainText. No new readings are authored.",
+  "after": "Source60caption uses47existingextensionparts aftercheckedbaseparagraph/newline. Source62caption reuses198existingSource49readingparts. SupplementalFigure rendersrubyonlywhenalltextjoins exactcurrentJapanese caption andkanji/readings satisfyexistingkanaformat; stale/malformedparts fall backtoplainunchangedJapanese. Hiddenquizcaptions suppressallruby. Nativecaptionprefix/type/nonemptychecks preventstaleextension slicing.",
+  "checks": {
+    "actualSourceCaptionRubyCases": 52,
+    "checkedRubyPartPlacements": 6370,
+    "nativeCaptionPrefixTypeGuards": 10,
+    "staleSourceRubyFallbacks": 2,
+    "genericExactJoinKanaCases": 78,
+    "hiddenQuizRubyCases": 13,
+    "locales": 13,
+    "newReadingsAuthored": 0,
+    "priorToggleIdentityRegression": {
+      "renders": 52,
+      "sourceNegatives": 6,
+      "assetIdentityNegatives": 8,
+      "invalidAssetResolutions": 0
+    },
+    "recognitionSecrecyRegression": {
+      "readers": 390,
+      "occupationalOverviews": 78,
+      "unsubmittedQuiz": 793,
+      "captionLeaks": 0
+    },
+    "adapters": "Actualsource60/source49readinghelpers/currentdata/source60-62callers/SupplementalFigure +ReactSSR. In-memory malformedmetadata; RN/imageURI/theme/safearea/UI adapters. No screenshot/native-screenreader/device/browser acceptance."
+  },
+  "preserved": "AllsourcepayloadJSON/JP/captiontranslations/hashes/images/questions/answers/state. ExistingJapanese readings only, exacttextbound; ownintegrationlazy/a11y/currentlessoncontexts andprimaryweek08art/scopedclosures retained. No paidgeneration.",
+  "remaining": "Mergedqueue94canonicalmainIDs weeks09–14 plusassociatednative/inline/supplemental/companion scopes remain; otherexistingcaptionruby scopes needseparatecurrentevidence. No whole-source/device/native/domainclosureclaim.",
+  "review": {
+    "wholeExistingIllustrationScopeComplete": false,
+    "wholeSourceKnowledgeCovered": false,
+    "newPixelReview": false,
+    "browser": false,
+    "physicalDeviceTested": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "humanReviewed": false
+  },
+  "files": [
+    {
+      "path": "src/components/manufacturing/SupplementalManufacturingDiagrams.tsx",
+      "sha256": "8eb30c33ce961ac7ddc93f72821a4606f62208429ba3cf774511c6a40b72aef6"
+    },
+    {
+      "path": "src/components/manufacturing/Source60BuffFigure.tsx",
+      "sha256": "80d425b2cd0dd17be4168d415d3b298967b3534073a61a56c932fe8a9c0a5bcd"
+    },
+    {
+      "path": "src/components/manufacturing/Source62Figure.tsx",
+      "sha256": "b4d70ecf0bf9b91f7b71beab66d35fba3e0c74fb099dc272fa9db78d348038e5"
+    },
+    {
+      "path": "src/data/manufacturing/source60-buff.ts",
+      "sha256": "2b43a14cc394821beacb48e87271c7e6ea739ca1914f1739e4361ace92535d8c"
+    },
+    {
+      "path": "src/data/manufacturing/source62-bounded.ts",
+      "sha256": "ae08bc16204ad0085db131ecaf33d6170f0749065be25447ce37ef2ab3d4b5ed"
+    },
+    {
+      "path": "scripts/manufacturing/check-existing-caption-ruby.cjs",
+      "sha256": "4a53a69bfa95df5b69307bf4bb3dfd5767f919be15f8f14bff221371fc2ec1aa"
+    }
+  ],
+  "status": "self_checked_ready_for_root_persistence"
+}

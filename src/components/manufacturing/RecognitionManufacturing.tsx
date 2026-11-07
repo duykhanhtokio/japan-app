@@ -1,3 +1,4 @@
+import {RecognitionOccupationalOverview} from './RecognitionOccupationalOverview';
 import {useState} from 'react';
 import {Pressable,ScrollView,Text,View} from 'react-native';
 import type {ManufacturingLesson,ManufacturingQuestion} from '@/data/manufacturing';
@@ -29,6 +30,7 @@ export function RecognitionReader({lesson,language,onBack,onComplete,saving,save
   <Text selectable style={{color:colors.text,fontSize:17,lineHeight:29}}>{pack.captionJa}</Text>
   {caption&&<TranslationText>{caption}</TranslationText>}
   {show&&language!=='ja'&&!caption&&<TranslationText>{t('translationPending')}</TranslationText>}
+  <RecognitionOccupationalOverview pack={pack} language={language} showTranslation={show}/>
   <Figures pack={pack} assets={teaching.length?teaching:pack.assets} language={language} accessibleCaption={caption}/>
   {saveError&&<Text accessibilityRole="alert" style={{color:colors.text}}>{t('saveError')}</Text>}
   <Pressable accessibilityRole="button" disabled={saving} accessibilityState={{disabled:saving}} onPress={onComplete} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:17,textAlign:'center'}}>{t(saving?'saving':'complete')}</Text></Pressable>

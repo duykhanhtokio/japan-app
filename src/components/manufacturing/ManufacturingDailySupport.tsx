@@ -1,4 +1,4 @@
-import {Week03CompanionFigure} from './Week03CompanionFigure';
+import {ScopedManufacturingCompanionFigures} from './Week03CompanionFigure';
 import {Week02CompanionFigure} from './Week02CompanionFigure';
 import {Text,View} from 'react-native';
 import type {ManufacturingLesson} from '@/data/manufacturing';
@@ -11,7 +11,6 @@ import {manufacturingUi} from '@/data/manufacturing/ui';
 import {TranslationText,useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import {ManufacturingDiagram} from './ManufacturingDiagram';
 import {SupplementalManufacturingDiagrams} from './SupplementalManufacturingDiagrams';
-import {CompletionManufacturingDiagrams} from './CompletionManufacturingDiagrams';
 /** Companion content is inside the day; its original identity and translations remain intact. */
 export function ManufacturingDailySupport({lesson,language,showTranslation}:{lesson:ManufacturingLesson;language:string;showTranslation:boolean}){
  const found=manufacturingDailySupport(lesson),{colors}=useStudyAppearance();if(!found)return null;
@@ -22,10 +21,9 @@ export function ManufacturingDailySupport({lesson,language,showTranslation}:{les
   <Text style={{fontSize:16,lineHeight:27,color:colors.muted}}>{companion.objectiveJa}</Text>{translated&&<TranslationText>{translated.objective}</TranslationText>}
   {binding.paragraphIds.map(id=>{const p=companion.paragraphs.find(p=>p.id===id)!,target=translated?.paragraphs.find(p=>p.id===id);return <View key={id} style={{gap:8}}><Text style={{fontSize:17,lineHeight:28,fontWeight:'600',color:colors.text}}>{p.titleJa}</Text><Text selectable style={{fontSize:17,lineHeight:29,color:colors.text}}>{manufacturingLessonParagraph(companion,id,'ja',p.textJa)}</Text>{translated&&<TranslationText>{target?.title}{'\n'}{manufacturingLessonParagraph(companion,id,language,target?.text)}</TranslationText>}</View>;})}
   <Week02CompanionFigure lesson={companion} paragraphIds={binding.paragraphIds} language={language} showTranslation={showTranslation}/>
-  <Week03CompanionFigure lesson={companion} paragraphIds={binding.paragraphIds} language={language} showTranslation={showTranslation}/>
   <ManufacturingDiagram lessonId={companion.id} lessonSourceHash={companion.sourceHash} lesson={companion} language={language} showTranslation={showTranslation}/>
   <SupplementalManufacturingDiagrams lesson={companion} language={language} showTranslation={showTranslation}/>
-  <CompletionManufacturingDiagrams lesson={companion} language={language} showTranslation={showTranslation}/>
+  <ScopedManufacturingCompanionFigures lesson={companion} paragraphIds={binding.paragraphIds} language={language} showTranslation={showTranslation}/>
   <Text style={{fontSize:17,lineHeight:28,fontWeight:'600',color:colors.text}}>{manufacturingUi(language,'activity')}</Text><Text selectable style={{fontSize:17,lineHeight:29,color:colors.text}}>{companion.activityJa}</Text>{translated&&<TranslationText>{translated.activity}</TranslationText>}
  </View>;
 }

@@ -19,7 +19,7 @@ function program(removeCompanionProp=false){
  const host=ts.createCompilerHost(options),originalGet=host.getSourceFile.bind(host),originalRead=host.readFile.bind(host),originalExists=host.fileExists.bind(host);
  host.fileExists=file=>file===virtual||originalExists(file);
  host.readFile=file=>file===virtual?declarations:originalRead(file);
- host.getSourceFile=(file,version,onError,createNew)=>{if(file===virtual)return ts.createSourceFile(file,declarations,version,true);if(removeCompanionProp&&file===companionCaller)return ts.createSourceFile(file,originalRead(file).replace('<Week03CompanionFigure lesson={companion} paragraphIds={binding.paragraphIds}','<Week03CompanionFigure lesson={companion}'),version,true,ts.ScriptKind.TSX);return originalGet(file,version,onError,createNew);};
+ host.getSourceFile=(file,version,onError,createNew)=>{if(file===virtual)return ts.createSourceFile(file,declarations,version,true);if(removeCompanionProp&&file===companionCaller)return ts.createSourceFile(file,originalRead(file).replace('<ScopedManufacturingCompanionFigures lesson={companion} paragraphIds={binding.paragraphIds}','<ScopedManufacturingCompanionFigures lesson={companion}'),version,true,ts.ScriptKind.TSX);return originalGet(file,version,onError,createNew);};
  return ts.createProgram([component,...callers,virtual],options,host);
 }
 const current=program(),checker=current.getTypeChecker();let checked=0;const sites=[];

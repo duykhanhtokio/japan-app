@@ -2,7 +2,7 @@
 const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('node:assert/strict');
 const babel=require('@babel/core'),React=require('react'),{renderToStaticMarkup}=require('react-dom/server');
 const root=process.env.FOOD_QA_REPO_ROOT||path.resolve(__dirname,'../..'),cache=new Map();
-let forcedExpandedFigure=null,forceClosureZoom=false;
+let forcedExpandedFigure=null,forceClosureZoom=false,forceDailyZoom=false;
 const wrap=tag=>({children,testID,accessibilityLabel})=>React.createElement(tag,{'data-testid':testID,'aria-label':accessibilityLabel},children);
 const nil=()=>null;
 const rn={View:wrap('div'),Text:wrap('span'),ScrollView:wrap('div'),Pressable:wrap('button'),Image:({source,accessibilityLabel,testID})=>React.createElement('img',{src:source?.uri,alt:accessibilityLabel,'data-testid':testID}),Modal:({visible,children})=>visible?React.createElement('div',null,children):null,StyleSheet:{create:s=>s,absoluteFill:{position:'absolute'}}};
@@ -13,7 +13,7 @@ function load(file){
  const m={exports:{}};cache.set(file,m);
  const code=babel.transformSync(fs.readFileSync(file,'utf8'),{filename:file,babelrc:false,configFile:false,plugins:[['@babel/plugin-transform-typescript',{isTSX:file.endsWith('.tsx')}],['@babel/plugin-transform-react-jsx',{runtime:'classic'}],'@babel/plugin-transform-modules-commonjs']}).code;
  function req(name){
-  if(name==='react')return file.endsWith('/FoodManufacturingCourse.tsx')?{...React,useState:initial=>React.useState(initial===false?true:initial)}:file.endsWith('/FoodSourcePracticeVisuals.tsx')?{...React,useState:initial=>React.useState(initial===null&&forcedExpandedFigure?forcedExpandedFigure:initial)}:file.endsWith('/FoodClosureSupplements.tsx')?{...React,useState:initial=>React.useState(initial===false&&forceClosureZoom?true:initial)}:React;
+  if(name==='react')return file.endsWith('/FoodDailyLearning.tsx')?{...React,useState:initial=>React.useState(initial===false&&forceDailyZoom?true:initial)}:file.endsWith('/FoodManufacturingCourse.tsx')?{...React,useState:initial=>React.useState(initial===false?true:initial)}:file.endsWith('/FoodSourcePracticeVisuals.tsx')?{...React,useState:initial=>React.useState(initial===null&&forcedExpandedFigure?forcedExpandedFigure:initial)}:file.endsWith('/FoodClosureSupplements.tsx')?{...React,useState:initial=>React.useState(initial===false&&forceClosureZoom?true:initial)}:React;
   if(name==='react-native')return rn;
   if(name==='@/components/tokutei/StudyAppearance')return {TranslationText:wrap('span'),StudyAppearanceProvider:wrap('div'),ReadingAppearanceControl:nil,useStudyAppearance:()=>({colors})};
   if(name==='./FoodLessonRuby')return {FoodLessonRuby:({text})=>React.createElement('span',null,text)};
@@ -83,4 +83,28 @@ forceClosureZoom=true;
 for(const language of locales){const html=renderToStaticMarkup(React.createElement(closure.FoodClosureSupplements,{lesson:closureLesson,language,showTranslation:true,textColor:colors.text,readingColor:colors.muted}));const zoom=[...html.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]).find(tag=>tag.includes('food64-original-histogram-zoom'));assert(zoom&&zoom.includes('same-centre-different-spread.webp'));assert(zoom.includes(escaped(rawClosure.textJa)));if(language!=='ja'){assert(zoom.includes(escaped(rawClosure.translations[language].text)));assert(html.includes(escaped(closeUi.locales[language].close)));}closureZoomContexts++;}
 forceClosureZoom=false;
 assert.equal(assets.size,expectedAssets.size,'All rendered images must belong to current source-bound inventory; no forgotten legacy supplement');for(const p of assets)assert(expectedAssets.has(p),p+' unexpected visual asset');
-console.log(JSON.stringify({mainReaderContexts:contexts,sourcePracticeZoomContexts:zooms,dailyPhotoBindings:photoBindings,dailyNativeBindings:nativeBindings,sourcePracticeFigures:figures.length,uniqueActualWebpAssets:assets.size,closure64LocalizedAltDebtContexts:closureAltDebt,closure64ZoomContexts:closureZoomContexts,wholeWeekVisualClosure:'OPEN_known_shared_PPE_debt'},null,2));
+// The original shared illustration is repaired in place; cover every current runtime reuse.
+const sharedUri=path.join(root,'assets/food-manufacturing/royal-weekly-20261107/week01/people-equipment-work.webp');
+const sharedBytes=fs.readFileSync(sharedUri),sharedSha=require('node:crypto').createHash('sha256').update(sharedBytes).digest('hex');
+assert.equal(sharedSha,'703a3f374998649680670aaa6158e54d2a7d609174610c2765990f5a8a0052cb','Current shared asset must contain the reviewed PPE repair');
+const sharedBindings=royal.foodRoyalWeeklyImages.filter(image=>image.source.uri===sharedUri);
+for(const id of ['food-2-003','food-2-008','food-2-016','food-2-024','food-2-029'])assert(sharedBindings.some(b=>b.lessonId===id),'Preserve accepted current shared reuse '+id);
+let sharedPpeInlineContexts=0,sharedPpeZoomContexts=0,sharedPpeNegativeContexts=0;
+for(const image of sharedBindings){
+ const lesson=index.foodManufacturingLessons.find(l=>l.id===image.lessonId);assert(lesson);assert.equal(royal.foodRoyalWeeklyImageFor(lesson),image);assert.equal(image.width,1536);assert.equal(image.height,1024);
+ const p=lesson.paragraphs.find(p=>p.id===image.captionParagraphId);assert(p);
+ for(const language of locales){
+  const t=language==='ja'?null:index.foodManufacturingTranslation(lesson,language);
+  for(const expanded of [false,true]){
+   forceDailyZoom=expanded;const html=renderToStaticMarkup(React.createElement(Reader,{lesson,language,onBack:nil,onComplete:nil,saving:false,saveError:false}));forceDailyZoom=false;
+   const tags=[...html.matchAll(/<img\b[^>]*>/g)].map(m=>m[0]).filter(tag=>tag.includes(escaped(sharedUri)));assert.equal(tags.length,expanded?2:1);
+   for(const tag of tags){assert(tag.includes(escaped(p.textJa)));if(t)assert(tag.includes(escaped(t.paragraphs[p.id])));}
+   if(lesson.id==='food-2-024')assert(html.includes('data-testid="food-management-progress"'),'Shared context image must coexist with exact progress chart');
+   if(expanded)sharedPpeZoomContexts++;else sharedPpeInlineContexts++;
+  }
+  for(const invalid of [{...lesson,sourceHash:'stale-revision'},{...lesson,paragraphs:lesson.paragraphs.filter(p=>p.id!==image.captionParagraphId)}]){
+   assert(!royal.foodRoyalWeeklyImageFor(invalid));const html=renderToStaticMarkup(React.createElement(Reader,{lesson:invalid,language,onBack:nil,onComplete:nil,saving:false,saveError:false}));assert(!html.includes(escaped(sharedUri)),'Wrong source or absent caption cannot reuse repaired art');sharedPpeNegativeContexts++;
+  }
+ }
+}
+console.log(JSON.stringify({mainReaderContexts:contexts,sourcePracticeZoomContexts:zooms,dailyPhotoBindings:photoBindings,dailyNativeBindings:nativeBindings,sourcePracticeFigures:figures.length,uniqueActualWebpAssets:assets.size,closure64LocalizedAltDebtContexts:closureAltDebt,closure64ZoomContexts:closureZoomContexts,sharedPpeInlineContexts,sharedPpeZoomContexts,sharedPpeNegativeContexts,sharedAssetSha256:sharedSha,sharedPpeRepair:'AI_SELF_REVIEWED_PENDING_REMOTE_VERIFICATION',wholeWeekVisualClosure:'NO_GLOBAL_ACCEPTANCE_CLAIM'},null,2));

@@ -9,10 +9,11 @@ function figures(lesson:ManufacturingLesson):Record<string,DailyFigure40>{
 }
 /** A saved hash alone cannot validate a mutated scheduled objective or paragraph. */
 export function dailyBodyCurrent40(lesson:ManufacturingLesson):boolean{
- if(!/^mfg1-(?:mechanical-lesson-|electrical-l|surface-lesson-)(?:03[6-9]|04[0-2])$/.test(lesson.id))return true;
- const rows=require('./royal-week06-body-bindings.json').lessons as Record<string,{sourceHash:string;objectiveJa:string;paragraphs:ManufacturingLesson['paragraphs']}>;
- const saved=own(rows,lesson.id)?rows[lesson.id]:null;
- return !!saved&&saved.sourceHash===lesson.sourceHash&&saved.objectiveJa===lesson.objectiveJa&&JSON.stringify(saved.paragraphs)===JSON.stringify(lesson.paragraphs);
+ const week06=/^mfg1-(?:mechanical-lesson-|electrical-l|surface-lesson-)(?:03[6-9]|04[0-2])$/.test(lesson.id);
+ const data=(week06?require('./royal-week06-body-bindings.json'):require('./royal-weekly-body-bindings.json')) as {requiredLessonIds?:string[];lessons:Record<string,{sourceHash:string;objectiveJa:string;paragraphs:ManufacturingLesson['paragraphs']}>};
+ const saved=own(data.lessons,lesson.id)?data.lessons[lesson.id]:null;
+ if(!saved)return !week06&&!(data.requiredLessonIds??[]).includes(lesson.id);
+ return saved.sourceHash===lesson.sourceHash&&saved.objectiveJa===lesson.objectiveJa&&JSON.stringify(saved.paragraphs)===JSON.stringify(lesson.paragraphs);
 }
 /** Exact current lesson revision; metadata never substitutes for an image asset. */
 export function dailyFigure40(lesson:ManufacturingLesson):DailyFigure40|null{

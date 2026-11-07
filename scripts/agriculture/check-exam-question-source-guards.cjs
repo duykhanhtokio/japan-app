@@ -9,13 +9,20 @@ const lessons=JSON.parse(read('src/data/agriculture/lessons.ja.json'));
 const exams=JSON.parse(read('src/data/agriculture/mock-exams.ja.json'));
 const refs=exams.exams.flatMap(e=>e.questions.filter(q=>q.illustrationId).map(q=>({q,level:e.level})));
 const localeData=JSON.parse(read('src/data/agriculture/recognition-image-locales.json'));
-const actualPixels=new Map(['agr-f40-general-seeder','agr-f40-general-transplanter'].map(id=>{const f=figures.images.find(x=>x.id===id),bytes=fs.readFileSync(path.join(root,f.assetPath));assert.equal(require('node:crypto').createHash('sha256').update(bytes).digest('hex'),f.assetSha256);return [path.resolve(root,f.assetPath),{uri:'data:image/png;base64,'+bytes.toString('base64')}];}));
+function assetMime(bytes){
+ if(bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])))return 'image/png';
+ if(bytes.toString('ascii',0,4)==='RIFF'&&bytes.toString('ascii',8,12)==='WEBP')return 'image/webp';
+ assert.fail('selected quiz asset must have a supported PNG or WebP signature');
+}
+assert.throws(()=>assetMime(Buffer.from('RIFFnot-a-webp')));
+assert.throws(()=>assetMime(Buffer.from('not-a-png')));
+const actualPixels=new Map(['agr-f40-general-seeder','agr-f40-general-transplanter'].map(id=>{const f=figures.images.find(x=>x.id===id),bytes=fs.readFileSync(path.join(root,f.assetPath));assert.equal(require('node:crypto').createHash('sha256').update(bytes).digest('hex'),f.assetSha256);return [path.resolve(root,f.assetPath),{uri:'data:'+assetMime(bytes)+';base64,'+bytes.toString('base64')}];}));
 const cache=new Map();
 function load(name){if(cache.has(name))return cache.get(name).exports;
  const filename=path.join(root,'src/components/agriculture',name+'.tsx');
  const code=transformSync(fs.readFileSync(filename,'utf8'),{filename,babelrc:false,configFile:false,plugins:[['@babel/plugin-transform-typescript',{isTSX:true,allExtensions:true}],['@babel/plugin-transform-react-jsx',{runtime:'automatic'}],'@babel/plugin-transform-modules-commonjs']}).code;
  const m=new Module(filename,module);m.filename=filename;m.paths=Module._nodeModulePaths(path.dirname(filename));cache.set(name,m);const original=m.require.bind(m);
- m.require=id=>id==='react-native'?require('react-native-web'):id==='@/data/agriculture/recognition-images.json'?figures:id==='@/data/agriculture/exam-illustrations.json'?illustrations:id==='@/data/agriculture/lessons.ja.json'?lessons:id==='./RecognitionImages'?load('RecognitionImages'):id==='@/data/agriculture/recognition-image-locales.json'?localeData:id==='./FlowerLegendFigure'?{}:id==='./ZoomableFigure'?load('ZoomableFigure'):/\.(png|webp)$/.test(id)?actualPixels.get(path.resolve(path.dirname(filename),id))||{uri:'asset://'+id}:original(id);m._compile(code,filename);return m.exports;
+ m.require=id=>id==='react-native'?require('react-native-web'):id==='@/data/agriculture/recognition-images.json'?figures:id==='@/data/agriculture/exam-illustrations.json'?illustrations:id==='@/data/agriculture/lessons.ja.json'?lessons:id==='./RecognitionImages'?load('RecognitionImages'):id==='@/data/agriculture/recognition-image-locales.json'?localeData:id==='./FlowerLegendFigure'||id==='./CropCalendarFigure'?{}:id==='./ZoomableFigure'?load('ZoomableFigure'):/\.(png|webp)$/.test(id)?actualPixels.get(path.resolve(path.dirname(filename),id))||{uri:'asset://'+id}:original(id);m._compile(code,filename);return m.exports;
 }
 const {hasAgricultureExamIllustration:ready,AgricultureExamIllustration:Figure}=load('AgricultureExamIllustration');
 const course=read('src/components/agriculture/AgricultureCourse.tsx');
@@ -33,6 +40,7 @@ let negative=0;
 for(const ref of week2){
  const q=ref.q,item=illustrations.illustrations.find(i=>i.id===q.illustrationId),figure=figures.images.find(f=>f.id===item.figureId),lesson=lessons.lessons.find(l=>l.id===q.lessonId);
  assert(render(ref).includes(`data-testid="exam-figure-${q.illustrationId}"`));
+ assert(render(ref).includes('data:'+assetMime(fs.readFileSync(path.join(root,figure.assetPath)))+';base64,'),'actual selected asset MIME reaches renderer');
  for(const fn of disabled)assert.equal(!!fn(questionReady(q,ref.level,ready),{submitted:false},false,null),false);
  const reject=()=>{const ok=questionReady(q,ref.level,ready);assert.equal(ok,false);assert(render(ref).includes('参考図を読み込めません。'));for(const fn of disabled)assert.equal(!!fn(ok,{submitted:false},false,null),true);negative++;};
  const mutate=(obj,key,bad)=>{const old=obj[key];obj[key]=bad;reject();obj[key]=old;};

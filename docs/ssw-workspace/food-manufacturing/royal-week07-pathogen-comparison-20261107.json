@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "week": 7,
+  "dateJst": "2026-11-07",
+  "baseline": "27dbef319ffce768a1b4feb3bab70187a37e9f57",
+  "trigger": "Actual visual review: microscope scene reused for food-1-039 is useful context but does not show the eight pathogen/associated-food relationships required for comparison.",
+  "sourceKnowledge": "Only exact associations already taught in current food-1-039 p1,p2,p3; no new microbiology, diagnostic assertion, dose or time limit introduced.",
+  "sourceHash": "0ded9546f014949f38323e43f02f5380b527b18553c49d388e6b35481b8c8432",
+  "repair": [
+    "Add responsive exact eight-row native comparison in three source paragraph groups; left organism and right associated food examples.",
+    "Keep microscope artwork as contextual illustration; do not redraw valid assets.",
+    "Reuse canonical aligned furigana in labels and full Japanese source paragraphs; show revision-matched selected-language full source paragraphs after each group.",
+    "Preserve full warnings against diagnosing from symptoms or deciding safety from food name; no symptom-to-diagnosis arrows."
+  ],
+  "validation": {
+    "command": "NODE_PATH=<sharedQAdependencies> node scripts/food-manufacturing/check-pathogen-comparison.cjs",
+    "result": "PASS",
+    "actualComponentContexts": 78,
+    "actualDailyReaderContexts": 13,
+    "locales": 13,
+    "guards": [
+      "exact8 mappings",
+      "all source conditions/cautions visible",
+      "selected-language full captions",
+      "translation toggle",
+      "wrong lesson",
+      "stale sourceHash",
+      "missing source paragraph",
+      "removed association"
+    ],
+    "tsxParse": "PASS",
+    "visualRenderingAttempt": "Local Chromium headless unavailable: process singleton socket() Operation not permitted. No browser screenshot acceptance claimed."
+  },
+  "sha256": {
+    "src/components/food-manufacturing/FoodPathogenComparison.tsx": "38afb588fb8a24ca68073d3d32ef3d5dac4907b9eb7fc7bbd39bc7779dc7fc2b",
+    "src/components/food-manufacturing/FoodDailyLearning.tsx": "7d99d9b29795c01ff4f60a71f394efe68b71ce087094e248e6c90d6c6f3880df",
+    "src/components/food-manufacturing/FoodRoyalWeek7Native.tsx": "9423540fbd367473fac78daf91ea09cd32c92670c6b15000dfb9ec39640e066d",
+    "scripts/food-manufacturing/check-pathogen-comparison.cjs": "7523840539850f02f37458d46f5113915b233c3ce1502b387d9ee13f79cf0de7"
+  },
+  "acceptance": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "browserPixelsVerified": false,
+    "wholeWeekComplete": false,
+    "release": false
+  },
+  "remaining": "Actual browser/mobile layout inspection of new native table, remaining weekly/native/inline/supplemental visual review and source coverage ledger gates remain open."
+}

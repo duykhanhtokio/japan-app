@@ -874,9 +874,9 @@ export const illustrations:Record<string,ImageSourcePropType>={
  ...weeklyIllustrations,
  ...foremanIllustrations,
  ...differentialIllustrations,
- 'assets/kensetsu/shared/handover-v1.webp':require('../../../assets/kensetsu/shared/handover-v1.webp'),
- 'assets/kensetsu/shared/greeting-v1.webp':require('../../../assets/kensetsu/shared/greeting-v1.webp'),
- 'assets/kensetsu/shared/morning-meeting-v1.webp':require('../../../assets/kensetsu/shared/morning-meeting-v1.webp'),
+ 'assets/kensetsu/shared/handover-v1.webp':require('../../../assets/kensetsu/royal-weekly-20261107/week01/handover-royal-v2.webp'),
+ 'assets/kensetsu/shared/greeting-v1.webp':require('../../../assets/kensetsu/royal-weekly-20261107/week01/greeting-royal-v2.webp'),
+ 'assets/kensetsu/shared/morning-meeting-v1.webp':require('../../../assets/kensetsu/royal-weekly-20261107/week01/morning-meeting-royal-v2.webp'),
 };
 export const completionId=(session:Session)=>`${session.id}:r${session.revision}${session.scopeRevision ? `:scope:${session.scopeRevision}` : ""}`;
 export const completionKey=(learner:string,level:Level,field:Field)=>`@japan_app_kensetsu_test:v1:${encodeURIComponent(learner)}:${level}:${field}`;

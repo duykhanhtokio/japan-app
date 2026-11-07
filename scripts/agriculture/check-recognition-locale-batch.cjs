@@ -20,7 +20,8 @@ const selected=ids.map(id=>{const f=data.images.find(x=>x.id===id);assert(f,`unk
 const sources=new Map();
 for(const f of selected){
  const bytes=fs.readFileSync(path.join(root,f.assetPath));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),f.assetSha256);
- sources.set(path.basename(f.assetPath),{uri:'data:image/webp;base64,'+bytes.toString('base64')});
+ const mime=f.assetPath.endsWith('.png')?'image/png':'image/webp';
+ sources.set(path.basename(f.assetPath),{uri:'data:'+mime+';base64,'+bytes.toString('base64')});
  const entry=registry.entries[f.id];assert(entry,`missing ${f.id}`);
  assert.equal(entry.assetSha256,f.assetSha256);
  if(f.labelsJa?.length){assert.deepEqual(entry.sourceLabelsJa,f.labelsJa);for(const language of languages){assert.equal(entry.locales[language].labels?.length,f.labelsJa.length);assert(entry.locales[language].labels.every(x=>typeof x==='string'&&x.trim()));}}
@@ -81,4 +82,4 @@ for(const f of selected){
  }
 }
 assert.equal(registry.nativeReviewed,false);assert.equal(registry.domainReviewed,false);
-console.log(`PASS recognition-locale-batch: ${selected.length} unchanged actual WebP plates; ${contexts} source-bound lesson/course contexts; ${renders} actual12locale renders; ${negative} stale/hidden/dependency/limit rejection checks; canonical Japanese retained.`);
+console.log(`PASS recognition-locale-batch: ${selected.length} unchanged actual raster plates; ${contexts} source-bound lesson/course contexts; ${renders} actual12locale renders; ${negative} stale/hidden/dependency/limit rejection checks; canonical Japanese retained.`);

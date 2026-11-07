@@ -1,11 +1,15 @@
+import {restaurantLesson,type RestaurantLesson} from '@/data/restaurant';
 import {Text,View,StyleSheet} from 'react-native';
 import placementData from '@/data/restaurant/meal-placement.json';
 import {useStudyAppearance,TranslationText} from '@/components/tokutei/StudyAppearance';
 import {RestaurantReading} from './RestaurantReading';
 
-type MealTranslation={title:string;viewpoint:string;back:string;front:string;guest:string;caption:string;labels:Record<string,string>;positions:Record<string,string>};
+type MealTranslation={sourceHash:string;title:string;viewpoint:string;back:string;front:string;guest:string;caption:string;labels:Record<string,string>;positions:Record<string,string>};
 type MealItem={id:string;labelJa:string;segments:{text:string;reading?:string}[];positionJa:string;kind:string};
 const translations=placementData.translations as Record<string,MealTranslation>;
+const lessonHashes=placementData.lessonSourceHashes as Record<string,string>;
+export function restaurantHasMealPlacement(lesson:Pick<RestaurantLesson,'id'|'sourceHash'>){return placementData.lessonIds.includes(lesson.id)&&lessonHashes[lesson.id]===lesson.sourceHash;}
+const sourceSignature=()=>JSON.stringify({titleJa:placementData.titleJa,viewpointJa:placementData.viewpointJa,backJa:placementData.backJa,frontJa:placementData.frontJa,guestJa:placementData.guestJa,captionJa:placementData.captionJa,back:placementData.back,front:placementData.front});
 /** Independently drawn teaching marks. Guest perspective; never mirror the tray to the server's view. */
 function Dish({kind}:{kind:string}){
  const soup=kind==='soup',rice=kind==='rice',main=kind==='main';
@@ -13,8 +17,8 @@ function Dish({kind}:{kind:string}){
 }
 export function RestaurantMealPlacement({lessonId,language,showTranslation}:{lessonId:string;language:string;showTranslation:boolean}){
  const {colors}=useStudyAppearance();
- if(!placementData.lessonIds.includes(lessonId))return null;
- const t=showTranslation&&language!=='ja'?translations[language]:undefined;
+ const lesson=restaurantLesson(lessonId,'1');if(!lesson||!restaurantHasMealPlacement(lesson))return null;
+ const candidate=translations[language],t=showTranslation&&language!=='ja'&&sourceSignature()===placementData.sourceSignature&&candidate?.sourceHash===placementData.sourceRevision?candidate:undefined;
  function cell(item:MealItem){
   const translation=t?.labels[item.id];
   return <View key={item.id} testID={`restaurant-meal-${item.id}`} accessible accessibilityLabel={`${item.positionJa}：${item.labelJa}${translation?`。${t?.positions[item.id]}: ${translation}`:''}`} style={[s.cell,item.kind==='middle'&&s.middle]}><Dish kind={item.kind}/><RestaurantReading text={item.labelJa} segments={item.segments}/>{translation&&<Text style={[s.translation,{color:colors.text}]}>{translation}</Text>}</View>;

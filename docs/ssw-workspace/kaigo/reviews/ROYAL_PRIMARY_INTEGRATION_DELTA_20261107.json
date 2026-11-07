@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "scope": "Own bounded source-bound Kaigo changes reconciled into primary accepted later-week work",
+  "ownIncomingBase": "711038845",
+  "primaryIncoming": "31c7c9f3d",
+  "resolvedPaths": [
+    "src/components/kaigo/WeeklyKaigo.tsx",
+    "src/data/kaigo/daily-knowledge-visuals.json",
+    "src/data/kaigo/daily-knowledge-visuals.ts",
+    "src/data/kaigo/royal-weekly-art.ts"
+  ],
+  "resolvedSha256": {
+    "src/components/kaigo/WeeklyKaigo.tsx": "9d9ceb4ab5c3579a06a974bc0ecbe0d864b2847be1dc1e698d256c4b717cfec1",
+    "src/data/kaigo/daily-knowledge-visuals.json": "fc8027f73c93df86a997d67930c42384edf052aed5ec8463704c926896f23535",
+    "src/data/kaigo/daily-knowledge-visuals.ts": "862a4a58a4efe151bc19501f1b62c59302581fab220f8e9165f10e4b96e3acb3",
+    "src/data/kaigo/royal-weekly-art.ts": "6984fb6dafed64870f3ac4439576525757f0b7ed54486b4089881e06369b3ce9"
+  },
+  "sourceFieldsPreserved": [
+    {
+      "day": 68,
+      "lessonKey": "68",
+      "sourceLessonRevision": "ja-master-v1-c9c952ee",
+      "contextArtId": "kaigo-week2-01-knowledge-4",
+      "keyObjectiveId": "kaigo-atomic-brain-parts",
+      "figureIds": [
+        "brain-royal-week02"
+      ]
+    },
+    {
+      "day": 69,
+      "lessonKey": "69",
+      "sourceLessonRevision": "ja-master-v1-f93272fd",
+      "contextArtId": "kaigo-eating-07-knowledge-0",
+      "keyObjectiveId": "69-objective-1",
+      "figureIds": []
+    },
+    {
+      "day": 70,
+      "lessonKey": "70",
+      "sourceLessonRevision": "ja-master-v1-12e2009c",
+      "contextArtId": "kaigo-eating-01-knowledge-1",
+      "keyObjectiveId": "kaigo-atomic-autonomic-other",
+      "figureIds": [
+        "pupils"
+      ]
+    },
+    {
+      "day": 112,
+      "lessonKey": "112",
+      "sourceLessonRevision": "ja-master-v1-6e1e14e2",
+      "contextArtId": "kaigo-depth-05",
+      "keyObjectiveId": "kaigo-atomic-skin-structure",
+      "figureIds": [
+        "skin"
+      ]
+    },
+    {
+      "day": 134,
+      "lessonKey": "134",
+      "sourceLessonRevision": "ja-master-v1-bc7998a",
+      "contextArtId": "kaigo-foundation-04-knowledge-0",
+      "keyObjectiveId": "kaigo-atomic-oral-details",
+      "figureIds": [
+        "oral-ownership"
+      ]
+    },
+    {
+      "day": 140,
+      "lessonKey": "140",
+      "sourceLessonRevision": "ja-master-v1-eadca754",
+      "contextArtId": "kaigo-week2-04-knowledge-2",
+      "keyObjectiveId": "140-objective-1",
+      "figureIds": []
+    },
+    {
+      "day": 161,
+      "lessonKey": "161",
+      "sourceLessonRevision": "ja-master-v1-eb3dcf98",
+      "contextArtId": "kaigo-foundation-06-knowledge-2",
+      "keyObjectiveId": "kaigo-gap-hand-legend",
+      "figureIds": [
+        "hand-regions"
+      ]
+    },
+    {
+      "day": 163,
+      "lessonKey": "163",
+      "sourceLessonRevision": "ja-master-v1-3e941e95",
+      "contextArtId": "kaigo-week2-01-words",
+      "keyObjectiveId": "kaigo-atomic-digestive",
+      "figureIds": [
+        "digestive"
+      ]
+    },
+    {
+      "day": 164,
+      "lessonKey": "164",
+      "sourceLessonRevision": "ja-master-v1-837885a",
+      "contextArtId": "kaigo-depth-37",
+      "keyObjectiveId": "kaigo-gap-anatomy-terms",
+      "figureIds": [
+        "male-terms"
+      ]
+    },
+    {
+      "day": 171,
+      "lessonKey": "171",
+      "sourceLessonRevision": "ja-master-v1-724ec787",
+      "contextArtId": "kaigo-depth-02",
+      "keyObjectiveId": "kaigo-gap-hand-legend",
+      "figureIds": [
+        "hand-regions"
+      ]
+    }
+  ],
+  "dataMergeContract": "All primary incoming figures and all daymetadata retained,except day140 uses own narrower same-source picture-board disclosure with13explicit captions. Incoming112/134/163/164/171 routes and source guards retained; own68/70/161 exact overrides retained. No source-day double count.",
+  "readerContract": "Keep incoming anatomy terms renderer163colon/164male, incoming161+171 native hand dispatch, all new technical kinds, own68brain and69source-guarded comparison.",
+  "updated161TestContract": {
+    "actualDispatchExpression": "[161,171].includes(entry.day) && figure.id==='hand-regions'",
+    "guards": "production current day161 binding; stale lesson and atomic section rejected; incoming171 Royal override retained",
+    "exactSessionCommand": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/27bcf35a8742/kaigo-integration161-qa.cjs",
+    "sessionFixtureSha256": "262bb38d9e52f2a865644eaa0458589725892b0c620abbefa6ff72016d05ed26",
+    "fixtureScope": "Scoped integration fixture; full scratch proof stays private, not an app/runtime dependency"
+  },
+  "checks": {
+    "sourceBound69NativeSSR": 13,
+    "actualDayReading140CaptionSSR": 13,
+    "sourceBound161HandNativeSSR": 13,
+    "currentAndStaleSourceLessonGuards": "PASS",
+    "allIncomingDayMetadataExceptExplicit140Preserved": true,
+    "allIncomingNewFiguresAndOverridesPreserved": true,
+    "TypeScript": "PASS3",
+    "gitDiffCheck": "PASS"
+  },
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "sourceCoveragePercent": null,
+  "releaseReady": false
+}

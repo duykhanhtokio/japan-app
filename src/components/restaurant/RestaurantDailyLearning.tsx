@@ -1,5 +1,8 @@
 import {RestaurantStaffingExample} from './RestaurantStaffingExample';
 import {RestaurantAbcExample} from './RestaurantAbcExample';
+import {RestaurantCutleryFigure,restaurantHasCutlerySetting} from './RestaurantCutleryFigure';
+import {RestaurantMealPlacement,restaurantHasMealPlacement} from './RestaurantMealPlacement';
+import {RestaurantTrayHandlingFigure,restaurantHasTrayHandling} from './RestaurantTrayHandlingFigure';
 import {RestaurantVegetableClassificationFigure,restaurantHasVegetableClassification} from './RestaurantVegetableClassificationFigure';
 import {RestaurantFishPartsFigure,restaurantHasFishPartsFigure} from './RestaurantFishPartsFigure';
 import {Image,StyleSheet,Text,View,type ViewStyle} from 'react-native';
@@ -112,6 +115,17 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-1-svc-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-svc-01-qsca-dining-inspection.webp'),aspectRatio:1.5},
+ 'rst-1-svc-02':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-svc-01-qsca-dining-inspection.webp'),aspectRatio:1.5},
+ 'rst-1-cook-16':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-16-split-load-trolley-assistance.webp'),aspectRatio:1.5},
+ 'rst-1-cook-17':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-17-blade-enclosed-preclean-briefing.webp'),aspectRatio:1.5},
+ 'rst-1-cook-18':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-18-chipped-bowl-segregation.webp'),aspectRatio:1.5},
+ 'rst-1-cook-19':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-19-fire-exit-role-precheck.webp'),aspectRatio:1.5},
+ 'rst-2-ops-07':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-07-truthful-attendance-record-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-08':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-08-new-staff-onboarding-preparation.webp'),aspectRatio:1.5},
+ 'rst-1-cook-15':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-cook-06-scale-container-tare-coaching.webp'),aspectRatio:1.5},
+ 'rst-2-ops-09':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-1-cook-14-utensil-task-matching.webp'),aspectRatio:1.5},
+ 'rst-2-ops-10':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-19-fire-exit-role-precheck.webp'),aspectRatio:1.5},
  'rst-1-cook-11':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-1-cook-11-ready-to-eat-clean-tongs.webp'),aspectRatio:1.5},
  'rst-1-cook-12':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-1-cook-12-equipment-purpose-comparison.webp'),aspectRatio:1.5},
  'rst-1-cook-14':{source:require('../../../assets/restaurant/royal-weekly-20261107/week06/rst-1-cook-14-utensil-task-matching.webp'),aspectRatio:1.5},
@@ -203,12 +217,12 @@ const labels:Record<string,{figure:string;note:string;companion:string}>={
 };
 export function RestaurantDailyFigure({lesson,language,showTranslation}:{lesson:RestaurantLesson;language:string;showTranslation:boolean}){
  const b=bindingFor(lesson),{colors}=useStudyAppearance();if(!b)return null;
- const nativeVegetables=restaurantHasVegetableClassification(lesson),nativeFish=restaurantHasFishPartsFigure(lesson),royal=restaurantRoyalDailyAsset(lesson),marks=nativeVegetables||nativeFish||royal?[]:restaurantDailyDrawing(b.figureId.replace('rst-daily-',''));if(!nativeVegetables&&!nativeFish&&!royal&&!marks.length)return null;
+ const nativeCutlery=restaurantHasCutlerySetting(lesson),nativeMeal=restaurantHasMealPlacement(lesson),nativeTray=restaurantHasTrayHandling(lesson),nativeVegetables=restaurantHasVegetableClassification(lesson),nativeFish=restaurantHasFishPartsFigure(lesson),royal=restaurantRoyalDailyAsset(lesson),marks=nativeCutlery||nativeMeal||nativeTray||nativeVegetables||nativeFish||royal?[]:restaurantDailyDrawing(b.figureId.replace('rst-daily-',''));if(!nativeCutlery&&!nativeMeal&&!nativeTray&&!nativeVegetables&&!nativeFish&&!royal&&!marks.length)return null;
  const ui=labels[language]||labels.ja,t=restaurantLessonTranslation(lesson,language);
  const caption=royal?teachingCaptionFor(lesson):undefined,targetCaption=caption?.translations[language];
  return <><View testID={`restaurant-daily-figure-${lesson.id}`} style={[s.figure,{borderColor:colors.border}]}>
   <RestaurantReading heading text={labels.ja.figure} segments={figureHeading}/>{showTranslation&&language!=='ja'&&<TranslationText>{ui.figure}</TranslationText>}
-  {nativeVegetables?<RestaurantVegetableClassificationFigure language={language} showTranslation={showTranslation}/>:nativeFish?<RestaurantFishPartsFigure language={language} showTranslation={showTranslation}/>:royal?<Image testID={`restaurant-royal-figure-${lesson.id}`} source={royal.source} accessibilityLabel={showTranslation&&t?t.objective:lesson.objectiveJa} resizeMode="cover" style={[s.royalCanvas,{aspectRatio:royal.aspectRatio}]}/>:(<View accessible accessibilityRole="image" accessibilityLabel={showTranslation&&t?t.objective:lesson.objectiveJa} style={s.canvas}>{marks.map((m,i)=><View key={i} pointerEvents="none" style={{position:'absolute',left:pct(m.x),top:pct(m.y),width:pct(m.w),height:pct(m.h),backgroundColor:m.fill,borderRadius:m.radius??0,borderWidth:m.stroke?1:0,borderColor:m.stroke,transform:m.rotate?[{rotate:`${m.rotate}deg`}]:undefined} as ViewStyle}/>)}</View>)}
+  {nativeCutlery?<RestaurantCutleryFigure language={language} showTranslation={showTranslation}/>:nativeMeal?<RestaurantMealPlacement lessonId={lesson.id} language={language} showTranslation={showTranslation}/>:nativeTray?<RestaurantTrayHandlingFigure language={language} showTranslation={showTranslation}/>:nativeVegetables?<RestaurantVegetableClassificationFigure language={language} showTranslation={showTranslation}/>:nativeFish?<RestaurantFishPartsFigure language={language} showTranslation={showTranslation}/>:royal?<Image testID={`restaurant-royal-figure-${lesson.id}`} source={royal.source} accessibilityLabel={showTranslation&&t?t.objective:lesson.objectiveJa} resizeMode="cover" style={[s.royalCanvas,{aspectRatio:royal.aspectRatio}]}/>:(<View accessible accessibilityRole="image" accessibilityLabel={showTranslation&&t?t.objective:lesson.objectiveJa} style={s.canvas}>{marks.map((m,i)=><View key={i} pointerEvents="none" style={{position:'absolute',left:pct(m.x),top:pct(m.y),width:pct(m.w),height:pct(m.h),backgroundColor:m.fill,borderRadius:m.radius??0,borderWidth:m.stroke?1:0,borderColor:m.stroke,transform:m.rotate?[{rotate:`${m.rotate}deg`}]:undefined} as ViewStyle}/>)}</View>)}
   {caption&&<View style={{gap:8}}><RestaurantReading text={caption.textJa} segments={caption.furigana} terms={lesson.terms}/>{showTranslation&&language!=='ja'&&targetCaption?.sourceHash===caption.sourceHash&&<TranslationText>{targetCaption.text}</TranslationText>}</View>}
   <RestaurantReading text={lesson.objectiveJa} segments={lesson.furigana?.objective} terms={lesson.terms}/>{showTranslation&&t&&<TranslationText>{t.objective}</TranslationText>}
   <RestaurantReading text={labels.ja.note} segments={noteSegments}/>{showTranslation&&language!=='ja'&&<TranslationText>{ui.note}</TranslationText>}

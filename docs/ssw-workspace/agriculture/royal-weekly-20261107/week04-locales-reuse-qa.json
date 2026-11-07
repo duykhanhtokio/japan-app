@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "unit": "week04-existing-tools-and-exact-rotation-reuse",
+  "baselineCommit": "83dec6c456998ac6034e2aa30e7abd062edaf03e",
+  "readyPaths": [
+    "src/data/agriculture/recognition-images.json",
+    "src/data/agriculture/recognition-image-locales.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/week04-locales-reuse-qa.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/week04-supported-authoring-census-qa.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/full-existing-week-image-queue.json"
+  ],
+  "sourceReview": {
+    "primaryPdfPixelsViewed": {
+      "AGR-S1": [
+        20,
+        22
+      ],
+      "AGR-S2": [
+        25,
+        26,
+        28
+      ]
+    },
+    "existingArtPixelsViewed": [
+      "agr-recognition-soil-tools-appearance-v1",
+      "agr-fig-rotation-two-year-examples-v1"
+    ],
+    "sourceMeaning": "Retain adequate detailed soil pH/flat hoe/pronged hoe/shovel illustrations and exact two-example rotation table. pH instrument pixels are recognition only; no measured value, all-model procedure or calibration inferred. Rotation retains two four-crop sequences and winter→following-year month-axis rollover, no universal sowing/harvest months or proportional durations.",
+    "rasterGenerated": false
+  },
+  "bindings": [
+    {
+      "figureId": "agr-recognition-soil-tools-appearance-v1",
+      "assetSha256": "dcad7d3cbe2b35eea5f83491edda5a71da7e8a779bcf16a067ebf281c3d7dbe3",
+      "labelsPerLocale": 5,
+      "sourceContextIds": [
+        "agr-soil-ph-measure"
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "targetLocales": 12
+    },
+    {
+      "figureId": "agr-fig-rotation-two-year-examples-v1",
+      "assetSha256": "864ee7462fca20fcd207253fa21bd0df8714b8625bf3f9605481116ab13f064a",
+      "labelsPerLocale": 15,
+      "sourceContextIds": [
+        "agr-f40-soil-common-reading"
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "targetLocales": 12
+    }
+  ],
+  "checks": {
+    "actualRecognitionTargetLocaleRenders": 48,
+    "sourceCourseContexts": 4,
+    "pairedNativeLabelOccurrences": 480,
+    "staleRevisionMeaningImageLocaleLabelNegativeCases": 116,
+    "actualWeeklyDailyStudyRenders": 52,
+    "japaneseHiddenFallbacks": 52,
+    "dailyCurrentContextImageSourceRevisionNegatives": 20,
+    "exactRotationSequences": [
+      [
+        "soybean",
+        "wheat",
+        "sweet potato",
+        "wheat"
+      ],
+      [
+        "sweet potato",
+        "Chinese cabbage",
+        "watermelon",
+        "daikon"
+      ]
+    ],
+    "years": [
+      1,
+      1,
+      2,
+      2
+    ],
+    "winterCropsContinueIntoFollowingYear": true,
+    "monthAxis": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12
+    ],
+    "allOriginalJapaneseFieldsIdsLevelsSourceTuplesAndAssetBytes": "unchanged; only source-bound labelsJa added to two records",
+    "prior38LocaleRowsAndLimits": "exact latest HEAD; production40",
+    "strictTypeScript": "PASS actual RecognitionImages import graph and JSON, minimal React/RN ambient declarations; not full app typecheck",
+    "actualRenderer": "RecognitionImages/ZoomableFigure with selected PNG bytes; DailyLearningFigure with exact canonical ID/level service adapter and static URI imports; unrelated translation/StudyAppearance isolated",
+    "noActiveExamRefsToTheseTwoFigures": true,
+    "questionAnswerProgressFilesModified": false,
+    "noActiveConceptDiagramForTheseTwoScheduledLessons": true,
+    "scripts": [
+      "/workspace/scratch/b72f4a7f6a62/week02-audit/check-thinning.cjs",
+      "/workspace/scratch/b72f4a7f6a62/week04-audit/check-daily-locales.cjs",
+      "scripts/agriculture/check-recognition-locale-types.cjs"
+    ]
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "sourcePhotoObjectiveComplete": false,
+  "releaseReady": false,
+  "scheduleApplicability": {
+    "completeSupportedScheduleIds": [
+      "agr-1-w04"
+    ],
+    "sharedSourceContextsInLaterSchedule": {
+      "agr-2-w05": [
+        "agr-soil-ph-measure",
+        "agr-soil-rotation"
+      ]
+    },
+    "note": "52 actual Daily renders verify two source lessons across both course levels, not all lessons in both same-number weeks.",
+    "canonicalScheduleReceipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/per-level-schedule-reconciliation-qa.json"
+  }
+}
