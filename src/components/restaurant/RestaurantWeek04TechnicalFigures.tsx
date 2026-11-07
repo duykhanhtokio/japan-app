@@ -1,3 +1,5 @@
+import {RestaurantReading} from './RestaurantReading';
+import {restaurantWeek04VisualReading} from './RestaurantWeek04VisualReadings';
 import {sameRestaurantFigureIdentity} from './RestaurantFigureIdentity';
 import {Image,ScrollView,Text,View} from 'react-native';
 import type {SourceFigure31} from '@/data/restaurant/source31';
@@ -13,10 +15,11 @@ export function restaurantWeek04TechnicalKind(figure:SourceFigure31):string|null
  const pack=b.level==='1'?require('../../data/restaurant/source31/1.json'):require('../../data/restaurant/source31/2.json');const row=pack.lessons[b.lessonId];
  return row?.sourceHash===b.rowSourceHash&&row.figures.some((f:SourceFigure31)=>sameRestaurantFigureIdentity(f,figure))?b.kind:null;
 }
+export function restaurantWeek04CaptionReading(figure:SourceFigure31){return restaurantWeek04TechnicalKind(figure)?restaurantWeek04VisualReading(figure.captionJa):undefined;}
 type Props={kind:string;language?:string;showTranslation?:boolean;width?:number};
 export function RestaurantWeek04TechnicalFigure({kind,language='ja',showTranslation=false,width=320}:Props){
  const labels=data.labels as Record<string,{ja:string;translations:Record<string,string>}>;
- const label=(key:string)=>{const d=labels[key];return d?<View style={{gap:3}}><Text selectable style={{fontSize:17,lineHeight:27,color:ink}}>{d.ja}</Text>{showTranslation&&language!=='ja'&&d.translations[language]&&<Text selectable style={{fontSize:17,lineHeight:27,color:'#344b61'}}>{d.translations[language]}</Text>}</View>:<Text selectable style={{fontSize:17,lineHeight:27,color:ink}}>{key}</Text>};
+ const label=(key:string)=>{const d=labels[key];return d?<View style={{gap:3}}><RestaurantReading text={d.ja} segments={restaurantWeek04VisualReading(d.ja)}/>{showTranslation&&language!=='ja'&&d.translations[language]&&<Text selectable style={{fontSize:17,lineHeight:27,color:'#344b61'}}>{d.translations[language]}</Text>}</View>:<RestaurantReading text={key} segments={restaurantWeek04VisualReading(key)}/>};
  const cell=(key:string,value:string,i:number)=><View key={i} style={{width:145,padding:8,borderWidth:.5,borderColor:'#b6c4c8'}}>{label(value)}</View>;
  const table=(headers:string[],rows:string[][])=><ScrollView horizontal testID={`restaurant-week04-table-${kind}`}><View>{[headers,...rows].map((row,i)=><View key={i} testID={`restaurant-week04-record-row-${i}`} style={{flexDirection:'row',backgroundColor:i===0?'#f0dfbc':i%2?'#fffaf0':'#f1f3ef'}}>{row.map((v,j)=>cell(String(j),v,j))}</View>)}</View></ScrollView>;
  if(kind.startsWith('meat-')){
@@ -28,7 +31,7 @@ export function RestaurantWeek04TechnicalFigure({kind,language='ja',showTranslat
   const prefix=kind==='eight-knives'?'knife':kind==='kitchen-hazards'?'hazard':'machine',count=prefix==='knife'?8:prefix==='hazard'?12:4,source=prefix==='knife'?knives:prefix==='hazard'?hazards:machines;
   return <View testID={`restaurant-week04-native-${kind}`} style={{padding:12,gap:20,backgroundColor:paper}}>{Array.from({length:count},(_,i)=><View key={i} style={{gap:8}}>{label(prefix+i)}{art(source,i,prefix==='machine'?2:4,prefix==='hazard'?3:2,prefix==='knife')}</View>)}{prefix!=='hazard'&&label(prefix==='knife'?'knifeNote':'machineNote')}</View>;
  }
- if(kind==='accident-reference-2022')return <View testID="restaurant-week04-native-accident-reference-2022" style={{padding:12,gap:16,backgroundColor:paper}}><Text style={{fontSize:22,color:ink}}>2022 / 令和4年</Text>{[30,20,15,10,6,5,4,4,6].map((value,i)=><View key={i} style={{gap:6}}>{label('accident'+i)}<View style={{flexDirection:'row',alignItems:'center',gap:10}}><View testID={`restaurant-accident-bar-${i}`} style={{height:22,width:`${value/30*75}%`,backgroundColor:'#087d84'}}/><Text style={{fontSize:20,color:ink}}>{value}%</Text></View></View>)}{label('chartNote')}</View>;
+ if(kind==='accident-reference-2022')return <View testID="restaurant-week04-native-accident-reference-2022" style={{padding:12,gap:16,backgroundColor:paper}}><RestaurantReading heading text="2022 / 令和4年" segments={restaurantWeek04VisualReading("2022 / 令和4年")}/>{[30,20,15,10,6,5,4,4,6].map((value,i)=><View key={i} style={{gap:6}}>{label('accident'+i)}<View style={{flexDirection:'row',alignItems:'center',gap:10}}><View testID={`restaurant-accident-bar-${i}`} style={{height:22,width:`${value/30*75}%`,backgroundColor:'#087d84'}}/><Text style={{fontSize:20,color:ink}}>{value}%</Text></View></View>)}{label('chartNote')}</View>;
  if(kind==='distribution-paths')return <View testID="restaurant-week04-native-distribution-paths" style={{padding:12,gap:22,backgroundColor:paper}}>{[[0,1,2,4,5],[0,1,3,4,5],[0,3,4,5]].map((route,i)=><View key={i} testID={`restaurant-distribution-route-${i}`} style={{gap:6}}>{route.map((node,j)=><View key={j} style={{gap:6}}>{j>0&&<Text style={{fontSize:22,color:'#087d84',paddingLeft:16}}>↓</Text>}<View testID={`restaurant-distribution-node-${node}`} style={{padding:12,borderWidth:1,borderColor:'#b6c4c8',borderRadius:8,backgroundColor:'#f0e4c9'}}>{label('route'+node)}</View></View>)}</View>)}{label('routeNote')}</View>;
  const menus=['menuCold','menuHot','menuHeld','curry','potatoSalad'],processes=['cold','hot','held','reheated','cooled'];
  if(kind==='five-process-plan')return <View testID="restaurant-week04-native-five-process-plan" style={{padding:12,gap:12,backgroundColor:paper}}>{table(['processTitle','menu','method'],processes.map((p,i)=>[p,menus[i],['methodCold','methodHot','methodHeld','methodReheated','methodCooled'][i]]))}{label('note')}</View>;

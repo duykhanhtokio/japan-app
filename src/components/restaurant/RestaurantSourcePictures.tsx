@@ -9,7 +9,7 @@ import {restaurantWeek08CaptionReading,restaurantWeek08TechnicalKind,RestaurantW
 import {restaurantWeek07TechnicalKind,RestaurantWeek07TechnicalFigure} from './RestaurantWeek07TechnicalFigures';
 import {restaurantWeek06CaptionReading,restaurantWeek06TechnicalKind,RestaurantWeek06TechnicalFigure} from './RestaurantWeek06TechnicalFigures';
 import {restaurantWeek05TechnicalKind,RestaurantWeek05TechnicalFigure} from './RestaurantWeek05TechnicalFigures';
-import {restaurantWeek04TechnicalKind,RestaurantWeek04TechnicalFigure} from './RestaurantWeek04TechnicalFigures';
+import {restaurantWeek04CaptionReading,restaurantWeek04TechnicalKind,RestaurantWeek04TechnicalFigure} from './RestaurantWeek04TechnicalFigures';
 import {restaurantWeek03TechnicalKind,RestaurantWeek03TechnicalFigure} from './RestaurantWeek03TechnicalFigures';
 import {royalRestaurantSourceFigure} from './RoyalRestaurantSourceFigures';
 import {useState} from 'react';
@@ -40,7 +40,7 @@ export function SourcePicture31({figure,label,width,language='ja',showTranslatio
  const week05=restaurantWeek05TechnicalKind(figure);
  if(week05)return <View onLayout={event=>{const next=event.nativeEvent.layout.width;if(!width&&Number.isFinite(next)&&next>0)setMeasured(next);}} style={{gap:10}}><RestaurantWeek05TechnicalFigure language={language} showTranslation={showTranslation} width={width??(measured||Math.max(1,window.width-32))}/><View testID={`source31-native-caption-${figure.id}`}><RestaurantReading text={figure.captionJa} segments={restaurantWeek11CaptionReading(figure)}/></View>{translatedCaption&&<TranslationText>{translatedCaption}</TranslationText>}</View>;
  const week04=restaurantWeek04TechnicalKind(figure);
- if(week04)return <View onLayout={event=>{const next=event.nativeEvent.layout.width;if(!width&&Number.isFinite(next)&&next>0)setMeasured(next);}} style={{gap:10}}><RestaurantWeek04TechnicalFigure kind={week04} language={language} showTranslation={showTranslation} width={width??(measured||Math.max(1,window.width-32))}/><Text testID={`source31-native-caption-${figure.id}`} selectable style={{fontSize:17,lineHeight:29,color:'#173450'}}>{figure.captionJa}</Text>{translatedCaption&&<TranslationText>{translatedCaption}</TranslationText>}</View>;
+ if(week04)return <View onLayout={event=>{const next=event.nativeEvent.layout.width;if(!width&&Number.isFinite(next)&&next>0)setMeasured(next);}} style={{gap:10}}><RestaurantWeek04TechnicalFigure kind={week04} language={language} showTranslation={showTranslation} width={width??(measured||Math.max(1,window.width-32))}/><View testID={`source31-native-caption-${figure.id}`}><RestaurantReading text={figure.captionJa} segments={restaurantWeek04CaptionReading(figure)}/></View>{translatedCaption&&<TranslationText>{translatedCaption}</TranslationText>}</View>;
  const technical=restaurantWeek03TechnicalKind(figure);
  if(technical)return <View onLayout={event=>{const next=event.nativeEvent.layout.width;if(!width&&Number.isFinite(next)&&next>0)setMeasured(next);}} style={{gap:10}}><RestaurantWeek03TechnicalFigure kind={technical} language={language} showTranslation={showTranslation} width={width??(measured||Math.max(1,window.width-32))}/><View testID={`source31-native-caption-${figure.id}`}><RestaurantReading text={figure.captionJa} segments={restaurantTechnicalVisualReading(figure.captionJa)}/></View>{translatedCaption&&<TranslationText>{translatedCaption}</TranslationText>}</View>;
  if(!image||!frame)return null;
