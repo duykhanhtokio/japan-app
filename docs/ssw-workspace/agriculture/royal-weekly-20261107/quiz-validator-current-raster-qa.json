@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "baseCommit": "703dd05ede10fa5dd80d764745271b5f1ec5e86c",
+  "beforeBlobSha": {
+    "scripts/agriculture/check-exam-question-source-guards.cjs": "5bd358c61c32b0305d1be084b5e98ee5af8f451c",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/quiz-validator-current-raster-qa.json": null
+  },
+  "scope": "Repair current quiz validator adapters after accepted external CropCalendar import and Royal WebP seeder replacement. No product, content, art or localization changes.",
+  "finding": "Saved exam checker used hardcoded image/png for the now-WebP seeder and did not adapt the unused CropCalendarFigure import. Current locale checker already fixes both issues and is preserved exact eb8c107b8fb4664977e9ed50d7f572d2de083227.",
+  "change": [
+    "Detect PNG/WebP from actual selected asset signatures; reject unsupported signatures.",
+    "Encode actual raster MIME into source URI and assert that MIME reaches the production renderer.",
+    "Adapt unused CropCalendarFigure module while retaining actual RecognitionImages asset map and actual ZoomableFigure.",
+    "Strict typecheck still imports the actual CropCalendarFigure and its exact current JSON dependency."
+  ],
+  "freshDependencies": {
+    "recognition-images.json": "3840092874a7c907bf9fb96d3b0f65446e0d09eb",
+    "recognition-image-locales.json": "28e85a945c6076216fd10c37c7fa4734d7652195",
+    "RecognitionImages.tsx": "85fee935168f33f02bb54004871357c5469d33f6",
+    "crop-calendar-native.json": "e0536529960efacc23e237ac68a29a43092904e3"
+  },
+  "actualFormats": [
+    {
+      "figureId": "agr-f40-general-seeder",
+      "mime": "image/webp",
+      "assetSha256": "640b78fa08723f713d308ec9b30b66299469ce46ac95b439e9904a771aa5c4e3"
+    },
+    {
+      "figureId": "agr-f40-general-transplanter",
+      "mime": "image/png",
+      "assetSha256": "2ae2b9b317a1d6849bd6f416eb87a0fd02dbab659a4b9690073daa6a45a228fe"
+    }
+  ],
+  "qa": {
+    "examRuntime": "PASS81existingactualquizrefs mechanical compatibility;2actualrenderer/readiness/answer/submission paths;34stale/missing/mismatch rejects.",
+    "MIME": "Both actual PNG/WebP signatures observed and corresponding URI found in production render;2invalidsignaturefixtures rejected.",
+    "strictCallerTypes": "PASS20actualsector/sharedcomponents,actualcallerexpressions,canonicalweeklyquestionJSONshape,actualcomponents;2missingcontextfixturesreject. MinimalReact/RNambient, notwholeapp.",
+    "existingExternalLocaleChecker": "PASS2currentrasterplates/4contexts/48actual12localeSSRrenders/110rejects;file unchanged.",
+    "diffCheck": "PASS"
+  },
+  "noNewSemanticOrNativeCertification": true,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "releaseReady": false,
+  "wholeWeekComplete": false
+}
