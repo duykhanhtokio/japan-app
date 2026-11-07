@@ -58,6 +58,9 @@ let contexts=0,renders=0,japaneseRenders=0,negative=0;
 for(const f of selected){
  const entry=registry.entries[f.id];
  for(const lid of f.lessonIds){const l=lessons.get(lid);
+  for(const excludedLevel of ['1','2'].filter(x=>!f.scopeLevels.includes(x))){
+   assert(!render(f,l,excludedLevel,'vi').includes(`data-testid="${f.id}-localized-title"`),'out-of-scope course must not render localized figure');negative++;
+  }
   for(const level of f.scopeLevels.filter(x=>l.levels.includes(x))){contexts++;
    const japaneseHtml=render(f,l,level,'ja');
    assert(japaneseHtml.includes(escape(f.titleJa))&&japaneseHtml.includes(escape(f.observationJa))&&japaneseHtml.includes(escape(f.limitJa)),'Japanese-only actual renderer must retain current captions');
