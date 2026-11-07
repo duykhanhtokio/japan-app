@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "completion-supplemental-captions-20261107-v2",
+  "revision": "illustration-captions-20261107-v3",
   "studyOnly": true,
   "readingProvenance": {
     "author": "AI authored/reviewed as full-context compound+inflection fields; no independent native/domain signoff",
@@ -10,7 +10,8 @@
       "担体": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1022.html",
       "熱起電力": "https://ecw.kabu-watanabe.com/glossary/denki/24ne/index.html",
       "一回転": "https://www.mitsubishielectric.co.jp/corporate/philanthropy/science/pdf/science05.pdf",
-      "一目盛": "Existing source-bound surface.json term一目盛り/ひとめもり; context reviewed caption typography withoutり"
+      "一目盛": "Existing source-bound surface.json term一目盛り/ひとめもり; context reviewed caption typography withoutり",
+      "枝路": "src/data/manufacturing/electrical.json canonical terms: ja枝路 readingしろ"
     }
   },
   "lessonBindings": {
@@ -219,6 +220,104 @@
           "id": "section-3",
           "titleJa": "記録と確認",
           "textJa": "ショア硬さは落下させたハンマの跳ね返り高さを用います。深さ・直径・対角線・反発の高さという測る対象の違いを整理します。同じ数値でも尺度が異なれば直接比較できません。試験による圧痕の影響、試験片と製品の使い道、荷重等の条件は指定方法で確認します。"
+        }
+      ]
+    },
+    "mfg1-electrical-l006": {
+      "sourceHash": "540a1c3e16efed961ad30a27dad230fa427d266bae80ff59db5decee27a6f492",
+      "titleJa": "オームの法則を単位と一緒に使う",
+      "summaryJa": "式に入れる前に A、Ω などへ単位をそろえる。\n計算と定格確認は別の確認である。",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "titleJa": "三つの量の関係",
+          "textJa": "一定温度でオームの法則に従う抵抗について、電圧 V、電流 I、抵抗 R の間には V = I × R の関係があります。ここで使う単位は V、A、Ω です。数字だけを式へ入れず、単位をそろえてから計算します。\n1 A は 1000 mA、1 kΩ は 1000 Ω です。例えば 8 mA は 0.008 A です。mA を A と同じ数字で代入すると、結果が 1000 倍違ってしまいます。"
+        },
+        {
+          "id": "section-2",
+          "titleJa": "計算結果を現場の判断につなぐ",
+          "textJa": "同じ抵抗に加える電圧が上がると、電流も増えます。ただし、実際の機器には抵抗以外の部品や温度変化もあるため、単純な式だけで設備全体を判断しません。\n計算は定格や仕様を確認するための一つの手段です。計算上電流が求まっても、その部品が発熱に耐えられるか、電源の容量が足りるかは別に確認する必要があります。"
+        },
+        {
+          "id": "formulae",
+          "titleJa": "式と単位",
+          "textJa": "V = I × R\nI = V / R\n12 / 2000 = 0.006 A = 6 mA"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場での考え方",
+          "textJa": "計算練習として、12 V の直流電源に 2.0 kΩ の理想抵抗を接続した場合を考える。\n1. 2.0 kΩ = 2000 Ω に換算する。\n2. I = V ÷ R = 12 ÷ 2000 = 0.006 A。\n3. 0.006 A = 6 mA に換算する。\n理想条件で電流は 6 mA。実際に接続する前には抵抗と電源の定格も確認する。"
+        }
+      ]
+    },
+    "mfg1-surface-lesson-006": {
+      "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+      "titleJa": "電流密度と品物の形から膜厚の違いを考える",
+      "summaryJa": "平均電流密度は電流÷面積。\n局所の分布は平均値とは異なる。\n形状と条件を関連づけて膜厚を確認する。",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "titleJa": "電流を面積で考える",
+          "textJa": "同じ電流でも、処理する面積が変わると、単位面積当たりの電流は変わります。電流密度は、対象面積に対してどれだけ電流が流れるかを表す値です。計算ではAとdm²など、使う単位をそろえます。\n処理面積は、単純な片面の投影面積とは限りません。両面、側面、穴の内側、処理しないマスキング部などをどのように扱うかは、計算条件と工程の決まりを確認します。"
+        },
+        {
+          "id": "section-2",
+          "titleJa": "平均値と局所の分布",
+          "textJa": "平均電流密度を計算しても、表面のすべての場所で同じ電流密度になるわけではありません。角や突出部とくぼみでは、電流の分布が変わり、膜厚に差が生じることがあります。\n一般に電流が集中する部分は厚くなりやすく、届きにくい部分は薄くなりやすい傾向があります。ただし浴の性質、配置、かくはんなども影響するので、形だけで最終膜厚を断定しません。"
+        },
+        {
+          "id": "section-3",
+          "titleJa": "値を大きくすればよいとは限らない",
+          "textJa": "電流を増やすと必ず良くなるわけではありません。条件を超えると外観や析出の安定性を損なう場合があります。管理条件、掛け数、処理面積の変更を無断で行わないことが重要です。\n膜厚の偏りを見つけたら、位置ごとの測定結果、掛け方、処理条件を記録して報告します。配列や補助治具などの対策は、担当者が評価して決定します。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場での考え方",
+          "textJa": "計算練習として、処理面積が2.4dm²、電流が7.2Aなら、平均電流密度は7.2÷2.4=3.0A/dm²です。処理面積だけが4.8dm²になり電流が同じなら1.5A/dm²です。この数値は計算練習で、実際の浴の推奨条件ではありません。"
+        }
+      ]
+    },
+    "mfg1-mechanical-lesson-011": {
+      "sourceHash": "7c03413b76ee4823f4b9ac8ec818aa9003f657910af6dff216db2eb51c4ac24d",
+      "titleJa": "作業標準とQC工程図を読み分ける",
+      "summaryJa": "作業標準はやり方、QC工程図は管理の仕組みを示す。対象と改訂版を確認し、両方を守る。",
+      "paragraphs": [
+        {
+          "id": "principle",
+          "titleJa": "仕組みと判断の基準",
+          "textJa": "作業標準は、作業内容、順序、設備、工具、重要な条件などを明確にし、人や時間が変わっても必要な品質を保つために使います。QC工程図は、工程ごとに何を、どの方法で、どの頻度で管理し、異常時にどう処置するかを整理したものです。同じ工程でも、作業のやり方と管理の仕組みは役割が違います。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場の事例を整理する",
+          "textJa": "架空の切断工程では、作業標準に材料の固定方法と使用工具が示されています。QC工程図には、切断長さを指定の測定器で開始時と30分ごとに確認し、範囲外なら対象品を区分して責任者へ連絡するとあります。作業が手順どおりにできたことだけで、30分ごとの測定を省いてはいけません。逆に、測定をしただけでは、固定方法を省いてよい理由になりません。"
+        },
+        {
+          "id": "decision",
+          "titleJa": "記録と誤りやすい点",
+          "textJa": "文書を読むときは、対象品、工程、文書番号、改訂版を合わせて確認します。古い版と新しい版の条件が違うときは、経験で一方を選ばず確認します。異常品の処置、記録先、連絡先まで把握してから作業を始めます。ここでの頻度は架空の例で、実際には自工程の指定を使います。"
+        }
+      ]
+    },
+    "mfg1-electrical-l005": {
+      "sourceHash": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe",
+      "titleJa": "テスターは測定量と接続方法を先に決める",
+      "summaryJa": "電圧は並列、電流は直列。\n抵抗は無通電かつ必要な処置後に測る。",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "titleJa": "何を測るかを決める",
+          "textJa": "電圧は二点間の電位差なので、電圧計を対象の二点間に並列に接続します。電流は枝路を流れる量なので、電流計をその枝路に直列に入れます。電流レンジの計器を電源の両端に当てると、短絡や計器破損につながります。\n測定器には用途、入力端子、最大入力、安全定格があります。レンジを大きくしただけで、どの設備でも安全に測れるわけではありません。実際の設備で測定するには、担当資格・教育、設備の手順、適合する測定器を確認します。"
+        },
+        {
+          "id": "section-2",
+          "titleJa": "抵抗測定と作業後の確認",
+          "textJa": "抵抗測定は測定器内の電源を使うため、通電中の回路には行いません。電源を切るだけでなく、残留電荷の処置などを指定手順で行い、必要なら対象を回路から切り離します。\n測定後は、リードが電流用端子に残っていないかを確認します。次の人が電圧を測るときの事故を防ぐため、測定器を職場で決められた状態に戻します。アナログ式の抵抗測定では、レンジごとのゼロ調整も必要です。"
+        },
+        {
+          "id": "example",
+          "titleJa": "現場での考え方",
+          "textJa": "教育用の低電圧直流回路の電圧を測ろうとしたが、赤リードが電流入力端子に入っている。\n1. まだ回路に接続しない。\n2. 取扱説明書に従い、電圧測定用の端子と直流電圧機能、適切なレンジを確認する。\n3. 指導者の確認後、指定された二点間に並列接続する。\n測定量、端子、機能、レンジ、接続方法を一組で確認する。"
         }
       ]
     }
@@ -1358,6 +1457,444 @@
         },
         {
           "text": "しません。"
+        }
+      ]
+    },
+    "direct-mfg1-electrical-l006": {
+      "lessonId": "mfg1-electrical-l006",
+      "assetFile": "assets/manufacturing/diagrams/ohms-law.png",
+      "width": 960,
+      "height": 600,
+      "sourceJapanese": "単純な直流抵抗回路で、電圧が同じなら、抵抗が大きいほど電流は小さい。",
+      "parts": [
+        {
+          "text": "単純",
+          "reading": "たんじゅん"
+        },
+        {
+          "text": "な"
+        },
+        {
+          "text": "直流抵抗回路",
+          "reading": "ちょくりゅうていこうかいろ"
+        },
+        {
+          "text": "で、"
+        },
+        {
+          "text": "電圧",
+          "reading": "でんあつ"
+        },
+        {
+          "text": "が"
+        },
+        {
+          "text": "同",
+          "reading": "おな"
+        },
+        {
+          "text": "じなら、"
+        },
+        {
+          "text": "抵抗",
+          "reading": "ていこう"
+        },
+        {
+          "text": "が"
+        },
+        {
+          "text": "大",
+          "reading": "おお"
+        },
+        {
+          "text": "きいほど"
+        },
+        {
+          "text": "電流",
+          "reading": "でんりゅう"
+        },
+        {
+          "text": "は"
+        },
+        {
+          "text": "小",
+          "reading": "ちい"
+        },
+        {
+          "text": "さい。"
+        }
+      ]
+    },
+    "direct-mfg1-surface-lesson-006": {
+      "lessonId": "mfg1-surface-lesson-006",
+      "assetFile": "assets/manufacturing/diagrams/surface-process-control.png",
+      "width": 960,
+      "height": 600,
+      "sourceJapanese": "指定された電流・電圧条件と測定値を照合する。範囲外では職場の標準に従って報告する。",
+      "parts": [
+        {
+          "text": "指定",
+          "reading": "してい"
+        },
+        {
+          "text": "された"
+        },
+        {
+          "text": "電流",
+          "reading": "でんりゅう"
+        },
+        {
+          "text": "・"
+        },
+        {
+          "text": "電圧条件",
+          "reading": "でんあつじょうけん"
+        },
+        {
+          "text": "と"
+        },
+        {
+          "text": "測定値",
+          "reading": "そくていち"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "照合",
+          "reading": "しょうごう"
+        },
+        {
+          "text": "する。"
+        },
+        {
+          "text": "範囲外",
+          "reading": "はんいがい"
+        },
+        {
+          "text": "では"
+        },
+        {
+          "text": "職場",
+          "reading": "しょくば"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "標準",
+          "reading": "ひょうじゅん"
+        },
+        {
+          "text": "に"
+        },
+        {
+          "text": "従",
+          "reading": "したが"
+        },
+        {
+          "text": "って"
+        },
+        {
+          "text": "報告",
+          "reading": "ほうこく"
+        },
+        {
+          "text": "する。"
+        }
+      ]
+    },
+    "direct-mfg1-mechanical-lesson-011": {
+      "lessonId": "mfg1-mechanical-lesson-011",
+      "assetFile": "assets/manufacturing/diagrams/qc-control-plan.png",
+      "width": 960,
+      "height": 600,
+      "sourceJapanese": "QC工程図では工程・管理項目・管理方法・管理頻度・異常時の処置を確認する。",
+      "parts": [
+        {
+          "text": "QC"
+        },
+        {
+          "text": "工程図",
+          "reading": "こうていず"
+        },
+        {
+          "text": "では"
+        },
+        {
+          "text": "工程",
+          "reading": "こうてい"
+        },
+        {
+          "text": "・"
+        },
+        {
+          "text": "管理項目",
+          "reading": "かんりこうもく"
+        },
+        {
+          "text": "・"
+        },
+        {
+          "text": "管理方法",
+          "reading": "かんりほうほう"
+        },
+        {
+          "text": "・"
+        },
+        {
+          "text": "管理頻度",
+          "reading": "かんりひんど"
+        },
+        {
+          "text": "・"
+        },
+        {
+          "text": "異常時",
+          "reading": "いじょうじ"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "処置",
+          "reading": "しょち"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "確認",
+          "reading": "かくにん"
+        },
+        {
+          "text": "する。"
+        }
+      ]
+    },
+    "direct-mfg1-electrical-l005": {
+      "lessonId": "mfg1-electrical-l005",
+      "assetFile": "assets/manufacturing/diagrams/batch20-electrical-meter-connections.png",
+      "width": 1400,
+      "height": 1100,
+      "sourceJapanese": "測定する量と接続の違いを示す紙上の概念図。電圧計Vは対象の二点間に並列、電流計Aは対象の枝路に直列につなぐ。実機の端子・配線や接続手順を示す図ではない。電流レンジを電源両端へ直接当てない。実作業では担当範囲・教育・設備手順と測定器の適合を確認する。",
+      "parts": [
+        {
+          "text": "測定",
+          "reading": "そくてい"
+        },
+        {
+          "text": "する"
+        },
+        {
+          "text": "量",
+          "reading": "りょう"
+        },
+        {
+          "text": "と"
+        },
+        {
+          "text": "接続",
+          "reading": "せつぞく"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "違",
+          "reading": "ちが"
+        },
+        {
+          "text": "いを"
+        },
+        {
+          "text": "示",
+          "reading": "しめ"
+        },
+        {
+          "text": "す"
+        },
+        {
+          "text": "紙上",
+          "reading": "しじょう"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "概念図",
+          "reading": "がいねんず"
+        },
+        {
+          "text": "。"
+        },
+        {
+          "text": "電圧計",
+          "reading": "でんあつけい"
+        },
+        {
+          "text": "Vは"
+        },
+        {
+          "text": "対象",
+          "reading": "たいしょう"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "二点間",
+          "reading": "にてんかん"
+        },
+        {
+          "text": "に"
+        },
+        {
+          "text": "並列",
+          "reading": "へいれつ"
+        },
+        {
+          "text": "、"
+        },
+        {
+          "text": "電流計",
+          "reading": "でんりゅうけい"
+        },
+        {
+          "text": "Aは"
+        },
+        {
+          "text": "対象",
+          "reading": "たいしょう"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "枝路",
+          "reading": "しろ"
+        },
+        {
+          "text": "に"
+        },
+        {
+          "text": "直列",
+          "reading": "ちょくれつ"
+        },
+        {
+          "text": "につなぐ。"
+        },
+        {
+          "text": "実機",
+          "reading": "じっき"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "端子",
+          "reading": "たんし"
+        },
+        {
+          "text": "・"
+        },
+        {
+          "text": "配線",
+          "reading": "はいせん"
+        },
+        {
+          "text": "や"
+        },
+        {
+          "text": "接続手順",
+          "reading": "せつぞくてじゅん"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "示",
+          "reading": "しめ"
+        },
+        {
+          "text": "す"
+        },
+        {
+          "text": "図",
+          "reading": "ず"
+        },
+        {
+          "text": "ではない。"
+        },
+        {
+          "text": "電流",
+          "reading": "でんりゅう"
+        },
+        {
+          "text": "レンジを"
+        },
+        {
+          "text": "電源両端",
+          "reading": "でんげんりょうたん"
+        },
+        {
+          "text": "へ"
+        },
+        {
+          "text": "直接当",
+          "reading": "ちょくせつあ"
+        },
+        {
+          "text": "てない。"
+        },
+        {
+          "text": "実作業",
+          "reading": "じつさぎょう"
+        },
+        {
+          "text": "では"
+        },
+        {
+          "text": "担当範囲",
+          "reading": "たんとうはんい"
+        },
+        {
+          "text": "・"
+        },
+        {
+          "text": "教育",
+          "reading": "きょういく"
+        },
+        {
+          "text": "・"
+        },
+        {
+          "text": "設備手順",
+          "reading": "せつびてじゅん"
+        },
+        {
+          "text": "と"
+        },
+        {
+          "text": "測定器",
+          "reading": "そくていき"
+        },
+        {
+          "text": "の"
+        },
+        {
+          "text": "適合",
+          "reading": "てきごう"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "確認",
+          "reading": "かくにん"
+        },
+        {
+          "text": "する。"
         }
       ]
     }
