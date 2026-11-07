@@ -193,6 +193,7 @@ const assets:Record<string,ImageSourcePropType>={
  "agr-fig-f40-facility-soil-graft-equipment-appearance-v1":require('../../../assets/agriculture/completion-40/facility-soil-support/graft-equipment-appearance-v1.png'),
  "agr-fig-f40-facility-soil-graft-preparation-and-view-sequence-v1":require('../../../assets/agriculture/completion-40/facility-soil-support/graft-preparation-and-view-sequence-v1.png'),
  "f40-facility-support-carnation-greenhouse-level1":require('../../../assets/agriculture/completion-40/visual-safety/carnation-greenhouse-level1.png'),
+ "royal-fruit-thinning-stages-v1":require('../../../assets/agriculture/royal-weekly-20261107/week29/fruit-thinning-stages-v1.webp'),
 };
 export function getAgricultureFigureAsset(assetKey:string) {return assets[assetKey];}
 type RecognitionImage={
