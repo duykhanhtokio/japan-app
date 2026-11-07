@@ -1,6 +1,9 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week13/technical/electrical-day89-fastener-tool-fit.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week13/technical/electrical-day89-fastener-tool-fit.png");
+  case "assets/manufacturing/royal-weekly-20261107/week13/technical/electrical-day88-material-reference-units.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week13/technical/electrical-day88-material-reference-units.png");
+  case "assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-lathe-selected.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-lathe-selected.png");
   case "assets/manufacturing/royal-weekly-20261107/week12/technical/electrical-day82-stacking-ppm.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week12/technical/electrical-day82-stacking-ppm.png");
   case "assets/manufacturing/royal-weekly-20261107/week12/technical/electrical-day78-speed-shaft-output.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week12/technical/electrical-day78-speed-shaft-output.png");
   case "assets/manufacturing/daily-20261031/block-gauge.png":return require("../../../assets/manufacturing/daily-20261031/block-gauge.png");
