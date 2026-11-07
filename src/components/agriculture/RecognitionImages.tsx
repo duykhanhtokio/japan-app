@@ -196,7 +196,7 @@ const assets:Record<string,ImageSourcePropType>={
  "f40-facility-support-tomato-blossom-end-appearance":require('../../../assets/agriculture/completion-40/facility-safety-support/tomato-blossom-end-appearance.png'),
  "f40-facility-support-nursery-place-container-types":require('../../../assets/agriculture/completion-40/facility-safety-support/nursery-place-container-types.png'),
  "f40-facility-support-paper-pot-connected-cells":require('../../../assets/agriculture/completion-40/facility-safety-support/paper-pot-connected-cells.png'),
- "agr-fig-f40-facility-soil-graft-equipment-appearance-v1":require('../../../assets/agriculture/completion-40/facility-soil-support/graft-equipment-appearance-v1.png'),
+ "agr-fig-f40-facility-soil-graft-equipment-appearance-v1":require('../../../assets/agriculture/royal-weekly-20261107/graft-equipment-appearance-v2.webp'),
  "agr-fig-f40-facility-soil-graft-preparation-and-view-sequence-v1":require('../../../assets/agriculture/completion-40/facility-soil-support/graft-preparation-and-view-sequence-v1.png'),
  "f40-facility-support-carnation-greenhouse-level1":require('../../../assets/agriculture/completion-40/visual-safety/carnation-greenhouse-level1.png'),
  "royal-fruit-thinning-stages-v1":require('../../../assets/agriculture/royal-weekly-20261107/week29/fruit-thinning-stages-v1.webp'),
