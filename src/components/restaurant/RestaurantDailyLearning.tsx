@@ -115,6 +115,17 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-1-svc-11':{source:require('../../../assets/restaurant/royal-weekly-20261107/week02/rst-2-hyg-10-allergen-replacement-label-handoff.webp'),aspectRatio:1.77577045696068},
+ 'rst-1-svc-12':{source:require('../../../assets/restaurant/royal-weekly-20261107/week10/rst-1-svc-12-beverage-information-service-check.webp'),aspectRatio:1.5},
+ 'rst-1-svc-13':{source:require('../../../assets/restaurant/royal-weekly-20261107/week10/rst-1-svc-13-meal-ingredient-explanation.webp'),aspectRatio:1.5},
+ 'rst-1-svc-14':{source:require('../../../assets/restaurant/royal-weekly-20261107/week09/rst-1-svc-09-menu-choice-order-confirmation.webp'),aspectRatio:1.5},
+ 'rst-1-svc-15':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-06-closing-chair-zone-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-11':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-07-truthful-attendance-record-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-12':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-07-truthful-attendance-record-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-13':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-07-truthful-attendance-record-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-14':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-07-truthful-attendance-record-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-15':{source:require('../../../assets/restaurant/royal-weekly-20261107/week08/rst-2-hyg-15-authority-role-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-16':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-19-fire-exit-role-precheck.webp'),aspectRatio:1.5},
  'rst-2-svc-09':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-06-closing-chair-zone-check.webp'),aspectRatio:1.5},
  'rst-2-hyg-22':{source:require('../../../assets/restaurant/royal-weekly-20261107/week02/rst-2-hyg-07-pest-entry-drain-monitoring.webp'),aspectRatio:1.77577045696068},
  'rst-2-hyg-21':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-06-abnormal-water-stop-report.webp'),aspectRatio:1.7768331562167907},
