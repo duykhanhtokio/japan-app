@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "scope": "Secondary illustration source-caption guards including actual expanded view",
+  "baselineCommit": "6abc6da4977f083f2ff6f90237eddf29a629c0bb",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "problem": "The secondary illustration selector accepted an existing caption ID with blank Japanese title/body, leaving artwork and potentially stale localized context visible.",
+  "reproductionBefore": "Actual regression failed on food-illustration-storage-hazards-example blank-title selector true instead of false.",
+  "change": "Require nonblank title/body in the exact source-bound caption paragraph, preserving ID/hash and moved-to-daily dedup checks.",
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/food-manufacturing/check-illustration-caption-guards.cjs",
+    "result": "PASS6 registry entries,2 currently visible,390 actual inline+expanded contexts acrossJA+12locales and current/missing/blank-title/blank-body/stale. Current Japanese+revision-matched localized captions/warnings remain; invalid inline/selected zoom both reject. Moved-to-daily entries remain deduplicated.",
+    "diffCheck": "PASS scoped git diff --check",
+    "limits": "Actual production component with deterministic RN/Image/state/ruby adapters, no device pixels or new independent source/native/domain acceptance."
+  },
+  "files": [
+    "src/data/food-manufacturing/illustrations.ts",
+    "scripts/food-manufacturing/check-illustration-caption-guards.cjs"
+  ],
+  "canonicalContentChanged": false,
+  "newRasterAssets": 0,
+  "acceptance": {
+    "wholeSectorComplete": false,
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false
+  }
+}

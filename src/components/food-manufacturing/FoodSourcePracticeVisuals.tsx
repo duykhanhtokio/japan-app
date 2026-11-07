@@ -52,10 +52,11 @@ const figures:PracticeFigure[]=[
 ];
 /** Every figure pins the lesson revision that its pixels/labels were accepted against. */
 export function foodSourcePracticeFigureMatches(lesson:FoodManufacturingLesson,figure:PracticeFigure){
- return figure.lessonId===lesson.id&&typeof figure.lessonSourceHash==='string'&&figure.lessonSourceHash.length>0&&figure.lessonSourceHash===lesson.sourceHash&&lesson.paragraphs.some(p=>p.id===figure.paragraphId);
+ return figure.lessonId===lesson.id&&typeof figure.lessonSourceHash==='string'&&figure.lessonSourceHash.length>0&&figure.lessonSourceHash===lesson.sourceHash&&lesson.paragraphs.some(p=>p.id===figure.paragraphId&&p.titleJa.trim().length>0&&p.textJa.trim().length>0)&&(!figure.captionSupplementId||[...captionSupplements.sections,...caption43.sections,...caption44.sections,...caption45.sections,...caption46.sections,...caption47.sections,...caption48.sections,...caption49.sections,...caption51.sections,...caption53.sections].some(s=>s.id===figure.captionSupplementId&&s.lessonSourceHash===lesson.sourceHash&&s.sourceHash===figure.captionSupplementSourceHash&&s.titleJa.trim().length>0&&s.textJa.trim().length>0));
 }
 /** Keep inline/zoom descriptions tied to the same current source and caption revision. */
 export function foodSourcePracticeDescription(lesson:FoodManufacturingLesson,figure:PracticeFigure,language:string,showTranslation:boolean){
+ if(!foodSourcePracticeFigureMatches(lesson,figure))return '';
  const p=lesson.paragraphs.find(p=>p.id===figure.paragraphId);
  const supplement=figure.captionSupplementId?[...captionSupplements.sections,...caption43.sections,...caption44.sections,...caption45.sections,...caption46.sections,...caption47.sections,...caption48.sections,...caption49.sections,...caption51.sections,...caption53.sections].find(s=>s.id===figure.captionSupplementId&&s.lessonSourceHash===lesson.sourceHash&&s.sourceHash===figure.captionSupplementSourceHash):null;
  const original=figure.altJa??(supplement?`${supplement.titleJa}。${supplement.textJa}`:p?`${p.titleJa}。${p.textJa}`:'');
@@ -84,8 +85,10 @@ export function FoodSourcePracticeVisuals({lesson,textColor,readingColor,languag
  const labels=showTranslation&&language!=='ja'?(ui.locales as Record<string,{close:string}>)[language]:undefined;
  const base=foodManufacturingLesson(lesson.id,lesson.level);
  if(!base||base.sourceHash!==lesson.sourceHash)return null;
+ const available=figures.filter(figure=>foodSourcePracticeFigureMatches(lesson,figure));
+ const selected=expanded?available.find(figure=>figure.id===expanded.id&&figure.lessonId===expanded.lessonId&&figure.lessonSourceHash===expanded.lessonSourceHash):undefined;
  const translated=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
- return <>{figures.filter(figure=>foodSourcePracticeFigureMatches(lesson,figure)).map(figure=>{
+ return <>{available.map(figure=>{
  const p=lesson.paragraphs.find(p=>p.id===figure.paragraphId);if(!p)return null;
  const captionSupplement=figure.captionSupplementId?[...captionSupplements.sections,...caption43.sections,...caption44.sections,...caption45.sections,...caption46.sections,...caption47.sections,...caption48.sections,...caption49.sections,...caption51.sections,...caption53.sections].find(s=>s.id===figure.captionSupplementId&&s.lessonSourceHash===lesson.sourceHash&&s.sourceHash===figure.captionSupplementSourceHash):null;
  if(figure.captionSupplementId&&!captionSupplement)return null;
@@ -102,6 +105,6 @@ export function FoodSourcePracticeVisuals({lesson,textColor,readingColor,languag
  {figure.id==='food-source33-ojt-cycle'&&<FoodRoyalOjtCycle/>}
  {figure.id==='food-source33-chemical-ppe'&&<FoodRoyalChemicalSafety lesson={lesson} language={language} showTranslation={showTranslation}/>}
  </View>;
- })}<Modal visible={expanded!==null} animationType="none" onRequestClose={()=>setExpanded(null)}><View style={{flex:1,backgroundColor:'#fffaf0',paddingTop:36}}><Pressable accessibilityRole="button" accessibilityLabel={`図を閉じる${labels?` · ${labels.close}`:''}`} onPress={()=>setExpanded(null)} style={{padding:16}}><Text style={{color:'#233c4c',fontSize:18}}>図を閉じる{labels?` · ${labels.close}`:''}</Text></Pressable>{expanded&&<ScrollView horizontal><ScrollView style={{width:expanded.width??1200}}><Image testID="food-source-practice-zoom" source={expanded.source} resizeMode="contain" accessibilityLabel={foodSourcePracticeDescription(lesson,expanded,language,showTranslation)} style={{width:expanded.width??1200,height:expanded.height??1200/expanded.aspectRatio}}/><TechnicalSourceKey lesson={lesson} figure={expanded} language={language} showTranslation={showTranslation} textColor={textColor}/>{expanded.id==='food-source33-ojt-cycle'&&<FoodRoyalOjtCycle/>}{expanded.id==='food-source33-chemical-ppe'&&<FoodRoyalChemicalSafety lesson={lesson} language={language} showTranslation={showTranslation}/>}</ScrollView></ScrollView>}</View></Modal></>;
+ })}<Modal visible={!!selected} animationType="none" onRequestClose={()=>setExpanded(null)}><View style={{flex:1,backgroundColor:'#fffaf0',paddingTop:36}}><Pressable accessibilityRole="button" accessibilityLabel={`図を閉じる${labels?` · ${labels.close}`:''}`} onPress={()=>setExpanded(null)} style={{padding:16}}><Text style={{color:'#233c4c',fontSize:18}}>図を閉じる{labels?` · ${labels.close}`:''}</Text></Pressable>{selected&&<ScrollView horizontal><ScrollView style={{width:selected.width??1200}}><Image testID="food-source-practice-zoom" source={selected.source} resizeMode="contain" accessibilityLabel={foodSourcePracticeDescription(lesson,selected,language,showTranslation)} style={{width:selected.width??1200,height:selected.height??1200/selected.aspectRatio}}/><TechnicalSourceKey lesson={lesson} figure={selected} language={language} showTranslation={showTranslation} textColor={textColor}/>{selected.id==='food-source33-ojt-cycle'&&<FoodRoyalOjtCycle/>}{selected.id==='food-source33-chemical-ppe'&&<FoodRoyalChemicalSafety lesson={lesson} language={language} showTranslation={showTranslation}/>}</ScrollView></ScrollView>}</View></Modal></>;
 }
 const s=StyleSheet.create({figure:{gap:10,paddingVertical:16},image:{width:'100%',height:undefined,alignSelf:'center'},rubyLine:{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'},word:{alignItems:'center',maxWidth:'100%'}});

@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "sector": "restaurant",
+  "week": 6,
+  "lessonId": "rst-2-ops-04",
+  "baseCommit": "6abc6da4977f083f2ff6f90237eddf29a629c0bb",
+  "branch": "continuation/tokutei-20261107-27bcf35a",
+  "status": "SELF_CHECKED_READY_PENDING_COORDINATOR_PERSISTENCE",
+  "change": "Add exact native staffing worked-equation alongside acceptedmainRoyalart; currentcanonicalprose supplied numbers butmainillustration had blankplanningtable.",
+  "generationCalls": 0,
+  "sourceSupport": {
+    "canonicalPath": "src/data/restaurant/lessons.2.ja.json",
+    "lessonSourceHash": "1a62a453e00aab78972d1594737df2c2781f373c83be14e03d62cbca26cc51ce",
+    "canonicalParagraphId": "procedure",
+    "canonicalParagraphSha256": "1969f6553fef4e359652e8bcd3d36ef8f564f127d3bae02e16ed049581ca9026",
+    "sourceRefs": [
+      {
+        "documentId": "rst-2-operations",
+        "pdfPages": [
+          9,
+          10,
+          16,
+          31
+        ],
+        "section": "2章(2)労働時間管理・参考3/6"
+      }
+    ],
+    "paragraphsReviewed": [
+      "knowledge",
+      "procedure",
+      "mistakes",
+      "scenario",
+      "business-model-staffing-targets"
+    ],
+    "sourcePdfReopenedInThisPass": false,
+    "scope": "Current independently authored originalexercise240000JPY÷4000JPYperstaffhour; notnewsourcefact, universalstaffingtarget orlegalshiftlimit."
+  },
+  "exactCalculation": {
+    "plannedSalesYen": 240000,
+    "targetSalesPerStaffHourYen": 4000,
+    "combinedStaffHours": 60,
+    "meaning": "Allstaffactualworkinghourssummed; notheadcount, elapsedopeninghours oronepersonshift. Skillallocation,breaks/relief,openingclosingandtraining checkedseparately."
+  },
+  "display": {
+    "nativeNumbersLabelsAndFurigana": true,
+    "targetLocales": 12,
+    "responsiveEquation": "Actualallocatedwidth>=680 gives3cardsinline; narrowerwidthstacksvertically. Geometryincludes2operatorsandgaps.",
+    "canonicalLessonAndRegistryGuards": true,
+    "captionRevisionGuard": true,
+    "newLearnerIds": false,
+    "mainCountsUnchanged": "66/120",
+    "acceptedMainArtAndAbcCompanionPreserved": true
+  },
+  "validation": {
+    "commands": [
+      "NODE_PATH=<qa-runtime>/node_modules node scripts/restaurant/check-staffing-example.cjs",
+      "NODE_PATH=<qa-runtime>/node_modules node scripts/restaurant/check-royal-daily-revision.cjs"
+    ],
+    "actualTranspiledIntegratedRNAdapterSSR": "PASS Japanese+12locales at5viewportwidths;exactinputs/output,stack/inlineequation,nodeNaN/Infinityabsent,stale lesson/registration/caption rejected;acceptedmainart andABCneighborretained",
+    "viewportWidths": [
+      320,
+      390,
+      844,
+      1024,
+      1440
+    ],
+    "allocatedWidthGeometry": [
+      160,
+      240,
+      679,
+      680,
+      900
+    ],
+    "sourceParagraphAndRendererAndDataHashes": "PASS",
+    "existingRoyalImportAndRevisionRegression": "PASS",
+    "priorDailyBindingsAndOverridesPreserved": true,
+    "diffCheck": "PASS scoped",
+    "browserDeviceVisualAcceptance": "Notclaimed; priorbrowseradapterlaunchblockedUNIXsocketEPERM. Geometry/SSRonly.",
+    "physicalDeviceTested": false
+  },
+  "fileSha256": {
+    "src/components/restaurant/RestaurantStaffingExample.tsx": "6eac7479361a7fbea93f5a30e6da41725462f1cf704bb9504ec5e1be48657c67",
+    "src/data/restaurant/royal-staffing-example.json": "19d1b5d47cbec19b5f1887e795a98d34d3d36c61f02c6527be8252b92c5654e8",
+    "src/components/restaurant/RestaurantDailyLearning.tsx": "d977ab2b88573d88370f8091b8d1300a9e88870d2906414fbaa9f9d539dc36b1",
+    "src/data/restaurant/daily-learning.json": "1a8ad5d18c58192ed714519bc8bb36827654ff03e6cc6479984fecb9d882f609",
+    "docs/ssw-workspace/restaurant/royal-images-20261107/ordered-existing-content-queue.json": "f99077a0532c4e3144ccfe3eb347c6980149096369df79c32aef3220c08d48c5",
+    "scripts/restaurant/check-staffing-example.cjs": "f4510023467f2b091b8948465ae4ae3997c3e6fd2cf7eb8c656a80da2af1b818",
+    "scripts/restaurant/check-royal-daily-revision.cjs": "3cfba7fb0383717bad83dc52cc2a85ee8d6c565bbdce9df0f1c182bd607a2101",
+    "scripts/restaurant/check-vegetable-groups.cjs": "f0f7468615ad68450e19c2425ccf4c434e0387e60f116b544e4dc39706077a34"
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "learnerDurationMeasured": false,
+  "wholeSourceKnowledgeCovered": false,
+  "wholeIllustrationScopeComplete": false
+}

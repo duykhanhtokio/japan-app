@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "scope": "Source-practice gallery current-figure/caption eligibility for selected zoom",
+  "baselineCommit": "6abc6da4977f083f2ff6f90237eddf29a629c0bb",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "problem": "Selected zoom trusted the retained old figure object without checking it against the newly supplied valid lesson. A lesson change or invalid caption could keep an old image open with another lesson's description. Direct captions also accepted blank Japanese title/body.",
+  "reproductionBefore": "Actual source-practice component regression failed: food-source-histogram-patterns stale selection from another lesson must close.",
+  "change": "Resolve every selected expansion against the same currently eligible registry figures used inline, matching selected identity/lesson/revision and using current registry asset bytes. Eligibility also requires nonblank exact paragraph and current nonblank independent supplement caption when present. Description helper rejects invalid figure/caption context. Retain all exact pixels, technical geometry/data, source identities and localized caption content.",
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/food-manufacturing/check-source-practice-expanded-guards.cjs",
+    "result": "PASS494 actual inline+selected zoom contexts acrossJA+12locales:6 retained direct figures×13locales×current/cross-lesson/missing/blank-title/blank-body/stale, plus independent source51 caption current/stale pair×13locales. Valid selection uses current registered asset, never fixture's old object URI; cross-lesson or invalid captions hide selected zoom.",
+    "existingRevisionSuite": "PASS156 actual direct-paragraph contexts current/wrong caller/advanced canonical acrossJA+12locales; wrong/missing/empty/stale lesson hash, wrong lesson and absent paragraph reject.",
+    "diffCheck": "PASS scoped git diff --check",
+    "limits": "Deterministic RN/Image/state/ruby adapters; no actual device navigation/browser pixels or native/domain acceptance."
+  },
+  "files": [
+    "src/components/food-manufacturing/FoodSourcePracticeVisuals.tsx",
+    "scripts/food-manufacturing/check-source-practice-expanded-guards.cjs"
+  ],
+  "newRasterAssets": 0,
+  "canonicalContentChanged": false,
+  "acceptance": {
+    "wholeSectorComplete": false,
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false
+  }
+}

@@ -1,3 +1,4 @@
+import {RestaurantStaffingExample} from './RestaurantStaffingExample';
 import {RestaurantAbcExample} from './RestaurantAbcExample';
 import {RestaurantVegetableClassificationFigure,restaurantHasVegetableClassification} from './RestaurantVegetableClassificationFigure';
 import {RestaurantFishPartsFigure,restaurantHasFishPartsFigure} from './RestaurantFishPartsFigure';
@@ -211,7 +212,7 @@ export function RestaurantDailyFigure({lesson,language,showTranslation}:{lesson:
   {caption&&<View style={{gap:8}}><RestaurantReading text={caption.textJa} segments={caption.furigana} terms={lesson.terms}/>{showTranslation&&language!=='ja'&&targetCaption?.sourceHash===caption.sourceHash&&<TranslationText>{targetCaption.text}</TranslationText>}</View>}
   <RestaurantReading text={lesson.objectiveJa} segments={lesson.furigana?.objective} terms={lesson.terms}/>{showTranslation&&t&&<TranslationText>{t.objective}</TranslationText>}
   <RestaurantReading text={labels.ja.note} segments={noteSegments}/>{showTranslation&&language!=='ja'&&<TranslationText>{ui.note}</TranslationText>}
- </View><RestaurantAbcExample lesson={lesson} language={language} showTranslation={showTranslation}/></>;
+ </View><RestaurantAbcExample lesson={lesson} language={language} showTranslation={showTranslation}/><RestaurantStaffingExample lesson={lesson} language={language} showTranslation={showTranslation}/></>;
 }
 export function RestaurantDailyCompanions({lesson,language,showTranslation}:{lesson:RestaurantLesson;language:string;showTranslation:boolean}){
  const binding=bindingFor(lesson),{colors}=useStudyAppearance();if(!binding?.companionReadings.length)return null;

@@ -26,5 +26,5 @@ export const foodIllustrations:FoodIllustration[]=[
 
 export function foodIllustrationsFor(lesson:FoodManufacturingLesson){
  const movedToDaily=foodRoyalWeeklyImageFor(lesson)?.replacesIllustrationId;
- return foodIllustrations.filter(figure=>figure.id!==movedToDaily&&figure.lessonId===lesson.id&&figure.sourceHash===lesson.sourceHash&&lesson.paragraphs.some(p=>p.id===figure.captionParagraphId));
+ return foodIllustrations.filter(figure=>figure.id!==movedToDaily&&figure.lessonId===lesson.id&&figure.sourceHash===lesson.sourceHash&&lesson.paragraphs.some(p=>p.id===figure.captionParagraphId&&p.titleJa.trim().length>0&&p.textJa.trim().length>0));
 }
