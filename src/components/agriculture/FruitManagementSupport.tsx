@@ -1,3 +1,5 @@
+import {AgricultureImageRuby} from './AgricultureImageRuby';
+import {AgricultureManagementProtectionRuby} from './AgricultureManagementProtectionRuby';
 import {Text,View} from 'react-native';
 import data from '@/data/agriculture/fruit-management-support.json';
 import content from '@/data/agriculture/lessons.ja.json';
@@ -17,15 +19,16 @@ export function fruitManagementLabels(lessonId:string,sourceHash:string,revision
 /** Exact canonical comparison plus separately limited subject appearance. */
 export function FruitManagementSupport({lessonId,lessonSourceHash,lessonRevision,level,language='ja',showTranslation=false,colors}:{lessonId:string;lessonSourceHash:string;lessonRevision?:string;level?:string;language?:string;showTranslation?:boolean;colors:Colors}){
  const ja=fruitManagementLabels(lessonId,lessonSourceHash,lessonRevision,level,'ja');if(!ja)return null;
+ const ruby=(field:string,value:string,style:{color:string;fontSize:number;lineHeight:number;fontWeight?:'700'})=><AgricultureManagementProtectionRuby provider="fruit-management" lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language="ja" field={field} text={value} style={style} color={colors.translationText}/>;
  const t=showTranslation&&language!=='ja'?fruitManagementLabels(lessonId,lessonSourceHash,lessonRevision,level,language):null;
  const f=data.contextImageSnapshot,source=getAgricultureFigureAsset(f.assetKey),caption=t?recognitionImageTranslation(f,data.contextSourceLesson.id,data.contextSourceLesson.sourceHash,data.contextSourceLesson.revision,language):null;
  const text={color:colors.translationText,fontSize:16,lineHeight:27};
  const label=(i:number)=><View key={i} style={{gap:4}}><View accessible accessibilityLabel={fixed[i]} testID={`agri-fruit-processing-ruby-${i}`} style={{alignItems:'center'}}><Text style={{color:colors.translationText,fontSize:10,lineHeight:14}}>{readings[i]}</Text><Text style={{...text,fontWeight:'700'}}>{fixed[i]}</Text></View>{!!t&&<Text testID={`agri-fruit-processing-label-${i}`} style={text}>{t.labels[i]}</Text>}</View>;
  return <View testID="agri-native-fruit-management" style={{gap:14,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:10}}>
-  <Text style={{...text,fontSize:19,fontWeight:'700'}}>{ja.title}</Text>{!!t&&<Text testID="agri-fruit-management-localized-title" style={text}>{t.title}</Text>}
+  {ruby('title',ja.title,{...text,fontSize:19,fontWeight:'700'})}{!!t&&<Text testID="agri-fruit-management-localized-title" style={text}>{t.title}</Text>}
   <View accessibilityRole="image" accessibilityLabel={(t||ja).alt} style={{flexDirection:'row',flexWrap:'wrap',gap:14}}><View style={{flexGrow:1,minWidth:140,borderWidth:1,borderColor:colors.border,padding:10}}>{label(0)}</View><View style={{flexGrow:1,minWidth:140,borderWidth:1,borderColor:colors.border,padding:10,gap:8}}>{label(1)}<View style={{gap:8,borderTopWidth:1,borderColor:colors.border,paddingTop:8}}>{label(2)}{label(3)}</View></View></View>
-  {data.paragraphIds.map(id=><View key={id} style={{gap:5}}><Text style={{...text,fontWeight:'700'}}>{ja.paragraphTitles[id]}</Text><Text style={text}>{ja.paragraphs[id]}</Text>{!!t&&<><Text style={{...text,fontWeight:'700'}}>{t.paragraphTitles[id]}</Text><Text style={text}>{t.paragraphs[id]}</Text></>}</View>)}
-  {!!source&&<><ZoomableFigure source={source} width={f.width} height={f.height} altJa={caption?.alt||f.altJa} testID="agri-fruit-management-context-persimmon" colors={colors} allowExpandedView/><Text style={text}>{f.titleJa}{'\n'}{f.limitJa}</Text>{!!caption&&<Text testID="agri-fruit-management-context-localized-limit" style={text}>{caption.title}{'\n'}{caption.limit}</Text>}</>}
+  {data.paragraphIds.map(id=><View key={id} style={{gap:5}}>{ruby(`paragraphTitle:${id}`,ja.paragraphTitles[id],{...text,fontWeight:'700'})}{ruby(`paragraph:${id}`,ja.paragraphs[id],text)}{!!t&&<><Text style={{...text,fontWeight:'700'}}>{t.paragraphTitles[id]}</Text><Text style={text}>{t.paragraphs[id]}</Text></>}</View>)}
+  {!!source&&<><ZoomableFigure source={source} width={f.width} height={f.height} altJa={caption?.alt||f.altJa} testID="agri-fruit-management-context-persimmon" colors={colors} allowExpandedView/><AgricultureImageRuby imageId={f.id} assetSha256={f.assetSha256} lessonId={data.contextSourceLesson.id} lessonSourceHash={data.contextSourceLesson.sourceHash} lessonRevision={data.contextSourceLesson.revision} field="title" text={f.titleJa} style={text} color={colors.translationText}/><AgricultureImageRuby imageId={f.id} assetSha256={f.assetSha256} lessonId={data.contextSourceLesson.id} lessonSourceHash={data.contextSourceLesson.sourceHash} lessonRevision={data.contextSourceLesson.revision} field="limit" text={f.limitJa} style={text} color={colors.translationText}/>{!!caption&&<Text testID="agri-fruit-management-context-localized-limit" style={text}>{caption.title}{'\n'}{caption.limit}</Text>}</>}
   <Text style={{...text,fontSize:14}}>AGR-S1 · PDF p.96 / p.90 · AGR-S2 · PDF p.120 / p.118 · PDF p.121 / p.119</Text>
  </View>;
 }
