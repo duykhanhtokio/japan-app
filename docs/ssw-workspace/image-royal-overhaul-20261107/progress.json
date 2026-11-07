@@ -1,0 +1,417 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "asOfCommit": "45b3ae00ba6ade5cf152c47642696a5576221180",
+  "state": "week01_in_progress",
+  "verifiedNewRasterAssets": 53,
+  "scope": [
+    "agriculture",
+    "manufacturing",
+    "food",
+    "restaurant",
+    "hospitality",
+    "kaigo"
+  ],
+  "sectors": [
+    {
+      "sector": "agriculture",
+      "verifiedNewRasterAssets": 12,
+      "week01RecognitionReplaced": 11,
+      "week01RecognitionTotal": 26,
+      "riceProcessIllustrationAdded": 1,
+      "remainingWeek01Recognition": 15,
+      "latestVerifiedCommit": "13617122f68c320539e5436275c3fcd32016079c"
+    },
+    {
+      "sector": "manufacturing",
+      "verifiedNewRasterAssets": 9,
+      "week01DailyImagesReplaced": 9,
+      "week01DailyImagesTotal": 21,
+      "remainingWeek01Daily": 12,
+      "companionBindingsStillOpen": 13,
+      "knownExtraDiagramAssetsStillOpen": 2,
+      "latestVerifiedCommit": "3c71c6495f72adfb9adaf3c9a543dee3a7bf7e87"
+    },
+    {
+      "sector": "food",
+      "verifiedNewRasterAssets": 8,
+      "week01DailyImagesReplaced": 7,
+      "week01DailyImagesTotal": 12,
+      "remainingWeek01Daily": 5,
+      "supplementalOjtIllustrationAdded": 1,
+      "hazardConceptPresentation": "pending",
+      "latestVerifiedCommit": "fdac87f69fae235db490518190d5a0df7733b7b2"
+    },
+    {
+      "sector": "restaurant",
+      "verifiedNewRasterAssets": 11,
+      "week01MainDailyReplaced": 11,
+      "week01MainDailyTotal": 11,
+      "remainingWeek01MainDaily": 0,
+      "supplementalWallCleaningRaster": "pending",
+      "correctiveActionDiagram": "native localized nodes/edges preserved",
+      "latestVerifiedCommit": "45b3ae00ba6ade5cf152c47642696a5576221180"
+    },
+    {
+      "sector": "hospitality",
+      "verifiedNewRasterAssets": 6,
+      "weekEquivalentDefinition": "Union of first seven scheduled days per level; original schedule unchanged",
+      "week01UniqueImageTotal": 9,
+      "remainingWeek01Images": 3,
+      "practiceFloorplan": "native measured responsive diagram, Japanese plus12locales",
+      "latestVerifiedCommit": "957e854e936616dbe94c6c80f20eb10a3ead66e6"
+    },
+    {
+      "sector": "kaigo",
+      "verifiedNewRasterAssets": 7,
+      "week01ActiveImageBindings": 7,
+      "week01AssetScopeComplete": true,
+      "week01FullyAccepted": false,
+      "renderedSections": 73,
+      "sectionInlineImages": 0,
+      "uniqueTextTermIds": 25,
+      "textQuestions": 59,
+      "remainingWeek01Images": 0,
+      "latestVerifiedCommit": "bf3cd9a2dea9133b90a32d34f3623ed17d718124",
+      "next": "No week02 generation while week01 runtime/device verification remains blocked"
+    }
+  ],
+  "verification": {
+    "perUnitBlobShaAndFullTree": "verified before leased ref update",
+    "persistence": "Every listed image unit fetched and checked with scoped WORK PERSISTENCE PASS",
+    "componentBuildAndSSR": "Only exact scoped checks documented per sector, not complete app build",
+    "physicalDeviceTested": false,
+    "productionExpoTested": false,
+    "fullSourceKnowledgeCoverageClaimed": false,
+    "wholeSectorNormalized": false
+  },
+  "blockers": [
+    {
+      "id": "browser-preview",
+      "detail": "System Chromium launch denied AF_UNIX socket permission; cloud browser denied local file protocol. No browser security workaround attempted. Actual app/device layouts and zoom remain unaccepted."
+    }
+  ],
+  "concurrencyIncident": {
+    "cause": "Concurrent authorized JLPT commit55f4e78e advanced sharedbranch during leased image ref update",
+    "resolution": "Inspected all changed paths, confirmed no Tokutei overlap, preserved upstream changes and pending worker files, resumed only after verified remote saves"
+  },
+  "initialAgricultureCommit": "b8875b24b8d52239e1db5d87ed9555dcee9be7c1",
+  "completedUnits": [
+    {
+      "sector": "restaurant",
+      "sha": "6a7c4606f6706047a9463423d3e113031334815d",
+      "paths": [
+        "assets/restaurant/royal-weekly-20261107/week01/rst-1-hyg-01-hazard-classes.webp",
+        "src/components/restaurant/RestaurantDailyLearning.tsx",
+        "src/data/restaurant/daily-learning.json",
+        "docs/ssw-workspace/restaurant/royal-images-20261107/week01/rst-1-hyg-01-receipt.json"
+      ]
+    },
+    {
+      "sector": "hospitality",
+      "sha": "ef4255930fa52e954c30d8d94a16481b217fb434",
+      "paths": [
+        "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-01.webp",
+        "src/data/hospitality/illustrations.ts",
+        "src/data/hospitality/royal-illustration-metadata.ts",
+        "src/components/hospitality/HospitalityCourse.tsx",
+        "docs/ssw-workspace/hospitality/image-manifest.json",
+        "docs/ssw-workspace/hospitality/royal-week01-image-receipt-20261107.json"
+      ]
+    },
+    {
+      "sector": "manufacturing",
+      "sha": "b40034cdc176f41839662c6cb8f9c24771232c92",
+      "paths": [
+        "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day01-stop-report.webp",
+        "src/data/manufacturing/daily40/mechanical.json",
+        "src/data/manufacturing/daily40-assets.ts",
+        "docs/ssw-workspace/manufacturing/royal-week01-mechanical-day01-20261107.json"
+      ]
+    },
+    {
+      "sector": "food",
+      "sha": "06645b4c59f6954d71413e1a515413a82bdabf51",
+      "paths": [
+        "assets/food-manufacturing/royal-weekly-20261107/week01/community-rules.webp",
+        "src/data/food-manufacturing/royal-weekly-images.ts",
+        "src/components/food-manufacturing/FoodDailyLearning.tsx",
+        "docs/ssw-workspace/food-manufacturing/royal-images-week01-20261107.json"
+      ]
+    },
+    {
+      "sector": "kaigo",
+      "sha": "ace21f6c5b30fa877a63ab88c1f24bf4c7657bfa",
+      "paths": [
+        "assets/kaigo/royal-weekly-20261107/week01/day01-greeting.webp",
+        "src/data/kaigo/royal-weekly-art.ts",
+        "src/data/kaigo/weekly-art-allocation.ts",
+        "src/data/kaigo/daily-knowledge-visuals.json",
+        "docs/ssw-workspace/kaigo/reviews/ROYAL_WEEK01_DAY01_20261107.json"
+      ]
+    },
+    {
+      "sector": "agriculture",
+      "sha": "31d0214f48586dcaba7367b756b4c5d7d00b8c5a",
+      "paths": [
+        "assets/agriculture/royal-weekly-20261107/week01/indica-brown-rice.webp",
+        "src/components/agriculture/RecognitionImages.tsx",
+        "src/data/agriculture/recognition-images.json",
+        "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-indica-unit.json"
+      ]
+    },
+    {
+      "sector": "hospitality",
+      "sha": "087d26f44c62d004e3b8ad33b8b255f1b1ffa0a2",
+      "paths": [
+        "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-02.webp",
+        "src/data/hospitality/illustrations.ts",
+        "src/data/hospitality/royal-illustration-metadata.ts",
+        "docs/ssw-workspace/hospitality/image-manifest.json",
+        "docs/ssw-workspace/hospitality/royal-week01-front02-receipt-20261107.json"
+      ]
+    },
+    {
+      "sector": "restaurant",
+      "sha": "59b2514730c056d18c84db314b875b306c09c94e",
+      "paths": [
+        "assets/restaurant/royal-weekly-20261107/week01/rst-1-hyg-02-prevention-principles.webp",
+        "src/components/restaurant/RestaurantDailyLearning.tsx",
+        "src/data/restaurant/daily-learning.json",
+        "docs/ssw-workspace/restaurant/royal-images-20261107/week01/rst-1-hyg-02-receipt.json"
+      ]
+    },
+    {
+      "sector": "manufacturing",
+      "sha": "c5dac8978bb46ef88e5378bdec789560c6071a01",
+      "paths": [
+        "assets/manufacturing/royal-weekly-20261107/week01/electrical-day01-wire-tools.webp",
+        "src/data/manufacturing/daily40/electrical.json",
+        "src/data/manufacturing/daily40-assets.ts",
+        "docs/ssw-workspace/manufacturing/royal-week01-electrical-day01-20261107.json"
+      ]
+    },
+    {
+      "sector": "food",
+      "sha": "2e509fcbb4d1c5a8a00f276c3279a541a2cb03c3",
+      "paths": [
+        "assets/food-manufacturing/royal-weekly-20261107/week01/hygiene-and-process-controls.webp",
+        "src/data/food-manufacturing/royal-weekly-images.ts",
+        "docs/ssw-workspace/food-manufacturing/royal-images-week01-20261107.json"
+      ]
+    },
+    {
+      "sector": "kaigo",
+      "sha": "bccff32eb3cce5888fea55735489cb288f545f07",
+      "paths": [
+        "assets/kaigo/royal-weekly-20261107/week01/day02-consent.webp",
+        "src/data/kaigo/royal-weekly-art.ts",
+        "src/data/kaigo/daily-knowledge-visuals.json",
+        "docs/ssw-workspace/kaigo/reviews/ROYAL_WEEK01_DAY02_20261107.json"
+      ]
+    },
+    {
+      "sector": "agriculture",
+      "sha": "b0181b1777912a6b875495fb2bce6eb6e827593b",
+      "paths": [
+        "assets/agriculture/royal-weekly-20261107/week01/japonica-brown-rice.webp",
+        "src/components/agriculture/RecognitionImages.tsx",
+        "src/data/agriculture/recognition-images.json",
+        "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-japonica-unit.json"
+      ]
+    },
+    {
+      "sector": "restaurant",
+      "sha": "1a278187de85e3cd1c8c3432d3f3789a4398d2e3",
+      "paths": [
+        "src/components/restaurant/RestaurantDailyLearning.tsx",
+        "src/data/restaurant/daily-learning.json",
+        "docs/ssw-workspace/restaurant/royal-images-20261107/week01/rst-1-hyg-03-05-receipt.json",
+        "assets/restaurant/royal-weekly-20261107/week01/rst-1-hyg-03-bacterial-source-categories.webp",
+        "assets/restaurant/royal-weekly-20261107/week01/rst-1-hyg-04-virus-parasite-histamine-contexts.webp",
+        "assets/restaurant/royal-weekly-20261107/week01/rst-1-hyg-05-receiving-damaged-package-hold.webp"
+      ]
+    },
+    {
+      "sector": "manufacturing",
+      "sha": "4f3a55cba082835de586b45a93e3f4f22a282adc",
+      "paths": [
+        "assets/manufacturing/royal-weekly-20261107/week01/surface-day01-task-safety.webp",
+        "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day02-5s-workbench.webp",
+        "assets/manufacturing/royal-weekly-20261107/week01/electrical-day02-solder-joint.webp",
+        "src/data/manufacturing/daily40/surface.json",
+        "src/data/manufacturing/daily40/mechanical.json",
+        "src/data/manufacturing/daily40/electrical.json",
+        "src/data/manufacturing/daily40-assets.ts",
+        "docs/ssw-workspace/manufacturing/royal-week01-three-days-20261107.json"
+      ]
+    },
+    {
+      "sector": "kaigo",
+      "sha": "829e642460f0e4584449b36623a060264eaaa388",
+      "paths": [
+        "assets/kaigo/royal-weekly-20261107/week01/day03-postcard.webp",
+        "assets/kaigo/royal-weekly-20261107/week01/day04-private-consultation.webp",
+        "assets/kaigo/royal-weekly-20261107/week01/day05-participation-photo-consent.webp",
+        "src/data/kaigo/royal-weekly-art.ts",
+        "src/data/kaigo/daily-knowledge-visuals.json",
+        "docs/ssw-workspace/kaigo/reviews/ROYAL_WEEK01_DAYS03_05_20261107.json"
+      ]
+    },
+    {
+      "sector": "food",
+      "sha": "4034a8183deb85fbb4b1b38e96cb8db21cfb29f6",
+      "paths": [
+        "assets/food-manufacturing/royal-weekly-20261107/week01/role-model-hygiene.webp",
+        "assets/food-manufacturing/royal-weekly-20261107/week01/people-equipment-work.webp",
+        "assets/food-manufacturing/royal-weekly-20261107/week01/ojt-supervised-check.webp",
+        "src/data/food-manufacturing/royal-weekly-images.ts",
+        "src/data/food-manufacturing/source-practice33.ts",
+        "src/components/food-manufacturing/FoodRoyalOjtCycle.tsx",
+        "src/components/food-manufacturing/FoodSourcePracticeVisuals.tsx",
+        "docs/ssw-workspace/food-manufacturing/royal-images-week01-20261107.json"
+      ]
+    },
+    {
+      "sector": "agriculture",
+      "sha": "feeddaa3120b20a50322fd08fd28fdd8bd0ff54a",
+      "paths": [
+        "src/components/agriculture/RecognitionImages.tsx",
+        "src/data/agriculture/recognition-images.json",
+        "assets/agriculture/royal-weekly-20261107/week01/carrot.webp",
+        "assets/agriculture/royal-weekly-20261107/week01/cabbage.webp",
+        "assets/agriculture/royal-weekly-20261107/week01/tomato.webp",
+        "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-vegetable-batch1.json",
+        "docs/ssw-workspace/agriculture/royal-weekly-20261107/active-image-reference-census.json"
+      ]
+    },
+    {
+      "sector": "hospitality",
+      "sha": "0a415b3efdce0e3f607516f447d59180bdef575e",
+      "paths": [
+        "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-03.webp",
+        "src/data/hospitality/illustrations.ts",
+        "src/data/hospitality/royal-illustration-metadata.ts",
+        "src/data/hospitality/practice-floorplan-labels.ts",
+        "src/components/hospitality/HospitalityCourse.tsx",
+        "src/components/hospitality/HotelPracticeFloorplan.tsx",
+        "docs/ssw-workspace/hospitality/image-manifest.json",
+        "docs/ssw-workspace/hospitality/royal-week01-front03-receipt-20261107.json"
+      ]
+    },
+    {
+      "sector": "manufacturing",
+      "sha": "3d7dacf70ef5a7f8115f1b03e3946f727c38f491",
+      "paths": [
+        "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day03-location-item-stock.webp",
+        "assets/manufacturing/royal-weekly-20261107/week01/electrical-day03-caliper-parts.webp",
+        "assets/manufacturing/royal-weekly-20261107/week01/surface-day02-ph-measurement.webp",
+        "src/data/manufacturing/daily40/mechanical.json",
+        "src/data/manufacturing/daily40/electrical.json",
+        "src/data/manufacturing/daily40/surface.json",
+        "src/data/manufacturing/daily40-assets.ts",
+        "docs/ssw-workspace/manufacturing/royal-week01-next-three-days-20261107.json"
+      ]
+    },
+    {
+      "sector": "kaigo",
+      "sha": "bf3cd9a2dea9133b90a32d34f3623ed17d718124",
+      "paths": [
+        "assets/kaigo/royal-weekly-20261107/week01/day06-hand-regions-base.webp",
+        "assets/kaigo/royal-weekly-20261107/week01/day07-independent-reading.webp",
+        "src/components/kaigo/KaigoHandRegionFigure.tsx",
+        "src/components/kaigo/WeeklyKaigo.tsx",
+        "src/data/kaigo/daily-knowledge-visuals.ts",
+        "src/data/kaigo/daily-knowledge-visuals.json",
+        "src/data/kaigo/royal-weekly-art.ts",
+        "docs/ssw-workspace/kaigo/reviews/ROYAL_WEEK01_DAYS06_07_20261107.json"
+      ]
+    },
+    {
+      "sector": "restaurant",
+      "sha": "11625ee61908348e3814334886ff9d4789b2cc82",
+      "paths": [
+        "src/components/restaurant/RestaurantDailyLearning.tsx",
+        "src/components/restaurant/RestaurantDiagrams.tsx",
+        "src/data/restaurant/daily-learning.json",
+        "docs/ssw-workspace/restaurant/royal-images-20261107/week01/rst-2-hyg-01-03-receipt.json",
+        "assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-01-haccp-observation-verification.webp",
+        "assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-02-facility-cleaning-priorities.webp",
+        "assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-03-detergent-material-label-check.webp"
+      ]
+    },
+    {
+      "sector": "agriculture",
+      "sha": "65726f372268cb241f7d25f69882aa518c479ff5",
+      "paths": [
+        "src/components/agriculture/RecognitionImages.tsx",
+        "src/data/agriculture/recognition-images.json",
+        "assets/agriculture/royal-weekly-20261107/week01/eggplant.webp",
+        "assets/agriculture/royal-weekly-20261107/week01/cucumber.webp",
+        "assets/agriculture/royal-weekly-20261107/week01/spinach.webp",
+        "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-vegetable-batch2.json",
+        "docs/ssw-workspace/agriculture/royal-weekly-20261107/active-image-reference-census.json"
+      ]
+    },
+    {
+      "sector": "food",
+      "sha": "fdac87f69fae235db490518190d5a0df7733b7b2",
+      "paths": [
+        "assets/food-manufacturing/royal-weekly-20261107/week01/worker-and-consumer-safety.webp",
+        "assets/food-manufacturing/royal-weekly-20261107/week01/hard-foreign-material.webp",
+        "assets/food-manufacturing/royal-weekly-20261107/week01/tailored-training-support.webp",
+        "src/data/food-manufacturing/royal-weekly-images.ts",
+        "docs/ssw-workspace/food-manufacturing/royal-images-week01-20261107.json"
+      ]
+    },
+    {
+      "sector": "hospitality",
+      "sha": "957e854e936616dbe94c6c80f20eb10a3ead66e6",
+      "paths": [
+        "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-04.webp",
+        "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-05.webp",
+        "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-06.webp",
+        "src/data/hospitality/illustrations.ts",
+        "src/data/hospitality/royal-illustration-metadata.ts",
+        "src/components/hospitality/HospitalityCourse.tsx",
+        "docs/ssw-workspace/hospitality/image-manifest.json",
+        "docs/ssw-workspace/hospitality/royal-week01-front04-06-receipt-20261107.json"
+      ]
+    },
+    {
+      "sector": "manufacturing",
+      "sha": "3c71c6495f72adfb9adaf3c9a543dee3a7bf7e87",
+      "paths": [
+        "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day04-ojt-confirmation.webp",
+        "src/data/manufacturing/daily40/mechanical.json",
+        "src/data/manufacturing/daily40-assets.ts",
+        "docs/ssw-workspace/manufacturing/royal-week01-mechanical-day04-20261107.json"
+      ]
+    },
+    {
+      "sector": "agriculture",
+      "sha": "13617122f68c320539e5436275c3fcd32016079c",
+      "paths": [
+        "src/components/agriculture/RecognitionImages.tsx",
+        "src/data/agriculture/recognition-images.json",
+        "assets/agriculture/royal-weekly-20261107/week01/potato.webp",
+        "assets/agriculture/royal-weekly-20261107/week01/sweet-potato.webp",
+        "assets/agriculture/royal-weekly-20261107/week01/onion.webp",
+        "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-vegetable-batch3.json",
+        "docs/ssw-workspace/agriculture/royal-weekly-20261107/active-image-reference-census.json"
+      ]
+    },
+    {
+      "sector": "restaurant",
+      "sha": "45b3ae00ba6ade5cf152c47642696a5576221180",
+      "paths": [
+        "src/components/restaurant/RestaurantDailyLearning.tsx",
+        "src/data/restaurant/daily-learning.json",
+        "docs/ssw-workspace/restaurant/royal-images-20261107/week01/rst-2-hyg-04-06-receipt.json",
+        "assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-04-disinfection-dry-protected-storage.webp",
+        "assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-05-instrument-withdrawal-handwash-supplies.webp",
+        "assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-06-abnormal-water-stop-report.webp"
+      ]
+    }
+  ]
+}
