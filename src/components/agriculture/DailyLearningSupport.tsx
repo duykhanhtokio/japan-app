@@ -1,3 +1,4 @@
+import {AgricultureImageRuby} from './AgricultureImageRuby';
 import {PestFoundationSupport} from './PestFoundationSupport';
 import {MulchColorSupport} from './MulchColorSupport';
 import {FruitManagementSupport} from './FruitManagementSupport';
@@ -70,13 +71,15 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
   return t?[t]:[];
  })[0]:null;
  const asset=f?getAgricultureFigureAsset(f.assetKey):null;
+ const imageReadingContext={imageId:f?.id??'',assetSha256:f?.assetSha256??'',lessonId:lesson.id,lessonSourceHash:lesson.sourceHash,lessonRevision:lesson.revision,color:colors.translationText};
  return f&&asset?<View testID={`agri-daily-support-${lesson.id}`} style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10,gap:10}}>
- <Text style={{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'}}>{f.titleJa}</Text>
+ <AgricultureImageRuby {...imageReadingContext} field="title" text={f.titleJa} style={{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'}}/>
  {!!translated&&<Text testID={`agri-daily-support-${lesson.id}-localized-title`} style={{color:colors.translationText,fontSize:18,lineHeight:28,fontWeight:'700'}}>{translated.title}</Text>}
  <ZoomableFigure source={asset} width={f.width} height={f.height} altJa={translated?.alt||f.altJa} testID={`agri-daily-support-${lesson.id}`} colors={colors} allowExpandedView/>
  <Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{currentBinding?.reuseReasonJa||f.observationJa}</Text>
- <Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{f.observationJa}{'\n'}{f.limitJa}</Text>
- {!!translated&&<View testID={`agri-daily-support-${lesson.id}-localized-metadata`} style={{gap:6}}><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.observation}</Text><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.limit}</Text>{!!translated.labels?.length&&f.labelsJa?.map((label,i)=><View key={i} style={{gap:3}}><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{label}</Text><Text testID={`agri-daily-support-${lesson.id}-localized-label-${i}`} style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.labels![i]}</Text></View>)}</View>}
+ <AgricultureImageRuby {...imageReadingContext} field="observation" text={f.observationJa} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/>
+ <AgricultureImageRuby {...imageReadingContext} field="limit" text={f.limitJa} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/>
+ {!!translated&&<View testID={`agri-daily-support-${lesson.id}-localized-metadata`} style={{gap:6}}><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.observation}</Text><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.limit}</Text>{!!translated.labels?.length&&f.labelsJa?.map((label,i)=><View key={i} style={{gap:3}}><AgricultureImageRuby {...imageReadingContext} field={`label:${i}`} text={label} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/><Text testID={`agri-daily-support-${lesson.id}-localized-label-${i}`} style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.labels![i]}</Text></View>)}</View>}
  </View>:null;
 }
 export function DailyCompanionReadings({lesson,level,language,showTranslation,colors}:{lesson:AgricultureLesson;level:AgricultureLevel;language:string;showTranslation:boolean;colors:Colors}){

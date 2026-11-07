@@ -1,11 +1,12 @@
 // Isolated web course harness: real reader/data/figures/storage logic; platform chrome is adapted.
-const fs=require('fs'),path=require('path'),http=require('http'),assert=require('node:assert/strict');
+const fs=require('fs'),path=require('path'),http=require('http'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
 const root=path.resolve(__dirname,'../..'),out=process.env.HOTEL_QA_OUTPUT;
 if(!out)throw Error('HOTEL_QA_OUTPUT required');fs.mkdirSync(out,{recursive:true});
 const esbuild=require('esbuild');
+const assetCommit=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
 const translationSnapshot=new Map([...fs.readFileSync(path.join(root,'src/data/hospitality/translation-loaders.ts'),'utf8').matchAll(/require\('\.\/translations\/([^']+)\.json'\)/g)].map(m=>[m[1],JSON.parse(fs.readFileSync(path.join(root,'src/data/hospitality/translations',m[1]+'.json')))]));
-const {chromium}=require(require.resolve('playwright',{paths:[process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES]}));
-const deps=process.env.HOTEL_QA_WEB_MODULES||'/workspace/scratch/8c34e3cace7a/visualqa-deps/node_modules';
+const deps=process.env.HOTEL_QA_WEB_MODULES||path.join(root,'node_modules');
+const {chromium}=require(require.resolve('playwright',{paths:[process.env.HOTEL_QA_PLAYWRIGHT_MODULES||process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES||deps]}));
 const mocks={
  '@/hooks/useUserProfile':`export const useUserProfile=()=>({profile:{createdAt:'qa'},loading:false});`,
  '@/context/LanguageContext':`export const useAppLanguage=()=>({language:new URLSearchParams(location.search).get('language')||'ja'});`,
@@ -18,7 +19,16 @@ const mocks={
  '@/components/tokutei/TokuteiChrome':`import React from'react';import{View,Text,Pressable}from'react-native';export const TokuteiHeader=({title,onBack})=><View><Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={onBack}><Text>Back</Text></Pressable><Text style={{fontSize:22,padding:12}}>{title}</Text></View>;`,
 };
 (async()=>{
- await esbuild.build({stdin:{contents:`import React from 'react';import{createRoot}from'react-dom/client';import HospitalityRoute from '${root}/src/app/specified-skills/hospitality';createRoot(document.getElementById('root')).render(<HospitalityRoute/>);`,resolveDir:root,loader:'tsx'},outfile:path.join(out,'entry.js'),bundle:true,platform:'browser',format:'iife',jsx:'automatic',loader:{'.png':'dataurl'},define:{__DEV__:'false','process.env.NODE_ENV':'"production"'},plugins:[{name:'platform',setup(b){b.onResolve({filter:/.*/},a=>{if(mocks[a.path])return{path:a.path,namespace:'mock'};if(['react','react/jsx-runtime','react-dom/client'].includes(a.path))return{path:require.resolve(a.path,{paths:[deps]})};if(a.path==='react-native')return{path:require.resolve('react-native-web',{paths:[deps]})};if(a.path.startsWith('@/')){const p=path.join(root,'src',a.path.slice(2));for(const ext of['','.tsx','.ts','.json','/index.ts'])if(fs.existsSync(p+ext)&&fs.statSync(p+ext).isFile())return{path:p+ext};throw Error(p);}});b.onLoad({filter:/.*/,namespace:'mock'},a=>({contents:mocks[a.path],loader:'tsx'}));}}],logLevel:'error'});
+ // Fail before fetching/embedding image blobs when this host cannot launch a browser.
+ if(process.env.HOTEL_QA_BUILD_ONLY!=='1'){
+  let preflight;
+  try{preflight=await chromium.launch({executablePath:process.env.HOTEL_QA_CHROMIUM||(fs.existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined),headless:true,args:['--no-sandbox','--disable-gpu']});}
+  catch(error){fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({status:'BLOCKED_BROWSER_STARTUP',browserTested:false,physicalDeviceTested:false,error:String(error),harness:'real hospitality route/data/reader with adapted platform chrome'},null,2)+'\n');throw error;}
+  finally{if(preflight)await preflight.close();}
+ }
+ await esbuild.build({stdin:{contents:`import React from 'react';import{createRoot}from'react-dom/client';import HospitalityRoute from '${root}/src/app/specified-skills/hospitality';createRoot(document.getElementById('root')).render(<HospitalityRoute/>);`,resolveDir:root,loader:'tsx'},outfile:path.join(out,'entry.js'),bundle:true,platform:'browser',format:'iife',jsx:'automatic',loader:{'.png':'dataurl'},define:{__DEV__:'false','process.env.NODE_ENV':'"production"'},plugins:[{name:'platform',setup(b){b.onResolve({filter:/.*/},a=>{if(mocks[a.path])return{path:a.path,namespace:'mock'};if(['react','react/jsx-runtime','react-dom/client'].includes(a.path))return{path:require.resolve(a.path,{paths:[deps]})};if(a.path==='react-native')return{path:require.resolve('react-native-web',{paths:[deps]})};if(a.path.startsWith('@/')){const p=path.join(root,'src',a.path.slice(2));for(const ext of['','.tsx','.ts','.json','/index.ts'])if(fs.existsSync(p+ext)&&fs.statSync(p+ext).isFile())return{path:p+ext};throw Error(p);}});b.onLoad({filter:/.*/,namespace:'mock'},a=>({contents:mocks[a.path],loader:'tsx'}));
+ b.onResolve({filter:/\.(png|webp|jpe?g)$/},a=>({path:path.resolve(a.resolveDir,a.path),namespace:'hotel-asset'}));
+ b.onLoad({filter:/.*/,namespace:'hotel-asset'},a=>{const relative=path.relative(root,a.path);if(process.env.HOTEL_QA_TRACE_ASSETS==='1')console.log('Hotel QA asset:',relative);assert(relative.startsWith('assets/'),'Only app assets');const bytes=fs.existsSync(a.path)?fs.readFileSync(a.path):execFileSync('git',['show',assetCommit+':'+relative],{cwd:root,maxBuffer:10*1024*1024,timeout:30000});assert(!bytes.subarray(0,80).toString().includes('git-lfs.github.com'),'Asset must contain image bytes');const mime=a.path.endsWith('.webp')?'image/webp':a.path.endsWith('.png')?'image/png':'image/jpeg';return{contents:'module.exports={uri:'+JSON.stringify('data:'+mime+';base64,'+bytes.toString('base64'))+'}',loader:'js'};});}}],logLevel:'error'});
  fs.copyFileSync('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',path.join(out,'japanese.ttc'));
  fs.writeFileSync(path.join(out,'index.html'),`<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>@font-face{font-family:HotelQA;src:url('/japanese.ttc')}*{box-sizing:border-box;font-family:HotelQA,sans-serif!important}html,body,#root{margin:0;height:100%}#root{display:flex;flex-direction:column}</style><div id="root"></div><script src="/entry.js"></script>`);
  if(process.env.HOTEL_QA_BUILD_ONLY==='1'){console.log(JSON.stringify({status:'BUILT_HOST_HARNESS_ONLY',browserTested:false,physicalDeviceTested:false}));return;}
@@ -26,12 +36,12 @@ const mocks={
  let browser;const errors=[];let readers=0,responsive=0,translationPairs=0;
  try{
  let executablePath=process.env.HOTEL_QA_CHROMIUM;
- if(!executablePath){const packed=require('/workspace/scratch/439bff9a1c34/qa-browser/node_modules/@sparticuz/chromium');executablePath=await packed.executablePath();}
+ if(!executablePath&&fs.existsSync('/usr/bin/chromium'))executablePath='/usr/bin/chromium';
  browser=await chromium.launch({executablePath,headless:true,args:['--no-sandbox','--disable-gpu']});const page=await browser.newPage({viewport:{width:390,height:844}});page.on('pageerror',e=>errors.push(e.message));const url=`http://127.0.0.1:${server.address().port}`;
  const catalog=require('../../src/data/hospitality/catalog.json');const find=id=>require(`../../src/data/hospitality/${catalog.find(e=>e.id===id).group}.json`).lessons.find(l=>l.id===id);
  async function start(language='ja'){await page.goto(url+'?language='+language);await page.getByRole('button',{name:'特定技能２号 · 基礎の復習と管理・判断',exact:true}).click();}
  async function open(id,language='ja'){await start(language);const index=catalog.findIndex(e=>e.id===id);await page.getByRole('button',{name:'学習を開く・続ける',exact:true}).nth(index).click();}
- for(const entry of catalog){const l=find(entry.id);await open(l.id);const content=await page.locator('body').innerText();for(const section of l.sections)assert(content.includes(section.body),l.id);assert(!content.includes('正解：'));const image=page.getByTestId('hotel-figure-'+l.id);assert.equal(await image.count(),1);readers++;}
+ for(const entry of catalog){const l=find(entry.id);await open(l.id);const content=await page.locator('body').innerText();for(const section of l.sections)assert(content.includes(section.body),l.id);assert(!content.includes('正解：'));const image=page.getByTestId('hotel-figure-'+l.id);assert.equal(await image.count(),1);await image.locator('img').evaluate(async el=>{if(!el.complete)await new Promise((resolve,reject)=>{el.addEventListener('load',resolve,{once:true});el.addEventListener('error',reject,{once:true});});if(!el.naturalWidth||!el.naturalHeight)throw Error('Main image did not decode');});readers++;}
  const first=find(catalog[0].id);await open(first.id);for(const q of first.questions){await page.getByTestId(q.id).getByRole('button',{name:`${q.answerIndex+1}. ${q.choices[q.answerIndex]}`,exact:true}).click();}
  assert(!(await page.locator('body').innerText()).includes('正解：'));await page.getByRole('button',{name:'確認問題を提出する',exact:true}).click();await page.getByRole('button',{name:'確認',exact:true}).click();await page.getByText(`正解 ${first.questions.length} / ${first.questions.length}`,{exact:true}).waitFor();await page.getByRole('button',{name:'この日の学習を完了する',exact:true}).click();await page.getByRole('button',{name:'✓ この日の学習を完了しました',exact:true}).waitFor();await open(first.id);assert((await page.locator('body').innerText()).includes('✓ この日の学習を完了しました'));
  await page.getByRole('button',{name:'もう一度解く',exact:true}).click();await page.getByRole('button',{name:'確認',exact:true}).click();assert(!(await page.locator('body').innerText()).includes('正解：'));

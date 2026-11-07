@@ -36,11 +36,12 @@ const groups={
  'food-2-042':['food-source-normal-bands','food-source-cause-bars'],
 };
 const locales=['ja','en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];let contexts=0;
-const render=(lesson,language)=>renderToStaticMarkup(React.createElement(reader.FoodSourcePracticeVisuals,{lesson,language,showTranslation:true,textColor:'#183044',readingColor:'#687078'}));
+// The scheduled Reader mounts both placements; promoted figures must appear once.
+const render=(lesson,language)=>[true,false].map(dailyPlacement=>renderToStaticMarkup(React.createElement(reader.FoodSourcePracticeVisuals,{lesson,language,dailyPlacement,showTranslation:true,textColor:'#183044',readingColor:'#687078'}))).join('');
 for(const [lessonId,figures] of Object.entries(groups)){
  const canonical=index.foodManufacturingLessons.find(l=>l.id===lessonId);assert(canonical,lessonId);const originalHash=canonical.sourceHash;
  for(const language of locales){
-  const html=render(canonical,language);for(const id of figures)assert(html.includes('data-testid="'+id+'"'),id+' current positive');
+  const html=render(canonical,language);for(const id of figures)assert.equal(html.split('data-testid="'+id+'"').length-1,1,id+' exactly one current daily/supplemental placement');
   const wrongCaller=render({...canonical,sourceHash:'wrong-caller-revision'},language);for(const id of figures)assert(!wrongCaller.includes('data-testid="'+id+'"'),id+' wrong caller rejected');
   canonical.sourceHash='new-canonical-revision-for-regression';
   const advanced=render({...canonical},language);for(const id of figures)assert(!advanced.includes('data-testid="'+id+'"'),id+' old figure must reject an advanced canonical lesson revision');

@@ -83,7 +83,9 @@ for(const language of locales){
  }
 }
 const daily=load(path.join(root,'src/data/food-manufacturing/daily-learning.ts'));
-const pending=index.foodManufacturingLessons.find(l=>!retained.foodRoyalRetainedTechnicalFor(l)&&!royal.foodRoyalWeeklyImageFor(l)&&daily.foodDailyBinding(l));
+// Current native providers replace the old pending raster just as valid Royal art does.
+const nativeProviders=[['royal-week2-native.ts','foodRoyalWeek2NativeFor'],['royal-week4-native.ts','foodRoyalWeek4NativeFor'],['royal-week5-native.ts','foodRoyalWeek5NativeFor'],['royal-week7-native.ts','foodRoyalWeek7NativeFor'],['royal-week8-native.ts','foodRoyalWeek8NativeFor'],['royal-safety-signs.ts','foodRoyalSafetySignsFor']].map(([file,key])=>load(path.join(root,'src/data/food-manufacturing',file))[key]);
+const pending=index.foodManufacturingLessons.find(l=>!retained.foodRoyalRetainedTechnicalFor(l)&&!royal.foodRoyalWeeklyImageFor(l)&&!nativeProviders.some(provider=>provider(l))&&daily.foodDailyBinding(l));
 if(pending){const pendingHtml=renderToStaticMarkup(React.createElement(Reader,{lesson:pending,language:'ja',onBack:nil,onComplete:nil,saving:false,saveError:false}));assert(pendingHtml.includes('/daily-diagrams/'+daily.foodDailyBinding(pending).diagramKind+'.webp'),'A pending day must keep its visible raster, never silently disappear');}
 const illustrated=index.foodManufacturingLessons.find(l=>!retained.foodRoyalRetainedTechnicalFor(l)&&royal.foodRoyalWeeklyImageFor(l));
 if(illustrated){const html=renderToStaticMarkup(React.createElement(Reader,{lesson:illustrated,language:'ja',onBack:nil,onComplete:nil,saving:false,saveError:false}));assert(html.includes(royal.foodRoyalWeeklyImageFor(illustrated).source.uri),'A nonretained illustrated day must keep its selected Royal raster');}

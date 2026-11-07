@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "reviewedBaseline": "a7b6c8a9dd3a68b529347a38880bcbae7838104d",
+  "readyPaths": [
+    "src/components/agriculture/DailyLearningSupport.tsx",
+    "scripts/agriculture/check-daily-image-ruby-route.cjs",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/protection-daily-image-readings-route-qa.json"
+  ],
+  "canonicalSchedules": [
+    "agr-1-w08",
+    "agr-2-w09"
+  ],
+  "defect": "Generic DailyLearningFigure rendered Japanese image title/observation/limit/paired-label fields as plain Text, bypassing existing current-source offline image readings. RecognitionImages already used those exact readings.",
+  "fix": "Reuse AgricultureImageRuby on the actual generic daily image route with current lesson sourceHash/revision, figureID/assetSha256, exact field text and existing reading-field keys. Missing or stale readings retain canonical Japanese without invented kana. No new content, source, translation, reading, raster, ID or learner-state record.",
+  "groups": [
+    "Japanese figure title route",
+    "Separate observation and limit reading routes",
+    "Existing paired localized-label route using exact label:index keys"
+  ],
+  "checks": {
+    "actualDailyRouteLocaleRenders": 39,
+    "sourceBoundFieldRenders": 141,
+    "staleFieldAssetRevisionHashSourceFallbacks": 21,
+    "testedCurrentLessons": [
+      "agr-pest-weeds",
+      "agr-pest-ipm"
+    ],
+    "testedLocales": [
+      "ja",
+      "en",
+      "vi",
+      "id",
+      "zh-CN",
+      "zh-TW",
+      "hi",
+      "bn",
+      "ne",
+      "my",
+      "km",
+      "th",
+      "tl"
+    ],
+    "eslint": "PASS actual changed TSX; no warnings",
+    "diffWhitespace": "PASS",
+    "limits": "Actual React/RNW static component renders and exact source guards; raster leaf adapted, not browser pixels or device acceptance."
+  },
+  "hashes": {
+    "src/components/agriculture/DailyLearningSupport.tsx": "9684ee45fca4946e709edc44b09e40652ee7d0a6d9c0393659f4dfee1cd6f78f",
+    "scripts/agriculture/check-daily-image-ruby-route.cjs": "e028ecb54fb479f790f8640a3977c98a36cf5f51e9bb9bf3e5eaa4dcb8cea64b"
+  },
+  "remaining": [
+    "Native mulch/foundation full paragraph and heading reading routes remain open; this generic route does not cover them.",
+    "Other agriculture current schedule/source/image work remains open.",
+    "Browser, physical device, native/domain and measured-duration acceptance remain open."
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "sourcePhotoObjectivesClosed": false,
+  "wholeWeekComplete": false,
+  "releaseReady": false
+}
