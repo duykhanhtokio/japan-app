@@ -14,6 +14,7 @@ const sources: Record<string, ImageSourcePropType> = {
   respiratory: require('../../../assets/kaigo/daily-fix-20261031/respiratory.png'),
   skeleton: require('../../../assets/kaigo/daily-fix-20261031/skeleton.png'),
   eye: require('../../../assets/kaigo/daily-fix-20261031/eye.png'),
+  'hand-regions-royal-week01': require('../../../assets/kaigo/royal-weekly-20261107/week01/day06-hand-regions-base.webp'),
   'hand-regions': require('../../../assets/kaigo/daily-fix-20261031/hand-regions.png'),
   skin: require('../../../assets/kaigo/daily-fix-20261031/skin.png'),
   heart: require('../../../assets/kaigo/daily-fix-20261031/heart.png'),

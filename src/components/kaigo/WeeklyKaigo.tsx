@@ -1,3 +1,5 @@
+import {KaigoHandRegionFigure} from './KaigoHandRegionFigure';
+import {royalCaptionForStudyDay} from '@/data/kaigo/royal-weekly-art';
 import { CommunicationReaderChecks } from './CommunicationReaderChecks';
 import { useBackdropOcclusion } from '@/components/ui/AppBackdrop';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -462,6 +464,7 @@ export function DayReading({
     masterLesson = japaneseLessonMetadata[lessonKey],
     form = mockForDay(entry.day),
     cover = illustrationForStudyDay(entry.day),
+    artCaptionJa = royalCaptionForStudyDay(entry.day) ?? masterLesson?.artCaptionJa,
     [translationOpen, setTranslationOpen] = useState(false),
     { colors } = useStudyAppearance(),
     { language } = useAppLanguage();
@@ -511,8 +514,8 @@ export function DayReading({
           <JapaneseText text={figure.titleJa} testID={`kaigo-figure-title-${entry.day}-${figure.id}`} />
           <Pressable accessibilityRole="button" accessibilityLabel={figure.altJa} onPress={() => setExpandedFigure(expandedFigure === figure.id ? null : figure.id)}>
             <ScrollView horizontal={expandedFigure === figure.id} contentContainerStyle={{ flexGrow: 1 }} maximumZoomScale={3} minimumZoomScale={1}>
-              <Image source={figure.source} accessibilityLabel={figure.altJa} resizeMode="contain"
-                style={expandedFigure === figure.id ? { width: 1000, height: 1000 / figure.aspectRatio } : { width: "100%", aspectRatio: figure.aspectRatio }} />
+              {figure.id === 'hand-regions-royal-week01' ? <KaigoHandRegionFigure source={figure.source} language={translationOpen ? language : 'ja'} expanded={expandedFigure === figure.id} /> : <Image source={figure.source} accessibilityLabel={figure.altJa} resizeMode="contain"
+                style={expandedFigure === figure.id ? { width: 1000, height: 1000 / figure.aspectRatio } : { width: "100%", aspectRatio: figure.aspectRatio }} />}
             </ScrollView>
           </Pressable>
           {translationOpen && translationForMaster(figure.sourceSectionId, language) && <TranslationText>{translationForMaster(figure.sourceSectionId, language)!.heading}</TranslationText>}
@@ -520,7 +523,7 @@ export function DayReading({
         </View>
       )) : <Image
         testID={`kaigo-day-art-${entry.day}`}
-        accessibilityLabel={masterLesson?.artCaptionJa ?? contextVisual?.keyObjectiveJa ?? cover.captionVi}
+        accessibilityLabel={artCaptionJa ?? contextVisual?.keyObjectiveJa ?? cover.captionVi}
         source={cover.source}
         resizeMode="contain"
         style={{
@@ -529,9 +532,9 @@ export function DayReading({
           maxHeight: 320,
         }}
       />}
-      {figures.length === 0 && masterLesson && <JapaneseText testID={`kaigo-art-caption-${entry.day}`} text={masterLesson.artCaptionJa} />}
+      {figures.length === 0 && masterLesson && <JapaneseText testID={`kaigo-art-caption-${entry.day}`} text={artCaptionJa ?? masterLesson.artCaptionJa} />}
       {figures.length === 0 && translationOpen && lessonTranslation
-        ? <TranslationText>{lessonTranslation.artCaption}</TranslationText>
+        ? <TranslationText>{royalCaptionForStudyDay(entry.day, language) ?? lessonTranslation.artCaption}</TranslationText>
         : !masterLesson && translated(cover.captionVi)}
       {relocatedPracticeDays(entry.day).map(day => <Action key={day}
         title={`関連練習は第${day}日にまとめました`}
