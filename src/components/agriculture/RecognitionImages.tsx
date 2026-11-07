@@ -125,7 +125,7 @@ const assets:Record<string,ImageSourcePropType>={
  "nozzle-source-examples":require('../../../assets/agriculture/completion-40/safety/nozzle-source-examples.png'),
  "manual-backpack-sprayer":require('../../../assets/agriculture/completion-40/safety/manual-backpack-sprayer.png'),
  "machine-clothing":require('../../../assets/agriculture/royal-weekly-20261107/machine-work-clothing-royal-v1.webp'),
- "machine-control-names":require('../../../assets/agriculture/completion-40/safety/machine-control-names.png'),
+ "machine-control-names":require('../../../assets/agriculture/royal-weekly-20261107/machine-control-names-royal-v1.webp'),
  "pesticide-clothing":require('../../../assets/agriculture/royal-weekly-20261107/pesticide-work-clothing-royal-v1.webp'),
  "sprayer-parts":require('../../../assets/agriculture/completion-40/safety/sprayer-parts.png'),
  "power-connector-examples":require('../../../assets/agriculture/completion-40/safety/power-connector-examples.png'),
