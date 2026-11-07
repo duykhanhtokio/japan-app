@@ -1,3 +1,4 @@
+import {ManufacturingNativeLabel} from './ManufacturingNativeLabel';
 import {ManufacturingIllustrationText} from './ManufacturingIllustrationText';
 import {Source49Japanese} from './Source49Japanese';
 import {Text,View} from 'react-native';
@@ -199,52 +200,52 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
  const heading={...body,fontWeight:'700' as const};
  const border={borderWidth:1,borderColor:colors.border,borderRadius:10,padding:14,gap:10};
  if(["mfg1-mechanical-lesson-012", "mfg1-mechanical-lesson-013", "mfg1-mechanical-lesson-014", "mfg1-electrical-l012", "mfg1-electrical-l013", "mfg1-electrical-l014", "mfg1-surface-lesson-012", "mfg1-surface-lesson-013", "mfg1-surface-lesson-014"].includes(lesson.id))return <View testID="manufacturing-native-week02-final-technical" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
   <ManufacturingIllustrationText lesson={lesson} field="exampleTitle" text={target.exampleTitle} enabled={selected===locales.ja} style={heading}/>{checkedExample}
  </View>;
  if(["mfg1-mechanical-lesson-022", "mfg1-mechanical-lesson-023", "mfg1-mechanical-lesson-024", "mfg1-mechanical-lesson-025", "mfg1-mechanical-lesson-026", "mfg1-mechanical-lesson-027", "mfg1-mechanical-lesson-028", "mfg1-electrical-l022", "mfg1-electrical-l023", "mfg1-electrical-l024", "mfg1-electrical-l025", "mfg1-electrical-l026", "mfg1-electrical-l027", "mfg1-electrical-l028", "mfg1-surface-lesson-022", "mfg1-surface-lesson-023", "mfg1-surface-lesson-024", "mfg1-surface-lesson-025", "mfg1-surface-lesson-026", "mfg1-surface-lesson-027", "mfg1-surface-lesson-028"].includes(lesson.id))return <View testID="manufacturing-native-week04-technical" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
   <ManufacturingIllustrationText lesson={lesson} field="exampleTitle" text={target.exampleTitle} enabled={selected===locales.ja} style={heading}/>{checkedExample}
  </View>;
  if(["mfg1-mechanical-lesson-029", "mfg1-mechanical-lesson-030", "mfg1-mechanical-lesson-031", "mfg1-mechanical-lesson-032", "mfg1-mechanical-lesson-033", "mfg1-mechanical-lesson-034", "mfg1-mechanical-lesson-035", "mfg1-electrical-l029", "mfg1-electrical-l030", "mfg1-electrical-l031", "mfg1-electrical-l032", "mfg1-electrical-l033", "mfg1-electrical-l034", "mfg1-electrical-l035", "mfg1-surface-lesson-029", "mfg1-surface-lesson-030", "mfg1-surface-lesson-031", "mfg1-surface-lesson-032", "mfg1-surface-lesson-033", "mfg1-surface-lesson-034", "mfg1-surface-lesson-035"].includes(lesson.id))return <View testID="manufacturing-native-week05-technical" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
   <ManufacturingIllustrationText lesson={lesson} field="exampleTitle" text={target.exampleTitle} enabled={selected===locales.ja} style={heading}/>{checkedExample}
  </View>;
  if(["mfg1-mechanical-lesson-036", "mfg1-mechanical-lesson-037", "mfg1-mechanical-lesson-038", "mfg1-mechanical-lesson-039", "mfg1-mechanical-lesson-040", "mfg1-mechanical-lesson-041", "mfg1-mechanical-lesson-042", "mfg1-electrical-l036", "mfg1-electrical-l037", "mfg1-electrical-l038", "mfg1-electrical-l039", "mfg1-electrical-l040", "mfg1-electrical-l041", "mfg1-electrical-l042", "mfg1-surface-lesson-036", "mfg1-surface-lesson-037", "mfg1-surface-lesson-038", "mfg1-surface-lesson-039", "mfg1-surface-lesson-040", "mfg1-surface-lesson-041", "mfg1-surface-lesson-042"].includes(lesson.id))return <View testID="manufacturing-native-week06-technical" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
   <ManufacturingIllustrationText lesson={lesson} field="exampleTitle" text={target.exampleTitle} enabled={selected===locales.ja} style={heading}/>{checkedExample}
  </View>;
  if(["mfg1-mechanical-lesson-043", "mfg1-mechanical-lesson-044", "mfg1-mechanical-lesson-045", "mfg1-mechanical-lesson-046", "mfg1-mechanical-lesson-047", "mfg1-mechanical-lesson-048", "mfg1-mechanical-lesson-049", "mfg1-electrical-l043", "mfg1-electrical-l044", "mfg1-electrical-l045", "mfg1-electrical-l046", "mfg1-electrical-l047", "mfg1-electrical-l048", "mfg1-electrical-l049", "mfg1-surface-lesson-043", "mfg1-surface-lesson-044", "mfg1-surface-lesson-045", "mfg1-surface-lesson-046", "mfg1-surface-lesson-047", "mfg1-surface-lesson-048", "mfg1-surface-lesson-049"].includes(lesson.id))return <View testID="manufacturing-native-week07-technical" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
   <ManufacturingIllustrationText lesson={lesson} field="exampleTitle" text={target.exampleTitle} enabled={selected===locales.ja} style={heading}/>{checkedExample}
  </View>;
  if(["mfg1-mechanical-lesson-050", "mfg1-mechanical-lesson-051", "mfg1-mechanical-lesson-052", "mfg1-mechanical-lesson-053", "mfg1-mechanical-lesson-054", "mfg1-mechanical-lesson-055", "mfg1-mechanical-lesson-056", "mfg1-electrical-l050", "mfg1-electrical-l051", "mfg1-electrical-l052", "mfg1-electrical-l053", "mfg1-electrical-l054", "mfg1-electrical-l055", "mfg1-electrical-l056", "mfg1-surface-lesson-050", "mfg1-surface-lesson-051", "mfg1-surface-lesson-052", "mfg1-surface-lesson-053", "mfg1-surface-lesson-054", "mfg1-surface-lesson-055", "mfg1-surface-lesson-056"].includes(lesson.id))return <View testID="manufacturing-native-week08-technical" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
   <ManufacturingIllustrationText lesson={lesson} field="exampleTitle" text={target.exampleTitle} enabled={selected===locales.ja} style={heading}/>{checkedExample}
  </View>;
  if(["mfg1-mechanical-lesson-057", "mfg1-mechanical-lesson-058", "mfg1-mechanical-lesson-059", "mfg1-mechanical-lesson-060", "mfg1-mechanical-lesson-061", "mfg1-mechanical-lesson-062", "mfg1-mechanical-lesson-063", "mfg1-electrical-l057", "mfg1-electrical-l058", "mfg1-electrical-l059", "mfg1-electrical-l060", "mfg1-electrical-l061", "mfg1-electrical-l062", "mfg1-electrical-l063", "mfg1-surface-lesson-057", "mfg1-surface-lesson-058", "mfg1-surface-lesson-059", "mfg1-surface-lesson-060", "mfg1-surface-lesson-061", "mfg1-surface-lesson-062", "mfg1-surface-lesson-063"].includes(lesson.id))return <View testID="manufacturing-native-week09-technical" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
   <ManufacturingIllustrationText lesson={lesson} field="exampleTitle" text={target.exampleTitle} enabled={selected===locales.ja} style={heading}/>{checkedExample}
  </View>;
  if(["mfg1-mechanical-lesson-015", "mfg1-mechanical-lesson-016", "mfg1-mechanical-lesson-017", "mfg1-mechanical-lesson-018", "mfg1-mechanical-lesson-019", "mfg1-mechanical-lesson-020", "mfg1-mechanical-lesson-021", "mfg1-electrical-l015", "mfg1-electrical-l016", "mfg1-electrical-l017", "mfg1-electrical-l018", "mfg1-electrical-l019", "mfg1-electrical-l020", "mfg1-electrical-l021", "mfg1-surface-lesson-015", "mfg1-surface-lesson-016", "mfg1-surface-lesson-017", "mfg1-surface-lesson-018", "mfg1-surface-lesson-019", "mfg1-surface-lesson-020", "mfg1-surface-lesson-021"].includes(lesson.id))return <View testID="manufacturing-native-week03-technical" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
   <ManufacturingIllustrationText lesson={lesson} field="exampleTitle" text={target.exampleTitle} enabled={selected===locales.ja} style={heading}/>{checkedExample}
  </View>;
  if(lesson.id==='mfg1-mechanical-lesson-011')return <View testID="manufacturing-native-qc-control-example" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
   <ManufacturingIllustrationText lesson={lesson} field="exampleTitle" text={target.exampleTitle} enabled={selected===locales.ja} style={heading}/>{checkedExample}
  </View>;
  if(lesson.id==='mfg1-electrical-l011')return <View testID="manufacturing-native-variation-example" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <Text style={heading}>9.90 mm ≤ x ≤ 10.10 mm</Text>
   {[9.80,10.00,10.20].map(value=><Text key={value} style={body}>{value.toFixed(2)} mm · {value>=9.90&&value<=10.10?labels.inRange:labels.outOfRange}</Text>)}
   <Text style={heading}>{labels.mean}：(9.80 ＋ 10.00 ＋ 10.20) ÷ 3 ＝ 10.00 mm</Text>
@@ -252,7 +253,7 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
  </View>;
  if(lesson.id==='mfg1-surface-lesson-011')return <View testID="manufacturing-native-concentration-example" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <Text style={body}>4.00 g ÷ 0.500 L ＝ 8.00 g/L</Text>
   <Text style={body}>4.00 g ÷ 40.0 g/mol ＝ 0.100 mol</Text>
   <Text style={heading}>0.100 mol ÷ 0.500 L ＝ 0.200 mol/L</Text>
@@ -260,7 +261,7 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
  </View>;
  if(lesson.id==='mfg1-surface-lesson-010')return <View testID="manufacturing-native-titration-example" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <Text style={heading}>13.2 mL − 1.2 mL ＝ 12.0 mL</Text>
   <Text style={body}>HCl ＋ NaOH → NaCl ＋ H₂O · 1：1</Text>
   <Text style={body}>0.100 mol/L × 0.0120 L ＝ 0.00120 mol</Text>
@@ -268,7 +269,7 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
   {checkedExample}
  </View>;
  if(lesson.id==='mfg1-electrical-l004')return <View testID="manufacturing-native-micrometer-example" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <Text style={body}>{labels.sleeve}：6 mm ＋ 0.5 mm ＝ 6.5 mm</Text>
   <View accessibilityLabel={`${labels.sleeve}: 6 mm + 0.5 mm = 6.5 mm`} style={{height:110,marginHorizontal:12}}>
    <View style={{position:'absolute',left:0,right:0,top:42,height:2,backgroundColor:colors.text}}/>
@@ -282,13 +283,13 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
   {checkedExample}
  </View>;
  if(lesson.id==='mfg1-surface-lesson-005')return <View testID="manufacturing-native-electroplating-example" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <Text style={heading}>＋ {labels.anode} · Cu</Text><Text style={body}>Cu → Cu²⁺ ＋ 2e⁻</Text>
   <Text style={heading}>− {labels.cathode} · {labels.workpiece}</Text><Text style={body}>Cu²⁺ ＋ 2e⁻ → Cu</Text>
   {checkedExample}
  </View>;
  if(lesson.id==='mfg1-surface-lesson-006')return <View testID="manufacturing-native-current-density-example" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <Text style={body}>{labels.current}：7.2 A</Text>
   <Text style={body}>{labels.area}：2.4 dm²</Text>
   <Text style={heading}>{labels.currentDensity}：7.2 A ÷ 2.4 dm² ＝ 3.0 A/dm²</Text>
@@ -297,14 +298,14 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
   {checkedExample}
  </View>;
  if(lesson.id==='mfg1-surface-lesson-007')return <View testID="manufacturing-native-anodizing-example" style={border}>
-  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <Text style={heading}>{labels.electroplating}：{labels.workpiece} − ({labels.cathode})</Text>
   <Text style={heading}>{labels.anodizing}：{labels.workpiece} ＋ ({labels.anode})</Text>
   {checkedExample}
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
  </View>;
  return <View testID="manufacturing-native-coating-example" style={border}>
-  <Text style={heading}>{labels.practice} · {labels.practiceRange} 8〜12 μm</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {labels.practiceRange} 8〜12 μm</Text></View>
   {[{position:1,value:7},{position:2,value:10},{position:3,value:13}].map(row=><View key={row.position} style={{flexDirection:'row',flexWrap:'wrap',justifyContent:'space-between',gap:8,borderBottomWidth:1,borderBottomColor:colors.border,paddingVertical:8}}>
    <Text style={body}>{labels.position} {row.position}</Text><Text style={heading}>{row.value} μm</Text><Text style={body}>{row.value>=8&&row.value<=12?labels.inRange:labels.outOfRange}</Text>
   </View>)}

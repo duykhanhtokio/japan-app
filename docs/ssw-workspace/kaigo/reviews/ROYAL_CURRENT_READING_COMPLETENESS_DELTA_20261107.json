@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "scope": "Current authored illustration Japanese reading completeness delta, separate from source coverage and raster artwork acceptance",
+  "files": [
+    {
+      "path": "src/data/kaigo/illustration-readings.json",
+      "sha256": "2ce2316372541af7102a9fba216497dbc306a320355384cc20fd0d38806dca8b"
+    },
+    {
+      "path": "src/components/kaigo/KaigoAutonomicHeartComparison.tsx",
+      "sha256": "12ddea516d5d91c634b5fdc7f4f6132bc78764fe258c46d770d0db976c91c8a1"
+    }
+  ],
+  "repairedExactTexts": [
+    "一般的な調整と本人の測定結果を分ける",
+    "二つの図は作用方向の比較で、同じ人の左右の目や実測値ではありません。神経の検査、診断、薬の選択を指示しません。",
+    "交感神経は多くの末梢血管の収縮に関わります。全ての器官で二つの神経が完全に反対に働くとは限りません。",
+    "交感神経は速くなる方向、副交感神経は遅くなる方向に関わります。",
+    "交感神経：瞳孔が広がる方向",
+    "副交感神経：瞳孔が狭くなる方向",
+    "同じ器官の一般的な調整を比べる模式図",
+    "心拍の一般的な方向",
+    "本人の測定結果",
+    "職員が絵を示して返答を待ちます。絵を見たことだけで、希望の確認や言語全体の評価を終えたとは扱いません。",
+    "血管についての限界",
+    "表情や一般的な傾向から血圧や脈拍の数値を決めず、実際に測った値と条件を記録します。"
+  ],
+  "repairedCounts": {
+    "day69NativeComparison": 7,
+    "day70NativePupilLabelsAndScope": 4,
+    "day140Caption": 1
+  },
+  "recordsBefore": 348,
+  "recordsAfter": 360,
+  "oldRecordsUnchanged": true,
+  "checks": {
+    "currentCaptionTitleNativeLabelFieldInventory": 327,
+    "currentInventoriedKanjiFieldsMissingReading": 0,
+    "all360ExactTextAndStaleTextCasesPass": true,
+    "actualDay69ComponentLocaleRenders": 13,
+    "actualDay69RubyFieldsPerRender": 7,
+    "staleSourceAndLessonRejections": 2,
+    "actualDay70PupilJapaneseRubyRender": true,
+    "actualReviewedMockFigureDescriptionTokenStreams": 30,
+    "misalignedOrMissingKanjiMockDescriptions": 0,
+    "mockPreSubmissionAltAndAnswerGatingUnchanged": true,
+    "noBroad176or988Replay": true
+  },
+  "auditFixtures": [
+    {
+      "name": "audit-reading-fields.cjs",
+      "sha256": "9041b91fcc3af423945aefaa38eed0db731ad39fbbdb93adb9a283042c5c85ae"
+    },
+    {
+      "name": "check-reading-repair.cjs",
+      "sha256": "1d3b9cdc08c60d0d69cc3e098b52c8fe5b36cf6b631739b6a15b4b452ec47fe2"
+    },
+    {
+      "name": "check-mock-reading-fields.cjs",
+      "sha256": "e4320ab1ce03d338002c2023fd3a2c451d4dcd33741da835027ad6fc1d40cc21"
+    }
+  ],
+  "preserved": "Japanese wording, source/lesson revision guards, target-language comparison text, learner/question/answer/attempt keys and raster assets unchanged. Only exact reading records and Japanese native comparison presentation changed.",
+  "embeddedRasterTextBoundary": "13 previously illustrated mock raster assets retain baked-in Japanese lettering without native ruby overlay. Their corresponding figure-description text already has aligned ruby. This receipt does not claim image-internal lettering itself has furigana; exact records/tables/geometry also remain raster where previously authored.",
+  "allImageInternalJapaneseHasRuby": false,
+  "wholeSourceKnowledgeCovered": false,
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "browserTested": false,
+  "physicalDeviceTested": false,
+  "releaseReady": false
+}

@@ -15,7 +15,8 @@ const data=JSON.parse(read('src/data/agriculture/recognition-images.json'));
 const registry=JSON.parse(read('src/data/agriculture/recognition-image-locales.json'));
 const lessons=new Map(JSON.parse(read('src/data/agriculture/lessons.ja.json')).lessons.map(l=>[l.id,l]));
 const languages=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','km','th','tl'];
-const ids=process.argv.slice(2);assert(ids.length>=1,'supply changed figure IDs');
+const requireReadings=process.argv.includes('--require-readings');
+const ids=process.argv.slice(2).filter(x=>x!=='--require-readings');assert(ids.length>=1,'supply changed figure IDs');
 const selected=ids.map(id=>{const f=data.images.find(x=>x.id===id);assert(f,`unknown ${id}`);return f;});
 const sources=new Map();
 for(const f of selected){
@@ -51,10 +52,11 @@ function load(name){
  loaded._compile(code,filename);return loaded.exports;
 }
 const {RecognitionImages,recognitionImageTranslation}=load('RecognitionImages');
+const {AgricultureImageRuby,agricultureImageReading}=load('AgricultureImageRuby');
 const colors={text:'#172733',translation:'#fff8e9',translationText:'#172733',border:'#b99d62'};
 const escape=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#x27;');
 const render=(f,l,level,language,showTranslation=true,lessonRevision=l.revision)=>renderToStaticMarkup(React.createElement(RecognitionImages,{lessonId:l.id,lessonSourceHash:l.sourceHash,lessonRevision,level,language,showTranslation,colors}));
-let contexts=0,renders=0,japaneseRenders=0,negative=0;
+let contexts=0,renders=0,japaneseRenders=0,negative=0,readingFields=0,readingNegatives=0;
 for(const f of selected){
  const entry=registry.entries[f.id];
  for(const lid of f.lessonIds){const l=lessons.get(lid);
@@ -62,6 +64,18 @@ for(const f of selected){
    assert(!render(f,l,excludedLevel,'vi').includes(`data-testid="${f.id}-localized-title"`),'out-of-scope course must not render localized figure');negative++;
   }
   for(const level of f.scopeLevels.filter(x=>l.levels.includes(x))){contexts++;
+   if(requireReadings){
+    const fields={title:f.titleJa,alt:f.altJa,observation:f.observationJa,limit:f.limitJa,...Object.fromEntries((f.labelsJa||[]).map((label,i)=>[`label:${i}`,label]))};
+    for(const [field,text] of Object.entries(fields)){
+     const props={imageId:f.id,assetSha256:f.assetSha256,lessonId:lid,lessonSourceHash:l.sourceHash,lessonRevision:l.revision,field,text};
+     const tokens=agricultureImageReading(props);assert(tokens,`missing current readings ${f.id}/${lid}/${field}`);assert.equal(tokens.map(t=>t.text).join(''),text);
+     const rubyHtml=renderToStaticMarkup(React.createElement(AgricultureImageRuby,{...props,color:colors.text}));assert(rubyHtml.includes(`agri-image-ruby-${f.id}-${field}`));
+     for(const token of tokens.filter(t=>t.readingKana))assert(rubyHtml.includes(escape(token.readingKana)));readingFields++;
+     for(const stale of [{assetSha256:'0'.repeat(64)},{lessonSourceHash:'0'.repeat(64)},{lessonRevision:'stale-revision'},{text:text+' changed'},{lessonId:'unknown-lesson'}]){
+      assert.equal(agricultureImageReading({...props,...stale}),null);const staleHtml=renderToStaticMarkup(React.createElement(AgricultureImageRuby,{...props,...stale,color:colors.text}));assert(!staleHtml.includes(`agri-image-ruby-${f.id}-${field}`));readingNegatives++;
+     }
+    }
+   }
    const japaneseHtml=render(f,l,level,'ja');
    assert(japaneseHtml.includes(escape(f.titleJa))&&japaneseHtml.includes(escape(f.observationJa))&&japaneseHtml.includes(escape(f.limitJa)),'Japanese-only actual renderer must retain current captions');
    assert(!japaneseHtml.includes(`data-testid="${f.id}-localized-title"`),'Japanese-only reader must not show a translated title');japaneseRenders++;
@@ -71,6 +85,7 @@ for(const f of selected){
     assert(html.includes(`data-testid="${f.id}-localized-title"`));
     for(const key of ['title','alt','observation','limit'])assert(html.includes(escape(t[key])),`missing actual ${key} ${f.id}/${language}`);
     assert(html.includes(escape(f.titleJa))&&html.includes(escape(f.observationJa))&&html.includes(escape(f.limitJa)),'canonical Japanese must remain visible');
+    if(requireReadings){for(const field of ['title','observation','limit',...(f.labelsJa||[]).map((_,i)=>`label:${i}`)])assert(html.includes(`agri-image-ruby-${f.id}-${field}`),`actual reader lacks readings ${f.id}/${field}/${language}`);}
     if(f.labelsJa?.length){assert.deepEqual(t.labels,entry.locales[language].labels);for(let i=0;i<f.labelsJa.length;i++){assert(html.includes(`data-testid="${f.id}-localized-label-${i}"`));assert(html.includes(escape(f.labelsJa[i])));assert(html.includes(escape(t.labels[i])));}}renders++;
     assert.equal(recognitionImageTranslation(f,lid,'0'.repeat(64),l.revision,language),null);negative++;
     assert.equal(recognitionImageTranslation(f,lid,l.sourceHash,'stale-revision',language),null);negative++;
@@ -91,3 +106,4 @@ for(const f of selected){
 }
 assert.equal(registry.nativeReviewed,false);assert.equal(registry.domainReviewed,false);
 console.log(`PASS recognition-locale-batch: ${selected.length} unchanged actual raster plates; ${contexts} source-bound lesson/course contexts; ${renders} actual12locale renders + ${japaneseRenders} Japanese-only renders; ${negative} stale/hidden/dependency/limit rejection checks; canonical Japanese retained.`);
+if(requireReadings)console.log(`PASS actual image readings: ${readingFields} source-exact current field/context renders; ${readingNegatives} stale asset/source/revision/text/lesson fallback checks; actual reader readings retained across12 locales.`);

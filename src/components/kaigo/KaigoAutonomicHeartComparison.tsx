@@ -1,4 +1,5 @@
 import React from 'react';
+import {KaigoIllustrationText} from './KaigoIllustrationText';
 import {Text,View} from 'react-native';
 import {useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import {japaneseMasterRevision,japaneseMasterSections,japaneseLessonMetadata,japaneseLessonRevision} from '@/data/kaigo/japanese-master';
@@ -13,7 +14,7 @@ export function KaigoAutonomicHeartComparison({language='ja'}:{language?:string}
  const ja=wording.ja;
  const target=language==='ja'?undefined:(wording as Record<string,string[]>)[language];
  const paired=(index:number,heading=false)=><View key={index} style={{gap:4}}>
-  <Text style={{color:colors.text,fontSize:heading?17:16,fontWeight:heading?'700':'400',lineHeight:25}}>{ja[index]}</Text>
+  <KaigoIllustrationText style={{color:colors.text,fontSize:heading?17:16,fontWeight:heading?'700':'400',lineHeight:25}}>{ja[index]}</KaigoIllustrationText>
   {target&&<Text style={{color:colors.text,fontSize:16,lineHeight:25}}>{target[index]}</Text>}
  </View>;
  return <View testID="kaigo-autonomic-heart-comparison" style={{gap:12,paddingVertical:12}}>

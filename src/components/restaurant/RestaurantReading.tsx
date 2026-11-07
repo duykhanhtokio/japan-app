@@ -3,8 +3,9 @@ import type {ReadingSegment,RestaurantLesson} from '@/data/restaurant/types';
 import {hasAlignedRuby} from '@/components/world/japanese-ruby-data';
 import {useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 /** Only supplied aligned readings or exact, authored glossary words receive ruby. */
-export function RestaurantReading({text,segments,terms=[],heading=false}:{text:string;segments?:ReadingSegment[];terms?:RestaurantLesson['terms'];heading?:boolean}){
- const {colors}=useStudyAppearance();
+export function RestaurantReading({text,segments,terms=[],heading=false,paper=false}:{text:string;segments?:ReadingSegment[];terms?:RestaurantLesson['terms'];heading?:boolean;paper?:boolean}){
+ const {colors:palette}=useStudyAppearance();
+ const colors=paper?{...palette,text:'#173c4b',muted:'#586c7e'}:palette;
  let tokens=segments;
  if(!hasAlignedRuby(text,tokens)&&terms.length){
   const sorted=[...terms].filter(t=>t.ja&&/^[\p{Script=Hiragana}ー\s]+$/u.test(t.reading)).sort((a,b)=>b.ja.length-a.ja.length);
