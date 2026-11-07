@@ -459,17 +459,41 @@
     "断定": {
       "reading": "だんてい",
       "source": "src/data/food-manufacturing/source-closure65.json#/checks/1/expectedPointsRuby/0/21"
+    },
+    "加熱前": {
+      "reading": "かねつまえ",
+      "source": "ruby/lessons-02.json#/lessons/food-1-021/fields/titleJa/0",
+      "method": "Concatenate contiguous exact canonical 加熱 + 前; do not add standalone 前.",
+      "sourceParts": [
+        "ruby/lessons-02.json#/lessons/food-1-021/fields/titleJa/0",
+        "ruby/lessons-02.json#/lessons/food-1-021/fields/titleJa/1"
+      ]
+    },
+    "飛沫": {
+      "reading": "しぶき",
+      "source": "source-closure31.json#/sections/2/ruby/49",
+      "context": "Existing flow-path splash/carry-in context; exact canonical token, no substring reading inferred."
+    },
+    "全企業": {
+      "reading": "ぜんきぎょう",
+      "source": "runtime-supplemental/lesson-ruby.json#/food-2-038/fields/paragraphs.p2.textJa/30",
+      "method": "Concatenate contiguous exact canonical 全 + 企業; do not add standalone 全.",
+      "sourceParts": [
+        "runtime-supplemental/lesson-ruby.json#/food-2-038/fields/paragraphs.p2.textJa/30",
+        "runtime-supplemental/lesson-ruby.json#/food-2-038/fields/paragraphs.p2.textJa/31"
+      ]
+    },
+    "値": {
+      "reading": "あたい",
+      "source": "runtime-supplemental/lesson-ruby.json#/food-2-043/fields/paragraphs.p2.textJa/18",
+      "context": "Numeric value in current historical-data caveat; matches existing canonical numeric-value reading, not suffix 値 in an unknown compound."
     }
   },
   "localReadingDebt": [],
   "week07CanonicalExpansion": {
     "newTokenCount": 87,
     "unknownHanDebt": {
-      "汚染側・加熱前": [
-        "前"
-      ],
       "接触・飛沫等の持込み経路": [
-        "沫",
         "等"
       ],
       "実線：主工程・投入物": [
@@ -489,11 +513,21 @@
       ],
       "全企業・全労働者の率ではない。群を足さない。現在の値と断定しない。": [
         "全",
-        "全",
-        "足",
-        "値"
+        "足"
       ]
     },
     "method": "Only exact existing canonical ruby tokens with one observed reading, no guessed token readings. Source diagram pixels and labels unchanged."
+  },
+  "week07CanonicalContextRepair": {
+    "dateJst": "2026-11-07",
+    "newTokenCount": 4,
+    "tokens": [
+      "加熱前",
+      "飛沫",
+      "全企業",
+      "値"
+    ],
+    "remainingDebtIn": "week07CanonicalExpansion.unknownHanDebt",
+    "nativeReviewed": false
   }
 }
