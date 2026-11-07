@@ -14,7 +14,7 @@ type Item={id:string;asset:string;lessonIds:string[];aspectRatio:number;captionJ
 const identity=(item:Item)=>({id:item.id,asset:item.asset,lessonIds:item.lessonIds,aspectRatio:item.aspectRatio,captionJa:item.captionJa,translations:item.translations,sha256:item.sha256});
 export function restaurantLegacyIllustrationBinding(item:Item,lessonId:string){
  const b=bindings.bindings.find(x=>x.id===item.id),lesson=restaurantLesson(lessonId,lessonId.startsWith('rst-1-')?'1':'2');
- return b&&item.lessonIds.includes(lessonId)&&lesson?.sourceHash===(b.lessonSourceHashes as Record<string,string>)[lessonId]&&JSON.stringify(identity(item))===JSON.stringify(b.identity)?b:null;
+ return b&&item.lessonIds.includes(lessonId)&&lesson?.sourceHash===Object.entries(b.lessonSourceHashes).find(([id])=>id===lessonId)?.[1]&&JSON.stringify(identity(item))===JSON.stringify(b.identity)?b:null;
 }
 /** Preserve reviewed whole-object pixels; no stale source/caption/locale identity may relabel them. */
 export function RestaurantIllustrations({lessonId,language,showTranslation}:{lessonId:string;language:string;showTranslation:boolean}){
