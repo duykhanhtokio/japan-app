@@ -1,3 +1,4 @@
+import {StrawberryDevelopmentComparison} from './StrawberryDevelopmentComparison';
 import {GrapeClusterStageComparison} from './GrapeClusterStageComparison';
 import {dilutionLessonMatches} from './DilutionExampleFigure';
 import {sprayerPartLessonMatches} from './SprayerPartSupport';
@@ -55,6 +56,10 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
   return <FruitManagementSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  }
  if(!lesson.levels.includes(level))return null;
+ if(lesson.id==='agr-par12-facility-strawberry-development-2'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <StrawberryDevelopmentComparison lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
  if(lesson.id==='agr-fruit-manage-grape-cluster-2'){
   if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
   return <GrapeClusterStageComparison lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
