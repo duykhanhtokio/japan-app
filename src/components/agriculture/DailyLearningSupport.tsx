@@ -110,7 +110,7 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
   if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
   return <NativeProcessDiagram lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  }
- if(d&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><DailyInstructionDiagram kind={d.kind as DailyDiagramKind} title={d.titleJa} caption={d.captionJa} alt={d.altJa} colors={colors}/></View>;
+ if(d&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><DailyInstructionDiagram kind={d.kind as DailyDiagramKind} title={d.titleJa} caption={d.captionJa} alt={d.altJa} colors={colors} lesson={lesson} level={level} language={language} showTranslation={showTranslation} paragraphIds={paragraphIds}/></View>;
  if(includeExisting&&lesson.id==='agr-safety-spray-check'){
   const currentSource=agricultureLesson(lesson.id,level);
   if(!currentSource||!sprayerPartLessonMatches(currentSource,level)||!sprayerPartLessonMatches(lesson,level))return null;
