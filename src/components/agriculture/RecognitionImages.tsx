@@ -1,4 +1,3 @@
-import {agricultureFigureSourceMarks} from './FigureSourceMarks';
 import {SprayerPartSupport} from './SprayerPartSupport';
 import {AgricultureImageRuby,AgricultureImageHeading} from './AgricultureImageRuby';
 import localeData from '@/data/agriculture/recognition-image-locales.json';
@@ -135,7 +134,7 @@ const assets:Record<string,ImageSourcePropType>={
  "ladder-hazards":require('../../../assets/agriculture/royal-weekly-20261107/week09/ladder-hazards-royal-v1.webp'),
  "leaf-fruit-source-reference":require('../../../assets/agriculture/completion-40/safety/leaf-fruit-source-reference.png'),
  "volume-factor-mass":require('../../../assets/agriculture/completion-40/safety/volume-factor-mass.png'),
- "tractor-source-conditions":require('../../../assets/agriculture/completion-40/safety/tractor-source-conditions.png'),
+ "tractor-source-conditions":require('../../../assets/agriculture/royal-food-owner-20261107/tractor-source-conditions-v1.webp'),
  "cultivator-source-sequence":require('../../../assets/agriculture/completion-40/safety/cultivator-source-sequence.png'),
  "brushcutter-source-sequence":require('../../../assets/agriculture/completion-40/safety/brushcutter-source-sequence.png'),
  "fuel-source-mapping":require('../../../assets/agriculture/completion-40/safety/fuel-source-mapping.png'),
@@ -163,8 +162,8 @@ const assets:Record<string,ImageSourcePropType>={
  "agr-f40-t-budding-concept-stages":require('../../../assets/agriculture/completion-40/facility/t-budding-concept-stages.png'),
  "agr-f40-graft-planting-union-position":require('../../../assets/agriculture/completion-40/facility/graft-planting-union-position.png'),
  "agr-f40-propagation-method-concepts":require('../../../assets/agriculture/royal-weekly-20261107/week47/propagation-methods-botanical-royal-v1.webp'),
- "agr-f40-branch-graft-type-profiles":require('../../../assets/agriculture/completion-40/facility/branch-graft-type-profiles.png'),
- "agr-f40-graft-source-example-dimensions":require('../../../assets/agriculture/completion-40/facility/graft-source-example-dimensions.png'),
+ "agr-f40-branch-graft-type-profiles":require('../../../assets/agriculture/royal-weekly-20261107/agri-restaurant12/branch-graft-type-profiles-v2.png'),
+ "agr-f40-graft-source-example-dimensions":require('../../../assets/agriculture/royal-weekly-20261107/agri-restaurant12/graft-source-example-dimensions-v2.png'),
  "agr-f40-pruning-branch-position-glossary":require('../../../assets/agriculture/completion-40/facility/pruning-branch-position-glossary.png'),
  "agr-f40-pear-thinning-shape-examples":require('../../../assets/agriculture/royal-weekly-20261107/pear-thinning-shape-examples-royal-v1.webp'),
  "agr-f40-satsuma-thinning-target-examples":require('../../../assets/agriculture/royal-weekly-20261107/satsuma-thinning-target-examples-royal-v1.webp'),
@@ -240,7 +239,7 @@ export function RecognitionImages({lessonId,lessonSourceHash,colors,level,langua
  return <>{visible.map(item=>{const t=showTranslation?recognitionImageTranslation(item,lessonId,lessonSourceHash,lessonRevision,language):null;const ruby=(field:string,text:string,style:StyleProp<TextStyle>)=><AgricultureImageRuby imageId={item.id} assetSha256={item.assetSha256||''} lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} field={field} text={text} style={style} color={colors.translationText}/>;return <View key={item.id} testID={item.id} style={[s.figure,{backgroundColor:colors.translation,borderColor:colors.border}]}>
   {ruby('title',item.titleJa,[s.title,{color:colors.translationText}])}
   {!!t&&<Text testID={`${item.id}-localized-title`} style={[s.title,{color:colors.translationText}]}>{t.title}</Text>}
-  {item.id==='agr-f40-general-cropping-example-flow'?<CropCalendarFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language={language} showTranslation={showTranslation} includeMetadata={false} colors={colors}/>:item.id==='agr-f40-general-flower-legend-reader'?<FlowerLegendFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} colors={colors}/>:<ZoomableFigure source={assets[item.assetKey]} width={item.width} height={item.height} altJa={t?.alt||item.altJa} testID={item.id} colors={colors} allowExpandedView={item.allowExpandedView} marks={agricultureFigureSourceMarks(item)}/>}
+  {item.id==='agr-f40-general-cropping-example-flow'?<CropCalendarFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language={language} showTranslation={showTranslation} includeMetadata={false} colors={colors}/>:item.id==='agr-f40-general-flower-legend-reader'?<FlowerLegendFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} colors={colors}/>:<ZoomableFigure source={assets[item.assetKey]} width={item.width} height={item.height} altJa={t?.alt||item.altJa} testID={item.id} colors={colors} allowExpandedView={item.allowExpandedView}/>}
   {item.id==='agr-f40-safety-media-sprayer-parts'?<SprayerPartSupport lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} assetSha256={item.assetSha256||''} alt={t?.alt||item.altJa} colors={colors} renderLabel={index=><View>{ruby(`label:${index}`,item.labelsJa?.[index]||'',[s.body,{color:colors.translationText}])}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`} style={[s.body,{color:colors.translationText}]}>{t.labels[index]}</Text>}</View>}/>:!!item.labelsJa?.length&&<View style={{gap:4}}>{item.labelsJa.map((label,index)=><View key={`${index}-${label}`}>{ruby(`label:${index}`,label,[s.body,{color:colors.translationText}])}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`} style={[s.body,{color:colors.translationText}]}>{t.labels[index]}</Text>}</View>)}</View>}
   <AgricultureImageHeading kind="observation" style={[s.label,{color:colors.translationText}]} color={colors.translationText}/>
   {ruby('observation',item.observationJa,[s.body,{color:colors.translationText}])}
