@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "incomingCommit": "9a5dd8321f8ce35f0d14725016b7d789d6fc180e",
+  "scope": "Two current checker conflict reconciliations; exact2 proven contextual pronunciation corrections; byte/source verification of3 accepted primary PPE repairs.",
+  "inputHashes": {
+    "scripts/food-manufacturing/check-royal-retained-technical.cjs": "0c76b4f8cfc7956e1235160c178941f57afb3eb3bdb90c442d850ffd5c4aacbe",
+    "scripts/food-manufacturing/check-source-practice-revision-guards.cjs": "c65d9f3b355dc3bc93e5058253954efbd502bd163b88fa0436ce01238e62fa3d",
+    "scripts/food-manufacturing/check-phonetic-context-corrections.cjs": "da5ccf784de5c09640a80ab58dee9b3fc283bf50d39a434ad7b4720d07aaeb95",
+    "src/data/food-manufacturing/royal-native-context-readings.json": "ce85568f01bfb28ad9736b38e662cf2dcf35ef6f0402c5f5bf37a56b8bd333a8",
+    "src/data/food-manufacturing/runtime-supplemental/lesson-ruby.json": "9d3e5a848eb2752b4f62f5e1c37f088ccdf62f4bb9e693e46f48aaf31e37b7d5"
+  },
+  "phoneticSelfReview": {
+    "fieldsReadPrivately": 347,
+    "provenErrors": 2,
+    "corrections": [
+      {
+        "lessonId": "food-2-021",
+        "exactText": "下限規格値",
+        "before": "かげんきかくあたい",
+        "after": "かげんきかくち",
+        "referenceUrl": "https://www.kanjipedia.jp/kanji/0004675200",
+        "contextEvidence": "Sibling 上限規格値 uses the same whole規格値 compound, not standalone値."
+      },
+      {
+        "lessonId": "food-2-043",
+        "sourceField": "paragraphs.p2.textJa",
+        "excerpt": "二つの値を組にし",
+        "before": "組=く",
+        "after": "組=くみ",
+        "referenceUrl": "https://www.kanjipedia.jp/kotoba/0004176900",
+        "contextEvidence": "Noun set/pair 一そろい in exact paragraph; revision-bound full-field override and exact canonical runtime reading token corrected. Japanese/sourceHash unchanged."
+      }
+    ],
+    "validVariantsRetained": [
+      "歩留り=ぶどまり",
+      "飛沫=ひまつ/しぶき in existing contexts",
+      "習得済み=しゅうとくずみ",
+      "承認済み=しょうにんずみ"
+    ],
+    "notIndependentOrNativeApproval": true
+  },
+  "checks": {
+    "revisionPlacement": "PASS390 current/opposite/wrong/advanced/restored contexts",
+    "retainedTechnical": "PASS65Reader+26Royalfallback; incoming week7/8providers retained",
+    "phoneticExactFields": "PASS10actual current/stale/old-source-token/restored checks",
+    "incomingPpe": "PASS15current/selected/stale/missing/blank guards and exact1254dimensions",
+    "expanded": "PASS572 current/stale contexts"
+  },
+  "acceptedPrimaryPixelProof": {
+    "path": "docs/ssw-workspace/food-manufacturing/royal-week08-ppe-handling-pixel-repair-20261107.json",
+    "sha256": "2ffed884a9a4bbd94b4250771216e544d0247113e74498afb176d786847b006b",
+    "newPixelSemanticReviewClaimed": false
+  },
+  "incoming3Pixels": [
+    {
+      "asset": "assets/food-manufacturing/source-practice34/ppe-head-foot.webp",
+      "verifiedCurrentSha256": "73f3a18db114ef57e43f701ecbe825ba6047ca57e0d1bc04398bdfd05ec60524",
+      "currentLessonSourceHash": "b11d99dab658db25c43c23c531004d1f6bd53fce9d154e1015a3b6d46ad31a73",
+      "nonblankCaptionMatched": true,
+      "canonicalLedgerDirectRefs": 0,
+      "indirectRefFiles": []
+    },
+    {
+      "asset": "assets/food-manufacturing/source-practice34/lifting-sequence.webp",
+      "verifiedCurrentSha256": "1f06a60a48a46e653a143e6db2cfd5dac221e6c4d1c6e01fd5b629599b878f99",
+      "currentLessonSourceHash": "c51a9883ec65012e37952dc164acecdede4b02c626d89f9ce1194ee6ecd29a5a",
+      "nonblankCaptionMatched": true,
+      "canonicalLedgerDirectRefs": 0,
+      "indirectRefFiles": []
+    },
+    {
+      "asset": "assets/food-manufacturing/source-practice33/head-mask-gloves.webp",
+      "verifiedCurrentSha256": "4aeb14efdfcacb952027e08990cdddc26129f21f4f73b07d84f847dc0bae51f0",
+      "currentLessonSourceHash": "0e55db4f7805306f2c7cdde1feca7949c83c4df7bdaf34c8d7d7450e8317da17",
+      "nonblankCaptionMatched": true,
+      "canonicalLedgerDirectRefs": 0,
+      "indirectRefFiles": []
+    }
+  ],
+  "canonicalLedger": {
+    "directIncomingAssetRefs": 0,
+    "indirectIncomingAssetRefs": 0,
+    "hashUpdatesRequired": 0,
+    "edited": false
+  },
+  "preserved": [
+    "Canonical Japanese/sourceHash/paragraph IDs; only one exact runtime reading token changed",
+    "23OJTstrings/276locale lines/JAalt",
+    "bothずみcompoundcorrections",
+    "all source/nonblank/current-selection guards",
+    "progress/quiz/answer data"
+  ],
+  "wholeSourceKnowledgeCovered": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceReviewed": false,
+  "full1248Rerun": false,
+  "full347Rerun": false,
+  "canonicalBodyClosure": {
+    "finding": "Actual FoodLessonRuby body still used old noun組=く despite corrected native caption.",
+    "fix": "Exactly food-2-043 paragraphs.p2.textJa 組 token reading changed toくみ in runtime-supplemental/lesson-ruby.json; all other decoded data, JA, IDs and sourceHash unchanged.",
+    "checks": "Actual FoodLessonRuby current/stale/old-reading-reproduction/restored PASS",
+    "relatedCompound": "Other 下限規格値 whole-token sources already correct; context override now agrees.",
+    "ledgerReadingPackRefs": 0
+  }
+}

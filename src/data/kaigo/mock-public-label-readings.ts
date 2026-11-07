@@ -1,3 +1,5 @@
+import translatedLabels from './mock-public-label-translations.json';
+import {contentRevision} from './japanese-master';
 import type {ImageSourcePropType} from 'react-native';
 import data from './mock-public-label-readings.json';
 import {mockRoyalQuestionRevision,type PublicMockFigureQuestion} from './royal-mock-figures';
@@ -41,4 +43,21 @@ export function mockPublicLabelsFor(q:PublicMockFigureQuestion,actualSource:Imag
    ||l.tokens.some(t=>!t||typeof t.text!=='string'||(/[一-龯々]/.test(t.text)&&(!('readingKana' in t)||!/^[ぁ-ゖー]+$/.test(t.readingKana as string))))
    ||l.tokens.map(t=>t.text).join('')!==l.text))return undefined;
  return b;
+}
+
+export function supportsMockPublicLabelLanguage(language:string){return ['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'].includes(language);}
+
+/** Exact current public lettering only; an unknown locale or stale phrase falls back to Japanese. */
+export function mockPublicLabelTranslationsFor(binding:NonNullable<ReturnType<typeof mockPublicLabelsFor>>,language:string){
+ if(!supportsMockPublicLabelLanguage(language))return undefined;
+ const translated=translatedLabels.bindings.find(b=>b.questionId===binding.questionId&&b.figureKey===binding.figureKey);
+ if(!translated||translated.publicQuestionRevision!==binding.publicQuestionRevision||translated.assetPath!==binding.assetPath||translated.assetSha256!==binding.assetSha256
+  ||!Array.isArray(translated.labels)||translated.labels.length!==binding.labels.length)return undefined;
+ const result:string[]=[];
+ for(let i=0;i<binding.labels.length;i++){
+  const source=binding.labels[i],label=translated.labels[i],text=label?.translations?.[language as keyof typeof label.translations];
+  if(!label||label.sourceJa!==source.text||label.sourceRevision!==contentRevision([source.text,source.tokens])||typeof text!=='string'||!text.trim())return undefined;
+  result.push(text);
+ }
+ return result;
 }

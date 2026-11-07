@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "scope": "Resume remaining hospitality visual verification after existing 38 main/16 native authoring closure; no lesson/asset/source content changes.",
+  "baseCommit": "e5b13d81",
+  "groups": [
+    {
+      "id": "native-source-guard-harness-repair",
+      "changes": "The isolated source-guard/coordinate test now adapts HotelGuideText after production components moved from direct Text. It does not claim to test ruby rendering.",
+      "result": "PASS",
+      "currentLocaleRenders": 91,
+      "negativeRevisionAndMaterialCases": 280,
+      "exitAnchorLayouts": 156,
+      "safetyConditionLocales": 13,
+      "readerTranslationToggleCases": 26,
+      "actualCallerTypeProbes": 5,
+      "invalidCallerTypeRejections": 10
+    },
+    {
+      "id": "active-reader-and-storage-resume",
+      "result": "PASS",
+      "nativeBindings": 16,
+      "components": 11,
+      "localeRenders": 208,
+      "negativeBindings": 792,
+      "quizQuestionsWithoutImageFields": 338,
+      "stateChecks": [
+        "corrupt-read protection",
+        "revision isolation",
+        "learner keys",
+        "restoration"
+      ]
+    },
+    {
+      "id": "portable-browser-harness",
+      "changes": [
+        "Removed obsolete absolute dependency paths; use repository dependencies and host Chromium when available.",
+        "Loads actual WebP/PNG/JPEG image bytes from sparse Git or working tree; rejects LFS pointer bytes.",
+        "Checks main image decode in browser rather than presence of a testID.",
+        "Browser startup preflight records explicit blocker before downloading image blobs.",
+        "Pin sparse asset reads to the run HEAD and bound a missing-blob fetch to 30 seconds."
+      ],
+      "browserExecution": "BLOCKED",
+      "blocker": "Chromium exits during startup: process_singleton_posix.cc socket() failed: Operation not permitted (1), despite --no-sandbox. No repeated browser launch attempted after confirming blocker.",
+      "buildOnlyResult": "PASS actual current route/reader/deferred loader bundle with 40 actual asset WebPs; not browser execution",
+      "mainImageBytesDecoded": 38,
+      "supplementalWebPsDecoded": 2,
+      "assetByteDecodeMethod": "Pillow decode from exact Git blobs; not semantic or browser approval"
+    }
+  ],
+  "physicalDeviceTested": false,
+  "browserTested": false,
+  "screenReaderTested": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "fullSourceAccepted": false,
+  "authoringScopeReopened": false,
+  "retainedExistingAuthoring": {
+    "mainImages": 38,
+    "nativeBindings": 16
+  },
+  "changedFileSha256": {
+    "scripts/hospitality/check-browser.cjs": "b7b29568c27a582e3cffaddfe3a4df688dd2109f9ee023aeb46c0faf59d56b9f",
+    "scripts/hospitality/check-native-figure-revisions.cjs": "3e543da855d897878069ba56f67fdf27bd1d60380286f2681e1b0dd6c7ffd545"
+  },
+  "assetByteDecodeEvidence": [
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-01.webp",
+      "bytes": 393672,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "55c479f42f88630337dcc5f70d9ee529e83597e8a1134aa33124eef2c5df3f69"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-02.webp",
+      "bytes": 334122,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "c1071e8831428df053a91f0c22cbc05083c0a82f44a2dc17d0188dc247be429d"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-03.webp",
+      "bytes": 378196,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "f1ebdd049692d40b4f0ea6a42c93cd3d3fa59fbc11241b154900fb37cf20a27d"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-04.webp",
+      "bytes": 347222,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "47d1fe267a2c4ac06a74d64c4f6e2721f30e01f42735b546ca57c9ab6ba8a14d"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-05.webp",
+      "bytes": 402886,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e0837dcba3b3f6d1549953c25f2ab6490aa3d33fa3f81ae0d2bb011c1cd42d2d"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-06.webp",
+      "bytes": 397890,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "c3df89bff9bc62cf459ceb5a7102878797dcb16522898db7e628c78e61b8bf50"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-07.webp",
+      "bytes": 390422,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e0632f83093b83585d64c3bb272ae16bcc43c0ab79107009483b9155b48bba1e"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-front-08.webp",
+      "bytes": 385086,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "a4b8f2e29b003f4a0eae7fdf0171e814e809be0d466a4beda3291e7bb61f07cb"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-planning-01.webp",
+      "bytes": 440306,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "44bb5cfdf005eb78844b619d36e5a7f717eff594f2f3ce1e21476de32c24f988"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-planning-02.webp",
+      "bytes": 367584,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "986d9ae5b956682aac5453b0035a454d225ce21b52e2c9cf0e35fa9033ab7f53"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-planning-03-royal-ink-v2.webp",
+      "bytes": 427014,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "b31d2e57aa37b3ed50ed154b8e0ecba02d98fc01e7f0ee4ddd43891e98a13208"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-planning-04-royal-ink-v2.webp",
+      "bytes": 480616,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e4148d616b2172840092b991b5bb54d078520fb35eed0e9b64abdf27317f6bfc"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-planning-05.webp",
+      "bytes": 406054,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "1264a757bc9fab2ec3f9d216246519bd3d719a1a66762ffa7c737fefebd7d9dd"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-planning-06-royal-material-v2.webp",
+      "bytes": 371360,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "3ff7d32b8cb850fa7be2b43e14f57fc35fbe404528322c5d27edd690e7e65ab5"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-planning-07.webp",
+      "bytes": 350044,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "fe6972e50d8a08dc3464e2241d4e7bbaf98cd366d2f5a307dbdabdd611b63d76"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-service-01.webp",
+      "bytes": 269122,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "168f91837c08ff4397a39d5a07cfcf9ff0bfe45b4c31650fa5f13d329a7d95e7"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-service-02.webp",
+      "bytes": 445872,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "4cb66a3e26788749a25019e2a838ec5e74d6a4e7f08e921b768d8d71712f4155"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-service-03.webp",
+      "bytes": 295786,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "a6acb5f17b981ae64e95b8dbd430c115bfcdfe6c1c07bdacdbe6cff542d8035e"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-service-04.webp",
+      "bytes": 369834,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e6185b2510d22fb0ff1c76edf9f92ccb5cb2f82a4b8ab54da2a527c3f2e5d311"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-service-05.webp",
+      "bytes": 359072,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "324680074202ddc4265bf3c682ab02b836a49de8b2158cc2e371b06d82c014ab"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-service-06.webp",
+      "bytes": 296558,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "0e95f7579c8b4fabe94b834d9954ba8992b04ef9017cd4129925f511ec157b9f"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-01.webp",
+      "bytes": 283274,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "29993fedb571c4e493197e2377623b37a619996511d447149048bec8f6d72656"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-02.webp",
+      "bytes": 288580,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "364f7cb868f21b20a0cb68840ac3859c6d0e4e35c97cb36ddc12b7d4e8e11066"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-03-three-dishes-v2.webp",
+      "bytes": 383366,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "2996be60270eb02b2997b7c6430227632e643dd60bbc61b6f57dbf14c0d1750c"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-04.webp",
+      "bytes": 287800,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "71ac350efed459d34e21e6f082b64ef20ad6b7a67dd2edb789d567ac4cecfee3"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-05.webp",
+      "bytes": 358292,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "39f7bd2f1a1152b03e7c5fe592755cbae8897fef6e917523f9c16a41f42257d0"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-06.webp",
+      "bytes": 408700,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "42b8bbcde7dfb327f1c42ebe388d3dd0ddc49f64e06aa9b8783ad1d2c004c0ae"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/hotel-restaurant-07.webp",
+      "bytes": 397426,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "7c44258931f91259a6cf0f928595f6b06596b924dc7744cf4c9d981391768391"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week05/hotel-restaurant-08.webp",
+      "bytes": 384914,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "7133be20dc4980c0b6bdff3a7ca513f0c8d9ab6baf59e9f18a1a9bcb0971a986"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week05/hotel-restaurant-09.webp",
+      "bytes": 409474,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "0135702d4d70d41890eaaa8fd6290671e0c0f6fc3a24f31ffa4a890dc3c8a3ae"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-safety-01.webp",
+      "bytes": 311600,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "1cbdeff8738e5b4eba40847867eb89f860e6d2028f7f2a432106cee5e5da45eb"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/hotel-safety-02.webp",
+      "bytes": 317808,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e6913febaa2aa37cee84384055e8b5e8bcb2bd5066b6ba940f0c4c26247874b1"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/hotel-safety-03.webp",
+      "bytes": 359864,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "2bcdd0167c8d916ee1371a44c925b81eb0e8c094dd5dc58611d58e87fbd19fd8"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/hotel-safety-04.webp",
+      "bytes": 279314,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "4ef62cb63cb7d2ed31594abb6dcb27008f38d2e2e1f7fe06581f6ef48ffe21a1"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/hotel-safety-05.webp",
+      "bytes": 405648,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "4e3801f385691a5f247472b9eda2b8c4ffc331a15007584f9396b3e1cb611f18"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week06/hotel-safety-06.webp",
+      "bytes": 351422,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "3a815ee55a69819894cd89848e630a90180b4d701d6aa63f8e0a5591e70fd828"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week06/hotel-safety-07.webp",
+      "bytes": 277108,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "649a79d9367321210c715cbd20307cfa29651092803ac9ec69ad35814f750a1d"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week06/hotel-safety-08.webp",
+      "bytes": 412210,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "23efe851ed34e53be20c80ab4c2617e6d0a27fccf545b0edabe1b4bc81894259"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-below-controlled.webp",
+      "bytes": 4808,
+      "width": 720,
+      "height": 360,
+      "sha256": "b01fee2eb164e2e8fb183a71d61321073354b9aa8b492efc562331a6264d96b4"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-ceiling-controlled.webp",
+      "bytes": 6216,
+      "width": 720,
+      "height": 360,
+      "sha256": "94a2dbb6ec511df9c765a07fa533cd8e1f693d8c7b9b8c1ea9d6116ccec496d0"
+    }
+  ]
+}

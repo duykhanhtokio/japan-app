@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "scope": "Two contextual pronunciation repairs and50 public mock-image labels ×12 target languages, on existing13 source-bound companions",
+  "status": "self_checked_frozen_for_persistence",
+  "files": [
+    {
+      "path": "src/data/kaigo/illustration-readings.json",
+      "sha256": "5b88eaef0e8f68eecd55e6d778047d8113d19ccad6768d2b1554f35ae9519e99"
+    },
+    {
+      "path": "src/data/kaigo/mock-public-label-readings.json",
+      "sha256": "b1ac8a762cf8410269d9fc1cc521b000a3f80e6405ff3c5213e1a066a7f83aab"
+    },
+    {
+      "path": "src/data/kaigo/mock-public-label-readings.ts",
+      "sha256": "53f7c6470f2bd39bd262c07c3c876cd0b88187fa8aa31d2a1f797c6c464643cd"
+    },
+    {
+      "path": "src/data/kaigo/mock-public-label-translations.json",
+      "sha256": "30c7ea41542dd0c5e755a5e3390f9859918c2fe7f492a0b5b054d7d683bba0fb"
+    },
+    {
+      "path": "src/components/kaigo/KaigoMockPublicLabelReadings.tsx",
+      "sha256": "3afa21424f23498a09a62237c9610d681d723e923dbf6c3f9394eea0b8dd9658"
+    },
+    {
+      "path": "src/components/kaigo/KaigoMockRoyalFigure.tsx",
+      "sha256": "2389ec1de94eb82a5160ca089009ce666686dbe76e832ca736f3bf771625fc8e"
+    },
+    {
+      "path": "src/components/kaigo/KaigoCourse.tsx",
+      "sha256": "4d883ad6b66629c5df1dff6ebefc9cd9421e0c3e7fe4c273438ad979abe4bef6"
+    },
+    {
+      "path": "scripts/kaigo/check-royal-mock-scene-bindings.cjs",
+      "sha256": "8327ff2c9c5156ed6030cd31bb45f1c5d8a4af594a64ad155a34bc4b963374d3"
+    },
+    {
+      "path": "scripts/kaigo/check-mock-public-label-readings.cjs",
+      "sha256": "5eb575ce57a9e7186db1e623ffa2ea69fcfdfb9d6fcf1f91beefce8fb6c14cfa"
+    }
+  ],
+  "supportedLocales": [
+    "en",
+    "vi",
+    "id",
+    "zh-CN",
+    "zh-TW",
+    "hi",
+    "bn",
+    "ne",
+    "my",
+    "th",
+    "km",
+    "tl"
+  ],
+  "counts": {
+    "figureBindings": 13,
+    "publicJapanesePhrases": 50,
+    "translatedPhrases": 600,
+    "illustrationReadingRecordsRetained": 360,
+    "illustrationReadingRecordsUnchanged": 359
+  },
+  "sourceGuard": "Public question revision + exact image path/SHA + each exact Japanese label/token source revision. Unknown locale, missing/stale translation metadata or changed source yields Japanese only. No question answer/rationale data is read by label selectors.",
+  "phoneticRepairs": [
+    {
+      "source": "慣れた手の動きと、経験や予定を思い出すことは区別して確かめます。",
+      "change": "Only verb 出 readingで→だ, yielding おもいだす. Correct noun 思い出おもいで retained elsewhere.",
+      "officialEvidence": "https://eng.nihongodecarenavi.jp/sp/jpn/entry_1101.html",
+      "publisher": "The Japan Foundation Japanese-Language Institute, Kansai"
+    },
+    {
+      "source": "観察時間30分",
+      "change": "Retain all Japanese text; bind complete30分 to さんじゅっぷん rather than separate30/分. Only this translation label-source revision was rebound. Valid さんじっぷん variant is not rejected.",
+      "officialEvidence": "https://www.irodori-online.jpf.go.jp/trial/07-021-05-01/",
+      "publisher": "The Japan Foundation IRODORI"
+    }
+  ],
+  "ui": "Added reachable before-submit public-label-only translation toggle for13 known image keys and supported12 locales. Existing review-only question/option/rationale/translated-alt gates retained. Japanese exact labels and ruby remain visible when translations are enabled. OFF/JA/unknown/stale uses Japanese only.",
+  "checks": {
+    "actualEntryRoute": "Exported KaigoCourse→actual renderMock callback→actual MockExam→actual figure→actual label companion",
+    "translatedBeforeAndAfterSubmitLocaleRenders": 312,
+    "offJapaneseUnknownFallbackRenders": 78,
+    "actualBeforeSubmitToggleHandlerPresses": 26,
+    "actualMissingAndStaleTranslationMetadataFallbacks": 11,
+    "actualPublicLabelMockExamPreSubmitRenders": 13,
+    "actualPublicLabelMockExamSubmittedLocaleRenders": 169,
+    "stalePublicConditionSelectorRejects": 78,
+    "actualStalePublicQuestionExamRejects": 13,
+    "wrongImageSourceRejects": 13,
+    "missingPublicLabelMetadataComponentRejects": 8,
+    "answerOrPreSubmitAltTranslationLeak": false,
+    "exact600DraftStringsPreserved": true,
+    "only30minLabelSourceRevisionRebound": true,
+    "allCurrent30TuplesNightPrivacyMarkersNativeDentureAndReadingCorrectionsUnchanged": true,
+    "allJapaneseSourceWordingAndSourceHashesUnchanged": true,
+    "questionOptionsAnswersAttemptsAndMockTranslationsUnchanged": true,
+    "diffCheck": true
+  },
+  "commands": [
+    "KAIGO_MOCK_LABEL_LOCALES_ONLY=1 NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/kaigo/check-royal-mock-scene-bindings.cjs",
+    "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/kaigo/check-mock-public-label-readings.cjs"
+  ],
+  "canonicalLedger": {
+    "blobSha": "be494c9a2d5d7edb04016a7ccacc84247a36ce8a",
+    "referencesToChangedPayloadPaths": 0,
+    "refreshNeeded": false
+  },
+  "translationStatus": "translated_ai_unreviewed",
+  "newArtGenerated": 0,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "browserTested": false,
+  "physicalDeviceTested": false,
+  "releaseReady": false,
+  "wholeSourceKnowledgeCovered": false,
+  "validationLimit": "Source-aware AI pronunciation and bounded translation self-check, actual production components under native-host/state adapters. No independent native-language/clinical/device acceptance inferred."
+}

@@ -1,0 +1,389 @@
+{
+  "schemaVersion": 1,
+  "scope": "Manufacturing recognition quiz localized neutral image labels and active quiz/mock/gallery image contracts",
+  "baseCommit": "6a8b55ed1c92c71040d39ada0394b7ee4f0cb46a",
+  "sourceSnapshotCommit": "b375838672b57595e10e6fe354d4d0e5467028ed",
+  "changes": "Use existing manufacturing UI locale for neutral quiz image aria label; Japanese label retained. No images, question grading, question bindings, role gates or teaching captions changed.",
+  "inputBlobMap": {
+    "src/components/manufacturing/RecognitionManufacturing.tsx": "c6a141902517c52304cd34c15171f70d119bc93c",
+    "src/data/manufacturing/recognition38/index.ts": "e72e65c6323aed682b54a1582d9f33664500d156",
+    "src/components/manufacturing/recognition38-assets.ts": "8304906218058c05a05242a96ffab7cee29817c9",
+    "src/components/manufacturing/ManufacturingMocks.tsx": "12221c33efab7f54e0744055cfa38598a34500cb",
+    "src/data/manufacturing/mocks.ts": "15df26134bd91bbcace980bab8641bea12eaa595",
+    "src/data/manufacturing/implementation40.ts": "1fbfc35aa9c3ff4479b9052dd4c42d36216466c1",
+    "src/data/manufacturing/reference-practice.ts": "5f576c91d8a57a53b6bc8fe11323dbeb043f83d9",
+    "src/data/manufacturing/question-editorial.ts": "6e852678cb53733a0ac4b0b259246eb1dfafa7e7",
+    "src/data/manufacturing/source60-buff.ts": "2da090715fabc213f7a9d5f964e265855e4d9fc8",
+    "src/data/manufacturing/source62-bounded.ts": "487f31aaa5a0aae5707bd3e547f30bf78114ea22",
+    "src/components/manufacturing/Source60BuffFigure.tsx": "de164b8ef5c80c584c1d94269a8a3120eb71b085",
+    "src/components/manufacturing/Source62Figure.tsx": "2db5b312ca4d964db1d78fd17a231e5f5e6c072e",
+    "src/data/manufacturing/ui.ts": "cfcea33ad4cdbeb48a761ba841de2c55d30919d3",
+    "src/data/manufacturing/recognition38/bindings.json": "5b72bb8593f4ddc0db7a7776f69343901ba7369f",
+    "src/data/manufacturing/recognition38/core/mechanical.json": "180d5821d12c3221b0a8de5a879e34c017a615af",
+    "src/data/manufacturing/recognition38/core/measurement.json": "e6589c29df47de957c179ba8800492dca718e804",
+    "src/data/manufacturing/recognition38/core/materials.json": "6575d8c35533ee273a23556f1cc094d3e228a262",
+    "src/data/manufacturing/recognition38/core/processes.json": "a1227afababcc92999ffdeee159f220e502aac4e",
+    "src/data/manufacturing/recognition38/core/finishing.json": "883eacf78df59a4bba98ef5258f568db1e58b8ec",
+    "src/data/manufacturing/recognition-occupational-overviews.json": "102647b9d7bb1fb9d3b6300b658cbad02cb0d096",
+    "src/data/manufacturing/reference-practice.json": "e12cf4db1e1525421f1224c903f3310c775e2597",
+    "src/data/manufacturing/implementation40/questions.ja.json": "fa0eb7e4460e2edc4cd935fcbde022438966015e",
+    "src/data/manufacturing/question-editorial.json": "933eb11fe25df12147ea18caca6d466d3ad0285b",
+    "src/data/manufacturing/source49-thermal-clarification.json": "5f7f0b151a94f17227c6f02c943fd3435c70098b",
+    "src/data/manufacturing/source47-clarification.json": "9f5e4095179a3c51b4b016b0a72fb2635bef4df3",
+    "src/data/manufacturing/source60-buff.json": "e2d7df7af0a1b23cc4a84712bc003d7e5ff888bd",
+    "src/data/manufacturing/source62-bounded.json": "c5ee458e1bf179bedf4aeb6fb5fc76dad46cf194",
+    "src/data/manufacturing/ui-translations.json": "5f69235f1a5b645ac9635ede348dc94145bac637",
+    "src/data/manufacturing/mocks/mechanical.json": "c9ef4e4ad846d395aea0a29986e8ef0b666f4fbc",
+    "src/data/manufacturing/mocks/electrical.json": "b756702fdfff5f5115a919015c952f14bbe80a9c",
+    "src/data/manufacturing/mocks/surface.json": "6eaa5153bb28aee4fc8410f8a2acb8af1b55998a",
+    "src/data/manufacturing/recognition38/locales/vi.json": "ecc445a32efbfd4d8c12a1039e04d5ee92ac852f",
+    "src/data/manufacturing/recognition38/locales/en.json": "c1b757220337abb5fd45cec6f72f6e674daf0da7",
+    "src/data/manufacturing/recognition38/locales/id.json": "1baa5d79283238a3ac2d9e64c168a344d75ebaae",
+    "src/data/manufacturing/recognition38/locales/zh-CN.json": "434fd695744029791def4437b168df9cf0819c9e",
+    "src/data/manufacturing/recognition38/locales/zh-TW.json": "5a3afaec9c180688933ac14fe5889c9e92298c4c",
+    "src/data/manufacturing/recognition38/locales/hi.json": "f4540c795c73526838eaf586676dc6c1382b07e3",
+    "src/data/manufacturing/recognition38/locales/bn.json": "b9e79e5ec46f4c144ba34d27fa44b3db0fe02d6f",
+    "src/data/manufacturing/recognition38/locales/ne.json": "666c1fca660f9f9efa8f186b42b6dc06a03eb3af",
+    "src/data/manufacturing/recognition38/locales/my.json": "870d4ee36530664d5da4a46f181488701af0d051",
+    "src/data/manufacturing/recognition38/locales/th.json": "1865071966916c57962fa96fdfd6fda91a063170",
+    "src/data/manufacturing/recognition38/locales/km.json": "363e5e964557ceecea2c2950ff7e0134dc68e03d",
+    "src/data/manufacturing/recognition38/locales/tl.json": "e163cf472db1c13efff3f2c72fc44b7b097497e3"
+  },
+  "pixelReview": {
+    "recognition": [
+      {
+        "id": "mfg38-sign-prohibition",
+        "gitBlobSha": "b5a663cfb5b03dc8e3353dd4c82b4556f97c02c2",
+        "file": "sign-prohibition.png",
+        "bytes": 106992,
+        "width": 1600,
+        "height": 1000,
+        "sha256": "b21e41778f9cb7187c27df22d15a5a4db3d54f9e643f9c47729e984b7df8b522"
+      },
+      {
+        "id": "mfg38-sign-warning",
+        "gitBlobSha": "4b859841a161b4d7b38e119478c66905d61ef39a",
+        "file": "sign-warning.png",
+        "bytes": 107230,
+        "width": 1600,
+        "height": 1000,
+        "sha256": "e7a4c99e7b60d321b854d481239bd3cf6408abcb36069d2009553721278a9b1a"
+      },
+      {
+        "id": "mfg38-sign-chemical",
+        "gitBlobSha": "960dc01623b4ff2638003f1b824a0ba41fd373e0",
+        "file": "sign-chemical.png",
+        "bytes": 79741,
+        "width": 1600,
+        "height": 1000,
+        "sha256": "c18372a17b40126063d5bd5e1acff69711e3f6353d37ec99f0a6cf912d4da0f1"
+      },
+      {
+        "id": "mfg38-sign-emergency",
+        "gitBlobSha": "5059d4d289e2d64e5d5d2fcd2fa80fd350595735",
+        "file": "sign-emergency.png",
+        "bytes": 82756,
+        "width": 1600,
+        "height": 1000,
+        "sha256": "4cf433adde83f591ce7260fa00082890fc3614597319e6b7f162abb5d11a8cdd"
+      },
+      {
+        "id": "mfg38-metrology-micrometer",
+        "gitBlobSha": "7984480b135a576635ebd6a429fdc538a9b2861c",
+        "file": "metrology-micrometer.png",
+        "bytes": 116555,
+        "width": 1600,
+        "height": 1000,
+        "sha256": "a7efbddc9bb783b52b7f84ab3d2746b0f1064b69916be7c0ff0acbd53e208fc4"
+      },
+      {
+        "id": "mfg38-metrology-dial",
+        "gitBlobSha": "d97b5519ae5090cb19ffb0cabf98c3f8167add58",
+        "file": "metrology-dial.png",
+        "bytes": 151308,
+        "width": 1600,
+        "height": 1000,
+        "sha256": "0b0447f1e9159dfbe90c27d43063bc095f87190789abf74c0c21a8a0a7530cdb"
+      },
+      {
+        "id": "mfg38-metrology-lever",
+        "gitBlobSha": "d03c37683472e8fe2fe934ad6b935c643100613f",
+        "file": "metrology-lever.png",
+        "bytes": 152154,
+        "width": 1600,
+        "height": 1000,
+        "sha256": "a48770d220b4daf4268cd40fb615ae4c051c3391c7b110e5e855e8f5a7823337"
+      },
+      {
+        "id": "mfg38-metrology-bore",
+        "gitBlobSha": "61f73ade3c10644a33ee9fe1da37aa24b90b86fe",
+        "file": "metrology-bore.png",
+        "bytes": 165852,
+        "width": 1600,
+        "height": 1000,
+        "sha256": "6f734e24449ac398321d8eb0048c10352b653c6747bbdf58583a89913ec02661"
+      },
+      {
+        "id": "mfg38-annotations-holes",
+        "gitBlobSha": "1563aeb2c4920e2bb60463e1b5d25c93402ea1a9",
+        "file": "annotations-holes.png",
+        "bytes": 107813,
+        "width": 1600,
+        "height": 1000,
+        "sha256": "c355cbb8764ee6363d55f1d742949a45d90de4982391f9777cf6af96f5b2a4a2"
+      },
+      {
+        "id": "mfg38-annotations-weld",
+        "gitBlobSha": "131da240bc1476deb52ed75e489e10450659122e",
+        "file": "annotations-weld.png",
+        "bytes": 117444,
+        "width": 1600,
+        "height": 1000,
+        "sha256": "d7bddb0732b2f6e8fc946a764813f2c9dd74c69562a108d9253217ced88ba9e6"
+      },
+      {
+        "id": "mfg38-annotations-intermittent",
+        "gitBlobSha": "686b87eb2acd9e0b3e409567b2e7c9ac436f618f",
+        "file": "annotations-intermittent.png",
+        "bytes": 93566,
+        "width": 1600,
+        "height": 1000,
+        "sha256": "15d83cb44cefb9a51fab6e5eb5a63eeec12bf28a8a7b4f910fc07b86468b5101"
+      },
+      {
+        "id": "mfg38-sampling-map",
+        "gitBlobSha": "d3bb5714d39ae0aeb7a354de89b67a7b5ce6aecd",
+        "file": "sampling-map.png",
+        "bytes": 95313,
+        "width": 1400,
+        "height": 1000,
+        "sha256": "53d55b42bfe8ac101d36f33293bbf967d27e06ad8294adcc14eca097a8a27717"
+      },
+      {
+        "id": "mfg38-thickness-xrf",
+        "gitBlobSha": "a0cc10defab36a6aa720b986d1c6b42109248ef6",
+        "file": "thickness-xrf.png",
+        "bytes": 101132,
+        "width": 1400,
+        "height": 1000,
+        "sha256": "522968e9755fe749bb2b6f35a6d1b592a5242962ad4df2fc4edc78398008a1e0"
+      },
+      {
+        "id": "mfg38-thickness-eddy",
+        "gitBlobSha": "c94e87481595c8cb30522a4d3dc4e73f28bbd4c9",
+        "file": "thickness-eddy.png",
+        "bytes": 108575,
+        "width": 1400,
+        "height": 1000,
+        "sha256": "4785cba4f7320a4de9e2be0a6616c78cdb6cf6d4bffd7152ef353f9d0167fe5f"
+      },
+      {
+        "id": "mfg38-wetting-observation",
+        "gitBlobSha": "11757e18a6c9999193e2d46e5ee31dfa60e80d50",
+        "file": "wetting-observation.png",
+        "bytes": 111707,
+        "width": 1400,
+        "height": 1000,
+        "sha256": "961a6dec4f8882d89411e904b27f4abcd0597f2c98a52607e7a11c9553028671"
+      },
+      {
+        "id": "mfg37-required-jig-contact-identification-diagram",
+        "gitBlobSha": "a818ef9cec867ce2b3573d134e46e168161e57f4",
+        "file": "jig-contact.png",
+        "bytes": 232671,
+        "width": 1600,
+        "height": 1200,
+        "sha256": "cf06537ce349bfd5583a1ad76fcae83869836e9a6f2aa943e88340793959d150"
+      },
+      {
+        "id": "mfg37-required-jig-contact-identification-quiz-diagram",
+        "gitBlobSha": "37adf90fcfa8475369d3a5a48f44864862000e2f",
+        "file": "jig-contact-quiz.png",
+        "bytes": 170201,
+        "width": 1600,
+        "height": 1200,
+        "sha256": "7c7e0a4ddd9c6560f5543ff63d7b5630928bf2f73dc757b25807d4c1ee206055"
+      },
+      {
+        "id": "mfg37-required-indicator-color-recognition-diagram",
+        "gitBlobSha": "2feaa34e5eac25b8a7ba81bc28bc90e44a32cbe4",
+        "file": "indicators-reference.png",
+        "bytes": 211901,
+        "width": 1600,
+        "height": 1200,
+        "sha256": "8770d7b16b1ff91f666b7b5d90f3747df2e42ceed0a27467f7923c9072d4e358"
+      },
+      {
+        "id": "mfg37-required-metal-order-hydrogen-comparison-diagram",
+        "gitBlobSha": "7d16a602b7a8b5b4c4491ab56b7f15b4b9bf1cca",
+        "file": "metal-order-reference.png",
+        "bytes": 201243,
+        "width": 1600,
+        "height": 1200,
+        "sha256": "e6fea333b631c49aa7e76673f1a3d4b5853381c81bbab95034c76c2bd4642770"
+      },
+      {
+        "id": "mfg38-electrical-symbols",
+        "gitBlobSha": "34128a99df773ac9303466f45cc9372dd825618d",
+        "file": "electrical-symbols.png",
+        "bytes": 53567,
+        "width": 1300,
+        "height": 800,
+        "sha256": "61ee56f5449cbed00c8d2520f10cd2b68d3381eb63155debd85b4e88d31adfdf"
+      },
+      {
+        "id": "mfg38-electrical-directions",
+        "gitBlobSha": "7aee344f1f18e2766baa6b0a5c0ba45734e9644e",
+        "file": "electrical-directions.png",
+        "bytes": 106929,
+        "width": 1300,
+        "height": 800,
+        "sha256": "2f66ee2885d0e65a48f6e67f287771dc061925edd15e213cfa729cc8962565ec"
+      },
+      {
+        "id": "mfg38-taxonomy-tree",
+        "gitBlobSha": "aa3e824894773ed7da3072b8158fdd7899d99fbb",
+        "file": "taxonomy-tree.png",
+        "bytes": 145566,
+        "width": 1300,
+        "height": 1140,
+        "sha256": "13f7c07c5f410ba88673e8153782ac0490b2ef536541bb87e73ab68f737ac344"
+      },
+      {
+        "id": "mfg38-sequence-cards",
+        "gitBlobSha": "e441a02ef6e6c18e6b0163a1616a739fe98874e6",
+        "file": "sequence-cards.png",
+        "bytes": 156581,
+        "width": 1300,
+        "height": 1070,
+        "sha256": "f6f61a377a167f69c59c9d64c89092071dc1391a3a26136ac89062da52cd7549"
+      },
+      {
+        "id": "mfg38-area-model-quiz",
+        "gitBlobSha": "314b8206ea136d7c9cb8e4bfdb91be7027bb8af8",
+        "file": "area-model-quiz.png",
+        "bytes": 178158,
+        "width": 1600,
+        "height": 1300,
+        "sha256": "de162c3b2c7f8f05042e49be13f76b7d8fcbbcfc4b921ed3e7847033c59ec52a"
+      },
+      {
+        "id": "mfg38-area-model-teaching",
+        "gitBlobSha": "75f9985b318511507a038d3b3c0b56a57618684a",
+        "file": "area-model.png",
+        "bytes": 238581,
+        "width": 1600,
+        "height": 1300,
+        "sha256": "152ac3452d3f144a175a971d8e8a38c75b2b7c0ca65b0dbc01f38a704b77a0a8"
+      },
+      {
+        "id": "mfg38-defects-observation-quiz",
+        "gitBlobSha": "9f4661ed2b98e0c5e6f532697b196c2d99b62bb0",
+        "file": "defects-observation-quiz.png",
+        "bytes": 115659,
+        "width": 1600,
+        "height": 1300,
+        "sha256": "bd46471c006e1b125ed56e9de34d64e74b3fd5caec74b2cccc43fd0f4eb02344"
+      },
+      {
+        "id": "mfg38-defects-observation-teaching",
+        "gitBlobSha": "d5d209c5cc8778a182a227cd2462131103e75dbf",
+        "file": "defects-observation.png",
+        "bytes": 206004,
+        "width": 1600,
+        "height": 1300,
+        "sha256": "990b0546d8f8e18dd3206ba6d7cc245c0051b0465584c3204ff2d93e007b6647"
+      },
+      {
+        "id": "mfg38-buff-progression-quiz",
+        "gitBlobSha": "28d7a1b3dc5e523ac95469db78121718efd2e497",
+        "file": "buff-progression-quiz.png",
+        "bytes": 121813,
+        "width": 1600,
+        "height": 1300,
+        "sha256": "1bdafbe7e622c8d7a4536ee94c2ad6d10261df5ad8de8c7ca4f2ad4b2aa2c9ba"
+      },
+      {
+        "id": "mfg38-buff-progression-teaching",
+        "gitBlobSha": "98326db795732efc58538e2a90f325ab3be795b9",
+        "file": "buff-progression.png",
+        "bytes": 280520,
+        "width": 1600,
+        "height": 1300,
+        "sha256": "0c5e0bd854408e3d2fc4a74366c9a54637b8cd104634bce45add235d286264b8"
+      }
+    ],
+    "additionalGallery": [
+      {
+        "file": "instruments.webp",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "a18ad318e612051cc71eaf4c8ca5fd088507e1cb3ca2ffaa30d591f54cd147bf",
+        "id": "mfg37-required-analogue-metrology-readout",
+        "gitBlobSha": "7860dc8a9926ba740e473380f7540832f5b494e2",
+        "bytes": 102942
+      },
+      {
+        "file": "surface-defects.webp",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "a182671df1f732291308aca4c34a1581620211b1de1301cb0a2c3315bee7a2a8",
+        "id": "mfg37-required-surface-defect-observation",
+        "gitBlobSha": "3ae75bb4090c3764d8daa1758d92c9ea70a37004",
+        "bytes": 227766
+      },
+      {
+        "file": "buff-surfaces.webp",
+        "width": 1774,
+        "height": 887,
+        "sha256": "7cd09be9ad63f86dd9e0ded88c2d0919288fca33cd3a02592718ff02fa4c22a5",
+        "id": "mfg37-required-buff-stage-surface-change",
+        "gitBlobSha": "00a52f9b0bd53f82779bec81c40b30882df086ea",
+        "bytes": 261832
+      },
+      {
+        "file": "buff-roles.png",
+        "width": 1200,
+        "height": 680,
+        "sha256": "977c9a16741ba8df84f65f8632ac2d914c57ff1add7e03f819a787138ac0991e",
+        "id": "definition",
+        "gitBlobSha": "12dad0d3cc5948e685ee93a846dd90a6131ba9ce",
+        "bytes": 63409
+      },
+      {
+        "file": "switch-roles.png",
+        "width": 1200,
+        "height": 680,
+        "sha256": "a31c71c215dece7c5d51f35054dbba736388f7fe101af5481c140be82b17813b",
+        "id": "reset",
+        "gitBlobSha": "5178b4c64ed9488b952bf6db26f2aec9215f709c",
+        "bytes": 83677
+      }
+    ],
+    "method": "Decoded image dimensions/hash checked against current source metadata; all 29 original quiz/teaching figures viewed in five contact sheets and source-question contexts; five additional study assets viewed. Precise scales/arithmetic and unlabeled quiz variants retained. Reference charts intentionally provide stimulus data. No image regenerated."
+  },
+  "qa": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/manufacturing/check-recognition-quiz-gallery-contract.cjs",
+    "activePacks": 15,
+    "uniqueQuestions": 61,
+    "uniqueQuizAssets": 25,
+    "quizLocaleRenders": 793,
+    "nativeQuestionTranslations": 732,
+    "expandedQuizRenders": 61,
+    "staleQuestionRejections": 427,
+    "studyGalleryLocaleContexts": 208,
+    "overviewLocaleContexts": 39,
+    "source60And62LocaleContexts": 26,
+    "mockExams": 33,
+    "mockOccurrences": 1320,
+    "mockUniqueQuestions": 1200,
+    "actualMockRecognitionResolverResults": 0,
+    "mockExplicitImageFields": 0,
+    "explicitMissingDiagramStemReferences": 0,
+    "adapters": "Real React SSR and real data/image/caption modules; RN DOM and visual chrome adapters, first real React useState initialized true only in expanded/translation-on cases. No reading/caption provider stub.",
+    "limits": "No physical-device or native-runtime certification; no domain-expert signoff. Legacy supplementary census is tracked separately, not certified by this receipt."
+  },
+  "sourceReviewAcceptance": false,
+  "domainAcceptance": false,
+  "nativeDeviceAcceptance": false
+}

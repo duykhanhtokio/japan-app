@@ -40,7 +40,7 @@ function CaptionRow({question,text,start,expanded}:{question:PublicMockFigureQue
 }
 
 /** Only public question conditions are visible before submission; localized alt is review-only. */
-export function KaigoMockRoyalFigure({question,translatedAlt,style}:{question:PublicMockFigureQuestion;translatedAlt?:string;style?:StyleProp<ImageStyle>}){
+export function KaigoMockRoyalFigure({question,translatedAlt,style,labelLanguage='ja'}:{question:PublicMockFigureQuestion;translatedAlt?:string;style?:StyleProp<ImageStyle>;labelLanguage?:string}){
  const [expanded,setExpanded]=useState(false),figure=mockRoyalFigureFor(question);
  const publicLabels=figure?.source?mockPublicLabelsFor(question,figure.source):undefined;
  if(!figure||(isKnownMockPublicLabelKey(question.figureKey)&&!publicLabels))return <View testID="kaigo-mock-figure-pending-source-check"><Text>この問題の図を表示できません。</Text></View>;
@@ -58,6 +58,6 @@ export function KaigoMockRoyalFigure({question,translatedAlt,style}:{question:Pu
     </View>
    </ScrollView>
   </Pressable>
-  {publicLabels&&<KaigoMockPublicLabelReadings binding={publicLabels}/>}
+  {publicLabels&&<KaigoMockPublicLabelReadings binding={publicLabels} language={labelLanguage}/>}
  </View>;
 }

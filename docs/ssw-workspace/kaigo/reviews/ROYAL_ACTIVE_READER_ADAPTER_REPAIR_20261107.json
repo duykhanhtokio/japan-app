@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "baseCommit": "c8fbb9b2066955b188259611f4fbae89b192341b",
+  "scope": "Bounded repair of current active-reader validation adapters; no learner data, illustration pixels, native geometry or canonical text authored.",
+  "status": "PASS_source_and_static_component_regression_only",
+  "repairGroups": [
+    {
+      "group": "caption_overrides",
+      "before": "Census stopped at require ./illustration-caption-overrides.json after royal-weekly-art gained source-bound role-caption overrides.",
+      "after": "Execute current royal-weekly-art with actual override JSON and real japaneseLessonMetadata/revision functions."
+    },
+    {
+      "group": "illustration_ruby",
+      "before": "Three current native figure components import KaigoIllustrationText, but census adapters did not execute this production module. DayReading exact reading helper was also absent.",
+      "after": "Execute real illustration reading helper and wrapper with actual JSON; retain native adapters only for React Native primitives; record all production illustration reading calls and fail on unbound kanji strings."
+    },
+    {
+      "group": "explicit_source_only",
+      "before": "Sparse checkout without raster bytes could not rerun bounded source regression independently of the historical asset-byte audit.",
+      "after": "Opt-in KAIGO_CENSUS_SOURCE_ONLY=1 writes a source-only result explicitly stating assetByteVerification=not_run_source_only. Default full asset existence/hash/ratio gate remains unchanged."
+    }
+  ],
+  "checks": {
+    "head": "working-tree",
+    "issues": [],
+    "actualIllustrationReadingRequests": 12984,
+    "unboundIllustrationRequests": [],
+    "actualDayReadingJapaneseRenders": 176,
+    "actualTranslatedIllustrationLayerRenders": 2288,
+    "sourceBoundLessonCaptionRecords": 2112,
+    "staleCaptionRecordsRejected": 2112,
+    "pairedLocalizedContextAlts": 2112,
+    "actualInitialJapaneseImageUses": 209,
+    "actualRenderedUniqueAssetPaths": 152,
+    "sourceBoundFigures": 29,
+    "staleLessonRejections": 176,
+    "staleSectionRejections": 29,
+    "sourceBoundInlineBindings": 4,
+    "actualZoomEventAndExpandedRenders": 33,
+    "nativeLocaleComponentRenders": 286,
+    "rubyTextMismatches": 0,
+    "scope": "Actual source functions/components with native/hook adapters. All312 real lesson-caption batches checked for current revisions; full translated knowledge paragraphs and all mock translations are not semantically re-certified. Static source/layout checks do not certify browser/native/device pixel layout.",
+    "status": "PASS",
+    "assetByteVerification": "not_run_source_only",
+    "browserAcceptance": false,
+    "physicalDeviceTested": false
+  },
+  "browserAttempt": {
+    "command": "require('playwright').chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox']})",
+    "defaultPlaywrightArgsIncluded": [
+      "--disable-dev-shm-usage"
+    ],
+    "status": "BLOCKED_before_page",
+    "error": "FATAL chrome/browser/process_singleton_posix.cc socket() failed: Operation not permitted (1); crashpad ptrace denied.",
+    "screenshotsCaptured": 0
+  },
+  "assetBytesRefetched": 0,
+  "priorAssetEvidencePreserved": "docs/ssw-workspace/kaigo/reviews/ROYAL_COORDINATED_ACTIVE_READER_CENSUS_20261107.json",
+  "defaultFullRunOnSparseCheckout": "Expected FAIL for missing raster bytes; source phase had zero issues. No full asset PASS claimed.",
+  "sourceInputs": [
+    {
+      "path": "scripts/kaigo/check-royal-active-reader-census-20261107.cjs",
+      "sha256": "4a674a60c046a7bf7e3dcbab820d92b4dcd57d05fc10b70010d3bb7e505886a1"
+    },
+    {
+      "path": "src/components/kaigo/KaigoIllustrationText.tsx",
+      "sha256": "77dcf225c11418d6f6398ed65e5ba0ee595329074ae375c92add3e532067b8d8"
+    },
+    {
+      "path": "src/components/kaigo/WeeklyKaigo.tsx",
+      "sha256": "a94d67919ecfc8f814a606cd36b24f793b22b08523697a65f5e89b2165ccde25"
+    },
+    {
+      "path": "src/components/kaigo/KaigoRoyalTechnicalFigure.tsx",
+      "sha256": "6af5db0034d2f77fb0f7bba329dba11587f19cc7a84178e0c7177e1743a821c2"
+    },
+    {
+      "path": "src/components/kaigo/KaigoAnatomyTermsFigure.tsx",
+      "sha256": "35e65c94baff650d9a4e34635859ab1e87b612c036adb0a00109f0542a27edba"
+    },
+    {
+      "path": "src/components/kaigo/KaigoHandRegionFigure.tsx",
+      "sha256": "38454ee66e18cfe122fdd4a1571d2bb5f8ccf943eb3d89edc92953f8dbc7687a"
+    },
+    {
+      "path": "src/data/kaigo/royal-weekly-art.ts",
+      "sha256": "25497dd156e499ad3b79c37a36ce7af1b9b0a6463d18668db43421142dd0d5bc"
+    },
+    {
+      "path": "src/data/kaigo/illustration-readings.ts",
+      "sha256": "250cfcb934390bf8aaa6b06420af992f9dc66aa64f7695b24961049e64a06c81"
+    },
+    {
+      "path": "src/data/kaigo/illustration-readings.json",
+      "sha256": "99b870f69687d90ec72854848537d63e8ac06353fed21d7f2ad998b270a3f3a7"
+    },
+    {
+      "path": "src/data/kaigo/illustration-caption-overrides.json",
+      "sha256": "570046cc111d90f84b05655650b7f57c4f29cc1c13b0c2f4650214327df72835"
+    }
+  ],
+  "supportedIllustrationAuthoringQueueReopened": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "browserAcceptance": false,
+  "learnerDurationMeasured": false,
+  "releaseReady": false,
+  "remaining": "Existing browser/native/physical-device/domain acceptance gates remain open. Canonical prose-ruby debt remains separate; no unsupported source authoring was added."
+}

@@ -962,9 +962,9 @@ const entries:Record<string,[number,number,string][]>={
   "スプーン": [],
   "パン皿": [
     [
-      2,
-      1,
-      "さら"
+      0,
+      3,
+      "ぱんざら"
     ]
   ],
   "デザート用": [
@@ -1080,13 +1080,8 @@ const entries:Record<string,[number,number,string][]>={
     ],
     [
       22,
-      1,
-      "か"
-    ],
-    [
-      23,
-      1,
-      "から"
+      2,
+      "かくう"
     ],
     [
       24,

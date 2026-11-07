@@ -24,6 +24,8 @@ function load(relative){
   if(name==='react')return componentReact;
   if(name==='react/jsx-runtime')return require(name);
   if(name==='react-native')return native;
+  // This suite checks source guards and coordinate geometry, not ruby rendering.
+  if(name==='./HotelGuideText')return {HotelGuideText:native.Text};
   // Return supplied material even for a stale revision: each diagram must guard itself.
   if(name.endsWith('/translation-loaders'))return {loadHotelTranslation:()=>translatedMaterial};
   if(name.endsWith('.webp')){controlledAssetLoads.push(name);return name;}

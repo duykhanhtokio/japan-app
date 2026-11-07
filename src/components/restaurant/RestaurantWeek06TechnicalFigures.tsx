@@ -9,6 +9,7 @@ export function restaurantWeek06TechnicalKind(figure:SourceFigure31):string|null
  const f=b.figure;if(['sourceHash','assetFile','sha256','width','height','captionJa','altJa'].some(k=>(figure as any)[k]!==(f as any)[k]))return null;
  const pack=b.level==='1'?require('../../data/restaurant/source31/1.json'):require('../../data/restaurant/source31/2.json'),row=pack.lessons[b.lessonId];return row?.sourceHash===b.rowSourceHash&&row.figures.some((x:SourceFigure31)=>sameRestaurantFigureIdentity(x,figure))?b.kind:null;
 }
+export function restaurantWeek06CaptionReading(figure:SourceFigure31){return restaurantWeek06TechnicalKind(figure)?data.bindings.find(b=>b.figureId===figure.id)?.captionFurigana:undefined;}
 export function RestaurantWeek06TechnicalFigure({kind,label,language='ja',showTranslation=false,width=320}:{kind:string;label:string;language?:string;showTranslation?:boolean;width?:number}){
  const labels=data.labels as Record<string,string[]>,target=labels[language],ink='#173c4b';
  const text=(index:number)=><View style={{gap:5}}><RestaurantReading paper text={labels.ja[index]} segments={data.labelRuby?.[index]?.textJa===labels.ja[index]?data.labelRuby[index].segments:undefined}/>{showTranslation&&language!=='ja'&&target?.[index]&&<Text selectable style={{fontSize:17,lineHeight:28,color:'#344b61'}}>{target[index]}</Text>}</View>;

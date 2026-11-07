@@ -88,6 +88,8 @@ const nativeAlternatives=[
  ['week2',load(path.join(root,'src/data/food-manufacturing/royal-week2-native.ts')).foodRoyalWeek2NativeFor],
  ['week4',load(path.join(root,'src/data/food-manufacturing/royal-week4-native.ts')).foodRoyalWeek4NativeFor],
  ['week5',load(path.join(root,'src/data/food-manufacturing/royal-week5-native.ts')).foodRoyalWeek5NativeFor],
+ ['week7',load(path.join(root,'src/data/food-manufacturing/royal-week7-native.ts')).foodRoyalWeek7NativeFor],
+ ['week8',load(path.join(root,'src/data/food-manufacturing/royal-week8-native.ts')).foodRoyalWeek8NativeFor],
  ['signs',load(path.join(root,'src/data/food-manufacturing/royal-safety-signs.ts')).foodRoyalSafetySignsFor],
 ];
 const nativeFor=lesson=>nativeAlternatives.find(([,select])=>select(lesson));

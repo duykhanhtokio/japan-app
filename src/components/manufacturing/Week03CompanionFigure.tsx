@@ -77,6 +77,8 @@ const sources:Record<string,ReturnType<typeof require>>={
  get 'assets/manufacturing/royal-weekly-20261107/week10/technical/companion-scope-channels-bandwidth-sampling.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week10/technical/companion-scope-channels-bandwidth-sampling.png');},
  get 'assets/manufacturing/royal-weekly-20261107/week10/technical/companion-resistance-drop-20ohm.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week10/technical/companion-resistance-drop-20ohm.png');},
  get 'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-lathe-selected.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-lathe-selected.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week10/mechanical-day70-context-learning-review.webp'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week10/mechanical-day70-context-learning-review.webp');},
+ get 'assets/manufacturing/royal-weekly-20261107/final-active/light-and-magnetic-quantity-selected.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/final-active/light-and-magnetic-quantity-selected.png');},
 
 };
 const imageParagraphIds=(item:Figure)=>item.paragraphIds??(item.paragraphId?[item.paragraphId]:[]);
@@ -120,7 +122,7 @@ export function Week03CompanionFigure({lesson,paragraphIds,language,showTranslat
    const diagram={id:'week03-companion-'+lesson.id+'-'+item.id,lessonId:lesson.id,lessonSourceHash:lesson.sourceHash,assetFile:item.assetFile,width:item.width,height:item.height,captionJa,scopeLimits:['source_bound_teaching_concept_only']};
    return <View key={item.id} style={{gap:8}}>
     <Text style={{fontSize:18,lineHeight:30,fontWeight:'700',color:colors.text}}>{title}</Text>
-    <SupplementalFigure item={diagram} japaneseCaptionRuby={manufacturingCompanionCaptionReading(lesson,diagram)} imageSource={source} imageAlt={caption??captionJa} language={language} showTranslation={showTranslation} translatedCaption={caption}/>
+    <SupplementalFigure item={diagram} japaneseCaptionRuby={manufacturingCompanionCaptionReading(lesson,diagram)??null} imageSource={source} imageAlt={caption??captionJa} language={language} showTranslation={showTranslation} translatedCaption={caption}/>
    </View>;
   })}
  </View>;

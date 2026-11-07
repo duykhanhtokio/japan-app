@@ -1,6 +1,6 @@
 import {Text,View,type StyleProp,type TextStyle,StyleSheet} from 'react-native';
 import type {ManufacturingLesson} from '@/data/manufacturing';
-import data from '@/data/manufacturing/illustration-readings.json';
+import data from '@/data/manufacturing/native-heading-readings.json';
 type Part={text:string;reading?:string};
 type Entry={sourceHash:string;canonicalParagraphs:unknown;canonicalTitleJa:string;canonicalSummaryJa:string;fields:Record<string,{sourceJapanese:string;parts:Part[]}>};
 const registry=data as {schemaVersion:number;revision:string;studyOnly:boolean;entries:Record<string,Entry>};

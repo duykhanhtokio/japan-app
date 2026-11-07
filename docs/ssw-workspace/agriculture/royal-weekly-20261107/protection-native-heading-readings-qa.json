@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "reviewedBaseline": "1b218ef5efe8f9f15fe632cbd553583509fdf450",
+  "readyPaths": [
+    "src/components/agriculture/AgricultureNativeSupportRuby.tsx",
+    "src/components/agriculture/MulchColorSupport.tsx",
+    "src/components/agriculture/PestFoundationSupport.tsx",
+    "src/data/agriculture/native-support-headings-readings.json",
+    "scripts/agriculture/check-protection-native-heading-readings.cjs",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/protection-native-heading-readings-qa.json"
+  ],
+  "canonicalSchedules": [
+    "agr-1-w08",
+    "agr-2-w09"
+  ],
+  "scope": "Offline kana for 15 current canonical native image-support headings: 2 lesson headings and13 paragraph headings; fullbody readings remain open.",
+  "groups": [
+    {
+      "lessonId": "agr-cover-mulch",
+      "titleFields": 1,
+      "paragraphHeadingFields": 7
+    },
+    {
+      "lessonId": "agr-pest-foundation",
+      "titleFields": 1,
+      "paragraphHeadingFields": 6
+    }
+  ],
+  "sourceGuard": "Every displayed field must match canonical current lesson title/paragraph title, exact sourceHash/revision, declared course level, explicit Japanese snapshot and aligned kana tokens. Missing/stale/invalid entries retain canonical Japanese. Plain kana-only fragments split by character; authored kanji terms stay grouped.",
+  "checks": {
+    "actualSupportRNWRenders": 104,
+    "headingFieldRenders": 780,
+    "negativeSourceRevisionLevelFieldTextEntryHashInvalidKanaFallbackCases": 240,
+    "testedLocales": [
+      "ja",
+      "en",
+      "vi",
+      "id",
+      "zh-CN",
+      "zh-TW",
+      "hi",
+      "bn",
+      "ne",
+      "my",
+      "km",
+      "th",
+      "tl"
+    ],
+    "fullCanonicalParagraphAndLocaleRetention": true,
+    "strictActualComponentTypeScriptGraph": "PASS",
+    "eslint": "PASS all3 changed native components; no warnings",
+    "diffWhitespace": "PASS"
+  },
+  "browserAttempt": {
+    "status": "blocked_before_page_render",
+    "tool": "Playwright/systemChromium",
+    "reason": "Installed Playwright headless executable unavailable; system /usr/bin/chromium failed process singleton socket with Operation not permitted. No page or screenshot was produced; no pixel/device claim."
+  },
+  "hashes": {
+    "src/components/agriculture/AgricultureNativeSupportRuby.tsx": "28778d064e32cb7521015146b5d6879af4936a207c2bb1b276b5f6df07a05e16",
+    "src/components/agriculture/MulchColorSupport.tsx": "588e6aea42ebe69c18a6ea7e44a35c91db76f073a75dff8d497bb1ead06a4295",
+    "src/components/agriculture/PestFoundationSupport.tsx": "c3d9d11130105780ea5437c7622d7b3fbe907f5da1ee50f76351f71922d231b3",
+    "src/data/agriculture/native-support-headings-readings.json": "eccca011283f4cf282dddd480a13a128475dd80ddfaab18aa6ca5394e7a0c97d",
+    "scripts/agriculture/check-protection-native-heading-readings.cjs": "3b934ed91d0e6468b80ff4229d8f8722b13dea465c251ca52bd5bdff0e52c908"
+  },
+  "remaining": [
+    "Full body paragraph readings for these2 native support readers remain open.",
+    "Other native figure/caption routes and remaining schedule groups need their own current-source readings.",
+    "Browser pixels, physical devices, native/domain review and measured learner duration remain unverified."
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "wholeWeekComplete": false,
+  "sourcePhotoObjectivesClosed": false,
+  "releaseReady": false
+}

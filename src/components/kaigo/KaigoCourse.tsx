@@ -1,3 +1,4 @@
+import {isKnownMockPublicLabelKey,supportsMockPublicLabelLanguage} from '@/data/kaigo/mock-public-label-readings';
 import {KaigoMockRoyalFigure,mockFigureCaptionTokens,mockFigurePromptTokens} from './KaigoMockRoyalFigure';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { translationForMockQuestion, translationForMockTitle } from '@/data/kaigo/japanese-mock-translations';
@@ -153,10 +154,15 @@ function MockExam({ form: originalForm, active }: { form: MockForm; active: bool
           )}
           {review && translationOpen && mockTranslation?.passage && <TranslationText testID="kaigo-mock-passage-translation">{mockTranslation.passage}</TranslationText>}
           {!!q.figureKey && (
-            <KaigoMockRoyalFigure key={q.id} question={q}
+            <KaigoMockRoyalFigure key={q.id} question={q} labelLanguage={translationOpen?language:'ja'}
               translatedAlt={review && translationOpen ? mockTranslation?.figureDescription : undefined}
               style={s.figure} />
           )}
+          {!review&&isKnownMockPublicLabelKey(q.figureKey)&&supportsMockPublicLabelLanguage(language)&&<Button
+            title={translationOpen?'図中の語句の翻訳を閉じる':'図中の語句を翻訳'}
+            testID="kaigo-mock-labels-language-toggle"
+            onPress={()=>setTranslationOpen(v=>!v)}
+          />}
           {!!q.figureDescriptionJa && (
             <Ruby
               tokens={mockFigureCaptionTokens(q)}

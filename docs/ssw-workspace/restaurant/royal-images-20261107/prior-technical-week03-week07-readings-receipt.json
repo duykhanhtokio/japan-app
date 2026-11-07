@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "status": "self_checked_pending_parent_remote_save",
+  "scope": "retained week03/week07 technical label and caption readings",
+  "baseline": "a7b6c8a9dd3a68b529347a38880bcbae7838104d",
+  "changes": [
+    "20 exact whole Japanese visual fields now use authored aligned RestaurantReading",
+    "20 stale whole-field variants return no readings",
+    "Existing source selector guards, geometric coordinates, asset bytes, canonical source31 and all JA12 translations unchanged",
+    "Only 11 imageEvidence file hashes refreshed; original candidate relation, semanticReviewed and all review flags preserved"
+  ],
+  "validation": {
+    "command": "node scripts/restaurant/check-prior-technical-visual-readings.cjs",
+    "exactFields": 20,
+    "authoredKanjiSpans": 96,
+    "changedTextRejects": 20,
+    "actualSourcePictureJa12ThreeWidthSsrRenders": 156,
+    "eslint": "PASS",
+    "sourceCoverageValidator": {
+      "status": "BLOCKED_BY_PREEXISTING_SPARSE_EVIDENCE_ABSENCE",
+      "command": "node scripts/source-coverage-v2/check.cjs docs/ssw-workspace/source-coverage-v2/restaurant.json",
+      "code": "MISSING_EVIDENCE",
+      "firstMissingPath": "assets/restaurant/royal-weekly-20261107/week03/handwash-motion-atlas.webp",
+      "detail": "24 exact referenced source-region and review artifacts materialized; remaining prior image evidence files are outside sparse checkout. This is not a whole-registry PASS. All11 current TSX imageEvidence hash substitutions remain exact; source/review/candidate statuses unchanged."
+    }
+  },
+  "ledgerChanges": [
+    {
+      "pointer": "/knowledgeUnits/87/imageEvidence/0/sha256",
+      "knowledgeId": "rst31-hygiene1-f-danger-band",
+      "path": "src/components/restaurant/RestaurantWeek03TechnicalFigures.tsx",
+      "before": "f73c48795e087647bff1cfcd9fdc0c35a47a40e782ed190493712e8cc60bd326",
+      "after": "d1d18ac84ee8799880b51672b85de5789e29f4dcac137e85eee78b976496e02f"
+    },
+    {
+      "pointer": "/knowledgeUnits/88/imageEvidence/0/sha256",
+      "knowledgeId": "rst31-hygiene1-f-process-transitions",
+      "path": "src/components/restaurant/RestaurantWeek03TechnicalFigures.tsx",
+      "before": "f73c48795e087647bff1cfcd9fdc0c35a47a40e782ed190493712e8cc60bd326",
+      "after": "d1d18ac84ee8799880b51672b85de5789e29f4dcac137e85eee78b976496e02f"
+    },
+    {
+      "pointer": "/knowledgeUnits/1096/imageEvidence/0/sha256",
+      "knowledgeId": "rst31-operations2-f093",
+      "path": "src/components/restaurant/RestaurantWeek07TechnicalFigures.tsx",
+      "before": "b8d17298f9262e9360ce67befa8fd68df8a3a0c6e07eb95e1355c2740a3afda2",
+      "after": "ed4f70540bd6089ed5628b1ad9d9c8a758dba466e5d967ba34a9ede2c99f6ff3"
+    },
+    {
+      "pointer": "/knowledgeUnits/1097/imageEvidence/0/sha256",
+      "knowledgeId": "rst31-operations2-f094",
+      "path": "src/components/restaurant/RestaurantWeek07TechnicalFigures.tsx",
+      "before": "b8d17298f9262e9360ce67befa8fd68df8a3a0c6e07eb95e1355c2740a3afda2",
+      "after": "ed4f70540bd6089ed5628b1ad9d9c8a758dba466e5d967ba34a9ede2c99f6ff3"
+    },
+    {
+      "pointer": "/knowledgeUnits/1122/imageEvidence/0/sha256",
+      "knowledgeId": "rst31-operations2-f119",
+      "path": "src/components/restaurant/RestaurantWeek07TechnicalFigures.tsx",
+      "before": "b8d17298f9262e9360ce67befa8fd68df8a3a0c6e07eb95e1355c2740a3afda2",
+      "after": "ed4f70540bd6089ed5628b1ad9d9c8a758dba466e5d967ba34a9ede2c99f6ff3"
+    },
+    {
+      "pointer": "/knowledgeUnits/1226/imageEvidence/0/sha256",
+      "knowledgeId": "rst31-cs2-f-c014",
+      "path": "src/components/restaurant/RestaurantWeek03TechnicalFigures.tsx",
+      "before": "f73c48795e087647bff1cfcd9fdc0c35a47a40e782ed190493712e8cc60bd326",
+      "after": "d1d18ac84ee8799880b51672b85de5789e29f4dcac137e85eee78b976496e02f"
+    },
+    {
+      "pointer": "/knowledgeUnits/1249/imageEvidence/0/sha256",
+      "knowledgeId": "rst31-cs2-f-c037",
+      "path": "src/components/restaurant/RestaurantWeek03TechnicalFigures.tsx",
+      "before": "f73c48795e087647bff1cfcd9fdc0c35a47a40e782ed190493712e8cc60bd326",
+      "after": "d1d18ac84ee8799880b51672b85de5789e29f4dcac137e85eee78b976496e02f"
+    },
+    {
+      "pointer": "/knowledgeUnits/1250/imageEvidence/0/sha256",
+      "knowledgeId": "rst31-cs2-f-c038",
+      "path": "src/components/restaurant/RestaurantWeek03TechnicalFigures.tsx",
+      "before": "f73c48795e087647bff1cfcd9fdc0c35a47a40e782ed190493712e8cc60bd326",
+      "after": "d1d18ac84ee8799880b51672b85de5789e29f4dcac137e85eee78b976496e02f"
+    },
+    {
+      "pointer": "/knowledgeUnits/1251/imageEvidence/0/sha256",
+      "knowledgeId": "rst31-cs2-f-c039",
+      "path": "src/components/restaurant/RestaurantWeek03TechnicalFigures.tsx",
+      "before": "f73c48795e087647bff1cfcd9fdc0c35a47a40e782ed190493712e8cc60bd326",
+      "after": "d1d18ac84ee8799880b51672b85de5789e29f4dcac137e85eee78b976496e02f"
+    },
+    {
+      "pointer": "/knowledgeUnits/1252/imageEvidence/0/sha256",
+      "knowledgeId": "rst31-cs2-f-c040",
+      "path": "src/components/restaurant/RestaurantWeek03TechnicalFigures.tsx",
+      "before": "f73c48795e087647bff1cfcd9fdc0c35a47a40e782ed190493712e8cc60bd326",
+      "after": "d1d18ac84ee8799880b51672b85de5789e29f4dcac137e85eee78b976496e02f"
+    },
+    {
+      "pointer": "/knowledgeUnits/1253/imageEvidence/0/sha256",
+      "knowledgeId": "rst31-cs2-f-c041",
+      "path": "src/components/restaurant/RestaurantWeek03TechnicalFigures.tsx",
+      "before": "f73c48795e087647bff1cfcd9fdc0c35a47a40e782ed190493712e8cc60bd326",
+      "after": "d1d18ac84ee8799880b51672b85de5789e29f4dcac137e85eee78b976496e02f"
+    }
+  ],
+  "files": {
+    "src/components/restaurant/RestaurantWeek03TechnicalFigures.tsx": "d1d18ac84ee8799880b51672b85de5789e29f4dcac137e85eee78b976496e02f",
+    "src/components/restaurant/RestaurantWeek07TechnicalFigures.tsx": "ed4f70540bd6089ed5628b1ad9d9c8a758dba466e5d967ba34a9ede2c99f6ff3",
+    "src/components/restaurant/RestaurantSourcePictures.tsx": "214669a79404ef8d32b925fee011d946f8bb259346134183fffff833689b8ba8",
+    "src/components/restaurant/RestaurantTechnicalVisualReadings.ts": "5d74c12cec9f087d00b9b5bc3df11550a7f253e03e86f359ca4a8fe2c8d486b7",
+    "src/data/restaurant/prior-technical-visual-readings.json": "1beeb8df44bf5592af79efb03253d9c0de7cf035540ac6c8d2a8a7467ccd548a",
+    "scripts/restaurant/check-prior-technical-visual-readings.cjs": "0bac223a8f26668df75c27356de096322dc726c253ac01462242b0b9c19144c7"
+  },
+  "acceptance": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "browserRenderReviewed": false
+  },
+  "remaining": [
+    "Week04 and week06 prior native visual reading fields",
+    "Prior cutting guide heading/caption and meal orientation readings",
+    "Actual browser/device and source acceptance distinct"
+  ]
+}
