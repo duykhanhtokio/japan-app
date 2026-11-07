@@ -29,7 +29,7 @@ import {TranslationText} from '@/components/tokutei/StudyAppearance';
 import {FoodLessonRuby} from './FoodLessonRuby';
 import {FoodRoyalOjtCycle} from './FoodRoyalOjtCycle';
 import {FoodRoyalChemicalSafety} from './FoodRoyalChemicalSafety';
-type PracticeFigure={id:string;lessonId:string;paragraphId:string;source:ImageSourcePropType;aspectRatio:number;width?:number;height?:number;lessonSourceHash?:string;altJa?:string;captionSupplementId?:string;captionSupplementSourceHash?:string};
+type PracticeFigure={id:string;lessonId:string;paragraphId:string;source:ImageSourcePropType;aspectRatio:number;width?:number;height?:number;lessonSourceHash:string;altJa?:string;captionSupplementId?:string;captionSupplementSourceHash?:string};
 const figures:PracticeFigure[]=[
  ...foodSourcePractice32,
  ...foodSourcePractice33,
@@ -42,13 +42,17 @@ const figures:PracticeFigure[]=[
  ...foodSourcePractice49,
  ...foodSourcePractice51,
  ...foodSourcePractice53,
- {id:'food-source-histogram-patterns',lessonId:'food-2-043',paragraphId:'p1',source:require('../../../assets/food-manufacturing/source-practice/histogram-patterns.webp'),aspectRatio:1584/1903},
- {id:'food-source-scatter-patterns',lessonId:'food-2-043',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/scatter-patterns.webp'),aspectRatio:1584/1423},
- {id:'food-source-risk-matrix',lessonId:'food-2-047',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/risk-matrix.webp'),aspectRatio:776/648},
- {id:'food-source-flow',lessonId:'food-2-041',paragraphId:'p5',source:require('../../../assets/food-manufacturing/source-practice/multi-input-flow.webp'),aspectRatio:1272/894,width:1272,height:894},
- {id:'food-source-normal-bands',lessonId:'food-2-042',paragraphId:'p1',source:require('../../../assets/food-manufacturing/source-practice/normal-bands.webp'),aspectRatio:1147/780},
- {id:'food-source-cause-bars',lessonId:'food-2-042',paragraphId:'p4',source:require('../../../assets/food-manufacturing/source-practice/cause-bars.webp'),aspectRatio:1101/711},
+ {id:'food-source-histogram-patterns',lessonId:'food-2-043',lessonSourceHash:'9619317927d194d061bec815a4ae09968e46a4f1c364fd5cbb1a1bd19d2c0f95',paragraphId:'p1',source:require('../../../assets/food-manufacturing/source-practice/histogram-patterns.webp'),aspectRatio:1584/1903},
+ {id:'food-source-scatter-patterns',lessonId:'food-2-043',lessonSourceHash:'9619317927d194d061bec815a4ae09968e46a4f1c364fd5cbb1a1bd19d2c0f95',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/scatter-patterns.webp'),aspectRatio:1584/1423},
+ {id:'food-source-risk-matrix',lessonId:'food-2-047',lessonSourceHash:'1d00c166b8bf70b88402c08467d9f6c45fe304fecca856761fa42b6ae6ee54ea',paragraphId:'p2',source:require('../../../assets/food-manufacturing/source-practice/risk-matrix.webp'),aspectRatio:776/648},
+ {id:'food-source-flow',lessonId:'food-2-041',lessonSourceHash:'37b8f67724801f136f0d3fae7655011a31ac7e6e2b7dd07b49fe8ac0613f9490',paragraphId:'p5',source:require('../../../assets/food-manufacturing/source-practice/multi-input-flow.webp'),aspectRatio:1272/894,width:1272,height:894},
+ {id:'food-source-normal-bands',lessonId:'food-2-042',lessonSourceHash:'6219428efea79e6df03f3b4335a377b6221a80d83130f4222539fcc70a02c8e5',paragraphId:'p1',source:require('../../../assets/food-manufacturing/source-practice/normal-bands.webp'),aspectRatio:1147/780},
+ {id:'food-source-cause-bars',lessonId:'food-2-042',lessonSourceHash:'6219428efea79e6df03f3b4335a377b6221a80d83130f4222539fcc70a02c8e5',paragraphId:'p4',source:require('../../../assets/food-manufacturing/source-practice/cause-bars.webp'),aspectRatio:1101/711},
 ];
+/** Every figure pins the lesson revision that its pixels/labels were accepted against. */
+export function foodSourcePracticeFigureMatches(lesson:FoodManufacturingLesson,figure:PracticeFigure){
+ return figure.lessonId===lesson.id&&typeof figure.lessonSourceHash==='string'&&figure.lessonSourceHash.length>0&&figure.lessonSourceHash===lesson.sourceHash&&lesson.paragraphs.some(p=>p.id===figure.paragraphId);
+}
 /** Keep inline/zoom descriptions tied to the same current source and caption revision. */
 export function foodSourcePracticeDescription(lesson:FoodManufacturingLesson,figure:PracticeFigure,language:string,showTranslation:boolean){
  const p=lesson.paragraphs.find(p=>p.id===figure.paragraphId);
@@ -75,7 +79,7 @@ export function FoodSourcePracticeVisuals({lesson,textColor,readingColor,languag
  const base=foodManufacturingLesson(lesson.id,lesson.level);
  if(!base||base.sourceHash!==lesson.sourceHash)return null;
  const translated=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
- return <>{figures.filter(f=>f.lessonId===lesson.id&&(!f.lessonSourceHash||f.lessonSourceHash===lesson.sourceHash)).map(figure=>{
+ return <>{figures.filter(figure=>foodSourcePracticeFigureMatches(lesson,figure)).map(figure=>{
  const p=lesson.paragraphs.find(p=>p.id===figure.paragraphId);if(!p)return null;
  const captionSupplement=figure.captionSupplementId?[...captionSupplements.sections,...caption43.sections,...caption44.sections,...caption45.sections,...caption46.sections,...caption47.sections,...caption48.sections,...caption49.sections,...caption51.sections,...caption53.sections].find(s=>s.id===figure.captionSupplementId&&s.lessonSourceHash===lesson.sourceHash&&s.sourceHash===figure.captionSupplementSourceHash):null;
  if(figure.captionSupplementId&&!captionSupplement)return null;
