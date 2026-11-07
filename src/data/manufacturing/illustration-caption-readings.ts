@@ -1,7 +1,7 @@
 import type {ManufacturingLesson} from './index';
 import type {SupplementalDiagram} from './supplemental-diagrams';
 import type {Source49Segment} from './source49-readings';
-import data from './illustration-caption-readings.json';
+import data from './source-bound-caption-readings.json';
 type Binding={sourceHash:string;titleJa:string;summaryJa:string;paragraphs:unknown};
 type Entry={lessonId:string;assetFile:string;width:number;height:number;sourceJapanese:string;parts:Source49Segment[]};
 const registry=data as {schemaVersion:number;revision:string;studyOnly:boolean;lessonBindings:Record<string,Binding>;entries:Record<string,Entry>};
