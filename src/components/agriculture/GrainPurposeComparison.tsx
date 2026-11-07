@@ -1,3 +1,4 @@
+import {AgricultureLateFourRuby} from './AgricultureLateFourRuby';
 import {Text,View} from 'react-native';
 import data from '@/data/agriculture/grain-purpose-comparison.json';
 import content from '@/data/agriculture/lessons.ja.json';
@@ -15,13 +16,14 @@ export function grainPurposeLabels(id:string,hash:string,revision:string|undefin
 /** Compare source crops and information axes without substituting rice/WCS or prescribing crop use. */
 export function GrainPurposeComparison({lessonId,lessonSourceHash,lessonRevision,level,language='ja',showTranslation=false,colors}:{lessonId:string;lessonSourceHash:string;lessonRevision?:string;level?:string;language?:string;showTranslation?:boolean;colors:Colors}){
  const ja=grainPurposeLabels(lessonId,lessonSourceHash,lessonRevision,level,'ja');if(!ja)return null;
+ const ruby=(field:string,value:string,style:{color:string;fontSize:number;lineHeight:number;fontWeight?:'700'})=><AgricultureLateFourRuby provider="grain-purpose" lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language="ja" field={field} text={value} style={style} color={colors.translationText}/>;
  const t=showTranslation&&language!=='ja'?grainPurposeLabels(lessonId,lessonSourceHash,lessonRevision,level,language):null;
  const text={color:colors.translationText,fontSize:16,lineHeight:27},box={borderWidth:1,borderColor:colors.border,borderRadius:8,padding:10,gap:8};
  const label=(i:number)=><View testID={`agri-grain-label-${i}`} style={{...box,flexGrow:1,flexBasis:140,minWidth:0,backgroundColor:'#f8f0df'}}><View accessible accessibilityLabel={ja.labels[i]} style={{alignItems:'flex-start'}}><Text style={{color:colors.translationText,fontSize:10,lineHeight:14}}>{kana[i]}</Text><Text style={text}>{ja.labels[i]}</Text></View>{!!t&&<Text testID={`agri-grain-localized-${i}`} style={text}>{t.labels[i]}</Text>}</View>;
- return <View testID="agri-native-grain-purpose" style={{...box,marginVertical:12,gap:14}}><Text style={{...text,fontSize:19,fontWeight:'700'}}>{ja.title}</Text>{!!t&&<Text style={text}>{t.title}</Text>}
-  {groups.map((group,index)=>{const id=data.paragraphIds[index];return <View key={index} testID={`agri-grain-comparison-${index}`} style={box}><Text style={{...text,fontWeight:'700'}}>{ja.paragraphTitles[id]}</Text>{!!t&&<Text style={text}>{t.paragraphTitles[id]}</Text>}
+ return <View testID="agri-native-grain-purpose" style={{...box,marginVertical:12,gap:14}}>{ruby('title',ja.title,{...text,fontSize:19,fontWeight:'700'})}{!!t&&<Text testID="agri-grain-purpose-localized-title" style={text}>{t.title}</Text>}
+  {groups.map((group,index)=>{const id=data.paragraphIds[index];return <View key={index} testID={`agri-grain-comparison-${index}`} style={box}>{ruby(`paragraphTitle:${id}`,ja.paragraphTitles[id],{...text,fontWeight:'700'})}{!!t&&<Text style={text}>{t.paragraphTitles[id]}</Text>}
    <View accessibilityRole="image" accessibilityLabel={(t||ja).paragraphTitles[id]} style={{gap:10}}>{group.map((row,j)=><View key={j} testID={`agri-grain-comparison-row-${index}-${j}`} style={{flexDirection:'row',flexWrap:'wrap',gap:10}}>{row.map(i=><View key={i} style={{flexGrow:1,flexBasis:140,minWidth:0}}>{label(i)}</View>)}</View>)}</View>
-   <Text style={text}>{ja.paragraphs[id]}</Text>{!!t&&<Text style={text}>{t.paragraphs[id]}</Text>}
+   {ruby(`paragraph:${id}`,ja.paragraphs[id],text)}{!!t&&<Text style={text}>{t.paragraphs[id]}</Text>}
   </View>;})}
   <Text style={{...text,fontSize:14}}>AGR-S2 · PDF p.71 / p.69 · PDF p.72 / p.70</Text>
  </View>;

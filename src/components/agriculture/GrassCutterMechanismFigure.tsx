@@ -1,3 +1,4 @@
+import {AgricultureLateFourRuby} from './AgricultureLateFourRuby';
 import {Text, View} from 'react-native';
 import Svg, {Circle, Defs, Ellipse, G, Line, LinearGradient, Path, Rect, Stop} from 'react-native-svg';
 import data from '@/data/agriculture/grass-cutter-mechanism-figure.json';
@@ -62,6 +63,7 @@ function RotationConcept(){return <Svg width="100%" height={230} viewBox="0 0 36
  </Svg>;}
 export function GrassCutterMechanismFigure({lessonId,lessonSourceHash,lessonRevision,level,language='ja',showTranslation=false,colors}:Props){
  const ja=grassCutterMechanismLabels(lessonId,lessonSourceHash,lessonRevision,level,'ja');if(!ja)return null;
+ const ruby=(field:string,value:string,style:{color:string;fontSize:number;lineHeight:number;fontWeight?:'700'})=><AgricultureLateFourRuby provider="grass-mechanism" lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language="ja" field={field} text={value} style={style} color={colors.translationText}/>;
  const t=showTranslation&&language!=='ja'?grassCutterMechanismLabels(lessonId,lessonSourceHash,lessonRevision,level,language):null;
  const text={color:colors.translationText,fontSize:16,lineHeight:27};
  const label=(i:number,reading?:string)=><View style={{gap:3}}>{!!reading&&<Text style={{...text,fontSize:11,lineHeight:16}}>{reading}</Text>}<Text style={{...text,fontWeight:'700'}}>{ja[i]}</Text>{!!t&&<Text style={text}>{t[i]}</Text>}</View>;
@@ -73,7 +75,7 @@ export function GrassCutterMechanismFigure({lessonId,lessonSourceHash,lessonRevi
   </View>
   {label(3)}
   <View testID="agri-hammer-vertical-plane" accessible accessibilityRole="image" accessibilityLabel={`${(t||ja)[4]}。${(t||ja)[5]}`} style={{gap:6}}><RotationConcept/>{label(4,'たてに かいてんするめん')}{label(5,'くさを こまかく くだく')}</View>
-  <Text style={text}>{ja[6]}</Text>{!!t&&<Text style={text}>{t[6]}</Text>}
+  {ruby('label:6',ja[6],text)}{!!t&&<Text testID="agri-grass-mechanism-localized-limit" style={text}>{t[6]}</Text>}
   <Text style={{...text,fontSize:13}}>AGR-S2 · PDF p.50 / p.48</Text>
  </View>;
 }
