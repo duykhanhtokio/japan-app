@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import {Image,Text,View,type ImageSourcePropType} from 'react-native';
 import translations from '@/data/kaigo/royal-technical-labels.json';
 
-type Kind='brain'|'respiratory';
+type Kind='brain'|'respiratory'|'muscles';
 type Point={anchor:[number,number];target:[number,number]};
 /** Percent coordinates on each independently authored 1536x1024 base. Endpoints are manually source-checked. */
 export const royalTechnicalLeaders:Record<Kind,Point[]>={
@@ -13,6 +13,15 @@ export const royalTechnicalLeaders:Record<Kind,Point[]>={
   {anchor:[5,60],target:[50,56]}, // midbrain above pons
   {anchor:[5,76],target:[47,68]}, // pons ventral bulge
   {anchor:[5,92],target:[52,82]}, // medulla below pons
+ ],
+ muscles:[
+  {anchor:[6,22],target:[21.42,23.83]}, // deltoid front shoulder
+  {anchor:[6,34],target:[25,26.85]}, // pectoralis major front chest
+  {anchor:[6,46],target:[20.44,32.32]}, // biceps brachii front upper arm
+  {anchor:[6,68],target:[25.39,58.59]}, // quadriceps front thigh
+  {anchor:[94,28],target:[78.52,32.22]}, // triceps back upper arm
+  {anchor:[94,53],target:[73.31,47.27]}, // gluteus maximus back buttock region
+  {anchor:[94,73],target:[74.54,58.98]}, // biceps femoris outer back thigh
  ],
  respiratory:[
   {anchor:[5,6],target:[18,34]}, // nasal cavity in side view
@@ -30,7 +39,7 @@ export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=fa
  const tr=(translations as Record<string,typeof ja>)[language]??ja;
  const bilingual=(original:string,translated:string)=>tr===ja?original:original+' / '+translated;
  const labels=ja[kind].map((label,i)=>bilingual(label,tr[kind][i]));
- const view=kind==='brain'?bilingual(ja.brainView,tr.brainView):bilingual(ja.respiratoryView,tr.respiratoryView);
+ const view=kind==='brain'?bilingual(ja.brainView,tr.brainView):kind==='muscles'?bilingual(ja.musclesView,tr.musclesView):bilingual(ja.respiratoryView,tr.respiratoryView);
  return <View testID={`kaigo-royal-${kind}`} style={{width:expanded?1000:'100%'}}>
   <Text style={{fontSize:16,color:'#243d4d',padding:8}}>{view}</Text>
   <View onLayout={event=>setWidth(event.nativeEvent.layout.width)} style={{width:'100%',aspectRatio:1.5}}>
@@ -49,7 +58,7 @@ export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=fa
   <View style={{padding:8,gap:6}}>
    {labels.map((label,i)=><Text key={i} style={{fontSize:16,color:'#243d4d'}}>{i+1} · {label}</Text>)}
    {kind==='brain'&&<Text style={{fontSize:15,color:'#243d4d'}}>{bilingual(ja.brainstem,tr.brainstem)}</Text>}
-   <Text style={{fontSize:14,lineHeight:21,color:'#526674'}}>{bilingual(ja.scope,tr.scope)}</Text>
+   <Text style={{fontSize:14,lineHeight:21,color:'#526674'}}>{kind==='muscles'?bilingual(ja.musclesScope,tr.musclesScope):bilingual(ja.scope,tr.scope)}</Text>
   </View>
  </View>;
 }

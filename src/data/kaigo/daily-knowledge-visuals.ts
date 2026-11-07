@@ -29,6 +29,12 @@ const sources: Record<string, ImageSourcePropType> = {
   grooming: require('../../../assets/kaigo/daily-fix-20261031/grooming.png'),
 };
 
+type DayFigureOverride={assetPath:string;assetSha256:string;width:number;height:number;rights:string;aiVisualReview:string;altJa?:string};
+const dayOverrides:Record<string,Record<string,DayFigureOverride>>=data.dayFigureOverrides;
+const daySources:Record<string,ImageSourcePropType>={
+ '15:muscles':require('../../../assets/kaigo/royal-weekly-20261107/week03/day15-muscle-regions-controlled.webp'),
+};
+
 export function knowledgeFiguresForDay(day: number) {
   const binding = data.days.find(d => d.day === day);
   const lesson = binding && japaneseLessonMetadata[binding.lessonKey];
@@ -36,9 +42,13 @@ export function knowledgeFiguresForDay(day: number) {
   return binding.figureIds.flatMap(id => {
     const figure = data.figures.find(f => f.id === id);
     const section = figure && japaneseMasterSections[figure.sourceSectionId];
+    const assetOverride=dayOverrides[String(day)]?.[id];
+    const sourceOverride=daySources[`${day}:${id}`];
     return figure && section && sources[id]
       && japaneseMasterRevision(section) === figure.sourceRevision
-      ? [{ ...figure, source: sources[id], aspectRatio: figure.width / figure.height }] : [];
+      && (!assetOverride || sourceOverride)
+      ? [{ ...figure,...assetOverride,source:sourceOverride??sources[id],
+          aspectRatio:(assetOverride?.width??figure.width)/(assetOverride?.height??figure.height) }] : [];
   });
 }
 
