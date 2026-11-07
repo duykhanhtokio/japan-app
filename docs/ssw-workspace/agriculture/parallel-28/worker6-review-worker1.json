@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "reviewerWorker": 6,
+  "authorWorker": 1,
+  "status": "ai_peer_review_complete_with_required_patch",
+  "sourcePacketSha256": "ee6ace2d4ccf207659c6aba278eefddf4063a079317ff40b321ad0563061a09c",
+  "scope": "8drafts_against_exact_canonical_paragraphs_all452existing_question_stems_and_relevant_full_alternatives",
+  "decisions": [
+    {
+      "questionId": "agr-1-m02-q01",
+      "decision": "accept",
+      "reasonJa": "本文agr-rice-p1がイネという植物と米という収穫後の利用物を明確に分ける。既存はイネの分類、もみ殻除去、用途であり、この二つの名称が指す対象そのものを問う正答は未出。四択の正答は一つで、本文外の栽培・加工条件を追加していない。",
+      "patches": [],
+      "relatedQuestionIds": [
+        "agr-1-w01-q01",
+        "agr-1-w01-q02",
+        "agr-1-w01-q03"
+      ]
+    },
+    {
+      "questionId": "agr-1-m02-q02",
+      "decision": "accept",
+      "reasonJa": "玄米から白米にする精米は、既存agr-1-w01-q02のもみ殻除去、agr-ricework-weekly-q12のもみすり・くず米調整と別の工程。既存選択肢に精米という語は出るが、その語が選択肢にあることだけで全工程の操作を既出扱いにしない。今回の作業表は工程を玄米到達後へ固定し、脱穀・乾燥・もみすりの曖昧さを避けている。",
+      "patches": [],
+      "relatedQuestionIds": [
+        "agr-1-w01-q02",
+        "agr-ricework-weekly-q12",
+        "agr-par12-general-q03"
+      ]
+    },
+    {
+      "questionId": "agr-1-m02-q03",
+      "decision": "accept",
+      "reasonJa": "常緑・落葉の分類に使う観察対象を葉の性質として選ぶ操作は、既存の常緑果樹名を列挙する操作や地域傾向を選ぶ操作とは異なる。資料本文p1に直接根拠があり、名称の置換で同じ例を増やした問題でもない。",
+      "patches": [],
+      "relatedQuestionIds": [
+        "agr-1-w01-q07",
+        "agr-1-w01-q08"
+      ]
+    },
+    {
+      "questionId": "agr-1-m02-q04",
+      "decision": "accept",
+      "reasonJa": "苗のそろい方は既存機械植え問題にも条件として出るが、本問は比較的狭い場所での育成効率という未出の利点と苗品質を同時に記録する。既存の本畑の利用期間短縮は本畑を占める期間、今回は育苗時の場所の使い方で、対象指標が異なる。二軸四択は一つだけ本文に対応する。",
+      "patches": [],
+      "relatedQuestionIds": [
+        "agr-shared-w02-q22",
+        "agr-shared-w02-q23",
+        "agr-shared-w02-q24"
+      ]
+    },
+    {
+      "questionId": "agr-1-m02-q05",
+      "decision": "revise",
+      "reasonJa": "異なる固定種を親とする交配の生成関係は、別名・表面加工との軸・雑種強勢という既存の主目標と区別できる。源頁対照済み部分解決記録もこの基礎を含む。ただし原案の表面加工・袋の仕分けという誤答は作業範疇が離れていて容易すぎるため、親と子の混同、固定種の増殖と交配の混同、物理混合という誤概念へ絞る。正答位置2は維持する。",
+      "patches": [
+        {
+          "field": "optionsJa",
+          "before": [
+            "二種類の種を同じ袋に混ぜ、その混合物を一代目とする。",
+            "固定種の表面を加工し、その加工物を一代目とする。",
+            "異なる固定種をかけ合わせ、その一代目を得る。",
+            "固定種を袋ごとに分け、その区分名を一代目とする。"
+          ],
+          "after": [
+            "異なる固定種をかけ合わせ、親に使った固定種をF1と呼ぶ。",
+            "同じ固定種をそのまま増やし、その種子をF1と呼ぶ。",
+            "異なる固定種をかけ合わせ、その一代目を得る。",
+            "異なる固定種の種子を袋の中で混ぜ、その混合物をF1と呼ぶ。"
+          ],
+          "reasonJa": "生成関係を誤解した学習者にとって、同じ説明範囲の選択肢として比較できるようにする。"
+        },
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "種子を袋の中で混ぜることと、交配して一代目を得ることは異なります。",
+            "表面の加工と交配による由来を混同しています。",
+            "本文は、異なる固定種をかけ合わせてF1種子を得る仕組みを説明しています。",
+            "保管や区分の方法を変えても、交配による一代目を得た説明にはなりません。"
+          ],
+          "after": [
+            "親に使った固定種と、交配によって得られた一代目を取り違えています。",
+            "固定種をそのまま増やすことを、異なる固定種の交配による一代目と同じには扱いません。",
+            "本文は、異なる固定種をかけ合わせてF1種子を得る仕組みを説明しています。",
+            "二種類の種子を混ぜることと、交配して一代目を得ることは異なります。"
+          ],
+          "reasonJa": "変更後の各誤概念を個別に説明し、採種権利・後代の性質へ話を広げない。"
+        }
+      ],
+      "relatedQuestionIds": [
+        "agr-par08-seed-graft-q01",
+        "agr-par08-seed-graft-q03",
+        "agr-par21-g5-q04"
+      ]
+    },
+    {
+      "questionId": "agr-1-m02-q06",
+      "decision": "accept",
+      "reasonJa": "育苗と定植の順序を問う既存agr-shared-w02-q21には苗床が誤答として出るが、育苗する場所の名称を独立に答えさせてはいない。本問は作業名ではなく場所名と対象を明確にし、根鉢・株間・条間という異なる対象の語を選び分ける。既存地床育苗の加温方法とも別の知識である。",
+      "patches": [],
+      "relatedQuestionIds": [
+        "agr-shared-w02-q21",
+        "agr-2-w03-q12",
+        "agr-1-m01-q24"
+      ]
+    },
+    {
+      "questionId": "agr-1-m02-q07",
+      "decision": "accept",
+      "reasonJa": "ポット苗とセル苗の根鉢と地表の高さの差が、それぞれの段落p3/p5に明記されている。既存取り出し方と横方向のうね中央位置とは別の縦方向の配置。設問は本文の掲載図の良い例という範囲を保持しており、作物共通の深さ指示・実技認証・数値処方にはしていない。部分解決記録もこの源図限定の深さ説明を含む。",
+      "patches": [],
+      "relatedQuestionIds": [
+        "agr-par08-seed-graft-q02",
+        "agr-par08-seed-graft-q04"
+      ]
+    },
+    {
+      "questionId": "agr-1-m02-q08",
+      "decision": "accept",
+      "reasonJa": "うね上の横位置、根鉢の縦位置、苗の傾きは異なる幾何学的な確認対象である。既存q04の誤答に傾ける例は出るが、主目標はうね中央の位置。本問では位置・深さと分けて姿勢を確認するp6の内容を直接扱い、q07とも対象軸が異なる。許容角度や矯正手順は追加していない。",
+      "patches": [],
+      "relatedQuestionIds": [
+        "agr-par08-seed-graft-q04",
+        "agr-1-m02-q07"
+      ]
+    }
+  ],
+  "summary": {
+    "accept": 7,
+    "revise": 1,
+    "exclude": 0,
+    "draftQuestions": 8,
+    "completeForm": false
+  },
+  "review": {
+    "independentAiReviewed": true,
+    "humanReviewed": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "freshOriginalPdfVerified": false,
+    "globalCapacityFor800Certified": false
+  },
+  "inputFileSha256": {
+    "docs/ssw-workspace/agriculture/parallel-28/worker1.json": "ee6ace2d4ccf207659c6aba278eefddf4063a079317ff40b321ad0563061a09c",
+    "src/data/agriculture/lessons.ja.json": "d83275f9d09b2239fcd2416448d0d8179c1d400298f29b93c25dc24bdeac7574",
+    "src/data/agriculture/weekly-checks.ja.json": "06023b72dd6f5997a9c908b3a6f16824166be3118dedafa97abdf41a7d441a86",
+    "src/data/agriculture/mock-exams.ja.json": "43d51b4be787251ab2f8e60d50bcab031242ac1bee3c30d09a9e2c2945aa303c",
+    "docs/ssw-workspace/agriculture/knowledge-ledger.json": "a5ca69fae5f864189d9c42d8d6066be2bcd34d00f17d7f457908ce011ee6c790"
+  },
+  "limits": [
+    "The source references are existing source-checked canonical prose, not newly inspected PDFs.",
+    "Peer acceptance concerns eight local objectives, not complete form validity or cross-worker final deduplication.",
+    "Original author packet and all product files remain unchanged."
+  ]
+}

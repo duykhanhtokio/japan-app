@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "owner": "agri_3",
+  "status": "awaiting_independent_ai_review",
+  "id": "agr-recognition-sowing-patterns-v1",
+  "assetKey": "sowing-patterns",
+  "titleJa": "種の配置で三つのまき方を見分ける",
+  "altJa": "真上から見た同じ大きさの土面を三つ並べています。左のばらまきは面に散らばる種、中央のすじまきは一列の種、右の点まきは離れて並ぶ数粒ずつの集まりです。",
+  "observationJa": "種の色や大きさではなく、置かれる位置を比べます。ばらまきは面全体に散らばり、すじまきは一列に並び、点まきは数粒の集まりが間隔を置いて並びます。",
+  "limitJa": "配置を比較する模式図です。描いた粒数、種の大きさ、間隔、密度、覆土の厚さを指定するものではありません。発芽条件を満たすことや出芽率は示しません。確認した元図は2号資料のもので、1号の認識項目は閉じません。",
+  "labelsJa": [
+    "ばらまき",
+    "すじまき",
+    "点まき"
+  ],
+  "scopeLevels": [
+    "2"
+  ],
+  "sources": [
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 14,
+      "printedPage": 12
+    }
+  ],
+  "sourceItemIds": [
+    "AGR-A10-GENERAL-0353",
+    "AGR-A10-GENERAL-0354",
+    "AGR-A10-GENERAL-0355"
+  ],
+  "lessonIds": [
+    "agr-sowing-design"
+  ],
+  "lessonSourceHashes": {
+    "agr-sowing-design": "511c1053ee5965b87f76c4f4d4cb7bbb6a49ab84aef2d3e3279b9897b9be6818"
+  },
+  "paragraphIds": [
+    "agr-sowing-design-p1",
+    "agr-sowing-design-p2",
+    "agr-sowing-design-p3"
+  ],
+  "knowledgeIds": [
+    "AGR-K-SOWING-DESIGN-01",
+    "AGR-K-SOWING-DESIGN-02",
+    "AGR-K-SOWING-DESIGN-03"
+  ],
+  "width": 1200,
+  "height": 720,
+  "assets": {
+    "svg": {
+      "path": "/workspace/scratch/018c0b6e29b8/japan-app/assets/agriculture/recognition/sowing-patterns-v1.svg",
+      "sha256": "63887fd47e7b98a662510573c410668dc1390708b9b1b210105bdaabdf55ff9d",
+      "bytes": 5065
+    },
+    "webp": {
+      "path": "/workspace/scratch/018c0b6e29b8/japan-app/assets/agriculture/recognition/sowing-patterns-v1.webp",
+      "sha256": "6a5fe02bff458bcab6d34a360eccd2e795c97900923c1df03e24eb52fb20d92f",
+      "bytes": 28040,
+      "encoding": "losslessWebP RGB"
+    }
+  },
+  "sourceVerification": {
+    "originalPdfPath": "/workspace/scratch/018c0b6e29b8/agri12-original-sources/耕種農業全般 特定技能2号.pdf",
+    "freshSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+    "matchesInventory": true,
+    "renderPath": "/workspace/scratch/018c0b6e29b8/agri14-sowing-qa/source-s2-p14.png",
+    "renderSha256": "c0102d0920d569e03cb90887de1b51bd155ef04de3b678cabbbd8903d2381a9c",
+    "viewedThisAuthoring": true,
+    "printedPageVisuallyVerified": 12,
+    "renderCommand": "pdftoppm -f14 -l14 -r140 -singlefile -png originalS2 source-s2-p14"
+  },
+  "geometry": {
+    "viewBox": [
+      0,
+      0,
+      1200,
+      720
+    ],
+    "view": "independenttopdown soilpanels, notsourceperspective",
+    "panels": [
+      {
+        "key": "broadcast",
+        "labelJa": "ばらまき",
+        "bounds": [
+          28,
+          157,
+          360,
+          445
+        ],
+        "soilBounds": [
+          48,
+          291,
+          320,
+          281
+        ],
+        "labelAnchor": [
+          208,
+          247
+        ],
+        "labelFontSize": 72,
+        "seedCountForDrawingOnly": 12
+      },
+      {
+        "key": "row",
+        "labelJa": "すじまき",
+        "bounds": [
+          420,
+          157,
+          360,
+          445
+        ],
+        "soilBounds": [
+          440,
+          291,
+          320,
+          281
+        ],
+        "labelAnchor": [
+          600,
+          247
+        ],
+        "labelFontSize": 72,
+        "seedCountForDrawingOnly": 12
+      },
+      {
+        "key": "hill",
+        "labelJa": "点まき",
+        "bounds": [
+          812,
+          157,
+          360,
+          445
+        ],
+        "soilBounds": [
+          832,
+          291,
+          320,
+          281
+        ],
+        "labelAnchor": [
+          992,
+          247
+        ],
+        "labelFontSize": 72,
+        "seedCountForDrawingOnly": 12
+      }
+    ],
+    "seedShape": "identicalcircle r10 fill#563b26 stroke#352518; onlypositions differ",
+    "broadcast": "12fixedirregularpositions spanningsoilarea, noone line/clusters",
+    "row": "12fixedpositions y430, x470+24i; diagramcoordinatesnotmillimeters",
+    "hill": "threegroups of4atcentersx892/992/1092,y430,offsets±12; noactualseedcountprescription",
+    "phone330": {
+      "renderSize": [
+        330,
+        198
+      ],
+      "methodLabelDisplayPx": 19.8,
+      "bodyFooterDisplayPx": 13.2,
+      "seedDiameterDisplayPx": 5.5,
+      "visuallyChecked": true
+    },
+    "landscapeHeight230": {
+      "intrinsicWidthAtCap": 383.3333333333,
+      "methodLabelDisplayPx": 23,
+      "noCrop": true
+    }
+  },
+  "provenance": {
+    "creation": "originalcontrolledSVGnativegeometryanddeterministicJapanesetext; exportedviaInkscapePNGthenPillowlosslessWebP",
+    "sourceArtCopied": false,
+    "imagegenUsed": false,
+    "rawPdfTextOrImagePublished": false,
+    "compositionDifference": "Newtopdown equallysized soilareas, reorderedbroadcast/row/hill, no sourceobliquebeds/yellowheaders/redcircles/brackets/cropicons",
+    "font": {
+      "family": "Noto Serif CJK JP",
+      "path": "/root/.local/share/fonts/NotoSerifCJKjp-Regular.otf",
+      "sha256": "d9854c7a8ef170b5a7932558856fd64eb8de0b007cd823fed6f9f514ad2803d3"
+    },
+    "export": "Inkscape; PillowWEBPlosslessmethod6",
+    "svgNativeText": true,
+    "rasterLabelsDeterministic": true
+  },
+  "priorFigureDistinction": "AgricultureCourse.SowingDiagram ispreexistingnativeboxes/dots. Thisasset suppliesnewindependent spatialcomparison withsharedscale/seedstyle, renderedasactualfigure; doesnotclaimoldproseboxesasnewknowledge. Rootwilldecideplacement, no runtimeeditsbyauthor.",
+  "recognitionScope": "Candidateoriginalspatialrecognitionmaterialforthe3S2sourceoccurrences only, subjecttoindependentAIreview; notinteractiveassessment, germinationconditions, toolrecognitionoruniversalspacing/density",
+  "validation": {
+    "svgXMLParse": true,
+    "panelCount": 3,
+    "equalSoilBounds": true,
+    "sameSeedStyle": true,
+    "equalDrawingCountsNoCountLabels": true,
+    "webpDecode": true,
+    "originalSizeViewed": true,
+    "phone330Viewed": true,
+    "glyphsVisibleNoClipping": true,
+    "humanReviewed": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "deviceTested": false
+  },
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceTested": false
+}

@@ -1,0 +1,1520 @@
+{
+  "schemaVersion": 1,
+  "batch": "batch11",
+  "baselineCommit": "0c902c0d",
+  "reviewerRole": "surface_gaps independent AI reviewer, separate from thai_surface author",
+  "reviewDate": "2026-10-26",
+  "specialty": "surface",
+  "locale": "th",
+  "scope": "Direct canonical Japanese semantic comparison of all234 translated fields in surface lessons036–042 and weeklycheck6. No new Japanese authoring or official mocks.",
+  "status": "pass_after_author_corrections",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "sourcePdfBodyReviewedByThisReviewer": false,
+  "runtimeBrowserTestedByThisReviewer": false,
+  "counts": {
+    "lessonLocalePairs": 7,
+    "questionLocalePairs": 12,
+    "translatedLessonFields": 126,
+    "translatedQuestionFields": 108,
+    "totalTranslatedFieldsCompared": 234
+  },
+  "inputs": {
+    "stagingPath": "docs/ssw-workspace/manufacturing/batch11-th-surface.json",
+    "stagingSha256": "afb1ae89724062c9fbbf6a355209f4a535c905ff41e44bfc3637d5309c0605e0",
+    "canonicalPath": "src/data/manufacturing/surface.json",
+    "canonicalSha256": "ff0ec6a54743fa707f5d0cf258bf6d1a3f36d24b1a816d09b11c336608619770"
+  },
+  "checks": {
+    "exactSourceHashes": true,
+    "exactScopeIds": true,
+    "paragraphIdsAndOrder": true,
+    "japaneseTermsReadingsAndOrder": true,
+    "safetyItemCounts": true,
+    "fourOrderedOptionsAndReasons": true,
+    "allFieldsNonempty": true,
+    "draftFlagsPreserved": true,
+    "allTechnicalQuantitiesAndFormulaeCompared": true,
+    "cautionsAndConditionalClaimsPreserved": true
+  },
+  "corrections": [
+    {
+      "paths": [
+        "lessons/mfg1-surface-lesson-040/paragraphs/section-1/text",
+        "questions/mfg1-surface-weekly-06-q05/options/1"
+      ],
+      "issue": "Zinc consumption wording added complete depletion rather than the ongoing consumption in Japanese.",
+      "resolution": "Removed complete-depletion word หมด; author propagated same correction to matching question option.",
+      "finalVerified": true
+    },
+    {
+      "paths": [
+        "lessons/mfg1-surface-lesson-040/safety/0"
+      ],
+      "issue": "Corrosion products phrasing could mean corrosive products.",
+      "resolution": "Explicit ผลิตผลจากการกัดกร่อน identifies products formed by corrosion.",
+      "finalVerified": true
+    },
+    {
+      "paths": [
+        "questions/mfg1-surface-weekly-06-q01/options/2"
+      ],
+      "issue": "定品 label omitted from correct option, despite question asking which of三定.",
+      "resolution": "Explicit ตามหลักกำหนดสิ่งของ restores fixed-item principle alongside definition.",
+      "finalVerified": true
+    }
+  ],
+  "semanticReviewNotes": [
+    "Communication/5S: retained facts-vs-inferences distinction, repeat-back, no unapproved disposal and full location/item/quantity definitions.",
+    "4M/PDCA: retained QCDS safety, chronological changes as candidate causes rather than proof, three-real principle and evaluation after action.",
+    "Worked defective-rate example10/200=4/80=5% remains exact, including denominator and no real-process acceptance rate claim.",
+    "QC plan/standard: retained applicable product/process/version/frequency/abnormal-action requirements and no unilateral document changes.",
+    "QC tools: retained check-sheet/Pareto/histogram/control/scatter/cause-effect distinctions, correlation vs causation and control vs specification limits.",
+    "Corrosion: retained zinc sacrifice/consumption, environment-dependent copper protection, natural-vs-controlled anodic film and no chemical recipe inference.",
+    "Ohm: retained E=RI/I=E/R/R=E/I, fixed conditions, unit prefixes200mA=0.200A/80mV=0.080V and ideal-resistor vs real-bath scope.",
+    "Electrical numerical example120mV/30mA=4Ω and verification4Ω×0.030A=0.120V preserved.",
+    "Series/parallel: retained common quantities, positive finite resistance scope, Kirchhoff signed-loop sum/current balance, exact4Ω+8Ω/24V/2A/8V+16V and6Ω||3Ω/6V/1A+2A/2Ω examples.",
+    "All12question stems,48options and48ordered rationales compared directly; false distractors and correct-option meanings retained. Existing generic correct-option rationales were translated faithfully, not rewritten."
+  ],
+  "lessonIds": [
+    "mfg1-surface-lesson-036",
+    "mfg1-surface-lesson-037",
+    "mfg1-surface-lesson-038",
+    "mfg1-surface-lesson-039",
+    "mfg1-surface-lesson-040",
+    "mfg1-surface-lesson-041",
+    "mfg1-surface-lesson-042"
+  ],
+  "questionIds": [
+    "mfg1-surface-weekly-06-q01",
+    "mfg1-surface-weekly-06-q02",
+    "mfg1-surface-weekly-06-q03",
+    "mfg1-surface-weekly-06-q04",
+    "mfg1-surface-weekly-06-q05",
+    "mfg1-surface-weekly-06-q06",
+    "mfg1-surface-weekly-06-q07",
+    "mfg1-surface-weekly-06-q08",
+    "mfg1-surface-weekly-06-q09",
+    "mfg1-surface-weekly-06-q10",
+    "mfg1-surface-weekly-06-q11",
+    "mfg1-surface-weekly-06-q12"
+  ],
+  "fieldLedger": [
+    {
+      "path": "lessons/mfg1-surface-lesson-036/title",
+      "japaneseSha256": "fff03c266ba0b2207b5409ae6f4e2ef13ddc522f09993a42da310295f2fab98e",
+      "thaiSha256": "ae2c0b9750d7ecbff0caa868f5a9a713cde05cbb8226a8f9679a4443c16e8c81",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/objective",
+      "japaneseSha256": "f9c35ecaec1db8430fef5be40f14815cfe410dc4a3668080503ecfc5ffd9052d",
+      "thaiSha256": "245b28e3875d46066585792957b5ce3c38576f750f1d92e4c62b27b21a4f2573",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/activity",
+      "japaneseSha256": "735e727ee055aad58e798547972c53138f77564778727613311bdc5acecc4656",
+      "thaiSha256": "810cf5d6380ba674d2993f67abc2a0a6a4865d994fa89c64993332dd498d46ca",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/summary",
+      "japaneseSha256": "38e424f7eb873de93bb7393122dd2e99fc6192b9cc99473c760887c3c5d752fd",
+      "thaiSha256": "0f5c4dad3c413ea5e30922f62983db8e48a3ab2da65981046378dc5bd24351fa",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/paragraphs/section-1/title",
+      "japaneseSha256": "57465f62785fb684979271fbba4a2bf8d239db3fa5ac495947c80524d2bc7817",
+      "thaiSha256": "f4dc16674bedea7bc5da3f5396a20dc8c7a02af7f8d122170c1742a62d7de780",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/paragraphs/section-1/text",
+      "japaneseSha256": "917369db7f3544a21f7a92798998394812ce2c209e426a91a5b2672e1c779db7",
+      "thaiSha256": "8264e72f3dc7f757fa959ea5248be772f59548976afbc312bfddab6acc93bdaf",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/paragraphs/section-2/title",
+      "japaneseSha256": "3b6759823717527b82b5ab0aff72e62850cd8ac21473674af00a0d5bef09f2f2",
+      "thaiSha256": "ef1b3d11c9162824ac9035935f3ae9de6e5037e3a740707132bc64c81e2266f8",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/paragraphs/section-2/text",
+      "japaneseSha256": "9197530f3e3159be0755dd4370812dfb8db9815fb34eec56dd3a4f651d01831e",
+      "thaiSha256": "1c83c30fb11ff957095144a705bfe7fa75030e0e13d8eabf286af44546d39e8d",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/paragraphs/section-3/title",
+      "japaneseSha256": "95339bf94f64f2d141135d8315a8d4c3ba1fc34ef68061a802682242c4656756",
+      "thaiSha256": "20abdf413df8684037dbf221f84d659eb4528afe89ccba154efa5447e8ca20ee",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/paragraphs/section-3/text",
+      "japaneseSha256": "7c80a5314264668bc983ccc8950406483354a32059015a245c6626ed34544273",
+      "thaiSha256": "4dbe312c10d8e79b7afa724ade24d06f72d1e3400c37b3fa81f3067579285206",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/paragraphs/example/title",
+      "japaneseSha256": "564c96615f5265ae3758146e8ea6964fad067bb34efffa3998bbbcf550830fcc",
+      "thaiSha256": "7b1465dfc353c908d95c265ac663d4b6bd0cca62defb538f393dc6544d68c88a",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/paragraphs/example/text",
+      "japaneseSha256": "28b7598296898d912b434ed0d0979aa870fec05ce2bfb95b7d846785d01be5f9",
+      "thaiSha256": "938bb9261f0bb9d529d7e9d6928ed2b1dfe340276ed2f5d45e7c8f953533a045",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/terms/0/meaning",
+      "japaneseSha256": "55dade8928073ca4773b82a26570761fae32fc71f7d137210c92ded194d8d561",
+      "thaiSha256": "7c4e1bf4d8624e26b810f941773a40e7020c1c0439c0092101ff1f28b6e15966",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/terms/1/meaning",
+      "japaneseSha256": "4c073bc0912dd032f73077406544b73ca027d9cb088d0937627e729a01622397",
+      "thaiSha256": "848b7508eeae5243987ae6a20ea0f9978affa7dbbfc5f2514077b5ca4d53f791",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/terms/2/meaning",
+      "japaneseSha256": "83fecc0aee0fb1323d2c5efda2e83996cea024916414b083166e9bbd7f345b4f",
+      "thaiSha256": "a211bd01ff2195390810ca1ea284f0e15a92b86031701b811a1f5e319a260a2a",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/terms/3/meaning",
+      "japaneseSha256": "6e72429a3af5b7a3bd4f28645e7f9aaaa3cd8981c9fbd3b38508bb0c8b1597a2",
+      "thaiSha256": "8db489568d702526a7de88a644a51e0a6b7b71bc613e07a3e5e2a0ac8b967a4b",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/safety/0",
+      "japaneseSha256": "bc40c02549656577a0fe9a77657fccb0b1fa64e6bc898f168a94eadd8fdd019c",
+      "thaiSha256": "f9300e4cfee1f802fc7311874e08d6bb2bdcd395b6ce0cbe42b8c7ae25560673",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-036/safety/1",
+      "japaneseSha256": "6f5230feab1934bec7250a202ea0a30f41244126272297d2a3cdc5b156ddba86",
+      "thaiSha256": "fefd572b98ec0bff8be7627a72a6182d23736a4480896f6c91deb9e8a72c5760",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/title",
+      "japaneseSha256": "da98a25070e522f8afcda26cea88adf67543ec5577cfddabcf58fe4333b6788c",
+      "thaiSha256": "967d47d59567b7afaa44a543530c01b20be842971fa4c2f60e83bb76b1aaa938",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/objective",
+      "japaneseSha256": "2487a642f8308fd2af24c6028673e66d7dba581a25124244b36558e9eb49db2b",
+      "thaiSha256": "8359e653917b5b6cbb2a3615bf7a0f7b6e60c9a4c1eed88cfa53d7645f5c4951",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/activity",
+      "japaneseSha256": "60627b78245f933abb40e43435f6f716ccd4c2140877a98f8aeaef5c3ce09110",
+      "thaiSha256": "1c88133edce9083fb85fba554f29ebda268afe10f79480461659a672e25b3995",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/summary",
+      "japaneseSha256": "95f34551519d8fb9a111919e65c15638284da2d9aef2f6cd8f657e091f7b317e",
+      "thaiSha256": "749f62687d95173603e0406e3450f6817780a7d6ad4b28e756ea65d70c6f839b",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/paragraphs/section-1/title",
+      "japaneseSha256": "84515ccd0e91a875b474784d26ce9b18257e9e82290f8e8d513a6f69e4d58b3f",
+      "thaiSha256": "65c2ddffba9539093d4bc608217813cdc5a459224a608b359155771206feef82",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/paragraphs/section-1/text",
+      "japaneseSha256": "51ef421018d4c271cf8856273710111388d62ac8f76f7734b57cfd76694aa276",
+      "thaiSha256": "f6b7a512e300ad91421e7745b09fdb848dcd197c70af706284d45a23f66f507a",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/paragraphs/section-2/title",
+      "japaneseSha256": "685157a0743d97b75b101dc1537a217245d15991e8fa818462aa6151214d2929",
+      "thaiSha256": "b8805b81026085b6b38e60209d5e3553b2a8afc3e06b9bdc29b2f8912b059d33",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/paragraphs/section-2/text",
+      "japaneseSha256": "ca5b6bf040fba16626600fe3c86740d3093c537a2dbeca4dfe7448d0b8c54cc4",
+      "thaiSha256": "57c1e353ae6f522cc7aa18b376129e91529839c065b2619020766ee4a77fcff2",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/paragraphs/section-3/title",
+      "japaneseSha256": "226fc58f033e60cdb898c9239cd97a796b167ae5dde49fb3fc0324a1933925b0",
+      "thaiSha256": "2161251ed13658799bb85ef202e28435d92488c0e3249f8bb4015f9df8568f51",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/paragraphs/section-3/text",
+      "japaneseSha256": "38a98642db28de353abca75e2d61e974669dde290391c8e3eae95709bc9e606a",
+      "thaiSha256": "1c5d742de5b7fa7b146b788c4879f946e4cf2fade28e5d27061c2ad6cc41f6cb",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/paragraphs/example/title",
+      "japaneseSha256": "305cfe5e5bb5f2f320e5422e5aef874b9417197b44b69eafadb5f7d9139aace7",
+      "thaiSha256": "007cd46ef04203c84ce7547aad694119b4b4b7b5655c35ded3eff53b0e3336fa",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/paragraphs/example/text",
+      "japaneseSha256": "56f8b5a241b897dff7e871b4b415b82fb81f6fac14f66b5499691da4a18c5c56",
+      "thaiSha256": "5f50c924d1f208e0916ec1dca3827994dee632d86d5736c1d9049d77120328a8",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/terms/0/meaning",
+      "japaneseSha256": "060a6c288352feba679f30d6fce61fe959879fbe634de3395d874ef81972501a",
+      "thaiSha256": "92582d83ed9facfb740f7b7e80a813627fec0ea728b8bcb5177a9eb80a5efb74",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/terms/1/meaning",
+      "japaneseSha256": "7807d76c069230e49aa53d0734ecec1fe9790629c74127445507929251dfb6cb",
+      "thaiSha256": "5114f3e56506f0e785e963a7514058a1318eba4ef0923fa58284501bda58c8cc",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/terms/2/meaning",
+      "japaneseSha256": "8fd9290249ed306a8f114365d5248061bd213753eccb473d8b954816632042fa",
+      "thaiSha256": "dea0c801ae491bace7f5305a3d5808d3e39f03e07d47179d0821eaa7be6c8c4f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/terms/3/meaning",
+      "japaneseSha256": "39fe518e407d538028d7dd2a2b188a081374871a49b3d674da65bde533f879cc",
+      "thaiSha256": "32fb49db4b9a63286896fb70794e2c30cc67a705038bc6cc71262efbb5de6a0b",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/safety/0",
+      "japaneseSha256": "a4e1b655c7d214277c72a6d0efe11b1e7a2a394540409347ad4fd1dc1fca46be",
+      "thaiSha256": "78552ed975ace4a07c31de087a303d0b67b24c66a297f018586922357f7ddabe",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-037/safety/1",
+      "japaneseSha256": "446b4d53ce4c55cc4e2d86de8a07a83c0f0458aaadb9daa641f071c8b2c14314",
+      "thaiSha256": "e91f28ba9afe4f96800deb4fb24ddc5ebfa51c4f54232703f71b6046bc719b5d",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/title",
+      "japaneseSha256": "b13d1343ac7fe70266076843a5a79c17a8aa06e2725d3bcbcde03eeae65f04ed",
+      "thaiSha256": "d82affdeb98f88e156b2089e767602fb5164650dbe8ee95d525064fbfa70516f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/objective",
+      "japaneseSha256": "16ac782e5a1d5349205b016f70f02e58d5a37f43a60b314a57fdd5bb4a1889ff",
+      "thaiSha256": "24875553b85da8d799241a91c0cc21f538cb67abe9ceaad8d775a7f252343a8b",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/activity",
+      "japaneseSha256": "3050e0c5a2c9ee979a973ccd2b5e5b097097eb4f867e204f71ecdd3ef34a4878",
+      "thaiSha256": "d930a1f138d766140de8dde90483b4fe388e4f256ab2082b6e5e90ebf9d6eea6",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/summary",
+      "japaneseSha256": "f81b0ce9bf1456e9caa37f9556ab7442c649ee35b9e7465ce0de85c816cdeda3",
+      "thaiSha256": "4cc0a864814b89bec02891b9abe8108bcb418c5bfd1f2ac24fc12187b01b4718",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/paragraphs/section-1/title",
+      "japaneseSha256": "42946897cf06db4ce150428d1f18f353f5b7ecd7c28ff1e428c10a8b3f918c33",
+      "thaiSha256": "18eada9c15f939017fb8957aa85e01a8a0fb42ce7aa3336c0a6d6a721a2cb7d8",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/paragraphs/section-1/text",
+      "japaneseSha256": "bb55df1ee05ab3c21f7d58a88f728e9d3d19599522a180c07e504170d11b1049",
+      "thaiSha256": "05f1ab1937c2d11a9214ca0b3d67d856a2664ab6f9ddde00de2f4f8fc09d4f5c",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/paragraphs/section-2/title",
+      "japaneseSha256": "e41a4f22dd34e74780899b08a76785b724d5b650b6a8b25f84cd79c0aa0d3617",
+      "thaiSha256": "57fedb7226f01e332a3fbf4d35ca46e0e4c2ebd8e11dbc2a8018c25904fdf9fb",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/paragraphs/section-2/text",
+      "japaneseSha256": "d91a28b528afe0394522849ab88c44f82412affc27c379d63cb0b0c50fe04f14",
+      "thaiSha256": "03cbc4633bb436bd63eb0bd9f7bbecc1a8a74032c90841f8334f665a074e1087",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/paragraphs/section-3/title",
+      "japaneseSha256": "a4531c503d3febcc0da30cebb345ddacb48bbe8905fccb7779965f44e9fcba66",
+      "thaiSha256": "1e61951f8b97d04f865923bc1bbca49cabb9515af5d439e1533bf727820f4aa5",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/paragraphs/section-3/text",
+      "japaneseSha256": "635b29dd9782f6df7aa3231811c06e638874f8baef84dd2d6cff0523c9f2f4fe",
+      "thaiSha256": "970664e78b4101e9af5fef830f0a3919129449223b678190ca3534ba309d90cd",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/paragraphs/example/title",
+      "japaneseSha256": "dc8da35e516eb045513c97dcc79726e62be52a99fd076427f820593b8f535567",
+      "thaiSha256": "1ee464a8b25a9ea6c4316da38b7cef8461733f6890e46c5e2997e196a7f25ec7",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/paragraphs/example/text",
+      "japaneseSha256": "e0a5ad7779cffd8608f9832b432e33cde8b138896f445e69474e81152e1415a0",
+      "thaiSha256": "d7b9345106944ceff25d1dbebaadccc383962a04d1162f21d82f80f99324966f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/terms/0/meaning",
+      "japaneseSha256": "1e59893cf0e92e86b630cff44e25fe38d71ec0cb1151130e9e1999447c6bc7a4",
+      "thaiSha256": "463f8735693fe842b580813ed325edc04de0719ea5f0f3e8c252009bb3a66507",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/terms/1/meaning",
+      "japaneseSha256": "e1919eea795bebaeff44605b50d9b9532073857bab8792e907bbd10ce5b3fe8b",
+      "thaiSha256": "e7007581d03354b8fb4bf3e2c7433f3afad7a1378c1e6bb4e7e4fd43bfe4f388",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/terms/2/meaning",
+      "japaneseSha256": "6dc94715435ca6d15640f823f9a3ef002b302444db23d22226520ede89b37c97",
+      "thaiSha256": "869481de5355aa7143b7777d9c3b58c442eac2219dfa5705aafeb89e3a259054",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/terms/3/meaning",
+      "japaneseSha256": "aa9021103202bfc70ab9dea4042d119db8652d95cc5d006d566a6d7ea369a2f0",
+      "thaiSha256": "969dd166c0821d2bb6d581fdd958d5a6e6c2ecb6de5e4c6b47fceab4888a3fbd",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/safety/0",
+      "japaneseSha256": "7ce325ce3732aa49cf28a4ead77c59983d23319cbc6d3b37eaf5539be480c52a",
+      "thaiSha256": "b98a2a5b687fbf840f344c768be768a90363fe366b6bb5ab204d921f51115ef7",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-038/safety/1",
+      "japaneseSha256": "26c2fcf95ed70ed878744b85ecc171b842174bbe54f65db5f8c54b2529ff5253",
+      "thaiSha256": "ec30ccf26451ce6f9380861e610ce275ee6df0298bbb12c44e98633f56251c0d",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/title",
+      "japaneseSha256": "8b7997541344fce4cbe11f179e0247613e9b852eaeac8f1dfd2729c4f669275d",
+      "thaiSha256": "b4a068ca297e1f641467618d4976bc1a4d9a55c7f8a95f7e5a6e5b8f2f45670b",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/objective",
+      "japaneseSha256": "d6265a2907c407a33d1210330013ecbe96c4fbdfc977153afd2722f87bbc6f7a",
+      "thaiSha256": "92ab5afb9969e7753f4aa0e36468ddb9f65ffd296fb03d2fb7269b8201556601",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/activity",
+      "japaneseSha256": "e885a3aa455495960a3f13b13227e494cd70f3bbc082d55ab6fe153b2f82d953",
+      "thaiSha256": "05b7e7cb93c26a94db9f4a66f35ce0223bce78cf861e5fa47015ef698d2e0b9e",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/summary",
+      "japaneseSha256": "794708c38197f0298d84b7d136350edccfb8ef70e06adf59ed2fe5e1d3f72617",
+      "thaiSha256": "0d3a48afd5e8f60de6bcf5afcbd6ef6a024057ffd4fbfba053f5045766387fae",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/paragraphs/section-1/title",
+      "japaneseSha256": "bea890584c3013d72905ce561e0056ca425c8466d20226ee87e681039ca702f4",
+      "thaiSha256": "1a94888e39c503e635bf7a6f9419096cafaca9951c40cd1cade3c1fe27c8f26a",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/paragraphs/section-1/text",
+      "japaneseSha256": "9ea371d89788dc76f128950cae4b4ed85be88dde1ed82fe17abb1827403c128c",
+      "thaiSha256": "9c1206c06a8a9211952e9c6576e8c49a178e6c294ba6b993ffb1e5bf6c1c21e7",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/paragraphs/section-2/title",
+      "japaneseSha256": "668b2826800b473d7507699872b843d28c0a7fa2159c054918bd74b07f2d8e53",
+      "thaiSha256": "79da4951f22944b212e8c82cf34a587bd8db7bd0dc37ebee1de8a0a8fdf002fb",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/paragraphs/section-2/text",
+      "japaneseSha256": "4dbee36f8c29b63dee8225390da9b083f28c94c9df3f090f0d83480aad6786be",
+      "thaiSha256": "11acdd47ed4be0065e8877c8cb4294c7db5f5e8f0a13e1dadf53dea51a4ad757",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/paragraphs/section-3/title",
+      "japaneseSha256": "b85c843fe893f349c48458373b5e3dcc9be3402c6870cf30f152efc3c51d948b",
+      "thaiSha256": "c584a35f4e95a52392c74650597a8628789315e69c7556ceaf096c8ff4467887",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/paragraphs/section-3/text",
+      "japaneseSha256": "8fa29d26883932169fa19b8d2913a3b7e6ed38dac1aca0cbe846a5c8905dca60",
+      "thaiSha256": "171e9387548323a5dacb1234af5ff51d468f93b928bb9a7bcb26fa8fc6e30179",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/paragraphs/example/title",
+      "japaneseSha256": "4ac997bd18367f9b4dee54ff8176e2ff0b2329df30b5952a85856c368eaab231",
+      "thaiSha256": "aa2231223b26b3437f1ef4265b8f1013a0cab630979b15ab9b1eb6b1af0b3b66",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/paragraphs/example/text",
+      "japaneseSha256": "56cc931b0200fda4dc671123f8477c61651ade4c093dc5294eceb7db71ea8ce1",
+      "thaiSha256": "c7758ec7339757d9315af96bd0281c37d21626d2affbc97f38848db458bf337e",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/terms/0/meaning",
+      "japaneseSha256": "8d6f40700eb2fa6a7310d62248819927d11df3067feb835cfaa9fa72152a196a",
+      "thaiSha256": "cc9911e23a6cb98393f9b8d05ba7b0e0ce7ae2327f83ebe82869c602d5d268d4",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/terms/1/meaning",
+      "japaneseSha256": "4750d0bba1e7883c4af5f2e3eb3ddc4de88d7067ad2c4445c9673b39e1fa9431",
+      "thaiSha256": "7027e218c7dfec36ddb7930c5aa2528299e91a4ff7406253c877912951bc257d",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/terms/2/meaning",
+      "japaneseSha256": "fbb4c3b693d0e582af5a7f79a9ec0df025013b01f2cc243f87ee0623817422ff",
+      "thaiSha256": "c7fefa609b7dbbf7a5af57f2004f21b3df0d81a02158f53177159cc8d609c516",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/terms/3/meaning",
+      "japaneseSha256": "d04a228850c637617e4d5c30638e176bb3e8b1e4a88904ca5f435c94d1d88e22",
+      "thaiSha256": "3d176f02e1f80bff94bc1efb4ff11801bbab3636c49442a64eac8a20bda91c79",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/safety/0",
+      "japaneseSha256": "5f0efd4e6cd6b82f4fc3c05e7132769f18405b5ab8f400fa012ae338ac5d3097",
+      "thaiSha256": "7c7ce3bfcb01073f8dec25d2da28f04b6bb119840e643c8427570d3c799c9a17",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-039/safety/1",
+      "japaneseSha256": "4941af88e66efee2758712c83c1790afb00d97d474defbd9ad291a28807352b3",
+      "thaiSha256": "7d3811500bbdce6f459fe8770d9766a04839d314d6e0afc25a34bfdeb0c1842d",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/title",
+      "japaneseSha256": "e832c7a4f87228e67cb604ef9b1ed3dc643688619f91385296b95a0ba6d14852",
+      "thaiSha256": "9ef4db23e6bd7d8b250a856203e8e9c92c17a5c433c694a3c03d0cf16e044f9d",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/objective",
+      "japaneseSha256": "24444500eaed886da1a9fa7ab9f1d876c0dee40cbb0a6e222f7582acbd425963",
+      "thaiSha256": "4f6b485181a66d80adeb789cfbefa8bbb639f954ad326d9e8d4a2951071c89b9",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/activity",
+      "japaneseSha256": "39b225e0674c032cac0ac3c6c145a35c9a3ee590f5fb903af373dd17ce2fcfa4",
+      "thaiSha256": "fa1921a744c459ed62f36b104d008ee43619b3ca6a2d67bc03e966325a1402c1",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/summary",
+      "japaneseSha256": "b369067b91e64c6f3127261973c3daecb550ffbc53b9a6f32de59fde63baab29",
+      "thaiSha256": "cc9045dba7aa1126afbcc2f0dba28ac9177eb3809415707bdecf13eef88be51b",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/paragraphs/section-1/title",
+      "japaneseSha256": "a2f04d9d3baf60d20a9bb9f1feafe8b329f7288674d5ea59c98d58de7808c515",
+      "thaiSha256": "315350e0361f7a9be2de4c983437e72d6bd3fde29d5a40e22505d9eff971f25b",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/paragraphs/section-1/text",
+      "japaneseSha256": "216cd66b8fc0d0202891d5dbe3f53bc0b7e69b8b262a83fa4dad20da02e38051",
+      "thaiSha256": "3e7acd911ab74c4395eb0d8f2c580f7b9895c3d70c8696b7e4c0fdfdb5038dac",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/paragraphs/section-2/title",
+      "japaneseSha256": "33e2903df936216959699229e438ee90d309fe4f0e2bd5690ec2763f6f1f41ee",
+      "thaiSha256": "6c27c133c03deb1cd607036a79648720454f6a642c7dc7e377c8950e34aeeb6f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/paragraphs/section-2/text",
+      "japaneseSha256": "548ffb37efef1249df08ccb4a051b8dbf53e39152f15242dffac0a669f93d56d",
+      "thaiSha256": "623f0868008a8cdb1ae5e25fb9317b0b945c0a3cb3b7b64c1dd1f3d81a8d2264",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/paragraphs/section-3/title",
+      "japaneseSha256": "4a9f5186577f27642c235d666c7b133905d773e681d432b70a6bd562f0fca561",
+      "thaiSha256": "2de95c9d6a233321dbb4d664a9798877d9ae4f8cfef39d11513462af009959b4",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/paragraphs/section-3/text",
+      "japaneseSha256": "22bd7e6890acb684c6fa4a53368705a7c0dd0d79d054a2840b6a762ad248366d",
+      "thaiSha256": "ae455c12d76037a5c30442a58354f8d5b1cb03a56a36bc002b22565178e8e34a",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/paragraphs/example/title",
+      "japaneseSha256": "21c77b32b7206d0d7935c9c2c07c8007eacfc06edf70733c28822e5850ee7551",
+      "thaiSha256": "9c663543b40869d8efc8f4cbb286f92f49e6082aa8476acc628d1f875eff34d5",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/paragraphs/example/text",
+      "japaneseSha256": "0f370a0bce099f8311f33e91b50e45948bfe03257e17e0dbebc696093ba532d2",
+      "thaiSha256": "da7418fbd59307693ae75c848d3069092d30cc1462e9f84838e38803896645f7",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/terms/0/meaning",
+      "japaneseSha256": "7d56c38070352be86ea8a5d8a86df24eb9b363784c78b91181a50661d374ea87",
+      "thaiSha256": "d89fddea6721b23c04e8e156b21ef1e25677ea5e1b4c0ecc0c638eaebe4a9bf4",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/terms/1/meaning",
+      "japaneseSha256": "d451d3130f7449ddf51aa9969dd297dce0b20cff1617a969865398d6701515b1",
+      "thaiSha256": "1d80e5bc0c3f7cad4a3ffe1a16c2c2a58c9b22e34bb5acc0cdc4bdbeeec7f990",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/terms/2/meaning",
+      "japaneseSha256": "21a4d327ef1eb6ca47681a075c35d2c6beaefae048667198f26da635b43b1acc",
+      "thaiSha256": "8697dcb9aec36e81384ad55d517ba88d9ca7aed8dcaec817b89e18b0e33eb608",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/terms/3/meaning",
+      "japaneseSha256": "d28675594f5a038c80a9b53eb0ca03ff4e18388fff6dfb1f5a76e7601d139825",
+      "thaiSha256": "eeaa1f2e306de8a80719e826150213c83f39c97d1204e0709e14dd6bb3edf61b",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/safety/0",
+      "japaneseSha256": "5aad9c59f9101512b54af2f83bf51c657dd5895fdabcda22edab6db86319b57f",
+      "thaiSha256": "991b62c767febb5ac610a537066e3f4212cfdfa215c5a2c5423b0dc1a3f35264",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-040/safety/1",
+      "japaneseSha256": "43c5adf9df76bb9c28bbd69f89525b550b0a69d0617c30655fb564c89f11efb3",
+      "thaiSha256": "ab7fb4ed2ecda6c1b55f1dbf7e63e27ee316a5df75331a126cd4ea66c0040ec3",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/title",
+      "japaneseSha256": "b3b047e923b098b4c4e2c48a05e3bafe9ca4cd5768f7b0779a0014b051448921",
+      "thaiSha256": "6bcf6029bc97ba5520fcf84f276607b8096718f69a5eade7736c0525acc80892",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/objective",
+      "japaneseSha256": "728d131ad488d6722b8fa14fe09ba7e3147a8a06518fd595c933e99cd7c2a641",
+      "thaiSha256": "28fb22e2e76ebb72a2f78e1056752c99bbeadb48a177847a4522d6d1892854b5",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/activity",
+      "japaneseSha256": "4ba128a9a7c44253c9ed9c9fbbb075358c39a6324453b0b5ccd97c8eb6ba6d6c",
+      "thaiSha256": "1334256f9526288235d2497ec816b5ba647646e164efd0a6d4fbd923312943ba",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/summary",
+      "japaneseSha256": "0233a1de0ddd409adb6f9d6519397d64aabefe88a5e7ff3b0dc985e0e1789210",
+      "thaiSha256": "a23c26628af99e5a3d0813471b1156a3c95fd9acf70492e9ab5244a5636dac5d",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/paragraphs/section-1/title",
+      "japaneseSha256": "ca330e2e6c81f773089ea6db2f93426761b4f6890569638f33cfbdf54368a73f",
+      "thaiSha256": "d6411f65e9c45b90e28356d4b83b1c2477ffb2c6bf7787f48126477cf63d2d40",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/paragraphs/section-1/text",
+      "japaneseSha256": "3e2155b3ae7409408891aed35acf93b7ac36a6c280e14a526127f3352d897ecd",
+      "thaiSha256": "485b72e94c1fe060acb61d966af6ce1a222825bb7ec903cd05583db491e5061e",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/paragraphs/section-2/title",
+      "japaneseSha256": "255f5695a0624501fee024c3b28f939abbdd891fa46d9b286c0259ca4d40473d",
+      "thaiSha256": "5ab6035f454ef1442dae561e468818f87f64eff6e22b5ca1dd52b9ab1d75f2f3",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/paragraphs/section-2/text",
+      "japaneseSha256": "ddb87c86ad9346a0d6f85de241830629efa0328f878bd61cfe97efaad6f37245",
+      "thaiSha256": "ebca12aa6c6732cd17cdde4de9059bc38c4d5a2a25f9378979af0e19a80ebc32",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/paragraphs/section-3/title",
+      "japaneseSha256": "ccb87cc0a0934eb5418a8c2a60810ed3d3ae36ef2b2134e1f5cb23f868681278",
+      "thaiSha256": "68ee29e715db6ef89bb1845e11faad11121877e8993d75ee5e831497b07b71fd",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/paragraphs/section-3/text",
+      "japaneseSha256": "0c4299386390718d0b5e41e3bf1106c6ac432e1a38bb10fa807dc4428c9c0c29",
+      "thaiSha256": "962a99f8b01a8f1e2e68767b8bb0122fe45e0eb0bbfe32800763a09ee5931c19",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/paragraphs/example/title",
+      "japaneseSha256": "0345344b7546019ef6783ce1a77863367ad8674d1dd3dd13c66db0510c7eb690",
+      "thaiSha256": "06a055bb238b6488962533a42f43789250e6bca0393f29cb738ff37c97aec7b7",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/paragraphs/example/text",
+      "japaneseSha256": "da50c8a37e1d18f6f75bb65e86064cf813928fa15de02b9ce6780001ae7ccaca",
+      "thaiSha256": "600fc4003db9af109f5fdd6b7c4cb843fcf6c0c0f183b0e765e42cc76193d967",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/terms/0/meaning",
+      "japaneseSha256": "54cd0e1768c66b1e6fa7eb3884a8c67c5c21150f2f5a35de9f588037c7001290",
+      "thaiSha256": "fdc4c34446784ee8c59a94a2785b3c6485804875714ed5dbd4432751bb4f7bde",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/terms/1/meaning",
+      "japaneseSha256": "017e6aa210e4ae4dd2e8ea1a0ec027c2abb82f75381b5b14497e6bd22ad8964b",
+      "thaiSha256": "0306f4c400a0081bf6560ee67dd9bd40f2f64a5be277071b45c8bdf4a3c8ca09",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/terms/2/meaning",
+      "japaneseSha256": "9512233429b8b8e25fb2dbbe9d1eae1ee1e0ac8aa0a0b30d72676c7956fbe7aa",
+      "thaiSha256": "1d5d5443d04827ef34b183fdb5e78474a11a26a4ae9677fb79bac749a1be7654",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/terms/3/meaning",
+      "japaneseSha256": "83e880be1a705a1471397a29cad4c82e8b7ca87a0bf7e7b07ef1f2dc2b533e4b",
+      "thaiSha256": "f2a3da3baccf39664a1ae4626e2fb618caeb99f0ad4eaa3387a185f8653d3d3c",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/safety/0",
+      "japaneseSha256": "f79bcd19417bad05e5f311cfefefab64f85864b696bf615983e2c64d5e5b85b2",
+      "thaiSha256": "c1f489c685d5827e94943e8b0d0a030ed74e82274c082d96a2fbae6a2d87cdad",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-041/safety/1",
+      "japaneseSha256": "4e54417204c14c208d722d811fb6723d9cfbb521f5cc6f4951cd25f57cc5054e",
+      "thaiSha256": "b49e3e3e1f880251afd4ee6de9ee6e148eeda83e5b03a714771687a0f517f86b",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/title",
+      "japaneseSha256": "16eedf3032e3153f366ff22829c0b1748da35f3a02ad9a8380d1fdb6cb5cecc5",
+      "thaiSha256": "64857263fe109e6ee072fc37c158b756f75b93f8fafde63cc852111c0aa1c7bf",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/objective",
+      "japaneseSha256": "b5a9d313b35a95a922a8318610abc28ebec815a7f6a82f645cee5b50692d9cf7",
+      "thaiSha256": "0e89d83f0a81d970b08b4d78a8e32f3c37a7f105e750c20a152e6439be41e2af",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/activity",
+      "japaneseSha256": "bf02fd60fdbcb9263bccd2483a79ddd2c9137ceaedf263a0ebbce5f52f238efd",
+      "thaiSha256": "a9a4cf6e8e8209c8fcce473a18b94c2b830e50e981b82da965dd969f6ff96aa2",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/summary",
+      "japaneseSha256": "77dc186202ee48b086a8948ae4fb04a44da63eef8bdc9b170b5a012ee35652fe",
+      "thaiSha256": "1459a762b8aad588d0e554ded9bd9fa6385e4e429c4e1c846e08ee005e2351c5",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/paragraphs/section-1/title",
+      "japaneseSha256": "6e0323a1f402f4fcff32550f2321b3215df18d862b3c45331881b46e407ec497",
+      "thaiSha256": "6bd73950ea9bcb095b5b804de4a22e338c52f4ccf11df0bd23f9a6a5b7320ebf",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/paragraphs/section-1/text",
+      "japaneseSha256": "cba5abb330199ea2719cf54bfb5d75815b7bd69b253ac3c9e1fa49e9b0f1615f",
+      "thaiSha256": "17ec44586cfa1874bfc7fe3f4cef575d5683f6c59f2818b80096da2930fd2936",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/paragraphs/section-2/title",
+      "japaneseSha256": "1a3e7fbdbb20324edd26a8d804c2cf6f9ae65043ef4a80e86cbdc6dcd62a09e0",
+      "thaiSha256": "ed9fc6fc6236cd0e50603797622c0362d0b20561c71499f7ab7ce59cb295d2e8",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/paragraphs/section-2/text",
+      "japaneseSha256": "8d3ba3a2965657bec1f2d0135a732e8c7fcf01f6846db3e7a7396aafb2d9b2ef",
+      "thaiSha256": "d54e88c1817c98f7c43e92360909ecea88a216b56758e14f13228147425e09e1",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/paragraphs/section-3/title",
+      "japaneseSha256": "f570d72f802ee8b403c8327f1b209a051d4dac53f227a22be975b083c94ed2d1",
+      "thaiSha256": "70241665a866d5a127ecdc667461e6f506f0784169010784977eb6a423f8ff09",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/paragraphs/section-3/text",
+      "japaneseSha256": "fd776c8582621bc7561dcb7507d52afd5d54b7f0c520bf855dcc5b0ec4d6d2e3",
+      "thaiSha256": "f7315e1f22266a5a66af101c5b431607641524ed3764c948110cdae05e7f6b72",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/paragraphs/example/title",
+      "japaneseSha256": "58ba9c11b6d67a2b2c4dc977e4bdd15565b4a1037c064e183c87bb5b37a5a6fa",
+      "thaiSha256": "fc4f5fcf3a26018ec512c47e791494a2adcb9df21648890b459eb4e53e14eae3",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/paragraphs/example/text",
+      "japaneseSha256": "55377210dd19654e4be8253f44fb3b6e2ffd34b024c06811d5d2e0c097dca089",
+      "thaiSha256": "eda1451dd510def4d92c08db99da70e4d2f54e5e082ef246a041e40a3f070df0",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/terms/0/meaning",
+      "japaneseSha256": "0e80cf0ddaabddae4554d80b5bfa6ab01f7506824df720c329c62da7c903eb51",
+      "thaiSha256": "409c66fe5af9fe01f1bfa2b156bb7834f053e2c9c2c53b669adf5d9ba3951305",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/terms/1/meaning",
+      "japaneseSha256": "b7566ec9616f93417b0c86507271da08b3088c3ad9217e5b836fb9d286f3f6cc",
+      "thaiSha256": "26a4cb425922be3e430cfebf004ab4513d0581dc97ec1d18d2cabe29466b4cc4",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/terms/2/meaning",
+      "japaneseSha256": "2023d6181cd68e2f37e2cfafa357453e7cb30a185f7d9fbc18a34cace9c187da",
+      "thaiSha256": "91c31330580134ca0b7000f8fb3dd537dfb2e1b634109cb407e856ff626fcee5",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/terms/3/meaning",
+      "japaneseSha256": "d13d07eb5d0ffea3fe9e27573f85d68ca910cb2fb54d709508286af88a8f827e",
+      "thaiSha256": "5aa8514d5706c2b882fc08c0f0d170af37cf3f1fb91bb2d0d95e80af0ec81540",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/safety/0",
+      "japaneseSha256": "5e9af83d27c65a9ea3e41a9bccdf34c599c74a5d5a18f3dfc18ac8b1310d596f",
+      "thaiSha256": "6cab37462f0d87981e13ff9e6359a813183b871a5bac0a39b36043c2f9369867",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "lessons/mfg1-surface-lesson-042/safety/1",
+      "japaneseSha256": "fbe3594cfb7c7489d10b982c986a8ca214c2d9c44816a08406f33151f7f43c37",
+      "thaiSha256": "1440b158357c17b21d31e9b67f07da792d2cd60d652311b2fb698c751d0696e6",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q01/stem",
+      "japaneseSha256": "cbcd13f168e3ae165e60b0e501e0137aac916d344c25ae7b1e827938bfec3572",
+      "thaiSha256": "5b202e443e084df5e92f905fe84505f1c5289e79340e9d4f3df661cc4b02c07e",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q01/options/0",
+      "japaneseSha256": "1cc33a02b5deb08a0d794590f6ff92b94f95920f0888a9c1eb9d93787f1bf9bd",
+      "thaiSha256": "cf70288be1749b0c851078b7a395e8470d606567c049e4e857da3baea69d14cd",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q01/options/1",
+      "japaneseSha256": "447e621380c8bf3ab3a868a31ca9fbfa71ff39bda3bc5700550f60666ead6c28",
+      "thaiSha256": "150ef577a7c3fb88fada54398227e86fc76cc9b8a8462b588b05cb64c887f9b2",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q01/options/2",
+      "japaneseSha256": "1c37f020549823b20911617fe55878778e82d7ae946de96224ebe3eb8481874e",
+      "thaiSha256": "c11f1ea695c11d81299b81300d04659716ba81782ecada5bfd165645cce9b6d4",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q01/options/3",
+      "japaneseSha256": "5c88affd5ca39ccbcc5f9fff4985de3e72ffe5e78b17dbfba6cf30fb879a84fd",
+      "thaiSha256": "a4bf31ca7777983deaf9783e4bd72fbea68322370d801991a84eb99e7189f902",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q01/reasons/0",
+      "japaneseSha256": "9b61878e0f0c0c516de7d135a8abf7c543b7b6a28ab1193f7e331b34f750c146",
+      "thaiSha256": "c64495c0fc23cfd4142bfc8122ffd09ef04d0e35a826b386608626a2a1f52f65",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q01/reasons/1",
+      "japaneseSha256": "d70f3fb3b3ed66c9ca3077ba96106779b59a2e8f7a6a994d73a0203193cd8bce",
+      "thaiSha256": "ae14b2ff28fa8bdfa43a858bd557af1ba01be37bbbb1a585f8dee76b75770750",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q01/reasons/2",
+      "japaneseSha256": "1e5aa396564a082e63db53e9b6f2cb5511bd70c89910e936e6f99aee6efd7b51",
+      "thaiSha256": "ea1b166e58cf1ab8be53dc141910ba33b4d4dbaca1ab4db57aa1219ab477285f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q01/reasons/3",
+      "japaneseSha256": "8c6219d1d96d7dc82b006d5cef90618024ec3db2019af494b88e786c579b5c26",
+      "thaiSha256": "c19eb66ea8aac434fc0c885affa00bfab31e626ebc2b344213770c4f097be814",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q02/stem",
+      "japaneseSha256": "45e5e4cfc43e4d6dce2c0b11152801a2450eea0fc15f3ae6c0167dce71daa865",
+      "thaiSha256": "e86690ac281409cc0e99c7fea60aa6854744b93edbc949db13f2b2dfc7810d49",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q02/options/0",
+      "japaneseSha256": "16a196e5ebf780774cac6b443b9b1a9cc1aacd32ae5ad366ebe499a39ff05e04",
+      "thaiSha256": "28594709c985d62daa8144b4c7fc0d5bc8de8abdba516ef5a5ce3fc026c05bf8",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q02/options/1",
+      "japaneseSha256": "6051d341fc700ce7607ef73a89efcc5b9f25c066284708910371608c1e2de331",
+      "thaiSha256": "12c63d6d35ab9c2516aed68f74264aeef9fa29917e0c5569f3b55b14f7ae0677",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q02/options/2",
+      "japaneseSha256": "09f9efef872d4996fd810a5a2e9c75e5c04e6682c08be5474049f460b6b31a1e",
+      "thaiSha256": "0393f753b7162afcf1f3d5b0273b1f283d655fcf7b6dd55cff097e8b4e736a9c",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q02/options/3",
+      "japaneseSha256": "b7d3424d8dba1395962829c164f4d16bf7b22a1e2cbf25e041cd8b9896c53e5c",
+      "thaiSha256": "51978ca518ed4babe591872c5b830136a046a3bf9b47f3e538dfd4aad36368a2",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q02/reasons/0",
+      "japaneseSha256": "1e5aa396564a082e63db53e9b6f2cb5511bd70c89910e936e6f99aee6efd7b51",
+      "thaiSha256": "ea1b166e58cf1ab8be53dc141910ba33b4d4dbaca1ab4db57aa1219ab477285f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q02/reasons/1",
+      "japaneseSha256": "037a0a9f2e91394df823a003c8eba376e2d2b42a428adc73458700f7bbddcd0d",
+      "thaiSha256": "314a9e169e9df4b6c3e8a2ee4063eb5e3fb162fda6f769847af848ad18b58daf",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q02/reasons/2",
+      "japaneseSha256": "af4f75d773cf6af5a2c00c7e1601e6c6bf04ffe9c97106c95c64420ea36d51a8",
+      "thaiSha256": "bcd2a5df84ec0b8605cd0d428bc711b69926d7bf37ef7d1d305d416ed607055c",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q02/reasons/3",
+      "japaneseSha256": "b48dc0962cdf49719a0ee582ee85b8e12310099b4395ac630a2a73415c450ccd",
+      "thaiSha256": "440fa301f25e7b7d3b7755013ba17ee3a00b192ceae3f2142cae95db6b7db878",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q03/stem",
+      "japaneseSha256": "733bce113bc03781573a24d722ed7cc5d02de6d6b2c73a0dfde1fca89869ffcd",
+      "thaiSha256": "a54ce4a1ece21fa395aaabf15ea51dbd50340b324255141e38a705848996c84b",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q03/options/0",
+      "japaneseSha256": "78d00e80eb0d5d4bf628e2db90e4c6c6b9dc1cc23b8847075ca9ae93d0fb8b60",
+      "thaiSha256": "79d119f837658ea4fb38b5a7bd20b3dc9db48e374d882969ebae3a088e0b9c24",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q03/options/1",
+      "japaneseSha256": "c61a33a4455722ce1556eed3b2522c7ec89138bc3547118001fce30aa15c2caa",
+      "thaiSha256": "29bd9b387520d52a8ba6fe360bc1361d6cd0f798811f9d582136db09fe5f6c91",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q03/options/2",
+      "japaneseSha256": "e7fae8ebb04aa7d4d01feb4b831750152b49b6b25c6bd94c8a26e61850ba866a",
+      "thaiSha256": "e2d189a0f9cacf6087ec71953de1a100aa1ff4c70303f8dff1a64554430a96fb",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q03/options/3",
+      "japaneseSha256": "b0f0501bbaf72b5ea358fdc1aea641534a0a4e325386cf1544b0541242536cbe",
+      "thaiSha256": "5e0c0e7ea10a461ebaa3700f74eda5e72e24c21fa8c840b8839a64b3cdc5d4da",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q03/reasons/0",
+      "japaneseSha256": "42846a80e3c3d3e469ed0dec3057307813e8119764c2027b56c90ffa7e5701e6",
+      "thaiSha256": "846bb6a7713d20d37e0fc687f6c617e902449790e1b19bebf69c67c8cf90ed34",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q03/reasons/1",
+      "japaneseSha256": "1e5aa396564a082e63db53e9b6f2cb5511bd70c89910e936e6f99aee6efd7b51",
+      "thaiSha256": "ea1b166e58cf1ab8be53dc141910ba33b4d4dbaca1ab4db57aa1219ab477285f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q03/reasons/2",
+      "japaneseSha256": "8290a14d1a4b926cf531be849d15b87650d210926253bc813c02060d41979697",
+      "thaiSha256": "873d8b92596e07d57a09822a97a9cf837fa354084ee9ae12113c285fddee96fd",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q03/reasons/3",
+      "japaneseSha256": "b4652f2afb45e7fc1a67d559dcf80ef09c0ddf575019e493e1a177b63b895f6e",
+      "thaiSha256": "d10d3e77ec8161b541699bfb00f12c3729182ad183f5cb7cd92be45c47b84056",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q04/stem",
+      "japaneseSha256": "325ee5a1f1463071ae748cd64bb3c39e01f68a54e9419c64c003d99a572dc589",
+      "thaiSha256": "fdc83daafbb938b0b23763b7ab177a48ae9a8dd183c0e13c0f45556fbd406645",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q04/options/0",
+      "japaneseSha256": "e3cd57768c98fdb428f851a590d732f6506a8a4245dd28416cdea0ac34fb6061",
+      "thaiSha256": "033b0de2453146c945020751c5c13f09cea584701e1df757e37c151fe8335407",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q04/options/1",
+      "japaneseSha256": "9b389f444f56ddb3d5caed0389b31c8be59cf3df3605e69b637eb4a3b995fb44",
+      "thaiSha256": "362934049931ab5bf8b4c93966224e01ccc10a4cec8d5d813b0e99268ea4753b",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q04/options/2",
+      "japaneseSha256": "5516c53999dd290e13ba2a317b69036a0999572722bb334f58c16eecdbf76089",
+      "thaiSha256": "4979c3c094748ab6a08810f72c04817cafbf4a668310ef0016ca6f6384e73bff",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q04/options/3",
+      "japaneseSha256": "bc8602ee4e65a9f0c72fe238a24a0306c3059d57cdb45839b213dd7157194941",
+      "thaiSha256": "b2097f71fcaad188b40ee73e4af4417ae87955fdcc6b110289b801b853050878",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q04/reasons/0",
+      "japaneseSha256": "902de0feadd4eb16e78c78c201e299f04d27b3276cd8803eaa5afb218dd5e5f6",
+      "thaiSha256": "0119f7128f4593742f3f9f4d0fd48a535c47895d29ace0f1df2af194be6ce344",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q04/reasons/1",
+      "japaneseSha256": "dbb2db47058a6a76c6044668c88204e3e27f009f47770855c4299a6b9dd0af28",
+      "thaiSha256": "e48e3f35b3e8947ccf8104b93f975e6204a773157679e06842446a5203bf1f1a",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q04/reasons/2",
+      "japaneseSha256": "eea031d19051c5f6616b5f58ceb41cdd3ed294fc40e8dc3c68d27f0f15327bc7",
+      "thaiSha256": "82b8f39d13ab437b34854948f5818527401eb59833a5cdb3c7191440ebb9713e",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q04/reasons/3",
+      "japaneseSha256": "1e5aa396564a082e63db53e9b6f2cb5511bd70c89910e936e6f99aee6efd7b51",
+      "thaiSha256": "ea1b166e58cf1ab8be53dc141910ba33b4d4dbaca1ab4db57aa1219ab477285f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q05/stem",
+      "japaneseSha256": "cc1cdb8ff07006ef2cb7995c5d83197298c72535ae041e44d9b48b829bef8caa",
+      "thaiSha256": "f0fdcce03d0853cf56ab97d3f5167292aef9b923e5f2e31b2179258c3bf0328e",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q05/options/0",
+      "japaneseSha256": "409473b892e19063ef23b66b57b89bc3c50aa0a5858c34649006ec5e7346fe59",
+      "thaiSha256": "b0f383efd6c01e6fccbf41f343a81ad5859af4200d9c03cfaff4c4dd93262e72",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q05/options/1",
+      "japaneseSha256": "c7acf5a4bf0d6c64f876b963760bc2d9794b0d2aace26812e416a78fa7d784a0",
+      "thaiSha256": "80af412fdb49da60878d2ef3b1e468058b9d5b735891d1d2ded263a29bcfeea1",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q05/options/2",
+      "japaneseSha256": "871bf5a22ea5e0167c4579b2865d37eabf3ea35f3038e19c8e53132a1d0c79a2",
+      "thaiSha256": "35ea2bda28f38b3162d0250928865af9a94254bacd03bdc66cc9d70c37b8a866",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q05/options/3",
+      "japaneseSha256": "da049da6e80f12c6254fcbfdec513de9f69820c7fd838ba093e3d94c53b164fe",
+      "thaiSha256": "232b14db9b67cf0a82a2753352aefdeabd9bf80661d29e473b5ae8e5db354c64",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q05/reasons/0",
+      "japaneseSha256": "150c4bceaa504d551c034a5761d57077fec2904a483c048d90ae1879f0a0eed9",
+      "thaiSha256": "1557eb428bec58f7b5d18da7e88974e1ecba6fcc578576662ce2e6e6c1dac23b",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q05/reasons/1",
+      "japaneseSha256": "1e5aa396564a082e63db53e9b6f2cb5511bd70c89910e936e6f99aee6efd7b51",
+      "thaiSha256": "ea1b166e58cf1ab8be53dc141910ba33b4d4dbaca1ab4db57aa1219ab477285f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q05/reasons/2",
+      "japaneseSha256": "d4e2c50a0bf841ee23ec4defae480449446736576bdbb09c9ecd789ecf7cd6c9",
+      "thaiSha256": "bf1801be2ae5811c3142649609cfe5d5abaab9d1ee14b86901ca053ddb003740",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q05/reasons/3",
+      "japaneseSha256": "7689e620f68c851301b270437196314f6c40171b4de4f21039261738913915ff",
+      "thaiSha256": "287cb856d55f79a1b5d8aa2956fa1faea39b90b88a2dd7e41c843b62708506b2",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q06/stem",
+      "japaneseSha256": "42c2e51d91e871fa0cae483e4d036dc38c85d773be6df615715dda4458bd7cdc",
+      "thaiSha256": "ac32244fbbeecdd90b7bf86e803844ded5bfc73533efdc7a0a1649b56b901d01",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q06/options/0",
+      "japaneseSha256": "7284d21d52a2caae64919e7c8c7f01ba43c2c6e9cd3edab72926e1420514f45d",
+      "thaiSha256": "691794e8ec05e7cfbb0381a5db4ea5bac7585a87947ed4806a09bb0cb2aadcf2",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q06/options/1",
+      "japaneseSha256": "c64f52b588ad464b4d176ed595a84c2646904dca3d35a38648419127e9533b8f",
+      "thaiSha256": "256f9d961206d9ab34c8779f2c8d3247a8398074398c2c84e6e0576587786655",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q06/options/2",
+      "japaneseSha256": "2c719f45dddf0b19ca26cd8fc9c0b2100c57e2b5ef65da3ed657bb2c18c47434",
+      "thaiSha256": "43894be2612049bd94c1671ed706b66ed233de079add7474485207526ecd40b3",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q06/options/3",
+      "japaneseSha256": "eb0ab86a0e7f1b3b80372fb3933aa505b12427b100a1768a21073854c7ce5b65",
+      "thaiSha256": "4fac1a6f33944d543de2d83afa42c2aa37b75c517c5d224e0de1aab5391d56f7",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q06/reasons/0",
+      "japaneseSha256": "0123626a5dddf0533c3bac181a77af998be6bd75b34d0e383a8c87a9d59c97d2",
+      "thaiSha256": "d70b523374ace69af9f4e6f18617ef16a4ff0e93165140e632e64526caaecf27",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q06/reasons/1",
+      "japaneseSha256": "61dacab5ec01da85ae9b4edb67cdb09306872eed8a934c99294ba0eb12af250c",
+      "thaiSha256": "5ab6035f454ef1442dae561e468818f87f64eff6e22b5ca1dd52b9ab1d75f2f3",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q06/reasons/2",
+      "japaneseSha256": "1e5aa396564a082e63db53e9b6f2cb5511bd70c89910e936e6f99aee6efd7b51",
+      "thaiSha256": "ea1b166e58cf1ab8be53dc141910ba33b4d4dbaca1ab4db57aa1219ab477285f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q06/reasons/3",
+      "japaneseSha256": "e9e02a154a57317e726dc752023b6bb99e5bc743947772beedeb9607cc5934f2",
+      "thaiSha256": "03374f624fb6145ed38ab2e419af822a1462620dc199a7041f702eace172711a",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q07/stem",
+      "japaneseSha256": "b9c88ece67900761beb86e56175f22aeabfcdd66da23da638e2e7dc14df48008",
+      "thaiSha256": "96fd8b08c484b0b11564c34cbc6717b48e9050327e666d78c84c3481867f1a97",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q07/options/0",
+      "japaneseSha256": "d1e4bf04bd009a7e95c13cf35185a3893c5c50f9c71d42da85c3dd38ca164035",
+      "thaiSha256": "f1895eb5eeaa3f7677a664cb5878e85e864e4d51e6c36a773111ccf34da08edc",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q07/options/1",
+      "japaneseSha256": "cc208c2bc33cc07e80f7b87259ce5f28b259909d221871d84d4179f0ba9505c0",
+      "thaiSha256": "1ae901956b4af7a765902d94bc7e5cdf9c838bf316f8192796dc395f9b676f28",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q07/options/2",
+      "japaneseSha256": "f71f2a91b0b2c43829cd360681fc2d42d47240b2dab0e5853992984a91c6f84f",
+      "thaiSha256": "78df8531eaa10ea46be085d8787e1dbb0d75437d02ea41f124c64f15f68128f9",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q07/options/3",
+      "japaneseSha256": "51b5f9a5ddf9745a3a39602a845192a550d96ab87c6d47f2b7968a46309aa937",
+      "thaiSha256": "2c823d6c9c92c0c395dc2b985f5b6cdf301c622b195b82514db539d4ef23baed",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q07/reasons/0",
+      "japaneseSha256": "1e5aa396564a082e63db53e9b6f2cb5511bd70c89910e936e6f99aee6efd7b51",
+      "thaiSha256": "ea1b166e58cf1ab8be53dc141910ba33b4d4dbaca1ab4db57aa1219ab477285f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q07/reasons/1",
+      "japaneseSha256": "034ae74a9be9e0b0f498959e0e5bee5221b1ef7c789e9a4e16315ed8f1312acb",
+      "thaiSha256": "bbf367c3ecf306e3c1d300d449d83217176deb11dd2a38714a86268f3658ed87",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q07/reasons/2",
+      "japaneseSha256": "e7c706e2deaa6662285b0677c07617ea3a3acda0d5f591d9774b1ef682c5b559",
+      "thaiSha256": "276699e40c80c379e61c65194bc27cdd373933365006c855bbdacdcd88c0cd35",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q07/reasons/3",
+      "japaneseSha256": "af37ed50b8b4caba0bbc0d0cc1419895151d441020043f640d6af312ba61e72b",
+      "thaiSha256": "6dab210cd8fbb779b85461b968886a53d9295e98da7afb2dac8a1cac6ffffbe0",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q08/stem",
+      "japaneseSha256": "638e8a69c0e14ce5a9ac7cc8ee7289dbcc25489cd79fc2043a315f08cd2110a5",
+      "thaiSha256": "4cc8de59c411c0bf6a0efdacdbdc7c05013028ea6c75f22c70f2b5475aed0d8d",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q08/options/0",
+      "japaneseSha256": "19ee13422ea4b1a3be1f6fded6c4d6b6a07d252fa7a028518929afca5b13797a",
+      "thaiSha256": "4454b76d863b33369d314c415fe58984e5971436db48d39d23633c8b4f71d632",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q08/options/1",
+      "japaneseSha256": "289ffedd364680f93cfb292af0ebc7db3ab13453243a40f70161d2842c09ca66",
+      "thaiSha256": "11c0920b14ce2812ea96365ee27fa50d99666b72e5bb292c646dee9344a20afd",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q08/options/2",
+      "japaneseSha256": "86b97d349577b763a07e13fd82cdc66ad88a478e4b22a75d157cb4956a1dcb01",
+      "thaiSha256": "9101ea5706f6d690c8109efd240061e222cade904010a2805bc37f96e5b7f996",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q08/options/3",
+      "japaneseSha256": "4379b672dea229444fc5a51bcde030336e693fa85192d2d35e85b2a0c150c852",
+      "thaiSha256": "7a291d5dd0a31cf10e31ce05040b036f26c1b7622d10f909b77e4b60b13faf96",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q08/reasons/0",
+      "japaneseSha256": "ff37a5323bc1d5aa45e04e0a9ac869543515c62b5fa77aaa475b1e8c8f316e69",
+      "thaiSha256": "3ecfe582c39926bbccb495bca4f5750b040b038b6422e1f633172922eeb5eae7",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q08/reasons/1",
+      "japaneseSha256": "4a4c0801aeeae165b2b4e168fad3c3e4b4679a0f641ca606510eeb328f302e2f",
+      "thaiSha256": "79c488d2fb9b37eecf6b1a7953d0d00814fe8d1121af31cb0cbc8edc98f48fa0",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q08/reasons/2",
+      "japaneseSha256": "a7f76dc7dd62a9ee56cd9b4d3805fcbaf26bf801d0bcfea24aa5321f4d184c97",
+      "thaiSha256": "1b58e58c35fc8a2e69edfaf384dccaa2396b39635c444ec86987dda4f7cba1ee",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q08/reasons/3",
+      "japaneseSha256": "1e5aa396564a082e63db53e9b6f2cb5511bd70c89910e936e6f99aee6efd7b51",
+      "thaiSha256": "ea1b166e58cf1ab8be53dc141910ba33b4d4dbaca1ab4db57aa1219ab477285f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q09/stem",
+      "japaneseSha256": "066db124406582527c9b43b15a828a1c8880e02b531b698581d94244d12dbdfa",
+      "thaiSha256": "64035b56a46822763b6d0b6cedc91c35276975c460b0026167d2c33286116715",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q09/options/0",
+      "japaneseSha256": "8bef967f2692a82d4b49e71fb137173078f2cacebcda80562bf37b63659ea61a",
+      "thaiSha256": "6a3138ddef369f16c69d479c1e7ff795ba49ed4e3b5919ee640a926bb5db544d",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q09/options/1",
+      "japaneseSha256": "28bee344d0e90370831629929493cb8d1cdb66a5b650860e67b5cfbd9a513a0c",
+      "thaiSha256": "0e36b293298c5a8d937b9d97dbdfc53d6ea64ddc7695e5b1d63c62343be88654",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q09/options/2",
+      "japaneseSha256": "dba9e2ec45abc164a5940f4f8615b8294397a4d1288c57e1dd83a8726d471332",
+      "thaiSha256": "8010bdb7a6337cba38d419d87a0f0cc75fa90a1c4ea3e54449f7fe574b4f54e6",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q09/options/3",
+      "japaneseSha256": "8bdcc30dd59c998eeb9ee04f4e8568445952a2244305eede5bde86baa52f7295",
+      "thaiSha256": "99e6f00dc01b73e2bf3a9cf69b3fb817d93d866ed3990089342b98ca8e80105e",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q09/reasons/0",
+      "japaneseSha256": "1e5aa396564a082e63db53e9b6f2cb5511bd70c89910e936e6f99aee6efd7b51",
+      "thaiSha256": "ea1b166e58cf1ab8be53dc141910ba33b4d4dbaca1ab4db57aa1219ab477285f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q09/reasons/1",
+      "japaneseSha256": "c3c10caab48ada40bec90fb2e664fd1e3153fdc7d0a90546b1f3a7eb6aa026ca",
+      "thaiSha256": "fa261facd6957eaff6293a87f83e41915c387d2130acd519254e2fbb65ab2173",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q09/reasons/2",
+      "japaneseSha256": "afc2df40f415cd50f0045a597ba580a7895eda7f1b319bd9f11f606d41e09ff1",
+      "thaiSha256": "c2ad109eb4844822195fe700c5b0dbf8a9686012fb165bf69f5542929be3f7b1",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q09/reasons/3",
+      "japaneseSha256": "69565fd88b1f5481c287a64179cf9fc0861c01dc76a7be46a67d246ad2470006",
+      "thaiSha256": "ba0030e414bcabab664887040ef91348b9e79a4c0befe623c2a3d988daedcac5",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q10/stem",
+      "japaneseSha256": "b994570a388acb65b1054ccc83558aa3774d3312a38fd5b22eb4f00c5c1dc368",
+      "thaiSha256": "8c50b8d0f4e78add6c5d74ca125f46aafe72a33fa8959b3c97a131abb32c3b38",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q10/options/0",
+      "japaneseSha256": "d6946657c76df50e962d201afc282b9df42b801570dd350fbdc9ad4a51d0f1f8",
+      "thaiSha256": "07483f972d73931cdb5a4f34c99a4622889fc6974774c08c650d9321de6e6df1",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q10/options/1",
+      "japaneseSha256": "26b3f784b3389452eecd3f820c15624de165915baf8ed63194a50c332e806f4e",
+      "thaiSha256": "f1f0eb75353c565cb0e9d219b25519256b8e8b2020909d5e47e279c80c3c3f8b",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q10/options/2",
+      "japaneseSha256": "cb70ae4b2659862246ab8026567bf2224136def3dafb6c3da343ab9c5f38116e",
+      "thaiSha256": "85ba37b352ef8fc18e4aad8c8e1be4bc15fa610c42eada9ba574d621ac3db031",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q10/options/3",
+      "japaneseSha256": "095fc87d83b1e8bfac127ea889bf250c418a3221f03c8db6beb47459e840c8c5",
+      "thaiSha256": "655bdc37867c3693360554691136135bfcb2e9fd9d3291d229efa17150106525",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q10/reasons/0",
+      "japaneseSha256": "9ca12d54c3c0ff7d1a6e821aea94519479c7dfbfe01d8f6966f7c342c7861226",
+      "thaiSha256": "a20bbcef6672781fb7afd6075259e6fb690c9acfaab18db3abdb7f9e000ceda5",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q10/reasons/1",
+      "japaneseSha256": "6c19dad53dabd6870c2498a7f349ac17fe17fce49d9464f880791af1654969f8",
+      "thaiSha256": "9a87e845fc8c2e70436d0d749e7172dd3e5253c12cf4bd2d8d95f3052665ce76",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q10/reasons/2",
+      "japaneseSha256": "1e5aa396564a082e63db53e9b6f2cb5511bd70c89910e936e6f99aee6efd7b51",
+      "thaiSha256": "ea1b166e58cf1ab8be53dc141910ba33b4d4dbaca1ab4db57aa1219ab477285f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q10/reasons/3",
+      "japaneseSha256": "6e797925eb926e67b9a9a93209ae5cd84d79458a751eeacdab38125c221b5f7b",
+      "thaiSha256": "c567b6ac99faae9ac55d9d0b8f86eba44d9fe29cce33e2725a6d119c28039cec",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q11/stem",
+      "japaneseSha256": "d915f1aafa92da2cb4200a00ee07f540a3fd8f7d0e488f74542c53a09f081dee",
+      "thaiSha256": "716bc06ff087a160f49f4f59c25d1b96bd188e748cf191169acd3145dbfd76d6",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q11/options/0",
+      "japaneseSha256": "cc5b6fc6a2dc7b0d7634b635acd298ee2ac51edf23099eb924d12c56fd63a3bb",
+      "thaiSha256": "f9368b0b32a55a115d25d74f872819cc5c581a332984865d423473026d7b7d7d",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q11/options/1",
+      "japaneseSha256": "d2586156c68ea875020c9636eab6fd62c6fd3e8fcd55f91bb168593a63caec03",
+      "thaiSha256": "624a08d65ee25fe8cc0fed6eb3492a97fd87a3d1da12ebe222af39d52e8d2d6e",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q11/options/2",
+      "japaneseSha256": "90854cd38242905fd0a14f871df1e6a198fa3b934ca1dd05db951224b9b426fa",
+      "thaiSha256": "dd2114c51d73fa3ac94e24ea54d32d8165b2501771a8fc8b8392df135a664edb",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q11/options/3",
+      "japaneseSha256": "37bf8c6f5ce52992f43766e2686122dff8b04a4a4b3dd86f1b0da571215c9a5b",
+      "thaiSha256": "42e65abdc9bfc68c90d611620636ac10b26ddf0df0ac39c1bed0389095022239",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q11/reasons/0",
+      "japaneseSha256": "f43a3d847208e4dece1d7365819a6c7b08b474d88b4019351f5d7de79dbeb33d",
+      "thaiSha256": "7312c12b9fb476f0cc638e0f941e038591a085e620d19696470d8522e585f571",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q11/reasons/1",
+      "japaneseSha256": "a6d11a6678834d21fb3c9507f6a7a4ee27957f147036e2aa53bbca3931da33c5",
+      "thaiSha256": "6465d5a9c5732681b8a4d8499dac87054f014dedb22dd33dedfc7b4c316c395f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q11/reasons/2",
+      "japaneseSha256": "3c0063de7dbbd88f66fa4a49a09fe1bc57e60dc1aaf32864444618ce9bbe6a47",
+      "thaiSha256": "fd1737b79dd71b056d1ad23e9b0e3e66b132a81e27b78dd2c6ba7bb82ecf4c26",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q11/reasons/3",
+      "japaneseSha256": "1e5aa396564a082e63db53e9b6f2cb5511bd70c89910e936e6f99aee6efd7b51",
+      "thaiSha256": "ea1b166e58cf1ab8be53dc141910ba33b4d4dbaca1ab4db57aa1219ab477285f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q12/stem",
+      "japaneseSha256": "b7058fbe36c2c77c5eac850b65c0f09f28282c8229e27fe8bfc0e49314fc554c",
+      "thaiSha256": "2295cef66148252c33210e516ed47a9a8b32362d07917d74b3342823ca8f66cf",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q12/options/0",
+      "japaneseSha256": "d96fe9deeeae2df59cb00d30e60a62cf2475ca05d2f708cd4276b1779358673e",
+      "thaiSha256": "360669e984e4434b750c232080794547544a270aa3043587a139360f4f58675c",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q12/options/1",
+      "japaneseSha256": "aed1b5ac609a7a2c3b1d4e7cdf9b79cd456049e15d62766665efcba15d12f313",
+      "thaiSha256": "7392f1f95d0e66eceb00cb5762221a9e778d05cce0b34921cf7f25c660ad5e97",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q12/options/2",
+      "japaneseSha256": "06da8b5e3a7cc988f34183317933df876848d614985e7ea50bf85b16292f4d30",
+      "thaiSha256": "94301d68355e0e589fcb046f7ccd66f9286daa2d81e07058ba313291a525747c",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q12/options/3",
+      "japaneseSha256": "25b52720d9582a60351d7d4d80233fc53a1a9a74646b6b6ed725814605cb497f",
+      "thaiSha256": "42cf2d10c1923c8357cdebfaba5b860e696ac5be6d5bf4509e1a2bb8f259e994",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q12/reasons/0",
+      "japaneseSha256": "c348ab73e25764854a42b9b10d7fa0b9ae7e7855b8ea647b670b958fb6f8d25b",
+      "thaiSha256": "59ab9c57e3c58c7305b3e177139d17d9db844a02083ce7ca9f06e3bd50bfffdd",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q12/reasons/1",
+      "japaneseSha256": "1e5aa396564a082e63db53e9b6f2cb5511bd70c89910e936e6f99aee6efd7b51",
+      "thaiSha256": "ea1b166e58cf1ab8be53dc141910ba33b4d4dbaca1ab4db57aa1219ab477285f",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q12/reasons/2",
+      "japaneseSha256": "13b0382b3e0baba793670b25a7f83b9b189d9b412101547744ff4546aa2cb928",
+      "thaiSha256": "f6f4fa5d9415910f92a4ac54c33fbd7dbf5cef8df5f23cd324261f93a1f68c2a",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    },
+    {
+      "path": "questions/mfg1-surface-weekly-06-q12/reasons/3",
+      "japaneseSha256": "6c15c1b506c8e70c745374aa46c1b16d8ed53e66a46310af72df93cfc619b267",
+      "thaiSha256": "7719f0364a03a1f2b0743dbc5d3fc8ecfe62aad823f7aca644c606f85f920fb0",
+      "independentAiSemanticComparison": "pass_after_recorded_corrections"
+    }
+  ],
+  "freeze": {
+    "authorConfirmedFrozen": true,
+    "reviewBoundToStagingSha256": "afb1ae89724062c9fbbf6a355209f4a535c905ff41e44bfc3637d5309c0605e0",
+    "anyFurtherPayloadChangeRequiresAffectedFieldsRereview": true
+  },
+  "limitations": [
+    "Independent AI comparison does not certify native Thai idiom or domain correctness.",
+    "No source PDF body pages opened in this task; Japanese remains canonical.",
+    "No runtime/browser/device behavior tested by this reviewer.",
+    "Full curriculum/official mock completeness not claimed."
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "scope": "Independent automated script contamination audit of compiled lesson/weekly/mock/diagram/source-guide target prose and source-guide UI labels; excludes Japanese glossary keys/readings and all metadata. Candidate classification requires human context review; not semantic, native, domain or release certification. Hash/count completeness verified separately by root.",
+  "targetFieldCounts": {
+    "bn": 15515,
+    "en": 15515,
+    "hi": 15515,
+    "id": 15515,
+    "km": 15515,
+    "my": 15515,
+    "ne": 15515,
+    "th": 15515,
+    "tl": 15515,
+    "vi": 15515,
+    "zh-CN": 15515,
+    "zh-TW": 15515
+  },
+  "findingCounts": {
+    "untranslated_japanese_prose_candidate": 5,
+    "parenthetical_japanese_term_candidate": 5,
+    "japanese_term_or_untranslated_text_needs_review": 1
+  },
+  "reviewDispositionCounts": {
+    "intentional_japanese_quoted_learning_example": 3,
+    "intentional_japanese_term_or_drawing_symbol": 6,
+    "intentional_japanese_product_common_names": 2
+  },
+  "findings": [
+    {
+      "locale": "en",
+      "id": "mfg1-mechanical-weekly-10-q12",
+      "field": "stem",
+      "script": "Kana",
+      "classification": "untranslated_japanese_prose_candidate",
+      "characters": "いけしてなはよ",
+      "text": "You read only part of「してはいけない」and judged it as「してよい」. How should study improve?",
+      "file": "src/data/manufacturing/translations/questions.en.json",
+      "reviewDisposition": "intentional_japanese_quoted_learning_example",
+      "reviewNote": "The question explicitly compares Japanese prohibition and permission phrases; quotes are instructional content."
+    },
+    {
+      "locale": "th",
+      "id": "mfg1-mechanical-formative-004",
+      "field": "options[0]",
+      "script": "CJK",
+      "classification": "parenthetical_japanese_term_candidate",
+      "characters": "位定",
+      "text": "กำหนดสถานที่ (定位)",
+      "file": "src/data/manufacturing/translations/questions.th.json",
+      "reviewDisposition": "intentional_japanese_term_or_drawing_symbol",
+      "reviewNote": "Thai prose explains the Japanese three-fix terms or bevel drawing symbol; not untranslated prose."
+    },
+    {
+      "locale": "th",
+      "id": "mfg1-mechanical-formative-004",
+      "field": "options[1]",
+      "script": "CJK",
+      "classification": "parenthetical_japanese_term_candidate",
+      "characters": "品定",
+      "text": "กำหนดชนิด (定品)",
+      "file": "src/data/manufacturing/translations/questions.th.json",
+      "reviewDisposition": "intentional_japanese_term_or_drawing_symbol",
+      "reviewNote": "Thai prose explains the Japanese three-fix terms or bevel drawing symbol; not untranslated prose."
+    },
+    {
+      "locale": "th",
+      "id": "mfg1-mechanical-formative-004",
+      "field": "options[2]",
+      "script": "CJK",
+      "classification": "parenthetical_japanese_term_candidate",
+      "characters": "定量",
+      "text": "กำหนดปริมาณ (定量)",
+      "file": "src/data/manufacturing/translations/questions.th.json",
+      "reviewDisposition": "intentional_japanese_term_or_drawing_symbol",
+      "reviewNote": "Thai prose explains the Japanese three-fix terms or bevel drawing symbol; not untranslated prose."
+    },
+    {
+      "locale": "th",
+      "id": "mfg1-mechanical-formative-004",
+      "field": "options[3]",
+      "script": "CJK",
+      "classification": "parenthetical_japanese_term_candidate",
+      "characters": "掃清",
+      "text": "สะอาด (清掃)",
+      "file": "src/data/manufacturing/translations/questions.th.json",
+      "reviewDisposition": "intentional_japanese_term_or_drawing_symbol",
+      "reviewNote": "Thai prose explains the Japanese three-fix terms or bevel drawing symbol; not untranslated prose."
+    },
+    {
+      "locale": "zh-CN",
+      "id": "mfg1-mechanical-weekly-10-q12",
+      "field": "stem",
+      "script": "Kana",
+      "classification": "untranslated_japanese_prose_candidate",
+      "characters": "いけしてなはよ",
+      "text": "将“してはいけない”读一半，判断为“してよい”，如何改善学习？",
+      "file": "src/data/manufacturing/translations/questions.zh-CN.json",
+      "reviewDisposition": "intentional_japanese_quoted_learning_example",
+      "reviewNote": "The question explicitly compares Japanese prohibition and permission phrases; quotes are instructional content."
+    },
+    {
+      "locale": "zh-TW",
+      "id": "mfg1-mechanical-weekly-10-q12",
+      "field": "stem",
+      "script": "Kana",
+      "classification": "untranslated_japanese_prose_candidate",
+      "characters": "いけしてなはよ",
+      "text": "將“してはいけない”讀一半，判斷為“してよい”，如何改善學習？",
+      "file": "src/data/manufacturing/translations/questions.zh-TW.json",
+      "reviewDisposition": "intentional_japanese_quoted_learning_example",
+      "reviewNote": "The question explicitly compares Japanese prohibition and permission phrases; quotes are instructional content."
+    },
+    {
+      "locale": "th",
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "paragraphs[0].text",
+      "script": "CJK",
+      "classification": "japanese_term_or_untranslated_text_needs_review",
+      "characters": "位品定量",
+      "text": "หลักสามกำหนดเป็นระบบที่ทำให้สถานที่เก็บ ชนิด และปริมาณของสิ่งของชัดเจน 定位 คือกำหนดว่า “วางที่ไหน” 定品 คือกำหนดว่า “วางอะไร” และ 定量 คือกำหนดว่า “วางเท่าไร” เมื่อใช้ทั้งสามร่วมกัน จะตรวจพบการขาดหรือการปะปนได้ง่ายขึ้น\nแม้วาดเส้นรอบรูปเครื่องมือเพื่อระบุตำแหน่งไว้แล้ว แต่หากนำเครื่องมือคนละขนาดกลับไปวาง ก็ยังไม่เป็นไปตามการกำหนดชนิด นอกจากนี้ แม้วางชิ้นส่วนถูกชนิดบนชั้นที่ถูกต้อง แต่หากซ้อนเกินขีดจำกัด ก็อาจหยิบยากและนำไปสู่การล้มหรือตกได้\nจำนวนมากไม่ได้หมายความว่าจะวางใจได้เสมอ ต้องกำหนดให้เหมาะกับจำนวนที่กระบวนการต้องใช้ จังหวะเติมของ และวิธีเก็บ หากทุกคนทราบทั้งวิธีแจ้งและวิธีเติมเมื่อจำนวนต่ำกว่าขีดจำกัดล่าง ก็จะใช้งานระบบได้ง่ายแม้เปลี่ยนผู้รับผิดชอบ\nหากอ่านป้ายสถานที่หรือชื่อสิ่งของไม่ออก อย่าเติมชิ้นส่วนโดยดูจากรูปลักษณ์เพียงอย่างเดียว ให้ตรวจฉลากหรือใบสั่งงาน แยกสิ่งที่ไม่ทราบแน่ชัดไว้ในที่ที่กำหนด แล้วปรึกษาผู้รับผิดชอบ",
+      "file": "src/data/manufacturing/translations/th.json",
+      "reviewDisposition": "intentional_japanese_term_or_drawing_symbol",
+      "reviewNote": "Thai prose explains the Japanese three-fix terms or bevel drawing symbol; not untranslated prose."
+    },
+    {
+      "locale": "th",
+      "id": "mfg1-mechanical-lesson-049",
+      "field": "paragraphs[1].text",
+      "script": "Kana",
+      "classification": "parenthetical_japanese_term_candidate",
+      "characters": "レ",
+      "text": "สัญลักษณ์เชื่อมประกอบหลักจากเส้นอ้างอิงกับสัญลักษณ์พื้นฐาน แล้วเพิ่มขนาดที่จำเป็นหรือคำสั่งเสริม สัญลักษณ์พื้นฐานแยกการเชื่อมร่องบาก I, V, บากด้านเดียว (レ) และเชื่อมฟิลเลต เป็นต้น ในวิธีแสดงของบทเรียนนี้ สัญลักษณ์พื้นฐานใต้เส้นอ้างอิงหมายถึงด้านลูกศร และเหนือเส้นหมายถึงด้านตรงข้าม ในแบบจริงต้องตรวจมาตรฐานและวิธีแสดงที่ใช้ด้วย อย่าพลิกภาพแล้วตัดสินตำแหน่งเอง",
+      "file": "src/data/manufacturing/translations/th.json",
+      "reviewDisposition": "intentional_japanese_term_or_drawing_symbol",
+      "reviewNote": "Thai prose explains the Japanese three-fix terms or bevel drawing symbol; not untranslated prose."
+    },
+    {
+      "locale": "zh-CN",
+      "id": "mfg1-surface-lesson-070",
+      "field": "paragraphs[0].text",
+      "script": "Kana",
+      "classification": "untranslated_japanese_prose_candidate",
+      "characters": "イサザムラー",
+      "text": "研磨剂使用氧化铝、二氧化硅和氧化铬等颗粒。サイザー、ライム、赤棒、白棒、青棒等俗称是选产品的线索，但不能只凭颜色或俗称确定所有产品成分和细度。应核对标签、品号和指定用途。",
+      "file": "src/data/manufacturing/translations/zh-CN.json",
+      "reviewDisposition": "intentional_japanese_product_common_names",
+      "reviewNote": "Japanese abrasive common names are the subject being explained in Chinese surrounding prose."
+    },
+    {
+      "locale": "zh-TW",
+      "id": "mfg1-surface-lesson-070",
+      "field": "paragraphs[0].text",
+      "script": "Kana",
+      "classification": "untranslated_japanese_prose_candidate",
+      "characters": "イサザムラー",
+      "text": "研磨劑使用氧化鋁、二氧化矽和氧化鉻等顆粒。サイザー、ライム、赤棒、白棒、青棒等俗稱是選產品的線索，但不能只憑顏色或俗稱確定所有產品成分和細度。應核對標籤、品號和指定用途。",
+      "file": "src/data/manufacturing/translations/zh-TW.json",
+      "reviewDisposition": "intentional_japanese_product_common_names",
+      "reviewNote": "Japanese abrasive common names are the subject being explained in Chinese surrounding prose."
+    }
+  ],
+  "inputs": [
+    {
+      "path": "src/data/manufacturing/translations/bn.json",
+      "sha256": "867629ef0058810acb348d16b6e0b373e00f3b31fc4fc64377fe176a1cddae79"
+    },
+    {
+      "path": "src/data/manufacturing/translations/en.json",
+      "sha256": "fec65aa00d296f83b9e7dc08e5497db3d472a245f63f0b80c0654f8ef827f95c"
+    },
+    {
+      "path": "src/data/manufacturing/translations/hi.json",
+      "sha256": "211027031bd0986aded7309ae8b547f088af24956c02636bd39e3ea846fc1ceb"
+    },
+    {
+      "path": "src/data/manufacturing/translations/id.json",
+      "sha256": "95372503d8d743c47de4b6deabffd841b94cd4e2f4a628b5860ef28e7458cc78"
+    },
+    {
+      "path": "src/data/manufacturing/translations/km.json",
+      "sha256": "fba9e590c226dbb13f5362afd44852b6d0219cf71525179729998eb1c0ea3701"
+    },
+    {
+      "path": "src/data/manufacturing/translations/my.json",
+      "sha256": "c75315d8d612e920e9f9b3114e115a74f8ff04050d63201e64102789828ec1d4"
+    },
+    {
+      "path": "src/data/manufacturing/translations/ne.json",
+      "sha256": "33d711547ac230c0a562364f3caccc2c8dd242f6b954bba18a83c12d3616cf2c"
+    },
+    {
+      "path": "src/data/manufacturing/translations/questions.bn.json",
+      "sha256": "5b0fd317cd34737f15b316d4fb85cc5920fbe3632232fe405b716fcf9d01a71a"
+    },
+    {
+      "path": "src/data/manufacturing/translations/questions.en.json",
+      "sha256": "0f57cd4a143375fd8850a6268bcccf271be97e307df7a3cd9de9006330b707ff"
+    },
+    {
+      "path": "src/data/manufacturing/translations/questions.hi.json",
+      "sha256": "3a8a8d21d6b902f89cfa85c87f0d4d2cfe5d235e4df09a069ae5d05c37d95f2a"
+    },
+    {
+      "path": "src/data/manufacturing/translations/questions.id.json",
+      "sha256": "7ccdfbf4576937c95a3b11469cb1a987bb1e3733762c28ba7ef52d2cafd1bdec"
+    },
+    {
+      "path": "src/data/manufacturing/translations/questions.km.json",
+      "sha256": "b91b4e36b66e19d4ad4572fd990ccbb033c41e0ba7197eecb86e1cc48a441889"
+    },
+    {
+      "path": "src/data/manufacturing/translations/questions.my.json",
+      "sha256": "32ef3ed844acdee91304f1ac68bfd10721fc8a67aea5183b769da9fa564d1968"
+    },
+    {
+      "path": "src/data/manufacturing/translations/questions.ne.json",
+      "sha256": "1e93e8f1eb9f27f03edf04be774777adb799eee91d622e005e946e5f0e3a2b6f"
+    },
+    {
+      "path": "src/data/manufacturing/translations/questions.th.json",
+      "sha256": "b6b6652d7ff5aea15c07ae9d27fe733d279db99405d435ab1441a5d6f6a9d41f"
+    },
+    {
+      "path": "src/data/manufacturing/translations/questions.tl.json",
+      "sha256": "f3324e25e27a029cdfd27190dc607579fc7a6e1feba77fe3e35257aaa709eeaf"
+    },
+    {
+      "path": "src/data/manufacturing/translations/questions.vi.json",
+      "sha256": "ce57091e35c20aa0ae4b08a692307f159f22870432ad5d0714bba9bd8faaebc1"
+    },
+    {
+      "path": "src/data/manufacturing/translations/questions.zh-CN.json",
+      "sha256": "03725dbbe86f2710465556e71ed02771c43d050cca595fcfa0ed81bff80f75db"
+    },
+    {
+      "path": "src/data/manufacturing/translations/questions.zh-TW.json",
+      "sha256": "99afd578558789394811d835bcb87ddee73b81c46b5f6ef298023307ea59b916"
+    },
+    {
+      "path": "src/data/manufacturing/translations/th.json",
+      "sha256": "2ec8f4336fdd56e151c23b21cf54e5662f47ae7e7f34fd275708f655515513ea"
+    },
+    {
+      "path": "src/data/manufacturing/translations/tl.json",
+      "sha256": "03da5dd7f5d522c0d248285d0fb4042d64381802267b78da20253ef6319ecea0"
+    },
+    {
+      "path": "src/data/manufacturing/translations/vi.json",
+      "sha256": "c5b96c7b6c01093bb2294818814a52e7821fdf40f4ddb2b1b2d6283b8487be02"
+    },
+    {
+      "path": "src/data/manufacturing/translations/zh-CN.json",
+      "sha256": "e1d2970c234aad899a93c857fa93a32c64f896689a62d0ec54049730fd4a8552"
+    },
+    {
+      "path": "src/data/manufacturing/translations/zh-TW.json",
+      "sha256": "772416876438bdd52c8609e8af98bf709e0b32a4015d78423daf01a0cd3ab1e4"
+    },
+    {
+      "path": "src/data/manufacturing/mock-translations.json",
+      "sha256": "bd31d4aa26e447ceef5476c753a55f2b2282bafb5761d8b77094b1ce1c2a9acc"
+    },
+    {
+      "path": "src/data/manufacturing/diagram-translations.json",
+      "sha256": "b8d9c7077f5d70e878043d378fa138a5c907acf4cb17d7df3116bf14ade3d2b3"
+    },
+    {
+      "path": "src/data/manufacturing/source-guide-translations.json",
+      "sha256": "df0c466eb7cea5068e4b68203976d3d6c74a75fbb39cfae32d7e5b110b98920e"
+    }
+  ],
+  "nativeCertified": false,
+  "domainCertified": false,
+  "resolvedPriorFindings": [
+    {
+      "locale": "bn",
+      "id": "mfg1-surface-lesson-026",
+      "field": "paragraphs[2].text",
+      "previousTextFragment": "লাই닝",
+      "resolution": "Current compiled target now uses Bengali লাইনিং; no Hangul remains in this field. Product fix performed by root before final audit."
+    }
+  ]
+}

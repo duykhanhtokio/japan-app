@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "batch": 22,
+  "date": "2026-10-28",
+  "reviewer": "independent_compiler_review_ai",
+  "status": "pass_scoped_code_comparison",
+  "inputsSha256": {
+    "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+    "docs/ssw-workspace/manufacturing/batch22/independent-source-review.json": "de1038c7a3305e02abd213621c782300e2d8d067c6403a4aa248cfc790331bc9",
+    "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+    "docs/ssw-workspace/manufacturing/batch22/runtime-freeze.json": "d36b43db1d1aec1b02115a5a78a4731062d15c15077ebe00a0ccc3f4c5031444",
+    "docs/ssw-workspace/manufacturing/batch22/source-object-index.json": "7751bf6e1e9f46741f6e2c12ffd85c8d75581df8785f4702bb624acdca060fff",
+    "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e",
+    "docs/ssw-workspace/manufacturing/batch22/target-coverage-review.json": "0bd92800b7fe979e2bf7a555e001b4aad5c43ccd143673a9077b8036525ae241",
+    "scripts/manufacturing/build-batch22-source-index.py": "d296f0ece29ac36307da724cecf7ac1c138e11b91ef37f71edcf1015adeafaae",
+    "scripts/manufacturing/check-batch22-source-index.py": "983d322e42aa350863213f88bc0cce418b4413965c4d80f51c42c5174ee1afc7"
+  },
+  "scope": "Read-only independent review of additive source-object index compiler, focused rejection checks, provenance/input binding and write-boundary behavior.",
+  "findings": [
+    {
+      "id": "prior-resolver-scope",
+      "initialFinding": "Any digest-bound input JSON could introduce manufactured predecessor IDs.",
+      "resolution": "Fixed exact per-specialty batch12 historical report-path whitelist; batch17 remains frozen and indexed; predecessor document/hash and same physical-page provenance required.",
+      "status": "resolved"
+    },
+    {
+      "id": "runtime-asset-freeze",
+      "initialFinding": "Initial freeze omitted runtime diagram SVG/PNG asset bytes.",
+      "resolution": "Exact freeze now covers102paths including all40registered20diagram SVG/PNG assets, data, scoped code and historical inputs; missingasset fixture rejects.",
+      "status": "resolved"
+    }
+  ],
+  "checks": [
+    {
+      "id": "write-boundary",
+      "status": "pass",
+      "evidence": "main calls build_index(load_inputs()) before sole write_bytes call, output path fixed to batch22/source-object-index.json; default mode only compares exact bytes."
+    },
+    {
+      "id": "scope-gates",
+      "status": "pass",
+      "evidence": "Exact source-level1/specialties/page sets, registered document/digest/offset, baselinecommit, known sourceknowledge and current lesson source hashes; false review/completion flags required."
+    },
+    {
+      "id": "review-gates",
+      "status": "pass",
+      "evidence": "Exact ledger digests, independent objecthash/verdict/directsourcecomparison and sourcepage sets; exact target12locales/entryhashes/sourcehashes/paragraphorder+hashes and objectgap qualifiers."
+    },
+    {
+      "id": "provenance",
+      "status": "pass",
+      "evidence": "Only known frozen batch17 IDs or exact per-specialty digest-bound canonical batch12 audit reports supply predecessor IDs; sourcehash and page identities checked; fabricated-input predecessor rejected."
+    },
+    {
+      "id": "claims",
+      "status": "pass",
+      "evidence": "Index labels7page-review occurrences/48detailedobject occurrences; globallynew countnull and semantictranslation/fullsource/native/domain/wholecurriculum/release flagsfalse."
+    }
+  ],
+  "validation": {
+    "negativeFixturesRejected": 49,
+    "deterministicIndex": true,
+    "pageReviewOccurrences": 7,
+    "detailedObjectOccurrences": 48,
+    "unknownFrozenInputWriteMode": {
+      "rejected": true,
+      "writeCalls": 0,
+      "reason": "Frozen file drift: src/data/manufacturing/mock-translations.json",
+      "indexBytesUnchanged": true,
+      "all102FrozenPathsUnchanged": true,
+      "method": "Loaded real compiler in isolated Python process; supplied one-byte-mutated runtime input, invoked actual main --write with write_bytes spy; validation raised before any write call."
+    }
+  },
+  "unresolvedFindings": [],
+  "runtimeFilesModified": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "fullKnowledgeAtomizationComplete": false,
+  "wholeCurriculumComplete": false,
+  "releaseReady": false,
+  "limitations": [
+    "Scoped independent AI code/evidence review; not proof of all source semantics, native-language/domain expertise or physical-device behavior.",
+    "Compiler-review receipt itself is supplementary; compiler validates original independent source/target receipts without needing a self-referential review hash."
+  ]
+}

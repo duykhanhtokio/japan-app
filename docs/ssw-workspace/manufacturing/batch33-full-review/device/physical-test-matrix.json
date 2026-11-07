@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "b5f9bb2ee49a09c14c8dfbb8f39e589e6d50a11b",
+  "status": "NOT_RUN_PHYSICAL_DEVICE",
+  "physicalDeviceVerified": false,
+  "requiredDeviceFamilies": [
+    "physical_iPhone",
+    "physical_Android"
+  ],
+  "locales": [
+    "ja",
+    "en",
+    "vi",
+    "id",
+    "zh-CN",
+    "zh-TW",
+    "hi",
+    "bn",
+    "ne",
+    "my",
+    "th",
+    "km",
+    "tl"
+  ],
+  "orientations": [
+    "portrait",
+    "landscape"
+  ],
+  "cases": [
+    {
+      "caseId": "MFG-N01",
+      "name": "launch",
+      "subject": "Cold launch and re-entry",
+      "acceptance": "Native app opens without blank/frozen screen; record launch time without inventing an accepted threshold.",
+      "status": "not_run",
+      "deviceRecords": []
+    },
+    {
+      "caseId": "MFG-N02",
+      "name": "catalog",
+      "subject": "Three manufacturing specialties",
+      "acceptance": "Mechanical/electrical/surface open with correct counts and preserve independent progress.",
+      "status": "not_run",
+      "deviceRecords": []
+    },
+    {
+      "caseId": "MFG-N03",
+      "name": "reader",
+      "subject": "Core lesson plus all source guides",
+      "acceptance": "Japanese stays canonical; translation toggle uses selected locale; completion/reopen persists.",
+      "status": "not_run",
+      "deviceRecords": []
+    },
+    {
+      "caseId": "MFG-N04",
+      "name": "diagrams",
+      "subject": "All22actualtechnicalfigures",
+      "acceptance": "Images have real decoded bytes; pinch/zoom/pan/close work; essential labels readable in portrait/landscape.",
+      "status": "not_run",
+      "deviceRecords": []
+    },
+    {
+      "caseId": "MFG-N05",
+      "name": "weekly",
+      "subject": "Weekly check and new8question supplement",
+      "acceptance": "No answer/reason before submit; answer and question position survive leaving/reopening; correct scoring after submit.",
+      "status": "not_run",
+      "deviceRecords": []
+    },
+    {
+      "caseId": "MFG-N06",
+      "name": "mocks",
+      "subject": "Thirtyoriginalandthreecuratedforms",
+      "acceptance": "Distinct IDs/attempts; theory/practical clocks and independent thresholds; no premature results.",
+      "status": "not_run",
+      "deviceRecords": []
+    },
+    {
+      "caseId": "MFG-N07",
+      "name": "background",
+      "subject": "Native background/foreground",
+      "acceptance": "Background during timed exam then restore; elapsed real time and expiry retain original deadline.",
+      "status": "not_run",
+      "deviceRecords": []
+    },
+    {
+      "caseId": "MFG-N08",
+      "name": "restart",
+      "subject": "Explicit restart and cancellation",
+      "acceptance": "Cancelling restart preserves prior attempt; confirmed restart binds current revision.",
+      "status": "not_run",
+      "deviceRecords": []
+    },
+    {
+      "caseId": "MFG-N09",
+      "name": "failure",
+      "subject": "Storage failure and retry where injectable",
+      "acceptance": "Record actual failure injection method; do not call ordinary navigation a storage-failure test.",
+      "status": "not_run",
+      "deviceRecords": []
+    },
+    {
+      "caseId": "MFG-N10",
+      "name": "hardwareback",
+      "subject": "Platform navigation",
+      "acceptance": "Android hardware Back and iOS interactive/native navigation preserve expected screens and saved state.",
+      "status": "not_run",
+      "deviceRecords": []
+    },
+    {
+      "caseId": "MFG-N11",
+      "name": "glyphs",
+      "subject": "All13UIlocales",
+      "acceptance": "Inspect rendered glyphs and long text on physical hardware; DOM text presence is not glyph certification.",
+      "status": "not_run",
+      "deviceRecords": []
+    },
+    {
+      "caseId": "MFG-N12",
+      "name": "offline",
+      "subject": "Bundled offline assets/content",
+      "acceptance": "After first native bundle/install, verify intended offline content; record which content is available, no unsupported blanket offline claim.",
+      "status": "not_run",
+      "deviceRecords": []
+    }
+  ],
+  "evidenceRequiredPerDevice": [
+    "hardware model",
+    "OS version",
+    "physical serial/UDID evidence retained privately",
+    "native app build ID and source commit",
+    "observed timestamps",
+    "actual screen recordings/screenshots for tested cases",
+    "native logs for failures",
+    "test operator identity and explicit outcome"
+  ],
+  "privacy": "Serial/UDID and raw log personal data should stay private; public reports may use a stable device alias and hashes of privately retained evidence.",
+  "interpretation": "This matrix is a plan only; generating it does not execute or pass a device test."
+}

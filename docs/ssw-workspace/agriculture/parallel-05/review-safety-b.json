@@ -1,0 +1,80 @@
+{
+  "status": "complete",
+  "packetFile": "translations-safety-b.json",
+  "packetSha256": "bc827880ac96adc51c30e73691281e964a664d9330693fb81436676b13e20017",
+  "reviewer": "agri_veg_b independent of author agri_safety_b",
+  "canonicalSource": "src/data/agriculture/lessons.ja.json",
+  "scope": {
+    "locales": [
+      "hi",
+      "bn",
+      "ne",
+      "my",
+      "th",
+      "km"
+    ],
+    "lessonLocalePairs": 60,
+    "paragraphBodiesCompared": 360,
+    "paragraphHeadingsCompared": 360,
+    "titlesObjectivesActivitiesCompared": 180,
+    "comparison": "AI direct Japanese-to-target comparison across all source fields; not native/domain review",
+    "fullPacketMeaningReview": true
+  },
+  "checks": {
+    "engineStopBeforeClearingJamsAndRefuelling": true,
+    "inspectionExceptionNotExpanded": true,
+    "fatigueAlcoholProhibitions": true,
+    "sleeveOverGloveAndTrouserOverBoot": true,
+    "noUniversalGlovesForRotatingMachinery": true,
+    "promptPhysicianReferralAndStopWorkAllSixLocales": true,
+    "windRainProhibitions": true,
+    "leftoversNotExtraSprayedOrDischargedIntoWaterways": true,
+    "100VACAndThreePhase200VACRetained": true,
+    "wetHandsAndBareHandLiveEquipmentWarnings": true,
+    "fuelAndModelLimits": true,
+    "ladderSpreaderLocksTopPlatformAndSideLeanWarnings": true,
+    "labelProductAndIngredientCountDistinction": true,
+    "hashesIdsComplete": true
+  },
+  "patches": [
+    {
+      "locale": "hi",
+      "lessonId": "agr-safety-spray-check",
+      "field": "title",
+      "before": "छिड़काव उपकरण, बहकर फैलना और सफाई",
+      "after": "छिड़काव उपकरण, हवा में फैलाव और सफाई",
+      "reason": "Use हवा में फैलाव for 飛散 rather than बहकर फैलना, which can suggest liquid runoff; paragraph correctly defines airborne drift."
+    },
+    {
+      "locale": "bn",
+      "lessonId": "agr-safety-stepladder",
+      "field": "paragraphs",
+      "before": "ক্ষতি, স্থাপন, ছড়ানো-রোধক, দাঁড়ানোর অংশ ও ভঙ্গির আলাদা ঘর করুন। একটি ঠিক থাকলেও অন্যগুলো বাদ দেবেন না; ব্যবহৃত স্টেপল্যাডার অনুযায়ী জाँच করুন।",
+      "after": "ক্ষতি, স্থাপন, ছড়ানো-রোধক, দাঁড়ানোর অংশ ও ভঙ্গির আলাদা ঘর করুন। একটি ঠিক থাকলেও অন্যগুলো বাদ দেবেন না; ব্যবহৃত স্টেপল্যাডার অনুযায়ী যাচাই করুন।",
+      "reason": "Remove mixed Devanagari-script wording from the Bengali paragraph; safety meaning unchanged.",
+      "paragraphId": "agr-safety-stepladder-p6"
+    },
+    {
+      "locale": "my",
+      "lessonId": "agr-safety-spray-check",
+      "field": "paragraphs",
+      "before": "မိုးရွာချိန်၊ မိုးမရွာမီနှင့် ရွာပြီးခါစ၌ ဆေးမဖြန်းရပါ။ ဖြစ်နိုင်သမျှ နံနက်ညနေအေးချိန်၌ လုပ်ရန်လမ်းညွှန်ထားသည်။ ဤစာမှ ဆေးအားလုံးအတွက် တူညီသောစောင့်ချိန် သို့မဟုတ် နာရီအတိအကျ မတီထွင်ပါနှင့်။",
+      "after": "မိုးရွာချိန်၊ မိုးရွာခါနီးနှင့် ရွာပြီးခါစ၌ ဆေးမဖြန်းရပါ။ ဖြစ်နိုင်သမျှ နံနက်ညနေအေးချိန်၌ လုပ်ရန်လမ်းညွှန်ထားသည်။ ဤစာမှ ဆေးအားလုံးအတွက် တူညီသောစောင့်ချိန် သို့မဟုတ် နာရီအတိအကျ မတီထွင်ပါနှင့်။",
+      "reason": "Restore 直前 as immediately before rain; do not broaden the prohibition to an unspecified time before any rain.",
+      "paragraphId": "agr-safety-spray-check-p4"
+    },
+    {
+      "locale": "km",
+      "lessonId": "agr-safety-machine-preparation",
+      "field": "paragraphs",
+      "before": "ឯកសារមានឧទាហរណ៍ម៉ាស៊ីនពូនដី និងម៉ាស៊ីនកាត់ស្មៅ ប៉ុន្តែរូបរាងដូចគ្នាក៏មិនប្រាកដថាឧបករណ៍បញ្ជា និងនីតិវិធីដូចគ្នាដែរ។ កុំយកការពន្យល់ក្នុងមេរៀននេះជារបៀបបញ្ឆេះសម្រាប់គ្រប់ម៉ូដែល។",
+      "after": "ឯកសារមានឧទាហរណ៍ម៉ាស៊ីនភ្ជួររាស់ខ្នាតតូច និងម៉ាស៊ីនកាត់ស្មៅ ប៉ុន្តែរូបរាងដូចគ្នាក៏មិនប្រាកដថាឧបករណ៍បញ្ជា និងនីតិវិធីដូចគ្នាដែរ។ កុំយកការពន្យល់ក្នុងមេរៀននេះជារបៀបបញ្ឆេះសម្រាប់គ្រប់ម៉ូដែល។",
+      "reason": "Use small cultivator for 管理機 rather than a narrower hilling-machine description; model-specific scope remains unchanged.",
+      "paragraphId": "agr-safety-machine-preparation-p3"
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceValidated": false
+}

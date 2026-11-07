@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "baselineCommit": "6aa997c4311420829203f89e1a4c99bd2a7d1c0d",
+  "scope": "Manufacturing SSW1 batch14 editorial-evidence freshness gate; SSW2 excluded.",
+  "results": {
+    "check-editorial-review-bindings.py": {
+      "status": "PASS",
+      "reviews": {
+        "mechanical": {
+          "boundQuestions": 400,
+          "boundFiles": 3
+        },
+        "electrical": {
+          "boundQuestions": 100,
+          "boundFiles": 2
+        }
+      },
+      "scope": "Exact batch14 evidence bindings only; no new semantic, PDF, native or domain review.",
+      "runtimeFilesModified": false,
+      "releaseReady": false
+    },
+    "check-editorial-review-regression.py": {
+      "status": "PASS",
+      "rejectedInvalidSnapshots": [
+        "missing mechanical reviewed ID",
+        "duplicate mechanical reviewed ID",
+        "unknown mechanical reviewed ID",
+        "missing reviewed input file",
+        "stale mechanical snapshot",
+        "inflated mechanical count",
+        "unsupported native certification",
+        "unsupported release certification",
+        "unknown mechanical finding",
+        "missing electrical practical review",
+        "duplicate electrical practical review",
+        "stale electrical questionSnapshotSha256",
+        "stale electrical questionSourceHash",
+        "stale electrical lessonSourceHash",
+        "wrong electrical lesson",
+        "unresolved electrical verdict",
+        "unresolved required correction",
+        "wrong electrical selection count",
+        "unsupported human certification",
+        "unknown electrical precision note",
+        "changed mechanical source audit",
+        "changed mechanical lesson file",
+        "changed mechanical question file",
+        "changed electrical lesson file",
+        "changed electrical question file"
+      ],
+      "count": 25,
+      "runtimeFilesModified": false
+    },
+    "check-mock-content.py": {
+      "status": "PASS",
+      "specialties": {
+        "mechanical": {
+          "exams": 10,
+          "questions": 400,
+          "coveredLessons": 91,
+          "distinctStems": 400
+        },
+        "electrical": {
+          "exams": 10,
+          "questions": 400,
+          "coveredLessons": 98,
+          "distinctStems": 400
+        },
+        "surface": {
+          "exams": 10,
+          "questions": 400,
+          "coveredLessons": 73,
+          "distinctStems": 400
+        }
+      },
+      "totalExams": 30,
+      "totalQuestions": 1200,
+      "mockTranslationCoverage": {
+        "en": 1200,
+        "vi": 1200,
+        "id": 1200,
+        "zh-CN": 1200,
+        "zh-TW": 1200,
+        "hi": 1200,
+        "bn": 1200,
+        "ne": 1200,
+        "my": 1200,
+        "th": 1200,
+        "km": 1200,
+        "tl": 1200
+      },
+      "rubyExactTextAligned": true,
+      "nativeReviewed": false,
+      "editorialEvidenceBindings": {
+        "mechanical": {
+          "boundQuestions": 400,
+          "boundFiles": 3
+        },
+        "electrical": {
+          "boundQuestions": 100,
+          "boundFiles": 2
+        }
+      }
+    },
+    "check-mock-content-regression.py": {
+      "status": "PASS",
+      "rejectedInvalidSnapshots": [
+        "missing locale",
+        "missing question",
+        "extra question",
+        "stale source hash",
+        "empty stem",
+        "empty option",
+        "empty rationale",
+        "missing option",
+        "missing rationale"
+      ],
+      "runtimeFilesModified": false
+    }
+  },
+  "scriptSha256": {
+    "scripts/manufacturing/check-editorial-review-bindings.py": "9158aacf0bd354942ac1e8defb62bb761a785c9a1277691c8ebd81feaec844db",
+    "scripts/manufacturing/check-editorial-review-regression.py": "4e5d65ec292c8ba88ed1642b018c1e2b00961462204f347db601979c6954dbd3",
+    "scripts/manufacturing/check-mock-content.py": "717387152acdcf73d9c4c8aed5f2c6000cff45c49a497b41d0efb71406159897",
+    "scripts/manufacturing/check-mock-content-regression.py": "dc17ebc7de5b37cd9b8e2e96d603a482d64fb391ed05ac13eef4686febeedfbc"
+  },
+  "runtimeContentModified": false,
+  "newSemanticReviews": 0,
+  "fullSourceAtomizationComplete": false,
+  "releaseReady": false,
+  "remaining": [
+    "Resolve two mechanical wording findings through the revision-bound canonical/staging/12-locale/furigana pipeline.",
+    "Continue exhaustive source-object mapping and semantic coverage of the three SSW1 textbooks.",
+    "Continue target-language semantic review and physical/native device verification."
+  ]
+}

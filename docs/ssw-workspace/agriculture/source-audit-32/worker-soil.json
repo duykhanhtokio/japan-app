@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "worker": "soil-water-fertilizer",
+  "scope": "bounded-source-gap-audit-and-implementation-handoff",
+  "reviewType": "AI direct PDF image comparison; no independent peer yet",
+  "baselineCommit": "30f79554bb20e9d096f09fbc0edb2464a1a7a30e",
+  "sources": {
+    "AGR-S1": {
+      "pdfSha256": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f"
+    },
+    "AGR-S2": {
+      "pdfSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12"
+    }
+  },
+  "inputSha256": {
+    "docs/ssw-workspace/agriculture/source-gap-backlog.json": "a75cf3f64e25d938d0d6319069d6b9d9002d9b949da165ed466f80badf7765c2",
+    "docs/ssw-workspace/agriculture/source-gap-reconciliation-11.json": "0d238931b4384b5fe0097a5718733275e22509d3f861cf73d03c4666ee7c53ca",
+    "docs/ssw-workspace/agriculture/source-gap-reconciliation-12.json": "bf744380dbabbfbe282c8b8f51d56628a2d34c034f3cbc23ab8f6bb4685fd9b9",
+    "docs/ssw-workspace/agriculture/source-gap-reconciliation-22.json": "97f96f892b94a6724a86681e712802429867af63a6f259ea2990056335bd12fd",
+    "docs/ssw-workspace/agriculture/source-gap-reconciliation-27.json": "768bdbc780f700d899cb44a316984f6d234b340e0dbaa7e521f5a8e515aac727",
+    "docs/ssw-workspace/agriculture/source-gap-reconciliation-30.json": "054a32035e65b650fb088064e98c37652fa9bc5ac67cce0a0bf91701817dc040",
+    "src/data/agriculture/lessons.ja.json": "1a3c1be81671869b1f2ed7fd3410dedc0e0279278439c12a321d967b6cb00e7e",
+    "src/data/agriculture/weekly-checks.ja.json": "41ce974912a2adc1f2079d13b9f1e1845069aab0ec1a131655293bf00388c50a",
+    "src/data/agriculture/mock-exams.ja.json": "481540b1f7603cb1c0429985db5ab158b8be0a3d13d331cf303f37a82986ea59",
+    "src/data/agriculture/diagrams.json": "0a89d16e72d15ade424e0a29a9025ef4c17353c3ede1fa68d1ed0aad06f26eda",
+    "src/data/agriculture/recognition-images.json": "a4f712a1d019c72782d54a4e2b3694767872ebfa796fee642d0b31130c3b18f4"
+  },
+  "sourceInspection": {
+    "renderer": "pdftoppm -scale-to 1600 -png",
+    "pdfPageImages": [
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 15,
+        "printedPage": 9,
+        "sha256": "bd18fb8f748748176987b3b91833d83e2c0feff93f231989ea7333e7ce2b6c9a"
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 34,
+        "printedPage": 32,
+        "sha256": "fbcec05e3cb538a27257b0485f34b21ef1dae54ad816d373ac2643a46ad4c3d0"
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 35,
+        "printedPage": 33,
+        "sha256": "a628014a2087006d09758428ea0b6870b6562eb1b866ef32f747e297bf3120d5"
+      }
+    ],
+    "sourceTextOrImagesPublished": false
+  },
+  "selectedOccurrences": [
+    {
+      "sourceItemId": "AGR-A10-SOIL-0005",
+      "documentId": "AGR-S1",
+      "pdfPage": 15,
+      "printedPage": 9,
+      "baselineStatus": "missing",
+      "auditDisposition": "source_detail_missing",
+      "sourceImageSha256": "bd18fb8f748748176987b3b91833d83e2c0feff93f231989ea7333e7ce2b6c9a",
+      "imageVisuallyInspected": true,
+      "sourceObjectiveParaphraseJa": "頭上かん水で真夏の日中を避けるという1号の注意を読む。",
+      "currentCoverageAndDuplicateBoundary": "agr-water-methods-p2 describes method/appliances; agr-water-decision-p4 has seasonal timing but does not explicitly bind the midsummer-midday caution to overhead irrigation. Existing agr-par21-g1-q02 tests heated hose/tank water, so do not repackage that as a new objective.",
+      "nextAction": "Add one bounded explanation of the S1 overhead-specific avoidance advice to an irrigation-detail unit; preserve the source's nonabsolute wording, no clock hour or water-temperature threshold.",
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0011",
+      "documentId": "AGR-S1",
+      "pdfPage": 15,
+      "printedPage": 9,
+      "baselineStatus": "missing",
+      "auditDisposition": "recognition_asset_missing",
+      "sourceImageSha256": "bd18fb8f748748176987b3b91833d83e2c0feff93f231989ea7333e7ce2b6c9a",
+      "imageVisuallyInspected": true,
+      "sourceObjectiveParaphraseJa": "新規の図で頭上かん水の水が届く場所を識別する。",
+      "currentCoverageAndDuplicateBoundary": "agr-water-methods-p1/p2 already give the spatial definition; current 50-image registry and four diagrams have no overhead-irrigation diagram.",
+      "nextAction": "Create original irrigation location comparison; depict spray landing from above. A text-only method question would duplicate agr-water-soil-q03.",
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0013",
+      "documentId": "AGR-S1",
+      "pdfPage": 15,
+      "printedPage": 9,
+      "baselineStatus": "missing",
+      "auditDisposition": "recognition_asset_missing",
+      "sourceImageSha256": "bd18fb8f748748176987b3b91833d83e2c0feff93f231989ea7333e7ce2b6c9a",
+      "imageVisuallyInspected": true,
+      "sourceObjectiveParaphraseJa": "新規の図で株元かん水の水が届く場所を識別する。",
+      "currentCoverageAndDuplicateBoundary": "agr-water-methods-p3 and agr-1-m02-q05 already teach the location/water-saving pairing; no new visual asset is registered.",
+      "nextAction": "Original illustration of water delivered around the plant base; avoid claiming every drip system shares one physical product form.",
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0015",
+      "documentId": "AGR-S1",
+      "pdfPage": 15,
+      "printedPage": 9,
+      "baselineStatus": "missing",
+      "auditDisposition": "recognition_asset_missing",
+      "sourceImageSha256": "bd18fb8f748748176987b3b91833d83e2c0feff93f231989ea7333e7ce2b6c9a",
+      "imageVisuallyInspected": true,
+      "sourceObjectiveParaphraseJa": "新規の図でうね間かん水の水が届く場所を識別する。",
+      "currentCoverageAndDuplicateBoundary": "agr-water-methods-p4 and agr-water-soil-q04 already assess furrow water use; no original furrow irrigation comparison image registered.",
+      "nextAction": "Original channels between beds with water in channels, clearly distinct from wetting plant bases. No new prose-only recall question.",
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0017",
+      "documentId": "AGR-S1",
+      "pdfPage": 15,
+      "printedPage": 9,
+      "baselineStatus": "missing",
+      "auditDisposition": "equipment_recognition_missing",
+      "sourceImageSha256": "bd18fb8f748748176987b3b91833d83e2c0feff93f231989ea7333e7ce2b6c9a",
+      "imageVisuallyInspected": true,
+      "sourceObjectiveParaphraseJa": "はす口を新規識別画像から見分ける。",
+      "currentCoverageAndDuplicateBoundary": "agr-water-methods-p2 names はす口, but naming is not a linked appliance-recognition asset.",
+      "nextAction": "New original appliance illustration plus Japanese name and visible water-spreading head; do not reuse source photograph.",
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0019",
+      "documentId": "AGR-S1",
+      "pdfPage": 15,
+      "printedPage": 9,
+      "baselineStatus": "missing",
+      "auditDisposition": "equipment_recognition_missing",
+      "sourceImageSha256": "bd18fb8f748748176987b3b91833d83e2c0feff93f231989ea7333e7ce2b6c9a",
+      "imageVisuallyInspected": true,
+      "sourceObjectiveParaphraseJa": "スプリンクラーを新規識別画像から見分ける。",
+      "currentCoverageAndDuplicateBoundary": "agr-water-methods-p2/p6 and agr-water-soil-q03 already associate the sprinkler with overhead irrigation; no sprinkler asset in registry.",
+      "nextAction": "New original recognizable sprinkler image; do not inflate recognition plus existing verbal method association into two independent question objectives.",
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0021",
+      "documentId": "AGR-S1",
+      "pdfPage": 15,
+      "printedPage": 9,
+      "baselineStatus": "missing",
+      "auditDisposition": "equipment_recognition_missing",
+      "sourceImageSha256": "bd18fb8f748748176987b3b91833d83e2c0feff93f231989ea7333e7ce2b6c9a",
+      "imageVisuallyInspected": true,
+      "sourceObjectiveParaphraseJa": "かん水チューブを新規識別画像から見分ける。",
+      "currentCoverageAndDuplicateBoundary": "agr-water-methods-p5 and agr-s30-soil-detail-p2 compare tubing mechanisms; no irrigation tube asset registered.",
+      "nextAction": "Original perforated irrigation tube example with visible outlet pattern; source product appearance is illustrative, not a universal identifier.",
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0023",
+      "documentId": "AGR-S1",
+      "pdfPage": 15,
+      "printedPage": 9,
+      "baselineStatus": "missing",
+      "auditDisposition": "equipment_recognition_missing",
+      "sourceImageSha256": "bd18fb8f748748176987b3b91833d83e2c0feff93f231989ea7333e7ce2b6c9a",
+      "imageVisuallyInspected": true,
+      "sourceObjectiveParaphraseJa": "点滴かん水チューブを新規識別画像から見分ける。",
+      "currentCoverageAndDuplicateBoundary": "agr-water-methods-p3/p5 and agr-s30-soil-detail-p2 already contrast drip tubing. No drip tube recognition asset registered.",
+      "nextAction": "Original drip-line arrangement with localized droplet outlets, linked alongside perforated tube comparison; do not infer material specification or exact flow.",
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0502",
+      "documentId": "AGR-S2",
+      "pdfPage": 34,
+      "printedPage": 32,
+      "baselineStatus": "missing",
+      "auditDisposition": "source_detail_missing",
+      "sourceImageSha256": "fbcec05e3cb538a27257b0485f34b21ef1dae54ad816d373ac2643a46ad4c3d0",
+      "imageVisuallyInspected": true,
+      "sourceObjectiveParaphraseJa": "素焼き土管と穴あき専用管という材料例を区別する。",
+      "currentCoverageAndDuplicateBoundary": "agr-drainage-comparison-p2 names drainage pipe and protective drainage material generally; it does not name the source examples unglazed earthenware pipe and purpose-made perforated pipe.",
+      "nextAction": "Add material examples inside a bounded drainage-detail unit; no construction prescription or fixed burial depth. The source page lists dark drainage under a surface-drainage subsection, while p35 lists it under underground drainage: retain this source organization discrepancy rather than teaching the heading as taxonomy.",
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0538",
+      "documentId": "AGR-S2",
+      "pdfPage": 35,
+      "printedPage": 33,
+      "baselineStatus": "missing",
+      "auditDisposition": "term_scope_hold",
+      "sourceImageSha256": "a628014a2087006d09758428ea0b6870b6562eb1b866ef32f747e297bf3120d5",
+      "imageVisuallyInspected": true,
+      "sourceObjectiveParaphraseJa": "2号が株元の盛土へ客土という語を併記することを他用法と区別して読む。",
+      "currentCoverageAndDuplicateBoundary": "agr-drainage-comparison-p5 already explains raised soil around tree bases but omits the source parenthetical 客土. Source image visibly attaches 客土 to this local example.",
+      "nextAction": "Retain a scope hold for general definition: source-bound wording may say the page uses this term for this example, but do not define all 客土 as root-base mounding. A general-use definition requires separate suitable source verification.",
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    },
+    {
+      "sourceItemId": "AGR-A10-SOIL-0539",
+      "documentId": "AGR-S2",
+      "pdfPage": 35,
+      "printedPage": 33,
+      "baselineStatus": "missing",
+      "auditDisposition": "source_comparison_detail_missing",
+      "sourceImageSha256": "a628014a2087006d09758428ea0b6870b6562eb1b866ef32f747e297bf3120d5",
+      "imageVisuallyInspected": true,
+      "sourceObjectiveParaphraseJa": "限定部分の排水改善と比較的簡単な施工というトレードオフを説明する。",
+      "currentCoverageAndDuplicateBoundary": "agr-drainage-comparison-p5 states improvement may be limited in area, but omits the accompanying comparatively simple construction comparison.",
+      "nextAction": "Add the tradeoff in the same comparison unit: limited improvement area versus comparatively easy construction in this stated fruit-tree example. Do not promise low cost, exact labor, or suitability for every orchard.",
+      "countsAsClosedSourceOccurrence": false,
+      "newQuestionApproved": false
+    }
+  ],
+  "summary": {
+    "selectedSourceOccurrences": 11,
+    "stillMissingRuntimeOccurrenceClosures": 0,
+    "newIntegratedLessons": 0,
+    "newIntegratedQuestions": 0,
+    "recognitionAssetGaps": 7,
+    "boundedProseDetailGaps": 3,
+    "termScopeHold": 1,
+    "uniqueNewAssessableCapacity": null,
+    "coveragePercent": null
+  },
+  "safeNextCluster": {
+    "titleJa": "かん水器具と水が届く場所を図で区別する",
+    "reuseExistingLessonIds": [
+      "agr-water-methods",
+      "agr-water-decision",
+      "agr-s30-soil-detail"
+    ],
+    "newAssetsNeeded": [
+      "three-method spatial comparison",
+      "はす口",
+      "スプリンクラー",
+      "perforated-versus-drip-tube comparison"
+    ],
+    "proseAddition": "Only the overhead-specific midsummer-midday caution is missing within this cluster; existing spatial definitions and water-saving/high-water comparisons must be reused.",
+    "assessmentPolicy": "Image-based recognition can be screened after assets are integrated and source-compatible; do not count seven occurrences as seven independent questions or repeat verbal association questions."
+  },
+  "secondaryCluster": {
+    "titleJa": "排水管の材料例と果樹の盛土の比較条件",
+    "reuseExistingLessonId": "agr-drainage-comparison",
+    "additions": [
+      "unglazed/perforated pipe examples",
+      "limited-area versus comparatively simple construction"
+    ],
+    "hold": "客土 general-definition scope and source drainage heading inconsistency remain explicit; no fixed construction specification."
+  },
+  "reviewFlags": {
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "releaseReady": false
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "owner": "agri_1",
+  "status": "read_only_recognition_feasibility_findings",
+  "sourcePdfVerification": {
+    "AGR-S2": {
+      "path": "/workspace/scratch/018c0b6e29b8/agri12-original-sources/耕種農業全般 特定技能2号.pdf",
+      "sha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+      "freshlyVerified": true
+    },
+    "AGR-S1": {
+      "path": "/workspace/scratch/018c0b6e29b8/agri12-original-sources/耕種農業全般 特定技能1号.pdf",
+      "sha256": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+      "freshlyVerified": true
+    }
+  },
+  "baselineLessons": 168,
+  "assets": [
+    {
+      "proposedAssetId": "agr-rec13-rice-brown-grain-compare",
+      "priority": 1,
+      "titleJa": "玄米の形を比較する",
+      "sourceItemIds": [
+        "AGR-A10-GENERAL-0015",
+        "AGR-A10-GENERAL-0016",
+        "AGR-A10-GENERAL-0146",
+        "AGR-A10-GENERAL-0148"
+      ],
+      "lessonIds": [
+        "agr-rice",
+        "agr-par12-general-rice-classification-detail"
+      ],
+      "courseLevels": [
+        "1",
+        "2"
+      ],
+      "additionalLessonScope": {
+        "agr-rice": [
+          "1",
+          "2"
+        ],
+        "agr-par12-general-rice-classification-detail": [
+          "2"
+        ]
+      },
+      "morphologyJa": [
+        "インディカの玄米：細長い粒を複数の向きで示す。",
+        "ジャポニカの玄米：相対的に短く丸みのある粒を、同じ表示倍率で示す。",
+        "両方とももみ殻付きのもみや精白米ではなく、玄米として描き分ける。"
+      ],
+      "originalConstructionJa": "写真の山の構図を再現せず、二群のばらした玄米を独自の配置で描く。背景・照明・拡大条件をそろえ、名称ありの学習版と名称を隠す照合版を分ける。",
+      "assessmentLimitJa": "資料の形の傾向を比較する練習。単一粒の外観だけで全品種・種名・食味を断定しない。炊飯後の粘りは画像から判定できない。未検証の縦横比・ミリメートル値・色のみの識別規則を追加しない。",
+      "feasibility": "high_for_source_bound_comparison_not_species_certification",
+      "remainingHeldJa": [
+        "食味・遺伝背景・個別品種の同定は認定しない。",
+        "原写真転載・写真再現は行わず、新規画像にも独立AI/専門/端末確認が必要。"
+      ],
+      "sources": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 7,
+          "printedPage": 1,
+          "renderPath": "/workspace/scratch/018c0b6e29b8/audit10-general-pages/s1-07.png",
+          "renderSha256": "5de38dbb543c4a0d256ad3c38bd15f38b1c08b44079b55f945aea52c5501ec55",
+          "visualChecked": true
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 4,
+          "printedPage": 2,
+          "renderPath": "/workspace/scratch/018c0b6e29b8/audit10-general-pages/s2-04.png",
+          "renderSha256": "4c3af9ce9e574c7fa083045b80ad416c6acc4f7279a2fe886d5631a454232cd4",
+          "visualChecked": true
+        }
+      ],
+      "overlayState": {
+        "AGR-A10-GENERAL-0015": "unresolved_recognition",
+        "AGR-A10-GENERAL-0016": "unresolved_recognition",
+        "AGR-A10-GENERAL-0146": "unresolved_recognition",
+        "AGR-A10-GENERAL-0148": "unresolved_recognition"
+      }
+    },
+    {
+      "proposedAssetId": "agr-rec13-plant-organ-positions",
+      "priority": 2,
+      "titleJa": "器官の位置を対応させる",
+      "sourceItemIds": [
+        "AGR-A10-GENERAL-0037",
+        "AGR-A10-GENERAL-0268"
+      ],
+      "lessonIds": [
+        "agr-organs",
+        "agr-management-shoots"
+      ],
+      "courseLevels": [
+        "1",
+        "2"
+      ],
+      "morphologyJa": [
+        "土の下に分岐した根、土の上に連続する茎、茎に付く葉を区別。",
+        "花と果実は地上に別々に示し、葉・茎・根の栄養器官と対照。",
+        "頂芽は主軸の先端、側芽（えき芽）は葉の付け根側の葉腋に置く。"
+      ],
+      "originalConstructionJa": "原図の枝数・向き・配色・ラベル配置を写さず、独自の一般的な双子葉作物の模式形で全7部位へ指示線を付ける。頂芽と側芽の指示線先端を拡大確認できる構成。",
+      "assessmentLimitJa": "特定作物の実物認識ではなく、模式形での器官位置照合。一般の花/果実の位置が全作物で同じという説明にしない。ガス方向の既存4パネル図は代用しない。",
+      "feasibility": "high_for_explicit_schematic_position_matching",
+      "remainingHeldJa": [
+        "agr-organs本文には頂芽の位置説明が不足するため、画像だけ追加して本文全知識完了とはしない。",
+        "頂芽ラベルの説明に当たる未処理0036/0267は別途本文・知識リンクを確認する。",
+        "全植物種の形態・実物同定、成長条件や剪定位置の指示は対象外。"
+      ],
+      "sources": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 8,
+          "printedPage": 2,
+          "renderPath": "/workspace/scratch/018c0b6e29b8/audit10-general-pages/s1-08.png",
+          "renderSha256": "126024e4298d5255716c143554c8e709c46d6a14a3728a0f26443e3a89049f83",
+          "visualChecked": true
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 9,
+          "printedPage": 7,
+          "renderPath": "/workspace/scratch/018c0b6e29b8/audit10-general-pages/s2-09.png",
+          "renderSha256": "661b561630f2744a35820dd405a7407eb5d7b54e29143bb62bf8a46375892b04",
+          "visualChecked": true
+        }
+      ],
+      "overlayState": {
+        "AGR-A10-GENERAL-0037": "unresolved_recognition",
+        "AGR-A10-GENERAL-0268": "unresolved_recognition"
+      }
+    },
+    {
+      "proposedAssetId": "agr-rec13-thinning-visible-comparison",
+      "priority": 3,
+      "titleJa": "間引きの比較例を見分ける",
+      "sourceItemIds": [
+        "AGR-A10-GENERAL-0078",
+        "AGR-A10-GENERAL-0079",
+        "AGR-A10-GENERAL-0080",
+        "AGR-A10-GENERAL-0081",
+        "AGR-A10-GENERAL-0372",
+        "AGR-A10-GENERAL-0373",
+        "AGR-A10-GENERAL-0374",
+        "AGR-A10-GENERAL-0375"
+      ],
+      "lessonIds": [
+        "agr-germination"
+      ],
+      "courseLevels": [
+        "1",
+        "2"
+      ],
+      "morphologyJa": [
+        "基準苗と比べて小さく生育不良の例。",
+        "基準苗より茎が長く細く伸びた徒長の例。",
+        "葉の形の異常と、葉縁に欠けのある虫くいの掲載比較例。",
+        "同程度の苗が近接して並ぶ過密の例では、一本を除き間隔を整える前後を対照。"
+      ],
+      "originalConstructionJa": "源図の一本列や丸バツ配置を複製せず、二段の独自比較カードにする。基準苗は同一生育段階・同じ表示倍率。密度比較は同じ面積枠で示し、除去前後の苗数と位置の整合を制御。",
+      "assessmentLimitJa": "掲載例の見え方と間引きの目的を対応させる。病害・害虫の種や障害原因を診断せず、徒長の数値閾値や苗間隔を発明しない。大きい苗を一律に抜く規則にしない。",
+      "feasibility": "high_for_comparison_examples_with_nondiagnostic_labels",
+      "remainingHeldJa": [
+        "虫くいの形だけで虫種や発生原因は確定しない。",
+        "残す本数・株間・抜き方・薬剤は個別作物の処方として指定しない。",
+        "生育不良/徒長/葉異常の各例と過密調整は別々にAI比較確認が必要。"
+      ],
+      "sources": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 12,
+          "printedPage": 6,
+          "renderPath": "/workspace/scratch/018c0b6e29b8/audit10-general-pages/s1-12.png",
+          "renderSha256": "5a54ff6972579ed0a0bc704295e37c0f28f5b7c88085e250fbb3165559aceb82",
+          "visualChecked": true
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 15,
+          "printedPage": 13,
+          "renderPath": "/workspace/scratch/018c0b6e29b8/audit10-general-pages/s2-15.png",
+          "renderSha256": "c7cbd913fe0349b1cf67718bf4307858d16f1658d88c5a79ed354f22b01c51a2",
+          "visualChecked": true
+        }
+      ],
+      "overlayState": {
+        "AGR-A10-GENERAL-0078": "unresolved_recognition",
+        "AGR-A10-GENERAL-0079": "unresolved_recognition",
+        "AGR-A10-GENERAL-0080": "unresolved_recognition",
+        "AGR-A10-GENERAL-0081": "unresolved_recognition",
+        "AGR-A10-GENERAL-0372": "unresolved_recognition",
+        "AGR-A10-GENERAL-0373": "unresolved_recognition",
+        "AGR-A10-GENERAL-0374": "unresolved_recognition",
+        "AGR-A10-GENERAL-0375": "unresolved_recognition"
+      }
+    }
+  ],
+  "selectionNoteJa": "最初の玄米比較を優先。次の器官位置と間引き比較は、機械認識を別担当へ分離でき、原資料の識別手掛かりを独立2Dで制御しやすい。前の概念4パネルや新規本文は認識画像の代わりとしない。",
+  "notPerformed": [
+    "image_generation",
+    "canonical_edit",
+    "shared_file_edit",
+    "gap_closure",
+    "native_domain_human_device_certification"
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false
+}

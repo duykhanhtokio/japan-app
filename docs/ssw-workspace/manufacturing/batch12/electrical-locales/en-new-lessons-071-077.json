@@ -1,0 +1,377 @@
+{
+  "locale": "en",
+  "lessons": {
+    "mfg1-electrical-l071": {
+      "sourceHash": "d99438ff6de3ea74ebce53fd03707467e62759206566ed9fe53e1897c1385686",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Intrinsic, n-type, p-type, and the pn junction",
+      "objective": "Understand a pn junction by separating impurities, carriers, and the internal field.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Atomic bonds and impurities",
+          "text": "Silicon and germanium are representative intrinsic semiconductors. Adding a small amount of suitable impurity to silicon changes carrier behavior. Electrons are majority carriers in n-type material and holes in p-type; n/p does not simply mean the whole material has negative/positive charge."
+        },
+        {
+          "id": "section-2",
+          "title": "Donors and acceptors",
+          "text": "Adding a five-valence-electron atom such as phosphorus to silicon is a donor example; a three-valence-electron atom such as boron is an acceptor example. A hole represents a missing electron; movement of surrounding electrons allows us to describe the hole as moving."
+        },
+        {
+          "id": "section-3",
+          "title": "At the junction",
+          "text": "Joining p-type and n-type material causes carrier diffusion and recombination near the boundary, forming a depletion layer with few mobile majority carriers and an internal electric field. It is not an empty physical gap or a region without fixed charges. The external voltage direction changes junction behavior."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "価電子",
+          "reading": "かでんし",
+          "meaning": "Outer electrons involved in atomic bonding and similar interactions."
+        },
+        {
+          "ja": "キャリア",
+          "reading": "きゃりあ",
+          "meaning": "Electrons or holes carrying current."
+        },
+        {
+          "ja": "空乏層",
+          "reading": "くうぼうそう",
+          "meaning": "A region near the junction with fewer mobile majority carriers."
+        },
+        {
+          "ja": "再結合",
+          "reading": "さいけつごう",
+          "meaning": "Electrons and holes combining and ceasing to act as carriers."
+        }
+      ],
+      "activity": "30-minute study target: reading 10 minutes, organizing examples 8, writing 9, reflection 3.\nCompare intrinsic, n-type, and p-type material by carriers and impurities. Explain hole movement and the depletion layer using words on a diagram.",
+      "safety": [
+        "Do not energize components with unknown polarity or ratings based on semiconductor explanations."
+      ],
+      "summary": "Understand a pn junction by separating impurities, carriers, and the internal field."
+    },
+    "mfg1-electrical-l072": {
+      "sourceHash": "aa213598332b37cded6bc5c111231b9e6ae94d7de76cbd4ad174f8fac3927460",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "FETs, IGBTs, and IC function groups",
+      "objective": "Separate device control, characteristics, and limits from IC functions.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Three terminals do not imply the same roles",
+          "text": "Unlike a bipolar transistor’s B/C/E, a FET uses gate-based electric-field control. An IGBT is a power device with an insulated gate. Consult model documents for terminal names, drive conditions, maximum ratings, and static sensitivity; identical shape does not establish interchangeability."
+        },
+        {
+          "id": "section-2",
+          "title": "Separate characteristics from ratings",
+          "text": "hFE, switching time, and saturation voltage are characteristics dependent on operating conditions. Maximum current, voltage, and dissipation ratings are limits not to exceed. One favorable characteristic does not establish suitability."
+        },
+        {
+          "id": "section-3",
+          "title": "Signals and processing",
+          "text": "Op-amps, A/D, D/A, regulators, logic, memory, and MPUs have different functions. Modulation reflects an information signal into carrier amplitude, frequency, or phase; demodulation retrieves it. Do not confuse amplification, oscillation, and power stabilization as one process."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "FET",
+          "reading": "えふいーてぃー",
+          "meaning": "A transistor controlling current through the field effect."
+        },
+        {
+          "ja": "IGBT",
+          "reading": "あいじーびーてぃー",
+          "meaning": "A bipolar power device with an insulated gate."
+        },
+        {
+          "ja": "飽和電圧",
+          "reading": "ほうわでんあつ",
+          "meaning": "A terminal-voltage characteristic remaining under specified on-state conditions or similar conditions."
+        },
+        {
+          "ja": "MPU",
+          "reading": "えむぴーゆー",
+          "meaning": "A microprocessor handling calculation, control, and similar tasks."
+        }
+      ],
+      "activity": "30-minute study target: reading 10 minutes, organizing examples 8, writing 9, reflection 3.\nMake a role diagram from sensor to MPU. Explain document checks for a FET gate versus BJT base and the distinction between characteristics and maximum ratings.",
+      "safety": [
+        "Do not replace a different device type merely because the terminal count matches."
+      ],
+      "summary": "Separate device control, characteristics, and limits from IC functions."
+    },
+    "mfg1-electrical-l073": {
+      "sourceHash": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Analog scales, clamp meters, and measurement error",
+      "objective": "Match range, function, and effects on the circuit before measuring.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Combine range and scale",
+          "text": "Read an analog meter using the selected range and corresponding scale. A reading of 20 on a 50 full-scale scale with a 25 mA range is 10 mA. Resistance scales are nonlinear and use multipliers; check zero adjustment for each range. Align the pointer with its mirror image to reduce parallax."
+        },
+        {
+          "id": "section-2",
+          "title": "Check each model’s capabilities",
+          "text": "Some DMMs directly measure AC current; do not claim all testers cannot. A clamp meter detects current around a conductor: check method, AC/DC capability, which conductor to enclose, and ratings. Current alone does not directly establish power consumption."
+        },
+        {
+          "id": "section-3",
+          "title": "Effects on the circuit",
+          "text": "In the R=V/I voltage-drop method, leads, contacts, and instrument resistance affect the result. Voltmeter input and ammeter insertion also change the circuit, so the display is not automatically the true value. Check oscilloscope bandwidth, sample rate, memory, and probe conditions too."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "視差",
+          "reading": "しさ",
+          "meaning": "A reading shift caused by viewing from a different position."
+        },
+        {
+          "ja": "クランプメーター",
+          "reading": "くらんぷめーたー",
+          "meaning": "A current meter with a sensing section enclosing a conductor."
+        },
+        {
+          "ja": "入力抵抗",
+          "reading": "にゅうりょくていこう",
+          "meaning": "Resistance presented at an instrument’s input."
+        },
+        {
+          "ja": "サンプルレート",
+          "reading": "さんぷるれーと",
+          "meaning": "The number of signal acquisitions per unit time."
+        }
+      ],
+      "activity": "30-minute study target: reading 10 minutes, organizing examples 8, writing 9, reflection 3.\nFind the reading for full-scale 100, a 5 V range, and an indication of 64. Explain lead resistance in resistance measurements and input resistance in voltage measurements.",
+      "safety": [
+        "Attach clamps or probes only within assigned procedures, ratings, and safe conditions."
+      ],
+      "summary": "Match range, function, and effects on the circuit before measuring."
+    },
+    "mfg1-electrical-l074": {
+      "sourceHash": "aa3bf37030bd09585e1ff4baf543ab4c1ec11f7be57a52d6d3ffa8c331bd90db",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Tidy up and hand over after assembly",
+      "objective": "Tidying is a process of checking quantities, foreign material, and status before handover.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Preparation and fatigue",
+          "text": "Prepare clothing, tools, parts, work surfaces, lighting, instructions, static protection, ventilation, and cooling. Familiar prolonged work can reduce attention through fatigue; follow workplace break plans. Match protection to hazards and avoid items that may be caught in rotation."
+        },
+        {
+          "id": "section-2",
+          "title": "Restore quantities and condition",
+          "text": "Return tools, remaining parts, and documents to designated locations and remove solder scraps and offcuts using specified tools. Check for foreign material inside boards or housings and distinguish held from good items. Do not leave everything simply assuming the next worker will do the same job."
+        },
+        {
+          "id": "section-3",
+          "title": "Records for the next decision",
+          "text": "Record part number, lot, quantity, completed scope, unfinished work, machine condition, abnormalities and actions, and recipient. If remaining counts disagree, report possible mixing or shortages instead of forcing the numbers to balance. Continue isolation and residual-heat precautions during cleaning."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "引継ぎ",
+          "reading": "ひきつぎ",
+          "meaning": "Passing status and necessary information to the next responsible person."
+        },
+        {
+          "ja": "異物",
+          "reading": "いぶつ",
+          "meaning": "Something not intended to be present in a product or process."
+        },
+        {
+          "ja": "残数",
+          "reading": "ざんすう",
+          "meaning": "The quantity left after use or processing."
+        },
+        {
+          "ja": "保留品",
+          "reading": "ほりゅうひん",
+          "meaning": "An item held separately pending a decision or action."
+        }
+      ],
+      "activity": "30-minute study target: reading 10 minutes, organizing examples 8, writing 9, reflection 3.\nWrite an end-of-work record for 32 planned items:25 complete,2 held, and 5 not started. Prepare a handover message about one missing tool.",
+      "safety": [
+        "Do not reach into running machinery to clean or recover tools."
+      ],
+      "summary": "Tidying is a process of checking quantities, foreign material, and status before handover."
+    },
+    "mfg1-electrical-l075": {
+      "sourceHash": "25b343d5c17e0f1c6341bbb74624260be811dd15aa757a4eb8207cec69466d89",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Verify logic laws with truth tables",
+      "objective": "Specify operators and the scope of negation, and check all input combinations.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Order within the same operation",
+          "text": "In binary logic, +means OR, ·means AND, and NOT means negation. Commutative and associative laws allow order or parentheses to change within the same operator without changing results. Unlike ordinary arithmetic, x+x=x and x·x=x."
+        },
+        {
+          "id": "section-2",
+          "title": "Zero, one, and negation",
+          "text": "x+0=x, x·1=x, x+1=1, and x·0=0. Also x+NOT x=1, x·NOT x=0, and double negation returns x. Check absorption x+x·y=x and distribution x·(y+z)=x·y+x·z through four or eight input combinations."
+        },
+        {
+          "id": "section-3",
+          "title": "What is negated",
+          "text": "De Morgan gives NOT(x+y)=(NOT x)·(NOT y) and NOT(x·y)=(NOT x)+(NOT y). Use parentheses to identify negation scope. Simplifying a logic expression does not replace evaluation of failure behavior or safety."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "真理値表",
+          "reading": "しんりちひょう",
+          "meaning": "A table listing input combinations and their logical results."
+        },
+        {
+          "ja": "吸収則",
+          "reading": "きゅうしゅうそく",
+          "meaning": "A logic law that simplifies overlapping conditions."
+        },
+        {
+          "ja": "分配則",
+          "reading": "ぶんぱいそく",
+          "meaning": "A law expanding an operation into or out of parentheses."
+        },
+        {
+          "ja": "二重否定",
+          "reading": "にじゅうひてい",
+          "meaning": "Applying negation twice returns the original value."
+        }
+      ],
+      "activity": "30-minute study target: reading 10 minutes, organizing examples 8, writing 9, reflection 3.\nMake a four-row table for x+x·y. Give one input at which NOT(x+y) differs from NOT x+NOT y.",
+      "safety": [
+        "Do not approve safety-circuit changes merely because logic expressions are equivalent."
+      ],
+      "summary": "Specify operators and the scope of negation, and check all input combinations."
+    },
+    "mfg1-electrical-l076": {
+      "sourceHash": "da01dd1203b38cd444550c258b608849799ca0724a520cf934b0e36601be8489",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "Switches, sensors, relays, and SSRs",
+      "objective": "Separate detection principles from output methods when identifying parts.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Components creating inputs",
+          "text": "Pushbuttons can return automatically or retain state. A mechanical limit switch changes contacts through object movement; photoelectric and proximity sensors use different detection principles. For float and pressure detection too, consult specifications for the measured quantity and output form."
+        },
+        {
+          "id": "section-2",
+          "title": "Switching through electromagnetism",
+          "text": "An electromagnetic relay moves a mechanism and contacts with coil-generated magnetic force. A contactor switches larger loads but may not itself contain short-circuit or overcurrent protection. Match coil rating, contact capacity, a/b arrangement, and device identifier."
+        },
+        {
+          "id": "section-3",
+          "title": "Distinguish semiconductor outputs",
+          "text": "SSRs mainly switch through semiconductors, so not all relays can be explained as mechanical contacts and coils. Check off-state leakage, heating, and load requirements. The shape or contacts of an emergency stop alone do not certify the equipment’s whole safety function."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "リミットスイッチ",
+          "reading": "りみっとすいっち",
+          "meaning": "A switch changing contacts according to object position or movement."
+        },
+        {
+          "ja": "コンタクタ",
+          "reading": "こんたくた",
+          "meaning": "A device opening and closing a load circuit through electromagnetic force."
+        },
+        {
+          "ja": "SSR",
+          "reading": "えすえすあーる",
+          "meaning": "A relay using semiconductors for switching."
+        },
+        {
+          "ja": "自動復帰",
+          "reading": "じどうふっき",
+          "meaning": "Returning to the original state when the action is released."
+        }
+      ],
+      "activity": "30-minute study target: reading 10 minutes, organizing examples 8, writing 9, reflection 3.\nCompare inputs, operating principles, and ratings for pushbuttons, position sensors, electromagnetic relays, and SSRs. Report non-detection without independently changing wiring.",
+      "safety": [
+        "Do not bypass sensor or emergency-stop signals to make machinery operate."
+      ],
+      "summary": "Separate detection principles from output methods when identifying parts."
+    },
+    "mfg1-electrical-l077": {
+      "sourceHash": "614284c4181587733b9090e0984f94cf23ab20ea4d46b2619f26c39cc9d52024",
+      "translatedDirectlyFrom": "ja",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "status": "ai_translated_draft",
+      "title": "State changes of thermal relays and timers",
+      "objective": "Separate overload detection, main-circuit switching, and timing.",
+      "paragraphs": [
+        {
+          "id": "section-1",
+          "title": "Detecting overload",
+          "text": "A thermal relay detects overload using heating from overcurrent and components such as bimetal strips. A bimetal combines metals with different thermal expansion. Do not assume it alone interrupts the main circuit; it is normally combined with a contactor."
+        },
+        {
+          "id": "section-2",
+          "title": "Delaying on",
+          "text": "A basic on-delay turns the output on after the set time from input-on, and turns it off when the input goes off. In the basic example, an input shorter than the setting produces no output. Check each contact for timed operation and instantaneous return."
+        },
+        {
+          "id": "section-3",
+          "title": "Delaying off",
+          "text": "A basic off-delay turns on with the input, then off after the set delay from input-off. Retention and power conditions differ by product; do not assume identical behavior on loss of supply. Draw separate input/output lines against time to verify."
+        }
+      ],
+      "terms": [
+        {
+          "ja": "サーマルリレー",
+          "reading": "さーまるりれー",
+          "meaning": "A relay using heat to detect overload."
+        },
+        {
+          "ja": "バイメタル",
+          "reading": "ばいめたる",
+          "meaning": "A bonded material made from metals with different thermal expansion."
+        },
+        {
+          "ja": "オンディレー",
+          "reading": "おんでぃれー",
+          "meaning": "An action delaying output-on after input-on."
+        },
+        {
+          "ja": "オフディレー",
+          "reading": "おふでぃれー",
+          "meaning": "An action delaying output-off after input-off."
+        }
+      ],
+      "activity": "30-minute study target: reading 10 minutes, organizing examples 8, writing 9, reflection 3.\nExplain the output for a 3-second basic on-delay receiving 2-second and 5-second inputs. Compare the output timing after the input ends for an off-delay.",
+      "safety": [
+        "Do not ignore protection trips when resetting or changing timer settings."
+      ],
+      "summary": "Separate overload detection, main-circuit switching, and timing."
+    }
+  },
+  "questions": {}
+}

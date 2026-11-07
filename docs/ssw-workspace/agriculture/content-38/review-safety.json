@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "author": "safety",
+  "reviewer": "rice",
+  "authorPacketSha256": "e36caa6520a72bd2b203fdfac3dba28d06aaa369a7d404af8d65ebfd217f2d67",
+  "lessonSourceHash": "491beff1c25c8df0f31fd236bfc329126ab87b34521619b42734d51f78e2edec",
+  "decisions": [
+    {
+      "paragraphId": "agr-s38-safety-reading-supplement-p1",
+      "sourceItemIds": [
+        "AGR-A10-SAFETY-0407",
+        "AGR-A10-SAFETY-0408"
+      ],
+      "decision": "accept_with_patch",
+      "reasonJa": "保管場所の火気禁止・消火器と室温での気化・換気はPDF59の記述に一致し、既習の給油や古い燃料とは別の補足。三つを独立した処方にしないという内向き表現を、確認対象の違いという学習内容に置き換える。",
+      "sourceImageAndOverlapBindingsVerified": true
+    },
+    {
+      "paragraphId": "agr-s38-safety-reading-supplement-p2",
+      "sourceItemIds": [
+        "AGR-A10-SAFETY-0291",
+        "AGR-A10-SAFETY-0294"
+      ],
+      "decision": "accept",
+      "reasonJa": "PDF47/48で殺そ剤の対象と植物成長調整剤の開花・結実の目的および分類項目を確認。現行法の定義や登録適否を認定せず、既習の果樹別用途とも区別している。",
+      "sourceImageAndOverlapBindingsVerified": true
+    },
+    {
+      "paragraphId": "agr-s38-safety-reading-supplement-p3",
+      "sourceItemIds": [
+        "AGR-A10-SAFETY-0292"
+      ],
+      "decision": "accept_source_correction_hold_preserved",
+      "reasonJa": "PDF47は化学合成されたものでない天敵等を述べる。原バックログ0292の作物成長成分でないという要約は誤っており、本文は実際の原頁に合わせている。0292がresolutionsにないことを確認し、補正記録と現行制度の範囲は引き続き保留にする。",
+      "sourceImageAndOverlapBindingsVerified": true
+    },
+    {
+      "paragraphId": "agr-s38-safety-reading-supplement-p4",
+      "sourceItemIds": [
+        "AGR-A10-SAFETY-0295"
+      ],
+      "decision": "accept_names_only_scope",
+      "reasonJa": "PDF48の一覧に二名称が別々にある。交信撹乱の作用は既習として保持し、展着剤の機構や製品混合を新造していない。列挙の用語確認としてのみ採用し独立問題容量に換算しない。",
+      "sourceImageAndOverlapBindingsVerified": true
+    },
+    {
+      "paragraphId": "agr-s38-safety-reading-supplement-p5",
+      "sourceItemIds": [
+        "AGR-A10-SAFETY-0393"
+      ],
+      "decision": "accept_source_bounded_voltage_reason",
+      "reasonJa": "PDF58の三相交流注意欄が電圧の高さを理由に挙げる。既習の100/200V例・用途・送電量の比較とは理由という追加粒度。安全電圧の閾値や接続操作の承認にせず、配線・相交換などを教えていない。",
+      "sourceImageAndOverlapBindingsVerified": true
+    },
+    {
+      "paragraphId": "agr-s38-safety-reading-supplement-p6",
+      "sourceItemIds": [
+        "AGR-A10-SAFETY-0383"
+      ],
+      "decision": "accept_hygiene_example_only",
+      "reasonJa": "PDF57の散布後欄で器具洗浄・手洗い・うがいを確認。追加はうがいという掲載衛生項目で、身体の異常や誤飲への救急処置・医学的効果には展開しない。既習の症状時受診・洗浄の設問を再作成していない。",
+      "sourceImageAndOverlapBindingsVerified": true
+    }
+  ],
+  "patches": [
+    {
+      "lessonId": "agr-s38-safety-reading-supplement",
+      "paragraphId": "agr-s38-safety-reading-supplement-p1",
+      "field": "textJa",
+      "before": "2号資料は燃料の保管場所について、火気厳禁にすること、消火器を設けること、換気に注意することを示しています。給油中の確認とは場面を分けて読みます。ガソリンは室温でも気化し、そのガスが滞留しないようにするという理由も添えて整理しましょう。火気・消火器・換気を別々に確認しても、独立した三つの処方を作る説明ではありません。この記述から容器の規則、消火器の種類や数、換気量は決めません。",
+      "after": "2号資料は燃料の保管場所について、火気厳禁にすること、消火器を設けること、換気に注意することを示しています。給油中の確認とは場面を分けて読みます。ガソリンは室温でも気化し、そのガスが滞留しないようにするという理由も添えて整理しましょう。火気への注意、消火器の備え、気化したガスへの対策は、確認する対象が異なります。この記述から容器の規則、消火器の種類や数、換気量は決めません。",
+      "reasonJa": "独立した三処方という教材制作側の表現を避け、学習者が分けて確認する三対象を具体的に説明する。 source scope・操作禁止境界は不変。"
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "checks": {
+    "allInputHashesMatch": true,
+    "currentOverlapLessonAndParagraphHashesMatch": true,
+    "sevenResolutionIdsNotPreviouslyClosed": true,
+    "freshOriginalPdfPagesIndependentlyRenderedAndInspected": [
+      47,
+      48,
+      57,
+      58,
+      59
+    ],
+    "pageRenderHashesMatchAuthor": true,
+    "source0292ActualWordingMismatchConfirmed": true,
+    "source0292NoClosureConfirmed": true,
+    "PPE0356VisualHoldRetained": true,
+    "source0254AndContainerRegulatoryHoldsRetained": true
+  },
+  "sourceOccurrencesClosed": 0,
+  "runtimeFilesEdited": false,
+  "newQuestions": 0,
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "currentLegalVerification": false
+}

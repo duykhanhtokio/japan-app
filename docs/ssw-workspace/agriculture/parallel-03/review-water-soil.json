@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "agri_crop_management_independent_ai",
+  "reviewedPacket": "docs/ssw-workspace/agriculture/parallel-03/water-soil.json",
+  "packetSha256": "bf8f44daac5a7fe6e4f12b0354fb69ba0829f0f654e547d875aaa0036e456a14",
+  "status": "NO_BLOCKING_FACTUAL_OR_SCOPE_ISSUES",
+  "blockingIssues": [],
+  "checkedScope": {
+    "lessons": 10,
+    "weeklyQuestions": 16,
+    "questionCorrectCounts": {
+      "0": 4,
+      "2": 4,
+      "1": 4,
+      "3": 4
+    },
+    "sourceTextPages": [
+      {
+        "documentId": "AGR-S1",
+        "pdfPages": [
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ]
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPages": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ]
+      }
+    ],
+    "sourcePageImagesIndependentlyChecked": [
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 18
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 19
+      },
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 20
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 23
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 25
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 26
+      }
+    ],
+    "sourceHashChecks": "PASS",
+    "questionHashesAndFourOptionChecks": "PASS",
+    "noThreeIdenticalAnswers": "PASS"
+  },
+  "findings": [
+    {
+      "topic": "三相の目安",
+      "sources": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 18,
+          "printedPage": 12
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 23,
+          "printedPage": 21
+        }
+      ],
+      "sourceValues": {
+        "AGR-S1": "固相45–50%;液相・気相20–30%",
+        "AGR-S2": "固相40–50%;液相・気相25–30%"
+      },
+      "assessment": "Packet correctly preserves this as a local numerical hold and does not blend values or ask a single conflicting numerical question."
+    },
+    {
+      "topic": "pH分類の境界",
+      "sources": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 19,
+          "printedPage": 13
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 25,
+          "printedPage": 23
+        }
+      ],
+      "assessment": "Packet does not collapse strict acid/neutral wording of1go and soil-category wording of2go. Existing hold is justified. It does not block shared crop-specific table values."
+    },
+    {
+      "topic": "作物別pH値",
+      "sources": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 19,
+          "printedPage": 13
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 25,
+          "printedPage": 23
+        }
+      ],
+      "assessment": "Spinach6.5–7.0 and tea/blueberry4.5–5.5 agree in both page images. Lesson andq13 correct."
+    },
+    {
+      "topic": "直接挿入式の簡易測定器",
+      "sources": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 20,
+          "printedPage": 14
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 26,
+          "printedPage": 24
+        }
+      ],
+      "assessment": "Wetting/contact/approximately1minute until stable are correctly bounded to the illustrated simple instrument, not generalized to all meters. q14 correct."
+    },
+    {
+      "topic": "共通と2号の境界",
+      "assessment": "Eight common lessons are supported in both texts. Equipment mechanism/summer water heat and physical-chemical-biological factors are correctly separate2go extensions. All16questions reference common lessons."
+    }
+  ],
+  "nonBlockingSuggestions": [
+    {
+      "id": "AGR-WS-EDIT-01",
+      "severity": "minor_clarity",
+      "targetId": "agr-water-methods-p4",
+      "field": "lessons[id=agr-water-methods].paragraphs[id=agr-water-methods-p4].textJa",
+      "before": "うねと、うねの間に水を流す方法がうね間かん水です。多くの水を必要とする点を保って覚え、少量の水だけで済む方法と取り違えないようにします。",
+      "after": "うねとうねの間に水を流す方法がうね間かん水です。多くの水を必要とする点を保って覚え、少量の水だけで済む方法と取り違えないようにします。",
+      "source": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 15,
+          "printedPage": 9
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 20,
+          "printedPage": 18
+        }
+      ],
+      "reason": "Remove an awkward comma that can make the location less clear. Meaning/source unchanged; regenerate lessonHash andlinkedquestionhashes if applied."
+    },
+    {
+      "id": "AGR-WS-EDIT-02",
+      "severity": "distractor_quality",
+      "targetId": "agr-water-soil-q06",
+      "field": "questions[id=agr-water-soil-q06].optionsJa[1] and optionReasonsJa[1]",
+      "before": {
+        "option": "粘土が多いほど保肥力と水はけは同じ語になる。",
+        "reason": "別々の性質として示されています。"
+      },
+      "after": {
+        "option": "保肥力も水はけも悪い。",
+        "reason": "埴土の保肥力は良いと示されており、水はけと同じ評価ではありません。"
+      },
+      "source": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 16,
+          "printedPage": 10
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 21,
+          "printedPage": 19
+        }
+      ],
+      "reason": "Makes the wrong choice a plausible table-reading misconception rather than an implausible claim that two properties become the same word. Does not change correctIndex."
+    }
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "allSourceImagesIndependentlyReviewed": false,
+  "nativeDeviceTested": false,
+  "originalPacketModified": false
+}

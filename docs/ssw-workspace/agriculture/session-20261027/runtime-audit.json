@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "baseCommit": "06905f8b3a6ba51df28d55b0abd3e4ecc2edbf73",
+  "status": "scoped_state_checks_pass",
+  "canonicalFilesChanged": false,
+  "inspected": [
+    "src/components/agriculture/AgricultureCourse.tsx",
+    "src/components/agriculture/RecognitionImages.tsx",
+    "src/services/agriculture-study-state.ts",
+    "src/services/kensetsu-test-state.ts",
+    "src/data/agriculture/index.ts",
+    "src/data/agriculture/translations.ts"
+  ],
+  "checks": {
+    "method": "Node24 stripTypeScriptTypes of actual two state services in isolated VM; in-memory cases only",
+    "lessonRestoreAndRevisionCases": 174,
+    "weeklyBankRoundTripStaleRevisionGradingCases": 44,
+    "malformedAnswerRejectionCases": 176,
+    "levelAndLearnerKeyIsolation": "PASS",
+    "malformedProgressRejection": "PASS"
+  },
+  "existingValidator": {
+    "command": "NODE_PATH=<qa-deps>:<shared-session-deps> node scripts/agriculture/check.cjs",
+    "status": "PASS",
+    "counts": {
+      "sourcePages": 237,
+      "lessons": 174,
+      "knowledgeUnits": 1044,
+      "translatedLessonLocalePairs": 2088,
+      "weeklyQuestions": 412,
+      "mockQuestions": 0
+    },
+    "warning": "Cannot find Expo base tsconfig; no full Expo typecheck/build claim"
+  },
+  "findings": [],
+  "limitations": [
+    "Browser adapter validation is not native/real-device/Expo build validation",
+    "No accepted production-artwork or native-font certification",
+    "No content/native/domain certification",
+    "No remote persistence claim"
+  ],
+  "browserEvidence": "session-20261027/browser-qa.json",
+  "browserScope": {
+    "newMockForms": 1,
+    "questionCases": 40,
+    "responsiveDayNightCases": 8,
+    "saveReloadCases": 1,
+    "saveFailureRetryCases": 1,
+    "remainingEmptyLevelCases": 1,
+    "existingWeeklyAccess": true,
+    "adapters": [
+      "Royal panels/background/artwork",
+      "safe-area",
+      "AsyncStorage via localStorage"
+    ],
+    "reviewerInspectedScreenshot": "agr-1-m01-day-390x844.png"
+  },
+  "finalEvidence": {
+    "mockReport": "session-20261027/browser-qa.json",
+    "readerReport": "session-20261027/reader-qa.json",
+    "finalIndexSha256": "304c3a615dc9e27030d3a14386c16093edc1b1b8171fa628017950369d646ac2",
+    "guardedProductInputsPerRun": 24,
+    "inputsUnchangedDuringBothFinalRuns": true,
+    "reader": {
+      "newLessons": 6,
+      "locales": 12,
+      "fullFieldTranslatedReaders": 72,
+      "japaneseDayNightResponsiveCases": 48,
+      "longTranslationDayNightResponsiveCases": 96,
+      "completionAutoReturnReloadCases": 6,
+      "saveFailureRetry": true,
+      "level1Isolation": true,
+      "captures": 56
+    },
+    "visuallyInspectedFinalScreenshots": [
+      "long-bn-day-390x844.png",
+      "long-ne-night-1440x900.png"
+    ],
+    "scope": "Browser QA adapters and explicit QA fonts; not production/native/device/font certification"
+  }
+}

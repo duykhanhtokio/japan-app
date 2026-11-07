@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "owner": "agri_6",
+  "packet": "general-seed-audit.json",
+  "packetSha256": "33c0badd75fe7d707adda0d52032b88bcb45e3f5911de90486f32500c36bd2aa",
+  "status": "complete",
+  "reviewScope": {
+    "mechanical": "All 33 page records and 460 source occurrences: disjoint page ranges, unique IDs, allowed statuses, source references, existing lesson/knowledge/paragraph identifiers and status counts.",
+    "semantic": "Targeted source image and canonical prose review of historical production/self-sufficiency figures, flower numeric charts and graph inconsistencies, flowering examples, nursery selection and benefits, transplanting diagrams, graft labels/purposes, and direct-seeding stage wording. Semantic review does not certify every atomic objective or every authored prose claim.",
+    "targetedImagePages": [
+      {
+        "documentId": "AGR-S1",
+        "pdfPages": [
+          10,
+          12
+        ]
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPages": [
+          3,
+          4,
+          5,
+          7,
+          12,
+          15,
+          17,
+          19
+        ]
+      }
+    ],
+    "enlargedImages": [
+      "s2-07-top.png",
+      "s2-07-bottom.png"
+    ],
+    "mechanicalReviewComplete": true,
+    "allOccurrencesSemanticallyRechecked": false,
+    "routeCoverageCheck": "Targeted GENERAL-0040 and GENERAL-0091: source-book minimum level 1; checked actual shared-route alternatives across all canonical level-1 paragraphs. Other authored occurrences were not independently route-audited."
+  },
+  "checks": {
+    "allPageRecordsPresent": true,
+    "uniqueItemIds": true,
+    "existingProseIdentifiersResolve": true,
+    "existingKnowledgeIdsResolveWithinLinkedLessons": true,
+    "statusCountsMatch": true,
+    "frozenAuthorPacketUnmodified": true,
+    "targetedRouteCoverageChecked": true
+  },
+  "corrections": [
+    {
+      "path": "/pages/7/items/10/status",
+      "before": "authored",
+      "after": "missing",
+      "reason": "1号出現の比較目標に対し引用本文は2号ルートのみ。共有のagr-vegwork-environment-p4にも光飽和点はあるが、1号と2号の説明を比較する本文はない。2号agr-plant-responses-p1/p2の内容自体は既習として保持し、1号ルートの本目標はmissingとする。"
+    },
+    {
+      "path": "/pages/7/items/10/reasonJa",
+      "before": "指定段落の具体的説明に対応。見出しや参照元だけで既習とせず本文を確認した。",
+      "after": "1号出現の比較目標に対し引用本文は2号ルートのみ。共有のagr-vegwork-environment-p4にも光飽和点はあるが、1号と2号の説明を比較する本文はない。2号agr-plant-responses-p1/p2の内容自体は既習として保持し、1号ルートの本目標はmissingとする。",
+      "reason": "1号出現の比較目標に対し引用本文は2号ルートのみ。共有のagr-vegwork-environment-p4にも光飽和点はあるが、1号と2号の説明を比較する本文はない。2号agr-plant-responses-p1/p2の内容自体は既習として保持し、1号ルートの本目標はmissingとする。"
+    },
+    {
+      "op": "add",
+      "path": "/pages/7/items/10/scopeLevels",
+      "before": null,
+      "after": [
+        "1"
+      ],
+      "reason": "source occurrence AGR-S1 defines minimum route scope; key absent in frozen packet."
+    },
+    {
+      "path": "/pages/12/items/3/existingLessonIds",
+      "before": [
+        "agr-sowing-design"
+      ],
+      "after": [
+        "agr-nursery"
+      ],
+      "reason": "共有ルートagr-nursery-p5は株間を苗同士の間隔と明示する。2号限定の既存引用を共有の直接一致本文へ変更。図の矢印に対応する概念の本文対応であり、認識素材完成の認証ではない。"
+    },
+    {
+      "path": "/pages/12/items/3/existingKnowledgeIds",
+      "before": [
+        "AGR-K-SOWING-DESIGN-06"
+      ],
+      "after": [
+        "AGR-K-NURSERY-05"
+      ],
+      "reason": "共有ルートagr-nursery-p5は株間を苗同士の間隔と明示する。2号限定の既存引用を共有の直接一致本文へ変更。図の矢印に対応する概念の本文対応であり、認識素材完成の認証ではない。"
+    },
+    {
+      "path": "/pages/12/items/3/evidence",
+      "before": [
+        {
+          "lessonId": "agr-sowing-design",
+          "paragraphIds": [
+            "agr-sowing-design-p6"
+          ]
+        }
+      ],
+      "after": [
+        {
+          "lessonId": "agr-nursery",
+          "paragraphIds": [
+            "agr-nursery-p5"
+          ]
+        }
+      ],
+      "reason": "共有ルートagr-nursery-p5は株間を苗同士の間隔と明示する。2号限定の既存引用を共有の直接一致本文へ変更。図の矢印に対応する概念の本文対応であり、認識素材完成の認証ではない。"
+    },
+    {
+      "path": "/pages/12/items/3/reasonJa",
+      "before": "指定段落の具体的説明に対応。見出しや参照元だけで既習とせず本文を確認した。",
+      "after": "共有ルートagr-nursery-p5は株間を苗同士の間隔と明示する。2号限定の既存引用を共有の直接一致本文へ変更。図の矢印に対応する概念の本文対応であり、認識素材完成の認証ではない。",
+      "reason": "共有ルートagr-nursery-p5は株間を苗同士の間隔と明示する。2号限定の既存引用を共有の直接一致本文へ変更。図の矢印に対応する概念の本文対応であり、認識素材完成の認証ではない。"
+    },
+    {
+      "op": "add",
+      "path": "/pages/12/items/3/scopeLevels",
+      "before": null,
+      "after": [
+        "1"
+      ],
+      "reason": "source occurrence AGR-S1 defines minimum route scope; key absent in frozen packet."
+    },
+    {
+      "path": "/summary/byStatus/authored",
+      "before": 218,
+      "after": 217,
+      "reason": "Route-aware reclassification of GENERAL-0040."
+    },
+    {
+      "path": "/summary/byStatus/missing",
+      "before": 200,
+      "after": 201,
+      "reason": "Route-aware reclassification of GENERAL-0040."
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "findings": [
+    {
+      "itemIds": [
+        "AGR-A10-GENERAL-0166"
+      ],
+      "result": "hold_retained",
+      "reasonJa": "直播欄の育苗段階という表現と直接播種の説明の不整合を保留している。播種時期への推測修正をしない扱いが妥当。"
+    },
+    {
+      "itemIds": [
+        "AGR-A10-GENERAL-0202",
+        "AGR-A10-GENERAL-0239",
+        "AGR-A10-GENERAL-0240",
+        "AGR-A10-GENERAL-0241",
+        "AGR-A10-GENERAL-0242",
+        "AGR-A10-GENERAL-0243"
+      ],
+      "result": "source_numeric_holds_retained",
+      "reasonJa": "平成30年図の中心総額・各部門・別調査注記、年次棒図の文字数値と縦軸位置を混同せず、再計算や目測で正解値に直していない。"
+    },
+    {
+      "itemIds": [
+        "AGR-A10-GENERAL-0305"
+      ],
+      "result": "nonblocking_conservative_gap_retained",
+      "reasonJa": "既存agr-fruit-foundation-buds-p1は花芽と開花の関係を説明するが、後に花となる芽という明示定義より弱い。著者のmissingを維持し、題名だけでauthoredへ昇格させない。"
+    },
+    {
+      "itemIds": [
+        "AGR-A10-GENERAL-0040",
+        "AGR-A10-GENERAL-0091"
+      ],
+      "result": "route_corrections",
+      "reasonJa": "0040は1号比較本文不足。0091は共有agr-nursery-p5へ対応付け。2号の内容があることだけで1号ルート既習とはしない。"
+    }
+  ],
+  "limitationsJa": [
+    "全件の識別子検証は実施したが、全460件の意味を独立して再読・認証したとの主張ではない。",
+    "出現数は独立知識数ではなく、800問の作成可能性や図版素材の完成を証明しない。"
+  ],
+  "humanReviewed": false,
+  "domainReviewed": false,
+  "nativeReviewed": false
+}

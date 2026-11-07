@@ -1,0 +1,1887 @@
+{
+  "schemaVersion": 1,
+  "batch": 22,
+  "scopeLevel": "1",
+  "baselineCommit": "30f79554bb20e9d096f09fbc0edb2464a1a7a30e",
+  "scope": "Additive scoped source-object review occurrences with structural target bindings; not exhaustive source, semantic translation, native/domain or release certification.",
+  "ledgerFiles": {
+    "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+    "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+    "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e"
+  },
+  "independentSourceReviewSha256": "de1038c7a3305e02abd213621c782300e2d8d067c6403a4aa248cfc790331bc9",
+  "targetCoverageReviewSha256": "0bd92800b7fe979e2bf7a555e001b4aad5c43ccd143673a9077b8036525ae241",
+  "runtimeFreezeSha256": "d36b43db1d1aec1b02115a5a78a4731062d15c15077ebe00a0ccc3f4c5031444",
+  "specialties": {
+    "mechanical": {
+      "reviewedPhysicalPages": [
+        72,
+        73
+      ],
+      "pageReviewOccurrences": 2,
+      "detailedObjectOccurrences": 21,
+      "coverageStatusCounts": {
+        "covered_concept": 11,
+        "partial_detail_or_visual_gap": 7,
+        "source_qualification_or_ambiguity": 3
+      }
+    },
+    "electrical": {
+      "reviewedPhysicalPages": [
+        103,
+        104,
+        105
+      ],
+      "pageReviewOccurrences": 3,
+      "detailedObjectOccurrences": 15,
+      "coverageStatusCounts": {
+        "covered_concept": 4,
+        "partial_detail_or_visual_gap": 9,
+        "source_qualification_or_ambiguity": 2
+      }
+    },
+    "surface": {
+      "reviewedPhysicalPages": [
+        183,
+        184
+      ],
+      "pageReviewOccurrences": 2,
+      "detailedObjectOccurrences": 12,
+      "coverageStatusCounts": {
+        "covered_concept": 2,
+        "partial_detail_or_visual_gap": 6,
+        "source_qualification_or_ambiguity": 4
+      }
+    }
+  },
+  "pageReviewOccurrences": 7,
+  "detailedObjectOccurrences": 48,
+  "globallyNewPreviouslyUnseenPages": null,
+  "newnessQualification": "Seven scoped page-review occurrences. Prior visual reading may exist; no globally unique-new-page count is asserted.",
+  "referencedLessonsWithTwelveRevisionBoundTargets": 9,
+  "semanticTranslationReviewPerformed": false,
+  "objects": [
+    {
+      "id": "mfg1-mechanical-b22-p072-o01",
+      "type": "mechanism",
+      "summary": "A caliper has a slider moving along the main scale.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.18,
+        0.215,
+        0.88,
+        0.26
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source definition; lesson018 termノギス names slider/jaws and main/subscale reading.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 72,
+      "printedPage": 64,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "2b2c74d7464a5c6243b974cf81f24d9dd4d9d61aac6e6a81e9d3d45a090b27d2"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p072-o02",
+      "type": "mechanism_relation",
+      "summary": "The main body has a fixed jaw and the moving slider carries the opposing measuring jaw.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.18,
+        0.24,
+        0.89,
+        0.285
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source definition compared with lesson018 principle/term; jaw roles named generally, not mapped to fixed/moving structure.",
+      "uncoveredFacets": [
+        "Explicit fixed-jaw versus slider-jaw structural relation."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 72,
+      "printedPage": 64,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "da95c35b58e13b1f1c45f6458c46270e0094b8ce01898b6892d84733ec06bdd1"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p072-o03",
+      "type": "measurement_face",
+      "summary": "The opposed jaw measuring surfaces contact the target dimension.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.18,
+        0.27,
+        0.88,
+        0.315
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source definition; lesson018 principle/decision explains choosing measuring faces and stable contact.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 72,
+      "printedPage": 64,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "f2aa01d7e5988be0f017c13cc99c405bd5b11419a2a74359f247b20b3193ee80"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p072-o04",
+      "type": "instrument_capability",
+      "summary": "The usual caliper described has separate inner and outer jaws for inside and outside dimensions.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.18,
+        0.285,
+        0.89,
+        0.345
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source definition; lesson018 principle explicitly distinguishes external/internal jaws.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 72,
+      "printedPage": 64,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "b163ffe266b36300e6fd4b6c19d750f22fcbdd9b476e2d3291a53a59dccd1ded"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p072-o05",
+      "type": "conditional_capability",
+      "summary": "Depth measurement is available on a caliper equipped with a depth bar.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.18,
+        0.325,
+        0.88,
+        0.355
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source definition; lesson018 principle preserves depth-bar condition.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 72,
+      "printedPage": 64,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "5753ab0a45b4b1da30cae0f28e1dbe2ff5a60b240fafea62b403a3fbe60ce027"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p072-o06",
+      "type": "source_variant_values",
+      "summary": "The source lists vernier minimum reading values of0.1,0.05and0.02mm and describes0.05mm as commonly used.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "source_qualification_or_ambiguity",
+      "bboxNormalized": [
+        0.18,
+        0.36,
+        0.88,
+        0.41
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source list compared with lesson0180.05mm example and requirement to check the actual tool; no universal market/standard claim.",
+      "uncoveredFacets": [
+        "Alternative source-listed reading increments0.1/0.02mm are not explicitly taught; frequency claim is source-qualified only."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 72,
+      "printedPage": 64,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "b529f72568e66ada69521759fb34b830a3784c7ebd7d952b401462d515ad14a7"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p072-o07",
+      "type": "source_display_value",
+      "summary": "The source gives0.01mm as the digital display increment.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "source_qualification_or_ambiguity",
+      "bboxNormalized": [
+        0.18,
+        0.415,
+        0.86,
+        0.44
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "First clause is explicit source value; lesson018 decision explicitly separates display fineness from accuracy; source value is not a universal device specification.",
+      "uncoveredFacets": [
+        "Source-listed0.01mm example not explicitly in current lesson; actual instrument specification takes priority."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 72,
+      "printedPage": 64,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "0ce354b210a618eda7a8074c6dfd35d194e54b503b52e87234bbabd97716e014"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p072-o08",
+      "type": "figure_structure",
+      "summary": "Figure6-1 depicts main beam/scale, opposed upper and lower jaw sets, slider/subscale, locking feature and projecting depth member in one caliper.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.255,
+        0.465,
+        0.75,
+        0.59
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Actualfigure6-1 compared with current lesson018 text and illustration register; no dedicated lesson018 diagram registered.",
+      "uncoveredFacets": [
+        "No current original annotated visual maps these visible components to the measuring roles."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 72,
+      "printedPage": 64,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "88b96e5b14cbf57e666d3362affccc09543123588c92147fcdb78e559e13725e"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p072-o09",
+      "type": "preparation_cleaning",
+      "summary": "Before measurement the source calls for wiping measuring and sliding surfaces.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.18,
+        0.69,
+        0.88,
+        0.735
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source preparation text; lesson018 principle checks dirty measuring faces and slide movement.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 72,
+      "printedPage": 64,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "b010616e0696e40209bc2d74a41a02a64d5a056a9c673682b4e658dc18a31fab"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p072-o10",
+      "type": "preparation_motion",
+      "summary": "The slider should move smoothly without looseness.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.18,
+        0.72,
+        0.88,
+        0.755
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source preparation text; lesson018 principle explicitly checks movement and looseness.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 72,
+      "printedPage": 64,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "d72ba413787e4e18904d57ed41e3f951dab3a46f3ffb2b7372c311dad3b5c05e"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p072-o11",
+      "type": "preparation_jaw_gap",
+      "summary": "Close the slider and inspect against light for a gap between the jaws.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.18,
+        0.75,
+        0.88,
+        0.795
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source preparation text; lesson018 principle checks closed-jaw gap but not the source backlight inspection detail.",
+      "uncoveredFacets": [
+        "Light-against-gap inspection detail not explicit."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 72,
+      "printedPage": 64,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "f8c48b90b715b13285542573947d044e5579d6bacd18844211d69e584bb3ac23"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p072-o12",
+      "type": "preparation_zero",
+      "summary": "The closed-jaw scale indication is checked for zero; the source mentions a digital reset button.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "source_qualification_or_ambiguity",
+      "bboxNormalized": [
+        0.18,
+        0.785,
+        0.88,
+        0.835
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Lesson018 principle checks zero. Source reset-button statement is device-dependent and is not a substitute for checking cleanliness/condition or approved zero-setting procedure.",
+      "uncoveredFacets": [
+        "Digital reset action not taught as a universal instruction."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 72,
+      "printedPage": 64,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "2a4cda778ba2480f68cf9df70fe31cc5dcfe3ba76d86a9aebc2271ab61c429fd"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p073-o01",
+      "type": "workpiece_preparation",
+      "summary": "Clean the target before measuring and address burrs.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.18,
+        0.105,
+        0.89,
+        0.145
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source use text; lesson018 principle explicitly cleans the workpiece and qualifies burr treatment by approved method.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 73,
+      "printedPage": 65,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "ede2189a3938b4b123435f49fcb0b23b244b84a9bfcc14de60edc031be668b81"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p073-o02",
+      "type": "face_selection_external",
+      "summary": "Use external measuring faces for outside diameter or overall length.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.18,
+        0.135,
+        0.89,
+        0.17
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source use text; lesson018 principle/decision/activity cover external dimensions and faces.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 73,
+      "printedPage": 65,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "93c3a805f049fcb8ba2d4d24a386cfe49f0579380bcf34dedb30bc48c530f7c6"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p073-o03",
+      "type": "face_selection_internal",
+      "summary": "Use internal measuring faces for hole diameter or groove width.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.18,
+        0.16,
+        0.89,
+        0.195
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source use text; lesson018 principle/activity cover inside/hole diameter, but groove-width application is not explicit.",
+      "uncoveredFacets": [
+        "Groove-width application of internal measuring faces."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 73,
+      "printedPage": 65,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "ef6d38cd7c2d728579c0c298c7e82ea8fe5d48fdcfda8737a28d6ca2f48b0466"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p073-o04",
+      "type": "face_selection_depth",
+      "summary": "Use the depth measuring face for hole or groove depth.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.18,
+        0.19,
+        0.89,
+        0.225
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source use text; lesson018 principle/depth-bar condition and activity groove-depth example.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 73,
+      "printedPage": 65,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "e11402793428d4f891a7e72fe244566a30e82dbdef09d04d237430994a070d35"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p073-o05",
+      "type": "main_scale_reading",
+      "summary": "Use the vernier zero position to read the main scale first.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.18,
+        0.275,
+        0.89,
+        0.32
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source reading text; lesson018 example supplies main-scale value rather than explicitly explaining how vernierzero locates it.",
+      "uncoveredFacets": [
+        "Finding the main-scale interval from vernierzero position."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 73,
+      "printedPage": 65,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "ed9776fa8d31f1a6912fdc42975794f8421b7789b57061e2fa756cddc76564a5"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p073-o06",
+      "type": "coincident_mark",
+      "summary": "Find the vernier mark coincident with a main-scale mark for the fractional reading.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.18,
+        0.305,
+        0.89,
+        0.35
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source reading text; lesson018 example uses coincidentline index and requires frontal inspection.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 73,
+      "printedPage": 65,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "feab8dabea3dfc2d87046f93620d980663f04f643656416624bec4d9c3fb2f52"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p073-o07",
+      "type": "addition_rule",
+      "summary": "Add main-scale and vernier readings to obtain the measurement.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.18,
+        0.335,
+        0.89,
+        0.365
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source reading text; lesson018 example explicitly calculates main18plusfraction0.20for independent18.20example.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 73,
+      "printedPage": 65,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "877b04a5fdf781fe0126db0bf715fe10ea76bca1256324d0b5f9caa793c4ddf4"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p073-o08",
+      "type": "reading_interval",
+      "summary": "The worked reading explanation first brackets the value between adjacent whole main-scale marks.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.18,
+        0.385,
+        0.89,
+        0.47
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Source worked explanation compared with lesson018 suppliedmainreading; independent arithmetic does not visually teach selecting the preceding whole mark.",
+      "uncoveredFacets": [
+        "Explicit main-scale interval bracketing before fractional addition."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 73,
+      "printedPage": 65,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "82e44c96747ffe8cf44b3e8589ffa7782e1b983362ac0f342397c90fa10c24b4"
+    },
+    {
+      "id": "mfg1-mechanical-b22-p073-o09",
+      "type": "figure_reading_relation",
+      "summary": "Figure6-2 places the vernier zero between main-scale marks and shows the fractional scale beneath the main scale; reading depends on coincidence, not numeral proximity.",
+      "knowledgeIds": [
+        "mfg1-mechanical-c06-s2-1"
+      ],
+      "lessonIds": [
+        "mfg1-mechanical-lesson-018"
+      ],
+      "lessonBindings": {
+        "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.255,
+        0.575,
+        0.75,
+        0.65
+      ],
+      "bboxPrecision": "approximate independent reviewer region; normalized top-left origin",
+      "comparisonBasis": "Actualfigure6-2 compared with lesson018 example; existing text says example is arithmetic and actual coincidence requires frontal inspection. No source worked question is reused.",
+      "uncoveredFacets": [
+        "No original current diagram demonstrating zero-position and coincidentline geometry."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "mechanical",
+      "documentId": "mfg1-mechanical-source",
+      "sourceSha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+      "pdfPage": 73,
+      "printedPage": 65,
+      "priorEvidenceStatus": "Existing structural inventory and current lesson018 source references; no matching granular batch17objects. This review does not claim the page was globally never reviewed before.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/mechanical-source-ledger.json",
+      "ledgerSha256": "9e300dc3de3a7590aca2902a57f9ca114088c6c4bea6bf11028034fea1ddeefe",
+      "objectSha256": "193c379e2bd4e25e4ed190f266c10649852a21d80a0d3852e5d83811268120cb"
+    },
+    {
+      "id": "mfg1-electrical-b22-p103-o01",
+      "type": "performance_specification",
+      "summary": "Input channel count limits how many signals can be observed simultaneously.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-5"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l007",
+        "mfg1-electrical-l073"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l007": "da9be587e6df36724129316fd32868b2c701b06e45a1f3ac03eb5174fc614b45",
+        "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.19,
+        0.17,
+        0.86,
+        0.21
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Source supplement7-1 row1; lesson007 describes signal/time axes and lesson073 section-3 lists other scope limits but neither explicitly explains simultaneous channel count.",
+      "uncoveredFacets": [
+        "Simultaneous-channel-count selection criterion is not explicitly explained in current lesson text."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-101"
+      ],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 103,
+      "printedPage": 94,
+      "priorEvidenceStatus": "Main text previously read in batch12; coarse scope group101 exists; batch12visualReadfalse. This is a new granular reread, not a globally new source page.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "2fb8f3e008b6daa02d61fef1e04082a2cff7604ea681d745c245eed87bc460c6"
+    },
+    {
+      "id": "mfg1-electrical-b22-p103-o02",
+      "type": "performance_specification",
+      "summary": "Bandwidth concerns the speed/frequency range of signals an oscilloscope can faithfully observe; it is distinct from sample rate.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-5"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l073"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.19,
+        0.2,
+        0.86,
+        0.24
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Supplement7-1 row2 gives high-speed-signal observation scope; lesson073 section-3 names bandwidth but does not explain the separate quantity.",
+      "uncoveredFacets": [
+        "Separate bandwidth meaning/selection comparison is named but not elaborated."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-101"
+      ],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 103,
+      "printedPage": 94,
+      "priorEvidenceStatus": "Main text previously read in batch12; coarse scope group101 exists; batch12visualReadfalse. This is a new granular reread, not a globally new source page.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "e80b3be348a8a6a6cc7c9df0529a76a97cf5ff9204bbfcbc7f3cebda16348053"
+    },
+    {
+      "id": "mfg1-electrical-b22-p103-o03",
+      "type": "performance_specification",
+      "summary": "Sampling rate describes analog-to-digital data conversion frequency per second.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-5"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l073"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.19,
+        0.23,
+        0.86,
+        0.28
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Supplement7-1 row3; lesson073 section-3 says to check sample rate without defining conversions per second.",
+      "uncoveredFacets": [
+        "Explicit per-second sampling interpretation is absent from current prose."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-101"
+      ],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 103,
+      "printedPage": 94,
+      "priorEvidenceStatus": "Main text previously read in batch12; coarse scope group101 exists; batch12visualReadfalse. This is a new granular reread, not a globally new source page.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "eed7f1ded2f6ebb017c751f3c2d56413b97785cb9efd52f54cc4b7c941ac0010"
+    },
+    {
+      "id": "mfg1-electrical-b22-p103-o04",
+      "type": "performance_dependency",
+      "summary": "Record memory must support the acquired sample data; insufficient memory can prevent the intended waveform record from being reproduced.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-5"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l073"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.19,
+        0.27,
+        0.86,
+        0.34
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Supplement7-1 row4 relates memory to using sample-rate performance; lesson073 section-3 names memory but does not explain this dependency.",
+      "uncoveredFacets": [
+        "Memory/sample-rate relationship is not explicitly explained."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-101"
+      ],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 103,
+      "printedPage": 94,
+      "priorEvidenceStatus": "Main text previously read in batch12; coarse scope group101 exists; batch12visualReadfalse. This is a new granular reread, not a globally new source page.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "c0cbe1f392db97e69ef090286faf2bc28ce2d0c83cfe3d97c45a0a70636f554e"
+    },
+    {
+      "id": "mfg1-electrical-b22-p104-o01",
+      "type": "instrument_quantity_taxonomy",
+      "summary": "An LCR meter measures inductance, capacitance, resistance and impedance-related quantities rather than a single universal electrical value.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-6"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l039"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.16,
+        0.49,
+        0.68,
+        0.62
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Source6.6(1) opening and firstbullet; lesson039 section-1 explicitly identifies L,C,R and impedance and requires suitable conditions.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-102"
+      ],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 104,
+      "printedPage": 95,
+      "priorEvidenceStatus": "Batch07 andbatch12 visually read this page; batch12coarse LCRgroup102 exists. New granular comparison only.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "f2c70b823197c8426e722b7bd28edcefebc0917d25eb35818b67eb126177af00"
+    },
+    {
+      "id": "mfg1-electrical-b22-p104-o02",
+      "type": "historical_method_context",
+      "summary": "The source contrasts bridge-method measurement requiring skill with easier instrument computation; this is textbook context, not a universal claim that all present impedance measurement is difficult or all LCR meters share one architecture.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-6"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l039",
+        "mfg1-electrical-l091"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+        "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+      },
+      "coverageStatus": "source_qualification_or_ambiguity",
+      "bboxNormalized": [
+        0.16,
+        0.55,
+        0.68,
+        0.64
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Source6.6(1) firstbullet plus opening of secondbullet; lesson091 section-3 uses automatic-balancing bridge as an example, correctly avoiding universal instrument architecture.",
+      "uncoveredFacets": [
+        "Current textbook-history statements are not current-standard or exhaustive instrument classifications."
+      ],
+      "derivation": "canonical_editorial_inference",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-102"
+      ],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 104,
+      "printedPage": 95,
+      "priorEvidenceStatus": "Batch07 andbatch12 visually read this page; batch12coarse LCRgroup102 exists. New granular comparison only.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "962d4f3cf61f8326238bbf6867e9c77c53b5803fd8f0b84969e020ef7d47daac"
+    },
+    {
+      "id": "mfg1-electrical-b22-p104-o03",
+      "type": "measurement_processing",
+      "summary": "The described automatic-balancing bridge instrument digitizes voltage, current and phase information and computes LCR/impedance quantities.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-6"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l091"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.16,
+        0.64,
+        0.68,
+        0.74
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Source6.6(1) secondbullet; lesson091 section-3 explicitly relates automatic-balancing bridge to voltage/current/phase and component values but does not spell out the digitization stage.",
+      "uncoveredFacets": [
+        "Digitization/computation chain is only partly explicit in lesson091."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-102"
+      ],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 104,
+      "printedPage": 95,
+      "priorEvidenceStatus": "Batch07 andbatch12 visually read this page; batch12coarse LCRgroup102 exists. New granular comparison only.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "7598dcb87df1ff966170c174c46921fc36269376cfe0e380a8979d865e46887e"
+    },
+    {
+      "id": "mfg1-electrical-b22-p104-o04",
+      "type": "instrument_illustration",
+      "summary": "Figure7-16 is an example LCR meter front panel, not a universal terminal layout or an independently validated component measurement.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-6"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l039"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.72,
+        0.48,
+        0.85,
+        0.65
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Actualfigure7-16 image/caption; lesson039 teaches quantity and condition selection, not this model’s display/buttons.",
+      "uncoveredFacets": [
+        "No controlled LCR illustration is integrated; source-specific display/buttons must not be treated as general operating instructions."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-102"
+      ],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 104,
+      "printedPage": 95,
+      "priorEvidenceStatus": "Batch07 andbatch12 visually read this page; batch12coarse LCRgroup102 exists. New granular comparison only.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "9dc2e2158a57c0f26a7cca489d423029d20e6f0b5bb02c6794bfcc6359047cb6"
+    },
+    {
+      "id": "mfg1-electrical-b22-p105-o01",
+      "type": "sensor_principle",
+      "summary": "A thermocouple uses thermoelectric response associated with dissimilar conductors and the temperatures of measurement and reference ends.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-6"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l039",
+        "mfg1-electrical-l091"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+        "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.16,
+        0.08,
+        0.89,
+        0.18
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Source(2)thermocouple opening; lesson039 section-2 and091 section-2 describe dissimilar metals and reference-side temperature handling.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-103"
+      ],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 105,
+      "printedPage": 96,
+      "priorEvidenceStatus": "Batch07 andbatch12 visually read this page; batch12coarse thermocouplegroup103/Hallgroup104 exist. New granular comparison only.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "aadaec7161e9f13546355c1f6dcf7db8844246714b2e669db890e1cc253c1a10"
+    },
+    {
+      "id": "mfg1-electrical-b22-p105-o02",
+      "type": "connection_concept_diagram",
+      "summary": "Figure7-17 distinguishes metalA/metalB, measured-sideT1, instrument-sideT2 and measured thermoelectric response; the diagram is a principle sketch rather than full compensation or terminal specifications.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-6"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l039",
+        "mfg1-electrical-l091"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+        "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.26,
+        0.2,
+        0.77,
+        0.38
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Actualfigure7-17labels/conductor paths; current039section-2 covers reference junction concept but no corresponding controlled diagram is integrated.",
+      "uncoveredFacets": [
+        "Original two-metal/junction-temperature conceptual visual remains absent; no complete compensation/lead circuit is taught by source sketch."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-103"
+      ],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 105,
+      "printedPage": 96,
+      "priorEvidenceStatus": "Batch07 andbatch12 visually read this page; batch12coarse thermocouplegroup103/Hallgroup104 exist. New granular comparison only.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "59293c6be78ccf1550fd23ffa1db2f4fd67e69a01dde7be8ec07d1760fb77a92"
+    },
+    {
+      "id": "mfg1-electrical-b22-p105-o03",
+      "type": "source_range_qualification",
+      "summary": "The textbook gives a K-type temperature-range example; it does not establish one guaranteed range for every K-type assembly, environment or measuring system.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-6"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l039",
+        "mfg1-electrical-l091"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+        "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+      },
+      "coverageStatus": "source_qualification_or_ambiguity",
+      "bboxNormalized": [
+        0.16,
+        0.13,
+        0.89,
+        0.19
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Source(2) final sentence states example-73to1300degreesC; lesson039section-2 and091section-2 explicitly qualify by specification/conditions and wire/protection/environment/instrument.",
+      "uncoveredFacets": [
+        "The printed range is not a certified universal operating or safety specification."
+      ],
+      "derivation": "canonical_editorial_inference",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-103"
+      ],
+      "sourceExample": {
+        "type": "K",
+        "minimumCelsius": -73,
+        "maximumCelsius": 1300,
+        "status": "source_example_not_universal_specification"
+      },
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 105,
+      "printedPage": 96,
+      "priorEvidenceStatus": "Batch07 andbatch12 visually read this page; batch12coarse thermocouplegroup103/Hallgroup104 exist. New granular comparison only.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "38cb16a0d16938d659060602ba959aa88c553b6e0ea514f084fcd0f9034f2679"
+    },
+    {
+      "id": "mfg1-electrical-b22-p105-o04",
+      "type": "sensor_quantity_mapping",
+      "summary": "An illuminance meter uses a light-to-electrical sensing element, identified here as a photodiode, to measure illuminance.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-6"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l039"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.16,
+        0.39,
+        0.89,
+        0.48
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Source(3)illuminanceprose; lesson039section-3 explains illuminance and condition matching but does not name photodiode in that section.",
+      "uncoveredFacets": [
+        "Photodiode-to-illuminance instrument mapping is not explicitly named in current lesson039section-3."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 105,
+      "printedPage": 96,
+      "priorEvidenceStatus": "Batch07 andbatch12 visually read this page; batch12coarse thermocouplegroup103/Hallgroup104 exist. New granular comparison only.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "8467184b66fac3d5839c68a44bd6d70d84cf1beb785ace19ee3f43268d9bdbcc"
+    },
+    {
+      "id": "mfg1-electrical-b22-p105-o05",
+      "type": "instrument_quantity_mapping",
+      "summary": "A gaussmeter measures magnetic flux density using a Hall-element-based sensing principle in the source example.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-6"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l039",
+        "mfg1-electrical-l091"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+        "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.16,
+        0.5,
+        0.89,
+        0.57
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Source(4) opening; lesson039section-3 and091section-2 explicitly identify gaussmeter/flux density/Hall principle.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-104"
+      ],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 105,
+      "printedPage": 96,
+      "priorEvidenceStatus": "Batch07 andbatch12 visually read this page; batch12coarse thermocouplegroup103/Hallgroup104 exist. New granular comparison only.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "4436f3f49a5cafaad2a206e4eb175c1ec6f496485ee2e1f35b22ae42aba7afd6"
+    },
+    {
+      "id": "mfg1-electrical-b22-p105-o06",
+      "type": "orthogonal_direction_relation",
+      "summary": "For the stated Hall-effect arrangement, applied magnetic field is perpendicular to current and the resulting transverse electromotive response is perpendicular to both.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-6"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l091"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.16,
+        0.55,
+        0.89,
+        0.62
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Source(4)Hallprose; lesson091section-2 expressly states the three-direction relationship. No sign/polarity generalization is inferred.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-104"
+      ],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 105,
+      "printedPage": 96,
+      "priorEvidenceStatus": "Batch07 andbatch12 visually read this page; batch12coarse thermocouplegroup103/Hallgroup104 exist. New granular comparison only.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "bf60b839bb6b289c18294b7dc51b0073caeb18131b9cc382bc13ee89378dbdbe"
+    },
+    {
+      "id": "mfg1-electrical-b22-p105-o07",
+      "type": "vector_concept_diagram",
+      "summary": "Figure7-18 visually separates current direction, transverse magnetic field and the Hall-response measurement direction; its drawn arrows are a single conceptual arrangement, not a universal carrier-sign or wiring rule.",
+      "knowledgeIds": [
+        "mfg1-electrical-c07-s6-6"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l039",
+        "mfg1-electrical-l091"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l039": "c403b451ea4b43c5527d295a04898eaace52af2ff980ff247cbe36ae7bb982b2",
+        "mfg1-electrical-l091": "6191040b40cd1b29a61a7ebd79c51d5fb6faa7021ab0eb8ef4d9f71191010e91"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.37,
+        0.62,
+        0.64,
+        0.76
+      ],
+      "bboxPrecision": "approximate reviewer region; normalized top-left origin; not pixel-exact segmentation",
+      "comparisonBasis": "Actualfigure7-18arrows/plate/measurementloop visually compared; current091section-2 covers orthogonality but controlled three-axis diagram is not integrated.",
+      "uncoveredFacets": [
+        "Original Hall direction-comparison visual remains absent; no carrier-polarity calibration or real sensor terminals established."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [
+        "mfg1-electrical-b12-object-104"
+      ],
+      "specialty": "electrical",
+      "documentId": "mfg1-electrical-source",
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 105,
+      "printedPage": 96,
+      "priorEvidenceStatus": "Batch07 andbatch12 visually read this page; batch12coarse thermocouplegroup103/Hallgroup104 exist. New granular comparison only.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/electrical-source-ledger.json",
+      "ledgerSha256": "ca0c68cac36784e91dec964c9738857398913eaf22cac6811b55231843aa1646",
+      "objectSha256": "20bc3f7b68f27e9563be639c5682922e19a67e7322bcc1aa23eafcaea9c8a84e"
+    },
+    {
+      "id": "mfg1-surface-b22-p183-o01",
+      "type": "property_and_test_concept",
+      "summary": "Corrosion performance is evaluated by exposing an anodized sample to a defined salt-mist environment; material-property praise is distinct from a measured acceptance verdict.",
+      "knowledgeIds": [
+        "mfg1-surface-c12-s3",
+        "mfg1-surface-c06-s4-1"
+      ],
+      "lessonIds": [
+        "mfg1-surface-lesson-023",
+        "mfg1-surface-lesson-033"
+      ],
+      "lessonBindings": {
+        "mfg1-surface-lesson-023": "c68c6b0c18d9e9705e4dd62e62597e1cb2f16d0c146d7bdb7adf61ca696b7967",
+        "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.17,
+        0.105,
+        0.89,
+        0.184
+      ],
+      "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+      "comparisonBasis": "Physical183corrosion subsection; lesson023/section-1 describes salt-mist exposure and section-2 qualifies methods/specifications;033/section-3 names corrosion as a distinct performance category.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "surface",
+      "documentId": "mfg1-surface-source",
+      "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPage": 183,
+      "printedPage": 173,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json",
+      "ledgerSha256": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e",
+      "objectSha256": "49da0df79f7077228f6eed4333ea53a0055892d975d294d8880818cf218a9b18"
+    },
+    {
+      "id": "mfg1-surface-b22-p183-o02",
+      "type": "source_numerical_qualification",
+      "summary": "This page gives5%saltwater mist and336hours-or-longer as its descriptive corrosion-test example, not a universal product pass threshold.",
+      "knowledgeIds": [
+        "mfg1-surface-c12-s3",
+        "mfg1-surface-c06-s4-1"
+      ],
+      "lessonIds": [
+        "mfg1-surface-lesson-023",
+        "mfg1-surface-lesson-033"
+      ],
+      "lessonBindings": {
+        "mfg1-surface-lesson-023": "c68c6b0c18d9e9705e4dd62e62597e1cb2f16d0c146d7bdb7adf61ca696b7967",
+        "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a"
+      },
+      "coverageStatus": "source_qualification_or_ambiguity",
+      "bboxNormalized": [
+        0.17,
+        0.113,
+        0.89,
+        0.184
+      ],
+      "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+      "comparisonBasis": "Physical183corrosion firstparagraph;023/section-2 explicitly defers concrete conditions/pass values to designated standard edition and product requirements;033/section-3 avoids judging from film thickness alone.",
+      "uncoveredFacets": [
+        "Exact5%/336hour example is not taught as a mandatory current condition; retain this source-only qualification."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "surface",
+      "documentId": "mfg1-surface-source",
+      "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPage": 183,
+      "printedPage": 173,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json",
+      "ledgerSha256": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e",
+      "objectSha256": "1413e08ee04077a8d5863bfdac3a00148a3b4085968334eb4e53e976589dc637"
+    },
+    {
+      "id": "mfg1-surface-b22-p183-o03",
+      "type": "named_test_comparison",
+      "summary": "The page contrasts longer salt-mist exposure with shorter evaluation examples, naming alkali-drop and copper-containing CASS methods alongside JISH8681.",
+      "knowledgeIds": [
+        "mfg1-surface-c12-s3",
+        "mfg1-surface-c06-s4-1",
+        "mfg1-surface-c06-s4-2"
+      ],
+      "lessonIds": [
+        "mfg1-surface-lesson-023"
+      ],
+      "lessonBindings": {
+        "mfg1-surface-lesson-023": "c68c6b0c18d9e9705e4dd62e62597e1cb2f16d0c146d7bdb7adf61ca696b7967"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.17,
+        0.194,
+        0.89,
+        0.245
+      ],
+      "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+      "comparisonBasis": "Physical183corrosion secondparagraph;023/section-1 explains CASS versus salt-mist and section-3 explains alkali-drop, but does not link this page-specific accelerated-comparison framing or JISH8681 identifier.",
+      "uncoveredFacets": [
+        "Page-specific method-comparison framing and cited JISidentifier are not explicit in lesson023; no current-standard verification claimed."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "surface",
+      "documentId": "mfg1-surface-source",
+      "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPage": 183,
+      "printedPage": 173,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json",
+      "ledgerSha256": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e",
+      "objectSha256": "92a58c1cd7fe1ff69e0b10833ab8a75612d3a7550d6ff97706a57be7751e47eb"
+    },
+    {
+      "id": "mfg1-surface-b22-p183-o04",
+      "type": "lightfastness_evaluation",
+      "summary": "Color fading under sunlight is a lightfastness question; the source names xenon-arc/carbon-arc irradiation examples and cites JISH8685.",
+      "knowledgeIds": [
+        "mfg1-surface-c12-s3"
+      ],
+      "lessonIds": [
+        "mfg1-surface-lesson-033"
+      ],
+      "lessonBindings": {
+        "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.17,
+        0.299,
+        0.89,
+        0.409
+      ],
+      "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+      "comparisonBasis": "Physical183lightfastness subsection;033/section-3 explicitly distinguishes lightfastness from wear but does not explain the lamp examples or this cited identifier.",
+      "uncoveredFacets": [
+        "Xenon/carbon-arc evaluation examples and source JISreference are not individually explained in current033."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "surface",
+      "documentId": "mfg1-surface-source",
+      "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPage": 183,
+      "printedPage": 173,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json",
+      "ledgerSha256": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e",
+      "objectSha256": "b1c6d373311214fcf8cb678615fb31875fe5df7ca9d1619328f7af3245d40077"
+    },
+    {
+      "id": "mfg1-surface-b22-p183-o05",
+      "type": "thermal_property_qualification",
+      "summary": "The source associates heating above its100°Cexample with cracking and possible insulation/corrosion loss, and mentions special pigments/post-treatment; this wording is not a universal thermal ceiling.",
+      "knowledgeIds": [
+        "mfg1-surface-c12-s3"
+      ],
+      "lessonIds": [
+        "mfg1-surface-lesson-033",
+        "mfg1-surface-lesson-069"
+      ],
+      "lessonBindings": {
+        "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a",
+        "mfg1-surface-lesson-069": "4aada97b9ffd9e7ae041763e972ec6557c4551c7b9aa22d94526acbda1b028b5"
+      },
+      "coverageStatus": "source_qualification_or_ambiguity",
+      "bboxNormalized": [
+        0.17,
+        0.465,
+        0.89,
+        0.55
+      ],
+      "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+      "comparisonBasis": "Physical183heat subsection;033/section-2 explicitly treats representative temperatures as conditional,069/example rejects using a representative heat limit as every part’s allowance.",
+      "uncoveredFacets": [
+        "100°Cand treatment examples remain source-specific; current lessons deliberately avoid a blanket safe/unsafe cutoff."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "surface",
+      "documentId": "mfg1-surface-source",
+      "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPage": 183,
+      "printedPage": 173,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json",
+      "ledgerSha256": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e",
+      "objectSha256": "2f32a86969d2747c59d7629504b6e893f471f6bcefd67418f8fdb56d97e51b7b"
+    },
+    {
+      "id": "mfg1-surface-b22-p183-o06",
+      "type": "wear_and_sealing_relation",
+      "summary": "Hard anodized surface oxide supports wear resistance, and the page describes an unsealed hard-film example to retain wear performance; this does not mean every hard film must remain unsealed.",
+      "knowledgeIds": [
+        "mfg1-surface-c12-s3"
+      ],
+      "lessonIds": [
+        "mfg1-surface-lesson-033",
+        "mfg1-surface-lesson-069"
+      ],
+      "lessonBindings": {
+        "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a",
+        "mfg1-surface-lesson-069": "4aada97b9ffd9e7ae041763e972ec6557c4551c7b9aa22d94526acbda1b028b5"
+      },
+      "coverageStatus": "covered_concept",
+      "bboxNormalized": [
+        0.17,
+        0.608,
+        0.89,
+        0.681
+      ],
+      "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+      "comparisonBasis": "Physical183wear openingparagraph;033/section-1 and069/section-3 explicitly teach the sealing/performance tradeoff and reject one universal sealing condition.",
+      "uncoveredFacets": [],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "surface",
+      "documentId": "mfg1-surface-source",
+      "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPage": 183,
+      "printedPage": 173,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json",
+      "ledgerSha256": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e",
+      "objectSha256": "dad7b01f3b65766e26838fce631c5e6d01d9ee0ff01002c50658bc256d80a702"
+    },
+    {
+      "id": "mfg1-surface-b22-p183-o07",
+      "type": "wear_test_description",
+      "summary": "A rotating abrasive-wheel test evaluates wear amount; the page’s10000rotation description identifies a test example, not a standalone acceptance limit.",
+      "knowledgeIds": [
+        "mfg1-surface-c12-s3"
+      ],
+      "lessonIds": [
+        "mfg1-surface-lesson-033",
+        "mfg1-surface-lesson-069"
+      ],
+      "lessonBindings": {
+        "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a",
+        "mfg1-surface-lesson-069": "4aada97b9ffd9e7ae041763e972ec6557c4551c7b9aa22d94526acbda1b028b5"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.17,
+        0.65,
+        0.89,
+        0.741
+      ],
+      "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+      "comparisonBasis": "Physical183wear finalsentences;033/section-3 distinguishes wear performance,069/section-3 requires specified tests, but neither describes wheel rotation/wear-amount evaluation.",
+      "uncoveredFacets": [
+        "Rotating-wheel wear evaluation is not explicitly explained; numerical rotation count is source-only until designated test specification is verified."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "surface",
+      "documentId": "mfg1-surface-source",
+      "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPage": 183,
+      "printedPage": 173,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json",
+      "ledgerSha256": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e",
+      "objectSha256": "7becb096ef27729f81e5e53519e7030a5fc08ed10032aaf644160bc06ba4e548"
+    },
+    {
+      "id": "mfg1-surface-b22-p184-o01",
+      "type": "hardness_notation",
+      "summary": "The boxed HVnote identifies Vickers hardness, distinct from the separate dielectric-strength property below.",
+      "knowledgeIds": [
+        "mfg1-surface-c12-s3",
+        "mfg1-surface-c06-s5",
+        "mfg1-surface-c06-s5-3"
+      ],
+      "lessonIds": [
+        "mfg1-surface-lesson-055",
+        "mfg1-surface-lesson-033"
+      ],
+      "lessonBindings": {
+        "mfg1-surface-lesson-055": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d",
+        "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.17,
+        0.09,
+        0.88,
+        0.16
+      ],
+      "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+      "comparisonBasis": "Physical184HVbox heading/openingline;055/section-2 names microVickers among hardness methods,033/section-3 names electrical characteristics, but neither explicitly pairs the HVnotation with this page.",
+      "uncoveredFacets": [
+        "Explicit HVnotation reading is absent from current lesson prose."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "surface",
+      "documentId": "mfg1-surface-source",
+      "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPage": 184,
+      "printedPage": 174,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json",
+      "ledgerSha256": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e",
+      "objectSha256": "b4ad7e05f86f46db1b5353aba1f4cd8933033be18d35ef014305685bd130f7d5"
+    },
+    {
+      "id": "mfg1-surface-b22-p184-o02",
+      "type": "indentation_method_concept",
+      "summary": "The source describes a diamond square-pyramid indenter and relates hardness to indentation surface area; it does not present a complete test setup or numerical calculation here.",
+      "knowledgeIds": [
+        "mfg1-surface-c12-s3",
+        "mfg1-surface-c06-s5-3"
+      ],
+      "lessonIds": [
+        "mfg1-surface-lesson-055"
+      ],
+      "lessonBindings": {
+        "mfg1-surface-lesson-055": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.17,
+        0.165,
+        0.88,
+        0.216
+      ],
+      "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+      "comparisonBasis": "Physical184HVbox middleparagraph;055/section-2 names indentation resistance and microVickers and checks load/surface/thickness suitability, but not the square-pyramid/indentation-area relation.",
+      "uncoveredFacets": [
+        "Indenter shape and indentation surface-area relation are not explicitly elaborated in055."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "surface",
+      "documentId": "mfg1-surface-source",
+      "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPage": 184,
+      "printedPage": 174,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json",
+      "ledgerSha256": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e",
+      "objectSha256": "b6bf812b78bb895ecf542321c18bc3b3e15d4da571f7da755f5f3d5e3744cd39"
+    },
+    {
+      "id": "mfg1-surface-b22-p184-o03",
+      "type": "technical_illustration",
+      "summary": "Figure12-7depicts the indentation footprint as a diamond-shaped outline with crossing diagonals; the image contains no numerical scale or pass criterion.",
+      "knowledgeIds": [
+        "mfg1-surface-c12-s3",
+        "mfg1-surface-c06-s5-3"
+      ],
+      "lessonIds": [
+        "mfg1-surface-lesson-055"
+      ],
+      "lessonBindings": {
+        "mfg1-surface-lesson-055": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d"
+      },
+      "coverageStatus": "partial_detail_or_visual_gap",
+      "bboxNormalized": [
+        0.32,
+        0.251,
+        0.73,
+        0.355
+      ],
+      "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+      "comparisonBasis": "Physical184figure12-7 and caption;055/section-2 provides no corresponding indentation illustration or diagram-label reading.",
+      "uncoveredFacets": [
+        "Footprint/diagonal interpretation has no mapped current learning visual; no numerical measurement can be inferred from this image."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "surface",
+      "documentId": "mfg1-surface-source",
+      "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPage": 184,
+      "printedPage": 174,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json",
+      "ledgerSha256": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e",
+      "objectSha256": "e3d19e6bf55b8b3e35bd1a6b96d56acb1c662114767c3446dd1f56eb1484e86c"
+    },
+    {
+      "id": "mfg1-surface-b22-p184-o04",
+      "type": "thin_film_test_qualification",
+      "summary": "The HVnote uses approximately50µmfilm thickness to explain why hardness measurement demand is limited in that source context; it does not prohibit hardness testing of all thin coatings.",
+      "knowledgeIds": [
+        "mfg1-surface-c12-s3",
+        "mfg1-surface-c06-s5-3"
+      ],
+      "lessonIds": [
+        "mfg1-surface-lesson-055",
+        "mfg1-surface-lesson-069"
+      ],
+      "lessonBindings": {
+        "mfg1-surface-lesson-055": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d",
+        "mfg1-surface-lesson-069": "4aada97b9ffd9e7ae041763e972ec6557c4551c7b9aa22d94526acbda1b028b5"
+      },
+      "coverageStatus": "source_qualification_or_ambiguity",
+      "bboxNormalized": [
+        0.17,
+        0.198,
+        0.88,
+        0.244
+      ],
+      "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+      "comparisonBasis": "Physical184HVbox finalsentences;055/section-2 requires load/surface/thickness-compatible method selection and069/section-3 qualifies hard-film requirements.",
+      "uncoveredFacets": [
+        "Source-specific50µmcontext is not a universal minimum/maximum measurement rule."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "surface",
+      "documentId": "mfg1-surface-source",
+      "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPage": 184,
+      "printedPage": 174,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json",
+      "ledgerSha256": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e",
+      "objectSha256": "234789866882462f5fded56a36d41cedd31dfb14baf23a02ce2c0debebf9b38d"
+    },
+    {
+      "id": "mfg1-surface-b22-p184-o05",
+      "type": "dielectric_example_and_application",
+      "summary": "The dielectric subsection gives an approximately2kV-at50µmexample, mentions prescribed evaluation and electronic heat-fin applications; a film example does not certify personal shock protection or an operating test voltage.",
+      "knowledgeIds": [
+        "mfg1-surface-c12-s3"
+      ],
+      "lessonIds": [
+        "mfg1-surface-lesson-033",
+        "mfg1-surface-lesson-069"
+      ],
+      "lessonBindings": {
+        "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a",
+        "mfg1-surface-lesson-069": "4aada97b9ffd9e7ae041763e972ec6557c4551c7b9aa22d94526acbda1b028b5"
+      },
+      "coverageStatus": "source_qualification_or_ambiguity",
+      "bboxNormalized": [
+        0.17,
+        0.452,
+        0.89,
+        0.528
+      ],
+      "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+      "comparisonBasis": "Physical184dielectric subsection;033/section-3 explicitly rejects treating a representative dielectric value as personal-protection insulation and069/example qualifies voltage/geometry/defects/use conditions.",
+      "uncoveredFacets": [
+        "Source voltage/thickness pair and heat-fin use are not engineering acceptance or personal-safety guarantees; no test procedure/settings taught."
+      ],
+      "derivation": "explicit_source",
+      "priorObjectIds": [],
+      "specialty": "surface",
+      "documentId": "mfg1-surface-source",
+      "sourceSha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae",
+      "pdfPage": 184,
+      "printedPage": 174,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "ledgerPath": "docs/ssw-workspace/manufacturing/batch22/surface-source-ledger.json",
+      "ledgerSha256": "9ecb6bafa7172b3ebf18d2326d4fab6fc676e65bddcceb4c420af92f4626862e",
+      "objectSha256": "45e40bb7b6fe7a23f8edbdea51666e49689c8779d616664af0d57c6c357b93e8"
+    }
+  ],
+  "runtimeFilesModified": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "fullKnowledgeAtomizationComplete": false,
+  "wholeCurriculumComplete": false,
+  "releaseReady": false
+}

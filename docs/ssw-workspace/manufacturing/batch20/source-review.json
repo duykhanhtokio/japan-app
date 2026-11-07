@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "reviewer": "electrical_source_ai",
+  "scope": "SSW1 electrical source-specific voltage/current connection comparison only; source authorship receipt, independent final visual review is separate.",
+  "baselineCommit": "d26d892a0b966348c8a3e36e077bf8b75e4fad0d",
+  "source": {
+    "documentId": "mfg1-electrical-source",
+    "sha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+    "physicalPagesReviewed": [
+      99,
+      100,
+      147,
+      148,
+      151,
+      152
+    ],
+    "printedPagesReviewed": [
+      90,
+      91,
+      138,
+      139,
+      142,
+      143
+    ]
+  },
+  "priorLedger": {
+    "path": "docs/ssw-workspace/manufacturing/batch17/electrical-source-review.json",
+    "sha256": "2fedd1a59679b035efd097c57f34e7a16c61f18d57e89ddf7fba7411986426e7",
+    "objectIds": [
+      "mfg1-electrical-b17-p147-o02",
+      "mfg1-electrical-b17-p147-o03",
+      "mfg1-electrical-b17-p148-o02",
+      "mfg1-electrical-b17-p148-o03",
+      "mfg1-electrical-b17-p151-o05",
+      "mfg1-electrical-b17-p152-o02"
+    ]
+  },
+  "objects": [
+    {
+      "id": "mfg1-electrical-b17-p147-o02",
+      "pdfPage": 147,
+      "printedPage": 138,
+      "type": "measurement_definition",
+      "summary": "An ammeter measures the magnitude of current through the selected circuit branch.",
+      "knowledgeIds": [
+        "mfg1-electrical-c10-s1-1",
+        "mfg1-electrical-c10-s1-4"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l005"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l005": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe"
+      },
+      "comparisonBasis": "Actual source prose compared with current lesson005 section-1.",
+      "coverageStatus": "bounded_topology_reinforcement_not_full_source_certification"
+    },
+    {
+      "id": "mfg1-electrical-b17-p147-o03",
+      "pdfPage": 147,
+      "printedPage": 138,
+      "type": "connection_diagram",
+      "summary": "Figure10-2 places the circular A symbol on the same single current path as loadL: current measurement requires series insertion into the chosen branch.",
+      "knowledgeIds": [
+        "mfg1-electrical-c10-s1-1",
+        "mfg1-electrical-c10-s1-4"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l005"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l005": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe"
+      },
+      "comparisonBasis": "Figure10-2 shows A on the same single path as loadL; original vertical construction preserves topology, not source layout.",
+      "coverageStatus": "bounded_topology_reinforcement_not_full_source_certification",
+      "bboxNormalized": [
+        0.37,
+        0.66,
+        0.62,
+        0.73
+      ],
+      "bboxPrecision": "approximate reviewer region inherited from batch17; normalized top-left origin"
+    },
+    {
+      "id": "mfg1-electrical-b17-p148-o02",
+      "pdfPage": 148,
+      "printedPage": 139,
+      "type": "measurement_definition",
+      "summary": "A voltmeter measures potential difference between two circuit points rather than current through one branch.",
+      "knowledgeIds": [
+        "mfg1-electrical-c10-s1-1",
+        "mfg1-electrical-c10-s1-3"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l005"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l005": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe"
+      },
+      "comparisonBasis": "Actual source prose compared with current lesson005 section-1.",
+      "coverageStatus": "bounded_topology_reinforcement_not_full_source_certification"
+    },
+    {
+      "id": "mfg1-electrical-b17-p148-o03",
+      "pdfPage": 148,
+      "printedPage": 139,
+      "type": "connection_diagram",
+      "summary": "Figure10-4 attaches V across the same two nodes as loadL, so voltage measurement is a parallel connection. The two filled nodes are meaningful, not a series insertion.",
+      "knowledgeIds": [
+        "mfg1-electrical-c10-s1-1",
+        "mfg1-electrical-c10-s1-3"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l005"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l005": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe"
+      },
+      "comparisonBasis": "Figure10-4 shows V across the same two filled nodes as loadL; original vertical construction preserves topology, not source layout.",
+      "coverageStatus": "bounded_topology_reinforcement_not_full_source_certification",
+      "bboxNormalized": [
+        0.38,
+        0.4,
+        0.62,
+        0.51
+      ],
+      "bboxPrecision": "approximate reviewer region inherited from batch17; normalized top-left origin"
+    },
+    {
+      "id": "mfg1-electrical-b17-p151-o05",
+      "pdfPage": 151,
+      "printedPage": 142,
+      "type": "connection_reinforcement",
+      "summary": "Voltage is measured across the two target points in parallel; this prose supports the topology already observed in figure10-4.",
+      "knowledgeIds": [
+        "mfg1-electrical-c10-s1-3"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l005"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l005": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe"
+      },
+      "comparisonBasis": "Actual source prose compared with current lesson005 section-1.",
+      "coverageStatus": "bounded_topology_reinforcement_not_full_source_certification"
+    },
+    {
+      "id": "mfg1-electrical-b17-p152-o02",
+      "pdfPage": 152,
+      "printedPage": 143,
+      "type": "connection_reinforcement",
+      "summary": "To measure current in the selected branch with an ammeter, insert the meter in series with that branch; this does not authorize an untrained worker to open an energized circuit.",
+      "knowledgeIds": [
+        "mfg1-electrical-c10-s1-4"
+      ],
+      "lessonIds": [
+        "mfg1-electrical-l005"
+      ],
+      "lessonBindings": {
+        "mfg1-electrical-l005": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe"
+      },
+      "comparisonBasis": "Actual source prose compared with current lesson005 section-1.",
+      "coverageStatus": "bounded_topology_reinforcement_not_full_source_certification"
+    }
+  ],
+  "sourceVisualReview": {
+    "performed": true,
+    "method": "Rendered exact-hash PDF physical99,100,147,148,151,152 at1.4x with PyMuPDF and visually inspected all six full-page images; extraction used only as cross-check. Main diagram basis is figure10-2 physical147 and figure10-4 physical148, corroborated by physical100/151/152 prose.",
+    "sourceImagesRedistributed": false,
+    "sourceExercisesCopied": false,
+    "newUniqueSourcePages": 0,
+    "scope": "Topology and applicable instrument/safety qualification only; source exercise alternatives, answers and meter-scale tasks are excluded from authorship."
+  },
+  "lessonBinding": {
+    "id": "mfg1-electrical-l005",
+    "sourceHash": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe",
+    "canonicalLessonBytesModifiedByThisWorker": false
+  },
+  "captionJa": "測定する量と接続の違いを示す紙上の概念図。電圧計Vは対象の二点間に並列、電流計Aは対象の枝路に直列につなぐ。実機の端子・配線や接続手順を示す図ではない。電流レンジを電源両端へ直接当てない。実作業では担当範囲・教育・設備手順と測定器の適合を確認する。",
+  "captionJaSha256": "28f115d3499164faba1f22546f9078106b4ba8bc84703166686e5c235e9bfef1",
+  "captionClauseProvenance": [
+    {
+      "clause": "Voltage meter across two target points in parallel; current meter in target branch in series.",
+      "basis": "Source physical147 figure10-2,physical148 figure10-4,physical151 section1.3 andphysical152 section1.4; current lesson005 section-1."
+    },
+    {
+      "clause": "Paper concept only; not actual terminal/wiring layout or connection procedure.",
+      "basis": "Author scope limitation for independently constructed learning diagram."
+    },
+    {
+      "clause": "Never directly apply current range across supply terminals.",
+      "basis": "Current canonical lesson005 section-1 and safetyJa[1]; not claimed as verbatim source-page instruction."
+    },
+    {
+      "clause": "Check assigned role, education, equipment procedure and instrument suitability in real work.",
+      "basis": "Current canonical lesson005 section-1 and safetyJa[0]; source physical151/152 requires appropriate instrument selection."
+    }
+  ],
+  "panelReviewPlan": [
+    {
+      "panel": "current_series",
+      "basis": "Figure10-2 physical147 andfigure7-13 physical100,prosephysical152",
+      "required": "A symbol lies on same sole path as load; no bypass branch around A; continuation notation only, no power source or numerical readings/terminal layout."
+    },
+    {
+      "panel": "voltage_parallel",
+      "basis": "Figure10-4 physical148 andprosephysical151",
+      "required": "V branch joins exact same two nodes as target load; clearly visible connection nodes and separate load path; not a series insertion."
+    },
+    {
+      "panel": "scope_and_safety",
+      "basis": "Current lesson005 sourceHash and author diagram limits",
+      "required": "Paper-only scope, no operational connection order, actual meter-terminal drawing, numerical safe voltage, invented readings or AC-current-capability universal assertion."
+    }
+  ],
+  "sourceQualifications": [
+    {
+      "issue": "Model-dependent AC current capability",
+      "sourcePages": [
+        99,
+        147,
+        152
+      ],
+      "resolution": "Physical99 explicitly allows some digital multimeters to measure AC current; later blanket tester exclusion is not generalized. Diagram/caption makes no assertion that all testers can or cannot measure AC current."
+    },
+    {
+      "issue": "Partial circuit presentation",
+      "resolution": "Two panels are original conceptual fragments with circuit continuation marks, not closed operational circuits or actual wiring instructions."
+    },
+    {
+      "issue": "Instrument loading",
+      "sourcePages": [
+        151
+      ],
+      "resolution": "Topology comparison only; no claim of ideal accuracy, negligible loading or true-value measurement."
+    }
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "currentStandardsCertified": false,
+  "fullKnowledgeAtomizationComplete": false,
+  "releaseReady": false,
+  "ssw2Used": false,
+  "runtimeModified": false,
+  "limitations": [
+    "Six bounded page rereads; not exhaustive source coverage or newly certified pages.",
+    "Existing lesson and saved learner hashes remain unchanged.",
+    "Independent final asset/caption review is recorded separately, not asserted by this source receipt.",
+    "No native/domain/current-standard/physical-device/release certification."
+  ]
+}

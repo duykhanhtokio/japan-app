@@ -1,0 +1,142 @@
+{
+  "authorPacketSha256": "bd08dbe06ef9ddf40b5768fe79acc385b45662f43a28ec9d307f99239c1c4738",
+  "reviewer": "safety",
+  "author": "soil",
+  "decisions": [
+    {
+      "questionId": "s35-w2-q01",
+      "decision": "accept",
+      "reasonJa": "同一作物でも温湿度変化に応じて必要水量を見直すというp2の条件が正答を直接支える。既存q01は観察対象、q02は過湿の害、m02q02は季節別時刻であり、同一作物でも量固定にしない判断とは異なる。旧候補の内容一致も確認した。",
+      "nearestExistingQuestionIds": [
+        "agr-water-soil-q01",
+        "agr-water-soil-q02",
+        "agr-1-m02-q02"
+      ]
+    },
+    {
+      "questionId": "s35-w2-q02",
+      "decision": "accept",
+      "reasonJa": "p4の苗・品種という植物側とp5の堆肥改良・土壌消毒という土壌側を区別する分類。原因の列挙・輪作の定義・接ぎ木部位の役割とは別。薬剤や量の処方は問わず、旧候補からそのままの正答と個別理由を確認した。",
+      "nearestExistingQuestionIds": [
+        "agr-water-soil-q15",
+        "agr-water-soil-q16",
+        "agr-par06-facility-environment-q15"
+      ]
+    },
+    {
+      "questionId": "s35-w2-q03",
+      "decision": "accept",
+      "reasonJa": "収穫で養分が畑外へ持ち出され、不足補給が必要になるというp1の収支方向を問う。既存の窒素の作用・症状や成分量計算の数値差替えではない。ただし不自然な誤答を、肥料過多と水だけの持ち出しという誤解へ修正する。",
+      "nearestExistingQuestionIds": [
+        "agr-par03-fertilizer-q01",
+        "agr-par03-fertilizer-q02",
+        "agr-par03-fertilizer-q09"
+      ]
+    },
+    {
+      "questionId": "s35-w2-q04",
+      "decision": "accept",
+      "reasonJa": "動植物由来という原料軸をp4で確認。既存q03は三要素数、q04は堆肥の二効果、q05は施用時状態であり、同じ区分を名だけ替えてはいない。今回q06の発酵工程とも別の軸。",
+      "nearestExistingQuestionIds": [
+        "agr-par03-fertilizer-q03",
+        "agr-par03-fertilizer-q04",
+        "agr-par03-fertilizer-q05"
+      ]
+    },
+    {
+      "questionId": "s35-w2-q05",
+      "decision": "accept",
+      "reasonJa": "耕うん・酸度改良・有機物補給を改善対象別に対応させるp3〜p5を確認。既存の耕うん定義と堆肥役割は背景だが、酸度の適量石灰による改良を含む三対象の対応は未出。量を一律指定しない条件も保持される。",
+      "nearestExistingQuestionIds": [
+        "agr-water-soil-q11",
+        "agr-water-soil-q12",
+        "agr-par03-fertilizer-q04"
+      ]
+    },
+    {
+      "questionId": "s35-w2-q06",
+      "decision": "accept",
+      "reasonJa": "p5の原料を積み発酵させる製造過程が正答を直接支える。既存q04は完成した堆肥の二つの役割、q05は施用時の液状、m02q25は配合の製造過程であり、堆肥発酵の識別は未出。誤答も他の肥料加工と対応し、原料名の差替えではない。",
+      "nearestExistingQuestionIds": [
+        "agr-par03-fertilizer-q04",
+        "agr-par03-fertilizer-q05",
+        "agr-1-m02-q25",
+        "agr-1-m02-q27"
+      ]
+    },
+    {
+      "questionId": "s35-w2-q07",
+      "decision": "exclude",
+      "reasonJa": "既存agr-par03-fertilizer-q16は「うね立ての時期と高うねの条件」を問い、正答が既に「播種・植え付けの前に行い」を含む。本候補は二つの区画に分けただけで、既存の先後関係の部分を再問している。新規独立能力には数えない。",
+      "nearestExistingQuestionIds": [
+        "agr-par03-fertilizer-q16",
+        "agr-1-m02-q35",
+        "agr-1-m02-q37"
+      ]
+    },
+    {
+      "questionId": "s35-w2-q08",
+      "decision": "accept",
+      "reasonJa": "p3は比色・挿入・デジタル表示が異なっても測定対象を確認することを明示し、p1がpHと酸度の関係を支える。既存q14/m02q14は特定簡易器具の準備・安定後読取りであり、本候補は読取り時刻の変更ではなく、表示方式と測定対象を混同しない概念を問う。pH表の数値比較にも置き換えていない。",
+      "nearestExistingQuestionIds": [
+        "agr-water-soil-q14",
+        "agr-1-m02-q14",
+        "agr-water-soil-q13",
+        "agr-1-m02-q31"
+      ]
+    }
+  ],
+  "patches": [
+    {
+      "questionId": "s35-w2-q03",
+      "field": "optionsJa",
+      "before": [
+        "収穫すると、持ち出した養分が同じ量だけ必ず土へ戻るため。",
+        "肥料は養分を補うのではなく、収穫物の重量だけをそろえるため。",
+        "収穫物とともに畑の外へ持ち出される養分もあるため。",
+        "土の中の養分は収穫量に関係なく増え続けるため。"
+      ],
+      "after": [
+        "収穫すると、持ち出した養分が同じ量だけ必ず土へ戻るため。",
+        "不足の有無にかかわらず、土の養分を常に最大に保つため。",
+        "収穫物とともに畑の外へ持ち出される養分もあるため。",
+        "収穫による持ち出しは、水だけに限られるため。"
+      ],
+      "reasonJa": "不自然な「収穫物の重量だけをそろえる」「養分が増え続ける」を、過剰補給や持ち出し対象の取り違えという学習上の誤解へ修正し、正答の収支方向と同じ軸で比較させる。"
+    },
+    {
+      "questionId": "s35-w2-q03",
+      "field": "optionReasonsJa",
+      "before": [
+        "持ち出された養分が自動的に同量戻るとは説明されていません。",
+        "本文は不足する養分を補う目的から肥料を考えています。",
+        "土にある養分で足りない場合や、収穫で持ち出す養分があることを説明しています。",
+        "収穫に関わらず養分が増え続けるという説明ではありません。"
+      ],
+      "after": [
+        "持ち出された養分が自動的に同量戻るとは説明されていません。",
+        "本文は不足を補う目的を示しており、土の養分を常に最大に保つとは説明していません。",
+        "土にある養分で足りない場合や、収穫で持ち出す養分があることを説明しています。",
+        "本文は収穫によって養分も外へ持ち出されると説明しており、水だけに限定していません。"
+      ],
+      "reasonJa": "選択肢の修正に対応し、個別の誤りを説明する。"
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "mechanicalEvidence": {
+    "allInputHashesMatch": true,
+    "all8LessonLevelAndSourceHashesVerified": true,
+    "allSourceParagraphTextAndHashesVerified": true,
+    "fiveDeferredQuestionContentFieldsExactlyMatchPriorPeerPatchedQueue": true,
+    "currentUniqueQuestionsMechanicallyScreened": 581,
+    "relevantSoilWaterFertilizerDrainageStemsAndKeysSemanticallyCompared": true
+  },
+  "reviewLimits": {
+    "freshPdfInspection": false,
+    "humanReviewed": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "canonicalFilesModified": false,
+    "whole800CapacityCertified": false
+  }
+}

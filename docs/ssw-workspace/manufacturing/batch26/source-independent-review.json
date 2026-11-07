@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "batch": 26,
+  "status": "pass_scoped_ai_comparison",
+  "reviewer": "independent_source_visuals_ai",
+  "guideFiles": {
+    "docs/ssw-workspace/manufacturing/batch26/mechanical-guide.json": "f9636713eb827baee27e5f417f441d114e7e2f25f1aea8c3219fae889525a0b1",
+    "docs/ssw-workspace/manufacturing/batch26/electrical-guide.json": "24084493e2b2f3394025db0826b3fd19d0c79bd61addcf1468e151039644b437",
+    "docs/ssw-workspace/manufacturing/batch26/surface-guide.json": "0f1cd0e6a628b270a6d0b2bcc91fb9c0bcd7b0924c80d8624888adc925af4815"
+  },
+  "guides": [
+    {
+      "guideId": "mfg1-mechanical-source-guide-arc-diameter-condition",
+      "guideSha256": "9bf2c4ea368ea31f50157e8ef0e3552eca45a123a79e159d72b8aa023fea9d04",
+      "sourceHash": "aa8282b30261adb0dc3730445a2188f97a41f5b4001ea374be9d8ec31546cc9f",
+      "verdict": "pass_scoped_ai_comparison",
+      "guidePath": "docs/ssw-workspace/manufacturing/batch26/mechanical-guide.json",
+      "sourceReferences": [
+        {
+          "documentId": "mfg1-mechanical-source",
+          "pdfPage": 97,
+          "printedPage": 89
+        }
+      ],
+      "note": "PDF97/printed89 table7-2strict>180conditions correctly attributed to this source; equality and inverse R rule explicitly excluded. No spherical-arc construction or standards-currency certification.",
+      "requiredCorrections": []
+    },
+    {
+      "guideId": "mfg1-electrical-source-guide-resistance-methods",
+      "guideSha256": "39139bd6d6479fdf24edd728f058d583b935f9b1b96f7f1306a1f1e7c3ec5bce",
+      "sourceHash": "0952fa683ee00242a2553d47de3f786b1e098fa9cd4be98aa3092c69953e4428",
+      "verdict": "pass_scoped_ai_comparison",
+      "guidePath": "docs/ssw-workspace/manufacturing/batch26/electrical-guide.json",
+      "sourceReferences": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 151,
+          "printedPage": 142
+        }
+      ],
+      "note": "Printed151names resistance bridge and voltage-drop methods and R=V/I. Source system effects retained; bridge construction, four-way taxonomy, current prevalence and universal correction recipe not invented.",
+      "requiredCorrections": []
+    },
+    {
+      "guideId": "mfg1-surface-source-guide-electrode-reactions",
+      "guideSha256": "929d2ad9b0f721d943f457b517aa55ef786ebae1ce827be967adaf9ba91df23b",
+      "sourceHash": "cb5ef537d74f8470286666a32dec4b330439792d81989c7c71b7f12a6b3d3c4c",
+      "verdict": "pass_scoped_ai_comparison",
+      "guidePath": "docs/ssw-workspace/manufacturing/batch26/surface-guide.json",
+      "sourceReferences": [
+        {
+          "documentId": "mfg1-surface-source",
+          "pdfPage": 175,
+          "printedPage": 165
+        },
+        {
+          "documentId": "mfg1-surface-source",
+          "pdfPage": 176,
+          "printedPage": 166
+        }
+      ],
+      "note": "Printed175figure and176Al/cathodicH2half-reactions support electron roles and gas label. External electrons/liquid ions distinguished; uncertain water/oxide expressions omitted; no complete-mechanism or equipment recipe claim.",
+      "requiredCorrections": []
+    }
+  ],
+  "evidenceFiles": {
+    "docs/ssw-workspace/manufacturing/batch25/mechanical-source-review.json": "d1e8dbbaa0b09a32ae652b3a9e1a0f458864064e9fcbecccf6f92d38e2ba0736",
+    "docs/ssw-workspace/manufacturing/batch25/electrical-source-review.json": "41f39a7d2a10e84ef90cc87ca6cc2f072147593b5163b72fe6b4daee37d1d202",
+    "docs/ssw-workspace/manufacturing/batch25/surface-source-review.json": "8675002c9cb8866f601a4acd84f80c89036e3040b1b16b5c28e891563903a908",
+    "docs/ssw-workspace/manufacturing/batch25/independent-source-review.json": "e1bf5f36c413a156bf2b3d7d08a5bf0d11fc08a4e0e6fd1bc5a7163d4dd20b39"
+  },
+  "method": "Read all three complete final Japanese guides and compared them with independently visually inspected exact uploaded PDF97/151/175–176 and batch25 source/canonical comparison evidence. Source statements distinguished from bounded editorial qualifications. No new source images generated or redistributed.",
+  "scope": "Three Japanese reference supplements only; not translation, native/domain, current-standard, operational or whole-source certification.",
+  "independentAIComparisonPerformed": true,
+  "requiredCorrections": [],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "fullKnowledgeAtomizationComplete": false,
+  "wholeCurriculumComplete": false,
+  "releaseReady": false,
+  "runtimeModified": false,
+  "sourceImagesRedistributed": false,
+  "limitations": [
+    "Prior direct source visual review reused with fresh full-payload comparison; no claim of newly discovered pages.",
+    "Strict>180and source-specific spherical-arc wording do not establish inverse/equality rules or current standards.",
+    "Measurement qualifications and incomplete-mechanism cautions are editorial limits, not new formulas stated by the PDF.",
+    "Known oxide-charge erratum is avoided rather than silently certified or newly live-verified."
+  ]
+}

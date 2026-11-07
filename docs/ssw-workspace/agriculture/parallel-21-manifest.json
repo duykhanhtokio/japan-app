@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "id": "agriculture-parallel-21",
+  "baselineCommit": "04da35f0124888087bbd1657086470f63f767772",
+  "status": "integrated_independently_ai_reviewed_scoped_qa_pass_persistence_recorded_by_git_gate",
+  "groups": 6,
+  "authors": 6,
+  "independentQuestionReviews": 6,
+  "reviewerCapacityNote": "Worker3 completed its source packet then capacity-stopped before review4; coordinator independently reviewed group4. No blocked-worker retry/model switch.",
+  "packets": [
+    {
+      "group": 1,
+      "authorPath": "docs/ssw-workspace/agriculture/parallel-21/source-1.json",
+      "authorSha256": "ba9aec6bc623a6a22ad8174c469acd7e33f0dc5bf0526131d6cab53cd7ffebf4",
+      "reviewPath": "docs/ssw-workspace/agriculture/parallel-21/review-1.json",
+      "reviewSha256": "35c85303d34d333ffb114df6e7135f9d207b39c8061ad2c5a757fb789eec8501",
+      "bankId": "agr-par21-g1-2-check",
+      "appliedPatches": [
+        {
+          "questionId": "agr-par21-g1-q02",
+          "field": "optionsJa",
+          "before": [
+            "中の水が熱くなっている場合があるため。",
+            "中に入った水は、日中の温度変化を避けられるため。",
+            "水をためると、暑い日ほど自然に冷えやすくなるため。",
+            "流し始めると、水温が土の温度と同じになるため。"
+          ],
+          "after": [
+            "中の水が日中に熱くなっている場合があるため。",
+            "容器に入れた水は、日中も同じ温度を保つため。",
+            "ためた水の温度が、外気温をそのまま示すため。",
+            "水を流すと、その温度がすぐ土の温度にそろうため。"
+          ],
+          "reason": "Make all four alternatives comparably sized causal statements and replace the less plausible hotter-day-spontaneous-cooling distractor with a water-versus-air-temperature misconception. CorrectIndex0 and source uncertainty remain."
+        },
+        {
+          "questionId": "agr-par21-g1-q02",
+          "field": "optionReasonsJa",
+          "before": [
+            "2号資料は、真夏の日中にはホースやタンク内の水が熱くなっている場合があると注意しています。",
+            "ホースやタンク内でも水が熱くなる場合があるため、容器の中というだけで温度変化を避けられるとは扱えません。",
+            "資料の注意は水が熱くなる場合であり、暑いほど自然に冷えるという説明ではありません。",
+            "流し始めるだけで土の温度と一致するという関係は示されていません。使う水の状態に注意します。"
+          ],
+          "after": [
+            "2号資料は、真夏の日中にはホースやタンク内の水が熱くなっている場合があると注意しています。",
+            "ホースやタンク内でも水が熱くなる場合があるため、容器の中というだけで温度変化を避けられるとは扱えません。",
+            "ホースやタンク内の水温が、外気温をそのまま示すとは説明されていません。真夏の日中に熱くなる可能性が注意点です。",
+            "流し始めるだけで土の温度と一致するという関係は示されていません。使う水の状態に注意します。"
+          ],
+          "reason": "Align the third distractor explanation with the revised external-air-temperature misconception; add no temperature threshold or irrigation procedure."
+        }
+      ],
+      "integratedQuestionsSha256": "6f3f2b3cab88aee19e591f47c7a8b534e6c6d20994936e7294e8ca0f676cbcf3"
+    },
+    {
+      "group": 2,
+      "authorPath": "docs/ssw-workspace/agriculture/parallel-21/source-2.json",
+      "authorSha256": "708987fd6b1c50889e9b8dfb0624c90e4d0459dbfe9be170a11fdfb23fc91830",
+      "reviewPath": "docs/ssw-workspace/agriculture/parallel-21/review-2.json",
+      "reviewSha256": "33d8463f8be6392e9840c4af0c6a9a8971662f49f5de0f688263b68c6bcb20f4",
+      "bankId": "agr-par21-g2-2-check",
+      "appliedPatches": [],
+      "integratedQuestionsSha256": "c741190e9ac9ea8ff5002051ce5a1ea64a25e17c14fe174aab8da5b052c4d474"
+    },
+    {
+      "group": 3,
+      "authorPath": "docs/ssw-workspace/agriculture/parallel-21/source-3.json",
+      "authorSha256": "291851f70374faced71ace5ac19f8cd182a9eb2dd3344c4d85e2551d07ccd43e",
+      "reviewPath": "docs/ssw-workspace/agriculture/parallel-21/review-3.json",
+      "reviewSha256": "b7b45ad05e2f36d247c4900ed99065581d3b9a172d8bfe454dca75576b59a238",
+      "bankId": "agr-par21-g3-2-check",
+      "appliedPatches": [
+        {
+          "questionId": "agr-par21-g3-q01",
+          "field": "optionsJa",
+          "before": [
+            "光透過率",
+            "遮熱性",
+            "水滴に関わる機能",
+            "散光性"
+          ],
+          "after": [
+            "光透過率",
+            "遮熱性",
+            "保温性",
+            "散光性"
+          ],
+          "reason": "Use four parallel technical noun options supported on the viewed pages; replace the longer generic water-related phrase. Correct index3 remains unchanged."
+        },
+        {
+          "questionId": "agr-par21-g3-q01",
+          "field": "optionReasonsJa",
+          "before": [
+            "光が通る量という観点で、入った光の広がり方を表す語とは分けます。",
+            "施設が高温になる原因となる赤外線を抑える機能の説明です。",
+            "被覆に付いた水の影響を考える機能で、光の広がり方の名称ではありません。",
+            "2号資料は、施設内をまんべんなく明るくする働きを散光性として説明します。"
+          ],
+          "after": [
+            "光が通る量という観点で、入った光の広がり方を表す語とは分けます。",
+            "施設が高温になる原因となる赤外線を抑える機能の説明です。",
+            "施設内の熱を保つ機能で、入った光の広がり方を表す語とは分けます。",
+            "2号資料は、施設内をまんべんなく明るくする働きを散光性として説明します。"
+          ],
+          "reason": "Align third option reason with revised保温性distractor; preserve scatter-versus-transmission/infrared/retention distinctions."
+        }
+      ],
+      "integratedQuestionsSha256": "c8a9068907f0f9ab6f6de060f12ed874b82d219c342d20a1eda062acdaec0b6e"
+    },
+    {
+      "group": 4,
+      "authorPath": "docs/ssw-workspace/agriculture/parallel-21/source-4.json",
+      "authorSha256": "ecf5d60d56e45fe5f8918c70fd01fb41b4d409292ab45a8b66b6d1de9ddc4f8a",
+      "reviewPath": "docs/ssw-workspace/agriculture/parallel-21/review-4.json",
+      "reviewSha256": "6d2854996b3b8fb859b81a6322b55ad6119270ff97adcffa5bff0e179b4c34a5",
+      "bankId": "agr-par21-g4-2-check",
+      "appliedPatches": [
+        {
+          "questionId": "agr-par21-facility-fruit-q01",
+          "field": "stemJa",
+          "before": "教材図の苗で「草丈」と「節間長」を別々に記録します。測る範囲の対応はどれですか。",
+          "after": "苗の「草丈」と「節間長」を別々に記録します。測る範囲の対応はどれですか。",
+          "reason": "Make the text question self-contained; the original diagram is not distributed or displayed in the question."
+        },
+        {
+          "questionId": "agr-par21-facility-fruit-q01",
+          "field": "optionReasonsJa",
+          "before": [
+            "図の二つの矢印は、株全体の高さと隣り合う節の間を別々に示しています。",
+            "草丈の矢印を最初の節までに縮め、節間長を株の上端まで広げてしまっています。",
+            "隣の株までの間隔は株間であり、図の草丈の測定範囲ではありません。",
+            "草丈と節間長の測定範囲が逆です。"
+          ],
+          "after": [
+            "草丈は株全体の高さ、節間長は隣り合う節の間を表します。",
+            "草丈を最初の節までに縮め、節間長を株の上端まで広げてしまっています。",
+            "隣の株までの間隔は株間であり、草丈の測定範囲ではありません。",
+            "草丈と節間長の測定範囲が逆です。"
+          ],
+          "reason": "Remove dependence on an unavailable diagram while preserving source-observed measurement spans."
+        }
+      ],
+      "integratedQuestionsSha256": "6f0b35605d4235139cd8229fbc0f55a98df48a7478d6aa5b287fe5786a9612a6"
+    },
+    {
+      "group": 5,
+      "authorPath": "docs/ssw-workspace/agriculture/parallel-21/source-5.json",
+      "authorSha256": "c7bee7976e59852073b1723c3cab94c54b17fcb679fc898ef1014d45469fe47a",
+      "reviewPath": "docs/ssw-workspace/agriculture/parallel-21/review-5.json",
+      "reviewSha256": "3b6c845f8b2ec3b3737a1a124147cb7d11671e86db2e94eaaf045a67294161db",
+      "bankId": "agr-par21-g5-2-check",
+      "appliedPatches": [],
+      "integratedQuestionsSha256": "3c95549bd6a99984b345d772b9d1f91e832234d42d8ac1fc02b38d875a1adc18"
+    },
+    {
+      "group": 6,
+      "authorPath": "docs/ssw-workspace/agriculture/parallel-21/source-6.json",
+      "authorSha256": "f303cf039f6c31665637eebc9c3396bcf08d2236f6c13a10db6d807503581317",
+      "reviewPath": "docs/ssw-workspace/agriculture/parallel-21/review-6.json",
+      "reviewSha256": "083ad1fbd41ae1e7cbf2e6ed5c1f8cb2cc60fa936a6737ef69ae3e2f8da4acec",
+      "bankId": "agr-par21-g6-2-check",
+      "appliedPatches": [
+        {
+          "questionId": "agr-par21-g6-q02",
+          "field": "stemJa",
+          "before": "2号資料の模式図で、葉から茎を通って根へ向かう線があります。根から葉へ向かう水の線と区別した説明はどれですか。",
+          "after": "2号資料で扱う物質の移動について、根から葉へ向かう水とは別に、葉から茎を通って根などへ向かう流れを説明したものはどれですか。",
+          "reason": "Make the item self-contained: the app need not display the source diagram. The material/direction comparison is unchanged and all four options remain answerable from the canonical lesson."
+        }
+      ],
+      "integratedQuestionsSha256": "e7f94e8c5fd1c72b0d0fbb8561a635e07afac4bfd7920d1d9911ab48e9d391c6"
+    }
+  ],
+  "newBankIds": [
+    "agr-par21-g1-2-check",
+    "agr-par21-g2-2-check",
+    "agr-par21-g3-2-check",
+    "agr-par21-g4-2-check",
+    "agr-par21-g5-2-check",
+    "agr-par21-g6-2-check"
+  ],
+  "newQuestionIds": [
+    "agr-par21-g1-q01",
+    "agr-par21-g1-q02",
+    "agr-par21-g1-q03",
+    "agr-par21-g1-q04",
+    "agr-par21-g2-q01",
+    "agr-par21-g2-q02",
+    "agr-par21-g2-q03",
+    "agr-par21-g2-q04",
+    "agr-par21-g3-q01",
+    "agr-par21-g3-q02",
+    "agr-par21-g3-q03",
+    "agr-par21-g3-q04",
+    "agr-par21-facility-fruit-q01",
+    "agr-par21-facility-fruit-q02",
+    "agr-par21-facility-fruit-q03",
+    "agr-par21-facility-fruit-q04",
+    "agr-par21-g5-q01",
+    "agr-par21-g5-q02",
+    "agr-par21-g5-q03",
+    "agr-par21-g5-q04",
+    "agr-par21-g6-q01",
+    "agr-par21-g6-q02",
+    "agr-par21-g6-q03",
+    "agr-par21-g6-q04"
+  ],
+  "newWeeklyQuestions": 24,
+  "newLessonIds": [],
+  "sourceCandidateChecks": 66,
+  "totalWeeklyQuestions": 412,
+  "totalWeeklyBanks": 44,
+  "preservedLessons": 168,
+  "preservedLearningUnits": 1008,
+  "preservedTranslationPairs": 2016,
+  "preservedRasterFigures": 39,
+  "unchangedPriorWeeklyBanks": 38,
+  "newMockQuestions": 0,
+  "totalMockQuestions": 0,
+  "sourceOccurrencesClosed": 0,
+  "uniqueAssessableObjectivesCertified": null,
+  "enoughDistinctObjectivesFor800Certified": false,
+  "sourceSummaryPath": "docs/ssw-workspace/agriculture/parallel-21/source-concordance.json",
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseReady": false,
+  "backgroundAuthoringRunning": false,
+  "browserQaEvidence": {
+    "path": "docs/ssw-workspace/agriculture/parallel-21/browser-qa.json",
+    "sha256": "136f9c0e2ed913d96c4eb1a6d7228d57fd6524d47c91c29076308e97959a9681",
+    "newQuestionCases": 24,
+    "newBanks": 6,
+    "responsiveCases": 48,
+    "resumeCases": 6,
+    "saveFailureRetryCases": 6,
+    "nativeDeviceTested": false,
+    "productionExpoTested": false
+  },
+  "sourceSummarySha256": "2c06e099f48aece1a6905b9d311255988d7316883cfef9935f4fda86b791699a",
+  "qaDiagnostics": [
+    "Browser launch preflight found a pre-existing zero-byte /tmp Chromium cache. Package extraction also met unsupported chown; a private byte-exact packaged Chromium was decompressed without ownership changes and version-checked before functional QA.",
+    "First functional run reached the already-submitted state, then a QA open() helper wrongly awaited only Submit. The helper now accepts Submit or Restart; no product/runtime/question change. Final full scoped run passed.",
+    "Minimal QA dependencies do not provide expo/tsconfig.base; esbuild warning retained. Royal/background/safe-area/storage/artwork adapters are explicit. No full Expo/native/font/device certification."
+  ],
+  "representativeScreenshotsInspected": [
+    "agr-par21-g1-2-check-day-390x844.png",
+    "agr-par21-g3-2-check-night-844x390.png",
+    "agr-par21-g4-2-check-day-1440x900.png"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "agri_5",
+  "status": "complete",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python scripts/agriculture/check-parallel-13.py",
+  "cwd": "/workspace/scratch/018c0b6e29b8/japan-app",
+  "exitCode": 0,
+  "result": {
+    "status": "PASS",
+    "baseline": "e20fb085",
+    "recognitionImages": 6,
+    "photoInventoryBindings": 6,
+    "actualWebpHashesAndDimensionsChecked": true,
+    "frozenDataJsonFiles": 17,
+    "frozenDocumentationFiles": 5,
+    "priorJapaneseLessonsUnchanged": 168,
+    "priorKnowledgeUnitsUnchanged": 1008,
+    "priorTranslationPairsUnchanged": 2016,
+    "priorWeeklyQuestionsUnchanged": 388,
+    "sourceOccurrencesClosed": 0,
+    "humanReviewed": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "releaseReady": false
+  },
+  "validatorPath": "/workspace/scratch/018c0b6e29b8/japan-app/scripts/agriculture/check-parallel-13.py",
+  "validatorSha256": "5065c0b36215999cdc0f3c6f9856188e6fb38b6ae1a8f4bdc460096bb37f63c6",
+  "strictnessReview": {
+    "staticRuntimeAssetBindingsChecked": true,
+    "manifestBindingsCountsAndReviewEvidenceDigestsChecked": true,
+    "all17BaselineRuntimeJSONByteIdentical": true,
+    "fiveFrozenDocumentationFilesByteIdentical": true,
+    "recognitionInventoryHistoricalFieldsPreservedWithOnlyAuthorizedAdditions": true,
+    "actualWebpCanvasAndDigestsChecked": true,
+    "registryIncompleteAndZeroClosureExplicitlyRequired": true,
+    "threeDistinctCompleteHashBoundReviewRecordsRequired": true
+  },
+  "readOnlyInMemoryNegativeChecks": [
+    {
+      "case": "valid",
+      "result": "PASS",
+      "output": {
+        "status": "PASS",
+        "baseline": "e20fb085",
+        "recognitionImages": 6,
+        "photoInventoryBindings": 6,
+        "actualWebpHashesAndDimensionsChecked": true,
+        "frozenDataJsonFiles": 17,
+        "frozenDocumentationFiles": 5,
+        "priorJapaneseLessonsUnchanged": 168,
+        "priorKnowledgeUnitsUnchanged": 1008,
+        "priorTranslationPairsUnchanged": 2016,
+        "priorWeeklyQuestionsUnchanged": 388,
+        "sourceOccurrencesClosed": 0,
+        "humanReviewed": false,
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "releaseReady": false
+      }
+    },
+    {
+      "case": "stale_lesson_hash",
+      "result": "correctly_rejected",
+      "message": "agr-recognition-cabbage-v1: stale/invalid lesson source binding agr-vegetables"
+    },
+    {
+      "case": "missing_lesson_hash",
+      "result": "correctly_rejected",
+      "message": "agr-recognition-cabbage-v1: lessonSourceHashes must exactly map lessonIds"
+    },
+    {
+      "case": "unknown_runtime_asset_key",
+      "result": "correctly_rejected",
+      "message": "agr-recognition-cabbage-v1: runtime assetKey/path does not match registry"
+    },
+    {
+      "case": "wrong_asset_digest",
+      "result": "correctly_rejected",
+      "message": "agr-recognition-cabbage-v1: actual asset hash differs"
+    }
+  ],
+  "runtimeSourceReview": {
+    "path": "src/components/agriculture/RecognitionImages.tsx",
+    "sha256": "ae85b4d1c5fb2adf177de7266b54d9837257cc2c460a40bc29574c8fd961abb8",
+    "findings": [
+      "Visible records require actual lesson ID association and exact sourceHash equality, own bundled assetKey, finite positive dimensions and Japanese metadata.",
+      "Canonical lesson sourceHash is passed by AgricultureCourse; missing/stale record hash does not match the canonical string.",
+      "No label/image-bearing entry is shown through a foreign lesson ID.",
+      "Static assetKey map is now crosschecked by validator against registry physical asset paths."
+    ],
+    "executionEvidence": "Independent agent6 report read and bound to current component/registry/browser-checker hashes. Exacthash fixtures show6images per mappedlesson; wronghash/absentbinding/unmappedlesson fixtures show0images in6negativecases."
+  },
+  "limits": [
+    "Read-only mechanical preservation and metadata/assets checks do not certify visual crop accuracy, native/human/domain review or real-device behavior.",
+    "Historical source-photo objectives remain pending; new illustrations close zero source occurrences.",
+    "Browser execution performed by agent6; agent5 independently inspected filtering code and validated reported evidence hashes, rather than rerunning all56browsercases."
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseReady": false,
+  "runtimeExecutionEvidence": {
+    "path": "/workspace/scratch/018c0b6e29b8/agri-par13-recognition-browser-final-v2/recognition-browser-qa.json",
+    "sha256": "5af37fcf5ba0919940cbd3c6e13be5591cea50c615a50ca19faa8fcbd65a162c",
+    "status": "PASS",
+    "cases": 56,
+    "imageDecodes": 336,
+    "completionActions": 6,
+    "exactHashFixtureCases": 2,
+    "negativeCases": 6,
+    "errors": [],
+    "componentSha256": "ae85b4d1c5fb2adf177de7266b54d9837257cc2c460a40bc29574c8fd961abb8",
+    "registrySha256": "2f1ec8f21df7793a22e98fa9f2603e3db8b51301b700cd490782367996530951",
+    "scriptSha256": "0ece87740479415a239538c8f6027d602a3dbc62880063e7939f5eaee0cdec18",
+    "scopeLimits": [
+      "Browser adapter test; native device and production Expo not certified.",
+      "Old-state/exam isolation remains the existing shared regression suite responsibility."
+    ],
+    "executedBy": "agri_6",
+    "independentlyReadAndHashBoundBy": "agri_5"
+  }
+}

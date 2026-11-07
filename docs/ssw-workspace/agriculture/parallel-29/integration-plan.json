@@ -1,0 +1,616 @@
+{
+  "schemaVersion": 1,
+  "baselineRemoteCommit": "7a95e4b87893fa097f00e155fc7004f197d9f2b4",
+  "baselineLocalCommit": "4b8bac004a96e52db2ce63a69745e2e83fefa472",
+  "inputFileSha256": {
+    "src/data/agriculture/mock-exams.ja.json": "137eb721d374d63cecd0870609078c6b20d7736a52eeb4e2d030520562f011f4",
+    "src/data/agriculture/course-manifest.json": "562b33ab87f51dd06d279d6a523cfbbf5a06c277fb6629cc3113c1f992664269",
+    "docs/ssw-workspace/agriculture/knowledge-ledger.json": "02509ec2cb87bc2a0369eb46f185cb64affe8620b60c0c6c3dc178536c91229a"
+  },
+  "packetFiles": {
+    "1": "worker1.json",
+    "2": "worker2.json",
+    "3": "worker3.json",
+    "4": "worker4.json",
+    "5": "worker5.json",
+    "6": "worker6.json",
+    "6s": "worker6-supplement.json"
+  },
+  "workerPacketSha256": {
+    "1": "5780fdd32939bb517f979fd854fa067dc03993ee2ce69a30122a79feeb59ca59",
+    "2": "d247171f018b9975a62699ce89864858b3261f29a1561e6fe1e58f4c6a7d6056",
+    "3": "6196513f0f1d1daea1e437218134bb494f5ad78fa8fdbfb7447a9ecd8358899f",
+    "4": "cd9baaa1869b8f101781e86732bace3c4c99a9aa6631ca9e675d6e81f2865616",
+    "5": "a5f433fdbd3e438a08304a9a910854d7d159245a3023749c8ed2e486f4bd8864",
+    "6": "e5f08c6e14ac19f824a3b984a5529ab757dd79793b85b25c97170d649543e825",
+    "6s": "453c4b3bfd03b252414860cd79800d86a3eaa4fa6678ee33934a2e55a2fe52c4"
+  },
+  "reviewFileSha256": {
+    "worker6-review-worker1.json": "3e5d7c81df43f62a3501e1fd2caff28bedc45a61f1e8aa1502325dbe666765d3",
+    "worker4-review-worker2.json": "d67d1ce96fd58a19f099fabd55e63e357698b3aa4b376231a5cc287a238c4e66",
+    "worker5-review-worker3.json": "5a820aaa7f7d73acad394ff1872c4ccdb41f9eb798021f97fbaf0de5eaa0d147",
+    "worker1-review-worker4.json": "8c52ec153a816a396c1eab7edb96f3c1ab843baee7f4509df69ec0cabb98681d",
+    "worker3-review-worker5.json": "69c23ef35a4140bb067191ef6dfe029aee952ad348b09646d0fec356c671b2a9",
+    "worker2-review-worker6.json": "95ba3db765a0a261c9eeee1d00765c448e0d789e1fbc1a0d69f6b0f42aa65728",
+    "worker2-review-supplement.json": "81b564e9d13cc23c58ba80fcfccd7d23a4f90f9b9cf75e7fb4924f5ed3f56613"
+  },
+  "decisions": {
+    "1:p29-w1-q01": {
+      "decision": "defer_to_future_whole_form",
+      "peerReviewFile": "worker6-review-worker1.json",
+      "peerDecision": "retain_pending_coordinator_acceptance",
+      "reasonJa": "正規段落p3は高温に加え成長が盛んなときの呼吸増加を述べる。選択肢2のみが一致し、他三つの「だけ」という限定は本文にない。解説四件も条件を保持する。既存の高夜温・気体の方向・収穫後の品質変化との直接重複は見当たらない。新問は生育状態という条件の識別に限定する。"
+    },
+    "2:p29-w2-q01": {
+      "decision": "defer_to_future_whole_form",
+      "peerReviewFile": "worker4-review-worker2.json",
+      "peerDecision": "accept",
+      "reasonJa": "同じ作物でも温度・湿度で必要水量が変わるという本文の関係を保持。既存の観察項目選択や季節の時間帯とは独立した環境変化の判断。本文から固定量や閾値を作らず四択は一意。"
+    },
+    "2:p29-w2-q02": {
+      "decision": "defer_to_future_whole_form",
+      "peerReviewFile": "worker4-review-worker2.json",
+      "peerDecision": "accept",
+      "reasonJa": "植物側の接ぎ木苗・耐病性品種と、土壌側の堆肥・消毒という作用対象の分類。輪作定義や接ぎ木の台木役割を再出題するものではなく、消毒製品や条件も推測しない。誤肢は作用対象の入替えとして明瞭。"
+    },
+    "2:p29-w2-q03": {
+      "decision": "defer_to_future_whole_form",
+      "peerReviewFile": "worker4-review-worker2.json",
+      "peerDecision": "accept",
+      "reasonJa": "本文は収穫により養分を圃場外へ持ち出すと明示する。既存の元素作用・過剰施肥・分解機構と異なる養分の持出しと不足補給の関係であり、施肥量は決めない。"
+    },
+    "2:p29-w2-q04": {
+      "decision": "defer_to_future_whole_form",
+      "peerReviewFile": "worker4-review-worker2.json",
+      "peerDecision": "accept",
+      "reasonJa": "動植物由来の原料という区分を、三要素数・施用形状・被膜加工と区別する。既存の遅効性の微生物分解や配合肥料製造とは判断軸が別で、本文の魚かす等の例も一致。"
+    },
+    "2:p29-w2-q05": {
+      "decision": "defer_to_future_whole_form",
+      "peerReviewFile": "worker4-review-worker2.json",
+      "peerDecision": "accept",
+      "reasonJa": "耕うん・適量の石灰等・有機物補給を異なる改善対象へ対応させる。既存の深耕の名称や堆肥の二作用に酸度改善を加えた別の分類課題として一問のみ保持。数値量・深さ・pH境界は追加しない。"
+    },
+    "2:p29-w2-q06": {
+      "decision": "defer_to_future_whole_form",
+      "peerReviewFile": "worker4-review-worker2.json",
+      "peerDecision": "accept",
+      "reasonJa": "脚立本体のひび・折れ・曲がりの使用前点検が本文に明示。既存の開き止め・安定・姿勢とは別の損傷点検で、前日使用は省略根拠にならない。噴霧器接続部や運転前中後の点検時期とも対象機構が異なる。"
+    },
+    "2:p29-w2-q07": {
+      "decision": "defer_to_future_whole_form",
+      "peerReviewFile": "worker4-review-worker2.json",
+      "peerDecision": "accept",
+      "reasonJa": "本文p6は散布中又は後のめまい・吐き気などの異常時、継続せず速やかに医師の診察を受けると明示。既存の風による中止、疲労や飲酒、保護具準備とは異常発生後の対応が異なる。原因を中毒と断定せず治療手順も追加しない。誤肢の原因否定表現は下記の待機判断へ直す。"
+    },
+    "3:p29-w3-q01": {
+      "decision": "exclude",
+      "peerReviewFile": "worker5-review-worker3.json",
+      "peerDecision": "exclude_duplicate_exposed",
+      "reasonJa": "既存正答理由は「選種、消毒、浸種、催芽まで」を同じ順に明示している。既出の列挙を順序選択へ置き換えるだけでは、この追加枠の独立性が立証されない。deferred採用済みという記録だけを優先して再出題しない。"
+    },
+    "3:p29-w3-q02": {
+      "decision": "defer_to_future_whole_form",
+      "peerReviewFile": "worker5-review-worker3.json",
+      "peerDecision": "retain_with_exact_patches",
+      "reasonJa": "既存は種子消毒の対象と目的。本候補はセンチュウと病気を同じ病原菌へまとめる誤分類を修正する。正規p5が直接支える。全四択と理由の整合は保たれるが、器官名という離れた誤択を同じ防除対象の範囲に近付ける。"
+    },
+    "3:p29-w3-q03": {
+      "decision": "exclude",
+      "peerReviewFile": "worker5-review-worker3.json",
+      "peerDecision": "exclude_duplicate_nested",
+      "reasonJa": "既存q10の誤択と理由は、もみすり・乾燥・調整が収穫後の別工程であることを既に明示する。引継ぎ場面への変更は同じ工程境界の再表現である。"
+    },
+    "3:p29-w3-q04": {
+      "decision": "hold",
+      "peerReviewFile": "worker5-review-worker3.json",
+      "peerDecision": "hold_not_new_capacity",
+      "reasonJa": "水分割合を別項目へ誤転用しない操作はq11が既出。米袋30kgを追加するだけの単位分類で別能力を確立しておらず、誤択三つも肥料・設定温度・時間へ遠く離れる。本文との矛盾はないが容量へ数えない。"
+    },
+    "3:p29-w3-q05": {
+      "decision": "exclude",
+      "peerReviewFile": "worker5-review-worker3.json",
+      "peerDecision": "exclude_duplicate_nested",
+      "reasonJa": "既存q16の正答と誤択・理由が、完熟前という収穫段階を既に繰り返し含む。黄熟期の名称を追加して同じ完熟前判断を問うだけでは独立枠にしない。"
+    },
+    "3:p29-w3-q06": {
+      "decision": "defer_to_future_whole_form",
+      "peerReviewFile": "worker5-review-worker3.json",
+      "peerDecision": "retain_pending_coordinator_acceptance",
+      "reasonJa": "保存形態・完熟前のWCS利用と別に、飼料全体の収穫判断を栄養価へ結び付ける操作であり、正規p6が直接支える。四択中2だけが合致し、理由も日付や用途だけに固定しない。Q5を除外して重ねて数えない。"
+    },
+    "3:p29-w3-q07": {
+      "decision": "exclude",
+      "peerReviewFile": "worker5-review-worker3.json",
+      "peerDecision": "exclude_cross_packet_duplicate",
+      "reasonJa": "worker4のp29-w4-q05が百分率とpFを別尺度へ分ける同じ操作を扱う。出題レベルや本文の場所を替えても新規容量にはならない。"
+    },
+    "3:p29-w3-q08": {
+      "decision": "hold",
+      "peerReviewFile": "worker5-review-worker3.json",
+      "peerDecision": "hold_prior_six_ai",
+      "reasonJa": "先行sixAI objectives-5 atomic-w5-10で同じ段落をhold_not_new_capacityとした。カロテン・料理用途の想起と一般分類を組み合わせても、保留理由が解消した証拠はない。本文事実は正しいが独立枠へ再昇格しない。"
+    },
+    "4:p29-w4-q01": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "被覆材と屋根形状という分類軸の区別であり、既存の材質性能や屋根名称対応とは異なる。deferred W5-01の引継ぎを確認。"
+    },
+    "4:p29-w4-q02": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "雨が直接当たることと裂果予防という目的を問う。既存q09の屋根だけの被覆範囲と異なり、完全防除の保証もない。"
+    },
+    "4:p29-w4-q03": {
+      "decision": "hold",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "hold",
+      "reasonJa": "six-ai objectives-4のAGR-ATOMIC-SIXAI4-04で明示されたholdが未解決。軒と棟の部位の根拠と視覚資産未確認を本文対応だけで解除しない。屋根名称を替える枠の水増しも避ける。"
+    },
+    "4:p29-w4-q04": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "温度計の数値読取りとは異なり、時間帯と管理方向の対応を問う。具体的温度処方は追加されていない。"
+    },
+    "4:p29-w4-q05": {
+      "decision": "exclude",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "exclude",
+      "reasonJa": "agr-2-m01-q08が同じ土壌水分15%でも砂土と黒ボク土のpFが異なる例を直接評価する。百分率とpFを単一尺度へ同一視しないという基礎判断はその既存設問に内包され、新たな独立枠にしない。 またparallel29のW3-07と同じ尺度混同の能力であり、両方を独立枠にはできない。"
+    },
+    "4:p29-w4-q06": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "2年以上・収穫目的・木本草本という複合定義を保持。既存の常緑落葉分類とは対象が異なる。"
+    },
+    "4:p29-w4-q07": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "形成層をどこに合わせるかと違い、合わせた位置を離さず保持する工程目的。巻付強度や除去時期を創作しない。"
+    },
+    "4:p29-w4-q08": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "既存は棚仕立ての利用例・誘引。中心幹と上部中央の開きという構造対比を一つの能力として扱う。"
+    },
+    "4:p29-w4-q09": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "既存の細胞数から細胞肥大という発育順序と異なり、成熟段階の糖蓄積と軟化の関係。多くの果実という範囲を保持。"
+    },
+    "4:p29-w4-q10": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "既存の袋の止金位置や果実中央配置とは別に、果実を残して保護し外観を整える目的を問う。"
+    },
+    "4:p29-w4-q11": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "既存の二度切りの工程対応と異なり、切離し時の刃先・引っ張りによる傷を防ぐ動作を問う。"
+    },
+    "4:p29-w4-q12": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "既存の地表被覆管理と異なり、排水設備と土を支える設備の役割対応。施工条件の追加なし。"
+    },
+    "4:p29-w4-q13": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "収穫熟度の判断や測定器対応とは異なり、収穫後選別の基準の組合せを問う。花きの長さ対品質等級と同一尺度の置換にしない。"
+    },
+    "4:p29-w4-q14": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "既存の脱渋という用語・可溶性タンニンの説明とは別に、渋ガキを食用へ仕上げる加工例を問う。具体処理条件なし。"
+    },
+    "4:p29-w4-q15": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "既存の房づくりと摘粒の時期比較とは別に、花振るい防止と房形調整という目的を問う。"
+    },
+    "4:p29-w4-q16": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "既存の作業時期・果軸への袋固定と異なり、副穂・岐肩という房の構造を対象とする。一粒の数を替える追加枠ではない。"
+    },
+    "4:p29-w4-q17": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "2018年の施設トマト生産重量と面積順位、露地を含むかを区別する。既存統計の金額小計・金額換算・1人年消費の数値置換ではなく指標と対象範囲の対照。"
+    },
+    "4:p29-w4-q18": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "既存の栄養成長定義と移行の作物差と異なり、同時期に二つの成長を並行観察する計画判断。植物名だけの置換ではない。"
+    },
+    "4:p29-w4-q19": {
+      "decision": "accept",
+      "peerReviewFile": "worker1-review-worker4.json",
+      "peerDecision": "accept",
+      "reasonJa": "総作付面積と10a当たり収量の分母と変化方向の対応。既存構成比・順位を別の値へ置換した問題ではない。比較年や増減率を補っていない。"
+    },
+    "5:p29-w5-q01": {
+      "decision": "accept",
+      "peerReviewFile": "worker3-review-worker5.json",
+      "peerDecision": "accept",
+      "reasonJa": "既存q16は圃場内で種を落とす前の刈取り。外からの種子流入を防ぐ経路を追加する能力は異なり、本文p1に一致。"
+    },
+    "5:p29-w5-q02": {
+      "decision": "accept",
+      "peerReviewFile": "worker3-review-worker5.json",
+      "peerDecision": "revise",
+      "reasonJa": "既存q14は中耕と培土の位置。候補は作物がないという耕うん例の適用条件であり、既存誤答の条件を正答へ転用する近接はあるが、適用場面を明示する別能力として保持。正答理由の内部IDだけ除く。"
+    },
+    "5:p29-w5-q03": {
+      "decision": "accept",
+      "peerReviewFile": "worker3-review-worker5.json",
+      "peerDecision": "accept",
+      "reasonJa": "無効分げつがあるため茎数と穂数を同一視しないという本文p2の関係が一意。単なる分げつ定義の再問ではない。"
+    },
+    "5:p29-w5-q04": {
+      "decision": "accept",
+      "peerReviewFile": "worker3-review-worker5.json",
+      "peerDecision": "accept",
+      "reasonJa": "穂が外へ出る前に葉鞘が膨らむ観察と穂ばらみ期の対応が本文p4に明記。出穂そのものの定義を再問しない。"
+    },
+    "5:p29-w5-q05": {
+      "decision": "accept",
+      "peerReviewFile": "worker3-review-worker5.json",
+      "peerDecision": "accept",
+      "reasonJa": "単独の出穂と有効茎の約半数というほ場段階の母数・割合を区別する。本文p5に明記され、分げつや単一穂の観察とは異なる。"
+    },
+    "5:p29-w5-q06": {
+      "decision": "accept",
+      "peerReviewFile": "worker3-review-worker5.json",
+      "peerDecision": "accept",
+      "reasonJa": "穀粒の硬さと胚乳全体の透明化という成熟時の観察。胚乳の貯蔵機能や乾燥後含水率と異なり、本文p6が正答を支持。"
+    },
+    "5:p29-w5-q07": {
+      "decision": "accept",
+      "peerReviewFile": "worker3-review-worker5.json",
+      "peerDecision": "accept",
+      "reasonJa": "種イモを直接植える作物と、伸びた茎から苗を作る作物の材料形状を比較する。既存の科・器官分類を名称だけ変更した問題ではない。"
+    },
+    "5:p29-w5-q08": {
+      "decision": "accept",
+      "peerReviewFile": "worker3-review-worker5.json",
+      "peerDecision": "accept",
+      "reasonJa": "本文p6に食用・販売へ回さない注意と処理法を決めない限界が明記される。調理方法や安全量を創作せず、新規の安全上の出荷除外判断。"
+    },
+    "5:p29-w5-q09": {
+      "decision": "accept",
+      "peerReviewFile": "worker3-review-worker5.json",
+      "peerDecision": "accept",
+      "reasonJa": "既存直根性問は移植時の根への影響。本候補は短い栽培期間という異なる理由を取り出し、本文p4/p5の二経路を区別する。"
+    },
+    "6:p29-w6-q01": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "使用時期と方法の欄を分ける操作。希釈倍数/液量、回数、期限/ロットの既存問とは具体的項目が異なり、製品処方を出さない。"
+    },
+    "6:p29-w6-q02": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "適用作物と対象病害虫の組合せ確認であり、製品名や量の確認ではない。似た作物名の推定を避ける原文条件を保持。"
+    },
+    "6:p29-w6-q03": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "目を休め遠くを見るという対象に適した動作を選び、既存の腰姿勢変更と同じ一般的休憩の言換えだけにはしていない。医学的分数を作らない。"
+    },
+    "6:p29-w6-q04": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "洗浄後に残る乾燥・整備・収納・記録を計画へ追加する操作。点検目的や記録単独の既存問と範囲が異なる。"
+    },
+    "6:p29-w6-q05": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "朝夕の目安を満たしても降雨直前は散布しないという別条件。既存強風の中止とは異なる気象条件で、待ち時間を創作しない。"
+    },
+    "6:p29-w6-q06": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "軍手の濡れる性質と薬剤への適合確認を選ぶ。既存の服の重ね方/装着開始時点とは異なる。worker2はこの候補を重ねていない。"
+    },
+    "6:p29-w6-q07": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "薬剤付着と回転部への巻込みという異なる危険をまたぐ保護具転用を否定。q06の薬剤内の適合とは区別され、具体機種への手袋推奨なし。"
+    },
+    "6:p29-w6-q08": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "六角穴とプラス溝という締結部形状に工具を対応させる。既存ソケットの構造/モンキレンチ調整と異なる接触構造を扱う。"
+    },
+    "6:p29-w6-q09": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "運転前・中・後の点検場面を別に残す。目的の名称やつまり除去時停止の既存問とは異なる。運転中の可動部接触を認めない。"
+    },
+    "6:p29-w6-q10": {
+      "decision": "defer_to_future_whole_form",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "病気と害虫という対象へ薬剤分類を対応。天敵・剤型・IPM目標の既存問と違い、個別登録や用量には踏み込まない。",
+      "allocationReasonJa": "次の40問構成へ残し、今回の施設・果樹・稲作・防除・肥料の混合40問を優先する。"
+    },
+    "6:p29-w6-q11": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "品種・輪作・ほ場清掃という耕種的予防を他の防除経路から選ぶ。既存IPM全体目標/輪作定義と異なる分類操作。worker2-q02の連作対策の植物/土壌分類とも対象が違う。"
+    },
+    "6:p29-w6-q12": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "人工性フェロモン→交尾を妨げる→次世代個体数という経路。天敵の捕食や反射/粘着による物理的防除とは別。非正答の全て除去という過剰語を外す編集を提案。"
+    },
+    "6:p29-w6-q13": {
+      "decision": "defer_to_future_whole_form",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "摘果対象の病害虫影響・形の観察。既存摘果の用語/養水分集中と異なる選定基準。worker4の収穫後選別/袋かけ対比とも段階と作業が異なる。",
+      "allocationReasonJa": "次の40問構成へ残し、今回の施設・果樹・稲作・防除・肥料の混合40問を優先する。"
+    },
+    "6:p29-w6-q14": {
+      "decision": "defer_to_future_whole_form",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "混み合い/病気の葉を見て摘葉し通風・採光へ結び付ける。既存の葉・芽・茎先端の名称対応より具体的な対象選定と目的。",
+      "allocationReasonJa": "次の40問構成へ残し、今回の施設・果樹・稲作・防除・肥料の混合40問を優先する。"
+    },
+    "6:p29-w6-q15": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-worker6.json",
+      "peerDecision": "accept",
+      "reasonJa": "水分が抜けにくい果実の真空冷却適性を判断。既存の蒸発原理/保冷庫必要性や差圧通風の機構とは別の対象条件。全品種の運転条件を作らない。"
+    },
+    "6s:p29-w6-sq01": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-supplement.json",
+      "peerDecision": "accept",
+      "reasonJa": "既存は原料/成分数/液状と形状または効き方の区別。本問は円筒形という観察から原料構成を確認済みとしない独立の二軸照合。p29-w2-q04の動植物由来という有機質定義とも異なる。同じ旧six-aiペレット候補を統合した一問で、候補IDの数を容量に上乗せしない。"
+    },
+    "6s:p29-w6-sq02": {
+      "decision": "accept",
+      "peerReviewFile": "worker2-review-supplement.json",
+      "peerDecision": "accept",
+      "reasonJa": "既存m02q27の有機質の微生物分解は既習だが、成分の難溶性による化学肥料の遅効性はその正答・誤答・理由に含まれない。本問は有機質だけという分類を訂正し、二経路を分ける。速効/被膜の名称替えではない。旧six-aiの同一機構候補を一問へ統合。"
+    }
+  },
+  "patches": [
+    {
+      "ref": "2:p29-w2-q07",
+      "field": "optionsJa",
+      "before": [
+        "風が弱ければ散布を続け、予定分を終えてから体調を確かめる。",
+        "残液を使い切るまで作業を続け、片付けの後に休憩する。",
+        "保護具の名前を確認できたら、原因はないと判断して続ける。",
+        "散布を続けず、速やかに医師の診察を受ける。"
+      ],
+      "after": [
+        "風が弱ければ散布を続け、予定分を終えてから体調を確かめる。",
+        "残液を使い切るまで作業を続け、片付けの後に休憩する。",
+        "保護具を着けているので、次の休憩時まで様子を見ながら散布を続ける。",
+        "散布を続けず、速やかに医師の診察を受ける。"
+      ],
+      "reasonJa": "原因がないという診断的表現を避け、本文と対照できる継続判断へ限定する。"
+    },
+    {
+      "ref": "2:p29-w2-q07",
+      "field": "optionReasonsJa",
+      "before": [
+        "風の弱さは、身体の異常があるまま続ける理由にはなりません。",
+        "残液を減らすことを優先して作業を続ける説明ではありません。",
+        "保護具の確認だけで身体異常の原因を否定することはできません。",
+        "本文は異常を感じたら作業を続けず、速やかな受診を示しています。"
+      ],
+      "after": [
+        "風の弱さは、身体の異常があるまま続ける理由にはなりません。",
+        "残液を減らすことを優先して作業を続ける説明ではありません。",
+        "保護具を着けていても、異常を感じたまま次の休憩まで作業を続けるという説明ではありません。",
+        "本文は異常を感じたら作業を続けず、速やかな受診を示しています。"
+      ],
+      "reasonJa": "医療上の原因推定を加えず、本文の作業中止との対応だけを説明する。"
+    },
+    {
+      "ref": "3:p29-w3-q02",
+      "field": "optionsJa",
+      "before": [
+        "名前が二つあるので、どちらも同じ病原菌の別名としてまとめる。",
+        "病害虫への対策という目的は共通するが、全てを同じ種類の病原菌とはまとめない。",
+        "種もみに関係する対象なので、どちらも玄米の器官名としてまとめる。",
+        "どちらも消毒で扱う対象なので、処理製品や条件も同じとしてまとめる。"
+      ],
+      "after": [
+        "名前が二つあるので、どちらも同じ病原菌の別名としてまとめる。",
+        "病害虫への対策という目的は共通するが、全てを同じ種類の病原菌とはまとめない。",
+        "センチュウは病原菌ではないので、種子消毒の対象から外してまとめる。",
+        "どちらも消毒で扱う対象なので、処理製品や条件も同じとしてまとめる。"
+      ],
+      "reasonJa": "同じ種子消毒の対象分類をめぐるもっともらしい誤りへ近付け、器官名という離れた誤択を除く。"
+    },
+    {
+      "ref": "3:p29-w3-q02",
+      "field": "optionReasonsJa",
+      "before": [
+        "二つを同じ病原菌の別名とする説明はありません。",
+        "本文は病害虫への対策を述べ、対象を全て同じ種類の病原菌とはしないよう区別しています。",
+        "胚・胚乳等の器官名とは別の対象です。",
+        "共通の作業目的から、製品や処理条件まで同じとは判断できません。"
+      ],
+      "after": [
+        "二つを同じ病原菌の別名とする説明はありません。",
+        "本文は病害虫への対策を述べ、対象を全て同じ種類の病原菌とはしないよう区別しています。",
+        "本文はイネシンガレセンチュウも種子消毒の対象例として挙げています。",
+        "共通の作業目的から、製品や処理条件まで同じとは判断できません。"
+      ],
+      "reasonJa": "差し替え誤択3に対する正規段落に基づく理由へ対応させる。"
+    },
+    {
+      "ref": "4:p29-w4-q03",
+      "field": "optionReasonsJa",
+      "before": [
+        "育苗容器の高さの説明ではありません。",
+        "本文は軒が高いことを特徴として挙げています。",
+        "屋根面の幅は高さとは別の寸法です。",
+        "施設の構造を作物自体の高さへ読み替えていません。"
+      ],
+      "after": [
+        "育苗容器の高さの説明ではありません。",
+        "本文は軒が高いことを特徴として挙げています。",
+        "屋根面の幅は高さとは別の寸法です。",
+        "本文が高いと説明するのは施設の軒であり、作物自体の草丈ではありません。"
+      ],
+      "reasonJa": "誤答の理由を否定の取り違えが起きない文へ明確化。ただし当該問はholdなので、この修正で採用可にはならない。"
+    },
+    {
+      "ref": "5:p29-w5-q02",
+      "field": "optionReasonsJa",
+      "before": [
+        "作業名を書き替えたことは、本文の作物がないという条件を確認したことになりません。",
+        "本文agr-pest-weeds-p5の作物がない畑という適用場面を保った確認です。",
+        "雑草の量を理由に、掲載例の作物がない畑という条件を取り除いています。",
+        "草丈だけへ判断を狭めると、本文が残す作物の有無という条件が失われます。"
+      ],
+      "after": [
+        "作業名を書き替えたことは、本文の作物がないという条件を確認したことになりません。",
+        "本文の「作物がない畑」という適用場面を保った確認です。",
+        "雑草の量を理由に、掲載例の作物がない畑という条件を取り除いています。",
+        "草丈だけへ判断を狭めると、本文が残す作物の有無という条件が失われます。"
+      ],
+      "reasonJa": "学習者向け説明から内部paragraphIDを除き、確認すべき条件を自然な文で残す。"
+    },
+    {
+      "ref": "6:p29-w6-q12",
+      "field": "optionsJa",
+      "before": [
+        "粘着面に害虫を付けて、全て取り除く。",
+        "天敵が害虫を捕食する回数を直接数える。",
+        "交尾を妨げ、次世代の害虫を減らす。",
+        "光を反射して害虫の接近を抑える。"
+      ],
+      "after": [
+        "粘着面に害虫を付けて捕らえる。",
+        "天敵が害虫を捕食する回数を直接数える。",
+        "交尾を妨げ、次世代の害虫を減らす。",
+        "光を反射して害虫の接近を抑える。"
+      ],
+      "reasonJa": "仕組みの比較という誤答を保ち、全て除去という余分な極端表現を除く。"
+    },
+    {
+      "ref": "6:p29-w6-q12",
+      "field": "optionReasonsJa",
+      "before": [
+        "粘着捕獲とは仕組みが異なり、全て除く保証もありません。",
+        "天敵による捕食の説明とは異なります。",
+        "本文に示された交信撹乱の経路です。",
+        "光の反射を利用する方法と、性フェロモンによる交信撹乱を混同しています。"
+      ],
+      "after": [
+        "これは粘着面による捕獲であり、性フェロモンで交尾を妨げる仕組みとは異なります。",
+        "天敵による捕食の説明とは異なります。",
+        "本文に示された交信撹乱の経路です。",
+        "光の反射を利用する方法と、性フェロモンによる交信撹乱を混同しています。"
+      ],
+      "reasonJa": "変更後の誤答に説明を対応させる。"
+    },
+    {
+      "ref": "6s:p29-w6-sq02",
+      "field": "optionsJa",
+      "before": [
+        "化学肥料は全て速効性として別欄へ移す。",
+        "化学肥料にも成分が溶けにくい例があり、微生物分解を経る有機質肥料とは経路を分けて記す。",
+        "溶けにくい化学肥料も、必ず微生物分解だけで利用可能になると記す。",
+        "全ての遅効性肥料は被膜の厚さだけで効き始めが決まると記す。"
+      ],
+      "after": [
+        "化学肥料は速効性の欄へまとめ、遅効性の欄から外す。",
+        "溶けにくい化学肥料も加え、有機質の分解とは別経路にする。",
+        "溶けにくい化学肥料も、必ず微生物分解だけで利用可能になると記す。",
+        "被膜で溶出を調整するという、一つの経路へ整理する。"
+      ],
+      "reasonJa": "正答だけが長い手掛かりと、全てという露骨な極端表現を抑え、誤りの中心を二経路の取違えに置く。 / 正答だけが長い手掛かりと、全てという露骨な極端表現を抑え、誤りの中心を二経路の取違えに置く。 / 正答だけが長い手掛かりと、全てという露骨な極端表現を抑え、誤りの中心を二経路の取違えに置く。"
+    }
+  ],
+  "forms": [
+    {
+      "id": "agr-2-m02",
+      "level": "2",
+      "titleJa": "総合練習 02",
+      "questionRefs": [
+        "4:p29-w4-q01",
+        "4:p29-w4-q02",
+        "4:p29-w4-q04",
+        "4:p29-w4-q06",
+        "4:p29-w4-q07",
+        "4:p29-w4-q08",
+        "4:p29-w4-q09",
+        "4:p29-w4-q10",
+        "4:p29-w4-q11",
+        "4:p29-w4-q12",
+        "4:p29-w4-q13",
+        "4:p29-w4-q14",
+        "4:p29-w4-q15",
+        "4:p29-w4-q16",
+        "4:p29-w4-q17",
+        "4:p29-w4-q18",
+        "4:p29-w4-q19",
+        "5:p29-w5-q01",
+        "5:p29-w5-q02",
+        "5:p29-w5-q03",
+        "5:p29-w5-q04",
+        "5:p29-w5-q05",
+        "5:p29-w5-q06",
+        "5:p29-w5-q07",
+        "5:p29-w5-q08",
+        "5:p29-w5-q09",
+        "6:p29-w6-q01",
+        "6:p29-w6-q02",
+        "6:p29-w6-q03",
+        "6:p29-w6-q04",
+        "6:p29-w6-q05",
+        "6:p29-w6-q06",
+        "6:p29-w6-q07",
+        "6:p29-w6-q08",
+        "6:p29-w6-q09",
+        "6:p29-w6-q11",
+        "6:p29-w6-q12",
+        "6:p29-w6-q15",
+        "6s:p29-w6-sq01",
+        "6s:p29-w6-sq02"
+      ]
+    }
+  ],
+  "globalSemanticDedupComplete": false,
+  "capacityFor800Certified": false,
+  "nativeReviewed": false,
+  "domainReviewed": false
+}

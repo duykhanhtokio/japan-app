@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "scope": "Read-only structural and source-binding audit of currently authored Agriculture lesson translations",
+  "baselineCommit": "06905f8b3a6ba51df28d55b0abd3e4ecc2edbf73",
+  "checks": {
+    "authoredJapaneseLessons": 174,
+    "currentJapaneseLessonCoreHashes": 174,
+    "japaneseCoreHashMismatches": 0,
+    "locales": [
+      "bn",
+      "en",
+      "hi",
+      "id",
+      "km",
+      "my",
+      "ne",
+      "th",
+      "tl",
+      "vi",
+      "zh-CN",
+      "zh-TW"
+    ],
+    "lessonLocalePairs": 2088,
+    "fieldsPerLocale": 2610,
+    "totalRequiredTranslatedTextFields": 31320,
+    "missingPairs": [],
+    "extraPairs": [],
+    "staleSourceHashes": [],
+    "invalidRequiredFieldsOrProvenance": [],
+    "countPerLocale": {
+      "bn": 174,
+      "en": 174,
+      "hi": 174,
+      "id": 174,
+      "km": 174,
+      "my": 174,
+      "ne": 174,
+      "th": 174,
+      "tl": 174,
+      "vi": 174,
+      "zh-CN": 174,
+      "zh-TW": 174
+    }
+  },
+  "numericScreen": {
+    "method": "NFKC, all Unicode decimal digits normalized, comparison of ASCII digit tokens for title/objective/activity/paragraph headings/body. Does not convert words or Japanese kanji numerals.",
+    "candidateFields": 169,
+    "confirmedDefects": [],
+    "qualification": "Screening candidates are not errors. Targeted inspection found expected written-month names, kanji-number conversion, decimal/thousands separators, equivalent 万t conversions and condensed repeated examples. This is not exhaustive semantic clearance of all candidates or all 31,320 fields.",
+    "examples": [
+      {
+        "lessonId": "agr-par22-facility",
+        "source": "56.2万t /13.5万t",
+        "equivalentValues": "562000 t /135000 t; Hindi 5.62 lakh /1.35 lakh",
+        "issue": false
+      },
+      {
+        "lessonId": "agr-fertilizer-label",
+        "field": "agr-fertilizer-label-p4",
+        "locales": [
+          "id",
+          "vi"
+        ],
+        "source": "1.5 kg",
+        "target": "1,5 kg",
+        "issue": false
+      },
+      {
+        "lessonId": "agr-fruit-detail-harvest-calendar",
+        "locales": "multiple",
+        "source": "6月下旬～8月下旬",
+        "target": "month names and late qualifiers",
+        "issue": false
+      }
+    ]
+  },
+  "canonicalFilesChanged": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "allFieldSemanticReviewPerformed": false,
+  "wholeCurriculumTranslationComplete": false,
+  "inputSha256": {
+    "src/data/agriculture/lessons.ja.json": "967a6aea549c2609980af50870a083326f58e52e8180576f2011ca9748abdabb",
+    "src/data/agriculture/translations.json": "166054eecfb20dcd0f23640145ae42876e042d93b1503926544dcef84521b832",
+    "src/data/agriculture/translations/bn.json": "06e7f8e9a3b1e3a743316baf1299e2e908428eb6679a082f65695e4e085daed2",
+    "src/data/agriculture/translations/en.json": "38cd48d6af1fffc84dd0503c07a9fc651c98c42c19aa8dcf4acdd1433b743294",
+    "src/data/agriculture/translations/hi.json": "27aa9e13527eb6febc24417843912c81b376d6c1522833c49663ee080a6989dd",
+    "src/data/agriculture/translations/id.json": "b4c43a73fc587216fe37474912034b039adb8ea1194cb51d9b8c3e0b6eda468e",
+    "src/data/agriculture/translations/km.json": "eb93257e2c841edc1c888b661369dc862087efa3d3dca15565a61d7bda7fc68b",
+    "src/data/agriculture/translations/my.json": "de6e4c4a746e223d80897435bd4fbb903d6a543903e8a1e3c1424b87b7c7111a",
+    "src/data/agriculture/translations/ne.json": "e571fd26e9b7ddfdf146ecc3b15dd00a763d36ab9172f63298928c61adaf141a",
+    "src/data/agriculture/translations/th.json": "f1061faaffd9d2c0feb13938965ec9723b4d91f64890a6a9fe363445f98026df",
+    "src/data/agriculture/translations/tl.json": "225b5ca542bab8d4e5002f5f322500d749645fc8faaca8f5d341c7a587b45dc0",
+    "src/data/agriculture/translations/vi.json": "84981db7226ef8a06cd6503f4e733d953eee4121bca819508d6d46f4f6c651c6",
+    "src/data/agriculture/translations/zh-CN.json": "5e8f61bebf484dc1a33c8f51ad01369b27ad3aa004af0f5ac237d97d0e1043e3",
+    "src/data/agriculture/translations/zh-TW.json": "34c7745743d2cb2ff5cb9637fe8b5b1d518b6a846b1269b604365161ee34a4c8"
+  }
+}

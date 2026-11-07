@@ -1,0 +1,13 @@
+# Manufacturing SSW1 — completed AI draft delivery, 2026-10-26
+
+Six parallel AI workers completed the authorized manufacturing SSW1 draft delivery this session. Scope: mechanical, electrical and surface treatment; Japanese canonical. Baseline Japanese content remains preserved.
+
+Delivered: **262 core lessons, 5 source-reference guides, 456 weekly questions across 38 checks, 30 original mock exams (1,200 questions), and 18 technical diagrams**. All 12 target languages (en, vi, id, zh-CN, zh-TW, hi, bn, ne, my, th, km, tl) cover every core lesson, weekly question, mock question, diagram caption and reference guide: 3,144 lesson pairs, 5,472 weekly pairs, 14,400 mock pairs, 216 caption pairs and 60 guide pairs. Japanese plus these targets provide 13 UI locales.
+
+Five separately source-bound guides close eight specifically audited TOC gaps: 5S/4S, exam/study guidance, basic safety, pH and specific gravity. An independent AI review verifies this scoped closure. They supplement the frozen core curriculum and do not assert full-source object atomization.
+
+Validation passed: frozen source/review bindings, complete translation structures and numeric constraints, all 30 mock forms with distinct stems and core-lesson coverage, separate 40-minute theory/practical clocks and independent application-practice thresholds of 20/30 AND 6/10, mock restoration/expiry, weekly stale-record recovery, all 39 locale/specialty exam flows, and all 65 locale/guide reading-and-completion flows in full Expo54 web. No reported JavaScript errors in those flows. Narrow/landscape layouts, technical diagrams and QA-host glyph coverage passed. Global script audit covers 186,180 prose fields with no unresolved unintended foreign-script finding. JLPT 10/10 byte-locked files remain unchanged.
+
+`aiDraftDeliveryComplete=true`; **`courseComplete=false`, `releaseReady=false`**. Native-language/domain certification, exhaustive source atomization and physical native-device testing remain uncertified. AI draft completion is not a production release claim. Whole-repository TypeScript has existing diagnostics outside manufacturing; the prior run reported no manufacturing diagnostics.
+
+Authoring, exact source hashes, independent scoped reviews, translation manifests and runtime QA evidence are retained under `batch12/`. Use `python scripts/manufacturing/integrate-completion.py` and the guarded source-guide compiler; historical batch13 integrators are blocked against this newer snapshot. Preserve the reviewed surface weekly10 restoration and source freeze. Unrelated concurrent repository changes were preserved.

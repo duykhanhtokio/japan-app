@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 1,
+  "batch": "22",
+  "date": "2026-10-28",
+  "specialty": "surface",
+  "scopeLevel": "1",
+  "baselineCommit": "30f79554bb20e9d096f09fbc0edb2464a1a7a30e",
+  "source": {
+    "documentId": "mfg1-surface-source",
+    "sha256": "08d7e9d6ae5fc5a442af227bbc690ed54cde06681ee8806eb7aadf87748b2eae"
+  },
+  "inputsSha256": {
+    "src/data/manufacturing/surface.json": "96d750ea565f43952617ce38caa7bdba1bce52b92eb78ab6e2a03932ed73e392",
+    "docs/ssw-workspace/manufacturing/surface-inventory.json": "6ab2b8565d53ace3872116d551b0d5a9ce40eafc66878bc9d185bba02e5f516b",
+    "docs/ssw-workspace/manufacturing/page-object-inventory.json": "f2a9800cdc94ccaac79a164e6cb753768c2833ad259e1d5ccc537c593f47c1ef",
+    "docs/ssw-workspace/manufacturing/knowledge-matrix.json": "66a76372f4392fb4a0bde8bf463c13667af318a55951b4f1267f9ca123f951b1",
+    "docs/ssw-workspace/manufacturing/batch12/surface/full-source-audit.json": "1e8d22f518bf4b0a2223fbc6305965c434173b86937445d574ce01117a2fd503",
+    "docs/ssw-workspace/manufacturing/batch12/surface/knowledge-closure-detail.json": "0944f8e6f8fe0fded59da9ee8ee4e4cc8bea3dd75dfcad7406433157d581681a",
+    "docs/ssw-workspace/manufacturing/batch17/surface-source-review.json": "ac430f0064f650d5e0cd33aed4a3d30f867675ccffe70561095b309f9b7ef949"
+  },
+  "scope": "Additive bounded fine-object comparison of anodizing property/evaluation pages183–184. Both pages were already visually read in batch12; no globally new previously unseen source pages. Physical185exercise excluded. No runtime, frozen review, knowledge-matrix or translation edits.",
+  "pages": [
+    {
+      "pdfPage": 183,
+      "printedPage": 173,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "visualInspection": {
+        "performed": true,
+        "method": "Verified exact PDF SHA256; PyMuPDF1.8x raster of entire physical page viewed directly. Extracted text used only for navigation; figures, labels, qualifiers and numerical examples compared visually.",
+        "renderSha256": "1cb7a2956b122d2aedca59eaaf7b2455f01e9d9342388b096933d5b9439dc42d",
+        "extractedTextSha256": "160e4518c98894300b9558e22278e31c3d43b96890caa6e9d9db58b73a40f7eb",
+        "pageSizePt": [
+          595.32,
+          841.92
+        ],
+        "sourceExercisesExcluded": true,
+        "sourceImagesRedistributed": false
+      },
+      "objects": [
+        {
+          "id": "mfg1-surface-b22-p183-o01",
+          "type": "property_and_test_concept",
+          "summary": "Corrosion performance is evaluated by exposing an anodized sample to a defined salt-mist environment; material-property praise is distinct from a measured acceptance verdict.",
+          "knowledgeIds": [
+            "mfg1-surface-c12-s3",
+            "mfg1-surface-c06-s4-1"
+          ],
+          "lessonIds": [
+            "mfg1-surface-lesson-023",
+            "mfg1-surface-lesson-033"
+          ],
+          "lessonBindings": {
+            "mfg1-surface-lesson-023": "c68c6b0c18d9e9705e4dd62e62597e1cb2f16d0c146d7bdb7adf61ca696b7967",
+            "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a"
+          },
+          "coverageStatus": "covered_concept",
+          "bboxNormalized": [
+            0.17,
+            0.105,
+            0.89,
+            0.184
+          ],
+          "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+          "comparisonBasis": "Physical183corrosion subsection; lesson023/section-1 describes salt-mist exposure and section-2 qualifies methods/specifications;033/section-3 names corrosion as a distinct performance category.",
+          "uncoveredFacets": [],
+          "derivation": "explicit_source",
+          "priorObjectIds": []
+        },
+        {
+          "id": "mfg1-surface-b22-p183-o02",
+          "type": "source_numerical_qualification",
+          "summary": "This page gives5%saltwater mist and336hours-or-longer as its descriptive corrosion-test example, not a universal product pass threshold.",
+          "knowledgeIds": [
+            "mfg1-surface-c12-s3",
+            "mfg1-surface-c06-s4-1"
+          ],
+          "lessonIds": [
+            "mfg1-surface-lesson-023",
+            "mfg1-surface-lesson-033"
+          ],
+          "lessonBindings": {
+            "mfg1-surface-lesson-023": "c68c6b0c18d9e9705e4dd62e62597e1cb2f16d0c146d7bdb7adf61ca696b7967",
+            "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a"
+          },
+          "coverageStatus": "source_qualification_or_ambiguity",
+          "bboxNormalized": [
+            0.17,
+            0.113,
+            0.89,
+            0.184
+          ],
+          "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+          "comparisonBasis": "Physical183corrosion firstparagraph;023/section-2 explicitly defers concrete conditions/pass values to designated standard edition and product requirements;033/section-3 avoids judging from film thickness alone.",
+          "uncoveredFacets": [
+            "Exact5%/336hour example is not taught as a mandatory current condition; retain this source-only qualification."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": []
+        },
+        {
+          "id": "mfg1-surface-b22-p183-o03",
+          "type": "named_test_comparison",
+          "summary": "The page contrasts longer salt-mist exposure with shorter evaluation examples, naming alkali-drop and copper-containing CASS methods alongside JISH8681.",
+          "knowledgeIds": [
+            "mfg1-surface-c12-s3",
+            "mfg1-surface-c06-s4-1",
+            "mfg1-surface-c06-s4-2"
+          ],
+          "lessonIds": [
+            "mfg1-surface-lesson-023"
+          ],
+          "lessonBindings": {
+            "mfg1-surface-lesson-023": "c68c6b0c18d9e9705e4dd62e62597e1cb2f16d0c146d7bdb7adf61ca696b7967"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.17,
+            0.194,
+            0.89,
+            0.245
+          ],
+          "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+          "comparisonBasis": "Physical183corrosion secondparagraph;023/section-1 explains CASS versus salt-mist and section-3 explains alkali-drop, but does not link this page-specific accelerated-comparison framing or JISH8681 identifier.",
+          "uncoveredFacets": [
+            "Page-specific method-comparison framing and cited JISidentifier are not explicit in lesson023; no current-standard verification claimed."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": []
+        },
+        {
+          "id": "mfg1-surface-b22-p183-o04",
+          "type": "lightfastness_evaluation",
+          "summary": "Color fading under sunlight is a lightfastness question; the source names xenon-arc/carbon-arc irradiation examples and cites JISH8685.",
+          "knowledgeIds": [
+            "mfg1-surface-c12-s3"
+          ],
+          "lessonIds": [
+            "mfg1-surface-lesson-033"
+          ],
+          "lessonBindings": {
+            "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.17,
+            0.299,
+            0.89,
+            0.409
+          ],
+          "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+          "comparisonBasis": "Physical183lightfastness subsection;033/section-3 explicitly distinguishes lightfastness from wear but does not explain the lamp examples or this cited identifier.",
+          "uncoveredFacets": [
+            "Xenon/carbon-arc evaluation examples and source JISreference are not individually explained in current033."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": []
+        },
+        {
+          "id": "mfg1-surface-b22-p183-o05",
+          "type": "thermal_property_qualification",
+          "summary": "The source associates heating above its100°Cexample with cracking and possible insulation/corrosion loss, and mentions special pigments/post-treatment; this wording is not a universal thermal ceiling.",
+          "knowledgeIds": [
+            "mfg1-surface-c12-s3"
+          ],
+          "lessonIds": [
+            "mfg1-surface-lesson-033",
+            "mfg1-surface-lesson-069"
+          ],
+          "lessonBindings": {
+            "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a",
+            "mfg1-surface-lesson-069": "4aada97b9ffd9e7ae041763e972ec6557c4551c7b9aa22d94526acbda1b028b5"
+          },
+          "coverageStatus": "source_qualification_or_ambiguity",
+          "bboxNormalized": [
+            0.17,
+            0.465,
+            0.89,
+            0.55
+          ],
+          "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+          "comparisonBasis": "Physical183heat subsection;033/section-2 explicitly treats representative temperatures as conditional,069/example rejects using a representative heat limit as every part’s allowance.",
+          "uncoveredFacets": [
+            "100°Cand treatment examples remain source-specific; current lessons deliberately avoid a blanket safe/unsafe cutoff."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": []
+        },
+        {
+          "id": "mfg1-surface-b22-p183-o06",
+          "type": "wear_and_sealing_relation",
+          "summary": "Hard anodized surface oxide supports wear resistance, and the page describes an unsealed hard-film example to retain wear performance; this does not mean every hard film must remain unsealed.",
+          "knowledgeIds": [
+            "mfg1-surface-c12-s3"
+          ],
+          "lessonIds": [
+            "mfg1-surface-lesson-033",
+            "mfg1-surface-lesson-069"
+          ],
+          "lessonBindings": {
+            "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a",
+            "mfg1-surface-lesson-069": "4aada97b9ffd9e7ae041763e972ec6557c4551c7b9aa22d94526acbda1b028b5"
+          },
+          "coverageStatus": "covered_concept",
+          "bboxNormalized": [
+            0.17,
+            0.608,
+            0.89,
+            0.681
+          ],
+          "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+          "comparisonBasis": "Physical183wear openingparagraph;033/section-1 and069/section-3 explicitly teach the sealing/performance tradeoff and reject one universal sealing condition.",
+          "uncoveredFacets": [],
+          "derivation": "explicit_source",
+          "priorObjectIds": []
+        },
+        {
+          "id": "mfg1-surface-b22-p183-o07",
+          "type": "wear_test_description",
+          "summary": "A rotating abrasive-wheel test evaluates wear amount; the page’s10000rotation description identifies a test example, not a standalone acceptance limit.",
+          "knowledgeIds": [
+            "mfg1-surface-c12-s3"
+          ],
+          "lessonIds": [
+            "mfg1-surface-lesson-033",
+            "mfg1-surface-lesson-069"
+          ],
+          "lessonBindings": {
+            "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a",
+            "mfg1-surface-lesson-069": "4aada97b9ffd9e7ae041763e972ec6557c4551c7b9aa22d94526acbda1b028b5"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.17,
+            0.65,
+            0.89,
+            0.741
+          ],
+          "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+          "comparisonBasis": "Physical183wear finalsentences;033/section-3 distinguishes wear performance,069/section-3 requires specified tests, but neither describes wheel rotation/wear-amount evaluation.",
+          "uncoveredFacets": [
+            "Rotating-wheel wear evaluation is not explicitly explained; numerical rotation count is source-only until designated test specification is verified."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": []
+        }
+      ]
+    },
+    {
+      "pdfPage": 184,
+      "printedPage": 174,
+      "priorEvidenceStatus": "Batch12full-source-audit records actual visual reading and direct lesson033/069links; page-object-inventory is structural, not semantic certification. Batch17fineledger ends182; no prior fine-object IDs for183/184 found. This is deeper localization of previously read pages, not new global page discovery.",
+      "visualInspection": {
+        "performed": true,
+        "method": "Verified exact PDF SHA256; PyMuPDF1.8x raster of entire physical page viewed directly. Extracted text used only for navigation; figures, labels, qualifiers and numerical examples compared visually.",
+        "renderSha256": "ea1307b6445a51a4965d07574444bf34ac1e333b662563dd26246ec41984a41f",
+        "extractedTextSha256": "3723af21f4b70bf2daeb89bf7f3e5743952a5b095f9c420bb40f37291bcca413",
+        "pageSizePt": [
+          595.32,
+          841.92
+        ],
+        "sourceExercisesExcluded": true,
+        "sourceImagesRedistributed": false
+      },
+      "objects": [
+        {
+          "id": "mfg1-surface-b22-p184-o01",
+          "type": "hardness_notation",
+          "summary": "The boxed HVnote identifies Vickers hardness, distinct from the separate dielectric-strength property below.",
+          "knowledgeIds": [
+            "mfg1-surface-c12-s3",
+            "mfg1-surface-c06-s5",
+            "mfg1-surface-c06-s5-3"
+          ],
+          "lessonIds": [
+            "mfg1-surface-lesson-055",
+            "mfg1-surface-lesson-033"
+          ],
+          "lessonBindings": {
+            "mfg1-surface-lesson-055": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d",
+            "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.17,
+            0.09,
+            0.88,
+            0.16
+          ],
+          "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+          "comparisonBasis": "Physical184HVbox heading/openingline;055/section-2 names microVickers among hardness methods,033/section-3 names electrical characteristics, but neither explicitly pairs the HVnotation with this page.",
+          "uncoveredFacets": [
+            "Explicit HVnotation reading is absent from current lesson prose."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": []
+        },
+        {
+          "id": "mfg1-surface-b22-p184-o02",
+          "type": "indentation_method_concept",
+          "summary": "The source describes a diamond square-pyramid indenter and relates hardness to indentation surface area; it does not present a complete test setup or numerical calculation here.",
+          "knowledgeIds": [
+            "mfg1-surface-c12-s3",
+            "mfg1-surface-c06-s5-3"
+          ],
+          "lessonIds": [
+            "mfg1-surface-lesson-055"
+          ],
+          "lessonBindings": {
+            "mfg1-surface-lesson-055": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.17,
+            0.165,
+            0.88,
+            0.216
+          ],
+          "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+          "comparisonBasis": "Physical184HVbox middleparagraph;055/section-2 names indentation resistance and microVickers and checks load/surface/thickness suitability, but not the square-pyramid/indentation-area relation.",
+          "uncoveredFacets": [
+            "Indenter shape and indentation surface-area relation are not explicitly elaborated in055."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": []
+        },
+        {
+          "id": "mfg1-surface-b22-p184-o03",
+          "type": "technical_illustration",
+          "summary": "Figure12-7depicts the indentation footprint as a diamond-shaped outline with crossing diagonals; the image contains no numerical scale or pass criterion.",
+          "knowledgeIds": [
+            "mfg1-surface-c12-s3",
+            "mfg1-surface-c06-s5-3"
+          ],
+          "lessonIds": [
+            "mfg1-surface-lesson-055"
+          ],
+          "lessonBindings": {
+            "mfg1-surface-lesson-055": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d"
+          },
+          "coverageStatus": "partial_detail_or_visual_gap",
+          "bboxNormalized": [
+            0.32,
+            0.251,
+            0.73,
+            0.355
+          ],
+          "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+          "comparisonBasis": "Physical184figure12-7 and caption;055/section-2 provides no corresponding indentation illustration or diagram-label reading.",
+          "uncoveredFacets": [
+            "Footprint/diagonal interpretation has no mapped current learning visual; no numerical measurement can be inferred from this image."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": []
+        },
+        {
+          "id": "mfg1-surface-b22-p184-o04",
+          "type": "thin_film_test_qualification",
+          "summary": "The HVnote uses approximately50µmfilm thickness to explain why hardness measurement demand is limited in that source context; it does not prohibit hardness testing of all thin coatings.",
+          "knowledgeIds": [
+            "mfg1-surface-c12-s3",
+            "mfg1-surface-c06-s5-3"
+          ],
+          "lessonIds": [
+            "mfg1-surface-lesson-055",
+            "mfg1-surface-lesson-069"
+          ],
+          "lessonBindings": {
+            "mfg1-surface-lesson-055": "78facfbf5b3f184818deeea53cb9e9383cf5a666d8c19e518a89d7e09e14968d",
+            "mfg1-surface-lesson-069": "4aada97b9ffd9e7ae041763e972ec6557c4551c7b9aa22d94526acbda1b028b5"
+          },
+          "coverageStatus": "source_qualification_or_ambiguity",
+          "bboxNormalized": [
+            0.17,
+            0.198,
+            0.88,
+            0.244
+          ],
+          "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+          "comparisonBasis": "Physical184HVbox finalsentences;055/section-2 requires load/surface/thickness-compatible method selection and069/section-3 qualifies hard-film requirements.",
+          "uncoveredFacets": [
+            "Source-specific50µmcontext is not a universal minimum/maximum measurement rule."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": []
+        },
+        {
+          "id": "mfg1-surface-b22-p184-o05",
+          "type": "dielectric_example_and_application",
+          "summary": "The dielectric subsection gives an approximately2kV-at50µmexample, mentions prescribed evaluation and electronic heat-fin applications; a film example does not certify personal shock protection or an operating test voltage.",
+          "knowledgeIds": [
+            "mfg1-surface-c12-s3"
+          ],
+          "lessonIds": [
+            "mfg1-surface-lesson-033",
+            "mfg1-surface-lesson-069"
+          ],
+          "lessonBindings": {
+            "mfg1-surface-lesson-033": "047bdd2316ba34d01370aa11b2eccb275765212263084a01825aa743e360ce5a",
+            "mfg1-surface-lesson-069": "4aada97b9ffd9e7ae041763e972ec6557c4551c7b9aa22d94526acbda1b028b5"
+          },
+          "coverageStatus": "source_qualification_or_ambiguity",
+          "bboxNormalized": [
+            0.17,
+            0.452,
+            0.89,
+            0.528
+          ],
+          "bboxPrecision": "Approximate reviewer enclosing region, normalized top-left origin; not pixel-exact segmentation.",
+          "comparisonBasis": "Physical184dielectric subsection;033/section-3 explicitly rejects treating a representative dielectric value as personal-protection insulation and069/example qualifies voltage/geometry/defects/use conditions.",
+          "uncoveredFacets": [
+            "Source voltage/thickness pair and heat-fin use are not engineering acceptance or personal-safety guarantees; no test procedure/settings taught."
+          ],
+          "derivation": "explicit_source",
+          "priorObjectIds": []
+        }
+      ]
+    }
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "fullKnowledgeAtomizationComplete": false,
+  "wholeCurriculumComplete": false,
+  "releaseReady": false,
+  "runtimeModified": false,
+  "globallyNewPreviouslyUnseenPages": 0,
+  "sourceImagesRedistributed": false,
+  "sourceExercisesCopied": false,
+  "qualifications": [
+    "Numerical test/film examples and named JISreferences are source-specific descriptions, not verified current standards or universal acceptance/operating limits.",
+    "Existing lessons teach several broad concepts; this ledger distinguishes exact finer details without declaring those broader lessons complete.",
+    "Natural grouped objects below are not sentence-by-sentence or exhaustive page atomization; decorative headers/footers are outside technical-object count."
+  ],
+  "counts": {
+    "physicalPagesVisuallyInspected": 2,
+    "globallyNewPreviouslyUnseenPages": 0,
+    "fineObjectOccurrences": 12,
+    "coverageStatuses": {
+      "covered_concept": 2,
+      "source_qualification_or_ambiguity": 4,
+      "partial_detail_or_visual_gap": 6
+    }
+  }
+}

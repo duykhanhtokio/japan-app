@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "status": "approved_ai_editorial_review",
+  "packetSha256": "1a543d71265943de1cacd595c91083af1603116b980414e45ba6cdb34aeab58a",
+  "assetSha256": "c362195b398d937a60e56c8e91cf22dc862444239bfead626761a9b675a88a32",
+  "patches": [
+    {
+      "field": "limitJa",
+      "before": "形を比べるための一例です。色だけで材質を判定しません。寸法・穴数・排水の構造は製品により異なり、この図は播種手順や容器選定の指示ではありません。ペーパーポット、地床育苗、実物写真での全容器識別を扱ったことにはしません。",
+      "after": "形を比べるための一例です。色だけで材質を判定しません。寸法・穴数・排水の構造は製品により異なり、この図は播種手順や容器選定の指示ではありません。",
+      "reason": "Remove internal curriculum-coverage bookkeeping from visible learner text; preserve one-example scope, no color-only material inference, product-dependent dimensions/hole count/drainage, and no sowing/container-selection instruction."
+    },
+    {
+      "field": "labelsJa",
+      "operation": "add",
+      "before": null,
+      "after": [
+        "左：育苗箱",
+        "中央：ポリポット",
+        "右：セルトレイ"
+      ],
+      "reason": "Bind visible left/center/right positions to the three object names already independently checked against the actual illustration and source; this adds no new technical claim."
+    }
+  ],
+  "approvedLimitJa": "形を比べるための一例です。色だけで材質を判定しません。寸法・穴数・排水の構造は製品により異なり、この図は播種手順や容器選定の指示ではありません。",
+  "approvedLabelsJa": [
+    "左：育苗箱",
+    "中央：ポリポット",
+    "右：セルトレイ"
+  ],
+  "coverageBookkeeping": "Retain paperpot/groundbed/full-real-photo exclusions in manifest/review evidence, not learner-facing figure limitation. No broader source occurrence closure is approved.",
+  "unresolvedBlockingIssues": [],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "authorPacketMutated": false
+}

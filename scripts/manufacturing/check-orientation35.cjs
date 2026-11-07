@@ -1,0 +1,18 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),Module=require('node:module'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'../..'),read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8')),sha=p=>crypto.createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
+const patch=read('src/data/manufacturing/orientation-editorial.json'),lesson=read('src/data/manufacturing/electrical.json').lessons.find(l=>l.id===patch.lessonId),before=JSON.stringify(lesson),locales=['ja',...read('docs/ssw-workspace/manufacturing/approved-scope.json').targetLocales];
+const file=path.join(root,'src/data/manufacturing/lesson-editorial.ts'),m=new Module(file,module);m.filename=file;m.paths=Module._nodeModulePaths(path.dirname(file));m._compile(require('esbuild').transformSync(fs.readFileSync(file,'utf8'),{loader:'ts',format:'cjs'}).code,file);const apply=m.exports.manufacturingLessonParagraph;
+assert.equal(patch.sourceHash,lesson.sourceHash);assert.deepEqual(patch.physicalPages,[10,11,12]);let cases=0;
+for(const p of patch.patches){assert.deepEqual(Object.keys(p.wording).sort(),locales.slice().sort());assert.equal(p.wording.ja.before,lesson.paragraphs.find(x=>x.id===p.paragraphId).textJa);
+ for(const locale of locales){const w=p.wording[locale];if(locale!=='ja')assert.equal(w.before,read(`src/data/manufacturing/translations/${locale}.json`).lessons[lesson.id].paragraphs.find(x=>x.id===p.paragraphId).text);
+ assert(w.after.startsWith(w.before+'\n\n'));assert(w.after.length>w.before.length+30);assert.equal(apply(lesson,p.paragraphId,locale,w.before),w.after);
+ assert.equal(apply({...lesson,sourceHash:'stale'},p.paragraphId,locale,w.before),w.before);
+ assert.equal(apply(lesson,p.paragraphId,locale,'changed'),'changed');
+ assert.equal(apply({...lesson,paragraphs:lesson.paragraphs.map(x=>({...x,textJa:'changed'}))},p.paragraphId,locale,w.before),w.before);cases+=4;
+ }assert.equal(apply(lesson,p.paragraphId,'toString','x'),'x');assert.equal(apply(lesson,p.paragraphId,'xx','x'),'x');}
+assert.equal(JSON.stringify(lesson),before);for(const f of ['humanReviewed','nativeReviewed','domainReviewed'])assert.equal(patch[f],false);
+const base='docs/ssw-workspace/manufacturing/',audit=read(base+'batch35-remaining-pages/page-review.json'),old=read(base+'batch33-full-review/review-index.json'),cumulative=read(base+'batch35-remaining-pages/cumulative-review-index.json');
+assert.equal(audit.previousIndexSha256,sha(base+'batch33-full-review/review-index.json'));
+const key=r=>r.specialty+':'+r.physicalPage,expected=old.pages.filter(r=>!r.visualDetailReviewed).map(key).sort();assert.deepEqual(audit.reviewedPages.map(key).sort(),expected);assert.equal(new Set(expected).size,33);assert.equal(audit.reviewedPages.filter(r=>r.kind==='instruction').length,3);assert.equal(audit.reviewedPages.filter(r=>r.kind!=='instruction').length,30);assert(audit.reviewedPages.every(r=>r.visualDetailReviewed&&r.renderSha256.length===64&&!r.technicalFigureGap));
+assert.equal(cumulative.pages.length,574);assert.equal(cumulative.pages.filter(r=>r.visualDetailReviewed).length,574);assert.equal(cumulative.sourceVisualDetailPagesReviewed,574);assert(cumulative.pages.every(r=>!r.wholePageKnowledgeClosed));for(const f of ['humanReviewed','nativeReviewed','domainReviewed','wholeCurriculumComplete','releaseReady'])assert.equal(cumulative[f],false);
+console.log(JSON.stringify({status:'PASS',newDetailedPages:33,cumulativeDetailedPages:574,noninstructionalPages:30,instructionPages:3,paragraphLocaleSupplements:39,sourceGuardCases:cases,sourceBanksUnmodified:true,humanReviewed:false,releaseReady:false}));

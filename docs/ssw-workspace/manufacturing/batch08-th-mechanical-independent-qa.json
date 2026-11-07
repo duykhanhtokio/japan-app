@@ -1,0 +1,1459 @@
+{
+  "schemaVersion": 1,
+  "batch": "08",
+  "specialty": "mechanical",
+  "locale": "th",
+  "reviewKind": "independent_AI_direct_JA_semantic_comparison",
+  "reviewerAgent": "mechanical_gaps",
+  "authorAgent": "thai_mechanical",
+  "payloadPath": "docs/ssw-workspace/manufacturing/batch08-th-mechanical.json",
+  "payloadSha256": "d1c35152a4ff71bf98e4767a23bcb404b4d5ec17e57f4a0ddcadc8424d142bf8",
+  "canonicalPath": "src/data/manufacturing/mechanical.json",
+  "canonicalFileSha256": "4d81efbff52dcd50ca26ecef3caa4064cd5e203b8963c73b6eddbee9aee1b305",
+  "counts": {
+    "lessons": 7,
+    "questions": 12,
+    "translatedFieldsIndividuallyCompared": 199,
+    "lessonFields": 91,
+    "questionFields": 108
+  },
+  "reviewScope": [
+    "Every title, objective, paragraph heading/text, term meaning, activity, safety item and summary in lesson001–007.",
+    "Every stem, four ordered options and four ordered rationales in first12 mechanical questions.",
+    "Direct canonical JA comparison, not via English/Vietnamese.",
+    "Numeric inventory example B-2/M8/12–24/9/2/3 and activity durations3/9/8/7/3 preserved.",
+    "Safety negations, residual energy/restart caveat, no gloves on drill press, no guard removal, no hazardous KYT reproduction, and no unauthorized alteration retained.",
+    "Correct option position semantics and distractor/reason ordering preserved; translation does not carry its own modified answer indices."
+  ],
+  "resolvedIssues": [
+    {
+      "id": "th-mechanical-01",
+      "severity": "precision",
+      "issue": "ボール盤 was narrowed to bench-top drill in Thai instead of drill press generally.",
+      "affected": [
+        "lessons.mfg1-mechanical-lesson-006.paragraphs[0].text",
+        "lessons.mfg1-mechanical-lesson-006.paragraphs[1].text",
+        "questions.mfg1-mechanical-formative-005.stem"
+      ],
+      "resolution": "Author replaced เครื่องเจาะแบบตั้งโต๊ะ with เครื่องเจาะแท่น across payload. No-gloves rule preserved.",
+      "status": "corrected_and_rechecked"
+    },
+    {
+      "id": "th-mechanical-02",
+      "severity": "precision",
+      "issue": "表示 was narrowed to an electronic screen in Thai, although canonical JA does not require a screen.",
+      "affected": [
+        "lessons.mfg1-mechanical-lesson-004.paragraphs[1].text",
+        "questions.mfg1-mechanical-formative-007.options[2]"
+      ],
+      "resolution": "Author uses จุดแสดงค่า wording; reviewer rechecked against canonical source.",
+      "status": "corrected_and_rechecked"
+    }
+  ],
+  "openIssues": [],
+  "result": "pass_after_two_author_corrections",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseCertified": false,
+  "statusRetained": "ai_translated_draft",
+  "fieldLedger": [
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "field": "title",
+      "jaTextSha256": "004327c90c8c0131f4371195441886ef02b70ab2d0857f92d72f596199031f5f",
+      "thTextSha256": "03c968331c9e56556fb1f3149a20b0daf52e5788ee1d60872f3b1f6cf122c292",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "field": "objective",
+      "jaTextSha256": "201afdd5346a8622e549da58b794fa9fdff8db1a01187f6399c19dc3f67d8411",
+      "thTextSha256": "5a54e735ea195f93720e1deaff91058b3e86b4b74883edd24807f5c669221936",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "field": "activity",
+      "jaTextSha256": "b5939a6bbf7a1f5eaee0d8d9e22328689514e34b3b3231140da529df41b57e46",
+      "thTextSha256": "ba9f75db36683aa3bd0ae94976bacb0a767ad32bcad609bd13f2a142bc32ace9",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "field": "summary",
+      "jaTextSha256": "1f2ec8294e720dbae515dee578331f7c9db870cc958ba3e54d70964421057832",
+      "thTextSha256": "ce9f34426864d426043de8dea46838d0420c0424f88eaf7acefa419f38aabc80",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "field": "paragraphs[0].title",
+      "jaTextSha256": "c237436e631584fd8f18ea84c3edbbc118470b2068e2c87b56bfca3018af4938",
+      "thTextSha256": "2df2bdca3b5e430d4840c6cd82fa4fde9ce1f4705b6dd3bf3de5789be11efe82",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "field": "paragraphs[0].text",
+      "jaTextSha256": "adc03e37ca7f085824f68d099d685559b6ff8c6be068105ca3a184d914ff1ca8",
+      "thTextSha256": "4a5d70020877e99edb724bb6fb74f79a5f84987cbb8a9083bce2e67d8086c2d0",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "field": "paragraphs[1].title",
+      "jaTextSha256": "a9d14c3c1b18ee1378108d11caec97af7560a17ec0cd34ca68ba5b449a34de7f",
+      "thTextSha256": "27320dc7fdb4fa9439d9806534cdc2c53a5aa6bfbf3be6b604234465234cfa83",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "field": "paragraphs[1].text",
+      "jaTextSha256": "67efab18d0cdb3a28c56ddfd1d0edb125f857bcf32a5da389c1d4cd8f8e601c0",
+      "thTextSha256": "a0e342f7f442da9c6d45af1943de8216c30631a2ec157095a835aca96ef93379",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "field": "terms[0].meaning",
+      "jaTextSha256": "7788385f16fb112e661f13f0d1e2b20d68afa1176e4e06c32f50e99ceaf19e72",
+      "thTextSha256": "67657b797999d841fa0c8129e1eabc0f6341f6f6c85510543ef5906bb5f92936",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "field": "terms[1].meaning",
+      "jaTextSha256": "17114c0d385f4fe390e486e6a7251859b1af83d4c8c82fc24cc72c4b12e14d01",
+      "thTextSha256": "c912251159aa6b03411f3419fc818db66f8f33c39f6d34f14410818709cc20d9",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "field": "terms[2].meaning",
+      "jaTextSha256": "699c98830db570b23c4c28b17126bcd4a61fea3966a7f09c7bb0f44c2771eb93",
+      "thTextSha256": "f63142a4a3ba306ee6d187a0c1a9d3be551c5d76250ffa298517db802c55155d",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "field": "terms[3].meaning",
+      "jaTextSha256": "88143cf32ef5f0d401affc7ee3fba64e1564afccff2d0696695d41ce552b11a3",
+      "thTextSha256": "1e85988762834dc9ffed9f172c077f0b845d11e3572c255cf2988d80a354ce1f",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "field": "safety[0]",
+      "jaTextSha256": "5d5d52ef1ba039fec130c8dba7408797be53b94a7a81c3e9fd2e103e49cd296f",
+      "thTextSha256": "13202cebca03b963996c977a948fa581dea5a69731ad5e34de202685b7002c11",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "field": "title",
+      "jaTextSha256": "39d25078c216f7eb4da737cb308c8cdc545edf594e90747e94192b0d1b5d9a02",
+      "thTextSha256": "8c925877a50510c373a5df28b27f2982a5ca6a3fc28b456cda845838606c594f",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "field": "objective",
+      "jaTextSha256": "ae92061e0d4e7030025d7e06714bbd3f937a4c8d8c7afbc91345b2e268019ca3",
+      "thTextSha256": "09a5af50a004551ad64c763e3e889338d0988f60a15ad39a95017772425fab50",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "field": "activity",
+      "jaTextSha256": "a01e2fc4ef623d951c457802860d46f350e127dacfcfba878c19b995d021a522",
+      "thTextSha256": "ceddece352c2332bf9ca48d5853896a72692269085b021c257fd3194cdc54dc8",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "field": "summary",
+      "jaTextSha256": "cca75440da7975736185785392cf91206025a754741b66a5af61072237e7281e",
+      "thTextSha256": "8739d58b6f1ed34440760cd8f8e6a3d2c4525e8692cc54eccc92efb718dfd6c7",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "field": "paragraphs[0].title",
+      "jaTextSha256": "c237436e631584fd8f18ea84c3edbbc118470b2068e2c87b56bfca3018af4938",
+      "thTextSha256": "2df2bdca3b5e430d4840c6cd82fa4fde9ce1f4705b6dd3bf3de5789be11efe82",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "field": "paragraphs[0].text",
+      "jaTextSha256": "ff4f4ecc3c46b9e5349b1e295f3c9cfc560dbc43ec3715404a56c4852e83531d",
+      "thTextSha256": "8317ae97dc3b9a16e05c09696c3de2d81c88c8356f9b0d6dd2002cf78503d72c",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "field": "paragraphs[1].title",
+      "jaTextSha256": "a9d14c3c1b18ee1378108d11caec97af7560a17ec0cd34ca68ba5b449a34de7f",
+      "thTextSha256": "27320dc7fdb4fa9439d9806534cdc2c53a5aa6bfbf3be6b604234465234cfa83",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "field": "paragraphs[1].text",
+      "jaTextSha256": "25910e34c57467a65d12223bd3ff3cd38e25e948d8fd7d65df2fde8957f36875",
+      "thTextSha256": "2b46c8322f927fbbe04fd67ad38cd1f8dcd613d4b3c39ce9c2abb93c689fe5b2",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "field": "terms[0].meaning",
+      "jaTextSha256": "38b05dbabdfde5e42d6db12ab928c4112c66b1bbd254aa198a561cf2a70265f7",
+      "thTextSha256": "a2a713f39c1cd9996b2c6d4ca80cfe996a5fdba7b6c917a4f00352e4b28c6132",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "field": "terms[1].meaning",
+      "jaTextSha256": "326a14615a170c9108f9c9ae76d722d202b93e585d5d022be44af61a4ce81475",
+      "thTextSha256": "db93adebe11718f75e84fde36cee5a09a958fd55cc42562c9fe7f98e49570680",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "field": "terms[2].meaning",
+      "jaTextSha256": "bf8fdfcc1695fb726ba9ed7191e3f26e00f9a0025f4afc6d300e720eb0847ca3",
+      "thTextSha256": "8033ee5a31782e57ef7f9e9aae09fa2f524ead52dd10c79f81881eae63e41f7c",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "field": "terms[3].meaning",
+      "jaTextSha256": "36f06a919a9300d6adb780e173f264796a8633b7498ccd1b2c68f084f5b854e8",
+      "thTextSha256": "7c07ae01b9fa1d5d8d0aafc80460f8488900db045a420276e3a75bdcb2afeee7",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "field": "safety[0]",
+      "jaTextSha256": "57a216c9b672a9faa881b38ab9661138bdbed7ec00f9c623988dea1b0526b2d0",
+      "thTextSha256": "584b7b3a76351dc8aaa4c6849d10b46e79406d1819eb53bc502fe2fa121b48ad",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "title",
+      "jaTextSha256": "46bc44ccbf9e4754f7de4817640579a6c3374c303f8331b166a8ac28acd98783",
+      "thTextSha256": "7a26d22814f8cdfeb5e8c3efd1b62e740d41936f4e8dab16678e8da75dc356b6",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "objective",
+      "jaTextSha256": "74db1109257b7a48319093c07db92493fd7431c7a78dff0b8b5815a3c3793401",
+      "thTextSha256": "8ccd316fa25b1f8857ca09d70a0258b5aaf2c8be36938f4fb825d63310bc5c28",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "activity",
+      "jaTextSha256": "a5af7d700a70b599cf89da1c3826c8cc192b3ee4d14b7e8ba212d103e0c7b34e",
+      "thTextSha256": "c1d0ada282cdd268e229491187b93f8de4443134778ad2f4616ee474d5af140e",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "summary",
+      "jaTextSha256": "72532f708d87deb70a27bed01e77f23c6872ecd55319c3a7c967b022a9646f83",
+      "thTextSha256": "9fd8ff6e15c6aa74aee1c8bffd700b09692e8cd63deb1517610941d004d19e63",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "paragraphs[0].title",
+      "jaTextSha256": "c237436e631584fd8f18ea84c3edbbc118470b2068e2c87b56bfca3018af4938",
+      "thTextSha256": "2df2bdca3b5e430d4840c6cd82fa4fde9ce1f4705b6dd3bf3de5789be11efe82",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "paragraphs[0].text",
+      "jaTextSha256": "ea5f8d0874ea99d33dcbab8e5927c75b7ca4640549ee23d9667ac92a0aab6bc0",
+      "thTextSha256": "1bcc5ac22190d751841ca470e030a95de3b9a55cd927dad57a226561f4f383b9",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "paragraphs[1].title",
+      "jaTextSha256": "a9d14c3c1b18ee1378108d11caec97af7560a17ec0cd34ca68ba5b449a34de7f",
+      "thTextSha256": "27320dc7fdb4fa9439d9806534cdc2c53a5aa6bfbf3be6b604234465234cfa83",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "paragraphs[1].text",
+      "jaTextSha256": "c321f2e842ca50ac562f0acf658e1a468182a9334bd33c38d86e62dc12707f01",
+      "thTextSha256": "284bf6f7484af8e6e1d62cc4028fe21205df83cfb5d6c9ae4e7fa93cb2431875",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "terms[0].meaning",
+      "jaTextSha256": "5bb2e9c6174a3611bfb332c1463ce3e7678ee598f80ee411a572232b18f62a97",
+      "thTextSha256": "a4be48d3d6bc0ccdf88cddb1993e0b527384a9e135d71d96410cae2ce4e14889",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "terms[1].meaning",
+      "jaTextSha256": "50eacecaa3c02732c43fd8a19c9e28521e831c1413f6e5831e21d4523d38e795",
+      "thTextSha256": "06efda7cfb01c5cbe5be44611a0695800444475b4695f8969991be8a2e6fca22",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "terms[2].meaning",
+      "jaTextSha256": "079dce902580902e2a85221ca969d98162a0e5b4a83ffd66ff4e570148986c98",
+      "thTextSha256": "1e977fda5731119c3b06ccd9d725968a6b7ec4865ccd3cb27bc42253dfa56d4e",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "terms[3].meaning",
+      "jaTextSha256": "78d87cf5593f9428e19b05e13ff2efb85c8cd58f4262be27d5db20d0d4c734ff",
+      "thTextSha256": "48e2380647321cadd3739fe2528b83fa1f619789a3294bb5279d7178c0555d9b",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "field": "safety[0]",
+      "jaTextSha256": "dc668cb4f8438df08fc4d244e0722d5a0331cf541e3d5063767b5be0aa0f4c37",
+      "thTextSha256": "49923660eeecf1525bdb98071a26714e7bb35b5e57fddbf8270edd23f6186b2c",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "field": "title",
+      "jaTextSha256": "cdd80ed77165791cc7c05634c6a5392a96b7103c0741fee0b9dc17c7479a3640",
+      "thTextSha256": "77597013265f61004910f0969e5878f42b93d3eecadb048b19f79eb7d9aeab1c",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "field": "objective",
+      "jaTextSha256": "205d8de380693751ba3d76ebda641068b905394e0a37ba8ede554efbf46801cc",
+      "thTextSha256": "23a6b1c82cc3323db1f134fd713bebc196648dbc9a8d0a8ef1cd3bf02dd25604",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "field": "activity",
+      "jaTextSha256": "8c8129ca1e17c96fd7862d8db22d50cae27375a913098011e035ecfdf9fbf57d",
+      "thTextSha256": "d4e923b781bbcf99b6d92e53da5a8d2fdc70484477ce9457ffb48d3d94969ed2",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "field": "summary",
+      "jaTextSha256": "36ca3120009c63f6bea34f564f04ccccb33c015c4da92a3208b6069ac232221a",
+      "thTextSha256": "e075799b78af42138e283498ebccdf9578a65a92b520496d1ef610f1bffda109",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "field": "paragraphs[0].title",
+      "jaTextSha256": "c237436e631584fd8f18ea84c3edbbc118470b2068e2c87b56bfca3018af4938",
+      "thTextSha256": "2df2bdca3b5e430d4840c6cd82fa4fde9ce1f4705b6dd3bf3de5789be11efe82",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "field": "paragraphs[0].text",
+      "jaTextSha256": "d2212c067fb851a0edfc47f7dfec474a25a93c778d4237ecd25dc365801989ec",
+      "thTextSha256": "3eb3add29591d5b683f28ec3603b4468b60f1b9929c3d92cab5ffee24e9b67c4",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "field": "paragraphs[1].title",
+      "jaTextSha256": "a9d14c3c1b18ee1378108d11caec97af7560a17ec0cd34ca68ba5b449a34de7f",
+      "thTextSha256": "27320dc7fdb4fa9439d9806534cdc2c53a5aa6bfbf3be6b604234465234cfa83",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "field": "paragraphs[1].text",
+      "jaTextSha256": "d37d7c51550532f3d09d1274d528cd35b66065bced70056755a56743d1c0989b",
+      "thTextSha256": "8bec7c37930a1da300e86d5f204a96671bf5abbc8407814b5d8bc11465fd3e16",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "field": "terms[0].meaning",
+      "jaTextSha256": "f370f5112ecb805fbeca3e89c85eca6f5f9a397815a257bbc0ad3a9be9dcb9a7",
+      "thTextSha256": "89d9be85c96715766face15de6578f6b497c46ab0fc3529a1c92f99767e7d1cd",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "field": "terms[1].meaning",
+      "jaTextSha256": "7ff2bfd6c50368429600b5d4d57bad81d9fb3920ec63f397d89b368f7da05421",
+      "thTextSha256": "e40a650c2251e9add22cbc4bda9114e6169e58881f7d44a6b90f0730221fad0d",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "field": "terms[2].meaning",
+      "jaTextSha256": "67849d3326ce2346f74ca599fba2cf73fc43472e94e103d10c0f9c181a0a9314",
+      "thTextSha256": "5a9e63df014b2b1c538d702c2123b7cb736d2d1ac9b15ef00fea72640ec6274c",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "field": "terms[3].meaning",
+      "jaTextSha256": "540005385d7ff64276c8a39f1066816ad07c9d107a60d42e62955e8dc5163e41",
+      "thTextSha256": "d6e0cbbf8d940ae8047b52873b0a254b5874fdb1ba46da0852606615b7a0dd82",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "field": "safety[0]",
+      "jaTextSha256": "a4484905253501939d29e423fe79d95c5e7b0842b1bd88e7f95f08245d96ca79",
+      "thTextSha256": "6e4af6292f373f8e0f1f9102680a5c0984df1001b971e729445da5963acd102a",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "field": "title",
+      "jaTextSha256": "61861a91edd04edcb3741e8bb21e73bbb48de155dad85da8a4020ed25777bab3",
+      "thTextSha256": "c105fa5e407f1e804dd699336d100f5a552fa5d49199b598071a1ffac5a852c1",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "field": "objective",
+      "jaTextSha256": "c95ce10198932e661ea2b60e1d4976909c5b53954087d165b8357de05d9ed0a8",
+      "thTextSha256": "ba8ea929a75e71cbea353e3830f5d6d1841c14abe4c9ef58c27fcd9dbaf7160b",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "field": "activity",
+      "jaTextSha256": "1896882917f167e65d6f9c264653d336ea4c9e87897972db512cbac6289f483f",
+      "thTextSha256": "c876099f1c0b4bf106fdbb9915086e272ebf605c5790e4903a1ee0e3cce3f0b8",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "field": "summary",
+      "jaTextSha256": "b90ee2711f918f2f3a7921dfd23008f243d53a289e82e1699986ad83c0ef49a1",
+      "thTextSha256": "2f7a284f6764607de99ede41c019a8febcdb05234aa28f0e816e68356c016e9d",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "field": "paragraphs[0].title",
+      "jaTextSha256": "c237436e631584fd8f18ea84c3edbbc118470b2068e2c87b56bfca3018af4938",
+      "thTextSha256": "2df2bdca3b5e430d4840c6cd82fa4fde9ce1f4705b6dd3bf3de5789be11efe82",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "field": "paragraphs[0].text",
+      "jaTextSha256": "174d433f2af3eeb1e04043ed56b0c2cb3273004d9b7ab6aec7fa2555050b806a",
+      "thTextSha256": "a1f561803ecb32be585872268593c2b99ebf494a4c863196e818254679388a4a",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "field": "paragraphs[1].title",
+      "jaTextSha256": "a9d14c3c1b18ee1378108d11caec97af7560a17ec0cd34ca68ba5b449a34de7f",
+      "thTextSha256": "27320dc7fdb4fa9439d9806534cdc2c53a5aa6bfbf3be6b604234465234cfa83",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "field": "paragraphs[1].text",
+      "jaTextSha256": "6654943659d8093630adaf8ded4ab94f288f9f15d13f1c8d7ed0a29e70ec4ecc",
+      "thTextSha256": "6ca39dfd910d3dbb484708abacc490d0228dc70f310a034233582a9cfcad523b",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "field": "terms[0].meaning",
+      "jaTextSha256": "67ce64406d898776095289b0a66e8cfd0118117aaa7f585beac0e3c4330730d1",
+      "thTextSha256": "ecaef5b8c6510d5a86c8b1d51eade2e7484ca7a8dd9d3c5dc7d2c8e11e1296e4",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "field": "terms[1].meaning",
+      "jaTextSha256": "4c462a3be48ecfb9809b84b86e6bbb4c77dd370192a12f973aa041a4de85c355",
+      "thTextSha256": "7e4936ede06d9503a2bdf62d907bf252f1126042160b75292be42016e916a30e",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "field": "terms[2].meaning",
+      "jaTextSha256": "490337d4b40220dc8e44f527a260d41f89f0497a2d5dd876500e903e0c54d45e",
+      "thTextSha256": "3650dec4adbabe8e6b05e0e34ab063115b66a3ce0d583fdf2dae4510db90596c",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "field": "terms[3].meaning",
+      "jaTextSha256": "bccdfa7fad19c51494906799c60fca467fda39dfeb796643c3399f4043163ca6",
+      "thTextSha256": "8bdbe6add88a901eea2c8cf18834417b366dbb80c77cbf325fb5363523003190",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "field": "safety[0]",
+      "jaTextSha256": "77860255382c4932aa0ba0d56ce65e95b31cf461980d0ab62b5a5ecf1291a9ae",
+      "thTextSha256": "249d4bb270958c74a37fa466183f8435c0ef69846df4c6b2ed40cd7bffce8665",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "field": "title",
+      "jaTextSha256": "1e29f80dcd88a72cbaa9181c0c58810cd7e2532863a7afdb85d6a898152eeb14",
+      "thTextSha256": "0a191b9ebc45c7d3b759c4a52e161406db160547582560e5b4531d437b65e583",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "field": "objective",
+      "jaTextSha256": "c748a29ecc1cac4b1e79af50b2345a6cff955757b4a7995e65917ce03a2eba41",
+      "thTextSha256": "e67fbdd39a47af4c81aa319a14fb815b038472049afe14f7a3159271d6787bb1",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "field": "activity",
+      "jaTextSha256": "bd1ba76b9f2b4aa09197651dc168065d9f469ebc1410be35de7aef8426d67e4e",
+      "thTextSha256": "aa5cb89c140ba8de87e1990a35da879553dba251418c4654bf855ae912fc08e7",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "field": "summary",
+      "jaTextSha256": "bebd815af57a5ddf3e3f2928686e8294a0ccccd29cc4a97b1d4622f5c18234ff",
+      "thTextSha256": "5722cc35cf8a56016e81bf04c93f20bda0821723b2ef844dcdc48973437e5749",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "field": "paragraphs[0].title",
+      "jaTextSha256": "c237436e631584fd8f18ea84c3edbbc118470b2068e2c87b56bfca3018af4938",
+      "thTextSha256": "2df2bdca3b5e430d4840c6cd82fa4fde9ce1f4705b6dd3bf3de5789be11efe82",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "field": "paragraphs[0].text",
+      "jaTextSha256": "8a444c2d32e0b68a5c71877dd7c524fd627ff962c42fdaef4d343ed7d8c0da1e",
+      "thTextSha256": "d804b7e901cda7d6b78799263aaae7b5f56c7bddddc8a0b681e4d8cbe4ac5355",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "field": "paragraphs[1].title",
+      "jaTextSha256": "a9d14c3c1b18ee1378108d11caec97af7560a17ec0cd34ca68ba5b449a34de7f",
+      "thTextSha256": "27320dc7fdb4fa9439d9806534cdc2c53a5aa6bfbf3be6b604234465234cfa83",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "field": "paragraphs[1].text",
+      "jaTextSha256": "f0b1f58f15db3d0488dab376d6461e106256524b99552b68d4599f25f5538382",
+      "thTextSha256": "f4602a4a5ceafe9406a65172af27d9c77f0a118e20083c3c2d9861782f77ad5e",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "field": "terms[0].meaning",
+      "jaTextSha256": "541a0afb8159465f8c21101f48c1df035c2d1263edd2f507a3845b8bd08f9863",
+      "thTextSha256": "a5ed27de133840305e16e9958f6ea3015accd4aec8530eb61787a68ab4f3c4db",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "field": "terms[1].meaning",
+      "jaTextSha256": "5b2cbff7906c47ac2d45000c29a9c7ec96a27c7d67cb63e6d1bdafa91d5a0b1d",
+      "thTextSha256": "48ca4c21d418e95390f49372a12b2e2988257f115473e12bb16c9cb7d85fdd79",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "field": "terms[2].meaning",
+      "jaTextSha256": "73db69928ba03e4f108cd8f3f7a90c46b5dbce7ddd08852ee5a1a5eaf673adef",
+      "thTextSha256": "46dd8b2714e8f71110c688b64654830e50152025295c042d2aa2a6c0384853a7",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "field": "terms[3].meaning",
+      "jaTextSha256": "acf78906692d221f631c148fe4fa2c9241e22e14d99f102d00a3e453aaf33928",
+      "thTextSha256": "8631f664b1839d8b2dfc8edf3e828adb38e2accbbcb5ce71002631230aa9c846",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "field": "safety[0]",
+      "jaTextSha256": "156b76c0ac4a0635b9e54a67e90c66ffadf159eb581fb46063e7b6112d46103f",
+      "thTextSha256": "bad8631f2e4dc2d2d9da1afc7fa405bbd16c31b71b23fe1578b57328abb0ae1f",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "field": "title",
+      "jaTextSha256": "67f419c8ee20dd7af7df4f6b9d2e8f0d36551e4e5ea3f9a260b6438b3db783fc",
+      "thTextSha256": "2fe724af8a6bebc345ea52715a22817e4d04638c1c2e10d4aaccb256198291d0",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "field": "objective",
+      "jaTextSha256": "b21f0ff53de22b71ee21617114c58665bcea97403b51fd9c096a4e6f1a06f1f6",
+      "thTextSha256": "826017150f8a13203da44aef5e74109761947b97d909c41643e1174df40bad6d",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "field": "activity",
+      "jaTextSha256": "7bf7c2ce71c5bb9993afa7628aef5f0c78e4df100d1c2d40eb43bbffa468e04a",
+      "thTextSha256": "5f3a43e30aca7a9d13b7f87652338310c9ffda9cda8a6edfadc0dce127ebe8e7",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "field": "summary",
+      "jaTextSha256": "ae9310b17b1181ec19a9170048ae5dd13179633ef13acd084a4daaa0506087f9",
+      "thTextSha256": "e00d9bf65e31170e34e0a78457e146a0f0b85c4aa6f214da3107902cb5afeca6",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "field": "paragraphs[0].title",
+      "jaTextSha256": "c237436e631584fd8f18ea84c3edbbc118470b2068e2c87b56bfca3018af4938",
+      "thTextSha256": "2df2bdca3b5e430d4840c6cd82fa4fde9ce1f4705b6dd3bf3de5789be11efe82",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "field": "paragraphs[0].text",
+      "jaTextSha256": "0b75a7777274ed3fca63b017c99ce0f81c3e13932adf8b7f397cd7c336d37cd7",
+      "thTextSha256": "75cf0c1b796e0e40b118ba886b6f35835894729a04c532841627cd59d3646847",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "field": "paragraphs[1].title",
+      "jaTextSha256": "a9d14c3c1b18ee1378108d11caec97af7560a17ec0cd34ca68ba5b449a34de7f",
+      "thTextSha256": "27320dc7fdb4fa9439d9806534cdc2c53a5aa6bfbf3be6b604234465234cfa83",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "field": "paragraphs[1].text",
+      "jaTextSha256": "56a4da6750e7d096e186b10e47b36e0cde7c14a327725e2377e614df477fae87",
+      "thTextSha256": "380641090373b0574fc61c84721f19c93d6ac51263962d79d4a20f69e2c8ca65",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "field": "terms[0].meaning",
+      "jaTextSha256": "f897b204992ecf8e7a419249a78f4f6aa8d33094d426937ee4844c5cdfd5e11a",
+      "thTextSha256": "5c3d4509c63dd39d8b5c0d1d8c6c1dec0b2360835b2331e7dfd46f68e7434a45",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "field": "terms[1].meaning",
+      "jaTextSha256": "8323b3543beb32134745800bbdc54fb55d7c7a74293e669b223b660aee42522f",
+      "thTextSha256": "c3a1ed5ae756cfecab0c4c46c5f9a3d8cb0dc6b7441b09db0034bf148de6d5a6",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "field": "terms[2].meaning",
+      "jaTextSha256": "03cf9d33f290b60257b4d8e854d7d445ef4d2d411dec002b809a1e905f7ba3c8",
+      "thTextSha256": "11dde27fe06b833d483b6ac55422707723340f0006f3a5faba9a7377922875a5",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "field": "terms[3].meaning",
+      "jaTextSha256": "304d22aad97baf7ebbba60d1afb28b2a4774761a59082a4b9fe80db1c262e8b9",
+      "thTextSha256": "b22cfcb1a1fd22de5e0a266af1676d282b30cc85edba983d50f522f8f2340dde",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "field": "safety[0]",
+      "jaTextSha256": "cf7ed8451a6e72f946e816c682f2b4173f387553397519a79809af0d95f46a17",
+      "thTextSha256": "10c39547d9361c9ed0ab6e46f7c355c637d6f49a3aff7b97181aba276196d94b",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-001",
+      "field": "stem",
+      "jaTextSha256": "bccd748bdce27b68eee32f68f8832899536b495734e729a7e0111fb6db7dd5c6",
+      "thTextSha256": "25331b17b016953e72ef190b816e34a8bd59b634f49e937d7268ea82c794cc01",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-001",
+      "field": "options[0]",
+      "jaTextSha256": "0ce00338fbc9de9ea9f33204ebba24f2f9f9e241a4d7e00a2fc55145c312b12f",
+      "thTextSha256": "ab7f3c938a2692b2cba9e90c37125191b0bf83d9bdf027464cd0dfa971693ec1",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-001",
+      "field": "options[1]",
+      "jaTextSha256": "65ef3ba269d74238aedb6d7363c21151362d100645123b7009ff45e4ea7e9e40",
+      "thTextSha256": "0dd06e1b984373706da252047bd7f0e9a8906cf233436710d5efc007b21a821c",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-001",
+      "field": "options[2]",
+      "jaTextSha256": "75c05db65a6339f5f2b830a0544b03d16fb2a64844f17dc5e957cfdc4aa50103",
+      "thTextSha256": "087294a62c331d5a6bd9bbba1837bc96dbbe17970ca62067c477304b6aeab6ac",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-001",
+      "field": "options[3]",
+      "jaTextSha256": "6e63ad1d81b9f9a1383f0c71fac30a419fb9c2e267b67a8e4345313234ff6762",
+      "thTextSha256": "cf00abb92552513fef85652e91c4d6c411a1634bbf8774561814ef213b486b60",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-001",
+      "field": "reasons[0]",
+      "jaTextSha256": "3de024d60f5ebd24c3067a1e01a6d3c8468f646668c3554f80f8d5841e9e0eb7",
+      "thTextSha256": "958963cf83d04e445aed2fbf80fffb23bab911a8991253f222749407537dda79",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-001",
+      "field": "reasons[1]",
+      "jaTextSha256": "8254aa8fc64563050a5ab9b472cae341f21259e3d8485f33b969917b68f60c15",
+      "thTextSha256": "df4bd0f889360b5cce60437b4c4c155522ff3e0bc740254d2d1992bc0c925661",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-001",
+      "field": "reasons[2]",
+      "jaTextSha256": "655b49eb110710e4abf85f30fd66a91120ac5cb263633bac9feba603099268d0",
+      "thTextSha256": "a92ccae505958137da1da6e6318c12378233059697764c2f8ed2207aa707dc6c",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-001",
+      "field": "reasons[3]",
+      "jaTextSha256": "282a383c25fbb7d3b7510d73abedf09ee65deca4857762ded196463622c86e4c",
+      "thTextSha256": "b5a49938652db187dcbc81bd180a05b7518e9e710afae4297d3be1753fcac116",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-002",
+      "field": "stem",
+      "jaTextSha256": "cdcc41c1a6f8c06c8a56fc1a6a8beac06180c7f0da4bcb61696bbefc7667a84a",
+      "thTextSha256": "b25af1340c6e497e28c8097120c4943e36f5d02b61419998560c288c662b65f1",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-002",
+      "field": "options[0]",
+      "jaTextSha256": "0aae3fe2acb9f1c15eeaecdc079c4a79f37ba184c823b1d41ba6bc7be0f3202f",
+      "thTextSha256": "d27124af66c2a8d77dd24f045e59ac9ecdb5a4272f2fd163ce92fea2a4627fa6",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-002",
+      "field": "options[1]",
+      "jaTextSha256": "d378e55f18ca9f90bad4978f1143ecb612f5bfc1c74608827bfae5eb5101aafa",
+      "thTextSha256": "3632e8ef3b2dbb0c32c565f522c00d580f4c3fa40e68a2d343703f2b67fc5311",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-002",
+      "field": "options[2]",
+      "jaTextSha256": "f8e03049e9596478807b45570b9059e4aef85376d6da60b359fa5cde7a8b37b0",
+      "thTextSha256": "37dd081256a15e3fe89aa89df9e4481a883a2f1836b008465e53d2dd51287d91",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-002",
+      "field": "options[3]",
+      "jaTextSha256": "816e988cb53fb4c6cbe2cc9c682790ad53593a2d297eb1f7cc072682f59a2d65",
+      "thTextSha256": "69f4040d34244f53a15f882d60775a3d370d9e4a10c48a69a4d2170d209a70e5",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-002",
+      "field": "reasons[0]",
+      "jaTextSha256": "2df33e1c74d0e2a949b29347038e2203defebd974c8d9546994eb7542e6f6d93",
+      "thTextSha256": "17ec3ec5b723e90ef65deb83c6bcc241c74176e35c612bcab4a73b606d3aa2b6",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-002",
+      "field": "reasons[1]",
+      "jaTextSha256": "16bccfad25e1365ffb9584fe5eb6a3a2fa3d54f616f1aa8bb471aebdda843d38",
+      "thTextSha256": "4e227181f931628da704df4355651367113d27db8b397b6cc258750dc9054063",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-002",
+      "field": "reasons[2]",
+      "jaTextSha256": "214bbe5fb2de5ebc485c5d6c15b794ddb522a26e42534aad2f8c31e4f8f5c66e",
+      "thTextSha256": "c38c41da2aada40e4b1974b5947dae9806a8475153e4c632ab5c0f81aaa2ac46",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-002",
+      "field": "reasons[3]",
+      "jaTextSha256": "7a4a9a4f5fb5a9c6af4e31dfc98b71f523edba23063ac4e9220973d492425b94",
+      "thTextSha256": "73ab38157f219f87f41391219fdca35924745f23b737da4fdedd06bf27459e24",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-003",
+      "field": "stem",
+      "jaTextSha256": "f841759edf69825aa8ffbdcf098790a8a7527ab126c3064a4b6604867668c92a",
+      "thTextSha256": "a73dd172be7138262e2a58900c871225f66dcab78a7af51090c988361e371123",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-003",
+      "field": "options[0]",
+      "jaTextSha256": "d41bf9d01121b820176eaee2f41cc423c4f6f7136e41a3ee6452cf59b2c2e031",
+      "thTextSha256": "c7a93ee5979e205cdf9c3b807697b85224d5147aaba4c8d14d737197eb836d0e",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-003",
+      "field": "options[1]",
+      "jaTextSha256": "4492242bf1bbba1c51f690fd7bc6bb353c7b441d8ee8706af769cd99f1702203",
+      "thTextSha256": "e391219fd4c5eb10227ec9d16956f60a13f5d1cdeb1113cde59ebfc087581d4b",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-003",
+      "field": "options[2]",
+      "jaTextSha256": "a1d9392028e5cab84f9596c57ca9a90c351ba3c4ac527916746a138b63e3f86a",
+      "thTextSha256": "24df679ce8da43b834ddc2ae4b28563de7989bc3b7b6b7c5ac4d74539c3ae4a4",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-003",
+      "field": "options[3]",
+      "jaTextSha256": "8dc28bfb406e86171059680c7f6bbdd49f4d4415fa6d35707433080984d6156c",
+      "thTextSha256": "6d66ce45cd12d6268e67b093dd5ccb8d0f59567e69860453ab4ce7ec1140a16a",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-003",
+      "field": "reasons[0]",
+      "jaTextSha256": "26324e6af9a241a884db47ca233f9b9e987ad944325cff3835221b894ba5edff",
+      "thTextSha256": "6cd9c37676da9360e52758ed966ad913204a663472a6d3f2e1330540c80ffce0",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-003",
+      "field": "reasons[1]",
+      "jaTextSha256": "74b2e9177d6652d1f6bc650ae2510a3649af315b2c5bf4984df92a2cf7d8b671",
+      "thTextSha256": "8dcdf86ad6ed3d70f4ed38abb4601708c5e4fc5f00e0bbf53652cd97356a311f",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-003",
+      "field": "reasons[2]",
+      "jaTextSha256": "96a7ff20b881928a29a894edc0c2a0130f1ac649ef57098916bb9cf8458c6ac7",
+      "thTextSha256": "dd01f8f498dc854fa9efeb996cc41126a540a5d5375a8e1fa3007b73ac8608fc",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-003",
+      "field": "reasons[3]",
+      "jaTextSha256": "646232edd6075a08f8c21d0771a069edc6f37939ae51b73800f7ca4d6b1bf600",
+      "thTextSha256": "02b90068b0565b6bb28bfb68c9716d26cd515cb1bdeb8fb08d60be7d178219f6",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-004",
+      "field": "stem",
+      "jaTextSha256": "731c407c0fec1dcafad91df71d71b27e113e43314a63888fb4a1a479a1e87bd5",
+      "thTextSha256": "0dfa22b43762d7f39530ba2f660706a91aefd64713a10c852815d9928fba6eb3",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-004",
+      "field": "options[0]",
+      "jaTextSha256": "49726f09c8123a40dbe9916705980fa88cf6cc4711d7780c509e5534bedbe826",
+      "thTextSha256": "a42ad639150a23263dae0a9a79fbaf18f66efc25176822ec6790c7b5ba66a7f6",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-004",
+      "field": "options[1]",
+      "jaTextSha256": "4188abeaefad6f99d8e82ddb5590ca07a313520ef058879aced721ebd7ab0107",
+      "thTextSha256": "075c614570784e211938a8a1e52886d25fdcb24bfb6875c1d236ad13f017ceb9",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-004",
+      "field": "options[2]",
+      "jaTextSha256": "86b9ae1d58670fb30479c6dda6ceafec390992895613d3c0dc8dd0bf960ad1a7",
+      "thTextSha256": "e4ec22980627f701f318f8c15a70c57bc5c6401f733a5733b2525372be531720",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-004",
+      "field": "options[3]",
+      "jaTextSha256": "888dda3afd8c796b5e1d7dfcce610d5062bfff6088b896fb4f2a4bcd50d5287f",
+      "thTextSha256": "bd4525cc43e4c8a13040c14a97052554171486bc39c83cf1639534d4914e5067",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-004",
+      "field": "reasons[0]",
+      "jaTextSha256": "99b4d7f63528ec2b0493e4d170a2f00b16dec6038fdd36499cb5f315ed1d8fb9",
+      "thTextSha256": "487aa70b5b0b58ff99c6d63361a2b5454283e401f7dfeb415ae7adcc5919c7d3",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-004",
+      "field": "reasons[1]",
+      "jaTextSha256": "c212bbba23625d3298c864b71812f72d63547f09a6354f6a1434c9af7e840d0e",
+      "thTextSha256": "64544f58fb4c92fe7e61e5c8a7509afca6798cacd19ef9e2c3d041297399a0f8",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-004",
+      "field": "reasons[2]",
+      "jaTextSha256": "b68b18db82866a2a47a99934abb1a54806b00c3883ce41cd0dc21adc82c4be25",
+      "thTextSha256": "52a143013f9ff13814da375069bd8bdd4b2d2256c31f298541b3124439448688",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-004",
+      "field": "reasons[3]",
+      "jaTextSha256": "85c394d19b8804de400cafaf09e74838803fb2dede238050d8cb9564be59bc20",
+      "thTextSha256": "4940cd9f5f3187b0488cf8970a8467855d8db9d7bf6e2cb344a8aa539fce4bcf",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-005",
+      "field": "stem",
+      "jaTextSha256": "ac24b1cec176391a6779c9c1947a4e33d7a1678d1e30c6c8fd9c90bcd4e1ab3b",
+      "thTextSha256": "64fb49f96c381603da8ac927b4a53b555193bd210f399b59317302585c0a50f2",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-005",
+      "field": "options[0]",
+      "jaTextSha256": "3ad348080757e6202d0ab09070bf8d155e162e66d9813061e024255435217401",
+      "thTextSha256": "60e7c3ad03c729ee47cb4b3c9da60e5668fd35f7049a7cb9bf605889539511de",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-005",
+      "field": "options[1]",
+      "jaTextSha256": "b1f0eadd668df332d4c77ac2dcbbdd8512443fdb953c91595f81db46e14bc3a9",
+      "thTextSha256": "e4c6454f2abe389536b65a3ce112cf703730fcbcd1145164eb21911de185d246",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-005",
+      "field": "options[2]",
+      "jaTextSha256": "a1bfb59dd40f1430813d8715bbb3debf0b17ab64ed58f1679f660a4d8daa9c4f",
+      "thTextSha256": "f59aa9371f5a249a979c34148f0b63cbf393310ab89d35bfc3bde0601b52dd41",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-005",
+      "field": "options[3]",
+      "jaTextSha256": "e6fc43b6173b9f0e0d4862ae11c21cbb4334b4645a432cd49b074d427ae98658",
+      "thTextSha256": "7005f83d8f1c0a59a88a7442e10e1d5b59620acedb678f9f24fd047b5f1366ac",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-005",
+      "field": "reasons[0]",
+      "jaTextSha256": "116745962004f1aefe3eeef9e27798a74776c8fa4a65d4cc669d628f31052a87",
+      "thTextSha256": "4d02131369c9199cc0e4e115b0773e5baf0605ef02863b7e86a46e7a6665abd3",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-005",
+      "field": "reasons[1]",
+      "jaTextSha256": "c0931edb37502d6019c09fe0f9284db7b9f706a2107c7d1b9d4dc325c494e552",
+      "thTextSha256": "3069f0fdb08986aeb1b117a7699d102a1b6657e9e3937e545ba7e3b9eace1706",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-005",
+      "field": "reasons[2]",
+      "jaTextSha256": "a498d313b14ec5b6b0c678d9af058a148e3c537eb1537847ee355e093ccf2ebf",
+      "thTextSha256": "6cf6c5fbff92a0e9ebe31866f3749042080b35160d3bde82467e9aaf8920184f",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-005",
+      "field": "reasons[3]",
+      "jaTextSha256": "a843861def9b1cebd3cc8ba032899cac1c1cf2d4198697fc6d30c5565146b5c3",
+      "thTextSha256": "7f05571220cf5c13d2c24d1c1ae9eb2812cc344873bd962599add81f25fb3729",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-006",
+      "field": "stem",
+      "jaTextSha256": "49c94e1888de17396b67e9aef0cae25ee19ad691b21ea108d341bf0d4be33879",
+      "thTextSha256": "a2c56ebd277221a1b0aaedc9fa9c42953fff0b9cae6b634d464e081084bb1349",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-006",
+      "field": "options[0]",
+      "jaTextSha256": "7d9f62d4a133a0b70632083848d72c6423f1d6af0179731d5418067263ee4f5f",
+      "thTextSha256": "f909aa351082aecc4d0480a5bbd998733ad58dde033fd8cbddc4d13a00f7b9ea",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-006",
+      "field": "options[1]",
+      "jaTextSha256": "98541225c06674b93aa572b51373a15dc54dbf6dea99a4c4f0969ab2b2bdcb92",
+      "thTextSha256": "c4e9737d06cee24b090b129eacbe3239302c42ebfe50228cb48f78c4fb72f965",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-006",
+      "field": "options[2]",
+      "jaTextSha256": "82ba1012d2587e18f74c1d2de4285df954af84b59cb3db63bb38960bac8f5dd1",
+      "thTextSha256": "b06a27d63b2099cde0cc425e569af787193f02ffa44d644b1a43929fd398d2ae",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-006",
+      "field": "options[3]",
+      "jaTextSha256": "e87ca747d0ffec9d7b3b6e2d8e98cb697693354f510bb7e010d104f439d2517b",
+      "thTextSha256": "e17ec4a8698c2c8d219c2a29eaabdb9a9600b7ee3c25d3ccd7323e139af02856",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-006",
+      "field": "reasons[0]",
+      "jaTextSha256": "7b8a2a8f0fb9314a5f6f25881c8d9a65130f5084e9342741eb36031becb896ec",
+      "thTextSha256": "edb10344148677ce48f220bce41e8d6985c84daf5ad97f0375c8d8c7ee756575",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-006",
+      "field": "reasons[1]",
+      "jaTextSha256": "58cdf5637463d53d61bef181ebd35cdcc56d0d8f87eef00131aab8e28a2c996e",
+      "thTextSha256": "66f0e403b983ba1179730b43d94ccb5b3f318ee0d1764aa24b588fda71e95c6c",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-006",
+      "field": "reasons[2]",
+      "jaTextSha256": "bd240002dfb3a5d9f4b0246cd63d6e25ac856433f665b4f1238df139257809ec",
+      "thTextSha256": "8ecbed63e027448cc92f3e98e59a0b01b22abc772216c958f5359d476c7b6f50",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-006",
+      "field": "reasons[3]",
+      "jaTextSha256": "2ed913eaa2ef0bd6ea73a650e270f2deaad56c06ec9641b833308a8fc8379564",
+      "thTextSha256": "edac2969488e99f94dca195e6d8710556eb29cd577683ab9231a265e22e4d4d4",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-007",
+      "field": "stem",
+      "jaTextSha256": "3dab589ec8a5fc9d34f6e7335719ef91ab7605d39580c1abd6cf93d163293d69",
+      "thTextSha256": "41fc63806c2a33c922d3cfd8c3047370745c292d202bf0ac8ac5b05c3fd2cf27",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-007",
+      "field": "options[0]",
+      "jaTextSha256": "6b15f6a751260c8dce738c718eb3a1e7ee955ef58dba7b8a9cf1a0ed22191551",
+      "thTextSha256": "d57652c192c6aaffb15b6a513937db6701a4ecc3011fc37cb2bc5d3669e101f6",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-007",
+      "field": "options[1]",
+      "jaTextSha256": "b309412e24d50baf7de0a88f0e0043b2990e863993ff7318099010ba13f26a86",
+      "thTextSha256": "4920b811988f4fa52f5af9a2d95bcda416daa69a7dacda3e5efef5b0ab01d10c",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-007",
+      "field": "options[2]",
+      "jaTextSha256": "6a2798d8bb08c96eaaf4319df4d05bb04841547b558303c9eaa3d38832c95ec4",
+      "thTextSha256": "49b2d5533dc21707d703c5a7145dfdcded738d31e68224507732cdc9e9895a6d",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-007",
+      "field": "options[3]",
+      "jaTextSha256": "e719f9579a134954ebc6dd00eea281fc2b7dbf9a061f5d7ea6ded727b277986e",
+      "thTextSha256": "13f68d7e459516f7e84f9d7fb95fd65f9d602df2b1033aa10a0407c9f5a06aad",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-007",
+      "field": "reasons[0]",
+      "jaTextSha256": "25053592be307af3b5d8f81430d9f635992c048eaa1fd13f7969546ac2beeb39",
+      "thTextSha256": "6b25e98d0a7bcd3a1a87aa336449b79f92299fcd2dbdda83fef5b59eda2af4fa",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-007",
+      "field": "reasons[1]",
+      "jaTextSha256": "dfef179ffdc5c3af1692f5f33faf5886de039878c5d7678b6bade10d47f14d3b",
+      "thTextSha256": "5abef2fd3649e8e0c201e8b57e64ad1cca9ede58434c0596fe9ca4eb13316234",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-007",
+      "field": "reasons[2]",
+      "jaTextSha256": "9def71f4a03f13230f241b92642930958d44fb8a701c14bacd82e0c12deeb52b",
+      "thTextSha256": "ed709f2db37bc235263d7262d08cb005e2dacc201920b447d9c34118a8dc834b",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-007",
+      "field": "reasons[3]",
+      "jaTextSha256": "ce3f7e8ca5ac3e8bc45424df16be1a070ee97483e289405472d9102d7e5de206",
+      "thTextSha256": "3041e6b4ea78b1b4748df32e4b70a40ff9a3ad0570a3403a8faf705e700ccdf6",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-008",
+      "field": "stem",
+      "jaTextSha256": "1566c7d97c02fa811989670e1865dfe4f8958fbf77d2378301808ba2d3ed02a6",
+      "thTextSha256": "21755ba0480997139e863e57c19abc0b5e888cf2ae6f37a3d3b47b4d0844ee19",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-008",
+      "field": "options[0]",
+      "jaTextSha256": "26d6bb2fc2950d4e518200a099ff74642348f0e75a0829e98ec9c5246e681c33",
+      "thTextSha256": "da6fd5df8939afdca573f149b432143529475a6ab3ab4e2799c5e2273b34b854",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-008",
+      "field": "options[1]",
+      "jaTextSha256": "dfdf6a4f688c650683cd76b825be19ff3e97e9ab4df280b0d9cbd08758e2d114",
+      "thTextSha256": "15eae20bb461b1b0b03f0f6de403a071199352592121f53e44b630373e83da19",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-008",
+      "field": "options[2]",
+      "jaTextSha256": "26817e9d7ff3cfa14948a326d462e1597e40d0b55d737e3cbcc72947e740a8e1",
+      "thTextSha256": "f7838f4de49c05e1463700649dd898380c3679f400de119209d6745ee6a83dc5",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-008",
+      "field": "options[3]",
+      "jaTextSha256": "b69788f285b29ba322cda03af0f126a17d2e833656e47f87a805e3bd9e7d072a",
+      "thTextSha256": "a48c591704ffbda5e4fae81c5a39c6e85e09d9fd97d28e18648b661b42dd71dd",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-008",
+      "field": "reasons[0]",
+      "jaTextSha256": "72bc92c2eaa4703676b0890da9fa66cc053ac5b8ec2b947f96d2b2e5bf84443c",
+      "thTextSha256": "f3f7b30e5ecf183a57e747b3248191997b253be81731affde36022012bf07a61",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-008",
+      "field": "reasons[1]",
+      "jaTextSha256": "c15cc34409832748281ca9d60a88f0697cf621ae597d349d7ff06ad24abcc25d",
+      "thTextSha256": "ae73beb51aea7a61b85f5e7f12b3bbbff8394e43f014209265da90a03da327db",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-008",
+      "field": "reasons[2]",
+      "jaTextSha256": "0098fb3cc139a396711fcb60fc0397835327fa5f79c8a49f5bb244d59147a9be",
+      "thTextSha256": "c1ce3b15bfad8d546c14526dae3f8008cbf64431142925e511d2f010b44e5336",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-008",
+      "field": "reasons[3]",
+      "jaTextSha256": "f640ecc8ad9fc7a5fa8718c200d08858f91fe1d353a192a5d222bcdb32ca4d04",
+      "thTextSha256": "0fc04b4d2eaef3b9e65169870006afb516b894a8c39925f8bd5e1dd062fd4c1d",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-009",
+      "field": "stem",
+      "jaTextSha256": "47c9245feac90d088bd994e0096f85da86873725dcfb3bfc47a99c48be110eb0",
+      "thTextSha256": "d851639f804e1efe620a3e83ec23e3f8e918a800ad5fbcf0fad357e5c4b0a120",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-009",
+      "field": "options[0]",
+      "jaTextSha256": "17f497647e845ca5aba58abd981fc7d869bfbaedf34eae1960d00c12f2dc72f8",
+      "thTextSha256": "599d686285d7181cf82c05ff699381eaaa3c29296f099ff707e4cab43107a972",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-009",
+      "field": "options[1]",
+      "jaTextSha256": "6392a6dc32ecbdf2918e31806eb7b9627e61b18efd6d6acc4503a113b33710e4",
+      "thTextSha256": "aa7b2c06fd53cef9fc39536e8ebb659feb9473eb6f0bf65603a280cce98af342",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-009",
+      "field": "options[2]",
+      "jaTextSha256": "5f1dfc7bdfbcbb365f35cb919cb21ed73a007479c53783cd792b0420036eba9a",
+      "thTextSha256": "5770f568595ce4f17b56960ce607e8ed450ed0cb922990db725e0ef754c179d8",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-009",
+      "field": "options[3]",
+      "jaTextSha256": "978e92435ee92645a42d2d4fae3afe0eddeb00356cd238de2b4738149ad470e3",
+      "thTextSha256": "8e514b967f31185cd6d295dd7b225fc47be1a8575173caf4c96d5087f34a0741",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-009",
+      "field": "reasons[0]",
+      "jaTextSha256": "d5e6ce91021fa66537aa416a0638d0cb3d13c81aafcac6864ae80604b2cf5bdd",
+      "thTextSha256": "ec8643c8ceb566aca9a4a35610ab6271e1a138a9f4c57a5042619b6d2a13b18b",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-009",
+      "field": "reasons[1]",
+      "jaTextSha256": "c822438196aa499559e1c6a223269a75280dcd1d5764258977cf0bd489ee2669",
+      "thTextSha256": "b72f857e58831f6f027b10b83d761ee5ed6106d5b73c76864df731c05ab28275",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-009",
+      "field": "reasons[2]",
+      "jaTextSha256": "cbbf09c29e239da00b5a64b75bdc279609924d0c58329e56e1f84c7f7ad38a88",
+      "thTextSha256": "90923a8ff4bed25f1d73c988ceaf63ed3f5a9b3a61b5e5c8a8dbac1299c6f6d8",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-009",
+      "field": "reasons[3]",
+      "jaTextSha256": "011934b0267140e5816ca326c1b19d179e29073dbe9fe3e5fa87c19fef318872",
+      "thTextSha256": "d37aab68dc3956ff7f6da6fc70e9baab0b21e18de4b4b63fa2d34706a2dde800",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-010",
+      "field": "stem",
+      "jaTextSha256": "42389b6202aa7da046a1d6872064b8284a037678e96ee58acd1b030dd2494773",
+      "thTextSha256": "30739b4a973bba56e3ed851c073e56e8b527d016768c05bcd4c665d017a5f6fd",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-010",
+      "field": "options[0]",
+      "jaTextSha256": "692a67c13eb47150b08c390b9b4b2d6feebc44098f5c70a08087f017c631fd2d",
+      "thTextSha256": "dde52c173a6ba5de7d4679fdb29a2dcff2a15816c56159d8702570f34ac7ec60",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-010",
+      "field": "options[1]",
+      "jaTextSha256": "1f5ea40b51b04285158e8ece23bf87d0812e639999b6a87f2a5ebefb1d7a4b59",
+      "thTextSha256": "efc4c8b1f20fa68c0a373b501237ffd17ec03ef38988bd8400551e68eb300036",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-010",
+      "field": "options[2]",
+      "jaTextSha256": "e6caa5a3aaa48b47066065e5d60cbad23eb9c6f3169bc1325c239f1ea9b88a93",
+      "thTextSha256": "5a29f39a0fae0ba7c4444ca51a1d2ef0c009f0f59897f02e8cc0b2a5b65b9f90",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-010",
+      "field": "options[3]",
+      "jaTextSha256": "5b018190c4ec91e6516796828ffbc3d44ea45e16ed080d614d8083ce95e19b45",
+      "thTextSha256": "86fad3609cc5dd93ceddffa5ae67b6cdcfd57dd978c4d578fdf0d936e7629074",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-010",
+      "field": "reasons[0]",
+      "jaTextSha256": "b53fcb1848680999edc78456828cd5bacb93e4e362e3d618f80346329c2b607a",
+      "thTextSha256": "a14469341e1df5307d228fabb32499d34bb6e6b01bfb05ea18b59d91ad363588",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-010",
+      "field": "reasons[1]",
+      "jaTextSha256": "9a25aa045246896f7f00f06a72c926f57b0441c116167e14b36c14fae61fca23",
+      "thTextSha256": "eb0394ee9e84fe16f9a1ce1713e663e99017bd0ae96eb691308b03bd7891d224",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-010",
+      "field": "reasons[2]",
+      "jaTextSha256": "74c011a65cfc1b946e662ece66f5a0414d4dcbd66f8a8c67d6840527727d83be",
+      "thTextSha256": "6d9af7163330d9091f547734710b32e70b71b0d8a341fd1996c73c801c11e69e",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-010",
+      "field": "reasons[3]",
+      "jaTextSha256": "2259290b43b08e8d8378df77e678967a9b245b2ea19e2023cf47c2f1a9102ec6",
+      "thTextSha256": "8bf3806269d1bf2f96c0bfb908cb05c9a3d95f3fdacbe47ddd108d047922ad23",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-011",
+      "field": "stem",
+      "jaTextSha256": "e18a7751550801429eb861831b11f717d99ac4cc4d25cc827aff0945e9e90a50",
+      "thTextSha256": "1214b17c381bea4d5d18794e9273d2032bfcc7baaf29c9b8e733aaa138a46fbe",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-011",
+      "field": "options[0]",
+      "jaTextSha256": "2ff719208c36e405d5e636c1cb6e4833f3058ab74a459cf15ef5d882c3860d95",
+      "thTextSha256": "9abca5867ace434d37a4d3772ed34500a229bf3bacd87e958384d6afa24595d4",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-011",
+      "field": "options[1]",
+      "jaTextSha256": "f7cebaa04bb5f559ba31d83755dafcd40388d7e82eba55b01ac02337b3595995",
+      "thTextSha256": "dd3a38b55d7e097241fe4ca5ba3f4c301274495db1345970a3dab8e99ac50b17",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-011",
+      "field": "options[2]",
+      "jaTextSha256": "318be805b7cf7d5e9b032c89568330a3328feaa694ce0ad4f215aa2098490610",
+      "thTextSha256": "59114348cc55499821709820bd62c69e41e4dbe34ce4d846ff0c0b73dd8d01db",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-011",
+      "field": "options[3]",
+      "jaTextSha256": "82136f900e05d395efd0e82094aa723d2b01a2f574e0608ddd3ad72cf33eedc4",
+      "thTextSha256": "b589b529d023fce813a7c2ca6955eb67b8076ac904396672ff495f7b588569db",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-011",
+      "field": "reasons[0]",
+      "jaTextSha256": "8c4531e5425fa9e9f9de019cab3ca29c30440db17526c200a8583f4e4addd5a5",
+      "thTextSha256": "0b40773a5fc01371330e5846ce3f9f3dc54f824ab089a0e1406c291fa0f78f41",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-011",
+      "field": "reasons[1]",
+      "jaTextSha256": "d38956539b8ebb2bba1df56caf296a6bca9a4108388f0bd9f9dbad3888cd09de",
+      "thTextSha256": "7bcf2abf18a58961415c892363677f5312c070ed42d9d2d5c2e46e2924efc59d",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-011",
+      "field": "reasons[2]",
+      "jaTextSha256": "e075800ad161d1ed47f3b18e381fb61eaddd4eaabf012919710d6aaf8f69ce0f",
+      "thTextSha256": "a71f67fa9479d8657c98a0ad3d5fd05856cdf95b47d7224338193233da99894b",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-011",
+      "field": "reasons[3]",
+      "jaTextSha256": "2661944f6a0877eee30bdbfb14afd4cbef306b2ee13e24ec8718e1cda18d4345",
+      "thTextSha256": "9979ab2c8744175fa6b0d3d9ba506dfb9ea6fa3adc82bb37005cd65ce91e50cf",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-012",
+      "field": "stem",
+      "jaTextSha256": "64eac7a126827680a37ea4e29e039ffed51d5acb7d1eddac8695ef99cd3f1199",
+      "thTextSha256": "c42ce660f341a8665288e29bdf2936ac93cce406d21507a75439475efe52173e",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-012",
+      "field": "options[0]",
+      "jaTextSha256": "9ccf58b0bcb4e2eed78e2c640496fcb11174cf57c6e54f648d41434e28a2074b",
+      "thTextSha256": "8442cff54b411bc700139987d7ce96cb5f829116f9cf8b8fa5688cc21addcc55",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-012",
+      "field": "options[1]",
+      "jaTextSha256": "9aa460138b1b691102466b698a2ca5dc055b86e181e2449709287b8779f1b8f3",
+      "thTextSha256": "f6282a5d5caff1fbc239ae44b170644fb6862e20d766b2cecfc7987d76d6a539",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-012",
+      "field": "options[2]",
+      "jaTextSha256": "3677a018e75ab0c538bea667d7c61cc7795ab9bc63bbf31841bd244e18964c28",
+      "thTextSha256": "0794b55e3efdae5a840fdcd5e3039cc1e73621b7340fdec5280bb737fe8128a8",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-012",
+      "field": "options[3]",
+      "jaTextSha256": "867b0ed59baee0840b65ddbaec42752ede3ca6d93decd1a63139c84ce34a1608",
+      "thTextSha256": "d91b6f89b22037dfe943413234ee2b602711b3bc0b99772c6db8a5801fd869f6",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-012",
+      "field": "reasons[0]",
+      "jaTextSha256": "605ebcf180380c3eea4121179a368d3cf749ffccd6dc37451199eee049d7b0f7",
+      "thTextSha256": "15014d92e08c9dc4ec8ab43180a24f5b757dd19d675038f1ead2e87df6ef1699",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-012",
+      "field": "reasons[1]",
+      "jaTextSha256": "e42353405d9f18b2f3c99e6ef26e46a70d38116e56b54504df0ad8b4e60faa9a",
+      "thTextSha256": "22ad2dba935d017160a96236a0db3e069b6b72e909827b842da1ce66fa95525e",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-012",
+      "field": "reasons[2]",
+      "jaTextSha256": "2c3b3f7f0ab869ea4c60ddfde4f56f3f9ef9f0dbbad421d9218c33b9bf45f120",
+      "thTextSha256": "8da6375d7bf0c93db722beb64b539e0a7773986fccfeb12be48899add1439f4d",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    },
+    {
+      "id": "mfg1-mechanical-formative-012",
+      "field": "reasons[3]",
+      "jaTextSha256": "1836137cfe9767e84d1a8614e06bb5e75ee6156e33aaf01ee57755017ebc410d",
+      "thTextSha256": "1c3922628fea8378bd801f0265549e7cb8b3a5bdc0c3573c7e96f1d0589efdb9",
+      "review": "independent_AI_direct_JA_comparison_pass"
+    }
+  ],
+  "limits": [
+    "AI review of these19 translation entries only; no native-speaker or domain certification.",
+    "No PDF/source/legal-currentness claim from this translation comparison.",
+    "Does not certify UI/device rendering or unreviewed languages."
+  ]
+}

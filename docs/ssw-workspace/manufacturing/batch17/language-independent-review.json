@@ -1,0 +1,815 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "reviewer": "independent_AI_language_reviewer",
+  "baselineCommit": "29ac8afb5a96b507bd4d8ba7b11074138155ee65",
+  "scope": "Both batch16 revised mechanical mock records across12 target languages and ruby, plus full mechanical week1 Vietnamese7lessons/12weekly questions. No SSW2 inputs.",
+  "status": "independent_AI_review_complete_with_one_medium_and_three_low_findings",
+  "inputFiles": {
+    "src/data/manufacturing/mechanical.json": "03aa03f0321d095787d29d3b6e1c61c0bccad3bed6effc2a88acb42788957113",
+    "src/data/manufacturing/mocks/mechanical.json": "7b496f0fefecd73e2d28e4fc61abceed119a67b677e810aab9fda3e274db3443",
+    "src/data/manufacturing/mock-translations.json": "ce1dcca2708302a6ab23612d392e7cf9aa38b90851c237e2df32ee10ab141c5c",
+    "src/data/manufacturing/mock-furigana.json": "b873c58a6e9c7c5f2551d4179c2eb4ffdbc16dd2d60687e19c3e8066ae5e3f57",
+    "src/data/manufacturing/translations/vi.json": "c5b96c7b6c01093bb2294818814a52e7821fdf40f4ddb2b1b2d6283b8487be02",
+    "src/data/manufacturing/translations/questions.vi.json": "ce57091e35c20aa0ae4b08a692307f159f22870432ad5d0714bba9bd8faaebc1",
+    "docs/ssw-workspace/manufacturing/batch16/mock-editorial-patches.json": "1967e6b96e2989cbfdd58a21622eb5712afbee48090c47737c12f6b3f912027e"
+  },
+  "method": [
+    "Compared both revised Japanese stems, ordered alternatives, correct indices, both rationales and all24 target entries in bounded six-locale batches.",
+    "Inspected all revised ruby tokens and contextual readings for both stems/options, including 識別/取扱条件 and caliper terminology.",
+    "Read all seven first-week Japanese/Vietnamese lesson fields and all12 weekly question stems/options/rationales; checked safety qualifiers, arithmetic quantities and consistent taught labels.",
+    "Recorded exact object/file hashes. This is semantic AI comparison against authored Japanese, not a new direct PDF reading or native/domain certification."
+  ],
+  "counts": {
+    "canonicalMockQuestionsReviewed": 2,
+    "mockTargetRecordsReviewed": 24,
+    "mockProseFieldsCompared": 120,
+    "rubyRecordsReviewed": 2,
+    "vietnameseLessonsReviewed": 7,
+    "vietnameseWeeklyQuestionsReviewed": 12,
+    "weeklyQuestionProseFieldsCompared": 108,
+    "mediumFindings": 1,
+    "lowFindings": 3,
+    "wrongCanonicalKeysIdentified": 0,
+    "unsafeKeyedTranslationReversalsIdentified": 0
+  },
+  "mockReviews": [
+    {
+      "questionId": "mfg1-mechanical-mock-01-theory-01",
+      "questionSourceHash": "61a35488b49dee67c65208c8f425b80dc1eb1a7486174ed1cafb51ec9d5b6ad5",
+      "questionObjectSha256": "80e12c1d9803371c8a32f35dce91ddec32feb4a9395a795d832c6171c943bf4a",
+      "rubyObjectSha256": "53b9b271e98ad93e255d7c943d9a32cfbbf406ae8cdd9fefd8de1cfb4281657a",
+      "japaneseVerdict": "batch16 editorial correction preserves intended key and technical distinction",
+      "rubyVerdict": "stem/options text aligned; contextual readings inspected, no correction identified",
+      "targets": [
+        {
+          "locale": "en",
+          "sourceHash": "61a35488b49dee67c65208c8f425b80dc1eb1a7486174ed1cafb51ec9d5b6ad5",
+          "targetObjectSha256": "6344be7324bb0f6bf70a03b519bdd030cdacdbc261a504049cb02aeb4c0ab542",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "vi",
+          "sourceHash": "61a35488b49dee67c65208c8f425b80dc1eb1a7486174ed1cafb51ec9d5b6ad5",
+          "targetObjectSha256": "546ea353f776fe293bb883126605cf1025d05c2bb7cc8ce0bcdc046bbb585dce",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "id",
+          "sourceHash": "61a35488b49dee67c65208c8f425b80dc1eb1a7486174ed1cafb51ec9d5b6ad5",
+          "targetObjectSha256": "ea50960d254686ac1a5d67a5be6148461fbc7b0c941aacd4499b8e37dd00828b",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "zh-CN",
+          "sourceHash": "61a35488b49dee67c65208c8f425b80dc1eb1a7486174ed1cafb51ec9d5b6ad5",
+          "targetObjectSha256": "9f26463fc63ff2c04b459352b349badb9b0deec43f3c0b80b08be69f7df3362b",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "zh-TW",
+          "sourceHash": "61a35488b49dee67c65208c8f425b80dc1eb1a7486174ed1cafb51ec9d5b6ad5",
+          "targetObjectSha256": "11f6b6451144f48542fd5439bb8c5e14cff33837b570e2accb948048b21c1a24",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "hi",
+          "sourceHash": "61a35488b49dee67c65208c8f425b80dc1eb1a7486174ed1cafb51ec9d5b6ad5",
+          "targetObjectSha256": "362cc03af5cca2b40f8e0955a3051fdb4cdbd8f926839b59f38119eaf91fced2",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "bn",
+          "sourceHash": "61a35488b49dee67c65208c8f425b80dc1eb1a7486174ed1cafb51ec9d5b6ad5",
+          "targetObjectSha256": "40df4aa09cbb00d178424f865dfe79fb3794a0e32b28cb8d19832c5be059968a",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "ne",
+          "sourceHash": "61a35488b49dee67c65208c8f425b80dc1eb1a7486174ed1cafb51ec9d5b6ad5",
+          "targetObjectSha256": "350ab3e2ee37791e293e09ca1a52be781d7e972e7a2bca083a2e6f114d5ac7bd",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "my",
+          "sourceHash": "61a35488b49dee67c65208c8f425b80dc1eb1a7486174ed1cafb51ec9d5b6ad5",
+          "targetObjectSha256": "bcad01ac3619aa08080b853cca8b7b87b0e10309820d01797882b6d33399a67e",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "th",
+          "sourceHash": "61a35488b49dee67c65208c8f425b80dc1eb1a7486174ed1cafb51ec9d5b6ad5",
+          "targetObjectSha256": "2d3353f43d661ae19999b06c34c30610cfa4ac625a1a72d94e1ddd2f846b4f2e",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "km",
+          "sourceHash": "61a35488b49dee67c65208c8f425b80dc1eb1a7486174ed1cafb51ec9d5b6ad5",
+          "targetObjectSha256": "bdde0651fcec7d96ddeb818f49c7a7aaf888e5e5323ab7ad34b2a1f629f66811",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "tl",
+          "sourceHash": "61a35488b49dee67c65208c8f425b80dc1eb1a7486174ed1cafb51ec9d5b6ad5",
+          "targetObjectSha256": "bf5eab0338191e2e2eb38340577bba5cd62a8023d976db64de0b0ae1737cc8a5",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        }
+      ]
+    },
+    {
+      "questionId": "mfg1-mechanical-mock-03-theory-17",
+      "questionSourceHash": "f1a793284b41ab52ae6e389dbdada309d25ca5e729d321e96802a7b0dd8d60a8",
+      "questionObjectSha256": "f4f80eea5b00d89ae6ddb2269213ba2e3497c5cd804a81e5286a5149ffb08094",
+      "rubyObjectSha256": "a372a46d726e9c9fb66ff05dadd8a877e2f88c8c657dd111e5695f4344b5ce65",
+      "japaneseVerdict": "batch16 editorial correction preserves intended key and technical distinction",
+      "rubyVerdict": "stem/options text aligned; contextual readings inspected, no correction identified",
+      "targets": [
+        {
+          "locale": "en",
+          "sourceHash": "f1a793284b41ab52ae6e389dbdada309d25ca5e729d321e96802a7b0dd8d60a8",
+          "targetObjectSha256": "72cfe42706c95714a8b88783fc26a5ef76d60eae87d00647803d0a7a460eff33",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "correction_proposed",
+          "findingIds": [
+            "mfg17-lang-002"
+          ]
+        },
+        {
+          "locale": "vi",
+          "sourceHash": "f1a793284b41ab52ae6e389dbdada309d25ca5e729d321e96802a7b0dd8d60a8",
+          "targetObjectSha256": "6bb15e9b827430d1b6231ba92c7ab76a20998623411b3dca74b37796d9cc6b23",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "correction_proposed",
+          "findingIds": [
+            "mfg17-lang-003"
+          ]
+        },
+        {
+          "locale": "id",
+          "sourceHash": "f1a793284b41ab52ae6e389dbdada309d25ca5e729d321e96802a7b0dd8d60a8",
+          "targetObjectSha256": "b3673b647705774f8c9b70eb22205de864719c7bdc3b39d4f0d1826cbb23f916",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "zh-CN",
+          "sourceHash": "f1a793284b41ab52ae6e389dbdada309d25ca5e729d321e96802a7b0dd8d60a8",
+          "targetObjectSha256": "4931751308e2bb7e518033a29e618232db270b0170a3598e4644f0c1eac11343",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "zh-TW",
+          "sourceHash": "f1a793284b41ab52ae6e389dbdada309d25ca5e729d321e96802a7b0dd8d60a8",
+          "targetObjectSha256": "afcf9ce3757cac56f5bae2a6c88aa0b96fe33735cd351fc71683def23d1bafe6",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "hi",
+          "sourceHash": "f1a793284b41ab52ae6e389dbdada309d25ca5e729d321e96802a7b0dd8d60a8",
+          "targetObjectSha256": "c8691b221c29294d0c2e1dee235c75e7ad0e4ebebcf2ac8707716777d2c61559",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "bn",
+          "sourceHash": "f1a793284b41ab52ae6e389dbdada309d25ca5e729d321e96802a7b0dd8d60a8",
+          "targetObjectSha256": "3199b46150868bee13196f4176eafdbbf2865762accf760acb80719b77e49674",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "correction_proposed",
+          "findingIds": [
+            "mfg17-lang-001"
+          ]
+        },
+        {
+          "locale": "ne",
+          "sourceHash": "f1a793284b41ab52ae6e389dbdada309d25ca5e729d321e96802a7b0dd8d60a8",
+          "targetObjectSha256": "0dd2a9cd1b0aa8ff94dca7b5c490d8b5db8f815e673f423e4c213d4eabc1f1ce",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "my",
+          "sourceHash": "f1a793284b41ab52ae6e389dbdada309d25ca5e729d321e96802a7b0dd8d60a8",
+          "targetObjectSha256": "bb9ea249f755a7015e7055e4048cbc20ce0a889debbf748ba988bf44faee0e1e",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "th",
+          "sourceHash": "f1a793284b41ab52ae6e389dbdada309d25ca5e729d321e96802a7b0dd8d60a8",
+          "targetObjectSha256": "9e0a363a1a94cb9f67189922eee9407a4f2cd33ade6a2edd1da10289177993e8",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "km",
+          "sourceHash": "f1a793284b41ab52ae6e389dbdada309d25ca5e729d321e96802a7b0dd8d60a8",
+          "targetObjectSha256": "1e4dbd58fa4e09158f7c487ac8247610820ac86464f85ddbeeba6f8ae4128e81",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        },
+        {
+          "locale": "tl",
+          "sourceHash": "f1a793284b41ab52ae6e389dbdada309d25ca5e729d321e96802a7b0dd8d60a8",
+          "targetObjectSha256": "2c9c2ccd03c9ef6305aa4566e5fa16838e2c7d840b74c11228765db3c8c6b828",
+          "fieldsRead": [
+            "stem",
+            "options[0]",
+            "options[1]",
+            "reasons[0]",
+            "reasons[1]"
+          ],
+          "verdict": "no_required_semantic_correction_identified",
+          "findingIds": []
+        }
+      ]
+    }
+  ],
+  "vietnameseWeek1Lessons": [
+    {
+      "lessonId": "mfg1-mechanical-lesson-001",
+      "sourceHash": "1af8a71b73db3e1a1fb54d3d5a2493e49a926f85b8cd3d4fd260fb93515870ad",
+      "japaneseObjectSha256": "8c90ecc670aa7a58ecf6b2ed4539049198ea2e80aff6235f16bfdf821eb20a53",
+      "targetObjectSha256": "7d75e615a1117ae0af7fdec270846d6985f0bd76857695e88eafa119cb2418cb",
+      "paragraphIdsRead": [
+        "explanation",
+        "example"
+      ],
+      "fieldsRead": [
+        "title",
+        "objective",
+        "all paragraph titles/text",
+        "all glossary terms/readings/meanings",
+        "activity",
+        "all safety items",
+        "summary"
+      ],
+      "verdict": "no_required_semantic_correction_identified",
+      "notes": "Safe stopping/reporting, no unauthorized restart, residual energy qualifier preserved."
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-002",
+      "sourceHash": "e1fd5d7b1db081c770649554e8226ae111d9ed386c017321a660cd744e496e2d",
+      "japaneseObjectSha256": "8718f164e59ccdbc66993d8fff6c052f9158115089518484817752cc456bbfc4",
+      "targetObjectSha256": "83bfad5714dbd07dd7309a0fe5448ffe6d8ffc841f6856161582e4132e432a25",
+      "paragraphIdsRead": [
+        "explanation",
+        "example"
+      ],
+      "fieldsRead": [
+        "title",
+        "objective",
+        "all paragraph titles/text",
+        "all glossary terms/readings/meanings",
+        "activity",
+        "all safety items",
+        "summary"
+      ],
+      "verdict": "no_required_semantic_correction_identified",
+      "notes": "5S distinctions and disposal authority preserved; Vietnamese5S labels explained contextually."
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-003",
+      "sourceHash": "00562ce9a773a8633c8cc849e0eb0a43f8c76da1c1b1a392669e0d4c68ef3ed9",
+      "japaneseObjectSha256": "ef08b96b46aea59018e5f2d144d67c826c3e5bc26d72bc2cfa50067ded655ce8",
+      "targetObjectSha256": "e033d8af336591c968bb3156fcddcf6647203cdd97028d8feb6b61198491915c",
+      "paragraphIdsRead": [
+        "explanation",
+        "example"
+      ],
+      "fieldsRead": [
+        "title",
+        "objective",
+        "all paragraph titles/text",
+        "all glossary terms/readings/meanings",
+        "activity",
+        "all safety items",
+        "summary"
+      ],
+      "verdict": "no_required_semantic_correction_identified",
+      "notes": "Location/type/quantity and9-versus12 shortage example preserved; weekly004 label consistency finding recorded separately."
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-004",
+      "sourceHash": "550ec7a664a5ce5c0de82c01092b249eea3d517c4e59db345816576fb9250a50",
+      "japaneseObjectSha256": "f079bf716bff8f29df9ed2e1f17bb422201bbb04ddb3ed33eb07340e4a41a8d3",
+      "targetObjectSha256": "e093f02d9d897ceaeb29a41f62acb82f254a6f2a85bc16104c175c737f4dba9b",
+      "paragraphIdsRead": [
+        "explanation",
+        "example"
+      ],
+      "fieldsRead": [
+        "title",
+        "objective",
+        "all paragraph titles/text",
+        "all glossary terms/readings/meanings",
+        "activity",
+        "all safety items",
+        "summary"
+      ],
+      "verdict": "no_required_semantic_correction_identified",
+      "notes": "OJT demonstration/practice/verification, unclear units and qualification limits preserved."
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-005",
+      "sourceHash": "b6c9b064096854482cf88881073b7965530b8d2520b28ad9449d0102c8db083f",
+      "japaneseObjectSha256": "d17f730d973743bb07b33eedea8740b65ca2953be62c469b8ba8522ea5d961c0",
+      "targetObjectSha256": "47f59d1804aaafd9441022cf9e53e6fa9f2cfa720546388f4b983912ecdbdc2a",
+      "paragraphIdsRead": [
+        "explanation",
+        "example"
+      ],
+      "fieldsRead": [
+        "title",
+        "objective",
+        "all paragraph titles/text",
+        "all glossary terms/readings/meanings",
+        "activity",
+        "all safety items",
+        "summary"
+      ],
+      "verdict": "no_required_semantic_correction_identified",
+      "notes": "KYT cause/result, actionable measures and no unsafe reenactment preserved."
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-006",
+      "sourceHash": "4f942fcf2a4a4904822a1c0cf0dde07e5ef065fdfc018d5eb2e300d0e26c876d",
+      "japaneseObjectSha256": "29fc1d59bdf22708351df320dc7d3e17c4f3affbd90e5144f7e21ca6713b36fd",
+      "targetObjectSha256": "883d9dde0af8b85d7027519ce69b616fa57cf99afac4467cdb795827c7e850b0",
+      "paragraphIdsRead": [
+        "explanation",
+        "example"
+      ],
+      "fieldsRead": [
+        "title",
+        "objective",
+        "all paragraph titles/text",
+        "all glossary terms/readings/meanings",
+        "activity",
+        "all safety items",
+        "summary"
+      ],
+      "verdict": "no_required_semantic_correction_identified",
+      "notes": "Glove prohibition at drill press and no guard substitution preserved."
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-007",
+      "sourceHash": "279398d5ff95aa3045677e237746ff5074bcfb74448ac1c03a2f3c0ee19b8260",
+      "japaneseObjectSha256": "ab133586b0a7ebe16b1f14588e4f6f9b93b3e726490984fe0efa2a42dbd23acf",
+      "targetObjectSha256": "295ef2734b7e8228267905fda0b7a49bc190031e984c3466085ce5d75c00b835",
+      "paragraphIdsRead": [
+        "explanation",
+        "example"
+      ],
+      "fieldsRead": [
+        "title",
+        "objective",
+        "all paragraph titles/text",
+        "all glossary terms/readings/meanings",
+        "activity",
+        "all safety items",
+        "summary"
+      ],
+      "verdict": "no_required_semantic_correction_identified",
+      "notes": "Severity/likelihood/exposure, residual risk and authorized repairs preserved."
+    }
+  ],
+  "vietnameseWeek1Questions": [
+    {
+      "questionId": "mfg1-mechanical-formative-001",
+      "lessonId": "mfg1-mechanical-lesson-001",
+      "questionSourceHash": "1fb3610beab26872bc717081192f7b6e533c7d4893bdcddca29756e1aa3bf7e7",
+      "questionObjectSha256": "12069a58635843080ff940a6e81a6f5a3e962b6a8edbf5bf583f0e6f71a19a69",
+      "targetObjectSha256": "dda9e72e6b919c5664a50508d95f3fdcad5e6476145664f864109d722a2aa044",
+      "fieldsRead": [
+        "stem",
+        "all4 ordered options",
+        "all4 ordered rationales"
+      ],
+      "keyIndexChecked": 1,
+      "verdict": "no_required_semantic_correction_identified",
+      "findingIds": []
+    },
+    {
+      "questionId": "mfg1-mechanical-formative-002",
+      "lessonId": "mfg1-mechanical-lesson-001",
+      "questionSourceHash": "d918abbe70ffac85f387b9658f4c4cb42708a2d31fa50ea5006db1921afe3f69",
+      "questionObjectSha256": "f909b55029614880ca41dec77643566efd3851ad6bf30bca5c1b5cf436565975",
+      "targetObjectSha256": "bf0b8a4f895c435c9a2502bb99d4b09e740d4f12902f8a32e15049cd555e1efa",
+      "fieldsRead": [
+        "stem",
+        "all4 ordered options",
+        "all4 ordered rationales"
+      ],
+      "keyIndexChecked": 3,
+      "verdict": "no_required_semantic_correction_identified",
+      "findingIds": []
+    },
+    {
+      "questionId": "mfg1-mechanical-formative-003",
+      "lessonId": "mfg1-mechanical-lesson-002",
+      "questionSourceHash": "b80472410399e1a5d996cd9ebb4696052ad9a2f9cb0cf5d60f70dce2fcb460b4",
+      "questionObjectSha256": "c2aa600e6ff6c792b86891973b36890d39b71f9d536e83ccfcb93768c5eff231",
+      "targetObjectSha256": "0cfbc462a453a4c6dd5f197471e1fefe05e5be8d6ab393df92ffc0abed24db97",
+      "fieldsRead": [
+        "stem",
+        "all4 ordered options",
+        "all4 ordered rationales"
+      ],
+      "keyIndexChecked": 0,
+      "verdict": "no_required_semantic_correction_identified",
+      "findingIds": []
+    },
+    {
+      "questionId": "mfg1-mechanical-formative-004",
+      "lessonId": "mfg1-mechanical-lesson-003",
+      "questionSourceHash": "bd526346d29fbe21dd81da0930930ed63a6f33d7899f4dbd3ce56aef24fdad74",
+      "questionObjectSha256": "652bb3b606223da9b77b21d1c56f0a64b338a34ee2eb10710323192258b0c755",
+      "targetObjectSha256": "6b6f6606a9d09171f0f9e2a3d8733a345e38256e887f29da04a086a5ec1a79cd",
+      "fieldsRead": [
+        "stem",
+        "all4 ordered options",
+        "all4 ordered rationales"
+      ],
+      "keyIndexChecked": 2,
+      "verdict": "terminology_clarity_improvement_proposed",
+      "findingIds": [
+        "mfg17-lang-004"
+      ]
+    },
+    {
+      "questionId": "mfg1-mechanical-formative-005",
+      "lessonId": "mfg1-mechanical-lesson-006",
+      "questionSourceHash": "cb43ee8f3c6a28d806d9ef56bb0df37540e3bf693248e09d733dd95018816260",
+      "questionObjectSha256": "b7422596d46b978995ee3d0d2d9a003e9e238d24c44a7f87e227242b6640a78f",
+      "targetObjectSha256": "6eeb4bd479f74c004ab39ed4364e29022b6f055f039eaddfc97a47fc99fa0fb9",
+      "fieldsRead": [
+        "stem",
+        "all4 ordered options",
+        "all4 ordered rationales"
+      ],
+      "keyIndexChecked": 3,
+      "verdict": "no_required_semantic_correction_identified",
+      "findingIds": []
+    },
+    {
+      "questionId": "mfg1-mechanical-formative-006",
+      "lessonId": "mfg1-mechanical-lesson-004",
+      "questionSourceHash": "6b1dde9ad0c1349b6ff260cc6cd85d4acc32511fe2d2d261f3fe56b7b4987d6c",
+      "questionObjectSha256": "26b28c942f4e2b49d86a94e59d0460a7d5f7313f108235af1490ce0818ebdffc",
+      "targetObjectSha256": "d9c6a8755d83f96e0e521758988e6def3b78007481d1819de6c9fd929c0eaa74",
+      "fieldsRead": [
+        "stem",
+        "all4 ordered options",
+        "all4 ordered rationales"
+      ],
+      "keyIndexChecked": 1,
+      "verdict": "no_required_semantic_correction_identified",
+      "findingIds": []
+    },
+    {
+      "questionId": "mfg1-mechanical-formative-007",
+      "lessonId": "mfg1-mechanical-lesson-004",
+      "questionSourceHash": "3062457028532ddee8752990a2262617e3c570a61ca3c565d7cb3b16ae806755",
+      "questionObjectSha256": "55756b51bab0b213c69b7aa9b3a10f03e2c9c7503557cccbd0c767b217334fae",
+      "targetObjectSha256": "f749ae552a74310f655c738c0096bab60f9d58aab0a3df76ad04bd07909c035c",
+      "fieldsRead": [
+        "stem",
+        "all4 ordered options",
+        "all4 ordered rationales"
+      ],
+      "keyIndexChecked": 2,
+      "verdict": "no_required_semantic_correction_identified",
+      "findingIds": []
+    },
+    {
+      "questionId": "mfg1-mechanical-formative-008",
+      "lessonId": "mfg1-mechanical-lesson-005",
+      "questionSourceHash": "cebcaea315a7fd2ec13ac9e7af235ef062bbbc636b15d0002b24d55c61d23894",
+      "questionObjectSha256": "8bb63737133a3cc8d3943d96907256deae5a937e24733c87283bb9d98fa68fc6",
+      "targetObjectSha256": "f37dfe08a8804f0e8586745479bf924da5fcb28befaa55f396ffc8c88e6b55e1",
+      "fieldsRead": [
+        "stem",
+        "all4 ordered options",
+        "all4 ordered rationales"
+      ],
+      "keyIndexChecked": 0,
+      "verdict": "no_required_semantic_correction_identified",
+      "findingIds": []
+    },
+    {
+      "questionId": "mfg1-mechanical-formative-009",
+      "lessonId": "mfg1-mechanical-lesson-005",
+      "questionSourceHash": "6a742e14a5b98094e362713f1902f3eb2ab9416e11bb243f8988aa005143fd8b",
+      "questionObjectSha256": "e6a3dc358f12fdf34f84dcea5cd95cac74b8a553332853a18d5d6f6d53d1b767",
+      "targetObjectSha256": "703bd6d4b4bb61db5c06bc95e0b80e3c253c805796ccc640aa7d0e9055654954",
+      "fieldsRead": [
+        "stem",
+        "all4 ordered options",
+        "all4 ordered rationales"
+      ],
+      "keyIndexChecked": 1,
+      "verdict": "no_required_semantic_correction_identified",
+      "findingIds": []
+    },
+    {
+      "questionId": "mfg1-mechanical-formative-010",
+      "lessonId": "mfg1-mechanical-lesson-007",
+      "questionSourceHash": "9a7e74ae9a64d0874fc91f36dcdb102530fe7cfc951961dfccd5aee67647b991",
+      "questionObjectSha256": "a6aeacd439729953b808a4aba79ad0033d164df63f51e7843bd48bef88e0f8eb",
+      "targetObjectSha256": "1667cc1eb72c6bb0ecc9de8840f053468b3265e72eb865e161227b3a88a0f042",
+      "fieldsRead": [
+        "stem",
+        "all4 ordered options",
+        "all4 ordered rationales"
+      ],
+      "keyIndexChecked": 2,
+      "verdict": "no_required_semantic_correction_identified",
+      "findingIds": []
+    },
+    {
+      "questionId": "mfg1-mechanical-formative-011",
+      "lessonId": "mfg1-mechanical-lesson-007",
+      "questionSourceHash": "79241b8ec357c3a3eed80be0edd626a677a2563b00027176a11a4496ed531f66",
+      "questionObjectSha256": "476576b88f93c2dc0d079cec613a7bcdf94df8143836b25486264feb73394a37",
+      "targetObjectSha256": "91c7754422de551368de3f3f2499f246a3928782a5f632b8e95a9394b2194775",
+      "fieldsRead": [
+        "stem",
+        "all4 ordered options",
+        "all4 ordered rationales"
+      ],
+      "keyIndexChecked": 0,
+      "verdict": "no_required_semantic_correction_identified",
+      "findingIds": []
+    },
+    {
+      "questionId": "mfg1-mechanical-formative-012",
+      "lessonId": "mfg1-mechanical-lesson-006",
+      "questionSourceHash": "e15ff27461ac24fffe10047fd97344198c3390ab27a20ef85e6b438957521c38",
+      "questionObjectSha256": "9222745ac724489ed4645c85c274e524c303de8b15ed3a446d2805d461ca60c5",
+      "targetObjectSha256": "8045603c9f45a85f9a1270bc4044de11a42b945125358e3ea2d36020425469f3",
+      "fieldsRead": [
+        "stem",
+        "all4 ordered options",
+        "all4 ordered rationales"
+      ],
+      "keyIndexChecked": 3,
+      "verdict": "no_required_semantic_correction_identified",
+      "findingIds": []
+    }
+  ],
+  "findings": [
+    {
+      "id": "mfg17-lang-001",
+      "severity": "medium",
+      "kind": "semantic_omission_and_narrowed_term",
+      "locale": "bn",
+      "questionId": "mfg1-mechanical-mock-03-theory-17",
+      "fields": [
+        "stem",
+        "reasons[0]",
+        "reasons[1]"
+      ],
+      "observation": "The current stem uses কুচির (chips/fragments) for general 異物; both rationales reduce measuring-face/workpiece cleanliness to generic cleanliness. The correct False choice remains recognizable, but the explanatory checklist loses explicit technical referents.",
+      "requiredForScopedClosure": true,
+      "keyChangeNeeded": false
+    },
+    {
+      "id": "mfg17-lang-002",
+      "severity": "low",
+      "kind": "unnatural_comparative_wording",
+      "locale": "en",
+      "questionId": "mfg1-mechanical-mock-03-theory-17",
+      "fields": [
+        "stem"
+      ],
+      "observation": "The phrase more automatically is unidiomatic and can distract from the intentionally false technical assertion. Rewrite the sentence naturally while keeping that false assertion.",
+      "requiredForScopedClosure": false,
+      "keyChangeNeeded": false
+    },
+    {
+      "id": "mfg17-lang-003",
+      "severity": "low",
+      "kind": "learner_clarity",
+      "locale": "vi",
+      "questionId": "mfg1-mechanical-mock-03-theory-17",
+      "fields": [
+        "stem"
+      ],
+      "observation": "Càng nhiều số hiển thị thước cặp, lỗi dị vật càng tự mất is compressed and unnatural. Use chữ số hiển thị and sai số do dị vật with an explicit sentence structure; retain the false assertion.",
+      "requiredForScopedClosure": false,
+      "keyChangeNeeded": false
+    },
+    {
+      "id": "mfg17-lang-004",
+      "severity": "low",
+      "kind": "within_week_terminology_consistency",
+      "locale": "vi",
+      "questionId": "mfg1-mechanical-formative-004",
+      "lessonId": "mfg1-mechanical-lesson-003",
+      "fields": [
+        "options[0]",
+        "options[1]",
+        "reasons[0]",
+        "reasons[1]"
+      ],
+      "observation": "Lesson003 teaches Định vị trí/Định loại whereas the question switches to Định vị/Định phẩm without explanation. Both can denote the intended principles, but matching the taught labels avoids an unnecessary terminology hurdle.",
+      "requiredForScopedClosure": false,
+      "keyChangeNeeded": false
+    }
+  ],
+  "proposedDeltaFile": "docs/ssw-workspace/manufacturing/batch17/language/proposed-locale-deltas.json",
+  "proposedDeltaSha256": "88359fae42e450c63e1062ec3de8802732b6bd328ac7b86f3212ab88c375101c",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "runtimeModified": false,
+  "releaseReady": false,
+  "limits": [
+    "All12 target stems carry the batch16 removal of universal safe-concentration wording; this does not certify all chemical text in the course.",
+    "Several inherited non-Vietnamese rationales remain compressed prose. No required semantic correction was identified outside recorded scope, but naturalness/native certification is not established.",
+    "Only7of262lessons and12of456weekly questions received this Vietnamese review.",
+    "Do not set native/domain/release flags or claim whole-source atomization from these results.",
+    "Reports certify the exact input hashes only; changes must receive new bindings/review."
+  ],
+  "proposalValidation": {
+    "beforeEntriesMatchRuntime": 4,
+    "sourceHashesUnchanged": 4,
+    "optionOrderPreserved": true,
+    "rationaleCountsPreserved": true,
+    "proposedTextComparedDirectlyToJapanese": true,
+    "nativeReviewed": false,
+    "domainReviewed": false
+  }
+}

@@ -1,0 +1,494 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "reviewer": "independent_AI_surface_lane_translation_comparison",
+  "status": "scoped_independent_ai_comparison_pass",
+  "scope": "Direct Japanese comparison of24revised stem translations only,12locales×2stems. Options, answer keys, rationales, source-PDF facts, furigana, runtime and source-freeze revisions are outside this semantic review.",
+  "inputFile": "docs/ssw-workspace/manufacturing/batch21/stem-translations.json",
+  "inputFileSha256": "0418e321522afda8affdff2ebf83264b6620733e762b1f66ca9ebe81a44c87dd",
+  "canonicalReferenceFile": "docs/ssw-workspace/manufacturing/batch17/electrical-mocks/practical-precision-proposals.json",
+  "canonicalReferenceFileSha256": "4ddad910f75795148ccbfedfb5723648e3211aafaddacd3686c1f8dacc9cd889",
+  "questionIds": [
+    "mfg1-electrical-mock-03-practical-q04",
+    "mfg1-electrical-mock-08-practical-q08"
+  ],
+  "questionBindings": {
+    "mfg1-electrical-mock-03-practical-q04": {
+      "sourceJa": "温度検出を主目的として、温度変化による抵抗の変化を利用する素子はどれか。",
+      "sourceJaSha256": "5f4bd1eb9f0f8cf326567e52d24de837db530792b6f924d994fed544778a21a0",
+      "sourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+      "canonicalAfterObjectSha256": "f09edb1699da9350d03ed1a7a5140b6e476814a15e5e38cc423ad51924005858"
+    },
+    "mfg1-electrical-mock-08-practical-q08": {
+      "sourceJa": "はんだ付け後、本来つながない隣のランドへはんだがつながった。該当する状態はどれか。",
+      "sourceJaSha256": "81976be3b1ab169b90ba30a7503bafadfaae361bdb484882b98fe9ebc84679d4",
+      "sourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+      "canonicalAfterObjectSha256": "0ef14a208749b1d7fc13a18d0c38642eace48e2a31d5b98d6a46ba658d0cbc19"
+    }
+  },
+  "checksByQuestion": {
+    "mfg1-electrical-mock-03-practical-q04": [
+      "temperature_detection_is_primary_purpose",
+      "resistance_changes_due_to_temperature_change",
+      "asks_which_component",
+      "does_not_name_answer_or_add_characteristic",
+      "meaning_matches_complete_Japanese_stem"
+    ],
+    "mfg1-electrical-mock-08-practical-q08": [
+      "after_soldering_context",
+      "solder_reaches_neighboring_pad_or_land",
+      "connection_explicitly_not_intended",
+      "asks_which_condition_without_naming_answer",
+      "meaning_matches_complete_Japanese_stem"
+    ]
+  },
+  "locales": {
+    "en": {
+      "mfg1-electrical-mock-03-practical-q04": {
+        "entrySha256": "47205c1e57594db8789d6d1190983cfad7b81084f8ac8d29b042a57d032f865d",
+        "textSha256": "3bace808cb0aa0537c2a6c64cb8f9b5403a0229911a59638280ecb53f17f5e5f",
+        "sourceJaSha256": "5f4bd1eb9f0f8cf326567e52d24de837db530792b6f924d994fed544778a21a0",
+        "sourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "temperature_detection_is_primary_purpose",
+          "resistance_changes_due_to_temperature_change",
+          "asks_which_component",
+          "does_not_name_answer_or_add_characteristic",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Primary purpose and temperature-caused resistance change retained.",
+        "findings": []
+      },
+      "mfg1-electrical-mock-08-practical-q08": {
+        "entrySha256": "e0163fac25ed3f52c3f2e34f2d08ee46bf50e76d3c50b7e6956aef3e1e7fcd74",
+        "textSha256": "72d6edad61d44b4fe919e199ca42c86c4c418b07ba79c996d81dc515188dae6a",
+        "sourceJaSha256": "81976be3b1ab169b90ba30a7503bafadfaae361bdb484882b98fe9ebc84679d4",
+        "sourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "after_soldering_context",
+          "solder_reaches_neighboring_pad_or_land",
+          "connection_explicitly_not_intended",
+          "asks_which_condition_without_naming_answer",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Unintended neighboring pad connection after soldering retained.",
+        "findings": []
+      }
+    },
+    "vi": {
+      "mfg1-electrical-mock-03-practical-q04": {
+        "entrySha256": "ba5c939989fbeeea7f73071fed441acef8125988800f73720df18bed0d28d6e6",
+        "textSha256": "467a5846efe033225fe5737faa7e4577729f174a646e0737d6fbc75e07a63d2e",
+        "sourceJaSha256": "5f4bd1eb9f0f8cf326567e52d24de837db530792b6f924d994fed544778a21a0",
+        "sourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "temperature_detection_is_primary_purpose",
+          "resistance_changes_due_to_temperature_change",
+          "asks_which_component",
+          "does_not_name_answer_or_add_characteristic",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Mục đích chính and temperature-induced điện trở change retained.",
+        "findings": []
+      },
+      "mfg1-electrical-mock-08-practical-q08": {
+        "entrySha256": "e20c24f73927644ef429f4f2dd46ace43e555a18bbbd79b0d9751068b7dfdf15",
+        "textSha256": "bca432912e64eac7a676a6321147db18fb6d3baf952f731829d5e4a9fd4d12fd",
+        "sourceJaSha256": "81976be3b1ab169b90ba30a7503bafadfaae361bdb484882b98fe9ebc84679d4",
+        "sourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "after_soldering_context",
+          "solder_reaches_neighboring_pad_or_land",
+          "connection_explicitly_not_intended",
+          "asks_which_condition_without_naming_answer",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Pad/điểm hàn neighbor and vốn không được nối qualification retained.",
+        "findings": []
+      }
+    },
+    "id": {
+      "mfg1-electrical-mock-03-practical-q04": {
+        "entrySha256": "8e0b9ebc10056da017be650b0ea2c70664106196833df41b1f4ccd6624959799",
+        "textSha256": "0ffca41968d3c85a52fdb0b097105189e881cd0e9c57a1f4666e6326558c921d",
+        "sourceJaSha256": "5f4bd1eb9f0f8cf326567e52d24de837db530792b6f924d994fed544778a21a0",
+        "sourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "temperature_detection_is_primary_purpose",
+          "resistance_changes_due_to_temperature_change",
+          "asks_which_component",
+          "does_not_name_answer_or_add_characteristic",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Tujuan utamanya and temperature-caused hambatan change retained.",
+        "findings": []
+      },
+      "mfg1-electrical-mock-08-practical-q08": {
+        "entrySha256": "761f15c9d49de6b408ac4046cc27ad31995e9c31473eb74273b1460bf1c5509f",
+        "textSha256": "eaa74377844cbf115f8069a7c60311322d57f75e4f1f40544f3a0874471e9d73",
+        "sourceJaSha256": "81976be3b1ab169b90ba30a7503bafadfaae361bdb484882b98fe9ebc84679d4",
+        "sourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "after_soldering_context",
+          "solder_reaches_neighboring_pad_or_land",
+          "connection_explicitly_not_intended",
+          "asks_which_condition_without_naming_answer",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Neighbor pad and seharusnya tidak dihubungkan qualification retained.",
+        "findings": []
+      }
+    },
+    "zh-CN": {
+      "mfg1-electrical-mock-03-practical-q04": {
+        "entrySha256": "b04740f9e153ec71fd1e0629de1e85f85886aea32c68ffd7d9bb55447c041d25",
+        "textSha256": "20e95127abba74a12aa84a6c77a38df2933d8b16e18aa2912cfb6844be74352e",
+        "sourceJaSha256": "5f4bd1eb9f0f8cf326567e52d24de837db530792b6f924d994fed544778a21a0",
+        "sourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "temperature_detection_is_primary_purpose",
+          "resistance_changes_due_to_temperature_change",
+          "asks_which_component",
+          "does_not_name_answer_or_add_characteristic",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "温度检测为主要目的 and温度引起电阻变化 retained.",
+        "findings": []
+      },
+      "mfg1-electrical-mock-08-practical-q08": {
+        "entrySha256": "bd7a29c580cd655a451935e5b53791d6cec34e3b7ae45eb3794a995c7d78de0b",
+        "textSha256": "a2cc24e2ddfcc189098d6389e2089c718d562947ddca592dd9b48e9afeeccc46",
+        "sourceJaSha256": "81976be3b1ab169b90ba30a7503bafadfaae361bdb484882b98fe9ebc84679d4",
+        "sourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "after_soldering_context",
+          "solder_reaches_neighboring_pad_or_land",
+          "connection_explicitly_not_intended",
+          "asks_which_condition_without_naming_answer",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "焊接后/相邻焊盘/原本不应相连 retained.",
+        "findings": []
+      }
+    },
+    "zh-TW": {
+      "mfg1-electrical-mock-03-practical-q04": {
+        "entrySha256": "a2ec40e51e7bf1662dab1909b3ac80cf45ab9d68248aa42c1f128b0a4352d816",
+        "textSha256": "0507f667a27d0aef203420914bd98130ac02f73d77f8c879cca298bf868b4df4",
+        "sourceJaSha256": "5f4bd1eb9f0f8cf326567e52d24de837db530792b6f924d994fed544778a21a0",
+        "sourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "temperature_detection_is_primary_purpose",
+          "resistance_changes_due_to_temperature_change",
+          "asks_which_component",
+          "does_not_name_answer_or_add_characteristic",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "溫度偵測為主要目的 and溫度引起電阻變化 retained.",
+        "findings": []
+      },
+      "mfg1-electrical-mock-08-practical-q08": {
+        "entrySha256": "6b2c18b50d2cb000947c0cf7fd9529e7f46011ed1fcd71252463e0aff9e40a1c",
+        "textSha256": "32cd679d3e8b4edae188d84169c3b50b511718da811d873dd350da7289ab9737",
+        "sourceJaSha256": "81976be3b1ab169b90ba30a7503bafadfaae361bdb484882b98fe9ebc84679d4",
+        "sourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "after_soldering_context",
+          "solder_reaches_neighboring_pad_or_land",
+          "connection_explicitly_not_intended",
+          "asks_which_condition_without_naming_answer",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "焊接後/相鄰焊墊/原本不應相連 retained.",
+        "findings": []
+      }
+    },
+    "hi": {
+      "mfg1-electrical-mock-03-practical-q04": {
+        "entrySha256": "c6964ac61cbd7b5d079b2699db7b4c45dd548ea5ff5532394980475c7963c048",
+        "textSha256": "dd671acabb71c8640a163cad83c80485acd99bcb27a626bc5cc48565b462548b",
+        "sourceJaSha256": "5f4bd1eb9f0f8cf326567e52d24de837db530792b6f924d994fed544778a21a0",
+        "sourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "temperature_detection_is_primary_purpose",
+          "resistance_changes_due_to_temperature_change",
+          "asks_which_component",
+          "does_not_name_answer_or_add_characteristic",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "मुख्यतः तापमान का पता लगाने purpose and temperature-caused प्रतिरोध change retained.",
+        "findings": []
+      },
+      "mfg1-electrical-mock-08-practical-q08": {
+        "entrySha256": "ccb10f75d534dbe935e6618ed9d39ffb89ac100288e2d08acfe5189cd33f59ed",
+        "textSha256": "c5089413c5caf847a45282cbffd60c148ffd1fa142309cfabb5580836332e6a6",
+        "sourceJaSha256": "81976be3b1ab169b90ba30a7503bafadfaae361bdb484882b98fe9ebc84679d4",
+        "sourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "after_soldering_context",
+          "solder_reaches_neighboring_pad_or_land",
+          "connection_explicitly_not_intended",
+          "asks_which_condition_without_naming_answer",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Post-soldering neighboring land with मूल रूप से नहीं जोड़ा जाना चाहिए qualification retained.",
+        "findings": []
+      }
+    },
+    "bn": {
+      "mfg1-electrical-mock-03-practical-q04": {
+        "entrySha256": "77ebc50556f31b9b46b6317cf865a0804edceeff6c548d123661a8b18759cbca",
+        "textSha256": "3acf4b4e906edb31d76141ccf6a176e9317072a71f2e43e13f141f3c75953556",
+        "sourceJaSha256": "5f4bd1eb9f0f8cf326567e52d24de837db530792b6f924d994fed544778a21a0",
+        "sourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "temperature_detection_is_primary_purpose",
+          "resistance_changes_due_to_temperature_change",
+          "asks_which_component",
+          "does_not_name_answer_or_add_characteristic",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "মূলত তাপমাত্রা শনাক্ত purpose and temperature-caused রোধ change retained.",
+        "findings": []
+      },
+      "mfg1-electrical-mock-08-practical-q08": {
+        "entrySha256": "b5ae7dd3e2cea783b912943f1a45d096f7d1d20bf070cf26930b509b9895a385",
+        "textSha256": "346d569cc1bce5805e27a35b9663fdba6fb027aa09906e7ba6c660182d3317b1",
+        "sourceJaSha256": "81976be3b1ab169b90ba30a7503bafadfaae361bdb484882b98fe9ebc84679d4",
+        "sourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "after_soldering_context",
+          "solder_reaches_neighboring_pad_or_land",
+          "connection_explicitly_not_intended",
+          "asks_which_condition_without_naming_answer",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Post-soldering neighboring land with সংযোগ হওয়ার কথা ছিল না qualification retained.",
+        "findings": []
+      }
+    },
+    "ne": {
+      "mfg1-electrical-mock-03-practical-q04": {
+        "entrySha256": "7ab314a3420159b17221a9faa8fbe455049771e8be67417dfda7c20b31a67aca",
+        "textSha256": "971923bbea36c5e84c526438660cf80e4e1dc1763411ec55226d8cda4585302b",
+        "sourceJaSha256": "5f4bd1eb9f0f8cf326567e52d24de837db530792b6f924d994fed544778a21a0",
+        "sourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "temperature_detection_is_primary_purpose",
+          "resistance_changes_due_to_temperature_change",
+          "asks_which_component",
+          "does_not_name_answer_or_add_characteristic",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "मुख्यतः तापक्रम पत्ता लगाउने purpose and temperature-caused प्रतिरोध change retained.",
+        "findings": []
+      },
+      "mfg1-electrical-mock-08-practical-q08": {
+        "entrySha256": "45047c760c1127ce881f6ee7fe31c48a8457f104c4401ccadad845de91840709",
+        "textSha256": "c3a7b906f5ac74b89ed6087ad3a4200514bd20fd60db8868f806f10adcb998a0",
+        "sourceJaSha256": "81976be3b1ab169b90ba30a7503bafadfaae361bdb484882b98fe9ebc84679d4",
+        "sourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "after_soldering_context",
+          "solder_reaches_neighboring_pad_or_land",
+          "connection_explicitly_not_intended",
+          "asks_which_condition_without_naming_answer",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Post-soldering neighboring land with मूलतः जोडिनुपर्ने थिएन qualification retained.",
+        "findings": []
+      }
+    },
+    "my": {
+      "mfg1-electrical-mock-03-practical-q04": {
+        "entrySha256": "2b10664fa58120539317d12afd4f06dab09539b10251fe75d84a22a7b2ca8641",
+        "textSha256": "57977fb17e583685fbfba1da934e0b2eb6ec7b6e7bed651622da2182fb794098",
+        "sourceJaSha256": "5f4bd1eb9f0f8cf326567e52d24de837db530792b6f924d994fed544778a21a0",
+        "sourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "temperature_detection_is_primary_purpose",
+          "resistance_changes_due_to_temperature_change",
+          "asks_which_component",
+          "does_not_name_answer_or_add_characteristic",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "အဓိကရည်ရွယ်ချက် temperature sensing and temperature-caused လျှပ်စစ်ခုခံမှု change retained.",
+        "findings": []
+      },
+      "mfg1-electrical-mock-08-practical-q08": {
+        "entrySha256": "19fddb63b996165491f204a9c93edfbb56b9a2c141ba5c0d670e1562e5567a8f",
+        "textSha256": "4322f5f1c3598036da3598d9658b2ebea55586de8ae49ceb038f5f9a87b508d0",
+        "sourceJaSha256": "81976be3b1ab169b90ba30a7503bafadfaae361bdb484882b98fe9ebc84679d4",
+        "sourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "after_soldering_context",
+          "solder_reaches_neighboring_pad_or_land",
+          "connection_explicitly_not_intended",
+          "asks_which_condition_without_naming_answer",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Post-soldering nearby land and မူလက ဆက်သွယ်မထားရမည့် unintended qualification retained.",
+        "findings": []
+      }
+    },
+    "th": {
+      "mfg1-electrical-mock-03-practical-q04": {
+        "entrySha256": "f27e43262b9f5a7429a2138683fb5c9dff3e4b1a9b59a47eac498f79dab63cfa",
+        "textSha256": "488960ef685cf36f9f3762e5fc7cecd9ce1c5b1908ab579d2140b4c8a93e1a56",
+        "sourceJaSha256": "5f4bd1eb9f0f8cf326567e52d24de837db530792b6f924d994fed544778a21a0",
+        "sourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "temperature_detection_is_primary_purpose",
+          "resistance_changes_due_to_temperature_change",
+          "asks_which_component",
+          "does_not_name_answer_or_add_characteristic",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "จุดประสงค์หลัก temperature sensing and temperature-caused ความต้านทาน change retained.",
+        "findings": []
+      },
+      "mfg1-electrical-mock-08-practical-q08": {
+        "entrySha256": "6abd8b4ec9b1029811dba46ffe6f2e2fa3c1f102a5c5489e4573a1f3b94e457f",
+        "textSha256": "8ac820620fb39b0844ed36ab3d7a0a442dc63eede0492bb56fceb0222de6254a",
+        "sourceJaSha256": "81976be3b1ab169b90ba30a7503bafadfaae361bdb484882b98fe9ebc84679d4",
+        "sourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "after_soldering_context",
+          "solder_reaches_neighboring_pad_or_land",
+          "connection_explicitly_not_intended",
+          "asks_which_condition_without_naming_answer",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Post-soldering neighboring pad with เดิมไม่ควรเชื่อมถึงกัน qualification retained.",
+        "findings": []
+      }
+    },
+    "km": {
+      "mfg1-electrical-mock-03-practical-q04": {
+        "entrySha256": "114d7962c4243f1da3aa5f299412097884d126be0ec5dcb1f10fb278eb0665bd",
+        "textSha256": "7dc3f3b96453fea51668f75cdc3f35850015b2279a0efd909592d40c5c49bd6c",
+        "sourceJaSha256": "5f4bd1eb9f0f8cf326567e52d24de837db530792b6f924d994fed544778a21a0",
+        "sourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "temperature_detection_is_primary_purpose",
+          "resistance_changes_due_to_temperature_change",
+          "asks_which_component",
+          "does_not_name_answer_or_add_characteristic",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "គោលបំណងចម្បង temperature sensing and temperature-caused resistance change retained.",
+        "findings": []
+      },
+      "mfg1-electrical-mock-08-practical-q08": {
+        "entrySha256": "991877b307f449234ca72193f3230497e005ef5f852c7f358854b62f88db9f5a",
+        "textSha256": "eb6735a542c9b8ef0a455fef7c1d479e08516fb035d49c6217d3ee8f66ffadd5",
+        "sourceJaSha256": "81976be3b1ab169b90ba30a7503bafadfaae361bdb484882b98fe9ebc84679d4",
+        "sourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "after_soldering_context",
+          "solder_reaches_neighboring_pad_or_land",
+          "connection_explicitly_not_intended",
+          "asks_which_condition_without_naming_answer",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Post-soldering adjacent board connection point with original no-connection qualification retained.",
+        "findings": []
+      }
+    },
+    "tl": {
+      "mfg1-electrical-mock-03-practical-q04": {
+        "entrySha256": "f34ebe0a84cdf5294bc403cc8976c34ee111af0d971809938fb3162f40427fc3",
+        "textSha256": "f198dc61a4281e28cd65bda39929d8707ea3d8bcbc4f290d47709e1667837454",
+        "sourceJaSha256": "5f4bd1eb9f0f8cf326567e52d24de837db530792b6f924d994fed544778a21a0",
+        "sourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "temperature_detection_is_primary_purpose",
+          "resistance_changes_due_to_temperature_change",
+          "asks_which_component",
+          "does_not_name_answer_or_add_characteristic",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Pangunahing nilalayong temperature sensing and temperature-caused resistance change retained.",
+        "findings": []
+      },
+      "mfg1-electrical-mock-08-practical-q08": {
+        "entrySha256": "88e899487dba6dc6d9d7786eaf76fd2efb10e266e2f9f9c31b6d63856d135e7b",
+        "textSha256": "03dc292aabdfc92ac6ec51c9cd6051ea1e8a7c16b48c5a90c5a550279ce57c80",
+        "sourceJaSha256": "81976be3b1ab169b90ba30a7503bafadfaae361bdb484882b98fe9ebc84679d4",
+        "sourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+        "comparedDirectlyWithJapanese": true,
+        "checksPassed": [
+          "after_soldering_context",
+          "solder_reaches_neighboring_pad_or_land",
+          "connection_explicitly_not_intended",
+          "asks_which_condition_without_naming_answer",
+          "meaning_matches_complete_Japanese_stem"
+        ],
+        "verdict": "pass_scoped_ai_comparison",
+        "note": "Post-soldering neighboring land with hindi naman dapat konektado qualification retained.",
+        "findings": []
+      }
+    }
+  },
+  "reviewedStemPairs": 24,
+  "reviewedAssertions": 120,
+  "findings": [],
+  "method": "Read each complete translated stem directly against its exact proposal.after.stemJa. Temperature item: primary temperature-sensing purpose, temperature-caused resistance change and component question. Solder item: after-soldering context, neighboring land/pad, expressly unintended connection and condition question. No answer term or extra characteristic introduced. Hashes bind reviewed bytes, not native/domain correctness.",
+  "independentAIComparisonPerformed": true,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "releaseReady": false,
+  "runtimeModified": false,
+  "limitations": [
+    "AI semantic comparison only; no native-language or domain certification.",
+    "No new source-PDF inspection; canonical editorial proposals are the comparison reference.",
+    "No review or modification of existing options/rationales, measured device layout or application state."
+  ]
+}

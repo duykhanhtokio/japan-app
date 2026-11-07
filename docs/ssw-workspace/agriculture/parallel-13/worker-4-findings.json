@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 1,
+  "owner": "agri_4",
+  "status": "read_only_source_bound_recognition_priorities",
+  "requestScope": "Superseding request:6vegetables S1PDF103entries01–06",
+  "pdfVerification": {
+    "path": "/workspace/scratch/018c0b6e29b8/agri12-original-sources/耕種農業全般 特定技能1号.pdf",
+    "sha256": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+    "freshRehash": true,
+    "inventoryMatched": true
+  },
+  "sourceImagesActuallyViewed": [
+    {
+      "documentId": "AGR-S1",
+      "pdfPage": 103,
+      "printedPage": 97,
+      "path": "/workspace/scratch/018c0b6e29b8/agri13-worker4/s1-103.png",
+      "sha256": "1424c24a863a104b778426e75d73ce5d8b7a75526e23a8eaecfce11ebd6279cc",
+      "renderedFromRestoredOriginalThisSession": true,
+      "visualChecked": true
+    },
+    {
+      "documentId": "AGR-S1",
+      "pdfPage": 54,
+      "printedPage": 48,
+      "path": "/workspace/scratch/018c0b6e29b8/agri13-worker4/s1-54.png",
+      "sha256": "1269cc47b737a94a772f9759afda2b4203e76fe49cf0d70b0af14e876c87c129",
+      "renderedFromRestoredOriginalThisSession": true,
+      "visualChecked": true
+    },
+    {
+      "documentId": "AGR-S1",
+      "pdfPage": 55,
+      "printedPage": 49,
+      "path": "/workspace/scratch/018c0b6e29b8/agri13-worker4/s1-55.png",
+      "sha256": "cbc9b6c1c0f9a2fca32ed2a7eb09081f11326427be56aac043f14da7d7322e82",
+      "renderedFromRestoredOriginalThisSession": true,
+      "visualChecked": true
+    },
+    {
+      "documentId": "AGR-S1",
+      "pdfPage": 56,
+      "printedPage": 50,
+      "path": "/workspace/scratch/018c0b6e29b8/agri13-worker4/s1-56.png",
+      "sha256": "ef2d4ae3b66712a031df98e32825256932fd0cf52d62e890b432641064e86c54",
+      "renderedFromRestoredOriginalThisSession": true,
+      "visualChecked": true
+    }
+  ],
+  "assets": [
+    {
+      "priority": 1,
+      "proposedAssetId": "agr-recognition-cabbage",
+      "sourceEntry": 1,
+      "cropNameJa": "キャベツ",
+      "source": {
+        "documentId": "AGR-S1",
+        "pdfPage": 103,
+        "printedPage": 97,
+        "section": "写真一覧—主な野菜と分類",
+        "entry": 1
+      },
+      "directRecognitionObjective": {
+        "id": "AGR-A10-FLOWER-0425",
+        "status": "missing",
+        "kind": "recognition_caption",
+        "scopeLevels": [
+          "1"
+        ],
+        "objectiveJa": "キャベツの新規の識別画像で対象名と観察部位を対応させる。"
+      },
+      "separateUtilizationClassificationObjective": {
+        "id": "AGR-A10-FLOWER-0426",
+        "status": "missing",
+        "kind": "photo_label_classification",
+        "scopeLevels": [
+          "1"
+        ],
+        "objectiveJa": "写真一覧でキャベツが葉菜の利用区分へ置かれる関係を説明する。"
+      },
+      "currentProseBindings": [
+        {
+          "lessonId": "agr-vegwork-leafy",
+          "paragraphId": "agr-vegwork-leafy-p1",
+          "knowledgeIds": [
+            "AGR-K-VEGWORK-LEAFY-01"
+          ],
+          "lessonSourceHash": "26d96561c7d849c21163f237569848e8e965535fc1f720c9506f7a1d13575a93",
+          "levels": [
+            "1",
+            "2"
+          ],
+          "actualProseJa": "キャベツは涼しい気候に適し、移植栽培する野菜として紹介されています。移植の基本手順は既習の育苗・定植へ戻り、ここでは作物名と気候の好みを結び付けます。"
+        },
+        {
+          "lessonId": "agr-par11-riceveg-organ-examples",
+          "paragraphId": "agr-par11-riceveg-organ-examples-p1",
+          "knowledgeIds": [
+            "AGR-K-PAR11-RICEVEG-ORGAN-EXAMPLES-01"
+          ],
+          "lessonSourceHash": "2ed483a37720188907e34b1fec60b6151b206e41c487d10501c1e2e8151a071f",
+          "levels": [
+            "1",
+            "2"
+          ],
+          "actualProseJa": "利用器官の分類表では、ホウレンソウ、ハクサイ、キャベツが葉茎菜類の欄に並んでいます。品目名を見てこの欄へ対応させる練習をします。これは利用する部分に着目した整理であり、三品目が同じ植物の科に属するという意味ではありません。"
+        }
+      ],
+      "morphologyAcceptanceChecklist": [
+        "A compact approximately round green leafy head with overlapping broad leaves.",
+        "Broad visible leaf veins and several surrounding outer leaves; centre forms a head.",
+        "Round silhouette, not the elongated white-ribbed napa head. Keep leaf margins less frilled than the selected lettuce drawing."
+      ],
+      "rejectIf": [
+        "No elongated pale napa cross-section or long white midrib-dominated form.",
+        "Do not substitute a loosely frilled lettuce rosette or broccoli flower cluster."
+      ],
+      "limits": "Choose one ordinary headed cabbage example. The drawing cannot certify cultivar, maturity, firmness, eating quality or all cabbage forms.",
+      "recommendedFormat": "Single original2Dcrop drawing; neutral isolated background; no embedded text; code renders Japanese label/readings and other locales separately.",
+      "courseScope": [
+        "1"
+      ],
+      "classificationNote": "Entries1–4:葉菜類;entries5–6:根菜類 in this source list. Utilization category does not certify botanical family or organ anatomy.",
+      "completionPolicy": "Candidate only. Exact recognition-caption ID may be considered after generated-asset visual/domain review and correct learner-facing label association. Do not close any ID during this read-only planning task. Classification ID needs explicit category/name linkage; bare crop drawing alone does not close it."
+    },
+    {
+      "priority": 2,
+      "proposedAssetId": "agr-recognition-chinese-cabbage",
+      "sourceEntry": 2,
+      "cropNameJa": "ハクサイ",
+      "source": {
+        "documentId": "AGR-S1",
+        "pdfPage": 103,
+        "printedPage": 97,
+        "section": "写真一覧—主な野菜と分類",
+        "entry": 2
+      },
+      "directRecognitionObjective": {
+        "id": "AGR-A10-FLOWER-0428",
+        "status": "missing",
+        "kind": "recognition_caption",
+        "scopeLevels": [
+          "1"
+        ],
+        "objectiveJa": "ハクサイの新規の識別画像で対象名と観察部位を対応させる。"
+      },
+      "separateUtilizationClassificationObjective": {
+        "id": "AGR-A10-FLOWER-0429",
+        "status": "missing",
+        "kind": "photo_label_classification",
+        "scopeLevels": [
+          "1"
+        ],
+        "objectiveJa": "写真一覧でハクサイが葉菜の利用区分へ置かれる関係を説明する。"
+      },
+      "currentProseBindings": [
+        {
+          "lessonId": "agr-vegwork-leafy",
+          "paragraphId": "agr-vegwork-leafy-p2",
+          "knowledgeIds": [
+            "AGR-K-VEGWORK-LEAFY-02"
+          ],
+          "lessonSourceHash": "26d96561c7d849c21163f237569848e8e965535fc1f720c9506f7a1d13575a93",
+          "levels": [
+            "1",
+            "2"
+          ],
+          "actualProseJa": "ハクサイも涼しい条件で育ちます。移植が一般的ですが、地域によって直まきも行います。結球型、半結球型、非結球型があるので、全てが同じ形になると考えないようにしましょう。"
+        },
+        {
+          "lessonId": "agr-par11-riceveg-organ-examples",
+          "paragraphId": "agr-par11-riceveg-organ-examples-p1",
+          "knowledgeIds": [
+            "AGR-K-PAR11-RICEVEG-ORGAN-EXAMPLES-01"
+          ],
+          "lessonSourceHash": "2ed483a37720188907e34b1fec60b6151b206e41c487d10501c1e2e8151a071f",
+          "levels": [
+            "1",
+            "2"
+          ],
+          "actualProseJa": "利用器官の分類表では、ホウレンソウ、ハクサイ、キャベツが葉茎菜類の欄に並んでいます。品目名を見てこの欄へ対応させる練習をします。これは利用する部分に着目した整理であり、三品目が同じ植物の科に属するという意味ではありません。"
+        }
+      ],
+      "morphologyAcceptanceChecklist": [
+        "An elongated oval headed napa cabbage example rather than a round sphere.",
+        "Prominent broad white midribs/petioles with pale yellow-green inner leaves and greener outer leaves.",
+        "Gently crinkled leaf surface; complete single head can be shown without reproducing the source half-head photograph."
+      ],
+      "rejectIf": [
+        "Do not draw a spherical compact cabbage or a loose generic lettuce.",
+        "Do not turn broad white ribs into long leek stems or invent roots as the edible part."
+      ],
+      "limits": "Source prose explicitly includes headed, partly headed and non-heading types. Caption must say this is one headed example, never that all ハクサイ have this shape.",
+      "recommendedFormat": "Single original2Dcrop drawing; neutral isolated background; no embedded text; code renders Japanese label/readings and other locales separately.",
+      "courseScope": [
+        "1"
+      ],
+      "classificationNote": "Entries1–4:葉菜類;entries5–6:根菜類 in this source list. Utilization category does not certify botanical family or organ anatomy.",
+      "completionPolicy": "Candidate only. Exact recognition-caption ID may be considered after generated-asset visual/domain review and correct learner-facing label association. Do not close any ID during this read-only planning task. Classification ID needs explicit category/name linkage; bare crop drawing alone does not close it."
+    },
+    {
+      "priority": 3,
+      "proposedAssetId": "agr-recognition-lettuce",
+      "sourceEntry": 3,
+      "cropNameJa": "レタス",
+      "source": {
+        "documentId": "AGR-S1",
+        "pdfPage": 103,
+        "printedPage": 97,
+        "section": "写真一覧—主な野菜と分類",
+        "entry": 3
+      },
+      "directRecognitionObjective": {
+        "id": "AGR-A10-FLOWER-0431",
+        "status": "missing",
+        "kind": "recognition_caption",
+        "scopeLevels": [
+          "1"
+        ],
+        "objectiveJa": "レタスの新規の識別画像で対象名と観察部位を対応させる。"
+      },
+      "separateUtilizationClassificationObjective": {
+        "id": "AGR-A10-FLOWER-0432",
+        "status": "missing",
+        "kind": "photo_label_classification",
+        "scopeLevels": [
+          "1"
+        ],
+        "objectiveJa": "写真一覧でレタスが葉菜の利用区分へ置かれる関係を説明する。"
+      },
+      "currentProseBindings": [
+        {
+          "lessonId": "agr-vegwork-leafy",
+          "paragraphId": "agr-vegwork-leafy-p3",
+          "knowledgeIds": [
+            "AGR-K-VEGWORK-LEAFY-03"
+          ],
+          "lessonSourceHash": "26d96561c7d849c21163f237569848e8e965535fc1f720c9506f7a1d13575a93",
+          "levels": [
+            "1",
+            "2"
+          ],
+          "actualProseJa": "レタスには球状に巻くものや巻かないものなどがあります。涼しい条件を好み、種子は好光性で、酸性に弱い性質があります。好光性の意味は既習の発芽の内容と照合します。"
+        },
+        {
+          "lessonId": "agr-par11-riceveg-organ-examples",
+          "paragraphId": "agr-par11-riceveg-organ-examples-p2",
+          "knowledgeIds": [
+            "AGR-K-PAR11-RICEVEG-ORGAN-EXAMPLES-02"
+          ],
+          "lessonSourceHash": "2ed483a37720188907e34b1fec60b6151b206e41c487d10501c1e2e8151a071f",
+          "levels": [
+            "1",
+            "2"
+          ],
+          "actualProseJa": "レタスも両資料の葉茎菜類に載っています。キャベツと外見が似ているかどうかだけで分類せず、資料の欄と品目名を照合します。葉茎菜類という欄から、レタスの品種や結球の有無まで一つに決まるわけではありません。"
+        }
+      ],
+      "morphologyAcceptanceChecklist": [
+        "One rounded heading-lettuce example, supported by source photo and prose.",
+        "Bright/light green layered head with visibly undulating or frilled outer leaf margins.",
+        "Lighter base/inner area and tender-looking folds distinguish this selected example from smoother compact cabbage; differences must remain visible at small size."
+      ],
+      "rejectIf": [
+        "Do not duplicate the cabbage silhouette, vein pattern and leaf edges with only a colour swap.",
+        "Do not depict elongated broad white napa ribs or spinach as a lettuce head."
+      ],
+      "limits": "Source explicitly includes heading and non-heading lettuce. No claim that every lettuce forms a head, has this colour or can be identified by one leaf-edge trait. If cabbage/lettuce remain ambiguous at thumbnail scale, regenerate or add another source-bound view instead of claiming acceptance.",
+      "recommendedFormat": "Single original2Dcrop drawing; neutral isolated background; no embedded text; code renders Japanese label/readings and other locales separately.",
+      "courseScope": [
+        "1"
+      ],
+      "classificationNote": "Entries1–4:葉菜類;entries5–6:根菜類 in this source list. Utilization category does not certify botanical family or organ anatomy.",
+      "completionPolicy": "Candidate only. Exact recognition-caption ID may be considered after generated-asset visual/domain review and correct learner-facing label association. Do not close any ID during this read-only planning task. Classification ID needs explicit category/name linkage; bare crop drawing alone does not close it."
+    },
+    {
+      "priority": 4,
+      "proposedAssetId": "agr-recognition-spinach",
+      "sourceEntry": 4,
+      "cropNameJa": "ホウレンソウ",
+      "source": {
+        "documentId": "AGR-S1",
+        "pdfPage": 103,
+        "printedPage": 97,
+        "section": "写真一覧—主な野菜と分類",
+        "entry": 4
+      },
+      "directRecognitionObjective": {
+        "id": "AGR-A10-FLOWER-0434",
+        "status": "missing",
+        "kind": "recognition_caption",
+        "scopeLevels": [
+          "1"
+        ],
+        "objectiveJa": "ホウレンソウの新規の識別画像で対象名と観察部位を対応させる。"
+      },
+      "separateUtilizationClassificationObjective": {
+        "id": "AGR-A10-FLOWER-0435",
+        "status": "missing",
+        "kind": "photo_label_classification",
+        "scopeLevels": [
+          "1"
+        ],
+        "objectiveJa": "写真一覧でホウレンソウが葉菜の利用区分へ置かれる関係を説明する。"
+      },
+      "currentProseBindings": [
+        {
+          "lessonId": "agr-vegwork-leafy",
+          "paragraphId": "agr-vegwork-leafy-p5",
+          "knowledgeIds": [
+            "AGR-K-VEGWORK-LEAFY-05"
+          ],
+          "lessonSourceHash": "26d96561c7d849c21163f237569848e8e965535fc1f720c9506f7a1d13575a93",
+          "levels": [
+            "1",
+            "2"
+          ],
+          "actualProseJa": "ホウレンソウは直まきが普通ですが、移植する例もあります。資料の収穫例は播種後一か月半から二か月、草丈約二十五センチメートルです。実際の日数や大きさを、全品種・全条件に共通の保証にはしません。"
+        },
+        {
+          "lessonId": "agr-par11-riceveg-organ-examples",
+          "paragraphId": "agr-par11-riceveg-organ-examples-p1",
+          "knowledgeIds": [
+            "AGR-K-PAR11-RICEVEG-ORGAN-EXAMPLES-01"
+          ],
+          "lessonSourceHash": "2ed483a37720188907e34b1fec60b6151b206e41c487d10501c1e2e8151a071f",
+          "levels": [
+            "1",
+            "2"
+          ],
+          "actualProseJa": "利用器官の分類表では、ホウレンソウ、ハクサイ、キャベツが葉茎菜類の欄に並んでいます。品目名を見てこの欄へ対応させる練習をします。これは利用する部分に着目した整理であり、三品目が同じ植物の科に属するという意味ではありません。"
+        }
+      ],
+      "morphologyAcceptanceChecklist": [
+        "A small single spinach plant or gathered plant unit with separate green leaf blades and visible elongated petioles.",
+        "Elongated oval to pointed leaves, with modest basal lobes where visible, rather than a closed spherical head.",
+        "Leaves arise from a compact basal region; keep a recognisable petiole-to-blade distinction. Source illustration supports an isolated bunch rather than copying the dense field photograph."
+      ],
+      "rejectIf": [
+        "No closed cabbage/lettuce head.",
+        "No grass-like narrow blades, bulbous onion base or broccoli florets.",
+        "No disease spots or wilt diagnosis, and no taxonomy printed into the drawing."
+      ],
+      "limits": "Leaf outline varies by cultivar. Use a representative source-consistent spinach example; not species diagnosis from arbitrary leaves. Keep アカザ科/ヒユ科 source-taxonomy issue unresolved.",
+      "recommendedFormat": "Single original2Dcrop drawing; neutral isolated background; no embedded text; code renders Japanese label/readings and other locales separately.",
+      "courseScope": [
+        "1"
+      ],
+      "classificationNote": "Entries1–4:葉菜類;entries5–6:根菜類 in this source list. Utilization category does not certify botanical family or organ anatomy.",
+      "completionPolicy": "Candidate only. Exact recognition-caption ID may be considered after generated-asset visual/domain review and correct learner-facing label association. Do not close any ID during this read-only planning task. Classification ID needs explicit category/name linkage; bare crop drawing alone does not close it."
+    },
+    {
+      "priority": 5,
+      "proposedAssetId": "agr-recognition-onion",
+      "sourceEntry": 5,
+      "cropNameJa": "タマネギ",
+      "source": {
+        "documentId": "AGR-S1",
+        "pdfPage": 103,
+        "printedPage": 97,
+        "section": "写真一覧—主な野菜と分類",
+        "entry": 5
+      },
+      "directRecognitionObjective": {
+        "id": "AGR-A10-FLOWER-0437",
+        "status": "missing",
+        "kind": "recognition_caption",
+        "scopeLevels": [
+          "1"
+        ],
+        "objectiveJa": "タマネギの新規の識別画像で対象名と観察部位を対応させる。"
+      },
+      "separateUtilizationClassificationObjective": {
+        "id": "AGR-A10-FLOWER-0438",
+        "status": "missing",
+        "kind": "photo_label_classification",
+        "scopeLevels": [
+          "1"
+        ],
+        "objectiveJa": "写真一覧でタマネギが根菜の利用区分へ置かれる関係を説明する。"
+      },
+      "currentProseBindings": [
+        {
+          "lessonId": "agr-vegwork-leafy",
+          "paragraphId": "agr-vegwork-leafy-p6",
+          "knowledgeIds": [
+            "AGR-K-VEGWORK-LEAFY-06"
+          ],
+          "lessonSourceHash": "26d96561c7d849c21163f237569848e8e965535fc1f720c9506f7a1d13575a93",
+          "levels": [
+            "1",
+            "2"
+          ],
+          "actualProseJa": "タマネギの食用部分である丸い玉は、葉と茎が重なった部分です。地下にある丸い形だけを理由に全てを根と決めつけず、器官の説明と利用部位の分類を合わせて確認します。"
+        }
+      ],
+      "morphologyAcceptanceChecklist": [
+        "A single rounded bulb with golden/brown papery outer skin.",
+        "A narrow dry neck at the top and small fine fibrous roots at the basal plate.",
+        "Bulb is visibly the dominant edible structure; avoid presenting it as an enlarged taproot. An original single bulb differs from the source multi-bulb photograph."
+      ],
+      "rejectIf": [
+        "No white tapered daikon root, garlic cloves or potato eyes.",
+        "No family-name label and no implication that root-crop category means the bulb itself is a root."
+      ],
+      "limits": "One brown-storage-onion example only; not a statement that all onions have brown skin or this shape. Existing prose says the edible ball comprises overlapping leaf/stem parts. Leave ユリ科/ヒガンバナ科 source-label issue held.",
+      "recommendedFormat": "Single original2Dcrop drawing; neutral isolated background; no embedded text; code renders Japanese label/readings and other locales separately.",
+      "courseScope": [
+        "1"
+      ],
+      "classificationNote": "Entries1–4:葉菜類;entries5–6:根菜類 in this source list. Utilization category does not certify botanical family or organ anatomy.",
+      "completionPolicy": "Candidate only. Exact recognition-caption ID may be considered after generated-asset visual/domain review and correct learner-facing label association. Do not close any ID during this read-only planning task. Classification ID needs explicit category/name linkage; bare crop drawing alone does not close it."
+    },
+    {
+      "priority": 6,
+      "proposedAssetId": "agr-recognition-daikon",
+      "sourceEntry": 6,
+      "cropNameJa": "ダイコン",
+      "source": {
+        "documentId": "AGR-S1",
+        "pdfPage": 103,
+        "printedPage": 97,
+        "section": "写真一覧—主な野菜と分類",
+        "entry": 6
+      },
+      "directRecognitionObjective": {
+        "id": "AGR-A10-FLOWER-0440",
+        "status": "missing",
+        "kind": "recognition_caption",
+        "scopeLevels": [
+          "1"
+        ],
+        "objectiveJa": "ダイコンの新規の識別画像で対象名と観察部位を対応させる。"
+      },
+      "separateUtilizationClassificationObjective": {
+        "id": "AGR-A10-FLOWER-0441",
+        "status": "missing",
+        "kind": "photo_label_classification",
+        "scopeLevels": [
+          "1"
+        ],
+        "objectiveJa": "写真一覧でダイコンが根菜の利用区分へ置かれる関係を説明する。"
+      },
+      "currentProseBindings": [
+        {
+          "lessonId": "agr-vegwork-rootvegetables",
+          "paragraphId": "agr-vegwork-rootvegetables-p1",
+          "knowledgeIds": [
+            "AGR-K-VEGWORK-ROOTVEGETABLES-01"
+          ],
+          "lessonSourceHash": "839249e06bc74a1a6c676190e0ac95ada4ee5611d949687850e20dabf7f00ecd",
+          "levels": [
+            "1",
+            "2"
+          ],
+          "actualProseJa": "ダイコンは秋から冬の栽培に加え、春や夏にも生産され、年間を通じて栽培されています。全国の一つの畑で、同じ日程を必ず使えるという意味ではありません。"
+        },
+        {
+          "lessonId": "agr-vegwork-rootvegetables",
+          "paragraphId": "agr-vegwork-rootvegetables-p3",
+          "knowledgeIds": [
+            "AGR-K-VEGWORK-ROOTVEGETABLES-03"
+          ],
+          "lessonSourceHash": "839249e06bc74a1a6c676190e0ac95ada4ee5611d949687850e20dabf7f00ecd",
+          "levels": [
+            "1",
+            "2"
+          ],
+          "actualProseJa": "ダイコンは直まきする作物で、低温が続くと花芽分化することが説明されています。発芽に必要な温度と、その後の花芽形成への温度の影響は別の観察項目です。"
+        },
+        {
+          "lessonId": "agr-par11-riceveg-organ-examples",
+          "paragraphId": "agr-par11-riceveg-organ-examples-p4",
+          "knowledgeIds": [
+            "AGR-K-PAR11-RICEVEG-ORGAN-EXAMPLES-04"
+          ],
+          "lessonSourceHash": "2ed483a37720188907e34b1fec60b6151b206e41c487d10501c1e2e8151a071f",
+          "levels": [
+            "1",
+            "2"
+          ],
+          "actualProseJa": "ダイコンとニンジンは根菜類の例で、ハスも同じ欄にあります。ハスの図にはレンコンの表示があります。根菜類は根だけに限定した呼び名ではなく、資料が根や地下茎を利用するものをまとめた区分です。この分類だけで個々の器官の構造を同一視しません。"
+        }
+      ],
+      "morphologyAcceptanceChecklist": [
+        "A single long thick white storage root narrowing toward a pointed lower tip.",
+        "Green leaf crown at the thick upper end, with several lobed leaves; upper shoulder can be pale green if kept secondary to white root.",
+        "Clearly elongated silhouette and visible narrowing, unlike the round onion bulb. Use an original orientation, not the source bundle composition."
+      ],
+      "rejectIf": [
+        "No orange carrot, round onion bulb or brown burdock root.",
+        "No cut face or invented internal anatomy needed for this simple recognition task."
+      ],
+      "limits": "One common long white daikon example; not all cultivar shapes/colours. No maturity, safety, size, yield, climate or disease inference from the drawing.",
+      "recommendedFormat": "Single original2Dcrop drawing; neutral isolated background; no embedded text; code renders Japanese label/readings and other locales separately.",
+      "courseScope": [
+        "1"
+      ],
+      "classificationNote": "Entries1–4:葉菜類;entries5–6:根菜類 in this source list. Utilization category does not certify botanical family or organ anatomy.",
+      "completionPolicy": "Candidate only. Exact recognition-caption ID may be considered after generated-asset visual/domain review and correct learner-facing label association. Do not close any ID during this read-only planning task. Classification ID needs explicit category/name linkage; bare crop drawing alone does not close it."
+    }
+  ],
+  "heldObjectives": [
+    {
+      "sourceItemId": "AGR-A10-FLOWER-0436",
+      "holdIds": [
+        "AGR-H-A10-PHOTO-TAXONOMY"
+      ],
+      "status": "unchanged",
+      "reason": "Source103labels spinachアカザ科; other source usesヒユ科. Draw crop only, do not resolve taxonomy."
+    },
+    {
+      "sourceItemId": "AGR-A10-FLOWER-0439",
+      "holdIds": [
+        "AGR-H-A10-PHOTO-TAXONOMY"
+      ],
+      "status": "unchanged",
+      "reason": "Source103labels onionユリ科 while main table54hasヒガンバナ科. No family caption or hold closure."
+    }
+  ],
+  "crossAssetAcceptance": [
+    "All6must remain distinguishable at actual learner thumbnail size, especially cabbage versus heading lettuce.",
+    "Same crop scale is illustrative, not a measured size comparison.",
+    "One source-consistent example per crop; captions should not universalise the selected cultivar form.",
+    "Do not copy photo circular masks, arrangement, backgrounds, crop bundles, cut-half composition or source-table layout.",
+    "No source photos, source-page crops or traced source contours distributed as original art.",
+    "No disease/quality/safety diagnosis, no labels baked into pixels and no taxonomy labels in this tranche."
+  ],
+  "remainingLimits": [
+    "Planning only:0images generated,0recognition items resolved,0new lessons/questions authored.",
+    "New2Ddrawings do not certify reading the original source photographs or recognising all real-world cultivars. Photo-specific audit items elsewhere remain open unless independently tested.",
+    "Existing shared1/2prose bindings are real, but these selected source103recognition objectives have level1scope; do not infer additional level2closure."
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false
+}

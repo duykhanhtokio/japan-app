@@ -1,0 +1,1272 @@
+{
+  "reviewer": "independent AI integration_audit",
+  "reviewDate": "2026-10-26 Asia/Tokyo",
+  "scope": {
+    "JapaneseLessons": 24,
+    "targetLocales": [
+      "en",
+      "vi"
+    ],
+    "lessonTranslationPairs": 48,
+    "uniqueJapaneseQuestions": 36,
+    "questionTranslationPairs": 72,
+    "allTranslatableNormalizedFieldsChecked": true
+  },
+  "method": [
+    "Read normalized Japanese against both target languages for titles, objectives, every paragraph title and text, examples, formulae, terms, activities, safety notes and summaries.",
+    "Read all36 stems,144 options and144 option rationales in Japanese against EN and VI; checked preservation of correct-option meaning.",
+    "Programmatically checked all IDs, sourceHash bindings, paragraph IDs, list lengths, nonempty translated fields and truthful draft metadata.",
+    "Checked Japanese-script leakage outside retained vocabulary headwords/readings.",
+    "Manually checked negation, task-specific glove prohibition, current/voltage connections, de-energized resistance measurement, residual energy, pH inverse relationship, coating/anodizing electrode roles, illustrative-only ranges, averaging/outliers and numeric units."
+  ],
+  "counts": {
+    "lessonScalarFields": 192,
+    "lessonParagraphPairs": 152,
+    "lessonParagraphFields": 304,
+    "termMeaningFields": 192,
+    "safetyFields": 80,
+    "questionStemFields": 72,
+    "questionOptionFields": 288,
+    "questionRationaleFields": 288
+  },
+  "resolvedIssues": [
+    {
+      "id": "TQA-001",
+      "severity": "minor_localization",
+      "scope": "all mechanical target activity fields",
+      "problem": "Japanese duration suffix 分 retained in target activity strings",
+      "resolution": "Root replaced with min for EN and phút for VI; verified no 分 remains."
+    },
+    {
+      "id": "TQA-002",
+      "severity": "instruction_omission",
+      "scope": "electrical-l001 EN activity",
+      "problem": "Japanese source asks to write two sentences in Japanese; target omitted language requirement.",
+      "resolution": "Root added in Japanese; verified EN and existing VI contain explicit Japanese requirement."
+    },
+    {
+      "id": "TQA-003",
+      "severity": "terminology_precision",
+      "scope": "surface-lesson002 VI section2",
+      "problem": "点検 translated as kiểm định, implying formal verification instead of inspection.",
+      "resolution": "Root changed to kiểm tra tình trạng thiết bị; verified kiểm định absent."
+    },
+    {
+      "id": "TQA-004",
+      "severity": "terminology_consistency",
+      "scope": "mechanical-formative004 VI options3",
+      "problem": "清掃 rendered Sạch sẽ, normally used for 清潔.",
+      "resolution": "Root changed to Vệ sinh (làm sạch); verified option and preserved correctIndex."
+    }
+  ],
+  "numericSpotChecks": [
+    {
+      "topic": "caliper",
+      "values": "22+0.35=22.35 mm;16+0.20=16.20 mm;18+0.45=18.45 mm",
+      "result": "preserved"
+    },
+    {
+      "topic": "micrometer",
+      "values": "6.5+24x0.01=6.74mm;9.31 vs9.81;4.5+0.18=4.68mm",
+      "result": "preserved"
+    },
+    {
+      "topic": "Ohm law",
+      "values": "2.0kΩ=2000Ω;12/2000=0.006A=6mA;12/60=0.2A",
+      "result": "preserved"
+    },
+    {
+      "topic": "oscilloscope",
+      "values": "2ms/divx5=10ms=0.010s→100Hz;0.5ms/divx4=2ms→500Hz;peak-to-peak4V vs amplitude2V only symmetric zero-centered",
+      "result": "preserved"
+    },
+    {
+      "topic": "pH",
+      "values": "decrease1→hydrogen concentration approximately10x; hypothetical4.6–5.0;4.3outside",
+      "result": "preserved;VI localized decimal commas allowed"
+    },
+    {
+      "topic": "current density",
+      "values": "7.2A/2.4dm²=3.0A/dm²;7.2/4.8=1.5;100cm²=1dm²;12/3=4A/dm²",
+      "result": "preserved;VI decimal commas allowed"
+    },
+    {
+      "topic": "film thickness",
+      "values": "7,10,13μm mean10 but2outliers;8,12,16μm mean12 against9–15 each point means2outliers",
+      "result": "preserved;individual acceptance condition retained"
+    }
+  ],
+  "unresolvedTranslationIssues": [],
+  "status": "independent_ai_review_pass_for_present_EN_VI_drafts",
+  "nativeReviewed": false,
+  "domainExpertReviewed": false,
+  "releaseCertified": false,
+  "remainingOutsideScope": [
+    "Other10 target locales have UI labels only; lesson/question translations not claimed complete.",
+    "This review compares translations with Japanese; it does not certify full Japanese source coverage, physical source graphics, official exam simulation, or learner-measured duration.",
+    "Runtime screenshot/device review and published-release authorization are separate."
+  ],
+  "units": [
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-008",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l001",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l002",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l003",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l004",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l005",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l006",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l007",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l008",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-001",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-002",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-003",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-004",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-005",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-006",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-007",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-008",
+      "locale": "en",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-001",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-002",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-003",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-004",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-005",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-006",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-007",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-008",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-009",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-010",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-011",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-012",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-001",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-002",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-003",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-004",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-005",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-006",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-007",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-008",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-009",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-010",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-011",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-012",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-001",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-002",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-003",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-004",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-005",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-006",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-007",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-008",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-009",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-010",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-011",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-012",
+      "locale": "en",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-001",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-002",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-003",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-004",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-005",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-006",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-007",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-lesson-008",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l001",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l002",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l003",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l004",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l005",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l006",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l007",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-l008",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-001",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-002",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-003",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-004",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-005",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-006",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-007",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-lesson-008",
+      "locale": "vi",
+      "kind": "lesson",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-001",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-002",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-003",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-004",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-005",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-006",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-007",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-008",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-009",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-010",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-011",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-mechanical-formative-012",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-001",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-002",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-003",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-004",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-005",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-006",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-007",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-008",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-009",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-010",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-011",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-electrical-formative-012",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-001",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-002",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-003",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-004",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-005",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-006",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-007",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-008",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-009",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-010",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-011",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    },
+    {
+      "id": "mfg1-surface-formative-012",
+      "locale": "vi",
+      "kind": "question",
+      "structuralFields": "passed",
+      "semanticComparison": "ai_compared_against_Japanese",
+      "correctOptionMeaningPreserved": true,
+      "nativeCertified": false,
+      "domainCertified": false
+    }
+  ],
+  "fileSha256": {
+    "mechanical.json": "efedf22dd35205715ed932374552c154a3ae058be41e435848a4e6eee4f3f23a",
+    "electrical.json": "dbde09d515800513250b8e9584865d66f9d21fdb5f4e03aafa0938b49816840d",
+    "surface.json": "995b7510d3b2edf5661410b3152b6d2be5c2269527ea0f576f264a303e41059f",
+    "translations/en.json": "4cbab41ccc050e799988e085f4047f69cb48d5fa0f7d2755155de5884f5ec38b",
+    "translations/vi.json": "8a2981c04798bed07062e8890f7d795a97bcd93d4a7869632a4435b658f326b4",
+    "translations/questions.en.json": "e309315f8882c1cff80ceb63906dfec0c3a9e9aa329eea003dd784a6dc43ded0",
+    "translations/questions.vi.json": "87c4ce5404589b136ca41302c384381dc9ab1418ec1d00ab9f9c892ccce85fb5"
+  }
+}

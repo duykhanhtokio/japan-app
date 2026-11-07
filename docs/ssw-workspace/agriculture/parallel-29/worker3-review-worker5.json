@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "worker3",
+  "author": "worker5",
+  "status": "independent_ai_review_not_domain_or_native_certification",
+  "baseCommit": "4b8bac004a96e52db2ce63a69745e2e83fefa472",
+  "inputPacketSha256": "a5f433fdbd3e438a08304a9a910854d7d159245a3023749c8ed2e486f4bd8864",
+  "scope": "All9questions and all4options/reasons read against canonical full source paragraphs. Compared relevant532bank questions, deferredP28refs and all currentP29 objective operations; no cross-packet exact objective collision found for these9.",
+  "globalSemanticExhaustiveCertified": false,
+  "checks": {
+    "canonicalSourceBindings": true,
+    "scopeLevel2": true,
+    "questionCount": 9,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "freshOriginalPdfInspection": false
+  },
+  "reviews": [
+    {
+      "questionId": "p29-w5-q01",
+      "objectiveId": "AGR-ASSESS-P29-W5-01",
+      "decision": "accept",
+      "reasonJa": "既存q16は圃場内で種を落とす前の刈取り。外からの種子流入を防ぐ経路を追加する能力は異なり、本文p1に一致。",
+      "canonicalBindingVerified": true,
+      "singleAnswerVerifiedAgainstCanonicalProse": true,
+      "allFourOptionsAndReasonsCompared": true,
+      "correctIndex": 0,
+      "relatedQuestionIds": [
+        "agr-cm-weekly-q16"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "p29-w5-q02",
+      "objectiveId": "AGR-ASSESS-P29-W5-02",
+      "decision": "revise",
+      "reasonJa": "既存q14は中耕と培土の位置。候補は作物がないという耕うん例の適用条件であり、既存誤答の条件を正答へ転用する近接はあるが、適用場面を明示する別能力として保持。正答理由の内部IDだけ除く。",
+      "canonicalBindingVerified": true,
+      "singleAnswerVerifiedAgainstCanonicalProse": true,
+      "allFourOptionsAndReasonsCompared": true,
+      "correctIndex": 1,
+      "relatedQuestionIds": [
+        "agr-cm-weekly-q14"
+      ],
+      "patches": [
+        {
+          "field": "optionReasonsJa",
+          "before": [
+            "作業名を書き替えたことは、本文の作物がないという条件を確認したことになりません。",
+            "本文agr-pest-weeds-p5の作物がない畑という適用場面を保った確認です。",
+            "雑草の量を理由に、掲載例の作物がない畑という条件を取り除いています。",
+            "草丈だけへ判断を狭めると、本文が残す作物の有無という条件が失われます。"
+          ],
+          "after": [
+            "作業名を書き替えたことは、本文の作物がないという条件を確認したことになりません。",
+            "本文の「作物がない畑」という適用場面を保った確認です。",
+            "雑草の量を理由に、掲載例の作物がない畑という条件を取り除いています。",
+            "草丈だけへ判断を狭めると、本文が残す作物の有無という条件が失われます。"
+          ],
+          "reasonJa": "学習者向け説明から内部paragraphIDを除き、確認すべき条件を自然な文で残す。"
+        }
+      ]
+    },
+    {
+      "questionId": "p29-w5-q03",
+      "objectiveId": "AGR-ASSESS-P29-W5-03",
+      "decision": "accept",
+      "reasonJa": "無効分げつがあるため茎数と穂数を同一視しないという本文p2の関係が一意。単なる分げつ定義の再問ではない。",
+      "canonicalBindingVerified": true,
+      "singleAnswerVerifiedAgainstCanonicalProse": true,
+      "allFourOptionsAndReasonsCompared": true,
+      "correctIndex": 1,
+      "relatedQuestionIds": [
+        "agr-ricework-weekly-q09"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "p29-w5-q04",
+      "objectiveId": "AGR-ASSESS-P29-W5-04",
+      "decision": "accept",
+      "reasonJa": "穂が外へ出る前に葉鞘が膨らむ観察と穂ばらみ期の対応が本文p4に明記。出穂そのものの定義を再問しない。",
+      "canonicalBindingVerified": true,
+      "singleAnswerVerifiedAgainstCanonicalProse": true,
+      "allFourOptionsAndReasonsCompared": true,
+      "correctIndex": 2,
+      "relatedQuestionIds": [
+        "agr-ricework-weekly-q09",
+        "agr-shared-w02-q09"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "p29-w5-q05",
+      "objectiveId": "AGR-ASSESS-P29-W5-05",
+      "decision": "accept",
+      "reasonJa": "単独の出穂と有効茎の約半数というほ場段階の母数・割合を区別する。本文p5に明記され、分げつや単一穂の観察とは異なる。",
+      "canonicalBindingVerified": true,
+      "singleAnswerVerifiedAgainstCanonicalProse": true,
+      "allFourOptionsAndReasonsCompared": true,
+      "correctIndex": 0,
+      "relatedQuestionIds": [
+        "agr-ricework-weekly-q09"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "p29-w5-q06",
+      "objectiveId": "AGR-ASSESS-P29-W5-06",
+      "decision": "accept",
+      "reasonJa": "穀粒の硬さと胚乳全体の透明化という成熟時の観察。胚乳の貯蔵機能や乾燥後含水率と異なり、本文p6が正答を支持。",
+      "canonicalBindingVerified": true,
+      "singleAnswerVerifiedAgainstCanonicalProse": true,
+      "allFourOptionsAndReasonsCompared": true,
+      "correctIndex": 3,
+      "relatedQuestionIds": [
+        "agr-ricework-weekly-q01",
+        "agr-ricework-weekly-q11"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "p29-w5-q07",
+      "objectiveId": "AGR-ASSESS-P29-W5-07",
+      "decision": "accept",
+      "reasonJa": "種イモを直接植える作物と、伸びた茎から苗を作る作物の材料形状を比較する。既存の科・器官分類を名称だけ変更した問題ではない。",
+      "canonicalBindingVerified": true,
+      "singleAnswerVerifiedAgainstCanonicalProse": true,
+      "allFourOptionsAndReasonsCompared": true,
+      "correctIndex": 1,
+      "relatedQuestionIds": [
+        "agr-vegwork-weekly-q04",
+        "agr-vegwork-weekly-q12"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "p29-w5-q08",
+      "objectiveId": "AGR-ASSESS-P29-W5-08",
+      "decision": "accept",
+      "reasonJa": "本文p6に食用・販売へ回さない注意と処理法を決めない限界が明記される。調理方法や安全量を創作せず、新規の安全上の出荷除外判断。",
+      "canonicalBindingVerified": true,
+      "singleAnswerVerifiedAgainstCanonicalProse": true,
+      "allFourOptionsAndReasonsCompared": true,
+      "correctIndex": 2,
+      "relatedQuestionIds": [
+        "agr-vegwork-weekly-q04"
+      ],
+      "patches": []
+    },
+    {
+      "questionId": "p29-w5-q09",
+      "objectiveId": "AGR-ASSESS-P29-W5-09",
+      "decision": "accept",
+      "reasonJa": "既存直根性問は移植時の根への影響。本候補は短い栽培期間という異なる理由を取り出し、本文p4/p5の二経路を区別する。",
+      "canonicalBindingVerified": true,
+      "singleAnswerVerifiedAgainstCanonicalProse": true,
+      "allFourOptionsAndReasonsCompared": true,
+      "correctIndex": 3,
+      "relatedQuestionIds": [
+        "agr-2-w03-q11"
+      ],
+      "patches": []
+    }
+  ],
+  "summary": {
+    "accept": 8,
+    "revise": 1,
+    "exclude": 0
+  },
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false
+}

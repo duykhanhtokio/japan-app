@@ -1,0 +1,1840 @@
+{
+  "schemaVersion": 1,
+  "status": "integrated_checks_passed",
+  "workers": [
+    {
+      "worker": "facility-structure",
+      "packetSha256": "5fc2e2f5bf9c3ce39f2f60e78cd87ad9d7a66efc55e92d752e0a9f1fc194190e",
+      "integratedPayloadSha256": "a18805fa6ec5d55fa84b5c16709efcb6a0a6825fb230c8346212e22e9f070f60",
+      "independentReview": "parallel-06/review-facility-structure.json",
+      "newLessonIds": [
+        "agr-facility-structure-vegetables",
+        "agr-facility-structure-strawberry",
+        "agr-facility-structure-flower-calendar",
+        "agr-facility-structure-flower-forms",
+        "agr-facility-structure-house-types",
+        "agr-facility-structure-roof-types",
+        "agr-facility-structure-outer-covers",
+        "agr-facility-structure-inner-covers",
+        "agr-facility-structure-heating",
+        "agr-facility-structure-cover-functions-2"
+      ],
+      "knowledgeUnits": 60,
+      "weeklyQuestions": 16,
+      "appliedPatches": [
+        {
+          "targetType": "paragraph",
+          "targetId": "agr-facility-structure-outer-covers-p3",
+          "field": "textJa",
+          "before": "農ビは光を通しやすく、熱を保ちやすい資材です。一方で重さがあり、べたつきや汚れの付きやすさ、裂けやすさにも注意が必要です。長所と扱うときの弱点を組にして覚えます。",
+          "after": "農ビは光を通しやすく、熱を保ちやすい資材です。一方で重さがあり、べたつきや汚れの付きやすさ、裂けやすさにも注意が必要です。1号資料には、燃やすと有毒ガスが発生するとの警告もあります。長所だけでなくこの危険性も確認し、焼却を自己判断で処分方法にしないようにします。",
+          "reason": "AGR-S1 PDF67 printed61 explicitly warns that burning農ビ generates toxic gas. Retain that source safety warning; the hold on current disposal law/procedures does not justify dropping the hazard. This adds no burning/disposal operating steps.",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 67,
+              "printedPage": 61
+            }
+          ]
+        }
+      ],
+      "holds": [
+        {
+          "id": "AGR-H-FACILITY-STRUCTURE-TOMATO-TEMPERATURE",
+          "topic": "トマトの温度の記述",
+          "reason": "1号はやや高めの温度と低温でも育つとの概説。2号は昼夜平均25度以上を苦手とし急冷にも弱いと記す。異なる条件を共通の適温・安全閾値へまとめず、温度の具体値を共有本文・答えにしない。",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 63,
+              "printedPage": 57
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 82,
+              "printedPage": 80
+            }
+          ],
+          "blocks": "unified numeric tomato temperature rule"
+        },
+        {
+          "id": "AGR-H-FACILITY-STRUCTURE-PVC-YEARS",
+          "topic": "農ビの張替え年数",
+          "reason": "1号は1～2年、2号は通常1～3年。製品・環境条件を検証せず単一の交換年数を正解にしない。農PO系のタイプ別期間や硬質材の耐久性も個別製品の保証にしない。",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 67,
+              "printedPage": 61
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 87,
+              "printedPage": 85
+            }
+          ],
+          "blocks": "universal replacement-year answer"
+        },
+        {
+          "id": "AGR-H-FACILITY-STRUCTURE-CHEMICAL-LABELS",
+          "topic": "2号の資材名・略号の不整合",
+          "reason": "画像でもPC板の長い名称、PVAとEVA、ETEF等の記載を確認。略号・化学正式名称を同定する教材は未確定のため作らない。機能の説明は農酢ビ・PC板など資料の短い名称で区別する。",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 87,
+              "printedPage": 85
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 88,
+              "printedPage": 86
+            }
+          ],
+          "blocks": "chemical abbreviation identification questions only"
+        },
+        {
+          "id": "AGR-H-FACILITY-STRUCTURE-CUCUMBER-TERM",
+          "topic": "キュウリの受粉しない結実の名称",
+          "reason": "1号は単為結果性、2号は同じ機構の説明に単為受精という語を添える。共有本文では受粉・受精せず果実が育つ性質そのものを説明し、2号の語を正しい定義として教えない。",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 63,
+              "printedPage": 57
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 83,
+              "printedPage": 81
+            }
+          ],
+          "blocks": "source2 disputed label as answer"
+        },
+        {
+          "id": "AGR-H-FACILITY-STRUCTURE-EUSTOMA-TEMP",
+          "topic": "トルコギキョウのロゼット化の温度条件",
+          "reason": "2号に育苗期の低温遭遇との記述がある。栽培生理と照合していないため、低温を一般原因とする学習や問題を作らず、該当条件の検証を残す。",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 84,
+              "printedPage": 82
+            }
+          ],
+          "blocks": "unverified rosetting temperature instruction"
+        },
+        {
+          "id": "AGR-H-FACILITY-STRUCTURE-FLOWER-SHARES",
+          "topic": "花きの順位・比率・近年という表現",
+          "reason": "1号カーネーションのスプレー約70%、2号の生産額順位・輸入・消費の推移には基準年が十分示されないものがある。現在の割合・順位として教えず、年次の検証が必要。",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 64,
+              "printedPage": 58
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 65,
+              "printedPage": 59
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 83,
+              "printedPage": 81
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 84,
+              "printedPage": 82
+            }
+          ],
+          "blocks": "undated current market/statistical claims"
+        },
+        {
+          "id": "AGR-H-FACILITY-STRUCTURE-BURNING",
+          "topic": "資材の焼却・廃棄",
+          "reason": "1号農ビの燃焼で有毒ガスとの注意は確認済み。廃棄処理方法や適法性を検証していないため、燃やして処分する手順は作らない。",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 67,
+              "printedPage": 61
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 87,
+              "printedPage": 85
+            }
+          ],
+          "blocks": "material burning/disposal operating instructions"
+        },
+        {
+          "id": "AGR-H-FACILITY-STRUCTURE-SOURCE2-DETAILS-PENDING",
+          "topic": "2号のみの作物特性・歴史統計の残り",
+          "reason": "2018年の施設トマト56.2万t・イチゴ13.5万t、産地、10a収量傾向、栄養生長と生殖生長の並行、イチゴの育苗法、キュウリの果長約20cmと接ぎ木、バラの系統と培地、ユリの処理区分は未作成の追加学習単位。現在統計への置換や共有9レッスンで完了したという主張はしない。",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 82,
+              "printedPage": 80
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 83,
+              "printedPage": 81
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 84,
+              "printedPage": 82
+            }
+          ],
+          "blocks": "remaining level2-specific learning units; not a blocker to authored shared content"
+        },
+        {
+          "id": "AGR-H-FACILITY-STRUCTURE-FUNCTION-DETAILS-PENDING",
+          "topic": "被覆の機能の残りと実物認識",
+          "reason": "2号のスリークォータ型の南面配置、フェンローの構造材・長期栽培、農PO系の白濁・施工条件、内張り開閉の季節管理、外張り材の詳細な比較は未作成部分。写真・図の新規認識画像も未作成であり本文だけで実物認識を認定しない。",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 66,
+              "printedPage": 60
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 67,
+              "printedPage": 61
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 68,
+              "printedPage": 62
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 85,
+              "printedPage": 83
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 86,
+              "printedPage": 84
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 87,
+              "printedPage": 85
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 88,
+              "printedPage": 86
+            }
+          ],
+          "blocks": "remaining detailed comparisons and original recognition assets"
+        }
+      ]
+    },
+    {
+      "worker": "facility-environment",
+      "packetSha256": "6d89872abb9436772e6add03e643b468f68fc2b3e69ce12eff4eb6a3e8d5093d",
+      "integratedPayloadSha256": "759fc5a90969174ef185653a148a2901956d6fd8d0150a4337d6809f6c5574e0",
+      "independentReview": "parallel-06/review-facility-environment.json",
+      "newLessonIds": [
+        "agr-facility-env-ventilation",
+        "agr-facility-env-co2-light",
+        "agr-facility-env-temperature-reading",
+        "agr-facility-env-humidity-control",
+        "agr-facility-env-growth-observation",
+        "agr-facility-env-hydroponic-systems",
+        "agr-facility-env-nursery-methods",
+        "agr-facility-env-grafted-seedlings",
+        "agr-facility-env-soil-indicators-2",
+        "agr-facility-env-solution-circulation-2"
+      ],
+      "knowledgeUnits": 60,
+      "weeklyQuestions": 16,
+      "appliedPatches": [
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q05",
+          "field": "optionsJa[0]",
+          "before": "現在の表示を読んだ人の身長",
+          "after": "測定した時点の現在温度だけ",
+          "reason": "Replace irrelevant reader-height distractor with a plausible confusion between current temperature and maximum record period."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q05",
+          "field": "optionReasonsJa[0]",
+          "before": "最高温度の記録期間を確かめる情報ではありません。",
+          "after": "現在値だけでは、最高値を記録し始めた時点は分かりません。",
+          "reason": "Replace irrelevant reader-height distractor with a plausible confusion between current temperature and maximum record period."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q05",
+          "field": "optionsJa[1]",
+          "before": "温度計の写真を撮影した方向だけ",
+          "after": "その作物に適した生育温度",
+          "reason": "Use a real environment-management concept that does not determine the time interval recorded."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q05",
+          "field": "optionReasonsJa[1]",
+          "before": "写真の向きだけでは、いつからの最高温度か分かりません。",
+          "after": "作物の適温は管理の目標であり、最高値の記録がいつ始まったかを示しません。",
+          "reason": "Use a real environment-management concept that does not determine the time interval recorded."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q05",
+          "field": "optionsJa[3]",
+          "before": "育苗箱に使われている容器の材質",
+          "after": "暖房装置が動いていた時間だけ",
+          "reason": "Replace container-material distractor with a plausible but incomplete time-based inference."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q05",
+          "field": "optionReasonsJa[3]",
+          "before": "育苗容器の材質は温度記録の開始時点を示しません。",
+          "after": "暖房の運転時間だけでは、温度計をリセットした時点を確定できません。",
+          "reason": "Replace container-material distractor with a plausible but incomplete time-based inference."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q06",
+          "field": "optionsJa[3]",
+          "before": "左右の指標は記録に使わず、画面の数字だけで判断する。",
+          "after": "最高は右、最低は左だが、どちらも指標の上端を読む。",
+          "reason": "Use a plausible index-edge reading error instead of an irrelevant digital-screen option."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q06",
+          "field": "optionReasonsJa[3]",
+          "before": "資料のＵ字形は左右の指標を読むもので、デジタル画面の例ではありません。",
+          "after": "資料のＵ字形では、最高と最低のどちらも指標の下端を読みます。",
+          "reason": "Use a plausible index-edge reading error instead of an irrelevant digital-screen option."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q07",
+          "field": "optionsJa[0]",
+          "before": "育苗ポットの色だけで判断した湿度",
+          "after": "気温が適温なら、湿度も適切になっているという判断",
+          "reason": "Replace pot-color distractor with a realistic false inference from temperature to humidity."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q07",
+          "field": "optionReasonsJa[0]",
+          "before": "容器の色は施設内の湿度の状態を表しません。",
+          "after": "気温が適温でも、施設内の湿度まで確認したことにはなりません。",
+          "reason": "Replace pot-color distractor with a realistic false inference from temperature to humidity."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q07",
+          "field": "optionsJa[1]",
+          "before": "収穫袋の重量を置き換えた湿度",
+          "after": "昼に乾燥していたなら、夜の湿度も同じという判断",
+          "reason": "Replace bag-weight distractor with a plausible day/night carryover error."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q07",
+          "field": "optionReasonsJa[1]",
+          "before": "収穫袋の重量は湿度とは別の情報です。",
+          "after": "昼と夜では条件が変わり、冬の夜間には過湿になりやすいと示されています。",
+          "reason": "Replace bag-weight distractor with a plausible day/night carryover error."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q07",
+          "field": "optionsJa[2]",
+          "before": "昼間の光の記録だけで決めた夜間の湿度",
+          "after": "窓を閉めたので、外より湿度が必ず低いという判断",
+          "reason": "Keep three distractors on genuine humidity-management misconceptions rather than unrelated measurements."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q07",
+          "field": "optionReasonsJa[2]",
+          "before": "夜間の湿度を昼の光の記録だけで確定できません。",
+          "after": "閉鎖した施設は湿度が高くなりやすく、閉めた事実だけでは低湿度と判断できません。",
+          "reason": "Keep three distractors on genuine humidity-management misconceptions rather than unrelated measurements."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q08",
+          "field": "optionsJa[0]",
+          "before": "気温だけを測り、湿度や光の状態を同じ値として扱う。",
+          "after": "温度と湿度を別々に調整し、互いの関係を考えない。",
+          "reason": "Replace treating incompatible units as equal with plausible isolated-variable control."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q08",
+          "field": "optionReasonsJa[0]",
+          "before": "別々の環境要素を同じ値として扱うことではありません。",
+          "after": "複合環境制御は、複数の環境要素を関連付けて管理する考え方です。",
+          "reason": "Replace treating incompatible units as equal with plausible isolated-variable control."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q08",
+          "field": "optionsJa[3]",
+          "before": "換気の窓の数を数え、それを温度と湿度の値に置き換える。",
+          "after": "気温の目標値だけを固定し、光や二酸化炭素の条件は切り離す。",
+          "reason": "Replace window-count substitution with realistic temperature-only management."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q08",
+          "field": "optionReasonsJa[3]",
+          "before": "窓の数は、温度や湿度そのものの値ではありません。",
+          "after": "一つの環境だけを固定して他を切り離すことは、複数を関連付ける管理と異なります。",
+          "reason": "Replace window-count substitution with realistic temperature-only management."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q12",
+          "field": "optionsJa[3]",
+          "before": "液をためるのも作物を育てるのも換気扇",
+          "after": "液をためるのはベッド、作物を育てるのはタンク",
+          "reason": "Use the actual tank/bed role reversal being assessed instead of an unrelated ventilation fan."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q12",
+          "field": "optionReasonsJa[3]",
+          "before": "換気扇は空気を入れ替える装置で、養液栽培の二つの部位ではありません。",
+          "after": "タンクは液をため、ベッドで作物を育てるので、二つの役割が逆です。",
+          "reason": "Use the actual tank/bed role reversal being assessed instead of an unrelated ventilation fan."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q14",
+          "field": "optionsJa[3]",
+          "before": "トレイの色を、苗の大きさそのものとして記録する。",
+          "after": "穴数が多いトレイほど、いつでも大きな苗を育てられると考える。",
+          "reason": "Replace tray-color distractor with a plausible error about cell count and seedling size."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q14",
+          "field": "optionReasonsJa[3]",
+          "before": "容器の色は、苗の大きさを表すものではありません。",
+          "after": "穴数は野菜や苗の大きさに応じて選び、数が多いほど大きな苗に適するとは判断しません。",
+          "reason": "Replace tray-color distractor with a plausible error about cell count and seedling size."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q15",
+          "field": "optionsJa[1]",
+          "before": "台木も穂木も、容器の大きさだけを重視する。",
+          "after": "台木も穂木も、収穫物の品質を最優先にして選ぶ。",
+          "reason": "Replace container-size distractor with a genuine role-selection misconception."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q15",
+          "field": "optionReasonsJa[1]",
+          "before": "容器の大きさは、台木と穂木に求める性質の説明ではありません。",
+          "after": "台木には病害虫への抵抗性、穂木には収量や品質という役割の違いがあります。",
+          "reason": "Replace container-size distractor with a genuine role-selection misconception."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q15",
+          "field": "optionsJa[3]",
+          "before": "台木と穂木を分けず、苗の名称だけで性質を判断する。",
+          "after": "台木は収量だけ、穂木は病害虫への抵抗性だけを重視する。",
+          "reason": "Replace name-only distractor with a concrete reversal of the two roles."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q15",
+          "field": "optionReasonsJa[3]",
+          "before": "二つの部分に求める性質を分けて考える必要があります。",
+          "after": "台木と穂木に重視する性質を逆にしています。",
+          "reason": "Replace name-only distractor with a concrete reversal of the two roles."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q16",
+          "field": "optionsJa[3]",
+          "before": "節間が長いことだけから、台木と穂木が逆だと確定する。",
+          "after": "節間が長いので光不足は考えず、施肥だけを増やす。",
+          "reason": "Replace nonsensical inference about reversed graft partners with an actual single-cause management error."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-facility-environment-q16",
+          "field": "optionReasonsJa[3]",
+          "before": "徒長の外観から、接ぎ木部分の役割の取り違えを確定する説明ではありません。",
+          "after": "光不足なども徒長に関係するため、外観だけで確認対象を絞って施肥を増やしません。",
+          "reason": "Replace nonsensical inference about reversed graft partners with an actual single-cause management error."
+        }
+      ],
+      "holds": [
+        {
+          "id": "AGR-H-FACILITY-ENV-PF-RANGE",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 72,
+              "printedPage": 66
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 92,
+              "printedPage": 90
+            }
+          ],
+          "topic": "pFの異なる掲載範囲と実用閾値",
+          "reason": "両資料の範囲が異なり、作物・土質・測定条件を満たす全施設共通の適値や自動かん水設定は未検証。2号教材の数値は出典条件の読み取りに限定。",
+          "blocks": "universal pF threshold or automated irrigation prescription only"
+        },
+        {
+          "id": "AGR-H-FACILITY-ENV-CO2-OPERATION",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 69,
+              "printedPage": 63
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 90,
+              "printedPage": 88
+            }
+          ],
+          "topic": "炭酸ガスの濃度・装置運転と安全条件",
+          "reason": "数値の濃度、運転時間、職業ばく露基準、燃焼装置の操作は本文にない条件を補えない。共有教材は光・閉鎖状態・補給目的に限定。",
+          "blocks": "specific concentration/safety/operating procedure only"
+        },
+        {
+          "id": "AGR-H-FACILITY-ENV-CO2-2-DETAIL",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 90,
+              "printedPage": 88
+            }
+          ],
+          "topic": "2号の過剰供給と温暖化の補足",
+          "reason": "共有の炭酸ガス教材に2号だけの補足を混ぜていない。供給量を守る必要性と温暖化物質の説明は、別の2号拡張教材として未著作。",
+          "blocks": "this level2 subdetail only"
+        },
+        {
+          "id": "AGR-H-FACILITY-ENV-VENT-2-DETAIL",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 89,
+              "printedPage": 87
+            }
+          ],
+          "topic": "2号の寒冷時側窓と遮光の追加判断",
+          "reason": "側窓開け幅、側面カーテン、冷気が直接当たらない注意、自然換気後の遮光を含む2号独自補足は共有教材に混ぜていない。現場機器の条件と合わせた別教材が必要。",
+          "blocks": "this level2 ventilation subdetail only"
+        },
+        {
+          "id": "AGR-H-FACILITY-ENV-HYDROPONIC-ABSOLUTE",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 74,
+              "printedPage": 68
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 95,
+              "printedPage": 93
+            }
+          ],
+          "topic": "連作障害なし・肥料のむだなしという断定",
+          "reason": "資料の長所を病害や管理上の損失が絶対にない保証として教えない。土壌由来病害の減少、省力化、自動化、建設費を共有し、断定的な普遍化は保留。",
+          "blocks": "universal disease-free/waste-free guarantee only"
+        },
+        {
+          "id": "AGR-H-FACILITY-ENV-EFFLUENT",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 96,
+              "printedPage": 94
+            }
+          ],
+          "topic": "非循環養液の排液処理の具体的方法",
+          "reason": "処理の必要性は教材化したが、地域規則や液の成分を確認せず放流可否・処理装置・薬品処方を指示しない。",
+          "blocks": "specific effluent treatment/discharge instruction only"
+        },
+        {
+          "id": "AGR-H-FACILITY-ENV-TRANSPLANT-DIAGRAM",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 17,
+              "printedPage": 15
+            }
+          ],
+          "topic": "ポット苗・セル苗の移植姿勢の図",
+          "reason": "今回の育苗方法の教材は容器と方法の分類を扱う。苗の取り出し、植付深さ、傾きの図の読み取りと新規図は未著作で、PDF17全体を完了とはしない。",
+          "blocks": "this transplant diagram knowledge only"
+        },
+        {
+          "id": "AGR-H-FACILITY-ENV-GRAFT-2-DETAIL",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 19,
+              "printedPage": 17
+            }
+          ],
+          "topic": "2号の接ぎ方・台木品種・接ぎ木の目的の枠",
+          "reason": "基礎の台木・穂木は対照済み。挿し接ぎ・呼び接ぎ・割り接ぎの図、作物別台木品種、繁殖・結実早期化・高接ぎなどの詳細は別の読み取り教材と図が必要。",
+          "blocks": "this level2 grafting subdetail only"
+        },
+        {
+          "id": "AGR-H-FACILITY-ENV-RECOGNITION",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 69,
+              "printedPage": 63
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 70,
+              "printedPage": 64
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 71,
+              "printedPage": 65
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 72,
+              "printedPage": 66
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 73,
+              "printedPage": 67
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 74,
+              "printedPage": 68
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 75,
+              "printedPage": 69
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 89,
+              "printedPage": 87
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 90,
+              "printedPage": 88
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 91,
+              "printedPage": 89
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 92,
+              "printedPage": 90
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 94,
+              "printedPage": 92
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 95,
+              "printedPage": 93
+            }
+          ],
+          "topic": "計器・苗・病徴・機器の視覚認識",
+          "reason": "出典画像は読み取り確認にのみ使用し、公開教材へ転載しない。器具・苗・病徴の新規認識図と数値読取り図は未作成。今回の解説と概念比較図を写真認識の完了としない。",
+          "blocks": "visual-recognition assessment/image completion only"
+        },
+        {
+          "id": "AGR-H-FACILITY-ENV-EXTENSION-QUESTIONS",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 92,
+              "printedPage": 90
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 96,
+              "printedPage": 94
+            }
+          ],
+          "topic": "2号専用2教材の問題追加",
+          "reason": "16問は両号共通の確認問題であり、pFの条件付き例と循環・非循環の2号専用拡張については、別の2号確認問題群が未作成。",
+          "blocks": "weekly assessment coverage of these two level2 lessons only"
+        }
+      ]
+    },
+    {
+      "worker": "fruit-foundations",
+      "packetSha256": "176635dcebc8db8f62439739c4259cb6d758e482f31457db7c3c3319d7fd48a9",
+      "integratedPayloadSha256": "3cbe0d18186345e93ab70a6b03a1972ad42e2af865ec6c27144cc2da24a35cb4",
+      "independentReview": "parallel-06/review-fruit-foundations.json",
+      "newLessonIds": [
+        "agr-fruit-foundation-life",
+        "agr-fruit-foundation-buds",
+        "agr-fruit-foundation-propagation",
+        "agr-fruit-foundation-graft-types",
+        "agr-fruit-foundation-graft-alignment",
+        "agr-fruit-foundation-pruning",
+        "agr-fruit-foundation-treeforms",
+        "agr-fruit-foundation-pollination",
+        "agr-fruit-foundation-definition-2",
+        "agr-fruit-foundation-bud-patterns-2"
+      ],
+      "knowledgeUnits": 60,
+      "weeklyQuestions": 16,
+      "appliedPatches": [
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q01",
+          "field": "optionsJa[3]",
+          "before": "木が大きくなる期間を、収穫終了後にまとめて設ける。",
+          "after": "幼木の間は果実を多くならせ、結実量を先に増やす。",
+          "reason": "Replace implausible post-harvest growth-period claim with the plausible learner error of prioritizing early crop load over tree establishment."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q01",
+          "field": "optionReasonsJa[3]",
+          "before": "苗木を植えた後に木を育てる段階があります。",
+          "after": "植え付け後の数年間は木を育て、果実をならせない段階として示されています。",
+          "reason": "Replace implausible post-harvest growth-period claim with the plausible learner error of prioritizing early crop load over tree establishment."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q04",
+          "field": "optionsJa[0]",
+          "before": "窒素を強く効かせ、全ての枝を強く切る。",
+          "after": "窒素を強めに効かせ、せん定は弱めにする。",
+          "reason": "Use a partly correct but materially mistaken condition combination rather than an exaggerated all-branches cut."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q04",
+          "field": "optionReasonsJa[0]",
+          "before": "窒素やせん定の強さについて資料の方向と逆です。",
+          "after": "弱めのせん定は資料に合いますが、窒素の効き過ぎを抑える条件に反します。",
+          "reason": "Use a partly correct but materially mistaken condition combination rather than an exaggerated all-branches cut."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q04",
+          "field": "optionsJa[1]",
+          "before": "実をできるだけ多く残し、枝の状態は見ない。",
+          "after": "窒素を控え、結実数は多く残す。",
+          "reason": "Make the distractor test the omitted crop-load condition without explicitly ignoring observation."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q04",
+          "field": "optionReasonsJa[1]",
+          "before": "結実過多を避けるという条件が失われます。",
+          "after": "窒素への配慮だけでなく、結実過多を避ける条件も必要です。",
+          "reason": "Make the distractor test the omitted crop-load condition without explicitly ignoring observation."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q04",
+          "field": "optionsJa[3]",
+          "before": "樹種に関係なく水と肥料を完全に断つ。",
+          "after": "結実過多を避け、土壌水分は常に多めに保つ。",
+          "reason": "Replace extreme total water/fertilizer deprivation with a plausible moisture-direction error; source says somewhat lower soil water, not a universal prescription."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q04",
+          "field": "optionReasonsJa[3]",
+          "before": "水分をやや控える記述を完全に断つ指示へ変えています。",
+          "after": "結実過多の回避は資料に合いますが、水分を常に多めにする説明ではありません。",
+          "reason": "Replace extreme total water/fertilizer deprivation with a plausible moisture-direction error; source says somewhat lower soil water, not a universal prescription."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q07",
+          "field": "optionsJa[0]",
+          "before": "種を台木の根元にまく方法。",
+          "after": "切った枝を台木の切り込みへ差し込む方法。",
+          "reason": "All alternatives should describe plausible actual propagation/grafting operations; replace seed-sowing distractor with branch-grafting confusion."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q07",
+          "field": "optionReasonsJa[0]",
+          "before": "種をまくことと芽を接ぐことは違います。",
+          "after": "これは枝を材料に使う枝接ぎの説明で、芽をつなぐ芽接ぎとは違います。",
+          "reason": "All alternatives should describe plausible actual propagation/grafting operations; replace seed-sowing distractor with branch-grafting confusion."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q07",
+          "field": "optionsJa[1]",
+          "before": "根の付いた苗同士を植え並べる方法。",
+          "after": "くさび状にした穂木を、割った台木へ入れる方法。",
+          "reason": "Replace unrelated planting-two-seedlings distractor with a real named grafting method."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q07",
+          "field": "optionReasonsJa[1]",
+          "before": "植え並べることは接ぎ木の定義ではありません。",
+          "after": "これは枝接ぎの一つである割り接ぎの説明です。",
+          "reason": "Replace unrelated planting-two-seedlings distractor with a real named grafting method."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q07",
+          "field": "optionsJa[2]",
+          "before": "枝を曲げた部分から根を出させる方法。",
+          "after": "元の枝を残した台木の途中へ、枝の穂木を接ぐ方法。",
+          "reason": "Use the side-graft branch/bud distinction as a plausible near-concept distractor."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q07",
+          "field": "optionReasonsJa[2]",
+          "before": "これは取り木の型に対応します。",
+          "after": "これは枝を材料に使う腹接ぎの説明です。",
+          "reason": "Use the side-graft branch/bud distinction as a plausible near-concept distractor."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q08",
+          "field": "optionsJa[0]",
+          "before": "台木を根元まで切り取り、別の苗へ置き換えている。",
+          "after": "台木を切断し、その割れ目にくさび状の穂木を入れる。",
+          "reason": "Replace destroying the rootstock and replacing the tree with the real cut-rootstock/wedge-graft comparison in the source figure."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q08",
+          "field": "optionReasonsJa[0]",
+          "before": "台木を残して途中へ接ぐ説明ではありません。",
+          "after": "これは割り接ぎの特徴で、元の枝や幹を残して途中へ接ぐ腹接ぎとは違います。",
+          "reason": "Replace destroying the rootstock and replacing the tree with the real cut-rootstock/wedge-graft comparison in the source figure."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q08",
+          "field": "optionsJa[3]",
+          "before": "台木の割れ目に、種を入れて発芽させている。",
+          "after": "台木にＴ字の切り込みを入れ、芽を差し込んで留める。",
+          "reason": "Replace impossible seed germination in a graft slit with the source-supported T-budding operation."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q08",
+          "field": "optionReasonsJa[3]",
+          "before": "種を入れることは割り接ぎでも腹接ぎでもありません。",
+          "after": "これはＴ形芽接ぎの特徴で、腹接ぎの途中へ穂木を接ぐ説明とは違います。",
+          "reason": "Replace impossible seed germination in a graft slit with the source-supported T-budding operation."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q09",
+          "field": "optionsJa[3]",
+          "before": "樹皮の色が同じ部分なら、すき間を残してもよい。",
+          "after": "形成層を確かめず、樹皮の外側の輪郭だけを合わせる。",
+          "reason": "Test the plausible bark-outline versus cambium alignment error rather than deliberate gaps justified by matching bark color."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q09",
+          "field": "optionReasonsJa[3]",
+          "before": "色だけで組織の位置は決められず、すき間も残しません。",
+          "after": "合わせる目的は形成層なので、外側の輪郭がそろったことだけでは確認できません。",
+          "reason": "Test the plausible bark-outline versus cambium alignment error rather than deliberate gaps justified by matching bark color."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q10",
+          "field": "optionsJa[1]",
+          "before": "穂木全体を土に入れ、台木だけを地上へ出す。",
+          "after": "接合部を地表面と同じ高さにそろえ、根鉢だけを土に入れる。",
+          "reason": "Replace physically reversed scion/rootstock planting with a plausible at-ground-level graft-union error."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q10",
+          "field": "optionReasonsJa[1]",
+          "before": "台木と穂木の上下関係が逆です。",
+          "after": "根鉢を土に入れるだけでなく、図では接いだ部分を地面より上に出しています。",
+          "reason": "Replace physically reversed scion/rootstock planting with a plausible at-ground-level graft-union error."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q10",
+          "field": "optionsJa[3]",
+          "before": "根を土に入れず、接合部だけを土で覆う。",
+          "after": "根鉢の位置だけを合わせ、接合部の高さは確認しない。",
+          "reason": "Replace roots-outside/union-buried inversion with the plausible omission of graft-union height checking."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q10",
+          "field": "optionReasonsJa[3]",
+          "before": "根と接合部の扱いが逆です。",
+          "after": "根鉢と接合部は別の確認箇所で、接いだ部分の地上位置も確認します。",
+          "reason": "Replace roots-outside/union-buried inversion with the plausible omission of graft-union height checking."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q16",
+          "field": "optionsJa[3]",
+          "before": "甘くなることで細胞数が減り、その後に果実が大きくなる。",
+          "after": "細胞数を増やさず、最初から細胞の肥大だけで大きくなる。",
+          "reason": "Replace unsupported sugar-causes-cell-number-loss story with the plausible missed cell-division stage."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-foundations-q16",
+          "field": "optionReasonsJa[3]",
+          "before": "糖の蓄積と細胞数の変化を根拠なく結び付けています。",
+          "after": "資料は、初めに細胞数が増える段階があると説明しています。",
+          "reason": "Replace unsupported sugar-causes-cell-number-loss story with the plausible missed cell-division stage."
+        }
+      ],
+      "holds": [
+        {
+          "id": "AGR-H-FRUIT-FOUNDATION-BUD-MONTHS",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 79,
+              "printedPage": 73
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 99,
+              "printedPage": 97
+            }
+          ],
+          "topic": "ブドウ・ウンシュウミカンの花芽分化月の差",
+          "reason": "1号はブドウ5月下旬、ウンシュウミカン10～12月。2号はブドウ5月下旬～7月、ウンシュウミカン10月～翌年2月。範囲差を一つの全国共通カレンダーへ統合せず、この共有本文と問題には具体月を置かない。",
+          "blocks": "source-specific exact month questions and universal orchard calendar"
+        },
+        {
+          "id": "AGR-H-FRUIT-FOUNDATION-APPLE-BUD-INTERPRETATION",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 78,
+              "printedPage": 72
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 98,
+              "printedPage": 96
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 100,
+              "printedPage": 98
+            }
+          ],
+          "topic": "リンゴの枝齢と花芽位置の詳細",
+          "reason": "基本本文の今年伸びた枝という説明と2号追加図の前年の結果枝・短く伸びた頂部を読み分ける必要がある。共有ではモモとブドウの例に絞り、2号の追加図のリンゴを別レッスンでその図の条件に結び付ける。",
+          "blocks": "single shared apple annual-shoot diagram simplification"
+        },
+        {
+          "id": "AGR-H-FRUIT-FOUNDATION-GRAFT-DETAIL-IMAGE",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 82,
+              "printedPage": 76
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 83,
+              "printedPage": 77
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 103,
+              "printedPage": 101
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 104,
+              "printedPage": 102
+            }
+          ],
+          "topic": "接ぎ木の寸法・刃物作業と実技画像",
+          "reason": "原図の地表4.5～6cm、肩45度、切込み約3cm、穂木約3.6cm・約9mm等は元図の一例。新しい正確な段階図と実技検証が未了なので普遍的処方や数値問題にしない。合わせる組織、固定、接合部の地上位置は本文で扱う。",
+          "blocks": "full dimensional grafting practical instructions and recognition certification"
+        },
+        {
+          "id": "AGR-H-FRUIT-FOUNDATION-PRUNING-RECOGNITION",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 85,
+              "printedPage": 79
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 86,
+              "printedPage": 80
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 87,
+              "printedPage": 81
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 106,
+              "printedPage": 104
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 107,
+              "printedPage": 105
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 108,
+              "printedPage": 106
+            }
+          ],
+          "topic": "枝・芽・切断位置の実技認識",
+          "reason": "車枝、徒長枝、逆行枝、平行枝、交差枝、胴吹き、ひこばえ、心枝、太枝・細枝の切位置の原図は確認済み。再利用可能な独立画像の制作と実技判定が未完了で、本文だけを完全な実技認定にしない。",
+          "blocks": "full branch-recognition imagery and practical competency claim"
+        },
+        {
+          "id": "AGR-H-FRUIT-FOUNDATION-GRAFT-INPUT-PRODUCT",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 82,
+              "printedPage": 76
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 83,
+              "printedPage": 77
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 103,
+              "printedPage": 101
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 104,
+              "printedPage": 102
+            }
+          ],
+          "topic": "接ぎ木資材の現行商品使用条件",
+          "reason": "つぎろう、接ぎ木テープ、袋の役割は図で確認。商品の量、濃度、巻付強度、袋の除去時期等を出典なしに指定しない。",
+          "blocks": "unverified product-specific quantity or schedule instructions"
+        }
+      ]
+    },
+    {
+      "worker": "fruit-management",
+      "packetSha256": "d2c12604f947de8007e874ccc6903e34991f3b02293416037c2f555c1a2758c7",
+      "integratedPayloadSha256": "c56b3644eb984baac03e3efa3742e0e2f18000c17ca1a65d8afdc2adf5947fd8",
+      "independentReview": "parallel-06/review-fruit-management.json",
+      "newLessonIds": [
+        "agr-fruit-manage-bagging",
+        "agr-fruit-manage-harvest",
+        "agr-fruit-manage-renewal",
+        "agr-fruit-manage-orchard-soil",
+        "agr-fruit-manage-fertilizer",
+        "agr-fruit-manage-storage-facility",
+        "agr-fruit-manage-citrus-apple-grape",
+        "agr-fruit-manage-persimmon-pear-peach",
+        "agr-fruit-manage-materials-machines",
+        "agr-fruit-manage-grape-cluster-2",
+        "agr-fruit-manage-maturity-indicators-2"
+      ],
+      "knowledgeUnits": 66,
+      "weeklyQuestions": 16,
+      "appliedPatches": [
+        {
+          "targetType": "paragraph",
+          "targetId": "agr-fruit-manage-fertilizer-p3",
+          "field": "textJa",
+          "before": "成木では土の表面に施す表層施肥が説明されています。このほか、深耕に合わせて有機物などと全層へ入れる方法や、水に溶かした成分を葉面へ散布する方法も挙げられています。",
+          "after": "成木では土の表面に施す表層施肥が説明されています。このほか、深耕に合わせて有機物などと全層へ入れる方法や、水に溶かした肥料成分を木全体へ吹きかける葉面散布も挙げられています。",
+          "reason": "Both source1PDF93/printed87 and source2PDF118/printed116 say spray the whole tree. Preserve that explicit scope rather than narrowing the described target to leaf surfaces alone; do not add dose or operation conditions."
+        },
+        {
+          "targetType": "paragraph",
+          "targetId": "agr-fruit-manage-fertilizer-p6",
+          "field": "textJa",
+          "before": "秋肥は、樹勢を回復し貯蔵養分を増やすための追肥で、お礼肥とも呼ばれます。施肥の記録では、役割、時期、施用方法を分け、実際の量や濃度はこの分類だけで決めないようにします。",
+          "after": "秋肥は、樹勢を回復し貯蔵養分を増やすための追肥で、お礼肥とも呼ばれます。資料では、春肥・夏肥・秋肥という追肥に速効性肥料を使うと説明されています。施肥の記録では役割、時期、施用方法を分け、実際の量や濃度はこの分類だけで決めないようにします。",
+          "reason": "Restore the shared source statement that the described topdressings use quick-acting fertilizer (S1PDF93/S2PDF118). This is a fertilizer-property fact, not an invented application quantity."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-management-q01",
+          "field": "optionsJa[3]",
+          "before": "モモ用の袋もブドウ用の袋も、果実を外へ出して留める。",
+          "after": "作物が違っても、止金は袋の上にある枝へ同じように巻く。",
+          "reason": "Replace a clearly absurd fruit-outside-bag distractor with realistic transfer of the peach attachment point to grape. The source distinguishes branch from fruit axis."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-management-q01",
+          "field": "optionReasonsJa[3]",
+          "before": "果実や房は袋の中央に収める例です。",
+          "after": "モモでは枝へ、ブドウでは果軸へ留める例で、作物による違いを確認します。",
+          "reason": "Match the new plausible cross-crop attachment distractor."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-management-q13",
+          "field": "optionsJa[0]",
+          "before": "果実を収穫後に必ず追熟させる。",
+          "after": "同じ台木で主枝を増やし、収穫する枝を高く配置する。",
+          "reason": "Replace unrelated postharvest ripening with a plausible but wrong training/rootstock interpretation; preserve one correct answer at index2."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-management-q13",
+          "field": "optionReasonsJa[0]",
+          "before": "リンゴは資料では成熟を待って収穫する例です。",
+          "after": "資料のわい化栽培は、わい性台木を用い樹高を低くする説明です。",
+          "reason": "Reason corresponds to the revised rootstock and height distractor."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-management-q13",
+          "field": "optionsJa[1]",
+          "before": "樹高を上げて、すべての作業を高い場所へ移す。",
+          "after": "苗木を疎く植え、結実開始までの期間を長くする。",
+          "reason": "Use a realistic opposite planting-density/early-bearing interpretation instead of an obviously unreasonable goal of moving all work high up."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-management-q13",
+          "field": "optionReasonsJa[1]",
+          "before": "資料は樹高を低くすることを狙いとしています。",
+          "after": "資料は密植と早く収量を上げることを狙いとして挙げています。",
+          "reason": "Identify both reversed source properties without making a universal yield promise."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-management-q13",
+          "field": "optionsJa[3]",
+          "before": "台木を使わず、どの木も同じ間隔へ切りそろえる。",
+          "after": "台木の性質を変えず、毎年の強い切り返しだけで樹高を抑える。",
+          "reason": "Use the common confusion between dwarfing by rootstock and keeping any tree short through pruning, rather than a vague all-tree spacing choice."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-management-q13",
+          "field": "optionReasonsJa[3]",
+          "before": "台木や樹形を用いる説明と異なります。",
+          "after": "資料のわい化栽培は、強いせん定だけでなく、わい性台木と仕立て方などを使う方法です。",
+          "reason": "Preserve the rootstock distinction and avoid recommending unverified strong-pruning operations."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-management-q14",
+          "field": "optionsJa[0]",
+          "before": "同じ木の葉の大きさだけで花粉の適否が決まる。",
+          "after": "同じ品種の花粉を多く用意すれば、他品種の花粉は要らない。",
+          "reason": "Replace unrelated leaf-size clue with a realistic quantity-versus-cross-variety pollen misconception."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-management-q14",
+          "field": "optionReasonsJa[0]",
+          "before": "葉の大きさだけで花粉の適否は決まりません。",
+          "after": "資料では他品種の花粉が必要です。同じ品種の量だけを増やす説明には置き換えられません。",
+          "reason": "Explain why pollen quantity does not satisfy the source cross-variety condition."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-management-q14",
+          "field": "optionsJa[2]",
+          "before": "風で果実が落ちなければ受粉の確認は不要である。",
+          "after": "棚仕立てで落果を減らせば、花粉の確保は省ける。",
+          "reason": "Use a realistic confusion between reduced wind loss and successful fruit set; keep this distinct from pollination."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-fruit-management-q14",
+          "field": "optionReasonsJa[2]",
+          "before": "落果への対策と受粉の条件は別です。",
+          "after": "棚による風の落果への備えと、受粉のための花粉の確保は別の仕事です。",
+          "reason": "Corresponds exactly to the revised wind-loss versus pollination misconception."
+        }
+      ],
+      "holds": [
+        {
+          "id": "AGR-H-FRUIT-MANAGE-HISTORICAL-STATS",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 94,
+              "printedPage": 88
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 95,
+              "printedPage": 89
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 96,
+              "printedPage": 90
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 119,
+              "printedPage": 117
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 120,
+              "printedPage": 118
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 121,
+              "printedPage": 119
+            }
+          ],
+          "topic": "割合の年・母集団と品種別数値",
+          "reason": "1号は参照年や母集団が明瞭でない割合があり、2号の2014年出荷・2017年栽培面積と数値も異なる。年代付きの統計読解は別単位で残し、現行の割合や同一母集団の答えに統合しない。",
+          "blocks": "unqualified or current percentage answer keys only"
+        },
+        {
+          "id": "AGR-H-FRUIT-MANAGE-PH-DETAIL",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 93,
+              "printedPage": 87
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 117,
+              "printedPage": 115
+            }
+          ],
+          "topic": "pH全行と最適範囲・概略区分",
+          "reason": "行の数値は画像照合済みだが、共有の適範囲と1号のみの最適範囲、2号の概略区分は目的が異なる。今回の定性的本文は全行の数値知識を処理済みとはしない。石灰施用量をpH表だけから作らない。",
+          "blocks": "remaining detailed pH numeric coverage and lime dose inference"
+        },
+        {
+          "id": "AGR-H-FRUIT-MANAGE-PRODUCTS",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 95,
+              "printedPage": 89
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 96,
+              "printedPage": 90
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 97,
+              "printedPage": 91
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 120,
+              "printedPage": 118
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 121,
+              "printedPage": 119
+            }
+          ],
+          "topic": "成長調整剤・脱渋の製品条件",
+          "reason": "資料の目的や例から、全品種共通のジベレリン濃度・回数・実施日、脱渋薬剤の量や作業法を作らない。製品表示と適用条件を確認するまで具体的処方は未作成。",
+          "blocks": "product-specific application and current legal instruction only"
+        },
+        {
+          "id": "AGR-H-FRUIT-MANAGE-CA-ENTRY",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 94,
+              "printedPage": 88
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 118,
+              "printedPage": 116
+            }
+          ],
+          "topic": "CA貯蔵の濃度・入室・作業手順",
+          "reason": "原理の説明に限る。酸素・二酸化炭素の設定値、貯蔵期間、入室の安全な手順はこの資料から決めず、教材化未着手。",
+          "blocks": "CA operating/entry procedure only"
+        },
+        {
+          "id": "AGR-H-FRUIT-MANAGE-FROST",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 97,
+              "printedPage": 91
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 121,
+              "printedPage": 119
+            }
+          ],
+          "topic": "防霜ファン・散水の条件",
+          "reason": "用途の存在を扱うだけで、始動温度、流量、散水停止条件やすべての凍害に有効という保証を作らない。",
+          "blocks": "condition-specific frost protection operations only"
+        },
+        {
+          "id": "AGR-H-FRUIT-MANAGE-MACHINE-DETAILS",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 98,
+              "printedPage": 92
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 122,
+              "printedPage": 120
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 123,
+              "printedPage": 121
+            }
+          ],
+          "topic": "機械分類・乗車と積載・写真識別",
+          "reason": "2号追加の機械説明と写真の特徴は確認済みだが、本パケットは名称と用途の基礎。製品の操作/搭乗/積載条件や現在の法的分類を写真や2mの記述から推定しない。新しい識別画像と2号の詳細単位は未作成。",
+          "blocks": "actual-photo recognition and model-specific/legal operation only"
+        },
+        {
+          "id": "AGR-H-FRUIT-MANAGE-NUMERIC-TIMING",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 91,
+              "printedPage": 85
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 93,
+              "printedPage": 87
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 96,
+              "printedPage": 90
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 113,
+              "printedPage": 111
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 117,
+              "printedPage": 115
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 121,
+              "printedPage": 119
+            }
+          ],
+          "topic": "収穫期・施肥月・成木年数の条件",
+          "reason": "原資料の月幅や年数は樹種の例として説明。地域・品種を問わない作業カレンダーや生育保証として出題しない。",
+          "blocks": "universal cultivation timing guarantees only"
+        },
+        {
+          "id": "AGR-H-FRUIT-MANAGE-EXTENSION-QUESTIONS",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 110,
+              "printedPage": 108
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 113,
+              "printedPage": 111
+            }
+          ],
+          "topic": "2号専用の確認問題",
+          "reason": "今回の16問は共有9レッスンの基礎を扱う。房づくり・摘粒と熟度判定の2号専用問題は独立バンクへの追加が残る。",
+          "blocks": "question coverage of two level2 extensions only"
+        }
+      ]
+    },
+    {
+      "worker": "flowers",
+      "packetSha256": "93cb53a2717c4c19eecb4577b0a814f5154de20ef0a04e6c432dc1d1929b35a6",
+      "integratedPayloadSha256": "a75fa5f27e916fff94dab6bc3c65b79b27e49b1a3e7bafd89b626932f53bb835",
+      "independentReview": "parallel-06/review-flowers.json",
+      "newLessonIds": [
+        "agr-flower-work-classification",
+        "agr-flower-work-organs",
+        "agr-flower-work-production",
+        "agr-flower-work-handling",
+        "agr-flower-work-coldchain",
+        "agr-flower-work-bedding"
+      ],
+      "knowledgeUnits": 36,
+      "weeklyQuestions": 16,
+      "appliedPatches": [
+        {
+          "targetType": "paragraph",
+          "targetId": "agr-flower-work-coldchain-p5",
+          "field": "textJa",
+          "before": "資料では、エチレンの作用を抑える処理、糖による栄養補給、抗菌による腐敗防止が異なる目的として挙げられています。役割を学ぶことと、特定の薬剤や糖を自分で混ぜて使用することは別です。",
+          "after": "資料では、エチレンの作用を抑える処理、糖による栄養補給、抗菌による腐敗防止が異なる目的として挙げられています。糖の補給には老化を遅らせ、つぼみの開花を助ける役割も記載されています。これらの役割を学ぶことと、薬剤や糖を自分で混ぜて使うことは別です。",
+          "reason": "S2PDF126/printed124 explicitly assigns sugar both delayed senescence and bud opening, not merely unspecified nutrition. Preserve these two functional knowledge details without introducing a recipe, dose or universal effectiveness promise."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-flowers-q10",
+          "field": "stemJa",
+          "before": "切り花の品質記録で、しおれ以外にも確認するものはどれですか。",
+          "after": "切り花の品質低下の兆候として、資料がしおれ以外に挙げる組合せはどれですか。",
+          "reason": "Current stem asks broadly what to check in quality records; option2 grade/length/bundle count is also a legitimate quality-record check. Restrict the stem to deterioration signs so only option3 answers the stated objective."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-flowers-q03",
+          "field": "optionsJa[2]",
+          "before": "分類に入れば地域を問わず同じ日に枯れると考える",
+          "after": "多年にわたって育つ性質があれば、一年草として利用する計画は誤りだと考える",
+          "reason": "Replace an implausible same-day-death claim with a realistic confusion between intrinsic perennial habit and horticultural annual use. CorrectIndex3 unchanged; source explicitly identifies Primula as the counterexample."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-flowers-q03",
+          "field": "optionReasonsJa[2]",
+          "before": "分類表は全地域の枯死日を保証する情報ではありません。",
+          "after": "本来は宿根草の性質を持っていても、園芸利用上は一年草として扱う例があります。",
+          "reason": "Align the explanation with the revised intrinsic-habit versus utilization distractor and the explicit Primula source example."
+        }
+      ],
+      "holds": [
+        {
+          "id": "AGR-H-FLOWER-WORK-TAXONOMY",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 124,
+              "printedPage": 122
+            }
+          ],
+          "topic": "分類階級と二名法",
+          "reason": "分類階級の列挙と二名法を結び付ける原文は概念を混同し得る。本文は植物の関係を扱う整理と園芸的な整理の目的の違いに限定し、二名法の定義問題は未作成。",
+          "blocks": "binomial nomenclature definition only"
+        },
+        {
+          "id": "AGR-H-FLOWER-WORK-ORGAN-SCOPE",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 124,
+              "printedPage": 122
+            }
+          ],
+          "topic": "球根類の広い植物名による区分",
+          "reason": "属・品目名全体で地下器官が一律に決まるとはしない。例は資料上の対応と明示し、未掲載の種・品種への器官判定を広げない。",
+          "blocks": "universal organ classification beyond named source examples"
+        },
+        {
+          "id": "AGR-H-FLOWER-WORK-PHOTOSYNTHESIS",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 126,
+              "printedPage": 124
+            }
+          ],
+          "topic": "収穫後の光合成の絶対表現",
+          "reason": "資料には切り花で光合成が行われないという因果の説明がある。全ての切り花・条件の絶対命題にはせず、養水分、蒸散・呼吸と品質低下の観察を扱う。",
+          "blocks": "absolute zero-photosynthesis answer key only"
+        },
+        {
+          "id": "AGR-H-FLOWER-WORK-PACKAGING-TERM",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 126,
+              "printedPage": 124
+            }
+          ],
+          "topic": "包装用語の印字",
+          "reason": "原文印字はスリーピング。包装動作を文章化するが、用語を正しい専門語として採点しない。類似語への無根拠な置換もしない。",
+          "blocks": "printed disputed packaging term only"
+        },
+        {
+          "id": "AGR-H-FLOWER-WORK-CHEMICALS",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 126,
+              "printedPage": 124
+            }
+          ],
+          "topic": "品質保持剤の製品別使用条件",
+          "reason": "STSの化学名の印字、適用品目、濃度、処理時間、混用、排液処理および現行製品表示を確認していない。本文は処理の目的と時点のみで、製品処方・家庭での混合手順は作らない。",
+          "blocks": "chemical identity detail and practical product-specific prescription"
+        },
+        {
+          "id": "AGR-H-FLOWER-WORK-HARVEST-TEMPERATURE",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 126,
+              "printedPage": 124
+            }
+          ],
+          "topic": "全品目共通の収穫段階と低温設定",
+          "reason": "つぼみ収穫と温度を下げる記述を全品目へ一律適用する根拠はない。種・品種・出荷条件に応じた開花段階、予冷温度、保管温度、輸送時間は未確定。",
+          "blocks": "universal harvest stage and numerical temperature prescription"
+        },
+        {
+          "id": "AGR-H-FLOWER-WORK-TABLE-COMPLETENESS",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 124,
+              "printedPage": 122
+            }
+          ],
+          "topic": "表の残りの種名と分類照合",
+          "reason": "代表例以外の全種名、観葉植物・ハーブなどの細分類の網羅登録と専門照合は残る。表のラベンダー等の草本・木本の扱いも未検証で、全分類を確定したとはしない。",
+          "blocks": "exhaustive species-table coverage and uncertain woody/herbaceous labels"
+        },
+        {
+          "id": "AGR-H-FLOWER-WORK-SEASON-REGION",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 127,
+              "printedPage": 125
+            }
+          ],
+          "topic": "季節別利用表の地域・品種条件",
+          "reason": "季節表は資料の利用例。全地域の同一の植え付け日・開花日、同一品種条件として扱わず、具体的な日付・管理数値は未作成。",
+          "blocks": "universal regional flowering calendar"
+        },
+        {
+          "id": "AGR-H-FLOWER-WORK-ECONOMIC-CURRENT",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 125,
+              "printedPage": 123
+            }
+          ],
+          "topic": "経営比較表の現行費用",
+          "reason": "相対的な高低と栽培期間の例は学習用の資料記述。現在の市場価格、収益、輸送費、必要労力を保証する根拠にしない。",
+          "blocks": "current price/profit guarantee"
+        }
+      ]
+    },
+    {
+      "worker": "terms-recognition",
+      "packetSha256": "b7bcfec8912d4dfa05ba0f538661b6847b6674aafaa3dada0643baa6f6d67b40",
+      "integratedPayloadSha256": "5df3a5986d0f005707295aae5f97287ab025ea7265a6a8673abdaa70213a8495",
+      "independentReview": "parallel-06/review-terms-recognition.json",
+      "newLessonIds": [
+        "agr-workterms-soil-verbs",
+        "agr-workterms-seed-sequence",
+        "agr-workterms-cropping-labels",
+        "agr-workterms-fruit-labels",
+        "agr-workterms-weather-damage",
+        "agr-workterms-photo-labels"
+      ],
+      "knowledgeUnits": 36,
+      "weeklyQuestions": 16,
+      "appliedPatches": [
+        {
+          "targetType": "paragraph",
+          "targetId": "agr-workterms-weather-damage-p6",
+          "field": "titleJa",
+          "before": "似た音や字の作業語と区別する",
+          "after": "似た音でも漢字と文脈を確かめる",
+          "reason": "The compared words 干害(かんがい) and かん水(かんすい) do not have identical readings. Remove the contradictory same-reading premise while preserving the lexical distinction."
+        },
+        {
+          "targetType": "paragraph",
+          "targetId": "agr-workterms-weather-damage-p6",
+          "field": "textJa",
+          "before": "干害の読みは「かんがい」で、資料で水を与える仕事に使う「かん水」とは別の語です。音だけで判断せず、漢字と文中の条件を合わせて確認すると、被害の報告と作業の指示を混同しにくくなります。",
+          "after": "干害は「かんがい」、水を与える仕事のかん水は「かんすい」と読みます。音が似ていても別の語です。漢字と文中の条件を合わせて確認すると、被害の報告と作業の指示を混同しにくくなります。",
+          "reason": "Explicitly state the different readings; preserve weather damage versus water-giving work, without a false homophone relationship."
+        },
+        {
+          "targetType": "paragraph",
+          "targetId": "agr-workterms-soil-verbs-p4",
+          "field": "textJa",
+          "before": "記録では「整地をした」だけで終えず、どの畑で、どの作業の後に整えたかを確認します。代かきなら水田、中耕なら育成中の畑という、用語を判断する手掛かりを添えます。",
+          "after": "記録では「整地をした」だけで終えず、どの畑で、どの作業の後に整えたかを確認します。代かきなら水田、中耕なら作物が生育している畑という、用語を判断する手掛かりを添えます。",
+          "reason": "Use 生育 for crop growth rather than 育成 modifying the field; retain the timing condition for 中耕."
+        },
+        {
+          "targetType": "question",
+          "targetId": "agr-par06-terms-recognition-q03",
+          "field": "optionReasonsJa[1]",
+          "before": "育成中の畑の表面を浅く耕す仕事です。",
+          "after": "作物の生育中に、畑の表面を浅く耕す仕事です。",
+          "reason": "Clarify crop growth timing consistently with source 中耕; correct answer and options unchanged."
+        }
+      ],
+      "holds": [
+        {
+          "id": "AGR-H-WORKTERMS-PHOTO-ASSETS",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 103,
+              "printedPage": 97
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 104,
+              "printedPage": 98
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 130,
+              "printedPage": 128
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 131,
+              "printedPage": 129
+            }
+          ],
+          "topic": "写真の代替画像と識別学習",
+          "reason": "48掲載箇所・44画像概念を棚卸ししただけで、権利を確認した新規画像や誤認しやすい対象との対照は未作成。写真の転載や、文字説明だけでの識別完了扱いをしない。",
+          "blocks": "runtime visual recognition tasks only"
+        },
+        {
+          "id": "AGR-H-WORKTERMS-TAXONOMY",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 103,
+              "printedPage": 97
+            }
+          ],
+          "topic": "写真ラベルの歴史的な科名と利用上の分類",
+          "reason": "タマネギのユリ科、ホウレンソウのアカザ科は原資料のラベルとして記録するが、現行分類の確認は別に必要。根菜類という利用上の欄を、全例が植物学的な根である証拠にしない。",
+          "blocks": "current-taxonomy answer keys and blanket botanical-root claims"
+        },
+        {
+          "id": "AGR-H-WORKTERMS-SWEETPOTATO",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 103,
+              "printedPage": 97
+            }
+          ],
+          "topic": "サツマイモの科名の資料内整合",
+          "reason": "写真ラベルはヒルガオ科と確認できた。同じ1号資料の以前の本文との不整合を消去せず、既存の資料差異保留と併せて追跡する。",
+          "blocks": "silent merger of conflicting source taxonomy"
+        },
+        {
+          "id": "AGR-H-WORKTERMS-SEED-GLOSSARY",
+          "sources": [
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 99,
+              "printedPage": 93
+            },
+            {
+              "documentId": "AGR-S1",
+              "pdfPage": 100,
+              "printedPage": 94
+            },
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 128,
+              "printedPage": 126
+            }
+          ],
+          "topic": "用語の短い定義からの一律な催芽・選種条件",
+          "reason": "催芽の前日・1mm、選種の塩水選という短い用語説明を、全作物・全種子や製品に通じる日程、寸法、塩水濃度へ一般化しない。今回の語彙問題には操作条件を追加しない。",
+          "blocks": "universal seed-preparation prescriptions inferred from glossary alone"
+        },
+        {
+          "id": "AGR-H-WORKTERMS-COLOPHON-DATE",
+          "sources": [
+            {
+              "documentId": "AGR-S2",
+              "pdfPage": 132,
+              "printedPage": null
+            }
+          ],
+          "topic": "奥付の日英発行年差異",
+          "reason": "日本語の発行日2023年9月を画像確認したが、英語の発行者行はFebruary2020と記す。日付の違いを記録し、版番号や英語行の由来を推測しない。",
+          "blocks": "unverified English edition-date claims only"
+        }
+      ]
+    }
+  ],
+  "newLessonIds": [
+    "agr-facility-structure-vegetables",
+    "agr-facility-structure-strawberry",
+    "agr-facility-structure-flower-calendar",
+    "agr-facility-structure-flower-forms",
+    "agr-facility-structure-house-types",
+    "agr-facility-structure-roof-types",
+    "agr-facility-structure-outer-covers",
+    "agr-facility-structure-inner-covers",
+    "agr-facility-structure-heating",
+    "agr-facility-structure-cover-functions-2",
+    "agr-facility-env-ventilation",
+    "agr-facility-env-co2-light",
+    "agr-facility-env-temperature-reading",
+    "agr-facility-env-humidity-control",
+    "agr-facility-env-growth-observation",
+    "agr-facility-env-hydroponic-systems",
+    "agr-facility-env-nursery-methods",
+    "agr-facility-env-grafted-seedlings",
+    "agr-facility-env-soil-indicators-2",
+    "agr-facility-env-solution-circulation-2",
+    "agr-fruit-foundation-life",
+    "agr-fruit-foundation-buds",
+    "agr-fruit-foundation-propagation",
+    "agr-fruit-foundation-graft-types",
+    "agr-fruit-foundation-graft-alignment",
+    "agr-fruit-foundation-pruning",
+    "agr-fruit-foundation-treeforms",
+    "agr-fruit-foundation-pollination",
+    "agr-fruit-foundation-definition-2",
+    "agr-fruit-foundation-bud-patterns-2",
+    "agr-fruit-manage-bagging",
+    "agr-fruit-manage-harvest",
+    "agr-fruit-manage-renewal",
+    "agr-fruit-manage-orchard-soil",
+    "agr-fruit-manage-fertilizer",
+    "agr-fruit-manage-storage-facility",
+    "agr-fruit-manage-citrus-apple-grape",
+    "agr-fruit-manage-persimmon-pear-peach",
+    "agr-fruit-manage-materials-machines",
+    "agr-fruit-manage-grape-cluster-2",
+    "agr-fruit-manage-maturity-indicators-2",
+    "agr-flower-work-classification",
+    "agr-flower-work-organs",
+    "agr-flower-work-production",
+    "agr-flower-work-handling",
+    "agr-flower-work-coldchain",
+    "agr-flower-work-bedding",
+    "agr-workterms-soil-verbs",
+    "agr-workterms-seed-sequence",
+    "agr-workterms-cropping-labels",
+    "agr-workterms-fruit-labels",
+    "agr-workterms-weather-damage",
+    "agr-workterms-photo-labels"
+  ],
+  "newTranslations": 0,
+  "counts": {
+    "lessons": 126,
+    "knowledgeUnits": 756,
+    "weeklyQuestions": 248,
+    "lessonLocalePairs": 876,
+    "pageImagesChecked": 237,
+    "conceptDiagrams": 6,
+    "authoredLessonsMissingAll12Drafts": 53,
+    "remainingAuthoredLessonLocalePairs": 636
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "courseComplete": false,
+  "recognitionInventoryFiles": [
+    "recognition-inventory.json",
+    "glossary-inventory.json"
+  ],
+  "rootSourceReview": "parallel-06/root-source-review.json",
+  "allPageImagesAiChecked": true,
+  "validation": {
+    "sourceDataStateAndHashBindings": "PASS",
+    "preservedPreviousLessonHashes": 73,
+    "preservedDraftTranslationPairs": 876,
+    "newJapaneseReaderCases": 53,
+    "existingTranslatedReaderCases": 876,
+    "missingTranslationLocaleCases": 12,
+    "newDiagramDayNightViewportCases": 24,
+    "longTranslationResponsiveCases": 48,
+    "newDiagramComponentTypecheck": "PASS_scoped_to_new_component_and_JSON",
+    "fullAppTypecheck": false,
+    "sourceOverlapScreen": {
+      "lessons": 126,
+      "exactParagraphDuplicates": 0,
+      "exact48CharacterSourceWindows": 0,
+      "semanticOrRightsCertification": false
+    },
+    "javascriptSyntax": "PASS",
+    "pythonCompile": "PASS",
+    "approvedJlptUiLock": "PASS",
+    "nativeDeviceTested": false,
+    "productionExpoTested": false,
+    "nativeFontsCertified": false
+  },
+  "independentAiReview": {
+    "packets": 6,
+    "newLessons": 53,
+    "newWeeklyQuestions": 96,
+    "appliedFieldPatches": 77,
+    "humanReviewed": false,
+    "nativeReviewed": false,
+    "domainReviewed": false
+  },
+  "remainingScope": [
+    "636direct lesson-locale drafts for53new lessons",
+    "0/20mockforms and0/800mockquestions",
+    "Source-knowledge denominator and detailed pending tables/figures/terms/holds",
+    "New recognition assets: end-photo-list48entries/44subjects plus inline equipment/other illustrations; source photos not copied",
+    "Professional/native/device/build and measured study duration checks"
+  ],
+  "environmentNotes": [
+    "Scoped type check uses ReactNative0.81.5 matching app package; full Expo/app typecheck not claimed.",
+    "Minimal esbuild QA emits missing expo/tsconfig.base warning. Explicit browser adapters/fonts do not certify native runtime.",
+    "JSX alias resolver in QA now accepts explicit JSON file extensions.",
+    "Local QA screenshots are regenerable; JSON records scope, not durable screenshot availability."
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "reviewer": "independent_canonical_japanese_furigana_ai",
+  "status": "pass",
+  "scope": "Two optional editorial precision changes only; not mandatory key corrections or new PDF-certified definitions.",
+  "baselineCommit": "7639bbab163cba6a7084de61bf20ffcb7623eaf0",
+  "canonicalRevisions": {
+    "path": "docs/ssw-workspace/manufacturing/batch21/canonical-revisions.json",
+    "sha256": "9dd73fa31b2deb86225f0ec18d6fce1416c2ec78e1adc5bda5f58cc1b24959b1"
+  },
+  "sourceReview": {
+    "path": "docs/ssw-workspace/manufacturing/batch21/source-review.json",
+    "sha256": "5369df84a13e8fa76acadcd78fcaf830d446c9aa33e877e54b9a5ecd4a403db6"
+  },
+  "proposalBinding": {
+    "path": "docs/ssw-workspace/manufacturing/batch17/electrical-mocks/practical-precision-proposals.json",
+    "sha256": "4ddad910f75795148ccbfedfb5723648e3211aafaddacd3686c1f8dacc9cd889"
+  },
+  "source": {
+    "documentId": "mfg1-electrical-source",
+    "sha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+    "physicalPagesIndependentlyVisuallyReviewed": [
+      89,
+      90,
+      91,
+      106,
+      127,
+      128,
+      139,
+      141
+    ]
+  },
+  "method": "Independently read all8actualsource-page renders, current lessons065/066, full before/after question/options/reasons and furigana segments; computed exact field differences, question object hashes, furigana text alignment and both exam revisions without runtime edits.",
+  "reviews": [
+    {
+      "questionId": "mfg1-electrical-mock-03-practical-q04",
+      "status": "pass",
+      "beforeSourceHash": "c09cf5164d2db3785d722fa772ea1dccad9c5e8ad89feb4d2d243fde90496593",
+      "afterSourceHash": "0b6dcc406d6b8dc8335efb2d8b7c38c4cc9d650f29a23a1893ed070172996fad",
+      "beforeObjectSha256": "ba02d0c059c4afacda5cd07ebd544d227794525449bd2d2c73d7c7eb8444ad63",
+      "afterObjectSha256": "f09edb1699da9350d03ed1a7a5140b6e476814a15e5e38cc423ad51924005858",
+      "changedFields": [
+        "stemJa",
+        "sourceHash"
+      ],
+      "correctIndexPreserved": 2,
+      "optionsReasonsAndOtherFieldsPreserved": true,
+      "furiganaBeforeObjectSha256": "555b4d53219c3f66fe2492d6012c4f29720d78209f485930209bdb39d92530d0",
+      "furiganaAfterObjectSha256": "2d3aba5203b9c29393329bb8296f6457d947cfc345045c233e33fb143c43db08",
+      "furiganaTextExactlyAligned": true,
+      "furiganaOptionsPreserved": true,
+      "japaneseAssessment": "Thermistor purpose is now explicit; no universal thermistor use claim.",
+      "newReadingReview": "検出=けんしゅつ; 主目的=しゅもくてき; 利用=りよう; existing temperature/resistance/device readings retained.",
+      "examRevision": {
+        "before": "v1-ba996fb024ce6aef",
+        "after": "v1-2893b56a4f674cf6"
+      }
+    },
+    {
+      "questionId": "mfg1-electrical-mock-08-practical-q08",
+      "status": "pass",
+      "beforeSourceHash": "c9879288793c3f225bf7c593c1710a799e0606439774b75d408c3a8f24daed08",
+      "afterSourceHash": "ad11f1236f65a7a312a08d08fe36a6fca9e03d41955a2273617689a5eca7981d",
+      "beforeObjectSha256": "ed65dc9ce8cbb426fe27c2d02b8e591adbb619c6b418154e941e8cdf63743835",
+      "afterObjectSha256": "0ef14a208749b1d7fc13a18d0c38642eace48e2a31d5b98d6a46ba658d0cbc19",
+      "changedFields": [
+        "stemJa",
+        "sourceHash"
+      ],
+      "correctIndexPreserved": 3,
+      "optionsReasonsAndOtherFieldsPreserved": true,
+      "furiganaBeforeObjectSha256": "8c79124c6aef8afc0a163470deacaa8c6acb547b090ebfca80f5e4351e829cfa",
+      "furiganaAfterObjectSha256": "5bb8dcc5224debe7c10e1f118cc5ed893f6a87f6a54d53ec69210553c872aae0",
+      "furiganaTextExactlyAligned": true,
+      "furiganaOptionsPreserved": true,
+      "japaneseAssessment": "Unintended connection is explicit, excluding intended common-net joins.",
+      "newReadingReview": "本来=ほんらい; existing 隣=となり and all other readings retained.",
+      "examRevision": {
+        "before": "v1-c30ad83ca9e6688a",
+        "after": "v1-5b0cc994dd8fdcb1"
+      }
+    }
+  ],
+  "independentScopedReview": true,
+  "keyCorrectionRequired": false,
+  "sourceSupportLimitation": "Inspected PDF pages supply general soldering/passive-component context; they do not explicitly define thermistor temperature-detection purpose or solder-bridge/land meaning. These revisions clarify existing canonical lesson/rationale context only, preserving their source references without claiming direct PDF proof. Source exercises on91 were visible but excluded from authorship.",
+  "existingLessonAndRationaleConsistency": "Thermistor wording aligns with l066section3 and current temperature-detection rationale; unintended bridge wording aligns with l065section3 and current unnecessary-bridge rationale.",
+  "needsTranslationRebinding": true,
+  "needsStaleExamAttemptRejection": true,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "fullSourceCertified": false,
+  "releaseReady": false,
+  "runtimeModifiedByThisWorker": false,
+  "limitations": [
+    "Scoped AI Japanese/furigana and preservation review only.",
+    "No native/domain/physical-device certification.",
+    "Historical batch14 review should stay frozen; these two revised questions require this separate revision receipt."
+  ]
+}

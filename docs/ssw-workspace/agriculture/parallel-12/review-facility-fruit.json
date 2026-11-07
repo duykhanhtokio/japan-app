@@ -1,0 +1,169 @@
+{
+  "status": "complete",
+  "packetFile": "facility-fruit.json",
+  "packetSha256": "626650b5b29840889a98d9f927e05226fc38735c34c410fdc40b3f2986a7249b",
+  "reviewer": "agri_4",
+  "reviewType": "independent_ai_source_semantic_review",
+  "scope": {
+    "lessons": 2,
+    "paragraphs": 12,
+    "objectives": 2,
+    "activities": 2,
+    "terms": 8,
+    "knowledgeUnits": 12,
+    "questions": 8,
+    "options": 32,
+    "optionReasons": 32,
+    "sourceGapResolutions": 13,
+    "fullSemanticReview": true,
+    "existingProseBaseline": 156,
+    "priorQuestionBank": 344
+  },
+  "sourceImageScope": [
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 82,
+      "printedPage": 80,
+      "path": "/workspace/scratch/018c0b6e29b8/audit10-facility/s2-82.png",
+      "sha256": "c00207301eac503fc419c39428e75897c77423e828c54f040f9d51334d284568",
+      "visualChecked": true,
+      "provenance": "Retained batch10 render; re-viewed now. Original PDF unavailable; prior PDF hash is historical evidence only."
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 89,
+      "printedPage": 87,
+      "path": "/workspace/scratch/018c0b6e29b8/audit10-facility/s2-89.png",
+      "sha256": "d0a4b52267a963924c92e20ce93ce805a6432150b6de656c41c917ae456e22d8",
+      "visualChecked": true,
+      "provenance": "Retained batch10 render; re-viewed now. Original PDF unavailable; prior PDF hash is historical evidence only."
+    }
+  ],
+  "confirmedChecks": [
+    "All12paragraphs/titles,objectives,activities,8term readings and12knowledge objects compared with retained S2PDF82/89 actual images; both images re-viewed and hashes checked.",
+    "Ventilation conditions preserve placement/temperature/humidity, outside intake plus hot-air exhaust, source-attributed tomato prevalence, mechanical-control qualifier, cold-air avoidance alternatives, and forced ventilation OR shading without invented settings.",
+    "Strawberry prose preserves either runner trigger, natural autumn differentiation versus next-year spring flowering/fruiting, temperature/daylength distinctions, fertilizer interruption as source example without prescription, and all four nursery names without inferred operational details.",
+    "All156existing lessons screened by candidate semantic terms and full related ventilation/strawberry/flowering/nursery/humidity bodies compared. New facts extend rather than replace the existing fundamentals.",
+    "Complete344prior question stems screened for overlap; all related full question options compared. q02 originally repeated the opening sequence tested in agr-par06-facility-environment-q02; patches refocus it on the new mechanical-control qualifier. Other seven assessment objectives remain distinct.",
+    "All8questions and32options/reasons source checked; q07 distractors refined to plausible adjacent nursery-condition confusions. Single level2 bank remains2answers per position, with no three same positions consecutively.",
+    "All13resolution rows are exact missing textual backlog IDs outside100batch11covered, alllevel2 with explicit paragraph coverage. No held fact, recognition-only objective or inaccessible level1 source occurrence is closed.",
+    "Questionq06 links both tested developmental stages after one reciprocal knowledge-link addition. No lesson prose, course scope, source hash or source-gap disposition requires correction."
+  ],
+  "patches": [
+    {
+      "targetType": "question",
+      "targetId": "agr-par12-facility-q02",
+      "field": "stemJa",
+      "before": "2号資料のカーテン、天窓、側窓の順序を説明するとき、残すべき条件はどれですか。",
+      "after": "2号資料の「カーテン、天窓の順に開く」という説明に付く、設備側の条件はどれですか。",
+      "reason": "Avoid repeating existing agr-par06-facility-environment-q02 opening-sequence assessment. Assess the newly explicit mechanical-control qualifier instead."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par12-facility-q02",
+      "field": "optionsJa",
+      "before": [
+        "全ての窓を最初に同時に開ける。",
+        "機械制御時にカーテンから天窓へ進み、なお高温なら側窓を開ける。",
+        "自然換気をせず、側窓から先に全開にする。",
+        "気温が下がっても、必ず最後に側窓を全開にする。"
+      ],
+      "after": [
+        "全ての窓を手動で開閉する場合に限る。",
+        "換気を機械で制御している場合。",
+        "自然換気をせず、換気扇だけで空気を入れ替える場合に限る。",
+        "気温に関係なく、側窓を常時全開にする場合。"
+      ],
+      "reason": "Keep answer position1 while distinguishing the newly sourced equipment/control condition from manual operation, forced-only ventilation and unconditional opening."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par12-facility-q02",
+      "field": "optionReasonsJa",
+      "before": [
+        "資料の段階的な説明とは異なります。",
+        "機械制御と高温が続く場合という条件を残しています。",
+        "自然換気から始める順序と逆です。",
+        "なお高温の場合という条件が失われています。"
+      ],
+      "after": [
+        "資料は手動に限る条件ではなく、機械制御の場合を示しています。",
+        "機械で制御している場合という、2号の条件を明示しています。",
+        "資料のこの順序は自然換気の説明で、換気扇だけの条件ではありません。",
+        "側窓は、なお気温が高い場合に進む説明です。"
+      ],
+      "reason": "Reasons aligned to replacement qualifier-focused options."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par12-facility-q07",
+      "field": "optionsJa",
+      "before": [
+        "換気扇の設置位置",
+        "側窓の開け幅",
+        "肥料中断",
+        "強制換気の排気量"
+      ],
+      "after": [
+        "高温条件を長く維持すること",
+        "明るい時間を長くすること",
+        "肥料中断",
+        "栄養過剰の状態を維持すること"
+      ],
+      "reason": "Replace unrelated ventilation distractors with plausible strawberry nursery-condition confusions; preserve correct index2 and source-only scope."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par12-facility-q07",
+      "field": "optionReasonsJa",
+      "before": [
+        "換気の条件で、ここでの列挙ではありません。",
+        "寒い時期の換気の条件です。",
+        "花芽分化を早める育苗の条件例として掲載されています。",
+        "このページの促進条件ではありません。"
+      ],
+      "after": [
+        "掲載されるのは低温であり、高温を長く維持する条件ではありません。",
+        "掲載されるのは短日であり、明るい時間を長くする条件ではありません。",
+        "花芽分化を早める育苗の条件例として掲載されています。",
+        "栄養過剰はランナー発生の条件例で、ここで問う分化促進の列挙とは異なります。"
+      ],
+      "reason": "Reasons explain the nursery-specific distractors using the actual adjacent source conditions."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par12-facility-q06",
+      "field": "knowledgeIds",
+      "before": [
+        "AGR-K-PAR12-FACILITY-STRAWBERRY-DEVELOPMENT-2-03"
+      ],
+      "after": [
+        "AGR-K-PAR12-FACILITY-STRAWBERRY-DEVELOPMENT-2-02",
+        "AGR-K-PAR12-FACILITY-STRAWBERRY-DEVELOPMENT-2-03"
+      ],
+      "reason": "Question tests autumn low-temperature/short-day differentiation as well as next-spring flowering; link both source paragraphs."
+    }
+  ],
+  "knowledgePatches": [
+    {
+      "targetId": "AGR-K-PAR12-FACILITY-STRAWBERRY-DEVELOPMENT-2-02",
+      "field": "questionIds",
+      "before": [],
+      "after": [
+        "agr-par12-facility-q06"
+      ],
+      "reason": "Reciprocal link for autumn differentiation component assessed in q06."
+    }
+  ],
+  "resolutionPatches": [],
+  "excludedResolutions": [],
+  "unresolvedBlockingIssues": [],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "limits": [
+    "AI source review only; no native/domain/human/device certification.",
+    "Retained renders re-viewed and SHA checked. Coordinator restored inventory-matching original PDFs after author freeze; this review did not independently rehash or rerender those originals.",
+    "156lesson/344question complete-bank candidate-topic screening plus full relevant body comparison is not a re-certification of unrelated prior content."
+  ]
+}

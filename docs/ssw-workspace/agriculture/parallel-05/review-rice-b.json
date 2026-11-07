@@ -1,0 +1,125 @@
+{
+  "status": "complete",
+  "packetFile": "translations-rice-b.json",
+  "packetSha256": "f1d914f86660e100078ae555bfa5ba4725dc44bba30f605c81313e0969ec1498",
+  "sourcePath": "src/data/agriculture/lessons.ja.json",
+  "sourceFileSha256": "883665c7a9d2b2349c74d4a0009ed2436d21444246464a029f9959acefb0162f",
+  "scope": {
+    "locales": [
+      "hi",
+      "bn",
+      "ne",
+      "th",
+      "my",
+      "km"
+    ],
+    "lessonsPerLocale": 10,
+    "lessonLocalePairs": 60,
+    "paragraphBodiesCompared": 360,
+    "paragraphHeadingsCompared": 360,
+    "titlesCompared": 60,
+    "objectivesCompared": 60,
+    "activitiesCompared": 60,
+    "method": "Independent AI direct comparison to Japanese canonical text, including complete paragraphs and source-specific limits; technical validation separately recorded."
+  },
+  "patches": [
+    {
+      "locale": "ne",
+      "lessonId": "agr-ricework-soaking",
+      "field": "objective",
+      "before": "पानी सोसाउने भिजाइ र रोप्नुअघि टुसा निकाल्ने काम छुट्याएर स्रोतका अवस्थाका सङ्केत पढ्नुहोस्।",
+      "after": "पानी सोसाउने भिजाइ र छर्नुअघि टुसा निकाल्ने काम छुट्याएर स्रोतका अवस्थाका सङ्केत पढ्नुहोस्।",
+      "reason": "Japanese 播種前 means before sowing, not before transplanting; maintain the soaking/pre-germination/nursery sequence."
+    },
+    {
+      "locale": "hi",
+      "lessonId": "agr-ricework-field",
+      "field": "objective",
+      "before": "जुताई, कादो बनाना और रोपाई का क्रम समझें; पूरे खेत तथा कतार के किनारे उर्वरक देना और कतार तथा पौध की दूरी अलग करें।",
+      "after": "जुताई, पानी भरे खेत की मिट्टी मथकर नरम करना और रोपाई का क्रम समझें; पूरे खेत तथा कतार के किनारे उर्वरक देना और कतारों तथा पौधों के बीच की दूरी अलग करें।",
+      "reason": "Use natural Hindi for puddling rather than Nepali कादो; retain distinct fertilizer placement and row/plant spacings."
+    },
+    {
+      "locale": "th",
+      "lessonId": "agr-ricework-processing",
+      "field": "activity",
+      "before": "แยกกล่องทำแห้ง สีเปลือก คัดเมล็ดเสีย และส่งขาย อีกทางเป็นตอ-ฟางในนา จำแนกตัวเลขเป็นความชื้น％ น้ำหนักภาชนะkg และเงื่อนไขเครื่อง",
+      "after": "แยกกล่องทำแห้ง สีเปลือก คัดเมล็ดเสีย และส่งขาย อีกทางเป็นตอ-ฟางในนา จำแนกตัวเลขเป็นความชื้น％ ปริมาณบรรจุภาชนะkg และเงื่อนไขเครื่อง",
+      "reason": "Japanese container kg refers to stated filling amount/capacity, not empty container weight; source example is a 30kg rice bag."
+    },
+    {
+      "locale": "bn",
+      "lessonId": "agr-ricework-seed",
+      "field": "objective",
+      "before": "ভ্রূণ, শস্যপুষ্টি ও তুষের অবস্থান-ভূমিকা আলাদা করে বুঝুন এবং বীজ শোধনকে প্রস্তুতি পর্যায়ের ব্যবস্থাপনা হিসেবে ব্যাখ্যা করুন।",
+      "after": "ভ্রূণ, এন্ডোস্পার্ম ও তুষের অবস্থান-ভূমিকা আলাদা করে বুঝুন এবং বীজ শোধনকে প্রস্তুতি পর্যায়ের ব্যবস্থাপনা হিসেবে ব্যাখ্যা করুন।",
+      "reason": "Clarify 胚乳 as the anatomical endosperm rather than an ambiguous literal expression for grain nutrition; preserve explanatory role in text."
+    },
+    {
+      "locale": "bn",
+      "lessonId": "agr-ricework-seed",
+      "field": "activity",
+      "before": "বীজধানের ছেদচিত্র এঁকে ভ্রূণ, শস্যপুষ্টি ও তুষের ভূমিকা লিখুন। পরে বীজ প্রস্তুতির উদ্দেশ্য এবং নির্দিষ্ট শোধন-শর্ত যাচাই আলাদা ঘরে সাজান।",
+      "after": "বীজধানের ছেদচিত্র এঁকে ভ্রূণ, এন্ডোস্পার্ম ও তুষের ভূমিকা লিখুন। পরে বীজ প্রস্তুতির উদ্দেশ্য এবং নির্দিষ্ট শোধন-শর্ত যাচাই আলাদা ঘরে সাজান।",
+      "reason": "Clarify 胚乳 as the anatomical endosperm rather than an ambiguous literal expression for grain nutrition; preserve explanatory role in text."
+    },
+    {
+      "locale": "bn",
+      "lessonId": "agr-ricework-seed",
+      "field": "paragraphTitles",
+      "before": "শস্যপুষ্টির ভূমিকা",
+      "after": "এন্ডোস্পার্মর ভূমিকা",
+      "reason": "Use the same clear anatomical term for 胚乳/endosperm throughout seed structure and maturity; do not confuse stored tissue with nutrients themselves.",
+      "paragraphId": "agr-ricework-seed-p3"
+    },
+    {
+      "locale": "bn",
+      "lessonId": "agr-ricework-seed",
+      "field": "paragraphs",
+      "before": "শস্যপুষ্টিতে অঙ্কুরোদ্গমের পর বৃদ্ধির জন্য পুষ্টি জমা থাকে। পাতা-শিকড় তৈরির অঙ্গসম্বলিত ভ্রূণ ও পুষ্টি সঞ্চয়কারী শস্যপুষ্টির ভূমিকা এক মনে করবেন না।",
+      "after": "এন্ডোস্পার্মতে অঙ্কুরোদ্গমের পর বৃদ্ধির জন্য পুষ্টি জমা থাকে। পাতা-শিকড় তৈরির অঙ্গসম্বলিত ভ্রূণ ও পুষ্টি সঞ্চয়কারী এন্ডোস্পার্মর ভূমিকা এক মনে করবেন না।",
+      "reason": "Use the same clear anatomical term for 胚乳/endosperm throughout seed structure and maturity; do not confuse stored tissue with nutrients themselves.",
+      "paragraphId": "agr-ricework-seed-p3"
+    },
+    {
+      "locale": "bn",
+      "lessonId": "agr-ricework-seed",
+      "field": "paragraphs",
+      "before": "তুষ ভেতরের বাদামি চালকে রক্ষা করে। গঠনের ছবিতে ভেতরের ভ্রূণ-শস্যপুষ্টির সম্পর্ক এবং বাইরে তুষ দিয়ে ঢাকা সম্পর্ক আলাদা দেখান।",
+      "after": "তুষ ভেতরের বাদামি চালকে রক্ষা করে। গঠনের ছবিতে ভেতরের ভ্রূণ-এন্ডোস্পার্মর সম্পর্ক এবং বাইরে তুষ দিয়ে ঢাকা সম্পর্ক আলাদা দেখান।",
+      "reason": "Use the same clear anatomical term for 胚乳/endosperm throughout seed structure and maturity; do not confuse stored tissue with nutrients themselves.",
+      "paragraphId": "agr-ricework-seed-p4"
+    },
+    {
+      "locale": "bn",
+      "lessonId": "agr-ricework-stages",
+      "field": "paragraphs",
+      "before": "দানা শক্ত হয়ে শস্যপুষ্টির সম্পূর্ণ অংশ স্বচ্ছ হওয়া পরিপক্বতা পর্যায়। শুধু বোনার পর দিন নয়, দানার অবস্থার সঙ্গে মিলিয়ে বুঝুন।",
+      "after": "দানা শক্ত হয়ে এন্ডোস্পার্মর সম্পূর্ণ অংশ স্বচ্ছ হওয়া পরিপক্বতা পর্যায়। শুধু বোনার পর দিন নয়, দানার অবস্থার সঙ্গে মিলিয়ে বুঝুন।",
+      "reason": "Use the same clear anatomical term for 胚乳/endosperm throughout seed structure and maturity; do not confuse stored tissue with nutrients themselves.",
+      "paragraphId": "agr-ricework-stages-p6"
+    },
+    {
+      "locale": "bn",
+      "lessonId": "agr-ricework-nursery",
+      "field": "paragraphs",
+      "before": "যন্ত্র দিয়ে ধানখেতে বসানোর চারা বাক্সেবড় করা হয়। সরাসরি খেতে বীজ বোনার তুলনায় রোপণের আগে চারা তৈরির স্থান ও কাজ আলাদা।",
+      "after": "যন্ত্র দিয়ে ধানখেতে বসানোর চারা বাক্সে বড় করা হয়। সরাসরি খেতে বীজ বোনার তুলনায় রোপণের আগে চারা তৈরির স্থান ও কাজ আলাদা।",
+      "reason": "Restore missing space for fluent Bengali nursery explanation.",
+      "paragraphId": "agr-ricework-nursery-p1"
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "observations": [
+    "All six corrected sparse-planting paragraphs retain inclusive at least40% reduction with the 30cm/15cm/28cm example conditions; no universal savings guarantee.",
+    "Soaking10–15℃/7–10days, pre-germination30–32℃ previous day, ~1mm stage, tray60×30×3cm, nursery20–25/30–35days, heading~30days and harvest30–60days retain source-example scope.",
+    "Harvest moisture20–27%, drying14–15% and30kg shipping bags remain distinct from machine temperature/time or fertilizer composition.",
+    "Embryo/endosperm/hull roles, nematode-vs-fungal disease distinction, threshing-vs-hulling, direct-seeding-vs-sparse transplanting and grain feed-vs-whole crop silage compared.",
+    "Source1/source2 spacing differences and early-variety/local-calendar limitations retained.",
+    "Several locales retain Japanese technical terms with local explanations; these are pedagogical terms, not missing fallback translations.",
+    "AI review does not replace native-language or agricultural domain review."
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false
+}

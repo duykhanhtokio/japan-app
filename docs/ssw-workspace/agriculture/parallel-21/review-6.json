@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "agriculture-parallel-21-review-6",
+  "status": "complete",
+  "authorPacketSha256": "f303cf039f6c31665637eebc9c3396bcf08d2236f6c13a10db6d807503581317",
+  "questionsReviewed": [
+    "agr-par21-g6-q01",
+    "agr-par21-g6-q02",
+    "agr-par21-g6-q03",
+    "agr-par21-g6-q04"
+  ],
+  "sourceImagesChecked": [
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 125,
+      "printedPage": 123,
+      "imageFile": "AGR-S2-p125.png",
+      "imageSha256": "da2e05a4d91a60417fc7993fe529927bab96a3ca4ab0d3ec1d9b1a3dae97c19f"
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 11,
+      "printedPage": 9,
+      "imageFile": "AGR-S2-p011.png",
+      "imageSha256": "41f2d244f7526a6b2ef9e3d9addb2debb2d28bdba0800d9e38a5c39bdeed3303"
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 45,
+      "printedPage": 43,
+      "imageFile": "AGR-S2-p045.png",
+      "imageSha256": "2f13ea63addfc303c6f4c12ca62b833efa9e76ab6366e3a870c17afea7be4f37"
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 58,
+      "printedPage": 56,
+      "imageFile": "AGR-S2-p058.png",
+      "imageSha256": "94022e7c1d1880e48fce7eda6bdbe7857d18a8a7c20c2b50e28fa9d11e62f0fe"
+    }
+  ],
+  "method": "Independent visual comparison of four exact original PDF page renders, canonical paragraphs, all388existingquestion stems/correctpropositions and full current option/reason screening for overlapping constructs. Exact relevant fullobjects inspected for profit/table,carbohydrate,physicalcontrol and electricalhazards. No source accuracy/domain/human certification.",
+  "questionPatches": [
+    {
+      "questionId": "agr-par21-g6-q02",
+      "field": "stemJa",
+      "before": "2号資料の模式図で、葉から茎を通って根へ向かう線があります。根から葉へ向かう水の線と区別した説明はどれですか。",
+      "after": "2号資料で扱う物質の移動について、根から葉へ向かう水とは別に、葉から茎を通って根などへ向かう流れを説明したものはどれですか。",
+      "reason": "Make the item self-contained: the app need not display the source diagram. The material/direction comparison is unchanged and all four options remain answerable from the canonical lesson."
+    }
+  ],
+  "excludedQuestionIds": [],
+  "unresolvedBlockingIssues": [],
+  "candidateFindings": [
+    {
+      "candidateRef": "agr-flower-details-economic-rows-p6",
+      "questionId": "agr-par21-g6-q01",
+      "disposition": "retain_with_explicit_derived_inference",
+      "sourceSupport": "AGR-S2PDF125/printed123 shows relative low/high seedlingcost/marketprice and labour categories, not numeric revenue or totalcost. Noncomputability of profit follows from absent inputs; this is inference from the table, not a quoted economic rule.",
+      "overlapQuestionIds": [
+        "agr-par08-flower-details-q05",
+        "agr-par08-flower-details-q06",
+        "agr-2-w01-q12"
+      ],
+      "reason": "Earlier items map category rows or historical rank scope. They do not ask why ordinal input cannot yield a monetary profit amount. One correct answer; the distractors each make a plausible representational mistake. No invented money, current price, or profit ranking."
+    },
+    {
+      "candidateRef": "agr-par11-general-gas-transport-p6",
+      "questionId": "agr-par21-g6-q02",
+      "disposition": "retain_after_self_contained_stem_patch",
+      "sourceSupport": "AGR-S2PDF11/printed9 visually labels carbohydrate descending from leaf through stem toward roots and water moving upward from root.",
+      "overlapQuestionIds": [
+        "agr-shared-w02-q06",
+        "agr-shared-w02-q07",
+        "agr-shared-w02-q08",
+        "agr-par11-general-q01"
+      ],
+      "reason": "Existing questions cover production of carbohydrate,respiration consumption,water uptake/transpiration and gas labels. The direction/origin/destination of carbohydrate transport is a distinct relationship. Do not infer universal physiological direction or transport rates from this diagram."
+    },
+    {
+      "candidateRef": "agr-par11-management-physical-controls-p4",
+      "questionId": "agr-par21-g6-q03",
+      "disposition": "retain_source_specific_conceptual_classification",
+      "sourceSupport": "AGR-S2PDF45/printed43 under physical methods explicitly lists solarheat and hotwater for suppressing diseases/pests; nearby text distinguishes reflection,adhesion and biological enemies.",
+      "overlapQuestionIds": [
+        "agr-cm-weekly-q13",
+        "agr-par11-management-q05",
+        "agr-par11-management-q06",
+        "agr-par11-management-q07"
+      ],
+      "reason": "No prior stem/option/reason in the screened bank located the heat examples. Plausible alternatives represent other real control mechanisms. No temperatures,durations,procedure or eradication guarantee introduced."
+    },
+    {
+      "candidateRef": "agr-par12-management-power-fuel-information-p4",
+      "questionId": "agr-par21-g6-q04",
+      "disposition": "retain_separate_electrical_hazard",
+      "sourceSupport": "AGR-S2PDF58/printed56 separately warns about wet hands and insertion with dust/debris trapped at the socket.",
+      "overlapQuestionIds": [
+        "agr-par04-safety-q11"
+      ],
+      "reason": "Existing q11 tests wet hands/electricshock and unsafevoltage/fit assumptions, but does not expose trappeddust/debris. New scenario distinguishes two hazardchecks; no livecleaning,repair or safevoltage instructions."
+    }
+  ],
+  "reviewScopeLimits": [
+    "Fourquestions only; the fifthsourcecheck (level1airtightness) was not part of this question review.",
+    "Original sourcepage pictures remain local review evidence and are not runtime illustrations.",
+    "Four new weekly candidates do not establish800distinctmockobjectives.",
+    "Retain false native/domain/human review flags."
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseReady": false,
+  "sourceOccurrencesClosed": 0
+}

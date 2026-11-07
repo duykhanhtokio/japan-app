@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "baseline": "06905f8b3a6ba51df28d55b0abd3e4ecc2edbf73",
+  "workers": 6,
+  "scope": "Manufacturing SSW1; no SSW2, Japanese/core translations unchanged",
+  "checks": {
+    "canonicalSourceReviewBindings": "PASS5 guides/6 file-digest reviews; full-source certificate excluded",
+    "manufacturingDataState": "PASS262 lessons/456 weekly questions/12 complete locales/60 guide pairs",
+    "mockContent": "PASS30 forms/1200 questions and12 exact locale sets",
+    "mockState": "PASS independent clocks/restore/expiry/scoring",
+    "mockNegativeRegression": 9,
+    "translationNegativeRegression": 10,
+    "simulatedAndroidHardwareBack": {
+      "checks": 12,
+      "pageErrors": 0,
+      "result": "PASS",
+      "physicalDevice": false
+    },
+    "eslintChangedComponents": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "jlptUiLock": "PASS10/10",
+    "gitWhitespace": "PASS",
+    "wholeAppTypeScript": {
+      "status": "FAIL_OUTSIDE_MANUFACTURING",
+      "diagnosticCount": 1,
+      "manufacturingDiagnostics": 0,
+      "location": "src/components/agriculture/RecognitionImages.tsx:57",
+      "code": "TS2322",
+      "initialRun": "Node default heap exhausted; rerun with6144MB completed"
+    }
+  },
+  "independentAiSemanticReview": {
+    "mechanicalMockQuestions": 400,
+    "electricalPreviouslyPendingPracticalQuestions": 100,
+    "requiredAnswerKeyCorrections": 0,
+    "minorWordingNotesRemain": true,
+    "runtimeReviewStatusRewritten": false
+  },
+  "sha256": {
+    "scripts/manufacturing/check.cjs": "34cd480f392a7d3956c29bfffff1a06b2ab71e914e3d1fe791f51c004e492fd2",
+    "scripts/manufacturing/check-mock-content.py": "f6b9c9085145f4ce4f874efd0b465553ad09832ae3dc15c112007fffed4ae539",
+    "scripts/manufacturing/check-mock-content-regression.py": "dc17ebc7de5b37cd9b8e2e96d603a482d64fb391ed05ac13eef4686febeedfbc",
+    "scripts/manufacturing/check-translation-coverage-regression.cjs": "658530c5ead7b7901523e766f230ea3d48ce8794847354d68b190a01a594a167",
+    "scripts/manufacturing/check-hardware-back-browser.cjs": "3a315f8c5d9b23a0b5ee025d333911be3e2641380b360eef67cde0b015dcb15d",
+    "src/components/manufacturing/ManufacturingCourse.tsx": "947fecd8eb083f596810f8cb5884dff9db2b7aadc5e40cdb95a546125edd8b5f",
+    "src/components/manufacturing/ManufacturingMocks.tsx": "74354c5986262838ff48af75c8f837db9a24b0f61bda840be6df40fa5bcf2cb3",
+    "src/components/manufacturing/useManufacturingBack.ts": "7b81c2dd07f541fdd77bb4b5e63f507e3e89e3d7c80567bf961e4468799c4c96",
+    "docs/ssw-workspace/manufacturing/batch14/electrical-mock-review.json": "d6bb47ebf8624f654c3013fdde6202f0e9206845e5c26924bab359545ec66e21",
+    "docs/ssw-workspace/manufacturing/batch14/mechanical-mock-review.json": "794ea71fca91fd26d4109b423201d410968195df73d83d4c14bd99610c63f4b2",
+    "docs/ssw-workspace/manufacturing/batch14/hardware-back-qa.json": "2a3be6c552f18572ceac904d064fbbe0933e659ff7dc9275de51c108891ea4d8"
+  },
+  "aiDraftDeliveryComplete": true,
+  "wholeCurriculumComplete": false,
+  "releaseReady": false,
+  "remaining": [
+    "Exhaustive source-object atomization and curriculum coverage verification",
+    "Review minor wording notes through source-bound editorial workflow",
+    "Native/domain review and physical native-device verification"
+  ],
+  "noBackgroundProcessClaimed": true
+}

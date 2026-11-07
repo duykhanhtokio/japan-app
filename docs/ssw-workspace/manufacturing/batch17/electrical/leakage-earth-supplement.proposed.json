@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "status": "author_AI_proposal_not_integrated_or_independently_reviewed",
+  "kind": "source_reference_supplement_proposal",
+  "proposedId": "mfg1-electrical-reference-leakage-earth",
+  "specialty": "electrical",
+  "knowledgeIds": [
+    "mfg1-electrical-c10-s1-5"
+  ],
+  "titleJa": "漏電の原因と接地後も残る危険を分ける",
+  "objectiveJa": "絶縁の傷みから漏電が起きる理由と、接地があっても故障が直ったことにはならない理由を説明する。",
+  "paragraphs": [
+    {
+      "id": "fault-path",
+      "titleJa": "本来の電路から外れる",
+      "textJa": "電線や機器の絶縁物には、電気が本来の通り道以外へ流れないようにする役割があります。絶縁物が劣化したり傷ついたりすると、機器の金属ケースなどへ電気が流れることがあります。これが漏電の一つの起こり方です。漏電を疑うときは、手で触って確かめず、職場の手順で使用停止と報告につなげます。"
+    },
+    {
+      "id": "protective-earth",
+      "titleJa": "接地は故障の修理ではない",
+      "textJa": "教材では、機器と接地極をアース線で結ぶ保護を説明しています。指定された接地は故障時の電流の通り道に関わりますが、接地があっても、傷んだ絶縁物そのものが直るわけではありません。漏電している機器を使い続けてよいとは判断しません。"
+    },
+    {
+      "id": "complementary-protection",
+      "titleJa": "必要な保護を一組で確認する",
+      "textJa": "接地と漏電遮断器は役割が異なります。漏電遮断器があるから接地を外してよい、接地があるから感電の危険がない、とは考えません。必要な保護と使用条件は設備ごとの承認された手順で確認します。接地工事や保護装置の変更を、この教材だけを根拠に実施しません。"
+    }
+  ],
+  "terms": [
+    {
+      "ja": "漏電",
+      "reading": "ろうでん",
+      "meaningJa": "絶縁の不良などで、本来の電路以外へ電気が流れること。"
+    },
+    {
+      "ja": "絶縁",
+      "reading": "ぜつえん",
+      "meaningJa": "電気が意図しない部分へ流れないようにすること。"
+    },
+    {
+      "ja": "接地",
+      "reading": "せっち",
+      "meaningJa": "機器の保護などのために、大地と電気的につなぐこと。具体的方法は設備の指定と担当資格に従う。"
+    }
+  ],
+  "activityJa": "紙上の事例で、絶縁の不良、接地、漏電遮断器の三つを分けて説明する。「接地があるので、漏電を疑う機器をそのまま使う」という判断に不足している確認を、故障の継続と必要な報告の観点から書く。実設備を使って確認しない。",
+  "safetyJa": [
+    "疑わしい機器へ触れて漏電を確かめない。使用停止・退避・報告は職場の手順に従う。",
+    "接地線の取外し、接地工事、保護装置の変更や試験は、この教材だけを根拠に行わない。"
+  ],
+  "summaryJa": "接地と漏電遮断器は故障を無条件に無害化するものではない。漏電の原因、必要な保護、異常時の対応を分けて確認する。",
+  "sources": [
+    {
+      "documentId": "mfg1-electrical-source",
+      "pdfPage": 152,
+      "printedPage": 143,
+      "sourceSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf"
+    }
+  ],
+  "authorAdditions": "Stop/report and qualification safeguards preserve the existing course safety conventions; no installation specification, legal claim or live-work procedure authored.",
+  "integrationRequirements": [
+    "Independent technical/semantic review against source and existing safety contract.",
+    "Compare proposed lesson/guide identity against the full curriculum and avoid duplication.",
+    "Translate directly from approved revised Japanese into all12 target locales; retain sourceHash binding and honest review flags.",
+    "Integrate only through normal revision-bound guide/course compiler; do not overwrite frozen batch12 inputs.",
+    "Add an independent controlled paper-only visual if useful; never copy source figure/photo."
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "independentReviewed": false,
+  "releaseReady": false,
+  "sourceHash": "9d7f34357451f7656d4fb75927ba6eac4120b155ac2b620d37fd27ad1a6220fd"
+}

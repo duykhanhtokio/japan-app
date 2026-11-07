@@ -1,0 +1,47 @@
+Starting Metro Bundler
+| (node:22) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:23) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:36) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:29) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:30) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android ./index.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| (node:38) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android ./index.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 61.9% (440/606)
+Android ./index.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 65.4% ( 715/2045)
+Android Bundling failed 10137ms index.js (2347 modules)
+Error: Unable to resolve module @react-native/virtualized-lists from /tmp/mfg-expo-deps/node_modules/react-native/Libraries/Lists/FlatList.js: @react-native/virtualized-lists could not be found within the project or in these directories:
+  ../../mfg-expo-deps/node_modules
+[0m [90m 22 |[39m [36mimport[39m {type [33mScrollResponderType[39m} [36mfrom[39m [32m'../Components/ScrollView/ScrollView'[39m[33m;[39m
+ [90m 23 |[39m [36mimport[39m [33mView[39m [36mfrom[39m [32m'../Components/View/View'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 24 |[39m [36mimport[39m [33mVirtualizedLists[39m [36mfrom[39m [32m'@react-native/virtualized-lists'[39m[33m;[39m
+ [90m    |[39m                               [31m[1m^[22m[39m
+ [90m 25 |[39m [36mimport[39m memoizeOne [36mfrom[39m [32m'memoize-one'[39m[33m;[39m
+ [90m 26 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 27 |[39m[0m
+
+Import stack:
+
+ ../../mfg-expo-deps/node_modules/react-native/Libraries/Lists/FlatList.js
+ | import "@react-native/virtualized-lists"
+
+ ../../mfg-expo-deps/node_modules/react-native/index.js
+ | import "./Libraries/Lists/FlatList"
+
+ ../../mfg-expo-deps/node_modules/expo/src/Expo.fx.tsx
+ | import "react-native"
+
+ ../../mfg-expo-deps/node_modules/expo/src/Expo.ts
+ | import "./Expo.fx"
+
+ index.js
+ | import "expo"
+
+ 
+ | import "./index.js"
+

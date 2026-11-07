@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "agri_5",
+  "status": "complete_current_data_pass_hardening_recommendations",
+  "baselineCommit": "67d2015d976dc3de4063e2731fb20668decf1fbf",
+  "filesReviewed": [
+    {
+      "path": "scripts/agriculture/check-parallel-14.py",
+      "sha256": "fca560fa42abfce6cd12728db1b826152c273275c404242b6c17baafa6a97c1b"
+    },
+    {
+      "path": "src/data/agriculture/recognition-images.json",
+      "sha256": "6ebfd63a92be04fe79b8af7a1898e746075cc80de5b4aaae7ee5b3d79bd3621a"
+    },
+    {
+      "path": "docs/ssw-workspace/agriculture/illustration-register.json",
+      "sha256": "8ed1849a595d53ce36442f01353f718746f0a0e506e643943c8795dbc9077c92"
+    },
+    {
+      "path": "docs/ssw-workspace/agriculture/parallel-14-manifest.json",
+      "sha256": "7baa4eb9987ec6bff07f5a6d88a857fb594606b808299ee22aef780e9062a5ac"
+    },
+    {
+      "path": "src/components/agriculture/RecognitionImages.tsx",
+      "sha256": "a1b82d63fb7088cb98ba50757d444778b3d44fff568500f5128c5810cb5cda9a"
+    },
+    {
+      "path": "src/components/agriculture/AgricultureCourse.tsx",
+      "sha256": "8ed3245c95a66d34de35ae9a70ab750f96e15a9856ffb90d153264592ff28c7b"
+    }
+  ],
+  "validatorCommand": "PYTHONDONTWRITEBYTECODE=1 python scripts/agriculture/check-parallel-14.py",
+  "validatorResult": {
+    "status": "PASS",
+    "newFigures": 6,
+    "priorFiguresPreserved": 6,
+    "sourceOccurrencesReferenced": 20,
+    "sourceOccurrencesClosed": 0,
+    "priorJapaneseLessonsUnchanged": 168,
+    "priorKnowledgeUnitsUnchanged": 1008,
+    "priorTranslationPairsUnchanged": 2016,
+    "priorWeeklyQuestionsUnchanged": 388,
+    "frozenDocuments": 6
+  },
+  "independentSemanticChecks": {
+    "oldSixRegistryRowsExactlyPreserved": true,
+    "oldSixAssetBytesPreservedByValidator": true,
+    "newSixRegistryRowsAndStaticImportsMatch": true,
+    "sourceIdsUniqueCount": 20,
+    "mappedLessonUnionCount": 7,
+    "manifestLessonIdsExactlyMatch": true,
+    "commonAppearanceIllustrations": 3,
+    "controlledConceptDiagrams": 3,
+    "countsNotClaimedUniqueKnowledgeOrPhotoCoverage": true,
+    "sourceLevelInterpretation": [
+      "Riceoutline references S1PDF7 andS2PDF4; sharedrice andlevel2classification lessons allowed.",
+      "Organposition references S1PDF8 andS2PDF9; sharedorganlesson.",
+      "Sowing references onlyS2PDF14; agr-sowing-design islevel2-only.",
+      "Soilhandtest references S1PDF17 andS2PDF22; sharedtexture andsharedhandtestprofile.",
+      "Nursery references onlyS1PDF75; sharednurserylesson gives supplementaryshapecomparison onlevel2 withoutclaiming S2sourcephoto objective."
+    ],
+    "sourcePhotoObjectivesRemainIncomplete": true,
+    "frozenKnowledgeAndTranslationsAndQuestions": true,
+    "oldSowingDiagramFunctionByteIdentical": true,
+    "newSowingAssetUsesExactCurrentLessonHash": true,
+    "liveLabelsPresentForThreeControlledDiagrams": true
+  },
+  "fallbackStaticReview": {
+    "helper": "hasRecognitionImage delegates to same matchesLesson predicate used by displayed records",
+    "validExactHash": "newfigurevisible; oldthree-dot diagramconditionfalse",
+    "staleOrAbsentBinding": "newfigurehidden; olddiagramconditiontrue foragr-sowing-design",
+    "unmappedLesson": "helperfalse; fallback remains gatedbylesson.id",
+    "badAssetOrDimensionsOrEmptyMetadata": "helperfalseandnewfigurehidden; fallback retained",
+    "runtimeExecutionPerformedByReviewer": false,
+    "finalBrowserEvidence": "Agent6running expanded readers/fixtures; rootwillbind finalreport later."
+  },
+  "recommendations": [
+    {
+      "id": "A14-VALIDATOR-OLD-ASSET-MAP",
+      "severity": "hardening",
+      "file": "scripts/agriculture/check-parallel-14.py",
+      "finding": "Staticruntimeassetmapping loop currentlychecks onlynew6rows. A future wrongimport foroldkey could pass whileoldassetbytes remainfrozen.",
+      "suggestion": "Check static_assets[row.assetKey]==row.assetPath for all12rows."
+    },
+    {
+      "id": "A14-VALIDATOR-MANIFEST-COUNTS",
+      "severity": "hardening",
+      "file": "scripts/agriculture/check-parallel-14.py",
+      "finding": "Currentmanifest7lessonunion,20sourceIDs and3illustration/3controlleddiagram counts manuallyverified but not asserted byvalidator.",
+      "suggestion": "Assert lessonIds equalsnewrowlessonunion,sourceidcount20,manifestnewFigures6 andactualkind split3+3; avoid treating all6asnewconceptdiagrams."
+    },
+    {
+      "id": "A14-VALIDATOR-SOURCE-SCOPE",
+      "severity": "hardening",
+      "file": "scripts/agriculture/check-parallel-14.py",
+      "finding": "Checks sourceRefs coincidewithaudit butdoesnot validate canonicalinventoryprintedpages oroptionalscopeLevels.",
+      "suggestion": "Validate everyrefagainst source-inventory and optionalexplicit scopes against sourcebooklevels; preserve supplementarysharedlessoninterpretationwithout claiming source2photocoverage."
+    },
+    {
+      "id": "A14-VALIDATOR-REVIEW-BINDING",
+      "severity": "hardening",
+      "file": "scripts/agriculture/check-parallel-14.py",
+      "finding": "AuthorSHA is searchedasplaintextanywhere inreview ratherthan structuredreviewbinding. Currentreviewfiles bindproperly.",
+      "suggestion": "Parse acceptedauthorPacketSha256/packetSha256 fields andrequire exactmatch,completestatus,and no unresolvedblockers ratherthan substring alone."
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "sourceOccurrencesClosed": 0,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseReady": false,
+  "limits": [
+    "Independentreviewofcurrentrecordsandstaticfallback; not substitute foragent6fullruntime matrix.",
+    "No canonicalorrootfileedits made; validatorrecommendations are futureguardhardening, not currentdata failures.",
+    "Doesnot certify visualaccuracyofassetsoutsidethisreviewers independentlyreviewedsowingfigure/ownnurserywork.",
+    "No fullnative/realdevice/human/domainreleasecertification."
+  ]
+}

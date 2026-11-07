@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "reviewer": "independent_AI_electrical_source_supplement_reviewer",
+  "scope": "Actual physical152/printed143 only, leakage/earth source concepts and proposed Japanese supplement. Full bodies of current lessons005/058/073 plus031/080/096 compared; scanned all98electrical lesson paragraphs and5reference-guide paragraphs for漏電/アース/接地/金属ケース. No independent review of source ledger pages146–151.",
+  "inputs": {
+    "sourcePdf": {
+      "path": "/workspace/scratch/82a415b81f8b/electrical-source-pdfs-20261028/製造 分野 特定技能  1号 評価 試験機械 電気電子機械組み立て 区分テキスト.pdf",
+      "sha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+      "pdfPage": 152,
+      "printedPage": 143,
+      "actualVisualInspection": true
+    },
+    "sourceRender": {
+      "path": "/workspace/scratch/82a415b81f8b/electrical-source-render-20261028/page-152.png",
+      "sha256": "49ee054f9abee5d9c295be0c52de598cdc0d6c6fca006b3231f9b88f6859d042",
+      "actualVisualInspection": true
+    },
+    "repositoryFiles": {
+      "docs/ssw-workspace/manufacturing/batch17/electrical-source-review.json": "2fedd1a59679b035efd097c57f34e7a16c61f18d57e89ddf7fba7411986426e7",
+      "docs/ssw-workspace/manufacturing/batch17/electrical/leakage-earth-supplement.proposed.json": "16e9d8acb516b59ed9947b3add485af77d3fd88e6f2f566713162c02c001624e",
+      "src/data/manufacturing/electrical.json": "e590319d60ff137ac22a27ca9e92ee5ac6407df2b9df98e5929e37e6e8d5f7ca",
+      "src/data/manufacturing/source-guides.json": "413a5070b9ad04c3539cc350971d0fdd41a8c541384572bf73e06bb54b35a387"
+    },
+    "proposalSourceHash": "9d7f34357451f7656d4fb75927ba6eac4120b155ac2b620d37fd27ad1a6220fd",
+    "proposalSnapshotSha256": "9ff7be2236a23fedbcd165e8cad26c44c221e7607dbc85f47898b7f69fdb64d2",
+    "lessonSourceHashes": {
+      "mfg1-electrical-l005": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe",
+      "mfg1-electrical-l058": "ded2493cad8338a4e4c59d5389601174057fb43b3d22f77b5a1f5fe8296f92c2",
+      "mfg1-electrical-l073": "e535ba3bac5cc43e6b934bc41ec4b3422572a6396f0ee6c3a82846645b0976e1",
+      "mfg1-electrical-l031": "788a9633fb569ae0505368d9fa3284920490c147a0cf9bc80444115f2abb728a",
+      "mfg1-electrical-l080": "0c25e5f9d30ad13f7d71c9c8aede8d788a91d0fc6ce691876527c268f82f0129",
+      "mfg1-electrical-l096": "65320d9cddc8349601ebef035fce30c59a788715a8319a1e7897e5194bb5d71d"
+    }
+  },
+  "sourcePageFindings": [
+    {
+      "ledgerObjectIds": [
+        "mfg1-electrical-b17-p152-o03"
+      ],
+      "verdict": "supported_and_scoped_gap_confirmed",
+      "reason": "Page explains insulation deterioration/damage and current escaping intended path to equipment metal case.005/073 teach measurement connection/use, not this causal definition.080/096 name leakage testing without causal explanation."
+    },
+    {
+      "ledgerObjectIds": [
+        "mfg1-electrical-b17-p152-o04"
+      ],
+      "verdict": "supported_and_scoped_gap_confirmed",
+      "reason": "Page describes earth conductor connecting apparatus to buried electrode and providing a current path into ground in its example.058 only warns against automatically removing earthing when a leakage breaker exists; it does not explain the path."
+    },
+    {
+      "ledgerObjectIds": [
+        "mfg1-electrical-b17-p152-o05"
+      ],
+      "verdict": "supported_and_scoped_gap_confirmed",
+      "reason": "Page explicitly retains hazardous leakage state after earthing.058/031 preserve general protection/stop-report cautions but do not explicitly state earthing has not repaired the insulation defect."
+    },
+    {
+      "ledgerObjectIds": [
+        "mfg1-electrical-b17-p152-o06",
+        "mfg1-electrical-b17-p152-o07"
+      ],
+      "verdict": "qualification_supported",
+      "reason": "Source includes a simplified ungrounded-leakage-breaker example. Do not teach that every ungrounded circuit has no current path, that every breaker guarantees prevention of shock, or universal installation requirements. Proposal correctly avoids those generalizations."
+    }
+  ],
+  "proposalAssessment": {
+    "faultCausation": "Supported; uses one possible leakage mechanism rather than defining every leakage case as metal-case current.",
+    "continuingFault": "Supported; explicitly rejects continued use and avoids saying earth repairs insulation.",
+    "earthPath": "Conceptually safe but the phrase「通り道に関わります」is weaker than the ledger learning outcome. Recommend explicit source-example-only path wording below before claiming that outcome fully closed.",
+    "complementaryProtection": "Safely retains equipment-specific approved conditions and no removal/substitution guarantee; no current legal or code claim.",
+    "activity": "Paper-only conceptual comparison; explicit no real-equipment confirmation.",
+    "safety": "No touch-to-test,DIYinstallation,live test,protection modification or new operational recipe. Existing course stop/withdraw/report/qualification conventions preserved.",
+    "duplication": "Some protection safeguards repeat058/031 intentionally; the three causal/path/residual-fault outcomes add explicit teaching absent in those linked lessons. This is not proof no implicit related concept exists elsewhere."
+  },
+  "requiredSafetyCorrections": [],
+  "recommendedTeachingClarifications": [
+    {
+      "id": "b17-electrical-earth-path-clarity",
+      "severity": "low",
+      "field": "paragraphs[id=protective-earth].textJa",
+      "before": "教材では、機器と接地極をアース線で結ぶ保護を説明しています。指定された接地は故障時の電流の通り道に関わりますが、接地があっても、傷んだ絶縁物そのものが直るわけではありません。漏電している機器を使い続けてよいとは判断しません。",
+      "suggestedReplacement": "この教材の例では、機器の金属部分と接地極をアース線で結び、故障時の漏れ電流が大地側へ流れる経路を設けています。ただし、接地があっても、傷んだ絶縁物そのものが直るわけではありません。漏電している機器を使い続けてよいとは判断しません。",
+      "reason": "Make protective fault-current route explicit while limiting it to the source example. Preserve no-repair/no-continued-use statement; do not add a universal no-shock/current-flow guarantee.",
+      "status": "suggested_not_applied",
+      "replacementReviewedBy": "author_AI_reviewer;parent integration comparison still required"
+    }
+  ],
+  "verdict": "bounded_independent_AI_review_no_major_safety_issue;one_path_clarity_recommendation_before_full_gap_closure_claim",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "runtimeModified": false,
+  "sourceImagesRedistributed": false,
+  "fullSourceKnowledgeCoverageCertified": false,
+  "fullKnowledgeAtomizationComplete": false,
+  "releaseReady": false,
+  "limits": [
+    "IndependentAI review of one actual source page and scoped current lesson/guide comparison only.",
+    "No new physical-source review for pages146–151,other electrical sections,all3textbooks or574pages.",
+    "No legal/code/installation specification/current official requirements verification.",
+    "No target-language review,runtime integration,device testing or domain/native expert approval.",
+    "Original source-PDF/render files remain scratch-only; report stores identity and descriptive judgments only."
+  ]
+}

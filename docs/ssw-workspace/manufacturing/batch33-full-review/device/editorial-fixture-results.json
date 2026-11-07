@@ -1,0 +1,20 @@
+{
+  "status": "PASS_VALID_COMPILED_INPUT_INVARIANTS",
+  "checks": [
+    "valid exact source/before correction clones without changing original or option/reason order",
+    "kind mismatch returns original entry",
+    "locale mismatch returns original entry",
+    "id mismatch returns original entry",
+    "source mismatch returns original entry",
+    "entrySource mismatch returns original entry",
+    "before mismatch returns original entry",
+    "one conflicting field rejects all patches for entry",
+    "protected field/prototype/blank after rejected",
+    "malformed after/before/path/null patch rejected without throwing"
+  ],
+  "malformedRuntimeAfterTypeResult": "safely returned original for malformed after, before, path and null patch",
+  "qualification": "Fixture inputs are independent of original author tests. Numeric before/after, nonarray/null path and null patch now fail closed without mutation or throwing.",
+  "physicalDeviceVerified": false,
+  "nativeReviewed": false,
+  "domainReviewed": false
+}

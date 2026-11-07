@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "packetSha256": "8f336ccc79add4616473f21684d6b415baa1ee4b132f5cfc0ccc20b41a875fdb",
+  "reviewer": "agri_2",
+  "scope": {
+    "method": "Full direct Japanese semantic/source review of all 12 paragraphs, titles/objectives/activities/terms, 12 knowledge units and 8 question stems/32 options/32 reasons; all four cited retained images re-viewed. All156/936 prose corpus and344 old question stems screened, related safety/power/fuel/sprayer/SS full items compared.",
+    "lessonsReviewed": 2,
+    "paragraphsReviewed": 12,
+    "knowledgeReviewed": 12,
+    "questionsReviewed": 8,
+    "sourceCourseLevels": [
+      "2"
+    ],
+    "nativeOrDomainCertification": false
+  },
+  "sourceImagesChecked": [
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 50,
+      "printedPage": 48,
+      "path": "/workspace/scratch/018c0b6e29b8/agri10-management/s2-p50.png",
+      "sha256": "8e091bf0dc632d25c7624b368a8ff94e259bc52b4e0a11343203d7e9f43affa8",
+      "visualChecked": true
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 57,
+      "printedPage": 55,
+      "path": "/workspace/scratch/018c0b6e29b8/agri10-management/s2-p57.png",
+      "sha256": "2d8ef384b08e9367d87d2e8c0b0094d195e9e132843ea150e4e7f6120be7a452",
+      "visualChecked": true
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 58,
+      "printedPage": 56,
+      "path": "/workspace/scratch/018c0b6e29b8/agri10-management/s2-p58.png",
+      "sha256": "3a52703d11c4ea57889533110c5929d36cc3f38194bad5b29dd9f8cbcc8dbcc4",
+      "visualChecked": true
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 59,
+      "printedPage": 57,
+      "path": "/workspace/scratch/018c0b6e29b8/agri10-management/s2-p59.png",
+      "sha256": "75745eae78f67a025a01e95c8facdcd07aeb9f47987e2810da193323c014d47b",
+      "visualChecked": true
+    }
+  ],
+  "patches": [
+    {
+      "targetType": "question",
+      "targetId": "agr-par12-management-q03",
+      "field": "stemJa",
+      "before": "草刈り機の刃として、資料に挙げられた二つの例はどれですか。",
+      "after": "肩に掛けるか背負う携帯型の草刈り機の刃として、資料に挙げられた二つの例はどれですか。",
+      "reason": "Specify the handheld machine of PDF50 rather than the broad 草刈り機 category, which also includes the separately pictured hammer-knife mower. This makes option0 clearly outside the requested pair and preserves the unique correct answer3."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par12-management-q04",
+      "field": "optionsJa",
+      "before": [
+        "人が乗ることだけを意味し、刈刃の機構は示さない。",
+        "縦回転するハンマーナイフ式の刈刃で草を砕く。",
+        "大型ファンで草を吹き寄せ、タンクに蓄える。",
+        "肩に掛けるナイロンコード式だけを意味する。"
+      ],
+      "after": [
+        "人が乗ることだけを意味し、刈刃の機構は示さない。",
+        "縦回転するハンマーナイフ式の刈刃で草を砕く。",
+        "刈刃が水平に回転し、草を刈るだけで細かく砕かない。",
+        "肩に掛けるナイロンコード式だけを意味する。"
+      ],
+      "reason": "Replace an implausible fan-and-tank grass collection distractor with a plausible misunderstanding of blade direction and shredding. PDF50 specifically describes vertical rotation and shredding; answer1 remains unchanged."
+    },
+    {
+      "targetType": "question",
+      "targetId": "agr-par12-management-q04",
+      "field": "optionReasonsJa",
+      "before": [
+        "乗用方式の説明へ置き換えています。",
+        "縦回転と草を砕く働きを一組で示しています。",
+        "SSの構成部品を草刈り機へ当てはめています。",
+        "携帯型の例と混同しています。"
+      ],
+      "after": [
+        "乗用方式の説明へ置き換えています。",
+        "縦回転と草を砕く働きを一組で示しています。",
+        "資料の縦回転と草を細かく砕くという二つの特徴を逆にしています。",
+        "携帯型の例と混同しています。"
+      ],
+      "reason": "Match the revised blade-mechanism distractor while retaining the source-supported vertical rotation and shredding distinction."
+    },
+    {
+      "targetType": "paragraph",
+      "targetId": "agr-par12-management-power-fuel-information-p2",
+      "field": "textJa",
+      "before": "資料は単相と三相を区別し、一度に送れる電力量が単相では少なく、三相では多いと説明しています。その比較に続けて、小さい機械では単相、大きな機械では三相を用いることが多いとしています。「多い」という傾向を、外形が大きければ全て三相という判定規則に変えないことが大切です。",
+      "after": "資料は単相と三相を区別し、一度に送れる電力が単相では少なく、三相では多いと説明しています。その比較に続けて、小さい機械では単相、大きな機械では三相を用いることが多いとしています。「多い」という傾向を、外形が大きければ全て三相という判定規則に変えないことが大切です。",
+      "reason": "Use 電力 for power capacity, consistent with the lesson heading, knowledge objective and question. The book uses 電力量 colloquially; retaining an energy-unit implication would confuse power and energy. No voltage, capacity figure or wiring rule is inferred."
+    }
+  ],
+  "knowledgePatches": [
+    {
+      "targetId": "AGR-K-PAR12-MANAGEMENT-POWER-FUEL-INFORMATION-01",
+      "field": "sources",
+      "before": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 57,
+          "printedPage": 55
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 58,
+          "printedPage": 56
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 59,
+          "printedPage": 57
+        }
+      ],
+      "after": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 57,
+          "printedPage": 55
+        }
+      ],
+      "reason": "Bind this individual knowledge unit to the actual page containing its prose: PDF57 DC/AC and single/three-phase comparison; PDF58 machine examples, plug debris and unknown fuel; PDF59 aged fuel. Other lesson pages remain valid for the whole lesson."
+    },
+    {
+      "targetId": "AGR-K-PAR12-MANAGEMENT-POWER-FUEL-INFORMATION-02",
+      "field": "sources",
+      "before": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 57,
+          "printedPage": 55
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 58,
+          "printedPage": 56
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 59,
+          "printedPage": 57
+        }
+      ],
+      "after": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 57,
+          "printedPage": 55
+        }
+      ],
+      "reason": "Bind this individual knowledge unit to the actual page containing its prose: PDF57 DC/AC and single/three-phase comparison; PDF58 machine examples, plug debris and unknown fuel; PDF59 aged fuel. Other lesson pages remain valid for the whole lesson."
+    },
+    {
+      "targetId": "AGR-K-PAR12-MANAGEMENT-POWER-FUEL-INFORMATION-03",
+      "field": "sources",
+      "before": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 57,
+          "printedPage": 55
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 58,
+          "printedPage": 56
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 59,
+          "printedPage": 57
+        }
+      ],
+      "after": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 58,
+          "printedPage": 56
+        }
+      ],
+      "reason": "Bind this individual knowledge unit to the actual page containing its prose: PDF57 DC/AC and single/three-phase comparison; PDF58 machine examples, plug debris and unknown fuel; PDF59 aged fuel. Other lesson pages remain valid for the whole lesson."
+    },
+    {
+      "targetId": "AGR-K-PAR12-MANAGEMENT-POWER-FUEL-INFORMATION-04",
+      "field": "sources",
+      "before": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 57,
+          "printedPage": 55
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 58,
+          "printedPage": 56
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 59,
+          "printedPage": 57
+        }
+      ],
+      "after": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 58,
+          "printedPage": 56
+        }
+      ],
+      "reason": "Bind this individual knowledge unit to the actual page containing its prose: PDF57 DC/AC and single/three-phase comparison; PDF58 machine examples, plug debris and unknown fuel; PDF59 aged fuel. Other lesson pages remain valid for the whole lesson."
+    },
+    {
+      "targetId": "AGR-K-PAR12-MANAGEMENT-POWER-FUEL-INFORMATION-05",
+      "field": "sources",
+      "before": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 57,
+          "printedPage": 55
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 58,
+          "printedPage": 56
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 59,
+          "printedPage": 57
+        }
+      ],
+      "after": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 58,
+          "printedPage": 56
+        }
+      ],
+      "reason": "Bind this individual knowledge unit to the actual page containing its prose: PDF57 DC/AC and single/three-phase comparison; PDF58 machine examples, plug debris and unknown fuel; PDF59 aged fuel. Other lesson pages remain valid for the whole lesson."
+    },
+    {
+      "targetId": "AGR-K-PAR12-MANAGEMENT-POWER-FUEL-INFORMATION-06",
+      "field": "sources",
+      "before": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 57,
+          "printedPage": 55
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 58,
+          "printedPage": 56
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 59,
+          "printedPage": 57
+        }
+      ],
+      "after": [
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 59,
+          "printedPage": 57
+        }
+      ],
+      "reason": "Bind this individual knowledge unit to the actual page containing its prose: PDF57 DC/AC and single/three-phase comparison; PDF58 machine examples, plug debris and unknown fuel; PDF59 aged fuel. Other lesson pages remain valid for the whole lesson."
+    }
+  ],
+  "resolutionPatches": [
+    {
+      "index": 2,
+      "field": "disposition",
+      "before": "covered_by_new_prose",
+      "after": "partially_covered",
+      "reason": "The frozen backlog classifies this objective as equipment_recognition. Mechanism prose is present but no new recognition image or visual task exists; do not count full recognition closure."
+    },
+    {
+      "index": 2,
+      "field": "reasonJa",
+      "before": "掲載された機構又は確認原則の文章上の知識を新規本文が説明する。写真認識や実機操作、接続・設置条件の達成は含まない。",
+      "after": "掲載された機構・名称・用途の文章部分は新規本文で説明した。原項目は機械認識を含むため、新規画像による視覚照合は未達のまま残し、実機操作の達成とも数えない。",
+      "reason": "Make the remaining visual-recognition requirement explicit, consistently with rows0316/0317/0322 and the packet recognition hold."
+    },
+    {
+      "index": 3,
+      "field": "disposition",
+      "before": "covered_by_new_prose",
+      "after": "partially_covered",
+      "reason": "The frozen backlog classifies this objective as equipment_recognition. Mechanism prose is present but no new recognition image or visual task exists; do not count full recognition closure."
+    },
+    {
+      "index": 3,
+      "field": "reasonJa",
+      "before": "掲載された機構又は確認原則の文章上の知識を新規本文が説明する。写真認識や実機操作、接続・設置条件の達成は含まない。",
+      "after": "掲載された機構・名称・用途の文章部分は新規本文で説明した。原項目は機械認識を含むため、新規画像による視覚照合は未達のまま残し、実機操作の達成とも数えない。",
+      "reason": "Make the remaining visual-recognition requirement explicit, consistently with rows0316/0317/0322 and the packet recognition hold."
+    },
+    {
+      "index": 5,
+      "field": "disposition",
+      "before": "covered_by_new_prose",
+      "after": "partially_covered",
+      "reason": "The frozen backlog classifies this objective as equipment_recognition. Mechanism prose is present but no new recognition image or visual task exists; do not count full recognition closure."
+    },
+    {
+      "index": 5,
+      "field": "reasonJa",
+      "before": "掲載された機構又は確認原則の文章上の知識を新規本文が説明する。写真認識や実機操作、接続・設置条件の達成は含まない。",
+      "after": "掲載された機構・名称・用途の文章部分は新規本文で説明した。原項目は機械認識を含むため、新規画像による視覚照合は未達のまま残し、実機操作の達成とも数えない。",
+      "reason": "Make the remaining visual-recognition requirement explicit, consistently with rows0316/0317/0322 and the packet recognition hold."
+    }
+  ],
+  "excludedResolutions": [],
+  "unresolvedBlockingIssues": [],
+  "findings": [
+    {
+      "topic": "Source accuracy",
+      "result": "Mechanisms, DC/AC mappings, phase trends with 多い qualifier, plug-debris risk, unknown-fuel non-use and aged-fuel deterioration match the displayed source prose. No wiring/product/legal/recognition completion is claimed."
+    },
+    {
+      "topic": "Deduplication",
+      "result": "Existing spray check teaches nozzle/packing inspection; fruit machinery names SS as pest control only. New questions test pressure source and fan mechanism. Existing fuel question tests engine stop/fire/spills; new questions test unknown identity and deterioration. No semantic duplicate requiring removal found."
+    },
+    {
+      "topic": "Gap accounting",
+      "result": "All13 referenced occurrences are missing and absent from overlay11 full closures. After six resolution-field patches, seven occurrences have full prose coverage and six remain partial equipment recognition; no held or authored source IDs are closed."
+    }
+  ],
+  "checks": {
+    "rawSha256Verified": true,
+    "fourRetainedRenderSha256Verified": true,
+    "originalPdfFreshRehashClaimed": false,
+    "allFalseReviewFlags": true,
+    "answerIndexes": [
+      2,
+      0,
+      3,
+      1,
+      0,
+      2,
+      1,
+      3
+    ],
+    "balancedTwoEach": true,
+    "noThreeSameConsecutive": true,
+    "newSourceScopeLevel2Only": true
+  },
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false
+}

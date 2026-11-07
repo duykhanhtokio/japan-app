@@ -1,0 +1,62 @@
+{
+  "reviewer": "independent mechanical worker, AI editorial review only",
+  "scope": "Batch12 new-content for electrical and surface; no mock review or full PDF concordance claimed",
+  "electrical": {
+    "lessonsRead": 42,
+    "weeklyQuestionsStemsOptionsRead": 72,
+    "rationalesScope": "selected corrections and calculation checks; not full per-option audit",
+    "finding": [
+      {
+        "id": "mfg1-electrical-l043",
+        "severity": "must_correct_scoring_qualification",
+        "detail": "65% official score threshold must not imply fixed 20/30 minimum unless each practice item equal weight",
+        "requestedFix": "アプリが各問同じ点で練習採点する場合は...; official nonpublic weighting not guaranteed",
+        "sentToAuthor": true
+      }
+    ],
+    "calculationsChecked": [
+      "900W*20/60h=300Wh",
+      "2mm²=0.000002m²",
+      "40g*2.7=108g",
+      "20.02−19.98=0.04mm",
+      "2length/3area =>2/3resistance",
+      "25Hz=>40ms",
+      "120||240=80Ω;+40=120Ω;18/120=0.15A",
+      "24²/120=4.8W",
+      "64/100*5V=3.2V",
+      "60Hz6poles=>1200min−1 synchronous only",
+      "1.5²=2.25copperloss",
+      "3/25000*1000000=120PPM",
+      "2π*900*4/60≈377W"
+    ],
+    "safety": "No chosen answer authorizes unauthorized live access; source simplifications explicitly qualified for grounding, PCB resist, semiconductor, induction speed, SSR leakage and maintenance."
+  },
+  "surface": {
+    "lessonsRead": 28,
+    "weeklyQuestionsReadWithAllOptionReasons": 48,
+    "blockingFindings": [],
+    "calculationsChecked": [
+      "0.30mol/L H₂SO₄ complete neutralization =>0.60equiv/L",
+      "250mA=0.250A",
+      "50Hz=50cycles/s not50polaritychanges",
+      "17.4−2.6mL=14.8mL",
+      "(20−10)/5intervals=2perdivision"
+    ],
+    "technicalDistinctionsChecked": [
+      "oxidation loses electrons vs reduction gains",
+      "normal salt not necessarily neutral solution",
+      "normality reaction-dependent",
+      "pHcalibration/temperature specificity",
+      "right-hand straightwire vscoil vsFleming left",
+      "pinholes versus pits per stated textbook distinction",
+      "RoHS/REACH high-level purpose, no legal-compliance certification",
+      "hard anodizing sealing properties depend on requirements",
+      "XRF/non-destructive does not imply harmless equipment"
+    ],
+    "safety": "No recipes, real bath additions, neutralization instructions, unauthorized live experiments, freehandling unknown chemicals or self-approved rework."
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "fullSourceSemanticCoverageCertified": false,
+  "courseCompleteCertified": false
+}

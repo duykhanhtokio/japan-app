@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "owner": "agri_3",
+  "status": "complete",
+  "authorPacketSha256": "6d43dda5290cbe09094f92663df4dc63ea7b6ac9ef0554a18672f2764b82ebf5",
+  "packetSha256": "6d43dda5290cbe09094f92663df4dc63ea7b6ac9ef0554a18672f2764b82ebf5",
+  "authorPacketPath": "/workspace/scratch/018c0b6e29b8/agri16-asian-pear-author.json",
+  "assetPath": "/workspace/scratch/018c0b6e29b8/japan-app/assets/agriculture/recognition/asian-pear-v1.webp",
+  "assetSha256": "43cf868565fea78a277e550f26e4703251e3306e95eb2be3816be8217c3f63b5",
+  "scope": {
+    "metadataFieldsReviewed": [
+      "titleJa",
+      "altJa",
+      "observationJa",
+      "limitJa"
+    ],
+    "photoInventoryIds": [
+      "AGR-RI-S1-104-21"
+    ],
+    "sourceItemIds": [
+      "AGR-A10-FLOWER-0469"
+    ],
+    "lessonIds": [
+      "agr-fruit",
+      "agr-workterms-photo-labels"
+    ],
+    "actualViews": [
+      "finalWebP1024x1024",
+      "finalWebP330x330preview",
+      "freshoriginalS1PDF104printed98render"
+    ],
+    "limits": "IndependentAIreviewoflimitedcommonappearanceonly; noexpert/native/human/device/fullphotorecognitioncertification."
+  },
+  "sourceVerification": {
+    "documentId": "AGR-S1",
+    "pdfPage": 104,
+    "printedPage": 98,
+    "originalPdfSha256": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+    "freshHashVerified": true,
+    "renderPath": "/workspace/scratch/018c0b6e29b8/agri16-persimmon-qa/source-s1-p104.png",
+    "renderSha256": "22dbb3ee4dd7fad47ea4ca3e4d971852e03eec39dfdf75d1b10708ddaa258b7a",
+    "visuallyChecked": true
+  },
+  "patches": [
+    {
+      "field": "altJa",
+      "before": "黄褐色の小さな点がある丸いナシに、上部のくぼみから短い茶色の柄が伸びるイラスト。",
+      "after": "黄褐色の丸いナシの表面に小さな点があり、上部のくぼみから短い茶色の柄が伸びるイラスト。",
+      "reason": "Make clear that yellow-brown describes the fruit skin, while small surface speckles are a separate observation; retain the same supported appearance and top attachment without adding diagnostic claims."
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "findings": [
+    {
+      "topic": "shape and surface",
+      "result": "Actualimage isonewholeglobular/slightlysquatAsianpearwithbroadshoulders andshallowtopdepression; noEuropeanpear longneck/teardrop. Finepaleandbrownspeckling visibleon yellow-tan skin; shortbrownstememergesnaturallyfromtopdepression. No cutface/leaf/extraobjects/textbadges."
+    },
+    {
+      "topic": "source evidence",
+      "result": "SourceS1PDF104printed98RI21captionナシshowsroundyellow-brownfruit. NewimageusesonecommonroundAsianpearappearance, notsourcephotocopy. Overallshape/topdepression/stem andspeckledsurface are observationcues, notuniversalorcolor-onlyproof."
+    },
+    {
+      "topic": "Japanese metadata",
+      "result": "titleナシcorrect. observationcombinesoutline, depression/stem andsurfacepoints. limit restrictstooneexample andrejectsall-pearidentification,cultivar,quality,ripenessandedibilityjudgments. Oneexactaltwordingpatchseparatesfruitcolorfromsurfacepointstoavoidambiguousmodifier; noassetchange needed."
+    },
+    {
+      "topic": "bindings/scope/provenance",
+      "result": "ExactRI21/recognition0469/S1PDF104printed98match, missingbaselineobjectiveverified. Bothcurrentlessonhashesmatchsharedagr-fruit/agr-workterms-photo-labels. Sourceobjective scope1 and2gousedeclared supplementalS1example, notS2photoclaim. Builtinimagegenpromptnoreferences/PDFinput; recordedmax1024resizeandnocropcompatiblewithactualimage.0closures/falseexpertflagsretained."
+    },
+    {
+      "topic": "display limits",
+      "result": "Fulland330pxactualWebPviews showwholefruitandstemwithoutcrop, recognizableglobularoutlineanddots. Thisisnotnativeorreal-deviceQA, universalfieldrecognitionorqualitycertification."
+    }
+  ],
+  "recommendation": "AcceptlimitedillustrationwiththepreparedaltJaeditorialpatch andvisibleobservation/limit. Keep0sourceclosures/sourcePhotoObjectiveComplete=false.",
+  "sourceOccurrencesClosed": 0,
+  "sourcePhotoObjectiveComplete": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceTested": false,
+  "releaseReady": false,
+  "authorPacketMutated": false
+}

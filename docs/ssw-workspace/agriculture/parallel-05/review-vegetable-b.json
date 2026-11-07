@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "packetFile": "translations-vegetable-b.json",
+  "sourcePath": "src/data/agriculture/lessons.ja.json",
+  "reviewType": "independent_direct_Japanese_AI_meaning_and_completeness_review",
+  "reviewedLocales": [
+    "hi",
+    "bn",
+    "ne",
+    "my",
+    "th",
+    "km"
+  ],
+  "reviewedPairs": 60,
+  "reviewedParagraphs": 360,
+  "reviewedFields": [
+    "title",
+    "objective",
+    "paragraphTitles",
+    "paragraphs",
+    "activity"
+  ],
+  "patches": [
+    {
+      "locale": "ne",
+      "lessonId": "agr-vegwork-seedstorage",
+      "field": "paragraphs",
+      "paragraphId": "agr-vegwork-seedstorage-p3",
+      "before": "दुईदेखि तीन वर्षको समूहमा दाइकोन, सलगम, चिनियाँ बन्दाकोबी, केराउ, फ्रेन्च सिमी, बाक्ला र तरबुजा छन्; तीनदेखि चार वर्षमा काँक्रो, फर्सी, भन्टा र गोलभेँडा छन्। भण्डारण सर्तले बदलिन्छ भनेर तुलना गर्नुहोस्।",
+      "after": "दुईदेखि तीन वर्षको समूहमा दाइकोन, सलगम, चिनियाँ बन्दाकोबी, केराउ, फ्रेन्च सिमी, बकुल्ला (फाभा सिमी) र तरबुजा छन्; तीनदेखि चार वर्षमा काँक्रो, फर्सी, भन्टा र गोलभेँडा छन्। भण्डारण सर्तले बदलिन्छ भनेर तुलना गर्नुहोस्।",
+      "reason": "Clarify ソラマメ as fava/broad bean in Nepali; बाक्ला alone can read as the adjective thick. Preserve all source crop groups and storage-condition caveat."
+    },
+    {
+      "locale": "km",
+      "lessonId": "agr-vegwork-leafy",
+      "field": "paragraphs",
+      "paragraphId": "agr-vegwork-leafy-p3",
+      "before": "សាឡាត់មានទាំងប្រភេទក្តោបមូលនិងមិនក្តោប។ វាចូលចិត្តភាពត្រជាក់ គ្រាប់មានការដុះជំរុញដោយពន្លឺ ហើយធន់នឹងអាស៊ីតខ្សោយ។ ផ្ទៀងអត្ថន័យដុះចូលចិត្តពន្លឺនឹងមេរៀនដំណុះមុន។",
+      "after": "សាឡាត់មានទាំងប្រភេទក្តោបមូលនិងមិនក្តោប។ វាចូលចិត្តភាពត្រជាក់ គ្រាប់មានការដុះជំរុញដោយពន្លឺ ហើយមិនសូវធន់នឹងសភាពអាស៊ីត។ ផ្ទៀងអត្ថន័យដុះចូលចិត្តពន្លឺនឹងមេរៀនដំណុះមុន។",
+      "reason": "Disambiguate 酸性に弱い as poor tolerance of acidic conditions; prior word order could be read as tolerance of weak acid."
+    },
+    {
+      "locale": "km",
+      "lessonId": "agr-vegwork-grains",
+      "field": "paragraphs",
+      "paragraphId": "agr-vegwork-grains-p5",
+      "before": "ក្រោយផ្កាសណ្តែកដីលើដីបង្កកំណើត ទងអូវែរលូតចុះក្នុងដី ហើយសំបកផ្លែកើតនៅចុងនោះ។ កុំគិតថាវាចេញផ្លែលើស្លឹក ត្រូវយល់ទីតាំងនៃផ្នែកប្រមូលផល។",
+      "after": "ក្រោយផ្កាសណ្តែកដីលើដីបង្កកំណើត ទងអូវែរលូតចុះក្នុងដី ហើយផ្លែសណ្តែកដីកើតនៅចុងនោះ។ កុំគិតថាវាចេញផ្លែលើស្លឹក ត្រូវយល់ទីតាំងនៃផ្នែកប្រមូលផល។",
+      "reason": "Source says a pod forms at the gynophore tip, not just the fruit shell; name the peanut fruit as a whole."
+    },
+    {
+      "locale": "km",
+      "lessonId": "agr-vegwork-families",
+      "field": "paragraphTitles",
+      "paragraphId": "agr-vegwork-families-p5",
+      "before": "អំបូរផ្កាយនិងអំបូរអាម៉ារីលីដាសេ",
+      "after": "អំបូរ Asteraceae និងអំបូរ Amaryllidaceae",
+      "reason": "Use exact botanical family names instead of a literal star-family rendering; paragraph already supplies both scientific names."
+    }
+  ],
+  "unresolvedBlockingIssues": [],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "limitations": [
+    "Independent AI field-by-field source comparison; not native-speaker or professional agronomy certification."
+  ],
+  "reviewedParagraphTitles": 360,
+  "reviewedTitles": 60,
+  "reviewedObjectives": 60,
+  "reviewedActivities": 60,
+  "packetSha256": "875b16d202b1e98c9321f4c7f90229c5f6f9b1dcacf43361dd2a77fdf7ec2a6c",
+  "canonicalHashAndIdCheck": "PASS",
+  "comparisons": {
+    "cropIdentity": "All examples and source crop lists compared including immature soybean/edamame, peanut pods, potato stem versus sweet-potato root.",
+    "conditionsAndNegation": "Compared cool/warm conditions, light promotion versus requirement, source-only harvest examples, moisture deficiency/excess, nonuniversal settings.",
+    "numbersInWords": "Independently compared 1.5–2month/25cm spinach,20cm cucumber and1–2/2–3/3–4year storage groups; target-language spelled-out quantities retained.",
+    "safety": "Oxygen-free sealed fermentation, no facility-entry prescription, and green-potato no-food/no-sale caution and no appearance-only treatment claim retained."
+  }
+}

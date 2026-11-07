@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "agri_water_soil",
+  "reviewedPacket": "fertilizer.json",
+  "reviewedPacketSha256": "be0e47a83576c31688f896d00496c28aaa43fc663a4783751e6d75970e05b131",
+  "status": "SOURCE_FACTS_PASS_WITH_REQUIRED_DISTRACTOR_REVISIONS",
+  "readOnlyPayloadUnchanged": true,
+  "scope": {
+    "lessons": 8,
+    "questions": 16,
+    "sourceTextPagesChecked": {
+      "AGR-S1": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "AGR-S2": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    "sourcePageImagesChecked": [
+      {
+        "documentId": "AGR-S1",
+        "pdfPage": 22
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 28
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 32
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 34
+      },
+      {
+        "documentId": "AGR-S2",
+        "pdfPage": 35
+      }
+    ]
+  },
+  "sourceFactBlockers": [],
+  "requiredChanges": [
+    {
+      "id": "agr-par03-fertilizer-q03",
+      "severity": "required_editorial_fix",
+      "issue": "袋の個数という名称だけの冗談的な誤答を、原料分類と成分数の混同という学習上の誤解へ置き換える。",
+      "patches": [
+        {
+          "field": "optionsJa[2]",
+          "before": "袋が一つか、二つ以上あるか。",
+          "after": "原料が有機物由来か、化学的に合成されたものか。"
+        },
+        {
+          "field": "optionReasonsJa[2]",
+          "before": "袋の個数では分類しません。",
+          "after": "有機質肥料と化学肥料の原料による区分であり、単肥と複合肥料を分ける基準ではありません。"
+        }
+      ],
+      "source": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 23,
+          "printedPage": 17
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 24,
+          "printedPage": 18
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 30,
+          "printedPage": 28
+        }
+      ],
+      "correctIndexUnchanged": true,
+      "lessonSourceHashUnchanged": true
+    },
+    {
+      "id": "agr-par03-fertilizer-q03",
+      "severity": "required_editorial_fix",
+      "issue": "作業人数は肥料分類に無関係で、誤答として不自然。含有率の区分との混同に変更する。",
+      "patches": [
+        {
+          "field": "optionsJa[3]",
+          "before": "使う作業者が一人か、二人以上か。",
+          "after": "三要素の合計含有率が30％未満か、30％以上か。"
+        },
+        {
+          "field": "optionReasonsJa[3]",
+          "before": "作業人数による区分ではありません。",
+          "after": "普通化成と高度化成の区分であり、単肥と複合肥料は含まれる三要素の種類数で分けます。"
+        }
+      ],
+      "source": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 23,
+          "printedPage": 17
+        },
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 24,
+          "printedPage": 18
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 30,
+          "printedPage": 28
+        }
+      ],
+      "correctIndexUnchanged": true,
+      "lessonSourceHashUnchanged": true
+    },
+    {
+      "id": "agr-par03-fertilizer-q08",
+      "severity": "required_editorial_fix",
+      "issue": "袋の色だけという無関係な誤答を、施用時期と原料分類の混同へ置き換える。",
+      "patches": [
+        {
+          "field": "optionsJa[1]",
+          "before": "元肥と追肥は袋の色だけで決まる。",
+          "after": "元肥は化学肥料、追肥は有機質肥料という原料の区分。"
+        },
+        {
+          "field": "optionReasonsJa[1]",
+          "before": "栽培の時期と使い方に着目します。",
+          "after": "元肥と追肥は施す時期や追加の目的による区分で、原料の違いではありません。"
+        }
+      ],
+      "source": [
+        {
+          "documentId": "AGR-S1",
+          "pdfPage": 25,
+          "printedPage": 19
+        },
+        {
+          "documentId": "AGR-S2",
+          "pdfPage": 32,
+          "printedPage": 30
+        }
+      ],
+      "correctIndexUnchanged": true,
+      "lessonSourceHashUnchanged": true
+    }
+  ],
+  "quarantineAudit": [
+    {
+      "topic": "必須元素数・多量微量区分",
+      "sourceDifference": "1go16withCa/Mg/Sunder微量;2go17inclNiwithmacronutrientdistinction",
+      "leakIntoLessonOrCorrectAnswer": false,
+      "evidence": "No elemental-count or macro/micro classification asserted in authored paragraphs/16questions;AGR-H-FERT-ESSENTIAL remains open."
+    },
+    {
+      "topic": "元素と酸化物表示・N2誤記",
+      "leakIntoLessonOrCorrectAnswer": false,
+      "evidence": "Bag calculations use窒素/リン酸/カリ component names, noP-toP2O5orK-toK2Oconversion factors and noN2 instruction. Fractions12-6-6/25kg and4kg/16% are fresh hypothetical examples with correct calculations."
+    },
+    {
+      "topic": "EC0.5/1.0mS/cm",
+      "leakIntoLessonOrCorrectAnswer": false,
+      "evidence": "Only qualitative salt concentration caution taught;no universal ECnumeric threshold or fertilization prescription assessed."
+    },
+    {
+      "topic": "暗きょunder地表排水heading",
+      "leakIntoLessonOrCorrectAnswer": false,
+      "evidence": "Shared questions ask明きょstructure/high-ridge conditions only;2goextension describes buried pipe mechanism rather than copying contradictory heading."
+    },
+    {
+      "topic": "暗きょ施工深さ",
+      "leakIntoLessonOrCorrectAnswer": false,
+      "evidence": "No universal1m construction depth taught or assessed."
+    }
+  ],
+  "checks": {
+    "lessonSourceHashes": "PASS",
+    "questionLessonBindings": "PASS",
+    "allQuestionsUseSharedLessons": true,
+    "answerPositionCounts": [
+      4,
+      4,
+      4,
+      4
+    ],
+    "noThreeConsecutiveSameAnswer": true,
+    "singleCorrectAnswerAudit": "PASS",
+    "arithmeticAudit": "PASS",
+    "sourceScopeAudit": "PASS_WITH_DOCUMENTED_HOLDS"
+  },
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseReady": false
+}

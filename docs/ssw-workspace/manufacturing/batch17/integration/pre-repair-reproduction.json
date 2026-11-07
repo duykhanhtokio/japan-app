@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "baselineCommit": "29ac8afb5a96b507bd4d8ba7b11074138155ee65",
+  "originalIntegratorSha256": "9a1a60c7dabc3b4c6f650eb897311328f8eb6f82715b9502bfea37702a86b8b4",
+  "scope": "Actually executed pre-repair full integrator in an isolated copy. Shared runtime not modified.",
+  "observations": [
+    {
+      "run": "original timestamps",
+      "exitCode": 0,
+      "runtimeContentChanged": false,
+      "changedPaths": [
+        "docs/ssw-workspace/manufacturing/batch12/translation-schema-normalization.json",
+        "docs/ssw-workspace/manufacturing/progress.json"
+      ],
+      "progressRegression": "batch14-validation-hardening overwritten with12-in-progress; next editorial guidance overwritten."
+    },
+    {
+      "run": "second unchanged run",
+      "exitCode": 0,
+      "changedPaths": []
+    },
+    {
+      "run": "reverse staging mtimes",
+      "exitCode": 0,
+      "changedPaths": [
+        "docs/ssw-workspace/manufacturing/batch12/translation-schema-normalization.json",
+        "src/data/manufacturing/translations/tl.json"
+      ],
+      "sourceBytesChanged": false,
+      "changedTargetRecords": [
+        "mfg1-electrical-l001",
+        "mfg1-electrical-l002",
+        "mfg1-electrical-l003",
+        "mfg1-electrical-l004",
+        "mfg1-electrical-l005",
+        "mfg1-electrical-l006",
+        "mfg1-electrical-l007"
+      ],
+      "rootCause": "sort key (mtime_ns,path) allowed filesystem metadata to choose among source-identical conflicting target drafts."
+    }
+  ],
+  "conflictingRecords": [
+    {
+      "locale": "tl",
+      "kind": "lessons",
+      "id": "mfg1-electrical-l001",
+      "sourceHash": "9b570e190c07fe071d90bf8e89256cedff531d6ad52480009d9144812b426855",
+      "currentPayloadSha256": "60a10dce615bdd5b9bb7b6338b85369f55e0c07d2ff2bc0c975ef7202225a874",
+      "approvedCandidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-001.json",
+          "payloadSha256": "60a10dce615bdd5b9bb7b6338b85369f55e0c07d2ff2bc0c975ef7202225a874"
+        }
+      ],
+      "candidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/electrical-locales/tl-lessons-001-007.json",
+          "payloadSha256": "4f1316a2a0e1b627bb0c73d13aacfdc6470bd2cd0a250a8ce1f8f43f53469d02"
+        },
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-001.json",
+          "payloadSha256": "60a10dce615bdd5b9bb7b6338b85369f55e0c07d2ff2bc0c975ef7202225a874"
+        }
+      ]
+    },
+    {
+      "locale": "tl",
+      "kind": "lessons",
+      "id": "mfg1-electrical-l002",
+      "sourceHash": "424baccd83209cd0a5fce43b1c7b59954795c72cf82677f555056b6c0e6b9746",
+      "currentPayloadSha256": "0365335c76cfc4975fb3493226b7f569fbca7c8764daa44f97011d4e0ec507d1",
+      "approvedCandidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-002.json",
+          "payloadSha256": "0365335c76cfc4975fb3493226b7f569fbca7c8764daa44f97011d4e0ec507d1"
+        }
+      ],
+      "candidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/electrical-locales/tl-lessons-001-007.json",
+          "payloadSha256": "fc4114152944a97540045100a17db320ba0a81058c97ce0b785a7facb1f3d737"
+        },
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-002.json",
+          "payloadSha256": "0365335c76cfc4975fb3493226b7f569fbca7c8764daa44f97011d4e0ec507d1"
+        }
+      ]
+    },
+    {
+      "locale": "tl",
+      "kind": "lessons",
+      "id": "mfg1-electrical-l003",
+      "sourceHash": "d2f746db61cb8c12a6e45830ea9f325a78686e6c2a968a1a9f73552538c6e286",
+      "currentPayloadSha256": "bf1d689fcef8812866c06f0118789a5c8d9753b7c0268ce8c1d7cd14840e05a6",
+      "approvedCandidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-003.json",
+          "payloadSha256": "bf1d689fcef8812866c06f0118789a5c8d9753b7c0268ce8c1d7cd14840e05a6"
+        }
+      ],
+      "candidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/electrical-locales/tl-lessons-001-007.json",
+          "payloadSha256": "4014d493ec83139f9ae32f6a2cb0b26f282bbaedfaa1af73a44718c20de54362"
+        },
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-003.json",
+          "payloadSha256": "bf1d689fcef8812866c06f0118789a5c8d9753b7c0268ce8c1d7cd14840e05a6"
+        }
+      ]
+    },
+    {
+      "locale": "tl",
+      "kind": "lessons",
+      "id": "mfg1-electrical-l004",
+      "sourceHash": "ed8991b0b74fd0ee53acaefe01df73626d5bd64d6cac7aada260b37598f11bd9",
+      "currentPayloadSha256": "be973eeccb01a14cae9a5c6ae40beef966f3eab7c02ff50b9f1011ee2c306095",
+      "approvedCandidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-004.json",
+          "payloadSha256": "be973eeccb01a14cae9a5c6ae40beef966f3eab7c02ff50b9f1011ee2c306095"
+        }
+      ],
+      "candidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/electrical-locales/tl-lessons-001-007.json",
+          "payloadSha256": "4090408a6c71ea33baad33f96fc350c4ada3c4aa2ea2caae19b9ca778f652860"
+        },
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-004.json",
+          "payloadSha256": "be973eeccb01a14cae9a5c6ae40beef966f3eab7c02ff50b9f1011ee2c306095"
+        }
+      ]
+    },
+    {
+      "locale": "tl",
+      "kind": "lessons",
+      "id": "mfg1-electrical-l005",
+      "sourceHash": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe",
+      "currentPayloadSha256": "9607ae3bd9771eeff6e709cc954fc31ef9e3dc6085920781c1c6262643c515cb",
+      "approvedCandidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-005.json",
+          "payloadSha256": "9607ae3bd9771eeff6e709cc954fc31ef9e3dc6085920781c1c6262643c515cb"
+        }
+      ],
+      "candidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/electrical-locales/tl-lessons-001-007.json",
+          "payloadSha256": "6230a13f456a47a87ed5061afccb62016722d18363b363e160b573cfd24e99b4"
+        },
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-005.json",
+          "payloadSha256": "9607ae3bd9771eeff6e709cc954fc31ef9e3dc6085920781c1c6262643c515cb"
+        }
+      ]
+    },
+    {
+      "locale": "tl",
+      "kind": "lessons",
+      "id": "mfg1-electrical-l006",
+      "sourceHash": "540a1c3e16efed961ad30a27dad230fa427d266bae80ff59db5decee27a6f492",
+      "currentPayloadSha256": "b4e4996eac3d22d5791915538c7854e0ca438ed1a4185259ede9ed270cca2688",
+      "approvedCandidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-006.json",
+          "payloadSha256": "b4e4996eac3d22d5791915538c7854e0ca438ed1a4185259ede9ed270cca2688"
+        }
+      ],
+      "candidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/electrical-locales/tl-lessons-001-007.json",
+          "payloadSha256": "7be9669142f7c3d8cdb1ef978bba74882340eacd750a83c552ea320c621d323b"
+        },
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-006.json",
+          "payloadSha256": "b4e4996eac3d22d5791915538c7854e0ca438ed1a4185259ede9ed270cca2688"
+        }
+      ]
+    },
+    {
+      "locale": "tl",
+      "kind": "lessons",
+      "id": "mfg1-electrical-l007",
+      "sourceHash": "da9be587e6df36724129316fd32868b2c701b06e45a1f3ac03eb5174fc614b45",
+      "currentPayloadSha256": "a5024d66cb04deea0b25a145abef806ae7f09003a26779b3947a127d90a290b4",
+      "approvedCandidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-007.json",
+          "payloadSha256": "a5024d66cb04deea0b25a145abef806ae7f09003a26779b3947a127d90a290b4"
+        }
+      ],
+      "candidates": [
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/electrical-locales/tl-lessons-001-007.json",
+          "payloadSha256": "c0892fbc157008d683f62262e1f4ac2b6ace235173dd76af39db3e7f0624de73"
+        },
+        {
+          "path": "docs/ssw-workspace/manufacturing/batch12/global-locales/tl/electrical/lesson-007.json",
+          "payloadSha256": "a5024d66cb04deea0b25a145abef806ae7f09003a26779b3947a127d90a290b4"
+        }
+      ]
+    }
+  ],
+  "repair": "Explicit source-bound approved-payload selection for all7knownconflicts; identical-payload copies coalesce; unlisted/missing/conflicting variant sets fail closed. Preserve progress editorial metadata.",
+  "nativeReviewed": false,
+  "domainReviewed": false
+}

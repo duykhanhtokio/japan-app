@@ -1,0 +1,832 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "status": "PASS",
+  "snapshotBaseCommit": "7639bbab163cba6a7084de61bf20ffcb7623eaf0",
+  "scope": "Real full frozen-draft assembly plus batch16/batch17 locale overlays in an isolated copied snapshot.",
+  "isolatedSandbox": "/tmp/manufacturing-batch17-rebuild-5138638t",
+  "fullIntegrationRuns": 5,
+  "stagingJsonTimestampVariants": [
+    "preserved",
+    "reversed",
+    "equal"
+  ],
+  "conflictingTranslationRecordsPinned": 7,
+  "conflictSelectorDependsOnExistingRuntime": false,
+  "rejectedInvalidSelectionFixtures": [
+    "unmanifested conflicting drafts",
+    "selected staged payload missing",
+    "unrecognized conflicting variant",
+    "stale canonical source selection",
+    "selected source path missing",
+    "unused or removed conflict selection"
+  ],
+  "steps": [
+    {
+      "label": "full integration with current checkout timestamps",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "scripts/manufacturing/integrate-completion.py"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 5.589,
+      "results": [
+        {
+          "status": "PASS",
+          "editorialQuestionRevisions": 2,
+          "translationBindings": 24,
+          "changedFiles": [
+            "src/data/manufacturing/mocks/mechanical.json",
+            "src/data/manufacturing/mock-translations.json"
+          ],
+          "independentReviewed": false,
+          "releaseReady": false
+        },
+        {
+          "status": "PASS",
+          "revisedTargetRecords": 4,
+          "changedFiles": [],
+          "japaneseModified": false,
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        {
+          "status": "PASS",
+          "questionRevisions": 2,
+          "translationBindings": 24,
+          "changedFiles": [
+            "src/data/manufacturing/mocks/electrical.json",
+            "src/data/manufacturing/mock-translations.json"
+          ],
+          "historicalEvidencePreserved": true,
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "releaseReady": false
+        },
+        {
+          "status": "PASS",
+          "guides": 8,
+          "newGuides": 3,
+          "preservedHistoricalGuides": 5,
+          "translatedGuidePairs": 96,
+          "newTranslationPairs": 36,
+          "preservedHistoricalTranslationPairs": 60,
+          "coverage": {
+            "en": 8,
+            "vi": 8,
+            "id": 8,
+            "zh-CN": 8,
+            "zh-TW": 8,
+            "hi": 8,
+            "bn": 8,
+            "ne": 8,
+            "my": 8,
+            "th": 8,
+            "km": 8,
+            "tl": 8
+          },
+          "currentSourceSha256": "3a23218035bc264fc737aab35abdfffc0d4971c9f262b6ad8b35d9b22e48e393",
+          "currentTargetSha256": "ea901c5f14158fdc911124d1b7f87485fed85f4fa83210370771a4ac34996f10",
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "releaseReady": false,
+          "changedFiles": [
+            "src/data/manufacturing/course-manifest.json",
+            "docs/ssw-workspace/manufacturing/progress.json"
+          ]
+        },
+        {
+          "lessons": 262,
+          "weeklyQuestions": 456,
+          "weeks": {
+            "mechanical": 13,
+            "electrical": 14,
+            "surface": 11
+          },
+          "translatedLessonPairs": 3144,
+          "translatedQuestionPairs": 5472,
+          "completeDraftLocales": [
+            "en",
+            "vi",
+            "id",
+            "zh-CN",
+            "zh-TW",
+            "hi",
+            "bn",
+            "ne",
+            "my",
+            "th",
+            "km",
+            "tl"
+          ],
+          "courseComplete": false
+        }
+      ],
+      "runtimeFilesByteIdentical": 46,
+      "latestProgressMetadataPreserved": true
+    },
+    {
+      "label": "second unchanged full integration",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "scripts/manufacturing/integrate-completion.py"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 5.853,
+      "results": [
+        {
+          "status": "PASS",
+          "editorialQuestionRevisions": 2,
+          "translationBindings": 24,
+          "changedFiles": [
+            "src/data/manufacturing/mocks/mechanical.json",
+            "src/data/manufacturing/mock-translations.json"
+          ],
+          "independentReviewed": false,
+          "releaseReady": false
+        },
+        {
+          "status": "PASS",
+          "revisedTargetRecords": 4,
+          "changedFiles": [],
+          "japaneseModified": false,
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        {
+          "status": "PASS",
+          "questionRevisions": 2,
+          "translationBindings": 24,
+          "changedFiles": [
+            "src/data/manufacturing/mocks/electrical.json",
+            "src/data/manufacturing/mock-translations.json"
+          ],
+          "historicalEvidencePreserved": true,
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "releaseReady": false
+        },
+        {
+          "status": "PASS",
+          "guides": 8,
+          "newGuides": 3,
+          "preservedHistoricalGuides": 5,
+          "translatedGuidePairs": 96,
+          "newTranslationPairs": 36,
+          "preservedHistoricalTranslationPairs": 60,
+          "coverage": {
+            "en": 8,
+            "vi": 8,
+            "id": 8,
+            "zh-CN": 8,
+            "zh-TW": 8,
+            "hi": 8,
+            "bn": 8,
+            "ne": 8,
+            "my": 8,
+            "th": 8,
+            "km": 8,
+            "tl": 8
+          },
+          "currentSourceSha256": "3a23218035bc264fc737aab35abdfffc0d4971c9f262b6ad8b35d9b22e48e393",
+          "currentTargetSha256": "ea901c5f14158fdc911124d1b7f87485fed85f4fa83210370771a4ac34996f10",
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "releaseReady": false,
+          "changedFiles": [
+            "src/data/manufacturing/course-manifest.json",
+            "docs/ssw-workspace/manufacturing/progress.json"
+          ]
+        },
+        {
+          "lessons": 262,
+          "weeklyQuestions": 456,
+          "weeks": {
+            "mechanical": 13,
+            "electrical": 14,
+            "surface": 11
+          },
+          "translatedLessonPairs": 3144,
+          "translatedQuestionPairs": 5472,
+          "completeDraftLocales": [
+            "en",
+            "vi",
+            "id",
+            "zh-CN",
+            "zh-TW",
+            "hi",
+            "bn",
+            "ne",
+            "my",
+            "th",
+            "km",
+            "tl"
+          ],
+          "courseComplete": false
+        }
+      ],
+      "runtimeFilesByteIdentical": 46,
+      "latestProgressMetadataPreserved": true
+    },
+    {
+      "label": "full integration with reversed staging timestamp order",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "scripts/manufacturing/integrate-completion.py"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 5.121,
+      "results": [
+        {
+          "status": "PASS",
+          "editorialQuestionRevisions": 2,
+          "translationBindings": 24,
+          "changedFiles": [
+            "src/data/manufacturing/mocks/mechanical.json",
+            "src/data/manufacturing/mock-translations.json"
+          ],
+          "independentReviewed": false,
+          "releaseReady": false
+        },
+        {
+          "status": "PASS",
+          "revisedTargetRecords": 4,
+          "changedFiles": [],
+          "japaneseModified": false,
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        {
+          "status": "PASS",
+          "questionRevisions": 2,
+          "translationBindings": 24,
+          "changedFiles": [
+            "src/data/manufacturing/mocks/electrical.json",
+            "src/data/manufacturing/mock-translations.json"
+          ],
+          "historicalEvidencePreserved": true,
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "releaseReady": false
+        },
+        {
+          "status": "PASS",
+          "guides": 8,
+          "newGuides": 3,
+          "preservedHistoricalGuides": 5,
+          "translatedGuidePairs": 96,
+          "newTranslationPairs": 36,
+          "preservedHistoricalTranslationPairs": 60,
+          "coverage": {
+            "en": 8,
+            "vi": 8,
+            "id": 8,
+            "zh-CN": 8,
+            "zh-TW": 8,
+            "hi": 8,
+            "bn": 8,
+            "ne": 8,
+            "my": 8,
+            "th": 8,
+            "km": 8,
+            "tl": 8
+          },
+          "currentSourceSha256": "3a23218035bc264fc737aab35abdfffc0d4971c9f262b6ad8b35d9b22e48e393",
+          "currentTargetSha256": "ea901c5f14158fdc911124d1b7f87485fed85f4fa83210370771a4ac34996f10",
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "releaseReady": false,
+          "changedFiles": [
+            "src/data/manufacturing/course-manifest.json",
+            "docs/ssw-workspace/manufacturing/progress.json"
+          ]
+        },
+        {
+          "lessons": 262,
+          "weeklyQuestions": 456,
+          "weeks": {
+            "mechanical": 13,
+            "electrical": 14,
+            "surface": 11
+          },
+          "translatedLessonPairs": 3144,
+          "translatedQuestionPairs": 5472,
+          "completeDraftLocales": [
+            "en",
+            "vi",
+            "id",
+            "zh-CN",
+            "zh-TW",
+            "hi",
+            "bn",
+            "ne",
+            "my",
+            "th",
+            "km",
+            "tl"
+          ],
+          "courseComplete": false
+        }
+      ],
+      "runtimeFilesByteIdentical": 46,
+      "latestProgressMetadataPreserved": true
+    },
+    {
+      "label": "full integration with equal recreated-checkout timestamps",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "scripts/manufacturing/integrate-completion.py"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 5.276,
+      "results": [
+        {
+          "status": "PASS",
+          "editorialQuestionRevisions": 2,
+          "translationBindings": 24,
+          "changedFiles": [
+            "src/data/manufacturing/mocks/mechanical.json",
+            "src/data/manufacturing/mock-translations.json"
+          ],
+          "independentReviewed": false,
+          "releaseReady": false
+        },
+        {
+          "status": "PASS",
+          "revisedTargetRecords": 4,
+          "changedFiles": [],
+          "japaneseModified": false,
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        {
+          "status": "PASS",
+          "questionRevisions": 2,
+          "translationBindings": 24,
+          "changedFiles": [
+            "src/data/manufacturing/mocks/electrical.json",
+            "src/data/manufacturing/mock-translations.json"
+          ],
+          "historicalEvidencePreserved": true,
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "releaseReady": false
+        },
+        {
+          "status": "PASS",
+          "guides": 8,
+          "newGuides": 3,
+          "preservedHistoricalGuides": 5,
+          "translatedGuidePairs": 96,
+          "newTranslationPairs": 36,
+          "preservedHistoricalTranslationPairs": 60,
+          "coverage": {
+            "en": 8,
+            "vi": 8,
+            "id": 8,
+            "zh-CN": 8,
+            "zh-TW": 8,
+            "hi": 8,
+            "bn": 8,
+            "ne": 8,
+            "my": 8,
+            "th": 8,
+            "km": 8,
+            "tl": 8
+          },
+          "currentSourceSha256": "3a23218035bc264fc737aab35abdfffc0d4971c9f262b6ad8b35d9b22e48e393",
+          "currentTargetSha256": "ea901c5f14158fdc911124d1b7f87485fed85f4fa83210370771a4ac34996f10",
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "releaseReady": false,
+          "changedFiles": [
+            "src/data/manufacturing/course-manifest.json",
+            "docs/ssw-workspace/manufacturing/progress.json"
+          ]
+        },
+        {
+          "lessons": 262,
+          "weeklyQuestions": 456,
+          "weeks": {
+            "mechanical": 13,
+            "electrical": 14,
+            "surface": 11
+          },
+          "translatedLessonPairs": 3144,
+          "translatedQuestionPairs": 5472,
+          "completeDraftLocales": [
+            "en",
+            "vi",
+            "id",
+            "zh-CN",
+            "zh-TW",
+            "hi",
+            "bn",
+            "ne",
+            "my",
+            "th",
+            "km",
+            "tl"
+          ],
+          "courseComplete": false
+        }
+      ],
+      "runtimeFilesByteIdentical": 46,
+      "latestProgressMetadataPreserved": true
+    },
+    {
+      "label": "recreate seven ambiguous target records from explicit source-bound selection",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "scripts/manufacturing/integrate-completion.py"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 5.235,
+      "results": [
+        {
+          "status": "PASS",
+          "editorialQuestionRevisions": 2,
+          "translationBindings": 24,
+          "changedFiles": [
+            "src/data/manufacturing/mocks/mechanical.json",
+            "src/data/manufacturing/mock-translations.json"
+          ],
+          "independentReviewed": false,
+          "releaseReady": false
+        },
+        {
+          "status": "PASS",
+          "revisedTargetRecords": 4,
+          "changedFiles": [],
+          "japaneseModified": false,
+          "nativeReviewed": false,
+          "domainReviewed": false
+        },
+        {
+          "status": "PASS",
+          "questionRevisions": 2,
+          "translationBindings": 24,
+          "changedFiles": [
+            "src/data/manufacturing/mocks/electrical.json",
+            "src/data/manufacturing/mock-translations.json"
+          ],
+          "historicalEvidencePreserved": true,
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "releaseReady": false
+        },
+        {
+          "status": "PASS",
+          "guides": 8,
+          "newGuides": 3,
+          "preservedHistoricalGuides": 5,
+          "translatedGuidePairs": 96,
+          "newTranslationPairs": 36,
+          "preservedHistoricalTranslationPairs": 60,
+          "coverage": {
+            "en": 8,
+            "vi": 8,
+            "id": 8,
+            "zh-CN": 8,
+            "zh-TW": 8,
+            "hi": 8,
+            "bn": 8,
+            "ne": 8,
+            "my": 8,
+            "th": 8,
+            "km": 8,
+            "tl": 8
+          },
+          "currentSourceSha256": "3a23218035bc264fc737aab35abdfffc0d4971c9f262b6ad8b35d9b22e48e393",
+          "currentTargetSha256": "ea901c5f14158fdc911124d1b7f87485fed85f4fa83210370771a4ac34996f10",
+          "nativeReviewed": false,
+          "domainReviewed": false,
+          "releaseReady": false,
+          "changedFiles": [
+            "src/data/manufacturing/course-manifest.json",
+            "docs/ssw-workspace/manufacturing/progress.json"
+          ]
+        },
+        {
+          "lessons": 262,
+          "weeklyQuestions": 456,
+          "weeks": {
+            "mechanical": 13,
+            "electrical": 14,
+            "surface": 11
+          },
+          "translatedLessonPairs": 3144,
+          "translatedQuestionPairs": 5472,
+          "completeDraftLocales": [
+            "en",
+            "vi",
+            "id",
+            "zh-CN",
+            "zh-TW",
+            "hi",
+            "bn",
+            "ne",
+            "my",
+            "th",
+            "km",
+            "tl"
+          ],
+          "courseComplete": false
+        }
+      ],
+      "restoredJsonKeyOrderOnlyDifferences": [
+        "src/data/manufacturing/translations/tl.json"
+      ],
+      "runtimeFilesByteIdentical": 45,
+      "latestProgressMetadataPreserved": true
+    },
+    {
+      "label": "check-mock-content.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "scripts/manufacturing/check-mock-content.py"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 3.721,
+      "results": [
+        {
+          "status": "PASS",
+          "specialties": {
+            "mechanical": {
+              "exams": 10,
+              "questions": 400,
+              "coveredLessons": 91,
+              "distinctStems": 400
+            },
+            "electrical": {
+              "exams": 10,
+              "questions": 400,
+              "coveredLessons": 98,
+              "distinctStems": 400
+            },
+            "surface": {
+              "exams": 10,
+              "questions": 400,
+              "coveredLessons": 73,
+              "distinctStems": 400
+            }
+          },
+          "totalExams": 30,
+          "totalQuestions": 1200,
+          "mockTranslationCoverage": {
+            "en": 1200,
+            "vi": 1200,
+            "id": 1200,
+            "zh-CN": 1200,
+            "zh-TW": 1200,
+            "hi": 1200,
+            "bn": 1200,
+            "ne": 1200,
+            "my": 1200,
+            "th": 1200,
+            "km": 1200,
+            "tl": 1200
+          },
+          "rubyExactTextAligned": true,
+          "nativeReviewed": false,
+          "editorialEvidenceBindings": {
+            "mechanical": {
+              "boundQuestions": 400,
+              "boundFiles": 3,
+              "historicalReviewedQuestions": 400,
+              "unchangedCurrentReviewedQuestions": 398,
+              "authorRevisedQuestions": 2,
+              "revisedQuestionsIndependentlyReviewed": false
+            },
+            "electrical": {
+              "boundQuestions": 100,
+              "boundFiles": 2,
+              "historicalReviewedQuestions": 100,
+              "unchangedCurrentReviewedQuestions": 98,
+              "separatelyReviewedStemRevisions": 2,
+              "revisedFullQuestionSourceCertification": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "check-editorial-patches.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "scripts/manufacturing/check-editorial-patches.py"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 3.24,
+      "results": [
+        {
+          "status": "PASS",
+          "revisedQuestions": 2,
+          "unchangedMechanicalQuestions": 398,
+          "revisedExamRevisions": 2,
+          "preservedAnswerKeys": 400,
+          "updatedTranslationBindings": 24,
+          "unaffectedTranslationBindings": 14376,
+          "revisedRubyBindings": 2,
+          "unaffectedRubyBindings": 1198,
+          "idempotent": true,
+          "frozenRebuildReproducesCurrent": true,
+          "rejectedInvalidRevisions": [
+            "changed answer key",
+            "missing revised question",
+            "duplicate revised question",
+            "missing target locale",
+            "stale target source hash",
+            "incorrect ruby text",
+            "stale ruby binding",
+            "unsupported independent certification",
+            "unsupported native certification",
+            "wrong exam revision",
+            "unexpected current translation text",
+            "unexpected current ruby text"
+          ],
+          "runtimeFilesModified": false
+        }
+      ]
+    },
+    {
+      "label": "check-editorial-review-regression.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "scripts/manufacturing/check-editorial-review-regression.py"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 40.618,
+      "results": [
+        {
+          "status": "PASS",
+          "rejectedInvalidSnapshots": [
+            "missing mechanical reviewed ID",
+            "duplicate mechanical reviewed ID",
+            "unknown mechanical reviewed ID",
+            "missing reviewed input file",
+            "stale mechanical snapshot",
+            "inflated mechanical count",
+            "unsupported native certification",
+            "unsupported release certification",
+            "unknown mechanical finding",
+            "missing electrical practical review",
+            "duplicate electrical practical review",
+            "stale electrical questionSnapshotSha256",
+            "stale electrical questionSourceHash",
+            "stale electrical lessonSourceHash",
+            "wrong electrical lesson",
+            "unresolved electrical verdict",
+            "unresolved required correction",
+            "wrong electrical selection count",
+            "unsupported human certification",
+            "unknown electrical precision note",
+            "changed mechanical source audit",
+            "changed mechanical lesson file",
+            "changed mechanical question file",
+            "changed electrical lesson file",
+            "changed electrical question file"
+          ],
+          "count": 25,
+          "runtimeFilesModified": false
+        }
+      ]
+    },
+    {
+      "label": "check-mock-content-regression.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "scripts/manufacturing/check-mock-content-regression.py"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 3.466,
+      "results": [
+        {
+          "status": "PASS",
+          "rejectedInvalidSnapshots": [
+            "missing locale",
+            "missing question",
+            "extra question",
+            "stale source hash",
+            "empty stem",
+            "empty option",
+            "empty rationale",
+            "missing option",
+            "missing rationale"
+          ],
+          "runtimeFilesModified": false
+        }
+      ]
+    },
+    {
+      "label": "check-source-review-bindings.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "scripts/manufacturing/check-source-review-bindings.py"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 0.097,
+      "results": [
+        {
+          "status": "PASS",
+          "sourceReferenceGuidesBound": 5,
+          "fileDigestBoundReviews": 6,
+          "surfaceReviewedObjects": 491,
+          "supersededReviewRecords": [],
+          "missingCurrentReviewBindings": [],
+          "scope": "Exact frozen source identities and independently reviewed snapshots, not a native/domain/full-knowledge certificate."
+        }
+      ]
+    },
+    {
+      "label": "check-editorial-attempts.cjs",
+      "command": [
+        "node",
+        "scripts/manufacturing/check-editorial-attempts.cjs"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 0.08,
+      "results": [
+        {
+          "status": "PASS",
+          "staleRevisedFormsRejected": 2,
+          "unchangedFormsRestored": 8,
+          "currentFormsRestored": 10,
+          "scope": "Actual mock data and state service; no browser/native-device certification."
+        }
+      ]
+    },
+    {
+      "label": "check-mock-state.cjs",
+      "command": [
+        "node",
+        "scripts/manufacturing/check-mock-state.cjs"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 0.093,
+      "results": [
+        {
+          "status": "PASS",
+          "scope": "independent section clocks; restore/background expiry; two-option bounds; stale revision; independent 20/30 and6/10 thresholds; no grades before both sections; namespaced keys"
+        }
+      ]
+    }
+  ],
+  "runtimeSha256": {
+    "src/data/manufacturing/electrical.json": "e590319d60ff137ac22a27ca9e92ee5ac6407df2b9df98e5929e37e6e8d5f7ca",
+    "src/data/manufacturing/translations.ts": "9d3c3f84cf1180f6bb97d719012f296cee42a9f7d2df226d1b48d63bc92c35ac",
+    "src/data/manufacturing/ui.ts": "76513acd705454f0dc28b534169419cf0ea87ef5d875d2a183ae150433b4ff27",
+    "src/data/manufacturing/source-guide-translations.json": "ea901c5f14158fdc911124d1b7f87485fed85f4fa83210370771a4ac34996f10",
+    "src/data/manufacturing/mock-reading-overrides.json": "1e51a374c6156c2559272f6098f721d48391d0bdae75d4ff0132f4b83640c1da",
+    "src/data/manufacturing/mechanical.json": "03aa03f0321d095787d29d3b6e1c61c0bccad3bed6effc2a88acb42788957113",
+    "src/data/manufacturing/mocks.ts": "ff58c743f2d57bcc5f8272ea7f86c80fb2bbf21fe068afaf56696b86a19ae6a2",
+    "src/data/manufacturing/diagram-translations.json": "19843bc61cbcef4dede4f2c47b8784ee6ed61a41a4e233039a1ffd4aba209dec",
+    "src/data/manufacturing/source-guides.ts": "5d24678001a56a7fd3915d8e9b11999fb0bfe0b90f753d5cfd730bad7a538d00",
+    "src/data/manufacturing/source-guides.json": "3a23218035bc264fc737aab35abdfffc0d4971c9f262b6ad8b35d9b22e48e393",
+    "src/data/manufacturing/mock-translations.json": "a111b0220974d634c372b1ee06ae3d0e5c6c812e8b30b9a84d08403c9f98ebe5",
+    "src/data/manufacturing/surface.json": "96d750ea565f43952617ce38caa7bdba1bce52b92eb78ab6e2a03932ed73e392",
+    "src/data/manufacturing/index.ts": "ab34c454db1b1f9b15bd0680764f4a788a65ea415cf5cad7d7cf0f74f7910f10",
+    "src/data/manufacturing/course-manifest.json": "bb69b66745b33cd40fdf3f318996bf32cbede06fdc39c76761e0aaae5f941c0a",
+    "src/data/manufacturing/ui-translations.json": "0c6d7862ba9cc331ccaa682ee09b3a27886379b9f7f66de802890f2b6817b4c2",
+    "src/data/manufacturing/mock-ui.ts": "7bb4246c34e103918b5f4b785a369c42ffafb463482bde9d0a1665452e7583a0",
+    "src/data/manufacturing/mock-furigana.json": "4419ab451f514e2db8bffca56bb7a7748c32ceeffefbc3d38b51dc3b74929026",
+    "src/data/manufacturing/mock-ui-translations.json": "bc7215cde2bb3f28e7d0b854b1620d7bfb704e592148c9c0c9b907e12a5754a5",
+    "src/data/manufacturing/translations/bn.json": "867629ef0058810acb348d16b6e0b373e00f3b31fc4fc64377fe176a1cddae79",
+    "src/data/manufacturing/translations/manifest.json": "f2b418b62e604560baa5a552c7772aae1d2e5144b43c6d303838df4b2da1fd25",
+    "src/data/manufacturing/translations/questions.zh-TW.json": "99afd578558789394811d835bcb87ddee73b81c46b5f6ef298023307ea59b916",
+    "src/data/manufacturing/translations/hi.json": "211027031bd0986aded7309ae8b547f088af24956c02636bd39e3ea846fc1ceb",
+    "src/data/manufacturing/translations/id.json": "95372503d8d743c47de4b6deabffd841b94cd4e2f4a628b5860ef28e7458cc78",
+    "src/data/manufacturing/translations/questions.vi.json": "ae7cb08f2b2945458fa94594af853b80b90f1282bb31c9526af52b3f7bd4067c",
+    "src/data/manufacturing/translations/questions.en.json": "0f57cd4a143375fd8850a6268bcccf271be97e307df7a3cd9de9006330b707ff",
+    "src/data/manufacturing/translations/questions.ne.json": "1e93e8f1eb9f27f03edf04be774777adb799eee91d622e005e946e5f0e3a2b6f",
+    "src/data/manufacturing/translations/ne.json": "33d711547ac230c0a562364f3caccc2c8dd242f6b954bba18a83c12d3616cf2c",
+    "src/data/manufacturing/translations/questions.id.json": "7ccdfbf4576937c95a3b11469cb1a987bb1e3733762c28ba7ef52d2cafd1bdec",
+    "src/data/manufacturing/translations/tl.json": "03da5dd7f5d522c0d248285d0fb4042d64381802267b78da20253ef6319ecea0",
+    "src/data/manufacturing/translations/questions.th.json": "b6b6652d7ff5aea15c07ae9d27fe733d279db99405d435ab1441a5d6f6a9d41f",
+    "src/data/manufacturing/translations/en.json": "fec65aa00d296f83b9e7dc08e5497db3d472a245f63f0b80c0654f8ef827f95c",
+    "src/data/manufacturing/translations/questions.hi.json": "3a8a8d21d6b902f89cfa85c87f0d4d2cfe5d235e4df09a069ae5d05c37d95f2a",
+    "src/data/manufacturing/translations/questions.bn.json": "5b0fd317cd34737f15b316d4fb85cc5920fbe3632232fe405b716fcf9d01a71a",
+    "src/data/manufacturing/translations/my.json": "c75315d8d612e920e9f9b3114e115a74f8ff04050d63201e64102789828ec1d4",
+    "src/data/manufacturing/translations/questions.tl.json": "f3324e25e27a029cdfd27190dc607579fc7a6e1feba77fe3e35257aaa709eeaf",
+    "src/data/manufacturing/translations/questions.km.json": "b91b4e36b66e19d4ad4572fd990ccbb033c41e0ba7197eecb86e1cc48a441889",
+    "src/data/manufacturing/translations/questions.zh-CN.json": "03725dbbe86f2710465556e71ed02771c43d050cca595fcfa0ed81bff80f75db",
+    "src/data/manufacturing/translations/th.json": "2ec8f4336fdd56e151c23b21cf54e5662f47ae7e7f34fd275708f655515513ea",
+    "src/data/manufacturing/translations/questions.my.json": "32ef3ed844acdee91304f1ac68bfd10721fc8a67aea5183b769da9fa564d1968",
+    "src/data/manufacturing/translations/zh-CN.json": "e1d2970c234aad899a93c857fa93a32c64f896689a62d0ec54049730fd4a8552",
+    "src/data/manufacturing/translations/km.json": "fba9e590c226dbb13f5362afd44852b6d0219cf71525179729998eb1c0ea3701",
+    "src/data/manufacturing/translations/vi.json": "c5b96c7b6c01093bb2294818814a52e7821fdf40f4ddb2b1b2d6283b8487be02",
+    "src/data/manufacturing/translations/zh-TW.json": "772416876438bdd52c8609e8af98bf709e0b32a4015d78423daf01a0cd3ab1e4",
+    "src/data/manufacturing/mocks/electrical.json": "7e14bf5990fe0a8765c04ea0c83a615f645cd1004276a688ae01f73e2bbd9f51",
+    "src/data/manufacturing/mocks/mechanical.json": "7b496f0fefecd73e2d28e4fc61abceed119a67b677e810aab9fda3e274db3443",
+    "src/data/manufacturing/mocks/surface.json": "8dc2025826c43e6fa88ef5a27c938695e9b7fa34bdb1d8606cca32e5917bb251"
+  },
+  "sharedRuntimeModifiedByThisCheck": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseReady": false,
+  "limitations": [
+    "No browser rendering, fullExpo/type/build, or physical/native-device test performed.",
+    "Whole-source semantic/native/domain certification is outside this integration check.",
+    "The full assembler is a mutating data tool; failure atomicity is not asserted. It is exercised only in an isolated snapshot here."
+  ]
+}

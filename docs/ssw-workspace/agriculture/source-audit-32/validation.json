@@ -1,0 +1,42 @@
+{
+  "validator": "scripts/agriculture/check-source-audit-32.py",
+  "validatorSha256": "fa36795989c3a971cb931c0e8ee5867f4079c7dcc7c336a01beedd88402f1155",
+  "positiveValidation": "PASS",
+  "negativeGuardFixtures": [
+    {
+      "case": "stale_input",
+      "result": "rejected",
+      "reason": "stale audit input: src/data/agriculture/lessons.ja.json"
+    },
+    {
+      "case": "stale_peer",
+      "result": "rejected",
+      "reason": "peer packet changed"
+    },
+    {
+      "case": "orphan_source",
+      "result": "rejected",
+      "reason": "adopted source IDs differ"
+    },
+    {
+      "case": "false_closure",
+      "result": "rejected",
+      "reason": "false approval/closure: countsAsClosedSourceOccurrence"
+    },
+    {
+      "case": "weather_hold_removed",
+      "result": "rejected",
+      "reason": "required scope override missing"
+    },
+    {
+      "case": "duplicate_scope_lost",
+      "result": "rejected",
+      "reason": "duplicate scope not excluded"
+    }
+  ],
+  "priorAttempt": "A missing override originally raised KeyError; the checker now rejects it explicitly. Final six fixtures all passed.",
+  "runtimeInputsUnchanged": true,
+  "newRuntimeTestsClaimed": false,
+  "reconciledCurrentValidation": "PASS; preserved remote138d15b7 and both historical/current input fingerprints",
+  "negativeGuardFixturesSnapshot": "Six fixtures executed before the source-audit32 rename and concurrent image reconciliation; unchanged source/peer/override guards retain the same intent. No post-reconciliation negative replay claim."
+}

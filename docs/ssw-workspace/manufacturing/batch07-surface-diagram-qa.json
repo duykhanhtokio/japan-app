@@ -1,0 +1,80 @@
+{
+  "lessonId": "mfg1-surface-lesson-042",
+  "svg": "batch07-surface-resistor-topology.svg",
+  "png": "batch07-surface-resistor-topology.png",
+  "dimensions": {
+    "width": 1280,
+    "height": 800
+  },
+  "altJa": "紙上の理想抵抗の数値例。直列は4Ωと8Ω、24Vで2A、電圧降下8Vと16V。並列は6Ωと3Ω、両端6Vで枝電流1Aと2A、全電流3A、合成抵抗2Ω。設備の配線手順ではない。",
+  "captions": {
+    "en": "Ideal resistor calculation on paper: series 4 Ω + 8 Ω on 24 V gives 2 A and drops of 8 V and 16 V. Parallel 6 Ω and 3 Ω on 6 V gives branch currents of 1 A and 2 A, total 3 A and equivalent resistance 2 Ω. This is not equipment wiring guidance.",
+    "vi": "Ví dụ tính điện trở lý tưởng trên giấy: nối tiếp 4 Ω và 8 Ω với 24 V có dòng điện 2 A, điện áp giảm lần lượt 8 V và 16 V. Song song 6 Ω và 3 Ω với 6 V có dòng nhánh 1 A và 2 A, tổng 3 A, điện trở tương đương 2 Ω. Đây không phải hướng dẫn đấu dây thiết bị.",
+    "id": "Contoh perhitungan resistor ideal di atas kertas: seri 4 Ω dan 8 Ω pada 24 V menghasilkan arus 2 A serta jatuh tegangan 8 V dan 16 V. Paralel 6 Ω dan 3 Ω pada 6 V menghasilkan arus cabang 1 A dan 2 A, total 3 A, serta resistansi ekuivalen 2 Ω. Ini bukan petunjuk pengawatan peralatan."
+  },
+  "sources": [
+    {
+      "documentId": "mfg1-surface-source",
+      "pdfPage": 129,
+      "printedPage": 119
+    },
+    {
+      "documentId": "mfg1-surface-source",
+      "pdfPage": 132,
+      "printedPage": 122
+    },
+    {
+      "documentId": "mfg1-surface-source",
+      "pdfPage": 133,
+      "printedPage": 123
+    },
+    {
+      "documentId": "mfg1-surface-source",
+      "pdfPage": 136,
+      "printedPage": 126
+    }
+  ],
+  "calculations": {
+    "series": {
+      "resistanceOhm": 12,
+      "currentA": 2,
+      "dropsV": [
+        8,
+        16
+      ],
+      "sumDropsV": 24
+    },
+    "parallel": {
+      "voltageEachV": 6,
+      "branchCurrentsA": [
+        1,
+        2
+      ],
+      "totalCurrentA": 3,
+      "equivalentOhm": 2
+    }
+  },
+  "topologyQa": [
+    "Series single unbranched path, both resistors carry same conventional current.",
+    "Parallel resistors connect across the same two nodes A and B; branch currents point consistently from plus toward minus.",
+    "Terminal markers denote ideal source boundary; no physical connector pin numbers or equipment settings."
+  ],
+  "originalAuthored": true,
+  "sourceFigureCopied": false,
+  "visualInspection": "PASS: 1280x800 rendered PNG inspected; topology, values, labels and panel/footer boundaries legible without clipping.",
+  "domainCertified": false,
+  "visualInspectedBy": "author_ai",
+  "independentReview": false,
+  "assetHashes": {
+    "batch07-surface-resistor-topology.svg": "5a8fc48c79a10518838eedd762601e67610cb8f1a144a3da0ff4a4dfc22bee03",
+    "batch07-surface-resistor-topology.png": "989bdac3b5950d318e623dbfe6e93e35ff7b7f26fde6a31a151d67c3ef737cdd"
+  },
+  "rootIndependentReview": {
+    "renderedPngVisuallyInspected": true,
+    "topologyAndCalculations": "PASS",
+    "captionsEnViId": "PASS",
+    "nativeReviewed": false,
+    "domainReviewed": false
+  },
+  "rootRenderedPngReview": "PASS: labels legible, no clipping, technical relationships checked"
+}

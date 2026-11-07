@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "worker": "safety",
+  "date": "2026-10-28",
+  "status": "bounded_source_next_candidates_pending_independent_review",
+  "baselineCommit": "cdb5c0d9b331bbcb8726732edd2089a22e083c00",
+  "inputHashes": {
+    "src/data/agriculture/lessons.ja.json": "64fb06f54ee8deebec56fea1f77f364b6b4d7761276e7f22b5bf17e06d55ee95",
+    "src/data/agriculture/weekly-checks.ja.json": "41ce974912a2adc1f2079d13b9f1e1845069aab0ec1a131655293bf00388c50a",
+    "src/data/agriculture/mock-exams.ja.json": "481540b1f7603cb1c0429985db5ab158b8be0a3d13d331cf303f37a82986ea59",
+    "docs/ssw-workspace/agriculture/source-gap-backlog.json": "a75cf3f64e25d938d0d6319069d6b9d9002d9b949da165ed466f80badf7765c2",
+    "docs/ssw-workspace/agriculture/source-gap-reconciliation-34.json": "7cacd5af3f93dbe1362272df10303ca72e1a6ce8802a682347b1ac8999e3398e",
+    "docs/ssw-workspace/agriculture/mock-35/peer-adopted-candidates.json": "9f5ca5a7838afdb874f253fc1274cea242d9b49f3077774c60108d3905ff8258",
+    "docs/ssw-workspace/agriculture/mock-35/reviewed-question-queue.json": "cf3b01c55295e03f32424b26ce8a15e1d58fd650b03c6186049da2845538a256",
+    "docs/ssw-workspace/agriculture/mock-35/global-review-w3-w4.json": "5af901b26c55e042771a92f5a25367533b3a844f140294c1fe4ba41f3392fef6"
+  },
+  "objectives": [
+    {
+      "id": "AGR-NEXT36-SAFETY-01",
+      "sourceItemIds": [
+        "AGR-A10-SAFETY-0407"
+      ],
+      "objectiveJa": "給油中の火気確認とは別に、燃料保管場所の火気禁止・消火器・換気を確認項目として整理する。",
+      "draftTitleJa": "給油する場面と保管する場所を分ける",
+      "draftTextJa": "燃料を扱う安全確認は、給油をしている間だけのものではありません。2号資料では、保管する場所を火気厳禁にし、消火器を設けることも示しています。給油時に火気がないことを確認した記録と、燃料を置く場所の確認は分けて整理します。また、ガソリンを保管する場面では換気への注意も記されています。この説明だけで、消火器の種類や設置数、換気設備の仕様、容器の法的条件までは決めません。",
+      "currentOverlapBindings": [
+        {
+          "lessonId": "agr-safety-power-fuel",
+          "lessonSourceHash": "03fe55abef415b5139ce83acd1e11280e524e6e3a1d824b42df5784a9fa9b0f5",
+          "paragraphId": "agr-safety-power-fuel-p5",
+          "paragraphTextSha256": "1b6d0348682bd9b5ee4dfe367d9638e919d0127f3252e446ad579aa24b8958c3"
+        },
+        {
+          "lessonId": "agr-safety-power-fuel",
+          "lessonSourceHash": "03fe55abef415b5139ce83acd1e11280e524e6e3a1d824b42df5784a9fa9b0f5",
+          "paragraphId": "agr-safety-power-fuel-p6",
+          "paragraphTextSha256": "460d1c26d94951275d72f641503e7351bd290da840c51c6848a80ff5c0df399f"
+        },
+        {
+          "lessonId": "agr-par12-management-power-fuel-information",
+          "lessonSourceHash": "5b27ec4c4bc0259eb2c57a8b6e5d0f8b85023d3de7462d6baedbe63f465b1ffd",
+          "paragraphId": "agr-par12-management-power-fuel-information-p6",
+          "paragraphTextSha256": "573290619a8c57d3986c313f798699d14ccc3c8ee723675d060cb4308540e133"
+        }
+      ],
+      "currentOverlapJa": "給油中の火気・漏れと、長期保管による変質は既習。追加は保管場所の火気禁止と消火器、換気という場所側の確認。",
+      "nearestExistingQuestionIds": [
+        "agr-par04-safety-q12",
+        "agr-par12-management-q08"
+      ],
+      "boundaryJa": "0408の気化・滞留との関係を一つの教材で説明し、保管確認と換気の理由を細切れの独立問題に増やさない。燃料容器規則の0404〜0406は保持し解除しない。",
+      "scopeLevels": [
+        "2"
+      ],
+      "sourceEvidence": {
+        "documentId": "AGR-S2",
+        "pdfPage": 59,
+        "printedPage": 57,
+        "pdfSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+        "renderSha256": "0f23dd2733ed4e496bab8ad9b85d3a228674459bd857159e887600a5352e0c1b",
+        "renderer": "PyMuPDF Matrix(1.8,1.8), PNG",
+        "directPageImageInspected": true
+      },
+      "frozenBacklogStatuses": {
+        "AGR-A10-SAFETY-0407": "missing"
+      },
+      "disposition": "source_verified_supplement_candidate_pending_peer",
+      "sourceOccurrencesClosed": 0,
+      "independentAssessmentCapacityCertified": false
+    },
+    {
+      "id": "AGR-NEXT36-SAFETY-02",
+      "sourceItemIds": [
+        "AGR-A10-SAFETY-0408"
+      ],
+      "objectiveJa": "室温でのガソリンの気化と、気化したガスを滞留させない換気の注意を関係付ける。",
+      "draftTitleJa": "液体の燃料と気化したガスを区別する",
+      "draftTextJa": "2号資料は、ガソリンが室温でも気化することを説明し、保管時には気化したガスがたまらないよう換気に注意するよう述べています。目で見える液体の燃料だけでなく、気体になったものにも着目する説明です。保管場所の確認票では、火気への注意と、気化したガスを滞留させないための換気という目的を対応させます。この資料から換気量や安全な濃度を計算したり、室内のどこでも安全と判断したりはしません。",
+      "currentOverlapBindings": [
+        {
+          "lessonId": "agr-safety-power-fuel",
+          "lessonSourceHash": "03fe55abef415b5139ce83acd1e11280e524e6e3a1d824b42df5784a9fa9b0f5",
+          "paragraphId": "agr-safety-power-fuel-p3",
+          "paragraphTextSha256": "e4153dc207fa191002421ed6d8c361a597651072ab71186ed17ec299e89d2005"
+        },
+        {
+          "lessonId": "agr-safety-power-fuel",
+          "lessonSourceHash": "03fe55abef415b5139ce83acd1e11280e524e6e3a1d824b42df5784a9fa9b0f5",
+          "paragraphId": "agr-safety-power-fuel-p5",
+          "paragraphTextSha256": "1b6d0348682bd9b5ee4dfe367d9638e919d0127f3252e446ad579aa24b8958c3"
+        },
+        {
+          "lessonId": "agr-par12-management-power-fuel-information",
+          "lessonSourceHash": "5b27ec4c4bc0259eb2c57a8b6e5d0f8b85023d3de7462d6baedbe63f465b1ffd",
+          "paragraphId": "agr-par12-management-power-fuel-information-p5",
+          "paragraphTextSha256": "5096d366ebeeed36042d91443c3831ac13f90b0b76777fb90ca9aaf6d2d89fac"
+        }
+      ],
+      "currentOverlapJa": "燃料種類・機械適合、給油火気、種類不明時の不使用は既習。追加は気化した相と滞留防止という物理的な理由で、種類を推測する方法ではない。",
+      "nearestExistingQuestionIds": [
+        "agr-par04-safety-q12",
+        "agr-par12-management-q07"
+      ],
+      "boundaryJa": "密度・空気より重いという性質はこの頁から追加しない。換気量、危険区域、容器開栓手順を生成しない。NEXT36-SAFETY-01と合わせる補足候補であり別問題容量を自動認定しない。",
+      "scopeLevels": [
+        "2"
+      ],
+      "sourceEvidence": {
+        "documentId": "AGR-S2",
+        "pdfPage": 59,
+        "printedPage": 57,
+        "pdfSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+        "renderSha256": "0f23dd2733ed4e496bab8ad9b85d3a228674459bd857159e887600a5352e0c1b",
+        "renderer": "PyMuPDF Matrix(1.8,1.8), PNG",
+        "directPageImageInspected": true
+      },
+      "frozenBacklogStatuses": {
+        "AGR-A10-SAFETY-0408": "missing"
+      },
+      "disposition": "source_verified_supplement_candidate_pending_peer",
+      "sourceOccurrencesClosed": 0,
+      "independentAssessmentCapacityCertified": false
+    },
+    {
+      "id": "AGR-NEXT36-SAFETY-03",
+      "sourceItemIds": [
+        "AGR-A10-SAFETY-0356"
+      ],
+      "objectiveJa": "服装例の帽子のつばと、顔に密着するゴーグル型という二つの図の特徴を、保護具名と対応させる。",
+      "draftTitleJa": "保護具の名前と図の特徴を対応させる",
+      "draftTextJa": "2号資料の服装図では、帽子はなるべくつばのあるもの、保護メガネは顔に密着するゴーグル型という特徴が示されています。帽子や保護メガネという名前だけでなく、つばと顔への密着という観察点を分けて読みます。これは掲載された服装例の形状を整理する学習であり、見た目だけで全ての農薬への適合を保証するものではありません。実際の保護具は、使用する製品の表示や作業条件にも合うかを別に確かめます。",
+      "currentOverlapBindings": [
+        {
+          "lessonId": "agr-safety-pesticide-clothing",
+          "lessonSourceHash": "ed5d0a79125bce39c3db44baa6773de2919a2badc8adce63bcb1b6fea50e422f",
+          "paragraphId": "agr-safety-pesticide-clothing-p2",
+          "paragraphTextSha256": "2bbc4fa4b2bf87347b24ee5dc4e45d5a052d4330b4ab9927ee7eef3be0ec3722"
+        },
+        {
+          "lessonId": "agr-safety-pesticide-clothing",
+          "lessonSourceHash": "ed5d0a79125bce39c3db44baa6773de2919a2badc8adce63bcb1b6fea50e422f",
+          "paragraphId": "agr-safety-pesticide-clothing-p3",
+          "paragraphTextSha256": "db48f3926f7152495b2dc2000d54d4ed57d932d2975671ba52d6f8cb107a6da4"
+        },
+        {
+          "lessonId": "agr-safety-pesticide-clothing",
+          "lessonSourceHash": "ed5d0a79125bce39c3db44baa6773de2919a2badc8adce63bcb1b6fea50e422f",
+          "paragraphId": "agr-safety-pesticide-clothing-p4",
+          "paragraphTextSha256": "b66d16f72e2812c4e300e94d90be7e5bf8cc9467b6c806cba411efd60331f690"
+        },
+        {
+          "lessonId": "agr-safety-pesticide-clothing",
+          "lessonSourceHash": "ed5d0a79125bce39c3db44baa6773de2919a2badc8adce63bcb1b6fea50e422f",
+          "paragraphId": "agr-safety-pesticide-clothing-p5",
+          "paragraphTextSha256": "8cf662e2d463e7adaccb5b737422d33815779dd254fcd3116ef99c0ccc506996"
+        }
+      ],
+      "currentOverlapJa": "保護部位との対応、計量調製時からの保護具、袖・裾の重なり、軍手不使用は既習。追加は図のつばと密着型ゴーグルという形状詳細。",
+      "nearestExistingQuestionIds": [
+        "agr-par04-safety-q05",
+        "agr-par04-safety-q06",
+        "agr-2-m02-q32",
+        "agr-2-m02-q33"
+      ],
+      "boundaryJa": "図の形状認識が元目標。本文の補足だけで画像認識完了にはせず、転載ではない新規図と形状・ラベルの独立査読が必要。帽子のつばを全製品必須の法規則へ格上げしない。",
+      "scopeLevels": [
+        "2"
+      ],
+      "sourceEvidence": {
+        "documentId": "AGR-S2",
+        "pdfPage": 54,
+        "printedPage": 52,
+        "pdfSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+        "renderSha256": "863a66cd51adeb205322e9a4eab43d243d8417636ce5d2b58047ba27e30f1cec",
+        "renderer": "PyMuPDF Matrix(1.8,1.8), PNG",
+        "directPageImageInspected": true
+      },
+      "frozenBacklogStatuses": {
+        "AGR-A10-SAFETY-0356": "missing"
+      },
+      "disposition": "source_verified_supplement_candidate_pending_peer",
+      "sourceOccurrencesClosed": 0,
+      "independentAssessmentCapacityCertified": false
+    }
+  ],
+  "notSelected": [
+    {
+      "sourceItemId": "AGR-A10-SAFETY-0330",
+      "sourcePdfPageDirectlyInspected": 51,
+      "printedPage": 49,
+      "pageRenderSha256": "98cfb301e50dea18590852b92ace5ade9f684def161a260610c6fa0b3a6875c1",
+      "decision": "do_not_count_as_new_assessment_operation",
+      "reasonJa": "立ち上がって背伸びという具体例は本文への追加余地があるが、既存agr-safety-workload-2-p3とagr-2-m01-q37が同じ姿勢の中断・変更を既に評価している。姿勢例を細分して新問題としない。"
+    },
+    {
+      "sourceItemId": "AGR-A10-SAFETY-0254",
+      "decision": "hold_for_domain_verification",
+      "reasonJa": "content34で明示的に除外された放線菌と排水不良の一般化は維持し、未検証の病害因果を教材化しない。"
+    },
+    {
+      "sourceItemIds": [
+        "AGR-A10-SAFETY-0404",
+        "AGR-A10-SAFETY-0405",
+        "AGR-A10-SAFETY-0406"
+      ],
+      "decision": "retain_existing_regulatory_and_product_holds",
+      "reasonJa": "資料の容器容量・材質・開栓手順は現行法・製品確認なしで新規説明しない。"
+    }
+  ],
+  "preservation": {
+    "content34DiseaseSupplementNotRepeated": true,
+    "tools33IllustrationsNotRepeated": true,
+    "mock35ExcludedOperationsNotRecreated": true,
+    "runtimeFilesEdited": false,
+    "frozenBacklogOrReconciliationCountersEdited": false,
+    "sourceOccurrencesClosed": 0,
+    "newRuntimeLessons": 0,
+    "newRuntimeQuestions": 0
+  },
+  "reviewLimits": {
+    "freshDirectPdfPageImageReview": true,
+    "peerReviewed": false,
+    "humanReviewed": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "currentLegalVerification": false,
+    "deviceReviewed": false,
+    "releaseApproved": false,
+    "global800CapacityCertified": false,
+    "rawSourceTextOrImagesIncluded": false
+  },
+  "nextJa": "保管場所と気化の二項目は一つの補足教材候補としてまとめて査読する。保護具の図の特徴は本文査読と原図作成・独立画像査読を別に行い、本文だけで視覚目標を閉じない。"
+}

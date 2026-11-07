@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "reviewer": "independent_lane6_ai",
+  "scope": "Seven high-risk proposed target-field edits, read in the full contexts of six canonical Japanese mock questions. Not full-locale review or third-party PDF verification.",
+  "inputFilesSha256": {
+    "docs/ssw-workspace/manufacturing/batch33-full-review/language-a/correction-proposals.json": "bf91705060e8db5ab2660f969adede38967a2667b95064be943a7ffd86ba075f",
+    "docs/ssw-workspace/manufacturing/batch33-full-review/language-b/correction-proposals.json": "2f53d0a82da70e468c5dabd98f6aa6e697ba24f89f61d5f2e29a0ae0542f02cc"
+  },
+  "independentAIComparisonPerformed": true,
+  "reviewedTargetFields": 7,
+  "canonicalQuestionContextsRead": 6,
+  "reviews": [
+    {
+      "locale": "vi",
+      "entryId": "mfg1-electrical-mock-06-practical-q04",
+      "field": "reasons/3",
+      "canonicalPath": "src/data/manufacturing/mocks/electrical.json",
+      "canonicalQuestionHash": "d599b22bcfe51c6deb9c2c3dd66a8d26794af1e43203f3ef2badc052102e51d1",
+      "canonicalText": "総数20件、上位二分類は18件なので18/20×100=90%。安全上重大な少数分類は別途評価する。",
+      "canonicalTextSha256": "02d8be61bbb854768169c875dd92a24aa1f5dd521f443a1804c03adb6da4f4f0",
+      "targetPath": "src/data/manufacturing/mock-translations.json",
+      "before": "Tổng 20, hai nhóm 18: 90%; lỗi ít nghiêm trọng an toàn đánh giá riêng.",
+      "beforeSha256": "c1eaeae77f121a9e5364b500b4aa5d1c4312eabf82f65a9bce568b3159892d6a",
+      "proposedAfter": "Tổng cộng 20 trường hợp; hai nhóm đứng đầu có 18 trường hợp nên 18/20 × 100 = 90%. Những nhóm có ít trường hợp nhưng mức độ nghiêm trọng cao về an toàn vẫn phải được đánh giá riêng.",
+      "afterSha256": "b32f3a3f6c95487b44588c91e59be58dc66facb39e8c4c69de43785a305d49b2",
+      "correctIndexUnchanged": 3,
+      "verdict": "pass_proposed_wording",
+      "assertions": [
+        "12+6+2=20 total; top two count18; cumulative percentage18/20×100=90.",
+        "少数分類 means a category with relatively few occurrences, not a low-severity safety defect.",
+        "Proposed Vietnamese expressly says low occurrence count but high safety severity still requires separate evaluation; this preserves the source safety caveat."
+      ],
+      "metadataQualifications": []
+    },
+    {
+      "locale": "hi",
+      "entryId": "mfg1-mechanical-mock-07-practical-05",
+      "field": "options/3",
+      "canonicalPath": "src/data/manufacturing/mocks/mechanical.json",
+      "canonicalQuestionHash": "dcc8aa6354ed1abf020c525383f56bb0dee56403db1c4a5ad0db55baa3e28db0",
+      "canonicalText": "R5の元記号を自由に削除。",
+      "canonicalTextSha256": "fabe14edce454cd3f5f7ab5b9d5defa7fda1dc4ddc4aebd3d4754e54a5af4b44",
+      "targetPath": "src/data/manufacturing/mock-translations.json",
+      "before": "Rस्वतंत्र मिटाएँ।",
+      "beforeSha256": "b10a30e1d1b7ba018febd58d4d613cc6e9ca6ae35b116f1fbd6ffaa692d2e22d",
+      "proposedAfter": "मूल R5 संकेत को मनमाने ढंग से मिटा दें।",
+      "afterSha256": "f21c327e3b01046cf272ba0d0e2b03d2d82c11fda260956dc23f0210f4df2463",
+      "correctIndexUnchanged": 0,
+      "verdict": "pass_proposed_wording_with_metadata_qualification",
+      "assertions": [
+        "Canonical stem distinguishes R5,φ5 and(20); correctIndex is0.",
+        "The proposed translation restores the exact R5 designation in option3, which intentionally remains an incorrect distractor.",
+        "No authorisation to erase a radius mark is introduced into the correct answer or postsubmission rationale."
+      ],
+      "metadataQualifications": [
+        "R5 is a drawing/radius dimension designation, not an instrument designation. Rename issue missing_instrument_designation to missing_drawing_designation if editing audit classifications."
+      ]
+    },
+    {
+      "locale": "ne",
+      "entryId": "mfg1-mechanical-mock-04-practical-02",
+      "field": "reasons/1",
+      "canonicalPath": "src/data/manufacturing/mocks/mechanical.json",
+      "canonicalQuestionHash": "13828f47bbbe61f961ac4e425fd46e09895913b0714133bb8a777d7b42e75ba6",
+      "canonicalText": "4÷80×100は5%であり、10%ではない。",
+      "canonicalTextSha256": "1582ba1ce3b5ceda92dc308b49c4465970f7b70c31268c4f8ebf7f146596bbd6",
+      "targetPath": "src/data/manufacturing/mock-translations.json",
+      "before": "4÷80=5%,10होइन।",
+      "beforeSha256": "86471f2c979684e64fb7f140fb0482c76d51685d0bf73e3f632a03ae5a2a0cb3",
+      "proposedAfter": "4 लाई 80 ले भाग गर्दा 0.05 अर्थात् 5% हुन्छ; 10% होइन।",
+      "afterSha256": "1fe5b7dee29e865493dd540e342e9921d2f6f209fb1251669cc9f205ad47328f",
+      "correctIndexUnchanged": 3,
+      "verdict": "pass_final_proposed_wording",
+      "assertions": [
+        "Sample denominator remains80,not lot800:4÷80=0.05, equivalent to5%.",
+        "Final Nepali wording explicitly states division by80 gives0.05,that is5%,not10%; it retains canonical meaning without presenting a fraction-to-percentage equality as an arithmetic error.",
+        "The original4÷80=5% is mathematically valid; final proposal now correctly classifies the issue as a compressed percent explanation."
+      ],
+      "metadataQualifications": [
+        "Earlier metadata overclaim resolved: final issue overcompressed_percent_calculation,severitymedium,andreason explicitly recognise original identity is mathematically valid."
+      ]
+    },
+    {
+      "locale": "ne",
+      "entryId": "mfg1-mechanical-mock-07-practical-05",
+      "field": "options/3",
+      "canonicalPath": "src/data/manufacturing/mocks/mechanical.json",
+      "canonicalQuestionHash": "dcc8aa6354ed1abf020c525383f56bb0dee56403db1c4a5ad0db55baa3e28db0",
+      "canonicalText": "R5の元記号を自由に削除。",
+      "canonicalTextSha256": "fabe14edce454cd3f5f7ab5b9d5defa7fda1dc4ddc4aebd3d4754e54a5af4b44",
+      "targetPath": "src/data/manufacturing/mock-translations.json",
+      "before": "मूल R संकेत मनपरी मेट्ने।",
+      "beforeSha256": "1bbcfee5cfa09d709ee845f698978b3de161b78c58ef099778ea47a28f9662e0",
+      "proposedAfter": "मूल R5 संकेत मनपरी मेट्ने।",
+      "afterSha256": "88a238043a52d1df7a2d5d38c2157966ee4c39860ced41c1ab68bf46967ff7d4",
+      "correctIndexUnchanged": 0,
+      "verdict": "pass_proposed_wording_with_metadata_qualification",
+      "assertions": [
+        "Canonical distractor explicitly includes R5; proposed Nepali restores5 without changing the imperative distractor meaning.",
+        "CorrectIndex remains0; option3 stays incorrect."
+      ],
+      "metadataQualifications": [
+        "R5 is a drawing/radius designation, not an instrument designation."
+      ]
+    },
+    {
+      "locale": "tl",
+      "entryId": "mfg1-electrical-mock-02-practical-q02",
+      "field": "reasons/1",
+      "canonicalPath": "src/data/manufacturing/mocks/electrical.json",
+      "canonicalQuestionHash": "65e967bfbb26e91f1918c8a81865ebc8ef917aa17d0238b10c66284d8d0728be",
+      "canonicalText": "基本オンディレーは入力オンが設定時間続いてから出力する。機種の保持機能等は別に確認する。",
+      "canonicalTextSha256": "c6cd5aeead96d4b6a9a9a7f5b7bdfd70eb145e0bdd1fb98ec473469f4cef958c",
+      "targetPath": "src/data/manufacturing/mock-translations.json",
+      "before": "Basic input must continue 5 s; hiwalay ang retention ng modelo.",
+      "beforeSha256": "8970325761366d123af3a7b78c76d78e7283434d94942b36e6b829623cc0874a",
+      "proposedAfter": "Sa isang karaniwang on-delay, kailangang manatiling naka-on ang input sa buong itinakdang oras bago mag-on ang output. Hiwalay na suriin sa dokumentasyon ng modelo ang mga retention function nito.",
+      "afterSha256": "859d55eab7e08b9db74da1352acd6a9d1e1d5e8fd9c386213dd779c540f3863e",
+      "correctIndexUnchanged": 1,
+      "verdict": "pass_proposed_wording",
+      "assertions": [
+        "Canonical input is on for3s with5s on-delay; correct option1 says no output-on before the setting is reached.",
+        "Proposed Filipino states input must remain on for the entire setting before output turns on; this preserves the input/output causal sequence.",
+        "Model-specific retention features are separately checked, not asserted as a universal timer guarantee."
+      ],
+      "metadataQualifications": []
+    },
+    {
+      "locale": "tl",
+      "entryId": "mfg1-electrical-mock-06-practical-q10",
+      "field": "reasons/2",
+      "canonicalPath": "src/data/manufacturing/mocks/electrical.json",
+      "canonicalQuestionHash": "6e4f7b96c55f70e8bf2f68eb132189bc8fa5637e0698efd4d4b70f769e138d43",
+      "canonicalText": "6divの半分3divに2V/divを掛ける必要がある。",
+      "canonicalTextSha256": "7e655bba05424d46718ad568aceeced612607bd9c5da9e0e85643e0634b84d10",
+      "targetPath": "src/data/manufacturing/mock-translations.json",
+      "before": "3 div×2 Vneeded.",
+      "beforeSha256": "9b39d19ebd622b2e355f59d901e8d9d25eb575b1fdac7bb3323463a6e69c763c",
+      "proposedAfter": "Kailangang kunin ang kalahati ng 6 div, na 3 div, at imultiply ito sa 2 V/div.",
+      "afterSha256": "88d997540b087233b321b34eae62a0bc337ce96fddbad1bbd81ad00f0d5735af",
+      "correctIndexUnchanged": 3,
+      "verdict": "pass_proposed_wording",
+      "assertions": [
+        "Source condition is a symmetric waveform centred at zero with6div peak-to-peak and2V/div.",
+        "Proposed Filipino halves6div to3div and multiplies by2V/div, restoring the per-division unit.",
+        "The calculation gives6V amplitude rather than12V peak-to-peak; correctIndex stays3."
+      ],
+      "metadataQualifications": []
+    },
+    {
+      "locale": "tl",
+      "entryId": "mfg1-electrical-mock-08-practical-q06",
+      "field": "reasons/0",
+      "canonicalPath": "src/data/manufacturing/mocks/electrical.json",
+      "canonicalQuestionHash": "71e7f646d1cb710c9e12adef03ed4e41303f11aff0cd18e24d87e175efcf50de",
+      "canonicalText": "基本オフディレーは入力オフから設定時間後に出力オフ。電源条件や保持方式は機種資料で確認する。",
+      "canonicalTextSha256": "a35ef41d8c132016c53ea41c51cf4ba4c49b6dfc281f691fbfc80edff19209a3",
+      "targetPath": "src/data/manufacturing/mock-translations.json",
+      "before": "Basic delay 4 s; check supply/retention in model.",
+      "beforeSha256": "b14f92f5ee76683920ab69501161670a7d6a772cbac95c941ba267225339997f",
+      "proposedAfter": "Sa karaniwang off-delay, mag-o-off ang output matapos lumipas ang itinakdang oras mula nang mag-off ang input. Suriin sa dokumentasyon ng modelo ang supply conditions at retention method.",
+      "afterSha256": "0fa6cfca488e4697205f2568c1156b3c4175e3d54186e82e103468e160d31c52",
+      "correctIndexUnchanged": 0,
+      "verdict": "pass_proposed_wording",
+      "assertions": [
+        "Source off-delay timing begins at input-off; output-off follows after the4s setting.",
+        "Proposed Filipino explicitly names input-off as the starting event and output-off as the delayed event.",
+        "Power-supply conditions and retention method remain model-documentation qualifications rather than blanket operating claims."
+      ],
+      "metadataQualifications": []
+    }
+  ],
+  "allProposedWordingsAcceptedWithinScope": true,
+  "auditMetadataQualifications": 2,
+  "runtimeOverlayReviewStatus": "PASS_SCOPED_CODE_WITH_RESOLVED_HARDENING",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "physicalDeviceVerified": false,
+  "releaseReady": false,
+  "sourceGuideClarificationReview": {
+    "reviewedTargetFields": 12,
+    "locales": [
+      "bn",
+      "hi",
+      "km",
+      "my",
+      "ne",
+      "tl"
+    ],
+    "canonicalFullGuideRead": true,
+    "guideHash": "d00a9f1eadbfec6f09c473e7b0b397224d78ae914478e1414b389573e707ef3d",
+    "reviews": [
+      {
+        "locale": "hi",
+        "entryId": "mfg1-mechanical-source-guide-caliper-increments-zero",
+        "field": "terms/1/meaning",
+        "sourceGuideHash": "d00a9f1eadbfec6f09c473e7b0b397224d78ae914478e1414b389573e707ef3d",
+        "sourceTextSha256": "0c7e21c12a3472ad713798133c0201a09a88a41a5feb436b8535a8e47c05d24b",
+        "beforeSha256": "097a56d5d5f6fc6f3b4af94e5b652732e86a9023eebc22c6a2842641c9370256",
+        "afterSha256": "fb09df47ee50db9f65f9c6e43eef0ed83b00a3863eb9459c11538f8f9ec745ff",
+        "after": "इस पाठ में, कैलिपर के जबड़े बंद होने पर जाँचा जाने वाला 0 संकेत।",
+        "verdict": "pass_scoped_physical_jaw_closure_clarification",
+        "assertions": [
+          "Guide preceding light-gap paragraph explicitly closes slider and checks jaw gap; closed state therefore refers to physical jaw closure, not powering the digital display off.",
+          "The added wording makes the mechanical referent explicit without adding an adjustment sequence, force/acceptance criterion or universal instrument specification.",
+          "Zero-setting remains distinct from verifying physical gap/play; reporting abnormality and using approved procedures remain unchanged."
+        ],
+        "nativeTerminologyQualification": null
+      },
+      {
+        "locale": "hi",
+        "entryId": "mfg1-mechanical-source-guide-caliper-increments-zero",
+        "field": "paragraphs/2/text",
+        "sourceGuideHash": "d00a9f1eadbfec6f09c473e7b0b397224d78ae914478e1414b389573e707ef3d",
+        "sourceTextSha256": "66889a4d092018d7a249258a00c589d963d606a9d58d2d7502899c67deaf1f65",
+        "beforeSha256": "3a6a2a3e83c426882b4b7eda51382c1a019410dc4c3a81f199901afe7697ce2e",
+        "afterSha256": "f3e01ab6c61045aacdf7289b43678a9b5b38f8970205f2a77188f0d58cb49862",
+        "after": "स्रोत कैलिपर के जबड़े बंद होने पर पैमाने पर 0 की जाँच बताता है; डिजिटल उपकरण के शून्य रीसेट बटन से प्रदर्शन 0 किया जा सकता है। प्रदर्शन को 0 करना और अंतराल या ढीलापन जाँचना अलग बातें हैं। इससे यह निष्कर्ष न निकालें कि बटन दबाकर असामान्यता छिपाना उचित है। वास्तविक उपकरण के विनिर्देश और अनुमोदित जाँच प्रक्रिया अपनाएँ तथा असामान्यता की सूचना दें।",
+        "verdict": "pass_scoped_physical_jaw_closure_clarification",
+        "assertions": [
+          "Guide preceding light-gap paragraph explicitly closes slider and checks jaw gap; closed state therefore refers to physical jaw closure, not powering the digital display off.",
+          "The added wording makes the mechanical referent explicit without adding an adjustment sequence, force/acceptance criterion or universal instrument specification.",
+          "Zero-setting remains distinct from verifying physical gap/play; reporting abnormality and using approved procedures remain unchanged."
+        ],
+        "nativeTerminologyQualification": null
+      },
+      {
+        "locale": "bn",
+        "entryId": "mfg1-mechanical-source-guide-caliper-increments-zero",
+        "field": "terms/1/meaning",
+        "sourceGuideHash": "d00a9f1eadbfec6f09c473e7b0b397224d78ae914478e1414b389573e707ef3d",
+        "sourceTextSha256": "0c7e21c12a3472ad713798133c0201a09a88a41a5feb436b8535a8e47c05d24b",
+        "beforeSha256": "db6e2200a3123728798291f1987f8f4da97b3d530ae95fd0ebd386e1acdbe89f",
+        "afterSha256": "bcd7c8334af85deff09a5a196f9a967c6f73150ea12a4bdecbd4b86474abbde8",
+        "after": "এই পাঠে, ক্যালিপারের চোয়াল দুটি বন্ধ অবস্থায় পরীক্ষা করা 0 নির্দেশ।",
+        "verdict": "pass_scoped_physical_jaw_closure_clarification",
+        "assertions": [
+          "Guide preceding light-gap paragraph explicitly closes slider and checks jaw gap; closed state therefore refers to physical jaw closure, not powering the digital display off.",
+          "The added wording makes the mechanical referent explicit without adding an adjustment sequence, force/acceptance criterion or universal instrument specification.",
+          "Zero-setting remains distinct from verifying physical gap/play; reporting abnormality and using approved procedures remain unchanged."
+        ],
+        "nativeTerminologyQualification": null
+      },
+      {
+        "locale": "bn",
+        "entryId": "mfg1-mechanical-source-guide-caliper-increments-zero",
+        "field": "paragraphs/2/text",
+        "sourceGuideHash": "d00a9f1eadbfec6f09c473e7b0b397224d78ae914478e1414b389573e707ef3d",
+        "sourceTextSha256": "66889a4d092018d7a249258a00c589d963d606a9d58d2d7502899c67deaf1f65",
+        "beforeSha256": "284bc0206a5731a7f234ebe8dc927d2b1c68788cf366180696a0885fe5231b04",
+        "afterSha256": "c4bcbf9b4ad3b486ce437dcfa883f34bd88ca01b1c16df3c0d823c3b1fcaadf4",
+        "after": "উৎসে ক্যালিপারের চোয়াল দুটি বন্ধ অবস্থায় স্কেল 0 দেখায় কি না পরীক্ষা করতে বলা হয়েছে; ডিজিটাল যন্ত্রে জিরো রিসেট বোতামে প্রদর্শন 0 করা যায়। প্রদর্শন 0 করা এবং ফাঁক বা ঢিলাভাব পরীক্ষা করা এক বিষয় নয়। অস্বাভাবিকতা ঢাকতে বোতাম চাপা যায়—এমন সিদ্ধান্ত নেবেন না। বাস্তব যন্ত্রের নির্দিষ্টকরণ ও অনুমোদিত পরীক্ষাপদ্ধতি মেনে চলুন এবং অস্বাভাবিকতা জানান।",
+        "verdict": "pass_scoped_physical_jaw_closure_clarification",
+        "assertions": [
+          "Guide preceding light-gap paragraph explicitly closes slider and checks jaw gap; closed state therefore refers to physical jaw closure, not powering the digital display off.",
+          "The added wording makes the mechanical referent explicit without adding an adjustment sequence, force/acceptance criterion or universal instrument specification.",
+          "Zero-setting remains distinct from verifying physical gap/play; reporting abnormality and using approved procedures remain unchanged."
+        ],
+        "nativeTerminologyQualification": null
+      },
+      {
+        "locale": "ne",
+        "entryId": "mfg1-mechanical-source-guide-caliper-increments-zero",
+        "field": "terms/1/meaning",
+        "sourceGuideHash": "d00a9f1eadbfec6f09c473e7b0b397224d78ae914478e1414b389573e707ef3d",
+        "sourceTextSha256": "0c7e21c12a3472ad713798133c0201a09a88a41a5feb436b8535a8e47c05d24b",
+        "beforeSha256": "bf0dfb94406655adc1bd564b82b57575885f2b5452e5afe7c2425b7049fffa9b",
+        "afterSha256": "9b8edceb1f166417da66045aa0f3c537d3236fab8bc0ba7f306dd85e499e9c44",
+        "after": "यस पाठमा, क्यालिपरका जबडा बन्द गरिएको अवस्थामा जाँचिने 0 सङ्केत।",
+        "verdict": "pass_scoped_physical_jaw_closure_clarification",
+        "assertions": [
+          "Guide preceding light-gap paragraph explicitly closes slider and checks jaw gap; closed state therefore refers to physical jaw closure, not powering the digital display off.",
+          "The added wording makes the mechanical referent explicit without adding an adjustment sequence, force/acceptance criterion or universal instrument specification.",
+          "Zero-setting remains distinct from verifying physical gap/play; reporting abnormality and using approved procedures remain unchanged."
+        ],
+        "nativeTerminologyQualification": null
+      },
+      {
+        "locale": "ne",
+        "entryId": "mfg1-mechanical-source-guide-caliper-increments-zero",
+        "field": "paragraphs/2/text",
+        "sourceGuideHash": "d00a9f1eadbfec6f09c473e7b0b397224d78ae914478e1414b389573e707ef3d",
+        "sourceTextSha256": "66889a4d092018d7a249258a00c589d963d606a9d58d2d7502899c67deaf1f65",
+        "beforeSha256": "c32e2513017193639b401495cddb709e79a0812694ef9670ae5473d5a126c065",
+        "afterSha256": "1c55819a2a6e66725880c75a244a9c26169ac85e34eb790f12f5bc2c397421c9",
+        "after": "स्रोतले क्यालिपरका जबडा बन्द गरिएको अवस्थामा स्केलले 0 देखाउँछ कि देखाउँदैन जाँच्न भन्छ; डिजिटल उपकरणमा जिरो रिसेट बटनले प्रदर्शन 0 बनाउन सकिन्छ। प्रदर्शन 0 बनाउनु र खाली ठाउँ वा खुकुलोपन जाँच्नु फरक कुरा हुन्। असामान्यता लुकाउन बटन थिचे पुग्छ भन्ने निष्कर्ष ननिकाल्नुहोस्। वास्तविक उपकरणको विनिर्देशन र स्वीकृत जाँच प्रक्रिया पालना गर्नुहोस् तथा असामान्यता रिपोर्ट गर्नुहोस्।",
+        "verdict": "pass_scoped_physical_jaw_closure_clarification",
+        "assertions": [
+          "Guide preceding light-gap paragraph explicitly closes slider and checks jaw gap; closed state therefore refers to physical jaw closure, not powering the digital display off.",
+          "The added wording makes the mechanical referent explicit without adding an adjustment sequence, force/acceptance criterion or universal instrument specification.",
+          "Zero-setting remains distinct from verifying physical gap/play; reporting abnormality and using approved procedures remain unchanged."
+        ],
+        "nativeTerminologyQualification": null
+      },
+      {
+        "locale": "my",
+        "entryId": "mfg1-mechanical-source-guide-caliper-increments-zero",
+        "field": "terms/1/meaning",
+        "sourceGuideHash": "d00a9f1eadbfec6f09c473e7b0b397224d78ae914478e1414b389573e707ef3d",
+        "sourceTextSha256": "0c7e21c12a3472ad713798133c0201a09a88a41a5feb436b8535a8e47c05d24b",
+        "beforeSha256": "bc77243ee3152714d3cdf871106c89d5dd450ade317354aac8bf991dd1d94c32",
+        "afterSha256": "0a1f49223bcbc063714bff2e0330a0cf5bedfc67d6c79973ab46d939dea49778",
+        "after": "ဤသင်ခန်းစာတွင် ကယ်လီပါ၏ မေးရိုးများ ပိတ်ထားစဉ် စစ်ဆေးသည့် 0 ပြချက်။",
+        "verdict": "pass_scoped_physical_jaw_closure_clarification",
+        "assertions": [
+          "Guide preceding light-gap paragraph explicitly closes slider and checks jaw gap; closed state therefore refers to physical jaw closure, not powering the digital display off.",
+          "The added wording makes the mechanical referent explicit without adding an adjustment sequence, force/acceptance criterion or universal instrument specification.",
+          "Zero-setting remains distinct from verifying physical gap/play; reporting abnormality and using approved procedures remain unchanged."
+        ],
+        "nativeTerminologyQualification": null
+      },
+      {
+        "locale": "my",
+        "entryId": "mfg1-mechanical-source-guide-caliper-increments-zero",
+        "field": "paragraphs/2/text",
+        "sourceGuideHash": "d00a9f1eadbfec6f09c473e7b0b397224d78ae914478e1414b389573e707ef3d",
+        "sourceTextSha256": "66889a4d092018d7a249258a00c589d963d606a9d58d2d7502899c67deaf1f65",
+        "beforeSha256": "be4b09d253647d9b7b7e760a64de33835dcfb5c949a93bf818f893a9c6dd23d4",
+        "afterSha256": "e4d30f91af708f467c938f65ffe82074a89946cd1faeabdcbbdc1bf33a381603",
+        "after": "ကယ်လီပါ၏ မေးရိုးများ ပိတ်ထားစဉ် စကေးက 0 ပြသလား စစ်ဆေးရန် ရင်းမြစ်တွင် ဆိုထားပြီး ဒစ်ဂျစ်တယ်ကိရိယာ၌ သုညပြန်သတ်မှတ်ခလုတ်ဖြင့် 0 ဖြစ်စေနိုင်သည်။ ပြချက်ကို 0 လုပ်ခြင်းနှင့် ကွာဟချက် သို့မဟုတ် ချောင်ခြင်း စစ်ဆေးခြင်းသည် မတူပါ။ မူမမှန်မှုကို ဖုံးကွယ်ရန် ခလုတ်နှိပ်ရုံဖြင့် ရသည်ဟု မကောက်ချက်ချပါနှင့်။ လက်တွေ့ကိရိယာ၏ သတ်မှတ်ချက်နှင့် အတည်ပြုစစ်ဆေးနည်းကို လိုက်နာ၍ မူမမှန်မှုကို အစီရင်ခံပါ။",
+        "verdict": "pass_scoped_physical_jaw_closure_clarification",
+        "assertions": [
+          "Guide preceding light-gap paragraph explicitly closes slider and checks jaw gap; closed state therefore refers to physical jaw closure, not powering the digital display off.",
+          "The added wording makes the mechanical referent explicit without adding an adjustment sequence, force/acceptance criterion or universal instrument specification.",
+          "Zero-setting remains distinct from verifying physical gap/play; reporting abnormality and using approved procedures remain unchanged."
+        ],
+        "nativeTerminologyQualification": null
+      },
+      {
+        "locale": "km",
+        "entryId": "mfg1-mechanical-source-guide-caliper-increments-zero",
+        "field": "terms/1/meaning",
+        "sourceGuideHash": "d00a9f1eadbfec6f09c473e7b0b397224d78ae914478e1414b389573e707ef3d",
+        "sourceTextSha256": "0c7e21c12a3472ad713798133c0201a09a88a41a5feb436b8535a8e47c05d24b",
+        "beforeSha256": "e7683b2a82c7daeacede57d6667faaeafd0bff95cc783ccb8d31565536c257cf",
+        "afterSha256": "bf615652d287928501cfa9fcafea5893ead71787a50efb49d33f17d5f3cff087",
+        "after": "ក្នុងមេរៀននេះ គឺសញ្ញា 0 ដែលត្រូវពិនិត្យនៅពេលចង្កឹះវាស់របស់កាលីប៉ែរបិទជិតគ្នា។",
+        "verdict": "pass_scoped_physical_jaw_closure_clarification",
+        "assertions": [
+          "Guide preceding light-gap paragraph explicitly closes slider and checks jaw gap; closed state therefore refers to physical jaw closure, not powering the digital display off.",
+          "The added wording makes the mechanical referent explicit without adding an adjustment sequence, force/acceptance criterion or universal instrument specification.",
+          "Zero-setting remains distinct from verifying physical gap/play; reporting abnormality and using approved procedures remain unchanged."
+        ],
+        "nativeTerminologyQualification": "Khmer caliper/jaw term choice should still receive native technical glossary review."
+      },
+      {
+        "locale": "km",
+        "entryId": "mfg1-mechanical-source-guide-caliper-increments-zero",
+        "field": "paragraphs/2/text",
+        "sourceGuideHash": "d00a9f1eadbfec6f09c473e7b0b397224d78ae914478e1414b389573e707ef3d",
+        "sourceTextSha256": "66889a4d092018d7a249258a00c589d963d606a9d58d2d7502899c67deaf1f65",
+        "beforeSha256": "853217bab790feea831177b80cad59374b2791037fac4c5c07274728df1735f9",
+        "afterSha256": "08618b16df4b9337ead52d92b564ed84f72ce5a4fb6ec3c30230ceb80ef80045",
+        "after": "ឯកសារពន្យល់ឱ្យពិនិត្យថាខ្នាតបង្ហាញ 0 នៅពេលចង្កឹះវាស់របស់កាលីប៉ែរបិទជិតគ្នាឬអត់ ហើយឧបករណ៍ឌីជីថលអាចកំណត់ការបង្ហាញទៅ 0 ដោយប៊ូតុងកំណត់សូន្យឡើងវិញ។ ការកំណត់អេក្រង់ទៅ 0 និងការពិនិត្យចន្លោះឬការរង្គើគឺខុសគ្នា។ មិនត្រូវសន្និដ្ឋានថាអាចចុចប៊ូតុងដើម្បីលាក់ភាពមិនប្រក្រតីទេ។ សម្រាប់ឧបករណ៍ពិត ត្រូវធ្វើតាមលក្ខណៈបច្ចេកទេស និងនីតិវិធីពិនិត្យដែលបានអនុម័ត ហើយរាយការណ៍ភាពមិនប្រក្រតី។",
+        "verdict": "pass_scoped_physical_jaw_closure_clarification",
+        "assertions": [
+          "Guide preceding light-gap paragraph explicitly closes slider and checks jaw gap; closed state therefore refers to physical jaw closure, not powering the digital display off.",
+          "The added wording makes the mechanical referent explicit without adding an adjustment sequence, force/acceptance criterion or universal instrument specification.",
+          "Zero-setting remains distinct from verifying physical gap/play; reporting abnormality and using approved procedures remain unchanged."
+        ],
+        "nativeTerminologyQualification": "Khmer caliper/jaw term choice should still receive native technical glossary review."
+      },
+      {
+        "locale": "tl",
+        "entryId": "mfg1-mechanical-source-guide-caliper-increments-zero",
+        "field": "terms/1/meaning",
+        "sourceGuideHash": "d00a9f1eadbfec6f09c473e7b0b397224d78ae914478e1414b389573e707ef3d",
+        "sourceTextSha256": "0c7e21c12a3472ad713798133c0201a09a88a41a5feb436b8535a8e47c05d24b",
+        "beforeSha256": "db0be0ce774d515df233c9343121e24ffd56aa8d1b480a5874c2b723ebcdbfd4",
+        "afterSha256": "302a953dc457a1f3b61b24740a0213638421f18e244cff0faf16ea17676a2433",
+        "after": "Sa araling ito, ang indikasyong 0 na sinusuri kapag nakasara ang mga panga ng caliper.",
+        "verdict": "pass_scoped_physical_jaw_closure_clarification",
+        "assertions": [
+          "Guide preceding light-gap paragraph explicitly closes slider and checks jaw gap; closed state therefore refers to physical jaw closure, not powering the digital display off.",
+          "The added wording makes the mechanical referent explicit without adding an adjustment sequence, force/acceptance criterion or universal instrument specification.",
+          "Zero-setting remains distinct from verifying physical gap/play; reporting abnormality and using approved procedures remain unchanged."
+        ],
+        "nativeTerminologyQualification": null
+      },
+      {
+        "locale": "tl",
+        "entryId": "mfg1-mechanical-source-guide-caliper-increments-zero",
+        "field": "paragraphs/2/text",
+        "sourceGuideHash": "d00a9f1eadbfec6f09c473e7b0b397224d78ae914478e1414b389573e707ef3d",
+        "sourceTextSha256": "66889a4d092018d7a249258a00c589d963d606a9d58d2d7502899c67deaf1f65",
+        "beforeSha256": "f8f77e00d2c2b4bebf749e8989e2de52be652b2cdbf8cb8bb61b0ca687c59979",
+        "afterSha256": "51a13ed59905e4985720ce5a5be8a42472c698a7ccaf60448f7f85b8e8571905",
+        "after": "Inilalarawan ng sanggunian ang pagtiyak na 0 ang ipinapakita kapag nakasara ang mga panga ng caliper; sa digital na instrumento, maaaring gawing 0 ang display gamit ang zero-reset button. Magkaiba ang pagtatakda sa 0 at pagsusuri ng puwang o kalog. Huwag ipalagay na maaaring pindutin ang button upang itago ang abnormalidad. Sa aktuwal na instrumento, sundin ang espesipikasyon at aprubadong pagsusuri at iulat ang anumang abnormalidad.",
+        "verdict": "pass_scoped_physical_jaw_closure_clarification",
+        "assertions": [
+          "Guide preceding light-gap paragraph explicitly closes slider and checks jaw gap; closed state therefore refers to physical jaw closure, not powering the digital display off.",
+          "The added wording makes the mechanical referent explicit without adding an adjustment sequence, force/acceptance criterion or universal instrument specification.",
+          "Zero-setting remains distinct from verifying physical gap/play; reporting abnormality and using approved procedures remain unchanged."
+        ],
+        "nativeTerminologyQualification": null
+      }
+    ],
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "thirdPartyPdfReopenedForThisSubreview": false,
+    "wholeSourceObjectClosed": false
+  },
+  "totalTargetFieldsIndependentlyCompared": 19,
+  "proposalMetadataMayHaveBeenRefinedAfterInitialSnapshot": true,
+  "runtimeOverlayEvidence": "editorial-code-review.json",
+  "finalNepaliPercentWordingRechecked": true
+}

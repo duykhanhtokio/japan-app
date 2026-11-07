@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "owner": "agri_3",
+  "task": "batch13 agriculture image runtime investigation and authorized minimal renderer",
+  "status": "implementation_ready_pending_root_registry_assets_and_browser_QA",
+  "baselineHead": "e20fb085dbc3d08d14717bde5a185dfb2f8d7b3a",
+  "existingArchitecture": {
+    "lessonReader": "src/components/agriculture/AgricultureCourse.tsx Reader lines65-78 before change; native figures follow all paragraphs, beforeterms",
+    "conceptFigures": {
+      "total": 7,
+      "hardcodedNative": 3,
+      "jsonNative": 4,
+      "registry": "src/data/agriculture/diagrams.json",
+      "component": "src/components/agriculture/ConceptDiagrams.tsx",
+      "supportedKinds": [
+        "comparison",
+        "sequence"
+      ],
+      "recognitionRasterRendererBeforeBatch13": false
+    },
+    "translationBinding": "src/data/agriculture/index.ts returns locale row only if translation.sourceHash===lesson.sourceHash",
+    "lessonHash": "scripts/agriculture/check.cjs hashes every lesson field exceptsourceHash; addingimage fields directly tolesson wouldinvalidate it",
+    "completionBinding": "src/services/agriculture-study-state.ts stores entries[lesson.id]=lesson.sourceHash; modifiedlessonhash wouldmark earlier completion stale",
+    "attemptBinding": "same storage keys remain; shared kensetsu-test-state binds attempts toexam revision andorderedquestionIDs",
+    "localeCount": 12,
+    "draftLessonLocalePairs": 2016,
+    "lessons": 168,
+    "weeklyQuestions": 388
+  },
+  "assetBundling": {
+    "metro": "defaultExpoMetro config; onlywasm extension added; staticliteralrequire needed",
+    "availableDependencies": [
+      "react-native Image",
+      "expo-image",
+      "expo-asset"
+    ],
+    "minimalChoice": "react-native Image with staticrequire map; no dependency addition",
+    "defaultAttributes": "*.png/jpg/jpeg/webp LFS; newagriculture/recognition paths inheritLFS",
+    "readOnlyCheckAttr": "git check-attr confirmed assets/agriculture/recognition/example-v1.png and.webp filter=lfs diff=lfs merge=lfs",
+    "ordinaryGitPrecedent": "assets/manufacturing/diagrams/*.png narrowly overrides LFS; root owns anynew .gitattributes policy",
+    "recommendation": "Rootchoose andverify hydratedLFSor narrowcompactoriginalWebPexception; assetbyteSHA/dimensions andactualdecodedformat required. Do not publishsourcePDFcrops."
+  },
+  "hashPreservingDesign": {
+    "registry": "src/data/agriculture/recognition-images.json separatefromlessons",
+    "shape": {
+      "schemaVersion": 1,
+      "images": [
+        {
+          "id": "stablefigureID",
+          "lessonIds": [
+            "existinglessonID"
+          ],
+          "lessonSourceHashes": {
+            "existinglessonID": "currentcanonicalSHA256"
+          },
+          "titleJa": "Japanese visible title",
+          "altJa": "Japanese accessibility description",
+          "observationJa": "visible observation clues",
+          "limitJa": "visible limits on identification",
+          "assetKey": "one of6staticmapkeys",
+          "width": "actualdecodedpixelwidth",
+          "height": "actualdecodedpixelheight",
+          "otherProvenance": "rootmayaddsource/photoInventoryIDs,sourceoccurrenceIDs,rights/creation/review flags andassetSHA"
+        }
+      ]
+    },
+    "binding": "Show only exactmatching currentlessonSourceHash. Missingentry/hash, unknownassetKey, invaliddimensions or emptyrequiredtext rendersnothing. Runtime doesnot mutate registry/state.",
+    "translationImpact": "No canonical translation change required for separateJapanese image captions. Existinglesson locales remainhash-valid. Anyfuturetranslatedfigurecaptions should use separatelyversioned figure/asset binding, not silently modifyexistingtranslatedlesson fields.",
+    "recognitionScope": "Actualnew original images plus visibleclues/limits may supporttheir scopedrecognition objectives; priorconcept diagrams remain conceptonly. Domain/native/human certification notimplied."
+  },
+  "implementedFiles": [
+    {
+      "path": "src/components/agriculture/RecognitionImages.tsx",
+      "sha256": "6422f3fab50f3bd15f2aa2e674fa33968e73905d5bc52b4620aea53742f0f961",
+      "change": "new isolatedrenderer static6WebPmap, lessonhash gating, textvisibility/accessibility, nointeractions/storage"
+    },
+    {
+      "path": "src/components/agriculture/AgricultureCourse.tsx",
+      "sha256": "7aedc8fff151fccf73a1f4ad2babbcfe963dbaa0a64a16251e1136c90cc6baa5",
+      "change": "importplusonecall afterexistingConceptDiagrams beforeterms; noexistingreaderflow/fonts/state logic changed"
+    }
+  ],
+  "assetPaths": [
+    "assets/agriculture/recognition/cabbage-v1.webp",
+    "assets/agriculture/recognition/chinese-cabbage-v1.webp",
+    "assets/agriculture/recognition/lettuce-v1.webp",
+    "assets/agriculture/recognition/spinach-v1.webp",
+    "assets/agriculture/recognition/onion-v1.webp",
+    "assets/agriculture/recognition/daikon-v1.webp"
+  ],
+  "renderGeometry": {
+    "mode": "contain for illustrationcontent, notbackground",
+    "width": "100%insidepaddedcard",
+    "aspectRatio": "actualwidth/height",
+    "clipping": "no crop; matchingintrinsicframeavoidsletterboxing",
+    "readability": "title20px/31line, sectionlabels17/28, bodies17/29,16padding; usesexistingstudypalette, nofontfamily overrides",
+    "testIDs": "outerfigure=id; image=id+-image",
+    "responsiveCard": "width100%,maxWidth720,centered; image fills innerwidth atintrinsicratio"
+  },
+  "requiredQAFixes": {
+    "critical": "scripts/agriculture/check-browser.cjs line28 mapsall image imports tosame1x1transparentpixel; thisisnotactualassetQA",
+    "minimalExtension": "scopedrealfileassetresolver foragriculture/recognition, preservingRoyal/backgroundadapters. Serveactualimagebytes/dataURIs; assertdecodednaturalWidth/naturalHeight>1 andmatchmetadata, waitdecode, testbrokenassets. Agent6ownsnewcheck-recognition-browser.cjs.",
+    "cases": [
+      "6actualimages visible with title/observation/limit",
+      "allassociated1go/2golessonroutes",
+      "390x844,844x390,768x1024,1440x900",
+      "dayandnight,all12translationtoggles",
+      "nohorizontaloverflow/croppedlabels,completionreachable",
+      "savefailure/retry/reload,oldcompletionandexamattemptrevision preservation",
+      "no staleimageforchangedlessonhash",
+      "registry/assetsSHA/dimensions/staticmapkeys consistency",
+      "existing7conceptfigures stillrender"
+    ],
+    "negativeCaseHandoff": "Agent6 requested exacthash6images acrossmappedlessons, wronghash0, absentbinding0 andunmappedlesson0withoutthrow inQA-onlyfixture; no duplicateunit testsadded."
+  },
+  "verification": {
+    "gitDiffCheck": "PASSafterimplementation",
+    "realBundle": "notrun; rootregistry/assetsabsentatinspection andlocalnodeesbuildnotresolved",
+    "browserOrNative": "notclaimed; agent6willtestactualassets. Expo/native/device/fontcertification remainsopen",
+    "canonicalContentEditsByAgent": false,
+    "gitWritesByAgent": false
+  },
+  "rootOwnedFiles": [
+    "src/data/agriculture/recognition-images.json",
+    "assets/agriculture/recognition/*-v1.webp",
+    ".gitattributes",
+    "docs/ssw-workspace/agriculture/illustration-register.json",
+    "docs/ssw-workspace/agriculture/knowledge-ledger.json",
+    "docs/ssw-workspace/agriculture/checkpoint/progress/overlay evidence"
+  ],
+  "flags": {
+    "humanReviewed": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "deviceTested": false
+  }
+}
