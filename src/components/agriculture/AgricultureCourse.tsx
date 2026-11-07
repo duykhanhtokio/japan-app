@@ -103,13 +103,13 @@ function Attempt({learner,level,exam,onBack}:{learner:string;level:AgricultureLe
   queue.current=queue.current.catch(()=>{}).then(()=>AsyncStorage.setItem(key,JSON.stringify(next))).then(()=>{if(live.current&&n===serial.current){setSaving(false);setError(null);}}).catch(()=>{if(live.current&&n===serial.current){setSaving(false);setError('write');}});
  };
  const q=attempt?exam.questions[attempt.currentQuestion]:null,result=attempt?gradeTest(exam,attempt.answers):null;
- const figureReady=!q?.illustrationId||hasAgricultureExamIllustration(q.illustrationId,q.illustrationRevision,level);
+ const figureReady=!q?.illustrationId||hasAgricultureExamIllustration(q.illustrationId,q.illustrationRevision,level,{lessonId:q.lessonId,lessonSourceHash:q.lessonSourceHash});
  return <Surface reading><TokuteiHeader title={exam.titleJa} onBack={()=>{if(saving)return;if(error==='write')setConfirm('leave');else onBack();}}/><ScrollView contentContainerStyle={s.content}>
  {!attempt?<><Text style={[s.body,{color:colors.text}]}>{error==='invalid'?'保存記録の内容が現在の問題と一致しません。記録は上書きしていません。':error?'保存記録を読み込めませんでした。':'読み込み中…'}</Text>{error&&<Button title="読み込みを再試行" onPress={()=>setRetry(n=>n+1)}/>}</>:q&&<>
  {error==='write'&&<><Text accessibilityRole="alert" style={[s.body,{color:colors.text}]}>回答を保存できませんでした。</Text><Button title="保存を再試行" disabled={saving} onPress={()=>{if(latest.current)persist(latest.current);}}/></>}
  {attempt.submitted&&result&&<Text style={[s.heading,{color:colors.text}]}>正解 {result.correct} / {result.total} · 未回答 {result.unanswered}</Text>}
  <Text style={[s.body,{color:colors.text}]}>{attempt.currentQuestion+1} / {exam.questions.length}</Text><Text style={[s.heading,{color:colors.text}]}>{q.stemJa}</Text>
- {q.illustrationId&&<AgricultureExamIllustration id={q.illustrationId} revision={q.illustrationRevision} level={level} colors={colors}/>}
+ {q.illustrationId&&<AgricultureExamIllustration id={q.illustrationId} revision={q.illustrationRevision} level={level} questionSource={{lessonId:q.lessonId,lessonSourceHash:q.lessonSourceHash}} colors={colors}/>}
  {q.optionsJa.map((text,i)=><Button key={i} title={`${i+1}. ${text}`} selected={attempt.answers[attempt.currentQuestion]===i} disabled={attempt.submitted||!figureReady} onPress={()=>{const answers=[...attempt.answers];answers[attempt.currentQuestion]=i;persist({...attempt,answers});}}/>)}
  {attempt.submitted&&<View><Text style={[s.body,{color:colors.text}]}>正解：{q.correctIndex+1}</Text>{q.optionReasonsJa.map((why,i)=><Text key={i} style={[s.body,{color:colors.text}]}>{i+1}. {why}</Text>)}</View>}
  <View style={s.row}><Button title="前へ" disabled={attempt.currentQuestion===0} onPress={()=>persist({...attempt,currentQuestion:attempt.currentQuestion-1})}/><Button title="次へ" disabled={attempt.currentQuestion===exam.questions.length-1} onPress={()=>persist({...attempt,currentQuestion:attempt.currentQuestion+1})}/></View>
