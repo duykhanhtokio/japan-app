@@ -54,11 +54,14 @@ const {RecognitionImages,recognitionImageTranslation}=load('RecognitionImages');
 const colors={text:'#172733',translation:'#fff8e9',translationText:'#172733',border:'#b99d62'};
 const escape=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#x27;');
 const render=(f,l,level,language,showTranslation=true,lessonRevision=l.revision)=>renderToStaticMarkup(React.createElement(RecognitionImages,{lessonId:l.id,lessonSourceHash:l.sourceHash,lessonRevision,level,language,showTranslation,colors}));
-let contexts=0,renders=0,negative=0;
+let contexts=0,renders=0,japaneseRenders=0,negative=0;
 for(const f of selected){
  const entry=registry.entries[f.id];
  for(const lid of f.lessonIds){const l=lessons.get(lid);
   for(const level of f.scopeLevels.filter(x=>l.levels.includes(x))){contexts++;
+   const japaneseHtml=render(f,l,level,'ja');
+   assert(japaneseHtml.includes(escape(f.titleJa))&&japaneseHtml.includes(escape(f.observationJa))&&japaneseHtml.includes(escape(f.limitJa)),'Japanese-only actual renderer must retain current captions');
+   assert(!japaneseHtml.includes(`data-testid="${f.id}-localized-title"`),'Japanese-only reader must not show a translated title');japaneseRenders++;
    for(const language of languages){
     const t=recognitionImageTranslation(f,lid,l.sourceHash,l.revision,language);assert(t,`${f.id}/${lid}/${language}`);
     const html=render(f,l,level,language);
@@ -84,4 +87,4 @@ for(const f of selected){
  }
 }
 assert.equal(registry.nativeReviewed,false);assert.equal(registry.domainReviewed,false);
-console.log(`PASS recognition-locale-batch: ${selected.length} unchanged actual raster plates; ${contexts} source-bound lesson/course contexts; ${renders} actual12locale renders; ${negative} stale/hidden/dependency/limit rejection checks; canonical Japanese retained.`);
+console.log(`PASS recognition-locale-batch: ${selected.length} unchanged actual raster plates; ${contexts} source-bound lesson/course contexts; ${renders} actual12locale renders + ${japaneseRenders} Japanese-only renders; ${negative} stale/hidden/dependency/limit rejection checks; canonical Japanese retained.`);
