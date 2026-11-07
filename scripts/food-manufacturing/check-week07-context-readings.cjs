@@ -14,11 +14,14 @@ const company=runtimeRuby['food-2-038'].fields['paragraphs.p2.textJa'];
 assert.deepEqual(company.slice(30,32),[{text:'全',reading:'ぜん'},{text:'企業',reading:'きぎょう'}]);
 const targets=[
  ['加熱前',title.slice(0,2).map(x=>x.reading).join('')],
- ['飛沫',closure.sections[2].ruby[49].reading],
  ['全企業',company.slice(30,32).map(x=>x.reading).join('')],
  ['値',runtimeRuby['food-2-043'].fields['paragraphs.p2.textJa'][18].reading],
 ];
 assert.equal(closure.sections[2].ruby[49].text,'飛沫');
+assert.equal(closure.sections[2].ruby[49].reading,'しぶき');
+const lessonTerms=read('lessons.2.ja.json').lessons.flatMap(l=>l.terms);
+assert(lessonTerms.some(t=>t.ja==='飛沫'&&t.reading==='ひまつ'));
+assert(!axisReadings.tokens['飛沫'],'Conflicting canonical readings remain unresolved; do not settle with global token');
 assert.equal(runtimeRuby['food-2-043'].fields['paragraphs.p2.textJa'][18].text,'値');
 const source=fs.readFileSync(path.join(root,'src/components/food-manufacturing/FoodSourcePracticeVisuals.tsx'),'utf8');
 const begin=source.indexOf('function TechnicalJapaneseLabel('),end=source.indexOf('const week04TechnicalIds=',begin);assert(begin>=0&&end>begin);

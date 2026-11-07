@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "sector": "food",
   "dateJst": "2026-11-07",
-  "baseCommit": "63b0e4db8bfa95607fb7e3accaa39f55b5206c23",
-  "scope": "Four source-qualified Japanese technical-label readings in existing week07 figures; no translation/source/image/registry/queue changes",
+  "baseCommit": "2241b86fc716aaf5a865746c573d5135dff937d0",
+  "scope": "Three unambiguous source-qualified Japanese technical-label readings in existing week07 figures; conflicting 飛沫 remains unresolved",
   "status": "ai_self_reviewed_ready_for_remote_persistence",
   "beforeBlobSHAs": {
-    "src/data/food-manufacturing/royal-technical-axis-readings.json": "bfb80978ba14b64b0be8a1e0d92abd9ba5c275be",
-    "scripts/food-manufacturing/check-week07-context-readings.cjs": null,
-    "docs/ssw-workspace/food-manufacturing/royal-week07-context-readings-20261107.json": null
+    "src/data/food-manufacturing/royal-technical-axis-readings.json": "a476bc82232c7e32975788eb7d7ed7f72322c36a",
+    "scripts/food-manufacturing/check-week07-context-readings.cjs": "6145bbc506479821467e8cfbcb51f227b29ea3af",
+    "docs/ssw-workspace/food-manufacturing/royal-week07-context-readings-20261107.json": "9b7af8aaa8535d5057c6efc6c7bd1402a71f1e3b"
   },
   "changes": [
     {
@@ -17,13 +17,6 @@
       "source": "ruby/lessons-02.json#/lessons/food-1-021/fields/titleJa/0–1",
       "proof": "Contiguous 加熱→かねつ + 前→まえ at current canonical sourceHash; full phrase prevents generic 前 ambiguity.",
       "label": "汚染側・加熱前"
-    },
-    {
-      "text": "飛沫",
-      "reading": "しぶき",
-      "source": "source-closure31.json#/sections/2/ruby/49",
-      "proof": "Exact canonical splash/carry-in word in the flow-path source used by this figure; preserve recorded source reading rather than invent a different reading.",
-      "label": "接触・飛沫等の持込み経路"
     },
     {
       "text": "全企業",
@@ -51,13 +44,15 @@
     "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/food-manufacturing/check-week07-context-readings.cjs",
     "result": "PASS",
     "before": "FAIL missing source-qualified 加熱前 token on exact current baseline",
-    "actualProductionLabelContexts": 4,
-    "method": "Babel compiles the actual production TechnicalJapaneseLabel function from FoodSourcePracticeVisuals.tsx, with structural React Native adapters. Tests exact annotations in four token-in-label cases across three affected current Japanese labels; deletion of each token reproduces loss of exact whole-token annotation. Verifies canonical source parts and current food1-021/food2-038 sourceHash alignment. No copied tokenizer implementation.",
+    "actualProductionLabelContexts": 3,
+    "method": "Babel compiles the actual production TechnicalJapaneseLabel function from FoodSourcePracticeVisuals.tsx, with structural React Native adapters. Tests exact annotations in three unambiguous token-in-label cases across two affected current Japanese labels; deletion of each token reproduces loss of exact whole-token annotation. Verifies canonical source parts and current food1-021/food2-038 sourceHash alignment. No copied tokenizer implementation.",
     "limits": "This focused data-only patch does not claim full Reader/zoom/device/native linguistic certification. Production label renderer is the shared inline/zoom key renderer; no production component, labels, translations or figures changed.",
-    "diffCheck": "PASS scoped diff --check"
+    "diffCheck": "PASS scoped diff --check",
+    "conflictGuard": "PASS: source31 ruby contains 飛沫→しぶき while current canonical lesson terms contain 飛沫→ひまつ; global 飛沫 annotation token absent."
   },
   "remainingWeek07HanDebt": {
     "接触・飛沫等の持込み経路": [
+      "沫",
       "等"
     ],
     "実線：主工程・投入物": [
@@ -80,7 +75,7 @@
       "足"
     ]
   },
-  "remainingDebtOccurrences": 8,
+  "remainingDebtOccurrences": 9,
   "rareReadingsGuessed": false,
   "previouslyPersistedRepair": {
     "sharedPPEAsset": "703dd05e",
@@ -94,5 +89,13 @@
     "releaseReady": false,
     "wholeWeekAcceptance": false
   },
-  "next": "After persistence continue supported current frontier, recheck remote to avoid concurrent week08 figure work; retain unresolved local linguistic debt explicitly."
+  "next": "After persistence continue supported current frontier, recheck remote to avoid concurrent week08 figure work; retain unresolved local linguistic debt explicitly.",
+  "correction": {
+    "supersedesCommit": "2241b86fc716aaf5a865746c573d5135dff937d0",
+    "problem": "A broader canonical cross-check found conflicting readings before persistence handoff was fully paused; previous four-token evidence overstated the settlement of 飛沫.",
+    "text": "飛沫",
+    "source31Ruby": "しぶき",
+    "canonicalLessonTerm": "ひまつ",
+    "action": "Remove proposed global 飛沫 token. Keep this word as explicit context-specific conflicting-source debt; no pronunciation is newly settled and source files remain untouched."
+  }
 }
