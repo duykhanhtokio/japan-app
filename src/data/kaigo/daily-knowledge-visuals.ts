@@ -32,6 +32,7 @@ const sources: Record<string, ImageSourcePropType> = {
 type DayFigureOverride={assetPath:string;assetSha256:string;width:number;height:number;rights:string;aiVisualReview:string;altJa?:string};
 const dayOverrides:Record<string,Record<string,DayFigureOverride>>=data.dayFigureOverrides;
 const daySources:Record<string,ImageSourcePropType>={
+ '29:urinary':require('../../../assets/kaigo/royal-weekly-20261107/week05/day29-urinary-route-controlled.webp'),
  '27:endocrine':require('../../../assets/kaigo/royal-weekly-20261107/week04/day27-endocrine-regions-controlled.webp'),
  '15:muscles':require('../../../assets/kaigo/royal-weekly-20261107/week03/day15-muscle-regions-controlled.webp'),
 };
