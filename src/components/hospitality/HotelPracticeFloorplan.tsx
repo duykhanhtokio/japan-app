@@ -3,6 +3,7 @@ import {View,Text,StyleSheet,useWindowDimensions} from 'react-native';
 import type {HotelLesson} from '../../data/hospitality/types';
 import {hotelPracticeMapLabels} from '../../data/hospitality/practice-floorplan-labels';
 export const HOTEL_PRACTICE_FLOORPLAN_REVISION='3c440f6ebd275fa8c6ae49a04eab30a5193b7b95d33c36a85828631ebf667cb3';
+export function hotelPracticeExitGeometry(width:number,scale=1){return {height:390*scale,doorY:180*scale,label:{left:.58*width,bottom:222*scale,width:.36*width}};}
 type Point=[number,number];
 const BLUE='#346b9b',GREEN='#21704f',PAPER='#faf8f1';
 function Path({points,color,arrow}:{points:Point[];color:string;arrow:'right'|'up'|'down'}){
@@ -11,18 +12,18 @@ function Path({points,color,arrow}:{points:Point[];color:string;arrow:'right'|'u
 /** Explanation exercise only. No real hotel's floor plan or accessible route is asserted. */
 export function HotelPracticeFloorplan({lesson,language}:{lesson:HotelLesson;language:string}){
  const t=hotelPracticeMapLabels(language),[width,setWidth]=useState(300),{fontScale}=useWindowDimensions();
- const scale=Math.max(1,fontScale||1),y=(v:number)=>v*scale,w=width;
+ const scale=Math.max(1,fontScale||1),y=(v:number)=>v*scale,w=width,exit=hotelPracticeExitGeometry(width,scale);
  if(lesson.id!=='hotel-front-03'||lesson.revision!==HOTEL_PRACTICE_FLOORPLAN_REVISION)return null;
  const room=(left:number,top:number,label:string,door:'top'|'bottom')=><View style={[s.room,{left:left*w,top:y(top),width:.34*w,height:y(105)}]}><Text style={s.label}>{label}</Text><View style={{position:'absolute',left:.125*w,width:.10*w,height:7,backgroundColor:PAPER,...(door==='top'?{top:-4}:{bottom:-4})}}/></View>;
  return <View testID="hotel-front-03-practice-map" style={s.root}>
  <Text style={s.title}>{t.title}</Text>
- <View accessible accessibilityRole="image" accessibilityLabel={t.description} onLayout={e=>setWidth(e.nativeEvent.layout.width)} style={[s.map,{height:y(390)}]}>
+ <View accessible accessibilityRole="image" accessibilityLabel={t.description} onLayout={e=>setWidth(e.nativeEvent.layout.width)} style={[s.map,{height:exit.height}]}>
  {room(.04,25,t.breakfast,'bottom')}{room(.04,255,t.reception,'top')}{room(.62,255,t.guestRoom,'top')}
- <Text style={[s.exit,{left:.58*w,top:y(40),width:.36*w}]}>{t.exit}</Text>
- <View style={{position:'absolute',right:-4,top:y(180)-12,height:24,width:8,backgroundColor:PAPER}}/>
+ <Text testID="hotel-practice-exit-label" style={[s.exit,exit.label]}>{t.exit}</Text>
+ <View style={{position:'absolute',right:-4,top:exit.doorY-12,height:24,width:8,backgroundColor:PAPER}}/>
  <Path color={BLUE} arrow="down" points={[[.215*w,y(275)],[.215*w,y(220)],[.765*w,y(220)],[.765*w,y(275)]]}/>
  <Path color={BLUE} arrow="up" points={[[.25*w,y(220)],[.25*w,y(115)]]}/>
- <Path color={GREEN} arrow="right" points={[[.83*w,y(275)],[.83*w,y(180)],[.98*w,y(180)]]}/>
+ <Path color={GREEN} arrow="right" points={[[.83*w,y(275)],[.83*w,exit.doorY],[.98*w,exit.doorY]]}/>
  </View>
  <View style={s.legend}><View style={[s.swatch,{backgroundColor:BLUE}]}/><Text style={s.legendText}>{t.normal}</Text></View>
  <View style={s.legend}><View style={[s.swatch,{backgroundColor:GREEN}]}/><Text style={s.legendText}>{t.escape}</Text></View>

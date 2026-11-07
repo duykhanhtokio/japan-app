@@ -4,8 +4,15 @@ const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('ass
 const ts=require('typescript'),React=require('react'),{renderToStaticMarkup}=require('react-dom/server');
 const root=path.resolve(__dirname,'../..');
 let translatedMaterial=null;
-const element=tag=>props=>React.createElement(tag,{'data-testid':props.testID,'aria-label':props.accessibilityLabel},props.children);
-const native={View:element('div'),Text:element('span'),StyleSheet:{create:value=>value},useWindowDimensions:()=>({width:375,height:812,fontScale:1})};
+let controlledWidth=null,fontScale=1,exitLabel=null,mapHeight=null;
+const flatten=style=>Object.assign({},...(Array.isArray(style)?style:[style]).filter(Boolean));
+const element=tag=>props=>{
+ if(props.testID==='hotel-practice-exit-label')exitLabel={...flatten(props.style),text:props.children};
+ if(props.accessibilityRole==='image'&&flatten(props.style).height)mapHeight=flatten(props.style).height;
+ return React.createElement(tag,{'data-testid':props.testID,'aria-label':props.accessibilityLabel},props.children);
+};
+const componentReact={...React,useState:initial=>controlledWidth===null?React.useState(initial):[controlledWidth,()=>{}]};
+const native={View:element('div'),Text:element('span'),StyleSheet:{create:value=>value},useWindowDimensions:()=>({width:375,height:812,fontScale})};
 const cache=new Map();
 function load(relative){
  const file=path.resolve(root,relative);if(cache.has(file))return cache.get(file);
@@ -13,7 +20,8 @@ function load(relative){
  assert.equal(compiled.diagnostics.length,0,`transpile ${relative}`);
  const exports={};cache.set(file,exports);
  const requireIsolated=name=>{
-  if(name==='react'||name==='react/jsx-runtime')return require(name);
+  if(name==='react')return componentReact;
+  if(name==='react/jsx-runtime')return require(name);
   if(name==='react-native')return native;
   // Return supplied material even for a stale revision: each diagram must guard itself.
   if(name.endsWith('/translation-loaders'))return {loadHotelTranslation:()=>translatedMaterial};
@@ -57,4 +65,20 @@ for(const field of ['availableRooms','soldRooms']){
  assert.equal(renderToStaticMarkup(React.createElement(Revenue,{lesson:lessons['hotel-planning-02'],language:'ja'})),'',`zero ${field} must not divide`);
  revenueValues[field]=previous;rejected++;
 }
+const mapModule=load('src/components/hospitality/HotelPracticeFloorplan.tsx');
+const mapLabels=load('src/data/hospitality/practice-floorplan-labels.ts');
+let exitAnchors=0;
+for(const language of languages)for(const width of [320,375,768,1280])for(const scale of [1,1.3,2]){
+ controlledWidth=width-56;fontScale=scale;exitLabel=null;mapHeight=null;
+ renderToStaticMarkup(React.createElement(mapModule.HotelPracticeFloorplan,{lesson:lessons['hotel-front-03'],language}));
+ const actual=mapModule.hotelPracticeExitGeometry(controlledWidth,scale);
+ assert(exitLabel&&mapHeight);assert.equal(exitLabel.text,mapLabels.hotelPracticeMapLabels(language).exit);
+ assert.equal(exitLabel.top,undefined,'wrapped exit label must anchor by bottom');
+ assert(Math.abs(actual.doorY-(mapHeight-exitLabel.bottom)-12*scale)<0.00001,'label must remain immediately above real exit');
+ assert(exitLabel.left>=0&&exitLabel.left+exitLabel.width<=controlledWidth,'localized label stays in map horizontally');
+ assert.equal(exitLabel.height,undefined,'localized label must wrap without fixed-height clipping');
+ exitAnchors++;
+}
+controlledWidth=null;fontScale=1;
 console.log(`PASS native figure revisions: ${positive} current locale renders, ${rejected} stale/missing/wrong-ID or missing-translation rejections; exact revenue outputs preserved.`);
+console.log(`PASS exit label anchors: ${exitAnchors} actual component layouts across 13 locales, 4 widths and 3 font scales.`);
