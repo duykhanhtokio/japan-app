@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "unit": "week03-soil-irrigation-concurrent-locale-reconciliation",
+  "baselineCommit": "257956114c3d4007e01f6b83944138b7a30d9a54",
+  "figureIds": [
+    "agr-recognition-soil-handtest-states-v1",
+    "agr-fig-irrigation-destinations-v1",
+    "agr-recognition-irrigation-tools-v1"
+  ],
+  "workGroups": [
+    "Soil hand-test schematic: validate existing full four-field metadata and three ordered labels in 12 locales",
+    "Irrigation destinations: validate existing full four-field metadata and three ordered labels in 12 locales",
+    "Irrigation tools: validate existing full four-field metadata and four ordered labels in 12 locales"
+  ],
+  "priorLocaleEntriesPreserved": 38,
+  "scope": "Translation of existing source-bound Japanese figure metadata only. Does not newly certify primary-source knowledge or whole-week imagery. Viewed all three current raster assets and checked displayed labels against canonical metadata.",
+  "checks": {
+    "actualRecognitionRenders": 108,
+    "sourceBoundLessonCourseContexts": 9,
+    "staleHiddenDependencyLimitNegatives": 252,
+    "strictComponentTypes": "PASS actual RecognitionImages import graph and real JSON; minimal React/RN ambient declarations",
+    "actualRenderer": "React Native Web actual RecognitionImages and ZoomableFigure; SHA-verified selected PNG/WebP bytes, matching MIME type; unselected imports URI-adapted; unused calendar and flower components isolated",
+    "priorEntriesAndLimits": "all38 remote entries and all remote limits preserved exact bytes",
+    "gitDiffCheck": "PASS"
+  },
+  "readyPaths": [
+    "src/data/agriculture/recognition-image-locales.json",
+    "scripts/agriculture/check-recognition-locale-batch.cjs",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/week03-soil-irrigation-locales-qa.json"
+  ],
+  "preservation": "Retain all38 remote locale entries/limits exact bytes. All Japanese content, image bytes, source lesson hashes/revisions, original labels, exam data, schedules and learner IDs unchanged. No asset substitution.",
+  "sourceKnowledgeCoverageChanged": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "releaseReady": false,
+  "wholeSectorComplete": false,
+  "remaining": [
+    "week03 level2 sowing-pattern/spacing and moisture figure support",
+    "continued existing-week queue and source accuracy/image-style review; this locale verification does not close those queues"
+  ],
+  "sha256": {
+    "src/data/agriculture/recognition-image-locales.json": "fc7723c5b07aab1c3c742c2613108a8fc30fc215e06ac0c958dd1ef3cb61aca3"
+  },
+  "localDraftStatus": "Superseded by concurrent remote authoring of the same three figures. Local independent translations are preserved temporarily in /tmp/agriculture-week03-independent-local-draft.json, not integrated or counted as new learner content.",
+  "concurrentRemoteCommit": "300a7f7965c63a86229d1032aa7c4bab33c0b47d",
+  "reconciliation": "Retain exact remote recognition-image-locales.json with 38 entries including all five week03 figures; no field from concurrent remote was overwritten by the superseded local draft. Keep focused checker PNG MIME correction and isolated unused CropCalendar import.",
+  "newIntegratedLocaleRowsFromThisSession": 0,
+  "validatedExistingLocaleRows": 36,
+  "validatedExistingLocalizedLabels": 120
+}
