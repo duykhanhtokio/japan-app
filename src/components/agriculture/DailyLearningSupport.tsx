@@ -1,3 +1,4 @@
+import {DailyReuseCaption} from './DailyReuseCaption';
 import {FoodDailyObjectiveGapSupport,isFoodDailyObjectiveGapContext} from './FoodDailyObjectiveGapSupport';
 import {FoodFlowerClassificationSupport,isFoodFlowerClassificationContext} from './FoodFlowerClassificationSupport';
 import {SourceReadingWorktermComparison} from './SourceReadingWorktermComparison';
@@ -146,7 +147,7 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
  <AgricultureImageRuby {...imageReadingContext} field="title" text={f.titleJa} style={{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'}}/>
  {!!translated&&<Text testID={`agri-daily-support-${lesson.id}-localized-title`} style={{color:colors.translationText,fontSize:18,lineHeight:28,fontWeight:'700'}}>{translated.title}</Text>}
  <ZoomableFigure uiLanguage={language} source={asset} width={f.width} height={f.height} altJa={translated?.alt||f.altJa} testID={`agri-daily-support-${lesson.id}`} colors={colors} presentation={recognitionImagePresentation(f)} allowExpandedView/>
- {!!currentBinding?.reuseReasonJa&&currentBinding.reuseReasonJa!==f.observationJa&&<Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{currentBinding.reuseReasonJa}</Text>}
+ {!!currentBinding?.reuseReasonJa&&currentBinding.reuseReasonJa!==f.observationJa&&<DailyReuseCaption lesson={lesson} level={level} figureId={f.id} text={currentBinding.reuseReasonJa} language={language} showTranslation={showTranslation} color={colors.translationText} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/>}
  <AgricultureImageRuby {...imageReadingContext} field="observation" text={f.observationJa} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/>
  <AgricultureImageRuby {...imageReadingContext} field="limit" text={f.limitJa} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/>
  {!!translated&&<View testID={`agri-daily-support-${lesson.id}-localized-metadata`} style={{gap:6}}><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.observation}</Text><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.limit}</Text>{!!translated.labels?.length&&f.labelsJa?.map((label,i)=><View key={i} style={{gap:3}}><AgricultureImageRuby {...imageReadingContext} field={`label:${i}`} text={label} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/><Text testID={`agri-daily-support-${lesson.id}-localized-label-${i}`} style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.labels![i]}</Text></View>)}</View>}
