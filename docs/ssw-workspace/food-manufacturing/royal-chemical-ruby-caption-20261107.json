@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "scope": "Existing chemical-protection native companion furigana and nonblank source context",
+  "baselineCommit": "4d46957a3",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "problem": "Sixteen current native chemical-protection lines remained plain kanji; standalone native selector accepted blank source-caption text.",
+  "binding": {
+    "lessonId": "food-1-012",
+    "lessonSourceHash": "dd569aad6e43b731f4b6ed55cafd91acc4711f9da13251e116f42c6e6c50a32b",
+    "paragraphId": "p2"
+  },
+  "change": "Reuse42 explicit existing whole-word ruby tokens, including complete身体→しんたい token from existing food question ruby. Bind readings to exact unchanged Japanese chart hash and line text; malformed/stale readings fall back to original plain Japanese. Add nonblank title/body requirement for exact pinned p2. Preserve all16 existing JA lines and192 existing locale lines, including prohibitions and PPE limits.",
+  "ruby": {
+    "wholeTokens": 42,
+    "newPronunciationsAuthored": 0,
+    "provenance": "Each token has current lesson/field/sourceHash or food question-ruby file/jsonPointer; no inferred partial compound readings.",
+    "unresolvedHan": 0
+  },
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/food-manufacturing/check-royal-chemical-ruby.cjs",
+    "result": "PASS16 whole aligned JA lines,42 explicit provenance references,78 native current/wrong lesson/stale/missing/blank-title/blank-body contexts and13 actual inline+selected zoom caller contexts acrossJA+12locales. All192 unchanged localized lines still rendered. Stale chart-reading hash rejects readings and retains original plain Japanese.",
+    "baselineReproduction": "Isolated read hook loaded the pre-change actual component: source-p2 blank body incorrectly remained accepted by foodRoyalChemicalSafetyFor.",
+    "unchangedLocaleData": {
+      "path": "src/data/food-manufacturing/royal-chemical-safety-translations.json",
+      "sha256": "db034e608b25f9f28183e5256564d536b8723e0980eab26123230fceede6c0b6"
+    },
+    "diffCheck": "PASS scoped git diff --check",
+    "limits": "Structural RN/Image/state/font adapters; no device pixels, new private source-page semantic review or independent native/domain acceptance."
+  },
+  "files": [
+    "src/components/food-manufacturing/FoodRoyalChemicalSafety.tsx",
+    "src/data/food-manufacturing/royal-chemical-safety-readings.json",
+    "scripts/food-manufacturing/check-royal-chemical-ruby.cjs"
+  ],
+  "newRasterAssets": 0,
+  "canonicalContentChanged": false,
+  "acceptance": {
+    "wholeSectorComplete": false,
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "baseCommit": "4d46957a3",
+  "scope": "Existing directdiagram currentlesson context at bothactive reader callers; no artwork/source data changes",
+  "confirmedBefore": "ActiveManufacturingCourse andManufacturingDailySupport passedonlyid/hash todirectdiagrams. ExistingdailyBodyCurrent40 couldrejectamodifiedweek06bodyinmainimage, butdirectdiagramstillrendered samehash withoutseeingthelessonbody.",
+  "after": "Bothactivecallers pass theirsamecurrentlessonobject. Directrenderer rejects id/hash mismatch andconsultsexistingdailyBodyCurrent40 beforeanyinline/secondaryfigure. Legacyid/hash-onlyAPI remainscompatible forhistoricalfixture/read-only uses; activecallerASTcontract preventsnewUIcaller omittingcontext.",
+  "checks": {
+    "currentDirectFigureReaderCases": 273,
+    "locales": 13,
+    "legacyIdHashApiCases": 21,
+    "mismatchedIdHashContextCasesRejected": 546,
+    "changedObjectiveParagraphBodyCasesRejected": 26,
+    "activeCallerContextContracts": 2,
+    "callerRemovalNegatives": 2,
+    "adapters": "Actualdirectrenderer/existingbodyguard/canonicaldata +ReactSSR; ASTchecks actualcallers. RN/imageURI/appearance/safearea/UI adapters. No browser/device acceptance."
+  },
+  "additionalActualInventory": {
+    "activeCompanionBindings": 144,
+    "companionLocalePairs": 1728,
+    "selectedNativeParagraphPlacements": 3612,
+    "missingCurrentNativeFields": 0,
+    "basis": "Executedactualsupport/translation/editorialAPIs; structural/current-fieldpresence, notfreshsemantictranslation/native/sourcecoverageacceptance."
+  },
+  "scopeDecisions": [
+    "CurrentDailyManufacturingFigure alreadybodygatedbeforefallback: preserved,notrewritten.",
+    "keyObjectiveJa isaselectedinstructionalsubobjective in104rows,notexactfullcanonicalobjective: no invalidstrictequalityguard introduced.",
+    "Existingbodyguard currentlycoversweek06fullbodies; thischange propagatesitsactualcoverage,doesnotfabricatewhole262lessonparagraphcoverage."
+  ],
+  "preserved": "AllsourceJP/lessonhashes/metadata/images/captions/translations/questionIDs/answers/learnerstate/weekclosures/lazyassetgetters. daily40.ts andbodybindings untouched. No paidgeneration.",
+  "review": {
+    "wholeExistingIllustrationScopeComplete": false,
+    "wholeSourceKnowledgeCovered": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "humanReviewed": false,
+    "browser": false,
+    "physicalDeviceTested": false,
+    "newPixelReview": false
+  },
+  "files": [
+    {
+      "path": "src/components/manufacturing/ManufacturingDiagram.tsx",
+      "sha256": "07912a1f8fa799a5a2857c7786e1b814b3a0de97643a0fea89faf0cfdb97b82f"
+    },
+    {
+      "path": "src/components/manufacturing/ManufacturingCourse.tsx",
+      "sha256": "96814aff36375988436e47f8c3bf8afb5084d35193d7f053daebbfc59294adac"
+    },
+    {
+      "path": "src/components/manufacturing/ManufacturingDailySupport.tsx",
+      "sha256": "de14f571524bfb262f32a8fc1063a6b3f489eb4d8e02572f80649ff222975129"
+    },
+    {
+      "path": "scripts/manufacturing/check-direct-lesson-context.cjs",
+      "sha256": "03e732656bc1d0e44702495a99791e3f70a91e9fce466a472bab1bab644b3e54"
+    }
+  ],
+  "status": "self_checked_ready_for_root_persistence"
+}

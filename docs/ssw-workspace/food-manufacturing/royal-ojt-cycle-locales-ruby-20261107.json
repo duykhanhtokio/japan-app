@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "scope": "Current OJT source-practice native companion, Japanese/furigana and twelve-locale inline/zoom support",
+  "baselineCommit": "4d46957a3",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "binding": {
+    "lessonId": "food-2-004",
+    "lessonSourceHash": "2ed9be5fafb15925e54cf1c17f76098f28507111ee25cbc03e9b0835bbd313d3",
+    "paragraphId": "p3",
+    "sourceRefs": [
+      {
+        "document": "ssw2",
+        "pdfPage": 21,
+        "printedPage": 12
+      },
+      {
+        "document": "ssw2",
+        "pdfPage": 22,
+        "printedPage": 13
+      },
+      {
+        "document": "ssw2",
+        "pdfPage": 23,
+        "printedPage": 14
+      }
+    ],
+    "basis": "Existing independent fictional OJT chart and current canonical lesson; no new private source-page review or knowledge-coverage promotion."
+  },
+  "problem": "The retained OJT native companion had Japanese-only plain kanji, no selected-locale line support, and a fixed240px card minimum on narrow allocated frames.",
+  "change": "Preserve all23 Japanese display/accessibility strings and all4 exported step definitions exactly. Add276 explicit AI-authored locale lines bound to chart Japanese revision, full JapaneseRuby, current lesson/nonblank p3 guard, and actual language/lesson props from both inline+zoom callers. Use one-column cards below560px allocated width, two-column bases at/above560px with zero fixed minimum.",
+  "ruby": {
+    "tokens": 60,
+    "reused": 59,
+    "newOrdinaryWords": [
+      {
+        "text": "授業",
+        "reading": "じゅぎょう",
+        "status": "authored_ai_unreviewed",
+        "note": "Ordinary language self-authorship, not falsely marked source-reused or native approved."
+      }
+    ],
+    "sourceProvenance": "Each reused reading records exact current canonical lesson/field/hash or existing food question-ruby file/jsonPointer. Compound実作業 and inflection閉じ use explicit whole-token records; no cut-token reading inference.",
+    "unresolvedHan": 0
+  },
+  "translation": {
+    "locales": [
+      "en",
+      "vi",
+      "id",
+      "zh-CN",
+      "zh-TW",
+      "hi",
+      "bn",
+      "ne",
+      "my",
+      "th",
+      "km",
+      "tl"
+    ],
+    "linePairs": 276,
+    "status": "translated_ai_unreviewed",
+    "nativeReviewed": false,
+    "method": "Authored directly against existing Japanese lines, checked meaning/conditions/negation and hypothetical scope; consulted terminology-standard.json, matching locale reports and current food-2-004.p3 wording. No runtime translation or English/Japanese fallback counted.",
+    "canonicalLessonTranslationsChanged": false
+  },
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/food-manufacturing/check-royal-ojt-cycle.cjs",
+    "result": "PASS23 exact JA strings,276 revision-bound locale lines,60 exact reading-provenance entries,65 current/wrong lesson/stale/missing/blank native contexts,13 actual source-practice inline+selected zoom caller contexts,5 allocated-width structural render/style contexts at200/320/559/560/1024px; stale locale revision leaves Japanese only. Current JapaneseRuby and aligned-reading validation used.",
+    "preservation": "All23 existing Japanese source strings found byte-exact in pre-change component; exported4step definitions byte-exact. No Japanese canonical body/source hashes, learner IDs, assessment answers or existing locale fields changed.",
+    "diffCheck": "PASS scoped git diff --check",
+    "limits": "RN/Image/state/font/presentation adapters; allocated-width structural behavior, not browser/device pixel measurement or independent native/domain acceptance."
+  },
+  "files": [
+    "src/components/food-manufacturing/FoodRoyalOjtCycle.tsx",
+    "src/components/food-manufacturing/FoodSourcePracticeVisuals.tsx",
+    "src/data/food-manufacturing/royal-ojt-cycle.json",
+    "scripts/food-manufacturing/check-royal-ojt-cycle.cjs"
+  ],
+  "newRasterAssets": 0,
+  "acceptance": {
+    "wholeSectorComplete": false,
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "learnerDurationMeasured": false
+  }
+}

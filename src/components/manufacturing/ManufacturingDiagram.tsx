@@ -1,3 +1,5 @@
+import type {ManufacturingLesson} from '@/data/manufacturing';
+import {dailyBodyCurrent40} from '@/data/manufacturing/daily40';
 import {useState} from 'react';
 import {Image,Modal,Pressable,ScrollView,Text,View,useWindowDimensions} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -65,6 +67,8 @@ function DiagramFrame({lessonId,lessonSourceHash,language='ja',showTranslation=f
  </View>;
 }
 
-export function ManufacturingDiagram({lessonId,lessonSourceHash,language='ja',showTranslation=false}:{lessonId:string;lessonSourceHash:string;language?:string;showTranslation?:boolean}){
+export function ManufacturingDiagram({lessonId,lessonSourceHash,lesson,language='ja',showTranslation=false}:{lessonId:string;lessonSourceHash:string;lesson?:ManufacturingLesson;language?:string;showTranslation?:boolean}){
+ // Active readers pass the actual lesson, so an unchanged hash cannot bypass the current body guard.
+ if(lesson&&(lesson.id!==lessonId.replace(/-reading$/,'')||lesson.sourceHash!==lessonSourceHash||!dailyBodyCurrent40(lesson)))return null;
  return <><DiagramFrame lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation}/>{lessonId==='mfg1-mechanical-lesson-018'&&<DiagramFrame lessonId="mfg1-mechanical-lesson-018-reading" lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} secondary/>}</>;
 }
