@@ -23,7 +23,7 @@ export function restaurantWeek03TechnicalKind(figure:SourceFigure31):string|null
 }
 function Label({index,language,showTranslation}:{index:number;language:string;showTranslation:boolean}){
  const ja=labels.ja[index],target=(labels as Record<string,string[]>)[language]?.[index];
- return <View style={{gap:4}}><RestaurantReading text={ja} segments={restaurantTechnicalVisualReading(ja)}/>{showTranslation&&language!=='ja'&&target&&<Text selectable style={{fontSize:17,lineHeight:27,color:'#344b61'}}>{target}</Text>}</View>;
+ return <View style={{gap:4}}><RestaurantReading color="#173c4b" readingColor="#344b61" text={ja} segments={restaurantTechnicalVisualReading(ja,'ja')}/>{showTranslation&&language!=='ja'&&target&&<Text selectable style={{fontSize:17,lineHeight:27,color:'#344b61'}}>{target}</Text>}</View>;
 }
 /** Pixel windows select detailed object art only. All quantities and markers are code, not inferred from generated imagery. */
 function FishObject({part,width=280}:{part:'whole'|'fillet'|'frame';width?:number}){
