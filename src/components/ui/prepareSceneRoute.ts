@@ -1,3 +1,4 @@
+import { isLockedGameRoute } from '@/config/release-features';
 import { Dimensions, type ImageSourcePropType } from 'react-native';
 import { japanAssets, regionMaps, type RegionMapId } from '@/data/world-map-config';
 import { prepareArtwork, isArtworkSource, type ArtworkSource } from './prepareArtwork';
@@ -13,6 +14,7 @@ export const preparedRouteBackdrop = (path: string) => routeBackdrops.get(path);
 
 export async function prepareSceneRoute(path: string) {
   path = path.split(/[?#]/)[0].replace(/\/$/, '') || '/';
+  if (isLockedGameRoute(path)) return prepareSceneRoute('/tasks');
   // Warm the visible shared controls, never the transitive inventory of other screens.
   const routeImages = path === '/home' ? HOME_ARTWORK : /^\/specified-skills(?:\/|$)/.test(path) ? TOKUTEI_ARTWORK : COMMON_UI_ARTWORK;
   const additional: ArtworkSource[] = [];
