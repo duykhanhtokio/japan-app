@@ -145,7 +145,7 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
  return f&&asset?<View testID={`agri-daily-support-${lesson.id}`} style={{width:'100%',minWidth:0,alignSelf:'center',padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10,gap:10}}>
  <AgricultureImageRuby {...imageReadingContext} field="title" text={f.titleJa} style={{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'}}/>
  {!!translated&&<Text testID={`agri-daily-support-${lesson.id}-localized-title`} style={{color:colors.translationText,fontSize:18,lineHeight:28,fontWeight:'700'}}>{translated.title}</Text>}
- <ZoomableFigure source={asset} width={f.width} height={f.height} altJa={translated?.alt||f.altJa} testID={`agri-daily-support-${lesson.id}`} colors={colors} presentation={recognitionImagePresentation(f)} allowExpandedView/>
+ <ZoomableFigure uiLanguage={language} source={asset} width={f.width} height={f.height} altJa={translated?.alt||f.altJa} testID={`agri-daily-support-${lesson.id}`} colors={colors} presentation={recognitionImagePresentation(f)} allowExpandedView/>
  {!!currentBinding?.reuseReasonJa&&currentBinding.reuseReasonJa!==f.observationJa&&<Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{currentBinding.reuseReasonJa}</Text>}
  <AgricultureImageRuby {...imageReadingContext} field="observation" text={f.observationJa} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/>
  <AgricultureImageRuby {...imageReadingContext} field="limit" text={f.limitJa} style={{color:colors.translationText,fontSize:16,lineHeight:27}}/>

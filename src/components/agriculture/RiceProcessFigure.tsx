@@ -16,7 +16,7 @@ export function RiceProcessFigure({lesson,level,language='ja',showTranslation=fa
  const labels=localized||data.labels.ja;
  return <View testID="agri-royal-rice-process" style={{gap:10,marginVertical:16}}>
   {ruby('title','もみ・玄米・白米',{color:colors.text,fontSize:19,lineHeight:29,fontWeight:'700'})}{!!localized&&language!=='ja'&&<Text testID="agri-rice-process-localized-title" style={{color:colors.translationText,fontSize:17,lineHeight:28}}>{localized.states.join(' · ')}</Text>}
-  <ZoomableFigure source={source} width={1754} height={897} altJa={labels.alt} testID="agri-royal-rice-process" colors={colors} allowExpandedView/>
+  <ZoomableFigure uiLanguage={language} source={source} width={1754} height={897} altJa={labels.alt} testID="agri-royal-rice-process" colors={colors} allowExpandedView/>
   {ruby('states','左：もみ　中央：玄米　右：白米',{color:colors.translationText,fontSize:17,lineHeight:28})}
   {!!localized&&language!=='ja'&&<View testID="agri-rice-process-localized-states" style={{flexDirection:'row',gap:8}}>{localized.states.map((state,i)=><Text key={i} testID={`agri-rice-process-localized-state-${i}`} style={{flex:1,color:colors.translationText,fontSize:17,lineHeight:28,textAlign:'center'}}>{state}</Text>)}</View>}
   {ruby('caption','もみ殻を除くと玄米になり、玄米を精米すると白米になります。図は外観を比べるための例で、実際の粒の大きさを示すものではありません。',{color:colors.translationText,fontSize:16,lineHeight:27})}
