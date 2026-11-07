@@ -29,6 +29,21 @@ const currentImageAlt:Record<string,Record<string,string>> = {
     "th": "พนักงานต้อนรับรับข้อมูลการจองทางโทรศัพท์และจดบันทึก ขณะที่เพื่อนร่วมงานตรวจสอบบันทึกในพื้นที่พนักงานและส่งต่อข้อมูลให้ผู้รับผิดชอบอาหารกับการต้อนรับเมื่อแขกมาถึง",
     "km": "បុគ្គលិកទទួលភ្ញៀវស្តាប់ព័ត៌មានកក់បន្ទប់តាមទូរសព្ទ និងកត់ត្រា។ មិត្តរួមការងារពិនិត្យកំណត់ត្រានៅផ្នែកបុគ្គលិក ហើយប្រគល់ព័ត៌មានដល់អ្នកទទួលបន្ទុកអាហារ និងការទទួលភ្ញៀវពេលមកដល់។",
     "tl": "Itinatala ng receptionist ang impormasyon ng reserbasyon sa telepono habang sinusuri ng katrabaho ang rekord sa lugar ng staff kasama ang mga namamahala sa pagkain at pagdating ng mga bisita."
+  },
+  "hotel-front-03": {
+    "ja": "清潔な制服の受付担当者が、鍵と館内図を使って到着客に丁寧に案内するイラスト。",
+    "en": "A receptionist in a clean uniform politely explains a key and hotel map to an arriving guest.",
+    "vi": "Lễ tân mặc đồng phục sạch sẽ, lịch sự dùng chìa khóa và sơ đồ khách sạn để hướng dẫn khách mới đến.",
+    "id": "Resepsionis berseragam bersih menjelaskan kunci dan peta hotel dengan sopan kepada tamu yang baru tiba.",
+    "zh-CN": "身穿整洁制服的前台人员用钥匙和馆内图礼貌地向到达的客人进行说明。",
+    "zh-TW": "身穿整潔制服的櫃檯人員用鑰匙和館內圖禮貌地向抵達的客人進行說明。",
+    "hi": "साफ वर्दी में रिसेप्शन कर्मचारी आए हुए अतिथि को चाबी और होटल के नक्शे से विनम्रता से समझा रहा है।",
+    "bn": "পরিষ্কার ইউনিফর্ম পরা রিসেপশনের কর্মী সদ্য আগত অতিথিকে চাবি ও হোটেলের মানচিত্র দিয়ে ভদ্রভাবে বোঝাচ্ছেন।",
+    "ne": "सफा पोसाकमा रिसेप्सन कर्मचारीले आइपुगेका अतिथिलाई साँचो र होटलको नक्साबाट विनम्रतापूर्वक जानकारी दिँदै छन्।",
+    "my": "သန့်ရှင်းသောယူနီဖောင်းဝတ်ထားသည့် ဧည့်ကြိုဝန်ထမ်းက ရောက်ရှိလာသောဧည့်သည်အား သော့နှင့်ဟိုတယ်မြေပုံကို အသုံးပြု၍ ယဉ်ကျေးစွာရှင်းပြနေသည်။",
+    "th": "พนักงานต้อนรับในเครื่องแบบสะอาดอธิบายด้วยกุญแจและแผนผังโรงแรมอย่างสุภาพแก่แขกที่มาถึง",
+    "km": "បុគ្គលិកទទួលភ្ញៀវស្លៀកឯកសណ្ឋានស្អាត ពន្យល់យ៉ាងគួរសមដល់ភ្ញៀវទើបមកដល់ ដោយប្រើសោ និងផែនទីសណ្ឋាគារ។",
+    "tl": "Magalang na ipinapaliwanag ng receptionist na malinis ang uniporme ang susi at mapa ng hotel sa bagong dating na bisita."
   }
 };
 export function hotelIllustrationAlt(id:string,language:string,fallback:string):string {
