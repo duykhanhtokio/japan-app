@@ -1,0 +1,27 @@
+import nativeLabels from '@/data/food-manufacturing/royal-week5-native.json';
+import {foodManagementLabelRuby} from './FoodManagementVisuals';
+import {StyleSheet,Text,View} from 'react-native';
+import {foodManufacturingTranslation,type FoodManufacturingLesson} from '@/data/food-manufacturing';
+import {foodRoyalWeek5NativeFor} from '@/data/food-manufacturing/royal-week5-native';
+import diagrams from '@/data/food-manufacturing/diagrams.json';
+import chartLabels from '@/data/food-manufacturing/management-label-translations.json';
+import {FoodLessonRuby} from './FoodLessonRuby';
+import {TranslationText} from '@/components/tokutei/StudyAppearance';
+function NativeLabel({text}:{text:string}){const parts=text.startsWith('投入量')?[{text:'投入量',reading:nativeLabels.labelReadings['投入量'].reading},{text:text.slice(3)}]:text.startsWith('産出量')?[{text:'産出量',reading:nativeLabels.labelReadings['産出量'].reading},{text:text.slice(3)}]:foodManagementLabelRuby(text);if(!parts)return <Text style={s.label}>{text}</Text>;return <View accessible accessibilityLabel={text} style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}>{parts.map((part,i)=><View key={i} style={{alignItems:'center'}}><Text style={{fontSize:10,lineHeight:14,color:'#183044'}}>{part.reading??' '}</Text><Text style={s.label}>{part.text}</Text></View>)}</View>;}
+function Fraction({top,bottom,result}:{top:string;bottom:string;result:string}){return <View style={s.fractionRow}><View style={s.fraction}><Text style={s.math}>{top}</Text><View style={s.rule}/><Text style={s.math}>{bottom}</Text></View><Text style={s.math}>{result}</Text></View>;}
+/** Source-specific quantities/conditions stay native, never generated into a bitmap. */
+export function FoodRoyalWeek5Native({lesson,language,showTranslation,textColor,readingColor}:{lesson:FoodManufacturingLesson;language:string;showTranslation:boolean;textColor:string;readingColor:string}){
+ const binding=foodRoyalWeek5NativeFor(lesson);if(!binding)return null;
+ const tr=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
+ const example=tr?(chartLabels.locales as Record<string,{example:string}>)[language]?.example:null;
+ const original=diagrams.diagrams.find(d=>d.id==='food-productivity')!,translated=tr?(original.translations as Record<string,{nodeLabels:Record<string,string>}>)[language]:null;
+ const input=translated?.nodeLabels['1']??original.nodes[0].labelJa,output=translated?.nodeLabels['2']??original.nodes[1].labelJa;
+ return <View testID={`food-week5-native-${lesson.id}`} style={s.root}>
+ {binding.kind==='yield-definition'?<><View style={s.flow}><View style={s.node}><NativeLabel text={original.nodes[0].labelJa}/>{tr&&<Text style={s.translation}>{input}</Text>}<Text style={s.math}>kg</Text></View><Text style={s.arrow}>→</Text><View style={s.node}><NativeLabel text={original.nodes[1].labelJa}/>{tr&&<Text style={s.translation}>{output}</Text>}<Text style={s.math}>kg</Text></View></View><Fraction top="OUTPUT" bottom="INPUT" result="× 100% = Y (%)"/></>:<>
+ <NativeLabel text="学習用の仮想データ"/>{example&&<Text style={s.example}>{example}</Text>}
+ {binding.kind==='yield-bases'?<><Text style={s.math}>INPUT = 120 kg</Text><View style={s.barAxis}><View style={[s.bar,{width:'100%',backgroundColor:'#d8caa8'}]}/><Text style={s.math}>120 kg</Text></View><View style={s.barAxis}><View style={[s.bar,{width:`${112/120*100}%`}]} /><Text style={s.math}>A · 112 kg</Text></View><Fraction top="112 kg" bottom="120 kg" result="× 100% ≈ 93.3%"/><View style={s.barAxis}><View style={[s.bar,{width:'90%',backgroundColor:'#9a6437'}]}/><Text style={s.math}>B · 1800 × 60 g ÷ 1000 = 108 kg</Text></View><Fraction top="108 kg" bottom="120 kg" result="× 100% = 90%"/></>:<><Text style={s.math}>240 min = 210 min + 30 min</Text><View style={s.timeline}><View style={{width:'87.5%',backgroundColor:'#286c88',height:32}}/><View style={{width:'12.5%',backgroundColor:'#ad7744',height:32}}/></View><Fraction top="210 min" bottom="240 min" result="× 100% = 87.5%"/><Text style={s.math}>87.5% × 90% = 78.75%</Text></>}
+ </>}
+ {binding.kind==='uptime-capacity'&&lesson.paragraphs.filter(p=>p.id==='p2').map(p=><View key={p.id} style={{gap:8}}><FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.titleJa`} text={p.titleJa} color={textColor} readingColor={readingColor} heading/><FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.textJa`} text={p.textJa} color={textColor} readingColor={readingColor}/>{tr&&<TranslationText>{tr.paragraphTitles[p.id]}{'\n'}{tr.paragraphs[p.id]}</TranslationText>}</View>)}
+ </View>;
+}
+const s=StyleSheet.create({root:{gap:18,paddingVertical:12},flow:{flexDirection:'row',flexWrap:'wrap',alignItems:'center',gap:12},node:{flex:1,minWidth:130,padding:16,backgroundColor:'#f5ecd8',borderBottomWidth:3,borderColor:'#315d70',gap:10},label:{fontSize:18,lineHeight:29,color:'#183044'},translation:{fontSize:16,lineHeight:26,color:'#183044'},arrow:{fontSize:28,color:'#315d70'},math:{fontSize:20,lineHeight:32,color:'#183044',textAlign:'center'},example:{fontSize:15,lineHeight:25,color:'#6e501f'},fractionRow:{flexDirection:'row',flexWrap:'wrap',alignItems:'center',justifyContent:'center',gap:14},fraction:{minWidth:120,alignItems:'stretch',gap:6},rule:{height:2,backgroundColor:'#183044'},barAxis:{gap:8,paddingVertical:6},bar:{height:24,backgroundColor:'#286c88'},timeline:{flexDirection:'row',width:'100%'}});

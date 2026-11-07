@@ -1,3 +1,5 @@
+import {foodRoyalWeek5NativeFor} from '@/data/food-manufacturing/royal-week5-native';
+import {FoodRoyalWeek5Native} from './FoodRoyalWeek5Native';
 import {foodRoyalRetainedTechnicalFor} from '@/data/food-manufacturing/royal-retained-technical';
 import {foodRoyalWeek4NativeFor} from '@/data/food-manufacturing/royal-week4-native';
 import {FoodManagementVisuals} from './FoodManagementVisuals';
@@ -55,10 +57,11 @@ export function FoodDailyLearning({lesson,language,showTranslation,textColor,rea
  const binding=foodDailyBinding(lesson);if(!binding)return null;
  const p=lesson.paragraphs.find(p=>p.id===binding.captionParagraphId)!,t=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
  const imageDescription=`${p.titleJa}。${p.textJa}${t?`。${t.paragraphTitles[p.id]}。${t.paragraphs[p.id]}`:''}`;
- const royalImage=foodRoyalWeeklyImageFor(lesson),native=foodRoyalWeek2NativeFor(lesson),native4=foodRoyalWeek4NativeFor(lesson),retainedTechnical=foodRoyalRetainedTechnicalFor(lesson),source=royalImage?.source??(native||native4||retainedTechnical?undefined:drawings[binding.diagramKind]);
+ const royalImage=foodRoyalWeeklyImageFor(lesson),native=foodRoyalWeek2NativeFor(lesson),native4=foodRoyalWeek4NativeFor(lesson),native5=foodRoyalWeek5NativeFor(lesson),retainedTechnical=foodRoyalRetainedTechnicalFor(lesson),source=royalImage?.source??(native||native4||native5||retainedTechnical?undefined:drawings[binding.diagramKind]);
  return <View testID={`food-daily-learning-${lesson.id}`} style={s.section}>
- {(source||native||native4||retainedTechnical)&&<View testID={`food-daily-diagram-${lesson.id}`} style={s.figure}>
+ {(source||native||native4||native5||retainedTechnical)&&<View testID={`food-daily-diagram-${lesson.id}`} style={s.figure}>
  {source&&<Pressable accessibilityRole="button" accessibilityLabel={`${p.titleJa}・拡大${t?` · ${t.paragraphTitles[p.id]}`:''}`} onPress={()=>setExpanded(true)}><Image testID={royalImage?.replacesIllustrationId} source={source} resizeMode="contain" accessibilityLabel={imageDescription} style={[s.image,royalImage?{aspectRatio:royalImage.width/royalImage.height}:null]}/></Pressable>}
+ {native5&&<FoodRoyalWeek5Native lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor} readingColor={readingColor}/>}
  {native4&&(native4.kind==='management-charts'?<FoodManagementVisuals lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor} readingColor={readingColor} dailyPlacement/>:<FoodConceptDiagrams lessonId={lesson.id} language={language} showTranslation={showTranslation} textColor={textColor} dailyPlacement/>)}
  {native&&<FoodRoyalWeek2Native lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor}/>}
  <FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.titleJa`} text={p.titleJa} color={textColor} readingColor={readingColor} heading/>
