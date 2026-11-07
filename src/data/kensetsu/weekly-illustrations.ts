@@ -1,7 +1,7 @@
 import type {ImageSourcePropType} from 'react-native';
 export const weeklyIllustrations:Record<string,ImageSourcePropType>={
- 'assets/kensetsu/weekly/w002-contract-conditions-v1.webp':require('../../../assets/kensetsu/weekly/w002-contract-conditions-v1.webp'),
- 'assets/kensetsu/weekly/w002-pay-records-v1.webp':require('../../../assets/kensetsu/weekly/w002-pay-records-v1.webp'),
+ 'assets/kensetsu/weekly/w002-contract-conditions-v1.webp':require('../../../assets/kensetsu/royal-weekly-20261107/week02/w002-contract-conditions-royal-v2.webp'),
+ 'assets/kensetsu/weekly/w002-pay-records-v1.webp':require('../../../assets/kensetsu/royal-weekly-20261107/week02/w002-pay-records-royal-v2.webp'),
  'assets/kensetsu/weekly/w003-heat-conditions-v1.webp':require('../../../assets/kensetsu/weekly/w003-heat-conditions-v1.webp'),
  'assets/kensetsu/weekly/w003-risk-assessment-v1.webp':require('../../../assets/kensetsu/weekly/w003-risk-assessment-v1.webp'),
  'assets/kensetsu/weekly/w004-learning-1-v1.webp':require('../../../assets/kensetsu/weekly/w004-learning-1-v1.webp'),
