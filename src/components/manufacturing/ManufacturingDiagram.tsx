@@ -29,9 +29,34 @@ const figures:Record<string,{source:ReturnType<typeof require>;altJa:string}>={
  'mfg1-surface-lesson-053':{source:require('../../../assets/manufacturing/diagrams/batch12-surface-right-grip.png'),altJa:'右ねじの関係を視点と量で区別する。直線導体の電流が紙面から手前へ出ると磁界は反時計回り。コイルを端面から見て電流が反時計回りなら内部磁界は手前へ向かう。'},
  'mfg1-surface-lesson-060':{source:require('../../../assets/manufacturing/diagrams/batch12-surface-coating-defects.png'),altJa:'めっき皮膜の断面例。ピンホールは皮膜を貫く穴、ここでのピットは途中までのくぼみ、ふくれは皮膜の局部的な浮き。模式図であり、寸法と合否基準は適用規格・限度見本で確認する。'},
 };
-function DiagramFrame({lessonId,language='ja',showTranslation=false,secondary=false}:{lessonId:string;language?:string;showTranslation?:boolean;secondary?:boolean}){
+/** Reviewed direct diagrams remain bound to the exact canonical teaching revision. */
+const sourceRevisions:Record<string,string>={
+  "mfg1-mechanical-lesson-018-reading": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb",
+  "mfg1-mechanical-lesson-018": "ef7d6a94982c25a984c9480e920b2af82a1a00fa9bf3844e86e9877681db9cdb",
+  "mfg1-electrical-l005": "ba42f6ec0d94216505cb723ceaf4b2e98b9f274eab63d4104ce63bb52af4a3fe",
+  "mfg1-mechanical-lesson-048": "b6c037fbb354e9adc1c7891ac98ee33e13c04b6f082daa3a8ce04971a0c24e24",
+  "mfg1-mechanical-lesson-044": "4e5211d1f85fc648ad19051de3e666a9c999cbc4b05c148db88b9e43ed10c7ef",
+  "mfg1-electrical-l038": "9174292d60f625cc88610a75529c488ca10d7f97444b7ba2c36559e75d10a6e2",
+  "mfg1-surface-lesson-042": "c9c4c244e974e62a87149ae4d335feda8047ce9993ba5764ed030bbe418a69d1",
+  "mfg1-mechanical-lesson-035": "5da8d23770159ba021e558544d000c37a845b996485df6a4c7e1620a55c05149",
+  "mfg1-electrical-l030": "f8d8fc04575b667f12bcf7ffd98c235972136b8b2033c2724b2ac73362424474",
+  "mfg1-surface-lesson-028": "c34ffc0a11292702342aef819eca87403854c5057221855741e162f8ff7eb874",
+  "mfg1-electrical-l006": "540a1c3e16efed961ad30a27dad230fa427d266bae80ff59db5decee27a6f492",
+  "mfg1-surface-lesson-006": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+  "mfg1-mechanical-lesson-011": "7c03413b76ee4823f4b9ac8ec818aa9003f657910af6dff216db2eb51c4ac24d",
+  "mfg1-electrical-l017": "42bdff3e0759e2d01d348391465d41b9dea1edc600922d8541b54e4833420065",
+  "mfg1-surface-lesson-011": "04877240b0ed95efd66acf3164467afea7b036133b3f3ae477d7a24d5804f2a2",
+  "mfg1-mechanical-lesson-081": "3da2188ce6420730deb8becf2f3b9c234da4ffeae1ec763485d7640d4757c4e6",
+  "mfg1-mechanical-lesson-082": "c20300f47da9efa072b56072fb92ba2e195bff3a9f13808f917277fb23f6be50",
+  "mfg1-electrical-l087": "872cb9a67a528953416336e028d92c1b5012212962156304cee93d814c9bc31a",
+  "mfg1-electrical-l077": "614284c4181587733b9090e0984f94cf23ab20ea4d46b2619f26c39cc9d52024",
+  "mfg1-electrical-l071": "d99438ff6de3ea74ebce53fd03707467e62759206566ed9fe53e1897c1385686",
+  "mfg1-surface-lesson-053": "ff9c0c7a21879d0fcd08987ba719814c183722320c90df25cbd95dfd525e7cd5",
+  "mfg1-surface-lesson-060": "f24db1adfac652687ade96beedd8578bc232658bfb47ce420e04fa471c69d60a"
+};
+function DiagramFrame({lessonId,lessonSourceHash,language='ja',showTranslation=false,secondary=false}:{lessonId:string;lessonSourceHash:string;language?:string;showTranslation?:boolean;secondary?:boolean}){
  const [expanded,setExpanded]=useState(false),{width}=useWindowDimensions(),i=useSafeAreaInsets();
- const ratio=ratios[lessonId]??1.6,item=figures[lessonId],{colors}=useStudyAppearance();if(!item)return null;
+ const ratio=ratios[lessonId]??1.6,item=figures[lessonId],{colors}=useStudyAppearance();if(!item||sourceRevisions[lessonId]!==lessonSourceHash)return null;
  const candidate=captionData.locales[language as keyof typeof captionData.locales]?.[lessonId as keyof typeof captionData.locales.en];
  const translated=candidate&&showTranslation&&candidate.sourceJa===item.altJa?candidate.text:null;
  const zoomWidth=Math.max(960,width),button=(label:string,action:()=>void)=><Pressable accessibilityRole="button" accessibilityLabel={label} onPress={action} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:16,textAlign:'center'}}>{label}</Text></Pressable>;
@@ -40,6 +65,6 @@ function DiagramFrame({lessonId,language='ja',showTranslation=false,secondary=fa
  </View>;
 }
 
-export function ManufacturingDiagram({lessonId,language='ja',showTranslation=false}:{lessonId:string;language?:string;showTranslation?:boolean}){
- return <><DiagramFrame lessonId={lessonId} language={language} showTranslation={showTranslation}/>{lessonId==='mfg1-mechanical-lesson-018'&&<DiagramFrame lessonId="mfg1-mechanical-lesson-018-reading" language={language} showTranslation={showTranslation} secondary/>}</>;
+export function ManufacturingDiagram({lessonId,lessonSourceHash,language='ja',showTranslation=false}:{lessonId:string;lessonSourceHash:string;language?:string;showTranslation?:boolean}){
+ return <><DiagramFrame lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation}/>{lessonId==='mfg1-mechanical-lesson-018'&&<DiagramFrame lessonId="mfg1-mechanical-lesson-018-reading" lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} secondary/>}</>;
 }
