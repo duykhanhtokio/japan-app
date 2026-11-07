@@ -8,7 +8,7 @@ const artwork=require('../../../assets/restaurant/royal-weekly-20261107/week05/e
 export function restaurantWeek05TechnicalKind(figure:SourceFigure31):string|null{
  const b=data.bindings.find(x=>x.figureId===figure.id);if(!b||figure.quizSafe!==false||figure.cropBox)return null;
  const f=b.figure;if(['sourceHash','assetFile','sha256','width','height','captionJa','altJa'].some(k=>(figure as any)[k]!==(f as any)[k]))return null;
- const pack=require('../../data/restaurant/source31/2.json'),row=pack.lessons[b.lessonId];return row?.sourceHash===b.rowSourceHash&&row.figures.some((x:SourceFigure31)=>sameRestaurantFigureIdentity(x,figure))?'emergency-roles':null;
+ const pack=b.level==='1'?require('../../data/restaurant/source31/1.json'):require('../../data/restaurant/source31/2.json'),row=pack.lessons[b.lessonId];return row?.sourceHash===b.rowSourceHash&&row.figures.some((x:SourceFigure31)=>sameRestaurantFigureIdentity(x,figure))?'emergency-roles':null;
 }
 export function RestaurantWeek05TechnicalFigure({language='ja',showTranslation=false,width=320}:{language?:string;showTranslation?:boolean;width?:number}){
  const w=Math.max(1,Math.min(480,width-24)),labels=data.labels as Record<string,string[]>,target=labels[language];

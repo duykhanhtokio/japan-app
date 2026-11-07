@@ -6,11 +6,15 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
+# Royal technical palette; geometry, illustrative values and warning colors stay exact.
+plt.rcParams.update({'figure.facecolor':'#fffaf0','axes.facecolor':'#fffaf0',
+ 'text.color':'#243f52','axes.labelcolor':'#243f52','axes.edgecolor':'#243f52',
+ 'xtick.color':'#243f52','ytick.color':'#243f52'})
 from PIL import Image
 root=Path(__file__).resolve().parents[2];out=root/'assets/food-manufacturing/source-practice';out.mkdir(parents=True,exist_ok=True)
 (out/'.gitattributes').write_text('*.webp -filter -diff -merge -text\n')
 def save(fig,name):
- buf=BytesIO();fig.savefig(buf,format='png',dpi=160,bbox_inches='tight',facecolor='white');plt.close(fig);buf.seek(0);Image.open(buf).convert('RGB').save(out/(name+'.webp'),'WEBP',quality=94)
+ buf=BytesIO();fig.savefig(buf,format='png',dpi=160,bbox_inches='tight',facecolor='#fffaf0');plt.close(fig);buf.seek(0);Image.open(buf).convert('RGB').save(out/(name+'.webp'),'WEBP',quality=94)
 fig,ax=plt.subplots(figsize=(10,7));ax.set(xlim=(0,10),ylim=(0,7));ax.axis('off')
 nodes={'A1':(1,6),'A2':(3,6),'B1':(1,4.5),'B2':(3,4.5),'3':(5,5.3),'4':(7,5.3),'5':(9,5.3),'P2':(5,3.7),'6':(3,2.4),'W':(1,1),'7':(3,1),'8':(5,1)}
 for key,(x,y) in nodes.items():

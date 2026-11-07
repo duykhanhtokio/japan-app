@@ -1,4 +1,4 @@
-import {AgricultureImageRuby} from './AgricultureImageRuby';
+import {AgricultureImageRuby,AgricultureImageHeading} from './AgricultureImageRuby';
 import localeData from '@/data/agriculture/recognition-image-locales.json';
 import {FlowerLegendFigure} from './FlowerLegendFigure';
 import {CropCalendarFigure} from './CropCalendarFigure';
@@ -121,7 +121,7 @@ const assets:Record<string,ImageSourcePropType>={
  "tunnel-direct-cover":require('../../../assets/agriculture/royal-weekly-20261107/tunnel-direct-cover-royal-v1.webp'),
  "mulch-materials":require('../../../assets/agriculture/completion-40/safety/mulch-materials.png'),
  "rotary-mulcher":require('../../../assets/agriculture/completion-40/safety/rotary-mulcher.png'),
- "pheromone-dispenser":require('../../../assets/agriculture/completion-40/safety/pheromone-dispenser.png'),
+ "pheromone-dispenser":require('../../../assets/agriculture/royal-weekly-20261107/pheromone-dispenser-appearance-royal-v1.webp'),
  "cultivation-hilling":require('../../../assets/agriculture/completion-40/safety/cultivation-hilling.png'),
  "nozzle-source-examples":require('../../../assets/agriculture/completion-40/safety/nozzle-source-examples.png'),
  "manual-backpack-sprayer":require('../../../assets/agriculture/completion-40/safety/manual-backpack-sprayer.png'),
@@ -165,8 +165,8 @@ const assets:Record<string,ImageSourcePropType>={
  "agr-f40-branch-graft-type-profiles":require('../../../assets/agriculture/completion-40/facility/branch-graft-type-profiles.png'),
  "agr-f40-graft-source-example-dimensions":require('../../../assets/agriculture/completion-40/facility/graft-source-example-dimensions.png'),
  "agr-f40-pruning-branch-position-glossary":require('../../../assets/agriculture/completion-40/facility/pruning-branch-position-glossary.png'),
- "agr-f40-pear-thinning-shape-examples":require('../../../assets/agriculture/completion-40/facility/pear-thinning-shape-examples.png'),
- "agr-f40-satsuma-thinning-target-examples":require('../../../assets/agriculture/completion-40/facility/satsuma-thinning-target-examples.png'),
+ "agr-f40-pear-thinning-shape-examples":require('../../../assets/agriculture/royal-weekly-20261107/pear-thinning-shape-examples-royal-v1.webp'),
+ "agr-f40-satsuma-thinning-target-examples":require('../../../assets/agriculture/royal-weekly-20261107/satsuma-thinning-target-examples-royal-v1.webp'),
  "agr-f40-tomato-temperature-source-comparison":require('../../../assets/agriculture/completion-40/facility/tomato-temperature-source-comparison.png'),
  "agr-f40-cover-lifetime-source-comparison":require('../../../assets/agriculture/completion-40/facility/cover-lifetime-source-comparison.png'),
  "agr-f40-pf-source-range-comparison":require('../../../assets/agriculture/completion-40/facility/pf-source-range-comparison.png'),
@@ -177,7 +177,7 @@ const assets:Record<string,ImageSourcePropType>={
  "agr-f40-fruit-branch-age-source-types":require('../../../assets/agriculture/completion-40/facility/fruit-branch-age-source-types.png'),
  "agr-f40-fruit-pruning-cut-position-examples":require('../../../assets/agriculture/completion-40/facility/fruit-pruning-cut-position-examples.png'),
  "agr-f40-fruit-pollination-tool-appearance-examples":require('../../../assets/agriculture/completion-40/facility/fruit-pollination-tool-appearance-examples.png'),
- "agr-f40-citrus-uninjured-injured-source-pair":require('../../../assets/agriculture/completion-40/facility/citrus-uninjured-injured-source-pair.png'),
+ "agr-f40-citrus-uninjured-injured-source-pair":require('../../../assets/agriculture/royal-weekly-20261107/citrus-rind-injury-pair-royal-v1.webp'),
  "agr-f40-peach-grape-bag-appearance":require('../../../assets/agriculture/completion-40/facility/peach-grape-bag-appearance.png'),
  "agr-f40-peach-bagging-source-stages":require('../../../assets/agriculture/completion-40/facility/peach-bagging-source-stages.png'),
  "agr-f40-grape-bagging-source-stages":require('../../../assets/agriculture/completion-40/facility/grape-bagging-source-stages.png'),
@@ -240,10 +240,10 @@ export function RecognitionImages({lessonId,lessonSourceHash,colors,level,langua
   {!!t&&<Text testID={`${item.id}-localized-title`} style={[s.title,{color:colors.translationText}]}>{t.title}</Text>}
   {item.id==='agr-f40-general-cropping-example-flow'?<CropCalendarFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language={language} showTranslation={showTranslation} includeMetadata={false} colors={colors}/>:item.id==='agr-f40-general-flower-legend-reader'?<FlowerLegendFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} colors={colors}/>:<ZoomableFigure source={assets[item.assetKey]} width={item.width} height={item.height} altJa={t?.alt||item.altJa} testID={item.id} colors={colors} allowExpandedView={item.allowExpandedView}/>}
   {!!item.labelsJa?.length&&<View style={{gap:4}}>{item.labelsJa.map((label,index)=><View key={`${index}-${label}`}>{ruby(`label:${index}`,label,[s.body,{color:colors.translationText}])}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`} style={[s.body,{color:colors.translationText}]}>{t.labels[index]}</Text>}</View>)}</View>}
-  <Text style={[s.label,{color:colors.translationText}]}>観察の手掛かり</Text>
+  <AgricultureImageHeading kind="observation" style={[s.label,{color:colors.translationText}]} color={colors.translationText}/>
   {ruby('observation',item.observationJa,[s.body,{color:colors.translationText}])}
   {!!t&&<Text testID={`${item.id}-localized-observation`} style={[s.body,{color:colors.translationText}]}>{t.observation}</Text>}
-  <Text style={[s.label,{color:colors.translationText}]}>見分けるときの限界</Text>
+  <AgricultureImageHeading kind="limit" style={[s.label,{color:colors.translationText}]} color={colors.translationText}/>
   {ruby('limit',item.limitJa,[s.body,{color:colors.translationText}])}
   {!!t&&<Text testID={`${item.id}-localized-limit`} style={[s.body,{color:colors.translationText}]}>{t.limit}</Text>}
  </View>;})}</>;

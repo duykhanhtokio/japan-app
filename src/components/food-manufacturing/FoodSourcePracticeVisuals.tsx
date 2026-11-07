@@ -1,3 +1,4 @@
+import {FoodRoyalCaptionRuby} from './FoodRoyalCaptionRuby';
 import {foodRoyalNativeLabelRuby,foodRoyalNativeLabelHasContext} from '@/data/food-manufacturing/royal-native-context-readings';
 import technical8 from '@/data/food-manufacturing/royal-week8-technical-labels.json';
 import {foodManufacturingLessonRuby} from '@/data/food-manufacturing/lesson-ruby';
@@ -111,7 +112,7 @@ export function FoodSourcePracticeVisuals({lesson,textColor,readingColor,languag
  const headingOnly=figure.id.startsWith('food-source32-')||figure.id.startsWith('food-source37-')||figure.id.startsWith('food-source43-')||figure.id.startsWith('food-source46-');
  return <View key={figure.id} testID={figure.id} style={s.figure}>
  {captionSupplement?<View accessible accessibilityRole="header" accessibilityLabel={captionSupplement.titleJa} style={s.rubyLine}>{captionSupplement.titleRuby.map((token,i)=><View key={i} style={s.word}><Text style={{color:readingColor,fontSize:11,lineHeight:15}}>{'reading' in token?token.reading:' '}</Text><Text selectable style={{color:textColor,fontSize:19,lineHeight:30,fontWeight:'700'}}>{token.text}</Text></View>)}</View>:<FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.titleJa`} text={p.titleJa} color={textColor} readingColor={readingColor} heading/>}
- {!headingOnly&&<FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.textJa`} text={p.textJa} color={textColor} readingColor={readingColor}/>}
+ {!headingOnly&&<FoodRoyalCaptionRuby lesson={lesson} field={`paragraphs.${p.id}.textJa`} text={p.textJa} color={textColor} readingColor={readingColor}/>}
  {captionSupplement?supplementTitle&&<TranslationText>{supplementTitle}</TranslationText>:translated&&<TranslationText>{translated.paragraphTitles[p.id]}{!headingOnly?'\n'+translated.paragraphs[p.id]:''}</TranslationText>}
  {figure.id==='food-source-risk-matrix'&&<View><Text style={{color:readingColor,fontSize:10,lineHeight:17}}>はっせいかのうせい ↓　じゅうだいせい →</Text><Text style={{color:textColor,fontSize:16,lineHeight:27}}>発生可能性 ↓　重大性 →</Text>{translated&&<TranslationText>{translated.terms?.['発生可能性']} ↓　{translated.terms?.['重大性']} →</TranslationText>}</View>}
  <Pressable accessibilityRole="button" accessibilityLabel={`${captionSupplement?.titleJa??p.titleJa}・拡大`} onPress={()=>setExpanded(figure)}><Image source={figure.source} accessibilityLabel={foodSourcePracticeDescription(lesson,figure,language,showTranslation)} resizeMode="contain" style={[s.image,{aspectRatio:figure.aspectRatio}]}/></Pressable>

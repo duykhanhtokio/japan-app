@@ -2,6 +2,7 @@ import {sameRestaurantFigureIdentity} from './RestaurantFigureIdentity';
 import type {SourceFigure31} from '@/data/restaurant/source31';
 import data from '@/data/restaurant/royal-source-figure-overrides.json';
 const assetLoaders:Record<string,()=>number>={
+ 'rst31-service1-fig008':()=>require('../../../assets/restaurant/royal-weekly-20261107/week08/rst-1-svc-02-greeting.webp'),
  'rst31-cooking1-fig-food-sawara':()=>require('../../../assets/restaurant/royal-weekly-20261107/week04/fish-recognition-atlas.webp'),
  'rst31-cooking1-fig-food-asari':()=>require('../../../assets/restaurant/royal-weekly-20261107/week04/fish-recognition-atlas.webp'),
  'rst31-cooking1-fig-food-wakame':()=>require('../../../assets/restaurant/royal-weekly-20261107/week04/fish-recognition-atlas.webp'),

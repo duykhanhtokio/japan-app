@@ -1,5 +1,6 @@
 import {RestaurantStaffingExample} from './RestaurantStaffingExample';
 import {RestaurantAbcExample} from './RestaurantAbcExample';
+import {RestaurantWeek09ReferenceTables,restaurantWeek09Reference} from './RestaurantWeek09ReferenceTables';
 import {RestaurantWeek08ControlFigures,restaurantWeek08Control} from './RestaurantWeek08ControlFigures';
 import {RestaurantCutleryFigure,restaurantHasCutlerySetting} from './RestaurantCutleryFigure';
 import {RestaurantMealPlacement,restaurantHasMealPlacement} from './RestaurantMealPlacement';
@@ -116,12 +117,43 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
- 'rst-2-hyg-20':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-04-disinfection-dry-protected-storage.webp'),aspectRatio:1.77577045696068},
- 'rst-2-hyg-19':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-03-detergent-material-label-check.webp'),aspectRatio:1.7768331562167907},
+ 'rst-1-hyg-17':{source:require('../../../assets/restaurant/royal-weekly-20261107/week12/rst-1-hyg-17-egg-liver-cooking-verification.webp'),aspectRatio:1.5},
+ 'rst-1-hyg-18':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-01-haccp-observation-verification.webp'),aspectRatio:1.7768331562167907},
+ 'rst-1-cook-20':{source:require('../../../assets/restaurant/royal-weekly-20261107/week10/rst-1-svc-13-meal-ingredient-explanation.webp'),aspectRatio:1.5},
+ 'rst-1-svc-21':{source:require('../../../assets/restaurant/royal-weekly-20261107/week09/rst-1-svc-09-menu-choice-order-confirmation.webp'),aspectRatio:1.5},
+ 'rst-1-svc-16':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-06-closing-chair-zone-check.webp'),aspectRatio:1.5},
+ 'rst-1-svc-17':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-07-cash-transaction-dual-check.webp'),aspectRatio:1.5},
+ 'rst-1-svc-18':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-08-complaint-fact-listening.webp'),aspectRatio:1.5},
+ 'rst-1-svc-19':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/emergency-support-roles.webp'),aspectRatio:1.5},
+ 'rst-1-svc-20':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-19-fire-exit-role-precheck.webp'),aspectRatio:1.5},
+ 'rst-2-cook-12':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-08-new-staff-onboarding-preparation.webp'),aspectRatio:1.5},
+ 'rst-2-svc-10':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-04-service-priority-coordination.webp'),aspectRatio:1.5},
+ 'rst-2-ops-17':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-svc-01-qsca-dining-inspection.webp'),aspectRatio:1.5},
+ 'rst-1-svc-11':{source:require('../../../assets/restaurant/royal-weekly-20261107/week02/rst-2-hyg-10-allergen-replacement-label-handoff.webp'),aspectRatio:1.77577045696068},
+ 'rst-1-svc-12':{source:require('../../../assets/restaurant/royal-weekly-20261107/week10/rst-1-svc-12-beverage-information-service-check.webp'),aspectRatio:1.5},
+ 'rst-1-svc-13':{source:require('../../../assets/restaurant/royal-weekly-20261107/week10/rst-1-svc-13-meal-ingredient-explanation.webp'),aspectRatio:1.5},
+ 'rst-1-svc-14':{source:require('../../../assets/restaurant/royal-weekly-20261107/week09/rst-1-svc-09-menu-choice-order-confirmation.webp'),aspectRatio:1.5},
+ 'rst-1-svc-15':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-06-closing-chair-zone-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-11':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-07-truthful-attendance-record-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-12':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-07-truthful-attendance-record-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-13':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-07-truthful-attendance-record-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-14':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-07-truthful-attendance-record-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-15':{source:require('../../../assets/restaurant/royal-weekly-20261107/week08/rst-2-hyg-15-authority-role-check.webp'),aspectRatio:1.5},
+ 'rst-2-ops-16':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-19-fire-exit-role-precheck.webp'),aspectRatio:1.5},
+ 'rst-2-svc-09':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-06-closing-chair-zone-check.webp'),aspectRatio:1.5},
+ 'rst-2-hyg-22':{source:require('../../../assets/restaurant/royal-weekly-20261107/week02/rst-2-hyg-07-pest-entry-drain-monitoring.webp'),aspectRatio:1.77577045696068},
+ 'rst-2-hyg-21':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-06-abnormal-water-stop-report.webp'),aspectRatio:1.7768331562167907},
+ 'rst-1-svc-10':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-03-reservation-phone-coaching.webp'),aspectRatio:1.5},
+ 'rst-1-svc-09':{source:require('../../../assets/restaurant/royal-weekly-20261107/week09/rst-1-svc-09-menu-choice-order-confirmation.webp'),aspectRatio:1.5},
+'rst-1-svc-08':{source:require('../../../assets/restaurant/royal-weekly-20261107/week09/rst-1-svc-08-takeaway-conditions-check.webp'),aspectRatio:1.5},
+'rst-1-svc-07':{source:require('../../../assets/restaurant/royal-weekly-20261107/week09/rst-1-svc-07-guest-support-preference.webp'),aspectRatio:1.5},
+ 'rst-1-svc-06':{source:require('../../../assets/restaurant/royal-weekly-20261107/week09/rst-1-svc-06-roundtable-shared-serving-wait.webp'),aspectRatio:1.5},
+'rst-2-hyg-20':{source:require('../../../assets/restaurant/royal-weekly-20261107/week08/rst-2-hyg-20-disinfection-manual-check.webp'),aspectRatio:1.5},
+'rst-2-hyg-19':{source:require('../../../assets/restaurant/royal-weekly-20261107/week08/rst-2-hyg-19-detergent-manual-check.webp'),aspectRatio:1.5},
  'rst-2-hyg-17':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-01-haccp-observation-verification.webp'),aspectRatio:1.7768331562167907},
- 'rst-2-hyg-15':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-01-haccp-observation-verification.webp'),aspectRatio:1.7768331562167907},
+'rst-2-hyg-15':{source:require('../../../assets/restaurant/royal-weekly-20261107/week08/rst-2-hyg-15-authority-role-check.webp'),aspectRatio:1.5},
  'rst-1-svc-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-svc-01-qsca-dining-inspection.webp'),aspectRatio:1.5},
- 'rst-1-svc-02':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-svc-01-qsca-dining-inspection.webp'),aspectRatio:1.5},
+'rst-1-svc-02':{source:require('../../../assets/restaurant/royal-weekly-20261107/week08/rst-1-svc-02-greeting.webp'),aspectRatio:1.5},
  'rst-1-cook-16':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-16-split-load-trolley-assistance.webp'),aspectRatio:1.5},
  'rst-1-cook-17':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-17-blade-enclosed-preclean-briefing.webp'),aspectRatio:1.5},
  'rst-1-cook-18':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-18-chipped-bowl-segregation.webp'),aspectRatio:1.5},
@@ -222,12 +254,12 @@ const labels:Record<string,{figure:string;note:string;companion:string}>={
 };
 export function RestaurantDailyFigure({lesson,language,showTranslation}:{lesson:RestaurantLesson;language:string;showTranslation:boolean}){
  const b=bindingFor(lesson),{colors}=useStudyAppearance();if(!b)return null;
- const nativeControl=restaurantWeek08Control(lesson),nativeCutlery=restaurantHasCutlerySetting(lesson),nativeMeal=restaurantHasMealPlacement(lesson),nativeTray=restaurantHasTrayHandling(lesson),nativeVegetables=restaurantHasVegetableClassification(lesson),nativeFish=restaurantHasFishPartsFigure(lesson),royal=restaurantRoyalDailyAsset(lesson),marks=nativeControl||nativeCutlery||nativeMeal||nativeTray||nativeVegetables||nativeFish||royal?[]:restaurantDailyDrawing(b.figureId.replace('rst-daily-',''));if(!nativeControl&&!nativeCutlery&&!nativeMeal&&!nativeTray&&!nativeVegetables&&!nativeFish&&!royal&&!marks.length)return null;
+ const nativeReference=restaurantWeek09Reference(lesson),nativeControl=restaurantWeek08Control(lesson),nativeCutlery=restaurantHasCutlerySetting(lesson),nativeMeal=restaurantHasMealPlacement(lesson),nativeTray=restaurantHasTrayHandling(lesson),nativeVegetables=restaurantHasVegetableClassification(lesson),nativeFish=restaurantHasFishPartsFigure(lesson),royal=restaurantRoyalDailyAsset(lesson),marks=nativeReference||nativeControl||nativeCutlery||nativeMeal||nativeTray||nativeVegetables||nativeFish||royal?[]:restaurantDailyDrawing(b.figureId.replace('rst-daily-',''));if(!nativeReference&&!nativeControl&&!nativeCutlery&&!nativeMeal&&!nativeTray&&!nativeVegetables&&!nativeFish&&!royal&&!marks.length)return null;
  const ui=labels[language]||labels.ja,t=restaurantLessonTranslation(lesson,language);
  const caption=royal?teachingCaptionFor(lesson):undefined,targetCaption=caption?.translations[language];
  return <><View testID={`restaurant-daily-figure-${lesson.id}`} style={[s.figure,{borderColor:colors.border}]}>
   <RestaurantReading heading text={labels.ja.figure} segments={figureHeading}/>{showTranslation&&language!=='ja'&&<TranslationText>{ui.figure}</TranslationText>}
-  {nativeControl?<RestaurantWeek08ControlFigures lesson={lesson} language={language} showTranslation={showTranslation}/>:nativeCutlery?<RestaurantCutleryFigure language={language} showTranslation={showTranslation}/>:nativeMeal?<RestaurantMealPlacement lessonId={lesson.id} language={language} showTranslation={showTranslation}/>:nativeTray?<RestaurantTrayHandlingFigure language={language} showTranslation={showTranslation}/>:nativeVegetables?<RestaurantVegetableClassificationFigure language={language} showTranslation={showTranslation}/>:nativeFish?<RestaurantFishPartsFigure language={language} showTranslation={showTranslation}/>:royal?<Image testID={`restaurant-royal-figure-${lesson.id}`} source={royal.source} accessibilityLabel={showTranslation&&t?t.objective:lesson.objectiveJa} resizeMode="cover" style={[s.royalCanvas,{aspectRatio:royal.aspectRatio}]}/>:(<View accessible accessibilityRole="image" accessibilityLabel={showTranslation&&t?t.objective:lesson.objectiveJa} style={s.canvas}>{marks.map((m,i)=><View key={i} pointerEvents="none" style={{position:'absolute',left:pct(m.x),top:pct(m.y),width:pct(m.w),height:pct(m.h),backgroundColor:m.fill,borderRadius:m.radius??0,borderWidth:m.stroke?1:0,borderColor:m.stroke,transform:m.rotate?[{rotate:`${m.rotate}deg`}]:undefined} as ViewStyle}/>)}</View>)}
+  {nativeReference?<RestaurantWeek09ReferenceTables lesson={lesson} language={language} showTranslation={showTranslation}/>:nativeControl?<RestaurantWeek08ControlFigures lesson={lesson} language={language} showTranslation={showTranslation}/>:nativeCutlery?<RestaurantCutleryFigure language={language} showTranslation={showTranslation}/>:nativeMeal?<RestaurantMealPlacement lessonId={lesson.id} language={language} showTranslation={showTranslation}/>:nativeTray?<RestaurantTrayHandlingFigure language={language} showTranslation={showTranslation}/>:nativeVegetables?<RestaurantVegetableClassificationFigure language={language} showTranslation={showTranslation}/>:nativeFish?<RestaurantFishPartsFigure language={language} showTranslation={showTranslation}/>:royal?<Image testID={`restaurant-royal-figure-${lesson.id}`} source={royal.source} accessibilityLabel={showTranslation&&t?t.objective:lesson.objectiveJa} resizeMode="cover" style={[s.royalCanvas,{aspectRatio:royal.aspectRatio}]}/>:(<View accessible accessibilityRole="image" accessibilityLabel={showTranslation&&t?t.objective:lesson.objectiveJa} style={s.canvas}>{marks.map((m,i)=><View key={i} pointerEvents="none" style={{position:'absolute',left:pct(m.x),top:pct(m.y),width:pct(m.w),height:pct(m.h),backgroundColor:m.fill,borderRadius:m.radius??0,borderWidth:m.stroke?1:0,borderColor:m.stroke,transform:m.rotate?[{rotate:`${m.rotate}deg`}]:undefined} as ViewStyle}/>)}</View>)}
   {caption&&<View style={{gap:8}}><RestaurantReading text={caption.textJa} segments={caption.furigana} terms={lesson.terms}/>{showTranslation&&language!=='ja'&&targetCaption?.sourceHash===caption.sourceHash&&<TranslationText>{targetCaption.text}</TranslationText>}</View>}
   <RestaurantReading text={lesson.objectiveJa} segments={lesson.furigana?.objective} terms={lesson.terms}/>{showTranslation&&t&&<TranslationText>{t.objective}</TranslationText>}
   <RestaurantReading text={labels.ja.note} segments={noteSegments}/>{showTranslation&&language!=='ja'&&<TranslationText>{ui.note}</TranslationText>}

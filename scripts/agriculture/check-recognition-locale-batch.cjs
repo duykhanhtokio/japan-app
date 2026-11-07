@@ -42,6 +42,7 @@ function load(name){
   if(id==='@/data/agriculture/recognition-images.json')return data;
   if(id==='@/data/agriculture/recognition-image-locales.json')return registry;
   if(id==='@/data/agriculture/image-readings.json')return JSON.parse(read('src/data/agriculture/image-readings.json'));
+
   if(id==='./ZoomableFigure')return load('ZoomableFigure');
   if(id==='./AgricultureImageRuby')return load('AgricultureImageRuby');
   if(id==='./CropCalendarFigure')return {};// Not invoked by standalone appearance plates.

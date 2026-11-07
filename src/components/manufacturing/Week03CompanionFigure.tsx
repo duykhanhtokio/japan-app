@@ -64,6 +64,19 @@ const sources:Record<string,ReturnType<typeof require>>={
  get 'assets/manufacturing/daily40/mechanical/day-021.png'(){return require('../../../assets/manufacturing/daily40/mechanical/day-021.png');},
  get 'assets/manufacturing/diagrams/qc-control-plan.png'(){return require('../../../assets/manufacturing/diagrams/qc-control-plan.png');},
  get 'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-fit-clearance-source.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-fit-clearance-source.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week14/technical/companion-self-hold-start-release-selected.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week14/technical/companion-self-hold-start-release-selected.png');},
+ get 'assets/manufacturing/daily40/electrical/electrical-day-040.png'(){return require('../../../assets/manufacturing/daily40/electrical/electrical-day-040.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week13/technical/electrical-day89-fastener-tool-fit.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week13/technical/electrical-day89-fastener-tool-fit.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week12/technical/companion-arc-diameter-over180-selected.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week12/technical/companion-arc-diameter-over180-selected.png');},
+ get 'assets/manufacturing/daily40/electrical/electrical-day-021.png'(){return require('../../../assets/manufacturing/daily40/electrical/electrical-day-021.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week01/electrical-day01-wire-tools.webp'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week01/electrical-day01-wire-tools.webp');},
+ get 'assets/manufacturing/royal-weekly-20261107/week03/electrical-day15-material-roles.webp'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day15-material-roles.webp');},
+ get 'assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.png');},
+ get 'assets/manufacturing/daily40/electrical/electrical-day-022.png'(){return require('../../../assets/manufacturing/daily40/electrical/electrical-day-022.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week10/technical/companion-motor-servo-feedback-selected.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week10/technical/companion-motor-servo-feedback-selected.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week10/technical/companion-scope-channels-bandwidth-sampling.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week10/technical/companion-scope-channels-bandwidth-sampling.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week10/technical/companion-resistance-drop-20ohm.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week10/technical/companion-resistance-drop-20ohm.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-lathe-selected.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-lathe-selected.png');},
 
 };
 const imageParagraphIds=(item:Figure)=>item.paragraphIds??(item.paragraphId?[item.paragraphId]:[]);
@@ -116,7 +129,7 @@ export function Week03CompanionFigure({lesson,paragraphIds,language,showTranslat
 /** Preserve the full legacy supplement figure unless an exact scoped replacement is registered. */
 export function ScopedManufacturingCompanionFigures({lesson,paragraphIds,language,showTranslation}:{lesson:ManufacturingLesson;paragraphIds:string[];language:string;showTranslation:boolean}){
  const registered=Object.prototype.hasOwnProperty.call(data.lessons,lesson.id),full=lesson.paragraphs.map(p=>p.id),fullSelection=full.length===paragraphIds.length&&full.every((id,i)=>id===paragraphIds[i]);
- const row=registration(lesson.id,paragraphIds),scoped=['mfg1-mechanical-completion37-lesson-003','mfg1-mechanical-completion37-lesson-005','mfg1-mechanical-completion37-lesson-007','mfg1-mechanical-completion37-lesson-006','mfg1-surface-completion37-lesson-003','mfg1-surface-completion37-lesson-006','mfg1-surface-completion37-lesson-008'].includes(lesson.id),replaceLegacy=scoped&&(row?!row.retainedExistingFigure:(registered&&!fullSelection));
+ const row=registration(lesson.id,paragraphIds),scoped=['mfg1-mechanical-completion37-lesson-003','mfg1-mechanical-completion37-lesson-005','mfg1-mechanical-completion37-lesson-007','mfg1-mechanical-completion37-lesson-006','mfg1-mechanical-completion37-lesson-008','mfg1-surface-completion37-lesson-003','mfg1-surface-completion37-lesson-006','mfg1-surface-completion37-lesson-008'].includes(lesson.id),replaceLegacy=scoped&&(row?!row.retainedExistingFigure:(registered&&!fullSelection));
  // A scoped full reader must not revive its legacy image after the current Japanese body fails its guard.
  if(scoped&&row&&(row.sourceHash!==lesson.sourceHash||row.captionJa!==lesson.summaryJa||row.paragraphIds.some(id=>{const p=lesson.paragraphs.find(p=>p.id===id);return !p||manufacturingLessonParagraph(lesson,id,'ja',p.textJa)!==row.expectedParagraphsJa[id];})))return null;
  return <>{!replaceLegacy&&<CompletionManufacturingDiagrams lesson={lesson} language={language} showTranslation={showTranslation}/>}<Week03CompanionFigure lesson={lesson} paragraphIds={paragraphIds} language={language} showTranslation={showTranslation}/></>;

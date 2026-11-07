@@ -1,3 +1,6 @@
+import {PestFoundationSupport} from './PestFoundationSupport';
+import {MulchColorSupport} from './MulchColorSupport';
+import {FruitManagementSupport} from './FruitManagementSupport';
 import {Text,View,type StyleProp,type TextStyle} from 'react-native';
 import {AgricultureImageRuby,agricultureImageReading} from './AgricultureImageRuby';
 import {agricultureLesson,agricultureTranslation,type AgricultureLesson,type AgricultureLevel} from '@/data/agriculture';
@@ -32,6 +35,18 @@ export function agricultureDailyCompanions(lesson:AgricultureLesson,level:Agricu
 }
 export function DailyLearningFigure({lesson,level,colors,includeExisting=false,language='ja',showTranslation=false,paragraphIds}:{lesson:AgricultureLesson;level:AgricultureLevel;colors:Colors;includeExisting?:boolean;language?:string;showTranslation?:boolean;paragraphIds?:string[]}){
  if(!lesson.levels.includes(level))return null;
+ if(lesson.id==='agr-pest-foundation'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <PestFoundationSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
+ if(lesson.id==='agr-cover-mulch'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <MulchColorSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
+ if(lesson.id==='agr-fruit-manage-persimmon-pear-peach'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <FruitManagementSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
  const b=bindings[lesson.id],d=diagrams[lesson.id];
  const currentBinding=b?.lessonSourceHash===lesson.sourceHash&&b.scopeLevels.includes(level)?b:null;
  if(level==='2'&&lesson.id==='agr-climate'&&d?.kind==='winter-climate'&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><WinterSpatialReference lesson={lesson} level={level} diagram={d} language={language} showTranslation={showTranslation} colors={colors}/><WinterClimateFigure lesson={lesson} level={level} language={language} showTranslation={showTranslation} translation={showTranslation?agricultureTranslation(lesson,language):null} colors={colors}/></View>;

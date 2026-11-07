@@ -5,7 +5,7 @@ import ImageBackground from '@/components/ui/FocusedImageBackground';
 import * as Speech from '@/services/dialogue-npc-audio';
 import { useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Alert, Animated as NativeAnimated, Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Alert, Animated as NativeAnimated, Image, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { npcPresentationForCategory, sceneForCategory } from '@/components/world/life-assets';
 import { locationBackground } from '@/components/world/location-backgrounds.generated';
@@ -23,7 +23,7 @@ import { recordNpcScenario } from '@/services/npc-progression-storage';
 import { scenarioMission } from '@/components/world/scenario-mission';
 import { displayLocationNameJa } from '@/components/world/world-ja';
 import { getPlayerNativeHint } from '@/components/world/player-answer-guidance';
-import { dialogueCopyLines as copyLines, dialoguePanelLayout, dialogueTextPages, rubyDialogueLineHeight, nativeDialogueLineHeight } from '@/components/world/dialogue-panel-layout';
+import { dialogueCopyLines as copyLines, dialoguePanelLayout, nativeDialogueLineHeight } from '@/components/world/dialogue-panel-layout';
 import { RoyalBackButton, RoyalButton, RoyalHintButton, RoyalNavyFrame, ROYAL, ROYAL_FONT, ROYAL_PLACEMENT, ROYAL_TEXT_FIT, ROYAL_TYPE, useRoyalPositioning } from '@/components/ui/RoyalSurface';
 
 const missingHint:Record<string,string>={ja:'この文のヒントはまだありません。',vi:'Chưa có gợi ý cho câu này.',en:'No hint is available for this line yet.',id:'Petunjuk untuk kalimat ini belum tersedia.','zh-CN':'这句话暂时没有提示。','zh-TW':'這句話暫時沒有提示。',hi:'इस वाक्य के लिए संकेत अभी उपलब्ध नहीं है।',bn:'এই বাক্যের ইঙ্গিত এখনও পাওয়া যায়নি।',ne:'यस वाक्यको सङ्केत अझै उपलब्ध छैन।',my:'ဤစာကြောင်းအတွက် အရိပ်အမြွက် မရရှိသေးပါ။',th:'ยังไม่มีคำใบ้สำหรับประโยคนี้',km:'មិនទាន់មានតម្រុយសម្រាប់ប្រយោគនេះទេ។',tl:'Wala pang pahiwatig para sa linyang ito.'};
@@ -53,7 +53,6 @@ function DialogueScreen({id}:{id?:string}){
  const latestTranscript=useRef('');
  latestTranscript.current=speech.finalTranscript.trim()||speech.transcript.trim();
  const [hintStages,setHintStages]=useState<Record<string,number>>({});
- const [panelPages,setPanelPages]=useState<Record<string,number>>({});
  const [audioRetry,setAudioRetry]=useState(0),[audioError,setAudioError]=useState(false);
  const viewport=useWindowDimensions();
  const stageSize=viewport;
@@ -127,7 +126,7 @@ function DialogueScreen({id}:{id?:string}){
  const npcBoxHeight=stageSize.height*(wide?.82:.72),npcBoxWidth=stageSize.width*(wide?.48:.94);
  const npcDrawHeight=Math.min(npcBoxHeight,npcBoxWidth/npcRatio);
  const npcWaist=stageSize.height-controlsBottom-npcBoxHeight+(npcBoxHeight-npcDrawHeight)/2+npcDrawHeight*npcPresentation.waistY/npcPresentation.height;
- // Keep the NPC/Player pair below the source-image waist. Long copy pages
+ // Keep the NPC/Player pair below the source-image waist. Long copy scrolls
  // inside its fixed lower-screen allocation; hints reuse the same text area.
  const lineHeight=nativeDialogueLineHeight(language);
  function layoutPanels(compact:boolean){
@@ -175,23 +174,14 @@ function DialogueScreen({id}:{id?:string}){
   const fit={fontSize,lineHeight:fontSize*lineHeight};
   const sourceText=isNpc?(hintStage>0&&language!=='ja'?npcTranslation??missingHint[language]:npcText):(hintStage>0?panel.player?.recommendedAnswerJa??'':(panel.player?getPlayerNativeHint(panel.player,language):null)??missingHint[language]);
   const ruby=(isNpc&&!(hintStage>0&&language!=='ja'))?(panel.npc?.textRuby?visibleRuby(panel.npc.textRuby,sourceText.length):undefined):!isNpc&&hintStage>0?panel.player?.recommendedAnswerRuby:undefined;
-  const aligned=hasAlignedRuby(sourceText,ruby);
-  const contentWidth=Math.max(60,panelLayout.placements[slot].width-52);
-  const factor=aligned?Math.max(2.05,rubyDialogueLineHeight(fontSize)):lineHeight;
-  const naturalHeight=Math.max(fontSize*factor,allocatedHeight-40);
-  let pages=dialogueTextPages(sourceText,contentWidth,fontSize,naturalHeight,factor,ruby);
-  if(pages.length>1||panelTranscript){
-   const pagedHeight=Math.max(fontSize*factor,allocatedHeight-62);
-   pages=dialogueTextPages(sourceText,contentWidth,fontSize,pagedHeight,factor,ruby);
-   if(panelTranscript)pages.push(...dialogueTextPages(`「${panelTranscript}」`,contentWidth,fontSize,pagedHeight,lineHeight));
-  }
-  const pageKey=`${panel.id}:${hintStage}`,pageIndex=Math.min(panelPages[pageKey]??0,pages.length-1),page=pages[pageIndex];
   return <View testID={`dialogue-panel-${panel.speaker}`} key={panel.id} style={[s.bubbleWrap,{height:allocatedHeight}]}>
    <RoyalNavyFrame style={s.speakerPlate}><Text onPress={isNpc?()=>Alert.alert('VOICEVOX',Speech.voiceCredits):undefined} accessibilityRole={isNpc?'button':undefined} accessibilityLabel={isNpc?`${npcName} · VOICEVOX`:undefined} numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} style={s.speakerName}>{isNpc?npcName:playerName}</Text></RoyalNavyFrame>
    <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame style={[{flex:1},{paddingVertical:8,paddingHorizontal:22}]}>
-    {page.ruby?<JapaneseRuby testID={isNpc?'npc-japanese-ruby':'player-japanese-ruby'} text={page.text||' '} fontSize={fontSize} segments={page.ruby} color={theme.text} readingColor={theme.reading}/>:<Text testID="dialogue-copy" maxFontSizeMultiplier={1} style={[s.guidance,fit,{color:theme.text}]}>{page.text||' '}</Text>}
+    <ScrollView key={`${panel.id}:${hintStage}`} testID={`dialogue-scroll-${panel.speaker}`} style={{height:Math.max(1,allocatedHeight-40),flexGrow:0}} contentContainerStyle={{paddingBottom:8}} nestedScrollEnabled showsVerticalScrollIndicator bounces={false}>
+    {ruby?<JapaneseRuby testID={isNpc?'npc-japanese-ruby':'player-japanese-ruby'} text={sourceText||' '} fontSize={fontSize} segments={ruby} color={theme.text} readingColor={theme.reading}/>:<Text testID="dialogue-copy" maxFontSizeMultiplier={1} style={[s.guidance,fit,{color:theme.text}]}>{sourceText||' '}</Text>}
     {panelRecognizing&&!panelTranscript&&<Text style={[fit,{color:theme.reading}]}>音声を認識しています…</Text>}
-    {pages.length>1&&<View style={s.copyPages}><Pressable accessibilityRole="button" accessibilityLabel="前のページ" disabled={pageIndex===0} onPress={()=>setPanelPages(previous=>({...previous,[pageKey]:pageIndex-1}))}><Text style={s.copyPageText}>‹</Text></Pressable><Text style={s.copyPageText}>{pageIndex+1}/{pages.length}</Text><Pressable accessibilityRole="button" accessibilityLabel="次のページ" disabled={pageIndex===pages.length-1} onPress={()=>setPanelPages(previous=>({...previous,[pageKey]:pageIndex+1}))}><Text style={s.copyPageText}>›</Text></Pressable></View>}
+    {!!panelTranscript&&<Text style={[s.guidance,fit,{color:theme.text}]}>{`「${panelTranscript}」`}</Text>}
+    </ScrollView>
    </RoyalReadingFrame><RoyalHintButton onPress={()=>nextHint(panel.id,isNpc)} color={isNpc?'gold':'red'} style={s.hintButton}/></View>
   </View>;
  };
@@ -222,7 +212,6 @@ function DialogueScreen({id}:{id?:string}){
 }
 
 const s=StyleSheet.create({
- copyPages:{height:20,flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginTop:2},copyPageText:{fontSize:13,color:'#34516b',paddingHorizontal:10},
  screen:{flex:1},safe:{flex:1},
  header:{zIndex:10,width:'100%',paddingHorizontal:ROYAL_PLACEMENT.headerHorizontal,paddingTop:ROYAL_PLACEMENT.headerTop},headerRow:{flexDirection:'row',alignItems:'center',gap:ROYAL_PLACEMENT.headerGap},headerTitle:{flex:1},
  titleRow:{flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:6},title:{flex:1,color:'#fff',fontFamily:ROYAL_FONT.heading,fontSize:20,},
@@ -234,7 +223,7 @@ const s=StyleSheet.create({
  japanese:{fontFamily:ROYAL_FONT.heading,fontSize:17,lineHeight:21,textAlign:'center'},reading:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:19,marginTop:3,textAlign:'center'},guidance:{fontFamily:ROYAL_FONT.body,fontSize:17,lineHeight:21,textAlign:'center'},
  translation:{fontFamily:ROYAL_FONT.body,fontSize:ROYAL_TYPE.optionSecondary,lineHeight:21,marginTop:3,textAlign:'center'},
  microphoneDock:{position:'absolute',left:10,right:10,zIndex:9,height:48,alignItems:'center',justifyContent:'center'},
- actionRow:{height:44,width:'100%',flexDirection:'row',alignItems:'center',justifyContent:'center',gap:28},hintButton:{position:'absolute',left:8,bottom:-28.5,zIndex:20,width:45,height:57},
+ actionRow:{height:44,width:'100%',flexDirection:'row',alignItems:'center',justifyContent:'center',gap:28},hintButton:{position:'absolute',right:8,bottom:-28.5,zIndex:20,width:45,height:57},
  speechArea:{marginTop:8,alignItems:'center',justifyContent:'center',gap:6,minHeight:44},transcript:{width:'100%',fontSize:16,lineHeight:24,fontFamily:ROYAL_FONT.body,textAlign:'center',textAlignVertical:'center',includeFontPadding:false},speechNotice:{marginTop:4,marginHorizontal:12,color:'#fff3e1',fontFamily:ROYAL_FONT.body,fontSize:12,lineHeight:18,textAlign:'center',},mic:{width:44,height:44,alignItems:'center',justifyContent:'center'},micIcon:{width:28,height:28},
  controls:{position:'absolute',zIndex:8,left:10,right:10,flexDirection:'row',gap:6},controlsWide:{left:'51%',right:'3%'},control:{flex:1,height:66,minHeight:66},controlText:{color:ROYAL.paleGold,fontFamily:ROYAL_FONT.heading,fontSize:18},pressed:{opacity:.86,},disabled:{opacity:.35},emptyScreen:{flex:1,backgroundColor:'transparent'},empty:{color:'#fff',fontFamily:ROYAL_FONT.body,padding:24,fontSize:18},
 });

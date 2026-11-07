@@ -1,4 +1,4 @@
-import {KaigoMockRoyalFigure} from './KaigoMockRoyalFigure';
+import {KaigoMockRoyalFigure,mockFigureCaptionTokens,mockFigurePromptTokens} from './KaigoMockRoyalFigure';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { translationForMockQuestion, translationForMockTitle } from '@/data/kaigo/japanese-mock-translations';
 import {WeeklyKaigo} from './WeeklyKaigo';
@@ -21,7 +21,7 @@ const revision='test-content-v1';
 function Body({children}:{children:React.ReactNode}){return <Text style={s.body}>{children}</Text>;}
 function Ja({children,testID}:{children:React.ReactNode;testID?:string}){return <Text selectable testID={testID} style={s.ja}>{children}</Text>;}
 function Button({title,onPress,disabled=false,selected=false,testID}:{title:string;onPress:()=>void;disabled?:boolean;selected?:boolean;testID?:string}){return <Pressable accessibilityRole="button" accessibilityLabel={title} accessibilityState={{disabled,selected}} disabled={disabled} onPress={onPress} testID={testID} style={({pressed})=>[s.button,selected&&{backgroundColor:'#395477',borderColor:'#e4be71'},disabled&&s.disabled,pressed&&s.pressed]}><Text style={s.buttonText}>{title}</Text></Pressable>;}
-function Ruby({tokens,fallback}:{tokens?:RubyToken[];fallback:string}){return tokens?.length?<View style={s.rubyRow}>{tokens.map((t,i)=>t.text==='\n'?<View key={i} style={{width:'100%'}}/>:<View key={i} style={s.rubyWord}><Text style={s.rubyKana}>{t.readingKana??' '}</Text><Text style={s.rubyText}>{t.text}</Text></View>)}</View>:<Ja>{fallback}</Ja>;}
+function Ruby({tokens,fallback}:{tokens?:RubyToken[];fallback:string}){return tokens?.length&&tokens.map(t=>t.text).join('')===fallback?<View style={s.rubyRow}>{tokens.map((t,i)=>t.text==='\n'?<View key={i} style={{width:'100%'}}/>:<View key={i} style={s.rubyWord}><Text style={s.rubyKana}>{t.readingKana??' '}</Text><Text style={s.rubyText}>{t.text}</Text></View>)}</View>:<Ja>{fallback}</Ja>;}
 function useStored<T>(key:string,initial:T,restore:(raw:string|null)=>T){
  const [value,setValue]=useState(initial),[ready,setReady]=useState(false),[error,setError]=useState(false);const current=useRef(initial),loaded=useRef(false),restoreRef=useRef(restore);restoreRef.current=restore;
  useEffect(()=>{let live=true;void loadKaigoState(key).then(raw=>{if(live){const next=restoreRef.current(raw);current.current=next;setValue(next);loaded.current=true;setReady(true);}}).catch(()=>{if(live)setError(true);});return()=>{live=false;};},[key]);
@@ -153,13 +153,13 @@ function MockExam({ form: originalForm, active }: { form: MockForm; active: bool
           )}
           {review && translationOpen && mockTranslation?.passage && <TranslationText testID="kaigo-mock-passage-translation">{mockTranslation.passage}</TranslationText>}
           {!!q.figureKey && (
-            <KaigoMockRoyalFigure question={q}
+            <KaigoMockRoyalFigure key={q.id} question={q}
               translatedAlt={review && translationOpen ? mockTranslation?.figureDescription : undefined}
               style={s.figure} />
           )}
           {!!q.figureDescriptionJa && (
             <Ruby
-              tokens={q.furigana.figureDescription}
+              tokens={mockFigureCaptionTokens(q)}
               fallback={q.figureDescriptionJa}
             />
           )}
@@ -167,7 +167,7 @@ function MockExam({ form: originalForm, active }: { form: MockForm; active: bool
             <Body>図中の文字は日本語版を準備中です。日本語の説明と合わせて確認してください。</Body>
           )}
           {review && translationOpen && mockTranslation?.figureDescription && <TranslationText testID="kaigo-mock-figure-translation">{mockTranslation.figureDescription}</TranslationText>}
-          <Ruby tokens={q.furigana.prompt} fallback={q.promptJa} />
+          <Ruby tokens={q.figureKey?mockFigurePromptTokens(q):q.furigana.prompt} fallback={q.promptJa} />
           {review && translationOpen && mockTranslation && <TranslationText testID="kaigo-mock-prompt-translation">{mockTranslation.prompt}</TranslationText>}
           {q.optionsJa.map((option, i) => (
             <Pressable

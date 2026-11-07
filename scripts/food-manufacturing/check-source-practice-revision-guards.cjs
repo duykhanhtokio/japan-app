@@ -36,15 +36,19 @@ const groups={
  'food-2-042':['food-source-normal-bands','food-source-cause-bars'],
 };
 const locales=['ja','en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];let contexts=0;
-const render=(lesson,language)=>renderToStaticMarkup(React.createElement(reader.FoodSourcePracticeVisuals,{lesson,language,showTranslation:true,textColor:'#183044',readingColor:'#687078'}));
+// Accepted daily promotion is part of the reader contract, rather than a reason to skip figures.
+const promotedIds=new Set(['food-source-histogram-patterns','food-source-normal-bands']);
+const render=(lesson,language,dailyPlacement)=>renderToStaticMarkup(React.createElement(reader.FoodSourcePracticeVisuals,{lesson,language,showTranslation:true,textColor:'#183044',readingColor:'#687078',dailyPlacement}));
 for(const [lessonId,figures] of Object.entries(groups)){
  const canonical=index.foodManufacturingLessons.find(l=>l.id===lessonId);assert(canonical,lessonId);const originalHash=canonical.sourceHash;
- for(const language of locales){
-  const html=render(canonical,language);for(const id of figures)assert(html.includes('data-testid="'+id+'"'),id+' current positive');
-  const wrongCaller=render({...canonical,sourceHash:'wrong-caller-revision'},language);for(const id of figures)assert(!wrongCaller.includes('data-testid="'+id+'"'),id+' wrong caller rejected');
-  canonical.sourceHash='new-canonical-revision-for-regression';
-  const advanced=render({...canonical},language);for(const id of figures)assert(!advanced.includes('data-testid="'+id+'"'),id+' old figure must reject an advanced canonical lesson revision');
-  canonical.sourceHash=originalHash;contexts+=3;
+ for(const language of locales)for(const id of figures){
+  const daily=promotedIds.has(id),marker='data-testid="'+id+'"';
+  assert(render(canonical,language,daily).includes(marker),id+' current positive at accepted placement');
+  assert(!render(canonical,language,!daily).includes(marker),id+' opposite placement must not duplicate current figure');
+  assert(!render({...canonical,sourceHash:'wrong-caller-revision'},language,daily).includes(marker),id+' wrong caller rejected');
+  try{canonical.sourceHash='new-canonical-revision-for-regression';assert(!render({...canonical},language,daily).includes(marker),id+' old figure must reject advanced canonical revision');}
+  finally{canonical.sourceHash=originalHash;}
+  assert(render(canonical,language,daily).includes(marker),id+' restored revision positive control');contexts+=5;
  }
 }
 if(reader.foodSourcePracticeFigureMatches){
@@ -53,4 +57,4 @@ if(reader.foodSourcePracticeFigureMatches){
  assert(reader.foodSourcePracticeFigureMatches(lesson,fixture));
  for(const bad of [{...fixture,lessonSourceHash:undefined},{...fixture,lessonSourceHash:''},{...fixture,lessonSourceHash:'old'},{...fixture,lessonId:'another-lesson'},{...fixture,paragraphId:'missing'}])assert(!reader.foodSourcePracticeFigureMatches(lesson,bad));
 }
-console.log('PASS six retained direct-paragraph source figures: '+contexts+' actual reader contexts (current/wrong caller/advanced canonical, Japanese+12 selected locales); missing/empty/stale hash, wrong lesson and missing paragraph rejected. Source pixels/locale semantics unchanged; no device or domain acceptance.');
+console.log('PASS six retained direct-paragraph source figures: '+contexts+' actual reader contexts (current/opposite placement/wrong caller/advanced canonical/restored current, Japanese+12 selected locales); missing/empty/stale hash, wrong lesson and missing paragraph rejected. This checker tests metadata/placement only; incoming pixel replacement semantics use the explicit six-pixel primary-review reconciliation; no device or domain acceptance.');

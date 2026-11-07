@@ -1,3 +1,5 @@
+import {foodRoyalNativeLabelHasContext} from '@/data/food-manufacturing/royal-native-context-readings';
+import {FoodRoyalNativeLabel} from './FoodRoyalNativeLabel';
 import native from '@/data/food-manufacturing/royal-week7-native.json';
 import {foodRoyalWeek7NativeFor} from '@/data/food-manufacturing/royal-week7-native';
 import {foodManufacturingLesson,foodManufacturingTranslation,type FoodManufacturingLesson} from '@/data/food-manufacturing';
@@ -7,6 +9,7 @@ import {FoodLessonRuby} from './FoodLessonRuby';
 import {FoodSourcePracticeVisuals} from './FoodSourcePracticeVisuals';
 /** Readings are copied only from aligned, revision-matched original source fields or explicit source terms. */
 function SourceLabel({lesson,text}:{lesson:FoodManufacturingLesson;text:string}){
+ if(foodRoyalNativeLabelHasContext(lesson,text))return <FoodRoyalNativeLabel lesson={lesson} text={text}/>;
  const dictionary=new Map<string,string>();for(const p of lesson.paragraphs){for(const field of ['titleJa','textJa'] as const){for(const token of foodManufacturingLessonRuby(lesson,`paragraphs.${p.id}.${field}`,p[field])??[]){if(token.reading)dictionary.set(token.text,token.reading);}}}for(const term of lesson.terms??[]){if(term.reading)dictionary.set(term.ja,term.reading);}
  for(const source of native.readingSources){const original=foodManufacturingLesson(source.lessonId,source.level as '1'|'2'),p=original?.paragraphs.find(p=>p.id===source.paragraphId);if(original?.sourceHash===source.sourceHash&&p){const token=foodManufacturingLessonRuby(original,`paragraphs.${p.id}.textJa`,p.textJa)?.find(part=>part.text===source.token&&part.reading===source.reading);if(token?.reading)dictionary.set(token.text,token.reading);}}
  const tokens=[...dictionary.keys()].sort((a,b)=>b.length-a.length),parts:{text:string;reading?:string}[]=[];let offset=0;while(offset<text.length){const key=tokens.find(key=>text.startsWith(key,offset));if(key){parts.push({text:key,reading:dictionary.get(key)});offset+=key.length;}else{const c=Array.from(text.slice(offset))[0];parts.push({text:c});offset+=c.length;}}
