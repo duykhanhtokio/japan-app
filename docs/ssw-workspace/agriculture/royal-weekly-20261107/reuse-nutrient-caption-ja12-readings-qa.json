@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "reviewedBaseline": "e3ced45cf8926af8f36acd42af7a097f9b58bba6",
+  "readyPaths": [
+    "src/data/agriculture/daily-reuse-caption-support.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/reuse-nutrient-caption-ja12-readings-qa.json"
+  ],
+  "scope": "Seven actual reused water/nutrient/fertilizer image caption fields; JA+12, exact whole-field offline JP readings; quoted title meanings reviewed. No body/progress/question/asset changes.",
+  "newCaptionFields": 7,
+  "newTargetStrings": 84,
+  "closedCaptionFieldsTotal": 11,
+  "remainingDistinctActualCaptions": 59,
+  "phoneticReview": [
+    "かん水かんすい,施肥せひ,養分ようぶん,元素げんそ,散布機さんぷき,作業機さぎょうき;うね立てうねたて matches existing exact agricultural image reading, not generic tokenizerだて;1号いちごう source training level context.",
+    "All12 quoted title meanings reviewed for irrigation decision/time, materials/nutrient/state fertilizer classification, name/classification match, nutrient deficiency/excess, fertilizer spreading area/tools, form/action,Level1source context. No operating prescription inferred from art."
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseAccepted": false,
+  "tests": {
+    "status": "PASS",
+    "all11SupportedJA12ContextRenders": 208,
+    "allSupportedContexts": 16,
+    "newContexts": 10,
+    "sourceRevisionFullJAFigureFieldRejects": 112,
+    "unknownPlainFallbackCases": 11,
+    "ChineseSameHanTargetPlainCases": 11,
+    "strictActualImportGraphDiagnostics": 0,
+    "limits": "Actual RNW Daily child SSR and narrow ambient type graph, no full Course/device acceptance."
+  }
+}
