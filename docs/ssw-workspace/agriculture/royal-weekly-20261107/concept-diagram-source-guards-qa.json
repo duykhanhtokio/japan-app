@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "unit": "all-five-existing-concept-diagram-source-and-course-guards",
+  "baselineCommit": "9dc6b76e9f3c85416bbc4065f12ee8745bb8d729",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "problem": "ConceptDiagrams previously accepted only lesson ID and optional course level. A changed lesson source revision, missing source binding, or omitted level could still display an old source-specific diagram.",
+  "change": "All five existing diagrams now bind six canonical lesson hashes. Reader forwards the current lesson sourceHash; the actual component rejects stale/missing hashes and missing/unsupported course levels before rendering. Current unchanged diagram prose/panels and allowed lesson/course variants stay visible.",
+  "scope": {
+    "diagrams": 5,
+    "distinctLessons": 6,
+    "currentLessonLevelVariants": 8,
+    "newImages": 0,
+    "changedLessonProse": 0,
+    "changedQuestions": 0,
+    "changedLearnerState": 0
+  },
+  "sourceReview": {
+    "documentId": "AGR-S2",
+    "sha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+    "officialUrl": "https://asat-nca.jp/jp/images/ASAT_CF2_jpn1.pdf",
+    "byteVerified": true,
+    "sourceActualPixelsOpened": true,
+    "method": "Downloaded official primary source; SHA matches canonical source registry. Opened rendered actual relevant pages, compared every unchanged diagram panel with current canonical Japanese lesson paragraphs. Only revision guard metadata/API changed; no blanket hash refresh. Source PDF/page pixels remain private and are not committed.",
+    "units": [
+      {
+        "diagramId": "agr-fig-facility-solution-flow",
+        "sourcePdfPages": [
+          95,
+          96
+        ],
+        "reviewJa": "循環方式のタンクへ戻る流れ、成分・量の安定と病害拡大、かけ流し方式の相対的な病害の少なさと排液処理を現行6段落・比較パネルと照合した。処理方法や安全な排出先は追加しない。"
+      },
+      {
+        "diagramId": "agr-fig-fruit-maturity-indicators",
+        "sourcePdfPages": [
+          113
+        ],
+        "reviewJa": "代表果実と三つの器具を確認。カラーチャート＝着色、屈折糖度計＝糖度、硬度計＝硬さ。現行6段落と三指標・判断パネルを照合し、共通の閾値を作らない。"
+      },
+      {
+        "diagramId": "agr-fig-flower-quality-chain",
+        "sourcePdfPages": [
+          126
+        ],
+        "reviewJa": "品目別に確認する収穫段階、直後の給水と冷却、等級・長さ・包装、出荷から小売店までの低温管理を、handling/coldchain両課と既存4工程に照合。数値・薬剤処方を追加しない。"
+      },
+      {
+        "diagramId": "agr-fig-par11-plant-substance-directions",
+        "sourcePdfPages": [
+          9,
+          10,
+          11
+        ],
+        "reviewJa": "光合成のCO2流入・O2流出、呼吸の逆方向、水と無機養分の根から葉への移動、炭水化物の葉から他部位への移動を元図と現行6段落・4パネルで照合。速度や運搬量を追加しない。"
+      },
+      {
+        "diagramId": "agr-fig-f40-rice-calendar-reading",
+        "sourcePdfPages": [
+          62
+        ],
+        "reviewJa": "早生の掲載例として3月側の播種、4～5月側の田植え、5月側の分げつ、6～7月側の幼穂形成、7月側の穂ばらみ、7～8月側の出穂、9月側の成熟を元図・現行6段落・7パネルで照合。作業と生育、概略の順序と全国共通の日程を区別する。"
+      }
+    ]
+  },
+  "beforeSha256": {
+    "src/components/agriculture/ConceptDiagrams.tsx": "f297b3cab608113593e0eb83486be93a34f06873211362ea9d00d5a4b890fdd4",
+    "src/components/agriculture/AgricultureCourse.tsx": "c2f19968373503a76c744a58c4b3a905afeece1daa4011893a759f3fe309b982",
+    "src/data/agriculture/diagrams.json": "0272e1cbc1d3a751e106b37461d24a0e48cfc5de211c0bd8026d21f74ffa38b5"
+  },
+  "afterSha256": {
+    "src/components/agriculture/ConceptDiagrams.tsx": "fcb148f156fa36ccbbfc3732e4a406be5647f475fae90822e6b6b02b7af6b2e2",
+    "src/components/agriculture/AgricultureCourse.tsx": "40ca8655446b634c5528ca0859e68b0cbeeb945a9926c2052cda4b3dca8d5abc",
+    "src/data/agriculture/diagrams.json": "d23b3e3b6a059e2a3227377cf6e9232b418a8199cb91cdc642ee09de1a0acef4",
+    "scripts/agriculture/check-concept-source-guards.cjs": "3bec2858a5343c0494f126121d49ad24a4b170822c64de137d2e9b552b78ecc4"
+  },
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/agriculture/check-concept-source-guards.cjs",
+    "result": "PASS:5 actual diagrams;8 current lesson/level renders;69 negative fail-closed cases;canonical reader forwards sourceHash.",
+    "renderScope": "Actual production ConceptDiagrams TSX transpiled with Babel and rendered by ReactDOM Server with React Native Web. Only react-native module is mapped to RNW and the JSON alias is resolved to the real current diagrams data. No visual/browser/device acceptance claimed.",
+    "preservedExistingDiagramFields": true,
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "learnerDurationMeasured": false
+  },
+  "wholeWeekComplete": false,
+  "wholeSectorComplete": false,
+  "nextAction": "Coordinator persist and verify this independent runtime guard unit; retain parallel Royal artwork owner and all existing acceptance limits.",
+  "concurrentReconciliation": {
+    "incomingCommit": "9dc6b76e9f3c85416bbc4065f12ee8745bb8d729",
+    "method": "Three-way merge of054 baseline, own one-callsite change and exact incoming Course. Reversing only own sourceHash prop leaves byte-exact incoming file. All incoming12locale descriptions preserved.",
+    "pass": true
+  }
+}
