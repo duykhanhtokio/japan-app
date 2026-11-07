@@ -1,0 +1,1406 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "reviewedBaseline": "00f1d77ab8838b6ad086f9a21c74d8d488084737",
+  "readyPaths": [
+    "src/data/agriculture/image-readings.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/reviewed-remaining-image-fields-readings-qa.json"
+  ],
+  "beforeSha256": {
+    "src/data/agriculture/image-readings.json": "9f0c8948c443946cca81f07fb89e4a813a55c9fd23e5a9f44b215f4a5d8c54e5",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/reviewed-remaining-image-fields-readings-qa.json": null
+  },
+  "scope": "Explicitly reviewed whole Japanese observation/limit and remaining supported title/label fields. Offline authoring only; frozen source-context tokens, no runtime tokenizer/dictionary or foreign-language ruby. Existing fields preserved verbatim; unknown whole fields remain plain.",
+  "targets": [
+    {
+      "id": "agr-recognition-cabbage-v1",
+      "field": "observation",
+      "sourceJapanese": "丸くまとまる中央と、その周りに広がる葉を見比べます。"
+    },
+    {
+      "id": "agr-recognition-chinese-cabbage-v1",
+      "field": "observation",
+      "sourceJapanese": "長い形の中で、白い部分と緑の葉がどのように重なるかを見ます。"
+    },
+    {
+      "id": "agr-recognition-lettuce-v1",
+      "field": "observation",
+      "sourceJapanese": "葉の巻き方と、外側へ広がる葉の縁を見ます。"
+    },
+    {
+      "id": "agr-recognition-spinach-v1",
+      "field": "observation",
+      "sourceJapanese": "一枚ずつの葉と、その葉を支える柄を分けて見ます。"
+    },
+    {
+      "id": "agr-recognition-onion-v1",
+      "field": "observation",
+      "sourceJapanese": "丸い玉、上の細い部分、下の根の位置を見比べます。"
+    },
+    {
+      "id": "agr-recognition-daikon-v1",
+      "field": "observation",
+      "sourceJapanese": "葉の付く側と細くなる先端をたどり、全体の長い形を見ます。"
+    },
+    {
+      "id": "agr-recognition-indica-brown-rice-v1",
+      "field": "observation",
+      "sourceJapanese": "粒の長さと幅の関係を見ます。ジャポニカの例より細長い形を比較します。"
+    },
+    {
+      "id": "agr-recognition-indica-brown-rice-v1",
+      "field": "limit",
+      "sourceJapanese": "形の傾向を比較するための一例です。画像だけで全品種を同定したり、炊飯後の粘り・食味・品質を判断したりはしません。色や表示上の大きさだけでも判定しません。"
+    },
+    {
+      "id": "agr-recognition-japonica-brown-rice-v1",
+      "field": "observation",
+      "sourceJapanese": "粒の長さと幅の関係を見ます。インディカの例より短く丸みのある形を比較します。"
+    },
+    {
+      "id": "agr-recognition-japonica-brown-rice-v1",
+      "field": "limit",
+      "sourceJapanese": "形の傾向を比較するための一例です。画像だけで全品種を同定したり、炊飯後の粘り・食味・品質を判断したりはしません。色や表示上の大きさだけでも判定しません。"
+    },
+    {
+      "id": "agr-recognition-plant-organ-positions-v1",
+      "field": "observation",
+      "sourceJapanese": "まず地表の下の根と上の茎を分けます。次に、主軸先端の頂芽と葉腋の側芽を比べ、葉・花・果実へ伸びる引出線の終点を確かめます。"
+    },
+    {
+      "id": "agr-recognition-plant-organ-positions-v1",
+      "field": "limit",
+      "sourceJapanese": "器官と芽の位置を学ぶ独自の模式図で、特定作物の実物写真ではありません。全作物の葉形・果実の位置・品種を判定する教材ではなく、作業や栽培条件の指示も示しません。"
+    },
+    {
+      "id": "agr-recognition-sowing-patterns-v1",
+      "field": "observation",
+      "sourceJapanese": "種の色や大きさではなく、置かれる位置を比べます。ばらまきは面全体に散らばり、すじまきは一列に並び、点まきは数粒の集まりが間隔を置いて並びます。"
+    },
+    {
+      "id": "agr-recognition-sowing-patterns-v1",
+      "field": "limit",
+      "sourceJapanese": "配置を比較する模式図です。描いた粒数、種の大きさ、間隔、密度、覆土の厚さを指定するものではありません。発芽条件を満たすことや出芽率は示しません。"
+    },
+    {
+      "id": "agr-recognition-soil-handtest-states-v1",
+      "field": "observation",
+      "sourceJapanese": "同じ褐色で描いた三つの例について、土がまとまっているか、まとまりにひびがあるかを見比べます。"
+    },
+    {
+      "id": "agr-recognition-soil-handtest-states-v1",
+      "field": "limit",
+      "sourceJapanese": "掲載図の三状態を比べる模式例です。粒の大きさや形は実測値ではなく、この図だけで全ての土を分類したり、粘土の割合を測ったりはしません。"
+    },
+    {
+      "id": "agr-recognition-nursery-containers-v1",
+      "field": "observation",
+      "sourceJapanese": "左は縁に囲まれた一つの広い内部、中央は一鉢の丸い開口部と側壁、右は仕切られた多数の小区画を見比べます。同じような色でも、容器の分かれ方が違います。"
+    },
+    {
+      "id": "agr-recognition-nursery-containers-v1",
+      "field": "limit",
+      "sourceJapanese": "形を比べるための一例です。色だけで材質を判定しません。寸法・穴数・排水の構造は製品により異なり、この図は播種手順や容器選定の指示ではありません。"
+    },
+    {
+      "id": "agr-recognition-potato-v1",
+      "field": "observation",
+      "sourceJapanese": "丸みのある全体の形と、皮の表面にある目と呼ばれるくぼみを見ます。"
+    },
+    {
+      "id": "agr-recognition-potato-v1",
+      "field": "limit",
+      "sourceJapanese": "一般的な外観を学ぶための一例です。この図だけで品種・品質・食用の適否・病害を判定したり、芽や緑色の部分の処理方法を決めたりはしません。"
+    },
+    {
+      "id": "agr-recognition-sweet-potato-v1",
+      "field": "observation",
+      "sourceJapanese": "長くふくらんだ形と、細くなる両端を見ます。二つの例で、長さや曲がり方、表面のくぼみも比べます。"
+    },
+    {
+      "id": "agr-recognition-sweet-potato-v1",
+      "field": "limit",
+      "sourceJapanese": "見た目を学ぶための一例です。この図だけで全ての同名作物を見分けたり、色から品種・品質・内部の状態を判定したりはしません。"
+    },
+    {
+      "id": "agr-recognition-carrot-v1",
+      "field": "observation",
+      "sourceJapanese": "橙色の細長い部分が、一方で太く、反対側の先端へ向かって細くなる形を見ます。色だけでなく、全体の輪郭も確かめます。"
+    },
+    {
+      "id": "agr-recognition-carrot-v1",
+      "field": "limit",
+      "sourceJapanese": "一般的な外観を描いた一例です。色や形には違いがあるため、この図だけで品種、鮮度、病害の有無や食用の安全性を判定しません。"
+    },
+    {
+      "id": "agr-recognition-tomato-v1",
+      "field": "observation",
+      "sourceJapanese": "丸い果実の輪郭と、上部に付く緑のがくや柄の位置を見ます。"
+    },
+    {
+      "id": "agr-recognition-tomato-v1",
+      "field": "limit",
+      "sourceJapanese": "見た目を学ぶための一例です。この図だけで全てのトマトを見分けたり、品種・熟度・品質・食べられるかどうかを判定したりはしません。"
+    },
+    {
+      "id": "agr-recognition-eggplant-v1",
+      "field": "observation",
+      "sourceJapanese": "ふくらみのある細長い輪郭、表面のつや、へたと柄が付く位置を見比べます。ここでは一つの果実の外観を観察します。"
+    },
+    {
+      "id": "agr-recognition-eggplant-v1",
+      "field": "limit",
+      "sourceJapanese": "ナスの外観を学ぶための一例です。形や色、へたの様子は品種や状態によって異なり、この図だけで全てのナスを識別したり、品種・品質・熟度・病害を判定したりはしません。"
+    },
+    {
+      "id": "agr-recognition-cucumber-v1",
+      "field": "observation",
+      "sourceJapanese": "細長い全体の輪郭、ゆるい曲がり、表面の小さな凹凸や縦の筋を見比べます。"
+    },
+    {
+      "id": "agr-recognition-cucumber-v1",
+      "field": "limit",
+      "sourceJapanese": "見た目を学ぶための一例です。この図だけで全ての品種を見分けたり、品質・病害・熟度を判定したりはしません。"
+    },
+    {
+      "id": "agr-recognition-apple-v1",
+      "field": "observation",
+      "sourceJapanese": "丸みのある全体の形と、上のくぼみ、その中に付く短い柄を見ます。色だけでなく、輪郭と柄の位置も確かめます。"
+    },
+    {
+      "id": "agr-recognition-apple-v1",
+      "field": "limit",
+      "sourceJapanese": "見た目を学ぶための一例です。この図だけで全てのリンゴを見分けたり、色から品種・品質・熟度・食用の適否を判定したりはしません。"
+    },
+    {
+      "id": "agr-recognition-grapes-v1",
+      "field": "observation",
+      "sourceJapanese": "房全体の輪郭と、一粒ずつの形を見ます。粒の間に見える軸をたどり、枝分かれした部分と粒の付き方も確かめます。"
+    },
+    {
+      "id": "agr-recognition-grapes-v1",
+      "field": "limit",
+      "sourceJapanese": "一般的な外観を描いた一例です。粒の色や形には違いがあるため、この図だけで品種、種の有無、熟度、品質や食べられるかどうかを判定しません。"
+    },
+    {
+      "id": "agr-recognition-persimmon-v1",
+      "field": "observation",
+      "sourceJapanese": "橙色の果実の輪郭と、上部に付く広いへたの位置を見ます。色だけでなく、全体の形やへたの付く部分も観察します。"
+    },
+    {
+      "id": "agr-recognition-persimmon-v1",
+      "field": "limit",
+      "sourceJapanese": "一般的な外観を描いた一例です。全てのカキが同じ形や色とは限りません。この図だけで品種や甘渋、熟度、品質、食べられるかどうかは判定しません。"
+    },
+    {
+      "id": "agr-recognition-asian-pear-v1",
+      "field": "observation",
+      "sourceJapanese": "丸くふくらむ果実の輪郭と、上部のくぼみや柄、小さな点がある表面を見ます。"
+    },
+    {
+      "id": "agr-recognition-asian-pear-v1",
+      "field": "limit",
+      "sourceJapanese": "ナシの見た目を学ぶための一例です。この図だけで全てのナシを見分けたり、品種・品質・熟度・食べられるかどうかを判定したりはしません。"
+    },
+    {
+      "id": "agr-recognition-peach-v1",
+      "field": "observation",
+      "sourceJapanese": "丸みのある全体の輪郭、赤みと淡い色の混じり方、表面の細かな毛、縦の溝を見比べます。ここでは一つの果実の外観を観察します。"
+    },
+    {
+      "id": "agr-recognition-peach-v1",
+      "field": "limit",
+      "sourceJapanese": "モモの外観を学ぶための一例です。形や色、毛や溝の見え方は品種や状態によって異なり、この図だけで全てのモモを識別したり、品種・品質・熟度・病害・食用の可否を判定したりはしません。"
+    },
+    {
+      "id": "agr-recognition-chestnut-v1",
+      "field": "observation",
+      "sourceJapanese": "丸みと少し平たい面がある全体の形、先端のとがりと小さな毛のまとまり、下部の広い淡色の部分を見比べます。"
+    },
+    {
+      "id": "agr-recognition-chestnut-v1",
+      "field": "limit",
+      "sourceJapanese": "一般的な外観を学ぶための一例です。この図だけでトチノミなど他の実と確実に区別したり、食用の適否・品種・品質・病害を判定したりはしません。"
+    },
+    {
+      "id": "agr-recognition-kiwi-v1",
+      "field": "observation",
+      "sourceJapanese": "全体の楕円形と、表面や輪郭に見える細かな毛を見ます。端の跡と皮の表面も分けて確かめます。"
+    },
+    {
+      "id": "agr-recognition-kiwi-v1",
+      "field": "limit",
+      "sourceJapanese": "一般的な外観を描いた一例です。この図だけで全ての同名作物を見分けたり、品種・果肉の色・熟度・品質・病害・食用の適否を判定したりはしません。"
+    },
+    {
+      "id": "agr-recognition-blueberry-v1",
+      "field": "observation",
+      "sourceJapanese": "一粒ずつの丸い輪郭と、向きによって見えるくぼみを比べます。色だけに頼らず、果実の形や表面の見え方も観察します。"
+    },
+    {
+      "id": "agr-recognition-blueberry-v1",
+      "field": "limit",
+      "sourceJapanese": "一般的な外観を描いた一例です。色や形には違いがあるため、この図だけで品種、熟度、品質、病害の有無や食べられるかどうかは判定しません。実物の大きさを示す図でもありません。"
+    },
+    {
+      "id": "agr-recognition-unshu-mikan-v1",
+      "field": "observation",
+      "sourceJapanese": "果実全体の丸みとやや平たい輪郭、皮の細かな凹凸、上部の小さなへたを見ます。色だけでなく、輪郭や表面も観察します。"
+    },
+    {
+      "id": "agr-recognition-unshu-mikan-v1",
+      "field": "limit",
+      "sourceJapanese": "一般的な外観の一例です。橙色だけで他のかんきつと区別せず、この図だけで品種や種類、熟度、品質、食べられるかどうかを判定しません。"
+    },
+    {
+      "id": "agr-recognition-yuzu-v1",
+      "field": "observation",
+      "sourceJapanese": "色だけでなく、丸い輪郭、表面の凹凸、上部のくぼみと柄の位置を見ます。"
+    },
+    {
+      "id": "agr-recognition-yuzu-v1",
+      "field": "limit",
+      "sourceJapanese": "ユズの外観を学ぶための一例です。黄色や表面の凹凸だけでかんきつの種類を確定したり、この図だけで全てのユズを見分けたりはしません。品種・品質・熟度・食べられるかどうかも判定しません。"
+    },
+    {
+      "id": "agr-recognition-loquat-v1",
+      "field": "observation",
+      "sourceJapanese": "楕円形からやや洋ナシ形の輪郭、橙黄色の表面、褐色の萼の跡と柄の位置を見比べます。色だけでなく果実全体の形も観察します。"
+    },
+    {
+      "id": "agr-recognition-loquat-v1",
+      "field": "limit",
+      "sourceJapanese": "ビワの外観を学ぶための一例です。形や色、表面の毛や萼の跡の見え方は品種や状態によって異なります。この図や一つの特徴だけで全てのビワを識別したり、品種・品質・熟度・病害・食用の可否を判定したりはしません。"
+    },
+    {
+      "id": "agr-recognition-pvc-cover-film-v1",
+      "field": "observation",
+      "sourceJapanese": "資料で塩化ビニルとして示された例に対応するイラストです。巻いた部分と広げた部分を分け、透明な面、重なった層、縁の形を観察します。"
+    },
+    {
+      "id": "agr-recognition-pvc-cover-film-v1",
+      "field": "limit",
+      "sourceJapanese": "外観を学ぶための例で、透明さや色、巻いた形だけでは塩化ビニルとポリエチレンなどの樹脂を識別できません。この図から厚さ、耐紫外線性、保温性・耐熱性、燃焼性や安全性能を判断せず、燃やすなどの識別試験や使用手順も示しません。"
+    },
+    {
+      "id": "agr-recognition-agripoly-film-v1",
+      "field": "observation",
+      "sourceJapanese": "シート状に広がる形と、折り返された端、しわを見ます。黒い色だけで材質を決めないようにします。"
+    },
+    {
+      "id": "agr-recognition-agripoly-film-v1",
+      "field": "limit",
+      "sourceJapanese": "資料にある黒い外観の例です。農ポリが全て黒いとは限りません。色やこの図だけでは、樹脂の種類がポリエチレンか塩化ビニルか、実際の厚さ、紫外線への強さ、適用温度や保温などの性能は判定できません。"
+    },
+    {
+      "id": "agr-recognition-nonwoven-cover-v1",
+      "field": "observation",
+      "sourceJapanese": "連続したシートの広がり、柔らかく曲がる端やひだ、つやを抑えた表面を見ます。細かな繊維状の模様は、この図での表面の表し方です。"
+    },
+    {
+      "id": "agr-recognition-nonwoven-cover-v1",
+      "field": "limit",
+      "sourceJapanese": "一般的な外観の一例です。白い色や描かれた表面だけで材質を特定しません。この図から繊維の組成、厚さ、通気性、保温性、防虫などの性能を判定できません。"
+    },
+    {
+      "id": "agr-recognition-shade-cloth-v1",
+      "field": "observation",
+      "sourceJapanese": "交差する糸とすき間、曲がった縁や布のたるみを見比べます。色だけでなく、表面のつくりも観察します。"
+    },
+    {
+      "id": "agr-recognition-shade-cloth-v1",
+      "field": "limit",
+      "sourceJapanese": "寒冷紗の外観を学ぶための一例です。全てが同じ色や網目とは限りません。この図だけで資材の種類・材質・網目の寸法・遮光率や、害虫・天候に対する性能を判定しません。"
+    },
+    {
+      "id": "agr-recognition-insect-net-v1",
+      "field": "observation",
+      "sourceJapanese": "糸の交差と網目、折れ曲がりやたるみ、持ち上がった端の形を観察します。色だけでなく網状の構造を見ます。"
+    },
+    {
+      "id": "agr-recognition-insect-net-v1",
+      "field": "limit",
+      "sourceJapanese": "防虫ネットの外観を学ぶための一例です。全ての製品が白いわけではありません。この図から網目の実寸や材質、性能、どの虫を防げるかを判定することはできません。色や網の見え方だけで製品を特定せず、実物の表示や仕様を確認します。"
+    },
+    {
+      "id": "agr-equipment-manual-shoulder-sprayer-v1",
+      "field": "observation",
+      "sourceJapanese": "上部の手押しポンプと一本の肩掛け帯が見え、タンクからホースを通して握り部とノズル管へつながっています。エンジンやモーターは描いていません。手動で圧力を蓄えるという本文と外観を照合するための一般的な例です。"
+    },
+    {
+      "id": "agr-equipment-manual-shoulder-sprayer-v1",
+      "field": "limit",
+      "sourceJapanese": "特定製品の構造・寸法・容量・圧力設定・薬剤適合性・点検手順を示す図ではありません。霧や薬液、実際の散布作業は描いておらず、外観だけで加圧状態や安全性を確認したことにはなりません。二本の背負い帯を備える背負い式や動力式の代表図としては使いません。元資料の写真・配置は入力や複製に使っていません。"
+    },
+    {
+      "id": "agr-recognition-socket-wrench-v1",
+      "field": "observation",
+      "sourceJapanese": "ソケットを取り付けたハンドルと、交換用ソケットの形を見比べます。"
+    },
+    {
+      "id": "agr-recognition-socket-wrench-v1",
+      "field": "limit",
+      "sourceJapanese": "形と部品の組合せを学ぶための例示です。ソケットの規格・寸法・内部形状の厳密さ、全製品の外観、安全な締付け力や作業手順を保証しません。"
+    },
+    {
+      "id": "agr-recognition-open-end-spanner-v1",
+      "field": "observation",
+      "sourceJapanese": "両口スパナの外観例"
+    },
+    {
+      "id": "agr-recognition-open-end-spanner-v1",
+      "field": "limit",
+      "sourceJapanese": "両端の開いた口部と大きさの違いを確かめるための独立した外観例です。 実物の寸法、材質規格、適合するボルトやナットのサイズ、締付け力を示していません。 工具の識別だけで安全な整備手順や使用条件を判断しないでください。"
+    },
+    {
+      "id": "agr-tools33-box-end-wrench-v1",
+      "field": "observation",
+      "sourceJapanese": "両端が閉じた円形の口部になっているメガネレンチの例。"
+    },
+    {
+      "id": "agr-tools33-box-end-wrench-v1",
+      "field": "limit",
+      "sourceJapanese": "形状を学ぶための概念的な新規イラスト。実物の寸法・適合サイズ・締付け力・作業手順を決める根拠にはしない。画像の内側の歯数や輪郭を製品図面として保証しない。"
+    },
+    {
+      "id": "agr-tool-screwdrivers-v1",
+      "field": "observation",
+      "sourceJapanese": "プラスとマイナスのドライバの例"
+    },
+    {
+      "id": "agr-tool-screwdrivers-v1",
+      "field": "limit",
+      "sourceJapanese": "工具の形を学ぶための原図です。資料の小さな写真から先端を断定した復元図ではありません。色は識別基準ではなく、全製品の形状・規格・適合ねじ・締付け力・安全な整備手順を示しません。"
+    },
+    {
+      "id": "agr-recognition-adjustable-wrench-v1",
+      "field": "observation",
+      "sourceJapanese": "口の下の調節ねじと、幅を変えられるあごを見ます。"
+    },
+    {
+      "id": "agr-recognition-adjustable-wrench-v1",
+      "field": "limit",
+      "sourceJapanese": "形を学ぶための一例です。この図だけで適切なサイズ、締付け力や安全な整備手順は決められません。"
+    },
+    {
+      "id": "agr-recognition-hex-keys-v1",
+      "field": "observation",
+      "sourceJapanese": "六角レンチ：L字形の工具例"
+    },
+    {
+      "id": "agr-recognition-hex-keys-v1",
+      "field": "limit",
+      "sourceJapanese": "六角レンチの外観を学ぶための原図です。寸法・規格・材質・強度・締付け力を示すものではありません。画像だけで工具とボルトの適合や安全な作業方法を判断しません。"
+    },
+    {
+      "id": "agr-fig-irrigation-destinations-v1",
+      "field": "observation",
+      "sourceJapanese": "水の矢印の終点を見て、葉の上・株の根元・うねの間を区別します。"
+    },
+    {
+      "id": "agr-fig-irrigation-destinations-v1",
+      "field": "limit",
+      "sourceJapanese": "水量・時刻・施工の方法を指定する図ではありません。"
+    },
+    {
+      "id": "agr-recognition-irrigation-tools-v1",
+      "field": "observation",
+      "sourceJapanese": "はす口の先端、スプリンクラーの散水部、二つのチューブの水の出方を比べます。"
+    },
+    {
+      "id": "agr-recognition-irrigation-tools-v1",
+      "field": "limit",
+      "sourceJapanese": "一般的な外観例です。寸法・接続適合・設置間隔・流量や操作の正しさを保証しません。"
+    },
+    {
+      "id": "agr-fig-soil-aggregate-comparison-v1",
+      "field": "observation",
+      "sourceJapanese": "一つひとつの粒と、粒が集まった団粒を分けて見て、その間のすき間を探します。"
+    },
+    {
+      "id": "agr-fig-soil-aggregate-comparison-v1",
+      "field": "limit",
+      "sourceJapanese": "粒の実寸、気相・液相の割合、測定結果や圃場の診断を示す図ではありません。"
+    },
+    {
+      "id": "agr-f40-general-thinning-comparison",
+      "field": "observation",
+      "sourceJapanese": "苗の高さだけでなく、節間、葉の形や欠け、周囲との間隔を別々に比較します。"
+    },
+    {
+      "id": "agr-f40-general-thinning-comparison",
+      "field": "limit",
+      "sourceJapanese": "独自の模式図で、一つの姿だけによる原因診断、残す株数や作物共通の株間、操作の安全認証ではありません。"
+    },
+    {
+      "id": "agr-f40-general-nursery-forms",
+      "field": "observation",
+      "sourceJapanese": "地面に設けるか、容器を使うか、区画がつながるかを比べます。紙製かどうかは色だけで決めず、材質の説明も確認します。"
+    },
+    {
+      "id": "agr-f40-general-nursery-forms",
+      "field": "limit",
+      "sourceJapanese": "構造と材質を学ぶ独自の模式図です。製品の寸法・穴数・色、育苗容器の選定、作業処方や安全性を認証しません。"
+    },
+    {
+      "id": "agr-f40-general-seeder",
+      "field": "observation",
+      "sourceJapanese": "押し手と種子容器、地面近くへ種を送る部分を見て、手で押して播種する機械の例として対応させます。"
+    },
+    {
+      "id": "agr-f40-general-seeder",
+      "field": "limit",
+      "sourceJapanese": "一般的な外観の一例です。特定製品の部品配置、内部構造、播種深さ・粒数、組立て・操作・安全性を認証しません。"
+    },
+    {
+      "id": "agr-f40-general-tractor-seeder",
+      "field": "observation",
+      "sourceJapanese": "種子容器から複数列の播種部分へ続く外観を、種をまくシーダーの例として見ます。苗のトレイを載せる移植機とは分けて比較します。"
+    },
+    {
+      "id": "agr-f40-general-tractor-seeder",
+      "field": "limit",
+      "sourceJapanese": "一般的な外観です。製品ごとの列数や寸法、種子量・播種深さ、内部機構や取付け・運転の正しさを認証しません。"
+    },
+    {
+      "id": "agr-f40-general-transplanter",
+      "field": "observation",
+      "sourceJapanese": "種子容器ではなく苗があるトレイ、苗を植える側の部分、車輪を見て、苗を田畑へ植える移植機と対応させます。"
+    },
+    {
+      "id": "agr-f40-general-transplanter",
+      "field": "limit",
+      "sourceJapanese": "外観の一例で、特定機種の送り機構・列数・組立て・植付け深さ・運転や安全性を認証しません。"
+    },
+    {
+      "id": "agr-f40-general-hand-planting",
+      "field": "observation",
+      "sourceJapanese": "機械ではなく人の手で苗を扱う場面を見分けます。根鉢を支えている手と、周囲の植えられた苗を見ます。"
+    },
+    {
+      "id": "agr-f40-general-hand-planting",
+      "field": "limit",
+      "sourceJapanese": "手植えの外観を学ぶ一般的な場面です。この画像だけで植穴・深さ・姿勢・株間・根の扱い方や操作の安全性を判断しません。"
+    },
+    {
+      "id": "agr-f40-general-row-plant-spacing",
+      "field": "observation",
+      "sourceJapanese": "株間は同じ条の株同士、条間は条同士という対象を、矢印の終点で確認します。"
+    },
+    {
+      "id": "agr-f40-general-row-plant-spacing",
+      "field": "limit",
+      "sourceJapanese": "配置を比較する独自模式図です。数値・株数・必要な作業間隔は指定しません。"
+    },
+    {
+      "id": "agr-f40-general-graft-connections",
+      "field": "observation",
+      "sourceJapanese": "苗を土へ挿す挿し木ではなく、台木と穂木の接合関係を見ます。呼び接ぎでは接合時に下側が二本あることを比べます。"
+    },
+    {
+      "id": "agr-f40-general-graft-connections",
+      "field": "limit",
+      "sourceJapanese": "接合関係の模式図です。切断方法・形成層の一致・寸法・角度・固定具の選定、実操作や安全性は認証しません。"
+    },
+    {
+      "id": "agr-f40-general-planting-checks",
+      "field": "observation",
+      "sourceJapanese": "根鉢と地表の関係、うねの横方向の位置、苗の傾きを別々に確認します。ポット苗とセル苗の掲載例を混ぜません。"
+    },
+    {
+      "id": "agr-f40-general-planting-checks",
+      "field": "limit",
+      "sourceJapanese": "資料の例を読む独自模式図です。作物別の実作業の深さや寸法を指定せず、手の扱い・作業手順や安全性を認証しません。"
+    },
+    {
+      "id": "agr-f40-general-cropping-example-flow",
+      "field": "observation",
+      "sourceJapanese": "播種点と収穫の期間を分け、秋・冬に播種した行の年またぎを読みます。屋根の記号は施設利用を示し、厳密な設置期間ではありません。"
+    },
+    {
+      "id": "agr-f40-general-cropping-example-flow",
+      "field": "limit",
+      "sourceJapanese": "元資料の例を整理した独自図です。地域・品種共通の作業日程、施設の設置・開閉日、収穫の具体的開始日は指定しません。"
+    },
+    {
+      "id": "agr-f40-general-flower-legend-reader",
+      "field": "observation",
+      "sourceJapanese": "切り花類、鉢もの類、花壇用苗物類、花き類、芝、地被植物、球根類を、元図にある名前と色に対応させます。"
+    },
+    {
+      "id": "agr-f40-general-flower-legend-reader",
+      "field": "limit",
+      "sourceJapanese": "帯の長さは練習用で、統計値・割合・実際の棒の高さではありません。元図の曖昧な注記数値を推定・訂正せず、花き類の名称を別区分へ改名しません。"
+    },
+    {
+      "id": "agr-recognition-spreaders-ridgers-appearance-v1",
+      "field": "title",
+      "sourceJapanese": "散布機とうね立ての作業機"
+    },
+    {
+      "id": "agr-recognition-spreaders-ridgers-appearance-v1",
+      "field": "label:3",
+      "sourceJapanese": "小うね成形機"
+    },
+    {
+      "id": "agr-recognition-spreaders-ridgers-appearance-v1",
+      "field": "label:4",
+      "sourceJapanese": "高うね立て機"
+    },
+    {
+      "id": "agr-recognition-spreaders-ridgers-appearance-v1",
+      "field": "label:5",
+      "sourceJapanese": "機械の外観例。製品ごとの構造と適合は別に確認します。"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "title",
+      "sourceJapanese": "地力を三つの要因から見る"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "observation",
+      "sourceJapanese": "化学性・物理性・生物性と、それぞれの重なりに対応する保肥力、酸化還元、団粒・腐植を照合します。"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "limit",
+      "sourceJapanese": "資料にある三要因の関係を表す模式図です。施用量や現場共通の処方、関係の強さや因果の大きさを示しません。"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "label:0",
+      "sourceJapanese": "資料の重なりにある働きを、関係線で整理する"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "label:1",
+      "sourceJapanese": "化学性：養分補給・pHの改良"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "label:2",
+      "sourceJapanese": "物理性：透水・通気の改善、やわらかさ"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "label:3",
+      "sourceJapanese": "生物性：有機物分解など"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "label:4",
+      "sourceJapanese": "保肥力"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "label:5",
+      "sourceJapanese": "酸化還元"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "label:6",
+      "sourceJapanese": "団粒・腐植"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "label:7",
+      "sourceJapanese": "地力"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "label:8",
+      "sourceJapanese": "三つの要因を合わせて考える"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "label:9",
+      "sourceJapanese": "化学性×物理性：保肥力"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "label:10",
+      "sourceJapanese": "化学性×生物性：酸化還元、物理性×生物性：団粒・腐植"
+    },
+    {
+      "id": "agr-fig-soil-three-factor-relations-v1",
+      "field": "label:11",
+      "sourceJapanese": "関係線は資料の対応を示します。量や因果の強さは示しません。"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "title",
+      "sourceJapanese": "二年四作の二つの例"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "observation",
+      "sourceJapanese": "資料内の関係または年と作物の順序を照合します。"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "label:0",
+      "sourceJapanese": "夏作物と冬作物"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "label:1",
+      "sourceJapanese": "1作目 · 1年目 夏 · ダイズ"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "label:2",
+      "sourceJapanese": "2作目 · 1年目 冬作→翌年 · コムギ"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "label:3",
+      "sourceJapanese": "3作目 · 2年目 夏 · サツマイモ"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "label:4",
+      "sourceJapanese": "4作目 · 2年目 冬作→翌年 · コムギ"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "label:5",
+      "sourceJapanese": "夏作物と秋作物"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "label:6",
+      "sourceJapanese": "1作目 · 1年目 夏 · サツマイモ"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "label:7",
+      "sourceJapanese": "2作目 · 1年目 秋 · ハクサイ"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "label:8",
+      "sourceJapanese": "3作目 · 2年目 夏 · スイカ"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "label:9",
+      "sourceJapanese": "4作目 · 2年目 秋 · ダイコン"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "label:11",
+      "sourceJapanese": "1年目：2・4・6・8・10・12月"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "label:12",
+      "sourceJapanese": "次の年：2・4・6・8・10・12月 → さらに翌年へ"
+    },
+    {
+      "id": "agr-fig-rotation-two-year-examples-v1",
+      "field": "label:13",
+      "sourceJapanese": "12月の後も、時間は次の年へ続きます。"
+    },
+    {
+      "id": "agr-fig-nutrient-entry-routes-v2",
+      "field": "observation",
+      "sourceJapanese": "葉と根の入口、物質名と元素記号を照合します。"
+    },
+    {
+      "id": "agr-fig-nutrient-entry-routes-v2",
+      "field": "limit",
+      "sourceJapanese": "元素名を示す経路図。肥料成分表示P2O5/K2Oとの違い、資料間の総数・分類保留を解除しない。量・速度・実測寸法や具体施肥処方ではない。"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "title",
+      "sourceJapanese": "うねの形と寸法の位置"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "observation",
+      "sourceJapanese": "矢印の始点と終点を確認し、四つの寸法名を位置へ対応させます。"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "limit",
+      "sourceJapanese": "掲載資料の矢印位置に限定した模式図。うね間を普遍的な現場用語として確定せず、現場指示の寸法図も確認する。長さ・高さ・比率は実測値や推奨施工値でない。"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "label:0",
+      "sourceJapanese": "掲載図の矢印位置に対応させた独立模式図"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "label:1",
+      "sourceJapanese": "うね間"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "label:2",
+      "sourceJapanese": "ベッド幅"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "label:3",
+      "sourceJapanese": "うね高"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "label:4",
+      "sourceJapanese": "うね幅"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "label:5",
+      "sourceJapanese": "ベッド幅：平らな上面の幅"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "label:6",
+      "sourceJapanese": "うね幅：一つのうねの底面幅"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "label:7",
+      "sourceJapanese": "うね間：隣り合う中心位置の間隔"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "label:8",
+      "sourceJapanese": "うね高：底面から上面まで"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "label:9",
+      "sourceJapanese": "高うね"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "label:10",
+      "sourceJapanese": "平うね"
+    },
+    {
+      "id": "agr-fig-ridge-dimensions-v1",
+      "field": "label:11",
+      "sourceJapanese": "寸法の長さや高さは実測値・推奨値ではありません。この教材は資料図との対応を示します。現場の寸法名は、作業指示やその現場の寸法図も確認して照合します。"
+    },
+    {
+      "id": "agr-fig-f40-rice-leaf-positions-v1",
+      "field": "observation",
+      "sourceJapanese": "各ラベルから線の先をたどり、展開した葉と中央の細い葉、下部の別ラベルを見ます。"
+    },
+    {
+      "id": "agr-fig-f40-rice-leaf-positions-v1",
+      "field": "limit",
+      "sourceJapanese": "模式的な位置関係の比較で、実物の寸法・育苗日数・葉形の規格や品種の識別を示しません。"
+    },
+    {
+      "id": "agr-fig-f40-rice-grain-structure-v1",
+      "field": "observation",
+      "sourceJapanese": "もみがらを外側へ、胚乳を内側の大きな領域へ、胚を縁側の小さな領域へ対応させます。"
+    },
+    {
+      "id": "agr-fig-f40-rice-grain-structure-v1",
+      "field": "limit",
+      "sourceJapanese": "縮尺・細胞構造・品種差や実物の長さを示さない構造概念図です。"
+    },
+    {
+      "id": "agr-fig-f40-rice-pregermination-v1",
+      "field": "observation",
+      "sourceJapanese": "同じように描いた種もみから芽がどの程度出ているかを見比べます。"
+    },
+    {
+      "id": "agr-fig-f40-rice-pregermination-v1",
+      "field": "limit",
+      "sourceJapanese": "縮尺のない比較で、描いた長さを実物のmmへ変換せず、温度・時間をこの図から決めません。"
+    },
+    {
+      "id": "agr-fig-f40-sowing-spacing-v1",
+      "field": "observation",
+      "sourceJapanese": "種の配り方の三例を比べ、下段では株の位置をたどって株間の矢印を読みます。"
+    },
+    {
+      "id": "agr-fig-f40-sowing-spacing-v1",
+      "field": "limit",
+      "sourceJapanese": "点の数、粒数、間隔、深さを作業設定にせず、種一粒の間隔と成長した株の間隔を同一視しません。"
+    },
+    {
+      "id": "agr-fig-f40-rice-feed-parts-v1",
+      "field": "observation",
+      "sourceJapanese": "実の位置と、穂・茎葉を一緒に使う範囲を別々にたどります。"
+    },
+    {
+      "id": "agr-fig-f40-rice-feed-parts-v1",
+      "field": "limit",
+      "sourceJapanese": "根を含める図ではなく、給餌量・飼料配合・品種の選定・具体的収穫日を示しません。"
+    },
+    {
+      "id": "agr-fig-f40-rice-calendar-comparison-v1",
+      "field": "observation",
+      "sourceJapanese": "生育段階と作業名を別欄で読み、浸種・育苗・基肥・除草・中干し・穂肥・収穫を生育と照合します。"
+    },
+    {
+      "id": "agr-fig-f40-rice-calendar-comparison-v1",
+      "field": "limit",
+      "sourceJapanese": "掲載例の概略比較で、原図の帯幅を再現せず、全国共通の日付・日数・作業設定や未解決の中干し時期表現を確定しません。"
+    },
+    {
+      "id": "agr-fig-f40-rice-soaking-position-v1",
+      "field": "observation",
+      "sourceJapanese": "水面より下にある袋と、水温の情報が関わる水の領域を分けて読みます。"
+    },
+    {
+      "id": "agr-fig-f40-rice-soaking-position-v1",
+      "field": "limit",
+      "sourceJapanese": "温度・期間・積算温度の数値や作業処方を示さず、積算温度の単位の保留は解除しません。"
+    },
+    {
+      "id": "agr-fig-f40-crop-fruits-atlas-v1",
+      "field": "observation",
+      "sourceJapanese": "網目、縞、果形、切断面、表面、穂を別々に見て名称へ対応させます。"
+    },
+    {
+      "id": "agr-fig-f40-crop-herbs-legumes-atlas-v1",
+      "field": "observation",
+      "sourceJapanese": "葉の縮れと三小葉、さやと粒、巻きひげ、若い茎を比べます。"
+    },
+    {
+      "id": "agr-fig-f40-crop-lotus-atlas-v1",
+      "field": "observation",
+      "sourceJapanese": "ハスの葉・花の場面と、収穫した地下茎の状態を分けます。"
+    },
+    {
+      "id": "agr-fig-f40-rice-machines-scenes-v1",
+      "field": "observation",
+      "sourceJapanese": "苗マット、土を混ぜる作業機、刈取り部、固定式乾燥機、種子ホッパーを比較します。"
+    },
+    {
+      "id": "agr-fig-f40-rice-machines-scenes-v1",
+      "field": "limit",
+      "sourceJapanese": "生成した学習用の外見例で、全品種・品質・寸法・実物の同定や病害虫の診断を保証しません。原頁の写真や挿絵は複製していません。実機の全機構、機種や操作、安全手順の習得を示しません。"
+    },
+    {
+      "id": "agr-fig-f40-agri-use-states-atlas-v1",
+      "field": "observation",
+      "sourceJapanese": "原料植物や収穫物と、飲料・加工品・殻の中身を別状態として見ます。"
+    },
+    {
+      "id": "agr-fig-f40-vegetable-seeds-atlas-v1",
+      "field": "observation",
+      "sourceJapanese": "形、扁平さ、表面と色を名前へ対応させ、既習の明暗発芽例を照合します。"
+    },
+    {
+      "id": "agr-fig-f40-processed-seeds-atlas-v1",
+      "field": "observation",
+      "sourceJapanese": "丸い被覆、外皮除去の例、着色の例、テープに保持された種を比較します。"
+    },
+    {
+      "id": "agr-fig-f40-processed-seeds-atlas-v1",
+      "field": "limit",
+      "sourceJapanese": "生成した学習用の外見例で、全品種・品質・寸法・実物の同定や病害虫の診断を保証しません。原頁の写真や挿絵は複製していません。着色だけでは消毒済みか確認できません。外皮除去の細部や未加工対照は概念例で、全商品の形状・大きさを示しません。"
+    },
+    {
+      "id": "agr-fig-f40-field-crop-parts-atlas-v1",
+      "field": "observation",
+      "sourceJapanese": "穂の構造、葉とさや、収穫物の形を比べ、用途だけで識別しません。"
+    },
+    {
+      "id": "agr-fig-f40-rice-pest-symptom-reference-v1",
+      "field": "observation",
+      "sourceJapanese": "葉の状態の枠と昆虫の枠を区別して資料ラベルを読みます。"
+    },
+    {
+      "id": "agr-fig-f40-rice-pest-symptom-reference-v1",
+      "field": "limit",
+      "sourceJapanese": "生成した学習用の外見例で、全品種・品質・寸法・実物の同定や病害虫の診断を保証しません。原頁の写真や挿絵は複製していません。この一枚から原因や種類を確定できません。症状と昆虫という対象の違いを読むための図です。"
+    },
+    {
+      "id": "agr-f40-safety-media-cultivator-source-sequence",
+      "field": "title",
+      "sourceJapanese": "管理機始動前の主クラッチ・耕うんクラッチ切と変速中立を型式指定で読む。"
+    },
+    {
+      "id": "agr-f40-flower-harvest-v1",
+      "field": "observation",
+      "sourceJapanese": "左は色見本、中央は測定部と接眼部をもつ屈折糖度計、右は測定子と計器をもつ硬度計という外観例です。色・糖度・硬さを測る道具を別に見ます。"
+    },
+    {
+      "id": "agr-f40-flower-harvest-v1",
+      "field": "limit",
+      "sourceJapanese": "図の色を収穫適期の判定値にせず、数値や校正・測定操作は示さない。 この図だけで実物の全品種・製品を識別したり、安全な操作や診断を確定したりはしません。"
+    },
+    {
+      "id": "agr-f40-flower-graft-positions-v1",
+      "field": "observation",
+      "sourceJapanese": "主幹・主枝・亜主枝を指示線で読み、赤い接ぎ穂と×で示す元の枝の切る位置を区別します。上は元の枝を切る型、下は残す型という概念比較です。"
+    },
+    {
+      "id": "agr-f40-flower-graft-positions-v1",
+      "field": "limit",
+      "sourceJapanese": "実際の切断位置・適期・穂木選定は指定しない。原頁のレイアウトを複製しない。 この図だけで実物の全品種・製品を識別したり、安全な操作や診断を確定したりはしません。"
+    },
+    {
+      "id": "agr-f40-flower-unshu-v1",
+      "field": "observation",
+      "sourceJapanese": "白い五枚の花弁と黄色い雄しべを、中心部、葉、枝と合わせて観察するウンシュウミカンの花の外観例です。果実の図ではなく花の部位を見ます。"
+    },
+    {
+      "id": "agr-f40-flower-unshu-v1",
+      "field": "limit",
+      "sourceJapanese": "この一例だけでカンキツの種・品種を確定しない。 この図だけで実物の全品種・製品を識別したり、安全な操作や診断を確定したりはしません。"
+    },
+    {
+      "id": "agr-f40-flower-cluster-dip-v1",
+      "field": "observation",
+      "sourceJapanese": "房と果軸、容器、液の位置を読み、房が液の中に入るという掲載動作を概念図で区別します。"
+    },
+    {
+      "id": "agr-f40-flower-cluster-dip-v1",
+      "field": "limit",
+      "sourceJapanese": "薬剤製品、濃度、実施回数、時期、具体的手順は指定しない。保留された処方を画像で解除しない。 この図だけで実物の全品種・製品を識別したり、安全な操作や診断を確定したりはしません。"
+    },
+    {
+      "id": "agr-f40-flower-materials-v1",
+      "field": "observation",
+      "sourceJapanese": "左は樹冠を囲むネット、中央は根の周囲の地面を覆う黒いマルチ、右は樹の下の明るい反射シートです。対象と設置場所を比較します。"
+    },
+    {
+      "id": "agr-f40-flower-materials-v1",
+      "field": "limit",
+      "sourceJapanese": "防鳥網と防虫網の目合いや全製品の識別を保証しない。 この図だけで実物の全品種・製品を識別したり、安全な操作や診断を確定したりはしません。"
+    },
+    {
+      "id": "agr-f40-flower-platform-v1",
+      "field": "observation",
+      "sourceJapanese": "車体、昇降機構、上の作業台が見える高所作業機の外観例です。車体の荷台だけを示す運搬車の図とは分けて見ます。"
+    },
+    {
+      "id": "agr-f40-flower-platform-v1",
+      "field": "limit",
+      "sourceJapanese": "高さ、積載、資格、操作、安全姿勢を図から決定しない。2mの数値を生成画像に任せない。 この図だけで実物の全品種・製品を識別したり、安全な操作や診断を確定したりはしません。"
+    },
+    {
+      "id": "agr-f40-flower-transport-v1",
+      "field": "observation",
+      "sourceJapanese": "左は一本の軌条に沿う農用モノレールの運搬例、右はクローラと荷台をもつ自走運搬車の外観例です。軌条とクローラを見比べます。"
+    },
+    {
+      "id": "agr-f40-flower-transport-v1",
+      "field": "limit",
+      "sourceJapanese": "乗用可否、積載、安全斜度、操縦方法は指定しない。 この図だけで実物の全品種・製品を識別したり、安全な操作や診断を確定したりはしません。"
+    },
+    {
+      "id": "agr-f40-flower-tools-v1",
+      "field": "observation",
+      "sourceJapanese": "左上はせん定ばさみと果樹用のこぎり、右上は開口と携帯用ベルトのある収穫袋です。左下は前後各二本の足をもつ脚立、右下は前側二本と独立した後ろ一本の足をもつ三脚の外観例です。"
+    },
+    {
+      "id": "agr-f40-flower-tools-v1",
+      "field": "limit",
+      "sourceJapanese": "刃物の操作・切断可能径・脚立の設置安全や乗り方は説明しない。 この図だけで実物の全品種・製品を識別したり、安全な操作や診断を確定したりはしません。"
+    },
+    {
+      "id": "agr-f40-flower-soil-profiles-v1",
+      "field": "observation",
+      "sourceJapanese": "裸地の清耕法、草と有機物層を伴う草生法、有機物が腐植化するマルチを、表面と土層・団粒の関係で比較する模式図です。"
+    },
+    {
+      "id": "agr-f40-flower-soil-profiles-v1",
+      "field": "limit",
+      "sourceJapanese": "原頁の構図・配置を複製しない。図の多中少を実測値にしない。 この図だけで実物の全品種・製品を識別したり、安全な操作や診断を確定したりはしません。"
+    },
+    {
+      "id": "agr-f40-facility-single-house-roof-profiles",
+      "field": "observation",
+      "sourceJapanese": "輪郭と位置の概念を対応させる。実製品の寸法、材質、組立て、強度は示さない。"
+    },
+    {
+      "id": "agr-f40-facility-single-house-roof-profiles",
+      "field": "limit",
+      "sourceJapanese": "教育用の一般模式図。実機の性能・安全・施工適合は認定しない。"
+    },
+    {
+      "id": "agr-f40-facility-connected-house-eave-height",
+      "field": "observation",
+      "sourceJapanese": "輪郭と位置の概念を対応させる。実製品の寸法、材質、組立て、強度は示さない。"
+    },
+    {
+      "id": "agr-f40-facility-connected-house-eave-height",
+      "field": "limit",
+      "sourceJapanese": "教育用の一般模式図。実機の性能・安全・施工適合は認定しない。"
+    },
+    {
+      "id": "agr-f40-ventilation-label-positions",
+      "field": "observation",
+      "sourceJapanese": "窓の位置と制御盤を、別々の対象として指します。"
+    },
+    {
+      "id": "agr-f40-seedling-measurement-leaves",
+      "field": "observation",
+      "sourceJapanese": "地表からの高さ、節と節の間、本葉と子葉を分けます。"
+    },
+    {
+      "id": "agr-f40-seedling-condition-comparison",
+      "field": "observation",
+      "sourceJapanese": "老化苗の子葉は小形という資料の特徴を確認する。硬さの表示や診断基準にはしない。"
+    },
+    {
+      "id": "agr-f40-hydroponic-media-types",
+      "field": "observation",
+      "sourceJapanese": "模式図です。製品の構造や液量、循環経路は指定しません。"
+    },
+    {
+      "id": "agr-f40-hydroponic-system-positions",
+      "field": "observation",
+      "sourceJapanese": "液をためる所、液を送る部分、作物を育てる場所と培地を指します。"
+    },
+    {
+      "id": "agr-f40-graft-stem-section-labels",
+      "field": "observation",
+      "sourceJapanese": "形成層は師部と木部の間。実物で見える厚さを示す図ではありません。"
+    },
+    {
+      "id": "agr-f40-fruit-tree-form-profiles",
+      "field": "observation",
+      "sourceJapanese": "樹形の基本概念です。剪定箇所や樹種別の施工手順は指定しません。"
+    },
+    {
+      "id": "agr-f40-fruit-mainstem-scaffold-labels",
+      "field": "observation",
+      "sourceJapanese": "樹形ごとに、名前を指す位置へ対応させます。"
+    },
+    {
+      "id": "agr-f40-t-budding-concept-stages",
+      "field": "observation",
+      "sourceJapanese": "概念的な段階図。刃物の操作寸法や安全な作業手順は別に確認します。"
+    },
+    {
+      "id": "agr-f40-graft-planting-union-position",
+      "field": "observation",
+      "sourceJapanese": "根を土へ入れることと、接合部を埋めることを分けます。"
+    },
+    {
+      "id": "agr-f40-propagation-method-concepts",
+      "field": "observation",
+      "sourceJapanese": "切り離す時期、枝と土の位置、ミズゴケと被覆の位置を区別します。"
+    },
+    {
+      "id": "agr-f40-branch-graft-type-profiles",
+      "field": "observation",
+      "sourceJapanese": "独立した概念図です。切断角度や作業寸法は表していません。"
+    },
+    {
+      "id": "agr-f40-graft-source-example-dimensions",
+      "field": "observation",
+      "sourceJapanese": "1号・2号の掲載例です。樹種や条件を問わず使う一律の寸法ではありません。"
+    },
+    {
+      "id": "agr-f40-pruning-branch-position-glossary",
+      "field": "observation",
+      "sourceJapanese": "緑色の枝を示します。心枝は切らないという資料の区別も確認します。"
+    },
+    {
+      "id": "agr-f40-tomato-temperature-source-comparison",
+      "field": "observation",
+      "sourceJapanese": "表現の違いを残して比較します。共通の温度処方へ一本化しません。"
+    },
+    {
+      "id": "agr-f40-cover-lifetime-source-comparison",
+      "field": "observation",
+      "sourceJapanese": "掲載年数の比較表です。全製品の交換時期や耐用年数を保証しません。"
+    },
+    {
+      "id": "agr-f40-pf-source-range-comparison",
+      "field": "observation",
+      "sourceJapanese": "資料ごとの範囲と、>3.0・≥3.0の違いを残します。水分が多いほどpFは低く、土質により水分百分率とpFの関係が変わります。"
+    },
+    {
+      "id": "agr-f40-temperature-instrument-source-examples",
+      "field": "observation",
+      "sourceJapanese": "形と表示方法の模式図。目盛の実寸や製品の校正・使用手順は示しません。"
+    },
+    {
+      "id": "agr-f40-soil-moisture-instrument-forms",
+      "field": "observation",
+      "sourceJapanese": "手持ち本体・ケーブル・二本棒のプローブと、土へ入る管・地上の圧力読取部を見比べます。"
+    },
+    {
+      "id": "agr-f40-soil-moisture-instrument-forms",
+      "field": "limit",
+      "sourceJapanese": "独自の一般的な外観例で、実製品の写真や全機種の形の保証ではありません。空白表示は測定値、挿入深さ、校正方法、操作手順、灌水設定を示しません。"
+    },
+    {
+      "id": "agr-f40-fruit-lifecycle-source-regions",
+      "field": "observation",
+      "sourceJapanese": "資料の模式的な一生図です。全樹種の結実年齢や収量を予測する曲線ではありません。"
+    },
+    {
+      "id": "agr-f40-fruit-nursery-species-leaf-examples",
+      "field": "observation",
+      "sourceJapanese": "左は常緑果樹の例、中央と右は落葉果樹の例です。葉のある姿から常緑と判断しません。"
+    },
+    {
+      "id": "agr-f40-fruit-branch-age-source-types",
+      "field": "observation",
+      "sourceJapanese": "2号PDF100の段階と記号を読む模式図です。本文の一般説明との違いを上書きしません。"
+    },
+    {
+      "id": "agr-f40-fruit-pruning-cut-position-examples",
+      "field": "observation",
+      "sourceJapanese": "資料の位置の比較です。樹種を問わない切断角度・長さ・安全作業手順は示しません。"
+    },
+    {
+      "id": "agr-f40-fruit-pollination-tool-appearance-examples",
+      "field": "observation",
+      "sourceJapanese": "原資料の外形の違いを読む図です。内部構造・吐出量・製品の操作法は表しません。"
+    },
+    {
+      "id": "agr-f40-peach-grape-bag-appearance",
+      "field": "observation",
+      "sourceJapanese": "資料原資料の画像の外形・色の分かれ方を模式化しました。すべての商品を同じ形としません。"
+    },
+    {
+      "id": "agr-f40-peach-bagging-source-stages",
+      "field": "observation",
+      "sourceJapanese": "袋の中央・枝の反対側・枝の元を区別します。折り曲げ角度や締める力は指定しません。"
+    },
+    {
+      "id": "agr-f40-grape-bagging-source-stages",
+      "field": "observation",
+      "sourceJapanese": "房の中央・止金のない側・果軸を区別します。葉柄や枝を果軸と取り違えません。"
+    },
+    {
+      "id": "agr-f40-graft-cambium-contact-corrected-v2",
+      "field": "observation",
+      "sourceJapanese": "緑色の輪が形成層です。樹皮の外縁だけをそろえる説明へ置き換えません。"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-crops",
+      "field": "observation",
+      "sourceJapanese": "左上トマト、右上高設ベンチのイチゴ、左下キュウリ、右下ピーマン。果実・葉・支持された栽培姿を対応させる。"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-flowers-a",
+      "field": "observation",
+      "sourceJapanese": "左キク、中央バラ、右ユリ。花の形だけでなく葉と茎、施設内の栽培姿を見比べる。"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-flowers-b",
+      "field": "observation",
+      "sourceJapanese": "左はトルコギキョウ、右は一本の茎から複数の花がつくスプレーカーネーション。広い葉と細い葉、花の形を対応させる。"
+    },
+    {
+      "id": "agr-f40-facility-support-rain-shelter-roof-only",
+      "field": "observation",
+      "sourceJapanese": "屋根部分だけをフィルムで覆い、側面が開いている位置を見分ける。"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-heater-co2",
+      "field": "observation",
+      "sourceJapanese": "左は温風暖房装置の例で煙突と温風ダクトが見える。右は炭酸ガス発生装置の箱形の外観例。用途と掲載名を照合する。"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-heater-co2",
+      "field": "limit",
+      "sourceJapanese": "掲載装置の外観例。全製品の外形区分ではなく、燃料・接続・排気・設置・二酸化炭素濃度・安全性能は決めない。"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-auto-sprayer",
+      "field": "observation",
+      "sourceJapanese": "上部のレール上を動く台車と、ホース・噴口が下がった外観の一例を対応させる。"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-insect-light-appearance",
+      "field": "observation",
+      "sourceJapanese": "温室内に吊られた長い管状装置を掲載名と対応させる。黄色灯・青色灯という本文の二つの名を区別する。"
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-insect-light-appearance",
+      "field": "limit",
+      "sourceJapanese": "管状装置の掲載外観。発光色・波長・効果・設置位置・電気接続は外形だけで決めない。"
+    },
+    {
+      "id": "agr-f40-facility-support-tomato-blossom-end-appearance",
+      "field": "observation",
+      "sourceJapanese": "へたの反対側である果実の尻に、黒褐色でへこんだ乾いた部分がある例。隣の無傷の尻と比べ、部位を記録する。"
+    },
+    {
+      "id": "agr-f40-facility-support-tomato-blossom-end-appearance",
+      "field": "limit",
+      "sourceJapanese": "掲載症状の外観を学ぶ一例。この図だけでは原因を診断せず、肥料量・農薬・処置を決めない。"
+    },
+    {
+      "id": "agr-f40-facility-support-nursery-place-container-types",
+      "field": "observation",
+      "sourceJapanese": "左上は地面の苗床、右上は箱の共通床土、左下は個別のポット、右下は穴に区切られたセルトレイ。"
+    },
+    {
+      "id": "agr-f40-facility-support-paper-pot-connected-cells",
+      "field": "observation",
+      "sourceJapanese": "上から見た模式図で、つながった紙の小さな筒を硬いプラスチックのセルと区別する。"
+    },
+    {
+      "id": "agr-fig-f40-facility-soil-graft-equipment-appearance-v1",
+      "field": "observation",
+      "sourceJapanese": "資料の名称と形、段階の変化、観察する向きを照合します。"
+    },
+    {
+      "id": "agr-fig-f40-facility-soil-graft-equipment-appearance-v1",
+      "field": "limit",
+      "sourceJapanese": "原資料の一般的な外観例・段階の模式図。原写真の代用による実物同定、製品の適合、刃物操作の承認、実測縮尺、資材量、全樹種共通の寸法・時期は示さない。"
+    },
+    {
+      "id": "agr-fig-f40-facility-soil-graft-preparation-and-view-sequence-v1",
+      "field": "observation",
+      "sourceJapanese": "資料の名称と形、段階の変化、観察する向きを照合します。"
+    },
+    {
+      "id": "agr-fig-f40-facility-soil-graft-preparation-and-view-sequence-v1",
+      "field": "limit",
+      "sourceJapanese": "原資料の一般的な外観例・段階の模式図。原写真の代用による実物同定、製品の適合、刃物操作の承認、実測縮尺、資材量、全樹種共通の寸法・時期は示さない。"
+    },
+    {
+      "id": "agr-f40-facility-support-carnation-greenhouse-level1",
+      "field": "observation",
+      "sourceJapanese": "細い葉、花弁の縁、一本の茎から分かれた複数の花を見比べる。"
+    },
+    {
+      "id": "agr-f40-facility-support-carnation-greenhouse-level1",
+      "field": "limit",
+      "sourceJapanese": "外観の一例。品種や全てのカーネーションの形態、栽培方式・品質・処理を保証しない。"
+    },
+    {
+      "id": "agr-v9-nursery-crop-groups",
+      "field": "observation",
+      "sourceJapanese": "作物のグループと掲載例を対応させます。野菜は果菜類・葉菜類に分け、イネ・果樹・花きは野菜の下位区分へ入れません。"
+    },
+    {
+      "id": "agr-v9-nursery-crop-groups",
+      "field": "limit",
+      "sourceJapanese": "掲載例を整理する独自の模式図です。全作物・全品種で育苗が必要という指示でも、幼苗の外観だけから作物や品種を判定する図でもありません。"
+    },
+    {
+      "id": "agr-royal-fruit-thinning-stages-v1",
+      "field": "observation",
+      "sourceJapanese": "予備摘果は生理落果が終わるまでの段階、仕上げ摘果はその後の段階として比較します。残す果実の個数や葉の枚数を、この図から処方しません。"
+    },
+    {
+      "id": "agr-royal-fruit-thinning-stages-v1",
+      "field": "limit",
+      "sourceJapanese": "順序と対象を学ぶ独自の例です。作業日・残す個数・葉果比・品種別の基準、切る位置や薬剤の使用条件を示しません。"
+    }
+  ],
+  "authoring": {
+    "runtimeHeuristics": false,
+    "newFields": 256,
+    "figures": 131,
+    "kanaOnlyFieldsNotAdded": true,
+    "reviewedCompoundExamples": {
+      "刈払機": "かりばらいき",
+      "育苗箱": "いくびょうばこ",
+      "節間": "せっかん",
+      "粉状": "ふんじょう",
+      "温風": "おんぷう",
+      "自走式": "じそうしき",
+      "徒長苗": "とちょうなえ",
+      "老化苗": "ろうかなえ"
+    },
+    "primaryReadingEvidence": "Current private AGR-S1/S2 source prose for seedling terms; no source PDF/pixels committed.",
+    "excludedForFurtherContextReview": [
+      {
+        "id": "agr-f40-pf-source-range-comparison",
+        "field": "limit",
+        "reason": "閾値 source reading still unreviewed"
+      },
+      {
+        "id": "agr-fig-f40-crop-leaves-atlas-v1",
+        "field": "observation",
+        "reason": "切れ込み葉 compound source reading still unreviewed"
+      },
+      {
+        "id": "agr-fig-rotation-two-year-examples-v1",
+        "field": "label:10",
+        "reason": "月軸 coined field reading still unreviewed"
+      },
+      {
+        "id": "agr-fig-rotation-two-year-examples-v1",
+        "field": "label:14",
+        "reason": "収穫月 compound context reading still unreviewed"
+      },
+      {
+        "id": "agr-fig-rotation-two-year-examples-v1",
+        "field": "limit",
+        "reason": "月軸 coined field reading still unreviewed"
+      }
+    ],
+    "sourcePreferredReadingProof": {
+      "flowerLegend": "Private AGR-S2 PDF7, direct aligned ruby pixels over 花壇用苗物類 = かだんようなえぶつるい; exact full field only, no runtime stem substitution.",
+      "pruning": "Private AGR-S2 printed105 direct ruby 心枝しんえだ 太枝ふとえだ 細枝ほそえだ",
+      "lighting": "Private AGR-S1 printed63 and AGR-S2 corresponding facility section source ruby 黄色灯おうしょくとう 青色灯せいしょくとう",
+      "riceCalendar": "Private source rice-calendar 基肥もとごえ / 穂肥ほごえ, figure-scoped only"
+    }
+  },
+  "preserved": {
+    "previousRecords": 168,
+    "previousFields": 449,
+    "canonicalJapaneseAndRevisions": true,
+    "imagesAndLocales": true,
+    "quizPromptsAnswersMasksAndNeutralAlt": true
+  },
+  "limits": {
+    "completeReadingFieldsetsClaimed": false,
+    "remainingFiveWholeFieldsAndNativeFieldsOpen": true,
+    "unknownFieldsRemainCanonicalPlain": true,
+    "deviceBrowserDomainAcceptance": false
+  },
+  "validation": {
+    "testedSourceSha": "0c1fa43f0fa51797fd2fe05ea0d2bc0dfa305b34",
+    "wholeJapaneseFields": 256,
+    "activeSourceCourseContexts": 540,
+    "actualRubyRenders": 7020,
+    "staleSourceImageRevisionTextAndTokenRejects": 5400,
+    "unchangedKanaOnlyTitlesPlainFallbacks": 25,
+    "ChineseSameHanPlainTextChecks": 4,
+    "JapanesePrimaryReadingPreserved": true,
+    "quizHooked": false,
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules AGRI_FRESH_SHA=0c1fa43f0fa51797fd2fe05ea0d2bc0dfa305b34 node /workspace/scratch/b72f4a7f6a62/safety-audit/check-remaining-reading-recursive.cjs"
+  },
+  "currentRecognitionFieldLedger": {
+    "sourceSha": "00f1d77ab8838b6ad086f9a21c74d8d488084737",
+    "images": 189,
+    "readingRecords": 189,
+    "storedFields": 705,
+    "missingHanFields": [
+      {
+        "id": "agr-fig-rotation-two-year-examples-v1",
+        "field": "limit",
+        "sourceJapanese": "資料にある関係・順序と月軸を表す。現場共通の作業日程、施用量、期間の比例、原因の強さは示さない。"
+      },
+      {
+        "id": "agr-fig-rotation-two-year-examples-v1",
+        "field": "label:10",
+        "sourceJapanese": "月軸の読み方"
+      },
+      {
+        "id": "agr-fig-rotation-two-year-examples-v1",
+        "field": "label:14",
+        "sourceJapanese": "これは資料の二つの作付け例の順序を示す教材です。地域共通の播種・収穫月や、栽培期間の長さを指定しません。箱の大きさは期間を表しません。"
+      },
+      {
+        "id": "agr-fig-f40-crop-leaves-atlas-v1",
+        "field": "observation",
+        "sourceJapanese": "細長い葉、長い根、切れ込み葉、毛のある球茎、鱗片の球、花蕾を見ます。"
+      },
+      {
+        "id": "agr-f40-pf-source-range-comparison",
+        "field": "limit",
+        "sourceJapanese": "原資料の記載を比較する教材で、共通の灌水閾値や作物の状態を確定する根拠ではありません。全作物・全土壌の水量、比例した時間、設定値を推定しません。"
+      }
+    ],
+    "kanaOnlyFieldsNeedNoRuby": 38,
+    "nativeProviderFieldsNotIncluded": true
+  }
+}
