@@ -7,11 +7,11 @@ const illustrations=json('src/data/agriculture/exam-illustrations.json'),lessonD
 const data=json('src/data/agriculture/recognition-images.json'),registry=json('src/data/agriculture/recognition-image-locales.json'),support=json('src/data/agriculture/daily-learning-support.json');
 const lessons=new Map(json('src/data/agriculture/lessons.ja.json').lessons.map(l=>[l.id,l]));
 const selected=data.images.filter(f=>['agr-f40-branch-graft-type-profiles','agr-f40-graft-source-example-dimensions','agr-f40-safety-media-tractor-source-conditions'].includes(f.id));assert.equal(selected.length,3);
-const assets=new Map();for(const f of selected){const bytes=fs.readFileSync(path.join(root,f.assetPath));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),f.assetSha256);if(f.assetPath.endsWith('.png')){assert.equal(bytes.readUInt32BE(16),f.width);assert.equal(bytes.readUInt32BE(20),f.height);}else{assert.equal(bytes.subarray(12,16).toString(),'VP8 ');assert.equal(bytes.readUInt16LE(26)&0x3fff,f.width);assert.equal(bytes.readUInt16LE(28)&0x3fff,f.height);}assets.set(path.basename(f.assetPath),{uri:'data:'+(f.assetPath.endsWith('.png')?'image/png':'image/webp')+';base64,'+bytes.toString('base64')});}
+const assets=new Map();for(const f of selected){const bytes=fs.readFileSync(fs.existsSync(path.join(root,f.assetPath))?path.join(root,f.assetPath):path.join(process.env.AGR_ASSET_CACHE||root,f.assetPath));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),f.assetSha256);if(f.assetPath.endsWith('.png')){assert.equal(bytes.readUInt32BE(16),f.width);assert.equal(bytes.readUInt32BE(20),f.height);}else{assert.equal(bytes.subarray(12,16).toString(),'VP8 ');assert.equal(bytes.readUInt16LE(26)&0x3fff,f.width);assert.equal(bytes.readUInt16LE(28)&0x3fff,f.height);}assets.set(path.basename(f.assetPath),{uri:'data:'+(f.assetPath.endsWith('.png')?'image/png':'image/webp')+';base64,'+bytes.toString('base64')});}
 const cache=new Map();
 function load(name){
  if(cache.has(name))return cache.get(name).exports;
- const filename=path.join(root,'src/components/agriculture',name+'.tsx');
+ const filename=path.join(root,'src/components/agriculture',name+(fs.existsSync(path.join(root,'src/components/agriculture',name+'.tsx'))?'.tsx':'.ts'));
  const code=transformSync(fs.readFileSync(filename,'utf8'),{filename,babelrc:false,configFile:false,plugins:[['@babel/plugin-transform-typescript',{isTSX:true,allExtensions:true}],['@babel/plugin-transform-react-jsx',{runtime:'automatic'}],'@babel/plugin-transform-modules-commonjs']}).code;
  const m=new Module(filename,module);m.filename=filename;m.paths=Module._nodeModulePaths(path.dirname(filename));cache.set(name,m);const original=m.require.bind(m);
  m.require=id=>{
@@ -20,6 +20,7 @@ function load(name){
   if(id==='@/data/agriculture/recognition-image-locales.json')return registry;
   if(id==='@/data/agriculture/image-readings.json')return JSON.parse(read('src/data/agriculture/image-readings.json'));
   if(id==='./AgricultureImageRuby')return load('AgricultureImageRuby');
+  if(id==='./FigureSourceMarks')return load('FigureSourceMarks');
   if(id==='@/data/agriculture/daily-learning-support.json')return support;
   if(id==='@/data/agriculture/exam-illustrations.json')return illustrations;
   if(id==='@/data/agriculture/lessons.ja.json')return lessonData;

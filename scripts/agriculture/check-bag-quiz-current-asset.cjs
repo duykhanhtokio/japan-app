@@ -6,13 +6,13 @@ const root=path.resolve(__dirname,'../..'),read=p=>fs.readFileSync(path.join(roo
 const illustrations=json('src/data/agriculture/exam-illustrations.json'),lessonData=json('src/data/agriculture/lessons.ja.json');
 const data=json('src/data/agriculture/recognition-images.json'),registry=json('src/data/agriculture/recognition-image-locales.json'),support=json('src/data/agriculture/daily-learning-support.json');
 const lessons=new Map(json('src/data/agriculture/lessons.ja.json').lessons.map(l=>[l.id,l]));
-const f=data.images.find(f=>f.id==='agr-f40-peach-grape-bag-appearance'),bytes=fs.readFileSync(path.join(root,f.assetPath));
+const f=data.images.find(f=>f.id==='agr-f40-peach-grape-bag-appearance'),bytes=fs.readFileSync(fs.existsSync(path.join(root,f.assetPath))?path.join(root,f.assetPath):path.join(process.env.AGR_ASSET_CACHE||root,f.assetPath));
 assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),f.assetSha256);assert.equal(bytes.subarray(8,12).toString(),'WEBP');
 
 const asset={uri:'data:image/webp;base64,'+bytes.toString('base64')},cache=new Map();
 function load(name){
  if(cache.has(name))return cache.get(name).exports;
- const filename=path.join(root,'src/components/agriculture',name+'.tsx');
+ const filename=path.join(root,'src/components/agriculture',name+(fs.existsSync(path.join(root,'src/components/agriculture',name+'.tsx'))?'.tsx':'.ts'));
  const code=transformSync(fs.readFileSync(filename,'utf8'),{filename,babelrc:false,configFile:false,plugins:[['@babel/plugin-transform-typescript',{isTSX:true,allExtensions:true}],['@babel/plugin-transform-react-jsx',{runtime:'automatic'}],'@babel/plugin-transform-modules-commonjs']}).code;
  const m=new Module(filename,module);m.filename=filename;m.paths=Module._nodeModulePaths(path.dirname(filename));cache.set(name,m);const original=m.require.bind(m);
  m.require=id=>{
@@ -21,6 +21,7 @@ function load(name){
   if(id==='@/data/agriculture/recognition-image-locales.json')return registry;
   if(id==='@/data/agriculture/image-readings.json')return JSON.parse(read('src/data/agriculture/image-readings.json'));
   if(id==='./AgricultureImageRuby')return load('AgricultureImageRuby');
+  if(id==='./FigureSourceMarks')return load('FigureSourceMarks');
   if(id==='@/data/agriculture/daily-learning-support.json')return support;
   if(id==='@/data/agriculture/exam-illustrations.json')return illustrations;
   if(id==='@/data/agriculture/lessons.ja.json')return lessonData;

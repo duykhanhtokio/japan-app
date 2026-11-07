@@ -175,7 +175,7 @@ const assets:Record<string,ImageSourcePropType>={
  "agr-f40-temperature-instrument-source-examples":require('../../../assets/agriculture/completion-40/facility/temperature-instrument-source-examples.png'),
  "agr-f40-soil-moisture-instrument-forms":require('../../../assets/agriculture/royal-weekly-20261107/soil-moisture-instrument-forms-royal-v1.webp'),
  "agr-f40-fruit-lifecycle-source-regions":require('../../../assets/agriculture/completion-40/facility/fruit-lifecycle-source-regions.png'),
- "agr-f40-fruit-nursery-species-leaf-examples":require('../../../assets/agriculture/completion-40/facility/fruit-nursery-species-leaf-examples.png'),
+ "agr-f40-fruit-nursery-species-leaf-examples":require('../../../assets/agriculture/royal-weekly-20261107/agri-restaurant-more12/fruit-nursery-leaf-specimens-royal-v2.webp'),
  "agr-f40-fruit-branch-age-source-types":require('../../../assets/agriculture/completion-40/facility/fruit-branch-age-source-types.png'),
  "agr-f40-fruit-pruning-cut-position-examples":require('../../../assets/agriculture/completion-40/facility/fruit-pruning-cut-position-examples.png'),
  "agr-f40-fruit-pollination-tool-appearance-examples":require('../../../assets/agriculture/royal-weekly-20261107/week20/pollination-tools-appearance-royal-v1.webp'),
