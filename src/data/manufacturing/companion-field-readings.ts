@@ -4,8 +4,8 @@ import data from './companion-field-readings.json';
 export type CompanionReadingPart={text:string;reading?:string};
 type Reading={sourceJapanese:string;parts:CompanionReadingPart[]};
 type Image={assetFile:string;width:number;height:number;readings:string[]};
-type Binding={sourceHash:string;fields:Record<string,string>;images:Record<string,Image[]>};
-const registry=data as {schemaVersion:number;revision:string;studyOnly:boolean;readings:Record<string,Reading>;lessons:Record<string,Binding>};
+type Binding={sourceHash:string;fields:Record<string,string>;images:Record<string,Image[]>;headings?:Record<string,{assetFile:string;width:number;height:number;captionId:string;reading:string}[]>};
+const registry=data as {schemaVersion:number;revision:string;studyOnly:boolean;readings:Record<string,Reading>;headingSourceCaptions?:Record<string,string>;lessons:Record<string,Binding>};
 function canonicalLesson(lesson:ManufacturingLesson):ManufacturingLesson|undefined{
  if(lesson.id.includes('-source-guide-'))return require('./source-guides.json').guides.find((l:ManufacturingLesson)=>l.id===lesson.id);
  const pool=lesson.id.includes('-completion37-')?(lesson.specialty==='mechanical'?require('./completion37/mechanical.json'):lesson.specialty==='electrical'?require('./completion37/electrical.json'):lesson.specialty==='surface'?require('./completion37/surface.json'):null):(lesson.specialty==='mechanical'?require('./mechanical.json'):lesson.specialty==='electrical'?require('./electrical.json'):lesson.specialty==='surface'?require('./surface.json'):null);
@@ -33,5 +33,14 @@ export function manufacturingCompanionCaptionReading(lesson:ManufacturingLesson,
   if(entry.assetFile!==item.assetFile||entry.width!==item.width||entry.height!==item.height)continue;
   const rows=entry.readings.map(checked);if(!rows.length||rows.some(row=>!row)||rows.map(row=>row!.sourceJapanese).join('\n\n')!==item.captionJa)continue;
   return rows.flatMap((row,i)=>i?[{text:'\n'},{text:'\n'},...row!.parts]:row!.parts);
+ }
+}
+
+/** Image headings reuse whole current source titles only, with the selected caption and full asset tuple. */
+export function manufacturingCompanionHeadingReading(lesson:ManufacturingLesson,item:SupplementalDiagram,text:string):CompanionReadingPart[]|undefined{
+ const binding=current(lesson);if(!binding||item.lessonId!==lesson.id||item.lessonSourceHash!==lesson.sourceHash)return;
+ for(const entry of binding.headings?.[item.id]??[]){
+  if(entry.assetFile!==item.assetFile||entry.width!==item.width||entry.height!==item.height||registry.headingSourceCaptions?.[entry.captionId]!==item.captionJa)continue;
+  const row=checked(entry.reading);if(row?.sourceJapanese===text)return row.parts;
  }
 }

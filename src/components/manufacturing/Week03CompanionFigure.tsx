@@ -1,5 +1,5 @@
 import {ManufacturingIllustrationText as Text} from './ManufacturingIllustrationText';
-import {ManufacturingCompanionText} from './ManufacturingCompanionText';
+import {ManufacturingCompanionText,ManufacturingCompanionHeadingText} from './ManufacturingCompanionText';
 import {manufacturingCompanionCaptionReading} from '@/data/manufacturing/companion-field-readings';
 import {CompletionManufacturingDiagrams} from './CompletionManufacturingDiagrams';
 import {View} from 'react-native';
@@ -122,7 +122,7 @@ export function Week03CompanionFigure({lesson,paragraphIds,language,showTranslat
    const title=label&&(caption??captionJa).includes(label)?label:caption?targets.map(p=>p!.title).join(' / '):selected.map(p=>p!.titleJa).join(' / ');
    const diagram={id:'week03-companion-'+lesson.id+'-'+item.id,lessonId:lesson.id,lessonSourceHash:lesson.sourceHash,assetFile:item.assetFile,width:item.width,height:item.height,captionJa,scopeLimits:['source_bound_teaching_concept_only']};
    return <View key={item.id} style={{gap:8}}>
-    <Text readingLanguage={language} style={{fontSize:18,lineHeight:30,fontWeight:'700',color:colors.text}}>{title}</Text>
+    <ManufacturingCompanionHeadingText lesson={lesson} item={diagram} text={title} enabled={!caption||selectedLanguage==='ja'} style={{fontSize:18,lineHeight:30,fontWeight:'700',color:colors.text}}/>
     <SupplementalFigure item={diagram} japaneseCaptionRuby={manufacturingCompanionCaptionReading(lesson,diagram)??null} imageSource={source} imageAlt={caption??captionJa} language={language} showTranslation={showTranslation} translatedCaption={caption}/>
    </View>;
   })}
