@@ -3,6 +3,8 @@ import type {FoodManufacturingLesson} from './index';
 export type FoodRoyalWeeklyImage={lessonId:string;sourceHash:string;captionParagraphId:string;source:ImageSourcePropType;width:number;height:number};
 /** Lesson-specific Royal illustrations; preserve shared historical diagram families. */
 export const foodRoyalWeeklyImages:FoodRoyalWeeklyImage[]=[
+ {lessonId:'food-2-005',sourceHash:'8527017c47e4a63b0785ae58628bd9cffa1dd41e209dedbebcf8f5a17e3c98b5',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/learner-teachback.webp'),width:1536,height:1024},
+ {lessonId:'food-2-006',sourceHash:'26fe762e8d5ae674f6f90fc8f85a54e78abd870c30f7d2028b44cf018f6b4bc7',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/supportive-private-listening.webp'),width:1536,height:1024},
  {lessonId:'food-1-004',sourceHash:'6911628f4a2d61b097b0f80bf1e32061bc485ac2b5813ab7cef692949a4aa2a8',captionParagraphId:'p2',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/allergen-utensil-separation.webp'),width:1536,height:1024},
  {lessonId:'food-1-005',sourceHash:'298acfaa70a42605cf77973fb655a3e1cae8c1114a4ab3590310330e0e161d11',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/chemical-required-rinse.webp'),width:1536,height:1024},
  {lessonId:'food-1-006',sourceHash:'5d2fd13ee866967e7835db2fa5b5a8e0601319f031f8d94eda10d24a071c0a7e',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/invisible-microbiological-risk.webp'),width:1536,height:1024},
