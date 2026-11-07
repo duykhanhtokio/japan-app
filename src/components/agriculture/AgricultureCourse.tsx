@@ -1,3 +1,4 @@
+import {AgricultureOrgansInlineRuby,inlineOrgansCurrent} from './AgricultureOrgansInlineRuby';
 import {GrassCutterMechanismFigure} from './GrassCutterMechanismFigure';
 import {FlowerAppearanceFigure} from './FlowerAppearanceFigure';
 import {FruitTreeComparison} from './FruitTreeComparison';
@@ -36,12 +37,13 @@ function RiceProcess({lesson,level,language,showTranslation}:{lesson:Agriculture
 function OrgansDiagram({lesson,level,language='ja',showTranslation=false}:{lesson:AgricultureLesson;level:AgricultureLevel;language?:string;showTranslation?:boolean}) {
  const binding=inlineDiagramBindings.organs;
  if(lesson.id!==binding.lessonId||lesson.sourceHash!==binding.lessonSourceHash||!binding.levels.includes(level))return null;
+ if(!inlineOrgansCurrent(lesson,level))return null;
  const original={alt:"栄養器官は葉・茎・根、生殖器官は花・果実です。",rows:[["栄養器官","葉 · 茎 · 根"],["生殖器官","花 · 果実"]]};
  const ja=organClassificationLabels(lesson.id,lesson.sourceHash,lesson.revision,level,'ja',original);
  if(!ja)return null;
  const t=showTranslation&&language!=='ja'?organClassificationLabels(lesson.id,lesson.sourceHash,lesson.revision,level,language,original):null;
  return <View testID="agri-organ-classification" style={s.diagram} accessibilityLabel={t?.alt||original.alt}>
- {original.rows.map(([title,items],i)=><View key={title} style={[s.stage,{backgroundColor:title==='栄養器官'?'#d6e6ba':'#f1cfbb',minWidth:130}]}><Text style={{color:'#302c26',fontSize:17,fontWeight:'700'}}>{title}</Text><Text style={{color:'#302c26',fontSize:17,lineHeight:30}}>{items}</Text>{!!t&&<><Text testID={`agri-organ-classification-title-${i}`} style={{color:'#302c26',fontSize:17,fontWeight:'700'}}>{t.rows[i][0]}</Text><Text testID={`agri-organ-classification-items-${i}`} style={{color:'#302c26',fontSize:17,lineHeight:30}}>{t.rows[i][1]}</Text></>}</View>)}
+ {original.rows.map(([title,items],i)=><View key={title} style={[s.stage,{backgroundColor:title==='栄養器官'?'#d6e6ba':'#f1cfbb',minWidth:130}]}><AgricultureOrgansInlineRuby lesson={lesson} level={level} language="ja" field={`row:${i}:0`} text={title} style={{color:'#302c26',fontSize:17,fontWeight:'700'}} color="#302c26"/><AgricultureOrgansInlineRuby lesson={lesson} level={level} language="ja" field={`row:${i}:1`} text={items} style={{color:'#302c26',fontSize:17,lineHeight:30}} color="#302c26"/>{!!t&&<><Text testID={`agri-organ-classification-title-${i}`} style={{color:'#302c26',fontSize:17,fontWeight:'700'}}>{t.rows[i][0]}</Text><Text testID={`agri-organ-classification-items-${i}`} style={{color:'#302c26',fontSize:17,lineHeight:30}}>{t.rows[i][1]}</Text></>}</View>)}
  </View>;
 }
 function SowingDiagram({lesson,level}:{lesson:AgricultureLesson;level:AgricultureLevel}) {
