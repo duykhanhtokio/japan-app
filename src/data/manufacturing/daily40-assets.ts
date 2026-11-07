@@ -1,6 +1,8 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week14/electrical-day95-motor-transformer-cutaway.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week14/electrical-day95-motor-transformer-cutaway.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week14/technical/electrical-day94-contactor-thermal-cutaway.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week14/technical/electrical-day94-contactor-thermal-cutaway.png");
   case "assets/manufacturing/royal-weekly-20261107/week04/mechanical-day26-dimension-surface-checks.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week04/mechanical-day26-dimension-surface-checks.webp");
   case "assets/manufacturing/royal-weekly-20261107/week04/mechanical-day27-process-outcomes.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week04/mechanical-day27-process-outcomes.webp");
   case "assets/manufacturing/royal-weekly-20261107/week04/mechanical-day28-roughness-indices.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week04/mechanical-day28-roughness-indices.png");

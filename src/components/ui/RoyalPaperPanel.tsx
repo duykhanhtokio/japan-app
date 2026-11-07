@@ -19,7 +19,7 @@ export function royalOpenStrokeGeometry(width:number,height:number) {
  return {left:36*scale,right:36*scale,top:38*scale,bottom:22*scale,radius:140*scale};
 }
 /** Nine raster slices: corners keep their proportions while straight edges extend. */
-export default function RoyalPaperPanel({children,style,tone='paper',borderOnly=false,testID}:PropsWithChildren<{style?:StyleProp<ViewStyle>;tone?:'paper'|'hud';borderOnly?:boolean;immediateBorder?:boolean;testID?:string}>) {
+export default function RoyalPaperPanel({children,style,testID,tone='paper',borderOnly=false}:PropsWithChildren<{style?:StyleProp<ViewStyle>;testID?:string;tone?:'paper'|'hud';borderOnly?:boolean;immediateBorder?:boolean}>) {
  const hud=tone==='hud';
  // Every border uses pre-cropped slices on its first render. Home retains its
  // approved 36px corners; no measured full-source artwork or secondary fill.

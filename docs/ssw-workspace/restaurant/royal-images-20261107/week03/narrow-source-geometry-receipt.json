@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "9552b624716ebc5d346eae24cba11c80e08e7e59",
+  "beforeBlobSha": {
+    "src/components/restaurant/RestaurantWeek03TechnicalFigures.tsx": "d6a8a02f0568896af173f2f769eea465885ecf18"
+  },
+  "scope": "Bound existing Week03 source technical temperatureplot andfishcrop illustrations to actualallocated width.",
+  "changes": [
+    "Replace180pxminimumusablecropwidth withpositiveavailableinnerwidth.",
+    "For narrow temperatureplots, scaleeveryline-pointx andtemperaturebandwidth withcontrolledplotwidth; reserveaxisgutter andkeepcalloutx aligned. No clipping-onlyfix.",
+    "Atallocatedwidth264pxandabove, existingtemperaturecoordinates/band/axispositions identical; fishwidegeometry unchanged."
+  ],
+  "verification": {
+    "actualComponentAdaptedSSR": 390,
+    "kinds": 3,
+    "locales": 13,
+    "toggles": 2,
+    "widths": [
+      160,
+      220,
+      264,
+      320,
+      960
+    ],
+    "oldOverflowCases": 104,
+    "newOverflowCases": 0,
+    "wide264GeometryExact": true,
+    "vertical10And60CPositionsAndNumbersUnchanged": true,
+    "JapaneseAnd12TargetsExact": true,
+    "scopedStrictTypeScript": true
+  },
+  "preserved": "Sourceguards, sourcefacts,labels/readings, crops,artwork/assetidentity and learnerstate unchanged. Onlyexistingcoordinates/usablewidth adapttoallocation.",
+  "acceptance": {
+    "physicalDevice": false,
+    "native": false,
+    "domain": false,
+    "wholeSourceKnowledge": false
+  },
+  "limits": "ActualcomponentwithReactNative adapters andscopedtypecheck; no actualbrowser/deviceor measuredtime/safetyboundarycertification."
+}

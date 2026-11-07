@@ -5,7 +5,7 @@
   "remoteContinuation": "continuation/tokutei-20261107-27bcf35a",
   "integrationTarget": "recovery/jlpt-n3-n1",
   "pendingPrimaryIntegration": true,
-  "lastVerifiedCheckpoint": "a7d72b62b1f8adce05c9019b2a86d148ecadbc77",
+  "lastVerifiedCheckpoint": "f2ff47cdb10d88c2bc84cd763b5aa88df668f7f3",
   "execution": {
     "exclusiveSectorOwners": 6,
     "rootSerializesGitWrites": true,
@@ -26,8 +26,8 @@
       "japaneseReadingRoute": "26 current source records/114 fields annotated; daily reuse adds exact source-caption readings plus target-bound reuse captions, with native branches and current lesson guards preserved.",
       "activeGlobalCensus": {
         "actualActiveFigures": 188,
-        "outerMetadataLocalesStillMissing": 83,
-        "rowsMissingExpectedReadingFields": 162,
+        "outerMetadataLocalesStillMissing": 69,
+        "rowsMissingExpectedReadingFields": 161,
         "plainTextDailyReuseRows": 52,
         "unresolvedDailyAssets": 0,
         "validExamRoutes": 81,
@@ -36,8 +36,9 @@
         "dailyRowsMissingTargetReuseCaptionLocales": 56
       },
       "nozzleReuseSourceCorrection": "S1p35/S2p47 insecticide nozzle wording, current target-bound JA/12 locales/readings; no canonical lesson wording changed.",
-      "currentCoherentOuterLocaleRecords": 105,
-      "currentReadingRecords": 41
+      "currentCoherentOuterLocaleRecords": 119,
+      "currentReadingRecords": 43,
+      "dependentQuizBindingRepair": "agr-2-m09-q38 new Royal bag SHA only; source/left-peach features reviewed; question/answer/reasons/revision/three masks unchanged."
     },
     "manufacturing": {
       "mainQueueSnapshot": "c8fbb9b2066955b188259611f4fbae89b192341b",
@@ -63,7 +64,10 @@
       "newNativeRecordsRequiringReadingDelta": 73,
       "nativeReadingCensusBasis": "Prior165-reader actual census; incoming73 new rows require separate reading delta. 806 fields and186 unique bindings are not current238-reader totals.",
       "nativeHeadingPayloadPath": "src/data/manufacturing/native-heading-readings.json",
-      "primaryCaptionArrayPreservedWithContextualPhoneticCorrections": 4
+      "primaryCaptionArrayPreservedWithContextualPhoneticCorrections": 4,
+      "ownFieldReaderHelperPath": "src/components/manufacturing/ManufacturingSourceFieldText.tsx",
+      "primaryApprovedNativeFields": 84,
+      "primaryUnreviewedNativeEntriesKeptPlain": 1606
     },
     "restaurant": {
       "mainQueueSnapshot": "c8fbb9b2066955b188259611f4fbae89b192341b",
@@ -154,5 +158,12 @@
     "agricultureEightExistingValueRefsStillValid": true,
     "restaurantUpdatedRefsSourceCheckedAndOrdinaryContractPassed": true
   },
-  "freshPrimarySnapshot": "9a5dd8321f8ce35f0d14725016b7d789d6fc180e"
+  "freshPrimarySnapshot": "1ce8c2d330bd890b456b8d2fe92fb23ce17f3a59",
+  "pullRequest": "https://github.com/duykhanhtokio/japan-app/pull/7",
+  "sharedProgressPolicy": "Primary shared progress.json remains byte-identical to the incoming primary snapshot. This exclusive index records continuation work and actual remaining scope.",
+  "sharedPaperPanel": "Incoming parameter order preserved; rendering body/testID forwarding are exactly identical.",
+  "validationGateRegression": {
+    "persistenceTests": 7,
+    "failures": 0
+  }
 }

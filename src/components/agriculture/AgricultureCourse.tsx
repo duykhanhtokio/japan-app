@@ -1,3 +1,4 @@
+import {GrassCutterMechanismFigure} from './GrassCutterMechanismFigure';
 import {FlowerAppearanceFigure} from './FlowerAppearanceFigure';
 import {FruitTreeComparison} from './FruitTreeComparison';
 import {RiceProcessFigure} from './RiceProcessFigure';
@@ -91,6 +92,7 @@ function Reader({lesson,language,onBack,onComplete,saving,saveError,level}:{leve
  <FlowerAppearanceFigure lesson={lesson} level={level} translation={t} showTranslation={show} language={language} colors={colors}/>
  <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} colors={colors} level={level} language={language} showTranslation={show}/>
  <MoistureReaderChecks lessonId={lesson.id} level={level} language={language} showTranslation={show} Button={Button}/>
+ <GrassCutterMechanismFigure lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={show} colors={colors}/>
  <DailyLearningFigure lesson={lesson} level={level} colors={colors} language={language} showTranslation={show}/>
  <DailyCompanionReadings lesson={lesson} level={level} language={language} showTranslation={show} colors={colors}/>
  <Text style={[s.heading,{color:colors.text}]}>用語</Text>{lesson.terms.map(term=><Text key={term.ja} style={[s.body,{color:colors.text}]}>{term.ja}（{term.reading}）</Text>)}

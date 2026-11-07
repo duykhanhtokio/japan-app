@@ -1,3 +1,11 @@
+import {sprayerPartLessonMatches} from './SprayerPartSupport';
+import {GrainPurposeComparison} from './GrainPurposeComparison';
+import {SafetyLabelChecklist} from './SafetyLabelChecklist';
+import {OrchardSoilMachineObjectives} from './OrchardSoilMachineObjectives';
+import {PesticideLabelFields} from './PesticideLabelFields';
+import {PesticideFormulationComparison} from './PesticideFormulationComparison';
+import {CoolingCuringComparison} from './CoolingCuringComparison';
+
 import {PestFoundationSupport} from './PestFoundationSupport';
 import {MulchColorSupport} from './MulchColorSupport';
 import {FruitManagementSupport} from './FruitManagementSupport';
@@ -6,7 +14,7 @@ import {AgricultureImageRuby,agricultureImageReading} from './AgricultureImageRu
 import {agricultureLesson,agricultureTranslation,type AgricultureLesson,type AgricultureLevel} from '@/data/agriculture';
 import support from '@/data/agriculture/daily-learning-support.json';
 import figures from '@/data/agriculture/recognition-images.json';
-import {getAgricultureFigureAsset,recognitionImageTranslation} from './RecognitionImages';
+import {RecognitionImages,getAgricultureFigureAsset,recognitionImageTranslation} from './RecognitionImages';
 import {ZoomableFigure} from './ZoomableFigure';
 import {DailyInstructionDiagram,type DailyDiagramKind} from './DailyInstructionDiagram';
 import {Statistics2019Figure} from './Statistics2019Figure';
@@ -47,6 +55,31 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
   if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
   return <FruitManagementSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  }
+ if(lesson.id==='agr-par12-riceveg-grain-purpose'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <GrainPurposeComparison lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
+ if(lesson.id==='agr-safety-label-fields-2'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <SafetyLabelChecklist lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
+ if(lesson.id==='agr-f40-flower-add-orchard-base'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <OrchardSoilMachineObjectives lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
+ if(lesson.id==='agr-s30-label-detail'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <PesticideLabelFields lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
+ if(lesson.id==='agr-pesticide-formulation-reading-2'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <PesticideFormulationComparison lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
+ if(lesson.id==='agr-management-detail-cooling-curing'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <CoolingCuringComparison lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
+
  const b=bindings[lesson.id],d=diagrams[lesson.id];
  const currentBinding=b?.lessonSourceHash===lesson.sourceHash&&b.scopeLevels.includes(level)?b:null;
  if(level==='2'&&lesson.id==='agr-climate'&&d?.kind==='winter-climate'&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><WinterSpatialReference lesson={lesson} level={level} diagram={d} language={language} showTranslation={showTranslation} colors={colors}/><WinterClimateFigure lesson={lesson} level={level} language={language} showTranslation={showTranslation} translation={showTranslation?agricultureTranslation(lesson,language):null} colors={colors}/></View>;
@@ -61,6 +94,12 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
   return <NativeProcessDiagram lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  }
  if(d&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><DailyInstructionDiagram kind={d.kind as DailyDiagramKind} title={d.titleJa} caption={d.captionJa} alt={d.altJa} colors={colors}/></View>;
+ if(includeExisting&&lesson.id==='agr-safety-spray-check'){
+  const currentSource=agricultureLesson(lesson.id,level);
+  if(!currentSource||!sprayerPartLessonMatches(currentSource,level)||!sprayerPartLessonMatches(lesson,level))return null;
+  if(paragraphIds&&!paragraphIds.includes('agr-safety-spray-check-p1'))return null;
+  return <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
  const f=currentBinding?figures.images.find(f=>f.id===currentBinding.figureId&&f.assetSha256===currentBinding.assetSha256):includeExisting?figures.images.find(f=>f.lessonIds.includes(lesson.id)&&f.lessonSourceHashes[lesson.id as keyof typeof f.lessonSourceHashes]===lesson.sourceHash&&f.scopeLevels.includes(level)):null;
  if(f?.id==='agr-f40-general-cropping-example-flow')return <CropCalendarFigure lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
 

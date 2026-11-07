@@ -1,3 +1,4 @@
+import {SprayerPartSupport} from './SprayerPartSupport';
 import {AgricultureImageRuby,AgricultureImageHeading} from './AgricultureImageRuby';
 import localeData from '@/data/agriculture/recognition-image-locales.json';
 import {FlowerLegendFigure} from './FlowerLegendFigure';
@@ -57,7 +58,7 @@ const assets:Record<string,ImageSourcePropType>={
  "pest-cabbage-caterpillar":require('../../../assets/agriculture/recognition/pest-cabbage-caterpillar-v1.webp'),
  "pest-whitefly-tomato":require('../../../assets/agriculture/recognition/pest-whitefly-tomato-v1.webp'),
  "pest-sweetpotato-weevil":require('../../../assets/agriculture/recognition/pest-sweetpotato-weevil-v1.webp'),
- "pest-pepper-bug":require('../../../assets/agriculture/recognition/pest-pepper-bug-v1.webp'),
+ "pest-pepper-bug":require('../../../assets/agriculture/royal-weekly-20261107/pests/pepper-bug-source-stage-royal-v2.webp'),
  "equipment-manual-shoulder-sprayer":require('../../../assets/agriculture/equipment/manual-shoulder-sprayer-v1.png'),
  "equipment-powered-backpack-sprayer":require('../../../assets/agriculture/equipment/powered-backpack-sprayer-v1.png'),
  "equipment-speed-sprayer":require('../../../assets/agriculture/equipment/speed-sprayer-v1.png'),
@@ -75,6 +76,7 @@ const assets:Record<string,ImageSourcePropType>={
  "soil-aggregate-comparison":require('../../../assets/agriculture/diagrams/soil-aggregate-comparison-v1.png'),
  "f40-general-thinning-comparison":require('../../../assets/agriculture/royal-weekly-20261107/week02/thinning-botanical-comparison-v2.webp'),
  "royal-fruit-thinning-stages-v1":require('../../../assets/agriculture/royal-weekly-20261107/week29/fruit-thinning-stages-v1.webp'),
+
  "f40-general-nursery-forms":require('../../../assets/agriculture/completion-40/general/agr-f40-general-nursery-forms.png'),
  "f40-general-seeder":require('../../../assets/agriculture/royal-weekly-20261107/week02/hand-pushed-single-row-seeder.webp'),
  "f40-general-tractor-seeder":require('../../../assets/agriculture/royal-weekly-20261107/week02/tractor-attached-multi-row-seed-drill.webp'),
@@ -123,15 +125,15 @@ const assets:Record<string,ImageSourcePropType>={
  "rotary-mulcher":require('../../../assets/agriculture/completion-40/safety/rotary-mulcher.png'),
  "pheromone-dispenser":require('../../../assets/agriculture/royal-weekly-20261107/pheromone-dispenser-appearance-royal-v1.webp'),
  "cultivation-hilling":require('../../../assets/agriculture/completion-40/safety/cultivation-hilling.png'),
- "nozzle-source-examples":require('../../../assets/agriculture/completion-40/safety/nozzle-source-examples.png'),
+ "nozzle-source-examples":require('../../../assets/agriculture/royal-weekly-20261107/week09/nozzle-source-examples-royal-v1.webp'),
  "manual-backpack-sprayer":require('../../../assets/agriculture/completion-40/safety/manual-backpack-sprayer.png'),
  "machine-clothing":require('../../../assets/agriculture/royal-weekly-20261107/machine-work-clothing-royal-v1.webp'),
  "machine-control-names":require('../../../assets/agriculture/royal-weekly-20261107/machine-control-names-royal-v1.webp'),
  "pesticide-clothing":require('../../../assets/agriculture/royal-weekly-20261107/pesticide-work-clothing-royal-v1.webp'),
- "sprayer-parts":require('../../../assets/agriculture/completion-40/safety/sprayer-parts.png'),
- "power-connector-examples":require('../../../assets/agriculture/completion-40/safety/power-connector-examples.png'),
- "fuel-container-source-sign":require('../../../assets/agriculture/completion-40/safety/fuel-container-source-sign.png'),
- "ladder-hazards":require('../../../assets/agriculture/completion-40/safety/ladder-hazards.png'),
+ "sprayer-parts":require('../../../assets/agriculture/royal-weekly-20261107/week09/sprayer-parts-appearance-royal-v1.webp'),
+ "power-connector-examples":require('../../../assets/agriculture/royal-weekly-20261107/week09/power-connector-examples-royal-v1.webp'),
+ "fuel-container-source-sign":require('../../../assets/agriculture/royal-weekly-20261107/week09/fuel-container-appearance-royal-v1.webp'),
+ "ladder-hazards":require('../../../assets/agriculture/royal-weekly-20261107/week09/ladder-hazards-royal-v1.webp'),
  "leaf-fruit-source-reference":require('../../../assets/agriculture/completion-40/safety/leaf-fruit-source-reference.png'),
  "volume-factor-mass":require('../../../assets/agriculture/completion-40/safety/volume-factor-mass.png'),
  "tractor-source-conditions":require('../../../assets/agriculture/completion-40/safety/tractor-source-conditions.png'),
@@ -143,7 +145,7 @@ const assets:Record<string,ImageSourcePropType>={
  "f40-flower-harvest":require('../../../assets/agriculture/completion-40/flower/agr-f40-flower-harvest-v1.png'),
  "f40-flower-graft-positions":require('../../../assets/agriculture/completion-40/flower/agr-f40-flower-graft-positions-v1.png'),
  "f40-flower-unshu":require('../../../assets/agriculture/royal-weekly-20261107/week01/unshu-mikan-flower.webp'),
- "f40-flower-cluster-dip":require('../../../assets/agriculture/completion-40/flower/agr-f40-flower-cluster-dip-v1.png'),
+ "f40-flower-cluster-dip":require('../../../assets/agriculture/royal-weekly-20261107/week25/grape-flower-cluster-dip-royal-v1.webp'),
  "f40-flower-materials":require('../../../assets/agriculture/completion-40/flower/agr-f40-flower-materials-v1.png'),
  "f40-flower-platform":require('../../../assets/agriculture/completion-40/flower/agr-f40-flower-platform-v1.png'),
  "f40-flower-transport":require('../../../assets/agriculture/completion-40/flower/agr-f40-flower-transport-v1.png'),
@@ -161,7 +163,7 @@ const assets:Record<string,ImageSourcePropType>={
  "agr-f40-fruit-mainstem-scaffold-labels":require('../../../assets/agriculture/completion-40/facility/fruit-mainstem-scaffold-labels.png'),
  "agr-f40-t-budding-concept-stages":require('../../../assets/agriculture/completion-40/facility/t-budding-concept-stages.png'),
  "agr-f40-graft-planting-union-position":require('../../../assets/agriculture/completion-40/facility/graft-planting-union-position.png'),
- "agr-f40-propagation-method-concepts":require('../../../assets/agriculture/completion-40/facility/propagation-method-concepts.png'),
+ "agr-f40-propagation-method-concepts":require('../../../assets/agriculture/royal-weekly-20261107/week47/propagation-methods-botanical-royal-v1.webp'),
  "agr-f40-branch-graft-type-profiles":require('../../../assets/agriculture/completion-40/facility/branch-graft-type-profiles.png'),
  "agr-f40-graft-source-example-dimensions":require('../../../assets/agriculture/completion-40/facility/graft-source-example-dimensions.png'),
  "agr-f40-pruning-branch-position-glossary":require('../../../assets/agriculture/completion-40/facility/pruning-branch-position-glossary.png'),
@@ -176,25 +178,26 @@ const assets:Record<string,ImageSourcePropType>={
  "agr-f40-fruit-nursery-species-leaf-examples":require('../../../assets/agriculture/completion-40/facility/fruit-nursery-species-leaf-examples.png'),
  "agr-f40-fruit-branch-age-source-types":require('../../../assets/agriculture/completion-40/facility/fruit-branch-age-source-types.png'),
  "agr-f40-fruit-pruning-cut-position-examples":require('../../../assets/agriculture/completion-40/facility/fruit-pruning-cut-position-examples.png'),
- "agr-f40-fruit-pollination-tool-appearance-examples":require('../../../assets/agriculture/completion-40/facility/fruit-pollination-tool-appearance-examples.png'),
+ "agr-f40-fruit-pollination-tool-appearance-examples":require('../../../assets/agriculture/royal-weekly-20261107/week20/pollination-tools-appearance-royal-v1.webp'),
  "agr-f40-citrus-uninjured-injured-source-pair":require('../../../assets/agriculture/royal-weekly-20261107/citrus-rind-injury-pair-royal-v1.webp'),
- "agr-f40-peach-grape-bag-appearance":require('../../../assets/agriculture/completion-40/facility/peach-grape-bag-appearance.png'),
+ "agr-f40-peach-grape-bag-appearance":require('../../../assets/agriculture/royal-weekly-20261107/week19/peach-grape-bag-appearance-royal-v1.webp'),
  "agr-f40-peach-bagging-source-stages":require('../../../assets/agriculture/completion-40/facility/peach-bagging-source-stages.png'),
  "agr-f40-grape-bagging-source-stages":require('../../../assets/agriculture/completion-40/facility/grape-bagging-source-stages.png'),
  "agr-f40-graft-cambium-contact-corrected-v2":require('../../../assets/agriculture/completion-40/facility/graft-cambium-contact-corrected-v2.png'),
- "f40-facility-support-greenhouse-crops":require('../../../assets/agriculture/completion-40/facility-safety-support/greenhouse-crops.png'),
- "f40-facility-support-greenhouse-flowers-a":require('../../../assets/agriculture/completion-40/facility-safety-support/greenhouse-flowers-a.png'),
- "f40-facility-support-greenhouse-flowers-b":require('../../../assets/agriculture/completion-40/facility-safety-support/greenhouse-flowers-b.png'),
- "f40-facility-support-rain-shelter-roof-only":require('../../../assets/agriculture/completion-40/facility-safety-support/rain-shelter-roof-only.png'),
+ "f40-facility-support-greenhouse-crops":require('../../../assets/agriculture/royal-weekly-20261107/week15/greenhouse-crops-royal-v1.webp'),
+ "f40-facility-support-greenhouse-flowers-a":require('../../../assets/agriculture/royal-weekly-20261107/week15/greenhouse-flowers-a-royal-v1.webp'),
+ "f40-facility-support-greenhouse-flowers-b":require('../../../assets/agriculture/royal-weekly-20261107/week15/greenhouse-flowers-b-royal-v1.webp'),
+ "f40-facility-support-rain-shelter-roof-only":require('../../../assets/agriculture/royal-weekly-20261107/week15/rain-shelter-roof-only-royal-v1.webp'),
  "f40-facility-support-greenhouse-heater-co2":require('../../../assets/agriculture/completion-40/facility-safety-support/greenhouse-heater-co2.png'),
  "f40-facility-support-greenhouse-auto-sprayer":require('../../../assets/agriculture/completion-40/facility-safety-support/greenhouse-auto-sprayer.png'),
- "f40-facility-support-greenhouse-insect-light-appearance":require('../../../assets/agriculture/completion-40/facility-safety-support/greenhouse-insect-light-appearance.png'),
+ "f40-facility-support-greenhouse-insect-light-appearance":require('../../../assets/agriculture/royal-weekly-20261107/week37/greenhouse-insect-light-appearance-royal-v1.webp'),
  "f40-facility-support-tomato-blossom-end-appearance":require('../../../assets/agriculture/completion-40/facility-safety-support/tomato-blossom-end-appearance.png'),
  "f40-facility-support-nursery-place-container-types":require('../../../assets/agriculture/completion-40/facility-safety-support/nursery-place-container-types.png'),
  "f40-facility-support-paper-pot-connected-cells":require('../../../assets/agriculture/completion-40/facility-safety-support/paper-pot-connected-cells.png'),
  "agr-fig-f40-facility-soil-graft-equipment-appearance-v1":require('../../../assets/agriculture/completion-40/facility-soil-support/graft-equipment-appearance-v1.png'),
  "agr-fig-f40-facility-soil-graft-preparation-and-view-sequence-v1":require('../../../assets/agriculture/completion-40/facility-soil-support/graft-preparation-and-view-sequence-v1.png'),
  "f40-facility-support-carnation-greenhouse-level1":require('../../../assets/agriculture/completion-40/visual-safety/carnation-greenhouse-level1.png'),
+ "royal-fruit-thinning-stages-v1":require('../../../assets/agriculture/royal-weekly-20261107/week29/fruit-thinning-stages-v1.webp'),
 };
 export function getAgricultureFigureAsset(assetKey:string) {return assets[assetKey];}
 type RecognitionImage={
@@ -239,7 +242,7 @@ export function RecognitionImages({lessonId,lessonSourceHash,colors,level,langua
   {ruby('title',item.titleJa,[s.title,{color:colors.translationText}])}
   {!!t&&<Text testID={`${item.id}-localized-title`} style={[s.title,{color:colors.translationText}]}>{t.title}</Text>}
   {item.id==='agr-f40-general-cropping-example-flow'?<CropCalendarFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language={language} showTranslation={showTranslation} includeMetadata={false} colors={colors}/>:item.id==='agr-f40-general-flower-legend-reader'?<FlowerLegendFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} colors={colors}/>:<ZoomableFigure source={assets[item.assetKey]} width={item.width} height={item.height} altJa={t?.alt||item.altJa} testID={item.id} colors={colors} allowExpandedView={item.allowExpandedView}/>}
-  {!!item.labelsJa?.length&&<View style={{gap:4}}>{item.labelsJa.map((label,index)=><View key={`${index}-${label}`}>{ruby(`label:${index}`,label,[s.body,{color:colors.translationText}])}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`} style={[s.body,{color:colors.translationText}]}>{t.labels[index]}</Text>}</View>)}</View>}
+  {item.id==='agr-f40-safety-media-sprayer-parts'?<SprayerPartSupport lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} assetSha256={item.assetSha256||''} alt={t?.alt||item.altJa} colors={colors} renderLabel={index=><View>{ruby(`label:${index}`,item.labelsJa?.[index]||'',[s.body,{color:colors.translationText}])}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`} style={[s.body,{color:colors.translationText}]}>{t.labels[index]}</Text>}</View>}/>:!!item.labelsJa?.length&&<View style={{gap:4}}>{item.labelsJa.map((label,index)=><View key={`${index}-${label}`}>{ruby(`label:${index}`,label,[s.body,{color:colors.translationText}])}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`} style={[s.body,{color:colors.translationText}]}>{t.labels[index]}</Text>}</View>)}</View>}
   <AgricultureImageHeading kind="observation" style={[s.label,{color:colors.translationText}]} color={colors.translationText}/>
   {ruby('observation',item.observationJa,[s.body,{color:colors.translationText}])}
   {!!t&&<Text testID={`${item.id}-localized-observation`} style={[s.body,{color:colors.translationText}]}>{t.observation}</Text>}

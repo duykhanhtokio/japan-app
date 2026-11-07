@@ -1,18 +1,20 @@
-import {Text,View,type StyleProp,type TextStyle,StyleSheet} from 'react-native';
-import type {ManufacturingLesson} from '@/data/manufacturing';
-import data from '@/data/manufacturing/native-heading-readings.json';
-type Part={text:string;reading?:string};
-type Entry={sourceHash:string;canonicalParagraphs:unknown;canonicalTitleJa:string;canonicalSummaryJa:string;fields:Record<string,{sourceJapanese:string;parts:Part[]}>};
-const registry=data as {schemaVersion:number;revision:string;studyOnly:boolean;entries:Record<string,Entry>};
-export function manufacturingIllustrationReading(lesson:ManufacturingLesson,field:string,text:string|undefined):Part[]|undefined{
- const entry=registry.entries[lesson.id],row=entry?.fields[field];
- if(registry.schemaVersion!==1||registry.revision!=='native-headings-20261107-v1'||!registry.studyOnly||!entry||entry.sourceHash!==lesson.sourceHash||entry.canonicalTitleJa!==lesson.titleJa||entry.canonicalSummaryJa!==lesson.summaryJa||JSON.stringify(entry.canonicalParagraphs)!==JSON.stringify(lesson.paragraphs)||!row||typeof text!=='string'||row.sourceJapanese!==text||!Array.isArray(row.parts)||!row.parts.length||row.parts.map(p=>p?.text).join('')!==text||row.parts.some(p=>!p||typeof p.text!=='string'||!p.text||(/[一-龯々]/.test(p.text)&&(!p.reading||!/^[ぁ-ゖー]+$/.test(p.reading)))||(p.reading!==undefined&&!/^[ぁ-ゖー]+$/.test(p.reading))))return;
- return row.parts;
-}
-/** Study-only, complete exact-field readings; unknown or stale fields retain canonical plain text. */
-export function ManufacturingIllustrationText({lesson,field,text,enabled=true,style}:{lesson:ManufacturingLesson;field:string;text:string|undefined;enabled?:boolean;style?:StyleProp<TextStyle>}){
- const parts=enabled?manufacturingIllustrationReading(lesson,field,text):undefined;
- if(!parts)return <Text style={style}>{text}</Text>;
- const color=StyleSheet.flatten(style)?.color;
- return <View accessible accessibilityLabel={text} testID={`manufacturing-illustration-ruby-${lesson.id}-${field}`} style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}>{parts.map((p,i)=><View key={i} style={{alignItems:'center',maxWidth:'100%',minWidth:0}}><Text style={{fontSize:10,lineHeight:14,color}}>{p.reading??' '}</Text><Text style={style}>{p.text}</Text></View>)}</View>;
+import React from 'react';
+import {Text,View,StyleSheet,type TextProps} from 'react-native';
+import {manufacturingIllustrationTokensFor} from '@/data/manufacturing/illustration-readings';
+
+/** Exact Japanese illustration fields only; translations and unknown fields keep their text. */
+export function ManufacturingIllustrationText({children,style,selectable,readingLanguage,...props}:TextProps&{readingLanguage?:string}){
+ const pieces=React.Children.toArray(children);
+ if(!pieces.every(p=>typeof p==='string'||typeof p==='number'))return <Text style={style} selectable={selectable} {...props}>{children}</Text>;
+ const text=pieces.join(''),tokens=readingLanguage==='ja'?manufacturingIllustrationTokensFor(text):undefined;
+ if(!tokens)return <Text style={style} selectable={selectable} {...props}>{children}</Text>;
+ const displayTokens=tokens.flatMap(token=>token.readingKana?[token]:token.text.split(/(\n)/).filter(Boolean).map(text=>({text,readingKana:undefined})));
+ const flat=StyleSheet.flatten(style)??{},size=typeof flat.fontSize==='number'?flat.fontSize:16;
+ const baseStyle={fontSize:size,color:flat.color,fontWeight:flat.fontWeight,fontFamily:flat.fontFamily,lineHeight:flat.lineHeight,textAlign:flat.textAlign};
+ return <View testID="manufacturing-illustration-ruby" accessible accessibilityLabel={text} style={[style,{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}]}>
+  {displayTokens.map((token,i)=>token.text==='\n'?<View key={i} style={{width:'100%',height:Math.max(6,size*.35)}}/>:<View key={i} style={{alignItems:'center',maxWidth:'100%'}}>
+   {!!token.readingKana&&<Text style={{fontSize:Math.max(9,size*.58),lineHeight:Math.max(13,size*.8),color:flat.color??'#526071'}}>{token.readingKana}</Text>}
+   <Text selectable={selectable} style={baseStyle}>{token.text}</Text>
+  </View>)}
+ </View>;
 }
