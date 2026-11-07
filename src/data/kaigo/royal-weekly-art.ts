@@ -2,6 +2,7 @@ import type {ImageSourcePropType} from 'react-native';
 
 /** Day-scoped replacements preserve shared legacy art IDs and captions. */
 export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspectRatio:number}>={
+ 49:{source:require('../../../assets/kaigo/paragraphs/excretion-06-summary-v1.webp'),aspectRatio:1620/971},
  37:{source:require('../../../assets/kaigo/paragraphs/excretion-03-dialogue-v1.webp'),aspectRatio:1619/972},
  38:{source:require('../../../assets/kaigo/royal-weekly-20261107/week06/day38-bathroom-inspection.webp'),aspectRatio:1536/1024},
  39:{source:require('../../../assets/kaigo/paragraphs/excretion-03-summary-v1.webp'),aspectRatio:1619/971},
@@ -34,6 +35,21 @@ export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspec
 
 /** Image-specific captions; canonical lesson and progress revisions remain unchanged. */
 export const kaigoRoyalWeeklyCaptions:Record<number,Record<string,string>>={
+  "49": {
+    "ja": "家族から聞いた相談の希望と、本人の選択が未確認であることを分けて申し送ります。本人の同意や本の受渡しが済んだことを示す絵ではありません。",
+    "en": "Staff distinguish the family’s request for a consultation from the person’s choice, which remains unconfirmed, during handoff. The image does not show the person’s consent or completed transfer of books.",
+    "vi": "Khi bàn giao, nhân viên phân biệt mong muốn được tư vấn của gia đình với lựa chọn chưa được xác nhận của người được chăm sóc. Hình không thể hiện người đó đã đồng ý hoặc đã giao nhận sách.",
+    "id": "Saat serah terima, petugas membedakan permintaan keluarga untuk berkonsultasi dari pilihan orang tersebut yang belum dipastikan. Gambar tidak menunjukkan persetujuan orang tersebut atau penyerahan buku yang sudah selesai.",
+    "zh-CN": "交接时，工作人员分清家属提出的咨询愿望与本人尚未确认的选择。此图不表示本人已同意或书籍交接已完成。",
+    "zh-TW": "交接時，工作人員分清家屬提出的諮詢意願與本人尚未確認的選擇。此圖不表示本人已同意或書籍交接已完成。",
+    "hi": "हस्तांतरण में कर्मचारी परिवार की परामर्श की इच्छा और व्यक्ति के अभी अपुष्ट चुनाव को अलग बताते हैं। चित्र व्यक्ति की सहमति या पुस्तकों का पूरा हस्तांतरण नहीं दिखाता।",
+    "bn": "হস্তান্তরের সময় কর্মীরা পরিবারের পরামর্শের অনুরোধ এবং ব্যক্তির এখনো যাচাই না হওয়া পছন্দ আলাদা করে জানান। ছবিতে ব্যক্তির সম্মতি বা বই হস্তান্তর সম্পন্ন হওয়া দেখানো হয় না।",
+    "ne": "हस्तान्तरणमा कर्मचारीले परिवारको परामर्श चाहना र व्यक्तिको पुष्टि हुन बाँकी छनोट छुट्याउँछन्। चित्रले व्यक्तिको सहमति वा पुस्तक हस्तान्तरण पूरा भएको देखाउँदैन।",
+    "my": "ဝန်ထမ်းများက မိသားစု၏ ဆွေးနွေးတိုင်ပင်လိုသောဆန္ဒနှင့် ကာယကံရှင်၏ မစစ်ရသေးသောရွေးချယ်မှုကို ခွဲခြားလွှဲပြောင်းသည်။ ဤပုံသည် ကာယကံရှင်သဘောတူပြီးခြင်း သို့မဟုတ် စာအုပ်လွှဲပေးပြီးခြင်းကို မပြပါ။",
+    "th": "เจ้าหน้าที่ส่งต่อโดยแยกความต้องการขอปรึกษาของครอบครัวจากการเลือกของเจ้าตัวที่ยังไม่ยืนยัน ภาพไม่ได้แสดงว่าเจ้าตัวให้ความยินยอมแล้วหรือส่งมอบหนังสือเสร็จแล้ว",
+    "km": "ពេលប្រគល់ព័ត៌មាន បុគ្គលិកបែងចែកបំណងគ្រួសារចង់ពិគ្រោះពីជម្រើសរបស់សាមីខ្លួនដែលមិនទាន់បញ្ជាក់។ រូបនេះមិនបង្ហាញថាសាមីខ្លួនយល់ព្រម ឬការប្រគល់សៀវភៅបានបញ្ចប់ទេ។",
+    "tl": "Sa handoff, ibinubukod ng mga kawani ang kahilingan ng pamilya na kumonsulta sa hindi pa tiyak na pasiya ng tao. Hindi ipinapakita ng larawan na pumayag na ang tao o tapos na ang pagpapasa ng mga aklat."
+  },
   "36": {
     "ja": "本人が上着の袖を見て選び、職員は着替えを始めずに選択を支えます。",
     "en": "The resident examines the jacket sleeve and chooses, while the caregiver supports her choice without starting to dress her.",
