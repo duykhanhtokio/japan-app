@@ -18,6 +18,7 @@ function load(name){
   if(id==='react-native')return require('react-native-web');
   if(id==='@/data/agriculture/recognition-images.json')return data;
   if(id==='@/data/agriculture/recognition-image-locales.json')return registry;
+  if(id==='@/data/agriculture/image-paragraph-placement.json')return JSON.parse(read('src/data/agriculture/image-paragraph-placement.json'));
   if(id==='@/data/agriculture/image-readings.json')return JSON.parse(read('src/data/agriculture/image-readings.json'));
   if(id==='./AgricultureImageRuby')return load('AgricultureImageRuby');
   if(id==='./FigureSourceMarks')return load('FigureSourceMarks');

@@ -140,7 +140,7 @@ const assets:Record<string,ImageSourcePropType>={
  "tractor-source-conditions":require('../../../assets/agriculture/royal-food-owner-20261107/tractor-source-conditions-v1.webp'),
  "cultivator-source-sequence":require('../../../assets/agriculture/royal-food-owner-20261107/cultivator-source-components-v1.webp'),
  "brushcutter-source-sequence":require('../../../assets/agriculture/royal-food-owner-20261107/brushcutter-source-components-v1.webp'),
- "fuel-source-mapping":require('../../../assets/agriculture/completion-40/safety/fuel-source-mapping.png'),
+ "fuel-source-mapping":require('../../../assets/agriculture/royal-food-owner-20261107/fuel-source-mapping-v1.png'),
  "source-extra-details":require('../../../assets/agriculture/completion-40/safety/source-extra-details.png'),
  "pesticide-source-conditions":require('../../../assets/agriculture/completion-40/safety/pesticide-source-conditions.png'),
  "f40-flower-harvest":require('../../../assets/agriculture/completion-40/flower/agr-f40-flower-harvest-v1.png'),
