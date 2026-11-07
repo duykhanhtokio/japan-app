@@ -83,8 +83,27 @@ for(const language of locales){
  }
 }
 const daily=load(path.join(root,'src/data/food-manufacturing/daily-learning.ts'));
-const pending=index.foodManufacturingLessons.find(l=>!retained.foodRoyalRetainedTechnicalFor(l)&&!royal.foodRoyalWeeklyImageFor(l)&&daily.foodDailyBinding(l));
-if(pending){const pendingHtml=renderToStaticMarkup(React.createElement(Reader,{lesson:pending,language:'ja',onBack:nil,onComplete:nil,saving:false,saveError:false}));assert(pendingHtml.includes('/daily-diagrams/'+daily.foodDailyBinding(pending).diagramKind+'.webp'),'A pending day must keep its visible raster, never silently disappear');}
+const nativeAlternatives=[
+ ['retained',retained.foodRoyalRetainedTechnicalFor],
+ ['week2',load(path.join(root,'src/data/food-manufacturing/royal-week2-native.ts')).foodRoyalWeek2NativeFor],
+ ['week4',load(path.join(root,'src/data/food-manufacturing/royal-week4-native.ts')).foodRoyalWeek4NativeFor],
+ ['week5',load(path.join(root,'src/data/food-manufacturing/royal-week5-native.ts')).foodRoyalWeek5NativeFor],
+ ['signs',load(path.join(root,'src/data/food-manufacturing/royal-safety-signs.ts')).foodRoyalSafetySignsFor],
+];
+const nativeFor=lesson=>nativeAlternatives.find(([,select])=>select(lesson));
+const renderReader=lesson=>renderToStaticMarkup(React.createElement(Reader,{lesson,language:'ja',onBack:nil,onComplete:nil,saving:false,saveError:false}));
+// A native-served day is complete for this selector even when it has no Royal raster.
+const previouslyMisclassified=index.foodManufacturingLessons.find(l=>!retained.foodRoyalRetainedTechnicalFor(l)&&!royal.foodRoyalWeeklyImageFor(l)&&daily.foodDailyBinding(l)&&nativeFor(l));
+if(previouslyMisclassified){const html=renderReader(previouslyMisclassified);assert(!html.includes('/daily-diagrams/'),'A current native-served day must not require the obsolete primitive raster');assert(html.includes('data-testid="food-daily-diagram-'+previouslyMisclassified.id+'"'),'Native-served day remains visibly scheduled');console.log('NATIVE_SERVED '+previouslyMisclassified.id+' '+nativeFor(previouslyMisclassified)[0]+'; excluded from primitive-pending selector.');}
+const pending=index.foodManufacturingLessons.find(l=>!nativeFor(l)&&!royal.foodRoyalWeeklyImageFor(l)&&daily.foodDailyBinding(l));
+if(pending){assert(renderReader(pending).includes('/daily-diagrams/'+daily.foodDailyBinding(pending).diagramKind+'.webp'),'A genuinely pending day must keep its visible raster, never silently disappear');console.log('PENDING_PRIMITIVE '+pending.id+' actual fallback checked.');}
+else console.log('NOT_APPLICABLE primitive-pending day: every currently scheduled binding has a current Royal or native replacement.');
+// Keep a positive fallback test even after the real pending queue reaches zero.
+const fallbackLesson=index.foodManufacturingLessons.find(l=>!nativeFor(l)&&royal.foodRoyalWeeklyImageFor(l)&&daily.foodDailyBinding(l));
+assert(fallbackLesson,'Need a real Royal-only lesson to exercise loss-of-art fallback');
+const fallbackImage=royal.foodRoyalWeeklyImageFor(fallbackLesson),fallbackIndex=royal.foodRoyalWeeklyImages.indexOf(fallbackImage);
+try{royal.foodRoyalWeeklyImages.splice(fallbackIndex,1);assert(!royal.foodRoyalWeeklyImageFor(fallbackLesson));assert(!nativeFor(fallbackLesson));assert(renderReader(fallbackLesson).includes('/daily-diagrams/'+daily.foodDailyBinding(fallbackLesson).diagramKind+'.webp'),'Removing the only current replacement must still render the positive primitive fallback');}
+finally{royal.foodRoyalWeeklyImages.splice(fallbackIndex,0,fallbackImage);}
 const illustrated=index.foodManufacturingLessons.find(l=>!retained.foodRoyalRetainedTechnicalFor(l)&&royal.foodRoyalWeeklyImageFor(l));
 if(illustrated){const html=renderToStaticMarkup(React.createElement(Reader,{lesson:illustrated,language:'ja',onBack:nil,onComplete:nil,saving:false,saveError:false}));assert(html.includes(royal.foodRoyalWeeklyImageFor(illustrated).source.uri),'A nonretained illustrated day must keep its selected Royal raster');}
 console.log('PASS '+retained.foodRoyalRetainedTechnical.length+' exact native-retained days, '+contexts+' actual scheduled Reader locale contexts, '+managementCount+' unchanged native management plots + '+conceptCount+' concepts; '+royalFallbackContexts+' Royal wrong/absent fallback contexts. Current Royal art coexists with native; primitive daily rasters absent; source/caption/native-availability negative guards pass. Structural RN/ruby/presentation adapters; unrelated supplementary components isolated; no device-pixel acceptance.');

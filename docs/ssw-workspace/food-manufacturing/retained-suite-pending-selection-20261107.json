@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "scope": "Repair inherited retained-native regression suite primitive-pending candidate selection",
+  "baselineCommit": "153a744ff1086adefe10f53948e8edf0e24987f9",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "problem": "The test selected a day lacking Royal art and retainedTechnical while ignoring current native week2/week4/week5/signs guides; it wrongly required an obsolete primitive raster on a served day.",
+  "baselineCase": {
+    "lessonId": "food-1-037",
+    "currentReplacement": "royal-safety-signs",
+    "oldFailure": "A pending day must keep its visible raster, never silently disappear"
+  },
+  "change": "Exclude all current production native replacement selectors plus Royal art before choosing a primitive-pending day. Explicit NOT_APPLICABLE output if no such scheduled day remains. Preserve all existing retained-native, wrong/absent Royal and illustrated-day positive checks. Always additionally remove/restore a real Royal-only lesson's sole current art in-memory to exercise the positive primitive fallback even when the queue reaches zero.",
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/food-manufacturing/check-royal-retained-technical.cjs",
+    "result": "PASS5 retained days,65 current actual Reader locale contexts,7 native management plots+2concepts,26 wrong/absent Royal fallback contexts. Misclassified food-1-037 signs correctly excluded; genuine pending food-1-040 actual fallback checked; positive loss-of-only-art fallback checked and registry restored in finally.",
+    "negativeControl": "Without editing production files, intercept FoodDailyLearning read in isolated Node process and replace only primitive fallback source with undefined. Corrected assertion fails exactly on genuine pending fallback; harness confirms the regression remains detectable.",
+    "diffCheck": "PASS scoped git diff --check",
+    "limitations": "Existing structural RN/ruby/presentation adapters and isolated supplementary components; not browser/device pixels or expert/native review."
+  },
+  "productionFilesChanged": false,
+  "newRasterAssets": 0,
+  "files": [
+    "scripts/food-manufacturing/check-royal-retained-technical.cjs"
+  ],
+  "acceptance": {
+    "wholeSectorComplete": false,
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false
+  }
+}

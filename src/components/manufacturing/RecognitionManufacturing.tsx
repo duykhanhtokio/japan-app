@@ -8,11 +8,11 @@ import {TokuteiHeader} from '@/components/tokutei/TokuteiChrome';
 import {SupplementalFigure} from './SupplementalManufacturingDiagrams';
 import {recognitionSources} from './recognition38-assets';
 
-function Figures({pack,assets,language,quiz=false}:{pack:RecognitionPack;assets:RecognitionAsset[];language:string;quiz?:boolean}){
+function Figures({pack,assets,language,quiz=false,accessibleCaption}:{pack:RecognitionPack;assets:RecognitionAsset[];language:string;quiz?:boolean;accessibleCaption?:string|null}){
  return <>{assets.map(asset=>{
   const imageSource=Object.prototype.hasOwnProperty.call(recognitionSources,asset.file)?recognitionSources[asset.file]:undefined;
   if(!imageSource)return null;
-  return <SupplementalFigure key={asset.id} item={{id:pack.id+'-'+asset.id,lessonId:pack.lessonIds[0],lessonSourceHash:pack.lessonSourceHashes[pack.lessonIds[0]],assetFile:asset.file,width:asset.width,height:asset.height,captionJa:asset.altJa,scopeLimits:[]}} language={language} showTranslation={false} imageSource={imageSource} hideCaption={quiz}/>;
+  return <SupplementalFigure key={asset.id} item={{id:pack.id+'-'+asset.id,lessonId:pack.lessonIds[0],lessonSourceHash:pack.lessonSourceHashes[pack.lessonIds[0]],assetFile:asset.file,width:asset.width,height:asset.height,captionJa:asset.altJa,scopeLimits:[]}} language={language} showTranslation={false} imageSource={imageSource} imageAlt={quiz?undefined:accessibleCaption??asset.altJa} hideCaption={quiz}/>;
  })}</>;
 }
 
@@ -29,7 +29,7 @@ export function RecognitionReader({lesson,language,onBack,onComplete,saving,save
   <Text selectable style={{color:colors.text,fontSize:17,lineHeight:29}}>{pack.captionJa}</Text>
   {caption&&<TranslationText>{caption}</TranslationText>}
   {show&&language!=='ja'&&!caption&&<TranslationText>{t('translationPending')}</TranslationText>}
-  <Figures pack={pack} assets={teaching.length?teaching:pack.assets} language={language}/>
+  <Figures pack={pack} assets={teaching.length?teaching:pack.assets} language={language} accessibleCaption={caption}/>
   {saveError&&<Text accessibilityRole="alert" style={{color:colors.text}}>{t('saveError')}</Text>}
   <Pressable accessibilityRole="button" disabled={saving} accessibilityState={{disabled:saving}} onPress={onComplete} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:17,textAlign:'center'}}>{t(saving?'saving':'complete')}</Text></Pressable>
  </ScrollView></>;

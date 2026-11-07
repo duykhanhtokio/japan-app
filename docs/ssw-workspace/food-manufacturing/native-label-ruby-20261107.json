@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "scope": "Furigana for seventeen current native week2 instructional Japanese labels",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "problem": "Three native guide kinds rendered their Japanese labels as plain kanji Text although complete exact label readings already existed in current canonical paragraph ruby.",
+  "change": "Reuse a unique literal label excerpt only when it aligns with complete current canonical ruby tokens. Preserve full token readings verbatim, reject stale source/unsupported field/ambiguous or partial-word excerpts, and fall back to plain Japanese when unsupported. Render existing JapaneseRuby at18px inside existing guide cards; numbering remains separate and all explicit locale label text remains unchanged.",
+  "supported": {
+    "guideLessonIds": [
+      "food-2-008",
+      "food-2-009",
+      "food-2-012"
+    ],
+    "labels": 17,
+    "newReadingsAuthored": 0,
+    "source": "Exact current paragraphs.p1.textJa ruby entries with revision-matched Japanese source. Canonical Japanese label fragments occur exactly once in each source paragraph."
+  },
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/food-manufacturing/check-native-label-ruby.cjs",
+    "result": "PASS17 complete current label excerpts and221 actual native-guide/JapaneseRuby label contexts (17×JA+12locales), all rendered readings match entire original canonical tokens. Existing explicit localized labels retained. Stale source, absent source label, unsupported field and cut-reading-token excerpts reject.",
+    "diffCheck": "PASS scoped git diff --check",
+    "limits": "Actual JapaneseRuby/hasAlignedRuby component and helper; deterministic RN/font presentation adapters. No new pronunciation authoring or native/device acceptance."
+  },
+  "files": [
+    "src/data/food-manufacturing/lesson-ruby.ts",
+    "src/components/food-manufacturing/FoodRoyalWeek2Native.tsx",
+    "scripts/food-manufacturing/check-native-label-ruby.cjs"
+  ],
+  "newRasterAssets": 0,
+  "canonicalContentChanged": false,
+  "acceptance": {
+    "wholeSectorComplete": false,
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false
+  }
+}

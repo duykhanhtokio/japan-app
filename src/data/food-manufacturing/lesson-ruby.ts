@@ -20,3 +20,22 @@ export function foodManufacturingLessonRuby(lesson:FoodManufacturingLesson,field
  if(!hasAlignedRuby(text,segments)||segments.some(part=>/\p{Script=Han}/u.test(part.text)&&!part.reading))return undefined;
  return segments;
 }
+
+/** Reuse only a unique literal excerpt with intact reading-token boundaries; never infer a cut word's pronunciation. */
+export function foodManufacturingLabelRuby(lesson:FoodManufacturingLesson,field:string,text:string):RubySegment[]|undefined {
+ const source=lesson.paragraphs.find(p=>field===`paragraphs.${p.id}.textJa`)?.textJa;
+ if(!text||!source)return undefined;
+ const start=source.indexOf(text),end=start+text.length;
+ if(start<0||start!==source.lastIndexOf(text))return undefined;
+ const full=foodManufacturingLessonRuby(lesson,field,source);if(!full)return undefined;
+ const result:RubySegment[]=[];let offset=0;
+ for(const part of full){
+  const next=offset+part.text.length,from=Math.max(start,offset),to=Math.min(end,next);
+  if(from<to){
+   if(part.reading&&(from!==offset||to!==next))return undefined;
+   result.push({text:part.text.slice(from-offset,to-offset),...(part.reading?{reading:part.reading}:{})});
+  }
+  offset=next;
+ }
+ return hasAlignedRuby(text,result)?result:undefined;
+}

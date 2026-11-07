@@ -2,6 +2,8 @@ import {StyleSheet,Text,View} from 'react-native';
 import {foodManufacturingTranslation,type FoodManufacturingLesson} from '@/data/food-manufacturing';
 import {foodRoyalWeek2NativeFor} from '@/data/food-manufacturing/royal-week2-native';
 import {FoodConceptDiagrams} from './ConceptDiagrams';
+import JapaneseRuby from '@/components/world/JapaneseRuby';
+import {foodManufacturingLabelRuby} from '@/data/food-manufacturing/lesson-ruby';
 /** Source-controlled labels. Checklist positions are fields, not operational steps. */
 export function FoodRoyalWeek2Native({lesson,language,showTranslation,textColor}:{lesson:FoodManufacturingLesson;language:string;showTranslation:boolean;textColor:string}){
  const binding=foodRoyalWeek2NativeFor(lesson);if(!binding)return null;
@@ -14,7 +16,7 @@ export function FoodRoyalWeek2Native({lesson,language,showTranslation,textColor}
  return <View testID={`food-royal-native-${lesson.id}`} style={s.root}>
  {labels.ja.map((label,i)=><View key={label} style={s.step}>
  <View testID={`food-royal-native-${lesson.id}-${i+1}`} style={s.card}>
- <Text selectable style={[s.label,{color:textColor}]}>{binding.kind==='hygiene-targets'?'':`${i+1}. `}{label}</Text>
+ <View style={{flexDirection:'row',alignItems:'flex-end',gap:6}}>{binding.kind!=='hygiene-targets'&&<Text selectable style={[s.label,{color:textColor}]}>{i+1}.</Text>}<View style={{flex:1,minWidth:0}}><JapaneseRuby text={label} segments={foodManufacturingLabelRuby(lesson,`paragraphs.${binding.captionParagraphId}.textJa`,label)} fontSize={18} color={textColor} testID={`food-native-label-ruby-${lesson.id}-${i+1}`}/></View></View>
  {translated?.[i]&&<Text selectable style={[s.translation,{color:textColor}]}>{translated[i]}</Text>}
  </View>{sequence&&i<labels.ja.length-1&&<Text accessibilityLabel={`${i+1} → ${i+2}`} style={[s.arrow,{color:textColor}]}>↓</Text>}
  </View>)}

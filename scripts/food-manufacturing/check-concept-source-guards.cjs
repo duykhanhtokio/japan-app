@@ -62,4 +62,23 @@ for(const diagram of data.diagrams)for(const lessonId of diagram.lessonIds){
   const contains=html.includes('data-testid="'+diagram.id+'"');assert.equal(contains,scenario==='current',lessonId+' '+language+' actual Reader '+scenario+' concept placement');readerContexts++;
  }
 }
-console.log('PASS '+bindings+' current concept bindings, '+contexts+' actual renderer and '+readerContexts+' actual scheduled Reader contexts across Japanese+12 locales; unchanged technical labels/translations retained and stale/missing/blank lesson contexts rejected. Structural RN/Image/ruby/presentation adapters; unrelated supplements isolated; no device/domain/native acceptance.');
+const week2=load(path.join(root,'src/data/food-manufacturing/royal-week2-native.ts'));
+const week2Data=load(path.join(root,'src/data/food-manufacturing/royal-week2-native.json'));
+const daily=load(path.join(root,'src/data/food-manufacturing/daily-learning.ts'));
+const {FoodRoyalWeek2Native}=load(path.join(root,'src/components/food-manufacturing/FoodRoyalWeek2Native.tsx'));
+const {FoodDailyLearning}=load(path.join(root,'src/components/food-manufacturing/FoodDailyLearning.tsx'));let captionContexts=0;
+for(const binding of week2Data.bindings){
+ const lesson=index.foodManufacturingLessons.find(l=>l.id===binding.lessonId);
+ for(const language of locales)for(const scenario of ['current','missing','blank-title','blank-body','stale']){
+  const changed=scenario==='current'?lesson:scenario==='stale'?{...lesson,sourceHash:'old-revision'}:{...lesson,paragraphs:scenario==='missing'?lesson.paragraphs.filter(p=>p.id!==binding.captionParagraphId):lesson.paragraphs.map(p=>p.id===binding.captionParagraphId?{...p,[scenario==='blank-title'?'titleJa':'textJa']:'   '}:p)};
+  assert.equal(!!week2.foodRoyalWeek2NativeFor(changed),scenario==='current',binding.lessonId+' '+scenario+' native caption selector');
+  assert.equal(!!daily.foodDailyBinding(changed),scenario==='current',binding.lessonId+' '+scenario+' daily caption selector');
+  const props={lesson:changed,language,showTranslation:true,textColor:'#183044',readingColor:'#687078'};
+  const nativeHtml=renderToStaticMarkup(React.createElement(FoodRoyalWeek2Native,props));
+  const dailyHtml=renderToStaticMarkup(React.createElement(FoodDailyLearning,props));
+  if(scenario==='current'){assert(nativeHtml.length>0);assert(dailyHtml.includes('data-testid="food-daily-diagram-'+lesson.id+'"'));}
+  else{assert.equal(nativeHtml,'',binding.lessonId+' invalid native teaching context must not render');assert.equal(dailyHtml,'',binding.lessonId+' invalid daily caption must not render');}
+  captionContexts++;
+ }
+}
+console.log('PASS '+bindings+' current concept bindings, '+contexts+' actual renderer and '+readerContexts+' actual scheduled Reader contexts; '+captionContexts+' week2 native/daily current/missing/blank-title/blank-body/stale contexts across Japanese+12 locales. Technical labels/translations retained. Structural RN/Image/ruby/presentation adapters; unrelated supplements isolated; no device/domain/native acceptance.');

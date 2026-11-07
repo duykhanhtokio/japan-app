@@ -2,7 +2,7 @@ import data from './daily-learning.json';
 import {foodManufacturingLesson,type FoodManufacturingLesson} from './index';
 export function foodDailyBinding(lesson:FoodManufacturingLesson){
  const binding=data.bindings.find(b=>b.lessonId===lesson.id&&b.level===lesson.level&&b.sourceHash===lesson.sourceHash);
- return binding&&lesson.paragraphs.some(p=>p.id===binding.captionParagraphId)?binding:null;
+ return binding&&lesson.paragraphs.some(p=>p.id===binding.captionParagraphId&&p.titleJa.trim().length>0&&p.textJa.trim().length>0)?binding:null;
 }
 /** Existing revision-bound content. Never grant completion for a companion lesson. */
 export function foodDailyCompanions(lesson:FoodManufacturingLesson){

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "sector": "restaurant",
+  "week": 6,
+  "lessonId": "rst-2-ops-06",
+  "baseCommit": "591fe330df778907fcac73bf571c9816e8fd9e57",
+  "branch": "continuation/tokutei-20261107-27bcf35a",
+  "status": "SELF_CHECKED_READY_PENDING_COORDINATOR_PERSISTENCE",
+  "change": "Add exact native ABC worked-example table/percentage bars alongside accepted Royal occupational illustration; original teaching values are currently present only in canonical prose, not accurate native visual. No paid art generated/replaced.",
+  "generationCalls": 0,
+  "sourceSupport": {
+    "canonicalPath": "src/data/restaurant/lessons.2.ja.json",
+    "lessonSourceHash": "e913decb263714f546291b753dba1b0a29bed57889206b1ab31155ac97419880",
+    "canonicalParagraphId": "worked-abc-classification",
+    "canonicalParagraphSha256": "26a290719b48e40be3128ec4b4342db3ce5f11c0595feba853c1a3edd1c187c5",
+    "sourceRefs": [
+      {
+        "documentId": "rst-2-operations",
+        "pdfPages": [
+          10,
+          20,
+          21
+        ],
+        "section": "2章(3)(4)・4章販売・5章顧客管理"
+      }
+    ],
+    "sourcePdfReopenedInThisPass": false,
+    "scope": "Current independently authored workedABCexample only; no new source-v2 coverage fact, official thresholds or domain acceptance."
+  },
+  "exactExample": {
+    "salesYen": [
+      45000,
+      25000,
+      20000,
+      10000
+    ],
+    "totalYen": 100000,
+    "shares": [
+      45,
+      25,
+      20,
+      10
+    ],
+    "cumulativeShares": [
+      45,
+      70,
+      90,
+      100
+    ],
+    "groups": [
+      "A",
+      "A",
+      "B",
+      "C"
+    ],
+    "metric": "same-period sales revenue JPY, not grossprofit or salescount",
+    "thresholdScope": "Exercise-only A<=70,B>70<=90,C>90; nativecaption prohibits treating C alone as removalcriterion."
+  },
+  "display": {
+    "nativeNumbersLabelsAndFurigana": true,
+    "targetLocales": 12,
+    "captionRevisionGuard": true,
+    "canonicalLessonAndNativeRegistrationGuards": true,
+    "acceptedMainRasterPreserved": true,
+    "newCourseOrLearnerIds": false,
+    "calculatedBarWidths": true,
+    "noClippingByFixedTextHeight": true
+  },
+  "validation": {
+    "commands": [
+      "NODE_PATH=<qa-runtime>/node_modules node scripts/restaurant/check-abc-example.cjs",
+      "NODE_PATH=<qa-runtime>/node_modules node scripts/restaurant/check-royal-daily-revision.cjs",
+      "NODE_PATH=<qa-runtime>/node_modules node scripts/restaurant/check-vegetable-groups.cjs"
+    ],
+    "actualTranspiledIntegratedRNAdapterSSR": "PASS Japanese+12locales at5viewportwidths, exactcomputednumbers and barwidths, oneABCpanel andacceptedmainartretained, stale lesson/registration/caption rejected",
+    "viewportWidths": [
+      320,
+      390,
+      844,
+      1024,
+      1440
+    ],
+    "sourceParagraphAndRendererAndDataHashes": "PASS",
+    "arithmetic": "PASS 100000/45,25,20,10/45,70,90,100/A,A,B,C",
+    "existingRoyalAndCook03Regression": "PASS afterisolatedcompanionimportmapcompatibilityupdate",
+    "priorDailyBindingsAndArtOverridesPreserved": true,
+    "mainCountsUnchanged": "66/120",
+    "diffCheck": "PASS scoped",
+    "browserAdapterAttempt": "Blocked by Chromium process_singleton_posix socket() Operation not permitted; no browser/device visual acceptance claimed. No repeatedbrowserattempt.",
+    "physicalDeviceTested": false
+  },
+  "fileSha256": {
+    "src/components/restaurant/RestaurantAbcExample.tsx": "88700d7759513237e3778e58b9151fa4159994f5c81dc64b795b1560712ea014",
+    "src/data/restaurant/royal-abc-example.json": "d21b49d6efe3618422dcf7e1a2d2bdd234a327c02e1fe47cd4ca946950d3e302",
+    "src/components/restaurant/RestaurantDailyLearning.tsx": "3b1249aea4c7f781e6e00ed3813f94daf89550f24cc04c4a54ac4b33970ab914",
+    "src/data/restaurant/daily-learning.json": "7c4f2387822b67e1a0bc23f85377c62b4ced8645e3d1d7da14a058eee2518edf",
+    "docs/ssw-workspace/restaurant/royal-images-20261107/ordered-existing-content-queue.json": "faf226e0ffee8b2564e84e2ce323abe4c3587199dbf7e93489b5360f5dc789ea",
+    "scripts/restaurant/check-abc-example.cjs": "5067a53b366389648de2b47b3ec445a9f110d2a483c31f8e0c8dd98b62de8af7",
+    "scripts/restaurant/check-royal-daily-revision.cjs": "476fc5c00079b4ba4aaca0d0193ea95e3c631e8a56808fa62150229ef53d6883",
+    "scripts/restaurant/check-vegetable-groups.cjs": "3a6a8aed71cf062a4078bbf989ff21ecc8bcb01542b0dd82f10152ec688045ee"
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "learnerDurationMeasured": false,
+  "wholeSourceKnowledgeCovered": false,
+  "wholeIllustrationScopeComplete": false
+}

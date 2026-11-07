@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "scope": "Nonblank current teaching caption guards for all daily placements and four week2 native guides",
+  "baselineCommit": "153a744ff1086adefe10f53948e8edf0e24987f9",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "problem": "foodDailyBinding and foodRoyalWeek2NativeFor accepted a caption paragraph merely because its ID existed, allowing blank titles/bodies to keep daily art or native guide labels visible.",
+  "reproductionBefore": "Actual regression failed: food-2-007 blank-title native caption selector true instead of false.",
+  "change": "Require nonblank Japanese title and body in the exact current caption paragraph, in addition to all existing lesson/level/sourceHash checks. Incomplete caption now prevents daily/native presentation. Current lesson/source and all label/translation datasets unchanged.",
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/food-manufacturing/check-concept-source-guards.cjs",
+    "result": "PASS prior520concept-renderer+260actualReader contexts, plus260 paired native/daily production renderer contexts =4week2bindings×13locales×current/missing/blank-title/blank-body/stale. Current native labels and dailyfigures remain; invalidcontexts return empty. No fallback caption or stale translatedtext is used.",
+    "diffCheck": "PASS scoped git diff --check",
+    "limitations": "Structural RN/Image/ruby/presentation adapters; unrelated supplement components isolated. No browser/device/domain/native acceptance."
+  },
+  "files": [
+    "src/data/food-manufacturing/daily-learning.ts",
+    "src/data/food-manufacturing/royal-week2-native.ts",
+    "scripts/food-manufacturing/check-concept-source-guards.cjs"
+  ],
+  "newRasterAssets": 0,
+  "canonicalContentChanged": false,
+  "acceptance": {
+    "wholeSectorComplete": false,
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false
+  }
+}

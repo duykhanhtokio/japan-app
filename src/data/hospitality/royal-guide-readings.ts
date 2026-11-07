@@ -1398,7 +1398,7 @@ const entries:Record<string,[number,number,string][]>={
     ]
   ]
 };
-export function hotelGuideRevisionCurrent(lessonId:string,revision:string){return revisions[lessonId]===revision;}
+export function hotelGuideRevisionCurrent(lessonId:string,revision:string){return typeof revision==='string'&&revision.length>0&&revisions[lessonId]===revision;}
 export function hotelGuideReading(text:string,lessonId:string,revision:string):{text:string;reading?:string}[]|undefined{
  if(!hotelGuideRevisionCurrent(lessonId,revision))return undefined;
  const spans=entries[text];if(!spans)return undefined;

@@ -12,7 +12,7 @@ const loaders:Record<string,()=>Readings>={
 };
 export function hotelReading(text:string,lessonId:string,revision:string):Segment[]|undefined {
  const data=loaders[lessonId.split('-')[1]]?.();
- if(data?.lessons[lessonId]?.sourceRevision!==revision)return undefined;
+ if(!data||typeof revision!=='string'||!revision||data.lessons[lessonId]?.sourceRevision!==revision)return undefined;
  const spans=data.entries[text];if(!spans)return undefined;
  const parts:Segment[]=[];let cursor=0;
  for(const [start,length,reading] of spans){

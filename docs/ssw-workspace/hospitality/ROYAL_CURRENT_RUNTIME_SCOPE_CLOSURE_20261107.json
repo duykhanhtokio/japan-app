@@ -722,6 +722,18 @@
       "problem": "Vietnamese route label for客室 was Phòng khách, which commonly means living room.",
       "result": "Aligned with the existing hotel practice-map terminology Phòng lưu trú.",
       "nativeReviewed": false
+    },
+    {
+      "files": [
+        "src/components/hospitality/HotelJapaneseText.tsx",
+        "src/data/hospitality/royal-guide-readings.ts"
+      ],
+      "problem": "Unknown lesson plus missing revision compared undefined===undefined: native guide revision check accepted it, and ordinary reading lookup could dereference absent data.entries. Reproduced before repair.",
+      "result": "Explicit nonempty string revision and existing data checks reject unknown/missing/empty/stale sources without throwing. Current legitimate readings and incoming accessibility forwarding preserved.",
+      "beforeFileSha256": {
+        "src/components/hospitality/HotelJapaneseText.tsx": "59353a087f77e6aedc95b9615503a1998647f5a3e01244be93f4be901a81f2ca",
+        "src/data/hospitality/royal-guide-readings.ts": "437ab6af037495e586fa95d467999f21a2c201d9fbb22ad40712941e5952f1bf"
+      }
     }
   ],
   "changedFileSha256": {
@@ -729,7 +741,9 @@
     "src/components/hospitality/HotelMealLayoutGuide.tsx": "f2f43eb7f7a656b838bd45cb0319ebd9fdc6b9bf9a9223bcd8ec87a284aa1b95",
     "src/components/hospitality/HotelServiceVisualGuide.tsx": "8658ed34d93d1c7d8651f0fe203c6f880360464c45ceddc7adbd81e7beb06302",
     "src/components/hospitality/HotelHospitalityRoleGuide.tsx": "a06490e922c7412774f76261972dc6884056b4bad5e80b21ef439569926518ea",
-    "src/data/hospitality/route-guide-labels.ts": "d52cfc0fd6d754f3e4340054f9e1102405c0353db99dc13661242922ebeaed07"
+    "src/data/hospitality/route-guide-labels.ts": "d52cfc0fd6d754f3e4340054f9e1102405c0353db99dc13661242922ebeaed07",
+    "src/components/hospitality/HotelJapaneseText.tsx": "f63532ebb4d23668909248d7fb2ffc08670b5c700f298ecef307645cab39eba6",
+    "src/data/hospitality/royal-guide-readings.ts": "1b496fc22df5e511de2df3a88510e6780162b81829f1cb097f64df583da9fdb9"
   },
   "frameAndLoadingChecks": {
     "allMainImagesDecoded1536x1024": true,
@@ -747,7 +761,8 @@
     "allSourceIdsQuestionAnswersProgressKeysPreserved": true,
     "noNewRasterGenerationDuringFinalAudit": true,
     "postMergeDiffCheckPassed": true,
-    "portableBrowserQaSourceSyntaxPassed": true
+    "portableBrowserQaSourceSyntaxPassed": true,
+    "finalContractDeltaDiffCheckPassed": true
   },
   "acceptance": {
     "currentAiIllustrationRuntimeScopeComplete": true,
@@ -777,10 +792,12 @@
     "src/components/hospitality/HotelTwoRouteGuide.tsx": "eba17aadc09e2fc72822b8bbb64506059dd9461268c45ad8ba09871bfb623670",
     "src/components/hospitality/HotelRevenueComparison.tsx": "5e4512ee9fa4077303debfa9660cce256b482b461077b95977ba8ceabd7d43a5",
     "src/components/hospitality/HotelSafetyDecisionGuide.tsx": "600e8ed2af21cf785324c9920ecd0317d29fbaaf71cc71239f7bc572262c71fc",
-    "src/components/hospitality/HotelGuideText.tsx": "c0a0f0ca7f5b46367ee69369062d882a53f0195bf31fba5abbb41fa62c5e8fc7",
-    "src/components/hospitality/HotelJapaneseText.tsx": "d11a0e9fc39cb93663d8c6c217b5fc5d4fbbe7e20a9730756a1f987b0df70a32",
-    "src/components/hospitality/HospitalityCourse.tsx": "6ee830acf2b21aa93e088bf935335a1d9d70771ef60e589c802a6673808c9ba9",
-    "src/data/hospitality/royal-guide-readings.ts": "437ab6af037495e586fa95d467999f21a2c201d9fbb22ad40712941e5952f1bf"
+    "src/components/hospitality/HotelGuideText.tsx": "83f5a4e309713d24b2a391aa1c57dcf580e02988ef513f6349e251bcf9e77476",
+    "src/components/hospitality/HotelJapaneseText.tsx": "f63532ebb4d23668909248d7fb2ffc08670b5c700f298ecef307645cab39eba6",
+    "src/components/hospitality/HospitalityCourse.tsx": "e080c776f6455e2dd33c52be0c68d53ff0e4c6df947355812ef7bd06566187e1",
+    "src/data/hospitality/royal-guide-readings.ts": "1b496fc22df5e511de2df3a88510e6780162b81829f1cb097f64df583da9fdb9",
+    "src/data/hospitality/illustrations.ts": "43f4d7579ecb99517a3bbe93716d127dc7fc82bc610dac681f2f7616a2214446",
+    "src/data/hospitality/illustration-source-guards.ts": "3e8ad85bcd21e5b266f73344814a68cd36354f3f5f4defe209ae2302f9957dad"
   },
   "postMergeDeltaValidation": {
     "incomingCommit": "92a30b7823432954515ab3ffaac81dba2d26b32c",
@@ -847,6 +864,51 @@
       "executedOnUserMac": false
     },
     "plannedPortableBrowserCases": 162,
-    "acceptanceLimits": "Portable tooling and earlier SSR do not establish browser/device acceptance. Run on a capable host and inspect generated screenshots; browser rendering, physical devices and native OS font scales remain unverified."
+    "acceptanceLimits": "Portable tooling and earlier SSR do not establish browser/device acceptance. Run on a capable host and inspect generated screenshots; browser rendering, physical devices and native OS font scales remain unverified.",
+    "currentPortableProductionSnapshotFiles": 17,
+    "testCaseContractVerified": {
+      "twoRouteCases": 42,
+      "otherEightGuideBindingCases": 120,
+      "plannedTotal": 162,
+      "executedBrowserCases": 0,
+      "executedOnMac": false
+    },
+    "originalLaunchEvidenceRemainsHistorical": true
+  },
+  "earlierPostMergeProductionSha256": {
+    "src/components/hospitality/HotelPracticeFloorplan.tsx": "28358c7e58585ee61e2de8c2f674ff8a95245f11207d2d669ec82e7a97f18c52",
+    "src/components/hospitality/HotelRevenueExample.tsx": "21f7be6a8b2d22649878e675b443423a7d80153bad887bda818ec061d5b965a4",
+    "src/components/hospitality/HotelServiceVisualGuide.tsx": "8658ed34d93d1c7d8651f0fe203c6f880360464c45ceddc7adbd81e7beb06302",
+    "src/components/hospitality/HotelHospitalityRoleGuide.tsx": "a06490e922c7412774f76261972dc6884056b4bad5e80b21ef439569926518ea",
+    "src/components/hospitality/HotelMealLayoutGuide.tsx": "f2f43eb7f7a656b838bd45cb0319ebd9fdc6b9bf9a9223bcd8ec87a284aa1b95",
+    "src/components/hospitality/HotelFoodHandoffGuide.tsx": "04ffe67581d05c65932ff8419927cedb8ea3af0967c88a329d4e4fcba9e78411",
+    "src/components/hospitality/HotelMarketSelectionGuide.tsx": "684b3bd2379a620afe75685f0d9b0e3c1c873c8a5e0e0e703e94450d2f4e4603",
+    "src/components/hospitality/HotelFoodCostComparison.tsx": "53c7158c4dbbba261fb2a529f11bc89dd2d8668e9e53bcd1745892fcb83e6d5c",
+    "src/components/hospitality/HotelTwoRouteGuide.tsx": "eba17aadc09e2fc72822b8bbb64506059dd9461268c45ad8ba09871bfb623670",
+    "src/components/hospitality/HotelRevenueComparison.tsx": "5e4512ee9fa4077303debfa9660cce256b482b461077b95977ba8ceabd7d43a5",
+    "src/components/hospitality/HotelSafetyDecisionGuide.tsx": "600e8ed2af21cf785324c9920ecd0317d29fbaaf71cc71239f7bc572262c71fc",
+    "src/components/hospitality/HotelGuideText.tsx": "c0a0f0ca7f5b46367ee69369062d882a53f0195bf31fba5abbb41fa62c5e8fc7",
+    "src/components/hospitality/HotelJapaneseText.tsx": "d11a0e9fc39cb93663d8c6c217b5fc5d4fbbe7e20a9730756a1f987b0df70a32",
+    "src/components/hospitality/HospitalityCourse.tsx": "6ee830acf2b21aa93e088bf935335a1d9d70771ef60e589c802a6673808c9ba9",
+    "src/data/hospitality/royal-guide-readings.ts": "437ab6af037495e586fa95d467999f21a2c201d9fbb22ad40712941e5952f1bf"
+  },
+  "finalContractDeltaValidation": {
+    "baseCommit": "153a744ff1086adefe10f53948e8edf0e24987f9",
+    "method": "Scoped new image source guards/error-retry states and new accessibility/ruby forwarding; native primitives mocked. Previous988unchanged reader sweep not repeated.",
+    "currentMainImageResolvers": 38,
+    "rejectedUnknownMissingEmptyOrStaleImages": 190,
+    "rejectedInvalidReadingSourceCases": 190,
+    "invalidReadingCasesThrow": false,
+    "accessibilityRubyPlainCases": 4,
+    "actualReaderCurrentFailureRetryStaleStates": 52,
+    "readerLocales": 13,
+    "expectedReaderCases": 52,
+    "acceptedChangesPreserved": true,
+    "browserCases": 0,
+    "screenshots": 0,
+    "browserRenderingVerified": false,
+    "physicalDeviceTested": false,
+    "productionSnapshotFiles": 17,
+    "sourceSnapshotNote": "The earlier15-file hashes remain historical. This current17-file snapshot also includes incoming revision-bound image resolver and notice/retry source guards; current accessibility/error-retry changes are preserved."
   }
 }
