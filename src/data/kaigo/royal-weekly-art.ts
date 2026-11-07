@@ -8,6 +8,7 @@ export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspec
  4:{source:require('../../../assets/kaigo/royal-weekly-20261107/week01/day04-private-consultation.webp'),aspectRatio:1536/1024},
  5:{source:require('../../../assets/kaigo/royal-weekly-20261107/week01/day05-participation-photo-consent.webp'),aspectRatio:1536/1024},
  7:{source:require('../../../assets/kaigo/royal-weekly-20261107/week01/day07-independent-reading.webp'),aspectRatio:1536/1024},
+ 8:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day08-shoulder-location.webp'),aspectRatio:1536/1024},
  10:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day10-preferred-voice.webp'),aspectRatio:1536/1024},
  11:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day11-letter-box-location.webp'),aspectRatio:1536/1024},
  12:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day12-uncertain-appointment.webp'),aspectRatio:1536/1024},
