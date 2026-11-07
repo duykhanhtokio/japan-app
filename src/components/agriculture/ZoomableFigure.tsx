@@ -1,3 +1,4 @@
+import {agricultureIntrinsicFigureSourceMarks} from './FigureSourceMarks';
 import {useState} from 'react';
 import {Image,Pressable,ScrollView,StyleSheet,Text,View,useWindowDimensions,type ImageSourcePropType,type LayoutChangeEvent} from 'react-native';
 export type FigureMark={kind:'cross';x:number;y:number;width:number;height:number;color:string;label:string};
@@ -9,16 +10,17 @@ function figureGeometry(width:number,height:number,containerWidth:number|null,so
  const normalWidth=Math.min(available,maxHeight*(sourceWidth/sourceHeight));
  return {available,maxHeight,normalWidth};
 }
-export function ZoomableFigure({source,width:sourceWidth,height:sourceHeight,altJa,testID,colors,allowExpandedView=false,masks=[],marks=[]}:{source:ImageSourcePropType;width:number;height:number;altJa:string;testID:string;colors:Colors;allowExpandedView?:boolean;masks?:FigureMask[];marks?:FigureMark[]}) {
+export function ZoomableFigure({source,width:sourceWidth,height:sourceHeight,altJa,testID,colors,allowExpandedView=false,masks=[],marks}:{source:ImageSourcePropType;width:number;height:number;altJa:string;testID:string;colors:Colors;allowExpandedView?:boolean;masks?:FigureMask[];marks?:FigureMark[]}) {
  const {width,height}=useWindowDimensions(),[expanded,setExpanded]=useState(false),[containerWidth,setContainerWidth]=useState<number|null>(null);
  const {available,maxHeight,normalWidth}=figureGeometry(width,height,containerWidth,sourceWidth,sourceHeight);
  const onLayout=(event:LayoutChangeEvent)=>{const next=event.nativeEvent.layout.width;if(Number.isFinite(next)&&next>0)setContainerWidth(current=>current===next?current:next);};
  const canExpand=allowExpandedView&&(sourceWidth>normalWidth*1.2||sourceHeight>maxHeight*1.2);
  const renderedWidth=expanded?Math.max(available,Math.min(sourceWidth,1600)):normalWidth;
+ const sourceMarks=marks??agricultureIntrinsicFigureSourceMarks(source,sourceWidth,sourceHeight);
  const picture=<View style={{width:renderedWidth,height:renderedWidth*sourceHeight/sourceWidth,position:'relative'}}>
   <Image testID={`${testID}-image`} source={source} accessibilityLabel={altJa} resizeMode="contain" style={StyleSheet.absoluteFill}/>
   {masks.map((m,i)=><View key={i} pointerEvents="none" style={{position:'absolute',left:percent(m.x),top:percent(m.y),width:percent(m.width),height:percent(m.height),backgroundColor:m.backgroundColor||'#fffaf0',alignItems:'center',justifyContent:'center'}}>{!!m.label&&<Text style={{color:'#182e27',fontWeight:'700',fontSize:expanded?28:16,lineHeight:expanded?34:19}}>{m.label}</Text>}</View>)}
-  {marks.map((m,i)=><View key={i} testID={`${testID}-source-mark-${m.kind}-${i}`} pointerEvents="none" accessible accessibilityRole="image" accessibilityLabel={m.label} style={{position:'absolute',left:percent(m.x),top:percent(m.y),width:percent(m.width),height:percent(m.height)}}>{[-45,45].map(angle=><View key={angle} style={{position:'absolute',left:0,top:'43%',width:'100%',height:'14%',backgroundColor:m.color,transform:[{rotate:`${angle}deg`}]}}/>)}</View>)}
+  {sourceMarks.map((m,i)=><View key={i} testID={`${testID}-source-mark-${m.kind}-${i}`} pointerEvents="none" accessible accessibilityRole="image" accessibilityLabel={m.label} style={{position:'absolute',left:percent(m.x),top:percent(m.y),width:percent(m.width),height:percent(m.height)}}>{[-45,45].map(angle=><View key={angle} style={{position:'absolute',left:0,top:'43%',width:'100%',height:'14%',backgroundColor:m.color,transform:[{rotate:`${angle}deg`}]}}/>)}</View>)}
  </View>;
  return <View onLayout={onLayout} style={{width:'100%',gap:8}}>
   {canExpand&&<Pressable accessibilityRole="button" testID={`${testID}-expand`} accessibilityLabel={expanded?'図を縮小':'図を拡大'} onPress={()=>setExpanded(v=>!v)} style={{minHeight:44,paddingHorizontal:12,paddingVertical:8,borderWidth:1,borderRadius:8,alignSelf:'flex-start',justifyContent:'center',borderColor:colors.border}}><Text style={{fontSize:17,lineHeight:29,color:colors.translationText}}>{expanded?'図を縮小':'図を拡大'}</Text></Pressable>}

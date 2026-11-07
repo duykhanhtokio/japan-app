@@ -5,7 +5,7 @@ const {transformSync}=require('@babel/core');
 const filename=path.resolve(__dirname,'../../src/components/agriculture/ZoomableFigure.tsx');
 const source=fs.readFileSync(filename,'utf8');
 const code=transformSync(source,{filename,babelrc:false,configFile:false,plugins:[['@babel/plugin-transform-typescript',{isTSX:true,allExtensions:true}],['@babel/plugin-transform-react-jsx',{runtime:'automatic'}],'@babel/plugin-transform-modules-commonjs']}).code+'\nexports.figureGeometryTest=figureGeometry;';
-const loaded=new Module(filename,module);loaded.filename=filename;loaded.paths=Module._nodeModulePaths(path.dirname(filename));const actualRequire=loaded.require.bind(loaded);loaded.require=id=>id==='react-native'?{}:actualRequire(id);loaded._compile(code,filename);
+const loaded=new Module(filename,module);loaded.filename=filename;loaded.paths=Module._nodeModulePaths(path.dirname(filename));const actualRequire=loaded.require.bind(loaded);loaded.require=id=>id==='react-native'?{}:id==='./FigureSourceMarks'?{agricultureIntrinsicFigureSourceMarks:()=>[]}:actualRequire(id);loaded._compile(code,filename);
 const geometry=loaded.exports.figureGeometryTest;
 let count=0;
 for(const [width,height] of [[320,568],[568,320],[393,852],[852,393],[768,1024],[1024,768],[1440,900]]){
