@@ -43,8 +43,9 @@ const index=load(path.join(root,'src/data/food-manufacturing/index.ts'));
 const retained=load(path.join(root,'src/data/food-manufacturing/royal-retained-technical.ts'));
 const management=load(path.join(root,'src/data/food-manufacturing/management-visuals.ts'));
 const diagrams=load(path.join(root,'src/data/food-manufacturing/diagrams.json'));
+const royal=load(path.join(root,'src/data/food-manufacturing/royal-weekly-images.ts'));
 const {Reader}=load(path.join(root,'src/components/food-manufacturing/FoodManufacturingCourse.tsx'));
-const locales=['ja','en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];let contexts=0,managementCount=0,conceptCount=0;
+const locales=['ja','en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];let contexts=0,royalFallbackContexts=0,managementCount=0,conceptCount=0;
 const escaped=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
 for(const binding of retained.foodRoyalRetainedTechnical){
  const lesson=index.foodManufacturingLessons.find(l=>l.id===binding.lessonId);assert(lesson);
@@ -55,6 +56,7 @@ for(const binding of retained.foodRoyalRetainedTechnical){
   const html=renderToStaticMarkup(React.createElement(Reader,{lesson,language,onBack:nil,onComplete:nil,saving:false,saveError:false}));
   assert(html.includes('data-testid="food-daily-diagram-'+lesson.id+'"'),lesson.id+' daily caption kept');
   assert(!html.includes('/daily-diagrams/'),lesson.id+' obsolete primitive raster suppressed');
+  const selectedRoyal=royal.foodRoyalWeeklyImageFor(lesson);if(selectedRoyal)assert(html.includes(escaped(selectedRoyal.source.uri)),lesson.id+' valid Royal art must remain alongside exact native figure');
   for(const id of [...binding.managementIds,...binding.conceptIds])assert(html.includes('data-testid="'+id+'"'),id+' actual scheduled Reader retains native visual');
   if(language!=='ja'){
    const t=index.foodManufacturingTranslation(lesson,language);assert(t,lesson.id+' revision-matched '+language+' translation');assert(html.includes(escaped(t.paragraphs[binding.captionParagraphId])),lesson.id+' native caption translation retained');
@@ -67,8 +69,22 @@ for(const binding of retained.foodRoyalRetainedTechnical){
  if(binding.conceptIds.length){const figure=diagrams.diagrams.find(f=>f.id===binding.conceptIds[0]),id=figure.id;figure.id='missing-native-figure';assert(!retained.foodRoyalRetainedTechnicalFor(lesson));figure.id=id;}
  managementCount+=binding.managementIds.length;conceptCount+=binding.conceptIds.length;
 }
-const pending=index.foodManufacturingLessons.find(l=>l.id==='food-2-022');
-assert(!retained.foodRoyalRetainedTechnicalFor(pending));
-const pendingHtml=renderToStaticMarkup(React.createElement(Reader,{lesson:pending,language:'ja',onBack:nil,onComplete:nil,saving:false,saveError:false}));
-assert(pendingHtml.includes('/daily-diagrams/downtime.webp'),'Unaddressed day022 must keep its visible pending raster, never silently disappear');
-console.log('PASS '+retained.foodRoyalRetainedTechnical.length+' exact native-retained days, '+contexts+' actual scheduled Reader locale contexts, '+managementCount+' unchanged native management plots + '+conceptCount+' concepts. Primitive daily rasters absent; source/caption/native-availability negative guards pass. Structural RN/ruby/presentation adapters; unrelated supplementary components isolated; no device-pixel acceptance.');
+// Explicit external Royal+native coexistence, wrong-revision and absent-Royal regressions.
+const trace=index.foodManufacturingLessons.find(l=>l.id==='food-2-019');
+const traceImage=royal.foodRoyalWeeklyImageFor(trace);assert(traceImage,'Current Royal traceability art must be present for this integration check');
+const traceIndex=royal.foodRoyalWeeklyImages.indexOf(traceImage),traceHash=traceImage.sourceHash;
+for(const language of locales){
+ for(const scenario of ['wrong-revision','absent']){
+  if(scenario==='wrong-revision')traceImage.sourceHash='old-royal-revision';else royal.foodRoyalWeeklyImages.splice(traceIndex,1);
+  const html=renderToStaticMarkup(React.createElement(Reader,{lesson:trace,language,onBack:nil,onComplete:nil,saving:false,saveError:false}));
+  assert(!html.includes(escaped(traceImage.source.uri)),'Invalid/missing Royal image must not render');assert(html.includes('data-testid="food-traceability"'),'Exact native traceability remains without a current Royal image');assert(!html.includes('/daily-diagrams/'),'Without valid Royal art retain native and suppress only obsolete primitive raster');
+  if(scenario==='wrong-revision')traceImage.sourceHash=traceHash;else royal.foodRoyalWeeklyImages.splice(traceIndex,0,traceImage);
+  royalFallbackContexts++;
+ }
+}
+const daily=load(path.join(root,'src/data/food-manufacturing/daily-learning.ts'));
+const pending=index.foodManufacturingLessons.find(l=>!retained.foodRoyalRetainedTechnicalFor(l)&&!royal.foodRoyalWeeklyImageFor(l)&&daily.foodDailyBinding(l));
+if(pending){const pendingHtml=renderToStaticMarkup(React.createElement(Reader,{lesson:pending,language:'ja',onBack:nil,onComplete:nil,saving:false,saveError:false}));assert(pendingHtml.includes('/daily-diagrams/'+daily.foodDailyBinding(pending).diagramKind+'.webp'),'A pending day must keep its visible raster, never silently disappear');}
+const illustrated=index.foodManufacturingLessons.find(l=>!retained.foodRoyalRetainedTechnicalFor(l)&&royal.foodRoyalWeeklyImageFor(l));
+if(illustrated){const html=renderToStaticMarkup(React.createElement(Reader,{lesson:illustrated,language:'ja',onBack:nil,onComplete:nil,saving:false,saveError:false}));assert(html.includes(royal.foodRoyalWeeklyImageFor(illustrated).source.uri),'A nonretained illustrated day must keep its selected Royal raster');}
+console.log('PASS '+retained.foodRoyalRetainedTechnical.length+' exact native-retained days, '+contexts+' actual scheduled Reader locale contexts, '+managementCount+' unchanged native management plots + '+conceptCount+' concepts; '+royalFallbackContexts+' Royal wrong/absent fallback contexts. Current Royal art coexists with native; primitive daily rasters absent; source/caption/native-availability negative guards pass. Structural RN/ruby/presentation adapters; unrelated supplementary components isolated; no device-pixel acceptance.');

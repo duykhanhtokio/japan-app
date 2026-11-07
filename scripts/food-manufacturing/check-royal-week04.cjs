@@ -13,6 +13,7 @@ function load(file){
   if(name==='react')return React;
   if(name==='react-native')return {...native,Image:({source,accessibilityLabel,testID})=>React.createElement('img',{src:source?.uri,alt:accessibilityLabel,'data-testid':testID}),Modal:({children})=>React.createElement('div',{'data-qa-expanded-modal':true},children)};
   if(name==='@/components/tokutei/StudyAppearance')return {TranslationText:span};
+  if(name==='@/components/world/japanese-ruby-data')return {hasAlignedRuby:(text,parts)=>parts.map(p=>p.text).join('')===text};
   if(name==='./FoodLessonRuby')return {FoodLessonRuby:({text})=>React.createElement('span',null,text)};
   if(name==='./FoodRoyalWeek2Native')return {FoodRoyalWeek2Native:()=>{throw Error('Unexpected week2 native renderer in week04 raster unit');}};
   if(name==='./supplemental')return {supplementalLessons:[],supplementalExams:[],supplementalTranslations:{},supplementalTestTranslations:{}};
