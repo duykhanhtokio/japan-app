@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1152" viewBox="0 0 1536 1152">
+<defs>
+ <linearGradient id="paper" x2="0" y2="1"><stop stop-color="#fffdf6"/><stop offset="1" stop-color="#f2e6cf"/></linearGradient>
+ <linearGradient id="navy" x2="1" y2="1"><stop stop-color="#234761"/><stop offset=".5" stop-color="#102b48"/><stop offset="1" stop-color="#081d33"/></linearGradient>
+ <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9fcff"/><stop offset=".2" stop-color="#a8b8c7"/><stop offset=".45" stop-color="#e3e9ed"/><stop offset=".7" stop-color="#8096a7"/><stop offset="1" stop-color="#d1dce3"/></linearGradient>
+ <linearGradient id="edge" x2="0" y2="1"><stop stop-color="#d3dce3"/><stop offset=".5" stop-color="#8ca0ae"/><stop offset="1" stop-color="#354e63"/></linearGradient>
+ <linearGradient id="blue" x2="1" y2="1"><stop stop-color="#bedfe5"/><stop offset=".4" stop-color="#72b8cc"/><stop offset="1" stop-color="#376b96"/></linearGradient>
+ <linearGradient id="gold" x2="1" y2="1"><stop stop-color="#fbebae"/><stop offset=".5" stop-color="#b58b3e"/><stop offset="1" stop-color="#ead098"/></linearGradient>
+ <linearGradient id="can" x2="1"><stop stop-color="#162f47"/><stop offset=".25" stop-color="#315573"/><stop offset=".5" stop-color="#7393aa"/><stop offset=".68" stop-color="#315573"/><stop offset="1" stop-color="#102b48"/></linearGradient>
+ <linearGradient id="ceramic" x2="1" y2="1"><stop stop-color="#ecd09b"/><stop offset=".4" stop-color="#c99453"/><stop offset="1" stop-color="#915a29"/></linearGradient>
+ <linearGradient id="film" x2="0" y2="1"><stop stop-color="#5c8790"/><stop offset=".4" stop-color="#365f70"/><stop offset="1" stop-color="#1e384b"/></linearGradient>
+ <pattern id="hatch" width="13" height="13" patternUnits="userSpaceOnUse"><path d="M-4 13L13 -4M4 17L17 4" stroke="#d5edf0" stroke-width="2" opacity=".55"/></pattern>
+ <filter id="shadow" x="-30%" y="-30%" width="170%" height="190%"><feGaussianBlur stdDeviation="11"/></filter>
+ <style>text{font-family:'Noto Sans CJK JP',sans-serif;fill:#17374f} .small{font-size:25px}.label{font-size:31px;font-weight:600}.note{font-size:25px;fill:#496378}.white{fill:#fff6db}.leader{fill:none;stroke:#375e78;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}</style>
+</defs>
+<rect width="1536" height="1152" rx="30" fill="url(#paper)"/>
+<rect x="20" y="20" width="1496" height="1112" rx="23" fill="none" stroke="url(#gold)" stroke-width="4"/>
+<path d="M42 1089V70Q42 42 70 42H1466Q1494 42 1494 70V1089" fill="none" stroke="#c9ad74" stroke-width="1" opacity=".65"/>
+<rect x="42" y="42" width="1452" height="126" rx="16" fill="url(#navy)"/>
+<text x="82" y="99" class="white" font-size="38" font-weight="700">コンデンサ：導体の間を誘電体で隔てる</text>
+<text x="82" y="140" class="white" font-size="25">構造の概念と、部品を選ぶ条件を分けて確認する</text>
+<text x="82" y="220" class="label">内部構造の立体模式図</text>
+<text x="82" y="257" class="note">位置関係を示す図。実部品の形状・寸法・材料の指定ではありません。</text>
+<!-- Three material layers, with a cutaway of the upper conductor revealing the dielectric. -->
+<ellipse cx="619" cy="657" rx="418" ry="50" fill="#213b50" opacity=".13" filter="url(#shadow)"/>
+<!-- Lower conductor, identical material treatment to the upper conductor. -->
+<path d="M175 501L656 349L1029 492L548 651Z" fill="url(#metal)" stroke="#6c8395" stroke-width="2"/>
+<path d="M175 501L548 651V671L175 521Z" fill="url(#edge)" stroke="#647b8a"/>
+<path d="M548 651L1029 492V512L548 671Z" fill="#5f7d92" stroke="#48657b"/>
+<!-- Dielectric fully occupies the space between the conducting plates. -->
+<path d="M175 451L656 299L1029 442L548 601Z" fill="url(#blue)" stroke="#547f99" stroke-width="2"/>
+<path d="M175 451L548 601V651L175 501Z" fill="url(#blue)" stroke="#547f99" stroke-width="2"/>
+<path d="M548 601L1029 442V492L548 651Z" fill="#5794b2" stroke="#3f6d8b" stroke-width="2"/>
+<path d="M175 451L548 601V651L175 501ZM548 601L1029 442V492L548 651Z" fill="url(#hatch)"/>
+<!-- Cutaway upper conductor: the exposed pale-blue wedge is dielectric, never an air gap. -->
+<path d="M175 431L656 279L1029 422L831 487L661 422L378 511Z" fill="url(#metal)" stroke="#677e90" stroke-width="2"/>
+<path d="M175 431L378 511V531L175 451Z" fill="url(#edge)" stroke="#677e90"/>
+<path d="M378 511L661 422V442L378 531Z" fill="#69859a" stroke="#48657b"/>
+<path d="M661 422L831 487V507L661 442Z" fill="url(#edge)" stroke="#48657b"/>
+<path d="M831 487L1029 422V442L831 507Z" fill="#69859a" stroke="#48657b"/>
+<!-- Subtle brushed highlights do not encode numerical thickness. -->
+<path d="M240 422L656 291M286 443L703 310M331 462L748 329M594 641L983 512M590 660L978 531" stroke="#f5f9fd" stroke-width="2" opacity=".5"/>
+<!-- Separate conductive terminals; neither crosses the blue dielectric. -->
+<path d="M253 446L170 415L114 357" fill="none" stroke="#435d70" stroke-width="15" stroke-linejoin="round"/>
+<path d="M253 442L170 411L114 353" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linejoin="round"/>
+<path d="M845 560L1042 604L1105 662" fill="none" stroke="#435d70" stroke-width="15" stroke-linejoin="round"/>
+<path d="M845 556L1042 600L1105 658" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linejoin="round"/>
+<!-- Controlled independent leader labels. -->
+<circle cx="598" cy="355" r="6" fill="#315570"/>
+<path d="M598 355L986 291H1174" class="leader"/>
+<text x="1194" y="304" class="label">導体</text>
+<circle cx="730" cy="559" r="6" fill="#315570"/>
+<path d="M730 559L1112 420H1174" class="leader"/>
+<text x="1194" y="434" class="label">誘電体</text>
+<circle cx="632" cy="641" r="6" fill="#315570"/>
+<path d="M632 641L1112 550H1174" class="leader"/>
+<text x="1194" y="564" class="label">導体</text>
+<text x="1125" y="682" class="small">導体どうしを</text>
+<text x="1125" y="717" class="small">直接つなげない</text>
+<path d="M82 735H1454" stroke="#c7ab75" stroke-width="2"/>
+<text x="82" y="784" class="label">種類によって構造が異なる</text>
+<!-- Detailed component morphology, without invented ratings or terminal polarity. -->
+<ellipse cx="302" cy="974" rx="96" ry="15" fill="#213b50" opacity=".1"/>
+<path d="M267 920V985M330 920V985" stroke="#7e8e99" stroke-width="7"/>
+<path d="M239 848H365V928C365 955 239 955 239 928Z" fill="url(#can)" stroke="#254357" stroke-width="2"/>
+<ellipse cx="302" cy="848" rx="63" ry="21" fill="url(#metal)" stroke="#6d8394" stroke-width="2"/>
+<path d="M265 841L339 855M273 860L331 835" stroke="#7b8d99" stroke-width="2"/>
+<path d="M248 884V922" stroke="#afc0c7" stroke-width="3" opacity=".55"/>
+<text x="302" y="1020" text-anchor="middle" class="small">アルミ電解</text>
+<ellipse cx="742" cy="975" rx="85" ry="14" fill="#213b50" opacity=".1"/>
+<path d="M718 914Q707 935 705 985M764 914Q777 935 779 985" fill="none" stroke="#85939b" stroke-width="7"/>
+<ellipse cx="742" cy="889" rx="66" ry="62" fill="url(#ceramic)" stroke="#92683b" stroke-width="2"/>
+<path d="M700 870Q710 843 743 843" fill="none" stroke="#f7e3bd" stroke-width="6" opacity=".55"/>
+<text x="742" y="1020" text-anchor="middle" class="small">セラミック</text>
+<ellipse cx="1186" cy="975" rx="100" ry="14" fill="#213b50" opacity=".1"/>
+<path d="M1142 941V985M1230 941V985" stroke="#85939b" stroke-width="7"/>
+<path d="M1105 848L1130 828H1263L1280 848V937Q1280 949 1266 949H1120Q1105 949 1105 935Z" fill="url(#film)" stroke="#254957" stroke-width="2"/>
+<path d="M1105 848H1280M1130 828V847" stroke="#88a8ae" stroke-width="3"/>
+<path d="M1117 866V923" stroke="#86a5ac" stroke-width="4" opacity=".5"/>
+<text x="1186" y="1020" text-anchor="middle" class="small">フィルム</text>
+<text x="82" y="1081" class="small">同じ容量でも、極性・温度・周波数・劣化条件を照合する。</text>
+</svg>
