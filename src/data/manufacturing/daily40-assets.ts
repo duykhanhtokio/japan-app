@@ -1,6 +1,9 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.png");
+  case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day20-logic-truth-tables.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day20-logic-truth-tables.png");
+
   case "assets/manufacturing/royal-weekly-20261107/week03/mechanical-day15-test-measurement-views.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/mechanical-day15-test-measurement-views.png");
   case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day16-resistor-four-band.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day16-resistor-four-band.png");
   case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day15-material-roles.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day15-material-roles.webp");

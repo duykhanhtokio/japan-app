@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "unit": "daily-figure-fallback-caption-source-course-guards",
+  "baselineCommit": "31d01e2fe0ec190fd7274260b9bf8e703bd0e516",
+  "problem": "The optional canonical recognition fallback could show reuseReasonJa from a stale or unsupported daily binding.",
+  "change": "Select a current source/course daily binding before using its image and reuse caption. Canonical recognition fallback uses its own observation when daily binding is stale or unsupported. Independent source-bound explicit reuse stays valid and is not forced into original recognition lesson mappings.",
+  "changedLessonProse": 0,
+  "changedQuestions": 0,
+  "newImages": 0,
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/agriculture/check-daily-figure-caption-guards.cjs",
+    "result": "PASS: 2 current real binding renders; 6 stale/course negative cases. Actual DailyLearningFigure rendered, raster leaf isolated.",
+    "pixelReviewed": false,
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false
+  },
+  "sourceReviewScope": "Metadata/API guard repair only; no new source knowledge or art acceptance asserted.",
+  "wholeWeekComplete": false,
+  "wholeSectorComplete": false,
+  "afterSha256": {
+    "src/components/agriculture/DailyLearningSupport.tsx": "605192f738c96b3c520fd6cb872b3e5c50a84ec36afa05695400c63eace13c6f",
+    "scripts/agriculture/check-daily-figure-caption-guards.cjs": "e0742b0b031a9e2af3fe18a9c6130c86138ad2ebfcf636fa172fd649cb87c546"
+  }
+}

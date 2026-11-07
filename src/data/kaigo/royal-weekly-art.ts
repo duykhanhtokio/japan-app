@@ -2,6 +2,7 @@ import type {ImageSourcePropType} from 'react-native';
 
 /** Day-scoped replacements preserve shared legacy art IDs and captions. */
 export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspectRatio:number}>={
+ 36:{source:require('../../../assets/kaigo/royal-weekly-20261107/week06/day36-jacket-choice.webp'),aspectRatio:1536/1024},
  22:{source:require('../../../assets/kaigo/royal-weekly-20261107/week04/day22-meal-explanation.webp'),aspectRatio:1536/1024},
  1:{source:require('../../../assets/kaigo/royal-weekly-20261107/week01/day01-greeting.webp'),aspectRatio:1536/1024},
  2:{source:require('../../../assets/kaigo/royal-weekly-20261107/week01/day02-consent.webp'),aspectRatio:1536/1024},
@@ -26,6 +27,21 @@ export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspec
 
 /** Image-specific captions; canonical lesson and progress revisions remain unchanged. */
 export const kaigoRoyalWeeklyCaptions:Record<number,Record<string,string>>={
+  "36": {
+  "ja": "本人が上着の袖を見て選び、職員は着替えを始めずに選択を支えます。",
+  "en": "The resident examines the jacket sleeve and chooses, while the caregiver supports her choice without starting to dress her.",
+  "vi": "Người được chăm sóc xem tay áo để lựa chọn; nhân viên hỗ trợ bà chọn, chưa bắt đầu thay áo.",
+  "id": "Pengguna layanan melihat lengan jaket untuk memilih; petugas mendukung pilihannya tanpa mulai mengganti pakaiannya.",
+  "zh-CN": "本人查看外套袖子后作出选择，工作人员支持她选择，尚未开始为她更衣。",
+  "zh-TW": "本人查看外套袖子後作出選擇，工作人員支持她選擇，尚未開始為她更衣。",
+  "hi": "देखभाल पाने वाली महिला जैकेट की आस्तीन देखकर चुनती हैं; देखभालकर्मी कपड़े बदलना शुरू किए बिना उनके चुनाव में सहायता करती हैं।",
+  "bn": "যত্নগ্রহীতা জ্যাকেটের হাতা দেখে বেছে নেন; পরিচর্যাকর্মী পোশাক বদলানো শুরু না করে তাঁর পছন্দে সহায়তা করেন।",
+  "ne": "हेरचाह पाउने व्यक्तिले ज्याकेटको बाहुला हेरेर छान्नुहुन्छ; हेरचाहकर्मीले कपडा फेर्न सुरु नगरी उहाँको छनोटमा सहयोग गर्छन्।",
+  "my": "စောင့်ရှောက်မှုခံယူသူက အပေါ်အင်္ကျီ၏ လက်ကိုကြည့်၍ ရွေးချယ်ပြီး၊ ဝန်ထမ်းက အဝတ်လဲပေးခြင်း မစတင်ဘဲ ရွေးချယ်မှုကို ကူညီပေးသည်။",
+  "th": "ผู้รับการดูแลดูแขนเสื้อแจ็กเก็ตเพื่อเลือก เจ้าหน้าที่สนับสนุนการเลือกโดยยังไม่เริ่มเปลี่ยนเสื้อให้",
+  "km": "អ្នកទទួលការថែទាំមើលដៃអាវក្រៅដើម្បីជ្រើសរើស ហើយបុគ្គលិកគាំទ្រការជ្រើសរើសដោយមិនទាន់ចាប់ផ្តើមប្តូរសម្លៀកបំពាក់ឱ្យ។",
+  "tl": "Tinitingnan ng inaalagaan ang manggas ng jacket upang pumili; sinusuportahan ng tagapag-alaga ang pasiya niya nang hindi pa sinisimulang palitan ang kaniyang damit."
+},
   "7": {
     "ja": "青いしおりのページを探す援助を受けた後、本人が自分で本を読みます。",
     "en": "After receiving help finding the page marked by the blue bookmark, he reads the book independently.",
