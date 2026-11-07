@@ -404,6 +404,21 @@ const currentImageAlt:Record<string,Record<string,string>> = {
     "th": "ในการฝึกอบรมโรงแรม ผู้สอนชี้ตำแหน่งถังดับเพลิงและอุปกรณ์แจ้งเหตุเพลิงไหม้ ขณะที่พนักงานดูคู่มือและจดบันทึก ภาพไม่ได้แสดงขั้นตอนใช้อุปกรณ์",
     "km": "ក្នុងការហ្វឹកហាត់សណ្ឋាគារ អ្នកបង្ហាត់បង្ហាញទីតាំងបំពង់ពន្លត់អគ្គិភ័យ និងឧបករណ៍រោទិ៍អគ្គិភ័យ ខណៈបុគ្គលិកមើលសៀវភៅណែនាំនិងកត់ត្រា។ រូបនេះមិនបង្ហាញជំហានប្រើឧបករណ៍ទេ។",
     "tl": "Sa pagsasanay sa hotel, itinuturo ng tagapagsanay ang kinaroroonan ng pamatay-sunog at alarma habang tumitingin sa manwal at nagtatala ang kawani. Walang ipinapakitang hakbang sa paggamit."
+  },
+  "hotel-service-06": {
+    "ja": "客室付近で、従業員が記録と場所を示して報告し、責任者が話を聞いて別の用紙へ記録する。扉は閉じたままで、入室や結論を示す場面ではありません。",
+    "en": "Near a guestroom, an employee reports with notes and indicates the location while a supervisor listens and records separately. The door stays closed; no entry or conclusion is shown.",
+    "vi": "Gần phòng khách, nhân viên dùng sổ và chỉ vị trí để báo cáo; người phụ trách lắng nghe và ghi riêng. Cửa vẫn đóng, ảnh không thể hiện việc vào phòng hay kết luận sự việc.",
+    "id": "Di dekat kamar tamu, staf melapor dengan catatan dan menunjukkan lokasi, sementara supervisor mendengarkan serta mencatat terpisah. Pintu tetap tertutup; tidak ditunjukkan tindakan masuk atau kesimpulan.",
+    "zh-CN": "客房附近，员工结合笔记指示地点并报告，负责人倾听后另行记录。房门保持关闭，图片不展示入室或事件结论。",
+    "zh-TW": "客房附近，員工結合筆記指示地點並報告，負責人傾聽後另行記錄。房門保持關閉，圖片不展示入室或事件結論。",
+    "hi": "अतिथि कक्ष के पास कर्मचारी नोट और स्थान दिखाकर रिपोर्ट करता है; पर्यवेक्षक सुनकर अलग कागज़ पर लिखता है। दरवाज़ा बंद है; प्रवेश या निष्कर्ष नहीं दिखाया गया है।",
+    "bn": "অতিথিকক্ষের কাছে কর্মী নোট ও অবস্থান দেখিয়ে রিপোর্ট করছেন, আর তত্ত্বাবধায়ক শুনে আলাদা কাগজে লিখছেন। দরজা বন্ধ; ভেতরে প্রবেশ বা সিদ্ধান্ত দেখানো হয়নি।",
+    "ne": "अतिथि कोठानजिक कर्मचारीले टिपोट र स्थान देखाउँदै रिपोर्ट गर्छन् र पर्यवेक्षकले सुनेर छुट्टै कागजमा लेख्छन्। ढोका बन्द छ; प्रवेश वा निष्कर्ष देखाइएको छैन।",
+    "my": "ဧည့်ခန်းအနီးတွင် ဝန်ထမ်းက မှတ်စုနှင့် နေရာကိုပြ၍ တင်ပြပြီး ကြီးကြပ်သူက နားထောင်ကာ သီးခြားစာရွက်တွင် မှတ်တမ်းရေးနေသည်။ တံခါးပိတ်ထားပြီး အခန်းဝင်ခြင်း သို့မဟုတ် ဆုံးဖြတ်ချက်ကို မပြထားပါ။",
+    "th": "ใกล้ห้องพัก พนักงานใช้บันทึกและชี้สถานที่เพื่อรายงาน ผู้รับผิดชอบฟังแล้วจดแยกบนกระดาษ ประตูยังปิดอยู่ ภาพไม่ได้แสดงการเข้าห้องหรือข้อสรุป",
+    "km": "នៅជិតបន្ទប់ភ្ញៀវ បុគ្គលិកបង្ហាញកំណត់ត្រានិងទីតាំងដើម្បីរាយការណ៍ ហើយអ្នកទទួលខុសត្រូវស្តាប់និងកត់ត្រាដាច់ដោយឡែក។ ទ្វារនៅបិទ ហើយមិនបង្ហាញការចូលបន្ទប់ឬសេចក្តីសន្និដ្ឋានទេ។",
+    "tl": "Malapit sa kuwarto, nag-uulat ang kawani gamit ang tala at pagturo sa lugar habang nakikinig at hiwalay na nagtatala ang superbisor. Sarado ang pinto; walang ipinapakitang pagpasok o konklusyon."
   }
 };
 export function hotelIllustrationAlt(id:string,language:string,fallback:string):string {
