@@ -1,3 +1,4 @@
+import {FoodPathogenComparison} from './FoodPathogenComparison';
 import {FoodRoyalWeek8Native} from './FoodRoyalWeek8Native';
 import {foodRoyalWeek8NativeFor} from '@/data/food-manufacturing/royal-week8-native';
 import {FoodRoyalWeek7Native} from './FoodRoyalWeek7Native';
@@ -67,6 +68,7 @@ export function FoodDailyLearning({lesson,language,showTranslation,textColor,rea
  return <View testID={`food-daily-learning-${lesson.id}`} style={s.section}>
  {(source||native||native4||native5||nativeSigns||native7||native8||retainedTechnical)&&<View testID={`food-daily-diagram-${lesson.id}`} style={s.figure}>
  {source&&<Pressable accessibilityRole="button" accessibilityLabel={`${p.titleJa}・拡大${t?` · ${t.paragraphTitles[p.id]}`:''}`} onPress={()=>setExpanded(true)}><Image testID={royalImage?.replacesIllustrationId} source={source} resizeMode="contain" accessibilityLabel={imageDescription} style={[s.image,royalImage?{aspectRatio:royalImage.width/royalImage.height}:null]}/></Pressable>}
+ <FoodPathogenComparison lesson={lesson} language={language} showTranslation={showTranslation}/>
  {native8&&<FoodRoyalWeek8Native lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor} readingColor={readingColor}/>}
  {native7&&<FoodRoyalWeek7Native lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor} readingColor={readingColor}/>}
  {nativeSigns&&<FoodSafetySigns lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor} readingColor={readingColor} dailyPlacement/>}

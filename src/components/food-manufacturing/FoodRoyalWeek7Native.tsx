@@ -12,6 +12,8 @@ function SourceLabel({lesson,text}:{lesson:FoodManufacturingLesson;text:string})
  const tokens=[...dictionary.keys()].sort((a,b)=>b.length-a.length),parts:{text:string;reading?:string}[]=[];let offset=0;while(offset<text.length){const key=tokens.find(key=>text.startsWith(key,offset));if(key){parts.push({text:key,reading:dictionary.get(key)});offset+=key.length;}else{const c=Array.from(text.slice(offset))[0];parts.push({text:c});offset+=c.length;}}
  return <View accessible accessibilityLabel={text} style={s.ruby}>{parts.map((p,i)=><View key={i} style={s.word}><Text style={s.reading}>{p.reading??' '}</Text><Text style={s.label}>{p.text}</Text></View>)}</View>;
 }
+export {SourceLabel as FoodSourceLabel};
+
 /** Exact source example tables. Native text/quantities remain selectable and independent of raster artwork. */
 export function FoodRoyalWeek7Native({lesson,language,showTranslation,textColor,readingColor}:{lesson:FoodManufacturingLesson;language:string;showTranslation:boolean;textColor:string;readingColor:string}){
  const binding=foodRoyalWeek7NativeFor(lesson);if(!binding)return null;const tr=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null,labels=tr?(native.locales as Record<string,string[]>)[language]:null;
