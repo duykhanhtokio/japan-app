@@ -114,12 +114,12 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
- 'rst-2-hyg-20':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-04-disinfection-dry-protected-storage.webp'),aspectRatio:1.77577045696068},
- 'rst-2-hyg-19':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-03-detergent-material-label-check.webp'),aspectRatio:1.7768331562167907},
+'rst-2-hyg-20':{source:require('../../../assets/restaurant/royal-weekly-20261107/week08/rst-2-hyg-20-disinfection-manual-check.webp'),aspectRatio:1.5},
+'rst-2-hyg-19':{source:require('../../../assets/restaurant/royal-weekly-20261107/week08/rst-2-hyg-19-detergent-manual-check.webp'),aspectRatio:1.5},
  'rst-2-hyg-17':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-01-haccp-observation-verification.webp'),aspectRatio:1.7768331562167907},
- 'rst-2-hyg-15':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-01-haccp-observation-verification.webp'),aspectRatio:1.7768331562167907},
+'rst-2-hyg-15':{source:require('../../../assets/restaurant/royal-weekly-20261107/week08/rst-2-hyg-15-authority-role-check.webp'),aspectRatio:1.5},
  'rst-1-svc-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-svc-01-qsca-dining-inspection.webp'),aspectRatio:1.5},
- 'rst-1-svc-02':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-svc-01-qsca-dining-inspection.webp'),aspectRatio:1.5},
+'rst-1-svc-02':{source:require('../../../assets/restaurant/royal-weekly-20261107/week08/rst-1-svc-02-greeting.webp'),aspectRatio:1.5},
  'rst-1-cook-16':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-16-split-load-trolley-assistance.webp'),aspectRatio:1.5},
  'rst-1-cook-17':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-17-blade-enclosed-preclean-briefing.webp'),aspectRatio:1.5},
  'rst-1-cook-18':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-18-chipped-bowl-segregation.webp'),aspectRatio:1.5},
