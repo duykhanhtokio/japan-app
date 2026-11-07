@@ -472,6 +472,11 @@ export function DayReading({
     { colors } = useStudyAppearance(),
     { language } = useAppLanguage();
   const lessonTranslation = translationForLesson(lessonKey, language);
+  const contextCaption = artCaptionJa ?? contextVisual?.keyObjectiveJa ?? cover.captionVi;
+  const localizedContextCaption = translationOpen && lessonTranslation
+    ? royalCaptionForStudyDay(entry.day, language) ?? lessonTranslation.artCaption : undefined;
+  const contextAccessibilityLabel = localizedContextCaption && language !== 'ja'
+    ? contextCaption + ' / ' + localizedContextCaption : contextCaption;
   const translated = (text: string, id?: string) =>
     translationOpen ? (
       language === "vi" ? (
@@ -526,7 +531,7 @@ export function DayReading({
         </View>
       )) : <Image
         testID={`kaigo-day-art-${entry.day}`}
-        accessibilityLabel={artCaptionJa ?? contextVisual?.keyObjectiveJa ?? cover.captionVi}
+        accessibilityLabel={contextAccessibilityLabel}
         source={cover.source}
         resizeMode="contain"
         style={{
@@ -542,7 +547,7 @@ export function DayReading({
       {figures.length > 0 && kaigoRoyalWeeklyArt[entry.day] && <View testID={`kaigo-supplemental-context-${entry.day}`}>
         <Image
           testID={`kaigo-day-art-${entry.day}`}
-          accessibilityLabel={artCaptionJa ?? cover.captionVi}
+          accessibilityLabel={contextAccessibilityLabel}
           source={cover.source}
           resizeMode="contain"
           style={{ width: "100%", aspectRatio: cover.aspectRatio, maxHeight: 320 }}
