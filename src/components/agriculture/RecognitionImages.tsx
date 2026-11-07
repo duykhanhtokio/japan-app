@@ -1,5 +1,6 @@
 import localeData from '@/data/agriculture/recognition-image-locales.json';
 import {FlowerLegendFigure} from './FlowerLegendFigure';
+import {CropCalendarFigure} from './CropCalendarFigure';
 import {StyleSheet,Text,View,type ImageSourcePropType} from 'react-native';
 import {ZoomableFigure} from './ZoomableFigure';
 import data from '@/data/agriculture/recognition-images.json';
@@ -235,7 +236,7 @@ export function RecognitionImages({lessonId,lessonSourceHash,colors,level,langua
  return <>{visible.map(item=>{const t=showTranslation?recognitionImageTranslation(item,lessonId,lessonSourceHash,lessonRevision,language):null;return <View key={item.id} testID={item.id} style={[s.figure,{backgroundColor:colors.translation,borderColor:colors.border}]}>
   <Text style={[s.title,{color:colors.translationText}]}>{item.titleJa}</Text>
   {!!t&&<Text testID={`${item.id}-localized-title`} style={[s.title,{color:colors.translationText}]}>{t.title}</Text>}
-  {item.id==='agr-f40-general-flower-legend-reader'?<FlowerLegendFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} colors={colors}/>:<ZoomableFigure source={assets[item.assetKey]} width={item.width} height={item.height} altJa={t?.alt||item.altJa} testID={item.id} colors={colors} allowExpandedView={item.allowExpandedView}/>}
+  {item.id==='agr-f40-general-cropping-example-flow'?<CropCalendarFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language={language} showTranslation={showTranslation} includeMetadata={false} colors={colors}/>:item.id==='agr-f40-general-flower-legend-reader'?<FlowerLegendFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} colors={colors}/>:<ZoomableFigure source={assets[item.assetKey]} width={item.width} height={item.height} altJa={t?.alt||item.altJa} testID={item.id} colors={colors} allowExpandedView={item.allowExpandedView}/>}
   {!!item.labelsJa?.length&&<View style={{gap:4}}>{item.labelsJa.map((label,index)=><Text key={`${index}-${label}`} style={[s.body,{color:colors.translationText}]}>{label}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`}>{'\n'}{t?.labels?.[index]}</Text>}</Text>)}</View>}
   <Text style={[s.label,{color:colors.translationText}]}>観察の手掛かり</Text>
   <Text style={[s.body,{color:colors.translationText}]}>{item.observationJa}</Text>

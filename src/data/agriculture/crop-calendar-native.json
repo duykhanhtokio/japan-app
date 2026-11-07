@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 1,
+  "figureId": "agr-f40-general-cropping-example-flow",
+  "sourceJapanese": {
+    "title": "作型を播種・施設・収穫へ読む",
+    "alt": "キュウリ三作型とキャベツ四作型を、播種月、ハウス記号の有無、収穫季節の流れへ組み直した七カード。",
+    "observation": "播種点と収穫の期間を分け、秋・冬に播種した行の年またぎを読みます。屋根の記号は施設利用を示し、厳密な設置期間ではありません。",
+    "limit": "元資料の例を整理した独自図です。地域・品種共通の作業日程、施設の設置・開閉日、収穫の具体的開始日は指定しません。"
+  },
+  "referenceAssetSha256": "d7f4a363ac393ef40c74d61a9d0fd0a2033c158647b388350f72b6caa15ccdd8",
+  "sources": [
+    {
+      "documentId": "AGR-S1",
+      "pdfPage": 11,
+      "printedPage": 5
+    },
+    {
+      "documentId": "AGR-S2",
+      "pdfPage": 13,
+      "printedPage": 11
+    }
+  ],
+  "lessonBindings": {
+    "agr-crop-plan": {
+      "sourceHash": "655f67184582087bc66dd988bd5b03af717c02c89cb0580df74a9fea378a7da3",
+      "revision": "v1",
+      "scopeLevels": [
+        "1",
+        "2"
+      ]
+    },
+    "agr-par11-general-cropping-calendar": {
+      "sourceHash": "dd0a3c61bf1b3bcbc3f09d9c2edb1bb107c1a430e0717210414627e7555360a4",
+      "revision": "v1",
+      "scopeLevels": [
+        "1",
+        "2"
+      ]
+    }
+  },
+  "rows": [
+    {
+      "id": "1",
+      "crop": "cucumber",
+      "type": "forcing",
+      "sowingMonth": 9,
+      "greenhouseSymbol": true,
+      "harvest": "yearEndFollowingWinterSpring"
+    },
+    {
+      "id": "2",
+      "crop": "cucumber",
+      "type": "ordinary",
+      "sowingMonth": 4,
+      "greenhouseSymbol": false,
+      "harvest": "summer"
+    },
+    {
+      "id": "3",
+      "crop": "cucumber",
+      "type": "retarded",
+      "sowingMonth": 7,
+      "greenhouseSymbol": true,
+      "harvest": "autumnYearEnd"
+    },
+    {
+      "id": "4",
+      "crop": "cabbage",
+      "type": "springSummer",
+      "sowingMonth": 3,
+      "greenhouseSymbol": false,
+      "harvest": "summer"
+    },
+    {
+      "id": "5",
+      "crop": "cabbage",
+      "type": "summerWinter",
+      "sowingMonth": 7,
+      "greenhouseSymbol": false,
+      "harvest": "winter"
+    },
+    {
+      "id": "6",
+      "crop": "cabbage",
+      "type": "autumnSpring",
+      "sowingMonth": 10,
+      "greenhouseSymbol": false,
+      "harvest": "followingSpring"
+    },
+    {
+      "id": "7",
+      "crop": "cabbage",
+      "type": "winterSummer",
+      "sowingMonth": 12,
+      "greenhouseSymbol": false,
+      "harvest": "followingSummer"
+    }
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseReady": false,
+  "labels": {
+    "ja": {
+      "title": "作型を播種・施設・収穫へ読む",
+      "alt": "キュウリ三作型とキャベツ四作型を、播種月、ハウス記号の有無、収穫季節の流れへ組み直した七カード。",
+      "observation": "播種点と収穫の期間を分け、秋・冬に播種した行の年またぎを読みます。屋根の記号は施設利用を示し、厳密な設置期間ではありません。",
+      "limit": "元資料の例を整理した独自図です。地域・品種共通の作業日程、施設の設置・開閉日、収穫の具体的開始日は指定しません。",
+      "crops": {
+        "cucumber": "キュウリ",
+        "cabbage": "キャベツ"
+      },
+      "types": {
+        "forcing": "促成",
+        "ordinary": "普通",
+        "retarded": "抑制",
+        "springSummer": "春まき夏どり",
+        "summerWinter": "夏まき冬どり",
+        "autumnSpring": "秋まき春どり",
+        "winterSummer": "冬まき夏どり"
+      },
+      "sowingMonth": "{month}月に播種",
+      "greenhouse": {
+        "present": "ハウス記号あり",
+        "absent": "ハウス記号なし"
+      },
+      "harvest": {
+        "yearEndFollowingWinterSpring": "年末～翌年の冬・春",
+        "summer": "夏の収穫帯",
+        "autumnYearEnd": "秋～年末の収穫帯",
+        "winter": "冬の収穫帯",
+        "followingSpring": "翌春の収穫帯",
+        "followingSummer": "翌夏の収穫帯"
+      }
+    },
+    "en": {
+      "title": "Read cropping types through sowing, facilities and harvest",
+      "alt": "Seven cards reorganize three cucumber cropping types and four cabbage cropping types into sowing month, presence or absence of a greenhouse symbol, and harvest season.",
+      "observation": "Distinguish the sowing point from the harvest period and read the year crossing in rows sown in autumn or winter. The roof symbol indicates facility use, not an exact installation period.",
+      "limit": "This original diagram organizes examples from the source. It does not prescribe a work schedule common to all regions or cultivars, facility installation or opening/closing dates, or an exact harvest start date.",
+      "crops": {
+        "cucumber": "Cucumber",
+        "cabbage": "Cabbage"
+      },
+      "types": {
+        "forcing": "Forcing cultivation",
+        "ordinary": "Ordinary cultivation",
+        "retarded": "Delayed cultivation",
+        "springSummer": "Spring sowing, summer harvest",
+        "summerWinter": "Summer sowing, winter harvest",
+        "autumnSpring": "Autumn sowing, spring harvest",
+        "winterSummer": "Winter sowing, summer harvest"
+      },
+      "sowingMonth": "Sow in month {month}",
+      "greenhouse": {
+        "present": "Greenhouse symbol shown",
+        "absent": "No greenhouse symbol"
+      },
+      "harvest": {
+        "yearEndFollowingWinterSpring": "Year-end to the following winter and spring",
+        "summer": "Summer harvest period",
+        "autumnYearEnd": "Autumn to year-end harvest period",
+        "winter": "Winter harvest period",
+        "followingSpring": "Following spring harvest period",
+        "followingSummer": "Following summer harvest period"
+      }
+    },
+    "vi": {
+      "title": "Đọc mô hình mùa vụ qua gieo hạt, cơ sở và thu hoạch",
+      "alt": "Bảy thẻ sắp xếp lại ba mô hình mùa vụ dưa chuột và bốn mô hình mùa vụ bắp cải thành tháng gieo, có hay không ký hiệu nhà kính và mùa thu hoạch.",
+      "observation": "Phân biệt thời điểm gieo với khoảng thu hoạch, đọc phần chuyển sang năm sau ở các hàng gieo vào mùa thu hoặc đông. Ký hiệu mái thể hiện sử dụng cơ sở, không phải khoảng lắp đặt chính xác.",
+      "limit": "Đây là sơ đồ riêng sắp xếp các ví dụ trong tài liệu nguồn. Không quy định lịch công việc chung cho mọi vùng hoặc giống, ngày lắp đặt hay đóng mở cơ sở, hoặc ngày bắt đầu thu hoạch cụ thể.",
+      "crops": {
+        "cucumber": "Dưa chuột",
+        "cabbage": "Bắp cải"
+      },
+      "types": {
+        "forcing": "Canh tác sớm",
+        "ordinary": "Canh tác thông thường",
+        "retarded": "Canh tác muộn",
+        "springSummer": "Gieo xuân, thu hoạch hè",
+        "summerWinter": "Gieo hè, thu hoạch đông",
+        "autumnSpring": "Gieo thu, thu hoạch xuân",
+        "winterSummer": "Gieo đông, thu hoạch hè"
+      },
+      "sowingMonth": "Gieo tháng {month}",
+      "greenhouse": {
+        "present": "Có ký hiệu nhà kính",
+        "absent": "Không có ký hiệu nhà kính"
+      },
+      "harvest": {
+        "yearEndFollowingWinterSpring": "Cuối năm đến mùa đông và xuân năm sau",
+        "summer": "Khoảng thu hoạch hè",
+        "autumnYearEnd": "Khoảng thu hoạch từ thu đến cuối năm",
+        "winter": "Khoảng thu hoạch đông",
+        "followingSpring": "Khoảng thu hoạch xuân năm sau",
+        "followingSummer": "Khoảng thu hoạch hè năm sau"
+      }
+    },
+    "id": {
+      "title": "Membaca pola budidaya melalui penyemaian, fasilitas dan panen",
+      "alt": "Tujuh kartu menyusun ulang tiga pola budidaya mentimun dan empat pola kubis menjadi bulan penyemaian, ada tidaknya simbol rumah kaca, dan musim panen.",
+      "observation": "Bedakan titik penyemaian dari periode panen dan baca pergantian tahun pada baris yang disemai pada musim gugur atau dingin. Simbol atap menandakan penggunaan fasilitas, bukan periode pemasangan yang tepat.",
+      "limit": "Diagram asli ini menyusun contoh dari sumber. Tidak menetapkan jadwal kerja yang berlaku untuk semua daerah atau varietas, tanggal pemasangan atau buka-tutup fasilitas, atau tanggal pasti mulai panen.",
+      "crops": {
+        "cucumber": "Mentimun",
+        "cabbage": "Kubis"
+      },
+      "types": {
+        "forcing": "Budidaya dipercepat",
+        "ordinary": "Budidaya biasa",
+        "retarded": "Budidaya ditunda",
+        "springSummer": "Semai musim semi, panen musim panas",
+        "summerWinter": "Semai musim panas, panen musim dingin",
+        "autumnSpring": "Semai musim gugur, panen musim semi",
+        "winterSummer": "Semai musim dingin, panen musim panas"
+      },
+      "sowingMonth": "Semai pada bulan {month}",
+      "greenhouse": {
+        "present": "Simbol rumah kaca ada",
+        "absent": "Tanpa simbol rumah kaca"
+      },
+      "harvest": {
+        "yearEndFollowingWinterSpring": "Akhir tahun hingga musim dingin dan semi berikutnya",
+        "summer": "Periode panen musim panas",
+        "autumnYearEnd": "Periode panen musim gugur hingga akhir tahun",
+        "winter": "Periode panen musim dingin",
+        "followingSpring": "Periode panen musim semi berikutnya",
+        "followingSummer": "Periode panen musim panas berikutnya"
+      }
+    },
+    "zh-CN": {
+      "title": "按播种、设施与收获阅读栽培模式",
+      "alt": "七张卡片把黄瓜的三种栽培模式和甘蓝的四种栽培模式，整理为播种月、有无温室符号及收获季节的流程。",
+      "observation": "区分播种点和收获时段，阅读秋冬播种行中的跨年关系。屋顶符号表示利用设施，并非精确的设置时段。",
+      "limit": "这是整理原资料示例的原创图，不规定适用于所有地区或品种的作业日程、设施设置或开闭日期，也不指定具体开始收获日期。",
+      "crops": {
+        "cucumber": "黄瓜",
+        "cabbage": "甘蓝"
+      },
+      "types": {
+        "forcing": "促成栽培",
+        "ordinary": "普通栽培",
+        "retarded": "抑制栽培",
+        "springSummer": "春播夏收",
+        "summerWinter": "夏播冬收",
+        "autumnSpring": "秋播春收",
+        "winterSummer": "冬播夏收"
+      },
+      "sowingMonth": "{month}月播种",
+      "greenhouse": {
+        "present": "有温室符号",
+        "absent": "无温室符号"
+      },
+      "harvest": {
+        "yearEndFollowingWinterSpring": "年末至次年冬春",
+        "summer": "夏季收获时段",
+        "autumnYearEnd": "秋季至年末收获时段",
+        "winter": "冬季收获时段",
+        "followingSpring": "次年春季收获时段",
+        "followingSummer": "次年夏季收获时段"
+      }
+    },
+    "zh-TW": {
+      "title": "按播種、設施與收穫閱讀栽培模式",
+      "alt": "七張卡片把胡瓜的三種栽培模式和甘藍的四種栽培模式，整理為播種月、有無溫室符號及收穫季節的流程。",
+      "observation": "區分播種點和收穫時段，閱讀秋冬播種行中的跨年關係。屋頂符號表示利用設施，並非精確的設置時段。",
+      "limit": "這是整理原資料示例的原創圖，不規定適用於所有地區或品種的作業日程、設施設置或開閉日期，也不指定具體開始收穫日期。",
+      "crops": {
+        "cucumber": "胡瓜",
+        "cabbage": "甘藍"
+      },
+      "types": {
+        "forcing": "促成栽培",
+        "ordinary": "普通栽培",
+        "retarded": "抑制栽培",
+        "springSummer": "春播夏收",
+        "summerWinter": "夏播冬收",
+        "autumnSpring": "秋播春收",
+        "winterSummer": "冬播夏收"
+      },
+      "sowingMonth": "{month}月播種",
+      "greenhouse": {
+        "present": "有溫室符號",
+        "absent": "無溫室符號"
+      },
+      "harvest": {
+        "yearEndFollowingWinterSpring": "年末至次年冬春",
+        "summer": "夏季收穫時段",
+        "autumnYearEnd": "秋季至年末收穫時段",
+        "winter": "冬季收穫時段",
+        "followingSpring": "次年春季收穫時段",
+        "followingSummer": "次年夏季收穫時段"
+      }
+    },
+    "hi": {
+      "title": "बुवाई, सुविधा और कटाई के क्रम से खेती की पद्धति पढ़ें",
+      "alt": "सात कार्ड खीरे की तीन और पत्तागोभी की चार खेती पद्धतियों को बुवाई के महीने, ग्रीनहाउस चिह्न होने या न होने और कटाई के मौसम के क्रम में व्यवस्थित करते हैं।",
+      "observation": "बुवाई के बिंदु को कटाई की अवधि से अलग करें और शरद या सर्दी में बुवाई वाली पंक्तियों का अगले वर्ष में जाना पढ़ें। छत का चिह्न सुविधा का उपयोग दिखाता है, स्थापना की सटीक अवधि नहीं।",
+      "limit": "यह मूल सामग्री के उदाहरणों को व्यवस्थित करने वाला स्वतंत्र चित्र है। यह सभी क्षेत्रों या किस्मों के लिए समान कार्यसूची, सुविधा लगाने या खोलने-बंद करने की तारीख या कटाई शुरू होने की सटीक तारीख निर्धारित नहीं करता।",
+      "crops": {
+        "cucumber": "खीरा",
+        "cabbage": "पत्तागोभी"
+      },
+      "types": {
+        "forcing": "अगेती खेती",
+        "ordinary": "सामान्य खेती",
+        "retarded": "विलंबित खेती",
+        "springSummer": "वसंत बुवाई, गर्मी की कटाई",
+        "summerWinter": "गर्मी की बुवाई, सर्दी की कटाई",
+        "autumnSpring": "शरद बुवाई, वसंत की कटाई",
+        "winterSummer": "सर्दी की बुवाई, गर्मी की कटाई"
+      },
+      "sowingMonth": "महीना {month} में बुवाई",
+      "greenhouse": {
+        "present": "ग्रीनहाउस का चिह्न है",
+        "absent": "ग्रीनहाउस का चिह्न नहीं है"
+      },
+      "harvest": {
+        "yearEndFollowingWinterSpring": "वर्षांत से अगले वर्ष की सर्दी और वसंत तक",
+        "summer": "गर्मी की कटाई अवधि",
+        "autumnYearEnd": "शरद से वर्षांत तक कटाई अवधि",
+        "winter": "सर्दी की कटाई अवधि",
+        "followingSpring": "अगले वसंत की कटाई अवधि",
+        "followingSummer": "अगली गर्मी की कटाई अवधि"
+      }
+    },
+    "bn": {
+      "title": "বপন, স্থাপনা ও ফসল তোলার ধারায় চাষের ধরন পড়ুন",
+      "alt": "সাতটি কার্ড শসার তিন ও বাঁধাকপির চার চাষের ধরনকে বপনের মাস, গ্রিনহাউস প্রতীক থাকা বা না থাকা এবং ফসল তোলার ঋতুর ধারায় সাজায়।",
+      "observation": "বপনের বিন্দুকে ফসল তোলার সময়কাল থেকে আলাদা করুন এবং শরৎ বা শীতে বপন করা সারির পরের বছরে যাওয়া পড়ুন। ছাদের প্রতীক স্থাপনা ব্যবহারের নির্দেশ করে, স্থাপনের সঠিক সময়কাল নয়।",
+      "limit": "এটি মূল উপকরণের উদাহরণ সাজানো নিজস্ব চিত্র। সব অঞ্চল বা জাতের জন্য একই কাজের সূচি, স্থাপনা বসানো বা খোলা-বন্ধের তারিখ কিংবা ফসল তোলার সুনির্দিষ্ট শুরুর তারিখ নির্ধারণ করে না।",
+      "crops": {
+        "cucumber": "শসা",
+        "cabbage": "বাঁধাকপি"
+      },
+      "types": {
+        "forcing": "আগাম চাষ",
+        "ordinary": "স্বাভাবিক চাষ",
+        "retarded": "বিলম্বিত চাষ",
+        "springSummer": "বসন্তে বপন, গ্রীষ্মে ফসল",
+        "summerWinter": "গ্রীষ্মে বপন, শীতে ফসল",
+        "autumnSpring": "শরতে বপন, বসন্তে ফসল",
+        "winterSummer": "শীতে বপন, গ্রীষ্মে ফসল"
+      },
+      "sowingMonth": "{month} নম্বর মাসে বপন",
+      "greenhouse": {
+        "present": "গ্রিনহাউসের প্রতীক আছে",
+        "absent": "গ্রিনহাউসের প্রতীক নেই"
+      },
+      "harvest": {
+        "yearEndFollowingWinterSpring": "বছরশেষ থেকে পরের শীত ও বসন্ত",
+        "summer": "গ্রীষ্মে ফসল তোলার সময়কাল",
+        "autumnYearEnd": "শরৎ থেকে বছরশেষে ফসল তোলার সময়কাল",
+        "winter": "শীতে ফসল তোলার সময়কাল",
+        "followingSpring": "পরের বসন্তে ফসল তোলার সময়কাল",
+        "followingSummer": "পরের গ্রীষ্মে ফসল তোলার সময়কাল"
+      }
+    },
+    "ne": {
+      "title": "बीउ छर्ने, संरचना प्रयोग र कटाइको क्रमबाट खेतीको ढाँचा पढ्नुहोस्",
+      "alt": "सात कार्डले काँक्राका तीन र बन्दाकोबीका चार खेतीका ढाँचालाई बीउ छर्ने महिना, हरितगृह चिह्न भए नभएको र कटाइको मौसमको क्रममा मिलाउँछन्।",
+      "observation": "बीउ छर्ने बिन्दुलाई कटाइ अवधिबाट छुट्याएर शरद वा जाडोमा छरेका पङ्क्ति अर्को वर्षमा जाने कुरा पढ्नुहोस्। छानाको चिह्नले संरचना प्रयोग देखाउँछ, ठ्याक्कै स्थापना अवधि होइन।",
+      "limit": "यो मूल सामग्रीका उदाहरण मिलाइएको मौलिक चित्र हो। यसले सबै क्षेत्र वा जातका लागि साझा कार्यतालिका, संरचना स्थापना वा खोल्ने-बन्द गर्ने मिति अथवा कटाइ सुरु हुने निश्चित मिति तोक्दैन।",
+      "crops": {
+        "cucumber": "काँक्रा",
+        "cabbage": "बन्दाकोबी"
+      },
+      "types": {
+        "forcing": "अगौटे खेती",
+        "ordinary": "सामान्य खेती",
+        "retarded": "ढिलो गरिने खेती",
+        "springSummer": "वसन्तमा छर्ने, गर्मीमा काट्ने",
+        "summerWinter": "गर्मीमा छर्ने, जाडोमा काट्ने",
+        "autumnSpring": "शरदमा छर्ने, वसन्तमा काट्ने",
+        "winterSummer": "जाडोमा छर्ने, गर्मीमा काट्ने"
+      },
+      "sowingMonth": "महिना {month} मा बीउ छर्ने",
+      "greenhouse": {
+        "present": "हरितगृह चिह्न छ",
+        "absent": "हरितगृह चिह्न छैन"
+      },
+      "harvest": {
+        "yearEndFollowingWinterSpring": "वर्षान्तदेखि अर्को वर्षको जाडो र वसन्तसम्म",
+        "summer": "गर्मीको कटाइ अवधि",
+        "autumnYearEnd": "शरददेखि वर्षान्तसम्मको कटाइ अवधि",
+        "winter": "जाडोको कटाइ अवधि",
+        "followingSpring": "अर्को वसन्तको कटाइ अवधि",
+        "followingSummer": "अर्को गर्मीको कटाइ अवधि"
+      }
+    },
+    "my": {
+      "title": "မျိုးစေ့ချခြင်း၊ အဆောက်အအုံနှင့် ရိတ်သိမ်းခြင်းမှ စိုက်ပျိုးပုံစံကိုဖတ်ရန်",
+      "alt": "ကတ်ခုနစ်ခုတွင် သခွားစိုက်ပျိုးပုံစံသုံးမျိုးနှင့် ဂေါ်ဖီထုပ်စိုက်ပျိုးပုံစံလေးမျိုးကို မျိုးစေ့ချလ၊ ဖန်လုံအိမ်သင်္ကေတရှိမရှိနှင့် ရိတ်သိမ်းရာသီစီးဆင်းမှုအဖြစ် ပြန်စီထားသည်။",
+      "observation": "မျိုးစေ့ချသည့်အချိန်အမှတ်နှင့် ရိတ်သိမ်းကာလကို ခွဲ၍ ဆောင်းဦး သို့မဟုတ် ဆောင်းတွင်စေ့ချသောအတန်းများ၏ နှစ်ကူးမှုကိုဖတ်ပါ။ အမိုးသင်္ကေတက အဆောက်အအုံအသုံးပြုမှုကိုပြပြီး တိကျသည့်တပ်ဆင်ကာလမဟုတ်ပါ။",
+      "limit": "မူရင်းဥပမာများကို စီထားသည့်သီးခြားပုံဖြစ်သည်။ ဒေသနှင့်မျိုးအားလုံးအတွက်တူညီသောအလုပ်ရက်ဇယား၊ အဆောက်အအုံတပ်ဆင် သို့မဟုတ် ဖွင့်ပိတ်ရက်၊ ရိတ်သိမ်းစတင်ရက်အတိအကျကို မသတ်မှတ်ပါ။",
+      "crops": {
+        "cucumber": "သခွား",
+        "cabbage": "ဂေါ်ဖီထုပ်"
+      },
+      "types": {
+        "forcing": "အချိန်စောစိုက်ပျိုးမှု",
+        "ordinary": "ပုံမှန်စိုက်ပျိုးမှု",
+        "retarded": "အချိန်နောက်ကျစိုက်ပျိုးမှု",
+        "springSummer": "နွေဦးစေ့ချ၊ နွေရိတ်သိမ်း",
+        "summerWinter": "နွေစေ့ချ၊ ဆောင်းရိတ်သိမ်း",
+        "autumnSpring": "ဆောင်းဦးစေ့ချ၊ နွေဦးရိတ်သိမ်း",
+        "winterSummer": "ဆောင်းစေ့ချ၊ နွေရိတ်သိမ်း"
+      },
+      "sowingMonth": "လ {month} တွင်မျိုးစေ့ချ",
+      "greenhouse": {
+        "present": "ဖန်လုံအိမ်သင်္ကေတပါ",
+        "absent": "ဖန်လုံအိမ်သင်္ကေတမပါ"
+      },
+      "harvest": {
+        "yearEndFollowingWinterSpring": "နှစ်ကုန်မှနောက်နှစ်ဆောင်းနှင့်နွေဦးအထိ",
+        "summer": "နွေရိတ်သိမ်းကာလ",
+        "autumnYearEnd": "ဆောင်းဦးမှနှစ်ကုန်ရိတ်သိမ်းကာလ",
+        "winter": "ဆောင်းရိတ်သိမ်းကာလ",
+        "followingSpring": "နောက်နွေဦးရိတ်သိမ်းကာလ",
+        "followingSummer": "နောက်နွေရိတ်သိမ်းကာလ"
+      }
+    },
+    "km": {
+      "title": "អានរបៀបដាំតាមការសាប អគារ និងការប្រមូលផល",
+      "alt": "កាតប្រាំពីររៀបរបៀបដាំត្រសក់បី និងស្ពៃក្តោបបួនឡើងវិញជាលំហូរខែសាប វត្តមានឬអវត្តមានសញ្ញាផ្ទះកញ្ចក់ និងរដូវប្រមូលផល។",
+      "observation": "បែងចែកចំណុចសាបពីរយៈពេលប្រមូលផល ហើយអានការឆ្លងឆ្នាំនៃជួរដែលសាបនៅរដូវស្លឹកឈើជ្រុះឬរងារ។ សញ្ញាដំបូលបង្ហាញការប្រើអគារ មិនមែនរយៈពេលដំឡើងច្បាស់លាស់ទេ។",
+      "limit": "នេះជារូបដើមរៀបចំឧទាហរណ៍ក្នុងឯកសារប្រភព។ វាមិនកំណត់កាលវិភាគការងាររួមសម្រាប់គ្រប់តំបន់ឬពូជ ថ្ងៃដំឡើងឬបើកបិទអគារ ឬថ្ងៃចាប់ផ្តើមប្រមូលផលជាក់លាក់ទេ។",
+      "crops": {
+        "cucumber": "ត្រសក់",
+        "cabbage": "ស្ពៃក្តោប"
+      },
+      "types": {
+        "forcing": "ការដាំឱ្យបានឆាប់",
+        "ordinary": "ការដាំធម្មតា",
+        "retarded": "ការដាំពន្យារពេល",
+        "springSummer": "សាបរដូវផ្ការីក ប្រមូលផលរដូវក្តៅ",
+        "summerWinter": "សាបរដូវក្តៅ ប្រមូលផលរដូវរងារ",
+        "autumnSpring": "សាបរដូវស្លឹកឈើជ្រុះ ប្រមូលផលរដូវផ្ការីក",
+        "winterSummer": "សាបរដូវរងារ ប្រមូលផលរដូវក្តៅ"
+      },
+      "sowingMonth": "សាបនៅខែ {month}",
+      "greenhouse": {
+        "present": "មានសញ្ញាផ្ទះកញ្ចក់",
+        "absent": "គ្មានសញ្ញាផ្ទះកញ្ចក់"
+      },
+      "harvest": {
+        "yearEndFollowingWinterSpring": "ចុងឆ្នាំដល់រដូវរងារនិងផ្ការីកឆ្នាំបន្ទាប់",
+        "summer": "រយៈពេលប្រមូលផលរដូវក្តៅ",
+        "autumnYearEnd": "រយៈពេលប្រមូលផលពីស្លឹកឈើជ្រុះដល់ចុងឆ្នាំ",
+        "winter": "រយៈពេលប្រមូលផលរដូវរងារ",
+        "followingSpring": "រយៈពេលប្រមូលផលរដូវផ្ការីកបន្ទាប់",
+        "followingSummer": "រយៈពេលប្រមូលផលរដូវក្តៅបន្ទាប់"
+      }
+    },
+    "th": {
+      "title": "อ่านรูปแบบการปลูกผ่านการหว่าน โรงเรือน และการเก็บเกี่ยว",
+      "alt": "การ์ดเจ็ดใบจัดรูปแบบแตงกวาสามแบบกับกะหล่ำปลีสี่แบบใหม่เป็นลำดับเดือนหว่าน การมีหรือไม่มีสัญลักษณ์โรงเรือน และฤดูเก็บเกี่ยว",
+      "observation": "แยกจุดหว่านกับช่วงเก็บเกี่ยว อ่านการข้ามปีในแถวที่หว่านฤดูใบไม้ร่วงหรือฤดูหนาว สัญลักษณ์หลังคาแสดงการใช้โรงเรือน ไม่ใช่ระยะติดตั้งที่แน่นอน",
+      "limit": "เป็นภาพที่จัดตัวอย่างจากต้นฉบับใหม่ ไม่กำหนดตารางงานที่ใช้ร่วมกันทุกภูมิภาคหรือพันธุ์ วันติดตั้งหรือเปิดปิดโรงเรือน หรือวันเริ่มเก็บเกี่ยวที่แน่นอน",
+      "crops": {
+        "cucumber": "แตงกวา",
+        "cabbage": "กะหล่ำปลี"
+      },
+      "types": {
+        "forcing": "การปลูกแบบเร่ง",
+        "ordinary": "การปลูกปกติ",
+        "retarded": "การปลูกเพื่อเลื่อนเวลา",
+        "springSummer": "หว่านใบไม้ผลิ เก็บเกี่ยวฤดูร้อน",
+        "summerWinter": "หว่านฤดูร้อน เก็บเกี่ยวฤดูหนาว",
+        "autumnSpring": "หว่านใบไม้ร่วง เก็บเกี่ยวใบไม้ผลิ",
+        "winterSummer": "หว่านฤดูหนาว เก็บเกี่ยวฤดูร้อน"
+      },
+      "sowingMonth": "หว่านเดือน {month}",
+      "greenhouse": {
+        "present": "มีสัญลักษณ์โรงเรือน",
+        "absent": "ไม่มีสัญลักษณ์โรงเรือน"
+      },
+      "harvest": {
+        "yearEndFollowingWinterSpring": "ปลายปีถึงฤดูหนาวและใบไม้ผลิปีถัดไป",
+        "summer": "ช่วงเก็บเกี่ยวฤดูร้อน",
+        "autumnYearEnd": "ช่วงเก็บเกี่ยวใบไม้ร่วงถึงปลายปี",
+        "winter": "ช่วงเก็บเกี่ยวฤดูหนาว",
+        "followingSpring": "ช่วงเก็บเกี่ยวใบไม้ผลิถัดไป",
+        "followingSummer": "ช่วงเก็บเกี่ยวฤดูร้อนถัดไป"
+      }
+    },
+    "tl": {
+      "title": "Basahin ang cultivation pattern sa paghahasik, pasilidad at pag-aani",
+      "alt": "Inaayos ng pitong card ang tatlong cultivation pattern ng pipino at apat ng repolyo bilang daloy ng buwan ng paghahasik, pagkakaroon o kawalan ng simbolo ng greenhouse at panahon ng pag-aani.",
+      "observation": "Ihiwalay ang punto ng paghahasik sa panahon ng pag-aani at basahin ang pagtawid sa susunod na taon ng mga hanay na inihasik sa taglagas o taglamig. Ipinapakita ng simbolo ng bubong ang paggamit ng pasilidad, hindi eksaktong panahon ng paglalagay.",
+      "limit": "Orihinal na diagram itong nagsasaayos ng mga halimbawa sa pinagmulan. Hindi ito nagtatakda ng iskedyul na pare-pareho sa lahat ng rehiyon o barayti, araw ng paglalagay o pagbubukas/pagsasara ng pasilidad o eksaktong unang araw ng pag-aani.",
+      "crops": {
+        "cucumber": "Pipino",
+        "cabbage": "Repolyo"
+      },
+      "types": {
+        "forcing": "Forcing cultivation",
+        "ordinary": "Karaniwang pagtatanim",
+        "retarded": "Delayed cultivation",
+        "springSummer": "Hasik tagsibol, ani tag-init",
+        "summerWinter": "Hasik tag-init, ani taglamig",
+        "autumnSpring": "Hasik taglagas, ani tagsibol",
+        "winterSummer": "Hasik taglamig, ani tag-init"
+      },
+      "sowingMonth": "Maghasik sa buwan {month}",
+      "greenhouse": {
+        "present": "May simbolo ng greenhouse",
+        "absent": "Walang simbolo ng greenhouse"
+      },
+      "harvest": {
+        "yearEndFollowingWinterSpring": "Dulo ng taon hanggang susunod na taglamig at tagsibol",
+        "summer": "Panahon ng ani sa tag-init",
+        "autumnYearEnd": "Panahon ng ani mula taglagas hanggang dulo ng taon",
+        "winter": "Panahon ng ani sa taglamig",
+        "followingSpring": "Panahon ng ani sa susunod na tagsibol",
+        "followingSummer": "Panahon ng ani sa susunod na tag-init"
+      }
+    }
+  }
+}

@@ -8,6 +8,7 @@ import {DailyInstructionDiagram,type DailyDiagramKind} from './DailyInstructionD
 import {Statistics2019Figure} from './Statistics2019Figure';
 import {WinterClimateFigure} from './WinterClimateFigure';
 import {WinterSpatialReference} from './WinterSpatialReference';
+import {CropCalendarFigure} from './CropCalendarFigure';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 type Colors={text:string;translation:string;translationText:string;border:string};
 type Companion={lessonId:string;sourceHash:string;paragraphIds:string[]};
@@ -27,6 +28,7 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
  if(level==='2'&&lesson.id==='agr-statistics'&&d?.kind==='statistics-2019'&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><Statistics2019Figure lesson={lesson} level={level} language={language} showTranslation={showTranslation} translation={showTranslation?agricultureTranslation(lesson,language):null} colors={colors}/></View>;
  if(d&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><DailyInstructionDiagram kind={d.kind as DailyDiagramKind} title={d.titleJa} caption={d.captionJa} alt={d.altJa} colors={colors}/></View>;
  const f=b?.lessonSourceHash===lesson.sourceHash?figures.images.find(f=>f.id===b.figureId&&f.assetSha256===b.assetSha256&&b.scopeLevels.includes(level)):includeExisting?figures.images.find(f=>f.lessonIds.includes(lesson.id)&&f.lessonSourceHashes[lesson.id as keyof typeof f.lessonSourceHashes]===lesson.sourceHash&&f.scopeLevels.includes(level)):null;
+ if(f?.id==='agr-f40-general-cropping-example-flow')return <CropCalendarFigure lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  const asset=f?getAgricultureFigureAsset(f.assetKey):null;
  return f&&asset?<View testID={`agri-daily-support-${lesson.id}`} style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10,gap:10}}>
  <Text style={{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'}}>{f.titleJa}</Text>
