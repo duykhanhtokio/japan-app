@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "unit": "true-level2-week03-three-source-correct-sowing-technical-layouts-localized",
+  "reviewedBaseline": "e23c5821fa6a4799b35364c806b9083ec3c0042f",
+  "scheduledEntryId": "agr-2-w03",
+  "scheduledLessonIds": [
+    "agr-crop-types",
+    "agr-plant-responses",
+    "agr-sowing-design"
+  ],
+  "changedLessonId": "agr-sowing-design",
+  "additionalRetainedFigureSourceContext": "agr-f40-rice-source1-supplement; existing level1-only supplemental context also validated without asserting that future scheduled week complete",
+  "readyPaths": [
+    "src/data/agriculture/recognition-images.json",
+    "src/data/agriculture/recognition-image-locales.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/level2-week03-sowing-locales-qa.json"
+  ],
+  "sourceReview": {
+    "primaryPdfPixelsViewed": {
+      "AGR-S1": [
+        62
+      ],
+      "AGR-S2": [
+        14,
+        16
+      ]
+    },
+    "existingAssetPixelsViewed": [
+      "agr-recognition-sowing-patterns-v1",
+      "agr-f40-general-row-plant-spacing",
+      "agr-fig-f40-sowing-spacing-v1"
+    ],
+    "meaning": "Three already adequate exact placement diagrams retained: surface-wide broadcast, one-row sowing, few-seed clusters; same-row plant gap vs row-to-row gap read by arrow endpoints; lower mature-plant gap not equated with individual seed spacing. Diagram positions represent comparisons, not prescribed counts, distances, density, covering thickness, depths, germination/emergence guarantee or work clearance. Source original order differs from comparison left-to-right order; translations follow current figure actual left/right positions, not source page position.",
+    "newRasterAssets": 0,
+    "technicalDiagramNotOccupationalArtReplacement": true
+  },
+  "bindings": [
+    {
+      "figureId": "agr-recognition-sowing-patterns-v1",
+      "assetSha256": "6a5fe02bff458bcab6d34a360eccd2e795c97900923c1df03e24eb52fb20d92f",
+      "sourceLessonIds": [
+        "agr-sowing-design"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "labelsPerLocale": 3
+    },
+    {
+      "figureId": "agr-f40-general-row-plant-spacing",
+      "assetSha256": "7bd536d5159b78f1568f924302c59987886b8a28440f04a2106c7c5ba0b928af",
+      "sourceLessonIds": [
+        "agr-sowing-design"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "labelsPerLocale": 7
+    },
+    {
+      "figureId": "agr-fig-f40-sowing-spacing-v1",
+      "assetSha256": "f8b1b2212ed4f1c27911e028c62add81b6c84474b89bb33b5ea9d06f7288050b",
+      "sourceLessonIds": [
+        "agr-sowing-design",
+        "agr-f40-rice-source1-supplement"
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ],
+      "labelsPerLocale": 7
+    }
+  ],
+  "checks": {
+    "actualRecognitionTwelveLocaleRenders": 48,
+    "sourceLessonCourseContexts": 4,
+    "pairedTranslatedNativeLabelOccurrences": 288,
+    "recognitionStaleHiddenDependencyLimitRejectionChecks": 122,
+    "actualDailyRenders": 26,
+    "hiddenJapaneseFallbacks": 26,
+    "dailyActiveContextSourceImageRevisionNegatives": 10,
+    "strictTypeScript": "PASS actual RecognitionImages/ZoomableFigure/FlowerLegendFigure + real recognition/locale/legend JSON, minimal React/RN ambient declarations; not full app",
+    "renderer": "Actual RNW RecognitionImages/ZoomableFigure using selected asset bytes; unrelated static imports adapted. Actual DailyLearningFigure uses canonical ID/level lookup adapter and isolated unrelated translation/StudyAppearance, URI asset adapters.",
+    "prior40RegistryEntriesAndLimits": "all exact latest HEAD; preserves incoming source/image/revision repairs and previously saved translations",
+    "recognitionMetadataDiff": "only two new sourceLabelsJa arrays; original IDs/assets/hashes/sourceJapanese/current lesson tuples/scope unchanged",
+    "activeExamReferencesToTheseThreeFigures": 0,
+    "questionAnswerSourceLessonProgressFilesChanged": false,
+    "scripts": [
+      "/workspace/scratch/b72f4a7f6a62/week02-audit/check-thinning.cjs",
+      "/workspace/scratch/b72f4a7f6a62/level2-week03-audit/check-sowing-daily.cjs",
+      "scripts/agriculture/check-recognition-locale-types.cjs"
+    ]
+  },
+  "remainingTrueLevel2Week03": [
+    "pF source-range comparison multilingual metadata/native text, preserving L1 >3.0 vs L2 >=3.0",
+    "soil-moisture instrument multilingual metadata and source/appearance quality audit; no duplicate generation"
+  ],
+  "wholeWeekComplete": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "sourcePhotoObjectiveComplete": false,
+  "releaseReady": false,
+  "sha256": {
+    "src/data/agriculture/recognition-images.json": "04be1a3d3da7793dabb3804b33d280cc582f50f7bf8331cfb91eba0205fd9ed2",
+    "src/data/agriculture/recognition-image-locales.json": "bd125f5fcc4dc6a4d80622df7ad530a8813864bfb96c727d3f52eb54545faffb"
+  }
+}
