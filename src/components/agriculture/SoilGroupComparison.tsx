@@ -1,3 +1,4 @@
+import {AgricultureGrowthSoilRuby} from './AgricultureGrowthSoilRuby';
 import {Text,View} from 'react-native';
 import data from '@/data/agriculture/soil-group-comparison.json';
 import content from '@/data/agriculture/lessons.ja.json';
@@ -14,12 +15,13 @@ export function SoilGroupComparison({lessonId,lessonSourceHash,lessonRevision,le
  const ja=soilGroupLabels(lessonId,lessonSourceHash,lessonRevision,level,'ja');
  if(!ja)return null;
  const t=showTranslation&&language!=='ja'?soilGroupLabels(lessonId,lessonSourceHash,lessonRevision,level,language):null,active=t||ja;
+ const ruby=(field:string,value:string,style:{color:string;fontSize:number;lineHeight:number;fontWeight?:'700'})=><AgricultureGrowthSoilRuby provider="soil-groups" lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language="ja" field={field} text={value} style={style} color={colors.translationText}/>;
  const text={color:colors.translationText,fontSize:16,lineHeight:27};
  return <View testID="agri-native-soil-groups" style={{gap:12,padding:12,marginVertical:12,borderWidth:1,borderColor:colors.border,borderRadius:10}}>
-  <Text style={{...text,fontSize:19,fontWeight:'700'}}>{ja.title}</Text>{!!t&&<Text testID="agri-soil-groups-localized-title" style={text}>{t.title}</Text>}
+  {ruby('title',ja.title,{...text,fontSize:19,fontWeight:'700'})}{!!t&&<Text testID="agri-soil-groups-localized-title" style={text}>{t.title}</Text>}
   <View accessible accessibilityRole="image" accessibilityLabel={[active.alt,...data.rows.map(id=>`${active.paragraphTitles[id]}: ${active.paragraphs[id]}`),...data.notes.map(id=>active.paragraphs[id])].join('\n')} style={{gap:12}}>
-   {data.rows.map(id=><View key={id} testID={`agri-soil-group-row-${id}`} style={{gap:6,borderBottomWidth:1,borderColor:colors.border,paddingVertical:10}}><Text style={{...text,fontWeight:'700'}}>{ja.paragraphTitles[id]}</Text><Text style={text}>{ja.paragraphs[id]}</Text>{!!t&&<><Text style={{...text,fontWeight:'700'}}>{t.paragraphTitles[id]}</Text><Text style={text}>{t.paragraphs[id]}</Text></>}</View>)}
-   {data.notes.map(id=><View key={id} style={{gap:6}}><Text style={text}>{ja.paragraphs[id]}</Text>{!!t&&<Text style={text}>{t.paragraphs[id]}</Text>}</View>)}
+   {data.rows.map(id=><View key={id} testID={`agri-soil-group-row-${id}`} style={{gap:6,borderBottomWidth:1,borderColor:colors.border,paddingVertical:10}}>{ruby(`paragraphTitle:${id}`,ja.paragraphTitles[id],{...text,fontWeight:'700'})}{ruby(`paragraph:${id}`,ja.paragraphs[id],text)}{!!t&&<><Text style={{...text,fontWeight:'700'}}>{t.paragraphTitles[id]}</Text><Text style={text}>{t.paragraphs[id]}</Text></>}</View>)}
+   {data.notes.map(id=><View key={id} style={{gap:6}}>{ruby(`paragraph:${id}`,ja.paragraphs[id],text)}{!!t&&<Text style={text}>{t.paragraphs[id]}</Text>}</View>)}
   </View>
   <Text style={{...text,fontSize:14}}>AGR-S1 · p.11 / AGR-S2 · p.20</Text>
  </View>;

@@ -1,3 +1,4 @@
+import {AgricultureGrowthSoilRuby} from './AgricultureGrowthSoilRuby';
 import {Text,View} from 'react-native';
 import data from '@/data/agriculture/native-process-diagrams.json';
 import support from '@/data/agriculture/daily-learning-support.json';
@@ -24,9 +25,10 @@ export function NativeProcessDiagram({lessonId,lessonSourceHash,lessonRevision,l
  const flow=(v:Labels,i:number)=>`${v.labels[plantFlows[i][0]]}: ${plantFlows[i][1].map(j=>v.labels[j]).join(' → ')}`;
  const alt=[active.alt,...(plant?plantFlows.map((_,i)=>flow(active,i)):active.labels)].join('\n');
  const textStyle={color:colors.translationText,fontSize:16,lineHeight:27};
- const pair=(i:number)=><><Text style={textStyle}>{ja.labels[i]}</Text>{!!t&&<Text style={textStyle}>{t.labels[i]}</Text>}</>;
+ const ruby=(field:string,text:string,style:{color:string;fontSize:number;lineHeight:number;fontWeight?:'700'}=textStyle)=><AgricultureGrowthSoilRuby provider={`process:${lessonId}`} lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language="ja" field={field} text={text} style={style} color={colors.translationText}/>;
+ const pair=(i:number)=><>{ruby(`label:${i}`,ja.labels[i])}{!!t&&<Text style={textStyle}>{t.labels[i]}</Text>}</>;
  return <View testID={`agri-native-process-${e.kind}`} style={{gap:12,marginVertical:12,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:10}}>
-  <Text style={{...textStyle,fontSize:19,fontWeight:'700'}}>{ja.title}</Text>
+  {ruby('title',ja.title,{...textStyle,fontSize:19,fontWeight:'700'})}
   {!!t&&<Text testID="agri-native-process-translated-title" style={textStyle}>{t.title}</Text>}
   <View accessible accessibilityRole="image" accessibilityLabel={alt} style={{gap:14}}>
    {plant?<>
@@ -35,7 +37,7 @@ export function NativeProcessDiagram({lessonId,lessonSourceHash,lessonRevision,l
      <View style={{borderLeftWidth:5,borderColor:'#327842',paddingLeft:10,minHeight:34}}>{pair(15)}</View>
      <View style={{alignSelf:'stretch',borderTopWidth:2,borderColor:'#98734c',alignItems:'center',paddingTop:8}}>{pair(14)}<View style={{borderBottomLeftRadius:32,borderBottomRightRadius:32,borderWidth:2,borderColor:'#98734c',paddingHorizontal:24,paddingVertical:8}}>{pair(12)}</View></View>
     </View>
-    {plantFlows.map((_,i)=><View key={i} testID={`agri-native-process-flow-${i}`} style={{gap:3,borderBottomWidth:1,borderColor:colors.border,paddingBottom:7}}><Text style={textStyle}>{flow(ja,i)}</Text>{!!t&&<Text style={textStyle}>{flow(t,i)}</Text>}</View>)}
+    {plantFlows.map((_,i)=><View key={i} testID={`agri-native-process-flow-${i}`} style={{gap:3,borderBottomWidth:1,borderColor:colors.border,paddingBottom:7}}>{ruby(`flow:${i}`,flow(ja,i))}{!!t&&<Text style={textStyle}>{flow(t,i)}</Text>}</View>)}
    </>:<>
     {[false,true].map(light=><View key={String(light)} testID={`agri-native-photoperiod-${light?'night-light':'unlit'}`} style={{gap:5}}>
      {light&&pair(3)}
@@ -47,7 +49,7 @@ export function NativeProcessDiagram({lessonId,lessonSourceHash,lessonRevision,l
     {pair(4)}
    </>}
   </View>
-  <Text style={textStyle}>{ja.caption}</Text>
+  {ruby('caption',ja.caption)}
   {!!t&&<Text testID="agri-native-process-translated-caption" style={textStyle}>{t.caption}</Text>}
   <Text style={{...textStyle,fontSize:14}}>{e.sources.map(s=>`${s.documentId} · p.${s.printedPage}`).join(' / ')}</Text>
  </View>;
