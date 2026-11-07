@@ -1,6 +1,9 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week01/surface-day02-ph-measurement.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/surface-day02-ph-measurement.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week01/electrical-day03-caliper-parts.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/electrical-day03-caliper-parts.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day03-location-item-stock.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/mechanical-day03-location-item-stock.webp");
   case "assets/manufacturing/royal-weekly-20261107/week01/electrical-day02-solder-joint.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/electrical-day02-solder-joint.webp");
   case "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day02-5s-workbench.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/mechanical-day02-5s-workbench.webp");
   case "assets/manufacturing/royal-weekly-20261107/week01/surface-day01-task-safety.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/surface-day01-task-safety.webp");
