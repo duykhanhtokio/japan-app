@@ -108,6 +108,9 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-2-hyg-14':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-1-hyg-15-shallow-cooling-record-reheat.webp'),aspectRatio:2172/724},
+ 'rst-2-cook-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-2-cook-01-meat-fish-specification-receiving.webp'),aspectRatio:1672/941},
+ 'rst-2-cook-02':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-2-cook-02-vegetable-quality-origin-check.webp'),aspectRatio:1752/897},
  'rst-1-hyg-12':{source:require('../../../assets/restaurant/royal-weekly-20261107/week02/rst-2-hyg-08-waste-segregation-drain-contained.webp'),aspectRatio:1671/941},
  'rst-1-hyg-15':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-1-hyg-15-shallow-cooling-record-reheat.webp'),aspectRatio:2172/724},
  'rst-2-hyg-13':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-2-hyg-13-clean-first-covered-drip-contained-thaw.webp'),aspectRatio:1752/897},
