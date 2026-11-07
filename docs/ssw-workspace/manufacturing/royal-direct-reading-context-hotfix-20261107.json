@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "baseCommit": "0ea22505",
-  "scope": "Immediate mechanical035 caption reading correction",
-  "problem": "Context review found generic fragment readings used in extrusion caption: 出 was read で inside 押し出す; 間 was read あいだ inside ロール間.",
+  "baseCommit": "0ea225053fd49afcfd619a988b0050484282032a",
+  "scope": "Immediate direct-caption contextual reading corrections",
+  "problem": "Context review found generic fragment readings used in extrusion caption: 出 was read で inside 押し出す; 間 was read あいだ inside ロール間. Full compound review also caught 目盛=めも reused from 目盛り in uninflected 1目盛 /4目盛.",
   "fix": [
     {
       "text": "押し出す",
@@ -11,16 +11,26 @@
     {
       "text": "ロール間",
       "reading": "ろーるかん"
+    },
+    {
+      "text": "1目盛",
+      "reading": "ひとめもり"
+    },
+    {
+      "text": "目盛 (without trailing り)",
+      "reading": "めもり"
     }
   ],
   "textAndArtChanges": false,
   "review": {
     "allDirect22Captions": "All short readings were inspected in full surrounding sentences, then longer compound readings reviewed. Canonical 枝路=しろ and 空乏層=くうぼうそう retained. 枝電流=えだでんりゅう has independent university lecture kana support.",
     "branchCurrentSource": "https://nagasaki-u.repo.nii.ac.jp/record/5525/files/Electric%20Circuit%20Lecture%20Note.pdf",
-    "remainingUnknownDirectReadings": []
+    "remainingUnknownDirectReadings": [],
+    "method": "All255unique kanji spans and suffix contexts reviewed across22direct captions. Exact whole compounds/inflected words retained; generic reusable fragments were not accepted without full sentence context."
   },
-  "qa": "22direct definitions /286actual locale reader renders /264native unchanged /286wrong-source guards /22expanded states pass, plus explicit exact two compound regression",
+  "qa": "22direct definitions /286actual locale reader renders /264native unchanged /286wrong-source guards /22expanded states pass, plus explicit exact two compound regression; explicit uninflected/inflected scale-word regressions pass.",
   "nativeReviewed": false,
   "domainReviewed": false,
-  "deviceAcceptance": false
+  "deviceAcceptance": false,
+  "followupBase": "8db5f842"
 }
