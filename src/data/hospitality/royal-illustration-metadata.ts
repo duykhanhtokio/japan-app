@@ -1,5 +1,50 @@
 // Descriptions of the active replacement pixels; lesson knowledge/revisions stay independent.
 const currentImageAlt:Record<string,Record<string,string>> = {
+  "hotel-restaurant-03": {
+  "ja": "客側から見て手前左にご飯、手前右に汁物、奥に副菜と主菜を配した和食の一例。",
+  "en": "A Japanese meal example from the guest’s side has rice at front left, soup at front right, and side and main dishes behind.",
+  "vi": "Ví dụ bữa Nhật nhìn từ phía khách: cơm trước bên trái, canh trước bên phải, món phụ và món chính phía sau.",
+  "id": "Contoh hidangan Jepang dari sisi tamu: nasi di depan kiri, sup di depan kanan, lauk pendamping dan utama di belakang.",
+  "zh-CN": "从客人一侧看的日餐示例：米饭在左前、汤在右前，后方摆配菜与主菜。",
+  "zh-TW": "從客人一側看的日餐示例：米飯在左前、湯在右前，後方擺配菜與主菜。",
+  "hi": "अतिथि की ओर से जापानी भोजन का उदाहरण: आगे बाएँ चावल, आगे दाएँ सूप, पीछे सहायक और मुख्य व्यंजन।",
+  "bn": "অতিথির দিক থেকে জাপানি খাবারের উদাহরণ: সামনে বাঁয়ে ভাত, সামনে ডানে স্যুপ, পেছনে সহযোগী ও প্রধান পদ।",
+  "ne": "अतिथिको दिशाबाट जापानी भोजनको उदाहरण: अगाडि बायाँ भात, अगाडि दायाँ सुप र पछाडि सहायक तथा मुख्य परिकार।",
+  "my": "ဧည့်သည်ဘက်မှမြင်ရသော ဂျပန်အစားအစာနမူနာတွင် ရှေ့ဘယ်ဘက်၌ ထမင်း၊ ရှေ့ညာဘက်၌ ဟင်းချိုနှင့် နောက်ဘက်၌ အရံဟင်း၊ အဓိကဟင်းတို့ရှိသည်။",
+  "th": "ตัวอย่างอาหารญี่ปุ่นเมื่อมองจากฝั่งแขก มีข้าวด้านหน้าซ้าย ซุปด้านหน้าขวา และเครื่องเคียงกับอาหารจานหลักด้านหลัง",
+  "km": "ឧទាហរណ៍អាហារជប៉ុនមើលពីខាងភ្ញៀវ៖ បាយនៅមុខឆ្វេង ស៊ុបនៅមុខស្ដាំ ហើយម្ហូបបន្ទាប់បន្សំនិងម្ហូបចម្បងនៅខាងក្រោយ។",
+  "tl": "Halimbawa ng pagkaing Hapones mula sa panig ng bisita: kanin sa harapang kaliwa, sabaw sa harapang kanan, at mga ulam sa likod."
+},
+  "hotel-restaurant-02": {
+  "ja": "係員が皿の外縁を持って料理を置き、別の場面でグラスの下半分を持って飲み口に触れずに置く。",
+  "en": "A server holds a plate by its outer edge; another service scene shows holding the lower half of a glass without touching its rim.",
+  "vi": "Nhân viên cầm mép ngoài đĩa; cảnh bên cạnh cho thấy cầm nửa dưới ly, tránh chạm miệng ly.",
+  "id": "Petugas memegang tepi luar piring; adegan lain menunjukkan memegang bagian bawah gelas tanpa menyentuh bibirnya.",
+  "zh-CN": "员工握住餐盘外缘；另一场景展示握住玻璃杯下半部，避开杯口。",
+  "zh-TW": "員工握住餐盤外緣；另一場景展示握住玻璃杯下半部，避開杯口。",
+  "hi": "कर्मचारी प्लेट के बाहरी किनारे को पकड़ता है; दूसरे दृश्य में गिलास का निचला आधा भाग पकड़कर किनारे को छूने से बचाया जाता है।",
+  "bn": "কর্মী প্লেটের বাইরের কিনারা ধরছেন; অন্য দৃশ্যে গ্লাসের নিচের অর্ধেক ধরে মুখের অংশ এড়ানো হচ্ছে।",
+  "ne": "कर्मचारीले थालको बाहिरी किनारा समातेका छन्; अर्को दृश्यमा गिलासको तल्लो आधा समातेर पिउने किनारा छोइएको छैन।",
+  "my": "ဝန်ထမ်းက ပန်းကန်အပြင်ဘက်အနားကို ကိုင်ထားပြီး အခြားမြင်ကွင်းတွင် ဖန်ခွက်အောက်ပိုင်းကို ကိုင်ကာ သောက်သည့်နှုတ်ခမ်းကို မထိထားပါ။",
+  "th": "พนักงานจับขอบนอกของจาน อีกภาพแสดงการจับครึ่งล่างของแก้วโดยไม่สัมผัสปากแก้ว",
+  "km": "បុគ្គលិកកាន់គែមខាងក្រៅចាន ហើយទិដ្ឋភាពមួយទៀតបង្ហាញការកាន់ពាក់កណ្ដាលខាងក្រោមកែវ ដោយមិនប៉ះមាត់កែវ។",
+  "tl": "Hawak ng server ang panlabas na gilid ng plato; sa isa pang tagpo, hawak ang ibabang kalahati ng baso nang hindi hinahawakan ang labi nito."
+},
+  "hotel-restaurant-01": {
+  "ja": "レストランで制服姿の係員が髪をまとめ、清潔な手元と靴を上司に確認してもらう。",
+  "en": "A restaurant server with secured hair shows clean hands and uniform to a supervisor; clean shoes are visible.",
+  "vi": "Nhân viên nhà hàng buộc gọn tóc, để quản lý kiểm tra tay, đồng phục và giày sạch.",
+  "id": "Petugas restoran dengan rambut terikat menunjukkan tangan, seragam, dan sepatu bersih kepada penyelia.",
+  "zh-CN": "餐厅员工束好头发，请主管检查双手、制服与干净的鞋。",
+  "zh-TW": "餐廳員工束好頭髮，請主管檢查雙手、制服與乾淨的鞋。",
+  "hi": "रेस्तराँ कर्मचारी बँधे बालों, साफ हाथों, वर्दी और जूतों की पर्यवेक्षक से जाँच करवाती है।",
+  "bn": "রেস্তোরাঁর কর্মী বাঁধা চুল, পরিষ্কার হাত, পোশাক ও জুতা তত্ত্বাবধায়ককে দেখাচ্ছেন।",
+  "ne": "रेस्टुरेन्ट कर्मचारीले बाँधेको कपाल, सफा हात, पोसाक र जुत्ता सुपरभाइजरलाई देखाउँछिन्।",
+  "my": "စားသောက်ဆိုင်ဝန်ထမ်းက ဆံပင်ကိုစည်းထားပြီး လက်၊ ယူနီဖောင်းနှင့် ဖိနပ်သန့်ရှင်းမှုကို ကြီးကြပ်သူအား ပြသသည်။",
+  "th": "พนักงานร้านอาหารรวบผมและให้หัวหน้างานตรวจมือ เครื่องแบบ และรองเท้าที่สะอาด",
+  "km": "បុគ្គលិកភោជនីយដ្ឋានចងសក់ឱ្យរៀបរយ ហើយបង្ហាញដៃ ឯកសណ្ឋាន និងស្បែកជើងស្អាតដល់អ្នកត្រួតពិនិត្យ។",
+  "tl": "Ipinapakita ng server na nakapusod ang buhok ang malinis na kamay, uniporme, at sapatos sa superbisor."
+},
   "hotel-planning-06": {
   "ja": "ホテル担当者二人が、客室販売の二つの資料を電卓で比較するイラスト。正確な条件・計算は画像下の図で示します。",
   "en": "Two hotel employees compare two room-sales records with a calculator. Exact assumptions and calculations appear in the native guide below.",
