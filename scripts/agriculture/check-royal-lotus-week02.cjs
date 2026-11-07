@@ -55,7 +55,8 @@ const mapping=read('src/components/agriculture/RecognitionImages.tsx');assert(ma
 const daily=JSON.parse(read('src/data/agriculture/daily-learning-support.json'));assert(!Object.values(daily.figureBindings).some(b=>b.figureId===figure.id));
 const exam=JSON.parse(read('src/data/agriculture/exam-illustrations.json'));assert(!exam.illustrations.some(i=>i.figureId===figure.id));
 const queue=JSON.parse(read('docs/ssw-workspace/agriculture/royal-weekly-20261107/full-existing-week-image-queue.json'));
-assert.equal(queue.week01Reconciliation.pendingLocaleFigureIds.length,22);
+const currentPending=queue.weeks.find(w=>w.level==='1'&&w.week===1).recognitionIds.filter(id=>!localeData.entries[id]);
+assert.deepEqual(queue.week01Reconciliation.pendingLocaleFigureIds,currentPending);
 assert.equal(queue.week01Reconciliation.wholeWeekComplete,false);
 assert.equal(queue.weeks.find(w=>w.level==='1'&&w.week===2).lotusDisposition.state,'not_applicable_declared_figure_scope_is_level2_only');
-console.log(`PASS week02-lotus: ${positive} actual production lesson-context renders with verified WebP, ${negative} source/scope rejection cases, no exam/daily dependency edits; week01 still has22locale deficits.`);
+console.log(`PASS week02-lotus: ${positive} actual production lesson-context renders with verified WebP, ${negative} source/scope rejection cases, no exam/daily dependency edits; week01 recorded locale deficits=${currentPending.length}.`);

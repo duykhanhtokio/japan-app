@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "unit": "week01-26core312locale-current-queue-reconciliation",
+  "baselineCommit": "a65fac2fca0dfe6776dfdead67741bff1eb53c63",
+  "localeCompletionCommit": "e9e44b2d10100323efc6f46719fd91a684d8589c",
+  "localeBlob": "b5162af522c041a89ce545119e4246108497ee19",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "work": "Preserved all existing26core image descriptions and reconciled stale22pendinglocale queue to0from actual current hash/revision-aware data. No new translations or asset generation. Private drafting was never integrated over externally saved rows.",
+  "checks": {
+    "sourceJapanese": "All4canonical figure fields exact",
+    "assetSha256": "Each locale entry matches current selected registryassetSHA",
+    "lessonBindings": "All linked lessonhash+revision guards current",
+    "languagePairs": 312,
+    "actualProductionSelectorResults": 312,
+    "negativeSourceAndRevisionCases": 52,
+    "deficits": 0,
+    "sourceAndRasterScope": "Reuse prior per-unit verified art/source evidence; this unit does not reapprove every source interpretation or re-decode all26rasters.",
+    "actualLotusRegression": "2current lesson-context renders/9negativecases stillPASS after queuecounter became0; validator now derives currentpendingIDs instead of freezing historical22.",
+    "wholeWeekComplete": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  },
+  "preserved": "Locale file byte-exact currentremote b5162af; canonicalJapanese, all image bytes/sourceIDs/lesson revisions/questions/learnerstate and approvalflags unchanged. Existing precise/native figures retained, no claim99weeks or whole-source knowledge covered.",
+  "afterSha256": {
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/full-existing-week-image-queue.json": "095a5ef8b4c0b8b04570f6f894ecf685c034c3c69bb5ab97a10a6ca35436ff18",
+    "scripts/agriculture/check-week01-image-queue.cjs": "5e76e87583ad4a1f5cc24e7ad20e35b8eb479ad0ef6e153f45e7946d9d610883",
+    "scripts/agriculture/check-royal-lotus-week02.cjs": "9cd097ba1aa61a2a2bddc630793a9ee3d8f97eeb60a556e86f9acaf09da58310"
+  },
+  "unchangedLocaleFileSha256": "c573a1ea2b0034e51aa5058d11b6954b5afe94c268955c5fa1bb1271e0d88beb",
+  "validationCommands": [
+    "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/agriculture/check-week01-image-queue.cjs",
+    "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/agriculture/check-royal-lotus-week02.cjs"
+  ],
+  "nextAction": "Afterpersistence, source-bound native paired7plantorganlabels with currentlesson/labelguards; thenlotus12locales. Freshcheckanyconcurrent external changes and preserve them."
+}
