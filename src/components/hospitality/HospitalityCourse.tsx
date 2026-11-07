@@ -2,6 +2,7 @@ import type React from 'react';
 import {HotelJapaneseText} from './HotelJapaneseText';
 import {HotelPracticeFloorplan} from './HotelPracticeFloorplan';
 import {HotelRevenueExample} from './HotelRevenueExample';
+import {HotelServiceVisualGuide} from './HotelServiceVisualGuide';
 import {useEffect,useRef,useState,type PropsWithChildren} from 'react';
 import {BackHandler,Image,Modal,Pressable,ScrollView,StyleSheet,Text,View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -52,6 +53,7 @@ function Reader({lesson,language,record,disabled,onChange}:{lesson:HotelLesson;l
  {figure&&<View testID={`hotel-figure-${lesson.id}`}><Pressable accessibilityRole="button" accessibilityLabel={t('imageZoom')} onPress={()=>setZoom(true)}><Image source={figure} accessibilityLabel={hotelIllustrationAlt(lesson.id,language,lesson.illustration.alt)} resizeMode="contain" style={[s.figure,hotelIllustrationAspectRatio(lesson.id)?{aspectRatio:hotelIllustrationAspectRatio(lesson.id)}:undefined]}/></Pressable>{body(lesson.illustration.caption)}{translation&&<TranslationText>{translation.illustration.caption}</TranslationText>}</View>}
  {lesson.id==='hotel-front-03'&&<HotelPracticeFloorplan language={language}/>}
  {lesson.id==='hotel-planning-02'&&<HotelRevenueExample language={language}/>}
+ {['hotel-service-01','hotel-service-02','hotel-service-03'].includes(lesson.id)&&<HotelServiceVisualGuide lesson={lesson} language={language}/>}
  {lesson.terms.length>0&&heading(t('terms'))}{lesson.terms.map((term,i)=><View key={`${term.ja}:${i}`}>{body(`${term.ja}（${term.reading}）`)}{body(term.meaning)}{translation&&<TranslationText>{translation.terms[i]?.meaning}</TranslationText>}</View>)}
  {lesson.example.situation&&heading(hospitalityLabel(language,2))}{body(lesson.example.situation)}{lesson.example.steps.map((step,i)=><View key={i}>{body(`${i+1}.`)}{body(step)}{translation&&<TranslationText>{translation.example.steps[i]}</TranslationText>}</View>)}{translation&&<TranslationText>{translation.example.situation}</TranslationText>}
  {heading(t('activity'))}{body(lesson.practice.prompt)}{translation&&<TranslationText>{translation.practice.prompt}</TranslationText>}

@@ -179,6 +179,51 @@ const currentImageAlt:Record<string,Record<string,string>> = {
     "th": "นาฬิกาข้อมือที่พบวางบนถาด พนักงานบันทึกและตรวจการส่งต่อไปเก็บในกล่องร่วมกับผู้รับผิดชอบ",
     "km": "នាឡិកាដៃដែលរកឃើញដាក់លើថាស។ បុគ្គលិកកត់ត្រា ហើយបញ្ជាក់ការប្រគល់ទៅប្រអប់រក្សាទុកជាមួយអ្នកទទួលខុសត្រូវ។",
     "tl": "Nasa tray ang natagpuang relo. Itinatala ito ng kawani at kinukumpirma sa superbisor ang paglilipat sa kahon ng imbakan."
+  },
+  "hotel-service-01": {
+    "ja": "受付担当者が腰から上体を傾けるおじぎを練習し、指導者が鏡の横で姿勢を確認しています。正確な角度の比較は画像下の図で示します。",
+    "en": "A receptionist practices bowing from the hips as a trainer checks posture beside a mirror. Exact angle comparisons are shown in the diagram below.",
+    "vi": "Lễ tân luyện cúi thân từ hông, người hướng dẫn kiểm tra tư thế bên gương. Sơ đồ dưới ảnh so sánh các góc chính xác.",
+    "id": "Resepsionis berlatih membungkuk dari pinggul sementara pelatih memeriksa postur di samping cermin. Perbandingan sudut tepat ada pada diagram di bawah.",
+    "zh-CN": "前台人员练习从髋部前倾鞠躬，指导者在镜子旁检查姿势。准确角度比较在图片下方的图中显示。",
+    "zh-TW": "櫃檯人員練習從髖部前傾鞠躬，指導者在鏡子旁檢查姿勢。準確角度比較在圖片下方的圖中顯示。",
+    "hi": "रिसेप्शन कर्मचारी कूल्हों से झुककर अभ्यास कर रहा है और प्रशिक्षक दर्पण के पास मुद्रा जाँच रहा है। सटीक कोणों की तुलना नीचे के चित्र में है।",
+    "bn": "রিসেপশনের কর্মী কোমর থেকে ঝুঁকে অনুশীলন করছেন এবং প্রশিক্ষক আয়নার পাশে ভঙ্গি যাচাই করছেন। নিচের চিত্রে সঠিক কোণের তুলনা রয়েছে।",
+    "ne": "रिसेप्सन कर्मचारीले कम्मरबाट झुकेर अभ्यास गर्दै छन् र प्रशिक्षकले ऐनाछेउमा आसन जाँच्दै छन्। सही कोणको तुलना तलको चित्रमा छ।",
+    "my": "ဧည့်ကြိုဝန်ထမ်းက တင်ပါးမှအထက်ကိုယ်ကို ကိုင်း၍ လေ့ကျင့်နေပြီး သင်ကြားသူက မှန်ဘေးတွင် ကိုယ်ဟန်ကို စစ်ဆေးနေသည်။ တိကျသောထောင့်နှိုင်းယှဉ်မှုကို ပုံအောက်တွင် ပြထားသည်။",
+    "th": "พนักงานต้อนรับฝึกโค้งลำตัวจากสะโพก ผู้ฝึกสอนตรวจท่าข้างกระจก ภาพด้านล่างเปรียบเทียบมุมที่แน่นอน",
+    "km": "បុគ្គលិកទទួលភ្ញៀវហាត់ឱនដងខ្លួនពីត្រគាក ហើយគ្រូបង្ហាត់ពិនិត្យឥរិយាបថក្បែរកញ្ចក់។ មុំជាក់លាក់ត្រូវបានប្រៀបធៀបក្នុងរូបខាងក្រោម។",
+    "tl": "Nagsasanay yumuko mula sa balakang ang receptionist habang sinusuri ng tagapagsanay ang postura sa tabi ng salamin. Nasa diagram sa ibaba ang eksaktong paghahambing ng anggulo."
+  },
+  "hotel-service-02": {
+    "ja": "客の依頼を聞く受付担当者と、対応条件を確認するため責任者へ相談する場面。敬語の役割と例は画像下の文字で示します。",
+    "en": "A receptionist listens to a guest request, then consults a supervisor to check conditions. Honorific roles and examples appear as text below.",
+    "vi": "Lễ tân nghe yêu cầu của khách rồi hỏi người phụ trách để xác nhận điều kiện. Vai trò và ví dụ kính ngữ nằm ở phần chữ bên dưới.",
+    "id": "Resepsionis mendengarkan permintaan tamu, lalu berkonsultasi dengan atasan untuk memeriksa syarat. Peran dan contoh bahasa hormat ada dalam teks di bawah.",
+    "zh-CN": "前台人员听取客人请求后，向负责人咨询以确认条件。敬语的作用与例句在下方文字中显示。",
+    "zh-TW": "櫃檯人員聽取客人請求後，向負責人諮詢以確認條件。敬語的作用與例句在下方文字中顯示。",
+    "hi": "रिसेप्शन कर्मचारी अतिथि का अनुरोध सुनकर शर्तों की जाँच के लिए पर्यवेक्षक से परामर्श करता है। सम्मानसूचक भाषा की भूमिकाएँ और उदाहरण नीचे पाठ में हैं।",
+    "bn": "রিসেপশনের কর্মী অতিথির অনুরোধ শুনে শর্ত যাচাই করতে তত্ত্বাবধায়কের পরামর্শ নেন। সম্মানসূচক ভাষার ভূমিকা ও উদাহরণ নিচে পাঠ্যে রয়েছে।",
+    "ne": "रिसेप्सन कर्मचारीले अतिथिको अनुरोध सुनेर सर्त जाँच्न पर्यवेक्षकसँग सल्लाह गर्छन्। आदरार्थी भाषाका भूमिका र उदाहरण तलको पाठमा छन्।",
+    "my": "ဧည့်ကြိုဝန်ထမ်းက ဧည့်သည်၏တောင်းဆိုမှုကို နားထောင်ပြီး အခြေအနေများကို စစ်ဆေးရန် ကြီးကြပ်သူနှင့် တိုင်ပင်သည်။ ရိုသေသောအသုံးအနှုန်း၏ အခန်းကဏ္ဍနှင့် ဥပမာများကို အောက်တွင် စာသားဖြင့် ပြထားသည်။",
+    "th": "พนักงานต้อนรับฟังคำขอของแขกแล้วปรึกษาผู้รับผิดชอบเพื่อตรวจเงื่อนไข บทบาทและตัวอย่างภาษาสุภาพแสดงเป็นข้อความด้านล่าง",
+    "km": "បុគ្គលិកទទួលភ្ញៀវស្តាប់សំណើភ្ញៀវ រួចពិគ្រោះអ្នកទទួលខុសត្រូវដើម្បីបញ្ជាក់លក្ខខណ្ឌ។ តួនាទីនិងឧទាហរណ៍ភាសាគួរសមបង្ហាញជាអក្សរខាងក្រោម។",
+    "tl": "Pinakikinggan ng receptionist ang hiling ng bisita bago sumangguni sa superbisor upang tiyakin ang mga kondisyon. Nasa teksto sa ibaba ang mga papel at halimbawa ng magalang na pananalita."
+  },
+  "hotel-service-03": {
+    "ja": "同じ方向へ進む客の左前方で、歩調に気を配りながら案内する従業員。位置と二〜三歩の目安は画像下の図で示します。",
+    "en": "Staff guide a guest from the front-left while moving in the same direction and checking pace. The position and approximate two-to-three-step guide appear below.",
+    "vi": "Nhân viên đi phía trước bên trái khách, cùng hướng và chú ý nhịp bước. Sơ đồ dưới ảnh nêu vị trí và khoảng hai đến ba bước.",
+    "id": "Staf memandu dari depan kiri tamu dalam arah sama sambil menyesuaikan langkah. Posisi dan panduan kira-kira dua sampai tiga langkah ditunjukkan di bawah.",
+    "zh-CN": "员工与客人同向前进，位于客人左前方并注意步速。位置及约领先两至三步的标准在下图显示。",
+    "zh-TW": "員工與客人同向前進，位於客人左前方並注意步速。位置及約領先兩至三步的標準在下圖顯示。",
+    "hi": "कर्मचारी अतिथि के आगे बाईं ओर उसी दिशा में चलते हुए उनकी चाल का ध्यान रखता है। स्थान और लगभग दो से तीन कदम की मार्गदर्शिका नीचे है।",
+    "bn": "কর্মী অতিথির বাম সামনে একই দিকে চলছেন এবং তাঁর গতির দিকে মনোযোগ দিচ্ছেন। নিচে অবস্থান ও আনুমানিক দুই থেকে তিন পা এগিয়ে থাকার নির্দেশনা আছে।",
+    "ne": "कर्मचारीले अतिथिको बायाँ अगाडि एउटै दिशामा हिँड्दै उहाँको चालमा ध्यान दिँदै छन्। स्थान र करिब दुईदेखि तीन पाइला अगाडिको मार्गदर्शन तल छ।",
+    "my": "ဝန်ထမ်းက ဧည့်သည်၏ ဘယ်ရှေ့ဘက်မှ တူညီသောဦးတည်ချက်သို့ လမ်းညွှန်ပြီး လျှောက်နှုန်းကို ဂရုပြုနေသည်။ အနေအထားနှင့် ခြေလှမ်းနှစ်လှမ်းမှ သုံးလှမ်းခန့် လမ်းညွှန်ကို အောက်တွင် ပြထားသည်။",
+    "th": "พนักงานนำทางด้านหน้าซ้ายของแขก เดินทิศเดียวกันและใส่ใจจังหวะเดิน ผังด้านล่างแสดงตำแหน่งและระยะประมาณสองถึงสามก้าว",
+    "km": "បុគ្គលិកដើរណែនាំនៅមុខឆ្វេងភ្ញៀវ ទៅទិសដូចគ្នា និងយកចិត្តទុកដាក់ល្បឿន។ រូបខាងក្រោមបង្ហាញទីតាំង និងប្រហែលពីរទៅបីជំហាន។",
+    "tl": "Gumagabay ang kawani sa unahang kaliwa ng bisita, sa parehong direksiyon at ayon sa bilis niya. Ipinapakita sa ibaba ang posisyon at tinatayang dalawa hanggang tatlong hakbang."
   }
 };
 export function hotelIllustrationAlt(id:string,language:string,fallback:string):string {
