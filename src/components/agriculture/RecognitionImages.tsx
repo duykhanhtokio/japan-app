@@ -137,7 +137,7 @@ const assets:Record<string,ImageSourcePropType>={
  "pesticide-source-conditions":require('../../../assets/agriculture/completion-40/safety/pesticide-source-conditions.png'),
  "f40-flower-harvest":require('../../../assets/agriculture/completion-40/flower/agr-f40-flower-harvest-v1.png'),
  "f40-flower-graft-positions":require('../../../assets/agriculture/completion-40/flower/agr-f40-flower-graft-positions-v1.png'),
- "f40-flower-unshu":require('../../../assets/agriculture/completion-40/flower/agr-f40-flower-unshu-v1.png'),
+ "f40-flower-unshu":require('../../../assets/agriculture/royal-weekly-20261107/week01/unshu-mikan-flower.webp'),
  "f40-flower-cluster-dip":require('../../../assets/agriculture/completion-40/flower/agr-f40-flower-cluster-dip-v1.png'),
  "f40-flower-materials":require('../../../assets/agriculture/completion-40/flower/agr-f40-flower-materials-v1.png'),
  "f40-flower-platform":require('../../../assets/agriculture/completion-40/flower/agr-f40-flower-platform-v1.png'),
