@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "baseCommit": "c0b5833731ef61c203d9f6912c443f2d15fbddb0",
+  "incomingCommit": "e20d2e7e3d3da71dc13f024b87bea919a70bfd9e",
+  "priorCoordinatedCensusPersistence": "008690398",
+  "scope": "Bounded incoming exact-source illustration ruby overlay and role-caption reconciliation only. Prior152asset census retained without repeat fetch.",
+  "productionChangesByThisReconciliation": [],
+  "incomingPreserved": true,
+  "checks": {
+    "inputCommit": "e20d2e7e3d3da71dc13f024b87bea919a70bfd9e",
+    "issues": [],
+    "exactFields": 348,
+    "staleTextRejects": 348,
+    "sourceTextNegatives": 348,
+    "tokenNegatives": 348,
+    "missingKanjiReadingNegatives": 340,
+    "wrapperTextAndSelectedLanguagePreservationCases": 696,
+    "nativeComponentRenders": 286,
+    "actualNativeRequests": 3549,
+    "unboundKanjiNativeRequests": 0,
+    "roleCaptionCurrentAndStaleGuards": 65,
+    "currentContextFields": 176,
+    "currentFigureTitleFields": 29,
+    "currentInlineCaptionFields": 4,
+    "reachableProseParagraphs": 5488,
+    "structuredProseParagraphs": 58,
+    "legacyFallbacks": 52,
+    "explicitMasterArrays": 6,
+    "plainProseDebt": 5430,
+    "defaultOpenProse": 3331,
+    "medicalPronunciationSemanticsIndependentlyReviewed": false,
+    "assetBytesRefetched": 0
+  },
+  "structuralReview": {
+    "readingHelper": "Exact full source string and token reconstruction required; unknown/stale strings or kanji spans lacking kana return undefined. No partial dictionary stitching.",
+    "nativeWrapper": "Original Japanese, ordinal prefix and selected-language suffix preserved. Unknown text and non-primitive children keep plain Text fallback. Numeric leader markers remain plain and are not counted as unbound kanji.",
+    "nativeGeometryAndContent": "Three native figure renderers reconstruct byte-identical prior source after removing only the new Text overlay alias and restoring original React Native Text import. Leader geometry, source assets, base text, bilingual text and source/lesson guards retained.",
+    "readerWiring": "29source-bound figure titles,176current context captions and4active inline captions all request exact readings. New props do not change question forms or saved sessions.",
+    "roleCaptions": "Five day-specific generic-role captions use exact sourceLessonKey/revision guards in all13locales; canonical person identities/prose remain unchanged.",
+    "pronunciationLimit": "Structural kana presence/alignment and actual rendering checked; medical lexical/context pronunciation is not independently native/domain reviewed."
+  },
+  "sourceContinuity": "Git tree diff from prior e612c81 to incoming e20 shows no canonical week-master, daily visual metadata/resolver, inline source mapping or asset changes. Git diff from incoming to base shows no Kaigo source/component/asset changes.",
+  "queueReconciliation": {
+    "illustrationScopeClosureRetained": true,
+    "allCanonicalProseFuriganaComplete": false,
+    "reachableProseParagraphs": 5488,
+    "structuredProseParagraphs": 58,
+    "explicitMasterParagraphArrays": 6,
+    "legacyFirstParagraphFallbacks": 52,
+    "plainProseParagraphDebt": 5430,
+    "defaultOpenProseParagraphs": 3331,
+    "separateDebtReceipt": "docs/ssw-workspace/kaigo/reviews/ROYAL_LEGACY_PROSE_RUBY_COVERAGE_DEBT_20261107.json",
+    "unsupportedSideLyingPressureRequest": "Remains excluded, zero active occurrences; not counted as completed source art."
+  },
+  "sourceInputs": [
+    {
+      "path": "src/components/kaigo/KaigoAnatomyTermsFigure.tsx",
+      "blobSha": "2d1bee24157a35945b9eaa42ed6d0475cf7ce10b"
+    },
+    {
+      "path": "src/components/kaigo/KaigoHandRegionFigure.tsx",
+      "blobSha": "549f0997edefa9377f62f81972b0dcb52d99ce60"
+    },
+    {
+      "path": "src/components/kaigo/KaigoIllustrationText.tsx",
+      "blobSha": "202080963866604aa715ab3415a6b4ce5eb162df"
+    },
+    {
+      "path": "src/components/kaigo/KaigoRoyalTechnicalFigure.tsx",
+      "blobSha": "382de4e4107678450991b0e8a3bf259c93377340"
+    },
+    {
+      "path": "src/components/kaigo/WeeklyKaigo.tsx",
+      "blobSha": "3243db0ef3e68e037bc07bcf55c2df695ae2bed5"
+    },
+    {
+      "path": "src/data/kaigo/illustration-caption-overrides.json",
+      "blobSha": "dac32be68029acb3a9ffd4cdf5b4edf0701a3a77"
+    },
+    {
+      "path": "src/data/kaigo/illustration-readings.json",
+      "blobSha": "dbcd7ebfc14ba4edf54594b63282573cf82225a0"
+    },
+    {
+      "path": "src/data/kaigo/illustration-readings.ts",
+      "blobSha": "5406ccbfcc316381684aedfb5bd514638f00e6c4"
+    },
+    {
+      "path": "src/data/kaigo/royal-weekly-art.ts",
+      "blobSha": "558cb1ccbdf61d6cca156b09378f2b819dfd4782"
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/reviews/ROYAL_FULL_REMAINING_QUEUE_20261107.json",
+      "blobSha": "cfda63cce7fc444ebd4382b3d11c2d6000644b70"
+    },
+    {
+      "path": "docs/ssw-workspace/kaigo/reviews/ROYAL_LEGACY_PROSE_RUBY_COVERAGE_DEBT_20261107.json",
+      "blobSha": "e64dd573949d12728ba9321372c7594238a8fbcd"
+    }
+  ],
+  "priorEvidence": "docs/ssw-workspace/kaigo/reviews/ROYAL_COORDINATED_ACTIVE_READER_CENSUS_20261107.json",
+  "qaMethod": "Actual incoming helper/wrapper/native components executed with ReactDOMServer and native adapters; current canonical source strings and production section selection reused from pinned prior census. Negative tests mutate only in-memory fixtures and restore them. No asset request or image generation.",
+  "qaScriptDuringSession": "/workspace/scratch/0d83607b09ec/kaigo-ruby-delta-qa.cjs",
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "releaseReady": false,
+  "canonicalProseOrMockAnswersEdited": false,
+  "nextAction": "Persist bounded reconciliation receipt. Active illustration scope remains closed; preserve separately recorded prose-ruby debt and independent acceptance gates."
+}
