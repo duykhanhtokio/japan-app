@@ -1,6 +1,9 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week01/electrical-day02-solder-joint.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/electrical-day02-solder-joint.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day02-5s-workbench.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/mechanical-day02-5s-workbench.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week01/surface-day01-task-safety.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/surface-day01-task-safety.webp");
   case "assets/manufacturing/royal-weekly-20261107/week01/electrical-day01-wire-tools.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/electrical-day01-wire-tools.webp");
   case "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day01-stop-report.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/mechanical-day01-stop-report.webp");
   case "assets/manufacturing/daily40/electrical/electrical-day-001.png":return require("../../../assets/manufacturing/daily40/electrical/electrical-day-001.png");
