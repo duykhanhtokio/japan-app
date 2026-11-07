@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 1,
+  "reviewedBaseline": "0343c31bf17905202ba12fae452acb7ea233f386",
+  "scope": "Exactly3main-illustration caption reading entries; preserve Japanese, lesson/source revisions and all other reading contexts.",
+  "repairs": [
+    {
+      "id": "hotel-front-04",
+      "kind": "actual main/zoom illustration caption",
+      "path": "src/data/hospitality/readings/front.json",
+      "fileSha256": "a7c23de77dec174eb47c9550fe98ce04274c04b41f5477973c20a5bd0be609b0",
+      "sourceRevision": "dc04d3aa513a8ef339d7890a1710b492ec9b7493fa8f843e6e3cb70e5b6c45a6",
+      "exactEntryKey": "受けた依頼を確認し、担当へつなぎ、客室では入室許可を確認します。",
+      "surface": "入室",
+      "start": 21,
+      "length": 2,
+      "currentSpans": [
+        [
+          21,
+          1,
+          "いり"
+        ],
+        [
+          22,
+          1,
+          "しつ"
+        ]
+      ],
+      "supportedReplacementSpan": [
+        21,
+        2,
+        "にゅうしつ"
+      ],
+      "context": "Permission to enter a guest room: 入室許可 uses にゅうしつきょか.",
+      "beforeBlobSha": "6acfaad5a3532f4b0a244f8ff37189c698ab1a5c",
+      "beforeSha256": "a7c23de77dec174eb47c9550fe98ce04274c04b41f5477973c20a5bd0be609b0",
+      "afterSha256": "ff0443b019df0604436d85dfe7ce550938ecceb3b728f8381c0e4b7823ce360c",
+      "otherEntryBytesPreserved": true,
+      "otherReadingContextsPreserved": true,
+      "sourceRevisionMetadataUnchanged": true,
+      "onlyExactCaptionEntryChanged": true
+    },
+    {
+      "id": "hotel-planning-02",
+      "kind": "actual main/zoom illustration caption",
+      "path": "src/data/hospitality/readings/planning.json",
+      "fileSha256": "bce46be443eef3ee7f5546aef2a29111e9c902787e7ca933d5f2a957cd741f5b",
+      "sourceRevision": "2602db22cb5acb1db44eca21a3a5f0dd17f234e8541f6d4bf1d466c38480524f",
+      "exactEntryKey": "客室売上は「売れた室数」と「販売可能室数」のどちらで割るかで意味が変わる。",
+      "surface": "割る",
+      "start": 26,
+      "length": 2,
+      "currentSpans": [
+        [
+          26,
+          2,
+          "われる"
+        ]
+      ],
+      "supportedReplacementSpan": [
+        26,
+        2,
+        "わる"
+      ],
+      "context": "Divide room revenue by a denominator: transitive 割る is わる, not intransitive 割れる われる.",
+      "beforeBlobSha": "3278c4a890b97ff52858ec84a11dbdbfcec64e4e",
+      "beforeSha256": "bce46be443eef3ee7f5546aef2a29111e9c902787e7ca933d5f2a957cd741f5b",
+      "afterSha256": "2fc35f4947a9d2f1c55c64f7c85209bba35f35616b8c12c94f95a3085d413f54",
+      "otherEntryBytesPreserved": true,
+      "otherReadingContextsPreserved": true,
+      "sourceRevisionMetadataUnchanged": true,
+      "onlyExactCaptionEntryChanged": true
+    },
+    {
+      "id": "hotel-restaurant-06",
+      "kind": "actual main/zoom illustration caption",
+      "path": "src/data/hospitality/readings/restaurant.json",
+      "fileSha256": "2e429b1daebdbbb1fc5212a0e26c271c12a79f4d358c9ee96446d6034fe9a67d",
+      "sourceRevision": "7f30a59288a1c06fe68f24c0b5779cbf7e4d417d9098a3c881b9b49b3e4c1200",
+      "exactEntryKey": "営業前後の点検では、客席・備品・調理場の情報をまとめて照合する。",
+      "surface": "調理場",
+      "start": 16,
+      "length": 3,
+      "currentSpans": [
+        [
+          16,
+          2,
+          "ちょうり"
+        ],
+        [
+          18,
+          1,
+          "じょう"
+        ]
+      ],
+      "supportedReplacementSpan": [
+        16,
+        3,
+        "ちょうりば"
+      ],
+      "context": "Restaurant/kitchen area: 調理場 is ちょうりば.",
+      "beforeBlobSha": "f2dfaa5a6794ba6ac7f37a75cdd8fc6d07f4111d",
+      "beforeSha256": "2e429b1daebdbbb1fc5212a0e26c271c12a79f4d358c9ee96446d6034fe9a67d",
+      "afterSha256": "586676cef016a5713b003d01cbdfeffa432b8f237080b82a6fa9910fb1f643d7",
+      "otherEntryBytesPreserved": true,
+      "otherReadingContextsPreserved": true,
+      "sourceRevisionMetadataUnchanged": true,
+      "onlyExactCaptionEntryChanged": true
+    }
+  ],
+  "checks": {
+    "reviewedBaseline": "3eceb21f1cc2a98e99129adcd8db558ba8f7f75f",
+    "captionReconstructionChecks": 38,
+    "allCaptionSurfacesExact": true,
+    "unreadHanCaptionNodes": 0,
+    "contextRepairs": 3,
+    "actualInlineAndZoomCaptionRenderCases": [
+      {
+        "id": "hotel-front-04",
+        "surface": "Reader inline",
+        "renderSha256": "fe6162def78628a9ccfb6ffc5a2415a5f983cc3317a53e723d09e186be4eb939",
+        "correctCompoundReading": "にゅうしつ"
+      },
+      {
+        "id": "hotel-front-04",
+        "surface": "Reader zoom caption",
+        "renderSha256": "fe6162def78628a9ccfb6ffc5a2415a5f983cc3317a53e723d09e186be4eb939",
+        "correctCompoundReading": "にゅうしつ"
+      },
+      {
+        "id": "hotel-planning-02",
+        "surface": "Reader inline",
+        "renderSha256": "073f4e48635c077fb56a0a9ff8cc664c310e057bdce600f50369a38fabe48b0a",
+        "correctCompoundReading": "わる"
+      },
+      {
+        "id": "hotel-planning-02",
+        "surface": "Reader zoom caption",
+        "renderSha256": "073f4e48635c077fb56a0a9ff8cc664c310e057bdce600f50369a38fabe48b0a",
+        "correctCompoundReading": "わる"
+      },
+      {
+        "id": "hotel-restaurant-06",
+        "surface": "Reader inline",
+        "renderSha256": "6117b4fe1df69dcd2735a54c3fbb3af071e3d2a867d910a6c1d89f14374146b2",
+        "correctCompoundReading": "ちょうりば"
+      },
+      {
+        "id": "hotel-restaurant-06",
+        "surface": "Reader zoom caption",
+        "renderSha256": "6117b4fe1df69dcd2735a54c3fbb3af071e3d2a867d910a6c1d89f14374146b2",
+        "correctCompoundReading": "ちょうりば"
+      }
+    ],
+    "staleMissingImageAndReadingGuards": 6,
+    "canonicalJapaneseAndContentSourceRevisionsUnchanged": true,
+    "otherReadingContextsPreserved": true,
+    "lessonTitlesScope": "Existing canonical header remains plain TokuteiHeader, catalog has separate kana; no title-ruby claim.",
+    "physicalDeviceTested": false,
+    "nativeReviewed": false,
+    "fullSourceAccepted": false,
+    "rows": [
+      {
+        "id": "hotel-front-01",
+        "sourceRevision": "c3b57208573831ce11325b31faa7294cc670e1142573b4ac8e3387221752ada8",
+        "captionSha256": "a954b7c0e6d5247d5951845649d193d4eeb9ecae14e00281ad0d00311cae4029",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-front-02",
+        "sourceRevision": "7551031e2d7e2b14eb21551625a78c7ac6ddf2c2f076e89a0e1521d800f91dc8",
+        "captionSha256": "b8b0d60c7aca2ebe4117a8b5b8ad986de150569ec61296932a14c01240a105ac",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-front-03",
+        "sourceRevision": "3c440f6ebd275fa8c6ae49a04eab30a5193b7b95d33c36a85828631ebf667cb3",
+        "captionSha256": "3245a374d7b5883c6c290e624d42a64661646404e460460127c4633dc0a08c85",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-front-04",
+        "sourceRevision": "dc04d3aa513a8ef339d7890a1710b492ec9b7493fa8f843e6e3cb70e5b6c45a6",
+        "captionSha256": "06422cd36ed91dabeeb2b5aa17e4d7f4d7c5bac517c12c93699417aee3feaae5",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-front-05",
+        "sourceRevision": "fb3ac81e7bd03a9e8c4359e387ca5322a116d40feab6153e89b6d14609f84244",
+        "captionSha256": "1a6f75cd18af5584754c9c98adccf18fc843154a49a93535abd65a97cbf4fd5b",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-front-06",
+        "sourceRevision": "6eb647c579bc1a5e6ff4ae4c9009ad287513cc6f434fea1f63ed7cb773636edc",
+        "captionSha256": "91c99f69f5c1f2de763c15b5a9548b78f2b6d2c7afe3752b0abef4cdbcb62cc1",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-front-07",
+        "sourceRevision": "120d38ef938009d07ae7301663b9f0fae646ea5f3c7f0883cce07d3d10e0774c",
+        "captionSha256": "baecf32346d4aed7016550cfa669a5567830d2cfff5ea7d300d6c98352b9990e",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-front-08",
+        "sourceRevision": "814482fe57a99a3628d22c01816c5b2442c8dd7196319471cfc47ea3208ca279",
+        "captionSha256": "d794547bd8eabc4a71191f78b0cc4ebe66bc6ee948116102e8184417c91327b5",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-planning-01",
+        "sourceRevision": "dc8ac37ff986ec5c649c75e551850c88aa0b2298a94f65fa6198ea8dd4d5a0c0",
+        "captionSha256": "f0ebe76b0e204088b885c429c2487951d7161b5fad23a9042afc2c1a76e8dee2",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-planning-02",
+        "sourceRevision": "2602db22cb5acb1db44eca21a3a5f0dd17f234e8541f6d4bf1d466c38480524f",
+        "captionSha256": "9a9e074f72279667d622f69362a2594362aba87f088060be3efe7c2c540b7831",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-planning-03",
+        "sourceRevision": "9fa70e9156318f2f48fe9777f736e358b7ab4037ada18f680d9080c75507adc0",
+        "captionSha256": "c7ce68346b884b05df55b15b717897be67e382dc411f8499e05c5c631aee9642",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-planning-04",
+        "sourceRevision": "7e1d71529fd8f302096b41b49519c764caae1644af24b14ed2d1a323c1ed6a29",
+        "captionSha256": "b26d28a3c43d5330ea6b92990497074111c878e0b57be1c3a54d4808d94a8edf",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-planning-05",
+        "sourceRevision": "650f96939e5ea1c44a184269f589a837eeb631cb13af030c3f86cb79af9d9d30",
+        "captionSha256": "20918a40ed3274d69c55b8e225640c62b748a119630c7cab1231bd1a9c137eb2",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-planning-06",
+        "sourceRevision": "2487c50fc6bbcffd4f417bd6326614b8fd9d442c1d31f3b166e755535750a62c",
+        "captionSha256": "537855dcc4718e3ff442acd3eaa414c72b3bf8bbe3b363f80a352096c40acfd2",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-planning-07",
+        "sourceRevision": "3dbc6b276e33f9cb49ac809131655c9698ba5c6c77bc99e62baf0658e99c453f",
+        "captionSha256": "c3b5c88e46840ae00ab583e60173d137455127e0599ad09513ed40cb0b3b96ff",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-service-01",
+        "sourceRevision": "578941e86462eb4a73b4b1134b5f9bc35adbf7839e02802d35ab05e1fe57e9ef",
+        "captionSha256": "3236796c23b7c9d74a281ea24776d24a640da81cc50912cdb6ba521b0b5c6f1d",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-service-02",
+        "sourceRevision": "00dcc624507593ecc0ebfa4c7929a7e64431e3b92e25028b0efe4aa3a8b64761",
+        "captionSha256": "5e33eed5dd308a0d52a3e85576a1ebe55bb0abff593636b3e7ae975ab75961bc",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-service-03",
+        "sourceRevision": "eb942d9ca15482ba6a25f88e5efd13a2a1994b1b2632df3a2ae1d61b28947e5c",
+        "captionSha256": "567d36f2c67e200d6584e804346b20c02deb20e8f1794af8328f931b0770297b",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-service-04",
+        "sourceRevision": "9dbdc1fe6ef0422a61ad3875055801454e996476e8d5f29dc3c6ae2ad22d30e0",
+        "captionSha256": "159a6ebfda7df02b6e5ba558eac8dbcc417b4d2615082e1ec99976b64021b068",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-service-05",
+        "sourceRevision": "80f163ab67d53fc0a25f78c3312d8ba8c484bea99133dc209f718bdb95395c23",
+        "captionSha256": "16b8dce60d12bc77963a87d44e1579f317babc99f51ab8b8b1e6a1020e8af3d5",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-service-06",
+        "sourceRevision": "3e8f4359318641c4920542df6654b58df99aba58f1c4fa6e4cc19bcf87a213c0",
+        "captionSha256": "293582f3e3ae5c642e9753d5b89dea8f7632729371482b62305b8eabb3792b2b",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-restaurant-01",
+        "sourceRevision": "cd8f08d795ac17d7ff6c23341956e196eca65d52da352b3613eff036d3eee6f3",
+        "captionSha256": "0615f36f5dc9c8a2977951946aca75d1507be917ff6658c25f48f5d16da53659",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "sourceRevision": "c6af096eb88ae91e19dd42473a5bba2126e15271724f92a7d5715df8d8e58918",
+        "captionSha256": "21e7d1db1aadf934ca4658982bb300cce51f82629d353db6c0fa971bfa77fd69",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "sourceRevision": "89b2a0a7ae9b45fe85721b71749c3902e45ad12a6e9bdc2ee4d45decc7afc653",
+        "captionSha256": "545b300417af166197c69bc9ea210265974a05744947420f7c77d10643c2220e",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "sourceRevision": "61c59bb49669c612f3f4be126278acd39d7ea59b48b290a4b3f9edb1bfd4596a",
+        "captionSha256": "c36ec93b510fbe76d8fc4b36f09261757ebca4c662c3a166c1dddac612c84600",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "sourceRevision": "5df3daf1a74e68979b8c622124187cf374d0ac0389e277fcdb4c16aa5595bb6c",
+        "captionSha256": "40ca00404569a0d9b53da3606d8d62b61f1f59b330f9260918b8ea6419abbb3d",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-restaurant-06",
+        "sourceRevision": "7f30a59288a1c06fe68f24c0b5779cbf7e4d417d9098a3c881b9b49b3e4c1200",
+        "captionSha256": "92e0529d942ff6e315ad762a50d6a2a9ca39177c25cef644b688007175597d8b",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-restaurant-07",
+        "sourceRevision": "80067c3fc8f460d530d3eb58aacb122518d2c89a6518a880e84536b346fb0d14",
+        "captionSha256": "1d59039e7f8b30b1574a3b2a2779429d669f92640afbc1e344b10545c988fb3b",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-restaurant-08",
+        "sourceRevision": "bd10d6595151d163ac3608a8312355b92b166b531dc78e67cd007909a31317a6",
+        "captionSha256": "511a4c9fbf60b56229da6a79e10b0bb75b3e22204905bc4a2d5f07e4fcf8935d",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "sourceRevision": "7cbc7c26d133daf5ff1c8c1c59d1cfcee594e8d5e0ea3dfe175b0cfb4bcc0fba",
+        "captionSha256": "30d3dd88a0e8c6d6a2764a95ea428c8e6ed4755c2bf6ed781f2fd8abb9a3d9cf",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-safety-01",
+        "sourceRevision": "464a5292650e7aa4b4af9dbd932e1e57b43fbc6c8e48ff313d6c1744bb529764",
+        "captionSha256": "27235e9808056206b8d3a5d9692d240decbca091d2ac13a37a1180fd04d0214e",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-safety-02",
+        "sourceRevision": "2a56c50b191f4b5d0b6bdceebecd639c99c94cfad15a530298154aa76a601888",
+        "captionSha256": "55c33e1458eb94a7b2e8deb0c4589762ae5975d11bed1ee3a10897433e393590",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-safety-03",
+        "sourceRevision": "0502f9b36c82a0adb16839e24a28ff6cf6f407d602c2e05fb7cd643ef4735837",
+        "captionSha256": "5ba23ed6f48710c870824aa3a0664e5c2c40e12d75d7cce0e431fb4d271c116d",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-safety-04",
+        "sourceRevision": "8cf38a99eb7fae14fe96d85a59885c2bd1165fe7de821a989f05729465250413",
+        "captionSha256": "c01c54fb489a924e3ead285b65708f04909d45fbda1cda1e9d360ce6748048ab",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-safety-05",
+        "sourceRevision": "3e8b50b16d4619da04958b21d1cabcd57b5ace18e8876cd5f875b7a73d8e0091",
+        "captionSha256": "df636dd6cfd3b9fce3e5566727968b3cd5588df4e8a474a87f899b0e0455ceaf",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-safety-06",
+        "sourceRevision": "597581b70094c3a0fc5304b0cafc37695ef80ee6f164d131cc45096eb669611a",
+        "captionSha256": "d824cd85f09e2d9a0fa2871b8a8110fb6e11310eb440672d42b5afe10c31738b",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-safety-07",
+        "sourceRevision": "57ecf027ef57816c0b6d8f3fa47d47136576e9090f9a93ecdf1ad4a000b7f333",
+        "captionSha256": "c7476cffaa71b02c08e407245eb864488a8cbc676c7c84367f6a2b3e6888fae0",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      },
+      {
+        "id": "hotel-safety-08",
+        "sourceRevision": "b42940fe071d3ceeec02ed027f2cfe682fb5ce5f3238db71664a5587be9097e4",
+        "captionSha256": "9642d2cacbef5570b339d5297fcc802227981d5a92ab454bb583d857f2fea181",
+        "surfaceReconstructionExact": true,
+        "allHanAnnotated": true
+      }
+    ]
+  },
+  "titleScope": {
+    "mainIllustrationCaptionFields": 38,
+    "distinctIllustrationTitleField": false,
+    "lessonTitleReadingData": "38/38entries reconstruct and annotate all Han; no obvious title Kanji-context error found in bounded read-only audit.",
+    "actualLessonHeader": "Existing canonical TokuteiHeader plain text; outside current illustration overhaul, no actual header-ruby claim.",
+    "catalogTitle": "Existing plain title plus separate canonical kana.",
+    "nativeFigureTitleRoutes": [
+      {
+        "path": "src/components/hospitality/HotelPracticeFloorplan.tsx",
+        "existingFigureTitleTextUsesHotelGuideText": true
+      },
+      {
+        "path": "src/components/hospitality/HotelRevenueExample.tsx",
+        "existingFigureTitleTextUsesHotelGuideText": true
+      },
+      {
+        "path": "src/components/hospitality/HotelServiceVisualGuide.tsx",
+        "existingFigureTitleTextUsesHotelGuideText": true
+      },
+      {
+        "path": "src/components/hospitality/HotelHospitalityRoleGuide.tsx",
+        "existingFigureTitleTextUsesHotelGuideText": true
+      },
+      {
+        "path": "src/components/hospitality/HotelMealLayoutGuide.tsx",
+        "existingFigureTitleTextUsesHotelGuideText": true
+      },
+      {
+        "path": "src/components/hospitality/HotelFoodHandoffGuide.tsx",
+        "existingFigureTitleTextUsesHotelGuideText": true
+      },
+      {
+        "path": "src/components/hospitality/HotelMarketSelectionGuide.tsx",
+        "existingFigureTitleTextUsesHotelGuideText": true
+      },
+      {
+        "path": "src/components/hospitality/HotelFoodCostComparison.tsx",
+        "existingFigureTitleTextUsesHotelGuideText": true
+      },
+      {
+        "path": "src/components/hospitality/HotelTwoRouteGuide.tsx",
+        "existingFigureTitleTextUsesHotelGuideText": true
+      },
+      {
+        "path": "src/components/hospitality/HotelRevenueComparison.tsx",
+        "existingFigureTitleTextUsesHotelGuideText": true
+      },
+      {
+        "path": "src/components/hospitality/HotelSafetyDecisionGuide.tsx",
+        "existingFigureTitleTextUsesHotelGuideText": true
+      }
+    ],
+    "actualCourseProviderWrappers": 11,
+    "newPlainNativeFigureTitleGapFound": false
+  },
+  "unitPaths": [
+    "src/data/hospitality/readings/front.json",
+    "src/data/hospitality/readings/planning.json",
+    "src/data/hospitality/readings/restaurant.json",
+    "docs/ssw-workspace/hospitality/royal-main-caption-reading-context-repair-20261107.json"
+  ],
+  "beforeBlobSHAs": [
+    {
+      "path": "src/data/hospitality/readings/front.json",
+      "blobSha": "6acfaad5a3532f4b0a244f8ff37189c698ab1a5c"
+    },
+    {
+      "path": "src/data/hospitality/readings/planning.json",
+      "blobSha": "3278c4a890b97ff52858ec84a11dbdbfcec64e4e"
+    },
+    {
+      "path": "src/data/hospitality/readings/restaurant.json",
+      "blobSha": "f2dfaa5a6794ba6ac7f37a75cdd8fc6d07f4111d"
+    },
+    {
+      "path": "docs/ssw-workspace/hospitality/royal-main-caption-reading-context-repair-20261107.json",
+      "blobSha": null
+    }
+  ],
+  "freeze": [
+    {
+      "path": "src/data/hospitality/readings/front.json",
+      "sha256": "ff0443b019df0604436d85dfe7ce550938ecceb3b728f8381c0e4b7823ce360c"
+    },
+    {
+      "path": "src/data/hospitality/readings/planning.json",
+      "sha256": "2fc35f4947a9d2f1c55c64f7c85209bba35f35616b8c12c94f95a3085d413f54"
+    },
+    {
+      "path": "src/data/hospitality/readings/restaurant.json",
+      "sha256": "586676cef016a5713b003d01cbdfeffa432b8f237080b82a6fa9910fb1f643d7"
+    }
+  ],
+  "acceptance": {
+    "physicalDeviceTested": false,
+    "browserTested": false,
+    "screenReaderTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "fullSourceAccepted": false
+  },
+  "canonicalProseReviewOutsideThisPhase": true,
+  "noGlobalShortTokenReplacement": true
+}
