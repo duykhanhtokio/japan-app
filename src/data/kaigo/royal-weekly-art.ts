@@ -9,6 +9,7 @@ export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspec
  5:{source:require('../../../assets/kaigo/royal-weekly-20261107/week01/day05-participation-photo-consent.webp'),aspectRatio:1536/1024},
  7:{source:require('../../../assets/kaigo/royal-weekly-20261107/week01/day07-independent-reading.webp'),aspectRatio:1536/1024},
  8:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day08-shoulder-location.webp'),aspectRatio:1536/1024},
+ 9:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day09-cushion-reporting.webp'),aspectRatio:1536/1024},
  10:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day10-preferred-voice.webp'),aspectRatio:1536/1024},
  11:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day11-letter-box-location.webp'),aspectRatio:1536/1024},
  12:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day12-uncertain-appointment.webp'),aspectRatio:1536/1024},
@@ -92,6 +93,21 @@ export const kaigoRoyalWeeklyCaptions:Record<number,Record<string,string>>={
     "km": "បុគ្គលិកប្រាប់គិលានុបដ្ឋាយិកាថាលោកស្រីអូណូដេរ៉ាចង់សម្រាក និងនិយាយថាអស់កម្លាំងជាងធម្មតា។",
     "zh-CN": "护理人员向护士转达小野寺女士想休息的意愿，以及她说比平时更疲倦的话。",
     "zh-TW": "照護人員向護理師轉達小野寺女士想休息的意願，以及她說比平時更疲倦的話。"
+  },
+  "9": {
+    "ja": "クッションは動かさず、森川さんが座っていた様子と本人の言葉を看護師に伝えます。",
+    "en": "Without moving the cushion, the caregiver tells the nurse how Morikawa was sitting and what she said.",
+    "vi": "Không di chuyển đệm, nhân viên báo với điều dưỡng tư thế ngồi đã quan sát ở bà Morikawa và lời bà nói.",
+    "id": "Tanpa memindahkan bantal, petugas menyampaikan kepada perawat posisi duduk Morikawa yang diamati dan perkataannya.",
+    "tl": "Nang hindi ginagalaw ang unan, ipinababatid ng tagapag-alaga sa nars ang naobserbahang pag-upo ni Morikawa at ang sinabi niya.",
+    "th": "เจ้าหน้าที่ไม่ขยับหมอนรอง และแจ้งพยาบาลถึงท่านั่งที่สังเกตเห็นของคุณโมริคาวะกับคำพูดของเธอ",
+    "ne": "कुसन नसारी हेरचाहकर्मीले मोरिकावा बसेको देखिएको अवस्था र उहाँका भनाइ नर्सलाई बताउँछन्।",
+    "hi": "कुशन को हिलाए बिना, देखभालकर्मी नर्स को मोरिकावा के देखे गए बैठने के ढंग और उनके कहे शब्दों की जानकारी देती हैं।",
+    "bn": "কুশন না সরিয়ে পরিচর্যাকর্মী নার্সকে মোরিকাওয়ার বসে থাকার পর্যবেক্ষণ ও তাঁর বলা কথা জানান।",
+    "my": "ကူရှင်ကို မရွှေ့ဘဲ ပြုစုစောင့်ရှောက်သူက မိုရီကာဝါ ထိုင်နေသည့်အခြေအနေနှင့် သူမပြောခဲ့သည့်စကားကို သူနာပြုထံ တင်ပြသည်။",
+    "km": "ដោយមិនរំកិលខ្នើយ បុគ្គលិកប្រាប់គិលានុបដ្ឋាយិកាអំពីរបៀបដែលលោកស្រីម៉ូរីកាវ៉ាអង្គុយ និងពាក្យដែលគាត់បាននិយាយ។",
+    "zh-CN": "不移动靠垫，护理人员向护士转达观察到的森川女士坐着时的情况和她本人的话。",
+    "zh-TW": "不移動靠墊，照護人員向護理師轉達觀察到的森川女士坐著時的情況和她本人的話。"
   }
 };
 export function royalCaptionForStudyDay(day:number,language='ja'){return kaigoRoyalWeeklyCaptions[day]?.[language];}
