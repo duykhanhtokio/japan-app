@@ -1,3 +1,4 @@
+import {sameRestaurantFigureIdentity} from './RestaurantFigureIdentity';
 import {Image,Text,View} from 'react-native';
 import type {SourceFigure31} from '@/data/restaurant/source31';
 import data from '@/data/restaurant/royal-week06-technical.json';
@@ -5,7 +6,7 @@ const sheets=[require('../../../assets/restaurant/royal-weekly-20261107/week06/m
 export function restaurantWeek06TechnicalKind(figure:SourceFigure31):string|null{
  const b=data.bindings.find(x=>x.figureId===figure.id);if(!b||figure.quizSafe!==false||figure.cropBox)return null;
  const f=b.figure;if(['sourceHash','assetFile','sha256','width','height','captionJa','altJa'].some(k=>(figure as any)[k]!==(f as any)[k]))return null;
- const pack=b.level==='1'?require('../../data/restaurant/source31/1.json'):require('../../data/restaurant/source31/2.json'),row=pack.lessons[b.lessonId];return row?.sourceHash===b.rowSourceHash&&row.figures.some((x:SourceFigure31)=>x.id===figure.id&&x.sourceHash===figure.sourceHash)?b.kind:null;
+ const pack=b.level==='1'?require('../../data/restaurant/source31/1.json'):require('../../data/restaurant/source31/2.json'),row=pack.lessons[b.lessonId];return row?.sourceHash===b.rowSourceHash&&row.figures.some((x:SourceFigure31)=>sameRestaurantFigureIdentity(x,figure))?b.kind:null;
 }
 export function RestaurantWeek06TechnicalFigure({kind,label,language='ja',showTranslation=false,width=320}:{kind:string;label:string;language?:string;showTranslation?:boolean;width?:number}){
  const labels=data.labels as Record<string,string[]>,target=labels[language],ink='#173c4b';
