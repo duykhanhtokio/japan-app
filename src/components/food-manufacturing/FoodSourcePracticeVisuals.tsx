@@ -1,3 +1,4 @@
+import {foodRoyalWeek8NativeFor} from '@/data/food-manufacturing/royal-week8-native';
 import technical7 from '@/data/food-manufacturing/royal-week7-technical-labels.json';
 import {foodRoyalWeek7NativeFor} from '@/data/food-manufacturing/royal-week7-native';
 import axisReadings from '@/data/food-manufacturing/royal-technical-axis-readings.json';
@@ -93,7 +94,8 @@ export function FoodSourcePracticeVisuals({lesson,textColor,readingColor,languag
  const base=foodManufacturingLesson(lesson.id,lesson.level);
  if(!base||base.sourceHash!==lesson.sourceHash)return null;
  const translated=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
- return <>{figures.filter(figure=>foodSourcePracticeFigureMatches(lesson,figure)&&(dailyPlacement?figure.id==='food-source-normal-bands':!(figure.id==='food-source-normal-bands'&&foodRoyalWeek7NativeFor(lesson)?.kind==='normal'))).map(figure=>{
+ const promoted=foodRoyalWeek7NativeFor(lesson)?.kind==='normal'?'food-source-normal-bands':foodRoyalWeek8NativeFor(lesson)?.mainFigureId;
+ return <>{figures.filter(figure=>foodSourcePracticeFigureMatches(lesson,figure)&&(dailyPlacement?figure.id===promoted:figure.id!==promoted)).map(figure=>{
  const p=lesson.paragraphs.find(p=>p.id===figure.paragraphId);if(!p)return null;
  const captionSupplement=figure.captionSupplementId?[...captionSupplements.sections,...caption43.sections,...caption44.sections,...caption45.sections,...caption46.sections,...caption47.sections,...caption48.sections,...caption49.sections,...caption51.sections,...caption53.sections].find(s=>s.id===figure.captionSupplementId&&s.lessonSourceHash===lesson.sourceHash&&s.sourceHash===figure.captionSupplementSourceHash):null;
  if(figure.captionSupplementId&&!captionSupplement)return null;
