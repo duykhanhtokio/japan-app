@@ -6,6 +6,7 @@ type Colors={text:string;translation:string;translationText:string;border:string
 type Labels={title:string;alt:string;observation:string;limit:string;crops:Record<string,string>;types:Record<string,string>;sowingMonth:string;greenhouse:Record<string,string>;harvest:Record<string,string>};
 type Binding={sourceHash:string;revision:string;scopeLevels:string[]};
 const sourceFields=['title','alt','observation','limit'] as const;
+export function isCropCalendarContext(id:string){return Object.prototype.hasOwnProperty.call(data.lessonBindings,id);}
 export function cropCalendarLabels(lessonId:string,lessonSourceHash:string,lessonRevision:string|undefined,level:string|undefined,language:string){
  const binding=(data.lessonBindings as Record<string,Binding>)[lessonId];
  const figure=figures.images.find(f=>f.id===data.figureId);

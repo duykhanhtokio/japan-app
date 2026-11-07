@@ -1,3 +1,5 @@
+import {FoodDailyObjectiveGapSupport,isFoodDailyObjectiveGapContext} from './FoodDailyObjectiveGapSupport';
+import {FoodFlowerClassificationSupport,isFoodFlowerClassificationContext} from './FoodFlowerClassificationSupport';
 import {SourceReadingWorktermComparison} from './SourceReadingWorktermComparison';
 import {StrawberryDevelopmentComparison} from './StrawberryDevelopmentComparison';
 import {GrapeClusterStageComparison} from './GrapeClusterStageComparison';
@@ -23,7 +25,7 @@ import {DailyInstructionDiagram,type DailyDiagramKind} from './DailyInstructionD
 import {Statistics2019Figure} from './Statistics2019Figure';
 import {WinterClimateFigure} from './WinterClimateFigure';
 import {WinterSpatialReference} from './WinterSpatialReference';
-import {CropCalendarFigure} from './CropCalendarFigure';
+import {CropCalendarFigure,isCropCalendarContext} from './CropCalendarFigure';
 import {SoilGroupComparison} from './SoilGroupComparison';
 import {CropClassificationFigure} from './CropClassificationFigure';
 import {PlantResponseFigure} from './PlantResponseFigure';
@@ -33,7 +35,7 @@ import {NativeProcessDiagram,isNativeProcessContext} from './NativeProcessDiagra
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 type Colors={text:string;translation:string;translationText:string;border:string};
 type Companion={lessonId:string;sourceHash:string;paragraphIds:string[]};
-type Binding={lessonSourceHash:string;figureId:string;assetSha256:string;scopeLevels:string[];reuseReasonJa:string};
+type Binding={keyObjectiveId:string;lessonSourceHash:string;figureId:string;assetSha256:string;scopeLevels:string[];reuseReasonJa:string};
 type Diagram={kind:string;titleJa:string;captionJa:string;altJa:string;lessonSourceHash:string};
 const pairs=support.companionReadings as Record<string,Companion[]>;
 const sourceVersions=support.sourceVersions as Record<string,string>;
@@ -57,6 +59,8 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
   return <FruitManagementSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  }
  if(!lesson.levels.includes(level))return null;
+ if(isFoodFlowerClassificationContext(lesson.id))return <FoodFlowerClassificationSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors} paragraphIds={paragraphIds}/>;
+ if(isFoodDailyObjectiveGapContext(lesson.id))return <FoodDailyObjectiveGapSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors} paragraphIds={paragraphIds}/>;
  if(lesson.id==='agr-f40-flower-source1-reading'){
   if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
   return <SourceReadingWorktermComparison lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
@@ -119,19 +123,25 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
   if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
   return <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  }
+ const currentLesson=agricultureLesson(lesson.id,level);
+ if(!currentLesson||currentLesson.sourceHash!==lesson.sourceHash||currentLesson.revision!==lesson.revision)return null;
+ if(paragraphIds&&currentBinding&&!currentLesson.paragraphs.some(p=>paragraphIds.includes(p.id)&&p.knowledgeIds.includes(currentBinding.keyObjectiveId)))return null;
  const f=currentBinding?figures.images.find(f=>f.id===currentBinding.figureId&&f.assetSha256===currentBinding.assetSha256):includeExisting?figures.images.find(f=>f.lessonIds.includes(lesson.id)&&f.lessonSourceHashes[lesson.id as keyof typeof f.lessonSourceHashes]===lesson.sourceHash&&f.scopeLevels.includes(level)):null;
  if(f?.id==='agr-royal-fine-root-observation-v1'&&paragraphIds&&!paragraphIds.includes('agr-f40-facility-level1-supplement-p4'))return null;
- if(f?.id==='agr-f40-general-cropping-example-flow')return <CropCalendarFigure lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
 
- const currentLesson=agricultureLesson(lesson.id,level);
- const translated=showTranslation&&language!=='ja'&&f&&currentLesson?.sourceHash===lesson.sourceHash&&currentLesson.revision===lesson.revision?f.lessonIds.flatMap(sourceId=>{
+
+ const sourceLessons=f&&currentLesson?.sourceHash===lesson.sourceHash&&currentLesson.revision===lesson.revision?f.lessonIds.flatMap(sourceId=>{
   const source=f.scopeLevels.flatMap(sourceLevel=>{const l=agricultureLesson(sourceId,sourceLevel as AgricultureLevel);return l?[l]:[];})[0];
-  if(!source||source.sourceHash!==f.lessonSourceHashes[sourceId as keyof typeof f.lessonSourceHashes])return [];
+  return source&&source.sourceHash===f.lessonSourceHashes[sourceId as keyof typeof f.lessonSourceHashes]?[source]:[];
+ }):[];
+ if(f?.id==='agr-f40-general-cropping-example-flow'){const source=isCropCalendarContext(lesson.id)?lesson:sourceLessons.find(l=>isCropCalendarContext(l.id));return source?<CropCalendarFigure lessonId={source.id} lessonSourceHash={source.sourceHash} lessonRevision={source.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>:null;}
+ const translated=showTranslation&&language!=='ja'&&f?sourceLessons.flatMap(source=>{
   const t=recognitionImageTranslation(f,source.id,source.sourceHash,source.revision,language);
   return t?[t]:[];
  })[0]:null;
  const asset=f?getAgricultureFigureAsset(f.assetKey):null;
- const imageReadingContext={imageId:f?.id??'',assetSha256:f?.assetSha256??'',lessonId:lesson.id,lessonSourceHash:lesson.sourceHash,lessonRevision:lesson.revision,color:colors.translationText};
+ const readingSource=sourceLessons[0];
+ const imageReadingContext={imageId:f?.id??'',assetSha256:f?.assetSha256??'',lessonId:readingSource?.id??'',lessonSourceHash:readingSource?.sourceHash??'',lessonRevision:readingSource?.revision,color:colors.translationText};
  return f&&asset?<View testID={`agri-daily-support-${lesson.id}`} style={{width:'100%',minWidth:0,alignSelf:'center',padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10,gap:10}}>
  <AgricultureImageRuby {...imageReadingContext} field="title" text={f.titleJa} style={{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'}}/>
  {!!translated&&<Text testID={`agri-daily-support-${lesson.id}-localized-title`} style={{color:colors.translationText,fontSize:18,lineHeight:28,fontWeight:'700'}}>{translated.title}</Text>}
