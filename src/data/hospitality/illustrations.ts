@@ -3,9 +3,9 @@ const figures:Record<string,()=>ImageSourcePropType>={
  'hotel-front-01':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-01.webp'),
  'hotel-front-02':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-02.webp'),
  'hotel-front-03':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-03.webp'),
- 'hotel-front-04':()=>require('../../../assets/app/hospitality/hotel-front-04.png'),
- 'hotel-front-05':()=>require('../../../assets/app/hospitality/hotel-front-05.png'),
- 'hotel-front-06':()=>require('../../../assets/app/hospitality/hotel-front-06.png'),
+ 'hotel-front-04':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-04.webp'),
+ 'hotel-front-05':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-05.webp'),
+ 'hotel-front-06':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-06.webp'),
  'hotel-front-07':()=>require('../../../assets/app/hospitality/hotel-front-07.png'),
  'hotel-front-08':()=>require('../../../assets/app/hospitality/hotel-front-08.png'),
  'hotel-planning-01':()=>require('../../../assets/app/hospitality/hotel-planning-01.png'),
@@ -41,4 +41,4 @@ const figures:Record<string,()=>ImageSourcePropType>={
 };
 export function hotelIllustration(id:string):ImageSourcePropType|null{return figures[id]?.()??null;}
 
-export {hotelIllustrationAlt} from './royal-illustration-metadata';
+export {hotelIllustrationAlt,hotelIllustrationAspectRatio} from './royal-illustration-metadata';

@@ -44,6 +44,51 @@ const currentImageAlt:Record<string,Record<string,string>> = {
     "th": "พนักงานต้อนรับในเครื่องแบบสะอาดอธิบายด้วยกุญแจและแผนผังโรงแรมอย่างสุภาพแก่แขกที่มาถึง",
     "km": "បុគ្គលិកទទួលភ្ញៀវស្លៀកឯកសណ្ឋានស្អាត ពន្យល់យ៉ាងគួរសមដល់ភ្ញៀវទើបមកដល់ ដោយប្រើសោ និងផែនទីសណ្ឋាគារ។",
     "tl": "Magalang na ipinapaliwanag ng receptionist na malinis ang uniporme ang susi at mapa ng hotel sa bagong dating na bisita."
+  },
+  "hotel-front-04": {
+    "ja": "電話の依頼を確認し、タオルを持つ担当者へ引き継ぐ受付担当者。右では担当者が閉じた客室のドアをノックし、入室前に返事を待っています。",
+    "en": "A receptionist confirms a phone request and hands it to a colleague carrying towels. On the right, that colleague knocks on a closed guest-room door and waits for a response before entering.",
+    "vi": "Lễ tân xác nhận yêu cầu qua điện thoại và bàn giao cho đồng nghiệp mang khăn. Bên phải, người này gõ cửa phòng đang đóng và chờ khách trả lời trước khi vào.",
+    "id": "Resepsionis mengonfirmasi permintaan lewat telepon dan menyerahkannya kepada rekan yang membawa handuk. Di kanan, rekan mengetuk pintu kamar yang tertutup dan menunggu jawaban sebelum masuk.",
+    "zh-CN": "前台人员确认电话请求并交接给拿着毛巾的同事。右侧同事敲响关闭的客房门，在进入前等待客人回应。",
+    "zh-TW": "櫃檯人員確認電話請求並交接給拿著毛巾的同事。右側同事敲響關閉的客房門，在進入前等待客人回應。",
+    "hi": "रिसेप्शन कर्मचारी फोन पर अनुरोध की पुष्टि कर तौलिये लिए सहकर्मी को सौंप रहा है। दाईं ओर वही सहकर्मी बंद अतिथि कक्ष का दरवाजा खटखटाकर प्रवेश से पहले उत्तर की प्रतीक्षा कर रहा है।",
+    "bn": "রিসেপশনের কর্মী ফোনের অনুরোধ নিশ্চিত করে তোয়ালে হাতে সহকর্মীকে জানাচ্ছেন। ডানদিকে সেই সহকর্মী বন্ধ অতিথিকক্ষের দরজায় টোকা দিয়ে প্রবেশের আগে উত্তরের অপেক্ষা করছেন।",
+    "ne": "रिसेप्सन कर्मचारीले फोनको अनुरोध पुष्टि गरेर तौलिया बोकेका सहकर्मीलाई जानकारी दिँदै छन्। दायाँतिर ती सहकर्मीले बन्द अतिथि कोठाको ढोका ढकढक्याएर भित्र पस्नुअघि जवाफ पर्खँदै छन्।",
+    "my": "ဧည့်ကြိုဝန်ထမ်းက ဖုန်းဖြင့်တောင်းဆိုမှုကို အတည်ပြု၍ မျက်နှာသုတ်ပဝါများကိုင်ထားသည့် လုပ်ဖော်ကိုင်ဖက်အား လွှဲပြောင်းပေးနေသည်။ ညာဘက်တွင် ထိုဝန်ထမ်းက ပိတ်ထားသောတည်းခိုခန်းတံခါးကို ခေါက်ပြီး မဝင်မီ တုံ့ပြန်မှုကို စောင့်နေသည်။",
+    "th": "พนักงานต้อนรับยืนยันคำขอทางโทรศัพท์และส่งต่อให้เพื่อนร่วมงานที่ถือผ้าเช็ดตัว ด้านขวาเพื่อนร่วมงานเคาะประตูห้องพักที่ปิดอยู่และรอคำตอบก่อนเข้า",
+    "km": "បុគ្គលិកទទួលភ្ញៀវបញ្ជាក់សំណើតាមទូរសព្ទ រួចប្រគល់ទៅមិត្តរួមការងារដែលកាន់កន្សែង។ ខាងស្តាំ មិត្តរួមការងារគោះទ្វារបន្ទប់ដែលបិទ ហើយរង់ចាំចម្លើយមុនចូល។",
+    "tl": "Kinukumpirma ng receptionist ang hiling sa telepono at ipinapasa sa katrabahong may mga tuwalya. Sa kanan, kumakatok ang katrabaho sa saradong pinto ng kuwarto at naghihintay ng sagot bago pumasok."
+  },
+  "hotel-front-05": {
+    "ja": "支払前に、受付担当者と客が明細を一緒に確認するイラスト。横に未使用のカード端末と領収書プリンターがあります。",
+    "en": "Before payment, a receptionist and guest check an itemized bill together. An unused card terminal and receipt printer stand beside them.",
+    "vi": "Trước khi thanh toán, lễ tân và khách cùng kiểm tra bảng kê. Bên cạnh là máy thanh toán thẻ chưa sử dụng và máy in biên lai.",
+    "id": "Sebelum pembayaran, resepsionis dan tamu memeriksa rincian tagihan bersama. Di sampingnya terdapat terminal kartu yang belum dipakai dan pencetak tanda terima.",
+    "zh-CN": "付款前，前台人员与客人一起核对明细。旁边是尚未使用的刷卡终端和收据打印机。",
+    "zh-TW": "付款前，櫃檯人員與客人一起核對明細。旁邊是尚未使用的刷卡終端和收據印表機。",
+    "hi": "भुगतान से पहले रिसेप्शन कर्मचारी और अतिथि विस्तृत बिल साथ जाँच रहे हैं। पास में अप्रयुक्त कार्ड टर्मिनल और रसीद प्रिंटर हैं।",
+    "bn": "পরিশোধের আগে রিসেপশনের কর্মী ও অতিথি একসঙ্গে বিস্তারিত বিল যাচাই করছেন। পাশে অব্যবহৃত কার্ড টার্মিনাল ও রসিদ প্রিন্টার রয়েছে।",
+    "ne": "भुक्तानीअघि रिसेप्सन कर्मचारी र अतिथिले विस्तृत बिल सँगै जाँच्दै छन्। छेउमा प्रयोग नगरिएको कार्ड टर्मिनल र रसिद प्रिन्टर छन्।",
+    "my": "ငွေမပေးချေမီ ဧည့်ကြိုဝန်ထမ်းနှင့် ဧည့်သည်က အသေးစိတ်ငွေတောင်းခံလွှာကို အတူစစ်ဆေးနေသည်။ ဘေးတွင် အသုံးမပြုရသေးသော ကတ်စက်နှင့် ပြေစာပရင်တာ ရှိသည်။",
+    "th": "ก่อนชำระเงิน พนักงานต้อนรับกับแขกตรวจสอบรายการเรียกเก็บด้วยกัน ข้าง ๆ มีเครื่องรับบัตรที่ยังไม่ได้ใช้และเครื่องพิมพ์ใบเสร็จ",
+    "km": "មុនបង់ប្រាក់ បុគ្គលិកទទួលភ្ញៀវនិងភ្ញៀវពិនិត្យវិក្កយបត្រលម្អិតរួមគ្នា។ នៅជិតមានម៉ាស៊ីនទូទាត់កាតមិនទាន់ប្រើ និងម៉ាស៊ីនបោះពុម្ពបង្កាន់ដៃ។",
+    "tl": "Bago magbayad, sabay sinusuri ng receptionist at bisita ang detalyadong singil. Nasa tabi ang hindi pa ginagamit na card terminal at printer ng resibo."
+  },
+  "hotel-front-06": {
+    "ja": "予約記録を確認する担当者と責任者、電話で調整する同僚。別施設のパンフレットは代替手配を確認する場面を示し、空室の確保済みを意味しません。",
+    "en": "Reservation staff and a manager review records while a colleague coordinates by phone. A different hotel brochure suggests checking alternatives, not confirmed room availability.",
+    "vi": "Nhân viên đặt phòng cùng người quản lý kiểm tra hồ sơ, đồng nghiệp liên hệ qua điện thoại. Tờ giới thiệu khách sạn khác minh họa việc kiểm tra phương án thay thế, không có nghĩa đã giữ được phòng.",
+    "id": "Petugas reservasi dan manajer memeriksa catatan sementara rekan berkoordinasi lewat telepon. Brosur hotel lain menunjukkan pemeriksaan alternatif, bukan kepastian kamar tersedia.",
+    "zh-CN": "预订人员与负责人核对记录，同事通过电话协调。另一家酒店的宣传册表示正在确认替代方案，并不表示已确保有空房。",
+    "zh-TW": "訂房人員與負責人核對紀錄，同事透過電話協調。另一家旅館的宣傳冊表示正在確認替代方案，並不表示已確保有空房。",
+    "hi": "आरक्षण कर्मचारी और प्रबंधक रिकॉर्ड जाँच रहे हैं, जबकि सहकर्मी फोन से समन्वय कर रहा है। दूसरे होटल की पुस्तिका विकल्प जाँचने का संकेत है, कमरे की उपलब्धता की पुष्टि नहीं।",
+    "bn": "বুকিংয়ের কর্মী ও ব্যবস্থাপক রেকর্ড যাচাই করছেন, আর সহকর্মী ফোনে সমন্বয় করছেন। অন্য হোটেলের পুস্তিকা বিকল্প যাচাই বোঝায়, কক্ষ পাওয়া নিশ্চিত হওয়া নয়।",
+    "ne": "बुकिङ कर्मचारी र प्रबन्धकले अभिलेख जाँच्दै छन् र सहकर्मीले फोनमा समन्वय गर्दै छन्। अर्को होटलको पुस्तिकाले विकल्प जाँच भइरहेको जनाउँछ, कोठा सुनिश्चित भएको होइन।",
+    "my": "ကြိုတင်မှာယူမှုဝန်ထမ်းနှင့် မန်နေဂျာက မှတ်တမ်းကို စစ်ဆေးနေပြီး လုပ်ဖော်ကိုင်ဖက်က ဖုန်းဖြင့်ညှိနှိုင်းနေသည်။ အခြားဟိုတယ်လက်ကမ်းစာစောင်သည် အစားထိုးနေရာကို စစ်ဆေးနေခြင်းကို ပြပြီး အခန်းရရှိပြီးကြောင်း မဆိုလိုပါ။",
+    "th": "พนักงานจองห้องกับผู้จัดการตรวจสอบบันทึก ขณะที่เพื่อนร่วมงานประสานทางโทรศัพท์ แผ่นพับโรงแรมอื่นแสดงว่ากำลังตรวจสอบทางเลือก ไม่ได้ยืนยันว่ามีห้องแล้ว",
+    "km": "បុគ្គលិកកក់បន្ទប់និងអ្នកគ្រប់គ្រងពិនិត្យកំណត់ត្រា ខណៈមិត្តរួមការងារសម្របសម្រួលតាមទូរសព្ទ។ សៀវភៅផ្សព្វផ្សាយសណ្ឋាគារផ្សេងបង្ហាញការពិនិត្យជម្រើសជំនួស មិនមែនបញ្ជាក់ថាបានបន្ទប់រួចទេ។",
+    "tl": "Sinusuri ng kawani ng reserbasyon at tagapamahala ang rekord habang nakikipag-ugnayan sa telepono ang katrabaho. Ang polyeto ng ibang hotel ay nagpapakitang sinusuri ang alternatibo, hindi patunay na may nakuhang kuwarto na."
   }
 };
 export function hotelIllustrationAlt(id:string,language:string,fallback:string):string {
@@ -51,3 +96,5 @@ export function hotelIllustrationAlt(id:string,language:string,fallback:string):
  if(!descriptions)return fallback;
  return descriptions[language]??descriptions.en;
 }
+
+export function hotelIllustrationAspectRatio(id:string):number|undefined{return currentImageAlt[id]?1.5:undefined;}
