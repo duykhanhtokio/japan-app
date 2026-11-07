@@ -5,7 +5,7 @@ type Binding={sourceHash:string;canonicalTitleJa:string;canonicalObjectiveJa:str
 type Registry={schemaVersion:number;revision:string;sourceWeek:number;studyOnly:boolean;lessons:Record<string,Binding>;readings:Record<string,{sourceJapanese:string;parts:Part[]}>};
 function registryForLesson(id:string):Registry|null{
  const match=/^mfg1-(?:mechanical-lesson-|electrical-l|surface-lesson-)(\d{3})$/.exec(id);if(!match)return null;
- switch(Math.ceil(Number(match[1])/7)){case 1:return require('./main-caption-week01-readings.json') as Registry;case 2:return require('./main-caption-week02-readings.json') as Registry;case 3:return require('./main-caption-week03-readings.json') as Registry;case 4:return require('./main-caption-week04-readings.json') as Registry;case 5:return require('./main-caption-week05-readings.json') as Registry;case 6:return require('./main-caption-week06-readings.json') as Registry;default:return null;}
+ switch(Math.ceil(Number(match[1])/7)){case 1:return require('./main-caption-week01-readings.json') as Registry;case 2:return require('./main-caption-week02-readings.json') as Registry;case 3:return require('./main-caption-week03-readings.json') as Registry;case 4:return require('./main-caption-week04-readings.json') as Registry;case 5:return require('./main-caption-week05-readings.json') as Registry;case 6:return require('./main-caption-week06-readings.json') as Registry;case 7:return require('./main-caption-week07-readings.json') as Registry;default:return null;}
 }
 export function hasManufacturingMainCaptionReading(id:string):boolean{return !!registryForLesson(id)?.lessons?.[id];}
 /** Current source-body/full-caption/asset tuple; no unreviewed draft lookup. */
