@@ -10,7 +10,7 @@ const assets:Record<string,ImageSourcePropType>={
  "spinach":require('../../../assets/agriculture/recognition/spinach-v1.webp'),
  "onion":require('../../../assets/agriculture/recognition/onion-v1.webp'),
  "daikon":require('../../../assets/agriculture/recognition/daikon-v1.webp'),
- "indica-brown-rice":require('../../../assets/agriculture/recognition/indica-brown-rice-v1.webp'),
+ "indica-brown-rice":require('../../../assets/agriculture/royal-weekly-20261107/week01/indica-brown-rice.webp'),
  "japonica-brown-rice":require('../../../assets/agriculture/recognition/japonica-brown-rice-v1.webp'),
  "plant-organ-positions":require('../../../assets/agriculture/recognition/plant-organ-positions-v1.webp'),
  "sowing-patterns":require('../../../assets/agriculture/recognition/sowing-patterns-v1.webp'),
