@@ -1,3 +1,4 @@
+import {illustrationRubyTokensFor} from '@/data/kaigo/illustration-readings';
 import {KaigoAnatomyTermsFigure} from './KaigoAnatomyTermsFigure';
 import { royalInlineFigure } from '@/data/kaigo/royal-inline-figures';
 import {KaigoRoyalTechnicalFigure} from './KaigoRoyalTechnicalFigure';
@@ -519,7 +520,7 @@ export function DayReading({
       </>}
       {figures.length > 0 ? figures.map(figure => (
         <View key={figure.id} testID={`kaigo-knowledge-figure-${entry.day}-${figure.id}`}>
-          <JapaneseText text={figure.titleJa} testID={`kaigo-figure-title-${entry.day}-${figure.id}`} />
+          <JapaneseText text={figure.titleJa} tokens={illustrationRubyTokensFor(figure.titleJa)} testID={`kaigo-figure-title-${entry.day}-${figure.id}`} />
           <Pressable accessibilityRole="button" accessibilityLabel={figure.altJa} onPress={() => setExpandedFigure(expandedFigure === figure.id ? null : figure.id)}>
             <ScrollView horizontal={expandedFigure === figure.id} contentContainerStyle={{ flexGrow: 1 }} maximumZoomScale={3} minimumZoomScale={1}>
               {((entry.day===163 && figure.id==='digestive') || (entry.day===164 && figure.id==='male-terms')) ? <KaigoAnatomyTermsFigure source={figure.source} kind={entry.day===163?'colon':'male'} language={translationOpen ? language : 'ja'} expanded={expandedFigure === figure.id} /> : (figure.id === 'hand-regions-royal-week01' || ([161,171].includes(entry.day) && figure.id==='hand-regions')) ? <KaigoHandRegionFigure source={figure.source} language={translationOpen ? language : 'ja'} expanded={expandedFigure === figure.id} /> : (figure.id === 'brain-royal-week02' || figure.id === 'respiratory-royal-week02' || (entry.day===112 && figure.id==='skin') || (entry.day===134 && figure.id==='oral-ownership') || (entry.day===99 && figure.id==='grooming') || (entry.day===92 && figure.id==='brain-lobes') || (entry.day===96 && figure.id==='urinary') || (entry.day===71 && figure.id==='skeleton') || (entry.day===72 && figure.id==='skeleton') || (entry.day===73 && figure.id==='muscles') || (entry.day===74 && figure.id==='eye') || (entry.day===75 && figure.id==='heart') || (entry.day===76 && figure.id==='digestive') || (entry.day===77 && figure.id==='endocrine') || (entry.day===67 && figure.id==='nervous') || (entry.day===70 && figure.id==='pupils') || (entry.day===15 && figure.id==='muscles') || (entry.day===27 && figure.id==='endocrine') || (entry.day===29 && figure.id==='urinary') || (entry.day===37 && figure.id==='oral-ownership') || (entry.day===38 && figure.id==='skin') || (entry.day===39 && figure.id==='grooming')) ? <KaigoRoyalTechnicalFigure kind={figure.id==='brain-lobes'?'lobes':figure.id==='skeleton'?'skeleton':figure.id==='eye'?'eye':figure.id==='heart'?'heart':figure.id==='digestive'?'digestive':figure.id==='nervous'?'nervous':figure.id==='pupils'?'pupils':figure.id==='oral-ownership'?'oralOwnership':figure.id==='skin'?'skin':figure.id==='grooming'?'grooming':figure.id==='urinary'?'urinary':figure.id==='endocrine'?'endocrine':figure.id==='muscles'?'muscles':figure.id === 'brain-royal-week02' ? 'brain' : 'respiratory'} source={figure.source} language={translationOpen ? language : 'ja'} expanded={expandedFigure === figure.id} /> : <Image source={figure.source} accessibilityLabel={figure.altJa} resizeMode="contain"
@@ -540,7 +541,7 @@ export function DayReading({
           maxHeight: 320,
         }}
       />}
-      {figures.length === 0 && masterLesson && <JapaneseText testID={`kaigo-art-caption-${entry.day}`} text={artCaptionJa ?? masterLesson.artCaptionJa} />}
+      {figures.length === 0 && masterLesson && <JapaneseText testID={`kaigo-art-caption-${entry.day}`} text={artCaptionJa ?? masterLesson.artCaptionJa} tokens={illustrationRubyTokensFor(artCaptionJa ?? masterLesson.artCaptionJa)} />}
       {figures.length === 0 && translationOpen && lessonTranslation
         ? <TranslationText>{royalCaptionForStudyDay(entry.day, language) ?? lessonTranslation.artCaption}</TranslationText>
         : !masterLesson && translated(cover.captionVi)}
@@ -552,7 +553,7 @@ export function DayReading({
           resizeMode="contain"
           style={{ width: "100%", aspectRatio: cover.aspectRatio, maxHeight: 320 }}
         />
-        {masterLesson && <JapaneseText testID={`kaigo-art-caption-${entry.day}`} text={artCaptionJa ?? masterLesson.artCaptionJa} />}
+        {masterLesson && <JapaneseText testID={`kaigo-art-caption-${entry.day}`} text={artCaptionJa ?? masterLesson.artCaptionJa} tokens={illustrationRubyTokensFor(artCaptionJa ?? masterLesson.artCaptionJa)} />}
         {translationOpen && lessonTranslation && <TranslationText>{royalCaptionForStudyDay(entry.day, language) ?? lessonTranslation.artCaption}</TranslationText>}
       </View>}
       {relocatedPracticeDays(entry.day).map(day => <Action key={day}
@@ -640,7 +641,7 @@ export function DayReading({
               />}
               {royalFigure && <Action title="図を拡大・縮小" testID={`kaigo-inline-zoom-${entry.day}-${figure.key}`} onPress={() => setExpandedFigure(expandedFigure===figure.key?null:figure.key)} />}
               {section.figureCaptionsJa?.[figure.key] && (
-                <JapaneseText text={section.figureCaptionsJa[figure.key]} testID={`kaigo-figure-caption-${section.id}-${figure.key}`} />
+                <JapaneseText text={section.figureCaptionsJa[figure.key]} tokens={illustrationRubyTokensFor(section.figureCaptionsJa[figure.key])} testID={`kaigo-figure-caption-${section.id}-${figure.key}`} />
               )}
               {translationOpen && translation?.figureCaptions?.[figure.key] && (
                 <TranslationText testID={`kaigo-figure-caption-translation-${section.id}-${figure.key}`}>{translation.figureCaptions[figure.key]}</TranslationText>

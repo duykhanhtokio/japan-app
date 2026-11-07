@@ -1,5 +1,6 @@
+import {KaigoIllustrationText as Text} from './KaigoIllustrationText';
 import React,{useState} from 'react';
-import {Image,Text,View,type ImageSourcePropType} from 'react-native';
+import {Image,View,type ImageSourcePropType} from 'react-native';
 import translations from '@/data/kaigo/royal-technical-labels.json';
 
 type Kind='brain'|'respiratory'|'muscles'|'posture'|'wheelchair'|'pressure'|'eating'|'endocrine'|'urinary'|'oralOwnership'|'skin'|'grooming'|'nervous'|'pupils'|'skeleton'|'eye'|'heart'|'digestive'|'lobes';
