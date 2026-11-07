@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "reviewedBaseline": "1d7e72d7f7c50c50030810b762795571ee79a0df",
+  "readyPaths": [
+    "src/components/agriculture/AgricultureNativeFigureRuby.tsx",
+    "src/data/agriculture/native-figure-field-readings.json",
+    "src/components/agriculture/CropCalendarFigure.tsx",
+    "src/components/agriculture/FlowerLegendFigure.tsx",
+    "src/components/agriculture/RecognitionImages.tsx",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/native-crop-flower-field-readings-qa.json"
+  ],
+  "beforeSha256": {
+    "src/components/agriculture/AgricultureNativeFigureRuby.tsx": null,
+    "src/data/agriculture/native-figure-field-readings.json": null,
+    "src/components/agriculture/CropCalendarFigure.tsx": "06b93d1c151a68b6be0852298c80e125ec081f728cb0a7cbe8e84fd4b6e62aec",
+    "src/components/agriculture/FlowerLegendFigure.tsx": "9ad8cc218c6cb3efeb60e4e7d5dbf64c74d87518ddf00e85c24f3495515b7748",
+    "src/components/agriculture/RecognitionImages.tsx": "54abc4e4beb8932c86672e5660525e9e9314a2feb6c903314323550d07097302",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/native-crop-flower-field-readings-qa.json": null
+  },
+  "scope": "41 exact Japanese native crop-calendar/flower-legend fields only. Static offline tokens, source/asset/lesson revision/scope/full canonical JA guards. Foreign labels remain plain and Japanese primary stays annotated when translations open.",
+  "providers": {
+    "crop-calendar": 31,
+    "flower-legend": 10
+  },
+  "sourcePreferences": {
+    "花壇用苗物類": "かだんようなえぶつるい",
+    "evidence": "Direct private AGR-S2 PDF7 aligned printed ruby pixels; bound to exact full category only, no runtime word/stem lookup.",
+    "numericMonthSuffix": "がつ in each current sowing-month row."
+  },
+  "sourcePreservation": [
+    {
+      "path": "src/components/agriculture/CropCalendarFigure.tsx",
+      "workingGitBlobSha": "8d2bfd32c15bb09e8fddfce86dfe2dd86f08f547",
+      "matchesTrackedHistoryAt": [
+        "7ae1daa91fab733a7d314d8183c41fb2dad52611"
+      ]
+    },
+    {
+      "path": "src/components/agriculture/RecognitionImages.tsx",
+      "workingGitBlobSha": "c86023be863196dbc30f2a51b50f05f3412b533f",
+      "matchesTrackedHistoryAt": [
+        "845d7423c53f253ebdb51f1079827f489e5bcb6d"
+      ]
+    }
+  ],
+  "preserved": {
+    "allCurrentResponsiveGeometryAssetsParagraphPlacement": true,
+    "sourceDataRowsColorsJA13Translations": true,
+    "canonicalJapaneseAndRevisions": true,
+    "quizQuestionsAnswersMasksNeutralAlt": true,
+    "noRasterOrSyntheticDiagramChanges": true
+  },
+  "limits": {
+    "fiveOtherRecognitionHanFieldsOpen": true,
+    "allOtherNativeFieldsRemainQueued": true,
+    "browserPhysicalDeviceDomainAcceptance": false,
+    "nativeDiagramReadingNotOccupationalArtAcceptance": true
+  },
+  "actualValidation": {
+    "fieldContexts": 144,
+    "actualRubyRenders": 144,
+    "actualNative13LocaleRoutes": 78,
+    "staleCurrentCanonicalTitleAndTwoBodyProviderRowsColorsImageBindingsAssetTokensRejects": 2880,
+    "ChineseSameHanTargetPlainChecks": 4,
+    "actualRecognitionRoutes": "current image-bound contexts; direct provider also retains source-reviewed crop-plan alias",
+    "strictTypeScript": "PASS actual recursive Recognition/native import graph; minimal React/RN ambient declarations; no fake Agriculture modules",
+    "scope": "Japanese reading fails closed to original plain field; does not newly suppress existing whole-image routes",
+    "commands": [
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-native-two.cjs",
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-native-two-types.cjs"
+    ]
+  },
+  "imageBindingAlias": "Crop provider explicitly supports agr-crop-plan although source image registry binds only agr-par11-general-cropping-calendar; pins full image IDs/hash/scope snapshot plus each provider canonical lesson revision/hash/fullJA independently."
+}
