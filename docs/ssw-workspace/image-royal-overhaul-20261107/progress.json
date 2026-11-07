@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "dateJst": "2026-11-07",
-  "asOfCommit": "45b3ae00ba6ade5cf152c47642696a5576221180",
-  "state": "week01_in_progress",
-  "verifiedNewRasterAssets": 53,
+  "asOfCommit": "d12d7d1d9d19f991a5dace96611bcb7f4bc1a4a8",
+  "state": "per_sector_weekly_progress",
+  "verifiedNewRasterAssets": 59,
   "scope": [
     "agriculture",
     "manufacturing",
@@ -34,13 +34,13 @@
     },
     {
       "sector": "food",
-      "verifiedNewRasterAssets": 8,
-      "week01DailyImagesReplaced": 7,
+      "verifiedNewRasterAssets": 11,
+      "week01DailyImagesReplaced": 10,
       "week01DailyImagesTotal": 12,
-      "remainingWeek01Daily": 5,
+      "remainingWeek01Daily": 2,
       "supplementalOjtIllustrationAdded": 1,
-      "hazardConceptPresentation": "pending",
-      "latestVerifiedCommit": "fdac87f69fae235db490518190d5a0df7733b7b2"
+      "hazardConceptPresentation": "native source-exact labels/notes inJapanese+12locales; first-week scoped",
+      "latestVerifiedCommit": "d12d7d1d9d19f991a5dace96611bcb7f4bc1a4a8"
     },
     {
       "sector": "restaurant",
@@ -54,12 +54,16 @@
     },
     {
       "sector": "hospitality",
-      "verifiedNewRasterAssets": 6,
+      "verifiedNewRasterAssets": 9,
       "weekEquivalentDefinition": "Union of first seven scheduled days per level; original schedule unchanged",
       "week01UniqueImageTotal": 9,
-      "remainingWeek01Images": 3,
+      "remainingWeek01Images": 0,
       "practiceFloorplan": "native measured responsive diagram, Japanese plus12locales",
-      "latestVerifiedCommit": "957e854e936616dbe94c6c80f20eb10a3ead66e6"
+      "latestVerifiedCommit": "9c0b2d228d8dccd452542bbf31862d55729b2176",
+      "week01AssetScopeComplete": true,
+      "week01FullyAccepted": false,
+      "currentWorkWeek": 1,
+      "next": "Supported next-week work after first-week image and blocker records are remotely verified; runtime/device verification remains open."
     },
     {
       "sector": "kaigo",
@@ -73,7 +77,8 @@
       "textQuestions": 59,
       "remainingWeek01Images": 0,
       "latestVerifiedCommit": "bf3cd9a2dea9133b90a32d34f3623ed17d718124",
-      "next": "No week02 generation while week01 runtime/device verification remains blocked"
+      "next": "Week01 image assets and scope proof persisted; supported week02 image work authorized, while week01 runtime/device verification remains open.",
+      "currentWorkWeek": 2
     }
   ],
   "verification": {
@@ -412,6 +417,43 @@
         "assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-05-instrument-withdrawal-handwash-supplies.webp",
         "assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-06-abnormal-water-stop-report.webp"
       ]
+    },
+    {
+      "sector": "coordination",
+      "sha": "44ba77df7eb837b8eb104c6bb2df0bfbfb144789",
+      "paths": [
+        "docs/ssw-workspace/image-royal-overhaul-20261107/progress.json",
+        "docs/ssw-workspace/kaigo/reviews/ROYAL_WEEK01_DAYS06_07_20261107.json"
+      ]
+    },
+    {
+      "sector": "hospitality",
+      "sha": "9c0b2d228d8dccd452542bbf31862d55729b2176",
+      "paths": [
+        "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-07.webp",
+        "assets/app/hospitality/royal-weekly-20261107/week01/hotel-planning-01.webp",
+        "assets/app/hospitality/royal-weekly-20261107/week01/hotel-planning-02.webp",
+        "src/data/hospitality/illustrations.ts",
+        "src/data/hospitality/royal-illustration-metadata.ts",
+        "src/components/hospitality/HospitalityCourse.tsx",
+        "docs/ssw-workspace/hospitality/image-manifest.json",
+        "src/data/hospitality/revenue-example-labels.ts",
+        "src/components/hospitality/HotelRevenueExample.tsx",
+        "docs/ssw-workspace/hospitality/royal-week01-front07-planning01-02-receipt-20261107.json"
+      ]
+    },
+    {
+      "sector": "food",
+      "sha": "d12d7d1d9d19f991a5dace96611bcb7f4bc1a4a8",
+      "paths": [
+        "assets/food-manufacturing/royal-weekly-20261107/week01/allergen-utensil-separation.webp",
+        "assets/food-manufacturing/royal-weekly-20261107/week01/chemical-required-rinse.webp",
+        "assets/food-manufacturing/royal-weekly-20261107/week01/invisible-microbiological-risk.webp",
+        "src/data/food-manufacturing/royal-weekly-images.ts",
+        "src/components/food-manufacturing/ConceptDiagrams.tsx",
+        "docs/ssw-workspace/food-manufacturing/royal-images-week01-20261107.json"
+      ]
     }
-  ]
+  ],
+  "progressionPolicy": "After supported units and blocker records for a week are remotely verified, continue supported next-week work; runtime/device blockers remain explicit and never become acceptance claims. No additional manual approval gate."
 }
