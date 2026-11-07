@@ -905,6 +905,158 @@
         }
       ],
       "introducedWeek": 7
+    },
+    "mfg1-electrical-l006": {
+      "sourceHash": "540a1c3e16efed961ad30a27dad230fa427d266bae80ff59db5decee27a6f492",
+      "captionJa": "式に入れる前に A、Ω などへ単位をそろえる。\n計算と定格確認は別の確認である。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "一定温度でオームの法則に従う抵抗について、電圧 V、電流 I、抵抗 R の間には V = I × R の関係があります。ここで使う単位は V、A、Ω です。数字だけを式へ入れず、単位をそろえてから計算します。\n1 A は 1000 mA、1 kΩ は 1000 Ω です。例えば 8 mA は 0.008 A です。mA を A と同じ数字で代入すると、結果が 1000 倍違ってしまいます。",
+        "section-2": "同じ抵抗に加える電圧が上がると、電流も増えます。ただし、実際の機器には抵抗以外の部品や温度変化もあるため、単純な式だけで設備全体を判断しません。\n計算は定格や仕様を確認するための一つの手段です。計算上電流が求まっても、その部品が発熱に耐えられるか、電源の容量が足りるかは別に確認する必要があります。"
+      },
+      "images": [
+        {
+          "id": "ohms-law",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/diagrams/ohms-law.png",
+          "width": 960,
+          "height": 600,
+          "sha256": "4bc7cd6154f0d7aa02f42cf6284382b2487412b72986c1b7a173447e95c5b29b",
+          "existingAssetReused": true,
+          "svgFile": "assets/manufacturing/diagrams/ohms-law.svg",
+          "svgSha256": "42a58269bc29687156a14e68535744fcfe0e1c4135fe12b0e1a95b7454381f5b"
+        }
+      ],
+      "introducedWeek": 8
+    },
+    "mfg1-electrical-l008": {
+      "sourceHash": "be0b8bf2d02582f4a570aacea9fef592a08465b39b1385e1b4fc99ee0871b2e9",
+      "captionJa": "検査項目の合格を互いに代用しない。\n現品の識別と事実の記録をそろえる。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "外観検査では、欠品、取付け方向、傷、はんだの橋渡しなどを基準に従って確認します。寸法検査では指定した位置の長さや間隔を測ります。機能検査では入力に対して必要な動作をするかを確認します。どれか一つが合格でも、他の項目を省略できるわけではありません。\n部品や基板の検査と完成品の検査では、対象と確認項目が違います。検査表の品番、改訂、製造番号、検査項目を照合してから作業します。似た外観の別製品の基準を使わないようにします。",
+        "section-2": "不適合を発見したら、その製品が良品に混ざらないように識別し、職場の手順で保留・隔離します。発見箇所、観察した事実、数量、ロットなどを記録します。原因が未確認なら、推測を確定した原因として書きません。\n手直しや再検査は、権限のある人の判断と承認された方法に従います。担当外の人が通電や高電圧試験を追加して確かめることは避けます。記録は、どの製品をどの基準で判定したかを後から追える内容にします。"
+      },
+      "images": [
+        {
+          "id": "electrical-day08-inspection-hold",
+          "paragraphId": "section-2",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week02/electrical-day08-inspection-hold.webp",
+          "width": 1536,
+          "height": 1024,
+          "sha256": "8088e3cfe3c44a340a8fe4ca5fb319e294094a2cbba019a5a60fd58291c648d9",
+          "existingAssetReused": true
+        }
+      ],
+      "introducedWeek": 8
+    },
+    "mfg1-electrical-l009": {
+      "sourceHash": "3960734f6e59070cd5ff0fe7a9eebb09fb759d2ca2a2645d392c236e7554762a",
+      "captionJa": "結論と事実を先に伝える。未確認の原因と確認済みの状態を分け、指示を復唱する。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "報告は仕事の進み具合や結果を知らせること、連絡は関係する人へ必要な情報を届けること、相談は判断に迷う点や問題への対応を尋ねることです。一つの出来事で三つが必要になる場合もあります。例えば部品不足を発見したら、作業が止まった事実を報告し、次工程にも影響を連絡して、代替品の使用可否を責任者へ相談します。\n結論を先に伝え、その後で場所、時刻、対象、数量、現状を補います。説明が長くても、どの判断を求めているかが伝わらなければ対応は遅れます。挨拶を交わして話しかけやすい関係をつくることも、異常を早く伝える助けになります。",
+        "section-2": "「コネクタが焼けています」と「端子の周囲に変色があります」では確かさが違います。目で確認したのが変色だけなら、その事実を伝え、発熱が原因かどうかは未確認とします。まだ確認していない数量を、全数のように報告してはいけません。\n連絡したつもりでも相手が内容を受け取っていないことがあります。作業停止範囲、保留品の扱い、次の確認者などを復唱し、指示を記録します。自分の権限を越える変更は、急いでいても相談なしで進めません。"
+      },
+      "images": [
+        {
+          "id": "electrical-day09-shortage-report",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week02/electrical-day09-shortage-report.webp",
+          "width": 1536,
+          "height": 1024,
+          "sha256": "b99bd78113a558e44d3005eb2b3a54bf9ebbbf02f0f13fa9fa090b1ceed0ef5c",
+          "existingAssetReused": true
+        }
+      ],
+      "introducedWeek": 8
+    },
+    "mfg1-electrical-l012": {
+      "sourceHash": "6bf38e20c1e07bb94c4132c8f23e67fb1bad3d4b9455e430e4fb7af1655dc041",
+      "captionJa": "数え方を統一してからパレート図を作る。件数の多さと危険の重大性を別々に評価する。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "改善する前に、何を一件と数えるか、集計期間、対象工程、分類方法をそろえます。一つの製品に二つの欠点があるとき、欠点件数と不良品数では合計が異なります。チェックシートの定義を決めずに数を集めると、後から比較できません。\nパレート図は分類別の件数を多い順に並べ、累積比率を合わせて示します。多数を占める分類を見つけるのに役立ちますが、図に並んだ名前だけで根本原因が証明されるわけではありません。",
+        "section-2": "件数を合計し、各分類の件数÷総件数×100で比率を求めます。大きい項目から比率を足したものが累積比率です。集計条件が変わったデータ同士は、件数だけを単純に比べないようにします。\n頻度が少なくても、感電や火災など重大な危険につながる欠陥は優先して対応すべき場合があります。パレート図で件数上位を把握しつつ、安全性や顧客への影響も別に評価します。改善後は同じ定義と条件で効果を確認します。"
+      },
+      "images": [
+        {
+          "id": "electrical-day12-pareto-exact",
+          "paragraphId": "section-2",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week02/electrical-day12-pareto-exact.png",
+          "width": 1400,
+          "height": 1000,
+          "sha256": "31533cd043dd3c6617869db75c0444b3c2a09613da08972f14b4a68582810a8f",
+          "existingAssetReused": true,
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week02/electrical-day12-pareto-exact.svg",
+          "svgSha256": "c01cd79b5799e4236183dcec9ba0ed2e69efe4ce74477de90ab4ec9611925144"
+        }
+      ],
+      "introducedWeek": 8
+    },
+    "mfg1-mechanical-lesson-036": {
+      "sourceHash": "15f0cd63df1fed4ff5dcaa62d749c3542e27ed3f559d316844ee07afebb23737",
+      "captionJa": "pHの比較と酸化還元は別の見方。数値と液の識別・条件を記録し、不明液を自己判断で使わない。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "pHは水溶液の酸性・アルカリ性を考える指標です。常温の希薄な水溶液を扱う入門例では、中性をおよそpH7として比較します。ただし温度や液の条件を省いて、すべての液が必ず0から14の範囲になるとは説明しません。測定した値には液の識別、温度、測定方法を対応させます。",
+        "section-2": "酸化と還元は電子の受渡しでも説明できます。電子を失う側を酸化、受け取る側を還元として区別します。鉄のさびや燃焼は酸化を考える例ですが、見た目が変わらない反応もあります。pHが低いという観察と、ある物質が電子を失ったという説明は同じ意味ではありません。"
+      },
+      "images": [
+        {
+          "id": "mechanical-day36-ph-redox-roles",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week06/mechanical-day36-ph-redox-roles.png",
+          "width": 1440,
+          "height": 1000,
+          "sha256": "b4c1a5af6bdc6d9d11733614f79dc2b28796c119b9ce1656afd6b3ca9836ec85",
+          "existingAssetReused": true,
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week06/mechanical-day36-ph-redox-roles.svg",
+          "svgSha256": "dd475d82128a5891dee3395ee9fadb7988a85c1a24ff2b1fd97ce632141b3ef7"
+        }
+      ],
+      "introducedWeek": 8
+    },
+    "mfg1-surface-source-guide-ph": {
+      "sourceHash": "51e0cfa20c3663037e34c380a94099d1284569770a3b49213769038683a08029",
+      "captionJa": "入門例では7より小さい側が酸性、大きい側がアルカリ性。値と条件を合わせ、pHだけで安全を保証しない。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "資料はpHを水溶液の酸性・アルカリ性の度合いを示す指標として説明し、0〜14の入門的な目盛りでpH7を中性、7より小さい側を酸性、大きい側をアルカリ性と示します。同じ入門条件では、小さいほど酸性が強く、大きいほどアルカリ性が強いと読みます。",
+        "section-2": "中性をおよそ7として比較するのは常温の希薄な水溶液の入門例です。温度や液の条件を省いて、全ての液が必ず0〜14に収まると一般化しません。測定値には液の識別、温度、方法、日時を対応させます。中性に近い数字だけで、成分不明の液を無害な水と決めません。"
+      },
+      "images": [
+        {
+          "id": "companion-ph-conditional-scale",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week08/technical/companion-ph-conditional-scale.png",
+          "width": 1440,
+          "height": 1000,
+          "sha256": "5ed209a7622ad5ae2a0b2b571405ef20a3b8a4303caaac71bf917cd720ebc455",
+          "existingAssetReused": false,
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week08/technical/companion-ph-conditional-scale.svg",
+          "svgSha256": "0b12ddea8dbd2f68629e28c7fab0df8370376f99478fc0a74054c86ce3db9e78"
+        }
+      ],
+      "introducedWeek": 8
     }
   }
 }

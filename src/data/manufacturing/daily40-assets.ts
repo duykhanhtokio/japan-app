@@ -1,6 +1,14 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week08/surface-day56-environment-information-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week08/surface-day56-environment-information-review.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week08/technical/surface-day53-magnetic-viewpoint.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week08/technical/surface-day53-magnetic-viewpoint.png");
+  case "assets/manufacturing/royal-weekly-20261107/week08/technical/surface-day50-reaction-equivalents.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week08/technical/surface-day50-reaction-equivalents.png");
+  case "assets/manufacturing/royal-weekly-20261107/week08/technical/electrical-day56-independent-chemical-quantities.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week08/technical/electrical-day56-independent-chemical-quantities.png");
+  case "assets/manufacturing/royal-weekly-20261107/week08/technical/electrical-day55-unit-conversions.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week08/technical/electrical-day55-unit-conversions.png");
+  case "assets/manufacturing/royal-weekly-20261107/week08/technical/electrical-day51-comparable-rates.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week08/technical/electrical-day51-comparable-rates.png");
+  case "assets/manufacturing/royal-weekly-20261107/week08/mechanical-day53-safety-contact-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week08/mechanical-day53-safety-contact-review.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week08/technical/mechanical-day50-relative-density.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week08/technical/mechanical-day50-relative-density.png");
   case "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-transport-pause-report.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-transport-pause-report.webp");
   case "assets/manufacturing/royal-weekly-20261107/week07/surface-day44-floor-countermeasure-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week07/surface-day44-floor-countermeasure-review.webp");
   case "assets/manufacturing/royal-weekly-20261107/week07/electrical-day48-product-sds-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week07/electrical-day48-product-sds-review.webp");

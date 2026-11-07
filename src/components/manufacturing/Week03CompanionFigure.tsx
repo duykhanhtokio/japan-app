@@ -12,6 +12,12 @@ import data from '@/data/manufacturing/royal-week03-companion-figures.json';
 type Figure={id:string;paragraphId?:string;paragraphIds?:string[];assetFile:string;width:number;height:number;labels?:Record<string,string>};
 type Entry={sourceHash:string;captionJa:string;paragraphIds:string[];bindingScopes?:string[][];expectedParagraphsJa:Record<string,string>;nativeParagraphIds?:string[];expectedNativeParagraphsJa?:Record<string,string>;images:Figure[];exactSelectionOnly?:boolean;retainedExistingFigure?:boolean;fullReader?:Entry};
 const sources:Record<string,ReturnType<typeof require>>={
+ 'assets/manufacturing/diagrams/ohms-law.png':require('../../../assets/manufacturing/diagrams/ohms-law.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week02/electrical-day08-inspection-hold.webp':require('../../../assets/manufacturing/royal-weekly-20261107/week02/electrical-day08-inspection-hold.webp'),
+ 'assets/manufacturing/royal-weekly-20261107/week02/electrical-day09-shortage-report.webp':require('../../../assets/manufacturing/royal-weekly-20261107/week02/electrical-day09-shortage-report.webp'),
+ 'assets/manufacturing/royal-weekly-20261107/week02/electrical-day12-pareto-exact.png':require('../../../assets/manufacturing/royal-weekly-20261107/week02/electrical-day12-pareto-exact.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week06/mechanical-day36-ph-redox-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week06/mechanical-day36-ph-redox-roles.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week08/technical/companion-ph-conditional-scale.png':require('../../../assets/manufacturing/royal-weekly-20261107/week08/technical/companion-ph-conditional-scale.png'),
  'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-feature-radius-diameter-thickness.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-feature-radius-diameter-thickness.png'),
  'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-feature-surface-texture.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-feature-surface-texture.png'),
  'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-feature-weld-symbols.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-feature-weld-symbols.png'),
