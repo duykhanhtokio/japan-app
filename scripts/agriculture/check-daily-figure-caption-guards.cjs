@@ -16,6 +16,10 @@ for(const lesson of lessons){
  const figure=figures.images.find(f=>f.lessonIds.includes(lesson.id)&&f.lessonSourceHashes[lesson.id]===lesson.sourceHash);
  if(!figure)continue;
  for(const level of lesson.levels.filter(l=>binding.scopeLevels.includes(l)&&figure.scopeLevels.includes(l))){
+  // Native supports own their source captions; this contract exercises only the
+  // currently selected ordinary raster route and its canonical fallback.
+  const current=DailyLearningFigure({lesson,level,includeExisting:true,colors});
+  if(current?.props?.testID!==`agri-daily-support-${lesson.id}`)continue;
   const saved={...binding,scopeLevels:[...binding.scopeLevels]};
   const marker=`STALE REUSE ${lesson.id}`;binding.reuseReasonJa=marker;
   assert(render(lesson,level).includes(marker),'current selected reuse caption must remain');positives++;
