@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "unit": "week02-inline-organ-classification-locales",
+  "baselineCommit": "118add3d9167bd2a739afc8e6d45a332b8c73e03",
+  "source": {
+    "documentId": "AGR-S2",
+    "pdfPage": 9,
+    "printedPage": 7
+  },
+  "sourceJapanese": "original alt and both classification rows exact; leaf/stem/root vegetative, flower/fruit reproductive",
+  "checks": {
+    "actualCourseInlineRenders": 26,
+    "locales": 13,
+    "levels": 2,
+    "hiddenJapaneseFallbacks": 26,
+    "independentSourceRevisionScopeJapaneseLocaleNegativeCases": 17,
+    "strictTypeScript": "PASS actual helper plus source/locales JSON; not entire Course/app typecheck",
+    "courseReversePatch": "exact HEAD after reverting only helper import/OrgansDiagram function/forwarded locale props; quiz, progress, source lessons, other figures untouched",
+    "renderer": "Actual AgricultureCourse inline OrgansDiagram + actual OrganClassificationLabels/RNW; unrelated course imports isolated",
+    "scripts": [
+      "/workspace/scratch/b72f4a7f6a62/week02-audit/check-inline-organ-locales.cjs",
+      "/workspace/scratch/b72f4a7f6a62/week02-audit/check-inline-organ-types.cjs"
+    ]
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "releaseReady": false
+}

@@ -6,6 +6,7 @@ import {MoistureReaderChecks} from './MoistureReaderChecks';
 import {DailyCompanionReadings,DailyLearningFigure} from './DailyLearningSupport';
 import {AgricultureExamIllustration,hasAgricultureExamIllustration} from './AgricultureExamIllustration';
 import {ConceptDiagrams} from './ConceptDiagrams';
+import {organClassificationLabels} from './OrganClassificationLabels';
 import inlineDiagramBindings from '@/data/agriculture/inline-diagram-source-bindings.json';
 import {RecognitionImages,hasRecognitionImage} from './RecognitionImages';
 import {useEffect,useRef,useState,type PropsWithChildren} from 'react';
@@ -31,11 +32,15 @@ function RiceProcess({lesson,level,language,showTranslation}:{lesson:Agriculture
  const {colors}=useStudyAppearance();
  return <RiceProcessFigure lesson={lesson} level={level} language={language} showTranslation={showTranslation} translation={showTranslation?agricultureTranslation(lesson,language):null} colors={colors}/>;
 }
-function OrgansDiagram({lesson,level}:{lesson:AgricultureLesson;level:AgricultureLevel}) {
+function OrgansDiagram({lesson,level,language='ja',showTranslation=false}:{lesson:AgricultureLesson;level:AgricultureLevel;language?:string;showTranslation?:boolean}) {
  const binding=inlineDiagramBindings.organs;
  if(lesson.id!==binding.lessonId||lesson.sourceHash!==binding.lessonSourceHash||!binding.levels.includes(level))return null;
- return <View style={s.diagram} accessibilityLabel="栄養器官は葉・茎・根、生殖器官は花・果実です。">
- {[["栄養器官","葉 · 茎 · 根"],["生殖器官","花 · 果実"]].map(([title,items])=><View key={title} style={[s.stage,{backgroundColor:title==='栄養器官'?'#d6e6ba':'#f1cfbb',minWidth:130}]}><Text style={{color:'#302c26',fontSize:17,fontWeight:'700'}}>{title}</Text><Text style={{color:'#302c26',fontSize:17,lineHeight:30}}>{items}</Text></View>)}
+ const original={alt:"栄養器官は葉・茎・根、生殖器官は花・果実です。",rows:[["栄養器官","葉 · 茎 · 根"],["生殖器官","花 · 果実"]]};
+ const ja=organClassificationLabels(lesson.id,lesson.sourceHash,lesson.revision,level,'ja',original);
+ if(!ja)return null;
+ const t=showTranslation&&language!=='ja'?organClassificationLabels(lesson.id,lesson.sourceHash,lesson.revision,level,language,original):null;
+ return <View testID="agri-organ-classification" style={s.diagram} accessibilityLabel={t?.alt||original.alt}>
+ {original.rows.map(([title,items],i)=><View key={title} style={[s.stage,{backgroundColor:title==='栄養器官'?'#d6e6ba':'#f1cfbb',minWidth:130}]}><Text style={{color:'#302c26',fontSize:17,fontWeight:'700'}}>{title}</Text><Text style={{color:'#302c26',fontSize:17,lineHeight:30}}>{items}</Text>{!!t&&<><Text testID={`agri-organ-classification-title-${i}`} style={{color:'#302c26',fontSize:17,fontWeight:'700'}}>{t.rows[i][0]}</Text><Text testID={`agri-organ-classification-items-${i}`} style={{color:'#302c26',fontSize:17,lineHeight:30}}>{t.rows[i][1]}</Text></>}</View>)}
  </View>;
 }
 function SowingDiagram({lesson,level}:{lesson:AgricultureLesson;level:AgricultureLevel}) {
@@ -81,7 +86,7 @@ function Reader({lesson,language,onBack,onComplete,saving,saveError,level}:{leve
  {show&&language!=='ja'&&!t&&<TranslationText>この言語の訳は準備中です。</TranslationText>}
  <Text style={[s.body,{color:colors.text}]}>{lesson.objectiveJa}</Text>{show&&t&&<TranslationText>{t.title}{'\n'}{t.objective}</TranslationText>}
  {lesson.paragraphs.map(p=><View key={p.id} style={[s.section,{borderColor:colors.border}]}><Text style={[s.heading,{color:colors.text}]}>{p.titleJa}</Text><AgricultureParagraphRuby lesson={lesson} paragraphId={p.id} text={p.textJa} level={level} color={colors.text} readingColor={colors.muted}/>{show&&t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}</View>)}
- {lesson.id==='agr-rice'&&<RiceProcess lesson={lesson} level={level} language={language} showTranslation={show}/>}{lesson.id==='agr-organs'&&<OrgansDiagram lesson={lesson} level={level}/>}{lesson.id==='agr-sowing-design'&&!hasRecognitionImage(lesson.id,lesson.sourceHash,'sowing-patterns',level)&&<SowingDiagram lesson={lesson} level={level}/>}<ConceptDiagrams lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} colors={colors} level={level}/>
+ {lesson.id==='agr-rice'&&<RiceProcess lesson={lesson} level={level} language={language} showTranslation={show}/>}{lesson.id==='agr-organs'&&<OrgansDiagram lesson={lesson} level={level} language={language} showTranslation={show}/>}{lesson.id==='agr-sowing-design'&&!hasRecognitionImage(lesson.id,lesson.sourceHash,'sowing-patterns',level)&&<SowingDiagram lesson={lesson} level={level}/>}<ConceptDiagrams lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} colors={colors} level={level}/>
  <FruitTreeComparison lesson={lesson} translation={t} showTranslation={show} language={language} colors={colors}/>
  <FlowerAppearanceFigure lesson={lesson} level={level} translation={t} showTranslation={show} language={language} colors={colors}/>
  <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} colors={colors} level={level} language={language} showTranslation={show}/>
