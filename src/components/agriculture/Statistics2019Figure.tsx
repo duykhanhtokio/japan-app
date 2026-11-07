@@ -6,12 +6,14 @@ import type {AgricultureTranslation} from '@/data/agriculture/translations';
 const sourceHash='7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7';
 type Colors={text:string;translation:string;translationText:string;border:string};
 type Labels={title:string;categories:string[]};
+const validLabels=(value:Labels|undefined):value is Labels=>typeof value?.title==='string'&&!!value.title.trim()&&Array.isArray(value.categories)&&value.categories.length===data.slices.length&&value.categories.every(x=>typeof x==='string'&&!!x.trim());
 type Props={lesson:AgricultureLesson;level:string;language:string;showTranslation:boolean;translation:AgricultureTranslation|null;colors:Colors};
 
 export function Statistics2019Figure({lesson,level,language,showTranslation,translation,colors}:Props) {
- if(level!=='2'||lesson.id!=='agr-statistics'||lesson.sourceHash!==sourceHash||data.sourceHash!==sourceHash)return null;
+ if(level!=='2'||lesson.id!=='agr-statistics'||lesson.sourceHash!==sourceHash||data.sourceHash!==sourceHash||!data.lessonRevision||lesson.revision!==data.lessonRevision||!validLabels(data.labels.ja))return null;
  const translated=showTranslation&&translation?.sourceHash===sourceHash?translation:null;
- const localized=translated?(data.labels as Record<string,Labels>)[language]:undefined;
+ const candidate=translated?(data.labels as Record<string,Labels>)[language]:undefined;
+ const localized=validLabels(candidate)?candidate:undefined;
  const labels=localized||data.labels.ja;
  const explanation=lesson.paragraphs.find(p=>p.id==='agr-statistics-p2');
  const historical=lesson.paragraphs.find(p=>p.id==='agr-statistics-p1');
