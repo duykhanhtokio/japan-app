@@ -1,4 +1,4 @@
-import {StyleSheet,Text,View,type ViewStyle} from 'react-native';
+import {Image,StyleSheet,Text,View,type ViewStyle} from 'react-native';
 import {TranslationText,useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import {restaurantLesson,restaurantLessonTranslation,type RestaurantLesson} from '@/data/restaurant';
 import dailyData from '@/data/restaurant/daily-learning.json';
@@ -106,6 +106,10 @@ const figureHeading=[{text:'図',reading:'ず'},{text:'で'},{text:'確かめる
 const companionHeading=[{text:'関連',reading:'かんれん'},{text:'する'},{text:'場面',reading:'ばめん'},{text:'と'},{text:'照合',reading:'しょうごう'},{text:'する'}];
 const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'の'},{text:'模式図',reading:'もしきず'},{text:'です。'},{text:'寸法',reading:'すんぽう'},{text:'・'},{text:'数量',reading:'すうりょう'},{text:'・'},{text:'時間',reading:'じかん'},{text:'・'},{text:'安全限界',reading:'あんぜんげんかい'},{text:'を'},{text:'図',reading:'ず'},{text:'の'},{text:'比率',reading:'ひりつ'},{text:'から'},{text:'判断',reading:'はんだん'},{text:'しないでください。'},{text:'本文',reading:'ほんぶん'},{text:'の'},{text:'条件',reading:'じょうけん'},{text:'と'},{text:'照合',reading:'しょうごう'},{text:'してください。'}];
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
+// Week-scoped original Royal raster assets: later lessons retain their existing figures.
+const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-1-hyg-01':{source:require('../../../assets/restaurant/royal-weekly-20261107/week01/rst-1-hyg-01-hazard-classes.webp'),aspectRatio:1672/941},
+};
 const labels:Record<string,{figure:string;note:string;companion:string}>={
  ja:{figure:'図で確かめる',note:'学習用の模式図です。寸法・数量・時間・安全限界を図の比率から判断しないでください。本文の条件と照合してください。',companion:'関連する場面と照合する'},
  en:{figure:'Check the illustration',note:'Schematic learning figure. Do not infer dimensions, quantities, times or safety limits from its proportions. Check the conditions in the text.',companion:'Compare a related situation'},
@@ -123,11 +127,11 @@ const labels:Record<string,{figure:string;note:string;companion:string}>={
 };
 export function RestaurantDailyFigure({lesson,language,showTranslation}:{lesson:RestaurantLesson;language:string;showTranslation:boolean}){
  const b=bindingFor(lesson),{colors}=useStudyAppearance();if(!b)return null;
- const marks=restaurantDailyDrawing(b.figureId.replace('rst-daily-',''));if(!marks.length)return null;
+ const royal=royalDailyAssets[lesson.id],marks=royal?[]:restaurantDailyDrawing(b.figureId.replace('rst-daily-',''));if(!royal&&!marks.length)return null;
  const ui=labels[language]||labels.ja,t=restaurantLessonTranslation(lesson,language);
  return <View testID={`restaurant-daily-figure-${lesson.id}`} style={[s.figure,{borderColor:colors.border}]}>
   <RestaurantReading heading text={labels.ja.figure} segments={figureHeading}/>{showTranslation&&language!=='ja'&&<TranslationText>{ui.figure}</TranslationText>}
-  <View accessible accessibilityRole="image" accessibilityLabel={showTranslation&&t?t.objective:lesson.objectiveJa} style={s.canvas}>{marks.map((m,i)=><View key={i} pointerEvents="none" style={{position:'absolute',left:pct(m.x),top:pct(m.y),width:pct(m.w),height:pct(m.h),backgroundColor:m.fill,borderRadius:m.radius??0,borderWidth:m.stroke?1:0,borderColor:m.stroke,transform:m.rotate?[{rotate:`${m.rotate}deg`}]:undefined} as ViewStyle}/>)}</View>
+  {royal?<Image testID={`restaurant-royal-figure-${lesson.id}`} source={royal.source} accessibilityLabel={showTranslation&&t?t.objective:lesson.objectiveJa} resizeMode="cover" style={[s.royalCanvas,{aspectRatio:royal.aspectRatio}]}/>:(<View accessible accessibilityRole="image" accessibilityLabel={showTranslation&&t?t.objective:lesson.objectiveJa} style={s.canvas}>{marks.map((m,i)=><View key={i} pointerEvents="none" style={{position:'absolute',left:pct(m.x),top:pct(m.y),width:pct(m.w),height:pct(m.h),backgroundColor:m.fill,borderRadius:m.radius??0,borderWidth:m.stroke?1:0,borderColor:m.stroke,transform:m.rotate?[{rotate:`${m.rotate}deg`}]:undefined} as ViewStyle}/>)}</View>)}
   <RestaurantReading text={lesson.objectiveJa} segments={lesson.furigana?.objective} terms={lesson.terms}/>{showTranslation&&t&&<TranslationText>{t.objective}</TranslationText>}
   <RestaurantReading text={labels.ja.note} segments={noteSegments}/>{showTranslation&&language!=='ja'&&<TranslationText>{ui.note}</TranslationText>}
  </View>;
@@ -139,4 +143,4 @@ export function RestaurantDailyCompanions({lesson,language,showTranslation}:{les
  {binding.companionReadings.map(b=>{const donor=restaurantLesson(b.lessonId,lesson.level);if(!donor||donor.sourceHash!==b.sourceHash)return null;const t=restaurantLessonTranslation(donor,language);return <View key={donor.id} style={s.companion}><RestaurantReading heading text={donor.titleJa} segments={donor.furigana?.title} terms={donor.terms}/>{showTranslation&&t&&<TranslationText>{t.title}</TranslationText>}{b.paragraphIds.map(id=>{const p=donor.paragraphs.find(x=>x.id===id);return p?<View key={id} style={s.paragraph}><RestaurantReading heading text={p.titleJa} segments={donor.furigana?.paragraphTitles?.[id]} terms={donor.terms}/><RestaurantReading text={p.textJa} segments={p.furigana} terms={donor.terms}/>{showTranslation&&t&&<TranslationText>{t.paragraphTitles[id]}{'\n'}{t.paragraphs[id]}</TranslationText>}</View>:null;})}</View>;})}
  </View>;
 }
-const s=StyleSheet.create({figure:{borderWidth:1,borderRadius:10,padding:12,gap:12},canvas:{width:'100%',maxWidth:680,aspectRatio:1.5,backgroundColor:paper,borderRadius:8,alignSelf:'center',overflow:'hidden'},companion:{gap:12},paragraph:{gap:8}});
+const s=StyleSheet.create({royalCanvas:{width:'100%',maxWidth:680,borderRadius:8,alignSelf:'center'},figure:{borderWidth:1,borderRadius:10,padding:12,gap:12},canvas:{width:'100%',maxWidth:680,aspectRatio:1.5,backgroundColor:paper,borderRadius:8,alignSelf:'center',overflow:'hidden'},companion:{gap:12},paragraph:{gap:8}});
