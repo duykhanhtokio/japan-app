@@ -44,7 +44,7 @@ function load(name){
   if(id==='@/data/agriculture/recognition-image-locales.json')return registry;
   if(id==='@/data/agriculture/image-readings.json')return JSON.parse(read('src/data/agriculture/image-readings.json'));
   if(/\.(png|webp)$/.test(id))return sources.get(path.basename(id))||{uri:'asset://'+id};
-  if(id.startsWith('@/data/agriculture/')&&id.endsWith('.json'))return JSON.parse(read(id.slice(2)));
+  if(id.startsWith('@/data/agriculture/')&&id.endsWith('.json'))return JSON.parse(read('src/'+id.slice(2)));
   if(id.startsWith('./'))return lazy(id.slice(2));
   return original(id);
  };
