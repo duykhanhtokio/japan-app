@@ -1,15 +1,24 @@
 import { japaneseMasterRevision, japaneseMasterSections } from './japanese-master';
 import { contextVisualBindingForDay } from './daily-knowledge-visuals';
 
-/** A day-specific source-bound replacement; later uses retain their original artwork. */
+/** Day-specific source-bound replacements; later uses retain their original artwork. */
+const replacements={
+ '18:kaigo-depth-05:pressure-contact-map':{
+  kind:'pressure' as const,sourceRevision:'ja-master-v1-9ff43982',
+  source:require('../../../assets/kaigo/royal-weekly-20261107/week03/day18-pressure-contact-controlled.webp'),
+ },
+ '15:kaigo-depth-04:posture-support-map':{
+  kind:'posture' as const,sourceRevision:'ja-master-v1-d90f4372',
+  source:require('../../../assets/kaigo/royal-weekly-20261107/week03/day15-posture-support-controlled.webp'),
+ },
+ '16:kaigo-depth-11:wheelchair-function-map':{
+  kind:'wheelchair' as const,sourceRevision:'ja-master-v1-15e48b5c',
+  source:require('../../../assets/kaigo/royal-weekly-20261107/week03/day16-wheelchair-parts-controlled.webp'),
+ },
+};
 export function royalInlineFigure(day:number, sectionId:string, figureKey:string) {
-  if (day!==15 || sectionId!=='kaigo-depth-04' || figureKey!=='posture-support-map'
-    || !contextVisualBindingForDay(day)) return undefined;
+  const replacement=replacements[`${day}:${sectionId}:${figureKey}` as keyof typeof replacements];
   const section=japaneseMasterSections[sectionId];
-  if (!section || japaneseMasterRevision(section)!=='ja-master-v1-d90f4372') return undefined;
-  return {
-    kind:'posture' as const,
-    source:require('../../../assets/kaigo/royal-weekly-20261107/week03/day15-posture-support-controlled.webp'),
-    sourceRevision:'ja-master-v1-d90f4372',
-  };
+  return replacement && section && contextVisualBindingForDay(day)
+    && japaneseMasterRevision(section)===replacement.sourceRevision ? replacement : undefined;
 }

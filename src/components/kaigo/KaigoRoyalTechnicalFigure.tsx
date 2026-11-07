@@ -2,10 +2,32 @@ import React,{useState} from 'react';
 import {Image,Text,View,type ImageSourcePropType} from 'react-native';
 import translations from '@/data/kaigo/royal-technical-labels.json';
 
-type Kind='brain'|'respiratory'|'muscles'|'posture';
+type Kind='brain'|'respiratory'|'muscles'|'posture'|'wheelchair'|'pressure';
 type Point={anchor:[number,number];target:[number,number]};
 /** Percent coordinates on each independently authored 1536x1024 base. Endpoints are manually source-checked. */
 export const royalTechnicalLeaders:Record<Kind,Point[]>={
+ pressure:[
+  {anchor:[8,24],target:[21.75,40.63]}, // posterior head at pillow contact
+  {anchor:[8,37],target:[30.27,43.26]}, // scapular posterior region
+  {anchor:[40,16],target:[37.83,43.55]}, // elbow at support surface
+  {anchor:[67,17],target:[49.28,43.65]}, // posterior sacral/pelvic region
+  {anchor:[92,32],target:[74.87,43.26]}, // posterior heel, not ankle
+  {anchor:[92,75],target:[45.96,83.5]}, // buttock against seat
+ ],
+ wheelchair:[
+  {anchor:[12,9],target:[24,14]}, // push handle grip
+  {anchor:[91,19],target:[42,32]}, // back support fabric
+  {anchor:[91,32],target:[52,40]}, // near arm support
+  {anchor:[91,46],target:[52,54]}, // seat fabric
+  {anchor:[12,45],target:[45.2,58.2]}, // parking brake at tire
+  {anchor:[12,60],target:[20,66]}, // separate handrim
+  {anchor:[12,73],target:[19.3,73]}, // drive wheel tire
+  {anchor:[91,94],target:[68.2,86]}, // front caster
+  {anchor:[91,81],target:[79,83]}, // footplate
+  {anchor:[91,64],target:[74,69]}, // calf/leg support panel
+  {anchor:[12,25],target:[24,18.8]}, // attendant brake below handle
+  {anchor:[12,92],target:[18.3,83]}, // rear tipping lever
+ ],
  posture:[
   {anchor:[8,18],target:[33,38]}, // chest-front cushion
   {anchor:[91,45],target:[61,41]}, // cushion under lower right leg
@@ -45,7 +67,7 @@ export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=fa
  const tr=(translations as Record<string,typeof ja>)[language]??ja;
  const bilingual=(original:string,translated:string)=>tr===ja?original:original+' / '+translated;
  const labels=ja[kind].map((label,i)=>bilingual(label,tr[kind][i]));
- const view=kind==='posture'?bilingual(ja.postureView,tr.postureView):kind==='brain'?bilingual(ja.brainView,tr.brainView):kind==='muscles'?bilingual(ja.musclesView,tr.musclesView):bilingual(ja.respiratoryView,tr.respiratoryView);
+ const view=kind==='pressure'?bilingual(ja.pressureView,tr.pressureView):kind==='wheelchair'?bilingual(ja.wheelchairView,tr.wheelchairView):kind==='posture'?bilingual(ja.postureView,tr.postureView):kind==='brain'?bilingual(ja.brainView,tr.brainView):kind==='muscles'?bilingual(ja.musclesView,tr.musclesView):bilingual(ja.respiratoryView,tr.respiratoryView);
  return <View testID={`kaigo-royal-${kind}`} style={{width:expanded?1000:'100%'}}>
   <Text style={{fontSize:16,color:'#243d4d',padding:8}}>{view}</Text>
   <View onLayout={event=>setWidth(event.nativeEvent.layout.width)} style={{width:'100%',aspectRatio:1.5}}>
@@ -64,7 +86,7 @@ export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=fa
   <View style={{padding:8,gap:6}}>
    {labels.map((label,i)=><Text key={i} style={{fontSize:16,color:'#243d4d'}}>{i+1} · {label}</Text>)}
    {kind==='brain'&&<Text style={{fontSize:15,color:'#243d4d'}}>{bilingual(ja.brainstem,tr.brainstem)}</Text>}
-   <Text style={{fontSize:14,lineHeight:21,color:'#526674'}}>{kind==='posture'?bilingual(ja.postureScope,tr.postureScope):kind==='muscles'?bilingual(ja.musclesScope,tr.musclesScope):bilingual(ja.scope,tr.scope)}</Text>
+   <Text style={{fontSize:14,lineHeight:21,color:'#526674'}}>{kind==='pressure'?bilingual(ja.pressureScope,tr.pressureScope):kind==='wheelchair'?bilingual(ja.wheelchairScope,tr.wheelchairScope):kind==='posture'?bilingual(ja.postureScope,tr.postureScope):kind==='muscles'?bilingual(ja.musclesScope,tr.musclesScope):bilingual(ja.scope,tr.scope)}</Text>
   </View>
  </View>;
 }
