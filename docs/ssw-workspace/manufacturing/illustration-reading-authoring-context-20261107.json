@@ -419,8 +419,8 @@
     }
   ],
   "corpusSha256": "1693f9b3ab8d650e7ac44f08e3e36c5a50a944dd85f076ba080d05608d0aba5b",
-  "readingDataSha256": "b9929bb99baa1f5c45a9374a37b01756694797341a04bb94379f27f557668fce",
-  "runtimeRule": "Exact complete source string, aligned valid kana tokens, explicit Japanese only AND per-entry contextReview=ai_whole_field_compared. Unreviewed automatic entries render original plain Japanese. Reviewed27caption records remain independent and active.",
+  "readingDataSha256": "8d093782f061636f66e5a76d4f9ededec8f51f1cf81f06bfd3f176e5c217b402",
+  "runtimeRule": "Exact complete source string, aligned valid kana tokens, explicit Japanese AND whole-field context review marker. Only reviewed records are projected into lazy shards. All pending automatic candidates remain authoring-only and render original plain Japanese.27caption records remain unchanged.",
   "remainingProfessionalAcceptance": [
     "native pronunciation review",
     "domain review",
@@ -2170,8 +2170,8 @@
     "reviewedSourceRows": 60,
     "distinctDisplayedStrings": 301,
     "actualFieldInstances": 302,
-    "uniqueReviewedNativeEntries": 254,
-    "unreviewedNativeEntryRecords": 1439,
+    "uniqueReviewedNativeEntries": 532,
+    "unreviewedNativeEntryRecords": 1161,
     "originalReviewedCaptionRecords": 27,
     "nativeOnlyClarification": "S014 実品→実際の品物; E016 四帯/二帯/三帯目→4本の色帯/2本/3本目; M025 源資料→元の資料; canonical prose and12target rows unchanged",
     "remaining": "Continue Royalweek05–14, then all other active native/caption/companion/early special fields; retained stored snapshots are not a rendered-field denominator",
@@ -2209,6 +2209,24 @@
         "correctedFields": 14,
         "nativeOnlyClarifiedFields": 1
       }
+    },
+    "additionalSourceGroupsOutsideRoyal": {
+      "earlyPrimarySpecial30": {
+        "sourceCommit": "641935f1",
+        "incomingRegistryBlobSha": "843b02ff10d6561d823ea2140e11b3d1879f75c2",
+        "immutableW4RegistryBlobSha": "e891d6e2c21aed1c88eae21aeb8813d0e795494f",
+        "receipt": "docs/ssw-workspace/manufacturing/royal-context-early-primary-special30-20261107.json",
+        "scope": "Preserve30 incoming exact full-field context comparisons and3 token corrections; no prior254 row changed; new unit does not reapprove source/native/domain/device acceptance",
+        "exactReviewedFields": 30,
+        "priorAcceptedActualLocaleReaderRenders": 66
+      }
+    },
+    "preservedIncomingMechanicalPrimary69": {
+      "sourceCommit": "49990dbaa2471c95dba7448fab557eff3b9fa257",
+      "sourceBlob": "4e052154536a59f7df1088953e1ac3d66d546460",
+      "newReviewedFields": 69,
+      "priorReviewedRecordsUnchanged": 284,
+      "acceptedReceipt": "docs/ssw-workspace/manufacturing/royal-context-mechanical-primary69-20261107.json"
     }
   },
   "remainingImplementationWork": [
@@ -2217,9 +2235,13 @@
   ],
   "currentSourceInputSha256": {
     "src/data/manufacturing/royal-week01-technical-locales.json": "e180353c2a40a8027f91e898784a8c018a3f4c74da990aeada2bbd6805683ec4",
-    "src/data/manufacturing/illustration-readings.ts": "3596672f27d7e35d40dfda9939a84df60ee6d1c2b646cf632c62670d821bf124",
-    "src/components/manufacturing/RoyalWeek01TechnicalDetails.tsx": "f794cd2735cd5ce798093eae9e85c73620ef0f8752ac9efe7daac75e63a273dc",
-    "src/components/manufacturing/ManufacturingIllustrationText.tsx": "75fb5073f471544a79a680923825bbfacee4938986cf3bd7c197143000b1ac39"
+    "src/data/manufacturing/illustration-readings.ts": "bea832320b52417b37df6a9dd88910196e5353633d3b5e2d69abb40160f19599",
+    "src/components/manufacturing/RoyalWeek01TechnicalDetails.tsx": "e549f44a4f2a1b3a1a4a50066bf131e9277afe991bbb4fffd255254dd2d4f002",
+    "src/components/manufacturing/ManufacturingIllustrationText.tsx": "8e55818fc1f25d71151e5d77a31e36e488bfd5b57ffb19fd9ea64cf1958353fc",
+    "src/data/manufacturing/illustration-reading-tokens.ts": "499ceaac07ddaf79cae2d482fdee12f0517fb8045b57da276c3dd1236950c55d",
+    "src/data/manufacturing/illustration-reading-index.json": "ad257c2ccb8cdc2d6f83875afd5bb77965b60436d96699c6edc9351ecb94c39c",
+    "src/data/manufacturing/royal-native-locale-loader.ts": "b3fe1679e9745e65b02d3971a71531ad8cabc28fce2a831d1313bec962bddc28",
+    "src/data/manufacturing/illustration-caption-readings.json": "8d093782f061636f66e5a76d4f9ededec8f51f1cf81f06bfd3f176e5c217b402"
   },
   "reviewedFieldCorrectionGroups": {
     "week03": [
@@ -2606,5 +2628,75 @@
         }
       }
     ]
+  },
+  "authoringCorpusPath": "docs/ssw-workspace/manufacturing/illustration-reading-authoring-corpus-20261107.json",
+  "authoringCorpusSha256": "b9929bb99baa1f5c45a9374a37b01756694797341a04bb94379f27f557668fce",
+  "runtimeProjection": {
+    "receipt": "docs/ssw-workspace/manufacturing/illustration-runtime-projections-20261107.json",
+    "immutableCandidateRecords": 1693,
+    "reviewedRuntimeNativeRecords": 532,
+    "pendingAuthoringRecords": 1161,
+    "reviewedCaptionRecords": 27,
+    "authoringOverrides": "docs/ssw-workspace/manufacturing/illustration-reading-reviewed-overrides/weekNN.json",
+    "fullRoyalLocaleSource": "src/data/manufacturing/royal-week01-technical-locales.json",
+    "fullRoyalLocaleSourceProductionImported": false,
+    "runtimeTokenizer": false,
+    "newAppDependency": false,
+    "outputSha256": {
+      "src/data/manufacturing/illustration-reading-index.json": "e87d689940754116ad09035bb7f504b08305783f49aba33810743dd7667a67fd",
+      "src/data/manufacturing/illustration-reading-shards/other.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "src/data/manufacturing/illustration-reading-shards/week01.json": "673930d02550f2a663f3aac5b8b7ccb22a299d02c2857f34c91e6ae0bfe481ca",
+      "src/data/manufacturing/illustration-reading-shards/week02.json": "75e00fccc790e5e1713b676415adc8689c1cc8829f66bfd25d8d89cfc997e9dc",
+      "src/data/manufacturing/illustration-reading-shards/week03.json": "0d350f30e72a00fe96b25e2eaf1302046bcc6a019c72924f1867071e3159ad07",
+      "src/data/manufacturing/illustration-reading-shards/week04.json": "2376152276154be30263c3ba63e7d5e8e62bc20c3f65dbce1c357f2447dab959",
+      "src/data/manufacturing/illustration-reading-shards/week05.json": "c283189b1d4ee9f828864e3f340cd93d096aac3cff32cbd6169baf11fd4273e0",
+      "src/data/manufacturing/illustration-reading-shards/week06.json": "e81229b068f9c170f683bab669c0cabcbd6033909793f5a9a22e41fd1addce6c",
+      "src/data/manufacturing/illustration-reading-shards/week07.json": "78566a68aa3387521f6e12ac9b9fb7619160d2519c61e93558b3099fbf6183ee",
+      "src/data/manufacturing/illustration-reading-shards/week08.json": "6c95b0ead0bfc18a71149915962f57131b8c5ba29ab7abb8f62db61a2682aac0",
+      "src/data/manufacturing/illustration-reading-shards/week09.json": "70467dfa68ece51ef2a83bf8fabeea231704579e0fa19f6c60ba6a368daac0f6",
+      "src/data/manufacturing/illustration-reading-shards/week10.json": "1d1f5a8b37ee4a63f0730f5f91a1b07eb01b7bdaa4b851b159004de26b6d5366",
+      "src/data/manufacturing/illustration-reading-shards/week11.json": "87e2e1d2c5d9d4b78685177cc76a53e591fd337dc89073f2e9f63e6925173bec",
+      "src/data/manufacturing/illustration-reading-shards/week12.json": "9bd6bcd53dd6b3ddae5c028657b1efbaa3b39a1bf34ea3022902ced2e407ee44",
+      "src/data/manufacturing/illustration-reading-shards/week13.json": "ed5d256d2da079815b6d6ca7d4607c8afd9e6eccef7675781ba5e89b41f4009f",
+      "src/data/manufacturing/illustration-reading-shards/week14.json": "fc3ec7d798783ef3ab70cbb9265612801f746b091d679a5a9ef9419a610bdcb5",
+      "src/data/manufacturing/royal-native-locales/bn.json": "826bba61a2a03b3338d78ea4b6c2b504df2e8861e6e6fabe4222dde1baad7911",
+      "src/data/manufacturing/royal-native-locales/en.json": "b3229eaaf6b64a1ba25c2d7fb48bfac00dfa1b701f7f0bd2ffab3b54e5a470de",
+      "src/data/manufacturing/royal-native-locales/hi.json": "ae87a0143fbec76114b3a456a4ba8569ba0ce2e77ccfdb660bd25a5455ead780",
+      "src/data/manufacturing/royal-native-locales/id.json": "93f6674c3b5f388f7da74ee7b4a215448e21b009ab0b251f64bb20eaf58502b9",
+      "src/data/manufacturing/royal-native-locales/ja.json": "964d41c4395ff033c59cecb2a18ca2d8a354209c38adb6449db3763766edb71c",
+      "src/data/manufacturing/royal-native-locales/km.json": "244de2cfc1d8e8e2963c94b31bd7d43cb007421936c022d87069215ea84e3504",
+      "src/data/manufacturing/royal-native-locales/my.json": "8371bf535b7ed56aaaed7c8d860fcf3714ab4d411906cc15901f5f023f144f1e",
+      "src/data/manufacturing/royal-native-locales/ne.json": "631f8606740d9b6ea5065a5f86563718281ab2eae3e1e834250c33cc34ef0d18",
+      "src/data/manufacturing/royal-native-locales/th.json": "86d392725be35c2fa9a46a0f4d5bac4d33e4e6f0404d4ff480e7223c330ee001",
+      "src/data/manufacturing/royal-native-locales/tl.json": "05b0d0eec9458b108cf5f62b435367d248303d94ba8a29ce44ff4840173e3991",
+      "src/data/manufacturing/royal-native-locales/vi.json": "86b02413a5bdb6c7277d25e797ba48b2bc227728d26e59dc4c7a0c47bdfc4297",
+      "src/data/manufacturing/royal-native-locales/zh-CN.json": "22cade34c1ff4ca1684145b4d8faac495d803b8bb9e10f945e0649454bf08a94",
+      "src/data/manufacturing/royal-native-locales/zh-TW.json": "965821e5c633dbec89f79e820da32364a14a9bae4de953274f080eeb8e8f7335",
+      "src/data/manufacturing/illustration-caption-readings.json": "8d093782f061636f66e5a76d4f9ededec8f51f1cf81f06bfd3f176e5c217b402"
+    },
+    "activePendingFieldsFromIncomingInventory": 1378,
+    "inactiveHistoricalRegistryFields": 4,
+    "legacyCaptionEntriesWithinStoredPending": 27,
+    "reviewedOverridesInputSha256": {
+      "docs/ssw-workspace/manufacturing/illustration-reading-reviewed-overrides/early-primary-special30.json": "3064198410167df5572c9e3b075e271786987ae9e8659e916f4c700b0d548d72"
+    },
+    "activePendingFields": 1130,
+    "inactiveHistoricalFields": 4,
+    "runtimeCaptionManifestPath": "src/data/manufacturing/illustration-caption-readings.json",
+    "legacyFullReadingCorpusProductionImported": false,
+    "authoringOverrideSha256": {
+      "docs/ssw-workspace/manufacturing/illustration-reading-reviewed-overrides/early-primary-special30.json": "3064198410167df5572c9e3b075e271786987ae9e8659e916f4c700b0d548d72",
+      "docs/ssw-workspace/manufacturing/illustration-reading-reviewed-overrides/incoming-context179.json": "de744779ebdf08d53cb6d74d72b6a204a8b3776c956e39432ba85e10bd88a032",
+      "docs/ssw-workspace/manufacturing/illustration-reading-reviewed-overrides/mechanical-primary69.json": "c9361d1f3b4d657365df5f335a956d3d732fa9e9131ec84228793d4dca0812d3"
+    }
+  },
+  "runtimeCaptionManifestPath": "src/data/manufacturing/illustration-caption-readings.json",
+  "immutableIncomingBoundary": {
+    "sourceBlob": "84e43c38501fcaffb26dc9a82444203b3d438094",
+    "nativeRecords": 1693,
+    "reviewed": 532,
+    "pending": 1161,
+    "movingLegacyCorpusIsNotRuntimeDependency": true,
+    "subsequentIncomingUpdatesReconcileAsNextAuthoringOverlay": true
   }
 }

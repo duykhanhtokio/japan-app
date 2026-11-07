@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text,View,StyleSheet,type TextProps} from 'react-native';
-import {manufacturingIllustrationTokensFor} from '@/data/manufacturing/illustration-readings';
+import {manufacturingIllustrationTokensFor} from '@/data/manufacturing/illustration-reading-tokens';
 
 /** Exact Japanese illustration fields only; translations and unknown fields keep their text. */
 export function ManufacturingIllustrationText({children,style,selectable,readingLanguage,...props}:TextProps&{readingLanguage?:string}){

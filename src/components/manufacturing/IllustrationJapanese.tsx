@@ -1,7 +1,7 @@
 import {ManufacturingIllustrationText} from './ManufacturingIllustrationText';
 import {StyleSheet,Text,View,type StyleProp,type TextStyle} from 'react-native';
 import {hasAlignedRuby} from '@/components/world/japanese-ruby-data';
-import data from '@/data/manufacturing/illustration-readings.json';
+import data from '@/data/manufacturing/illustration-caption-readings.json';
 /** Exact offline illustration readings; existing prose and native captions stay unchanged. */
 export function IllustrationJapanese({text,style}:{text:string;style?:StyleProp<TextStyle>}){
  const row=data.entries.find(row=>row.sourceJa===text);
