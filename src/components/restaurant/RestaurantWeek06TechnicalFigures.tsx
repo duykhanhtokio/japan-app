@@ -1,3 +1,4 @@
+import {RestaurantReading} from './RestaurantReading';
 import {sameRestaurantFigureIdentity} from './RestaurantFigureIdentity';
 import {Image,Text,View} from 'react-native';
 import type {SourceFigure31} from '@/data/restaurant/source31';
@@ -8,9 +9,10 @@ export function restaurantWeek06TechnicalKind(figure:SourceFigure31):string|null
  const f=b.figure;if(['sourceHash','assetFile','sha256','width','height','captionJa','altJa'].some(k=>(figure as any)[k]!==(f as any)[k]))return null;
  const pack=b.level==='1'?require('../../data/restaurant/source31/1.json'):require('../../data/restaurant/source31/2.json'),row=pack.lessons[b.lessonId];return row?.sourceHash===b.rowSourceHash&&row.figures.some((x:SourceFigure31)=>sameRestaurantFigureIdentity(x,figure))?b.kind:null;
 }
+export function restaurantWeek06CaptionReading(figure:SourceFigure31){return restaurantWeek06TechnicalKind(figure)?data.bindings.find(b=>b.figureId===figure.id)?.captionFurigana:undefined;}
 export function RestaurantWeek06TechnicalFigure({kind,label,language='ja',showTranslation=false,width=320}:{kind:string;label:string;language?:string;showTranslation?:boolean;width?:number}){
  const labels=data.labels as Record<string,string[]>,target=labels[language],ink='#173c4b';
- const text=(index:number)=><View style={{gap:5}}><Text selectable style={{fontSize:17,lineHeight:28,color:ink}}>{labels.ja[index]}</Text>{showTranslation&&language!=='ja'&&target?.[index]&&<Text selectable style={{fontSize:17,lineHeight:28,color:'#344b61'}}>{target[index]}</Text>}</View>;
+ const text=(index:number)=><View style={{gap:5}}><RestaurantReading text={labels.ja[index]} segments={data.labelsFurigana[index]}/>{showTranslation&&language!=='ja'&&target?.[index]&&<Text selectable style={{fontSize:17,lineHeight:28,color:'#344b61'}}>{target[index]}</Text>}</View>;
  if(kind.startsWith('machine-')){
   const i=Number(kind.slice(8)),sheetIndex=Math.floor(i/8),cell=i%8,sheet=data.machineSheets[sheetIndex],crop=sheet?.crops[cell];if(!crop)return null;
   const sx=sheet.width/crop.width*100,sy=sheet.height/crop.height*100,left=-crop.x/crop.width*100,top=-crop.y/crop.height*100;
