@@ -16,3 +16,10 @@ export function AgricultureImageRuby(props:Parameters<typeof agricultureImageRea
  const parts=tokens.flatMap(t=>t.readingKana?[t]:Array.from(t.text,text=>({text,readingKana:undefined})));
  return <View accessible accessibilityLabel={props.text} testID={`agri-image-ruby-${props.imageId}-${props.field}`} style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}>{parts.map((t,i)=><View key={i} style={{alignItems:'center',maxWidth:'100%',minWidth:0}}><Text style={{fontSize:10,lineHeight:14,color:props.color}}>{t.readingKana||' '}</Text><Text style={props.style}>{t.text}</Text></View>)}</View>;
 }
+
+const headings={observation:[{text:'観察',readingKana:'かんさつ'},{text:'の'},{text:'手掛',readingKana:'てが'},{text:'かり'}],limit:[{text:'見分',readingKana:'みわ'},{text:'けるときの'},{text:'限界',readingKana:'げんかい'}]} as const;
+/** Fixed study-image headings; exact offline Japanese, separate from lesson prose. */
+export function AgricultureImageHeading({kind,style,color}:{kind:keyof typeof headings;style?:StyleProp<TextStyle>;color:string}){
+ const tokens:readonly Token[]=headings[kind],text=tokens.map(t=>t.text).join('');
+ return <View accessible accessibilityLabel={text} testID={`agri-image-heading-ruby-${kind}`} style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}>{tokens.map((t,i)=><View key={i} style={{alignItems:'center',maxWidth:'100%',minWidth:0}}><Text style={{fontSize:10,lineHeight:14,color}}>{t.readingKana||' '}</Text><Text style={style}>{t.text}</Text></View>)}</View>;
+}

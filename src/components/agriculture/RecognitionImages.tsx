@@ -1,4 +1,4 @@
-import {AgricultureImageRuby} from './AgricultureImageRuby';
+import {AgricultureImageRuby,AgricultureImageHeading} from './AgricultureImageRuby';
 import localeData from '@/data/agriculture/recognition-image-locales.json';
 import {FlowerLegendFigure} from './FlowerLegendFigure';
 import {CropCalendarFigure} from './CropCalendarFigure';
@@ -239,10 +239,10 @@ export function RecognitionImages({lessonId,lessonSourceHash,colors,level,langua
   {!!t&&<Text testID={`${item.id}-localized-title`} style={[s.title,{color:colors.translationText}]}>{t.title}</Text>}
   {item.id==='agr-f40-general-cropping-example-flow'?<CropCalendarFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language={language} showTranslation={showTranslation} includeMetadata={false} colors={colors}/>:item.id==='agr-f40-general-flower-legend-reader'?<FlowerLegendFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} colors={colors}/>:<ZoomableFigure source={assets[item.assetKey]} width={item.width} height={item.height} altJa={t?.alt||item.altJa} testID={item.id} colors={colors} allowExpandedView={item.allowExpandedView}/>}
   {!!item.labelsJa?.length&&<View style={{gap:4}}>{item.labelsJa.map((label,index)=><View key={`${index}-${label}`}>{ruby(`label:${index}`,label,[s.body,{color:colors.translationText}])}{!!t?.labels?.[index]&&<Text testID={`${item.id}-localized-label-${index}`} style={[s.body,{color:colors.translationText}]}>{t.labels[index]}</Text>}</View>)}</View>}
-  <Text style={[s.label,{color:colors.translationText}]}>観察の手掛かり</Text>
+  <AgricultureImageHeading kind="observation" style={[s.label,{color:colors.translationText}]} color={colors.translationText}/>
   {ruby('observation',item.observationJa,[s.body,{color:colors.translationText}])}
   {!!t&&<Text testID={`${item.id}-localized-observation`} style={[s.body,{color:colors.translationText}]}>{t.observation}</Text>}
-  <Text style={[s.label,{color:colors.translationText}]}>見分けるときの限界</Text>
+  <AgricultureImageHeading kind="limit" style={[s.label,{color:colors.translationText}]} color={colors.translationText}/>
   {ruby('limit',item.limitJa,[s.body,{color:colors.translationText}])}
   {!!t&&<Text testID={`${item.id}-localized-limit`} style={[s.body,{color:colors.translationText}]}>{t.limit}</Text>}
  </View>;})}</>;
