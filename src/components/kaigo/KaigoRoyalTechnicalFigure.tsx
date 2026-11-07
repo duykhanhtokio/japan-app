@@ -2,10 +2,27 @@ import React,{useState} from 'react';
 import {Image,Text,View,type ImageSourcePropType} from 'react-native';
 import translations from '@/data/kaigo/royal-technical-labels.json';
 
-type Kind='brain'|'respiratory'|'muscles'|'posture'|'wheelchair'|'pressure';
+type Kind='brain'|'respiratory'|'muscles'|'posture'|'wheelchair'|'pressure'|'eating'|'endocrine';
 type Point={anchor:[number,number];target:[number,number]};
 /** Percent coordinates on each independently authored 1536x1024 base. Endpoints are manually source-checked. */
 export const royalTechnicalLeaders:Record<Kind,Point[]>={
+ endocrine:[
+  {anchor:[9,51],target:[18.55,29.98]},
+  {anchor:[29,8],target:[22.59,25.39]},
+  {anchor:[59,16],target:[48.2,26.5]},
+  {anchor:[70,29],target:[51.1,26.56]},
+  {anchor:[69,37],target:[50.1,32]},
+  {anchor:[68,47],target:[54,39.6]},
+  {anchor:[68,57],target:[50,44.8]},
+  {anchor:[9,91],target:[13.28,74.61]},
+  {anchor:[91,91],target:[82.94,76.36]},
+ ],
+ eating:[
+  {anchor:[18,62],target:[35,68]}, // seat contact below pelvis
+  {anchor:[77,84],target:[55,90]}, // soles supported on floor
+  {anchor:[18,37],target:[39,53]}, // upper torso inclination
+  {anchor:[77,31],target:[44,43]}, // chin, not throat
+ ],
  pressure:[
   {anchor:[8,24],target:[21.75,40.63]}, // posterior head at pillow contact
   {anchor:[8,37],target:[30.27,43.26]}, // scapular posterior region
@@ -67,7 +84,7 @@ export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=fa
  const tr=(translations as Record<string,typeof ja>)[language]??ja;
  const bilingual=(original:string,translated:string)=>tr===ja?original:original+' / '+translated;
  const labels=ja[kind].map((label,i)=>bilingual(label,tr[kind][i]));
- const view=kind==='pressure'?bilingual(ja.pressureView,tr.pressureView):kind==='wheelchair'?bilingual(ja.wheelchairView,tr.wheelchairView):kind==='posture'?bilingual(ja.postureView,tr.postureView):kind==='brain'?bilingual(ja.brainView,tr.brainView):kind==='muscles'?bilingual(ja.musclesView,tr.musclesView):bilingual(ja.respiratoryView,tr.respiratoryView);
+ const view=kind==='endocrine'?bilingual(ja.endocrineView,tr.endocrineView):kind==='eating'?bilingual(ja.eatingView,tr.eatingView):kind==='pressure'?bilingual(ja.pressureView,tr.pressureView):kind==='wheelchair'?bilingual(ja.wheelchairView,tr.wheelchairView):kind==='posture'?bilingual(ja.postureView,tr.postureView):kind==='brain'?bilingual(ja.brainView,tr.brainView):kind==='muscles'?bilingual(ja.musclesView,tr.musclesView):bilingual(ja.respiratoryView,tr.respiratoryView);
  return <View testID={`kaigo-royal-${kind}`} style={{width:expanded?1000:'100%'}}>
   <Text style={{fontSize:16,color:'#243d4d',padding:8}}>{view}</Text>
   <View onLayout={event=>setWidth(event.nativeEvent.layout.width)} style={{width:'100%',aspectRatio:1.5}}>
@@ -86,7 +103,7 @@ export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=fa
   <View style={{padding:8,gap:6}}>
    {labels.map((label,i)=><Text key={i} style={{fontSize:16,color:'#243d4d'}}>{i+1} · {label}</Text>)}
    {kind==='brain'&&<Text style={{fontSize:15,color:'#243d4d'}}>{bilingual(ja.brainstem,tr.brainstem)}</Text>}
-   <Text style={{fontSize:14,lineHeight:21,color:'#526674'}}>{kind==='pressure'?bilingual(ja.pressureScope,tr.pressureScope):kind==='wheelchair'?bilingual(ja.wheelchairScope,tr.wheelchairScope):kind==='posture'?bilingual(ja.postureScope,tr.postureScope):kind==='muscles'?bilingual(ja.musclesScope,tr.musclesScope):bilingual(ja.scope,tr.scope)}</Text>
+   <Text style={{fontSize:14,lineHeight:21,color:'#526674'}}>{kind==='eating'?bilingual(ja.eatingScope,tr.eatingScope):kind==='pressure'?bilingual(ja.pressureScope,tr.pressureScope):kind==='wheelchair'?bilingual(ja.wheelchairScope,tr.wheelchairScope):kind==='posture'?bilingual(ja.postureScope,tr.postureScope):kind==='muscles'?bilingual(ja.musclesScope,tr.musclesScope):bilingual(ja.scope,tr.scope)}</Text>
   </View>
  </View>;
 }

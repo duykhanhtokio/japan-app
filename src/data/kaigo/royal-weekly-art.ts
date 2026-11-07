@@ -20,6 +20,7 @@ export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspec
  17:{source:require('../../../assets/kaigo/royal-weekly-20261107/week03/day17-plan-before-assistance.webp'),aspectRatio:1536/1024},
  18:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day14-rest-request-handoff.webp'),aspectRatio:1536/1024},
  21:{source:require('../../../assets/kaigo/royal-weekly-20261107/week03/day17-plan-before-assistance.webp'),aspectRatio:1536/1024},
+ 27:{source:require('../../../assets/kaigo/royal-weekly-20261107/week02/day14-rest-request-handoff.webp'),aspectRatio:1536/1024},
 };
 
 /** Image-specific captions; canonical lesson and progress revisions remain unchanged. */
