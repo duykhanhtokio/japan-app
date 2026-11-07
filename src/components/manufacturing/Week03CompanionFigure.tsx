@@ -12,6 +12,8 @@ import data from '@/data/manufacturing/royal-week03-companion-figures.json';
 type Figure={id:string;paragraphId?:string;paragraphIds?:string[];assetFile:string;width:number;height:number;labels?:Record<string,string>};
 type Entry={sourceHash:string;captionJa:string;paragraphIds:string[];bindingScopes?:string[][];expectedParagraphsJa:Record<string,string>;nativeParagraphIds?:string[];expectedNativeParagraphsJa?:Record<string,string>;images:Figure[];exactSelectionOnly?:boolean;exactBindingScopes?:boolean;selectionBoundImages?:boolean;retainedExistingFigure?:boolean;fullReader?:Entry};
 const sources:Record<string,ReturnType<typeof require>>={
+ 'assets/manufacturing/royal-weekly-20261107/week12/technical/companion-arc-diameter-over180-selected.png':require('../../../assets/manufacturing/royal-weekly-20261107/week12/technical/companion-arc-diameter-over180-selected.png'),
+ 'assets/manufacturing/daily40/electrical/electrical-day-021.png':require('../../../assets/manufacturing/daily40/electrical/electrical-day-021.png'),
  'assets/manufacturing/royal-weekly-20261107/week01/electrical-day01-wire-tools.webp':require('../../../assets/manufacturing/royal-weekly-20261107/week01/electrical-day01-wire-tools.webp'),
  'assets/manufacturing/royal-weekly-20261107/week03/electrical-day15-material-roles.webp':require('../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day15-material-roles.webp'),
  'assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.png'),

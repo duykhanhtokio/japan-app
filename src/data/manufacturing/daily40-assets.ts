@@ -1,6 +1,9 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week12/technical/electrical-day82-stacking-ppm.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week12/technical/electrical-day82-stacking-ppm.png");
+  case "assets/manufacturing/royal-weekly-20261107/week12/technical/electrical-day78-speed-shaft-output.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week12/technical/electrical-day78-speed-shaft-output.png");
+  case "assets/manufacturing/daily-20261031/block-gauge.png":return require("../../../assets/manufacturing/daily-20261031/block-gauge.png");
   case "assets/manufacturing/royal-weekly-20261107/week11/technical/electrical-day75-truth-law-verification.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week11/technical/electrical-day75-truth-law-verification.png");
   case "assets/manufacturing/royal-weekly-20261107/week06/companions/electrical-analog-range-twenty-of-fifty.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week06/companions/electrical-analog-range-twenty-of-fifty.png");
   case "assets/manufacturing/royal-weekly-20261107/week11/technical/mechanical-day74-measure-count-sample.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week11/technical/mechanical-day74-measure-count-sample.png");
