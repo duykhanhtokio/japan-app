@@ -247,8 +247,8 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
  if(lesson.id==='mfg1-electrical-l011')return <View testID="manufacturing-native-variation-example" style={border}>
   <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
   <Text style={heading}>9.90 mm ≤ x ≤ 10.10 mm</Text>
-  {[9.80,10.00,10.20].map(value=><Text key={value} style={body}>{value.toFixed(2)} mm · {value>=9.90&&value<=10.10?labels.inRange:labels.outOfRange}</Text>)}
-  <Text style={heading}>{labels.mean}：(9.80 ＋ 10.00 ＋ 10.20) ÷ 3 ＝ 10.00 mm</Text>
+  {[9.80,10.00,10.20].map(value=><View key={value} style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><Text style={body}>{value.toFixed(2)}</Text><Text style={body}> mm · </Text><ManufacturingNativeLabel lesson={lesson} field={value>=9.90&&value<=10.10?"inRange":"outOfRange"} text={value>=9.90&&value<=10.10?labels.inRange:labels.outOfRange} enabled={selected===locales.ja} style={body}/></View>)}
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><ManufacturingNativeLabel lesson={lesson} field={"mean"} text={labels.mean} enabled={selected===locales.ja} style={heading}/><Text style={heading}>：(9.80 ＋ 10.00 ＋ 10.20) ÷ 3 ＝ 10.00 mm</Text></View>
   {checkedExample}
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
  </View>;
@@ -284,32 +284,32 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
  </View>;
  if(lesson.id==='mfg1-surface-lesson-005')return <View testID="manufacturing-native-electroplating-example" style={border}>
   <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
-  <Text style={heading}>＋ {labels.anode} · Cu</Text><Text style={body}>Cu → Cu²⁺ ＋ 2e⁻</Text>
-  <Text style={heading}>− {labels.cathode} · {labels.workpiece}</Text><Text style={body}>Cu²⁺ ＋ 2e⁻ → Cu</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><Text style={heading}>＋ </Text><ManufacturingNativeLabel lesson={lesson} field={"anode"} text={labels.anode} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · Cu</Text></View><Text style={body}>Cu → Cu²⁺ ＋ 2e⁻</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><Text style={heading}>− </Text><ManufacturingNativeLabel lesson={lesson} field={"cathode"} text={labels.cathode} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · </Text><ManufacturingNativeLabel lesson={lesson} field={"workpiece"} text={labels.workpiece} enabled={selected===locales.ja} style={heading}/></View><Text style={body}>Cu²⁺ ＋ 2e⁻ → Cu</Text>
   {checkedExample}
  </View>;
  if(lesson.id==='mfg1-surface-lesson-006')return <View testID="manufacturing-native-current-density-example" style={border}>
   <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
-  <Text style={body}>{labels.current}：7.2 A</Text>
-  <Text style={body}>{labels.area}：2.4 dm²</Text>
-  <Text style={heading}>{labels.currentDensity}：7.2 A ÷ 2.4 dm² ＝ 3.0 A/dm²</Text>
-  <Text style={body}>{labels.area}：4.8 dm²</Text>
-  <Text style={heading}>{labels.currentDensity}：7.2 A ÷ 4.8 dm² ＝ 1.5 A/dm²</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><ManufacturingNativeLabel lesson={lesson} field={"current"} text={labels.current} enabled={selected===locales.ja} style={body}/><Text style={body}>：7.2 A</Text></View>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><ManufacturingNativeLabel lesson={lesson} field={"area"} text={labels.area} enabled={selected===locales.ja} style={body}/><Text style={body}>：2.4 dm²</Text></View>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><ManufacturingNativeLabel lesson={lesson} field={"currentDensity"} text={labels.currentDensity} enabled={selected===locales.ja} style={heading}/><Text style={heading}>：7.2 A ÷ 2.4 dm² ＝ 3.0 A/dm²</Text></View>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><ManufacturingNativeLabel lesson={lesson} field={"area"} text={labels.area} enabled={selected===locales.ja} style={body}/><Text style={body}>：4.8 dm²</Text></View>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><ManufacturingNativeLabel lesson={lesson} field={"currentDensity"} text={labels.currentDensity} enabled={selected===locales.ja} style={heading}/><Text style={heading}>：7.2 A ÷ 4.8 dm² ＝ 1.5 A/dm²</Text></View>
   {checkedExample}
  </View>;
  if(lesson.id==='mfg1-surface-lesson-007')return <View testID="manufacturing-native-anodizing-example" style={border}>
   <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {target.title}</Text></View>
-  <Text style={heading}>{labels.electroplating}：{labels.workpiece} − ({labels.cathode})</Text>
-  <Text style={heading}>{labels.anodizing}：{labels.workpiece} ＋ ({labels.anode})</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><ManufacturingNativeLabel lesson={lesson} field={"electroplating"} text={labels.electroplating} enabled={selected===locales.ja} style={heading}/><Text style={heading}>：</Text><ManufacturingNativeLabel lesson={lesson} field={"workpiece"} text={labels.workpiece} enabled={selected===locales.ja} style={heading}/><Text style={heading}> − (</Text><ManufacturingNativeLabel lesson={lesson} field={"cathode"} text={labels.cathode} enabled={selected===locales.ja} style={heading}/><Text style={heading}>)</Text></View>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><ManufacturingNativeLabel lesson={lesson} field={"anodizing"} text={labels.anodizing} enabled={selected===locales.ja} style={heading}/><Text style={heading}>：</Text><ManufacturingNativeLabel lesson={lesson} field={"workpiece"} text={labels.workpiece} enabled={selected===locales.ja} style={heading}/><Text style={heading}> ＋ (</Text><ManufacturingNativeLabel lesson={lesson} field={"anode"} text={labels.anode} enabled={selected===locales.ja} style={heading}/><Text style={heading}>)</Text></View>
   {checkedExample}
   <ManufacturingIllustrationText lesson={lesson} field="structureTitle" text={target.structureTitle} enabled={selected===locales.ja} style={heading}/><Text style={body}>{target.structureText}</Text>
  </View>;
  return <View testID="manufacturing-native-coating-example" style={border}>
-  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><Text style={heading}> · {labels.practiceRange} 8〜12 μm</Text></View>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}><ManufacturingNativeLabel lesson={lesson} field="practice" text={labels.practice} enabled={selected===locales.ja} style={heading}/><View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><Text style={heading}> · </Text><ManufacturingNativeLabel lesson={lesson} field={"practiceRange"} text={labels.practiceRange} enabled={selected===locales.ja} style={heading}/><Text style={heading}> 8〜12 μm</Text></View></View>
   {[{position:1,value:7},{position:2,value:10},{position:3,value:13}].map(row=><View key={row.position} style={{flexDirection:'row',flexWrap:'wrap',justifyContent:'space-between',gap:8,borderBottomWidth:1,borderBottomColor:colors.border,paddingVertical:8}}>
-   <Text style={body}>{labels.position} {row.position}</Text><Text style={heading}>{row.value} μm</Text><Text style={body}>{row.value>=8&&row.value<=12?labels.inRange:labels.outOfRange}</Text>
+   <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><ManufacturingNativeLabel lesson={lesson} field={"position"} text={labels.position} enabled={selected===locales.ja} style={body}/><Text style={body}> </Text><Text style={body}>{row.position}</Text></View><Text style={heading}>{row.value} μm</Text><View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><ManufacturingNativeLabel lesson={lesson} field={row.value>=8&&row.value<=12?"inRange":"outOfRange"} text={row.value>=8&&row.value<=12?labels.inRange:labels.outOfRange} enabled={selected===locales.ja} style={body}/></View>
   </View>)}
-  <Text style={heading}>{labels.mean}：(7 ＋ 10 ＋ 13) ÷ 3 ＝ 10 μm</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end',maxWidth:'100%'}}><ManufacturingNativeLabel lesson={lesson} field={"mean"} text={labels.mean} enabled={selected===locales.ja} style={heading}/><Text style={heading}>：(7 ＋ 10 ＋ 13) ÷ 3 ＝ 10 μm</Text></View>
   {checkedExample}
  </View>;
 }

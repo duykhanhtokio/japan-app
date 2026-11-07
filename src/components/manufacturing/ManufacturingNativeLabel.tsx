@@ -6,7 +6,7 @@ const registry=data as {schemaVersion:number;revision:string;studyOnly:boolean;l
 /** Canonical lookup shares existing lesson payloads; no repeated per-field full-body copies. */
 export function manufacturingNativeLabelReading(lesson:ManufacturingLesson,field:string,text:string):Part[]|undefined{
  const f=registry.fields[field];
- if(registry.schemaVersion!==1||registry.revision!=='native-practice-label-20261107-v1'||!registry.studyOnly||registry.lessonSourceHashes[lesson.id]!==lesson.sourceHash||!f||f.sourceJapanese!==text)return;
+ if(registry.schemaVersion!==1||registry.revision!=='native-labels-20261107-v2'||!registry.studyOnly||registry.lessonSourceHashes[lesson.id]!==lesson.sourceHash||!f||f.sourceJapanese!==text)return;
  const canonical=(lesson.specialty==='mechanical'?require('@/data/manufacturing/mechanical.json'):lesson.specialty==='electrical'?require('@/data/manufacturing/electrical.json'):lesson.specialty==='surface'?require('@/data/manufacturing/surface.json'):null)?.lessons.find((l:ManufacturingLesson)=>l.id===lesson.id) as ManufacturingLesson|undefined;
  if(!canonical||canonical.sourceHash!==lesson.sourceHash||canonical.titleJa!==lesson.titleJa||canonical.summaryJa!==lesson.summaryJa||canonical.objectiveJa!==lesson.objectiveJa||JSON.stringify(canonical.paragraphs)!==JSON.stringify(lesson.paragraphs)||!Array.isArray(f.parts)||!f.parts.length||f.parts.map(p=>p?.text).join('')!==text||f.parts.some(p=>!p||typeof p.text!=='string'||!p.text||(/[一-龯々]/.test(p.text)&&(!p.reading||!/^[ぁ-ゖー]+$/.test(p.reading)))||(p.reading!==undefined&&!/^[ぁ-ゖー]+$/.test(p.reading))))return;
  return f.parts;

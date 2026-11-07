@@ -1,3 +1,4 @@
+import {RestaurantReading} from './RestaurantReading';
 import {sameRestaurantFigureIdentity} from './RestaurantFigureIdentity';
 import {Image,Text,View} from 'react-native';
 import type {SourceFigure31} from '@/data/restaurant/source31';
@@ -11,6 +12,6 @@ export function restaurantWeek05TechnicalKind(figure:SourceFigure31):string|null
 }
 export function RestaurantWeek05TechnicalFigure({language='ja',showTranslation=false,width=320}:{language?:string;showTranslation?:boolean;width?:number}){
  const w=Math.max(1,Math.min(480,width-24)),labels=data.labels as Record<string,string[]>,target=labels[language];
- const label=(i:number)=><View style={{gap:6}}><Text selectable style={{fontSize:17,lineHeight:28,color:'#173c4b'}}>{labels.ja[i]}</Text>{showTranslation&&language!=='ja'&&target?.[i]&&<Text selectable style={{fontSize:17,lineHeight:28,color:'#344b61'}}>{target[i]}</Text>}</View>;
+ const label=(i:number)=><View style={{gap:6}}><RestaurantReading paper text={labels.ja[i]} segments={data.labelRuby?.[i]?.textJa===labels.ja[i]?data.labelRuby[i].segments:undefined}/>{showTranslation&&language!=='ja'&&target?.[i]&&<Text selectable style={{fontSize:17,lineHeight:28,color:'#344b61'}}>{target[i]}</Text>}</View>;
  return <View testID="restaurant-week05-native-emergency-roles" style={{padding:12,gap:18}}>{[0,1,2].map(i=><RoyalContentPanel key={i} style={{gap:10}}>{label(i)}<View testID={`restaurant-emergency-role-${i}`} style={{width:'100%',maxWidth:w,aspectRatio:.5,position:'relative',overflow:'hidden'}}><Image source={artwork} accessibilityLabel={showTranslation&&language!=='ja'&&target?target[i]:labels.ja[i]} resizeMode="contain" style={{position:'absolute',width:'300%',height:'100%',left:`-${i*100}%`,top:0}}/></View></RoyalContentPanel>)}{label(3)}</View>;
 }

@@ -1,3 +1,5 @@
+import {KaigoMockPublicLabelReadings} from './KaigoMockPublicLabelReadings';
+import {isKnownMockPublicLabelKey,mockPublicLabelsFor} from '@/data/kaigo/mock-public-label-readings';
 import React from 'react';
 import {Image,Text,View,type ImageStyle,type StyleProp} from 'react-native';
 import {kaigoFigures} from '@/data/kaigo/figures';
@@ -6,8 +8,12 @@ import {isKnownRoyalMockFigureKey,mockRoyalFigureFor,type PublicMockFigureQuesti
 /** Neutral question conditions. Selected-locale alt is supplied only by submitted-review controls. */
 export function KaigoMockRoyalFigure({question,translatedAlt,style}:{question:PublicMockFigureQuestion;translatedAlt?:string;style?:StyleProp<ImageStyle>}){
  const figure=mockRoyalFigureFor(question);
- if(!figure&&isKnownRoyalMockFigureKey(question.figureKey))return <View testID="kaigo-mock-figure-pending-source-check"><Text>この問題の図を表示できません。</Text></View>;
- if(!figure)return <Image testID="kaigo-mock-legacy-figure" accessibilityLabel={question.figureDescriptionJa} source={kaigoFigures[question.figureKey??'']} resizeMode="contain" style={style}/>;
+ const publicLabels=mockPublicLabelsFor(question,kaigoFigures[question.figureKey??'']);
+ if(!figure&&(isKnownRoyalMockFigureKey(question.figureKey)||(isKnownMockPublicLabelKey(question.figureKey)&&!publicLabels)))return <View testID="kaigo-mock-figure-pending-source-check"><Text>この問題の図を表示できません。</Text></View>;
+ if(!figure){
+  const image=<Image testID="kaigo-mock-legacy-figure" accessibilityLabel={question.figureDescriptionJa} source={kaigoFigures[question.figureKey??'']} resizeMode="contain" style={style}/>;
+  return publicLabels?<View>{image}<KaigoMockPublicLabelReadings binding={publicLabels}/></View>:image;
+ }
  const reach=figure.reachArea;
  const alt=translatedAlt?question.figureDescriptionJa+' / '+translatedAlt:question.figureDescriptionJa;
  return <View testID={`kaigo-mock-royal-${figure.figureKey}`} style={[style,{position:'relative',aspectRatio:figure.width/figure.height,maxHeight:undefined}]}>

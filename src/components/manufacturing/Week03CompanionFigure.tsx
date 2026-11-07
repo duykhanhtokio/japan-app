@@ -1,3 +1,5 @@
+import {ManufacturingCompanionText} from './ManufacturingCompanionText';
+import {manufacturingCompanionCaptionReading} from '@/data/manufacturing/companion-field-readings';
 import {CompletionManufacturingDiagrams} from './CompletionManufacturingDiagrams';
 import {Text,View} from 'react-native';
 import type {ManufacturingLesson} from '@/data/manufacturing';
@@ -90,7 +92,7 @@ export function Week03CompanionFigure({lesson,paragraphIds,language,showTranslat
  const native=nativeIds.map(id=>{const p=lesson.paragraphs.find(p=>p.id===id)!;const target=translated?.paragraphs.find(p=>p.id===id);return {id,title:target?.title??p.titleJa,text:manufacturingLessonParagraph(lesson,id,selectedLanguage,target?.text??p.textJa)??p.textJa};});
  return <View testID={`manufacturing-week03-companion-figure-${lesson.id}`} style={{gap:16}}>
   <View testID={`manufacturing-week03-companion-native-${lesson.id}`} style={{gap:10,padding:14,borderWidth:1,borderColor:colors.border,borderRadius:10}}>
-   {native.map(p=><View key={p.id} style={{gap:6}}><Text style={{fontSize:17,lineHeight:29,fontWeight:'700',color:colors.text}}>{p.title}</Text><Text selectable style={{fontSize:17,lineHeight:29,color:colors.text}}>{p.text}</Text></View>)}
+   {native.map(p=><View key={p.id} style={{gap:6}}><ManufacturingCompanionText lesson={lesson} paragraphId={p.id} field="title" text={p.title} enabled={selectedLanguage==='ja'} style={{fontSize:17,lineHeight:29,fontWeight:'700',color:colors.text}}/><ManufacturingCompanionText lesson={lesson} paragraphId={p.id} field="text" text={p.text} enabled={selectedLanguage==='ja'} style={{fontSize:17,lineHeight:29,color:colors.text}}/></View>)}
   </View>
   {row.images.map(item=>{
    const source=Object.prototype.hasOwnProperty.call(sources,item.assetFile)?sources[item.assetFile]:undefined,ids=imageParagraphIds(item),selected=ids.map(id=>lesson.paragraphs.find(p=>p.id===id));
@@ -102,9 +104,10 @@ export function Week03CompanionFigure({lesson,paragraphIds,language,showTranslat
    const caption=translatedParts.every(text=>typeof text==='string'&&!!text.trim())?translatedParts.join('\n\n'):null;
    const label=item.labels?.[caption?selectedLanguage:'ja'];
    const title=label&&(caption??captionJa).includes(label)?label:caption?targets.map(p=>p!.title).join(' / '):selected.map(p=>p!.titleJa).join(' / ');
+   const diagram={id:'week03-companion-'+lesson.id+'-'+item.id,lessonId:lesson.id,lessonSourceHash:lesson.sourceHash,assetFile:item.assetFile,width:item.width,height:item.height,captionJa,scopeLimits:['source_bound_teaching_concept_only']};
    return <View key={item.id} style={{gap:8}}>
     <Text style={{fontSize:18,lineHeight:30,fontWeight:'700',color:colors.text}}>{title}</Text>
-    <SupplementalFigure item={{id:'week03-companion-'+lesson.id+'-'+item.id,lessonId:lesson.id,lessonSourceHash:lesson.sourceHash,assetFile:item.assetFile,width:item.width,height:item.height,captionJa,scopeLimits:['source_bound_teaching_concept_only']}} imageSource={source} imageAlt={caption??captionJa} language={language} showTranslation={showTranslation} translatedCaption={caption}/>
+    <SupplementalFigure item={diagram} japaneseCaptionRuby={manufacturingCompanionCaptionReading(lesson,diagram)} imageSource={source} imageAlt={caption??captionJa} language={language} showTranslation={showTranslation} translatedCaption={caption}/>
    </View>;
   })}
  </View>;

@@ -1,4 +1,5 @@
-import {Text,View} from 'react-native';
+import {Text,View,type StyleProp,type TextStyle} from 'react-native';
+import {AgricultureImageRuby,agricultureImageReading} from './AgricultureImageRuby';
 import {agricultureLesson,agricultureTranslation,type AgricultureLesson,type AgricultureLevel} from '@/data/agriculture';
 import support from '@/data/agriculture/daily-learning-support.json';
 import figures from '@/data/agriculture/recognition-images.json';
@@ -18,7 +19,8 @@ import {NativeProcessDiagram,isNativeProcessContext} from './NativeProcessDiagra
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 type Colors={text:string;translation:string;translationText:string;border:string};
 type Companion={lessonId:string;sourceHash:string;paragraphIds:string[]};
-type Binding={lessonSourceHash:string;figureId:string;assetSha256:string;scopeLevels:string[];reuseReasonJa:string};
+type ReuseCaption={sourceJapanese:string;figureId:string;assetSha256:string;lessonSourceHash:string;lessonRevision:string;locales:Record<string,string>};
+type Binding={lessonSourceHash:string;figureId:string;assetSha256:string;scopeLevels:string[];reuseReasonJa:string;reuseCaption?:ReuseCaption};
 type Diagram={kind:string;titleJa:string;captionJa:string;altJa:string;lessonSourceHash:string};
 const pairs=support.companionReadings as Record<string,Companion[]>;
 const sourceVersions=support.sourceVersions as Record<string,string>;
@@ -48,20 +50,34 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
  if(f?.id==='agr-f40-general-cropping-example-flow')return <CropCalendarFigure lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
 
  const currentLesson=agricultureLesson(lesson.id,level);
+ const readingSources=currentLesson?.sourceHash===lesson.sourceHash&&currentLesson.revision===lesson.revision&&f?f.lessonIds.flatMap(sourceId=>{
+  const source=f.scopeLevels.flatMap(sourceLevel=>{const l=agricultureLesson(sourceId,sourceLevel as AgricultureLevel);return l?[l]:[];})[0];
+  return source&&source.sourceHash===f.lessonSourceHashes[sourceId as keyof typeof f.lessonSourceHashes]?[source]:[];
+ }):[];
+ const ruby=(field:string,text:string,style:StyleProp<TextStyle>)=>{
+  const candidates=field.startsWith('reuse:')&&currentLesson?.sourceHash===lesson.sourceHash&&currentLesson.revision===lesson.revision?[currentLesson]:readingSources;
+  const source=f?candidates.find(source=>agricultureImageReading({imageId:f.id,assetSha256:f.assetSha256,lessonId:source.id,lessonSourceHash:source.sourceHash,lessonRevision:source.revision,field,text})):undefined;
+  return f&&source?<AgricultureImageRuby imageId={f.id} assetSha256={f.assetSha256} lessonId={source.id} lessonSourceHash={source.sourceHash} lessonRevision={source.revision} field={field} text={text} color={colors.translationText} style={style}/>:<Text style={style}>{text}</Text>;
+ };
  const translated=showTranslation&&language!=='ja'&&f&&currentLesson?.sourceHash===lesson.sourceHash&&currentLesson.revision===lesson.revision?f.lessonIds.flatMap(sourceId=>{
   const source=f.scopeLevels.flatMap(sourceLevel=>{const l=agricultureLesson(sourceId,sourceLevel as AgricultureLevel);return l?[l]:[];})[0];
   if(!source||source.sourceHash!==f.lessonSourceHashes[sourceId as keyof typeof f.lessonSourceHashes])return [];
   const t=recognitionImageTranslation(f,source.id,source.sourceHash,source.revision,language);
   return t?[t]:[];
  })[0]:null;
+ const reuseCaption=currentBinding?.reuseCaption;
+ const reuseCandidate=showTranslation&&language!=='ja'&&currentLesson?.sourceHash===lesson.sourceHash&&currentLesson.revision===lesson.revision&&f&&reuseCaption?.figureId===f.id&&reuseCaption.assetSha256===f.assetSha256&&reuseCaption.lessonSourceHash===lesson.sourceHash&&reuseCaption.lessonRevision===lesson.revision&&reuseCaption.sourceJapanese===currentBinding?.reuseReasonJa?reuseCaption.locales[language]:null;
+ const translatedReuseReason=typeof reuseCandidate==='string'&&reuseCandidate.trim()?reuseCandidate:null;
  const asset=f?getAgricultureFigureAsset(f.assetKey):null;
  return f&&asset?<View testID={`agri-daily-support-${lesson.id}`} style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10,gap:10}}>
- <Text style={{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'}}>{f.titleJa}</Text>
+ {ruby('title',f.titleJa,{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'})}
  {!!translated&&<Text testID={`agri-daily-support-${lesson.id}-localized-title`} style={{color:colors.translationText,fontSize:18,lineHeight:28,fontWeight:'700'}}>{translated.title}</Text>}
  <ZoomableFigure source={asset} width={f.width} height={f.height} altJa={translated?.alt||f.altJa} testID={`agri-daily-support-${lesson.id}`} colors={colors} allowExpandedView/>
- <Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{currentBinding?.reuseReasonJa||f.observationJa}</Text>
- <Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{f.observationJa}{'\n'}{f.limitJa}</Text>
- {!!translated&&<View testID={`agri-daily-support-${lesson.id}-localized-metadata`} style={{gap:6}}><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.observation}</Text><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.limit}</Text>{!!translated.labels?.length&&f.labelsJa?.map((label,i)=><View key={i} style={{gap:3}}><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{label}</Text><Text testID={`agri-daily-support-${lesson.id}-localized-label-${i}`} style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.labels![i]}</Text></View>)}</View>}
+ {ruby(currentBinding?`reuse:${lesson.id}`:'observation',currentBinding?.reuseReasonJa||f.observationJa,{color:colors.translationText,fontSize:16,lineHeight:27})}
+ {!!translatedReuseReason&&<Text testID={`agri-daily-support-${lesson.id}-localized-reuse-reason`} style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translatedReuseReason}</Text>}
+ <View style={{gap:6}}>{ruby('observation',f.observationJa,{color:colors.translationText,fontSize:16,lineHeight:27})}{ruby('limit',f.limitJa,{color:colors.translationText,fontSize:16,lineHeight:27})}</View>
+ {!!translated&&<View testID={`agri-daily-support-${lesson.id}-localized-metadata`} style={{gap:6}}><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.observation}</Text><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.limit}</Text></View>}
+ {!!f.labelsJa?.length&&<View style={{gap:6}}>{f.labelsJa.map((label,i)=><View key={i} style={{gap:3}}>{ruby(`label:${i}`,label,{color:colors.translationText,fontSize:16,lineHeight:27})}{!!translated?.labels?.[i]&&<Text testID={`agri-daily-support-${lesson.id}-localized-label-${i}`} style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.labels[i]}</Text>}</View>)}</View>}
  </View>:null;
 }
 export function DailyCompanionReadings({lesson,level,language,showTranslation,colors}:{lesson:AgricultureLesson;level:AgricultureLevel;language:string;showTranslation:boolean;colors:Colors}){
