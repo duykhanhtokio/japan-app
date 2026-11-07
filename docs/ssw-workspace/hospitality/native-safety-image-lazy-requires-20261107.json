@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "sector": "hospitality",
+  "baseCommit": "f31ea68a1efb604d80ae2b408963206693d95b91",
+  "scope": "Existing safety02controlledimages load on demand; no image bytes/canonical lesson/revision/learner ID changes.",
+  "problem": "Two diagram require() calls executed when the guide module was imported even for unrelated lessons.",
+  "change": "Keep require calls in functions invoked only inside a source/translation-guarded matching safety02 render.",
+  "policyRef": "docs/ssw-workspace/daily-learning-policy.json#/illustration/noAutomaticGlobalAssetImport",
+  "checks": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/hospitality/check-native-figure-revisions.cjs",
+    "moduleImportRequiresNoDiagramAssets": true,
+    "rejectedLessonRenderRequiresNoDiagramAssets": true,
+    "currentLocaleRenders": 91,
+    "negativeBoundaryCases": 280,
+    "actualReaderToggleCases": 26,
+    "actualCallerTypePositiveSites": 5,
+    "expectedInvalidPropsRejections": 10,
+    "exitAnchorRegressionLayouts": 156,
+    "wholeProjectTypeCheckClaimed": false,
+    "nativePlatformPrimitivesMocked": true
+  },
+  "concurrentWork": "Current external safety03–05 Royal assets/metadata/queue are preserved. Own concurrent candidate images are not integrated or counted as new completed targets.",
+  "files": [
+    {
+      "path": "src/components/hospitality/HotelSafetyDecisionGuide.tsx",
+      "sha256": "0f11e1dd657f2df5793b0d4323772d53f2f6fe8869e91a537f718be5bd774092"
+    },
+    {
+      "path": "scripts/hospitality/check-native-figure-revisions.cjs",
+      "sha256": "c022aa0bf47d01beaa1e9df7b01ebb528d76a19c7a8478075f41a6d19dd136b5"
+    }
+  ],
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false
+  }
+}

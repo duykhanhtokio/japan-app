@@ -14,6 +14,7 @@ const element=tag=>props=>{
 const componentReact={...React,useState:initial=>controlledWidth===null?React.useState(initial):[controlledWidth,()=>{}]};
 const native={View:element('div'),Text:element('span'),Image:props=>React.createElement('img',{src:props.source,alt:props.accessibilityLabel}),StyleSheet:{create:value=>value},useWindowDimensions:()=>({width:375,height:812,fontScale})};
 const cache=new Map();
+const controlledAssetLoads=[];
 function load(relative){
  const file=path.resolve(root,relative);if(cache.has(file))return cache.get(file);
  const compiled=ts.transpileModule(fs.readFileSync(file,'utf8'),{fileName:file,compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020,jsx:ts.JsxEmit.ReactJSX},reportDiagnostics:true});
@@ -25,7 +26,7 @@ function load(relative){
   if(name==='react-native')return native;
   // Return supplied material even for a stale revision: each diagram must guard itself.
   if(name.endsWith('/translation-loaders'))return {loadHotelTranslation:()=>translatedMaterial};
-  if(name.endsWith('.webp'))return name;
+  if(name.endsWith('.webp')){controlledAssetLoads.push(name);return name;}
   if(name.startsWith('.'))return load(path.relative(root,path.resolve(path.dirname(file),name+'.ts')));
   return require(name);
  };
@@ -44,13 +45,16 @@ const cases=[
 const languages=['ja','en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
 let positive=0,rejected=0;
 for(const [name,id,testId] of cases){
- const Component=load(`src/components/hospitality/${name}.tsx`)[name],lesson=lessons[id];assert(lesson);
+ const beforeImport=controlledAssetLoads.length,Component=load(`src/components/hospitality/${name}.tsx`)[name],lesson=lessons[id];assert(lesson);
+ if(name==='HotelSafetyDecisionGuide')assert.equal(controlledAssetLoads.length,beforeImport,'technical image requires must stay lazy at module import');
  for(const language of languages){
   translatedMaterial=lesson;
   const render=candidate=>renderToStaticMarkup(React.createElement(Component,{lesson:candidate,language}));
   const html=render(lesson);assert(html.includes(testId),`${id}/${language} current figure absent`);assert(!html.includes('undefined'));positive++;
   for(const candidate of [{...lesson,revision:'stale',terms:[]},{...lesson,revision:undefined,terms:[]},{...lesson,id:'unrelated-lesson',terms:[]}]){
+   const beforeRejectedRender=controlledAssetLoads.length;
    assert.equal(render(candidate),'',`${id}/${language} accepted mismatched diagram content`);rejected++;
+   if(name==='HotelSafetyDecisionGuide')assert.equal(controlledAssetLoads.length,beforeRejectedRender,'rejected lessons must not require technical images');
   }
   if(name==='HotelRevenueExample')for(const expected of ['30 ÷ 40 × 100 = 75%','360,000 ÷ 30 = 12,000','360,000 ÷ 40 = 9,000','12,000 × 0.75 = 9,000'])assert(html.includes(expected),expected);
  }
@@ -148,3 +152,4 @@ console.log(`PASS exit label anchors: ${exitAnchors} actual component layouts ac
 console.log('PASS controlled fire boundary/13-locale condition labels; safe-scope caveat and translation-toggle binding preserved.');
 console.log('PASS actual native caller type probe: 5 current JSX calls and 10 expected invalid-prop rejections; not a whole-project type-check.');
 console.log(`PASS actual Reader translation toggle: ${toggleCases} locale/toggle cases route Japanese or translated conditions correctly.`);
+console.log('PASS controlled diagram requires stay deferred until a matching safety02 guide renders.');

@@ -4,7 +4,7 @@ import type {HotelLesson} from '../../data/hospitality/types';
 import {loadHotelTranslation} from '../../data/hospitality/translation-loaders';
 import {hotelSafetyGuideLabels,HOTEL_SAFETY_GUIDE_REVISION} from '../../data/hospitality/safety-visual-guide-labels';
 export const HOTEL_FIRE_BOUNDARY_GEOMETRY={width:720,height:360,ceilingY:32,belowFireTop:210,ceilingFireTop:32};
-const diagrams={below:require('../../../assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-below-controlled.webp'),ceiling:require('../../../assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-ceiling-controlled.webp')};
+const diagrams={below:()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-below-controlled.webp'),ceiling:()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-ceiling-controlled.webp')};
 /** Qualitative comparison only. A lower flame is never a guarantee of safe firefighting. */
 export function HotelSafetyDecisionGuide({lesson,language}:{lesson:HotelLesson;language:string}){
  if(lesson.id!=='hotel-safety-02'||lesson.revision!==HOTEL_SAFETY_GUIDE_REVISION)return null;
@@ -13,7 +13,7 @@ export function HotelSafetyDecisionGuide({lesson,language}:{lesson:HotelLesson;l
  return <View testID="hotel-safety-02-native-decision-guide" style={s.root}>
  {(['below','ceiling'] as const).map(key=><View key={key} testID={`hotel-fire-${key}-comparison`} style={s.card}>
   <Text style={s.title}>{key==='below'?t.conditional:t.evacuate}</Text>
-  <View style={s.diagram}><Text style={s.ceiling}>{t.ceiling}</Text><Image source={diagrams[key]} resizeMode="contain" accessibilityLabel={`${t.ceiling}. ${key==='below'?t.trainedScope:t.stopConditions}`} style={s.image}/></View>
+  <View style={s.diagram}><Text style={s.ceiling}>{t.ceiling}</Text><Image source={diagrams[key]()} resizeMode="contain" accessibilityLabel={`${t.ceiling}. ${key==='below'?t.trainedScope:t.stopConditions}`} style={s.image}/></View>
   <Text style={s.text}>{key==='below'?t.trainedScope:t.stopConditions}</Text>
  </View>)}
  <Text style={s.text}>{t.caveat}</Text>
