@@ -2,6 +2,12 @@ import type {ImageSourcePropType} from 'react-native';
 
 /** Day-scoped replacements preserve shared legacy art IDs and captions. */
 export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspectRatio:number}>={
+ 50:{source:require('../../../assets/kaigo/paragraphs/excretion-02-summary-v1.webp'),aspectRatio:1619/971},
+ 53:{source:require('../../../assets/kaigo/paragraphs/excretion-03-dialogue-v1.webp'),aspectRatio:1619/972},
+ 54:{source:require('../../../assets/kaigo/royal-weekly-20261107/week08/saved-practice-review.webp'),aspectRatio:1536/1024},
+ 55:{source:require('../../../assets/kaigo/royal-weekly-20261107/week08/saved-practice-review.webp'),aspectRatio:1536/1024},
+ 56:{source:require('../../../assets/kaigo/royal-weekly-20261107/week08/saved-practice-review.webp'),aspectRatio:1536/1024},
+
  43:{source:require('../../../assets/kaigo/royal-weekly-20261107/week07/day43-towel-participation-choice.webp'),aspectRatio:1536/1024},
  44:{source:require('../../../assets/kaigo/royal-weekly-20261107/week07/day44-linen-scope-agreement.webp'),aspectRatio:1536/1024},
  45:{source:require('../../../assets/kaigo/paragraphs/excretion-06-summary-v1.webp'),aspectRatio:1620/971},
@@ -39,6 +45,82 @@ export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspec
 
 /** Image-specific captions; canonical lesson and progress revisions remain unchanged. */
 export const kaigoRoyalWeeklyCaptions:Record<number,Record<string,string>>={
+  "50": {
+    "ja": "部屋で本人の参加条件を聞く場面です。帰りの支援と時刻は確認前で、参加も出発も決まっていません。",
+    "en": "In the room, staff listen to the person’s conditions for joining. Return support and timing remain unconfirmed; neither participation nor departure is decided.",
+    "vi": "Trong phòng, nhân viên lắng nghe điều kiện tham gia của người được chăm sóc. Chưa xác nhận hỗ trợ và giờ trở về; chưa quyết định tham gia hay xuất phát.",
+    "id": "Di kamar, petugas mendengarkan syarat orang tersebut untuk ikut. Bantuan dan waktu pulang belum dipastikan; keikutsertaan maupun keberangkatan belum diputuskan.",
+    "zh-CN": "在房间里，工作人员倾听本人参加活动的条件。返回时的协助和时间尚未确认，参加与出发均未决定。",
+    "zh-TW": "在房間裡，工作人員傾聽本人參加活動的條件。返回時的協助和時間尚未確認，參加與出發均未決定。",
+    "hi": "कमरे में कर्मचारी भाग लेने की व्यक्ति की शर्तें सुनते हैं। लौटने की सहायता और समय की पुष्टि बाकी है; भाग लेना या निकलना तय नहीं है।",
+    "bn": "ঘরে কর্মী অংশ নেওয়ার বিষয়ে ব্যক্তির শর্ত শোনেন। ফেরার সহায়তা ও সময় এখনও নিশ্চিত নয়; অংশ নেওয়া বা রওনা হওয়া ঠিক হয়নি।",
+    "ne": "कोठामा कर्मचारीले सहभागी हुन व्यक्तिले राखेका सर्त सुन्छन्। फर्किने सहायता र समय पुष्टि भएको छैन; सहभागिता वा प्रस्थान तय भएको छैन।",
+    "my": "အခန်းထဲတွင် ဝန်ထမ်းက ပါဝင်ရန် ကာယကံရှင်၏ သတ်မှတ်ချက်များကို နားထောင်နေသည်။ ပြန်လာရန် အကူအညီနှင့်အချိန်ကို မအတည်ပြုရသေးဘဲ ပါဝင်ခြင်းနှင့် ထွက်ခွာခြင်းကို မဆုံးဖြတ်ရသေးပါ။",
+    "th": "เจ้าหน้าที่รับฟังเงื่อนไขการเข้าร่วมของเจ้าตัวในห้อง ยังไม่ได้ยืนยันความช่วยเหลือและเวลากลับ และยังไม่ได้ตัดสินใจเข้าร่วมหรือออกเดินทาง",
+    "km": "នៅក្នុងបន្ទប់ បុគ្គលិកស្តាប់លក្ខខណ្ឌចូលរួមរបស់សាមីខ្លួន។ ជំនួយនិងពេលត្រឡប់មិនទាន់បញ្ជាក់ ហើយមិនទាន់សម្រេចចូលរួមឬចេញដំណើរទេ។",
+    "tl": "Sa silid, pinakikinggan ng kawani ang mga kondisyon ng tao para sumali. Hindi pa kumpirmado ang tulong at oras ng pagbalik; wala pang pasiya sa pagsali o pag-alis."
+  },
+  "53": {
+    "ja": "職員同士で架空の記録を検討する場面です。口の外側か中かは未確認で、本人の観察や症状の評価をした絵ではありません。",
+    "en": "Staff discuss a fictional record. Whether it concerns the outside or inside of the mouth is unconfirmed; the image shows neither observation of the person nor symptom assessment.",
+    "vi": "Nhân viên trao đổi về bản ghi giả định. Chưa xác nhận là bên ngoài hay bên trong miệng; hình không thể hiện đã quan sát người được chăm sóc hay đánh giá triệu chứng.",
+    "id": "Petugas membahas catatan rekaan. Bagian luar atau dalam mulut belum dipastikan; gambar tidak menunjukkan pengamatan orang tersebut atau penilaian gejala.",
+    "zh-CN": "工作人员讨论虚构记录。尚未确认是口外还是口内；图中不表示已观察本人或评估症状。",
+    "zh-TW": "工作人員討論虛構紀錄。尚未確認是口外還是口內；圖中不表示已觀察本人或評估症狀。",
+    "hi": "कर्मचारी एक काल्पनिक रिकॉर्ड पर चर्चा करते हैं। मुँह के बाहर या अंदर की बात है, यह अपुष्ट है; चित्र व्यक्ति का अवलोकन या लक्षणों का मूल्यांकन नहीं दिखाता।",
+    "bn": "কর্মীরা একটি কাল্পনিক নথি নিয়ে আলোচনা করেন। মুখের বাইরে না ভেতরে তা নিশ্চিত নয়; ছবিতে ব্যক্তিকে পর্যবেক্ষণ বা উপসর্গ মূল্যায়ন করা দেখানো হয়নি।",
+    "ne": "कर्मचारीले काल्पनिक अभिलेखबारे छलफल गर्छन्। मुखको बाहिर वा भित्र भन्ने पुष्टि छैन; चित्रले व्यक्तिको अवलोकन वा लक्षण मूल्याङ्कन गरेको देखाउँदैन।",
+    "my": "ဝန်ထမ်းများက စိတ်ကူးဖြင့်ရေးထားသော မှတ်တမ်းကို ဆွေးနွေးနေသည်။ ပါးစပ်အပြင်ဘက်လား အတွင်းဘက်လား မအတည်ပြုရသေးပါ။ ပုံသည် ကာယကံရှင်ကို လေ့လာစစ်ဆေးခြင်း သို့မဟုတ် လက္ခဏာအကဲဖြတ်ခြင်း ပြုလုပ်ထားကြောင်း မဖော်ပြပါ။",
+    "th": "เจ้าหน้าที่หารือบันทึกสมมติ ยังไม่ได้ยืนยันว่าเป็นภายนอกหรือภายในปาก ภาพไม่ได้แสดงว่าได้สังเกตเจ้าตัวหรือประเมินอาการแล้ว",
+    "km": "បុគ្គលិកពិភាក្សាអំពីកំណត់ត្រាប្រឌិត។ មិនទាន់បញ្ជាក់ថាខាងក្រៅឬខាងក្នុងមាត់ទេ។ រូបមិនបង្ហាញថាបានសង្កេតសាមីខ្លួនឬវាយតម្លៃរោគសញ្ញាទេ។",
+    "tl": "Tinatalakay ng mga kawani ang kathang rekord. Hindi pa kumpirmado kung labas o loob ng bibig; hindi ipinakikita ng larawan na naobserbahan ang tao o nasuri ang sintomas."
+  },
+  "54": {
+    "ja": "学習者が端末とノートで練習を振り返る場面です。保存された回答と位置は実際の画面で確認します。絵は問題文・正答・提出や完了を示しません。",
+    "en": "A learner reviews practice with a tablet and notebook. Check saved answers and position on the actual screen. The image shows no question text, correct answers, submission or completion.",
+    "vi": "Người học ôn lại bài luyện bằng máy tính bảng và sổ. Hãy kiểm tra câu trả lời và vị trí đã lưu trên màn hình thực tế. Hình không thể hiện đề bài, đáp án đúng, việc nộp hay hoàn thành.",
+    "id": "Pelajar meninjau latihan dengan tablet dan buku catatan. Periksa jawaban dan posisi tersimpan di layar sebenarnya. Gambar tidak menunjukkan soal, jawaban benar, pengiriman atau penyelesaian.",
+    "zh-CN": "学习者用平板和笔记本回顾练习。已保存的回答和位置须在实际界面确认。图中不展示题目、正确答案、提交或完成状态。",
+    "zh-TW": "學習者用平板和筆記本回顧練習。已儲存的回答和位置須在實際介面確認。圖中不展示題目、正確答案、提交或完成狀態。",
+    "hi": "शिक्षार्थी टैबलेट और नोटबुक से अभ्यास की समीक्षा करता है। सहेजे उत्तर और स्थान वास्तविक स्क्रीन पर जाँचें। चित्र प्रश्न, सही उत्तर, जमा करना या पूरा होना नहीं दिखाता।",
+    "bn": "শিক্ষার্থী ট্যাবলেট ও খাতায় অনুশীলন পর্যালোচনা করেন। সংরক্ষিত উত্তর ও অবস্থান আসল পর্দায় যাচাই করুন। ছবিতে প্রশ্ন, সঠিক উত্তর, জমা দেওয়া বা সমাপ্তি দেখানো হয়নি।",
+    "ne": "सिकारुले ट्याब्लेट र कापीमा अभ्यासको समीक्षा गर्छन्। सुरक्षित उत्तर र स्थान वास्तविक स्क्रिनमा जाँच्नुहोस्। चित्रमा प्रश्न, सही उत्तर, बुझाएको वा पूरा भएको अवस्था देखाइएको छैन।",
+    "my": "သင်ယူသူက တက်ဘလက်နှင့်မှတ်စုစာအုပ်ဖြင့် လေ့ကျင့်မှုကို ပြန်လည်သုံးသပ်နေသည်။ သိမ်းထားသောအဖြေနှင့်နေရာကို တကယ့်မျက်နှာပြင်တွင် စစ်ဆေးပါ။ ပုံတွင် မေးခွန်း၊ အဖြေမှန်၊ တင်သွင်းခြင်း သို့မဟုတ် ပြီးဆုံးမှုကို မဖော်ပြပါ။",
+    "th": "ผู้เรียนทบทวนแบบฝึกด้วยแท็บเล็ตและสมุด ตรวจสอบคำตอบและตำแหน่งที่บันทึกไว้บนหน้าจอจริง ภาพไม่แสดงโจทย์ คำตอบที่ถูกต้อง การส่ง หรือการทำเสร็จ",
+    "km": "អ្នកសិក្សារំលឹកលំហាត់ដោយថេប្លេតនិងសៀវភៅកត់ត្រា។ ត្រូវពិនិត្យចម្លើយនិងទីតាំងដែលបានរក្សាទុកលើអេក្រង់ពិត។ រូបមិនបង្ហាញសំណួរ ចម្លើយត្រឹមត្រូវ ការបញ្ជូនឬការបញ្ចប់ទេ។",
+    "tl": "Binabalikan ng mag-aaral ang pagsasanay gamit ang tablet at kuwaderno. Tingnan ang naka-save na sagot at puwesto sa aktuwal na screen. Walang tanong, tamang sagot, pagsusumite o pagkumpleto sa larawan."
+  },
+  "55": {
+    "ja": "学習者が端末とノートで練習を振り返る場面です。保存された回答と位置は実際の画面で確認します。絵は問題文・正答・提出や完了を示しません。",
+    "en": "A learner reviews practice with a tablet and notebook. Check saved answers and position on the actual screen. The image shows no question text, correct answers, submission or completion.",
+    "vi": "Người học ôn lại bài luyện bằng máy tính bảng và sổ. Hãy kiểm tra câu trả lời và vị trí đã lưu trên màn hình thực tế. Hình không thể hiện đề bài, đáp án đúng, việc nộp hay hoàn thành.",
+    "id": "Pelajar meninjau latihan dengan tablet dan buku catatan. Periksa jawaban dan posisi tersimpan di layar sebenarnya. Gambar tidak menunjukkan soal, jawaban benar, pengiriman atau penyelesaian.",
+    "zh-CN": "学习者用平板和笔记本回顾练习。已保存的回答和位置须在实际界面确认。图中不展示题目、正确答案、提交或完成状态。",
+    "zh-TW": "學習者用平板和筆記本回顧練習。已儲存的回答和位置須在實際介面確認。圖中不展示題目、正確答案、提交或完成狀態。",
+    "hi": "शिक्षार्थी टैबलेट और नोटबुक से अभ्यास की समीक्षा करता है। सहेजे उत्तर और स्थान वास्तविक स्क्रीन पर जाँचें। चित्र प्रश्न, सही उत्तर, जमा करना या पूरा होना नहीं दिखाता।",
+    "bn": "শিক্ষার্থী ট্যাবলেট ও খাতায় অনুশীলন পর্যালোচনা করেন। সংরক্ষিত উত্তর ও অবস্থান আসল পর্দায় যাচাই করুন। ছবিতে প্রশ্ন, সঠিক উত্তর, জমা দেওয়া বা সমাপ্তি দেখানো হয়নি।",
+    "ne": "सिकारुले ट्याब्लेट र कापीमा अभ्यासको समीक्षा गर्छन्। सुरक्षित उत्तर र स्थान वास्तविक स्क्रिनमा जाँच्नुहोस्। चित्रमा प्रश्न, सही उत्तर, बुझाएको वा पूरा भएको अवस्था देखाइएको छैन।",
+    "my": "သင်ယူသူက တက်ဘလက်နှင့်မှတ်စုစာအုပ်ဖြင့် လေ့ကျင့်မှုကို ပြန်လည်သုံးသပ်နေသည်။ သိမ်းထားသောအဖြေနှင့်နေရာကို တကယ့်မျက်နှာပြင်တွင် စစ်ဆေးပါ။ ပုံတွင် မေးခွန်း၊ အဖြေမှန်၊ တင်သွင်းခြင်း သို့မဟုတ် ပြီးဆုံးမှုကို မဖော်ပြပါ။",
+    "th": "ผู้เรียนทบทวนแบบฝึกด้วยแท็บเล็ตและสมุด ตรวจสอบคำตอบและตำแหน่งที่บันทึกไว้บนหน้าจอจริง ภาพไม่แสดงโจทย์ คำตอบที่ถูกต้อง การส่ง หรือการทำเสร็จ",
+    "km": "អ្នកសិក្សារំលឹកលំហាត់ដោយថេប្លេតនិងសៀវភៅកត់ត្រា។ ត្រូវពិនិត្យចម្លើយនិងទីតាំងដែលបានរក្សាទុកលើអេក្រង់ពិត។ រូបមិនបង្ហាញសំណួរ ចម្លើយត្រឹមត្រូវ ការបញ្ជូនឬការបញ្ចប់ទេ។",
+    "tl": "Binabalikan ng mag-aaral ang pagsasanay gamit ang tablet at kuwaderno. Tingnan ang naka-save na sagot at puwesto sa aktuwal na screen. Walang tanong, tamang sagot, pagsusumite o pagkumpleto sa larawan."
+  },
+  "56": {
+    "ja": "学習者が端末とノートで練習を振り返る場面です。保存された回答と位置は実際の画面で確認します。絵は問題文・正答・提出や完了を示しません。",
+    "en": "A learner reviews practice with a tablet and notebook. Check saved answers and position on the actual screen. The image shows no question text, correct answers, submission or completion.",
+    "vi": "Người học ôn lại bài luyện bằng máy tính bảng và sổ. Hãy kiểm tra câu trả lời và vị trí đã lưu trên màn hình thực tế. Hình không thể hiện đề bài, đáp án đúng, việc nộp hay hoàn thành.",
+    "id": "Pelajar meninjau latihan dengan tablet dan buku catatan. Periksa jawaban dan posisi tersimpan di layar sebenarnya. Gambar tidak menunjukkan soal, jawaban benar, pengiriman atau penyelesaian.",
+    "zh-CN": "学习者用平板和笔记本回顾练习。已保存的回答和位置须在实际界面确认。图中不展示题目、正确答案、提交或完成状态。",
+    "zh-TW": "學習者用平板和筆記本回顧練習。已儲存的回答和位置須在實際介面確認。圖中不展示題目、正確答案、提交或完成狀態。",
+    "hi": "शिक्षार्थी टैबलेट और नोटबुक से अभ्यास की समीक्षा करता है। सहेजे उत्तर और स्थान वास्तविक स्क्रीन पर जाँचें। चित्र प्रश्न, सही उत्तर, जमा करना या पूरा होना नहीं दिखाता।",
+    "bn": "শিক্ষার্থী ট্যাবলেট ও খাতায় অনুশীলন পর্যালোচনা করেন। সংরক্ষিত উত্তর ও অবস্থান আসল পর্দায় যাচাই করুন। ছবিতে প্রশ্ন, সঠিক উত্তর, জমা দেওয়া বা সমাপ্তি দেখানো হয়নি।",
+    "ne": "सिकारुले ट्याब्लेट र कापीमा अभ्यासको समीक्षा गर्छन्। सुरक्षित उत्तर र स्थान वास्तविक स्क्रिनमा जाँच्नुहोस्। चित्रमा प्रश्न, सही उत्तर, बुझाएको वा पूरा भएको अवस्था देखाइएको छैन।",
+    "my": "သင်ယူသူက တက်ဘလက်နှင့်မှတ်စုစာအုပ်ဖြင့် လေ့ကျင့်မှုကို ပြန်လည်သုံးသပ်နေသည်။ သိမ်းထားသောအဖြေနှင့်နေရာကို တကယ့်မျက်နှာပြင်တွင် စစ်ဆေးပါ။ ပုံတွင် မေးခွန်း၊ အဖြေမှန်၊ တင်သွင်းခြင်း သို့မဟုတ် ပြီးဆုံးမှုကို မဖော်ပြပါ။",
+    "th": "ผู้เรียนทบทวนแบบฝึกด้วยแท็บเล็ตและสมุด ตรวจสอบคำตอบและตำแหน่งที่บันทึกไว้บนหน้าจอจริง ภาพไม่แสดงโจทย์ คำตอบที่ถูกต้อง การส่ง หรือการทำเสร็จ",
+    "km": "អ្នកសិក្សារំលឹកលំហាត់ដោយថេប្លេតនិងសៀវភៅកត់ត្រា។ ត្រូវពិនិត្យចម្លើយនិងទីតាំងដែលបានរក្សាទុកលើអេក្រង់ពិត។ រូបមិនបង្ហាញសំណួរ ចម្លើយត្រឹមត្រូវ ការបញ្ជូនឬការបញ្ចប់ទេ។",
+    "tl": "Binabalikan ng mag-aaral ang pagsasanay gamit ang tablet at kuwaderno. Tingnan ang naka-save na sagot at puwesto sa aktuwal na screen. Walang tanong, tamang sagot, pagsusumite o pagkumpleto sa larawan."
+  },
+
   "36": {
     "ja": "本人が上着の袖を見て選び、職員は着替えを始めずに選択を支えます。",
     "en": "The resident examines the jacket sleeve and chooses, while the caregiver supports her choice without starting to dress her.",
