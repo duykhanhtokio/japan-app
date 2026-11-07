@@ -1,3 +1,4 @@
+import {AgricultureGrowthSoilRuby} from './AgricultureGrowthSoilRuby';
 import {Text,View} from 'react-native';
 import data from '@/data/agriculture/plant-response-native.json';
 import content from '@/data/agriculture/lessons.ja.json';
@@ -15,9 +16,10 @@ export function PlantResponseFigure({lessonId,lessonSourceHash,lessonRevision,le
  const ja=plantResponseLabels(lessonId,lessonSourceHash,lessonRevision,level,'ja');
  if(!ja)return null;
  const t=showTranslation&&language!=='ja'?plantResponseLabels(lessonId,lessonSourceHash,lessonRevision,level,language):null,active=t||ja;
- const text={color:colors.translationText,fontSize:16,lineHeight:27},paragraph=(id:string)=><View key={id} style={{gap:5}}><Text style={{...text,fontWeight:'700'}}>{ja.paragraphTitles[id]}</Text><Text style={text}>{ja.paragraphs[id]}</Text>{!!t&&<><Text style={{...text,fontWeight:'700'}}>{t.paragraphTitles[id]}</Text><Text style={text}>{t.paragraphs[id]}</Text></>}</View>;
+ const ruby=(field:string,value:string,style:{color:string;fontSize:number;lineHeight:number;fontWeight?:'700'})=><AgricultureGrowthSoilRuby provider="plant-response" lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language="ja" field={field} text={value} style={style} color={colors.translationText}/>;
+ const text={color:colors.translationText,fontSize:16,lineHeight:27},paragraph=(id:string)=><View key={id} style={{gap:5}}>{ruby(`paragraphTitle:${id}`,ja.paragraphTitles[id],{...text,fontWeight:'700'})}{ruby(`paragraph:${id}`,ja.paragraphs[id],text)}{!!t&&<><Text style={{...text,fontWeight:'700'}}>{t.paragraphTitles[id]}</Text><Text style={text}>{t.paragraphs[id]}</Text></>}</View>;
  return <View testID="agri-native-plant-response" style={{gap:14,padding:12,marginVertical:12,borderWidth:1,borderColor:colors.border,borderRadius:10}}>
-  <Text style={{...text,fontSize:19,fontWeight:'700'}}>{ja.title}</Text>{!!t&&<Text testID="agri-plant-response-localized-title" style={text}>{t.title}</Text>}
+  {ruby('title',ja.title,{...text,fontSize:19,fontWeight:'700'})}{!!t&&<Text testID="agri-plant-response-localized-title" style={text}>{t.title}</Text>}
   <View accessible accessibilityLabel={[active.alt,...data.paragraphIds.map(id=>active.paragraphs[id])].join('\n')} style={{gap:14}}>{data.groups.map((ids,i)=><View key={i} testID={`agri-plant-response-condition-${i}`} style={{gap:10,borderLeftWidth:3,borderColor:colors.border,paddingLeft:12}}>{ids.map(paragraph)}</View>)}{paragraph(data.limitId)}</View>
   <NativeProcessDiagram lessonId={data.processContext.id} lessonSourceHash={data.processContext.sourceHash} lessonRevision={data.processContext.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>
   <Text style={{...text,fontSize:14}}>AGR-S2 · PDF p.9 / p.7 · PDF p.11 / p.9</Text>
