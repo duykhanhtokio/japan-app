@@ -221,7 +221,16 @@
         "section-2": "代表的な多孔質皮膜では、孔を含む領域と基材側の緻密なバリア層を分けて考えます。模式図のセル形状や孔の寸法は全ての実皮膜を同じ形で保証するものではありません。自然酸化膜の説明を、全ての酸・アルカリに耐えて反応しないという意味に広げず、処理皮膜とも区別します。塗装などによる被覆、電気防食、材料自体の耐食性改善も、それぞれ異なる防食の考え方です。",
         "section-3": "Al→Al³⁺＋3e⁻では電子を失う酸化、2H⁺＋2e⁻→H₂では電子を受け取る還元を読みます。ただし、陽極酸化の模式的な水や酸化物の式を、液中に存在する全化学種や反応機構の完全な説明にはしません。上付きの電荷が欠けた印刷や抽出結果は、そのまま反応式として採用せず、確認済みの資料へ戻ります。電子矢印を液中の電子の流れや実設備の配線図に読み替えません。",
         "section-4": "静電塗装は帯電に関わる力を利用する方法ですが、全設備で基材へ正の電源を直接つなぐという配線指示ではありません。電着塗装にはアニオン方式とカチオン方式があり、品物がどちらの電極になるかは方式で異なります。粉体塗装は粉末状塗料の付着と加熱による塗膜形成、焼付けは塗膜を加熱して硬化させる工程として区別します。樹脂の系列、水性・溶剤系、一液・二液という名称だけで耐久性の順位や混合・温度条件を決めません。"
-      }
+      },
+      "bindingScopes": [
+        [
+          "section-2",
+          "section-3"
+        ],
+        [
+          "section-4"
+        ]
+      ]
     },
     "mfg1-electrical-completion37-lcr": {
       "sourceHash": "bfb4c1708da1b3ede83e0780584195239a6566840612150cf22489d05856c1fb",
@@ -493,6 +502,39 @@
       ],
       "retainedExistingFigure": false,
       "introducedWeek": 4
+    },
+    "mfg1-electrical-source-guide-leakage-earth": {
+      "sourceHash": "4c2826026a00fa02ec94ba1c39b463b1b2f4d084f016013a6b236cc34f8b2eaa",
+      "captionJa": "接地と漏電遮断器は故障を無条件に無害化するものではない。漏電の原因、必要な保護、異常時の対応を分けて確認する。",
+      "paragraphIds": [
+        "fault-path",
+        "protective-earth",
+        "complementary-protection"
+      ],
+      "expectedParagraphsJa": {
+        "fault-path": "電線や機器の絶縁物には、電気が本来の通り道以外へ流れないようにする役割があります。絶縁物が劣化したり傷ついたりすると、機器の金属ケースなどへ電気が流れることがあります。これが漏電の一つの起こり方です。漏電を疑うときは、手で触って確かめず、職場の手順で使用停止と報告につなげます。",
+        "protective-earth": "この教材の例では、機器の金属部分と接地極をアース線で結び、故障時の漏れ電流が大地側へ流れる経路を設けています。ただし、接地があっても、傷んだ絶縁物そのものが直るわけではありません。漏電している機器を使い続けてよいとは判断しません。",
+        "complementary-protection": "接地と漏電遮断器は役割が異なります。漏電遮断器があるから接地を外してよい、接地があるから感電の危険がない、とは考えません。必要な保護と使用条件は設備ごとの承認された手順で確認します。接地工事や保護装置の変更を、この教材だけを根拠に実施しません。"
+      },
+      "images": [
+        {
+          "id": "electrical-leakage-protection-roles",
+          "paragraphId": "protective-earth",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week05/companions/electrical-leakage-protection-roles.png",
+          "width": 1440,
+          "height": 1000,
+          "sha256": "56be7f6fbcd0a79b0f6fbfabdedf5e1a74ff703f7dd753c5cab57873c66aec52",
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week05/companions/electrical-leakage-protection-roles.svg",
+          "svgSha256": "90c34176eb053cb3463147bb2608b03b01ac05ae616728b5658e736ae4703635",
+          "rights": {
+            "origin": "original_code_authored_controlled_diagram",
+            "humanReviewed": false,
+            "nativeReviewed": false,
+            "domainReviewed": false
+          }
+        }
+      ],
+      "introducedWeek": 5
     }
   }
 }

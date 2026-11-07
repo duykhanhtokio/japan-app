@@ -1,6 +1,14 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week05/electrical-day33-hydraulic-control-roles.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week05/electrical-day33-hydraulic-control-roles.png");
+  case "assets/manufacturing/royal-weekly-20261107/week05/surface-day35-robot-entry-hold.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week05/surface-day35-robot-entry-hold.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week05/surface-day34-buff-history-separation.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week05/surface-day34-buff-history-separation.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week05/surface-day32-filter-condition-report.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week05/surface-day32-filter-condition-report.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week05/surface-day30-hardener-compatibility-hold.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week05/surface-day30-hardener-compatibility-hold.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week05/electrical-day31-breaker-cause-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week05/electrical-day31-breaker-cause-review.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week05/shared-protected-packing-verification.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week05/shared-protected-packing-verification.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week05/mechanical-day31-coating-coverage-hold.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week05/mechanical-day31-coating-coverage-hold.webp");
   case "assets/manufacturing/royal-weekly-20261107/week03/mechanical-day18-vernier-005.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/mechanical-day18-vernier-005.png");
   case "assets/manufacturing/royal-weekly-20261107/week03/mechanical-day17-parallax-conditions.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/mechanical-day17-parallax-conditions.png");
   case "assets/manufacturing/royal-weekly-20261107/week03/mechanical-day16-ndt-locations.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/mechanical-day16-ndt-locations.png");

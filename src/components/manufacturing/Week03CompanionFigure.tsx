@@ -9,8 +9,9 @@ import {SupplementalFigure} from './SupplementalManufacturingDiagrams';
 import data from '@/data/manufacturing/royal-week03-companion-figures.json';
 
 type Figure={id:string;paragraphId:string;assetFile:string;width:number;height:number;labels?:Record<string,string>};
-type Entry={sourceHash:string;captionJa:string;paragraphIds:string[];expectedParagraphsJa:Record<string,string>;nativeParagraphIds?:string[];expectedNativeParagraphsJa?:Record<string,string>;images:Figure[]};
+type Entry={sourceHash:string;captionJa:string;paragraphIds:string[];bindingScopes?:string[][];expectedParagraphsJa:Record<string,string>;nativeParagraphIds?:string[];expectedNativeParagraphsJa?:Record<string,string>;images:Figure[]};
 const sources:Record<string,ReturnType<typeof require>>={
+ 'assets/manufacturing/royal-weekly-20261107/week05/companions/electrical-leakage-protection-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week05/companions/electrical-leakage-protection-roles.png'),
  'assets/manufacturing/royal-weekly-20261107/week04/companions/surface-test-purpose-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week04/companions/surface-test-purpose-roles.png'),
  'assets/manufacturing/royal-weekly-20261107/week04/companions/surface-electrode-electron-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week04/companions/surface-electrode-electron-roles.png'),
  'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-caliper-three-checks.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-caliper-three-checks.png'),
@@ -26,7 +27,7 @@ const sources:Record<string,ReturnType<typeof require>>={
 export function Week03CompanionFigure({lesson,paragraphIds,language,showTranslation}:{lesson:ManufacturingLesson;paragraphIds:string[];language:string;showTranslation:boolean}){
  const {colors}=useStudyAppearance();
  const row=(data.lessons as Record<string,Entry>)[lesson.id];
- if(!row||row.sourceHash!==lesson.sourceHash||row.captionJa!==lesson.summaryJa||!row.paragraphIds.length||row.paragraphIds.some(id=>!paragraphIds.includes(id)))return null;
+ if(!row||row.sourceHash!==lesson.sourceHash||row.captionJa!==lesson.summaryJa||!row.paragraphIds.length||!(row.bindingScopes??[row.paragraphIds]).some(scope=>scope.length>0&&scope.every(id=>paragraphIds.includes(id))))return null;
  const paragraphs=row.paragraphIds.map(id=>lesson.paragraphs.find(p=>p.id===id));
  if(paragraphs.some(p=>!p||manufacturingLessonParagraph(lesson,p.id,'ja',p.textJa)!==row.expectedParagraphsJa[p.id]))return null;
  const nativeIds=row.nativeParagraphIds??row.paragraphIds;
