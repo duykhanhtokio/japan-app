@@ -105,6 +105,7 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
   return <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  }
  const f=currentBinding?figures.images.find(f=>f.id===currentBinding.figureId&&f.assetSha256===currentBinding.assetSha256):includeExisting?figures.images.find(f=>f.lessonIds.includes(lesson.id)&&f.lessonSourceHashes[lesson.id as keyof typeof f.lessonSourceHashes]===lesson.sourceHash&&f.scopeLevels.includes(level)):null;
+ if(f?.id==='agr-royal-fine-root-observation-v1'&&paragraphIds&&!paragraphIds.includes('agr-f40-facility-level1-supplement-p4'))return null;
  if(f?.id==='agr-f40-general-cropping-example-flow')return <CropCalendarFigure lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
 
  const currentLesson=agricultureLesson(lesson.id,level);
