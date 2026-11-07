@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "unit": "inline-organs-and-sowing-fallback-source-guards",
+  "baselineCommit": "6d8d215823272df763bf065e209acafa37ab7d2a",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "problem": "Inline organ diagram previously rendered solely by lesson ID. Sowing fallback rendered when the recognition source guard rejected a missing/stale image, so an unverified lesson revision could still display the old fallback.",
+  "change": "Both unchanged inline figures now require their specific canonical lesson/source hash and allowed course. Reader forwards its actual lesson+level. Missing/stale revision and unsupported course fail closed; current allowed lesson variants preserve existing contents and positions.",
+  "sourceReview": {
+    "documentId": "AGR-S2",
+    "sourceSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+    "byteVerified": true,
+    "sourceActualPixelsOpened": true,
+    "units": [
+      {
+        "lessonId": "agr-organs",
+        "pdfPage": 9,
+        "printedPage": 7,
+        "reviewJa": "葉・茎・根の栄養器官と花・果実の生殖器官を、実際の出典ページ・現行6段落・変更しない既存の二つのパネルに照合した。器官の位置図や実物識別の新規達成は主張しない。"
+      },
+      {
+        "lessonId": "agr-sowing-design",
+        "pdfPage": 14,
+        "printedPage": 12,
+        "reviewJa": "ばらまき＝うね全体、すじまき＝一列、点まき＝一か所に数粒を、実際の出典図・現行6段落・既存の点配置と制限文に照合した。種子の数・寸法・間隔を実機条件として指定しない。"
+      }
+    ],
+    "noSourcePixelsRedistributed": true
+  },
+  "beforeCourseSha256": "40ca8655446b634c5528ca0859e68b0cbeeb945a9926c2052cda4b3dca8d5abc",
+  "afterSha256": {
+    "src/components/agriculture/AgricultureCourse.tsx": "1994897856d5c60c4a7060cb790fccc011e7e0579e7ec7b5963a8cfa2de06e9c",
+    "src/data/agriculture/inline-diagram-source-bindings.json": "199b18a1f6f7c6ea21946d50c351a0b95c535a186f84445c8408eefb88d909e5",
+    "scripts/agriculture/check-inline-diagram-source-guards.cjs": "f56b8aacfef21389847c7da928ff1d15ee714ad967171d338b522337a5174c17"
+  },
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/agriculture/check-inline-diagram-source-guards.cjs",
+    "result": "PASS actual3current renders and22negative cases;actual reader props and recognition fallback condition preserved.",
+    "renderScope": "Actual inline leaf functions from production AgricultureCourse TSX, compiled by Babel and rendered with real ReactDOM Server+RNW. Eighteen unrelated course imports isolated and not invoked; this is not a whole-course interaction/browser check.",
+    "rawExistingImplementationPreservation": "Reversing only the import, two prop signatures+guards and two callsite props yields byte-exact baseline6dCourse. Existing figure bodies, styles, localized descriptions, concept guard and all other reading/exam/state behavior preserved.",
+    "conceptGuardRegression": "PASS8current/69negative cases after the same Course changed.",
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "learnerDurationMeasured": false
+  },
+  "newArt": 0,
+  "sourceCoverageCredit": 0,
+  "wholeWeekComplete": false,
+  "wholeSectorComplete": false,
+  "nextAction": "Persist and verify this bounded integrity unit; preserve concurrent Royal art work. Source-review exact stale recognition/daily bindings separately before any hash repair."
+}
