@@ -133,12 +133,13 @@ for(const language of languages)for(const shown of [false,true]){
  const requireReader=name=>{
   if(name==='react')return readerReact;if(name==='react/jsx-runtime')return require(name);
   if(name==='react-native')return {...native,Pressable:element('button'),ScrollView:element('div'),Modal:p=>p.visible?React.createElement('div',null,p.children):null};
+  if(name==='./HotelGuideText')return {HotelGuideReadingProvider:p=>React.createElement(React.Fragment,null,p.children)};
   if(name==='./HotelSafetyDecisionGuide')return {HotelSafetyDecisionGuide:props=>{observed.push(props.language);return null;}};
   if(name.includes('HotelJapaneseText'))return {HotelJapaneseText:p=>React.createElement('span',null,p.text)};
   if(name.includes('StudyAppearance'))return {useStudyAppearance:()=>({colors}),ReadingAppearanceControl:empty,TranslationText:element('span')};
   if(name==='@/data/hospitality')return {loadHotelTranslation:()=>lessons['hotel-safety-02']};
   if(name==='@/data/hospitality/ui')return {hospitalityUi:(l,k)=>k,hospitalityLabel:()=>''};
-  if(name==='@/data/hospitality/illustrations')return {hotelIllustration:()=>null};
+  if(name==='@/data/hospitality/illustrations')return {hotelIllustration:()=>null,hasHotelIllustration:()=>false,hotelIllustrationUnavailableText:()=>'',hotelIllustrationRetryText:()=>''};
   if(name.includes('RoyalPanels'))return {RoyalContentPanel:element('div'),RoyalExplanationPanel:element('div')};
   return new Proxy({__esModule:true,default:empty},{get:(object,key)=>object[key]||empty});
  };

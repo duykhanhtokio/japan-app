@@ -1,4 +1,5 @@
 import type {ImageSourcePropType} from 'react-native';
+import {hotelIllustrationSourceKnown,hotelIllustrationSourceMatches} from './illustration-source-guards';
 const figures:Record<string,()=>ImageSourcePropType>={
  'hotel-front-01':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-01.webp'),
  'hotel-front-02':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-02.webp'),
@@ -39,6 +40,9 @@ const figures:Record<string,()=>ImageSourcePropType>={
  'hotel-safety-07':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week06/hotel-safety-07.webp'),
  'hotel-safety-08':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week06/hotel-safety-08.webp'),
 };
-export function hotelIllustration(id:string):ImageSourcePropType|null{return figures[id]?.()??null;}
+export function hasHotelIllustration(id:string):boolean{return hotelIllustrationSourceKnown(id)||Object.prototype.hasOwnProperty.call(figures,id);}
+export function hotelIllustration(id:string,revision:string):ImageSourcePropType|null{return hotelIllustrationSourceMatches(id,revision)?figures[id]?.()??null:null;}
 
 export {hotelIllustrationAlt,hotelIllustrationAspectRatio} from './royal-illustration-metadata';
+
+export {hotelIllustrationUnavailableText,hotelIllustrationRetryText} from './illustration-source-guards';
