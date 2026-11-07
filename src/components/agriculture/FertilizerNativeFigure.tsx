@@ -1,3 +1,4 @@
+import {AgricultureNutrientDrainageRuby} from './AgricultureNutrientDrainageRuby';
 import {Text,View} from 'react-native';
 import data from '@/data/agriculture/fertilizer-native-figures.json';
 import content from '@/data/agriculture/lessons.ja.json';
@@ -20,9 +21,10 @@ export function FertilizerNativeFigure({lessonId,lessonSourceHash,lessonRevision
  const ja=fertilizerNativeLabels(lessonId,lessonSourceHash,lessonRevision,level,'ja');
  if(!ja)return null;
  const e=entries[lessonId],t=showTranslation&&language!=='ja'?fertilizerNativeLabels(lessonId,lessonSourceHash,lessonRevision,level,language):null,active=t||ja,f=e.fraction;
- const text={color:colors.translationText,fontSize:16,lineHeight:27},pair=(id:string)=><View key={id} style={{gap:5}}><Text style={{...text,fontWeight:'700'}}>{ja.paragraphTitles[id]}</Text><Text style={text}>{ja.paragraphs[id]}</Text>{!!t&&<><Text style={{...text,fontWeight:'700'}}>{t.paragraphTitles[id]}</Text><Text style={text}>{t.paragraphs[id]}</Text></>}</View>;
+ const ruby=(field:string,value:string,style:{color:string;fontSize:number;lineHeight:number;fontWeight?:'700'})=><AgricultureNutrientDrainageRuby provider={`fertilizer:${lessonId}`} lessonId={lessonId} lessonSourceHash={lessonSourceHash} lessonRevision={lessonRevision} level={level} language="ja" field={field} text={value} style={style} color={colors.translationText}/>;
+ const text={color:colors.translationText,fontSize:16,lineHeight:27},pair=(id:string)=><View key={id} style={{gap:5}}>{ruby(`paragraphTitle:${id}`,ja.paragraphTitles[id],{...text,fontWeight:'700'})}{ruby(`paragraph:${id}`,ja.paragraphs[id],text)}{!!t&&<><Text style={{...text,fontWeight:'700'}}>{t.paragraphTitles[id]}</Text><Text style={text}>{t.paragraphs[id]}</Text></>}</View>;
  return <View testID={`agri-native-fertilizer-${e.kind}`} style={{gap:14,marginVertical:12,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:10}}>
-  <Text style={{...text,fontSize:19,fontWeight:'700'}}>{ja.title}</Text>{!!t&&<Text testID="agri-fertilizer-localized-title" style={text}>{t.title}</Text>}
+  {ruby('title',ja.title,{...text,fontSize:19,fontWeight:'700'})}{!!t&&<Text testID="agri-fertilizer-localized-title" style={text}>{t.title}</Text>}
   {!!f&&<View accessible accessibilityRole="image" accessibilityLabel={[active.alt,active.paragraphs[`${lessonId}-p2`],active.paragraphs[`${lessonId}-p3`],active.paragraphs[`${lessonId}-p4`]].join('\n')} style={{gap:10}}>
    <Text style={{...text,fontWeight:'700'}}>25kg · {f.componentPercent}% · {f.componentKg}kg</Text>
    <View testID="agri-fertilizer-exact-mass-fraction" style={{height:200,width:'100%',maxWidth:320}}><View testID="agri-fertilizer-remainder" style={{height:`${100-f.componentPercent}%`,backgroundColor:'#ead8a1'}}/><View testID="agri-fertilizer-component" style={{height:`${f.componentPercent}%`,backgroundColor:'#318258'}}/></View>

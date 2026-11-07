@@ -6,13 +6,14 @@
     "1": 40,
     "2": 59
   },
-  "recognitionRecords": 187,
+  "recognitionRecords": 189,
   "controlledBindings": 43,
   "scope": "All existing scheduled weeks; audit inventory, not completion or acceptance",
   "remainingWeek01": [],
   "weeks": [
     {
       "level": "1",
+      "scheduleId": "agr-1-w01",
       "week": 1,
       "lessonIds": [
         "agr-rice",
@@ -52,6 +53,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w02",
       "week": 2,
       "lessonIds": [
         "agr-organs",
@@ -67,12 +69,37 @@
         "agr-f40-general-seeder",
         "agr-f40-general-tractor-seeder",
         "agr-f40-general-transplanter",
-        "agr-f40-general-hand-planting",
-        "agr-fig-f40-crop-lotus-atlas-v1"
+        "agr-f40-general-hand-planting"
       ],
       "controlled": {
-        "agr-plant-balance": "plant-flow",
-        "agr-flowering": "photoperiod"
+        "agr-plant-balance": {
+          "kind": "plant-flow",
+          "titleJa": "作物と周囲の物質の移動",
+          "captionJa": "葉と根の位置を基準に、光、二酸化炭素、水、酸素と水蒸気を区別します。呼吸では酸素を取り込み二酸化炭素を出すため、図の光合成の向きを全ての時間帯の純収支とみなさず、本文と対比してください。",
+          "altJa": "作物と周囲の物質の移動。葉と根の位置を基準に、光、二酸化炭素、水、酸素と水蒸気を区別します。呼吸では酸素を取り込み二酸化炭素を出すため、図の光合成の向きを全ての時間帯の純収支とみなさず、本文と対比してください。",
+          "lessonSourceHash": "d5a1d900c6bf3b83324114ed58f1c540d63d0a7296cab2e91c17004691c724a5",
+          "keyObjectiveId": "AGR-K-PLANT-BALANCE-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/plant-flow.png",
+          "assetSha256": "549d4245c962e06a6bd5d8ad148cb9936142d88be66aba55beea0cfe2fced48f",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-flowering": {
+          "kind": "photoperiod",
+          "titleJa": "明暗の長さと電照を区別",
+          "captionJa": "長さを指定しない明暗帯で、夜間の光を考えます。下段は秋ギクで開花を遅らせる目的の例であり、全作物の促進・抑制を一律に決める図ではありません。",
+          "altJa": "明暗の長さと電照を区別。長さを指定しない明暗帯で、夜間の光を考えます。下段は秋ギクで開花を遅らせる目的の例であり、全作物の促進・抑制を一律に決める図ではありません。",
+          "lessonSourceHash": "4d57dba7c9477a4e9f74bdd38926d28278c0b050558ef863dd6ead598f3e8e15",
+          "keyObjectiveId": "AGR-K-FLOWERING-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/photoperiod.png",
+          "assetSha256": "b7532fd2f0f1019ec1b204eeb9651d1a13c3921c857dc895d0c04eb654534985",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-crop-plan": {
@@ -88,52 +115,11 @@
           ],
           "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
         }
-      },
-      "lotusDisposition": {
-        "figureId": "agr-fig-f40-crop-lotus-atlas-v1",
-        "state": "not_applicable_declared_figure_scope_is_level2_only",
-        "assetPath": null,
-        "receipt": null,
-        "scopeExplanation": "Figure record is available only in2号; retain1号organs controlled figure and do not extend the lotus comparison scope."
-      },
-      "royalCompletedUnits": [
-        {
-          "figureId": "agr-f40-general-seeder",
-          "assetPath": "assets/agriculture/royal-weekly-20261107/week02/hand-pushed-single-row-seeder.webp",
-          "assetSha256": "640b78fa08723f713d308ec9b30b66299469ce46ac95b439e9904a771aa5c4e3",
-          "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-hand-pushed-seeder-qa.json",
-          "scope": "single_AI_visual_checked_equipment_appearance_only",
-          "locales": 12,
-          "localeReceipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-hand-pushed-seeder-locales-qa.json"
-        }
-      ],
-      "nativeOrganLabelsDisposition": {
-        "figureId": "agr-recognition-plant-organ-positions-v1",
-        "state": "self_checked_native_paired7labels_ready_for_persistence",
-        "locales": 12,
-        "labelsPerLocale": 7,
-        "assetPixels": "existing exact controlled Japanese diagram retained byte-unchanged",
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-plant-organs-native-labels-qa.json",
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false
-      },
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-supported-authoring-census-qa.json",
-        "scheduledLessons": 6,
-        "recognitionRecords": 7,
-        "targetLocales": 12,
-        "nativeReadersLocales": 13,
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false
       }
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w03",
       "week": 3,
       "lessonIds": [
         "agr-water-decision",
@@ -147,8 +133,7 @@
         "agr-recognition-soil-handtest-states-v1",
         "agr-fig-irrigation-destinations-v1",
         "agr-recognition-irrigation-tools-v1",
-        "agr-fig-soil-aggregate-comparison-v1",
-        "agr-fig-soil-three-factor-relations-v1"
+        "agr-fig-soil-aggregate-comparison-v1"
       ],
       "controlled": {},
       "dailyBindings": {
@@ -191,28 +176,11 @@
           "reuseReasonJa": "この課で既に扱う対象を、図上の位置と見え方に対応させて確認します。出典の対象条件を保ち、他の場面の処方とはしません。",
           "scopeReasonJa": "同じ課の既存図を、この課が実際に配置された級で参照します。"
         }
-      },
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "scheduledLessons": 6,
-        "recognitionRecords": 5,
-        "targetLocales": 12,
-        "nativeLocales": 13,
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week03-supported-authoring-census-qa.json",
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false,
-        "coverageScheduleIds": [
-          "agr-1-w03",
-          "agr-2-w04"
-        ],
-        "scheduleApplicabilityCorrection": "docs/ssw-workspace/agriculture/royal-weekly-20261107/per-level-schedule-reconciliation-qa.json"
       }
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w04",
       "week": 4,
       "lessonIds": [
         "agr-soil-ph-measure",
@@ -236,25 +204,11 @@
           ],
           "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
         }
-      },
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "coverageScheduleIds": [
-          "agr-1-w04"
-        ],
-        "scheduledLessons": 2,
-        "recognitionAndDailyFigureRecords": 2,
-        "targetLocales": 12,
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week04-supported-authoring-census-qa.json",
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false
       }
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w05",
       "week": 5,
       "lessonIds": [
         "agr-fertilizer-nutrients",
@@ -269,9 +223,48 @@
         "agr-fig-nutrient-entry-routes-v2"
       ],
       "controlled": {
-        "agr-fertilizer-timing": "fertilizer-stage",
-        "agr-fertilizer-label": "fertilizer-label",
-        "agr-fertilizer-quantity": "fertilizer-quantity"
+        "agr-fertilizer-timing": {
+          "kind": "fertilizer-stage",
+          "titleJa": "施肥を生育段階と役割で分ける",
+          "captionJa": "元肥と追肥を植物の段階と関連付けて読む模式図です。肥料を根へ直接触れさせる方法、施用量、具体的距離や全作物共通の時期を指示する図ではありません。果樹の元肥・季節ごとの追肥は本文の目的と対応させます。",
+          "altJa": "施肥を生育段階と役割で分ける。元肥と追肥を植物の段階と関連付けて読む模式図です。肥料を根へ直接触れさせる方法、施用量、具体的距離や全作物共通の時期を指示する図ではありません。果樹の元肥・季節ごとの追肥は本文の目的と対応させます。",
+          "lessonSourceHash": "cd38f614ee12795ae62c7bb443ddd7ccc4906670d5b79c9b9d62785270c15422",
+          "keyObjectiveId": "AGR-K-FERTILIZER-TIMING-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/fertilizer-stage.png",
+          "assetSha256": "3fdb2769ab8be22bddef1021e125f92a269457e197f7bff52bf5ba169533388f",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-fertilizer-label": {
+          "kind": "fertilizer-label",
+          "titleJa": "肥料全体の質量と成分割合",
+          "captionJa": "教材で仮定した25kg・12−6−6の窒素は3kgです。色の部分は窒素12％を表します。実在商品の施肥指示ではありません。",
+          "altJa": "肥料全体の質量と成分割合。教材で仮定した25kg・12−6−6の窒素は3kgです。色の部分は窒素12％を表します。実在商品の施肥指示ではありません。",
+          "lessonSourceHash": "3ee18e565dcc09a645ec7840957127f1eeed7f247f3cde446c32adec530c34b3",
+          "keyObjectiveId": "AGR-K-FERTILIZER-LABEL-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/fertilizer-label.png",
+          "assetSha256": "e290160d92cf353ad4dcaba17aba9cf2625fae90fc49cb3ba005c3d750c99e9a",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-fertilizer-quantity": {
+          "kind": "fertilizer-quantity",
+          "titleJa": "必要成分量から全体量を逆算",
+          "captionJa": "教材の仮定例：必要成分4kg、含有率16％から全体25kgを求め、逆算します。図の比率とkgを混同せず、面積条件を保ちます。",
+          "altJa": "必要成分量から全体量を逆算。教材の仮定例：必要成分4kg、含有率16％から全体25kgを求め、逆算します。図の比率とkgを混同せず、面積条件を保ちます。",
+          "lessonSourceHash": "8beb2db973f1a751b0a05dac0d645f2f2bae2ecc993346400c3ba92838310a9d",
+          "keyObjectiveId": "AGR-K-FERTILIZER-QUANTITY-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/fertilizer-quantity.png",
+          "assetSha256": "2a57ada2fe08d551d3bd2eaa6b7436f6848fe03daa3b392f0a32a38f9a033cc8",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-fertilizer-types": {
@@ -287,38 +280,11 @@
           ],
           "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
         }
-      },
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "scheduledEntryId": "agr-1-w05",
-        "scheduledLessonIds": [
-          "agr-fertilizer-nutrients",
-          "agr-fertilizer-types",
-          "agr-fertilizer-release",
-          "agr-fertilizer-timing",
-          "agr-fertilizer-label",
-          "agr-fertilizer-quantity"
-        ],
-        "localizedStudyFigureRecords": 2,
-        "sourceExactNativeContexts": 4,
-        "targetLocales": 12,
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/level1-week05-level2-week06-supported-authoring-census-qa.json",
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false
-      },
-      "authoringStatus": "source_backed_supported_authoring_self_checked_not_accepted",
-      "nativeStudyOverrides": {
-        "agr-fertilizer-release": "FertilizerNativeFigure source-bound release",
-        "agr-fertilizer-timing": "FertilizerNativeFigure source-bound timing",
-        "agr-fertilizer-label": "FertilizerNativeFigure source-bound label",
-        "agr-fertilizer-quantity": "FertilizerNativeFigure source-bound quantity"
       }
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w06",
       "week": 6,
       "lessonIds": [
         "agr-drainage-foundations"
@@ -328,26 +294,11 @@
         "agr-fig-ridge-dimensions-v1"
       ],
       "controlled": {},
-      "dailyBindings": {},
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "scheduledEntryId": "agr-1-w06",
-        "scheduledLessonIds": [
-          "agr-drainage-foundations"
-        ],
-        "localizedStudyFigureRecords": 2,
-        "targetLocales": 12,
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/level1-week06-level2-week07-supported-authoring-census-qa.json",
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false
-      },
-      "authoringStatus": "source_backed_supported_authoring_self_checked_not_accepted"
+      "dailyBindings": {}
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w07",
       "week": 7,
       "lessonIds": [
         "agr-management-shoots",
@@ -366,29 +317,16 @@
         "agr-f40-safety-media-leek-harvester",
         "agr-f40-safety-media-potato-digger",
         "agr-f40-safety-media-tunnel-direct-cover",
-        "agr-f40-safety-media-leaf-fruit-source-reference",
         "agr-f40-pear-thinning-shape-examples",
         "agr-f40-satsuma-thinning-target-examples",
         "agr-f40-citrus-uninjured-injured-source-pair"
       ],
       "controlled": {},
-      "dailyBindings": {},
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/management-week-supported-authoring-census-qa.json",
-        "scheduledLessons": 6,
-        "recognitionRecords": 12,
-        "targetLocales": 12,
-        "readingFields": 61,
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false
-      }
+      "dailyBindings": {}
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w08",
       "week": 8,
       "lessonIds": [
         "agr-cover-mulch",
@@ -407,23 +345,11 @@
         "agr-f40-safety-media-nozzle-source-examples"
       ],
       "controlled": {},
-      "dailyBindings": {
-        "agr-pest-foundation": {
-          "lessonSourceHash": "3b8ef1b20047f5301aaad2cc9dc0ae001ec1aca176bc93d97390fb3a2765a13d",
-          "figureId": "agr-recognition-strawberry-gray-mold-v1",
-          "assetSha256": "0dc9f71964ac73976c84fc09c2a5d542a7f9eb8b239562ed2b4c29456e255abf",
-          "scopeLevels": [
-            "2"
-          ],
-          "keyObjectiveId": "AGR-K-PEST-FOUNDATION-01",
-          "objectiveJa": "予防・早期発見と、薬剤以外の防除手段の違いを説明できる。",
-          "reuseReasonJa": "2号の症状の外観例としてイチゴの変色と灰色の付着部分を限定して観察します。予防・早期発見・品種・天敵・資材の全比較や確定診断を、この症状図だけで説明できたとは扱いません。",
-          "scopeReasonJa": "資料の病害写真一覧と既存図が宣言する2号の観察範囲を保ち、1号へ症状図の範囲を広げません。"
-        }
-      }
+      "dailyBindings": {}
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w09",
       "week": 9,
       "lessonIds": [
         "agr-safety-machine-preparation",
@@ -453,10 +379,10 @@
         "agr-safety-inspection-stop": {
           "lessonSourceHash": "f6047f5dd8ca60b804d07d8bb3a633820451e8ce8e62cd84fbe6e60cb4ce7da4",
           "figureId": "agr-f40-safety-media-machine-control-names",
-          "assetSha256": "149d365ec6dc756ff51942d67a2219cd0c094659257f88d32fd99279cd873634",
+          "assetSha256": "2514641425cc0eb3ffd84a1e796711e034e1710983d30373e8c7aafa1c5ea687",
           "keyObjectiveId": "AGR-K-SAFETY-INSPECTION-STOP-01",
           "objectiveJa": "運転前・中・後の点検と、つまり除去や中断時のエンジン停止を区別して説明できる。",
-          "reuseReasonJa": "「日常点検と停止して行う作業」で扱う対象を、既存の「主クラッチレバー・エンジンスイッチ・始動グリップ三写真の名称を照合する。」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+          "reuseReasonJa": "主クラッチレバー、エンジンスイッチ、始動グリップの外観と名称だけを限定して参照します。点検の種類、停止手順、つまり除去や残る危険は、この外観図だけでは説明できません。実機の取扱説明書などで別に確認します。",
           "scopeLevels": [
             "1",
             "2"
@@ -467,6 +393,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w10",
       "week": 10,
       "lessonIds": [
         "agr-safety-maintenance-tools",
@@ -479,14 +406,14 @@
         "agr-tool-screwdrivers-v1",
         "agr-recognition-adjustable-wrench-v1",
         "agr-recognition-hex-keys-v1",
-        "agr-f40-safety-media-ladder-hazards",
-        "agr-f40-safety-media-source-extra-details"
+        "agr-f40-safety-media-ladder-hazards"
       ],
       "controlled": {},
       "dailyBindings": {}
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w11",
       "week": 11,
       "lessonIds": [
         "agr-ricework-seed",
@@ -504,12 +431,26 @@
         "agr-fig-f40-rice-machines-scenes-v1"
       ],
       "controlled": {
-        "agr-ricework-water": "rice-water"
+        "agr-ricework-water": {
+          "kind": "rice-water",
+          "titleJa": "水田の入口・出口と観察対象",
+          "captionJa": "水口・水尻・田面を別の位置として見ます。湛水深、中干し、除草剤使用後の止水は同じ指示ではありません。時期や製品条件は本文の記述に従って区別します。",
+          "altJa": "水田の入口・出口と観察対象。水口・水尻・田面を別の位置として見ます。湛水深、中干し、除草剤使用後の止水は同じ指示ではありません。時期や製品条件は本文の記述に従って区別します。",
+          "lessonSourceHash": "a78378383a1d453b6f22805da495f8907f4f2d6eea3b278dac02697fd9f9eaa4",
+          "keyObjectiveId": "AGR-K-RICEWORK-WATER-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/rice-water.png",
+          "assetSha256": "aea643668668a6967f8b9e8ca480b00539bdb09b1354a683f6035cc37b296a29",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w12",
       "week": 12,
       "lessonIds": [
         "agr-ricework-processing",
@@ -525,6 +466,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w13",
       "week": 13,
       "lessonIds": [
         "agr-vegwork-grains",
@@ -573,6 +515,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w14",
       "week": 14,
       "lessonIds": [
         "agr-vegwork-feed",
@@ -586,7 +529,7 @@
       "controlled": {},
       "dailyBindings": {
         "agr-vegwork-feed": {
-          "lessonSourceHash": "f835648fc33503f4ac38341d783a307fd0068ab6025aa6378e10655f1749bcbc",
+          "lessonSourceHash": "be30a2293c1aa4f350b86465afbf87615090791e81c2ff8b99003914328f0128",
           "figureId": "agr-fig-f40-rice-feed-parts-v1",
           "assetSha256": "588c848be6657481298918b32aadc0a3d705b7432c57b235f90f6bfb79489c57",
           "keyObjectiveId": "AGR-K-VEGWORK-FEED-01",
@@ -615,6 +558,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w15",
       "week": 15,
       "lessonIds": [
         "agr-facility-structure-vegetables",
@@ -630,7 +574,6 @@
         "agr-f40-cover-lifetime-source-comparison",
         "agr-f40-facility-support-greenhouse-crops",
         "agr-f40-facility-support-greenhouse-flowers-a",
-        "agr-f40-facility-support-greenhouse-flowers-b",
         "agr-f40-facility-support-rain-shelter-roof-only",
         "agr-f40-facility-support-carnation-greenhouse-level1"
       ],
@@ -639,7 +582,7 @@
         "agr-facility-structure-flower-calendar": {
           "lessonSourceHash": "efa9ae3097bbdc2292c39c179d66c7cdc882cdc60221601625c7768cf9dd214d",
           "figureId": "agr-f40-facility-support-greenhouse-flowers-a",
-          "assetSha256": "b7ac4d1d346ea9100d3c1a2be80f0633e1acb096c4155168945a147a32b7300b",
+          "assetSha256": "451d6358351fa222c95b583adcd99b017280bbeb9170d7bd4e30a759e37267c5",
           "keyObjectiveId": "AGR-K-FACILITY-STRUCTURE-FLOWER-CALENDAR-01",
           "objectiveJa": "キクの短日性と電照の目的を説明し、品種の組合せや低温処理による出荷時期の調節を区別できる。",
           "reuseReasonJa": "「花の出荷時期を組み立てる」で扱う対象を、既存の「キク・バラ・ユリの施設栽培の外観」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
@@ -653,6 +596,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w16",
       "week": 16,
       "lessonIds": [
         "agr-facility-structure-outer-covers",
@@ -694,6 +638,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w17",
       "week": 17,
       "lessonIds": [
         "agr-facility-env-ventilation",
@@ -745,6 +690,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w18",
       "week": 18,
       "lessonIds": [
         "agr-facility-env-nursery-methods",
@@ -775,6 +721,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w19",
       "week": 19,
       "lessonIds": [
         "agr-fruit-foundation-life",
@@ -817,6 +764,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w20",
       "week": 20,
       "lessonIds": [
         "agr-fruit-foundation-treeforms",
@@ -834,6 +782,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w21",
       "week": 21,
       "lessonIds": [
         "agr-fruit-manage-bagging",
@@ -850,8 +799,34 @@
         "agr-f40-grape-bagging-source-stages"
       ],
       "controlled": {
-        "agr-fruit-manage-fertilizer": "fertilizer-stage",
-        "agr-fruit-manage-storage-facility": "cold-chain"
+        "agr-fruit-manage-fertilizer": {
+          "kind": "fertilizer-stage",
+          "titleJa": "施肥を生育段階と役割で分ける",
+          "captionJa": "元肥と追肥を植物の段階と関連付けて読む模式図です。肥料を根へ直接触れさせる方法、施用量、具体的距離や全作物共通の時期を指示する図ではありません。果樹の元肥・季節ごとの追肥は本文の目的と対応させます。",
+          "altJa": "施肥を生育段階と役割で分ける。元肥と追肥を植物の段階と関連付けて読む模式図です。肥料を根へ直接触れさせる方法、施用量、具体的距離や全作物共通の時期を指示する図ではありません。果樹の元肥・季節ごとの追肥は本文の目的と対応させます。",
+          "lessonSourceHash": "785f724be0f650f1c569e7c45a3ee5f5fea61d2bc47ceb9964c3c3ac9f857af0",
+          "keyObjectiveId": "AGR-K-FRUIT-MANAGE-FERTILIZER-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/fertilizer-stage.png",
+          "assetSha256": "3fdb2769ab8be22bddef1021e125f92a269457e197f7bff52bf5ba169533388f",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-fruit-manage-storage-facility": {
+          "kind": "cold-chain",
+          "titleJa": "冷却した場所だけでなく経路をつなぐ",
+          "captionJa": "出荷時の冷却、輸送、引渡し後の管理を経路として見ます。各段階の具体的温度や品質保持剤の処方は品目・製品別で、この図では指定しません。",
+          "altJa": "冷却した場所だけでなく経路をつなぐ。出荷時の冷却、輸送、引渡し後の管理を経路として見ます。各段階の具体的温度や品質保持剤の処方は品目・製品別で、この図では指定しません。",
+          "lessonSourceHash": "e4c2004f72ada62f5b4d513779fbe2de681913f06c2a477a28349ce70978cf72",
+          "keyObjectiveId": "AGR-K-FRUIT-MANAGE-STORAGE-FACILITY-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/cold-chain.png",
+          "assetSha256": "f122b49cbea8da8643b139cb678704741d22396d6993e7af3f616f03c6fac200",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-fruit-manage-harvest": {
@@ -884,6 +859,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w22",
       "week": 22,
       "lessonIds": [
         "agr-fruit-manage-citrus-apple-grape",
@@ -914,21 +890,22 @@
         },
         "agr-fruit-manage-persimmon-pear-peach": {
           "lessonSourceHash": "cc153db32899e39621e67a282e222af80c773c655ac2f29c205e1630d0948be1",
-          "figureId": "agr-f40-pear-thinning-shape-examples",
-          "assetSha256": "6450f3516607ba944bfed6851aa07c3330f6fdc5ce2b5e0543b6c2d41e002b6e",
+          "figureId": "agr-recognition-persimmon-v1",
+          "assetSha256": "b03bcfb0e225e851fc389d1061074db5a72e0f6ce33b094e2968786b7c838678",
           "keyObjectiveId": "AGR-K-FRUIT-MANAGE-PERSIMMON-PEAR-PEACH-01",
           "objectiveJa": "カキの甘渋、ナシの種類と受粉、モモの生育と袋かけを混同せずに説明できる。",
-          "reuseReasonJa": "「カキ・ナシ・モモの利用と作業」で扱う対象を、既存の「ナシの形と資料内の残す・取るを照合する」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+          "reuseReasonJa": "カキの一般的な外観を確認する文脈図として使います。甘ガキと渋ガキの区別や、脱渋・干し柿にする場合は、現在の本文に結び付けた比較図で学びます。外観から甘渋や加工の要否を判定しません。",
           "scopeLevels": [
             "1",
             "2"
           ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
+          "scopeReasonJa": "本課の現在の出典と日本語本文に結び付いた専用比較表示で、甘渋と加工の可能性を区別します。認識図の元の1号範囲は変更せず、本課の1号・2号では外観の例だけを補助的に使用します。"
         }
       }
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w23",
       "week": 23,
       "lessonIds": [
         "agr-workterms-soil-verbs",
@@ -967,26 +944,23 @@
         "agr-recognition-nonwoven-cover-v1",
         "agr-recognition-shade-cloth-v1",
         "agr-recognition-insect-net-v1",
-        "agr-recognition-strawberry-gray-mold-v1",
-        "agr-recognition-cabbage-sclerotinia-v1",
-        "agr-recognition-cabbage-soft-rot-v1",
-        "agr-recognition-cucumber-powdery-mildew-v1",
-        "agr-recognition-cucumber-downy-mildew-v1",
-        "agr-recognition-tomato-late-blight-v1",
-        "agr-recognition-negi-rust-v1",
-        "agr-recognition-broccoli-clubroot-v1",
-        "agr-recognition-pest-thrips-wakegi-v1",
-        "agr-recognition-pest-leafminer-wakegi-damage-v1",
-        "agr-recognition-pest-mite-cucumber-damage-v1",
-        "agr-recognition-pest-aphid-eggplant-v1",
-        "agr-recognition-pest-cabbage-caterpillar-v1",
-        "agr-recognition-pest-whitefly-tomato-v1",
-        "agr-recognition-pest-sweetpotato-weevil-v1",
-        "agr-recognition-pest-pepper-bug-v1",
         "agr-f40-flower-cluster-dip-v1"
       ],
       "controlled": {
-        "agr-workterms-weather-damage": "weather-damage"
+        "agr-workterms-weather-damage": {
+          "kind": "weather-damage",
+          "titleJa": "天候と作物の被害を分けて記録",
+          "captionJa": "晴れ・低温・風雨という天候だけで被害名を決めず、作物に確認した被害を合わせて記録します。冷害では夏の低温という条件を省きません。描いた植物は被害の診断写真ではありません。",
+          "altJa": "天候と作物の被害を分けて記録。晴れ・低温・風雨という天候だけで被害名を決めず、作物に確認した被害を合わせて記録します。冷害では夏の低温という条件を省きません。描いた植物は被害の診断写真ではありません。",
+          "lessonSourceHash": "2b5bb4a776628b03317e760a54a8262f51c4479ed9e24f3a0dc8453b21263924",
+          "keyObjectiveId": "AGR-K-WORKTERMS-WEATHER-DAMAGE-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/weather-damage.png",
+          "assetSha256": "306716a96b36695708173f74c45f0b5a5f18ee1d6ca451e3b5da20417008c1f1",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-workterms-soil-verbs": {
@@ -1032,6 +1006,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w24",
       "week": 24,
       "lessonIds": [
         "agr-seed-f1-fixed",
@@ -1041,24 +1016,52 @@
         "agr-f40-general-planting-checks"
       ],
       "controlled": {
-        "agr-seed-f1-fixed": "seed-cross"
+        "agr-seed-f1-fixed": {
+          "kind": "seed-cross",
+          "titleJa": "親と交配で得るF1を分ける",
+          "captionJa": "異なる親から得る一代目という関係を示した模式図です。種を袋で混ぜることとは区別し、図から外観・収量や全条件での効果を保証しません。",
+          "altJa": "親と交配で得るF1を分ける。異なる親から得る一代目という関係を示した模式図です。種を袋で混ぜることとは区別し、図から外観・収量や全条件での効果を保証しません。",
+          "lessonSourceHash": "5c39344a959105b7cfbf4c1d473556d7527f0c230539f3771ba8e8d67abc1bae",
+          "keyObjectiveId": "AGR-K-PAR08-SEED-F1-FIXED-02",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/seed-cross.png",
+          "assetSha256": "f2ced330428491817a365cabd3817267f6c9af043e3614ec65c0366765e07915",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w25",
       "week": 25,
       "lessonIds": [
         "agr-soil-detail-crop-ph-table"
       ],
       "recognitionIds": [],
       "controlled": {
-        "agr-soil-detail-crop-ph-table": "ph-axis"
+        "agr-soil-detail-crop-ph-table": {
+          "kind": "ph-axis",
+          "titleJa": "pHの位置と尺度の区別",
+          "captionJa": "pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "altJa": "pHの位置と尺度の区別。pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "lessonSourceHash": "e5468827b4b8c2364d0aa1168b31713e6ed7b768f5aa6f97cd2318509327aa7b",
+          "keyObjectiveId": "AGR-K-SOIL-DETAIL-CROP-PH-TABLE-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ph-axis.png",
+          "assetSha256": "0ffe14d183ca0ffcf5e011976bfa02e5ffae54b985aac00e6de5dae8953fcf4a",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w26",
       "week": 26,
       "lessonIds": [
         "agr-fertilizer-example-names"
@@ -1083,6 +1086,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w27",
       "week": 27,
       "lessonIds": [
         "agr-fruit-detail-ph-columns",
@@ -1090,13 +1094,40 @@
       ],
       "recognitionIds": [],
       "controlled": {
-        "agr-fruit-detail-ph-columns": "ph-axis",
-        "agr-fruit-detail-harvest-calendar": "harvest-calendar"
+        "agr-fruit-detail-ph-columns": {
+          "kind": "ph-axis",
+          "titleJa": "pHの位置と尺度の区別",
+          "captionJa": "pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "altJa": "pHの位置と尺度の区別。pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "lessonSourceHash": "614ec51ed0c201c1c89549c8abb19b29bac4fd9cb046c27b1dd15271eded19f6",
+          "keyObjectiveId": "AGR-K-FRUIT-DETAIL-PH-COLUMNS-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ph-axis.png",
+          "assetSha256": "0ffe14d183ca0ffcf5e011976bfa02e5ffae54b985aac00e6de5dae8953fcf4a",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-fruit-detail-harvest-calendar": {
+          "kind": "harvest-calendar",
+          "titleJa": "果樹六品目の資料上の収穫期",
+          "captionJa": "各月を上・中・下旬の三区分にした比較です。本文の開始・終了の幅を対応させます。地域、品種、個々の果実の熟度を問わない実施日や作業指示には使いません。",
+          "altJa": "果樹六品目の資料上の収穫期。各月を上・中・下旬の三区分にした比較です。本文の開始・終了の幅を対応させます。地域、品種、個々の果実の熟度を問わない実施日や作業指示には使いません。",
+          "lessonSourceHash": "709a602863ab682a77369ab19e34a30020dd16edab7312cd93c643d254bae51b",
+          "keyObjectiveId": "AGR-K-FRUIT-DETAIL-HARVEST-CALENDAR-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/harvest-calendar.png",
+          "assetSha256": "e4b2010803635e1416b739170ba3ca5675b679c5a1ffedc0590209184d16db2a",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w28",
       "week": 28,
       "lessonIds": [
         "agr-par11-general-gas-transport",
@@ -1106,12 +1137,26 @@
         "agr-f40-general-cropping-example-flow"
       ],
       "controlled": {
-        "agr-par11-general-gas-transport": "plant-flow"
+        "agr-par11-general-gas-transport": {
+          "kind": "plant-flow",
+          "titleJa": "作物と周囲の物質の移動",
+          "captionJa": "葉と根の位置を基準に、光、二酸化炭素、水、酸素と水蒸気を区別します。呼吸では酸素を取り込み二酸化炭素を出すため、図の光合成の向きを全ての時間帯の純収支とみなさず、本文と対比してください。",
+          "altJa": "作物と周囲の物質の移動。葉と根の位置を基準に、光、二酸化炭素、水、酸素と水蒸気を区別します。呼吸では酸素を取り込み二酸化炭素を出すため、図の光合成の向きを全ての時間帯の純収支とみなさず、本文と対比してください。",
+          "lessonSourceHash": "3caa13e28376f5277640bbc548da7f0ea0e69193772553d2b7c563185e3a3259",
+          "keyObjectiveId": "AGR-K-PAR11-GENERAL-01-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/plant-flow.png",
+          "assetSha256": "549d4245c962e06a6bd5d8ad148cb9936142d88be66aba55beea0cfe2fced48f",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w29",
       "week": 29,
       "lessonIds": [
         "agr-par11-soil-clay-percentage",
@@ -1121,12 +1166,26 @@
         "agr-recognition-soil-handtest-states-v1"
       ],
       "controlled": {
-        "agr-par11-soil-clay-percentage": "soil-fraction"
+        "agr-par11-soil-clay-percentage": {
+          "kind": "soil-fraction",
+          "titleJa": "粒の区分と割合の分母",
+          "captionJa": "粒径の区分と、それぞれが土全体に占める重量比を区別する模式図です。粒の絵の個数や面積を土性判定の質量百分率へ読み替えないでください。",
+          "altJa": "粒の区分と割合の分母。粒径の区分と、それぞれが土全体に占める重量比を区別する模式図です。粒の絵の個数や面積を土性判定の質量百分率へ読み替えないでください。",
+          "lessonSourceHash": "a793f9cb98610805f1c6582c59ed7a63ce98fbce4a2d3bd1f1fba8a6dfae9501",
+          "keyObjectiveId": "AGR-K-PAR11-SOIL-CLAY-PERCENTAGE-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/soil-fraction.png",
+          "assetSha256": "7852e844c302b7e5319096769a0c339be13821cdc15250bc28ef781aa0719a12",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w30",
       "week": 30,
       "lessonIds": [
         "agr-par11-management-film-effects"
@@ -1140,7 +1199,7 @@
           "assetSha256": "ee2244ca19628891d1f6d96e813ec3a54d8382da9f47dc227d554ba9d7881745",
           "keyObjectiveId": "AGR-K-PAR11-MANAGEMENT-FILM-EFFECTS-01",
           "objectiveJa": "マルチ用フィルムの地温・雑草・反射への働きと、穴の有無による雨水の通り方を区別できる。",
-          "reuseReasonJa": "「フィルムの色・構造と働きを読む」で扱う対象を、既存の「稲わらマルチとフィルムマルチの写真を識別する。」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+          "reuseReasonJa": "稲わらとフィルムが土の表面を覆う位置と、フィルムの植え付け穴を限定して観察します。色別の効果、雨水の通り方や必要な水量はこの外観だけで判断せず、本課の比較条件と本文で確認します。",
           "scopeLevels": [
             "1",
             "2"
@@ -1151,6 +1210,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w31",
       "week": 31,
       "lessonIds": [
         "agr-par11-riceveg-feed-details",
@@ -1189,6 +1249,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w32",
       "week": 32,
       "lessonIds": [
         "agr-par11-facility-heat-cover-installation",
@@ -1216,6 +1277,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w33",
       "week": 33,
       "lessonIds": [
         "agr-f40-soil-field-details",
@@ -1228,7 +1290,20 @@
         "agr-fig-rotation-two-year-examples-v1"
       ],
       "controlled": {
-        "agr-f40-soil-source-comparisons": "ph-axis"
+        "agr-f40-soil-source-comparisons": {
+          "kind": "ph-axis",
+          "titleJa": "pHの位置と尺度の区別",
+          "captionJa": "pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "altJa": "pHの位置と尺度の区別。pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "lessonSourceHash": "9eb5991fe1e581f34600f6e6ba23fc764c083d44e1a45c2ad3f7a558a097fa73",
+          "keyObjectiveId": "AGR-K-F40-SOIL-COMPARE-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ph-axis.png",
+          "assetSha256": "0ffe14d183ca0ffcf5e011976bfa02e5ffae54b985aac00e6de5dae8953fcf4a",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-f40-soil-fertilizer-details": {
@@ -1247,6 +1322,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w34",
       "week": 34,
       "lessonIds": [
         "agr-f40-rice-calendar",
@@ -1282,6 +1358,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w35",
       "week": 35,
       "lessonIds": [
         "agr-f40-general-nursery-examples",
@@ -1295,6 +1372,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w36",
       "week": 36,
       "lessonIds": [
         "agr-f40-safety-s1-practical-details"
@@ -1307,6 +1385,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w37",
       "week": 37,
       "lessonIds": [
         "agr-f40-facility-level1-supplement",
@@ -1318,24 +1397,26 @@
       ],
       "recognitionIds": [
         "agr-f40-facility-support-greenhouse-auto-sprayer",
-        "agr-f40-facility-support-greenhouse-insect-light-appearance"
+        "agr-f40-facility-support-greenhouse-insect-light-appearance",
+        "agr-royal-fine-root-observation-v1"
       ],
       "controlled": {
-        "agr-f40-fgs-flower-source-period": "ratio-scopes"
+        "agr-f40-fgs-flower-source-period": {
+          "kind": "ratio-scopes",
+          "titleJa": "全体・対象・内訳を分けて記録",
+          "captionJa": "入れ子の円は、割合の分母と対象の関係だけを示す模式図です。円の面積から本文の割合や品種面積を読まず、出典の年がない記述や指標の違いを別々に記録します。",
+          "altJa": "全体・対象・内訳を分けて記録。入れ子の円は、割合の分母と対象の関係だけを示す模式図です。円の面積から本文の割合や品種面積を読まず、出典の年がない記述や指標の違いを別々に記録します。",
+          "lessonSourceHash": "ef57d43c3d158de34958c933d60a396949060da68bff20e1b9b621775805b075",
+          "keyObjectiveId": "AGR-K-F40-FGS-FLOWER-SOURCE-PERIOD-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ratio-scopes.png",
+          "assetSha256": "77d96df2bc3acd276681625949ca6dc09087b96d67f4486d8f3da2fa3a3cc018",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
-        "agr-f40-facility-level1-supplement": {
-          "lessonSourceHash": "482f23d708e9cdf5cdac5a0ee96b4e68115baad27f6a4d9696ddd5bc4b528470",
-          "figureId": "agr-f40-fruit-nursery-species-leaf-examples",
-          "assetSha256": "b38bcd2da00028abe2582aad6d4c33af677414be52aa51dffdf64fac22e732cb",
-          "keyObjectiveId": "AGR-K-F40-FACILITY-BRIDGE-01",
-          "objectiveJa": "イチゴとバラの資料例、苗の観察点、高接ぎの目的、摘果の対象と翌年への働きを説明できる。",
-          "reuseReasonJa": "「1号の追加例：施設作物と果樹管理」で扱う対象を、既存の「カンキツ・カキ・ブドウの苗の例」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
-          "scopeLevels": [
-            "1"
-          ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
-        },
         "agr-f40-facility-fruit-source-reading": {
           "lessonSourceHash": "4ce68eb8c9ffe4fa7961421420346d2261fcf4e50f34d1d2912f6d4135d15e94",
           "figureId": "agr-f40-fruit-branch-age-source-types",
@@ -1378,6 +1459,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w38",
       "week": 38,
       "lessonIds": [
         "agr-f40-flower-add-orchard-base",
@@ -1389,40 +1471,66 @@
       ],
       "recognitionIds": [],
       "controlled": {
-        "agr-f40-flower-undated-percentages": "ratio-scopes",
-        "agr-f40-flower-source-scope-comparison": "ratio-scopes",
-        "agr-f40-flower-weather-source-list": "weather-damage"
+        "agr-f40-flower-undated-percentages": {
+          "kind": "ratio-scopes",
+          "titleJa": "全体・対象・内訳を分けて記録",
+          "captionJa": "入れ子の円は、割合の分母と対象の関係だけを示す模式図です。円の面積から本文の割合や品種面積を読まず、出典の年がない記述や指標の違いを別々に記録します。",
+          "altJa": "全体・対象・内訳を分けて記録。入れ子の円は、割合の分母と対象の関係だけを示す模式図です。円の面積から本文の割合や品種面積を読まず、出典の年がない記述や指標の違いを別々に記録します。",
+          "lessonSourceHash": "e6d9bd6c3fb16680dfd756046ed4a1c1e2a093c8a31974251a22fc83995c490a",
+          "keyObjectiveId": "AGR-K-F40-FLOWER-UNDATED-PERCENTAGES",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ratio-scopes.png",
+          "assetSha256": "77d96df2bc3acd276681625949ca6dc09087b96d67f4486d8f3da2fa3a3cc018",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-f40-flower-source-scope-comparison": {
+          "kind": "ratio-scopes",
+          "titleJa": "全体・対象・内訳を分けて記録",
+          "captionJa": "入れ子の円は、割合の分母と対象の関係だけを示す模式図です。円の面積から本文の割合や品種面積を読まず、出典の年がない記述や指標の違いを別々に記録します。",
+          "altJa": "全体・対象・内訳を分けて記録。入れ子の円は、割合の分母と対象の関係だけを示す模式図です。円の面積から本文の割合や品種面積を読まず、出典の年がない記述や指標の違いを別々に記録します。",
+          "lessonSourceHash": "9ccedea356ea55ba86e2a9190f072c6a37efd5771e5533a8dea9580d7aa465f6",
+          "keyObjectiveId": "AGR-K-F40-FLOWER-SOURCE-SCOPE-COMPARISON",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ratio-scopes.png",
+          "assetSha256": "77d96df2bc3acd276681625949ca6dc09087b96d67f4486d8f3da2fa3a3cc018",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-f40-flower-weather-source-list": {
+          "kind": "weather-damage",
+          "titleJa": "天候と作物の被害を分けて記録",
+          "captionJa": "晴れ・低温・風雨という天候だけで被害名を決めず、作物に確認した被害を合わせて記録します。冷害では夏の低温という条件を省きません。描いた植物は被害の診断写真ではありません。",
+          "altJa": "天候と作物の被害を分けて記録。晴れ・低温・風雨という天候だけで被害名を決めず、作物に確認した被害を合わせて記録します。冷害では夏の低温という条件を省きません。描いた植物は被害の診断写真ではありません。",
+          "lessonSourceHash": "e943d6a07b4d6f1bf4026f4a3d9c5f373b6b14f89e127d5cfd4408c4f3a0f415",
+          "keyObjectiveId": "AGR-K-F40-FLOWER-WEATHER-SOURCE-LIST",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/weather-damage.png",
+          "assetSha256": "306716a96b36695708173f74c45f0b5a5f18ee1d6ca451e3b5da20417008c1f1",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
-        "agr-f40-flower-add-orchard-base": {
-          "lessonSourceHash": "267467281673a112af9cb7d852eb01124116e858c37859d8fcc580714228ba93",
-          "figureId": "agr-f40-flower-materials-v1",
-          "assetSha256": "fcd1e72c10ccb2b72c58160a28acc2965e0e3bc3cc7586d9637b792902b8d688",
-          "keyObjectiveId": "AGR-K-F40-FLOWER-ADD-ORCHARD-BASE-01",
-          "objectiveJa": "資料の酸性土壌と石灰資材の関係、果樹機械の五つの用途を、作業量や機械操作の条件とは分けて説明できる。",
-          "reuseReasonJa": "「酸性土壌の改良方向と機械の用途を読む」で扱う対象を、既存の「ネット・マルチ・反射シートの設置場所」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
-          "scopeLevels": [
-            "1",
-            "2"
-          ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
-        },
         "agr-f40-flower-add-terms-photo1": {
           "lessonSourceHash": "e01fe7d09cac3819dafc61cf96716f6154ef135efa30c731fdefd5e284d7fe4b",
           "figureId": "agr-f40-general-thinning-comparison",
-          "assetSha256": "3f7c2f541262d6787672f65012371877e52ab55c8506dd04376ba96af9a7e931",
+          "assetSha256": "05a50ddbdc2fb726cd505606eed64f6834c1f12ecc452111cd647ec94a42b618",
           "scopeLevels": [
             "1"
           ],
           "keyObjectiveId": "AGR-K-F40-FLOWER-ADD-TERMS-PHOTO1-01",
           "objectiveJa": "消毒・除草・間引きの範囲と、写真一覧の葉菜・根菜の掲載名を、器官の構造や作業条件と混同せず説明できる。",
-          "reuseReasonJa": "本文の間引き・枝の区分に関連する対象を、図上の残す部位と除く部位、枝の年次に対応させます。図だけから実物を切断する指示にはしません。",
-          "scopeReasonJa": "この課が扱う作業用語・枝の観察範囲に限定した参照です。"
+          "reuseReasonJa": "本文の「間引き」のうち、苗の状態と間隔を比べる場面だけをこの図で確認します。苗木や枝の選択、枝の年次、消毒・除草、葉菜・根菜の分類を示す図ではありません。",
+          "scopeReasonJa": "この課の間引きの用語を、苗を選ぶ一例に限定して参照します。枝や果実の管理へ一般化しません。"
         },
         "agr-f40-flower-source1-reading": {
           "lessonSourceHash": "f6b6cf773017f023633087fe43460a316f19971b5b6c54a845ff3a041f076512",
           "figureId": "agr-f40-fruit-pollination-tool-appearance-examples",
-          "assetSha256": "9334469477dcd897c9e0ec0e190693e0d3f25d26734f061271f60e6e134497e7",
+          "assetSha256": "062621185073fe6821eaf3ac8391a8dcabb386fabc8d9b35af5a1d8745269f8d",
           "keyObjectiveId": "AGR-K-F40-FLOWER-SOURCE1-READING-01",
           "objectiveJa": "果樹の地域説明と調整剤の目的、まき方と暗きょの構造を、出典の範囲を保って説明できる。",
           "reuseReasonJa": "「1号の果樹・作業用語を出典の範囲で読む」で扱う対象を、既存の「人工授粉器の二例とぼんてん」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
@@ -1435,6 +1543,7 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w39",
       "week": 39,
       "lessonIds": [
         "agr-f40-flower-family-label-correction",
@@ -1442,13 +1551,26 @@
       ],
       "recognitionIds": [],
       "controlled": {
-        "agr-f40-flower-family-label-correction": "taxonomy"
+        "agr-f40-flower-family-label-correction": {
+          "kind": "taxonomy",
+          "titleJa": "植物の対象と分類の階級を分ける",
+          "captionJa": "左は科・属・種の包含関係です。植物の器官や外観の図だけで分類を判定せず、本文のホウレンソウ・タマネギの元ラベルと確認した分類を分けます。科・属・種の三階級を、属名と種小名の二名法そのものとはしません。",
+          "altJa": "植物の対象と分類の階級を分ける。左は科・属・種の包含関係です。植物の器官や外観の図だけで分類を判定せず、本文のホウレンソウ・タマネギの元ラベルと確認した分類を分けます。科・属・種の三階級を、属名と種小名の二名法そのものとはしません。",
+          "lessonSourceHash": "3f0039a88696a558dec03b8879e785957ee775c4cb26a426d80faff6c70b747c",
+          "keyObjectiveId": "AGR-K-F40-FLOWER-FAMILY-LABEL-CORRECTION-1",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/taxonomy.png",
+          "assetSha256": "753c74bb8c848e137a3f2ec80f147815df328726ebbd2c022d3ce08306799835",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-f40-flower-gibberellin-source-scope": {
           "lessonSourceHash": "c0fd9df0bdaa229466a777f9c31eee0fb2fe92e39a9d5d5bb8ec8ea66ed4ff49",
           "figureId": "agr-f40-flower-cluster-dip-v1",
-          "assetSha256": "11e68479ad43cfb42f6e432f674976ae753baef2333da242a5c4f729bbdcc582",
+          "assetSha256": "6da548131812c8d2a34574d4143392b823062c3883977d00e47512576db8a65f",
           "keyObjectiveId": "AGR-K-F40-FLOWER-GIBBERELLIN-SOURCE-SCOPE-1",
           "objectiveJa": "記載事項と、出典に書かれていない条件を区別できる。",
           "reuseReasonJa": "「出典の記述と限界を読む」で扱う対象を、既存の「ブドウの房と液への浸漬という掲載動作」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
@@ -1462,18 +1584,33 @@
     },
     {
       "level": "1",
+      "scheduleId": "agr-1-w40",
       "week": 40,
       "lessonIds": [
         "agr-s1-vegetable-quality-improvements"
       ],
       "recognitionIds": [],
       "controlled": {
-        "agr-s1-vegetable-quality-improvements": "seed-cross"
+        "agr-s1-vegetable-quality-improvements": {
+          "kind": "seed-cross",
+          "titleJa": "親と交配で得るF1を分ける",
+          "captionJa": "異なる親から得る一代目という関係を示した模式図です。種を袋で混ぜることとは区別し、図から外観・収量や全条件での効果を保証しません。",
+          "altJa": "親と交配で得るF1を分ける。異なる親から得る一代目という関係を示した模式図です。種を袋で混ぜることとは区別し、図から外観・収量や全条件での効果を保証しません。",
+          "lessonSourceHash": "57f3faccbf411bb79a077092b931af481b106b63a515a9d1cfde317c1725a658",
+          "keyObjectiveId": "AGR-K-S1-VEGETABLE-QUALITY-IMPROVEMENTS",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/seed-cross.png",
+          "assetSha256": "f2ced330428491817a365cabd3817267f6c9af043e3614ec65c0366765e07915",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w01",
       "week": 1,
       "lessonIds": [
         "agr-rice",
@@ -1492,34 +1629,46 @@
         "agr-recognition-daikon-v1",
         "agr-recognition-indica-brown-rice-v1",
         "agr-recognition-japonica-brown-rice-v1",
-        "agr-recognition-potato-v1",
-        "agr-recognition-sweet-potato-v1",
-        "agr-recognition-carrot-v1",
-        "agr-recognition-tomato-v1",
         "agr-recognition-eggplant-v1",
         "agr-recognition-cucumber-v1",
-        "agr-recognition-apple-v1",
-        "agr-recognition-grapes-v1",
-        "agr-recognition-persimmon-v1",
-        "agr-recognition-asian-pear-v1",
-        "agr-recognition-peach-v1",
-        "agr-recognition-chestnut-v1",
-        "agr-recognition-kiwi-v1",
-        "agr-recognition-blueberry-v1",
-        "agr-recognition-unshu-mikan-v1",
-        "agr-recognition-yuzu-v1",
-        "agr-recognition-loquat-v1",
         "agr-f40-general-flower-legend-reader",
         "agr-f40-flower-unshu-v1"
       ],
       "controlled": {
-        "agr-climate": "winter-climate",
-        "agr-statistics": "statistics-2019"
+        "agr-climate": {
+          "kind": "winter-climate",
+          "titleJa": "冬の日本海側・太平洋側の違い",
+          "captionJa": "海・山地・風の位置を模式断面で見る地域差の図です。日本海側の雪と太平洋側の乾燥晴天という傾向を区別し、個別圃場の予報には使いません。",
+          "altJa": "冬の日本海側・太平洋側の違い。海・山地・風の位置を模式断面で見る地域差の図です。日本海側の雪と太平洋側の乾燥晴天という傾向を区別し、個別圃場の予報には使いません。",
+          "lessonSourceHash": "ddcee332204a8d627b6c832c733ad7721ef9efedf32ee880a205f1fbfae7bb7b",
+          "keyObjectiveId": "AGR-K-CLIMATE-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/winter-climate.png",
+          "assetSha256": "cee9ba0cf4d20ff0ce58dd0e11c409a1c7f8fa8323e97b726fc68a06217cf7ef",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-statistics": {
+          "kind": "statistics-2019",
+          "titleJa": "2019年の産出額の構成",
+          "captionJa": "本文にある野菜24％・米20％・果実9％・花き4％を同じ分母で積み上げました。その他43％は100から四項目の計57を引いた教材上のまとめです。面積や重量の割合とは別です。",
+          "altJa": "2019年の産出額の構成。本文にある野菜24％・米20％・果実9％・花き4％を同じ分母で積み上げました。その他43％は100から四項目の計57を引いた教材上のまとめです。面積や重量の割合とは別です。",
+          "lessonSourceHash": "7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7",
+          "keyObjectiveId": "AGR-K-STATISTICS-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/statistics-2019.png",
+          "assetSha256": "d8e5f753bb339e63dcfc29d1840dd85bc79b519f6cb1ee3c2fe195e3acdc003c",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w02",
       "week": 2,
       "lessonIds": [
         "agr-organs",
@@ -1539,8 +1688,34 @@
         "agr-fig-f40-crop-lotus-atlas-v1"
       ],
       "controlled": {
-        "agr-plant-balance": "plant-flow",
-        "agr-flowering": "photoperiod"
+        "agr-plant-balance": {
+          "kind": "plant-flow",
+          "titleJa": "作物と周囲の物質の移動",
+          "captionJa": "葉と根の位置を基準に、光、二酸化炭素、水、酸素と水蒸気を区別します。呼吸では酸素を取り込み二酸化炭素を出すため、図の光合成の向きを全ての時間帯の純収支とみなさず、本文と対比してください。",
+          "altJa": "作物と周囲の物質の移動。葉と根の位置を基準に、光、二酸化炭素、水、酸素と水蒸気を区別します。呼吸では酸素を取り込み二酸化炭素を出すため、図の光合成の向きを全ての時間帯の純収支とみなさず、本文と対比してください。",
+          "lessonSourceHash": "d5a1d900c6bf3b83324114ed58f1c540d63d0a7296cab2e91c17004691c724a5",
+          "keyObjectiveId": "AGR-K-PLANT-BALANCE-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/plant-flow.png",
+          "assetSha256": "549d4245c962e06a6bd5d8ad148cb9936142d88be66aba55beea0cfe2fced48f",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-flowering": {
+          "kind": "photoperiod",
+          "titleJa": "明暗の長さと電照を区別",
+          "captionJa": "長さを指定しない明暗帯で、夜間の光を考えます。下段は秋ギクで開花を遅らせる目的の例であり、全作物の促進・抑制を一律に決める図ではありません。",
+          "altJa": "明暗の長さと電照を区別。長さを指定しない明暗帯で、夜間の光を考えます。下段は秋ギクで開花を遅らせる目的の例であり、全作物の促進・抑制を一律に決める図ではありません。",
+          "lessonSourceHash": "4d57dba7c9477a4e9f74bdd38926d28278c0b050558ef863dd6ead598f3e8e15",
+          "keyObjectiveId": "AGR-K-FLOWERING-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/photoperiod.png",
+          "assetSha256": "b7532fd2f0f1019ec1b204eeb9651d1a13c3921c857dc895d0c04eb654534985",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-crop-plan": {
@@ -1556,52 +1731,11 @@
           ],
           "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
         }
-      },
-      "lotusDisposition": {
-        "figureId": "agr-fig-f40-crop-lotus-atlas-v1",
-        "state": "self_checked_royal_asset_integrated_pending_coordinator_persistence",
-        "assetPath": "assets/agriculture/royal-weekly-20261107/week02/lotus-above-water-and-rhizome.webp",
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-lotus-royal-qa.json",
-        "scopeExplanation": "Figure record is available only in2号; retain1号organs controlled figure and do not extend the lotus comparison scope."
-      },
-      "royalCompletedUnits": [
-        {
-          "figureId": "agr-f40-general-seeder",
-          "assetPath": "assets/agriculture/royal-weekly-20261107/week02/hand-pushed-single-row-seeder.webp",
-          "assetSha256": "640b78fa08723f713d308ec9b30b66299469ce46ac95b439e9904a771aa5c4e3",
-          "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-hand-pushed-seeder-qa.json",
-          "scope": "single_AI_visual_checked_equipment_appearance_only",
-          "locales": 12,
-          "localeReceipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-hand-pushed-seeder-locales-qa.json"
-        }
-      ],
-      "nativeOrganLabelsDisposition": {
-        "figureId": "agr-recognition-plant-organ-positions-v1",
-        "state": "self_checked_native_paired7labels_ready_for_persistence",
-        "locales": 12,
-        "labelsPerLocale": 7,
-        "assetPixels": "existing exact controlled Japanese diagram retained byte-unchanged",
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-plant-organs-native-labels-qa.json",
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false
-      },
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-supported-authoring-census-qa.json",
-        "scheduledLessons": 6,
-        "recognitionRecords": 7,
-        "targetLocales": 12,
-        "nativeReadersLocales": 13,
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false
       }
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w03",
       "week": 3,
       "lessonIds": [
         "agr-crop-types",
@@ -1629,35 +1763,11 @@
           ],
           "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
         }
-      },
-      "authoringStatus": "source_backed_supported_authoring_self_checked_not_accepted",
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "scheduledEntryId": "agr-2-w03",
-        "scheduledLessonIds": [
-          "agr-crop-types",
-          "agr-plant-responses",
-          "agr-sowing-design"
-        ],
-        "localizedStudyFigureRecords": 5,
-        "targetLocales": 12,
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false,
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/level2-week03-supported-authoring-census-qa.json"
-      },
-      "nativeStudyOverrides": {
-        "agr-crop-types": "CropClassificationFigure; source-exact use taxonomy supersedes old organ-position daily reuse",
-        "agr-plant-responses": "PlantResponseFigure; conditional saturation/transpiration/dry-soil support supersedes pF as daily objective"
-      },
-      "supersededDailyBindingIds": [
-        "agr-crop-types"
-      ]
+      }
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w04",
       "week": 4,
       "lessonIds": [
         "agr-water-decision",
@@ -1715,28 +1825,11 @@
           "reuseReasonJa": "この課で既に扱う対象を、図上の位置と見え方に対応させて確認します。出典の対象条件を保ち、他の場面の処方とはしません。",
           "scopeReasonJa": "同じ課の既存図を、この課が実際に配置された級で参照します。"
         }
-      },
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "scheduledLessons": 6,
-        "recognitionRecords": 5,
-        "targetLocales": 12,
-        "nativeLocales": 13,
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week03-supported-authoring-census-qa.json",
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false,
-        "coverageScheduleIds": [
-          "agr-1-w03",
-          "agr-2-w04"
-        ],
-        "scheduleApplicabilityCorrection": "docs/ssw-workspace/agriculture/royal-weekly-20261107/per-level-schedule-reconciliation-qa.json"
       }
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w05",
       "week": 5,
       "lessonIds": [
         "agr-soil-ph-measure",
@@ -1746,8 +1839,7 @@
       ],
       "recognitionIds": [
         "agr-recognition-irrigation-tools-v1",
-        "agr-recognition-soil-tools-appearance-v1",
-        "agr-fig-soil-three-factor-relations-v1"
+        "agr-recognition-soil-tools-appearance-v1"
       ],
       "controlled": {},
       "dailyBindings": {
@@ -1766,43 +1858,21 @@
         },
         "agr-soil-biological-2": {
           "lessonSourceHash": "8f72f3edb75bff895362cb6556bfb9872a8f253447ea8e3c226db45be9c286bc",
-          "figureId": "agr-fig-soil-three-factor-relations-v1",
-          "assetSha256": "93142059bb8356df7312302d76ccadef52f10b159f43a1d221eed867ea9163fa",
+          "figureId": "agr-fig-soil-aggregate-comparison-v1",
+          "assetSha256": "590dde03b890b5e45de80e284905b6b718368f5390fb73b6c494de0c1823a88a",
           "keyObjectiveId": "AGR-K-SOIL-BIOLOGICAL-2-01",
           "objectiveJa": "地力を三つの要因から整理し、土壌微生物と土壌動物の例を区別できる。",
-          "reuseReasonJa": "物理性・化学性・生物性と、資料の重なりにある保肥力・酸化還元・団粒・腐植の対応を、三要因の関係図で確認します。微生物や土壌動物の実物の外観、病原性、関係の強さをこの図だけで判定しません。",
+          "reuseReasonJa": "「地力の物理・化学・生物的要因」で扱う対象を、既存の「単粒構造と団粒構造の違い」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
           "scopeLevels": [
             "2"
           ],
-          "scopeReasonJa": "2号本文の三要因と対応関係を読む目的に限定し、特定の微生物の同定や全圃場共通の土壌処方へ広げません。"
+          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
         }
-      },
-      "partialSupportedLessonIds": [
-        "agr-soil-ph-measure",
-        "agr-soil-rotation"
-      ],
-      "authoringStatus": "source_backed_supported_authoring_self_checked_not_accepted",
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "scheduledEntryId": "agr-2-w05",
-        "scheduledLessonIds": [
-          "agr-soil-ph-measure",
-          "agr-soil-rotation",
-          "agr-water-equipment-2",
-          "agr-soil-biological-2"
-        ],
-        "localizedStudyFigureRecords": 4,
-        "targetLocales": 12,
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false,
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/level2-week05-supported-authoring-census-qa.json"
       }
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w06",
       "week": 6,
       "lessonIds": [
         "agr-fertilizer-nutrients",
@@ -1817,9 +1887,48 @@
         "agr-fig-nutrient-entry-routes-v2"
       ],
       "controlled": {
-        "agr-fertilizer-timing": "fertilizer-stage",
-        "agr-fertilizer-label": "fertilizer-label",
-        "agr-fertilizer-quantity": "fertilizer-quantity"
+        "agr-fertilizer-timing": {
+          "kind": "fertilizer-stage",
+          "titleJa": "施肥を生育段階と役割で分ける",
+          "captionJa": "元肥と追肥を植物の段階と関連付けて読む模式図です。肥料を根へ直接触れさせる方法、施用量、具体的距離や全作物共通の時期を指示する図ではありません。果樹の元肥・季節ごとの追肥は本文の目的と対応させます。",
+          "altJa": "施肥を生育段階と役割で分ける。元肥と追肥を植物の段階と関連付けて読む模式図です。肥料を根へ直接触れさせる方法、施用量、具体的距離や全作物共通の時期を指示する図ではありません。果樹の元肥・季節ごとの追肥は本文の目的と対応させます。",
+          "lessonSourceHash": "cd38f614ee12795ae62c7bb443ddd7ccc4906670d5b79c9b9d62785270c15422",
+          "keyObjectiveId": "AGR-K-FERTILIZER-TIMING-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/fertilizer-stage.png",
+          "assetSha256": "3fdb2769ab8be22bddef1021e125f92a269457e197f7bff52bf5ba169533388f",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-fertilizer-label": {
+          "kind": "fertilizer-label",
+          "titleJa": "肥料全体の質量と成分割合",
+          "captionJa": "教材で仮定した25kg・12−6−6の窒素は3kgです。色の部分は窒素12％を表します。実在商品の施肥指示ではありません。",
+          "altJa": "肥料全体の質量と成分割合。教材で仮定した25kg・12−6−6の窒素は3kgです。色の部分は窒素12％を表します。実在商品の施肥指示ではありません。",
+          "lessonSourceHash": "3ee18e565dcc09a645ec7840957127f1eeed7f247f3cde446c32adec530c34b3",
+          "keyObjectiveId": "AGR-K-FERTILIZER-LABEL-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/fertilizer-label.png",
+          "assetSha256": "e290160d92cf353ad4dcaba17aba9cf2625fae90fc49cb3ba005c3d750c99e9a",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-fertilizer-quantity": {
+          "kind": "fertilizer-quantity",
+          "titleJa": "必要成分量から全体量を逆算",
+          "captionJa": "教材の仮定例：必要成分4kg、含有率16％から全体25kgを求め、逆算します。図の比率とkgを混同せず、面積条件を保ちます。",
+          "altJa": "必要成分量から全体量を逆算。教材の仮定例：必要成分4kg、含有率16％から全体25kgを求め、逆算します。図の比率とkgを混同せず、面積条件を保ちます。",
+          "lessonSourceHash": "8beb2db973f1a751b0a05dac0d645f2f2bae2ecc993346400c3ba92838310a9d",
+          "keyObjectiveId": "AGR-K-FERTILIZER-QUANTITY-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/fertilizer-quantity.png",
+          "assetSha256": "2a57ada2fe08d551d3bd2eaa6b7436f6848fe03daa3b392f0a32a38f9a033cc8",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-fertilizer-types": {
@@ -1835,38 +1944,11 @@
           ],
           "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
         }
-      },
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "scheduledEntryId": "agr-2-w06",
-        "scheduledLessonIds": [
-          "agr-fertilizer-nutrients",
-          "agr-fertilizer-types",
-          "agr-fertilizer-release",
-          "agr-fertilizer-timing",
-          "agr-fertilizer-label",
-          "agr-fertilizer-quantity"
-        ],
-        "localizedStudyFigureRecords": 2,
-        "sourceExactNativeContexts": 4,
-        "targetLocales": 12,
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/level1-week05-level2-week06-supported-authoring-census-qa.json",
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false
-      },
-      "authoringStatus": "source_backed_supported_authoring_self_checked_not_accepted",
-      "nativeStudyOverrides": {
-        "agr-fertilizer-release": "FertilizerNativeFigure source-bound release",
-        "agr-fertilizer-timing": "FertilizerNativeFigure source-bound timing",
-        "agr-fertilizer-label": "FertilizerNativeFigure source-bound label",
-        "agr-fertilizer-quantity": "FertilizerNativeFigure source-bound quantity"
       }
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w07",
       "week": 7,
       "lessonIds": [
         "agr-drainage-foundations",
@@ -1890,33 +1972,11 @@
           ],
           "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
         }
-      },
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "scheduledEntryId": "agr-2-w07",
-        "scheduledLessonIds": [
-          "agr-drainage-foundations",
-          "agr-drainage-comparison"
-        ],
-        "localizedStudyFigureRecords": 2,
-        "targetLocales": 12,
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/level1-week06-level2-week07-supported-authoring-census-qa.json",
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false
-      },
-      "authoringStatus": "source_backed_supported_authoring_self_checked_not_accepted",
-      "nativeStudyOverrides": {
-        "agr-drainage-comparison": "DrainageMethodComparison source-bound four-method comparison"
-      },
-      "supersededDailyBindingIds": [
-        "agr-drainage-comparison"
-      ]
+      }
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w08",
       "week": 8,
       "lessonIds": [
         "agr-management-shoots",
@@ -1941,23 +2001,11 @@
         "agr-f40-citrus-uninjured-injured-source-pair"
       ],
       "controlled": {},
-      "dailyBindings": {},
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/management-week-supported-authoring-census-qa.json",
-        "scheduledLessons": 6,
-        "recognitionRecords": 12,
-        "targetLocales": 12,
-        "readingFields": 61,
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false
-      }
+      "dailyBindings": {}
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w09",
       "week": 9,
       "lessonIds": [
         "agr-cover-mulch",
@@ -2023,6 +2071,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w10",
       "week": 10,
       "lessonIds": [
         "agr-safety-machine-preparation",
@@ -2033,7 +2082,6 @@
         "agr-safety-power-fuel"
       ],
       "recognitionIds": [
-        "agr-f40-safety-media-manual-backpack-sprayer",
         "agr-f40-safety-media-machine-clothing",
         "agr-f40-safety-media-machine-control-names",
         "agr-f40-safety-media-pesticide-clothing",
@@ -2052,10 +2100,10 @@
         "agr-safety-inspection-stop": {
           "lessonSourceHash": "f6047f5dd8ca60b804d07d8bb3a633820451e8ce8e62cd84fbe6e60cb4ce7da4",
           "figureId": "agr-f40-safety-media-machine-control-names",
-          "assetSha256": "149d365ec6dc756ff51942d67a2219cd0c094659257f88d32fd99279cd873634",
+          "assetSha256": "2514641425cc0eb3ffd84a1e796711e034e1710983d30373e8c7aafa1c5ea687",
           "keyObjectiveId": "AGR-K-SAFETY-INSPECTION-STOP-01",
           "objectiveJa": "運転前・中・後の点検と、つまり除去や中断時のエンジン停止を区別して説明できる。",
-          "reuseReasonJa": "「日常点検と停止して行う作業」で扱う対象を、既存の「主クラッチレバー・エンジンスイッチ・始動グリップ三写真の名称を照合する。」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+          "reuseReasonJa": "主クラッチレバー、エンジンスイッチ、始動グリップの外観と名称だけを限定して参照します。点検の種類、停止手順、つまり除去や残る危険は、この外観図だけでは説明できません。実機の取扱説明書などで別に確認します。",
           "scopeLevels": [
             "1",
             "2"
@@ -2066,6 +2114,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w11",
       "week": 11,
       "lessonIds": [
         "agr-safety-maintenance-tools",
@@ -2088,22 +2137,10 @@
         "agr-safety-workload-2": {
           "lessonSourceHash": "a6413b9b29c28836ba98744228622e9dabdf480386fb422233a506cdf00c13ff",
           "figureId": "agr-f40-safety-media-machine-clothing",
-          "assetSha256": "0d1a11456d2c7aa2bb090786031f58c80f73f14d3a35ce36a28b8a3b45338efd",
+          "assetSha256": "221084fc2311dc707de33e63423198b8b9b231c2b946e6459126e23f9cd5e031",
           "keyObjectiveId": "AGR-K-SAFETY-WORKLOAD-2-01",
           "objectiveJa": "生活管理、同じ姿勢の継続、足場と後片付けを作業計画の別項目として整理できる。",
-          "reuseReasonJa": "「体調・姿勢・足場を含む作業計画」で扱う対象を、既存の「機械作業服図のヘルメット・手袋・つなぎ服・安全靴の四ラベルを識別する。」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
-          "scopeLevels": [
-            "2"
-          ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
-        },
-        "agr-safety-label-fields-2": {
-          "lessonSourceHash": "6a0c1b47f357b6149aed680d025933dc5738fce10f69938b0a231a4d711e70d1",
-          "figureId": "agr-f40-safety-media-pesticide-clothing",
-          "assetSha256": "89d0932d094d072e1da336dcbc5efbe06ae5b25812c8e2d033a06769f73459f2",
-          "keyObjectiveId": "AGR-K-SAFETY-LABEL-FIELDS-2-01",
-          "objectiveJa": "作物・対象・希釈・使用量・時期・回数・使用方法を区別し、表示の意味を確認できる。",
-          "reuseReasonJa": "「農薬ラベルの項目を読み分ける」で扱う対象を、既存の「帽子のつばと顔へ密着するゴーグルという図の詳細を読む。」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+          "reuseReasonJa": "機械作業の服装の外観を限定して参照します。生活管理、荷物の持ち上げ、姿勢の変更、足場、片付けの方法は、この立位の服装図では説明できません。",
           "scopeLevels": [
             "2"
           ],
@@ -2113,6 +2150,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w12",
       "week": 12,
       "lessonIds": [
         "agr-ricework-seed",
@@ -2130,12 +2168,26 @@
         "agr-fig-f40-rice-machines-scenes-v1"
       ],
       "controlled": {
-        "agr-ricework-water": "rice-water"
+        "agr-ricework-water": {
+          "kind": "rice-water",
+          "titleJa": "水田の入口・出口と観察対象",
+          "captionJa": "水口・水尻・田面を別の位置として見ます。湛水深、中干し、除草剤使用後の止水は同じ指示ではありません。時期や製品条件は本文の記述に従って区別します。",
+          "altJa": "水田の入口・出口と観察対象。水口・水尻・田面を別の位置として見ます。湛水深、中干し、除草剤使用後の止水は同じ指示ではありません。時期や製品条件は本文の記述に従って区別します。",
+          "lessonSourceHash": "a78378383a1d453b6f22805da495f8907f4f2d6eea3b278dac02697fd9f9eaa4",
+          "keyObjectiveId": "AGR-K-RICEWORK-WATER-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/rice-water.png",
+          "assetSha256": "aea643668668a6967f8b9e8ca480b00539bdb09b1354a683f6035cc37b296a29",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w13",
       "week": 13,
       "lessonIds": [
         "agr-ricework-processing",
@@ -2165,6 +2217,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w14",
       "week": 14,
       "lessonIds": [
         "agr-vegwork-grains",
@@ -2213,6 +2266,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w15",
       "week": 15,
       "lessonIds": [
         "agr-vegwork-feed",
@@ -2228,7 +2282,7 @@
       "controlled": {},
       "dailyBindings": {
         "agr-vegwork-feed": {
-          "lessonSourceHash": "f835648fc33503f4ac38341d783a307fd0068ab6025aa6378e10655f1749bcbc",
+          "lessonSourceHash": "be30a2293c1aa4f350b86465afbf87615090791e81c2ff8b99003914328f0128",
           "figureId": "agr-fig-f40-rice-feed-parts-v1",
           "assetSha256": "588c848be6657481298918b32aadc0a3d705b7432c57b235f90f6bfb79489c57",
           "keyObjectiveId": "AGR-K-VEGWORK-FEED-01",
@@ -2257,6 +2311,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w16",
       "week": 16,
       "lessonIds": [
         "agr-facility-structure-vegetables",
@@ -2272,16 +2327,14 @@
         "agr-f40-cover-lifetime-source-comparison",
         "agr-f40-facility-support-greenhouse-crops",
         "agr-f40-facility-support-greenhouse-flowers-a",
-        "agr-f40-facility-support-greenhouse-flowers-b",
-        "agr-f40-facility-support-rain-shelter-roof-only",
-        "agr-f40-facility-support-carnation-greenhouse-level1"
+        "agr-f40-facility-support-greenhouse-flowers-b"
       ],
       "controlled": {},
       "dailyBindings": {
         "agr-facility-structure-flower-calendar": {
           "lessonSourceHash": "efa9ae3097bbdc2292c39c179d66c7cdc882cdc60221601625c7768cf9dd214d",
           "figureId": "agr-f40-facility-support-greenhouse-flowers-a",
-          "assetSha256": "b7ac4d1d346ea9100d3c1a2be80f0633e1acb096c4155168945a147a32b7300b",
+          "assetSha256": "451d6358351fa222c95b583adcd99b017280bbeb9170d7bd4e30a759e37267c5",
           "keyObjectiveId": "AGR-K-FACILITY-STRUCTURE-FLOWER-CALENDAR-01",
           "objectiveJa": "キクの短日性と電照の目的を説明し、品種の組合せや低温処理による出荷時期の調節を区別できる。",
           "reuseReasonJa": "「花の出荷時期を組み立てる」で扱う対象を、既存の「キク・バラ・ユリの施設栽培の外観」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
@@ -2295,6 +2348,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w17",
       "week": 17,
       "lessonIds": [
         "agr-facility-structure-outer-covers",
@@ -2365,6 +2419,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w18",
       "week": 18,
       "lessonIds": [
         "agr-facility-env-ventilation",
@@ -2416,6 +2471,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w19",
       "week": 19,
       "lessonIds": [
         "agr-facility-env-nursery-methods",
@@ -2427,9 +2483,7 @@
         "agr-recognition-nursery-containers-v1",
         "agr-f40-general-nursery-forms",
         "agr-f40-pf-source-range-comparison",
-        "agr-f40-soil-moisture-instrument-forms",
-        "agr-f40-facility-support-nursery-place-container-types",
-        "agr-f40-facility-support-paper-pot-connected-cells"
+        "agr-f40-soil-moisture-instrument-forms"
       ],
       "controlled": {},
       "dailyBindings": {
@@ -2462,6 +2516,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w20",
       "week": 20,
       "lessonIds": [
         "agr-fruit-foundation-life",
@@ -2504,6 +2559,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w21",
       "week": 21,
       "lessonIds": [
         "agr-fruit-foundation-treeforms",
@@ -2535,6 +2591,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w22",
       "week": 22,
       "lessonIds": [
         "agr-fruit-manage-bagging",
@@ -2551,8 +2608,34 @@
         "agr-f40-grape-bagging-source-stages"
       ],
       "controlled": {
-        "agr-fruit-manage-fertilizer": "fertilizer-stage",
-        "agr-fruit-manage-storage-facility": "cold-chain"
+        "agr-fruit-manage-fertilizer": {
+          "kind": "fertilizer-stage",
+          "titleJa": "施肥を生育段階と役割で分ける",
+          "captionJa": "元肥と追肥を植物の段階と関連付けて読む模式図です。肥料を根へ直接触れさせる方法、施用量、具体的距離や全作物共通の時期を指示する図ではありません。果樹の元肥・季節ごとの追肥は本文の目的と対応させます。",
+          "altJa": "施肥を生育段階と役割で分ける。元肥と追肥を植物の段階と関連付けて読む模式図です。肥料を根へ直接触れさせる方法、施用量、具体的距離や全作物共通の時期を指示する図ではありません。果樹の元肥・季節ごとの追肥は本文の目的と対応させます。",
+          "lessonSourceHash": "785f724be0f650f1c569e7c45a3ee5f5fea61d2bc47ceb9964c3c3ac9f857af0",
+          "keyObjectiveId": "AGR-K-FRUIT-MANAGE-FERTILIZER-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/fertilizer-stage.png",
+          "assetSha256": "3fdb2769ab8be22bddef1021e125f92a269457e197f7bff52bf5ba169533388f",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-fruit-manage-storage-facility": {
+          "kind": "cold-chain",
+          "titleJa": "冷却した場所だけでなく経路をつなぐ",
+          "captionJa": "出荷時の冷却、輸送、引渡し後の管理を経路として見ます。各段階の具体的温度や品質保持剤の処方は品目・製品別で、この図では指定しません。",
+          "altJa": "冷却した場所だけでなく経路をつなぐ。出荷時の冷却、輸送、引渡し後の管理を経路として見ます。各段階の具体的温度や品質保持剤の処方は品目・製品別で、この図では指定しません。",
+          "lessonSourceHash": "e4c2004f72ada62f5b4d513779fbe2de681913f06c2a477a28349ce70978cf72",
+          "keyObjectiveId": "AGR-K-FRUIT-MANAGE-STORAGE-FACILITY-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/cold-chain.png",
+          "assetSha256": "f122b49cbea8da8643b139cb678704741d22396d6993e7af3f616f03c6fac200",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-fruit-manage-harvest": {
@@ -2585,6 +2668,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w23",
       "week": 23,
       "lessonIds": [
         "agr-fruit-manage-citrus-apple-grape",
@@ -2618,33 +2702,22 @@
         },
         "agr-fruit-manage-persimmon-pear-peach": {
           "lessonSourceHash": "cc153db32899e39621e67a282e222af80c773c655ac2f29c205e1630d0948be1",
-          "figureId": "agr-f40-pear-thinning-shape-examples",
-          "assetSha256": "6450f3516607ba944bfed6851aa07c3330f6fdc5ce2b5e0543b6c2d41e002b6e",
+          "figureId": "agr-recognition-persimmon-v1",
+          "assetSha256": "b03bcfb0e225e851fc389d1061074db5a72e0f6ce33b094e2968786b7c838678",
           "keyObjectiveId": "AGR-K-FRUIT-MANAGE-PERSIMMON-PEAR-PEACH-01",
           "objectiveJa": "カキの甘渋、ナシの種類と受粉、モモの生育と袋かけを混同せずに説明できる。",
-          "reuseReasonJa": "「カキ・ナシ・モモの利用と作業」で扱う対象を、既存の「ナシの形と資料内の残す・取るを照合する」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+          "reuseReasonJa": "カキの一般的な外観を確認する文脈図として使います。甘ガキと渋ガキの区別や、脱渋・干し柿にする場合は、現在の本文に結び付けた比較図で学びます。外観から甘渋や加工の要否を判定しません。",
           "scopeLevels": [
             "1",
             "2"
           ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
-        },
-        "agr-fruit-manage-grape-cluster-2": {
-          "lessonSourceHash": "22d2c4fc51e2773a1990cb25bb1628bccb780a63809c2867e252c4875bfed775",
-          "figureId": "agr-f40-flower-cluster-dip-v1",
-          "assetSha256": "11e68479ad43cfb42f6e432f674976ae753baef2333da242a5c4f729bbdcc582",
-          "keyObjectiveId": "AGR-K-FRUIT-MANAGE-GRAPE-CLUSTER-2-01",
-          "objectiveJa": "房づくりと摘粒の時期・対象を区別し、品種特性と果実品質に合わせる考え方を説明できる。",
-          "reuseReasonJa": "「ブドウの房づくりと摘粒を分ける」で扱う対象を、既存の「ブドウの房と液への浸漬という掲載動作」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
-          "scopeLevels": [
-            "2"
-          ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
+          "scopeReasonJa": "本課の現在の出典と日本語本文に結び付いた専用比較表示で、甘渋と加工の可能性を区別します。認識図の元の1号範囲は変更せず、本課の1号・2号では外観の例だけを補助的に使用します。"
         }
       }
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w24",
       "week": 24,
       "lessonIds": [
         "agr-flower-work-classification",
@@ -2656,10 +2729,62 @@
       ],
       "recognitionIds": [],
       "controlled": {
-        "agr-flower-work-organs": "bulb",
-        "agr-flower-work-handling": "cold-chain",
-        "agr-flower-work-coldchain": "cold-chain",
-        "agr-flower-work-bedding": "flower-use"
+        "agr-flower-work-organs": {
+          "kind": "bulb",
+          "titleJa": "鱗茎の中で葉・短い茎・根を分ける",
+          "captionJa": "鱗茎を一つの大きな根と見なさず、肥厚した葉、短い茎、根の位置を区別します。球根類には別の器官に由来する型もあり、この断面を全てに当てはめません。",
+          "altJa": "鱗茎の中で葉・短い茎・根を分ける。鱗茎を一つの大きな根と見なさず、肥厚した葉、短い茎、根の位置を区別します。球根類には別の器官に由来する型もあり、この断面を全てに当てはめません。",
+          "lessonSourceHash": "fd403ad57f0daf9dcf27e85002136bd7fc88fbfee9a599e10c7082748333053c",
+          "keyObjectiveId": "AGR-K-FLOWER-WORK-ORGANS-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/bulb.png",
+          "assetSha256": "af7bac753da752c50922fb849840fa35e38b44e9f36b3858a4e098d39a63562f",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-flower-work-handling": {
+          "kind": "cold-chain",
+          "titleJa": "冷却した場所だけでなく経路をつなぐ",
+          "captionJa": "出荷時の冷却、輸送、引渡し後の管理を経路として見ます。各段階の具体的温度や品質保持剤の処方は品目・製品別で、この図では指定しません。",
+          "altJa": "冷却した場所だけでなく経路をつなぐ。出荷時の冷却、輸送、引渡し後の管理を経路として見ます。各段階の具体的温度や品質保持剤の処方は品目・製品別で、この図では指定しません。",
+          "lessonSourceHash": "d90cc67e65df7a3ce73c6e52e0547e81e6803c56924674e76a29ec4b84b8c94a",
+          "keyObjectiveId": "AGR-K-FLOWER-WORK-HANDLING-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/cold-chain.png",
+          "assetSha256": "f122b49cbea8da8643b139cb678704741d22396d6993e7af3f616f03c6fac200",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-flower-work-coldchain": {
+          "kind": "cold-chain",
+          "titleJa": "冷却した場所だけでなく経路をつなぐ",
+          "captionJa": "出荷時の冷却、輸送、引渡し後の管理を経路として見ます。各段階の具体的温度や品質保持剤の処方は品目・製品別で、この図では指定しません。",
+          "altJa": "冷却した場所だけでなく経路をつなぐ。出荷時の冷却、輸送、引渡し後の管理を経路として見ます。各段階の具体的温度や品質保持剤の処方は品目・製品別で、この図では指定しません。",
+          "lessonSourceHash": "7c84dfab209e0c9394d060aa2d64dceaa8264d37ecd74952f37352ab116312a7",
+          "keyObjectiveId": "AGR-K-FLOWER-WORK-COLDCHAIN-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/cold-chain.png",
+          "assetSha256": "f122b49cbea8da8643b139cb678704741d22396d6993e7af3f616f03c6fac200",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-flower-work-bedding": {
+          "kind": "flower-use",
+          "titleJa": "鉢・切り花・花壇の利用形態を分ける",
+          "captionJa": "同じ花きでも、鉢での利用、茎を切る利用、地面に植える利用を分けて見ます。図は特定品種を識別する写真ではなく、地域共通の植付け時期を示すものでもありません。",
+          "altJa": "鉢・切り花・花壇の利用形態を分ける。同じ花きでも、鉢での利用、茎を切る利用、地面に植える利用を分けて見ます。図は特定品種を識別する写真ではなく、地域共通の植付け時期を示すものでもありません。",
+          "lessonSourceHash": "dc753ac67bbea2fe591ff2acc9e42396f1174f59d8b39bf459560a541378ae1b",
+          "keyObjectiveId": "AGR-K-FLOWER-WORK-BEDDING-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/flower-use.png",
+          "assetSha256": "2ba6a4aa9e0f6d9b20c7f39c730296e861715394cb8463f470775fdf185f83d5",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-flower-work-classification": {
@@ -2677,7 +2802,7 @@
         "agr-flower-work-production": {
           "lessonSourceHash": "0e655024a0b20abb9de646a95e44d4b1f6c6ad5efbd02a00e6f69024010d44ba",
           "figureId": "agr-f40-facility-support-greenhouse-flowers-b",
-          "assetSha256": "f2ac7596740da2d58af2a73ce9147eb31a1feacaaf64adea59ff0dda96d83023",
+          "assetSha256": "3a63aba44c3fc6414823b2a6239514af257bab23e6dfa8ff5b898fbc8c555933",
           "keyObjectiveId": "AGR-K-FLOWER-WORK-PRODUCTION-01",
           "objectiveJa": "切り花・鉢花・花壇苗を分け、資料の栽培期間や費用の比較を条件付きの計画資料として読める。",
           "reuseReasonJa": "「花きの出荷形態と栽培計画」で扱う対象を、既存の「トルコギキョウとスプレーカーネーション」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
@@ -2690,6 +2815,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w25",
       "week": 25,
       "lessonIds": [
         "agr-workterms-soil-verbs",
@@ -2706,24 +2832,8 @@
         "agr-recognition-spinach-v1",
         "agr-recognition-onion-v1",
         "agr-recognition-daikon-v1",
-        "agr-recognition-potato-v1",
-        "agr-recognition-sweet-potato-v1",
-        "agr-recognition-carrot-v1",
-        "agr-recognition-tomato-v1",
         "agr-recognition-eggplant-v1",
         "agr-recognition-cucumber-v1",
-        "agr-recognition-apple-v1",
-        "agr-recognition-grapes-v1",
-        "agr-recognition-persimmon-v1",
-        "agr-recognition-asian-pear-v1",
-        "agr-recognition-peach-v1",
-        "agr-recognition-chestnut-v1",
-        "agr-recognition-kiwi-v1",
-        "agr-recognition-blueberry-v1",
-        "agr-recognition-unshu-mikan-v1",
-        "agr-recognition-yuzu-v1",
-        "agr-recognition-loquat-v1",
-        "agr-recognition-pvc-cover-film-v1",
         "agr-recognition-agripoly-film-v1",
         "agr-recognition-nonwoven-cover-v1",
         "agr-recognition-shade-cloth-v1",
@@ -2747,7 +2857,20 @@
         "agr-f40-flower-cluster-dip-v1"
       ],
       "controlled": {
-        "agr-workterms-weather-damage": "weather-damage"
+        "agr-workterms-weather-damage": {
+          "kind": "weather-damage",
+          "titleJa": "天候と作物の被害を分けて記録",
+          "captionJa": "晴れ・低温・風雨という天候だけで被害名を決めず、作物に確認した被害を合わせて記録します。冷害では夏の低温という条件を省きません。描いた植物は被害の診断写真ではありません。",
+          "altJa": "天候と作物の被害を分けて記録。晴れ・低温・風雨という天候だけで被害名を決めず、作物に確認した被害を合わせて記録します。冷害では夏の低温という条件を省きません。描いた植物は被害の診断写真ではありません。",
+          "lessonSourceHash": "2b5bb4a776628b03317e760a54a8262f51c4479ed9e24f3a0dc8453b21263924",
+          "keyObjectiveId": "AGR-K-WORKTERMS-WEATHER-DAMAGE-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/weather-damage.png",
+          "assetSha256": "306716a96b36695708173f74c45f0b5a5f18ee1d6ca451e3b5da20417008c1f1",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-workterms-soil-verbs": {
@@ -2793,6 +2916,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w26",
       "week": 26,
       "lessonIds": [
         "agr-seed-f1-fixed",
@@ -2804,12 +2928,26 @@
         "agr-f40-general-planting-checks"
       ],
       "controlled": {
-        "agr-seed-f1-fixed": "seed-cross"
+        "agr-seed-f1-fixed": {
+          "kind": "seed-cross",
+          "titleJa": "親と交配で得るF1を分ける",
+          "captionJa": "異なる親から得る一代目という関係を示した模式図です。種を袋で混ぜることとは区別し、図から外観・収量や全条件での効果を保証しません。",
+          "altJa": "親と交配で得るF1を分ける。異なる親から得る一代目という関係を示した模式図です。種を袋で混ぜることとは区別し、図から外観・収量や全条件での効果を保証しません。",
+          "lessonSourceHash": "5c39344a959105b7cfbf4c1d473556d7527f0c230539f3771ba8e8d67abc1bae",
+          "keyObjectiveId": "AGR-K-PAR08-SEED-F1-FIXED-02",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/seed-cross.png",
+          "assetSha256": "f2ced330428491817a365cabd3817267f6c9af043e3614ec65c0366765e07915",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w27",
       "week": 27,
       "lessonIds": [
         "agr-soil-detail-rotation-intervals-2",
@@ -2820,7 +2958,20 @@
         "agr-recognition-tractors-appearance-v1"
       ],
       "controlled": {
-        "agr-soil-detail-crop-ph-table": "ph-axis"
+        "agr-soil-detail-crop-ph-table": {
+          "kind": "ph-axis",
+          "titleJa": "pHの位置と尺度の区別",
+          "captionJa": "pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "altJa": "pHの位置と尺度の区別。pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "lessonSourceHash": "e5468827b4b8c2364d0aa1168b31713e6ed7b768f5aa6f97cd2318509327aa7b",
+          "keyObjectiveId": "AGR-K-SOIL-DETAIL-CROP-PH-TABLE-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ph-axis.png",
+          "assetSha256": "0ffe14d183ca0ffcf5e011976bfa02e5ffae54b985aac00e6de5dae8953fcf4a",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-soil-detail-rotation-intervals-2": {
@@ -2839,6 +2990,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w28",
       "week": 28,
       "lessonIds": [
         "agr-amendment-labels-2",
@@ -2848,63 +3000,29 @@
         "agr-recognition-amendments-appearance-v1"
       ],
       "controlled": {},
-      "dailyBindings": {
-        "agr-pesticide-formulation-reading-2": {
-          "lessonSourceHash": "8ebd1c2137a991c2a569a2c1b5536a0eedf8e305bab0adf26b6b350dee1a68ee",
-          "figureId": "agr-f40-safety-media-pesticide-source-conditions",
-          "assetSha256": "a80131732eb5b0a0e0e67ee9536562635250b1719968c2eb3343d330dc288e29",
-          "keyObjectiveId": "AGR-K-PESTICIDE-FORMULATION-READING-2-01",
-          "objectiveJa": "商品の形状、水を加えた場合の表の記述、成分が水に溶けるかを分けて読み、調製の指示に置き換えない。",
-          "reuseReasonJa": "「農薬の剤型表を三つの欄で読む」で扱う対象を、既存の「風を背にして後ろ向きに進む図の例を全足場・機械の歩行指示へしない。」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
-          "scopeLevels": [
-            "2"
-          ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
-        }
-      }
+      "dailyBindings": {}
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w29",
       "week": 29,
       "lessonIds": [
         "agr-management-detail-staged-thinning",
         "agr-management-detail-compatibility",
         "agr-management-detail-cooling-curing"
       ],
-      "recognitionIds": [],
+      "recognitionIds": [
+        "agr-royal-fruit-thinning-stages-v1"
+      ],
       "controlled": {},
       "dailyBindings": {
-        "agr-management-detail-staged-thinning": {
-          "lessonSourceHash": "1981d9bc4fa30de753bec63af06ca796b644269e930a2f785181be316e22217c",
-          "figureId": "agr-f40-general-thinning-comparison",
-          "assetSha256": "3f7c2f541262d6787672f65012371877e52ab55c8506dd04376ba96af9a7e931",
-          "keyObjectiveId": "AGR-K-MANAGEMENT-DETAIL-STAGED-THINNING-01",
-          "objectiveJa": "予備摘果から仕上げ摘果への順序を説明し、隔年結果への対応と葉果比の読み方を区別できる。",
-          "reuseReasonJa": "「生理落果を見ながら進める摘果」で扱う対象を、既存の「間引きで比べる苗の状態」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
-          "scopeLevels": [
-            "2"
-          ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
-        },
         "agr-management-detail-compatibility": {
           "lessonSourceHash": "000eb852d5cb6e50c9bdcbec165c20f5053954c0be81562cf6fc19e359fe5c34",
           "figureId": "agr-f40-safety-media-pollination-target",
-          "assetSha256": "3de668579960bc831b4e3873b09801264e47a3147620e484a352086e79c71869",
+          "assetSha256": "f64497b37a676dee31a84a27f2022bf5741699011051d7c0a11d560b1bc84a33",
           "keyObjectiveId": "AGR-K-MANAGEMENT-DETAIL-COMPATIBILITY-01",
           "objectiveJa": "自家不和合性と受精の関係を説明し、資料の作物例と単為結果を混同せず整理できる。",
-          "reuseReasonJa": "「花粉が付いた後に必要な条件」で扱う対象を、既存の「人工受粉図の雄しべ・雌花・柱頭と花粉を付ける位置を図で対応させる。」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
-          "scopeLevels": [
-            "2"
-          ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
-        },
-        "agr-management-detail-cooling-curing": {
-          "lessonSourceHash": "613880a26755fdda5b873d898bfa9a602b899fe8807a9c94ed37207475df474c",
-          "figureId": "agr-f40-flower-harvest-v1",
-          "assetSha256": "fb6c64d61058190570924d77d4b2ef720cadbdf4a66044a95ecc2e72c42ab5ad",
-          "keyObjectiveId": "AGR-K-MANAGEMENT-DETAIL-COOLING-CURING-01",
-          "objectiveJa": "冷風冷却と真空冷却の仕組み・保冷との関係を比較し、キュアリングを冷却と区別できる。",
-          "reuseReasonJa": "「冷却方式と傷口を保護する処理」で扱う対象を、既存の「果実の収穫判断に使う三つの道具」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+          "reuseReasonJa": "花粉を柱頭へ届ける段階の観察に限定して使います。ウリ科の独立イラストは、花粉を持つ部分と雌花の柱頭が触れる位置を示します。受粉後の受精、自家不和合性、品種の組合せ、結実の成否をこの絵から判定しません。",
           "scopeLevels": [
             "2"
           ],
@@ -2914,6 +3032,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w30",
       "week": 30,
       "lessonIds": [
         "agr-fruit-detail-ph-columns",
@@ -2922,14 +3041,54 @@
       ],
       "recognitionIds": [],
       "controlled": {
-        "agr-fruit-detail-ph-columns": "ph-axis",
-        "agr-fruit-detail-ph-groups-2": "ph-axis",
-        "agr-fruit-detail-harvest-calendar": "harvest-calendar"
+        "agr-fruit-detail-ph-columns": {
+          "kind": "ph-axis",
+          "titleJa": "pHの位置と尺度の区別",
+          "captionJa": "pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "altJa": "pHの位置と尺度の区別。pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "lessonSourceHash": "614ec51ed0c201c1c89549c8abb19b29bac4fd9cb046c27b1dd15271eded19f6",
+          "keyObjectiveId": "AGR-K-FRUIT-DETAIL-PH-COLUMNS-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ph-axis.png",
+          "assetSha256": "0ffe14d183ca0ffcf5e011976bfa02e5ffae54b985aac00e6de5dae8953fcf4a",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-fruit-detail-ph-groups-2": {
+          "kind": "ph-axis",
+          "titleJa": "pHの位置と尺度の区別",
+          "captionJa": "pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "altJa": "pHの位置と尺度の区別。pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "lessonSourceHash": "3343d9794db31af68c0431fb27640f6caeb569788fac1952c959f9603fbcfe34",
+          "keyObjectiveId": "AGR-K-FRUIT-DETAIL-PH-GROUPS-2-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ph-axis.png",
+          "assetSha256": "0ffe14d183ca0ffcf5e011976bfa02e5ffae54b985aac00e6de5dae8953fcf4a",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-fruit-detail-harvest-calendar": {
+          "kind": "harvest-calendar",
+          "titleJa": "果樹六品目の資料上の収穫期",
+          "captionJa": "各月を上・中・下旬の三区分にした比較です。本文の開始・終了の幅を対応させます。地域、品種、個々の果実の熟度を問わない実施日や作業指示には使いません。",
+          "altJa": "果樹六品目の資料上の収穫期。各月を上・中・下旬の三区分にした比較です。本文の開始・終了の幅を対応させます。地域、品種、個々の果実の熟度を問わない実施日や作業指示には使いません。",
+          "lessonSourceHash": "709a602863ab682a77369ab19e34a30020dd16edab7312cd93c643d254bae51b",
+          "keyObjectiveId": "AGR-K-FRUIT-DETAIL-HARVEST-CALENDAR-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/harvest-calendar.png",
+          "assetSha256": "e4b2010803635e1416b739170ba3ca5675b679c5a1ffedc0590209184d16db2a",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w31",
       "week": 31,
       "lessonIds": [
         "agr-flower-details-table-examples",
@@ -2938,8 +3097,34 @@
       ],
       "recognitionIds": [],
       "controlled": {
-        "agr-flower-details-economic-rows": "cost-labour",
-        "agr-flower-details-seasonal-examples": "flower-use"
+        "agr-flower-details-economic-rows": {
+          "kind": "cost-labour",
+          "titleJa": "種苗費と必要労力を別々に見る",
+          "captionJa": "本文の一・二年草と球根類を比較します。種苗費が安いことと労力が少ないことは一致しません。棒は高低分類の模式表現で、具体的な円や作業時間の数値ではありません。",
+          "altJa": "種苗費と必要労力を別々に見る。本文の一・二年草と球根類を比較します。種苗費が安いことと労力が少ないことは一致しません。棒は高低分類の模式表現で、具体的な円や作業時間の数値ではありません。",
+          "lessonSourceHash": "1ad06032a2e0ac9686f7ff5de53a676dac99432bf23ca15315a46ba8d02b63cd",
+          "keyObjectiveId": "AGR-K-FLOWER-DETAILS-ECONOMIC-ROWS-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/cost-labour.png",
+          "assetSha256": "31acd3e3ad79ef497f27fdade228e575382452977a018f4b4ca3e7f0828f5433",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-flower-details-seasonal-examples": {
+          "kind": "flower-use",
+          "titleJa": "鉢・切り花・花壇の利用形態を分ける",
+          "captionJa": "同じ花きでも、鉢での利用、茎を切る利用、地面に植える利用を分けて見ます。図は特定品種を識別する写真ではなく、地域共通の植付け時期を示すものでもありません。",
+          "altJa": "鉢・切り花・花壇の利用形態を分ける。同じ花きでも、鉢での利用、茎を切る利用、地面に植える利用を分けて見ます。図は特定品種を識別する写真ではなく、地域共通の植付け時期を示すものでもありません。",
+          "lessonSourceHash": "bc6762412b7cbbdb735d076a9643ab107a048736957708825c81dd4e4ac52e53",
+          "keyObjectiveId": "AGR-K-FLOWER-DETAILS-SEASONAL-EXAMPLES-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/flower-use.png",
+          "assetSha256": "2ba6a4aa9e0f6d9b20c7f39c730296e861715394cb8463f470775fdf185f83d5",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-flower-details-table-examples": {
@@ -2958,6 +3143,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w32",
       "week": 32,
       "lessonIds": [
         "agr-par11-general-gas-transport",
@@ -2967,12 +3153,26 @@
         "agr-f40-general-cropping-example-flow"
       ],
       "controlled": {
-        "agr-par11-general-gas-transport": "plant-flow"
+        "agr-par11-general-gas-transport": {
+          "kind": "plant-flow",
+          "titleJa": "作物と周囲の物質の移動",
+          "captionJa": "葉と根の位置を基準に、光、二酸化炭素、水、酸素と水蒸気を区別します。呼吸では酸素を取り込み二酸化炭素を出すため、図の光合成の向きを全ての時間帯の純収支とみなさず、本文と対比してください。",
+          "altJa": "作物と周囲の物質の移動。葉と根の位置を基準に、光、二酸化炭素、水、酸素と水蒸気を区別します。呼吸では酸素を取り込み二酸化炭素を出すため、図の光合成の向きを全ての時間帯の純収支とみなさず、本文と対比してください。",
+          "lessonSourceHash": "3caa13e28376f5277640bbc548da7f0ea0e69193772553d2b7c563185e3a3259",
+          "keyObjectiveId": "AGR-K-PAR11-GENERAL-01-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/plant-flow.png",
+          "assetSha256": "549d4245c962e06a6bd5d8ad148cb9936142d88be66aba55beea0cfe2fced48f",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w33",
       "week": 33,
       "lessonIds": [
         "agr-par11-soil-clay-percentage",
@@ -2982,12 +3182,26 @@
         "agr-recognition-soil-handtest-states-v1"
       ],
       "controlled": {
-        "agr-par11-soil-clay-percentage": "soil-fraction"
+        "agr-par11-soil-clay-percentage": {
+          "kind": "soil-fraction",
+          "titleJa": "粒の区分と割合の分母",
+          "captionJa": "粒径の区分と、それぞれが土全体に占める重量比を区別する模式図です。粒の絵の個数や面積を土性判定の質量百分率へ読み替えないでください。",
+          "altJa": "粒の区分と割合の分母。粒径の区分と、それぞれが土全体に占める重量比を区別する模式図です。粒の絵の個数や面積を土性判定の質量百分率へ読み替えないでください。",
+          "lessonSourceHash": "a793f9cb98610805f1c6582c59ed7a63ce98fbce4a2d3bd1f1fba8a6dfae9501",
+          "keyObjectiveId": "AGR-K-PAR11-SOIL-CLAY-PERCENTAGE-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/soil-fraction.png",
+          "assetSha256": "7852e844c302b7e5319096769a0c339be13821cdc15250bc28ef781aa0719a12",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w34",
       "week": 34,
       "lessonIds": [
         "agr-par11-management-film-effects",
@@ -3002,7 +3216,7 @@
           "assetSha256": "ee2244ca19628891d1f6d96e813ec3a54d8382da9f47dc227d554ba9d7881745",
           "keyObjectiveId": "AGR-K-PAR11-MANAGEMENT-FILM-EFFECTS-01",
           "objectiveJa": "マルチ用フィルムの地温・雑草・反射への働きと、穴の有無による雨水の通り方を区別できる。",
-          "reuseReasonJa": "「フィルムの色・構造と働きを読む」で扱う対象を、既存の「稲わらマルチとフィルムマルチの写真を識別する。」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+          "reuseReasonJa": "稲わらとフィルムが土の表面を覆う位置と、フィルムの植え付け穴を限定して観察します。色別の効果、雨水の通り方や必要な水量はこの外観だけで判断せず、本課の比較条件と本文で確認します。",
           "scopeLevels": [
             "1",
             "2"
@@ -3012,7 +3226,7 @@
         "agr-par11-management-physical-controls": {
           "lessonSourceHash": "d4216574eb733d27074e17c24b982bcc7bdc96eaa0e2e47fc7ab3d2c66c5100a",
           "figureId": "agr-f40-facility-support-greenhouse-insect-light-appearance",
-          "assetSha256": "7bd4e90749ec4c1793ab384f9a9a71e37e271dd95e49a1440012d56c3209b1ad",
+          "assetSha256": "30ae09414e1d0955c319ec31f02f7d47ee7e7bc8763a5c2d58a06029ddbe6560",
           "keyObjectiveId": "AGR-K-PAR11-MANAGEMENT-PHYSICAL-CONTROLS-01",
           "objectiveJa": "2号資料の物理的防除の具体例について、反射・照明・誘引捕殺・熱・周辺植栽の働きと対象を区別できる。",
           "reuseReasonJa": "本文の対象を「施設内の防虫照明の管状外観例」で観察し、作業・利用の違いを説明します。図は本文にない条件を追加するものではありません。",
@@ -3025,6 +3239,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w35",
       "week": 35,
       "lessonIds": [
         "agr-par11-riceveg-feed-details",
@@ -3063,6 +3278,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w36",
       "week": 36,
       "lessonIds": [
         "agr-par11-flower-surface-methods",
@@ -3089,6 +3305,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w37",
       "week": 37,
       "lessonIds": [
         "agr-par12-general-rice-classification-detail",
@@ -3103,7 +3320,7 @@
         "agr-par12-general-direct-seeding-comparison": {
           "lessonSourceHash": "f0378c92f79b2e9517c88db278e22e92169a907418ac51074212c5d5fce5e047",
           "figureId": "agr-f40-general-seeder",
-          "assetSha256": "1c8fb4dad108a9965420a8502882f34275f6fc3de58d05a38a73e996001f58d5",
+          "assetSha256": "640b78fa08723f713d308ec9b30b66299469ce46ac95b439e9904a771aa5c4e3",
           "keyObjectiveId": "AGR-K-PAR12-GENERAL-02-01",
           "objectiveJa": "2号資料の直播の広がり、規模拡大への利点、気候・品種・鳥害の短所と、機械化全体の労働時間例を区別できる。",
           "reuseReasonJa": "本文の対象を「手押し播種機の外観例」で観察し、作業・利用の違いを説明します。図は本文にない条件を追加するものではありません。",
@@ -3116,6 +3333,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w38",
       "week": 38,
       "lessonIds": [
         "agr-par12-soil-nutrient-details",
@@ -3152,6 +3370,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w39",
       "week": 39,
       "lessonIds": [
         "agr-par12-management-machine-mechanisms",
@@ -3170,10 +3389,10 @@
         "agr-par12-management-power-fuel-information": {
           "lessonSourceHash": "a62c6fcff29e0c7d912d9fd47a112c9924206a2244522cad896f387ae8ead4e6",
           "figureId": "agr-f40-safety-media-fuel-source-mapping",
-          "assetSha256": "80d4560882b7e73524a112cfc24d337bcfc2762a30a673ad53206c96817a34ac",
+          "assetSha256": "b108383e6c5aa937291b8782a8ea2a7ccf4e79ca180996e466b118480655126a",
           "keyObjectiveId": "AGR-K-PAR12-MANAGEMENT-POWER-FUEL-INFORMATION-01",
           "objectiveJa": "DC・ACと単相・三相の分類、差込み部の異物リスク、不明な燃料と長期保管燃料に関する資料の注意を区別できる。",
-          "reuseReasonJa": "「電源の分類と燃料の確認を分ける」で扱う対象を、既存の「ガソリンと管理機・移植機の表の対応を実機の燃料選択と分ける。」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+          "reuseReasonJa": "燃料について資料に掲載された名称と機械の対応例を補足して読みます。この表は、電源の分類、不明な燃料の識別、燃料の長期保管の判断を示しません。実機の指定燃料は表示・取扱説明書で別に確認します。",
           "scopeLevels": [
             "2"
           ],
@@ -3183,6 +3402,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w40",
       "week": 40,
       "lessonIds": [
         "agr-par12-riceveg-legume-uses",
@@ -3192,23 +3412,11 @@
         "agr-fig-f40-agri-use-states-atlas-v1"
       ],
       "controlled": {},
-      "dailyBindings": {
-        "agr-par12-riceveg-grain-purpose": {
-          "lessonSourceHash": "0bd961ad8ee7fa5929adc1215bac60c5949509f0aa6c7f67ed9edf3c94154e1f",
-          "figureId": "agr-fig-f40-rice-feed-parts-v1",
-          "assetSha256": "588c848be6657481298918b32aadc0a3d705b7432c57b235f90f6bfb79489c57",
-          "keyObjectiveId": "AGR-K-PAR12-RICEVEG-GRAIN-PURPOSE-01",
-          "objectiveJa": "麦類の食用・飼料利用、スイートコーンとデントコーン、専用品種とF1の違い、クリーニングクロップの掲載条件を説明できる。",
-          "reuseReasonJa": "「麦類とトウモロコシを用途で読み分ける」で扱う対象を、既存の「飼料用米と稲WCSの利用範囲」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
-          "scopeLevels": [
-            "2"
-          ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
-        }
-      }
+      "dailyBindings": {}
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w41",
       "week": 41,
       "lessonIds": [
         "agr-par12-facility-ventilation-conditions-2",
@@ -3228,23 +3436,12 @@
             "2"
           ],
           "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
-        },
-        "agr-par12-facility-strawberry-development-2": {
-          "lessonSourceHash": "c9c89be8b13203ccb01dd3f065246e4331e64cde15892438680c6b1c51c1e242",
-          "figureId": "agr-f40-facility-support-greenhouse-crops",
-          "assetSha256": "f130d6892992ef53352acc31b4753620cceac04a09ebb2d365e38525f057ac4c",
-          "keyObjectiveId": "AGR-K-PAR12-FACILITY-STRAWBERRY-DEVELOPMENT-2-01",
-          "objectiveJa": "ランナー発生の二条件、自然条件での花芽分化と翌年の開花、分化促進の条件と掲載育苗名を区別できる。",
-          "reuseReasonJa": "本文の対象を「施設果菜と高設イチゴの外観」で観察し、作業・利用の違いを説明します。図は本文にない条件を追加するものではありません。",
-          "scopeLevels": [
-            "2"
-          ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
         }
       }
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w42",
       "week": 42,
       "lessonIds": [
         "agr-par12-flower-cultivar-area",
@@ -3252,7 +3449,20 @@
       ],
       "recognitionIds": [],
       "controlled": {
-        "agr-par12-flower-cultivar-area": "cultivar-2017"
+        "agr-par12-flower-cultivar-area": {
+          "kind": "cultivar-2017",
+          "titleJa": "2017年の各樹種内の品種割合",
+          "captionJa": "本文の各樹種から一つずつ品種を選んだ比較です。年と栽培面積の指標を保ち、同じ17％でも別樹種では実面積が同じとは言えません。未掲載部分を一品種と扱いません。",
+          "altJa": "2017年の各樹種内の品種割合。本文の各樹種から一つずつ品種を選んだ比較です。年と栽培面積の指標を保ち、同じ17％でも別樹種では実面積が同じとは言えません。未掲載部分を一品種と扱いません。",
+          "lessonSourceHash": "2ad9ae9529650e67b8993518b5cf9822631ddfbb69ec7bc64bed3b0c4feaa9eb",
+          "keyObjectiveId": "AGR-K-PAR12-FLOWER-CULTIVAR-AREA-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/cultivar-2017.png",
+          "assetSha256": "c3391d69dc9ce1f7f79edb0a8ccf4886c95b6d3e92d4a363b4bf0863f93c5ec6",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-par12-flower-group-records": {
@@ -3271,6 +3481,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w43",
       "week": 43,
       "lessonIds": [
         "agr-par22-fertilizer",
@@ -3310,10 +3521,10 @@
         "agr-par22-weeds": {
           "lessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b",
           "figureId": "agr-f40-safety-media-nozzle-source-examples",
-          "assetSha256": "8698067a512bb8774d2bf72cfbe92cd155c324f38ef951da5b0377af92ba132b",
+          "assetSha256": "bb4ac9f6bca6a9349a353597f5a8fc926ab71f3f800635fe682b1e5a73266cd0",
           "keyObjectiveId": "AGR-K-PAR22-WEEDS-01",
           "objectiveJa": "影響する植物、成分の吸収・作用経路、器材を分ける目的を区別して説明できる。",
-          "reuseReasonJa": "「除草剤の二つの分類と器材の区分」で扱う対象を、既存の「除草剤用と殺菌剤用ノズルの二写真を識別する。」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+          "reuseReasonJa": "「除草剤の二つの分類と器材の区分」の器材の用途を分ける説明に対し、資料で除草剤散布用・殺虫剤散布用として示された二つのノズル外形例を限定して見比べます。外形だけで製品の適合や散布条件を決めず、薬剤の分類・吸収経路・飛散防止の効果をこの図だけで判断しません。",
           "scopeLevels": [
             "2"
           ],
@@ -3334,7 +3545,7 @@
         "agr-par22-facility": {
           "lessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d",
           "figureId": "agr-f40-facility-support-greenhouse-crops",
-          "assetSha256": "f130d6892992ef53352acc31b4753620cceac04a09ebb2d365e38525f057ac4c",
+          "assetSha256": "6a1e4abbbc313b2eb47228dbdc527da1610829df42eb0af9b376708342d9d359",
           "keyObjectiveId": "AGR-K-PAR22-FACILITY-01",
           "objectiveJa": "施設トマトとイチゴの生産量・主産地・生育を、資料の年と指標を保って整理できる。",
           "reuseReasonJa": "「施設トマト・イチゴの生産を指標と地域で読む」で扱う対象を、既存の「施設果菜と高設イチゴの外観」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
@@ -3359,6 +3570,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w44",
       "week": 44,
       "lessonIds": [
         "agr-s27-climate-detail",
@@ -3370,10 +3582,62 @@
       ],
       "recognitionIds": [],
       "controlled": {
-        "agr-s27-climate-detail": "winter-climate",
-        "agr-s27-production-2019": "statistics-2019",
-        "agr-s27-self-supply-2019": "self-supply-2019",
-        "agr-s27-rice-history": "rice-consumption"
+        "agr-s27-climate-detail": {
+          "kind": "winter-climate",
+          "titleJa": "冬の日本海側・太平洋側の違い",
+          "captionJa": "海・山地・風の位置を模式断面で見る地域差の図です。日本海側の雪と太平洋側の乾燥晴天という傾向を区別し、個別圃場の予報には使いません。",
+          "altJa": "冬の日本海側・太平洋側の違い。海・山地・風の位置を模式断面で見る地域差の図です。日本海側の雪と太平洋側の乾燥晴天という傾向を区別し、個別圃場の予報には使いません。",
+          "lessonSourceHash": "8eecdce7ab2af3d0f70886fc9b140e4819ed50299dd1e2c41b098b175d46ac1e",
+          "keyObjectiveId": "AGR-K-S27-CLIMATE-DETAIL-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/winter-climate.png",
+          "assetSha256": "cee9ba0cf4d20ff0ce58dd0e11c409a1c7f8fa8323e97b726fc68a06217cf7ef",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-s27-production-2019": {
+          "kind": "statistics-2019",
+          "titleJa": "2019年の産出額の構成",
+          "captionJa": "本文にある野菜24％・米20％・果実9％・花き4％を同じ分母で積み上げました。その他43％は100から四項目の計57を引いた教材上のまとめです。面積や重量の割合とは別です。",
+          "altJa": "2019年の産出額の構成。本文にある野菜24％・米20％・果実9％・花き4％を同じ分母で積み上げました。その他43％は100から四項目の計57を引いた教材上のまとめです。面積や重量の割合とは別です。",
+          "lessonSourceHash": "54f5e02d540f6851bd0d804971bbfa6ca5562a1aab41f8684fbe06998fb82873",
+          "keyObjectiveId": "AGR-K-S27-PRODUCTION-2019-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/statistics-2019.png",
+          "assetSha256": "d8e5f753bb339e63dcfc29d1840dd85bc79b519f6cb1ee3c2fe195e3acdc003c",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-s27-self-supply-2019": {
+          "kind": "self-supply-2019",
+          "titleJa": "2019年の重量ベース品目別自給率",
+          "captionJa": "本文の米97％、小麦16％、大豆6％、野菜79％、果実38％を同じ指標で図示します。農業産出額の割合や、資料のカロリーベースの説明とは混同しません。現在値の表示ではありません。",
+          "altJa": "2019年の重量ベース品目別自給率。本文の米97％、小麦16％、大豆6％、野菜79％、果実38％を同じ指標で図示します。農業産出額の割合や、資料のカロリーベースの説明とは混同しません。現在値の表示ではありません。",
+          "lessonSourceHash": "9595b583284150c2ea196193849b030fe3874547e417285db50acc8a8de07d54",
+          "keyObjectiveId": "AGR-K-S27-SELF-SUPPLY-2019-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/self-supply-2019.png",
+          "assetSha256": "a316d7c8d6d8953f7e40edbdf44727739e07d1c1db71196615ebaeb9702a4f40",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-s27-rice-history": {
+          "kind": "rice-consumption",
+          "titleJa": "年度と一人当たり年間量を組にする",
+          "captionJa": "本文が示す1962年度の約118kgと2021年度の約50.8kgを比較します。棒の高さはkgに比例させています。国全体の消費量や将来の予測ではありません。",
+          "altJa": "年度と一人当たり年間量を組にする。本文が示す1962年度の約118kgと2021年度の約50.8kgを比較します。棒の高さはkgに比例させています。国全体の消費量や将来の予測ではありません。",
+          "lessonSourceHash": "0cfeb96756148929631e170904144d8977f4471d95404bdeac220b652f3f7919",
+          "keyObjectiveId": "AGR-K-S27-RICE-HISTORY-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/rice-consumption.png",
+          "assetSha256": "bd5303830813df3ca40a1dc9b982cb801c1ba0850ad0c83a5125f32ee8cf4871",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-s27-vegetable-origins": {
@@ -3391,10 +3655,10 @@
         "agr-s27-fruit-components": {
           "lessonSourceHash": "1a1f5a3be41280194c21912cafb14e52ecf50eb0c5f5658af5f08a9aef141397",
           "figureId": "agr-f40-fruit-nursery-species-leaf-examples",
-          "assetSha256": "b38bcd2da00028abe2582aad6d4c33af677414be52aa51dffdf64fac22e732cb",
+          "assetSha256": "4327dcf04c0e72b0230c7b0f53a5564708dab64ac16734e48aa0b56bc768dcb9",
           "keyObjectiveId": "AGR-K-S27-FRUIT-COMPONENTS-01",
           "objectiveJa": "資料の果樹の産出額と例示、果実の成分、技術紹介の範囲を区別して説明できる。",
-          "reuseReasonJa": "「果樹の金額・成分例・技術紹介を整理する」で扱う対象を、既存の「カンキツ・カキ・ブドウの苗の例」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+          "reuseReasonJa": "第1段落の掲載名のうち、カキとブドウの対象名を確認する文脈図に限定します。カンキツ類の例をウンシュウミカンと同一視しません。産出額・成分量・機能性・栽培技術、根の発達や苗木の健全性をこの葉の図から判定しません。",
           "scopeLevels": [
             "2"
           ],
@@ -3404,6 +3668,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w45",
       "week": 45,
       "lessonIds": [
         "agr-s30-plant-detail",
@@ -3413,9 +3678,7 @@
         "agr-s30-fruit-detail",
         "agr-s30-label-detail"
       ],
-      "recognitionIds": [
-        "agr-fig-f40-vegetable-seeds-atlas-v1"
-      ],
+      "recognitionIds": [],
       "controlled": {},
       "dailyBindings": {
         "agr-s30-plant-detail": {
@@ -3445,7 +3708,7 @@
         "agr-s30-rice-detail": {
           "lessonSourceHash": "3b16d2d3cf5760c328317ea7459bbc4d0ffd45b0dd26a2bdace559555d3ba52d",
           "figureId": "agr-f40-general-seeder",
-          "assetSha256": "1c8fb4dad108a9965420a8502882f34275f6fc3de58d05a38a73e996001f58d5",
+          "assetSha256": "640b78fa08723f713d308ec9b30b66299469ce46ac95b439e9904a771aa5c4e3",
           "keyObjectiveId": "AGR-K-S30-RICE-DETAIL-01",
           "objectiveJa": "水田雑草の対策例、収穫後耕うんの対象、機械共用と費用項目を、資料の条件を残して説明できる。",
           "reuseReasonJa": "本文の対象を「手押し播種機の外観例」で観察し、作業・利用の違いを説明します。図は本文にない条件を追加するものではありません。",
@@ -3457,7 +3720,7 @@
         "agr-s30-facility-flower": {
           "lessonSourceHash": "b409903dd63d6d95488d59d0ffbdb7b15dccdf1b49d88970620dfbb72059b6ae",
           "figureId": "agr-f40-facility-support-greenhouse-flowers-a",
-          "assetSha256": "b7ac4d1d346ea9100d3c1a2be80f0633e1acb096c4155168945a147a32b7300b",
+          "assetSha256": "451d6358351fa222c95b583adcd99b017280bbeb9170d7bd4e30a759e37267c5",
           "keyObjectiveId": "AGR-K-S30-FACILITY-FLOWER-01",
           "objectiveJa": "キクとバラの掲載分類、ユリの球根処理の方向、カーネーションの繁殖方法を、資料の範囲を保って説明できる。",
           "reuseReasonJa": "「施設花きの系統・培地・球根処理を読み分ける」で扱う対象を、既存の「キク・バラ・ユリの施設栽培の外観」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
@@ -3469,22 +3732,10 @@
         "agr-s30-fruit-detail": {
           "lessonSourceHash": "9b18d8ba1b9ca7ad07a062ebd4c691730c1f2f655c275177d2fb0158a8072c03",
           "figureId": "agr-f40-pear-thinning-shape-examples",
-          "assetSha256": "6450f3516607ba944bfed6851aa07c3330f6fdc5ce2b5e0543b6c2d41e002b6e",
+          "assetSha256": "d780ac7e5e9ab1fe9b5d7e59d0e04fcfdb8841c13ad83a3038c5016662b61bc5",
           "keyObjectiveId": "AGR-K-S30-FRUIT-DETAIL-01",
           "objectiveJa": "摘果の状態・位置の条件を追加し、気象の種類と果樹別の地域例を混同せずに整理できる。",
-          "reuseReasonJa": "「摘果の追加条件と果樹園の気象・地域を読む」で扱う対象を、既存の「ナシの形と資料内の残す・取るを照合する」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
-          "scopeLevels": [
-            "2"
-          ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
-        },
-        "agr-s30-label-detail": {
-          "lessonSourceHash": "35bebe0a326407694eb32bd03f9dd5e7cbaa8b889422a684947f61aef2a8d4fa",
-          "figureId": "agr-f40-safety-media-pesticide-source-conditions",
-          "assetSha256": "a80131732eb5b0a0e0e67ee9536562635250b1719968c2eb3343d330dc288e29",
-          "keyObjectiveId": "AGR-K-S30-LABEL-DETAIL-01",
-          "objectiveJa": "2号資料のラベル表で、用途と名称、成分名と含有量、製造場所、期限と購入量、作物名の例、二種類の量の欄を混同せず説明できる。",
-          "reuseReasonJa": "「農薬ラベルの名称・成分・数量欄を分けて読む」で扱う対象を、既存の「風を背にして後ろ向きに進む図の例を全足場・機械の歩行指示へしない。」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+          "reuseReasonJa": "幼果の形の違いを観察する例として使います。資料の変形などの状態の比較に限定し、発育の遅れ、袋かけしにくい位置、残す数や摘果日をこの図だけでは決めません。",
           "scopeLevels": [
             "2"
           ],
@@ -3494,6 +3745,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w46",
       "week": 46,
       "lessonIds": [
         "agr-s34-disease-spread-prevention"
@@ -3517,6 +3769,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w47",
       "week": 47,
       "lessonIds": [
         "agr-s36-fruit-environment-layering"
@@ -3529,6 +3782,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w48",
       "week": 48,
       "lessonIds": [
         "agr-s37-rice-observation-detail"
@@ -3541,6 +3795,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w49",
       "week": 49,
       "lessonIds": [
         "agr-s38-plant-classification-seedling-signs",
@@ -3554,7 +3809,20 @@
         "agr-f40-facility-support-tomato-blossom-end-appearance"
       ],
       "controlled": {
-        "agr-s38-flower-additional-examples": "flower-use"
+        "agr-s38-flower-additional-examples": {
+          "kind": "flower-use",
+          "titleJa": "鉢・切り花・花壇の利用形態を分ける",
+          "captionJa": "同じ花きでも、鉢での利用、茎を切る利用、地面に植える利用を分けて見ます。図は特定品種を識別する写真ではなく、地域共通の植付け時期を示すものでもありません。",
+          "altJa": "鉢・切り花・花壇の利用形態を分ける。同じ花きでも、鉢での利用、茎を切る利用、地面に植える利用を分けて見ます。図は特定品種を識別する写真ではなく、地域共通の植付け時期を示すものでもありません。",
+          "lessonSourceHash": "2cae652262e33d751aae86d0b8b0a4d3d9c3019e49f3a156d0a1a8a618ada88e",
+          "keyObjectiveId": "AGR-K-S38-FLOWER-EXAMPLES-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/flower-use.png",
+          "assetSha256": "2ba6a4aa9e0f6d9b20c7f39c730296e861715394cb8463f470775fdf185f83d5",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-s38-soil-condition-drainage": {
@@ -3572,10 +3840,10 @@
         "agr-s38-safety-reading-supplement": {
           "lessonSourceHash": "ec2e2b0d547bc79ab15fcc7b1a407f2e73f8342b3c1de5ad71dd39a02b235193",
           "figureId": "agr-f40-safety-media-fuel-source-mapping",
-          "assetSha256": "80d4560882b7e73524a112cfc24d337bcfc2762a30a673ad53206c96817a34ac",
+          "assetSha256": "b108383e6c5aa937291b8782a8ea2a7ccf4e79ca180996e466b118480655126a",
           "keyObjectiveId": "AGR-K-S38-SAFETY-READING-01",
           "objectiveJa": "資料の農薬分類の追加項目と、散布後・電源・燃料保管の注意を区別し、既習内容にない補足と現場で別に確認する事項を説明できる。",
-          "reuseReasonJa": "「農薬の分類と電源・燃料の注意を補って読む」で扱う対象を、既存の「ガソリンと管理機・移植機の表の対応を実機の燃料選択と分ける。」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+          "reuseReasonJa": "燃料について資料に掲載された名称と機械の対応例を補足して読みます。この表は、電源の分類、不明な燃料の識別、燃料の長期保管の判断を示しません。実機の指定燃料は表示・取扱説明書で別に確認します。",
           "scopeLevels": [
             "2"
           ],
@@ -3609,6 +3877,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w50",
       "week": 50,
       "lessonIds": [
         "agr-f40-general-history-flower-records",
@@ -3623,8 +3892,34 @@
         "agr-v9-nursery-crop-groups"
       ],
       "controlled": {
-        "agr-f40-general-qualified-variety-share": "ratio-scopes",
-        "agr-f40-general-historical-statistic-scopes": "ratio-scopes"
+        "agr-f40-general-qualified-variety-share": {
+          "kind": "ratio-scopes",
+          "titleJa": "全体・対象・内訳を分けて記録",
+          "captionJa": "入れ子の円は、割合の分母と対象の関係だけを示す模式図です。円の面積から本文の割合や品種面積を読まず、出典の年がない記述や指標の違いを別々に記録します。",
+          "altJa": "全体・対象・内訳を分けて記録。入れ子の円は、割合の分母と対象の関係だけを示す模式図です。円の面積から本文の割合や品種面積を読まず、出典の年がない記述や指標の違いを別々に記録します。",
+          "lessonSourceHash": "4e8eb92937c3f3a8dcb0a66017e5e2ea17a5414bdfaf9f61a83013262f2fdd53",
+          "keyObjectiveId": "AGR-K-F40-GENERAL-EXTRA-QUALIFIED-VARIETY-SHARE-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ratio-scopes.png",
+          "assetSha256": "77d96df2bc3acd276681625949ca6dc09087b96d67f4486d8f3da2fa3a3cc018",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-f40-general-historical-statistic-scopes": {
+          "kind": "ratio-scopes",
+          "titleJa": "割合の全体・内訳・年をそろえる",
+          "captionJa": "全体とその内訳の関係を、数値の比率を指定しない入れ子の円で示します。図から割合を読み取らず、本文の年・金額・分母と、元図で確認できない値を区別して記録します。",
+          "altJa": "割合の全体・内訳・年をそろえる。全体とその内訳の関係を、数値の比率を指定しない入れ子の円で示します。図から割合を読み取らず、本文の年・金額・分母と、元図で確認できない値を区別して記録します。",
+          "lessonSourceHash": "b70413a0c0c155e97b51a12455a52fd14c89d95ce72527423306d3ec7be693de",
+          "keyObjectiveId": "AGR-K-F40-GENERAL-EXTRA-HISTORICAL-STATISTIC-SCOPES-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ratio-scopes.png",
+          "assetSha256": "77d96df2bc3acd276681625949ca6dc09087b96d67f4486d8f3da2fa3a3cc018",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-f40-general-transplant-alias": {
@@ -3643,6 +3938,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w51",
       "week": 51,
       "lessonIds": [
         "agr-f40-safety-cultivation-details"
@@ -3652,20 +3948,21 @@
       "dailyBindings": {
         "agr-f40-safety-cultivation-details": {
           "lessonSourceHash": "8e8bc062af9fc3856822823f0319349b0ac9dfbe62a0dbf70c145141cb87449a",
-          "figureId": "agr-f40-general-thinning-comparison",
-          "assetSha256": "3f7c2f541262d6787672f65012371877e52ab55c8506dd04376ba96af9a7e931",
+          "figureId": "agr-f40-safety-media-management-positions",
+          "assetSha256": "265a5eb3a24a582ec0fb3c3863ff1c65400b344ff184ebb7bd470afa61393e3b",
           "keyObjectiveId": "AGR-K-F40-SAFETY-CULTIVATION-01",
-          "objectiveJa": "枝葉管理、受粉、収穫後の生理、被覆資材の対象と働きを区別し、資料の例と現場で別に確認する条件を説明できる。",
-          "reuseReasonJa": "本文の対象を「間引きで比べる苗の状態」で観察し、作業・利用の違いを説明します。図は本文にない条件を追加するものではありません。",
+          "objectiveJa": "摘心後の芽と摘葉の対象を部位から確認する。",
+          "reuseReasonJa": "本課の第1・第2段落にある摘心後の葉腋の芽と摘葉の対象だけを、部位の外観に対応させます。剪定・人工授粉・収穫・貯蔵・被覆・マルチの方法をこの図から読み取りません。",
           "scopeLevels": [
             "2"
           ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
+          "scopeReasonJa": "2号の本課の第1・第2段落の部位観察に限定し、作業位置・量・時期の処方へ広げません。"
         }
       }
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w52",
       "week": 52,
       "lessonIds": [
         "agr-f40-rice-calendar",
@@ -3711,6 +4008,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w53",
       "week": 53,
       "lessonIds": [
         "agr-f40-facility-fruit-observation",
@@ -3725,7 +4023,20 @@
         "agr-f40-facility-support-greenhouse-insect-light-appearance"
       ],
       "controlled": {
-        "agr-f40-fgs-flower-source-period": "ratio-scopes"
+        "agr-f40-fgs-flower-source-period": {
+          "kind": "ratio-scopes",
+          "titleJa": "全体・対象・内訳を分けて記録",
+          "captionJa": "入れ子の円は、割合の分母と対象の関係だけを示す模式図です。円の面積から本文の割合や品種面積を読まず、出典の年がない記述や指標の違いを別々に記録します。",
+          "altJa": "全体・対象・内訳を分けて記録。入れ子の円は、割合の分母と対象の関係だけを示す模式図です。円の面積から本文の割合や品種面積を読まず、出典の年がない記述や指標の違いを別々に記録します。",
+          "lessonSourceHash": "ef57d43c3d158de34958c933d60a396949060da68bff20e1b9b621775805b075",
+          "keyObjectiveId": "AGR-K-F40-FGS-FLOWER-SOURCE-PERIOD-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ratio-scopes.png",
+          "assetSha256": "77d96df2bc3acd276681625949ca6dc09087b96d67f4486d8f3da2fa3a3cc018",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-f40-facility-fruit-observation": {
@@ -3768,7 +4079,7 @@
         "agr-f40-fgs-flower-source-examples": {
           "lessonSourceHash": "1503ce09e1ac95a8bbdb79b790d541991178bbaea75c8aa6994a269622a04fe7",
           "figureId": "agr-f40-facility-support-greenhouse-flowers-a",
-          "assetSha256": "b7ac4d1d346ea9100d3c1a2be80f0633e1acb096c4155168945a147a32b7300b",
+          "assetSha256": "451d6358351fa222c95b583adcd99b017280bbeb9170d7bd4e30a759e37267c5",
           "keyObjectiveId": "AGR-K-F40-FGS-FLOWER-SOURCE-EXAMPLES-01",
           "objectiveJa": "出荷形態、原産地と改良地、花型を異なる軸として整理する。",
           "reuseReasonJa": "「2号の鉢花・ユリ・カーネーションの例」で扱う対象を、既存の「キク・バラ・ユリの施設栽培の外観」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
@@ -3781,6 +4092,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w54",
       "week": 54,
       "lessonIds": [
         "agr-f40-flower-examples",
@@ -3792,9 +4104,48 @@
       ],
       "recognitionIds": [],
       "controlled": {
-        "agr-f40-flower-examples": "flower-packaging",
-        "agr-f40-flower-source-scope-comparison": "ratio-scopes",
-        "agr-f40-flower-weather-source-list": "weather-damage"
+        "agr-f40-flower-examples": {
+          "kind": "flower-packaging",
+          "titleJa": "束の包装と箱詰めを区別",
+          "captionJa": "切り花の束をフィルムなどで包む工程と、出荷する容器へ詰める工程を別々に見ます。寸法、本数、包装材の仕様や温度条件は指定しません。",
+          "altJa": "束の包装と箱詰めを区別。切り花の束をフィルムなどで包む工程と、出荷する容器へ詰める工程を別々に見ます。寸法、本数、包装材の仕様や温度条件は指定しません。",
+          "lessonSourceHash": "320a5a666b7797ee59ce6060955c9328c8d64c563a233e89ecafc6e4a9527729",
+          "keyObjectiveId": "AGR-K-F40-FLOWER-EXAMPLES-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/flower-packaging.png",
+          "assetSha256": "f74b13e0ca693b880cd010e7cc9360087d16b9f5cfa99ad848f48597b06facb6",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-f40-flower-source-scope-comparison": {
+          "kind": "ratio-scopes",
+          "titleJa": "全体・対象・内訳を分けて記録",
+          "captionJa": "入れ子の円は、割合の分母と対象の関係だけを示す模式図です。円の面積から本文の割合や品種面積を読まず、出典の年がない記述や指標の違いを別々に記録します。",
+          "altJa": "全体・対象・内訳を分けて記録。入れ子の円は、割合の分母と対象の関係だけを示す模式図です。円の面積から本文の割合や品種面積を読まず、出典の年がない記述や指標の違いを別々に記録します。",
+          "lessonSourceHash": "9ccedea356ea55ba86e2a9190f072c6a37efd5771e5533a8dea9580d7aa465f6",
+          "keyObjectiveId": "AGR-K-F40-FLOWER-SOURCE-SCOPE-COMPARISON",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ratio-scopes.png",
+          "assetSha256": "77d96df2bc3acd276681625949ca6dc09087b96d67f4486d8f3da2fa3a3cc018",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-f40-flower-weather-source-list": {
+          "kind": "weather-damage",
+          "titleJa": "天候と作物の被害を分けて記録",
+          "captionJa": "晴れ・低温・風雨という天候だけで被害名を決めず、作物に確認した被害を合わせて記録します。冷害では夏の低温という条件を省きません。描いた植物は被害の診断写真ではありません。",
+          "altJa": "天候と作物の被害を分けて記録。晴れ・低温・風雨という天候だけで被害名を決めず、作物に確認した被害を合わせて記録します。冷害では夏の低温という条件を省きません。描いた植物は被害の診断写真ではありません。",
+          "lessonSourceHash": "e943d6a07b4d6f1bf4026f4a3d9c5f373b6b14f89e127d5cfd4408c4f3a0f415",
+          "keyObjectiveId": "AGR-K-F40-FLOWER-WEATHER-SOURCE-LIST",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/weather-damage.png",
+          "assetSha256": "306716a96b36695708173f74c45f0b5a5f18ee1d6ca451e3b5da20417008c1f1",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-f40-flower-terms": {
@@ -3805,19 +4156,6 @@
           "objectiveJa": "作業語が指す対象や場所の範囲を保ち、木本と草本の違いを木部と茎の性質から説明できる。",
           "reuseReasonJa": "本文の対象を「剪定の前後と太枝・細枝の切断位置」で観察し、作業・利用の違いを説明します。図は本文にない条件を追加するものではありません。",
           "scopeLevels": [
-            "2"
-          ],
-          "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
-        },
-        "agr-f40-flower-add-orchard-base": {
-          "lessonSourceHash": "267467281673a112af9cb7d852eb01124116e858c37859d8fcc580714228ba93",
-          "figureId": "agr-f40-flower-materials-v1",
-          "assetSha256": "fcd1e72c10ccb2b72c58160a28acc2965e0e3bc3cc7586d9637b792902b8d688",
-          "keyObjectiveId": "AGR-K-F40-FLOWER-ADD-ORCHARD-BASE-01",
-          "objectiveJa": "資料の酸性土壌と石灰資材の関係、果樹機械の五つの用途を、作業量や機械操作の条件とは分けて説明できる。",
-          "reuseReasonJa": "「酸性土壌の改良方向と機械の用途を読む」で扱う対象を、既存の「ネット・マルチ・反射シートの設置場所」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
-          "scopeLevels": [
-            "1",
             "2"
           ],
           "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
@@ -3838,6 +4176,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w55",
       "week": 55,
       "lessonIds": [
         "agr-fertilizer-example-names"
@@ -3862,6 +4201,7 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w56",
       "week": 56,
       "lessonIds": [
         "agr-f40-soil-common-reading",
@@ -3871,12 +4211,26 @@
         "agr-fig-rotation-two-year-examples-v1"
       ],
       "controlled": {
-        "agr-f40-soil-source-comparisons": "ph-axis"
+        "agr-f40-soil-source-comparisons": {
+          "kind": "ph-axis",
+          "titleJa": "pHの位置と尺度の区別",
+          "captionJa": "pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "altJa": "pHの位置と尺度の区別。pH7を中性として酸性側とアルカリ性側を見分けます。これはpF・ECや特定作物の適正範囲を示す図ではありません。本文の品目・資料別の範囲をこの尺度へ対応させて読みます。",
+          "lessonSourceHash": "9eb5991fe1e581f34600f6e6ba23fc764c083d44e1a45c2ad3f7a558a097fa73",
+          "keyObjectiveId": "AGR-K-F40-SOIL-COMPARE-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/ph-axis.png",
+          "assetSha256": "0ffe14d183ca0ffcf5e011976bfa02e5ffae54b985aac00e6de5dae8953fcf4a",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w57",
       "week": 57,
       "lessonIds": [
         "agr-f40-flower-table-scope",
@@ -3886,14 +4240,40 @@
       ],
       "recognitionIds": [],
       "controlled": {
-        "agr-f40-flower-terminology-corrections": "taxonomy",
-        "agr-f40-flower-sleeve-printing": "flower-packaging"
+        "agr-f40-flower-terminology-corrections": {
+          "kind": "taxonomy",
+          "titleJa": "植物の対象と分類の階級を分ける",
+          "captionJa": "左は科・属・種の包含関係です。植物の器官や外観の図だけで分類を判定せず、本文のホウレンソウ・タマネギの元ラベルと確認した分類を分けます。科・属・種の三階級を、属名と種小名の二名法そのものとはしません。",
+          "altJa": "植物の対象と分類の階級を分ける。左は科・属・種の包含関係です。植物の器官や外観の図だけで分類を判定せず、本文のホウレンソウ・タマネギの元ラベルと確認した分類を分けます。科・属・種の三階級を、属名と種小名の二名法そのものとはしません。",
+          "lessonSourceHash": "0d9a2215434d42d6b5989a95256eb4d8b8b275d851d39756d114ec54b296647a",
+          "keyObjectiveId": "AGR-K-F40-FLOWER-TERMINOLOGY-CORRECTIONS-1",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/taxonomy.png",
+          "assetSha256": "753c74bb8c848e137a3f2ec80f147815df328726ebbd2c022d3ce08306799835",
+          "width": 1160,
+          "height": 660
+        },
+        "agr-f40-flower-sleeve-printing": {
+          "kind": "flower-packaging",
+          "titleJa": "束の包装と箱詰めを区別",
+          "captionJa": "切り花の束をフィルムなどで包む工程と、出荷する容器へ詰める工程を別々に見ます。寸法、本数、包装材の仕様や温度条件は指定しません。",
+          "altJa": "束の包装と箱詰めを区別。切り花の束をフィルムなどで包む工程と、出荷する容器へ詰める工程を別々に見ます。寸法、本数、包装材の仕様や温度条件は指定しません。",
+          "lessonSourceHash": "9d4bd1d7177da0fc4f4c2ded5e3bda0104a02189ea24f01fc5dc214765ee544d",
+          "keyObjectiveId": "AGR-K-F40-FLOWER-SLEEVE-PRINTING",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/flower-packaging.png",
+          "assetSha256": "f74b13e0ca693b880cd010e7cc9360087d16b9f5cfa99ad848f48597b06facb6",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {
         "agr-f40-flower-gibberellin-source-scope": {
           "lessonSourceHash": "c0fd9df0bdaa229466a777f9c31eee0fb2fe92e39a9d5d5bb8ec8ea66ed4ff49",
           "figureId": "agr-f40-flower-cluster-dip-v1",
-          "assetSha256": "11e68479ad43cfb42f6e432f674976ae753baef2333da242a5c4f729bbdcc582",
+          "assetSha256": "6da548131812c8d2a34574d4143392b823062c3883977d00e47512576db8a65f",
           "keyObjectiveId": "AGR-K-F40-FLOWER-GIBBERELLIN-SOURCE-SCOPE-1",
           "objectiveJa": "記載事項と、出典に書かれていない条件を区別できる。",
           "reuseReasonJa": "「出典の記述と限界を読む」で扱う対象を、既存の「ブドウの房と液への浸漬という掲載動作」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
@@ -3907,18 +4287,33 @@
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w58",
       "week": 58,
       "lessonIds": [
         "agr-f40-general-variety-rights-check"
       ],
       "recognitionIds": [],
       "controlled": {
-        "agr-f40-general-variety-rights-check": "variety-rights"
+        "agr-f40-general-variety-rights-check": {
+          "kind": "variety-rights",
+          "titleJa": "種子の分類と権利・検疫の確認を分ける",
+          "captionJa": "固定種かF1かという生物学的分類だけで、増殖や海外持出しが許可されたとは判断しません。本文にある品種、利用目的、相手国、許諾と検疫条件を別々に確認します。図は法的許可書ではありません。",
+          "altJa": "種子の分類と権利・検疫の確認を分ける。固定種かF1かという生物学的分類だけで、増殖や海外持出しが許可されたとは判断しません。本文にある品種、利用目的、相手国、許諾と検疫条件を別々に確認します。図は法的許可書ではありません。",
+          "lessonSourceHash": "aaf52d9e6ed3052742cb377fbdb713d6f937fba8dc2de69bbd67010194e66bb6",
+          "keyObjectiveId": "AGR-K-F40-GENERAL-EXTRA-VARIETY-RIGHTS-CHECK-01",
+          "originalExpression": true,
+          "domainReviewed": false,
+          "assetPath": "assets/agriculture/daily-learning-20261031/variety-rights.png",
+          "assetSha256": "0a5fe5a2c7b74853cf4ab8f7c1072c9ab137bdd8ea048cb06e7c0cdcd70eb826",
+          "width": 1160,
+          "height": 660
+        }
       },
       "dailyBindings": {}
     },
     {
       "level": "2",
+      "scheduleId": "agr-2-w59",
       "week": 59,
       "lessonIds": [
         "agr-f40-fgs-structure-material-conditions",
@@ -4007,7 +4402,7 @@
     "latestSpatialCaptionReceipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-winter-spatial-locales-qa.json",
     "latestSupportedAuthoringCensus": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-supported-authoring-census-qa.json"
   },
-  "currentSupportedNextAction": "True agr-1-w09 and agr-2-w10 machine/pesticide/power safety; retain adequate source-correct illustrations andexact technical source diagrams, fix actual primitive occupational art/localization/readings defects only.",
+  "currentSupportedNextAction": "Finish actual remaining source-pinned Japanese illustration/native reader fields by coherent provider/source families, reusing current valid artwork and13locale metadata. Schedule associations are not field-completion proof.",
   "week01Checkpoint": {
     "status": "source_backed_authoring_self_checked_not_accepted",
     "scheduledLessons": 6,
@@ -4025,10 +4420,10 @@
     "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-supported-authoring-census-qa.json"
   },
   "currentOrderedQueue": [
-    "agr-1-w09 + agr-2-w10: machine andpesticide safety, power/fuel",
-    "Remaining canonical per-level scheduled entries through agr-1-w40/agr-2-w59;241unique/99entries plusindirectexam/source routes",
-    "ReachableL2w39 detailedblade/nylon/hammer mechanism gap;149recognitionreadingrecords andDaily/nativefields",
-    "External native/domain/source-photo/device/release acceptance remains open"
+    "Current source checkpoint includes source-pinned fertilizer4/drainage1 native65, following saved growth/soil65. Next actual remaining providers retain valid13locale/native source evidence and add only missing Japanese illustration readings.",
+    "Remaining actual native providers: fertilizer/drainage, management/fruit/cover, protection/safety, detailed/deep-source postharvest families; audit actual rendered fields and reuse current valid evidence rather than re-authoring weeks.",
+    "Prior5 held recognition fields now resolved by incoming source-equivalent display wording and dictionary-supported readings, independently checked;38 kana-only fields require no Japanese ruby. Burnt-in Japanese labels remain separate from outer metadata.",
+    "All99 per-level schedule associations/241 unique lessons and actual indirect practice/exam/source routes remain retained; final acceptance is separate."
   ],
   "week02Checkpoint": {
     "status": "source_backed_supported_authoring_self_checked_not_accepted",
@@ -4094,7 +4489,7 @@
     "releaseReady": false,
     "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/level2-week03-supported-authoring-census-qa.json"
   },
-  "localizedStudyMetadataRecords": 95,
+  "localizedStudyMetadataRecords": 188,
   "level2Week05Checkpoint": {
     "status": "source_backed_supported_authoring_self_checked_not_accepted",
     "scheduledEntryId": "agr-2-w05",
@@ -4198,5 +4593,51 @@
     "physicalDeviceTested": false,
     "releaseReady": false,
     "remainingImageReadings": "149recognitionrecords plusDaily/native field routes remain open"
+  },
+  "currentFieldCheckpoint": {
+    "reviewedBaseline": "eee2e0c2e4af6fa0a539e7cf72813459bd20578a",
+    "supersedesObsoleteQueueAssumptions": [
+      "week09 safety is next unfinished sequential week",
+      "late39 machine mechanisms absent",
+      "149 missing reading records"
+    ],
+    "recognitionRecords": 189,
+    "outerLocaleRegistryEntries": 188,
+    "outerNativeEquivalent": {
+      "figure": "CropCalendar",
+      "count": 1,
+      "scope": "proven 13locale outer metadata equivalent; not all native field readings"
+    },
+    "readingRecords": 189,
+    "registeredPinnedReadingFields": 710,
+    "recordCountDoesNotMeanCompleteFieldsets": true,
+    "nativePinnedFieldsInThisCheckpoint": 224,
+    "persistedNativeFieldsBeforeThisUnit": 159,
+    "savedNativeProviders": [
+      "crop-calendar31",
+      "flower-legend10",
+      "statistics9",
+      "classification22",
+      "winter-climate7",
+      "core-rice-fruit-flower15",
+      "growth-soil65",
+      "fertilizer-drainage65-currentunit"
+    ],
+    "currentUnitNativePinnedFields": 65,
+    "currentUnitReceipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/nutrient-drainage-native-readings-qa.json",
+    "heldHanFields": 0,
+    "supersedingIncomingFiveFieldCommit": "1e706957e2f20b2539bfb4d791b681fb00865fe6",
+    "incomingFiveFieldOwnerCheck": {
+      "fieldContexts": 14,
+      "actual13LocaleReaderRoutes": 182,
+      "sourceAssetRevisionTextRejects": 70,
+      "dictionaryPrimary": "https://www.kanjipedia.jp/kotoba/0000194100",
+      "scope": "All5 previously held exact display fields; not all remaining native/burnt-in fields"
+    },
+    "kanaOnlyMissingRubyFields": 38,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false,
+    "releaseReady": false
   }
 }
