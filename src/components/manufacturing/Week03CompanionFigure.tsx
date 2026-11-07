@@ -12,6 +12,7 @@ import data from '@/data/manufacturing/royal-week03-companion-figures.json';
 type Figure={id:string;paragraphId?:string;paragraphIds?:string[];assetFile:string;width:number;height:number;labels?:Record<string,string>};
 type Entry={sourceHash:string;captionJa:string;paragraphIds:string[];bindingScopes?:string[][];expectedParagraphsJa:Record<string,string>;nativeParagraphIds?:string[];expectedNativeParagraphsJa?:Record<string,string>;images:Figure[];exactSelectionOnly?:boolean;exactBindingScopes?:boolean;selectionBoundImages?:boolean;retainedExistingFigure?:boolean;fullReader?:Entry};
 const sources:Record<string,ReturnType<typeof require>>={
+ 'assets/manufacturing/royal-weekly-20261107/week14/technical/companion-self-hold-start-release-selected.png':require('../../../assets/manufacturing/royal-weekly-20261107/week14/technical/companion-self-hold-start-release-selected.png'),
  'assets/manufacturing/daily40/electrical/electrical-day-040.png':require('../../../assets/manufacturing/daily40/electrical/electrical-day-040.png'),
  'assets/manufacturing/royal-weekly-20261107/week13/technical/electrical-day89-fastener-tool-fit.png':require('../../../assets/manufacturing/royal-weekly-20261107/week13/technical/electrical-day89-fastener-tool-fit.png'),
  'assets/manufacturing/royal-weekly-20261107/week12/technical/companion-arc-diameter-over180-selected.png':require('../../../assets/manufacturing/royal-weekly-20261107/week12/technical/companion-arc-diameter-over180-selected.png'),

@@ -1992,6 +1992,32 @@
         }
       ],
       "introducedWeek": 13
+    },
+    "mfg1-electrical-l028": {
+      "sourceHash": "cedf3f5b13b0d74026ab57d69794392e8b571766d3af97be396225cd7d8ee33a",
+      "captionJa": "自己保持は接点経路で続く。停止・電源断・復帰は前提を明示して別々に追う。",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "expectedParagraphsJa": {
+        "section-1": "教材の基本回路では、起動用a接点を押すとリレーのコイルが励磁され、リレー自身のa接点も閉じます。その自己接点を起動接点と並列に置くことで、起動ボタンを離した後もコイルへの経路が残り、励磁を続けられます。これが自己保持です。\n表示灯が点灯し続ける理由は、ボタンが押され続けているからとは限りません。どの接点を通って電流の経路ができているかを追います。自己接点が開いた初期状態と、励磁後の状態を混同しないことが重要です。",
+        "section-2": "この基本例では停止用b接点を経路に直列に入れます。停止操作で接点が開くとコイルの励磁が止まり、自己接点も戻るので保持が解除されます。起動ボタンを離すだけで止まる回路とは動作が違います。\n通常の非保持形リレーを使い、起動入力も戻った基本例では、電源断で保持が解除され、電源が復帰しただけでは再起動しません。ただし実設備に同じ動作を無条件で保証するものではなく、回路の構成、入力状態、保持方式によって確認が必要です。"
+      },
+      "images": [
+        {
+          "id": "companion-self-hold-start-release-selected",
+          "paragraphId": "section-1",
+          "assetFile": "assets/manufacturing/royal-weekly-20261107/week14/technical/companion-self-hold-start-release-selected.png",
+          "width": 1440,
+          "height": 1000,
+          "sha256": "b2cae2a32e34f65b39e2ef6f4a16879e9252a63f03e89280ed4810f28b9a1705",
+          "existingAssetReused": false,
+          "svgFile": "assets/manufacturing/royal-weekly-20261107/week14/technical/companion-self-hold-start-release-selected.svg",
+          "svgSha256": "de9138032c2f2fbc951723f5b4bcf91238b4317cd8fddd49128829f6f1f5f16d"
+        }
+      ],
+      "introducedWeek": 14
     }
   }
 }
