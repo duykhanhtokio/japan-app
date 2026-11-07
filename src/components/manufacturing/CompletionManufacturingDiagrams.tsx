@@ -4,13 +4,13 @@ import type {SupplementalDiagram} from '@/data/manufacturing/supplemental-diagra
 import {SupplementalFigure} from './SupplementalManufacturingDiagrams';
 
 const sources:Record<string,ReturnType<typeof require>>={
- 'batch37-mechanical-drawing.png':require('../../../assets/manufacturing/diagrams/batch37-mechanical-drawing.png'),
- 'batch37-mechanical-features.png':require('../../../assets/manufacturing/diagrams/batch37-mechanical-features.png'),
- 'batch37-mechanical-metrology.png':require('../../../assets/manufacturing/diagrams/batch37-mechanical-metrology.png'),
- 'batch37-mechanical-parts.png':require('../../../assets/manufacturing/diagrams/batch37-mechanical-parts.png'),
- 'batch37-surface-corrosion.png':require('../../../assets/manufacturing/diagrams/batch37-surface-corrosion.png'),
- 'batch37-surface-instruments.png':require('../../../assets/manufacturing/diagrams/batch37-surface-instruments.png'),
- 'batch37-surface-qc.png':require('../../../assets/manufacturing/diagrams/batch37-surface-qc.png'),
+ get 'batch37-mechanical-drawing.png'(){return require('../../../assets/manufacturing/diagrams/batch37-mechanical-drawing.png');},
+ get 'batch37-mechanical-features.png'(){return require('../../../assets/manufacturing/diagrams/batch37-mechanical-features.png');},
+ get 'batch37-mechanical-metrology.png'(){return require('../../../assets/manufacturing/diagrams/batch37-mechanical-metrology.png');},
+ get 'batch37-mechanical-parts.png'(){return require('../../../assets/manufacturing/diagrams/batch37-mechanical-parts.png');},
+ get 'batch37-surface-corrosion.png'(){return require('../../../assets/manufacturing/diagrams/batch37-surface-corrosion.png');},
+ get 'batch37-surface-instruments.png'(){return require('../../../assets/manufacturing/diagrams/batch37-surface-instruments.png');},
+ get 'batch37-surface-qc.png'(){return require('../../../assets/manufacturing/diagrams/batch37-surface-qc.png');},
 };
 
 /** Original supplementary illustrations share the exact lesson's translated summary. */

@@ -1,7 +1,7 @@
 import {foodRoyalWeek4NativeFor} from '@/data/food-manufacturing/royal-week4-native';
-import {foodManufacturingLesson} from '@/data/food-manufacturing';
+import type {FoodManufacturingLesson} from '@/data/food-manufacturing';
+import {foodConceptDiagramsFor} from '@/data/food-manufacturing/concept-source-bindings';
 import {Image,Text,View,StyleSheet,type ImageSourcePropType} from 'react-native';
-import data from '@/data/food-manufacturing/diagrams.json';
 import {TranslationText} from '@/components/tokutei/StudyAppearance';
 /** Exact classifications remain native/localized; art supplies contextual examples only. */
 const royalWeek1Hazards:Record<string,ImageSourcePropType>={
@@ -11,11 +11,11 @@ const royalWeek1Hazards:Record<string,ImageSourcePropType>={
 };
 const royalHazardLessons=new Set(['food-1-003','food-1-004','food-1-005','food-1-006','food-1-008','food-2-007']);
 type DiagramTranslation={title:string;description:string;nodeLabels:Record<string,string>;edgeLabels:string[];note:string};
-export function FoodConceptDiagrams({lessonId,textColor,language,showTranslation,dailyPlacement=false}:{lessonId:string;textColor:string;language:string;showTranslation:boolean;dailyPlacement?:boolean}){
+export function FoodConceptDiagrams({lesson,textColor,language,showTranslation,dailyPlacement=false}:{lesson:FoodManufacturingLesson;textColor:string;language:string;showTranslation:boolean;dailyPlacement?:boolean}){
+ const lessonId=lesson.id;
  if(lessonId==='food-2-007'&&!dailyPlacement)return null;
- const current=foodManufacturingLesson(lessonId,lessonId.startsWith('food-1-')?'1':'2');
- if(!dailyPlacement&&current&&['traceability','productivity'].includes(foodRoyalWeek4NativeFor(current)?.kind??''))return null;
- return <>{data.diagrams.filter(d=>d.lessonIds.includes(lessonId as never)).map(d=>{
+ if(!dailyPlacement&&['traceability','productivity'].includes(foodRoyalWeek4NativeFor(lesson)?.kind??''))return null;
+ return <>{foodConceptDiagramsFor(lesson).map(d=>{
  const translated=(d.translations as Record<string,DiagramTranslation>)[language];
  const t=showTranslation&&language!=='ja'?translated:undefined;
  const royalHazards=d.id==='food-hazards'&&royalHazardLessons.has(lessonId);

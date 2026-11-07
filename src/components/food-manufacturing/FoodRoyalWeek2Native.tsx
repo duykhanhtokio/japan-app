@@ -5,7 +5,7 @@ import {FoodConceptDiagrams} from './ConceptDiagrams';
 /** Source-controlled labels. Checklist positions are fields, not operational steps. */
 export function FoodRoyalWeek2Native({lesson,language,showTranslation,textColor}:{lesson:FoodManufacturingLesson;language:string;showTranslation:boolean;textColor:string}){
  const binding=foodRoyalWeek2NativeFor(lesson);if(!binding)return null;
- if(binding.kind==='hazards')return <FoodConceptDiagrams lessonId={lesson.id} language={language} showTranslation={showTranslation} textColor={textColor} dailyPlacement/>;
+ if(binding.kind==='hazards')return <FoodConceptDiagrams lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor} dailyPlacement/>;
  const labels=binding.labels as Record<string,string[]>;
  const t=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
  const candidate=t?labels[language]:undefined;

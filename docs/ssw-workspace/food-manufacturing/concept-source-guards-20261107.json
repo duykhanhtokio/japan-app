@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "scope": "Current native concept diagrams source-revision and complete teaching-context guards",
+  "baselineCommit": "591fe330df778907fcac73bf571c9816e8fd9e57",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "problem": "FoodConceptDiagrams accepted only lessonId and looked up the canonical lesson again. A stale or incomplete actual Reader lesson could still render a current diagram, severing revision/context evidence.",
+  "reproductionBefore": "check-concept-source-guards.cjs failed on food-1-003 stale lesson rendering a current diagram.",
+  "change": "Pass the actual Reader lesson through every concept callsite. Pin each of ten current diagram/lesson bindings to sourceHash and its three current teaching paragraphs; require nonblank titles/bodies. Use actual lesson for native4 duplicate-placement decisions. All original diagram text, nodes, edges, formulas, colors and translations remain byte-identical.",
+  "bindingReview": {
+    "count": 10,
+    "diagramIds": [
+      "food-hazards",
+      "food-haccp-monitoring",
+      "food-traceability",
+      "food-productivity"
+    ],
+    "basis": "Current canonical lessons and exact existing native diagram bindings inspected. This is source-revision/context safety, not new source-page semantic closure.",
+    "requiredParagraphs": "All three current canonical teaching paragraphs per lesson, retaining existing conditions and exceptions; no changes to Japanese hash or translation content."
+  },
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/food-manufacturing/check-concept-source-guards.cjs",
+    "result": "PASS520 actual native renderer contexts (10bindings×13locales×current/stale/missing/blank), unchanged Japanese/explicit localized technical texts; plus260 actual scheduled Reader contexts (10bindings×13locales×current/stale) proving actual props flow and native2/native4 placement.",
+    "inheritedSuite": "check-royal-retained-technical.cjs reaches unrelated obsolete pending-day primitive-raster assertion. Reproduced exactly same failure with all four pre-change production components from timestamped startup backup; not promoted to PASS and no unrelated test changes.",
+    "diagramData": {
+      "path": "src/data/food-manufacturing/diagrams.json",
+      "sha256": "48c862814df6a6619e07105509d83d6dfa4209809a7692602bdf6f1afb83fdd8",
+      "unchanged": true
+    },
+    "diffCheck": "PASS scoped git diff --check",
+    "limitations": "Structural React SSR with RN/Image/ruby/presentation adapters; unrelated supplement components isolated; no browser/device/native/domain acceptance."
+  },
+  "files": [
+    "src/components/food-manufacturing/ConceptDiagrams.tsx",
+    "src/components/food-manufacturing/FoodManufacturingCourse.tsx",
+    "src/components/food-manufacturing/FoodDailyLearning.tsx",
+    "src/components/food-manufacturing/FoodRoyalWeek2Native.tsx",
+    "src/data/food-manufacturing/concept-source-bindings.json",
+    "src/data/food-manufacturing/concept-source-bindings.ts",
+    "scripts/food-manufacturing/check-concept-source-guards.cjs"
+  ],
+  "newRasterAssets": 0,
+  "canonicalContentChanged": false,
+  "acceptance": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false,
+    "wholeSectorComplete": false
+  }
+}

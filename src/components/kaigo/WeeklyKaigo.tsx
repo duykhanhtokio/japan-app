@@ -1,3 +1,4 @@
+import {KaigoAutonomicHeartComparison} from './KaigoAutonomicHeartComparison';
 import { royalInlineFigure } from '@/data/kaigo/royal-inline-figures';
 import {KaigoRoyalTechnicalFigure} from './KaigoRoyalTechnicalFigure';
 import {KaigoHandRegionFigure} from './KaigoHandRegionFigure';
@@ -511,6 +512,7 @@ export function DayReading({
         <JapaneseText text={contextVisual.keyObjectiveJa} testID={`kaigo-context-objective-${entry.day}`} />
         {translationOpen && lessonTranslation && <TranslationText>{lessonTranslation.objectives[contextVisual.keyObjectiveIndex]}</TranslationText>}
       </>}
+      {entry.day===69 && contextVisual && <KaigoAutonomicHeartComparison language={translationOpen?language:'ja'} />}
       {figures.length > 0 ? figures.map(figure => (
         <View key={figure.id} testID={`kaigo-knowledge-figure-${entry.day}-${figure.id}`}>
           <JapaneseText text={figure.titleJa} testID={`kaigo-figure-title-${entry.day}-${figure.id}`} />

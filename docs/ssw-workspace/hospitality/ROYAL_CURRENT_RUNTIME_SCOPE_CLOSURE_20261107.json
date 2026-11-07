@@ -746,7 +746,8 @@
     "gitDiffCheckPassed": true,
     "allSourceIdsQuestionAnswersProgressKeysPreserved": true,
     "noNewRasterGenerationDuringFinalAudit": true,
-    "postMergeDiffCheckPassed": true
+    "postMergeDiffCheckPassed": true,
+    "portableBrowserQaSourceSyntaxPassed": true
   },
   "acceptance": {
     "currentAiIllustrationRuntimeScopeComplete": true,
@@ -802,5 +803,50 @@
   "incomingReadingEvidence": [
     "docs/ssw-workspace/hospitality/royal-full38-native-reading-census-20261107.json",
     "docs/ssw-workspace/hospitality/royal-full38-native-reading-validation-20261107.json"
-  ]
+  ],
+  "browserQaHandoff": {
+    "state": "external_browser_execution_blocked_before_first_page",
+    "completedBrowserCases": 0,
+    "screenshotsCaptured": 0,
+    "productionHashCountAtLaunchAttempt": 15,
+    "productionHashesBeforeAndAfterLaunchAttemptMatched": true,
+    "blockers": [
+      {
+        "surface": "local Chromium156 with PythonPlaywright",
+        "stage": "browser launch before any page",
+        "location": "chrome/browser/process_singleton_posix.cc:297",
+        "error": "socket() failed: Operation not permitted (1)",
+        "secondaryError": "crashpad ptrace: Operation not permitted (1)"
+      },
+      {
+        "surface": "cloud browser file URL",
+        "stage": "file URL access policy",
+        "error": "Denied by browser policy; no workaround authorized",
+        "evidenceAttribution": "coordinator-observed policy rejection"
+      }
+    ],
+    "portableSourcePackage": [
+      "scripts/hospitality/browser-qa/build.cjs",
+      "scripts/hospitality/browser-qa/entry.cjs",
+      "scripts/hospitality/browser-qa/run-browser.py",
+      "scripts/hospitality/browser-qa/README.md"
+    ],
+    "portableSourceSha256": {
+      "scripts/hospitality/browser-qa/build.cjs": "59b8df37b591db97f1f960a06ebaf26df37b85a4908544d18959e5c4a09960ae",
+      "scripts/hospitality/browser-qa/entry.cjs": "7124ca2e54d709eaefcef151ccfaf2b1f66ac6484360ec2f6fdcf9d84789f91d",
+      "scripts/hospitality/browser-qa/run-browser.py": "feded8d26f0be70021a502d7506e8e0b553ffb5ef0646ceb5701c9f1fa80cc88",
+      "scripts/hospitality/browser-qa/README.md": "c60c74543cda7155761472a9f98e5ff91764dc1645856f7dfd4adf365b39d534"
+    },
+    "packageDependencies": "Existing repository esbuild/React/ReactDOM/react-native-web/TypeScript and official PythonPlaywright; no installer or bundled dependency/output added.",
+    "packageValidation": {
+      "nodeSyntaxAndHelpPassed": true,
+      "pythonSyntaxAndHelpPassed": true,
+      "hardcodedWorkspacePathsAbsent": true,
+      "largeBundleScreenshotsAndSourcePdfsExcluded": true,
+      "portableEsbuildExecution": "not_executed_missing_declared_esbuild_in_current_sparse_runtime; normal repository dependency setup is required on the execution host",
+      "executedOnUserMac": false
+    },
+    "plannedPortableBrowserCases": 162,
+    "acceptanceLimits": "Portable tooling and earlier SSR do not establish browser/device acceptance. Run on a capable host and inspect generated screenshots; browser rendering, physical devices and native OS font scales remain unverified."
+  }
 }

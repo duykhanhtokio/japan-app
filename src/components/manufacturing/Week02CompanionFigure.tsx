@@ -4,11 +4,11 @@ import {useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import {SupplementalFigure} from './SupplementalManufacturingDiagrams';
 import data from '@/data/manufacturing/royal-week02-companion-figures.json';
 const sources:Record<string,ReturnType<typeof require>>={
- "assets/manufacturing/royal-weekly-20261107/week02/companions/mechanical-sign-roles.png":require("../../../assets/manufacturing/royal-weekly-20261107/week02/companions/mechanical-sign-roles.png"),
- "assets/manufacturing/royal-weekly-20261107/week02/companions/mechanical-qc-reading.png":require("../../../assets/manufacturing/royal-weekly-20261107/week02/companions/mechanical-qc-reading.png"),
- "assets/manufacturing/royal-weekly-20261107/week02/companions/surface-analysis-charge.png":require("../../../assets/manufacturing/royal-weekly-20261107/week02/companions/surface-analysis-charge.png"),
- "assets/manufacturing/royal-weekly-20261107/week02/companions/surface-six-buff-families.png":require("../../../assets/manufacturing/royal-weekly-20261107/week02/companions/surface-six-buff-families.png"),
- "assets/manufacturing/royal-weekly-20261107/week02/companions/surface-specific-gravity-six.png":require("../../../assets/manufacturing/royal-weekly-20261107/week02/companions/surface-specific-gravity-six.png"),
+ get "assets/manufacturing/royal-weekly-20261107/week02/companions/mechanical-sign-roles.png"(){return require("../../../assets/manufacturing/royal-weekly-20261107/week02/companions/mechanical-sign-roles.png");},
+ get "assets/manufacturing/royal-weekly-20261107/week02/companions/mechanical-qc-reading.png"(){return require("../../../assets/manufacturing/royal-weekly-20261107/week02/companions/mechanical-qc-reading.png");},
+ get "assets/manufacturing/royal-weekly-20261107/week02/companions/surface-analysis-charge.png"(){return require("../../../assets/manufacturing/royal-weekly-20261107/week02/companions/surface-analysis-charge.png");},
+ get "assets/manufacturing/royal-weekly-20261107/week02/companions/surface-six-buff-families.png"(){return require("../../../assets/manufacturing/royal-weekly-20261107/week02/companions/surface-six-buff-families.png");},
+ get "assets/manufacturing/royal-weekly-20261107/week02/companions/surface-specific-gravity-six.png"(){return require("../../../assets/manufacturing/royal-weekly-20261107/week02/companions/surface-specific-gravity-six.png");},
 };
 type Entry={sourceHash:string;assetFile:string;width:number;height:number;captionJa:string;paragraphIds:string[];locales:Record<string,{sourceHash:string;title:string;summary:string;paragraphs:{id:string;title:string;text:string}[]}>};
 /** Explicit saved paragraph selection for the direct supplement reader. */

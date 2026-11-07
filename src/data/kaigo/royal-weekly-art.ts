@@ -2,6 +2,7 @@ import type {ImageSourcePropType} from 'react-native';
 
 /** Day-scoped replacements preserve shared legacy art IDs and captions. */
 export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspectRatio:number}>={
+ 140:{source:require('../../../assets/kaigo/paragraphs/kaigo-week2-04-knowledge-2-v1.webp'),aspectRatio:1619/971},
  99:{source:require('../../../assets/kaigo/paragraphs/foundation-03-clothing-choice-v1.webp'),aspectRatio:1618/972},
 
  92:{source:require('../../../assets/kaigo/paragraphs/kaigo-week2-01-knowledge-4-v1.webp'),aspectRatio:1619/971},
@@ -64,6 +65,21 @@ export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspec
 
 /** Image-specific captions; canonical lesson and progress revisions remain unchanged. */
 export const kaigoRoyalWeeklyCaptions:Record<number,Record<string,string>>={
+ "140": {
+  "ja": "職員が絵を示して返答を待ちます。絵を見たことだけで、希望の確認や言語全体の評価を終えたとは扱いません。",
+  "en": "The caregiver shows pictures and waits for a response. Looking at the pictures alone does not confirm the person’s preference or complete an assessment of all language abilities.",
+  "vi": "Nhân viên đưa hình và chờ phản hồi. Chỉ nhìn hình chưa đủ để xác nhận nguyện vọng của người được chăm sóc hoặc đánh giá toàn bộ khả năng ngôn ngữ.",
+  "id": "Petugas menunjukkan gambar dan menunggu tanggapan. Melihat gambar saja belum memastikan keinginan orang tersebut atau menuntaskan penilaian seluruh kemampuan bahasa.",
+  "zh-CN": "工作人员出示图片并等待回应。仅仅看过图片，不能视为已确认本人的意愿或已完成全部语言能力的评估。",
+  "zh-TW": "工作人員出示圖片並等待回應。僅僅看過圖片，不能視為已確認本人的意願或已完成全部語言能力的評估。",
+  "hi": "देखभालकर्मी चित्र दिखाकर उत्तर की प्रतीक्षा करती हैं। केवल चित्र देखने से व्यक्ति की इच्छा की पुष्टि या सभी भाषा क्षमताओं का मूल्यांकन पूरा नहीं माना जाता।",
+  "bn": "পরিচর্যাকর্মী ছবি দেখিয়ে প্রতিক্রিয়ার জন্য অপেক্ষা করেন। শুধু ছবি দেখা থেকে ব্যক্তির ইচ্ছা নিশ্চিত হয়েছে বা সব ভাষাগত দক্ষতার মূল্যায়ন শেষ হয়েছে বলে ধরা হয় না।",
+  "ne": "हेरचाहकर्मीले चित्र देखाएर प्रतिक्रियाको प्रतीक्षा गर्छन्। चित्र हेरेको भरमा व्यक्तिको चाहना पुष्टि भयो वा सम्पूर्ण भाषिक क्षमताको मूल्याङ्कन सकियो मानिँदैन।",
+  "my": "ဝန်ထမ်းက ပုံများပြ၍ တုံ့ပြန်မှုကို စောင့်သည်။ ပုံကိုကြည့်ခြင်းတစ်ခုတည်းဖြင့် ကာယကံရှင်၏ ဆန္ဒကို အတည်ပြုပြီးပြီ သို့မဟုတ် ဘာသာစကားစွမ်းရည်အားလုံးကို အကဲဖြတ်ပြီးပြီဟု မယူဆပါ။",
+  "th": "เจ้าหน้าที่แสดงภาพและรอการตอบสนอง การมองภาพเพียงอย่างเดียวไม่ถือว่ายืนยันความต้องการของเจ้าตัวหรือประเมินความสามารถทางภาษาทั้งหมดเสร็จแล้ว",
+  "km": "បុគ្គលិកបង្ហាញរូបភាពហើយរង់ចាំការឆ្លើយតប។ ការមើលរូបភាពតែប៉ុណ្ណោះ មិនមានន័យថាបានបញ្ជាក់បំណងរបស់បុគ្គល ឬបានវាយតម្លៃសមត្ថភាពភាសាទាំងមូលរួចទេ។",
+  "tl": "Nagpapakita ng mga larawan ang tagapag-alaga at naghihintay ng tugon. Ang pagtingin lamang sa mga larawan ay hindi pagpapatunay ng kagustuhan ng tao o kumpletong pagsusuri ng lahat ng kakayahan sa wika."
+},
   "50": {
     "ja": "部屋で本人の参加条件を聞く場面です。帰りの支援と時刻は確認前で、参加も出発も決まっていません。",
     "en": "In the room, staff listen to the person’s conditions for joining. Return support and timing remain unconfirmed; neither participation nor departure is decided.",

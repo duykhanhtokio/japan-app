@@ -7,11 +7,11 @@ import {manufacturingUi} from '@/data/manufacturing/ui';
 import {manufacturingSupplementalCaption,manufacturingSupplementalDiagrams,type SupplementalDiagram} from '@/data/manufacturing/supplemental-diagrams';
 
 const sources:Record<string,ReturnType<typeof require>>={
- 'batch36-lcr.png':require('../../../assets/manufacturing/diagrams/batch36-lcr.png'),
- 'batch36-thermocouple.png':require('../../../assets/manufacturing/diagrams/batch36-thermocouple.png'),
- 'batch36-hall.png':require('../../../assets/manufacturing/diagrams/batch36-hall.png'),
- 'batch36-caliper-parts.png':require('../../../assets/manufacturing/diagrams/batch36-caliper-parts.png'),
- 'batch36-indentation.png':require('../../../assets/manufacturing/diagrams/batch36-indentation.png'),
+ get 'batch36-lcr.png'(){return require('../../../assets/manufacturing/diagrams/batch36-lcr.png');},
+ get 'batch36-thermocouple.png'(){return require('../../../assets/manufacturing/diagrams/batch36-thermocouple.png');},
+ get 'batch36-hall.png'(){return require('../../../assets/manufacturing/diagrams/batch36-hall.png');},
+ get 'batch36-caliper-parts.png'(){return require('../../../assets/manufacturing/diagrams/batch36-caliper-parts.png');},
+ get 'batch36-indentation.png'(){return require('../../../assets/manufacturing/diagrams/batch36-indentation.png');},
 };
 
 export function SupplementalFigure({item,language,showTranslation,imageSource,translatedCaption,imageAlt,hideCaption=false}:{item:SupplementalDiagram;language:string;showTranslation:boolean;imageSource?:ReturnType<typeof require>;translatedCaption?:string|null;imageAlt?:string;hideCaption?:boolean}){

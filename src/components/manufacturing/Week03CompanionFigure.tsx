@@ -11,17 +11,17 @@ import data from '@/data/manufacturing/royal-week03-companion-figures.json';
 type Figure={id:string;paragraphId:string;assetFile:string;width:number;height:number;labels?:Record<string,string>};
 type Entry={sourceHash:string;captionJa:string;paragraphIds:string[];bindingScopes?:string[][];expectedParagraphsJa:Record<string,string>;nativeParagraphIds?:string[];expectedNativeParagraphsJa?:Record<string,string>;images:Figure[]};
 const sources:Record<string,ReturnType<typeof require>>={
- 'assets/manufacturing/royal-weekly-20261107/week05/companions/electrical-leakage-protection-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week05/companions/electrical-leakage-protection-roles.png'),
- 'assets/manufacturing/royal-weekly-20261107/week04/companions/surface-test-purpose-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week04/companions/surface-test-purpose-roles.png'),
- 'assets/manufacturing/royal-weekly-20261107/week04/companions/surface-electrode-electron-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week04/companions/surface-electrode-electron-roles.png'),
- 'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-caliper-three-checks.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-caliper-three-checks.png'),
- 'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-tolerance-dimension-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-tolerance-dimension-roles.png'),
- 'assets/manufacturing/royal-weekly-20261107/week03/companions/electrical-lcr-measurement-flow.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/electrical-lcr-measurement-flow.png'),
- 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-alloy-roles-diecast.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-alloy-roles-diecast.png'),
- 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-pretreatment-jig-roles.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-pretreatment-jig-roles.png'),
- 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-transport-pause-report.webp':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-transport-pause-report.webp'),
- 'assets/manufacturing/diagrams/batch23-mechanical-caliper-contacts.png':require('../../../assets/manufacturing/diagrams/batch23-mechanical-caliper-contacts.png'),
- 'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-knoop-plan.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-knoop-plan.png'),
+ get 'assets/manufacturing/royal-weekly-20261107/week05/companions/electrical-leakage-protection-roles.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week05/companions/electrical-leakage-protection-roles.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week04/companions/surface-test-purpose-roles.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week04/companions/surface-test-purpose-roles.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week04/companions/surface-electrode-electron-roles.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week04/companions/surface-electrode-electron-roles.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-caliper-three-checks.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-caliper-three-checks.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-tolerance-dimension-roles.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-tolerance-dimension-roles.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week03/companions/electrical-lcr-measurement-flow.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/electrical-lcr-measurement-flow.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-alloy-roles-diecast.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-alloy-roles-diecast.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-pretreatment-jig-roles.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-pretreatment-jig-roles.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-transport-pause-report.webp'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-transport-pause-report.webp');},
+ get 'assets/manufacturing/diagrams/batch23-mechanical-caliper-contacts.png'(){return require('../../../assets/manufacturing/diagrams/batch23-mechanical-caliper-contacts.png');},
+ get 'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-knoop-plan.png'(){return require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-knoop-plan.png');},
 };
 /** The same source-bound figures serve the scheduled companion and its direct supplement reader. */
 export function Week03CompanionFigure({lesson,paragraphIds,language,showTranslation}:{lesson:ManufacturingLesson;paragraphIds:string[];language:string;showTranslation:boolean}){

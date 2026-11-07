@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[2];P=ROOT/'src/data/manufacturing';read=la
 assets=read(P/'daily-figure-assets.json')['assets'];existing={}
 for l in ['ManufacturingDiagram.tsx']:
  source=(ROOT/'src/components/manufacturing'/l).read_text()
- for asset,caption in re.findall(r"source:require\('([^']+)'\),altJa:'([^']*)'",source):
+ for asset,caption in re.findall(r"(?:source:|get source\(\)\{return )require\('([^']+)'\)(?:;\})?,(?:width:\d+,height:\d+,)?altJa:'([^']*)'",source):
   path=(ROOT/'src/components/manufacturing'/asset).resolve();existing[path.stem]=(path,caption)
 for item in read(P/'completion37/diagrams.json')['items']+read(P/'supplemental-diagrams.json')['items']:
  path=ROOT/'assets/manufacturing/diagrams'/item['assetFile'];existing[path.stem]=(path,item['captionJa'])
@@ -31,7 +31,7 @@ for specialty,keys in [('mechanical',M),('electrical',E),('surface',S)]:
   assert key in assets,(l['id'],key);used.add(key)
   rows[l['id']]={'lessonId':l['id'],'lessonSourceHash':l['sourceHash'],'keyObjectiveId':l['id']+'::objective','keyObjectiveJa':l['objectiveJa'],'assetId':key,'assetSha256':assets[key]['sha256'],'reuseReasonJa':'本文の「'+l['titleJa']+'」で扱う対象・関係を観察する。図はこの目標の一部を示すもので、本文の適用条件を置き換えない。','captionBinding':'canonical_lesson_summary_plus_asset_scope_limit','sourceRefs':l['sources'],'domainReviewed':False,'nativeReviewed':False,'physicalDeviceTested':False}
 (P/'daily-figures.json').write_text(json.dumps({'schemaVersion':1,'rights':'Original project artwork only; no source-page images.','assets':{k:assets[k] for k in sorted(used)},'lessons':rows},ensure_ascii=False,indent=2)+'\n')
-lines=["// Static Metro asset declarations. Image bytes load when the reader requests a source.","export const manufacturingDailyFigureSources:Record<string,ReturnType<typeof require>>={"]
-for key in sorted(used):lines.append(" "+json.dumps(key)+":require("+json.dumps('../../../'+assets[key]['assetPath'])+"),")
+lines=["// Lazy Metro asset declarations: resolve only the selected curated key; literal requires remain statically discoverable.","export const manufacturingDailyFigureSources:Record<string,ReturnType<typeof require>>={"]
+for key in sorted(used):lines.append(" get "+json.dumps(key)+"(){return require("+json.dumps('../../../'+assets[key]['assetPath'])+");},")
 lines.append('};');(ROOT/'src/components/manufacturing/manufacturing-daily-figure-sources.ts').write_text('\n'.join(lines)+'\n')
 print({'scheduledDaysBound':len(rows),'uniqueSchematics':len(used),'newSchematicsUsed':len(used&set(read(P/'daily-figure-assets.json')['assets']))})

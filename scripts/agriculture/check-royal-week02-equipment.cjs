@@ -37,7 +37,7 @@ function load(name){
   if(id==='@/data/agriculture/exam-illustrations.json')return JSON.parse(read('src/data/agriculture/exam-illustrations.json'));
   if(id==='@/data/agriculture/daily-learning-support.json')return JSON.parse(read('src/data/agriculture/daily-learning-support.json'));
   if(id==='@/data/agriculture')return {agricultureTranslation:()=>null};
-  if(['./DailyInstructionDiagram','./Statistics2019Figure','./WinterClimateFigure','./WinterSpatialReference','./CropCalendarFigure','@/components/tokutei/StudyAppearance'].includes(id))return {};
+  if(['./DailyInstructionDiagram','./Statistics2019Figure','./WinterClimateFigure','./WinterSpatialReference','./CropCalendarFigure','./SoilGroupComparison','@/components/tokutei/StudyAppearance'].includes(id))return {};
   if(id==='./FlowerLegendFigure')return {};// Not invoked by the two selected lotus lesson contexts.
   if(/\.(png|webp)$/.test(id))return id.endsWith(path.basename(figure.assetPath))?actualSource:{uri:'asset://'+id};
   return original(id);
@@ -60,8 +60,8 @@ for(const lessonId of figure.lessonIds){
 }
 const mapping=read('src/components/agriculture/RecognitionImages.tsx');assert(mapping.includes(`"${figure.assetKey}":require('../../../${figure.assetPath}')`));
 const daily=JSON.parse(read('src/data/agriculture/daily-learning-support.json'));
-const {DailyLearningFigure}=load('DailyLearningSupport');
 for(const [lessonId,b] of Object.entries(daily.figureBindings).filter(([_,b])=>b.figureId===figure.id)){
+ const {DailyLearningFigure}=load('DailyLearningSupport');
  const lesson=lessons.get(lessonId);assert.equal(b.assetSha256,figure.assetSha256);assert.equal(b.lessonSourceHash,lesson.sourceHash);
  for(const level of b.scopeLevels){const html=renderToStaticMarkup(React.createElement(DailyLearningFigure,{lesson,level,colors}));assert(html.includes('data:image/webp;base64,'));assert(html.includes(b.reuseReasonJa));positive++;}
 }
