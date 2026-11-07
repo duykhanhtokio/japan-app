@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "status": "AI_CONTEXT_REVIEWED_SOURCE_BOUND",
+  "sourceWeek": 3,
+  "actualNewFields": 6,
+  "actualSourceRows": 4,
+  "fieldKinds": {
+    "exampleText": 4,
+    "structureText": 2
+  },
+  "entries": [
+    {
+      "lessonId": "mfg1-electrical-l018",
+      "field": "exampleText",
+      "sourceJapanese": "理想化した一個のダイオードの説明で、交流の一方の向きだけが通る場合、出力には電流が流れる区間と流れない区間ができます。向きを反対にすれば通る側が反対になります。この説明は方向性の理解のためであり、実回路を交流電源へ直接つなぐ手順ではありません。実際の整流回路では定格や他の部品も必要です。",
+      "sourceHash": "e31e735cd6be75ceadc82390e397911487373abb684564fe38ea8925180e562b"
+    },
+    {
+      "lessonId": "mfg1-electrical-l019",
+      "field": "exampleText",
+      "sourceJapanese": "組立開始前、ICは普通の透明袋に入っており、指定された作業マットの確認記録もありません。まず開封を保留し、部品の包装仕様と職場の確認記録を担当者に照合します。自分で金属線をつないで対策したつもりにせず、承認された作業環境が整ってから取り扱います。外観がきれいという理由で手順を省きません。",
+      "sourceHash": "1f1e498d2079634e54fcc72973deeaab17f02e59ebb46b3f54e25fda1f7c8d67"
+    },
+    {
+      "lessonId": "mfg1-electrical-l019",
+      "field": "structureText",
+      "sourceJapanese": "ICなどの電子部品は静電気で特性が変わったり壊れたりすることがあります。作業者が放電を感じなかったことや外観が正常なことだけでは、損傷がないと保証できません。作業後に確認するだけでなく、包装を開ける前から対策を整えます。\n作業台、マット、服装、床、靴などの対策は、一つを用意すれば完成というものではありません。職場で指定した組合せと確認方法を使い、設備や用具が正常であることを確認します。電気を通すものを使う対策と、人の感電防止は両方を満たす必要があります。\n\n作業前に必要な部品と材料の品番、数量、劣化や破損を確認します。部品は種類ごとに識別し、必要な作業空間と照明を確保します。静電気対策の作業面へ、関係のない包装やごみを置かないようにします。\n部品の輸送や保管にも、指定された静電気対策包装を使用します。袋があるだけでどの包装も同じ性能とは限りません。取扱いに不明点がある場合は、開封や移し替えの前に確認します。作業手順書の疑問を残したまま始めないことが重要です。",
+      "sourceHash": "1f1e498d2079634e54fcc72973deeaab17f02e59ebb46b3f54e25fda1f7c8d67"
+    },
+    {
+      "lessonId": "mfg1-electrical-l020",
+      "field": "exampleText",
+      "sourceJapanese": "教材の表示灯Lを「入力AとBが両方オンなら点灯」とするならANDです。A=1、B=0では点灯せず、両方1で点灯します。「AまたはBの少なくとも一つがオンなら点灯」へ変えるならORとなり、A=1、B=0でも点灯します。文章の条件を変えると、同じ二入力でも出力が変わります。",
+      "sourceHash": "c05ab4a434bc985022ac055dab7f2aed0c5f10a452be0ebe5f8faa925d1fa571"
+    },
+    {
+      "lessonId": "mfg1-electrical-l020",
+      "field": "structureText",
+      "sourceJapanese": "シーケンス制御は、決められた順序や手続きに従って各段階を進める制御です。リレーなどの部品の組合せで行う方法と、PLCのプログラムで行う方法があります。実際の動作を理解するには、いつ何が起きるかと、どの条件で出力するかを分けて考えます。\nここでは入力0をオフ、1をオンとして、教育用表示灯の論理を考えます。ANDはすべての入力が1のときだけ出力1、ORはいずれかが1なら出力1、NOTは入力を反転します。ORは「どちらか一方だけ」という意味ではなく、両方1でも出力1です。\n\n入力A、Bの組合せを00、01、10、11と並べると、ANDの出力は0、0、0、1、ORの出力は0、1、1、1です。AだけのNOTならA=0で出力1、A=1で出力0です。表にすると、日常語の「または」と取り違えた部分を確認しやすくなります。\n入力オンで閉じるa接点を使う基本例では、接点の直列はAND、並列はORを表します。ただし、これは論理の理解であり、実機の安全回路の設計がこれだけで十分になるわけではありません。故障時の動作や安全規格を別に検討する必要があります。",
+      "sourceHash": "c05ab4a434bc985022ac055dab7f2aed0c5f10a452be0ebe5f8faa925d1fa571"
+    },
+    {
+      "lessonId": "mfg1-electrical-l021",
+      "field": "exampleText",
+      "sourceJapanese": "教材の装置で、一定時間ごとの部品交換は計画的な予防保全、連続監視した振動の増加を基に整備を判断するのは予知保全、故障で停止した後に修理するのは事後保全です。同じ装置でも部位ごとに方式が異なることがあります。作業者は兆候を報告し、保全部門の判断を待つべき範囲を守ります。",
+      "sourceHash": "08d8e5394649ca2538ce30436be9d2c3bf52533e39038c791c6b598cc4f3ca13"
+    }
+  ],
+  "sourceEvidence": {
+    "standardAIContextReadings": "一個いっこ is a manually full-field reviewed AI standard counter correction. ESD/control/maintenance full terms compared against current source and existing accepted vocabulary. No independent native approval."
+  },
+  "limits": "No unreviewed Janome exposure, no content/number edits, no native/domain/device approval.",
+  "baselineActualCallerCensus": {
+    "visibleBindings": 1171,
+    "full": 123,
+    "plain": 1046,
+    "partial": 2,
+    "kind": "historical actual caller census; no repeated full census"
+  },
+  "boundedDeltaDerivedCoverage": {
+    "previous59SavedFields": 59,
+    "thisCohort": 6,
+    "full": 188,
+    "plain": 981,
+    "partial": 2
+  },
+  "implementation": "Data-only extension of source-week03 registry. Existing exact fullcanonical/currentfield guards and actual body callers unchanged. No raw Janome or unchecked primary entries exposed.",
+  "checks": {
+    "actualBodyFields": 6,
+    "actualSourceRows": 4,
+    "canonicalExactFieldNegatives": 42,
+    "all12TranslatedHtmlStyleByteIdentical": 48,
+    "actualStaleBodyPlainFallbacks": 6,
+    "technicalContextRegressions": 3,
+    "malformedRegisteredActualPlainFallbacks": 4,
+    "heldMainScaleExampleRemainsPlain": true,
+    "kind": "bounded actual Royal caller SSR delta; no whole census/native device/pixel approval"
+  },
+  "payloadSha256": {
+    "src/data/manufacturing/native-reviewed-week03-fields.json": "a2b5d72f60a3b2963842a7bbbbe3820778da0be94a5c51b597ae4cf3dcbab9ac",
+    "scripts/manufacturing/check-native-week03-circuit-maintenance6-body-readings.cjs": "4bde46571ee7650ac775018e1a58aff4382b01ffe9e9efc9780e92efc98de586"
+  },
+  "combinedWeek03SaveDerivedCoverage": {
+    "full": 196,
+    "plain": 973,
+    "hanEligiblePlain": 972,
+    "legitimateNoHanPlain": 1,
+    "partial": 2,
+    "uniquePlainStrings": 909,
+    "basis": "1171 historical actual caller matrix plus73 bounded newly accepted fields; no repeated census"
+  }
+}
