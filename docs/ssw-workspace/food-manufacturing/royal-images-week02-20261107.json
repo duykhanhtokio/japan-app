@@ -5,7 +5,7 @@
   "dateJst": "2026-11-07",
   "baselineCommit": "4bf9a95345b8218a4356eb6d39b1acf6d7c379b8",
   "policy": "docs/ssw-workspace/image-royal-overhaul-20261107/policy.json",
-  "status": "group3_three_rasters_validated_ready_for_remote_persistence",
+  "status": "group4_native_daily_validated_ready_for_remote_persistence",
   "scope": [
     {
       "lessonId": "food-1-007",
@@ -82,7 +82,9 @@
       "objectiveJa": "原材料・工程・製品の特徴から、三種類の危害要因と管理する場面を整理できる。",
       "captionParagraphId": "p1",
       "originalDiagramKind": "foreign",
-      "royalDailyImageIntegrated": false
+      "royalDailyImageIntegrated": false,
+      "royalDailyVisualIntegrated": true,
+      "nativeKind": "hazards"
     },
     {
       "lessonId": "food-2-008",
@@ -93,7 +95,9 @@
       "objectiveJa": "一般衛生管理の対象を分類し、現場に合う清掃と動線の改善案を作れる。",
       "captionParagraphId": "p1",
       "originalDiagramKind": "wash",
-      "royalDailyImageIntegrated": false
+      "royalDailyImageIntegrated": true,
+      "royalDailyVisualIntegrated": true,
+      "nativeKind": "hygiene-targets"
     },
     {
       "lessonId": "food-2-009",
@@ -104,7 +108,9 @@
       "objectiveJa": "衛生手順書の必要項目と実行可能性を確認し、改善点を提案できる。",
       "captionParagraphId": "p1",
       "originalDiagramKind": "wash",
-      "royalDailyImageIntegrated": false
+      "royalDailyImageIntegrated": false,
+      "royalDailyVisualIntegrated": true,
+      "nativeKind": "ssop-checklist"
     },
     {
       "lessonId": "food-2-010",
@@ -137,7 +143,9 @@
       "objectiveJa": "12手順の準備段階を理解し、工程図から抜けやすい投入物・排出物を見つけられる。",
       "captionParagraphId": "p1",
       "originalDiagramKind": "zones",
-      "royalDailyImageIntegrated": false
+      "royalDailyImageIntegrated": false,
+      "royalDailyVisualIntegrated": true,
+      "nativeKind": "haccp-preparation"
     }
   ],
   "scheduledLessonCount": 12,
@@ -205,9 +213,9 @@
       "method": "existing_valid_royal_asset_reuse"
     }
   ],
-  "completedDailyImageUnits": 8,
+  "completedDailyImageUnits": 9,
   "newDailyRasterCount": 5,
-  "reusedDailyRasterCount": 3,
+  "reusedDailyRasterCount": 4,
   "nativeHazardReuse": {
     "lessonIds": [
       "food-1-008",
@@ -285,12 +293,7 @@
     "runtimeSupplementalWeek2Exams": 0,
     "inlineAssessmentImages": "text/ruby/optionsonly; no imagerenderer"
   },
-  "remainingDailyLessonIds": [
-    "food-2-007",
-    "food-2-008",
-    "food-2-009",
-    "food-2-012"
-  ],
+  "remainingDailyLessonIds": [],
   "remainingSupplementalFigures": [
     "food-illustration-storage-hazards-example (keepincorrectexamplewarning)"
   ],
@@ -298,7 +301,7 @@
   "deviceReviewed": false,
   "releaseReady": false,
   "validation": {
-    "actualProductionRegistry": "PASS20 exact current bindings =12week1+8week2; stale rejected, existing assets/caption IDs verified, week3+0 overrides, week1 preserved, 010 dedup+ID, 012 incorrectExample preserved",
+    "actualProductionRegistry": "PASS21rasterbindings+3native-onlydaily=24dailyvisuals acrossweek1+week2; all12week2daily supported; no claim supplemental/localization/device completion",
     "reuseDedup": "PASS existing010illustrationIDmetadata preserved; activeImage testID transferred; oneactualdailyimage instead of duplicatebasefigure; unrelated012incorrectexamplewarning unchanged",
     "nativeHazardSsr": "PASS2week2readercontexts ×13displaylanguages (canonicalJP+12locales), exactlabels/notes andnativeimagewrappers; unrelatedlaterconcepts unchanged; metadata/textadapters only, notbrowserpixels",
     "newAndReusedAssets": "PASS2new+2reused WebPs decoded/dimensions/SHA256; eachactuallypixelopened",
@@ -451,5 +454,71 @@
     ],
     "twelveLocaleChartLabels": "NOT translated or newly reviewed. Existing current-source paragraph-caption translation behavior unchanged; it does not translate these native chart labels. No all-locale chart-completion claim.",
     "pending": "Localized native chart labels require separately verified text; not generated text."
-  }
+  },
+  "nativeGroup4": {
+    "baselineCommit": "1e07cc04f09741496d73501200be6a968a5579ba",
+    "checkedAtUtc": "2026-11-07T06:11:29.676288+00:00",
+    "newRasterCount": 0,
+    "bindings": [
+      {
+        "lessonId": "food-2-007",
+        "sourceHash": "2c629338cf4134af24042aa8117f076098f72b14aa556c9ceabb9723393d1f00",
+        "captionParagraphId": "p1",
+        "kind": "hazards",
+        "labelSource": "Existing canonical JP+12 diagram labels"
+      },
+      {
+        "lessonId": "food-2-008",
+        "sourceHash": "075c3dcba037f8619cf35bb77b28399a8926b0d66b648a523d3e14ebca90a5bf",
+        "captionParagraphId": "p1",
+        "kind": "hygiene-targets",
+        "labelSource": "Literal phrase extracts from existing current-source p1 in Japanese and12locales; sourceHash+exact-substring verified; full original localized caption retained"
+      },
+      {
+        "lessonId": "food-2-009",
+        "sourceHash": "e197cffffbd806bc320584baf7d936b67c4246c900f882f10cca64aac432ed67",
+        "captionParagraphId": "p1",
+        "kind": "ssop-checklist",
+        "labelSource": "Literal phrase extracts from existing current-source p1 in Japanese and12locales; sourceHash+exact-substring verified; full original localized caption retained"
+      },
+      {
+        "lessonId": "food-2-012",
+        "sourceHash": "9ceccfb809ac2c0a08597e103768f37c46361a3efa09e217e46c9b50febb12dd",
+        "captionParagraphId": "p1",
+        "kind": "haccp-preparation",
+        "labelSource": "Literal phrase extracts from existing current-source p1 in Japanese and12locales; sourceHash+exact-substring verified; full original localized caption retained"
+      }
+    ],
+    "meaningSelfReview": {
+      "food-2-007": "Three canonical hazard classifications unchanged. Context art classification is not product risk analysis itself; full source caption retains raw materials/process/storage/intended eating method. Moved same diagram to daily exact-hash placement, no duplicate later instance.",
+      "food-2-008": "People/equipment/packaged materials art is only contextual; native labels explicitly identify facilities-equipment-utensils, workers, ingredients-food, with full5S and organization caption. Three groups are not an ordered procedure.",
+      "food-2-009": "Exactly9 checklist fields. Chemicals AND tools grouped in one field; assigned worker and checker are separate. Numbers index fields, not temporal operation. Full source caption retains SOP/SSOP distinction and verified equipment/chemical-specific numeric conditions; no invented numerical threshold.",
+      "food-2-012": "Only first5 preparation steps, ordered1team/2productdescription/3intendeduse-targetconsumers/4processflow/5onsiteverification. Not all12 HACCP steps; full caption retains consequence of insufficient preparation."
+    },
+    "productionValidation": {
+      "nativeAndDailySSR": "PASS52contexts=4lessons×13displaylanguages. Actual production index/translation resolver+JSON/native/daily components; ruby-text and image-metadata adapters only, no browser pixels. ExactJP+12node/checklist/step labels and full existing localized captions present.",
+      "labelCardinality": "PASS0083groups,0099fields,0125steps in13languages, each label literal substring of current source-matched p1; distinct; no JP fallback counted as localization. Runtime locale-label substring guard.",
+      "guards": "PASS native exact sourceHash+caption; stalehash/missingcaption rejected, unrelatedlaterlesson nooverride. Hazard single placement.",
+      "rasterRegistry": "PASS21current rasterbindings=12week1+9week2; allassets current,stale rejected,week3+0,010singlelocation+stableID,012wrongexample warning preserved. Native-only3lessons do not use legacy foreign/wash/zones raster.",
+      "examIntersection": "Actual36exams848questions loaded via exact source resolver snippet+canonical base/supp JSON. Native4 target question-image intersections0; no question image fields, no daily/illustration image renderer in actual Attempt, answer/explanations submitted-only.",
+      "canonicalUnchanged": [
+        "index.ts",
+        "lessons.1.ja.json",
+        "lessons.2.ja.json",
+        "exams.ja.json",
+        "source-practice33.ts",
+        "illustrations.ts",
+        "diagrams.json"
+      ],
+      "scopedDiffCheck": "PASS"
+    },
+    "limits": "Literal extraction, source/hash checks and AI meaning self-review are not native-speaker, original-source PDF/domain, all-locale semantic approval, browser/device or release certification."
+  },
+  "completedNativeOnlyDailyUnits": 3,
+  "completedDailyVisualUnits": 12,
+  "remainingBlockers": [
+    "food-illustration-storage-hazards-example: existing explicitly incorrect supplemental still awaits Royal replacement; correct-storage daily cannot substitute for wrong example.",
+    "source33 chemical PPE native exact16Japanese lines have no verified equivalent12locale chart-label set; existing paragraph translations do not fully localize chart.",
+    "Runtime/browser/device blocked; source/domain/native-speaker/all-locale semantic certification unperformed."
+  ]
 }

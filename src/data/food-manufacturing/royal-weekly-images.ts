@@ -3,6 +3,7 @@ import type {FoodManufacturingLesson} from './index';
 export type FoodRoyalWeeklyImage={lessonId:string;sourceHash:string;captionParagraphId:string;source:ImageSourcePropType;width:number;height:number;replacesIllustrationId?:string};
 /** Lesson-specific Royal illustrations; preserve shared historical diagram families. */
 export const foodRoyalWeeklyImages:FoodRoyalWeeklyImage[]=[
+ {lessonId:'food-2-008',sourceHash:'075c3dcba037f8619cf35bb77b28399a8926b0d66b648a523d3e14ebca90a5bf',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week01/people-equipment-work.webp'),width:1536,height:1024},
  {lessonId:'food-2-010',sourceHash:'108f976dfc40c6bef2ca2183bd4daca1310c7ce6d4d250bb2f5df2a8a69afd9e',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week02/zone-entry-hygiene.webp'),width:1536,height:1024},
  {lessonId:'food-1-012',sourceHash:'dd569aad6e43b731f4b6ed55cafd91acc4711f9da13251e116f42c6e6c50a32b',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week02/separate-chemical-storage.webp'),width:1536,height:1024},
  {lessonId:'food-1-011',sourceHash:'b41d01d2e660a40a8563b480eb84cd098f1c3fcad5f8279c321a19bb8953b812',captionParagraphId:'p1',source:require('../../../assets/food-manufacturing/royal-weekly-20261107/week02/drain-and-under-machine-cleaning.webp'),width:1536,height:1024},
