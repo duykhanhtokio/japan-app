@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "sector": "food",
+  "baseCommit": "cd21aefe93c768a32576bac3af9a6d544b1de3b1",
+  "scope": "Reuse8 frozen earlier food week02 files; independently verify target. No raster generation or original checkout mutation.",
+  "frozenFileHashes": [
+    {
+      "path": "assets/food-manufacturing/royal-weekly-20261107/week02/health-report-before-entry.webp",
+      "beforeBlobSha1": null,
+      "afterBlobSha1": "d7702442da09b3bca5aa5ed7e195ba21cc5c6492",
+      "afterSha256": "d376a123b13862b99b40afedac34f9ded86137ad2d8eeee7964adc0c95976693",
+      "bytes": 288024
+    },
+    {
+      "path": "assets/food-manufacturing/royal-weekly-20261107/week02/cleaning-and-maintained-hygiene.webp",
+      "beforeBlobSha1": null,
+      "afterBlobSha1": "57e8029fbd28a52469fd191fb85064b18f74ccb3",
+      "afterSha256": "71d4f3286bf94f44969068f732ec24d75901b8c3ef5e15b2584f631c49a50c2a",
+      "bytes": 258590
+    },
+    {
+      "path": "src/data/food-manufacturing/royal-weekly-images.ts",
+      "beforeBlobSha1": "40295564a039c4f2183ebaa7ec1d522d2374d930",
+      "afterBlobSha1": "a3ede46e88357ffd9365cc40c51e6a7c495bc331",
+      "afterSha256": "044e0572336e0c5826d22d4583884e8b5dae337db8083dab29cd2af8fc4ef5e7",
+      "bytes": 4933
+    },
+    {
+      "path": "src/data/food-manufacturing/illustrations.ts",
+      "beforeBlobSha1": "dd16495871ee8b759d90b2b111daa812d13e5e74",
+      "afterBlobSha1": "03d7ae699208e769acd7850fc097d28845f38706",
+      "afterSha256": "072af8d737c9cded399fb00e8ba86f91020690bff0db8ca5b15045a8ff3b4d64",
+      "bytes": 2677
+    },
+    {
+      "path": "src/components/food-manufacturing/FoodDailyLearning.tsx",
+      "beforeBlobSha1": "e6292a67b6877d8013bac0b48570eb3dac7caf8e",
+      "afterBlobSha1": "adc0c67aeb8bb482a446db1bfaf4597df0d57a05",
+      "afterSha256": "682c435007c4016c1315fab89e77987fa62905b4241c1d4253fd3e472c3cf8d8",
+      "bytes": 7762
+    },
+    {
+      "path": "src/components/food-manufacturing/ConceptDiagrams.tsx",
+      "beforeBlobSha1": "7d1ee90f1d6cb24dc650c9f9bcfec20b435c48b5",
+      "afterBlobSha1": "3a0941b0206a74570bec1a99f25745a248fef646",
+      "afterSha256": "ea9b5039b14820e8d5dd8746bb0dd1d6d5cc45801dd5fb8c4eb2a78e9b7ff06f",
+      "bytes": 3382
+    },
+    {
+      "path": "docs/ssw-workspace/food-manufacturing/royal-images-week02-20261107.json",
+      "beforeBlobSha1": null,
+      "afterBlobSha1": "f63a18d8dde45dfcd73f9fbb5537beea43fdd460",
+      "afterSha256": "1cd51a75d95a331edccbb9c4c1648b2adaf91e2556a0d0a0e8e268e198097acf",
+      "bytes": 17021
+    },
+    {
+      "path": "docs/ssw-workspace/food-manufacturing/royal-week01-week02-parallel-reconciliation-20261107.json",
+      "beforeBlobSha1": null,
+      "afterBlobSha1": "0b9d184dc285dd2cf5cbae0fa5702a3438df40da",
+      "afterSha256": "8356e42e70134ba1c2953aa5915e96ce7d50bea44b73143aa28b04d2df813401",
+      "bytes": 12029
+    }
+  ],
+  "validation": {
+    "copiedFilesHashAndBasePreconditions": "PASS8/8",
+    "actualProductionRegistry": "PASS16currentbindings=12week01+4week02; stale guards; exactdailycaptions; week03+0overrides",
+    "reuseDedup": "PASS010metadata+stableID retained, basefigure suppressed only when same revision-bounddaily imageexists;012incorrectExample preserved",
+    "targetReaderSSR": {
+      "cases": 52,
+      "lessons": [
+        "food-1-007",
+        "food-1-008",
+        "food-1-009",
+        "food-1-010"
+      ],
+      "displayLanguages": 13,
+      "localizedCaptionPairs": 48,
+      "result": "PASS selectedimage URI, Japanese title/body, revision-matching translatedtitle/body,010figureID",
+      "adapters": "Production FoodDailyLearning JSX+registry; text/data adapters; RNImage adapted to deterministic img exposing selectedURI, because RNWebSSR omits URI beforeclient effects. No browserlayout evidence."
+    },
+    "nativeHazardSSR": "PASS2week02contexts×13displaylanguages; exactJP+12locale labels/notes; unrelatedlatercontexts unchanged",
+    "pixelInspection": "PASS2frozennewWebPs+2existingRoyalreuses opened; contextualactions match currentlesson, no diagnostic/numericclaims",
+    "componentChangeIsolation": "PASS FoodDaily addsimage testID only; Concept changes lessonset name andadds2supportedIDs only",
+    "typescriptParsing": "PASS esbuildregistrybundle+2TSXparse",
+    "scopedDiffCheck": "PASS"
+  },
+  "preserved": [
+    "Japanese text/hashes",
+    "question IDs/answers",
+    "learner state",
+    "translations/ruby",
+    "12week01bindings",
+    "original activecheckout bytes"
+  ],
+  "remaining": {
+    "dailyWeek02Images": 8,
+    "supplementalWeek02Figures": 2,
+    "browserOrDeviceAcceptance": false,
+    "week02Complete": false,
+    "releaseReady": false
+  },
+  "remotePersistence": "Pending root narrow commit/push/fetch verification"
+}
