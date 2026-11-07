@@ -15,6 +15,8 @@ export function dailyBodyCurrent40(lesson:ManufacturingLesson):boolean{
  if(!saved)return !week06&&!(data.requiredLessonIds??[]).includes(lesson.id);
  return saved.sourceHash===lesson.sourceHash&&saved.objectiveJa===lesson.objectiveJa&&JSON.stringify(saved.paragraphs)===JSON.stringify(lesson.paragraphs);
 }
+/** An existing row keeps its source validation even when a legacy mapping also exists. */
+export function hasDailyFigure40Registration(lesson:ManufacturingLesson):boolean{return own(figures(lesson),lesson.id);}
 /** Exact current lesson revision; metadata never substitutes for an image asset. */
 export function dailyFigure40(lesson:ManufacturingLesson):DailyFigure40|null{
  if(!dailyBodyCurrent40(lesson))return null;
