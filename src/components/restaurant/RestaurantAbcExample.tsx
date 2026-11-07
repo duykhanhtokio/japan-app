@@ -15,7 +15,7 @@ export function restaurantAbcRows(){
  return {total,rows:[...data.items].sort((a,b)=>b.salesYen-a.salesYen).map(item=>{const share=item.salesYen/total*100;cumulative+=share;return {...item,share,cumulative,group:cumulative<=data.exerciseThresholds.aMaxCumulativePercent?'A':cumulative<=data.exerciseThresholds.bMaxCumulativePercent?'B':'C'};})};
 }
 const headings=[
- [{text:'ABC',reading:'エービーシー'},{text:'分析',reading:'ぶんせき'},{text:'：'},{text:'売上額',reading:'うりあげがく'},{text:'の'},{text:'独自練習',reading:'どくじれんしゅう'}],
+ [{text:'ABC',reading:'えーびーしー'},{text:'分析',reading:'ぶんせき'},{text:'：'},{text:'売上額',reading:'うりあげがく'},{text:'の'},{text:'独自練習',reading:'どくじれんしゅう'}],
  [{text:'売上額',reading:'うりあげがく'}],
  [{text:'構成比',reading:'こうせいひ'}],
  [{text:'累積構成比',reading:'るいせきこうせいひ'}],

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "sector": "restaurant",
+  "lessonId": "rst-2-ops-06",
+  "scope": "Actual Japanese-ruby production route for theABCnativeheading",
+  "baseCommit": "b58424274a6215053ad450b059191862ca353801",
+  "status": "SELF_CHECKED_READY_PENDING_COORDINATOR_PERSISTENCE",
+  "problem": "ABCheadingsegmentreadingwasKatakanaエービーシー.ActualhasAlignedRubyacceptsonlyhiragana/longmark; oneinvalidreadingthereforesuppressedrubyforthewholeheadingincluding分析/売上額/独自練習. Earlierplain-readingSSRadapterdidnotexercisethisproductionrule.",
+  "change": "Usehiraganaえーびーしー;refreshonlyABCcompanionrendererhash.NoJapaneseheadingtext/body/calculation/captiontranslation/assetorlearneridentitychanged.",
+  "validation": {
+    "command": "NODE_PATH=<qa-runtime>/node_modules node scripts/restaurant/check-abc-reading.cjs",
+    "actualProductionModules": [
+      "src/components/restaurant/RestaurantAbcExample.tsx",
+      "src/components/restaurant/RestaurantReading.tsx",
+      "src/components/world/japanese-ruby-data.ts"
+    ],
+    "beforeReproduced": true,
+    "afterJaPlus12Locales": "PASSえーびーしー/ぶんせき/うりあげがく/どくじれんしゅうactuallyrendered",
+    "amounts": "100000and45000/25000/20000/10000unchanged",
+    "registrationRendererHash": "PASS",
+    "diffCheck": "PASS scoped",
+    "nativePhysicalDeviceTested": false
+  },
+  "generationCalls": 0,
+  "canonicalKnowledgeOrSourceCoverageChanged": false,
+  "wholeIllustrationScopeComplete": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "fileSha256": {
+    "src/components/restaurant/RestaurantAbcExample.tsx": "9bdb126f74b011fd07cd834546fd1bfb6b6339b0b57955c765ad6b298e8d9401",
+    "src/data/restaurant/daily-learning.json": "8067f32c6526a2784066cde73dd7753e157b5278caf435d57033bee8a349e6da",
+    "scripts/restaurant/check-abc-reading.cjs": "03b0dd82e37fc9bd935b62b71929bf089cfc4e5a3ce91f81393ad290fb5db2ee"
+  },
+  "beforeRendererSha256": "88700d7759513237e3778e58b9151fa4159994f5c81dc64b795b1560712ea014"
+}

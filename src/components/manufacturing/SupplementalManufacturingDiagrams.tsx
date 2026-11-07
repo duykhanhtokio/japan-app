@@ -1,3 +1,4 @@
+import {manufacturingIllustrationCaptionReading} from '@/data/manufacturing/illustration-caption-readings';
 import {useState} from 'react';
 import {Image,Modal,Pressable,ScrollView,Text,View,useWindowDimensions} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -40,5 +41,5 @@ export function SupplementalFigure({item,language,showTranslation,imageSource,tr
 }
 
 export function SupplementalManufacturingDiagrams({lesson,language,showTranslation}:{lesson:ManufacturingLesson;language:string;showTranslation:boolean}){
- return <>{manufacturingSupplementalDiagrams(lesson).map(item=><SupplementalFigure key={item.id} item={item} language={language} showTranslation={showTranslation}/>)}</>;
+ return <>{manufacturingSupplementalDiagrams(lesson).map(item=><SupplementalFigure key={item.id} item={item} japaneseCaptionRuby={manufacturingIllustrationCaptionReading(lesson,item)} language={language} showTranslation={showTranslation}/>)}</>;
 }
