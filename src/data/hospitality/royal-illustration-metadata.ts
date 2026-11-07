@@ -1,5 +1,50 @@
 // Descriptions of the active replacement pixels; lesson knowledge/revisions stay independent.
 const currentImageAlt:Record<string,Record<string,string>> = {
+  "hotel-safety-08": {
+  "ja": "衛生担当者が厨房の保管設備と記録を確認し、別の場面で浴場担当者が測定記録を照合する。",
+  "en": "Hygiene staff check kitchen storage equipment and records; a separate bath-area scene shows checking measurement records.",
+  "vi": "Nhân viên vệ sinh kiểm tra thiết bị bảo quản bếp và hồ sơ; cảnh khu tắm cho thấy đối chiếu ghi chép đo đạc.",
+  "id": "Petugas higiene memeriksa penyimpanan dapur dan catatan; adegan area mandi menunjukkan pemeriksaan catatan pengukuran.",
+  "zh-CN": "卫生人员检查厨房储存设备与记录；浴场场景展示核对测量记录。",
+  "zh-TW": "衛生人員檢查廚房儲存設備與紀錄；浴場場景展示核對量測紀錄。",
+  "hi": "स्वच्छता कर्मचारी रसोई भंडारण और रिकॉर्ड जाँचते हैं; अलग स्नान-क्षेत्र दृश्य में माप के रिकॉर्ड जाँचे जाते हैं।",
+  "bn": "স্বাস্থ্যবিধির কর্মীরা রান্নাঘরের সংরক্ষণ সরঞ্জাম ও নথি যাচাই করছেন; আলাদা স্নানাগার দৃশ্যে পরিমাপের নথি দেখা হচ্ছে।",
+  "ne": "सरसफाइ कर्मचारीले भान्सा भण्डारण र अभिलेख जाँच्छन्; छुट्टै स्नानक्षेत्रमा मापन अभिलेख जाँचिएको छ।",
+  "my": "သန့်ရှင်းရေးတာဝန်ရှိသူက မီးဖိုချောင်သိုလှောင်ကိရိယာနှင့်မှတ်တမ်းကိုစစ်ပြီး သီးခြားရေချိုးကန်နေရာမြင်ကွင်းတွင် တိုင်းတာမှတ်တမ်းကိုတိုက်စစ်သည်။",
+  "th": "เจ้าหน้าที่สุขอนามัยตรวจอุปกรณ์เก็บอาหารและบันทึกในครัว อีกภาพที่พื้นที่อาบน้ำแสดงการตรวจบันทึกการวัด",
+  "km": "អ្នកទទួលបន្ទុកអនាម័យពិនិត្យឧបករណ៍រក្សាទុកនិងកំណត់ត្រាក្នុងផ្ទះបាយ ហើយទិដ្ឋភាពអាងងូតទឹកបង្ហាញការផ្ទៀងផ្ទាត់កំណត់ត្រាវាស់វែង។",
+  "tl": "Sinusuri ng kawani ng kalinisan ang imbakan sa kusina at mga tala; sa hiwalay na tagpo sa paliguan, sinusuri ang tala ng pagsukat."
+},
+  "hotel-safety-07": {
+  "ja": "勤務交代する係員が報知設備の状態と未解決事項を記録で引き継ぐ。",
+  "en": "Staff changing shifts hand over alarm-system status and unresolved matters using a record.",
+  "vi": "Nhân viên đổi ca bàn giao tình trạng hệ thống báo động và vấn đề chưa xử lý qua ghi chép.",
+  "id": "Petugas pergantian sif menyerahkan status sistem alarm dan masalah yang belum selesai melalui catatan.",
+  "zh-CN": "交接班员工依据记录交接报警设备状态与未解决事项。",
+  "zh-TW": "交接班員工依據紀錄交接警報設備狀態與未解決事項。",
+  "hi": "पाली बदलते कर्मचारी रिकॉर्ड से अलार्म की स्थिति और अनसुलझे मामलों का हस्तांतरण करते हैं।",
+  "bn": "পালা বদলের কর্মীরা নথির সাহায্যে অ্যালার্মের অবস্থা ও অমীমাংসিত বিষয় হস্তান্তর করছেন।",
+  "ne": "पालो फेरिने कर्मचारीले अभिलेखबाट अलार्मको अवस्था र बाँकी समस्या हस्तान्तरण गर्छन्।",
+  "my": "အလှည့်ပြောင်းဝန်ထမ်းများက အချက်ပေးစနစ်အခြေအနေနှင့် မဖြေရှင်းရသေးသောကိစ္စများကို မှတ်တမ်းဖြင့်လွှဲပြောင်းသည်။",
+  "th": "พนักงานเปลี่ยนกะส่งต่อสถานะระบบแจ้งเหตุและเรื่องที่ยังไม่แก้ไขโดยใช้บันทึก",
+  "km": "បុគ្គលិកប្ដូរវេនប្រគល់ព័ត៌មានស្ថានភាពប្រព័ន្ធរោទិ៍ និងបញ្ហាមិនទាន់ដោះស្រាយតាមកំណត់ត្រា។",
+  "tl": "Ipinapasa ng mga kawani sa pagpapalit ng shift ang kalagayan ng alarm at hindi pa nalulutas na usapin gamit ang tala."
+},
+  "hotel-safety-06": {
+  "ja": "ホテル管理者が閉じた台帳と整理された記録を担当者と確認する。",
+  "en": "Hotel managers check a closed guest ledger and organised records together.",
+  "vi": "Quản lý khách sạn cùng người phụ trách kiểm tra sổ khách đã đóng và hồ sơ được sắp xếp.",
+  "id": "Pengelola hotel memeriksa buku tamu tertutup dan catatan teratur bersama penanggung jawab.",
+  "zh-CN": "酒店管理者与负责人共同核对合上的住客名册及整理好的记录。",
+  "zh-TW": "飯店管理者與負責人共同核對合上的旅客名冊及整理好的紀錄。",
+  "hi": "होटल प्रबंधक बंद अतिथि रजिस्टर और व्यवस्थित रिकॉर्ड की जाँच करते हैं।",
+  "bn": "হোটেল ব্যবস্থাপকরা বন্ধ অতিথি নিবন্ধনবই ও সাজানো নথি যাচাই করছেন।",
+  "ne": "होटल व्यवस्थापकहरूले बन्द अतिथि दर्ता किताब र व्यवस्थित अभिलेख जाँच्छन्।",
+  "my": "ဟိုတယ်မန်နေဂျာများက ပိတ်ထားသောဧည့်သည်စာရင်းနှင့် စနစ်တကျမှတ်တမ်းများကိုအတူစစ်ဆေးသည်။",
+  "th": "ผู้จัดการโรงแรมตรวจสมุดทะเบียนที่ปิดอยู่และบันทึกที่จัดระเบียบร่วมกัน",
+  "km": "អ្នកគ្រប់គ្រងសណ្ឋាគារពិនិត្យសៀវភៅបញ្ជីភ្ញៀវដែលបិទ និងឯកសាររៀបចំរួចជាមួយគ្នា។",
+  "tl": "Sinusuri ng mga tagapamahala ang saradong talaan ng bisita at maayos na mga rekord."
+},
   "hotel-restaurant-09": {
   "ja": "レストラン責任者が調理人と記録を照合し、食材費と人件費を確認する。",
   "en": "A restaurant supervisor checks records with a chef while reviewing food and labour costs.",

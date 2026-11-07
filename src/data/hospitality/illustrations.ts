@@ -35,9 +35,9 @@ const figures:Record<string,()=>ImageSourcePropType>={
  'hotel-safety-03':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week04/hotel-safety-03.webp'),
  'hotel-safety-04':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week04/hotel-safety-04.webp'),
  'hotel-safety-05':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week04/hotel-safety-05.webp'),
- 'hotel-safety-06':()=>require('../../../assets/app/hospitality/hotel-safety-06.png'),
- 'hotel-safety-07':()=>require('../../../assets/app/hospitality/hotel-safety-07.png'),
- 'hotel-safety-08':()=>require('../../../assets/app/hospitality/hotel-safety-08.png'),
+ 'hotel-safety-06':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week06/hotel-safety-06.webp'),
+ 'hotel-safety-07':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week06/hotel-safety-07.webp'),
+ 'hotel-safety-08':()=>require('../../../assets/app/hospitality/royal-weekly-20261107/week06/hotel-safety-08.webp'),
 };
 export function hotelIllustration(id:string):ImageSourcePropType|null{return figures[id]?.()??null;}
 
