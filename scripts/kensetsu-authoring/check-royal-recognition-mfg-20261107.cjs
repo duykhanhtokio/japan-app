@@ -1,0 +1,50 @@
+const fs=require('fs'),path=require('path'),assert=require('assert/strict'),crypto=require('crypto'),esbuild=require('esbuild'),parser=require('@babel/parser'),React=require('react');
+const root=process.env.TOKUTEI_REPO_ROOT||path.resolve(__dirname,'../..'),tmp=process.env.TOKUTEI_DAILY_REVIEW_CACHE||'/tmp/kensetsu-daily-review',dir=path.join(root,'src/data/kensetsu');
+const read=p=>fs.readFileSync(p,'utf8'),json=p=>JSON.parse(read(p)),sha=s=>crypto.createHash('sha256').update(s).digest('hex');
+function evaluate(text,filename,deps={}){const code=esbuild.transformSync(text,{loader:filename.endsWith('tsx')?'tsx':'ts',format:'cjs',target:'es2020',jsx:'transform'}).code,m={exports:{}};new Function('module','exports','require',code)(m,m.exports,p=>p in deps?deps[p]:require(path.resolve(path.dirname(filename),p)));return m.exports;}
+const indexText=read(path.join(dir,'index.ts')),localization=evaluate(read(path.join(dir,'localization.ts')),path.join(dir,'localization.ts'));
+const cachePath=path.join(tmp,'resolver-real-current-canonical.json');
+const canonicalPaths=fs.readdirSync(path.join(root,'docs/ssw-workspace/kensetsu')).filter(n=>/^shared-session-\d+\.json$/.test(n)).map(n=>'docs/ssw-workspace/kensetsu/'+n);
+for(const sub of ['building/practical','civil/practical','foreman']){const d=path.join(root,'docs/ssw-workspace/kensetsu',sub);if(fs.existsSync(d))for(const n of fs.readdirSync(d).filter(n=>/^session-\d+\.json$/.test(n)))canonicalPaths.push('docs/ssw-workspace/kensetsu/'+sub+'/'+n);}
+const real=fs.existsSync(cachePath)?json(cachePath):canonicalPaths.map(file=>({file,session:json(path.join(root,file))})),raw=real.map(x=>x.session);
+const reuse=json(path.join(dir,'reuse-policy.json')),paragraphReuse=json(path.join(dir,'paragraph-reuse-policy.json')),groups=json(path.join(dir,'daily-study-groups.json'));
+const rawById=new Map(raw.map(s=>[s.id,s]));
+for(const group of groups.groups)for(const id of group.memberIds)assert(rawById.has(id),'Unbound group member missing '+id);
+for(const addition of paragraphReuse.supplements)assert(rawById.has(addition.sourceSessionId)&&rawById.has(addition.targetSessionId));
+for(const view of reuse.deltaViews)assert(rawById.has(view.sessionId),'Active delta missing '+view.sessionId);
+// Execute the actual field reader transformation, including delta paragraph filtering and contentRevision.
+const differentialTranslations=new Map();
+for(const s of raw.filter(s=>/-(building|civil)-practical-/.test(s.id))){const file=path.join(dir,'differential-translations',(s.id.includes('-building-')?'b':'c')+Number(s.id.split('-').pop())+'.json');if(fs.existsSync(file)){const b=json(file);differentialTranslations.set(b.sessionId,b);}}
+const fieldCode=read(path.join(dir,'field-practical.ts')).split('export const fieldPracticalSessions:')[1];
+const fieldCompiled=esbuild.transformSync('export const fieldPracticalSessions:'+fieldCode,{loader:'ts',format:'cjs'}).code,mField={exports:{}};
+new Function('module','exports','originalFieldPracticalSessions','reusePolicy','differentialTranslations','applyLessonTranslations',fieldCompiled)(mField,mField.exports,raw.filter(s=>/-(building|civil)-practical-/.test(s.id)),reuse,differentialTranslations,localization.applyLessonTranslations);
+const foremanPacks=['en','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'].map(l=>json(path.join(dir,'foreman-translations',l+'.json')));
+const foreman=raw.filter(s=>s.id.includes('-foreman-')).map(s=>localization.applyLocaleLessonBundles(s,foremanPacks.map(p=>p.sessions[s.id])));
+const loaderStart=indexText.indexOf('const translationLoaders'),loaderEnd=indexText.indexOf('export const sessions:',loaderStart);
+const loaders=evaluate(indexText.slice(loaderStart,loaderEnd)+'\nexport {translationLoaders};',path.join(dir,'index.ts')).translationLoaders;
+const sessions=[...foreman,...mField.exports.fieldPracticalSessions,...raw.filter(s=>s.id.includes('-common-'))].map(s=>loaders[s.id]?localization.deferLessonTranslations(s,loaders[s.id]):s);
+const completionLine=indexText.split('\n').find(l=>l.startsWith('export const completionId='));assert(completionLine);
+const completionId=evaluate(completionLine,path.join(dir,'index.ts')).completionId;
+const fragment=json(path.join(root,'docs/ssw-workspace/kensetsu/royal-recognition-mfg-20261107/mapping-fragment.json')),specs={figures:fragment.figures};
+for(const f of specs.figures)for(const b of f.bindings){const canonical=rawById.get(b.sessionId);assert(canonical);assert.equal(canonical.revision,b.revision);assert(canonical.clusters.some(c=>c.paragraphs.some(p=>p.id===b.paragraphId&&p.ja===b.paragraphJa)));assert.equal(sha(b.paragraphJa),b.sourceParagraphSha256);assert.equal(sha(fs.readFileSync(path.join(root,f.assetPath))),f.assetSha256);}
+const indexDependency={sessions,completionId},scopeText=read(path.join(dir,'scope.ts'));
+function scopeFor(figures=specs){return evaluate(scopeText,path.join(dir,'scope.ts'),{'./index':indexDependency,'./paragraph-reuse-policy.json':paragraphReuse,'./daily-study-groups.json':groups,'./daily-technical-figures.json':figures,'./reuse-policy.json':reuse});}
+const api=scopeFor(),contexts=[],captions=new Map();for(const level of ['1','2'])for(const field of ['utilities','building','civil'])for(const subject of ['theory','practical','foreman'])contexts.push({level,field,subject});
+let activationCases=0,negativeRejections=0;const rows=[];
+for(const f of specs.figures)for(const b of f.bindings){const activations=[];
+ for(const c of contexts){const s=api.sessionForScope(b.sessionId,c.level,c.field,c.subject);if(!s)continue;const target=s.clusters.flatMap(c=>c.paragraphs).find(p=>p.id===b.paragraphId);if(target?.ja!==b.paragraphJa)continue;const day=api.studyDayForScope(b.sessionId,c.level,c.field,c.subject);assert(day.illustrations.some(x=>x.path===f.assetPath));const image=day.illustrations.find(x=>x.path===f.assetPath);assert.equal(Object.keys(image.altTranslations).length,12);captions.set(f.id,{ja:image.altJa,...image.altTranslations});activations.push(c);activationCases++;
+  for(const [name,change] of [['revision',x=>x.revision+=100],['ja',x=>x.paragraphJa+='変更'],['missing',x=>x.paragraphId+='missing']]){const altered=structuredClone(specs),bb=altered.figures.find(x=>x.id===f.id).bindings[0];change(bb);const d=scopeFor(altered).studyDayForScope(b.sessionId,c.level,c.field,c.subject);assert(!d.illustrations.some(x=>x.path===f.assetPath));negativeRejections++;}
+ }
+ assert(activations.length);rows.push({figureId:f.id,assetPath:f.assetPath,sessionId:b.sessionId,paragraphId:b.paragraphId,sourceParagraphSha256:b.sourceParagraphSha256,activations});
+}
+assert.equal(rows.length,4);assert.equal(specs.figures.find(f=>f.id==='kensetsu-daily-technical-pliers').bindings[0].sessionId,'kensetsu-common-session-261');assert.equal(specs.figures.find(f=>f.id==='kensetsu-royal-recognition-combination-pliers-264').bindings[0].sessionId,'kensetsu-common-session-264');
+const illustrations=Object.fromEntries(specs.figures.map(f=>[f.assetPath,path.join(root,f.assetPath)])),ratios=Object.fromEntries(specs.figures.map(f=>[f.assetPath,f.width/f.height]));
+const componentPath=path.join(root,'src/components/kensetsu/KensetsuCourse.tsx'),componentText=read(fs.existsSync(componentPath)?componentPath:path.join(tmp,'KensetsuCourse-current.tsx')),ast=parser.parse(componentText,{sourceType:'module',plugins:['typescript','jsx']}),node=ast.program.body.find(n=>n.type==='FunctionDeclaration'&&n.id.name==='StudyImage');assert(node);
+const studyCode=esbuild.transformSync(componentText.slice(node.start,node.end)+'\nreturn StudyImage;',{loader:'tsx',jsx:'transform'}).code;
+let host={width:390,height:844},states=[],cursor=0;
+const useState=v=>{const i=cursor++;if(states[i]===undefined)states[i]=v;return[states[i],value=>states[i]=typeof value==='function'?value(states[i]):value];};
+const StudyImage=new Function('React','useState','useWindowDimensions','useSafeAreaInsets','useStudyAppearance','illustrations','illustrationAspectRatios','View','Pressable','Image','Text','Modal','ScrollView','Action','s',studyCode)(React,useState,()=>host,()=>({top:24,bottom:20,left:0,right:0}),()=>({colors:{muted:'#555'}}),illustrations,ratios,'View','Pressable','Image','Text','Modal','ScrollView',function Action(){},new Proxy({},{get:(o,k)=>String(k)}));
+const allNodes=element=>{if(!element||typeof element!=='object')return[];return[element,...React.Children.toArray(element.props?.children).flatMap(allNodes)];};
+let hostedCases=0,renders=0;const locales=['ja','en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
+for(const f of specs.figures)for(const size of [{width:375,height:812},{width:812,height:375},{width:768,height:1024},{width:1440,height:900}])for(const language of locales){host=size;states=[];const render=()=>{cursor=0;renders++;return StudyImage({path:f.assetPath,caption:captions.get(f.id)[language]});};let nodes=allNodes(render());const imgs=nodes.filter(n=>n.type==='Image');assert.equal(imgs.length,2);for(const img of imgs){assert.equal(img.props.source,illustrations[f.assetPath]);assert.equal(img.props.resizeMode,'contain');assert(Math.abs(img.props.style.width/img.props.style.height-1.5)<1e-8);}nodes.find(n=>n.props.testID==='kensetsu-study-image').props.onPress();nodes=allNodes(render());assert.equal(nodes.find(n=>n.type==='Modal').props.visible,true);nodes.find(n=>n.props.testID==='kensetsu-image-magnify').props.onPress();nodes=allNodes(render());assert(nodes.filter(n=>n.type==='Image')[1].props.style.width>=900);hostedCases++;}
+console.log(JSON.stringify({PASS:true,scope:'Preintegration only: actual scope.ts with4fragment rows injected, actual current canonical/source/locale policies; actual StudyImage with private asset-key identity adapter. Shared registry integration is pending, no browser/device/domain approval.',bindings:rows.length,activationCases,negativeRejections,hostedCases,renders,actualScopeSha256:sha(scopeText),actualComponentSha256:sha(componentText),mappingFragmentSha256:sha(read(path.join(root,'docs/ssw-workspace/kensetsu/royal-recognition-mfg-20261107/mapping-fragment.json'))),rows}));
