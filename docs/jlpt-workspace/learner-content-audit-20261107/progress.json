@@ -1,30 +1,253 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "dateJst": "2026-11-07",
   "scope": "30 independently authored original JLPT forms only; historical exams preserved",
+  "reviewMethod": "Six independent AI semantic reviewers for remaining24; coordinator validates integration and persistence, no cross-worker semantic review. Earlier six N5 receipts retained.",
   "mechanicalFormsChecked": 30,
   "mechanicalQuestionsChecked": 3018,
   "textToManifestListeningUnitsChecked": 882,
+  "semanticFormsReviewed": 30,
+  "semanticQuestionsReviewed": 3018,
+  "semanticWrittenReviewed": 2136,
+  "semanticListeningScriptsReviewed": 882,
+  "semanticTextReviewComplete": true,
+  "currentTurnFormsReviewed": 24,
+  "currentTurnQuestionsReviewed": 2472,
+  "currentTurnWrittenReviewed": 1734,
+  "currentTurnListeningScriptsReviewed": 738,
+  "currentTurnDistinctQuestionsChanged": 73,
+  "distinctQuestionsCorrected": 84,
+  "perLevel": {
+    "N5": {
+      "formsReviewed": 6,
+      "questionsReviewed": 546,
+      "writtenReviewed": 402,
+      "listeningScriptsReviewed": 144,
+      "distinctQuestionsChanged": 11
+    },
+    "N4": {
+      "formsReviewed": 6,
+      "questionsReviewed": 588,
+      "writtenReviewed": 420,
+      "listeningScriptsReviewed": 168,
+      "distinctQuestionsChanged": 31
+    },
+    "N3": {
+      "formsReviewed": 6,
+      "questionsReviewed": 612,
+      "writtenReviewed": 444,
+      "listeningScriptsReviewed": 168,
+      "distinctQuestionsChanged": 14
+    },
+    "N2": {
+      "formsReviewed": 6,
+      "questionsReviewed": 636,
+      "writtenReviewed": 450,
+      "listeningScriptsReviewed": 186,
+      "distinctQuestionsChanged": 12
+    },
+    "N1": {
+      "formsReviewed": 6,
+      "questionsReviewed": 636,
+      "writtenReviewed": 420,
+      "listeningScriptsReviewed": 216,
+      "distinctQuestionsChanged": 16
+    }
+  },
+  "correctAnswerIdsChanged": 0,
+  "spokenScriptsOrRecordedOptionsChanged": 0,
+  "unspokenPrintedListeningChoicesCorrected": [
+    "jpapp-n3-original-02-v1-listening-1-05",
+    "jpapp-n3-original-03-v1-listening-1-06"
+  ],
+  "audioRegenerated": false,
   "actualAudioHeard": false,
   "pronunciationVerified": false,
-  "semanticFormsReviewed": 6,
-  "semanticQuestionsReviewed": 546,
-  "semanticWrittenReviewed": 402,
-  "semanticListeningScriptsReviewed": 144,
-  "distinctQuestionsCorrected": 11,
-  "correctAnswerIdsChanged": 0,
-  "spokenScriptsOrOptionsChanged": 0,
-  "audioRegenerated": false,
-  "remainingSemanticForms": 24,
-  "nextSemanticExamId": "jpapp-n4-original-01-v1",
+  "imageConsistencyReviewed": false,
+  "publisherReviewed": false,
+  "nativeReviewed": false,
   "releaseReady": false,
+  "remainingSemanticForms": 0,
+  "nextSemanticExamId": null,
+  "openSemanticBlockers": [],
+  "assessment": "All detected text-semantic findings resolved in this AI review; not a guarantee that no undiscovered error exists.",
   "openGates": [
-    "Review all remaining 24 forms semantically, including alternatives/rationales/passages/scripts.",
-    "Inspect learner-visible illustrations against the information used in their questions.",
-    "Actually compare canonical installed recordings with scripts and verify pronunciation; manifest equality is not acoustic acceptance.",
-    "When installing revised candidates, rebind written-only master metadata by proven equality of the spoken-content projection; do not regenerate unchanged speech."
+    "Actually compare installed recordings with scripts and verify pronunciation; manifest equality is not acoustic acceptance.",
+    "Inspect learner-visible illustrations against question information.",
+    "When installing revised audio candidates, rebind written-only metadata using proven equality of spoken-content projections; do not regenerate unchanged speech."
+  ],
+  "currentTurnBaselineCommit": "3baa71640f9cde91c20ff5233096d826abccd495",
+  "currentTurnUnits": [
+    {
+      "examId": "jpapp-n4-original-01-v1",
+      "masterSha256": "9636317fc18eef6c4402daca5989ea729deb9a726eb873fca15cf0af2a375c19",
+      "reviewFile": "n4-01.json",
+      "questionsRead": 98
+    },
+    {
+      "examId": "jpapp-n4-original-02-v1",
+      "masterSha256": "79ba56b3701f562915f615a0a3b10e79372f3107619581fe1aad7b3426c3fddf",
+      "reviewFile": "n4-02.json",
+      "questionsRead": 98
+    },
+    {
+      "examId": "jpapp-n4-original-03-v1",
+      "masterSha256": "1917555299a474be907b1a6799ee093b6121862fad67c87479a7cf3fb2d3a810",
+      "reviewFile": "n4-03.json",
+      "questionsRead": 98
+    },
+    {
+      "examId": "jpapp-n4-original-04-v1",
+      "masterSha256": "1a89733b3d49912919a8d743f8707a5fc1a970cdfdd84d26ccc9393c82db4190",
+      "reviewFile": "n4-04.json",
+      "questionsRead": 98
+    },
+    {
+      "examId": "jpapp-n4-original-05-v1",
+      "masterSha256": "21083b724591b2a157511697ee907f392d26799028b44db796c953c08a0b4f3d",
+      "reviewFile": "n4-05.json",
+      "questionsRead": 98
+    },
+    {
+      "examId": "jpapp-n4-original-06-v1",
+      "masterSha256": "f27639d262530d6903056f9b7c318467669f4dc61b1a9d262e48d1c0df95207c",
+      "reviewFile": "n4-06.json",
+      "questionsRead": 98
+    },
+    {
+      "examId": "jpapp-n3-original-01-v1",
+      "masterSha256": "c70d2560093d9988e556216979ede102ef14a0a956eb6cf6f48b014f299928f4",
+      "reviewFile": "n3-01.json",
+      "questionsRead": 102
+    },
+    {
+      "examId": "jpapp-n3-original-02-v1",
+      "masterSha256": "43fc8319481c7696a95c3d6e8a8aedde51e09fa8a26b1d51772abe2c3dd863f9",
+      "reviewFile": "n3-02.json",
+      "questionsRead": 102
+    },
+    {
+      "examId": "jpapp-n3-original-03-v1",
+      "masterSha256": "96af265d6c7acd897209705a344ed5b6b01b386e0fcc48eee9e01d6690fe7e0d",
+      "reviewFile": "n3-03.json",
+      "questionsRead": 102
+    },
+    {
+      "examId": "jpapp-n3-original-04-v1",
+      "masterSha256": "9b618c179ec600ab4021784027b6538c35a72bffe9559ef2f4c8a1a2a51adbda",
+      "reviewFile": "n3-04.json",
+      "questionsRead": 102
+    },
+    {
+      "examId": "jpapp-n3-original-05-v1",
+      "masterSha256": "8885982db099bda7ec94be2ce46b4cfbe851eeefd307725d0f0f308f7824f3f0",
+      "reviewFile": "n3-05.json",
+      "questionsRead": 102
+    },
+    {
+      "examId": "jpapp-n3-original-06-v1",
+      "masterSha256": "f1e167ca29498c2180c258c9e223c848377dbe7f5b28b90d268c46db298b785d",
+      "reviewFile": "n3-06.json",
+      "questionsRead": 102
+    },
+    {
+      "examId": "jpapp-n2-original-01-v1",
+      "masterSha256": "ea6c8a236cc8589fb21a8e98045300372b80578ef4788bad3e83f29da3f029da",
+      "reviewFile": "n2-01.json",
+      "questionsRead": 106
+    },
+    {
+      "examId": "jpapp-n2-original-02-v1",
+      "masterSha256": "995fbfcb563437bc273158b93ccfae57a693cb9c64549c3284717ecfb4bde3c5",
+      "reviewFile": "n2-02.json",
+      "questionsRead": 106
+    },
+    {
+      "examId": "jpapp-n2-original-03-v1",
+      "masterSha256": "3ad0d32e1f89324ebcd522b03fb54531d696602afe057b8218575c8f0ebcf8ed",
+      "reviewFile": "n2-03.json",
+      "questionsRead": 106
+    },
+    {
+      "examId": "jpapp-n2-original-04-v1",
+      "masterSha256": "3fdf25567b03b92eb692eea04435595c0961cde72fce940d982cd9db47e3d36d",
+      "reviewFile": "n2-04.json",
+      "questionsRead": 106
+    },
+    {
+      "examId": "jpapp-n2-original-05-v1",
+      "masterSha256": "0b0b3a8695c875bcdcb4c152e301563b64fc2ae64da6188318a41ec6f1872283",
+      "reviewFile": "n2-05.json",
+      "questionsRead": 106
+    },
+    {
+      "examId": "jpapp-n2-original-06-v1",
+      "masterSha256": "38ea67d2c34ec54798034d2a798211b40428800cca26a750d0d0f63b273b6f71",
+      "reviewFile": "n2-06.json",
+      "questionsRead": 106
+    },
+    {
+      "examId": "jpapp-n1-original-01-v1",
+      "masterSha256": "d3d01dd21a37065bae9b63341e452a75231083000243452c140eb56a49b8b41d",
+      "reviewFile": "n1-01.json",
+      "questionsRead": 106
+    },
+    {
+      "examId": "jpapp-n1-original-02-v1",
+      "masterSha256": "560a8224514a1003f79cad35fa13f0233cb83cb0523adde0e8f594c7e7182e36",
+      "reviewFile": "n1-02.json",
+      "questionsRead": 106
+    },
+    {
+      "examId": "jpapp-n1-original-03-v1",
+      "masterSha256": "f90cc68cfd04d32b0f9618403a47088b1ae0970dfa566e3f0d433a2aed9bc897",
+      "reviewFile": "n1-03.json",
+      "questionsRead": 106
+    },
+    {
+      "examId": "jpapp-n1-original-04-v1",
+      "masterSha256": "71d8d0524f02dd7d99567c678cbf7bbbedf416764474f9cdf03154f095eb9ec2",
+      "reviewFile": "n1-04.json",
+      "questionsRead": 106
+    },
+    {
+      "examId": "jpapp-n1-original-05-v1",
+      "masterSha256": "ce450c4031932b1c5dc80d65edd9f3d5b3426c6a1a7303441d85353ed2f01cb2",
+      "reviewFile": "n1-05.json",
+      "questionsRead": 106
+    },
+    {
+      "examId": "jpapp-n1-original-06-v1",
+      "masterSha256": "dcd92c8f26e09c3112eee998960a97c0828f1d827ccfc0f203316cf0b88a39e3",
+      "reviewFile": "n1-06.json",
+      "questionsRead": 106
+    }
   ],
   "reviewFiles": [
+    "n1-01.json",
+    "n1-02.json",
+    "n1-03.json",
+    "n1-04.json",
+    "n1-05.json",
+    "n1-06.json",
+    "n2-01.json",
+    "n2-02.json",
+    "n2-03.json",
+    "n2-04.json",
+    "n2-05.json",
+    "n2-06.json",
+    "n3-01.json",
+    "n3-02.json",
+    "n3-03.json",
+    "n3-04.json",
+    "n3-05.json",
+    "n3-06.json",
+    "n4-01.json",
+    "n4-02.json",
+    "n4-03.json",
+    "n4-04.json",
+    "n4-05.json",
+    "n4-06.json",
     "n5-01.json",
     "n5-02.json",
     "n5-03.json",
