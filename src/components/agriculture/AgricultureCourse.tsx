@@ -79,7 +79,7 @@ function Reader({lesson,language,onBack,onComplete,saving,saveError,level}:{leve
  {lesson.id==='agr-rice'&&<RiceProcess lesson={lesson} level={level} language={language} showTranslation={show}/>}{lesson.id==='agr-organs'&&<OrgansDiagram/>}{lesson.id==='agr-sowing-design'&&!hasRecognitionImage(lesson.id,lesson.sourceHash,'sowing-patterns',level)&&<SowingDiagram/>}<ConceptDiagrams lessonId={lesson.id} colors={colors} level={level}/>
  <FruitTreeComparison lesson={lesson} translation={t} showTranslation={show} language={language} colors={colors}/>
  <FlowerAppearanceFigure lesson={lesson} level={level} translation={t} showTranslation={show} language={language} colors={colors}/>
- <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} colors={colors} level={level} language={language} showTranslation={show}/>
+ <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} colors={colors} level={level} language={language} showTranslation={show}/>
  <MoistureReaderChecks lessonId={lesson.id} level={level} language={language} showTranslation={show} Button={Button}/>
  <DailyLearningFigure lesson={lesson} level={level} colors={colors} language={language} showTranslation={show}/>
  <DailyCompanionReadings lesson={lesson} level={level} language={language} showTranslation={show} colors={colors}/>

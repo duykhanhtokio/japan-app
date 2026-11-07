@@ -1,3 +1,4 @@
+import localeData from '@/data/agriculture/recognition-image-locales.json';
 import {FlowerLegendFigure} from './FlowerLegendFigure';
 import {StyleSheet,Text,View,type ImageSourcePropType} from 'react-native';
 import {ZoomableFigure} from './ZoomableFigure';
@@ -198,7 +199,7 @@ type RecognitionImage={
  titleJa:string;altJa:string;observationJa:string;limitJa:string;
  labelsJa?:string[];scopeLevels?:string[];
  allowExpandedView?:boolean;
- assetKey:string;width:number;height:number;
+ assetKey:string;width:number;height:number;assetSha256?:string;
 };
 type Colors={text:string;translation:string;translationText:string;border:string};
 const images:RecognitionImage[]=Array.isArray(data.images)?data.images:[];
@@ -213,17 +214,32 @@ export function hasRecognitionImage(lessonId:string,lessonSourceHash:string,asse
  return images.some(item=>item.assetKey===assetKey&&matchesLesson(item,lessonId,lessonSourceHash,level));
 }
 
-export function RecognitionImages({lessonId,lessonSourceHash,colors,level,language='ja',showTranslation=false}:{lessonId:string;lessonSourceHash:string;colors:Colors;level?:string;language?:string;showTranslation?:boolean}) {
+type ImageLocale={title:string;alt:string;observation:string;limitKey:string};
+type LocaleEntry={sourceJapanese:{title:string;alt:string;observation:string;limit:string};assetSha256:string;lessonSourceHashes:Record<string,string>;lessonRevisions:Record<string,string>;locales:Record<string,ImageLocale>};
+const localeRegistry=localeData as {schemaVersion:number;studyOnly:boolean;entries:Record<string,LocaleEntry>;limits:Record<string,{sourceJapanese:string;locales:Record<string,string>}>};
+export function recognitionImageTranslation(item:RecognitionImage,lessonId:string,lessonSourceHash:string,lessonRevision:string|undefined,language:string){
+ const entry=localeRegistry.entries[item.id],t=entry?.locales[language],limit=t?localeRegistry.limits[t.limitKey]:null;
+ if(localeRegistry.schemaVersion!==1||!localeRegistry.studyOnly||!entry||!t||!limit||!lessonRevision
+  ||item.lessonSourceHashes[lessonId]!==lessonSourceHash||entry.assetSha256!==item.assetSha256||entry.lessonSourceHashes[lessonId]!==lessonSourceHash||entry.lessonRevisions[lessonId]!==lessonRevision
+  ||entry.sourceJapanese.title!==item.titleJa||entry.sourceJapanese.alt!==item.altJa||entry.sourceJapanese.observation!==item.observationJa||entry.sourceJapanese.limit!==item.limitJa
+  ||limit.sourceJapanese!==item.limitJa||!t.title||!t.alt||!t.observation||!limit.locales[language])return null;
+ return {title:t.title,alt:t.alt,observation:t.observation,limit:limit.locales[language]};
+}
+
+export function RecognitionImages({lessonId,lessonSourceHash,colors,level,language='ja',showTranslation=false,lessonRevision}:{lessonId:string;lessonSourceHash:string;colors:Colors;level?:string;language?:string;showTranslation?:boolean;lessonRevision?:string}) {
  const visible=images.filter(item=>matchesLesson(item,lessonId,lessonSourceHash,level));
- return <>{visible.map(item=><View key={item.id} testID={item.id} style={[s.figure,{backgroundColor:colors.translation,borderColor:colors.border}]}>
+ return <>{visible.map(item=>{const t=showTranslation?recognitionImageTranslation(item,lessonId,lessonSourceHash,lessonRevision,language):null;return <View key={item.id} testID={item.id} style={[s.figure,{backgroundColor:colors.translation,borderColor:colors.border}]}>
   <Text style={[s.title,{color:colors.translationText}]}>{item.titleJa}</Text>
-  {item.id==='agr-f40-general-flower-legend-reader'?<FlowerLegendFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} colors={colors}/>:<ZoomableFigure source={assets[item.assetKey]} width={item.width} height={item.height} altJa={item.altJa} testID={item.id} colors={colors} allowExpandedView={item.allowExpandedView}/>}
+  {!!t&&<Text testID={`${item.id}-localized-title`} style={[s.title,{color:colors.translationText}]}>{t.title}</Text>}
+  {item.id==='agr-f40-general-flower-legend-reader'?<FlowerLegendFigure lessonId={lessonId} lessonSourceHash={lessonSourceHash} language={language} showTranslation={showTranslation} colors={colors}/>:<ZoomableFigure source={assets[item.assetKey]} width={item.width} height={item.height} altJa={t?.alt||item.altJa} testID={item.id} colors={colors} allowExpandedView={item.allowExpandedView}/>}
   {!!item.labelsJa?.length&&<View style={{gap:4}}>{item.labelsJa.map((label,index)=><Text key={`${index}-${label}`} style={[s.body,{color:colors.translationText}]}>{label}</Text>)}</View>}
   <Text style={[s.label,{color:colors.translationText}]}>観察の手掛かり</Text>
   <Text style={[s.body,{color:colors.translationText}]}>{item.observationJa}</Text>
+  {!!t&&<Text testID={`${item.id}-localized-observation`} style={[s.body,{color:colors.translationText}]}>{t.observation}</Text>}
   <Text style={[s.label,{color:colors.translationText}]}>見分けるときの限界</Text>
   <Text style={[s.body,{color:colors.translationText}]}>{item.limitJa}</Text>
- </View>)}</>;
+  {!!t&&<Text testID={`${item.id}-localized-limit`} style={[s.body,{color:colors.translationText}]}>{t.limit}</Text>}
+ </View>;})}</>;
 }
 
 const s=StyleSheet.create({
