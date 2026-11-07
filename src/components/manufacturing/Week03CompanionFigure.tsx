@@ -44,7 +44,9 @@ export function Week03CompanionFigure({lesson,paragraphIds,language,showTranslat
  if(!row||row.sourceHash!==lesson.sourceHash||row.captionJa!==lesson.summaryJa||!row.paragraphIds.length||!(row.bindingScopes??[row.paragraphIds]).some(scope=>scope.length>0&&scope.every(id=>paragraphIds.includes(id))))return null;
  const paragraphs=row.paragraphIds.map(id=>lesson.paragraphs.find(p=>p.id===id));
  if(paragraphs.some(p=>!p||manufacturingLessonParagraph(lesson,p.id,'ja',p.textJa)!==row.expectedParagraphsJa[p.id]))return null;
- const nativeIds=row.nativeParagraphIds??row.paragraphIds;
+ // A scheduled binding may select only part of a retained multi-panel guide.
+ // Keep native equivalents inside that exact selection; a full guide still gets every paragraph.
+ const nativeIds=(row.nativeParagraphIds??row.paragraphIds).filter(id=>paragraphIds.includes(id));
  if(nativeIds.some(id=>{const p=lesson.paragraphs.find(p=>p.id===id);return !p||(row.expectedNativeParagraphsJa&&manufacturingLessonParagraph(lesson,id,'ja',p.textJa)!==row.expectedNativeParagraphsJa[id]);}))return null;
  const selectedLanguage=showTranslation?language:'ja';
  const translated=selectedLanguage==='ja'?null:lesson.id.includes('-completion37-')?manufacturingCompletionLessonTranslation(lesson,selectedLanguage):lesson.id.includes('-source-guide-')?manufacturingSourceGuideTranslation(lesson,selectedLanguage):manufacturingTranslation(lesson,selectedLanguage);
