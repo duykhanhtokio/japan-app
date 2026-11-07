@@ -115,6 +115,14 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-1-svc-16':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-06-closing-chair-zone-check.webp'),aspectRatio:1.5},
+ 'rst-1-svc-17':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-07-cash-transaction-dual-check.webp'),aspectRatio:1.5},
+ 'rst-1-svc-18':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-08-complaint-fact-listening.webp'),aspectRatio:1.5},
+ 'rst-1-svc-19':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/emergency-support-roles.webp'),aspectRatio:1.5},
+ 'rst-1-svc-20':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-1-cook-19-fire-exit-role-precheck.webp'),aspectRatio:1.5},
+ 'rst-2-cook-12':{source:require('../../../assets/restaurant/royal-weekly-20261107/week07/rst-2-ops-08-new-staff-onboarding-preparation.webp'),aspectRatio:1.5},
+ 'rst-2-svc-10':{source:require('../../../assets/restaurant/royal-weekly-20261107/week05/rst-2-svc-04-service-priority-coordination.webp'),aspectRatio:1.5},
+ 'rst-2-ops-17':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-2-svc-01-qsca-dining-inspection.webp'),aspectRatio:1.5},
  'rst-1-svc-11':{source:require('../../../assets/restaurant/royal-weekly-20261107/week02/rst-2-hyg-10-allergen-replacement-label-handoff.webp'),aspectRatio:1.77577045696068},
  'rst-1-svc-12':{source:require('../../../assets/restaurant/royal-weekly-20261107/week10/rst-1-svc-12-beverage-information-service-check.webp'),aspectRatio:1.5},
  'rst-1-svc-13':{source:require('../../../assets/restaurant/royal-weekly-20261107/week10/rst-1-svc-13-meal-ingredient-explanation.webp'),aspectRatio:1.5},
