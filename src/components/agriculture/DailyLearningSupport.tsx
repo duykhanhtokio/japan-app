@@ -1,3 +1,4 @@
+import {dilutionLessonMatches} from './DilutionExampleFigure';
 import {sprayerPartLessonMatches} from './SprayerPartSupport';
 import {GrainPurposeComparison} from './GrainPurposeComparison';
 import {SafetyLabelChecklist} from './SafetyLabelChecklist';
@@ -95,6 +96,12 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
   const currentSource=agricultureLesson(lesson.id,level);
   if(!currentSource||!sprayerPartLessonMatches(currentSource,level)||!sprayerPartLessonMatches(lesson,level))return null;
   if(paragraphIds&&!paragraphIds.includes('agr-safety-spray-check-p1'))return null;
+  return <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
+ if(includeExisting&&lesson.id==='agr-safety-pesticide-label'){
+  const currentSource=agricultureLesson(lesson.id,level);
+  if(!currentSource||!dilutionLessonMatches(currentSource,level)||!dilutionLessonMatches(lesson,level))return null;
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
   return <RecognitionImages lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  }
  const f=currentBinding?figures.images.find(f=>f.id===currentBinding.figureId&&f.assetSha256===currentBinding.assetSha256):includeExisting?figures.images.find(f=>f.lessonIds.includes(lesson.id)&&f.lessonSourceHashes[lesson.id as keyof typeof f.lessonSourceHashes]===lesson.sourceHash&&f.scopeLevels.includes(level)):null;
