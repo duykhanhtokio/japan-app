@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "sector": "hospitality",
+  "scope": "Revision binding for existing native diagrams only; no new prose, graphics, learner identity or source revision",
+  "baseCommit": "f6c80e96788d5498583817a012e56a241dfaa1eb",
+  "problem": "Five fixed native diagram instances were not bound to the lesson revision. A later lesson revision or wrong component input could continue rendering old map/calculation/geometry, and service terminology could index removed terms.",
+  "units": [
+    "hotel-front-03",
+    "hotel-planning-02",
+    "hotel-service-01",
+    "hotel-service-02",
+    "hotel-service-03"
+  ],
+  "sourceBindings": {
+    "hotel-front-03": {
+      "revision": "3c440f6ebd275fa8c6ae49a04eab30a5193b7b95d33c36a85828631ebf667cb3",
+      "canonicalPath": "src/data/hospitality/front.json",
+      "canonicalGitBlob": "0f78453d19a9ff8e182d7e37aa535ed4cf35a0ac"
+    },
+    "hotel-planning-02": {
+      "revision": "2602db22cb5acb1db44eca21a3a5f0dd17f234e8541f6d4bf1d466c38480524f",
+      "canonicalPath": "src/data/hospitality/planning.json",
+      "canonicalGitBlob": "cb3c2e1d9d3fc34d6992688283e82c82c7a004c8"
+    },
+    "hotel-service-01": {
+      "revision": "578941e86462eb4a73b4b1134b5f9bc35adbf7839e02802d35ab05e1fe57e9ef",
+      "canonicalPath": "src/data/hospitality/service.json",
+      "canonicalGitBlob": "d4538a36281cfce07adfa2a61057d9460aadabc7"
+    },
+    "hotel-service-02": {
+      "revision": "00dcc624507593ecc0ebfa4c7929a7e64431e3b92e25028b0efe4aa3a8b64761",
+      "canonicalPath": "src/data/hospitality/service.json",
+      "canonicalGitBlob": "d4538a36281cfce07adfa2a61057d9460aadabc7"
+    },
+    "hotel-service-03": {
+      "revision": "eb942d9ca15482ba6a25f88e5efd13a2a1994b1b2632df3a2ae1d61b28947e5c",
+      "canonicalPath": "src/data/hospitality/service.json",
+      "canonicalGitBlob": "d4538a36281cfce07adfa2a61057d9460aadabc7"
+    }
+  },
+  "files": [
+    {
+      "path": "src/components/hospitality/HospitalityCourse.tsx",
+      "sha256": "7fd609e3eebd2c502d707d83049c9634feae4b6061aa005dcf894452d515c5fd"
+    },
+    {
+      "path": "src/components/hospitality/HotelPracticeFloorplan.tsx",
+      "sha256": "8b6f36869e09689e218131fecb25e5a8fb0f3adda48799156103b14390ccdd55"
+    },
+    {
+      "path": "src/components/hospitality/HotelRevenueExample.tsx",
+      "sha256": "9ec68cfa445bf958ccd995fdb6b3d6a089b45f2b30534ec3dbb92eaef152e92c"
+    },
+    {
+      "path": "src/components/hospitality/HotelServiceVisualGuide.tsx",
+      "sha256": "3c2e42919d3e822c2cc7bd773994823ad251b29c45bfea57571f9766529b377b"
+    },
+    {
+      "path": "scripts/hospitality/check-native-figure-revisions.cjs",
+      "sha256": "e8402ec24c0b63314862aeb33f5e327fddea5ed7bcb9fea1423dcf3fe25e5844"
+    }
+  ],
+  "changes": [
+    "Pass active lesson to practice floorplan and revenue example.",
+    "Reject wrong lesson identity and stale/missing source revisions in each fixed guide; service hooks remain unconditional.",
+    "Derive OCC decimal from fixed example values; reject zero available/sold denominators rather than producing undefined arithmetic. Current 40/30/360000 values and displayed results unchanged."
+  ],
+  "checks": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/hospitality/check-native-figure-revisions.cjs",
+    "positiveCurrentLocaleRenders": 65,
+    "negativeBoundaryCases": 200,
+    "typescriptTranspilationPassed": true,
+    "actualComponentBoundaries": true,
+    "nativePrimitivesMocked": true,
+    "translationsIsolated": true,
+    "canonicalLessonBlobHashesMatchHead": true,
+    "exactRevenueOutputsPreserved": [
+      "30 ÷ 40 × 100 = 75%",
+      "360,000 ÷ 30 = 12,000",
+      "360,000 ÷ 40 = 9,000",
+      "12,000 × 0.75 = 9,000"
+    ],
+    "gitDiffCheckPassed": true
+  },
+  "queueUpdate": "Fresh remote queue fetched; only planning07 removed from remaining bindings and linked to durable commit5ff8f293878425bad324dd8a31218956dcdc875e; remainingUniqueTargets recomputed from set.",
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  },
+  "limits": [
+    "SSR boundary tests isolate platform primitives and translated material; they are not actual mobile/browser or translated-prose acceptance.",
+    "Existing figure semantics, geometry, labels and source content are preserved."
+  ]
+}

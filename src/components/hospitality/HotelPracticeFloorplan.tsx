@@ -1,15 +1,18 @@
 import React,{useState} from 'react';
 import {View,Text,StyleSheet,useWindowDimensions} from 'react-native';
+import type {HotelLesson} from '../../data/hospitality/types';
 import {hotelPracticeMapLabels} from '../../data/hospitality/practice-floorplan-labels';
+export const HOTEL_PRACTICE_FLOORPLAN_REVISION='3c440f6ebd275fa8c6ae49a04eab30a5193b7b95d33c36a85828631ebf667cb3';
 type Point=[number,number];
 const BLUE='#346b9b',GREEN='#21704f',PAPER='#faf8f1';
 function Path({points,color,arrow}:{points:Point[];color:string;arrow:'right'|'up'|'down'}){
  return <>{points.slice(1).map(([x,y],i)=>{const [px,py]=points[i];return <View key={i} style={{position:'absolute',left:Math.min(x,px)-2.5,top:Math.min(y,py)-2.5,width:Math.max(5,Math.abs(x-px)),height:Math.max(5,Math.abs(y-py)),backgroundColor:color}}/>;})}<View style={[{position:'absolute',left:points[points.length-1][0]-7,top:points[points.length-1][1]-7,width:0,height:0,borderStyle:'solid'},arrow==='right'?{borderTopWidth:7,borderBottomWidth:7,borderLeftWidth:13,borderTopColor:'transparent',borderBottomColor:'transparent',borderLeftColor:color}:arrow==='up'?{borderLeftWidth:7,borderRightWidth:7,borderBottomWidth:13,borderLeftColor:'transparent',borderRightColor:'transparent',borderBottomColor:color}:{borderLeftWidth:7,borderRightWidth:7,borderTopWidth:13,borderLeftColor:'transparent',borderRightColor:'transparent',borderTopColor:color}]}/></>;
 }
 /** Explanation exercise only. No real hotel's floor plan or accessible route is asserted. */
-export function HotelPracticeFloorplan({language}:{language:string}){
+export function HotelPracticeFloorplan({lesson,language}:{lesson:HotelLesson;language:string}){
  const t=hotelPracticeMapLabels(language),[width,setWidth]=useState(300),{fontScale}=useWindowDimensions();
  const scale=Math.max(1,fontScale||1),y=(v:number)=>v*scale,w=width;
+ if(lesson.id!=='hotel-front-03'||lesson.revision!==HOTEL_PRACTICE_FLOORPLAN_REVISION)return null;
  const room=(left:number,top:number,label:string,door:'top'|'bottom')=><View style={[s.room,{left:left*w,top:y(top),width:.34*w,height:y(105)}]}><Text style={s.label}>{label}</Text><View style={{position:'absolute',left:.125*w,width:.10*w,height:7,backgroundColor:PAPER,...(door==='top'?{top:-4}:{bottom:-4})}}/></View>;
  return <View testID="hotel-front-03-practice-map" style={s.root}>
  <Text style={s.title}>{t.title}</Text>

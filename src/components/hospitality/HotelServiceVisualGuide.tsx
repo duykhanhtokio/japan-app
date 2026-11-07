@@ -3,6 +3,11 @@ import {View,Text,StyleSheet,useWindowDimensions} from 'react-native';
 import type {HotelLesson} from '../../data/hospitality/types';
 import {loadHotelTranslation} from '../../data/hospitality/translation-loaders';
 import {hotelServiceGuideLabels} from '../../data/hospitality/service-visual-guide-labels';
+export const HOTEL_SERVICE_GUIDE_REVISIONS:Record<string,string>={
+  "hotel-service-01": "578941e86462eb4a73b4b1134b5f9bc35adbf7839e02802d35ab05e1fe57e9ef",
+  "hotel-service-02": "00dcc624507593ecc0ebfa4c7929a7e64431e3b92e25028b0efe4aa3a8b64761",
+  "hotel-service-03": "eb942d9ca15482ba6a25f88e5efd13a2a1994b1b2632df3a2ae1d61b28947e5c"
+};
 type Point=[number,number];
 function Line({a,b,color='#31546d',width=5}:{a:Point;b:Point;color?:string;width?:number}){
  const dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy),angle=Math.atan2(dy,dx)*180/Math.PI;
@@ -24,7 +29,7 @@ function Bow({degrees,description}:{degrees:number;description:string}){
 }
 export function HotelServiceVisualGuide({lesson,language}:{lesson:HotelLesson;language:string}){
  const l=hotelServiceGuideLabels(language),material=language==='ja'?lesson:loadHotelTranslation(lesson.id,language,lesson.revision),[width,setWidth]=useState(280),{fontScale}=useWindowDimensions(),scale=Math.max(1,fontScale||1);
- if(!material)return null;
+ if(!material||HOTEL_SERVICE_GUIDE_REVISIONS[lesson.id]!==lesson.revision)return null;
  const heading=<Text style={s.title}>{material.illustration.caption}</Text>;
  if(lesson.id==='hotel-service-01')return <View testID="hotel-service-01-native-guide" style={s.root}>{heading}<Text style={s.text}>{l.upright}</Text>{[15,30,45].map((degrees,i)=><View key={degrees} style={s.card}><Text style={s.title}>{lesson.terms[i].ja} · ≈{degrees}°</Text><Bow degrees={degrees} description={material.terms[i].meaning}/><Text style={s.text}>{material.terms[i].meaning}</Text></View>)}<Text style={s.text}>{l.bowCaveat}</Text></View>;
  if(lesson.id==='hotel-service-02')return <View testID="hotel-service-02-native-guide" style={s.root}>{heading}{['お客様がいらっしゃいます','係の者が伺います','です・ます・ございます'].map((example,i)=><View key={example} style={s.card}><Text style={s.title}>{lesson.terms[i].ja}</Text><Text style={s.text}>{material.terms[i].meaning}</Text><Text selectable style={s.example}>{example}</Text></View>)}</View>;

@@ -55,8 +55,8 @@ function Reader({lesson,language,record,disabled,onChange}:{lesson:HotelLesson;l
  {heading(hospitalityLabel(language,1))}{lesson.objectives.map((o,i)=><View key={o.id}>{body(o.text)}{translation&&<TranslationText>{translation.objectives[i]?.text}</TranslationText>}</View>)}
  {lesson.sections.map((section,i)=><View key={section.id} style={[s.section,{borderColor:colors.border}]}>{heading(section.title)}{body(section.body)}{translation&&<TranslationText>{translation.sections[i]?.title}{'\n'}{translation.sections[i]?.body}</TranslationText>}</View>)}
  {figure&&<View testID={`hotel-figure-${lesson.id}`}><Pressable accessibilityRole="button" accessibilityLabel={t('imageZoom')} onPress={()=>setZoom(true)}><Image source={figure} accessibilityLabel={hotelIllustrationAlt(lesson.id,language,lesson.illustration.alt)} resizeMode="contain" style={[s.figure,hotelIllustrationAspectRatio(lesson.id)?{aspectRatio:hotelIllustrationAspectRatio(lesson.id)}:undefined]}/></Pressable>{body(lesson.illustration.caption)}{translation&&<TranslationText>{translation.illustration.caption}</TranslationText>}</View>}
- {lesson.id==='hotel-front-03'&&<HotelPracticeFloorplan language={language}/>}
- {lesson.id==='hotel-planning-02'&&<HotelRevenueExample language={language}/>}
+ {lesson.id==='hotel-front-03'&&<HotelPracticeFloorplan lesson={lesson} language={language}/>}
+ {lesson.id==='hotel-planning-02'&&<HotelRevenueExample lesson={lesson} language={language}/>}
  {['hotel-service-01','hotel-service-02','hotel-service-03'].includes(lesson.id)&&<HotelServiceVisualGuide lesson={lesson} language={language}/>}
  {['hotel-service-04','hotel-planning-05'].includes(lesson.id)&&<HotelHospitalityRoleGuide lesson={lesson} language={language}/>}
  {['hotel-restaurant-02','hotel-restaurant-03','hotel-restaurant-04'].includes(lesson.id)&&<HotelMealLayoutGuide lesson={lesson} language={language}/>}
