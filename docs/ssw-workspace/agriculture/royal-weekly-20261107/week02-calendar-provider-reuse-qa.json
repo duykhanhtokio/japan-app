@@ -1,0 +1,135 @@
+{
+  "unit": "week02-compatible-accepted-calendar31-provider-reuse",
+  "status": "passed",
+  "week": 2,
+  "changes": [
+    "Reused exact accepted incoming31field token arrays and both existing source-bound calendar bindings. No duplicate authoring or artwork.",
+    "Added isolated provider compatibility to the existing native reader, retaining all64 generic records and their byte-identical data.",
+    "Preserved upstream full sourceSnapshot/imageBindings/canonicalJapanese guards; strengthened canonical selector/JA snapshot and nonblank typed kana checks.",
+    "Actual includeMetadata visibility stays unchanged. Only crop-calendar provider data imported; no Flower provider data/caller added."
+  ],
+  "incomingProvenance": {
+    "commit": "8780d538b",
+    "method": "Root authorized immutable GitHub connector read, UTF8 Git blob verified; no child Git operation",
+    "gitBlobs": {
+      "src/components/agriculture/CropCalendarFigure.tsx": "60db5819131d1ce1c3dbc79514db67bcfdb31ed1",
+      "src/components/agriculture/AgricultureNativeFigureRuby.tsx": "19999a8d164af1255c173a9b436f870984c87cea",
+      "src/data/agriculture/native-figure-field-readings.json": "b0815c07cb104317497c22bd5e459ce7775a1db4"
+    },
+    "cropProviderPayloadExactEqualIncoming": true,
+    "cropProviderCanonicalJsonSha256": "152a51ca6ee672083c161de8c1970c16d24331e657ae0e9e19a6765e141d3b82",
+    "compatibilityChecks": {
+      "asset": true,
+      "sourceSnapshot": true,
+      "imageBindings": true,
+      "sourceJapanese": true,
+      "canonicalByLesson": {
+        "agr-crop-plan": true,
+        "agr-par11-general-cropping-calendar": true
+      },
+      "fieldCount": 31,
+      "all31ExactJA": true,
+      "allTokenTextAligned": true
+    }
+  },
+  "validation": {
+    "reusedProviderFields": 31,
+    "currentBindings": 2,
+    "currentCourseContexts": 4,
+    "actualDailyNativeFieldContexts": 62,
+    "actualRecognitionNativeFieldContexts": 56,
+    "actualDirectAndCallerRenders": 114,
+    "sourceSnapshotImageBindingCanonicalJATextKanaCourseNegatives": 159,
+    "languageModes": 13,
+    "includeMetadataVisibilityPreserved": true,
+    "previousRasterAliasPreserved": true,
+    "generic64StillCurrentAndByteUnchanged": true,
+    "sourceJAExistingNativePacksRegistryOuterLocalesUnchanged": true,
+    "canonicalV2LedgerCheck": "Root final exact6path reference check requested; no evidence hashes or review flags refreshed."
+  },
+  "sourceBindings": {
+    "agr-crop-plan": {
+      "sourceHash": "655f67184582087bc66dd988bd5b03af717c02c89cb0580df74a9fea378a7da3",
+      "revision": "v1",
+      "scopeLevels": [
+        "1",
+        "2"
+      ]
+    },
+    "agr-par11-general-cropping-calendar": {
+      "sourceHash": "dd0a3c61bf1b3bcbc3f09d9c2edb1bb107c1a430e0717210414627e7555360a4",
+      "revision": "v1",
+      "scopeLevels": [
+        "1",
+        "2"
+      ]
+    }
+  },
+  "fieldIds": [
+    "title",
+    "observation",
+    "limit",
+    "row:1:0",
+    "row:1:1",
+    "row:1:2",
+    "row:1:3",
+    "row:2:0",
+    "row:2:1",
+    "row:2:2",
+    "row:2:3",
+    "row:3:0",
+    "row:3:1",
+    "row:3:2",
+    "row:3:3",
+    "row:4:0",
+    "row:4:1",
+    "row:4:2",
+    "row:4:3",
+    "row:5:0",
+    "row:5:1",
+    "row:5:2",
+    "row:5:3",
+    "row:6:0",
+    "row:6:1",
+    "row:6:2",
+    "row:6:3",
+    "row:7:0",
+    "row:7:1",
+    "row:7:2",
+    "row:7:3"
+  ],
+  "sourceMeaning": "Same seven source calendar rows and existing observations/limits: month/season/year-wrap and greenhouse-symbol meanings remain examples, not universal work schedules or exact facility/harvest dates.",
+  "knownNativeReadingRegistries": {
+    "genericLessonEntries": 8,
+    "genericFields": 64,
+    "activeImportedProviders": 1,
+    "providerFields": 31,
+    "scope": "Implemented schema-specific records; not a global native closure denominator."
+  },
+  "limits": {
+    "allNativeFieldsComplete": false,
+    "wholeWeekNativeComplete": false,
+    "allDailyTargetCaptionsComplete": false,
+    "wholeSourceComplete": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false,
+    "newRasterPixelApproval": false,
+    "note": "Calendar input compatibility and actual callers validated. Other incoming native definitions require scoped comparison before additional authoring to avoid duplication."
+  },
+  "fileSha256": {
+    "src/components/agriculture/NativeFigureProviderReadings.ts": "0215a122fffd7c04547eaf1ee6eb6ba77b81221a1d8fd875a1cbb408985f319b",
+    "src/components/agriculture/AgricultureNativeFigureRuby.tsx": "74e4d8c8d7f30db82c0bd0b57d35d048676e36944247b1dfc4efc6b75e423c77",
+    "src/components/agriculture/CropCalendarFigure.tsx": "87ddeabed6598029e02e7e4c7b20043d36a7f7e2550723128814b1168bc9580e",
+    "src/data/agriculture/native-figure-field-readings.json": "58ae3e785d31c74a08ac690cc5714d23341ffd5d85e0e246e12a250518666fe6",
+    "scripts/agriculture/check-crop-calendar-provider-reuse.cjs": "c04e3e8e134de075284dc8c3da199c09914a281aebc07516446554a3aa990e6d"
+  },
+  "rootCanonicalEvidenceReferenceCheck": {
+    "ledgerPath": "docs/ssw-workspace/source-coverage-v2/agriculture.json",
+    "ledgerGitBlob": "15092f3db288259a0ec93b2cf4f4727647becb23",
+    "currentIndexMatchesVerifiedBlob": true,
+    "exactOwnedPathsChecked": 6,
+    "matchingStringReferences": 0,
+    "acceptanceFlagsPromoted": false
+  }
+}

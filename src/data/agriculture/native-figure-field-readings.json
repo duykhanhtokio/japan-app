@@ -1,0 +1,1122 @@
+{
+  "schemaVersion": 1,
+  "studyOnly": true,
+  "providers": {
+    "crop-calendar": {
+      "figureId": "agr-f40-general-cropping-example-flow",
+      "assetSha256": "d7f4a363ac393ef40c74d61a9d0fd0a2033c158647b388350f72b6caa15ccdd8",
+      "sourceJapanese": {
+        "title": "作型を播種・施設・収穫へ読む",
+        "alt": "キュウリ三作型とキャベツ四作型を、播種月、ハウス記号の有無、収穫季節の流れへ組み直した七カード。",
+        "observation": "播種点と収穫の期間を分け、秋・冬に播種した行の年またぎを読みます。屋根の記号は施設利用を示し、厳密な設置期間ではありません。",
+        "limit": "元資料の例を整理した独自図です。地域・品種共通の作業日程、施設の設置・開閉日、収穫の具体的開始日は指定しません。"
+      },
+      "sourceSnapshot": {
+        "schemaVersion": 1,
+        "figureId": "agr-f40-general-cropping-example-flow",
+        "sourceJapanese": {
+          "title": "作型を播種・施設・収穫へ読む",
+          "alt": "キュウリ三作型とキャベツ四作型を、播種月、ハウス記号の有無、収穫季節の流れへ組み直した七カード。",
+          "observation": "播種点と収穫の期間を分け、秋・冬に播種した行の年またぎを読みます。屋根の記号は施設利用を示し、厳密な設置期間ではありません。",
+          "limit": "元資料の例を整理した独自図です。地域・品種共通の作業日程、施設の設置・開閉日、収穫の具体的開始日は指定しません。"
+        },
+        "referenceAssetSha256": "d7f4a363ac393ef40c74d61a9d0fd0a2033c158647b388350f72b6caa15ccdd8",
+        "lessonBindings": {
+          "agr-crop-plan": {
+            "sourceHash": "655f67184582087bc66dd988bd5b03af717c02c89cb0580df74a9fea378a7da3",
+            "revision": "v1",
+            "scopeLevels": [
+              "1",
+              "2"
+            ]
+          },
+          "agr-par11-general-cropping-calendar": {
+            "sourceHash": "dd0a3c61bf1b3bcbc3f09d9c2edb1bb107c1a430e0717210414627e7555360a4",
+            "revision": "v1",
+            "scopeLevels": [
+              "1",
+              "2"
+            ]
+          }
+        },
+        "rows": [
+          {
+            "id": "1",
+            "crop": "cucumber",
+            "type": "forcing",
+            "sowingMonth": 9,
+            "greenhouseSymbol": true,
+            "harvest": "yearEndFollowingWinterSpring"
+          },
+          {
+            "id": "2",
+            "crop": "cucumber",
+            "type": "ordinary",
+            "sowingMonth": 4,
+            "greenhouseSymbol": false,
+            "harvest": "summer"
+          },
+          {
+            "id": "3",
+            "crop": "cucumber",
+            "type": "retarded",
+            "sowingMonth": 7,
+            "greenhouseSymbol": true,
+            "harvest": "autumnYearEnd"
+          },
+          {
+            "id": "4",
+            "crop": "cabbage",
+            "type": "springSummer",
+            "sowingMonth": 3,
+            "greenhouseSymbol": false,
+            "harvest": "summer"
+          },
+          {
+            "id": "5",
+            "crop": "cabbage",
+            "type": "summerWinter",
+            "sowingMonth": 7,
+            "greenhouseSymbol": false,
+            "harvest": "winter"
+          },
+          {
+            "id": "6",
+            "crop": "cabbage",
+            "type": "autumnSpring",
+            "sowingMonth": 10,
+            "greenhouseSymbol": false,
+            "harvest": "followingSpring"
+          },
+          {
+            "id": "7",
+            "crop": "cabbage",
+            "type": "winterSummer",
+            "sowingMonth": 12,
+            "greenhouseSymbol": false,
+            "harvest": "followingSummer"
+          }
+        ],
+        "labelsJa": {
+          "title": "作型を播種・施設・収穫へ読む",
+          "alt": "キュウリ三作型とキャベツ四作型を、播種月、ハウス記号の有無、収穫季節の流れへ組み直した七カード。",
+          "observation": "播種点と収穫の期間を分け、秋・冬に播種した行の年またぎを読みます。屋根の記号は施設利用を示し、厳密な設置期間ではありません。",
+          "limit": "元資料の例を整理した独自図です。地域・品種共通の作業日程、施設の設置・開閉日、収穫の具体的開始日は指定しません。",
+          "crops": {
+            "cucumber": "キュウリ",
+            "cabbage": "キャベツ"
+          },
+          "types": {
+            "forcing": "促成",
+            "ordinary": "普通",
+            "retarded": "抑制",
+            "springSummer": "春まき夏どり",
+            "summerWinter": "夏まき冬どり",
+            "autumnSpring": "秋まき春どり",
+            "winterSummer": "冬まき夏どり"
+          },
+          "sowingMonth": "{month}月に播種",
+          "greenhouse": {
+            "present": "ハウス記号あり",
+            "absent": "ハウス記号なし"
+          },
+          "harvest": {
+            "yearEndFollowingWinterSpring": "年末～翌年の冬・春",
+            "summer": "夏の収穫帯",
+            "autumnYearEnd": "秋～年末の収穫帯",
+            "winter": "冬の収穫帯",
+            "followingSpring": "翌春の収穫帯",
+            "followingSummer": "翌夏の収穫帯"
+          }
+        }
+      },
+      "lessonBindings": {
+        "agr-crop-plan": {
+          "sourceHash": "655f67184582087bc66dd988bd5b03af717c02c89cb0580df74a9fea378a7da3",
+          "revision": "v1",
+          "scopeLevels": [
+            "1",
+            "2"
+          ]
+        },
+        "agr-par11-general-cropping-calendar": {
+          "sourceHash": "dd0a3c61bf1b3bcbc3f09d9c2edb1bb107c1a430e0717210414627e7555360a4",
+          "revision": "v1",
+          "scopeLevels": [
+            "1",
+            "2"
+          ]
+        }
+      },
+      "canonicalJapanese": {
+        "agr-crop-plan": {
+          "titleJa": "作付体系・作型と収穫時期",
+          "paragraphs": [
+            {
+              "id": "agr-crop-plan-p1",
+              "titleJa": "何をどの順で作るか",
+              "textJa": "作付体系を考えるときは、どの作物を、どの順序で育てるかを整理します。一つの作物の名前を並べるだけでなく、栽培のつながりを考えることが大切です。"
+            },
+            {
+              "id": "agr-crop-plan-p2",
+              "titleJa": "作型を組み立てる",
+              "textJa": "作型は、季節や地域の環境に合わせ、品種の選定や播種から収穫までの計画・技術を組み合わせたものとして理解します。種をまく日だけを指す言葉ではありません。"
+            },
+            {
+              "id": "agr-crop-plan-p3",
+              "titleJa": "播種時期で分ける",
+              "textJa": "キャベツやダイコンなどでは、春まき、夏まき、秋まきといった作型があります。まいた季節と収穫の季節は別の情報なので、二つを対応させて記録します。"
+            },
+            {
+              "id": "agr-crop-plan-p4",
+              "titleJa": "促成栽培",
+              "textJa": "トマトやキュウリなどの施設栽培で、露地の普通栽培より生育や収穫時期を早める方法が促成栽培です。何と比べて早いのかを含めて説明しましょう。"
+            },
+            {
+              "id": "agr-crop-plan-p5",
+              "titleJa": "抑制栽培",
+              "textJa": "普通栽培より生育や収穫時期を遅らせる方法が抑制栽培です。早める促成栽培と、名称や矢印の向きを取り違えないようにします。"
+            },
+            {
+              "id": "agr-crop-plan-p6",
+              "titleJa": "作型図の読み方",
+              "textJa": "作型図では、播種の記号、ハウスの範囲、収穫期間を別々に読み取ります。図の例の月を、そのまま全国すべての地域・品種に共通する作業日程と考えてはいけません。"
+            }
+          ]
+        },
+        "agr-par11-general-cropping-calendar": {
+          "titleJa": "掲載例から播種と収穫の季節を対応させる",
+          "paragraphs": [
+            {
+              "id": "agr-par11-general-cropping-calendar-p1",
+              "titleJa": "年末をまたぐ促成の例",
+              "textJa": "キュウリの促成の行では、9月の位置に播種の印があり、その後にハウスの印が置かれています。収穫の帯は年末側だけでなく年初側にも描かれ、冬から春へ続く作型の例として読めます。1月を左端とする図なので、12月で栽培が必ず終わると判断せず、年をまたぐ対応を考えます。"
+            },
+            {
+              "id": "agr-par11-general-cropping-calendar-p2",
+              "titleJa": "露地キュウリの基準を置く",
+              "textJa": "露地の普通栽培の行は4月の播種から始まり、夏側に収穫の表示があります。この行を基準にすると、促成は収穫を早い側へ、抑制は遅い側へ動かした例だと比較できます。普通栽培にもハウスが必ず必要だと考えず、各行に示された施設の印を個別に確認します。"
+            },
+            {
+              "id": "agr-par11-general-cropping-calendar-p3",
+              "titleJa": "抑制の行は遅い側を見る",
+              "textJa": "キュウリの抑制の行では7月に播種の印があり、その後にハウスの印と秋から年末側の収穫帯が並びます。促成の9月播種より月の数字が小さいから収穫も早い、と数字だけで比較してはいけません。作型名、播種点、施設の印、収穫帯を同じ行で追う必要があります。"
+            },
+            {
+              "id": "agr-par11-general-cropping-calendar-p4",
+              "titleJa": "春まきと夏まきのキャベツ",
+              "textJa": "キャベツの春まき夏どりの行では3月、夏まき冬どりの行では7月に播種の印があります。二つの行は、まく季節と収穫する季節の組合せが違います。春まきの行の収穫帯を夏まきの行に移して読まず、作型名に含まれる二つの季節を別々に記録してから横の帯を確かめます。"
+            },
+            {
+              "id": "agr-par11-general-cropping-calendar-p5",
+              "titleJa": "秋まきと冬まきのキャベツ",
+              "textJa": "秋まき春どりの行では10月、冬まき夏どりの行では12月に播種の印があり、収穫は翌年側に対応します。これらの播種点は図の右に、収穫の表示は左から中央側にあります。収穫が播種より先に行われるという意味ではなく、年末から次の年へ続く作型として読みます。"
+            },
+            {
+              "id": "agr-par11-general-cropping-calendar-p6",
+              "titleJa": "例の月と作業指示を分ける",
+              "textJa": "この作型図は、播種を点、収穫を期間の帯として示しています。帯の幅を一日の作業日へ置き換えたり、播種点だけから収穫の開始日を計算したりはしません。同じ作物でも地域や品種によって日程は変わるため、ここで整理した月は掲載例の比較に使い、現場の共通日程にはしないでください。"
+            }
+          ]
+        }
+      },
+      "fields": {
+        "title": {
+          "sourceJapanese": "作型を播種・施設・収穫へ読む",
+          "tokens": [
+            {
+              "text": "作型",
+              "readingKana": "さくがた"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "播種",
+              "readingKana": "はしゅ"
+            },
+            {
+              "text": "・"
+            },
+            {
+              "text": "施設",
+              "readingKana": "しせつ"
+            },
+            {
+              "text": "・"
+            },
+            {
+              "text": "収穫",
+              "readingKana": "しゅうかく"
+            },
+            {
+              "text": "へ"
+            },
+            {
+              "text": "読む",
+              "readingKana": "よむ"
+            }
+          ]
+        },
+        "observation": {
+          "sourceJapanese": "播種点と収穫の期間を分け、秋・冬に播種した行の年またぎを読みます。屋根の記号は施設利用を示し、厳密な設置期間ではありません。",
+          "tokens": [
+            {
+              "text": "播種",
+              "readingKana": "はしゅ"
+            },
+            {
+              "text": "点",
+              "readingKana": "てん"
+            },
+            {
+              "text": "と"
+            },
+            {
+              "text": "収穫",
+              "readingKana": "しゅうかく"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "期間",
+              "readingKana": "きかん"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "分け",
+              "readingKana": "わけ"
+            },
+            {
+              "text": "、"
+            },
+            {
+              "text": "秋",
+              "readingKana": "あき"
+            },
+            {
+              "text": "・"
+            },
+            {
+              "text": "冬",
+              "readingKana": "ふゆ"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "播種",
+              "readingKana": "はしゅ"
+            },
+            {
+              "text": "し"
+            },
+            {
+              "text": "た"
+            },
+            {
+              "text": "行",
+              "readingKana": "ぎょう"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "年",
+              "readingKana": "とし"
+            },
+            {
+              "text": "またぎ"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "読み",
+              "readingKana": "よみ"
+            },
+            {
+              "text": "ます"
+            },
+            {
+              "text": "。"
+            },
+            {
+              "text": "屋根",
+              "readingKana": "やね"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "記号",
+              "readingKana": "きごう"
+            },
+            {
+              "text": "は"
+            },
+            {
+              "text": "施設",
+              "readingKana": "しせつ"
+            },
+            {
+              "text": "利用",
+              "readingKana": "りよう"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "示し",
+              "readingKana": "しめし"
+            },
+            {
+              "text": "、"
+            },
+            {
+              "text": "厳密",
+              "readingKana": "げんみつ"
+            },
+            {
+              "text": "な"
+            },
+            {
+              "text": "設置",
+              "readingKana": "せっち"
+            },
+            {
+              "text": "期間",
+              "readingKana": "きかん"
+            },
+            {
+              "text": "で"
+            },
+            {
+              "text": "は"
+            },
+            {
+              "text": "あり"
+            },
+            {
+              "text": "ませ"
+            },
+            {
+              "text": "ん"
+            },
+            {
+              "text": "。"
+            }
+          ]
+        },
+        "limit": {
+          "sourceJapanese": "元資料の例を整理した独自図です。地域・品種共通の作業日程、施設の設置・開閉日、収穫の具体的開始日は指定しません。",
+          "tokens": [
+            {
+              "text": "元",
+              "readingKana": "もと"
+            },
+            {
+              "text": "資料",
+              "readingKana": "しりょう"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "例",
+              "readingKana": "れい"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "整理",
+              "readingKana": "せいり"
+            },
+            {
+              "text": "し"
+            },
+            {
+              "text": "た"
+            },
+            {
+              "text": "独自",
+              "readingKana": "どくじ"
+            },
+            {
+              "text": "図",
+              "readingKana": "ず"
+            },
+            {
+              "text": "です"
+            },
+            {
+              "text": "。"
+            },
+            {
+              "text": "地域",
+              "readingKana": "ちいき"
+            },
+            {
+              "text": "・"
+            },
+            {
+              "text": "品種",
+              "readingKana": "ひんしゅ"
+            },
+            {
+              "text": "共通",
+              "readingKana": "きょうつう"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "作業",
+              "readingKana": "さぎょう"
+            },
+            {
+              "text": "日程",
+              "readingKana": "にってい"
+            },
+            {
+              "text": "、"
+            },
+            {
+              "text": "施設",
+              "readingKana": "しせつ"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "設置",
+              "readingKana": "せっち"
+            },
+            {
+              "text": "・"
+            },
+            {
+              "text": "開閉日",
+              "readingKana": "かいへいび"
+            },
+            {
+              "text": "、"
+            },
+            {
+              "text": "収穫",
+              "readingKana": "しゅうかく"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "具体",
+              "readingKana": "ぐたい"
+            },
+            {
+              "text": "的",
+              "readingKana": "てき"
+            },
+            {
+              "text": "開始日",
+              "readingKana": "かいしび"
+            },
+            {
+              "text": "は"
+            },
+            {
+              "text": "指定",
+              "readingKana": "してい"
+            },
+            {
+              "text": "し"
+            },
+            {
+              "text": "ませ"
+            },
+            {
+              "text": "ん"
+            },
+            {
+              "text": "。"
+            }
+          ]
+        },
+        "row:1:0": {
+          "sourceJapanese": "キュウリ · 促成",
+          "tokens": [
+            {
+              "text": "キュウリ"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "·"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "促成",
+              "readingKana": "そくせい"
+            }
+          ]
+        },
+        "row:1:1": {
+          "sourceJapanese": "9月に播種",
+          "tokens": [
+            {
+              "text": "9"
+            },
+            {
+              "text": "月",
+              "readingKana": "がつ"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "播種",
+              "readingKana": "はしゅ"
+            }
+          ]
+        },
+        "row:1:2": {
+          "sourceJapanese": "ハウス記号あり",
+          "tokens": [
+            {
+              "text": "ハウス"
+            },
+            {
+              "text": "記号",
+              "readingKana": "きごう"
+            },
+            {
+              "text": "あり"
+            }
+          ]
+        },
+        "row:1:3": {
+          "sourceJapanese": "年末～翌年の冬・春",
+          "tokens": [
+            {
+              "text": "年末",
+              "readingKana": "ねんまつ"
+            },
+            {
+              "text": "～"
+            },
+            {
+              "text": "翌年",
+              "readingKana": "よくねん"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "冬",
+              "readingKana": "ふゆ"
+            },
+            {
+              "text": "・"
+            },
+            {
+              "text": "春",
+              "readingKana": "はる"
+            }
+          ]
+        },
+        "row:2:0": {
+          "sourceJapanese": "キュウリ · 普通",
+          "tokens": [
+            {
+              "text": "キュウリ"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "·"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "普通",
+              "readingKana": "ふつう"
+            }
+          ]
+        },
+        "row:2:1": {
+          "sourceJapanese": "4月に播種",
+          "tokens": [
+            {
+              "text": "4"
+            },
+            {
+              "text": "月",
+              "readingKana": "がつ"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "播種",
+              "readingKana": "はしゅ"
+            }
+          ]
+        },
+        "row:2:2": {
+          "sourceJapanese": "ハウス記号なし",
+          "tokens": [
+            {
+              "text": "ハウス"
+            },
+            {
+              "text": "記号",
+              "readingKana": "きごう"
+            },
+            {
+              "text": "なし"
+            }
+          ]
+        },
+        "row:2:3": {
+          "sourceJapanese": "夏の収穫帯",
+          "tokens": [
+            {
+              "text": "夏",
+              "readingKana": "なつ"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "収穫帯",
+              "readingKana": "しゅうかくたい"
+            }
+          ]
+        },
+        "row:3:0": {
+          "sourceJapanese": "キュウリ · 抑制",
+          "tokens": [
+            {
+              "text": "キュウリ"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "·"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "抑制",
+              "readingKana": "よくせい"
+            }
+          ]
+        },
+        "row:3:1": {
+          "sourceJapanese": "7月に播種",
+          "tokens": [
+            {
+              "text": "7"
+            },
+            {
+              "text": "月",
+              "readingKana": "がつ"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "播種",
+              "readingKana": "はしゅ"
+            }
+          ]
+        },
+        "row:3:2": {
+          "sourceJapanese": "ハウス記号あり",
+          "tokens": [
+            {
+              "text": "ハウス"
+            },
+            {
+              "text": "記号",
+              "readingKana": "きごう"
+            },
+            {
+              "text": "あり"
+            }
+          ]
+        },
+        "row:3:3": {
+          "sourceJapanese": "秋～年末の収穫帯",
+          "tokens": [
+            {
+              "text": "秋",
+              "readingKana": "あき"
+            },
+            {
+              "text": "～"
+            },
+            {
+              "text": "年末",
+              "readingKana": "ねんまつ"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "収穫帯",
+              "readingKana": "しゅうかくたい"
+            }
+          ]
+        },
+        "row:4:0": {
+          "sourceJapanese": "キャベツ · 春まき夏どり",
+          "tokens": [
+            {
+              "text": "キャベツ"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "·"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "春",
+              "readingKana": "はる"
+            },
+            {
+              "text": "まき"
+            },
+            {
+              "text": "夏",
+              "readingKana": "なつ"
+            },
+            {
+              "text": "どり"
+            }
+          ]
+        },
+        "row:4:1": {
+          "sourceJapanese": "3月に播種",
+          "tokens": [
+            {
+              "text": "3"
+            },
+            {
+              "text": "月",
+              "readingKana": "がつ"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "播種",
+              "readingKana": "はしゅ"
+            }
+          ]
+        },
+        "row:4:2": {
+          "sourceJapanese": "ハウス記号なし",
+          "tokens": [
+            {
+              "text": "ハウス"
+            },
+            {
+              "text": "記号",
+              "readingKana": "きごう"
+            },
+            {
+              "text": "なし"
+            }
+          ]
+        },
+        "row:4:3": {
+          "sourceJapanese": "夏の収穫帯",
+          "tokens": [
+            {
+              "text": "夏",
+              "readingKana": "なつ"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "収穫帯",
+              "readingKana": "しゅうかくたい"
+            }
+          ]
+        },
+        "row:5:0": {
+          "sourceJapanese": "キャベツ · 夏まき冬どり",
+          "tokens": [
+            {
+              "text": "キャベツ"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "·"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "夏",
+              "readingKana": "なつ"
+            },
+            {
+              "text": "まき"
+            },
+            {
+              "text": "冬",
+              "readingKana": "ふゆ"
+            },
+            {
+              "text": "どり"
+            }
+          ]
+        },
+        "row:5:1": {
+          "sourceJapanese": "7月に播種",
+          "tokens": [
+            {
+              "text": "7"
+            },
+            {
+              "text": "月",
+              "readingKana": "がつ"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "播種",
+              "readingKana": "はしゅ"
+            }
+          ]
+        },
+        "row:5:2": {
+          "sourceJapanese": "ハウス記号なし",
+          "tokens": [
+            {
+              "text": "ハウス"
+            },
+            {
+              "text": "記号",
+              "readingKana": "きごう"
+            },
+            {
+              "text": "なし"
+            }
+          ]
+        },
+        "row:5:3": {
+          "sourceJapanese": "冬の収穫帯",
+          "tokens": [
+            {
+              "text": "冬",
+              "readingKana": "ふゆ"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "収穫帯",
+              "readingKana": "しゅうかくたい"
+            }
+          ]
+        },
+        "row:6:0": {
+          "sourceJapanese": "キャベツ · 秋まき春どり",
+          "tokens": [
+            {
+              "text": "キャベツ"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "·"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "秋",
+              "readingKana": "あき"
+            },
+            {
+              "text": "まき"
+            },
+            {
+              "text": "春",
+              "readingKana": "はる"
+            },
+            {
+              "text": "どり"
+            }
+          ]
+        },
+        "row:6:1": {
+          "sourceJapanese": "10月に播種",
+          "tokens": [
+            {
+              "text": "10"
+            },
+            {
+              "text": "月",
+              "readingKana": "がつ"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "播種",
+              "readingKana": "はしゅ"
+            }
+          ]
+        },
+        "row:6:2": {
+          "sourceJapanese": "ハウス記号なし",
+          "tokens": [
+            {
+              "text": "ハウス"
+            },
+            {
+              "text": "記号",
+              "readingKana": "きごう"
+            },
+            {
+              "text": "なし"
+            }
+          ]
+        },
+        "row:6:3": {
+          "sourceJapanese": "翌春の収穫帯",
+          "tokens": [
+            {
+              "text": "翌春",
+              "readingKana": "よくしゅん"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "収穫帯",
+              "readingKana": "しゅうかくたい"
+            }
+          ]
+        },
+        "row:7:0": {
+          "sourceJapanese": "キャベツ · 冬まき夏どり",
+          "tokens": [
+            {
+              "text": "キャベツ"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "·"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "冬",
+              "readingKana": "ふゆ"
+            },
+            {
+              "text": "まき"
+            },
+            {
+              "text": "夏",
+              "readingKana": "なつ"
+            },
+            {
+              "text": "どり"
+            }
+          ]
+        },
+        "row:7:1": {
+          "sourceJapanese": "12月に播種",
+          "tokens": [
+            {
+              "text": "12"
+            },
+            {
+              "text": "月",
+              "readingKana": "がつ"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "播種",
+              "readingKana": "はしゅ"
+            }
+          ]
+        },
+        "row:7:2": {
+          "sourceJapanese": "ハウス記号なし",
+          "tokens": [
+            {
+              "text": "ハウス"
+            },
+            {
+              "text": "記号",
+              "readingKana": "きごう"
+            },
+            {
+              "text": "なし"
+            }
+          ]
+        },
+        "row:7:3": {
+          "sourceJapanese": "翌夏の収穫帯",
+          "tokens": [
+            {
+              "text": "翌夏",
+              "readingKana": "よくか"
+            },
+            {
+              "text": "の"
+            },
+            {
+              "text": "収穫帯",
+              "readingKana": "しゅうかくたい"
+            }
+          ]
+        }
+      },
+      "imageBindings": {
+        "lessonIds": [
+          "agr-par11-general-cropping-calendar"
+        ],
+        "lessonSourceHashes": {
+          "agr-par11-general-cropping-calendar": "dd0a3c61bf1b3bcbc3f09d9c2edb1bb107c1a430e0717210414627e7555360a4"
+        },
+        "scopeLevels": [
+          "1",
+          "2"
+        ]
+      }
+    }
+  }
+}
