@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "baseCommit": "1be593cad380e9a04e152561ea9482bffa0b128a",
+  "scope": "One bounded in-place shared illustration PPE repair; no registry/queue/source changes",
+  "status": "ai_self_reviewed_ready_for_remote_persistence",
+  "asset": {
+    "path": "assets/food-manufacturing/royal-weekly-20261107/week01/people-equipment-work.webp",
+    "beforeBlobSha": "42e5c1c38aa280aa1064b87192973feeae4a8bd2",
+    "beforeSha256": "3259ae269fb5d95f82dd796c1421a4ed2ed37be4a78966c48216cc781f17984a",
+    "afterBlobSha": "d0e5094b057296db6cc32759a3e651c79b175df1",
+    "afterSha256": "703a3f374998649680670aaa6158e54d2a7d609174610c2765990f5a8a0052cb",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 274114
+  },
+  "sourceBasis": {
+    "lessonId": "food-1-014",
+    "sourceHash": "a39b5b10fa307a5ff17f1e540774902c984c58e7209d37b37b70104218586360",
+    "paragraphId": "p1",
+    "exactRequirement": "髪が外に出ていないか、鼻がマスクから出ていないか、服の留め具や袖口が適切か、鏡で確かめます。",
+    "document": "ssw1",
+    "pdfPages": [
+      24,
+      25,
+      26,
+      27,
+      28,
+      31,
+      32
+    ]
+  },
+  "generation": {
+    "mode": "built-in imagegen edit",
+    "calls": 1,
+    "reference": "actual original shared WebP opened before edit",
+    "output": "generated_images/exec-ce8ff980-ce4f-456d-8b6e-2056a09dfead.png",
+    "prompt": "Use case: precise-object-edit. Edit target: the supplied original food-factory supervision illustration, not a new composition. Change ONLY the two workers' hair-containment PPE: extend each existing white food hygiene hood smoothly around temples, sideburns, behind ears, nape and neck so absolutely no hair protrudes anywhere, including the visible black hair at the left worker's temple and nape. Keep faces/eyes recognizable and masks covering nose and mouth; ears may be covered by hood. Preserve the original two people, exact poses and hands, clipboard/pen, blue gloves, lab coats, production equipment, intact transparent machine guards, product trays, table, bins, containers, background, palette, perspective and Royal illustrated rendering. No new people or objects, no text, numbers, symbols or labels; do not add any new process steps or change equipment. Output same landscape aspect ratio. This is a targeted food hygiene PPE correction; all other visual meaning/layout must remain.",
+    "encoding": "Pillow RGB WebP quality90 method6; no semantic post-edit"
+  },
+  "pixelSelfReview": {
+    "opened": [
+      "original WebP",
+      "generated PNG",
+      "final encoded WebP"
+    ],
+    "corrected": "Both original hygiene caps now extend over temples, side hair, ears and nape/neck; the previously exposed left temple/nape and right side hair are contained. Masks remain over nose and mouth; gloves and sleeves remain.",
+    "preserved": "Two original people/faces/poses, clipboard and pen, blue gloves/white coats, guarded packaging equipment, product trays/table, closed containers/bins, framing, palette and illustrated rendering. No new text, numeric conditions or operational sequence.",
+    "limits": "AI visual self-review only; no human/domain/native/device certification."
+  },
+  "currentRuntimeAudit": {
+    "references": [
+      "food-2-003:p1",
+      "food-2-008:p1",
+      "food-2-016:p1",
+      "food-2-024:p2",
+      "food-2-029:p1"
+    ],
+    "referenceOwner": "src/data/food-manufacturing/royal-weekly-images.ts",
+    "registryBlobUnchanged": "3dd2ca5a8a8636982e035dc06d5aa5cda6457cc6",
+    "queueBlobUnchanged": "33a40e1f1855f4efb49b1b8f37fbbb51127f97f7",
+    "runtimeAssetShaDependencies": [],
+    "auditMethod": "rg of actual materialized src/scripts runtime references and old SHA; only current registry imports the shared asset. No production runtime integrity hash to update. The regression newly pins repaired SHA. Historical receipts retaining original SHA remain untouched.",
+    "sourceMeaning": "Original people/equipment/work context preserved; image does not replace source teaching, verify every duty or introduce numeric limits. Current 2-024 exact native progress chart remains alongside contextual art.",
+    "historicalReceiptsPreserved": [
+      "royal-images-week03-20261107.json",
+      "royal-images-week04-20261107.json",
+      "royal-week04-fullscope-and-dedup-20261107.json"
+    ],
+    "historyNote": "Historical original asset digest remains accurate for the earlier revision; this additive receipt supersedes only current shared asset pixels/digest. Prior five-row disposition draft retained privately and not published."
+  },
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/food-manufacturing/check-royal-week04-fullscope.cjs",
+    "result": "PASS",
+    "currentWeek04ReaderContexts": 156,
+    "sourcePracticeZoomContexts": 91,
+    "closure64ZoomContexts": 13,
+    "sharedAssetCurrentInlineContexts": 65,
+    "sharedAssetCurrentZoomContexts": 65,
+    "sharedAssetWrongSourceOrMissingCaptionContexts": 130,
+    "currentSharedBindings": 5,
+    "currentWeek04UniqueWebpAssets": 18,
+    "localizedClosure64AltDebt": 0,
+    "coverage": "Every actual current registry reference, all13locales; actual Reader/Daily source, inline+forced zoom, exact Japanese and matching localized caption; wrong source and missing caption fail closed. Current native progress figure coexists. Existing7sourcepractice/native figure checks preserved.",
+    "adapters": "Structural React SSR with RN/ruby/UI adapters; unrelated closure pack/assessment adapters unchanged. Not browser/device pixel testing.",
+    "diffCheck": "PASS scoped diff --check"
+  },
+  "beforeBlobSHAs": {
+    "assets/food-manufacturing/royal-weekly-20261107/week01/people-equipment-work.webp": "42e5c1c38aa280aa1064b87192973feeae4a8bd2",
+    "scripts/food-manufacturing/check-royal-week04-fullscope.cjs": "056d20c27d784edf339ce03a603ed3bba47085b4",
+    "docs/ssw-workspace/food-manufacturing/royal-shared-ppe-repair-20261107.json": null
+  },
+  "acceptance": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false,
+    "releaseReady": false,
+    "globalSourceAcceptance": false
+  },
+  "next": "Await remote persistence before any further generation; continue existing queue with fresh same-sector check."
+}
