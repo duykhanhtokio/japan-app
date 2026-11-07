@@ -108,6 +108,7 @@ const noteSegments=[{text:'学習用',reading:'がくしゅうよう'},{text:'�
 const bindingFor=(lesson:RestaurantLesson)=>dailyData.bindings.find(b=>b.lessonId===lesson.id&&b.sourceHash===lesson.sourceHash);
 // Week-scoped original Royal raster assets: later lessons retain their existing figures.
 const royalDailyAssets:Record<string,{source:number;aspectRatio:number}>={
+ 'rst-1-hyg-16':{source:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-1-hyg-16-observed-delivery-record.webp'),aspectRatio:1.5},
  'rst-2-cook-03':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-2-cook-03-portion-preparation-coaching.webp'),aspectRatio:1.5},
  'rst-2-cook-04':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-2-cook-04-cooking-service-sequence.webp'),aspectRatio:1.5},
  'rst-2-hyg-14':{source:require('../../../assets/restaurant/royal-weekly-20261107/week03/rst-1-hyg-15-shallow-cooling-record-reheat.webp'),aspectRatio:2172/724},
