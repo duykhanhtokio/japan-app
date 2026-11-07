@@ -1,3 +1,4 @@
+import {CoolingCuringComparison} from './CoolingCuringComparison';
 import {AgricultureImageRuby} from './AgricultureImageRuby';
 import {PestFoundationSupport} from './PestFoundationSupport';
 import {MulchColorSupport} from './MulchColorSupport';
@@ -46,6 +47,10 @@ export function DailyLearningFigure({lesson,level,colors,includeExisting=false,l
   return <FruitManagementSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
  }
  if(!lesson.levels.includes(level))return null;
+ if(lesson.id==='agr-management-detail-cooling-curing'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <CoolingCuringComparison lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
  const b=bindings[lesson.id],d=diagrams[lesson.id];
  const currentBinding=b?.lessonSourceHash===lesson.sourceHash&&b.scopeLevels.includes(level)?b:null;
  if(level==='2'&&lesson.id==='agr-climate'&&d?.kind==='winter-climate'&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><WinterSpatialReference lesson={lesson} level={level} diagram={d} language={language} showTranslation={showTranslation} colors={colors}/><WinterClimateFigure lesson={lesson} level={level} language={language} showTranslation={showTranslation} translation={showTranslation?agricultureTranslation(lesson,language):null} colors={colors}/></View>;
