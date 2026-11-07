@@ -1,3 +1,7 @@
+import {foodRoyalRetainedTechnicalFor} from '@/data/food-manufacturing/royal-retained-technical';
+import {foodRoyalWeek4NativeFor} from '@/data/food-manufacturing/royal-week4-native';
+import {FoodManagementVisuals} from './FoodManagementVisuals';
+import {FoodConceptDiagrams} from './ConceptDiagrams';
 import {useState} from 'react';
 import ui from '@/data/food-manufacturing/daily-ui-translations.json';
 import {Image,Modal,Pressable,ScrollView,StyleSheet,Text,View,type ImageSourcePropType} from 'react-native';
@@ -8,7 +12,6 @@ import {FoodLessonRuby} from './FoodLessonRuby';
 import {foodRoyalWeeklyImageFor} from '@/data/food-manufacturing/royal-weekly-images';
 import {foodRoyalWeek2NativeFor} from '@/data/food-manufacturing/royal-week2-native';
 import {FoodRoyalWeek2Native} from './FoodRoyalWeek2Native';
-import {foodRoyalRetainedTechnicalFor} from '@/data/food-manufacturing/royal-retained-technical';
 const drawings:Record<string,ImageSourcePropType>={
  'health':require('../../../assets/food-manufacturing/daily-diagrams/health.webp'),
  'stop':require('../../../assets/food-manufacturing/daily-diagrams/stop.webp'),
@@ -52,10 +55,11 @@ export function FoodDailyLearning({lesson,language,showTranslation,textColor,rea
  const binding=foodDailyBinding(lesson);if(!binding)return null;
  const p=lesson.paragraphs.find(p=>p.id===binding.captionParagraphId)!,t=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
  const imageDescription=`${p.titleJa}。${p.textJa}${t?`。${t.paragraphTitles[p.id]}。${t.paragraphs[p.id]}`:''}`;
- const royalImage=foodRoyalWeeklyImageFor(lesson),native=foodRoyalWeek2NativeFor(lesson),retainedTechnical=foodRoyalRetainedTechnicalFor(lesson),source=royalImage?.source??(native||retainedTechnical?undefined:drawings[binding.diagramKind]);
+ const royalImage=foodRoyalWeeklyImageFor(lesson),native=foodRoyalWeek2NativeFor(lesson),native4=foodRoyalWeek4NativeFor(lesson),retainedTechnical=foodRoyalRetainedTechnicalFor(lesson),source=royalImage?.source??(native||native4||retainedTechnical?undefined:drawings[binding.diagramKind]);
  return <View testID={`food-daily-learning-${lesson.id}`} style={s.section}>
- {(source||native||retainedTechnical)&&<View testID={`food-daily-diagram-${lesson.id}`} style={s.figure}>
+ {(source||native||native4||retainedTechnical)&&<View testID={`food-daily-diagram-${lesson.id}`} style={s.figure}>
  {source&&<Pressable accessibilityRole="button" accessibilityLabel={`${p.titleJa}・拡大${t?` · ${t.paragraphTitles[p.id]}`:''}`} onPress={()=>setExpanded(true)}><Image testID={royalImage?.replacesIllustrationId} source={source} resizeMode="contain" accessibilityLabel={imageDescription} style={[s.image,royalImage?{aspectRatio:royalImage.width/royalImage.height}:null]}/></Pressable>}
+ {native4&&(native4.kind==='management-charts'?<FoodManagementVisuals lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor} readingColor={readingColor} dailyPlacement/>:<FoodConceptDiagrams lessonId={lesson.id} language={language} showTranslation={showTranslation} textColor={textColor} dailyPlacement/>)}
  {native&&<FoodRoyalWeek2Native lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor}/>}
  <FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.titleJa`} text={p.titleJa} color={textColor} readingColor={readingColor} heading/>
  <FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.textJa`} text={p.textJa} color={textColor} readingColor={readingColor}/>

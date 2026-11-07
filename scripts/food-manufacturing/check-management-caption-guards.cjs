@@ -28,7 +28,7 @@ const index=load(path.join(root,'src/data/food-manufacturing/index.ts'));
 const {FoodManagementVisuals}=load(path.join(root,'src/components/food-manufacturing/FoodManagementVisuals.tsx'));
 const locales=['ja','en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];let contexts=0;
 const escaped=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
-const render=(lesson,language)=>renderToStaticMarkup(React.createElement(FoodManagementVisuals,{lesson,language,showTranslation:true,textColor:'#183044',readingColor:'#687078'}));
+const render=(lesson,language)=>renderToStaticMarkup(React.createElement(FoodManagementVisuals,{lesson,language,showTranslation:true,textColor:'#183044',readingColor:'#687078',dailyPlacement:true}));
 const contains=(html,figure)=>html.includes('data-testid="'+figure.id+'"');
 for(const figure of data.foodManagementVisuals){
  const lesson=index.foodManufacturingLessons.find(l=>l.id===figure.lessonId);assert(lesson,figure.lessonId);

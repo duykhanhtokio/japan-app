@@ -1,3 +1,4 @@
+import {foodRoyalWeek4NativeFor} from '@/data/food-manufacturing/royal-week4-native';
 import labelTranslations from '@/data/food-manufacturing/management-label-translations.json';
 import {useState} from 'react';
 import {StyleSheet,Text,View} from 'react-native';
@@ -56,7 +57,8 @@ function TranslatedChartLabels({kind,language}:{kind:FoodManagementVisualKind;la
  return <View testID={`food-chart-translation-${kind}-${language}`} style={{gap:8}}><Text style={s.small}>{t.example}</Text>{kind==='control'&&<Text style={s.small}>{t.controlNotice}</Text>}{figureTerms[kind].map(term=><View key={term} style={{flexDirection:'row',flexWrap:'wrap',gap:8}}><Label text={term} size={13}/><Text style={[s.small,{flex:1,minWidth:90}]}>{t.labels[term]}</Text></View>)}</View>;
 }
 
-export function FoodManagementVisuals({lesson,textColor,readingColor,language,showTranslation}:{lesson:FoodManufacturingLesson;textColor:string;readingColor:string;language:string;showTranslation:boolean}){
+export function FoodManagementVisuals({lesson,textColor,readingColor,language,showTranslation,dailyPlacement=false}:{lesson:FoodManufacturingLesson;textColor:string;readingColor:string;language:string;showTranslation:boolean;dailyPlacement?:boolean}){
+ if(!dailyPlacement&&foodRoyalWeek4NativeFor(lesson)?.kind==='management-charts')return null;
  const figures=foodManagementVisualsFor(lesson),translation=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
  return <>{figures.map((figure,i)=>{const paragraphId=figure.captionField.split('.')[1],paragraph=lesson.paragraphs.find(p=>p.id===paragraphId),showCaption=i===0||figures[i-1].captionField!==figure.captionField;
  return <View key={figure.id} testID={figure.id} style={s.figure}>
