@@ -1,3 +1,4 @@
+import {MulchColorSupport} from './MulchColorSupport';
 import {FruitManagementSupport} from './FruitManagementSupport';
 import {Text,View} from 'react-native';
 import {agricultureLesson,agricultureTranslation,type AgricultureLesson,type AgricultureLevel} from '@/data/agriculture';
@@ -30,6 +31,10 @@ export function agricultureDailyCompanions(lesson:AgricultureLesson,level:Agricu
  return (pairs[lesson.id]||[]).flatMap(p=>{const l=agricultureLesson(p.lessonId,level);return l&&l.sourceHash===p.sourceHash?[{lesson:l,paragraphIds:p.paragraphIds}]:[];});
 }
 export function DailyLearningFigure({lesson,level,colors,includeExisting=false,language='ja',showTranslation=false,paragraphIds}:{lesson:AgricultureLesson;level:AgricultureLevel;colors:Colors;includeExisting?:boolean;language?:string;showTranslation?:boolean;paragraphIds?:string[]}){
+ if(lesson.id==='agr-cover-mulch'){
+  if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
+  return <MulchColorSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+ }
  if(lesson.id==='agr-fruit-manage-persimmon-pear-peach'){
   if(paragraphIds&&lesson.paragraphs.some(p=>!paragraphIds.includes(p.id)))return null;
   return <FruitManagementSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
