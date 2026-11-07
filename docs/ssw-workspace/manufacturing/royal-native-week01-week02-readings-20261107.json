@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 2,
+  "baseCommit": "ca58be3774f978a4d155ffd41266d4b3596cb4c1",
+  "scope": "Week01–02 actual Royal Japanese illustration fields, whole-field context gate, and source-bound secondary wording clarification",
+  "integration": "Preserve incoming Royal7ea1c872 / IllustrationJapanese33363c5a / ManufacturingIllustrationText3117659c renderers and all1689automatic records. Retire overlapping old wrapper proposal. Correct only context-proven token sequences and require per-entry ai_whole_field_compared before nativeEntries activate.",
+  "currentReview": {
+    "sourceRows": 18,
+    "displayedStringsAcrossRows": 91,
+    "globallyUniqueReviewedStrings": 84,
+    "renderedFieldInstances": 92,
+    "readingCorrectionOccurrences": 25,
+    "correctedExistingTokenFields": 12,
+    "validAlternateReadingsPreserved": [
+      "他の=たの",
+      "何で=なんで"
+    ],
+    "wholeContextExamples": [
+      "基材側=きざいがわ",
+      "時系列=じけいれつ",
+      "打痕=だこん",
+      "大文字=おおもじ in letter-case context",
+      "不適合品数=ふてきごうひんすう",
+      "抜取結果=ぬきとりけっか",
+      "中空部=ちゅうくうぶ",
+      "切欠き=きりかき",
+      "10月1日付=じゅうがつついたちづけ"
+    ],
+    "independentReviewedCaptionsRetained": 27,
+    "unreviewedRecordBehavior": "Original Japanese stays visible.1606stored unreviewed records are rejected by the token resolver; stored records are not a rendered-field denominator.",
+    "nativeReviewed": false,
+    "domainReviewed": false
+  },
+  "approvedNativeOnlyClarification": {
+    "lessonId": "mfg1-surface-lesson-014",
+    "field": "exampleText",
+    "before": "実品",
+    "after": "実際の品物",
+    "wholeReading": "じっさいのしなもの",
+    "reason": "Use source-supported plain wording for actual item instead of guessing a rare abbreviation pronunciation.",
+    "canonicalProseChanged": false,
+    "otherJaChanged": false,
+    "all12TargetRowsUnchanged": true,
+    "priorAmbiguousRecordRetainedUnreviewed": true,
+    "unchangedTargetRowSignatures": {
+      "en": "574fd747181d72f894cc508ff3026ce796dde99a2ecee4e6b2afa1afb4db0b5a",
+      "vi": "c03731ded24f1ff1d200c2089de29f772d5ceb6b569562f62a61c21980676ac7",
+      "id": "f98d36e28be7aeefa3f625233e0bee2d7df14d687e875a04041f551e9e9d0fb1",
+      "zh-CN": "97a05083b4146ca633f9ce1d37237b483efd453051bfb08e3b72e57350463c81",
+      "zh-TW": "80ceda0e199bd9811c7bf13cb573e12b38bc17efc96f6236be60d1d6cd046f21",
+      "hi": "8affeb7853d737b1efeffa6445f5d97e14c4c84b2ba4a9ca941c487eb5d20042",
+      "bn": "f2845230129913a004daa1a8a2c6749a5aeb472fac9e62bb2d185aa9a6b47c29",
+      "ne": "8ff313d6771311dfbfc764c52680ab8137027b75deb311ce57ce0659a1c7f83d",
+      "my": "16e16fa7fc2122cfac829c4353301eb49c844c0f5d3274f94b6e76b498454293",
+      "th": "db3d89cca1e7c61077669119e4750d0276f442fe594a5522be04ddcff535466c",
+      "km": "b77ba3991b2181fa543656610ad4dcee25e00c2dd02317f9c8ed9a2457f4dc57",
+      "tl": "5d9eed7335c3bca7399de69e0884cd81a37602e7d3a3b34a7383879485ab99ba"
+    }
+  },
+  "qa": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/manufacturing/check-native-week01-week02-illustration-readings.cjs /workspace/scratch/0d83607b09ec/manufacturing-native-royal-before-w1w2.tsx /workspace/scratch/0d83607b09ec/manufacturing-incoming-reading-baseline.json /workspace/scratch/0d83607b09ec/manufacturing-royal-source-before-clarification.json /workspace/scratch/0d83607b09ec/manufacturing-queue-before-context-review.json",
+    "baselines": {
+      "originalRoyalComponentBlob": "0af366a9eeaa378888d15f85e8c5101715f5e7d1",
+      "incomingReadingDataBlob": "57b3dc6e8bf1d1c1e59a33151f043064e54f02ec",
+      "royalNativeDataBlob": "caf1708978b46f8a24ff3f9f0f48e2b1c84f414b",
+      "queueBlob": "9332bc724cbbe3888b4bb319dc175b0e3f0163a9"
+    },
+    "allCurrentJaNativeRowsRendered": 238,
+    "allNonJaNativeHtmlAndStyleByteIdentical": 2856,
+    "wrongSourceHashesRejected": 238,
+    "reviewedNativeEntriesAdmitted": 84,
+    "unreviewedRecordsRejected": 1606,
+    "unreviewedRecordsUnchanged": 1606,
+    "completeKanjiCoverageForReviewedFields": true,
+    "unreviewedAndChangedSourceRejected": true,
+    "sourceImageBindingAndGradingChanges": false,
+    "focusedStrictTypecheck": "PASS actual5caption/direct/native components and real reading guard/JSON/alignment/UI; declared RN/theme and narrow lesson identity. Not whole-app typecheck.",
+    "regressions": "Prior117legacy reader contexts,27reviewed captions/direct286locale contexts including correctedextrusion/scale contexts,793quiz locale renders/61expanded states/732native question translations/427stale checks/208study/39overview/26Source60/62, actual33mocks1320occurrenceszeroimage resolver passed with shared reviewed gate.",
+    "adapterBoundary": "Real React SSR/modules with RN DOM/StyleSheet adapters; no native or translation provider stub. Physical-device acceptance not claimed."
+  },
+  "metadata": "Current authoring reading-data/helper/native-source SHA values refreshed. Previous automated context/bun audit preserved as historical snapshot. Current queue reopens reading context work while retaining every main/art/companion/direct counter. Prior final-native closure receipt remains pinned historical evidence, not current acceptance.",
+  "next": "Bounded new Electrical095 source-route/metadata guard check; then week03fullcontext review including approved E016 native-only4本の色帯 wording clarification, ordered remaining weeks and all active captions/companions/early special routes.",
+  "allExistingContentComplete": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceAcceptance": false,
+  "currentOutputSha256": {
+    "src/data/manufacturing/illustration-readings.json": "9ccb8eea74c3b142230d0c9b5c73467fa9b1d3397c673b553acd22fa7124575b",
+    "src/data/manufacturing/illustration-readings.ts": "3596672f27d7e35d40dfda9939a84df60ee6d1c2b646cf632c62670d821bf124",
+    "src/data/manufacturing/royal-week01-technical-locales.json": "656c4b8dec7a027bedbef04082b849368e7381ef7d0fbf93274c6a16e3157a47",
+    "docs/ssw-workspace/manufacturing/illustration-reading-authoring-context-20261107.json": "9155c86cb20a8683dc09251e8f67957c57667fe9850db03fe5121f56d887636a",
+    "docs/ssw-workspace/manufacturing/royal-continuation-queue-20261107.json": "c47ce833624167dfcb4c1804ec5bee73a42b63567be3c0c8d3503ad584a09e7d"
+  }
+}
