@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "status": "AI_CONTEXT_REVIEWED_SOURCE_BOUND",
+  "sourceWeek": 5,
+  "actualNewFields": 14,
+  "actualSourceRows": 7,
+  "fieldKinds": {
+    "exampleText": 7,
+    "structureText": 7
+  },
+  "entries": [
+    {
+      "lessonId": "mfg1-electrical-l029",
+      "field": "exampleText",
+      "sourceJapanese": "コンベアを一定の速さで送る要求と、テーブルを決めた位置へ停止させる要求は異なります。前者は速度、後者は位置を中心に確認し、必要なトルクや負荷条件も合わせます。位置のずれを見つけても、速度だけを上げて解決しようとせず、指令、検出、機械の状態を担当範囲で報告します。",
+      "sourceHash": "36840f63d74a17940fee7aa25127b1fb590bf334452baa2c6db7a419583de233"
+    },
+    {
+      "lessonId": "mfg1-electrical-l029",
+      "field": "structureText",
+      "sourceJapanese": "電動機は電気エネルギーを機械的な回転へ変える装置です。直流用と交流用があり、交流電動機には誘導電動機や同期電動機などがあります。同じ電圧表示だけで、電源の種類や周波数、接続方法が同じとは判断できません。\n誘導電動機にはかご形や巻線形などがあります。回転磁界の速さと実際の回転子の速さを同一視しないことも大切です。本課では回転速度の式を実回転数として暗記せず、定格、運転条件、制御方式を資料で確認する姿勢を学びます。\n\nサーボモータの制御には、指定位置へ止める位置制御、指定の速さへ合わせる速度制御、回転させる力を合わせるトルク制御などがあります。エンコーダなどの検出結果を戻して指令との差を補う働きがフィードバックです。\n位置決め装置で回ればよいという判断は不十分です。位置、速度、力のどれを満たす必要があるかを区別します。取付けや制御設定を変えれば、同じモータでも装置の動作が変わるおそれがあります。",
+      "sourceHash": "36840f63d74a17940fee7aa25127b1fb590bf334452baa2c6db7a419583de233"
+    },
+    {
+      "lessonId": "mfg1-electrical-l030",
+      "field": "exampleText",
+      "sourceJapanese": "計算教材でV1=100 V、N1=500回、N2=100回なら、V2=100×100/500=20 Vです。これは理想比による値で、実機の配線指示ではありません。実際の定格や接続先は銘板と図面で確認し、二次側が低い電圧でも一次側の危険がなくならないことに注意します。",
+      "sourceHash": "f8d8fc04575b667f12bcf7ffd98c235972136b8b2033c2724b2ac73362424474"
+    },
+    {
+      "lessonId": "mfg1-electrical-l030",
+      "field": "structureText",
+      "sourceJapanese": "一般的な変圧器は鉄心と複数の巻線を使い、変化する磁束を通して電圧を変換します。理想的な交流変圧器では、一次・二次の電圧比は巻数比と対応し、V2/V1=N2/N1として考えられます。\n二次の巻数が少なければ降圧、多ければ昇圧になります。一次側がいつも高圧という意味ではありません。また通常の交流用変圧器へ直流をそのまま加えて同じように使えるとは考えません。定格電圧だけでなく周波数、容量、接続を確認します。\n\n二次側へ負荷をつながなくても、一次側へ電圧を加えたときに鉄損などが発生します。巻線に電流が流れると抵抗による銅損も生じます。二次側の負荷がないことを、一次側も安全・無電力という意味にしてはいけません。\n理想的な比の計算は実際の損失や電圧変動を省いたものです。電圧が合えば負荷をいくらでもつなげるわけではなく、容量や温度条件などの範囲内で使用します。絶縁方式や構造も用途に合わせて確認します。",
+      "sourceHash": "f8d8fc04575b667f12bcf7ffd98c235972136b8b2033c2724b2ac73362424474"
+    },
+    {
+      "lessonId": "mfg1-electrical-l031",
+      "field": "exampleText",
+      "sourceJapanese": "運転中に遮断器が切れ、同時に焦げたにおいがした場合、復帰操作で確かめるのではなく手順に沿って停止・退避・報告します。設備番号、時刻、運転状態、表示、においなどの観察を残します。断路器を開いて事故電流を止めようとするなど、役割の異なる機器を代用しません。",
+      "sourceHash": "788a9633fb569ae0505368d9fa3284920490c147a0cf9bc80444115f2abb728a"
+    },
+    {
+      "lessonId": "mfg1-electrical-l031",
+      "field": "structureText",
+      "sourceJapanese": "遮断器は定格と用途の範囲で負荷電流や短絡電流を遮断する機器です。大きな電流を止めると接点間にアークが生じるため、それを消す機能が重要になります。単に接点を離す機構があることと、事故電流を安全に止められることは同じではありません。\n教材で区別する開閉器は負荷電流の開閉、断路器は電流が流れていない状態の切離しに用います。すべての機器を「スイッチ」とまとめず、銘板、回路図、操作手順で機器の機能を特定します。\n\n配線用遮断器は過負荷や短絡による過電流から配線を保護するために使われます。それがあるだけで、あらゆる漏電や感電から人を守れると判断してはいけません。必要な保護機能と選定条件は設備ごとに確認します。\n遮断器が動作したら、機械の停止範囲や人の安全を確認し、異常の情報を担当者へ伝えます。原因不明のまま繰り返し入れ直すと、故障を悪化させたり再始動で危険が生じたりするおそれがあります。",
+      "sourceHash": "788a9633fb569ae0505368d9fa3284920490c147a0cf9bc80444115f2abb728a"
+    },
+    {
+      "lessonId": "mfg1-electrical-l032",
+      "field": "exampleText",
+      "sourceJapanese": "「昼に発電したから夜も太陽電池だけで同じ電力が出る」という説明は不十分です。夜に使うには別の蓄積や供給の仕組みが必要です。また「停電しても使える」は設備の機能と条件を確認して初めて判断できます。発電がないことと、機器や蓄電池に電圧がないことも同じではありません。",
+      "sourceHash": "d17d7dcf79eaeffe5074f5d2ab57b34f1481fd875012e165c78e8411dfb77db2"
+    },
+    {
+      "lessonId": "mfg1-electrical-l032",
+      "field": "structureText",
+      "sourceJapanese": "太陽電池は光エネルギーを電気へ変えます。光が不足すれば発電量が下がり、夜間に光がなければ昼と同じ発電はできません。名称に「電池」とあっても、発電した電気をためて夜に使う蓄電池とは役割が違います。\n蓄電池を組み合わせると、条件の範囲で発電した電気をためて後で使うことができます。ただし容量、充放電、残量、使用できる機能に制限があります。太陽電池を取り付けただけで、停電時も常にすべての機器を使えるとは限りません。\n\n太陽電池の出力は直流です。一般の交流設備で使うシステムでは、パワーコンディショナーが直流を交流へ変換するなどの役割を持ちます。さらに発電状態に応じた調整や異常検知などを行います。\n発電、蓄積、変換を一つの箱の働きとして混同しないようにします。実際の接続には機器の適合、保護、系統との関係、停電時の動作などの確認が必要です。本課はシステムの役割を理解するもので、施工や系統接続の手順ではありません。",
+      "sourceHash": "d17d7dcf79eaeffe5074f5d2ab57b34f1481fd875012e165c78e8411dfb77db2"
+    },
+    {
+      "lessonId": "mfg1-electrical-l033",
+      "field": "exampleText",
+      "sourceJapanese": "教材のシリンダで「動く向きが逆」「向きは正しいが遅い」「必要な力が出ない」は別の観察です。方向、速度、力に関わる情報として分けて記録します。ただし、その分類だけで特定の弁が故障したと断定はできません。設定変更や分解前に、承認された点検で原因を確認します。",
+      "sourceHash": "356f00962ec9c5ec5103442ff5bb0a7c93d66a6d95b742658f2101d322b440f6"
+    },
+    {
+      "lessonId": "mfg1-electrical-l033",
+      "field": "structureText",
+      "sourceJapanese": "油圧では油の流れと圧力を利用して機械を動かします。ポンプ、力や動作へ変えるアクチュエータ、流れを調整する弁などで構成します。ポンプの役割を、どんな負荷でも一定圧力を勝手に作る装置と単純化せず、回路と負荷に応じた状態を確認します。\nシリンダは直線動作、油圧モータは回転動作の例です。図面で同じ線が描かれていても、どこからどこへ油が流れ、どの装置が動くかを追うことが重要です。\n\n圧力制御弁は圧力を調整し、アクチュエータが出す力に関係します。流量制御弁は流れる量を調整し、動作速度に関係します。方向制御弁は油の流れる道を切り替え、動作方向を変えます。遅いから圧力を上げればよい、とは限りません。\n実際の速度や力は負荷や回路条件にも影響されます。調整ねじを一つ回せばすべて解決すると考えず、指示値、圧力や流量の状態、動作のどこが違うかを担当範囲で報告します。",
+      "sourceHash": "356f00962ec9c5ec5103442ff5bb0a7c93d66a6d95b742658f2101d322b440f6"
+    },
+    {
+      "lessonId": "mfg1-electrical-l034",
+      "field": "exampleText",
+      "sourceJapanese": "一箱に制御部品6個を入れる計画で、中身は6個でもラベルに別の品番が印字されていました。数量だけを見て出荷せず、製品識別・包装仕様・伝票・送り先を照合して修正を依頼します。上積み禁止の箱は、その表示に従う置き方と積み方まで確認します。見た目の整った箱でも照合を省きません。",
+      "sourceHash": "d90c633c04b1815d796de13f6f7f8aebe16ac1c155e9dce4ffa868bba0593b28"
+    },
+    {
+      "lessonId": "mfg1-electrical-l034",
+      "field": "structureText",
+      "sourceJapanese": "工業包装は製品を保管・輸送する間の品質を守るために行います。製品の形、重さ、壊れやすさ、湿度や温度、輸送方法に合う資材を選びます。外箱が大きく丈夫でも、中で製品が動いたり端子へ荷重がかかったりすれば損傷のおそれがあります。\n緩衝材は衝撃への対策、固定材は位置ずれへの対策など、使う目的を明確にします。電子製品には必要に応じて防湿や静電気対策も組み合わせます。資材を減らす場合も、保護の要求を満たすことが前提です。\n\n商品品質の維持に加え、約束した納期、正しい品物・数量・配送先を守ることが必要です。包装と伝票の品番、数量、識別情報を照合します。中身が正しくても送り先が違えば物流の品質は満たせません。\n取扱注意、水濡れ防止、上積み禁止などの表示は、貨物の扱い方を示します。表示を貼るだけで保護できるわけではなく、実際の保管と荷扱いが従っているかを確認します。意味や適用が不明な表示を推測して付けません。",
+      "sourceHash": "d90c633c04b1815d796de13f6f7f8aebe16ac1c155e9dce4ffa868bba0593b28"
+    },
+    {
+      "lessonId": "mfg1-electrical-l035",
+      "field": "exampleText",
+      "sourceJapanese": "ガラス繊維を使う基板材と、炭素繊維を使う部材では、電気的な性質まで同じとは限りません。見た目が黒い板、または繊維入りというだけで代用しません。成形機で同じ形が出ていても、材料の誤りは外観だけで見抜けない場合があるため、材料識別と投入記録を照合します。",
+      "sourceHash": "5f33302fc0aa0a19fa54ceef92716ae3e97f2fedd18777ae181759bbd158859a"
+    },
+    {
+      "lessonId": "mfg1-electrical-l035",
+      "field": "structureText",
+      "sourceJapanese": "熱可塑性樹脂は加熱すると軟らかくなり、冷えると固まる性質を利用します。熱硬化性樹脂は硬化後に再加熱して同じように溶かして成形し直せるわけではありません。材料名、ロット、乾燥などの条件を確認し、違う樹脂を勝手に混ぜないようにします。\n射出成形では、樹脂を加熱して金型へ充填し、条件に従って保圧や冷却を行い、型を開いて製品を取り出します。射出装置、型締め装置、金型は異なる役割を持ちます。高温の樹脂だけでなく型締めの大きな力にも注意が必要です。\n\n樹脂はスプルー、ランナー、ゲートなどを通って製品部へ流れます。温度、圧力、量、速度、冷却や異物の状態などが仕上がりに影響します。成形不良を見つけても、一つの設定だけを無断で変えず、発生時刻、位置、数量、条件を残します。\n強化プラスチックFRPは、樹脂にガラスや炭素などの繊維を組み合わせた材料です。繊維の種類や向き、含有量、樹脂によって性質が変わります。すべてのFRPが金属より強い、またはすべて絶縁する、と一般化せず用途ごとの仕様を確認します。",
+      "sourceHash": "5f33302fc0aa0a19fa54ceef92716ae3e97f2fedd18777ae181759bbd158859a"
+    }
+  ],
+  "sourceEvidence": {
+    "electric-machines8": {
+      "巻線形": "https://www.maff.go.jp/j/nousin/seko/kyotu_siyosyo/kikaisisin/attach/pdf/denkisetsubi_koutei-11.pdf primaryelectricalequipment terminologyまきせんがた, previouslychecked insavedcompaniondevicecohort.",
+      "巻数比": "https://ar.kabu-watanabe.com/glossary/denki/31ma/003.html primaryelectricalsupplierまきすうひ;巻数まきすう is completewordcontextcomposition, same transformer windingcount.",
+      "充放電": "https://www.nite.go.jp/data/000161435.pdf primarybatterytechnical glossary explicitじゅうほうでん, term only.",
+      "施工Variant": "https://imidas.jp/kojiten/detail/W-12-0-495-06.html originalpublisher集英社広辞典 entryしこう meansせこう; existingvariant retained without correction.",
+      "AIValueContext": "理想比による値あたい mathematicalvalue context, not generic値reading rule."
+    },
+    "hydraulic-packaging-plastics6": {
+      "保圧": "https://www.yamato-jushi.co.jp/product/injection-molding.php primaryplasticsmanufacturer explicitlyほあつ, corroborates exact technical term only.",
+      "型締Variant": "https://jv-consulting.jp/html/dic.pdf originalspecialistbilingualdictionary explicitly型締めかたしめ; retainexistingvariant although othertechnicaltraining authors useかたじめ.",
+      "savedWholeTerm": "金型かながた samecurrent acceptedsourcefullterm.",
+      "AIWholeCounter": "一箱ひとはこ/6個ろっこ fullcounter AIcontextreview. No partialcounter substitution; fullsourceunchanged. 間あいだ temporarydurationcontext."
+    }
+  },
+  "limits": "All14 complete electrical sourcefields manually reviewed, exactcounter spancoalescence only, no Japanese/equation/warning edits or uncheckeddraft exposure; no native/domain/device approval.",
+  "baselineActualCallerCensus": {
+    "visibleBindings": 1171,
+    "full": 123,
+    "plain": 1046,
+    "partial": 2,
+    "kind": "historical actual caller census; no repeated full census"
+  },
+  "boundedDeltaDerivedCoverage": {
+    "previous245SavedFields": 245,
+    "thisCohort": 14,
+    "full": 382,
+    "plain": 787,
+    "partial": 2,
+    "uniquePlainStrings": 749,
+    "hanEligiblePlain": 786,
+    "legitimateNoHanPlain": 1
+  },
+  "implementation": "Data-only extension of source-week05 registry. Existing exact fullcanonical/currentfield guards and actual body callers unchanged. No raw Janome or unchecked primary entries exposed.",
+  "checks": {
+    "actualBodyFields": 14,
+    "actualSourceRows": 7,
+    "canonicalExactFieldNegatives": 98,
+    "all12TranslatedHtmlStyleByteIdentical": 84,
+    "actualStaleBodyPlainFallbacks": 14,
+    "technicalContextRegressions": 10,
+    "wholeCounterChecks": {
+      "500回": "ごひゃっかい",
+      "100回": "ひゃっかい",
+      "6個": "ろっこ atbothoccurrences"
+    },
+    "totalRegressionAssertions": 13,
+    "malformedRegisteredActualPlainFallbacks": 4,
+    "heldMainScaleExampleRemainsPlain": true,
+    "kind": "bounded actualRoyalSSR; unchangedruntimehelper; variants施工しこう/型締めかたしめ retained, no native/domain/deviceapproval"
+  },
+  "payloadSha256": {
+    "src/data/manufacturing/native-reviewed-week05-fields.json": "17bde68e79fc4b13c71a5f1d50df6f08511ae700ffc0b7291f62b248122d457b",
+    "scripts/manufacturing/check-native-week05-electrical14-body-readings.cjs": "b81cfdc281adb817d0eefa27dc07f2c60c1ecbbbfd6ed4c43093f84942fb703e"
+  }
+}
