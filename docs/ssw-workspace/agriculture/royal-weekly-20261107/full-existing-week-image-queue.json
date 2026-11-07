@@ -203,7 +203,12 @@
         "domainReviewed": false,
         "physicalDeviceTested": false,
         "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false
+        "releaseReady": false,
+        "coverageScheduleIds": [
+          "agr-1-w03",
+          "agr-2-w04"
+        ],
+        "scheduleApplicabilityCorrection": "docs/ssw-workspace/agriculture/royal-weekly-20261107/per-level-schedule-reconciliation-qa.json"
       }
     },
     {
@@ -231,6 +236,21 @@
           ],
           "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
         }
+      },
+      "supportedAuthoringCheckpoint": {
+        "status": "source_backed_supported_authoring_self_checked_not_accepted",
+        "coverageScheduleIds": [
+          "agr-1-w04"
+        ],
+        "scheduledLessons": 2,
+        "recognitionAndDailyFigureRecords": 2,
+        "targetLocales": 12,
+        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week04-supported-authoring-census-qa.json",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "physicalDeviceTested": false,
+        "sourcePhotoObjectivesClosed": false,
+        "releaseReady": false
       }
     },
     {
@@ -1570,19 +1590,7 @@
           "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
         }
       },
-      "supportedAuthoringCheckpoint": {
-        "status": "source_backed_supported_authoring_self_checked_not_accepted",
-        "scheduledLessons": 6,
-        "recognitionRecords": 5,
-        "targetLocales": 12,
-        "nativeLocales": 13,
-        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week03-supported-authoring-census-qa.json",
-        "nativeReviewed": false,
-        "domainReviewed": false,
-        "physicalDeviceTested": false,
-        "sourcePhotoObjectivesClosed": false,
-        "releaseReady": false
-      }
+      "authoringStatus": "OPEN: actual three level2-specific lessons need source-backed support review"
     },
     {
       "level": "2",
@@ -1643,6 +1651,24 @@
           "reuseReasonJa": "この課で既に扱う対象を、図上の位置と見え方に対応させて確認します。出典の対象条件を保ち、他の場面の処方とはしません。",
           "scopeReasonJa": "同じ課の既存図を、この課が実際に配置された級で参照します。"
         }
+      },
+      "supportedAuthoringCheckpoint": {
+        "status": "source_backed_supported_authoring_self_checked_not_accepted",
+        "scheduledLessons": 6,
+        "recognitionRecords": 5,
+        "targetLocales": 12,
+        "nativeLocales": 13,
+        "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week03-supported-authoring-census-qa.json",
+        "nativeReviewed": false,
+        "domainReviewed": false,
+        "physicalDeviceTested": false,
+        "sourcePhotoObjectivesClosed": false,
+        "releaseReady": false,
+        "coverageScheduleIds": [
+          "agr-1-w03",
+          "agr-2-w04"
+        ],
+        "scheduleApplicabilityCorrection": "docs/ssw-workspace/agriculture/royal-weekly-20261107/per-level-schedule-reconciliation-qa.json"
       }
     },
     {
@@ -1685,7 +1711,12 @@
           ],
           "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
         }
-      }
+      },
+      "partialSupportedLessonIds": [
+        "agr-soil-ph-measure",
+        "agr-soil-rotation"
+      ],
+      "authoringStatus": "PARTIAL; water-equipment-2 and soil-biological-2 still require contextual own check"
     },
     {
       "level": "2",
@@ -3830,7 +3861,7 @@
     "latestSpatialCaptionReceipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-winter-spatial-locales-qa.json",
     "latestSupportedAuthoringCensus": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-supported-authoring-census-qa.json"
   },
-  "currentSupportedNextAction": "week04: existing soil-pH measurement and rotation; audit exact source/device diagrams, reuse adequate art and complete source-bound localized support; then continue both levels in existing week order through40/59 (241unique lessons/99schedule entries)",
+  "currentSupportedNextAction": "Backfill actual level2week03 crop-types/plant-responses/sowing-design first; then remaining level2week05 source lessons and level1week05/level2week06 fertilizer source units. Follow canonical per-level99-entry schedule, not same-number-week equality.",
   "week01Checkpoint": {
     "status": "source_backed_authoring_self_checked_not_accepted",
     "scheduledLessons": 6,
@@ -3848,9 +3879,11 @@
     "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week01-supported-authoring-census-qa.json"
   },
   "currentOrderedQueue": [
-    "week04: source-bound soil pH/device and crop-rotation existing figures/native readers; retain adequate art, complete missing localized metadata",
-    "week05 onward: all remaining existing level1weeks5–40 andlevel2weeks5–59; preserve all241 unique lessons/IDs/answers/progress; no arbitrary unit cap",
-    "Native/domain/source-photo/device/release acceptance remains explicit and open; self-check is not acceptance"
+    "agr-2-w03: crop-types/plant-responses/sowing-design; source-backed missing metadata/native exact support, all OPEN",
+    "agr-2-w05: inspect remaining water-equipment-2 and soil-biological-2; reuse correct current irrigation/soil art and source guards",
+    "agr-1-w05 + agr-2-w06: same six existing fertilizer lessons, validate actual canonical schedule applicability",
+    "Continue remaining canonical per-level schedule IDs through agr-1-w40/agr-2-w59; all241 unique lessons/99 entries, no arbitrary unit cap",
+    "Keep external native/domain/source-photo/device/release acceptance open"
   ],
   "week02Checkpoint": {
     "status": "source_backed_supported_authoring_self_checked_not_accepted",
@@ -3876,6 +3909,27 @@
     "domainReviewed": false,
     "physicalDeviceTested": false,
     "sourcePhotoObjectivesClosed": false,
+    "releaseReady": false,
+    "coverageScheduleIds": [
+      "agr-1-w03",
+      "agr-2-w04"
+    ],
+    "scheduleApplicabilityCorrection": "docs/ssw-workspace/agriculture/royal-weekly-20261107/per-level-schedule-reconciliation-qa.json"
+  },
+  "week04Checkpoint": {
+    "status": "source_backed_supported_authoring_self_checked_not_accepted",
+    "coverageScheduleIds": [
+      "agr-1-w04"
+    ],
+    "scheduledLessons": 2,
+    "recognitionAndDailyFigureRecords": 2,
+    "targetLocales": 12,
+    "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week04-supported-authoring-census-qa.json",
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false,
+    "sourcePhotoObjectivesClosed": false,
     "releaseReady": false
-  }
+  },
+  "canonicalScheduleReconciliation": "docs/ssw-workspace/agriculture/royal-weekly-20261107/per-level-schedule-reconciliation-qa.json"
 }
