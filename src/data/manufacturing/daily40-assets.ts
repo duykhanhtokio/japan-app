@@ -1,12 +1,20 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
-  case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.png");
   case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day20-logic-truth-tables.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day20-logic-truth-tables.png");
-
-  case "assets/manufacturing/royal-weekly-20261107/week03/mechanical-day15-test-measurement-views.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/mechanical-day15-test-measurement-views.png");
+  case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day18-diode-half-wave.png");
   case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day16-resistor-four-band.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day16-resistor-four-band.png");
+  case "assets/manufacturing/royal-weekly-20261107/week03/mechanical-day15-test-measurement-views.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/mechanical-day15-test-measurement-views.png");
   case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day15-material-roles.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day15-material-roles.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day16-resistor-330.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day16-resistor-330.png");
+  case "assets/manufacturing/royal-weekly-20261107/week03/electrical-day19-esd-preparation-hold.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/electrical-day19-esd-preparation-hold.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week03/surface-day15-material-lot-verification.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/surface-day15-material-lot-verification.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week03/surface-day16-postactivation-waiting-hold.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/surface-day16-postactivation-waiting-hold.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week03/surface-day17-discoloration-records.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/surface-day17-discoloration-records.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week03/surface-day18-recess-moisture-hold.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/surface-day18-recess-moisture-hold.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week03/surface-day20-analysis-pending-hold.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/surface-day20-analysis-pending-hold.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week03/surface-day21-exhaust-noise-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/surface-day21-exhaust-noise-review.webp");
+  case "assets/manufacturing/diagrams/batch23-mechanical-caliper-contacts.png":return require("../../../assets/manufacturing/diagrams/batch23-mechanical-caliper-contacts.png");
   case "assets/manufacturing/royal-weekly-20261107/week02/electrical-day12-pareto-exact.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week02/electrical-day12-pareto-exact.png");
   case "assets/manufacturing/diagrams/concentration-units.png":return require("../../../assets/manufacturing/diagrams/concentration-units.png");
   case "assets/manufacturing/royal-weekly-20261107/week02/electrical-day11-histogram-control.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week02/electrical-day11-histogram-control.png");
