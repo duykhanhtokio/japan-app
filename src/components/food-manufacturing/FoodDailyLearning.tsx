@@ -1,3 +1,4 @@
+import {FoodRoyalCaptionRuby} from './FoodRoyalCaptionRuby';
 import {FoodPathogenComparison} from './FoodPathogenComparison';
 import {FoodRoyalWeek8Native} from './FoodRoyalWeek8Native';
 import {foodRoyalWeek8NativeFor} from '@/data/food-manufacturing/royal-week8-native';
@@ -76,7 +77,7 @@ export function FoodDailyLearning({lesson,language,showTranslation,textColor,rea
  {native4&&(native4.kind==='management-charts'?<FoodManagementVisuals lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor} readingColor={readingColor} dailyPlacement/>:<FoodConceptDiagrams lessonId={lesson.id} language={language} showTranslation={showTranslation} textColor={textColor} dailyPlacement/>)}
  {native&&<FoodRoyalWeek2Native lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor}/>}
  <FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.titleJa`} text={p.titleJa} color={textColor} readingColor={readingColor} heading/>
- <FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.textJa`} text={p.textJa} color={textColor} readingColor={readingColor}/>
+ <FoodRoyalCaptionRuby lesson={lesson} field={`paragraphs.${p.id}.textJa`} text={p.textJa} color={textColor} readingColor={readingColor}/>
  {t&&<TranslationText>{t.paragraphTitles[p.id]}{'\n'}{t.paragraphs[p.id]}</TranslationText>}
  </View>}
  {foodDailyCompanions(lesson).map(({lesson:peer,paragraphs,includeActivity})=>{const pt=showTranslation&&language!=='ja'?foodManufacturingTranslation(peer,language):null;return <View key={peer.id} testID={`food-daily-companion-${peer.id}`} style={s.companion}>
