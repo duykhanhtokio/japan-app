@@ -1,6 +1,6 @@
 import {ManufacturingIllustrationText as Text} from './ManufacturingIllustrationText';
 import {ManufacturingCompanionText,ManufacturingCompanionHeadingText} from './ManufacturingCompanionText';
-import {manufacturingCompanionCaptionReading} from '@/data/manufacturing/companion-field-readings';
+import {manufacturingCompanionCaptionReading,manufacturingCompanionDisplayText} from '@/data/manufacturing/companion-field-readings';
 import {CompletionManufacturingDiagrams} from './CompletionManufacturingDiagrams';
 import {View} from 'react-native';
 import type {ManufacturingLesson} from '@/data/manufacturing';
@@ -115,7 +115,7 @@ export function Week03CompanionFigure({lesson,paragraphIds,language,showTranslat
    if(row.selectionBoundImages&&ids.some(id=>!paragraphIds.includes(id)))return null;
    if(!source||!ids.length||selected.some(p=>!p)||ids.some(id=>!row.paragraphIds.includes(id))||!(item.width>0&&item.height>0))return null;
    const targets=ids.map(id=>translated?.paragraphs.find(p=>p.id===id));
-   const captionJa=selected.map(p=>manufacturingLessonParagraph(lesson,p!.id,'ja',p!.textJa)??p!.textJa).join('\n\n');
+   const captionJa=selected.map(p=>manufacturingCompanionDisplayText(lesson,p!.id,'text',manufacturingLessonParagraph(lesson,p!.id,'ja',p!.textJa)??p!.textJa)).join('\n\n');
    const translatedParts=targets.map((target,i)=>target?manufacturingLessonParagraph(lesson,ids[i],selectedLanguage,target.text):null);
    const caption=translatedParts.every(text=>typeof text==='string'&&!!text.trim())?translatedParts.join('\n\n'):null;
    const label=item.labels?.[caption?selectedLanguage:'ja'];

@@ -4,7 +4,7 @@ import data from './companion-field-readings.json';
 export type CompanionReadingPart={text:string;reading?:string};
 type Reading={sourceJapanese:string;parts:CompanionReadingPart[]};
 type Image={assetFile:string;width:number;height:number;readings:string[]};
-type Binding={sourceHash:string;fields:Record<string,string>;images:Record<string,Image[]>;headings?:Record<string,{assetFile:string;width:number;height:number;captionId:string;reading:string}[]>};
+type Binding={sourceHash:string;fields:Record<string,string>;images:Record<string,Image[]>;displayCorrections?:Record<string,{beforeJapanese:string;afterJapanese:string}>;headings?:Record<string,{assetFile:string;width:number;height:number;captionId:string;reading:string}[]>};
 const registry=data as {schemaVersion:number;revision:string;studyOnly:boolean;readings:Record<string,Reading>;headingSourceCaptions?:Record<string,string>;lessons:Record<string,Binding>};
 function canonicalLesson(lesson:ManufacturingLesson):ManufacturingLesson|undefined{
  if(lesson.id.includes('-source-guide-'))return require('./source-guides.json').guides.find((l:ManufacturingLesson)=>l.id===lesson.id);
@@ -22,13 +22,24 @@ function checked(id:string|undefined):Reading|undefined{
  if(!row||typeof row.sourceJapanese!=='string'||!Array.isArray(row.parts)||!row.parts.length||row.parts.map(p=>p?.text).join('')!==row.sourceJapanese||row.parts.some(p=>!p||typeof p.text!=='string'||!p.text||(/[一-龯々]/.test(p.text)&&(!p.reading||!/^[ぁ-ゖー]+$/.test(p.reading)))||(p.reading!==undefined&&!/^[ぁ-ゖー]+$/.test(p.reading))))return;
  return row;
 }
+/** Study illustration wording only: canonical paragraphs and source hashes remain immutable. */
+function currentDisplayCorrection(lesson:ManufacturingLesson,paragraphId:string,field:'title'|'text'):{beforeJapanese:string;afterJapanese:string}|undefined{
+ const binding=current(lesson),key=paragraphId+'.'+field,correction=binding?.displayCorrections?.[key],row=checked(binding?.fields[key]);
+ if(!correction||field!=='text'||lesson.paragraphs.find(p=>p.id===paragraphId)?.textJa!==correction.beforeJapanese||row?.sourceJapanese!==correction.afterJapanese)return;
+ return correction;
+}
+export function manufacturingCompanionDisplayText(lesson:ManufacturingLesson,paragraphId:string,field:'title'|'text',text:string):string{
+ const correction=currentDisplayCorrection(lesson,paragraphId,field);
+ return correction&&text===correction.beforeJapanese?correction.afterJapanese:text;
+}
 export function manufacturingCompanionFieldReading(lesson:ManufacturingLesson,paragraphId:string,field:'title'|'text',text:string):CompanionReadingPart[]|undefined{
- const row=checked(current(lesson)?.fields[paragraphId+'.'+field]);return row?.sourceJapanese===text?row.parts:undefined;
+ const binding=current(lesson),key=paragraphId+'.'+field,row=checked(binding?.fields[key]);if(binding?.displayCorrections?.[key]&&!currentDisplayCorrection(lesson,paragraphId,field))return;return row?.sourceJapanese===text?row.parts:undefined;
 }
 /** Compose only whole current paragraph readings; image captions never infer substrings or neighbours. */
 export function manufacturingCompanionCaptionReading(lesson:ManufacturingLesson,item:SupplementalDiagram):CompanionReadingPart[]|undefined{
  const binding=current(lesson);
  if(!binding||item.lessonId!==lesson.id||item.lessonSourceHash!==lesson.sourceHash)return;
+ if(Object.keys(binding.displayCorrections??{}).some(key=>!currentDisplayCorrection(lesson,key.slice(0,key.lastIndexOf('.')),'text')))return;
  for(const entry of binding.images[item.id]??[]){
   if(entry.assetFile!==item.assetFile||entry.width!==item.width||entry.height!==item.height)continue;
   const rows=entry.readings.map(checked);if(!rows.length||rows.some(row=>!row)||rows.map(row=>row!.sourceJapanese).join('\n\n')!==item.captionJa)continue;
