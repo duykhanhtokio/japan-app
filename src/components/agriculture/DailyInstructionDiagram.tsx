@@ -9,8 +9,8 @@ const assets:Record<DailyDiagramKind,ImageSourcePropType>={
 'fertilizer-label':require('../../../assets/agriculture/daily-learning-20261031/fertilizer-label.png'),
 'fertilizer-quantity':require('../../../assets/agriculture/daily-learning-20261031/fertilizer-quantity.png'),
 'fertilizer-stage':require('../../../assets/agriculture/daily-learning-20261031/fertilizer-stage.png'),
-'flower-packaging':require('../../../assets/agriculture/daily-learning-20261031/flower-packaging.png'),
-'flower-use':require('../../../assets/agriculture/daily-learning-20261031/flower-use.png'),
+'flower-packaging':require('../../../assets/agriculture/royal-weekly-20261107/daily/flower-packaging-royal-v2.webp'),
+'flower-use':require('../../../assets/agriculture/royal-weekly-20261107/daily/flower-use-royal-v2.webp'),
 'harvest-calendar':require('../../../assets/agriculture/daily-learning-20261031/harvest-calendar.png'),
 'ph-axis':require('../../../assets/agriculture/daily-learning-20261031/ph-axis.png'),
 'photoperiod':require('../../../assets/agriculture/daily-learning-20261031/photoperiod.png'),
@@ -27,4 +27,4 @@ const assets:Record<DailyDiagramKind,ImageSourcePropType>={
 'weather-damage':require('../../../assets/agriculture/daily-learning-20261031/weather-damage.png'),
 'winter-climate':require('../../../assets/agriculture/daily-learning-20261031/winter-climate.png'),
 };
-export function DailyInstructionDiagram({kind,title,caption,alt,colors}:{kind:DailyDiagramKind;title:string;caption:string;alt:string;colors:{text:string;translation:string;translationText:string;border:string}}){return <View style={{gap:8,marginVertical:12}} testID={`agri-daily-diagram-${kind}`}><Text style={{color:colors.translationText,fontWeight:'700',fontSize:19,lineHeight:29}}>{title}</Text><ZoomableFigure source={assets[kind]} width={1160} height={660} altJa={alt} testID={`agri-daily-diagram-${kind}`} colors={colors} allowExpandedView/><Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{caption}</Text></View>; }
+export function DailyInstructionDiagram({kind,title,caption,alt,colors}:{kind:DailyDiagramKind;title:string;caption:string;alt:string;colors:{text:string;translation:string;translationText:string;border:string}}){return <View style={{gap:8,marginVertical:12}} testID={`agri-daily-diagram-${kind}`}><Text style={{color:colors.translationText,fontWeight:'700',fontSize:19,lineHeight:29}}>{title}</Text><ZoomableFigure source={assets[kind]} width={kind==='flower-use'?1774:kind==='flower-packaging'?1752:1160} height={kind==='flower-use'?887:kind==='flower-packaging'?897:660} altJa={alt} testID={`agri-daily-diagram-${kind}`} colors={colors} presentation={kind==='flower-use'||kind==='flower-packaging'?'recognition':'diagram'} allowExpandedView/><Text style={{color:colors.translationText,fontSize:kind==='flower-use'||kind==='flower-packaging'?12:16,lineHeight:kind==='flower-use'||kind==='flower-packaging'?20:27}}>{caption}</Text></View>; }
