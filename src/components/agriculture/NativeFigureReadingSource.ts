@@ -10,6 +10,7 @@ import flowers from '@/data/agriculture/flower-appearance-figure.json';
 import organs from '@/data/agriculture/organ-classification-locales.json';
 import inlineBindings from '@/data/agriculture/inline-diagram-source-bindings.json';
 import {organClassificationLabels,ORGAN_CLASSIFICATION_JA} from './OrganClassificationLabels';
+import {nativeProcessLabels,nativeProcessEntry,NATIVE_PLANT_FLOWS,nativeProcessFlow} from './NativeProcessLabels';
 
 export const STATISTICS_REMAINDER_JA='その他：100 − (24 + 20 + 9 + 4) = 43%';
 export const RICE_NATIVE_TITLE_JA='もみ・玄米・白米';
@@ -69,6 +70,16 @@ export function nativeFigureReadingSource(lessonId:string){
   if(!l.levels.some(level=>organClassificationLabels(l.id,l.sourceHash,l.revision,level,'ja',ORGAN_CLASSIFICATION_JA)))return null;
   const fields:Record<string,string>=Object.fromEntries(ORGAN_CLASSIFICATION_JA.rows.flatMap(([title,items],i)=>[[`rowTitle:${i}`,title],[`rowItems:${i}`,items]]));
   return {fields,signature:JSON.stringify({lessonId,sourceHash:l.sourceHash,revision:l.revision,fields,binding:inlineBindings.organs,sourceJapanese:organs.sourceJapanese,levels:organs.levels})};
+ }
+ const process=nativeProcessEntry(lessonId),level=process&&l.levels.find(level=>nativeProcessLabels(l.id,l.sourceHash,l.revision,level,'ja'));
+ if(process&&level){
+  const ja=nativeProcessLabels(l.id,l.sourceHash,l.revision,level,'ja')!;
+  const fields:Record<string,string>={title:ja.title,caption:ja.caption};
+  if(process.kind==='plant-flow'){
+   for(const i of [11,15,14,12])fields['label:'+i]=ja.labels[i];
+   NATIVE_PLANT_FLOWS.forEach((_,i)=>{fields['flow:'+i]=nativeProcessFlow(ja,i);});
+  }else ja.labels.forEach((s,i)=>{fields['label:'+i]=s;});
+  return {fields,signature:JSON.stringify({lessonId,sourceHash:l.sourceHash,revision:l.revision,fields,kind:process.kind,scopeLevels:process.scopeLevels,assetSha256:process.assetSha256,sourceJapanese:process.sourceJapanese,labelsJa:ja.labels,sources:process.sources})};
  }
  return null;
 }
