@@ -1,3 +1,4 @@
+import {foodRoyalWeek7NativeFor} from '@/data/food-manufacturing/royal-week7-native';
 import axisReadings from '@/data/food-manufacturing/royal-technical-axis-readings.json';
 import axisLabels from '@/data/food-manufacturing/royal-technical-axis-labels.json';
 import chartLabels from '@/data/food-manufacturing/management-label-translations.json';
@@ -79,13 +80,13 @@ function TechnicalSourceKey({lesson,figure,language,showTranslation,textColor}:{
  return <View testID={`food-technical-source-key-${figure.id}`} style={{gap:8,paddingVertical:12}}>{chart&&<Text style={{color:textColor,fontSize:14}}>{chart.example}</Text>}{terms.map(term=><View key={term} style={{flexDirection:'row',flexWrap:'wrap',gap:8}}>{kind.includes('original-progress')&&['標準','仮定の許容幅','実績'].includes(term)&&<View style={{width:18,height:6,alignSelf:'center',backgroundColor:term==='標準'?'#71814f':term==='実績'?'#237d9c':'#e1e6d8'}}/>}<TechnicalJapaneseLabel text={term} color={textColor}/>{(axis?.[term]??chart?.labels[term])&&<Text style={{color:textColor,fontSize:15}}>{axis?.[term]??chart?.labels[term]}</Text>}</View>)}{exact!==''&&<Text selectable style={{color:textColor,fontSize:15,lineHeight:26}}>{exact}</Text>}<Text selectable style={{color:textColor,fontSize:16,lineHeight:28}}>{foodSourcePracticeDescription(lesson,figure,language,showTranslation)}</Text></View>;
 }
 /** Source-audit visual exercises use original diagrams and explicit lesson assumptions. */
-export function FoodSourcePracticeVisuals({lesson,textColor,readingColor,language,showTranslation}:{lesson:FoodManufacturingLesson;textColor:string;readingColor:string;language:string;showTranslation:boolean}){
+export function FoodSourcePracticeVisuals({lesson,textColor,readingColor,language,showTranslation,dailyPlacement=false}:{lesson:FoodManufacturingLesson;textColor:string;readingColor:string;language:string;showTranslation:boolean;dailyPlacement?:boolean}){
  const [expanded,setExpanded]=useState<PracticeFigure|null>(null);
  const labels=showTranslation&&language!=='ja'?(ui.locales as Record<string,{close:string}>)[language]:undefined;
  const base=foodManufacturingLesson(lesson.id,lesson.level);
  if(!base||base.sourceHash!==lesson.sourceHash)return null;
  const translated=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null;
- return <>{figures.filter(figure=>foodSourcePracticeFigureMatches(lesson,figure)).map(figure=>{
+ return <>{figures.filter(figure=>foodSourcePracticeFigureMatches(lesson,figure)&&(dailyPlacement?figure.id==='food-source-normal-bands':!(figure.id==='food-source-normal-bands'&&foodRoyalWeek7NativeFor(lesson)?.kind==='normal'))).map(figure=>{
  const p=lesson.paragraphs.find(p=>p.id===figure.paragraphId);if(!p)return null;
  const captionSupplement=figure.captionSupplementId?[...captionSupplements.sections,...caption43.sections,...caption44.sections,...caption45.sections,...caption46.sections,...caption47.sections,...caption48.sections,...caption49.sections,...caption51.sections,...caption53.sections].find(s=>s.id===figure.captionSupplementId&&s.lessonSourceHash===lesson.sourceHash&&s.sourceHash===figure.captionSupplementSourceHash):null;
  if(figure.captionSupplementId&&!captionSupplement)return null;

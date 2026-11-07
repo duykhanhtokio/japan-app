@@ -1,0 +1,24 @@
+import native from '@/data/food-manufacturing/royal-week7-native.json';
+import {foodRoyalWeek7NativeFor} from '@/data/food-manufacturing/royal-week7-native';
+import {foodManufacturingLesson,foodManufacturingTranslation,type FoodManufacturingLesson} from '@/data/food-manufacturing';
+import {foodManufacturingLessonRuby} from '@/data/food-manufacturing/lesson-ruby';
+import {StyleSheet,Text,View} from 'react-native';
+import {FoodLessonRuby} from './FoodLessonRuby';
+import {FoodSourcePracticeVisuals} from './FoodSourcePracticeVisuals';
+/** Readings are copied only from aligned, revision-matched original source fields or explicit source terms. */
+function SourceLabel({lesson,text}:{lesson:FoodManufacturingLesson;text:string}){
+ const dictionary=new Map<string,string>();for(const p of lesson.paragraphs){for(const field of ['titleJa','textJa'] as const){for(const token of foodManufacturingLessonRuby(lesson,`paragraphs.${p.id}.${field}`,p[field])??[]){if(token.reading)dictionary.set(token.text,token.reading);}}}for(const term of lesson.terms??[]){if(term.reading)dictionary.set(term.ja,term.reading);}
+ for(const source of native.readingSources){const original=foodManufacturingLesson(source.lessonId,source.level as '1'|'2'),p=original?.paragraphs.find(p=>p.id===source.paragraphId);if(original?.sourceHash===source.sourceHash&&p){const token=foodManufacturingLessonRuby(original,`paragraphs.${p.id}.textJa`,p.textJa)?.find(part=>part.text===source.token&&part.reading===source.reading);if(token?.reading)dictionary.set(token.text,token.reading);}}
+ const tokens=[...dictionary.keys()].sort((a,b)=>b.length-a.length),parts:{text:string;reading?:string}[]=[];let offset=0;while(offset<text.length){const key=tokens.find(key=>text.startsWith(key,offset));if(key){parts.push({text:key,reading:dictionary.get(key)});offset+=key.length;}else{const c=Array.from(text.slice(offset))[0];parts.push({text:c});offset+=c.length;}}
+ return <View accessible accessibilityLabel={text} style={s.ruby}>{parts.map((p,i)=><View key={i} style={s.word}><Text style={s.reading}>{p.reading??' '}</Text><Text style={s.label}>{p.text}</Text></View>)}</View>;
+}
+/** Exact source example tables. Native text/quantities remain selectable and independent of raster artwork. */
+export function FoodRoyalWeek7Native({lesson,language,showTranslation,textColor,readingColor}:{lesson:FoodManufacturingLesson;language:string;showTranslation:boolean;textColor:string;readingColor:string}){
+ const binding=foodRoyalWeek7NativeFor(lesson);if(!binding)return null;const tr=showTranslation&&language!=='ja'?foodManufacturingTranslation(lesson,language):null,labels=tr?(native.locales as Record<string,string[]>)[language]:null;
+ const rows=binding.kind==='storage'?[{i:0,value:'≤ 5 ℃'},{i:1,value:'≤ 8 ℃'},{i:2,value:'≤ 10 ℃'},{i:3,value:'≤ 15 ℃'},{i:4,value:'≈ 10 ℃'}]:binding.kind==='heating'?[{i:5,value:'75 ℃ · ≥ 1 min'},{i:6,value:'85–90 ℃ · ≥ 90 s'},{i:7,value:'120 ℃ · ≥ 4 min'},{i:8,value:'≥ 70 ℃\nOR 60 ℃ · 1 min\nOR −20 ℃ · ≥ 24 h'}]:binding.kind==='ph'?[{i:11,value:'pH ≤ 6'},{i:9,value:'pH ≈ 6–8'},{i:10,value:'pH ≥ 8'},{i:12,value:'pH ≥ 11'}]:[];
+ return <View testID={`food-week7-native-${lesson.id}`} style={s.root}>
+ {binding.kind==='normal'?<><FoodSourcePracticeVisuals lesson={lesson} language={language} showTranslation={showTranslation} textColor="#183044" readingColor="#536676" dailyPlacement/>{[13,14].map(i=><View key={i} style={s.row}><SourceLabel lesson={lesson} text={native.keysJa[i]}/>{labels&&<Text style={s.translation}>{labels[i]}</Text>}</View>)}</>:rows.map(({i,value})=><View key={i} testID={`food-week7-quantity-${i}`} style={s.row}><View style={s.name}><SourceLabel lesson={lesson} text={native.keysJa[i]}/>{labels&&<Text style={s.translation}>{labels[i]}</Text>}</View><Text selectable style={s.value}>{value}</Text></View>)}
+ {binding.kind!=='normal'&&lesson.paragraphs.filter(p=>p.id==='p3').map(p=><View key={p.id} style={s.conditions}><FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.titleJa`} text={p.titleJa} color="#183044" readingColor="#536676" heading/><FoodLessonRuby lesson={lesson} field={`paragraphs.${p.id}.textJa`} text={p.textJa} color="#183044" readingColor="#536676"/>{tr&&<Text style={s.translation}>{tr.paragraphTitles[p.id]}{'\n'}{tr.paragraphs[p.id]}</Text>}</View>)}
+ </View>;
+}
+const s=StyleSheet.create({root:{gap:16,padding:16,borderRadius:12,backgroundColor:'#fffdf7'},row:{gap:12,padding:14,borderWidth:1,borderColor:'#b8a47a',borderRadius:8,flexDirection:'row',flexWrap:'wrap',alignItems:'center'},name:{flex:1,minWidth:190,gap:8},value:{fontSize:21,lineHeight:34,color:'#183044',fontWeight:'700'},label:{fontSize:17,lineHeight:28,color:'#183044'},translation:{fontSize:16,lineHeight:27,color:'#183044'},ruby:{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'},word:{alignItems:'center'},reading:{fontSize:10,lineHeight:14,color:'#536676'},conditions:{gap:8,paddingTop:8}});
