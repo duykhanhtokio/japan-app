@@ -1,6 +1,7 @@
 """Mechanical learner-content checks. Does not certify semantics or heard audio."""
 import hashlib
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,8 +50,12 @@ for master in sorted((ROOT / 'src/data/jlpt-original').glob('n*/*/master.ja.json
                 issue('missing_audio_manifest_item', qid)
                 continue
             recorded = [t['text'] for t in item['turns'] if not t['actor'].startswith(('option-', 'question-'))]
+            peers = [p for p in exam['questions'] if p['id'] == qid or (
+                q.get('sharedDialogueId') and p.get('sharedDialogueId') == q['sharedDialogueId'])]
+            allowed_questions = {norm(p['prompt']) for p in peers}
             for turn in item['turns']:
-                if turn['actor'].startswith('question-') and norm(turn['text']) != norm(q['prompt']):
+                spoken_question = re.sub(r'^\d+番[。．、.]?', '', norm(turn['text']))
+                if turn['actor'].startswith('question-') and spoken_question not in allowed_questions:
                     issue('recorded_question_prompt_mismatch', turn['text'])
             scripted = [t[1] for t in q['script']]
             if list(map(norm, recorded)) != list(map(norm, scripted)):
