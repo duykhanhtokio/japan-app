@@ -23,17 +23,20 @@ export function agricultureDailyCompanions(lesson:AgricultureLesson,level:Agricu
  return (pairs[lesson.id]||[]).flatMap(p=>{const l=agricultureLesson(p.lessonId,level);return l&&l.sourceHash===p.sourceHash?[{lesson:l,paragraphIds:p.paragraphIds}]:[];});
 }
 export function DailyLearningFigure({lesson,level,colors,includeExisting=false,language='ja',showTranslation=false}:{lesson:AgricultureLesson;level:AgricultureLevel;colors:Colors;includeExisting?:boolean;language?:string;showTranslation?:boolean}){
+ if(!lesson.levels.includes(level))return null;
  const b=bindings[lesson.id],d=diagrams[lesson.id];
+ const currentBinding=b?.lessonSourceHash===lesson.sourceHash&&b.scopeLevels.includes(level)?b:null;
  if(level==='2'&&lesson.id==='agr-climate'&&d?.kind==='winter-climate'&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><WinterSpatialReference lesson={lesson} level={level} diagram={d} language={language} showTranslation={showTranslation} colors={colors}/><WinterClimateFigure lesson={lesson} level={level} language={language} showTranslation={showTranslation} translation={showTranslation?agricultureTranslation(lesson,language):null} colors={colors}/></View>;
  if(level==='2'&&lesson.id==='agr-statistics'&&d?.kind==='statistics-2019'&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><Statistics2019Figure lesson={lesson} level={level} language={language} showTranslation={showTranslation} translation={showTranslation?agricultureTranslation(lesson,language):null} colors={colors}/></View>;
  if(d&&d.lessonSourceHash===lesson.sourceHash)return <View style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10}}><DailyInstructionDiagram kind={d.kind as DailyDiagramKind} title={d.titleJa} caption={d.captionJa} alt={d.altJa} colors={colors}/></View>;
- const f=b?.lessonSourceHash===lesson.sourceHash?figures.images.find(f=>f.id===b.figureId&&f.assetSha256===b.assetSha256&&b.scopeLevels.includes(level)):includeExisting?figures.images.find(f=>f.lessonIds.includes(lesson.id)&&f.lessonSourceHashes[lesson.id as keyof typeof f.lessonSourceHashes]===lesson.sourceHash&&f.scopeLevels.includes(level)):null;
+ const f=currentBinding?figures.images.find(f=>f.id===currentBinding.figureId&&f.assetSha256===currentBinding.assetSha256):includeExisting?figures.images.find(f=>f.lessonIds.includes(lesson.id)&&f.lessonSourceHashes[lesson.id as keyof typeof f.lessonSourceHashes]===lesson.sourceHash&&f.scopeLevels.includes(level)):null;
  if(f?.id==='agr-f40-general-cropping-example-flow')return <CropCalendarFigure lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors}/>;
+
  const asset=f?getAgricultureFigureAsset(f.assetKey):null;
  return f&&asset?<View testID={`agri-daily-support-${lesson.id}`} style={{padding:12,borderWidth:1,borderColor:colors.border,backgroundColor:colors.translation,borderRadius:10,gap:10}}>
  <Text style={{color:colors.translationText,fontSize:19,lineHeight:29,fontWeight:'700'}}>{f.titleJa}</Text>
  <ZoomableFigure source={asset} width={f.width} height={f.height} altJa={f.altJa} testID={`agri-daily-support-${lesson.id}`} colors={colors} allowExpandedView/>
- <Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{b?.reuseReasonJa||f.observationJa}</Text>
+ <Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{currentBinding?.reuseReasonJa||f.observationJa}</Text>
  <Text style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{f.observationJa}{'\n'}{f.limitJa}</Text>
  </View>:null;
 }

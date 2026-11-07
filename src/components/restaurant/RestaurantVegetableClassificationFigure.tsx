@@ -16,7 +16,17 @@ const assets:Record<string,number>={
  eggplant:require('../../../assets/agriculture/royal-weekly-20261107/week01/eggplant.webp'),
  tomato:require('../../../assets/agriculture/royal-weekly-20261107/week01/tomato.webp'),
  cucumber:require('../../../assets/agriculture/royal-weekly-20261107/week01/cucumber.webp'),
+ strawberry:require('../../../assets/restaurant/royal-weekly-20261107/week04/rst-1-cook-03-vegetable-groups.webp'),
 };
+type Ingredient={id:string;ja:string;width:number;height:number;fullWidth?:number;fullHeight?:number;crop?:{x:number;y:number;width:number;height:number}};
+function IngredientArtwork({item,label,fallbackWidth}:{item:Ingredient;label:string;fallbackWidth:number}){
+ const [measured,setMeasured]=useState(0),width=measured||Math.max(1,fallbackWidth),crop=item.crop;
+ if(!crop)return <Image testID={`restaurant-vegetable-${item.id}`} source={assets[item.id]} accessibilityLabel={label} resizeMode="cover" style={{width:'100%',aspectRatio:item.width/item.height}}/>;
+ const scale=width/crop.width;
+ return <View testID={`restaurant-vegetable-${item.id}`} accessible accessibilityRole="image" accessibilityLabel={label} onLayout={event=>{const next=event.nativeEvent.layout.width;if(Number.isFinite(next)&&next>0)setMeasured(next);}} style={{width:'100%',height:crop.height*scale,overflow:'hidden',position:'relative'}}>
+  <Image source={assets[item.id]} accessible={false} resizeMode="cover" style={{position:'absolute',left:-crop.x*scale,top:-crop.y*scale,width:(item.fullWidth??item.width)*scale,height:(item.fullHeight??item.height)*scale}}/>
+ </View>;
+}
 export function restaurantHasVegetableClassification(lesson:Pick<RestaurantLesson,'id'|'sourceHash'>){return lesson.id===data.lessonId&&lesson.sourceHash===data.lessonSourceHash;}
 /** Reuse reviewed whole-specimen art; preserve the cooking source's own culinary groups. */
 export function RestaurantVegetableClassificationFigure({language,showTranslation}:{language:string;showTranslation:boolean}){
@@ -26,7 +36,7 @@ export function RestaurantVegetableClassificationFigure({language,showTranslatio
   {data.groups.map((group,groupIndex)=><View key={group.id} testID={`restaurant-vegetable-group-${group.id}`} style={{gap:10}}>
    <RestaurantReading heading text={group.ja} segments={[{text:group.ja,reading:group.reading}]}/>{showTranslation&&language!=='ja'&&categories?.[groupIndex]&&<TranslationText>{categories[groupIndex]}</TranslationText>}
    <View style={{gap:8,flexDirection:'row',flexWrap:'wrap'}}>{group.itemIds.map(id=>{const itemIndex=data.items.findIndex(item=>item.id===id),item=data.items[itemIndex];if(!item)return null;return <RoyalContentPanel key={id} style={{width:cardWidth,gap:8}}>
-    <Image testID={`restaurant-vegetable-${id}`} source={assets[id]} accessibilityLabel={`${item.ja}${showTranslation&&language!=='ja'&&names?.[itemIndex]?` / ${names[itemIndex]}`:''}`} resizeMode="cover" style={{width:'100%',aspectRatio:item.width/item.height}}/>
+    <IngredientArtwork item={item} fallbackWidth={cardWidth} label={`${item.ja}${showTranslation&&language!=='ja'&&names?.[itemIndex]?` / ${names[itemIndex]}`:''}`}/>
     <RestaurantReading text={item.ja}/>{showTranslation&&language!=='ja'&&names?.[itemIndex]&&<TranslationText>{names[itemIndex]}</TranslationText>}
    </RoyalContentPanel>;})}</View>
   </View>)}

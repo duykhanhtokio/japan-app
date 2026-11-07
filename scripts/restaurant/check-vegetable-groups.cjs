@@ -1,0 +1,30 @@
+const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert'),crypto=require('crypto');
+const root=path.resolve(__dirname,'../..'),React=require('react'),server=require('react-dom/server'),ts=require('typescript');
+const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const data=read('src/data/restaurant/royal-vegetable-classification.json'),daily=read('src/data/restaurant/daily-learning.json');
+const lessons=[1,2].flatMap(n=>read(`src/data/restaurant/lessons.${n}.ja.json`).lessons),lesson=lessons.find(l=>l.id===data.lessonId);
+assert.equal(data.lessonSourceHash,lesson.sourceHash);
+const nativeBinding=daily.royalNativeOverrides.find(o=>o.lessonId===lesson.id);assert(nativeBinding);assert.equal(nativeBinding.sourceHash,lesson.sourceHash);for(const field of ['renderer','data'])assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,nativeBinding[field]))).digest('hex'),nativeBinding[field+'Sha256']);assert.equal(nativeBinding.assets.length,11);
+for(const item of data.items){assert(fs.existsSync(path.join(root,item.asset)),`Missing actual image bytes: ${item.asset}`);assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,item.asset))).digest('hex'),item.sha256);}
+assert.equal(data.groups.length,4);assert.equal(data.items.length,11);assert(data.groups.find(g=>g.id==='leaf-stem').itemIds.includes('onion'));assert.deepEqual(data.groups.find(g=>g.id==='fruit-type').itemIds,['strawberry']);
+assert.equal(data.caption.furigana.map(s=>s.text).join(''),data.caption.textJa);
+const locales=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
+for(const locale of locales){assert.equal(data.labels[locale].length,11);assert.equal(data.categoryLabels[locale].length,4);assert(data.labels[locale].every(x=>x.length>0));assert.equal(data.caption.translations[locale].sourceHash,data.caption.sourceHash);}
+const flat=s=>Array.isArray(s)?Object.assign({},...s.filter(Boolean).map(flat)):s;
+const node=tag=>props=>React.createElement(tag,{'data-testid':props.testID,style:flat(props.style)},props.children);
+let viewport=390;
+const native={View:node('div'),Text:node('span'),Image:props=>React.createElement('img',{src:props.source,alt:props.accessibilityLabel,style:flat(props.style)}),StyleSheet:{create:x=>x},useWindowDimensions:()=>({width:viewport,height:844})};
+const study={TranslationText:node('span'),useStudyAppearance:()=>({colors:{border:'#bb9f62',background:'#fffaf0',translation:'#f4e8cf'}})};
+const reading={RestaurantReading:props=>React.createElement('span',null,props.text)};
+const load=(file,extra={})=>{const source=fs.readFileSync(path.join(root,file),'utf8'),compiled=ts.transpileModule(source,{reportDiagnostics:true,compilerOptions:{jsx:ts.JsxEmit.React,module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020}});assert(!(compiled.diagnostics||[]).some(d=>d.category===ts.DiagnosticCategory.Error));const exports={};const req=name=>name==='react'?React:name==='react-native'?native:name.endsWith('StudyAppearance')?study:name.endsWith('RoyalPanels')?{RoyalContentPanel:node('div')}:name==='./RestaurantReading'?reading:name==='@/data/restaurant'?{restaurantLesson:(id,level)=>lessons.find(l=>l.id===id&&l.level===level),restaurantLessonTranslation:()=>null}:name.endsWith('daily-learning.json')?{default:daily}:name.endsWith('royal-vegetable-classification.json')?{default:data}:name.startsWith('../../../assets/')?name:extra[name]||(function(){throw Error(name);})();vm.runInNewContext(compiled.outputText,{exports,require:req,React,console});return exports;};
+const figures=load('src/components/restaurant/RestaurantVegetableClassificationFigure.tsx');
+const dailyExports=load('src/components/restaurant/RestaurantDailyLearning.tsx',{'./RestaurantVegetableClassificationFigure':figures,'./RestaurantFishPartsFigure':{RestaurantFishPartsFigure:()=>null,restaurantHasFishPartsFigure:()=>false}});
+assert(figures.restaurantHasVegetableClassification(lesson));assert(!figures.restaurantHasVegetableClassification({...lesson,sourceHash:'stale'}));assert(!figures.restaurantHasVegetableClassification({...lesson,id:'rst-1-cook-04'}));
+const render=(l,locale='ja',translated=false)=>server.renderToStaticMarkup(React.createElement(dailyExports.RestaurantDailyFigure,{lesson:l,language:locale,showTranslation:translated}));
+for(const width of [320,390,844,1024,1440]){viewport=width;const html=render(lesson);assert(html.includes('restaurant-native-vegetable-classification'));for(const group of data.groups)assert(html.includes(group.ja));assert.equal((html.match(/<img/g)||[]).length,11);assert(!html.includes('NaN'));assert(!html.includes('Infinity'));}
+for(const locale of locales){const html=render(lesson,locale,true);for(const label of data.labels[locale])assert(html.includes(label));assert(html.includes(data.caption.translations[locale].text));}
+assert.equal(render({...lesson,sourceHash:'stale'}),'');
+assert(!render(lessons.find(l=>l.id==='rst-1-cook-04')).includes('restaurant-native-vegetable-classification'));
+assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/components/restaurant/RestaurantDailyLearning.tsx'))).digest('hex'),daily.renderSourceSha256);
+for(const w of [120,150,350,450]){const item=data.items.find(i=>i.id==='strawberry'),crop=item.crop,scale=w/crop.width;assert.equal(crop.x*scale,w);assert.equal(crop.y*scale,w*2/3);assert.equal((crop.x+crop.width)*scale,item.fullWidth*scale);assert.equal((crop.y+crop.height)*scale,item.fullHeight*scale);}
+console.log('PASS vegetable groups: current/stale/neighbor binding, 12 revision captions/labels, 5 SSR viewport widths, incoming10specimens+controlled strawberry crop, asset/renderer hashes. Physical-device/source-PDF acceptance remains open.');
