@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "baseCommit": "6531bb3e4cb76abc101a4e5f9ec97417d5ee0b1d",
+  "beforeBlobSha": {
+    "src/data/agriculture/recognition-image-locales.json": "c98588097be0ead193c3929d023810dcc6391c6c",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/eight-facility-appearance-locales-qa.json": null
+  },
+  "scope": "Eight actual Japanese-only facility appearance study metadata gaps, full twelve locales, unchanged source pixels.",
+  "figureIds": [
+    "agr-f40-facility-support-greenhouse-crops",
+    "agr-f40-facility-support-greenhouse-flowers-a",
+    "agr-f40-facility-support-greenhouse-flowers-b",
+    "agr-f40-facility-support-rain-shelter-roof-only",
+    "agr-f40-facility-support-greenhouse-auto-sprayer",
+    "agr-f40-facility-support-greenhouse-insect-light-appearance",
+    "agr-f40-facility-support-tomato-blossom-end-appearance",
+    "agr-f40-facility-support-carnation-greenhouse-level1"
+  ],
+  "inputPins": {
+    "src/components/agriculture/ZoomableFigure.tsx": "6caf139bb1daef34de21be58ca47e36fa459a405",
+    "src/data/agriculture/image-readings.json": "d3266d9a1b7a09fa886acb3bb38dc6e71ed4601f",
+    "src/components/agriculture/RecognitionImages.tsx": "a8e9e884d7730e9c5f5e82c00159c4c104128d70",
+    "src/data/agriculture/lessons.ja.json": "cb35d5bc65c91565748d1e30142dd1e019d12d17",
+    "src/data/agriculture/recognition-image-locales.json": "c98588097be0ead193c3929d023810dcc6391c6c",
+    "src/data/agriculture/recognition-images.json": "975f45df0eba205070f0f030b07088bd830c24a1",
+    "scripts/agriculture/check-recognition-locale-batch.cjs": "91292d305e5384af801fdd806ec5bc8e0b76f49d"
+  },
+  "sourceReview": {
+    "officialPdfPages": {
+      "AGR-S1": [
+        63,
+        64,
+        65,
+        70,
+        73
+      ],
+      "AGR-S2": [
+        82,
+        83,
+        84,
+        90,
+        94
+      ]
+    },
+    "lessonIds": [
+      "agr-f40-facility-environment-equipment",
+      "agr-f40-fgs-source1-equipment",
+      "agr-facility-env-growth-observation",
+      "agr-facility-structure-flower-forms",
+      "agr-facility-structure-house-types",
+      "agr-facility-structure-strawberry",
+      "agr-facility-structure-vegetables",
+      "agr-par11-facility-plant-condition-signs",
+      "agr-s38-plant-classification-seedling-signs"
+    ],
+    "method": "Personally opened ten full official PDF pages and eight exact existing plates; read nine full linked current Japanese lessons. Full selected registry records unchanged from reviewed snapshots.",
+    "semanticBoundaries": [
+      "Lisianthus is supported by S2 PDF84; S1 PDF65 supports carnation and lily, not lisianthus.",
+      "Four vegetable quadrants distinguish greenhouse fruit vegetables, elevated strawberry bench and supports.",
+      "Sprayer self-propelled rail carriage does not imply autonomous navigation or a working protocol.",
+      "Insect-light tube appearance does not establish emitted color, wavelength, effectiveness, installation or wiring.",
+      "Blossom-end location is opposite calyx; symptom appearance does not diagnose cause or prescribe fertilizer, pesticides or treatment.",
+      "Spray carnation means multiple flowers on one stem, not every cultivar morphology."
+    ]
+  },
+  "delta": {
+    "entriesAdded": 8,
+    "localeEntryPairs": 96,
+    "limitsAdded": 3,
+    "exactExistingTwelveLocaleLimitReused": "nursery-support-appearance-limit-v1",
+    "allIncomingRowsAndFlagsPreserved": true,
+    "sourceLabelsJaAbsent": true,
+    "artChanged": false
+  },
+  "actualVisibleGapBaseline": {
+    "plates": 8,
+    "twelveLocaleRenders": 96,
+    "result": "Japanese-only title, observation, limit and alt confirmed in actual generic raster path, not inferred from absent JSON alone."
+  },
+  "qa": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/agriculture/check-recognition-locale-batch.cjs agr-f40-facility-support-greenhouse-crops agr-f40-facility-support-greenhouse-flowers-a agr-f40-facility-support-greenhouse-flowers-b agr-f40-facility-support-rain-shelter-roof-only agr-f40-facility-support-greenhouse-auto-sprayer agr-f40-facility-support-greenhouse-insect-light-appearance agr-f40-facility-support-tomato-blossom-end-appearance agr-f40-facility-support-carnation-greenhouse-level1",
+    "contexts": 18,
+    "actualTwelveLocaleRenders": 216,
+    "rejectionChecks": 492,
+    "exactRegisteredPixelsReachedImage": true,
+    "canonicalJapaneseRetained": true,
+    "gitDiffCheck": "PASS",
+    "hashDimensionDecode": "8/8 PASS"
+  },
+  "readingDisposition": {
+    "reviewedCurrentWholeVisibleFields": 23,
+    "allKatakanaTitleWithoutReadingEntry": "agr-f40-facility-support-greenhouse-flowers-b",
+    "currentReadingBlob": "d3266d9a1b7a09fa886acb3bb38dc6e71ed4601f",
+    "retained": true,
+    "actualSourceReadingMismatchQueued": [
+      {
+        "id": "agr-f40-facility-support-greenhouse-insect-light-appearance",
+        "field": "observation",
+        "text": "黄色灯",
+        "current": "おうしょくとう",
+        "sourceKana": "きいろとう"
+      },
+      {
+        "id": "agr-f40-facility-support-greenhouse-insect-light-appearance",
+        "field": "observation",
+        "text": "青色灯",
+        "current": "せいしょくとう",
+        "sourceKana": "あおいろとう"
+      }
+    ],
+    "finalFuriganaAcceptance": false
+  },
+  "assets": [
+    {
+      "id": "agr-f40-facility-support-greenhouse-crops",
+      "path": "assets/agriculture/royal-weekly-20261107/week15/greenhouse-crops-royal-v1.webp",
+      "sha256": "6a1e4abbbc313b2eb47228dbdc527da1610829df42eb0af9b376708342d9d359",
+      "dimensions": [
+        1312,
+        1199
+      ]
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-flowers-a",
+      "path": "assets/agriculture/royal-weekly-20261107/week15/greenhouse-flowers-a-royal-v1.webp",
+      "sha256": "451d6358351fa222c95b583adcd99b017280bbeb9170d7bd4e30a759e37267c5",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-flowers-b",
+      "path": "assets/agriculture/royal-weekly-20261107/week15/greenhouse-flowers-b-royal-v1.webp",
+      "sha256": "3a63aba44c3fc6414823b2a6239514af257bab23e6dfa8ff5b898fbc8c555933",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "agr-f40-facility-support-rain-shelter-roof-only",
+      "path": "assets/agriculture/royal-weekly-20261107/week15/rain-shelter-roof-only-royal-v1.webp",
+      "sha256": "fd7c97142236801d0d3b4b42959cb1ac3f7b42f584a9bfff33ca95f0eb5a003e",
+      "dimensions": [
+        1448,
+        1086
+      ]
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-auto-sprayer",
+      "path": "assets/agriculture/completion-40/facility-safety-support/greenhouse-auto-sprayer.png",
+      "sha256": "d910622c9333e9b09b0bc7b2853145af7aa257abe50678b768fb51470ccaf043",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-insect-light-appearance",
+      "path": "assets/agriculture/royal-weekly-20261107/week37/greenhouse-insect-light-appearance-royal-v1.webp",
+      "sha256": "30ae09414e1d0955c319ec31f02f7d47ee7e7bc8763a5c2d58a06029ddbe6560",
+      "dimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "agr-f40-facility-support-tomato-blossom-end-appearance",
+      "path": "assets/agriculture/completion-40/facility-safety-support/tomato-blossom-end-appearance.png",
+      "sha256": "5025f893c34491a9596d2e7884e18d657c7b1d46c5879304a684fc3aa25e251b",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "agr-f40-facility-support-carnation-greenhouse-level1",
+      "path": "assets/agriculture/completion-40/visual-safety/carnation-greenhouse-level1.png",
+      "sha256": "9f25dd189a649af5d8766ab32d99889df427305082081a42ba0453fd2dd25c75",
+      "dimensions": [
+        1145,
+        1374
+      ]
+    }
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceValidated": false,
+  "wholeWeekAccepted": false,
+  "releaseAccepted": false
+}
