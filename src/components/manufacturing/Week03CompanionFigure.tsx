@@ -12,6 +12,11 @@ import data from '@/data/manufacturing/royal-week03-companion-figures.json';
 type Figure={id:string;paragraphId?:string;paragraphIds?:string[];assetFile:string;width:number;height:number;labels?:Record<string,string>};
 type Entry={sourceHash:string;captionJa:string;paragraphIds:string[];bindingScopes?:string[][];expectedParagraphsJa:Record<string,string>;nativeParagraphIds?:string[];expectedNativeParagraphsJa?:Record<string,string>;images:Figure[];exactSelectionOnly?:boolean;exactBindingScopes?:boolean;selectionBoundImages?:boolean;retainedExistingFigure?:boolean;fullReader?:Entry};
 const sources:Record<string,ReturnType<typeof require>>={
+ 'assets/manufacturing/royal-weekly-20261107/week09/technical/companion-surface008-coating-methods-selected.png':require('../../../assets/manufacturing/royal-weekly-20261107/week09/technical/companion-surface008-coating-methods-selected.png'),
+ 'assets/manufacturing/royal-weekly-20261107/week09/technical/companion-electrical69-period-phase-selected.png':require('../../../assets/manufacturing/royal-weekly-20261107/week09/technical/companion-electrical69-period-phase-selected.png'),
+ 'assets/manufacturing/daily40/electrical/electrical-day-013.png':require('../../../assets/manufacturing/daily40/electrical/electrical-day-013.png'),
+ 'assets/manufacturing/daily40/mechanical/day-021.png':require('../../../assets/manufacturing/daily40/mechanical/day-021.png'),
+ 'assets/manufacturing/diagrams/qc-control-plan.png':require('../../../assets/manufacturing/diagrams/qc-control-plan.png'),
  'assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-fit-clearance-source.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/mechanical-fit-clearance-source.png'),
  'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-record.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-record.png'),
  'assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-pareto.png':require('../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-qc-pareto.png'),
@@ -107,5 +112,7 @@ export function Week03CompanionFigure({lesson,paragraphIds,language,showTranslat
 export function ScopedManufacturingCompanionFigures({lesson,paragraphIds,language,showTranslation}:{lesson:ManufacturingLesson;paragraphIds:string[];language:string;showTranslation:boolean}){
  const registered=Object.prototype.hasOwnProperty.call(data.lessons,lesson.id),full=lesson.paragraphs.map(p=>p.id),fullSelection=full.length===paragraphIds.length&&full.every((id,i)=>id===paragraphIds[i]);
  const row=registration(lesson.id,paragraphIds),scoped=['mfg1-mechanical-completion37-lesson-003','mfg1-mechanical-completion37-lesson-005','mfg1-mechanical-completion37-lesson-007','mfg1-mechanical-completion37-lesson-006','mfg1-surface-completion37-lesson-003','mfg1-surface-completion37-lesson-006','mfg1-surface-completion37-lesson-008'].includes(lesson.id),replaceLegacy=scoped&&(row?!row.retainedExistingFigure:(registered&&!fullSelection));
+ // A scoped full reader must not revive its legacy image after the current Japanese body fails its guard.
+ if(scoped&&row&&(row.sourceHash!==lesson.sourceHash||row.captionJa!==lesson.summaryJa||row.paragraphIds.some(id=>{const p=lesson.paragraphs.find(p=>p.id===id);return !p||manufacturingLessonParagraph(lesson,id,'ja',p.textJa)!==row.expectedParagraphsJa[id];})))return null;
  return <>{!replaceLegacy&&<CompletionManufacturingDiagrams lesson={lesson} language={language} showTranslation={showTranslation}/>}<Week03CompanionFigure lesson={lesson} paragraphIds={paragraphIds} language={language} showTranslation={showTranslation}/></>;
 }
