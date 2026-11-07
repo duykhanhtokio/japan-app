@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "status": "AI_CONTEXT_REVIEWED_ACTUAL_PARTIAL_CLOSURE",
+  "sourceWeek": 7,
+  "actualNewFullFields": 2,
+  "previousPlainFieldsConsumed": 0,
+  "previousPartialFieldsConsumed": 2,
+  "actualSourceRows": 2,
+  "entries": [
+    {
+      "lessonId": "mfg1-mechanical-lesson-049",
+      "field": "exampleText",
+      "sourceJapanese": "開先は溶接のために整える部材端部の形状です。折れた矢で開先を取る部材を示す場合がありますが、対象が明らかなときなどには折れない例もあります。矢の折れの有無だけで加工する側を決めず、基本記号、対象部材、寸法と補足指示を一緒に確認します。記号の読み取りは、作業資格や安全手順を省略する許可ではありません。\n折れた矢は、開先を取る部材を示すために使います。ただし、対象の部材が明らかな場合や、どちらの部材でもよい場合は、折れを省けます。矢が折れていないだけで開先が不要とは判断せず、対象と適用する図示方式を確かめます。",
+      "sourceHash": "ceca8331e7510f74357814ec9a21d538bd4be2cde75a0f0a60738b976531e2af",
+      "previousStatus": "PARTIAL_SOURCE_REUSE",
+      "sourceWeek": 7,
+      "prefixChars": 150,
+      "manualPrefixJapaneseSha256": "407a332bf271eff08f22e906bc0a5b3f5182092d1263a2b611bf83aa3a5b3b77",
+      "sourcePayload": "src/data/manufacturing/source57-mechanical.json",
+      "sourcePayloadSha256": "daaa66f338656bd2a5c9f8bcc513acbcaf14394670321cd9827a570d7c665507",
+      "acceptedSuffixPartsSha256BeforeCounter": "aea5d4f254a03c7ad1d3b9708ef2a4455cc87b951ca40767e1084c9b8a23f437",
+      "counterCompletion": [],
+      "partsSha256": "425371bffa23a0d7954d5462df2fd244b7c55b27be6798b644474b47196dafb3",
+      "sourceProof": "Exactfullfield==source-wording.after; originalprefix exactbefore orbefore+newline; reviewedprefix plusacceptedcomplete suffix; no partialrubytermcut."
+    },
+    {
+      "lessonId": "mfg1-electrical-l043",
+      "field": "exampleText",
+      "sourceJapanese": "用語、単位、否定表現を最後まで読んで判断します。試験会場の問題や解答を記録・持出し・共有せず、このアプリでは新規問題で練習します。苦手な理由を記録し、説明できるようになってから時間付き演習へ進みます。\n学習では、日本語が難しい所と技能の理解が曖昧な所を分けます。専門語を自分で調べても不明なら、上司や同僚に意味を確認します。読み直して言葉と技能を結び付け、毎回意味を調べなくても判断できるようにします。資料の合計80分は試験時間であり、学習時間の測定値ではありません。文末の否定まで確かめてから答えます。\n試験情報は一部だけでも持ち出したり共有したりしません。非公開のSNSも例外ではありません。資料は会場の監督者と監視カメラを説明し、不正では結果無効のほか、将来の受験資格剥奪や出入国在留管理庁への通報を措置例に挙げています。これらは資料の注意を学ぶための説明で、現在の個別処分を予測するものではありません。",
+      "sourceHash": "e9e17404e6165edcba961c93d088830e0b757dd9f8d22069fdaf30bc500267f8",
+      "previousStatus": "PARTIAL_SOURCE_REUSE",
+      "sourceWeek": 7,
+      "prefixChars": 101,
+      "manualPrefixJapaneseSha256": "4a61da005f458014f20d5421d710072eccf03a69328e82942b1a33973215d7c9",
+      "sourcePayload": "src/data/manufacturing/source50-overview.json",
+      "sourcePayloadSha256": "c998059ee9619b8c9c71041f85854915b98cd7c8fbee3ba6cea3e3a1f4f825d0",
+      "acceptedSuffixPartsSha256BeforeCounter": "b4cb9bf9fb6b1f974939b32a18a88bfc95a14bc96e378c67789342c29f7a6f12",
+      "counterCompletion": [
+        {
+          "sourceJapanese": "80分",
+          "reading": "はちじゅっぷん",
+          "reason": "Completecounter coalescence preserves80literal; acceptedpartial suffix had80 +分ぷん, no guessedprefix rule."
+        }
+      ],
+      "partsSha256": "104a27448874345dd24ac31b7cf1d26f1755a662ea87f5c4cc5de332976ee118",
+      "sourceProof": "Exactfullfield==source-wording.after; originalprefix exactbefore orbefore+newline; reviewedprefix plusacceptedcomplete suffix; no partialrubytermcut."
+    }
+  ],
+  "sourceEvidence": "Currentcanonical 開先かいさき fullweldgroove word, source57/source50 accepted authored suffixparts reused atwholeboundaries. Twoold plainprefixes manuallyread in full with phonetics, nativeJA/80minsourceexample unchanged. No originalexamquestionauthoring or currentregulationclaim.",
+  "callerChange": {
+    "path": "src/components/manufacturing/RoyalWeek01TechnicalDetails.tsx",
+    "beforeSha256": "6236c57dc72683ed8abe0c6d8148b75afc419d368ebb0344c485e24f2f795928",
+    "afterSha256": "9bfc302cfbb942c64f73f42d689365b5868a6a19958474c0aaf2254e1a7b3e05",
+    "beforeCondition": "const checkedExample=selected===locales.ja&&['mfg1-mechanical-lesson-049','mfg1-electrical-l043'].includes(lesson.id)",
+    "afterCondition": "const checkedExample=selected===locales.ja&&['mfg1-mechanical-lesson-049','mfg1-electrical-l043'].includes(lesson.id)&&!hasManufacturingReviewedNativeField(lesson.id,'exampleText')",
+    "policy": "Registeredfullfield alwaysroutes through currentSourceFieldText; invalidregistered remainsplain andcannotfall backtolegacySource49partial. Only genuinelyunregistered retainslegacy."
+  },
+  "boundedDeltaDerivedCoverage": {
+    "actualBindings": 1171,
+    "full": 562,
+    "plain": 609,
+    "hanEligiblePlain": 608,
+    "legitimateNoHanPlain": 1,
+    "partial": 0,
+    "uniquePlainStrings": 571,
+    "basis": "Historicalactual1171matrix +boundedacceptedbindings;2partial→2full, noplain decrement/no repeatedwholecensus"
+  },
+  "remainingScope": "40week07plainbodyfields; remainingweeks/currentplainfields, native018主尺and2companionmetrologyscope stillopen. No wholeknowledge/native/domain/deviceapproval.",
+  "checks": {
+    "actualPartialToFullFields": 2,
+    "exactPrefixSuffixAndCounterProofs": 2,
+    "canonicalExactFieldNegatives": 14,
+    "all12TranslatedBeforeAfterHtmlStyleByteIdentical": 24,
+    "actualStalePlainNoLegacy": 2,
+    "registeredMalformedPlainNoLegacy": 8,
+    "unregisteredLegacyByteIdentical": 2,
+    "neutralRecognitionQuizLocaleRenders": 13,
+    "actualSourceCheckNoImageNoNativeLeakContexts": 65,
+    "actualSourceCheckQuestions": 5,
+    "partialFieldsRemaining": 0,
+    "scope": "Bounded2actualnativefields,5source-relatedtextchecks and1representative imagequestion across13locales. DecorativeTokuteiHeader adapter only; realquizfigure/neutralUIlabels/data loaded. No allquizcorpus/native/domain/deviceapproval."
+  },
+  "payloadSha256": {
+    "src/data/manufacturing/native-reviewed-week07-fields.json": "4247cefdde30064353cd6057c93b8273d4d13ad3563bf531f7357009e5253992",
+    "src/components/manufacturing/RoyalWeek01TechnicalDetails.tsx": "9bfc302cfbb942c64f73f42d689365b5868a6a19958474c0aaf2254e1a7b3e05",
+    "scripts/manufacturing/check-native-week07-partial2-full-field-readings.cjs": "72c770f088858097a2c573469b2d7874b6e9032bcb9bd75a94bde94351f5bf62"
+  }
+}

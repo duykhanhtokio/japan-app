@@ -1,3 +1,4 @@
+import {hasManufacturingReviewedNativeField} from '@/data/manufacturing/native-reviewed-fields';
 import {dailyBodyCurrent40} from '@/data/manufacturing/daily40';
 import {manufacturingIllustrationTokensFor} from '@/data/manufacturing/illustration-readings';
 import {ManufacturingNativeLabel} from './ManufacturingNativeLabel';
@@ -276,7 +277,7 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
  const currentReading=selected===locales.ja&&dailyBodyCurrent40(lesson);
  const body={color:colors.text,fontSize:17,lineHeight:29};
  // Reuse only these exact current source-bound fields; all other native text stays unchanged.
- const checkedExample=selected===locales.ja&&['mfg1-mechanical-lesson-049','mfg1-electrical-l043'].includes(lesson.id)
+ const checkedExample=selected===locales.ja&&['mfg1-mechanical-lesson-049','mfg1-electrical-l043'].includes(lesson.id)&&!hasManufacturingReviewedNativeField(lesson.id,'exampleText')
   ?<Source49Japanese lesson={lesson} paragraphId="section-3" text={target.exampleText} style={body}/>
   :<ManufacturingSourceFieldText lesson={lesson} field="exampleText" text={target.exampleText} enabled={selected===locales.ja} style={body}/>;
  const heading={...body,fontWeight:'700' as const};
