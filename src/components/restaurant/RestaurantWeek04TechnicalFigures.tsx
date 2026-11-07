@@ -1,3 +1,4 @@
+import {sameRestaurantFigureIdentity} from './RestaurantFigureIdentity';
 import {Image,ScrollView,Text,View} from 'react-native';
 import type {SourceFigure31} from '@/data/restaurant/source31';
 import data from '@/data/restaurant/royal-week04-technical.json';
@@ -10,7 +11,7 @@ export function restaurantWeek04TechnicalKind(figure:SourceFigure31):string|null
  const b=data.bindings.find(x=>x.figureId===figure.id);if(!b||figure.quizSafe!==false||figure.cropBox)return null;
  const f=b.figure;if(['sourceHash','assetFile','sha256','width','height','captionJa','altJa'].some(k=>(figure as any)[k]!==(f as any)[k]))return null;
  const pack=b.level==='1'?require('../../data/restaurant/source31/1.json'):require('../../data/restaurant/source31/2.json');const row=pack.lessons[b.lessonId];
- return row?.sourceHash===b.rowSourceHash&&row.figures.some((f:SourceFigure31)=>f.id===figure.id&&f.sourceHash===figure.sourceHash)?b.kind:null;
+ return row?.sourceHash===b.rowSourceHash&&row.figures.some((f:SourceFigure31)=>sameRestaurantFigureIdentity(f,figure))?b.kind:null;
 }
 type Props={kind:string;language?:string;showTranslation?:boolean;width?:number};
 export function RestaurantWeek04TechnicalFigure({kind,language='ja',showTranslation=false,width=320}:Props){
