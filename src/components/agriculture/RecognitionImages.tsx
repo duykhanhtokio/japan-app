@@ -4,7 +4,7 @@ import data from '@/data/agriculture/recognition-images.json';
 
 const assets:Record<string,ImageSourcePropType>={
  "nursery-v9-crop-groups":require('../../../assets/agriculture/nursery-v9/nursery-crop-groups.png'),
- "cabbage":require('../../../assets/agriculture/recognition/cabbage-v1.webp'),
+ "cabbage":require('../../../assets/agriculture/royal-weekly-20261107/week01/cabbage.webp'),
  "chinese-cabbage":require('../../../assets/agriculture/recognition/chinese-cabbage-v1.webp'),
  "lettuce":require('../../../assets/agriculture/recognition/lettuce-v1.webp'),
  "spinach":require('../../../assets/agriculture/recognition/spinach-v1.webp'),
@@ -18,8 +18,8 @@ const assets:Record<string,ImageSourcePropType>={
  "nursery-containers":require('../../../assets/agriculture/recognition/nursery-containers-v1.webp'),
  "potato":require('../../../assets/agriculture/recognition/potato-v1.webp'),
  "sweet-potato":require('../../../assets/agriculture/recognition/sweet-potato-v1.webp'),
- "carrot":require('../../../assets/agriculture/recognition/carrot-v1.webp'),
- "tomato":require('../../../assets/agriculture/recognition/tomato-v1.webp'),
+ "carrot":require('../../../assets/agriculture/royal-weekly-20261107/week01/carrot.webp'),
+ "tomato":require('../../../assets/agriculture/royal-weekly-20261107/week01/tomato.webp'),
  "eggplant":require('../../../assets/agriculture/recognition/eggplant-v1.webp'),
  "cucumber":require('../../../assets/agriculture/recognition/cucumber-v1.webp'),
  "apple":require('../../../assets/agriculture/recognition/apple-v1.webp'),
