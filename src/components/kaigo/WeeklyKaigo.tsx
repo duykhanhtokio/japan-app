@@ -1,5 +1,5 @@
 import {KaigoHandRegionFigure} from './KaigoHandRegionFigure';
-import {royalCaptionForStudyDay} from '@/data/kaigo/royal-weekly-art';
+import {kaigoRoyalWeeklyArt,royalCaptionForStudyDay} from '@/data/kaigo/royal-weekly-art';
 import { CommunicationReaderChecks } from './CommunicationReaderChecks';
 import { useBackdropOcclusion } from '@/components/ui/AppBackdrop';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -536,6 +536,17 @@ export function DayReading({
       {figures.length === 0 && translationOpen && lessonTranslation
         ? <TranslationText>{royalCaptionForStudyDay(entry.day, language) ?? lessonTranslation.artCaption}</TranslationText>
         : !masterLesson && translated(cover.captionVi)}
+      {figures.length > 0 && kaigoRoyalWeeklyArt[entry.day] && <View testID={`kaigo-supplemental-context-${entry.day}`}>
+        <Image
+          testID={`kaigo-day-art-${entry.day}`}
+          accessibilityLabel={artCaptionJa ?? cover.captionVi}
+          source={cover.source}
+          resizeMode="contain"
+          style={{ width: "100%", aspectRatio: cover.aspectRatio, maxHeight: 320 }}
+        />
+        {masterLesson && <JapaneseText testID={`kaigo-art-caption-${entry.day}`} text={artCaptionJa ?? masterLesson.artCaptionJa} />}
+        {translationOpen && lessonTranslation && <TranslationText>{royalCaptionForStudyDay(entry.day, language) ?? lessonTranslation.artCaption}</TranslationText>}
+      </View>}
       {relocatedPracticeDays(entry.day).map(day => <Action key={day}
         title={`関連練習は第${day}日にまとめました`}
         testID={`kaigo-relocated-practice-${entry.day}-${day}`}

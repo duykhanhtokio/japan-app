@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "status": "self_checks_pass_pending_coordinator_persistence",
+  "scope": "Selective recovery of original worker completed days13/14 while retaining current day08 and reader fix",
+  "sourceCheckout": "/workspace/scratch/b6777d10a5c8/review-repo",
+  "sourceReceipt": "docs/ssw-workspace/kaigo/reviews/ROYAL_WEEK02_DAYS13_14_SOURCE_20261107.json",
+  "sourceReceiptSha256": "3b8ea4872083596d3ef115b7f0f2190015a2893265e25788f21371ee22350890",
+  "originalCheckoutModified": false,
+  "newGeneration": false,
+  "assetsCopiedByteExact": [
+    "assets/kaigo/royal-weekly-20261107/week02/day13-wet-floor-report.webp",
+    "assets/kaigo/royal-weekly-20261107/week02/day14-rest-request-handoff.webp"
+  ],
+  "pixelReview": {
+    "13": "Viewed encoded WebP: staff on dryfloor side communicate beside visible water; resident remains behind on dry side; no fall, cleaning or clinical action shown.",
+    "14": "Viewed encoded WebP: calm resident remains seated and included in caregiver/nurse conversation; no measurement or treatment; caption describes reported words, not visually diagnosed fatigue."
+  },
+  "preservation": {
+    "day08ContextAndReaderFixRetained": true,
+    "allControlledFiguresUnchanged": true,
+    "other174VisualDayRecordsUnchanged": true,
+    "canonicalBodyTranslationsAssessmentsProgressKeysUnchanged": true
+  },
+  "week02State": {
+    "newContextDays": [
+      8,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "remainingContextDay": [
+      9
+    ],
+    "technicalDaysPending": [
+      8,
+      9
+    ],
+    "wholeWeekAccepted": false
+  },
+  "limitations": {
+    "sourcePagePixelReviewByThisWorker": false,
+    "sourceRecoveryFactsProvenance": "Original worker receipt preserved byte-exact, not claimed as freshly rerun.",
+    "actualDeviceOrBrowserTested": false,
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false
+  },
+  "checks": {
+    "command": "node /tmp/kaigo-day08-reader-check.cjs",
+    "result": "PASS",
+    "assertions": [
+      "Actual current DayReading day08 original brain+newcontext/canonicalJPcaption",
+      "Day10 remains singlecontext",
+      "Day13/14 actual WebP source andJapanese captions rendered",
+      "26selected-locale caption cases fordays13/14 afteropeningtranslation;no legacycaption fallback"
+    ],
+    "method": "esbuild transpiles current production DayReading/Royalart table; ReactDOMServer. Openedtranslation state initialized true in fixture-only transformed source; sections/platform/backdrop andlessontranslation existence mocked. This verifies actual image/caption branch,not fullreader/nativebrowserlayout."
+  },
+  "componentSha256": "74f417fb884375b68eb4d7db02ac040066b0ebf15d75c169338fab3edd22ad7b"
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "sector": "manufacturing",
+  "scope": "Narrow concurrent-write reconciliation: restore only mechanical day007 image binding/require erased by incoming eb10c0f1. Preserve incoming PPE006,corrosion004 and exact meter diagram updates.",
+  "incomingRef": "67a3201a",
+  "restoredFromCommit": "6846295a",
+  "assets": [
+    {
+      "lessonId": "mfg1-mechanical-lesson-006",
+      "specialty": "mechanical",
+      "assetId": "mfg-royal-week01-mechanical-day06-task-ppe",
+      "path": "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day06-task-ppe.webp"
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-007",
+      "specialty": "mechanical",
+      "assetId": "mfg-royal-week01-mechanical-day07-leak-risk-recheck",
+      "path": "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day07-leak-risk-recheck.webp"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-004",
+      "specialty": "surface",
+      "assetId": "mfg-royal-week01-surface-day04-corrosion-factors",
+      "path": "assets/manufacturing/royal-weekly-20261107/week01/surface-day04-corrosion-factors.webp"
+    }
+  ],
+  "inactiveAlternativeAssets": [
+    "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day06-task-specific-ppe.webp",
+    "assets/manufacturing/royal-weekly-20261107/week01/surface-day04-pinhole-wet-contact.webp"
+  ],
+  "activeWeek01DailyImages": 15,
+  "scheduledWeek01DailyImages": 21,
+  "remainingWeek01DailyImages": 6,
+  "note": "17Royal rasterfiles exist;2alternative assets inactive and excluded from active count. No assets deleted.",
+  "checks": {
+    "onlyMechanical007RowRestored": "PASS",
+    "incomingMechanical006AndAllOtherMechanicalRowsPreserved": "PASS",
+    "incomingSurface004AndElectricalData": "No changes made",
+    "newGeneration": "none",
+    "actualProductionSelectorAndFigure": "PASS 3/3: real daily40 selector and DailyManufacturingFigure executed; current asset/ID + VI caption consumed; stale source rejected; Course reader call present. JSX element execution with image/native child stubs, not browser render."
+  },
+  "review": {
+    "physicalDeviceVerified": false,
+    "domainReviewed": false,
+    "nativeReviewed": false
+  },
+  "remotePersistence": "coordinator_pending"
+}
