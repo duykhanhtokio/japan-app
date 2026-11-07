@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "scope": "Exact source-bound native panel labels and existing example paragraphs: ja plus12selectedlocales",
+  "scope": "Exactsource-bound nativepanellabelsandexistingexample/structureparagraphs:ja plus12selectedlocales,5lessons",
   "translationStatus": "ai_translated_draft",
   "nativeReviewed": false,
   "domainReviewed": false,
@@ -14,7 +14,15 @@
         "inRange": "範囲内",
         "outOfRange": "範囲外",
         "mean": "平均",
-        "practiceRange": "練習用の膜厚範囲"
+        "practiceRange": "練習用の膜厚範囲",
+        "anode": "陽極",
+        "cathode": "陰極",
+        "workpiece": "品物",
+        "electroplating": "電気めっき",
+        "anodizing": "陽極酸化",
+        "current": "電流",
+        "area": "処理面積",
+        "currentDensity": "平均電流密度"
       },
       "lessons": {
         "mfg1-electrical-l004": {
@@ -30,6 +38,30 @@
           "exampleTitle": "現場での考え方",
           "exampleText": "練習用の膜厚範囲を8〜12μmとし、指定した三か所で7、10、13μmを得ました。平均は(7+10+13)/3=10μmですが、二か所が範囲外です。平均だけで合格にせず、それぞれの位置と値を記録します。8〜12μmは説明用の仮定で、実工程の推奨値ではありません。",
           "reusedExactParagraphId": "example"
+        },
+        "mfg1-surface-lesson-005": {
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "title": "電気めっきの陽極と陰極を区別する",
+          "exampleTitle": "現場での考え方",
+          "exampleText": "訓練用の図で、銅イオンを含む液と溶ける銅陽極を考えます。銅陽極ではCu→Cu²⁺+2e⁻、品物側ではCu²⁺+2e⁻→Cuという反応を対応させます。この例は基本反応の説明であり、すべての浴組成や設備に同じ銅陽極を使うという意味ではありません。",
+          "reusedExactParagraphId": "example"
+        },
+        "mfg1-surface-lesson-006": {
+          "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+          "title": "電流密度と品物の形から膜厚の違いを考える",
+          "exampleTitle": "現場での考え方",
+          "exampleText": "計算練習として、処理面積が2.4dm²、電流が7.2Aなら、平均電流密度は7.2÷2.4=3.0A/dm²です。処理面積だけが4.8dm²になり電流が同じなら1.5A/dm²です。この数値は計算練習で、実際の浴の推奨条件ではありません。",
+          "reusedExactParagraphId": "example"
+        },
+        "mfg1-surface-lesson-007": {
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "title": "アルマイトは基材から酸化皮膜を育てる",
+          "exampleTitle": "現場での考え方",
+          "exampleText": "新人が「銀色の金属を上からめっきした」と説明したアルマイト品について、指導者は「この工程ではアルミニウム自体の表面から酸化皮膜を形成する」と整理します。工程図には品物を陽極側に記し、電気めっきの陰極側の品物と並べて違いを確認します。",
+          "reusedExactParagraphId": "example",
+          "structureTitle": "孔とバリア層を概念で捉える",
+          "structureText": "代表的な多孔質皮膜には、細かな孔を持つ部分と、基材側の緻密なバリア層があります。孔を利用して着色する方法がありますが、着色と耐食性の評価は同じものではありません。\n封孔などの後処理も、要求特性に応じて選ばれます。色がきれいだから合格、厚いから必ず良い、といった一つの観点だけで判断せず、指定された検査項目で評価します。",
+          "reusedExactStructureParagraphId": "section-3"
         }
       }
     },
@@ -42,7 +74,15 @@
         "inRange": "In range",
         "outOfRange": "Out of range",
         "mean": "Average",
-        "practiceRange": "Practice coating-thickness range"
+        "practiceRange": "Practice coating-thickness range",
+        "anode": "Anode",
+        "cathode": "Cathode",
+        "workpiece": "Workpiece",
+        "electroplating": "Electroplating",
+        "anodizing": "Anodizing",
+        "current": "Current",
+        "area": "Treatment area",
+        "currentDensity": "Average current density"
       },
       "lessons": {
         "mfg1-electrical-l004": {
@@ -50,14 +90,48 @@
           "title": "Do not overlook the 0.5 mm mark on a micrometer",
           "exampleTitle": "Workplace example",
           "exampleText": "The sleeve shows 6 mm and the following 0.5 mm line. The thimble, graduated in 0.01 mm increments, indicates 24.\n1. Read the sleeve as 6.5 mm.\n2. Read the thimble as 24 × 0.01 = 0.24 mm.\n3. Calculate 6.5 + 0.24 = 6.74 mm.\nThe result is 6.74 mm. Missing the 0.5 mm line produces 6.24 mm, an error of 0.50 mm.",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         },
         "mfg1-surface-lesson-003": {
           "sourceHash": "732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7",
           "title": "Evaluate film thickness at each location, not only the average",
           "exampleTitle": "Workplace example",
           "exampleText": "For practice, assume an allowed thickness of 8–12 μm. Three specified points give 7, 10 and 13 μm. The average is (7+10+13)/3 = 10 μm, but two points are outside the range. Do not pass the item on the average alone; record each location and value. The 8–12 μm range is a teaching assumption, not a recommended process setting.",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-005": {
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "title": "Distinguish the anode and cathode in electroplating",
+          "exampleTitle": "Workplace example",
+          "exampleText": "In a training diagram, consider a solution containing copper ions and a soluble copper anode. Pair the anode reaction Cu → Cu²⁺ + 2e⁻ with the workpiece-side reaction Cu²⁺ + 2e⁻ → Cu. This explains the basic reactions; it does not mean every bath composition or installation uses the same copper anode.",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-006": {
+          "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+          "title": "Relate current density and workpiece shape to thickness variation",
+          "exampleTitle": "Workplace example",
+          "exampleText": "For calculation practice, a treated area of 2.4 dm² with a current of 7.2 A gives an average current density of 7.2 ÷ 2.4 = 3.0 A/dm². If only the area doubles to 4.8 dm² while current stays the same, it becomes 1.5 A/dm². These are practice figures, not recommended conditions for an actual bath.",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-007": {
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "title": "Anodizing forms an oxide film from the substrate",
+          "exampleTitle": "Workplace example",
+          "exampleText": "A newcomer describes an anodized item as having “a silver-coloured metal plated on top.” The instructor clarifies that this process forms an oxide film from the aluminium surface itself. Mark the workpiece on the anode side in the process diagram, then compare it with the cathode-side workpiece in electroplating.",
+          "reusedExactParagraphId": "example",
+          "structureTitle": "Understand pores and the barrier layer conceptually",
+          "structureText": "A typical porous film includes a region with fine pores and a dense barrier layer next to the substrate. Some colouring methods use the pores, but colouring and corrosion-resistance evaluation are not the same.\nPost-treatments such as sealing are selected for the required properties. Do not judge solely that an attractive colour is acceptable or that thicker is always better; evaluate the specified inspection items.",
+          "reusedExactStructureParagraphId": "section-3",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         }
       }
     },
@@ -70,7 +144,15 @@
         "inRange": "Trong phạm vi",
         "outOfRange": "Ngoài phạm vi",
         "mean": "Trung bình",
-        "practiceRange": "Khoảng chiều dày lớp phủ trong bài tập"
+        "practiceRange": "Khoảng chiều dày lớp phủ trong bài tập",
+        "anode": "Cực dương",
+        "cathode": "Cực âm",
+        "workpiece": "Chi tiết",
+        "electroplating": "Mạ điện",
+        "anodizing": "Oxy hóa anốt",
+        "current": "Dòng điện",
+        "area": "Diện tích xử lý",
+        "currentDensity": "Mật độ dòng điện trung bình"
       },
       "lessons": {
         "mfg1-electrical-l004": {
@@ -78,14 +160,48 @@
           "title": "Không bỏ sót vạch 0.5 mm khi đọc panme",
           "exampleTitle": "Ví dụ tại nơi làm việc",
           "exampleText": "Ống chuẩn lộ vạch 6 mm và vạch 0.5 mm tiếp theo; ống động có độ chia 0.01 mm đang chỉ 24.\n1. Đọc ống chuẩn là 6.5 mm.\n2. Đọc ống động: 24 × 0.01 = 0.24 mm.\n3. Tính 6.5 + 0.24 = 6.74 mm.\nKết quả là 6.74 mm. Nếu bỏ sót vạch 0.5 mm sẽ đọc thành 6.24 mm, sai 0.50 mm.",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         },
         "mfg1-surface-lesson-003": {
           "sourceHash": "732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7",
           "title": "Đánh giá chiều dày màng tại từng vị trí, không chỉ nhìn trung bình",
           "exampleTitle": "Ví dụ tại nơi làm việc",
           "exampleText": "Cho khoảng chiều dày trong bài tập là 8–12μm. Ba vị trí quy định có kết quả 7, 10 và 13μm. Trung bình là (7+10+13)/3=10μm, nhưng có hai vị trí ngoài phạm vi. Không kết luận đạt chỉ dựa vào trung bình; ghi lại từng vị trí và kết quả. Khoảng 8–12μm là giả định minh họa, không phải mức khuyến nghị cho công đoạn thực tế.",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-005": {
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "title": "Phân biệt cực dương và cực âm trong mạ điện",
+          "exampleTitle": "Ví dụ tại nơi làm việc",
+          "exampleText": "Trong sơ đồ luyện tập, xét dung dịch có ion đồng và anôt đồng hòa tan. Ghép phản ứng tại anôt Cu→Cu²⁺+2e⁻ với phản ứng phía sản phẩm Cu²⁺+2e⁻→Cu. Ví dụ giải thích phản ứng cơ bản, không có nghĩa mọi thành phần dung dịch hoặc thiết bị đều dùng cùng loại anôt đồng.",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-006": {
+          "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+          "title": "Liên hệ mật độ dòng điện và hình dạng với độ dày màng",
+          "exampleTitle": "Ví dụ tại nơi làm việc",
+          "exampleText": "Bài tập tính: diện tích xử lý 2,4dm², dòng điện 7,2A thì mật độ dòng trung bình là 7,2÷2,4=3,0A/dm². Nếu chỉ diện tích tăng lên 4,8dm² còn dòng giữ nguyên thì kết quả là 1,5A/dm². Đây là số liệu luyện tính, không phải điều kiện khuyến nghị cho bể thực tế.",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-007": {
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "title": "Anod hóa tạo màng oxit từ chính vật liệu nền",
+          "exampleTitle": "Ví dụ tại nơi làm việc",
+          "exampleText": "Một người mới giải thích sản phẩm anod hóa là “được mạ thêm kim loại màu bạc”. Người hướng dẫn làm rõ rằng công đoạn này tạo màng oxit từ chính bề mặt nhôm. Trên sơ đồ, đánh dấu sản phẩm ở phía anôt rồi đặt cạnh sản phẩm ở phía catôt trong mạ điện để so sánh.",
+          "reusedExactParagraphId": "example",
+          "structureTitle": "Hiểu khái niệm lỗ xốp và lớp chắn",
+          "structureText": "Màng xốp điển hình gồm vùng có các lỗ rất nhỏ và lớp chắn đặc sít ở sát vật liệu nền. Có phương pháp tận dụng lỗ để nhuộm màu, nhưng tạo màu và đánh giá chống ăn mòn là hai nội dung khác nhau.\nHậu xử lý như bịt lỗ cũng được chọn theo đặc tính yêu cầu. Không đánh giá chỉ bằng một tiêu chí như “màu đẹp thì đạt” hoặc “càng dày càng tốt”; phải kiểm tra các mục được chỉ định.",
+          "reusedExactStructureParagraphId": "section-3",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         }
       }
     },
@@ -98,7 +214,15 @@
         "inRange": "Dalam rentang",
         "outOfRange": "Di luar rentang",
         "mean": "Rata-rata",
-        "practiceRange": "Rentang ketebalan lapisan untuk latihan"
+        "practiceRange": "Rentang ketebalan lapisan untuk latihan",
+        "anode": "Anoda",
+        "cathode": "Katoda",
+        "workpiece": "Benda kerja",
+        "electroplating": "Pelapisan listrik",
+        "anodizing": "Anodisasi",
+        "current": "Arus",
+        "area": "Luas permukaan yang diproses",
+        "currentDensity": "Rapat arus rata-rata"
       },
       "lessons": {
         "mfg1-electrical-l004": {
@@ -106,14 +230,48 @@
           "title": "Jangan melewatkan garis 0.5 mm pada mikrometer",
           "exampleTitle": "Penerapan di tempat kerja",
           "exampleText": "Pada sleeve terlihat 6 mm beserta garis 0.5 mm sesudahnya, sedangkan thimble berskala 0.01 mm menunjukkan 24.\n1. Baca sleeve sebagai 6.5 mm.\n2. Baca thimble sebagai 24 × 0.01 = 0.24 mm.\n3. Hitung 6.5 + 0.24 = 6.74 mm.\nHasilnya 6.74 mm. Jika garis 0.5 mm terlewat, hasil menjadi 6.24 mm, yaitu selisih kesalahan 0.50 mm.",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         },
         "mfg1-surface-lesson-003": {
           "sourceHash": "732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7",
           "title": "Menilai ketebalan lapisan di setiap titik, bukan hanya rata-rata",
           "exampleTitle": "Penerapan di tempat kerja",
           "exampleText": "Untuk latihan, rentang ketebalan ditetapkan 8–12μm. Tiga titik yang ditentukan menghasilkan 7, 10, dan 13μm. Rata-ratanya (7+10+13)/3=10μm, tetapi dua titik berada di luar rentang. Jangan menyatakan lulus hanya berdasarkan rata-rata; catat nilai dan lokasinya masing-masing. Rentang 8–12μm adalah asumsi penjelasan, bukan rekomendasi proses nyata.",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-005": {
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "title": "Membedakan anode dan katode pada pelapisan listrik",
+          "exampleTitle": "Penerapan di tempat kerja",
+          "exampleText": "Dalam diagram latihan, pertimbangkan larutan ion tembaga dan anode tembaga yang dapat larut. Hubungkan reaksi anode Cu→Cu²⁺+2e⁻ dengan reaksi di sisi benda Cu²⁺+2e⁻→Cu. Contoh ini menerangkan reaksi dasar, bukan menyatakan semua komposisi bak atau peralatan memakai anode tembaga yang sama.",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-006": {
+          "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+          "title": "Memahami variasi ketebalan dari rapat arus dan bentuk benda",
+          "exampleTitle": "Penerapan di tempat kerja",
+          "exampleText": "Dalam latihan hitung, luas proses 2.4dm² dan arus 7.2A menghasilkan rapat arus rata-rata 7.2÷2.4=3.0A/dm². Jika hanya luasnya menjadi 4.8dm² dan arus tetap, hasilnya 1.5A/dm². Angka ini hanya untuk latihan, bukan kondisi yang direkomendasikan bagi bak nyata.",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-007": {
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "title": "Anodisasi membentuk lapisan oksida dari bahan dasar",
+          "exampleTitle": "Penerapan di tempat kerja",
+          "exampleText": "Seorang pekerja baru menjelaskan produk anodisasi sebagai “logam berwarna perak yang dilapiskan di atasnya”. Pembimbing memperjelas bahwa proses ini membentuk lapisan oksida dari permukaan aluminium itu sendiri. Pada diagram proses, tandai benda di sisi anode dan bandingkan dengan benda di sisi katode pada pelapisan listrik.",
+          "reusedExactParagraphId": "example",
+          "structureTitle": "Memahami pori dan lapisan penghalang",
+          "structureText": "Lapisan berpori yang umum memiliki bagian berpori halus dan lapisan penghalang rapat di sisi bahan dasar. Ada metode pewarnaan yang memanfaatkan pori, tetapi pewarnaan tidak sama dengan penilaian ketahanan korosi.\nPascaperlakuan seperti penutupan pori dipilih menurut sifat yang diminta. Jangan menilai dari satu hal saja, misalnya warna bagus berarti lulus atau lapisan lebih tebal pasti lebih baik. Gunakan butir pemeriksaan yang ditentukan.",
+          "reusedExactStructureParagraphId": "section-3",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         }
       }
     },
@@ -126,7 +284,15 @@
         "inRange": "范围内",
         "outOfRange": "超出范围",
         "mean": "平均值",
-        "practiceRange": "练习膜厚范围"
+        "practiceRange": "练习膜厚范围",
+        "anode": "阳极",
+        "cathode": "阴极",
+        "workpiece": "工件",
+        "electroplating": "电镀",
+        "anodizing": "阳极氧化",
+        "current": "电流",
+        "area": "处理面积",
+        "currentDensity": "平均电流密度"
       },
       "lessons": {
         "mfg1-electrical-l004": {
@@ -134,14 +300,48 @@
           "title": "不要漏读千分尺的0.5 mm刻度",
           "exampleTitle": "现场判断示例",
           "exampleText": "固定套筒可见6 mm及其后的0.5 mm线，刻度0.01 mm的微分筒指向24。\n1. 固定套筒读作6.5 mm。\n2. 微分筒读作24×0.01＝0.24 mm。\n3. 得到6.5＋0.24＝6.74 mm。\n结果为6.74 mm。漏读0.5 mm线会得到6.24 mm，造成0.50 mm误差。",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         },
         "mfg1-surface-lesson-003": {
           "sourceHash": "732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7",
           "title": "膜厚不仅看平均值，还要逐个测量位置确认",
           "exampleTitle": "现场思考",
           "exampleText": "假设练习膜厚范围为8～12μm，在三个指定位置测得7、10、13μm。平均值为(7+10+13)/3=10μm，但两处超出范围。不能仅凭平均值判为合格，应记录各位置和数值。8～12μm只是说明用假设，并非实际工序的推荐值。",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-005": {
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "title": "区分电镀中的阳极与阴极",
+          "exampleTitle": "现场思考",
+          "exampleText": "在训练图中，考虑含铜离子的液体和可溶性铜阳极。对应确认铜阳极上的Cu→Cu²⁺+2e⁻，以及工件侧的Cu²⁺+2e⁻→Cu。此例说明基本反应，并不意味着所有镀液组成或设备都使用同样的铜阳极。",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-006": {
+          "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+          "title": "结合电流密度和工件形状分析膜厚差异",
+          "exampleTitle": "现场思考",
+          "exampleText": "计算练习中，处理面积2.4dm²、电流7.2A时，平均电流密度为7.2÷2.4=3.0A/dm²。若仅面积改为4.8dm²而电流不变，则为1.5A/dm²。这些数值用于计算练习，不是实际镀液的推荐条件。",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-007": {
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "title": "铝阳极氧化从基材表面形成氧化膜",
+          "exampleTitle": "现场思考",
+          "exampleText": "新人把一件铝阳极氧化产品说成“在上面镀了一层银色金属”。指导人员解释：“本工序是从铝本身表面形成氧化膜。”在工序图上把工件标在阳极侧，与电镀中位于阴极侧的工件并列比较，确认区别。",
+          "reusedExactParagraphId": "example",
+          "structureTitle": "理解孔隙与阻挡层的概念",
+          "structureText": "典型多孔膜层包含有细孔的部分，以及靠近基材的致密阻挡层。有利用孔隙着色的方法，但着色与耐蚀性评价不是一回事。\n封孔等后处理也根据所需性能选择。不能仅凭“颜色漂亮就合格”“越厚越好”等单一角度判断，应按指定检验项目评价。",
+          "reusedExactStructureParagraphId": "section-3",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         }
       }
     },
@@ -154,7 +354,15 @@
         "inRange": "範圍內",
         "outOfRange": "超出範圍",
         "mean": "平均值",
-        "practiceRange": "練習膜厚範圍"
+        "practiceRange": "練習膜厚範圍",
+        "anode": "陽極",
+        "cathode": "陰極",
+        "workpiece": "工件",
+        "electroplating": "電鍍",
+        "anodizing": "陽極氧化",
+        "current": "電流",
+        "area": "處理面積",
+        "currentDensity": "平均電流密度"
       },
       "lessons": {
         "mfg1-electrical-l004": {
@@ -162,14 +370,48 @@
           "title": "不要漏讀千分尺的0.5 mm刻度",
           "exampleTitle": "現場判斷示例",
           "exampleText": "固定套筒可見6 mm及其後的0.5 mm線，刻度0.01 mm的微分筒指向24。\n1. 固定套筒讀作6.5 mm。\n2. 微分筒讀作24×0.01＝0.24 mm。\n3. 得到6.5＋0.24＝6.74 mm。\n結果為6.74 mm。漏讀0.5 mm線會得到6.24 mm，造成0.50 mm誤差。",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         },
         "mfg1-surface-lesson-003": {
           "sourceHash": "732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7",
           "title": "膜厚不僅看平均值，還要逐個測量位置確認",
           "exampleTitle": "現場思考",
           "exampleText": "假設練習膜厚範圍為8～12μm，在三個指定位置測得7、10、13μm。平均值為(7+10+13)/3=10μm，但兩處超出範圍。不能僅憑平均值判為合格，應記錄各位置和數值。8～12μm只是說明用假設，並非實際製程的推薦值。",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-005": {
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "title": "區分電鍍中的陽極與陰極",
+          "exampleTitle": "現場思考",
+          "exampleText": "在訓練圖中，考慮含銅離子的液體和可溶性銅陽極。對應確認銅陽極上的Cu→Cu²⁺+2e⁻，以及工件側的Cu²⁺+2e⁻→Cu。此例說明基本反應，並不意味著所有鍍液組成或設備都使用同樣的銅陽極。",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-006": {
+          "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+          "title": "結合電流密度和工件形狀分析膜厚差異",
+          "exampleTitle": "現場思考",
+          "exampleText": "計算練習中，處理面積2.4dm²、電流7.2A時，平均電流密度為7.2÷2.4=3.0A/dm²。若僅面積改為4.8dm²而電流不變，則為1.5A/dm²。這些數值用於計算練習，不是實際鍍液的推薦條件。",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-007": {
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "title": "鋁陽極氧化從基材表面形成氧化膜",
+          "exampleTitle": "現場思考",
+          "exampleText": "新人把一件鋁陽極氧化產品說成“在上面鍍了一層銀色金屬”。指導人員解釋：“本製程是從鋁本身表面形成氧化膜。”在製程圖上把工件標在陽極側，與電鍍中位於陰極側的工件並列比較，確認區別。",
+          "reusedExactParagraphId": "example",
+          "structureTitle": "理解孔隙與阻擋層的概念",
+          "structureText": "典型多孔膜層包含有細孔的部分，以及靠近基材的緻密阻擋層。有利用孔隙著色的方法，但著色與耐蝕性評價不是一回事。\n封孔等後處理也根據所需性能選擇。不能僅憑“顏色漂亮就合格”“越厚越好”等單一角度判斷，應按指定檢驗項目評價。",
+          "reusedExactStructureParagraphId": "section-3",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         }
       }
     },
@@ -182,7 +424,15 @@
         "inRange": "सीमा के भीतर",
         "outOfRange": "सीमा के बाहर",
         "mean": "औसत",
-        "practiceRange": "अभ्यास के लिए परत की मोटाई की सीमा"
+        "practiceRange": "अभ्यास के लिए परत की मोटाई की सीमा",
+        "anode": "एनोड",
+        "cathode": "कैथोड",
+        "workpiece": "कार्यवस्तु",
+        "electroplating": "इलेक्ट्रोप्लेटिंग",
+        "anodizing": "एनोडाइजिंग",
+        "current": "विद्युत् धारा",
+        "area": "उपचारित सतह का क्षेत्रफल",
+        "currentDensity": "औसत धारा घनत्व"
       },
       "lessons": {
         "mfg1-electrical-l004": {
@@ -190,14 +440,48 @@
           "title": "माइक्रोमीटर की 0.5 mm रेखा न छोड़ें",
           "exampleTitle": "कार्यस्थल पर सोचने का तरीका",
           "exampleText": "स्लीव पर 6 mm और उसके आगे 0.5 mm रेखा दिखती है; 0.01 mm स्केल का थिम्बल 24 दिखाता है।\n1. स्लीव 6.5 mm पढ़ें।\n2. थिम्बल 24 × 0.01 = 0.24 mm पढ़ें।\n3. 6.5 + 0.24 = 6.74 mm निकालें।\nमान 6.74 mm है। 0.5 mm रेखा छोड़ने पर 6.24 mm आएगा, अर्थात 0.50 mm की गलती होगी।",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         },
         "mfg1-surface-lesson-003": {
           "sourceHash": "732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7",
           "title": "परत की मोटाई औसत के साथ हर स्थान पर देखें",
           "exampleTitle": "कार्यस्थल पर सोचने का तरीका",
           "exampleText": "अभ्यास में सीमा 8–12 μm और तीन निर्दिष्ट स्थान 7, 10, 13 μm हैं। औसत (7 + 10 + 13)/3 = 10 μm है लेकिन दो स्थान बाहर हैं। केवल औसत से पास न करें; प्रत्येक स्थान और मान दर्ज करें। 8–12 μm उदाहरण की धारणा है, वास्तविक प्रक्रिया की सिफारिश नहीं।",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-005": {
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "title": "इलेक्ट्रोप्लेटिंग का एनोड और कैथोड अलग करें",
+          "exampleTitle": "कार्यस्थल पर सोचने का तरीका",
+          "exampleText": "शिक्षण चित्र में ताँबा आयन वाला द्रव और घुलता ताँबा एनोड लें। एनोड पर Cu → Cu²⁺ + 2e⁻ और उत्पाद पर Cu²⁺ + 2e⁻ → Cu मिलाएँ। यह मूल प्रतिक्रिया है; हर बाथ या उपकरण में वही ताँबा एनोड लगाने का अर्थ नहीं।",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-006": {
+          "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+          "title": "धारा घनत्व और आकार से मोटाई का अंतर समझें",
+          "exampleTitle": "कार्यस्थल पर सोचने का तरीका",
+          "exampleText": "गणना में क्षेत्र 2.4 dm² और धारा 7.2 A तो औसत 7.2 ÷ 2.4 = 3.0 A/dm²। केवल क्षेत्र 4.8 dm² हो और धारा समान तो 1.5 A/dm²। ये गणना अभ्यास हैं, वास्तविक बाथ की अनुशंसा नहीं।",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-007": {
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "title": "एनोडाइजिंग में आधार से ऑक्साइड परत बनती है",
+          "exampleTitle": "कार्यस्थल पर सोचने का तरीका",
+          "exampleText": "नया कर्मचारी एनोडाइज्ड उत्पाद को “ऊपर चाँदी जैसी धातु प्लेट की” कहता है। प्रशिक्षक स्पष्ट करे: इस चरण में एल्युमिनियम की अपनी सतह से ऑक्साइड बनती है। प्रक्रिया चित्र में इसे एनोड और इलेक्ट्रोप्लेटिंग उत्पाद को कैथोड रखकर अंतर जाँचें।",
+          "reusedExactParagraphId": "example",
+          "structureTitle": "छिद्र और बैरियर परत समझें",
+          "structureText": "प्रतिनिधि सरंध्र परत में सूक्ष्म छिद्र वाला भाग और आधार पर सघन बैरियर परत है। छिद्र से रंगने की विधि है, लेकिन रंग और संक्षारण प्रतिरोध का मूल्यांकन समान नहीं।\nसीलिंग जैसे बाद के चरण जरूरी गुण से चुनते हैं। सुंदर रंग या अधिक मोटाई से अकेले पास न करें; निर्दिष्ट निरीक्षण से मूल्यांकन करें।",
+          "reusedExactStructureParagraphId": "section-3",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         }
       }
     },
@@ -210,7 +494,15 @@
         "inRange": "সীমার মধ্যে",
         "outOfRange": "সীমার বাইরে",
         "mean": "গড়",
-        "practiceRange": "অনুশীলনের আবরণের পুরুত্বের সীমা"
+        "practiceRange": "অনুশীলনের আবরণের পুরুত্বের সীমা",
+        "anode": "অ্যানোড",
+        "cathode": "ক্যাথোড",
+        "workpiece": "কাজের বস্তু",
+        "electroplating": "তড়িৎ প্রলেপন",
+        "anodizing": "অ্যানোডাইজিং",
+        "current": "তড়িৎ প্রবাহ",
+        "area": "প্রক্রিয়াধীন পৃষ্ঠের ক্ষেত্রফল",
+        "currentDensity": "গড় তড়িৎ প্রবাহ ঘনত্ব"
       },
       "lessons": {
         "mfg1-electrical-l004": {
@@ -218,14 +510,48 @@
           "title": "মাইক্রোমিটারের 0.5 mm বাদ দেবেন না",
           "exampleTitle": "কর্মক্ষেত্রে বিবেচনার উদাহরণ",
           "exampleText": "স্লিভে 6 mm ও তার পরের 0.5 mm দাগ দেখা যাচ্ছে এবং 0.01 mm স্কেলের থিম্বল 24 দেখাচ্ছে।\n1. স্লিভের পাঠ 6.5 mm।\n2. থিম্বলের পাঠ 24 × 0.01 = 0.24 mm।\n3. 6.5 + 0.24 = 6.74 mm হিসাব করুন।\nফল 6.74 mm। 0.5 mm দাগ ভুলে গেলে 6.24 mm হবে, অর্থাৎ 0.50 mm ভুল।",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         },
         "mfg1-surface-lesson-003": {
           "sourceHash": "732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7",
           "title": "আবরণের পুরুত্ব শুধু গড় নয়, প্রতিটি অবস্থানে দেখুন",
           "exampleTitle": "কর্মস্থলে ভাবনার উদাহরণ",
           "exampleText": "অনুশীলনের সীমা 8–12 μm; তিন নির্ধারিত স্থানে 7, 10, 13 μm পাওয়া গেল। গড় (7+10+13)/3=10 μm হলেও দুই স্থান সীমার বাইরে। শুধু গড় দেখে গ্রহণ না করে প্রত্যেক স্থান ও মান লিখুন। 8–12 μm ব্যাখ্যার অনুমান, বাস্তব প্রক্রিয়ার সুপারিশ নয়।",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-005": {
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "title": "ইলেকট্রোপ্লেটিংয়ে অ্যানোড ও ক্যাথোড আলাদা করুন",
+          "exampleTitle": "কর্মস্থলে ভাবনার উদাহরণ",
+          "exampleText": "প্রশিক্ষণচিত্রে তামার আয়নযুক্ত দ্রবণ ও দ্রবণীয় তামার অ্যানোড ধরুন। অ্যানোডে Cu→Cu²⁺+2e⁻ এবং পণ্যে Cu²⁺+2e⁻→Cu বিক্রিয়া মিলিয়ে দেখুন। এটি মূল বিক্রিয়ার উদাহরণ; সব বাথের গঠন বা যন্ত্রে একই তামার অ্যানোড ব্যবহার করতে বলা হচ্ছে না।",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-006": {
+          "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+          "title": "কারেন্ট ঘনত্ব ও আকৃতি থেকে পুরুত্বের পার্থক্য ভাবুন",
+          "exampleTitle": "কর্মস্থলে ভাবনার উদাহরণ",
+          "exampleText": "হিসাবের অনুশীলনে ক্ষেত্রফল 2.4 dm² এবং কারেন্ট 7.2 A হলে গড় 7.2÷2.4=3.0 A/dm²। শুধু ক্ষেত্রফল 4.8 dm² হলে একই কারেন্টে 1.5 A/dm²। এগুলো হিসাবের অনুশীলন, বাস্তব বাথের সুপারিশকৃত শর্ত নয়।",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-007": {
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "title": "অ্যালুমাইট ভিত্তি থেকেই অক্সাইড আবরণ গড়ে",
+          "exampleTitle": "কর্মস্থলে ভাবনার উদাহরণ",
+          "exampleText": "নতুন কর্মী অ্যালুমাইটকে ‘ওপর থেকে রুপালি ধাতু প্লেটিং’ বললে প্রশিক্ষক বোঝান: এই প্রক্রিয়ায় অ্যালুমিনিয়ামের নিজের পৃষ্ঠ থেকেই অক্সাইড হয়। প্রক্রিয়াচিত্রে পণ্য অ্যানোডে লিখে ইলেকট্রোপ্লেটিংয়ের ক্যাথোড-পণ্যের পাশে রেখে পার্থক্য দেখুন।",
+          "reusedExactParagraphId": "example",
+          "structureTitle": "ছিদ্র ও বাধাস্তরকে ধারণাগতভাবে বুঝুন",
+          "structureText": "সাধারণ ছিদ্রযুক্ত আবরণে সূক্ষ্ম ছিদ্রের অংশ এবং ভিত্তির পাশে ঘন বাধাস্তর থাকে। ছিদ্র ব্যবহার করে রং দেওয়া যায়, কিন্তু রং ও ক্ষয়রোধের মূল্যায়ন একই নয়।\nসিলিংয়ের মতো পরবর্তী প্রক্রিয়াও প্রয়োজনীয় ধর্ম অনুযায়ী বেছে নেওয়া হয়। সুন্দর রং মানে গ্রহণযোগ্য বা মোটা মানেই ভালো—এক দিক থেকে বিচার না করে নির্ধারিত বিষয় পরীক্ষা করুন।",
+          "reusedExactStructureParagraphId": "section-3",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         }
       }
     },
@@ -238,7 +564,15 @@
         "inRange": "दायराभित्र",
         "outOfRange": "दायराबाहिर",
         "mean": "औसत",
-        "practiceRange": "अभ्यासका लागि तहको मोटाइको दायरा"
+        "practiceRange": "अभ्यासका लागि तहको मोटाइको दायरा",
+        "anode": "एनोड",
+        "cathode": "क्याथोड",
+        "workpiece": "कार्यवस्तु",
+        "electroplating": "विद्युतीय प्लेटिङ",
+        "anodizing": "एनोडाइजिङ",
+        "current": "विद्युत् धारा",
+        "area": "उपचार गरिने सतहको क्षेत्रफल",
+        "currentDensity": "औसत विद्युत् धारा घनत्व"
       },
       "lessons": {
         "mfg1-electrical-l004": {
@@ -246,14 +580,48 @@
           "title": "माइक्रोमिटरको 0.5 mm नछुटाउने",
           "exampleTitle": "कार्यस्थलमा सोच्ने तरिका",
           "exampleText": "स्लिभमा 6 mm र त्यसपछिको 0.5 mm रेखा देखिन्छ। 0.01 mm स्केलको थिम्बलले 24 देखाएको छ।\n1. स्लिभ 6.5 mm पढ्नुहोस्।\n2. थिम्बल 24 × 0.01 = 0.24 mm पढ्नुहोस्।\n3. 6.5 + 0.24 = 6.74 mm निकाल्नुहोस्।\nमान 6.74 mm हो। 0.5 mm रेखा बिर्सिए 6.24 mm हुन्छ र 0.50 mm को गल्ती हुन्छ।",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         },
         "mfg1-surface-lesson-003": {
           "sourceHash": "732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7",
           "title": "तह मोटाइ औसत मात्र होइन प्रत्येक स्थानमा हेर्ने",
           "exampleTitle": "कार्यस्थलको सोच",
           "exampleText": "अभ्यासको मोटाइ दायरा 8–12μm मानी तीन निर्दिष्ट स्थानमा 7, 10 र 13μm आए। औसत (7+10+13)/3=10μm भए पनि दुई स्थान बाहिर छन्। औसतले मात्र उत्तीर्ण नबनाई हरेक स्थान र मान टिप्ने। 8–12μm व्याख्याको अनुमान हो, वास्तविक प्रक्रियाको सिफारिस होइन।",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-005": {
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "title": "विद्युतीय प्लेटिङको एनोड र क्याथोड छुट्याउने",
+          "exampleTitle": "कार्यस्थलको सोच",
+          "exampleText": "तामायुक्त तरल र घुल्ने तामा एनोडको चित्र सोचौँ।एनोडमा Cu→Cu²⁺+2e⁻ र वस्तुमा Cu²⁺+2e⁻→Cu मिलाइन्छ।यो आधार प्रतिक्रिया हो;सबै बाथ/उपकरणमा उही तामा एनोड भन्ने होइन।",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-006": {
+          "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+          "title": "विद्युत् घनत्व र आकारबाट तह फरक सोच्ने",
+          "exampleTitle": "कार्यस्थलको सोच",
+          "exampleText": "गणना अभ्यासमा प्रशोधन क्षेत्रफल 2.4 dm² र विद्युत् धारा 7.2 A भए औसत विद्युत् धारा घनत्व 7.2÷2.4=3.0 A/dm² हुन्छ। क्षेत्रफल मात्र 4.8 dm² भयो र विद्युत् धारा उही रह्यो भने 1.5 A/dm² हुन्छ। यी गणना अभ्यासका मान हुन्, वास्तविक बाथका सिफारिस गरिएका सञ्चालन सर्त होइनन्।",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 2
+        },
+        "mfg1-surface-lesson-007": {
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "title": "एनोडाइजिङमा आधारबाट अक्साइड तह बढ्छ",
+          "exampleTitle": "कार्यस्थलको सोच",
+          "exampleText": "नयाँले एनोडाइजिङलाई“माथि चाँदी रङ धातु प्लेटिङ”भन्यो।प्रशिक्षकले एल्युमिनियमकै सतहबाट अक्साइड बन्ने बताउँछ।चित्रमा एनोडको वस्तु र प्लेटिङ क्याथोड सँगै राखी फरक जाँचिन्छ।",
+          "reusedExactParagraphId": "example",
+          "structureTitle": "प्वाल र ब्यारियर अवधारणा",
+          "structureText": "मुख्य छिद्रयुक्त तहमा सूक्ष्म प्वाल भाग र आधारतिर घना ब्यारियर हुन्छ।प्वालबाट रङ दिने विधि छ तर रङ र क्षय मूल्याङ्कन उही होइन।\nसीलिङजस्ता पछिल्लो उपचार मागअनुसार छानिन्छन्।रङ राम्रो वा बाक्लो भन्दै एक दृष्टिले होइन निर्दिष्ट जाँचले निर्णय हुन्छ।",
+          "reusedExactStructureParagraphId": "section-3",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         }
       }
     },
@@ -266,7 +634,15 @@
         "inRange": "သတ်မှတ်ဘောင်အတွင်း",
         "outOfRange": "သတ်မှတ်ဘောင်ပြင်ပ",
         "mean": "ပျမ်းမျှ",
-        "practiceRange": "လေ့ကျင့်ခန်းအတွက် အလွှာအထူ သတ်မှတ်ဘောင်"
+        "practiceRange": "လေ့ကျင့်ခန်းအတွက် အလွှာအထူ သတ်မှတ်ဘောင်",
+        "anode": "အန်နုတ်",
+        "cathode": "ကက်သုတ်",
+        "workpiece": "ပစ္စည်း",
+        "electroplating": "လျှပ်စစ်သတ္တုတင်ခြင်း",
+        "anodizing": "အန်နုတ်အောက်ဆိုဒ်တင်ခြင်း",
+        "current": "လျှပ်စီး",
+        "area": "လုပ်ဆောင်မည့် မျက်နှာပြင်ဧရိယာ",
+        "currentDensity": "ပျမ်းမျှ လျှပ်စီးသိပ်သည်းဆ"
       },
       "lessons": {
         "mfg1-electrical-l004": {
@@ -274,14 +650,48 @@
           "title": "မိုက်ခရိုမီတာ၏ 0.5 mm ကို မလွတ်စေခြင်း",
           "exampleTitle": "လုပ်ငန်းခွင်တွင် စဉ်းစားနည်း",
           "exampleText": "စလိဗ်တွင် 6 mm နှင့် ထိုရှေ့ 0.5 mm မျဉ်းမြင်၍ 0.01 mm စကေးသင်ဘယ်က 24 ပြသည်။\n1. စလိဗ်ကို 6.5 mm ဟု ဖတ်ပါ။\n2. သင်ဘယ်ကို 24 × 0.01 = 0.24 mm ဟု ဖတ်ပါ။\n3. 6.5 + 0.24 = 6.74 mm တွက်ပါ။\n6.74 mm ဖြစ်သည်။ 0.5 mm မျဉ်းမေ့လျှင် 6.24 mm ဖြစ်၍ 0.50 mm မှားသည်။",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         },
         "mfg1-surface-lesson-003": {
           "sourceHash": "732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7",
           "title": "ပျမ်းမျှသာမက နေရာအလိုက်အလွှာအထူ စစ်ခြင်း",
           "exampleTitle": "လုပ်ငန်းခွင်စဉ်းစားပုံ",
           "exampleText": "လေ့ကျင့်အထူဘောင်8〜12μmထားပြီး သတ်မှတ်သုံးနေရာတွင်7၊10၊13μmရသည်။ ပျမ်းမျှ(7+10+13)/3=10μmဖြစ်သော်လည်း နှစ်နေရာဘောင်ပြင်ပ။ ပျမ်းမျှသာအောင်မဆိုဘဲ နေရာနှင့်တန်ဖိုးတစ်ခုချင်းမှတ်တမ်းတင်ပါ။8〜12μmသည်ရှင်းပြယူဆချက်၊ လက်တွေ့လုပ်ငန်းအတွက် အကြံပြုတန်ဖိုးမဟုတ်ပါ။",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-005": {
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "title": "လျှပ်စစ်သတ္တုတင်ခြင်း၏ အန်နုတ်နှင့် ကက်သုတ် ခွဲခြားခြင်း",
+          "exampleTitle": "လုပ်ငန်းခွင်စဉ်းစားပုံ",
+          "exampleText": "လေ့ကျင့်ပုံတွင် ကြေးအိုင်ယွန်ပါရည်နှင့် ပျော်ဝင်ကြေးအန်နုတ်ကိုစဉ်းစားပါ။ အန်နုတ်တွင်Cu→Cu²⁺+2e⁻၊ပစ္စည်းဘက်တွင်Cu²⁺+2e⁻→Cuကိုချိတ်ဆက်ကြည့်ပါ။ ဤဥပမာသည် အခြေခံတုံ့ပြန်မှုရှင်းပြခြင်းဖြစ်ပြီး ရည်ဖွဲ့စည်းပုံနှင့်စက်အားလုံးတွင် တူညီကြေးအန်နုတ်သုံးရမည်ဟု မဆိုလိုပါ။",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-006": {
+          "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+          "title": "လျှပ်စီးသိပ်သည်းမှုနှင့် ပုံသဏ္ဌာန်မှ အလွှာအထူကွာခြားမှု စဉ်းစားခြင်း",
+          "exampleTitle": "လုပ်ငန်းခွင်စဉ်းစားပုံ",
+          "exampleText": "တွက်လေ့ကျင့်ရန်ဧရိယာ2.4dm²၊လျှပ်စီး7.2Aဆိုလျှင် ပျမ်းမျှ7.2÷2.4=3.0A/dm²။ ဧရိယာသာ4.8dm²ဖြစ်ပြီးလျှပ်စီးတူလျှင်1.5A/dm²။ ဤကိန်းများသည် တွက်လေ့ကျင့်မှုသာ၊လက်တွေ့ရည်အတွက် အကြံပြုအခြေအနေမဟုတ်ပါ။",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-007": {
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "title": "အယ်လ်မိုက်သည် အောက်ခံမှအောက်ဆိုဒ်အလွှာဖွံ့ဖြိုးစေခြင်း",
+          "exampleTitle": "လုပ်ငန်းခွင်စဉ်းစားပုံ",
+          "exampleText": "အလုပ်သစ်သူက အယ်လ်မိုက်ပစ္စည်းကို “အပေါ်ကငွေရောင်သတ္တုတင်ထား”ဟုဆိုသည်။ ဆရာက “ဤလုပ်ငန်းတွင် အလူမီနီယမ်ကိုယ်တိုင်၏မျက်နှာပြင်မှ အောက်ဆိုဒ်အလွှာဖွဲ့သည်”ဟု ရှင်းသည်။ လုပ်ငန်းပုံတွင် ပစ္စည်းကိုအန်နုတ်ဘက်ပြ၍ လျှပ်စစ်သတ္တုတင်ကက်သုတ်ဘက်ပစ္စည်းနှင့် ယှဉ်ကွာခြားမှုစစ်ပါ။",
+          "reusedExactParagraphId": "example",
+          "structureTitle": "အပေါက်နှင့်တားဆီးလွှာကို သဘောတရားဖြင့်သိခြင်း",
+          "structureText": "အများတွေ့အပေါက်များအလွှာတွင် အပေါက်ငယ်များရှိပိုင်းနှင့် အောက်ခံဘက်သိပ်သည်းတားဆီးလွှာရှိသည်။ အပေါက်အသုံးပြု၍ရောင်ခြယ်နည်းရှိသော်လည်း ရောင်ခြယ်ခြင်းနှင့်ချေးခံမှုအကဲဖြတ်ခြင်း မတူပါ။\nအပေါက်ပိတ်စသည့်နောက်လုပ်ငန်းကိုလည်း လိုအပ်ဂုဏ်သတ္တိအလိုက်ရွေးသည်။ အရောင်လှ၍အောင်၊ ထူလို့အမြဲကောင်း ဟူသောအမြင်တစ်ခုတည်းမဆုံးဖြတ်ဘဲ သတ်မှတ်စစ်ချက်ဖြင့်အကဲဖြတ်ပါ။",
+          "reusedExactStructureParagraphId": "section-3",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         }
       }
     },
@@ -294,7 +704,15 @@
         "inRange": "อยู่ในช่วง",
         "outOfRange": "อยู่นอกช่วง",
         "mean": "ค่าเฉลี่ย",
-        "practiceRange": "ช่วงความหนาผิวเคลือบสำหรับฝึก"
+        "practiceRange": "ช่วงความหนาผิวเคลือบสำหรับฝึก",
+        "anode": "แอโนด",
+        "cathode": "แคโทด",
+        "workpiece": "ชิ้นงาน",
+        "electroplating": "การชุบด้วยไฟฟ้า",
+        "anodizing": "การอโนไดซ์",
+        "current": "กระแสไฟฟ้า",
+        "area": "พื้นที่ผิวที่รับการชุบ",
+        "currentDensity": "ความหนาแน่นกระแสเฉลี่ย"
       },
       "lessons": {
         "mfg1-electrical-l004": {
@@ -302,14 +720,48 @@
           "title": "อย่ามองข้ามสเกล 0.5 mm ของไมโครมิเตอร์",
           "exampleTitle": "วิธีคิดในสถานที่ทำงาน",
           "exampleText": "บนปลอกสเกลเห็น 6 mm และเส้น 0.5 mm ถัดไป ส่วนปลอกหมุนที่แบ่งสเกล 0.01 mm แสดง 24\n1. อ่านปลอกสเกลเป็น 6.5 mm\n2. อ่านปลอกหมุนเป็น 24 × 0.01 = 0.24 mm\n3. คำนวณ 6.5 + 0.24 = 6.74 mm\nคำตอบคือ 6.74 mm หากลืมเส้น 0.5 mm จะได้ 6.24 mm ซึ่งคลาดเคลื่อน 0.50 mm",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         },
         "mfg1-surface-lesson-003": {
           "sourceHash": "732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7",
           "title": "พิจารณาความหนาผิวเคลือบแต่ละตำแหน่ง ไม่ใช่เพียงค่าเฉลี่ย",
           "exampleTitle": "แนวคิดเมื่ออยู่หน้างาน",
           "exampleText": "สมมติช่วงความหนาสำหรับฝึกเป็น 8–12μm และวัดสามตำแหน่งที่กำหนดได้ 7, 10, 13μm ค่าเฉลี่ยคือ (7+10+13)/3=10μm แต่มีสองตำแหน่งนอกช่วง อย่าตัดสินว่าผ่านจากค่าเฉลี่ยเพียงอย่างเดียว ให้บันทึกแต่ละตำแหน่งและค่า ช่วง 8–12μm เป็นข้อสมมติเพื่ออธิบาย ไม่ใช่ค่าที่แนะนำสำหรับกระบวนการจริง",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-005": {
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "title": "แยกแอโนดและแคโทดในการชุบด้วยไฟฟ้า",
+          "exampleTitle": "แนวคิดเมื่ออยู่หน้างาน",
+          "exampleText": "ในภาพฝึก ให้พิจารณาน้ำยาที่มีไอออนทองแดงและแอโนดทองแดงที่ละลาย จับคู่ปฏิกิริยา Cu→Cu²⁺+2e⁻ ที่แอโนดทองแดง กับ Cu²⁺+2e⁻→Cu ที่ชิ้นงาน ตัวอย่างนี้อธิบายปฏิกิริยาพื้นฐาน ไม่ได้หมายความว่าทุกสูตรน้ำยาหรือทุกอุปกรณ์ใช้แอโนดทองแดงแบบเดียวกัน",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-006": {
+          "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+          "title": "พิจารณาความต่างของความหนาจากความหนาแน่นกระแสและรูปร่างชิ้นงาน",
+          "exampleTitle": "แนวคิดเมื่ออยู่หน้างาน",
+          "exampleText": "แบบฝึกคำนวณ: หากพื้นที่ปรับสภาพเป็น 2.4dm² และกระแส 7.2A ความหนาแน่นกระแสเฉลี่ยคือ 7.2÷2.4=3.0A/dm² หากเปลี่ยนเฉพาะพื้นที่เป็น 4.8dm² โดยกระแสเท่าเดิม ค่าจะเป็น 1.5A/dm² ตัวเลขนี้ใช้ฝึกคำนวณ ไม่ใช่เงื่อนไขที่แนะนำสำหรับถังน้ำยาจริง",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-007": {
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "title": "แอโนไดซ์สร้างชั้นออกไซด์จากวัสดุฐาน",
+          "exampleTitle": "แนวคิดเมื่ออยู่หน้างาน",
+          "exampleText": "เมื่อพนักงานใหม่อธิบายชิ้นงานแอโนไดซ์ว่าเป็นการชุบโลหะสีเงินทับด้านบน ผู้สอนชี้แจงว่ากระบวนการนี้สร้างชั้นออกไซด์จากผิวอะลูมิเนียมเอง ในแผนภาพให้ระบุชิ้นงานไว้ด้านแอโนด แล้วเทียบกับชิ้นงานด้านแคโทดในการชุบด้วยไฟฟ้าเพื่อเห็นความต่าง",
+          "reusedExactParagraphId": "example",
+          "structureTitle": "เข้าใจแนวคิดเรื่องรูพรุนและชั้นกั้น",
+          "structureText": "ผิวเคลือบพรุนชนิดที่พบทั่วไปประกอบด้วยส่วนที่มีรูเล็กและชั้นกั้นเนื้อแน่นด้านวัสดุฐาน มีวิธีใช้รูเหล่านั้นในการให้สี แต่การให้สีกับการประเมินความทนการกัดกร่อนเป็นคนละเรื่อง\nเลือกกระบวนการหลังเคลือบ เช่น การปิดรูพรุน ตามสมบัติที่ต้องการ อย่าตัดสินจากมุมเดียว เช่น สีสวยจึงผ่าน หรือหนาจึงดีเสมอ ให้ประเมินตามรายการตรวจที่กำหนด",
+          "reusedExactStructureParagraphId": "section-3",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         }
       }
     },
@@ -322,7 +774,15 @@
         "inRange": "ក្នុងជួរកំណត់",
         "outOfRange": "ក្រៅជួរកំណត់",
         "mean": "មធ្យម",
-        "practiceRange": "ជួរកម្រាស់ស្រទាប់សម្រាប់ហាត់"
+        "practiceRange": "ជួរកម្រាស់ស្រទាប់សម្រាប់ហាត់",
+        "anode": "អាណូដ",
+        "cathode": "កាតូដ",
+        "workpiece": "វត្ថុ",
+        "electroplating": "ស្រោបលោហៈដោយអគ្គិសនី",
+        "anodizing": "អាណូដកម្ម",
+        "current": "ចរន្តអគ្គិសនី",
+        "area": "ផ្ទៃដែលត្រូវដំណើរការ",
+        "currentDensity": "ដង់ស៊ីតេចរន្តមធ្យម"
       },
       "lessons": {
         "mfg1-electrical-l004": {
@@ -330,14 +790,48 @@
           "title": "កុំមើលរំលង 0.5 mm របស់មីក្រូម៉ែត្រ",
           "exampleTitle": "ការគិតនៅកន្លែងធ្វើការ",
           "exampleText": "ស្លីវឃើញ 6 mm និងបន្ទាត់ 0.5 mm បន្ទាប់ ហើយថាំប៊លខ្នាត 0.01 mm បង្ហាញ 24។\n1. អានស្លីវជា 6.5 mm។\n2. អានថាំប៊ល 24 × 0.01 = 0.24 mm។\n3. គណនា 6.5 + 0.24 = 6.74 mm។\n6.74 mm។ បើភ្លេចបន្ទាត់ 0.5 mm នឹងបាន 6.24 mm ហើយខុស 0.50 mm។",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         },
         "mfg1-surface-lesson-003": {
           "sourceHash": "732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7",
           "title": "មើលកម្រាស់ស្រទាប់តាមទីតាំង មិនតែមធ្យម",
           "exampleTitle": "ការគិតនៅកន្លែងធ្វើការ",
           "exampleText": "ជួរហាត់8–12μm ហើយទីតាំងកំណត់បីវាស់បាន7,10,13μm។ មធ្យម(7+10+13)/3=10μm ប៉ុន្តែពីរទីតាំងក្រៅជួរ។ កុំឱ្យជាប់តាមមធ្យមតែមួយ ត្រូវកត់ទីតាំងនិងតម្លៃរៀងៗ។ 8–12μmជាសន្មតពន្យល់ មិនមែនតម្លៃណែនាំដំណើរការពិត។",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-005": {
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "title": "បែងចែកអាណូដ និងកាតូដនៃស្រោបលោហៈដោយអគ្គិសនី",
+          "exampleTitle": "ការគិតនៅកន្លែងធ្វើការ",
+          "exampleText": "ក្នុងរូបហាត់ ពិចារណារាវមានអ៊ីយ៉ុងទង់ដែងនិងអាណូដទង់ដែងរលាយ។ ផ្គូផ្គងអាណូដ Cu→Cu²⁺+2e⁻ និងខាងវត្ថុ Cu²⁺+2e⁻→Cu។ ឧទាហរណ៍នេះពន្យល់ប្រតិកម្មមូលដ្ឋាន មិនមានន័យថាប្រើអាណូដទង់ដែងដូចគ្នាគ្រប់សមាសធាតុអាងឬឧបករណ៍។",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-006": {
+          "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+          "title": "គិតភាពខុសកម្រាស់ពីដង់ស៊ីតេចរន្ត និងរាងវត្ថុ",
+          "exampleTitle": "ការគិតនៅកន្លែងធ្វើការ",
+          "exampleText": "ជាលំហាត់គណនា ផ្ទៃព្យាបាល2.4dm² ចរន្ត7.2A ដង់ស៊ីតេមធ្យម7.2÷2.4=3.0A/dm²។ បើតែផ្ទៃក្លាយ4.8dm² ហើយចរន្តដដែល នោះ1.5A/dm²។ លេខនេះជាលំហាត់ មិនមែនលក្ខខណ្ឌណែនាំអាងពិត។",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-007": {
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "title": "អាណូដកម្មបង្កើតស្រទាប់អុកស៊ីតពីសម្ភារៈមូលដ្ឋាន",
+          "exampleTitle": "ការគិតនៅកន្លែងធ្វើការ",
+          "exampleText": "អ្នកថ្មីពន្យល់ផលិតផលអាណូដកម្មថា «ស្រោបលោហៈពណ៌ប្រាក់ពីលើ»។ អ្នកបង្រៀនបញ្ជាក់ថា «ក្នុងដំណាក់កាលនេះ បង្កើតស្រទាប់អុកស៊ីតពីផ្ទៃអាលុយមីញ៉ូមខ្លួនឯង»។ ក្នុងគំនូរដំណើរការកត់វត្ថុខាងអាណូដ ហើយប្រៀបនឹងវត្ថុខាងកាតូដក្នុងស្រោបអគ្គិសនី។",
+          "reusedExactParagraphId": "example",
+          "structureTitle": "យល់គំនិតរន្ធ និងស្រទាប់របាំង",
+          "structureText": "ស្រទាប់មានរន្ធតំណាងមានផ្នែករន្ធល្អិត និងស្រទាប់របាំងតឹងនៅខាងមូលដ្ឋាន។ មានវិធីប្រើរន្ធដើម្បីដាក់ពណ៌ ប៉ុន្តែការដាក់ពណ៌និងវាយតម្លៃធន់ច្រេះមិនដូចគ្នា។\nព្យាបាលក្រោយដូចបិទរន្ធក៏ជ្រើសតាមលក្ខណៈតម្រូវ។ កុំវិនិច្ឆ័យតាមទស្សនៈមួយថាពណ៌ស្អាតគឺជាប់ ឬក្រាស់ប្រាកដល្អ ត្រូវវាយតម្លៃតាមចំណុចត្រួតពិនិត្យកំណត់។",
+          "reusedExactStructureParagraphId": "section-3",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         }
       }
     },
@@ -350,7 +844,15 @@
         "inRange": "Nasa saklaw",
         "outOfRange": "Labas sa saklaw",
         "mean": "Average",
-        "practiceRange": "Saklaw ng kapal ng coating sa pagsasanay"
+        "practiceRange": "Saklaw ng kapal ng coating sa pagsasanay",
+        "anode": "Anode",
+        "cathode": "Cathode",
+        "workpiece": "Piyesa",
+        "electroplating": "Electroplating",
+        "anodizing": "Anodizing",
+        "current": "Agos ng kuryente",
+        "area": "Lawak ng ibabaw na pinoproseso",
+        "currentDensity": "Average na densidad ng agos ng kuryente"
       },
       "lessons": {
         "mfg1-electrical-l004": {
@@ -358,14 +860,48 @@
           "title": "Huwag makaligtaan ang 0.5 mm sa micrometer",
           "exampleTitle": "Pag-iisip sa lugar ng trabaho",
           "exampleText": "Nakikita sa sleeve ang 6 mm at kasunod na 0.5 mm na guhit; 24 ang thimble na may 0.01 mm scale.\n1. Basahin ang sleeve bilang 6.5 mm.\n2. Basahin ang thimble: 24 × 0.01 = 0.24 mm.\n3. Kunin ang 6.5 + 0.24 = 6.74 mm.\nAng sagot ay 6.74 mm. Kapag nalimutan ang 0.5 mm na guhit, magiging 6.24 mm at may pagkakamaling 0.50 mm.",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         },
         "mfg1-surface-lesson-003": {
           "sourceHash": "732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7",
           "title": "Pagsusuri ng kapal ng coating sa bawat lugar at hindi lamang average",
           "exampleTitle": "Pag-iisip sa lugar ng trabaho",
           "exampleText": "Ipagpalagay na 8〜12μm ang kapal sa pagsasanay at nakuha ang 7,10,13μm sa tatlong itinakdang lugar. Ang average ay (7+10+13)/3=10μm ngunit dalawang lugar ang labas sa saklaw. Huwag ipasa dahil lamang sa average; itala ang bawat lugar at halaga. Halimbawang palagay lamang ang 8〜12μm at hindi inirerekomendang halaga sa aktuwal na proseso.",
-          "reusedExactParagraphId": "example"
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 1
+        },
+        "mfg1-surface-lesson-005": {
+          "sourceHash": "ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7",
+          "title": "Paghiwalay sa anode at cathode sa electroplating",
+          "exampleTitle": "Pag-iisip sa lugar ng trabaho",
+          "exampleText": "Sa diagram ng pagsasanay, isipin ang solusyon na may copper ion at natutunaw na copper anode. Itugma ang Cu→Cu²⁺+2e⁻ sa copper anode at Cu²⁺+2e⁻→Cu sa produkto. Paliwanag ito ng pangunahing reaksiyon; hindi ibig sabihing gamitin ang parehong copper anode sa lahat ng bath composition o kagamitan.",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-006": {
+          "sourceHash": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+          "title": "Pag-unawa sa pagkakaiba ng kapal mula sa current density at hugis ng produkto",
+          "exampleTitle": "Pag-iisip sa lugar ng trabaho",
+          "exampleText": "Sa pagsasanay ng pagkukuwenta, kung 2.4dm² ang area at 7.2A ang current, ang average current density ay 7.2÷2.4=3.0A/dm². Kung area lamang ang naging 4.8dm² at pareho ang current, magiging 1.5A/dm². Mga halagang pangkuwenta lamang ito at hindi inirerekomendang kondisyon sa aktuwal na bath.",
+          "reusedExactParagraphId": "example",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
+        },
+        "mfg1-surface-lesson-007": {
+          "sourceHash": "747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee",
+          "title": "Pagbuo ng oxide coating mula sa base material sa alumite",
+          "exampleTitle": "Pag-iisip sa lugar ng trabaho",
+          "exampleText": "Inilarawan ng bagong empleyado ang alumite bilang paglalagay ng silver-colored metal mula sa ibabaw. Nililinaw ng tagapagsanay na sa prosesong ito, bumubuo ng oxide coating mula sa mismong ibabaw ng aluminum. Sa process diagram, ilagay ang produkto sa anode side at ihambing sa produktong nasa cathode side sa electroplating.",
+          "reusedExactParagraphId": "example",
+          "structureTitle": "Pag-unawa sa pores at barrier layer",
+          "structureText": "Sa karaniwang porous coating, may bahaging may maliliit na pores at siksik na barrier layer sa panig ng base material. May paraang gumagamit ng pores sa pagkukulay, ngunit magkaibang pagsusuri ang kulay at corrosion resistance.\nPinipili rin ayon sa kinakailangang katangian ang post-treatment gaya ng sealing. Huwag magpasya mula sa iisang pananaw gaya ng magandang kulay kaya pasado o makapal kaya laging mabuti; suriin gamit ang itinakdang inspection items.",
+          "reusedExactStructureParagraphId": "section-3",
+          "reusedFromRuntimeTranslationWithEditorialPatches": true,
+          "appliedEditorialPatchCount": 0
         }
       }
     }

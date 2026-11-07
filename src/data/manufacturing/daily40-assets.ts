@@ -1,6 +1,12 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week01/surface-day04-pinhole-wet-contact.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/surface-day04-pinhole-wet-contact.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day07-leak-risk-recheck.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/mechanical-day07-leak-risk-recheck.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day06-task-specific-ppe.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/mechanical-day06-task-specific-ppe.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week01/surface-day07-oxide-structure.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/surface-day07-oxide-structure.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week01/surface-day06-area-shape.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/surface-day06-area-shape.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week01/surface-day05-electroplating.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/surface-day05-electroplating.webp");
   case "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day07-risk-followup.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/mechanical-day07-risk-followup.webp");
   case "assets/manufacturing/royal-weekly-20261107/week01/surface-day04-corrosion-factors.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/surface-day04-corrosion-factors.webp");
   case "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day06-task-ppe.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week01/mechanical-day06-task-ppe.webp");

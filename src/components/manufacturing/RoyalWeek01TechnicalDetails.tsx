@@ -2,12 +2,15 @@ import {Text,View} from 'react-native';
 import type {ManufacturingLesson} from '@/data/manufacturing';
 import {useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 
-type Labels={practice:string;sleeve:string;thimble:string;position:string;inRange:string;outOfRange:string;mean:string;practiceRange:string};
-type LocalizedLesson={sourceHash:string;title:string;exampleTitle:string;exampleText:string};
+type Labels={practice:string;sleeve:string;thimble:string;position:string;inRange:string;outOfRange:string;mean:string;practiceRange:string;anode:string;cathode:string;workpiece:string;electroplating:string;anodizing:string;current:string;area:string;currentDensity:string};
+type LocalizedLesson={sourceHash:string;title:string;exampleTitle:string;exampleText:string;structureTitle?:string;structureText?:string};
 const locales=require('@/data/manufacturing/royal-week01-technical-locales.json').locales as Record<string,{labels:Labels;lessons:Record<string,LocalizedLesson>}>;
 const revisions:Record<string,string>={
  'mfg1-electrical-l004':'ed8991b0b74fd0ee53acaefe01df73626d5bd64d6cac7aada260b37598f11bd9',
  'mfg1-surface-lesson-003':'732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7',
+ 'mfg1-surface-lesson-005':'ffa9eee69706855dfb3c0470e0985aba9aa88393ef85ec227786a474e38834d7',
+ 'mfg1-surface-lesson-006':'10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7',
+ 'mfg1-surface-lesson-007':'747e26aa25b045c129c6f554c21feb702594ea5efeb44b14745a27c2d970e7ee',
 };
 
 /** Exact native numbers accompany the artwork; generated scale marks are never a reading exercise. */
@@ -33,6 +36,28 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
   <Text style={body}>{labels.thimble}：24 × 0.01 mm ＝ 0.24 mm</Text>
   <Text style={heading}>6.5 mm ＋ 0.24 mm ＝ 6.74 mm</Text>
   <Text style={body}>{target.exampleText}</Text>
+ </View>;
+ if(lesson.id==='mfg1-surface-lesson-005')return <View testID="manufacturing-native-electroplating-example" style={border}>
+  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <Text style={heading}>＋ {labels.anode} · Cu</Text><Text style={body}>Cu → Cu²⁺ ＋ 2e⁻</Text>
+  <Text style={heading}>− {labels.cathode} · {labels.workpiece}</Text><Text style={body}>Cu²⁺ ＋ 2e⁻ → Cu</Text>
+  <Text style={body}>{target.exampleText}</Text>
+ </View>;
+ if(lesson.id==='mfg1-surface-lesson-006')return <View testID="manufacturing-native-current-density-example" style={border}>
+  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <Text style={body}>{labels.current}：7.2 A</Text>
+  <Text style={body}>{labels.area}：2.4 dm²</Text>
+  <Text style={heading}>{labels.currentDensity}：7.2 A ÷ 2.4 dm² ＝ 3.0 A/dm²</Text>
+  <Text style={body}>{labels.area}：4.8 dm²</Text>
+  <Text style={heading}>{labels.currentDensity}：7.2 A ÷ 4.8 dm² ＝ 1.5 A/dm²</Text>
+  <Text style={body}>{target.exampleText}</Text>
+ </View>;
+ if(lesson.id==='mfg1-surface-lesson-007')return <View testID="manufacturing-native-anodizing-example" style={border}>
+  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <Text style={heading}>{labels.electroplating}：{labels.workpiece} − ({labels.cathode})</Text>
+  <Text style={heading}>{labels.anodizing}：{labels.workpiece} ＋ ({labels.anode})</Text>
+  <Text style={body}>{target.exampleText}</Text>
+  <Text style={heading}>{target.structureTitle}</Text><Text style={body}>{target.structureText}</Text>
  </View>;
  return <View testID="manufacturing-native-coating-example" style={border}>
   <Text style={heading}>{labels.practice} · {labels.practiceRange} 8〜12 μm</Text>

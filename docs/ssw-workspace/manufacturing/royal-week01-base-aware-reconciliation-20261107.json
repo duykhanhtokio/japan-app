@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "BASECOMMIT": "cd21aefe93c768a32576bac3af9a6d544b1de3b1",
+  "createdUtc": "2026-11-07T05:41:38.085602+00:00",
+  "scope": "Own manufacturing concurrent reconciliation only; no new art or learner changes. Existing surface5–7 and 13 locale panels preserved.",
+  "examinedCommits": [
+    "6846295a",
+    "b9cea82e"
+  ],
+  "beforeBlobs": [
+    {
+      "path": "src/data/manufacturing/daily40/mechanical.json",
+      "beforeBlobSha": "a94f67934069d56b92a97af95eefcb6393278929",
+      "beforeWorkingSha256": "6284554f0de100d66fa480914c9db3c36540e06ab6d6b88e0de0abfd05145c0a"
+    },
+    {
+      "path": "src/data/manufacturing/daily40/surface.json",
+      "beforeBlobSha": "f35d80809af3cc18ca080ae8059f64d205231e05",
+      "beforeWorkingSha256": "3af733427a893738b758ac8199585dcff1df9066f131d2ed515b71582db182b5"
+    },
+    {
+      "path": "src/data/manufacturing/daily40-assets.ts",
+      "beforeBlobSha": "d205d3856dfdb2943cb3ed9c18fd92e0e9e33e76",
+      "beforeWorkingSha256": "412023fab4f0d55b422b92d4c063c627024a7da2fb48bbf3acb4f4c03c2b1879"
+    },
+    {
+      "path": "src/components/manufacturing/RoyalWeek01TechnicalDetails.tsx",
+      "beforeBlobSha": "714147ade1ab1fb279ed84edd61e5d0adc3b0b21",
+      "beforeWorkingSha256": "d14948480b42a6e83153b5e0e7880a6bf258fb87cde20bc3d6ddfebce3704b72"
+    },
+    {
+      "path": "src/data/manufacturing/royal-week01-technical-locales.json",
+      "beforeBlobSha": "7cc6fcfc1fb4b3ccd757a7bca62133ca4d9c99da",
+      "beforeWorkingSha256": "3d30de202c2d9c371c56ba93f75c220319c71fe1b92a04aa5df18b28f372b851"
+    },
+    {
+      "path": "docs/ssw-workspace/manufacturing/royal-week01-surface-final-three-20261107.json",
+      "beforeBlobSha": null,
+      "beforeWorkingSha256": "9d49008471e506d0477a43857adaa5dcec373b6886c6fd65ba4d1d2d1ca502eb"
+    },
+    {
+      "path": "assets/manufacturing/royal-weekly-20261107/week01/surface-day05-electroplating.webp",
+      "beforeBlobSha": null,
+      "beforeWorkingSha256": "16a789a76ad0a2c4068fa20fd3a1b19e1ec6bdbaa18df6f6f4da54826d03be14"
+    },
+    {
+      "path": "assets/manufacturing/royal-weekly-20261107/week01/surface-day06-area-shape.webp",
+      "beforeBlobSha": null,
+      "beforeWorkingSha256": "03d4d92e93e69faf6191386f45e130459c0e78c8a8ebf948d9e8dbd065ffd02f"
+    },
+    {
+      "path": "assets/manufacturing/royal-weekly-20261107/week01/surface-day07-oxide-structure.webp",
+      "beforeBlobSha": null,
+      "beforeWorkingSha256": "18e98717e5488d71b52f44149fe7aba594fbc6ef9f829deb295ab7860ca8e6d5"
+    },
+    {
+      "path": "docs/ssw-workspace/manufacturing/royal-week01-base-aware-reconciliation-20261107.json",
+      "beforeBlobSha": null,
+      "beforeWorkingSha256": null
+    }
+  ],
+  "restoredExactHelperCases": [
+    "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day06-task-specific-ppe.webp",
+    "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day07-leak-risk-recheck.webp",
+    "assets/manufacturing/royal-weekly-20261107/week01/surface-day04-pinhole-wet-contact.webp"
+  ],
+  "activeChoices": [
+    {
+      "lessonId": "mfg1-mechanical-lesson-006",
+      "activeAssetFile": "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day06-task-ppe.webp",
+      "objectiveJa": "保護具が防ぐ危険を説明する。\n保護具自体が危険になる場合を理解する。",
+      "inactiveAlternative": "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day06-task-specific-ppe.webp",
+      "reason": "Both cover same canonical objective; retain current illustrated active unit. External photoreal/CG variant preserved as inactive provenance, not counted."
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-007",
+      "activeAssetFile": "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day07-risk-followup.webp",
+      "objectiveJa": "危険の大きさと起こりやすさを考える。\n対策後に残る危険を確認する。",
+      "inactiveAlternative": "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day07-leak-risk-recheck.webp",
+      "reason": "Both cover same canonical objective; retain current illustrated active unit. External photoreal/CG variant preserved as inactive provenance, not counted."
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-004",
+      "activeAssetFile": "assets/manufacturing/royal-weekly-20261107/week01/surface-day04-corrosion-factors.webp",
+      "objectiveJa": "皮膜の欠陥と腐食の関係を説明する。",
+      "inactiveAlternative": "assets/manufacturing/royal-weekly-20261107/week01/surface-day04-pinhole-wet-contact.webp",
+      "reason": "Both cover same canonical objective; retain current illustrated active unit. External photoreal/CG variant preserved as inactive provenance, not counted."
+    }
+  ],
+  "checks": {
+    "actualProductionDailySelectorsAndFigureSsr": "PASS 21/21 current selector, require, VI caption, stale source guards; 18 actual Daily figure SSR, 3 retained technical diagrams return null by design. Image URIs stubbed; not browser pixels.",
+    "currentAssetSha256": "PASS 21/21",
+    "actualProductionDailySupport": "PASS 13/13 canonical companion hash and selected paragraph existence; stale main hash rejected. Actual daily-support/source-guides/completion37/index modules executed, no support stubs.",
+    "restoredAlternateRequires": "PASS 3/3 actual lazy helper resolved",
+    "pendingNativePanels": "PASS rerun65/65 current actual Daily/native panels SSR: selected exact example text and13 structure paragraphs, minfont>=14; stale source hides",
+    "noDoubleCount": "21 scheduled =18 active new raster +3 retained; 3 concurrent alternative files inactive",
+    "learnerContentAndEditorialCorrections": "Unchanged; only figure metadata/helper/receipt plus existing pending panels/art"
+  },
+  "remainingImageGaps": {
+    "scheduledDays": 0,
+    "companionBindingsPixelAuditPending": 13,
+    "companionAssetsPixelAuditPending": [
+      "assets/manufacturing/diagrams/batch37-surface-qc.png",
+      "assets/manufacturing/diagrams/batch37-surface-corrosion.png"
+    ],
+    "additionalDirectDiagramPixelAuditPending": "assets/manufacturing/diagrams/surface-process-control.png"
+  },
+  "limits": "Not browser/device/native/domain review. Remote persistence coordinator pending. BASECOMMIT/blob mismatch must refuse overlapping upload.",
+  "dailyBindings": [
+    {
+      "lessonId": "mfg1-mechanical-lesson-001",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day01-stop-report.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": null
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-002",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day02-5s-workbench.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": "mfg1-mechanical-source-guide-5s4s"
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-003",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day03-location-item-stock.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": "mfg1-mechanical-source-guide-5s4s"
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-004",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day04-ojt-confirmation.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": null
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-005",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day05-kyt-blind-corner.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": null
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-006",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day06-task-ppe.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": null
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-007",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/mechanical-day07-risk-followup.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": null
+    },
+    {
+      "lessonId": "mfg1-electrical-l001",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/electrical-day01-wire-tools.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": null
+    },
+    {
+      "lessonId": "mfg1-electrical-l002",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/electrical-day02-solder-joint.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": null
+    },
+    {
+      "lessonId": "mfg1-electrical-l003",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/electrical-day03-caliper-parts.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": "mfg1-electrical-l073"
+    },
+    {
+      "lessonId": "mfg1-electrical-l004",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/electrical-day04-micrometer.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": "mfg1-electrical-l073"
+    },
+    {
+      "lessonId": "mfg1-electrical-l005",
+      "assetFile": "assets/manufacturing/diagrams/batch20-electrical-meter-connections.png",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "retained existing component; Daily returns null by design",
+      "companionId": "mfg1-electrical-source-guide-resistance-methods"
+    },
+    {
+      "lessonId": "mfg1-electrical-l006",
+      "assetFile": "assets/manufacturing/diagrams/ohms-law.png",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "retained existing component; Daily returns null by design",
+      "companionId": null
+    },
+    {
+      "lessonId": "mfg1-electrical-l007",
+      "assetFile": "assets/manufacturing/daily40/electrical/electrical-day-007.png",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": "mfg1-electrical-completion37-scope"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-001",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/surface-day01-task-safety.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": "mfg1-surface-source-guide-basic-safety"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-002",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/surface-day02-ph-measurement.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": "mfg1-surface-source-guide-ph"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-003",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/surface-day03-coating-positions.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": "mfg1-surface-completion37-lesson-006"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-004",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/surface-day04-corrosion-factors.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": "mfg1-surface-completion37-lesson-008"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-005",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/surface-day05-electroplating.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": "mfg1-surface-source-guide-electrode-reactions"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-006",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/surface-day06-area-shape.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": "mfg1-surface-completion37-lesson-006"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-007",
+      "assetFile": "assets/manufacturing/royal-weekly-20261107/week01/surface-day07-oxide-structure.webp",
+      "selectorAssetCaptionHash": "PASS",
+      "productionFigureSsr": "PASS",
+      "companionId": "mfg1-surface-completion37-lesson-001"
+    }
+  ],
+  "companionBindings": [
+    {
+      "lessonId": "mfg1-mechanical-lesson-002",
+      "companionId": "mfg1-mechanical-source-guide-5s4s",
+      "paragraphIds": [
+        "section-1",
+        "section-2",
+        "section-3"
+      ],
+      "hashAndParagraphGuard": "PASS",
+      "pixelAudit": "OPEN"
+    },
+    {
+      "lessonId": "mfg1-mechanical-lesson-003",
+      "companionId": "mfg1-mechanical-source-guide-5s4s",
+      "paragraphIds": [
+        "section-1",
+        "section-2",
+        "section-3"
+      ],
+      "hashAndParagraphGuard": "PASS",
+      "pixelAudit": "OPEN"
+    },
+    {
+      "lessonId": "mfg1-electrical-l003",
+      "companionId": "mfg1-electrical-l073",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "hashAndParagraphGuard": "PASS",
+      "pixelAudit": "OPEN"
+    },
+    {
+      "lessonId": "mfg1-electrical-l004",
+      "companionId": "mfg1-electrical-l073",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "hashAndParagraphGuard": "PASS",
+      "pixelAudit": "OPEN"
+    },
+    {
+      "lessonId": "mfg1-electrical-l005",
+      "companionId": "mfg1-electrical-source-guide-resistance-methods",
+      "paragraphIds": [
+        "method-names",
+        "voltage-current",
+        "system-influence"
+      ],
+      "hashAndParagraphGuard": "PASS",
+      "pixelAudit": "OPEN"
+    },
+    {
+      "lessonId": "mfg1-electrical-l007",
+      "companionId": "mfg1-electrical-completion37-scope",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "hashAndParagraphGuard": "PASS",
+      "pixelAudit": "OPEN"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-001",
+      "companionId": "mfg1-surface-source-guide-basic-safety",
+      "paragraphIds": [
+        "section-1",
+        "section-2",
+        "section-3"
+      ],
+      "hashAndParagraphGuard": "PASS",
+      "pixelAudit": "OPEN"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-002",
+      "companionId": "mfg1-surface-source-guide-ph",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "hashAndParagraphGuard": "PASS",
+      "pixelAudit": "OPEN"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-003",
+      "companionId": "mfg1-surface-completion37-lesson-006",
+      "paragraphIds": [
+        "section-1",
+        "section-4"
+      ],
+      "hashAndParagraphGuard": "PASS",
+      "pixelAudit": "OPEN"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-004",
+      "companionId": "mfg1-surface-completion37-lesson-008",
+      "paragraphIds": [
+        "section-1"
+      ],
+      "hashAndParagraphGuard": "PASS",
+      "pixelAudit": "OPEN"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-005",
+      "companionId": "mfg1-surface-source-guide-electrode-reactions",
+      "paragraphIds": [
+        "section-1",
+        "section-2",
+        "section-3"
+      ],
+      "hashAndParagraphGuard": "PASS",
+      "pixelAudit": "OPEN"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-006",
+      "companionId": "mfg1-surface-completion37-lesson-006",
+      "paragraphIds": [
+        "section-1",
+        "section-4"
+      ],
+      "hashAndParagraphGuard": "PASS",
+      "pixelAudit": "OPEN"
+    },
+    {
+      "lessonId": "mfg1-surface-lesson-007",
+      "companionId": "mfg1-surface-completion37-lesson-001",
+      "paragraphIds": [
+        "section-1",
+        "section-2"
+      ],
+      "hashAndParagraphGuard": "PASS",
+      "pixelAudit": "OPEN"
+    }
+  ],
+  "checkedUtc": "2026-11-07T05:42:25.484586+00:00",
+  "frozenUtc": "2026-11-07T05:42:45.844584+00:00",
+  "frozenOutputSha256": [
+    {
+      "path": "src/data/manufacturing/daily40/mechanical.json",
+      "sha256": "ae4249b3ed4e26f0d220428963028ea5d384f0dee6097f68abb94da76a4add28"
+    },
+    {
+      "path": "src/data/manufacturing/daily40/surface.json",
+      "sha256": "a7c20e918a8aee64a2709f89a37a80ccfe174443c544010a6dba0722fb7656fd"
+    },
+    {
+      "path": "src/data/manufacturing/daily40-assets.ts",
+      "sha256": "a53bb8d06370f99384d811a0a49f7e809cc49c68cd6924bdea4314a346ec68a6"
+    },
+    {
+      "path": "src/components/manufacturing/RoyalWeek01TechnicalDetails.tsx",
+      "sha256": "d14948480b42a6e83153b5e0e7880a6bf258fb87cde20bc3d6ddfebce3704b72"
+    },
+    {
+      "path": "src/data/manufacturing/royal-week01-technical-locales.json",
+      "sha256": "3d30de202c2d9c371c56ba93f75c220319c71fe1b92a04aa5df18b28f372b851"
+    },
+    {
+      "path": "docs/ssw-workspace/manufacturing/royal-week01-surface-final-three-20261107.json",
+      "sha256": "9d49008471e506d0477a43857adaa5dcec373b6886c6fd65ba4d1d2d1ca502eb"
+    },
+    {
+      "path": "assets/manufacturing/royal-weekly-20261107/week01/surface-day05-electroplating.webp",
+      "sha256": "16a789a76ad0a2c4068fa20fd3a1b19e1ec6bdbaa18df6f6f4da54826d03be14"
+    },
+    {
+      "path": "assets/manufacturing/royal-weekly-20261107/week01/surface-day06-area-shape.webp",
+      "sha256": "03d4d92e93e69faf6191386f45e130459c0e78c8a8ebf948d9e8dbd065ffd02f"
+    },
+    {
+      "path": "assets/manufacturing/royal-weekly-20261107/week01/surface-day07-oxide-structure.webp",
+      "sha256": "18e98717e5488d71b52f44149fe7aba594fbc6ef9f829deb295ab7860ca8e6d5"
+    }
+  ]
+}
