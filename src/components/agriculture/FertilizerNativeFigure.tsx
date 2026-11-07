@@ -6,13 +6,14 @@ type Labels={title:string;alt:string;paragraphTitles:Record<string,string>;parag
 type Entry={kind:string;sourceHash:string;revision:string;levels:string[];sourceJapanese:Labels;paragraphIds:string[];locales:Record<string,Labels>;controlledSnapshot:unknown;fraction?:{totalKg:number;componentPercent:number;componentKg:number};sources:{documentId:string;pdfPage:number;printedPage:number}[]};
 type Colors={text:string;translation:string;translationText:string;border:string};
 const entries=data.entries as Record<string,Entry>;
+const nonEmptyText=(value:unknown):value is string=>typeof value==='string'&&!!value.trim();
 export const isFertilizerNativeContext=(id:string)=>Object.prototype.hasOwnProperty.call(entries,id);
 export function fertilizerNativeLabels(lessonId:string,sourceHash:string,revision:string|undefined,level:string|undefined,language:string){
  const e=entries[lessonId],lesson=content.lessons.find(l=>l.id===lessonId),controlled=(support.controlledDiagrams as Record<string,unknown>)[lessonId]||null;
  if(data.schemaVersion!==1||!e||e.kind!==lessonId.replace('agr-fertilizer-','')||!level||!e.levels.includes(level)||e.sourceHash!==sourceHash||e.revision!==revision||!lesson||!lesson.levels.includes(level)||lesson.sourceHash!==sourceHash||lesson.revision!==revision||lesson.titleJa!==e.sourceJapanese.title||lesson.objectiveJa!==e.sourceJapanese.alt||JSON.stringify(lesson.paragraphs.map(p=>p.id))!==JSON.stringify(e.paragraphIds)||lesson.paragraphs.some(p=>e.sourceJapanese.paragraphTitles[p.id]!==p.titleJa||e.sourceJapanese.paragraphs[p.id]!==p.textJa)||JSON.stringify(e.sourceJapanese)!==JSON.stringify(e.locales.ja)||JSON.stringify(controlled)!==JSON.stringify(e.controlledSnapshot))return null;
  if((e.kind==='label'||e.kind==='quantity')&&JSON.stringify(e.fraction)!==JSON.stringify({totalKg:25,componentPercent:e.kind==='label'?12:16,componentKg:e.kind==='label'?3:4}))return null;
  const t=e.locales[language];
- return t&&t.title.trim()&&t.alt.trim()&&e.paragraphIds.every(id=>t.paragraphTitles[id]?.trim()&&t.paragraphs[id]?.trim())?t:null;
+ return t&&nonEmptyText(t.title)&&nonEmptyText(t.alt)&&t.paragraphTitles&&t.paragraphs&&e.paragraphIds.every(id=>nonEmptyText(t.paragraphTitles[id])&&nonEmptyText(t.paragraphs[id]))?t:null;
 }
 // Exact source comparisons and hypothetical mass fractions; no application instructions.
 export function FertilizerNativeFigure({lessonId,lessonSourceHash,lessonRevision,level,language='ja',showTranslation=false,colors}:{lessonId:string;lessonSourceHash:string;lessonRevision?:string;level?:string;language?:string;showTranslation?:boolean;colors:Colors}){
