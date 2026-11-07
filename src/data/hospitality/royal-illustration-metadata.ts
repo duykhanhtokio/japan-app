@@ -1,5 +1,20 @@
 // Descriptions of the active replacement pixels; lesson knowledge/revisions stay independent.
 const currentImageAlt:Record<string,Record<string,string>> = {
+  "hotel-planning-06": {
+  "ja": "ホテル担当者二人が、客室販売の二つの資料を電卓で比較するイラスト。正確な条件・計算は画像下の図で示します。",
+  "en": "Two hotel employees compare two room-sales records with a calculator. Exact assumptions and calculations appear in the native guide below.",
+  "vi": "Hai nhân viên khách sạn dùng máy tính để so sánh hai hồ sơ bán phòng. Điều kiện và phép tính chính xác nằm trong sơ đồ bên dưới.",
+  "id": "Dua staf hotel membandingkan dua catatan penjualan kamar dengan kalkulator. Asumsi dan perhitungan tepat ditampilkan pada panduan di bawah.",
+  "zh-CN": "两名酒店员工使用计算器比较两份客房销售资料。准确条件和计算显示在下方原生图表中。",
+  "zh-TW": "兩名旅館員工使用計算機比較兩份客房銷售資料。準確條件和計算顯示在下方原生圖表中。",
+  "hi": "होटल के दो कर्मचारी कैलकुलेटर से कमरे की बिक्री के दो रिकॉर्ड की तुलना कर रहे हैं। सटीक शर्तें और गणना नीचे के आरेख में हैं।",
+  "bn": "হোটেলের দুই কর্মী ক্যালকুলেটর দিয়ে কক্ষ বিক্রির দুটি রেকর্ড তুলনা করছেন। সঠিক শর্ত ও হিসাব নিচের চিত্রে দেখানো হয়েছে।",
+  "ne": "होटलका दुई कर्मचारीले क्यालकुलेटरबाट कोठा बिक्रीका दुई अभिलेख तुलना गर्दै छन्। सही सर्त र गणना तलको चित्रमा छन्।",
+  "my": "ဟိုတယ်ဝန်ထမ်းနှစ်ဦးက အခန်းရောင်းချမှုမှတ်တမ်းနှစ်ခုကို ဂဏန်းတွက်စက်ဖြင့် နှိုင်းယှဉ်နေသည်။ အတိအကျသတ်မှတ်ချက်နှင့် တွက်ချက်မှုကို အောက်ပါပုံတွင် ဖော်ပြထားသည်။",
+  "th": "พนักงานโรงแรมสองคนใช้เครื่องคิดเลขเปรียบเทียบบันทึกการขายห้องพักสองชุด เงื่อนไขและการคำนวณที่แน่นอนแสดงในแผนภาพด้านล่าง",
+  "km": "បុគ្គលិកសណ្ឋាគារពីរនាក់ប្រើម៉ាស៊ីនគិតលេខប្រៀបធៀបកំណត់ត្រាលក់បន្ទប់ពីរឈុត។ លក្ខខណ្ឌ និងការគណនាជាក់លាក់បង្ហាញក្នុងគំនូសខាងក្រោម។",
+  "tl": "Inihahambing ng dalawang kawani ng hotel ang dalawang rekord ng benta ng kuwarto gamit ang calculator. Nasa gabay sa ibaba ang eksaktong kondisyon at pagkalkula."
+},
   "hotel-planning-04": {
     "ja": "ホテル担当者が庭園の写真投稿と質問への応答を確認し、地域の連携先と案内資料を照合するイラスト。",
     "en": "Hotel staff check a garden-photo post and replies to questions, comparing information with a local partner.",
