@@ -1,6 +1,9 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/diagrams/concentration-units.png":return require("../../../assets/manufacturing/diagrams/concentration-units.png");
+  case "assets/manufacturing/royal-weekly-20261107/week02/electrical-day11-histogram-control.png":return require("../../../assets/manufacturing/royal-weekly-20261107/week02/electrical-day11-histogram-control.png");
+  case "assets/manufacturing/diagrams/qc-control-plan.png":return require("../../../assets/manufacturing/diagrams/qc-control-plan.png");
   case "assets/manufacturing/royal-weekly-20261107/week02/surface-day10-titration-records.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week02/surface-day10-titration-records.webp");
   case "assets/manufacturing/royal-weekly-20261107/week02/electrical-day10-placement-followup.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week02/electrical-day10-placement-followup.webp");
   case "assets/manufacturing/royal-weekly-20261107/week02/mechanical-day10-4m-investigation.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week02/mechanical-day10-4m-investigation.webp");

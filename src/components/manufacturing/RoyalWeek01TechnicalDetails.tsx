@@ -6,6 +6,10 @@ type Labels={practice:string;sleeve:string;thimble:string;position:string;inRang
 type LocalizedLesson={sourceHash:string;title:string;exampleTitle:string;exampleText:string;structureTitle?:string;structureText?:string};
 const locales=require('@/data/manufacturing/royal-week01-technical-locales.json').locales as Record<string,{labels:Labels;lessons:Record<string,LocalizedLesson>}>;
 const revisions:Record<string,string>={
+ 'mfg1-mechanical-lesson-011':'7c03413b76ee4823f4b9ac8ec818aa9003f657910af6dff216db2eb51c4ac24d',
+ 'mfg1-electrical-l011':'7ac97182b7515dae74e6937e1e9cfd82d179c70e14b1d1eec949ea5ab80d3c89',
+ 'mfg1-surface-lesson-011':'04877240b0ed95efd66acf3164467afea7b036133b3f3ae477d7a24d5804f2a2',
+
  'mfg1-surface-lesson-010':'5af27b4e06505d5542bfe0003988ef628d1e222886b305c43eed0938cc51007e',
  'mfg1-electrical-l004':'ed8991b0b74fd0ee53acaefe01df73626d5bd64d6cac7aada260b37598f11bd9',
  'mfg1-surface-lesson-003':'732f5babc3b1116021edc5fe629199f15ea34e6e46dae7d7c13a92fd59d99cd7',
@@ -24,6 +28,27 @@ export function RoyalWeek01TechnicalDetails({lesson,language='ja'}:{lesson:Manuf
  const body={color:colors.text,fontSize:17,lineHeight:29};
  const heading={...body,fontWeight:'700' as const};
  const border={borderWidth:1,borderColor:colors.border,borderRadius:10,padding:14,gap:10};
+ if(lesson.id==='mfg1-mechanical-lesson-011')return <View testID="manufacturing-native-qc-control-example" style={border}>
+  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <Text style={heading}>{target.structureTitle}</Text><Text style={body}>{target.structureText}</Text>
+  <Text style={heading}>{target.exampleTitle}</Text><Text style={body}>{target.exampleText}</Text>
+ </View>;
+ if(lesson.id==='mfg1-electrical-l011')return <View testID="manufacturing-native-variation-example" style={border}>
+  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <Text style={heading}>9.90 mm ≤ x ≤ 10.10 mm</Text>
+  {[9.80,10.00,10.20].map(value=><Text key={value} style={body}>{value.toFixed(2)} mm · {value>=9.90&&value<=10.10?labels.inRange:labels.outOfRange}</Text>)}
+  <Text style={heading}>{labels.mean}：(9.80 ＋ 10.00 ＋ 10.20) ÷ 3 ＝ 10.00 mm</Text>
+  <Text style={body}>{target.exampleText}</Text>
+  <Text style={heading}>{target.structureTitle}</Text><Text style={body}>{target.structureText}</Text>
+ </View>;
+ if(lesson.id==='mfg1-surface-lesson-011')return <View testID="manufacturing-native-concentration-example" style={border}>
+  <Text style={heading}>{labels.practice} · {target.title}</Text>
+  <Text style={body}>4.00 g ÷ 0.500 L ＝ 8.00 g/L</Text>
+  <Text style={body}>4.00 g ÷ 40.0 g/mol ＝ 0.100 mol</Text>
+  <Text style={heading}>0.100 mol ÷ 0.500 L ＝ 0.200 mol/L</Text>
+  <Text style={body}>{target.exampleText}</Text>
+  <Text style={heading}>{target.structureTitle}</Text><Text style={body}>{target.structureText}</Text>
+ </View>;
  if(lesson.id==='mfg1-surface-lesson-010')return <View testID="manufacturing-native-titration-example" style={border}>
   <Text style={heading}>{labels.practice} · {target.title}</Text>
   <Text style={heading}>13.2 mL − 1.2 mL ＝ 12.0 mL</Text>
