@@ -2,6 +2,9 @@ import type {ImageSourcePropType} from 'react-native';
 
 /** Day-scoped replacements preserve shared legacy art IDs and captions. */
 export const kaigoRoyalWeeklyArt:Record<number,{source:ImageSourcePropType;aspectRatio:number}>={
+ 92:{source:require('../../../assets/kaigo/paragraphs/kaigo-week2-01-knowledge-4-v1.webp'),aspectRatio:1619/971},
+ 96:{source:require('../../../assets/kaigo/paragraphs/excretion-04-knowledge-1-v1.webp'),aspectRatio:1619/971},
+
  71:{source:require('../../../assets/kaigo/paragraphs/kaigo-move-01-knowledge-1-v1.webp'),aspectRatio:1619/971},
  72:{source:require('../../../assets/kaigo/paragraphs/kaigo-move-01-summary-v1.webp'),aspectRatio:1619/971},
  73:{source:require('../../../assets/kaigo/paragraphs/kaigo-move-01-knowledge-2-v1.webp'),aspectRatio:1619/971},
