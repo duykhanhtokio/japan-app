@@ -1,3 +1,4 @@
+import {sameRestaurantFigureIdentity} from './RestaurantFigureIdentity';
 import {Image,Text,View} from 'react-native';
 import type {SourceFigure31} from '@/data/restaurant/source31';
 import data from '@/data/restaurant/royal-week03-technical.json';
@@ -16,7 +17,7 @@ export function restaurantWeek03TechnicalKind(figure:SourceFigure31):string|null
  if(figure.sourceHash!==original.sourceHash||figure.assetFile!==original.assetFile||figure.sha256!==original.sha256||figure.width!==original.width||figure.height!==original.height||figure.captionJa!==original.captionJa||figure.altJa!==original.altJa)return null;
  const pack=binding.level==='1'?require('../../data/restaurant/source31/1.json'):require('../../data/restaurant/source31/2.json');
  const row=pack.lessons[binding.lessonId];
- return row?.sourceHash===binding.rowSourceHash&&row.figures.some((f:SourceFigure31)=>f.id===figure.id&&f.sourceHash===figure.sourceHash)?binding.kind:null;
+ return row?.sourceHash===binding.rowSourceHash&&row.figures.some((f:SourceFigure31)=>sameRestaurantFigureIdentity(f,figure))?binding.kind:null;
 }
 function Label({index,language,showTranslation}:{index:number;language:string;showTranslation:boolean}){
  const ja=labels.ja[index],target=(labels as Record<string,string[]>)[language]?.[index];
