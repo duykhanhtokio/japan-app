@@ -1,3 +1,4 @@
+import {sameRestaurantFigureIdentity} from './RestaurantFigureIdentity';
 import type {SourceFigure31} from '@/data/restaurant/source31';
 import data from '@/data/restaurant/royal-source-figure-overrides.json';
 const assetLoaders:Record<string,()=>number>={
@@ -38,7 +39,7 @@ export function royalRestaurantSourceFigure(figure:SourceFigure31):{source:numbe
  if(!identities.some(x=>figure.assetFile===x.assetFile&&figure.sha256===x.sha256&&figure.width===x.width&&figure.height===x.height))return null;
  const pack=o.level==='1'?require('../../data/restaurant/source31/1.json'):require('../../data/restaurant/source31/2.json');
  const row=pack.lessons[o.lessonId];
- if(!row||row.sourceHash!==o.originalRowSourceHash||!row.figures.some((f:SourceFigure31)=>f.id===figure.id&&f.sourceHash===figure.sourceHash))return null;
+ if(!row||row.sourceHash!==o.originalRowSourceHash||!row.figures.some((f:SourceFigure31)=>sameRestaurantFigureIdentity(f,figure)))return null;
  const source=assetLoaders[figure.id]?.();if(source===undefined)return null;
  return {source,figure:{...figure,width:o.width,height:o.height,...(o.cropBox?{cropBox:o.cropBox}:{})}};
 }
