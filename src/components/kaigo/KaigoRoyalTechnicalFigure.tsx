@@ -2,10 +2,28 @@ import React,{useState} from 'react';
 import {Image,Text,View,type ImageSourcePropType} from 'react-native';
 import translations from '@/data/kaigo/royal-technical-labels.json';
 
-type Kind='brain'|'respiratory'|'muscles'|'posture'|'wheelchair'|'pressure'|'eating'|'endocrine'|'urinary';
+type Kind='brain'|'respiratory'|'muscles'|'posture'|'wheelchair'|'pressure'|'eating'|'endocrine'|'urinary'|'oralOwnership'|'skin'|'grooming';
 type Point={anchor:[number,number];target:[number,number]};
 /** Percent coordinates on each independently authored 1536x1024 base. Endpoints are manually source-checked. */
 export const royalTechnicalLeaders:Record<Kind,Point[]>={
+ oralOwnership:[
+  {anchor:[12,22],target:[38,64]}, // name on the container body itself
+  {anchor:[90,25],target:[72,50]}, // separately placed unverified lid
+ ],
+ skin:[
+  {anchor:[90,18],target:[71,31]}, // outer epidermis
+  {anchor:[90,44],target:[70,52]}, // dermis below epidermis
+  {anchor:[90,84],target:[70,77]}, // adipose tissue below dermis
+  {anchor:[91,61],target:[61,59]}, // eccrine coil, duct directly to surface
+  {anchor:[11,84],target:[44,63]}, // apocrine coil, duct to hair follicle
+  {anchor:[10,35],target:[33,54]}, // hair follicle/root within tissue
+  {anchor:[10,17],target:[38.5,42.5]}, // lobulated sebaceous gland at follicle
+ ],
+ grooming:[
+  {anchor:[10,18],target:[25.4,50]}, // electric shaver body
+  {anchor:[49,19],target:[48.5,54.7]}, // separate product instructions
+  {anchor:[90,25],target:[71,45]}, // illustrative nail and surrounding skin
+ ],
  urinary:[
   {anchor:[10,24],target:[37.76,32.2]}, // intact kidney
   {anchor:[90,22],target:[61.84,33.69]}, // collecting pelvis inside cutaway kidney
@@ -91,7 +109,7 @@ export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=fa
  const tr=(translations as Record<string,typeof ja>)[language]??ja;
  const bilingual=(original:string,translated:string)=>tr===ja?original:original+' / '+translated;
  const labels=ja[kind].map((label,i)=>bilingual(label,tr[kind][i]));
- const view=kind==='urinary'?bilingual(ja.urinaryView,tr.urinaryView):kind==='endocrine'?bilingual(ja.endocrineView,tr.endocrineView):kind==='eating'?bilingual(ja.eatingView,tr.eatingView):kind==='pressure'?bilingual(ja.pressureView,tr.pressureView):kind==='wheelchair'?bilingual(ja.wheelchairView,tr.wheelchairView):kind==='posture'?bilingual(ja.postureView,tr.postureView):kind==='brain'?bilingual(ja.brainView,tr.brainView):kind==='muscles'?bilingual(ja.musclesView,tr.musclesView):bilingual(ja.respiratoryView,tr.respiratoryView);
+ const view=kind==='oralOwnership'?bilingual(ja.oralOwnershipView,tr.oralOwnershipView):kind==='skin'?bilingual(ja.skinView,tr.skinView):kind==='grooming'?bilingual(ja.groomingView,tr.groomingView):kind==='urinary'?bilingual(ja.urinaryView,tr.urinaryView):kind==='endocrine'?bilingual(ja.endocrineView,tr.endocrineView):kind==='eating'?bilingual(ja.eatingView,tr.eatingView):kind==='pressure'?bilingual(ja.pressureView,tr.pressureView):kind==='wheelchair'?bilingual(ja.wheelchairView,tr.wheelchairView):kind==='posture'?bilingual(ja.postureView,tr.postureView):kind==='brain'?bilingual(ja.brainView,tr.brainView):kind==='muscles'?bilingual(ja.musclesView,tr.musclesView):bilingual(ja.respiratoryView,tr.respiratoryView);
  return <View testID={`kaigo-royal-${kind}`} style={{width:expanded?1000:'100%'}}>
   <Text style={{fontSize:16,color:'#243d4d',padding:8}}>{view}</Text>
   <View onLayout={event=>setWidth(event.nativeEvent.layout.width)} style={{width:'100%',aspectRatio:1.5}}>
@@ -110,7 +128,7 @@ export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=fa
   <View style={{padding:8,gap:6}}>
    {labels.map((label,i)=><Text key={i} style={{fontSize:16,color:'#243d4d'}}>{i+1} · {label}</Text>)}
    {kind==='brain'&&<Text style={{fontSize:15,color:'#243d4d'}}>{bilingual(ja.brainstem,tr.brainstem)}</Text>}
-   <Text style={{fontSize:14,lineHeight:21,color:'#526674'}}>{kind==='urinary'?bilingual(ja.urinaryScope,tr.urinaryScope):kind==='eating'?bilingual(ja.eatingScope,tr.eatingScope):kind==='pressure'?bilingual(ja.pressureScope,tr.pressureScope):kind==='wheelchair'?bilingual(ja.wheelchairScope,tr.wheelchairScope):kind==='posture'?bilingual(ja.postureScope,tr.postureScope):kind==='muscles'?bilingual(ja.musclesScope,tr.musclesScope):bilingual(ja.scope,tr.scope)}</Text>
+   <Text style={{fontSize:14,lineHeight:21,color:'#526674'}}>{kind==='oralOwnership'?bilingual(ja.oralOwnershipScope,tr.oralOwnershipScope):kind==='skin'?bilingual(ja.skinScope,tr.skinScope):kind==='grooming'?bilingual(ja.groomingScope,tr.groomingScope):kind==='urinary'?bilingual(ja.urinaryScope,tr.urinaryScope):kind==='eating'?bilingual(ja.eatingScope,tr.eatingScope):kind==='pressure'?bilingual(ja.pressureScope,tr.pressureScope):kind==='wheelchair'?bilingual(ja.wheelchairScope,tr.wheelchairScope):kind==='posture'?bilingual(ja.postureScope,tr.postureScope):kind==='muscles'?bilingual(ja.musclesScope,tr.musclesScope):bilingual(ja.scope,tr.scope)}</Text>
   </View>
  </View>;
 }
