@@ -1,4 +1,4 @@
-import {KaigoMockRoyalFigure,mockFigureCaptionTokens} from './KaigoMockRoyalFigure';
+import {KaigoMockRoyalFigure,mockFigureCaptionTokens,mockFigurePromptTokens} from './KaigoMockRoyalFigure';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { translationForMockQuestion, translationForMockTitle } from '@/data/kaigo/japanese-mock-translations';
 import {WeeklyKaigo} from './WeeklyKaigo';
@@ -167,7 +167,7 @@ function MockExam({ form: originalForm, active }: { form: MockForm; active: bool
             <Body>図中の文字は日本語版を準備中です。日本語の説明と合わせて確認してください。</Body>
           )}
           {review && translationOpen && mockTranslation?.figureDescription && <TranslationText testID="kaigo-mock-figure-translation">{mockTranslation.figureDescription}</TranslationText>}
-          <Ruby tokens={q.furigana.prompt} fallback={q.promptJa} />
+          <Ruby tokens={q.figureKey?mockFigurePromptTokens(q):q.furigana.prompt} fallback={q.promptJa} />
           {review && translationOpen && mockTranslation && <TranslationText testID="kaigo-mock-prompt-translation">{mockTranslation.prompt}</TranslationText>}
           {q.optionsJa.map((option, i) => (
             <Pressable

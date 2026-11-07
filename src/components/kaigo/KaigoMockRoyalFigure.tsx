@@ -4,20 +4,24 @@ import {mockRoyalFigureFor,type PublicMockFigureQuestion} from '@/data/kaigo/roy
 import type {RubyToken} from '@/data/kaigo/types';
 
 /** Readings belong to the complete current public caption, never to a stale partial string. */
-export function mockFigureCaptionTokens(question:PublicMockFigureQuestion):RubyToken[]|undefined {
- const figure=mockRoyalFigureFor(question),tokens=question.furigana?.figureDescription;
- if(!figure || !tokens?.length || tokens.map(t=>t.text).join('')!==question.figureDescriptionJa
+function publicFigureTokens(question:PublicMockFigureQuestion,field:'figureDescription'|'prompt'):RubyToken[]|undefined {
+ const figure=mockRoyalFigureFor(question),tokens=question.furigana?.[field],source=field==='prompt'?question.promptJa:question.figureDescriptionJa;
+ if(!figure || !tokens?.length || tokens.map(t=>t.text).join('')!==source
    || tokens.some(t=>/[一-龯々]/.test(t.text) && !t.readingKana))return undefined;
  const corrections=figure.captionReadingCorrections;if(!corrections?.length)return tokens;
+ // Caption span offsets apply to a prompt only when the complete caption is its literal prefix.
+ if(field==='prompt'&&!question.promptJa.startsWith(question.figureDescriptionJa))return undefined;
  const boundaries=new Map<number,number>([[0,0]]);let offset=0;
  tokens.forEach((t,i)=>{offset+=t.text.length;boundaries.set(offset,i+1);});
  const result:RubyToken[]=[];let previous=0;
  for(const repair of corrections){const end=repair.start+repair.text.length,a=boundaries.get(repair.start),b=boundaries.get(end);
-  if(a===undefined || b===undefined || a<previous || question.figureDescriptionJa.slice(repair.start,end)!==repair.text || !/^[ぁ-ゖー]+$/.test(repair.readingKana))return undefined;
+  if(a===undefined || b===undefined || a<previous || source.slice(repair.start,end)!==repair.text || !/^[ぁ-ゖー]+$/.test(repair.readingKana))return undefined;
   result.push(...tokens.slice(previous,a),{text:repair.text,readingKana:repair.readingKana});previous=b;
  }
- result.push(...tokens.slice(previous));return result.map(t=>t.text).join('')===question.figureDescriptionJa?result:undefined;
+ result.push(...tokens.slice(previous));return result.map(t=>t.text).join('')===source?result:undefined;
 }
+export function mockFigureCaptionTokens(question:PublicMockFigureQuestion){return publicFigureTokens(question,'figureDescription');}
+export function mockFigurePromptTokens(question:PublicMockFigureQuestion){return publicFigureTokens(question,'prompt');}
 function captionSlice(question:PublicMockFigureQuestion,start:number,end:number){
  const tokens=mockFigureCaptionTokens(question);if(!tokens)return undefined;
  const result:RubyToken[]=[];let offset=0;

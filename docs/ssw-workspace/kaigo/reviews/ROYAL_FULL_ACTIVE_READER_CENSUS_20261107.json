@@ -3,7 +3,7 @@
   "sector": "kaigo",
   "reviewedBaseline": "9adfe8361464cf6a4693aee6d4fb689fa1768fa1",
   "freshEquivalentKaigoParent": "2241b86fc716aaf5a865746c573d5135dff937d0",
-  "status": "all_current_active_illustration_routes_including_mocks_self_checked_pending_persistence",
+  "status": "all_current_active_illustration_routes_self_checked_external_acceptance_open",
   "allExistingSupportedAuthoringScopeExhausted": false,
   "humanReviewed": false,
   "nativeReviewed": false,
@@ -2310,7 +2310,6 @@
     "Six explicit master ruby arrays were not a full prose reading census: actual production adds52 legacy fallbacks, and5430 reachable prose paragraphs render plain. See separate debt receipt."
   ],
   "openGates": [
-    "Current mock-route correction persistence",
     "Independent human/native/domain review",
     "Real browser/native/physical device acceptance",
     "Learner duration",
@@ -2695,10 +2694,155 @@
   "currentMockReviewedParent": "eba2d7957334fcb22af70578494b05c9c98e7d5e",
   "mockIllustrationReceipt": "ROYAL_ALL_ACTIVE_MOCK_AND_ROUTE_CENSUS_20261107.json",
   "mockInputSha256": {
-    "src/components/kaigo/KaigoCourse.tsx": "0be9238c82446c830b443774eac1cedfada58c10578b17d9db76e7889eb82fca",
-    "src/components/kaigo/KaigoMockRoyalFigure.tsx": "d726e8ea9b67bb84883f91d3d11e1a84234bfcb89db42e6871f374d784624616",
+    "src/components/kaigo/KaigoCourse.tsx": "c3dfcb8acdbdd6a1797c3628631d88f9303b689411e63f54db468205f43148f1",
+    "src/components/kaigo/KaigoMockRoyalFigure.tsx": "29592d2335b325934ce78319d446c8a51a87c53011b5163c7c1d9f7c0538ec82",
     "src/data/kaigo/royal-mock-figures.json": "427eab3a4550c24927eed30ef0b15e73da779f7c2a12e8392e52ebac22b3b158",
     "src/data/kaigo/royal-mock-figures.ts": "eb531dc8111a4f65b3e5ead3e10c75f4d04e3c0d472aec8823373e6d193e7642",
-    "scripts/kaigo/check-royal-mock-scene-bindings.cjs": "3be62b4f70089ec89628ded4f6bcc9408cfff8697e0a5a00267e0639150996f9"
+    "scripts/kaigo/check-royal-mock-scene-bindings.cjs": "eff162d4fe5714c9b1966a3ab173af6fc5803b4b7cebd98b2d2223c096bc8537"
+  },
+  "mockRoutePersistencePassCommit": "0e4f41826f948dae143601353482f53202e1f713",
+  "mockCaptionPrefixConsistencyFollowup": {
+    "reviewedBaseline": "b375838672b57595e10e6fe354d4d0e5467028ed",
+    "freshEquivalentRuntimeParent": "b29ce871a1f3a3f423cb9400e0983cb43397b0db",
+    "baseMockRoutePersistencePassCommit": "0e4f41826f948dae143601353482f53202e1f713",
+    "scope": "Same3currentpublicquestion-hash-bound figure captions and their exact literal prompt prefixes only. No canonical prose/data/token rewrite.",
+    "questionIds": [
+      "kaigo-skills-mock-05-q41",
+      "kaigo-skills-mock-06-q42",
+      "kaigo-skills-mock-06-q44"
+    ],
+    "changes": "Reuse existing5exact source-caption span corrections in a prompt only when the complete caption is its literal leading substring; preserve all following authored prompt tokens. Other27figure-question prompt token fields unchanged.",
+    "uniqueReadingCorrections": 5,
+    "renderedFieldsRepaired": 6,
+    "proof": {
+      "entryRoute": "Exported KaigoCourse→actual renderMock callback→actual MockExam→actual KaigoMockRoyalFigure",
+      "forms": [
+        {
+          "id": "kaigo-skills-mock-01",
+          "questions": 45,
+          "figureQuestions": 5
+        },
+        {
+          "id": "kaigo-skills-mock-02",
+          "questions": 45,
+          "figureQuestions": 5
+        },
+        {
+          "id": "kaigo-skills-mock-03",
+          "questions": 45,
+          "figureQuestions": 5
+        },
+        {
+          "id": "kaigo-japanese-mock-01",
+          "questions": 15,
+          "figureQuestions": 0
+        },
+        {
+          "id": "kaigo-japanese-mock-02",
+          "questions": 15,
+          "figureQuestions": 0
+        },
+        {
+          "id": "kaigo-japanese-mock-03",
+          "questions": 15,
+          "figureQuestions": 0
+        },
+        {
+          "id": "kaigo-skills-mock-04",
+          "questions": 45,
+          "figureQuestions": 5
+        },
+        {
+          "id": "kaigo-skills-mock-05",
+          "questions": 45,
+          "figureQuestions": 5
+        },
+        {
+          "id": "kaigo-skills-mock-06",
+          "questions": 45,
+          "figureQuestions": 5
+        },
+        {
+          "id": "kaigo-japanese-mock-04",
+          "questions": 15,
+          "figureQuestions": 0
+        },
+        {
+          "id": "kaigo-japanese-mock-05",
+          "questions": 15,
+          "figureQuestions": 0
+        },
+        {
+          "id": "kaigo-japanese-mock-06",
+          "questions": 15,
+          "figureQuestions": 0
+        }
+      ],
+      "activeBindings": 30,
+      "captionReadingArrayChecks": 30,
+      "unchangedPromptTokenFields": 27,
+      "captionPrefixPromptRepairs": 3,
+      "prefixTailTokenPreservation": 3,
+      "selectedBindings": 3,
+      "encodedAssetsHashChecked": 3,
+      "encodedFigureBindings": 29,
+      "nativeControlledTables": 1,
+      "preSubmissionRenders": 3,
+      "submittedLocaleRenders": 39,
+      "expandedPreSubmissionRenders": 3,
+      "actualMockExamStaleConditionRenders": 3,
+      "stalePublicConditionMutations": 18,
+      "submittedTranslationStaleGuards": 36,
+      "japaneseFormsNoFigureRenders": 6,
+      "existingCaptionReadingArraysReused": 30,
+      "nativeTableRows": 0,
+      "focusedReadingRepairs": 5,
+      "sourceSelectionReadsAnswers": false,
+      "preSubmissionTranslationOrAnswerLeak": false,
+      "knownStaleFiguresFailClosed": true,
+      "audit": [
+        {
+          "formId": "kaigo-skills-mock-05",
+          "questionId": "kaigo-skills-mock-05-q41",
+          "figureKey": "s05-judgement-01",
+          "mode": "encoded",
+          "asset": "assets/kaigo/practical/s05-judgement-01.webp",
+          "captionSourceAligned": true
+        },
+        {
+          "formId": "kaigo-skills-mock-06",
+          "questionId": "kaigo-skills-mock-06-q42",
+          "figureKey": "s06-judgement-02",
+          "mode": "encoded",
+          "asset": "assets/kaigo/practical/s06-judgement-02.webp",
+          "captionSourceAligned": true
+        },
+        {
+          "formId": "kaigo-skills-mock-06",
+          "questionId": "kaigo-skills-mock-06-q44",
+          "figureKey": "s06-judgement-04",
+          "mode": "encoded",
+          "asset": "assets/kaigo/practical/s06-judgement-04.webp",
+          "captionSourceAligned": true
+        }
+      ],
+      "method": "Actual production components/functions with structural RN hosts and controlled saved-state hooks; not browser/device/domain/native acceptance."
+    },
+    "invariance": {
+      "allCanonicalQuestionTextTokensOptionsCorrectIndicesRationalesTranslationsRevisionsAndAttemptKeysUnchanged": true,
+      "sameFullPublicQuestionHashAndCaptionPrefixRequired": true,
+      "allThirtyCaptionReadingsRetained": true,
+      "allOtherTwentySevenImageQuestionPromptTokenFieldsIdentical": true,
+      "allThreeQuestionTailTokenArraysIdentical": true,
+      "artAssetsRegistryGeometryAndNineDayReadingInputsUnchanged": true,
+      "dayReading2288NotRerun": true,
+      "noNewArt": true
+    },
+    "inputSha256": {
+      "src/components/kaigo/KaigoCourse.tsx": "c3dfcb8acdbdd6a1797c3628631d88f9303b689411e63f54db468205f43148f1",
+      "src/components/kaigo/KaigoMockRoyalFigure.tsx": "29592d2335b325934ce78319d446c8a51a87c53011b5163c7c1d9f7c0538ec82",
+      "scripts/kaigo/check-royal-mock-scene-bindings.cjs": "eff162d4fe5714c9b1966a3ab173af6fc5803b4b7cebd98b2d2223c096bc8537"
+    },
+    "externalNativeDomainHumanBrowserDeviceAcceptance": false
   }
 }
