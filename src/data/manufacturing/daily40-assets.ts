@@ -1,6 +1,11 @@
 // Generated exact file switch: no artwork is required at module import.
 export function dailyAssetByFile40(file:string):ReturnType<typeof require>|null {
  switch(file){
+  case "assets/manufacturing/royal-weekly-20261107/week03/companions/surface-transport-pause-report.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week03/companions/surface-transport-pause-report.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week07/surface-day44-floor-countermeasure-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week07/surface-day44-floor-countermeasure-review.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week07/electrical-day48-product-sds-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week07/electrical-day48-product-sds-review.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week07/electrical-day46-task-training-ppe-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week07/electrical-day46-task-training-ppe-review.webp");
+  case "assets/manufacturing/royal-weekly-20261107/week07/electrical-day45-fixed-tool-location-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week07/electrical-day45-fixed-tool-location-review.webp");
   case "assets/manufacturing/royal-weekly-20261107/week06/surface-day40-zinc-white-product-review.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week06/surface-day40-zinc-white-product-review.webp");
   case "assets/manufacturing/royal-weekly-20261107/week06/surface-day38-new-lot-check-record.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week06/surface-day38-new-lot-check-record.webp");
   case "assets/manufacturing/royal-weekly-20261107/week06/surface-day36-jig-identity-hold.webp":return require("../../../assets/manufacturing/royal-weekly-20261107/week06/surface-day36-jig-identity-hold.webp");

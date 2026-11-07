@@ -12,6 +12,10 @@ import data from '@/data/manufacturing/royal-week03-companion-figures.json';
 type Figure={id:string;paragraphId?:string;paragraphIds?:string[];assetFile:string;width:number;height:number;labels?:Record<string,string>};
 type Entry={sourceHash:string;captionJa:string;paragraphIds:string[];bindingScopes?:string[][];expectedParagraphsJa:Record<string,string>;nativeParagraphIds?:string[];expectedNativeParagraphsJa?:Record<string,string>;images:Figure[];exactSelectionOnly?:boolean;retainedExistingFigure?:boolean;fullReader?:Entry};
 const sources:Record<string,ReturnType<typeof require>>={
+ 'assets/manufacturing/royal-weekly-20261107/week05/surface-day32-filter-condition-report.webp':require('../../../assets/manufacturing/royal-weekly-20261107/week05/surface-day32-filter-condition-report.webp'),
+ 'assets/manufacturing/royal-weekly-20261107/week05/surface-day35-robot-entry-hold.webp':require('../../../assets/manufacturing/royal-weekly-20261107/week05/surface-day35-robot-entry-hold.webp'),
+ 'assets/manufacturing/royal-weekly-20261107/week07/electrical-day45-fixed-tool-location-review.webp':require('../../../assets/manufacturing/royal-weekly-20261107/week07/electrical-day45-fixed-tool-location-review.webp'),
+ 'assets/manufacturing/royal-weekly-20261107/week07/companions/mechanical-third-angle-section-selected.png':require('../../../assets/manufacturing/royal-weekly-20261107/week07/companions/mechanical-third-angle-section-selected.png'),
  'assets/manufacturing/diagrams/batch36-hall.png':require('../../../assets/manufacturing/diagrams/batch36-hall.png'),
  'assets/manufacturing/diagrams/batch36-thermocouple.png':require('../../../assets/manufacturing/diagrams/batch36-thermocouple.png'),
  'assets/manufacturing/royal-weekly-20261107/week06/companions/electrical-analog-range-twenty-of-fifty.png':require('../../../assets/manufacturing/royal-weekly-20261107/week06/companions/electrical-analog-range-twenty-of-fifty.png'),
