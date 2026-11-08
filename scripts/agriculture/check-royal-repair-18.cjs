@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+// Validate real image bytes, current dependency bindings, and quiz concealment geometry.
+const fs=require('fs'),assert=require('node:assert/strict'),crypto=require('crypto'),cp=require('child_process'),sharp=require('sharp');
+const read=n=>JSON.parse(fs.readFileSync('src/data/agriculture/'+n+'.json'));
+const spec=JSON.parse(fs.readFileSync('docs/ssw-workspace/agriculture/royal-repair-18-20261108/manifest.json'));
+const figures=read('recognition-images').images,exams=read('exam-illustrations').illustrations,questions=read('mock-exams.ja');
+const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const source=fs.readFileSync('src/components/agriculture/RecognitionImages.tsx','utf8');
+const ids=new Set(spec.images.map(r=>r.id));const checks={images:0,quizFigures:0,questions:0,captionReadings:0,translations:0};
+(async()=>{assert.equal(spec.images.length,18);assert.equal(ids.size,18);
+for(const r of spec.images){const f=figures.find(f=>f.id===r.id);assert(f,r.id);assert.equal(f.assetPath,r.assetPath);assert.equal(hash(f.assetPath),f.assetSha256);assert.equal(f.assetSha256,r.assetSha256);assert.notEqual(f.assetSha256,r.originalSha256);const m=await sharp(f.assetPath).metadata();assert.equal(m.width,f.width);assert.equal(m.height,f.height);await sharp(f.assetPath).raw().toBuffer();assert(source.includes("require('../../../"+f.assetPath+"')"),r.id+' wrong real require');assert(!source.includes("require('../../../"+r.originalPath+"')"));checks.images++;
+ const a=read('image-readings').entries[r.id],t=read('recognition-image-locales').entries[r.id];assert.equal(a.assetSha256,f.assetSha256);assert.equal(t.assetSha256,f.assetSha256);for(const field of ['title','observation','limit']){assert.equal(a.fields[field].tokens.map(t=>t.text).join(''),a.fields[field].sourceJapanese);assert.equal(a.fields[field].sourceJapanese,f[field+'Ja']);checks.captionReadings++;}assert.equal(Object.keys(t.locales).length,12);checks.translations+=12;
+ for(const e of exams.filter(e=>e.figureId===r.id)){assert.equal(e.sourceAssetSha256,f.assetSha256);const masks=e.masks;for(const b of masks){for(const k of ['x','y','width','height'])assert(Number.isFinite(b[k])&&b[k]>=0&&b[k]<=1);assert(b.x+b.width<=1.000001);assert(b.y+b.height<=1.000001);}for(const b of r.annotationBoxes){if(b.text==='12.0 °C')continue;const x=Math.max(0,b.x)/r.width,y=Math.max(0,b.y)/r.height,x2=Math.min(r.width,b.x+b.width)/r.width,y2=Math.min(r.height,b.y+b.height)/r.height;assert(masks.some(m=>m.x<=x+.000001&&m.y<=y+.000001&&m.x+m.width>=x2-.000001&&m.y+m.height>=y2-.000001),e.id+' text exposed '+b.text);}assert(masks.some(m=>m.y===0&&m.height>=r.headerHeight/r.height));assert(masks.some(m=>m.y+m.height>=1&&m.y<=1-r.footerHeight/r.height));checks.quizFigures++;}
+}
+const old=JSON.parse(cp.execFileSync('git',['show',spec.baseCommit+':src/data/agriculture/mock-exams.ja.json'],{maxBuffer:30e6}));const before=new Map(old.exams.flatMap(e=>e.questions.map(q=>[q.id,q])));
+for(const e of questions.exams)for(const q of e.questions){let oldQ=before.get(q.id);assert(oldQ);if(q.illustrationId&&exams.some(x=>x.id===q.illustrationId&&ids.has(x.figureId))){assert.equal(q.illustrationRevision,'v3-royal18-20261108');assert.deepEqual({...q,illustrationRevision:oldQ.illustrationRevision},oldQ,'question knowledge or answer changed');checks.questions++;}else assert.deepEqual(q,oldQ);}
+assert.equal(checks.quizFigures,6);assert.equal(checks.questions,11);
+for(const b of Object.values(read('daily-learning-support').figureBindings)){const f=figures.find(x=>x.id===b.figureId);assert.equal(b.assetSha256,f.assetSha256);}
+console.log('PASS royal-repair-18',JSON.stringify(checks));console.log('AI file/pixel review only; physical-device and human/domain approval not claimed.');})();
