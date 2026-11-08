@@ -2,7 +2,7 @@ import { useAppLanguage } from '@/context/LanguageContext';
 import { backPrepared } from '@/components/ui/prepareSceneRoute';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import JlptStudyBackground from '@/components/jlpt/JlptStudyBackground';
-import { generatedVocabulary, getVocabularyMeaning, getVocabularyExampleTranslation, getVocabularyCopy } from '@/data/jlpt-learning';
+import { getStudyVocabularyById, getVocabularyMeaning, getVocabularyExampleTranslation, getVocabularyCopy } from '@/data/jlpt-study-data';
 import { getJlptProgress, toggleLearnedId } from '@/services/jlpt-progress-storage';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
@@ -11,7 +11,7 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { RoyalBackButton, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 export default function VocabularyDetailScreen(){
  const {language}=useAppLanguage(); const copy=getVocabularyCopy(language);
- const p=useLocalSearchParams(); const id=Array.isArray(p.wordId)?p.wordId[0]:p.wordId; const word=generatedVocabulary.find(x=>x.id===id); const [learned,setLearned]=useState(false);
+ const p=useLocalSearchParams(); const id=Array.isArray(p.wordId)?p.wordId[0]:p.wordId; const word=getStudyVocabularyById(id); const [learned,setLearned]=useState(false);
  useEffect(()=>{if(id)void getJlptProgress().then(v=>setLearned(v.learnedIds.includes(id)));},[id]);
  if(!word)return <JlptStudyBackground><SafeAreaView style={s.container}><View style={s.content}><RoyalBackButton onPress={()=>backPrepared()} /><Text>{copy.missing}</Text></View></SafeAreaView></JlptStudyBackground>;
  async function toggle(){const next=await toggleLearnedId(word!.id);setLearned(next.learnedIds.includes(word!.id));}

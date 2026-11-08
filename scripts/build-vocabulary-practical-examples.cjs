@@ -50,13 +50,13 @@ for(const [id,item]of Object.entries(output.entries)){
 const entries=Object.fromEntries(Object.entries(legacyEntries).filter(([id,item])=>JSON.stringify(item)!==JSON.stringify(baseline.entries[id])));
 fs.writeFileSync(target,JSON.stringify({generatedBy:'AI',nativeReviewed:false,entries},null,2)+'\n');
 const shardDir=path.join(dataDir,'vocabulary-practical-example-shards');fs.mkdirSync(shardDir,{recursive:true});
-const crypto=require('node:crypto'),files=[],imports=[],spreads=[];
+const crypto=require('node:crypto'),files=[];
 for(const [file,entries]of Object.entries(shardEntries).sort(([a],[b])=>a.localeCompare(b))){
  const text=JSON.stringify({generatedBy:'AI',nativeReviewed:false,entries},null,2)+'\n';
  fs.writeFileSync(path.join(shardDir,file),text);
  files.push({file,entries:Object.keys(entries).length,sha256:crypto.createHash('sha256').update(text).digest('hex')});
- const name='shard'+imports.length;imports.push(`import ${name} from './vocabulary-practical-example-shards/${file}';`);spreads.push(`    ...${name}.entries,`);
+
 }
 fs.writeFileSync(path.join(shardDir,'manifest.json'),JSON.stringify({generatedBy:'AI',nativeReviewed:false,entries:files.reduce((n,f)=>n+f.entries,0),files},null,2)+'\n');
-fs.writeFileSync(path.join(dataDir,'vocabulary-practical-example-shards.ts'),imports.join('\n')+'\nexport const practicalExampleShardEntries = {\n'+spreads.join('\n')+'\n};\n');
+require('./generate-vocabulary-shard-loader.cjs')(root);
 console.log(JSON.stringify({completeAddedEntries:Object.keys(output.entries).length,overlayEntries:Object.keys(entries).length,shardEntries:files.reduce((n,f)=>n+f.entries,0),pendingAuthoredEntries:pending.length}));

@@ -1,12 +1,16 @@
-import { localizeVocabulary } from './vocabulary-localization';
-export { getVocabularyMeaning, getVocabularyExampleTranslation, getVocabularyCopy, vocabularyCountText } from './vocabulary-localization';
-import grammarJson from '@/data/generated/grammar.json';
-import grammarExampleLocalizationsJson from '@/data/generated/grammar-example-localizations.json';
-import grammarMeaningTranslationsJson from '@/data/generated/grammar-meaning-translations.json';
-import vocabularyJson from '@/data/generated/vocabulary.json';
-import grammarBindingsJson from '@/data/generated/grammar-source-bindings.json';
+/* eslint-disable @typescript-eslint/no-require-imports -- Literal requires keep offline data deferred. */
+import { lazyArray } from '@/services/lazy-array';
 import { getGrammarCopy } from '@/i18n/grammar-copy';
 import type { AppLanguageCode } from '@/i18n/languages';
+// Keep the public helpers while deferring vocabulary's locale packs and indexes.
+export const getVocabularyMeaning: typeof import('./vocabulary-localization').getVocabularyMeaning = (...args) =>
+    require('./vocabulary-localization').getVocabularyMeaning(...args);
+export const getVocabularyExampleTranslation: typeof import('./vocabulary-localization').getVocabularyExampleTranslation = (...args) =>
+    require('./vocabulary-localization').getVocabularyExampleTranslation(...args);
+export const getVocabularyCopy: typeof import('./vocabulary-localization').getVocabularyCopy = (...args) =>
+    require('./vocabulary-localization').getVocabularyCopy(...args);
+export const vocabularyCountText: typeof import('./vocabulary-localization').vocabularyCountText = (...args) =>
+    require('./vocabulary-localization').vocabularyCountText(...args);
 
 export type JlptLevel = 'N5' | 'N4' | 'N3' | 'N2' | 'N1';
 export type LearningSection =
@@ -87,35 +91,61 @@ export type GeneratedScenario = {
     status?: string;
 };
 
-export const generatedVocabulary = (vocabularyJson as GeneratedVocabulary[]).map(localizeVocabulary);
-
-const grammarMeaningTranslations = grammarMeaningTranslationsJson as Record<
-    string,
-    Partial<Record<Exclude<AppLanguageCode, 'vi'>, string>>
->;
+const localizedWords = new WeakMap<GeneratedVocabulary, GeneratedVocabulary>();
+function vocabularyRows(): GeneratedVocabulary[] {
+    return require('@/data/generated/vocabulary.json') as GeneratedVocabulary[];
+}
+function localizedWord(row: GeneratedVocabulary): GeneratedVocabulary {
+    let word = localizedWords.get(row);
+    if (!word) {
+        const { localizeVocabulary } = require('./vocabulary-localization') as typeof import('./vocabulary-localization');
+        word = localizeVocabulary(row);
+        localizedWords.set(row, word);
+    }
+    return word;
+}
+export const generatedVocabulary = lazyArray<GeneratedVocabulary>(() => vocabularyRows().map(localizedWord));
+const vocabularyByLevel = new Map<JlptLevel, GeneratedVocabulary[]>();
+/** Preserve global search; ordinary level entry localizes only that level. */
+export function getVocabularyForLevel(level: JlptLevel): GeneratedVocabulary[] {
+    let words = vocabularyByLevel.get(level);
+    if (!words) {
+        words = vocabularyRows().filter(row => row.jlpt === level).map(localizedWord);
+        vocabularyByLevel.set(level, words);
+    }
+    return words;
+}
+export function getStudyVocabularyById(id: string | undefined): GeneratedVocabulary | undefined {
+    const row = vocabularyRows().find(item => item.id === id);
+    return row ? localizedWord(row) : undefined;
+}
 
 type GrammarExampleLocalization = {
     reading: string;
     translations: Record<Exclude<AppLanguageCode, 'ja'>, string>;
 };
 
-const grammarExampleLocalizations = grammarExampleLocalizationsJson as Record<
-    string,
-    GrammarExampleLocalization
->;
-
-const grammarBindings = grammarBindingsJson as Record<string, {name:string; meaningVi:string; pattern:string; exampleJa:string}>;
-export const generatedGrammar = (grammarJson as GeneratedGrammar[]).map((item) => {
-    const binding = grammarBindings[item.id];
-    const meaningMatches = binding?.name === item.name && binding.meaningVi === item.meaningVi && binding.pattern === item.pattern;
-    const exampleMatches = binding?.exampleJa === item.exampleJa;
-    return {
-        ...item,
-        meaningTranslations: meaningMatches ? grammarMeaningTranslations[item.id] : {},
-        exampleReading: exampleMatches ? grammarExampleLocalizations[item.id]?.reading : undefined,
-        exampleTranslations: exampleMatches ? grammarExampleLocalizations[item.id]?.translations : {},
-    };
-}) as GeneratedGrammar[];
+export const generatedGrammar = lazyArray<GeneratedGrammar>(() => {
+    const rows = require('@/data/generated/grammar.json') as GeneratedGrammar[];
+    const meanings = require('@/data/generated/grammar-meaning-translations.json') as Record<
+        string, Partial<Record<Exclude<AppLanguageCode, 'vi'>, string>>
+    >;
+    const examples = require('@/data/generated/grammar-example-localizations.json') as Record<string, GrammarExampleLocalization>;
+    const bindings = require('@/data/generated/grammar-source-bindings.json') as Record<
+        string, {name:string; meaningVi:string; pattern:string; exampleJa:string}
+    >;
+    return rows.map(item => {
+        const binding = bindings[item.id];
+        const meaningMatches = binding?.name === item.name && binding.meaningVi === item.meaningVi && binding.pattern === item.pattern;
+        const exampleMatches = binding?.exampleJa === item.exampleJa;
+        return {
+            ...item,
+            meaningTranslations: meaningMatches ? meanings[item.id] : {},
+            exampleReading: exampleMatches ? examples[item.id]?.reading : undefined,
+            exampleTranslations: exampleMatches ? examples[item.id]?.translations : {},
+        };
+    });
+});
 
 export const hiraganaRows = [
     ['あ', 'い', 'う', 'え', 'お'], ['か', 'き', 'く', 'け', 'こ'],

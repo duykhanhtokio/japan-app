@@ -1,28 +1,6 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- Load authored packs only when their API is used. */
 import type { AppLanguageCode } from '@/i18n/languages';
-import meanings from './generated/vocabulary-meaning-localizations.json';
-import examples from './generated/vocabulary-example-localizations.json';
-import copyJson from './generated/vocabulary-ui-localizations.json';
-import sourceJson from './generated/vocabulary-localization-source.json';
-import repairsJson from './generated/vocabulary-source-repairs.json';
-import canonicalJson from './generated/vocabulary.json';
-import practicalExamplesJson from './generated/vocabulary-practical-examples.json';
-import practicalExampleAdditionsJson from './generated/vocabulary-practical-example-additions.json';
-import { practicalExampleShardEntries } from './generated/vocabulary-practical-example-shards';
-import plannedSource from './generated/vocabulary-planned-source.json';
-import plannedBindings from './generated/vocabulary-planned-bindings.json';
-import en from './generated/vocabulary-localizations/en.json';
-import vi from './generated/vocabulary-localizations/vi.json';
-import id from './generated/vocabulary-localizations/id.json';
-import zhCN from './generated/vocabulary-localizations/zh-CN.json';
-import zhTW from './generated/vocabulary-localizations/zh-TW.json';
-import hi from './generated/vocabulary-localizations/hi.json';
-import bn from './generated/vocabulary-localizations/bn.json';
-import ne from './generated/vocabulary-localizations/ne.json';
-import my from './generated/vocabulary-localizations/my.json';
-import th from './generated/vocabulary-localizations/th.json';
-import km from './generated/vocabulary-localizations/km.json';
-import tl from './generated/vocabulary-localizations/tl.json';
-
+import { lazyRecord } from '@/services/lazy-record';
 type LocalizedText = Partial<Record<AppLanguageCode, string>>;
 type VocabularyText = {
     id: string;
@@ -35,20 +13,36 @@ type VocabularyText = {
     exampleVi?: string;
     exampleTranslations?: LocalizedText;
 };
-const meaningBundles = meanings as Record<string, { word: string; reading: string; translations: LocalizedText }>;
-const exampleBundles = examples as Record<string, { sourceJa: string; translations: LocalizedText }>;
+const meaningBundles = lazyRecord(() => require('./generated/vocabulary-meaning-localizations.json') as Record<string, { word: string; reading: string; translations: LocalizedText }>);
+const exampleBundles = lazyRecord(() => require('./generated/vocabulary-example-localizations.json') as Record<string, { sourceJa: string; translations: LocalizedText }>);
 const nonempty = (value?: string) => value?.trim() ? value : undefined;
 type TranslationBundle = { locale: string; meanings: Record<string, string>; examples: Record<string, string>; plannedMeanings?: Record<string, string> };
-const bundles: Partial<Record<AppLanguageCode, TranslationBundle>> = { en, vi, id, 'zh-CN': zhCN, 'zh-TW': zhTW, hi, bn, ne, my, th, km, tl };
-const source = sourceJson.canonical as Record<string, { word: string; reading: string; exampleJa?: string }>;
-const repairs = repairsJson as Record<string, { originalWord: string; originalReading: string; originalExampleJa?: string; word: string; reading: string; meaningEn?: string; meaningVi?: string; meaningTranslations?: LocalizedText; exampleJa?: string; exampleVi?: string }>;
+const bundles = lazyRecord(() => ({
+    'en': require('./generated/vocabulary-localizations/en.json'),
+    'vi': require('./generated/vocabulary-localizations/vi.json'),
+    'id': require('./generated/vocabulary-localizations/id.json'),
+    'zh-CN': require('./generated/vocabulary-localizations/zh-CN.json'),
+    'zh-TW': require('./generated/vocabulary-localizations/zh-TW.json'),
+    'hi': require('./generated/vocabulary-localizations/hi.json'),
+    'bn': require('./generated/vocabulary-localizations/bn.json'),
+    'ne': require('./generated/vocabulary-localizations/ne.json'),
+    'my': require('./generated/vocabulary-localizations/my.json'),
+    'th': require('./generated/vocabulary-localizations/th.json'),
+    'km': require('./generated/vocabulary-localizations/km.json'),
+    'tl': require('./generated/vocabulary-localizations/tl.json'),
+}) as Partial<Record<AppLanguageCode, TranslationBundle>>);
+const source = lazyRecord(() => require('./generated/vocabulary-localization-source.json').canonical as Record<string, { word: string; reading: string; exampleJa?: string }>);
+const repairs = lazyRecord(() => require('./generated/vocabulary-source-repairs.json') as Record<string, { originalWord: string; originalReading: string; originalExampleJa?: string; word: string; reading: string; meaningEn?: string; meaningVi?: string; meaningTranslations?: LocalizedText; exampleJa?: string; exampleVi?: string }>);
 type PracticalExample = {
     word: string;
     reading: string;
     sourceJa: string;
     translations: Record<Exclude<AppLanguageCode, 'ja'>, string>;
 };
-const practicalExamples = { ...practicalExamplesJson.entries, ...practicalExampleAdditionsJson.entries, ...practicalExampleShardEntries } as Record<string, PracticalExample>;
+const practicalExamples = lazyRecord(() => ({
+    ...require('./generated/vocabulary-practical-examples.json').entries,
+    ...require('./generated/vocabulary-practical-example-additions.json').entries,
+}) as Record<string, PracticalExample>);
 
 function withPracticalExample<T extends VocabularyText>(item: T): T {
     const repair = repairs[item.id];
@@ -57,7 +51,7 @@ function withPracticalExample<T extends VocabularyText>(item: T): T {
         item = { ...item, meaningTranslations, meaningEn: meaningTranslations.en ?? item.meaningEn,
             meaningVi: meaningTranslations.vi ?? item.meaningVi };
     }
-    const example = practicalExamples[item.id];
+    const example = (require('./generated/vocabulary-practical-example-shards') as typeof import('./generated/vocabulary-practical-example-shards')).getPracticalExampleShardEntry(item.id) ?? practicalExamples[item.id];
     // A changed headword, reading or source sentence must never inherit an old translation.
     if (!example || example.word !== item.word || example.reading !== item.reading
         || (nonempty(item.exampleJa) && item.exampleJa !== example.sourceJa)) return item;
@@ -66,7 +60,7 @@ function withPracticalExample<T extends VocabularyText>(item: T): T {
 }
 
 export function getVocabularyCopy(language: AppLanguageCode) {
-    return copyJson[language];
+    return (require('./generated/vocabulary-ui-localizations.json') as typeof import('./generated/vocabulary-ui-localizations.json'))[language];
 }
 
 export function vocabularyCountText(pattern: string, count: number, language: AppLanguageCode) {
@@ -106,33 +100,52 @@ export function localizeVocabulary<T extends VocabularyText>(item: T): T {
 }
 
 // Explicitly reviewed word/reading aliases avoid treating homophones as the same word.
-const canonicalById = new Map(canonicalJson.map(item => [item.id, item]));
+type CanonicalWord = (typeof import('./generated/vocabulary.json'))[number];
+let canonicalIdIndex: Map<string, CanonicalWord> | undefined;
+function canonicalById() {
+    return canonicalIdIndex ?? (canonicalIdIndex = new Map(
+        (require('./generated/vocabulary.json') as CanonicalWord[]).map(item => [item.id, item]),
+    ));
+}
 const japaneseKey = (word: string, reading: string) => `${word.normalize('NFKC')}|${reading.normalize('NFKC').replace(/[ァ-ヶ]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0x60))}`;
-const canonicalByJapanese = new Map<string, (typeof canonicalJson)[number]>();
-for (const item of canonicalJson) {
-    const bound = source[item.id] ?? item;
-    const key = japaneseKey(bound.word, bound.reading);
-    if (!canonicalByJapanese.has(key)) canonicalByJapanese.set(key, item);
+let japaneseIndex: Map<string, CanonicalWord> | undefined;
+function canonicalByJapanese() {
+    if (!japaneseIndex) {
+        const index = new Map<string, CanonicalWord>();
+        for (const item of canonicalById().values()) {
+            const bound = source[item.id] ?? item;
+            const key = japaneseKey(bound.word, bound.reading);
+            if (!index.has(key)) index.set(key, item);
+        }
+        japaneseIndex = index;
+    }
+    return japaneseIndex;
 }
 export function findVocabularyByJapanese(word: string, reading: string) {
-    const item = canonicalByJapanese.get(japaneseKey(word, reading));
+    const item = canonicalByJapanese().get(japaneseKey(word, reading));
     return item ? localizeVocabulary(item) : undefined;
 }
-const plannedById = new Map(plannedSource.map(item => [item.id, item]));
-const curriculumBindings = plannedBindings as Record<string, { canonicalId?: string; plannedId?: string }>;
+type PlannedWord = (typeof import('./generated/vocabulary-planned-source.json'))[number];
+let plannedIdIndex: Map<string, PlannedWord> | undefined;
+function plannedById() {
+    return plannedIdIndex ?? (plannedIdIndex = new Map(
+        (require('./generated/vocabulary-planned-source.json') as PlannedWord[]).map(item => [item.id, item]),
+    ));
+}
+const curriculumBindings = lazyRecord(() => require('./generated/vocabulary-planned-bindings.json') as Record<string, { canonicalId?: string; plannedId?: string }>);
 export function getPlannedVocabularyItem(word: string, reading: string) {
     const id = curriculumBindings[`${word}|${reading}`]?.canonicalId;
-    const item = id ? canonicalById.get(id) : undefined;
+    const item = id ? canonicalById().get(id) : undefined;
     return item ? localizeVocabulary(item) : undefined;
 }
 export function getPlannedVocabularyMeaning(word: string, reading: string, language: AppLanguageCode) {
     if (language === 'ja') return word;
     const binding = curriculumBindings[`${word}|${reading}`];
     if (binding?.plannedId) {
-        const item = plannedById.get(binding.plannedId);
+        const item = plannedById().get(binding.plannedId);
         if (item?.word === word && item.reading === reading) return nonempty(bundles[language]?.plannedMeanings?.[item.id]) ?? getVocabularyCopy(language).pending;
     }
-    const item = binding?.canonicalId ? canonicalById.get(binding.canonicalId) : undefined;
+    const item = binding?.canonicalId ? canonicalById().get(binding.canonicalId) : undefined;
     return item ? getVocabularyMeaning(localizeVocabulary(item), language) : getVocabularyCopy(language).pending;
 }
 
