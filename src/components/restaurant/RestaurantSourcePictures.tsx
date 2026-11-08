@@ -1,3 +1,4 @@
+import {fitFigure} from '@/components/tokutei/figure-layout';
 import {restaurantSourceCaptionReading} from './RestaurantSourceCaptionReadings';
 import {restaurantTechnicalVisualReading} from './RestaurantTechnicalVisualReadings';
 import {restaurantCurrencyDenomination,restaurantCurrencyLabel} from './RestaurantCurrencyDenomination';
@@ -25,7 +26,7 @@ export function sourcePictureFrame31(figure:SourceFigure31,width:number){
 }
 function sourceCaptionReading31(figure:SourceFigure31){return restaurantSourceCaptionReading(figure)??restaurantWeek11CaptionReading(figure)??restaurantWeek09CaptionReading(figure);}
 export function SourcePicture31({figure,label,width,language='ja',showTranslation=false,translatedCaption}:{figure:SourceFigure31;label:string;width?:number;language?:string;showTranslation?:boolean;translatedCaption?:string}){
- const window=useWindowDimensions(),[measured,setMeasured]=useState(0),royal=royalRestaurantSourceFigure(figure),image=royal?.source??sourceFigureAsset31(figure),frame=sourcePictureFrame31(royal?.figure??figure,width??(measured||Math.max(1,window.width-32)));
+ const window=useWindowDimensions(),[measured,setMeasured]=useState(0),royal=royalRestaurantSourceFigure(figure),image=royal?.source??sourceFigureAsset31(figure),frame=sourcePictureFrame31(royal?.figure??figure,width??fitFigure((royal?.figure??figure).cropBox?.width??(royal?.figure??figure).width,(royal?.figure??figure).cropBox?.height??(royal?.figure??figure).height,measured||Math.max(1,window.width-64),260).width);
  const week11=restaurantWeek11TechnicalKind(figure);
  if(week11)return <View onLayout={event=>{const next=event.nativeEvent.layout.width;if(!width&&Number.isFinite(next)&&next>0)setMeasured(next);}} style={{gap:10}}><RestaurantWeek11TechnicalFigure kind={week11} label={label} language={language} showTranslation={showTranslation} width={width??(measured||Math.max(1,window.width-32))}/><View testID={`source31-native-caption-${figure.id}`}><RestaurantReading text={figure.captionJa} segments={sourceCaptionReading31(figure)}/></View>{translatedCaption&&<TranslationText>{translatedCaption}</TranslationText>}</View>;
  const week10=restaurantWeek10TechnicalKind(figure);

@@ -1,3 +1,4 @@
+import {StudyFigure,StudyFigureViewer} from '@/components/tokutei/StudyFigure';
 import {useState} from 'react';
 import ui from '@/data/food-manufacturing/daily-ui-translations.json';
 import {foodRoyalSafetySignsFor} from '@/data/food-manufacturing/royal-safety-signs';
@@ -26,12 +27,12 @@ export function FoodSafetySigns({lesson,textColor,readingColor,language,showTran
  <FoodLessonRuby lesson={lesson} field={`paragraphs.${id}.titleJa`} text={p.titleJa} color={textColor} readingColor={readingColor} heading/>
  {translated&&<TranslationText>{translated.paragraphs[id]}</TranslationText>}
  <View style={s.grid}>{data.signs.map((sign,i)=>(lesson.id===data.lessonId?sign.paragraphId===id:allowed(sign.id))?<View key={sign.id} testID={`food-sign-${sign.id}`} style={s.card}>
- <Pressable accessibilityRole="button" accessibilityLabel={description(i)} onPress={()=>setExpanded(selectionKey(sign.id))}><Image source={foodSafetySignImages[i]} accessibilityLabel={description(i)} resizeMode="contain" style={s.image}/></Pressable>
+ <Pressable accessibilityRole="button" accessibilityLabel={description(i)} onPress={()=>setExpanded(selectionKey(sign.id))}><StudyFigure source={foodSafetySignImages[i]} accessibilityLabel={description(i)} resizeMode="contain" style={s.image}/></Pressable>
  <View accessible accessibilityLabel={sign.ja}><Text style={[s.reading,{color:readingColor}]}>{sign.reading}</Text><Text style={[s.label,{color:textColor}]}>{sign.ja}</Text></View>
  {labels&&<TranslationText>{labels.labels[i]}</TranslationText>}
  </View>:null)}</View>
  </View>:null;})}
- <Modal visible={selectedIndex>=0} animationType="none" onRequestClose={()=>setExpanded(null)}><View style={s.modal}><Pressable accessibilityRole="button" accessibilityLabel={`図を閉じる${close?` · ${close}`:''}`} onPress={()=>setExpanded(null)}><Text style={s.close}>図を閉じる{close?` · ${close}`:''}</Text></Pressable><ScrollView>{selectedIndex>=0&&<View testID={`food-sign-${data.signs[selectedIndex].id}-zoom`}><Image source={foodSafetySignImages[selectedIndex]} accessibilityLabel={description(selectedIndex)} resizeMode="contain" style={s.zoom}/><Text style={[s.reading,{color:'#596267'}]}>{data.signs[selectedIndex].reading}</Text><Text style={s.close}>{description(selectedIndex)}</Text></View>}</ScrollView></View></Modal>
+ {selectedIndex>=0&&<StudyFigureViewer visible onClose={()=>setExpanded(null)} source={foodSafetySignImages[selectedIndex]} width={1} height={1} alt={description(selectedIndex)}/>}
  </View>;
 }
 const s=StyleSheet.create({modal:{flex:1,backgroundColor:'#fffaf0',padding:20,paddingTop:36},close:{color:'#183044',fontSize:17,lineHeight:28,padding:12},zoom:{width:'100%',aspectRatio:1},root:{gap:12,paddingVertical:16},group:{gap:12},grid:{flexDirection:'row',flexWrap:'wrap',gap:12},card:{flexBasis:'45%',flexGrow:1,minWidth:120,maxWidth:280,padding:8,gap:8,borderWidth:1,borderColor:'#aa9570',borderRadius:8},image:{width:'100%',aspectRatio:1},reading:{fontSize:10,lineHeight:17,textAlign:'center',maxWidth:'100%'},label:{fontSize:17,lineHeight:28,textAlign:'center',maxWidth:'100%'},notice:{fontSize:15,lineHeight:25,borderWidth:1,borderColor:'#aa9570',padding:10}});

@@ -9,7 +9,7 @@ import {
   RoyalContentPanel,
   RoyalExplanationPanel,
 } from "@/components/ui/RoyalPanels";
-import { useStudyAppearance } from "./StudyAppearance";
+import { ReadingAppearanceControl, useStudyAppearance } from "./StudyAppearance";
 
 export function TokuteiHeader({
   title,
@@ -23,7 +23,7 @@ export function TokuteiHeader({
   const { dark } = useStudyAppearance();
   const HeaderPanel = dark ? RoyalExplanationPanel : RoyalContentPanel;
   return (
-    <View testID="tokutei-header" style={s.header}>
+    <View><View testID="tokutei-header" style={s.header}>
       <RoyalBackButton onPress={onBack} />
       <HeaderPanel style={s.headingPanel}>
         <Text style={[s.title, dark && { color: "#f2db9b" }]}>{title}</Text>
@@ -33,7 +33,7 @@ export function TokuteiHeader({
           </Text>
         )}
       </HeaderPanel>
-    </View>
+    </View><View style={{paddingHorizontal:16}}><ReadingAppearanceControl/></View></View>
   );
 }
 export function TokuteiDayCard({
@@ -51,6 +51,8 @@ export function TokuteiDayCard({
   onPress: () => void;
   testID: string;
 }) {
+  const {dark,colors}=useStudyAppearance();
+  const Panel=dark?RoyalExplanationPanel:RoyalContentPanel;
   return (
     <Pressable
       testID={testID}
@@ -65,7 +67,7 @@ export function TokuteiDayCard({
         disabled && { opacity: 0.45 },
       ]}
     >
-      <RoyalContentPanel style={s.dayPanel}>
+      <Panel style={s.dayPanel}>
         <View pointerEvents="none" style={s.dayContent}>
           <View style={s.dayBadge}>
             <Image
@@ -77,13 +79,13 @@ export function TokuteiDayCard({
             <Text style={s.dayLabel}>日目</Text>
           </View>
           <View style={s.dayText}>
-            <Text style={s.dayTitle}>{title}</Text>
-            <Text style={[s.status, done && s.done]}>
+            <Text style={[s.dayTitle,{color:colors.text}]}>{title}</Text>
+            <Text style={[s.status, done && s.done,{color:done?(dark?'#9ee0ac':'#287445'):colors.muted}]}>
               {done ? "✓ 学習済み" : "学習を開く →"}
             </Text>
           </View>
         </View>
-      </RoyalContentPanel>
+      </Panel>
     </Pressable>
   );
 }

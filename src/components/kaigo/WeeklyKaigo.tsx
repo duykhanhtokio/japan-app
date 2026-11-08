@@ -1,3 +1,5 @@
+import {StudyCalendar} from '@/components/tokutei/StudyCalendar';
+import {StudyFigure} from '@/components/tokutei/StudyFigure';
 import {illustrationRubyTokensFor} from '@/data/kaigo/illustration-readings';
 import {KaigoAnatomyTermsFigure} from './KaigoAnatomyTermsFigure';
 import { royalInlineFigure } from '@/data/kaigo/royal-inline-figures';
@@ -488,7 +490,7 @@ export function DayReading({
     ) : null;
   return (
     <View testID="kaigo-japanese-reader">
-      <ReadingAppearanceControl />
+
       <Action
         title={translationOpen ? "翻訳を閉じる" : "翻訳を見る"}
         testID="kaigo-translation"
@@ -521,16 +523,12 @@ export function DayReading({
       {figures.length > 0 ? figures.map(figure => (
         <View key={figure.id} testID={`kaigo-knowledge-figure-${entry.day}-${figure.id}`}>
           <JapaneseText text={figure.titleJa} tokens={illustrationRubyTokensFor(figure.titleJa)} testID={`kaigo-figure-title-${entry.day}-${figure.id}`} />
-          <Pressable accessibilityRole="button" accessibilityLabel={figure.altJa} onPress={() => setExpandedFigure(expandedFigure === figure.id ? null : figure.id)}>
-            <ScrollView horizontal={expandedFigure === figure.id} contentContainerStyle={{ flexGrow: 1 }} maximumZoomScale={3} minimumZoomScale={1}>
-              {((entry.day===163 && figure.id==='digestive') || (entry.day===164 && figure.id==='male-terms')) ? <KaigoAnatomyTermsFigure source={figure.source} kind={entry.day===163?'colon':'male'} language={translationOpen ? language : 'ja'} expanded={expandedFigure === figure.id} /> : (figure.id === 'hand-regions-royal-week01' || ([161,171].includes(entry.day) && figure.id==='hand-regions')) ? <KaigoHandRegionFigure source={figure.source} language={translationOpen ? language : 'ja'} expanded={expandedFigure === figure.id} /> : (figure.id === 'brain-royal-week02' || figure.id === 'respiratory-royal-week02' || (entry.day===112 && figure.id==='skin') || (entry.day===134 && figure.id==='oral-ownership') || (entry.day===99 && figure.id==='grooming') || (entry.day===92 && figure.id==='brain-lobes') || (entry.day===96 && figure.id==='urinary') || (entry.day===71 && figure.id==='skeleton') || (entry.day===72 && figure.id==='skeleton') || (entry.day===73 && figure.id==='muscles') || (entry.day===74 && figure.id==='eye') || (entry.day===75 && figure.id==='heart') || (entry.day===76 && figure.id==='digestive') || (entry.day===77 && figure.id==='endocrine') || (entry.day===67 && figure.id==='nervous') || (entry.day===70 && figure.id==='pupils') || (entry.day===15 && figure.id==='muscles') || (entry.day===27 && figure.id==='endocrine') || (entry.day===29 && figure.id==='urinary') || (entry.day===37 && figure.id==='oral-ownership') || (entry.day===38 && figure.id==='skin') || (entry.day===39 && figure.id==='grooming')) ? <KaigoRoyalTechnicalFigure kind={figure.id==='brain-lobes'?'lobes':figure.id==='skeleton'?'skeleton':figure.id==='eye'?'eye':figure.id==='heart'?'heart':figure.id==='digestive'?'digestive':figure.id==='nervous'?'nervous':figure.id==='pupils'?'pupils':figure.id==='oral-ownership'?'oralOwnership':figure.id==='skin'?'skin':figure.id==='grooming'?'grooming':figure.id==='urinary'?'urinary':figure.id==='endocrine'?'endocrine':figure.id==='muscles'?'muscles':figure.id === 'brain-royal-week02' ? 'brain' : 'respiratory'} source={figure.source} language={translationOpen ? language : 'ja'} expanded={expandedFigure === figure.id} /> : <Image source={figure.source} accessibilityLabel={figure.altJa} resizeMode="contain"
-                style={expandedFigure === figure.id ? { width: 1000, height: 1000 / figure.aspectRatio } : { width: "100%", aspectRatio: figure.aspectRatio }} />}
-            </ScrollView>
-          </Pressable>
+          <StudyFigure source={figure.source} width={figure.aspectRatio} height={1} alt={figure.altJa} renderPicture={(w,h)=>(((entry.day===163 && figure.id==='digestive') || (entry.day===164 && figure.id==='male-terms')) ? <KaigoAnatomyTermsFigure source={figure.source} kind={entry.day===163?'colon':'male'} language={translationOpen ? language : 'ja'} renderWidth={w} /> : (figure.id === 'hand-regions-royal-week01' || ([161,171].includes(entry.day) && figure.id==='hand-regions')) ? <KaigoHandRegionFigure source={figure.source} language={translationOpen ? language : 'ja'} renderWidth={w} /> : (figure.id === 'brain-royal-week02' || figure.id === 'respiratory-royal-week02' || (entry.day===112 && figure.id==='skin') || (entry.day===134 && figure.id==='oral-ownership') || (entry.day===99 && figure.id==='grooming') || (entry.day===92 && figure.id==='brain-lobes') || (entry.day===96 && figure.id==='urinary') || (entry.day===71 && figure.id==='skeleton') || (entry.day===72 && figure.id==='skeleton') || (entry.day===73 && figure.id==='muscles') || (entry.day===74 && figure.id==='eye') || (entry.day===75 && figure.id==='heart') || (entry.day===76 && figure.id==='digestive') || (entry.day===77 && figure.id==='endocrine') || (entry.day===67 && figure.id==='nervous') || (entry.day===70 && figure.id==='pupils') || (entry.day===15 && figure.id==='muscles') || (entry.day===27 && figure.id==='endocrine') || (entry.day===29 && figure.id==='urinary') || (entry.day===37 && figure.id==='oral-ownership') || (entry.day===38 && figure.id==='skin') || (entry.day===39 && figure.id==='grooming')) ? <KaigoRoyalTechnicalFigure kind={figure.id==='brain-lobes'?'lobes':figure.id==='skeleton'?'skeleton':figure.id==='eye'?'eye':figure.id==='heart'?'heart':figure.id==='digestive'?'digestive':figure.id==='nervous'?'nervous':figure.id==='pupils'?'pupils':figure.id==='oral-ownership'?'oralOwnership':figure.id==='skin'?'skin':figure.id==='grooming'?'grooming':figure.id==='urinary'?'urinary':figure.id==='endocrine'?'endocrine':figure.id==='muscles'?'muscles':figure.id === 'brain-royal-week02' ? 'brain' : 'respiratory'} source={figure.source} language={translationOpen ? language : 'ja'} renderWidth={w} /> : <Image source={figure.source} accessibilityLabel={figure.altJa} resizeMode="contain" style={{width:w,height:h}}/>)}/>
+
           {translationOpen && translationForMaster(figure.sourceSectionId, language) && <TranslationText>{translationForMaster(figure.sourceSectionId, language)!.heading}</TranslationText>}
           <Text style={[s.meta, { color: colors.muted }]}>図を押すと拡大・縮小できます。</Text>
         </View>
-      )) : <Image
+      )) : <StudyFigure
         testID={`kaigo-day-art-${entry.day}`}
         accessibilityLabel={contextAccessibilityLabel}
         source={cover.source}
@@ -546,7 +544,7 @@ export function DayReading({
         ? <TranslationText>{royalCaptionForStudyDay(entry.day, language) ?? lessonTranslation.artCaption}</TranslationText>
         : !masterLesson && translated(cover.captionVi)}
       {figures.length > 0 && kaigoRoyalWeeklyArt[entry.day] && <View testID={`kaigo-supplemental-context-${entry.day}`}>
-        <Image
+        <StudyFigure
           testID={`kaigo-day-art-${entry.day}`}
           accessibilityLabel={contextAccessibilityLabel}
           source={cover.source}
@@ -630,7 +628,7 @@ export function DayReading({
             const royalFigure=royalInlineFigure(entry.day,section.id,figure.key);
             return (
             <View key={figure.key}>
-              {royalFigure ? <ScrollView horizontal={expandedFigure===figure.key} contentContainerStyle={{flexGrow:1}}><KaigoRoyalTechnicalFigure kind={royalFigure.kind} source={royalFigure.source} language={translationOpen ? language : 'ja'} expanded={expandedFigure===figure.key} /></ScrollView> : <Image
+              {royalFigure ? <StudyFigure source={royalFigure.source} width={1.5} height={1} alt={section.figureCaptionsJa?.[figure.key]??section.heading} renderPicture={w=><KaigoRoyalTechnicalFigure kind={royalFigure.kind} source={royalFigure.source} language={translationOpen ? language : 'ja'} renderWidth={w}/>}/> : <StudyFigure
                 source={kaigoDepthFigures[figure.key]}
                 resizeMode="contain"
                 style={{
@@ -639,7 +637,6 @@ export function DayReading({
                   maxHeight: 320,
                 }}
               />}
-              {royalFigure && <Action title="図を拡大・縮小" testID={`kaigo-inline-zoom-${entry.day}-${figure.key}`} onPress={() => setExpandedFigure(expandedFigure===figure.key?null:figure.key)} />}
               {section.figureCaptionsJa?.[figure.key] && (
                 <JapaneseText text={section.figureCaptionsJa[figure.key]} tokens={illustrationRubyTokensFor(section.figureCaptionsJa[figure.key])} testID={`kaigo-figure-caption-${section.id}-${figure.key}`} />
               )}
@@ -839,111 +836,7 @@ export function WeeklyKaigo({
                     </View>
                   </View>
                   {tab === "calendar" ? (
-                    showWeek ? (
-                      <View testID={`kaigo-week-schedule-${week}`}>
-                        <RoyalExplanationPanel style={s.info}>
-                          <Text style={s.light}>
-                            第{week}週 ·{" "}
-                            {
-                              currentWeek.slots.filter(
-                                (d) => d.entry && progress.value.days[d.day],
-                              ).length
-                            }
-                            /{currentWeek.slots.filter((d) => d.entry).length}日
-                            学習済み
-                          </Text>
-                        </RoyalExplanationPanel>
-                        {currentWeek.slots.map((slot, index) =>
-                          slot.entry ? (
-                            <TokuteiDayCard
-                              key={slot.day}
-                              testID={`kaigo-calendar-day-${slot.day}`}
-                              day={index + 1}
-                              title={titleForDay(slot.entry)}
-                              done={!!progress.value.days[slot.day]}
-                              onPress={() =>
-                                open({ kind: "day", day: slot.day })
-                              }
-                            />
-                          ) : (
-                            <View key={slot.day} style={s.emptyDay}>
-                              <Text style={s.meta}>
-                                第{index + 1}日 · 学習なし
-                              </Text>
-                            </View>
-                          ),
-                        )}
-                        <RoyalContentPanel style={s.paper}>
-                          <Text style={s.heading}>週末の確認テスト</Text>
-                          <Text style={s.meta}>
-                            {questionsForWeek(week).length}問 · 四択
-                          </Text>
-                          <Action
-                            title={
-                              progress.value.assessments[week]
-                                ? "✓ 確認テストを見る"
-                                : "確認テストを開く"
-                            }
-                            testID={`kaigo-assessment-open-${week}`}
-                            onPress={() => open({ kind: "assessment", week })}
-                          />
-                        </RoyalContentPanel>
-                      </View>
-                    ) : (
-                      <>
-                        <RoyalExplanationPanel style={s.info}>
-                          <Text style={s.light}>週を選ぶ</Text>
-                          <Text style={s.light}>
-                            学習する日を選び、最後まで読んだら「完了」を押してください。
-                          </Text>
-                        </RoyalExplanationPanel>
-                        <View
-                          testID="kaigo-week-grid"
-                          onLayout={(e) =>
-                            setFrameWidth(e.nativeEvent.layout.width)
-                          }
-                          style={s.weekGrid}
-                        >
-                          {learningWeeks.map((w) => {
-                            const count = w.slots.filter(
-                                (d) => d.entry && progress.value.days[d.day],
-                              ).length,
-                              total = w.slots.filter((d) => d.entry).length;
-                            return (
-                              <Pressable
-                                key={w.week}
-                                testID={`kaigo-week-${w.week}`}
-                                accessibilityRole="button"
-                                accessibilityLabel={`第${w.week}週`}
-                                onPress={() => {
-                                  setWeek(w.week);
-                                  setShowWeek(true);
-                                  void progress.update((old) => ({
-                                    ...old,
-                                    lastWeek: w.week,
-                                  }));
-                                  scroll.current?.scrollTo({
-                                    y: 0,
-                                    animated: false,
-                                  });
-                                }}
-                                style={{ width: cellWidth }}
-                              >
-                                <RoyalContentPanel style={s.weekPaper}>
-                                  <Text style={s.weekNumber}>第{w.week}週</Text>
-                                  <Text style={s.meta}>
-                                    {count}/{total}日 学習済み{" "}
-                                    {weekDone(w.week, progress.value)
-                                      ? "✓"
-                                      : ""}
-                                  </Text>
-                                </RoyalContentPanel>
-                              </Pressable>
-                            );
-                          })}
-                        </View>
-                      </>
-                    )
+                    <StudyCalendar storageKey="@tokutei-calendar:kaigo:v1" lessons={kaigoCatalog.map(e=>({id:`day-${e.day}`,title:titleForDay(e)}))} questions={[]} isDone={id=>!!progress.value.days[Number(id.slice(4))]} onOpenLesson={id=>open({kind:'day',day:Number(id.slice(4))})} onOpenWeekTest={(_,n)=>open({kind:'assessment',week:n})} isWeekTestDone={(_,n)=>!!progress.value.assessments[n]}/>
                   ) : (
                     <>
                       <RoyalExplanationPanel style={s.info}>

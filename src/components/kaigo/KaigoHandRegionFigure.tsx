@@ -19,10 +19,10 @@ export const handRegionLabels:Record<string,string[]>={
  'zh-CN':['手掌','手背','指尖及指甲周围','指缝','拇指','手腕','颜色和数字仅标示部位，不表示细菌数量或去除率。'],
  'zh-TW':['手掌','手背','指尖及指甲周圍','指縫','拇指','手腕','顏色和數字僅標示部位，不表示細菌數量或去除率。'],
 };
-export function KaigoHandRegionFigure({source,language='ja',expanded=false}:{source:ImageSourcePropType;language?:string;expanded?:boolean}){
+export function KaigoHandRegionFigure({source,language='ja',expanded=false,renderWidth}:{source:ImageSourcePropType;language?:string;expanded?:boolean;renderWidth?:number}){
  const translated=handRegionLabels[language]??handRegionLabels.ja;
  const labels=translated.map((label,i)=>language==='ja'||!handRegionLabels[language]?label:handRegionLabels.ja[i]+' / '+label);
- return <View testID="kaigo-royal-hand-regions" style={{width:expanded?1000:'100%'}}>
+ return <View testID="kaigo-royal-hand-regions" style={{width:renderWidth??(expanded?1000:'100%')}}>
   <View style={{flexDirection:'row',padding:6}}>{[0,1].map(i=><Text key={i} style={{flex:1,textAlign:'center',color:'#243d4d',fontSize:16,fontWeight:'600'}}>{labels[i]}</Text>)}</View>
   <View style={{width:'100%',aspectRatio:1.5}}>
    <Image source={source} resizeMode="contain" accessibilityLabel={labels[0]+' / '+labels[1]} style={{width:'100%',height:'100%'}} />

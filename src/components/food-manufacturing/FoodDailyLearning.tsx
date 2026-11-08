@@ -1,3 +1,4 @@
+import {StudyFigure,StudyFigureViewer} from '@/components/tokutei/StudyFigure';
 import {FoodRoyalCaptionRuby} from './FoodRoyalCaptionRuby';
 import {FoodPathogenComparison} from './FoodPathogenComparison';
 import {FoodRoyalWeek8Native} from './FoodRoyalWeek8Native';
@@ -68,7 +69,7 @@ export function FoodDailyLearning({lesson,language,showTranslation,textColor,rea
  const royalImage=foodRoyalWeeklyImageFor(lesson),native=foodRoyalWeek2NativeFor(lesson),native4=foodRoyalWeek4NativeFor(lesson),native5=foodRoyalWeek5NativeFor(lesson),nativeSigns=foodRoyalSafetySignsFor(lesson),native7=foodRoyalWeek7NativeFor(lesson),native8=foodRoyalWeek8NativeFor(lesson),retainedTechnical=foodRoyalRetainedTechnicalFor(lesson),source=royalImage?.source??(native||native4||native5||nativeSigns||native7||native8||retainedTechnical?undefined:drawings[binding.diagramKind]);
  return <View testID={`food-daily-learning-${lesson.id}`} style={s.section}>
  {(source||native||native4||native5||nativeSigns||native7||native8||retainedTechnical)&&<View testID={`food-daily-diagram-${lesson.id}`} style={s.figure}>
- {source&&<Pressable accessibilityRole="button" accessibilityLabel={`${p.titleJa}・拡大${t?` · ${t.paragraphTitles[p.id]}`:''}`} onPress={()=>setExpanded(true)}><Image testID={royalImage?.replacesIllustrationId} source={source} resizeMode="contain" accessibilityLabel={imageDescription} style={[s.image,royalImage?{aspectRatio:royalImage.width/royalImage.height}:null]}/></Pressable>}
+ {source&&<Pressable accessibilityRole="button" accessibilityLabel={`${p.titleJa}・拡大${t?` · ${t.paragraphTitles[p.id]}`:''}`} onPress={()=>setExpanded(true)}><StudyFigure testID={royalImage?.replacesIllustrationId} source={source} resizeMode="contain" accessibilityLabel={imageDescription} style={[s.image,royalImage?{aspectRatio:royalImage.width/royalImage.height}:null]}/></Pressable>}
  <FoodPathogenComparison lesson={lesson} language={language} showTranslation={showTranslation}/>
  {native8&&<FoodRoyalWeek8Native lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor} readingColor={readingColor}/>}
  {native7&&<FoodRoyalWeek7Native lesson={lesson} language={language} showTranslation={showTranslation} textColor={textColor} readingColor={readingColor}/>}
@@ -90,7 +91,7 @@ export function FoodDailyLearning({lesson,language,showTranslation,textColor,rea
  </View>)}
  {includeActivity&&<View style={s.paragraph}><Text style={[s.heading,{color:textColor}]}>比較して説明する</Text>{labels&&<TranslationText>{labels.explain}</TranslationText>}<FoodLessonRuby lesson={peer} field="activityJa" text={peer.activityJa} color={textColor} readingColor={readingColor}/>{pt&&<TranslationText>{pt.activity}</TranslationText>}</View>}
  </View>;})}
- <Modal visible={expanded} animationType="none" onRequestClose={()=>setExpanded(false)}><View style={{flex:1,backgroundColor:'#fffaf0',paddingTop:36}}><Pressable accessibilityRole="button" accessibilityLabel={`図を閉じる${labels?` · ${labels.close}`:''}`} onPress={()=>setExpanded(false)} style={{padding:16}}><Text style={{color:'#233c4c',fontSize:18}}>図を閉じる{labels?` · ${labels.close}`:''}</Text></Pressable><ScrollView horizontal><ScrollView style={{width:1200}}><Image source={source} resizeMode="contain" accessibilityLabel={imageDescription} style={{width:1200,height:royalImage?1200*royalImage.height/royalImage.width:760}}/></ScrollView></ScrollView></View></Modal>
+ {source&&<StudyFigureViewer visible={expanded} onClose={()=>setExpanded(false)} source={source} width={royalImage?.width??1200} height={royalImage?.height??760} alt={imageDescription}/>}
  </View>;
 }
 const s=StyleSheet.create({section:{gap:18,paddingVertical:14},figure:{gap:12},image:{width:'100%',height:undefined,aspectRatio:1200/760,alignSelf:'center'},companion:{gap:10,paddingTop:18,borderTopWidth:1,borderColor:'#bda36a'},heading:{fontSize:18,lineHeight:28,fontWeight:'700'},paragraph:{gap:8,paddingVertical:10}});

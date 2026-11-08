@@ -1,0 +1,48 @@
+import {useEffect,useMemo,useRef,useState} from 'react';
+import {Modal,Pressable,ScrollView,Text,TextInput,View} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {RoyalContentPanel} from '@/components/ui/RoyalPanels';
+import {TokuteiDayCard} from './TokuteiChrome';
+import {ReadingAppearanceControl,useStudyAppearance} from './StudyAppearance';
+import {buildStudyWeeks,questionsForStudyWeek,type StudyLessonRef,type StudyQuestion} from './study-calendar';
+type ReviewRecord={answers:Record<string,number>;notes:Record<string,string>;submittedAt:string};
+export type CalendarLesson=StudyLessonRef & {summary?:string};
+function Action({title,onPress,disabled=false}:{title:string;onPress:()=>void;disabled?:boolean}){
+ const {colors}=useStudyAppearance();return <Pressable accessibilityRole="button" disabled={disabled} accessibilityState={{disabled}} onPress={onPress} style={{minHeight:48,padding:12,borderWidth:1,borderRadius:8,borderColor:colors.border,backgroundColor:colors.background,opacity:disabled?.5:1}}><Text style={{fontSize:17,lineHeight:27,color:colors.text}}>{title}</Text></Pressable>;
+}
+/** One calendar for every industry. The sector keeps ownership of lesson readers and progress. */
+export function StudyCalendar({lessons,questions,storageKey,isDone,onOpenLesson,disabled=false,onOpenWeekTest,isWeekTestDone}:{lessons:CalendarLesson[];questions:StudyQuestion[];storageKey:string;isDone:(id:string)=>boolean;onOpenLesson:(id:string)=>void;disabled?:boolean;onOpenWeekTest?:(ids:string[],week:number)=>void;isWeekTestDone?:(ids:string[],week:number)=>boolean}){
+ const weeks=useMemo(()=>buildStudyWeeks(lessons),[lessons]),[selected,setSelected]=useState<number|null>(null),[page,setPage]=useState(0),[review,setReview]=useState<string|null>(null),[done,setDone]=useState<Record<string,true>>({}),[attempts,setAttempts]=useState<Record<string,ReviewRecord>>({}),[readError,setReadError]=useState(false),[ready,setReady]=useState(false);
+ const {colors}=useStudyAppearance(),week=selected===null?null:weeks[selected];
+ useEffect(()=>{let live=true;setReady(false);setSelected(null);setDone({});setAttempts({});setReadError(false);Promise.all([AsyncStorage.getItem(storageKey),AsyncStorage.getItem(storageKey+':position')]).then(([raw,position])=>{if(!live)return;const saved=raw?JSON.parse(raw):null;if(raw&&(!saved||saved.version!==1||!saved.done||typeof saved.done!=='object'||Array.isArray(saved.done)))throw new Error('Invalid calendar record');if(saved){setDone(saved.done);setAttempts(saved.attempts??{});}if(position){const index=weeks.findIndex(w=>w.id===position);if(index>=0){setSelected(index);setPage(Math.floor(index/12));}}setReady(true);}).catch(()=>{if(live)setReadError(true);});return()=>{live=false;};},[storageKey]);
+ const chooseWeek=(index:number|null)=>{setSelected(index);if(index===null)void AsyncStorage.removeItem(storageKey+':position').catch(()=>{});else void AsyncStorage.setItem(storageKey+':position',weeks[index].id).catch(()=>{});};
+ const save=async(id:string,record:ReviewRecord)=>{const next={...done,[id]:true as const},nextAttempts={...attempts,[id]:record};await AsyncStorage.setItem(storageKey,JSON.stringify({version:1,done:next,attempts:nextAttempts}));setDone(next);setAttempts(nextAttempts);};
+ return <View testID="tokutei-study-calendar" style={{width:'100%',gap:12}}>
+  <ReadingAppearanceControl/>
+  {readError?<Text accessibilityRole="alert" style={{color:colors.text}}>学習記録を読み込めませんでした。記録は上書きしていません。</Text>:!ready?<Text style={{color:colors.text}}>読み込み中…</Text>:week?<>
+   <Action title="週の一覧に戻る" onPress={()=>chooseWeek(null)}/>
+   <Text accessibilityRole="header" style={{fontSize:20,lineHeight:30,color:colors.text}}>第{week.number}週 · 7日 ＋ 週末テスト</Text>
+   {week.days.map(day=>{const key=`${week.id}:review:${day.day}`;return <TokuteiDayCard key={day.day} testID={`study-calendar-day-${day.day}`} day={day.day} title={day.kind==='lesson'?day.lessons[0].title:`復習・実践 ${day.day-week.lessons.length} · 今週の知識を確認`} done={day.kind==='lesson'?isDone(day.lessons[0].id):!!done[key]} disabled={disabled} onPress={()=>day.kind==='lesson'?onOpenLesson(day.lessons[0].id):setReview(key)}/>;})}
+   <Action title={`${(done[`${week.id}:test`]||isWeekTestDone?.(week.lessons.map(l=>l.id),week.number))?'✓ ':''}第${week.number}週 · 週末テスト`} disabled={disabled} onPress={()=>onOpenWeekTest?onOpenWeekTest(week.lessons.map(l=>l.id),week.number):setReview(`${week.id}:test`)}/>
+  </>:<>{weeks.length>12&&<View style={{flexDirection:'row',flexWrap:'wrap',gap:8}}><Action title="前の週へ" disabled={page===0} onPress={()=>setPage(v=>v-1)}/><Text style={{color:colors.text}}>{page*12+1}–{Math.min((page+1)*12,weeks.length)} / {weeks.length}週</Text><Action title="次の週へ" disabled={(page+1)*12>=weeks.length} onPress={()=>setPage(v=>v+1)}/></View>}{weeks.slice(page*12,(page+1)*12).map((w,i)=><RoyalContentPanel key={w.id} style={{padding:20}}><Action title={`第${w.number}週 · 7日 ＋ 週末テスト\n${w.lessons[0].title}`} disabled={disabled} onPress={()=>chooseWeek(page*12+i)}/><Text style={{fontSize:15,lineHeight:24,color:'#302c26'}}>{w.lessons.filter(l=>isDone(l.id)).length}/{w.lessons.length} 課 学習済み{w.lessons.length<7?` · 復習・実践 ${7-w.lessons.length}日`:''}</Text></RoyalContentPanel>)}</>}
+  {week&&review&&<WeeklyReview key={review} id={review} week={week.number} lessons={week.lessons} questions={questionsForStudyWeek(week,questions)} onOpenLesson={id=>{setReview(null);onOpenLesson(id);}} onClose={()=>setReview(null)} initial={attempts[review]} onComplete={record=>save(review,record)}/>}
+ </View>;
+}
+function WeeklyReview({id,week,lessons,questions,onOpenLesson,onClose,onComplete,initial}:{id:string;week:number;lessons:CalendarLesson[];questions:StudyQuestion[];onOpenLesson:(id:string)=>void;onClose:()=>void;onComplete:(record:ReviewRecord)=>Promise<void>;initial?:ReviewRecord}){
+ const insets=useSafeAreaInsets(),{colors}=useStudyAppearance(),[answers,setAnswers]=useState<Record<string,number>>(initial?.answers??{}),[notes,setNotes]=useState<Record<string,string>>(initial?.notes??{}),[submitted,setSubmitted]=useState(!!initial),[checked,setChecked]=useState<Record<string,boolean>>({}),[saving,setSaving]=useState(false),[error,setError]=useState(false),busy=useRef(false);
+ const isTest=id.endsWith(':test'),ready=(questions.length>0?questions.every(q=>answers[q.id]!==undefined):true)&&((!isTest||!questions.length)?lessons.every(l=>checked[l.id]&&!!notes[l.id]?.trim()):true);
+ return <Modal visible onRequestClose={onClose} supportedOrientations={['portrait','landscape-left','landscape-right']}><View style={{flex:1,backgroundColor:colors.background,paddingTop:insets.top,paddingBottom:insets.bottom,paddingLeft:insets.left,paddingRight:insets.right}}>
+  <ScrollView contentContainerStyle={{padding:16,width:'100%',maxWidth:900,alignSelf:'center',gap:12}}><Action title="戻る" disabled={saving} onPress={onClose}/><ReadingAppearanceControl/>
+   <Text accessibilityRole="header" style={{fontSize:21,lineHeight:32,color:colors.text}}>第{week}週 · {isTest?'週末テスト':'復習・実践'}</Text>
+   {!isTest&&<Text style={{color:colors.text,fontSize:17,lineHeight:29}}>今週の各課を振り返り、安全上の注意と現場での手順を自分の言葉で説明してください。</Text>}
+   {(!isTest||!questions.length)&&lessons.map(l=><View key={l.id} style={{gap:8,paddingVertical:12,borderBottomWidth:1,borderColor:colors.border}}><Text style={{color:colors.text,fontSize:18,lineHeight:29}}>{l.title}</Text>{!!l.summary&&<Text style={{color:colors.text,fontSize:17,lineHeight:29}}>{l.summary}</Text>}<Action title="この課を読み直す" onPress={()=>onOpenLesson(l.id)}/><TextInput accessibilityLabel={`${l.title} · 重要点・手順・注意点`} multiline editable={!submitted} value={notes[l.id]??''} onChangeText={value=>setNotes(v=>({...v,[l.id]:value}))} placeholder="重要点・手順・注意点を自分の言葉で書いてください。" placeholderTextColor={colors.muted} style={{minHeight:100,padding:12,fontSize:17,lineHeight:28,color:colors.text,borderWidth:1,borderColor:colors.border,borderRadius:8,textAlignVertical:'top'}}/><Action disabled={submitted||!notes[l.id]?.trim()} title={`${checked[l.id]?'✓ ':''}重要点・作業手順・注意点を説明できた`} onPress={()=>setChecked(v=>({...v,[l.id]:!v[l.id]}))}/></View>)}
+   {!questions.length&&<Text style={{color:colors.muted,fontSize:16,lineHeight:26}}>この週は自己説明による記述確認です。各課の重要点・手順・注意点を説明し、本文と照合してください。自動採点はありません。</Text>}
+   {questions.map((q,i)=><View key={q.id} style={{gap:8,paddingVertical:12}}><Text style={{color:colors.text,fontSize:18,lineHeight:29}}>{i+1}. {q.prompt}</Text>{q.options.map((option,j)=><Action key={j} title={`${answers[q.id]===j?'● ':'○ '}${option}`} disabled={submitted} onPress={()=>setAnswers(v=>({...v,[q.id]:j}))}/>)}{submitted&&<Text style={{color:colors.text,fontSize:17,lineHeight:29}}>{answers[q.id]===q.correctIndex?'✓ 正解':'不正解'} · 正解 {q.correctIndex+1}{'\n'}{q.explanation}</Text>}</View>)}
+   {submitted&&questions.length>0&&<Text style={{color:colors.text,fontSize:20}}>正解 {questions.filter(q=>answers[q.id]===q.correctIndex).length}/{questions.length}</Text>}
+   {submitted&&<Action title="もう一度解く" onPress={()=>{setSubmitted(false);setAnswers({});setNotes({});setChecked({});}}/>}
+   {error&&<Text accessibilityRole="alert" style={{color:colors.text}}>保存できませんでした。もう一度お試しください。</Text>}
+   <Action title={saving?'保存中…':submitted?'完了して戻る':questions.length?'回答を提出する':'確認を完了する'} disabled={(!submitted&&!ready)||saving} onPress={()=>{if(submitted){onClose();return;}if(busy.current)return;busy.current=true;setSaving(true);setError(false);void onComplete({answers,notes,submittedAt:new Date().toISOString()}).then(()=>setSubmitted(true)).catch(()=>setError(true)).finally(()=>{busy.current=false;setSaving(false);});}}/>
+  </ScrollView>
+ </View></Modal>;
+}

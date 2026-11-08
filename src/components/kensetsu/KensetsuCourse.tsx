@@ -1,3 +1,6 @@
+import {StudyCalendar} from '@/components/tokutei/StudyCalendar';
+import {reviewTestsForScope} from '@/data/kensetsu/review-tests';
+import {StudyFigure,StudyFigureViewer} from '@/components/tokutei/StudyFigure';
 import { useBackdropOcclusion } from '@/components/ui/AppBackdrop';
 import { type PropsWithChildren, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -125,106 +128,10 @@ function Action({
     </Pressable>
   );
 }
-function StudyImage({ path, caption }: { path: string; caption: string }) {
-  const { width, height } = useWindowDimensions(),
-    [open, setOpen] = useState(false),
-    [magnified, setMagnified] = useState(false),
-    [containerWidth, setContainerWidth] = useState(0);
-  const source = illustrations[path];
-  const insets = useSafeAreaInsets(),
-    { colors } = useStudyAppearance();
-  const captionStyle = [s.caption, { color: colors.muted }];
-  const ratio = illustrationAspectRatios[path];
-  const availableWidth = Math.min(
-    containerWidth || Math.max(0, width - 32),
-    760,
-  );
-  const imageWidth = Math.min(
-    availableWidth,
-    620,
-    (width > height ? Math.max(80, Math.min(260, height * 0.4)) : 420) * ratio,
-  );
-  const enlargedWidth = Math.min(
-    Math.max(0, width - insets.left - insets.right - 32),
-    900,
-    Math.max(80, (height - insets.top - insets.bottom - 100) * 0.8) * ratio,
-  );
-  if (!source) return null;
-  if (!ratio || !Number.isFinite(ratio) || ratio <= 0)
-    return <Text style={captionStyle}>画像の寸法を確認できませんでした。</Text>;
-  return (
-    <View
-      style={s.figure}
-      onLayout={(e) => setContainerWidth(e.nativeEvent.layout.width)}
-    >
-      <Pressable
-        testID="kensetsu-study-image"
-        accessibilityRole="button"
-        accessibilityLabel="画像を拡大"
-        onPress={() => { setMagnified(false); setOpen(true); }}
-        style={{ width: imageWidth, maxWidth: "100%" }}
-      >
-        <Image
-          source={source}
-          accessibilityLabel={caption}
-          resizeMode="contain"
-          fadeDuration={0}
-          style={{ width: imageWidth, height: imageWidth / ratio }}
-        />
-      </Pressable>
-      <Text style={captionStyle}>{caption}</Text>
-      <Text style={captionStyle}>タップして拡大</Text>
-      <Modal
-        visible={open}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setOpen(false)}
-      >
-        <View
-          style={[
-            s.imageModal,
-            {
-              paddingTop: insets.top + 12,
-              paddingBottom: insets.bottom + 12,
-              paddingLeft: insets.left + 16,
-              paddingRight: insets.right + 16,
-            },
-          ]}
-        >
-          <Action
-            testID="kensetsu-image-close"
-            title="閉じる"
-            onPress={() => setOpen(false)}
-          />
-          <ScrollView
-            testID="kensetsu-image-viewer"
-            contentContainerStyle={s.imageViewer}
-          >
-            <Action
-              testID="kensetsu-image-magnify"
-              title={magnified ? "全体を見る" : "さらに拡大 · 横に動かして読む"}
-              onPress={() => setMagnified(value => !value)}
-            />
-            <ScrollView
-              horizontal
-              testID="kensetsu-image-pan"
-              style={{ width: Math.max(0, width - insets.left - insets.right - 32) }}
-              contentContainerStyle={{ minWidth: Math.max(0, width - insets.left - insets.right - 32), justifyContent: "center" }}
-            >
-              <Image
-                source={source}
-                accessibilityLabel={caption}
-                resizeMode="contain"
-                style={{ width: magnified ? Math.max(900, enlargedWidth * 2) : enlargedWidth,
-                  height: (magnified ? Math.max(900, enlargedWidth * 2) : enlargedWidth) / ratio }}
-              />
-            </ScrollView>
-            <Text style={s.light}>{caption}</Text>
-          </ScrollView>
-        </View>
-      </Modal>
-    </View>
-  );
+function StudyImage({path,caption}:{path:string;caption:string}){
+ const source=illustrations[path],ratio=illustrationAspectRatios[path],{colors}=useStudyAppearance();
+ if(!source||!ratio)return null;
+ return <View style={{width:'100%',gap:10}}><StudyFigure source={source} width={ratio} height={1} alt={caption}/><Text style={[s.caption,{color:colors.muted}]}>{caption}</Text></View>;
 }
 export function KensetsuDayReader({
   session,
@@ -340,7 +247,7 @@ export function KensetsuDayReader({
       contentContainerStyle={r.readingContent}
     >
       <View style={r.article}>
-        <ReadingAppearanceControl />
+
         <Action
           testID="kensetsu-translation"
           title={translationOpen ? "翻訳を閉じる" : "翻訳を見る"}
@@ -674,13 +581,7 @@ function Calendar({
         <TokuteiHeader
           title={`建設 · ${level}号`}
           subtitle={`${fields.find((f) => f.id === field)?.title} · ${subjectLabels[subject]}`}
-          onBack={() => {
-            if (lesson) closeLesson();
-            else if (showWeek) {
-              setShowWeek(false);
-              persistNavigation(week, lastId, calendarOffset.current, false);
-            } else onBack();
-          }}
+          onBack={() => {if(lesson)closeLesson();else onBack();}}
         />
         {error && (
           <View style={s.error}>
@@ -709,177 +610,7 @@ function Calendar({
             onComplete={() => void complete()}
             language={language}
           />
-        ) : showWeek ? (
-          <ScrollView
-            key={`week-page-${week}`}
-            testID="kensetsu-week-page"
-            style={s.calendarSurface}
-            contentContainerStyle={s.calendarContent}
-          >
-            <View style={s.calendarArticle}>
-              <RoyalExplanationPanel style={s.info}>
-                <Text style={s.light}>
-                  第{week + 1}週 ·{" "}
-                  {
-                    weeks[week].sessionIds.filter((id) => {
-                      const d = scopedSessionById.get(id);
-                      return d && dayDone(d);
-                    }).length
-                  }
-                  /{weeks[week].sessionIds.length}日 学習済み
-                </Text>
-                <Text style={s.light}>{weeks[week].titleJa}</Text>
-              </RoyalExplanationPanel>
-              <View testID="kensetsu-day-calendar">
-                {weeks[week].sessionIds.map((id, i) => {
-                  const d = scopedSessionById.get(id);
-                  return d ? (
-                    <TokuteiDayCard
-                      key={id}
-                      testID={`kensetsu-day-${Number(d.id.split("-").pop())}`}
-                      day={i + 1}
-                      title={d.titleJa}
-                      done={dayDone(d)}
-                      disabled={!navigationReady}
-                      onPress={() => openLesson(d)}
-                    />
-                  ) : null;
-                })}
-              </View>
-            </View>
-          </ScrollView>
-        ) : (
-          <ScrollView
-            key="week-selector"
-            ref={calendar}
-            style={s.calendarSurface}
-            contentContainerStyle={s.calendarContent}
-            testID="kensetsu-calendar"
-            scrollEventThrottle={180}
-            onScroll={(e) => {
-              calendarOffset.current = e.nativeEvent.contentOffset.y;
-              persistNavigation(week, lastId, calendarOffset.current);
-            }}
-            onScrollEndDrag={() =>
-              persistNavigation(week, lastId, calendarOffset.current)
-            }
-            onMomentumScrollEnd={() =>
-              persistNavigation(week, lastId, calendarOffset.current)
-            }
-            onContentSizeChange={() => {
-              if (navigationReady)
-                calendar.current?.scrollTo({
-                  y: calendarOffset.current,
-                  animated: false,
-                });
-            }}
-          >
-            <View style={s.calendarArticle}>
-              <RoyalExplanationPanel style={s.info}>
-                <Text
-                  style={s.light}
-                >{`テスト版 · ${weeks.length}週間 · 学習する週を選んでください。`}</Text>
-              </RoyalExplanationPanel>
-
-              <RoyalExplanationPanel style={s.info}>
-                <Text style={s.light}>週を選ぶ</Text>
-              </RoyalExplanationPanel>
-              <View style={s.row}>
-                {Array.from({ length: groups }, (_, i) => (
-                  <Pressable
-                    key={i}
-                    testID={`kensetsu-group-${i + 1}`}
-                    accessibilityRole="button"
-                    accessibilityState={{
-                      selected: group === i,
-                      disabled: !navigationReady,
-                    }}
-                    disabled={!navigationReady}
-                    onPress={() => {
-                      calendarOffset.current = 0;
-                      calendar.current?.scrollTo({ y: 0, animated: false });
-                      changeWeek(i * 10);
-                    }}
-                    style={[s.group, group === i && s.groupSelected]}
-                  >
-                    <Text
-                      style={[s.groupText, group === i && s.groupTextSelected]}
-                    >
-                      {i * 10 + 1}–{Math.min((i + 1) * 10, weeks.length)}週
-                    </Text>
-                  </Pressable>
-                ))}
-              </View>
-              <View
-                style={s.row}
-                onLayout={(e) => setGridWidth(e.nativeEvent.layout.width)}
-              >
-                {visibleWeeks.map((w, i) => {
-                  const index = group * 10 + i,
-                    count = w.sessionIds.filter((id) => {
-                      const d = scopedSessionById.get(id);
-                      return d && dayDone(d);
-                    }).length;
-                  return (
-                    <Pressable
-                      key={w.id}
-                      testID={`kensetsu-week-${index + 1}`}
-                      accessibilityRole="button"
-                      accessibilityLabel={`第${index + 1}週 · ${w.titleJa} · ${count}/${w.sessionIds.length}`}
-                      accessibilityState={{
-                        selected: week === index,
-                        disabled: !navigationReady,
-                      }}
-                      disabled={!navigationReady}
-                      onPress={() => {
-                        setWeek(index);
-                        setShowWeek(true);
-                        persistNavigation(
-                          index,
-                          lastId,
-                          calendarOffset.current,
-                          true,
-                        );
-                      }}
-                      style={[
-                        s.weekTile,
-                        { width: tileWidth },
-                        week === index && s.weekSelected,
-                      ]}
-                    >
-                      <CalendarBinding />
-                      <Text style={[s.weekNumber, s.leafCopy]}>
-                        第{index + 1}週{week === index ? " · 選択中" : ""}
-                      </Text>
-                      <Text numberOfLines={4} style={[s.weekTopic, s.leafCopy]}>
-                        {w.titleJa}
-                      </Text>
-                      <Text
-                        style={[
-                          s.weekStatus,
-                          s.leafCopy,
-                          count === w.sessionIds.length && s.completeStatus,
-                        ]}
-                      >
-                        {count}/{w.sessionIds.length} 学習済み
-                        {count === w.sessionIds.length ? " ✓" : ""}
-                      </Text>
-                      <View style={s.weekProgress}>
-                        <View
-                          style={[
-                            s.weekProgressFill,
-                            {
-                              width: `${(count / w.sessionIds.length) * 100}%`,
-                            },
-                          ]}
-                        />
-                      </View>
-                    </Pressable>
-                  );
-                })}
-              </View>
-            </View>
-          </ScrollView>
+        ) : (<ScrollView contentContainerStyle={{padding:16,width:'100%',maxWidth:900,alignSelf:'center'}}><StudyCalendar storageKey={`@tokutei-calendar:kensetsu:${learner}:${level}:${field}:${subject}`} lessons={weeks.flatMap(w=>w.sessionIds).flatMap(id=>{const d=scopedSessionById.get(id);return d?[{id:d.id,title:d.titleJa,revision:String(d.revision)}]:[];})} questions={reviewTestsForScope(level,field,subject).flatMap(e=>e.questions.map(q=>({id:q.id,prompt:q.promptJa,options:q.choicesJa,correctIndex:q.correctIndex,explanation:q.explanationJa,lessonIds:q.sourceReferences.map(r=>studyDayIdForSession(r.sessionId,level,field,subject))})))} disabled={!navigationReady||saving} isDone={id=>{const d=scopedSessionById.get(id);return !!d&&dayDone(d);}} onOpenLesson={id=>{const d=scopedSessionById.get(id);if(d)openLesson(d);}}/></ScrollView>
         )}
       </View>
     </CourseSurface>

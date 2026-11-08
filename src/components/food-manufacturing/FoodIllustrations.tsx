@@ -1,3 +1,4 @@
+import {StudyFigure,StudyFigureViewer} from '@/components/tokutei/StudyFigure';
 import {useState} from 'react';
 import ui from '@/data/food-manufacturing/daily-ui-translations.json';
 import warningTranslations from '@/data/food-manufacturing/illustration-label-translations.json';
@@ -28,8 +29,8 @@ export function FoodIllustrations({lesson,textColor,readingColor,language,showTr
    {translation&&<TranslationText>{translation.paragraphTitles[paragraph.id]}</TranslationText>}
    <FoodLessonRuby lesson={lesson} field={`paragraphs.${paragraph.id}.textJa`} text={paragraph.textJa} color={textColor} readingColor={readingColor}/>
    {translation&&<TranslationText>{translation.paragraphs[paragraph.id]}</TranslationText>}
-   <Pressable accessibilityRole="button" accessibilityLabel={description(figure)} onPress={()=>setExpanded(`${lesson.id}:${lesson.sourceHash}:${figure.id}`)}><Image source={figure.source} accessibilityLabel={description(figure)} resizeMode="contain" style={[s.image,{aspectRatio:figure.width/figure.height}]}/></Pressable>
+   <Pressable accessibilityRole="button" accessibilityLabel={description(figure)} onPress={()=>setExpanded(`${lesson.id}:${lesson.sourceHash}:${figure.id}`)}><StudyFigure source={figure.source} accessibilityLabel={description(figure)} resizeMode="contain" style={[s.image,{aspectRatio:figure.width/figure.height}]}/></Pressable>
   </View>;
- })}<Modal visible={!!selected} animationType="none" onRequestClose={()=>setExpanded(null)}><View style={s.modal}><Pressable accessibilityRole="button" accessibilityLabel={`図を閉じる${close?` · ${close}`:''}`} onPress={()=>setExpanded(null)}><Text style={s.close}>図を閉じる{close?` · ${close}`:''}</Text></Pressable><ScrollView>{selected&&<View testID={`${selected.id}-zoom`}><Image source={selected.source} accessibilityLabel={description(selected)} resizeMode="contain" style={[s.image,{aspectRatio:selected.width/selected.height}]}/><Text style={s.description}>{description(selected)}</Text></View>}</ScrollView></View></Modal></>;
+ })}{selected&&<StudyFigureViewer visible={!!selected} onClose={()=>setExpanded(null)} source={selected.source} width={selected.width} height={selected.height} alt={description(selected)}/>}</>;
 }
 const s=StyleSheet.create({modal:{flex:1,backgroundColor:'#fffaf0',padding:20,paddingTop:36},close:{color:'#183044',fontSize:17,lineHeight:28,padding:12},description:{color:'#183044',fontSize:17,lineHeight:28,paddingVertical:12},figure:{gap:10,paddingVertical:16},image:{width:'100%',height:undefined,alignSelf:'center'},warning:{fontSize:19,lineHeight:30,fontWeight:'700',color:'#a02323',backgroundColor:'#fff2f0',borderWidth:2,borderColor:'#a02323',padding:10}});

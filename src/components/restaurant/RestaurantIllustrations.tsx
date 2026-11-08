@@ -1,3 +1,4 @@
+import {StudyFigure,StudyFigureViewer} from '@/components/tokutei/StudyFigure';
 import {Image,View} from 'react-native';
 import illustrations from '@/data/restaurant/illustrations.json';
 import bindings from '@/data/restaurant/royal-legacy-illustration-bindings.json';
@@ -19,7 +20,7 @@ export function restaurantLegacyIllustrationBinding(item:Item,lessonId:string){
 /** Preserve reviewed whole-object pixels; no stale source/caption/locale identity may relabel them. */
 export function RestaurantIllustrations({lessonId,language,showTranslation}:{lessonId:string;language:string;showTranslation:boolean}){
  return <>{illustrations.illustrations.filter(i=>i.lessonIds.includes(lessonId)).map(i=>{const b=restaurantLegacyIllustrationBinding(i,lessonId);if(!b)return null;const target=showTranslation&&language!=='ja'?(i.translations as Record<string,string>)[language]:undefined;return <RoyalContentPanel key={i.id} testID={`restaurant-legacy-illustration-${i.id}`} style={{gap:10}}>
- <Image testID={`restaurant-legacy-image-${i.id}`} source={assets[i.id]} accessibilityLabel={target||i.captionJa} resizeMode="contain" style={{width:'100%',aspectRatio:i.aspectRatio,backgroundColor:'#fffaf0',borderRadius:8}}/>
+ <StudyFigure testID={`restaurant-legacy-image-${i.id}`} source={assets[i.id]} accessibilityLabel={target||i.captionJa} resizeMode="contain" style={{width:'100%',aspectRatio:i.aspectRatio,backgroundColor:'#fffaf0',borderRadius:8}}/>
  <RestaurantReading text={i.captionJa} segments={b.captionFurigana} color="#173450" readingColor="#415363"/>{target&&<TranslationText>{target}</TranslationText>}
  </RoyalContentPanel>;})}</>;
 }

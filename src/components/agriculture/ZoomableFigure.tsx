@@ -1,3 +1,4 @@
+import {StudyFigureViewer} from '@/components/tokutei/StudyFigure';
 import controls from '@/data/agriculture/figure-controls-locales.json';
 import {agricultureIntrinsicFigureSourceMarks} from './FigureSourceMarks';
 import {useState} from 'react';
@@ -22,18 +23,12 @@ export function ZoomableFigure({source,width:sourceWidth,height:sourceHeight,alt
  const sourceMarks=marks??agricultureIntrinsicFigureSourceMarks(source,sourceWidth,sourceHeight);
  const picture=(renderedWidth:number,enlarged=false)=><View testID={`${testID}-picture${enlarged?'-expanded':''}`} style={{width:renderedWidth,height:renderedWidth*sourceHeight/sourceWidth,position:'relative',overflow:'hidden',flexShrink:0}}>
   <Image testID={`${testID}-image${enlarged?'-expanded':''}`} source={source} accessibilityLabel={altJa} resizeMode="contain" style={{position:'absolute',left:0,top:0,width:renderedWidth,height:renderedWidth*sourceHeight/sourceWidth}}/>
-  {masks.map((m,i)=><View key={i} pointerEvents="none" style={{position:'absolute',left:percent(m.x),top:percent(m.y),width:percent(m.width),height:percent(m.height),backgroundColor:m.backgroundColor||'#fffaf0',alignItems:'center',justifyContent:'center'}}>{!!m.label&&<Text style={{color:'#182e27',fontWeight:'700',fontSize:enlarged?28:16,lineHeight:enlarged?34:19}}>{m.label}</Text>}</View>)}
+  {masks.map((m,i)=><View key={i} pointerEvents="none" style={{position:'absolute',left:percent(m.x),top:percent(m.y),width:percent(m.width),height:percent(m.height),backgroundColor:m.backgroundColor||'#fffaf0',alignItems:'center',justifyContent:'center'}}>{!!m.label&&<Text style={{color:'#182e27',fontWeight:'700',fontSize:16*renderedWidth/Math.max(1,normalWidth),lineHeight:19*renderedWidth/Math.max(1,normalWidth)}}>{m.label}</Text>}</View>)}
   {sourceMarks.map((m,i)=><View key={i} testID={`${testID}-source-mark-${m.kind}-${i}`} pointerEvents="none" accessible accessibilityRole="image" accessibilityLabel={m.label} style={{position:'absolute',left:percent(m.x),top:percent(m.y),width:percent(m.width),height:percent(m.height)}}>{[-45,45].map(angle=><View key={angle} style={{position:'absolute',left:0,top:'43%',width:'100%',height:'14%',backgroundColor:m.color,transform:[{rotate:`${angle}deg`}]}}/>)}</View>)}
  </View>;
  return <View onLayout={onLayout} style={{width:'100%',maxWidth:'100%',minWidth:0,alignSelf:'center',gap:8}}>
   <Pressable testID={`${testID}-preview`} disabled={!canExpand} accessibilityRole={canExpand?'button':'image'} accessibilityLabel={canExpand?`${altJa}。${ui[0]}`:altJa} accessibilityHint={canExpand?ui[1]:undefined} onPress={()=>setExpanded(true)} style={{width:normalWidth,height:previewHeight,alignSelf:'center',maxWidth:'100%',overflow:'hidden'}}>{picture(normalWidth)}{canExpand&&<Text testID={`${testID}-expand`} pointerEvents="none" style={{position:'absolute',right:8,bottom:8,paddingHorizontal:12,paddingVertical:8,borderRadius:8,backgroundColor:'#fffaf0ee',color:'#182e27',fontSize:15,lineHeight:24}}>{ui[0]}</Text>}</Pressable>
 
-  <Modal visible={expanded} transparent animationType="fade" onRequestClose={()=>setExpanded(false)}>
-   <View testID={`${testID}-modal`} accessibilityViewIsModal style={{flex:1,backgroundColor:'#101720f5',paddingHorizontal:16,paddingTop:52,paddingBottom:28,gap:10}}>
-    <Pressable accessibilityRole="button" testID={`${testID}-close`} accessibilityLabel={ui[2]} onPress={()=>setExpanded(false)} style={{minHeight:44,paddingHorizontal:16,paddingVertical:8,alignSelf:'flex-end',borderRadius:8,backgroundColor:'#fffaf0',justifyContent:'center'}}><Text style={{fontSize:18,color:'#182e27'}}>{ui[3]}</Text></Pressable>
-    <Text style={{fontSize:14,lineHeight:23,color:'#fffaf0'}}>{ui[4]}</Text>
-    <ScrollView style={{flex:1,minHeight:0}} contentContainerStyle={{alignItems:'center'}}><ScrollView horizontal nestedScrollEnabled style={{width:'100%'}} contentContainerStyle={{flexGrow:1,alignItems:'flex-start',justifyContent:'center'}}>{picture(expandedWidth,true)}</ScrollView></ScrollView>
-   </View>
-  </Modal>
+  <StudyFigureViewer visible={expanded} onClose={()=>setExpanded(false)} source={source} width={sourceWidth} height={sourceHeight} alt={altJa} testID={testID} renderPicture={(w)=>picture(w,true)}/>
  </View>;
 }

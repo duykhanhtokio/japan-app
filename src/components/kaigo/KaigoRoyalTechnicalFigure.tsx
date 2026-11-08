@@ -112,14 +112,14 @@ export const royalTechnicalLeaders:Record<Kind,Point[]>={
  ],
 };
 export const royalTechnicalLabels=translations;
-export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=false}:{kind:Kind;source:ImageSourcePropType;language?:string;expanded?:boolean}){
+export function KaigoRoyalTechnicalFigure({kind,source,language='ja',expanded=false,renderWidth}:{kind:Kind;source:ImageSourcePropType;language?:string;expanded?:boolean;renderWidth?:number}){
  const [width,setWidth]=useState(360);
  const ja=translations.ja;
  const tr=(translations as Record<string,typeof ja>)[language]??ja;
  const bilingual=(original:string,translated:string)=>tr===ja?original:original+' / '+translated;
  const labels=ja[kind].map((label,i)=>bilingual(label,tr[kind][i]));
  const view=kind==='lobes'?bilingual(ja.lobesView,tr.lobesView):kind==='skeleton'?bilingual(ja.skeletonView,tr.skeletonView):kind==='eye'?bilingual(ja.eyeView,tr.eyeView):kind==='heart'?bilingual(ja.heartView,tr.heartView):kind==='digestive'?bilingual(ja.digestiveView,tr.digestiveView):kind==='nervous'?bilingual(ja.nervousView,tr.nervousView):kind==='pupils'?bilingual(ja.pupilsView,tr.pupilsView):kind==='oralOwnership'?bilingual(ja.oralOwnershipView,tr.oralOwnershipView):kind==='skin'?bilingual(ja.skinView,tr.skinView):kind==='grooming'?bilingual(ja.groomingView,tr.groomingView):kind==='urinary'?bilingual(ja.urinaryView,tr.urinaryView):kind==='endocrine'?bilingual(ja.endocrineView,tr.endocrineView):kind==='eating'?bilingual(ja.eatingView,tr.eatingView):kind==='pressure'?bilingual(ja.pressureView,tr.pressureView):kind==='wheelchair'?bilingual(ja.wheelchairView,tr.wheelchairView):kind==='posture'?bilingual(ja.postureView,tr.postureView):kind==='brain'?bilingual(ja.brainView,tr.brainView):kind==='muscles'?bilingual(ja.musclesView,tr.musclesView):bilingual(ja.respiratoryView,tr.respiratoryView);
- return <View testID={`kaigo-royal-${kind}`} style={{width:expanded?1000:'100%'}}>
+ return <View testID={`kaigo-royal-${kind}`} style={{width:renderWidth??(expanded?1000:'100%')}}>
   <Text style={{fontSize:16,color:'#243d4d',padding:8}}>{view}</Text>
   <View onLayout={event=>setWidth(event.nativeEvent.layout.width)} style={{width:'100%',aspectRatio:1.5}}>
    <Image source={source} accessibilityLabel={view} resizeMode="contain" style={{width:'100%',height:'100%'}} />
