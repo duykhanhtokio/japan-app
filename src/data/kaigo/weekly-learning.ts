@@ -31,6 +31,9 @@ export function sectionsFor(entry:CatalogEntry,includeCandidates=true):ReadingSe
  // Old written probes become weekly questions. No input/reveal cards are rendered in the reader.
  return sections;
 }
+let cachedQuestions:WeeklyQuestion[]|undefined;
+function loadWeeklyQuestions():WeeklyQuestion[]{
+ if(cachedQuestions)return cachedQuestions;
 type ProbeRecord={id:string;day:number;parentDay:number;prompt:string;expected:string;reading?:string;ruby?:RubyToken[]};
 const probeRecords:ProbeRecord[]=[];
 for(const e of kaigoCatalog){
@@ -51,7 +54,10 @@ const converted=probeRecords.map((p,index):WeeklyQuestion=>{
  return {id:'weekly-'+p.id,day:p.day,prompt:p.prompt+'\nChọn phần giải thích trả lời đúng dữ kiện của tình huống.',options,correctIndex:position,rationales:options.map((o,i)=>i===position?p.expected:'Phần giải thích này thuộc một tình huống khác; không trả lời các dữ kiện cần xác nhận trong câu hỏi này.'),reading:p.reading,readingRuby:p.ruby,language:'vi'};
 });
 const baseQuestions:WeeklyQuestion[]=kaigoCatalog.filter(e=>e.kind==='lesson').flatMap(e=>{return kaigoCourse.lessons.filter(l=>l.id===e.id).flatMap(l=>[l,...kaigoCourse.candidates.filter(c=>c.baseLessonId===l.id)]).flatMap(l=>l.questions.map(q=>({id:'weekly-'+q.id,day:e.day,prompt:q.promptVi,japanese:q.promptJa,options:q.optionsJa,correctIndex:q.correctIndex,rationales:q.rationalesVi,reading:l.readingJa,language:'ja' as const})));});
-export const weeklyQuestions=[...baseQuestions,...converted];
-export const questionsForWeek=(week:number)=>weeklyQuestions.filter(q=>Math.ceil(q.day/7)===week);
+return cachedQuestions=[...baseQuestions,...converted];
+}
+/** Preserve the public array API without constructing the assessment bank at calendar entry. */
+export const weeklyQuestions:WeeklyQuestion[]=new Proxy([] as WeeklyQuestion[],{get(_target,key){const rows=loadWeeklyQuestions();return Reflect.get(rows,key,rows);}});
+export const questionsForWeek=(week:number)=>loadWeeklyQuestions().filter(q=>Math.ceil(q.day/7)===week);
 export function assessmentRevisionForWeek(week:number){let hash=2166136261;for(const char of JSON.stringify(questionsForWeek(week)))hash=Math.imul(hash^char.charCodeAt(0),16777619);return 'weekly-recognition-v1-'+(hash>>>0).toString(16);}
 export const mockForDay=(day:number):MockForm|undefined=>{const e=kaigoCatalog.find(e=>e.day===day);return e?.kind==='mock'?kaigoCourse.mocks.find(m=>m.id===e.id):undefined;};

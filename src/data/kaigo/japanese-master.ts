@@ -1,6 +1,5 @@
-import { japaneseMasterBatches } from './japanese-master-batches';
-import pilotTranslations from './japanese-master/translations/pilot-01.json';
-import { japaneseTranslationBatches } from './japanese-translation-batches';
+import entryMetadata from './entry-lesson-metadata.json';
+import {lazyRecord} from '@/services/lazy-record';
 import type { RubyToken } from './types';
 
 export type JapaneseMasterSection = {
@@ -21,8 +20,8 @@ export type JapaneseLessonMetadata = {
   artCaptionJa: string;
   artReviewStatus: string;
 };
-export const japaneseMasterSections: Record<string, JapaneseMasterSection> = Object.assign({}, ...japaneseMasterBatches.map(batch => batch.sections));
-export const japaneseLessonMetadata: Record<string, JapaneseLessonMetadata> = Object.assign({}, ...japaneseMasterBatches.map(batch => batch.lessons));
+export const japaneseMasterSections=lazyRecord<Record<string,JapaneseMasterSection>>(()=>Object.assign({}, ...(require('./japanese-master-batches') as typeof import('./japanese-master-batches')).japaneseMasterBatches.map(batch=>batch.sections)));
+export const japaneseLessonMetadata:Record<string,JapaneseLessonMetadata>=entryMetadata.lessons;
 export function japaneseLessonKey(entry: { id: string; day: number }): string {
   const dayKey = `study-day-${entry.day}`;
   return japaneseLessonMetadata[dayKey] ? dayKey : entry.id;
@@ -50,17 +49,21 @@ export type MasterTranslation = {
 };
 // Only translations authored directly from the Japanese master belong here.
 // Existing Vietnamese paragraphs remain in the original data as legacy references.
-export const japaneseMasterTranslations: Record<string, Record<string, MasterTranslation>> = {
-  ...(pilotTranslations as Record<string, Record<string, MasterTranslation>>),
+export const japaneseMasterTranslations=lazyRecord<Record<string,Record<string,MasterTranslation>>>(()=>{
+const translations: Record<string, Record<string, MasterTranslation>> = {
+  ...(require('./japanese-master/translations/pilot-01.json') as Record<string, Record<string, MasterTranslation>>),
 };
-for (const batch of japaneseTranslationBatches) {
+for (const batch of (require('./japanese-translation-batches') as typeof import('./japanese-translation-batches')).japaneseTranslationBatches) {
   for (const [id, translation] of Object.entries(batch.sections)) {
-    japaneseMasterTranslations[id] = {
-      ...japaneseMasterTranslations[id],
+    translations[id] = {
+      ...translations[id],
       [batch.language]: translation as MasterTranslation,
     };
   }
 }
+
+return translations;
+});
 
 export type LessonTranslation = {
   sourceRevision: string;
@@ -73,15 +76,18 @@ export type LessonTranslation = {
 export function japaneseLessonRevision(lesson: JapaneseLessonMetadata): string {
   return contentRevision([lesson.titleJa, lesson.objectivesJa, lesson.contextJa, lesson.artCaptionJa]);
 }
-export const japaneseLessonTranslations: Record<string, Record<string, LessonTranslation>> = {};
-for (const batch of japaneseTranslationBatches) {
+export const japaneseLessonTranslations = lazyRecord<Record<string, Record<string, LessonTranslation>>>(() => {
+const translations: Record<string, Record<string, LessonTranslation>> = {};
+for (const batch of (require('./japanese-translation-batches') as typeof import('./japanese-translation-batches')).japaneseTranslationBatches) {
   for (const [id, translation] of Object.entries(batch.lessons)) {
-    japaneseLessonTranslations[id] = {
-      ...japaneseLessonTranslations[id],
+    translations[id] = {
+      ...translations[id],
       [batch.language]: translation as LessonTranslation,
     };
   }
 }
+return translations;
+});
 export function translationForLesson(
   id: string,
   language: string,

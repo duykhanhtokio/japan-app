@@ -1,0 +1,14 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict'),ts=require('typescript'),crypto=require('crypto');
+const catalog=Array.from({length:10},(_,i)=>({kind:'lesson',id:'l'+i,day:i+1,parentDay:i+1}));let reads=0;
+const lessons=catalog.map((e,i)=>({id:e.id,day:e.day,knowledgeProbes:[{id:'p'+i,promptVi:'Question '+i,expectedVi:'Answer '+i}],questions:[{id:'q'+i,promptVi:'Base '+i,promptJa:'問'+i,optionsJa:['a','b','c','d'],correctIndex:i%4,rationalesVi:['1','2','3','4']}]}));
+const course={get lessons(){reads++;return lessons;},candidates:[],mocks:[]};
+function load(source,mocks){const mod={exports:{}};vm.runInNewContext(ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS,esModuleInterop:true}}).outputText,{module:mod,exports:mod.exports,require:n=>{if(n in mocks)return mocks[n];throw Error(n);}});return mod.exports;}
+const mocks={'./section-headings.json':{},'./index':{kaigoCourse:course,kaigoAtomicKnowledge:{days:[],units:[]},kaigoLanguageSupplements:{days:[],groups:[]}},'./catalog':{kaigoCatalog:catalog}};
+// SHA-256 of the unchanged eager implementation on this fixed ten-lesson fixture.
+const expected='f4c5c09f1532f119249bbde3309d0420e5b1821ab877bd212bdc8e4d37e26b02';reads=0;
+const after=load(fs.readFileSync('src/data/kaigo/weekly-learning.ts','utf8'),mocks);assert.equal(reads,0,'Calendar import must not construct or sort assessments');assert.equal(after.learningWeeks.length,26);assert.equal(crypto.createHash('sha256').update(JSON.stringify(after.weeklyQuestions)).digest('hex'),expected,'Question IDs, ordering, distractors, answers and rationales must remain exact');
+const {lazyRecord}=load(fs.readFileSync('src/services/lazy-record.ts','utf8'),{});let masters=0,translations=0;
+const entry=JSON.parse(fs.readFileSync('src/data/kaigo/entry-lesson-metadata.json'));
+const master=load(fs.readFileSync('src/data/kaigo/japanese-master.ts','utf8'),{'./entry-lesson-metadata.json':entry,'@/services/lazy-record':{lazyRecord},'./japanese-master-batches':{get japaneseMasterBatches(){masters++;return [{sections:{test:{headingJa:'title',paragraphsJa:[]}}}];}},'./japanese-master/translations/pilot-01.json':{},'./japanese-translation-batches':{get japaneseTranslationBatches(){translations++;return [];}}});
+assert.equal(Object.keys(master.japaneseLessonMetadata).length,176);assert.equal(masters,0);assert.equal(translations,0);assert.equal(master.japaneseMasterSections.test.headingJa,'title');assert.equal(masters,1);assert.deepEqual(Object.keys(master.japaneseMasterTranslations),[]);assert.equal(translations,1);
+console.log('PASS Kaigo lazy entry: no assessment construction at import; exact previous question bank; 176 metadata entries without reading masters/translations; deferred record compatibility.');

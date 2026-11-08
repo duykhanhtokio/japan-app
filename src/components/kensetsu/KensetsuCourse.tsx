@@ -640,13 +640,15 @@ function KensetsuFlow({
   learner,
   onBack,
   language = "ja",
+  initialLevel, initialField,
 }: {
   learner: string;
   onBack: () => void;
   language?: string;
+  initialLevel?:Level;initialField?:Field;
 }) {
-  const [level, setLevel] = useState<Level>("1"),
-    [field, setField] = useState<Field | null>(null);
+  const [level, setLevel] = useState<Level>(initialLevel??"1"),
+    [field, setField] = useState<Field | null>(initialField??null);
   if (field)
     return (
       <CourseMode
@@ -655,7 +657,7 @@ function KensetsuFlow({
         level={level}
         field={field}
         language={language}
-        onBack={() => setField(null)}
+        onBack={() => initialField?onBack():setField(null)}
       />
     );
   return (

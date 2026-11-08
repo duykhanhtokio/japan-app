@@ -66,12 +66,12 @@ import {
   weekDone,
   type Completion,
 } from "@/data/kaigo/weekly-learning";
-import {
-  japaneseAssessmentRevisionForWeek as assessmentRevisionForWeek,
-  japaneseQuestionsForWeek as questionsForWeek,
-  translationForQuestion,
-  type JapaneseWeeklyQuestion as WeeklyQuestion,
-} from '@/data/kaigo/japanese-assessments';
+import type {JapaneseWeeklyQuestion as WeeklyQuestion} from '@/data/kaigo/japanese-assessments';
+const assessmentModule=()=>require('@/data/kaigo/japanese-assessments') as typeof import('@/data/kaigo/japanese-assessments');
+const assessmentRevisionForWeek=(week:number)=>assessmentModule().japaneseAssessmentRevisionForWeek(week);
+const questionsForWeek=(week:number)=>assessmentModule().japaneseQuestionsForWeek(week);
+const translationForQuestion=(...args:Parameters<typeof import('@/data/kaigo/japanese-assessments').translationForQuestion>)=>assessmentModule().translationForQuestion(...args);
+
 import { loadKaigoState, saveKaigoState } from "@/services/kaigo-storage";
 import type { MockForm, RubyToken } from "@/data/kaigo/types";
 
