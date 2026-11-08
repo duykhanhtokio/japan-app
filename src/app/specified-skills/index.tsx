@@ -27,13 +27,13 @@ import { ROYAL_FONT, ROYAL_PLACEMENT } from '@/components/ui/RoyalSurface';
 import BottomNav from '@/components/app/BottomNav';
 
 const sectors = [
-    {icon:require('../../../assets/app/industries/agriculture-v1.png'),ja:'農業',vi:'Nông nghiệp'},
-    {icon:require('../../../assets/app/industries/construction-v1.png'),ja:'建設',vi:'Xây dựng'},
-    {icon:require('../../../assets/app/industries/food-service-v1.png'),ja:'外食業',vi:'Nhà hàng'},
-    {icon:require('../../../assets/app/industries/food-manufacturing-v1.png'),ja:'飲食料品製造業',vi:'Sản xuất thực phẩm'},
-    {icon:require('../../../assets/app/industries/caregiving-v1.png'),ja:'介護',vi:'Điều dưỡng'},
-    {icon:require('../../../assets/app/industries/hospitality-v1.png'),ja:'宿泊',vi:'Khách sạn'},
-    {icon:MANUFACTURING_SECTOR_ARTWORK,ja:'製造分野',vi:'Sản xuất công nghiệp'},
+    {icon:require('../../../assets/app/industries/agriculture-v1.png'),ja:'農業',labelKey:'agriculture' as const},
+    {icon:require('../../../assets/app/industries/construction-v1.png'),ja:'建設',labelKey:'construction' as const},
+    {icon:require('../../../assets/app/industries/food-service-v1.png'),ja:'外食業',labelKey:'restaurant' as const},
+    {icon:require('../../../assets/app/industries/food-manufacturing-v1.png'),ja:'飲食料品製造業',labelKey:'foodManufacturing' as const},
+    {icon:require('../../../assets/app/industries/caregiving-v1.png'),ja:'介護',labelKey:'care' as const},
+    {icon:require('../../../assets/app/industries/hospitality-v1.png'),ja:'宿泊',labelKey:'hospitality' as const},
+    {icon:MANUFACTURING_SECTOR_ARTWORK,ja:'製造分野',labelKey:'industrialManufacturing' as const},
 ];
 
 export default function SpecifiedSkillsScreen() {
@@ -54,7 +54,7 @@ export default function SpecifiedSkillsScreen() {
                 }
             >
                 {sectors.map(
-                    ({ icon, ja, vi }) => (
+                    ({ icon, ja, labelKey }) => (
                         <Pressable
                             key={ja}
                             accessibilityRole={specifiedSkillAvailable(ja,__DEV__)?'button':undefined}
@@ -88,7 +88,7 @@ export default function SpecifiedSkillsScreen() {
                                         styles.cardVi
                                     }
                                 >
-                                    {vi}
+                                    {uiText(labelKey,language)}
                                 </Text>
                             </View>
                             </RoyalPaperPanel>

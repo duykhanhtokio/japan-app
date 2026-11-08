@@ -103,13 +103,14 @@ export function registerNavigationStateReader(reader: () => NavigationState | un
 export const cancelPreparedNavigation = () => { navigationIntent += 1; };
 export function navigateWithPreparedArtwork(path: string, navigate: () => void, additional: ArtworkSource[] = [], prepareState?: () => Promise<unknown>) {
   const intent = ++navigationIntent;
-  let timeout: ReturnType<typeof setTimeout>;
+  let timeout: ReturnType<typeof setTimeout> | undefined;
   // Preloading is an optimization, not permission to navigate. A failed
   // native image cache or a stalled development asset server must not make
   // every Home button a no-op. Keep waiting for required state/credit checks.
   const artwork = Promise.all([prepareSceneRoute(path), prepareArtwork(additional)])
     .catch(error => { console.warn('Destination artwork:', error); });
-  const boundedArtwork = Promise.race([artwork, new Promise<void>(resolve => {
+  // Vocational navigation must not wait for decorative image/network caches.
+  const boundedArtwork = /^\/specified-skills(?:\/|$)/.test(path) ? Promise.resolve() : Promise.race([artwork, new Promise<void>(resolve => {
     timeout = setTimeout(() => {
       console.warn('Destination artwork timed out; continuing navigation:', path);
       resolve();
@@ -127,7 +128,7 @@ export function navigateWithPreparedArtwork(path: string, navigate: () => void, 
     navigate();
     return true;
   }).catch(error => { console.warn('Destination state preparation:', error); return false; })
-    .finally(() => clearTimeout(timeout));
+    .finally(() => { if(timeout!==undefined)clearTimeout(timeout); });
 }
 
 type Destination = Parameters<typeof router.push>[0];

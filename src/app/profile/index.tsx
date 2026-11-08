@@ -41,7 +41,6 @@ import {
 import {
     calculateCommunicationTitle,
 } from '@/services/progress-engine';
-const PROFILE_AVATAR = require('../../../assets/app/ui/royal-af/hud-player-medallion-v1.png');
 const PROFILE_ART=require('../../../assets/app/backgrounds/profile-details.png');
 const PROFILE_ICONS={work:require('../../../assets/app/ui/royal-af/mission-work-v1.png'),lock:require('../../../assets/app/ui/royal-af/lock-grape-v2.png'),book:require('../../../assets/app/ui/royal-af/learning-grammar-v1.png'),map:require('../../../assets/app/ui/royal-af/map-marker-fill-v1.png'),trophy:require('../../../assets/app/ui/royal-af/mission-trophy-v1.png'),key:require('../../../assets/app/ui/royal-af/mission-key-v1.png')};
 function ProfilePanel({children,style,kind='plain'}:PropsWithChildren<{style?:StyleProp<ViewStyle>;kind?:'profile'|'rating'|'plain'}>) {
@@ -124,17 +123,6 @@ export default function ProfileScreen() {
                     false
                 }
             >
-                {/* =========================
-                    PROFILE HEADER
-                ========================== */}
-
-                <View style={styles.identity}>
-                    <Text style={styles.identityTitle}>プロフィール</Text>
-                    <Image fadeDuration={0} source={PROFILE_AVATAR} resizeMode="contain" style={styles.identityAvatar}/>
-                    <Text style={styles.identityName}>{profile.name?.trim() || 'プレイヤー'}</Text>
-                    <Text style={styles.identityRank}>JLPT · {economy?.officialRank ?? 'N5'}</Text>
-                    <Image fadeDuration={0} source={PROFILE_ICONS.work} resizeMode="contain" style={{width:40,height:40,marginTop:12}}/><Text style={styles.identityOccupation}> {occupation?.titleJa ?? 'その他'} / {legacyFieldTranslation(language, occupation ?? {titleJa:'その他',titleVi:'Công việc khác'}, 'title')}</Text>
-                </View>
                 {/* =========================
                     COMMUNICATION RATING
                 ========================== */}
