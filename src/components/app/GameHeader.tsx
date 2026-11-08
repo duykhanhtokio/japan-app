@@ -1,3 +1,4 @@
+import PlayerAvatar from './PlayerAvatar';
 import { EffectPressable as Pressable } from '@/components/effects/EffectPressable';
 import { pushPrepared, replacePrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import { OPEN_FRAME_SLICES, royalOpenFrameGeometry } from '@/components/ui/RoyalPaperPanel';
@@ -6,7 +7,6 @@ import { Image, StyleSheet, Text, View, useWindowDimensions } from 'react-native
 import { RoyalBackButton, ROYAL, ROYAL_FONT, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 import { CREDIT_CAPACITY, RANK_COLORS, RANKS, type JlptRank } from '@/services/learning-economy';
 
-const HUD_PLAYER=require('../../../assets/app/ui/royal-af/hud-player-medallion-v1.png');
 const HUD_IDENTITY=require('../../../assets/app/ui/royal-af/hud-top-composite-midnight-v3.png');
 const HUD_COIN=require('../../../assets/app/ui/royal-af/hud-coin-v1.png');
 
@@ -49,10 +49,10 @@ export default function GameHeader({name='プレイヤー',abilityLevel='N5',abi
  if(variant==='study') return <View style={s.studyContainer}>
   <View style={s.studyTop}>
    <RoyalBackButton onPress={onBack??goBackOrHome}/>
-   <Pressable accessibilityRole="button" accessibilityLabel={`${name}のプロフィール`} onPress={()=>onProfile?onProfile():pushPrepared('/profile')} style={s.studyIdentity}>
-    <Image fadeDuration={0} source={HUD_PLAYER} resizeMode="contain" style={s.studyAvatar}/>
-    <View style={s.studyIdentityText}><Text numberOfLines={1} style={s.studyName}>{name}</Text><Text style={s.studySubtitle}>学習状況</Text></View>
-   </Pressable>
+   <View style={s.studyIdentity}>
+    <PlayerAvatar size={38}/>
+    <Pressable accessibilityRole="button" accessibilityLabel={`${name}のプロフィール`} onPress={()=>onProfile?onProfile():pushPrepared('/profile')} style={s.studyIdentityText}><Text numberOfLines={1} style={s.studyName}>{name}</Text><Text style={s.studySubtitle}>学習状況</Text></Pressable>
+   </View>
    <View accessibilityLabel={`コイン ${coins}`} style={s.studyCoins}><Image fadeDuration={0} source={HUD_COIN} resizeMode="contain" style={s.studyCoinIcon}/><Text numberOfLines={1} style={s.studyCoinValue}>{coins.toLocaleString()}</Text></View>
   </View>
   <View style={s.studyMetrics}>
@@ -85,7 +85,7 @@ function ReferenceIdentity({name,coins,avatarSize,onProfile,onCoins}:Pick<Props,
     <Pressable accessibilityRole="button" accessibilityLabel={`コイン ${coins}`} onPress={onCoins} hitSlop={8} style={[s.referenceCoin,{left:'73%',width:'17.5%',top:0,bottom:0}]}><Image fadeDuration={0} source={HUD_COIN} resizeMode="contain" style={{width:16,height:16,flexShrink:0}}/><Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={.65} maxFontSizeMultiplier={1} style={s.approvedCoinValue}>{coinDisplay(coins)}</Text></Pressable>
    </View>
   </View>
-  <Pressable accessibilityRole="button" accessibilityLabel={`${name}のプロフィール`} onPress={openProfile} style={[s.referenceAvatar,{width:avatarSize,height:avatarSize}]}><Image fadeDuration={0} source={HUD_PLAYER} resizeMode="contain" style={{width:'100%',height:'100%'}}/></Pressable>
+  <View style={[s.referenceAvatar,{width:avatarSize,height:avatarSize}]}><PlayerAvatar size={avatarSize}/></View>
  </View>;
 }
 

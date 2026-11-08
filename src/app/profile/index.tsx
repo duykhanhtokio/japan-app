@@ -1,3 +1,4 @@
+import {profileText} from '@/i18n/profile-release-copy';
 import {betaText} from '@/i18n/learner-beta-copy';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { legacyFieldTranslation } from '@/i18n/selected-content';
@@ -42,13 +43,14 @@ import {
     calculateCommunicationTitle,
 } from '@/services/progress-engine';
 const PROFILE_ART=require('../../../assets/app/backgrounds/profile-details.png');
-const PROFILE_ICONS={work:require('../../../assets/app/ui/royal-af/mission-work-v1.png'),lock:require('../../../assets/app/ui/royal-af/lock-grape-v2.png'),book:require('../../../assets/app/ui/royal-af/learning-grammar-v1.png'),map:require('../../../assets/app/ui/royal-af/map-marker-fill-v1.png'),trophy:require('../../../assets/app/ui/royal-af/mission-trophy-v1.png'),key:require('../../../assets/app/ui/royal-af/mission-key-v1.png')};
+const PROFILE_ICONS={work:require('../../../assets/app/ui/royal-af/mission-work-v1.png'),lock:require('../../../assets/app/ui/royal-af/lock-grape-v2.png'),book:require('../../../assets/app/ui/royal-af/learning-grammar-v1.png')};
 function ProfilePanel({children,style,kind='plain'}:PropsWithChildren<{style?:StyleProp<ViewStyle>;kind?:'profile'|'rating'|'plain'}>) {
  return <RoyalPaperPanel tone="hud" style={[style,{paddingHorizontal:22,paddingVertical:24,borderWidth:0,borderRadius:0,backgroundColor:'transparent'},kind==='rating'&&{alignItems:'center'}]}>{children}</RoyalPaperPanel>;
 }
 
 export default function ProfileScreen() {
     const {language}=useAppLanguage();
+    const t=(key:Parameters<typeof profileText>[1])=>profileText(language,key);
     const navigate=(href:Parameters<typeof router.push>[0])=>{void pushPrepared(href);};
     const [economy,setEconomy]=useState<LearningEconomy|null>(null);
     useFocusEffect(useCallback(()=>{let active=true;void syncJlptQualification().then(value=>{if(active)setEconomy(value)});return()=>{active=false}},[]));
@@ -660,51 +662,16 @@ export default function ProfileScreen() {
                     </View>
                 </ProfilePanel></Pressable>
 
-                {/* =========================
-                    ACHIEVEMENTS
-                ========================== */}
-
-                <ProfilePanel kind="plain"
-                    style={
-                        styles.achievementCard
-                    }
-                >
-                    <Text
-                        style={
-                            styles.sectionTitle
-                        }
-                    >
-                        ACHIEVEMENTS
-                    </Text>
-
-                    <View
-                        style={
-                            styles.achievementGrid
-                        }
-                    >
-                        <Achievement
-                            icon={PROFILE_ICONS.book}
-                            title="初めての会話"
-                            unlocked
-                        />
-
-                        <Achievement
-                            icon={PROFILE_ICONS.map}
-                            title="東京探検"
-                            unlocked
-                        />
-
-                        <Achievement
-                            icon={PROFILE_ICONS.trophy}
-                            title="7日連続"
-                            unlocked
-                        />
-
-                        <Achievement
-                            icon={PROFILE_ICONS.key}
-                            title="Golden Key"
-                            unlocked={false}
-                        />
+                <ProfilePanel kind="plain" style={styles.achievementCard}>
+                    <Text style={styles.sectionTitle}>{t('achievements')}</Text>
+                    <Text style={[styles.certificateDescription,{color:'#fff3cf'}]}>{t('achievementHint')}</Text>
+                    <View testID="first-conversation-achievement" accessibilityLabel={`${t('firstDialogue')}: ${t(stats.dialogueCompleted>0?'earned':'pending')}`} style={{flexDirection:'row',alignItems:'center',gap:12,marginTop:16}}>
+                        <Image fadeDuration={0} source={PROFILE_ICONS.book} resizeMode="contain" style={{width:38,height:38}}/>
+                        <View style={{flex:1,gap:6}}>
+                            <Text style={[styles.achievementTitle,{textAlign:'left',marginTop:0}]}>{t('firstDialogue')}</Text>
+                            <Text style={{color:'#fff3cf',lineHeight:24}}>{t(stats.dialogueCompleted>0?'earned':'pending')}</Text>
+                            <Text style={{color:'#fff3cf',lineHeight:24}}>{t('firstCondition')}</Text>
+                        </View>
                     </View>
                 </ProfilePanel>
 
@@ -722,7 +689,7 @@ export default function ProfileScreen() {
                             styles.sectionTitle
                         }
                     >
-                        CERTIFICATES
+                        {t('certificates')}
                     </Text>
 
                     <Text
@@ -730,8 +697,7 @@ export default function ProfileScreen() {
                             styles.certificateDescription
                         }
                     >
-                        Prefecture hoàn thành sẽ hiển thị
-                        chứng chỉ kỹ thuật số tại đây.
+                        {t('certificateHint')}
                     </Text>
 
                     <View
@@ -746,7 +712,7 @@ export default function ProfileScreen() {
                                 styles.certificateEmptyText
                             }
                         >
-                            まだ修了証がありません
+                            {t('emptyCertificates')}
                         </Text>
                     </View>
                 </ProfilePanel>
@@ -927,40 +893,6 @@ function MiniStat({
                 }
             >
                 {label}
-            </Text>
-        </RoyalPaperPanel>
-    );
-}
-
-function Achievement({
-    icon,
-    title,
-    unlocked,
-}: {
-    icon: number;
-
-    title: string;
-
-    unlocked: boolean;
-}) {
-    return (
-        <RoyalPaperPanel tone="hud"
-            style={[
-                styles.achievement,
-
-                !unlocked &&
-                styles.achievementLocked,
-            ]}
-        >
-            <Image fadeDuration={0} source={unlocked?icon:PROFILE_ICONS.lock} resizeMode="contain" style={{width:38,height:38,marginBottom:8}}/>
-
-            <Text
-                style={
-                    styles.achievementTitle
-                }
-                numberOfLines={2}
-            >
-                {title}
             </Text>
         </RoyalPaperPanel>
     );
