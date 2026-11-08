@@ -1,3 +1,4 @@
+import {StudyAction} from '@/components/tokutei/StudyAction';
 import {StudyCalendar} from '@/components/tokutei/StudyCalendar';
 import {StudyFigure,StudyFigureViewer} from '@/components/tokutei/StudyFigure';
 import {HotelGuideReadingProvider} from './HotelGuideText';
@@ -26,8 +27,8 @@ import {hospitalityCatalog,loadHotelLesson,loadHotelMock,loadHotelTranslation,ty
 import {hospitalityUi,hospitalityLabel} from '@/data/hospitality/ui';
 import {hotelIllustration,hasHotelIllustration,hotelIllustrationAlt,hotelIllustrationAspectRatio,hotelIllustrationUnavailableText,hotelIllustrationRetryText} from '@/data/hospitality/illustrations';
 import {hotelProgressKey,hotelRecord,restoreHotelProgress,updateHotelRecord,type HotelProgress,type HotelRecord} from '@/services/hospitality-study-state';
-function Button({title,onPress,disabled=false,selected=false,children}:{title:string;onPress:()=>void;disabled?:boolean;selected?:boolean;children?:React.ReactNode}){
- const {colors}=useStudyAppearance();return <Pressable accessibilityRole="button" accessibilityLabel={title} accessibilityState={{disabled,selected}} disabled={disabled} onPress={onPress} style={[s.button,{borderColor:colors.border,backgroundColor:selected?colors.translation:colors.background,opacity:disabled?.45:1}]}>{children||<Text style={[s.body,{color:colors.text}]}>{title}</Text>}</Pressable>;
+function Button({title,onPress,disabled=false,selected,children}:{title:string;onPress:()=>void;disabled?:boolean;selected?:boolean;children?:React.ReactNode}){
+ const {colors}=useStudyAppearance();if(selected===undefined&&!children)return <StudyAction title={title} onPress={onPress} disabled={disabled}/>;return <Pressable accessibilityRole="button" accessibilityLabel={title} accessibilityState={{disabled,selected}} disabled={disabled} onPress={onPress} style={[s.button,{borderColor:colors.border,backgroundColor:selected?colors.translation:colors.background,opacity:disabled?.45:1}]}>{children||<Text style={[s.body,{color:colors.text}]}>{title}</Text>}</Pressable>;
 }
 function Surface({children,reading=false}:PropsWithChildren<{reading?:boolean}>){const i=useSafeAreaInsets(),{colors}=useStudyAppearance();const body=<View style={{flex:1,paddingTop:i.top,paddingBottom:i.bottom,paddingLeft:i.left,paddingRight:i.right}}>{children}</View>;return reading?<View style={{flex:1,backgroundColor:colors.background}}>{body}</View>:<RoyalPageBackground>{body}</RoyalPageBackground>;}
 export function HospitalityCourse(props:{learner:string;language:string;onBack:()=>void}){return <StudyAppearanceProvider><Course key={props.learner} {...props}/></StudyAppearanceProvider>;}

@@ -9,33 +9,31 @@ import {
   RoyalContentPanel,
   RoyalExplanationPanel,
 } from "@/components/ui/RoyalPanels";
-import { ReadingAppearanceControl, useStudyAppearance } from "./StudyAppearance";
+import { useStudyAppearance } from "./StudyAppearance";
 
 export function TokuteiHeader({
   title,
   subtitle,
   onBack,
-  showAppearance=true,
 }: {
   title: string;
   subtitle?: string;
   onBack: () => void;
   showAppearance?: boolean;
 }) {
-  const { dark } = useStudyAppearance();
-  const HeaderPanel = dark ? RoyalExplanationPanel : RoyalContentPanel;
+  const HeaderPanel = RoyalExplanationPanel;
   return (
     <View style={{width:'100%',maxWidth:932,alignSelf:'center'}}><View testID="tokutei-header" style={s.header}>
       <RoyalBackButton onPress={onBack} />
       <HeaderPanel style={s.headingPanel}>
-        <Text style={[s.title, dark && { color: "#f2db9b" }]}>{title}</Text>
+        <Text style={[s.title, {color:"#f2db9b"}]}>{title}</Text>
         {!!subtitle && (
-          <Text style={[s.subtitle, dark && { color: "#fff3cf" }]}>
+          <Text style={[s.subtitle, {color:"#fff3cf"}]}>
             {subtitle}
           </Text>
         )}
       </HeaderPanel>
-    </View>{showAppearance&&<View style={{paddingHorizontal:16,paddingBottom:8,alignItems:'flex-end'}}><ReadingAppearanceControl/></View>}</View>
+    </View></View>
   );
 }
 export function TokuteiDayCard({

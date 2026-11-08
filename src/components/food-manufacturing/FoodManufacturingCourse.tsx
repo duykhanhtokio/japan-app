@@ -1,3 +1,4 @@
+import {StudyAction} from '@/components/tokutei/StudyAction';
 import {StudyTabs} from '@/components/tokutei/StudyTabs';
 import {StudyCalendar} from '@/components/tokutei/StudyCalendar';
 import {FoodDailyLearning} from './FoodDailyLearning';
@@ -21,8 +22,8 @@ import {TokuteiHeader,TokuteiDayCard} from '@/components/tokutei/TokuteiChrome';
 import {StudyAppearanceProvider,ReadingAppearanceControl,TranslationText,useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import {foodManufacturingWeeks,foodManufacturingLesson,foodManufacturingChecks,foodManufacturingTranslation,foodManufacturingTermTranslation,foodManufacturingQuestionTranslation,foodManufacturingExamTitleTranslation,type FoodManufacturingLevel,type FoodManufacturingLesson,type FoodManufacturingExam} from '@/data/food-manufacturing';
 import {foodManufacturingCompletionKey,foodManufacturingExamKey,restoreFoodManufacturingProgress,foodManufacturingLessonDone,freshTestAttempt,restoreTestAttempt,gradeTest,type FoodManufacturingProgress,type TestAttempt} from '@/services/food-manufacturing-study-state';
-function Button({title,onPress,disabled=false,selected=false,children}:{title:string;onPress:()=>void;disabled?:boolean;selected?:boolean;children?:ReactNode}) {
- const {colors}=useStudyAppearance();return <Pressable accessibilityRole="button" accessibilityLabel={title} accessibilityState={{disabled,selected}} disabled={disabled} onPress={onPress} style={[s.button,{borderColor:colors.border,backgroundColor:selected?colors.translation:colors.background,opacity:disabled?.45:1}]}>{children??<Text style={{color:colors.text,fontSize:16,lineHeight:25,textAlign:'center'}}>{title}</Text>}</Pressable>;
+function Button({title,onPress,disabled=false,selected,children}:{title:string;onPress:()=>void;disabled?:boolean;selected?:boolean;children?:ReactNode}) {
+ const {colors}=useStudyAppearance();if(selected===undefined&&!children)return <StudyAction title={title} onPress={onPress} disabled={disabled}/>;return <Pressable accessibilityRole="button" accessibilityLabel={title} accessibilityState={{disabled,selected}} disabled={disabled} onPress={onPress} style={[s.button,{borderColor:colors.border,backgroundColor:selected?colors.translation:colors.background,opacity:disabled?.45:1}]}>{children??<Text style={{color:colors.text,fontSize:16,lineHeight:25,textAlign:'center'}}>{title}</Text>}</Pressable>;
 }
 function Surface({children,reading=false}:PropsWithChildren<{reading?:boolean}>) {
  useBackdropOcclusion(reading);const {colors}=useStudyAppearance(),i=useSafeAreaInsets();

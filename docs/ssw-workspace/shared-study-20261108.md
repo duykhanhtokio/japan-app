@@ -52,3 +52,13 @@ Số tuần mới gồm ngày ôn tập cuối khóa khi số bài không chia h
 - Kiểm tra mở sản xuất: cơ khí, điện và xử lý bề mặt đều mở được bộ chọn → tuần 1 → ngày 1 trong React test renderer, với 117/117/114 tệp nguồn và dữ liệu thật, không có tệp dữ liệu thiếu. Native host và lớp trang trí được mock; đây không phải bằng chứng simulator.
 - Kiểm tra tương tác: đạt, gồm đúng một bộ chọn ở màn hình lịch và đúng một Back Royal/bộ chọn trong modal kiểm tra tuần. TypeScript của thành phần chung đạt; kiểm tra toàn app vẫn bị giới hạn bởi sparse checkout như đã ghi phía trên.
 - Lần kiểm tra trình duyệt bổ sung không truy cập được server preview nội bộ (`ERR_CONNECTION_REFUSED`). Không ghi nhận hình thức đã được duyệt qua ảnh chụp. Cần mở lại Expo với `--clear` để Metro bỏ trạng thái lỗi bundle cũ; không có thay đổi native dependency trong bản sửa tiếp nối này.
+
+
+## Sửa theo ảnh chụp 13:36/13:38 — 2026-11-08
+
+- Chủ dự án yêu cầu bỏ toàn bộ chức năng tự động/ngày/đêm. Provider nay dùng cố định nền đọc ivory, không đọc/ghi lựa chọn cũ và không chạy timer theo giờ; không còn bộ chọn trên header hay bài kiểm tra. Header giữ khung navy/viền vàng/chữ sáng, không đổi sang màu giấy do bỏ chế độ đêm.
+- Chủ dự án đã chọn hai nút mỗi hàng, dùng đúng mẫu Royal navy/viền vàng/chữ sáng đã có. `StudyTabs` dùng `RoyalButton compact` thông qua `StudyAction`, không tự vẽ thanh nền xám hoặc ô chọn vàng. Nút chức năng Mở/tiếp tục, nộp, điều hướng ở các ngành dùng cùng nút Royal; giữ renderer lựa chọn đáp án/furigana hiện có. `RoyalSurface` chỉ được thêm prop testID, không đổi artwork, bảng màu hoặc font của nút gốc.
+- Lỗi thẻ tuần kéo dài gần hết màn hình đến từ `height:'100%'` đặt trên `RoyalContentPanel` trong vùng cuộn. Bỏ chiều cao phần trăm để thẻ dùng chiều cao nội dung; thêm kiểm tra hồi quy.
+- Bỏ hình xưởng được chèn riêng bên trong màn hình chọn chuyên ngành sản xuất. Không thay đổi các hình phục vụ kiến thức trong bài.
+- Ảnh bìa ngoài danh mục vẫn cần tạo lại theo ảnh bìa các ngành khác. Chưa tạo khi chưa nhìn thấy mẫu: hai ảnh chụp phản hồi là màn hình bên trong khóa học, không phải danh mục bìa; dữ liệu PNG tham chiếu lớn chưa đọc được qua kết nối hiện có. Cần ảnh chụp danh mục hoặc một ảnh bìa mẫu để bám đúng phong cách. Không nhận phần này đã hoàn tất.
+- Kiểm tra: cú pháp/thành phần chung và hồi quy chiều cao, không còn điều khiển/timer sáng tối đạt; tương tác và Back Royal đạt; Metro sản xuất và mở ba chuyên ngành đến ngày 1 với dữ liệu thật/native host giả lập đạt. Chưa có xác nhận hình thức trên simulator cho bản sửa này.

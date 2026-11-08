@@ -1,3 +1,4 @@
+import {StudyAction} from '@/components/tokutei/StudyAction';
 import { useEffect, useRef, useState } from "react";
 import {
   Modal,
@@ -43,22 +44,7 @@ function Button({
   onPress: () => void;
   testID: string;
   disabled?: boolean;
-}) {
-  return (
-    <Pressable
-      testID={testID}
-      accessibilityRole="button"
-      accessibilityLabel={title}
-      accessibilityState={{ disabled }}
-      aria-disabled={disabled}
-      disabled={disabled}
-      onPress={onPress}
-      style={[s.button, disabled && s.disabled]}
-    >
-      <Text style={s.buttonText}>{title}</Text>
-    </Pressable>
-  );
-}
+}) {return <StudyAction title={title} onPress={onPress} disabled={disabled} testID={testID}/>;}
 type Scope = {
   learner: string;
   level: Level;

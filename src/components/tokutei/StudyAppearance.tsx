@@ -1,12 +1,9 @@
 import {
   createContext,
   useContext,
-  useEffect,
-  useState,
   type PropsWithChildren,
 } from "react";
-import { AppState, Pressable, StyleSheet, Text, View } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import {StyleSheet,Text} from "react-native";
 import { STUDY_IVORY } from "@/theme/study-surface";
 
 export type ReadingMode = "auto" | "day" | "night";
@@ -28,7 +25,6 @@ export const READING_PALETTES = {
     border: "#998363",
   },
 };
-const KEY = "@japan_app_tokutei_reading_appearance_v1";
 export const readingPeriod = (hour: number) =>
   hour >= 7 && hour < 19 ? "day" : "night";
 type Appearance = {
@@ -38,81 +34,19 @@ type Appearance = {
   dark: boolean;
 };
 const AppearanceContext = createContext<Appearance>({
-  mode: "auto",
+  mode: "day",
   colors: READING_PALETTES.day,
   setMode: () => {},
   dark: false,
 });
-export function StudyAppearanceProvider({ children }: PropsWithChildren) {
-  const [mode, setModeState] = useState<ReadingMode>("auto"),
-    [hour, setHour] = useState(() => new Date().getHours());
-  useEffect(() => {
-    let live = true;
-    void AsyncStorage.getItem(KEY)
-      .then((value) => {
-        if (live && (value === "auto" || value === "day" || value === "night"))
-          setModeState(value);
-      })
-      .catch(() => {});
-    const refresh = () => setHour(new Date().getHours());
-    const timer = setInterval(refresh, 60000);
-    const subscription = AppState.addEventListener("change", (state) => {
-      if (state === "active") refresh();
-    });
-    return () => {
-      live = false;
-      clearInterval(timer);
-      subscription.remove();
-    };
-  }, []);
-  const dark = (mode === "auto" ? readingPeriod(hour) : mode) === "night";
-  const setMode = (next: ReadingMode) => {
-    setModeState(next);
-    void AsyncStorage.setItem(KEY, next).catch((error) =>
-      console.warn("Reading appearance:", error),
-    );
-  };
-  return (
-    <AppearanceContext.Provider
-      value={{
-        mode,
-        colors: READING_PALETTES[dark ? "night" : "day"],
-        setMode,
-        dark,
-      }}
-    >
-      {children}
-    </AppearanceContext.Provider>
-  );
+// Reading appearance switching was removed at the publisher's request, 2026-11-08.
+// Keep the context API for existing lesson components, using the fixed ivory reading palette.
+export function StudyAppearanceProvider({children}:PropsWithChildren){
+ return <AppearanceContext.Provider value={{mode:'day',colors:READING_PALETTES.day,setMode:()=>{},dark:false}}>{children}</AppearanceContext.Provider>;
 }
-export const useStudyAppearance = () => useContext(AppearanceContext);
-export function ReadingAppearanceControl() {
-  const { mode, setMode, colors } = useStudyAppearance();
-  return (
-    <View testID="tokutei-reading-appearance" style={[s.row,{backgroundColor:colors.translation,borderColor:colors.border}]}>
-      {(["auto", "day", "night"] as const).map((value) => (
-        <Pressable
-          key={value}
-          accessibilityRole="button"
-          accessibilityState={{ selected: mode === value }}
-          onPress={() => setMode(value)}
-          style={[
-            s.choice,
-            {
-              backgroundColor:
-                mode === value ? colors.background : "transparent",
-              borderColor: colors.border,
-            },
-          ]}
-        >
-          <Text style={{ color: colors.text, fontSize: 14, fontWeight: mode===value?"700":"400" }}>
-            {value === "auto" ? "自動" : value === "day" ? "昼" : "夜"}
-          </Text>
-        </Pressable>
-      ))}
-    </View>
-  );
-}
+export const useStudyAppearance=()=>useContext(AppearanceContext);
+/** Compatibility export for old consumers; no controls or listeners remain. */
+export function ReadingAppearanceControl(){return null;}
 export function TranslationText({
   children,
   testID,
@@ -136,17 +70,6 @@ export function TranslationText({
   );
 }
 const s = StyleSheet.create({
-  row: { flexDirection: "row", gap: 2, padding:3, borderWidth:1, borderRadius:12, alignSelf:"flex-end" },
-  choice: {
-    minWidth: 56,
-    minHeight: 44,
-    borderWidth: 0,
-    borderRadius: 9,
-    paddingHorizontal: 14,
-    paddingVertical: 9,
-    alignItems: "center",
-    justifyContent: "center",
-  },
   translation: {
     fontSize: 16,
     lineHeight: 27,

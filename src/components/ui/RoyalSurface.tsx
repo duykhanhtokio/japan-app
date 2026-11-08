@@ -159,9 +159,9 @@ export function RoyalPlaceRow({source,children,style}:PropsWithChildren<{source?
   </View>;
 }
 
-export function RoyalButton({children,label,onPress,disabled=false,style,contentStyle,compact=false,round=false,accessibilityLabel,sizingGroup}:PropsWithChildren<{children?:ReactNode;label?:string;onPress:()=>void;disabled?:boolean;style?:StyleProp<ViewStyle>;contentStyle?:StyleProp<ViewStyle>;compact?:boolean;round?:boolean;accessibilityLabel?:string;sizingGroup?:RoyalContentGroup}>) {
+export function RoyalButton({children,label,onPress,disabled=false,style,contentStyle,compact=false,round=false,accessibilityLabel,sizingGroup,testID}:PropsWithChildren<{children?:ReactNode;label?:string;onPress:()=>void;disabled?:boolean;style?:StyleProp<ViewStyle>;contentStyle?:StyleProp<ViewStyle>;compact?:boolean;round?:boolean;accessibilityLabel?:string;sizingGroup?:RoyalContentGroup;testID?:string}>) {
   const equalHeight = useRoyalGroupHeight(sizingGroup, compact ? 62 : 78);
-  return <Pressable accessibilityRole="button" accessibilityLabel={accessibilityLabel} disabled={disabled} onPress={onPress} style={({pressed})=>[s.assetButton,compact&&s.assetButtonCompact,equalHeight.groupStyle,style,disabled&&s.disabled,pressed&&!disabled&&s.buttonPressed]}>
+  return <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={accessibilityLabel} disabled={disabled} onPress={onPress} style={({pressed})=>[s.assetButton,compact&&s.assetButtonCompact,equalHeight.groupStyle,style,disabled&&s.disabled,pressed&&!disabled&&s.buttonPressed]}>
     <View style={[s.assetButtonImage,contentStyle]}><View pointerEvents="none" style={StyleSheet.absoluteFillObject}><Image fadeDuration={0} source={WIDE_BUTTON} resizeMode="stretch" style={{width:'100%',height:'100%'}}/></View>{children??<Text style={s.buttonText}>{label}</Text>}</View>
   </Pressable>;
 }

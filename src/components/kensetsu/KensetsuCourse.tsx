@@ -1,3 +1,4 @@
+import {StudyAction} from '@/components/tokutei/StudyAction';
 import {StudyCalendar} from '@/components/tokutei/StudyCalendar';
 import {reviewTestsForScope} from '@/data/kensetsu/review-tests';
 import {StudyFigure,StudyFigureViewer} from '@/components/tokutei/StudyFigure';
@@ -113,21 +114,7 @@ function Action({
   disabled?: boolean;
   selected?: boolean;
   testID?: string;
-}) {
-  return (
-    <Pressable
-      testID={testID}
-      accessibilityRole="button"
-      accessibilityLabel={title}
-      accessibilityState={{ disabled, selected }}
-      disabled={disabled}
-      onPress={onPress}
-      style={[s.button, selected && s.selected, disabled && { opacity: 0.45 }]}
-    >
-      <Text style={s.buttonText}>{title}</Text>
-    </Pressable>
-  );
-}
+}) {return <StudyAction title={title} onPress={onPress} disabled={disabled} testID={testID}/>;}
 function StudyImage({path,caption}:{path:string;caption:string}){
  const source=illustrations[path],ratio=illustrationAspectRatios[path],{colors}=useStudyAppearance();
  if(!source||!ratio)return null;

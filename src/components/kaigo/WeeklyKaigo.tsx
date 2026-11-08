@@ -1,3 +1,4 @@
+import {StudyAction} from '@/components/tokutei/StudyAction';
 import {StudyTabs} from '@/components/tokutei/StudyTabs';
 import {StudyCalendar} from '@/components/tokutei/StudyCalendar';
 import {StudyFigure} from '@/components/tokutei/StudyFigure';
@@ -84,21 +85,7 @@ function Action({
   onPress: () => void;
   disabled?: boolean;
   testID?: string;
-}) {
-  return (
-    <Pressable
-      testID={testID}
-      accessibilityRole="button"
-      accessibilityLabel={title}
-      accessibilityState={{ disabled }}
-      disabled={disabled}
-      onPress={onPress}
-      style={[s.action, disabled && s.disabled]}
-    >
-      <Text style={s.actionText}>{title}</Text>
-    </Pressable>
-  );
-}
+}) {return <StudyAction title={title} onPress={onPress} disabled={disabled} testID={testID}/>;}
 function useSaved<T>(
   key: string,
   initial: () => T,

@@ -32,6 +32,9 @@ let sourceFiles=0;
 for(const sector of ['agriculture','manufacturing','food-manufacturing','restaurant','hospitality','kaigo','kensetsu','tokutei']){
  for(const name of fs.readdirSync(path.join(root,'src/components',sector))){if(!/\.tsx?$/.test(name))continue;const file=path.join(root,'src/components',sector,name),s=fs.readFileSync(file,'utf8'),parsed=ts.createSourceFile(file,s,ts.ScriptTarget.Latest,true,name.endsWith('tsx')?ts.ScriptKind.TSX:ts.ScriptKind.TS);assert.equal(parsed.parseDiagnostics.length,0,`${sector}/${name}: syntax`);if(name!=='TokuteiChrome.tsx')assert.ok(!/<ReadingAppearanceControl\s*\/?\s*>/.test(s),`${sector}/${name}: duplicate appearance control outside the header`);sourceFiles++;}
 }
+const appearance=fs.readFileSync(path.join(root,'src/components/tokutei/StudyAppearance.tsx'),'utf8');assert.ok(!/setInterval|AsyncStorage|AppState/.test(appearance),'Removed reading modes must not retain timers or stored preferences');
+const calendarSource=fs.readFileSync(path.join(root,'src/components/tokutei/StudyCalendar.tsx'),'utf8');assert.ok(!/height:\s*['"]100%['"]/.test(calendarSource),'Week cards must use content height');
+const manufacturingSource=fs.readFileSync(path.join(root,'src/components/manufacturing/ManufacturingCourse.tsx'),'utf8');assert.ok(!manufacturingSource.includes('MANUFACTURING_SECTOR_ARTWORK'),'No extra cover inside the manufacturing course');
 const pkg=require(path.join(root,'package.json')),native=require(path.join(root,'node_modules/expo/bundledNativeModules.json'));
 assert.equal(pkg.dependencies['react-native-svg'],native['react-native-svg']);
 assert.ok(pkg.dependencies['expo-dev-client']);assert.ok(pkg.devDependencies.sharp);
