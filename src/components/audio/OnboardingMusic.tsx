@@ -1,14 +1,15 @@
+import {releaseOwnedPlayer} from './owned-player';
 import { useEffects } from '@/components/effects/EffectsProvider';
 import { DEVELOPMENT_FEATURES } from '@/config/development-features';
-import { setAudioModeAsync, useAudioPlayer } from 'expo-audio';
+import { setAudioModeAsync, createAudioPlayer } from 'expo-audio';
 import { usePathname } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Platform } from 'react-native';
 
 const MUSIC_ROUTES = new Set(['/', '/portal', '/register', '/register/work']);
 
-// Keep the player unmounted outside onboarding. useAudioPlayer loads its source
-// immediately, even when playback is paused; Home must not download this track.
+// Allocate a player only inside onboarding, after activation.
+// Home must not download the welcome track.
 export function OnboardingMusic() {
   const pathname = usePathname();
   const { preferences, ready, active } = useEffects();
@@ -25,7 +26,6 @@ export function OnboardingMusic() {
 }
 
 function OnboardingMusicPlayer() {
-  const player = useAudioPlayer(require('../../../assets/app/audio/welcome-theme.mp3'));
   const [activated, setActivated] = useState(Platform.OS !== 'web');
   useEffect(() => {
     if (Platform.OS !== 'web' || activated) return;
@@ -38,6 +38,8 @@ function OnboardingMusicPlayer() {
     };
   }, [activated]);
   useEffect(() => {
+    if (!activated) return;
+    const player = createAudioPlayer(require('../../../assets/app/audio/welcome-theme.mp3'));
     let mounted = true;
     void setAudioModeAsync({ playsInSilentMode: true, shouldPlayInBackground: false,
       interruptionMode: 'mixWithOthers' }).then(() => {
@@ -46,7 +48,7 @@ function OnboardingMusicPlayer() {
       player.volume = .38;
       player.play();
     }).catch(error => console.warn('Onboarding music:', error));
-    return () => { mounted = false; player.pause(); };
-  }, [activated, player]);
+    return () => { mounted = false; releaseOwnedPlayer(player); };
+  }, [activated]);
   return null;
 }

@@ -1,3 +1,4 @@
+import {isLockedOrganizationRoute} from '@/config/release-features';
 import {Redirect} from 'expo-router';
 import {ScrollView,Text,View} from 'react-native';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
@@ -27,5 +28,5 @@ const entries=[
 ] as const;
 export default function AcceptanceScreen(){
  if(!DEVELOPMENT_FEATURES.acceptanceReview)return <Redirect href="/home"/>;
- return <RoyalPageBackground><SafeAreaView style={{flex:1}}><View style={{paddingHorizontal:16}}><RoyalBackButton onPress={()=>{void backPrepared();}}/></View><ScrollView contentContainerStyle={{padding:16,gap:8,width:'100%',maxWidth:900,alignSelf:'center'}}><Text style={{fontSize:22,color:'#fff3cf'}}>Nghiệm thu trước phát hành</Text><Text style={{color:'#fff3cf',lineHeight:24}}>Mở các màn hình đã có để kiểm tra. Chức năng cần máy chủ hoặc tài khoản xác thực vẫn báo trạng thái thật; màn hình này không tạo giao dịch hay quyền trả phí giả.</Text>{entries.map(([label,route])=><RoyalButton key={route} compact label={label} onPress={()=>{void pushPrepared(route as Parameters<typeof pushPrepared>[0]);}}/>)}</ScrollView></SafeAreaView></RoyalPageBackground>;
+ return <RoyalPageBackground><SafeAreaView style={{flex:1}}><View style={{paddingHorizontal:16}}><RoyalBackButton onPress={()=>{void backPrepared();}}/></View><ScrollView contentContainerStyle={{padding:16,gap:8,width:'100%',maxWidth:900,alignSelf:'center'}}><Text style={{fontSize:22,color:'#fff3cf'}}>Nghiệm thu bản người học</Text><Text style={{color:'#fff3cf',lineHeight:24}}>Mở các màn hình đã có để kiểm tra. Chức năng cần máy chủ hoặc tài khoản xác thực vẫn báo trạng thái thật; màn hình này không tạo giao dịch hay quyền trả phí giả.</Text>{entries.filter(([,route])=>!isLockedOrganizationRoute(route)).map(([label,route])=><RoyalButton key={route} compact label={label} onPress={()=>{void pushPrepared(route as Parameters<typeof pushPrepared>[0]);}}/>)}</ScrollView></SafeAreaView></RoyalPageBackground>;
 }

@@ -210,7 +210,7 @@ function WelcomeContent() {
       </SafeAreaView>
 
       <View style={[styles.bottomArea, { width: startWidth, left: startLeft, bottom: insets.bottom + (isLandscape ? 6 : 22) }]}>
-        <Pressable onPress={() => pushPrepared('/portal')} style={({ pressed }) => [styles.startHitbox, pressed && styles.pressed]}>
+        <Pressable onPress={() => pushPrepared('/register')} style={({ pressed }) => [styles.startHitbox, pressed && styles.pressed]}>
           <Animated.View style={[styles.startPulse, {
             opacity: pulse.interpolate({ inputRange: [0, 1], outputRange: [0.72, 1] }),
             transform: [{ scale: pulse.interpolate({ inputRange: [0, 1], outputRange: [0.99, 1.015] }) }],

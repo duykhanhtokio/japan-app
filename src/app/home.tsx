@@ -49,7 +49,7 @@ export default function HomeScreen(){
    <ScrollView style={styles.content} contentContainerStyle={styles.contentInner} showsVerticalScrollIndicator={false}>
     <View style={styles.headingArea}><RoyalNavyFrame style={styles.headingPlaque}><Text style={styles.heading}>学習モード</Text></RoyalNavyFrame><Text style={styles.headingVi}>Chọn nội dung bạn muốn học</Text></View>
     <Pressable onPress={()=>pushPrepared('/economy')} accessibilityRole="button" style={{alignSelf:'center',backgroundColor:'#21344d',borderColor:'#c9a55d',borderWidth:1,borderRadius:14,paddingHorizontal:24,paddingVertical:12,marginBottom:12}}><Text style={{color:'#f6d990',fontWeight:'700'}}>Ví điểm · Premium</Text></Pressable>
-    {DEVELOPMENT_FEATURES.acceptanceReview&&<RoyalButton compact label="Nghiệm thu toàn bộ chức năng" onPress={()=>pushPrepared('/acceptance')}/>}
+    {DEVELOPMENT_FEATURES.acceptanceReview&&<RoyalButton compact label="Nghiệm thu phần người học" onPress={()=>pushPrepared('/acceptance')}/>}
     <View style={[styles.cards,{gap:ROYAL_LAYOUT.homeModeGap}]}>{MODES.map(mode=><LearningImageCard key={mode.ja} {...mode} width={cardWidth} height={cardHeight} onPress={()=>pushPrepared(mode.route)}/>)}</View>
    </ScrollView>
    <View><BottomNav active="home" variant="approved"/></View>

@@ -1,3 +1,5 @@
+import {Redirect} from 'expo-router';
+import {RELEASE_FEATURES} from '@/config/release-features';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
@@ -48,7 +50,7 @@ function PortalCard({ portal, wide }: { portal: Portal; wide: boolean }) {
   );
 }
 
-export default function PortalSelectionScreen() {
+function PortalSelectionScreen() {
   const royalPosition = useRoyalPositioning();
   const { width } = royalPosition;
   const wide = width >= 720;
@@ -89,3 +91,6 @@ const styles = StyleSheet.create({
   cardTitleJa: { width: '100%', color: ROYAL.paleGold, fontFamily: ROYAL_FONT.heading, fontSize: 19, lineHeight: 26, textAlign: 'center', includeFontPadding: false, },
   cardTitleEn: { width: '100%', marginTop: 1, color: '#fff8e8', fontFamily: ROYAL_FONT.body, fontSize: 12, lineHeight: 17, textAlign: 'center', includeFontPadding: false },
 });
+
+/** Hidden in the learner-only first beta; direct links are gated too. */
+export default function LearnerReleaseGate(){return RELEASE_FEATURES.organizationPortalsEnabled?<PortalSelectionScreen/>:<Redirect href="/register"/>;}
