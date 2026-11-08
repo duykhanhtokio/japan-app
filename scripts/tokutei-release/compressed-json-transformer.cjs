@@ -1,11 +1,11 @@
 'use strict';
 const path=require('node:path'),fs=require('node:fs'),crypto=require('node:crypto'),{deflateSync}=require('node:zlib');
 const upstream=require(require('expo/metro-config').unstable_transformerPath);
-const sectors='(?:agriculture|manufacturing|food-manufacturing|restaurant|hospitality|kaigo|kensetsu|dialogue-content|generated)';
+const sectors='(?:agriculture|manufacturing|food-manufacturing|restaurant|hospitality|kaigo|kensetsu|dialogue-content|generated|jlpt-official|jlpt-original|jlpt-mock)';
 const selected=new RegExp('^(?:src/data/'+sectors+'/|docs/ssw-workspace/)');
 function packedSource(projectRoot,filename,data){
  const relative=path.relative(projectRoot,path.resolve(projectRoot,filename)).split(path.sep).join('/');
- // Other modules, especially the locked JLPT data/UI, use Expo's unchanged worker.
+ // Compress authored JSON only; source data and locked UI files stay byte-identical.
  if(!relative.endsWith('.json')||!selected.test(relative)||data.length<16384)return null;
  const normalized=data.subarray(0,3).equals(Buffer.from([239,187,191]))?data.subarray(3):data;
  const payload=deflateSync(normalized,{level:6}).toString('base64');

@@ -1,4 +1,5 @@
-/** Development-only switches. Production builds always keep registration enabled. */
+/** Publisher acceptance build: show onboarding instead of skipping registration. */
 export const DEVELOPMENT_FEATURES = {
-  skipRegistration: __DEV__,
+  skipRegistration: false,
+  acceptanceReview: __DEV__,
 } as const;

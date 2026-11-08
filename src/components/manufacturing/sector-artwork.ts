@@ -1,2 +1,2 @@
-/** Existing original factory illustration; available as ordinary Git bytes. */
-export const MANUFACTURING_SECTOR_ARTWORK=require('../../../assets/manufacturing/royal-weekly-20261107/week01/mechanical-day02-5s-workbench.webp');
+/** Single-scene cover matched to the existing construction cover, 2026-11-08. */
+export const MANUFACTURING_SECTOR_ARTWORK=require('../../../assets/app/industries/manufacturing-royal-v2.webp');

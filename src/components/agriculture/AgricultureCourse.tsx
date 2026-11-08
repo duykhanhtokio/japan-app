@@ -1,3 +1,4 @@
+import {StudyNavigation} from '@/components/tokutei/StudyNavigation';
 import {StudyAction} from '@/components/tokutei/StudyAction';
 import {StudyTabs} from '@/components/tokutei/StudyTabs';
 import {StudyCalendar} from '@/components/tokutei/StudyCalendar';
@@ -124,7 +125,7 @@ function Attempt({learner,level,exam,onBack}:{learner:string;level:AgricultureLe
  {q.illustrationId&&<AgricultureExamIllustration id={q.illustrationId} revision={q.illustrationRevision} level={level} questionSource={{lessonId:q.lessonId,lessonSourceHash:q.lessonSourceHash}} colors={colors}/>}
  {q.optionsJa.map((text,i)=><Button key={i} title={`${i+1}. ${text}`} selected={attempt.answers[attempt.currentQuestion]===i} disabled={attempt.submitted||!figureReady} onPress={()=>{const answers=[...attempt.answers];answers[attempt.currentQuestion]=i;persist({...attempt,answers});}}/>)}
  {attempt.submitted&&<View><Text style={[s.body,{color:colors.text}]}>正解：{q.correctIndex+1}</Text>{q.optionReasonsJa.map((why,i)=><Text key={i} style={[s.body,{color:colors.text}]}>{i+1}. {why}</Text>)}</View>}
- <View style={s.row}><Button title="前へ" disabled={attempt.currentQuestion===0} onPress={()=>persist({...attempt,currentQuestion:attempt.currentQuestion-1})}/><Button title="次へ" disabled={attempt.currentQuestion===exam.questions.length-1} onPress={()=>persist({...attempt,currentQuestion:attempt.currentQuestion+1})}/></View>
+ <StudyNavigation><Button title="前へ" disabled={attempt.currentQuestion===0} onPress={()=>persist({...attempt,currentQuestion:attempt.currentQuestion-1})}/><Button title="次へ" disabled={attempt.currentQuestion===exam.questions.length-1} onPress={()=>persist({...attempt,currentQuestion:attempt.currentQuestion+1})}/></StudyNavigation>
  <Button title={attempt.submitted?'もう一度解く':saving?'保存中…':'提出する'} disabled={saving||error==='write'||!figureReady} onPress={()=>setConfirm(attempt.submitted?'restart':'submit')}/>
  </>}
  </ScrollView><Modal visible={confirm!==null} transparent animationType="none" onRequestClose={()=>setConfirm(null)}><View style={s.modal}><View style={[s.dialog,{backgroundColor:colors.background}]}><Text style={[s.body,{color:colors.text}]}>{confirm==='leave'?'保存できていない回答があります。保存せずに戻りますか。':confirm==='restart'?'この確認問題を最初から解き直しますか。':`提出しますか。未回答：${attempt?.answers.filter(a=>a===null).length??0}問`}</Text><Button title="キャンセル" onPress={()=>setConfirm(null)}/><Button title="確定" onPress={()=>{if(confirm==='leave'){setConfirm(null);onBack();return;}if(attempt)persist(confirm==='restart'?freshTestAttempt(exam):{...attempt,submitted:true});setConfirm(null);}}/></View></View></Modal></Surface>;

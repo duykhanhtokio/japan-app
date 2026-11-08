@@ -53,6 +53,21 @@ export function recordingFor(text: string, options: Pick<Options, 'scenarioId' |
  return entry && entry.sourceJa === text && entry.role === role && entry.speakerId === approved.speakerId && npcAudioClips[entry.clip] !== undefined
   ? { ...entry, source: npcAudioClips[entry.clip] } : null;
 }
+// Share in-flight downloads and local files between prefetch and playback.
+// Only recordings in the opened scenario are prepared; no global background job.
+const localRecordings = new Map<string, Promise<{uri:string}>>();
+function localSource(source:number|{uri:string}):Promise<number|{uri:string}> {
+ if(Platform.OS==='web'||typeof source==='number'||!/^https?:/.test(source.uri))return Promise.resolve(source);
+ const uri=source.uri,existing=localRecordings.get(uri);if(existing)return existing;
+ const request=(async()=>{const asset=Asset.fromURI(uri);await asset.downloadAsync();if(!asset.localUri)throw new Error('Audio download unavailable');return {uri:asset.localUri};})();
+ localRecordings.set(uri,request);
+ void request.catch(()=>{if(localRecordings.get(uri)===request)localRecordings.delete(uri);});
+ if(localRecordings.size>12)localRecordings.delete(localRecordings.keys().next().value!);
+ return request;
+}
+export async function prefetch(text:string,options:Pick<Options,'scenarioId'|'turnId'|'category'>) {
+ const recording=recordingFor(text,options);if(recording)await localSource(recording.source);
+}
 export function speak(text: string, options: Options) {
  const token = ++generation;
  release();
@@ -137,12 +152,9 @@ export function speak(text: string, options: Options) {
    let source = recording.source;
    if (Platform.OS !== 'web' && typeof source === 'object' && /^https?:/.test(source.uri)) {
     watchdog = setTimeout(fail, 60000);
-    const asset = Asset.fromURI(source.uri);
-    await asset.downloadAsync();
+    source = await localSource(source);
     if (token !== generation) return;
     if (watchdog) clearTimeout(watchdog); watchdog = null;
-    if (!asset.localUri) { fail(); return; }
-    source = {uri:asset.localUri};
    }
    if (token !== generation) return;
    play(source, recording.durationMs, 'startMs' in recording ? recording.startMs : 0, !('startMs' in recording));
