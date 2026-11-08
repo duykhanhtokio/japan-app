@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { router } from 'expo-router';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
-import { RoyalBackButton } from '@/components/ui/RoyalSurface';
+import { RoyalBackButton, ROYAL_LAYOUT } from '@/components/ui/RoyalSurface';
 import { backPrepared, replacePrepared } from '@/components/ui/prepareSceneRoute';
 import { type EconomyAccount } from '@/economy/client';
 import { ECONOMY_POLICY } from '@/economy/policy';
@@ -39,7 +39,8 @@ export default function EconomyScreen() {
 }
 const styles = StyleSheet.create({
   screen:{flex:1,backgroundColor:'#101827'},
-  header:{width:'100%',maxWidth:720,alignSelf:'center',minHeight:64,paddingHorizontal:20,paddingVertical:8,flexDirection:'row',alignItems:'center',gap:14},
+  // Match the shared Tokutei header: title wrapping must never move Back.
+  header:{width:'100%',maxWidth:932,alignSelf:'center',paddingHorizontal:ROYAL_LAYOUT.screenGutter,paddingTop:ROYAL_LAYOUT.backSafeTop,paddingBottom:8,flexDirection:'row',alignItems:'flex-start',gap:8},
   scroll:{flex:1},
   page:{flexGrow:1,width:'100%',maxWidth:720,alignSelf:'center',paddingHorizontal:20,paddingTop:8,paddingBottom:24,gap:16},
   heading:{flex:1,minWidth:0,flexShrink:1,fontSize:24,color:'#f6d990',fontWeight:'700'},

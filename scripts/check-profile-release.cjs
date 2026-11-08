@@ -11,7 +11,7 @@ for(const lang of ['en','vi','ja','id','zh-CN','zh-TW','hi','bn','ne','my','th',
 }
 let currentLanguage='id';
 const native={ActivityIndicator:'ActivityIndicator',Pressable:'Pressable',ScrollView:'ScrollView',Text:'Text',View:'View',StyleSheet:{create:x=>x}};
-const mocks={'react':React,'react/jsx-runtime':require('react/jsx-runtime'),'react-native':native,'expo-router':{router:{canGoBack:()=>false}},'@/context/LanguageContext':{useAppLanguage:()=>({language:currentLanguage})},'@/i18n/profile-release-copy':{profileText},'@/config/release-features':{RELEASE_FEATURES:{freeLearning:true}},'@/components/ui/StableSafeAreaView':{default:'SafeAreaView',__esModule:true},'@/components/ui/RoyalSurface':{RoyalBackButton:'Back'},'@/components/ui/prepareSceneRoute':{backPrepared:()=>{},replacePrepared:()=>{}},'@/economy/client':{},'@/economy/policy':{ECONOMY_POLICY:{premiumMonthlyYen:3000}}};
+const mocks={'react':React,'react/jsx-runtime':require('react/jsx-runtime'),'react-native':native,'expo-router':{router:{canGoBack:()=>false}},'@/context/LanguageContext':{useAppLanguage:()=>({language:currentLanguage})},'@/i18n/profile-release-copy':{profileText},'@/config/release-features':{RELEASE_FEATURES:{freeLearning:true}},'@/components/ui/StableSafeAreaView':{default:'SafeAreaView',__esModule:true},'@/components/ui/RoyalSurface':{RoyalBackButton:'Back',ROYAL_LAYOUT:{screenGutter:16,backSafeTop:18}},'@/components/ui/prepareSceneRoute':{backPrepared:()=>{},replacePrepared:()=>{}},'@/economy/client':{},'@/economy/policy':{ECONOMY_POLICY:{premiumMonthlyYen:3000}}};
 const Screen=load('src/app/economy.tsx',mocks).default;
 (async()=>{
  let screen;await act(async()=>{screen=create(React.createElement(Screen));});
