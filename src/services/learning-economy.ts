@@ -1,3 +1,4 @@
+import {RELEASE_FEATURES} from '@/config/release-features';
 import { learningStorageKey } from './learning-storage-scope';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -39,6 +40,7 @@ export const loadLearningEconomy = () => serial(read);
 export function chargeLearningSession(id: string, kind: Charge['kind']) {
   return serial(async (storageKey) => {
     const state = await read(storageKey);
+    if (RELEASE_FEATURES.freeLearning) return {allowed:true,charged:false,state};
     if (state.charges[id]) return { allowed: true, charged: false, state };
     const amount = kind === 'exam' ? EXAM_COST : DIALOGUE_COST;
     if (state.credits < amount) return { allowed: false, charged: false, state };

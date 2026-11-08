@@ -1,3 +1,4 @@
+import {RELEASE_FEATURES} from '@/config/release-features';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Alert, AppState } from 'react-native';
 import { learningAction, learningOperationId, learningServerNow } from '@/services/daily-learning-client';
@@ -11,12 +12,12 @@ export function useJlptExamAccess(examId:string,initialSession:N1TrialSession|nu
     const mounted=useRef(true);useEffect(()=>{mounted.current=true;return()=>{mounted.current=false;};},[]);
     const apply=useCallback((access:Partial<Access>)=>{if(mounted.current){setDenied(!access.allowed);setExpiresAt(access.source==='premium' && runId.current ? null : access.expiresAt??null);if(!access.allowed)setReason('Quyền làm bài đã hết hạn hoặc cần mở đề. Bài dở vẫn được giữ.');}},[]);
     const refresh=useCallback(async()=>{
-        if(reviewOnly)return;
+        if(reviewOnly||RELEASE_FEATURES.freeLearning)return;
         try{const result=await learningAction('access',{examId,runId:runId.current||undefined});apply(result.result);}
         catch(error){if(mounted.current){setDenied(true);setReason((error as Error).message);}}
     },[apply,examId,reviewOnly]);
     useEffect(()=>{
-        if(reviewOnly)return;
+        if(reviewOnly||RELEASE_FEATURES.freeLearning)return;
         void refresh();const interval=setInterval(()=>{void refresh();},30000);
         const sub=AppState.addEventListener('change',state=>{if(state==='active'){setDenied(true);void refresh();}});
         return()=>{clearInterval(interval);sub.remove();};
@@ -30,6 +31,7 @@ export function useJlptExamAccess(examId:string,initialSession:N1TrialSession|nu
     },[expiresAt,refresh]);
     async function authorize(kind:'start'|'continue'|'submit',session?:N1TrialSession) {
         if(reviewOnly || authorizing.current)return false;
+        if(RELEASE_FEATURES.freeLearning){if(kind==='start'||kind==='continue')runId.current=learningOperationId();return true;}
         authorizing.current=true;
         try{
             if(kind==='start') {const id=learningOperationId();const next=await learningAction('start',{examId,runId:id});runId.current=id;apply(next.result);return !!next.result.allowed;}

@@ -1,3 +1,4 @@
+import {betaText} from '@/i18n/learner-beta-copy';
 import { useMemo, useState } from 'react';
 import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { checkMatch, shuffle } from './core.mjs';
@@ -18,12 +19,12 @@ export default function DailyWordMatch({challenge,initialAttempts=[],onChange}:P
         if(next.some(x=>x===null))return;
         const tuple=next as Match,good=checkMatch(challenge,tuple);
         const updated=[...attempts.filter(t=>checkMatch(challenge,t)),...attempts.filter(t=>!checkMatch(challenge,t)).slice(-189),tuple];
-        setAttempts(updated);setSelected([null,null,null]);setFeedback(good?'✓':'Thử lại · もう一度');
+        setAttempts(updated);setSelected([null,null,null]);setFeedback(good?'✓':betaText(challenge.locale,'tryAgain'));
         const matched=new Set([...completed,...(good?[tuple[0]]:[])]);
         onChange(updated,matched.size===10);
     }
     return <View testID="daily-word-match" style={s.root}>
-        <View style={s.legend}>{['日本語','かな',challenge.locale==='vi'?'Nghĩa':challenge.locale==='ja'?'意味':'Meaning'].map(label=><Text key={label} style={s.heading}>{label}</Text>)}</View>
+        <View style={s.legend}>{['日本語','かな',betaText(challenge.locale,'meaning')].map(label=><Text key={label} style={s.heading}>{label}</Text>)}</View>
         <View style={s.board}>{blocks.map((columns,block)=><View key={block} style={s.block}>{columns.map(({field,words},col)=><View key={field} style={s.column}>{words.map(w=>{
             const matched=completed.has(w.id),group=challenge.words.findIndex(x=>x.id===w.id),color=colors[group];
             return <Pressable testID={`match-${field}-${w.id}`} key={w.id} accessibilityRole="button" accessibilityLabel={`${field}: ${w[field]}`} accessibilityState={{selected:selected[col]===w.id,disabled:matched}}

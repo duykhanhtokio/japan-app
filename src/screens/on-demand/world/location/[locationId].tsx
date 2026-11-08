@@ -1,3 +1,6 @@
+import {prepareDialogueEntry} from '@/services/dialogue-entry-audio';
+import {useAppLanguage} from '@/context/LanguageContext';
+import {betaText} from '@/i18n/learner-beta-copy';
 import SafeAreaView from '@/components/ui/StableSafeAreaView';
 import { pushPrepared, backPrepared } from '@/components/ui/prepareSceneRoute';
 import ImageBackground from '@/components/ui/FocusedImageBackground';
@@ -23,17 +26,22 @@ const KAIWA_GUIDE = [
 ];
 
 export default function LocationScreen(){
+ const {language}=useAppLanguage();
+ const [preparing,setPreparing]=useState(false),[audioFailed,setAudioFailed]=useState(false);
  const raw=useLocalSearchParams<{locationId:string}>().locationId,id=Array.isArray(raw)?raw[0]:raw,location=id?getLifeLocationById(id):null,royalPosition=useRoyalPositioning();
  const scenarios=useMemo(()=>id?getLifeScenariosByLocation(id).filter(x=>hasLifeDialogue(x.id)):[],[id]);
  const [selectedId,setSelectedId]=useState<string|null>(null),[guideVisible,setGuideVisible]=useState(false);
  useEffect(()=>{if(!id)return;let active=true;setSelectedId(null);void nextLocationScenario(id,scenarios.map(x=>x.id)).then(next=>{if(active)setSelectedId(next)});return()=>{active=false}},[id,scenarios]);
+ useEffect(()=>{if(selectedId)void prepareDialogueEntry(selectedId,location?.category).catch(()=>{});},[selectedId,location?.category]);
+ const begin=async()=>{if(!selectedId||preparing)return;setPreparing(true);setAudioFailed(false);try{await prepareDialogueEntry(selectedId,location?.category);await pushPrepared(`/world/dialogue/${selectedId}`);}catch{setAudioFailed(true);}finally{setPreparing(false);}};
  if(!location)return <SafeAreaView style={s.empty}><Text>ロケーションが見つかりません。</Text></SafeAreaView>;
  const activeScenario=scenarios.find(x=>x.id===selectedId),bg=locationBackground(location.id,location.category)??sceneForCategory(location.category),wide=royalPosition.isWide;
  return <ImageBackground inheritBackdrop source={bg} resizeMode="cover" style={s.screen}><SafeAreaView style={s.safe}>
   <View style={s.header}><RoyalBackButton onPress={()=>backPrepared()}/><View style={s.heading}><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.kicker}>会話練習・{categoryLabelJa(location.category)}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={2} style={s.title}>{displayLocationNameJa(location.nameJa,location.category)}</Text><Text {...ROYAL_TEXT_FIT} numberOfLines={1} style={s.subtitle}>今回の課題</Text></View></View>
   <ScrollView contentContainerStyle={[s.content,wide&&s.contentWide]} showsVerticalScrollIndicator={false}>
    <RoyalButton onPress={()=>setGuideVisible(true)} compact style={s.guideButton}><Text style={s.playText}>会話の進め方</Text></RoyalButton>
-   <View style={[s.scenarioGrid,wide&&s.scenarioGridWide]}>{activeScenario&&<View key={activeScenario.id} style={wide?s.wideItem:undefined}><DepthPressable onPress={()=>pushPrepared(`/world/dialogue/${activeScenario.id}`)} style={s.scenarioDepth}><RoyalInfoPanel sizingGroup={ROYAL_CONTENT_GROUP.worldScenario} label="今回の課題" style={s.scenario}><View style={s.scenarioContent}><Text maxFontSizeMultiplier={1} style={s.objective}>{scenarioMission(activeScenario,location.category)}</Text></View></RoyalInfoPanel></DepthPressable><RoyalButton onPress={()=>pushPrepared(`/world/dialogue/${activeScenario.id}`)} style={s.play} compact><Text maxFontSizeMultiplier={1} style={s.playText}>開始</Text></RoyalButton></View>}</View>
+   <View style={[s.scenarioGrid,wide&&s.scenarioGridWide]}>{activeScenario&&<View key={activeScenario.id} style={wide?s.wideItem:undefined}><DepthPressable onPress={()=>{void begin();}} style={s.scenarioDepth}><RoyalInfoPanel sizingGroup={ROYAL_CONTENT_GROUP.worldScenario} label="今回の課題" style={s.scenario}><View style={s.scenarioContent}><Text maxFontSizeMultiplier={1} style={s.objective}>{scenarioMission(activeScenario,location.category)}</Text></View></RoyalInfoPanel></DepthPressable><RoyalButton onPress={()=>{void begin();}} style={s.play} compact><Text maxFontSizeMultiplier={1} style={s.playText}>{preparing?betaText(language,'preparingAudio'):'開始'}</Text></RoyalButton></View>}</View>
+   {audioFailed&&<Text style={{color:'#fff3cf',textAlign:'center'}}>{betaText(language,'audioError')}</Text>}
    <RoyalButton onPress={()=>pushPrepared('/world/dialogue-history')} style={s.history} compact><Text style={s.playText}>学習した会話を見る</Text></RoyalButton>
   </ScrollView>
   {guideVisible && <Modal visible={guideVisible} transparent animationType="none" onRequestClose={()=>setGuideVisible(false)}>

@@ -1,4 +1,4 @@
-import { useBackdropOcclusion } from '@/components/ui/AppBackdrop';
+import {betaText} from '@/i18n/learner-beta-copy';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { legacyFieldTranslation } from '@/i18n/selected-content';
 import { Text } from '@/components/app/LocalizedText';
@@ -11,7 +11,6 @@ import { useCallback, useState, type PropsWithChildren } from 'react';
 
 import {
     Image,
-    Modal,
     Pressable,
     ScrollView,
     StyleSheet,
@@ -20,11 +19,6 @@ import {
     type ViewStyle,
 } from 'react-native';
 
-import {
-    SafeAreaProvider,
-    useSafeAreaInsets,
-    useSafeAreaFrame,
-} from 'react-native-safe-area-context';
 
 import BottomNav from '@/components/app/BottomNav';
 import GameHeader from '@/components/app/GameHeader';
@@ -56,11 +50,7 @@ function ProfilePanel({children,style,kind='plain'}:PropsWithChildren<{style?:St
 
 export default function ProfileScreen() {
     const {language}=useAppLanguage();
-    const modalInsets = useSafeAreaInsets();
-    const modalFrame = useSafeAreaFrame();
-    const [detailsVisible,setDetailsVisible]=useState(false);
-    useBackdropOcclusion(detailsVisible);
-    const navigate=(href:Parameters<typeof router.push>[0])=>{void pushPrepared(href, () => setDetailsVisible(false));};
+    const navigate=(href:Parameters<typeof router.push>[0])=>{void pushPrepared(href);};
     const [economy,setEconomy]=useState<LearningEconomy|null>(null);
     useFocusEffect(useCallback(()=>{let active=true;void syncJlptQualification().then(value=>{if(active)setEconomy(value)});return()=>{active=false}},[]));
     const {
@@ -113,7 +103,7 @@ export default function ProfileScreen() {
         60;
 
     return (
-        <RoyalPageBackground source={require('../../../assets/app/backgrounds/profile-light.png')} enabled={!detailsVisible}><SafeAreaView
+        <RoyalPageBackground source={require('../../../assets/app/backgrounds/profile-light.png')}><SafeAreaView
             style={
                 styles.container
             }
@@ -144,23 +134,7 @@ export default function ProfileScreen() {
                     <Text style={styles.identityName}>{profile.name?.trim() || 'プレイヤー'}</Text>
                     <Text style={styles.identityRank}>JLPT · {economy?.officialRank ?? 'N5'}</Text>
                     <Image fadeDuration={0} source={PROFILE_ICONS.work} resizeMode="contain" style={{width:40,height:40,marginTop:12}}/><Text style={styles.identityOccupation}> {occupation?.titleJa ?? 'その他'} / {legacyFieldTranslation(language, occupation ?? {titleJa:'その他',titleVi:'Công việc khác'}, 'title')}</Text>
-                    <RoyalButton style={styles.identityEdit} onPress={()=>navigate('/register')}>
-                        <Text style={styles.editText}>編集 · Chỉnh sửa</Text>
-                    </RoyalButton>
-                    <Pressable accessibilityRole="button" style={styles.detailsButton} onPress={()=>setDetailsVisible(true)}>
-                        <Text style={styles.detailsLink}>詳細を見る · Xem chi tiết ›</Text>
-                    </Pressable>
                 </View>
-            </ScrollView>
-            {detailsVisible && <Modal visible={detailsVisible} animationType="none" onRequestClose={()=>setDetailsVisible(false)}>
-                <SafeAreaProvider initialMetrics={{ insets: modalInsets, frame: modalFrame }}><RoyalPageBackground source={PROFILE_ART}><SafeAreaView style={styles.detailsPage}>
-                    <View style={styles.detailsHeader}>
-                        <Text style={styles.sectionTitle}>プロフィール · 詳細</Text>
-                        <RoyalButton onPress={()=>setDetailsVisible(false)} style={styles.detailsClose}>
-                            <Text style={styles.editText}>閉じる · Đóng</Text>
-                        </RoyalButton>
-                    </View>
-                    <ScrollView contentContainerStyle={styles.content}>
                 {/* =========================
                     COMMUNICATION RATING
                 ========================== */}
@@ -788,9 +762,8 @@ export default function ProfileScreen() {
                         </Text>
                     </View>
                 </ProfilePanel>
-                    </ScrollView>
-                </SafeAreaView></RoyalPageBackground></SafeAreaProvider>
-            </Modal>}
+                <RoyalButton style={[styles.identityEdit,{alignSelf:'center'}]} onPress={()=>navigate('/register')}><Text style={styles.editText}>{betaText(language,'edit')}</Text></RoyalButton>
+            </ScrollView>
 
             <BottomNav
                 active="profile"

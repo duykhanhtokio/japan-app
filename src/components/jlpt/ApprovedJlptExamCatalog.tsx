@@ -1,3 +1,6 @@
+import {RELEASE_FEATURES} from '@/config/release-features';
+import {useAppLanguage} from '@/context/LanguageContext';
+import {betaText} from '@/i18n/learner-beta-copy';
 import { subscribeLearningIdentity, learningStoragePrefix } from '@/services/learning-storage-scope';
 import JlptAccessNotice from './JlptAccessNotice';
 import { learningAction, learningTransaction, learningServerNow } from '@/services/daily-learning-client';
@@ -25,11 +28,12 @@ type Choice = { kind: 'structured'; exam: ApprovedN1Exam; label: string; session
 
 export default function ApprovedJlptExamCatalog({ level, onBack }: { level: JlptLevel; onBack: () => void }) {
   const navigation = useNavigation();
+  const {language}=useAppLanguage();
   const [accessSnapshot,setAccessSnapshot]=useState<LearningSnapshot|null>(null);
   const [accessMessage,setAccessMessage]=useState('');
   const opening=useRef(false);
   const [history,setHistory]=useState<{choice:Choice;sessions:N1TrialSession[]}|null>(null);
-  async function refreshAccess(){try{setAccessSnapshot(await learningAction('account'));setAccessMessage('');}catch(error){setAccessMessage((error as Error).message);}}
+  async function refreshAccess(){if(RELEASE_FEATURES.freeLearning){setAccessMessage('');return;}try{setAccessSnapshot(await learningAction('account'));setAccessMessage('');}catch(error){setAccessMessage((error as Error).message);}}
   const [selected, setSelected] = useState<Choice | null>(null);
   useEffect(()=>{if(!selected)void refreshAccess();},[selected]);
   useEffect(()=>subscribeLearningIdentity(()=>{setSelected(null);setHistory(null);setAccessSnapshot(null);void refreshAccess();}),[]);
@@ -75,7 +79,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
     const local=await loadSubmittedArchive(choice.exam.storageKey);
     const cloud=Object.values(accessSnapshot?.state.archives?.[choice.exam.id]??{});
     const sessions=[...new Map([...cloud,...local,...(current?.submitted?[current]:[])].filter(s=>s.submitted&&s.result&&s.submittedAt).map(s=>[s.submittedAt,s])).values()].sort((a,b)=>String(b.submittedAt).localeCompare(String(a.submittedAt)));
-    if(!sessions.length){Alert.alert('JLPT','Chưa có bài đã nộp được lưu cho đề này.');return;}
+    if(!sessions.length){Alert.alert('JLPT',betaText(language,'emptyHistory'));return;}
     if(scope!==await learningStoragePrefix())return;
     setHistory({choice,sessions});
   }
@@ -91,6 +95,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
       const archives=await loadSubmittedArchive(choice.exam.storageKey);
       const cloud=accessSnapshot?.state.archives?.[choice.exam.id];
       const archived=session?.submitted?session:archives.at(-1)??(cloud?Object.values(cloud).at(-1):null);
+      if(RELEASE_FEATURES.freeLearning){await showChoice(choice,session);return;}
       let allowed=false;
       try { const result=await learningAction('access',{examId:choice.exam.id,runId:session?.submitted?undefined:session?.accessRunId});setAccessSnapshot(result);allowed=!!result.result.allowed; }
       catch(error){setAccessMessage((error as Error).message);}
@@ -105,6 +110,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
     } finally {opening.current=false;}
   }
   function accessLabel(id:string){
+    if(RELEASE_FEATURES.freeLearning)return betaText(language,'free');
     if(!accessSnapshot)return '🔒 · Đang chờ xác minh quyền thi';
     const now=learningServerNow()??accessSnapshot.serverNow;
     if(accessSnapshot.premiumUntil>now)return 'Premium';
@@ -114,7 +120,7 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
     return /^n[1-5]-/.test(id)?'🔒 · Vé vàng / Premium':'🔒 · Premium';
   }
 
-  return <JlptStudyBackground enabled={!!selected}>{selected?.kind === 'structured' ? <SafeAreaView testID="jlpt-exam-safe-area" style={styles.examScreen}><N1OfficialTrial exam={selected.exam} initialSession={selected.session} reviewOnly={selected.reviewOnly} onExit={() => { activeExamExit.current = null; setSelected(null); }} registerExit={(handler) => { activeExamExit.current = handler; }} /></SafeAreaView> : <SafeAreaView style={styles.screen}><JlptExamHeader title={`${level} · 模擬試験一覧`} subtitle="受験する試験を選択" transparent onBack={onBack} /><ScrollView contentContainerStyle={styles.content}><JlptPaper style={styles.catalogPaper}><Text style={styles.heading}>模擬試験一覧</Text><Text style={styles.description}>受験する試験を選んでください。</Text><JlptAccessNotice text={accessMessage || `Chìa khóa: ${accessSnapshot?.state.keys??'—'} · Vé vàng: ${accessSnapshot?.state.tickets??'—'}`} onRetry={()=>{void refreshAccess();}} />{choices.map((choice) => {
+  return <JlptStudyBackground enabled={!!selected}>{selected?.kind === 'structured' ? <SafeAreaView testID="jlpt-exam-safe-area" style={styles.examScreen}><N1OfficialTrial exam={selected.exam} initialSession={selected.session} reviewOnly={selected.reviewOnly} onExit={() => { activeExamExit.current = null; setSelected(null); }} registerExit={(handler) => { activeExamExit.current = handler; }} /></SafeAreaView> : <SafeAreaView style={styles.screen}><JlptExamHeader title={`${level} · 模擬試験一覧`} subtitle="受験する試験を選択" transparent onBack={onBack} /><ScrollView contentContainerStyle={styles.content}><JlptPaper style={styles.catalogPaper}><Text style={styles.heading}>模擬試験一覧</Text><Text style={styles.description}>受験する試験を選んでください。</Text>{!RELEASE_FEATURES.freeLearning&&<JlptAccessNotice text={accessMessage || `Chìa khóa: ${accessSnapshot?.state.keys??'—'} · Vé vàng: ${accessSnapshot?.state.tickets??'—'}`} onRetry={()=>{void refreshAccess();}} />}{choices.map((choice) => {
     const count = choice.kind === 'structured' ? choice.exam.questions.length : undefined;
     const summary = summaries[choice.exam.id];
     const percent = summary?.latestTotal ? Math.round(summary.latestCorrect / summary.latestTotal * 100) : null;
@@ -132,9 +138,9 @@ export default function ApprovedJlptExamCatalog({ level, onBack }: { level: Jlpt
           <Text style={styles.lastAttempt}>最終受験：{submittedDate}</Text>
         </View>
       </View>
-      <View><Text style={styles.chevron}>›</Text><Pressable accessibilityRole="button" onPress={event=>{event.stopPropagation();void openHistory(choice);}}><Text style={styles.count}>Bài đã nộp</Text></Pressable></View>
+      <View><Text style={styles.chevron}>›</Text><Pressable accessibilityRole="button" onPress={event=>{event.stopPropagation();void openHistory(choice);}}><Text style={styles.count}>{betaText(language,'history')}</Text></Pressable></View>
     </RoyalContentPanel></Pressable>;
-  })}</JlptPaper></ScrollView></SafeAreaView>}<Modal visible={!!history} transparent onRequestClose={()=>setHistory(null)}><View style={{flex:1,backgroundColor:'#0009',padding:24,justifyContent:'center'}}><View style={{maxHeight:'85%',backgroundColor:'#fffaf0',padding:18,borderRadius:12}}><Text style={styles.heading}>Bài đã nộp</Text><ScrollView>{history?.sessions.map(session=><Pressable key={session.submittedAt} style={{paddingVertical:14,borderBottomWidth:1,borderColor:'#d5ccbc'}} onPress={()=>{const choice=history.choice;setHistory(null);void showChoice(choice,session,true);}}><Text style={styles.count}>{session.submittedAt ? new Date(session.submittedAt).toLocaleString() : '—'} · {session.result?.correct}/{session.result?.total}</Text></Pressable>)}</ScrollView><Pressable onPress={()=>setHistory(null)} style={{padding:14}}><Text>Đóng</Text></Pressable></View></View></Modal></JlptStudyBackground>;
+  })}</JlptPaper></ScrollView></SafeAreaView>}<Modal visible={!!history} transparent onRequestClose={()=>setHistory(null)}><View style={{flex:1,backgroundColor:'#0009',padding:24,justifyContent:'center'}}><View style={{maxHeight:'85%',backgroundColor:'#fffaf0',padding:18,borderRadius:12}}><Text style={styles.heading}>{betaText(language,'history')}</Text><ScrollView>{history?.sessions.map(session=><Pressable key={session.submittedAt} style={{paddingVertical:14,borderBottomWidth:1,borderColor:'#d5ccbc'}} onPress={()=>{const choice=history.choice;setHistory(null);void showChoice(choice,session,true);}}><Text style={styles.count}>{session.submittedAt ? new Date(session.submittedAt).toLocaleString() : '—'} · {session.result?.correct}/{session.result?.total}</Text></Pressable>)}</ScrollView><Pressable onPress={()=>setHistory(null)} style={{padding:14}}><Text>{betaText(language,'close')}</Text></Pressable></View></View></Modal></JlptStudyBackground>;
 }
 
 const styles = StyleSheet.create({examScreen:{flex:1,backgroundColor:'transparent'},screen:{flex:1,backgroundColor:'transparent'},content:{paddingVertical:12,paddingHorizontal:8,backgroundColor:'transparent'},heading:{fontFamily:JLPT_EXAM.font.content,fontSize:JLPT_EXAM.type.sectionTitle,lineHeight:31,color:JLPT_EXAM.color.ink,marginBottom:8},description:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:22,color:JLPT_EXAM.color.secondaryInk,marginBottom:20},catalogPaper:{backgroundColor:'transparent'},examRow:{minHeight:112,flexDirection:'row',alignItems:'center',paddingHorizontal:28,paddingVertical:26,marginBottom:12},copy:{flex:1,minWidth:0},examTitle:{fontFamily:JLPT_EXAM.font.content,fontSize:18,lineHeight:26,color:JLPT_EXAM.color.ink},count:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.secondaryInk,marginTop:2},stats:{flexDirection:'row',flexWrap:'wrap',columnGap:12,rowGap:4,marginTop:8},stat:{fontFamily:JLPT_EXAM.font.interface,fontSize:14,lineHeight:21,color:JLPT_EXAM.color.ink,flexGrow:1,flexBasis:110},lastAttempt:{fontFamily:JLPT_EXAM.font.interface,fontSize:13,lineHeight:20,color:JLPT_EXAM.color.secondaryInk,marginTop:5},chevron:{fontFamily:JLPT_EXAM.font.interface,fontSize:34,lineHeight:38,color:JLPT_EXAM.color.ink,marginLeft:12},pressed:{opacity:.62}});

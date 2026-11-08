@@ -10,7 +10,7 @@ const NAV_IVORY=require('../../../assets/app/ui/royal-af/dialogue-frame-v1.png')
 const NAV_COMPOSITE_NAVY=require('../../../assets/app/ui/royal-af/nav-composite-navy-v1.png');
 const TABS:{id:BottomNavTab;icon:ImageSourcePropType;label:string;route:'/home'|'/game'|'/tasks'|'/profile'}[]=[
  {id:'home',icon:require('../../../assets/app/ui/royal-af/nav-home-v1.png'),label:'ホーム',route:'/home'},
- {id:'game',icon:require('../../../assets/app/ui/royal-af/nav-game-v1.png'),label:'ゲーム',route:'/game'},
+ {id:'game',icon:require('../../../assets/app/ui/royal-af/nav-game-v1.png'),label:'ゲーム',route:'/tasks'},
  {id:'tasks',icon:require('../../../assets/app/ui/royal-af/nav-mission-v1.png'),label:'ミッション',route:'/tasks'},
  {id:'profile',icon:require('../../../assets/app/ui/royal-af/nav-profile-v1.png'),label:'プロフィール',route:'/profile'},
 ];

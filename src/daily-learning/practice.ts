@@ -6,7 +6,7 @@ import { dayAt, selectWords } from './core.mjs';
 export async function loadPractice(locale:AppLanguageCode):Promise<{challenge:Challenge;attempts:Match[]}> {
     const raw=await AsyncStorage.getItem('@japan_app_user_profile');const profile=raw?JSON.parse(raw):{};
     const level=(['N5','N4','N3','N2','N1'].includes(profile.level)?profile.level:'N5') as Level;
-    const key=`@daily-practice:${profile.createdAt??''}:${profile.email??''}:${dayAt(Date.now())}`;
+    const key=`@daily-practice:${profile.createdAt??''}:${profile.email??''}:${dayAt(Date.now())}:${locale}`;
     const saved=await AsyncStorage.getItem(key);if(saved)return JSON.parse(saved);
     const [source,localization]=await Promise.all([import('@/data/generated/vocabulary.json'),import('@/data/vocabulary-localization')]);
     const words=(source.default as any[]).map(item=>{
@@ -18,5 +18,5 @@ export async function loadPractice(locale:AppLanguageCode):Promise<{challenge:Ch
 }
 export async function savePractice(challenge:Challenge,attempts:Match[]) {
     const raw=await AsyncStorage.getItem('@japan_app_user_profile');const profile=raw?JSON.parse(raw):{};
-    await AsyncStorage.setItem(`@daily-practice:${profile.createdAt??''}:${profile.email??''}:${challenge.day}`,JSON.stringify({challenge,attempts}));
+    await AsyncStorage.setItem(`@daily-practice:${profile.createdAt??''}:${profile.email??''}:${challenge.day}:${challenge.locale}`,JSON.stringify({challenge,attempts}));
 }

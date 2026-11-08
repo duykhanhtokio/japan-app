@@ -1,3 +1,5 @@
+import {useAppLanguage} from '@/context/LanguageContext';
+import {betaText} from '@/i18n/learner-beta-copy';
 import { Text } from '@/components/app/LocalizedText';
 import { pushPrepared } from '@/components/ui/prepareSceneRoute';
 import { RoyalContentPanel } from '@/components/ui/RoyalPanels';
@@ -149,6 +151,7 @@ const levels: LevelItem[] = [
 ];
 
 export default function LearnScreen() {
+    const {language}=useAppLanguage();
     const { profile } = useUserProfile();
     const [runtimeLevels, setRuntimeLevels] = useState(levels);
     const [stats, setStats] = useState({ xp: 0, coins: 0, conversationCredits: 0 });
@@ -168,12 +171,12 @@ export default function LearnScreen() {
                     unlocked: true,
                     progressText: `${completed} / ${total}`,
                     progressPercent: total ? Math.round((completed / total) * 100) : 0,
-                    requirement: `Miễn phí • ${completed} đề đã nộp / ${total} đề`,
+                    requirement: `${betaText(language,'free')} · ${betaText(language,'submitted',{done:completed,total})}`,
                 };
             }));
         }).catch(error => console.log('Load JLPT exam progress error:', error));
         return () => { active = false; };
-    }, []));
+    }, [language]));
     const currentTarget = economy?.officialRank ? NEXT_JLPT_LEVEL[economy.officialRank] as keyof typeof RANK_COLORS : 'N5';
     const qualifiedCount = Object.keys(economy?.passed[currentTarget]??{}).length;
     function openLevel(
@@ -446,7 +449,7 @@ export default function LearnScreen() {
                 </View>
 
                 <BottomNav active="home" variant="approved" />
-                {helpVisible && <Modal visible={helpVisible} transparent animationType="none" onRequestClose={()=>setHelpVisible(false)}><View style={styles.helpBackdrop}><RoyalContentPanel style={styles.helpPanel}><ScrollView contentContainerStyle={styles.helpContent}><Text style={styles.helpTitle}>JLPT 認定の進め方</Text><Text style={styles.helpCopy}>Mỗi cấp cần 6 đề thi khác nhau đạt ít nhất 80% sau khi nộp bài. Thi lại đề chưa đạt được tính khi điểm mới đạt yêu cầu; làm một đề nhiều lần vẫn chỉ tính là một đề.</Text><Text style={styles.helpCopy}>Thanh x/6 cho biết số đề đã đạt tại cấp đó. Có thể thăng thẳng lên cấp cao khi đủ 6 đề tại cấp ấy. Cấp chính thức được hiển thị trong hồ sơ; tiến độ cấp thấp hơn sẽ ẩn sau khi đã được công nhận cấp cao.</Text></ScrollView><Pressable accessibilityRole="button" accessibilityLabel="閉じる" onPress={()=>setHelpVisible(false)} style={styles.helpClose}><Text style={styles.helpCloseText}>閉じる</Text></Pressable></RoyalContentPanel></View></Modal>}
+                {helpVisible && <Modal visible={helpVisible} transparent animationType="none" onRequestClose={()=>setHelpVisible(false)}><View style={styles.helpBackdrop}><RoyalContentPanel style={styles.helpPanel}><ScrollView contentContainerStyle={styles.helpContent}><Text style={styles.helpTitle}>JLPT 認定の進め方</Text><Text style={styles.helpCopy}>{betaText(language,'helpOne')}</Text><Text style={styles.helpCopy}>{betaText(language,'helpTwo')}</Text></ScrollView><Pressable accessibilityRole="button" accessibilityLabel="閉じる" onPress={()=>setHelpVisible(false)} style={styles.helpClose}><Text style={styles.helpCloseText}>閉じる</Text></Pressable></RoyalContentPanel></View></Modal>}
             </SafeAreaView>
         </RoyalPageBackground>
     );

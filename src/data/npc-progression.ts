@@ -1,6 +1,7 @@
+import {RELEASE_FEATURES} from '@/config/release-features';
 // Temporary user-authorized access for NPC testing (2026-10-03).
 // Set false to restore progression locks; persisted unlocks are not changed.
-export const NPC_TEST_UNLOCK_ALL = true;
+export const NPC_TEST_UNLOCK_ALL = RELEASE_FEATURES.freeLearning;
 
 export const NPC_CATEGORIES = [
   { id:'station', category:'Station', ja:'駅員', icon:'🚉' },

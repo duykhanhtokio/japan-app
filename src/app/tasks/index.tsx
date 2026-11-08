@@ -1,3 +1,5 @@
+import {RELEASE_FEATURES} from '@/config/release-features';
+import {betaText} from '@/i18n/learner-beta-copy';
 import { subscribeLearningIdentity } from '@/services/learning-storage-scope';
 import RewardNotice from '@/daily-learning/RewardNotice';
 import { useCallback, useEffect, useState } from 'react';
@@ -17,7 +19,7 @@ export default function TasksScreen() {
     const [loading,setLoading]=useState(false),[status,setStatus]=useState(''),[playing,setPlaying]=useState(false);
     const refresh=useCallback(async()=>{
         setLoading(true);
-        try {const value=await learningAction('daily',{locale:language});const pending=await pendingMatches(value.state.challenge!);setAttempts(pending);setSnapshot(value);setPractice(null);setStatus('');
+        try {if(RELEASE_FEATURES.freeLearning){const local=await import('@/daily-learning/practice');const value=await local.loadPractice(language);setPractice(value.challenge);setAttempts(value.attempts);setSnapshot(null);setStatus('');return;}const value=await learningAction('daily',{locale:language});const pending=await pendingMatches(value.state.challenge!);setAttempts(pending);setSnapshot(value);setPractice(null);setStatus('');
             if(pending.length){const synced=await learningAction('complete',{day:value.state.challenge!.day,matches:pending});setSnapshot(synced);}
         }catch(error){setStatus(String((error as Error).message));
             try{const local=await import('@/daily-learning/practice');const value=await local.loadPractice(language);setPractice(value.challenge);setAttempts(value.attempts);}catch(practiceError){setStatus((practiceError as Error).message);}
@@ -30,7 +32,7 @@ export default function TasksScreen() {
     const challenge=practice??snapshot?.state.challenge;
     async function onMatches(matches:Match[],complete:boolean){
         if(!challenge)return;setAttempts(matches);
-        if(practice){const local=await import('@/daily-learning/practice');await local.savePractice(challenge,matches);if(complete)setStatus('Đã hoàn thành lượt luyện tập. Chỉ nhiệm vụ được máy chủ cấp và xác minh mới nhận thưởng.');return;}
+        if(practice){const local=await import('@/daily-learning/practice');await local.savePractice(challenge,matches);if(complete)setStatus(betaText(language,'taskSaved'));return;}
         await savePendingMatch(challenge,matches);
         if(!complete)return;
         try {const next=await learningAction('complete',{day:challenge.day,matches});setSnapshot(next);setStatus('Đã hoàn thành nhiệm vụ hôm nay.');if(next.result.keyAwarded)setReward('key');}
@@ -41,6 +43,7 @@ export default function TasksScreen() {
         try{const next=await learningTransaction('exchange');setSnapshot(next);if(next.result.ticketAwarded&&!next.result.replayed)setReward('ticket');}
         catch(error){setStatus((error as Error).message);}finally{setLoading(false);}
     }
+    if(RELEASE_FEATURES.freeLearning)return <SafeAreaView style={s.page}><View style={s.header}><Pressable accessibilityRole="button" onPress={()=>playing?setPlaying(false):router.replace('/home')}><Text style={s.back}>‹</Text></Pressable><View style={{flex:1}}><Text style={s.title}>{betaText(language,'taskTitle')}</Text><Text style={s.note}>{challenge?.level??'JLPT'} · {challenge?.day??''}</Text></View></View>{loading&&<ActivityIndicator/>}{playing&&challenge?<DailyWordMatch key={`${challenge.day}:${language}`} challenge={challenge} initialAttempts={attempts} onChange={(m,c)=>{void onMatches(m,c);}}/>:<View style={s.overview}><Text style={s.copy}>{betaText(language,'taskGuide')}</Text><Text style={s.copy}>{betaText(language,'freeNotice')}</Text><Pressable disabled={!challenge||loading} onPress={()=>setPlaying(true)} style={[s.button,(!challenge||loading)&&s.disabled]}><Text style={s.buttonText}>{betaText(language,'taskStart')}</Text></Pressable><Pressable onPress={()=>{void refresh();}} style={s.button}><Text style={s.buttonText}>{betaText(language,'taskRetry')}</Text></Pressable></View>}{!!status&&<Text style={s.status}>{status===betaText(language,'taskSaved')?status:betaText(language,'tryAgain')}</Text>}</SafeAreaView>;
     return <SafeAreaView style={s.page}>
         <View style={s.header}><Pressable accessibilityRole="button" onPress={()=>playing?setPlaying(false):router.replace('/home')}><Text style={s.back}>‹</Text></Pressable><View style={{flex:1}}><Text style={s.title}>{language==='ja'?'毎日の単語ミッション':'Nhiệm vụ 10 từ mỗi ngày'}</Text><Text style={s.note}>{practice?'Luyện tập · ':''}{challenge?.level??'JLPT'} · {challenge?.day??'7 ngày → 1 chìa · 4 chìa → 1 vé'}</Text></View></View>
         {loading&&<ActivityIndicator />}
