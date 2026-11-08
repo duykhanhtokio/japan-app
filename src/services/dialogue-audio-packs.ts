@@ -1,3 +1,4 @@
+import {npcAudioRange} from './npc-audio-range';
 import releaseJson from '../data/dialogue-content/npc-audio-release.json';
 export type PackedNpcRecording = {sourceJa:string;role:string;speakerId:number;clip:string;pack:string;startMs:number;durationMs:number;sha256:string;nativeReviewed:false};
 type Pack = {bytes:number;sha256:string;durationMs:number};
@@ -21,5 +22,6 @@ export function packedRecordingFor(text:string,scenarioId:string,turnId:string,r
  const row=data[scenarioId]?.[turnId],pack=row?npcAudioRelease.packs[row.pack]:null;
  if(!row||!pack||row.sourceJa!==text||row.role!==role||row.speakerId!==speakerId||row.startMs<0||row.durationMs<=0||row.startMs+row.durationMs>pack.durationMs+.1)return null;
  if(!/^https:\/\/github\.com\/duykhanhtokio\/japan-app\/releases\/download\/npc-audio-[a-zA-Z0-9-]+$/.test(npcAudioRelease.baseUrl)||!/^voice-\d{2}-\d{2}\.mp3$/.test(row.pack))return null;
- return {...row,source:{uri:`${npcAudioRelease.baseUrl}/${row.pack}`}};
+ const byteRange=npcAudioRange(row.startMs,row.durationMs,pack);if(!byteRange)return null;
+ return {...row,byteRange,source:{uri:`${npcAudioRelease.baseUrl}/${row.pack}`}};
 }

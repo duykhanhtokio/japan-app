@@ -2,6 +2,7 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 let downloads=0,players=0,complete,failNext=false;
 const waits=new Map();
 const mocks={
+ './npc-audio-clip-cache':{loadNpcAudioClip:()=>{throw Error('Unexpected bounded clip in legacy fixture');}},
  'expo-asset':{Asset:{fromURI:uri=>({localUri:'file:///cached.mp3',downloadAsync:()=>{downloads++;if(failNext){failNext=false;return Promise.reject(Error('offline'));}return new Promise(resolve=>{complete=resolve;waits.set(uri,resolve);});}})}},
  'expo-audio':{setAudioModeAsync:async()=>{},createAudioPlayer:()=>{players++;throw Error('Unexpected playback after cancellation');}},
  'expo-constants':{__esModule:true,default:{}},'react-native':{Platform:{OS:'ios'},AppState:{}},

@@ -1,3 +1,4 @@
+import {loadNpcAudioClip} from './npc-audio-clip-cache';
 import { Asset } from 'expo-asset';
 import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-audio';
 import Constants from 'expo-constants';
@@ -66,7 +67,7 @@ function localSource(source:number|{uri:string}):Promise<number|{uri:string}> {
  return request;
 }
 export async function prefetch(text:string,options:Pick<Options,'scenarioId'|'turnId'|'category'>) {
- const recording=recordingFor(text,options);if(recording)await localSource(recording.source);
+ const recording=recordingFor(text,options);if(recording){if('byteRange' in recording)await loadNpcAudioClip(recording.source.uri,recording.byteRange);else await localSource(recording.source);}
 }
 export function speak(text: string, options: Options) {
  const token = ++generation;
@@ -150,14 +151,16 @@ export function speak(text: string, options: Options) {
    if (token !== generation) return;
    if (!recording) { requestLive(); return; }
    let source = recording.source;
-   if (Platform.OS !== 'web' && typeof source === 'object' && /^https?:/.test(source.uri)) {
+   let startMs = 'startMs' in recording ? recording.startMs : 0;
+   if('byteRange' in recording){source=await loadNpcAudioClip(recording.source.uri,recording.byteRange);startMs=0;}
+   if (!('byteRange' in recording) && Platform.OS !== 'web' && typeof source === 'object' && /^https?:/.test(source.uri)) {
     watchdog = setTimeout(fail, 60000);
     source = await localSource(source);
     if (token !== generation) return;
     if (watchdog) clearTimeout(watchdog); watchdog = null;
    }
    if (token !== generation) return;
-   play(source, recording.durationMs, 'startMs' in recording ? recording.startMs : 0, !('startMs' in recording));
+   play(source, recording.durationMs, startMs, !('startMs' in recording));
   } catch { fail(); }
  };
  void prepare();
