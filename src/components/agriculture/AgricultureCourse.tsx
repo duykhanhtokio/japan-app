@@ -1,3 +1,4 @@
+import {StudyTabs} from '@/components/tokutei/StudyTabs';
 import {StudyCalendar} from '@/components/tokutei/StudyCalendar';
 import {AgricultureOrgansInlineRuby,inlineOrgansCurrent} from './AgricultureOrgansInlineRuby';
 import {GrassCutterMechanismFigure} from './GrassCutterMechanismFigure';
@@ -74,7 +75,7 @@ function Course({learner,language,level,onBack}:{learner:string;language:string;
  if(lesson)return <Reader key={lesson.id} level={level} lesson={lesson} language={language} saving={saving} saveError={error} onComplete={()=>{void complete();}} onBack={()=>setLesson(null)}/>;
  const weeks=agricultureWeeks(level),selected=week===null?null:weeks[week],tests=tab==='study'?[]:agricultureChecks(level,tab==='mock'?'mock':'weekly');
  return <Surface><TokuteiHeader title={`耕種農業 · ${level}号`} onBack={()=>{if(selected)setWeek(null);else onBack();}}/><ScrollView contentContainerStyle={s.content}>
- <View style={s.row}><Button title="学習" selected={tab==='study'} onPress={()=>setTab('study')}/><Button title="週の確認" selected={tab==='test'} onPress={()=>setTab('test')}/><Button title="総合練習" selected={tab==='mock'} onPress={()=>setTab('mock')}/></View>
+ <StudyTabs value={tab} onChange={setTab} items={[{value:'study',label:'学習'},{value:'test',label:'週の確認'},{value:'mock',label:'総合練習'}]}/>
  {error&&!progress?<RoyalExplanationPanel style={s.panel}><Text style={s.body}>保存記録を読み込めませんでした。記録は上書きしていません。</Text><Button title="読み込みを再試行" onPress={()=>setRetry(n=>n+1)}/></RoyalExplanationPanel>:!progress?<Text style={s.body}>読み込み中…</Text>:tab!=='study'?<>{tab==='mock'&&<Text style={s.body}>アプリ独自の総合練習です。公式試験の構成・制限時間・合格判定とは異なります。</Text>}{tests.length?tests.map(e=><CheckCard key={e.id} learner={learner} level={level} exam={e} onPress={()=>setExam(e)}/>):<Text style={s.body}>この区分の総合練習は準備中です。</Text>}</>:<StudyCalendar storageKey={`@tokutei-calendar:agriculture:${learner}:${level}`} lessons={weeks.flatMap(w=>w.lessonIds).flatMap(id=>{const l=agricultureLesson(id,level);return l?[{id:l.id,title:l.titleJa,revision:l.sourceHash,summary:l.objectiveJa}]:[];})} questions={agricultureChecks(level,'weekly').flatMap(e=>e.questions.map(q=>({id:q.id,prompt:q.stemJa,options:q.optionsJa,correctIndex:q.correctIndex,explanation:q.optionReasonsJa[q.correctIndex]??'',lessonIds:[q.lessonId]})))} isDone={id=>{const l=agricultureLesson(id,level);return !!l&&agricultureLessonDone(progress!,l);}} onOpenLesson={id=>{const l=agricultureLesson(id,level);if(l){setError(false);setLesson(l);}}}/>}
  </ScrollView></Surface>;
 }

@@ -15,15 +15,17 @@ export function TokuteiHeader({
   title,
   subtitle,
   onBack,
+  showAppearance=true,
 }: {
   title: string;
   subtitle?: string;
   onBack: () => void;
+  showAppearance?: boolean;
 }) {
   const { dark } = useStudyAppearance();
   const HeaderPanel = dark ? RoyalExplanationPanel : RoyalContentPanel;
   return (
-    <View><View testID="tokutei-header" style={s.header}>
+    <View style={{width:'100%',maxWidth:932,alignSelf:'center'}}><View testID="tokutei-header" style={s.header}>
       <RoyalBackButton onPress={onBack} />
       <HeaderPanel style={s.headingPanel}>
         <Text style={[s.title, dark && { color: "#f2db9b" }]}>{title}</Text>
@@ -33,7 +35,7 @@ export function TokuteiHeader({
           </Text>
         )}
       </HeaderPanel>
-    </View><View style={{paddingHorizontal:16}}><ReadingAppearanceControl/></View></View>
+    </View>{showAppearance&&<View style={{paddingHorizontal:16,paddingBottom:8,alignItems:'flex-end'}}><ReadingAppearanceControl/></View>}</View>
   );
 }
 export function TokuteiDayCard({

@@ -1,3 +1,4 @@
+import {MANUFACTURING_SECTOR_ARTWORK} from '@/components/manufacturing/sector-artwork';
 import {specifiedSkillRoute,specifiedSkillAvailable} from '@/data/specified-skills-routes';
 import { useAppLanguage } from '@/context/LanguageContext';
 import { uiText } from '@/i18n/ui-text';
@@ -32,7 +33,7 @@ const sectors = [
     {icon:require('../../../assets/app/industries/food-manufacturing-v1.png'),ja:'飲食料品製造業',vi:'Sản xuất thực phẩm'},
     {icon:require('../../../assets/app/industries/caregiving-v1.png'),ja:'介護',vi:'Điều dưỡng'},
     {icon:require('../../../assets/app/industries/hospitality-v1.png'),ja:'宿泊',vi:'Khách sạn'},
-    {icon:null,ja:'製造分野',vi:'Sản xuất công nghiệp'},
+    {icon:MANUFACTURING_SECTOR_ARTWORK,ja:'製造分野',vi:'Sản xuất công nghiệp'},
 ];
 
 export default function SpecifiedSkillsScreen() {
@@ -44,7 +45,7 @@ export default function SpecifiedSkillsScreen() {
         <ImageBackground inheritBackdrop source={require('../../../assets/app/home-cards/tokutei-engine-safety.png')} blurRadius={40} resizeMode="cover" style={{flex:1}}><View
             style={[styles.container, { paddingTop: insets.top, paddingLeft: insets.left, paddingRight: insets.right, paddingBottom: navHeight + insets.bottom }]}
         >
-            <TokuteiHeader title="特定技能学習" subtitle="Specified Skilled Worker" onBack={()=>{void backPrepared();}}/>
+            <TokuteiHeader showAppearance={false} title="特定技能学習" subtitle="Specified Skilled Worker" onBack={()=>{void backPrepared();}}/>
 
             <ScrollView
                 style={styles.scroll}
@@ -152,7 +153,10 @@ const styles =
         },
 
         list: {
-            padding: 18,
+            padding: 16,
+            width: '100%',
+            maxWidth: 932,
+            alignSelf: 'center',
 
             gap: 12,
         },
@@ -163,7 +167,7 @@ const styles =
         cardArtwork:{flexDirection:'row',alignItems:'center',paddingHorizontal:28,paddingVertical:24,gap:12},
 
         icon: {
-            width:54,height:54,borderRadius:12,
+            width:72,height:72,borderRadius:12,
         },
 
         cardTitle: {

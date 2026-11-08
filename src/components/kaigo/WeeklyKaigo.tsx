@@ -1,3 +1,4 @@
+import {StudyTabs} from '@/components/tokutei/StudyTabs';
 import {StudyCalendar} from '@/components/tokutei/StudyCalendar';
 import {StudyFigure} from '@/components/tokutei/StudyFigure';
 import {illustrationRubyTokensFor} from '@/data/kaigo/illustration-readings';
@@ -816,25 +817,7 @@ export function WeeklyKaigo({
             <View style={s.article}>
               {!route && (
                 <>
-                  <View style={s.controls}>
-                    <View style={s.control}>
-                      <Action
-                        title="学習"
-                        onPress={() => {
-                          setTab("calendar");
-                          setShowWeek(false);
-                        }}
-                        testID="kaigo-weekly-tab-calendar"
-                      />
-                    </View>
-                    <View style={s.control}>
-                      <Action
-                        title="模擬試験"
-                        onPress={() => setTab("mocks")}
-                        testID="kaigo-weekly-tab-mocks"
-                      />
-                    </View>
-                  </View>
+                  <StudyTabs value={tab} onChange={value=>{setTab(value);if(value==='calendar')setShowWeek(false);}} items={[{value:'calendar',label:'学習',testID:'kaigo-weekly-tab-calendar'},{value:'mocks',label:'模擬試験',testID:'kaigo-weekly-tab-mocks'}]}/>
                   {tab === "calendar" ? (
                     <StudyCalendar storageKey="@tokutei-calendar:kaigo:v1" lessons={kaigoCatalog.map(e=>({id:`day-${e.day}`,title:titleForDay(e)}))} questions={[]} isDone={id=>!!progress.value.days[Number(id.slice(4))]} onOpenLesson={id=>open({kind:'day',day:Number(id.slice(4))})} onOpenWeekTest={(_,n)=>open({kind:'assessment',week:n})} isWeekTestDone={(_,n)=>!!progress.value.assessments[n]}/>
                   ) : (

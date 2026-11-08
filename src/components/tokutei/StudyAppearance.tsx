@@ -89,7 +89,7 @@ export const useStudyAppearance = () => useContext(AppearanceContext);
 export function ReadingAppearanceControl() {
   const { mode, setMode, colors } = useStudyAppearance();
   return (
-    <View testID="tokutei-reading-appearance" style={s.row}>
+    <View testID="tokutei-reading-appearance" style={[s.row,{backgroundColor:colors.translation,borderColor:colors.border}]}>
       {(["auto", "day", "night"] as const).map((value) => (
         <Pressable
           key={value}
@@ -100,12 +100,12 @@ export function ReadingAppearanceControl() {
             s.choice,
             {
               backgroundColor:
-                mode === value ? colors.translation : colors.background,
+                mode === value ? colors.background : "transparent",
               borderColor: colors.border,
             },
           ]}
         >
-          <Text style={{ color: colors.text, fontSize: 14 }}>
+          <Text style={{ color: colors.text, fontSize: 14, fontWeight: mode===value?"700":"400" }}>
             {value === "auto" ? "自動" : value === "day" ? "昼" : "夜"}
           </Text>
         </Pressable>
@@ -136,13 +136,14 @@ export function TranslationText({
   );
 }
 const s = StyleSheet.create({
-  row: { flexDirection: "row", gap: 8, marginBottom: 12 },
+  row: { flexDirection: "row", gap: 2, padding:3, borderWidth:1, borderRadius:12, alignSelf:"flex-end" },
   choice: {
     minWidth: 56,
     minHeight: 44,
-    borderWidth: 1,
-    borderRadius: 8,
-    padding: 10,
+    borderWidth: 0,
+    borderRadius: 9,
+    paddingHorizontal: 14,
+    paddingVertical: 9,
     alignItems: "center",
     justifyContent: "center",
   },

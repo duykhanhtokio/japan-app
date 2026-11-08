@@ -6,7 +6,7 @@ type Row={teachingReference?:'source47'|'source62-white';teachingMode:'existing'
 let payload:{rows:Row[]}|undefined;
 const rows=():Row[]=>(payload??(payload=require('./source62-bounded.json') as {rows:Row[]})).rows;
 function current(row:Row,lesson?:ManufacturingLesson):boolean{
- const l=lesson??(require(row.specialty==='electrical'?'./electrical.json':row.specialty==='mechanical'?'./mechanical.json':'./surface.json').lessons as ManufacturingLesson[]).find(l=>l.id===row.lessonId);
+ const l=lesson??((row.specialty==='electrical'?require('./electrical.json'):row.specialty==='mechanical'?require('./mechanical.json'):require('./surface.json')).lessons as ManufacturingLesson[]).find(l=>l.id===row.lessonId);
  let canonical=row.teachingMode==='existing'?require('./source49-thermal-clarification.json').wording.ja.after:row.wording.ja.after;
  if(row.teachingReference==='source47')canonical=require('./source47-clarification.json').wording.ja.after;
  if(row.teachingReference==='source62-white'){const base=rows().find(r=>r.key==='white');if(!base||!current(base,l))return false;canonical=base.canonicalTaughtAfter;}

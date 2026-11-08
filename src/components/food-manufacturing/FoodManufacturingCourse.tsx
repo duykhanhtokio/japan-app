@@ -1,3 +1,4 @@
+import {StudyTabs} from '@/components/tokutei/StudyTabs';
 import {StudyCalendar} from '@/components/tokutei/StudyCalendar';
 import {FoodDailyLearning} from './FoodDailyLearning';
 import {FoodClosureSupplements} from './FoodClosureSupplements';
@@ -46,7 +47,7 @@ function Course({learner,language,level,onBack}:{learner:string;language:string;
  if(lesson)return <Reader key={lesson.id} lesson={lesson} language={language} saving={saving} saveError={error} onComplete={()=>{void complete();}} onBack={()=>setLesson(null)}/>;
  const weeks=foodManufacturingWeeks(level),selected=week===null?null:weeks[week];
  return <Surface><TokuteiHeader title={`飲食料品製造業 · ${level}号`} onBack={()=>{if(selected)setWeek(null);else onBack();}}/><ScrollView contentContainerStyle={s.content}>
- <View style={s.row}><Button title="学習" selected={tab==='study'} onPress={()=>setTab('study')}/><Button title="確認・模擬試験" selected={tab==='test'} onPress={()=>setTab('test')}/></View>
+ <StudyTabs value={tab} onChange={setTab} items={[{value:'study',label:'学習'},{value:'test',label:'確認・模擬試験'}]}/>
  {error&&!progress?<RoyalExplanationPanel style={s.panel}><Text style={s.body}>保存記録を読み込めませんでした。記録は上書きしていません。</Text><Button title="読み込みを再試行" onPress={()=>setRetry(n=>n+1)}/></RoyalExplanationPanel>:!progress?<Text style={s.body}>読み込み中…</Text>:tab==='test'?foodManufacturingChecks(level).map(e=><CheckCard key={e.id} learner={learner} level={level} exam={e} onPress={()=>setExam(e)}/>):<StudyCalendar storageKey={`@tokutei-calendar:food:${learner}:${level}`} lessons={weeks.flatMap(w=>w.lessonIds).flatMap(id=>{const l=foodManufacturingLesson(id,level);return l?[{id:l.id,title:l.titleJa,revision:l.sourceHash,summary:l.summaryJa}]:[];})} questions={foodManufacturingChecks(level).filter(e=>e.kind==='weekly').flatMap(e=>e.questions.map(q=>({id:q.id,prompt:q.stemJa,options:q.optionsJa,correctIndex:q.correctIndex,explanation:q.explanationJa,lessonIds:weeks.find(w=>w.number===(e.week??Number(e.id.match(/weekly-(\d+)/)?.[1])))?.lessonIds??[]})))} isDone={id=>{const l=foodManufacturingLesson(id,level);return !!l&&foodManufacturingLessonDone(progress!,l);}} onOpenLesson={id=>{const l=foodManufacturingLesson(id,level);if(l){setError(false);setLesson(l);}}}/>}
  </ScrollView></Surface>;
 }

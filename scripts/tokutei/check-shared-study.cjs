@@ -30,7 +30,7 @@ for(const level of [1,2]){const entries=hotels.filter(l=>l.level===1||level===2)
 // Syntax and native dependencies are checked for every sector, not just the selected reader.
 let sourceFiles=0;
 for(const sector of ['agriculture','manufacturing','food-manufacturing','restaurant','hospitality','kaigo','kensetsu','tokutei']){
- for(const name of fs.readdirSync(path.join(root,'src/components',sector))){if(!/\.tsx?$/.test(name))continue;const file=path.join(root,'src/components',sector,name),s=fs.readFileSync(file,'utf8'),parsed=ts.createSourceFile(file,s,ts.ScriptTarget.Latest,true,name.endsWith('tsx')?ts.ScriptKind.TSX:ts.ScriptKind.TS);assert.equal(parsed.parseDiagnostics.length,0,`${sector}/${name}: syntax`);sourceFiles++;}
+ for(const name of fs.readdirSync(path.join(root,'src/components',sector))){if(!/\.tsx?$/.test(name))continue;const file=path.join(root,'src/components',sector,name),s=fs.readFileSync(file,'utf8'),parsed=ts.createSourceFile(file,s,ts.ScriptTarget.Latest,true,name.endsWith('tsx')?ts.ScriptKind.TSX:ts.ScriptKind.TS);assert.equal(parsed.parseDiagnostics.length,0,`${sector}/${name}: syntax`);if(name!=='TokuteiChrome.tsx')assert.ok(!/<ReadingAppearanceControl\s*\/?\s*>/.test(s),`${sector}/${name}: duplicate appearance control outside the header`);sourceFiles++;}
 }
 const pkg=require(path.join(root,'package.json')),native=require(path.join(root,'node_modules/expo/bundledNativeModules.json'));
 assert.equal(pkg.dependencies['react-native-svg'],native['react-native-svg']);

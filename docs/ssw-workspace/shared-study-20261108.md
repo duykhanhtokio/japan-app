@@ -39,3 +39,16 @@ Số tuần mới gồm ngày ôn tập cuối khóa khi số bài không chia h
 - Thử mở Chromium cho harness responsive bị môi trường chặn `socket()` trước khi dựng màn hình. Không có ảnh chụp trình duyệt hoặc simulator đạt để tuyên bố hoàn tất kiểm thử thiết bị.
 - Cần build lại iOS/Android, mở ngành sản xuất, rồi kiểm tra các reader/thao tác phóng ảnh trên điện thoại và tablet. Không được nhận là đã chạy trên Mac của người dùng.
 - Chưa chứng nhận mọi tuần có ngân hàng trắc nghiệm đầy đủ, mọi bản dịch/furigana của phần điều khiển mới hoặc mọi ngày đủ thời lượng mục tiêu. Những tuần chỉ có bài viết phải tiếp tục được thể hiện đúng như vậy.
+
+
+## Sửa theo phản hồi tiếp theo — 2026-11-08
+
+- Bộ chọn 自動・昼・夜 chỉ do `TokuteiHeader` vẽ. Bỏ bản lặp ở lịch chung và cả hai màn hình thi thử sản xuất; màn hình danh mục ngành không có provider thì ẩn bộ chọn. Thêm kiểm tra để ngăn renderer ngành tự chèn lại bộ chọn.
+- `StudyTabs` gom các chức năng học/kiểm tra/luyện tập thành một thanh tab, cùng độ cao và trạng thái chọn; áp dụng cho nông nghiệp, thực phẩm, sản xuất, nhà hàng và介護. Thẻ tuần có một vùng bấm duy nhất với nhãn tuần, chủ đề và tiến độ; bỏ nút viền chữ nhật lồng trong khung Royal. Nút kiểm tra cuối tuần là hành động chính, nút trở về danh sách là liên kết phụ.
+- Bài kiểm tra/ôn tập tuần dùng `TokuteiHeader` cố định ngoài vùng cuộn, có `RoyalBackButton` và đúng một bộ chọn chế độ hiển thị. Giữ nguyên câu hỏi, đáp án và cách lưu.
+- Tái hiện lỗi tải sản xuất bằng chính `metro/.../collectDependencies`: `Invalid call` tại `source62-bounded.ts`, do `require(row.specialty === ... ? path1 : path2)` không phải đường dẫn tĩnh. Đổi thành các lời gọi `require('./electrical.json')`, `require('./mechanical.json')`, `require('./surface.json')` độc lập; giữ nguyên quy tắc chọn dữ liệu. Đây là lỗi bundler thực tế mà kiểm tra cú pháp/Node trước đó không bắt được.
+- Danh mục ngành đã đặt `icon:null` cho sản xuất. Gắn ảnh xưởng/công cụ do dự án đã tạo vào danh mục và phần đầu bộ chọn chuyên ngành, dùng tài sản Git thường đã có, không tạo lại ảnh.
+- Kiểm tra Metro: đạt 66 module sản xuất và route, có ca hồi quy xác nhận lời gọi cũ bị từ chối.
+- Kiểm tra mở sản xuất: cơ khí, điện và xử lý bề mặt đều mở được bộ chọn → tuần 1 → ngày 1 trong React test renderer, với 117/117/114 tệp nguồn và dữ liệu thật, không có tệp dữ liệu thiếu. Native host và lớp trang trí được mock; đây không phải bằng chứng simulator.
+- Kiểm tra tương tác: đạt, gồm đúng một bộ chọn ở màn hình lịch và đúng một Back Royal/bộ chọn trong modal kiểm tra tuần. TypeScript của thành phần chung đạt; kiểm tra toàn app vẫn bị giới hạn bởi sparse checkout như đã ghi phía trên.
+- Lần kiểm tra trình duyệt bổ sung không truy cập được server preview nội bộ (`ERR_CONNECTION_REFUSED`). Không ghi nhận hình thức đã được duyệt qua ảnh chụp. Cần mở lại Expo với `--clear` để Metro bỏ trạng thái lỗi bundle cũ; không có thay đổi native dependency trong bản sửa tiếp nối này.

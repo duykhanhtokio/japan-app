@@ -7,7 +7,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useBackdropOcclusion} from '@/components/ui/AppBackdrop';
 import {RoyalContentPanel} from '@/components/ui/RoyalPanels';
 import {TokuteiHeader} from '@/components/tokutei/TokuteiChrome';
-import {ReadingAppearanceControl,TranslationText,useStudyAppearance} from '@/components/tokutei/StudyAppearance';
+import {TranslationText,useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import type {ManufacturingQuestion,Specialty} from '@/data/manufacturing';
 import {manufacturingUi} from '@/data/manufacturing/ui';
 import {manufacturingMockUi} from '@/data/manufacturing/mock-ui';
@@ -22,7 +22,7 @@ export function ManufacturingMocks({learner,specialty,language,onBack}:{learner:
  const t=(key:Parameters<typeof manufacturingMockUi>[1])=>manufacturingMockUi(language,key);
  useManufacturingBack(onBack,exam===null);
  if(exam)return <MockAttempt key={`${learner}:${exam.id}`} learner={learner} exam={exam} language={language} onBack={()=>setExam(null)}/>;
- return <Page><TokuteiHeader title={t('mockExams')} onBack={onBack}/><ScrollView testID="manufacturing-mock-catalog" contentContainerStyle={s.content}><ReadingAppearanceControl/><Text style={[s.body,{color:colors.text}]}>{t('instructions')}</Text><Text style={[s.body,{color:colors.text}]}>{t('passRule')}</Text>{exams.length===0?<Text style={[s.body,{color:colors.text}]}>{t('unavailable')}</Text>:exams.map(item=><MockCard key={item.id} learner={learner} exam={item} language={language} onPress={()=>setExam(item)}/>)}</ScrollView></Page>;
+ return <Page><TokuteiHeader title={t('mockExams')} onBack={onBack}/><ScrollView testID="manufacturing-mock-catalog" contentContainerStyle={s.content}><Text style={[s.body,{color:colors.text}]}>{t('instructions')}</Text><Text style={[s.body,{color:colors.text}]}>{t('passRule')}</Text>{exams.length===0?<Text style={[s.body,{color:colors.text}]}>{t('unavailable')}</Text>:exams.map(item=><MockCard key={item.id} learner={learner} exam={item} language={language} onPress={()=>setExam(item)}/>)}</ScrollView></Page>;
 }
 function MockCard({learner,exam,language,onPress}:{learner:string;exam:ManufacturingMock;language:string;onPress:()=>void}){const [done,setDone]=useState(false),{colors}=useStudyAppearance();useEffect(()=>{let live=true;AsyncStorage.getItem(manufacturingMockKey(learner,exam.specialty,exam.id)).then(raw=>{const attempt=restoreManufacturingMock(raw,exam);if(live)setDone(!!attempt&&manufacturingMockComplete(attempt));}).catch(()=>{});return()=>{live=false;};},[learner,exam]);return <RoyalContentPanel style={s.panel}><Text style={[s.heading,{color:colors.text}]}>{exam.titleJa}</Text><Text style={[s.body,{color:colors.text}]}>{done?'✓ ':''}30問 + 10問 · 40分 + 40分</Text><Button title={manufacturingUi(language,'openResume')} onPress={onPress}/></RoyalContentPanel>;}
 function MockAttempt({learner,exam,language,onBack}:{learner:string;exam:ManufacturingMock;language:string;onBack:()=>void}){
@@ -40,7 +40,7 @@ function MockAttempt({learner,exam,language,onBack}:{learner:string;exam:Manufac
  useManufacturingBack(leave);
  const update=(fn:(current:ManufacturingMockAttempt)=>ManufacturingMockAttempt)=>{const current=latest.current;if(current){const next=fn(current);if(next!==current)persist(next);}};
  return <Page><TokuteiHeader title={exam.titleJa} onBack={leave}/><ScrollView testID="manufacturing-mock-attempt" contentContainerStyle={s.content}>
- <ReadingAppearanceControl/>{!attempt?<><Text accessibilityRole={error?'alert':undefined} style={[s.body,{color:colors.text}]}>{error?u('readError'):u('loading')}</Text>{error&&<Button title={u('retry')} onPress={()=>setRetry(n=>n+1)}/>} {error==='invalid'&&<Button title={u('restart')} onPress={()=>setConfirm('restart')}/>}</>:<>
+ {!attempt?<><Text accessibilityRole={error?'alert':undefined} style={[s.body,{color:colors.text}]}>{error?u('readError'):u('loading')}</Text>{error&&<Button title={u('retry')} onPress={()=>setRetry(n=>n+1)}/>} {error==='invalid'&&<Button title={u('restart')} onPress={()=>setConfirm('restart')}/>}</>:<>
  {error==='write'&&<><Text accessibilityRole="alert" style={[s.body,{color:colors.text}]}>{u('answerSaveError')}</Text><Button title={u('retry')} disabled={saving} onPress={()=>{if(latest.current)persist(latest.current);}}/></>}
  {result&&<View testID="manufacturing-mock-results"><Text style={[s.heading,{color:colors.text}]}>{t('result')} · {t(result.passed?'passed':'failed')}</Text>{MOCK_SECTION_IDS.map(id=><Text key={id} style={[s.body,{color:colors.text}]}>{t(id)}: {result[id].correct} / {result[id].total} · {t(result[id].passed?'passed':'failed')} · {u('unanswered')} {result[id].unanswered}</Text>)}<Text style={[s.body,{color:colors.text}]}>{t('passRule')}</Text><View style={s.row}>{MOCK_SECTION_IDS.map(id=><Button key={id} title={`${t('review')} · ${t(id)}`} selected={review===id} onPress={()=>setReview(id)}/>)}</View></View>}
  <Text style={[s.heading,{color:colors.text}]}>{t(sectionId)}</Text>
