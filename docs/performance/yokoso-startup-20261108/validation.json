@@ -1,0 +1,31 @@
+{
+  "status": "PASS_WITH_LIMITATIONS",
+  "baseline": "022966903c5c3d074645cc3523a852f56d64baed",
+  "verifiedImplementationCommit": "6f0a321accd3c5491d49a6744a10aeac2870329a",
+  "generatorReproducible": true,
+  "allCurriculumJsonUnmodifiedExceptNewGeneratedIndex": true,
+  "scopedTypecheck": "PASS; includes Expo Metro require ambient types",
+  "fullTypecheck": "NOT_PASSED: default Node heap exhausted at 2GB",
+  "jlptUiLock": "PASS 10/10",
+  "leanNavigation": "PASS",
+  "traceAndDeferredRuntime": "PASS with controlled native mocks",
+  "changedAppFilesLint": {
+    "errors": 0,
+    "warnings": 1,
+    "note": "Existing literal require warning in prepareSceneRoute.ts"
+  },
+  "existingChecksNotPassing": [
+    {
+      "script": "scripts/check-scene-performance.cjs",
+      "reason": "Existing OnboardingMusic audio fixture lacks createAudioPlayer"
+    },
+    {
+      "script": "scripts/check-deferred-route-loading.cjs",
+      "reason": "Historical screen-body baseline mismatches untouched learn screen"
+    }
+  ],
+  "macOrIphoneAccessible": false,
+  "wholeAppMetroBundleMeasured": false,
+  "nativeReleaseTested": false,
+  "storageAndPremiumRuntimeTested": false
+}

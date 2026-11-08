@@ -1,3 +1,4 @@
+import { traceAsync } from '@/services/performance-trace';
 import { Asset } from 'expo-asset';
 import { Image as ExpoImage } from 'expo-image';
 import { Image as NativeImage, Platform } from 'react-native';
@@ -34,7 +35,7 @@ function retainDecodedImage(uri: string, image: HTMLImageElement, key: number | 
 // geometry, overlays or mounted components with a preload representation.
 export async function prepareArtwork(sources: ArtworkSource | ArtworkSource[]) {
   const modules = Array.isArray(sources) ? sources : [sources];
-  await Promise.all(modules.map(source => {
+  await traceAsync('artwork_prepared', () => Promise.all(modules.map(source => {
     if (!isArtworkSource(source)) return Promise.resolve();
     const key = typeof source === 'object' ? source.uri : source;
     let pending = prepared.get(key);
@@ -63,5 +64,5 @@ export async function prepareArtwork(sources: ArtworkSource | ArtworkSource[]) {
       pending.catch(() => prepared.delete(key));
     }
     return pending;
-  }));
+  })));
 }

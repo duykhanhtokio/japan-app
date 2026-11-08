@@ -1,3 +1,4 @@
+import { PERFORMANCE_TRACE_ENABLED, commitNavigationTrace, tracePerformance } from '@/services/performance-trace';
 import { EffectsProvider } from '@/components/effects/EffectsProvider';
 import { PressSound } from '@/components/effects/PressSound';
 import { prepareArtwork } from '@/components/ui/prepareArtwork';
@@ -14,6 +15,7 @@ import { useFonts } from 'expo-font';
 import { OnboardingMusic } from '@/components/audio/OnboardingMusic';
 import { LanguageProvider } from '@/context/LanguageContext';
 
+tracePerformance('root_module_evaluated');
 void SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -65,7 +67,16 @@ export default function RootLayout() {
     'RoyalSansJP-Medium': require('../../assets/app/fonts/NotoSansJP-Medium.ttf'),
   });
 
-  useEffect(()=>{if((fontsLoaded||fontError)&&artworkReady)void SplashScreen.hideAsync();},[fontsLoaded,fontError,artworkReady]);
+  useEffect(()=>{if((fontsLoaded||fontError)&&artworkReady){
+    tracePerformance('splash_hide_requested');
+    void SplashScreen.hideAsync();
+  }},[fontsLoaded,fontError,artworkReady]);
+  useEffect(() => {
+    if (!PERFORMANCE_TRACE_ENABLED || (!fontsLoaded && !fontError) || !artworkReady) return;
+    commitNavigationTrace(pathname);
+    const frame = requestAnimationFrame(() => tracePerformance('route_next_frame', {path: pathname}));
+    return () => cancelAnimationFrame(frame);
+  }, [pathname, fontsLoaded, fontError, artworkReady]);
 
   if ((!fontsLoaded && !fontError)||!artworkReady) return null;
 

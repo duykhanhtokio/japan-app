@@ -1,3 +1,4 @@
+import { beginNavigationTrace } from '@/services/performance-trace';
 import { isLockedGameRoute } from '@/config/release-features';
 import { Dimensions, type ImageSourcePropType } from 'react-native';
 import { japanAssets, regionMaps, type RegionMapId } from '@/data/world-map-config';
@@ -102,6 +103,7 @@ export function registerNavigationStateReader(reader: () => NavigationState | un
 }
 export const cancelPreparedNavigation = () => { navigationIntent += 1; };
 export function navigateWithPreparedArtwork(path: string, navigate: () => void, additional: ArtworkSource[] = [], prepareState?: () => Promise<unknown>) {
+  beginNavigationTrace(path);
   const intent = ++navigationIntent;
   let timeout: ReturnType<typeof setTimeout> | undefined;
   // Preloading is an optimization, not permission to navigate. A failed

@@ -1,3 +1,4 @@
+import {traceAsync} from '@/services/performance-trace';
 import {useEffect,useState,type ComponentType} from 'react';
 import {ActivityIndicator,Pressable,Text,View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -6,7 +7,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 export function createDeferredCourse<P extends {onBack?:()=>void}>(load:()=>Promise<ComponentType<P>>):ComponentType<P> {
  let cached:ComponentType<P>|null=null;
  let pending:Promise<ComponentType<P>>|null=null;
- const loadOnce=()=>pending??(pending=load().then(screen=>{cached=screen;return screen;}).catch(error=>{pending=null;throw error;}));
+ const loadOnce=()=>pending??(pending=traceAsync('content_module_loaded', load).then(screen=>{cached=screen;return screen;}).catch(error=>{pending=null;throw error;}));
  return function DeferredCourse(props:P){
   const [Screen,setScreen]=useState<ComponentType<P>|null>(()=>cached);
   const [failed,setFailed]=useState(false),[attempt,setAttempt]=useState(0);

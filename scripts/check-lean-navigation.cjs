@@ -9,7 +9,7 @@ function fixture() {
  let resolveArtwork, resolveState;
  const artwork = new Promise(resolve => { resolveArtwork = resolve; });
  const state = new Promise(resolve => { resolveState = resolve; });
- const context = {exports, console, Promise, router:{}, prepareSceneRoute:()=>artwork,prepareArtwork:()=>artwork,
+ const context = {exports, console, Promise, beginNavigationTrace:()=>{}, router:{}, prepareSceneRoute:()=>artwork,prepareArtwork:()=>artwork,
  setTimeout:(fn,delay)=>{timers.push({fn,delay});return timers.length},clearTimeout:()=>{},previousRoutePath:()=>undefined};
  vm.runInNewContext(ts.transpileModule(body,{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText,context);
  return {api:exports,timers,resolveArtwork,resolveState,state};
