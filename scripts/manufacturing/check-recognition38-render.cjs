@@ -6,7 +6,7 @@ const root=path.resolve(__dirname,'../..');
   b.onResolve({filter:/^react-native$/},()=>({path:require.resolve('react-native-web')}));
   b.onResolve({filter:/^react-native-safe-area-context$/},()=>({path:'safe',namespace:'qa'}));
   b.onResolve({filter:/tokutei\/(StudyAppearance|TokuteiChrome)$/},a=>({path:a.path.includes('StudyAppearance')?'appearance':'header',namespace:'qa'}));
-  b.onResolve({filter:/\.png$/},a=>({path:a.path,namespace:'image'}));
+  b.onResolve({filter:/\.(png|webp)$/},a=>({path:a.path,namespace:'image'}));
   b.onLoad({filter:/.*/,namespace:'qa'},a=>({contents:a.path==='safe'?'export const useSafeAreaInsets=()=>({top:0,left:0,right:0,bottom:0});':a.path==='header'?'export const TokuteiHeader=()=>null;':'export const ReadingAppearanceControl=()=>null;export const TranslationText=()=>null;export const useStudyAppearance=()=>({colors:{text:"#111",muted:"#333",translationText:"#111",translation:"#eee",border:"#aaa",background:"#fff"}});',loader:'js'}));
   b.onLoad({filter:/.*/,namespace:'image'},a=>({contents:`module.exports={uri:${JSON.stringify(a.path)}};`,loader:'js'}));
  }}]});

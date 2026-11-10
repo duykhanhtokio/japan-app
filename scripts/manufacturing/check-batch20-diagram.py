@@ -52,7 +52,11 @@ invalid('changed original historical asset bytes', stale='assets/manufacturing/d
 invalid('changed new PNG bytes', stale='assets/manufacturing/diagrams/batch20-electrical-meter-connections.png')
 component = (ROOT/'src/components/manufacturing/ManufacturingDiagram.tsx').read_text()
 try:
-    layer['project_component'](component.replace('1400/1100','1400/1000',1))
+    # Reject an actual change to the current renderer's dimensions.
+    original = "width:1400,height:1100"
+    mutated = "width:1400,height:1000"
+    assert component.count(original) == 1
+    layer['project_component'](component.replace(original, mutated, 1))
 except AssertionError:
     rejected.append('changed meter aspect ratio')
 else:

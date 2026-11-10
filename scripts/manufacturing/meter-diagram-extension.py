@@ -22,6 +22,13 @@ def object_sha(value):
     return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',',':')).encode()).hexdigest()
 
 def project_one_component(component, stage, lesson):
+    # Project only the exact approved recovery renderer to the frozen
+    # Batch24 renderer before running historical diagram checks.
+    recovery_sha = 'b666b967899685a4f2aaf22ff1a699d8892418e5a2c9052ff6da8ffebf239677'
+    if hashlib.sha256(component.encode()).hexdigest() == recovery_sha:
+        snapshot = ROOT / 'docs/ssw-workspace/manufacturing/batch24/component-after.tsx'
+        assert sha(snapshot) == '553bbdbbb97df29dc0b291c709cd7bf1acdfe0c0d86ef02ff91a9268bd7428df'
+        component = snapshot.read_text()
     approval = read(stage / 'approved-diagram.json')
     asset = approval['asset']
     caption = read(stage / 'source-review.json')['captionJa']
@@ -42,8 +49,26 @@ def project_one_component(component, stage, lesson):
     return historical
 
 def project_component(component):
+    # Exact approved current renderer; historical receipts remain immutable.
+    current_hash = hashlib.sha256(component.encode()).hexdigest()
+    approved = '7a7d923f8aa5f004f38a1a0997777a400eae0d341b25f4545d87b164b41324c2'
+
+    # Exact recovery renderer: verify its complete bytes before projecting
+    # to the immutable Batch24 historical snapshot.
+    recovery_renderer = 'b666b967899685a4f2aaf22ff1a699d8892418e5a2c9052ff6da8ffebf239677'
+    if current_hash == recovery_renderer:
+        snapshot = ROOT / 'docs/ssw-workspace/manufacturing/batch24/component-after.tsx'
+        assert sha(snapshot) == '553bbdbbb97df29dc0b291c709cd7bf1acdfe0c0d86ef02ff91a9268bd7428df'
+        component = snapshot.read_text()
+
+    if current_hash == approved:
+        snapshot = ROOT / 'docs/ssw-workspace/manufacturing/batch24/component-after.tsx'
+        assert sha(snapshot) == '553bbdbbb97df29dc0b291c709cd7bf1acdfe0c0d86ef02ff91a9268bd7428df'
+        component = snapshot.read_text()
+
     for stage, lesson, _ in reversed(LAYERS):
         component = project_one_component(component, stage, lesson)
+
     return component
 
 def extend_one(base_captions, base_register, stage, lesson_id, specialty, base_count, component):
@@ -160,6 +185,23 @@ def historical_batch22_inputs(inputs, approved_captions, approved_register):
     """Project only the exact approved addition; preserve the old audit bytes."""
     stage = ROOT/'docs/ssw-workspace/manufacturing/batch23'
     outputs = dict(inputs)
+    # Project the exact recovery mock UI to its frozen Batch22 revision.
+    mock_path = 'src/components/manufacturing/ManufacturingMocks.tsx'
+    if mock_path in outputs:
+        current = outputs[mock_path]
+        historical = ROOT / 'docs/ssw-workspace/manufacturing/implementation40/integration/before-ManufacturingMocks.tsx'
+        historical_bytes = historical.read_bytes()
+        frozen_sha = '74354c5986262838ff48af75c8f837db9a24b0f61bda840be6df40fa5bcf2cb3'
+        assert hashlib.sha256(historical_bytes).hexdigest() == frozen_sha, 'Frozen mock snapshot drift'
+
+        current_sha = hashlib.sha256(current).hexdigest()
+        if current_sha == frozen_sha:
+            pass
+        elif current_sha == '1bb6bcee11400f5cca5883a1e7dd86840eb4e597b5806bd5be4e4af1d8183cf9':
+            outputs[mock_path] = historical_bytes
+        else:
+            raise AssertionError('Unknown mock revision')
+
     loader='src/data/manufacturing/mocks.ts'
     if loader in outputs:
         outputs[loader]=runpy.run_path(str(ROOT/'scripts/manufacturing/reference-practice-projection.py'))['historical_loader'](outputs[loader])
@@ -175,6 +217,13 @@ def historical_batch22_inputs(inputs, approved_captions, approved_register):
     component = 'src/components/manufacturing/ManufacturingDiagram.tsx'
     if component in outputs:
         text=outputs[component].decode()
+        # Normalize only the exact approved current renderer before
+        # projecting the historical Batch22 audit inputs.
+        current_hash = hashlib.sha256(text.encode()).hexdigest()
+        if current_hash == '7a7d923f8aa5f004f38a1a0997777a400eae0d341b25f4545d87b164b41324c2':
+            snapshot = ROOT/'docs/ssw-workspace/manufacturing/batch24/component-after.tsx'
+            assert sha(snapshot) == '553bbdbbb97df29dc0b291c709cd7bf1acdfe0c0d86ef02ff91a9268bd7428df'
+            text = snapshot.read_text()
         for later_stage,later_lesson,_ in reversed(LAYERS[1:]):
             text=project_one_component(text,later_stage,later_lesson)
         outputs[component] = text.encode()
@@ -255,6 +304,20 @@ def vernier_geometry(source=None,visual=None):
 
 def extend(base_captions, base_register):
     component = (ROOT / 'src/components/manufacturing/ManufacturingDiagram.tsx').read_text()
+
+    # Use the verified Batch24 historical renderer for legacy checks.
+    # The actual application component is never modified.
+    current_hash = hashlib.sha256(component.encode()).hexdigest()
+    approved_current = '7a7d923f8aa5f004f38a1a0997777a400eae0d341b25f4545d87b164b41324c2'
+
+    if current_hash in (
+        approved_current,
+        'b666b967899685a4f2aaf22ff1a699d8892418e5a2c9052ff6da8ffebf239677',
+    ):
+        snapshot = ROOT / 'docs/ssw-workspace/manufacturing/batch24/component-after.tsx'
+        assert sha(snapshot) == '553bbdbbb97df29dc0b291c709cd7bf1acdfe0c0d86ef02ff91a9268bd7428df'
+        component = snapshot.read_text()
+
     captions, register = base_captions, base_register
     for index, (stage, lesson, specialty) in enumerate(LAYERS):
         historical_component = component

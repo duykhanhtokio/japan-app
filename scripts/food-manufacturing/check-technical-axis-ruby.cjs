@@ -30,7 +30,7 @@ function load(file){
   if(name==='./FoodRoyalOjtCycle')return {FoodRoyalOjtCycle:nil};
   if(name==='./FoodRoyalChemicalSafety')return {FoodRoyalChemicalSafety:nil};
   if(name==='./FoodSafetySigns')return {FoodSafetySigns:nil};
-  
+
   if(name==='./FoodQuestionRuby')return {FoodQuestionRuby:nil};
   if(name==='./translations/glossary.json')return {terms:[]};
   if(name==='./supplemental')return {supplementalLessons:[],supplementalExams:[],supplementalTranslations:{},supplementalTestTranslations:{}};

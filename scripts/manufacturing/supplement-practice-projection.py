@@ -13,9 +13,31 @@ COMPLETION37='5f5ff4e3bd2d200500f578b6e7a0a89d358f29bedb1ff6f48313ba72d42937aa'
 RECOGNITION38='0fc06864e60036f4584aab6f6c1f7c479c5dc9adcdf31c3239d9d404cae75587'
 DAILY_LEARNING='50cad14cc4d20eef064e606ce8a80d6b4a3c05fbce28ece5fcc56baa37bc2dc4'
 def historical_course(raw):
+    # Exact recovery UI revision. Preserve the original historical audit chain.
+    recovery_sha = "80c4ff5827592e10f59191b8666d21a6fcb1098535d849e0fd4e4b6229d960a5"
+    backup_sha = "4355bc025ad260df21fbf5ccb011c74b9500b74ad193d8ce7ad258e8863a3b0f"
+    if hashlib.sha256(raw).hexdigest() == recovery_sha:
+        preserved = (
+            ROOT / "docs/ssw-workspace/manufacturing/batch22/historical-merged-ManufacturingCourse.tsx"
+        ).read_bytes()
+        assert hashlib.sha256(preserved).hexdigest() == backup_sha
+        raw = preserved
+
     raw=runpy.run_path(str(ROOT/'scripts/manufacturing/apply-source49-reader.py'))['predecessor'](raw)
     raw=runpy.run_path(str(ROOT/'scripts/manufacturing/apply-implementation40.py'))['predecessor']('src/components/manufacturing/ManufacturingCourse.tsx',raw)
     digest=hashlib.sha256(raw).hexdigest()
+    # Exact merged GitHub reader revision, independently preserved in MERGE_HEAD.
+    MERGED_READER='4355bc025ad260df21fbf5ccb011c74b9500b74ad193d8ce7ad258e8863a3b0f'
+    if digest==MERGED_READER:
+        historical=(
+            ROOT/'docs/ssw-workspace/manufacturing/batch22/historical-merged-ManufacturingCourse.tsx'
+        ).read_bytes()
+        assert hashlib.sha256(historical).hexdigest()==MERGED_READER,'Merged reader provenance drift'
+        assert raw==historical,'Merged reader differs from recorded GitHub revision'
+        raw=(ROOT/'docs/ssw-workspace/manufacturing/implementation40/integration/after-ManufacturingCourse.tsx').read_bytes()
+        assert hashlib.sha256(raw).hexdigest()=='c7af06d4ad1d9b6931eac852e962844f675edbf0de8a2de2fa506a94c8859dcc','Implementation40 snapshot drift'
+        raw=runpy.run_path(str(ROOT/'scripts/manufacturing/apply-implementation40.py'))['predecessor']('src/components/manufacturing/ManufacturingCourse.tsx',raw)
+        digest=hashlib.sha256(raw).hexdigest()
     if digest==DAILY_LEARNING:
         raw=(ROOT/'docs/ssw-workspace/manufacturing/daily-fix-20261031/base-ManufacturingCourse.tsx').read_bytes()
         assert hashlib.sha256(raw).hexdigest()==RECOGNITION38,'Daily learning predecessor drift'

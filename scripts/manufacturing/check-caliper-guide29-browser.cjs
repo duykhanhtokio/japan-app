@@ -16,6 +16,8 @@ fs.mkdirSync(out, {recursive: true});
 const read = file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
 const guides = read('src/data/manufacturing/source-guides.json').guides;
 const targets = read('src/data/manufacturing/source-guide-translations.json').locales;
+const editorialPatches = read('src/data/manufacturing/editorial-translations.json').patches;
+const editorialEntries = read('src/data/manufacturing/editorial-translations.json').entries;
 const guideIds = [read('docs/ssw-workspace/manufacturing/batch27-caliper/guide.ja.json').id];
 const added = guideIds.map(id => guides.find(g => g.id === id));
 assert(added.every(Boolean), 'Caliper preview guide must be integrated first');
@@ -85,7 +87,34 @@ const adapters = {
         assert.equal(await page.getByText(text, {exact: true}).count(), 0, 'Translation must begin hidden');
         await page.getByRole('button', {name: labels[locale].translationShow, exact: true}).click();
         await page.getByText(text, {exact: true}).waitFor();
-        for (const paragraph of target.paragraphs) await page.getByText(paragraph.title + '\n' + paragraph.text, {exact: true}).waitFor();
+        for (const [paragraphIndex, paragraph] of target.paragraphs.entries()) {
+          const matches = editorialPatches.filter(patch =>
+            patch.kind === 'guide' &&
+            patch.locale === locale &&
+            patch.entryId === guide.id &&
+            patch.sourceHash === guide.sourceHash &&
+            Array.isArray(patch.fieldPath) &&
+            patch.fieldPath.length === 3 &&
+            patch.fieldPath[0] === 'paragraphs' &&
+            patch.fieldPath[1] === paragraphIndex &&
+            patch.fieldPath[2] === 'text'
+          );
+
+          assert(matches.length <= 1, 'Duplicate editorial patches');
+          const patch = matches[0];
+
+          if (patch) {
+            assert.equal(patch.before, paragraph.text,
+              'Editorial baseline mismatch');
+          }
+
+          const displayedText = patch ? patch.after : paragraph.text;
+
+          await page.getByText(
+            paragraph.title + '\n' + displayedText,
+            {exact: true}
+          ).waitFor();
+        }
         await page.getByRole('button', {name: labels[locale].translationHide, exact: true}).click();
         assert.equal(await page.getByText(text, {exact: true}).count(), 0);
         await page.getByText(guide.objectiveJa, {exact: true}).waitFor();

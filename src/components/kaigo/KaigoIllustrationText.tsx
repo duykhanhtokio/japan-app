@@ -12,7 +12,7 @@ export function KaigoIllustrationText({children,style,...props}:TextProps){
  if(!tokens) return <Text style={style} {...props}>{children}</Text>;
  const flat=StyleSheet.flatten(style)??{},size=typeof flat.fontSize==='number'?flat.fontSize:16;
  const baseStyle={fontSize:size,color:flat.color,fontWeight:flat.fontWeight,fontFamily:flat.fontFamily,lineHeight:flat.lineHeight,textAlign:flat.textAlign};
- return <View testID="kaigo-illustration-ruby" accessible accessibilityLabel={text} style={[style,{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}]}>
+ return <View testID="kaigo-illustration-ruby" accessible accessibilityLabel={text} style={{flexDirection:'row',flexWrap:'wrap',alignItems:'flex-end'}}>
   {!!prefix&&<Text style={baseStyle}>{prefix}</Text>}
   {tokens.map((token,i)=><View key={i} style={{alignItems:'center'}}>
    {!!token.readingKana&&<Text style={{fontSize:Math.max(9,size*.58),lineHeight:Math.max(13,size*.8),color:flat.color??'#526674'}}>{token.readingKana}</Text>}

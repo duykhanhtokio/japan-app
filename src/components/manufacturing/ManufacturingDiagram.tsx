@@ -2,12 +2,12 @@ import {StudyFigure,StudyFigureViewer} from '@/components/tokutei/StudyFigure';
 import {IllustrationJapanese} from './IllustrationJapanese';
 import {ManufacturingIllustrationText as Text} from './ManufacturingIllustrationText';
 import {useState} from 'react';
-import {Image,Modal,Pressable,ScrollView,View,useWindowDimensions} from 'react-native';
+import {Image,Modal,Pressable,ScrollView,View,useWindowDimensions,type ImageSourcePropType} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useStudyAppearance} from '@/components/tokutei/StudyAppearance';
 import {manufacturingUi} from '@/data/manufacturing/ui';
 import captionData from '@/data/manufacturing/diagram-translations.json';
-const figures:Record<string,{source:ReturnType<typeof require>;width:number;height:number;altJa:string}>={
+const figures:Record<string,{source:ImageSourcePropType;width:number;height:number;altJa:string}>={
  'mfg1-mechanical-lesson-018-reading':{source:require('../../../assets/manufacturing/diagrams/batch24-mechanical-vernier-reading.png'),width:1400,height:1300,altJa:'この紙上モデルは、本尺の1目盛を1 mmとし、副尺の20区間を本尺の19 mmとする構成で、読取単位は0.05 mmです。副尺の0は本尺の18 mmと19 mmの間にあり、先に18 mmを読みます。本尺と一致するのは副尺の0から4区間先の線なので、4×0.05＝0.20 mmを足し、18.20 mmと読みます。本文の独立した計算例を可視化した図であり、実器具の仕様・測定精度や合否を示しません。実際には器具の最小読取値と指定された測定方法を確認します。'},
  'mfg1-mechanical-lesson-018':{source:require('../../../assets/manufacturing/diagrams/batch23-mechanical-caliper-contacts.png'),width:1400,height:1400,altJa:'ノギスの部位と測定面を区別するための独自模式図。本尺側の固定ジョウとスライダ側の測定ジョウ、外側・内側・深さの測定面の役割を対応させる。外側は対象の外面、内側は穴や溝の向かい合う内面、深さは基準となる端面と底の当たりを確認する。デプスバーのある器具を例にした位置関係の説明であり、実寸・目盛りの読み値・合否や操作手順を示さない。実際には器具の仕様と指定された測定方法を確認し、動いている対象を測定しない。'},
  'mfg1-electrical-l005':{source:require('../../../assets/manufacturing/diagrams/batch20-electrical-meter-connections.png'),width:1400,height:1100,altJa:'測定する量と接続の違いを示す紙上の概念図。電圧計Vは対象の二点間に並列、電流計Aは対象の枝路に直列につなぐ。実機の端子・配線や接続手順を示す図ではない。電流レンジを電源両端へ直接当てない。実作業では担当範囲・教育・設備手順と測定器の適合を確認する。'},

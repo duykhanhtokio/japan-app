@@ -4,7 +4,7 @@ const sorted=x=>Array.isArray(x)?x.map(sorted):x&&typeof x==='object'?Object.fro
 const hash=x=>crypto.createHash('sha256').update(JSON.stringify(sorted(x))).digest('hex');
 const text=x=>assert(typeof x==='string'&&x.trim());
 const specialties=['mechanical','electrical','surface'],locales=read('docs/ssw-workspace/manufacturing/approved-scope.json').targetLocales;
-for(const [file,digest]of Object.entries(read('docs/ssw-workspace/manufacturing/batch37-completion/preserved-core-sha256.json')))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex'),digest,'Existing content changed: '+file);
+for(const [file,digest]of Object.entries(read('docs/ssw-workspace/manufacturing/batch37-completion/preserved-core-sha256.json')))require('./verify-preserved-core.cjs').verifyPreservedCore(root,file,digest);
 const sourceMap=new Map(read('docs/ssw-workspace/manufacturing/source-qa-report.json').sources.map(s=>['mfg1-'+s.specialty+'-source',s]));
 const references=refs=>{assert(Array.isArray(refs)&&refs.length);for(const ref of refs){const source=sourceMap.get(ref.documentId);assert(source);assert(ref.pdfPage>=1&&ref.pdfPage<=source.pdfPages);assert.equal(ref.pdfPage-ref.printedPage,source.printedToPhysicalOffset);}};
 const oldIds=new Set(specialties.flatMap(s=>{const d=read('src/data/manufacturing/'+s+'.json');return [...d.lessons.map(l=>l.id),...d.checks.flatMap(c=>[c.id,...c.questions.map(q=>q.id)])];}));

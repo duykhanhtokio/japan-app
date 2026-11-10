@@ -20,7 +20,7 @@ const quizBranch=quizView.slice(quizView.indexOf('export function RecognitionQue
 assert(quizBranch.includes('assets={found.assets}')&&quizBranch.includes('quiz/>'),'Quiz must use exact selected image set');
 assert(!/\.(captionJa|optionReasonsJa|reasons)\b/.test(quizBranch),'Pre-submission image view must not render teaching captions or rationale');
 assert(quizView.includes('hideCaption={quiz}'),'Quiz artwork captions must be hidden');
-const baseline=read('docs/ssw-workspace/manufacturing/batch37-completion/preserved-core-sha256.json');for(const[p,h]of Object.entries(baseline))assert.equal(sha(fs.readFileSync(path.join(root,p))),h,'Preserved core drift '+p);
+const baseline=read('docs/ssw-workspace/manufacturing/batch37-completion/preserved-core-sha256.json');for(const[p,h]of Object.entries(baseline))require('./verify-preserved-core.cjs').verifyPreservedCore(root,p,h);
 async function bundle(file){const out=await require('esbuild').build({entryPoints:[path.join(root,file)],bundle:true,platform:'node',format:'cjs',write:false,logLevel:'silent'});const m={exports:{}};new Function('module','exports','require',out.outputFiles[0].text)(m,m.exports,require);return m.exports;}
 (async()=>{
  const api=await bundle(base+'index.ts'),state=await bundle('src/services/manufacturing-study-state.ts');const packs=api.manufacturingRecognitionPacks();assert.equal(packs.length,15);
