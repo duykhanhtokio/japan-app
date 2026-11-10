@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "week": 7,
+  "dateJst": "2026-11-07",
+  "baseline": "ce63813524d6de9742f220c221da59fe2ac268f4",
+  "scope": [
+    "food-1-037",
+    "food-1-042"
+  ],
+  "problem": "Reader retained numeric expanded image selection across lesson changes; an image chosen in the full15-sign lesson could remain expanded on the13-sign lesson even when excluded from its inline scope.",
+  "changes": [
+    "Store expanded selection by lesson ID, sourceHash and stable sign ID.",
+    "Use the same allowed-sign predicate for inline grid and expanded selection.",
+    "Do not expose an expanded sign for another lesson, source revision, missing sign or historical numeric selection.",
+    "Retain original inline IDs, source data, all original image bytes, translations, caption guard and daily placement requirement."
+  ],
+  "validation": {
+    "command": "NODE_PATH=<shared-qa-dependencies> node scripts/food-manufacturing/check-safety-sign-zoom-scope.cjs",
+    "result": "PASS",
+    "contexts": 2366,
+    "method": "Actual component SSR, deterministic React Native/asset/ruby adapters and selected hook state; JA+12 locales × 15 signs × both lesson scopes. Includes current scope positive/negative, cross-lesson state, changed revision, disabled daily placement, missing sign and old numeric selection.",
+    "scopedDiffCheck": "PASS"
+  },
+  "sha256": {
+    "src/components/food-manufacturing/FoodSafetySigns.tsx": "4c1f836d60a2804a1cdc85c96df584175743cd413de7d1a2d6c3933f86256b8f",
+    "scripts/food-manufacturing/check-safety-sign-zoom-scope.cjs": "9eeee8135c4463689d20cbdecfaea5041b1e6bd5d058bca777594bc5a6c65bf3"
+  },
+  "acceptance": {
+    "domain": false,
+    "native": false,
+    "physicalDevice": false,
+    "wholeWeekComplete": false,
+    "release": false
+  },
+  "next": "Remaining primary and source-practice illustrations for existing weeks07–08 stay in canonical food queue; this code guard does not close that work."
+}

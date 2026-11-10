@@ -1,0 +1,84 @@
+{
+  "baseCommit": "9ba2d5bdd3ad5d79813b1f6cbd3f91d10ea9c5f9",
+  "scope": "W10 all105whole-fields +1097 distinct lexical forms +25 actual ambiguous offsets context-compared; no native/domain/device human acceptance",
+  "qa": {
+    "actualRoyalSourceRows": 21,
+    "actualJapaneseFieldInstances": 105,
+    "globallyUniqueReviewedStrings": 105,
+    "nativeHtmlAndStyleByteIdentical": 252,
+    "staleSourceRowsRejected": 21,
+    "priorReviewedEntriesCompared": 1019,
+    "untouchedOutsideGroup": 1019,
+    "totalReviewed": 1124,
+    "pendingStoredRecords": 583,
+    "wholeContextRegressionTerms": 17,
+    "wholeContextRegressionOccurrences": 19,
+    "onlyTwoNativeJaFieldsClarified": true,
+    "all12NativeTargetsUnchanged": true,
+    "unchangedThreeSourceTargetSignatures": {
+      "en": "95a1ef1ec244b409a7a89880f69c00eaff1cc51e45139c332a2d3bac27fa06ca",
+      "vi": "68f5dcd28e860c9cdd44eeaf6eee9ca194968a939bdf05d046d68e27239f251a",
+      "id": "1446bdc4f1f5ca8957183e54ed7f83134277eab61381f249ce5603ee5cd75191",
+      "zh-CN": "e0487d3af8718ae504434fab64c2d99427dda79eff2586508a2742a7b16c7638",
+      "zh-TW": "bdef992aee7750b5cee189c0198995ee7a88d4606f012a4b64a9f9743c04849c",
+      "hi": "2ebf603cc5aa42ee5f8e73a7cbb775424053aae4db2d4e43174a2102f09e6c6a",
+      "bn": "367789c39d60905cf0fbb4886db0c276cbfd34bde01cdf4c6fbb1fbdcad88297",
+      "ne": "06e38b21c408cec3a0873bdc0b7f9051f17e45e1028ac26d349d7a2e044d5c7b",
+      "my": "aeb34dc0a70c552c6c8e6388c8fa1ddab0c18859d9dcf1786b0f915a96485225",
+      "th": "3215b9407a08bbe41e8b76491fdf3069ddc660418a55938771f49aeab27fd534",
+      "km": "7e61c26fdc80c1795c0f54d101f11f272b843b4fa2b1e6e1a3693215324f7aaf",
+      "tl": "f667d583a86342f81f4e7a4806f316c42792dbbf97ee89e75ec054e3fab2e3c7"
+    }
+  },
+  "clarifications": [
+    {
+      "lessonId": "mfg1-electrical-l065",
+      "field": "structureText",
+      "before": "鉛入りと鉛フリーでは合金組成、融点、濡れ性などが異なります。例えば教材で扱うSn63/Pb37とSn-Ag-Cu系は同じ条件とは限りません。全鉛フリーの品質が低いなどと一般化せず、対象品の認定材料と工程条件を使います。\n\nフラックスは酸化膜への作用や濡れ広がりを助けます。汚れの除去、適切な加熱、部品保持、供給、冷却、検査を組み合わせます。残渣の洗浄要否や溶剤はフラックス種と仕様で異なり、全品を同じ液で洗うことはしません。",
+      "after": "鉛入りと鉛フリーでは合金組成、融点、濡れ性などが異なります。例えば教材で扱うSn63/Pb37とSn-Ag-Cu系は同じ条件とは限りません。すべての鉛フリー製品の品質が低いなどと一般化せず、対象品の認定材料と工程条件を使います。\n\nフラックスは酸化膜への作用や濡れ広がりを助けます。汚れの除去、適切な加熱、部品保持、供給、冷却、検査を組み合わせます。残渣の洗浄要否や溶剤はフラックス種と仕様で異なり、全品を同じ液で洗うことはしません。",
+      "clarification": {
+        "before": "全鉛フリー",
+        "after": "すべての鉛フリー製品",
+        "reading": "すべてのなまりふりーせいひん"
+      }
+    },
+    {
+      "lessonId": "mfg1-electrical-l070",
+      "field": "structureText",
+      "before": "キルヒホッフの電流則では節点へ入る電流の合計と出る合計が等しくなります。例えば8mAが入り3mAと残りに分かれるなら残りは5mAです。矢印の仮定を揃え、計算が負なら仮定と逆向きとして読みます。\n\n符号付きの収支を、単位をそろえて二段階で確認します。紙上の節点に4 mAと0.002 Aが入り、1 mAとXが出るなら、0.002 A＝2 mAよりX＝4＋2−1＝5 mAです。未知の矢印を外向きと仮定してX＝−5 mAなら、実際は内向き5 mAと読み、負号を消して外向きと報告しません。\n閉路は辿る向きに沿った上昇・低下を別々に書きます。＋16 V−6 V−X＝0ならX＝10 Vです。一周の向きを逆にする際は各項の符号をまとめて反転し、−16＋6＋10＝0でも確認できます。残差が0でなければ符号・単位・記録を再確認し、合うように測定値を書き換えません。\n未知の枝電流が二つあるのに独立した式が一つしかない場合、各枝の値は一意に定まりません。収支が一致することも、実物の故障がない証明ではありません。ここでは理想回路の紙上計算だけを扱い、配線や測定の実施を指示しません。\n\n電圧則は一周する閉路の符号付き電位差の和をゼロとします。12Vの上昇に対し抵抗で4Vと8V低下なら12−4−8=0です。全ての電圧を正として無条件に加えず、辿る方向と極性を決めます。",
+      "after": "キルヒホッフの電流則では節点へ入る電流の合計と出る合計が等しくなります。例えば8mAが入り3mAと残りに分かれるなら残りは5mAです。矢印の仮定を揃え、計算が負なら仮定と逆向きとして読みます。\n\n符号付きの収支を、単位をそろえて二段階で確認します。紙上の節点に4 mAと0.002 Aが入り、1 mAとXが出るなら、0.002 A＝2 mAよりX＝4＋2−1＝5 mAです。未知の矢印を外向きと仮定してX＝−5 mAなら、実際は内向き5 mAと読み、負号を消して外向きと報告しません。\n閉路は辿る向きに沿った上昇・低下を別々に書きます。＋16 V−6 V−X＝0ならX＝10 Vです。一周の向きを逆にする際は各項の符号をまとめて反転し、−16＋6＋10＝0でも確認できます。残差が0でなければ符号・単位・記録を再確認し、合うように測定値を書き換えません。\n未知の枝電流が二つあるのに独立した式が一つしかない場合、それぞれの枝の値は一意に定まりません。収支が一致することも、実物の故障がない証明ではありません。ここでは理想回路の紙上計算だけを扱い、配線や測定の実施を指示しません。\n\n電圧則は一周する閉路の符号付き電位差の和をゼロとします。12Vの上昇に対し抵抗で4Vと8V低下なら12−4−8=0です。全ての電圧を正として無条件に加えず、辿る方向と極性を決めます。",
+      "clarification": {
+        "before": "各枝",
+        "after": "それぞれの枝",
+        "reading": "それぞれのえだ"
+      }
+    }
+  ],
+  "all12NativeLocaleDataUnchanged": true,
+  "sourceGuardsPreserved": true,
+  "canonicalProseArtAndNumbersUnchanged": true,
+  "negativeNoGeneralizationWarningPreserved": true,
+  "storedReviewed": 1124,
+  "activeReviewed": 1119,
+  "historicalReviewed": 5,
+  "storedPending": 583,
+  "activePending": 543,
+  "legacyCaptions": 27,
+  "inactiveHistoricalTotal": 18,
+  "next": "W11 throughW14 and remaining active routes",
+  "sharedQueueExcluded": true,
+  "validVariantsRetained": {
+    "水晶振動子": "すいしょうしんどうし",
+    "締付対象": "しめづけたいしょう",
+    "一方向": "いちほうこう",
+    "厚膜": "あつまく; Sony technicalprimary +JFPI thickfilm term",
+    "上付き": "うわつき; JFPI exactsuperscript andJustSystemsproductinstructions",
+    "一周期": "いっしゅうき; wholelexicalformaccepted"
+  },
+  "sourceEvidence": [
+    "https://www.jfpi.or.jp/webyogo/index.php?term=286",
+    "https://support.justsystems.com/faq/1032/app/servlet/qadoc?QID=029553",
+    "https://www.jfpi.or.jp/webyogo/index.php?term=4623",
+    "https://www.sony.com/ja/SonyInfo/technology/stories/entries/IMX586/"
+  ]
+}

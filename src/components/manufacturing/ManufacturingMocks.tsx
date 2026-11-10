@@ -1,3 +1,4 @@
+import {revisedMock40,questionTranslation40,questionRuby40} from '@/data/manufacturing/implementation40';
 import {useCallback,useEffect,useRef,useState,type PropsWithChildren} from 'react';
 import {AppState,Modal,Pressable,ScrollView,StyleSheet,Text,View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -15,9 +16,9 @@ import {MOCK_SECTION_IDS,manufacturingMockKey,freshManufacturingMock,restoreManu
 
 function Page({children}:PropsWithChildren){useBackdropOcclusion(true);const {colors}=useStudyAppearance(),insets=useSafeAreaInsets();return <View style={{flex:1,backgroundColor:colors.background,paddingTop:insets.top,paddingBottom:insets.bottom,paddingLeft:insets.left,paddingRight:insets.right}}>{children}</View>;}
 function Button({title,onPress,disabled=false,selected=false}:{title:string;onPress:()=>void;disabled?:boolean;selected?:boolean}){const {colors}=useStudyAppearance();return <Pressable accessibilityRole="button" accessibilityLabel={title} accessibilityState={{disabled,selected}} disabled={disabled} onPress={onPress} style={[s.button,{borderColor:colors.border,backgroundColor:selected?colors.translation:colors.background,opacity:disabled?.45:1}]}><Text style={[s.body,{color:colors.text,textAlign:'center'}]}>{title}</Text></Pressable>;}
-function Japanese({question,field}:{question:ManufacturingQuestion;field:'stem'|number}){const {colors}=useStudyAppearance(),parts=manufacturingMockRuby(question,field),source=field==='stem'?question.stemJa:question.optionsJa[field];return parts?<View style={s.ruby} accessibilityLabel={source}>{parts.map((p,i)=><View key={i} accessible={false} style={s.rubyWord}><Text style={{fontSize:10,lineHeight:14,color:colors.muted}}>{p.reading??' '}</Text><Text selectable style={[s.body,{color:colors.text}]}>{p.text}</Text></View>)}</View>:<Text selectable style={[s.body,{color:colors.text}]}>{source}</Text>;}
+function Japanese({question,field}:{question:ManufacturingQuestion;field:'stem'|number}){const {colors}=useStudyAppearance(),parts=questionRuby40(question,field)??manufacturingMockRuby(question,field),source=field==='stem'?question.stemJa:question.optionsJa[field];return parts?<View style={s.ruby} accessibilityLabel={source}>{parts.map((p,i)=><View key={i} accessible={false} style={s.rubyWord}><Text style={{fontSize:10,lineHeight:14,color:colors.muted}}>{p.reading??' '}</Text><Text selectable style={[s.body,{color:colors.text}]}>{p.text}</Text></View>)}</View>:<Text selectable style={[s.body,{color:colors.text}]}>{source}</Text>;}
 export function ManufacturingMocks({learner,specialty,language,onBack}:{learner:string;specialty:Specialty;language:string;onBack:()=>void}){
- const [exams]=useState(()=>loadManufacturingMocks(specialty)),[exam,setExam]=useState<ManufacturingMock|null>(null),{colors}=useStudyAppearance();
+ const [exams]=useState(()=>loadManufacturingMocks(specialty).map(revisedMock40)),[exam,setExam]=useState<ManufacturingMock|null>(null),{colors}=useStudyAppearance();
  const t=(key:Parameters<typeof manufacturingMockUi>[1])=>manufacturingMockUi(language,key);
  useManufacturingBack(onBack,exam===null);
  if(exam)return <MockAttempt key={`${learner}:${exam.id}`} learner={learner} exam={exam} language={language} onBack={()=>setExam(null)}/>;
@@ -33,7 +34,7 @@ function MockAttempt({learner,exam,language,onBack}:{learner:string;exam:Manufac
  useEffect(()=>{const tick=()=>{const time=Date.now();setNow(time);const current=latest.current;if(!current)return;const next=normalizeManufacturingMock(current,exam,time);if(next!==current)persist(next);};const timer=setInterval(tick,500);const sub=AppState.addEventListener('change',tick);return()=>{clearInterval(timer);sub.remove();};},[exam,persist]);
  const complete=!!attempt&&manufacturingMockComplete(attempt),result=attempt?gradeManufacturingMock(attempt,exam):null;
  const sectionId:MockSectionId=complete?review:attempt?.sections.theory.submittedAt===null?'theory':'practical';
- const section=attempt?.sections[sectionId],definition=exam.sections[sectionId],question=section?definition.questions[section.currentQuestion]:null,translated=question&&showTranslation?manufacturingMockTranslation(question,language):null;
+ const section=attempt?.sections[sectionId],definition=exam.sections[sectionId],question=section?definition.questions[section.currentQuestion]:null,translated=question&&showTranslation?(questionTranslation40(question,language)??manufacturingMockTranslation(question,language)):null;
  const remaining=section?mockRemainingMs(section,definition,now):definition.durationMs,seconds=Math.ceil(remaining/1000),clock=`${Math.floor(seconds/60).toString().padStart(2,'0')}:${(seconds%60).toString().padStart(2,'0')}`;
  const leave=()=>{if(saving)return;if(error==='write'||(attempt&&!complete&&MOCK_SECTION_IDS.some(id=>attempt.sections[id].startedAt!==null)))setConfirm('leave');else onBack();};
  useManufacturingBack(leave);

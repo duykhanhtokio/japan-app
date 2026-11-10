@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_OWN_AUTHORING_SELF_CHECK",
+  "baselineCommit": "d03ead72b51c3ef5888f687e00d860ec7ba6dbe5",
+  "author": "hotel_zh",
+  "pairs": [
+    {
+      "locale": "zh-CN",
+      "lessonId": "hotel-restaurant-01",
+      "sourceRevision": "cd8f08d795ac17d7ff6c23341956e196eca65d52da352b3613eff036d3eee6f3",
+      "jsonValueSha256": "f0b680b1b8ae552520b550963343311add0f3e9a18c473c346899225be2d9908",
+      "translatedFields": 103,
+      "questionCount": 13,
+      "addedQuestionTranslations": 9,
+      "semanticSelfReviewed": true
+    },
+    {
+      "locale": "zh-CN",
+      "lessonId": "hotel-restaurant-02",
+      "sourceRevision": "c6af096eb88ae91e19dd42473a5bba2126e15271724f92a7d5715df8d8e58918",
+      "jsonValueSha256": "6a049d2fbff92acd571ff5cf0cbf053a81cea613b92efd03eb6196d62e0f3c1e",
+      "translatedFields": 81,
+      "questionCount": 9,
+      "addedQuestionTranslations": 5,
+      "semanticSelfReviewed": true
+    },
+    {
+      "locale": "zh-CN",
+      "lessonId": "hotel-restaurant-03",
+      "sourceRevision": "89b2a0a7ae9b45fe85721b71749c3902e45ad12a6e9bdc2ee4d45decc7afc653",
+      "jsonValueSha256": "fd2548f14c211eb36baf76fede103ca645e08adf8955a66da56e1ce86f5d3a82",
+      "translatedFields": 75,
+      "questionCount": 8,
+      "addedQuestionTranslations": 4,
+      "semanticSelfReviewed": true
+    },
+    {
+      "locale": "zh-TW",
+      "lessonId": "hotel-restaurant-01",
+      "sourceRevision": "cd8f08d795ac17d7ff6c23341956e196eca65d52da352b3613eff036d3eee6f3",
+      "jsonValueSha256": "294150c7090bb3c3110a1fcdb9f70391ffd2c7821e4ba740dde23726b279a556",
+      "translatedFields": 103,
+      "questionCount": 13,
+      "addedQuestionTranslations": 9,
+      "semanticSelfReviewed": true
+    },
+    {
+      "locale": "zh-TW",
+      "lessonId": "hotel-restaurant-02",
+      "sourceRevision": "c6af096eb88ae91e19dd42473a5bba2126e15271724f92a7d5715df8d8e58918",
+      "jsonValueSha256": "bf1e827426a9fde9590cd42bb9f26a59be76958ba72207c0c50a2ae13361cf07",
+      "translatedFields": 81,
+      "questionCount": 9,
+      "addedQuestionTranslations": 5,
+      "semanticSelfReviewed": true
+    },
+    {
+      "locale": "zh-TW",
+      "lessonId": "hotel-restaurant-03",
+      "sourceRevision": "89b2a0a7ae9b45fe85721b71749c3902e45ad12a6e9bdc2ee4d45decc7afc653",
+      "jsonValueSha256": "7b373a3a2d2a23346a9d0a1781761502d2981c7486932c2a7c2048121cf67166",
+      "translatedFields": 75,
+      "questionCount": 8,
+      "addedQuestionTranslations": 4,
+      "semanticSelfReviewed": true
+    }
+  ],
+  "preservedOutsidePairs": 12,
+  "preservedPriorQuestionWording": 23,
+  "newQuestionTranslations": 36,
+  "changes": [
+    "Completed 18 missing current question translations per locale (36 total), preserving source choice order and answers.",
+    "Translated missing Hospitality, natural smile, daily shaving/natural makeup, hairnet/headband functional checks, and separate nail decoration guidance in restaurant01.",
+    "Self-reviewed all remaining translated fields of these six pairs against stable Japanese.",
+    "Context corrections within assigned TW lessons: 引匯入座→引導入座; 麵向→面向; 座點陣圖→座位圖; 操作程式→操作程序; 任務聯絡→任務聯繫; 上菜程序→上菜流程; 猜測新增→猜測補充. Both locales 整顿/整頓餐食→整套/整套餐食.",
+    "Japanese learning terms retained with Chinese glosses in new course-sequence choice. Current canonical knowledgeIds added to target questions."
+  ],
+  "selfReviewNotes": [
+    "restaurant01: maintain facility-specific appearance rules, do not let short nails replace decoration check, equipment worn alone does not ensure hair clearance during movement.",
+    "restaurant02: guest perspective for left/right, left food/right beverage is textbook basis subject to facility seating and safe service procedure; glass lower half, avoid rim and plated food; distinct roles of utensils, service format and sommelier.",
+    "restaurant03: 三菜 means three dishes not three vegetables; rice guest-left/soup guest-right; course sequence is textbook example not universal mandatory rule; 香の物 pickles, 水菓子 fruit etc, do not clear food still being eaten."
+  ],
+  "sourceJapaneseChanged": false,
+  "sourceCoverageChanged": false,
+  "crossWorkerSemanticReview": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "persistence": "pending coordinator integration, commit and remote verification",
+  "validatedPriorQuestionTranslations": 24,
+  "editoriallyRepairedPriorQuestionTranslations": 1,
+  "receiptCorrection": {
+    "reason": "The author validation used a shallow object copy when comparing a repaired prior question. Resetting copied choices[1] to the historical wording mutated the in-memory target choice array before hashing, while the file correctly retained 上菜流程. No content edit occurred after the authored file was written.",
+    "exactDelta": "zh-TW hotel-restaurant-03-q4 choices[1]: historical 上菜程序 versus actual authored 上菜流程. The latter correctly conveys Japanese 進行 in this service context. Same question explanation uses 流程 and source answerIndex is unchanged.",
+    "verifiedBy": "Deep-cloned reconstruction changing only this choice reproduces previous receipt hash exactly. Current on-disk target self-read against Japanese and old questions revalidated without shared array references.",
+    "previousReceiptSha256": "2530c22b48e5f1c55f14886f93982889cf4f57e74644e5742f0f5834fcdf743f",
+    "currentPairSha256": "7b373a3a2d2a23346a9d0a1781761502d2981c7486932c2a7c2048121cf67166",
+    "contentFileChangedForReceiptRepair": false
+  }
+}

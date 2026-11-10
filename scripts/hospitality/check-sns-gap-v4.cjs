@@ -1,0 +1,12 @@
+const fs=require('fs'),path=require('path'),assert=require('node:assert/strict'),cp=require('child_process');
+const root=path.resolve(__dirname,'../..'),baseline='d834c112f6e870cfaa60880d5142237e6853cad4',id='hotel-planning-04';
+const read=p=>JSON.parse(fs.readFileSync(path.join(root,p))),old=p=>JSON.parse(cp.execFileSync('git',['show',`${baseline}:${p}`],{cwd:root,encoding:'utf8',maxBuffer:8*1024*1024}));
+const authored=read('docs/ssw-workspace/hospitality/source-v4-sns-gap-authoring.json');let preservedLessons=0,preservedQuestions=0;
+for(const locale of ['ja',...Object.keys(authored.localizations)]){const p=locale==='ja'?'src/data/hospitality/planning.json':`src/data/hospitality/translations/${locale}/planning.json`,before=old(p),after=read(p);
+assert.deepEqual(before.lessons.map(l=>l.id),after.lessons.map(l=>l.id));
+for(const l of before.lessons){const n=after.lessons.find(x=>x.id===l.id);if(l.id!==id){assert.deepEqual(n,l);preservedLessons++;continue;}
+const a=structuredClone(n);assert.equal(n.questions.length,l.questions.length+1);assert.deepEqual(n.questions.slice(0,8),l.questions);preservedQuestions+=8;const append=locale==='ja'?authored.japanese.appendJa:authored.localizations[locale].append;assert.equal(n.sections[0].body,l.sections[0].body+'\n\n'+append);a.sections[0].body=l.sections[0].body;a.questions.pop();if(locale==='ja')a.revision=l.revision;else a.sourceRevision=l.sourceRevision;assert.deepEqual(a,l,`${locale}: only reviewed append and new question allowed`);
+assert.equal(n.questions[8].id,'hotel-planning-04-q09');assert.equal(n.questions[8].answerIndex,2);}}
+const rp='src/data/hospitality/readings/planning.json',beforeRead=old(rp),afterRead=read(rp);let readings=0;for(const [k,v] of Object.entries(beforeRead.entries))if(k in afterRead.entries){assert.deepEqual(afterRead.entries[k],v);readings++;}
+const registry=read('docs/ssw-workspace/source-coverage-v2/hospitality.json'),u=registry.knowledgeUnits.find(u=>u.knowledgeId==='HSP1-025-sns-brand-purpose');assert.equal(u.status,'covered_ai');assert.equal(u.assessmentEvidence.length,1);assert.equal(registry.denominator.status,'open');
+console.log(JSON.stringify({status:'PASS_SNS_V4_PRESERVATION',baseline,locales:12,preservedOutsidePlanningLessons:preservedLessons,preservedOldQuestionRecords:preservedQuestions,preservedUnchangedReadingEntries:readings,currentQuestionCount:327,sourceGapCoveredAi:true,denominatorOpen:true,nativeReviewed:false}));

@@ -1,0 +1,93 @@
+{
+  "reviewType": "independent_ai_semantic_review",
+  "reviewer": "food_en",
+  "locale": "tl",
+  "examId": "food-1-mock-06",
+  "reviewedQuestionCount": 40,
+  "reviewedQuestionIds": [
+    "food-1-q268",
+    "food-1-q243",
+    "food-1-q139",
+    "food-1-q144",
+    "food-1-q159",
+    "food-1-q234",
+    "food-1-q314",
+    "food-1-q154",
+    "food-1-q134",
+    "food-1-q170",
+    "food-1-q166",
+    "food-1-q222",
+    "food-1-q260",
+    "food-1-q193",
+    "food-1-q274",
+    "food-1-q192",
+    "food-1-q310",
+    "food-1-q309",
+    "food-1-q208",
+    "food-1-q262",
+    "food-1-q386",
+    "food-1-q370",
+    "food-1-q212",
+    "food-1-q312",
+    "food-1-q103",
+    "food-1-q146",
+    "food-1-q118",
+    "food-1-q330",
+    "food-1-q099",
+    "food-1-q383",
+    "food-1-q183",
+    "food-1-q217",
+    "food-1-q114",
+    "food-1-q400",
+    "food-1-q360",
+    "food-1-q255",
+    "food-1-q311",
+    "food-1-q182",
+    "food-1-q171",
+    "food-1-q231"
+  ],
+  "reviewedFields": [
+    "prompt",
+    "all four ordered options",
+    "explanation",
+    "all four ordered optionExplanations",
+    "examTitle"
+  ],
+  "findings": [
+    {
+      "id": "food-1-q314",
+      "field": "options[3]",
+      "issue": "Tiyakin could mean verify rather than definitively assert an unseen cause.",
+      "correction": "Ipahayag bilang tiyak ang sanhi kahit hindi mo ito nakita.",
+      "corrected": true
+    },
+    {
+      "id": "food-1-q400",
+      "field": "optionExplanations[3]",
+      "issue": "Lumampas narrows outside-limit source to exceeding an upper limit.",
+      "correction": "Maaaring hindi umayon sa pamantayan ang aktuwal na sukat.",
+      "corrected": true
+    },
+    {
+      "id": "food-1-q208",
+      "field": "prompt/options/reasons/explanation",
+      "issue": "Loob ng kuko suggests inside a nail; source refers to dirt under nails.",
+      "correction": "Used ilalim ng kuko / ilalim ng mga kuko throughout.",
+      "corrected": true
+    }
+  ],
+  "checks": {
+    "exactCanonicalMembership": true,
+    "allOrderedOptionsAndReasonsComparedWithJapanese": true,
+    "correctOptionReasonEqualsMainExplanation": true,
+    "rolesNegationsAndHypotheticalQualifiersPreserved": true,
+    "q222Inclusive79C100sConditionsAnd5sShortfallVerified": true,
+    "q183Inclusive78C2min1006to1008AndNoRoundingVerified": true,
+    "noAdditionalSafetyThresholdsIntroduced": true
+  },
+  "nativeSpeakerReviewed": false,
+  "domainExpertReviewed": false,
+  "browserTested": false,
+  "outcome": "All40 reviewed; three precision corrections applied and answer-reason alignment rechecked.",
+  "integratedPartSha256": "3bb3d87f249b11d321cac2b2341de2abaa7377e60c8f25c3859152f75b0b7f43"
+}

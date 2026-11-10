@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "baseCommit": "f60ea62672155b1387a66b1394436f1f689fdef9",
+  "beforeBlobSha": {
+    "src/components/agriculture/FertilizerNativeFigure.tsx": "2e88cfe023434ae0d7875f6f972609a2d8e329f6",
+    "scripts/agriculture/check-fertilizer-native-fallback.cjs": null,
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/fertilizer-native-target-fallback-qa.json": null
+  },
+  "scope": "Fail-closed target translation selection in existing four fertilizer native blocks; retain valid Japanese",
+  "actualFailureBeforeFix": {
+    "fixture": "Remove vi.title from the existing release entry without changing valid Japanese or source snapshot.",
+    "result": "TypeError: Cannot read properties of undefined (reading trim) in fertilizerNativeLabels. Missing paragraph maps and non-string target values could likewise throw.",
+    "currentCompleteCatalog": "All current translations are valid; failure is the actual production selector response to missing/malformed target metadata, not a claim the saved complete catalog currently crashes."
+  },
+  "change": "Validate nonempty string title/alt/paragraph values and require target paragraph maps before selecting a translation. Invalid target content returns null so the production component keeps valid canonical Japanese.",
+  "preserved": [
+    "allfour external native entries and12locale content",
+    "fullsource/revision/course/paragraph/controlledSnapshot guards",
+    "exactquantityfractionsandexpressions",
+    "existingrelease/timingcomparisons",
+    "DailyLearningSupport external FertilizerNative import/route exactf3d5e15f43f36dcd3617ecd1606bb4f4bf2c4feb",
+    "allartandquizdata"
+  ],
+  "freshDependencyBlobSha": {
+    "FertilizerNativeFigure.tsx": "2e88cfe023434ae0d7875f6f972609a2d8e329f6",
+    "fertilizer-native-figures.json": "e591df853102cc369837b27a6b1586fa42a34e7d",
+    "daily-learning-support.json": "43693375516213a6fefdf86058b30b48ac452dc3",
+    "lessons.ja.json": "cb35d5bc65c91565748d1e30142dd1e019d12d17"
+  },
+  "qa": {
+    "currentValidCases": "PASS96actualproductionrenders across4existingnativeblocks×2levels×12locales; Japanese and translated titles retained. Mechanical regression only, not96semantic reviews.",
+    "negativeCases": 80,
+    "negativeCoverage": [
+      "missing/null/non-string/blank title",
+      "missing/non-string alt",
+      "missing/null paragraph-title and paragraph maps",
+      "missing/null/non-string/blank per-paragraph values",
+      "missing target locale",
+      "hidden translation toggle"
+    ],
+    "japanesePreservation": "Every valid Japanese paragraph asserted present for each malformed target fixture; no throws after fix.",
+    "strictTypes": "PASS actual existing production component and3realJSONdependencies understrictTypeScript with minimalRNambient declarations;notwholeapp.",
+    "diffCheck": "PASS"
+  },
+  "duplicateRetirement": {
+    "oldFivePathUnit": "not published; four new duplicate files moved privately; exact current DailyLearningSupport restored",
+    "sourceAssessment": "Existing external release comparison already covers the specific onset-versus-duration objective; no additive duplicate needed. Prior S1PDF24/25 andS2PDF31 review supports that bounded conclusion.",
+    "unrelatedExistingArt": "preserved as valid appearance support"
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "wholeWeekComplete": false,
+  "releaseReady": false
+}

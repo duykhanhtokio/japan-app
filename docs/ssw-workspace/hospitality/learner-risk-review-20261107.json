@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "baselineCommit": "7454b9a749ea4e67713833466da780803773c51b",
+  "scope": "learner-facing correctness; no full-source completeness claim",
+  "groups": [
+    {
+      "id": "mock-answer-consistency",
+      "mockInstancesRead": 50,
+      "uniqueQuestionIds": 38,
+      "review": "AI semantic reading of prompt, all options, answer and explanation; no newly confirmed answer error in this bounded set"
+    },
+    {
+      "id": "planning-calculation-consistency",
+      "questionInstancesRead": 60,
+      "review": "AI semantic reading of planning questions and calculations; OCC/ADR/RevPAR and commission examples recalculated; no newly confirmed numerical or answer error"
+    },
+    {
+      "id": "front-explanation-and-translation-operands",
+      "questionInstancesRead": 72,
+      "review": "Prompt/keyed-option/explanation consistency triage, not full four-option semantic certification for all front questions; identified one ambiguous translated arithmetic prompt"
+    }
+  ],
+  "mechanicalChecks": {
+    "canonicalLessonQuestions": 338,
+    "translationLocales": 12,
+    "translationFiles": 60,
+    "translatedQuestionInstances": 4056,
+    "answerIndexMismatchCount": 0,
+    "exactDuplicateChoiceCount": 0,
+    "questionSectionObjectiveOrderMismatchCount": 0,
+    "meaning": "mechanical checks do not prove all-locale semantic correctness"
+  },
+  "fixes": [
+    {
+      "id": "hotel-front-05-q03-km-operands",
+      "category": "ambiguous-translated-numeric-conditions",
+      "path": "src/data/hospitality/translations/km/front.json",
+      "lessonId": "hotel-front-05",
+      "questionId": "hotel-front-05-q03",
+      "before": "សរុប12,000,600,1,200យ៉េនប៉ុន្មាន?",
+      "after": "សរុប 12,000 យ៉េន + 600 យ៉េន + 1,200 យ៉េន ប៉ុន្មាន?",
+      "evidence": "Canonical Japanese lists three operands 12,000 yen, 600 yen, 1,200 yen. Khmer used commas both within and between numbers without separators; explicit plus operators and unit labels preserve operands. Existing answer index 3 and explanation 13,800 unchanged.",
+      "sourceFactChanged": false
+    }
+  ],
+  "preservation": {
+    "questionIdsChanged": false,
+    "answerIndexesChanged": false,
+    "canonicalJapaneseChanged": false,
+    "lessonRevisionsChanged": false,
+    "sourceRevisionBindingsChanged": false,
+    "reviewStatusUpgraded": false
+  },
+  "limits": [
+    "No whole-sector semantic certification",
+    "All-locale check is structural except the specifically stated Khmer fix",
+    "No new independent domain/native acceptance",
+    "Image mapping names inspected, pixels not yet reviewed at batch1",
+    "No physical-device or duration evidence"
+  ],
+  "wholeSectorComplete": false,
+  "releaseReady": false,
+  "review": {
+    "selfCheckedAi": true,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false
+  }
+}

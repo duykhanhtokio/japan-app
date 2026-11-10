@@ -1,0 +1,28 @@
+"""Original bin-width and boundary comparison, with exact fictitious frequencies."""
+from pathlib import Path
+import hashlib,io,json,os
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from matplotlib import font_manager
+from PIL import Image
+ROOT=Path(__file__).resolve().parents[2];AUDIT=ROOT/'docs/ssw-workspace/food-manufacturing/source-closure-20261031';OUT=ROOT/'assets/food-manufacturing/source-practice36';OUT.mkdir(parents=True,exist_ok=True);D=ROOT/'src/data/food-manufacturing'
+font=Path(os.environ.get('FOOD_QA_JAPANESE_FONT','/workspace/scratch/439bff9a1c34/qa-font/NotoSansCJK-JP.otf'));assert font.exists();font_manager.fontManager.addfont(str(font));plt.rcParams.update({'font.family':font_manager.FontProperties(fname=font).get_name(),'font.size':15,'svg.fonttype':'path','svg.hashsalt':'food-source36'})
+lesson=next(l for p in sorted((D/'authoring-20261029').glob('part*.json')) for l in json.loads(p.read_text())['lessons'] if l['id']=='food-2-043');section=next(s for s in json.loads((AUDIT/'source-teaching34-tail.json').read_text())['sections'] if s['id']=='food34-tail-histogram-bins');assert lesson['sourceHash']==section['lessonSourceHash'];BLUE='#247ca7';ORANGE='#a95828';INK='#243f52'
+data=[1.2,1.2,1.3,1.3,1.3,1.4,1.4,1.4];edges=[[1.175,1.225,1.275,1.325,1.375,1.425],[1.15,1.25,1.35,1.45],[1.15,1.45]];widths=[.05,.1,.3];freq=[np.histogram(data,bins=e)[0].tolist() for e in edges]
+fig=plt.figure(figsize=(12,9));gs=fig.add_gridspec(2,3,height_ratios=[2,1.1]);axes=[fig.add_subplot(gs[0,i]) for i in range(3)];boundary=fig.add_subplot(gs[1,:]);fig.suptitle('同じ8点でも、階級幅で見え方が変わる',fontsize=24,color=INK,y=.97);fig.text(.5,.89,'仮想測定値（g）：1.2、1.2、1.3、1.3、1.3、1.4、1.4、1.4',ha='center',fontsize=16,color=INK)
+for i,(ax,e,w,counts) in enumerate(zip(axes,edges,widths,freq)):
+ ax.bar(e[:-1],counts,width=np.diff(e),align='edge',color=BLUE,edgecolor='white',linewidth=1.5);ax.set(xlim=(1.13,1.47),ylim=(0,9),yticks=range(0,9,2),xlabel='測定値の階級（g）',title=f'{w:g}g幅の例');ax.grid(axis='y',alpha=.2);ax.set_axisbelow(True);ax.spines[['top','right']].set_visible(False);ax.set_xticks(e);ax.set_xticklabels([f'{x:g}' for x in e],fontsize=10,rotation=30)
+ if i==0:ax.set_ylabel('頻度（点）')
+ for j,n in enumerate(counts):ax.text((e[j]+e[j+1])/2,n+.15,str(n),ha='center',fontsize=15,color=INK)
+ ax.text(.5,-.35,'合計8点',transform=ax.transAxes,ha='center',color=INK,fontsize=15)
+boundary.set(xlim=(1.12,1.48),ylim=(-.5,1));boundary.axis('off');boundary.axvspan(1.25,1.35,ymin=.18,ymax=.8,color='#f5e0c5');boundary.plot([1.15,1.45],[.3,.3],color=INK,lw=2)
+for x in [1.15,1.25,1.35,1.45]:
+ boundary.plot([x,x],[.15,.45],color=INK,lw=2);boundary.text(x,-.04,f'{x:.2f}',ha='center',fontsize=15,color=INK)
+for x in [1.2,1.3,1.4]:boundary.scatter([x],[.3],s=100,color=ORANGE if x==1.3 else BLUE,zorder=3);boundary.text(x,.65,f'{x:g}g',ha='center',fontsize=18,color=INK)
+boundary.text(1.3,-.38,'1.25g ≤ 1.3g < 1.35g：境界の間へ一意に入る',ha='center',fontsize=17,color=INK)
+fig.text(.5,.065,'n＝8、√8 ≈ 2.83 → 約3階級は検討の目安。固定の規則ではない。',ha='center',fontsize=15,color=INK);fig.text(.5,.02,'丸め方と境界の扱いをそろえる。形だけで工程不良と決めない。',ha='center',fontsize=15,color=INK);fig.subplots_adjust(left=.07,right=.96,top=.79,bottom=.17,wspace=.28,hspace=.65)
+name='histogram-bin-comparison';fig.savefig(OUT/(name+'.svg'),metadata={'Date':None});b=io.BytesIO();fig.savefig(b,format='png',dpi=160,facecolor='white');plt.close(fig);b.seek(0);im=Image.open(b).convert('RGB');asset=OUT/(name+'.webp');im.save(asset,'WEBP',quality=95);p=lesson['paragraphs'][0]
+f={'id':'food-source36-'+name,'lessonId':lesson['id'],'lessonSourceHash':lesson['sourceHash'],'paragraphId':'p1','supplementSectionId':section['id'],'supplementTextSha256':hashlib.sha256(section['textJa'].encode()).hexdigest(),'assetFile':str(asset.relative_to(ROOT)),'svgFile':str((OUT/(name+'.svg')).relative_to(ROOT)),'sha256':hashlib.sha256(asset.read_bytes()).hexdigest(),'width':im.width,'height':im.height,'captionJa':p['titleJa'],'altJa':p['textJa'],'objectiveJa':'同じ測定値を異なる階級幅で分け、細かい境界による一意な分類を読む','sourceRefs':[{'document':'ssw2','pdfPage':n,'printedPage':n-9} for n in [87,89]],'teachingData':{'measurementsG':data,'sampleCount':8,'binEdgesG':edges,'widthsG':widths,'frequencies':freq,'frequencySums':[sum(x) for x in freq],'boundaryExample':{'lowerG':1.25,'valueG':1.3,'upperG':1.35,'interval':'lower_inclusive_upper_exclusive','frequency':3},'sqrtNGuidance':{'n':8,'sqrtNApprox':2.83,'illustrativeClassCount':3,'mandatoryRule':False}},'scopeLimits':'Illustrative8measurements, not factory specifications or proof of fault. Equal frequency-axis scales; raw count histograms, not probability density. No sample falls on a bin edge.','rights':'project_original_controlled_geometry','humanReviewed':False,'nativeReviewed':False,'domainReviewed':False,'physicalDeviceTested':False}
+(OUT/'.gitattributes').write_text('*.webp -filter -diff -merge -text\n*.svg -filter -diff -merge -text\n');(AUDIT/'figures36.json').write_text(json.dumps({'figures':[f]},ensure_ascii=False,indent=2)+'\n');row={k:f[k] for k in ['id','lessonId','lessonSourceHash','paragraphId','width','height']};reg='import type {ImageSourcePropType} from "react-native";\nexport const foodSourcePractice36: {id:string;lessonId:string;lessonSourceHash:string;paragraphId:string;source:ImageSourcePropType;width:number;height:number;aspectRatio:number}[] = [\n '+json.dumps(row)[:-1]+',source:require("../../../'+f['assetFile']+'"),aspectRatio:'+str(f['width']/f['height'])+'},\n];\n';(D/'source-practice36.ts').write_text(reg);print(json.dumps({'figure':f['id'],'frequencies':freq,'webpBytes':asset.stat().st_size}))

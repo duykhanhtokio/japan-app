@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-31",
+  "baselineCommit": "26af1fea",
+  "scope": "manufacturing_ssw1_only",
+  "sourcePageTargets": {
+    "mechanical": 169,
+    "electrical": 198,
+    "surface": 207
+  },
+  "unitIdPattern": "mfg39-{specialty}-pNNN-uNNN",
+  "oneSharedMatrix": "coverage-matrix.json",
+  "ownership": {
+    "mechanical": "mechanical_source",
+    "electrical": "electrical_source",
+    "surface": "surface_source",
+    "assessment": "all_questions_options_and_taught_bindings",
+    "language": "terms_and_twelve_locale_semantics",
+    "visual-technical": "artwork_geometry_visibility_and_technical_checks"
+  },
+  "localeOrder": [
+    "vi",
+    "en",
+    "id",
+    "zh-CN",
+    "zh-TW",
+    "hi",
+    "bn",
+    "ne",
+    "my",
+    "th",
+    "km",
+    "tl"
+  ],
+  "evidenceLevels": [
+    "machine_extracted_candidate",
+    "historical_ai_review_receipt",
+    "new_ai_semantic_review",
+    "human_domain_signoff",
+    "native_signoff",
+    "physical_device_acceptance"
+  ],
+  "rules": [
+    "Every physical page must occur exactly once in page registry, including cover/TOC/exercises/image-only/colophon.",
+    "Paragraph/region extraction is not a knowledge atom and a page link is not semantic coverage.",
+    "Each unit has exact source hash/page/bbox or explicit unresolved locator; mapping distinguishes exact reviewed evidence from candidates.",
+    "No source prose/table/image/PDF payload is copied to repository or learner assets.",
+    "No non-empty mappings or structural tests imply 100 percent knowledge closure.",
+    "All answer options must be included; true-false questions retain two options rather than fabricated distractors.",
+    "New original calculations require sufficient explicit data and valid units; not inferred from unspecified source parameters.",
+    "Excluded source items require explicit reason; repeated concepts keep source occurrence provenance.",
+    "Only root writes common matrix, summaries and runtime fixes; agents write owned directories."
+  ],
+  "acceptance": {
+    "sourceInventory": "all574pages classified with page content receipts",
+    "criticalKnowledge": "every audited critical unit taught or explained with reviewed exact binding",
+    "unusedKnowledge": "explicit pedagogic/scope/source reason for each excluded unit",
+    "traceability": "every technical learnerclaim has a verified supporting source at appropriate granularity",
+    "assessment": "all keys/distractors/rationales semantically checked against taught knowledge",
+    "terminology": "context-consistent across lessons and assessments",
+    "translations": "12locale field coverage and actual semantic review",
+    "images": "source/model comparison, legible geometry and no pre-submit disclosure",
+    "technical": "automated tests and actual physical-device results",
+    "signoff": "separate real expert and native approval"
+  },
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceVerified": false,
+  "wholeCurriculumComplete": false,
+  "releaseReady": false
+}

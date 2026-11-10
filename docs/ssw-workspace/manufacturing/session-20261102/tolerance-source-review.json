@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-02",
+  "baselineCommit": "57ac69194729ad30dee192f740763951578c01bb",
+  "scope": "bounded_mechanical_tolerance_class_extension",
+  "source": {
+    "documentId": "mfg1-mechanical-source",
+    "sha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+    "physicalPages": [
+      95,
+      96
+    ],
+    "printedPages": [
+      87,
+      88
+    ],
+    "sourceBytesVerified": true,
+    "pagesVisuallyCompared": true
+  },
+  "units": [
+    {
+      "id": "mfg41-mechanical-p095-tolerance-class-parts",
+      "fact": "Separate nominal size, fundamental-deviation letter and size-tolerance grade number. Uppercase hole/lowercase shaft remains taught by existing paragraph.",
+      "lessonId": "mfg1-mechanical-lesson-021",
+      "paragraphId": "decision",
+      "questionIds": [
+        "mfg1-tolerance-class-check-01",
+        "mfg1-tolerance-class-check-04"
+      ]
+    },
+    {
+      "id": "mfg41-mechanical-p096-grade-width",
+      "fact": "For the same nominal size, smaller tolerance-grade number means a narrower tolerance width; actual deviations require the applicable table.",
+      "lessonId": "mfg1-mechanical-lesson-021",
+      "paragraphId": "decision",
+      "questionIds": [
+        "mfg1-tolerance-class-check-02"
+      ]
+    },
+    {
+      "id": "mfg41-mechanical-p095-signed-limits",
+      "fact": "Add each explicitly supplied signed deviation to nominal size, then subtract lower limit from upper limit; both-positive independent model.",
+      "lessonId": "mfg1-mechanical-lesson-021",
+      "paragraphId": "decision",
+      "questionIds": [
+        "mfg1-tolerance-class-check-03"
+      ],
+      "derivedModel": "14+0.02=14.02;14+0.06=14.06;width0.04; assessment uses independent12mm values."
+    }
+  ],
+  "independentExpressionReview": {
+    "status": "ai_compared",
+    "sourceExerciseCopied": false,
+    "sourceFigureCopied": false,
+    "decision": "New inspection-memo and missing-hole scenarios; explicit positive-deviation arithmetic. Common technical notation is retained. The source exercise/figure numerical examples are not reused."
+  },
+  "implementation": {
+    "readerPatch": "src/data/manufacturing/tolerance-practice.json#lessonPatch",
+    "lessonLocales": 13,
+    "additiveExamId": "mfg1-tolerance-class-supplement",
+    "newQuestions": 4,
+    "distinctJapaneseOptionReasons": 16,
+    "questionLocalePairs": 48,
+    "translatedFields": 432,
+    "state": "new exam ID/revision; existing lesson, questions, hashes, answers and completion keys preserved",
+    "figure": "No new image claimed; existing daily objective figure remains bound to unchanged lesson source hash.",
+    "readings": "Difficult kanji in new prompts/options have parenthesized readings; no new top-ruby renderer claimed."
+  },
+  "validation": {
+    "toleranceGate": "PASS:4questions,13lessonlocales,48questionlocalePairs,288questionDriftRejections,52lessonDriftRejections,4/4grading,newAttemptRestore,changedRevisionRejected",
+    "existingCaliperGate": "PASS:8questions,96translationPairs,staleGuideAndTargetRejection,original456weeklyQuestionsPreserved",
+    "previousDimensionGate": "PASS:13locales,91driftRejections,13olderCorrectionLocales",
+    "gitDiffCheck": "PASS"
+  },
+  "remaining": [
+    "All other source knowledge units and exhaustive574page closure remain unaccepted",
+    "Actual device rendering, measured learning duration, expert and native acceptance",
+    "Source p97 angle qualification remains unresolved; no inferred rule added"
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "physicalDeviceVerified": false,
+  "wholeCurriculumComplete": false,
+  "releaseReady": false
+}

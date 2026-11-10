@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+<defs>
+ <radialGradient id="paper"><stop stop-color="#fffdf7"/><stop offset="1" stop-color="#eee8da"/></radialGradient>
+ <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#5f686c"/><stop offset=".18" stop-color="#d5d9d8"/><stop offset=".42" stop-color="#f5f6ef"/><stop offset=".58" stop-color="#a4aeae"/><stop offset=".85" stop-color="#657379"/><stop offset="1" stop-color="#b5bfbe"/></linearGradient>
+ <linearGradient id="ceramic" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#a38d61"/><stop offset=".13" stop-color="#d9c899"/><stop offset=".32" stop-color="#f1e2b8"/><stop offset=".52" stop-color="#d8c28e"/><stop offset=".78" stop-color="#b89d68"/><stop offset=".94" stop-color="#92784f"/><stop offset="1" stop-color="#b69d6e"/></linearGradient>
+ <linearGradient id="orange" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b44e17"/><stop offset=".25" stop-color="#fb9849"/><stop offset=".5" stop-color="#e87925"/><stop offset=".82" stop-color="#b55016"/><stop offset="1" stop-color="#944316"/></linearGradient>
+ <linearGradient id="brown" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4b2c1d"/><stop offset=".25" stop-color="#a56e47"/><stop offset=".5" stop-color="#75452c"/><stop offset=".82" stop-color="#4e2c1e"/><stop offset="1" stop-color="#604029"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#92702d"/><stop offset=".2" stop-color="#edd484"/><stop offset=".4" stop-color="#d5b454"/><stop offset=".55" stop-color="#bd9639"/><stop offset=".8" stop-color="#8b6828"/><stop offset="1" stop-color="#c9a84e"/></linearGradient>
+ <clipPath id="body"><path d="M382 381C328 381 300 426 300 512S328 643 382 643H1154C1208 643 1236 598 1236 512S1208 381 1154 381Z"/></clipPath>
+ <filter id="blur"><feGaussianBlur stdDeviation="20"/></filter>
+</defs>
+<rect width="1536" height="1024" fill="url(#paper)"/>
+<ellipse cx="768" cy="714" rx="572" ry="37" fill="#a99c81" opacity=".22" filter="url(#blur)"/>
+<!-- Metal axial leads are part of an isolated teaching sample, with no live circuit. -->
+<path d="M70 501H320V527H70Q54 514 70 501Z" fill="url(#steel)" stroke="#87918e" stroke-width="1"/>
+<path d="M1216 501H1466Q1482 514 1466 527H1216Z" fill="url(#steel)" stroke="#87918e" stroke-width="1"/>
+<path d="M79 507H311M1225 507H1457" fill="none" stroke="#f3f4e9" stroke-width="2" opacity=".8"/>
+<!-- Cylindrical coated body; exactly four code bands, no extra decorative bands. -->
+<path d="M382 381C328 381 300 426 300 512S328 643 382 643H1154C1208 643 1236 598 1236 512S1208 381 1154 381Z" fill="url(#ceramic)" stroke="#9b865d" stroke-width="2"/>
+<g clip-path="url(#body)">
+ <rect data-band="1" data-color="orange" x="470" y="381" width="66" height="262" fill="url(#orange)"/>
+ <rect data-band="2" data-color="orange" x="610" y="381" width="66" height="262" fill="url(#orange)"/>
+ <rect data-band="3" data-color="brown" x="750" y="381" width="66" height="262" fill="url(#brown)"/>
+ <rect data-band="4" data-color="gold" x="1030" y="381" width="66" height="262" fill="url(#gold)"/>
+ <path d="M344 420Q768 396 1192 420" fill="none" stroke="#fff8dd" stroke-width="8" opacity=".16"/>
+ <path d="M343 614Q768 632 1193 614" fill="none" stroke="#614828" stroke-width="4" opacity=".1"/>
+</g>
+<path d="M371 393Q322 410 318 492M1165 393Q1214 410 1218 492" fill="none" stroke="#f7e7b9" stroke-width="4" opacity=".5"/>
+<path d="M371 630Q327 616 317 548M1165 630Q1209 616 1219 548" fill="none" stroke="#8d764d" stroke-width="3" opacity=".4"/>
+</svg>

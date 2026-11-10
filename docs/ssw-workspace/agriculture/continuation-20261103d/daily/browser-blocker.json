@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "BLOCKED_BROWSER_UNAVAILABLE",
+  "baselineCommit": "873e5c9919498a42aef60939abd2af9207ab4558",
+  "attempts": [
+    {
+      "executable": "/usr/bin/chromium",
+      "args": [
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ],
+      "result": "process exited before page creation"
+    },
+    {
+      "executable": "/usr/bin/chromium",
+      "args": [
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+        "--no-zygote",
+        "--single-process"
+      ],
+      "result": "FATAL process_singleton_posix.cc socket() failed: Operation not permitted (1)"
+    }
+  ],
+  "alternativeExistingPackage": "@sparticuz/chromium package/extracted binary not found in available scratch/opt runtimes",
+  "installedNewPackages": false,
+  "browserRendered": false,
+  "responsiveLayoutTested": false,
+  "pixelsInspected": false,
+  "physicalDeviceTested": false,
+  "processesRemaining": false
+}

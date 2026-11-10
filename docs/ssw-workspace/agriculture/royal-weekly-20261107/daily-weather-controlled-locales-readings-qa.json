@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "reviewedBaseline": "7ac83aac360dc8c57af31bab7a3c684b7495fc4c",
+  "readyPaths": [
+    "src/data/agriculture/daily-controlled-native-support.json",
+    "src/data/agriculture/daily-learning-support.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/daily-weather-controlled-locales-readings-qa.json"
+  ],
+  "scope": "Two contextual winter/weather technical fallback diagrams, source-bound JA+12 title/caption/alt and exact burnt-label accessible interpretation, whole-field Japanese readings. Weather learner caption clarifies three damage categories rather than all climate factors; canonical prose remains unchanged. No generic lesson prose, no quiz changes, no raster or geometry changes.",
+  "newHanFields": 11,
+  "JA12Fields": 13,
+  "translatedTargets": 156,
+  "sourceProof": [
+    {
+      "kind": "winter-climate",
+      "lessonIds": [
+        "agr-s27-climate-detail"
+      ],
+      "assetSnapshot": {
+        "assetPath": "assets/agriculture/daily-learning-20261031/winter-climate.png",
+        "assetSha256": "cee9ba0cf4d20ff0ce58dd0e11c409a1c7f8fa8323e97b726fc68a06217cf7ef",
+        "width": 1160,
+        "height": 660
+      },
+      "actualHanFields": 5,
+      "localeFieldCount": 6
+    },
+    {
+      "kind": "weather-damage",
+      "lessonIds": [
+        "agr-workterms-weather-damage",
+        "agr-f40-flower-weather-source-list"
+      ],
+      "assetSnapshot": {
+        "assetPath": "assets/agriculture/daily-learning-20261031/weather-damage.png",
+        "assetSha256": "306716a96b36695708173f74c45f0b5a5f18ee1d6ca451e3b5da20417008c1f1",
+        "width": 1160,
+        "height": 660
+      },
+      "actualHanFields": 6,
+      "localeFieldCount": 7
+    }
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseAccepted": false,
+  "proofLimits": [
+    "Actual RNW full Daily child renders using immutable fresh tracked dependencies; no full app or native-device acceptance.",
+    "Raster Japanese remains unchanged. Adjacent source-bound native legends supply accessible localized readings and interpretation."
+  ],
+  "phoneticReview": [
+    "干害かんがい, 冷害れいがい (夏の低温), 風水害ふうすいがい, 三つみっつ; no frost/summer condition conflation.",
+    "日本海側にほんかいがわ, 太平洋側たいへいようがわ, 地域差ちいきさ, 模式断面もしきだんめん, 圃場ほじょう."
+  ],
+  "invariants": {
+    "winterSeaMountainPacificPositionsUnchanged": true,
+    "winterNotFieldForecast": true,
+    "weatherThreeContextCategories": [
+      "干害",
+      "冷害（夏の低温）",
+      "風水害"
+    ],
+    "notAllSixOrchardHazardsOrDiagnosticPhotos": true
+  },
+  "controlledDisplayMetadataDelta": {
+    "agr-workterms-weather-damage": {
+      "before": {
+        "captionJa": "晴れ・低温・風雨という天候だけで被害名を決めず、作物に確認した被害を合わせて記録します。冷害では夏の低温という条件を省きません。描いた植物は被害の診断写真ではありません。",
+        "altJa": "天候と作物の被害を分けて記録。晴れ・低温・風雨という天候だけで被害名を決めず、作物に確認した被害を合わせて記録します。冷害では夏の低温という条件を省きません。描いた植物は被害の診断写真ではありません。"
+      },
+      "after": {
+        "captionJa": "この模式図は干害・夏の低温による冷害・風水害の三つを整理します。晴れ・低温・風雨だけで被害名を決めず、作物に確認した被害を記録します。本文にある気象要因すべての図や、被害の診断写真ではありません。",
+        "altJa": "天候と作物の被害を分けて記録。この模式図は干害・夏の低温による冷害・風水害の三つを整理します。晴れ・低温・風雨だけで被害名を決めず、作物に確認した被害を記録します。本文にある気象要因すべての図や、被害の診断写真ではありません。"
+      }
+    },
+    "agr-f40-flower-weather-source-list": {
+      "before": {
+        "captionJa": "晴れ・低温・風雨という天候だけで被害名を決めず、作物に確認した被害を合わせて記録します。冷害では夏の低温という条件を省きません。描いた植物は被害の診断写真ではありません。",
+        "altJa": "天候と作物の被害を分けて記録。晴れ・低温・風雨という天候だけで被害名を決めず、作物に確認した被害を合わせて記録します。冷害では夏の低温という条件を省きません。描いた植物は被害の診断写真ではありません。"
+      },
+      "after": {
+        "captionJa": "この模式図は干害・夏の低温による冷害・風水害の三つを整理します。晴れ・低温・風雨だけで被害名を決めず、作物に確認した被害を記録します。本文にある気象要因すべての図や、被害の診断写真ではありません。",
+        "altJa": "天候と作物の被害を分けて記録。この模式図は干害・夏の低温による冷害・風水害の三つを整理します。晴れ・低温・風雨だけで被害名を決めず、作物に確認した被害を記録します。本文にある気象要因すべての図や、被害の診断写真ではありません。"
+      }
+    }
+  },
+  "tests": {
+    "status": "PASS",
+    "actualFieldContexts": 29,
+    "negativeReadingGuards": 464,
+    "actual13LocaleDailyFullChildRoutes": 65,
+    "hiddenTranslationRoutes": 65,
+    "ChineseSameHanPlain": 10,
+    "fullJAAssetWholeImageAndNativeRejects": 30,
+    "partialCaptionScopeChecks": 10,
+    "strictActualCalleeGraph": "PASS zero diagnostics, current callee/import JSON graph plus extracted actual caller JSX, narrow ambient React/RN/model leaves only; not full app",
+    "commands": [
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-daily-weather.cjs",
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-daily-weather-types.cjs"
+    ],
+    "actualMetadataOnlyDiffIds": [
+      "agr-workterms-weather-damage",
+      "agr-f40-flower-weather-source-list"
+    ]
+  },
+  "scopeNotes": [
+    "Three lessons/five level-contexts. Main agr-climate already uses dedicated WinterClimateFigure and is intentionally excluded.",
+    "Winter is source-proved schematic background, not full s27 climate/rainfall/typhoon coverage; caption/title explicitly winter regional tendency and not field forecast.",
+    "Weather learner JA+12 caption explicitly says three damage categories, not all weather factors/diagnostic photos. f40 orchard lesson six hazards are not claimed visually covered by this context diagram.",
+    "No new teaching task or full-objective acceptance invented. No asset or technical geometry change.",
+    "Winter existing exact outer source title/caption JA12 reused from winter-spatial-reference-locales.json after exact JA match."
+  ]
+}

@@ -1,0 +1,36 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),Module=require('node:module'),assert=require('node:assert/strict'),React=require('react'),{renderToStaticMarkup}=require('react-dom/server'),{transformSync}=require('@babel/core');
+const root=path.resolve(__dirname,'../..'),jc=new Map(),cache=new Map(),tree=new Set(cp.execFileSync('git',['ls-tree','-r','--name-only','HEAD','src'],{cwd:root}).toString().split('\n'));
+const read=p=>fs.existsSync(path.join(root,p))?fs.readFileSync(path.join(root,p),'utf8'):cp.execFileSync('git',['show','HEAD:'+p],{cwd:root}).toString();
+const json=p=>{if(!jc.has(p))jc.set(p,JSON.parse(read(p)));return jc.get(p);};
+const lessons=json('src/data/agriculture/lessons.ja.json').lessons,support=json('src/data/agriculture/daily-learning-support.json'),manifest=json('src/data/agriculture/course-manifest.json');
+const colors={text:'#172733',muted:'#5a656a',background:'#fff8e9',translation:'#fff8e9',translationText:'#172733',border:'#b99d62'},wrapper=p=>React.createElement('div',null,p.children);
+function loadFile(rel){if(cache.has(rel))return cache.get(rel).exports;const filename=path.join(root,rel);let source=read(rel);
+ if(rel.endsWith('AgricultureCourse.tsx'))source+='\nexport const ReaderForActualCallerQA=Reader;\n';
+ const m=new Module(filename,module);m.filename=filename;m.paths=Module._nodeModulePaths(path.dirname(filename));cache.set(rel,m);const original=m.require.bind(m);
+ m.require=id=>{
+  if(id==='react-native')return require('react-native-web');
+  if(id==='react-native-svg'){const make=tag=>p=>React.createElement(tag,p,p.children),svg=make('svg');return new Proxy({__esModule:true,default:svg},{get:(o,k)=>k in o?o[k]:make(String(k).replace(/^./,c=>c.toLowerCase()))});}
+  if(id==='react'||id.startsWith('react/'))return original(id);
+  if(id==='@/data/agriculture')return {agricultureLesson:(id,level)=>lessons.find(l=>l.id===id&&l.levels.includes(level)),agricultureTranslation:(l,lang)=>{if(lang==='ja')return null;const t=json('src/data/agriculture/translations/'+lang+'.json')[l.id];return t?.sourceHash===l.sourceHash?t:null;},agricultureWeeks:level=>manifest.levels[level].weeks,agricultureChecks:()=>[]};
+  if(id==='@/components/tokutei/StudyAppearance')return {useStudyAppearance:()=>({colors}),TranslationText:wrapper,StudyAppearanceProvider:wrapper,ReadingAppearanceControl:()=>null};
+  if(id==='react-native-safe-area-context')return {useSafeAreaInsets:()=>({top:0,bottom:0,left:0,right:0})};
+  if(id==='@/components/ui/AppBackdrop')return {useBackdropOcclusion:()=>{}};
+  if(id==='@/components/ui/RoyalPageBackground')return {__esModule:true,default:wrapper};
+  if(id==='@/components/ui/RoyalPanels')return {RoyalContentPanel:wrapper,RoyalExplanationPanel:wrapper};
+  if(id==='@/components/tokutei/TokuteiChrome')return {TokuteiHeader:p=>React.createElement('header',null,p.title),TokuteiDayCard:wrapper};
+  if(id==='@react-native-async-storage/async-storage')return {__esModule:true,default:{getItem:async()=>null,setItem:async()=>{}}};
+  if(id==='@/services/agriculture-study-state')return {};
+  if(id.startsWith('@/data/agriculture/')){const p=id.replace('@/','src/');return p.endsWith('.json')?json(p):loadFile((fs.existsSync(path.join(root,p+'.ts'))||tree.has(p+'.ts'))?p+'.ts':fs.existsSync(path.join(root,p))&&fs.statSync(path.join(root,p)).isDirectory()?p+'/index.ts':p);}
+  if(id.startsWith('./')||id.startsWith('../')){const p=path.posix.normalize(path.posix.join(path.posix.dirname(rel),id));if(p.endsWith('.json'))return json(p);if(/\.(png|webp)$/.test(p))return{uri:'fixture://'+p};if(p.endsWith('.cjs')||p.endsWith('.ts')||p.endsWith('.tsx'))return loadFile(p);const choice=['.tsx','.ts','.cjs'].map(e=>p+e).find(p=>fs.existsSync(path.join(root,p))||tree.has(p));assert(choice,'actual relative module missing '+p);return loadFile(choice);}
+  return original(id);
+ };
+ m._compile(rel.endsWith('.cjs')?source:transformSync(source,{filename,babelrc:false,configFile:false,plugins:[['@babel/plugin-transform-typescript',{isTSX:true,allExtensions:true}],['@babel/plugin-transform-react-jsx',{runtime:'automatic'}],'@babel/plugin-transform-modules-commonjs']}).code,filename);return m.exports;
+}
+const course=loadFile('src/components/agriculture/AgricultureCourse.tsx'),Reader=course.ReaderForActualCallerQA,Daily=loadFile('src/components/agriculture/DailyLearningSupport.tsx').DailyLearningFigure;
+const targets={'agr-fruit-manage-grape-cluster-2':'agri-native-grape-cluster-stage','agr-par12-facility-strawberry-development-2':'agri-native-strawberry-development','agr-f40-flower-source1-reading':'agri-native-source-reading-workterms','agr-flower-details-table-examples':'agri-food-flower-classification-agr-flower-details-table-examples','agr-par12-flower-group-records':'agri-food-flower-classification-agr-par12-flower-group-records','agr-facility-env-solution-circulation-2':'food-daily-gap-flow','agr-facility-structure-cover-functions-2':'food-daily-gap-matrix','agr-fruit-manage-harvest':'food-daily-gap-sequence','agr-flower-work-production':'food-daily-gap-formats','agr-f40-facility-fruit-bud-options2':'food-daily-gap-conditional'};
+const count=(html,marker)=>(html.match(new RegExp('data-testid="'+marker+'"','g'))||[]).length;let readerCases=0,partialRejects=0,companionCases=0;
+const slots=[];for(const [level,plan]of Object.entries(manifest.levels))for(const week of plan.weeks)for(const id of week.lessonIds)if(targets[id])slots.push({level,week:week.id,id});
+for(const [id,marker]of Object.entries(targets)){const l=lessons.find(l=>l.id===id),ownSlots=slots.filter(s=>s.id===id);assert(ownSlots.length,id+' not directly reachable');for(const level of [...new Set(ownSlots.map(s=>s.level))]){const html=renderToStaticMarkup(React.createElement(Reader,{lesson:l,level,language:'ja',saving:false,saveError:false,onBack:()=>{},onComplete:()=>{}}));assert.equal(count(html,marker),1,id+' actual scheduled Reader must show native exactlyonce');readerCases++;const partial=renderToStaticMarkup(React.createElement(Daily,{lesson:l,level,language:'ja',showTranslation:false,colors,paragraphIds:l.paragraphs.length>1?[l.paragraphs[0].id]:[],includeExisting:true}));assert.equal(count(partial,marker),0,id+' invalid partial must not relax full-source guard');partialRejects++;}}
+for(const [parent,items]of Object.entries(support.companionReadings))for(const p of items)if(targets[p.lessonId]){const l=lessons.find(l=>l.id===p.lessonId),source=lessons.find(l=>l.id===parent);for(const level of source.levels.filter(level=>l.levels.includes(level))){const html=renderToStaticMarkup(React.createElement(loadFile('src/components/agriculture/DailyLearningSupport.tsx').DailyCompanionReadings,{lesson:source,level,language:'ja',showTranslation:false,colors}));if(p.paragraphIds.length<l.paragraphs.length)assert.equal(count(html,targets[l.id]),0);companionCases++;}}
+console.log(`PASS ACTUAL AgricultureCourse.Reader PRODUCTION: ${readerCases} scheduled native contexts visible once, ${partialRejects} invalidpartial rejects, ${companionCases} actual companion caller cases; actual source visual modules/data, only theme/chrome/navigation/storage service and assetURI leaf adapters; no browser/device/pixel acceptance.`);

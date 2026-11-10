@@ -394,3 +394,7 @@ The publisher explicitly instructed: “lưu lên nhánh rồi tiếp tục. Yê
 ## Kaigo multilingual style contract — publisher approved 2026-10-16
 
 Before any Kaigo authoring, translation, wording or display change, read `docs/ssw-workspace/kaigo/KAIGO_LANGUAGE_STYLE_GUIDE.md` completely and `docs/ssw-workspace/kaigo/language-style-policy.json`, in addition to the existing Kaigo rules/checkpoint/plan. The approved Vietnamese week1 style at commit3bed1485 is the benchmark for warmth, respectful contextual address, complete natural explanations and Japanese/translation paragraph pairing. Apply these principles through each language's own conventions; never force Vietnamese kinship terms into another language. Use shared locale terminology and speaker/listener profiles; preserve Japanese as canonical, approved Royal/day-night presentation and revision-bound explicit translations. Publisher style acceptance is not domain/native/all-locale/release certification. Routine corrections and already-authorized editorial choices do not require renewed publisher approval.
+
+## Lưu GitHub và thu gọn ổ làm việc — 2026-11-03
+
+Trước khi tải dữ liệu, tạo clone/worktree, hoặc kết thúc phiên, đọc và áp dụng `docs/WORKSPACE_STORAGE_POLICY_VI.md`. Lưu từng nhóm đã kiểm tra lên GitHub và xác minh trước khi dọn file tạm; giữ nguyên công việc chưa lưu và bằng chứng hợp lệ. Sáu AI ưu tiên dùng chung một checkout với quyền ghi file độc lập.

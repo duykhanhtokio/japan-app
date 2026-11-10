@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "actualReader": true,
+  "assessmentLocaleViewportCases": 380,
+  "checks": 20,
+  "japaneseExpectedPoints": 90,
+  "locales": 13,
+  "viewports": 4,
+  "matrix": [
+    {
+      "width": 390,
+      "height": 844,
+      "locales": [
+        "ja",
+        "en",
+        "vi",
+        "id",
+        "zh-CN",
+        "zh-TW",
+        "hi",
+        "bn",
+        "ne",
+        "my",
+        "th",
+        "km",
+        "tl"
+      ],
+      "cases": 260
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "locales": [
+        "ja",
+        "vi"
+      ],
+      "cases": 40
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "locales": [
+        "ja",
+        "vi"
+      ],
+      "cases": 40
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "locales": [
+        "ja",
+        "vi"
+      ],
+      "cases": 40
+    }
+  ],
+  "hiddenBeforeRevealCases": 380,
+  "revealAndHideCases": 380,
+  "japanesePointAccessibleLabelChecks": 1710,
+  "translatedTitleAndPromptCases": 300,
+  "translatedPointChecks": 1350,
+  "unchangedLocalStorageCases": 380,
+  "expandedWebAttributeCases": 0,
+  "expandedAttributeNote": "React Native Web may omit aria-expanded from accessibilityState; DOM show/hide is asserted independently.",
+  "seededStateKeys": [
+    "@japan_app_food_manufacturing:completion:v1:assessment-qa:1",
+    "@japan_app_food_manufacturing:exam:v1:assessment-qa:1:food-1-mock-01"
+  ],
+  "sourceSha256": "3e46e6f9be51c629c50587c2447cdc272f372a3c9c4f39b53ee440a68c2a115e",
+  "screenshots": [
+    "assessment-vi-phone.png",
+    "assessment-my-phone.png",
+    "assessment-km-phone.png",
+    "assessment-tl-phone.png"
+  ],
+  "visualGlyphInspection": {
+    "status": "AI_VISUAL_PASS_FOR_FOUR_REPRESENTATIVE_PHONE_CAPTURES",
+    "locales": [
+      "vi",
+      "my",
+      "km",
+      "tl"
+    ],
+    "findings": "All four full self-check cards viewed after reveal. CJK ruby and translated text are visible; Myanmar and Khmer use shaped glyphs rather than tofu; no overlapping blocks, cut-off answer points or horizontal clipping identified. This is four representative screenshots with the declared QA font stack, not native-language certification or physical-device coverage.",
+    "screenshots": [
+      {
+        "filename": "assessment-vi-phone.png",
+        "sha256": "699321163c36badedeb5c4d2e772b4ca3882d4b9282278d9958a803381a24659"
+      },
+      {
+        "filename": "assessment-my-phone.png",
+        "sha256": "e286f364db3198cf1948ca59d58c7aac992c2595c699b407d2cf37f8de2d312d"
+      },
+      {
+        "filename": "assessment-km-phone.png",
+        "sha256": "3963650e21a717a3a3fdf2a1625d8264b143d99df601630cdf534c83bbd8884f"
+      },
+      {
+        "filename": "assessment-tl-phone.png",
+        "sha256": "37bed5639578a35bc92fffeae9c4ae6b298e4b2f05b450aaca6adedfb109191b"
+      }
+    ]
+  },
+  "adapters": [
+    "Royal surface/artwork",
+    "safe-area",
+    "backdrop",
+    "localStorage",
+    "Noto CJK/Myanmar/Khmer web-font stack"
+  ],
+  "browserPageErrors": [],
+  "physicalDeviceTested": false,
+  "productionExpoTested": false,
+  "testRunNotes": [
+    "Initial first-case run stopped on an extra aria-expanded assertion: React Native Web omitted the attribute from accessibilityState. The harness records this independently and strictly validates real answer DOM hiding, revealing and hiding again; the complete380case run then passed.",
+    "Reader is exercised directly; seeded lesson/exam localStorage keys remain byte-identical after every self-check. This does not certify the complete Course/Attempt flow."
+  ]
+}

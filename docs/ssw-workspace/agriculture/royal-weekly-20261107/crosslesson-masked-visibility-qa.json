@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "baseCommit": "b8d0c73ccc979b0be3bf7e228876af28dd964d5a",
+  "beforeBlobSha": {
+    "scripts/agriculture/check-crosslesson-masked-visibility.cjs": null,
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/crosslesson-masked-visibility-qa.json": null
+  },
+  "scope": "Five existing crosslesson quiz image uses, source/actual pixels/question semantics and actual masked runtime visibility",
+  "priorGuardReceipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-exam-question-source-guards-qa.json",
+  "verdict": "All five reviewed uses retain their existing valid figure, source binding, question, correct answer, illustration revision and masks. No content or geometry mismatch proved; no image or data changes.",
+  "reviews": [
+    {
+      "questionIds": [
+        "agr-1-m07-q40",
+        "agr-2-m09-q30"
+      ],
+      "figureId": "agr-f40-seedling-condition-comparison",
+      "assetSha256": "530dccec9164666bd78673cf232321ad0b17e01962f3bdac63c4a55116f525f4",
+      "questionLesson": "agr-facility-env-grafted-seedlings",
+      "figureLesson": "agr-facility-env-growth-observation",
+      "review": "B visibly has thick stem and short internodes, with upward leaves. A has thin stem/long internodes; C has small leaves/cotyledons. Current question/options/reasons and source pages support both correct B answers. No visual claim that cotyledon hardness is measured. Masks retain A/B/C and reveal morphology while hiding explanatory headings/footer.",
+      "sourcePages": [
+        "AGR-S1 PDF73/printed67",
+        "AGR-S1 PDF75/printed69",
+        "AGR-S1 PDF76/printed70",
+        "AGR-S2 PDF94/printed92"
+      ]
+    },
+    {
+      "questionIds": [
+        "agr-1-m08-q15",
+        "agr-1-m08-q39"
+      ],
+      "figureId": "agr-f40-temperature-instrument-source-examples",
+      "assetSha256": "83e777c5438ed6732ce98b4dc47c254b3f9e1175541c936c49711c6dd56b9401",
+      "questionLesson": "agr-facility-env-temperature-reading",
+      "figureLesson": "agr-facility-env-growth-observation",
+      "review": "B retains two vertical tubes with indicators and U join; A is the rod thermometer, C is digital. C actual image reads12.0℃; current question explicitly confirms current-temperature mode before asking transcription. All options/reasons checked; correct choices B and12.0℃ remain unmasked. Source photos show a different sample23.5, so synthetic12.0 is a question-specific controlled display, not represented as copied source-photo value.",
+      "sourcePages": [
+        "AGR-S1 PDF70/printed64",
+        "AGR-S1 PDF71/printed65",
+        "AGR-S2 PDF91/printed89",
+        "AGR-S2 PDF92/printed90"
+      ]
+    },
+    {
+      "questionIds": [
+        "agr-2-m09-q34"
+      ],
+      "figureId": "agr-f40-graft-cambium-contact-corrected-v2",
+      "assetSha256": "7af096299c9bfafc3c9c46aa34e9d84f845d53014c9445d859445aa927968679",
+      "questionLesson": "agr-fruit-foundation-graft-types",
+      "figureLesson": "agr-fruit-foundation-graft-alignment",
+      "review": "Left green cambium rings visibly touch; right pair has gap/misalignment. Correct left answer and all four reasons match current lesson/source. Masks hide good/bad and contact explanation labels but preserve ring contact/gap. This is a schematic cross-section comparison, not scale, knife-operation or graft-success certification.",
+      "sourcePages": [
+        "AGR-S1 PDF82/printed76",
+        "AGR-S1 PDF83/printed77",
+        "AGR-S2 PDF103/printed101",
+        "AGR-S2 PDF104/printed102"
+      ]
+    }
+  ],
+  "sourceReview": {
+    "method": "All listed primary source pages rendered and opened; all three actual full-size PNG images opened; all five actual stems,20options,20reasons and five complete current Japanese lesson paragraph sets read. No source pixels copied.",
+    "pdfSha256": {
+      "AGR-S1": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+      "AGR-S2": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12"
+    }
+  },
+  "runtimeValidation": {
+    "actualProductionModules": [
+      "AgricultureExamIllustration",
+      "RecognitionImages actual asset map",
+      "ZoomableFigure"
+    ],
+    "actualSourcePNGs": 3,
+    "sourceReviewedQuestions": 5,
+    "actualSSRRenderCases": 20,
+    "simulatedWindowWidths": [
+      390,
+      768
+    ],
+    "modes": [
+      "normal",
+      "expanded"
+    ],
+    "actualMaskStylesAndLabels": 136,
+    "unobscuredPixelEvidenceRegionChecks": 52,
+    "injectedRuntimeOcclusionProbesDetected": 5,
+    "method": "React Native Web renderer, real production JSX and exact PNG bytes; adapter supplies deterministic dimensions/state and observes actual emitted mask styles. Regions were chosen from actual visible answer cues. Expanded mode retains intentional horizontal scroll; geometry remains proportional.",
+    "deviceOrBrowserAcceptance": false,
+    "freshProductionBlobSha": {
+      "RecognitionImages.tsx": "85fee935168f33f02bb54004871357c5469d33f6",
+      "DailyLearningSupport.tsx": "94a536be2ac855085d64a90a984b9a37ff6cc1ed",
+      "recognition-images.json": "4c0073f57efbb71401254c5d1bfddbdd3b199a26",
+      "exam-illustrations.json": "8496ea621cc38ea5c9dd234562d4fa21a7acb28e",
+      "mock-exams.ja.json": "7c5316e7c959d965d36bc3a3f5189335d0072d83",
+      "lessons.ja.json": "cb35d5bc65c91565748d1e30142dd1e019d12d17",
+      "recognition-image-locales.json": "54eb2d61d6f1091877cf4e9f25fa959ccec82a96",
+      "ZoomableFigure.tsx": "a370ef722d50b0c9a1cdd2d04bb74c199ba82d88",
+      "AgricultureExamIllustration.tsx": "bbb95847b29ec800a6328970d00a0dea1b7256da"
+    },
+    "unusedComponentAdapters": [
+      "FlowerLegendFigure",
+      "CropCalendarFigure"
+    ]
+  },
+  "unchangedRuntimeOrDataFiles": true,
+  "remainingActualMismatchWithinTheseFive": null,
+  "remainingSourceSemanticReviewsWithinTheseFive": 0,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "durationTested": false,
+  "wholeWeekComplete": false,
+  "releaseReady": false
+}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "reviewedBaselineHead": "2ab3ae1b0f22408bb1556d1adf2da4f3d3e6d4d6",
+  "workingCodeGitBlobBaseline": {
+    "src/components/agriculture/ZoomableFigure.tsx": "a370ef722d50b0c9a1cdd2d04bb74c199ba82d88",
+    "src/components/agriculture/RecognitionImages.tsx": "3a4277b660e46acf5bdb721708012dc3677b243a"
+  },
+  "headCodeGitBlobBaseline": {
+    "src/components/agriculture/ZoomableFigure.tsx": "a370ef722d50b0c9a1cdd2d04bb74c199ba82d88",
+    "src/components/agriculture/RecognitionImages.tsx": "9448cf37e870ef18df16c5f8647704592231f534"
+  },
+  "remoteCodeGitBlobBaselineBeforeEdit": {
+    "src/components/agriculture/ZoomableFigure.tsx": "a370ef722d50b0c9a1cdd2d04bb74c199ba82d88",
+    "src/components/agriculture/RecognitionImages.tsx": "1aa2cd38fe2cb6049d3867d427c0a30f8dee4b2c"
+  },
+  "readyPaths": [
+    "src/components/agriculture/ZoomableFigure.tsx",
+    "src/components/agriculture/FigureSourceMarks.ts",
+    "src/components/agriculture/RecognitionImages.tsx",
+    "scripts/agriculture/check-fuel-source-mark-overlay.cjs",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/week09-fuel-prohibition-native-overlay-qa.json"
+  ],
+  "figureId": "agr-f40-safety-media-fuel-container-source-sign",
+  "retainedIncomingAsset": {
+    "path": "assets/agriculture/royal-weekly-20261107/week09/fuel-container-appearance-royal-v1.webp",
+    "sha256": "6640241bcf7e127d4c7f65ad97b938d60d37ec0a0788a0d1148ea05fece26938",
+    "width": 1536,
+    "height": 1024,
+    "bitmapBytesChanged": false
+  },
+  "actualVisualDefect": "Incoming dimensional container bitmap correctly shows the two containers but omits the source-specific prohibition X; prior native rendering had only warning text and no graphic source mark.",
+  "actualVisualFix": "Controlled red cross made from two native diagonal bars inside the very same scaled picture tree as the bitmap, shared by normal and expanded horizontal zoom. Not a new bitmap or image generation.",
+  "sourceMark": {
+    "kind": "cross",
+    "x": 0.73,
+    "y": 0.57,
+    "width": 0.12,
+    "height": 0.18,
+    "coordinates": "fractions of inspected original1536x1024bitmap",
+    "color": "#ce3434",
+    "target": "Inside lower-right kerosene-container body, below handles/caps, within outline",
+    "identityAssetDimensionGuard": "Exact figureID+incomingSHA+1536x1024 required; unknown/stale assets get no marker.",
+    "meaning": "Right historical/source kerosene-container gasoline-prohibition example only, not all plastic containers. No left approval mark or legal/product certification."
+  },
+  "preservation": [
+    "Incoming bitmap, image metadata row, Japanese/native labels, foreign caption records, source hashes/revisions/scopes and learner state retained.",
+    "No caption translation or asset-hash rebinding required because bitmap and exact current caption text remain unchanged.",
+    "Shared component marks default empty; preexisting masks and unmarked image output unchanged.",
+    "No allplastic ban, capacities,UNmarking or opening/handling procedure added."
+  ],
+  "checks": {
+    "exactSourceIdentityAssetDimensionGuard": "PASS",
+    "staleOtherImageRejections": 5,
+    "actualZoomableNormalExpandedNormalToggles": "PASS;mark and image share same parent and normalizedrectangle in every state",
+    "defaultMaskOutputRegressionsAgainstImmutableOriginalBlob": 4,
+    "immutableOriginalZoomableGitBlob": "a370ef722d50b0c9a1cdd2d04bb74c199ba82d88",
+    "actualRecognitionImagesNormalExpandedRenders": 4,
+    "actualResolverRetainsIncomingBitmap": "PASS",
+    "scopedActualTypeScriptGraph": "PASS",
+    "eslint": "PASS3actual changed components; no warnings",
+    "allocatedWidthGeometryCases": 126,
+    "diffWhitespace": "PASS",
+    "testAdapterLimit": "Actual component hooks/state/render tree with controlled nativehost adapter; not browser/native-device pixel acceptance."
+  },
+  "hashes": {
+    "src/components/agriculture/ZoomableFigure.tsx": "e1478c5b580789f75378538db27baa3a2761703f38dd5ff8f3cd2e1f44d4c7bd",
+    "src/components/agriculture/FigureSourceMarks.ts": "accaefd0b0c8ea97acb9e293ecda8cf0567c2419b44e5c1b15ea9c5ec67638f6",
+    "src/components/agriculture/RecognitionImages.tsx": "fe96c085f1797960b5cbeee6622b56439992331b34a6b9ed67ab62384b125773",
+    "scripts/agriculture/check-fuel-source-mark-overlay.cjs": "b1415c0580c7b04e3a49ef736666cfac32ba54d23aaed5cc123262c0413a8225"
+  },
+  "mergeScope": "RecognitionImages only adds source-mark helper import and marks prop; preserve latest incoming resolver cases. Zoomable baseline Gitblob recorded for CAS/reconciliation. Superseded own fuelpair row/map cleanup is not a proposed registry/bitmap publication.",
+  "physicalDeviceTested": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "sourcePhotoObjectiveComplete": false,
+  "wholeWeekComplete": false,
+  "releaseReady": false
+}

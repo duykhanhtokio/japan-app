@@ -1,3 +1,10 @@
+import {illustrationRubyTokensFor} from '@/data/kaigo/illustration-readings';
+import {KaigoAnatomyTermsFigure} from './KaigoAnatomyTermsFigure';
+import { royalInlineFigure } from '@/data/kaigo/royal-inline-figures';
+import {KaigoRoyalTechnicalFigure} from './KaigoRoyalTechnicalFigure';
+import {KaigoHandRegionFigure} from './KaigoHandRegionFigure';
+import {kaigoRoyalWeeklyArt,royalCaptionForStudyDay} from '@/data/kaigo/royal-weekly-art';
+import { CommunicationReaderChecks } from './CommunicationReaderChecks';
 import { useBackdropOcclusion } from '@/components/ui/AppBackdrop';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
@@ -44,6 +51,8 @@ import {
 import { japaneseLessonKey, japaneseLessonMetadata, translationForMaster, translationForLesson } from '@/data/kaigo/japanese-master';
 import { illustrationForStudyDay } from "@/data/kaigo/weekly-art-allocation";
 import { kaigoDepthFigures } from "@/data/kaigo/depth-figures";
+import { companionSectionsFor, isReferenceGlossary, dailyPrimarySections, relocatedPracticeDays } from "@/data/kaigo/daily-study-support";
+import { knowledgeFiguresForDay, contextVisualBindingForDay } from "@/data/kaigo/daily-knowledge-visuals";
 import {
   completionKey,
   emptyCompletion,
@@ -439,22 +448,36 @@ function JapaneseText({
     </Text>
   );
 }
-function DayReading({
+export function DayReading({
   entry,
   onMock,
+  onStudyDay,
 }: {
   entry: CatalogEntry;
   onMock: (id: string) => void;
+  onStudyDay?: (day: number) => void;
 }) {
-  const sections = japaneseSectionsFor(entry),
+  const originalSections = japaneseSectionsFor(entry),
+    companions = companionSectionsFor(entry),
+    sections = [...dailyPrimarySections(entry, originalSections), ...companions],
+    figures = knowledgeFiguresForDay(entry.day),
+    contextVisual = contextVisualBindingForDay(entry.day),
+    [openReferences, setOpenReferences] = useState<Record<string, boolean>>({}),
+    [expandedFigure, setExpandedFigure] = useState<string | null>(null),
     lessonKey = japaneseLessonKey(entry),
     masterLesson = japaneseLessonMetadata[lessonKey],
     form = mockForDay(entry.day),
     cover = illustrationForStudyDay(entry.day),
+    artCaptionJa = royalCaptionForStudyDay(entry.day) ?? masterLesson?.artCaptionJa,
     [translationOpen, setTranslationOpen] = useState(false),
     { colors } = useStudyAppearance(),
     { language } = useAppLanguage();
   const lessonTranslation = translationForLesson(lessonKey, language);
+  const contextCaption = artCaptionJa ?? contextVisual?.keyObjectiveJa ?? cover.captionVi;
+  const localizedContextCaption = translationOpen && lessonTranslation
+    ? royalCaptionForStudyDay(entry.day, language) ?? lessonTranslation.artCaption : undefined;
+  const contextAccessibilityLabel = localizedContextCaption && language !== 'ja'
+    ? contextCaption + ' / ' + localizedContextCaption : contextCaption;
   const translated = (text: string, id?: string) =>
     translationOpen ? (
       language === "vi" ? (
@@ -491,8 +514,25 @@ function DayReading({
       <Text style={[s.meta, { color: colors.muted }]}>
         第{Math.ceil(entry.day / 7)}週 · 目安30分
       </Text>
-      <Image
+      {figures.length === 0 && contextVisual && <>
+        <JapaneseText text={contextVisual.keyObjectiveJa} testID={`kaigo-context-objective-${entry.day}`} />
+        {translationOpen && lessonTranslation && <TranslationText>{lessonTranslation.objectives[contextVisual.keyObjectiveIndex]}</TranslationText>}
+      </>}
+      {figures.length > 0 ? figures.map(figure => (
+        <View key={figure.id} testID={`kaigo-knowledge-figure-${entry.day}-${figure.id}`}>
+          <JapaneseText text={figure.titleJa} tokens={illustrationRubyTokensFor(figure.titleJa)} testID={`kaigo-figure-title-${entry.day}-${figure.id}`} />
+          <Pressable accessibilityRole="button" accessibilityLabel={figure.altJa} onPress={() => setExpandedFigure(expandedFigure === figure.id ? null : figure.id)}>
+            <ScrollView horizontal={expandedFigure === figure.id} contentContainerStyle={{ flexGrow: 1 }} maximumZoomScale={3} minimumZoomScale={1}>
+              {((entry.day===163 && figure.id==='digestive') || (entry.day===164 && figure.id==='male-terms')) ? <KaigoAnatomyTermsFigure source={figure.source} kind={entry.day===163?'colon':'male'} language={translationOpen ? language : 'ja'} expanded={expandedFigure === figure.id} /> : (figure.id === 'hand-regions-royal-week01' || ([161,171].includes(entry.day) && figure.id==='hand-regions')) ? <KaigoHandRegionFigure source={figure.source} language={translationOpen ? language : 'ja'} expanded={expandedFigure === figure.id} /> : (figure.id === 'brain-royal-week02' || figure.id === 'respiratory-royal-week02' || (entry.day===112 && figure.id==='skin') || (entry.day===134 && figure.id==='oral-ownership') || (entry.day===99 && figure.id==='grooming') || (entry.day===92 && figure.id==='brain-lobes') || (entry.day===96 && figure.id==='urinary') || (entry.day===71 && figure.id==='skeleton') || (entry.day===72 && figure.id==='skeleton') || (entry.day===73 && figure.id==='muscles') || (entry.day===74 && figure.id==='eye') || (entry.day===75 && figure.id==='heart') || (entry.day===76 && figure.id==='digestive') || (entry.day===77 && figure.id==='endocrine') || (entry.day===67 && figure.id==='nervous') || (entry.day===70 && figure.id==='pupils') || (entry.day===15 && figure.id==='muscles') || (entry.day===27 && figure.id==='endocrine') || (entry.day===29 && figure.id==='urinary') || (entry.day===37 && figure.id==='oral-ownership') || (entry.day===38 && figure.id==='skin') || (entry.day===39 && figure.id==='grooming')) ? <KaigoRoyalTechnicalFigure kind={figure.id==='brain-lobes'?'lobes':figure.id==='skeleton'?'skeleton':figure.id==='eye'?'eye':figure.id==='heart'?'heart':figure.id==='digestive'?'digestive':figure.id==='nervous'?'nervous':figure.id==='pupils'?'pupils':figure.id==='oral-ownership'?'oralOwnership':figure.id==='skin'?'skin':figure.id==='grooming'?'grooming':figure.id==='urinary'?'urinary':figure.id==='endocrine'?'endocrine':figure.id==='muscles'?'muscles':figure.id === 'brain-royal-week02' ? 'brain' : 'respiratory'} source={figure.source} language={translationOpen ? language : 'ja'} expanded={expandedFigure === figure.id} /> : <Image source={figure.source} accessibilityLabel={figure.altJa} resizeMode="contain"
+                style={expandedFigure === figure.id ? { width: 1000, height: 1000 / figure.aspectRatio } : { width: "100%", aspectRatio: figure.aspectRatio }} />}
+            </ScrollView>
+          </Pressable>
+          {translationOpen && translationForMaster(figure.sourceSectionId, language) && <TranslationText>{translationForMaster(figure.sourceSectionId, language)!.heading}</TranslationText>}
+          <Text style={[s.meta, { color: colors.muted }]}>図を押すと拡大・縮小できます。</Text>
+        </View>
+      )) : <Image
         testID={`kaigo-day-art-${entry.day}`}
+        accessibilityLabel={contextAccessibilityLabel}
         source={cover.source}
         resizeMode="contain"
         style={{
@@ -500,22 +540,43 @@ function DayReading({
           aspectRatio: cover.aspectRatio,
           maxHeight: 320,
         }}
-      />
-      {masterLesson && <JapaneseText testID={`kaigo-art-caption-${entry.day}`} text={masterLesson.artCaptionJa} />}
-      {translationOpen && lessonTranslation
-        ? <TranslationText>{lessonTranslation.artCaption}</TranslationText>
+      />}
+      {figures.length === 0 && masterLesson && <JapaneseText testID={`kaigo-art-caption-${entry.day}`} text={artCaptionJa ?? masterLesson.artCaptionJa} tokens={illustrationRubyTokensFor(artCaptionJa ?? masterLesson.artCaptionJa)} />}
+      {figures.length === 0 && translationOpen && lessonTranslation
+        ? <TranslationText>{royalCaptionForStudyDay(entry.day, language) ?? lessonTranslation.artCaption}</TranslationText>
         : !masterLesson && translated(cover.captionVi)}
+      {figures.length > 0 && kaigoRoyalWeeklyArt[entry.day] && <View testID={`kaigo-supplemental-context-${entry.day}`}>
+        <Image
+          testID={`kaigo-day-art-${entry.day}`}
+          accessibilityLabel={contextAccessibilityLabel}
+          source={cover.source}
+          resizeMode="contain"
+          style={{ width: "100%", aspectRatio: cover.aspectRatio, maxHeight: 320 }}
+        />
+        {masterLesson && <JapaneseText testID={`kaigo-art-caption-${entry.day}`} text={artCaptionJa ?? masterLesson.artCaptionJa} tokens={illustrationRubyTokensFor(artCaptionJa ?? masterLesson.artCaptionJa)} />}
+        {translationOpen && lessonTranslation && <TranslationText>{royalCaptionForStudyDay(entry.day, language) ?? lessonTranslation.artCaption}</TranslationText>}
+      </View>}
+      {relocatedPracticeDays(entry.day).map(day => <Action key={day}
+        title={`関連練習は第${day}日にまとめました`}
+        testID={`kaigo-relocated-practice-${entry.day}-${day}`}
+        onPress={() => onStudyDay?.(day)} />)}
       {sections.map((section) => {
         const translation = translationForMaster(section.id, language);
+        const reference = isReferenceGlossary(section);
+        const referenceOpen = !reference || openReferences[section.id];
+        const companion = companions.some(c => c.id === section.id);
         return (
         <View
           key={section.id}
           testID={`kaigo-reading-section-${section.id}`}
           style={s.readingSection}
         >
+          {companion && section.id === companions[0]?.id && <Text style={[s.heading, { color: colors.text }]}>関連する内容をつなげて読む</Text>}
           <Text style={[s.heading, { color: colors.text }]}>
             {section.headingJa}
           </Text>
+          {reference && <Action testID={`kaigo-reference-${section.id}`} title={referenceOpen ? "参照用語集を閉じる" : "参照用語集を開く"} onPress={() => setOpenReferences(v => ({ ...v, [section.id]: !v[section.id] }))} />}
+          {referenceOpen && <>
           {translationOpen && translation && (
             <TranslationText>{translation.heading}</TranslationText>
           )}
@@ -525,7 +586,9 @@ function DayReading({
               testID={`kaigo-source-${section.id}-${index}`}
               text={paragraph}
               tokens={
-                index === 0 && paragraph === section.japanese
+                section.paragraphsRuby?.[index]?.length
+                  ? section.paragraphsRuby[index]
+                  : index === 0 && paragraph === section.japanese
                   ? section.ruby
                   : undefined
               }
@@ -537,6 +600,7 @@ function DayReading({
             )}
             </View>
           ))}
+          <CommunicationReaderChecks day={entry.day} sectionId={section.id} language={language} translationOpen={translationOpen} JapaneseText={JapaneseText} Action={Action} />
           {!section.japaneseComplete && (
             <Text
               testID={`kaigo-source-pending-${section.id}`}
@@ -561,9 +625,12 @@ function DayReading({
             </View>
           ))}
           </>}
-          {section.figureKeys?.map((figure) => (
+          </>}
+          {section.figureKeys?.map((figure) => {
+            const royalFigure=royalInlineFigure(entry.day,section.id,figure.key);
+            return (
             <View key={figure.key}>
-              <Image
+              {royalFigure ? <ScrollView horizontal={expandedFigure===figure.key} contentContainerStyle={{flexGrow:1}}><KaigoRoyalTechnicalFigure kind={royalFigure.kind} source={royalFigure.source} language={translationOpen ? language : 'ja'} expanded={expandedFigure===figure.key} /></ScrollView> : <Image
                 source={kaigoDepthFigures[figure.key]}
                 resizeMode="contain"
                 style={{
@@ -571,19 +638,20 @@ function DayReading({
                   aspectRatio: 800 / 660,
                   maxHeight: 320,
                 }}
-              />
+              />}
+              {royalFigure && <Action title="図を拡大・縮小" testID={`kaigo-inline-zoom-${entry.day}-${figure.key}`} onPress={() => setExpandedFigure(expandedFigure===figure.key?null:figure.key)} />}
               {section.figureCaptionsJa?.[figure.key] && (
-                <JapaneseText text={section.figureCaptionsJa[figure.key]} testID={`kaigo-figure-caption-${section.id}-${figure.key}`} />
+                <JapaneseText text={section.figureCaptionsJa[figure.key]} tokens={illustrationRubyTokensFor(section.figureCaptionsJa[figure.key])} testID={`kaigo-figure-caption-${section.id}-${figure.key}`} />
               )}
               {translationOpen && translation?.figureCaptions?.[figure.key] && (
                 <TranslationText testID={`kaigo-figure-caption-translation-${section.id}-${figure.key}`}>{translation.figureCaptions[figure.key]}</TranslationText>
               )}
-              {section.masterStatus && (
+              {section.masterStatus && !royalFigure && (
                 <Text style={[s.meta, { color: colors.muted }]}>図中の文字は旧版です。日本語ラベルを確認中です。</Text>
               )}
               {!section.masterStatus && translated(figure.captionVi)}
             </View>
-          ))}
+          );})}
         </View>
       );})}
       {form && (
@@ -912,6 +980,12 @@ export function WeeklyKaigo({
                     key={entry.day}
                     entry={entry}
                     onMock={(id) => open({ kind: "mock", id })}
+                    onStudyDay={(day) => {
+                      const target = kaigoCatalog.find(e => e.day === day);
+                      if (target) open(target.kind === "mock"
+                        ? { kind: "mock", id: target.id }
+                        : { kind: "day", day: target.day });
+                    }}
                   />
                   <View testID="kaigo-day-completion-footer">
                     <Text style={[s.meta, { color: colors.muted }]}>

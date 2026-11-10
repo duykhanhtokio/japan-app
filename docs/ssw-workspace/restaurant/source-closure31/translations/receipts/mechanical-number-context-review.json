@@ -1,0 +1,1271 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-31",
+  "scope": "All Chinese fields plus cooking1 only inMY/TH/NE/KM",
+  "method": "Per-field source-target numeric counters followed by contextual review for every mismatch. No blanket acceptance based on script conversion. Exact source/target field hashes pin dispositions.",
+  "fieldMismatchCount": 60,
+  "dispositions": [
+    {
+      "locale": "zh-CN",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-load-source-numbers",
+      "field": "text",
+      "sourceNumbers": {
+        "35": 1,
+        "40": 1,
+        "8": 2
+      },
+      "targetNumbers": {
+        "35": 1,
+        "40": 1
+      },
+      "sourceFieldSha256": "3e694af69798d95a72700b327b160426fd9916d2ccef67e7e5dc9ab31f6bbd24",
+      "targetFieldSha256": "afe01d09f3ad7bba59986a33b16eada09c61203dcb0f237ef7589e56edf17fe9",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "stem",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "e11a6eb99097082b847a76117e71cf86e4a1c3fb431d355d21ceb38cc92aca5f",
+      "targetFieldSha256": "5ceab36dd86aa876604484bb0fdaf85ebd6fac58687b55fdba3bd4c63c561414",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "options[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "3865260a18c775b8924d603a98c0110ede5aa9b243af40ae41a77debeb5976e7",
+      "targetFieldSha256": "37cb3ddafa95cbe1234d08f4cd8e9adf705af053897fe9e7a33bd656c3b9da5a",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "reasons[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "f6d6b7442f3a54f99dae95be0f6bc8ebe8059c9067ddaef339aecf28808ed853",
+      "targetFieldSha256": "b9604bdb9c5688ce9bbf4ad2963502d79d74633b3a87c59a1e3a4f44dee23705",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "cooking-service2",
+      "id": "rst31-cs2-historical-accidents",
+      "field": "text",
+      "sourceNumbers": {
+        "2023": 1,
+        "4": 3,
+        "30": 1,
+        "20": 1,
+        "15": 1,
+        "10": 1,
+        "6": 2,
+        "5": 2
+      },
+      "targetNumbers": {
+        "2023": 1,
+        "2022": 1,
+        "30": 1,
+        "20": 1,
+        "15": 1,
+        "10": 1,
+        "6": 2,
+        "5": 2,
+        "4": 2
+      },
+      "sourceFieldSha256": "6a151be6ffba59fe0af8e51b3a80be21e9d1fa720d3ac048d5be64d442e3a489",
+      "targetFieldSha256": "1d99d41c9a980f6526c7201974c9379205fa04bdaff1911a946900d0e81e813b",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source令和4年 isGregorian2022. Chinese consistently renders2022;2023edition scope and every accident percentage remain. Repeated sourceyear qualifiers in q021 objective are consolidated under one common scopedyear, not deleted factual conditions."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "cooking-service2",
+      "id": "rst31-cs2-fig-accident-reference-2022",
+      "field": "caption",
+      "sourceNumbers": {
+        "4": 1
+      },
+      "targetNumbers": {
+        "2022": 1
+      },
+      "sourceFieldSha256": "ef7592a65bc99531964b0ea116cc633b931a9715e6b795bea32d040a35fa8367",
+      "targetFieldSha256": "aa9a5511e8f41fb994b4859ec9b5ededd2ea5c7013adccd0d26b0530225af452",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source令和4年 isGregorian2022. Chinese consistently renders2022;2023edition scope and every accident percentage remain. Repeated sourceyear qualifiers in q021 objective are consolidated under one common scopedyear, not deleted factual conditions."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "cooking-service2",
+      "id": "rst31-cooking-service2-q021",
+      "field": "stem",
+      "sourceNumbers": {
+        "2023": 1,
+        "4": 1
+      },
+      "targetNumbers": {
+        "2023": 1,
+        "2022": 1
+      },
+      "sourceFieldSha256": "6dcc542a8d196e1be685ac155854e10489e65a2b7962b65a3a69ce54721b2d1c",
+      "targetFieldSha256": "ff0433f9e3a11caad99abdbe0619e8cc97686f8b36af7452e5c3a1ce8c073e01",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source令和4年 isGregorian2022. Chinese consistently renders2022;2023edition scope and every accident percentage remain. Repeated sourceyear qualifiers in q021 objective are consolidated under one common scopedyear, not deleted factual conditions."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "cooking-service2",
+      "id": "rst31-cooking-service2-q021",
+      "field": "objective",
+      "sourceNumbers": {
+        "2023": 9,
+        "4": 11,
+        "30": 1,
+        "20": 1,
+        "15": 1,
+        "10": 1,
+        "6": 2,
+        "5": 1
+      },
+      "targetNumbers": {
+        "2023": 1,
+        "2022": 1,
+        "30": 1,
+        "20": 1,
+        "15": 1,
+        "10": 1,
+        "6": 2,
+        "5": 1,
+        "4": 2
+      },
+      "sourceFieldSha256": "2b8fe7efbbc9be373c7b5316501226d1a39d05bcdae880629c395c7ea500cf7b",
+      "targetFieldSha256": "28abc9e2755e1333387fb2f3f484f2525b52f4768570506e351e635c7ac1acfe",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source令和4年 isGregorian2022. Chinese consistently renders2022;2023edition scope and every accident percentage remain. Repeated sourceyear qualifiers in q021 objective are consolidated under one common scopedyear, not deleted factual conditions."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-a003",
+      "field": "text",
+      "sourceNumbers": {
+        "1": 2,
+        "0.1": 1
+      },
+      "targetNumbers": {
+        "0.1": 1
+      },
+      "sourceFieldSha256": "bc1d853e0e513e89e5cfc92f15c92d940013a611f876c3a937194d5cfd8120b9",
+      "targetFieldSha256": "3d34d041d5761998f139ae2bc12dd5f3885669caa20090078f0868e6183e1640",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 1日1回以上 rendered 每日一次以上/每日一次以上: once or more each day; both1 occurrences semantically retained.0.1ppm remains explicit."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-a006",
+      "field": "text",
+      "sourceNumbers": {
+        "2023": 2,
+        "8": 1,
+        "20": 2,
+        "2026": 2,
+        "4": 2,
+        "1": 1,
+        "9": 1,
+        "2028": 1,
+        "3": 1,
+        "31": 1
+      },
+      "targetNumbers": {
+        "2023": 2,
+        "2026": 2,
+        "4": 2,
+        "1": 1,
+        "2028": 1,
+        "3": 1,
+        "31": 1
+      },
+      "sourceFieldSha256": "5eaf78b4170e54973386f02ff25b617e9a46f3effbc04a773e93f23c366e125a",
+      "targetFieldSha256": "7480c83802f9d8421be8fbbce7307400af8d51375226b8fcf09ea935979a60f9",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Chinese 八/二十/九 preserve mandatory8,recommended20 (twice),new mandatory9. Years,4/1revision and2028/3/31deadline are explicit. Manually checked complete two recommendation lists and scope."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-figure-reference-form-exercise",
+      "field": "caption",
+      "sourceNumbers": {
+        "3": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "86aa80fde965d3b308f4249961cac3378213ca9ae9d48dadad02da4eb5d4eec3",
+      "targetFieldSha256": "451d7b791484803724b06e1834d59037e2e91b0d6acaf139f9bfaaeae8126c79",
+      "decision": "equivalent_number_expression",
+      "contextNote": "三項/三项 is three items, matching source3; caption andalt separately checked."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-figure-reference-form-exercise",
+      "field": "alt",
+      "sourceNumbers": {
+        "3": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "86aa80fde965d3b308f4249961cac3378213ca9ae9d48dadad02da4eb5d4eec3",
+      "targetFieldSha256": "451d7b791484803724b06e1834d59037e2e91b0d6acaf139f9bfaaeae8126c79",
+      "decision": "equivalent_number_expression",
+      "contextNote": "三項/三项 is three items, matching source3; caption andalt separately checked."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-q016",
+      "field": "options[1]",
+      "sourceNumbers": {
+        "1": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "9b626dc54d28d4e3d766e69854281b8fb1d2d241b9e4dae896490b591f88b0e7",
+      "targetFieldSha256": "1b0b8f129a6fb5e7360f5ea3fcd993c1aaeed860f0d1bedad27a6a62636df6ed",
+      "decision": "equivalent_number_expression",
+      "contextNote": "每年一次 spells annual1occurrence; revised wording explicitly distinguishes daily inspection and annual water-quality test as the source distractor."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-q016",
+      "field": "options[2]",
+      "sourceNumbers": {
+        "1": 2
+      },
+      "targetNumbers": {
+        "1": 1
+      },
+      "sourceFieldSha256": "6b836faa3aea17f085b3480eba083a0d2c653104fc115de0cb95220b2c831737",
+      "targetFieldSha256": "0e90e62bf1821a8a68d36e867eae159473920751dac0ea4a33b8588cfe631d4f",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source1日1回以上 becomes每日≥1次: eachdayatleastonce. Dailyunit encodesfirst1 while explicitminimum1retained; apparatus/remainingchlorine are separatelyrecorded."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-q024",
+      "field": "options[1]",
+      "sourceNumbers": {
+        "2023": 1,
+        "8": 1
+      },
+      "targetNumbers": {
+        "2023": 1
+      },
+      "sourceFieldSha256": "c22e642b09ab3eadc784f343b611261bfd876c0658a2b2baf524961052a13f77",
+      "targetFieldSha256": "88edb18db2296c34fc09a979880e724d490b289a2069bf9a96a8269d68cd395e",
+      "decision": "equivalent_number_expression",
+      "contextNote": "八類/八类 spells8.2023retained; future-unvarying-currentlist distractor preserved in revised full sentence."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-q046",
+      "field": "stem",
+      "sourceNumbers": {
+        "2": 2,
+        "6": 2,
+        "4": 1,
+        "0": 1
+      },
+      "targetNumbers": {
+        "6": 2,
+        "4": 1,
+        "0": 1,
+        "2": 1
+      },
+      "sourceFieldSha256": "89b9adefa36418caf57b6c6d29ac8c2af5b842fbe34935c7f107424a97a8851e",
+      "targetFieldSha256": "d551dddc813f64a9a26082c4024b18d22d0f7e3fc815441554d0dde98411393f",
+      "decision": "equivalent_number_expression",
+      "contextNote": "兩項/两项 expresses2applicableitems. The other2-point excludeditem and scores6/4/6/0 remain explicit; source arithmetic unchanged."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "integration",
+      "id": "rst31-hygiene2-noro-source-scope",
+      "field": "title",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "aa498faf0bcd9e3036ae565a54ccc79f229d12dc1c7a0a9de2389aefe6d15e6a",
+      "targetFieldSha256": "8eee42626517e193588c8153953f4fa120fc4d865ae469109f7ee446cae6d4d7",
+      "decision": "equivalent_number_expression",
+      "contextNote": "約八成/约八成 expresses approximately8tenths, matching source約8割.2017/2026scopes remain. Wrong interpretations in distractors are preserved as wrong options; explanation retains cause-route denominator."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "integration",
+      "id": "rst31-hygiene2-q049",
+      "field": "stem",
+      "sourceNumbers": {
+        "2017": 1,
+        "8": 1
+      },
+      "targetNumbers": {
+        "2017": 1
+      },
+      "sourceFieldSha256": "a571aafb1963b925b233602850c24371728d08408e36e218067ddea36585c0e9",
+      "targetFieldSha256": "771ae927fe3733903161d25a5b55eb035370715fc06c25fd46766a5946a15f11",
+      "decision": "equivalent_number_expression",
+      "contextNote": "約八成/约八成 expresses approximately8tenths, matching source約8割.2017/2026scopes remain. Wrong interpretations in distractors are preserved as wrong options; explanation retains cause-route denominator."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "integration",
+      "id": "rst31-hygiene2-q049",
+      "field": "options[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "8c9c96ccf3fd83f3cfb5507a2b1e2a9fe712d960ba702a54e6f664404654a16f",
+      "targetFieldSha256": "4b332e75dfd335b2b8e613542d3b6063692385179cff4f2fd41d07d6e8cf717f",
+      "decision": "equivalent_number_expression",
+      "contextNote": "約八成/约八成 expresses approximately8tenths, matching source約8割.2017/2026scopes remain. Wrong interpretations in distractors are preserved as wrong options; explanation retains cause-route denominator."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "integration",
+      "id": "rst31-hygiene2-q049",
+      "field": "options[1]",
+      "sourceNumbers": {
+        "2026": 1,
+        "8": 1
+      },
+      "targetNumbers": {
+        "2026": 1
+      },
+      "sourceFieldSha256": "ff3519ca8830efb3c80a81125df03b77b91d271d997f941ec5b865cb0e0bdb33",
+      "targetFieldSha256": "9f2acd92f11bfedc19ea6cbf0ee6dd8808a553b3e53a4dc5d65e3d8214b54df3",
+      "decision": "equivalent_number_expression",
+      "contextNote": "約八成/约八成 expresses approximately8tenths, matching source約8割.2017/2026scopes remain. Wrong interpretations in distractors are preserved as wrong options; explanation retains cause-route denominator."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "integration",
+      "id": "rst31-hygiene2-q049",
+      "field": "options[2]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "72bcf509c39ed34ba9b4ca61d62d98d56ba3f592ac8e7aa3f5e9b567df37eb19",
+      "targetFieldSha256": "4d5195b3181b51dfd66d90d292dc23b10a3fef728a16e5d8f05945290cd16b34",
+      "decision": "equivalent_number_expression",
+      "contextNote": "約八成/约八成 expresses approximately8tenths, matching source約8割.2017/2026scopes remain. Wrong interpretations in distractors are preserved as wrong options; explanation retains cause-route denominator."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-load-source-numbers",
+      "field": "text",
+      "sourceNumbers": {
+        "35": 1,
+        "40": 1,
+        "8": 2
+      },
+      "targetNumbers": {
+        "35": 1,
+        "40": 1
+      },
+      "sourceFieldSha256": "3e694af69798d95a72700b327b160426fd9916d2ccef67e7e5dc9ab31f6bbd24",
+      "targetFieldSha256": "1e90cdabb3eb8ea61fad77777206182c8cbed118e02d1c154b85ce5c325f8b29",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "stem",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "e11a6eb99097082b847a76117e71cf86e4a1c3fb431d355d21ceb38cc92aca5f",
+      "targetFieldSha256": "1243973c1ac0fb61ff0bba862e4786d711115de660faef32d0606b727f69844c",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "options[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "3865260a18c775b8924d603a98c0110ede5aa9b243af40ae41a77debeb5976e7",
+      "targetFieldSha256": "6923274d9245a8fb4b61e6f20438b9957120797b6037f22e72f8fe9af285adcb",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "reasons[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "f6d6b7442f3a54f99dae95be0f6bc8ebe8059c9067ddaef339aecf28808ed853",
+      "targetFieldSha256": "9b0b9221f87b25987c96c2d71e07423c6bb07bb9a33d9186509c81b57aa41895",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "cooking-service2",
+      "id": "rst31-cs2-historical-accidents",
+      "field": "text",
+      "sourceNumbers": {
+        "2023": 1,
+        "4": 3,
+        "30": 1,
+        "20": 1,
+        "15": 1,
+        "10": 1,
+        "6": 2,
+        "5": 2
+      },
+      "targetNumbers": {
+        "2023": 1,
+        "2022": 1,
+        "30": 1,
+        "20": 1,
+        "15": 1,
+        "10": 1,
+        "6": 2,
+        "5": 2,
+        "4": 2
+      },
+      "sourceFieldSha256": "6a151be6ffba59fe0af8e51b3a80be21e9d1fa720d3ac048d5be64d442e3a489",
+      "targetFieldSha256": "ee5d5c59b9a60104abeeb52447a12bd18269d5bb868c35819c40d5d7c2da5955",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source令和4年 isGregorian2022. Chinese consistently renders2022;2023edition scope and every accident percentage remain. Repeated sourceyear qualifiers in q021 objective are consolidated under one common scopedyear, not deleted factual conditions."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "cooking-service2",
+      "id": "rst31-cs2-fig-accident-reference-2022",
+      "field": "caption",
+      "sourceNumbers": {
+        "4": 1
+      },
+      "targetNumbers": {
+        "2022": 1
+      },
+      "sourceFieldSha256": "ef7592a65bc99531964b0ea116cc633b931a9715e6b795bea32d040a35fa8367",
+      "targetFieldSha256": "93e78dec587ee11f32092de665958b369ccbb77f20e52f1e45c05699db497f52",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source令和4年 isGregorian2022. Chinese consistently renders2022;2023edition scope and every accident percentage remain. Repeated sourceyear qualifiers in q021 objective are consolidated under one common scopedyear, not deleted factual conditions."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "cooking-service2",
+      "id": "rst31-cooking-service2-q021",
+      "field": "stem",
+      "sourceNumbers": {
+        "2023": 1,
+        "4": 1
+      },
+      "targetNumbers": {
+        "2023": 1,
+        "2022": 1
+      },
+      "sourceFieldSha256": "6dcc542a8d196e1be685ac155854e10489e65a2b7962b65a3a69ce54721b2d1c",
+      "targetFieldSha256": "15e9ec750b69ad776bbffb86bfe9b0364b6177138811bd2f520299316a839734",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source令和4年 isGregorian2022. Chinese consistently renders2022;2023edition scope and every accident percentage remain. Repeated sourceyear qualifiers in q021 objective are consolidated under one common scopedyear, not deleted factual conditions."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "cooking-service2",
+      "id": "rst31-cooking-service2-q021",
+      "field": "objective",
+      "sourceNumbers": {
+        "2023": 9,
+        "4": 11,
+        "30": 1,
+        "20": 1,
+        "15": 1,
+        "10": 1,
+        "6": 2,
+        "5": 1
+      },
+      "targetNumbers": {
+        "2023": 1,
+        "2022": 1,
+        "30": 1,
+        "20": 1,
+        "15": 1,
+        "10": 1,
+        "6": 2,
+        "5": 1,
+        "4": 2
+      },
+      "sourceFieldSha256": "2b8fe7efbbc9be373c7b5316501226d1a39d05bcdae880629c395c7ea500cf7b",
+      "targetFieldSha256": "093ffd0d939fef776c759c63cf257ced65c48a502a619396becb60c6a65f743d",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source令和4年 isGregorian2022. Chinese consistently renders2022;2023edition scope and every accident percentage remain. Repeated sourceyear qualifiers in q021 objective are consolidated under one common scopedyear, not deleted factual conditions."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-a003",
+      "field": "text",
+      "sourceNumbers": {
+        "1": 2,
+        "0.1": 1
+      },
+      "targetNumbers": {
+        "0.1": 1
+      },
+      "sourceFieldSha256": "bc1d853e0e513e89e5cfc92f15c92d940013a611f876c3a937194d5cfd8120b9",
+      "targetFieldSha256": "a3b0ee5a89f895f4a16a1399064acf309f174159b84ca778277588919d9f1c6c",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 1日1回以上 rendered 每日一次以上/每日一次以上: once or more each day; both1 occurrences semantically retained.0.1ppm remains explicit."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-a006",
+      "field": "text",
+      "sourceNumbers": {
+        "2023": 2,
+        "8": 1,
+        "20": 2,
+        "2026": 2,
+        "4": 2,
+        "1": 1,
+        "9": 1,
+        "2028": 1,
+        "3": 1,
+        "31": 1
+      },
+      "targetNumbers": {
+        "2023": 2,
+        "2026": 2,
+        "4": 2,
+        "1": 1,
+        "2028": 1,
+        "3": 1,
+        "31": 1
+      },
+      "sourceFieldSha256": "5eaf78b4170e54973386f02ff25b617e9a46f3effbc04a773e93f23c366e125a",
+      "targetFieldSha256": "6a44b8afa551a7ab6d681f8296ec17e1e480bd1a3a34595f3b3042b8334d897d",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Chinese 八/二十/九 preserve mandatory8,recommended20 (twice),new mandatory9. Years,4/1revision and2028/3/31deadline are explicit. Manually checked complete two recommendation lists and scope."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-figure-reference-form-exercise",
+      "field": "caption",
+      "sourceNumbers": {
+        "3": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "86aa80fde965d3b308f4249961cac3378213ca9ae9d48dadad02da4eb5d4eec3",
+      "targetFieldSha256": "e3906fb05741f8337771cf9c22242555852f5cc18288dbbdb3ac98e4d93a5ab9",
+      "decision": "equivalent_number_expression",
+      "contextNote": "三項/三项 is three items, matching source3; caption andalt separately checked."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-figure-reference-form-exercise",
+      "field": "alt",
+      "sourceNumbers": {
+        "3": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "86aa80fde965d3b308f4249961cac3378213ca9ae9d48dadad02da4eb5d4eec3",
+      "targetFieldSha256": "e3906fb05741f8337771cf9c22242555852f5cc18288dbbdb3ac98e4d93a5ab9",
+      "decision": "equivalent_number_expression",
+      "contextNote": "三項/三项 is three items, matching source3; caption andalt separately checked."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-q016",
+      "field": "options[1]",
+      "sourceNumbers": {
+        "1": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "9b626dc54d28d4e3d766e69854281b8fb1d2d241b9e4dae896490b591f88b0e7",
+      "targetFieldSha256": "0cfa1a1d34707201ebc74cd086e82f229817f7fa38157299be397eefd613a8ad",
+      "decision": "equivalent_number_expression",
+      "contextNote": "每年一次 spells annual1occurrence; revised wording explicitly distinguishes daily inspection and annual water-quality test as the source distractor."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-q016",
+      "field": "options[2]",
+      "sourceNumbers": {
+        "1": 2
+      },
+      "targetNumbers": {
+        "1": 1
+      },
+      "sourceFieldSha256": "6b836faa3aea17f085b3480eba083a0d2c653104fc115de0cb95220b2c831737",
+      "targetFieldSha256": "d730115d9a67711445c649cfde268bb64d26da7df0758bef201ffe9c2ed3934c",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source1日1回以上 becomes每日≥1次: eachdayatleastonce. Dailyunit encodesfirst1 while explicitminimum1retained; apparatus/remainingchlorine are separatelyrecorded."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-q024",
+      "field": "options[1]",
+      "sourceNumbers": {
+        "2023": 1,
+        "8": 1
+      },
+      "targetNumbers": {
+        "2023": 1
+      },
+      "sourceFieldSha256": "c22e642b09ab3eadc784f343b611261bfd876c0658a2b2baf524961052a13f77",
+      "targetFieldSha256": "552d778643d5102a797956531a45b9e5278b657c5d4bbe243cb958944925df89",
+      "decision": "equivalent_number_expression",
+      "contextNote": "八類/八类 spells8.2023retained; future-unvarying-currentlist distractor preserved in revised full sentence."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "hygiene2",
+      "id": "rst31-hygiene2-q046",
+      "field": "stem",
+      "sourceNumbers": {
+        "2": 2,
+        "6": 2,
+        "4": 1,
+        "0": 1
+      },
+      "targetNumbers": {
+        "6": 2,
+        "4": 1,
+        "0": 1,
+        "2": 1
+      },
+      "sourceFieldSha256": "89b9adefa36418caf57b6c6d29ac8c2af5b842fbe34935c7f107424a97a8851e",
+      "targetFieldSha256": "3e8742ee0879c0435dbeffb2d3b660024fc6c41d4c3daadca8b750e5e495fa6e",
+      "decision": "equivalent_number_expression",
+      "contextNote": "兩項/两项 expresses2applicableitems. The other2-point excludeditem and scores6/4/6/0 remain explicit; source arithmetic unchanged."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "integration",
+      "id": "rst31-hygiene2-noro-source-scope",
+      "field": "title",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "aa498faf0bcd9e3036ae565a54ccc79f229d12dc1c7a0a9de2389aefe6d15e6a",
+      "targetFieldSha256": "fd1abc2d45db5b595116759ecc06f556138c2337eb4d6437cb2709b92c18e2bb",
+      "decision": "equivalent_number_expression",
+      "contextNote": "約八成/约八成 expresses approximately8tenths, matching source約8割.2017/2026scopes remain. Wrong interpretations in distractors are preserved as wrong options; explanation retains cause-route denominator."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "integration",
+      "id": "rst31-hygiene2-q049",
+      "field": "stem",
+      "sourceNumbers": {
+        "2017": 1,
+        "8": 1
+      },
+      "targetNumbers": {
+        "2017": 1
+      },
+      "sourceFieldSha256": "a571aafb1963b925b233602850c24371728d08408e36e218067ddea36585c0e9",
+      "targetFieldSha256": "6b508226244318358eb1e9301ee7164f6d3be275be4b0bb9d519443510a888bc",
+      "decision": "equivalent_number_expression",
+      "contextNote": "約八成/约八成 expresses approximately8tenths, matching source約8割.2017/2026scopes remain. Wrong interpretations in distractors are preserved as wrong options; explanation retains cause-route denominator."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "integration",
+      "id": "rst31-hygiene2-q049",
+      "field": "options[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "8c9c96ccf3fd83f3cfb5507a2b1e2a9fe712d960ba702a54e6f664404654a16f",
+      "targetFieldSha256": "49a5cb4bd6404a31580322234357dfa3d95d7198daae5403bf7535413edc9376",
+      "decision": "equivalent_number_expression",
+      "contextNote": "約八成/约八成 expresses approximately8tenths, matching source約8割.2017/2026scopes remain. Wrong interpretations in distractors are preserved as wrong options; explanation retains cause-route denominator."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "integration",
+      "id": "rst31-hygiene2-q049",
+      "field": "options[1]",
+      "sourceNumbers": {
+        "2026": 1,
+        "8": 1
+      },
+      "targetNumbers": {
+        "2026": 1
+      },
+      "sourceFieldSha256": "ff3519ca8830efb3c80a81125df03b77b91d271d997f941ec5b865cb0e0bdb33",
+      "targetFieldSha256": "106a7cc0aa35fb8b22800adcca40939312cbdf05432885c3f444bfdd219b64c3",
+      "decision": "equivalent_number_expression",
+      "contextNote": "約八成/约八成 expresses approximately8tenths, matching source約8割.2017/2026scopes remain. Wrong interpretations in distractors are preserved as wrong options; explanation retains cause-route denominator."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "integration",
+      "id": "rst31-hygiene2-q049",
+      "field": "options[2]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {},
+      "sourceFieldSha256": "72bcf509c39ed34ba9b4ca61d62d98d56ba3f592ac8e7aa3f5e9b567df37eb19",
+      "targetFieldSha256": "69728880ca6c41e294816280253c4869942008a8963496f79a296c473af09f71",
+      "decision": "equivalent_number_expression",
+      "contextNote": "約八成/约八成 expresses approximately8tenths, matching source約8割.2017/2026scopes remain. Wrong interpretations in distractors are preserved as wrong options; explanation retains cause-route denominator."
+    },
+    {
+      "locale": "my",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-load-source-numbers",
+      "field": "text",
+      "sourceNumbers": {
+        "35": 1,
+        "40": 1,
+        "8": 2
+      },
+      "targetNumbers": {
+        "35": 1,
+        "40": 1,
+        "8": 2,
+        "10": 2
+      },
+      "sourceFieldSha256": "3e694af69798d95a72700b327b160426fd9916d2ccef67e7e5dc9ab31f6bbd24",
+      "targetFieldSha256": "4bf079e0a966d3923902dba39c2b3629cea5656ea500975352de30206f8a71e1",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "my",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "stem",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {
+        "8": 1,
+        "10": 1
+      },
+      "sourceFieldSha256": "e11a6eb99097082b847a76117e71cf86e4a1c3fb431d355d21ceb38cc92aca5f",
+      "targetFieldSha256": "fbf7fe5588e48b901a27d2509a1c3ca60b711d433f794b3b4a0460067f400d79",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "my",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "options[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {
+        "8": 1,
+        "10": 1
+      },
+      "sourceFieldSha256": "3865260a18c775b8924d603a98c0110ede5aa9b243af40ae41a77debeb5976e7",
+      "targetFieldSha256": "55e4f733e4baf9f61ffdc3723d01e3e7ed0f3760af9381ab0348bdd01f01f22a",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "my",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "reasons[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {
+        "8": 1,
+        "10": 1
+      },
+      "sourceFieldSha256": "f6d6b7442f3a54f99dae95be0f6bc8ebe8059c9067ddaef339aecf28808ed853",
+      "targetFieldSha256": "8d66b3a525e181d93dcbefc61eb69db7f8838e2b124f2723d82d8000f51d1274",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "th",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-load-source-numbers",
+      "field": "text",
+      "sourceNumbers": {
+        "35": 1,
+        "40": 1,
+        "8": 2
+      },
+      "targetNumbers": {
+        "35": 1,
+        "40": 1,
+        "8": 2,
+        "10": 2
+      },
+      "sourceFieldSha256": "3e694af69798d95a72700b327b160426fd9916d2ccef67e7e5dc9ab31f6bbd24",
+      "targetFieldSha256": "78f80f414aa0f67a6f30ac95eeaa62282de789c0dbcbf1299c8c86b51e21d9c4",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "th",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "stem",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {
+        "8": 1,
+        "10": 1
+      },
+      "sourceFieldSha256": "e11a6eb99097082b847a76117e71cf86e4a1c3fb431d355d21ceb38cc92aca5f",
+      "targetFieldSha256": "e8fe36a0c4ccbffccde005874e9f76a6c3821db9e05a3f83a5c85ee4d201e63b",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "th",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "options[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {
+        "8": 1,
+        "10": 1
+      },
+      "sourceFieldSha256": "3865260a18c775b8924d603a98c0110ede5aa9b243af40ae41a77debeb5976e7",
+      "targetFieldSha256": "94f2d8ceb07dc4458d73d837b55fe3459b28f93c16195c93a33455ddf3349a87",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "th",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "reasons[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {
+        "8": 1,
+        "10": 1
+      },
+      "sourceFieldSha256": "f6d6b7442f3a54f99dae95be0f6bc8ebe8059c9067ddaef339aecf28808ed853",
+      "targetFieldSha256": "9dc2af69b356dd8b16209bd63abc6b726219d8bfe9bf01cd1addcad55abbd7e5",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "ne",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-load-source-numbers",
+      "field": "text",
+      "sourceNumbers": {
+        "35": 1,
+        "40": 1,
+        "8": 2
+      },
+      "targetNumbers": {
+        "35": 1,
+        "40": 1,
+        "8": 2,
+        "10": 2
+      },
+      "sourceFieldSha256": "3e694af69798d95a72700b327b160426fd9916d2ccef67e7e5dc9ab31f6bbd24",
+      "targetFieldSha256": "09f169847d99521aa13e21c035cc4d291c7344e9862c2b39cf0c965d3a134242",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "ne",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "stem",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {
+        "8": 1,
+        "10": 1
+      },
+      "sourceFieldSha256": "e11a6eb99097082b847a76117e71cf86e4a1c3fb431d355d21ceb38cc92aca5f",
+      "targetFieldSha256": "ec557864874c271bb92a5a054e324c8d622bc695977a252e5846e010899c87ee",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "ne",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "options[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {
+        "8": 1,
+        "10": 1
+      },
+      "sourceFieldSha256": "3865260a18c775b8924d603a98c0110ede5aa9b243af40ae41a77debeb5976e7",
+      "targetFieldSha256": "0ce6ad4674fc515c67fc9d5c10a6e01e9823a0e9e7a6f10b763ed84f7d749e53",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "ne",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "reasons[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {
+        "8": 1,
+        "10": 1
+      },
+      "sourceFieldSha256": "f6d6b7442f3a54f99dae95be0f6bc8ebe8059c9067ddaef339aecf28808ed853",
+      "targetFieldSha256": "e5f90ff17b82b6cc03520017aea521b7a9a45343826ccb14f546095413351507",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "km",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-load-source-numbers",
+      "field": "text",
+      "sourceNumbers": {
+        "35": 1,
+        "40": 1,
+        "8": 2
+      },
+      "targetNumbers": {
+        "35": 1,
+        "40": 1,
+        "8": 2,
+        "10": 2
+      },
+      "sourceFieldSha256": "3e694af69798d95a72700b327b160426fd9916d2ccef67e7e5dc9ab31f6bbd24",
+      "targetFieldSha256": "09241db5a1a1c754fe1633ba146ff90325e6b67db937ccd4d59cc9e3ee88f342",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "km",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "stem",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {
+        "8": 1,
+        "10": 1
+      },
+      "sourceFieldSha256": "e11a6eb99097082b847a76117e71cf86e4a1c3fb431d355d21ceb38cc92aca5f",
+      "targetFieldSha256": "885a8f101286e251b5e8e04df9ec06563e466af902dfaac0c9ee49c0539edb9e",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "km",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "options[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {
+        "8": 1,
+        "10": 1
+      },
+      "sourceFieldSha256": "3865260a18c775b8924d603a98c0110ede5aa9b243af40ae41a77debeb5976e7",
+      "targetFieldSha256": "7ccb2a6c20048ec7dead343b022c98793eff9a8bb5d1f4a75f3cae00c7bfcb99",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "km",
+      "shard": "cooking1",
+      "id": "rst31-cooking1-q020",
+      "field": "reasons[0]",
+      "sourceNumbers": {
+        "8": 1
+      },
+      "targetNumbers": {
+        "8": 1,
+        "10": 1
+      },
+      "sourceFieldSha256": "f6d6b7442f3a54f99dae95be0f6bc8ebe8059c9067ddaef339aecf28808ed853",
+      "targetFieldSha256": "0451cd53e21f4734ea9707e03626c7e23e6a35193d44bcc96e42e82ad95b7aad",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Source 8分目 means eight tenths full. Chinese 八分滿/八分满 spells8; MY/TH/NE/KM explicitly express8outof10 or8/10, making the implicit denominator10 visible. Every source occurrence and safety qualification retained."
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "service1",
+      "id": "rst31-service1-a019",
+      "field": "text",
+      "sourceNumbers": {
+        "2024": 1,
+        "10000": 1,
+        "5000": 1,
+        "1000": 1,
+        "2000": 2,
+        "500": 2,
+        "5": 1,
+        "50": 1
+      },
+      "targetNumbers": {
+        "2024": 1
+      },
+      "sourceFieldSha256": "0c578fb65b7dd6edd481d45f418c765b294ad06831c1b0ddb17dad6d1c201d8f",
+      "targetFieldSha256": "24f6d10a2817a11831adff24f90f77321016c603d634492c3b05c9001cb9a607",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Directly checked current Japanese and Chinese text. Currency values are preserved in Chinese words: 一万/一萬=10000,五千=5000,一千=1000,二千=2000(two references),五百=500(two references),and the denomination sequence一/五/十/五十/百/五百=1/5/10/50/100/500. Hole-bearing coins remain5and50.2024issueyear remains. 三十六 in富岳三十六景 is36inside the artwork title, not a denomination or currentrate; the Japanese富嶽三十六景 and Chinese富岳三十六景 name the same series. All portrait/reverse pairings and continued validity ofold notes/coins remain. No JDSorotherdate conversion; no missing numericcondition."
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "service1",
+      "id": "rst31-service1-a019",
+      "field": "text",
+      "sourceNumbers": {
+        "2024": 1,
+        "10000": 1,
+        "5000": 1,
+        "1000": 1,
+        "2000": 2,
+        "500": 2,
+        "5": 1,
+        "50": 1
+      },
+      "targetNumbers": {
+        "2024": 1
+      },
+      "sourceFieldSha256": "0c578fb65b7dd6edd481d45f418c765b294ad06831c1b0ddb17dad6d1c201d8f",
+      "targetFieldSha256": "df61109ea04ae33603f5ac5c0689dbe17c102489e3091a004dd28372e9e80ce3",
+      "decision": "equivalent_number_expression",
+      "contextNote": "Directly checked current Japanese and Chinese text. Currency values are preserved in Chinese words: 一万/一萬=10000,五千=5000,一千=1000,二千=2000(two references),五百=500(two references),and the denomination sequence一/五/十/五十/百/五百=1/5/10/50/100/500. Hole-bearing coins remain5and50.2024issueyear remains. 三十六 in富岳三十六景 is36inside the artwork title, not a denomination or currentrate; the Japanese富嶽三十六景 and Chinese富岳三十六景 name the same series. All portrait/reverse pairings and continued validity ofold notes/coins remain. No JDSorotherdate conversion; no missing numericcondition."
+    }
+  ],
+  "files": [
+    {
+      "locale": "zh-CN",
+      "shard": "cooking1",
+      "sha256": "751b7fc193f08f0cc76bde5c59672a2132844b5362bdda3aba1d28fcf99547a2",
+      "canonicalSha256": "3e143e9774bcc5934f2c05f77ed389eab5ec73071ca41819a1629a0a3e8c7370",
+      "items": 132,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "cooking-service2",
+      "sha256": "74f219b6603e79fb6e5be844b928105eeae7c50e0110dbd8c279a938b12130f6",
+      "canonicalSha256": "8b927b1ad1507badcd1e95967849538834d8b69eaef4454e1da092dac68ebaf1",
+      "items": 71,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "operations2",
+      "sha256": "029d753af6beff2e0bdef7656174aa2213c23e0e14ef911d6958ac5bceaa89ee",
+      "canonicalSha256": "ee4232d0e8289720c3cc4e584a32c39f32e4f9de5066d26ba17170558a3142f5",
+      "items": 52,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "hygiene1",
+      "sha256": "7bad5bdbc43f666afd6bba94449ab77590b319e0e88a22f0a0514a71237d50bc",
+      "canonicalSha256": "73faf5ea48659836e5ae17ce3ef9a33cb9f81bd1685ff403ff5715b41722d1c0",
+      "items": 53,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "hygiene2",
+      "sha256": "8d3cbecaf57e36a0b6294273ecee3592de6b4e40b258ea680ba1129b05d85efb",
+      "canonicalSha256": "9d526376ec579085fd3a6bf9494b3be0fe503825b130c6447391ef93c6249765",
+      "items": 71,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "service1",
+      "sha256": "035356ae57718c93f2bef2f23492c27e3fa5219f82fe9b0ed1dc0c1ac614e89a",
+      "canonicalSha256": "88a99b30fb353a6a32c01b87f39a00497d84a6ef5a676461ab4c561fd4886807",
+      "items": 99,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "zh-CN",
+      "shard": "integration",
+      "sha256": "c9a5fc20d91790e7e298971f0ac8055946931f03a950f2b645901c04558d3df5",
+      "canonicalSha256": "85ad2b84de68eb714e7e02ec3743824ac1dad50514cb390df22020bfd975cb13",
+      "items": 10,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "cooking1",
+      "sha256": "e28ea850ad911b90e2dea5268bf4b025c33a8360cd81711dd00fdf5f2188eeb7",
+      "canonicalSha256": "3e143e9774bcc5934f2c05f77ed389eab5ec73071ca41819a1629a0a3e8c7370",
+      "items": 132,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "cooking-service2",
+      "sha256": "8fd2bedef42897e1cebf9e32e05ff24bf42e38b5b5e587e312c62ebaf9e43654",
+      "canonicalSha256": "8b927b1ad1507badcd1e95967849538834d8b69eaef4454e1da092dac68ebaf1",
+      "items": 71,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "operations2",
+      "sha256": "bbe6970b782a9fd28a18f2fcd0ad764cf7a9bae221d64de68e90ad738abc1ade",
+      "canonicalSha256": "ee4232d0e8289720c3cc4e584a32c39f32e4f9de5066d26ba17170558a3142f5",
+      "items": 52,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "hygiene1",
+      "sha256": "2a14e0a8d713d68f816b27275fa9113c9630a7b22371b462fdf9f9d1b1299cd7",
+      "canonicalSha256": "73faf5ea48659836e5ae17ce3ef9a33cb9f81bd1685ff403ff5715b41722d1c0",
+      "items": 53,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "hygiene2",
+      "sha256": "5210af9bc68b6478f6eea0e78bb0a413b4308200f444a65bd7b10e9625e8895b",
+      "canonicalSha256": "9d526376ec579085fd3a6bf9494b3be0fe503825b130c6447391ef93c6249765",
+      "items": 71,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "service1",
+      "sha256": "a9b0a80a84999157edcd4fc4d3fc3693af4d8b7ca458f5e975ef01be98983a43",
+      "canonicalSha256": "88a99b30fb353a6a32c01b87f39a00497d84a6ef5a676461ab4c561fd4886807",
+      "items": 99,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "zh-TW",
+      "shard": "integration",
+      "sha256": "2448996229ee3098801112aacac317700b5ee63086e77fa9e11bca1880359e05",
+      "canonicalSha256": "85ad2b84de68eb714e7e02ec3743824ac1dad50514cb390df22020bfd975cb13",
+      "items": 10,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "my",
+      "shard": "cooking1",
+      "sha256": "9227dbaaf723494a855fa2a506b1de9a734222e87cd9a7b395005f3f106d95c2",
+      "canonicalSha256": "3e143e9774bcc5934f2c05f77ed389eab5ec73071ca41819a1629a0a3e8c7370",
+      "items": 132,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "th",
+      "shard": "cooking1",
+      "sha256": "84704272d3c7aed351aa2fbcbc1ef494246e03f0790b7cdda0b8c8d2ae401844",
+      "canonicalSha256": "3e143e9774bcc5934f2c05f77ed389eab5ec73071ca41819a1629a0a3e8c7370",
+      "items": 132,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "ne",
+      "shard": "cooking1",
+      "sha256": "160cc90abf590d63db330cabc31c53a791142ddccc1b0184146c7ff30ab979f3",
+      "canonicalSha256": "3e143e9774bcc5934f2c05f77ed389eab5ec73071ca41819a1629a0a3e8c7370",
+      "items": 132,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    },
+    {
+      "locale": "km",
+      "shard": "cooking1",
+      "sha256": "8f0354d69a6dc3575110f165e1c8d37a168a0c76dbb6a2c57526c015e7bdfe70",
+      "canonicalSha256": "3e143e9774bcc5934f2c05f77ed389eab5ec73071ca41819a1629a0a3e8c7370",
+      "items": 132,
+      "idAndHashMatch": true,
+      "requiredFieldsAndFourOptionsPass": true
+    }
+  ],
+  "corrections": [
+    "hygiene2 q001 objective: removed added5S mention so the objective follows its own source field without importing the stem.",
+    "hygiene2 q016 option1: expanded annual-once wording to a natural complete sentence.",
+    "hygiene2 q024 option1: expanded2023eight-item distractor to a natural complete sentence.",
+    "service1 fig004/q010 Chinese: explicit倒V字（∧形）, rather than an ambiguous genericV."
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false
+}

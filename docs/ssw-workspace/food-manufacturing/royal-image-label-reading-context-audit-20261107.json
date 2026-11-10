@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "baseCommit": "9499e592d5349545b5455fb6c5dbe40634e9f72f",
+  "scope": "Current image-label/caption reading provenance and context only; no ordinary prose,96-lesson runtime,exam or pixel audit",
+  "status": "bounded_semantic_reading_correction_self_reviewed_ready_for_persistence",
+  "input": {
+    "file": "src/data/food-manufacturing/royal-native-context-readings.json",
+    "beforeBlobSha": "088b17191af8c4660a6b49f13ad005f34129f51c",
+    "scopedImageLabelCaptionEntries": 317,
+    "distinctGeneratedOutputsReadThrough": 270,
+    "sourceRecordsBefore": 506,
+    "provenanceProfile": {
+      "canonicalTokenSources": 458,
+      "referenceContextSources": 48
+    },
+    "limits": "Existing token identity, lesson revision and concatenation alignment validate provenance structure, not whole-field semantic pronunciation. No317-field semantic coverage or native approval inferred."
+  },
+  "finding": {
+    "lessonId": "food-2-021",
+    "labelJa": "下限規格値",
+    "beforeReading": "かげんきかくあたい",
+    "cause": "A canonical partial term 下限規格 was joined with standalone numeric 値→あたい from another source context. Both token references and full text alignment passed, but the technical compound suffix is ち.",
+    "demonstratedWrongScopedFields": 1
+  },
+  "correction": {
+    "afterReading": "かげんきかくち",
+    "method": "One whole canonical technical-term token in this exact lesson/control-chart caption replaces the partial assembly.",
+    "canonicalFile": "src/data/food-manufacturing/source-closure47.json",
+    "canonicalFileBlobSha": "937df78052b6242c65df3c4575401d83d26e0698",
+    "canonicalSectionId": "food47-teaching",
+    "canonicalSectionSourceHash": "e24e5c3641362fa2d7c3ed88a5ae42ae28d97efa7a7dc4f3cfe174bafc62275d",
+    "canonicalPointer": "/sections/0/ruby/14",
+    "corroboratingPointer": "/checks/0/expectedPointsRuby/0/4",
+    "sameLessonSourceHash": "ade1274e1f97c56590f312f3131d51e3452b917fb7e8d399d093b9c7fd82b74f",
+    "semanticContext": "This source explicitly distinguishes product specification values from process control lines. 下限規格値 is the whole lower-specification-value term, not an arbitrary standalone numeric value.",
+    "newSourceId": "610155aa3e74a4e7"
+  },
+  "preservation": {
+    "otherScopedEntriesUnchanged": 316,
+    "allExisting506SourceRecordsPreserved": true,
+    "standaloneNumericValueReading": "値→あたい remains valid and unchanged in its existing numeric contexts",
+    "canonicalLessonProseAndTranslationsUnchanged": true,
+    "imagesAndFigureGeometryUnchanged": true,
+    "runtimeCoverageClosureSeparateAndUnchanged": true,
+    "globalSingleCharacterOverridesAdded": false
+  },
+  "auditDisposition": {
+    "otherDemonstratedWrongFieldsFound": 0,
+    "existingValidCanonicalPrimaryContextProofRetained": true,
+    "referenceUrlPresenceAloneIsNotWholeFieldProof": true,
+    "alignmentIsNotSemanticEvidence": true,
+    "noNewSemanticCoverageClaimForOtherAutoOutputs": true,
+    "unknownProvenanceBehavior": "Actual native label renderer falls back to plain Japanese text; does not guess a reading."
+  },
+  "validation": {
+    "script": "scripts/food-manufacturing/check-lower-specification-reading.cjs",
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules FOOD_QA_REPO_ROOT=/workspace/scratch/0d83607b09ec/food-private/census-runtime node scripts/food-manufacturing/check-lower-specification-reading.cjs",
+    "baseline": "FAIL semantic whole-term assertion: actualかげんきかくあたい while structural source/alignment guards pass",
+    "after": "PASS",
+    "actualExactControlKeyInlineZoomLocaleContexts": 26,
+    "targetFigureId": "food-source46-control-line-names",
+    "negativeCases": [
+      "Stale lesson revision returns no scoped ruby",
+      "Unknown whole-term source reference returns no scoped ruby and renders plain text",
+      "Standalone numeric 値→あたい remains unchanged"
+    ],
+    "scopeNote": "Only actual label text and its exact control-name key zoom across Japanese+12locale settings. No pixels,exam or full96 Reader run. Other control-pattern charts use LCL names and are not misclassified as specification-value labels.",
+    "diffCheck": "PASS scoped whitespace checks"
+  },
+  "acceptance": {
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false,
+    "globalSourceAcceptance": false,
+    "releaseReady": false
+  },
+  "beforeBlobSHAs": {
+    "src/data/food-manufacturing/royal-native-context-readings.json": "088b17191af8c4660a6b49f13ad005f34129f51c",
+    "scripts/food-manufacturing/check-lower-specification-reading.cjs": null,
+    "docs/ssw-workspace/food-manufacturing/royal-image-label-reading-context-audit-20261107.json": null
+  }
+}

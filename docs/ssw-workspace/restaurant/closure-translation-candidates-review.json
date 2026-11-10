@@ -1,0 +1,76 @@
+{
+  "nativeReviewed": false,
+  "scope": "Inspected aggregate Japanese-script runs across all kana candidates and English/Vietnamese full candidate values; structural classification across 12 locales, not native fluency acceptance.",
+  "locales": {
+    "bn": {
+      "kanaCandidateFields": 60,
+      "classification": "Japanese service-expression examples, culinary terminology, quoted index entries or explicitly discussed Japanese spellings; no blanket leakage defect inferred."
+    },
+    "en": {
+      "kanaCandidateFields": 22,
+      "classification": "Japanese service-expression examples, culinary terminology, quoted index entries or explicitly discussed Japanese spellings; no blanket leakage defect inferred."
+    },
+    "hi": {
+      "kanaCandidateFields": 60,
+      "classification": "Japanese service-expression examples, culinary terminology, quoted index entries or explicitly discussed Japanese spellings; no blanket leakage defect inferred."
+    },
+    "id": {
+      "kanaCandidateFields": 28,
+      "classification": "Japanese service-expression examples, culinary terminology, quoted index entries or explicitly discussed Japanese spellings; no blanket leakage defect inferred."
+    },
+    "km": {
+      "kanaCandidateFields": 31,
+      "classification": "Japanese service-expression examples, culinary terminology, quoted index entries or explicitly discussed Japanese spellings; no blanket leakage defect inferred."
+    },
+    "my": {
+      "kanaCandidateFields": 121,
+      "classification": "Japanese service-expression examples, culinary terminology, quoted index entries or explicitly discussed Japanese spellings; no blanket leakage defect inferred."
+    },
+    "ne": {
+      "kanaCandidateFields": 120,
+      "classification": "Japanese service-expression examples, culinary terminology, quoted index entries or explicitly discussed Japanese spellings; no blanket leakage defect inferred."
+    },
+    "th": {
+      "kanaCandidateFields": 29,
+      "classification": "Japanese service-expression examples, culinary terminology, quoted index entries or explicitly discussed Japanese spellings; no blanket leakage defect inferred."
+    },
+    "tl": {
+      "kanaCandidateFields": 28,
+      "classification": "Japanese service-expression examples, culinary terminology, quoted index entries or explicitly discussed Japanese spellings; no blanket leakage defect inferred."
+    },
+    "vi": {
+      "kanaCandidateFields": 22,
+      "classification": "Japanese service-expression examples, culinary terminology, quoted index entries or explicitly discussed Japanese spellings; no blanket leakage defect inferred."
+    },
+    "zh-CN": {
+      "kanaCandidateFields": 31,
+      "classification": "Japanese service-expression examples, culinary terminology, quoted index entries or explicitly discussed Japanese spellings; no blanket leakage defect inferred."
+    },
+    "zh-TW": {
+      "kanaCandidateFields": 31,
+      "classification": "Japanese service-expression examples, culinary terminology, quoted index entries or explicitly discussed Japanese spellings; no blanket leakage defect inferred."
+    }
+  },
+  "confirmedIssues": [
+    {
+      "locale": "zh-TW",
+      "id": "rst-1-q222",
+      "fields": [
+        "option1",
+        "option2",
+        "option3"
+      ],
+      "issue": "Quoted Japanese order-confirmation examples have 注文 converted to Chinese traditional 註文. Source Japanese quotations should preserve 注文.",
+      "corrections": {
+        "ご註文は以上でよろしいでしょうか": "ご注文は以上でよろしいでしょうか",
+        "註文は以上だったよね": "注文は以上だったよね",
+        "註文はもういいですよね": "注文はもういいですよね"
+      }
+    }
+  ],
+  "decision": "Kana presence predominantly intentional teaching content; do not delete or translate away Japanese contrast examples. Correct the three altered Japanese quotations.",
+  "limitations": [
+    "Non-Japanese target prose in all 12 languages was not comprehensively semantically reviewed.",
+    "Identical-source non-kana fields not individually adjudicated here."
+  ]
+}

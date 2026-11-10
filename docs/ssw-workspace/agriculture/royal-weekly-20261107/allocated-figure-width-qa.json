@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "unit": "allocated-width-normal-teaching-and-exam-figures",
+  "baselineCommit": "e1f27495368a16032ba7f0745e58edc6b09e3f36",
+  "problem": "Normal figure width used window width with a 180px floor, so nested or narrow study/exam panels could overflow even when the screen was wide.",
+  "change": "Measure actual allocated root width on layout and cap normal image geometry to that width while retaining original aspect ratio, masks and expanded horizontal scrolling.",
+  "newImages": 0,
+  "changedLessonProse": 0,
+  "changedQuestions": 0,
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/agriculture/check-figure-allocated-width.cjs",
+    "result": "PASS:126 normal geometry combinations across phone portrait/landscape, tablet and desktop, panel widths96–900, three real aspect ratios.",
+    "physicalDeviceTested": false,
+    "browserPixelsInspected": false,
+    "domainReviewed": false,
+    "nativeReviewed": false
+  },
+  "wholeWeekComplete": false,
+  "wholeSectorComplete": false,
+  "afterSha256": {
+    "src/components/agriculture/ZoomableFigure.tsx": "c59ab0638a893bddd6c11546a9c27c28770e514559ef583b0e9adad85a4de12d",
+    "scripts/agriculture/check-figure-allocated-width.cjs": "274673b3fe334ce5bc1c925f8cfb6b90ae8a383a558f3392bf28ef745647cdbc"
+  }
+}

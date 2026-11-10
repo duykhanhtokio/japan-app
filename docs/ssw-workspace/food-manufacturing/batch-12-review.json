@@ -1,0 +1,732 @@
+{
+  "status": "PASS",
+  "forms": [
+    "food-1-mock-04",
+    "food-2-mock-04"
+  ],
+  "newQuestionLocalePairs": 240,
+  "nativeReviewed": false,
+  "domainExpertReviewed": false,
+  "browserTested": false,
+  "locales": {
+    "zh-CN": {
+      "newPairs": 40,
+      "previousPairsPreserved": 279,
+      "totalPairs": 319,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "5b0113f4ef220cbd436ca733fda12e2e27bec462e2f9d5f5becb56a10cdd3b0a"
+    },
+    "zh-TW": {
+      "newPairs": 40,
+      "previousPairsPreserved": 279,
+      "totalPairs": 319,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "413b89d2807199b7405bb97ccafe7ca24c71f053c10da3cf8770d2ff9319aa9c"
+    },
+    "bn": {
+      "newPairs": 40,
+      "previousPairsPreserved": 279,
+      "totalPairs": 319,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "08fed8826852674060153c5a8a5b0ff869f3364c5b3b415e3bd5d40025632217"
+    },
+    "en": {
+      "newPairs": 40,
+      "previousPairsPreserved": 319,
+      "totalPairs": 359,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "8553eed6a0a844ef060a941f4144a0f4620d1a8e236b4b9634cb11ad7745fba9"
+    },
+    "vi": {
+      "newPairs": 40,
+      "previousPairsPreserved": 319,
+      "totalPairs": 359,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "135cbe3e976334a64478c0ccda48dc8a6ad42b6b5c449e2ef342201720015129"
+    },
+    "id": {
+      "newPairs": 40,
+      "previousPairsPreserved": 319,
+      "totalPairs": 359,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "cba46291dba8ebeef0214320273dc5b83ab7ec9766d30037088ae302a3811a84"
+    }
+  },
+  "totalQuestionLocalePairs": 3948,
+  "remainingQuestionLocalePairs": 6120,
+  "batch": "12",
+  "baselineCommit": "65cb9210dd1d2363dcf0e8d98566aed7dd5135bf",
+  "preservation": {
+    "priorQuestionLocalePairs": 3708,
+    "priorEntriesInChangedPacks": 1794,
+    "allPriorQuestionAndTitleEntriesPreserved": true,
+    "japaneseSourceBlob": "765a238f07158b5c125f240023fcdea5418d33c5",
+    "adapterBlob": "43e8e1cdee371cc37f5167e5fad20363ea832103",
+    "runtimeOrUIChanged": false
+  },
+  "numericAudit": {
+    "candidates": [
+      {
+        "locale": "en",
+        "id": "food-2-q343",
+        "field": "prompt",
+        "sourceNumbers": [
+          "0.05",
+          "1",
+          "25",
+          "400"
+        ],
+        "targetNumbers": [
+          "0.05",
+          "25",
+          "400"
+        ],
+        "source": "架空の標準は製品1kgに0.05人時です。本日、良品400kgに合計25人時を使いました。標準工数との差はどれですか。丸めは不要です。",
+        "target": "A hypothetical labor standard is 0.05 person-hours per kg of product. Today, 400 kg of conforming product took a total of 25 person-hours. What is the difference from standard labor input? No rounding is needed.",
+        "resolution": "Per kg is per1kg, preserving0.05 person-hours per unit;400kg and25person-hours unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q383",
+        "field": "prompt",
+        "sourceNumbers": [
+          "1000",
+          "800",
+          "800",
+          "960"
+        ],
+        "targetNumbers": [
+          "000",
+          "1",
+          "800",
+          "800",
+          "960"
+        ],
+        "source": "架空の同じ製品で前週は良品800kgに原料1000kg、今週は良品800kgに原料960kgを使いました。原料原単位の評価はどれですか。丸めは不要です。",
+        "target": "In a hypothetical example for the same product, last week 1,000 kg of raw material produced 800 kg of conforming product; this week 960 kg produced 800 kg. How should raw-material input per unit of output be evaluated? No rounding is needed.",
+        "resolution": "English1,000 is Japanese1000; raw-input numerator and800kg output denominator unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q383",
+        "field": "explanation",
+        "sourceNumbers": [
+          "1.20",
+          "1.25",
+          "1000",
+          "800",
+          "800",
+          "960"
+        ],
+        "targetNumbers": [
+          "000",
+          "1",
+          "1.20",
+          "1.25",
+          "800",
+          "800",
+          "960"
+        ],
+        "source": "1000÷800=1.25、960÷800=1.20kg/kgで、同量当たりの使用が減りました。",
+        "target": "1,000 ÷ 800 = 1.25 and 960 ÷ 800 = 1.20 kg/kg, so less raw material was used for the same output.",
+        "resolution": "English1,000 is Japanese1000; raw-input numerator and800kg output denominator unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q383",
+        "field": "reason0",
+        "sourceNumbers": [
+          "1.20",
+          "1.25",
+          "1000",
+          "800",
+          "800",
+          "960"
+        ],
+        "targetNumbers": [
+          "000",
+          "1",
+          "1.20",
+          "1.25",
+          "800",
+          "800",
+          "960"
+        ],
+        "source": "1000÷800=1.25、960÷800=1.20kg/kgで、同量当たりの使用が減りました。",
+        "target": "1,000 ÷ 800 = 1.25 and 960 ÷ 800 = 1.20 kg/kg, so less raw material was used for the same output.",
+        "resolution": "English1,000 is Japanese1000; raw-input numerator and800kg output denominator unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q343",
+        "field": "prompt",
+        "sourceNumbers": [
+          "0.05",
+          "1",
+          "25",
+          "400"
+        ],
+        "targetNumbers": [
+          "0",
+          "05",
+          "1",
+          "25",
+          "400"
+        ],
+        "source": "架空の標準は製品1kgに0.05人時です。本日、良品400kgに合計25人時を使いました。標準工数との差はどれですか。丸めは不要です。",
+        "target": "Định mức giả định là 0,05 giờ công cho 1 kg sản phẩm. Hôm nay dùng tổng cộng 25 giờ công để làm 400 kg sản phẩm đạt. Chênh lệch so với giờ công tiêu chuẩn là bao nhiêu? Không cần làm tròn.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q343",
+        "field": "explanation",
+        "sourceNumbers": [
+          "0.05",
+          "20",
+          "25",
+          "400",
+          "5"
+        ],
+        "targetNumbers": [
+          "0",
+          "05",
+          "20",
+          "25",
+          "400",
+          "5"
+        ],
+        "source": "標準は400×0.05=20人時。実績25人時との差は5人時超過です。",
+        "target": "Giờ công tiêu chuẩn là 400 × 0,05 = 20 giờ công. Thực tế là 25 giờ công, tức vượt 5 giờ công.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q343",
+        "field": "reason0",
+        "sourceNumbers": [
+          "0.05",
+          "20",
+          "25",
+          "400",
+          "5"
+        ],
+        "targetNumbers": [
+          "0",
+          "05",
+          "20",
+          "25",
+          "400",
+          "5"
+        ],
+        "source": "標準は400×0.05=20人時。実績25人時との差は5人時超過です。",
+        "target": "Giờ công tiêu chuẩn là 400 × 0,05 = 20 giờ công. Thực tế là 25 giờ công, tức vượt 5 giờ công.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q343",
+        "field": "reason3",
+        "sourceNumbers": [
+          "0.05",
+          "400"
+        ],
+        "targetNumbers": [
+          "0",
+          "05",
+          "400"
+        ],
+        "source": "400kgを0.05人時/kgで割る計算では標準工数になりません。",
+        "target": "Lấy 400 kg chia cho 0,05 giờ công/kg không cho ra giờ công tiêu chuẩn.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q383",
+        "field": "explanation",
+        "sourceNumbers": [
+          "1.20",
+          "1.25",
+          "1000",
+          "800",
+          "800",
+          "960"
+        ],
+        "targetNumbers": [
+          "1",
+          "1",
+          "1000",
+          "20",
+          "25",
+          "800",
+          "800",
+          "960"
+        ],
+        "source": "1000÷800=1.25、960÷800=1.20kg/kgで、同量当たりの使用が減りました。",
+        "target": "1000 ÷ 800 = 1,25 và 960 ÷ 800 = 1,20 kg/kg, nên lượng nguyên liệu dùng cho cùng một lượng sản phẩm đã giảm.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q383",
+        "field": "option0",
+        "sourceNumbers": [
+          "1.20",
+          "1.25"
+        ],
+        "targetNumbers": [
+          "1",
+          "1",
+          "20",
+          "25"
+        ],
+        "source": "1.25kg/kgから1.20kg/kgへ下がった。",
+        "target": "Giảm từ 1,25 kg/kg xuống 1,20 kg/kg.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q383",
+        "field": "option2",
+        "sourceNumbers": [
+          "0.80",
+          "0.833"
+        ],
+        "targetNumbers": [
+          "0",
+          "0",
+          "80",
+          "833"
+        ],
+        "source": "0.80kg/kgから0.833kg/kgなので原料使用が増えた。",
+        "target": "Từ 0,80 kg/kg thành 0,833 kg/kg nên lượng nguyên liệu sử dụng tăng.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q383",
+        "field": "option3",
+        "sourceNumbers": [
+          "1.20",
+          "1.25"
+        ],
+        "targetNumbers": [
+          "1",
+          "1",
+          "20",
+          "25"
+        ],
+        "source": "1.25kg/kgから1.20kg/kgへ上がった。",
+        "target": "Tăng từ 1,25 kg/kg lên 1,20 kg/kg.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q383",
+        "field": "reason0",
+        "sourceNumbers": [
+          "1.20",
+          "1.25",
+          "1000",
+          "800",
+          "800",
+          "960"
+        ],
+        "targetNumbers": [
+          "1",
+          "1",
+          "1000",
+          "20",
+          "25",
+          "800",
+          "800",
+          "960"
+        ],
+        "source": "1000÷800=1.25、960÷800=1.20kg/kgで、同量当たりの使用が減りました。",
+        "target": "1000 ÷ 800 = 1,25 và 960 ÷ 800 = 1,20 kg/kg, nên lượng nguyên liệu dùng cho cùng một lượng sản phẩm đã giảm.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q383",
+        "field": "reason3",
+        "sourceNumbers": [
+          "1.20",
+          "1.25"
+        ],
+        "targetNumbers": [
+          "1",
+          "1",
+          "20",
+          "25"
+        ],
+        "source": "1.20は1.25より小さくなっています。",
+        "target": "1,20 nhỏ hơn 1,25.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q343",
+        "field": "prompt",
+        "sourceNumbers": [
+          "0.05",
+          "1",
+          "25",
+          "400"
+        ],
+        "targetNumbers": [
+          "0",
+          "05",
+          "1",
+          "25",
+          "400"
+        ],
+        "source": "架空の標準は製品1kgに0.05人時です。本日、良品400kgに合計25人時を使いました。標準工数との差はどれですか。丸めは不要です。",
+        "target": "Standar hipotetis adalah 0,05 jam-orang per 1 kg produk. Hari ini, total 25 jam-orang digunakan untuk menghasilkan 400 kg produk baik. Berapa selisihnya dari jam-orang standar? Tidak perlu pembulatan.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q343",
+        "field": "explanation",
+        "sourceNumbers": [
+          "0.05",
+          "20",
+          "25",
+          "400",
+          "5"
+        ],
+        "targetNumbers": [
+          "0",
+          "05",
+          "20",
+          "25",
+          "400",
+          "5"
+        ],
+        "source": "標準は400×0.05=20人時。実績25人時との差は5人時超過です。",
+        "target": "Standarnya adalah 400 × 0,05 = 20 jam-orang. Aktual 25 jam-orang berarti kelebihan 5 jam-orang.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q343",
+        "field": "reason0",
+        "sourceNumbers": [
+          "0.05",
+          "20",
+          "25",
+          "400",
+          "5"
+        ],
+        "targetNumbers": [
+          "0",
+          "05",
+          "20",
+          "25",
+          "400",
+          "5"
+        ],
+        "source": "標準は400×0.05=20人時。実績25人時との差は5人時超過です。",
+        "target": "Standarnya adalah 400 × 0,05 = 20 jam-orang. Aktual 25 jam-orang berarti kelebihan 5 jam-orang.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q343",
+        "field": "reason3",
+        "sourceNumbers": [
+          "0.05",
+          "400"
+        ],
+        "targetNumbers": [
+          "0",
+          "05",
+          "400"
+        ],
+        "source": "400kgを0.05人時/kgで割る計算では標準工数になりません。",
+        "target": "Membagi 400 kg dengan 0,05 jam-orang/kg tidak menghasilkan jam-orang standar.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q383",
+        "field": "prompt",
+        "sourceNumbers": [
+          "1000",
+          "800",
+          "800",
+          "960"
+        ],
+        "targetNumbers": [
+          "1.000",
+          "800",
+          "800",
+          "960"
+        ],
+        "source": "架空の同じ製品で前週は良品800kgに原料1000kg、今週は良品800kgに原料960kgを使いました。原料原単位の評価はどれですか。丸めは不要です。",
+        "target": "Untuk produk yang sama dalam contoh hipotetis, minggu lalu digunakan 1.000 kg bahan baku untuk 800 kg produk baik, sedangkan minggu ini digunakan 960 kg bahan baku untuk 800 kg produk baik. Bagaimana penilaian konsumsi bahan baku per satuan produk? Tidak perlu pembulatan.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q383",
+        "field": "explanation",
+        "sourceNumbers": [
+          "1.20",
+          "1.25",
+          "1000",
+          "800",
+          "800",
+          "960"
+        ],
+        "targetNumbers": [
+          "1",
+          "1",
+          "1.000",
+          "20",
+          "25",
+          "800",
+          "800",
+          "960"
+        ],
+        "source": "1000÷800=1.25、960÷800=1.20kg/kgで、同量当たりの使用が減りました。",
+        "target": "1.000 ÷ 800 = 1,25 dan 960 ÷ 800 = 1,20 kg/kg, sehingga penggunaan bahan untuk jumlah produk yang sama berkurang.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q383",
+        "field": "option0",
+        "sourceNumbers": [
+          "1.20",
+          "1.25"
+        ],
+        "targetNumbers": [
+          "1",
+          "1",
+          "20",
+          "25"
+        ],
+        "source": "1.25kg/kgから1.20kg/kgへ下がった。",
+        "target": "Turun dari 1,25 kg/kg menjadi 1,20 kg/kg.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q383",
+        "field": "option2",
+        "sourceNumbers": [
+          "0.80",
+          "0.833"
+        ],
+        "targetNumbers": [
+          "0",
+          "0",
+          "80",
+          "833"
+        ],
+        "source": "0.80kg/kgから0.833kg/kgなので原料使用が増えた。",
+        "target": "Penggunaan bahan meningkat karena berubah dari 0,80 kg/kg menjadi 0,833 kg/kg.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q383",
+        "field": "option3",
+        "sourceNumbers": [
+          "1.20",
+          "1.25"
+        ],
+        "targetNumbers": [
+          "1",
+          "1",
+          "20",
+          "25"
+        ],
+        "source": "1.25kg/kgから1.20kg/kgへ上がった。",
+        "target": "Naik dari 1,25 kg/kg menjadi 1,20 kg/kg.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q383",
+        "field": "reason0",
+        "sourceNumbers": [
+          "1.20",
+          "1.25",
+          "1000",
+          "800",
+          "800",
+          "960"
+        ],
+        "targetNumbers": [
+          "1",
+          "1",
+          "1.000",
+          "20",
+          "25",
+          "800",
+          "800",
+          "960"
+        ],
+        "source": "1000÷800=1.25、960÷800=1.20kg/kgで、同量当たりの使用が減りました。",
+        "target": "1.000 ÷ 800 = 1,25 dan 960 ÷ 800 = 1,20 kg/kg, sehingga penggunaan bahan untuk jumlah produk yang sama berkurang.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q383",
+        "field": "reason3",
+        "sourceNumbers": [
+          "1.20",
+          "1.25"
+        ],
+        "targetNumbers": [
+          "1",
+          "1",
+          "20",
+          "25"
+        ],
+        "source": "1.20は1.25より小さくなっています。",
+        "target": "1,20 lebih kecil daripada 1,25.",
+        "resolution": "Locale decimal commas preserve0.05/1.25/1.20/0.80/0.833 as applicable; Indonesian1.000 denotes1000kg, not1kg. Numeric bases/units and distractor logic preserved.",
+        "status": "ai_reviewed_equivalent"
+      }
+    ],
+    "pendingSemanticCandidates": 0
+  },
+  "calculationReferences": [
+    {
+      "id": "food-1-q223",
+      "formula": "68-23",
+      "result": 45,
+      "unit": "degrees Celsius temperature difference",
+      "scope": "training only, not actual product approval"
+    },
+    {
+      "id": "food-2-q347",
+      "formula": "360-15-30",
+      "result": 315,
+      "unit": "minutes actual operating time"
+    },
+    {
+      "id": "food-2-q343",
+      "formula": "400*0.05=20;25-20=5",
+      "result": {
+        "standard": 20,
+        "excess": 5
+      },
+      "unit": "person-hours"
+    },
+    {
+      "id": "food-2-q383",
+      "formula": "1000/800=1.25;960/800=1.20",
+      "result": {
+        "before": 1.25,
+        "after": 1.2,
+        "direction": "decreased"
+      },
+      "unit": "kg raw material/kg good output"
+    }
+  ],
+  "aiPeerReview": {
+    "scope": "12 critical items independently reviewed per locale:72 unique locale-question units; AI only,not native/domain certification",
+    "pairs": [
+      [
+        "zh-CN",
+        "zh-TW"
+      ],
+      [
+        "bn",
+        "vi"
+      ],
+      [
+        "en",
+        "id"
+      ]
+    ],
+    "source1CriticalIds": [
+      "food-1-q138",
+      "food-1-q364",
+      "food-1-q223",
+      "food-1-q382",
+      "food-1-q391",
+      "food-1-q206",
+      "food-1-q211",
+      "food-1-q334",
+      "food-1-q272",
+      "food-1-q351",
+      "food-1-q335",
+      "food-1-q349"
+    ],
+    "source2CriticalIds": [
+      "food-2-q347",
+      "food-2-q343",
+      "food-2-q383",
+      "food-2-q342",
+      "food-2-q264",
+      "food-2-q298",
+      "food-2-q187",
+      "food-2-q089",
+      "food-2-q222",
+      "food-2-q184",
+      "food-2-q394",
+      "food-2-q146"
+    ],
+    "precisionCorrection": "BN q223 removed added integer-rounding qualifier; Japanese says no rounding needed.",
+    "nativeSpeakerReviewed": false,
+    "domainExpertReviewed": false
+  },
+  "browserEvidence": {
+    "baselinePairs": 2468,
+    "baselineResponsiveCases": 9872,
+    "pendingPairsSinceBaseline": 1480,
+    "browserTestedThisBatch": false,
+    "nativeDeviceTested": false,
+    "fullExpoBuildTested": false
+  },
+  "nextAction": "Translate food-2-mock-04 into tl,th,my,km,hi,ne,zh-CN,zh-TW,bn (360pairs)."
+}

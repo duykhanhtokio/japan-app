@@ -709,3 +709,52 @@ Resolved known N1 02 opening第一回→第二回 using speaker118/speed0.9. Ver
 ## 2026-10-10 — original-only illustration repair after publisher screenshot
 
 All30forms remain integrated/3018responses. Audited84images; independently regenerated6N5 practice/scored pairs, clearer separate borders/gutter, retainedleft/rightaudio semantics. Original-only aspect-ratio wrapper fixes intrinsic-heightcontain spacing;top10px/bottom16px,N5practice/scoredlabels. All30masters/answers/sessionkeys/scripts/audio untouched. AssethashesPASS;RN-web productionQuestionBlock30forms×390/430/768widths,252imagegeometrychecksPASS,4phone screenshots inspected. NativeSimulator not checked. FullTypeScript only pre-existing life-content-repository.tsTS2352. Narrow authorizedUIrunnerchange relocked in JLPT_ORIGINAL_IMAGE_LAYOUT_2026-10-10.md;other9locks unchanged. Evidence in image-layout-repair-2026-10-10. Require publication/fetch/WORK PERSISTENCE PASS before claiming durable.
+
+
+## 2026-10-31 — publisher-requested shorter opening on 30 originals
+
+All30 original forms have the supplied short opening, two sound-check lines, independently synthesized two-note bell and supplied problem1 instructions with actual counts N5/N4/N3/N2/N1=7/8/6/5/6. Question1 follows directly without the old first example/answer explanation; first-example UI instruction omitted. Later examples/orientations, all3018scored responses/keys/passages/IDs/sessionkeys, per-story assets, approved voices/pacing and exact60second music remain. Full recordings reassembled from a new ~50second prefix plus waveform-aligned original scored tail, preserved before same-bitrate re-encoding; all full outputs decoded/frame-count verified. Timelines/master/audio hashes updated; total-duration reduction intentional, no padding. All30 production adapters executed ready and10UIlocks PASS. Original-only change; historical real exams/assets unchanged. Details and measured per-form results: original/short-opening-2026-10-31/README.md and report.json. Native device/full-router/perceptual/native-language approval not performed; review flags remainfalse. This entry is included with the implementation for remote persistence verification.
+
+## 2026-11-03 — all 30 originals need prosody rework after publisher feedback
+
+Publisher explicitly reports unnatural AI delivery/speed/pauses and requests adjustment across all 30 independently authored forms. Prepared input-bound queue for 30 forms/882 listening responses, candidate-only per-level/narration/dialogue profile, shared AudioQuery/cache/boundary helper and both renderer families. Seven technical test groups and UI lock10/10 PASS. Earlier selected voices, text/keys/IDs, answer windows and exact60000ms rest remain. New speed/intonation/boundary values are AI-proposed/unheard, not publisher/native/perceptual approval. Runtime original and historical audio/master/manifests unchanged:0/30 newly rendered and0/30 newly installed. Local executable/ports50021/50128 unavailable; ffmpeg exists. Continue real synthesis on an engine-capable production host, then actual listening and revision-consistent integration. Details: docs/checkpoints/JLPT_PROSODY_REWORK_20261103.vi.md; queue: docs/checkpoints/jlpt-prosody-20261103/work-queue.json. Do not claim the audio quality issue is resolved from code or test counts.
+
+## 2026-11-03 — engine available; real prosody synthesis started
+
+Resolved earlier engine blocker using the official VOICEVOX0.25.2 CPU release (archive SHA256 bab016a966131b89bad398e7b898f8c742617dc80a7da49bf494cd07133dbc7a). All four approved speaker IDs verified; real 11008ms preflight WAV synthesized/decoded. Four-job run encountered local engine disconnects; no inferred OOM certification. Added pause-boundary inference parts preserving full-query mora/accent, atomic cache writes, bounded parallel render jobs, engine RSS/HWM logs and all-30 integration validator/rollback installer. Nine focused technical tests PASS. Actual rendering in candidate tree, no completed-form or installed-audio claim in this checkpoint; canonical audio/master/manifests remain unchanged. Human/native/perceptual acceptance false. Continue actual synthesis, validation, installation and remote verification; code progress alone does not resolve publisher quality complaint.
+
+## 2026-11-03 — first two complete real prosody candidates
+
+N5 01 and02 fully re-synthesized using approved four voices;24/24 scored responses each. Actual decoded lengths1723416ms and1652069ms; full decoded timeline/hash/turn text/roles/options/answer windows/exact60000ms break PASS. Candidate MP3s/manifests and completed-only snapshot persist separately; no installed audio or canonical master/manifest changes. Other28 forms continue; human/native/perceptual flagsfalse. Do not call app audio revised until all30 installation and remote verification.
+
+## 2026-11-03 — further complete prosody recordings
+
+jpapp-n5-original-03-v1, jpapp-n5-original-04-v1: complete real synthesis and decoded audio validation. 4/30 candidates complete; 0/30 newly installed. Preserve all text/keys/voices/answer windows/exact60000ms break. Human/native/perceptual approval false. Publication requires remote verification.
+
+## 2026-11-03 — further complete prosody recordings
+
+jpapp-n5-original-05-v1, jpapp-n5-original-06-v1: complete real synthesis and decoded audio validation. 6/30 candidates complete; 0/30 newly installed. Preserve all text/keys/voices/answer windows/exact60000ms break. Human/native/perceptual approval false. Publication requires remote verification.
+
+## 2026-11-03 — further complete prosody recordings
+
+jpapp-n4-original-01-v1, jpapp-n4-original-02-v1: complete real synthesis and decoded audio validation. 8/30 candidates complete; 0/30 newly installed. Preserve all text/keys/voices/answer windows/exact60000ms break. Human/native/perceptual approval false. Publication requires remote verification.
+
+## 2026-11-03 — further complete prosody recordings
+
+jpapp-n4-original-03-v1, jpapp-n4-original-04-v1: complete real synthesis and decoded audio validation. 10/30 candidates complete; 0/30 newly installed. Preserve all text/keys/voices/answer windows/exact60000ms break. Human/native/perceptual approval false. Publication requires remote verification.
+
+## 2026-11-03 — further complete prosody recordings
+
+jpapp-n4-original-03-v1, jpapp-n4-original-04-v1: complete real synthesis and decoded audio validation. 10/30 candidates complete; 0/30 newly installed. Preserve all text/keys/voices/answer windows/exact60000ms break. Human/native/perceptual approval false. Publication requires remote verification.
+
+## 2026-11-03 — N4 06 direct synthesis completed
+
+N4 06 independently completed actual synthesis:28/28 responses,1941476ms decoded PCM,approved voices/scripts/choice order/response windows and60000ms music verified.11/30 complete candidates;0/30 installed. Direct receipt:n4-06-direct-run.json; original live batch may still list this form rendering until its own completion. Human/native/perceptual reviewfalse. Preserve ongoing N4 05 and other work.
+
+## 2026-11-03 — correct pedagogical-space pauses before installation
+
+Actual0.25.2/speaker118 AudioQuery probe: first N5 situation has13 accent phrases in both inputs, but10 pause moras with written layout spaces versus2 without; mora text sequence unchanged. Initial candidates accidentally retained spaces unlike the approved legacy renderer. Eleven preserved trials remain historical/uninstalled, not current-valid replacement audio. Restore ASCII-space normalization for engine input only; keep all written text. Bind changed effective input in WAV cache key, reuse truly unchanged queries, verify exact engine/four voice styles, reject old unnormalized candidates, retain validated-resume behavior, and lock the progress report against concurrent producers. Fourteen focused tests/UI10/10 PASS. New complete30 run uses20261103-normalized-v2 and the existing safely keyed turn cache. App audio/master/manifests unchanged; native/human/perceptual flagsfalse. Do not publish old count11 as completed normalized replacements.
+
+## 2026-11-03 — serialize production engines; preserve valid recordings
+
+N3 local engine disconnects prompted one render job/four CPU threads; no unproven OOM claim. Shared engine-slot lock covers batch and direct commands, report lock covers inventory writes too, and owned child shutdown escalates to kill after bounded termination.15 focused tests pass. Existing12 normalized recordings remain valid candidates; no app audio installed. Keep approved voices/profile/content/answers/session identities and exact60s rest. Continue remaining forms, then revision-consistent integration and remote verification.

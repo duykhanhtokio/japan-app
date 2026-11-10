@@ -1,0 +1,40 @@
+{
+  "node": "v24.22.1",
+  "command": "node closure-runtime-run.cjs",
+  "checks": [
+    {
+      "check": "state",
+      "output": [
+        "{\"status\":\"PASS\",\"cases\":[\"learner and level key isolation\",\"content revision exam isolation\",\"strict corrupt progress handling\",\"resume reader scroll position\",\"completion source revision invalidation\",\"invalid position rejection\",\"exam answer and position resume\",\"exam revision invalidation\",\"out-of-range answer rejection\",\"grading unanswered\"],\"nativeDeviceTested\":false}"
+      ],
+      "method": "Original assertions; Node stripTypeScriptTypes in-memory transpilation adapter; report writes suppressed"
+    },
+    {
+      "check": "loading",
+      "output": [
+        "{\"status\":\"PASS\",\"cases\":[\"current question translation accepted and stale revision rejected\",\"unsupported question language has no unrelated fallback\",\"localized counts with named placeholders\",\"missing interpolation values remain explicit\",\"no eager lesson/exam/translation evaluation\",\"selected level only\",\"selected locale only\",\"stale translation rejected\",\"no unrelated fallback language\",\"exam bank loads only when requested\",\"current glossary translation accepted\",\"stale glossary definition rejected\",\"missing glossary translation explicit\"],\"timingBenchmarkPerformed\":false}"
+      ],
+      "method": "Original assertions; Node stripTypeScriptTypes in-memory transpilation adapter; report writes suppressed"
+    }
+  ],
+  "dependencies": {
+    "esbuild": false,
+    "react": false,
+    "reactDom": false,
+    "reactNativeWeb": false,
+    "expo": false,
+    "playwright": true,
+    "typescript": false
+  },
+  "browser": {
+    "executed": false,
+    "reason": "esbuild/react/react-dom/react-native-web unavailable; cached Chromium absent; /tmp/chromium zero bytes; QA script fonts absent"
+  },
+  "productionExpoTested": false,
+  "nativeDeviceTested": false,
+  "limitations": [
+    "Node transpilation adapter validates source assertions, not esbuild bundling",
+    "No production Expo build or native/device validation",
+    "No installation or repository edits; disk reports 100% full"
+  ]
+}

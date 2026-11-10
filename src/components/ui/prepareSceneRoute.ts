@@ -1,8 +1,10 @@
+import { isLockedGameRoute } from '@/config/release-features';
 import { Dimensions, type ImageSourcePropType } from 'react-native';
 import { japanAssets, regionMaps, type RegionMapId } from '@/data/world-map-config';
 import { prepareArtwork, isArtworkSource, type ArtworkSource } from './prepareArtwork';
 import { COMMON_UI_ARTWORK } from './common-artwork';
 import { HOME_ARTWORK } from './home-artwork';
+import { TOKUTEI_ARTWORK } from './tokutei-artwork';
 import { router } from 'expo-router';
 import { previousRoutePath, type NavigationState } from './navigation-path';
 
@@ -12,8 +14,9 @@ export const preparedRouteBackdrop = (path: string) => routeBackdrops.get(path);
 
 export async function prepareSceneRoute(path: string) {
   path = path.split(/[?#]/)[0].replace(/\/$/, '') || '/';
+  if (isLockedGameRoute(path)) return prepareSceneRoute('/tasks');
   // Warm the visible shared controls, never the transitive inventory of other screens.
-  const routeImages = path === '/home' ? HOME_ARTWORK : COMMON_UI_ARTWORK;
+  const routeImages = path === '/home' ? HOME_ARTWORK : /^\/specified-skills(?:\/|$)/.test(path) ? TOKUTEI_ARTWORK : COMMON_UI_ARTWORK;
   const additional: ArtworkSource[] = [];
   const { width, height } = Dimensions.get('window');
   const ratio = height ? width / height : .46;
@@ -112,7 +115,14 @@ export function navigateWithPreparedArtwork(path: string, navigate: () => void, 
       resolve();
     }, 180);
   })]);
-  return Promise.all([boundedArtwork, Promise.resolve().then(() => prepareState?.())]).then(() => {
+  const requiredState = Promise.resolve().then(async () => {
+    if (/^\/(N[1-5])\/test\/?(?:[?#].*)?$/.test(path)) {
+      const { prepareOriginalJlptAudioForRoute } = require('@/services/jlpt-original-audio-preparation') as typeof import('@/services/jlpt-original-audio-preparation');
+      await prepareOriginalJlptAudioForRoute(path);
+    }
+    return prepareState?.();
+  });
+  return Promise.all([boundedArtwork, requiredState]).then(() => {
     if (intent !== navigationIntent) return false;
     navigate();
     return true;

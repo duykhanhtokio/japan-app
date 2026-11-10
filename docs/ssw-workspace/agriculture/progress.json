@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "in_progress",
+  "status": "final10_editorial_source_decisions_implemented_no_tracked_holds",
   "sources": {
     "documents": 2,
     "pagesInventoried": 237,
@@ -36,17 +36,26 @@
       "baselineHeldOccurrencesUnchanged": 301,
       "uniqueKnowledgeDenominator": null,
       "coveragePercent": null
+    },
+    "completion40Overlay": {
+      "file": "completion-40/source-reconciliation.json",
+      "baselineOccurrences": 1405,
+      "candidateCovered": 1342,
+      "genuineSourceHolds": 55,
+      "excluded": 8,
+      "routingProblemsAwaitingFinalIntake": 11,
+      "coveragePercent": null
     }
   },
   "authored": {
-    "japaneseLessons": 203,
-    "learningUnits": 1225,
+    "japaneseLessons": 241,
+    "learningUnits": 1363,
     "weeklyQuestions": 427,
-    "mockForms": 4,
-    "mockQuestions": 160,
+    "mockForms": 20,
+    "mockQuestions": 800,
     "conceptDiagrams": 13,
     "recognitionIllustrations": 59,
-    "registeredRasterFigures": 65,
+    "registeredRasterFigures": 186,
     "symptomStateIllustrations": 8
   },
   "translations": {
@@ -64,7 +73,7 @@
       "km",
       "tl"
     ],
-    "completedLessonLocalePairs": 2436,
+    "completedLessonLocalePairs": 2892,
     "japaneseLessonsWithAll12Drafts": [
       "agr-rice",
       "agr-vegetables",
@@ -268,7 +277,45 @@
       "agr-f40-rice-calendar",
       "agr-f40-facility-fruit-observation",
       "agr-f40-flower-examples",
-      "agr-f40-flower-terms"
+      "agr-f40-flower-terms",
+      "agr-f40-general-nursery-examples",
+      "agr-f40-general-transplant-alias",
+      "agr-f40-general-light-scope-comparison",
+      "agr-f40-soil-common-reading",
+      "agr-f40-safety-s1-practical-details",
+      "agr-f40-rice-source1-supplement",
+      "agr-f40-facility-environment-equipment",
+      "agr-f40-facility-level1-supplement",
+      "agr-f40-flower-add-orchard-base",
+      "agr-f40-flower-add-terms-photo1",
+      "agr-f40-flower-add-machine-extension2",
+      "agr-f40-flower-source1-reading",
+      "agr-f40-flower-undated-percentages",
+      "agr-f40-flower-source-scope-comparison",
+      "agr-f40-flower-weather-source-list",
+      "agr-f40-flower-table-scope",
+      "agr-f40-flower-family-label-correction",
+      "agr-f40-flower-terminology-corrections",
+      "agr-f40-flower-gibberellin-source-scope",
+      "agr-f40-flower-sleeve-printing",
+      "agr-f40-general-qualified-variety-share",
+      "agr-f40-general-historical-statistic-scopes",
+      "agr-f40-general-variety-rights-check",
+      "agr-f40-soil-source-comparisons",
+      "agr-f40-rice-vegetable-details-2",
+      "agr-f40-rice-source-comparison",
+      "agr-f40-rice-source1-final",
+      "agr-f40-facility-fruit-source-reading",
+      "agr-f40-facility-fruit-bud-options2",
+      "agr-f40-facility-fruit-pruning-source1",
+      "agr-f40-fgs-source1-equipment",
+      "agr-f40-fgs-flower-source-period",
+      "agr-f40-fgs-flower-source-examples",
+      "agr-f40-fgs-structure-material-conditions",
+      "agr-f40-fgs-hydroponic-claim-scope",
+      "agr-f40-fgs-source-corrections",
+      "agr-f40-rice-water-weed-conditions",
+      "agr-s1-vegetable-quality-improvements"
     ],
     "remainingAuthoredLessonLocalePairs": 0,
     "complete": false,
@@ -280,7 +327,9 @@
       "appliedFieldPatches": 79,
       "nativeReviewed": false,
       "domainReviewed": false
-    }
+    },
+    "authoredLessonLocalePairs": 2892,
+    "latestSelfCheck": "session-20261031/translations/all-locale-qa.json"
   },
   "requestedTargets": {
     "mockFormsPerLevel": 10,
@@ -290,82 +339,13 @@
     "curriculumWeeksFinalized": false
   },
   "next": {
-    "source1PrintedPage": 1,
-    "source1PdfPage": 7,
-    "source2PrintedPage": 13,
-    "source2PdfPage": 15,
-    "chapter": "未処理の資料知識・表と図・認識画像・模擬問題",
+    "chapter": "外部受入確認",
+    "sourceReview": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/source-coverage-review.json",
+    "resumePriority": "Preserve all55 source decisions and20forms/800questions. Do not treat excluded numeric claims as verified facts.",
     "alsoPending": [
-      "All48historical end-caption rows already link50original raster assets; inline equipment/facility/state recognition details remain unfinished. No photographic/diagnostic/product certification.",
-      "Continue candidate1104missing-or-partial source occurrences plus301baseline holds through overlays11/12/22; these are not a unique knowledge denominator.",
-      "All195currently authored lessons have12direct AI-draft locales (2340pairs); native/domain review remains open.",
-      "Verify a distinct source-bound assessment matrix before800newmockquestions; do not relabel weekly questions or pad with plant-name substitutions.",
-      "Actual native/build/artwork/fonts/device tests and measured daily study duration remain open.",
-      "Resolve current product/registration/legal conditions only for affected local holds using authoritative evidence."
+      "Native/domain/physical-device/production Expo acceptance remains unclaimed."
     ],
-    "resumePriority": "Completion40phase1:203lessons/2436directAI-draftpairs/1225units/65rasters/427weekly/4forms160mocks. Eight source-bound lessons and three figures integrated; same-session source reconciliation, short supplements, imagery and distinct-question allocation continue. Original1104missing/partial+301holds remain baseline reference pending exhaustive active overlay; do not infer coveragepercent or800capacity. Sharedfertilizerlesson now available2号, prior1号progress and quizrevisions preserved via explicitsemantic-equivalenthash.",
-    "firstMissingSourceItems": [
-      {
-        "id": "AGR-A10-GENERAL-0015",
-        "documentId": "AGR-S1",
-        "pdfPage": 7,
-        "printedPage": 1,
-        "objectiveJa": "インディカ玄米の掲載写真に対応する独立した識別素材と見分ける手掛かりを整える。",
-        "scopeLevels": [
-          "1"
-        ]
-      },
-      {
-        "id": "AGR-A10-GENERAL-0016",
-        "documentId": "AGR-S1",
-        "pdfPage": 7,
-        "printedPage": 1,
-        "objectiveJa": "ジャポニカ玄米の掲載写真に対応する独立した識別素材と見分ける手掛かりを整える。",
-        "scopeLevels": [
-          "1"
-        ]
-      },
-      {
-        "id": "AGR-A10-GENERAL-0025",
-        "documentId": "AGR-S1",
-        "pdfPage": 7,
-        "printedPage": 1,
-        "objectiveJa": "品種と栽培技術の改良を野菜品質の改善に結び付けて説明する。",
-        "scopeLevels": [
-          "1"
-        ]
-      },
-      {
-        "id": "AGR-A10-GENERAL-0036",
-        "documentId": "AGR-S1",
-        "pdfPage": 8,
-        "printedPage": 2,
-        "objectiveJa": "図中の頂芽と側芽の両ラベルを、先端と葉腋の位置に対応させる。",
-        "scopeLevels": [
-          "1"
-        ]
-      },
-      {
-        "id": "AGR-A10-GENERAL-0037",
-        "documentId": "AGR-S1",
-        "pdfPage": 8,
-        "printedPage": 2,
-        "objectiveJa": "葉・茎・根・花・果実・頂芽・側芽の模式図の新しい位置当て教材を作る。",
-        "scopeLevels": [
-          "1"
-        ]
-      },
-      {
-        "id": "AGR-A10-GENERAL-0040",
-        "documentId": "AGR-S1",
-        "pdfPage": 8,
-        "printedPage": 2,
-        "objectiveJa": "1号の光強度の説明を光飽和点のある2号説明と区別する。",
-        "scopeLevels": [
-          "1"
-        ]
-      }
-    ]
+    "firstMissingSourceItems": []
   },
   "ui": {
     "developmentRoute": "/specified-skills/agriculture",
@@ -422,6 +402,49 @@
   },
   "latestFigureBatch": "tools-33/manifest.json",
   "latestFigureSourceLinkReview": "material-source2-20261026.json",
-  "latestAssessmentCandidateReview": "mock-35/manifest.json",
-  "latestWeeklyBatch": "weekly-39/manifest.json"
+  "latestAssessmentCandidateReview": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/assessment-review-current.json",
+  "latestWeeklyBatch": "weekly-39/manifest.json",
+  "completion40": {
+    "status": "all55_editorial_source_decisions_applied",
+    "readerQA": "completion-40/reader-qa.json",
+    "newLessonsSince195": 45,
+    "newRastersSince62": 124,
+    "currentQuestionCandidatePoolNotAdopted": 499,
+    "requiredSafetyManagementSupplement": "additional-source-inventory.json",
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "runtimeRoutingProblems": 0,
+    "remainingSourceHolds": 0,
+    "currentSourceReconciliation": "completion-40/source-reconciliation.json",
+    "latestSourceReview": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/source-coverage-review.json"
+  },
+  "session20261031": {
+    "status": "requested_authoring_complete_source_holds_retained",
+    "manifest": "session-20261031/manifest.json",
+    "newForms": 16,
+    "newQuestions": 640,
+    "newLessons": 1,
+    "newLessonLocalePairs": 12,
+    "examImageQuestions": 81,
+    "examImageDefinitions": 63,
+    "crossWorkerReview": false,
+    "sourceHolds": 55,
+    "remainingRoutingProblems": 0,
+    "currentLessonLocalePairs": 2892,
+    "browserQA": "session-20261031/browser-qa.json",
+    "actualImageQA": "session-20261031/image-browser-qa.json",
+    "validation": "PASS"
+  },
+  "latestSourceResolution": {
+    "date": "2026-10-31",
+    "manifest": "docs/ssw-workspace/agriculture/session-20261031-final-source-resolution/manifest.json",
+    "processed": 10,
+    "cumulativeProcessed": 55,
+    "remaining": 0,
+    "newParagraphs": 1,
+    "revisedLessons": 9,
+    "updatedLessonLocalePairs": 108,
+    "translationFieldPatches": 180,
+    "questionContentChanges": 0
+  }
 }

@@ -18,7 +18,8 @@ for(const q of questions){const o=master.questions.find(x=>x.id===q.id);assert.e
   assert.equal(q.audio.transcriptJa,'');assert.equal(q.audio.startMs,0);assert.ok(q.audio.endMs>0);
   for(const opt of q.options)assert.equal(opt.textJa,o.options.find(x=>x.id===opt.id).text);
   if([3,4,5].includes(q.problemNumber))assert.notEqual(q.promptJa,o.prompt,'No advance gist/integrated question or printed immediate-response utterance');
-  if(q.questionNumber===1)assert.ok(q.instructionJa.includes('練習'));
+  if(q.questionNumber===1 && q.problemNumber!==1)assert.ok(q.instructionJa.includes('練習'));
+  if(q.questionNumber===1 && q.problemNumber===1)assert.ok(!q.instructionJa.includes('練習'));
  }else assert.equal(q.sectionId,'language-knowledge-reading','N2 written uses one combined 105-minute section');
  if(o.ordering)assert.equal(q.family,'sentenceComposition');
  if(o.passageId)assert.equal(q.passageJa,master.passages[o.passageId]);

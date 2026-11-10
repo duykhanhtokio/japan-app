@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "unit": "fertilizer-two-retained-source-correct-figures-localized",
+  "reviewedBaseline": "531d30a83c1b68e3b5ee4c1233ea2a508906a8b6",
+  "readyPaths": [
+    "src/data/agriculture/recognition-images.json",
+    "src/data/agriculture/recognition-image-locales.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/fertilizer-retained-locales-qa.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/level1-week05-level2-week06-supported-authoring-census-qa.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/full-existing-week-image-queue.json"
+  ],
+  "scheduledEntryIds": [
+    "agr-1-w05",
+    "agr-2-w06"
+  ],
+  "sourceReview": {
+    "primaryPdfPixelsViewed": {
+      "AGR-S1": [
+        23,
+        25
+      ],
+      "AGR-S2": [
+        29,
+        31
+      ]
+    },
+    "currentArtPixelsViewed": [
+      "agr-recognition-fertilizer-forms-appearance-v1",
+      "agr-fig-nutrient-entry-routes-v2"
+    ],
+    "meaning": "Retain adequate dimensional fertilizer forms: granular/powder/pellet/liquid appearance only, not chemical composition or release behavior from color/shape. Retain source-exact technical entry-route diagram:CO2 C/O through leaf/stomata, water H/O and listed other elements through roots, Ni explicitly from Level2 only. Preserve unresolved source total/classification differences and elemental names versus fertilizer-label P2O5/K2O forms; no universal counts, macro/micro regrouping, quantities, speeds or field recipe.",
+    "newRasterAssets": 0
+  },
+  "bindings": [
+    {
+      "figureId": "agr-recognition-fertilizer-forms-appearance-v1",
+      "assetSha256": "adc5b77fcf9f99d4d156e489b82f52e9b3d252da2f61f2394bb124acd1271d02",
+      "labelsPerLocale": 5,
+      "sourceLessonIds": [
+        "agr-fertilizer-release"
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "figureId": "agr-fig-nutrient-entry-routes-v2",
+      "assetSha256": "3424b357aae69696d00280886e38e901b369bc1f45ce0735e76d7f76bdf90b68",
+      "labelsPerLocale": 13,
+      "sourceLessonIds": [
+        "agr-fertilizer-nutrients"
+      ],
+      "scopeLevels": [
+        "1",
+        "2"
+      ]
+    }
+  ],
+  "checks": {
+    "actualRecognitionTwelveLocaleRenders": 48,
+    "sourceLessonCourseContexts": 4,
+    "pairedTranslatedNativeLabelOccurrences": 432,
+    "recognitionStaleHiddenDependencyLimitRejections": 116,
+    "actualDailyStudyRenders": 52,
+    "hiddenJapaneseFallbacks": 52,
+    "dailyActiveContextSourceImageRevisionNegatives": 20,
+    "strictTypeScript": "PASS actual RecognitionImages/ZoomableFigure/FlowerLegendFigure+realJSON under minimal React/RN ambient declarations; not full app",
+    "renderer": "Actual RNW RecognitionImages/ZoomableFigure with selected unchangedPNG bytes. Actual DailyLearningFigure uses canonical ID/level lookup adapter, isolated unrelated translation/StudyAppearance and URI assets. Forms reader for types uses existing valid daily binding and declaredrelease source alias; native release figure remains independent.",
+    "prior45RegistryEntriesAndLimits": "all exact latestHEAD retained",
+    "recognitionScopeDiff": "only new form labels and7added full element/part/limit labels; prior6direction labels exact, all IDs/art/hashes/JAmetadata/source tuples/scope unchanged",
+    "activeExamReferencesToTheseFigures": 0,
+    "questionAnswerSourceLessonProgressFilesChanged": false,
+    "scripts": [
+      "/workspace/scratch/b72f4a7f6a62/week02-audit/check-thinning.cjs",
+      "/workspace/scratch/b72f4a7f6a62/fertilizer-audit/check-locales-daily.cjs",
+      "scripts/agriculture/check-recognition-locale-types.cjs"
+    ]
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "sourcePhotoObjectiveComplete": false,
+  "releaseReady": false,
+  "sha256": {
+    "src/data/agriculture/recognition-images.json": "ae8db95c05bbdaa9dd8ceead1df471a9166a924b42d0843bccf807cb58807277",
+    "src/data/agriculture/recognition-image-locales.json": "51383050ca87e34c720c19cef0381aeb2ecb798d874b9b1665a5744ea973fc38"
+  }
+}

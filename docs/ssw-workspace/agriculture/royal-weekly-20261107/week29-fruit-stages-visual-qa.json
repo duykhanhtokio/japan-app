@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "unit": "week29-source-bound-fruit-thinning-stages",
+  "baselineCommit": "72996698d249eeb294234c94cc3c889ba00d68f8",
+  "sourceReview": {
+    "documentId": "AGR-S2",
+    "sha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+    "pdfPage": 37,
+    "printedPage": 35,
+    "byteVerified": true,
+    "actualSourcePageOpened": true,
+    "factsUsed": "Preliminary fruit thinning retains somewhat more fruit until physiological drop is finished; final thinning follows. Fruit-count, leaf-count table, chemical doses or dates are not transposed into illustration.",
+    "sourcePixelsCopied": false
+  },
+  "problem": "Earlier daily image was seedling thinning, unrelated to fruit stages. The prior source-safe repair removed that incorrect binding and left this exact gap explicit.",
+  "solution": "New original Royal2.5D two-panel botanical image shows the same fruit-bearing branch/leaf structure with somewhat more versus fewer retained fruits. Exact Japanese headings 予備摘果 and仕上げ摘果 inspected. Native Japanese+12directlocale metadata states before/after natural fruit drop and rejects inferred fruit/leaf counts or universal prescriptions.",
+  "asset": {
+    "path": "assets/agriculture/royal-weekly-20261107/week29/fruit-thinning-stages-v1.webp",
+    "sha256": "dd055f2c0c468c3dc69816bba1eeafe1a322b29aa52e7a3b4bc49020419f4152",
+    "bytes": 451964,
+    "width": 1536,
+    "height": 1024,
+    "generatedWith": "built-in image_gen.imagegen",
+    "referenceInputs": null,
+    "generatedOutputAndFinalEncodedWebPViewed": true,
+    "conversion": "PNG toWebP quality92, samecanvas/no crop",
+    "promptSpec": "Two Royal A+F2.5D ivory/gold botanical panels, same natural fruit-tree branch and leaves at same scale, more unripe green apple-like fruits left and fewer right. Exact large Japanese headings予備摘果/仕上げ摘果. No dates, measurements, displayed counts/ratios, chemicals, hands/tools or source image input. Qualitative teaching example only."
+  },
+  "lessonId": "agr-management-detail-staged-thinning",
+  "level": "2",
+  "scheduledWeek": 29,
+  "readerBinding": "Direct recognition figure row tied to current original lesson sourceHash/revision; no duplicate main daily binding. Existing DailyLearningFigure includeExisting supports companion contexts. Source lesson/schedule/learner state unchanged.",
+  "localeRows": 12,
+  "translatedLabels": 24,
+  "checks": {
+    "actualRecognitionLocaleRenders": 12,
+    "recognitionStaleHiddenDependencyNegatives": 32,
+    "actualPrimaryReaderRenders": 13,
+    "actualCompanionDailyRenders": 13,
+    "scopeSourceDuplicateNegatives": 43,
+    "previousSeedlingWrongObjectiveRegression": "PASS13dailyrenders/5guards; fixture adapted to permit correct new fruit imagery while still forbidding seedling substitution",
+    "strictComponentTypes": "PASS actual RecognitionImages graph+realJSON, minimalReact/RNdeclarations; not fullapp",
+    "selectedRasterBytes": "SHA verified and actual WebP embedded in RNWeb renders",
+    "renderAdapters": "React Native Web actual RecognitionImages/ZoomableFigure/DailyLearningFigure; unrelated image URIs and unused native branches isolated; current lesson lookup uses exactJSON",
+    "gitDiffCheck": "PASS"
+  },
+  "scripts": [
+    "scripts/agriculture/check-recognition-locale-batch.cjs agr-royal-fruit-thinning-stages-v1",
+    "scripts/agriculture/check-royal-fruit-stages.cjs",
+    "scripts/agriculture/check-royal-thinning-visual-repair.cjs",
+    "scripts/agriculture/check-recognition-locale-types.cjs"
+  ],
+  "resolvedPriorGap": {
+    "receipt": "docs/ssw-workspace/agriculture/royal-weekly-20261107/week02-actual-visual-thinning-repair-qa.json",
+    "lessonId": "agr-management-detail-staged-thinning",
+    "scope": "AIselfreview source-bound illustration; not wholelesson/allsourceacceptance"
+  },
+  "remaining": [
+    "agr-f40-safety-cultivation-details source-appropriate image gap",
+    "actual management-positions primitive-diagram replacement and subsequent existing-image queue"
+  ],
+  "sourceKnowledgeCoverageChanged": false,
+  "sourcePhotoObjectiveComplete": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "releaseReady": false,
+  "wholeSectorComplete": false,
+  "concurrentReconciliation": {
+    "base": "72996698",
+    "remote": "35d6f66e",
+    "remoteRowsPreserved": [
+      "agr-fig-nutrient-entry-routes-v2",
+      "agr-recognition-fertilizer-forms-appearance-v1"
+    ],
+    "localAddedOnly": "agr-royal-fruit-thinning-stages-v1",
+    "overlappingConflicts": false,
+    "sourceHashConflicts": false
+  }
+}

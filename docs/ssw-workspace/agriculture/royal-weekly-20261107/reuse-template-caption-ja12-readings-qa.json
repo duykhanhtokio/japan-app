@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "reviewedBaseline": "d4c04e76ad8ca7bade6863cf062ce3046e3f15ef",
+  "readyPaths": [
+    "src/data/agriculture/daily-reuse-caption-support.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/reuse-template-caption-ja12-readings-qa.json"
+  ],
+  "scope": "Remaining25 exact repeated-template actual image caption records across existing rice/vegetable/fruit/facility source families. JA12 template with pinned current title translations extracted at authoring only; no body/quiz/source/asset changes.",
+  "newCaptionFields": 25,
+  "newTargetStrings": 300,
+  "closedCaptionFieldsTotal": 36,
+  "remainingDistinctActualCaptions": 34,
+  "sourceIdentityProof": {
+    "eachOriginalTemplateLessonTitleEqualsCurrentLessonTitle": true,
+    "eachOriginalTemplateFigureTitleEqualsCurrentFigureTitle": true,
+    "all12LessonTitlesPinnedCurrentSourceHash": true,
+    "figureTitleTokensReusedOnlyExactWholeFieldCurrentImageTitle": true
+  },
+  "phoneticReview": [
+    "Exact existing agricultural figure title tokens reused:飼料用米しりょうようまい,不織布ふしょくふ,穂木ほぎ,枝齢しれい,土層どそう,団粒だんりゅう,高設こうせつ,房ふさ,浸漬しんせき; no generic tokenizer splitting promoted.",
+    "Own lesson-heading review:花芽かが existing exact native context,果樹園かじゅえん,水みず,着果ちゃっか,培地ばいち,鉢花はちばな,2号にごう. Offline unknown draft markers removed before product authoring."
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseAccepted": false,
+  "tests": {
+    "status": "PASS",
+    "cumulative36CaptionJA12ContextRenders": 689,
+    "cumulativeActualContexts": 53,
+    "newActualContexts": 37,
+    "sourceRevisionFullJAFigureFieldRejects": 371,
+    "unknownWholeFieldPlainFallback": 36,
+    "ChineseSameHanTargetPlainJPPrimaryRuby": 36,
+    "strictActualGraphDiagnostics": 0,
+    "limits": "Actual Daily child RNW SSR; no fullCourse/native/device claim."
+  }
+}

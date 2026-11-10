@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 1,
+  "id": "mfg1-electrical-source52-thermal-check",
+  "revision": "source52-ab9d1f1e350f1f71",
+  "titleJa": "条件の境界とバイメタルの構成を確かめる",
+  "sourcePdfSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+  "teachingBinding": {
+    "lessonId": "mfg1-electrical-l094",
+    "paragraphId": "section-2",
+    "sourceHash": "61b41fff2df8e19987bcf4354d4a41ddb8d68e02d034d08b2c10ab90e54c1625",
+    "effectiveJapaneseSha256": "26d6cb73b02bcd099ca357dc22d1460f9ffdc27c30cf8a689325a0e5f4556a74",
+    "canonicalTaughtAfter": "サーマルは電流と継続時間による発熱で動作するため、一瞬の変化と継続する過負荷を区別します。バイメタルは二種金属の熱膨張差で曲がる部材です。動作後は原因と安全を確認して承認された復帰を行い、リセットを繰り返して動かし続けません。\nこの組合せで確認する保護目的は、電動機が過負荷で焼損することを防ぐ点です。教材が説明する信号の復帰は手動方式で、安全を先に確認する条件があります。実機では機種の仕様と承認された手順を照合し、この記述だけを根拠に復帰設定を変更しません。\n過負荷検出は、電流が設定値以上で、一定時間以上続くという条件を合わせて読みます。バイメタルは熱膨張率の異なる二種類の金属板を貼り合わせた構造として捉えます。"
+  },
+  "questions": [
+    {
+      "id": "mfg1-source52-thermal-01",
+      "sourceHash": "1267d1215eaf3a2cf89f7250e459d2f01e36df27fb79815e0f176324130a9ebf",
+      "lessonId": "mfg1-electrical-l094",
+      "stemJa": "実機（じっき）の操作（そうさ）ではなく紙上（しじょう）の判定（はんてい）です。「電流（でんりゅう）が設定値（せっていち）以上（いじょう）で、指定（してい）時間（じかん）以上（いじょう）続（つづ）く」という両方（りょうほう）の条件（じょうけん）を満（み）たす境界（きょうかい）の例（れい）はどれですか。",
+      "optionsJa": [
+        "電流（でんりゅう）は設定値（せっていち）より小（ちい）さく、時間（じかん）は指定（してい）時間（じかん）と同（おな）じ。",
+        "電流（でんりゅう）は設定値（せっていち）と同（おな）じで、時間（じかん）は指定（してい）時間（じかん）より短（みじか）い。",
+        "電流（でんりゅう）は設定値（せっていち）と同（おな）じで、時間（じかん）も指定（してい）時間（じかん）と同（おな）じ。",
+        "電流（でんりゅう）は設定値（せっていち）より小（ちい）さく、時間（じかん）も指定（してい）時間（じかん）より短（みじか）い。"
+      ],
+      "correctIndex": 2,
+      "optionReasonsJa": [
+        "時間（じかん）が同（おな）じでも、電流（でんりゅう）が設定値（せっていち）未満（みまん）なので条件（じょうけん）を満（み）たしません。",
+        "電流（でんりゅう）の等号（とうごう）は含（ふく）みますが、時間（じかん）が指定（してい）未満（みまん）です。",
+        "「以上（いじょう）」は等号（とうごう）を含（ふく）みます。電流（でんりゅう）と時間（じかん）の両方（りょうほう）が境界（きょうかい）に等（ひと）しいので満（み）たします。実機（じっき）の設定変更（せっていへんこう）は指示（しじ）しません。",
+        "電流（でんりゅう）と時間（じかん）の両方（りょうほう）が指定（してい）未満（みまん）です。二（ふた）つの条件（じょうけん）を一（ひと）つに置（お）き換（か）えません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 165,
+          "printedPage": 156
+        }
+      ]
+    },
+    {
+      "id": "mfg1-source52-thermal-02",
+      "sourceHash": "897a423f081b973e7b0860fd0bd05d9cf71c37ee5c814c52003e30db191afc63",
+      "lessonId": "mfg1-electrical-l094",
+      "stemJa": "教材（きょうざい）が説明（せつめい）するバイメタルの材料（ざいりょう）の構成（こうせい）はどれですか。",
+      "optionsJa": [
+        "熱膨張率（ねつぼうちょうりつ）が異（こと）なる二種類（にしゅるい）の金属板（きんぞくばん）を貼（は）り合（あ）わせる。",
+        "熱膨張率（ねつぼうちょうりつ）が同（おな）じ二種類（にしゅるい）の金属板（きんぞくばん）を貼（は）り合（あ）わせる。",
+        "熱膨張率（ねつぼうちょうりつ）が異（こと）なる二枚（にまい）の金属板（きんぞくばん）を、つながず離（はな）して置（お）く。",
+        "一枚（いちまい）の金属板（きんぞくばん）を使（つか）い、二種類（にしゅるい）の金属（きんぞく）を組（く）み合（あ）わせない。"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "膨張率（ぼうちょうりつ）の異（こと）なる二種類（にしゅるい）の金属板（きんぞくばん）を貼（は）り合（あ）わせた構成（こうせい）です。",
+        "貼（は）り合（あ）わせても、膨張率（ぼうちょうりつ）が同（おな）じという条件（じょうけん）は教材（きょうざい）の説明（せつめい）と違（ちが）います。",
+        "膨張率（ぼうちょうりつ）の違（ちが）いだけでは足（た）りず、貼（は）り合（あ）わせた構成（こうせい）が必要（ひつよう）です。",
+        "一枚（いちまい）の金属板（きんぞくばん）だけでは、二種類（にしゅるい）を貼（は）り合（あ）わせた構成（こうせい）になりません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 165,
+          "printedPage": 156
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "mfg1-source52-thermal-01": {
+        "sourceHash": "1267d1215eaf3a2cf89f7250e459d2f01e36df27fb79815e0f176324130a9ebf",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "This is a paper judgement, not operation of equipment. Which boundary case meets BOTH conditions: current at least the set value, continuing for at least the specified time?",
+        "options": [
+          "Current below the set value; duration equals the specified time.",
+          "Current equals the set value; duration is shorter than specified.",
+          "Current equals the set value; duration also equals the specified time.",
+          "Current below the set value; duration also shorter than specified."
+        ],
+        "reasons": [
+          "Equal duration is not enough: current is below the threshold.",
+          "Equality is included for current, but duration is below the required time.",
+          "At least includes equality. Both current and time equal their boundaries, so both conditions hold. This gives no instruction to change equipment settings.",
+          "Both quantities are below their thresholds. Do not replace the two conditions with one."
+        ]
+      },
+      "mfg1-source52-thermal-02": {
+        "sourceHash": "897a423f081b973e7b0860fd0bd05d9cf71c37ee5c814c52003e30db191afc63",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "Which material construction is the bimetal described in the lesson?",
+        "options": [
+          "Bond two kinds of metal plate with different thermal expansion coefficients.",
+          "Bond two kinds of metal plate with the same thermal expansion coefficient.",
+          "Place two plates with different thermal expansion coefficients apart, without joining them.",
+          "Use a single metal plate without combining two kinds of metal."
+        ],
+        "reasons": [
+          "It consists of two bonded kinds of metal plate with different expansion coefficients.",
+          "Bonding alone is insufficient: equal expansion coefficients contradict the described construction.",
+          "Different expansion coefficients alone are insufficient; the plates must be bonded.",
+          "One metal plate alone is not the bonded combination of two kinds."
+        ]
+      }
+    },
+    "vi": {
+      "mfg1-source52-thermal-01": {
+        "sourceHash": "1267d1215eaf3a2cf89f7250e459d2f01e36df27fb79815e0f176324130a9ebf",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "Đây là nhận định trên giấy, không thao tác thiết bị thật. Trường hợp tại ranh giới nào thỏa CẢ HAI điều kiện: dòng điện từ giá trị đặt trở lên và duy trì từ thời gian quy định trở lên?",
+        "options": [
+          "Dòng điện nhỏ hơn giá trị đặt; thời gian bằng thời gian quy định.",
+          "Dòng điện bằng giá trị đặt; thời gian ngắn hơn quy định.",
+          "Dòng điện bằng giá trị đặt; thời gian cũng bằng thời gian quy định.",
+          "Dòng điện nhỏ hơn giá trị đặt; thời gian cũng ngắn hơn quy định."
+        ],
+        "reasons": [
+          "Thời gian bằng vẫn chưa đủ vì dòng điện dưới ngưỡng.",
+          "Điều kiện dòng điện bao gồm dấu bằng, nhưng thời gian chưa đủ.",
+          "Từ mức quy định trở lên bao gồm dấu bằng. Cả dòng điện và thời gian đều bằng ranh giới nên thỏa cả hai điều kiện. Đây không phải chỉ dẫn thay đổi cài đặt thiết bị.",
+          "Cả hai đại lượng đều dưới ngưỡng; không thay hai điều kiện bằng một."
+        ]
+      },
+      "mfg1-source52-thermal-02": {
+        "sourceHash": "897a423f081b973e7b0860fd0bd05d9cf71c37ee5c814c52003e30db191afc63",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "Cấu tạo vật liệu của bimetal được bài học mô tả là gì?",
+        "options": [
+          "Ghép dính hai loại tấm kim loại có hệ số giãn nở nhiệt khác nhau.",
+          "Ghép dính hai loại tấm kim loại có cùng hệ số giãn nở nhiệt.",
+          "Đặt rời hai tấm có hệ số giãn nở nhiệt khác nhau, không ghép với nhau.",
+          "Dùng một tấm kim loại, không kết hợp hai loại kim loại."
+        ],
+        "reasons": [
+          "Cấu tạo gồm hai loại tấm kim loại có hệ số giãn nở khác nhau được ghép dính.",
+          "Chỉ ghép dính chưa đủ; điều kiện hệ số giãn nở bằng nhau khác mô tả trong bài.",
+          "Chỉ khác hệ số giãn nở chưa đủ, các tấm phải được ghép dính.",
+          "Một tấm kim loại riêng lẻ không phải cấu tạo ghép dính hai loại."
+        ]
+      }
+    },
+    "id": {
+      "mfg1-source52-thermal-01": {
+        "sourceHash": "1267d1215eaf3a2cf89f7250e459d2f01e36df27fb79815e0f176324130a9ebf",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "Ini penilaian di atas kertas, bukan pengoperasian alat. Kasus batas mana memenuhi KEDUA syarat: arus sekurang-kurangnya nilai setelan dan berlangsung sekurang-kurangnya selama waktu yang ditentukan?",
+        "options": [
+          "Arus di bawah nilai setelan; durasi sama dengan waktu yang ditentukan.",
+          "Arus sama dengan nilai setelan; durasi lebih singkat daripada ketentuan.",
+          "Arus sama dengan nilai setelan; durasi juga sama dengan waktu yang ditentukan.",
+          "Arus di bawah nilai setelan; durasi juga lebih singkat daripada ketentuan."
+        ],
+        "reasons": [
+          "Durasi yang sama belum cukup karena arus di bawah ambang.",
+          "Kesamaan termasuk untuk arus, tetapi durasi belum mencapai ketentuan.",
+          "Sekurang-kurangnya mencakup kesamaan. Arus dan waktu sama dengan batasnya sehingga kedua syarat terpenuhi. Ini bukan petunjuk mengubah setelan alat.",
+          "Kedua besaran di bawah ambang. Jangan mengganti dua syarat dengan satu."
+        ]
+      },
+      "mfg1-source52-thermal-02": {
+        "sourceHash": "897a423f081b973e7b0860fd0bd05d9cf71c37ee5c814c52003e30db191afc63",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "Bagaimana susunan bahan bimetal yang dijelaskan dalam pelajaran?",
+        "options": [
+          "Merekatkan dua jenis pelat logam dengan koefisien muai panas berbeda.",
+          "Merekatkan dua jenis pelat logam dengan koefisien muai panas sama.",
+          "Meletakkan dua pelat dengan koefisien muai panas berbeda secara terpisah tanpa disambung.",
+          "Menggunakan satu pelat logam tanpa menggabungkan dua jenis logam."
+        ],
+        "reasons": [
+          "Susunannya dua jenis pelat logam dengan koefisien muai berbeda yang direkatkan.",
+          "Perekatan saja belum cukup: koefisien muai yang sama berbeda dari penjelasan.",
+          "Perbedaan koefisien muai saja belum cukup; pelat harus direkatkan.",
+          "Satu pelat saja bukan gabungan dua jenis yang direkatkan."
+        ]
+      }
+    },
+    "zh-CN": {
+      "mfg1-source52-thermal-01": {
+        "sourceHash": "1267d1215eaf3a2cf89f7250e459d2f01e36df27fb79815e0f176324130a9ebf",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "这是纸上判断，不是操作实机。条件为“电流不低于设定值，且持续时间不少于指定时间”。哪个边界情况同时满足两项条件？",
+        "options": [
+          "电流低于设定值；时间等于指定时间。",
+          "电流等于设定值；时间短于指定时间。",
+          "电流等于设定值；时间也等于指定时间。",
+          "电流低于设定值；时间也短于指定时间。"
+        ],
+        "reasons": [
+          "即使时间相等，电流仍低于门槛，因此不满足。",
+          "电流条件包含等号，但时间不足。",
+          "不低于、不少于均包含等号。电流和时间都等于各自边界，因此同时满足。本题不指示更改实机设定。",
+          "两个量均低于门槛，不能把两项条件替换成一项。"
+        ]
+      },
+      "mfg1-source52-thermal-02": {
+        "sourceHash": "897a423f081b973e7b0860fd0bd05d9cf71c37ee5c814c52003e30db191afc63",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "课程所述双金属材料的构造是哪一种？",
+        "options": [
+          "将两种热膨胀系数不同的金属板贴合。",
+          "将两种热膨胀系数相同的金属板贴合。",
+          "将热膨胀系数不同的两块板分开放置，不连接。",
+          "只用一块金属板，不结合两种金属。"
+        ],
+        "reasons": [
+          "构造是把两种膨胀系数不同的金属板贴合。",
+          "仅贴合还不够；膨胀系数相同不符合课程说明。",
+          "仅膨胀系数不同还不够，还必须贴合。",
+          "单独一块金属板不是两种材料贴合的构造。"
+        ]
+      }
+    },
+    "zh-TW": {
+      "mfg1-source52-thermal-01": {
+        "sourceHash": "1267d1215eaf3a2cf89f7250e459d2f01e36df27fb79815e0f176324130a9ebf",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "這是紙上判斷，不是操作實機。條件為「電流不低於設定值，且持續時間不少於指定時間」。哪個邊界情況同時滿足兩項條件？",
+        "options": [
+          "電流低於設定值；時間等於指定時間。",
+          "電流等於設定值；時間短於指定時間。",
+          "電流等於設定值；時間也等於指定時間。",
+          "電流低於設定值；時間也短於指定時間。"
+        ],
+        "reasons": [
+          "即使時間相等，電流仍低於門檻，因此不滿足。",
+          "電流條件包含等號，但時間不足。",
+          "不低於、不少於均包含等號。電流和時間都等於各自邊界，因此同時滿足。本題不指示更改實機設定。",
+          "兩個量均低於門檻，不能把兩項條件替換成一項。"
+        ]
+      },
+      "mfg1-source52-thermal-02": {
+        "sourceHash": "897a423f081b973e7b0860fd0bd05d9cf71c37ee5c814c52003e30db191afc63",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "課程所述雙金屬材料的構造是哪一種？",
+        "options": [
+          "將兩種熱膨脹係數不同的金屬板貼合。",
+          "將兩種熱膨脹係數相同的金屬板貼合。",
+          "將熱膨脹係數不同的兩塊板分開放置，不連接。",
+          "只用一塊金屬板，不結合兩種金屬。"
+        ],
+        "reasons": [
+          "構造是把兩種膨脹係數不同的金屬板貼合。",
+          "僅貼合還不夠；膨脹係數相同不符合課程說明。",
+          "僅膨脹係數不同還不夠，還必須貼合。",
+          "單獨一塊金屬板不是兩種材料貼合的構造。"
+        ]
+      }
+    },
+    "hi": {
+      "mfg1-source52-thermal-01": {
+        "sourceHash": "1267d1215eaf3a2cf89f7250e459d2f01e36df27fb79815e0f176324130a9ebf",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "यह कागज़ पर निर्णय है, उपकरण चलाना नहीं। दोनों शर्तें हैं: धारा निर्धारित मान से कम न हो और कम से कम निर्दिष्ट समय तक बनी रहे। सीमा पर कौन-सा उदाहरण दोनों पूरा करता है?",
+        "options": [
+          "धारा निर्धारित मान से कम; समय निर्दिष्ट समय के बराबर।",
+          "धारा निर्धारित मान के बराबर; समय निर्दिष्ट अवधि से कम।",
+          "धारा निर्धारित मान के बराबर; समय भी निर्दिष्ट अवधि के बराबर।",
+          "धारा निर्धारित मान से कम; समय भी निर्दिष्ट अवधि से कम।"
+        ],
+        "reasons": [
+          "समय बराबर होने पर भी धारा सीमा से कम है, इसलिए शर्त पूरी नहीं।",
+          "धारा की शर्त में बराबरी शामिल है, पर समय कम है।",
+          "कम से कम में बराबरी शामिल है। दोनों अपने सीमा-मान के बराबर हैं, इसलिए दोनों शर्तें पूरी हैं। यह उपकरण की सेटिंग बदलने का निर्देश नहीं।",
+          "दोनों मात्राएँ अपनी सीमा से कम हैं। दो शर्तों को एक से न बदलें।"
+        ]
+      },
+      "mfg1-source52-thermal-02": {
+        "sourceHash": "897a423f081b973e7b0860fd0bd05d9cf71c37ee5c814c52003e30db191afc63",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "पाठ में बताए बाइमैटल की सामग्री-संरचना कौन-सी है?",
+        "options": [
+          "अलग तापीय प्रसार गुणांक वाली दो प्रकार की धातु-पट्टियाँ जोड़कर चिपकाना।",
+          "एक जैसे तापीय प्रसार गुणांक वाली दो प्रकार की धातु-पट्टियाँ जोड़कर चिपकाना।",
+          "अलग प्रसार गुणांक वाली दो पट्टियाँ बिना जोड़े अलग रखना।",
+          "दो प्रकार की धातु मिलाए बिना एक ही धातु-पट्टी लेना।"
+        ],
+        "reasons": [
+          "संरचना में अलग प्रसार गुणांक वाली दो प्रकार की धातु-पट्टियाँ जुड़ी होती हैं।",
+          "केवल जोड़ना पर्याप्त नहीं; समान प्रसार गुणांक पाठ से मेल नहीं खाता।",
+          "केवल अलग प्रसार गुणांक पर्याप्त नहीं; पट्टियाँ जुड़ी भी होनी चाहिए।",
+          "एक पट्टी अकेले दो प्रकार को जोड़ने वाली संरचना नहीं है।"
+        ]
+      }
+    },
+    "bn": {
+      "mfg1-source52-thermal-01": {
+        "sourceHash": "1267d1215eaf3a2cf89f7250e459d2f01e36df27fb79815e0f176324130a9ebf",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "এটি কাগজে বিচার, যন্ত্র চালানো নয়। দুটি শর্ত: প্রবাহ নির্ধারিত মানের কম নয় এবং অন্তত নির্দিষ্ট সময় স্থায়ী হয়। সীমার কোন উদাহরণ দুটি শর্তই পূরণ করে?",
+        "options": [
+          "প্রবাহ নির্ধারিত মানের নিচে; সময় নির্দিষ্ট সময়ের সমান।",
+          "প্রবাহ নির্ধারিত মানের সমান; সময় নির্দিষ্ট সময়ের চেয়ে কম।",
+          "প্রবাহ নির্ধারিত মানের সমান; সময়ও নির্দিষ্ট সময়ের সমান।",
+          "প্রবাহ নির্ধারিত মানের নিচে; সময়ও নির্দিষ্ট সময়ের চেয়ে কম।"
+        ],
+        "reasons": [
+          "সময় সমান হলেও প্রবাহ সীমার নিচে, তাই শর্ত পূরণ হয় না।",
+          "প্রবাহের শর্তে সমান অন্তর্ভুক্ত, কিন্তু সময় কম।",
+          "অন্তত বলতে সমানও বোঝায়। প্রবাহ ও সময় উভয়ই নিজ সীমার সমান, তাই দুটি শর্তই পূরণ হয়। এটি যন্ত্রের সেটিং বদলানোর নির্দেশ নয়।",
+          "দুটি রাশিই নিজ সীমার নিচে। দুটি শর্তকে একটি দিয়ে প্রতিস্থাপন করবেন না।"
+        ]
+      },
+      "mfg1-source52-thermal-02": {
+        "sourceHash": "897a423f081b973e7b0860fd0bd05d9cf71c37ee5c814c52003e30db191afc63",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "পাঠে বর্ণিত বাইমেটালের উপাদানগত গঠন কোনটি?",
+        "options": [
+          "ভিন্ন তাপীয় প্রসারণ সহগের দুই ধরনের ধাতব পাত জোড়া লাগানো।",
+          "একই তাপীয় প্রসারণ সহগের দুই ধরনের ধাতব পাত জোড়া লাগানো।",
+          "ভিন্ন প্রসারণ সহগের দুটি পাত না জুড়ে আলাদা রাখা।",
+          "দুই ধরনের ধাতু না মিলিয়ে একটি ধাতব পাত ব্যবহার করা।"
+        ],
+        "reasons": [
+          "গঠনটি ভিন্ন প্রসারণ সহগের দুই ধরনের ধাতব পাত জোড়া দিয়ে তৈরি।",
+          "শুধু জোড়া দিলেই যথেষ্ট নয়; একই প্রসারণ সহগ পাঠের বর্ণনার বিপরীত।",
+          "শুধু প্রসারণ সহগ ভিন্ন হলেই যথেষ্ট নয়; পাত দুটি জোড়াও থাকতে হবে।",
+          "একটি পাত একাই দুই ধরনের পাতের জোড়া গঠন নয়।"
+        ]
+      }
+    },
+    "ne": {
+      "mfg1-source52-thermal-01": {
+        "sourceHash": "1267d1215eaf3a2cf89f7250e459d2f01e36df27fb79815e0f176324130a9ebf",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "यो कागजी निर्णय हो, उपकरण चलाउने काम होइन। दुवै सर्त छन्: धारा निर्धारित मानभन्दा कम नहुनु र कम्तीमा तोकिएको समयसम्म जारी रहनु। सीमाको कुन उदाहरणले दुवै पूरा गर्छ?",
+        "options": [
+          "धारा निर्धारित मानभन्दा कम; अवधि तोकिएको समय बराबर।",
+          "धारा निर्धारित मान बराबर; अवधि तोकिएको समयभन्दा छोटो।",
+          "धारा निर्धारित मान बराबर; अवधि पनि तोकिएको समय बराबर।",
+          "धारा निर्धारित मानभन्दा कम; अवधि पनि तोकिएको समयभन्दा छोटो।"
+        ],
+        "reasons": [
+          "अवधि बराबर भए पनि धारा सीमाभन्दा कम भएकाले सर्त पुग्दैन।",
+          "धाराको सर्तमा बराबरी पर्छ, तर अवधि कम छ।",
+          "कम्तीमामा बराबरी पनि पर्छ। धारा र समय दुवै आफ्ना सीमाबराबर भएकाले दुवै सर्त पूरा हुन्छन्। यसले उपकरणको सेटिङ बदल्न निर्देशन दिँदैन।",
+          "दुवै परिमाण सीमाभन्दा कम छन्। दुई सर्तलाई एउटाले नबदल्नुहोस्।"
+        ]
+      },
+      "mfg1-source52-thermal-02": {
+        "sourceHash": "897a423f081b973e7b0860fd0bd05d9cf71c37ee5c814c52003e30db191afc63",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "पाठमा वर्णन गरिएको बाइमेटलको सामग्री संरचना कुन हो?",
+        "options": [
+          "फरक तापीय प्रसार गुणाङ्क भएका दुई प्रकारका धातुका पाता टाँसेर जोड्नु।",
+          "उही तापीय प्रसार गुणाङ्क भएका दुई प्रकारका धातुका पाता टाँसेर जोड्नु।",
+          "फरक प्रसार गुणाङ्क भएका दुई पाता नजोडी छुट्टै राख्नु।",
+          "दुई प्रकारका धातु नमिलाई एउटै धातुको पाता प्रयोग गर्नु।"
+        ],
+        "reasons": [
+          "संरचनामा फरक प्रसार गुणाङ्क भएका दुई प्रकारका धातुका पाता जोडिएका हुन्छन्।",
+          "जोड्नु मात्र पर्याप्त हुँदैन; उही प्रसार गुणाङ्क पाठको वर्णनसँग मिल्दैन।",
+          "प्रसार गुणाङ्क फरक हुनु मात्र पर्याप्त हुँदैन; पाता जोडिएको हुनुपर्छ।",
+          "एउटा पाता मात्रै दुई प्रकार जोडिएको संरचना होइन।"
+        ]
+      }
+    },
+    "my": {
+      "mfg1-source52-thermal-01": {
+        "sourceHash": "1267d1215eaf3a2cf89f7250e459d2f01e36df27fb79815e0f176324130a9ebf",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "ဤသည် စာရွက်ပေါ်မှဆုံးဖြတ်ချက်ဖြစ်ပြီး စက်ကိုမောင်းခြင်းမဟုတ်ပါ။ လျှပ်စီးသည် သတ်မှတ်တန်ဖိုးထက်မနည်းဘဲ သတ်မှတ်ချိန်ထက်မနည်း ဆက်ရှိရမည်ဆိုသော အခြေအနေနှစ်ခုလုံးကို နယ်နိမိတ်တွင် မည်သည့်ဥပမာကပြည့်မီသနည်း။",
+        "options": [
+          "လျှပ်စီးသည် သတ်မှတ်တန်ဖိုးအောက်၊ ကြာချိန်သည် သတ်မှတ်ချိန်နှင့်တူသည်။",
+          "လျှပ်စီးသည် သတ်မှတ်တန်ဖိုးနှင့်တူ၊ ကြာချိန်သည် သတ်မှတ်ချိန်ထက်တိုသည်။",
+          "လျှပ်စီးသည် သတ်မှတ်တန်ဖိုးနှင့်တူပြီး ကြာချိန်လည်း သတ်မှတ်ချိန်နှင့်တူသည်။",
+          "လျှပ်စီးသည် သတ်မှတ်တန်ဖိုးအောက်၊ ကြာချိန်လည်း သတ်မှတ်ချိန်ထက်တိုသည်။"
+        ],
+        "reasons": [
+          "ကြာချိန်တူသော်လည်း လျှပ်စီးသည် နယ်သတ်မှတ်ချက်အောက်ဖြစ်၍ မပြည့်မီပါ။",
+          "လျှပ်စီးအတွက် တူညီခြင်းပါဝင်သော်လည်း ကြာချိန်မလုံလောက်ပါ။",
+          "မနည်းဟူသည် တူညီခြင်းပါဝင်သည်။ လျှပ်စီးနှင့်အချိန်နှစ်ခုလုံး မိမိနယ်သတ်မှတ်ချက်နှင့်တူ၍ ပြည့်မီသည်။ စက်ဆက်တင်ပြောင်းရန်ညွှန်ကြားခြင်းမဟုတ်ပါ။",
+          "နှစ်ခုလုံး နယ်သတ်မှတ်ချက်အောက်ဖြစ်သည်။ အခြေအနေနှစ်ခုကို တစ်ခုဖြင့်အစားမထိုးပါနှင့်။"
+        ]
+      },
+      "mfg1-source52-thermal-02": {
+        "sourceHash": "897a423f081b973e7b0860fd0bd05d9cf71c37ee5c814c52003e30db191afc63",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "သင်ခန်းစာတွင်ဖော်ပြသော bimetal ၏ပစ္စည်းဖွဲ့စည်းပုံမှာ မည်သည်နည်း။",
+        "options": [
+          "အပူကြောင့်ပြန့်ကားမှုကိန်းမတူသော သတ္တုနှစ်မျိုး၏ပြားများကို ကပ်ဆက်ထားသည်။",
+          "အပူကြောင့်ပြန့်ကားမှုကိန်းတူသော သတ္တုနှစ်မျိုး၏ပြားများကို ကပ်ဆက်ထားသည်။",
+          "ပြန့်ကားမှုကိန်းမတူသော ပြားနှစ်ချပ်ကို မဆက်ဘဲ သီးခြားထားသည်။",
+          "သတ္တုနှစ်မျိုးမပေါင်းဘဲ သတ္တုပြားတစ်ချပ်သာသုံးသည်။"
+        ],
+        "reasons": [
+          "ဖွဲ့စည်းပုံမှာ ပြန့်ကားမှုကိန်းမတူသော သတ္တုနှစ်မျိုး၏ပြားများကို ကပ်ဆက်ထားခြင်းဖြစ်သည်။",
+          "ကပ်ဆက်ရုံမလုံလောက်ပါ။ ပြန့်ကားမှုကိန်းတူသည်ဆိုခြင်းက သင်ခန်းစာနှင့်မကိုက်ပါ။",
+          "ပြန့်ကားမှုကိန်းမတူရုံမလုံလောက်ပါ။ ပြားများကပ်ဆက်ထားရမည်။",
+          "ပြားတစ်ချပ်တည်းသည် သတ္တုနှစ်မျိုးကပ်ဆက်ထားသောဖွဲ့စည်းပုံမဟုတ်ပါ။"
+        ]
+      }
+    },
+    "th": {
+      "mfg1-source52-thermal-01": {
+        "sourceHash": "1267d1215eaf3a2cf89f7250e459d2f01e36df27fb79815e0f176324130a9ebf",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "นี่เป็นการตัดสินบนกระดาษ ไม่ใช่ใช้งานเครื่องจริง เงื่อนไขทั้งสองคือกระแสไม่น้อยกว่าค่าตั้งและต่อเนื่องไม่น้อยกว่าเวลาที่ระบุ กรณีขอบเขตใดครบทั้งสองเงื่อนไข?",
+        "options": [
+          "กระแสต่ำกว่าค่าตั้ง ระยะเวลาเท่ากับเวลาที่ระบุ",
+          "กระแสเท่ากับค่าตั้ง ระยะเวลาสั้นกว่าที่ระบุ",
+          "กระแสเท่ากับค่าตั้ง และระยะเวลาเท่ากับเวลาที่ระบุ",
+          "กระแสต่ำกว่าค่าตั้ง และระยะเวลาสั้นกว่าที่ระบุ"
+        ],
+        "reasons": [
+          "แม้เวลาเท่ากัน แต่กระแสต่ำกว่าเกณฑ์จึงไม่ครบเงื่อนไข",
+          "เงื่อนไขกระแสรวมกรณีเท่ากัน แต่ระยะเวลายังไม่ถึงเกณฑ์",
+          "ไม่น้อยกว่ารวมกรณีเท่ากัน กระแสและเวลาเท่ากับขอบเขตของตนจึงครบทั้งสองเงื่อนไข นี่ไม่ใช่คำสั่งให้เปลี่ยนค่าตั้งเครื่องจริง",
+          "ทั้งสองปริมาณต่ำกว่าเกณฑ์ อย่าแทนสองเงื่อนไขด้วยเงื่อนไขเดียว"
+        ]
+      },
+      "mfg1-source52-thermal-02": {
+        "sourceHash": "897a423f081b973e7b0860fd0bd05d9cf71c37ee5c814c52003e30db191afc63",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "วัสดุไบเมทัลที่บทเรียนอธิบายมีโครงสร้างใด?",
+        "options": [
+          "ยึดแผ่นโลหะสองชนิดที่มีสัมประสิทธิ์การขยายตัวจากความร้อนต่างกันให้ติดกัน",
+          "ยึดแผ่นโลหะสองชนิดที่มีสัมประสิทธิ์การขยายตัวจากความร้อนเท่ากันให้ติดกัน",
+          "วางแผ่นโลหะสองแผ่นที่มีสัมประสิทธิ์ต่างกันแยกจากกันโดยไม่ยึดติด",
+          "ใช้แผ่นโลหะแผ่นเดียวโดยไม่รวมโลหะสองชนิด"
+        ],
+        "reasons": [
+          "โครงสร้างคือแผ่นโลหะสองชนิดที่มีสัมประสิทธิ์ต่างกันยึดติดกัน",
+          "แค่ยึดติดยังไม่พอ เงื่อนไขสัมประสิทธิ์เท่ากันต่างจากคำอธิบายในบทเรียน",
+          "แค่สัมประสิทธิ์ต่างกันยังไม่พอ ต้องยึดแผ่นให้ติดกันด้วย",
+          "แผ่นเดียวไม่ใช่โครงสร้างที่ยึดโลหะสองชนิดเข้าด้วยกัน"
+        ]
+      }
+    },
+    "km": {
+      "mfg1-source52-thermal-01": {
+        "sourceHash": "1267d1215eaf3a2cf89f7250e459d2f01e36df27fb79815e0f176324130a9ebf",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "នេះជាការវិនិច្ឆ័យលើក្រដាស មិនមែនបញ្ជាម៉ាស៊ីនពិត។ លក្ខខណ្ឌទាំងពីរគឺចរន្តមិនតិចជាងតម្លៃកំណត់ ហើយបន្តមិនតិចជាងពេលកំណត់។ ករណីនៅព្រំដែនណាបំពេញទាំងពីរ?",
+        "options": [
+          "ចរន្តទាបជាងតម្លៃកំណត់ រយៈពេលស្មើពេលកំណត់។",
+          "ចរន្តស្មើតម្លៃកំណត់ រយៈពេលខ្លីជាងពេលកំណត់។",
+          "ចរន្តស្មើតម្លៃកំណត់ ហើយរយៈពេលក៏ស្មើពេលកំណត់។",
+          "ចរន្តទាបជាងតម្លៃកំណត់ ហើយរយៈពេលក៏ខ្លីជាងពេលកំណត់។"
+        ],
+        "reasons": [
+          "ទោះពេលស្មើក៏ដោយ ចរន្តនៅក្រោមព្រំដែន ដូច្នេះមិនបំពេញលក្ខខណ្ឌ។",
+          "លក្ខខណ្ឌចរន្តរាប់បញ្ចូលស្មើ ប៉ុន្តែពេលមិនគ្រប់។",
+          "មិនតិចជាងរាប់បញ្ចូលស្មើ។ ចរន្តនិងពេលស្មើព្រំដែនរៀងៗខ្លួន ដូច្នេះបំពេញទាំងពីរ។ នេះមិនណែនាំឱ្យប្ដូរការកំណត់ម៉ាស៊ីនពិតទេ។",
+          "បរិមាណទាំងពីរទាបជាងព្រំដែន។ កុំជំនួសលក្ខខណ្ឌពីរដោយលក្ខខណ្ឌមួយ។"
+        ]
+      },
+      "mfg1-source52-thermal-02": {
+        "sourceHash": "897a423f081b973e7b0860fd0bd05d9cf71c37ee5c814c52003e30db191afc63",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "សម្ភារៈប៊ីមេតាល់ដែលមេរៀនពណ៌នាមានរចនាសម្ព័ន្ធមួយណា?",
+        "options": [
+          "ភ្ជាប់សន្លឹកលោហៈពីរប្រភេទដែលមានមេគុណពង្រីកដោយកម្ដៅខុសគ្នាឱ្យជាប់គ្នា។",
+          "ភ្ជាប់សន្លឹកលោហៈពីរប្រភេទដែលមានមេគុណពង្រីកដោយកម្ដៅដូចគ្នាឱ្យជាប់គ្នា។",
+          "ដាក់សន្លឹកពីរដែលមានមេគុណខុសគ្នាឱ្យឃ្លាតពីគ្នា មិនភ្ជាប់។",
+          "ប្រើសន្លឹកលោហៈតែមួយដោយមិនផ្សំលោហៈពីរប្រភេទ។"
+        ],
+        "reasons": [
+          "រចនាសម្ព័ន្ធគឺសន្លឹកលោហៈពីរប្រភេទដែលមានមេគុណខុសគ្នាភ្ជាប់ជាប់គ្នា។",
+          "ភ្ជាប់តែមួយមុខមិនគ្រប់ទេ។ មេគុណដូចគ្នាខុសពីការពណ៌នាក្នុងមេរៀន។",
+          "មេគុណខុសគ្នាតែមួយមុខមិនគ្រប់ទេ ត្រូវភ្ជាប់សន្លឹកឱ្យជាប់គ្នា។",
+          "សន្លឹកតែមួយមិនមែនរចនាសម្ព័ន្ធភ្ជាប់លោហៈពីរប្រភេទទេ។"
+        ]
+      }
+    },
+    "tl": {
+      "mfg1-source52-thermal-01": {
+        "sourceHash": "1267d1215eaf3a2cf89f7250e459d2f01e36df27fb79815e0f176324130a9ebf",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "Paghatol ito sa papel, hindi pagpapatakbo ng kagamitan. Aling kaso sa hangganan ang tumutupad sa PAREHONG kondisyon: agos na hindi bababa sa itinakdang halaga at tuloy-tuloy nang hindi bababa sa itinakdang oras?",
+        "options": [
+          "Mas mababa sa takdang halaga ang agos; katumbas ng takdang oras ang tagal.",
+          "Katumbas ng takdang halaga ang agos; mas maikli sa takdang oras ang tagal.",
+          "Katumbas ng takdang halaga ang agos; katumbas din ng takdang oras ang tagal.",
+          "Mas mababa sa takdang halaga ang agos; mas maikli rin sa takdang oras ang tagal."
+        ],
+        "reasons": [
+          "Kahit magkapantay ang tagal, mas mababa sa hangganan ang agos kaya hindi sapat.",
+          "Kasama ang pagkakapantay sa kondisyon ng agos, ngunit kulang ang tagal.",
+          "Kasama ang pagkakapantay sa hindi bababa. Parehong katumbas ng kani-kaniyang hangganan ang agos at oras kaya natutupad ang dalawa. Hindi ito utos na baguhin ang setting ng kagamitan.",
+          "Parehong mas mababa sa hangganan ang dalawang sukat. Huwag gawing isa ang dalawang kondisyon."
+        ]
+      },
+      "mfg1-source52-thermal-02": {
+        "sourceHash": "897a423f081b973e7b0860fd0bd05d9cf71c37ee5c814c52003e30db191afc63",
+        "translatedDirectlyFrom": "ja",
+        "status": "translated_ai_unreviewed",
+        "stem": "Alin ang pagkakabuo ng materyal na bimetal na inilalarawan sa aralin?",
+        "options": [
+          "Pagdikitin ang dalawang uri ng metal plate na magkaiba ang thermal expansion coefficient.",
+          "Pagdikitin ang dalawang uri ng metal plate na pareho ang thermal expansion coefficient.",
+          "Ilagay nang magkahiwalay ang dalawang plate na magkaiba ang expansion coefficient, nang hindi pinagdurugtong.",
+          "Gumamit ng iisang metal plate nang hindi pinagsasama ang dalawang uri ng metal."
+        ],
+        "reasons": [
+          "Dalawang uri ng plate na magkaiba ang expansion coefficient ang magkadikit na bumubuo rito.",
+          "Hindi sapat ang pagdikit lamang; salungat sa aralin ang magkaparehong expansion coefficient.",
+          "Hindi sapat ang magkaibang expansion coefficient; dapat magkadikit din ang mga plate.",
+          "Hindi bumubuo ang iisang plate ng magkadikit na dalawang uri."
+        ]
+      }
+    }
+  },
+  "status": "independently_ai_authored_self_checked_not_native_or_domain_certified",
+  "sourceExerciseCopied": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false
+}

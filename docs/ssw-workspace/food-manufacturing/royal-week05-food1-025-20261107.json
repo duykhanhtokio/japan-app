@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "week": 5,
+  "dateJst": "2026-11-07",
+  "scope": "food-1-025 current daily p1 hazard-analysis instructional illustration binding",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "binding": {
+    "lessonId": "food-1-025",
+    "sourceHash": "906dbe8162a5c81479357f05114a236a005da4d4e1611a5e7c04e5f7b8f76eda",
+    "captionParagraphId": "p1",
+    "keyObjectiveId": "food-1-025.p1",
+    "sourceRefs": [
+      {
+        "document": "ssw1",
+        "pdfPage": 42,
+        "printedPage": 37
+      },
+      {
+        "document": "ssw1",
+        "pdfPage": 43,
+        "printedPage": 38
+      }
+    ]
+  },
+  "asset": {
+    "path": "assets/food-manufacturing/royal-weekly-20261107/week03/hazard-analysis-planning.webp",
+    "sha256": "99eadfb36d5e744ba88656a36e52941f0a7821b72761e65db96b3cc0564f9e19",
+    "bytes": 268066,
+    "width": 1536,
+    "height": 1024,
+    "newRaster": false,
+    "generation": "Existing built-in imagegen artwork, byte-identical reuse"
+  },
+  "sourceReview": {
+    "basis": "Exact current canonical p1 and prior source-bound art receipt royal-images-week03-20261107.json; private PDF pages not newly reopened.",
+    "newSourcePageReview": false
+  },
+  "relevanceSelfReview": "Actually opened original PNG and committed WebP. Office separated by glass from production area: team follows process model and discusses points of management, with records for planning. Directly supports p1: examine materials and steps, analyze hazards and select controls. Same underlying hazard-analysis knowledge as food-2-013.p1, so precise reuse is appropriate. This context does not claim to enumerate all seven principles, specify a universally required CCP, or certify its drawn tanks as a real process. All exact management terms/conditions remain in current Japanese plus revision-matched localized caption. No blanket reuse across unrelated days.",
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/food-manufacturing/check-royal-week04.cjs food-1-025",
+    "result": "PASS13 actual production JA/12locale inline+expanded structural SSR contexts; exact URI/caption/source revision, actual WebP bytes, sourceHash/missingCaption negative guards.",
+    "priorBindings": "Removing only025row yields byte-equal saved registry before edit",
+    "diffCheck": "PASS scoped git diff --check",
+    "limits": "Structural image/ruby/modal adapters, no browser/device pixel or independent native/domain acceptance"
+  },
+  "canonicalContentChanged": false,
+  "acceptance": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false,
+    "wholeSectorComplete": false
+  },
+  "next": "After root persistence, fresh-check026 and proceed026/027 and remaining current week05 without duplicate generation."
+}

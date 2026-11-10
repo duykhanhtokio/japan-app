@@ -1,0 +1,8 @@
+--- a/src/components/manufacturing/SupplementalManufacturingDiagrams.tsx
++++ b/src/components/manufacturing/SupplementalManufacturingDiagrams.tsx
+@@
+- const label=target??item.captionJa,ratio=item.width/item.height,zoomWidth=Math.max(960,width);
++ const label=hideCaption?'設問の図':target??item.captionJa,ratio=item.width/item.height,zoomWidth=Math.max(960,width);
+@@
+- const button=(key:'imageZoom'|'imageClose',action:()=>void)=><Pressable accessibilityRole="button" accessibilityLabel={`${manufacturingUi(language,key)} · ${item.captionJa.split('。')[0]}`} onPress={action} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:16,textAlign:'center'}}>{manufacturingUi(language,key)}</Text></Pressable>;
++ const button=(key:'imageZoom'|'imageClose',action:()=>void)=><Pressable accessibilityRole="button" accessibilityLabel={hideCaption?manufacturingUi(language,key):`${manufacturingUi(language,key)} · ${item.captionJa.split('。')[0]}`} onPress={action} style={{minHeight:48,padding:12,borderWidth:1,borderColor:colors.border,borderRadius:8}}><Text style={{color:colors.text,fontSize:16,textAlign:'center'}}>{manufacturingUi(language,key)}</Text></Pressable>;

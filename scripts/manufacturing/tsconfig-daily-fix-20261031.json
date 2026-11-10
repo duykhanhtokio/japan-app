@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "skipLibCheck": true,
+    "baseUrl": "../..",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "../../src/components/manufacturing/ManufacturingDailyFigure.tsx",
+    "../../src/components/manufacturing/ManufacturingDailySupport.tsx",
+    "../../src/data/manufacturing/daily-support.ts",
+    "../../expo-env.d.ts"
+  ],
+  "exclude": [
+    "../../node_modules"
+  ]
+}

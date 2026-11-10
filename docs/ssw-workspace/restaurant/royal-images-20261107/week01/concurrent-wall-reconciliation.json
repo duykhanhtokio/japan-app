@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "sector": "restaurant",
+  "unit": "week01-concurrent-wall-asset-reconciliation",
+  "baselineCommit": "26d3b525c9fe152843ad28019f5c4126ae8cf216",
+  "status": "implemented_self_checked_pending_remote_persistence",
+  "race": {
+    "earlierCommit": "e3214595",
+    "incomingCommit": "ccf681ec",
+    "issue": "Incoming sidecar expected obsolete PNG identity while canonical metadata already pointed to earlier Royal image; incoming ledger selected inactive duplicate; native measurement guide removed."
+  },
+  "resolution": {
+    "activeAsset": "assets/restaurant/royal-weekly-20261107/week01/rst-2-hyg-02-wall-cleaning-context.webp",
+    "sha256": "9a34fdafb8f20041c44cbefaf67ef5d4258ba0d27397efe6810a0f4531e2c6f7",
+    "width": 1536,
+    "height": 1024,
+    "sidecar": "Retained full figure/row revision guard; original identity now equals actual canonical figure; output selects same earlier image",
+    "ledger": "Six imageEvidence paths and SHA rebound to actual active asset; candidate relations/reviewflags/coverage states unchanged",
+    "measurement": "Restored separate controlled1m lower-wall schematic,80px band and bracket; no dimensions inferred from generated scene",
+    "presentation": "One image,one native Japanese caption,existing translatedalt when enabled; no duplicated gallerycaption",
+    "inactiveDuplicate": "assets/restaurant/royal-weekly-20261107/week01/rst31-wall-floor-bench-cleaning.webp retained as inactive provenance; not counted as new active instructional binding"
+  },
+  "actualCounts": {
+    "activeWeek01MainRasterImages": 11,
+    "activeWeek01SupplementalRasterImages": 1,
+    "totalActiveWeek01RasterImages": 12,
+    "generatedWeek01RasterFilesIncludingInactiveDuplicate": 13
+  },
+  "checks": {
+    "actualProductionSelector": "PASS currentcanonical figure selects earlierasset; sixwrongrevision/identity/caption/width/quizSafe/crop guardsreject",
+    "actualProductionSSR": "PASS one image,onecaption,one native1mguide at288,390,768,844,1440widths; RNWdata/appearance/asset adapters,not browserpixelcheck",
+    "assetSHA": "PASS exact persistedGitasset bytes match canonicalfigure and sidecar",
+    "ledgerScoped": "PASS6changed entries allowonlypath,sha256,reviewNote; all otherJSON deepequal baseline; review/denominator/acceptance unchanged",
+    "fullLedgerChecker": "BLOCKED_FULL_LEDGER_SPARSE_OFFLINE MISSING_ARTIFACT docs/ssw-workspace/source-coverage-v2/restaurant-rst-1-service-regions.json.gz; originalchecker invokedwith exact localGitobjectfallback andGIT_NO_LAZY_FETCH=1; no sourcecoverageacceptance",
+    "diffCheck": "PASS",
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false
+  },
+  "fileHashes": {
+    "src/components/restaurant/RestaurantSourcePictures.tsx": "f92e3f87a40e40058f4ba41bc8f80e75b2b1a09e27a41fbb5532a087c0ced337",
+    "src/components/restaurant/RoyalRestaurantSourceFigures.ts": "6dc28e0b878afe6e3a52a72e2874baf745433859292e53f11d89ec09eb4762db",
+    "src/data/restaurant/royal-source-figure-overrides.json": "81426478513af398e140b1080e2114bc7a90c8559d9b72e7348fe3d48874fb52",
+    "docs/ssw-workspace/source-coverage-v2/restaurant.json": "d4f138380cae780f43d837d3e4707da632c01421164d0b228588e44309bf110b"
+  },
+  "next": "Coordinator persist and verify. Original week01 receipts remain history; this reconciliation supersedes their conflicting activebinding claims. No new image generation."
+}

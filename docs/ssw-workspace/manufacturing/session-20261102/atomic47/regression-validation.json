@@ -1,0 +1,16 @@
+{
+  "status": "PASS_WITH_EXISTING_LINT_WARNING",
+  "commandsExitZero": [
+    "node scripts/manufacturing/check-sequential-practice.cjs",
+    "node scripts/manufacturing/check-energy-practice.cjs",
+    "node scripts/manufacturing/check-tolerance-practice.cjs",
+    "node scripts/manufacturing/check-dimension-editorial.cjs",
+    "node scripts/manufacturing/check-qc-plan-practice.cjs",
+    "./node_modules/.bin/eslint src/data/manufacturing/lesson-editorial.ts"
+  ],
+  "eslint": {"errors": 0, "warnings": 1, "rule": "@typescript-eslint/no-require-imports", "line": 18, "location": "pre-existing sequential-practice require"},
+  "semanticTypeScriptFullApp": "not_run_by_this_worker",
+  "wholeAppExpoProduction": "not_run_by_this_worker",
+  "physicalDeviceVerified": false,
+  "measuredLearningDuration": false
+}

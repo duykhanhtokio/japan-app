@@ -1,0 +1,14 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {create,event,summarize}=require('./learning-session.cjs');
+const config={sector:'hospitality',dayId:'hotel-service-01',observerId:'synthetic-observer',participantId:'synthetic-learner',buildCommit:'f'.repeat(40),contentPath:'src/data/hospitality/service.json',device:'simulated',synthetic:true};
+const s=create(config,1000);event(s,'pause',61000);event(s,'resume',181000);event(s,'finish',301000);
+const r=summarize(s);assert.equal(r.activeMs,180000);assert.equal(r.activeSeconds,180);assert.equal(r.activeMinutes,3);assert.equal(r.pauseMs,120000);assert.equal(r.wallMs,300000);assert.equal(r.eligibleForHumanReview,false);assert.equal(r.currentContent,true);assert.equal(r.acceptance.learnerDurationMeasured,false);
+assert.throws(()=>event(s,'resume',302000),/order/);assert.throws(()=>event(create(config,1000),'pause',999),/backwards/);
+const forged=structuredClone(s);forged.events[2].type='pause';assert.throws(()=>summarize(forged),/order/);
+const stale=structuredClone(s);stale.contentSha256='0'.repeat(64);assert.equal(summarize(stale).eligibleForHumanReview,false);assert.equal(summarize(stale).currentContent,false);
+assert.throws(()=>create({...config,contentPath:'../outside'},1000),/src\/data/);assert.throws(()=>create({...config,contentPath:'src/data/../../AGENTS.md'},1000),/src\/data/);assert.throws(()=>create({...config,observerId:''},1000),/observerId/);
+const paused=create(config,1000);event(paused,'pause',11000);event(paused,'finish',21000);assert.equal(summarize(paused).activeMs,10000);assert.equal(summarize(paused).pauseMs,10000);
+const shifted=structuredClone(s);shifted.events.at(-1).atMs+=3600000;assert.equal(summarize(shifted).activeMs,180000);assert.equal(summarize(shifted).clockShiftMs,3600000);
+const restarted=structuredClone(s);restarted.events.at(-1).monotonicNs='0';assert.throws(()=>summarize(restarted),/backwards|restarted/);
+console.log(JSON.stringify({status:'PASS',activePauseAccounting:true,secondsAndMinutesConversion:true,finishedSessionImmutable:true,monotonicIntervalsIgnoreWallClockChanges:true,backwardsMonotonicCounterRejected:true,backwardsClockRejected:true,staleContentNotEligible:true,syntheticResultsCannotCertifyLearnerTime:true,sourcePathTraversalRejected:true}));

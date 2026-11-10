@@ -1,0 +1,85 @@
+{
+  "reviewType": "independent_ai_semantic_review",
+  "reviewer": "b18_hi",
+  "locale": "ne",
+  "examId": "food-2-mock-05",
+  "reviewedQuestionCount": 36,
+  "reviewedQuestionIds": [
+    "food-2-q211",
+    "food-2-q171",
+    "food-2-q129",
+    "food-2-q096",
+    "food-2-q317",
+    "food-2-q236",
+    "food-2-q204",
+    "food-2-q392",
+    "food-2-q356",
+    "food-2-q210",
+    "food-2-q365",
+    "food-2-q271",
+    "food-2-q286",
+    "food-2-q188",
+    "food-2-q326",
+    "food-2-q336",
+    "food-2-q168",
+    "food-2-q287",
+    "food-2-q234",
+    "food-2-q131",
+    "food-2-q225",
+    "food-2-q381",
+    "food-2-q135",
+    "food-2-q111",
+    "food-2-q364",
+    "food-2-q108",
+    "food-2-q318",
+    "food-2-q224",
+    "food-2-q205",
+    "food-2-q391",
+    "food-2-q337",
+    "food-2-q367",
+    "food-2-q346",
+    "food-2-q266",
+    "food-2-q153",
+    "food-2-q281"
+  ],
+  "reviewedFields": [
+    "prompt",
+    "options[0:4]",
+    "explanation",
+    "optionExplanations[0:4]",
+    "existingTitle"
+  ],
+  "corrections": [
+    {
+      "id": "food-2-q346",
+      "field": "prompt",
+      "issue": "Removed integer-only narrowing of generic no-rounding source qualifier.",
+      "corrected": true
+    },
+    {
+      "id": "food-2-q211",
+      "field": "prompt",
+      "issue": "Use powder rather than dust for source粉 process distinction.",
+      "corrected": true
+    },
+    {
+      "id": "food-2-q266",
+      "field": "prompt,options[3]",
+      "issue": "Final structural check found Japanese raw-material input term. Replaced with natural Nepali for quantity of raw material put into the process; reread Japanese to preserve equal input quantity and falsified-record distractor.",
+      "corrected": true
+    }
+  ],
+  "findings": "All36 directly compared against Japanese. Roles, negations, response authority and option order preserved. q346 arithmetic900*0.1=90kg and99-90=9kg verified; hypothetical scope and no rounding retained. Devanagari conjunct ZWJs are real Unicode, not literal escape sequences. No native or domain certification.",
+  "checks": {
+    "missingOnlyMembership": true,
+    "correctReasonAlignment": true,
+    "allFourOptionsAndReasonsReviewed": true,
+    "all36TargetValuesFreeOfJapaneseScript": true,
+    "finalQ266JapaneseSourceRechecked": true
+  },
+  "nativeSpeakerReviewed": false,
+  "domainExpertReviewed": false,
+  "browserTested": false,
+  "reviewedArtifactSha256": "7ea5d3be5f22c71dfe4ed7f30cee9cfbf5383897c7d0c72e7ab1c3f6b004b071",
+  "integratedPartSha256": "7ea5d3be5f22c71dfe4ed7f30cee9cfbf5383897c7d0c72e7ab1c3f6b004b071"
+}

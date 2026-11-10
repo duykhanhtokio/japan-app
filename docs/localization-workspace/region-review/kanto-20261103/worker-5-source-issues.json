@@ -1,0 +1,176 @@
+{
+  "worker": 5,
+  "region": "kanto",
+  "issues": [
+    {
+      "scenarioId": "SC-LOC-GNM-OTAGUNMA-08-001",
+      "batch": "134",
+      "status": "CLOSED_NONBLOCKING_NPC_CONFIRMATION_CLARIFIED",
+      "turnIds": [
+        "DLG-SC-LOC-GNM-OTAGUNMA-08-001-SHARED-01",
+        "DLG-SC-LOC-GNM-OTAGUNMA-08-001-SHARED-08",
+        "DLG-SC-LOC-GNM-OTAGUNMA-08-001-SHARED-10"
+      ],
+      "sourceQuotes": [
+        "ご予約の皆様がそろいましたね。",
+        "遅れて来る同僚には、打合せを別の日にすると連絡します。",
+        "人数は同じです。…遅れる同僚の席も残してください。"
+      ],
+      "problem": "Opening implies entire reserved party present; later same-count party has a late colleague. No explicit correction or excluded-from-reservation explanation.",
+      "actionTaken": "Preserved canonical JP and all faithful targets. Closed only as nonblocking contextual confirmation after own full-dialogue review; no native/source publication certification.",
+      "previousStatus": "SOURCE_CONTINUITY_UNRESOLVED",
+      "resolution": "Self-review of all eleven turns: turn01 is NPC confirmation using ね, not narrator assertion or guest acceptance; guest turn02 does not confirm full attendance. Guest turn08 clarifies a colleague will arrive late; turn09 asks whether booked headcount changes, turn10 says headcount same and reserves colleague seat, turn11 confirms booked meal count rather than physical attendance. NPC initial assumption is corrected by later guest information; no logical requirement that reserved headcount equals current present count. Awkward initial assumption retained, but no necessary source contradiction and no JP/translation alteration warranted.",
+      "turnEvidence": [
+        {
+          "turnId": "DLG-SC-LOC-GNM-OTAGUNMA-08-001-SHARED-01",
+          "sourceJa": "ご予約の皆様がそろいましたね。こちらのお席へどうぞ。",
+          "sourceSha256": "26867449e14342e6081b45da297c6703737cec1952cd810a8ba629a029732018"
+        },
+        {
+          "turnId": "DLG-SC-LOC-GNM-OTAGUNMA-08-001-SHARED-02",
+          "sourceJa": "会社の集まりですが、少し仕事の話もします。周りに聞こえにくい席はありますか。",
+          "sourceSha256": "2a0d51d670d55c343ce0e44e29fe8ed22d14c14ffed52ad3298664fd2a1fa404"
+        },
+        {
+          "turnId": "DLG-SC-LOC-GNM-OTAGUNMA-08-001-SHARED-08",
+          "sourceJa": "予約の料理はそのままでお願いします。遅れて来る同僚には、打合せを別の日にすると連絡します。",
+          "sourceSha256": "85d61e67302676f6041646866bf009fe6bc15e88077d7004d83235ada085fad0"
+        },
+        {
+          "turnId": "DLG-SC-LOC-GNM-OTAGUNMA-08-001-SHARED-09",
+          "sourceJa": "お席の人数は変わりませんか。",
+          "sourceSha256": "a7ea8fdad3f47da21d30ff41118bb20ea7b8396e740f5e3d0a05e88f0ae3337a"
+        },
+        {
+          "turnId": "DLG-SC-LOC-GNM-OTAGUNMA-08-001-SHARED-10",
+          "sourceJa": "人数は同じです。ここでは食事をして、仕事の資料は開きません。遅れる同僚の席も残してください。",
+          "sourceSha256": "650ca7d7f49aa3786dbd62c213210476f9c28e50ebbecd9f0553e10ed8d3eb88"
+        },
+        {
+          "turnId": "DLG-SC-LOC-GNM-OTAGUNMA-08-001-SHARED-11",
+          "sourceJa": "同じ人数のお食事で承りました。皆様の飲み物がお決まりになりましたら伺います。",
+          "sourceSha256": "2fbd8f4786f6126ddc38ff2e9e7ad77019df70b07acf8974191ca8cc518b4ce1"
+        }
+      ]
+    },
+    {
+      "scenarioId": "SC-LOC-GNM-SHIBUKAWA-03-001",
+      "batch": "134",
+      "turnId": "DLG-SC-LOC-GNM-SHIBUKAWA-03-001-SHARED-02",
+      "status": "SOURCE_HINT_DIRECTION_FIXED_SELF_REVIEWED",
+      "problem": "JP spoken02 says sample mistaken for product for purchase; hint02 試食と誤認した商品 literally reverses direction to product mistaken for sample. Existing translated hints mostly vague but cannot certify canonical direction.",
+      "sourceEvidence": {
+        "sourceJa": "買う商品だと思ってかごに入れようとしていました。販売用はどこにありますか。",
+        "sourceSha256": "3b92d99ca661ceaff25afd3da1adbd4b48883b870c2ac1854b6054fa43d2e49c"
+      },
+      "sourceProposal": {
+        "path": "docs/localization-workspace/sources/dialogue-batch-134.ja.json",
+        "field": "hintJa",
+        "before": "試食と誤認した商品を訂正して販売品を尋ねる。日本語で伝えてください。",
+        "beforeSha256": "ca9fee3339b8c3d1df05ec842cd9196d0b7a99a15ccf8fecab6562c5a61fb060",
+        "proposedAfter": "試食品を販売品と間違えたことを訂正し、販売品の場所を尋ねる。日本語で伝えてください。"
+      },
+      "localeProposals": [
+        {
+          "locale": "vi",
+          "path": "src/data/dialogue-content/locale-batches/vi/134.json",
+          "field": "hintTranslation",
+          "before": "Hãy sửa nhầm bằng tiếng Nhật về đồ ăn thử và hỏi hàng bán.",
+          "beforeSha256": "a2df5604bba79387286d21399e4a35bd8b75977429087ea9c6cd60db0756a755",
+          "proposedAfter": "Hãy đính chính rằng bạn đã nhầm đồ ăn thử là hàng bán và hỏi hàng bán ở đâu. Trình bày bằng tiếng Nhật."
+        },
+        {
+          "locale": "en",
+          "path": "src/data/dialogue-content/locale-batches/en/134.json",
+          "field": "hintTranslation",
+          "before": "Correct your confusion about the sample and ask for sale products. Say it in Japanese.",
+          "beforeSha256": "15796957acac2818687b74d88bbcb3930a1167ca2f2ba36ab32640d570760cbf",
+          "proposedAfter": "Explain that you mistook a tasting sample for a product for sale, and ask where the sale products are. Say it in Japanese."
+        },
+        {
+          "locale": "id",
+          "path": "src/data/dialogue-content/locale-batches/id/134.json",
+          "field": "hintTranslation",
+          "before": "Koreksi dalam bahasa Jepang salah sangka cicipan dan tanyakan produk jualan.",
+          "beforeSha256": "216eaabcaca14a31f16e3d3f227ed28ad23143d7e35b7f5ad57210312dbe1e54",
+          "proposedAfter": "Jelaskan bahwa Anda mengira sampel cicipan sebagai barang untuk dijual, lalu tanyakan letak barang yang dijual. Sampaikan dalam bahasa Jepang."
+        },
+        {
+          "locale": "tl",
+          "path": "src/data/dialogue-content/locale-batches/tl/134.json",
+          "field": "hintTranslation",
+          "before": "Itama ang pagkalito sa patikim at itanong ang paninda. Sabihin ito sa Japanese.",
+          "beforeSha256": "a2e0e59159108b25069ebcf5cc1d634c12225bcafdf819153400941d61b4ddba",
+          "proposedAfter": "Itama na napagkamalan mong paninda ang patikim at itanong kung nasaan ang mga paninda. Sabihin ito sa Japanese."
+        },
+        {
+          "locale": "zh-CN",
+          "path": "src/data/dialogue-content/locale-batches/zh-CN/134.json",
+          "field": "hintTranslation",
+          "before": "更正对试吃商品的误认，询问销售品。请用日语表达。",
+          "beforeSha256": "0a7e0c27a08fc72d69f015c4bbec921e31dbbd249528a46fed1900da8692c0af",
+          "proposedAfter": "更正自己把试食品误当作销售商品的理解，并询问销售商品在哪里。请用日语表达。"
+        },
+        {
+          "locale": "zh-TW",
+          "path": "src/data/dialogue-content/locale-batches/zh-TW/134.json",
+          "field": "hintTranslation",
+          "before": "更正誤認試吃品，詢問販售商品。請用日語表達。",
+          "beforeSha256": "3755745de5e260ce56d7e370616f466eea3ebe32f252bf109fa30494041afe73",
+          "proposedAfter": "更正自己把試吃品誤當作販售商品的理解，並詢問販售商品在哪裡。請用日語表達。"
+        },
+        {
+          "locale": "hi",
+          "path": "src/data/dialogue-content/locale-batches/hi/134.json",
+          "field": "hintTranslation",
+          "before": "चखने की गलतफहमी सुधारकर बिक्री का सामान पूछें। जापानी में बताइए।",
+          "beforeSha256": "f8dde86b5b437615cdbd6d0f23d5154704dce9f82f6279d579e176c30a4d08b1",
+          "proposedAfter": "बताइए कि चखने के नमूने को बिक्री का सामान समझ लिया था, और पूछिए कि खरीदने वाला सामान कहाँ है। जापानी में कहिए।"
+        },
+        {
+          "locale": "bn",
+          "path": "src/data/dialogue-content/locale-batches/bn/134.json",
+          "field": "hintTranslation",
+          "before": "চেখে দেখার ভুল ঠিক করে বিক্রির পণ্য চান। জাপানি ভাষায় বলুন।",
+          "beforeSha256": "6b751d49fc9f0d0b8d7c5bd6a7f441747e7725a1b20815af076f4ce339c1d82d",
+          "proposedAfter": "চেখে দেখার নমুনাকে বিক্রির পণ্য ভেবেছিলেন বলে ভুলটি সংশোধন করুন এবং বিক্রির পণ্য কোথায় জিজ্ঞেস করুন। জাপানিতে বলুন।"
+        },
+        {
+          "locale": "ne",
+          "path": "src/data/dialogue-content/locale-batches/ne/134.json",
+          "field": "hintTranslation",
+          "before": "चाख्ने गलत बुझाइ सच्याएर बिक्रीको सामान जापानीमा सोध्नुहोस्।",
+          "beforeSha256": "a067c62a91ee9447ec6818d87e1fed3de9f7e73a45fabe08ba52110dedf3667b",
+          "proposedAfter": "चाख्ने नमुनालाई बेच्ने सामान ठानेको गलत बुझाइ सच्याई बेच्ने सामान कहाँ छ जापानीमा सोध्नुहोस्।"
+        },
+        {
+          "locale": "my",
+          "path": "src/data/dialogue-content/locale-batches/my/134.json",
+          "field": "hintTranslation",
+          "before": "မြည်းစရာနဲ့မှားတဲ့ပစ္စည်းပြင်ပြီး ရောင်းဟာမေးပါ။ ဂျပန်လို ပြောပါ။",
+          "beforeSha256": "6609c60344fd368b3b792f42bfc0e93c3b475ddad263b9322bd7fe03fce896b2",
+          "proposedAfter": "မြည်းဖို့ထားတဲ့နမူနာကို ရောင်းတဲ့ပစ္စည်းလို့ ထင်မှားခဲ့ကြောင်း ပြင်ပြောပြီး ရောင်းတဲ့ပစ္စည်း ဘယ်မှာရှိသလဲ မေးပါ။ ဂျပန်လို ပြောပါ။"
+        },
+        {
+          "locale": "th",
+          "path": "src/data/dialogue-content/locale-batches/th/134.json",
+          "field": "hintTranslation",
+          "before": "แก้สินค้าที่เข้าใจชิมผิดแล้วถามของขาย กรุณาพูดเป็นภาษาญี่ปุ่น",
+          "beforeSha256": "894af6baa2c3d0dcfb3b38c8f2b94ba227479ec968709eac2f838288bd1a3826",
+          "proposedAfter": "แก้ความเข้าใจว่าคิดว่าของชิมเป็นสินค้าสำหรับขาย แล้วถามว่าสินค้าที่ขายอยู่ที่ไหน กรุณาพูดเป็นภาษาญี่ปุ่น"
+        },
+        {
+          "locale": "km",
+          "path": "src/data/dialogue-content/locale-batches/km/134.json",
+          "field": "hintTranslation",
+          "before": "សូមកែការយល់ច្រឡំអំពីសាករសជាតិ ហើយសួរជាភាសាជប៉ុនពីទំនិញលក់។",
+          "beforeSha256": "298c43140835f6665bccd3dabc97b14e25f3527bfdecd5d283e6b56b869ef416",
+          "proposedAfter": "សូមកែការយល់ច្រឡំថារបស់សាករសជាតិជាទំនិញសម្រាប់លក់ ហើយសួរជាភាសាជប៉ុនថាទំនិញលក់នៅឯណា។"
+        }
+      ],
+      "actionTaken": "Authorized precise JP hint and12 targets applied, runtime player.hint/source batch/12locale hintJa synchronized; spoken Japanese untouched. Receipt scalar hashes current. Shared global mirror deferred to root patch file.",
+      "previousStatus": "SOURCE_HINT_DIRECTION_PROPOSAL_UNAPPLIED"
+    }
+  ],
+  "nativeReviewed": false
+}

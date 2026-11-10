@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "scope": "Two source-bound native flower-classification learning supports; private integration candidate, not full course acceptance",
+  "baseHead": "ee58f2febc5b9e7f74caacb4886225e74a664ecd",
+  "lessons": [
+    {
+      "sourceHash": "4e62602c5fb58534fa99340ae5c4ba24f7abf9e2658d7e6be0e2f4d88e11bcb9",
+      "revision": "v1",
+      "scopeLevels": [
+        "2"
+      ],
+      "lessonId": "agr-flower-details-table-examples",
+      "rows": 8
+    },
+    {
+      "sourceHash": "dc98ca86d236a85a3c016f47f2f345c7c88658c5f2a8f8969bcf3e06f2d52040",
+      "revision": "v1",
+      "scopeLevels": [
+        "2"
+      ],
+      "lessonId": "agr-par12-flower-group-records",
+      "rows": 8
+    }
+  ],
+  "primarySource": {
+    "id": "AGR-S2",
+    "sha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+    "pages": [
+      {
+        "pdfPage": 124,
+        "printedPage": 122
+      },
+      {
+        "pdfPage": 125,
+        "printedPage": 123
+      }
+    ],
+    "actualPagePixelsViewed": true,
+    "sourcePixelsRedistributed": false
+  },
+  "sourceDisposition": "All sixteen category/subclass rows and thirty-six named-example occurrences match the exact current canonical Japanese targets and primary classification pages. Preserve distinctions between herbaceous/woody foliage and herbs; succulent/cacti category does not assert every named plant is a cactus. No added cultivation quantities or rules.",
+  "languagePolicy": "Japanese and kana for category/header/scope labels; Japanese plant names retained, kana supplied for Han names. Twelve direct draft UI-label locales plus the complete exact current canonical translated paragraph paired with each source group; no newly invented plant aliases. Stale canonical or UI-label source snapshots reject localized output.",
+  "files": [
+    {
+      "path": "src/components/agriculture/FoodFlowerClassificationSupport.tsx",
+      "sha256": "0e899ada7d2462b93a441fc33c38289ef06da947f3e781bedacf1afd8ba68b70"
+    },
+    {
+      "path": "src/data/agriculture/food-flower-classification-native.json",
+      "sha256": "3dfbd911d7d4a9e7ab5d36e62803aeed90b29a56cb1a4b6f2ead190b050b705b"
+    },
+    {
+      "path": "scripts/agriculture/check-food-flower-classification.cjs",
+      "sha256": "23632c7e5105db26d632d1cba2c80a7c36ce297ca56bf760aaadb8482d023a47"
+    },
+    {
+      "path": "scripts/agriculture/render-food-flower-classification-geometry.py",
+      "sha256": "3ff392dc147f4d5bf96ae0ca93180192cff91879a29b586b3365c21e679146ae"
+    }
+  ],
+  "checks": {
+    "PASS": true,
+    "exactSourceContexts": 2,
+    "sourceRows": 16,
+    "namedExampleOccurrences": 36,
+    "actualComponentSSRRenders": 208,
+    "exactCanonicalTranslatedGroups": 576,
+    "nativeReadingLabelOccurrences": 7072,
+    "staleTypeScopePartialOrTranslationRejects": 104,
+    "sourcePixelRedo": 0,
+    "strictIsolatedComponentAndPropContract": true,
+    "rejectedWrongPropTypes": 3,
+    "claim": "Actual TSX component SSR with explicit RN structural/CSS host adapters; not browser, native phone, domain or release acceptance"
+  },
+  "geometry": {
+    "PASS": true,
+    "textOverflowCount": 0,
+    "cases": [
+      {
+        "actualSSRInput": "1-vi-375.html",
+        "geometryOutput": "1-vi-375.geometry.png",
+        "width": 375,
+        "contentHeight": 4630,
+        "method": "RN structural-host source styles, explicit flex-wrap/line-height/font measurement approximation; not browser/native rendering"
+      },
+      {
+        "actualSSRInput": "2-vi-375.html",
+        "geometryOutput": "2-vi-375.geometry.png",
+        "width": 375,
+        "contentHeight": 6085,
+        "method": "RN structural-host source styles, explicit flex-wrap/line-height/font measurement approximation; not browser/native rendering"
+      },
+      {
+        "actualSSRInput": "2-my-375.html",
+        "geometryOutput": "2-my-375.geometry.png",
+        "width": 375,
+        "contentHeight": 6409,
+        "method": "RN structural-host source styles, explicit flex-wrap/line-height/font measurement approximation; not browser/native rendering"
+      },
+      {
+        "actualSSRInput": "2-vi-1440.html",
+        "geometryOutput": "2-vi-1440.geometry.png",
+        "width": 1440,
+        "contentHeight": 2497,
+        "method": "RN structural-host source styles, explicit flex-wrap/line-height/font measurement approximation; not browser/native rendering"
+      }
+    ]
+  },
+  "visualSelfReview": {
+    "method": "Actual SSR HTML styles rendered with explicit measured-font flex-wrap approximation; not browser/native screenshot",
+    "viewed": [
+      "target1 vi375 top",
+      "target2 vi375 top and final bottom including scope/source footer",
+      "target2 my375 orchid middle",
+      "target2 vi1440 source panels"
+    ],
+    "finding": "Source names, hierarchy, Japanese/kana and translated full paragraphs legible in inspected geometry; stacked narrow and horizontal wide layouts. No measured text overflow in four final geometry cases.",
+    "browserVerified": false
+  },
+  "verificationCommands": [
+    "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules AGRI_FOOD_FLOWER_QA=/tmp/agri-food-native-classification/qa node scripts/agriculture/check-food-flower-classification.cjs",
+    "python scripts/agriculture/render-food-flower-classification-geometry.py /tmp/agri-food-native-classification/qa"
+  ],
+  "sharedIntegrationPending": true,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "physicalDeviceTested": false,
+  "releaseAccepted": false,
+  "pixelGeneration": 0
+}

@@ -101,16 +101,131 @@ def load_inputs(root=ROOT):
     return inputs
 
 
+
+def historical_question_translation(path, raw, root):
+    """Verify approved changes and reconstruct exact Batch22 bytes."""
+    import subprocess
+
+    prefix = 'src/data/manufacturing/translations/'
+    approved = {
+        'questions.en.json': (
+            '07876f25f954f3d3e3c500a217f00b09aa569adc4f69c158efc3f8d3f9572085',
+            {'mfg1-surface-weekly-02-q06'}
+        ),
+        'questions.id.json': (
+            '9eff04f86a8bf8459048f5e31deb7712151b63f499d4b4268adb32d2e15c370b',
+            {'mfg1-electrical-weekly-14-q03'}
+        ),
+        'questions.th.json': (
+            '544d6681ca8004a3d3dbfcf301a5af0f6ab5f706d74269387265dbdfd972e6f7',
+            {'mfg1-electrical-weekly-14-q03'}
+        ),
+        'questions.tl.json': (
+            '1f5b13dbe3534294bfad5324af318c1111ec7789928909b17de604238d902b32',
+            {'mfg1-surface-weekly-02-q06','mfg1-electrical-weekly-14-q03'}
+        ),
+        'questions.vi.json': (
+            'c6cb3d6ba81597169985e9c290acb8e1070fa255a26f61157cb242949550c5e1',
+            {'mfg1-surface-weekly-02-q06','mfg1-electrical-weekly-14-q03'}
+        ),
+        'questions.zh-CN.json': (
+            '3d610e127caf4c1e6d3179a2b3565e54e4e784394f713742b724f337538cb135',
+            {'mfg1-electrical-weekly-14-q03'}
+        ),
+        'questions.zh-TW.json': (
+            'ea4e5cccc36ceb85e5fad5f17b68d66b53a0eb0fc82ba5a77febfdb1ae908309',
+            {'mfg1-electrical-weekly-14-q03'}
+        )
+    }
+
+    name = path[len(prefix):]
+    if name not in approved:
+        return raw
+
+    expected_current, allowed_ids = approved[name]
+    freeze = read_json(root / FREEZE)
+    expected_old = freeze['files'][path]
+
+    snapshot = (
+        root / STAGE /
+        'historical-question-translations' / name
+    ).read_bytes()
+
+    require(digest(snapshot) == expected_old,
+            'Historical translation snapshot drift: '+name)
+
+    if digest(raw) == expected_old:
+        return raw
+
+    require(digest(raw) == expected_current,
+            'Unapproved current translation: '+name)
+
+    old = json.loads(snapshot)
+    new = json.loads(raw)
+
+    require(set(old) == set(new),
+            'Translation top-level keys changed: '+name)
+
+    require(set(old['questions']) == set(new['questions']),
+            'Question IDs changed: '+name)
+
+    changed = {
+        key for key in old['questions']
+        if old['questions'][key] != new['questions'][key]
+    }
+
+    require(changed == allowed_ids,
+            'Unexpected changed question IDs: '+name)
+
+    for key in changed:
+        before = old['questions'][key]
+        after = new['questions'][key]
+
+        require(set(before) == set(after),
+                'Question fields changed: '+key)
+
+        for field in before:
+            if field not in {'stem','options','reasons'}:
+                require(before[field] == after[field],
+                        'Protected question field changed: '+key)
+
+    restored = json.loads(json.dumps(new))
+    for key in changed:
+        restored['questions'][key] = old['questions'][key]
+
+    require(restored == old,
+            'Unexpected protected translation changes: '+name)
+
+    return snapshot
+
+
+def read_json(path):
+    return json.loads(path.read_text())
+
 def add_bytes(path,inputs,root):
     path=safe_path(path)
     if path not in inputs:
         raw=(root/path).read_bytes()
+        if path=='src/components/manufacturing/ManufacturingMocks.tsx':
+            import runpy
+            raw=runpy.run_path(str(root/'scripts/manufacturing/apply-implementation40.py'))['predecessor'](path,raw,root)
         if path in {'src/data/manufacturing/translations.ts','src/data/manufacturing/source-guides.ts'}:
             import runpy
             raw=runpy.run_path(str(root/'scripts/manufacturing/editorial-translation-projection.py'))['historical_translation_loader'](path,raw)
         if path=='src/components/manufacturing/ManufacturingCourse.tsx':
             import runpy
             raw=runpy.run_path(str(root/'scripts/manufacturing/supplement-practice-projection.py'))['historical_course'](raw)
+        if path.startswith('src/data/manufacturing/translations/questions.'):
+            raw=historical_question_translation(path,raw,root)
+        if path=='src/data/manufacturing/ui-translations.json':
+            snapshot=(root/STAGE/'historical-ui-translations.json').read_bytes()
+            frozen=read_json(root/FREEZE)['files'][path]
+            require(digest(snapshot)==frozen,'Historical UI snapshot drift')
+            require(digest(raw) in {
+                frozen,
+                '3ecb57be828871d6681bb0008bf2d0ce3e942237e5d8b8279dc145b03d7f05b3'
+            },'Unapproved UI translation change')
+            raw=snapshot
         inputs[path]=raw
 
 

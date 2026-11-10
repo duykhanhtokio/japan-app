@@ -1,0 +1,172 @@
+{
+  "date": "2026-11-02",
+  "baselineCommit": "4aa69f52bb7cf34a8ec84c7494928fc6c2671dd0",
+  "scope": "bounded_qc_control_plan_reading_competencies",
+  "source": {
+    "documentId": "mfg1-mechanical-source",
+    "sha256": "35096524ce12c830ce7765311f536b5d1d0a8bde7268e5385f90588abba04622",
+    "physicalPages": [
+      39,
+      40,
+      41
+    ],
+    "printedPages": [
+      31,
+      32,
+      33
+    ],
+    "sourceBytesVerified": true,
+    "tablePagesVisuallyCompared": [
+      40,
+      41
+    ]
+  },
+  "units": [
+    {
+      "id": "mfg43-qc-quality-characteristic-method-location-record",
+      "physicalPage": 40,
+      "fact": "QCfields distinguish characteristic/method and practical location/record links.",
+      "lessonId": "mfg1-mechanical-lesson-011",
+      "paragraphId": "example",
+      "questionIds": [
+        "mfg1-qc-plan-check-01"
+      ],
+      "evidenceStatus": "new_ai_semantic_review_not_human_certified"
+    },
+    {
+      "id": "mfg43-qc-sample-count-vs-frequency",
+      "physicalPage": 41,
+      "fact": "QCexample has distinct timing and sample counts; separate startup from periodic sampling.",
+      "lessonId": "mfg1-mechanical-lesson-011",
+      "paragraphId": "example",
+      "questionIds": [
+        "mfg1-qc-plan-check-02",
+        "mfg1-qc-plan-check-03"
+      ],
+      "evidenceStatus": "new_ai_semantic_review_not_human_certified"
+    },
+    {
+      "id": "mfg43-qc-criteria-required",
+      "physicalPage": 39,
+      "fact": "Workstandard and QCcontrol criteria must be consulted; measured value alone is not acceptance.",
+      "lessonId": "mfg1-mechanical-lesson-011",
+      "paragraphId": "example",
+      "questionIds": [
+        "mfg1-qc-plan-check-04"
+      ],
+      "evidenceStatus": "new_ai_semantic_review_not_human_certified"
+    },
+    {
+      "id": "mfg43-qc-sample-scope-not-all-production",
+      "physicalPage": 41,
+      "fact": "Sampling example is not whole-population proof; preserve inspection scope.",
+      "lessonId": "mfg1-mechanical-lesson-011",
+      "paragraphId": "example",
+      "questionIds": [
+        "mfg1-qc-plan-check-05"
+      ],
+      "evidenceStatus": "new_ai_semantic_review_not_human_certified"
+    },
+    {
+      "id": "mfg43-qc-lot-result-identity",
+      "physicalPage": 41,
+      "fact": "Lot identification and check-sheet records must retain the actual target.",
+      "lessonId": "mfg1-mechanical-lesson-011",
+      "paragraphId": "example",
+      "questionIds": [
+        "mfg1-qc-plan-check-06"
+      ],
+      "evidenceStatus": "new_ai_semantic_review_not_human_certified"
+    },
+    {
+      "id": "mfg43-qc-abnormal-disposition",
+      "physicalPage": 40,
+      "fact": "Keep specified abnormal-action and contact fields distinct from measurement.",
+      "lessonId": "mfg1-mechanical-lesson-011",
+      "paragraphId": "example",
+      "questionIds": [
+        "mfg1-qc-plan-check-07"
+      ],
+      "evidenceStatus": "new_ai_semantic_review_not_human_certified"
+    },
+    {
+      "id": "mfg43-qc-applicable-revision",
+      "physicalPage": 39,
+      "fact": "Existing taught document identity/revision remains necessary; no convenience-based selection.",
+      "lessonId": "mfg1-mechanical-lesson-011",
+      "paragraphId": "example",
+      "questionIds": [
+        "mfg1-qc-plan-check-08"
+      ],
+      "evidenceStatus": "new_ai_semantic_review_not_human_certified"
+    }
+  ],
+  "authoredExample": {
+    "process": "finalinspection",
+    "characteristic": "outsidediameter",
+    "tool": "specifiedmicrometer",
+    "owner": "inspector",
+    "location": "inspectionbenchC",
+    "record": "inspectionformR",
+    "startupSampleCount": 3,
+    "periodicSampleCount": 1,
+    "periodicHours": 2,
+    "startTime": "08:00",
+    "subsequentChecks": [
+      "10:00",
+      "12:00"
+    ],
+    "inclusiveInspectedCount": 5,
+    "isWorkplaceInstruction": false,
+    "sourceExampleValuesReused": false,
+    "sourceAqlOrSampleRulesGeneralized": false,
+    "actualAcceptanceLimitsSupplied": false
+  },
+  "independentExpressionReview": {
+    "sourceExerciseCopied": false,
+    "sourceImageCopied": false,
+    "sourceTableLayoutCopied": false,
+    "aiDecision": "Independent finalinspection scenario and question set. Common QC field names retained; sourcecap-screw/process/actualdates/AQL/frequencies are not reproduced. Record/revision facts already taught are applied in new competencies."
+  },
+  "implementation": {
+    "lessonLocales": 13,
+    "examId": "mfg1-qc-plan-supplement",
+    "questions": 8,
+    "optionReasons": 24,
+    "questionLocalePairs": 96,
+    "translatedQuestionFields": 672,
+    "mixedOptionLengths": [
+      4,
+      4,
+      4,
+      4,
+      2,
+      2,
+      2,
+      2
+    ],
+    "existingLessonBankChanged": false,
+    "existingExamIdentityChanged": false,
+    "newQuestionReadings": "Parenthesized readings on difficult kanji; no top-ruby renderer claimed.",
+    "figure": "Existing day011 objective figure retained; no new table-image decoding or sourcefigure recognition acceptance claimed. Model fields are rendered as selectable multiline text inside existing lessonreader."
+  },
+  "validation": {
+    "qcPlanGate": "PASS:8questions,24optionReasons,96translationPairs,576questionDriftRejections,52lessonDriftRejections,96staleTargetRejections,timeline5,grade8/8,attemptRestoreAndRevisionReject",
+    "previousToleranceGate": "PASS:4questions48translationPairs288Qdrift52lessondrift",
+    "oldCaliperGate": "PASS:8questions96translationPairs,old456corequestionspreserved",
+    "oldDimensionGate": "PASS:13locales91driftCases",
+    "diffCheck": "PASS"
+  },
+  "remaining": [
+    "Wholepage knowledge closure for39–41 not certified",
+    "All574page semantic closure remains incomplete",
+    "Unreviewed source clusters,realdevice rendering,measured workload,expert/native acceptance",
+    "Sourcep97 angle qualification remains unresolved"
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "physicalDeviceVerified": false,
+  "wholeCurriculumComplete": false,
+  "releaseReady": false
+}

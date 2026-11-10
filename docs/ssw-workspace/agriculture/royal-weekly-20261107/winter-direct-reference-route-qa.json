@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "reviewedBaseline": "0c908c0f48631fd12ca8651de0eaf5db0bb2f264",
+  "readyPaths": [
+    "src/data/agriculture/daily-controlled-native-support.json",
+    "src/components/agriculture/WinterSpatialReference.tsx",
+    "src/components/agriculture/DailyLearningSupport.tsx",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/winter-direct-reference-route-qa.json"
+  ],
+  "scope": "Restore actual direct main-climate winter spatial reference with source/asset/whole-Japanese/level/partial scope guards and existing JA+12 metadata/readings. Independently valid Royal/native winter output unchanged; no shared asset gating. Remove duplicate translation wrapper.",
+  "newLexicalFields": 0,
+  "reusedReadingFields": 5,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseAccepted": false,
+  "tests": {
+    "status": "PASS",
+    "actualReferenceLocaleRoutes": 13,
+    "mainRoyalNativeLocaleRegressionRoutes": 13,
+    "sourceScopeRejects": 7,
+    "fullAndRelevantPartialPositives": 2,
+    "referenceAssetStaleRejectWithoutHidingMainRoyalNative": true,
+    "strictActualImportGraphDiagnostics": 0,
+    "limits": [
+      "Actual RNW child SSR; source data and translation getter-equivalent fixture from exact current tracked language JSON. No full Course/native/device proof.",
+      "Main Royal/native branch not rewritten or coupled to reference registry/asset validity."
+    ]
+  }
+}

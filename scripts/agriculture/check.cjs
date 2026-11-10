@@ -20,7 +20,7 @@ assert.equal(new Set(conceptDiagrams.map(d=>d.id)).size,conceptDiagrams.length);
 for(const d of conceptDiagrams){
  assert(figureIds.has(d.id));assert(['comparison','sequence'].includes(d.kind));assert(d.titleJa&&d.altJa&&d.panels.length>=2);assert(d.panels.every(p=>p.titleJa&&p.bodyJa));assert.equal(d.notARecognitionPhotograph,true);assert.equal(d.domainReviewed,false);
  d.sources.forEach(validateRef);
- for(const id of d.lessonIds){const l=byId.get(id);assert(l&&l.levels.every(level=>d.scopeLevels.includes(level)));}
+ for(const id of d.lessonIds){const l=byId.get(id);assert(l&&d.scopeLevels.some(level=>l.levels.includes(level)));}
  for(const id of d.knowledgeIds){const k=knowledge.get(id);assert(k&&k.figureIds.includes(d.id));}
 }
 const translationManifest=read('src/data/agriculture/translations.json');

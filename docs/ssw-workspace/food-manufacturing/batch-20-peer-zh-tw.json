@@ -1,0 +1,96 @@
+{
+  "locale": "zh-TW",
+  "examId": "food-2-mock-06",
+  "reviewType": "Independent AI semantic review directly against root-frozen canonical Japanese",
+  "canonicalSourceArtifact": "batch20-canonical-source.json",
+  "canonicalSha256": "90b96c6f66030afd95a6a4cc146a85bbaf447acd357af5522528206072c9c300",
+  "reviewedQuestionCount": 40,
+  "reviewedQuestionIds": [
+    "food-2-q397",
+    "food-2-q149",
+    "food-2-q323",
+    "food-2-q315",
+    "food-2-q363",
+    "food-2-q197",
+    "food-2-q155",
+    "food-2-q355",
+    "food-2-q255",
+    "food-2-q102",
+    "food-2-q369",
+    "food-2-q090",
+    "food-2-q352",
+    "food-2-q235",
+    "food-2-q269",
+    "food-2-q139",
+    "food-2-q212",
+    "food-2-q220",
+    "food-2-q300",
+    "food-2-q122",
+    "food-2-q217",
+    "food-2-q328",
+    "food-2-q116",
+    "food-2-q141",
+    "food-2-q178",
+    "food-2-q351",
+    "food-2-q275",
+    "food-2-q377",
+    "food-2-q371",
+    "food-2-q389",
+    "food-2-q127",
+    "food-2-q107",
+    "food-2-q154",
+    "food-2-q109",
+    "food-2-q376",
+    "food-2-q334",
+    "food-2-q303",
+    "food-2-q349",
+    "food-2-q185",
+    "food-2-q203"
+  ],
+  "reviewedFields": [
+    "prompt",
+    "four options in canonical order",
+    "explanation",
+    "four optionExplanations in canonical order",
+    "exam title"
+  ],
+  "findings": [
+    {
+      "questionId": "food-2-q315",
+      "field": "options[3]",
+      "issue": "Foreign-matter wording narrowed the general intentional-contamination scope of Japanese 混入者.",
+      "resolution": "Author changed to general deliberate food contamination; final text rechecked."
+    },
+    {
+      "questionId": "food-2-q154",
+      "field": "prompt",
+      "issue": "Minor clunky clause ordering in quoted near-slip location.",
+      "resolution": "Author applied natural clause reorder without changing facts or conditions."
+    }
+  ],
+  "corrections": [
+    {
+      "questionId": "food-2-q315",
+      "field": "options[3]",
+      "before": "沒有根據就把表達不滿的人當作蓄意混入異物者。",
+      "after": "沒有根據就把表達不滿的人當作蓄意污染食品的人。"
+    },
+    {
+      "questionId": "food-2-q154",
+      "field": "prompt",
+      "before": "新人說：「我不知道那個差點在通道滑倒的地點。」應如何利用過去的虛驚事件資訊？",
+      "after": "新人說：「我不知道通道上那個差點滑倒的地點。」應如何利用過去的虛驚事件資訊？"
+    }
+  ],
+  "checks": [
+    "All40 prompts/options/main and option explanations compared directly with Japanese allfields; roles, negations, authority and specific-versus-general scope preserved.",
+    "q212 cleaning inspection does not prove all microbial killing; q300 ATP/bacterial-test distinction preserved.",
+    "q139/q220 preparation, q109 general hygiene verification and q149 new-equipment effectiveness remain distinct.",
+    "q255 hypothetical stable process:40±3×0.4=38.8–41.2g; q269 planned-time denominator378/420=90%; q303 specific water consumption5/1000=0.005 and6/1500=0.004m³/kg. Hypothetical/no-rounding conditions retained.",
+    "Exact canonical40 membership, source hashes/titleHash, four ordered choices/reasons and correct-reason/main-explanation equality PASS after corrections."
+  ],
+  "reviewedArtifactSha256": "55dc417350a96e6f1eaa336b7ff4463210cdb63ee3e7688086aa223d5fd441b3",
+  "unresolvedFindings": [],
+  "nativeOrDomainCertification": false,
+  "integratedPartSha256": "55dc417350a96e6f1eaa336b7ff4463210cdb63ee3e7688086aa223d5fd441b3"
+}

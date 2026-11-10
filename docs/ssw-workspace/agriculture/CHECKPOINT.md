@@ -1,3 +1,73 @@
+## 2026-11-03 — V9 integrated source facets, frozen for parent publish
+
+Parent baseline: `1d80a8d967d2e06b6b20c0ec2bd85536a77137c2`. Retained incoming V8 three canonical units, three activities and receipts/scripts unchanged. Added 22 distinct covered facets across source2 pages14–16 and source1 counterparts12–13. Two historical nursery labels resolve as aliases to published V8 field-period and machine-hand units and do not add denominator counts. Original before records remain in `legacyResolvedGroups`.
+
+Three distinct new ungraded retrieval activities include12 explicit locales and kana. The third now asks only transplant naming versus direct sowing and crop-specific maturity/plant/row spacing; machine/hand comparison stays with the published V8 activity. Source2page15 semantic inventory classifies all301 elements (250 text/ruby,51 vectors;9 navigation,292 knowledge). Complete semantic pages4; instructional covered pages remain3. Known units1441; covered_ai112; denominator stays open and whole-source completion remains false.
+
+Self-checks: V9 canonical preservation and paragraph/locale provenance PASS; actual Reader/recognition host60 cases PASS, including hidden/reopened answers, translations, kana, ungraded toggles, genuine Course progress persistence/restore and old state preservation. Registry and private-source payload hygiene PASS. No native/device/pixel/duration certification. Existing241 lessons,12 lesson-locale files,1227 weekly/mock questions and incoming20 checks preserved. Source PDF payloads stay private. Details in `agriculture-nursery-v9-{review,validation,host-validation}.json`.
+
+# Agriculture three bounded follow-through groups — 2026-11-03
+
+Verified private source1/source2 PDF bytes against canonical SHA-256, and read text plus rendered source1page61/source2page15. Added two ungraded reader checks: one explicitly retrieves biological self-seeding possibility versus the absence of a blanket legal/contract permission inference; one distinguishes seed origin from seed processing record fields. Both checks are reachable from the existing1号/2号scheduled lessons, with24explicit locale prompts, exact sourceHash-valid existing answer translations or selected suffixes, and full contextual ruby. The self-seeding assessment gap is now closed at AI self-review level; this is not a legal clearance or a scored mastery certificate.
+
+The third group self-viewed the original seed-cross diagram and corrected its keyObjectiveId from the synonym objective01 to the parent-crossing objective02. Exact pixel bytes, caption, alt, sourceHash and schedules are unchanged. The static route/asset checks establish registration and schedule reachability, not actual browser or device display acceptance.
+
+Canonical state:1428known/87covered_ai,87direct teaching/assessment. No source page was closed; the three complete semantic pages remain unchanged and the denominator stays open. Preserve241lessonobjects,12locale lessonfiles,1227weekly/mockquestions,15oldreaderchecks,calendar and learner state. Evidence: ../source-coverage-v2/agriculture-f1-conditions-v7-review.json and validation.json; scripts/agriculture/check-f1-conditions-v7.cjs. Canonical registry and region-payload hygiene PASS. The initial missing-dependency blocker was resolved with scratch-only QA dependencies. Actual Course/Reader/ungraded retrieval/StudyState host tests PASS48cases (2activities×12locales×2levels): answers initially hidden, exact locale show/hide, no score or progress write on answer toggles, actual completion save/restore with old entries preserved and no exam attempt created. Host RN/storage/chrome/image adapters remain explicit; this is not productionExpo, pixel, device, native/domain or duration acceptance. Host evidence: agriculture-f1-conditions-v7-host-validation.json; command TOKUTEI_QA_MODULES=<QA dependency directory> NODE_PATH=<QA node_modules> node scripts/agriculture/check-f1-conditions-v7-host.cjs. Root must publish and verify remote persistence before claiming this batch durable.
+
+---
+
+# Agriculture bounded F1 continuation — 2026-11-02
+
+One additional source-backed group maps the F1/fixed-variety section of1号page61 and2号page15: eight exact atomic objectives, seven covered_ai and one explicit partial for self-seeding assessment. Five older non-atomic labels are preserved in legacy-resolution records, without duplicate knowledge credit. One new reader retrieval check asks F1 use, the fixed-variety definition and both regional examples, with12explicit prompts and full ruby; answers reuse current independent lesson paragraphs and their exact revision-valid translations.
+
+Canonical state is1428known/85covered_ai, with86direct teachings and85direct assessments. Three fully reviewed semantic pages remain unchanged; neitherpage61norpage15is closed. The source denominator remains open. The biological self-seeding possibility is taught with the existing no-blanket-permission limit, but its dedicated assessment remains missing. Origin-versus-processing and composite historical objectives remain candidate.
+
+PASS: bounded source/old-object preservation validator, canonical ledger contract, prior environment regression and reader host15checks/12locales/2levels. Old14checks, all241lessonobjects,12locale lessonfiles,1227bankquestions, calendar and all canonical knowledge outside the five resolved legacy labels are unchanged. Evidence: `../source-coverage-v2/agriculture-f1-source61-v6-review.json` and `agriculture-f1-source61-v6-validation.json`. No new assets, source redistribution, device/duration/domain/native/productionExpo acceptance claimed. Root must verify remote persistence of this completed unit.
+
+---
+
+# Agriculture source continuation — 2026-11-02, close eleven explicit gaps
+
+Resolved the previous11partial atoms: five missing assessments (poor storage, two seed-processing purposes, naked-seed definition and spinach example) and six1号sowingroute gaps. Four new ungraded retrieval checks add48explicit locale prompts and full context ruby. Three visible teaching supplements appear in already scheduled readers; the1号sowing supplement is in `agr-germination`, while the old2号route remains unchanged. Current lesson/calendar IDs and learner state are preserved.
+
+Read source2page81 completely, assigned every body/ruby/numeric span and classified the20navigation spans plus one decorative chapter circle explicitly. All174regions are classified. Added one previously unseparated storage-extension fact, and preserved three repeated historical groups as resolved provenance rather than duplicate knowledge. Canonical state:1425known,78covered_ai,3complete semantic pages; denominator remains open and the source coverage percentage remains null. Page61F1 and other pending sources have not been closed.
+
+Evidence: `../source-coverage-v2/agriculture-seed-gaps-v5-source-review.json` and `agriculture-seed-gaps-v5-validation.json`. Scoped source/preservation, canonical ledger, previous source-group regressions and reader host14checks/12locales/2levels PASS. All241lessonobjects,12locale lessontranslationfiles,1227weekly/mockquestions, calendar and10oldreader checks remain unchanged. Host fixtures are not productionExpo, native/domain review, real-device testing or learner-duration measurement; those acceptance flags remain false. Root must persist this completed batch and verify the remote before starting another ledger batch.
+
+---
+
+# Agriculture source continuation — 2026-11-02, storage/processing/sowing
+
+Three source-backed groups self-reviewed from the private, SHA-verified1号/2号PDFs: storage/longevity, processed seeds, and sowing patterns/examples. Added35atomic source objectives with exact text/ruby element links:24covered_ai and11partial. Nineteen crop-to-longevity associations now have direct retrieval evidence. Six old non-atomic storage labels are preserved in canonical legacy-resolution records rather than counted again. Full-page semantic closure remains only the existing2pages; pages61/62/81 were visually inspected but retain unresolved regions and are NOT closed.
+
+Three ungraded reader retrieval checks add36explicit locale prompts; model answers reuse the current independently authored lesson paragraphs and their revision-valid12locale translations. Existing lessons, translations, calendar, learner IDs, all1227weekly/mockquestions and the original7reader checks are unchanged. The three questions are reached through the actual scheduled reader; sowing currently belongs to2号, and the1号route deficit remains explicit for six source atoms. Five further atoms need direct assessment. No full-source percentage is established.
+
+Canonical ledger:1427known units,66covered_ai; denominator open. Evidence and limitations: `../source-coverage-v2/agriculture-seed-storage-processing-sowing-v4-review.json` and `agriculture-seed-storage-processing-sowing-v4-validation.json`. Scoped source/preservation validator, previous environment regression, canonical coverage contract and reader host casesPASS. Host fixtures do not certify productionExpo, physical devices, domain/native review or measured learner duration. Root must commit/push/fetch and verify persistence before this becomes a durable checkpoint.
+
+---
+
+# Current agriculture checkpoint — 2026-10-31, final10 source decisions
+
+Latest: `session-20261031-final-source-resolution/manifest.json` and `progress.json`. Runtime: **241 Japanese lessons,1363 mapped units,2892 AI-draft lesson-locale pairs,186 rasters,427 weekly questions and20 mock forms/800 questions.** Nine lessons and108 locale bindings were refreshed;180 translation fields patched; one hygiene paragraph added. All1227 assessment contents remain unchanged;50 source bindings and15 bank revisions were updated.
+
+The final10 tracked source occurrences are editorially resolved: eight bounded/corrected mappings and two narrow numeric exclusions. The1405-row overlay now records1388 covered,17 excluded,0 held. Original35–55% soil moisture has no established denominator and must not become an irrigation threshold or calculation operand. Original100℃ notation is preserved as source evidence; the explained cumulative quantity is daily mean water temperature summed over days (℃・日), not effective thermal time. Sweet potato is an enlarged root; original textbook disagreement is recorded. Drainage timing, herbicide water management and actual flower product recipes remain conditional rather than universal instructions.
+
+Six authors had disjoint scopes, with no cross-worker content review. Data/state/schema, source preservation,13 assessment regressions and scoped TypeScript pass; reader results are recorded in the current session evidence. Source occurrence counts are not independent scientific knowledge coverage. Native/domain/human,physical-device,production Expo and release approval remain unclaimed. Historical ledger page-level hold signals are retained as provenance, distinct from the resolved55-item overlay. Earlier checkpoints below are historical.
+
+Publication requires an exact fetched remote commit and a clean-worktree WORK PERSISTENCE PASS. Do not infer persistence from this checkpoint alone.
+
+---
+
+# Agriculture completion40 phase2 checkpoint — 2026-10-29
+
+Runtime: **240 Japanese lessons, 1355 mapped units, 2880 direct-Japanese AI-draft lesson-locale pairs, 186 rasters, 427 weekly questions and 4 mock forms/160 questions.** This adds 45 lessons and 124 rasters relative to the 195-lesson baseline. Original source pages/images are private and not redistributed. New raster bytes are manifest/SHA verified. Reader figures support expansion and horizontal panning. Three additional metadata-only shared-source extensions preserve prior completion hashes and question revisions.
+
+The actual-route browser harness passed all 45 new Japanese lessons, 540 translated reader cases, 96 long-translation responsive cases, 45 completion/reload cases and failed-save/retry. Real agriculture assets were served over HTTP; Royal/safe-area/storage/font adapters remain explicit. Data/state and scoped TypeScript checks pass; JLPT's10 byte locks pass. This does not certify Expo production, physical devices, native language or domain review.
+
+This is an in-session durability checkpoint, not final sector completion. Finish source-specific route corrections, the required official2号 safety-management supplement, final question selection/20forms and masked-figure browser QA. The frozen1405 backlog now has an explicit candidate overlay; 55 genuine source ambiguities remain distinct from administrative exclusions, and11 routing checks await final intake. Do not call candidate occurrence counts unique knowledge coverage. See completion-40/source-reconciliation.json and reader-qa.json. Preserve concurrent manufacturing work and all learner state.
+
+---
+
 # Agriculture in-progress checkpoint — 2026-10-29, completion40phase1
 
 Runtime now203Japanese lessons/1225units/2436directAI-draftlocale pairs/65rasters/427weeklyquestions/4forms160mockquestions. Eight source-bound lessons and96locale pairs added, plus two originalcontrolled diagrams, one originalgeneric irrigation-equipment plate and one nativecalendarsequence. Metadata-only fertilizer sharedscope exposes existingprose in2号 while explicitsemantic-hashcompatibility preserves old1号completion and oldweeklyquizrevisions/answers.
@@ -554,3 +624,42 @@ Six different peers reviewed every question/options/reasons and supplied12exact-
 No complete40question form exists within this batch; zero forms/questions were integrated. The20retained are bounded AI-reviewed candidates, not certified whole800capacity. All13previous queue rows are reconciled:8current adoptions have new explicit outcomes and5untouched rows are not reapproved. Do not replay rejected proposals or blindly reuse the old queue. Runtime187lessons/2244AI-draftpairs/62rasters/421weeklyquestions/4forms160mockquestions, all old IDs/revisions/learner-state/course/runtime bytes and source ledgers remain unchanged. Blueprint headline counters corrected from historical3/120to current4/160, with historical evidence preserved. Progress points separately to the candidate review rather than claiming a new runtime batch.
 
 Scoped source/hash/level/knowledge/author-peer-global/patch/queue/runtime preservationPASS;3negative guards reject stale source data, edited author packets and falsepartial-form promotion. Standarddata/state, unchanged581question inventory and13inventory regression testsPASS. No new runtime/browser/device/Expo/native-font/release validation is claimed for this draft/documentation-only unit. Human/domain/nativeflags remainfalse. All six authors/peers finished; no background authoring is claimed. Next: preserve20retained/17excluded, resolve genuinely new source-backed knowledge or recognition and separately revisit5untouched old rows; compare all581questions/currentqueue before selecting a whole40form. Sixteenforms640questions,1190sourcecandidates and301baselineholds remain; source counts are not a unique capacity denominator. Exact durability requires the following narrow publication/fetch/WORK PERSISTENCE PASS, not this checkpoint or localcommit; noSHA-onlyfollowupcommit is needed.
+
+
+## Agriculture continuation — 2026-10-31, six disjoint owners
+
+Verified clean remote baseline53b02ae060892363aea012b0cb93a5258673b0bf:240Japanese lessons,2880AI-draft lesson/locale pairs,1355knowledge units,427weekly questions,4forms/160mock questions,186rasters. Earlier chat195/62counts were stale. User explicitly requested six parallel owners without peer/cross-worker review; each owner self-checked its packet and root performs mechanical integration checks only.
+
+Metadata/translation phase synchronizes18knowledge records, closes16stale scope-metadata statuses, repairs10image routes using existing verified assets, resolves5pending glossary mappings, and applies25bounded translation fields(4Vietnamese,1Hindi,20Thai woody-versus-hardwood corrections). No new lesson/image count is claimed. Existing Japanese sourceHash, learner progress and old exams remain unchanged. All2880draft records were mechanically checked for fields/paragraphs/hash; targeted semantic subsets and96contextual glossary labels are recorded separately, without global/native/domain certification.
+
+Source overlay still has55holds for unresolved source contradictions, statistics/conditions or product/legal applicability and1non-image level1routing gap outside the greenhouse/orchard image scope. No100%source coverage is claimed. Eight forms per level remain under separate author ownership; draft questions are not runtime completions. Evidence:session-20261031/manifest.json and the four self-check packets. Remote persistence is established by the following fetched Git gate, never by this prose.
+
+
+## Agriculture requested bank completion — 2026-10-31
+
+Six disjoint authors, without peer/cross-worker content review as explicitly requested, completed the remaining16forms/640newJapanese questions. Integrated bank now has1号10×40 and2号10×40=20forms/800questions. Existing4forms and every old question object/revision are preserved. All new forms have10correctanswersperposition and no3sameconsecutive; no official simulation/time/pass claims. Root performed mechanical schema/source/hash/registry integration, not external domain/native certification. Author self-checks and objective/source provenance are in session-20261031/. Exact-common-objective collisions found by ID allocation were reassigned before freeze.
+
+New questions include81illustratedcases using63neutral illustration definitions and existing raster assets. Masks, title/alt and responsive rendering are explicit; no new raster count is claimed. Existing186rasters remain. Greenhouse/orchard metadata corrections,18knowledge-record synchronizations,16stale metadata closures,10image routes,5glossary mappings and25translation field corrections were published in the prior metadata phase. A separately source-checked1号vegetable-quality supplement closes the final non-image source route, with12directdrafttranslations. Current totals241lessons/1356mappedunits/2892lesson-locale drafts/427weeklyquestions. Prior240lessonobjects/2880translationrecords remain unchanged relative to the persisted metadata baseline.
+
+Current1405occurrence overlay has1342candidate-covered accessible occurrences,8explicitexclusions,55retainedsourceholds and0runtime routing problems. Occurrences are not a unique knowledge denominator. Holds concern contradictory or underspecified source statements, statistics/method conditions, and product/legal applicability; they are listed in source-coverage-review.json and are not silently certified. Whole-source/domain/native/physical-device/release completion remains false.
+
+Checks PASS: currentsource/data/hash/state contracts;20form/800question schema and answerbalance; old-object preservation; static asset mapping/hash/maskgeometry; scopedstrictTypeScript data-index/study-state compilation; current1227question assessment evidence index and13regression tests;10/10JLPT byte locks. The historical36candidate decisions are mechanically rebound only, with original decision/hash provenance, no renewed semantic review or automatic authoring eligibility.
+
+Actual-route browser flow PASS across800questioncases/20banks,20resume and20failed-save-retry cases,160viewport/palette cases, hiddenanswers/cancel/submit/review/restart. A separate corrected CommonJS asset-adapter run decoded actual raster bytes for all81illustratedquestions and24representative responsive image cases. The first flow-run image adapter did not establish image decoding; the followup report supplies that evidence. SystemChromium could not start its singleton socket; CIheadlessChromium ran the successful checks. Royal/safearea/background/storage adapters and a real Japanese QAfont are explicit; no productionExpo/native-font/physical-device certification. Screenshots were inspected locally, not redistributed as source assets.
+
+All six authors and both QA processes finished. No background authoring is claimed. Resume only the55sourceholds and external acceptance needs, not the completed bank or existing imagery. Exact remote durability must be confirmed by the following fetched Git gate; do not create aSHA-onlyfollowupcommit.
+
+
+## Publisher45 source decisions — 2026-10-31
+
+Implemented exactly the supplied GENERAL6/SOIL9/SAFETY30tables against persisted baselinee45d14a8858ca17cf8b6881ff358d0263b2e7bc6. Six disjoint owners self-checked; no peer/cross-worker content review. Twenty Japanese lessons changed, six new conditional legal paragraphs and six knowledge records added, with420explicit translated-field patches and240updated lesson/locale source bindings. Current totals241lessons/1362mappedunits/2892draftpairs/427weeklyquestions/20forms800mocks/186unchangedrasters.
+
+Thirty-eight occurrences now have bounded or corrected learner-facing mappings; seven narrowly exclude the disputed direct-seeding benefit, five chart annotations as calculation operands, and the unverified70–80%fungal-disease quantifier. Source exclusion is not a claim that the original source issue was scientifically solved. 黒ボク土50% and15～20%以上 remain as requested without inferred years/uncertainty explanation; fertilizer10%/EC0.5/1.0 retain source conditions/operators without invented methods or crop prescriptions. 客土 is distinguished concretely. Product/model/vehicle/storage-versus-transport contexts are explicit in current primary-reference supplements. All verification limits, including partial direct access for the fuel-color legal reference, are recorded in owner packets.
+
+Ten RICE/crop8andFLOWER2occurrences were outside the three tables and remain byte-equivalent holds. Current overlay1380candidate-covered/15excluded/10held, not a unique knowledge denominator or a100%coverage certificate. Active policy:session-20261031-hold-resolution/PUBLISHER_POLICY.md and src/data/agriculture/authoring-exclusions.json.
+
+All1227question stems/options/correct positions/reasons and IDs remain unchanged.114source references and26weekly/mock revisions were regenerated; existing incompatible saved attempts follow the unchanged non-overwriting rejection contract. Changed historical candidate paragraphs are quarantined, not automatically reapproved. Current assessment evidence index and13regression tests PASS; scopedstrict TypeScript, source/hash/state,20formbalance, unaffected-content preservation and source-exclusion audits PASS. Actual-route readers PASS for20changedJapanese lessons,12locale cases and32responsive cases with actual rasters/script QAfonts. Explicit Royal/safearea/background/storage adapters do not establish productionExpo/device/native-language acceptance. No sourcePDF/manufacturerPDF/page images were redistributed.
+
+All authors and reader QA finished. Resume only the10out-of-scope source items and external acceptance work. Remote durability requires the following fetched exact-HEAD gate; this checkpoint/local data is not proof and no SHA-onlyfollowupcommit is needed.
+
+Publication reconciliation: fast-forward preserved190unrelated JLPT paths from e45d14a8 to88b3e2f2cd0f006d9ca6e37db078dd72b4fedfe1. No Agriculture path overlapped and all validated Agriculture inputs remain unchanged.

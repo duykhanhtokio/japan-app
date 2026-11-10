@@ -104,6 +104,9 @@ def add_bytes(path,inputs,root):
     path=safe_path(path)
     if path not in inputs:
         raw=(root/path).read_bytes()
+        if path=='src/components/manufacturing/ManufacturingMocks.tsx':
+            import runpy
+            raw=runpy.run_path(str(root/'scripts/manufacturing/apply-implementation40.py'))['predecessor'](path,raw,root)
         if path in {'src/data/manufacturing/translations.ts','src/data/manufacturing/source-guides.ts'}:
             import runpy
             raw=runpy.run_path(str(root/'scripts/manufacturing/editorial-translation-projection.py'))['historical_translation_loader'](path,raw)

@@ -1,0 +1,37 @@
+import {AgricultureCoreAppearanceRuby} from './AgricultureCoreAppearanceRuby';
+import figureAlt from '@/data/agriculture/fruit-tree-comparison-alt.json';
+import {Text,View} from 'react-native';
+import type {AgricultureLesson} from '@/data/agriculture';
+import type {AgricultureTranslation} from '@/data/agriculture/translations';
+import {ZoomableFigure} from './ZoomableFigure';
+
+const sourceHash='b915024a36469c05ff9670fd762bcd4e2538e4fbfc1b98c603804ce104c1ddd5';
+const source=require('../../../assets/agriculture/royal-weekly-20261107/week01/evergreen-deciduous-tree-examples.webp');
+type Colors={text:string;translation:string;translationText:string;border:string};
+type Props={lesson:AgricultureLesson;level?:string;translation:AgricultureTranslation|null;showTranslation:boolean;language:string;colors:Colors};
+
+export function FruitTreeComparison({lesson,level,translation,showTranslation,language,colors}:Props) {
+ if(lesson.id!=='agr-fruit'||lesson.sourceHash!==sourceHash)return null;
+ const introduction=lesson.paragraphs.find(p=>p.id==='agr-fruit-p1');
+ const examples=[{id:'agr-fruit-p2',treeJa:'ウンシュウミカン'},{id:'agr-fruit-p3',treeJa:'リンゴ'}]
+  .map(example=>({...example,paragraph:lesson.paragraphs.find(p=>p.id===example.id)}));
+ if(!introduction||examples.some(example=>!example.paragraph))return null;
+ const ruby=(field:string,text:string,style:import('react-native').StyleProp<import('react-native').TextStyle>)=><AgricultureCoreAppearanceRuby provider="fruit-tree" lesson={lesson} level={level} language="ja" field={field} text={text} style={style} color={colors.translationText}/>;
+ const translated=translation?.sourceHash===sourceHash?translation:null;
+ const localizedAlt=showTranslation&&translated&&figureAlt.sourceHash===lesson.sourceHash
+  ?(figureAlt.alt as Record<string,string>)[language]:undefined;
+ const alt=localizedAlt||figureAlt.alt.ja;
+ return <View testID="agri-royal-fruit-tree-comparison" style={{minWidth:0,maxWidth:'100%',flexShrink:1,gap:10,marginVertical:12}}>
+  {ruby('title',introduction.titleJa,{color:colors.text,fontSize:19,lineHeight:29,fontWeight:'700'})}{showTranslation&&translated&&<Text testID="agri-tree-class-localized-title" style={{color:colors.translationText,fontSize:17,lineHeight:28}}>{translated.paragraphTitles[introduction.id]}</Text>}
+  <ZoomableFigure uiLanguage={language} source={source} width={1774} height={887} altJa={alt} testID="agri-royal-fruit-tree-comparison" colors={colors} allowExpandedView/>
+  <View style={{flexDirection:'row',flexWrap:'wrap',gap:12}}>
+   {examples.map(example=><View key={example.id} testID={`agri-tree-class-${example.id}`} style={{flexGrow:1,flexBasis:220,minWidth:0,maxWidth:'100%',flexShrink:1,gap:8}}>
+    {ruby(`class:${example.id}`,`${example.paragraph!.titleJa}（${example.treeJa}）`,{color:colors.text,fontSize:17,lineHeight:28,fontWeight:'700'})}
+    {ruby(`paragraph:${example.id}`,example.paragraph!.textJa,{color:colors.text,fontSize:16,lineHeight:27})}
+    {showTranslation&&translated&&<Text testID={`agri-tree-class-translation-${example.id}`} style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.paragraphTitles[example.id]}{'\n'}{translated.paragraphs[example.id]}</Text>}
+   </View>)}
+  </View>
+  {ruby(`paragraph:${introduction.id}`,introduction.textJa,{color:colors.text,fontSize:16,lineHeight:27})}
+  {showTranslation&&translated&&<Text testID="agri-tree-class-translation-principle" style={{color:colors.translationText,fontSize:16,lineHeight:27}}>{translated.paragraphs[introduction.id]}</Text>}
+ </View>;
+}

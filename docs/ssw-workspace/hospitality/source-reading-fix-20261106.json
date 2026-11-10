@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-06",
+  "baselineCommit": "b4113fe3ebfefe0226b0bbbf0cd65779f00a6e2d",
+  "recovery": {
+    "missingCommit": "d72833f84",
+    "missingCommitRecovered": false,
+    "verifiedExistingBundleHeads": [
+      "224378cb8bd243b71df706d028f60e67afefb084",
+      "c25e4e260df736515921193e6b59d723f397f1f5"
+    ],
+    "bundleHeadsAlreadyInBaseline": true
+  },
+  "source": {
+    "sourceId": "hotel-1",
+    "sha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+    "pdfPagesRead": [
+      8,
+      9,
+      10,
+      14,
+      15,
+      17
+    ],
+    "visualEvidencePage": 8,
+    "locator": "Reservation information box: 宿泊日 ruby.",
+    "requiredReading": "しゅくはくび"
+  },
+  "actualCorrection": {
+    "rootErrorsFixed": 1,
+    "readingEntriesFixed": 11,
+    "runtimeTextOccurrencesFixed": 13,
+    "lessonIds": [
+      "hotel-front-02",
+      "hotel-front-08"
+    ],
+    "mockIds": [
+      "hotel-mock-1",
+      "hotel-mock-2"
+    ],
+    "questionIds": [
+      "hotel-front-02-q01",
+      "hotel-front-02-q07",
+      "hotel-front-08-q04",
+      "hotel-mock-1-q02",
+      "hotel-mock-2-q05"
+    ],
+    "description": "Replace 日=ひ/にち segmentation with whole compound 宿泊日=しゅくはくび in lessons, examples, image alt text, correct options and explanations; add generator override. Preserve Japanese content, answers and revisions."
+  },
+  "inventory": {
+    "pagesNewlyClosed": 0,
+    "coveragePercentage": null,
+    "wholeSectorComplete": false
+  },
+  "checks": [
+    "check-readings.cjs",
+    "check-source-atoms.cjs",
+    "targeted comparison against before-furigana-20261107 backups",
+    "git diff --check"
+  ],
+  "review": {
+    "selfCheckedAi": true,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false
+  },
+  "updatedReadings": [
+    {
+      "path": "src/data/hospitality/readings/front.json",
+      "beforeSha256": "b07853834bd53bf795e3415d107f6fa5fb98894290215fea10a2bc152f9ceb07",
+      "afterSha256": "ba1339a206ebc05f1235a70d614d878af300800dc9afc2ee77b202228379ff2b",
+      "changedEntries": 9,
+      "changes": [
+        {
+          "textSha256": "1ec7bae46367e1ae3a418b94a2cffd5acd01dd6ce5795ae4d5419e95d44655dd",
+          "offset": 10,
+          "before": [
+            [
+              10,
+              2,
+              "しゅくはく"
+            ],
+            [
+              12,
+              1,
+              "ひ"
+            ]
+          ],
+          "after": [
+            10,
+            3,
+            "しゅくはくび"
+          ]
+        },
+        {
+          "textSha256": "426151c2e8ec83930443debecf89560b77890e84c27d29c5df6753d0d2dcda42",
+          "offset": 33,
+          "before": [
+            [
+              33,
+              2,
+              "しゅくはく"
+            ],
+            [
+              35,
+              1,
+              "ひ"
+            ]
+          ],
+          "after": [
+            33,
+            3,
+            "しゅくはくび"
+          ]
+        },
+        {
+          "textSha256": "90412a4673b27034cc157d86719fbeb9b694a64a23104608b0857685c2e5d7e3",
+          "offset": 0,
+          "before": [
+            [
+              0,
+              2,
+              "しゅくはく"
+            ],
+            [
+              2,
+              1,
+              "ひ"
+            ]
+          ],
+          "after": [
+            0,
+            3,
+            "しゅくはくび"
+          ]
+        },
+        {
+          "textSha256": "da33fbfa04107906e5ff92e747ad4177e32c90f4fafa7d8af6a134049e5442e6",
+          "offset": 0,
+          "before": [
+            [
+              0,
+              2,
+              "しゅくはく"
+            ],
+            [
+              2,
+              1,
+              "ひ"
+            ]
+          ],
+          "after": [
+            0,
+            3,
+            "しゅくはくび"
+          ]
+        },
+        {
+          "textSha256": "5e69b60d0e60f4a5234c59cdd6d405bc1b9ed797ddcf2785943f53b7f342c001",
+          "offset": 0,
+          "before": [
+            [
+              0,
+              2,
+              "しゅくはく"
+            ],
+            [
+              2,
+              1,
+              "ひ"
+            ]
+          ],
+          "after": [
+            0,
+            3,
+            "しゅくはくび"
+          ]
+        },
+        {
+          "textSha256": "e8774c6737a08c275f93c146f1f95355ca6243b6f35e0d38fabd12cd4183aa6e",
+          "offset": 12,
+          "before": [
+            [
+              12,
+              2,
+              "しゅくはく"
+            ],
+            [
+              14,
+              1,
+              "ひ"
+            ]
+          ],
+          "after": [
+            12,
+            3,
+            "しゅくはくび"
+          ]
+        },
+        {
+          "textSha256": "e7fdacbfaffc5b4b50c3db7183e1b9dd0e46fc75b9ce64531e387c00f8c7a209",
+          "offset": 0,
+          "before": [
+            [
+              0,
+              2,
+              "しゅくはく"
+            ],
+            [
+              2,
+              1,
+              "にち"
+            ]
+          ],
+          "after": [
+            0,
+            3,
+            "しゅくはくび"
+          ]
+        },
+        {
+          "textSha256": "e701ea15c6c6fd8de8ccc706b23d500823295ed3213e57e765082f029e6a5367",
+          "offset": 142,
+          "before": [
+            [
+              142,
+              2,
+              "しゅくはく"
+            ],
+            [
+              144,
+              1,
+              "ひ"
+            ]
+          ],
+          "after": [
+            142,
+            3,
+            "しゅくはくび"
+          ]
+        },
+        {
+          "textSha256": "15fb1f2a5eaee610d084419737a990b1ff86b20b92f288d10972c5520680626a",
+          "offset": 0,
+          "before": [
+            [
+              0,
+              2,
+              "しゅくはく"
+            ],
+            [
+              2,
+              1,
+              "ひ"
+            ]
+          ],
+          "after": [
+            0,
+            3,
+            "しゅくはくび"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "src/data/hospitality/readings/mock.json",
+      "beforeSha256": "0d882519ff49f9c5c4aebcae3f4a4c9c41d1175184264b3bb5d9283f86196914",
+      "afterSha256": "4635d36de90e7136568cd60477746044b7d963562843285abbc3e821aa5d7bae",
+      "changedEntries": 2,
+      "changes": [
+        {
+          "textSha256": "5e69b60d0e60f4a5234c59cdd6d405bc1b9ed797ddcf2785943f53b7f342c001",
+          "offset": 0,
+          "before": [
+            [
+              0,
+              2,
+              "しゅくはく"
+            ],
+            [
+              2,
+              1,
+              "ひ"
+            ]
+          ],
+          "after": [
+            0,
+            3,
+            "しゅくはくび"
+          ]
+        },
+        {
+          "textSha256": "e8774c6737a08c275f93c146f1f95355ca6243b6f35e0d38fabd12cd4183aa6e",
+          "offset": 12,
+          "before": [
+            [
+              12,
+              2,
+              "しゅくはく"
+            ],
+            [
+              14,
+              1,
+              "ひ"
+            ]
+          ],
+          "after": [
+            12,
+            3,
+            "しゅくはくび"
+          ]
+        }
+      ]
+    }
+  ]
+}

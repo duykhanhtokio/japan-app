@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "status": "self_checked_pending_parent_remote_save",
+  "scope": "post-week native visual reading group: four original diagrams",
+  "baseline": "c8fbb9b2066955b188259611f4fbae89b192341b",
+  "changes": [
+    "24 exact title/caption/node fields now render via RestaurantReading with 135 context-authored Kanji spans",
+    "Flow numbering and directed edge readings derive from exact aligned node segments",
+    "Entire canonical diagram row including JA12 translations, lesson bindings and edges guards readings; stale readings fall back to current plain canonical text",
+    "Canonical statements, JA12 translations, node order, edges, colors and source acceptance remain unchanged"
+  ],
+  "validation": {
+    "command": "node scripts/restaurant/check-diagram-visual-readings.cjs",
+    "currentDiagrams": 4,
+    "fields": 24,
+    "staleVariantRejects": 24,
+    "actualComponentJa12LessonSsrRenders": 52,
+    "directedEdgeRenders": 117,
+    "eslint": "PASS"
+  },
+  "files": {
+    "src/components/restaurant/RestaurantDiagrams.tsx": "66e4eed88a6ca2a96c92f3416927fcb0b34e238062cff8c774e8bd3e8422fea4",
+    "src/components/restaurant/RestaurantDiagramReadings.ts": "8d750094ce8fb448239556501a7b0935ce9f96d15a257863c0f6db9d2849072a",
+    "src/data/restaurant/diagram-visual-readings.json": "751342c5c8665d0863531973fadfa2cdbb3225efe5e1df360badb8564008d757",
+    "scripts/restaurant/check-diagram-visual-readings.cjs": "03586f8467b89922afc0ab2a0d1fbace1d8ee9c3cc48a23b3e8e77708b8d0b48"
+  },
+  "acceptance": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "browserRenderReviewed": false
+  }
+}

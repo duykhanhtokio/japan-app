@@ -46,6 +46,7 @@ export default function HomeScreen(){
     <View><GameHeader variant="approved" name={profile.name?.trim()||'プレイヤー'} abilityLevel={ability.level} abilityTarget={ability.target} qualifiedExams={qualifiedExams} conversationCredits={economy?.credits??100} coins={stats.coins}/></View>
    <ScrollView style={styles.content} contentContainerStyle={styles.contentInner} showsVerticalScrollIndicator={false}>
     <View style={styles.headingArea}><RoyalNavyFrame style={styles.headingPlaque}><Text style={styles.heading}>学習モード</Text></RoyalNavyFrame><Text style={styles.headingVi}>Chọn nội dung bạn muốn học</Text></View>
+    <Pressable onPress={()=>pushPrepared('/economy')} accessibilityRole="button" style={{alignSelf:'center',backgroundColor:'#21344d',borderColor:'#c9a55d',borderWidth:1,borderRadius:14,paddingHorizontal:24,paddingVertical:12,marginBottom:12}}><Text style={{color:'#f6d990',fontWeight:'700'}}>Ví điểm · Premium</Text></Pressable>
     <View style={[styles.cards,{gap:ROYAL_LAYOUT.homeModeGap}]}>{MODES.map(mode=><LearningImageCard key={mode.ja} {...mode} width={cardWidth} height={cardHeight} onPress={()=>pushPrepared(mode.route)}/>)}</View>
    </ScrollView>
    <View><BottomNav active="home" variant="approved"/></View>

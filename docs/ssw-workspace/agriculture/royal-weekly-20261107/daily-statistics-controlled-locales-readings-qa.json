@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "reviewedBaseline": "332e24a60615ef5cbeb7ed84086c63b8ff1ed7da",
+  "readyPaths": [
+    "src/data/agriculture/daily-controlled-native-support.json",
+    "src/components/agriculture/DailyControlledFigure.tsx",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/daily-statistics-controlled-locales-readings-qa.json"
+  ],
+  "scope": "One current historical 2019 value-composition technical chart, exact title/caption/accessible legend JA+12 and static whole-field Japanese readings. Existing chart raster and geometry retained; no generic lesson prose or quiz edits.",
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseAccepted": false,
+  "newHanFields": 8,
+  "localeFields": 9,
+  "translatedTargets": 108,
+  "sourceEvidence": {
+    "canonicalLessonIds": [
+      "agr-s27-production-2019"
+    ],
+    "assetSnapshot": {
+      "assetPath": "assets/agriculture/daily-learning-20261031/statistics-2019.png",
+      "assetSha256": "d8e5f753bb339e63dcfc29d1840dd85bc79b519f6cb1ee3c2fe195e3acdc003c",
+      "width": 1160,
+      "height": 660
+    },
+    "reusedSourceCategories": "statistics-2019-figure.json labels, same historical 2019 denominator and values",
+    "derivedOther43": "100 minus (24+20+9+4), explicitly teaching remainder, not standalone source statistic",
+    "assetBytesVerified": true,
+    "exactValuesAndDenominator": {
+      "year": 2019,
+      "denominator": "農業産出額100％",
+      "values": [
+        24,
+        20,
+        9,
+        4,
+        43
+      ],
+      "derivedRemainder": 43
+    }
+  },
+  "proofLimits": [
+    "RNW actual component SSR plus immutable current-source dependency graph; no native device or full app acceptance.",
+    "Native legend supplies accessible localized interpretation of retained burnt-in Japanese labels; bitmap glyphs themselves remain unchanged."
+  ],
+  "tests": {
+    "actualFieldContexts": 8,
+    "negativeReadingGuards": 128,
+    "actual13LocaleDailyFullChildRoutes": 13,
+    "hiddenTranslationRoutes": 13,
+    "ChineseSameHanPlain": 2,
+    "fullJAAssetWholeImageAndNativeRejects": 6,
+    "partialCaptionScopeChecks": 2,
+    "strictActualCalleeGraph": "PASS zero diagnostics; current actual callee/import JSON graph plus extracted unchanged caller JSX, narrow React/RN/model ambient only, not full app",
+    "commands": [
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-daily-statistics-native.cjs",
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-daily-statistics-native-types.cjs"
+    ]
+  },
+  "scopeNotes": [
+    "agr-statistics already uses Statistics2019Figure and is deliberately excluded from this fallback binding; only actual agr-s27-production-2019 route added.",
+    "Other three numeric kinds remain private source-family drafts, not claimed covered.",
+    "Technical chart retains diagram presentation cap420; first two flower kinds retain recognition cap260.",
+    "Whole-field phonetic review: 年ねん in year2019; 農業産出額のうぎょうさんしゅつがく; 四項目よんこうもく; 計けい; 米こめ for crop; 花きかき. No duration or counter inference."
+  ]
+}

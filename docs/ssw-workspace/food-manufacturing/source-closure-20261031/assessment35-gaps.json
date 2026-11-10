@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 1,
+  "newOpenResponseChecks": [
+    {
+      "id": "food-assessment35-distribution-recognition",
+      "lessonId": "food-2-043",
+      "lessonSourceHash": "9619317927d194d061bec815a4ae09968e46a4f1c364fd5cbb1a1bd19d2c0f95",
+      "paragraphId": "p1",
+      "titleJa": "分布の形と確かめる条件を対応させる",
+      "promptJa": "本文のヒストグラム比較図A～Fを六つの型へ、散布図A～Dを四つの関係へ対応させてください。ヒストグラムの二つの軸と、ふた山・歯抜け・すそ引き・絶壁・離れ小島で調べる条件も説明してください。別の架空データ36件では階級数の目安√nはいくつですか。この目安や図の形だけで原因・安定を断定できますか。",
+      "expectedPointsJa": [
+        "ヒストグラムはA一般型、B歯抜け型、Cすそ引き型、D絶壁型、Eふた山型、F離れ小島型。",
+        "ヒストグラムの横軸は測定値の階級、縦軸はその階級の頻度。",
+        "ふた山・離れ小島では集団の混在等を疑い、属性別に分けて確かめる。",
+        "歯抜けでは測定の桁、境界、階級幅、処理方法の不統一等を確認する。",
+        "すそ引きでは片側だけの管理、絶壁では選別・除外の履歴等を調べる。形だけで原因を確定しない。",
+        "散布図はA正の相関、B負の相関、C非線形の関係、D明確な関係なし。対応する二つの値を組にし、相関だけで因果を証明したとはしない。",
+        "√36＝6なので六階級程度が目安だが、固定の規則ではない。データ数・分布・測定精度を確認し、幅が細かすぎても粗すぎても形が変わると説明する。",
+        "一般型だけで安定を証明せず、図は実物・測定方法・元データを調べる手掛かりとする。"
+      ],
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 86,
+          "printedPage": 77
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 87,
+          "printedPage": 78
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 88,
+          "printedPage": 79
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 89,
+          "printedPage": 80
+        }
+      ],
+      "figureIds": [
+        "food-source-histogram-patterns",
+        "food-source-scatter-patterns",
+        "food-source36-histogram-bin-comparison"
+      ],
+      "assessmentType": "open_response_self_check",
+      "runtimeIntegrated": false,
+      "humanReviewed": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "id": "food-assessment35-control-patterns",
+      "lessonId": "food-2-043",
+      "lessonSourceHash": "9619317927d194d061bec815a4ae09968e46a4f1c364fd5cbb1a1bd19d2c0f95",
+      "paragraphId": "p4",
+      "titleJa": "八つの参考時系列を読み分ける",
+      "promptJa": "本文の管理図A～Hは、中心0、参考の上下線±3、補助線±1・±2という単位なしの架空例です。横軸と縦軸、中心線・上下線を説明し、A～Hそれぞれで点の数や位置を読んでください。G・Hから調べる仮説も挙げてください。これを製品規格や職場の判定規則へそのまま置き換えてよいですか。",
+      "expectedPointsJa": [
+        "横軸は観測順、縦軸は架空の指標値。中心0、上の参考線＋3、下の参考線－3であり、製品規格とは区別する。",
+        "Aは6点目3.4が上の参考線3を超える。",
+        "Bは9点が連続して中心0より上にある。",
+        "Cは6点が連続して上がる。",
+        "Dは14点が一つずつ上下する。",
+        "Eは3点中2点が＋2より上にあり、上限近くに寄る。",
+        "Fは5点中4点が＋1より上にあり、同じ側へ寄る。",
+        "Gは15点が－1から＋1の内側、中心付近に集まる。",
+        "Hは8点が中心付近の－1から＋1の外側にある。",
+        "Gはばらつきが小さい可能性、Hは集団混在の可能性などを調べる仮説で、原因確定ではない。",
+        "教材のJIS参考例と自社が採用した規則・対応を区別する。管理部門が製品特性に合う条件を定め、架空の数や上下線を普遍的な工場限界にしない。"
+      ],
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 90,
+          "printedPage": 81
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 92,
+          "printedPage": 83
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 93,
+          "printedPage": 84
+        }
+      ],
+      "figureIds": [
+        "food-source32-control-patterns"
+      ],
+      "assessmentType": "open_response_self_check",
+      "runtimeIntegrated": false,
+      "humanReviewed": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "id": "food-assessment35-tally-categories",
+      "lessonId": "food-2-043",
+      "lessonSourceHash": "9619317927d194d061bec815a4ae09968e46a4f1c364fd5cbb1a1bd19d2c0f95",
+      "paragraphId": "p3",
+      "titleJa": "日別と種類別の合計を照合する",
+      "promptJa": "本文の架空記録は、初日が包装不良3件・汚れ2件、翌日が包装不良1件・汚れ4件です。日別合計、種類別合計、全体合計をそれぞれ求め、二つの方向で足した全体が一致するか確認してください。種類名と記入方法を担当者間でそろえる理由も説明してください。",
+      "expectedPointsJa": [
+        "初日は3＋2＝5件、翌日は1＋4＝5件。",
+        "包装不良は3＋1＝4件、汚れは2＋4＝6件。",
+        "日別5＋5＝10件、種類別4＋6＝10件で一致する。",
+        "同じ種類・単位・記入方法で記録して集計の重複や分類のずれを防ぎ、原因分析へ使う。"
+      ],
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 90,
+          "printedPage": 81
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 91,
+          "printedPage": 82
+        }
+      ],
+      "figureIds": [],
+      "assessmentType": "open_response_self_check",
+      "runtimeIntegrated": false,
+      "humanReviewed": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "id": "food-assessment35-plan-report-reserve",
+      "lessonId": "food-2-024",
+      "lessonSourceHash": "032776413fb9cc8dd9f743f2ee231de44aec547a93f36bd4b47c8fa1b46936a8",
+      "paragraphId": "p1",
+      "titleJa": "計画の展開と増員の事実を報告する",
+      "promptJa": "会社の生産計画を自ラインの作業へどう展開しますか。別の架空比較では、同じ良品を、変更前は3人が1時間で60kg、変更後は4人が1時間で72kg製造し、休止はありません。時間当たりと人時当たりを計算し、経営判断へ何を報告しますか。また会社全体の余裕能力と現場の避けられる停止、後工程の余裕能力の設計案をどう区別しますか。",
+      "expectedPointsJa": [
+        "会社の生産量・時期・調達等の計画から工場の具体計画へ、さらにラインの材料・設備・要員・時間・作業順へ展開し、条件変化を担当部門や上司へ伝える。",
+        "ラインは60から72kg/時へ増加する。工数は3人時から4人時へ増加し、人時生産性は60÷3＝20から72÷4＝18kg/人時へ低下する。",
+        "片方だけを改善済みとして報告せず、出来高、人員、工数、品質条件と両指標の変化を上司・管理者へ伝え、会社の条件に合う判断につなげる。",
+        "会社・工場全体で需要変化へ対応する余裕は経営判断であり、現場の計画時間内の避けられる停止や手待ちを放置してよいという意味ではない。安全に必要な停止を削ったり隠したりしない。",
+        "後工程の余裕能力は変動や設備条件に応じて検討する設計案で、全ラインへ同じ能力順を一律に強制する規則ではない。"
+      ],
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 96,
+          "printedPage": 87
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 98,
+          "printedPage": 89
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 99,
+          "printedPage": 90
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 100,
+          "printedPage": 91
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 110,
+          "printedPage": 101
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 117,
+          "printedPage": 108
+        }
+      ],
+      "figureIds": [],
+      "assessmentType": "open_response_self_check",
+      "runtimeIntegrated": false,
+      "humanReviewed": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "id": "food-assessment35-productivity-four-cases",
+      "lessonId": "food-2-044",
+      "lessonSourceHash": "8f51058690e2ea3e1ff7bc0ae747a18e257a153ab748d69df355cfb2256a4039",
+      "paragraphId": "p5",
+      "titleJa": "投入と成果の四通りを比べる",
+      "promptJa": "同じ良品・同じ品質条件で比べる架空例です。基準は100kgを10人時で製造します。Aは120kg・10人時、Bは100kg・5人時、Cは180kg・15人時、Dは80kg・5人時です。基準とA～Dの人時生産性を求め、成果または投入が増減しても改善する理由を四通り説明してください。分子・分母を逆にした値は何を表しますか。",
+      "expectedPointsJa": [
+        "基準100÷10＝10kg/人時、A120÷10＝12、B100÷5＝20、C180÷15＝12、D80÷5＝16kg/人時。A～Dは全て基準より高い。",
+        "Aは同じ投入で成果増加、Bは同じ成果で投入削減。",
+        "Cは投入も増えるが成果の増加率が上回る。",
+        "Dは成果も減るが投入の削減率が上回る。",
+        "人時÷kgは製品単位当たりの投入資源である原単位。生産性と原単位を同じ数値として扱わず、単位と品質条件をそろえて比べる。"
+      ],
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 96,
+          "printedPage": 87
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 97,
+          "printedPage": 88
+        }
+      ],
+      "figureIds": [],
+      "assessmentType": "open_response_self_check",
+      "runtimeIntegrated": false,
+      "humanReviewed": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "id": "food-assessment35-daily-record-followup",
+      "lessonId": "food-2-024",
+      "lessonSourceHash": "032776413fb9cc8dd9f743f2ee231de44aec547a93f36bd4b47c8fa1b46936a8",
+      "paragraphId": "p3",
+      "titleJa": "日報を次の作業と保全へ渡す",
+      "promptJa": "日報に合計出来高だけを書いて終えています。停止、原料の受払い・在庫、改善の情報をどのように残し、誰へつなぎますか。短い停止を1週間や1か月で見る理由と、設備の情報や同型機への対策へつなぐ考えも説明してください。",
+      "expectedPointsJa": [
+        "出来高に加え、停止・異常の時刻と理由、原料の受払・在庫、当日の課題・改善事項を正確に記録する。",
+        "上司に報告し、前後工程と課題・次の準備を共有する。",
+        "短い停止も正確に残し、週や月で繰り返す傾向を調べ、設備要因は上司・設備専門要員と原因や保全を検討する。",
+        "消耗部品の在庫と交換履歴を結び、故障前の交換を検討する。事故調査に必要な現場情報を提供し、同じ危険が似た設備や作業にもないか確認する。"
+      ],
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 101,
+          "printedPage": 92
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 102,
+          "printedPage": 93
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 114,
+          "printedPage": 105
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 124,
+          "printedPage": 115
+        }
+      ],
+      "figureIds": [],
+      "assessmentType": "open_response_self_check",
+      "runtimeIntegrated": false,
+      "humanReviewed": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "id": "food-assessment35-yield-scope-pretreatment",
+      "lessonId": "food-2-026",
+      "lessonSourceHash": "2677ba38d9d98abf9ad36aa0bc1d788923fb2006ccdeab72b7c013a51c0a8561",
+      "paragraphId": "p1",
+      "titleJa": "前処理と販売単位で分母を確認する",
+      "promptJa": "全て架空の良品条件で、それ以外の増減はありません。未処理原料100kgから不可食部20kgを除き、加熱で水分10kgが減る場合と、前処理済み原料80kgを購入し同じ加熱で水分10kgが減る場合を比べてください。別の架空例では投入100kg、規格1kgの70袋、実重量77kgです。重量販売と袋数販売での歩留り、袋数からの求め方と規格重量換算が一致するか説明してください。",
+      "expectedPointsJa": [
+        "前の例は良品100－20－10＝70kgで自工場投入に対する70%。購入例も良品80－10＝70kgで自工場投入に対する87.5%。",
+        "購入例では前処理が自工場の外で済んでおり、分母と管理対象が違う。同じ良品量でも前処理を含む全体効率が改善したとは、この比較だけで断定しない。必要な骨等の除去や品質に必要な水分減少を一律の避けられるロスにしない。",
+        "別の販売例を重量で評価すると77÷100＝77%。袋数販売の規格換算は70袋×1kg＝70kg、70÷100＝70%。",
+        "投入100kgを規格1kgで割った理論袋数100袋に対し70袋なので70÷100＝70%。規格重量換算と一致し、実重量との差7kgは規格を超える充填として別に確認する。",
+        "品質・表示・必要量を守り、歩留りの数字だけを上げるために必要な処理や充填条件を省かない。"
+      ],
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 103,
+          "printedPage": 94
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 104,
+          "printedPage": 95
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 105,
+          "printedPage": 96
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 106,
+          "printedPage": 97
+        }
+      ],
+      "figureIds": [],
+      "assessmentType": "open_response_self_check",
+      "runtimeIntegrated": false,
+      "humanReviewed": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "id": "food-assessment35-environment-capacity-boundary",
+      "lessonId": "food-2-045",
+      "lessonSourceHash": "d023313cbadfc8c47cb9e3fcb59c3c84c22fc78817539ed96793bad36b63ca19",
+      "paragraphId": "p5",
+      "titleJa": "環境指標の境界と処理能力を確認する",
+      "promptJa": "電気・石油・ガスの使用量からCO2を評価するとき、根拠のない係数を使ってよいですか。排水量が減っても汚れが多い場合、処理能力と工場の稼働にどう関わりますか。現場の残渣回収や節水と、会社の設備投資・再生可能エネルギー等の判断を区別し、違う生産量や期間の比較で確認することを答えてください。",
+      "expectedPointsJa": [
+        "対象期間と各エネルギーの実測使用データを基にし、根拠ある換算条件を担当部門と確認する。単位の違う使用量をそのまま足したり、架空のCO2係数で算出したりしない。",
+        "排水は量と有機物等の汚れの負荷の両方を処理能力と照合する。受入れ不能になると水を使えず、生産が妨げられることがある。",
+        "現場は衛生を維持して残渣を先に回収し、不要な散水や避けられる食品ロスを減らす。会社の投資・再生可能エネルギー・工程や受発注の変更は、現場データも使う会社全体の判断と区別する。",
+        "同じ比較期間・製品条件で、総量と製品当たりの原単位を両方確認する。生産量や分母の違いを隠さず、必要な洗浄や安全を削らない。"
+      ],
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 114,
+          "printedPage": 105
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 115,
+          "printedPage": 106
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 116,
+          "printedPage": 107
+        }
+      ],
+      "figureIds": [],
+      "assessmentType": "open_response_self_check",
+      "runtimeIntegrated": false,
+      "humanReviewed": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    },
+    {
+      "id": "food-assessment35-financial-indicator-boundary",
+      "lessonId": "food-2-043",
+      "lessonSourceHash": "9619317927d194d061bec815a4ae09968e46a4f1c364fd5cbb1a1bd19d2c0f95",
+      "paragraphId": "p5",
+      "titleJa": "差額の定義を会計利益と混同しない",
+      "promptJa": "本文の金額計算は行ったとして、その例で定義した付加価値の差額を、売上や、全社・他社の会計上の利益と同じものと言えますか。比較前に確認する分子・分母・費用の範囲と、間接部門を製造kgだけで評価する限界を説明してください。",
+      "expectedPointsJa": [
+        "付加価値は会社の活動によって新しく生んだ価値で、売上全額とは違う。本文の差額はその練習で定義したもの。",
+        "どの原材料費・労務費・動燃費等を含む差額かを確認し、会社や部門で費用の境界が違う指標を会計利益と同じだと断定しない。",
+        "分子が物量、売上、付加価値のどれか、分母が経過時間か工数かを確認し、品質条件と比較範囲をそろえる。",
+        "品質管理・設備管理・事務等の間接機能も工場を支える。各部門を直接製造したkgだけで評価せず、役割と工場全体の目的に合う指標を選ぶ。"
+      ],
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 118,
+          "printedPage": 109
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 119,
+          "printedPage": 110
+        }
+      ],
+      "figureIds": [],
+      "assessmentType": "open_response_self_check",
+      "runtimeIntegrated": false,
+      "humanReviewed": false,
+      "nativeReviewed": false,
+      "domainReviewed": false
+    }
+  ],
+  "newOpenResponseCheckCount": 9,
+  "japaneseFrozen": true,
+  "runtimeIntegrated": false,
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false
+}

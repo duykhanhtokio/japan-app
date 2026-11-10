@@ -1,0 +1,696 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-06",
+  "workType": "rebuild_missing_content_from_verified_github_baseline",
+  "baselineCommit": "74af5a75ba38146a0dc764512aaa503678449f18",
+  "missingCommitRecovered": false,
+  "missingMilestone": "d72833f84",
+  "groups": [
+    {
+      "groupId": "hotel-rebuild-date-reading",
+      "sourceId": "hotel-1",
+      "pdfPage": 7,
+      "term": "希望日",
+      "requiredReading": "きぼうび",
+      "incorrectReading": "きぼうひ",
+      "spanCorrections": 7,
+      "status": "fixed_self_checked_ai"
+    },
+    {
+      "groupId": "hotel-rebuild-sake-reading",
+      "sourceId": "hotel-2",
+      "pdfPage": 48,
+      "term": "日本酒",
+      "requiredReading": "にほんしゅ",
+      "incorrectReading": "にっぽんしゅ",
+      "spanCorrections": 7,
+      "status": "fixed_self_checked_ai"
+    },
+    {
+      "groupId": "hotel-rebuild-ingredient-reading",
+      "sourceId": "hotel-2",
+      "pdfPage": 48,
+      "term": "米 in 米・麹・水",
+      "requiredReading": "こめ",
+      "incorrectReading": "べい",
+      "spanCorrections": 2,
+      "status": "fixed_self_checked_ai",
+      "scopeGuard": "米飯 remains べいはん; no global 米 override."
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "hotel-1",
+      "sha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "pagesReadAndVisuallyInspected": [
+        7
+      ]
+    },
+    {
+      "sourceId": "hotel-2",
+      "sha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "pagesReadAndVisuallyInspected": [
+        48
+      ]
+    }
+  ],
+  "actualCorrections": {
+    "rootErrorsFixed": 3,
+    "spanCorrections": 16,
+    "distinctReadingEntriesChanged": 15,
+    "runtimeErrorOccurrencesFixed": 18,
+    "distinctRuntimeFieldsChanged": 17,
+    "lessonIds": [
+      "hotel-front-01",
+      "hotel-planning-03",
+      "hotel-restaurant-08"
+    ],
+    "mockIds": [
+      "hotel-mock-1",
+      "hotel-mock-2"
+    ],
+    "questionIds": [
+      "hotel-front-01-q01",
+      "hotel-front-01-q10",
+      "hotel-planning-03-q11",
+      "hotel-restaurant-08-q2"
+    ],
+    "newQuestions": 0,
+    "newTranslations": 0,
+    "canonicalJapaneseChanged": false,
+    "lessonRevisionsChanged": false,
+    "questionInstances": [
+      {
+        "ownerId": "hotel-front-01",
+        "questionId": "hotel-front-01-q10"
+      },
+      {
+        "ownerId": "hotel-mock-1",
+        "questionId": "hotel-front-01-q01"
+      },
+      {
+        "ownerId": "hotel-mock-2",
+        "questionId": "hotel-front-01-q01"
+      },
+      {
+        "ownerId": "hotel-planning-03",
+        "questionId": "hotel-planning-03-q11"
+      },
+      {
+        "ownerId": "hotel-restaurant-08",
+        "questionId": "hotel-restaurant-08-q2"
+      }
+    ],
+    "distinctQuestionIdsChanged": 4,
+    "questionInstancesChanged": 5
+  },
+  "inventory": {
+    "uniqueSourcePagesInspected": 2,
+    "newPagesClosed": 0,
+    "canonicalKnowledgeCoverageChanged": false,
+    "coveragePercentage": null,
+    "wholeSectorComplete": false
+  },
+  "changes": [
+    {
+      "group": 1,
+      "readingGroup": "front",
+      "before": [
+        27,
+        1,
+        "ひ"
+      ],
+      "after": [
+        27,
+        1,
+        "び"
+      ],
+      "runtimePointers": [
+        "/lessons/0/sections/1/body"
+      ],
+      "textSha256": "b1a2380b98b08fc4816d473c745812427fd360922033cbb8631a28277d3fe310"
+    },
+    {
+      "group": 1,
+      "readingGroup": "front",
+      "before": [
+        2,
+        1,
+        "ひ"
+      ],
+      "after": [
+        2,
+        1,
+        "び"
+      ],
+      "runtimePointers": [
+        "/lessons/0/example/steps/0"
+      ],
+      "textSha256": "193e6862d782c364ae2ece5dfa2ec2e9df2990d7d1fd80ab03383dc7b5895a16"
+    },
+    {
+      "group": 1,
+      "readingGroup": "front",
+      "before": [
+        2,
+        1,
+        "ひ"
+      ],
+      "after": [
+        2,
+        1,
+        "び"
+      ],
+      "runtimePointers": [
+        "/lessons/0/illustration/caption"
+      ],
+      "textSha256": "a954b7c0e6d5247d5951845649d193d4eeb9ecae14e00281ad0d00311cae4029"
+    },
+    {
+      "group": 1,
+      "readingGroup": "front",
+      "before": [
+        13,
+        1,
+        "ひ"
+      ],
+      "after": [
+        13,
+        1,
+        "び"
+      ],
+      "runtimePointers": [
+        "/lessons/0/questions/9/explanation"
+      ],
+      "textSha256": "6ecb2207570adefaead379395c3bcb3875e85dc71cdb100a6134f78afea67ed5"
+    },
+    {
+      "group": 1,
+      "readingGroup": "planning",
+      "before": [
+        8,
+        1,
+        "ひ"
+      ],
+      "after": [
+        8,
+        1,
+        "び"
+      ],
+      "runtimePointers": [
+        "/lessons/2/questions/10/prompt"
+      ],
+      "textSha256": "6fa4e5709899f585232c4bdd83214a22a9a2b6b8157d480e87ddef8848a02988"
+    },
+    {
+      "group": 1,
+      "readingGroup": "mock",
+      "before": [
+        2,
+        1,
+        "ひ"
+      ],
+      "after": [
+        2,
+        1,
+        "び"
+      ],
+      "runtimePointers": [
+        "/mocks/0/questions/0/choices/0",
+        "/mocks/1/questions/3/choices/0"
+      ],
+      "textSha256": "40f194472b9015b313de72d47f202e4eedbbd66ab8852cd674b201f24914719b"
+    },
+    {
+      "group": 1,
+      "readingGroup": "mock",
+      "before": [
+        12,
+        1,
+        "ひ"
+      ],
+      "after": [
+        12,
+        1,
+        "び"
+      ],
+      "runtimePointers": [
+        "/mocks/0/questions/0/explanation",
+        "/mocks/1/questions/3/explanation"
+      ],
+      "textSha256": "9a923fef1dedd8b3d6f12ed623ab6269ac3be9cb9a089fea8a28b6ea921b974a"
+    },
+    {
+      "group": 2,
+      "readingGroup": "restaurant",
+      "before": [
+        0,
+        2,
+        "にっぽん"
+      ],
+      "after": [
+        0,
+        2,
+        "にほん"
+      ],
+      "runtimePointers": [
+        "/lessons/7/objectives/1/text"
+      ],
+      "textSha256": "a9ae3cb81706d9d8b4f7893f825faf7093db19d38479bdd43cd0be6b14bb6cad"
+    },
+    {
+      "group": 2,
+      "readingGroup": "restaurant",
+      "before": [
+        0,
+        2,
+        "にっぽん"
+      ],
+      "after": [
+        0,
+        2,
+        "にほん"
+      ],
+      "runtimePointers": [
+        "/lessons/7/sections/1/title"
+      ],
+      "textSha256": "b87b04cecf86fe6a008b45eb406d4bd6e9b4fa33efeed52db526b74413a09a14"
+    },
+    {
+      "group": 2,
+      "readingGroup": "restaurant",
+      "before": [
+        0,
+        2,
+        "にっぽん"
+      ],
+      "after": [
+        0,
+        2,
+        "にほん"
+      ],
+      "runtimePointers": [
+        "/lessons/7/sections/1/body"
+      ],
+      "textSha256": "4a3668853543767803fac65d4d53d4e768030689209b09937af3ec44655ed0ed"
+    },
+    {
+      "group": 2,
+      "readingGroup": "restaurant",
+      "before": [
+        0,
+        2,
+        "にっぽん"
+      ],
+      "after": [
+        0,
+        2,
+        "にほん"
+      ],
+      "runtimePointers": [
+        "/lessons/7/terms/0/meaning"
+      ],
+      "textSha256": "62599c604f021694174845007ccd2753a63229c75a88adb9324a4e39e83df060"
+    },
+    {
+      "group": 2,
+      "readingGroup": "restaurant",
+      "before": [
+        7,
+        2,
+        "にっぽん"
+      ],
+      "after": [
+        7,
+        2,
+        "にほん"
+      ],
+      "runtimePointers": [
+        "/lessons/7/terms/1/meaning"
+      ],
+      "textSha256": "1145637d2762a0ee54190c483e38f22e5b709049df601d0ceedbe886be768770"
+    },
+    {
+      "group": 2,
+      "readingGroup": "restaurant",
+      "before": [
+        0,
+        2,
+        "にっぽん"
+      ],
+      "after": [
+        0,
+        2,
+        "にほん"
+      ],
+      "runtimePointers": [
+        "/lessons/7/illustration/alt"
+      ],
+      "textSha256": "1f284d4bfce6e6e5e655a38ca6b083d11d8d7a0542bc9bbb0a75aa52dd381ca9"
+    },
+    {
+      "group": 2,
+      "readingGroup": "restaurant",
+      "before": [
+        0,
+        2,
+        "にっぽん"
+      ],
+      "after": [
+        0,
+        2,
+        "にほん"
+      ],
+      "runtimePointers": [
+        "/lessons/7/questions/1/prompt"
+      ],
+      "textSha256": "54c3585a89a480424d443c8903988b0e8d600e4782fff1e5b8654ca172ff9064"
+    },
+    {
+      "group": 3,
+      "readingGroup": "restaurant",
+      "before": [
+        4,
+        1,
+        "べい"
+      ],
+      "after": [
+        4,
+        1,
+        "こめ"
+      ],
+      "runtimePointers": [
+        "/lessons/7/illustration/alt"
+      ],
+      "textSha256": "1f284d4bfce6e6e5e655a38ca6b083d11d8d7a0542bc9bbb0a75aa52dd381ca9"
+    },
+    {
+      "group": 3,
+      "readingGroup": "restaurant",
+      "before": [
+        5,
+        1,
+        "べい"
+      ],
+      "after": [
+        5,
+        1,
+        "こめ"
+      ],
+      "runtimePointers": [
+        "/lessons/7/questions/1/choices/0"
+      ],
+      "textSha256": "788c4d214e4105cfaba3f3bae1fb1b392fb2b75ec35ca3fe87a9ee6887eecdb2"
+    }
+  ],
+  "checks": {
+    "targetedBeforeAfterPreservation": "PASS: reverting only recorded spans recreates all four baseline reading JSON objects exactly.",
+    "readingAlignment": "PASS: check-readings.cjs, 38 lessons, 3340 text occurrences, 28247 segment occurrences.",
+    "sourceAtoms": "PASS: check-source-atoms.cjs, 382 atoms / 94 represented pages; no whole-source acceptance.",
+    "generatorContext": "PASS with real fugashi/unidic-lite: 希望日, 日本酒, 米・麹・水; 米飯 remains べいはん. Generator was not rerun across course.",
+    "japaneseAndTranslationBytePreservation": "PASS: 67 canonical/catalog/mock/translation JSON files match baseline bytes.",
+    "diffWhitespace": "PASS"
+  },
+  "preservedCanonicalAndTranslationFiles": [
+    {
+      "path": "src/data/hospitality/catalog.json",
+      "sha256": "7ce89640c2385984832a6b9345c2bdae85ace5f4e2ec9a650f701adc729a274a"
+    },
+    {
+      "path": "src/data/hospitality/restaurant.json",
+      "sha256": "70113d32388282cd53c8fb3de67a3b05019d4ff4c770d5e79cf7cc014bf223c5"
+    },
+    {
+      "path": "src/data/hospitality/front.json",
+      "sha256": "44dfc5494bafa89ad5db083acd817613ea8de05c1784c95d8dcdb5f90a73407a"
+    },
+    {
+      "path": "src/data/hospitality/service.json",
+      "sha256": "38dc9bb5f84dd9daa3ceba66b2748291ea7ecce4f8a638559a19a1489c068e27"
+    },
+    {
+      "path": "src/data/hospitality/mocks.json",
+      "sha256": "040af9f37daaac29ae5b05f7c314954d189ced388e4437db3189a922aaf1993c"
+    },
+    {
+      "path": "src/data/hospitality/planning.json",
+      "sha256": "e9cf97a33619263afc3baaec70aa71620d066ae033d21ec0791e8dfef6ed4c35"
+    },
+    {
+      "path": "src/data/hospitality/safety.json",
+      "sha256": "7ff08f5867cb3a05ea585d3b6cc30337560de2ac5ff7ca7dee9f3bfecc13d174"
+    },
+    {
+      "path": "src/data/hospitality/translations/hi/restaurant.json",
+      "sha256": "531bba3fc3b5a1197faf8b7fb96ca66f78ab819282a1c54d19d58758787780b4"
+    },
+    {
+      "path": "src/data/hospitality/translations/hi/front.json",
+      "sha256": "32aa7f9490814afb930b4319c627ad07a636f87792169973a2052c0467822e23"
+    },
+    {
+      "path": "src/data/hospitality/translations/hi/service.json",
+      "sha256": "56e78b440426ff96395d6d62b6ceed1d5bb8cbe1a05ce9d6b18e03bf247d6e97"
+    },
+    {
+      "path": "src/data/hospitality/translations/hi/planning.json",
+      "sha256": "fa86c794b750bf6ef3891726a5fb98afb9c13621e10e411bce222db21396652c"
+    },
+    {
+      "path": "src/data/hospitality/translations/hi/safety.json",
+      "sha256": "1d9111f7c2c45f2efffb530ed9d7732d16124059cd9b43d1817d304c06cb937c"
+    },
+    {
+      "path": "src/data/hospitality/translations/zh-CN/restaurant.json",
+      "sha256": "83cf08e688ba9cc0bb48b0df2ce70abfb34ed2a481348d6c3059dc299d196eac"
+    },
+    {
+      "path": "src/data/hospitality/translations/zh-CN/front.json",
+      "sha256": "6e309c7291fe6f3e5281a804f61aca0e704b654b0a71c202fa007bbd6fae7667"
+    },
+    {
+      "path": "src/data/hospitality/translations/zh-CN/service.json",
+      "sha256": "a5d2e7306cdc1abefb6b7043a49fff0441aa596ebb8b4ac89d5f222540cc8023"
+    },
+    {
+      "path": "src/data/hospitality/translations/zh-CN/planning.json",
+      "sha256": "eb4995280973fd16490b8812a529548569d07012c8480701b05430547e1dba77"
+    },
+    {
+      "path": "src/data/hospitality/translations/zh-CN/safety.json",
+      "sha256": "cc2bedef24ee23c3e638e812719e86ed238966ac196d73eb86adbb1e0c5349d4"
+    },
+    {
+      "path": "src/data/hospitality/translations/bn/restaurant.json",
+      "sha256": "a522bd0e83d9f39c4dfb7c25ed5d4ccb49d4c3ae8cc90d72fa4745ebda8bd46e"
+    },
+    {
+      "path": "src/data/hospitality/translations/bn/front.json",
+      "sha256": "d1bd9c6b393f05c2d3291e7614a560c03b7694036dea15448a5cae8c3833fd40"
+    },
+    {
+      "path": "src/data/hospitality/translations/bn/service.json",
+      "sha256": "8d9e60fe4563a8d70ec59a9a91f573ccfb2faf0cca1f74a4f627e40a37b7c57f"
+    },
+    {
+      "path": "src/data/hospitality/translations/bn/planning.json",
+      "sha256": "2271591c726a5165921014477fb4a5457529843bfcf1e86b6b0c9f502894c76b"
+    },
+    {
+      "path": "src/data/hospitality/translations/bn/safety.json",
+      "sha256": "285a19059d4472c36ab04a4bdd27e976156d69f04507c1fc47dbb15a4034c916"
+    },
+    {
+      "path": "src/data/hospitality/translations/vi/restaurant.json",
+      "sha256": "5272385ee05d6d0a1550fa1e77a1ee0fce1e88492e0b6859cbe783709a4843e0"
+    },
+    {
+      "path": "src/data/hospitality/translations/vi/front.json",
+      "sha256": "6c41fbbbfe7e9ac6cb821bee94d5ac3a0fa942b4807e369c6251c7934c603f2d"
+    },
+    {
+      "path": "src/data/hospitality/translations/vi/service.json",
+      "sha256": "1b806eb9d6c4b9bc0af2b210d787fc9743b85638438e3c20e578a29b0229bd67"
+    },
+    {
+      "path": "src/data/hospitality/translations/vi/planning.json",
+      "sha256": "acbfe95b752c8f9b4e64d8f388feef565bc0725895bbb9ab878e92282426871c"
+    },
+    {
+      "path": "src/data/hospitality/translations/vi/safety.json",
+      "sha256": "566bc6625a9dad89edb40db38c4130d000851a394e4b74a6dd03f26d07eab616"
+    },
+    {
+      "path": "src/data/hospitality/translations/km/restaurant.json",
+      "sha256": "2a63373a2641bab8f6af7bc3a7dfec9c2584b51977d438e7c153cd9b2db14e00"
+    },
+    {
+      "path": "src/data/hospitality/translations/km/front.json",
+      "sha256": "41b6dc86c94c99ebb711e1f5723a8ba14e21c5e7da39cae4372ae03650926a3b"
+    },
+    {
+      "path": "src/data/hospitality/translations/km/service.json",
+      "sha256": "0f61025c2483ece3be8371a399b71d02d16d023f0bc71eacb577b6897e4c83af"
+    },
+    {
+      "path": "src/data/hospitality/translations/km/planning.json",
+      "sha256": "e48e7e066f2e59e3588d8968f1e5f36df52b9ff9223da797e214ed18c90ecf5d"
+    },
+    {
+      "path": "src/data/hospitality/translations/km/safety.json",
+      "sha256": "87160750ff2362921cdbcddda157870e8a2a4bd195284b9404ea5c1340804679"
+    },
+    {
+      "path": "src/data/hospitality/translations/my/restaurant.json",
+      "sha256": "88ab0bdb5a35b6699bf4bef328d9e597b4616ae740270f855fd94f379c46dc4c"
+    },
+    {
+      "path": "src/data/hospitality/translations/my/front.json",
+      "sha256": "f0033db3d44f00056cf4170a14ba08605766b7e7ae0e9420d1e1916c78dda729"
+    },
+    {
+      "path": "src/data/hospitality/translations/my/service.json",
+      "sha256": "72a5580518893c1c582c701bb711b489c4def0aba1f73ce7d4e8defe804460db"
+    },
+    {
+      "path": "src/data/hospitality/translations/my/planning.json",
+      "sha256": "c406be1bf3648c3d90bee9575572224d30601d4aea3bbf3c318d9acf481d986a"
+    },
+    {
+      "path": "src/data/hospitality/translations/my/safety.json",
+      "sha256": "b551fb2951299c7d5ec87965d366eb288e4e67a1c003e81156dcfae007e5cfe6"
+    },
+    {
+      "path": "src/data/hospitality/translations/zh-TW/restaurant.json",
+      "sha256": "a23e0f289cab5156025115a8f083ab4349dbe160ce37aad66982243170fd5559"
+    },
+    {
+      "path": "src/data/hospitality/translations/zh-TW/front.json",
+      "sha256": "9cf0f4edeb3af282698db42c8f8f2d59f7220c08ab1614ded0336ffb9350650c"
+    },
+    {
+      "path": "src/data/hospitality/translations/zh-TW/service.json",
+      "sha256": "95362daf94a1ea136efa44442bbfa2a5281a4f4a86465ec999959c4a7e5e2d3f"
+    },
+    {
+      "path": "src/data/hospitality/translations/zh-TW/planning.json",
+      "sha256": "1c8348b93353cf29bc3debe6379a472f0618328d115ebf4c9c59f4a8d4bbe1c2"
+    },
+    {
+      "path": "src/data/hospitality/translations/zh-TW/safety.json",
+      "sha256": "802d09db1c033c94f08790ef65a3cb0a68a9ebcf7f1d75ddfd415243688c0cd4"
+    },
+    {
+      "path": "src/data/hospitality/translations/tl/restaurant.json",
+      "sha256": "0c57d15803fc3e32482c65b745f9b85f5bc3fe1454602714aea96f6f58160402"
+    },
+    {
+      "path": "src/data/hospitality/translations/tl/front.json",
+      "sha256": "30b3feb18c00bc86008f39492921eee8d21a32a12e7ec5805a2cbe3dfd530934"
+    },
+    {
+      "path": "src/data/hospitality/translations/tl/service.json",
+      "sha256": "074bdd83c9894cb08809287a5e9682dac7dd83e2ec990067348e72f2c6d4e0d4"
+    },
+    {
+      "path": "src/data/hospitality/translations/tl/planning.json",
+      "sha256": "95e9464ac386d9cdf40b1399d8a71f07b79b81e5555c0b674348af10328eafeb"
+    },
+    {
+      "path": "src/data/hospitality/translations/tl/safety.json",
+      "sha256": "649cedd7d87030bd6c0cd75c34378c6f22ecfbc6842bdc0123f565e1eeee1f1d"
+    },
+    {
+      "path": "src/data/hospitality/translations/ne/restaurant.json",
+      "sha256": "aef2f4c1bd583a2e6de068c801e37d992a5095838a66ad88b461f084d9fc626d"
+    },
+    {
+      "path": "src/data/hospitality/translations/ne/front.json",
+      "sha256": "709376219f3cfd10c56b952a30677d332c94c973426ad72c27c5adc047dac052"
+    },
+    {
+      "path": "src/data/hospitality/translations/ne/service.json",
+      "sha256": "e633a239d325f81f3b4999caf759b2c291719e018dfcc97b2219f4d1c73c8998"
+    },
+    {
+      "path": "src/data/hospitality/translations/ne/planning.json",
+      "sha256": "d7e08dc33add0fc8e779c6197f1dea2f3bb5cc837e95313e8c1230bbe7d42fc8"
+    },
+    {
+      "path": "src/data/hospitality/translations/ne/safety.json",
+      "sha256": "0f491459788bb7f40fa05f49fab6146c16b7ddbc2a2d6d976b06fee95f3eaf7a"
+    },
+    {
+      "path": "src/data/hospitality/translations/en/restaurant.json",
+      "sha256": "cd70580ebc05f4faafb04f354b6783410314294038f1fef6aba23a878ebd29fd"
+    },
+    {
+      "path": "src/data/hospitality/translations/en/front.json",
+      "sha256": "569a970f34df8709c00de2f47777506c8ae90ee785894ea76190731e5758031e"
+    },
+    {
+      "path": "src/data/hospitality/translations/en/service.json",
+      "sha256": "18dfb5d5bea624839c8338e0622d7523f8271789f8819dc016f1fa16ed703d54"
+    },
+    {
+      "path": "src/data/hospitality/translations/en/planning.json",
+      "sha256": "0835aff67ae659f1cf3a73db0ca0ae482f8c8d7dd23cc8674ebee3928de87221"
+    },
+    {
+      "path": "src/data/hospitality/translations/en/safety.json",
+      "sha256": "56df759b551c0bf26e623c304481d516930b02dc30a3b67d8322e45ff9fd74b9"
+    },
+    {
+      "path": "src/data/hospitality/translations/th/restaurant.json",
+      "sha256": "d7b03ff45fde3a4cb4cb06eb8a57e4763a00abe9934e198a03313e9ad9120a4e"
+    },
+    {
+      "path": "src/data/hospitality/translations/th/front.json",
+      "sha256": "f7f3d2f57306c480801ad4b8776d17f9701a2a4e8712e82424863d391afd6145"
+    },
+    {
+      "path": "src/data/hospitality/translations/th/service.json",
+      "sha256": "039ba2adead4cda3f68579ba63a5696c2033fbdb69652ccebafced234b8d5d1d"
+    },
+    {
+      "path": "src/data/hospitality/translations/th/planning.json",
+      "sha256": "ed21de41027a1213d01521796d6c87a47590fdd5c1e2347f6b62e8d42c2327a8"
+    },
+    {
+      "path": "src/data/hospitality/translations/th/safety.json",
+      "sha256": "0bb93668ddf610e3a2e0cb75501261099d0a1b778d374fd40f5bb53e73f95a3d"
+    },
+    {
+      "path": "src/data/hospitality/translations/id/restaurant.json",
+      "sha256": "f6d0261da7afc2f6a5316889f86d73f4edc6e52a04120b57d2856113b4ef49d5"
+    },
+    {
+      "path": "src/data/hospitality/translations/id/front.json",
+      "sha256": "472f245cbea1b2da6f46ada6cbbcb0217e9833400606fb452f8b65ffbb08fba1"
+    },
+    {
+      "path": "src/data/hospitality/translations/id/service.json",
+      "sha256": "ed12a4ec8458182c0c7106418d8940ad9bfffd78b748f0d0a0f9da755237b8a9"
+    },
+    {
+      "path": "src/data/hospitality/translations/id/planning.json",
+      "sha256": "f5ea3d2b435a2d9e5b1a9ad5e071732c91a3be642f9a9b64ba4a6ea2e8396d73"
+    },
+    {
+      "path": "src/data/hospitality/translations/id/safety.json",
+      "sha256": "dd6b3ff7425d1848571cab4359e52d3ffce1baede19a8dd0736b621f37b5b0db"
+    }
+  ],
+  "review": {
+    "selfCheckedAi": true,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  },
+  "priorRemoteFixPreserved": {
+    "receipt": "docs/ssw-workspace/hospitality/source-reading-fix-20261106.json",
+    "term": "宿泊日",
+    "countedAgain": false
+  }
+}

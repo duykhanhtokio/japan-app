@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "baseline": "4d49d9dcc7b358884effe387008c738c42c55863",
+  "scope": "Retained inline illustrations for existing week02 food-1-012 and week03 food-1-015; supplement existing weekly receipts without reopening accepted artwork or changing source content.",
+  "groups": [
+    {
+      "group": "localized accessibility",
+      "result": "Actual inline and expanded image alt includes complete source Japanese caption and revision-matched selected translation; unsafe storage example retains Japanese and translated warning."
+    },
+    {
+      "group": "detail inspection",
+      "result": "Pressing retained illustration opens contain image at full available width with scrollable full caption and localized Close control; existing illustration IDs retained."
+    },
+    {
+      "group": "stale expansion protection",
+      "result": "Expanded key pins lesson ID, source revision and illustration ID; stale revision, removed caption or another lesson cannot leave the old expanded illustration visible."
+    }
+  ],
+  "activeIllustrations": [
+    "food-illustration-storage-hazards-example",
+    "food-illustration-handwashing"
+  ],
+  "validation": {
+    "command": "NODE_PATH=<shared-qa-dependencies> node scripts/food-manufacturing/check-legacy-illustration-zoom.cjs",
+    "result": "PASS",
+    "contexts": 156,
+    "locales": 13,
+    "method": "Actual component SSR with deterministic React Native/ruby/asset adapters; inline and forced zoom, translation toggle, stale lesson hash, missing caption, changed lesson."
+  },
+  "sha256": {
+    "src/components/food-manufacturing/FoodIllustrations.tsx": "239ae64724319c82707e84192b9b25cc4efcd0d9d2ff80aa5d3271afb0dff77a",
+    "scripts/food-manufacturing/check-legacy-illustration-zoom.cjs": "d9c39a2fe4bac38a1d4032ab06211d223865ba9d1eb90e41b175601377aa4910"
+  },
+  "unchanged": [
+    "Source lessons, answers, translations and revision hashes",
+    "Artwork bytes and registry IDs",
+    "Moved-to-daily image deduplication"
+  ],
+  "acceptance": {
+    "domain": false,
+    "native": false,
+    "physicalDevice": false,
+    "release": false
+  },
+  "remaining": "Week07–08 primary instructional artwork and source-practice figures remain as tracked in canonical existing queue; this receipt does not close those weeks or claim whole-sector completion."
+}

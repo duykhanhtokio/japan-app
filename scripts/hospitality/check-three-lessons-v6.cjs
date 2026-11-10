@@ -1,0 +1,24 @@
+// V6: structural integration/preservation only. Each author supplies their own semantic receipt.
+const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'../..'),baseline='f2ec9912ee6d9827db949ec73376fb60dee08647';
+const ids=['hotel-planning-07','hotel-service-01','hotel-service-06'];
+const locales=['en','vi','id','zh-CN','zh-TW','hi','bn','ne','my','th','km','tl'];
+const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const old=p=>JSON.parse(cp.execFileSync('git',['show',`${baseline}:${p}`],{cwd:root,encoding:'utf8',maxBuffer:16*1024*1024}));
+const hash=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex');
+const flatten=l=>[l.title,...l.objectives.map(x=>x.text),...l.sections.flatMap(x=>[x.title,x.body]),...l.terms.map(x=>x.meaning),l.example.situation,...l.example.steps,l.practice.prompt,...l.practice.expectedPoints,...l.questions.flatMap(x=>[x.prompt,...x.choices,x.explanation]),l.illustration.caption,l.illustration.alt];
+let pairs=0,fields=0,fullPairs=0,updatedPairs=0,preservedOutside=0,preservedQuestions=0;const pairEvidence=[];
+for(const group of ['front','planning','service','restaurant','safety'])assert.deepEqual(read(`src/data/hospitality/${group}.json`),old(`src/data/hospitality/${group}.json`),`${group}: Japanese canonical changed`);
+for(const locale of locales)for(const group of ['planning','service']){
+ const p=`src/data/hospitality/translations/${locale}/${group}.json`,before=old(p),after=read(p),source=read(`src/data/hospitality/${group}.json`).lessons;
+ for(const t of before.lessons){const n=after.lessons.find(x=>x.id===t.id);assert(n,`${locale}/${t.id} removed`);if(!ids.includes(t.id)){assert.deepEqual(n,t,`${locale}/${t.id} outside scope changed`);preservedOutside++;continue;}for(const q of t.questions){const expected=locale==='zh-TW'&&q.id==='hotel-service-06-q03'?{...q,explanation:q.explanation.replace('聯絡物件','聯絡對象')}:q;assert.deepEqual(n.questions.find(x=>x.id===q.id),expected,`${locale}/${q.id} existing question changed`);if(expected===q)preservedQuestions++;}}
+ for(const s of source.filter(x=>ids.includes(x.id))){const t=after.lessons.find(x=>x.id===s.id),b=before.lessons.find(x=>x.id===s.id);assert(t,`${locale}/${s.id} missing`);assert.equal(t.sourceRevision,s.revision);assert.equal(t.status,'translated_ai_unreviewed');assert.equal(t.reading,s.reading);for(const f of ['objectives','sections','terms','questions'])assert.equal(t[f].length,s[f].length,`${locale}/${s.id}/${f}`);assert.deepEqual(t.objectives.map(x=>x.id),s.objectives.map(x=>x.id));assert.deepEqual(t.sections.map(x=>x.id),s.sections.map(x=>x.id));assert.deepEqual(t.questions.map(x=>[x.id,x.answerIndex,x.knowledgeIds]),s.questions.map(x=>[x.id,x.answerIndex,x.knowledgeIds]));assert.deepEqual(t.terms.map(x=>[x.ja,x.reading]),s.terms.map(x=>[x.ja,x.reading]));assert.equal(t.example.steps.length,s.example.steps.length);assert.equal(t.practice.expectedPoints.length,s.practice.expectedPoints.length);assert.equal(t.illustration.id,s.illustration.id);assert.equal(t.illustration.keyObjectiveId,s.illustration.keyObjectiveId);assert.notEqual(t.review?.nativeReviewed,true);assert.notEqual(t.review?.domainReviewed,true);for(const q of t.questions){assert.equal(q.choices.length,4);assert.equal(new Set(q.choices).size,4);}
+ const vals=flatten(t);assert.equal(vals.length,flatten(s).length);for(const v of vals)assert(typeof v==='string'&&v.trim(),'Empty translated field');for(let i=0;i<t.sections.length;i++)assert.notEqual(t.sections[i].body,s.sections[i].body,'Copied Japanese body');
+ if(!b)fullPairs++;else if(b.sourceRevision!==s.revision)updatedPairs++;else assert.deepEqual(t,b,'Previously current pair changed');
+ pairEvidence.push({locale,lessonId:s.id,sourceRevision:s.revision,jsonValueSha256:hash(t),translatedFields:vals.length});fields+=vals.length;pairs++;
+ }
+}
+assert.equal(pairs,36);assert.equal(fullPairs,19);assert.equal(updatedPairs,12);
+const status=read('docs/ssw-workspace/hospitality/translation-status.json');assert.equal(status.completePairs,276);
+const report={status:'PASS_THREE_LESSONS_V6',baseline,pairs,fields,fullPairs,updatedPairs,preservedPreviouslyValidPairs:5,preservedOutsidePairs:preservedOutside,preservedExistingQuestionTranslations:preservedQuestions,editoriallyRepairedExistingQuestionTranslations:1,japaneseCanonicalUnchanged:true,currentSectorPairs:276,missingOrStalePairs:180,sourceCoverageChanged:false,nativeReviewed:false,domainReviewed:false,physicalDeviceTested:false,learnerDurationMeasured:false,pairEvidence};
+fs.writeFileSync(path.join(root,'docs/ssw-workspace/hospitality/three-lessons-v6-integration-evidence.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({...report,pairEvidence:undefined}));

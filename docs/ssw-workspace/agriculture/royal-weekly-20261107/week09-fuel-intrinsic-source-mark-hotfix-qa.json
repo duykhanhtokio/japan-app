@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "readyPaths": [
+    "src/components/agriculture/FigureSourceMarks.ts",
+    "src/components/agriculture/ZoomableFigure.tsx",
+    "scripts/agriculture/check-fuel-source-mark-overlay.cjs",
+    "scripts/agriculture/check-figure-allocated-width.cjs",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/week09-fuel-intrinsic-source-mark-hotfix-qa.json"
+  ],
+  "baselineCodeGitBlobs": {
+    "src/components/agriculture/ZoomableFigure.tsx": "3f576dcee25d31beec8a7548d2320095095fa4cf",
+    "src/components/agriculture/FigureSourceMarks.ts": "6cfe9e4de6778d9651310fc131259c8bad08e2ec"
+  },
+  "retainedVersionedSource": {
+    "modulePath": "assets/agriculture/royal-weekly-20261107/week09/fuel-container-appearance-royal-v1.webp",
+    "verifiedSha256": "6640241bcf7e127d4c7f65ad97b938d60d37ec0a0788a0d1148ea05fece26938",
+    "width": 1536,
+    "height": 1024
+  },
+  "defect": "Concurrent caller-file updates repeatedly removed the helper import and marks prop while keeping the dedicated incomingfuel bitmap. Missingcaller dispatch must not remove the source-specific prohibitionX again.",
+  "fix": "ZoomableFigure derives default source marks only from strict reference equality with the same statically required immutable versionedfuel image module plus exact1536x1024 dimensions. No URI,name,filename substring or genericImage test. Explicit marks including[]override defaults; existingmetadata SHAguard remains unchanged. Mark and bitmap still share one scaled normal/expanded picture tree.",
+  "sourceScope": "Same inspected right kerosene-container source-example body and specific gasoline-prohibition meaning. No allplastic ban,approval,capacity or productclaim.",
+  "unchanged": [
+    "Incoming bitmap,registry row,JA andforeigncaptiondata,sourcehashes,revisions,IDs andprogress.",
+    "RecognitionImages is not part of this hotfix publication.",
+    "Otherimage source modules and existing masks/defaults."
+  ],
+  "checks": {
+    "metadataStaleOtherImageRejections": 5,
+    "intrinsicModuleCloneOtherSourceSameAspectWrongDimensionRejections": 5,
+    "legacyNoMarksNormalExpandedNormal": "PASS",
+    "explicitStaleMetadataEmptyArraySuppressesNormalExpandedMarks": "PASS",
+    "defaultMaskRegressionsAgainstOriginalImmutableBlob": 4,
+    "actualCurrentAndLegacyNoHelperRecognitionRouteRenders": 8,
+    "actualScopedTypeScriptGraph": "PASS",
+    "eslint": "PASS2changed corecomponents,no warnings",
+    "geometryCases": 126,
+    "diffWhitespace": "PASS",
+    "testScope": "Actual Reactcomponent hooks/state with module-cached nativeasset adapter; no browser/physicaldevice pixelcertification.",
+    "geometryHarnessChange": "Only isolates newlyimported source-mark helper for puregeometry extraction; realhelper/assetidentity covered in overlaytest."
+  },
+  "hashes": {
+    "src/components/agriculture/FigureSourceMarks.ts": "fa1403fcc3f1a92ef15d9ad8660209dc4078ee35f87af35b59330da7ebb937c1",
+    "src/components/agriculture/ZoomableFigure.tsx": "5c445498a0dd9f7a504d250aca8c55448f6ff99d6a8e50a6132bf60bdb9e74b8",
+    "scripts/agriculture/check-fuel-source-mark-overlay.cjs": "8ec9a7eb93ceb0be6236003e3bf7c5630d3762ee6ca54c059c3fb52e6d6b6e24",
+    "scripts/agriculture/check-figure-allocated-width.cjs": "7d9c5421b6e1153a3151ca82f82ffdd495b87b8aa7d2b00cdaa1bf9bf090de85"
+  },
+  "physicalDeviceTested": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "sourcePhotoObjectiveComplete": false,
+  "wholeWeekComplete": false,
+  "releaseReady": false
+}

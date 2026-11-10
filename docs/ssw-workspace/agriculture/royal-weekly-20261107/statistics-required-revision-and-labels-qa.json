@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "baseCommit": "691b53d5423827b9145240481aed94b64d01beb8",
+  "freshBeforeCheckRef": "c911a946",
+  "beforeBlobSha": {
+    "src/components/agriculture/Statistics2019Figure.tsx": "dcb3c78debcaf98480730fffe85f8840fe994938",
+    "src/data/agriculture/statistics-2019-figure.json": "ca62d28e200cbc506005b5453d9810e9b0aae06f",
+    "scripts/agriculture/check-statistics-revision-contract.cjs": null,
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/statistics-required-revision-and-labels-qa.json": null
+  },
+  "scope": "Required current lesson revision contract for the existing2019statistics native figure; bounded target-label fallback and actual current locale completeness.",
+  "actualBeforeFailure": "Passing agr-statistics with correct sourceHash but stale lesson revision still renders the full production figure. The required revision-mismatch fixture failed before the fix.",
+  "change": [
+    "Declare the existing actual canonical v1 lesson revision in statistics figure metadata.",
+    "Require the supplied lesson revision to match that declared revision before rendering.",
+    "Validate target label title/category count/nonempty strings before selecting it; invalid target metadata keeps valid Japanese.",
+    "All13existing label sets and proportional geometry remain unchanged."
+  ],
+  "sourceReview": {
+    "documentId": "AGR-S2",
+    "pdfPage": 3,
+    "printedPage": 1,
+    "pdfSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+    "actualSourcePageOpened": true,
+    "canonicalLesson": "agr-statistics v1; sourceHash7d5c5d91423f924f6035d3f3f4d2014b381e480d9f8737f3b7fcf654d3fbf2f7",
+    "boundedReading": "Source has2019agricultural output shares vegetables24,rice20,fruit9,flowers4. Existing other43 is explicitly derived100minus those shares. Historical denominator/year remain unchanged; no present-day statistic claim."
+  },
+  "actualCurrentLocaleCompleteness": {
+    "languages": [
+      "ja",
+      "en",
+      "vi",
+      "id",
+      "zh-CN",
+      "zh-TW",
+      "hi",
+      "bn",
+      "ne",
+      "my",
+      "km",
+      "th",
+      "tl"
+    ],
+    "labelSets": 13,
+    "targetLanguages": 12,
+    "categoriesPerSet": 5,
+    "missingOrMalformedCurrentSets": 0,
+    "semanticNativeReviewClaim": false
+  },
+  "qa": {
+    "currentProductionRenders": 13,
+    "boundedNegativeAndToggleCases": 8,
+    "cases": [
+      "stale supplied lessonrevision",
+      "missing declared lessonrevision",
+      "wrong sourceHash/course",
+      "three representative malformedtargetlabels",
+      "hidden translationtoggle"
+    ],
+    "geometry": "Original24/20/9/4/derived43 exact slices and equation retained, sum100.",
+    "types": "PASSactualcomponent/data/canonical lesson+translation types understrictTypeScript;minimalRNambient,notwholeapp.",
+    "dataPreservation": "Remove only newlessonRevisionfield and allsource/slices/13labelsets are deep-equal to exactoriginalca62d28.",
+    "translationFixtureLimit": "Production label registry is realcurrentdata. Canonical paragraph fixtures only activate the translationgate; not claimed as newly translated paragraphs.",
+    "diffCheck": "PASS"
+  },
+  "currentCatalogStatus": "All current label sets were alreadycomplete. Representative malformedinput checks document graceful fallback; not presented as broken saved content.",
+  "preserved": [
+    "allart/assetmapsincluding691two-maprepairandlaterexternalcitrus",
+    "allsourceHash/labels/categories/slices/colors/derivedremaindertext",
+    "allother native/source/quiz/readerdata"
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "durationTested": false,
+  "wholeWeekComplete": false,
+  "releaseReady": false
+}

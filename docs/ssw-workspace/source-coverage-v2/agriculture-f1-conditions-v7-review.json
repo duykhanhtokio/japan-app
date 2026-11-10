@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "date": "2026-11-03",
+  "parentCommit": "3a3d48504673f4bc793bd8acf1c32368ed558c7f",
+  "groups": [
+    {
+      "group": "self-seed possibility and limits",
+      "sourcePages": [
+        [
+          "AGR-S1",
+          61
+        ],
+        [
+          "AGR-S2",
+          15
+        ]
+      ],
+      "knowledgeId": "agriculture-v6-f1-self-seed",
+      "prior": {
+        "knowledgeId": "agriculture-v6-f1-self-seed",
+        "sourceRefs": [
+          {
+            "sourceId": "AGR-S1",
+            "pdfPage": 61,
+            "elementIds": [
+              "AGR-S1:p61:e217",
+              "AGR-S1:p61:e218",
+              "AGR-S1:p61:e219"
+            ]
+          },
+          {
+            "sourceId": "AGR-S2",
+            "pdfPage": 15,
+            "elementIds": [
+              "AGR-S2:p15:e87",
+              "AGR-S2:p15:e88"
+            ]
+          }
+        ],
+        "statementJa": "資料は固定種の自家採種が可能だと説明している。",
+        "conditionsJa": [
+          "栽培上の可能性の紹介であり、どの品種にも法律・契約上の包括的許可があるとは判断しない。"
+        ],
+        "exceptionsJa": [],
+        "importance": "core",
+        "classification": "knowledge",
+        "before": {
+          "teaching": "present",
+          "assessment": "missing"
+        },
+        "after": {
+          "teaching": "present",
+          "assessment": "missing"
+        },
+        "teachingEvidence": [
+          {
+            "path": "src/data/agriculture/lessons.ja.json",
+            "jsonPointer": "/lessons/228/paragraphs/5/textJa",
+            "sha256": "7e43651b9943bbfeb80710b1f508b35050eb07edc5f7c9c721d4052e271ac570",
+            "sha256Mode": "json-value",
+            "relation": "direct",
+            "semanticReviewed": true,
+            "reviewNote": "Self-read source1/2 biological-possibility statement and current app qualification: not blanket legal/contract permission for every variety."
+          }
+        ],
+        "assessmentEvidence": [],
+        "imageEvidence": [],
+        "assessmentRequirement": "required",
+        "assessmentExemptionReason": null,
+        "expressionReview": {
+          "status": "independent_ai_checked",
+          "note": "Short factual objective independently stated; existing original app explanations/questions reused where they directly test the objective. No source page/prose/layout/assets reproduced."
+        },
+        "sourceReview": {
+          "status": "self_checked_ai",
+          "conditionsChecked": true,
+          "reviewRef": "docs/ssw-workspace/source-coverage-v2/agriculture-f1-source61-v6-review.json"
+        },
+        "status": "partial",
+        "unresolved": [
+          "Biological self-seeding possibility and permission limits are taught; no dedicated assessment is added in this bounded group."
+        ],
+        "review": {
+          "domainReviewed": false,
+          "nativeReviewed": false,
+          "physicalDeviceTested": false
+        }
+      },
+      "newCheck": "agr-reader-fixed-self-seed-limits"
+    },
+    {
+      "group": "origin versus processing record fields",
+      "sourcePages": [
+        [
+          "AGR-S1",
+          61
+        ],
+        [
+          "AGR-S2",
+          15
+        ]
+      ],
+      "knowledgeId": "agriculture-v2-AGR-K-PAR08-SEED-F1-FIXED-06",
+      "prior": {
+        "knowledgeId": "agriculture-v2-AGR-K-PAR08-SEED-F1-FIXED-06",
+        "sourceRefs": [
+          {
+            "sourceId": "AGR-S1",
+            "pdfPage": 61,
+            "elementIds": []
+          },
+          {
+            "sourceId": "AGR-S2",
+            "pdfPage": 15,
+            "elementIds": []
+          }
+        ],
+        "statementJa": "由来と加工を別々に記録する",
+        "conditionsJa": [],
+        "exceptionsJa": [],
+        "importance": "core",
+        "classification": "knowledge",
+        "before": {
+          "teaching": "unknown",
+          "assessment": "unknown"
+        },
+        "after": {
+          "teaching": "unknown",
+          "assessment": "unknown"
+        },
+        "teachingEvidence": [],
+        "assessmentEvidence": [],
+        "imageEvidence": [],
+        "assessmentRequirement": "required",
+        "assessmentExemptionReason": null,
+        "expressionReview": {
+          "status": "pending",
+          "note": "Historical objective label; independent expression review pending."
+        },
+        "status": "candidate",
+        "unresolved": [
+          "Historical page references do not identify exact source elements or establish atomic completeness.",
+          "Lesson/question IDs are inherited candidates, not semantically accepted evidence."
+        ],
+        "review": {
+          "domainReviewed": false,
+          "nativeReviewed": false,
+          "physicalDeviceTested": false
+        },
+        "legacyRefs": {
+          "path": "docs/ssw-workspace/agriculture/knowledge-ledger.json",
+          "id": "AGR-K-PAR08-SEED-F1-FIXED-06",
+          "lessonIds": [
+            "agr-seed-f1-fixed"
+          ],
+          "questionIds": [
+            "agr-par08-seed-graft-q03"
+          ]
+        }
+      },
+      "newCheck": "agr-reader-seed-origin-processing"
+    },
+    {
+      "group": "scheduled key image objective binding",
+      "lessonId": "agr-seed-f1-fixed",
+      "before": {
+        "kind": "seed-cross",
+        "titleJa": "親と交配で得るF1を分ける",
+        "captionJa": "異なる親から得る一代目という関係を示した模式図です。種を袋で混ぜることとは区別し、図から外観・収量や全条件での効果を保証しません。",
+        "altJa": "親と交配で得るF1を分ける。異なる親から得る一代目という関係を示した模式図です。種を袋で混ぜることとは区別し、図から外観・収量や全条件での効果を保証しません。",
+        "lessonSourceHash": "5c39344a959105b7cfbf4c1d473556d7527f0c230539f3771ba8e8d67abc1bae",
+        "keyObjectiveId": "AGR-K-PAR08-SEED-F1-FIXED-01",
+        "originalExpression": true,
+        "domainReviewed": false,
+        "assetPath": "assets/agriculture/daily-learning-20261031/seed-cross.png",
+        "assetSha256": "f2ced330428491817a365cabd3817267f6c9af043e3614ec65c0366765e07915",
+        "width": 1160,
+        "height": 660
+      },
+      "after": {
+        "kind": "seed-cross",
+        "titleJa": "親と交配で得るF1を分ける",
+        "captionJa": "異なる親から得る一代目という関係を示した模式図です。種を袋で混ぜることとは区別し、図から外観・収量や全条件での効果を保証しません。",
+        "altJa": "親と交配で得るF1を分ける。異なる親から得る一代目という関係を示した模式図です。種を袋で混ぜることとは区別し、図から外観・収量や全条件での効果を保証しません。",
+        "lessonSourceHash": "5c39344a959105b7cfbf4c1d473556d7527f0c230539f3771ba8e8d67abc1bae",
+        "keyObjectiveId": "AGR-K-PAR08-SEED-F1-FIXED-02",
+        "originalExpression": true,
+        "domainReviewed": false,
+        "assetPath": "assets/agriculture/daily-learning-20261031/seed-cross.png",
+        "assetSha256": "f2ced330428491817a365cabd3817267f6c9af043e3614ec65c0366765e07915",
+        "width": 1160,
+        "height": 660
+      },
+      "pixelBytesUnchanged": true,
+      "imageViewed": true,
+      "reason": "Diagram shows crossing between fixed parents and F1 offspring, so bind to crossing objective02 rather than synonym objective01. Both scheduled levels reuse the same factual relation."
+    }
+  ],
+  "newReaderChecks": 2,
+  "newExplicitLocalePrompts": 24,
+  "answerTranslationReuse": "Exact current sourceHash-matched paragraph or independently selected matching suffix; no fallback.",
+  "oldChecksPreserved": 15,
+  "knownUnits": 1428,
+  "coveredAi": 87,
+  "sourceDenominator": "open",
+  "wholeSourceKnowledgeCovered": false,
+  "sourcePageClosure": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "initialHostRuntimeBlocker": "react/react-test-renderer/esbuild are unavailable; static/schedule/ruby/revision checks do not replace the host/native test.",
+  "hostRuntimeBlocker": null,
+  "hostValidationRef": "docs/ssw-workspace/source-coverage-v2/agriculture-f1-conditions-v7-host-validation.json",
+  "hostRuntimeExecuted": true,
+  "hostRuntimeScope": "Actual Course/Reader/ungraded retrieval/StudyState with explicit RN/storage/chrome adapters;48cases=2activities×12locales×2levels. Answers hidden before opening; show/hide uses exact locale; toggling writes no state; actual completion saves/restores current lesson and preserves old entries; no exam attempt created. Not production/native/pixel/device acceptance."
+}

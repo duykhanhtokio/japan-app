@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "baseCommit": "a0cd5cbff581572bc4e6b514b6bfddd79f8fed63",
+  "beforeBlobSha": {
+    "scripts/agriculture/check-facility-light-source-reading.cjs": "bdbdc9dd9b9fded9ca4eee41de097dbde3400805",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/facility-light-source-reading-qa.json": "8e7512331e519e787bebd028222127fb85c39695",
+    "src/data/agriculture/image-readings.json": "9cd8686c5655a5a77ebfe2d3368904997113ece6"
+  },
+  "scope": "Repair two erroneous kana introduced in5f2686d1. Restore exact primary-source ruby; no other field, token, Japanese text or asset changes.",
+  "target": "agr-f40-facility-support-greenhouse-insect-light-appearance",
+  "field": "observation",
+  "source": {
+    "document": "AGR-S2",
+    "pdfPage": 90,
+    "printedPage": 88,
+    "pdfSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+    "method": "Full-page primary PDF visually inspected and exact text-layer ruby/base alignment extracted with pdftotext -layout. Adjacent 黄色防蛾灯 hasきいろぼうがとう; this must not be transferred to 黄色灯.",
+    "alignedRubyAndBase": "ほう                ちゃく しょく ねん ちゃく                            し よう          おうしょく とう          き いろ ぼう が とう           せい しょく とう        し がい せん さっ\n\n法として、着色粘着テープの使用や、黄色灯（黄色防蛾灯）、青色灯（紫外線殺",
+    "canonicalMapping": {
+      "黄色灯": "おうしょくとう",
+      "黄色防蛾灯": "きいろぼうがとう",
+      "青色灯": "せいしょくとう"
+    }
+  },
+  "corrections": {
+    "黄色灯": {
+      "before": "きいろとう",
+      "after": "おうしょくとう"
+    },
+    "青色灯": {
+      "before": "あおいろとう",
+      "after": "せいしょくとう"
+    }
+  },
+  "qa": {
+    "actualRubyRenders": 2,
+    "staleMissingChangedFallbackChecks": 12,
+    "allOtherEntriesFieldsTokensDeepEqual": true,
+    "canonicalJapaneseAssetsLocaleDataUnchanged": true
+  },
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceValidated": false,
+  "wholeWeekAccepted": false,
+  "releaseAccepted": false
+}

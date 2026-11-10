@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "scope": "Resolve exact native-axis reading debt 記録した順番 using canonical whole-word evidence",
+  "reviewedBaseline": "c4e577d7a1a40766843f7f1b8626a81baaf113bd",
+  "problem": "The chart-key dictionary contained 順 but lacked a confirmed whole-word 順番 token, leaving 番 without furigana. An isolated-character search missed available canonical whole-word evidence.",
+  "change": "Preserve the already-published canonical whole-word 順番→じゅんばん token and empty localReadingDebt in current dictionary. No runtime dictionary delta; add direct exact sourceHash/pointer and actual inline/expanded regression evidence. Do not create an isolated 番 reading.",
+  "sourceEvidence": {
+    "path": "src/data/food-manufacturing/ruby/lessons-02.json",
+    "gitBlobSha": "3afbc8b26804989f605e2d00ad11cb9ff029f141",
+    "sha256": "902ddb6f3dfd38fbb2332124f37600df1483cc6616e38b4c2eb9c5dec374522a",
+    "jsonPointer": "/lessons/food-1-019/fields/summaryJa/11",
+    "token": {
+      "text": "順番",
+      "reading": "じゅんばん"
+    },
+    "sourceLessonId": "food-1-019",
+    "sourceHash": "ec8c6608c7d00db04e84714386b1253609aee86b48d99216131634e257895766",
+    "sourceHashMatchesCurrentLesson": true,
+    "status": "existing_ai_authored_canonical_reading_not_native_certification"
+  },
+  "validation": {
+    "command": "node scripts/food-manufacturing/check-technical-axis-ruby.cjs",
+    "result": "PASS39 actual source-practice key contexts = Japanese+12locale settings ×inline/two expanded affected figures. Exact token text/reading and sourceHash asserted; previous in-memory dictionary without whole-word token reproduces missing annotation; current inline and expanded UI shows じゅんばん above 順番. No isolated 番 token introduced.",
+    "adapters": "React+actual production SourcePractice TSX/key renderer; deterministic RN/ruby-text/asset adapters, forced selected expanded figure; unrelated presentations isolated. No device or independent native review.",
+    "diffCheck": "PASS scoped git diff --check"
+  },
+  "files": [
+    {
+      "path": "src/data/food-manufacturing/royal-technical-axis-readings.json",
+      "sha256": "a10af87d84b2672bcede4105e40ed03bdfedf0acd91bf5cb955d825b84f8e438"
+    },
+    {
+      "path": "scripts/food-manufacturing/check-technical-axis-ruby.cjs",
+      "sha256": "c66a689fdaf4f0076bff0a8a4b31d175b92a0fa6c3e99847f817d46860f2bdca"
+    }
+  ],
+  "acceptance": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false,
+    "wholeSectorComplete": false
+  },
+  "status": "concurrent_whole_word_reading_fix_retained_and_verified",
+  "concurrentDictionaryBlobSha": "22989283c841109bb212fc058b7ec9de135c57af"
+}

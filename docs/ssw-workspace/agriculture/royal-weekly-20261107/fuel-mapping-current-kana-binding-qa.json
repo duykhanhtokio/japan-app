@@ -1,0 +1,23 @@
+{
+  "baseline": "49990dbaa2471c95dba7448fab557eff3b9fa257",
+  "figureId": "agr-f40-safety-media-fuel-source-mapping",
+  "beforeAssetSha256": "80d4560882b7e73524a112cfc24d337bcfc2762a30a673ad53206c96817a34ac",
+  "afterAssetSha256": "b108383e6c5aa937291b8782a8ea2a7ccf4e79ca180996e466b118480655126a",
+  "problem": "The incoming legacy2field kana entry retained old image hash after F08 replacement, causing correct reading guard to fall back to Japanese without furigana.",
+  "change": "Peer already corrected fuel hash and added title kana in exact incoming49990dbaa. Retained incoming189 entries verbatim; no owned runtime/readings patch remains. Actual Ruby proof/test only.",
+  "validation": {
+    "actualAgricultureImageRubyFields": 3,
+    "staleAssetSourceRevisionTextGuards": 12,
+    "incomingReadingEntriesPreserved": 189
+  },
+  "browserReviewed": false,
+  "physicalDeviceTested": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseReady": false,
+  "reconciliation": {
+    "remoteFuelBefore": "b108383e6c5aa937291b8782a8ea2a7ccf4e79ca180996e466b118480655126a",
+    "ownedChange": "Noop already fixed",
+    "activeIncomingEntries": 189
+  }
+}

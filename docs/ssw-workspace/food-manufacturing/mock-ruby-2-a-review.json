@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-29",
+  "status": "authored_ai_unreviewed",
+  "scope": {
+    "forms": [
+      "food-2-mock-01",
+      "food-2-mock-02",
+      "food-2-mock-03",
+      "food-2-mock-04",
+      "food-2-mock-05"
+    ],
+    "questions": 200,
+    "fields": 2000,
+    "segments": 24245,
+    "hanSegments": 12664,
+    "numericSegments": 332,
+    "latinSegments": 268
+  },
+  "validation": {
+    "exactCanonicalReconstruction": true,
+    "fullHanReadingCoverage": true,
+    "numericAndLatinTokenCoverage": true,
+    "hiraganaSyntax": true,
+    "canonicalJapaneseUnmodified": true,
+    "answerOrderAndHashesUnmodified": true,
+    "packSha256": "abe0e1d7ec96a7195ae5fd82de1d3b00dde2c9ec450d5cfe19966eadbe525009",
+    "actualSharedRubyGateFields": 2000,
+    "actualAdapterFNVRevisionHashes": 200,
+    "diffWhitespace": "PASS"
+  },
+  "authoringMethod": "Offline candidate segmentation uses inherited unambiguous pure-kanji readings, pykakasi for unmatched Japanese runs, and explicit context/compound/numeric/acronym overrides. Pykakasi is build-time scratch only, no runtime dependency. Non-Japanese punctuation is preserved before conversion to avoid pykakasi equals-sign corruption.",
+  "editorialReview": {
+    "reviewedAll200Stems": true,
+    "reviewedUniqueReadingInventory": true,
+    "highRiskContextScansAcrossAll2000Fields": true,
+    "all2000FieldsIndependentFullSentenceReviewed": false,
+    "humanOrNativeReviewed": false,
+    "domainExpertReviewed": false,
+    "independentPeerReviewed": false,
+    "corrections": [
+      "Preserve full-width equals in equations (pykakasi dropped/duplicated it)",
+      "Avoid matching kana-inflected inherited fragments inside compounds such as 掲示する",
+      "秤量器=ひょうりょうき / 計量器=けいりょうき / 測定機器=そくていきき",
+      "人時=にんじ / 仕掛品=しかかりひん / 総出来高=そうできだか / 実稼働中=じつかどうちゅう",
+      "Table 表=ひょう; person 人=ひと outside numeric counter; clock 9時=くじ,14時=じゅうよじ; 100分=ひゃっぷん",
+      "Compound suffix readings for 者/書/物/時/済み and 部分/全員分",
+      "製造時/清掃時/販売時 and other source-specific time suffixes",
+      "規格外=きかくがい / 外れ値=はずれち / 検査値=けんさち / 合格値=ごうかくち",
+      "位置付け=いちづけ / 複数人=ふくすうにん / 増え方=ふえかた / 仲間=なかま",
+      "Acronyms and quantity/time/person-hour counters explicitly read"
+    ]
+  },
+  "limitations": [
+    "No new source competence/content/answer certification; this unit adds readings only.",
+    "Single AI lexical and contextual review is not native pronunciation certification; residual contextual/compound reading risks remain until independent review.",
+    "The 2000 fields were all mechanically checked and context-scanned; full independent sentence-by-sentence review has not been completed.",
+    "Formula punctuation/operators are retained plain; numeric/Latin token coverage is not a claim of complete spoken-formula narration.",
+    "kg/時 uses the candidate reading きろぐらむまいじ; native contextual acceptance remains pending.",
+    "No browser/native/device claim in this worker; root owns integration and QA."
+  ],
+  "runtimeDependencyAdded": false,
+  "scopeComplete": false,
+  "productionRelease": false
+}

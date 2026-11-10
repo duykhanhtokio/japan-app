@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-06",
+  "workMode": "redo_for_content_recovery",
+  "verifiedStartingCommit": "74af5a75ba38146a0dc764512aaa503678449f18",
+  "missingMilestone": "d72833f84",
+  "missingMilestoneRecovered": false,
+  "sectors": [
+    {
+      "sector": "agriculture",
+      "targetedSourcePagesRead": 3,
+      "newInventoryPagesClosed": 0,
+      "knowledgeOrAssessmentGapsFixed": 0,
+      "rootReadingErrorsFixed": 3,
+      "sourceTerminologyAlignments": 0,
+      "newChecksOrQuestions": 3,
+      "receipt": "docs/ssw-workspace/agriculture/rebuild-pronunciation-20261106.json"
+    },
+    {
+      "sector": "manufacturing",
+      "targetedSourcePagesRead": 2,
+      "newInventoryPagesClosed": 0,
+      "knowledgeOrAssessmentGapsFixed": 4,
+      "rootReadingErrorsFixed": 0,
+      "sourceTerminologyAlignments": 0,
+      "newChecksOrQuestions": 3,
+      "receipt": "docs/ssw-workspace/manufacturing/source63-reimplementation-20261106.json"
+    },
+    {
+      "sector": "food",
+      "targetedSourcePagesRead": 4,
+      "newInventoryPagesClosed": 0,
+      "knowledgeOrAssessmentGapsFixed": 0,
+      "rootReadingErrorsFixed": 2,
+      "sourceTerminologyAlignments": 1,
+      "newChecksOrQuestions": 0,
+      "receipt": "docs/ssw-workspace/food-manufacturing/source-readings-rebuild-20261106.json"
+    },
+    {
+      "sector": "restaurant",
+      "targetedSourcePagesRead": 10,
+      "newInventoryPagesClosed": 0,
+      "knowledgeOrAssessmentGapsFixed": 0,
+      "rootReadingErrorsFixed": 1,
+      "sourceTerminologyAlignments": 0,
+      "newChecksOrQuestions": 0,
+      "receipt": "docs/ssw-workspace/restaurant/content-recovery-reading-20261106.json"
+    },
+    {
+      "sector": "hospitality",
+      "targetedSourcePagesRead": 2,
+      "newInventoryPagesClosed": 0,
+      "knowledgeOrAssessmentGapsFixed": 0,
+      "rootReadingErrorsFixed": 3,
+      "sourceTerminologyAlignments": 0,
+      "newChecksOrQuestions": 0,
+      "receipt": "docs/ssw-workspace/hospitality/source-reading-rebuild-20261106.json"
+    },
+    {
+      "sector": "construction",
+      "targetedSourcePagesRead": 1,
+      "newInventoryPagesClosed": 0,
+      "knowledgeOrAssessmentGapsFixed": 2,
+      "rootReadingErrorsFixed": 0,
+      "sourceTerminologyAlignments": 0,
+      "newChecksOrQuestions": 0,
+      "receipt": "docs/ssw-workspace/kensetsu/content-restoration-source039-20261106.json"
+    },
+    {
+      "sector": "kaigo",
+      "targetedSourcePagesRead": 1,
+      "newInventoryPagesClosed": 0,
+      "knowledgeOrAssessmentGapsFixed": 0,
+      "rootReadingErrorsFixed": 1,
+      "sourceTerminologyAlignments": 0,
+      "newChecksOrQuestions": 0,
+      "receipt": "docs/ssw-workspace/kaigo/reviews/content-restoration-weekday-20261106.json"
+    }
+  ],
+  "globalCoveragePercentage": null,
+  "wholeSectorCompletionClaimed": false,
+  "audioRequiredForThisBatch": false,
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  },
+  "stateMigration": {
+    "agriculture": {
+      "lessonRevisionsChanged": 3,
+      "examRevisionsChanged": 8,
+      "oldLearnerRecordsDeleted": false,
+      "oldRevisionsRequireRecompletion": true
+    },
+    "construction": {
+      "lessonId": "039",
+      "contentRevision": 3,
+      "affectedExamRevisionChanged": true,
+      "oldLearnerRecordsDeleted": false
+    }
+  },
+  "integrationChecks": [
+    "node scripts/source-coverage-v2/check.cjs",
+    "node scripts/source-coverage-v2/check-artifact-privacy.cjs",
+    "git diff --check"
+  ],
+  "durabilityProtocol": "Commit then authenticated GitHub publication; require exact tree equality, fetch, advertised remote HEAD equality and WORK PERSISTENCE PASS before reporting saved."
+}

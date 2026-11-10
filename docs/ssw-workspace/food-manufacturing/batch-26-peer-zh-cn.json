@@ -1,0 +1,95 @@
+{
+  "reviewerAgent": "/root/b26_my",
+  "authorAgent": "/root/b26_zh",
+  "locale": "zh-CN",
+  "reviewedQuestionCount": 40,
+  "reviewedQuestionIds": [
+    "food-2-q179",
+    "food-2-q177",
+    "food-2-q125",
+    "food-2-q219",
+    "food-2-q330",
+    "food-2-q375",
+    "food-2-q265",
+    "food-2-q144",
+    "food-2-q110",
+    "food-2-q340",
+    "food-2-q164",
+    "food-2-q319",
+    "food-2-q180",
+    "food-2-q294",
+    "food-2-q292",
+    "food-2-q380",
+    "food-2-q268",
+    "food-2-q283",
+    "food-2-q263",
+    "food-2-q335",
+    "food-2-q114",
+    "food-2-q395",
+    "food-2-q390",
+    "food-2-q280",
+    "food-2-q373",
+    "food-2-q175",
+    "food-2-q163",
+    "food-2-q150",
+    "food-2-q313",
+    "food-2-q160",
+    "food-2-q288",
+    "food-2-q305",
+    "food-2-q083",
+    "food-2-q304",
+    "food-2-q221",
+    "food-2-q152",
+    "food-2-q359",
+    "food-2-q165",
+    "food-2-q190",
+    "food-2-q101"
+  ],
+  "reviewedArtifactSha256": "b0bcd5039e2884e97f5309376f55746836dc03fd965e29fec3dfcf0d71b4a6d9",
+  "corrections": [
+    {
+      "questionId": "food-2-q292",
+      "field": "prompt",
+      "before": "假想生产记录中，100个产品的平均重量为60g，300个为64g。全部400个的平均重量是多少？无需取整。",
+      "after": "假想生产记录中，100个产品的平均重量为60g，300个为64g。全部400个的平均重量是多少？无需舍入。",
+      "reason": "Preserve procedural/inspection/target meaning and natural Traditional Chinese; generic rounding in Simplified Chinese."
+    },
+    {
+      "questionId": "food-2-q268",
+      "field": "prompt",
+      "before": "假想的连续两道工序中，第一工序成品率为90％，第二工序为80％。以各工序投入量为分母时，总成品率是多少？无需取整。",
+      "after": "假想的连续两道工序中，第一工序成品率为90％，第二工序为80％。以各工序投入量为分母时，总成品率是多少？无需舍入。",
+      "reason": "Preserve procedural/inspection/target meaning and natural Traditional Chinese; generic rounding in Simplified Chinese."
+    },
+    {
+      "questionId": "food-2-q335",
+      "field": "prompt",
+      "before": "假想的80件不良中，包装破损为20件。饼图中包装破损的扇形角度是多少？无需取整。",
+      "after": "假想的80件不良中，包装破损为20件。饼图中包装破损的扇形角度是多少？无需舍入。",
+      "reason": "Preserve procedural/inspection/target meaning and natural Traditional Chinese; generic rounding in Simplified Chinese."
+    },
+    {
+      "questionId": "food-2-q373",
+      "field": "prompt",
+      "before": "假想工序的平均重量为30g、σ=0.5g，重量规格为28～32g。平均值±3σ与规格的关系如何？无需取整。",
+      "after": "假想工序的平均重量为30g、σ=0.5g，重量规格为28～32g。平均值±3σ与规格的关系如何？无需舍入。",
+      "reason": "Preserve procedural/inspection/target meaning and natural Traditional Chinese; generic rounding in Simplified Chinese."
+    },
+    {
+      "questionId": "food-2-q304",
+      "field": "prompt",
+      "before": "计划所需工时为36人时。在假想条件下，6人均分同一作业，并能无等待地同时工作。所需经过时间是多少？无需取整。",
+      "after": "计划所需工时为36人时。在假想条件下，6人均分同一作业，并能无等待地同时工作。所需经过时间是多少？无需舍入。",
+      "reason": "Preserve procedural/inspection/target meaning and natural Traditional Chinese; generic rounding in Simplified Chinese."
+    }
+  ],
+  "findings": [
+    {
+      "status": "resolved",
+      "detail": "All 40 prompts/options/explanations/reasons and title compared to canonical Japanese. Correct-reason equality, hashes, negations, supervisor role, person-hours vs elapsed hours, weighted mean 63g, sequential yield 72%, chart 90 degrees and ±3σ limits checked. Context conversion and generic rounding corrections applied; no unresolved semantic findings."
+    }
+  ],
+  "nativeSpeakerReviewed": false,
+  "domainExpertReviewed": false,
+  "integratedPartSha256": "b0bcd5039e2884e97f5309376f55746836dc03fd965e29fec3dfcf0d71b4a6d9"
+}

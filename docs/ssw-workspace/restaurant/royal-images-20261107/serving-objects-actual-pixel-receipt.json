@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "status": "actual_pixels_self_checked_pending_parent_remote_save",
+  "scope": "Sameweek08 actual physical object image repair, not caption/reading/source-content audit",
+  "baseline": "8b9136339b2dc1fd240a46481c29916f6511b714",
+  "actualDefect": {
+    "paths": [
+      "src/components/restaurant/RestaurantCutleryFigure.tsx",
+      "src/components/restaurant/RestaurantTrayHandlingFigure.tsx"
+    ],
+    "prior": "Plate/bowl/glass represented by plain circles/rectangles and fork/knife/spoon by raw bars; active image content fell short of requested detailed vocational Royal2.5D objects",
+    "correction": "2 original detailed object atlases provide8 inspected sprites. Technical guest/tray placement, code markers and lowerhalf contact guidance remain native; generated pixels never supply technical labels or numerical geometry"
+  },
+  "generation": {
+    "engine": "built-in image_gen",
+    "assets": {
+      "cutlery": {
+        "path": "assets/restaurant/royal-weekly-20261107/week08/serving-cutlery-objects-royal-v2.webp",
+        "width": 1254,
+        "height": 1254,
+        "sha256": "a21d340846f7cd89ce31a45269551352b36cda66dbdbde1296a9718d94942294"
+      },
+      "tray": {
+        "path": "assets/restaurant/royal-weekly-20261107/week08/serving-tray-glass-objects-royal-v2.webp",
+        "width": 1254,
+        "height": 1254,
+        "sha256": "6fd68a086e5acbe44eba11d9a142ba26ea588dd56500333fcdcdc4b7f50ce6be"
+      }
+    },
+    "promptSet": [
+      "2x2 topdown plate/fork/knife/spoon, fourtines, knifeedgeLEFT, full objects, refined realistic RoyalA+F2.5D, ivory, notext/numbers/hands/scene",
+      "2x2 topdown lowplate/filledbowl/topglass plus upright sideglass, empty sideglass with no colored contactmarks; detailed ivory Royal2.5D, notext/numbers/people/weights"
+    ],
+    "format": "WebP encoding only; object pixels not otherwise retouched"
+  },
+  "actualPixelReview": [
+    {
+      "kind": "plate",
+      "crop": {
+        "x": 25,
+        "y": 20,
+        "width": 575,
+        "height": 580
+      },
+      "status": "self_checked_ai_actual_crop_pixels",
+      "observation": "Complete round plate, overhead view, fine gold rim; no clipping or labels"
+    },
+    {
+      "kind": "fork",
+      "crop": {
+        "x": 860,
+        "y": 0,
+        "width": 180,
+        "height": 620
+      },
+      "status": "self_checked_ai_actual_crop_pixels",
+      "observation": "Complete vertical fork,4 separate tines at top and handle at bottom"
+    },
+    {
+      "kind": "knife",
+      "crop": {
+        "x": 245,
+        "y": 635,
+        "width": 145,
+        "height": 610
+      },
+      "status": "self_checked_ai_actual_crop_pixels",
+      "observation": "Complete vertical dinner knife; inspected curved/beveled cuttingedge onLEFT, thicker straightspine onRIGHT; native placement right ofplate makes edge inward"
+    },
+    {
+      "kind": "spoon",
+      "crop": {
+        "x": 845,
+        "y": 635,
+        "width": 190,
+        "height": 610
+      },
+      "status": "self_checked_ai_actual_crop_pixels",
+      "observation": "Complete vertical tablespoon, ovalbowl at top, handle atbottom"
+    },
+    {
+      "kind": "low-plate",
+      "crop": {
+        "x": 40,
+        "y": 40,
+        "width": 550,
+        "height": 550
+      },
+      "status": "self_checked_ai_actual_crop_pixels",
+      "observation": "Shallow low plate, circular true topview, blue-gray rim"
+    },
+    {
+      "kind": "rice-bowl",
+      "crop": {
+        "x": 650,
+        "y": 15,
+        "width": 580,
+        "height": 590
+      },
+      "status": "self_checked_ai_actual_crop_pixels",
+      "observation": "Substantial filled ceramic ricebowl, circular topview; illustrative object only, no actual weight claim"
+    },
+    {
+      "kind": "top-glass",
+      "crop": {
+        "x": 60,
+        "y": 685,
+        "width": 510,
+        "height": 520
+      },
+      "status": "self_checked_ai_actual_crop_pixels",
+      "observation": "Circular glass opening/bottom from overhead, no inappropriate sideview inplan"
+    },
+    {
+      "kind": "side-glass",
+      "crop": {
+        "x": 755,
+        "y": 660,
+        "width": 385,
+        "height": 550
+      },
+      "status": "self_checked_ai_actual_crop_pixels",
+      "observation": "Empty upright clear tumbler, complete mouth andbase, no liquid or baked grip/contact marks; native lowerhalf overlay follows inspected bounds"
+    }
+  ],
+  "nativeGeometry": {
+    "cutlery": "Original4 left/top/width/height boxes exact; forkleft,knife right edgeinward,spoonrightofknife; ①②③ code labels retained",
+    "tray": "Original3 left/top/width/height boxes exact; nearheavy/nearhigh vs farlow positions retained,①② remain code",
+    "contact": "Source-sideglass bounds inspected; lower-half zone computed as50%of projectedglassheight below midpoint, not generated mark or anatomical hand/grip image",
+    "scale": "Aspect-preserving fit without image distortion, qualified conceptualplan/illustrativeobjects; no actual weights/loadlimits/dimensions certified"
+  },
+  "validation": {
+    "command": "node scripts/restaurant/check-serving-object-artwork.cjs",
+    "actualSpriteCrops": 8,
+    "assetHashes": 2,
+    "aspectPreservingFrameCases": 24,
+    "staleSourceRejects": 2,
+    "actualComponentJa12SsrRenders": 26,
+    "bitmapObjectsPerDiagram": 4,
+    "originalPositionBoxes": 7,
+    "lowerHalfProjection": "PASS",
+    "eslint": "PASS",
+    "diffCheck": "PASS"
+  },
+  "files": {
+    "src/components/restaurant/RestaurantServingObjectArtwork.tsx": "d1311de71671eb73489b1a4f31ac3fe5e9fac346f49db08c5fd5e8b6217e9b71",
+    "src/components/restaurant/RestaurantCutleryFigure.tsx": "2e3ff475ef7789c68eb81b809179af52a68eb2ab36f6fc448414d1936e4f574d",
+    "src/components/restaurant/RestaurantTrayHandlingFigure.tsx": "8df2bd59f8dc735448a19220740c7ad1b9967307ebc7f81c610476c1ccb55654",
+    "src/data/restaurant/royal-serving-object-artwork.json": "8a3d3622c6a2fa85dcf3e45aa56bb5fe18c65b28948dc28a1e8404fd41713cdd",
+    "scripts/restaurant/check-serving-object-artwork.cjs": "88595eda17c0ff613d4c12330d6b3780cf69b1b89bd1de8b14d5c3f93ae8a000",
+    "assets/restaurant/royal-weekly-20261107/week08/serving-cutlery-objects-royal-v2.webp": "a21d340846f7cd89ce31a45269551352b36cda66dbdbde1296a9718d94942294",
+    "assets/restaurant/royal-weekly-20261107/week08/serving-tray-glass-objects-royal-v2.webp": "6fd68a086e5acbe44eba11d9a142ba26ea588dd56500333fcdcdc4b7f50ce6be"
+  },
+  "acceptance": {
+    "actualPixelsSelfReviewedAi": true,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "browserRenderReviewed": false
+  },
+  "limits": [
+    "Not a measured load limit, knife-use lesson, actual grip demonstration or food-service domain certification",
+    "Browser screenshot launch blocked by socket sandbox; declared component SSR and direct actual-crop pixel inspection only"
+  ]
+}

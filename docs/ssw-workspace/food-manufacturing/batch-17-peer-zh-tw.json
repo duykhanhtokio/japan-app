@@ -1,0 +1,149 @@
+{
+  "reviewType": "independent_ai_semantic_review",
+  "locale": "zh-TW",
+  "examId": "food-1-mock-06",
+  "reviewedQuestionCount": 40,
+  "reviewedQuestionIds": [
+    "food-1-q268",
+    "food-1-q243",
+    "food-1-q139",
+    "food-1-q144",
+    "food-1-q159",
+    "food-1-q234",
+    "food-1-q314",
+    "food-1-q154",
+    "food-1-q134",
+    "food-1-q170",
+    "food-1-q166",
+    "food-1-q222",
+    "food-1-q260",
+    "food-1-q193",
+    "food-1-q274",
+    "food-1-q192",
+    "food-1-q310",
+    "food-1-q309",
+    "food-1-q208",
+    "food-1-q262",
+    "food-1-q386",
+    "food-1-q370",
+    "food-1-q212",
+    "food-1-q312",
+    "food-1-q103",
+    "food-1-q146",
+    "food-1-q118",
+    "food-1-q330",
+    "food-1-q099",
+    "food-1-q383",
+    "food-1-q183",
+    "food-1-q217",
+    "food-1-q114",
+    "food-1-q400",
+    "food-1-q360",
+    "food-1-q255",
+    "food-1-q311",
+    "food-1-q182",
+    "food-1-q171",
+    "food-1-q231"
+  ],
+  "reviewedFields": [
+    "prompt",
+    "all_four_options",
+    "explanation",
+    "all_four_optionExplanations"
+  ],
+  "corrections": [
+    {
+      "id": "food-1-q166",
+      "field": "options[1]",
+      "before": "用流動水沖淨雙手，擦乾或烘乾後再搓揉消毒用酒精。",
+      "after": "用流動水沖淨雙手，以清潔方式乾燥後再搓揉消毒用酒精。",
+      "reason": "Source says dry hands, without specifying wiping or air drying methods.",
+      "corrected": true
+    },
+    {
+      "id": "food-1-q370",
+      "field": "prompt",
+      "before": "可能受偏離管制界限影響的食品已掛上「暫緩出貨」牌。同事認為這與丟棄指示相同。應如何區分？",
+      "after": "可能受偏離狀態影響的食品已掛上「暫緩出貨」牌。同事認為這與丟棄指示相同。應如何區分？",
+      "reason": "Keep source 逸脱 generic rather than adding a specific control-limit criterion.",
+      "corrected": true
+    },
+    {
+      "id": "food-1-q400",
+      "field": "prompt",
+      "before": "新人看著紀錄表，想將管制界限欄位的數值抄到實測欄。應如何說明？",
+      "after": "新人看著紀錄表，想將管理標準欄位的數值抄到實測欄。應如何說明？",
+      "reason": "Preserve generic 管理基準 instead of narrowing to control limits.",
+      "corrected": true
+    },
+    {
+      "id": "food-1-q400",
+      "field": "explanation",
+      "before": "界限值與測量結果不同，不能在測量前填寫結果。",
+      "after": "標準值與測量結果不同，不能在測量前填寫結果。",
+      "reason": "Preserve generic 管理基準 instead of narrowing to control limits.",
+      "corrected": true
+    },
+    {
+      "id": "food-1-q400",
+      "field": "options[0]",
+      "before": "為避免空白，可以抄寫界限值。",
+      "after": "為避免空白，可以抄寫標準值。",
+      "reason": "Preserve generic management standard terminology.",
+      "corrected": true
+    },
+    {
+      "id": "food-1-q400",
+      "field": "options[1]",
+      "before": "界限值是判斷條件，實測欄應填寫實際確認的事實。",
+      "after": "標準值是判斷條件，實測欄應填寫實際確認的事實。",
+      "reason": "Preserve generic management standard terminology.",
+      "corrected": true
+    },
+    {
+      "id": "food-1-q400",
+      "field": "options[3]",
+      "before": "界限值與實測值一定相同，所以可以抄寫。",
+      "after": "標準值與實測值一定相同，所以可以抄寫。",
+      "reason": "Preserve generic management standard terminology.",
+      "corrected": true
+    },
+    {
+      "id": "food-1-q400",
+      "field": "optionExplanations[1]",
+      "before": "界限值與測量結果不同，不能在測量前填寫結果。",
+      "after": "標準值與測量結果不同，不能在測量前填寫結果。",
+      "reason": "Preserve generic management standard terminology.",
+      "corrected": true
+    },
+    {
+      "id": "food-1-q400",
+      "field": "optionExplanations[3]",
+      "before": "實測值也可能超出界限值。",
+      "after": "實測值也可能超出標準值。",
+      "reason": "Preserve generic management standard terminology.",
+      "corrected": true
+    },
+    {
+      "id": "food-1-q255",
+      "field": "prompt",
+      "before": "看到超出管制界限的測量值後，同事說「主管正在開會，先出貨吧」。哪種做法適當？",
+      "after": "看到超出管理標準的測量值後，同事說「主管正在開會，先出貨吧」。哪種做法適當？",
+      "reason": "Preserve generic 管理基準 without adding a CL-specific label.",
+      "corrected": true
+    }
+  ],
+  "source": "src/data/food-manufacturing/exams.ja.json",
+  "sourceBeforeSha256": "58652a7fb39c7d30f2901db77bd6ee2440006a9f5dbcd08703171cae667a9b1f",
+  "reviewedArtifactSha256": "daaa89177b3f4c1e39d03eb71210229c95898f5e8d0a0b5a812f2c6721f40056",
+  "checks": {
+    "exactMembershipAndOrder": true,
+    "correctExplanationAlignment": true,
+    "rolesNegationsAndNumericQualifiersPreserved": true,
+    "hypotheticalExamplesNotGeneralized": true
+  },
+  "nativeSpeakerReviewed": false,
+  "domainExpertReviewed": false,
+  "browserTested": false,
+  "integratedPartSha256": "daaa89177b3f4c1e39d03eb71210229c95898f5e8d0a0b5a812f2c6721f40056"
+}

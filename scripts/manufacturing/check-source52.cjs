@@ -1,0 +1,19 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),Module=require('node:module'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'../..'),{transformSync}=require('esbuild'),resolve=Module._resolveFilename;
+Module._resolveFilename=function(id,parent,...rest){let p=id.startsWith('@/')?path.join(root,'src',id.slice(2)):id;if((p.startsWith('.')||path.isAbsolute(p))&&!path.extname(p)){const c=path.resolve(parent?path.dirname(parent.filename):root,p)+'.ts';if(fs.existsSync(c))p=c;}return resolve.call(this,p,parent,...rest);};require.extensions['.ts']=(m,f)=>m._compile(transformSync(fs.readFileSync(f,'utf8'),{loader:'ts',format:'cjs'}).code,f);
+const req=p=>require(root+'/'+p),api=req('src/data/manufacturing/supplement-practice.ts'),dataPath=root+'/src/data/manufacturing/source52-thermal.json',core=req('src/data/manufacturing/electrical.json'),snapshot=JSON.stringify(core),state=req('src/services/manufacturing-study-state.ts');
+assert(!require.cache[dataPath]);assert(!api.manufacturingSupplementExams('surface').some(e=>e.id.includes('source52')));assert(!require.cache[dataPath]);
+const d=require(dataPath),exam=api.manufacturingSupplementExams('electrical').find(e=>e.id===d.id);assert(exam);assert.equal(exam.questions.length,2);assert.deepEqual(exam.questions.map(q=>q.correctIndex),[2,0]);let targets=0,guards=0;
+for(const [i,q]of exam.questions.entries()){
+ for(const text of [q.stemJa,...q.optionsJa,...q.optionReasonsJa])assert(!/[一-龯々]/.test(text.replace(/[一-龯々]+（[ぁ-ゖー]+）/g,'')),'every new Japanese kanji needs a reading');
+ const {sourceHash,...fields}=q;assert.equal(sourceHash,crypto.createHash('sha256').update(JSON.stringify(fields)).digest('hex'));
+ for(const loc of Object.keys(d.locales)){const t=api.manufacturingSupplementTranslation(q,loc);assert(t&&t.options.length===4&&t.reasons.length===4);assert.deepEqual(t,d.locales[loc][q.id]);targets++;
+  for(const k of ['stemJa','optionsJa','optionReasonsJa','correctIndex','sourceHash','lessonId','sources']){const bad=JSON.parse(JSON.stringify(q));bad[k]=typeof bad[k]==='string'?bad[k]+'x':typeof bad[k]==='number'?(bad[k]+1)%4:[];assert.equal(api.manufacturingSupplementTranslation(bad,loc),null);guards++;}
+ }
+ for(const loc of ['ja','xx','toString','__proto__']){assert.equal(api.manufacturingSupplementTranslation(q,loc),null);guards++;}
+}
+const attempt=state.freshTestAttempt(exam);attempt.answers=exam.questions.map(q=>q.correctIndex);attempt.currentQuestion=1;const restored=state.restoreTestAttempt(JSON.stringify(attempt),exam);assert(restored);assert.deepEqual(restored.answers,[2,0]);assert.equal(state.gradeTest(exam,restored.answers).correct,2);assert.equal(state.restoreTestAttempt(JSON.stringify(attempt),{...exam,revision:exam.revision+'changed'}),null);
+const binding=d.teachingBinding,old=binding.canonicalTaughtAfter;binding.canonicalTaughtAfter+='changed';assert(!api.manufacturingSupplementExams('electrical').some(e=>e.id===d.id));assert.equal(api.manufacturingSupplementTranslation(exam.questions[0],'vi'),null);binding.canonicalTaughtAfter=old;
+for(const key of ['effectiveJapaneseSha256','sourceHash','paragraphId','lessonId']){const v=binding[key];binding[key]='stale';assert(!api.manufacturingSupplementExams('electrical').some(e=>e.id===d.id));binding[key]=v;guards++;}
+for(const [loc,qid,field]of [['vi',exam.questions[0].id,'sourceHash'],['en',exam.questions[1].id,'options']]){const t=d.locales[loc][qid],v=t[field];t[field]=field==='options'?[]:'stale';assert.equal(api.manufacturingSupplementTranslation(exam.questions.find(q=>q.id===qid),loc),null);t[field]=v;guards++;}
+assert.equal(JSON.stringify(core),snapshot);console.log(JSON.stringify({status:'PASS_SOURCE52',newQuestions:2,targetPairs:targets,negativeGuards:guards,graded:2,resumeAndRevisionGuards:true,coreBanksUnchanged:true,source49TeachingBound:true,sourceExerciseCopied:false,expertOrNativeAcceptance:false}));

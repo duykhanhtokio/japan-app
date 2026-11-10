@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-06",
+  "workMode": "rebuild_content_from_verified_GitHub_not_recovery_of_d72833f84",
+  "verifiedBase": "74af5a75ba38146a0dc764512aaa503678449f18",
+  "missingCommitRecovered": false,
+  "sector": "food",
+  "sourceFiles": [
+    {
+      "sourceId": "food-1",
+      "sha256": "bb26b5447dc6ffc628ad81966f73151b2d5b088accc830750ba66b5464d286fb",
+      "pdfPages": 86,
+      "targetedPagesRead": [
+        52
+      ],
+      "visuallyReadPages": [
+        52
+      ]
+    },
+    {
+      "sourceId": "food-2",
+      "sha256": "a2949e7f8e5282ee163e5015baacc39b0a4aeddf8ffb9b05cb93fb93ea116e57",
+      "pdfPages": 165,
+      "targetedPagesRead": [
+        43,
+        86,
+        125
+      ],
+      "visuallyReadPages": [
+        43,
+        86,
+        125
+      ]
+    }
+  ],
+  "repairs": [
+    {
+      "group": "protective-equipment-term-reading",
+      "kind": "source_terminology_alignment",
+      "sourceRefs": [
+        {
+          "sourceId": "food-1",
+          "pdfPage": 52,
+          "printedPage": 47,
+          "locator": "left-column メクセル手袋 / くさり手袋, 切傷 ruby"
+        }
+      ],
+      "term": "切傷",
+      "before": "きりきず",
+      "after": "せっしょう",
+      "scopeNote": "Align the occupational term with this source and existing lesson glossary. きりきず is a valid reading in general Japanese; this is not a universal incorrect-reading claim.",
+      "fields": [
+        "food-1-q201/stemJa",
+        "food-1-q201/optionReasonsJa.2"
+      ],
+      "relatedTeachingChecked": "food-1-028 already uses 切傷=せっしょう; no lesson change necessary."
+    },
+    {
+      "group": "inspection-date-compound",
+      "kind": "confirmed_compound_reading_error",
+      "sourceRefs": [
+        {
+          "sourceId": "food-2",
+          "pdfPage": 43,
+          "printedPage": 34,
+          "locator": "record-review row, 点検日 ruby"
+        },
+        {
+          "sourceId": "food-2",
+          "pdfPage": 125,
+          "printedPage": 116,
+          "locator": "equipment inspection, record actual inspection date"
+        }
+      ],
+      "term": "点検日",
+      "before": "てんけんひ",
+      "after": "てんけんび",
+      "fields": [
+        "food-2-q075/optionsJa.0"
+      ],
+      "relatedTeachingChecked": "food-2-030 records actual inspection date; canonical text and lesson readings preserved."
+    },
+    {
+      "group": "defect-rate-particle",
+      "kind": "confirmed_reading_error",
+      "sourceRefs": [
+        {
+          "sourceId": "food-2",
+          "pdfPage": 86,
+          "printedPage": 77,
+          "locator": "scatter-plot subsection, processing temperature and defect rate ruby"
+        }
+      ],
+      "term": "不良率を",
+      "before": "ふりょうひきを",
+      "after": "ふりょうりつを",
+      "fields": [
+        "food-2-q064/optionsJa.0"
+      ],
+      "relatedTeachingChecked": "food-2-021 scatter plot source relation and canonical question were already correct; only offline reading output repaired."
+    }
+  ],
+  "counts": {
+    "targetedSourcePagesRead": 4,
+    "inventoryPagesNewlyClosed": 0,
+    "confirmedRootReadingErrorsFixed": 2,
+    "sourceTerminologyAlignments": 1,
+    "runtimeReadingFieldsFixed": 4,
+    "questionsAffected": 3,
+    "lessonsReauthored": 0,
+    "newQuestions": 0,
+    "coveragePercentage": null
+  },
+  "integration": {
+    "method": "exact question/field offline-loader overrides; no global 日 or 率 rule",
+    "loader": "src/data/food-manufacturing/question-ruby.ts",
+    "questionIdsAndAnswerPositionsPreserved": true,
+    "sourceHashesAndLearnerStatePreserved": true,
+    "translationsUnaffectedBecauseCanonicalJapaneseUnchanged": true
+  },
+  "validation": {
+    "actualOfflineLoader": "PASS:848 questions/8480 fields;4 intended changes;8476 unchanged;16960 stale/misalignment rejections",
+    "lessonRuby": "PASS:96 lessons/996 fields;996 stale/misalignment rejections;192 malformed/uncovered rejections",
+    "diffCheck": "PASS",
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  },
+  "preservedCanonicalFiles": [
+    {
+      "path": "src/data/food-manufacturing/exams.ja.json",
+      "sha256": "33140958c824c9d13fe72ac6413f5ec0a06936e99450e81674f1b2c42a449b26",
+      "byteIdenticalToVerifiedBase": true
+    },
+    {
+      "path": "src/data/food-manufacturing/lessons.1.ja.json",
+      "sha256": "3d5da3d651ce0f4304d71bc0c936abe181b583b45d7f877ae645de7d2510e24e",
+      "byteIdenticalToVerifiedBase": true
+    },
+    {
+      "path": "src/data/food-manufacturing/lessons.2.ja.json",
+      "sha256": "e236d99bc844e832da0aadc6d73b4d227c119c06e97c37f6778b9c9e089edcb7",
+      "byteIdenticalToVerifiedBase": true
+    },
+    {
+      "path": "src/data/food-manufacturing/ruby/mock-1-a.json",
+      "sha256": "060e54373655d060249229c3c9b47fbb8929d07af468cf4531fe48198ae52dfd",
+      "byteIdenticalToVerifiedBase": true
+    },
+    {
+      "path": "src/data/food-manufacturing/ruby/mock-2-a.json",
+      "sha256": "01fae23fef24ab1b27e64fa9743fb74e5d9b7082972f1d145509558a7c2cfd98",
+      "byteIdenticalToVerifiedBase": true
+    }
+  ],
+  "remaining": [
+    "Full source denominator remains open. No page-closure or whole-sector-completion claim.",
+    "Historical remaining-four.json is stale: current canonical evidence already covers center/spread and nonunique-cause tasks in source-closure64/65; these were preserved rather than reauthored."
+  ]
+}

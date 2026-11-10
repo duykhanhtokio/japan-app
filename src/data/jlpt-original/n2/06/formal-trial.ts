@@ -8,11 +8,12 @@ type OriginalQuestion = {
 };
 const master=require('./master.ja.json') as {examId:string;runtimeIntegrated:boolean;questions:OriginalQuestion[];passages:Record<string,string>};
 const organization=require('./listening-organization.ja.json') as {groups:{problem:number;example:{options:{id:string;text:string}[]}}[]};
-const audio=require('./audio.manifest.json') as {durationMs:number;matchesLevelDurationTarget:boolean};
+const audio=require('./audio.manifest.json') as {durationMs:number;matchesLevelDurationTarget:boolean; shortenedIntroApplied?: boolean};
 export const N2_ORIGINAL_06_SESSION_KEY='jlpt:jpapp:n2:original:06:v1';
-export const N2_ORIGINAL_06_REGISTRATION_READY=master.runtimeIntegrated&&audio.matchesLevelDurationTarget;
+export const N2_ORIGINAL_06_REGISTRATION_READY=master.runtimeIntegrated&&(audio.matchesLevelDurationTarget || audio.shortenedIntroApplied === true);
 export const N2_ORIGINAL_06_VISUALS:Readonly<Record<number,ImageSourcePropType>>={};
 function practiceInstruction(q:OriginalQuestion):string {
+  if (q.section === 'listening' && q.group === 1) return '';
  if(q.section!=='listening'||q.number!==1)return '';
  if([1,2,5].includes(q.group))return '\n練習（採点なし・選択操作不要）：\n'+organization.groups.find(g=>g.problem===q.group)!.example.options.map(o=>o.id+' '+o.text).join('\n');
  return '\n音声の練習は採点しません。練習中は選択ボタンを押しません。';

@@ -1,0 +1,21 @@
+// Explicit app-side grounding, separate from exam-PDF knowledge acceptance.
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+const R=path.resolve(__dirname,'../..'),D='docs/ssw-workspace/restaurant/source-closure31/',V='docs/ssw-workspace/source-coverage-v2/',rp=V+'restaurant-r8-app-provenance-20261103.json';
+const read=p=>JSON.parse(fs.readFileSync(path.join(R,p),'utf8')),save=(p,v)=>fs.writeFileSync(path.join(R,p),JSON.stringify(v,null,2)+'\n'),hash=v=>crypto.createHash('sha256').update(JSON.stringify(v)).digest('hex');
+const l=read(V+'restaurant.json'),r=read('src/data/restaurant/source31/2.json'),a=read(D+'integration/source-v2-r8-app-models-authoring-20261103.json'),row=r.lessons['rst-2-ops-06'],i=row.sections.findIndex(s=>s.id==='rst31-v2-r8-ops-a-models');assert(i>=0);
+const ev=(ptr,v,note)=>({path:'src/data/restaurant/source31/2.json',jsonPointer:ptr,sha256:hash(v),sha256Mode:'json-value',relation:'direct',semanticReviewed:true,reviewNote:note});
+const models=[
+ {claimId:'rst-app-terms-points-voucher',kind:'authored_store_policy',scopeJa:'この練習店に限る。併用不可と券面期限は設定した条件であり、全国共通ではない。',definition:{pointsAndVoucherCombination:'not_allowed_in_this_practice_store',expiry:'read_the_actual_voucher_before_use',universalRuleClaimed:false}},
+ {claimId:'rst-app-delivery-fees-profit',kind:'independent_bounded_calculation',scopeJa:'一件、同じ対象範囲の売上から明示した三費用だけを引く。ほかの費用を控除済みの最終利益とは呼ばない。',definition:{sales:2000,foodCost:700,containerCost:100,deliveryFee:400,currency:'JPY',remaining:800,excludesOtherCosts:true,finalRestaurantProfitClaimed:false}},
+ {claimId:'rst-app-regular-visit-privacy',kind:'official_guidance_plus_authored_store_policy',scopeJa:'この練習店のあいさつ場面での非開示と責任者への相談。法令・同意・例外の適用を店員が断定せず、すべての会話を違法としない。',definition:{greetingSceneDisclosure:false,necessaryDisclosureRequest:'refer_to_manager',allConversationsIllegal:false,officialBackground:a.officialPrivacyProvenance}}
+];
+let receipt=fs.existsSync(path.join(R,rp))?read(rp):{schemaVersion:1,baselineCommit:a.baselineCommit,status:'self_checked_ai',examPdfCoverageInferred:false,officialSource:a.officialPrivacyProvenance,reviews:[],review:{domainReviewed:false,nativeReviewed:false,physicalDeviceTested:false,learnerDurationMeasured:false}};
+for(let k=0;k<models.length;k++){
+ const model=models[k],c=l.appClaimExtensions.find(c=>c.claimId===model.claimId),q=a.questions[k],j=row.exam.questions.findIndex(v=>v.id===q.id);assert(c&&j>=0);const n=row.exam.questions[j];assert.equal(n.optionsJa[n.correctIndex],q.optionsJa[q.correctIndex]);
+ if(!receipt.reviews.some(v=>v.claimId===c.claimId))receipt.reviews.push({claimId:c.claimId,previous:structuredClone(c),model,questionId:q.id});
+ c.legacyTeachingEvidence??=c.teachingEvidence;c.beforeGrounding??={status:c.status,sourceSupport:c.sourceSupport,unresolved:c.unresolved};c.status='grounded_ai';c.sourceSupport='independent_app_model_not_exam_pdf';c.scopeJa=model.scopeJa;c.provenance={kind:model.kind,modelDefinition:model.definition,reviewRef:rp,officialSource: model.kind.startsWith('official')?a.officialPrivacyProvenance:null};c.teachingEvidence=[ev(`/lessons/rst-2-ops-06/sections/${i}`,row.sections[i],model.scopeJa+' Exact current scheduled model paragraph; original unqualified app clauses are retained in legacyTeachingEvidence.')];c.assessmentEvidence=[ev(`/lessons/rst-2-ops-06/exam/questions/${j}`,n,'Original scenario assesses this exact model and explicitly rejects unbounded or universal conclusions.')];c.assessmentAcceptance=true;c.unresolved=[];c.reviewRef=rp;
+}
+assert.equal(2000-700-100-400,800);assert.equal(2000-700-100,1200);assert.equal(2000-400,1600);
+l.unresolved=l.unresolved.filter(s=>!s.startsWith('Three separately retained app-claim extensions need appropriate provenance:'));
+l.unresolved.push('Three app constraints now have bounded independent policy/calculation/PPC-guidance grounding; this does not enlarge exam-PDF coverage or certify native/domain/device/learner-time acceptance.');l.unresolved=[...new Set(l.unresolved)];
+assert.equal(l.knowledgeUnits.filter(u=>u.status==='covered_ai').length,60);assert.equal(l.denominator.status,'open');assert.equal(l.wholeSourceKnowledgeCovered,false);save(rp,receipt);save(V+'restaurant.json',l);console.log('3app claims grounded with explicit scope; exam-PDF covered_ai stays60.');

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "baseHead": "ee58f2febc5b9e7f74caacb4886225e74a664ecd",
+  "sharedFilesNotEdited": true,
+  "route": {
+    "path": "src/components/agriculture/DailyLearningSupport.tsx",
+    "import": "import {FoodFlowerClassificationSupport,isFoodFlowerClassificationContext} from './FoodFlowerClassificationSupport';",
+    "insertAfter": "if(!lesson.levels.includes(level))return null;",
+    "code": "if(isFoodFlowerClassificationContext(lesson.id)) return <FoodFlowerClassificationSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors} paragraphIds={paragraphIds}/>;",
+    "requirement": "Delegate before figureBindings lookup; full source paragraphs required internally; retain all other current native delegates."
+  },
+  "removeFigureBindings": [
+    {
+      "lessonId": "agr-flower-details-table-examples",
+      "expectedBefore": {
+        "lessonSourceHash": "4e62602c5fb58534fa99340ae5c4ba24f7abf9e2658d7e6be0e2f4d88e11bcb9",
+        "figureId": "agr-f40-general-flower-legend-reader",
+        "assetSha256": "46a1376701ebd24d912bbf9ffeedfccd4492cd366d3220e036b8f8c806653d0f",
+        "keyObjectiveId": "AGR-K-FLOWER-DETAILS-TABLE-EXAMPLES-01",
+        "objectiveJa": "分類表の追加例を使い、品目名と資料上の欄を対応させられる。",
+        "reuseReasonJa": "「花きの分類表で追加の品目を照合する」で扱う対象を、既存の「花きの推移図の凡例を読む」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+        "scopeLevels": [
+          "2"
+        ],
+        "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
+      },
+      "operation": "delete only this figureBindings key after exact expectedBefore equality; abort/reconcile if changed"
+    },
+    {
+      "lessonId": "agr-par12-flower-group-records",
+      "expectedBefore": {
+        "lessonSourceHash": "dc98ca86d236a85a3c016f47f2f345c7c88658c5f2a8f8969bcf3e06f2d52040",
+        "figureId": "agr-f40-general-flower-legend-reader",
+        "assetSha256": "46a1376701ebd24d912bbf9ffeedfccd4492cd366d3220e036b8f8c806653d0f",
+        "keyObjectiveId": "AGR-K-PAR12-FLOWER-GROUP-RECORDS-01",
+        "objectiveJa": "追加の花き名を花木・ラン・多肉植物等の見出しへ対応させ、観葉植物とハーブの内側の区分や誤記録を点検できる。",
+        "reuseReasonJa": "「花きの分類表を見出しと下位区分で点検する」で扱う対象を、既存の「花きの推移図の凡例を読む」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+        "scopeLevels": [
+          "2"
+        ],
+        "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
+      },
+      "operation": "delete only this figureBindings key after exact expectedBefore equality; abort/reconcile if changed"
+    }
+  ],
+  "preserve": {
+    "figureId": "agr-f40-general-flower-legend-reader",
+    "originalCorrectContexts": [
+      "agr-flowers",
+      "agr-f40-general-history-flower-records"
+    ],
+    "retain": "Original figure registration, accepted asset, source/pixel evidence, localization, and native legend context. No global figure deletion."
+  },
+  "acceptance": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "releaseAccepted": false
+  }
+}

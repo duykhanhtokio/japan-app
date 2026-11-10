@@ -1,0 +1,1243 @@
+{
+  "status": "PASS",
+  "forms": [
+    "food-1-mock-03",
+    "food-2-mock-03"
+  ],
+  "newQuestionLocalePairs": 240,
+  "nativeReviewed": false,
+  "domainExpertReviewed": false,
+  "browserTested": false,
+  "locales": {
+    "zh-CN": {
+      "newPairs": 40,
+      "previousPairsPreserved": 199,
+      "totalPairs": 239,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "041437b10579fbb6428ae2f56d6d490be36b79372dba8bfb4e665fded86b78b4"
+    },
+    "zh-TW": {
+      "newPairs": 40,
+      "previousPairsPreserved": 199,
+      "totalPairs": 239,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "c5dc61c7f7e6d047507a14fcba59f2be37e917bff6059fee237796b46e6cd8e7"
+    },
+    "bn": {
+      "newPairs": 40,
+      "previousPairsPreserved": 199,
+      "totalPairs": 239,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "59230b95696187dc89ad4e1a97328f7482380855c0d7f56310458a7a841b7907"
+    },
+    "en": {
+      "newPairs": 40,
+      "previousPairsPreserved": 239,
+      "totalPairs": 279,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "7c2642e0c8f41bfbff7e27ebc7978dcac0caf428af316a2618b51e4cc3b16681"
+    },
+    "vi": {
+      "newPairs": 40,
+      "previousPairsPreserved": 239,
+      "totalPairs": 279,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "0832be64faca0ecb5e968758f3994f2dc540ab2ac959523a617627fe2d78e51d"
+    },
+    "id": {
+      "newPairs": 40,
+      "previousPairsPreserved": 239,
+      "totalPairs": 279,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "a2461ebf35a3184f2c603c0c566c9603a1674029dccf635d7de1dc8e76e8f709"
+    }
+  },
+  "totalQuestionLocalePairs": 2988,
+  "remainingQuestionLocalePairs": 7080,
+  "batch": "08",
+  "baselineCommit": "a6b0a913fcb5006c1b2ccac8a6ce95d289e828e5",
+  "preservation": {
+    "priorQuestionLocalePairs": 2748,
+    "priorChangedPackEntries": 1314,
+    "priorQuestionAndTitleEntriesPreserved": true,
+    "japaneseSourceBlob": "765a238f07158b5c125f240023fcdea5418d33c5",
+    "adapterBlob": "43e8e1cdee371cc37f5167e5fad20363ea832103",
+    "runtimeOrUIChanged": false
+  },
+  "numericAudit": {
+    "candidates": [
+      {
+        "locale": "zh-CN",
+        "id": "food-1-q185",
+        "field": "prompt",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "30",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "30"
+        ],
+        "source": "架空の冷却練習の手順は「開始から30分以内に中心を15℃以下にする」です。11時20分に開始し、11時48分に中心14℃でした。この測定時点の判定はどれですか。実製品の基準ではなく練習条件です。",
+        "target": "假设的冷却练习规定：“从开始起30分钟以内，使中心温度降到15°C或以下。”11:20开始，11:48测得中心温度为14°C。对此次测量时的情况，应怎样判断？这是练习条件，不是实际产品的标准。",
+        "resolution": "Equivalent clock notation11時20分/11時48分 vs11:20/11:48;28minutes and14<=15 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "zh-CN",
+        "id": "food-1-q185",
+        "field": "explanation",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48－11:20＝28分钟，且14≤15，因此给定的时间和中心温度条件均符合。",
+        "resolution": "Equivalent clock notation11時20分/11時48分 vs11:20/11:48;28minutes and14<=15 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "zh-CN",
+        "id": "food-1-q185",
+        "field": "reason2",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48－11:20＝28分钟，且14≤15，因此给定的时间和中心温度条件均符合。",
+        "resolution": "Equivalent clock notation11時20分/11時48分 vs11:20/11:48;28minutes and14<=15 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "zh-CN",
+        "id": "food-1-q140",
+        "field": "prompt",
+        "sourceNumbers": [],
+        "targetNumbers": [
+          "4",
+          "5"
+        ],
+        "source": "五袋の原料を開けましたが、切れ端は四つしかありません。数の確認から必要になる行動はどれですか。",
+        "target": "打开了5袋原料，却只有4块开袋时剪下的袋口碎片。根据数量核对结果，应怎样做？",
+        "resolution": "Japanese kanji numbers 五/四/一 correspond to5/4/1.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "zh-CN",
+        "id": "food-1-q140",
+        "field": "option0",
+        "sourceNumbers": [],
+        "targetNumbers": [
+          "4",
+          "5"
+        ],
+        "source": "五袋中四つあれば十分とする。",
+        "target": "5袋有4块碎片就足够了。",
+        "resolution": "Japanese kanji numbers 五/四/一 correspond to5/4/1.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "zh-TW",
+        "id": "food-1-q185",
+        "field": "prompt",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "30",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "30"
+        ],
+        "source": "架空の冷却練習の手順は「開始から30分以内に中心を15℃以下にする」です。11時20分に開始し、11時48分に中心14℃でした。この測定時点の判定はどれですか。実製品の基準ではなく練習条件です。",
+        "target": "假設的冷卻練習程序規定：「開始後30分鐘內，將中心溫度降至15°C以下。」11:20開始，11:48時中心溫度為14°C。在這次測量時應如何判定？這是練習條件，不是實際產品的標準。",
+        "resolution": "Equivalent clock notation11時20分/11時48分 vs11:20/11:48;28minutes and14<=15 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "zh-TW",
+        "id": "food-1-q185",
+        "field": "explanation",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48－11:20＝28分鐘，且14≤15，因此同時符合題示的時間與中心溫度條件。",
+        "resolution": "Equivalent clock notation11時20分/11時48分 vs11:20/11:48;28minutes and14<=15 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "zh-TW",
+        "id": "food-1-q185",
+        "field": "reason2",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48－11:20＝28分鐘，且14≤15，因此同時符合題示的時間與中心溫度條件。",
+        "resolution": "Equivalent clock notation11時20分/11時48分 vs11:20/11:48;28minutes and14<=15 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "zh-TW",
+        "id": "food-1-q140",
+        "field": "prompt",
+        "sourceNumbers": [],
+        "targetNumbers": [
+          "4",
+          "5"
+        ],
+        "source": "五袋の原料を開けましたが、切れ端は四つしかありません。数の確認から必要になる行動はどれですか。",
+        "target": "已開啟5袋原料，但剪下的袋口碎片只有4片。從數量確認結果來看，需要採取什麼行動？",
+        "resolution": "Japanese kanji numbers 五/四/一 correspond to5/4/1.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "zh-TW",
+        "id": "food-1-q140",
+        "field": "option0",
+        "sourceNumbers": [],
+        "targetNumbers": [
+          "4",
+          "5"
+        ],
+        "source": "五袋中四つあれば十分とする。",
+        "target": "5袋有4片就足夠。",
+        "resolution": "Japanese kanji numbers 五/四/一 correspond to5/4/1.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "zh-TW",
+        "id": "food-1-q140",
+        "field": "reason0",
+        "sourceNumbers": [],
+        "targetNumbers": [
+          "1"
+        ],
+        "source": "一つでも未確認なら混入の可能性が残ります。",
+        "target": "只要還有1片未確認，就仍有混入的可能。",
+        "resolution": "Japanese kanji numbers 五/四/一 correspond to5/4/1.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "bn",
+        "id": "food-1-q185",
+        "field": "prompt",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "30",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "30"
+        ],
+        "source": "架空の冷却練習の手順は「開始から30分以内に中心を15℃以下にする」です。11時20分に開始し、11時48分に中心14℃でした。この測定時点の判定はどれですか。実製品の基準ではなく練習条件です。",
+        "target": "কাল্পনিক শীতলীকরণ অনুশীলনে পদ্ধতি হলো “শুরু থেকে 30 মিনিটের মধ্যে কেন্দ্রের তাপমাত্রা 15°C বা কম করা”। 11:20-এ শুরু করে 11:48-এ কেন্দ্রের তাপমাত্রা 14°C ছিল। এই মাপার মুহূর্তে সঠিক মূল্যায়ন কোনটি? এটি অনুশীলনের শর্ত, বাস্তব পণ্যের মানদণ্ড নয়।",
+        "resolution": "Equivalent clock notation11時20分/11時48分 vs11:20/11:48;28minutes and14<=15 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "bn",
+        "id": "food-1-q185",
+        "field": "explanation",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 মিনিট এবং 14 ≤ 15; তাই সময় ও কেন্দ্রের তাপমাত্রার উভয় শর্ত পূরণ হয়েছে।",
+        "resolution": "Equivalent clock notation11時20分/11時48分 vs11:20/11:48;28minutes and14<=15 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "bn",
+        "id": "food-1-q185",
+        "field": "reason2",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 মিনিট এবং 14 ≤ 15; তাই সময় ও কেন্দ্রের তাপমাত্রার উভয় শর্ত পূরণ হয়েছে।",
+        "resolution": "Equivalent clock notation11時20分/11時48分 vs11:20/11:48;28minutes and14<=15 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q229",
+        "field": "prompt",
+        "sourceNumbers": [
+          "1",
+          "12",
+          "6",
+          "7",
+          "7"
+        ],
+        "targetNumbers": [
+          "1",
+          "12",
+          "6",
+          "7"
+        ],
+        "source": "職長が作った教育案は「手順1～6を準備、手順7～12を7原則」と分類しています。担当者への修正指示として適切なのはどれですか。",
+        "target": "A training plan classifies steps 1–6 as preparation and steps 7–12 as the seven principles. Which correction should the supervisor instruct?",
+        "resolution": "Seven/tujuh and first/pertama preserve7 and1; preparation1-5/principles6-12 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q229",
+        "field": "explanation",
+        "sourceNumbers": [
+          "1",
+          "12",
+          "5",
+          "6",
+          "7"
+        ],
+        "targetNumbers": [
+          "1",
+          "12",
+          "5",
+          "6"
+        ],
+        "source": "手順6～12が7原則で、手順1～5は実行のための準備です。",
+        "target": "Steps 6–12 correspond to the seven principles; steps 1–5 prepare for implementation.",
+        "resolution": "Seven/tujuh and first/pertama preserve7 and1; preparation1-5/principles6-12 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q229",
+        "field": "option0",
+        "sourceNumbers": [
+          "1",
+          "12",
+          "5",
+          "6",
+          "7"
+        ],
+        "targetNumbers": [
+          "1",
+          "12",
+          "5",
+          "6"
+        ],
+        "source": "準備は手順1～5、7原則は危害要因分析の手順6から手順12までとして構成を直す。",
+        "target": "Revise it: steps 1–5 are preparation, and steps 6–12, starting with hazard analysis, are the seven principles.",
+        "resolution": "Seven/tujuh and first/pertama preserve7 and1; preparation1-5/principles6-12 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q229",
+        "field": "option1",
+        "sourceNumbers": [
+          "7"
+        ],
+        "targetNumbers": [],
+        "source": "7原則という名称に合わせるため、同じ教材の見出しを一つ増やすだけにする。",
+        "target": "Simply add a heading to match the name “seven principles.”",
+        "resolution": "Seven/tujuh and first/pertama preserve7 and1; preparation1-5/principles6-12 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q229",
+        "field": "reason0",
+        "sourceNumbers": [
+          "1",
+          "12",
+          "5",
+          "6",
+          "7"
+        ],
+        "targetNumbers": [
+          "1",
+          "12",
+          "5",
+          "6"
+        ],
+        "source": "手順6～12が7原則で、手順1～5は実行のための準備です。",
+        "target": "Steps 6–12 correspond to the seven principles; steps 1–5 prepare for implementation.",
+        "resolution": "Seven/tujuh and first/pertama preserve7 and1; preparation1-5/principles6-12 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q386",
+        "field": "prompt",
+        "sourceNumbers": [
+          "171",
+          "180",
+          "200"
+        ],
+        "targetNumbers": [
+          "1",
+          "171",
+          "180",
+          "2",
+          "2",
+          "200"
+        ],
+        "source": "架空の二工程で原料200kgが第一工程後180kg、第二工程後171kgの良品になりました。第二工程単独の歩留りはどれですか。丸めは不要です。",
+        "target": "In a hypothetical two-stage process, 200 kg of raw material becomes 180 kg after stage 1 and 171 kg of good product after stage 2. What is the yield of stage 2 alone? No rounding is needed.",
+        "resolution": "Stage1/2 uses digits for Japanese 第一/第二;200/180/171kg and95% second-stage denominator retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q386",
+        "field": "explanation",
+        "sourceNumbers": [
+          "100",
+          "171",
+          "180",
+          "180",
+          "95"
+        ],
+        "targetNumbers": [
+          "100",
+          "171",
+          "180",
+          "180",
+          "2",
+          "95"
+        ],
+        "source": "第二工程への投入180kgを分母にし、171÷180×100=95％です。",
+        "target": "Use the 180 kg input to stage 2 as the denominator: 171 ÷ 180 × 100 = 95%.",
+        "resolution": "Stage1/2 uses digits for Japanese 第一/第二;200/180/171kg and95% second-stage denominator retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q386",
+        "field": "reason1",
+        "sourceNumbers": [
+          "100",
+          "171",
+          "180",
+          "180",
+          "95"
+        ],
+        "targetNumbers": [
+          "100",
+          "171",
+          "180",
+          "180",
+          "2",
+          "95"
+        ],
+        "source": "第二工程への投入180kgを分母にし、171÷180×100=95％です。",
+        "target": "Use the 180 kg input to stage 2 as the denominator: 171 ÷ 180 × 100 = 95%.",
+        "resolution": "Stage1/2 uses digits for Japanese 第一/第二;200/180/171kg and95% second-stage denominator retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q386",
+        "field": "reason2",
+        "sourceNumbers": [
+          "5"
+        ],
+        "targetNumbers": [
+          "2",
+          "5"
+        ],
+        "source": "5％は第二工程の減量割合であり歩留りではありません。",
+        "target": "5% is the weight-loss percentage for stage 2, not its yield.",
+        "resolution": "Stage1/2 uses digits for Japanese 第一/第二;200/180/171kg and95% second-stage denominator retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q386",
+        "field": "reason3",
+        "sourceNumbers": [
+          "180",
+          "200",
+          "90"
+        ],
+        "targetNumbers": [
+          "1",
+          "180",
+          "200",
+          "90"
+        ],
+        "source": "180÷200=90％は第一工程の歩留りです。",
+        "target": "180 ÷ 200 = 90% is the stage 1 yield.",
+        "resolution": "Stage1/2 uses digits for Japanese 第一/第二;200/180/171kg and95% second-stage denominator retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q348",
+        "field": "explanation",
+        "sourceNumbers": [
+          "100",
+          "18",
+          "21",
+          "2100",
+          "23",
+          "40",
+          "60"
+        ],
+        "targetNumbers": [
+          "100",
+          "100",
+          "18",
+          "2",
+          "21",
+          "23",
+          "40",
+          "60"
+        ],
+        "source": "出来高は40×18+60×23=2100個で、100分で割ると21個/分です。",
+        "target": "Output is 40 × 18 + 60 × 23 = 2,100 units; divided by 100 minutes, this gives 21 units/minute.",
+        "resolution": "English2,100 is Japanese2100; thousands comma does not change weighted21units/min result.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q348",
+        "field": "option0",
+        "sourceNumbers": [
+          "2100"
+        ],
+        "targetNumbers": [
+          "100",
+          "2"
+        ],
+        "source": "2100個/分。",
+        "target": "2,100 units/minute.",
+        "resolution": "English2,100 is Japanese2100; thousands comma does not change weighted21units/min result.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q348",
+        "field": "reason0",
+        "sourceNumbers": [
+          "2100"
+        ],
+        "targetNumbers": [
+          "100",
+          "2"
+        ],
+        "source": "2100個は総出来高であり一分当たりではありません。",
+        "target": "2,100 units is total output, not output per minute.",
+        "resolution": "English2,100 is Japanese2100; thousands comma does not change weighted21units/min result.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "en",
+        "id": "food-2-q348",
+        "field": "reason2",
+        "sourceNumbers": [
+          "100",
+          "18",
+          "21",
+          "2100",
+          "23",
+          "40",
+          "60"
+        ],
+        "targetNumbers": [
+          "100",
+          "100",
+          "18",
+          "2",
+          "21",
+          "23",
+          "40",
+          "60"
+        ],
+        "source": "出来高は40×18+60×23=2100個で、100分で割ると21個/分です。",
+        "target": "Output is 40 × 18 + 60 × 23 = 2,100 units; divided by 100 minutes, this gives 21 units/minute.",
+        "resolution": "English2,100 is Japanese2100; thousands comma does not change weighted21units/min result.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q254",
+        "field": "prompt",
+        "sourceNumbers": [
+          "3",
+          "99.7"
+        ],
+        "targetNumbers": [
+          "3",
+          "7",
+          "99"
+        ],
+        "source": "重量データが正規分布に従うという前提で、平均±3σに約99.7％が入ると説明しました。適切な補足はどれですか。",
+        "target": "Với giả định dữ liệu khối lượng tuân theo phân phối chuẩn, người hướng dẫn giải thích rằng khoảng 99,7% dữ liệu nằm trong khoảng trung bình ±3σ. Cần bổ sung điều gì cho phù hợp?",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q254",
+        "field": "option0",
+        "sourceNumbers": [
+          "0.3"
+        ],
+        "targetNumbers": [
+          "0",
+          "3"
+        ],
+        "source": "残る約0.3％は必ず検査を省略してよい。",
+        "target": "Luôn có thể bỏ kiểm tra khoảng 0,3% còn lại.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q307",
+        "field": "option1",
+        "sourceNumbers": [
+          "45.5"
+        ],
+        "targetNumbers": [
+          "45",
+          "5"
+        ],
+        "source": "45.5％。",
+        "target": "45,5%.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q145",
+        "field": "prompt",
+        "sourceNumbers": [
+          "74",
+          "74.5",
+          "75",
+          "80",
+          "85",
+          "90"
+        ],
+        "targetNumbers": [
+          "5",
+          "74",
+          "74",
+          "75",
+          "80",
+          "85",
+          "90"
+        ],
+        "source": "架空の練習例で、CLを中心温度74℃以上・80秒以上、OLを75℃以上・90秒以上と設定しました。実測74.5℃・85秒をどう分類しますか。",
+        "target": "Trong ví dụ luyện tập giả định, CL được đặt là nhiệt độ tâm từ 74℃ và thời gian từ 80 giây; OL là từ 75℃ và từ 90 giây. Kết quả thực đo 74,5℃ và 85 giây được phân loại thế nào?",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q145",
+        "field": "explanation",
+        "sourceNumbers": [
+          "74",
+          "74.5",
+          "74.5",
+          "75",
+          "80",
+          "85",
+          "85",
+          "90"
+        ],
+        "targetNumbers": [
+          "5",
+          "5",
+          "74",
+          "74",
+          "74",
+          "75",
+          "80",
+          "85",
+          "85",
+          "90"
+        ],
+        "source": "74.5≧74、85≧80でCLは適合、74.5＜75、85＜90でOLは未達です。架空条件です。",
+        "target": "74,5≥74 và 85≥80 nên đạt CL; 74,5<75 và 85<90 nên chưa đạt OL. Đây là điều kiện giả định.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q145",
+        "field": "reason1",
+        "sourceNumbers": [
+          "74",
+          "74.5",
+          "74.5",
+          "75",
+          "80",
+          "85",
+          "85",
+          "90"
+        ],
+        "targetNumbers": [
+          "5",
+          "5",
+          "74",
+          "74",
+          "74",
+          "75",
+          "80",
+          "85",
+          "85",
+          "90"
+        ],
+        "source": "74.5≧74、85≧80でCLは適合、74.5＜75、85＜90でOLは未達です。架空条件です。",
+        "target": "74,5≥74 và 85≥80 nên đạt CL; 74,5<75 và 85<90 nên chưa đạt OL. Đây là điều kiện giả định.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q386",
+        "field": "option0",
+        "sourceNumbers": [
+          "85.5"
+        ],
+        "targetNumbers": [
+          "5",
+          "85"
+        ],
+        "source": "85.5％。",
+        "target": "85,5%.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q386",
+        "field": "reason0",
+        "sourceNumbers": [
+          "171",
+          "200",
+          "85.5"
+        ],
+        "targetNumbers": [
+          "171",
+          "200",
+          "5",
+          "85"
+        ],
+        "source": "171÷200=85.5％は二工程全体の歩留りです。",
+        "target": "171÷200=85,5% là tỷ lệ thu hồi của cả hai công đoạn.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "vi",
+        "id": "food-2-q348",
+        "field": "option3",
+        "sourceNumbers": [
+          "20.5"
+        ],
+        "targetNumbers": [
+          "20",
+          "5"
+        ],
+        "source": "20.5個/分。",
+        "target": "20,5 sản phẩm/phút.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q254",
+        "field": "prompt",
+        "sourceNumbers": [
+          "3",
+          "99.7"
+        ],
+        "targetNumbers": [
+          "3",
+          "7",
+          "99"
+        ],
+        "source": "重量データが正規分布に従うという前提で、平均±3σに約99.7％が入ると説明しました。適切な補足はどれですか。",
+        "target": "Dengan asumsi data berat mengikuti distribusi normal, dijelaskan bahwa sekitar 99,7% berada dalam rata-rata ±3σ. Tambahan penjelasan mana yang tepat?",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q254",
+        "field": "option0",
+        "sourceNumbers": [
+          "0.3"
+        ],
+        "targetNumbers": [
+          "0",
+          "3"
+        ],
+        "source": "残る約0.3％は必ず検査を省略してよい。",
+        "target": "Sekitar 0,3% sisanya pasti boleh tidak diperiksa.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q307",
+        "field": "option1",
+        "sourceNumbers": [
+          "45.5"
+        ],
+        "targetNumbers": [
+          "45",
+          "5"
+        ],
+        "source": "45.5％。",
+        "target": "45,5%.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q145",
+        "field": "prompt",
+        "sourceNumbers": [
+          "74",
+          "74.5",
+          "75",
+          "80",
+          "85",
+          "90"
+        ],
+        "targetNumbers": [
+          "5",
+          "74",
+          "74",
+          "75",
+          "80",
+          "85",
+          "90"
+        ],
+        "source": "架空の練習例で、CLを中心温度74℃以上・80秒以上、OLを75℃以上・90秒以上と設定しました。実測74.5℃・85秒をどう分類しますか。",
+        "target": "Dalam contoh latihan hipotetis, CL ditetapkan pada suhu inti minimal 74°C dan waktu minimal 80 detik; OL minimal 75°C dan 90 detik. Bagaimana menggolongkan hasil aktual 74,5°C dan 85 detik?",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q145",
+        "field": "explanation",
+        "sourceNumbers": [
+          "74",
+          "74.5",
+          "74.5",
+          "75",
+          "80",
+          "85",
+          "85",
+          "90"
+        ],
+        "targetNumbers": [
+          "5",
+          "5",
+          "74",
+          "74",
+          "74",
+          "75",
+          "80",
+          "85",
+          "85",
+          "90"
+        ],
+        "source": "74.5≧74、85≧80でCLは適合、74.5＜75、85＜90でOLは未達です。架空条件です。",
+        "target": "74,5 ≥ 74 dan 85 ≥ 80 berarti CL terpenuhi; 74,5 < 75 dan 85 < 90 berarti OL belum tercapai. Ini kondisi hipotetis.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q145",
+        "field": "reason1",
+        "sourceNumbers": [
+          "74",
+          "74.5",
+          "74.5",
+          "75",
+          "80",
+          "85",
+          "85",
+          "90"
+        ],
+        "targetNumbers": [
+          "5",
+          "5",
+          "74",
+          "74",
+          "74",
+          "75",
+          "80",
+          "85",
+          "85",
+          "90"
+        ],
+        "source": "74.5≧74、85≧80でCLは適合、74.5＜75、85＜90でOLは未達です。架空条件です。",
+        "target": "74,5 ≥ 74 dan 85 ≥ 80 berarti CL terpenuhi; 74,5 < 75 dan 85 < 90 berarti OL belum tercapai. Ini kondisi hipotetis.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q229",
+        "field": "prompt",
+        "sourceNumbers": [
+          "1",
+          "12",
+          "6",
+          "7",
+          "7"
+        ],
+        "targetNumbers": [
+          "1",
+          "12",
+          "6",
+          "7"
+        ],
+        "source": "職長が作った教育案は「手順1～6を準備、手順7～12を7原則」と分類しています。担当者への修正指示として適切なのはどれですか。",
+        "target": "Rencana pendidikan mandor membagi ‘langkah 1–6 sebagai persiapan, 7–12 sebagai tujuh prinsip’. Instruksi perbaikan mana yang tepat?",
+        "resolution": "Seven/tujuh and first/pertama preserve7 and1; preparation1-5/principles6-12 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q229",
+        "field": "explanation",
+        "sourceNumbers": [
+          "1",
+          "12",
+          "5",
+          "6",
+          "7"
+        ],
+        "targetNumbers": [
+          "1",
+          "12",
+          "5",
+          "6"
+        ],
+        "source": "手順6～12が7原則で、手順1～5は実行のための準備です。",
+        "target": "Langkah 6–12 adalah tujuh prinsip; langkah 1–5 merupakan persiapan pelaksanaan.",
+        "resolution": "Seven/tujuh and first/pertama preserve7 and1; preparation1-5/principles6-12 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q229",
+        "field": "option0",
+        "sourceNumbers": [
+          "1",
+          "12",
+          "5",
+          "6",
+          "7"
+        ],
+        "targetNumbers": [
+          "1",
+          "12",
+          "5",
+          "6"
+        ],
+        "source": "準備は手順1～5、7原則は危害要因分析の手順6から手順12までとして構成を直す。",
+        "target": "Ubah menjadi langkah 1–5 sebagai persiapan dan 6–12, mulai analisis bahaya, sebagai tujuh prinsip.",
+        "resolution": "Seven/tujuh and first/pertama preserve7 and1; preparation1-5/principles6-12 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q229",
+        "field": "option1",
+        "sourceNumbers": [
+          "7"
+        ],
+        "targetNumbers": [],
+        "source": "7原則という名称に合わせるため、同じ教材の見出しを一つ増やすだけにする。",
+        "target": "Tambahkan satu judul saja agar sesuai nama tujuh prinsip.",
+        "resolution": "Seven/tujuh and first/pertama preserve7 and1; preparation1-5/principles6-12 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q229",
+        "field": "reason0",
+        "sourceNumbers": [
+          "1",
+          "12",
+          "5",
+          "6",
+          "7"
+        ],
+        "targetNumbers": [
+          "1",
+          "12",
+          "5",
+          "6"
+        ],
+        "source": "手順6～12が7原則で、手順1～5は実行のための準備です。",
+        "target": "Langkah 6–12 adalah tujuh prinsip; langkah 1–5 merupakan persiapan pelaksanaan.",
+        "resolution": "Seven/tujuh and first/pertama preserve7 and1; preparation1-5/principles6-12 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q229",
+        "field": "reason3",
+        "sourceNumbers": [
+          "1"
+        ],
+        "targetNumbers": [],
+        "source": "危害要因分析は原則1に位置付く重要な手順です。",
+        "target": "Analisis bahaya adalah langkah penting yang merupakan prinsip pertama.",
+        "resolution": "Seven/tujuh and first/pertama preserve7 and1; preparation1-5/principles6-12 retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q386",
+        "field": "option0",
+        "sourceNumbers": [
+          "85.5"
+        ],
+        "targetNumbers": [
+          "5",
+          "85"
+        ],
+        "source": "85.5％。",
+        "target": "85,5%.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q386",
+        "field": "reason0",
+        "sourceNumbers": [
+          "171",
+          "200",
+          "85.5"
+        ],
+        "targetNumbers": [
+          "171",
+          "200",
+          "5",
+          "85"
+        ],
+        "source": "171÷200=85.5％は二工程全体の歩留りです。",
+        "target": "171 ÷ 200 = 85,5% adalah rendemen keseluruhan dua proses.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "id",
+        "id": "food-2-q348",
+        "field": "option3",
+        "sourceNumbers": [
+          "20.5"
+        ],
+        "targetNumbers": [
+          "20",
+          "5"
+        ],
+        "source": "20.5個/分。",
+        "target": "20,5 unit/menit.",
+        "resolution": "Locale decimal commas preserve Japanese decimal points:99.7,0.3,45.5,74.5,85.5,20.5 as applicable.",
+        "status": "ai_reviewed_equivalent"
+      }
+    ],
+    "pendingSemanticCandidates": 0
+  },
+  "calculationReferences": [
+    {
+      "id": "food-2-q307",
+      "formula": "44 / 20 * 100",
+      "result": 220,
+      "expected": 220,
+      "unit": "%"
+    },
+    {
+      "id": "food-2-q256",
+      "formula": "(18 + 12) / (18 + 12 + 6 + 4) * 100",
+      "result": 75,
+      "expected": 75,
+      "unit": "%"
+    },
+    {
+      "id": "food-2-q386",
+      "formula": "171 / 180 * 100",
+      "result": 95,
+      "expected": 95,
+      "unit": "%"
+    },
+    {
+      "id": "food-2-q348",
+      "formula": "(40*18 + 60*23) / 100",
+      "result": 21,
+      "expected": 21,
+      "unit": "units/min"
+    },
+    {
+      "id": "food-2-q293",
+      "formula": "53 - 47",
+      "result": 6,
+      "expected": 6,
+      "unit": "g"
+    },
+    {
+      "id": "food-2-q145",
+      "formula": "74.5>=74 && 85>=80; 74.5>=75 && 85>=90",
+      "result": {
+        "CL": true,
+        "OL": false
+      },
+      "expected": {
+        "CL": true,
+        "OL": false
+      },
+      "unit": "hypothetical exercise"
+    }
+  ],
+  "aiPeerReview": {
+    "scope": "12 critical items independently reviewed in each of six locales,72 unique locale-question units; AI only, not native/domain certification",
+    "corrections": [
+      "zh-TW q350 chemical-contamination wording distinguishes accidental exposure from routine glove contact",
+      "EN q145 uses deviating from CL rather than exceeding CL because CL thresholds are minima",
+      "ID q191 clarifies prevention of recurrence rather than repeated prevention",
+      "VI q145 unambiguously states neither OL condition is met"
+    ],
+    "nativeSpeakerReviewed": false,
+    "domainExpertReviewed": false
+  },
+  "browserEvidence": {
+    "baselinePairs": 2468,
+    "baselineResponsiveCases": 9872,
+    "pendingPairsSinceBaseline": 520,
+    "browserTestedThisBatch": false,
+    "nativeDeviceTested": false,
+    "fullExpoBuildTested": false
+  },
+  "nextAction": "Translate food-2-mock-03 into tl,th,my,km,hi,ne,zh-CN,zh-TW,bn (360 pairs), then food-1-mock-04 EN/VI (80 pairs)."
+}

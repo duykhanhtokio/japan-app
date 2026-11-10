@@ -1,0 +1,1746 @@
+{
+  "schemaVersion": 2,
+  "reviewedBaseline": "b1f7f43bf1d84511b6e146bbe621a39a5ce96460",
+  "previousClosedBaseline": "bf6ac13474f8a768850f1f595be318eb2ab3855b",
+  "scope": "Post-close incoming Hospitality delta validation and evidence refresh only; no product file replacement.",
+  "unitPaths": [
+    "docs/ssw-workspace/hospitality/royal-full38-native-reading-census-20261107.json",
+    "docs/ssw-workspace/hospitality/royal-full38-native-reading-validation-20261107.json"
+  ],
+  "beforeBlobSHAs": [
+    {
+      "path": "docs/ssw-workspace/hospitality/royal-full38-native-reading-census-20261107.json",
+      "blobSha": "4671d3bcc3e52d3eb7df022bf340909afc62ba7e"
+    },
+    {
+      "path": "docs/ssw-workspace/hospitality/royal-full38-native-reading-validation-20261107.json",
+      "blobSha": "31334c7cfebb90e4d0a70ed5679b5ab232f22a9a"
+    }
+  ],
+  "freshHEADInputLeases": [
+    {
+      "path": "src/components/hospitality/HospitalityCourse.tsx",
+      "blobOrTreeSha": "2d1eac0fa3901555acf69367722995e0ca73f6b1"
+    },
+    {
+      "path": "src/components/hospitality/HotelFoodCostComparison.tsx",
+      "blobOrTreeSha": "4d8b5a0827c9400f7e669ed03f0c390e095259af"
+    },
+    {
+      "path": "src/components/hospitality/HotelFoodHandoffGuide.tsx",
+      "blobOrTreeSha": "6ac4deaacdfa1dcd7b99961824245f524a802715"
+    },
+    {
+      "path": "src/components/hospitality/HotelGuideText.tsx",
+      "blobOrTreeSha": "8da0ec939d2f77c93daf4859e04690c721b397cc"
+    },
+    {
+      "path": "src/components/hospitality/HotelHospitalityRoleGuide.tsx",
+      "blobOrTreeSha": "dfbe44ab2ef37d4eb958258b72aad45af5ef39ab"
+    },
+    {
+      "path": "src/components/hospitality/HotelJapaneseText.tsx",
+      "blobOrTreeSha": "690503bc619644e916f999f969bbabcf4f632472"
+    },
+    {
+      "path": "src/components/hospitality/HotelMarketSelectionGuide.tsx",
+      "blobOrTreeSha": "e018204ca9e608c6d5979c853487196b77479c6d"
+    },
+    {
+      "path": "src/components/hospitality/HotelMealLayoutGuide.tsx",
+      "blobOrTreeSha": "08c5bbf00c3a879545db54210f461b1a3f2e1ee7"
+    },
+    {
+      "path": "src/components/hospitality/HotelPracticeFloorplan.tsx",
+      "blobOrTreeSha": "224b413dd68e96cea474edb5ee98a09ef9a7d59d"
+    },
+    {
+      "path": "src/components/hospitality/HotelRevenueComparison.tsx",
+      "blobOrTreeSha": "9aa630103cca4122b4f85169e47c990fd2abf44c"
+    },
+    {
+      "path": "src/components/hospitality/HotelRevenueExample.tsx",
+      "blobOrTreeSha": "caddf70054f7c8952682cdd1f10d9e21aedeaaa0"
+    },
+    {
+      "path": "src/components/hospitality/HotelSafetyDecisionGuide.tsx",
+      "blobOrTreeSha": "53acd9e80df5348a962a3cbfda722ffe802a2d8b"
+    },
+    {
+      "path": "src/components/hospitality/HotelServiceVisualGuide.tsx",
+      "blobOrTreeSha": "50254973876d628f43c13a9382cd9ebd23fdc4fc"
+    },
+    {
+      "path": "src/components/hospitality/HotelTwoRouteGuide.tsx",
+      "blobOrTreeSha": "e436a5d3da0c7767dcfe6560917b814f080af9ab"
+    },
+    {
+      "path": "src/data/hospitality/catalog.json",
+      "blobOrTreeSha": "f3a09c1b2864e41893a2cf19316b58bd28862f65"
+    },
+    {
+      "path": "src/data/hospitality/food-handoff-labels.ts",
+      "blobOrTreeSha": "0ec69f713505f9e694abaf5365c1b5fe0fa96426"
+    },
+    {
+      "path": "src/data/hospitality/front.json",
+      "blobOrTreeSha": "0f78453d19a9ff8e182d7e37aa535ed4cf35a0ac"
+    },
+    {
+      "path": "src/data/hospitality/illustration-source-guards.ts",
+      "blobOrTreeSha": "fafec7930126f6bf8cc1ded7496375781208828f"
+    },
+    {
+      "path": "src/data/hospitality/illustrations.ts",
+      "blobOrTreeSha": "7ca8fedc4e1c6d3d8188b53a8703d05b06e11726"
+    },
+    {
+      "path": "src/data/hospitality/index.ts",
+      "blobOrTreeSha": "8df327e1c9c6b4de2231e26e1cc39d322974cc11"
+    },
+    {
+      "path": "src/data/hospitality/market-guide-labels.ts",
+      "blobOrTreeSha": "02594afbefd83ff5e812e77f8cc4f4cd1fb60cf7"
+    },
+    {
+      "path": "src/data/hospitality/meal-visual-guide-labels.ts",
+      "blobOrTreeSha": "32aaad33b478b350df226b72c7456e2df19b0b46"
+    },
+    {
+      "path": "src/data/hospitality/mocks.json",
+      "blobOrTreeSha": "00d3717b36560635e3d4cedb97afd475ed2c12c1"
+    },
+    {
+      "path": "src/data/hospitality/planning.json",
+      "blobOrTreeSha": "cb3c2e1d9d3fc34d6992688283e82c82c7a004c8"
+    },
+    {
+      "path": "src/data/hospitality/practice-floorplan-labels.ts",
+      "blobOrTreeSha": "d4e8201fff2f61de9e2e7a82b36c31e137c2e9e7"
+    },
+    {
+      "path": "src/data/hospitality/restaurant.json",
+      "blobOrTreeSha": "814970474773481d151a2a3e7ed8a6ab95a22e83"
+    },
+    {
+      "path": "src/data/hospitality/revenue-example-labels.ts",
+      "blobOrTreeSha": "0498563b6605a7ef93fe3df73e08b9c66978f956"
+    },
+    {
+      "path": "src/data/hospitality/role-visual-guide-labels.ts",
+      "blobOrTreeSha": "9e0eba31bc10130a2403aff36267cfe16135fc7b"
+    },
+    {
+      "path": "src/data/hospitality/route-guide-labels.ts",
+      "blobOrTreeSha": "93faa4d5c20b667f4497b4d6e57002471eac53f0"
+    },
+    {
+      "path": "src/data/hospitality/royal-guide-readings.ts",
+      "blobOrTreeSha": "a8f3ef5a242205c4b3e4e36f19915d071ce2bcf6"
+    },
+    {
+      "path": "src/data/hospitality/royal-illustration-metadata.ts",
+      "blobOrTreeSha": "3c5217b6d0c9c3ecfcd4ca61b54d378a319d2a7b"
+    },
+    {
+      "path": "src/data/hospitality/safety-visual-guide-labels.ts",
+      "blobOrTreeSha": "83637367ff87e0d095ec75fd2a5826b82014c879"
+    },
+    {
+      "path": "src/data/hospitality/safety.json",
+      "blobOrTreeSha": "b42665f29f9a275141ef9d3a51075a958432e6b3"
+    },
+    {
+      "path": "src/data/hospitality/service-visual-guide-labels.ts",
+      "blobOrTreeSha": "8ac948be2365a247cdfea69e9249bd4bf406e616"
+    },
+    {
+      "path": "src/data/hospitality/service.json",
+      "blobOrTreeSha": "d4538a36281cfce07adfa2a61057d9460aadabc7"
+    },
+    {
+      "path": "src/data/hospitality/translation-loaders.ts",
+      "blobOrTreeSha": "abb5958d5aa6c09d2f7044261013045238fb67b4"
+    },
+    {
+      "path": "src/data/hospitality/types.ts",
+      "blobOrTreeSha": "dfbdb11b616742f3ea93b9b90fafe0ad872fa08a"
+    },
+    {
+      "path": "src/data/hospitality/ui.ts",
+      "blobOrTreeSha": "392203cb4ca70934eb112ea6f5b4be4069ed9659"
+    },
+    {
+      "path": "src/data/hospitality/translations",
+      "blobOrTreeSha": "74795f6a17841aa79b42309868c03d35be847186"
+    },
+    {
+      "path": "src/data/hospitality/readings",
+      "blobOrTreeSha": "011fe09f5960ebefe717a0b93e48535b449fe1b4"
+    },
+    {
+      "path": "src/app/specified-skills/hospitality.tsx",
+      "blobOrTreeSha": "fe92fbd2373d19bdcdb9cebac6f8e594f39e97b8"
+    },
+    {
+      "path": "src/components/tokutei/createDeferredCourse.tsx",
+      "blobOrTreeSha": "599d93f247df0962d9e45083f0c147656b2cfcef"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-01.webp",
+      "blobOrTreeSha": "77b63f52eb2f18dbacd8b0e0a3fd3469747ce720"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-02.webp",
+      "blobOrTreeSha": "4744ca45a5f196c36481b731e2e7627741398e5f"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-03.webp",
+      "blobOrTreeSha": "01a4a3792266b54095af3f4f9f74bf6a3898005b"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-04.webp",
+      "blobOrTreeSha": "ed1e48fb42c8e03b245e2719f6396b40883331d6"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-05.webp",
+      "blobOrTreeSha": "41e9a1610673ad733e2b3bab57baf08af032e37e"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-planning-01.webp",
+      "blobOrTreeSha": "707d2c4b610d00bb7f0a88f6c5e73f7e8ec1cdab"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-planning-02.webp",
+      "blobOrTreeSha": "8e20ca104a4933f9537ee89a3ba19c840905d903"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-06.webp",
+      "blobOrTreeSha": "9737cd3dbb37ac69d9bee332c2a67600af4d311f"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week01/hotel-front-07.webp",
+      "blobOrTreeSha": "9f30c6f6cbb1d22bc62fad126b298ea9d7982ef0"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-planning-03-royal-ink-v2.webp",
+      "blobOrTreeSha": "571ad91945f299b6e7182e015e52dcc597b80002"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-planning-04-royal-ink-v2.webp",
+      "blobOrTreeSha": "208349d79e51770b52efe9a0ccd29ce779fc333e"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-service-01.webp",
+      "blobOrTreeSha": "ed2ba114e2c35e76e4309749225ff78ae483eb3e"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-service-02.webp",
+      "blobOrTreeSha": "4d778eff022eb9e1e4c730917a68f1666a8be279"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-service-03.webp",
+      "blobOrTreeSha": "ae83366bd6216d8fe886fe767a1bb7e04a14bd91"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-service-04.webp",
+      "blobOrTreeSha": "1317f77d1005bca1e1a4e7b4621cebc4dc820e9c"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-service-05.webp",
+      "blobOrTreeSha": "54ab6c9361e31f662bd73112ddbc6f28ef117b53"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-front-08.webp",
+      "blobOrTreeSha": "4991e5cbd9fff01bf5d8f0172b5ed0ae4ceca7b9"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-planning-05.webp",
+      "blobOrTreeSha": "98b8ab7e3e03d625c1a0bacc8488bfdb1d2413fb"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-planning-06-royal-material-v2.webp",
+      "blobOrTreeSha": "b838d6cc7acaeb87990f2147fb8f8844dc3878ad"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-01.webp",
+      "blobOrTreeSha": "3b7bb3e2aab283c2d2397568af30609baced7c2f"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-02.webp",
+      "blobOrTreeSha": "ba9d8fc79e10113accfb00357cc371368192ad90"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-03-three-dishes-v2.webp",
+      "blobOrTreeSha": "5b35e9205f56e506315ccf6b0ff976dd57b63fed"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-04.webp",
+      "blobOrTreeSha": "a8afb394ba3e0ae9e87569b29d71fecbf7614213"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-05.webp",
+      "blobOrTreeSha": "f48b93fbbb1413c5900562de2b542932e8fb1a19"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-06.webp",
+      "blobOrTreeSha": "0a3b2f86ebb2130a3142f6dbe827746d71b49d76"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-safety-01.webp",
+      "blobOrTreeSha": "029bfecea2f39f9a79bf3179157d5c0d6701c18c"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-planning-07.webp",
+      "blobOrTreeSha": "8d76d98bf2fa6c455dc437acdc35e5bb1a4db1d2"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-service-06.webp",
+      "blobOrTreeSha": "a1b23e99b99f98131e878102dd1687ee5d02b8e1"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/hotel-safety-02.webp",
+      "blobOrTreeSha": "fba19543948021ed6c4b59b08ee0cbf712e22f9e"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/hotel-safety-03.webp",
+      "blobOrTreeSha": "e11b7a2cd2ba0f8a1307f2487a0e6eac82a8e90d"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/hotel-safety-04.webp",
+      "blobOrTreeSha": "dabfcd351b10c8a6f415a521f8f05497681819a4"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/hotel-safety-05.webp",
+      "blobOrTreeSha": "c535d68415e71ad60caf05cadb7efe7d3e977d62"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/hotel-restaurant-07.webp",
+      "blobOrTreeSha": "1936f3636d0516631f49b12988bbe28987298691"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week05/hotel-restaurant-08.webp",
+      "blobOrTreeSha": "3eebf1e35926b0ed3c86beab1e74666831fbcdef"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week05/hotel-restaurant-09.webp",
+      "blobOrTreeSha": "16dc7b8aedcdeed587cdb5024b3787dca4064e72"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week06/hotel-safety-06.webp",
+      "blobOrTreeSha": "de31e97ddd12f8f9b34c23a64b46d6fd8dd4422d"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week06/hotel-safety-07.webp",
+      "blobOrTreeSha": "217a87fa0d48949fa2b8870f1bb8d4f541b0642a"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week06/hotel-safety-08.webp",
+      "blobOrTreeSha": "3e0b3dcc0c4a2b5a5e4b55ee08d5f431894af3c9"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-below-controlled.webp",
+      "blobOrTreeSha": "e4d5680322fe82a749df46fa0cafdb663a9346b6"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-below-controlled.svg",
+      "blobOrTreeSha": "5337d2576dc922b5de42cfd4601326fd93a2f5d4"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-ceiling-controlled.webp",
+      "blobOrTreeSha": "8655283662771f17697e9a250cfb4359803b701a"
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-ceiling-controlled.svg",
+      "blobOrTreeSha": "010495429d10f1ed41922e08ee55182cc1ea4a92"
+    }
+  ],
+  "method": "Actual TS/TSX source, data, asset and revision providers read from exact Git blobs at reviewedBaseline; React SSR with isolated native primitive capture; stale shared-worktree source bytes excluded.",
+  "checks": {
+    "nativeUnits": 16,
+    "actualNativeLocaleScenarios": 208,
+    "currentSourceInvalidIdStaleMissingRejections": 624,
+    "supplementLabelExamplesAndTerms": 70,
+    "unannotatedJapaneseKanjiNodes": 0,
+    "translatedAndRubyOffPlain": true,
+    "actualReaderRubySwitchAndPerCallLanguages": true,
+    "mainAndZoomRasterCaptionsUseExistingReader": true,
+    "incomingSafetyLazyGuardsPreserved": true,
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "fullSourceAccepted": false,
+    "records": [
+      {
+        "id": "hotel-front-03",
+        "language": "ja",
+        "rubyMarkupSha256": "02fea28140e9e518b4065e66476606ce3e228a61f41d9859e5016a9fab4fc095",
+        "plainMarkupSha256": "e4c8cdadb54453b8b0bb8db029cf8eaa6f9bd0b74759bbe3d1872581c98cc0ae"
+      },
+      {
+        "id": "hotel-front-03",
+        "language": "en",
+        "rubyMarkupSha256": "d9946770bef8ca32d32343192c6e042c714e8230302e1a436ecb25557e99bc1c",
+        "plainMarkupSha256": "d9946770bef8ca32d32343192c6e042c714e8230302e1a436ecb25557e99bc1c"
+      },
+      {
+        "id": "hotel-front-03",
+        "language": "vi",
+        "rubyMarkupSha256": "fac60199edbc52f99841c6c51f0dd8b0462d8548cc232cd11f3df9631735a74f",
+        "plainMarkupSha256": "fac60199edbc52f99841c6c51f0dd8b0462d8548cc232cd11f3df9631735a74f"
+      },
+      {
+        "id": "hotel-front-03",
+        "language": "id",
+        "rubyMarkupSha256": "7fff4fa977aee36a54828ac24470d3c6cd3a6ea143c2e02ebab5c8e627476bbb",
+        "plainMarkupSha256": "7fff4fa977aee36a54828ac24470d3c6cd3a6ea143c2e02ebab5c8e627476bbb"
+      },
+      {
+        "id": "hotel-front-03",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "ca937f8c63b1cec27e546afe0c07a2aa090581aab9b78606efc622e44ec3793e",
+        "plainMarkupSha256": "ca937f8c63b1cec27e546afe0c07a2aa090581aab9b78606efc622e44ec3793e"
+      },
+      {
+        "id": "hotel-front-03",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "61d4f2f4852265b2d204747f773052abcb28c5ae9506f931ed06af5d4184a534",
+        "plainMarkupSha256": "61d4f2f4852265b2d204747f773052abcb28c5ae9506f931ed06af5d4184a534"
+      },
+      {
+        "id": "hotel-front-03",
+        "language": "hi",
+        "rubyMarkupSha256": "8056e7cd7e019ce3cf86d4a6f71ff220a2edf6619ed0cb634c283eb7d8883e5b",
+        "plainMarkupSha256": "8056e7cd7e019ce3cf86d4a6f71ff220a2edf6619ed0cb634c283eb7d8883e5b"
+      },
+      {
+        "id": "hotel-front-03",
+        "language": "bn",
+        "rubyMarkupSha256": "1986258578c6bdfb5cd80cab144673294306ba31fa27e65e6726743504d37f0a",
+        "plainMarkupSha256": "1986258578c6bdfb5cd80cab144673294306ba31fa27e65e6726743504d37f0a"
+      },
+      {
+        "id": "hotel-front-03",
+        "language": "ne",
+        "rubyMarkupSha256": "1c7b55531f9bd9dfdc0077bb42288bb7a8e6d256babfd9d3150a6d7ecf774a15",
+        "plainMarkupSha256": "1c7b55531f9bd9dfdc0077bb42288bb7a8e6d256babfd9d3150a6d7ecf774a15"
+      },
+      {
+        "id": "hotel-front-03",
+        "language": "my",
+        "rubyMarkupSha256": "ca69bbd2b3af19801ec7adfa1f38b7c93330a49d7a33ebf343e313c78ec12e5a",
+        "plainMarkupSha256": "ca69bbd2b3af19801ec7adfa1f38b7c93330a49d7a33ebf343e313c78ec12e5a"
+      },
+      {
+        "id": "hotel-front-03",
+        "language": "th",
+        "rubyMarkupSha256": "38ff683a966ce966339d83bbadb71d788d2365f2012c5d56535460827783b5ce",
+        "plainMarkupSha256": "38ff683a966ce966339d83bbadb71d788d2365f2012c5d56535460827783b5ce"
+      },
+      {
+        "id": "hotel-front-03",
+        "language": "km",
+        "rubyMarkupSha256": "d1454f07db9ae7dc0e93837eeda8ddfb452802836ac34ba80b55e7369ca8c527",
+        "plainMarkupSha256": "d1454f07db9ae7dc0e93837eeda8ddfb452802836ac34ba80b55e7369ca8c527"
+      },
+      {
+        "id": "hotel-front-03",
+        "language": "tl",
+        "rubyMarkupSha256": "957baeec2c4ee1bc31cd38ad52e40c5bb3c158d76c478a01a96501815a1a877f",
+        "plainMarkupSha256": "957baeec2c4ee1bc31cd38ad52e40c5bb3c158d76c478a01a96501815a1a877f"
+      },
+      {
+        "id": "hotel-planning-02",
+        "language": "ja",
+        "rubyMarkupSha256": "67b9f14d95baf81bc1960e44ed44a28fff22b95a7556344aa2f6536bd2cbf0df",
+        "plainMarkupSha256": "b1810b62bf57dac30ffc00479117456f3ad3403e7fac3ed369ba6e761770b9d0"
+      },
+      {
+        "id": "hotel-planning-02",
+        "language": "en",
+        "rubyMarkupSha256": "4b8dd3bd32a3e9ea3ed11897a3ec60ce1bc13f4e304575f80c07640a3408dceb",
+        "plainMarkupSha256": "4b8dd3bd32a3e9ea3ed11897a3ec60ce1bc13f4e304575f80c07640a3408dceb"
+      },
+      {
+        "id": "hotel-planning-02",
+        "language": "vi",
+        "rubyMarkupSha256": "f3d9698cd39210db08084e6dadd966548117b585b1efaf0c7c4a8caa0b45ef5c",
+        "plainMarkupSha256": "f3d9698cd39210db08084e6dadd966548117b585b1efaf0c7c4a8caa0b45ef5c"
+      },
+      {
+        "id": "hotel-planning-02",
+        "language": "id",
+        "rubyMarkupSha256": "7825f9de6264a4e05d05b913bc0c6d5907d1b966e5123fc650b45ed316cc1f39",
+        "plainMarkupSha256": "7825f9de6264a4e05d05b913bc0c6d5907d1b966e5123fc650b45ed316cc1f39"
+      },
+      {
+        "id": "hotel-planning-02",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "3455c538087b787ec83669683bbca2000d7249102891c38e6a402aa6973e7108",
+        "plainMarkupSha256": "3455c538087b787ec83669683bbca2000d7249102891c38e6a402aa6973e7108"
+      },
+      {
+        "id": "hotel-planning-02",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "119a47d36df03d5dd035cbba3c94a12c3e32e52a78e66496ac0369ba67887394",
+        "plainMarkupSha256": "119a47d36df03d5dd035cbba3c94a12c3e32e52a78e66496ac0369ba67887394"
+      },
+      {
+        "id": "hotel-planning-02",
+        "language": "hi",
+        "rubyMarkupSha256": "2401971339c6327fecbff6abe4ab3a826ee67bf60a52f87dd238f683b59319d1",
+        "plainMarkupSha256": "2401971339c6327fecbff6abe4ab3a826ee67bf60a52f87dd238f683b59319d1"
+      },
+      {
+        "id": "hotel-planning-02",
+        "language": "bn",
+        "rubyMarkupSha256": "642b735e9f7884e3fc055aa7734e21928841b39cc1828cfe3061da6366673c20",
+        "plainMarkupSha256": "642b735e9f7884e3fc055aa7734e21928841b39cc1828cfe3061da6366673c20"
+      },
+      {
+        "id": "hotel-planning-02",
+        "language": "ne",
+        "rubyMarkupSha256": "7918f7b6697c0a22f59cd96faa98f1040938058ddc983524788c6b9de7211725",
+        "plainMarkupSha256": "7918f7b6697c0a22f59cd96faa98f1040938058ddc983524788c6b9de7211725"
+      },
+      {
+        "id": "hotel-planning-02",
+        "language": "my",
+        "rubyMarkupSha256": "b70c69cb2cad6c84d2661a556332f4ec30a699ed235e75fee671522a4cd66f01",
+        "plainMarkupSha256": "b70c69cb2cad6c84d2661a556332f4ec30a699ed235e75fee671522a4cd66f01"
+      },
+      {
+        "id": "hotel-planning-02",
+        "language": "th",
+        "rubyMarkupSha256": "7ce79b53eb7e2e8b923fcf463462afd088d085b693396438ecd71d1dbf0fae5c",
+        "plainMarkupSha256": "7ce79b53eb7e2e8b923fcf463462afd088d085b693396438ecd71d1dbf0fae5c"
+      },
+      {
+        "id": "hotel-planning-02",
+        "language": "km",
+        "rubyMarkupSha256": "5494915cb21e14384f9d21ccaea6ef93b333e787194c3b954ffd98e1cfe56278",
+        "plainMarkupSha256": "5494915cb21e14384f9d21ccaea6ef93b333e787194c3b954ffd98e1cfe56278"
+      },
+      {
+        "id": "hotel-planning-02",
+        "language": "tl",
+        "rubyMarkupSha256": "3c642827f884cc5ecf378ecd0f7671e522139aa538d8201760ac80f7d0e794da",
+        "plainMarkupSha256": "3c642827f884cc5ecf378ecd0f7671e522139aa538d8201760ac80f7d0e794da"
+      },
+      {
+        "id": "hotel-service-01",
+        "language": "ja",
+        "rubyMarkupSha256": "7ec0afc5543ebe55459788d466e07b91bfc812a5cf236ef6cddc0f52d85a9302",
+        "plainMarkupSha256": "fd043a5dec4948250f223e2941ea061f5e1a38960a02e586e8f66952c8987f3c"
+      },
+      {
+        "id": "hotel-service-01",
+        "language": "en",
+        "rubyMarkupSha256": "e0959d6b3459b568e6c40f5feb31199b3c1133f59bf0912dd02c0cec27d830dc",
+        "plainMarkupSha256": "e0959d6b3459b568e6c40f5feb31199b3c1133f59bf0912dd02c0cec27d830dc"
+      },
+      {
+        "id": "hotel-service-01",
+        "language": "vi",
+        "rubyMarkupSha256": "e61f97b50b743c14531c64c6b32a8167f37d824f941d7fe920709aa8f7e1a94a",
+        "plainMarkupSha256": "e61f97b50b743c14531c64c6b32a8167f37d824f941d7fe920709aa8f7e1a94a"
+      },
+      {
+        "id": "hotel-service-01",
+        "language": "id",
+        "rubyMarkupSha256": "a7f2e6a7174ba6ec6073eddf04d600ffca2ffd88ef28c243e2dd3c14149088de",
+        "plainMarkupSha256": "a7f2e6a7174ba6ec6073eddf04d600ffca2ffd88ef28c243e2dd3c14149088de"
+      },
+      {
+        "id": "hotel-service-01",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "28839cef967cb19422400b98fb0c05c0a73a218017ab0306c6ecaa61aa50b28f",
+        "plainMarkupSha256": "28839cef967cb19422400b98fb0c05c0a73a218017ab0306c6ecaa61aa50b28f"
+      },
+      {
+        "id": "hotel-service-01",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "8cce15640e52b6591cbb0a8e3abea5c36ac831f7e9dc51dfcd9c378aefc6f72e",
+        "plainMarkupSha256": "8cce15640e52b6591cbb0a8e3abea5c36ac831f7e9dc51dfcd9c378aefc6f72e"
+      },
+      {
+        "id": "hotel-service-01",
+        "language": "hi",
+        "rubyMarkupSha256": "81e7862ce0502bc8128a618f71d9698d95333350035b3fcbbb9e6afd54712161",
+        "plainMarkupSha256": "81e7862ce0502bc8128a618f71d9698d95333350035b3fcbbb9e6afd54712161"
+      },
+      {
+        "id": "hotel-service-01",
+        "language": "bn",
+        "rubyMarkupSha256": "d882b1f8f3f07d96ab5fb19cbf5c905c6e7d1f2aa2721a8d9ad4d64737ee70b4",
+        "plainMarkupSha256": "d882b1f8f3f07d96ab5fb19cbf5c905c6e7d1f2aa2721a8d9ad4d64737ee70b4"
+      },
+      {
+        "id": "hotel-service-01",
+        "language": "ne",
+        "rubyMarkupSha256": "e01101c318d27f92ab82c603b94b9a1471078ac61fcd96333ba4c2b8ee4c1066",
+        "plainMarkupSha256": "e01101c318d27f92ab82c603b94b9a1471078ac61fcd96333ba4c2b8ee4c1066"
+      },
+      {
+        "id": "hotel-service-01",
+        "language": "my",
+        "rubyMarkupSha256": "a453af1117956867eada3ce7e2172e310beff005a54d192d751ce8a569263886",
+        "plainMarkupSha256": "a453af1117956867eada3ce7e2172e310beff005a54d192d751ce8a569263886"
+      },
+      {
+        "id": "hotel-service-01",
+        "language": "th",
+        "rubyMarkupSha256": "4dc59b28cbb9a5b0f6c9db0ca3f9a5f4786013d82cf249982d6160e2ca6d5a09",
+        "plainMarkupSha256": "4dc59b28cbb9a5b0f6c9db0ca3f9a5f4786013d82cf249982d6160e2ca6d5a09"
+      },
+      {
+        "id": "hotel-service-01",
+        "language": "km",
+        "rubyMarkupSha256": "01332475fd60bbb32d685d5cc40452d45119d8f620f07426638374a0e5ed9bd5",
+        "plainMarkupSha256": "01332475fd60bbb32d685d5cc40452d45119d8f620f07426638374a0e5ed9bd5"
+      },
+      {
+        "id": "hotel-service-01",
+        "language": "tl",
+        "rubyMarkupSha256": "bf60f9cd90b1862848ef8b3197cbf217cbe680cb1a9258bf3576e446b7b6ddae",
+        "plainMarkupSha256": "bf60f9cd90b1862848ef8b3197cbf217cbe680cb1a9258bf3576e446b7b6ddae"
+      },
+      {
+        "id": "hotel-service-02",
+        "language": "ja",
+        "rubyMarkupSha256": "d388e02742acc4b5f1bd16449a555ce6cc1c45623f5256144a9f74e7fe05221a",
+        "plainMarkupSha256": "825087f8b807e28d700d670d1ac11a16f16ecf88b4b6c2dc3941b1d4cce41abb"
+      },
+      {
+        "id": "hotel-service-02",
+        "language": "en",
+        "rubyMarkupSha256": "f215d55953674be241617614d840f72c9f6f4e5201cd6bf755fd3956696a3cc7",
+        "plainMarkupSha256": "f215d55953674be241617614d840f72c9f6f4e5201cd6bf755fd3956696a3cc7"
+      },
+      {
+        "id": "hotel-service-02",
+        "language": "vi",
+        "rubyMarkupSha256": "5436788d791e32ba2deda6b0ac7f029c2ef54d2b9a35730528050a4277c7dd29",
+        "plainMarkupSha256": "5436788d791e32ba2deda6b0ac7f029c2ef54d2b9a35730528050a4277c7dd29"
+      },
+      {
+        "id": "hotel-service-02",
+        "language": "id",
+        "rubyMarkupSha256": "904ec1e282601a918231cc2e18db639e9b61110b836f947a9cc090eb11479ad6",
+        "plainMarkupSha256": "904ec1e282601a918231cc2e18db639e9b61110b836f947a9cc090eb11479ad6"
+      },
+      {
+        "id": "hotel-service-02",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "d9a8bfbf0307860e60fa14ebc6809cb41973a47d85788e50ee88b75d2cc19638",
+        "plainMarkupSha256": "d9a8bfbf0307860e60fa14ebc6809cb41973a47d85788e50ee88b75d2cc19638"
+      },
+      {
+        "id": "hotel-service-02",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "2ac880fa6e7d21ab75dec00f3a65f0fb46a3bfba9d8d249520b64bd512baf491",
+        "plainMarkupSha256": "2ac880fa6e7d21ab75dec00f3a65f0fb46a3bfba9d8d249520b64bd512baf491"
+      },
+      {
+        "id": "hotel-service-02",
+        "language": "hi",
+        "rubyMarkupSha256": "33da408df0931f7fcbc855eb32f8c98b11ce9a344ac3c27e16578036255636fe",
+        "plainMarkupSha256": "33da408df0931f7fcbc855eb32f8c98b11ce9a344ac3c27e16578036255636fe"
+      },
+      {
+        "id": "hotel-service-02",
+        "language": "bn",
+        "rubyMarkupSha256": "4fa06b7cc0a0e86f25ce12a63f58bc2010481a301f6b5804a9cd3f84d615de54",
+        "plainMarkupSha256": "4fa06b7cc0a0e86f25ce12a63f58bc2010481a301f6b5804a9cd3f84d615de54"
+      },
+      {
+        "id": "hotel-service-02",
+        "language": "ne",
+        "rubyMarkupSha256": "2e443b39aad0fde3286791b23c92430600b32f05f05479a0c1099f338fdb8106",
+        "plainMarkupSha256": "2e443b39aad0fde3286791b23c92430600b32f05f05479a0c1099f338fdb8106"
+      },
+      {
+        "id": "hotel-service-02",
+        "language": "my",
+        "rubyMarkupSha256": "5757ee48469cce42d33b83decb06cec02a250e34347274efea70cc78c5e7fe7b",
+        "plainMarkupSha256": "5757ee48469cce42d33b83decb06cec02a250e34347274efea70cc78c5e7fe7b"
+      },
+      {
+        "id": "hotel-service-02",
+        "language": "th",
+        "rubyMarkupSha256": "0c48868d45d27267ee5e6341e9116eeac674aa770af5a1ed26d03231ca1c03de",
+        "plainMarkupSha256": "0c48868d45d27267ee5e6341e9116eeac674aa770af5a1ed26d03231ca1c03de"
+      },
+      {
+        "id": "hotel-service-02",
+        "language": "km",
+        "rubyMarkupSha256": "c983c2475182987d06cce790b074f38c1e00dbeab4d1654ebccefc4a52a9a76d",
+        "plainMarkupSha256": "c983c2475182987d06cce790b074f38c1e00dbeab4d1654ebccefc4a52a9a76d"
+      },
+      {
+        "id": "hotel-service-02",
+        "language": "tl",
+        "rubyMarkupSha256": "f664cd2945c95420d54afb1a6f3000daa6a1468355429b5e582ebf0506d28441",
+        "plainMarkupSha256": "f664cd2945c95420d54afb1a6f3000daa6a1468355429b5e582ebf0506d28441"
+      },
+      {
+        "id": "hotel-service-03",
+        "language": "ja",
+        "rubyMarkupSha256": "f51b189fce86e35932229d3889a738ecb0e7463a1194663c52064aa01d666da2",
+        "plainMarkupSha256": "3afc38d1482176605af0ea89c80f861bbb8328ca8f1b87c02f5d2a93f3c748c6"
+      },
+      {
+        "id": "hotel-service-03",
+        "language": "en",
+        "rubyMarkupSha256": "7681bf0808b42773790a2ca586349ffd1beb09e93560d208f18745cd4c42e6f6",
+        "plainMarkupSha256": "7681bf0808b42773790a2ca586349ffd1beb09e93560d208f18745cd4c42e6f6"
+      },
+      {
+        "id": "hotel-service-03",
+        "language": "vi",
+        "rubyMarkupSha256": "d9e02330fd7d6b0c501587d76ea49c8041d95b2ecc0fb22df63b385fb5b90183",
+        "plainMarkupSha256": "d9e02330fd7d6b0c501587d76ea49c8041d95b2ecc0fb22df63b385fb5b90183"
+      },
+      {
+        "id": "hotel-service-03",
+        "language": "id",
+        "rubyMarkupSha256": "9f8499da39a54410cf9a5c64e0f4d87fc42d033ac5a01d0bd69b01c1de302116",
+        "plainMarkupSha256": "9f8499da39a54410cf9a5c64e0f4d87fc42d033ac5a01d0bd69b01c1de302116"
+      },
+      {
+        "id": "hotel-service-03",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "366e980d8b5c7f8da33cb3b685f1f6b2a19547f1490fa3ea19d0acf7ac8694b6",
+        "plainMarkupSha256": "366e980d8b5c7f8da33cb3b685f1f6b2a19547f1490fa3ea19d0acf7ac8694b6"
+      },
+      {
+        "id": "hotel-service-03",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "3badca6fc6181299bbf6b47bd466c81f62700f30add5c8afa4e2cc0055a6bc06",
+        "plainMarkupSha256": "3badca6fc6181299bbf6b47bd466c81f62700f30add5c8afa4e2cc0055a6bc06"
+      },
+      {
+        "id": "hotel-service-03",
+        "language": "hi",
+        "rubyMarkupSha256": "c3e199b529c94aa489c10a240a63b1f15a356543412506d3bba5305a7398a436",
+        "plainMarkupSha256": "c3e199b529c94aa489c10a240a63b1f15a356543412506d3bba5305a7398a436"
+      },
+      {
+        "id": "hotel-service-03",
+        "language": "bn",
+        "rubyMarkupSha256": "ba308e4d48276c774e909bfd1cb188c2eb3c777d91cecbe8f11ad4b9f1b3b233",
+        "plainMarkupSha256": "ba308e4d48276c774e909bfd1cb188c2eb3c777d91cecbe8f11ad4b9f1b3b233"
+      },
+      {
+        "id": "hotel-service-03",
+        "language": "ne",
+        "rubyMarkupSha256": "bc95739731fd86a4376d7fd82f465b26f8eccba061d1cf004bcc96422a47c69d",
+        "plainMarkupSha256": "bc95739731fd86a4376d7fd82f465b26f8eccba061d1cf004bcc96422a47c69d"
+      },
+      {
+        "id": "hotel-service-03",
+        "language": "my",
+        "rubyMarkupSha256": "90efecead934b9278e601be0fceabe56e1e994af2e054b6390ef5b4e0b20d295",
+        "plainMarkupSha256": "90efecead934b9278e601be0fceabe56e1e994af2e054b6390ef5b4e0b20d295"
+      },
+      {
+        "id": "hotel-service-03",
+        "language": "th",
+        "rubyMarkupSha256": "577ca13b91e9188e7e5a2c4573b23805ce466f2b6a3ac89d64cbca34046d8f69",
+        "plainMarkupSha256": "577ca13b91e9188e7e5a2c4573b23805ce466f2b6a3ac89d64cbca34046d8f69"
+      },
+      {
+        "id": "hotel-service-03",
+        "language": "km",
+        "rubyMarkupSha256": "5ac7acd1a44ac80a3a1ebf84f7ba214fe516bfff32bbe5a0b79cc6adc82e136b",
+        "plainMarkupSha256": "5ac7acd1a44ac80a3a1ebf84f7ba214fe516bfff32bbe5a0b79cc6adc82e136b"
+      },
+      {
+        "id": "hotel-service-03",
+        "language": "tl",
+        "rubyMarkupSha256": "321a0e81eb77dedf63757d168f06b52534521a4f8cbdac53eafd05e86cf006ba",
+        "plainMarkupSha256": "321a0e81eb77dedf63757d168f06b52534521a4f8cbdac53eafd05e86cf006ba"
+      },
+      {
+        "id": "hotel-service-04",
+        "language": "ja",
+        "rubyMarkupSha256": "838a170315aef31adb4b3d5423aae37de1345c887c4bb8eb10d1eabe55870e8c",
+        "plainMarkupSha256": "8f26b3c4c9b580fc80582c0e765862dd0b5d996197025d1329c3f65151ece5ff"
+      },
+      {
+        "id": "hotel-service-04",
+        "language": "en",
+        "rubyMarkupSha256": "057cb5a113c936463169e8681c9facbc73aaa008c17846be9fec7fb11339b739",
+        "plainMarkupSha256": "057cb5a113c936463169e8681c9facbc73aaa008c17846be9fec7fb11339b739"
+      },
+      {
+        "id": "hotel-service-04",
+        "language": "vi",
+        "rubyMarkupSha256": "3c116582aae9aed60d8eb4daf681fd51dbd05f912fbb2321c15c2c10cb7436cb",
+        "plainMarkupSha256": "3c116582aae9aed60d8eb4daf681fd51dbd05f912fbb2321c15c2c10cb7436cb"
+      },
+      {
+        "id": "hotel-service-04",
+        "language": "id",
+        "rubyMarkupSha256": "aef6d3de815dc009d7b30592b978a2a77442f3fa9876e2c55f10e88b8757351c",
+        "plainMarkupSha256": "aef6d3de815dc009d7b30592b978a2a77442f3fa9876e2c55f10e88b8757351c"
+      },
+      {
+        "id": "hotel-service-04",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "dff2306efb5f94a63fbc8d6bab9763f94282025b7691dcbf869c436311d926c6",
+        "plainMarkupSha256": "dff2306efb5f94a63fbc8d6bab9763f94282025b7691dcbf869c436311d926c6"
+      },
+      {
+        "id": "hotel-service-04",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "807ee0bdfab0c7d7658da52f32c918d3d056578e39c173157c1223e037bfc58c",
+        "plainMarkupSha256": "807ee0bdfab0c7d7658da52f32c918d3d056578e39c173157c1223e037bfc58c"
+      },
+      {
+        "id": "hotel-service-04",
+        "language": "hi",
+        "rubyMarkupSha256": "0a549679a7326597c766d953b224e5b6433e892cc6005cb90e656dcbe8af22ac",
+        "plainMarkupSha256": "0a549679a7326597c766d953b224e5b6433e892cc6005cb90e656dcbe8af22ac"
+      },
+      {
+        "id": "hotel-service-04",
+        "language": "bn",
+        "rubyMarkupSha256": "f8f6989f3eaf5b42440ffa8dde6ed87f075d723de3900bc4ed30b89e14954fbc",
+        "plainMarkupSha256": "f8f6989f3eaf5b42440ffa8dde6ed87f075d723de3900bc4ed30b89e14954fbc"
+      },
+      {
+        "id": "hotel-service-04",
+        "language": "ne",
+        "rubyMarkupSha256": "49428483804af192aee406932b4fa1202ab6e6bb24c7d2c8151e3b09b6efc312",
+        "plainMarkupSha256": "49428483804af192aee406932b4fa1202ab6e6bb24c7d2c8151e3b09b6efc312"
+      },
+      {
+        "id": "hotel-service-04",
+        "language": "my",
+        "rubyMarkupSha256": "ec89a8a5e955695bbe95efc834a90f740f9d20174659b11680fbf46aee38de99",
+        "plainMarkupSha256": "ec89a8a5e955695bbe95efc834a90f740f9d20174659b11680fbf46aee38de99"
+      },
+      {
+        "id": "hotel-service-04",
+        "language": "th",
+        "rubyMarkupSha256": "727f3a448df8669cad69cb45db0fc6d6c41b0d257c2955232a9cd220406b71f7",
+        "plainMarkupSha256": "727f3a448df8669cad69cb45db0fc6d6c41b0d257c2955232a9cd220406b71f7"
+      },
+      {
+        "id": "hotel-service-04",
+        "language": "km",
+        "rubyMarkupSha256": "72753b4eb74c4dcfb1b71a30597e993e91e4699239be390974aa07e65693de65",
+        "plainMarkupSha256": "72753b4eb74c4dcfb1b71a30597e993e91e4699239be390974aa07e65693de65"
+      },
+      {
+        "id": "hotel-service-04",
+        "language": "tl",
+        "rubyMarkupSha256": "7eea164521234cf45567029f8f784ff0deb95431d17a6646a87a2a84a845d9f9",
+        "plainMarkupSha256": "7eea164521234cf45567029f8f784ff0deb95431d17a6646a87a2a84a845d9f9"
+      },
+      {
+        "id": "hotel-planning-05",
+        "language": "ja",
+        "rubyMarkupSha256": "6a60e7e950d1e5b74d4c3c71b7fc99550ad1cd86a9470f02494a3099a0375a3e",
+        "plainMarkupSha256": "233a62bcb02a22cba209c1f661bf029f4b69a684cd921bf9eb287aae5f5bfbce"
+      },
+      {
+        "id": "hotel-planning-05",
+        "language": "en",
+        "rubyMarkupSha256": "6e97d05533c220d086c54435010d44c731b72ed466762428ce49463a36145e7c",
+        "plainMarkupSha256": "6e97d05533c220d086c54435010d44c731b72ed466762428ce49463a36145e7c"
+      },
+      {
+        "id": "hotel-planning-05",
+        "language": "vi",
+        "rubyMarkupSha256": "abcbe3210f4491baaca88ba6e2063c783d7fbbe8c03641bfd17c46d56c04536d",
+        "plainMarkupSha256": "abcbe3210f4491baaca88ba6e2063c783d7fbbe8c03641bfd17c46d56c04536d"
+      },
+      {
+        "id": "hotel-planning-05",
+        "language": "id",
+        "rubyMarkupSha256": "8631dba3f81858281548573d15bc35817d85ef20a96c9eef8ab209d47176e135",
+        "plainMarkupSha256": "8631dba3f81858281548573d15bc35817d85ef20a96c9eef8ab209d47176e135"
+      },
+      {
+        "id": "hotel-planning-05",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "37b1dfb65eec3a07ec72d69e097a9718fae842208d45510473a9683907139f15",
+        "plainMarkupSha256": "37b1dfb65eec3a07ec72d69e097a9718fae842208d45510473a9683907139f15"
+      },
+      {
+        "id": "hotel-planning-05",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "b65b689763145f945e250c1e226ed04788c26f8037dc9b707e38011424a629b1",
+        "plainMarkupSha256": "b65b689763145f945e250c1e226ed04788c26f8037dc9b707e38011424a629b1"
+      },
+      {
+        "id": "hotel-planning-05",
+        "language": "hi",
+        "rubyMarkupSha256": "2ae3d6f4b587793b38924b77e03564bba61fa77e3d63ebb89a3c06327eda1256",
+        "plainMarkupSha256": "2ae3d6f4b587793b38924b77e03564bba61fa77e3d63ebb89a3c06327eda1256"
+      },
+      {
+        "id": "hotel-planning-05",
+        "language": "bn",
+        "rubyMarkupSha256": "4f0f88935ff8768ac7feab38ef3d55f1796392a5ae7e9d54a37731544753161b",
+        "plainMarkupSha256": "4f0f88935ff8768ac7feab38ef3d55f1796392a5ae7e9d54a37731544753161b"
+      },
+      {
+        "id": "hotel-planning-05",
+        "language": "ne",
+        "rubyMarkupSha256": "4963de90c906f81189a8ac3167178ce9c2701ccd600439e99707eaba68938170",
+        "plainMarkupSha256": "4963de90c906f81189a8ac3167178ce9c2701ccd600439e99707eaba68938170"
+      },
+      {
+        "id": "hotel-planning-05",
+        "language": "my",
+        "rubyMarkupSha256": "04a03d80291a499f532df9b3a01f70c6c2d55e080a0dd963fcade44d8a15674e",
+        "plainMarkupSha256": "04a03d80291a499f532df9b3a01f70c6c2d55e080a0dd963fcade44d8a15674e"
+      },
+      {
+        "id": "hotel-planning-05",
+        "language": "th",
+        "rubyMarkupSha256": "92a0a5405ab9cf5cef9cb9d6a47e8e07a81950b1208dc7dadf1fca9c31f68e6f",
+        "plainMarkupSha256": "92a0a5405ab9cf5cef9cb9d6a47e8e07a81950b1208dc7dadf1fca9c31f68e6f"
+      },
+      {
+        "id": "hotel-planning-05",
+        "language": "km",
+        "rubyMarkupSha256": "08f5a22ab61524472cc92e8f8c6509adf0f8cfba62af17347119006b25e49598",
+        "plainMarkupSha256": "08f5a22ab61524472cc92e8f8c6509adf0f8cfba62af17347119006b25e49598"
+      },
+      {
+        "id": "hotel-planning-05",
+        "language": "tl",
+        "rubyMarkupSha256": "5413c8eb10db4ae1e4b2f60cbd5cd3a7b0e3490ef9f4480d1274f9025e61eb3c",
+        "plainMarkupSha256": "5413c8eb10db4ae1e4b2f60cbd5cd3a7b0e3490ef9f4480d1274f9025e61eb3c"
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "language": "ja",
+        "rubyMarkupSha256": "d8569f985d1509a7f5421f5cc910c1af78ee9c80a4da939440d53f71a49c1d43",
+        "plainMarkupSha256": "47e894807f19c3b6001b7e40387fe628ffc14abc535f89c2da6a9cf23bb6b10c"
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "language": "en",
+        "rubyMarkupSha256": "b3fb5ddecfdffaba513e111c625eae2944756bdc5ae460c7852a39422ab6f15f",
+        "plainMarkupSha256": "b3fb5ddecfdffaba513e111c625eae2944756bdc5ae460c7852a39422ab6f15f"
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "language": "vi",
+        "rubyMarkupSha256": "fd37c97cf1069c9074152437794f1173767bb10d2ff6cb4c2801c4a6acef2322",
+        "plainMarkupSha256": "fd37c97cf1069c9074152437794f1173767bb10d2ff6cb4c2801c4a6acef2322"
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "language": "id",
+        "rubyMarkupSha256": "f281edbef594c6ab66953ab064311ef0fb6808316958cfb56f09d42259ecaa4f",
+        "plainMarkupSha256": "f281edbef594c6ab66953ab064311ef0fb6808316958cfb56f09d42259ecaa4f"
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "75b97327543ca93b5fbc17a325dca5dbec01fcca42fb61077a274b77da0d0290",
+        "plainMarkupSha256": "75b97327543ca93b5fbc17a325dca5dbec01fcca42fb61077a274b77da0d0290"
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "a2ef7fa768d7fe1204a44287d939d6bda005255727bec2f08effd3f5970a3f9b",
+        "plainMarkupSha256": "a2ef7fa768d7fe1204a44287d939d6bda005255727bec2f08effd3f5970a3f9b"
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "language": "hi",
+        "rubyMarkupSha256": "7fd5215b744e58a174351c25d51f0a7463084c8f2c1e2c45857ce93d0a9568b7",
+        "plainMarkupSha256": "7fd5215b744e58a174351c25d51f0a7463084c8f2c1e2c45857ce93d0a9568b7"
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "language": "bn",
+        "rubyMarkupSha256": "8e25dcedb232f69b27b369f488eda7b748c38a2bddbf509c9c9b6d33655443aa",
+        "plainMarkupSha256": "8e25dcedb232f69b27b369f488eda7b748c38a2bddbf509c9c9b6d33655443aa"
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "language": "ne",
+        "rubyMarkupSha256": "013753108fc252e9887f97a25e4ddcd08a051cdd46365ff0e530a086fd5ed849",
+        "plainMarkupSha256": "013753108fc252e9887f97a25e4ddcd08a051cdd46365ff0e530a086fd5ed849"
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "language": "my",
+        "rubyMarkupSha256": "0d0cdebe005a4737abb6673b30675590741361fdf70ddc1cd1ffa1069b639015",
+        "plainMarkupSha256": "0d0cdebe005a4737abb6673b30675590741361fdf70ddc1cd1ffa1069b639015"
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "language": "th",
+        "rubyMarkupSha256": "7ac16df9b435d25dc006cfe0eb039dd79cd72bec5ecf0c08fd217a987b755e49",
+        "plainMarkupSha256": "7ac16df9b435d25dc006cfe0eb039dd79cd72bec5ecf0c08fd217a987b755e49"
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "language": "km",
+        "rubyMarkupSha256": "6e9180ee7a980f1ad046f1c4c812aa26e2fea3554aa91829105dc4ebf4ad37c8",
+        "plainMarkupSha256": "6e9180ee7a980f1ad046f1c4c812aa26e2fea3554aa91829105dc4ebf4ad37c8"
+      },
+      {
+        "id": "hotel-restaurant-02",
+        "language": "tl",
+        "rubyMarkupSha256": "5818e8e7d6e8fb1da30bdb57eb685a45bc19de32362e9cb521ba6ab62d1c016e",
+        "plainMarkupSha256": "5818e8e7d6e8fb1da30bdb57eb685a45bc19de32362e9cb521ba6ab62d1c016e"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "language": "ja",
+        "rubyMarkupSha256": "937a7738bfd1436a0a47cdc53681f492596583146afb539a70493b41c86924d3",
+        "plainMarkupSha256": "f6c8e275e2a93cdfdb1587bbc81622c54aa5180b225a7bea613edd1961a2b0b7"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "language": "en",
+        "rubyMarkupSha256": "56d1b2bbdbae508ea18d746038b78f2ee8e09c64dae12e3023181f5937894779",
+        "plainMarkupSha256": "56d1b2bbdbae508ea18d746038b78f2ee8e09c64dae12e3023181f5937894779"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "language": "vi",
+        "rubyMarkupSha256": "e7bedfb67f8aee8590598071a5ca89c413ffac45e410ff6ea15e8601f9f8a21c",
+        "plainMarkupSha256": "e7bedfb67f8aee8590598071a5ca89c413ffac45e410ff6ea15e8601f9f8a21c"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "language": "id",
+        "rubyMarkupSha256": "98e030397944cb871d3ab2e000ff809d476a1daa76d593211698054372779058",
+        "plainMarkupSha256": "98e030397944cb871d3ab2e000ff809d476a1daa76d593211698054372779058"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "0b98433aa802bb7ae92963546e1e01f571262a3f850e4a656f79155309f7b48e",
+        "plainMarkupSha256": "0b98433aa802bb7ae92963546e1e01f571262a3f850e4a656f79155309f7b48e"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "eade1ef7b155891a33a84be00f459203e966d120b7035fe1390aa2a3677a3703",
+        "plainMarkupSha256": "eade1ef7b155891a33a84be00f459203e966d120b7035fe1390aa2a3677a3703"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "language": "hi",
+        "rubyMarkupSha256": "0895c99eeb2af86530bc15ab78de664df117c83bbbd5887e2612c2f301b09b04",
+        "plainMarkupSha256": "0895c99eeb2af86530bc15ab78de664df117c83bbbd5887e2612c2f301b09b04"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "language": "bn",
+        "rubyMarkupSha256": "b7dfde61abcb8b90c8a6d8b37cab37601eb2dbaba06dd1f07cb72f4a30f228a9",
+        "plainMarkupSha256": "b7dfde61abcb8b90c8a6d8b37cab37601eb2dbaba06dd1f07cb72f4a30f228a9"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "language": "ne",
+        "rubyMarkupSha256": "fec845869e9d639fa92ab3b560bf60b4471db97e47f924fd08000b05f5eab73f",
+        "plainMarkupSha256": "fec845869e9d639fa92ab3b560bf60b4471db97e47f924fd08000b05f5eab73f"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "language": "my",
+        "rubyMarkupSha256": "2e74d5c48634dcbf6ff0155df38808f5f7dfd52cc2b68012b55eeef618246d8c",
+        "plainMarkupSha256": "2e74d5c48634dcbf6ff0155df38808f5f7dfd52cc2b68012b55eeef618246d8c"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "language": "th",
+        "rubyMarkupSha256": "cad93d2951dad4de6d9d44177c76df5a115ed8ccd1c41d84e2efcb079107d13e",
+        "plainMarkupSha256": "cad93d2951dad4de6d9d44177c76df5a115ed8ccd1c41d84e2efcb079107d13e"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "language": "km",
+        "rubyMarkupSha256": "653a8a80b7ad84d037dd8eee9246fff6d842813d751d96c7c8109a9ed8b6a6c2",
+        "plainMarkupSha256": "653a8a80b7ad84d037dd8eee9246fff6d842813d751d96c7c8109a9ed8b6a6c2"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "language": "tl",
+        "rubyMarkupSha256": "c839eca99e4bc4c79e9ee4721a0407ee7e24d04ad3b6a65450137a63e5c16099",
+        "plainMarkupSha256": "c839eca99e4bc4c79e9ee4721a0407ee7e24d04ad3b6a65450137a63e5c16099"
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "language": "ja",
+        "rubyMarkupSha256": "a77801ee387989e4ac38f17027df445e3310695ae069c56ff618d9632d692b87",
+        "plainMarkupSha256": "140a424a9d23c2c8b4f40221aead3e5619737c6beb3aca64d52185cb973cdcdc"
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "language": "en",
+        "rubyMarkupSha256": "87259a62eb642aaa0d4dcf63c98e85faa79391f4b8b8829b384e907b395c5a26",
+        "plainMarkupSha256": "87259a62eb642aaa0d4dcf63c98e85faa79391f4b8b8829b384e907b395c5a26"
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "language": "vi",
+        "rubyMarkupSha256": "de4777ceaa47a984755515808e7887b875a99bbd48f5af5b5ea0a8c310c71c30",
+        "plainMarkupSha256": "de4777ceaa47a984755515808e7887b875a99bbd48f5af5b5ea0a8c310c71c30"
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "language": "id",
+        "rubyMarkupSha256": "b0fd1c2f77253420b669456869c9097f07f3b5eacb2af3425d48d06990b694c0",
+        "plainMarkupSha256": "b0fd1c2f77253420b669456869c9097f07f3b5eacb2af3425d48d06990b694c0"
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "4e35f48e5730556f0ed1fbee4b2946a095ba575cc42b74a8da226d13c09b2a92",
+        "plainMarkupSha256": "4e35f48e5730556f0ed1fbee4b2946a095ba575cc42b74a8da226d13c09b2a92"
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "eb83353d9508c87648e18ce28f91532e38274c26594d4421aa6b47b48158f2fc",
+        "plainMarkupSha256": "eb83353d9508c87648e18ce28f91532e38274c26594d4421aa6b47b48158f2fc"
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "language": "hi",
+        "rubyMarkupSha256": "386d13e0cc1075331de85b2c89a8de7119155e79af561578d62c3b75e9e12c33",
+        "plainMarkupSha256": "386d13e0cc1075331de85b2c89a8de7119155e79af561578d62c3b75e9e12c33"
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "language": "bn",
+        "rubyMarkupSha256": "e48f81c37093da473610c691f8def8d892b6c03cbc01903a61a1fc6441c9d462",
+        "plainMarkupSha256": "e48f81c37093da473610c691f8def8d892b6c03cbc01903a61a1fc6441c9d462"
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "language": "ne",
+        "rubyMarkupSha256": "47b0411bdf837326aa159644aafed517d5e26450a6fdda9845db8422781654ad",
+        "plainMarkupSha256": "47b0411bdf837326aa159644aafed517d5e26450a6fdda9845db8422781654ad"
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "language": "my",
+        "rubyMarkupSha256": "e7ccd0ce440cd36ba9f9a04e648020340d8cf7efc08250a88c568dd885aa2e2d",
+        "plainMarkupSha256": "e7ccd0ce440cd36ba9f9a04e648020340d8cf7efc08250a88c568dd885aa2e2d"
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "language": "th",
+        "rubyMarkupSha256": "f8dc09fee6b808fb32b1d99f95662fb09ebececf5809c896cd8cf1286c3eb6d8",
+        "plainMarkupSha256": "f8dc09fee6b808fb32b1d99f95662fb09ebececf5809c896cd8cf1286c3eb6d8"
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "language": "km",
+        "rubyMarkupSha256": "deab71f321e89ce37618b6afd30d5616ea8d532c3a7dde56d6b4bc0843856a29",
+        "plainMarkupSha256": "deab71f321e89ce37618b6afd30d5616ea8d532c3a7dde56d6b4bc0843856a29"
+      },
+      {
+        "id": "hotel-restaurant-04",
+        "language": "tl",
+        "rubyMarkupSha256": "df188aa6d8c82454bbb1dcfa2a009ae4f72976af33c0eee29db9a53c0fe5f2fd",
+        "plainMarkupSha256": "df188aa6d8c82454bbb1dcfa2a009ae4f72976af33c0eee29db9a53c0fe5f2fd"
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "language": "ja",
+        "rubyMarkupSha256": "ee1dabf7931a9623630b737aaf4ae87141cdb13e070677c4476edf9d248ab861",
+        "plainMarkupSha256": "b76fd3a25f080497140ff140145fb9623af0e435005a04d56f71c4d170dc0bb5"
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "language": "en",
+        "rubyMarkupSha256": "7327f24fa522d99fb5f3c954b3bdfdd81c37ed3c949bc97ee14c6f2ccf8d8136",
+        "plainMarkupSha256": "7327f24fa522d99fb5f3c954b3bdfdd81c37ed3c949bc97ee14c6f2ccf8d8136"
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "language": "vi",
+        "rubyMarkupSha256": "f9de607276eab8f364bb58603add338def07c636c675070c5dce399a84bd65a1",
+        "plainMarkupSha256": "f9de607276eab8f364bb58603add338def07c636c675070c5dce399a84bd65a1"
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "language": "id",
+        "rubyMarkupSha256": "3819c032667602a22e5723b6d6fc4097cb68a396148ff98a831070302845abdd",
+        "plainMarkupSha256": "3819c032667602a22e5723b6d6fc4097cb68a396148ff98a831070302845abdd"
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "038a98520e14ed46a0f9552a2f7ae4b6496e425ee9b8bfbe57ff433fccdaa5c2",
+        "plainMarkupSha256": "038a98520e14ed46a0f9552a2f7ae4b6496e425ee9b8bfbe57ff433fccdaa5c2"
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "e4f618be5178795219100a72f9d73d974a086342bc2cb8d74aef8b82edd7fa46",
+        "plainMarkupSha256": "e4f618be5178795219100a72f9d73d974a086342bc2cb8d74aef8b82edd7fa46"
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "language": "hi",
+        "rubyMarkupSha256": "b23b179694f5d93f6ceb9f241b613fcd2e9dce2259d519df87de66e6439d7da7",
+        "plainMarkupSha256": "b23b179694f5d93f6ceb9f241b613fcd2e9dce2259d519df87de66e6439d7da7"
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "language": "bn",
+        "rubyMarkupSha256": "4a90dec84cffab6b4b8ebedfb3450c3c2ad5b3cfeb9052bdc92e94811659a840",
+        "plainMarkupSha256": "4a90dec84cffab6b4b8ebedfb3450c3c2ad5b3cfeb9052bdc92e94811659a840"
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "language": "ne",
+        "rubyMarkupSha256": "c340a17d0763ca19285dfd386ad34c9b444cef6d01ca0dd00d5e4a5c6e413ec2",
+        "plainMarkupSha256": "c340a17d0763ca19285dfd386ad34c9b444cef6d01ca0dd00d5e4a5c6e413ec2"
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "language": "my",
+        "rubyMarkupSha256": "0ee28a2254b5d2582cf780862d2069619180a6fd229ead444564a45daf833943",
+        "plainMarkupSha256": "0ee28a2254b5d2582cf780862d2069619180a6fd229ead444564a45daf833943"
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "language": "th",
+        "rubyMarkupSha256": "997e710936198de4c7bfa07f8b154945046b12d856e71f8357b9adaf45d2d365",
+        "plainMarkupSha256": "997e710936198de4c7bfa07f8b154945046b12d856e71f8357b9adaf45d2d365"
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "language": "km",
+        "rubyMarkupSha256": "f6cb8c741a6d2e70cd0802ff8760db340a2efa4ef4231eb0fb371e73ccf9fd42",
+        "plainMarkupSha256": "f6cb8c741a6d2e70cd0802ff8760db340a2efa4ef4231eb0fb371e73ccf9fd42"
+      },
+      {
+        "id": "hotel-restaurant-05",
+        "language": "tl",
+        "rubyMarkupSha256": "afdfd7416346f69c8cafafa91e9fbe223e25c7e785d94c63c0aceda3355ba743",
+        "plainMarkupSha256": "afdfd7416346f69c8cafafa91e9fbe223e25c7e785d94c63c0aceda3355ba743"
+      },
+      {
+        "id": "hotel-planning-07",
+        "language": "ja",
+        "rubyMarkupSha256": "e300e27103214e9f7b6c9de04e95a087a04654942686fd9dc4ef5c4a0e88257a",
+        "plainMarkupSha256": "180a5646c09e8add0c9317a80cf58aa8f603064c6edbe3619bf1cbfab9f0c90d"
+      },
+      {
+        "id": "hotel-planning-07",
+        "language": "en",
+        "rubyMarkupSha256": "32c8d2a53700c0c42047060563a5a7bb32c647c309c806bd71de87d06c723238",
+        "plainMarkupSha256": "32c8d2a53700c0c42047060563a5a7bb32c647c309c806bd71de87d06c723238"
+      },
+      {
+        "id": "hotel-planning-07",
+        "language": "vi",
+        "rubyMarkupSha256": "ceccbbdb7694e8c59801d432356a172e1bae0e522037b19f10ec141185bcc892",
+        "plainMarkupSha256": "ceccbbdb7694e8c59801d432356a172e1bae0e522037b19f10ec141185bcc892"
+      },
+      {
+        "id": "hotel-planning-07",
+        "language": "id",
+        "rubyMarkupSha256": "dbc76527855e9502bc6d8c5915b1faee8d47a63fc67e19501d63ca28c5bfa452",
+        "plainMarkupSha256": "dbc76527855e9502bc6d8c5915b1faee8d47a63fc67e19501d63ca28c5bfa452"
+      },
+      {
+        "id": "hotel-planning-07",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "177a992eec2da6ab9dbde1eaa6b715b3521f63ee258407c59152a9a18928511c",
+        "plainMarkupSha256": "177a992eec2da6ab9dbde1eaa6b715b3521f63ee258407c59152a9a18928511c"
+      },
+      {
+        "id": "hotel-planning-07",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "e9a78e21199a39a623a0e2d4584cc6de59f06786da7c3fda26485b1a74f7900e",
+        "plainMarkupSha256": "e9a78e21199a39a623a0e2d4584cc6de59f06786da7c3fda26485b1a74f7900e"
+      },
+      {
+        "id": "hotel-planning-07",
+        "language": "hi",
+        "rubyMarkupSha256": "c04a3d75333ae2d7572b9bfad7eacb61c1c10ba0872a1bf2c50fb7dee2151491",
+        "plainMarkupSha256": "c04a3d75333ae2d7572b9bfad7eacb61c1c10ba0872a1bf2c50fb7dee2151491"
+      },
+      {
+        "id": "hotel-planning-07",
+        "language": "bn",
+        "rubyMarkupSha256": "aaaf41d3bdc0af656301afa897e72a8d6a46df35780cf455a2abf5961736d756",
+        "plainMarkupSha256": "aaaf41d3bdc0af656301afa897e72a8d6a46df35780cf455a2abf5961736d756"
+      },
+      {
+        "id": "hotel-planning-07",
+        "language": "ne",
+        "rubyMarkupSha256": "11d726da2c4233e8ee9118a9c5e25e28571df2700e152402578c6e1510debf7e",
+        "plainMarkupSha256": "11d726da2c4233e8ee9118a9c5e25e28571df2700e152402578c6e1510debf7e"
+      },
+      {
+        "id": "hotel-planning-07",
+        "language": "my",
+        "rubyMarkupSha256": "1158c42c6eb9508270422b07b2956c0f865d0a956b77c15ef5a78870dad6d028",
+        "plainMarkupSha256": "1158c42c6eb9508270422b07b2956c0f865d0a956b77c15ef5a78870dad6d028"
+      },
+      {
+        "id": "hotel-planning-07",
+        "language": "th",
+        "rubyMarkupSha256": "bf8574c94c27fd8327581a85ef60e07df0adae4d5bcc094f1ca27e626231714f",
+        "plainMarkupSha256": "bf8574c94c27fd8327581a85ef60e07df0adae4d5bcc094f1ca27e626231714f"
+      },
+      {
+        "id": "hotel-planning-07",
+        "language": "km",
+        "rubyMarkupSha256": "1525265a773ae0305764d04d32b90e91679816ea9b7de981fa8ebafb02af65e2",
+        "plainMarkupSha256": "1525265a773ae0305764d04d32b90e91679816ea9b7de981fa8ebafb02af65e2"
+      },
+      {
+        "id": "hotel-planning-07",
+        "language": "tl",
+        "rubyMarkupSha256": "82a96072c614523e76ef8dfb21bc47634c1b8c59c440a011afcf21b01b4eb58a",
+        "plainMarkupSha256": "82a96072c614523e76ef8dfb21bc47634c1b8c59c440a011afcf21b01b4eb58a"
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "language": "ja",
+        "rubyMarkupSha256": "e6fe17b33aca0bacf96b5291217a7e185bf7f71184284d8e132a92a1f05a223e",
+        "plainMarkupSha256": "03b7a24847e3f3b251b0b21115a9087afdc9ccdb8604ad14e7283e78cdc3dccb"
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "language": "en",
+        "rubyMarkupSha256": "adf9e4a0983dda41807fec027252bfc60e17fea4e8b3d36e98a8f759a8c747ae",
+        "plainMarkupSha256": "adf9e4a0983dda41807fec027252bfc60e17fea4e8b3d36e98a8f759a8c747ae"
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "language": "vi",
+        "rubyMarkupSha256": "44360ae56b64d3ddffee55288ddce827b459db759cd692fd6518d111f4d9a919",
+        "plainMarkupSha256": "44360ae56b64d3ddffee55288ddce827b459db759cd692fd6518d111f4d9a919"
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "language": "id",
+        "rubyMarkupSha256": "fb7d6bbaefe5ed5d403de2a4a73d3ab8938aaafbf12adf9365233e4db21833d0",
+        "plainMarkupSha256": "fb7d6bbaefe5ed5d403de2a4a73d3ab8938aaafbf12adf9365233e4db21833d0"
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "5dc6e81ee9021597af4bd2ce03bc364c59feae65671df0d6f797a2e0040bd74e",
+        "plainMarkupSha256": "5dc6e81ee9021597af4bd2ce03bc364c59feae65671df0d6f797a2e0040bd74e"
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "e6e40bb9cfeb16852174cb0a2dc98bbb2fa8eba62a8acd6cb423dfe87b73a5cd",
+        "plainMarkupSha256": "e6e40bb9cfeb16852174cb0a2dc98bbb2fa8eba62a8acd6cb423dfe87b73a5cd"
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "language": "hi",
+        "rubyMarkupSha256": "947a6d6e2533126a5e898a3fa3eb57c1512d95c165a2b189f27dcb6aa3513e9c",
+        "plainMarkupSha256": "947a6d6e2533126a5e898a3fa3eb57c1512d95c165a2b189f27dcb6aa3513e9c"
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "language": "bn",
+        "rubyMarkupSha256": "7919f5bf4eef848975e9e0d9b9ca877dbd60587c86f5a067d6333d123fdbeefe",
+        "plainMarkupSha256": "7919f5bf4eef848975e9e0d9b9ca877dbd60587c86f5a067d6333d123fdbeefe"
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "language": "ne",
+        "rubyMarkupSha256": "2bb54e52f99aee5a85c2da3fbc65700fe7c18007c35824efc18185224fc3f2ba",
+        "plainMarkupSha256": "2bb54e52f99aee5a85c2da3fbc65700fe7c18007c35824efc18185224fc3f2ba"
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "language": "my",
+        "rubyMarkupSha256": "9ef38e482fd6698fea59de7229873fbff5f74e03d9808e993d2ed3d55b18f9cd",
+        "plainMarkupSha256": "9ef38e482fd6698fea59de7229873fbff5f74e03d9808e993d2ed3d55b18f9cd"
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "language": "th",
+        "rubyMarkupSha256": "cfd2519598e86af795d8fb0220d6e28ef966ea6be8a9d3981be27bd243cabf9d",
+        "plainMarkupSha256": "cfd2519598e86af795d8fb0220d6e28ef966ea6be8a9d3981be27bd243cabf9d"
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "language": "km",
+        "rubyMarkupSha256": "219bd54d9b855157ac03ac1dcd17bc3978f43e47bf70629fcedeeaa233ef952e",
+        "plainMarkupSha256": "219bd54d9b855157ac03ac1dcd17bc3978f43e47bf70629fcedeeaa233ef952e"
+      },
+      {
+        "id": "hotel-restaurant-09",
+        "language": "tl",
+        "rubyMarkupSha256": "0068406d945ea7bb69885531b9c68876dbf4e082859189f33fedff028aa17143",
+        "plainMarkupSha256": "0068406d945ea7bb69885531b9c68876dbf4e082859189f33fedff028aa17143"
+      },
+      {
+        "id": "hotel-safety-07",
+        "language": "ja",
+        "rubyMarkupSha256": "cc803f2f38c69f2ad4a4c267eae73a16044e6a8ec313484f469d84ea0015d800",
+        "plainMarkupSha256": "071b3e60df78dc782bcee00b8fb5eaad9e8536cb94802d1a90caa6e9b118bad8"
+      },
+      {
+        "id": "hotel-safety-07",
+        "language": "en",
+        "rubyMarkupSha256": "82ffc6a41fcd37a2e2804154d54e75b94614a31c3334bf4cfd327711d8ed2b2c",
+        "plainMarkupSha256": "82ffc6a41fcd37a2e2804154d54e75b94614a31c3334bf4cfd327711d8ed2b2c"
+      },
+      {
+        "id": "hotel-safety-07",
+        "language": "vi",
+        "rubyMarkupSha256": "197651019f1862bd9404ca60de29e4eb238cdf4c710cc8810d48ce89d4a77a4b",
+        "plainMarkupSha256": "197651019f1862bd9404ca60de29e4eb238cdf4c710cc8810d48ce89d4a77a4b"
+      },
+      {
+        "id": "hotel-safety-07",
+        "language": "id",
+        "rubyMarkupSha256": "b60359d717373306f0732d4e26faa2fbe21ef68248613b506086cdf21e3106cb",
+        "plainMarkupSha256": "b60359d717373306f0732d4e26faa2fbe21ef68248613b506086cdf21e3106cb"
+      },
+      {
+        "id": "hotel-safety-07",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "e0ebcb812b3510419cbe2f9a7149d7dd2d920126e90809abb577bee3f0940379",
+        "plainMarkupSha256": "e0ebcb812b3510419cbe2f9a7149d7dd2d920126e90809abb577bee3f0940379"
+      },
+      {
+        "id": "hotel-safety-07",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "c8d7920f16e0a7fa8c7d1103444ef627680d54406db129f2c62d338f9f140ad2",
+        "plainMarkupSha256": "c8d7920f16e0a7fa8c7d1103444ef627680d54406db129f2c62d338f9f140ad2"
+      },
+      {
+        "id": "hotel-safety-07",
+        "language": "hi",
+        "rubyMarkupSha256": "2b8eea720725bdf1ae06b9d4ab1d884b1c04939764ed2c9589054b0397acbcfb",
+        "plainMarkupSha256": "2b8eea720725bdf1ae06b9d4ab1d884b1c04939764ed2c9589054b0397acbcfb"
+      },
+      {
+        "id": "hotel-safety-07",
+        "language": "bn",
+        "rubyMarkupSha256": "3d65410faa775e9504c64cdf5de1910a1deb316d92fea5e169cacced2643870c",
+        "plainMarkupSha256": "3d65410faa775e9504c64cdf5de1910a1deb316d92fea5e169cacced2643870c"
+      },
+      {
+        "id": "hotel-safety-07",
+        "language": "ne",
+        "rubyMarkupSha256": "b9ff40eadc0a86ba39ec2e7878d9c7303547a1ba445bba30bc1759fbaa810a7e",
+        "plainMarkupSha256": "b9ff40eadc0a86ba39ec2e7878d9c7303547a1ba445bba30bc1759fbaa810a7e"
+      },
+      {
+        "id": "hotel-safety-07",
+        "language": "my",
+        "rubyMarkupSha256": "54188a1130d1e39015296310290e4a43bd621905021b377998f5bb672a95222d",
+        "plainMarkupSha256": "54188a1130d1e39015296310290e4a43bd621905021b377998f5bb672a95222d"
+      },
+      {
+        "id": "hotel-safety-07",
+        "language": "th",
+        "rubyMarkupSha256": "2d3f7e6b8dd17e85e909b440b74790f9b29c63d5a36210ce89d94985e3472521",
+        "plainMarkupSha256": "2d3f7e6b8dd17e85e909b440b74790f9b29c63d5a36210ce89d94985e3472521"
+      },
+      {
+        "id": "hotel-safety-07",
+        "language": "km",
+        "rubyMarkupSha256": "45c22cdd8a39109e686ba11a9e50d5db0b5b5ef88c748ac5646a6b3a89f98af9",
+        "plainMarkupSha256": "45c22cdd8a39109e686ba11a9e50d5db0b5b5ef88c748ac5646a6b3a89f98af9"
+      },
+      {
+        "id": "hotel-safety-07",
+        "language": "tl",
+        "rubyMarkupSha256": "f9c2106719ca9a9517e894821fa46f06a1a100f2ba7e332d4ad30ed4c8827589",
+        "plainMarkupSha256": "f9c2106719ca9a9517e894821fa46f06a1a100f2ba7e332d4ad30ed4c8827589"
+      },
+      {
+        "id": "hotel-planning-06",
+        "language": "ja",
+        "rubyMarkupSha256": "7f07c4d9e9c28cb15b057a3e4ff5bdea44de4e015971552bdb50f8308373f63f",
+        "plainMarkupSha256": "bec780ad7ba47a85c25ddc0714a5093130e3a1a9f49fc34331107a71c88dd8e6"
+      },
+      {
+        "id": "hotel-planning-06",
+        "language": "en",
+        "rubyMarkupSha256": "c6c5ef2e55948fe992a5af08748313e98bedded82a4c71251678757f9ad1e338",
+        "plainMarkupSha256": "c6c5ef2e55948fe992a5af08748313e98bedded82a4c71251678757f9ad1e338"
+      },
+      {
+        "id": "hotel-planning-06",
+        "language": "vi",
+        "rubyMarkupSha256": "dd8b8d5ff6eb4afc60dd736b89480df31aca454a69475f5f212e754c249b1405",
+        "plainMarkupSha256": "dd8b8d5ff6eb4afc60dd736b89480df31aca454a69475f5f212e754c249b1405"
+      },
+      {
+        "id": "hotel-planning-06",
+        "language": "id",
+        "rubyMarkupSha256": "36256757f781a506fd7b5ad1fec84873db00f3d81a690d2a9864dbafc1b503a5",
+        "plainMarkupSha256": "36256757f781a506fd7b5ad1fec84873db00f3d81a690d2a9864dbafc1b503a5"
+      },
+      {
+        "id": "hotel-planning-06",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "080c29971ad5f581860ffd0fbe347d33065b39f7ed51f754eeea41f25aa07cc8",
+        "plainMarkupSha256": "080c29971ad5f581860ffd0fbe347d33065b39f7ed51f754eeea41f25aa07cc8"
+      },
+      {
+        "id": "hotel-planning-06",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "abb76d2d21a531049240ddb27382d61bfa57dcdc2b04947467a0da0d4fcb1dad",
+        "plainMarkupSha256": "abb76d2d21a531049240ddb27382d61bfa57dcdc2b04947467a0da0d4fcb1dad"
+      },
+      {
+        "id": "hotel-planning-06",
+        "language": "hi",
+        "rubyMarkupSha256": "95d99f4bf2a2809470b731931e59452ff53d9b5647a9a7c094c1848387010b28",
+        "plainMarkupSha256": "95d99f4bf2a2809470b731931e59452ff53d9b5647a9a7c094c1848387010b28"
+      },
+      {
+        "id": "hotel-planning-06",
+        "language": "bn",
+        "rubyMarkupSha256": "7b30e40a8e567bc529fdbc0dd7352dcf4b64489a6c34333b33bcd182ed12c212",
+        "plainMarkupSha256": "7b30e40a8e567bc529fdbc0dd7352dcf4b64489a6c34333b33bcd182ed12c212"
+      },
+      {
+        "id": "hotel-planning-06",
+        "language": "ne",
+        "rubyMarkupSha256": "d4e039bf4ad033f15d081c2c127df1237560af325eb1c8c5f5be49dd921592c3",
+        "plainMarkupSha256": "d4e039bf4ad033f15d081c2c127df1237560af325eb1c8c5f5be49dd921592c3"
+      },
+      {
+        "id": "hotel-planning-06",
+        "language": "my",
+        "rubyMarkupSha256": "910639ce9e57344e9b313e4b0e85e164e8587b7a2b318e13ea188f8209bdb2ff",
+        "plainMarkupSha256": "910639ce9e57344e9b313e4b0e85e164e8587b7a2b318e13ea188f8209bdb2ff"
+      },
+      {
+        "id": "hotel-planning-06",
+        "language": "th",
+        "rubyMarkupSha256": "3057e4a7b1dfdf497ef40a894f4012fe4fdb1422d45375cef22872369db03cb9",
+        "plainMarkupSha256": "3057e4a7b1dfdf497ef40a894f4012fe4fdb1422d45375cef22872369db03cb9"
+      },
+      {
+        "id": "hotel-planning-06",
+        "language": "km",
+        "rubyMarkupSha256": "0274d8acda335cfb6bf5b629b26f5f3dc70853eeadc9141dc81467202c4b9ff7",
+        "plainMarkupSha256": "0274d8acda335cfb6bf5b629b26f5f3dc70853eeadc9141dc81467202c4b9ff7"
+      },
+      {
+        "id": "hotel-planning-06",
+        "language": "tl",
+        "rubyMarkupSha256": "197e317f48b414c88f63ed34981dbae5eccca1c48710866a35623d49ccc83ad9",
+        "plainMarkupSha256": "197e317f48b414c88f63ed34981dbae5eccca1c48710866a35623d49ccc83ad9"
+      },
+      {
+        "id": "hotel-safety-02",
+        "language": "ja",
+        "rubyMarkupSha256": "15b512871b55ac6dc92ebd2fde82050925bd7a1b69fcbbd3a6fbceda7f529650",
+        "plainMarkupSha256": "8de6a156dea239e48197eb9d49ab58a900c1f273d817b8b25303b28c98511dce"
+      },
+      {
+        "id": "hotel-safety-02",
+        "language": "en",
+        "rubyMarkupSha256": "f7c4e0cc68eb0fc2523defd0e7aeca241e27e7ca0ec93b66a2543eaeeee619d0",
+        "plainMarkupSha256": "f7c4e0cc68eb0fc2523defd0e7aeca241e27e7ca0ec93b66a2543eaeeee619d0"
+      },
+      {
+        "id": "hotel-safety-02",
+        "language": "vi",
+        "rubyMarkupSha256": "14f1632a46426de3f03b8b0b2869dc3a49f424f3fe518db0e133bf03d8920af1",
+        "plainMarkupSha256": "14f1632a46426de3f03b8b0b2869dc3a49f424f3fe518db0e133bf03d8920af1"
+      },
+      {
+        "id": "hotel-safety-02",
+        "language": "id",
+        "rubyMarkupSha256": "7a1bdd861b300c5be6203390038290baf2a6f116311410d6f9d24584b8519e6d",
+        "plainMarkupSha256": "7a1bdd861b300c5be6203390038290baf2a6f116311410d6f9d24584b8519e6d"
+      },
+      {
+        "id": "hotel-safety-02",
+        "language": "zh-CN",
+        "rubyMarkupSha256": "e1d30c7a61329daec9873d2d4051e87744a6d0da4cc5aea4bcd08a41d412cb87",
+        "plainMarkupSha256": "e1d30c7a61329daec9873d2d4051e87744a6d0da4cc5aea4bcd08a41d412cb87"
+      },
+      {
+        "id": "hotel-safety-02",
+        "language": "zh-TW",
+        "rubyMarkupSha256": "cfad3b16a0bc5ef2f330d1220ba977614085763429aca9dd00a51a7f5c9a3898",
+        "plainMarkupSha256": "cfad3b16a0bc5ef2f330d1220ba977614085763429aca9dd00a51a7f5c9a3898"
+      },
+      {
+        "id": "hotel-safety-02",
+        "language": "hi",
+        "rubyMarkupSha256": "af6df9d28276d217eba1d0817e939036302ef36e1a86302c61e71bf37143261c",
+        "plainMarkupSha256": "af6df9d28276d217eba1d0817e939036302ef36e1a86302c61e71bf37143261c"
+      },
+      {
+        "id": "hotel-safety-02",
+        "language": "bn",
+        "rubyMarkupSha256": "ce5f3cfb6bcd6a4e31eb7e6239abe23bd7644d7aa9a3225433924182779b4553",
+        "plainMarkupSha256": "ce5f3cfb6bcd6a4e31eb7e6239abe23bd7644d7aa9a3225433924182779b4553"
+      },
+      {
+        "id": "hotel-safety-02",
+        "language": "ne",
+        "rubyMarkupSha256": "4184612c5702c1f92f6d81233a9785eb1a17546842d6ebbe0ecf80d22fd70fe2",
+        "plainMarkupSha256": "4184612c5702c1f92f6d81233a9785eb1a17546842d6ebbe0ecf80d22fd70fe2"
+      },
+      {
+        "id": "hotel-safety-02",
+        "language": "my",
+        "rubyMarkupSha256": "5520c6e5c735072d5f285462f485541c6c10bf8e719ed392accaaa326d2bc767",
+        "plainMarkupSha256": "5520c6e5c735072d5f285462f485541c6c10bf8e719ed392accaaa326d2bc767"
+      },
+      {
+        "id": "hotel-safety-02",
+        "language": "th",
+        "rubyMarkupSha256": "5d22a08dd962ddb2da7f49b0b2480c39e4fdf23ea922c4d716e4a5df9c9f21c3",
+        "plainMarkupSha256": "5d22a08dd962ddb2da7f49b0b2480c39e4fdf23ea922c4d716e4a5df9c9f21c3"
+      },
+      {
+        "id": "hotel-safety-02",
+        "language": "km",
+        "rubyMarkupSha256": "6080e2081079eefbc60ad2485e5a91c88420032d9c1e525ed96862e291dbef1d",
+        "plainMarkupSha256": "6080e2081079eefbc60ad2485e5a91c88420032d9c1e525ed96862e291dbef1d"
+      },
+      {
+        "id": "hotel-safety-02",
+        "language": "tl",
+        "rubyMarkupSha256": "2d5d2e46c9bdf5443f657fc1fb120fe477b7498b305e3ba5c40e0b9fb542f5da",
+        "plainMarkupSha256": "2d5d2e46c9bdf5443f657fc1fb120fe477b7498b305e3ba5c40e0b9fb542f5da"
+      }
+    ]
+  },
+  "postCloseDeltaReview": {
+    "reviewedBaseline": "b1f7f43bf1d84511b6e146bbe621a39a5ce96460",
+    "retainedUnchangedPrimaryBindings": 36,
+    "sourcePayloadsAnd494AltsCaptionsUnchanged": true,
+    "primaryDeltas": [
+      {
+        "id": "hotel-planning-06",
+        "previousPath": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-planning-06.webp",
+        "previousSha256": "0b1c24927d6586112b50ec2607f9bba33d391a3cdd9d242232c54c03156b7169",
+        "path": "assets/app/hospitality/royal-weekly-20261107/week02/hotel-planning-06-royal-material-v2.webp",
+        "sha256": "3ff7d32b8cb850fa7be2b43e14f57fc35fbe404528322c5d27edd690e7e65ab5"
+      },
+      {
+        "id": "hotel-restaurant-03",
+        "previousPath": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-03.webp",
+        "previousSha256": "b158db1ef12d2f9289a41034255eaf50b97cf66b0de20a81f34b63f96c075587",
+        "path": "assets/app/hospitality/royal-weekly-20261107/week03/hotel-restaurant-03-three-dishes-v2.webp",
+        "sha256": "2996be60270eb02b2997b7c6430227632e643dd60bbc61b6f57dbf14c0d1750c"
+      }
+    ],
+    "mainRevisionNegativeChecks": 114,
+    "unknownOrPrototypeIdsRejected": 3,
+    "accessibilitySelectionCases": 8,
+    "seatGeometryCases": 9,
+    "threeDishNativeRoles": 3,
+    "routeInventory": {
+      "entryRoute": "src/app/specified-skills/hospitality.tsx",
+      "deferredCourse": "src/components/hospitality/HospitalityCourse.tsx",
+      "mainImageCaller": "Reader:hotelIllustration(lesson.id,lesson.revision)",
+      "mainImageSurfaces": [
+        "inline",
+        "zoom fitted",
+        "zoom horizontal"
+      ],
+      "lessonQuizRendering": "Prompt/choices/explanation text; no image resolver or knowledge-ID image injection in question route",
+      "mockUnits": [
+        {
+          "id": "hotel-mock-1",
+          "questions": 25,
+          "mainImageKnown": false,
+          "currentResolver": null,
+          "nativeConditionalLessonBinding": false
+        },
+        {
+          "id": "hotel-mock-2",
+          "questions": 25,
+          "mainImageKnown": false,
+          "currentResolver": null,
+          "nativeConditionalLessonBinding": false
+        }
+      ],
+      "extraQuizImageReferences": 0
+    },
+    "productRegressionsFound": [],
+    "preservedIncomingFixes": [
+      "two valid source-specific new primary WebPs",
+      "revision/error/retry main image boundaries",
+      "native ruby accessibility/selectable props",
+      "seating entrance alignment",
+      "three cooked dishes in washoku native layout",
+      "Vietnamese guest-room origin label"
+    ],
+    "physicalDeviceTested": false,
+    "browserTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "fullSourceAccepted": false
+  },
+  "supplementalSafetyFigureHashes": [
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-below-controlled.webp",
+      "sha256": "b01fee2eb164e2e8fb183a71d61321073354b9aa8b492efc562331a6264d96b4",
+      "role": "active qualitative comparison raster",
+      "noPhysicalFireThreshold": true,
+      "decodedDimensions": [
+        720,
+        360
+      ]
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-below-controlled.svg",
+      "sha256": "742a61cb56927f8c04607e954569f7b5d61d8bbb0311d480ad2c275403fb084a",
+      "role": "controlled source provenance",
+      "noPhysicalFireThreshold": true
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-ceiling-controlled.webp",
+      "sha256": "94a2dbb6ec511df9c765a07fa533cd8e1f693d8c7b9b8c1ea9d6116ccec496d0",
+      "role": "active qualitative comparison raster",
+      "noPhysicalFireThreshold": true,
+      "decodedDimensions": [
+        720,
+        360
+      ]
+    },
+    {
+      "path": "assets/app/hospitality/royal-weekly-20261107/week04/safety02-fire-ceiling-controlled.svg",
+      "sha256": "5e8331c1a2c440f3fbe195fe42d3fe3367fccd2f954f3572a57c7604fc32754b",
+      "role": "controlled source provenance",
+      "noPhysicalFireThreshold": true
+    }
+  ],
+  "full38CensusPath": "docs/ssw-workspace/hospitality/royal-full38-native-reading-census-20261107.json",
+  "unchangedCaptionAltAndCanonicalSourcePayloads": true,
+  "allPreviousNativeReadingBindingsRetained": true,
+  "incomingPixelsAndPropsFixesPreserved": true,
+  "productRegressionFixesRequired": [],
+  "acceptance": {
+    "existingIllustratedAuthoringScopeComplete": true,
+    "physicalDeviceTested": false,
+    "browserTested": false,
+    "screenReaderTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "fullSourceAccepted": false
+  },
+  "freeze": [
+    {
+      "path": "docs/ssw-workspace/hospitality/royal-full38-native-reading-census-20261107.json",
+      "sha256": "63dd4320fcb76c28f9703a206d4040fffb75bc6c56011501a62d3eef81d54be7"
+    }
+  ]
+}

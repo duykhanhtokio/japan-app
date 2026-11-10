@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "3215b15e024cb60c58ef00c67d14c294bc19405f",
+  "scope": "All 22 existing ManufacturingDiagram Japanese direct-caption definitions",
+  "productionDelta": "Only replace visible direct Japanese Text caption with existing IllustrationJapanese; append exact offline reading records. ImageURI, native translations, source revisions, numbers, caption wording and zoom remain unchanged.",
+  "readingMethod": "Canonical Manufacturing term readings + exact whole-compound/inflected-stem review for each direct caption; no runtime kana inference or individual-kanji composition. All27 stored caption records maintain exact source alignment and full kanji coverage.",
+  "qa": {
+    "directDefinitions": 22,
+    "actualLocaleRenderContexts": 286,
+    "nativeCaptionsUnchanged": 264,
+    "wrongSourceRejectedContexts": 286,
+    "expandedCurrentSourceContexts": 22,
+    "previousSupplementalRows": 5,
+    "previousCompletionRows": 6,
+    "legacyReaderContexts": 117,
+    "legacyNativeCaptions": 108,
+    "legacyWrongSourceRejected": 117,
+    "previousSupplementalRubyCaptions": 5,
+    "hiddenQuizCaptionRegressions": 5,
+    "partialStaleReadingFallbacks": 10,
+    "commands": [
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/manufacturing/check-direct-illustration-caption-readings.cjs",
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/manufacturing/check-illustration-caption-readings.cjs",
+      "node /workspace/scratch/0d83607b09ec/manufacturing-direct-caption-typecheck.cjs"
+    ],
+    "typecheck": "Actual three caption/direct components plus exact JSON and real alignment/UI helpers. Declared RN/theme and narrow lesson identity; not full-app check.",
+    "renderBoundary": "Actual React SSR and source modules; RN DOM/StyleSheet adapters. No native-device claim."
+  },
+  "remaining": "Royal native238/1087strings grouped by week/source; completion/recognition/Source60/62/overview captions; companion/native headings/body; early24specialmain routes. Unknown readings remain plain until supported.",
+  "allExistingContentComplete": false,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "deviceAcceptance": false
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "date": "2026-11-02",
+  "checks": {
+    "sourceRegionAndPreservation": "PASS scripts/agriculture/check-seed-storage-processing-sowing-v4.cjs",
+    "priorEnvironmentRegression": "PASS scripts/agriculture/check-environment-pages60-80-v3.cjs",
+    "canonicalLedger": "PASS_REGISTRY_CONTRACT scripts/source-coverage-v2/check.cjs",
+    "readerHost": "PASS10checks x12locale x2levels; wronglessonhidden; answersunmountedbeforeopening; explicittranslations; fullruby; hostcomponentfixtureonly",
+    "whitespace": "PASS"
+  },
+  "newSourceAtoms": 35,
+  "newCoveredAI": 24,
+  "partialAtoms": 11,
+  "newReaderChecks": 3,
+  "newExplicitLocalePrompts": 36,
+  "totalKnownUnits": 1427,
+  "totalCoveredAI": 66,
+  "sourceSemanticPagesComplete": 2,
+  "sourceCoveragePercent": null,
+  "sourceDenominatorOpen": true,
+  "limits": [
+    "No whole-page closure for pages61/62/81.",
+    "Five new atoms still lack direct assessment; six sowing atoms retain missing1号route.",
+    "No domain/native/human review, physical device test, productionExpo or learner duration acceptance."
+  ],
+  "inputHashes": {
+    "src/data/agriculture/reader-moisture-checks.json": "5bff83cc5726ebc12f9c069459a54e2037b95aba88f073ffc6d73210266a3d96",
+    "docs/ssw-workspace/source-coverage-v2/agriculture.json": "aa8d76e8e1c61d6b8d409bf532a154a43daba87bfce82a8219ac48ef06222097",
+    "docs/ssw-workspace/source-coverage-v2/agriculture-AGR-S1-regions.json.gz": "debb0ed93cb169b187638b7675bb9a86b95c17f05b6524d9b78bda7ef8ef3c09",
+    "docs/ssw-workspace/source-coverage-v2/agriculture-AGR-S2-regions.json.gz": "b5378f5218715f0836216c01ec806577548862c2860391bd4584574af3f8c199"
+  },
+  "furiganaSelfReview": "Context readings checked directly; 表す=あらわす,学ぶ=まなぶ,関わる=かかわる,一か所=いっかしょ. Structural coverage is separate from native review."
+}

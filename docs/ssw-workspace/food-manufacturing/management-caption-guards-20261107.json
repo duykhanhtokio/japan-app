@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "sector": "food",
+  "dateJst": "2026-11-07",
+  "scope": "Seven existing week04 native management figures; exact caption locator guards",
+  "baseDataBlobSha": "361cbd098da93f7caa2b54cfca7582681febe6a5",
+  "baseReaderBlobSha": "577b0c02ca8a943099a5282c57f8df0f4b6df483",
+  "problem": "A paragraph-bound management chart still rendered when its caption paragraph was missing; the reader fell back to unrelated activityJa. Activity-bound charts also rendered without their required activity. The selector previously checked only lesson ID/sourceHash.",
+  "reproductionBefore": "Actual production FoodManagementVisuals regression failed: food-management-mean-range missing caption/revision must fail closed.",
+  "change": "Require the exact supported caption locator to resolve to nonempty source text: activityJa or paragraphs.<existing ID> with nonempty title/body. Stale-revision matching remains unchanged. The reader now receives only figures with their own valid captions.",
+  "currentLocatorSelfReview": [
+    {
+      "lessonId": "food-2-020",
+      "sourceHash": "68eb7d1570463064138b908fccca94ad27a53825a394c270c154d7dccacbf599",
+      "validCaptionLocators": [
+        "paragraphs.p2"
+      ],
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 77,
+          "printedPage": 68,
+          "section": "第3章4(1)(2) 統計的品質管理の基礎"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 78,
+          "printedPage": 69,
+          "section": "第3章4(1)(2) 統計的品質管理の基礎"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 79,
+          "printedPage": 70,
+          "section": "第3章4(1)(2) 統計的品質管理の基礎"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 80,
+          "printedPage": 71,
+          "section": "第3章4(1)(2) 統計的品質管理の基礎"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 81,
+          "printedPage": 72,
+          "section": "第3章4(1)(2) 統計的品質管理の基礎"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 82,
+          "printedPage": 73,
+          "section": "第3章4(1)(2) 統計的品質管理の基礎"
+        }
+      ]
+    },
+    {
+      "lessonId": "food-2-021",
+      "sourceHash": "ade1274e1f97c56590f312f3131d51e3452b917fb7e8d399d093b9c7fd82b74f",
+      "validCaptionLocators": [
+        "activityJa",
+        "paragraphs.p2",
+        "paragraphs.p3"
+      ],
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 82,
+          "printedPage": 73,
+          "section": "第3章4(3) QC7つ道具・管理図のコラム"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 83,
+          "printedPage": 74,
+          "section": "第3章4(3) QC7つ道具・管理図のコラム"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 84,
+          "printedPage": 75,
+          "section": "第3章4(3) QC7つ道具・管理図のコラム"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 85,
+          "printedPage": 76,
+          "section": "第3章4(3) QC7つ道具・管理図のコラム"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 86,
+          "printedPage": 77,
+          "section": "第3章4(3) QC7つ道具・管理図のコラム"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 87,
+          "printedPage": 78,
+          "section": "第3章4(3) QC7つ道具・管理図のコラム"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 88,
+          "printedPage": 79,
+          "section": "第3章4(3) QC7つ道具・管理図のコラム"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 89,
+          "printedPage": 80,
+          "section": "第3章4(3) QC7つ道具・管理図のコラム"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 90,
+          "printedPage": 81,
+          "section": "第3章4(3) QC7つ道具・管理図のコラム"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 91,
+          "printedPage": 82,
+          "section": "第3章4(3) QC7つ道具・管理図のコラム"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 92,
+          "printedPage": 83,
+          "section": "第3章4(3) QC7つ道具・管理図のコラム"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 93,
+          "printedPage": 84,
+          "section": "第3章4(3) QC7つ道具・管理図のコラム"
+        }
+      ]
+    },
+    {
+      "lessonId": "food-2-023",
+      "sourceHash": "83530fd2c373cd0b8af1d5bd9acdc0dde8197e5fba82869f10a6534c8b20483e",
+      "validCaptionLocators": [
+        "activityJa"
+      ],
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 96,
+          "printedPage": 87,
+          "section": "第4章1(5)～(7) 生産性・標準時間・工数"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 97,
+          "printedPage": 88,
+          "section": "第4章1(5)～(7) 生産性・標準時間・工数"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 98,
+          "printedPage": 89,
+          "section": "第4章1(5)～(7) 生産性・標準時間・工数"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 99,
+          "printedPage": 90,
+          "section": "第4章1(5)～(7) 生産性・標準時間・工数"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 100,
+          "printedPage": 91,
+          "section": "第4章1(5)～(7) 生産性・標準時間・工数"
+        }
+      ]
+    },
+    {
+      "lessonId": "food-2-024",
+      "sourceHash": "032776413fb9cc8dd9f743f2ee231de44aec547a93f36bd4b47c8fa1b46936a8",
+      "validCaptionLocators": [
+        "activityJa"
+      ],
+      "sourceRefs": [
+        {
+          "document": "ssw2",
+          "pdfPage": 100,
+          "printedPage": 91,
+          "section": "第4章2(1) 作業計画と進捗管理"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 101,
+          "printedPage": 92,
+          "section": "第4章2(1) 作業計画と進捗管理"
+        },
+        {
+          "document": "ssw2",
+          "pdfPage": 102,
+          "printedPage": 93,
+          "section": "第4章2(1) 作業計画と進捗管理"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "command": "node scripts/food-manufacturing/check-management-caption-guards.cjs",
+    "result": "PASS 364 actual reader structural SSR contexts = seven figures × thirteen locales × current/missing/blank/stale cases. Current exact Japanese/revision-matched translated captions and all existing localized chart keys remain visible. Missing/blank caption, stale revision and unsupported locator reject the affected figure; unrelated valid figures remain visible.",
+    "adapters": "Real React and production TS/TSX via Babel; deterministic RN/ruby adapters. Real current lesson/translation resolver and native chart/label code. No browser/device pixels or new language-semantic acceptance.",
+    "exportEquality": "Both foodManagementVisuals and foodManagementTeachingData JSON exports are byte-equal under JSON.stringify before/after; only selector logic changed.",
+    "diffCheck": "PASS scoped git diff --check"
+  },
+  "files": [
+    {
+      "path": "src/data/food-manufacturing/management-visuals.ts",
+      "sha256": "80b19198189562fd209fe80c94ff816a742427b5ff366c1d38fd2aee07ee49a1"
+    },
+    {
+      "path": "scripts/food-manufacturing/check-management-caption-guards.cjs",
+      "sha256": "7b6b4203479dc6c9d1be09c7bdab71499c912ffc69f7c389128f9fbf7fa388c1"
+    }
+  ],
+  "unchanged": [
+    "All seven native chart definitions, data points, formulas, geometry, numeric assumptions and caption locators",
+    "Existing Japanese source text/sourceHash and 12-language translations/labels",
+    "Reader code and learner IDs/state",
+    "External week04 art work"
+  ],
+  "acceptance": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false,
+    "wholeSectorComplete": false
+  },
+  "newRasterAssets": 0
+}

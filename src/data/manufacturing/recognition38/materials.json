@@ -1,0 +1,2599 @@
+{
+  "schemaVersion": 1,
+  "packs": [
+    {
+      "id": "mfg37-required-jig-contact-identification",
+      "lessonIds": [
+        "mfg1-surface-completion37-lesson-004",
+        "mfg1-surface-completion37-lesson-008"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-completion37-lesson-004": "8873e887c5f8fd080b5498cfc0740213cd24b4734b31b3a66cf81be93ddb0af7",
+        "mfg1-surface-completion37-lesson-008": "e17a09d99688d56b781a52c0523a2c46f31254fed711cf30d62e2d0a1d544956"
+      },
+      "titleJa": "治具の保持・通電接点・保護範囲を見分ける",
+      "captionJa": "図Aは機械的な保持、Bは通電が必要な処理で導通を保つ接点、Cは不要な付着を抑える治具の保護被覆を示します。実物の接点配置、材質、処理液との適合は指定仕様で確認します。",
+      "assets": [
+        {
+          "id": "mfg37-required-jig-contact-identification-diagram",
+          "file": "assets/manufacturing/recognition38/jig-contact.png",
+          "width": 1600,
+          "height": 1200,
+          "altJa": "独立した治具概念図。Aは品物を保持する部分、Bは裸の導電接点、Cは接点以外の治具被覆、Dは処理対象面。電源極性、寸法や操作手順は指定しない。",
+          "sha256": "cf06537ce349bfd5583a1ad76fcae83869836e9a6f2aa943e88340793959d150",
+          "role": "teaching"
+        },
+        {
+          "id": "mfg37-required-jig-contact-identification-quiz-diagram",
+          "file": "assets/manufacturing/recognition38/jig-contact-quiz.png",
+          "width": 1600,
+          "height": 1200,
+          "altJa": "独立した治具模式図。緑の縦棒と枝状部分、灰色の品物、橙色の小円を描き、位置A・B・Cへ線を引く。役割名、正解番号、解説や実配線の指定は表示しない。",
+          "role": "quiz",
+          "sha256": "7c7e0a4ddd9c6560f5543ff63d7b5630928bf2f73dc757b25807d4c1ee206055"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg37-required-jig-contact-identification-q01",
+          "lessonId": "mfg1-surface-completion37-lesson-004",
+          "stemJa": "図の通電接点として、導通を保つ必要がある位置はどれか。",
+          "optionsJa": [
+            "Aだけ",
+            "B",
+            "Cの被覆表面だけ",
+            "背景の余白"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "Aは保持の役割を示す。必要な通電接点はBで識別する。",
+            "Bは通電が必要な処理で導通を保つ接点として示している。",
+            "Cは不要な付着を抑える保護範囲で、必要な裸接点とは別。",
+            "余白は治具の接点ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 96,
+              "printedPage": 86
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 180,
+              "printedPage": 170
+            }
+          ],
+          "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+          "imageAssetIds": [
+            "mfg37-required-jig-contact-identification-quiz-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-jig-contact-identification-quiz-diagram": "7c7e0a4ddd9c6560f5543ff63d7b5630928bf2f73dc757b25807d4c1ee206055"
+          }
+        },
+        {
+          "id": "mfg37-required-jig-contact-identification-q02",
+          "lessonId": "mfg1-surface-completion37-lesson-004",
+          "stemJa": "図AとCの役割の組合せで正しいものはどれか。",
+          "optionsJa": [
+            "Aは薬液濃度、Cは加熱温度。",
+            "Aは製品の合否、Cは電源の極性。",
+            "Aは品物の保持、Cは治具への不要な付着の抑制。",
+            "AもCも全ての接点を絶縁する指示。"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "濃度や温度を表す記号ではない。",
+            "合否や極性を指定する図ではない。",
+            "保持と、接点以外の保護範囲という異なる役割を読む。",
+            "必要な導電接点まで一律に絶縁する図ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 96,
+              "printedPage": 86
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 180,
+              "printedPage": 170
+            }
+          ],
+          "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+          "imageAssetIds": [
+            "mfg37-required-jig-contact-identification-quiz-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-jig-contact-identification-quiz-diagram": "7c7e0a4ddd9c6560f5543ff63d7b5630928bf2f73dc757b25807d4c1ee206055"
+          }
+        },
+        {
+          "id": "mfg37-required-jig-contact-identification-q03",
+          "lessonId": "mfg1-surface-completion37-lesson-004",
+          "stemJa": "この図を別の材質・処理液の治具へ当てはめる前に必要な確認はどれか。",
+          "optionsJa": [
+            "図と同色なら確認不要。",
+            "チタンなら全ての薬液に必ず適合。",
+            "接点も全て被覆すれば必ず改善。",
+            "保持・導通・材質と処理液の適合を指定仕様で確認。"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "色は実物の適合を保証しない。",
+            "材質名だけで全薬液への適合は決まらない。",
+            "必要な接点の被覆は通電不良につながる場合がある。",
+            "図の概念と実物の適合・接点条件を区別して照合する。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 96,
+              "printedPage": 86
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 180,
+              "printedPage": 170
+            }
+          ],
+          "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+          "imageAssetIds": [
+            "mfg37-required-jig-contact-identification-quiz-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-jig-contact-identification-quiz-diagram": "7c7e0a4ddd9c6560f5543ff63d7b5630928bf2f73dc757b25807d4c1ee206055"
+          }
+        }
+      ],
+      "locales": {
+        "en": {
+          "captionSourceHash": "33f957a56eb17296dcc1cd461e3c4a4d6c1c6fe5a491ceab2b04289e15908733",
+          "caption": "A marks mechanical holding, B the contact that must remain conductive for a process requiring current, and C the protective jig coating that limits unwanted deposits. Check the actual contact layout, material and bath compatibility against the specified requirements.",
+          "questions": {
+            "mfg37-required-jig-contact-identification-q01": {
+              "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+              "stem": "Which labeled position must remain conductive as the electrical contact?",
+              "options": [
+                "A only",
+                "B",
+                "Only the coated surface C",
+                "The blank margin"
+              ],
+              "reasons": [
+                "A identifies holding; B identifies the required contact.",
+                "B is the contact that must conduct when the process requires current.",
+                "C is protection against unwanted deposits, distinct from the required bare contact.",
+                "The blank margin is not a jig contact."
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q02": {
+              "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+              "stem": "Which pairing correctly describes A and C?",
+              "options": [
+                "A:bath concentration; C:heating temperature.",
+                "A:product acceptance; C:supply polarity.",
+                "A:holding the part; C:limiting unwanted deposits on the jig.",
+                "A and C:instructions to insulate every contact."
+              ],
+              "reasons": [
+                "These labels do not represent concentration or temperature.",
+                "The drawing does not specify acceptance or polarity.",
+                "Read the distinct holding and non-contact protection roles.",
+                "It does not instruct blanket insulation of required conductive contacts."
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q03": {
+              "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+              "stem": "Before applying this drawing to another material or bath, what must be checked?",
+              "options": [
+                "No check if the colors match.",
+                "Titanium always suits every chemical.",
+                "Coating all contacts always improves the process.",
+                "Check holding, conduction and material/bath compatibility against specifications."
+              ],
+              "reasons": [
+                "Color does not guarantee actual compatibility.",
+                "A material name cannot establish suitability for all chemicals.",
+                "Coating a required contact may cause poor conduction.",
+                "Distinguish the concept from actual compatibility and contact requirements."
+              ]
+            }
+          }
+        },
+        "vi": {
+          "captionSourceHash": "33f957a56eb17296dcc1cd461e3c4a4d6c1c6fe5a491ceab2b04289e15908733",
+          "caption": "A chỉ vị trí giữ cơ học, B là tiếp điểm phải duy trì dẫn điện khi công đoạn cần dòng điện, C là lớp bảo vệ đồ gá để hạn chế kim loại bám ngoài ý muốn. Bố trí tiếp điểm thực tế, vật liệu và mức tương thích với dung dịch phải đối chiếu theo quy định kỹ thuật.",
+          "questions": {
+            "mfg37-required-jig-contact-identification-q01": {
+              "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+              "stem": "Vị trí nào trong hình là tiếp điểm cần duy trì khả năng dẫn điện?",
+              "options": [
+                "Chỉ A",
+                "B",
+                "Chỉ bề mặt lớp phủ C",
+                "Khoảng trống nền"
+              ],
+              "reasons": [
+                "A chỉ chức năng giữ; tiếp điểm cần dẫn điện được xác định bằng B.",
+                "B là tiếp điểm phải dẫn điện khi công đoạn cần dòng điện.",
+                "C là vùng bảo vệ chống bám ngoài ý muốn, khác với tiếp điểm trần cần thiết.",
+                "Khoảng trống không phải tiếp điểm đồ gá."
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q02": {
+              "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+              "stem": "Cặp vai trò nào của A và C đúng theo hình?",
+              "options": [
+                "A:nồng độ dung dịch; C:nhiệt độ gia nhiệt.",
+                "A:kết luận đạt sản phẩm; C:cực tính nguồn.",
+                "A:giữ chi tiết; C:hạn chế bám ngoài ý muốn trên đồ gá.",
+                "A và C:chỉ dẫn cách điện toàn bộ tiếp điểm."
+              ],
+              "reasons": [
+                "Các ký hiệu không biểu thị nồng độ hoặc nhiệt độ.",
+                "Hình không quy định kết quả đạt hay cực tính.",
+                "Phân biệt vai trò giữ với bảo vệ vùng ngoài tiếp điểm.",
+                "Hình không yêu cầu cách điện đồng loạt các tiếp điểm cần dẫn điện."
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q03": {
+              "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+              "stem": "Trước khi áp dụng hình cho đồ gá bằng vật liệu hoặc dung dịch khác, cần kiểm tra gì?",
+              "options": [
+                "Cùng màu thì không cần kiểm tra.",
+                "Titan luôn phù hợp mọi hóa chất.",
+                "Phủ kín mọi tiếp điểm luôn cải thiện công đoạn.",
+                "Đối chiếu khả năng giữ, dẫn điện và vật liệu–dung dịch theo quy định kỹ thuật."
+              ],
+              "reasons": [
+                "Màu không bảo đảm tương thích thực tế.",
+                "Tên vật liệu không quyết định tương thích với mọi hóa chất.",
+                "Phủ tiếp điểm cần thiết có thể làm dẫn điện kém.",
+                "Cần tách mô hình khái niệm với điều kiện tiếp điểm và tương thích thực tế."
+              ]
+            }
+          }
+        },
+        "id": {
+          "captionSourceHash": "33f957a56eb17296dcc1cd461e3c4a4d6c1c6fe5a491ceab2b04289e15908733",
+          "caption": "A menunjukkan penahanan mekanis, B kontak yang harus tetap menghantarkan listrik pada proses berarus, dan C lapisan pelindung jig untuk membatasi endapan yang tidak diinginkan. Periksa posisi kontak, bahan dan kesesuaian larutan menurut spesifikasi.",
+          "questions": {
+            "mfg37-required-jig-contact-identification-q01": {
+              "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+              "stem": "Posisi mana harus tetap konduktif sebagai kontak listrik?",
+              "options": [
+                "Hanya A",
+                "B",
+                "Hanya permukaan berlapis C",
+                "Ruang kosong"
+              ],
+              "reasons": [
+                "A menandai penahanan; kontak wajib ditandai B.",
+                "B ialah kontak konduktif untuk proses yang memerlukan arus.",
+                "C melindungi dari endapan tak diinginkan, bukan kontak telanjang yang diperlukan.",
+                "Ruang kosong bukan kontak jig."
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q02": {
+              "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+              "stem": "Pasangan peran A dan C yang benar?",
+              "options": [
+                "A:konsentrasi; C:suhu pemanasan.",
+                "A:kelulusan produk; C:polaritas sumber.",
+                "A:menahan benda; C:membatasi endapan pada jig.",
+                "A dan C:instruksi mengisolasi semua kontak."
+              ],
+              "reasons": [
+                "Label bukan konsentrasi atau suhu.",
+                "Gambar tidak menetapkan kelulusan atau polaritas.",
+                "Bedakan penahanan dan perlindungan di luar kontak.",
+                "Bukan perintah mengisolasi seluruh kontak yang harus konduktif."
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q03": {
+              "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+              "stem": "Apa yang diperiksa sebelum menerapkan gambar pada bahan atau larutan lain?",
+              "options": [
+                "Warna sama berarti tak perlu diperiksa.",
+                "Titanium cocok untuk semua bahan kimia.",
+                "Melapisi semua kontak selalu memperbaiki proses.",
+                "Periksa penahanan,konduktivitas dan kesesuaian bahan–larutan menurut spesifikasi."
+              ],
+              "reasons": [
+                "Warna tidak menjamin kesesuaian nyata.",
+                "Nama bahan tidak menjamin semua larutan.",
+                "Lapisan pada kontak penting dapat mengganggu arus.",
+                "Pisahkan konsep dari kesesuaian dan persyaratan kontak nyata."
+              ]
+            }
+          }
+        },
+        "zh-CN": {
+          "captionSourceHash": "33f957a56eb17296dcc1cd461e3c4a4d6c1c6fe5a491ceab2b04289e15908733",
+          "caption": "A表示机械夹持，B表示需要通电的工艺中必须保持导通的接点，C表示减少夹具非预期沉积的保护涂层。实际接点布置、材质及处理液适用性须按指定规格核对。",
+          "questions": {
+            "mfg37-required-jig-contact-identification-q01": {
+              "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+              "stem": "图中哪个位置作为通电接点需要保持导通？",
+              "options": [
+                "仅A",
+                "B",
+                "仅C的涂层表面",
+                "背景空白"
+              ],
+              "reasons": [
+                "A表示夹持，所需通电接点由B标识。",
+                "B表示需要通电的工艺中须保持导通的接点。",
+                "C是减少非预期沉积的保护区域，不是必需的裸露接点。",
+                "空白不是夹具接点。"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q02": {
+              "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+              "stem": "A与C的作用对应正确的是？",
+              "options": [
+                "A：溶液浓度；C：加热温度。",
+                "A：产品合格判定；C：电源极性。",
+                "A：夹持工件；C：减少夹具非预期沉积。",
+                "A和C：将所有接点绝缘的指令。"
+              ],
+              "reasons": [
+                "这些符号不表示浓度或温度。",
+                "本图不指定合格判定或极性。",
+                "应区分夹持与非接点区域保护这两种作用。",
+                "本图不是要求把必需导电接点一律绝缘。"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q03": {
+              "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+              "stem": "用于其他材质或处理液前应确认什么？",
+              "options": [
+                "同色就无需确认。",
+                "钛必定适用于所有药液。",
+                "所有接点涂覆后必定改善。",
+                "按指定规格核对夹持、导通及材质与处理液的适用性。"
+              ],
+              "reasons": [
+                "颜色不保证实际适用性。",
+                "仅凭材质名不能确定适用于所有药液。",
+                "涂覆必需接点可能造成导电不良。",
+                "应区分概念图与实际适用性、接点条件。"
+              ]
+            }
+          }
+        },
+        "zh-TW": {
+          "captionSourceHash": "33f957a56eb17296dcc1cd461e3c4a4d6c1c6fe5a491ceab2b04289e15908733",
+          "caption": "A表示機械夾持，B表示需要通電的製程中必須保持導通的接點，C表示減少治具非預期沉積的保護塗層。實際接點配置、材質及處理液適用性須依指定規格核對。",
+          "questions": {
+            "mfg37-required-jig-contact-identification-q01": {
+              "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+              "stem": "圖中哪個位置作為通電接點需要保持導通？",
+              "options": [
+                "僅A",
+                "B",
+                "僅C的塗層表面",
+                "背景空白"
+              ],
+              "reasons": [
+                "A表示夾持，必要通電接點由B標示。",
+                "B表示需要通電的製程中須保持導通的接點。",
+                "C是減少非預期沉積的保護區，並非必要的裸露接點。",
+                "空白不是治具接點。"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q02": {
+              "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+              "stem": "A與C的作用對應何者正確？",
+              "options": [
+                "A：溶液濃度；C：加熱溫度。",
+                "A：產品合格判定；C：電源極性。",
+                "A：夾持工件；C：減少治具非預期沉積。",
+                "A與C：將所有接點絕緣的指令。"
+              ],
+              "reasons": [
+                "這些符號不表示濃度或溫度。",
+                "本圖不指定合格判定或極性。",
+                "應區分夾持與非接點區域保護兩種作用。",
+                "本圖不是要求把必要導電接點一律絕緣。"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q03": {
+              "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+              "stem": "套用至其他材質或處理液前應確認什麼？",
+              "options": [
+                "同色就不用確認。",
+                "鈦必定適用所有藥液。",
+                "所有接點塗覆後必定改善。",
+                "依指定規格核對夾持、導通及材質與處理液適用性。"
+              ],
+              "reasons": [
+                "顏色不保證實際適用性。",
+                "僅憑材質名稱無法確定適用所有藥液。",
+                "塗覆必要接點可能造成導電不良。",
+                "須區分概念圖與實際適用性、接點條件。"
+              ]
+            }
+          }
+        },
+        "tl": {
+          "captionSourceHash": "33f957a56eb17296dcc1cd461e3c4a4d6c1c6fe5a491ceab2b04289e15908733",
+          "caption": "Ipinapakita ng A ang mekanikal na paghawak, B ang kontak na kailangang manatiling konduktibo sa prosesong nangangailangan ng kuryente, at C ang proteksiyon ng jig laban sa di-kanais-nais na deposito. Suriin sa itinakdang espesipikasyon ang aktuwal na kontak,materyal at pagiging angkop sa solusyon.",
+          "questions": {
+            "mfg37-required-jig-contact-identification-q01": {
+              "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+              "stem": "Aling posisyon ang dapat manatiling konduktibo bilang kontak?",
+              "options": [
+                "A lamang",
+                "B",
+                "Pinahiran na ibabaw C lamang",
+                "Bakanteng margin"
+              ],
+              "reasons": [
+                "Paghawak ang A;B ang itinakdang kontak.",
+                "B ang kontak na dapat maghatid ng kuryente kapag kailangan ng proseso.",
+                "Proteksiyon laban sa deposito ang C,hindi ang kailangang hubad na kontak.",
+                "Hindi kontak ng jig ang bakanteng lugar."
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q02": {
+              "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+              "stem": "Aling pares ng tungkulin ng A at C ang tama?",
+              "options": [
+                "A:konsentrasyon;C:temperatura.",
+                "A:pasa ng produkto;C:polarity.",
+                "A:paghawak ng piyesa;C:pagbawas ng di-kanais-nais na deposito sa jig.",
+                "A at C:utós na i-insulate ang lahat ng kontak."
+              ],
+              "reasons": [
+                "Hindi konsentrasyon o temperatura ang mga marka.",
+                "Walang itinatakdang pasa o polarity ang larawan.",
+                "Magkaiba ang paghawak at proteksiyon sa labas ng kontak.",
+                "Hindi nito iniuutos na i-insulate ang kailangang conductive contacts."
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q03": {
+              "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+              "stem": "Ano ang susuriin bago ilapat sa ibang materyal o solusyon?",
+              "options": [
+                "Wala kung pareho ang kulay.",
+                "Ang titanium ay angkop sa lahat ng kemikal.",
+                "Laging mas mabuti ang pahiran lahat ng kontak.",
+                "Suriin ang paghawak,conductivity at materyal–solusyon ayon sa espesipikasyon."
+              ],
+              "reasons": [
+                "Hindi garantiya ng angkop na gamit ang kulay.",
+                "Hindi sapat ang pangalan ng materyal para sa lahat ng kemikal.",
+                "Maaaring humina ang daloy kapag pinahiran ang mahalagang kontak.",
+                "Ihiwalay ang konsepto sa tunay na compatibility at kondisyon ng kontak."
+              ]
+            }
+          }
+        },
+        "hi": {
+          "captionSourceHash": "33f957a56eb17296dcc1cd461e3c4a4d6c1c6fe5a491ceab2b04289e15908733",
+          "caption": "Aयांत्रिक पकड़,Bधारा वाले काम में चालक रहने वाला संपर्क,Cअनचाहा जमाव रोकने की जिग-परत है।वास्तविक संपर्क,पदार्थ और द्रव की उपयुक्तता निर्दिष्ट विनिर्देश से जाँचें।",
+          "questions": {
+            "mfg37-required-jig-contact-identification-q01": {
+              "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+              "stem": "किस स्थान को विद्युत संपर्क के रूप में चालक रखना चाहिए?",
+              "options": [
+                "केवल A",
+                "B",
+                "केवल Cकी परत वाली सतह",
+                "खाली हाशिया"
+              ],
+              "reasons": [
+                "Aपकड़ है;जरूरी संपर्क Bहै।",
+                "Bधारा चाहिए होने पर चालक रहने वाला संपर्क है।",
+                "Cअनचाहा जमाव रोकता है;यह जरूरी खुला संपर्क नहीं।",
+                "खाली भाग जिग का संपर्क नहीं।"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q02": {
+              "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+              "stem": "AऔरCका सही कार्य-जोड़ा?",
+              "options": [
+                "A:सांद्रता;C:तापमान।",
+                "A:उत्पाद स्वीकृति;C:स्रोत ध्रुवता।",
+                "A:वस्तु पकड़ना;C:जिग पर अनचाहा जमाव रोकना।",
+                "AऔरC:सभी संपर्क इंसुलेट करना।"
+              ],
+              "reasons": [
+                "ये चिह्न सांद्रता या ताप नहीं।",
+                "चित्र स्वीकृति या ध्रुवता नहीं तय करता।",
+                "पकड़ और संपर्क-बाहरी सुरक्षा अलग भूमिका हैं।",
+                "जरूरी चालक संपर्कों का पूर्ण इन्सुलेशन निर्देश नहीं।"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q03": {
+              "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+              "stem": "दूसरे पदार्थ या द्रव में लागू करने से पहले क्या जाँचें?",
+              "options": [
+                "रंग समान तो जाँच नहीं।",
+                "टाइटेनियम हर रसायन में उपयुक्त।",
+                "सभी संपर्क ढकना हमेशा बेहतर।",
+                "विनिर्देश से पकड़,चालकता और पदार्थ–द्रव उपयुक्तता।"
+              ],
+              "reasons": [
+                "रंग वास्तविक उपयुक्तता नहीं सुनिश्चित करता।",
+                "पदार्थ का नाम सभी द्रव की गारंटी नहीं।",
+                "जरूरी संपर्क ढकने से धारा बाधित हो सकती है।",
+                "अवधारणा और वास्तविक उपयुक्तता/संपर्क शर्तें अलग जाँचें।"
+              ]
+            }
+          }
+        },
+        "bn": {
+          "captionSourceHash": "33f957a56eb17296dcc1cd461e3c4a4d6c1c6fe5a491ceab2b04289e15908733",
+          "caption": "Aযান্ত্রিক ধারণ,Bবিদ্যুৎপ্রয়োজনীয় কাজে পরিবাহী রাখতে হবে এমন সংযোগ,Cঅযাচিত জমা কমানোর জিগআবরণ।আসল সংযোগ,পদার্থ ও তরলের উপযোগিতা নির্দিষ্ট বৈশিষ্ট্যে যাচাই করুন।",
+          "questions": {
+            "mfg37-required-jig-contact-identification-q01": {
+              "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+              "stem": "কোন স্থান বৈদ্যুতিক সংযোগ হিসেবে পরিবাহী রাখতে হবে?",
+              "options": [
+                "শুধু A",
+                "B",
+                "শুধু Cএর আবৃত তল",
+                "খালি প্রান্ত"
+              ],
+              "reasons": [
+                "Aধারণ;প্রয়োজনীয় সংযোগ B।",
+                "Bবিদ্যুৎপ্রয়োজনীয় কাজে পরিবাহী সংযোগ।",
+                "Cঅযাচিত জমা রোধের সুরক্ষা,প্রয়োজনীয় খোলা সংযোগ নয়।",
+                "খালি অংশ জিগের সংযোগ নয়।"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q02": {
+              "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+              "stem": "AওCএর সঠিক কাজের জোড়া?",
+              "options": [
+                "A:ঘনত্ব;C:তাপ।",
+                "A:পণ্যের গ্রহণ;C:উৎসের পোলারিটি।",
+                "A:পণ্য ধরা;C:জিগে অযাচিত জমা কমানো।",
+                "AওC:সব সংযোগ নিরোধক করা।"
+              ],
+              "reasons": [
+                "চিহ্নগুলো ঘনত্ব বা তাপ নয়।",
+                "ছবি গ্রহণযোগ্যতা বা পোলারিটি দেয় না।",
+                "ধারণ ও সংযোগবহির্ভূত সুরক্ষা আলাদা।",
+                "সব প্রয়োজনীয় পরিবাহী সংযোগ নিরোধকের নির্দেশ নয়।"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q03": {
+              "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+              "stem": "অন্য পদার্থ বা তরলে প্রয়োগের আগে কী দেখবেন?",
+              "options": [
+                "রং এক হলে পরীক্ষা নয়।",
+                "টাইটানিয়াম সব রাসায়নিকে উপযুক্ত।",
+                "সব সংযোগ আবৃত করলে সবসময় উন্নতি।",
+                "নির্দিষ্ট বৈশিষ্ট্যে ধারণ,পরিবাহিতা ও পদার্থ–তরল উপযোগিতা।"
+              ],
+              "reasons": [
+                "রং আসল উপযোগিতা নিশ্চিত নয়।",
+                "নাম সব তরলের গ্যারান্টি নয়।",
+                "প্রয়োজনীয় সংযোগ ঢাকলে কারেন্ট বাধতে পারে।",
+                "ধারণা ও আসল উপযোগিতা/সংযোগের শর্ত আলাদা দেখুন।"
+              ]
+            }
+          }
+        },
+        "ne": {
+          "captionSourceHash": "33f957a56eb17296dcc1cd461e3c4a4d6c1c6fe5a491ceab2b04289e15908733",
+          "caption": "Aले यान्त्रिक पकड,Bले विद्युत् चाहिने प्रक्रियामा चालक रहनुपर्ने सम्पर्क,Cले अनावश्यक निक्षेप रोक्ने जिगको सुरक्षा लेपन जनाउँछ।वास्तविक सम्पर्क,सामग्री र घोलको अनुकूलता निर्दिष्ट विवरणसँग जाँच्नुहोस्।",
+          "questions": {
+            "mfg37-required-jig-contact-identification-q01": {
+              "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+              "stem": "विद्युत् सम्पर्कका रूपमा कुन स्थान चालक राख्नुपर्छ?",
+              "options": [
+                "Aमात्र",
+                "B",
+                "Cको लेपित सतह मात्र",
+                "खाली किनारा"
+              ],
+              "reasons": [
+                "Aपकड हो;आवश्यक सम्पर्क Bहो।",
+                "Bविद्युत् चाहिने प्रक्रियाको चालक सम्पर्क हो।",
+                "Cअनावश्यक निक्षेप रोक्ने सुरक्षा हो,आवश्यक खुला सम्पर्क होइन।",
+                "खाली भाग जिगको सम्पर्क होइन।"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q02": {
+              "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+              "stem": "AरCको सही भूमिका?",
+              "options": [
+                "A:सान्द्रता;C:ताप।",
+                "A:उत्पादन स्वीकार्यता;C:स्रोत ध्रुवता।",
+                "A:वस्तु समात्ने;C:जिगमा अनावश्यक निक्षेप घटाउने।",
+                "AरC:सबै सम्पर्क इन्सुलेट गर्ने आदेश।"
+              ],
+              "reasons": [
+                "चिह्नले सान्द्रता वा ताप जनाउँदैन।",
+                "चित्रले स्वीकार्यता वा ध्रुवता तोक्दैन।",
+                "पकड र सम्पर्कबाहिरको सुरक्षा अलग भूमिका हुन्।",
+                "आवश्यक चालक सम्पर्क सबै इन्सुलेट गर्ने निर्देशन होइन।"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q03": {
+              "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+              "stem": "अर्को सामग्री वा घोलमा लागू गर्नुअघि के जाँच्ने?",
+              "options": [
+                "रङ उस्तै भए जाँच पर्दैन।",
+                "टाइटानियम सबै रसायनमा उपयुक्त।",
+                "सबै सम्पर्क लेप्दा सधैँ सुधार।",
+                "निर्दिष्ट विवरणअनुसार पकड,चालकता र सामग्री–घोल अनुकूलता।"
+              ],
+              "reasons": [
+                "रङले वास्तविक अनुकूलता सुनिश्चित गर्दैन।",
+                "नामले सबै घोलको अनुकूलता तय गर्दैन।",
+                "आवश्यक सम्पर्क छोप्दा विद्युत् अवरोध हुन सक्छ।",
+                "अवधारणा र वास्तविक सम्पर्क/अनुकूलता अलग जाँच्नुहोस्।"
+              ]
+            }
+          }
+        },
+        "my": {
+          "captionSourceHash": "33f957a56eb17296dcc1cd461e3c4a4d6c1c6fe5a491ceab2b04289e15908733",
+          "caption": "A သည် ပစ္စည်းကို စက်ပိုင်းဆိုင်ရာ ထိန်းထားသည့်နေရာ၊ B သည် လျှပ်စီးလိုသောလုပ်ငန်းတွင် လျှပ်ကူးနေရမည့် ထိတွေ့ချက်၊ C သည် မလိုလားသော သတ္တုတင်မှုကို လျှော့ချသည့် jig အကာလွှာဖြစ်သည်။ တကယ့်ထိတွေ့နေရာ၊ ပစ္စည်းနှင့် ဆေးရည်ကိုက်ညီမှုကို သတ်မှတ်ချက်ဖြင့် စစ်ဆေးပါ။",
+          "questions": {
+            "mfg37-required-jig-contact-identification-q01": {
+              "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+              "stem": "လျှပ်ကူးနေရမည့် ထိတွေ့ချက်မှာ မည်သည့်နေရာလဲ။",
+              "options": [
+                "A သာ",
+                "B",
+                "C အကာမျက်နှာပြင်သာ",
+                "နောက်ခံအလွတ်"
+              ],
+              "reasons": [
+                "A သည် ထိန်းထားမှုကိုပြသည်။ လိုအပ်သည့်ထိတွေ့ချက်က B ဖြစ်သည်။",
+                "B သည် လျှပ်စီးလိုသောအခါ လျှပ်ကူးနေရမည့် ထိတွေ့ချက်ဖြစ်သည်။",
+                "C သည် မလိုသည့်တင်မှုတားသည့်အကာဖြစ်ပြီး လိုအပ်သည့်အကာလွှာမရှိသောထိတွေ့ချက် မဟုတ်ပါ။",
+                "အလွတ်သည် jig ထိတွေ့ချက်မဟုတ်ပါ။"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q02": {
+              "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+              "stem": "A နှင့် C တို့၏ မှန်ကန်သောအလုပ်မှာ။",
+              "options": [
+                "A:ပြင်းအား၊ C:အပူချိန်။",
+                "A:ကုန်ပစ္စည်းလက်ခံမှု၊ C:ဓာတ်အားဝင်ရိုးစွန်း။",
+                "A:ပစ္စည်းထိန်းထားမှု၊ C:jig ပေါ်မလိုသည့်တင်မှုလျှော့ချမှု။",
+                "A နှင့် C:ထိတွေ့ချက်အားလုံးကို လျှပ်ကာလုပ်ရန်။"
+              ],
+              "reasons": [
+                "ဤအမှတ်များသည် ပြင်းအား သို့မဟုတ် အပူချိန်မဟုတ်ပါ။",
+                "ပုံသည် လက်ခံစံ သို့မဟုတ် ဝင်ရိုးစွန်းမသတ်မှတ်ပါ။",
+                "ထိန်းထားခြင်းနှင့် ထိတွေ့ချက်အပြင်ဘက်ကိုကာခြင်း ကွဲပြားသည်။",
+                "လိုအပ်သည့်လျှပ်ကူးချက်အားလုံးကို လျှပ်ကာလုပ်ရန် မညွှန်ပါ။"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q03": {
+              "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+              "stem": "အခြားပစ္စည်း သို့မဟုတ် ဆေးရည်တွင် အသုံးမချမီ ဘာစစ်ရမလဲ။",
+              "options": [
+                "အရောင်တူလျှင် မစစ်ရ။",
+                "တိုက်တေနီယမ်သည် ဆေးအားလုံးနှင့်ကိုက်သည်။",
+                "ထိတွေ့ချက်အားလုံးဖုံးလျှင် အမြဲကောင်းသည်။",
+                "ထိန်းထားမှု၊ လျှပ်ကူးမှု၊ ပစ္စည်းနှင့်ဆေးရည်ကိုက်ညီမှုကို သတ်မှတ်ချက်ဖြင့်စစ်ပါ။"
+              ],
+              "reasons": [
+                "အရောင်သည် တကယ့်ကိုက်ညီမှု မအာမခံပါ။",
+                "ပစ္စည်းအမည်တစ်ခုတည်းဖြင့် ဆေးအားလုံးနှင့်မဆုံးဖြတ်နိုင်ပါ။",
+                "လိုသည့်ထိတွေ့ချက်ဖုံးလျှင် လျှပ်ကူးမှုညံ့နိုင်သည်။",
+                "အယူအဆနှင့် တကယ့်ကိုက်ညီမှု/ထိတွေ့အခြေအနေကို ခွဲစစ်ပါ။"
+              ]
+            }
+          }
+        },
+        "th": {
+          "captionSourceHash": "33f957a56eb17296dcc1cd461e3c4a4d6c1c6fe5a491ceab2b04289e15908733",
+          "caption": "A แสดงการจับยึดเชิงกล B คือจุดสัมผัสที่ต้องนำไฟฟ้าในกระบวนการที่ใช้กระแส และ C คือสารเคลือบป้องกันการเกาะที่ไม่ต้องการบนจิ๊ก ตรวจสอบตำแหน่งสัมผัส วัสดุ และความเข้ากันได้กับน้ำยาตามข้อกำหนดจริง",
+          "questions": {
+            "mfg37-required-jig-contact-identification-q01": {
+              "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+              "stem": "ตำแหน่งใดต้องคงการนำไฟฟ้าเป็นจุดสัมผัส?",
+              "options": [
+                "เฉพาะ A",
+                "B",
+                "เฉพาะผิวเคลือบ C",
+                "พื้นที่ว่าง"
+              ],
+              "reasons": [
+                "A แสดงการจับยึด ส่วนจุดสัมผัสที่ต้องใช้คือ B",
+                "B แสดงจุดที่ต้องนำไฟฟ้าเมื่อกระบวนการต้องใช้กระแส",
+                "C เป็นส่วนป้องกันการเกาะ ไม่ใช่จุดเปลือยที่จำเป็น",
+                "พื้นที่ว่างไม่ใช่จุดสัมผัสจิ๊ก"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q02": {
+              "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+              "stem": "คู่หน้าที่ของ A และ C ข้อใดถูก?",
+              "options": [
+                "A:ความเข้มข้น C:อุณหภูมิ",
+                "A:ผ่านเกณฑ์สินค้า C:ขั้วไฟ",
+                "A:จับยึดชิ้นงาน C:ลดการเกาะที่ไม่ต้องการบนจิ๊ก",
+                "A และ C:ให้หุ้มฉนวนทุกจุดสัมผัส"
+              ],
+              "reasons": [
+                "สัญลักษณ์ไม่ใช่ความเข้มข้นหรืออุณหภูมิ",
+                "ภาพไม่ได้กำหนดเกณฑ์ผ่านหรือขั้วไฟ",
+                "แยกหน้าที่จับยึดกับป้องกันบริเวณนอกจุดสัมผัส",
+                "ไม่ได้สั่งให้หุ้มฉนวนจุดที่จำเป็นต้องนำไฟฟ้าทั้งหมด"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q03": {
+              "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+              "stem": "ก่อนใช้ภาพกับวัสดุหรือน้ำยาอื่น ต้องตรวจอะไร?",
+              "options": [
+                "สีตรงกันไม่ต้องตรวจ",
+                "ไทเทเนียมใช้ได้กับสารเคมีทุกชนิด",
+                "เคลือบทุกจุดสัมผัสย่อมดีขึ้น",
+                "ตรวจการจับยึด การนำไฟฟ้า และวัสดุ–น้ำยาตามข้อกำหนด"
+              ],
+              "reasons": [
+                "สีไม่รับรองความเหมาะสมจริง",
+                "ชื่อวัสดุไม่รับรองน้ำยาทุกชนิด",
+                "เคลือบจุดจำเป็นอาจทำให้นำไฟฟ้าไม่ดี",
+                "แยกภาพแนวคิดจากความเหมาะสมและเงื่อนไขสัมผัสจริง"
+              ]
+            }
+          }
+        },
+        "km": {
+          "captionSourceHash": "33f957a56eb17296dcc1cd461e3c4a4d6c1c6fe5a491ceab2b04289e15908733",
+          "caption": "A បង្ហាញការកាន់ជាប់ផ្នែកមេកានិច B ជាចំណុចប៉ះដែលត្រូវនាំចរន្តក្នុងដំណើរការដែលត្រូវការអគ្គិសនី ហើយ C ជាស្រទាប់ការពារឧបករណ៍ចាប់ដើម្បីកាត់បន្ថយកំណកមិនចង់បាន។ ពិនិត្យទីតាំងប៉ះ សម្ភារៈ និងភាពសមស្របជាមួយសូលុយស្យុងគីមីតាមលក្ខណៈកំណត់។",
+          "questions": {
+            "mfg37-required-jig-contact-identification-q01": {
+              "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+              "stem": "ទីតាំងណាត្រូវរក្សាការនាំចរន្តជាចំណុចប៉ះអគ្គិសនី?",
+              "options": [
+                "តែ A",
+                "B",
+                "តែផ្ទៃស្រោប C",
+                "ចន្លោះទំនេរ"
+              ],
+              "reasons": [
+                "A ជាការកាន់ជាប់ ហើយចំណុចប៉ះចាំបាច់គឺ B។",
+                "B ជាចំណុចត្រូវនាំចរន្តពេលដំណើរការត្រូវការអគ្គិសនី។",
+                "C ការពារកំណកមិនចង់បាន មិនមែនចំណុចប៉ះទទេចាំបាច់ទេ។",
+                "ចន្លោះទំនេរមិនមែនចំណុចប៉ះឧបករណ៍ចាប់ទេ។"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q02": {
+              "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+              "stem": "គូតួនាទី A និង C មួយណាត្រឹមត្រូវ?",
+              "options": [
+                "A:កំហាប់ C:សីតុណ្ហភាព។",
+                "A:ការទទួលផលិតផល C:ប៉ូលប្រភព។",
+                "A:កាន់វត្ថុ C:កាត់បន្ថយកំណកមិនចង់បានលើឧបករណ៍ចាប់។",
+                "A និង C:បញ្ជាឱ្យបិទអ៊ីសូឡង់គ្រប់ចំណុចប៉ះ។"
+              ],
+              "reasons": [
+                "សញ្ញាមិនតំណាងកំហាប់ឬសីតុណ្ហភាពទេ។",
+                "រូបមិនកំណត់ការទទួលឬប៉ូលទេ។",
+                "បំបែកតួនាទីកាន់ជាប់និងការពារក្រៅចំណុចប៉ះ។",
+                "មិនបញ្ជាឱ្យបិទចំណុចនាំចរន្តចាំបាច់ទាំងអស់ទេ។"
+              ]
+            },
+            "mfg37-required-jig-contact-identification-q03": {
+              "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+              "stem": "មុនអនុវត្តរូបទៅសម្ភារៈឬសូលុយស្យុងគីមីផ្សេង ត្រូវពិនិត្យអ្វី?",
+              "options": [
+                "ពណ៌ដូចគ្នាមិនបាច់ពិនិត្យ។",
+                "ទីតានីយ៉ូមសមគ្រប់សារធាតុគីមី។",
+                "ស្រោបចំណុចប៉ះទាំងអស់តែងតែល្អ។",
+                "ពិនិត្យការកាន់ជាប់ ការនាំចរន្ត និងសម្ភារៈ–សូលុយស្យុងគីមីតាមលក្ខណៈកំណត់។"
+              ],
+              "reasons": [
+                "ពណ៌មិនធានាភាពសមស្របពិតទេ។",
+                "ឈ្មោះសម្ភារៈមិនកំណត់ភាពសមនឹងសូលុយស្យុងគីមីគ្រប់ប្រភេទទេ។",
+                "ការស្រោបចំណុចចាំបាច់អាចរារាំងចរន្ត។",
+                "បំបែកគំនិតពីភាពសមស្របនិងលក្ខខណ្ឌប៉ះពិត។"
+              ]
+            }
+          }
+        }
+      },
+      "status": "ai_source_compared_preview",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false
+    },
+    {
+      "id": "mfg37-required-indicator-color-recognition",
+      "lessonIds": [
+        "mfg1-surface-completion37-lesson-003",
+        "mfg1-surface-lesson-002"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-completion37-lesson-003": "58bc7a539e23c41699f91da7210087a090d741a0a6b331aa2004b2b0efc30c90",
+        "mfg1-surface-lesson-002": "90f19288d5d8f8eaa298bac95b9c13fab266bc24830b9764b0a473a3bc75dfb0"
+      },
+      "titleJa": "指示薬名と呈色の組合せを見分ける",
+      "captionJa": "指示薬名を先に確認します。代表例はフェノールフタレインの無色から赤色系、メチルオレンジの赤色系から黄色系、BTBの黄色・緑色・青色です。各変色範囲と条件は異なり、pH試験紙は製品の色見本で読みます。",
+      "assets": [
+        {
+          "id": "mfg37-required-indicator-color-recognition-diagram",
+          "file": "assets/manufacturing/recognition38/indicators-reference.png",
+          "width": 1600,
+          "height": 1200,
+          "altJa": "三つの指示薬を別の行に配置。フェノールフタレインは無色と赤色系、メチルオレンジは赤色系と黄色系、BTBは黄色・緑色・青色。色名も併記し、数値pH目盛りや全製品共通の校正表とはしない。",
+          "sha256": "8770d7b16b1ff91f666b7b5d90f3747df2e42ceed0a27467f7923c9072d4e358"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg37-required-indicator-color-recognition-q01",
+          "lessonId": "mfg1-surface-completion37-lesson-003",
+          "stemJa": "図のフェノールフタレイン行に対応する代表的な呈色の組合せはどれか。",
+          "optionsJa": [
+            "無色から赤色系。",
+            "常に緑色だけ。",
+            "青色から黒色。",
+            "全てのpHで黄色。"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "図では無色側と赤色系側を区別している。",
+            "緑色だけという対応ではない。",
+            "この行に青色から黒色という対応は示していない。",
+            "全範囲で黄色という指示薬ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 67,
+              "printedPage": 57
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 110,
+              "printedPage": 100
+            }
+          ],
+          "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+          "imageAssetIds": [
+            "mfg37-required-indicator-color-recognition-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-indicator-color-recognition-diagram": "8770d7b16b1ff91f666b7b5d90f3747df2e42ceed0a27467f7923c9072d4e358"
+          }
+        },
+        {
+          "id": "mfg37-required-indicator-color-recognition-q02",
+          "lessonId": "mfg1-surface-completion37-lesson-003",
+          "stemJa": "図のBTB行で、中間の色見本に示した色はどれか。",
+          "optionsJa": [
+            "赤色",
+            "無色",
+            "黒色",
+            "緑色"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "このBTB行の中間の色は赤ではない。",
+            "このBTB行の中間の色は無色ではない。",
+            "このBTB行の中間に黒色は示していない。",
+            "BTB行は黄色・緑色・青色という代表的な対応を示している。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 67,
+              "printedPage": 57
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 110,
+              "printedPage": 100
+            }
+          ],
+          "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+          "imageAssetIds": [
+            "mfg37-required-indicator-color-recognition-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-indicator-color-recognition-diagram": "8770d7b16b1ff91f666b7b5d90f3747df2e42ceed0a27467f7923c9072d4e358"
+          }
+        },
+        {
+          "id": "mfg37-required-indicator-color-recognition-q03",
+          "lessonId": "mfg1-surface-completion37-lesson-003",
+          "stemJa": "種類不明のpH試験紙が赤色に見えた。適切な判断はどれか。",
+          "optionsJa": [
+            "図だけで数値pHを確定。",
+            "製品名・使用条件・その製品の色見本を確認。",
+            "どの指示薬でも赤なら同じpH。",
+            "試験紙の種類は記録しない。"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "この図は全試験紙の数値校正表ではない。",
+            "試験紙の製品と使用条件に対応する色見本が必要。",
+            "指示薬ごとに変色する範囲と条件は異なる。",
+            "種類や製品の記録は解釈に必要。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 67,
+              "printedPage": 57
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 110,
+              "printedPage": 100
+            }
+          ],
+          "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+          "imageAssetIds": [
+            "mfg37-required-indicator-color-recognition-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-indicator-color-recognition-diagram": "8770d7b16b1ff91f666b7b5d90f3747df2e42ceed0a27467f7923c9072d4e358"
+          }
+        },
+        {
+          "id": "mfg37-required-indicator-color-recognition-q04",
+          "lessonId": "mfg1-surface-completion37-lesson-003",
+          "stemJa": "図のメチルオレンジ行で、低いpH側から高いpH側への代表的な色の組合せはどれか。",
+          "optionsJa": [
+            "青色から黒色。",
+            "全て無色。",
+            "赤色系から黄色系。",
+            "全て緑色。"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "この行に青色から黒色という対応はない。",
+            "この行を全範囲で無色とはしていない。",
+            "図はメチルオレンジの赤色系側と黄色系側を示す。",
+            "緑色だけという対応ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 67,
+              "printedPage": 57
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 110,
+              "printedPage": 100
+            }
+          ],
+          "imageAssetIds": [
+            "mfg37-required-indicator-color-recognition-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-indicator-color-recognition-diagram": "8770d7b16b1ff91f666b7b5d90f3747df2e42ceed0a27467f7923c9072d4e358"
+          },
+          "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5"
+        }
+      ],
+      "locales": {
+        "en": {
+          "captionSourceHash": "b82e4e47ab0489a0a8be9da08e3409852b415343961165f8be92b43156abcfc7",
+          "caption": "Identify the indicator first. Representative colors are colorless to red/pink for phenolphthalein, red to yellow for methyl orange, and yellow, green and blue for BTB. Transition ranges and conditions differ. Read pH strips against the particular product’s color reference.",
+          "questions": {
+            "mfg37-required-indicator-color-recognition-q01": {
+              "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+              "stem": "Which representative colors match the phenolphthalein row?",
+              "options": [
+                "Colorless to red/pink.",
+                "Always green only.",
+                "Blue to black.",
+                "Yellow at every pH."
+              ],
+              "reasons": [
+                "The row distinguishes a colorless side from a red/pink side.",
+                "This is not a green-only correspondence.",
+                "The row does not show blue to black.",
+                "It is not yellow across the entire range."
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q02": {
+              "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+              "stem": "What color is the middle sample in the BTB row?",
+              "options": [
+                "Red",
+                "Colorless",
+                "Black",
+                "Green"
+              ],
+              "reasons": [
+                "The middle BTB sample is not red.",
+                "The middle BTB sample is not colorless.",
+                "No black middle sample is shown.",
+                "The BTB row shows the representative yellow–green–blue sequence."
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q03": {
+              "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+              "stem": "An unidentified pH strip appears red. What is appropriate?",
+              "options": [
+                "Determine an exact pH from this drawing alone.",
+                "Check the product, conditions and its own color reference.",
+                "Red means the same pH for every indicator.",
+                "Do not record the strip type."
+              ],
+              "reasons": [
+                "This is not a numerical calibration chart for all strips.",
+                "The color reference must match the product and use conditions.",
+                "Transition ranges and conditions differ between indicators.",
+                "The type and product record are needed for interpretation."
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q04": {
+              "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5",
+              "stem": "In the methyl-orange row, which representative colors run from the lower-pH side to the higher-pH side?",
+              "options": [
+                "Blue to black.",
+                "Always colorless.",
+                "Red to yellow.",
+                "Always green."
+              ],
+              "reasons": [
+                "This row has no blue-to-black sequence.",
+                "The row is not colorless throughout.",
+                "It shows the red side and yellow side of methyl orange.",
+                "This is not a green-only correspondence."
+              ]
+            }
+          }
+        },
+        "vi": {
+          "captionSourceHash": "b82e4e47ab0489a0a8be9da08e3409852b415343961165f8be92b43156abcfc7",
+          "caption": "Trước hết xác định tên chất chỉ thị. Ví dụ điển hình: phenolphthalein từ không màu sang nhóm đỏ/hồng; methyl orange từ nhóm đỏ sang nhóm vàng; BTB có vàng, xanh lá và xanh dương. Khoảng chuyển màu và điều kiện khác nhau. Giấy pH phải đọc theo bảng màu của đúng sản phẩm.",
+          "questions": {
+            "mfg37-required-indicator-color-recognition-q01": {
+              "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+              "stem": "Cặp màu điển hình nào ứng với hàng phenolphthalein?",
+              "options": [
+                "Không màu sang nhóm đỏ/hồng.",
+                "Luôn chỉ xanh lá.",
+                "Xanh dương sang đen.",
+                "Vàng ở mọi pH."
+              ],
+              "reasons": [
+                "Hàng này phân biệt phía không màu với phía đỏ/hồng.",
+                "Không phải quan hệ chỉ có xanh lá.",
+                "Hàng không thể hiện chuyển xanh dương sang đen.",
+                "Không phải chỉ thị luôn vàng toàn khoảng."
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q02": {
+              "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+              "stem": "Mẫu màu giữa hàng BTB là màu nào?",
+              "options": [
+                "Đỏ",
+                "Không màu",
+                "Đen",
+                "Xanh lá"
+              ],
+              "reasons": [
+                "Mẫu giữa hàng BTB không phải đỏ.",
+                "Mẫu giữa không phải không màu.",
+                "Không có mẫu đen ở giữa.",
+                "Hàng BTB thể hiện chuỗi điển hình vàng–xanh lá–xanh dương."
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q03": {
+              "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+              "stem": "Giấy pH chưa rõ loại trông có màu đỏ. Cách xử lý nào phù hợp?",
+              "options": [
+                "Chốt pH chính xác chỉ từ hình này.",
+                "Kiểm tra sản phẩm, điều kiện dùng và bảng màu riêng của sản phẩm.",
+                "Mọi chỉ thị có màu đỏ đều cùng pH.",
+                "Không ghi loại giấy."
+              ],
+              "reasons": [
+                "Đây không phải bảng hiệu chuẩn số cho mọi giấy pH.",
+                "Bảng màu phải phù hợp sản phẩm và điều kiện sử dụng.",
+                "Khoảng và điều kiện chuyển màu khác nhau theo chất chỉ thị.",
+                "Loại giấy và sản phẩm cần được ghi để diễn giải."
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q04": {
+              "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5",
+              "stem": "Hàng methyl orange có cặp màu điển hình nào từ phía pH thấp sang phía pH cao?",
+              "options": [
+                "Xanh dương sang đen.",
+                "Luôn không màu.",
+                "Nhóm đỏ sang nhóm vàng.",
+                "Luôn xanh lá."
+              ],
+              "reasons": [
+                "Hàng không có chuỗi xanh dương sang đen.",
+                "Không thể hiện không màu toàn khoảng.",
+                "Hình cho thấy phía đỏ và phía vàng của methyl orange.",
+                "Không phải quan hệ chỉ có xanh lá."
+              ]
+            }
+          }
+        },
+        "id": {
+          "captionSourceHash": "b82e4e47ab0489a0a8be9da08e3409852b415343961165f8be92b43156abcfc7",
+          "caption": "Kenali indikator lebih dahulu. Contoh warna: fenolftalein tidak berwarna menjadi merah/merah muda; metil jingga merah menjadi kuning; BTB kuning,hijau,biru. Rentang peralihan dan kondisi berbeda. Kertas pH dibaca dengan acuan warna produknya sendiri.",
+          "questions": {
+            "mfg37-required-indicator-color-recognition-q01": {
+              "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+              "stem": "Pasangan warna contoh pada baris fenolftalein?",
+              "options": [
+                "Tidak berwarna ke merah/merah muda.",
+                "Selalu hijau saja.",
+                "Biru ke hitam.",
+                "Kuning pada semua pH."
+              ],
+              "reasons": [
+                "Baris membedakan sisi tidak berwarna dan merah/merah muda.",
+                "Bukan pasangan hijau saja.",
+                "Biru ke hitam tidak ditampilkan.",
+                "Bukan kuning di seluruh rentang."
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q02": {
+              "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+              "stem": "Apa warna sampel tengah pada baris BTB?",
+              "options": [
+                "Merah",
+                "Tidak berwarna",
+                "Hitam",
+                "Hijau"
+              ],
+              "reasons": [
+                "Bagian tengah BTB bukan merah.",
+                "Bagian tengah bukan tidak berwarna.",
+                "Hitam tidak ditampilkan di tengah.",
+                "BTB menampilkan urutan contoh kuning–hijau–biru."
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q03": {
+              "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+              "stem": "Kertas pH tak dikenal tampak merah. Tindakan tepat?",
+              "options": [
+                "Tentukan pH pasti hanya dari gambar.",
+                "Periksa produk,kondisi dan acuan warnanya sendiri.",
+                "Merah berarti pH sama untuk semua indikator.",
+                "Jangan catat jenis kertas."
+              ],
+              "reasons": [
+                "Ini bukan tabel kalibrasi numerik semua kertas.",
+                "Acuan harus sesuai produk dan kondisi pakai.",
+                "Rentang dan kondisi peralihan tiap indikator berbeda.",
+                "Identitas produk diperlukan untuk interpretasi."
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q04": {
+              "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5",
+              "stem": "Warna contoh metil jingga dari sisi pH rendah ke tinggi?",
+              "options": [
+                "Biru ke hitam.",
+                "Selalu tidak berwarna.",
+                "Merah ke kuning.",
+                "Selalu hijau."
+              ],
+              "reasons": [
+                "Urutan biru–hitam tidak ada.",
+                "Bukan tidak berwarna di semua rentang.",
+                "Gambar menunjukkan sisi merah dan kuning metil jingga.",
+                "Bukan hijau saja."
+              ]
+            }
+          }
+        },
+        "zh-CN": {
+          "captionSourceHash": "b82e4e47ab0489a0a8be9da08e3409852b415343961165f8be92b43156abcfc7",
+          "caption": "先确认指示剂名称。典型颜色为：酚酞无色至红色系，甲基橙红色系至黄色系，BTB黄色、绿色、蓝色。各指示剂的变色范围和条件不同；pH试纸须按该产品的比色表读取。",
+          "questions": {
+            "mfg37-required-indicator-color-recognition-q01": {
+              "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+              "stem": "酚酞行的典型颜色组合是？",
+              "options": [
+                "无色至红色系。",
+                "始终只有绿色。",
+                "蓝色至黑色。",
+                "所有pH均为黄色。"
+              ],
+              "reasons": [
+                "该行区分无色侧与红色系侧。",
+                "不是只有绿色的对应。",
+                "该行没有蓝至黑的对应。",
+                "并非整个范围均为黄色。"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q02": {
+              "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+              "stem": "BTB行中间的色样是什么颜色？",
+              "options": [
+                "红色",
+                "无色",
+                "黑色",
+                "绿色"
+              ],
+              "reasons": [
+                "该BTB行中间不是红色。",
+                "中间不是无色。",
+                "中间没有黑色色样。",
+                "BTB行展示黄色、绿色、蓝色的典型对应。"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q03": {
+              "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+              "stem": "不明型号的pH试纸呈红色，正确做法是？",
+              "options": [
+                "仅凭此图确定数值pH。",
+                "核对产品、使用条件及该产品比色表。",
+                "所有指示剂红色均为同一pH。",
+                "不记录试纸种类。"
+              ],
+              "reasons": [
+                "此图不是所有试纸的数值校准表。",
+                "须使用对应产品及使用条件的比色表。",
+                "指示剂的变色范围与条件各不相同。",
+                "解释结果需要种类和产品记录。"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q04": {
+              "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5",
+              "stem": "甲基橙行从较低pH侧至较高pH侧的典型颜色是？",
+              "options": [
+                "蓝色至黑色。",
+                "始终无色。",
+                "红色系至黄色系。",
+                "始终绿色。"
+              ],
+              "reasons": [
+                "该行没有蓝至黑的对应。",
+                "不是全范围无色。",
+                "图示甲基橙的红色系侧与黄色系侧。",
+                "并非只有绿色。"
+              ]
+            }
+          }
+        },
+        "zh-TW": {
+          "captionSourceHash": "b82e4e47ab0489a0a8be9da08e3409852b415343961165f8be92b43156abcfc7",
+          "caption": "先確認指示劑名稱。典型顏色為：酚酞無色至紅色系，甲基橙紅色系至黃色系，BTB黃色、綠色、藍色。各指示劑的變色範圍及條件不同；pH試紙須依該產品的比色表判讀。",
+          "questions": {
+            "mfg37-required-indicator-color-recognition-q01": {
+              "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+              "stem": "酚酞列的典型顏色組合為何？",
+              "options": [
+                "無色至紅色系。",
+                "始終只有綠色。",
+                "藍色至黑色。",
+                "所有pH皆為黃色。"
+              ],
+              "reasons": [
+                "該列區分無色側與紅色系側。",
+                "並非只有綠色的對應。",
+                "該列沒有藍至黑的對應。",
+                "並非整個範圍皆為黃色。"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q02": {
+              "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+              "stem": "BTB列中間色樣是什麼顏色？",
+              "options": [
+                "紅色",
+                "無色",
+                "黑色",
+                "綠色"
+              ],
+              "reasons": [
+                "該列中間不是紅色。",
+                "中間不是無色。",
+                "中間沒有黑色色樣。",
+                "BTB列顯示黃色、綠色、藍色的典型對應。"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q03": {
+              "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+              "stem": "不明型號pH試紙呈紅色，適當做法為何？",
+              "options": [
+                "僅憑此圖確定數值pH。",
+                "核對產品、使用條件及該產品比色表。",
+                "所有指示劑呈紅色皆為同一pH。",
+                "不記錄試紙種類。"
+              ],
+              "reasons": [
+                "本圖不是所有試紙的數值校正表。",
+                "須使用符合產品及條件的比色表。",
+                "各指示劑變色範圍與條件不同。",
+                "判讀需要種類及產品紀錄。"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q04": {
+              "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5",
+              "stem": "甲基橙列由較低pH側至較高pH側的典型顏色為何？",
+              "options": [
+                "藍色至黑色。",
+                "始終無色。",
+                "紅色系至黃色系。",
+                "始終綠色。"
+              ],
+              "reasons": [
+                "該列沒有藍至黑對應。",
+                "並非全範圍無色。",
+                "圖示甲基橙的紅色系側與黃色系側。",
+                "並非只有綠色。"
+              ]
+            }
+          }
+        },
+        "tl": {
+          "captionSourceHash": "b82e4e47ab0489a0a8be9da08e3409852b415343961165f8be92b43156abcfc7",
+          "caption": "Kilalanin muna ang indicator. Mga halimbawang kulay: walang kulay hanggang pula/rosas para sa phenolphthalein,pula hanggang dilaw para sa methyl orange,at dilaw,berde,asul para sa BTB. Magkakaiba ang saklaw at kondisyon ng pagbabago. Gamitin ang sariling color reference ng pH strip.",
+          "questions": {
+            "mfg37-required-indicator-color-recognition-q01": {
+              "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+              "stem": "Aling halimbawa ng kulay ang nasa phenolphthalein row?",
+              "options": [
+                "Walang kulay tungo sa pula/rosas.",
+                "Laging berde lamang.",
+                "Asul tungo sa itim.",
+                "Dilaw sa lahat ng pH."
+              ],
+              "reasons": [
+                "Magkahiwalay ang walang-kulay at pula/rosas na panig.",
+                "Hindi berde lamang ang ipinapakita.",
+                "Walang asul-paitim na pares dito.",
+                "Hindi dilaw sa buong saklaw."
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q02": {
+              "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+              "stem": "Ano ang gitnang kulay sa BTB row?",
+              "options": [
+                "Pula",
+                "Walang kulay",
+                "Itim",
+                "Berde"
+              ],
+              "reasons": [
+                "Hindi pula ang gitna sa row na ito.",
+                "Hindi walang kulay ang gitna.",
+                "Walang itim na sample sa gitna.",
+                "Dilaw–berde–asul ang halimbawang pagkakasunod ng BTB."
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q03": {
+              "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+              "stem": "Mukhang pula ang di-kilalang pH strip. Ano ang wasto?",
+              "options": [
+                "Tukuyin ang eksaktong pH sa larawang ito lang.",
+                "Suriin ang produkto,kondisyon at sariling color reference nito.",
+                "Parehong pH ang pula sa lahat ng indicator.",
+                "Huwag itala ang uri ng strip."
+              ],
+              "reasons": [
+                "Hindi ito numerical calibration ng lahat ng strip.",
+                "Dapat tumugma sa produkto at gamit ang color reference.",
+                "Iba-iba ang transition range at kondisyon.",
+                "Kailangan ang uri at produktong ginamit sa pagpapakahulugan."
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q04": {
+              "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5",
+              "stem": "Sa methyl-orange row,ano ang kulay mula sa mas mababang pH tungo sa mas mataas?",
+              "options": [
+                "Asul tungo sa itim.",
+                "Laging walang kulay.",
+                "Pula tungo sa dilaw.",
+                "Laging berde."
+              ],
+              "reasons": [
+                "Walang asul-paitim na pares dito.",
+                "Hindi ito walang kulay sa buong saklaw.",
+                "Pula at dilaw na panig ang ipinakita para sa methyl orange.",
+                "Hindi berde lamang."
+              ]
+            }
+          }
+        },
+        "hi": {
+          "captionSourceHash": "b82e4e47ab0489a0a8be9da08e3409852b415343961165f8be92b43156abcfc7",
+          "caption": "पहले सूचक पहचानें।उदाहरण:फिनॉल्फ्थेलीन रंगहीन से लाल/गुलाबी,मिथाइल ऑरेंज लाल से पीला,BTBपीला–हरा–नीला।परिवर्तन की सीमा और शर्तें अलग हैं;pHपट्टी उसी उत्पाद के रंग-पैमाने से पढ़ें।",
+          "questions": {
+            "mfg37-required-indicator-color-recognition-q01": {
+              "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+              "stem": "फिनॉल्फ्थेलीन पंक्ति के उदाहरण रंग?",
+              "options": [
+                "रंगहीन से लाल/गुलाबी।",
+                "हमेशा हरा।",
+                "नीला से काला।",
+                "हर pHपर पीला।"
+              ],
+              "reasons": [
+                "पंक्ति रंगहीन और लाल/गुलाबी पक्ष दिखाती है।",
+                "केवल हरे का संबंध नहीं।",
+                "यह नीला-काला नहीं दिखाती।",
+                "पूरी सीमा में पीला नहीं है।"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q02": {
+              "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+              "stem": "BTBपंक्ति के बीच का रंग?",
+              "options": [
+                "लाल",
+                "रंगहीन",
+                "काला",
+                "हरा"
+              ],
+              "reasons": [
+                "बीच का BTBलाल नहीं।",
+                "बीच रंगहीन नहीं।",
+                "बीच काला नहीं दिखा।",
+                "BTBका उदाहरण क्रम पीला–हरा–नीला है।"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q03": {
+              "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+              "stem": "अज्ञात pHपट्टी लाल दिखती है।उचित कार्रवाई?",
+              "options": [
+                "इसी चित्र से सटीक pHतय।",
+                "उत्पाद,शर्तें और उसी का रंग-पैमाना देखें।",
+                "हर सूचक में लाल का pHएक।",
+                "पट्टी का प्रकार न लिखें।"
+              ],
+              "reasons": [
+                "यह सभी पट्टियों की संख्यात्मक कैलिब्रेशन नहीं।",
+                "उत्पाद और उपयोग के अनुरूप रंग-पैमाना चाहिए।",
+                "हर सूचक की सीमा/शर्तें अलग।",
+                "अर्थ समझने को प्रकार और उत्पाद रिकॉर्ड चाहिए।"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q04": {
+              "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5",
+              "stem": "मिथाइल ऑरेंज में कम से अधिक pHपक्ष का उदाहरण?",
+              "options": [
+                "नीला से काला।",
+                "सदा रंगहीन।",
+                "लाल से पीला।",
+                "सदा हरा।"
+              ],
+              "reasons": [
+                "इस पंक्ति में नीला-काला नहीं।",
+                "पूरे क्षेत्र को रंगहीन नहीं कहा।",
+                "लाल और पीले पक्ष दिखाए हैं।",
+                "केवल हरा नहीं।"
+              ]
+            }
+          }
+        },
+        "bn": {
+          "captionSourceHash": "b82e4e47ab0489a0a8be9da08e3409852b415343961165f8be92b43156abcfc7",
+          "caption": "আগে নির্দেশক চিনুন।উদাহরণ:ফেনলফথ্যালিন বর্ণহীন থেকে লাল/গোলাপি,মিথাইল অরেঞ্জ লাল থেকে হলুদ,BTBহলুদ–সবুজ–নীল।পরিবর্তনপরিসর ও শর্ত ভিন্ন;pHকাগজ পণ্যটির নিজস্ব রংতালিকায় পড়ুন।",
+          "questions": {
+            "mfg37-required-indicator-color-recognition-q01": {
+              "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+              "stem": "ফেনলফথ্যালিন সারির উদাহরণ রং?",
+              "options": [
+                "বর্ণহীন থেকে লাল/গোলাপি।",
+                "সর্বদা সবুজ।",
+                "নীল থেকে কালো।",
+                "সব pHতে হলুদ।"
+              ],
+              "reasons": [
+                "সারি বর্ণহীন ও লাল/গোলাপি পাশ দেখায়।",
+                "শুধু সবুজ নয়।",
+                "নীল-কালো দেখানো নয়।",
+                "পুরো পরিসরে হলুদ নয়।"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q02": {
+              "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+              "stem": "BTBসারির মাঝের রং?",
+              "options": [
+                "লাল",
+                "বর্ণহীন",
+                "কালো",
+                "সবুজ"
+              ],
+              "reasons": [
+                "মাঝের BTBলাল নয়।",
+                "মাঝ বর্ণহীন নয়।",
+                "মাঝে কালো নেই।",
+                "BTBএর উদাহরণ হলুদ–সবুজ–নীল।"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q03": {
+              "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+              "stem": "অজ্ঞাত pHকাগজ লাল দেখায়।সঠিক করণীয়?",
+              "options": [
+                "ছবিতেই সঠিক pHঠিক।",
+                "পণ্য,শর্ত ও নিজস্ব রংতালিকা দেখুন।",
+                "সব নির্দেশকে লাল একই pH।",
+                "কাগজের ধরন লিখবেন না।"
+              ],
+              "reasons": [
+                "এটি সব কাগজের সংখ্যাগত ক্যালিব্রেশন নয়।",
+                "পণ্য ও ব্যবহারশর্তমাফিক রংতালিকা দরকার।",
+                "প্রতিটির পরিবর্তনপরিসর/শর্ত আলাদা।",
+                "ব্যাখ্যায় ধরন ও পণ্যের রেকর্ড দরকার।"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q04": {
+              "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5",
+              "stem": "মিথাইল অরেঞ্জে কম থেকে বেশি pHএর উদাহরণ?",
+              "options": [
+                "নীল থেকে কালো।",
+                "সবসময় বর্ণহীন।",
+                "লাল থেকে হলুদ।",
+                "সবসময় সবুজ।"
+              ],
+              "reasons": [
+                "এই সারিতে নীল-কালো নেই।",
+                "পুরোটা বর্ণহীন নয়।",
+                "লাল ও হলুদ পাশ দেখানো।",
+                "শুধু সবুজ নয়।"
+              ]
+            }
+          }
+        },
+        "ne": {
+          "captionSourceHash": "b82e4e47ab0489a0a8be9da08e3409852b415343961165f8be92b43156abcfc7",
+          "caption": "पहिले सूचक चिन्नुहोस्।उदाहरण:फिनोल्फ्थालिन रङहीनबाट रातो/गुलाबी,मिथाइल ओरेन्ज रातोबाट पहेँलो,BTBपहेँलो–हरियो–नीलो।परिवर्तन दायरा र अवस्था फरक हुन्छ;pHकागज आफ्नै उत्पादनको रङतालिकासँग पढ्नुहोस्।",
+          "questions": {
+            "mfg37-required-indicator-color-recognition-q01": {
+              "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+              "stem": "फिनोल्फ्थालिन पङ्क्तिको उदाहरण रङ?",
+              "options": [
+                "रङहीनबाट रातो/गुलाबी।",
+                "सधैँ हरियो मात्र।",
+                "नीलोबाट कालो।",
+                "सबै pHमा पहेँलो।"
+              ],
+              "reasons": [
+                "पङ्क्तिले रङहीन र रातो/गुलाबी पक्ष देखाउँछ।",
+                "हरियो मात्रको सम्बन्ध होइन।",
+                "नीलो–कालो देखाएको छैन।",
+                "सम्पूर्ण दायरामा पहेँलो होइन।"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q02": {
+              "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+              "stem": "BTBपङ्क्तिको बीचको रङ?",
+              "options": [
+                "रातो",
+                "रङहीन",
+                "कालो",
+                "हरियो"
+              ],
+              "reasons": [
+                "बीचको BTBरातो होइन।",
+                "बीच रङहीन होइन।",
+                "बीच कालो छैन।",
+                "BTBउदाहरण पहेँलो–हरियो–नीलो हो।"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q03": {
+              "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+              "stem": "अज्ञात pHकागज रातो देखिन्छ।उचित काम?",
+              "options": [
+                "चित्रबाटै ठ्याक्कै pHतय।",
+                "उत्पादन,सर्त र त्यसकै रङतालिका हेर्ने।",
+                "हरेक सूचकको रातो एउटै pH।",
+                "कागजको प्रकार नलेख्ने।"
+              ],
+              "reasons": [
+                "यो सबै कागजको सङ्ख्यात्मक क्यालिब्रेसन होइन।",
+                "उत्पादन र प्रयोगसर्तसँग मिल्ने रङतालिका चाहिन्छ।",
+                "हरेकको परिवर्तन दायरा/सर्त फरक हुन्छ।",
+                "व्याख्याका लागि प्रकार र उत्पादनको अभिलेख चाहिन्छ।"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q04": {
+              "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5",
+              "stem": "मिथाइल ओरेन्जमा कमदेखि बढी pHपक्षको उदाहरण?",
+              "options": [
+                "नीलोबाट कालो।",
+                "सधैँ रङहीन।",
+                "रातोबाट पहेँलो।",
+                "सधैँ हरियो।"
+              ],
+              "reasons": [
+                "यस पङ्क्तिमा नीलो–कालो छैन।",
+                "सबैतिर रङहीन होइन।",
+                "रातो र पहेँलो पक्ष देखाइएको छ।",
+                "हरियो मात्र होइन।"
+              ]
+            }
+          }
+        },
+        "my": {
+          "captionSourceHash": "b82e4e47ab0489a0a8be9da08e3409852b415343961165f8be92b43156abcfc7",
+          "caption": "အရောင်ညွှန်းဆေးအမည်ကို အရင်သိပါ။ ဥပမာ phenolphthalein သည် အရောင်မဲ့မှ အနီ/ပန်းရောင်၊ methyl orange သည် အနီမှ အဝါ၊ BTB သည် အဝါ၊ အစိမ်း၊ အပြာဖြစ်သည်။ ပြောင်းလဲသည့်အပိုင်းနှင့် အခြေအနေ မတူပါ။ pH စက္ကူကို ထိုကုန်ပစ္စည်း၏ အရောင်စံဖြင့် ဖတ်ပါ။",
+          "questions": {
+            "mfg37-required-indicator-color-recognition-q01": {
+              "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+              "stem": "phenolphthalein အတန်း၏ ဥပမာအရောင်က ဘာလဲ။",
+              "options": [
+                "အရောင်မဲ့မှ အနီ/ပန်းရောင်။",
+                "အမြဲအစိမ်းသာ။",
+                "အပြာမှ အမည်း။",
+                "pH အားလုံးတွင်အဝါ။"
+              ],
+              "reasons": [
+                "အတန်းသည် အရောင်မဲ့ဘက်နှင့် အနီ/ပန်းရောင်ဘက်ကိုပြသည်။",
+                "အစိမ်းသာဟု မပြပါ။",
+                "အပြာမှအမည်းကို မပြပါ။",
+                "အပိုင်းတစ်ခုလုံးအဝါ မဟုတ်ပါ။"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q02": {
+              "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+              "stem": "BTB အတန်းအလယ်နမူနာ၏ အရောင်က။",
+              "options": [
+                "အနီ",
+                "အရောင်မဲ့",
+                "အမည်း",
+                "အစိမ်း"
+              ],
+              "reasons": [
+                "BTB အလယ်သည် အနီမဟုတ်ပါ။",
+                "အလယ်သည် အရောင်မဲ့မဟုတ်ပါ။",
+                "အလယ်တွင်အမည်း မပြပါ။",
+                "BTB ဥပမာအစီအစဉ်က အဝါ–အစိမ်း–အပြာဖြစ်သည်။"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q03": {
+              "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+              "stem": "အမျိုးအစားမသိသော pH စက္ကူ အနီရောင်ဖြစ်နေသည်။ သင့်တော်သောအပြုအမူက။",
+              "options": [
+                "ပုံမှ pH အတိအကျဆုံးဖြတ်ရန်။",
+                "ကုန်ပစ္စည်း၊ အသုံးအခြေအနေ၊ ၎င်း၏အရောင်စံကိုစစ်ရန်။",
+                "ညွှန်းဆေးတိုင်း၏အနီသည် pH တူသည်။",
+                "စက္ကူအမျိုးအစားမမှတ်ရန်။"
+              ],
+              "reasons": [
+                "ဤပုံသည် စက္ကူအားလုံး၏ ကိန်းဂဏန်းချိန်ညှိဇယားမဟုတ်ပါ။",
+                "ကုန်ပစ္စည်းနှင့်အခြေအနေကိုက်သည့် အရောင်စံလိုသည်။",
+                "ပြောင်းလဲအပိုင်းနှင့်အခြေအနေ မတူပါ။",
+                "ဖော်ပြရာတွင် အမျိုးအစားနှင့်ကုန်ပစ္စည်းမှတ်တမ်းလိုသည်။"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q04": {
+              "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5",
+              "stem": "methyl orange တွင် pH နိမ့်ဘက်မှ မြင့်ဘက်၏ ဥပမာအရောင်က။",
+              "options": [
+                "အပြာမှအမည်း။",
+                "အမြဲအရောင်မဲ့။",
+                "အနီမှအဝါ။",
+                "အမြဲအစိမ်း။"
+              ],
+              "reasons": [
+                "ဤအတန်းတွင် အပြာ–အမည်းမရှိပါ။",
+                "အပိုင်းအားလုံးအရောင်မဲ့ မဟုတ်ပါ။",
+                "ပုံတွင် methyl orange ၏ အနီနှင့်အဝါဘက်ကိုပြသည်။",
+                "အစိမ်းသာမဟုတ်ပါ။"
+              ]
+            }
+          }
+        },
+        "th": {
+          "captionSourceHash": "b82e4e47ab0489a0a8be9da08e3409852b415343961165f8be92b43156abcfc7",
+          "caption": "ระบุชนิดอินดิเคเตอร์ก่อน ตัวอย่างสีคือฟีนอล์ฟทาลีนจากไม่มีสีเป็นกลุ่มสีแดง/ชมพู เมทิลออเรนจ์จากแดงเป็นเหลือง และ BTB เป็นเหลือง เขียว น้ำเงิน ช่วงเปลี่ยนสีและเงื่อนไขต่างกัน กระดาษ pH ต้องอ่านกับตารางสีของผลิตภัณฑ์นั้น",
+          "questions": {
+            "mfg37-required-indicator-color-recognition-q01": {
+              "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+              "stem": "คู่สีตัวอย่างในแถวฟีนอล์ฟทาลีนคือข้อใด?",
+              "options": [
+                "ไม่มีสีไปเป็นแดง/ชมพู",
+                "เขียวเท่านั้นเสมอ",
+                "น้ำเงินไปเป็นดำ",
+                "เหลืองทุกค่า pH"
+              ],
+              "reasons": [
+                "แถวนี้แยกด้านไม่มีสีกับด้านแดง/ชมพู",
+                "ไม่ใช่ความสัมพันธ์ที่มีแต่เขียว",
+                "ไม่ได้แสดงน้ำเงินไปดำ",
+                "ไม่ได้เหลืองตลอดช่วง"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q02": {
+              "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+              "stem": "สีตัวอย่างตรงกลางแถว BTB คืออะไร?",
+              "options": [
+                "แดง",
+                "ไม่มีสี",
+                "ดำ",
+                "เขียว"
+              ],
+              "reasons": [
+                "ตรงกลาง BTB แถวนี้ไม่ใช่แดง",
+                "ตรงกลางไม่ใช่ไม่มีสี",
+                "ไม่ได้แสดงดำตรงกลาง",
+                "แถว BTB แสดงตัวอย่างเหลือง–เขียว–น้ำเงิน"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q03": {
+              "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+              "stem": "กระดาษ pH ไม่ทราบชนิดเห็นเป็นสีแดง ควรทำอย่างไร?",
+              "options": [
+                "สรุปค่า pH แน่นอนจากภาพนี้",
+                "ตรวจผลิตภัณฑ์ เงื่อนไข และตารางสีของผลิตภัณฑ์นั้น",
+                "แดงของทุกอินดิเคเตอร์เป็น pH เดียวกัน",
+                "ไม่ต้องบันทึกชนิดกระดาษ"
+              ],
+              "reasons": [
+                "ภาพไม่ใช่ตารางสอบเทียบตัวเลขของกระดาษทุกชนิด",
+                "ต้องใช้ตารางสีตรงผลิตภัณฑ์และเงื่อนไข",
+                "ช่วงและเงื่อนไขเปลี่ยนสีของแต่ละชนิดต่างกัน",
+                "การแปลผลต้องมีข้อมูลชนิดและผลิตภัณฑ์"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q04": {
+              "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5",
+              "stem": "เมทิลออเรนจ์จากด้าน pH ต่ำไปสูงมีสีตัวอย่างใด?",
+              "options": [
+                "น้ำเงินไปดำ",
+                "ไม่มีสีเสมอ",
+                "แดงไปเหลือง",
+                "เขียวเสมอ"
+              ],
+              "reasons": [
+                "แถวนี้ไม่มีน้ำเงินไปดำ",
+                "ไม่ได้กำหนดไม่มีสีตลอดช่วง",
+                "ภาพแสดงด้านแดงกับด้านเหลือง",
+                "ไม่ใช่มีแต่เขียว"
+              ]
+            }
+          }
+        },
+        "km": {
+          "captionSourceHash": "b82e4e47ab0489a0a8be9da08e3409852b415343961165f8be92b43156abcfc7",
+          "caption": "ស្គាល់ឈ្មោះសារធាតុចង្អុលពណ៌ជាមុន។ ឧទាហរណ៍ phenolphthalein ពីគ្មានពណ៌ទៅក្រហម/ផ្កាឈូក methyl orange ពីក្រហមទៅលឿង និង BTB លឿង បៃតង ខៀវ។ ជួរប្រែពណ៌និងលក្ខខណ្ឌខុសគ្នា។ ក្រដាស pH ត្រូវអានតាមគំរូពណ៌របស់ផលិតផលនោះ។",
+          "questions": {
+            "mfg37-required-indicator-color-recognition-q01": {
+              "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+              "stem": "គូពណ៌ឧទាហរណ៍ក្នុងជួរ phenolphthalein គឺអ្វី?",
+              "options": [
+                "គ្មានពណ៌ទៅក្រហម/ផ្កាឈូក។",
+                "បៃតងជានិច្ច។",
+                "ខៀវទៅខ្មៅ។",
+                "លឿងគ្រប់ pH។"
+              ],
+              "reasons": [
+                "ជួរបំបែកខាងគ្មានពណ៌និងខាងក្រហម/ផ្កាឈូក។",
+                "មិនមែនតែបៃតងទេ។",
+                "មិនបង្ហាញខៀវទៅខ្មៅទេ។",
+                "មិនលឿងពេញជួរទេ។"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q02": {
+              "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+              "stem": "ពណ៌គំរូកណ្ដាលជួរ BTB គឺអ្វី?",
+              "options": [
+                "ក្រហម",
+                "គ្មានពណ៌",
+                "ខ្មៅ",
+                "បៃតង"
+              ],
+              "reasons": [
+                "កណ្ដាល BTB នេះមិនក្រហមទេ។",
+                "កណ្ដាលមិនគ្មានពណ៌ទេ។",
+                "គ្មានគំរូខ្មៅកណ្ដាលទេ។",
+                "BTB បង្ហាញឧទាហរណ៍លឿង–បៃតង–ខៀវ។"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q03": {
+              "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+              "stem": "ក្រដាស pH មិនស្គាល់ប្រភេទមើលទៅក្រហម។ គួរធ្វើអ្វី?",
+              "options": [
+                "កំណត់លេខ pH ពិតពីរូបនេះ។",
+                "ពិនិត្យផលិតផល លក្ខខណ្ឌប្រើ និងគំរូពណ៌របស់វា។",
+                "ក្រហមនៃសារធាតុចង្អុលទាំងអស់ជា pH ដូចគ្នា។",
+                "មិនកត់ប្រភេទក្រដាស។"
+              ],
+              "reasons": [
+                "រូបនេះមិនមែនតារាងក្រិតលេខរបស់ក្រដាសគ្រប់ប្រភេទទេ។",
+                "ត្រូវប្រើគំរូពណ៌ស្របផលិតផលនិងលក្ខខណ្ឌ។",
+                "ជួរនិងលក្ខខណ្ឌប្រែពណ៌ខុសគ្នា។",
+                "ការបកស្រាយត្រូវការកំណត់ត្រាប្រភេទនិងផលិតផល។"
+              ]
+            },
+            "mfg37-required-indicator-color-recognition-q04": {
+              "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5",
+              "stem": "methyl orange ពីខាង pH ទាបទៅខ្ពស់មានគូពណ៌ឧទាហរណ៍អ្វី?",
+              "options": [
+                "ខៀវទៅខ្មៅ។",
+                "គ្មានពណ៌ជានិច្ច។",
+                "ក្រហមទៅលឿង។",
+                "បៃតងជានិច្ច។"
+              ],
+              "reasons": [
+                "គ្មានលំដាប់ខៀវ–ខ្មៅក្នុងជួរនេះទេ។",
+                "មិនគ្មានពណ៌ពេញជួរទេ។",
+                "រូបបង្ហាញខាងក្រហមនិងលឿង។",
+                "មិនមែនតែបៃតងទេ។"
+              ]
+            }
+          }
+        }
+      },
+      "status": "ai_source_compared_preview",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false
+    },
+    {
+      "id": "mfg37-required-metal-order-hydrogen-comparison",
+      "lessonIds": [
+        "mfg1-surface-lesson-027",
+        "mfg1-surface-completion37-lesson-008"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-027": "8494cfcd8849b3f8887ee2c43e00d91bd0d3c1612d2ba0196e50dc898394beeb",
+        "mfg1-surface-completion37-lesson-008": "e17a09d99688d56b781a52c0523a2c46f31254fed711cf30d62e2d0a1d544956"
+      },
+      "titleJa": "金属と水素の相対順序を条件付きで比べる",
+      "captionJa": "資料の実際の表は水素を含む15項目です。大きい側からLi、Na、Mg、Al、Zn、Fe、Ni、Sn、Pb、H、Cu、Hg、Ag、Pt、Auと読みます。水素はPbとCuの間です。この順序だけで全ての酸への溶解、腐食速度や実作業条件を決めません。",
+      "assets": [
+        {
+          "id": "mfg37-required-metal-order-hydrogen-comparison-diagram",
+          "file": "assets/manufacturing/recognition38/metal-order-reference.png",
+          "width": 1600,
+          "height": 1200,
+          "altJa": "独立した三段の順序カード。Li、Na、Mg、Al、Zn、Fe、Ni、Sn、Pb、H、Cu、Hg、Ag、Pt、Auの15項目を番号と矢印でつなぎ、水素を強調する。保護皮膜・液・温度の条件を別枠に示す。",
+          "sha256": "e6fea333b631c49aa7e76673f1a3d4b5853381c81bbab95034c76c2bd4642770"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg37-required-metal-order-hydrogen-comparison-q01",
+          "lessonId": "mfg1-surface-completion37-lesson-008",
+          "stemJa": "図の水素Hの直前と直後の組合せはどれか。",
+          "optionsJa": [
+            "FeとNi",
+            "AgとPt",
+            "PbとCu",
+            "LiとNa"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "FeとNiは水素の直前・直後ではない。",
+            "AgとPtは水素より小さい側の別の位置。",
+            "図ではPb、H、Cuの順に並ぶ。",
+            "LiとNaは大きい側の先頭の位置。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 114,
+              "printedPage": 104
+            }
+          ],
+          "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+          "imageAssetIds": [
+            "mfg37-required-metal-order-hydrogen-comparison-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-metal-order-hydrogen-comparison-diagram": "e6fea333b631c49aa7e76673f1a3d4b5853381c81bbab95034c76c2bd4642770"
+          }
+        },
+        {
+          "id": "mfg37-required-metal-order-hydrogen-comparison-q02",
+          "lessonId": "mfg1-surface-completion37-lesson-008",
+          "stemJa": "図でNiとSnを比べたとき、大きい側に先にあるものはどれか。",
+          "optionsJa": [
+            "Ni",
+            "Sn",
+            "必ず同じ位置",
+            "図にはどちらもない"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "図の順序ではNiがSnより大きい側にある。",
+            "SnはNiの次で、小さい側にある。",
+            "二つは別の位置に並ぶ。",
+            "NiもSnも図に示している。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 114,
+              "printedPage": 104
+            }
+          ],
+          "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+          "imageAssetIds": [
+            "mfg37-required-metal-order-hydrogen-comparison-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-metal-order-hydrogen-comparison-diagram": "e6fea333b631c49aa7e76673f1a3d4b5853381c81bbab95034c76c2bd4642770"
+          }
+        },
+        {
+          "id": "mfg37-required-metal-order-hydrogen-comparison-q03",
+          "lessonId": "mfg1-surface-completion37-lesson-008",
+          "stemJa": "Alが水素より大きい側にある。この情報からの判断として適切なのはどれか。",
+          "optionsJa": [
+            "どの酸にも必ず同じ速さで溶ける。",
+            "保護皮膜、液と温度などの条件も確認する。",
+            "実験を無断で始めてよい。",
+            "全ての金属の腐食速度を順序だけで決める。"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "相対順序だけで全ての酸・速度は決まらない。",
+            "アルミニウムの保護皮膜など、実際の条件を分けて考える。",
+            "順序表は実験や薬液作業の許可ではない。",
+            "腐食は保護皮膜や環境などにも影響される。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 114,
+              "printedPage": 104
+            }
+          ],
+          "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+          "imageAssetIds": [
+            "mfg37-required-metal-order-hydrogen-comparison-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-metal-order-hydrogen-comparison-diagram": "e6fea333b631c49aa7e76673f1a3d4b5853381c81bbab95034c76c2bd4642770"
+          }
+        }
+      ],
+      "locales": {
+        "en": {
+          "captionSourceHash": "c9109a3ba5881d453b836a6540a1d02d63721bb3ebdfb2e0333e6e8d82aa3ec8",
+          "caption": "The actual source table contains15entries including hydrogen. From the higher side: Li,Na,Mg,Al,Zn,Fe,Ni,Sn,Pb,H,Cu,Hg,Ag,Pt,Au. H is between Pb and Cu. This order alone does not determine dissolution in every acid, corrosion rate or actual operating conditions.",
+          "questions": {
+            "mfg37-required-metal-order-hydrogen-comparison-q01": {
+              "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+              "stem": "Which entries immediately precede and follow H?",
+              "options": [
+                "Fe and Ni",
+                "Ag and Pt",
+                "Pb and Cu",
+                "Li and Na"
+              ],
+              "reasons": [
+                "Fe and Ni do not flank H.",
+                "Ag and Pt occupy other positions on the lower side.",
+                "The drawing shows Pb,H,Cu in that order.",
+                "Li and Na are at the higher end."
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q02": {
+              "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+              "stem": "Which of Ni and Sn appears first on the higher side?",
+              "options": [
+                "Ni",
+                "Sn",
+                "They always share one position",
+                "Neither is shown"
+              ],
+              "reasons": [
+                "Ni is on the higher side of Sn in this order.",
+                "Sn follows Ni on the lower side.",
+                "They occupy separate positions.",
+                "Both Ni and Sn are shown."
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q03": {
+              "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+              "stem": "Al is above H in this order. What is an appropriate conclusion?",
+              "options": [
+                "It always dissolves at the same rate in every acid.",
+                "Also consider the protective film, liquid and temperature.",
+                "An unauthorized experiment may start.",
+                "The order alone determines all corrosion rates."
+              ],
+              "reasons": [
+                "Relative order does not fix every acid reaction or rate.",
+                "Consider actual conditions, including aluminium’s protective film.",
+                "An order chart is not permission for experiments or chemical work.",
+                "Corrosion also depends on protective films and the environment."
+              ]
+            }
+          }
+        },
+        "vi": {
+          "captionSourceHash": "c9109a3ba5881d453b836a6540a1d02d63721bb3ebdfb2e0333e6e8d82aa3ec8",
+          "caption": "Bảng nguồn thực tế có15mục, gồm cả hiđrô. Từ phía lớn hơn: Li,Na,Mg,Al,Zn,Fe,Ni,Sn,Pb,H,Cu,Hg,Ag,Pt,Au. H nằm giữa Pb và Cu. Chỉ thứ tự này không xác định sự hòa tan trong mọi axit, tốc độ ăn mòn hay điều kiện thao tác thực tế.",
+          "questions": {
+            "mfg37-required-metal-order-hydrogen-comparison-q01": {
+              "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+              "stem": "Hai mục ngay trước và sau H trong hình là gì?",
+              "options": [
+                "Fe và Ni",
+                "Ag và Pt",
+                "Pb và Cu",
+                "Li và Na"
+              ],
+              "reasons": [
+                "Fe và Ni không nằm sát hai phía H.",
+                "Ag và Pt ở các vị trí khác phía nhỏ hơn.",
+                "Hình xếp Pb,H,Cu theo thứ tự đó.",
+                "Li và Na ở đầu phía lớn hơn."
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q02": {
+              "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+              "stem": "Trong Ni và Sn, mục nào nằm trước về phía lớn hơn?",
+              "options": [
+                "Ni",
+                "Sn",
+                "Luôn cùng một vị trí",
+                "Không có cả hai"
+              ],
+              "reasons": [
+                "Theo thứ tự hình, Ni ở phía lớn hơn Sn.",
+                "Sn theo sau Ni về phía nhỏ hơn.",
+                "Hai mục có vị trí riêng.",
+                "Cả Ni và Sn đều có trong hình."
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q03": {
+              "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+              "stem": "Al nằm phía lớn hơn H. Nhận định nào phù hợp?",
+              "options": [
+                "Luôn tan cùng tốc độ trong mọi axit.",
+                "Còn phải xét màng bảo vệ, dung dịch và nhiệt độ.",
+                "Được tự ý bắt đầu thí nghiệm.",
+                "Chỉ thứ tự xác định mọi tốc độ ăn mòn."
+              ],
+              "reasons": [
+                "Thứ tự tương đối không quyết định mọi phản ứng axit hay tốc độ.",
+                "Phải tách các điều kiện thực tế, gồm màng bảo vệ của nhôm.",
+                "Bảng không cho phép thí nghiệm hay thao tác hóa chất.",
+                "Ăn mòn còn chịu ảnh hưởng của màng bảo vệ và môi trường."
+              ]
+            }
+          }
+        },
+        "id": {
+          "captionSourceHash": "c9109a3ba5881d453b836a6540a1d02d63721bb3ebdfb2e0333e6e8d82aa3ec8",
+          "caption": "Tabel sumber sebenarnya berisi15entri termasuk hidrogen. Dari sisi lebih besar: Li,Na,Mg,Al,Zn,Fe,Ni,Sn,Pb,H,Cu,Hg,Ag,Pt,Au. H di antara Pb dan Cu. Urutan ini saja tidak menentukan pelarutan dalam semua asam, laju korosi atau kondisi kerja nyata.",
+          "questions": {
+            "mfg37-required-metal-order-hydrogen-comparison-q01": {
+              "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+              "stem": "Entri tepat sebelum dan sesudah H?",
+              "options": [
+                "Fe dan Ni",
+                "Ag dan Pt",
+                "Pb dan Cu",
+                "Li dan Na"
+              ],
+              "reasons": [
+                "Fe dan Ni tidak mengapit H.",
+                "Ag dan Pt berada pada posisi lain di sisi lebih kecil.",
+                "Urutannya Pb,H,Cu.",
+                "Li dan Na di ujung sisi lebih besar."
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q02": {
+              "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+              "stem": "Di antara Ni dan Sn, mana lebih dahulu di sisi lebih besar?",
+              "options": [
+                "Ni",
+                "Sn",
+                "Selalu satu posisi",
+                "Keduanya tidak ada"
+              ],
+              "reasons": [
+                "Ni berada sebelum Sn di sisi lebih besar.",
+                "Sn sesudah Ni di sisi lebih kecil.",
+                "Mereka dua posisi berbeda.",
+                "Keduanya ada dalam gambar."
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q03": {
+              "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+              "stem": "Al berada di atas H. Kesimpulan tepat?",
+              "options": [
+                "Selalu larut sama cepat dalam semua asam.",
+                "Periksa juga lapisan pelindung,larutan dan suhu.",
+                "Boleh memulai eksperimen tanpa izin.",
+                "Urutan menentukan semua laju korosi."
+              ],
+              "reasons": [
+                "Urutan relatif tidak menetapkan semua asam atau laju.",
+                "Pertimbangkan kondisi nyata seperti lapisan aluminium.",
+                "Daftar bukan izin eksperimen atau kerja kimia.",
+                "Korosi juga dipengaruhi lapisan dan lingkungan."
+              ]
+            }
+          }
+        },
+        "zh-CN": {
+          "captionSourceHash": "c9109a3ba5881d453b836a6540a1d02d63721bb3ebdfb2e0333e6e8d82aa3ec8",
+          "caption": "原资料实际表格包含氢，共15项。从较大侧依次为Li、Na、Mg、Al、Zn、Fe、Ni、Sn、Pb、H、Cu、Hg、Ag、Pt、Au。H位于Pb和Cu之间。不能仅凭顺序判断所有酸中的溶解、腐蚀速度或实际作业条件。",
+          "questions": {
+            "mfg37-required-metal-order-hydrogen-comparison-q01": {
+              "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+              "stem": "H紧邻的前后两项是？",
+              "options": [
+                "Fe与Ni",
+                "Ag与Pt",
+                "Pb与Cu",
+                "Li与Na"
+              ],
+              "reasons": [
+                "Fe和Ni不分别紧邻H。",
+                "Ag和Pt在较小侧的其他位置。",
+                "图中顺序为Pb、H、Cu。",
+                "Li和Na在较大侧前端。"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q02": {
+              "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+              "stem": "Ni与Sn中，哪项在较大侧更靠前？",
+              "options": [
+                "Ni",
+                "Sn",
+                "必定在同一位置",
+                "图中均没有"
+              ],
+              "reasons": [
+                "图中Ni位于Sn的较大侧。",
+                "Sn在Ni之后，较靠小的一侧。",
+                "两者位置不同。",
+                "图中均有Ni与Sn。"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q03": {
+              "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+              "stem": "Al位于H的较大侧，正确判断是？",
+              "options": [
+                "在任何酸中都以相同速度溶解。",
+                "还要确认保护膜、溶液和温度等条件。",
+                "可以擅自开始实验。",
+                "只凭顺序确定所有腐蚀速度。"
+              ],
+              "reasons": [
+                "相对顺序不能决定所有酸及反应速度。",
+                "需分别考虑铝的保护膜等实际条件。",
+                "顺序表不是实验或药液作业许可。",
+                "腐蚀还受保护膜和环境等影响。"
+              ]
+            }
+          }
+        },
+        "zh-TW": {
+          "captionSourceHash": "c9109a3ba5881d453b836a6540a1d02d63721bb3ebdfb2e0333e6e8d82aa3ec8",
+          "caption": "原資料實際表格包含氫，共15項。由較大側依序為Li、Na、Mg、Al、Zn、Fe、Ni、Sn、Pb、H、Cu、Hg、Ag、Pt、Au。H位於Pb和Cu之間。不能僅憑順序判斷所有酸中的溶解、腐蝕速度或實際作業條件。",
+          "questions": {
+            "mfg37-required-metal-order-hydrogen-comparison-q01": {
+              "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+              "stem": "H緊鄰的前後兩項為何？",
+              "options": [
+                "Fe與Ni",
+                "Ag與Pt",
+                "Pb與Cu",
+                "Li與Na"
+              ],
+              "reasons": [
+                "Fe和Ni並非分別緊鄰H。",
+                "Ag和Pt在較小側的其他位置。",
+                "圖中依序為Pb、H、Cu。",
+                "Li和Na位於較大側前端。"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q02": {
+              "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+              "stem": "Ni與Sn何者在較大側更靠前？",
+              "options": [
+                "Ni",
+                "Sn",
+                "必定同一位置",
+                "圖中兩者皆無"
+              ],
+              "reasons": [
+                "圖中Ni位於Sn的較大側。",
+                "Sn在Ni之後，較靠小的一側。",
+                "兩者位置不同。",
+                "圖中有Ni及Sn。"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q03": {
+              "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+              "stem": "Al位於H的較大側，何種判斷適當？",
+              "options": [
+                "在任何酸中都以同速溶解。",
+                "還須確認保護膜、溶液與溫度等條件。",
+                "可擅自開始實驗。",
+                "僅憑順序決定所有腐蝕速度。"
+              ],
+              "reasons": [
+                "相對順序不能決定所有酸及反應速度。",
+                "須分別考慮鋁的保護膜等實際條件。",
+                "順序表不是實驗或藥液作業許可。",
+                "腐蝕亦受保護膜與環境影響。"
+              ]
+            }
+          }
+        },
+        "tl": {
+          "captionSourceHash": "c9109a3ba5881d453b836a6540a1d02d63721bb3ebdfb2e0333e6e8d82aa3ec8",
+          "caption": "May15entry ang mismong talahanayan sa sanggunian,kasama ang hydrogen. Mula sa mas mataas na panig: Li,Na,Mg,Al,Zn,Fe,Ni,Sn,Pb,H,Cu,Hg,Ag,Pt,Au. Nasa pagitan ng Pb at Cu ang H. Hindi sapat ang ayos na ito upang matukoy ang pagkatunaw sa lahat ng asido,bilis ng kaagnasan o aktuwal na kondisyon ng trabaho.",
+          "questions": {
+            "mfg37-required-metal-order-hydrogen-comparison-q01": {
+              "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+              "stem": "Ano ang mga entry na kaagad bago at pagkatapos ng H?",
+              "options": [
+                "Fe at Ni",
+                "Ag at Pt",
+                "Pb at Cu",
+                "Li at Na"
+              ],
+              "reasons": [
+                "Hindi Fe at Ni ang katabi sa magkabilang panig ng H.",
+                "Ibang posisyon sa mas mababang panig ang Ag at Pt.",
+                "Pb,H,Cu ang pagkakasunod.",
+                "Nasa simula ng mas mataas na panig ang Li at Na."
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q02": {
+              "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+              "stem": "Sa Ni at Sn,alin ang nauuna sa mas mataas na panig?",
+              "options": [
+                "Ni",
+                "Sn",
+                "Laging iisang posisyon",
+                "Parehong wala"
+              ],
+              "reasons": [
+                "Nasa mas mataas na panig ng Sn ang Ni.",
+                "Kasunod ng Ni ang Sn sa mas mababang panig.",
+                "Magkaiba ang kanilang posisyon.",
+                "Parehong ipinakita ang Ni at Sn."
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q03": {
+              "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+              "stem": "Nasa mas mataas na panig ng H ang Al. Anong paghatol ang wasto?",
+              "options": [
+                "Laging pareho ang bilis ng pagkatunaw sa lahat ng asido.",
+                "Suriin din ang protective film,solusyon at temperatura.",
+                "Puwedeng magsimula ng eksperimentong walang pahintulot.",
+                "Ang ayos lamang ang nagtatakda ng lahat ng bilis ng kaagnasan."
+              ],
+              "reasons": [
+                "Hindi tinutukoy ng relative order ang lahat ng asido o bilis.",
+                "Isaalang-alang ang tunay na kondisyon,gaya ng proteksiyon ng aluminium.",
+                "Hindi pahintulot sa eksperimento o kemikal na gawain ang talahanayan.",
+                "Nakaaapekto rin ang protective film at kapaligiran."
+              ]
+            }
+          }
+        },
+        "hi": {
+          "captionSourceHash": "c9109a3ba5881d453b836a6540a1d02d63721bb3ebdfb2e0333e6e8d82aa3ec8",
+          "caption": "वास्तविक स्रोत-सारणी में हाइड्रोजन सहित15प्रविष्टियाँ हैं।ऊँची ओर से Li,Na,Mg,Al,Zn,Fe,Ni,Sn,Pb,H,Cu,Hg,Ag,Pt,Auहैं।H,PbऔरCuके बीच है।केवल क्रम से हर अम्ल में घुलना,संक्षारण गति या कार्य-शर्तें तय नहीं होतीं।",
+          "questions": {
+            "mfg37-required-metal-order-hydrogen-comparison-q01": {
+              "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+              "stem": "Hसे ठीक पहले और बाद की प्रविष्टियाँ?",
+              "options": [
+                "FeऔरNi",
+                "AgऔरPt",
+                "PbऔरCu",
+                "LiऔरNa"
+              ],
+              "reasons": [
+                "Fe/Ni,Hको नहीं घेरते।",
+                "Ag/Ptनीचे की दूसरी जगह हैं।",
+                "क्रम Pb,H,Cuहै।",
+                "Li/Naऊँचे सिरे पर हैं।"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q02": {
+              "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+              "stem": "NiऔरSnमें ऊँचे पक्ष पर पहले कौन?",
+              "options": [
+                "Ni",
+                "Sn",
+                "हमेशा एक स्थान",
+                "दोनों नहीं दिखे"
+              ],
+              "reasons": [
+                "Ni,Snसे ऊँचे पक्ष पर है।",
+                "Sn,Niके बाद निचली ओर है।",
+                "दोनों अलग स्थान पर हैं।",
+                "दोनों चित्र में हैं।"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q03": {
+              "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+              "stem": "Al,Hसे ऊँचा है।उचित निष्कर्ष?",
+              "options": [
+                "हर अम्ल में समान गति से घुलेगा।",
+                "सुरक्षा परत,द्रव,ताप भी जाँचें।",
+                "बिना अनुमति प्रयोग करें।",
+                "क्रम से सभी संक्षारण गति तय।"
+              ],
+              "reasons": [
+                "क्रम हर अम्ल या गति तय नहीं करता।",
+                "ऐलुमिनियम की सुरक्षा परत जैसी वास्तविक शर्तें भी देखें।",
+                "सारणी प्रयोग या रसायन कार्य की अनुमति नहीं।",
+                "परत और पर्यावरण भी संक्षारण बदलते हैं।"
+              ]
+            }
+          }
+        },
+        "bn": {
+          "captionSourceHash": "c9109a3ba5881d453b836a6540a1d02d63721bb3ebdfb2e0333e6e8d82aa3ec8",
+          "caption": "আসল উৎসসারণিতে হাইড্রোজেনসহ15টি পদ।বড় দিক থেকে Li,Na,Mg,Al,Zn,Fe,Ni,Sn,Pb,H,Cu,Hg,Ag,Pt,Au।H,PbওCuএর মাঝে।শুধু ক্রমে সব অ্যাসিডে দ্রবণ,ক্ষয়ের গতি বা কাজের শর্ত ঠিক হয় না।",
+          "questions": {
+            "mfg37-required-metal-order-hydrogen-comparison-q01": {
+              "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+              "stem": "Hএর ঠিক আগে ও পরের পদ?",
+              "options": [
+                "FeওNi",
+                "AgওPt",
+                "PbওCu",
+                "LiওNa"
+              ],
+              "reasons": [
+                "Fe/Ni,Hএর দুইপাশ নয়।",
+                "Ag/Ptছোট দিকের অন্য স্থানে।",
+                "ক্রম Pb,H,Cu।",
+                "Li/Naবড় দিকের শুরু।"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q02": {
+              "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+              "stem": "NiওSnএর মধ্যে বড় দিকে আগে কোনটি?",
+              "options": [
+                "Ni",
+                "Sn",
+                "সবসময় একই স্থান",
+                "দুটিই অনুপস্থিত"
+              ],
+              "reasons": [
+                "Ni,Snএর বড় দিকে।",
+                "Sn,Niএর পরে ছোট দিকে।",
+                "দুটির স্থান আলাদা।",
+                "দুটিই চিত্রে আছে।"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q03": {
+              "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+              "stem": "Al,Hএর বড় দিকে।সঠিক সিদ্ধান্ত?",
+              "options": [
+                "সব অ্যাসিডে একই গতিতে দ্রবীভূত।",
+                "রক্ষাস্তর,তরল ও তাপও দেখুন।",
+                "অনুমতি ছাড়া পরীক্ষা।",
+                "ক্রমেই সব ক্ষয়গতি ঠিক।"
+              ],
+              "reasons": [
+                "ক্রম সব অ্যাসিড বা গতি ঠিক করে না।",
+                "অ্যালুমিনিয়ামের রক্ষাস্তরের মতো বাস্তব শর্তও দেখুন।",
+                "সারণি পরীক্ষা বা রাসায়নিককাজের অনুমতি নয়।",
+                "স্তর ও পরিবেশও ক্ষয় প্রভাবিত করে।"
+              ]
+            }
+          }
+        },
+        "ne": {
+          "captionSourceHash": "c9109a3ba5881d453b836a6540a1d02d63721bb3ebdfb2e0333e6e8d82aa3ec8",
+          "caption": "वास्तविक स्रोततालिकामा हाइड्रोजनसहित15वटा छन्।ठूलो पक्षबाट Li,Na,Mg,Al,Zn,Fe,Ni,Sn,Pb,H,Cu,Hg,Ag,Pt,Au।H,PbरCuबीच छ।क्रमले मात्र सबै अम्लमा घुल्ने अवस्था,क्षयदर वा वास्तविक कार्यसर्त तय गर्दैन।",
+          "questions": {
+            "mfg37-required-metal-order-hydrogen-comparison-q01": {
+              "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+              "stem": "Hको ठीक अघि र पछिका प्रविष्टि?",
+              "options": [
+                "FeरNi",
+                "AgरPt",
+                "PbरCu",
+                "LiरNa"
+              ],
+              "reasons": [
+                "Fe/Niले Hलाई घेर्दैनन्।",
+                "Ag/Ptसानो पक्षको अरू स्थानमा छन्।",
+                "क्रम Pb,H,Cuहो।",
+                "Li/Naठूलो पक्षको सुरुमा छन्।"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q02": {
+              "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+              "stem": "NiरSnमध्ये ठूलो पक्षमा पहिले कुन?",
+              "options": [
+                "Ni",
+                "Sn",
+                "सधैँ एउटै स्थान",
+                "दुवै छैनन्"
+              ],
+              "reasons": [
+                "Ni,Snभन्दा ठूलो पक्षमा छ।",
+                "Sn,Niपछि सानो पक्षमा छ।",
+                "दुई अलग स्थान हुन्।",
+                "दुवै चित्रमा छन्।"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q03": {
+              "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+              "stem": "Al,Hभन्दा ठूलो पक्षमा छ।उचित निष्कर्ष?",
+              "options": [
+                "सबै अम्लमा उही गतिले घुल्छ।",
+                "सुरक्षा तह,घोल र ताप पनि जाँच्ने।",
+                "अनुमतिबिना प्रयोग सुरु।",
+                "क्रमले सबै क्षयदर तय।"
+              ],
+              "reasons": [
+                "क्रमले सबै अम्ल वा गति तय गर्दैन।",
+                "अलुमिनियमको सुरक्षा तहजस्ता वास्तविक सर्त पनि हेर्नुहोस्।",
+                "तालिका प्रयोग वा रसायन कार्यको अनुमति होइन।",
+                "तह र वातावरणले पनि क्षयमा असर गर्छन्।"
+              ]
+            }
+          }
+        },
+        "my": {
+          "captionSourceHash": "c9109a3ba5881d453b836a6540a1d02d63721bb3ebdfb2e0333e6e8d82aa3ec8",
+          "caption": "မူရင်းဇယားတွင် ဟိုက်ဒရိုဂျင်ပါဝင်သော15ခု ရှိသည်။ ကြီးသောဘက်မှ Li,Na,Mg,Al,Zn,Fe,Ni,Sn,Pb,H,Cu,Hg,Ag,Pt,Au ဖြစ်ပြီး H သည် Pb နှင့် Cu ကြားတွင်ရှိသည်။ ဤအစီအစဉ်တစ်ခုတည်းဖြင့် အက်စစ်အားလုံး၌ ပျော်ဝင်မှု၊ ချေးတက်နှုန်းနှင့် တကယ့်လုပ်ငန်းအခြေအနေကို မဆုံးဖြတ်ပါ။",
+          "questions": {
+            "mfg37-required-metal-order-hydrogen-comparison-q01": {
+              "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+              "stem": "H ရှေ့နှင့်နောက် အနီးဆုံးအရာနှစ်ခုက။",
+              "options": [
+                "Fe နှင့် Ni",
+                "Ag နှင့် Pt",
+                "Pb နှင့် Cu",
+                "Li နှင့် Na"
+              ],
+              "reasons": [
+                "Fe/Ni သည် H ဘေးနှစ်ဘက်မဟုတ်ပါ။",
+                "Ag/Pt သည် သေးဘက်၏ အခြားနေရာ၌ရှိသည်။",
+                "အစီအစဉ်သည် Pb,H,Cu ဖြစ်သည်။",
+                "Li/Na သည် ကြီးဘက်အစ၌ရှိသည်။"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q02": {
+              "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+              "stem": "Ni နှင့် Sn အနက် ကြီးဘက်မှအရင်ရှိသောအရာက။",
+              "options": [
+                "Ni",
+                "Sn",
+                "အမြဲတစ်နေရာတည်း",
+                "နှစ်ခုလုံးမရှိ"
+              ],
+              "reasons": [
+                "Ni သည် Sn ထက်ကြီးဘက်၌ရှိသည်။",
+                "Sn သည် Ni နောက် သေးဘက်၌ရှိသည်။",
+                "နေရာမတူပါ။",
+                "ပုံတွင် နှစ်ခုလုံးရှိသည်။"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q03": {
+              "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+              "stem": "Al သည် H ထက်ကြီးဘက်၌ရှိသည်။ မှန်သောကောက်ချက်က။",
+              "options": [
+                "အက်စစ်အားလုံးတွင် အမြဲနှုန်းတူပျော်သည်။",
+                "အကာလွှာ၊ ဆေးရည်၊ အပူချိန်လည်းစစ်ပါ။",
+                "ခွင့်မရှိစမ်းသပ်မှုစနိုင်သည်။",
+                "အစီအစဉ်ဖြင့် ချေးတက်နှုန်းအားလုံးဆုံးဖြတ်နိုင်သည်။"
+              ],
+              "reasons": [
+                "နှိုင်းယှဉ်အစီအစဉ်က အက်စစ်နှင့်နှုန်းအားလုံးမဆုံးဖြတ်ပါ။",
+                "အလူမီနီယမ်အကာလွှာကဲ့သို့ တကယ့်အခြေအနေပါစစ်ပါ။",
+                "ဇယားသည် စမ်းသပ်မှု သို့မဟုတ် ဆေးရည်အလုပ်ခွင့်မဟုတ်ပါ။",
+                "အကာလွှာနှင့်ပတ်ဝန်းကျင်လည်း ချေးတက်ခြင်းကိုသက်ရောက်သည်။"
+              ]
+            }
+          }
+        },
+        "th": {
+          "captionSourceHash": "c9109a3ba5881d453b836a6540a1d02d63721bb3ebdfb2e0333e6e8d82aa3ec8",
+          "caption": "ตารางต้นฉบับจริงมี15รายการรวมไฮโดรเจน เรียงจากด้านมากคือ Li,Na,Mg,Al,Zn,Fe,Ni,Sn,Pb,H,Cu,Hg,Ag,Pt,Au โดย H อยู่ระหว่าง Pb กับ Cu ลำดับนี้เพียงอย่างเดียวไม่กำหนดการละลายในกรดทุกชนิด อัตรากัดกร่อน หรือเงื่อนไขทำงานจริง",
+          "questions": {
+            "mfg37-required-metal-order-hydrogen-comparison-q01": {
+              "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+              "stem": "รายการติดก่อนและหลัง H คืออะไร?",
+              "options": [
+                "Fe กับ Ni",
+                "Ag กับ Pt",
+                "Pb กับ Cu",
+                "Li กับ Na"
+              ],
+              "reasons": [
+                "Fe/Ni ไม่ได้ประกบ H",
+                "Ag/Pt อยู่ตำแหน่งอื่นด้านน้อยกว่า",
+                "เรียง Pb,H,Cu",
+                "Li/Na อยู่ต้นด้านมากกว่า"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q02": {
+              "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+              "stem": "ระหว่าง Ni กับ Sn สิ่งใดมาก่อนด้านมากกว่า?",
+              "options": [
+                "Ni",
+                "Sn",
+                "ตำแหน่งเดียวกันเสมอ",
+                "ไม่มีทั้งคู่"
+              ],
+              "reasons": [
+                "Ni อยู่ด้านมากกว่า Sn",
+                "Sn ตามหลัง Ni ด้านน้อยกว่า",
+                "เป็นคนละตำแหน่ง",
+                "ภาพมีทั้ง Ni และ Sn"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q03": {
+              "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+              "stem": "Al อยู่ด้านมากกว่า H ควรสรุปอย่างไร?",
+              "options": [
+                "ละลายเท่ากันในกรดทุกชนิด",
+                "ตรวจฟิล์มป้องกัน น้ำยา และอุณหภูมิด้วย",
+                "เริ่มทดลองโดยไม่ขออนุญาต",
+                "ใช้ลำดับกำหนดอัตรากัดกร่อนทั้งหมด"
+              ],
+              "reasons": [
+                "ลำดับสัมพัทธ์ไม่กำหนดทุกกรดหรือทุกอัตรา",
+                "ต้องพิจารณาเงื่อนไขจริงเช่นฟิล์มของอะลูมิเนียม",
+                "ตารางไม่ใช่ใบอนุญาตทดลองหรือทำงานกับน้ำยา",
+                "ฟิล์มและสภาพแวดล้อมมีผลต่อการกัดกร่อนด้วย"
+              ]
+            }
+          }
+        },
+        "km": {
+          "captionSourceHash": "c9109a3ba5881d453b836a6540a1d02d63721bb3ebdfb2e0333e6e8d82aa3ec8",
+          "caption": "តារាងប្រភពពិតមាន15ធាតុ រួមទាំងអ៊ីដ្រូសែន។ ពីខាងធំគឺ Li,Na,Mg,Al,Zn,Fe,Ni,Sn,Pb,H,Cu,Hg,Ag,Pt,Au។ H នៅរវាង Pb និង Cu។ លំដាប់នេះមួយមិនកំណត់ការរលាយក្នុងអាស៊ីតគ្រប់ប្រភេទ ល្បឿនច្រេះ ឬលក្ខខណ្ឌការងារពិតទេ។",
+          "questions": {
+            "mfg37-required-metal-order-hydrogen-comparison-q01": {
+              "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+              "stem": "ធាតុនៅមុននិងក្រោយ H ជាប់គ្នាគឺអ្វី?",
+              "options": [
+                "Fe និង Ni",
+                "Ag និង Pt",
+                "Pb និង Cu",
+                "Li និង Na"
+              ],
+              "reasons": [
+                "Fe/Ni មិននៅសងខាង H ជាប់ទេ។",
+                "Ag/Pt នៅទីតាំងផ្សេងខាងតូច។",
+                "លំដាប់គឺ Pb,H,Cu។",
+                "Li/Na នៅក្បាលខាងធំ។"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q02": {
+              "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+              "stem": "Ni និង Sn មួយណាមកមុនខាងធំ?",
+              "options": [
+                "Ni",
+                "Sn",
+                "ទីតាំងតែមួយជានិច្ច",
+                "គ្មានទាំងពីរ"
+              ],
+              "reasons": [
+                "Ni នៅខាងធំជាង Sn។",
+                "Sn បន្ទាប់ Ni ខាងតូច។",
+                "ទាំងពីរនៅទីតាំងខុសគ្នា។",
+                "រូបមានទាំង Ni និង Sn។"
+              ]
+            },
+            "mfg37-required-metal-order-hydrogen-comparison-q03": {
+              "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+              "stem": "Al នៅខាងធំជាង H។ ការវិនិច្ឆ័យសមស្របគឺអ្វី?",
+              "options": [
+                "រលាយល្បឿនដូចគ្នាក្នុងអាស៊ីតទាំងអស់។",
+                "ពិនិត្យស្រទាប់ការពារ សូលុយស្យុងគីមី និងសីតុណ្ហភាពផង។",
+                "អាចចាប់ផ្ដើមពិសោធន៍ដោយគ្មានការអនុញ្ញាត។",
+                "លំដាប់កំណត់ល្បឿនច្រេះទាំងអស់។"
+              ],
+              "reasons": [
+                "លំដាប់ធៀបមិនកំណត់អាស៊ីតនិងល្បឿនទាំងអស់ទេ។",
+                "ពិចារណាលក្ខខណ្ឌពិតដូចស្រទាប់ការពារអាលុយមីញ៉ូម។",
+                "តារាងមិនមែនការអនុញ្ញាតពិសោធន៍ឬប្រើសូលុយស្យុងគីមីទេ។",
+                "ស្រទាប់និងបរិស្ថានក៏ប៉ះពាល់ការច្រេះ។"
+              ]
+            }
+          }
+        }
+      },
+      "status": "ai_source_compared_preview",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false
+    }
+  ]
+}

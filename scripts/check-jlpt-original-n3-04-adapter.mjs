@@ -35,7 +35,8 @@ for(const q of questions){
    assert.notEqual(q.promptJa,original.prompt,'Immediate-response utterances must remain audio-only');
    assert.ok(q.promptJa.includes('音声の短い言葉'));
   }
-  if(q.questionNumber===1)assert.ok(q.instructionJa.includes('練習'));
+  if(q.questionNumber===1 && q.problemNumber!==1)assert.ok(q.instructionJa.includes('練習'));
+  if(q.questionNumber===1 && q.problemNumber===1)assert.ok(!q.instructionJa.includes('練習'));
   assert.ok(!q.instructionJa.includes('練習中は選択ボタンを押しません。練習中は選択ボタンを押しません。'));
  }
  if(q.family==='listening' && q.problemNumber===3)assert.notEqual(q.promptJa,original.prompt,'Summary question stays hidden until spoken');

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "baseCommit": "cfa329fecd036e23e1573e7b16d5d9fe099146a9",
+  "beforeBlobSha": {
+    "src/components/agriculture/RecognitionImages.tsx": "658ba7fbd8de0fb3259984a13bc4b3a252927255",
+    "scripts/agriculture/check-two-royal-asset-maps.cjs": null,
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/two-active-image-map-repairs-qa.json": null
+  },
+  "scope": "Repair two actual source-to-asset map edges while preserving current external ruby/management/pollination work",
+  "actualBeforeFailure": "Production getAgricultureFigureAsset for thinning resolved the obsolete PNG despite a current Royalv2 WebP registry record; staged fruit-thinning key was absent and its registry item was excluded by matchesLesson. Exact-source runtime assertion failed before map repair.",
+  "changes": [
+    {
+      "figureId": "agr-f40-general-thinning-comparison",
+      "assetKey": "f40-general-thinning-comparison",
+      "action": "Map existing key to registered Royalv2 WebP instead of obsolete PNG.",
+      "assetPath": "assets/agriculture/royal-weekly-20261107/week02/thinning-botanical-comparison-v2.webp",
+      "assetSha256": "05a50ddbdc2fb726cd505606eed64f6834c1f12ecc452111cd647ec94a42b618",
+      "sourceReview": "Actual full-size current WebP opened. Four comparisons show weak/strong seedlings, elongated/compact internodes, leaf damage/intact leaves, crowded/spaced seedlings. Source S1PDF12/printed6 andS2PDF15/printed13 reviewed with existing germination paragraphs; bounded morphology comparison, no diagnosis or universal spacing.",
+      "sourceLesson": "agr-germination"
+    },
+    {
+      "figureId": "agr-royal-fruit-thinning-stages-v1",
+      "assetKey": "royal-fruit-thinning-stages-v1",
+      "action": "Add missing map key to exact registered existing WebP.",
+      "assetPath": "assets/agriculture/royal-weekly-20261107/week29/fruit-thinning-stages-v1.webp",
+      "assetSha256": "dd055f2c0c468c3dc69816bba1eeafe1a322b29aa52e7a3b4bc49020419f4152",
+      "sourceReview": "Actual full-size current WebP opened; left preliminary scene retains more fruit than right finishing scene. SourceS2PDF37/printed35 opened and all6current staged-thinning Japanese paragraphs read. Sequence during/after physiological fruit drop is supported; visible counts are not a fruit-number/leaf-ratio/date prescription.",
+      "sourceLesson": "agr-management-detail-staged-thinning"
+    }
+  ],
+  "sourcePdfSha256": {
+    "AGR-S1": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+    "AGR-S2": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12"
+  },
+  "freshDependencies": {
+    "recognition-images.json": "98be21ce1f64a6c8daa6985d7bccfd3eb1c9a0b0",
+    "recognition-image-locales.json": "1c35f234263aaf02d7db5adc233e71c7ef02a498",
+    "AgricultureImageRuby.tsx": "f4baf6d2282137241504669b6e23bd2874b6717d",
+    "image-readings.json": "c31d5fc62e264a168640008a05e19d674aabe185"
+  },
+  "preserved": [
+    "all current AgricultureImageRuby imports/calls/label layout",
+    "all other current image map entries including management/pollination",
+    "all current Japanese,12locale descriptions and ruby readings",
+    "all image bytes, registry metadata, source/revision/course bindings and quiz data",
+    "obsolete PNG retained in repository, no deletion"
+  ],
+  "qa": {
+    "actualSources": "Both exact WebP signatures andSHA256 verified;Pillowdecoded1536x1024 matches currentmetadata.",
+    "productionRuntime": "PASS3source/coursecontexts,39Japanese+12locale renders; exact registered byte URI reaches actual RecognitionImages/ZoomableFigure Image. ActualcurrentAgricultureImageRuby module participates.",
+    "negativeCases": 9,
+    "negativeCoverage": [
+      "wronglessonhash",
+      "invalidcourse",
+      "stale translation revision"
+    ],
+    "allActivePathGraph": "All188 current static require-map paths agree with declared registry paths; metadata alignment only, not188newpixelreviews.",
+    "strictTypes": "PASSactualcurrentRecognitionImages/AgricultureImageRuby/ZoomableFigure/FlowerLegendFigure/CropCalendarFigure andrealJSONdependencies;minimalReact/RNambient,notwholeapp.",
+    "diffCheck": "PASS"
+  },
+  "newBitmapGenerated": false,
+  "artBytesChanged": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "durationTested": false,
+  "wholeWeekComplete": false,
+  "releaseReady": false
+}

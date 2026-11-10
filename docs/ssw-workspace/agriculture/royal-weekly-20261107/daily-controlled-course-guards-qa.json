@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "unit": "daily-controlled-diagrams-canonical-course-guard",
+  "baselineCommit": "e1f27495368a16032ba7f0745e58edc6b09e3f36",
+  "problem": "DailyLearningFigure controlled raster branches checked sourceHash but not whether the supplied course level belongs to the canonical lesson.",
+  "change": "Reject unsupported canonical lesson/course pairs before selecting either controlled diagrams or recognition reuse. All existing current course/lesson branches preserved.",
+  "newImages": 0,
+  "changedLessonProse": 0,
+  "changedQuestions": 0,
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/agriculture/check-daily-controlled-course-guards.cjs",
+    "result": "PASS:62 current controlled lesson/course renders;153 unsupported/removed-course cases. Actual DailyLearningFigure rendered; leaf diagram imports isolated. Caption fallback regression PASS2 current/6 negative.",
+    "physicalDeviceTested": false,
+    "browserPixelsInspected": false,
+    "domainReviewed": false,
+    "nativeReviewed": false
+  },
+  "sourceReviewScope": "Runtime canonical course metadata guard only; no source knowledge/art reacceptance claimed.",
+  "wholeWeekComplete": false,
+  "wholeSectorComplete": false,
+  "afterSha256": {
+    "src/components/agriculture/DailyLearningSupport.tsx": "5a33ea808c82ce214ac5afaa4f1bfcb029ba9326ded3d5af74d9e0f70caadc02",
+    "scripts/agriculture/check-daily-controlled-course-guards.cjs": "ccb59369d69801c72407c36bedcc3efce94c2593220fd7db2349b54d595d00ba"
+  },
+  "concurrentReconciliation": {
+    "incomingCommit": "6cce902d9",
+    "preserved": "New CropCalendarFigure import and current selected-figure branch retained together with accepted canonical-course guard and current-binding caption/selection guards. WinterSpatialReference remains unchanged. No cross-worker semantic review.",
+    "validation": "Affected existing caption test PASS2/6 and controlled-course test PASS62/153, once each. Seeder12locale asset binding640b78fa retained.",
+    "currentDailyLearningSupportSha256": "a22b1c368530627d95aa4a0e83dab367fc669fe2c6196674349c9ee15039fcbf"
+  },
+  "concurrentReconciliationHistory": [
+    {
+      "incomingCommit": "53742a0e",
+      "restored": "Reapplied accepted guards around the current incoming DailyLearningSupport, preserving WinterSpatialReference and every incoming source-specific branch.",
+      "validation": "Existing affected actual-caption and canonical-course render tests each PASS once against the merged component.",
+      "currentSha256": {
+        "src/components/agriculture/DailyLearningSupport.tsx": "72c1ca9d08da4ab7365dda40e59418342108258811826fd15fe4856f92c4afce",
+        "scripts/agriculture/check-daily-controlled-course-guards.cjs": "057b46030cdb4fc427c3e891c4973aa796c6213fbc95ea3702553c0126cb236c"
+      }
+    }
+  ]
+}

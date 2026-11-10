@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-03",
+  "sector": "kaigo",
+  "baselineCommit": "c25e4e260df736515921193e6b59d723f397f1f5",
+  "source": {
+    "sourceId": "KAI-VI-2025",
+    "pdfPages": [
+      122,
+      123
+    ],
+    "sha256": "997bf386ba8344e19c644c3cbd6ae2d40760bfb32ed882db999ad8e17068aa54",
+    "pdfBytesVerified": true,
+    "textReadAndPageImagesViewed": true
+  },
+  "changes": [
+    {
+      "index": 18,
+      "id": "kaigo-reader-movement-mobility-meaning",
+      "beforePromptJa": "移動の援助は場所を変えるこ以外に意味が",
+      "beforeModelAnswerJa": "食事、排泄、入浴な生活行為を活動範囲を広げ、心身の機能に関わりま",
+      "afterPromptJa": "移動の援助には、場所を変えること以外にどのような意味がありますか。",
+      "afterModelAnswerJa": "食事、排泄、入浴などの生活行為につながり、活動できる範囲を広げ、心身の機能に関わります。"
+    },
+    {
+      "index": 19,
+      "id": "kaigo-reader-movement-adl-iadl-examples",
+      "beforePromptJa": "A例を挙げてく",
+      "beforeModelAnswerJa": "A移動、食事、着替え、排泄、入浴で金銭管理、買い物、洗濯、交通機関や通信機器の利用で",
+      "afterPromptJa": "ADLとIADLの例を、それぞれ挙げてください。",
+      "afterModelAnswerJa": "ADLの例は移動、食事、着替え、排泄、入浴です。IADLの例は金銭管理、買い物、洗濯、交通機関や通信機器の利用です。"
+    },
+    {
+      "index": 20,
+      "id": "kaigo-reader-movement-adl-iadl-meaning",
+      "beforePromptJa": "A意味で例だ違いを説明し",
+      "beforeModelAnswerJa": "A自立し生活の基本と日常生活動作で家庭や地域で生活を維持す必要な活動で",
+      "afterPromptJa": "ADLとIADLは、それぞれどのような意味ですか。例だけでなく、違いを説明してください。",
+      "afterModelAnswerJa": "ADLは、自立した生活の基本となる日常生活動作です。IADLは、家庭や地域で生活を維持するために必要な活動です。"
+    }
+  ],
+  "reason": "The previous prompt/model strings and ruby token text had lost characters, including ADL/IADL. Concatenation-only ruby validation accepted mutually corrupted strings. This is a real content repair, not a hash-only acceptance change.",
+  "translationDecision": "Read unchanged Japanese teaching, verified source and existing intended targets. All 36 prompt/model-answer locale pairs preserve the restored meaning; translations remain byte-identical and AI-unreviewed. No pivot translation generated.",
+  "affectedCanonicalKnowledgeIds": [
+    "kaigo-v5-movement-range",
+    "kaigo-v5-movement-function",
+    "kaigo-v5-movement-daily-connection",
+    "kaigo-v5-movement-adl-definition",
+    "kaigo-v5-movement-adl-examples",
+    "kaigo-v5-movement-iadl-definition",
+    "kaigo-v5-movement-iadl-examples"
+  ],
+  "old18ChecksUnchanged": true,
+  "weekly687QuestionsUnchanged": true,
+  "learnerIdsAndScheduleUnchanged": true,
+  "canonicalCoveredAiBefore": 62,
+  "canonicalCoveredAiAfter": 62,
+  "sourceDenominator": "open",
+  "sourceCoveragePercent": null,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false
+}

@@ -1,0 +1,226 @@
+{
+  "locale": "en",
+  "lesson": {
+    "id": "hotel-planning-06",
+    "reading": "じゅようをよそくし、かかくとはんばいしつすうをはんだんする",
+    "objectives": [
+      {
+        "id": "hotel-planning-06-objective",
+        "text": "Compare prices and rooms sold using demand and performance, without confusing room revenue with profit."
+      }
+    ],
+    "sections": [
+      {
+        "id": "hotel-planning-06-inventory",
+        "title": "An unsold room-night cannot be carried forward",
+        "body": "A room-night not sold today cannot be added to tomorrow’s stock. Revenue management considers this characteristic when assessing rates and rooms offered in light of seasonal demand and sales forecasts. Avoid treating rushed sales on busy days and empty rooms on quiet days with one identical approach; check booking movements and past results."
+      },
+      {
+        "id": "hotel-planning-06-forecast",
+        "title": "Read history alongside the market",
+        "body": "Level 2 uses past sales and market trends to forecast peak demand. The same period last year is one input, but consider differences in this year’s events and booking pace. A forecast is not an established fact. Record its basis, compare it with later performance and revise it."
+      },
+      {
+        "id": "hotel-planning-06-dynamic",
+        "title": "Understand the purpose of changing prices",
+        "body": "Dynamic pricing adjusts prices according to demand, reservations or similar conditions. Raising or lowering a price is not inherently good or bad. Anticipate effects on room volume and rates, and align decisions with approval procedures and sales terms. Do not confuse existing booking conditions with newly offered prices."
+      },
+      {
+        "id": "hotel-planning-06-yield",
+        "title": "Yield management includes volume",
+        "body": "Yield management considers not only price but how many rooms to offer under particular conditions. Heavy discounts to increase occupancy lower the rate, while too little discounting can leave rooms unsold. Use historical demand and sales movements to assess price and volume combinations, then compare concrete figures rather than assuming one measure is best."
+      },
+      {
+        "id": "hotel-planning-06-calculation",
+        "title": "Compare alternatives with the same availability",
+        "body": "For a practice day with all 50 rooms available, option A sells 30 rooms at ¥15,000: room revenue ¥450,000, OCC 60%, ADR ¥15,000 and RevPAR ¥9,000. Option B sells 40 at ¥12,000: revenue ¥480,000, OCC 80%, ADR ¥12,000 and RevPAR ¥9,600. A has the higher rate, but under these assumed volumes B has higher room revenue and RevPAR."
+      },
+      {
+        "id": "hotel-planning-06-profit",
+        "title": "Separate higher revenue from higher profit",
+        "body": "Higher room revenue alone does not prove higher profit. Profit assessment also needs information such as additional expenses, which OCC, ADR and RevPAR alone do not provide. In option B, the stated assumptions support higher room revenue, but not a profit conclusion without costs. Report what can be established and what needs further checking separately."
+      },
+      {
+        "id": "hotel-planning-06-transport",
+        "title": "Check transport-inclusive products before selling",
+        "body": "The Level 2 reference warns about travel-business registration when selling accommodation bundled with transport to the property. Combining a room with a local experience is not the same as arranging or selling transport. Before implementation, present the product and contracting/arranging parties to the responsible manager and check current rules and the property’s authority. This lesson alone does not determine whether registration is required."
+      }
+    ],
+    "terms": [
+      {
+        "ja": "レベニューマネジメント",
+        "reading": "れべにゅーまねじめんと",
+        "meaning": "Revenue management adjusting price and selling methods in light of demand."
+      },
+      {
+        "ja": "ダイナミックプライシング",
+        "reading": "だいなみっくぷらいしんぐ",
+        "meaning": "Price changes responding to demand, bookings or similar conditions."
+      },
+      {
+        "ja": "イールドマネジメント",
+        "reading": "いーるどまねじめんと",
+        "meaning": "Sales management considering price and quantity combinations."
+      },
+      {
+        "ja": "需要予測",
+        "reading": "じゅようよそく",
+        "meaning": "An evidence-based estimate of future use."
+      },
+      {
+        "ja": "客室売上",
+        "reading": "きゃくしつうりあげ",
+        "meaning": "Sales revenue from guest rooms."
+      },
+      {
+        "ja": "利益",
+        "reading": "りえき",
+        "meaning": "A result assessed by distinguishing revenue from expenses."
+      }
+    ],
+    "example": {
+      "situation": "In a meeting comparing same-day options, someone says the option with the higher rate must always be best.",
+      "steps": [
+        "Check that available room counts and periods are the same.",
+        "Calculate room revenue as rooms sold × price for each option.",
+        "Compare OCC, ADR and RevPAR and explain differences.",
+        "Request the basis for predicted sales volumes and the relevant costs."
+      ]
+    },
+    "practice": {
+      "prompt": "All 80 rooms are available. C sells 48 at ¥14,000; D sells 60 at ¥12,000. Calculate revenue and the three indicators, then state what cannot be concluded.",
+      "expectedPoints": [
+        "C: revenue ¥672,000; OCC 60%; ADR ¥14,000; RevPAR ¥8,400.",
+        "D: revenue ¥720,000; OCC 75%; ADR ¥12,000; RevPAR ¥9,000.",
+        "D has higher room revenue under the assumed volumes.",
+        "The calculation alone does not establish forecast accuracy or which option has higher profit."
+      ]
+    },
+    "questions": [
+      {
+        "id": "hotel-planning-06-q01",
+        "prompt": "What is true of a room-night not sold today?",
+        "choices": [
+          "Add it directly to tomorrow’s available rooms.",
+          "Transfer it into next month’s occupancy.",
+          "That day’s selling opportunity cannot be carried forward as stock.",
+          "Entering it into PMS makes it past revenue."
+        ],
+        "answerIndex": 2,
+        "explanation": "A room-night is tied to a date, so sales management must consider demand.",
+        "knowledgeIds": [
+          "HK-planning-06-inventory"
+        ]
+      },
+      {
+        "id": "hotel-planning-06-q02",
+        "prompt": "Which is appropriate demand forecasting?",
+        "choices": [
+          "Compare historical data with current booking and market movements.",
+          "Assume this year must equal last year.",
+          "Never revise forecasts because they are facts.",
+          "Remove all information except price."
+        ],
+        "answerIndex": 0,
+        "explanation": "Use history while checking current differences and revising the forecast.",
+        "knowledgeIds": [
+          "HK-planning-06-forecast"
+        ]
+      },
+      {
+        "id": "hotel-planning-06-q03",
+        "prompt": "Which appropriately describes dynamic pricing?",
+        "choices": [
+          "Always reduce rates every day.",
+          "Change existing bookings without explanation.",
+          "Check occupancy but never price.",
+          "Adjust prices with demand and booking conditions, considering volume effects."
+        ],
+        "answerIndex": 3,
+        "explanation": "Consider demand, room volume and rates together rather than changing prices as an end in itself.",
+        "knowledgeIds": [
+          "HK-planning-06-dynamic",
+          "HK-planning-06-yield"
+        ]
+      },
+      {
+        "id": "hotel-planning-06-q04",
+        "prompt": "All 50 rooms are available. A: 30 × ¥15,000; B: 40 × ¥12,000. Which is correct?",
+        "choices": [
+          "A’s RevPAR is ¥15,000.",
+          "B’s room revenue is ¥480,000 and RevPAR is ¥9,600.",
+          "B’s ADR must exceed A’s.",
+          "A’s OCC is 30%."
+        ],
+        "answerIndex": 1,
+        "explanation": "B revenue = 40 × ¥12,000 = ¥480,000. Divide by 50 available rooms for RevPAR ¥9,600.",
+        "knowledgeIds": [
+          "HK-planning-06-calculation"
+        ]
+      },
+      {
+        "id": "hotel-planning-06-q05",
+        "prompt": "B has higher room revenue, but no costs are provided. What can be said?",
+        "choices": [
+          "Profit must also be higher.",
+          "Costs are irrelevant.",
+          "Room revenue is higher under the assumptions; profit comparison needs more information.",
+          "The predicted sales volume is certain."
+        ],
+        "answerIndex": 2,
+        "explanation": "Revenue comparison and profit comparison differ. Check costs and the forecast basis.",
+        "knowledgeIds": [
+          "HK-planning-06-profit"
+        ]
+      },
+      {
+        "id": "hotel-planning-06-q06",
+        "prompt": "A new product bundles accommodation and transport. What is appropriate?",
+        "choices": [
+          "Start selling unconditionally from one reference sentence.",
+          "Identify arranging/contracting parties and check current rules with the responsible manager.",
+          "No check is needed if transport is written in small print.",
+          "An accommodation property can always sell every travel product."
+        ],
+        "answerIndex": 1,
+        "explanation": "Applicability depends on product details and other conditions. This lesson does not settle operational permission.",
+        "knowledgeIds": [
+          "HK-planning-06-transport"
+        ]
+      },
+      {
+        "id": "hotel-planning-06-q07",
+        "prompt": "In yield management, which combination is adjusted using past demand and sales trends?",
+        "choices": [
+          "Selling rate and number of rooms offered",
+          "Only guest nationality and passport color",
+          "Only plate positions and glass heights",
+          "Only uniform color and staff-room size"
+        ],
+        "answerIndex": 0,
+        "explanation": "The source includes rooms offered as well as price. Do not reduce this to discounting solely to raise occupancy.",
+        "knowledgeIds": [
+          "HK-planning-06-calculation",
+          "HK-planning-06-profit"
+        ]
+      }
+    ],
+    "illustration": {
+      "id": "hotel-planning-06-illustration",
+      "kind": "revenue-comparison",
+      "caption": "Keep available rooms constant when comparing combinations of rate and rooms sold.",
+      "alt": "Comparison for 50 available rooms: A sells 30 at ¥15,000 for ¥450,000, OCC 60%, RevPAR ¥9,000; B sells 40 at ¥12,000 for ¥480,000, OCC 80%, RevPAR ¥9,600.",
+      "keyObjectiveId": "hotel-planning-06-objective"
+    },
+    "sourceRevision": "2487c50fc6bbcffd4f417bd6326614b8fd9d442c1d31f3b166e755535750a62c",
+    "status": "translated_ai_unreviewed",
+    "title": "Forecast demand and assess room prices and sales volume"
+  },
+  "review": {
+    "selfReviewed": true,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  }
+}

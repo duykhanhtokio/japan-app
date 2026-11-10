@@ -1,0 +1,91 @@
+{
+  "reviewerAgent": "/root/b28_id_tl",
+  "authorAgent": "/root/b28_zh_en_vi",
+  "reviewedQuestionCount": 40,
+  "reviewedQuestionIds": [
+    "food-2-q378",
+    "food-2-q118",
+    "food-2-q262",
+    "food-2-q105",
+    "food-2-q132",
+    "food-2-q113",
+    "food-2-q124",
+    "food-2-q316",
+    "food-2-q400",
+    "food-2-q354",
+    "food-2-q166",
+    "food-2-q289",
+    "food-2-q181",
+    "food-2-q325",
+    "food-2-q310",
+    "food-2-q253",
+    "food-2-q123",
+    "food-2-q309",
+    "food-2-q312",
+    "food-2-q140",
+    "food-2-q148",
+    "food-2-q244",
+    "food-2-q385",
+    "food-2-q218",
+    "food-2-q216",
+    "food-2-q279",
+    "food-2-q195",
+    "food-2-q084",
+    "food-2-q282",
+    "food-2-q193",
+    "food-2-q247",
+    "food-2-q246",
+    "food-2-q296",
+    "food-2-q311",
+    "food-2-q213",
+    "food-2-q121",
+    "food-2-q321",
+    "food-2-q137",
+    "food-2-q199",
+    "food-2-q098"
+  ],
+  "reviewedArtifactSha256": "4a6116ce2aa87743b35e1a829d51b7447952dfc5d8b0cef4f5a663cf7453fc06",
+  "corrections": [
+    {
+      "questionId": "food-2-q105",
+      "field": "options[0]",
+      "before": "不統一套用示例條件，而是根據依據，制定對本產品的危害和工序有效的標準。",
+      "after": "不統一套用示例條件，而是依據證據，制定對本產品的危害和工序有效的標準。",
+      "reason": "Improve natural wording while preserving evidence-based, product-specific scope."
+    },
+    {
+      "questionId": "food-2-q385",
+      "field": "prompt",
+      "before": "實際進度線逐漸向下偏離計畫線，最終交貨期還未到。領班應如何行動？",
+      "after": "實際進度線逐漸向下偏離計畫線，距離最終交貨期還有一段時間。領班應如何行動？",
+      "reason": "Preserve まだ先: the deadline is still some time away, not merely not yet reached."
+    },
+    {
+      "questionId": "food-2-q312",
+      "field": "options[0]",
+      "before": "只把能夠用清洗水沖走的東西衝走。",
+      "after": "只把能夠用清洗水沖走的東西沖走。",
+      "reason": "Use 沖 for flushing with water."
+    },
+    {
+      "questionId": "food-2-q312",
+      "field": "optionExplanations[0]",
+      "before": "把廢棄物衝入排水會增加處理負荷等問題。",
+      "after": "把廢棄物沖入排水會增加處理負荷等問題。",
+      "reason": "Use 沖 for flushing with water."
+    }
+  ],
+  "findings": [
+    {
+      "status": "pass",
+      "scope": "All Japanese prompts, four options, explanations, four option reasons, and title compared directly with canonical batch28 packet. Numeric units, hypothetical scope, negations, worker authority, heating-example limitations, and procedural/organizational q195 meaning preserved."
+    },
+    {
+      "status": "pass",
+      "scope": "q262 0.04 person-hours/box × 350 = 14 person-hours; q400 108/0.90 = 120kg input; q309 0.80×0.90×100 = 72%. No extra OEE factor or elapsed-time interpretation added."
+    }
+  ],
+  "nativeSpeakerReviewed": false,
+  "domainExpertReviewed": false,
+  "integratedPartSha256": "4a6116ce2aa87743b35e1a829d51b7447952dfc5d8b0cef4f5a663cf7453fc06"
+}

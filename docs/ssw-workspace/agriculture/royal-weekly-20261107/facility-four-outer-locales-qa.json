@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "reviewedBaseline": "0dadcf8a901e4eebc69a86e6aaba87dc8258ab67",
+  "readyPaths": [
+    "src/data/agriculture/recognition-image-locales.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/facility-four-outer-locales-qa.json"
+  ],
+  "beforeSha256": {
+    "src/data/agriculture/recognition-image-locales.json": "66d3a2312841e64bbcb6b1722813e131e662d2a52f72f77619aed2d11b98008c",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/facility-four-outer-locales-qa.json": null
+  },
+  "targets": [
+    {
+      "id": "agr-f40-facility-support-greenhouse-crops",
+      "assetSha256": "6a1e4abbbc313b2eb47228dbdc527da1610829df42eb0af9b376708342d9d359",
+      "lessonIds": [
+        "agr-facility-structure-vegetables",
+        "agr-facility-structure-strawberry"
+      ]
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-flowers-a",
+      "assetSha256": "451d6358351fa222c95b583adcd99b017280bbeb9170d7bd4e30a759e37267c5",
+      "lessonIds": [
+        "agr-facility-structure-flower-forms"
+      ]
+    },
+    {
+      "id": "agr-f40-facility-support-greenhouse-flowers-b",
+      "assetSha256": "3a63aba44c3fc6414823b2a6239514af257bab23e6dfa8ff5b898fbc8c555933",
+      "lessonIds": [
+        "agr-facility-structure-flower-forms"
+      ]
+    },
+    {
+      "id": "agr-f40-facility-support-rain-shelter-roof-only",
+      "assetSha256": "fd7c97142236801d0d3b4b42959cb1ac3f7b42f584a9bfff33ca95f0eb5a003e",
+      "lessonIds": [
+        "agr-facility-structure-house-types"
+      ]
+    }
+  ],
+  "scope": "Four retained current greenhouse/roof illustrations: outer title,alt,observation plus existing exact12locale shared limit. No source/raster/JA/canonical/question changes.",
+  "ownPixelMeaningReview": [
+    "Current4 exactasset bytes viewed; crops positions and raisedbench match JA",
+    "Chrysanthemum/rose/lily order and visible leaves/stems match JA",
+    "Lisianthusleft with broaderleaves, branching narrowleaf spraycarnationright match JA",
+    "Film roofonly with open sides matchesJA; no installation procedure claimed"
+  ],
+  "preservedIncomingEntries": 175,
+  "remainingRawRegistryOmissions": 14,
+  "limits": [
+    "No cultivar/species/installation/effect/safety guarantees added",
+    "Native provider/othermetadata/reading fields remain separate",
+    "No device/browser/domain acceptance"
+  ],
+  "actualValidation": {
+    "unchangedRasterByteHashes": 4,
+    "sourceLessonCourseContexts": 8,
+    "actualForeign12LocaleRenders": 96,
+    "actualJapaneseRenders": 8,
+    "hiddenAllLanguageRenders": 104,
+    "negativeStaleDependencyLimitCases": 220,
+    "canonicalJapanese": "unchanged and shown",
+    "translations": "new exactJA-bound12locale authoring; observation equals alt in currentsource, sharedlimit reused exactly",
+    "commands": [
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-facility-four.cjs --manifest"
+    ],
+    "approvedFreshHelper": "/workspace/scratch/b72f4a7f6a62/safety-audit/rebase-facility-four.py FRESH_SHA"
+  },
+  "incomingReconciliation": {
+    "allFourBindingsAnd12LocaleMeaningReviewed": true,
+    "decision": "Preserve exact175incoming entries and all limits byte-for-byte. Incoming four translations differ in wording but sameJA/pixel meaning, positions, botanicalgroups and limitations. No correction needed. Own alternative wording superseded.",
+    "sourceSha": "0dadcf8a901e4eebc69a86e6aaba87dc8258ab67",
+    "registryOutputExactlyIncoming": true
+  }
+}

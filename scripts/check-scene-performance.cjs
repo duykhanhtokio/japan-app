@@ -16,7 +16,7 @@ class WebImage {
   async decode() { decodes++; if (failDecode) { failDecode = false; throw Error('decode failed'); } }
 }
 const mocks = {
-  './RoyalPaperPanel': { OPEN_FRAME_SLICES: [10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008] },
+  './RoyalPaperPanel': { OPEN_FRAME_SLICES: [10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008], PAPER_FRAME_SLICES: Array.from({ length: 9 }, (_, i) => 11001 + i) },
   'react-native': { Platform: platform, Dimensions: { get: () => ({ width: 430, height: 932 }) },
     Image: { prefetch: async () => true } },
   'expo-image': { Image: { prefetch: async () => true } },
@@ -80,20 +80,24 @@ function load(file, overrides = {}) {
   gate = new Promise(resolve => { release = resolve; });
   const home = helper.prepareSceneRoute('/home');
   assert(helper.preparedRouteBackdrop('/home'), 'target backdrop is published before waiting for decode');
-  const homeCount = new Set(calls.at(-1)).size;
+  const homeCount = new Set(calls.flat()).size;
   assert.equal(homeCount, 22, 'Home decodes only its displayed artwork');
   release(); await home;
   gate = Promise.resolve(); calls.length = 0; imports.length = 0;
   await helper.prepareSceneRoute('/world/city/city');
-  assert.equal(calls.length, 1, 'destination image and controls prepare in parallel');
-  assert(calls[0].includes(801));
+  assert.equal(calls.length, 2, 'controls warm separately from the critical destination image');
+  assert(calls[1].includes(801));
   assert(!imports.includes('@/components/world/location-backgrounds.generated'), 'city does not initialize location art catalog');
   calls.length = 0;
   await helper.prepareSceneRoute('/world/prefecture/prefecture');
   assert(!calls[0].includes(899), 'neighbouring city images do not delay navigation');
   calls.length = 0;
   await helper.prepareSceneRoute('/world/dialogue/scenario');
-  assert(calls[0].includes(802) && calls[0].includes(804), 'dialogue prepares its own background and NPC');
+  assert(calls[1].includes(802) && calls[0].includes(804), 'dialogue prepares its own background and NPC');
+  calls.length = 0;
+  await helper.prepareSceneRoute('/specified-skills/restaurant');
+  assert.equal(calls[0].length, 11, 'vocational navigation warms only paper frame and two controls');
+  assert.equal(calls[1].length, 1, 'vocational backdrop has a separate critical preparation');
   navigations = []; gate = new Promise(resolve => { release = resolve; });
   const first = helper.pushPrepared('/home'), second = helper.pushPrepared('/learn');
   release(); await Promise.all([first, second]);

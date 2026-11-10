@@ -1,3 +1,4 @@
+import { useJlptExamAccess } from '@/hooks/useJlptExamAccess';
 import JlptStudyBackground from './JlptStudyBackground';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AppState, Image, Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
@@ -32,7 +33,8 @@ import { loadJlptAttemptSummary, recordJlptAttempt } from '@/services/jlpt-exam-
 type Mode = 'exam' | 'practice';
 const CONTINUOUS_AUDIO_ID = '__full_listening_track__';
 const FONT_SCALES: readonly JlptFontScale[] = [0.9, 1, 1.1, 1.2, 1.3, 1.4];
-export default function N1OfficialTrial({ onExit, registerExit, exam, initialSession }: { onExit: () => void; registerExit: (handler: (() => void) | null) => void; exam: ApprovedN1Exam; initialSession?: N1TrialSession | null }) {
+export default function N1OfficialTrial({ onExit, registerExit, exam, initialSession, reviewOnly = false }: { onExit: () => void; registerExit: (handler: (() => void) | null) => void; exam: ApprovedN1Exam; initialSession?: N1TrialSession | null; reviewOnly?: boolean }) {
+  const permission = useJlptExamAccess(exam.id, initialSession, reviewOnly);
   const questions = exam.questions;
   const listening = questions.filter((question) => question.family === 'listening');
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -78,6 +80,13 @@ export default function N1OfficialTrial({ onExit, registerExit, exam, initialSes
       void playListening();
     }
   }, [playerStatus.isLoaded]);
+
+  useEffect(() => {
+    if (!permission.denied || submitted) return;
+    playbackGeneration.current += 1; pendingAudioStart.current = false;
+    player.pause(); setAudioPlaying(false);
+    if (started) void persist({ listeningPositionMs: listeningPosition.current });
+  }, [permission.denied, submitted]);
 
   const answeredIds = useMemo(() => new Set(Object.keys(answers)), [answers]);
 
@@ -200,10 +209,11 @@ export default function N1OfficialTrial({ onExit, registerExit, exam, initialSes
   }
 
   function persist(overrides: Partial<Omit<N1TrialSession, 'version' | 'updatedAt'>> = {}) {
-    return saveJlptTrialSession(exam.storageKey, { answers, mode, status: submitted ? reviewing ? 'reviewing' : 'submitted' : started ? 'in_progress' : 'not_started', started, submitted, currentQuestion, scrollY: initialScrollY, playedAudioSegments, listeningPositionMs: listeningPosition.current, submittedAt, result: submitted ? calculateResult(questions, answers) : null, ...overrides });
+    return saveJlptTrialSession(exam.storageKey, { accessRunId: permission.runId.current || undefined, answers, mode, status: submitted ? reviewing ? 'reviewing' : 'submitted' : started ? 'in_progress' : 'not_started', started, submitted, currentQuestion, scrollY: initialScrollY, playedAudioSegments, listeningPositionMs: listeningPosition.current, submittedAt, result: submitted ? calculateResult(questions, answers) : null, ...overrides });
   }
 
-  function begin() {
+  async function begin() {
+    if (!await permission.authorize('start')) return;
     playbackGeneration.current += 1;
     pendingAudioStart.current = false;
     player.pause();
@@ -222,11 +232,11 @@ export default function N1OfficialTrial({ onExit, registerExit, exam, initialSes
     setReviewing(false);
     setSubmittedAt(null);
     scrollRef.current?.scrollTo({ y: 0, animated: false });
-    void clearJlptTrialSession(exam.storageKey).then(() => saveJlptTrialSession(exam.storageKey, { answers: {}, mode: 'exam', status: 'in_progress', started: true, submitted: false, currentQuestion: questions[0].id, scrollY: 0, playedAudioSegments: [], listeningPositionMs: 0, submittedAt: null, result: null }));
+    void clearJlptTrialSession(exam.storageKey).then(() => saveJlptTrialSession(exam.storageKey, { accessRunId: permission.runId.current || undefined, answers: {}, mode: 'exam', status: 'in_progress', started: true, submitted: false, currentQuestion: questions[0].id, scrollY: 0, playedAudioSegments: [], listeningPositionMs: 0, submittedAt: null, result: null }));
   }
 
-  function continueSession() {
-    if (!pendingSession) return;
+  async function continueSession() {
+    if (!pendingSession || !await permission.authorize('continue', pendingSession)) return;
     setAnswers(pendingSession.answers);
     setMode('exam');
     setSubmitted(false);
@@ -236,7 +246,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam, initialSes
     listeningPosition.current = pendingSession.listeningPositionMs ?? 0;
     setPendingSession(null);
     setStarted(true);
-    void saveJlptTrialSession(exam.storageKey, { ...pendingSession, mode: 'exam' });
+    void saveJlptTrialSession(exam.storageKey, { ...pendingSession, accessRunId: permission.runId.current || undefined, mode: 'exam' });
   }
 
   function requestRestartSavedSession() {
@@ -246,12 +256,14 @@ export default function N1OfficialTrial({ onExit, registerExit, exam, initialSes
   function confirmRestartSavedSession() {
     // Keep the current confirmation visible until the new exam can begin.
     void loadJlptAttemptSummary(exam.storageKey).then(() => {
-      begin();
-      setRestartConfirmationVisible(false);
+      void begin().then(() => setRestartConfirmationVisible(false));
     }).catch((error) => { console.warn('Restart JLPT session:', error); });
   }
 
-  function submit() {
+  async function submit() {
+    const submittedTime = new Date().toISOString();
+    const submittedResult = calculateResult(questions, answers);
+    if (!await permission.authorize('submit', { version: 4, accessRunId: permission.runId.current, answers, mode, status: 'submitted', started: true, submitted: true, currentQuestion, scrollY: initialScrollY, playedAudioSegments, listeningPositionMs: listeningPosition.current, submittedAt: submittedTime, result: submittedResult, updatedAt: submittedTime })) return;
     playbackGeneration.current += 1;
     pendingAudioStart.current = false;
     listeningPosition.current = 0;
@@ -260,7 +272,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam, initialSes
     setSubmitConfirmationVisible(false);
     setSubmitted(true);
     setReviewing(false);
-    const now = new Date().toISOString();
+    const now = submittedTime;
     setSubmittedAt(now);
     const result = calculateResult(questions, answers);
     void persist({ status: 'submitted', submitted: true, submittedAt: now, result }).then(() => recordJlptAttempt(exam.storageKey, result, now));
@@ -303,6 +315,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam, initialSes
     </View>;
   }
 
+  if (!submitted && !reviewOnly && permission.denied) return <JlptStudyBackground><JlptExamHeader title={exam.title} transparent onBack={exitExam} /><JlptPaper><Text style={styles.startCopy}>{permission.reason}</Text><JlptActionButton label="Thử đồng bộ lại" onPress={() => void permission.refresh()} /><JlptActionButton kind="secondary" label="JLPT一覧へ戻る" onPress={exitExam} /></JlptPaper></JlptStudyBackground>;
   if (!sessionReady) return <JlptStudyBackground><JlptExamHeader title={`${exam.level} · JLPT模擬試験`} transparent onBack={() => void exitExam()} /></JlptStudyBackground>;
   if (!started && restartConfirmationVisible) return <JlptStudyBackground><JlptRestartConfirmation visible inline onCancel={() => setRestartConfirmationVisible(false)} onConfirm={confirmRestartSavedSession} /></JlptStudyBackground>;
   if (!started && pendingSession) return <JlptResumePrompt
@@ -324,13 +337,13 @@ export default function N1OfficialTrial({ onExit, registerExit, exam, initialSes
       <View style={styles.rule} />
       <Text style={styles.startCopy}>全{questions.length}問を収録しています。提出後に正誤と正答を確認できます。</Text>
       <Text style={styles.startCopy}>聴解は連続再生されます。保存した位置から再開でき、正答は提出後に確認できます。</Text>
-      <JlptActionButton label={exam.startLabel} onPress={begin} style={styles.startAction} />
+      {!reviewOnly && <JlptActionButton label={exam.startLabel} onPress={() => void begin()} style={styles.startAction} />}
       {completedSession ? <View style={styles.savedResult}>
         <Text style={styles.savedResultTitle}>提出済みの結果があります</Text>
         <Text style={styles.savedResultText}>{formatSavedAt(completedSession.submittedAt ?? completedSession.updatedAt)}</Text>
         <JlptActionButton label="結果を見る" onPress={() => openCompleted(false)} />
         <JlptActionButton kind="secondary" label="解答を確認する" onPress={() => openCompleted(true)} style={styles.savedResultAction} />
-        <JlptActionButton kind="secondary" label="もう一度受験する" onPress={requestRestartSavedSession} style={styles.savedResultAction} />
+        {!reviewOnly && <JlptActionButton kind="secondary" label="もう一度受験する" onPress={requestRestartSavedSession} style={styles.savedResultAction} />}
       </View> : null}
     </JlptPaper>
   </ScrollView>
@@ -358,7 +371,7 @@ export default function N1OfficialTrial({ onExit, registerExit, exam, initialSes
       <Text style={styles.rawScore}>正答数：{correctCount}/{questions.length}</Text>
       <View style={styles.notEligible}><Text style={styles.notEligibleTitle}>素点による結果</Text><Text style={styles.notEligibleText}>公式の尺度得点への換算式は公開されていないため、正答数のみを表示します。正答率をJLPT公式得点や合否に置き換えていません。</Text></View>
       <JlptActionButton label="解答を確認する" onPress={() => { setReviewing(true); void persist({ status: 'reviewing' }); }} style={styles.resultAction} />
-      <JlptActionButton kind="secondary" label="もう一度受験する" onPress={() => setRestartConfirmationVisible(true)} style={styles.resultAction} />
+      {!reviewOnly && <JlptActionButton kind="secondary" label="もう一度受験する" onPress={() => setRestartConfirmationVisible(true)} style={styles.resultAction} />}
       <JlptActionButton kind="secondary" label="JLPT一覧へ戻る" onPress={exitExam} style={styles.resultAction} />
     </JlptPaper></ScrollView>
     {restartConfirmationVisible && <JlptRestartConfirmation visible={restartConfirmationVisible} onCancel={() => setRestartConfirmationVisible(false)} onConfirm={confirmRestartSavedSession} />}

@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "baseCommit": "0f4dadf58d04b78ba45967cfa87295d0eab3e26f",
+  "status": "SCOPED_WEB_RUNTIME_PASS",
+  "nodeAdapter": {
+    "node": "v24.22.1",
+    "command": "node scripts/restaurant/check-node-adapter.cjs",
+    "checks": [
+      {
+        "check": "state",
+        "output": [
+          "{\"status\":\"PASS\",\"cases\":[\"learner and level key isolation\",\"content revision exam isolation\",\"strict corrupt progress handling\",\"resume reader scroll position\",\"completion source revision invalidation\",\"invalid position rejection\",\"exam answer and position resume\",\"exam revision invalidation\",\"out-of-range answer rejection\",\"grading unanswered\"],\"nativeDeviceTested\":false}"
+        ],
+        "method": "Original assertions; Node stripTypeScriptTypes in-memory transpilation adapter; report writes suppressed"
+      },
+      {
+        "check": "loading",
+        "output": [
+          "{\"status\":\"PASS\",\"cases\":[\"current question translation accepted and stale revision rejected\",\"unsupported question language has no unrelated fallback\",\"localized counts with named placeholders\",\"missing interpolation values remain explicit\",\"no eager lesson/exam/translation evaluation\",\"selected level only\",\"selected locale only\",\"stale translation rejected\",\"no unrelated fallback language\",\"exam bank loads only when requested\",\"current glossary translation accepted\",\"stale glossary definition rejected\",\"missing glossary translation explicit\"],\"timingBenchmarkPerformed\":false}"
+        ],
+        "method": "Original assertions; Node stripTypeScriptTypes in-memory transpilation adapter; report writes suppressed"
+      }
+    ],
+    "dependencies": {
+      "esbuild": false,
+      "react": false,
+      "reactDom": false,
+      "reactNativeWeb": false,
+      "expo": false,
+      "playwright": true,
+      "typescript": false
+    },
+    "browser": {
+      "executed": false,
+      "reason": "Browser rendering is outside this Node fallback; see closure-runtime-environment.json for environment probe"
+    },
+    "productionExpoTested": false,
+    "nativeDeviceTested": false,
+    "limitations": [
+      "Node transpilation adapter validates source assertions, not esbuild bundling",
+      "No production Expo build or native/device validation",
+      "Does not run a bundler or browser; dependency availability is probed independently"
+    ]
+  },
+  "browser": {
+    "status": "PASS",
+    "scope": "course-state-responsive-and-artwork",
+    "checks": {
+      "responsiveViewports": 4,
+      "rasterResponsiveCases": 12,
+      "diagramCases": 4,
+      "completionFailureRetry": true,
+      "completionReload": true,
+      "levelIsolation": true,
+      "readerResume": true,
+      "translatedLocales": 12,
+      "explicitMissingLocaleBehavior": 0,
+      "localizedCalendarSubmissionResults": 12,
+      "examResumeLevel1": true,
+      "hiddenAnswersAndSubmissionLevel1": true,
+      "examCompletionBadgeLevel1": true,
+      "examResumeLevel2": true,
+      "hiddenAnswersAndSubmissionLevel2": true,
+      "examCompletionBadgeLevel2": true,
+      "corruptProgressPreserved": true,
+      "readFailureRetry": true
+    },
+    "screenshots": [
+      "reader-390x844.png",
+      "reader-844x390.png",
+      "reader-768x1024.png",
+      "reader-1440x900.png",
+      "rst-img-meat-trays-v1-390x844.png",
+      "rst-img-kitchen-tools-v1-390x844.png",
+      "rst-img-vegetables-v1-390x844.png",
+      "translated-ne-390x844.png",
+      "translated-my-390x844.png",
+      "translated-th-390x844.png",
+      "translated-km-390x844.png"
+    ],
+    "adapters": [
+      "Royal artwork and calendar leaf placeholder",
+      "background",
+      "safe area",
+      "localStorage for AsyncStorage"
+    ],
+    "restaurantRasterAssetsLoaded": [
+      "assets/restaurant/kitchen-tools-v1.png",
+      "assets/restaurant/vegetables-v1.png",
+      "assets/restaurant/meat-trays-v1.png"
+    ],
+    "additionalQaScriptFonts": [
+      "bn",
+      "hi",
+      "my",
+      "th",
+      "km"
+    ],
+    "realCourseReactAndNativeWeb": true,
+    "nativeDeviceTested": false,
+    "productionExpoTested": false,
+    "fullTranslationCoverageCertified": false
+  },
+  "recordScope": {
+    "status": "PASS",
+    "actualHook": "src/components/restaurant/useRestaurantRecord.ts",
+    "cases": [
+      "late old-key write cannot change current invalid state",
+      "explicit reset archives current corrupt raw rather than old successful JSON",
+      "old and new storage writes both preserved"
+    ],
+    "adapters": [
+      "AsyncStorage controlled delayed write"
+    ],
+    "nativeDeviceTested": false
+  },
+  "environment": {
+    "node": "v24.22.1",
+    "chromium": "Chromium 138.0.7204.0",
+    "browserExecutableBytes": 193617016,
+    "bundler": "esbuild existing reusable package",
+    "ReactNativeWeb": true,
+    "installedNewDependencies": false,
+    "productionExpo": false,
+    "nativeDevice": false,
+    "timingBenchmarkPerformed": false
+  },
+  "sourceSha256": {
+    "src/components/restaurant/RestaurantIllustrations.tsx": "43754d807a7236d0d884d4243a626a8fa710bec3ce1edb2a9305800b9b4d7548",
+    "src/components/restaurant/RestaurantGlossary.tsx": "b13043dfcfce7de2a05344e2538a0d91d95d6469ba188b5d49a95091de2e18d1",
+    "src/components/restaurant/useRestaurantRecord.ts": "cd2e8103e389d46d8a4251d85c458499624975013a52d6f874fcaf3765bd782d",
+    "src/components/restaurant/RestaurantReading.tsx": "5b72ee758e8d82c3fdee17b8fd1436d8b0aeab59b94aa10b996cb82db8b26fe8",
+    "src/components/restaurant/RestaurantCourse.tsx": "3ed445059a3fbc862d37eaae8248e56323d7ab3b25de48e714cb8f2c4469f7a2",
+    "src/components/restaurant/RestaurantCuttingGuide.tsx": "5b950f0058a8fc95dbc67cd4fc41786e697b331eb7db50a64972af83b9bceb6a",
+    "src/components/restaurant/RestaurantDiagrams.tsx": "8e8f3ba44825bd8393dd04e01240f9c12f4dd81ee3c73eace8f434f7d2c1384b",
+    "src/components/restaurant/RestaurantMealPlacement.tsx": "5b8d817970a4e9fa3d4b749c55e92b9b7cfc98a934e67abe77dcb181fa8f67fe",
+    "src/components/world/japanese-ruby-data.ts": "cf025f88d2a73d63c5f6a9b84a294544d7b6177e99ab60a7787dacc6e64b86ec",
+    "src/components/tokutei/StudyAppearance.tsx": "1f7f8d1c4c49e5878850a858c7d7f0ff36e02e6d1a8d229195d0394e954e05e9",
+    "src/components/tokutei/TokuteiChrome.tsx": "c6599b4e8a59c88303f882d87223aed74e0d001530459defa16e596453fc354e",
+    "src/services/restaurant-study-state.ts": "0148793310c874b89e7c7652d17d708d403487ae50687535d79249a390220475",
+    "src/services/kensetsu-test-state.ts": "913dd5f7d4ea4d6a0c2d45316e6d68141c77ad16cb5a4700b130185845479f1e",
+    "src/theme/study-surface.ts": "9b4e0e88b5ced6eeae3115e552f71ce8212a9dcddaaf7ef853df9c4f78d984cf"
+  },
+  "dataSha256": {
+    "src/data/restaurant/glossary.ja.json": "ba3737a93549b48a9b4835a9ef62c4066f211557be047aa066a346562d9117fd",
+    "src/data/restaurant/ui-keys.ja.json": "cf0d42da941f69dde538bae309c0267e4748d4da00b8ffeb2d8c6898b0989b74",
+    "src/data/restaurant/meal-placement.json": "7fb638a0e5ab70cc0f093dba5839abb506bf6125c4f535536613666fde48ce46",
+    "src/data/restaurant/diagrams.json": "f5620dbbd1c089cafcada3ca8b966ae8e108eca7717e9a667db3edccc3629a92",
+    "src/data/restaurant/lessons.1.ja.json": "54752132ff92e842bef1f270c2a1fd0fc76ec4bea3c0f9f6d50e3824bb202998",
+    "src/data/restaurant/reading-overrides.json": "981e1ea7449ca747598d29b62bc4502d4fbd18d1bcc53b82a785833493845332",
+    "src/data/restaurant/course-manifest.json": "ea8812d617b0ca3b892c5f81dad8ce3f1788edb5d6b63f29fc880ee779c2b12c",
+    "src/data/restaurant/exams.1.ja.json": "83f7f7372da63f31263fb1592c1fcb2519337d3cbf3b17b8fe0ebb6ca5e074fe",
+    "src/data/restaurant/illustrations.json": "d26539a3ecd0a1633b7f1023aeb9e9de644f599338dce6d41d215c3676bab6d3",
+    "src/data/restaurant/exams.2.ja.json": "a80d125b20fac2574be3081990c65e959767b928aecc341c52f2a059402224ef",
+    "src/data/restaurant/glossary-links.json": "135eee10a4b012e3a7acb18b1df3b3a580e91d9b2b3a551537f1715483fcf292",
+    "src/data/restaurant/lessons.2.ja.json": "18c47cb12c170eca60f4d135548dea6af436d4abf8399d7a65600eed2d089719",
+    "src/data/restaurant/translations/bn.json": "4b31f19b4c0b7bf904a263b58346b5e9dcd88fb55eaff33dd3b9e3f3920b9ce7",
+    "src/data/restaurant/translations/hi.json": "be7e760cd86f196fa9a038a9b51a05a5e88b54b91611167c857515a512c5f5e9",
+    "src/data/restaurant/translations/id.json": "45cda46ef5d0f5ef3b1a09c23bac4cb9a3702e5e004645712394cd4d76e677f0",
+    "src/data/restaurant/translations/ne.json": "38f4967aa743121453ce2b866727993e13ba69e8b7c25e1f7eab3ad37d8acb9e",
+    "src/data/restaurant/translations/tl.json": "544daf7356134f24adfc94ca6d83c00bbc25fe4e11616bc3e73db39dc0f4c322",
+    "src/data/restaurant/translations/en.json": "a4c0cad400dd2fe6c45916d02b6bc239e7b99512b02fba573ca499cfb9bcb985",
+    "src/data/restaurant/translations/my.json": "6ac47fe7f2a9b2ce8ee1164d705e31a6d60e2e3289428eae451f657a2000eeda",
+    "src/data/restaurant/translations/th.json": "955a82c68e27da7a572044f00c1e864c173f2e08975c8a27b3a088be371d9231",
+    "src/data/restaurant/translations/zh-CN.json": "3a3eaa688414b5788c931f049fa5109bc3ccb554e3a45a521faaf78f8855fed0",
+    "src/data/restaurant/translations/km.json": "67abb98610674f0a8b82056fb3187f0c57ccb2fe56ac83cdaa2aeb0df832cdd3",
+    "src/data/restaurant/translations/vi.json": "ad1028c61eb0e6da43879f918856e7b1de45d581f265858b029f1ef510a74798",
+    "src/data/restaurant/translations/zh-TW.json": "cb224827208696f9609fced796df2b20066a83d36035b438aa3938fd25ed8998"
+  },
+  "fonts": {
+    "japanese.ttf": {
+      "bytes": 5766900,
+      "sha256": "a6ec656454bdbaeaac4a7b0a413b069e3efa2abe981a75a0f3635a4248de9915"
+    },
+    "qa-bn.woff2": {
+      "bytes": 44352,
+      "sha256": "adb805ae2eb639cc5d7276ee0e3798a8092fbfe02a6e5a0e19d82587680b528c"
+    },
+    "qa-th.woff2": {
+      "bytes": 9112,
+      "sha256": "57776453076ebf0fa935080e63c0ae656f1f1ecd5172112d59d3b259e0dd8796"
+    },
+    "qa-km.woff2": {
+      "bytes": 22936,
+      "sha256": "8f19afec2c3d00c40e54ca88717a9167ca567d3dea6a85e258356d32167f7cf4"
+    },
+    "qa-my.woff2": {
+      "bytes": 47148,
+      "sha256": "da6f87b8407a0e5a223cfb90328f9aad4cc31c728cfad35263d0e237f13e98ff"
+    },
+    "qa-hi.woff2": {
+      "bytes": 50416,
+      "sha256": "f86f14cbd1004f5795689ee9cc70d5d87d915f5135b30283525c1c7b8f0eb192"
+    }
+  },
+  "screenshotsVisuallyInspected": [
+    "reader-390x844.png",
+    "reader-844x390.png",
+    "reader-768x1024.png",
+    "reader-1440x900.png"
+  ],
+  "screenshotSha256": {
+    "meal-ja-768x1024.webp": "f5b327245794e504cf5a96e06e801e00a42302763a097417481021d5daf0f07a",
+    "meal-ja-390x844.webp": "f0d9579e9d72471933c61baff83b8a55fe9b4223b371d5823d765cbd5e3ed092",
+    "meal-km-390x844.webp": "a10c33076e5fea736a9ad212244ac07705e0c061978bbfda15eb5eac138b1b08",
+    "translated-th-390x844.webp": "44b016b5606d0ec3505332881a02fd605b9ec9feeee97bf9a0abac4b47e8a288",
+    "meal-ja-844x390.webp": "2133a0087ca248b2af7d845a7831399e89555d4b6263ffdd4a7aa79faa89fde8",
+    "meal-ja-390x844-text2x.webp": "59f8db2f5c84fa86f02d6727faf098c24f24930f534918bd2f8705c599761667",
+    "rst-img-meat-trays-v1-390x844.webp": "5b70b6f3eab24867669f5e2570615cc3d268f03f55b71e2f5f0234b31161fb3b",
+    "meal-ne-390x844.webp": "f7d6918f50f6abeeffcd6655115e0e0994d131f9cadd1118e1a8784106f9c8be",
+    "meal-ja-1440x900.webp": "73efe41e752d4afdba26a6cf0c450ceeb734735f972e6e408748814b811e1822",
+    "rst-img-vegetables-v1-390x844.webp": "c14799a350521f92caf83131b870a066fa6dd287fcb8600af15d8d4b43a379aa",
+    "translated-ne-390x844.webp": "3e178d484a3517fe874bcea3de172ac08dd1610ffffc87010eed18acc29d2378",
+    "reader-844x390.webp": "76a817bfebef4fbaeaf735d22c008f7b560402ed2e9bc14d5d9bfab633424b1d",
+    "meal-th-390x844.webp": "62b4d4ef9d692487db6d63057e7bd9c93204a98a13aed6aed45f36715a6b7106",
+    "translated-km-390x844.webp": "a3e3851a33b2137ea69bf8267cf361d842c823d7b0888635df0ff21afb8e98f7",
+    "meal-my-390x844.webp": "720daaf53476274656d3cab783898d20141507f18680f43846a92e6f69016342",
+    "reader-1440x900.webp": "8e0c0a239ad7023f57efb18b50ffacb6a2db37d0f8568b859834bebc5e88a804",
+    "rst-img-kitchen-tools-v1-390x844.webp": "a80f964872888697e95207a177e554822023c92b84dfb262b4983bea9414d54e",
+    "meal-vi-390x844.webp": "9f859f4d04f006c64056dd9c5d5e09c1022fd50a59000ebaca215fa4602d6d6e",
+    "reader-768x1024.webp": "41be91740a67ca38d2f2ec422e09a718459a9f865135d88dfd094f0ca64093d1",
+    "translated-my-390x844.webp": "862e7252b974db84124e80c4b9e5d36358f19535c9c098e5176a6a25bd158705",
+    "reader-390x844.webp": "8d831caab9f68fae2247607ba978e0b4c5c3f7d84befde2957a718286aa22b0d"
+  },
+  "limitations": [
+    "OriginalReact/RNWcoursewith explicitRoyalartwork/background/safearea/AsyncStorageadapters;notproductionExpo.",
+    "No nativeiOS/Android/device/performancecertification.",
+    "Existingdependencies/fontsreusedread-only;noapplicationdependencychanges.",
+    "Fulloriginalbrowserand32meal+2x testsrerunafterrootintegratedcurrentfurigana/formulalesson/q234/mealcomponent.",
+    "Revisionregressiontests13languages(JA+12translations)forq234andops03;notfullsemanticauditofeverytranslatedfield."
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "snapshot": "Final integrated working tree beforepublication",
+  "sourceCopyMatchesCurrentRepository": {
+    "src/components/restaurant/RestaurantIllustrations.tsx": true,
+    "src/components/restaurant/RestaurantGlossary.tsx": true,
+    "src/components/restaurant/useRestaurantRecord.ts": true,
+    "src/components/restaurant/RestaurantReading.tsx": true,
+    "src/components/restaurant/RestaurantCourse.tsx": true,
+    "src/components/restaurant/RestaurantCuttingGuide.tsx": true,
+    "src/components/restaurant/RestaurantDiagrams.tsx": true,
+    "src/components/restaurant/RestaurantMealPlacement.tsx": true,
+    "src/components/world/japanese-ruby-data.ts": true,
+    "src/components/tokutei/StudyAppearance.tsx": true,
+    "src/components/tokutei/TokuteiChrome.tsx": true,
+    "src/services/restaurant-study-state.ts": true,
+    "src/services/kensetsu-test-state.ts": true,
+    "src/theme/study-surface.ts": true
+  },
+  "revisionRegression": {
+    "status": "PASS",
+    "cases": [
+      {
+        "type": "revised-question",
+        "locale": "ja",
+        "id": "rst-2-q234",
+        "correctIndex": 0,
+        "hiddenBeforeSubmit": true,
+        "gradedCorrect": true
+      },
+      {
+        "type": "updated-formula-lesson",
+        "locale": "ja",
+        "id": "rst-2-ops-03",
+        "allParagraphsCurrent": true
+      },
+      {
+        "type": "revised-question",
+        "locale": "en",
+        "id": "rst-2-q234",
+        "correctIndex": 0,
+        "hiddenBeforeSubmit": true,
+        "gradedCorrect": true
+      },
+      {
+        "type": "updated-formula-lesson",
+        "locale": "en",
+        "id": "rst-2-ops-03",
+        "allParagraphsCurrent": true
+      },
+      {
+        "type": "revised-question",
+        "locale": "vi",
+        "id": "rst-2-q234",
+        "correctIndex": 0,
+        "hiddenBeforeSubmit": true,
+        "gradedCorrect": true
+      },
+      {
+        "type": "updated-formula-lesson",
+        "locale": "vi",
+        "id": "rst-2-ops-03",
+        "allParagraphsCurrent": true
+      },
+      {
+        "type": "revised-question",
+        "locale": "id",
+        "id": "rst-2-q234",
+        "correctIndex": 0,
+        "hiddenBeforeSubmit": true,
+        "gradedCorrect": true
+      },
+      {
+        "type": "updated-formula-lesson",
+        "locale": "id",
+        "id": "rst-2-ops-03",
+        "allParagraphsCurrent": true
+      },
+      {
+        "type": "revised-question",
+        "locale": "zh-CN",
+        "id": "rst-2-q234",
+        "correctIndex": 0,
+        "hiddenBeforeSubmit": true,
+        "gradedCorrect": true
+      },
+      {
+        "type": "updated-formula-lesson",
+        "locale": "zh-CN",
+        "id": "rst-2-ops-03",
+        "allParagraphsCurrent": true
+      },
+      {
+        "type": "revised-question",
+        "locale": "zh-TW",
+        "id": "rst-2-q234",
+        "correctIndex": 0,
+        "hiddenBeforeSubmit": true,
+        "gradedCorrect": true
+      },
+      {
+        "type": "updated-formula-lesson",
+        "locale": "zh-TW",
+        "id": "rst-2-ops-03",
+        "allParagraphsCurrent": true
+      },
+      {
+        "type": "revised-question",
+        "locale": "hi",
+        "id": "rst-2-q234",
+        "correctIndex": 0,
+        "hiddenBeforeSubmit": true,
+        "gradedCorrect": true
+      },
+      {
+        "type": "updated-formula-lesson",
+        "locale": "hi",
+        "id": "rst-2-ops-03",
+        "allParagraphsCurrent": true
+      },
+      {
+        "type": "revised-question",
+        "locale": "bn",
+        "id": "rst-2-q234",
+        "correctIndex": 0,
+        "hiddenBeforeSubmit": true,
+        "gradedCorrect": true
+      },
+      {
+        "type": "updated-formula-lesson",
+        "locale": "bn",
+        "id": "rst-2-ops-03",
+        "allParagraphsCurrent": true
+      },
+      {
+        "type": "revised-question",
+        "locale": "ne",
+        "id": "rst-2-q234",
+        "correctIndex": 0,
+        "hiddenBeforeSubmit": true,
+        "gradedCorrect": true
+      },
+      {
+        "type": "updated-formula-lesson",
+        "locale": "ne",
+        "id": "rst-2-ops-03",
+        "allParagraphsCurrent": true
+      },
+      {
+        "type": "revised-question",
+        "locale": "my",
+        "id": "rst-2-q234",
+        "correctIndex": 0,
+        "hiddenBeforeSubmit": true,
+        "gradedCorrect": true
+      },
+      {
+        "type": "updated-formula-lesson",
+        "locale": "my",
+        "id": "rst-2-ops-03",
+        "allParagraphsCurrent": true
+      },
+      {
+        "type": "revised-question",
+        "locale": "th",
+        "id": "rst-2-q234",
+        "correctIndex": 0,
+        "hiddenBeforeSubmit": true,
+        "gradedCorrect": true
+      },
+      {
+        "type": "updated-formula-lesson",
+        "locale": "th",
+        "id": "rst-2-ops-03",
+        "allParagraphsCurrent": true
+      },
+      {
+        "type": "revised-question",
+        "locale": "km",
+        "id": "rst-2-q234",
+        "correctIndex": 0,
+        "hiddenBeforeSubmit": true,
+        "gradedCorrect": true
+      },
+      {
+        "type": "updated-formula-lesson",
+        "locale": "km",
+        "id": "rst-2-ops-03",
+        "allParagraphsCurrent": true
+      },
+      {
+        "type": "revised-question",
+        "locale": "tl",
+        "id": "rst-2-q234",
+        "correctIndex": 0,
+        "hiddenBeforeSubmit": true,
+        "gradedCorrect": true
+      },
+      {
+        "type": "updated-formula-lesson",
+        "locale": "tl",
+        "id": "rst-2-ops-03",
+        "allParagraphsCurrent": true
+      }
+    ],
+    "inputSha256": {
+      "lessons.2.ja.json": "18c47cb12c170eca60f4d135548dea6af436d4abf8399d7a65600eed2d089719",
+      "exams.2.ja.json": "a80d125b20fac2574be3081990c65e959767b928aecc341c52f2a059402224ef",
+      "translations/en.json": "a4c0cad400dd2fe6c45916d02b6bc239e7b99512b02fba573ca499cfb9bcb985",
+      "translations/vi.json": "ad1028c61eb0e6da43879f918856e7b1de45d581f265858b029f1ef510a74798",
+      "translations/id.json": "45cda46ef5d0f5ef3b1a09c23bac4cb9a3702e5e004645712394cd4d76e677f0",
+      "translations/zh-CN.json": "3a3eaa688414b5788c931f049fa5109bc3ccb554e3a45a521faaf78f8855fed0",
+      "translations/zh-TW.json": "cb224827208696f9609fced796df2b20066a83d36035b438aa3938fd25ed8998",
+      "translations/hi.json": "be7e760cd86f196fa9a038a9b51a05a5e88b54b91611167c857515a512c5f5e9",
+      "translations/bn.json": "4b31f19b4c0b7bf904a263b58346b5e9dcd88fb55eaff33dd3b9e3f3920b9ce7",
+      "translations/ne.json": "38f4967aa743121453ce2b866727993e13ba69e8b7c25e1f7eab3ad37d8acb9e",
+      "translations/my.json": "6ac47fe7f2a9b2ce8ee1164d705e31a6d60e2e3289428eae451f657a2000eeda",
+      "translations/th.json": "955a82c68e27da7a572044f00c1e864c173f2e08975c8a27b3a088be371d9231",
+      "translations/km.json": "67abb98610674f0a8b82056fb3187f0c57ccb2fe56ac83cdaa2aeb0df832cdd3",
+      "translations/tl.json": "544daf7356134f24adfc94ca6d83c00bbc25fe4e11616bc3e73db39dc0f4c322"
+    },
+    "questionSourceHash": "bf6fac0af3de37b2b9d2df00a23994ece9d5702f44b5a2854cf109e28018a7f0",
+    "lessonSourceHash": "eba8d4d85a7b221b694fc11be64b7858cdca1a4c33fc881c072a25be22f97ad1",
+    "pageErrors": [],
+    "realCourseReactAndNativeWeb": true,
+    "nativeDeviceTested": false,
+    "productionExpoTested": false
+  },
+  "screenshotsDirectory": "final-qa-evidence",
+  "pixelIdenticalToPreviouslyVisuallyInspected": [
+    "rst-img-vegetables-v1-390x844.png",
+    "rst-img-kitchen-tools-v1-390x844.png"
+  ],
+  "durableEvidenceIndex": "completion22-qa-evidence.json"
+}

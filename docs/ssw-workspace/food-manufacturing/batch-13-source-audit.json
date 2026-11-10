@@ -1,0 +1,501 @@
+{
+  "status": "NOT_ACCEPTANCE_COMPLETE",
+  "auditType": "read_only_recovery_evidence",
+  "baselineCommit": "3881d18a",
+  "baselineBranch": "feature/food-manufacturing-20261026",
+  "evidenceRoot": "/workspace/scratch/888ec55b9fb2/food-current",
+  "writtenAndIntegratedAtBaseline": {
+    "japaneseLessons": 78,
+    "level1Lessons": 42,
+    "level2Lessons": 36,
+    "mockForms": 20,
+    "mockQuestions": 800,
+    "weeklyChecks": 13,
+    "weeklyQuestions": 39,
+    "lessonLocalePairs": 936,
+    "conceptDiagrams": 4,
+    "diagramCaptionLocalePairs": 48,
+    "questionLocalePairs": 3948
+  },
+  "directlyObserved": {
+    "all78LessonStatus": "authored_ai_unreviewed",
+    "terminologyReadingEntries": 238,
+    "lessonSourceReferences": 283,
+    "estimatedMinutesEach": 30,
+    "level2TimingStatus": "estimate_not_measured",
+    "fullBodyRubyDataAbsentFromLessonSchema": true
+  },
+  "acceptanceGaps": [
+    {
+      "item": "Source competency coverage",
+      "status": "UNVERIFIED",
+      "evidence": "153/158TOC entries have page-overlap lesson candidates;95have question-ID candidates;0/158formally verified. Five unmapped are indexes/notices/bibliography, not missing teaching topics.96question-reference range candidates (60level1,36level2) require exact source verification."
+    },
+    {
+      "item": "Source visual review",
+      "status": "UNVERIFIED",
+      "evidence": "Source-map/source-review/input-manifest recovered and inspected. PriorAI body text reading completed instructional ranges;30priority visual pages inspected (10level1,20level2). Full-document visual review still pending. No directPDF reinspection by this audit."
+    },
+    {
+      "item": "Full-body furigana",
+      "status": "PENDING",
+      "evidence": "238 terminology readings exist; lesson schema has plain Japanese paragraphs and no full-body ruby segments. Checkpoint states pending."
+    },
+    {
+      "item": "Explanatory illustrations",
+      "status": "PARTIAL",
+      "evidence": "Four color concept diagrams exist; checkpoint still requires original explanatory illustrations. No claim all required operations illustrated."
+    },
+    {
+      "item": "Native/domain review",
+      "status": "PENDING",
+      "evidence": "All78 lessons marked authored_ai_unreviewed; progress nativeSpeakerReviewed/domainExpertReviewed false."
+    },
+    {
+      "item": "Full Expo/native and actual device",
+      "status": "PENDING",
+      "evidence": "Existing browser QA uses react-native-web and explicit adapters, not fullExpo/native. Progress flags false."
+    },
+    {
+      "item": "All12 question translations",
+      "status": "INCOMPLETE",
+      "evidence": "Authoritative shared branch3881d18a/batch12has3948/10068pairs;6120missing.1480additions beyond2468browser baseline await browserQA."
+    },
+    {
+      "item": "30-minute teaching load",
+      "status": "UNMEASURED",
+      "evidence": "78 lessons estimated30 minutes; level2 timing explicitly estimate_not_measured. Paragraph text282–507Japanese characters perlesson; activities may add time, but no timed learner validation established."
+    }
+  ],
+  "optionalAudio": {
+    "requiredForRelease": false,
+    "condition": "If audio added, prerecorded playable assets and four chosen voices must be verified; no audio completion claim made."
+  },
+  "prohibitedClaims": [
+    "Full source coverage certified",
+    "All12 question translations complete",
+    "All furigana complete",
+    "Native/expert reviewed",
+    "Full Expo/native tested",
+    "All work merged/synced to shared branch without verification"
+  ],
+  "authoritativeCheckpoint": {
+    "batch": 12,
+    "questionLocalePairs": 3948,
+    "remainingQuestionLocalePairs": 6120,
+    "en_vi_id_each": 359,
+    "otherNineLocalesEach": 319,
+    "browserVerifiedPairs": 2468,
+    "awaitingBrowserQAPairs": 1480,
+    "browserViewportCases": 9872
+  },
+  "sourceInventory": {
+    "documents": [
+      {
+        "id": "ssw1",
+        "version": "5.1",
+        "editionDate": "2026-04",
+        "pdfPages": 86,
+        "bodyTextReview": {
+          "status": "ai_reading_completed_for_instructional_body",
+          "printedPageRanges": [
+            [
+              1,
+              69
+            ],
+            [
+              80,
+              81
+            ]
+          ],
+          "indexReview": "structural_reference_only",
+          "method": "pdftotext layout; compact reading removes kana-only furigana lines; critical tables visually checked",
+          "domainExpertReviewed": false
+        },
+        "visualReview": {
+          "status": "priority_pages_reviewed_not_full_document",
+          "printedPages": [
+            9,
+            11,
+            25,
+            29,
+            33,
+            34,
+            47,
+            63,
+            64,
+            65
+          ],
+          "pdfPages": [
+            14,
+            16,
+            30,
+            34,
+            38,
+            39,
+            52,
+            68,
+            69,
+            70
+          ]
+        }
+      },
+      {
+        "id": "ssw2",
+        "version": "3.01",
+        "editionDate": "2026-04",
+        "pdfPages": 165,
+        "bodyTextReview": {
+          "status": "ai_reading_completed_for_instructional_body",
+          "printedPageRanges": [
+            [
+              1,
+              143
+            ],
+            [
+              156,
+              156
+            ]
+          ],
+          "indexReview": "structural_reference_only",
+          "method": "pdftotext layout; compact reading removes kana-only furigana lines; critical tables visually checked",
+          "domainExpertReviewed": false
+        },
+        "visualReview": {
+          "status": "priority_pages_reviewed_not_full_document",
+          "printedPages": [
+            29,
+            34,
+            43,
+            47,
+            69,
+            70,
+            71,
+            77,
+            78,
+            79,
+            80,
+            81,
+            84,
+            90,
+            91,
+            100,
+            103,
+            118,
+            125,
+            127
+          ],
+          "pdfPages": [
+            38,
+            43,
+            52,
+            56,
+            78,
+            79,
+            80,
+            86,
+            87,
+            88,
+            89,
+            90,
+            93,
+            99,
+            100,
+            109,
+            112,
+            127,
+            134,
+            136
+          ]
+        }
+      }
+    ],
+    "tocEntries": 158,
+    "ssw1Entries": 54,
+    "ssw2Entries": 104,
+    "leafEntries": 115,
+    "candidateLessonMappedEntries": 153,
+    "candidateQuestionMappedEntries": 95,
+    "verifiedFullCompetencyEntries": 0,
+    "bodyTextReviewedEntries": 156,
+    "fullVisualReviewedEntries": 0,
+    "rangeReviewCandidates": 96,
+    "rangeReviewCandidatesByLevel": {
+      "1": 60,
+      "2": 36
+    },
+    "unaddressedReferenceEntries": [
+      {
+        "id": "food-1-reference-02",
+        "heading": "索引",
+        "source": {
+          "printedPage": 70,
+          "pdfPage": 75,
+          "printedPageEnd": 79,
+          "pdfPageEnd": 84
+        },
+        "disposition": "reference material; do not fabricate learner lessons to fill count"
+      },
+      {
+        "id": "food-1-reference-03",
+        "heading": "＜注意事項＞",
+        "source": {
+          "printedPage": 80,
+          "pdfPage": 85,
+          "printedPageEnd": 80,
+          "pdfPageEnd": 85
+        },
+        "disposition": "reference material; do not fabricate learner lessons to fill count"
+      },
+      {
+        "id": "food-1-reference-04",
+        "heading": "参考文献",
+        "source": {
+          "printedPage": 81,
+          "pdfPage": 86,
+          "printedPageEnd": 81,
+          "pdfPageEnd": 86
+        },
+        "disposition": "reference material; do not fabricate learner lessons to fill count"
+      },
+      {
+        "id": "food-2-reference-02",
+        "heading": "索引",
+        "source": {
+          "printedPage": 144,
+          "pdfPage": 153,
+          "printedPageEnd": 155,
+          "pdfPageEnd": 164
+        },
+        "disposition": "reference material; do not fabricate learner lessons to fill count"
+      },
+      {
+        "id": "food-2-reference-03",
+        "heading": "〈注意事項〉",
+        "source": {
+          "printedPage": 156,
+          "pdfPage": 165,
+          "printedPageEnd": 156,
+          "pdfPageEnd": 165
+        },
+        "disposition": "reference material; do not fabricate learner lessons to fill count"
+      }
+    ],
+    "sourceDiscrepancies": [
+      {
+        "id": "source2-statistics-weighted-mean",
+        "document": "ssw2",
+        "printedPages": [
+          70,
+          71
+        ],
+        "pdfPages": [
+          79,
+          80
+        ],
+        "type": "internally_inconsistent_example_numbers",
+        "evidence": "Total18000 mean23.8; A10000 mean25.5 and B8000 mean24.0 imply weighted mean24.8333333333, not23.8. Visual pages checked.",
+        "action": "Do not reuse data; author fresh consistent numerical examples."
+      },
+      {
+        "id": "source2-productivity-units",
+        "document": "ssw2",
+        "printedPages": [
+          91
+        ],
+        "pdfPages": [
+          100
+        ],
+        "type": "unit_typo_in_formula",
+        "evidence": "Formula e prints72.7MH/75MH but preceding quantities are kg/MH; ratio should compare matching productivity units. Visual checked.",
+        "action": "Use correct units and independently verify new examples."
+      }
+    ]
+  },
+  "sourceVerificationDecision": {
+    "noAdditionalUnitsCertified": true,
+    "reason": "Direct PDF text checks cover the specified safety and numeric clauses and five questions. They do not certify full unit coverage or mastery. No new pixel-based visual inspection was established.",
+    "safeResolvedItems": [
+      "Missing metadata blocker removed",
+      "Five no-lesson entries classified as reference-only scope, not five missing instructional units",
+      "Source discrepancy handling documented; weighted mean and productivity unit errors must not be reproduced",
+      "Four of96range-review candidates directly supported by citedPDFpages; isolatedreportonly."
+    ],
+    "nextReviewOrder": [
+      "Verifyremaining92reference-range candidates againstactualcitedpages;retain4scopedquestionreviewrecords.",
+      "Decompose115leafTOC entries into assessable competencies; distinguish5noninstructional references",
+      "Review binding against78lessons and839questions including distractors",
+      "Finish fullbody furigana and required operational illustrations",
+      "Rerun browserQA for1480pendingpairs plus future additions;fullExpo/native separately"
+    ]
+  },
+  "directPdfVerification": {
+    "method": "Library read in pages mode with include_images=true. Parsed page text was directly inspected. Returned image asset pointers were not displayed as pixels, so this pass does not claim new visual inspection.",
+    "libraryIds": {
+      "ssw1": "libfile_5fc7afd014688191a7884b2b8a47b633",
+      "ssw2": "libfile_bce12549790481919b62905cfc505224"
+    },
+    "pdfPagesRead": {
+      "ssw1": [
+        13,
+        14,
+        15,
+        19,
+        34,
+        38,
+        39
+      ],
+      "ssw2": [
+        56,
+        57,
+        100
+      ]
+    },
+    "checks": [
+      {
+        "contentId": "food-1-038",
+        "document": "ssw1",
+        "pdfPages": [
+          14
+        ],
+        "printedPages": [
+          9
+        ],
+        "finding": "The nine mandatory and twenty recommended allergens and cashew/pistachio edition note agree with the lesson. The lesson limits the statement to the attached edition and requires current formal information for actual label decisions.",
+        "result": "PASS_SCOPED_EDITION_FACTS"
+      },
+      {
+        "contentId": "food-1-040",
+        "document": "ssw1",
+        "pdfPages": [
+          34
+        ],
+        "printedPages": [
+          29
+        ],
+        "finding": "All 19 source table rows are represented by the grouped lesson text, preserving temperatures, inequalities, the approximate temperature for fresh produce, dry storage for grain products, and the specific cut-vegetable caveat.",
+        "result": "PASS_SCOPED_TABLE_VALUES"
+      },
+      {
+        "contentId": "food-1-041",
+        "document": "ssw1",
+        "pdfPages": [
+          19,
+          38,
+          39
+        ],
+        "printedPages": [
+          14,
+          33,
+          34
+        ],
+        "finding": "The cited heating, cooling, chemical treatment and Anisakis values agree with the source: 75°C/1 minute; 85–90°C/90 seconds; 120°C/4 minutes; Anisakis 70°C or 60°C/1 minute or −20°C/24 hours; cooling 30 minutes/20°C OR 60 minutes/10°C; 200 ppm/5 minutes OR 100 ppm/10 minutes. These remain contextual learning examples. Growth-temperature and utensil-treatment clauses were not inspected.",
+        "result": "PASS_SCOPED_NUMERIC_CLAUSES"
+      },
+      {
+        "contentId": "food-2-013",
+        "document": "ssw2",
+        "pdfPages": [
+          56,
+          57
+        ],
+        "printedPages": [
+          47,
+          48
+        ],
+        "finding": "Only paragraph 2 was compared here. Its distinction between CL and OL, recognition of workplace terminology variation, and measurement/calibration/proxy-monitoring requirements align with pages 56–57. Other paragraphs need their own cited-page checks.",
+        "result": "PASS_PARAGRAPH2_ONLY"
+      },
+      {
+        "contentId": "food-2-023",
+        "document": "ssw2",
+        "pdfPages": [
+          100
+        ],
+        "printedPages": [
+          91
+        ],
+        "finding": "The lesson uses fresh consistent arithmetic rather than repeating the source unit typo. Calculations were independently verified: 240/6=40 kg/h; 360/240=1.5 min/kg; 4×3=12 person-hours; 66/60=110%; 180/(3×2)=30 kg/person-hour; 200/(4×2)=25 kg/person-hour; 200/180≈111.1%. Page 100 supports distinguishing line and labor productivity and reporting both.",
+        "result": "PASS_SCOPED_ARITHMETIC_AND_MANAGEMENT_CONCEPT"
+      },
+      {
+        "contentId": "food-1-q003",
+        "document": "ssw1",
+        "pdfPages": [
+          13
+        ],
+        "printedPages": [
+          8
+        ],
+        "finding": "The source requires immediate stop and report for both hard and soft foreign objects. The answer and all distractor reasons agree.",
+        "result": "PASS_QUESTION_AND_FOUR_OPTIONS",
+        "canonicalQuestionSha256": "23d60215417a28dcec703f43ef8298219c4f1fbf665237c5378a3c46a2ecf8f5"
+      },
+      {
+        "contentId": "food-1-q005",
+        "document": "ssw1",
+        "pdfPages": [
+          15
+        ],
+        "printedPages": [
+          10
+        ],
+        "finding": "The source requires prompt refrigeration or freezing of received fish and warns that histamine can increase under poor storage. All choices and reasons agree.",
+        "result": "PASS_QUESTION_AND_FOUR_OPTIONS",
+        "canonicalQuestionSha256": "4c3809882d505938d5549b8a20c008363f811856ce67302cd40ea5ddab44f49f"
+      },
+      {
+        "contentId": "food-1-q006",
+        "document": "ssw1",
+        "pdfPages": [
+          15
+        ],
+        "printedPages": [
+          10
+        ],
+        "finding": "The source identifies solanine in potato sprouts and green peel and requires removal. The answer and distractors agree.",
+        "result": "PASS_QUESTION_AND_FOUR_OPTIONS",
+        "canonicalQuestionSha256": "37a94b6188c128c45c2d6f8385dcb7a6f2ddcc4e8edec00846bd3f58b0cde135"
+      },
+      {
+        "contentId": "food-1-q010",
+        "document": "ssw1",
+        "pdfPages": [
+          19
+        ],
+        "printedPages": [
+          14
+        ],
+        "finding": "The source expressly forbids using moldy food. The answer and all options/reasons agree.",
+        "result": "PASS_QUESTION_AND_FOUR_OPTIONS",
+        "canonicalQuestionSha256": "0c5ccf59c5075f8325b722c2d5463279fd9fbafd5c470bf611d16658e8282c56"
+      },
+      {
+        "contentId": "food-2-q011",
+        "document": "ssw2",
+        "pdfPages": [
+          56
+        ],
+        "printedPages": [
+          47
+        ],
+        "finding": "The source defines OL as a margin for action before CL deviation, taking measurement accuracy into account. The question remains contextual, and all four choices/reasons agree.",
+        "result": "PASS_QUESTION_AND_FOUR_OPTIONS",
+        "canonicalQuestionSha256": "de93e35ac07809d2436f43535b58f9d4d52a71f46574c7e617b05520dbafa0ce"
+      }
+    ],
+    "proposedRangeCandidateDispositions": {
+      "supportedByActualCitedPage": [
+        "food-1-q003",
+        "food-1-q005",
+        "food-1-q006",
+        "food-1-q010"
+      ],
+      "remainingNotResolvedByThisPass": 92,
+      "note": "The four mismatches arise from coarse TOC boundary ranges. Direct source content supports the question knowledge. This limited question review does not certify full competency coverage. The source map was not modified."
+    },
+    "correctionsProposed": [],
+    "fullUnitsCertified": 0,
+    "wholeExamCertified": false
+  }
+}

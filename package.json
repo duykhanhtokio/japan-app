@@ -23,6 +23,7 @@
     "expo-system-ui": "~6.0.9",
     "expo-video": "~3.0.16",
     "expo-web-browser": "~15.0.11",
+    "fflate": "0.8.2",
     "pako": "^2.1.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -31,13 +32,16 @@
     "react-native-reanimated": "~4.1.1",
     "react-native-safe-area-context": "~5.6.0",
     "react-native-screens": "~4.16.0",
+    "react-native-svg": "15.12.1",
     "react-native-web": "^0.21.2",
     "react-native-worklets": "0.5.1"
   },
   "devDependencies": {
     "@types/react": "~19.1.10",
+    "esbuild": "0.28.2",
     "eslint": "^9.0.0",
     "eslint-config-expo": "~10.0.0",
+    "react-test-renderer": "19.1.0",
     "typescript": "~5.9.2"
   },
   "scripts": {
@@ -51,7 +55,17 @@
     "jlpt:checkpoint:check": "node scripts/check-jlpt-batch-01-checkpoint.mjs",
     "jlpt:integration:check": "node scripts/check-jlpt-exam-integration.mjs",
     "voice:local": "node scripts/dialogue-voice/local-server.cjs",
-    "dev:voice": "node scripts/dialogue-voice/dev.cjs"
+    "dev:voice": "node scripts/dialogue-voice/dev.cjs",
+    "manufacturing:check": "node scripts/manufacturing/check.cjs",
+    "manufacturing:recognition:build": "python3 scripts/manufacturing/build-recognition38.py",
+    "manufacturing:device:prepare": "node scripts/manufacturing/create-device-qa.cjs",
+    "ssw:coverage:check": "node scripts/source-coverage-v2/check.cjs && node scripts/source-coverage-v2/check-artifact-privacy.cjs",
+    "ssw:coverage:report": "node scripts/source-coverage-v2/report.cjs --ref HEAD",
+    "ssw:coverage:require-complete": "node scripts/source-coverage-v2/check.cjs --require-covered",
+    "ssw:coverage:test": "node scripts/source-coverage-v2/check.test.cjs && node scripts/source-coverage-v2/report.test.cjs",
+    "ssw:coverage:privacy": "node scripts/source-coverage-v2/check-artifact-privacy.cjs",
+    "life:content:build": "node scripts/build-life-content-buckets.cjs",
+    "life:content:check": "node scripts/check-on-demand-content.cjs"
   },
   "private": true
 }

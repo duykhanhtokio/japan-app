@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "unit": "feed-crops-daily-figure-current-source-binding",
+  "baselineCommit": "de20cebd49de00d8d12ec99dcec30b219867712e",
+  "status": "self_checked_ready_for_coordinator_persistence",
+  "problem": "Daily figure binding for agr-vegwork-feed retained an older lesson sourceHash, so both current1号/2号reader variants hid the already-valid feed-rice versus WCS harvested-parts diagram.",
+  "repair": {
+    "lessonId": "agr-vegwork-feed",
+    "figureId": "agr-fig-f40-rice-feed-parts-v1",
+    "oldLessonSourceHash": "f835648fc33503f4ac38341d783a307fd0068ab6025aa6378e10655f1749bcbc",
+    "currentLessonSourceHash": "be30a2293c1aa4f350b86465afbf87615090791e81c2ff8b99003914328f0128",
+    "assetSha256": "588c848be6657481298918b32aadc0a3d705b7432c57b235f90f6bfb79489c57",
+    "assetBytes": 118027,
+    "scopeLevels": [
+      "1",
+      "2"
+    ],
+    "changedFields": 1
+  },
+  "sourceReview": {
+    "documentId": "AGR-S2",
+    "sourceSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+    "sourceActualPixelsOpened": true,
+    "actualExistingAssetPixelsOpened": true,
+    "pdfPages": [
+      70,
+      79
+    ],
+    "printedPages": [
+      68,
+      77
+    ],
+    "reviewJa": "出典p68の飼料用米＝実、稲WCS＝穂と茎葉を一緒に使う区別と、p77の飼料作物・サイレージの説明を、現行agr-vegwork-feed-p2/p4/p5および実際の既存PNGに照合した。図の矢印は実、括弧は根を除く穂と茎葉を示し、完熟前収穫という範囲もp68にある。現行p5の酸素のない状態で密封・発酵という本文と矛盾しないが、図で製造条件・貯蔵手順・配合・給餌量を教えたことにはしない。",
+    "boundedReuse": "Illustrates only the part-of-crop usage distinction. Does not replace the canonical silage explanation or prescribe production conditions, feed recipes, harvesting dates or safety steps.",
+    "noSourcePixelsRedistributed": true
+  },
+  "beforeDataSha256": "d414435b36764a82caa9cfb4c8bf8f1403fc9cac94f34a744da550af53d4b4f6",
+  "afterSha256": {
+    "src/data/agriculture/daily-learning-support.json": "0d5168644674ad0693cbd6f39bd15868e3a6bfd28a25629dcae532af2e472a53",
+    "scripts/agriculture/check-feed-daily-binding.cjs": "70c8ddb6f69f5a2e10c5277d0aabd7e720856504fd95e6fbeb4f0c9a3e61eb48"
+  },
+  "unchangedQaInputSha256": {
+    "src/components/agriculture/DailyLearningSupport.tsx": "9de324157e5f70411ca5bfd171561e4aa382efcf856d543a2fc45f47d4fde410",
+    "src/components/agriculture/RecognitionImages.tsx": "6065fbc15dc0564ecdec2f62f673995eab7e22f03154dde34c34febb692eeb68",
+    "src/components/agriculture/ZoomableFigure.tsx": "c4d926bba9917abc6fe7bd4e5bbf7806d3a545e25dcfc125dea718bcf7049927",
+    "src/data/agriculture/recognition-images.json": "9f8ccdfac6bd25da5f5392e693bde84587d9eabe2c5dabf859e09617b623c4ab",
+    "src/data/agriculture/lessons.ja.json": "68eb4306db16ffe0ecdc76b73e633e5c68b165ad6f6206beb73b448359dfec51"
+  },
+  "validation": {
+    "command": "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node scripts/agriculture/check-feed-daily-binding.cjs",
+    "result": "PASS2current courses with actual PNG bytes and13stale/scope/dependency rejection cases.",
+    "scope": "Actual production DailyLearningFigure, current production asset resolver and ZoomableFigure rendered by ReactDOMServer/RNW. Verified selected PNG signature, byte length and fullSHA. Seven unrelated course/diagram/translation imports isolated; unselected raster imports mapped to declared URI strings. No other image/all-locale/browser/device acceptance claimed.",
+    "preservation": "Only one current lessonSourceHash field changed in support data; all other values deep-equal before file. Image bytes, figure metadata, canonical Japanese prose, translations, questions, IDs and learner state unchanged.",
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "learnerDurationMeasured": false
+  },
+  "newImages": 0,
+  "wholeWeekComplete": false,
+  "wholeSectorComplete": false,
+  "nextAction": "Persist+verify this bounded image-availability repair. Source-review8stale machinery/rice recognition bindings separately before any further hash rebinding."
+}

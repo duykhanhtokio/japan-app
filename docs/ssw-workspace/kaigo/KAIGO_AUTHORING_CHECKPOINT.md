@@ -1539,3 +1539,49 @@ Publisher explicitly authorized replacing the3Vietnamese-labelled technical figu
 Removed3obsolete Japanese pending-label caption sentences and36matching locale status sentences, rebound only those3sections in12locales, refreshed actual outputhashes and image-statusmetadata. Weekly312/312andfullmock144/144still valid. Actualhost week3reader12locales/day-night168cases,11544paragraphpairs and3168submittedrationales PASS;English mock12forms/360questions PASS. Final16assets decode and48containgeometrycases PASS;UIlock10/10andfocuseddataTypeScript PASS. Chromium unavailable, so no new browser screenshots or native-device claim. Detailed report:JAPANESE_IMAGE_REPLACEMENT_2026-10-17.json. Independent professional/native/device/rights/release approval remainfalse;source knowledge denominator remainsnull.
 
 Construction2号 source availability checked separately:existing7PDF/193pagecommon source set does not include the official JAC leader.pdf,131pages,printed2025.1.15. Official dedicated source is available online;specialist2号curriculum is not completed. See kensetsu/SOURCE_2GO_AVAILABILITY_2026-10-17.json. Publication/fetch/WORK PERSISTENCE PASS required before durability claim.
+
+
+## 2026-11-02 — Tuần25/ngày169: tăng chiều sâu nhận và xác nhận bàn giao
+
+Bổ sung một đoạn gồm6lượt thoại đồng nghiệp và phần nhìn lại tại kaigo-depth-team-handoff, giữ nguyên6đoạn cũ, IDngày và687câu đánh giá. Tình huống mới phân biệt mong muốn của người được chăm sóc với nhận định của nhân viên; người nhận nhắc lại, xác định việc cần truyền đạt và kiểm tra đã nhận. Đây là tăng chiều sâu vận dụng khái niệm đã có, không phải thêm thủ thuật lâm sàng hoặc tuyên bố tìm đủ ý nguồn. Nhật là bản chính;12bản dịch trực tiếp cập nhật đúngcontentrevision. Toàn bộkanji của đoạn mới cótokenkana; reader hỗ trợparagraphsRuby tùy chọn, giữ đường hiển thị cũ cho các đoạn không cótoken.
+
+NguồnVIcanonical276trang/hash997bf...đã lấy và đối chiếu; đọc chữPDF116–135, xem trực quanPDF116–120, dùng kiến thức trangin114–118. Không đưaPDF/OCR/hình nguồn vào repo. Hostfixture chạy component Kaigo thật đạt168trườnghợp ngày–locale–sáng/tối của cảtuần25;1032cặp đoạnNhật–dịch,336lời giải sau nộp vàkanaexactPASS. Fixture bỏhookbackdrop không liên quan và kiểmcovercaption lịch sử đã không còn phù hợp với hìnhmục tiêu hiện tại; không kiểm/chứng nhận hình, browser,Expohoặc thiết bị. Rà độc lập cốt truyện/lời văn ở mứcAI; không chứng nhận quyền/chuyên môn/bảnngữ. Toànkhóa hiện5373bản ghi đoạnNhật,866mục,687câu; tổngđoạn dịch64476, không suy tỷ lệ bao phủ. Chi tiết reviews/HANDOFF_DEPTH_20261102.json. Root cầncommit/push/fetch và bằngchứngremote trước tuyên bốlưubền.
+
+
+## 2026-11-02 — đơn vị ngày170: thời điểm và phạm vi của mong muốn trong hồ sơ
+
+Thêm hai đoạn và24bản dịch trực tiếp ởkaigo-depth-observation-evidence: ca muốn viết thư sau bữa trưa và đối chiếu bản ghiA/B. Tách mong muốn “lúc này” khỏi ý định cảngày, cảm xúc chưa kiểm, năng lực và kết quả chưa quan sát; giữ lịch sử khi mong muốn đổi. Đây là năng lực ghi chép theo thời điểm, khác ca bàn giao169vàca mệt/sốt cũ. Toàn bộkanji mới cótokenkana; giữ sáu đoạn cũ, mục bàn giao169,687câu,ID/ngày/hình/khóa tiến độ. Không thêm chỉ định hay sự kiện lâm sàng.
+
+NguồncanonicalVI/hash997bf...đúng; đọc12–14,116–120 vàxem12–14,117–120. Kiểm nguồn vềtựquyết vàghiđúnglời/thờigian, không dùng lại cảnhví/lởloét hoặc hình nguồn. Actualhost toàntuần25/12locales/ngàyđêm đạt168cases,1080cặp đoạn,336lời giải sau nộp; kiểmbase+kana vàstale-source. Adapter/backdrop/covercaption exception được ghi rõ; khôngnative/browser/pixel. Tổng hiện5375đoạnNhật/64500đoạndịch; mẫu số nguồn vẫnnull. RECORD_CHOICE_DEPTH_20261102.json ghi phạmvi/giới hạn. Rootcầncommit/push/fetch/remoteproof trước tuyênbốlưubền.
+
+
+## 2026-11-02 — nguồn PDF122–123: ý nghĩa di chuyển và ADL/IADL
+
+Đọc toàn văn và xem trực tiếp hai trang nguồn canonical (in120–121), giữ ảnh/PDF riêng. Nối7đơn vị với bàiNhật tuần15/ngày101 đã có; thêm2hoạt động tự giải thích không chấm điểm, đủkana và24cặp dịch trực tiếp. Nămý có dạy/đánhgiá ởmứcAI; haiđịnhnghĩa ADL/IADL vẫnthiếu câu kiểm riêng, không lấy câu nêu ví dụ để đóng địnhnghĩa. Kaigo v2 hiện62ý đãbiết/60covered_ai, mẫu số mở; khôngđónghai trang vì các chi tiết hình cònpending.
+
+Hostreader kiểm20hoạt động trên6ngày×12locale: ẩnđápán, mởdịch rõràng, đóng/mởđápán vàkana khớp. Khôngthay687câu tuần, IDngày, bàiNhật cũ hay khóa tiếnđộ. Hồsơkaigo-movement122-123-review/reader-validation.json. Khôngbrowserpixel/native/chuyênmôn/bảnngữ/thờilượng/nghiệmthu toànnguồn; rootcần lưu vàxácminhremote.
+
+
+## 2026-11-02 — tiếp mốcea1b43c95: kiểm riêng định nghĩaADL/IADL
+
+Đọc/xemlạiPDF123/in121/hash997bf386, thêm1prompt tựgiải thích vềnghĩaADL/IADL, khôngchỉ kểvídụ. Modelanswer đủhaiđịnhnghĩa,12bảndịch trực tiếp vàkana; giữ20checkcũ và687câutuần. Haiý địnhnghĩa từpartial→covered_ai;62/62ý đãbiết códạy/đánhgiá, nhưng mẫu sốtoànsách vẫn mở vàkhôngđóngtrang123 vì nhãnhình cònpending.
+
+Hostreader21check trên6ngày×12locale đạt ẩnlờiđáp/mởdịch theo ngônngữ/đóngmởđápán/kana. Hồsơkaigo-adl-iadl-definition-review/reader-validation.json. KhôngthayID/ngày/khóa tiếnđộ hayJapanese-master; khôngnative/pixel/chuyênmôn/bảnngữ/thờilượng. Rootlưuvàxácminhremote trước báolưubền.
+
+## 2026-11-03 — PDF109: giải thích, lựa chọn và hỗ trợ quyết định
+
+Nền `4832f53` đã lưu đợt sửa ba chuỗi Nhật/ruby di chuyển/ADL/IADL bị mất ký tự; guard mới kiểm cả kana Latin và nhãn khái niệm, không chỉ ghép lại chuỗi. Đợt này đọc chữ và xem PDF109/in107, kiểm kê đủ36text spans+13vectors:8facet, không phải một ánh xạ theo chủ đề. Bốn facet có dạy/đánh giá riêng: nêu lựa chọn, giải thích lợi/bất lợi,本人 tự chọn và tôn trọng/hỗ trợ thực hiện quyết định. Một reader check mới ngày126/tuần18, `kaigo-atomic-listening-consent`, có Nhật/ruby và12bản dịch trực tiếp. Giữ21check cũ,26tuần/687câu, IDs/ngày/state/revisions vàJapanese master.
+
+Bốn facet mới còn candidate: mục tiêu sống theo bản thân, khó khăn giao tiếp do bệnh/khuyết tật, phương pháp theo từng người, bối cảnh ICT của năm xuất bản. Không coi cùng chủ đề là bằng chứng trực tiếp; không phát biểu mới về tỷ lệ dùngICT hiện nay. Kaigo70known/66covered_ai, kiểm kê ngữ nghĩa11trang nhưng app-covered toàn trang vẫn9; mẫu số276trang còn mở, phần trămnull. Hồ sơ `source-coverage-v2/construction-kaigo-batch5-source-review.json`. Actual Kaigo host reader84day/locale cases/264check appearances đạt ẩn/mở/đóng đáp án, dịch rõ ràng vàruby. Khôngbrowser/native/device/domain/native-language/duration acceptance. Root phụ trách lưu, đẩy vàxácminhremote.
+
+
+### PDF109 — sửa lỗi câu Nhật khi tiếp quản, 03/11/2026
+
+Hoạt động consent mới bị mất phần kana và dấu câu trong script cũ do xử lý chuỗi đơn như tuple. Đã khôi phục nguyên ý câu hỏi thông tin cần cung cấp và hỗ trợ sau quyết định; lời đáp giữ đủ lựa chọn, lợi/bất lợi, tự chọn, tôn trọng và hỗ trợ thực hiện. Ruby mới đầy đủ; 12 bản dịch đối chiếu với Nhật hoàn chỉnh. Bốn hash đánh giá nối lại sau kiểm nghĩa, không dùng đổi hash để thay kiểm nội dung. Guard bắt câu hỏng dù ruby ghép khớp. Actual reader host chạy lại đạt22hoạt động/12ngôn ngữ trên7ngày; không đổi21hoạt động trước,26bank/687câu hoặcJapanese master. Chi tiết bản cuối tại `source-coverage-v2/construction-kaigo-batch5-REPORT.vi.md`; chuyên môn/bản ngữ/thiết bị/thời lượng vẫn chưa nghiệm thu.
+
+
+## 2026-11-03 — source109: bốn ý còn lại và ràng buộc bản dịch
+
+Tiếp nền f72e3e6c. Đọc lại đầy đủ hướng dẫn/chuẩn/plan vàcheckpoint lịch sử theo từng phần, đối chiếu lại ảnhsource109/in107/hashcanonical. Thêm ba hoạt động độc lập có phần dạy, prompt vàmodel: ngày126 lựa chọn nghe nhạc/đọc sách theo đời sống本人; ngày127 phương pháp giao tiếp cá nhân khi tênbệnh giống nhau; ngày127 đọc ý nghĩaICT theo bối cảnh xuất bản2025, không suy tỷ lệ hiệnnay/hiệu quả/mức phùhợp toàn bộ. Ba hoạt động có36bản dịch trực tiếp, đầyđủruby; hashNhật ràngbuộc từng bản dịch, component không hiện bản lỗi hash. Bốn candidatev6→covered_ai;70/70ý đãghi có dạy/đánhgiá, nhưng mẫu số276trang cònmở vàkhôngphải100%toànsách.
+
+Giữ nguyên22hoạtđộngtrước, Japanese master,26bank/687câu vàID/ngày/state. Ảnhngày126/127 hiệntại được xem lại; ghi rõ ảnhngữcảnh chứ không minhhoạ kỹthuật/ICTvận hành. Kiểm readerhost25check/12locale trên7ngày,6ca riêng sourcehash mới/cũ; chưanative/browserpixel/thờilượngthựchọc hoặcâmthanh. Hồsơconstruction-kaigo-batch6-source-review/structural-validation/daily-audit vàkaigo-batch6-revision-reader-validation.json. Rootlưu vàxácminhremote; chưaghi đãđẩy.

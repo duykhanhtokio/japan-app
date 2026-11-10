@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "reviewedBaseline": "53699f27e21f15822bbc5643c744fc14e90f9c6a",
+  "readyPaths": [
+    "src/data/agriculture/daily-controlled-native-support.json",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/daily-numeric-three-controlled-locales-readings-qa.json"
+  ],
+  "scope": "Three actual historical numeric fallback charts, source-bound JA+12 title/caption/alt and accessible legend, whole-field Japanese readings. No generic lesson prose, no quiz changes, no raster or geometry changes.",
+  "newHanFields": 19,
+  "JA12Fields": 24,
+  "translatedTargets": 288,
+  "sourceProof": [
+    {
+      "kind": "self-supply-2019",
+      "lessonIds": [
+        "agr-s27-self-supply-2019"
+      ],
+      "assetSnapshot": {
+        "assetPath": "assets/agriculture/daily-learning-20261031/self-supply-2019.png",
+        "assetSha256": "a316d7c8d6d8953f7e40edbdf44727739e07d1c1db71196615ebaeb9702a4f40",
+        "width": 1160,
+        "height": 660
+      },
+      "actualHanFields": 7,
+      "localeFieldCount": 8
+    },
+    {
+      "kind": "rice-consumption",
+      "lessonIds": [
+        "agr-s27-rice-history"
+      ],
+      "assetSnapshot": {
+        "assetPath": "assets/agriculture/daily-learning-20261031/rice-consumption.png",
+        "assetSha256": "bd5303830813df3ca40a1dc9b982cb801c1ba0850ad0c83a5125f32ee8cf4871",
+        "width": 1160,
+        "height": 660
+      },
+      "actualHanFields": 5,
+      "localeFieldCount": 6
+    },
+    {
+      "kind": "cultivar-2017",
+      "lessonIds": [
+        "agr-par12-flower-cultivar-area"
+      ],
+      "assetSnapshot": {
+        "assetPath": "assets/agriculture/daily-learning-20261031/cultivar-2017.png",
+        "assetSha256": "c3391d69dc9ce1f7f79edb0a8ccf4886c95b6d3e92d4a363b4bf0863f93c5ec6",
+        "width": 1160,
+        "height": 660
+      },
+      "actualHanFields": 7,
+      "localeFieldCount": 10
+    }
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "releaseAccepted": false,
+  "proofLimits": [
+    "Actual RNW full Daily child renders using immutable fresh tracked dependencies; no full app or native-device acceptance.",
+    "Raster Japanese remains unchanged. Adjacent source-bound native legends supply accessible localized readings and interpretation."
+  ],
+  "phoneticReview": [
+    "年度ねんど for fiscal years1962/2021; 年ねん for2017/2019 historical dates.",
+    "米こめ, 小麦こむぎ, 大豆だいず, 自給率じきゅうりつ; weight basis is distinct from value share and calorie basis.",
+    "各樹種内かくじゅしゅない (not isolated 内うち), 宮川早生みやがわわせ, 巨峰きょほう, 富有ふゆう, 幸水こうすい.",
+    "Cultivar kana-only labelsリンゴ・ふじ47％ andモモ・あかつき15％ need no Japanese phonetic annotation; all localized targets still present."
+  ],
+  "invariants": {
+    "selfSupply2019": [
+      97,
+      16,
+      6,
+      79,
+      38
+    ],
+    "ricePerPersonAnnual": {
+      "1962年度": "約118kg",
+      "2021年度": "約50.8kg"
+    },
+    "cultivarArea2017": [
+      17,
+      47,
+      22,
+      17,
+      30,
+      15
+    ],
+    "same17NotEqualArea": true,
+    "unlistedNotOneCultivar": true
+  },
+  "tests": {
+    "status": "PASS",
+    "actualFieldContexts": 19,
+    "negativeReadingGuards": 304,
+    "actual13LocaleDailyFullChildRoutes": 39,
+    "hiddenTranslationRoutes": 39,
+    "ChineseSameHanPlain": 6,
+    "fullJAAssetWholeImageAndNativeRejects": 18,
+    "partialCaptionScopeChecks": 6,
+    "strictActualCalleeGraph": "PASS zero diagnostics, actual current import graph plus extracted caller JSX, narrow ambient leaf types; not full app",
+    "commands": [
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-daily-numeric-three.cjs",
+      "NODE_PATH=/workspace/scratch/0d83607b09ec/qa-runtime/node_modules node /workspace/scratch/b72f4a7f6a62/safety-audit/check-daily-numeric-three-types.cjs"
+    ]
+  }
+}

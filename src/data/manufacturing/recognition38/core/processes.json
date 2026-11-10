@@ -1,0 +1,506 @@
+{
+  "schemaVersion": 1,
+  "packs": [
+    {
+      "id": "mfg37-required-electrical-symbol-field-direction",
+      "lessonIds": [
+        "mfg1-surface-lesson-052",
+        "mfg1-surface-lesson-053"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-052": "6f7dfd544e12c52ef52f642d23e9c4e6103733f63cba37209be90df1558c03fb",
+        "mfg1-surface-lesson-053": "ff9c0c7a21879d0fcd08987ba719814c183722320c90df25cbd95dfd525e7cd5"
+      },
+      "titleJa": "記号と三方向を画像で区別する",
+      "captionJa": "図E1は五つの基本記号を独自に配置したカードです。電池の長い線は＋、短い線は−、交流電源の円内は波形です。図E2の・は紙面から手前向きの慣用電流を表します。直線電流の周囲の磁界は右ねじの対応で考えます。一方、磁界中の電流に働く力はフレミング左手（人差指B・中指I・親指F）で分けます。図のBは右、Iは手前です。電場と磁場は同じものではありません。発電の規則や実配線の指示に置き換えません。",
+      "assets": [
+        {
+          "id": "mfg38-electrical-symbols",
+          "file": "assets/manufacturing/recognition38/electrical-symbols.png",
+          "width": 1300,
+          "height": 800,
+          "altJa": "A二本の等長平行板、B円内の波形、C三本の長さが減る接地線、D長方形、E長短板と正負を描く五枚の回路記号カード。",
+          "sha256": "61ee56f5449cbed00c8d2520f10cd2b68d3381eb63155debd85b4e88d31adfdf"
+        },
+        {
+          "id": "mfg38-electrical-directions",
+          "file": "assets/manufacturing/recognition38/electrical-directions.png",
+          "width": 1300,
+          "height": 800,
+          "altJa": "左側は紙面手前向き電流と周囲の回転候補1反時計回り・2時計回り。右側は左手の指対応、右向き磁界と手前向き電流から力を選ぶ模式図。",
+          "sha256": "2f66ee2885d0e65a48f6e67f287771dc061925edd15e213cfa729cc8962565ec"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg37-required-electrical-symbol-field-direction-q01",
+          "lessonId": "mfg1-surface-lesson-052",
+          "stemJa": "図E1で、抵抗・コンデンサ・接地・電池・交流電源の順に並べた記号はどれか。",
+          "optionsJa": [
+            "D→A→C→E→B",
+            "A→D→C→E→B",
+            "D→A→E→C→B",
+            "D→A→C→B→E"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "長方形D、等長板A、接地線C、長短板E、波形円Bを区別する。",
+            "抵抗とコンデンサが逆。",
+            "接地と電池が逆。",
+            "電池と交流電源が逆。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 125,
+              "printedPage": 115
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-electrical-symbols"
+          ],
+          "imageAssetHashes": {
+            "mfg38-electrical-symbols": "61ee56f5449cbed00c8d2520f10cd2b68d3381eb63155debd85b4e88d31adfdf"
+          },
+          "sourceHash": "1fc2b1dcd0781a762eff1329d370a44b33d49bf28460f07f784699fc6ccad1c3"
+        },
+        {
+          "id": "mfg37-required-electrical-symbol-field-direction-q02",
+          "lessonId": "mfg1-surface-lesson-052",
+          "stemJa": "図E1のEで、＋に対応する部分はどれか。",
+          "optionsJa": [
+            "短い線",
+            "長い線",
+            "外枠全体",
+            "文字Eそのもの"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "短い線は−として描いた。",
+            "この電池記号では長い線が＋。",
+            "カードの外枠は回路記号ではない。",
+            "Eはカード識別子で、極性ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 125,
+              "printedPage": 115
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-electrical-symbols"
+          ],
+          "imageAssetHashes": {
+            "mfg38-electrical-symbols": "61ee56f5449cbed00c8d2520f10cd2b68d3381eb63155debd85b4e88d31adfdf"
+          },
+          "sourceHash": "f65f96ba759bce6cab0671e41dee1c5d2b1cb6d60d7f393d560fc916044976a2"
+        },
+        {
+          "id": "mfg37-required-electrical-symbol-field-direction-q03",
+          "lessonId": "mfg1-surface-lesson-052",
+          "stemJa": "図E2左の電流は手前向き。磁界の回り方に対応する候補はどれか。",
+          "optionsJa": [
+            "2",
+            "磁界は生じない",
+            "1",
+            "左右の直線だけ"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "2は時計回りで、この電流向きには対応しない。",
+            "直線電流の周囲には磁界が生じる。",
+            "右ねじの対応では、手前向き電流の周囲は反時計回りの1。",
+            "周囲の磁界を電流と同じ直線にしない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 126,
+              "printedPage": 116
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-electrical-directions"
+          ],
+          "imageAssetHashes": {
+            "mfg38-electrical-directions": "2f66ee2885d0e65a48f6e67f287771dc061925edd15e213cfa729cc8962565ec"
+          },
+          "sourceHash": "baca19a9149b9d78462eaa6de89baac81aa5e478b4816fdafbbdfc85f8e8a2c9"
+        },
+        {
+          "id": "mfg37-required-electrical-symbol-field-direction-q04",
+          "lessonId": "mfg1-surface-lesson-052",
+          "stemJa": "図E2右のB→、Iは手前向き。フレミング左手で対応するFはどれか。",
+          "optionsJa": [
+            "↓",
+            "←",
+            "→",
+            "↑"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "下向きではなく上向き。",
+            "磁界と力の直交関係に合わない。",
+            "磁界と同方向ではない。",
+            "慣用電流が手前、磁界が右なら力は上。この図の条件に限定する。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 135,
+              "printedPage": 125
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-electrical-directions"
+          ],
+          "imageAssetHashes": {
+            "mfg38-electrical-directions": "2f66ee2885d0e65a48f6e67f287771dc061925edd15e213cfa729cc8962565ec"
+          },
+          "sourceHash": "bcf1157deab4625034c74a73ba1fae5f8d66beab5f21d39797c33213caf3c3fb"
+        }
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false,
+      "captionSourceHash": "8355fea765021baa836ade53359fee40fc3a7ce7b983b819a23b3ef52d012569"
+    },
+    {
+      "id": "mfg37-required-treatment-taxonomy",
+      "lessonIds": [
+        "mfg1-surface-lesson-057"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-057": "d1a9cc3f4c9b8989e00ac8b95ba06f5e827bdaab17f91b7319d3c8fc6e3b80ae"
+      },
+      "titleJa": "基材・皮膜・処理系列を分類図で読む",
+      "captionJa": "図Tは資料の分類を独自の枝とカードに組み直したものです。めっきは金属皮膜、陽極酸化は酸化皮膜、化成処理はリン酸塩等の化合物皮膜、塗装は樹脂皮膜を考えます。めっきの下位には溶融、湿式（電気・無電解）、乾式（PVD・CVD）を示しました。基材の例は全材質への適合保証ではありません。防食・摩耗・導電・装飾など目的も照合します。膜厚の表中例を濃度・時間・温度の設定や現行規格の保証にしません。",
+      "assets": [
+        {
+          "id": "mfg38-taxonomy-tree",
+          "file": "assets/manufacturing/recognition38/taxonomy-tree.png",
+          "width": 1300,
+          "height": 1140,
+          "altJa": "表面処理からめっき・陽極酸化・化成処理・塗装・その他へ枝分かれする独自分類図。めっきは溶融・湿式の電気と無電解・乾式PVD/CVDへ分ける。",
+          "sha256": "13f7c07c5f410ba88673e8153782ac0490b2ef536541bb87e73ab68f737ac344"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg37-required-treatment-taxonomy-q01",
+          "lessonId": "mfg1-surface-lesson-057",
+          "stemJa": "図Tで、アルミニウム等の表面を酸化させて酸化皮膜をつくる枠はどれか。",
+          "optionsJa": [
+            "陽極酸化",
+            "塗装",
+            "研磨",
+            "電気めっき"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "陽極酸化は酸化皮膜の系列。",
+            "塗装は樹脂皮膜の系列。",
+            "研磨はこの酸化皮膜形成の枠ではない。",
+            "電気めっきの金属皮膜とは別。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 139,
+              "printedPage": 129
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 141,
+              "printedPage": 131
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-taxonomy-tree"
+          ],
+          "imageAssetHashes": {
+            "mfg38-taxonomy-tree": "13f7c07c5f410ba88673e8153782ac0490b2ef536541bb87e73ab68f737ac344"
+          },
+          "sourceHash": "47939978d487ad45e804bf0e7d79f7d8d7601193b770c91a0331429d4ef09bde"
+        },
+        {
+          "id": "mfg37-required-treatment-taxonomy-q02",
+          "lessonId": "mfg1-surface-lesson-057",
+          "stemJa": "図Tのめっきの枝で、湿式の下に並ぶ二つはどれか。",
+          "optionsJa": [
+            "PVD・CVD",
+            "電気・無電解",
+            "焼入れ・窒化",
+            "研磨・エッチング"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "図では乾式の下位。",
+            "図では湿式を電気と無電解へ分けた。",
+            "その他の方法として扱う。",
+            "湿式めっきの二分ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 139,
+              "printedPage": 129
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-taxonomy-tree"
+          ],
+          "imageAssetHashes": {
+            "mfg38-taxonomy-tree": "13f7c07c5f410ba88673e8153782ac0490b2ef536541bb87e73ab68f737ac344"
+          },
+          "sourceHash": "8326d8966233199a397d28ad9133ad85e740b8b46f11049fbf36e6eafacf5b25"
+        },
+        {
+          "id": "mfg37-required-treatment-taxonomy-q03",
+          "lessonId": "mfg1-surface-lesson-057",
+          "stemJa": "図Tで、リン酸塩等の化合物皮膜と塗装下地の目的を対応させる枠はどれか。",
+          "optionsJa": [
+            "交流電源",
+            "陽極酸化だけ",
+            "化成処理",
+            "旋盤"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "電源は表面処理の分類ではない。",
+            "酸化皮膜と化合物皮膜の枠を分ける。",
+            "化成処理は化学反応で化合物皮膜をつくる系列。",
+            "旋盤はこの処理分類の枠ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 139,
+              "printedPage": 129
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 141,
+              "printedPage": 131
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-taxonomy-tree"
+          ],
+          "imageAssetHashes": {
+            "mfg38-taxonomy-tree": "13f7c07c5f410ba88673e8153782ac0490b2ef536541bb87e73ab68f737ac344"
+          },
+          "sourceHash": "aafbfa07f9f515fcf7f38ff6fc0f4296f6927889f0b8bac4460554c42f205511"
+        },
+        {
+          "id": "mfg37-required-treatment-taxonomy-q04",
+          "lessonId": "mfg1-surface-lesson-057",
+          "stemJa": "図Tで木材等の上に樹脂皮膜をつくる例と、注意点が合うものはどれか。",
+          "optionsJa": [
+            "全材料に同じめっき条件",
+            "表の膜厚をそのまま温度設定にする",
+            "研磨で必ず樹脂皮膜になる",
+            "塗装。基材・塗料・条件の適合は別に確認する"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "全材料に同じ条件とは示していない。",
+            "厚さと温度は別の量。",
+            "研磨と塗装を混同しない。",
+            "図の塗装枠に対応するが、仕様確認を省略しない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 141,
+              "printedPage": 131
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-taxonomy-tree"
+          ],
+          "imageAssetHashes": {
+            "mfg38-taxonomy-tree": "13f7c07c5f410ba88673e8153782ac0490b2ef536541bb87e73ab68f737ac344"
+          },
+          "sourceHash": "62bb1abb9ed60dfd75d0aa2637bda7fd7106bd55d26196cec48242f6d3212b1d"
+        }
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false,
+      "captionSourceHash": "7817ce2f49812cef16074e1a2635e57671d8992921237450564a1b7cf99bf0d1"
+    },
+    {
+      "id": "mfg37-required-plating-process-sequence",
+      "lessonIds": [
+        "mfg1-surface-lesson-006",
+        "mfg1-surface-lesson-016",
+        "mfg1-surface-lesson-018",
+        "mfg1-surface-lesson-059"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-006": "10d403ac5e6bd4cb3e079539984a41cb22aaedd6182600405f4ba79b81b9a4f7",
+        "mfg1-surface-lesson-016": "0b3e38703af71909630f6026c9fd8913913e0512d423614412c2f91fadaf0109",
+        "mfg1-surface-lesson-018": "7fa1081fc992c4c9bf535ebc3dc3f8bc04a044280f642ce806feeae76bb030d5",
+        "mfg1-surface-lesson-059": "2591f625a2f6a94c249ec474b2fc6236e65fe60ef4cdeee593259c7abc613ed1"
+      },
+      "titleJa": "水洗・任意工程・乾燥を二つの順序で見分ける",
+      "captionJa": "図SのAは電気めっき、Bは溶融めっきの学習モデルです。Aでは処理の間に水洗を入れ、図の破線の下地めっき・後処理は製品仕様に応じた承認工程として区別しました。Bは洗浄・活性化後の水洗、承認されたフラックス、乾燥確認、溶融浴、冷却、仕上げを示します。湿った品物を溶融浴へ入れる意味ではありません。水洗は前工程の液を流し去る役割で、乾燥とは別です。前処理の要否・順序は材料と承認仕様で確認し、一つの全製品共通レシピにはしません。",
+      "assets": [
+        {
+          "id": "mfg38-sequence-cards",
+          "file": "assets/manufacturing/recognition38/sequence-cards.png",
+          "width": 1300,
+          "height": 1070,
+          "altJa": "A・B二つの工程を縦のカードで比較。水洗、乾燥、任意承認工程と溶融浴前の乾燥を明示。",
+          "sha256": "f6f61a377a167f69c59c9d64c89092071dc1391a3a26136ac89062da52cd7549"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg37-required-plating-process-sequence-q01",
+          "lessonId": "mfg1-surface-lesson-006",
+          "stemJa": "図SのA・Bの対応はどれか。",
+          "optionsJa": [
+            "A電気めっき・B溶融めっき",
+            "A溶融めっき・B電気めっき",
+            "AもBも塗装だけ",
+            "AもBも研磨だけ"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "Aは主めっきと水洗、Bは乾燥後の溶融浴を区別した。",
+            "AとBが逆。",
+            "塗装だけの流れではない。",
+            "研磨だけの流れではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 157,
+              "printedPage": 147
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 170,
+              "printedPage": 160
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sequence-cards"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sequence-cards": "f6f61a377a167f69c59c9d64c89092071dc1391a3a26136ac89062da52cd7549"
+          },
+          "sourceHash": "e48b3a5b01ab70989d43a6134f1be23d3f4df1a7bf974be84a0cdb670798bdbe"
+        },
+        {
+          "id": "mfg37-required-plating-process-sequence-q02",
+          "lessonId": "mfg1-surface-lesson-006",
+          "stemJa": "図SのAの破線枠について適切なのはどれか。",
+          "optionsJa": [
+            "必ず全製品に追加する",
+            "仕様と承認された工程で要否を確認する",
+            "作業者がいつでも省略する",
+            "破線なら水洗も不要になる"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "全製品必須とは示していない。",
+            "下地めっき・後処理は必要に応じた承認工程。",
+            "省略も自己判断しない。",
+            "水洗の役割が消えるわけではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 157,
+              "printedPage": 147
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sequence-cards"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sequence-cards": "f6f61a377a167f69c59c9d64c89092071dc1391a3a26136ac89062da52cd7549"
+          },
+          "sourceHash": "b9f0ae28d03130c60c2cdac791bd76d054be877f47c1725869441b1eac35562b"
+        },
+        {
+          "id": "mfg37-required-plating-process-sequence-q03",
+          "lessonId": "mfg1-surface-lesson-006",
+          "stemJa": "図SのBで、溶融浴でのめっきの直前に置いた確認はどれか。",
+          "optionsJa": [
+            "冷却後の仕上げ",
+            "濡れたまま投入",
+            "乾燥を確認",
+            "回転中の研磨"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "仕上げは後の段階。",
+            "湿った品物を溶融浴へ入れない。",
+            "Bではフラックス処理の後、溶融浴の前に乾燥を確認する。",
+            "この流れの直前工程ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 170,
+              "printedPage": 160
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sequence-cards"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sequence-cards": "f6f61a377a167f69c59c9d64c89092071dc1391a3a26136ac89062da52cd7549"
+          },
+          "sourceHash": "1e1f50802c9393d0568086ac983f5f8da18cf661bd618df93556fb7d5d2408d2"
+        },
+        {
+          "id": "mfg37-required-plating-process-sequence-q04",
+          "lessonId": "mfg1-surface-lesson-006",
+          "stemJa": "図Sの水洗と乾燥について正しい説明はどれか。",
+          "optionsJa": [
+            "どちらも電流の別名",
+            "水洗すれば品物は必ず乾く",
+            "水洗はどの工程でも不要",
+            "水洗は液の持込みを減らし、乾燥は水分を除く役割"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "工程名を電流としない。",
+            "水洗と乾燥は別の役割。",
+            "図は処理間の水洗を示す。",
+            "役割を分けて読み、実際の方法は承認仕様で確認する。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 157,
+              "printedPage": 147
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 170,
+              "printedPage": 160
+            }
+          ],
+          "imageAssetIds": [
+            "mfg38-sequence-cards"
+          ],
+          "imageAssetHashes": {
+            "mfg38-sequence-cards": "f6f61a377a167f69c59c9d64c89092071dc1391a3a26136ac89062da52cd7549"
+          },
+          "sourceHash": "932a41f8ab1c15c5d14a12a2a06fd0922ec4ebe9e52b5a1367392a539aab514a"
+        }
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false,
+      "captionSourceHash": "2c1127ad9338eae8b51ab2343472ba5ceb56ec400b51d0303d92ad20ad95209d"
+    }
+  ]
+}

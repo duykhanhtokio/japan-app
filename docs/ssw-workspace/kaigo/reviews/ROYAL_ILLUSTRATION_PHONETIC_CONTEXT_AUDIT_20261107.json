@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "status": "validated_pending_parent_persistence",
+  "baseCommit": "fb44d2028f94f9555ae29fb9ef2a68c0774e60b9",
+  "scope": "Bounded phonetic/context screen of current 348 Japanese illustration fields only. No new prose, assets, days or locale census.",
+  "input": {
+    "path": "src/data/kaigo/illustration-readings.json",
+    "beforeBlobSha": "dbcd7ebfc14ba4edf54594b63282573cf82225a0"
+  },
+  "method": {
+    "fieldsReadInFull": 348,
+    "kanjiFields": 340,
+    "kanaOnlyFields": 8,
+    "uniqueSurfaceReadingPairs": 840,
+    "screen": "Read complete Japanese fields and reconstructed kana in context; alignment alone is not pronunciation proof. Two confirmed compound errors corrected. No claim that every retained reading has new primary/native proof.",
+    "retainedAcceptedProof": "Existing full-field canonical/primary kana evidence retained; previous structural census is not phonetic certification."
+  },
+  "corrections": [
+    {
+      "sourceJa": "慣れた手の動きと、経験や予定を思い出すことは区別して確かめます。",
+      "beforeKana": "なれたてのうごきと、けいけんやよていをおもいですことはくべつしてたしかめます。",
+      "afterKana": "なれたてのうごきと、けいけんやよていをおもいだすことはくべつしてたしかめます。"
+    },
+    {
+      "sourceJa": "身体の支えを考える概念図です。側臥位ではすき間を支えて手足の挟まりに注意し、上体を起こす姿勢では身体や足の支えとずれを確認します。食事の座位では身体を安定させ、足底を支えます。図は個別のベッド角度や姿勢を指定するものではありません。",
+      "beforeKana": "しんたいのささえをかんがえるがいねんずです。そくがいではすきあいだをささえててあしのはさまりにちゅういし、じょうたいをおこすしせいではしんたいやあしのささえとずれをかくにんします。しょくじのざいではしんたいをあんていさせ、そくていをささえます。ずはこべつのベッドかくどやしせいをしていするものではありません。",
+      "afterKana": "しんたいのささえをかんがえるがいねんずです。そくがいではすきまをささえててあしのはさまりにちゅういし、じょうたいをおこすしせいではしんたいやあしのささえとずれをかくにんします。しょくじのざいではしんたいをあんていさせ、そくていをささえます。ずはこべつのベッドかくどやしせいをしていするものではありません。"
+    }
+  ],
+  "primaryReferences": [
+    {
+      "term": "思い出す",
+      "reading": "おもいだす",
+      "publisher": "Japan Foundation Japanese-Language Institute, Kansai",
+      "url": "https://eng.nihongodecarenavi.jp/sp/jpn/entry_1101.html",
+      "access": "Full dictionary page opened; headword and kana checked."
+    },
+    {
+      "term": "すき間 / 隙間",
+      "reading": "すきま",
+      "publisher": "Cambridge Dictionary / K Dictionaries",
+      "url": "https://dictionary.cambridge.org/ja/dictionary/english-japanese/gap",
+      "access": "Search-indexed publisher entry explicitly supplies 隙間（すきま） and すき間. Direct page returned403; no full-page access claim."
+    },
+    {
+      "term": "両脚",
+      "reading": "りょうあし",
+      "publisher": "National Hospital Organization Hyogo Chuo Hospital, Rehabilitation",
+      "url": "https://hyogochuo.hosp.go.jp/section/pdf/reha/kenko_01.pdf",
+      "pdfPage": 5,
+      "access": "Opened PDF text explicitly associates 両脚 with りょうあし; valid alternate retained. No clinical instruction imported."
+    }
+  ],
+  "retainedAlternates": [
+    "両脚=りょうあし",
+    "身体=しんたい",
+    "内分泌腺=ないぶんぴつせん",
+    "側臥位=そくがい"
+  ],
+  "validation": {
+    "exactFieldsPreserved": 348,
+    "unchangedEntries": 346,
+    "changedEntries": 2,
+    "exactJapaneseAndSourceShaPreserved": true,
+    "fullCompoundTokens": true,
+    "allKanjiSpansStillHaveKana": true,
+    "reviewFlagsRemainFalse": true,
+    "actualCurrentHelper": "PASS transpiled exact fb44d202 helper against changed data: two corrected complete readings, two unknown/stale text rejections, retained 両脚 reading.",
+    "whitespace": "PASS git diff --no-index --check against exact pre-edit snapshot emitted no whitespace errors (exit1 denotes content differences); ordinary git diff --check blocked by missing promisor base blob, not counted as PASS."
+  },
+  "limits": {
+    "humanReviewed": false,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "runtimeClosure": false,
+    "wholeSectorAcceptance": false,
+    "canonicalProseDebtUnchanged": 5430,
+    "note": "No native/domain certification, fresh all-field primary proof, device run or whole-prose furigana closure. Source/clinical limitations remain separate."
+  }
+}

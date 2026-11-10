@@ -43,7 +43,7 @@ import {
   type Level,
   type Session,
 } from "@/data/kensetsu";
-import { subjectLabels, weeksForScope, sessionsForScope, sessionForScope, type Subject } from "@/data/kensetsu/scope";
+import { subjectLabels, weeksForScope, sessionsForScope, sessionForScope, studyDayForScope, studyDayIdForSession, studyDayCompletionIds, type Subject } from "@/data/kensetsu/scope";
 const CALENDAR_LEAF = require("../../../assets/kensetsu/ui/calendar-leaf-v1.webp");
 // The backdrop owns safe-area edges; only the lesson reader uses solid ivory.
 function CourseSurface({
@@ -128,6 +128,7 @@ function Action({
 function StudyImage({ path, caption }: { path: string; caption: string }) {
   const { width, height } = useWindowDimensions(),
     [open, setOpen] = useState(false),
+    [magnified, setMagnified] = useState(false),
     [containerWidth, setContainerWidth] = useState(0);
   const source = illustrations[path];
   const insets = useSafeAreaInsets(),
@@ -160,7 +161,7 @@ function StudyImage({ path, caption }: { path: string; caption: string }) {
         testID="kensetsu-study-image"
         accessibilityRole="button"
         accessibilityLabel="画像を拡大"
-        onPress={() => setOpen(true)}
+        onPress={() => { setMagnified(false); setOpen(true); }}
         style={{ width: imageWidth, maxWidth: "100%" }}
       >
         <Image
@@ -199,12 +200,25 @@ function StudyImage({ path, caption }: { path: string; caption: string }) {
             testID="kensetsu-image-viewer"
             contentContainerStyle={s.imageViewer}
           >
-            <Image
-              source={source}
-              accessibilityLabel={caption}
-              resizeMode="contain"
-              style={{ width: enlargedWidth, height: enlargedWidth / ratio }}
+            <Action
+              testID="kensetsu-image-magnify"
+              title={magnified ? "全体を見る" : "さらに拡大 · 横に動かして読む"}
+              onPress={() => setMagnified(value => !value)}
             />
+            <ScrollView
+              horizontal
+              testID="kensetsu-image-pan"
+              style={{ width: Math.max(0, width - insets.left - insets.right - 32) }}
+              contentContainerStyle={{ minWidth: Math.max(0, width - insets.left - insets.right - 32), justifyContent: "center" }}
+            >
+              <Image
+                source={source}
+                accessibilityLabel={caption}
+                resizeMode="contain"
+                style={{ width: magnified ? Math.max(900, enlargedWidth * 2) : enlargedWidth,
+                  height: (magnified ? Math.max(900, enlargedWidth * 2) : enlargedWidth) / ratio }}
+              />
+            </ScrollView>
             <Text style={s.light}>{caption}</Text>
           </ScrollView>
         </View>
@@ -212,7 +226,7 @@ function StudyImage({ path, caption }: { path: string; caption: string }) {
     </View>
   );
 }
-function Reader({
+export function KensetsuDayReader({
   session,
   done,
   ready,
@@ -495,7 +509,8 @@ function Calendar({
   subject: Subject;
 }) {
   const weeks = useMemo(() => weeksForScope(level, field, subject), [level, field, subject]);
-  const scopedSessionById = useMemo(() => new Map(sessionsForScope(level, field, subject).map(session => [session.id, session])), [level, field, subject]);
+  const scopedSessionById = useMemo(() => new Map(sessionsForScope(level, field, subject).map(session => studyDayForScope(session.id, level, field, subject)!).map(session => [session.id, session])), [level, field, subject]);
+  const dayDone = (session: Session) => studyDayCompletionIds(session.id, level, field, subject).every(id => !!progress[id]);
   const allowedSessionIds = useMemo(() => new Set(weeks.flatMap(w => w.sessionIds)), [weeks]);
   const key = completionKey(learner, level, field),
     navigationKey = key + `:navigation:${subject}:v2`;
@@ -535,10 +550,11 @@ function Calendar({
           setShowWeek(n.view === "days");
           if (Number.isInteger(n.week) && n.week >= 0 && n.week < weeks.length)
             setWeek(n.week);
-          if (typeof n.lastId === "string" && allowedSessionIds.has(n.lastId)) {
-            setLastId(n.lastId);
+          if (typeof n.lastId === "string" && allowedSessionIds.has(studyDayIdForSession(n.lastId, level, field, subject))) {
+            const resumedId = studyDayIdForSession(n.lastId, level, field, subject);
+            setLastId(resumedId);
             // Reuse can reorder/filter week lists; restore by the stable lesson ID.
-            const restoredWeek = weeks.findIndex(w => w.sessionIds.includes(n.lastId));
+            const restoredWeek = weeks.findIndex(w => w.sessionIds.includes(resumedId));
             if (restoredWeek >= 0) setWeek(restoredWeek);
           }
           if (Number.isFinite(n.offset) && n.offset >= 0)
@@ -634,11 +650,12 @@ function Calendar({
   };
   const complete = async () => {
     if (!lesson || !ready || saving) return;
-    if (progress[completionId(lesson)]) {
+    if (dayDone(lesson)) {
       closeLesson();
       return;
     }
-    const next = { ...progress, [completionId(lesson)]: true as const };
+    const next = { ...progress };
+    for (const id of studyDayCompletionIds(lesson.id, level, field, subject)) next[id] = true;
     setSaving(true);
     try {
       await AsyncStorage.setItem(key, JSON.stringify(next));
@@ -683,10 +700,10 @@ function Calendar({
           </Text>
         )}
         {lesson ? (
-          <Reader
+          <KensetsuDayReader
             key={lesson.id}
             session={lesson}
-            done={!!progress[completionId(lesson)]}
+            done={dayDone(lesson)}
             ready={ready}
             saving={saving}
             onComplete={() => void complete()}
@@ -706,7 +723,7 @@ function Calendar({
                   {
                     weeks[week].sessionIds.filter((id) => {
                       const d = scopedSessionById.get(id);
-                      return d && progress[completionId(d)];
+                      return d && dayDone(d);
                     }).length
                   }
                   /{weeks[week].sessionIds.length}日 学習済み
@@ -722,7 +739,7 @@ function Calendar({
                       testID={`kensetsu-day-${Number(d.id.split("-").pop())}`}
                       day={i + 1}
                       title={d.titleJa}
-                      done={!!progress[completionId(d)]}
+                      done={dayDone(d)}
                       disabled={!navigationReady}
                       onPress={() => openLesson(d)}
                     />
@@ -801,7 +818,7 @@ function Calendar({
                   const index = group * 10 + i,
                     count = w.sessionIds.filter((id) => {
                       const d = scopedSessionById.get(id);
-                      return d && progress[completionId(d)];
+                      return d && dayDone(d);
                     }).length;
                   return (
                     <Pressable

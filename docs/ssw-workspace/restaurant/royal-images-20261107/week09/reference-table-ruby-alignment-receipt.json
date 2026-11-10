@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "unit": "W9reference-table-ruby-alignment",
+  "baseCommit": "eba2d7957334fcb22af70578494b05c9c98e7d5e",
+  "beforeBlobSha": {
+    "src/data/restaurant/daily-learning.json": "db15634f8beb34f59505d3ed7de97d0280867aba",
+    "src/data/restaurant/royal-week09-reference-tables.json": "7f2581e6a9fe9de2fa15233d45102c07d114cac3",
+    "docs/ssw-workspace/restaurant/royal-images-20261107/week09/reference-table-ruby-alignment-receipt.json": null
+  },
+  "problem": "Actual hasAlignedRuby rejects readings containing punctuation. Thirteen whole-purpose phrases included colons or interpuncts in reading strings, so RestaurantReading displayed plain Japanese without ruby.",
+  "change": "Split only those 13 readings into aligned short terms and unannotated punctuation; refresh source signatures and three shared native-data hashes. Japanese labels, 12 target labels, facts, IDs, captions and all main artwork/status bindings remain unchanged.",
+  "currentConsumers": {
+    "RestaurantReadingBlobSha": "5fab317f7ce96ca12a5eac3b2c5f4fae27279656",
+    "rubyHelperBlobSha": "a73bc4a894571ba84e7abfe895059836d961723f",
+    "bothCurrentRemoteVerified": true
+  },
+  "checks": {
+    "actualRestaurantReadingAndActualHasAlignedRuby": "PASS: 21 labels render; 13 invalid readings corrected; longest ruby word has eight characters.",
+    "changedNativeIntegrationAdaptedSSRs": 84,
+    "targetLocales": 12,
+    "japaneseAndTargetWordsUnchanged": true,
+    "sourceTargetSignatureAndToggleGuards": true,
+    "metadataHashes": true,
+    "outside13SegmentArraysSignaturesAnd3RegistryHashesDeepIdentical": true,
+    "portableRasterRevisionGuard": "PASS",
+    "scopedDiffCheck": "PASS",
+    "physicalWidthOrDeviceCertification": false
+  },
+  "retiredDuplicateW10Drafts": {
+    "reason": "Concurrent external W10 main bindings were already integrated. The current RestaurantCourse renders all canonical paragraphs, which already teach the proposed numeric, category and eligibility facts. The six table drafts would duplicate this existing support.",
+    "readerBlobSha": "64c663d2465bb3913e4381141406a607f481b593",
+    "all6TableDraftsRetiredFromApp": true,
+    "duplicateFireArtRetiredFromApp": true,
+    "generatedOriginalPrivatelyPreserved": true,
+    "noW10MainOrCodeQueueChangesPublished": true
+  },
+  "scope": {
+    "mainCountChange": 0,
+    "sourceCoverageAcceptanceUnchanged": true,
+    "supplementalAcceptanceUnchanged": true
+  },
+  "acceptance": {
+    "native": false,
+    "domain": false,
+    "browser": false,
+    "physicalDevice": false,
+    "timeMeasured": false
+  },
+  "sha256": {
+    "src/data/restaurant/daily-learning.json": "7f89effda3787ab26d9dd03e70d98e2e277b3d9116c51f5d5345d3479af3123d",
+    "src/data/restaurant/royal-week09-reference-tables.json": "cfb3d1ecfe9679758a2dd071bee2c6a1bab8a0ef3c732035b6d0004391ee8d50"
+  }
+}

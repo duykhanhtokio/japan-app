@@ -1,0 +1,526 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "baseCommit": "d4bf4e65c45cd53a51ff650c27ab7e8f95ed657b",
+  "agent": "AI6",
+  "status": "SCOPED_RUNTIME_PASS_NATIVE_DEVICE_UNAVAILABLE",
+  "environment": {
+    "os": "Linux",
+    "node": "v24.22.1",
+    "tooling": {
+      "adb": null,
+      "emulator": null,
+      "xcrun": null,
+      "xcodebuild": null
+    },
+    "usbBusExposed": false,
+    "kvmExposed": false,
+    "browserExecutable": "/tmp/chromium",
+    "browserVersion": "153.0.8010.0",
+    "browserExecutableSha256": "53a15d6c3a3d27dfb54c4ba60278b1683136f70cf1e67e989da7dfbd3d451ef0",
+    "browserRecovery": "Available executable resolved through @sparticuz/chromium executablePath, then validated by real launch. Actual binary version/hash recorded; npm package version is not used as binary proof. Broken Playwright ZIP download was not retried."
+  },
+  "productionExpoModule": {
+    "versions": {
+      "expo": "54.0.38",
+      "react-native": "0.81.5",
+      "react": "19.1.0",
+      "react-native-web": "0.21.2"
+    },
+    "adapters": [],
+    "exportedPlatforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "nativeHermesBytecodeCompiled": true,
+    "artifacts": [
+      {
+        "path": "dist/_expo/static/js/android/index-7896a67c1881ab198cbb6a0e122d9f42.hbc",
+        "bytes": 17668614,
+        "sha256": "55b74eb45c0a081faf85f1008434c28e7eaeefa9aaa389b4917d69b1889314db",
+        "kind": "Hermes bytecode",
+        "referencedByCurrentManifestOrHtml": true
+      },
+      {
+        "path": "dist/_expo/static/js/ios/index-293b35e816812b2b909d903c7df219bb.hbc",
+        "bytes": 17661307,
+        "sha256": "913cda76fdbfdf17e83d738dc83e306fcd184a74327c93426e3a8801c228ee27",
+        "kind": "Hermes bytecode",
+        "referencedByCurrentManifestOrHtml": true
+      },
+      {
+        "path": "dist/_expo/static/js/web/index-9b20f0581c3d5e3b349f998cc56a458a.js",
+        "bytes": 35751227,
+        "sha256": "2c9cd07a8feb5253919afdd7c7245c7cd1152b1e3daf4b9657019adcb73f6288",
+        "kind": "JavaScript",
+        "referencedByCurrentManifestOrHtml": true
+      }
+    ],
+    "webExecution": {
+      "status": "PRODUCTION_EXPO_WEB_MODULE_EXECUTION_PASS",
+      "diagnostic": {
+        "status": "PASS",
+        "lessons": 120,
+        "questions": 984,
+        "lessonTranslations": 1440,
+        "questionTranslations": 11808,
+        "levels": 2,
+        "locales": 12,
+        "scope": "Real production Expo module diagnostic; not RestaurantCourse UI or native device"
+      },
+      "browser": "153.0.8010.0",
+      "navigationToDiagnosticMs": 643,
+      "measurementScope": "One cold isolated diagnostic navigation in this environment; not app startup/device performance benchmark.",
+      "pageErrors": [],
+      "nativeExecution": false,
+      "realDevice": false
+    },
+    "scope": "Isolated diagnostic importing actual restaurant data/index and state modules through actual production Expo54/Metro. Does not import full RestaurantCourse/Royal chrome; not an APK/IPA or native app execution.",
+    "exportLogSha256": "30ca0d586def4be949f94f8c5804788431291c56a82ff04bc4587d76ef45c787",
+    "artifactSelection": "Only current metadata.json and index.html referenced bundles; older retained scratch export files excluded."
+  },
+  "stateAndLazyLoad": {
+    "state": {
+      "status": "PASS",
+      "caseCount": 10
+    },
+    "loading": {
+      "status": "PASS",
+      "cases": [
+        "current question translation accepted and stale revision rejected",
+        "unsupported question language has no unrelated fallback",
+        "localized counts with named placeholders",
+        "missing interpolation values remain explicit",
+        "no eager lesson/exam/translation evaluation",
+        "selected level only",
+        "selected locale only",
+        "stale translation rejected",
+        "no unrelated fallback language",
+        "exam bank loads only when requested",
+        "current glossary translation accepted",
+        "stale glossary definition rejected",
+        "missing glossary translation explicit"
+      ],
+      "timingBenchmarkPerformed": false
+    },
+    "hookRace": {
+      "status": "PASS",
+      "actualHook": "src/components/restaurant/useRestaurantRecord.ts",
+      "cases": [
+        "late old-key write cannot change current invalid state",
+        "explicit reset archives current corrupt raw rather than old successful JSON",
+        "old and new storage writes both preserved"
+      ],
+      "adapters": [
+        "AsyncStorage controlled delayed write"
+      ],
+      "nativeDeviceTested": false
+    },
+    "scope": "Current actual source assertions; hook race uses controlled AsyncStorage adapter."
+  },
+  "courseBrowser": {
+    "baselineFullSuite": {
+      "status": "PASS",
+      "scope": "course-state-responsive-and-artwork",
+      "checks": {
+        "responsiveViewports": 4,
+        "rasterResponsiveCases": 12,
+        "diagramCases": 4,
+        "completionFailureRetry": true,
+        "completionReload": true,
+        "levelIsolation": true,
+        "readerResume": true,
+        "translatedLocales": 12,
+        "explicitMissingLocaleBehavior": 0,
+        "localizedCalendarSubmissionResults": 12,
+        "examResumeLevel1": true,
+        "hiddenAnswersAndSubmissionLevel1": true,
+        "examCompletionBadgeLevel1": true,
+        "examResumeLevel2": true,
+        "hiddenAnswersAndSubmissionLevel2": true,
+        "examCompletionBadgeLevel2": true,
+        "corruptProgressPreserved": true,
+        "readFailureRetry": true
+      },
+      "screenshots": [
+        "reader-390x844.png",
+        "reader-844x390.png",
+        "reader-768x1024.png",
+        "reader-1440x900.png",
+        "rst-img-meat-trays-v1-390x844.png",
+        "rst-img-kitchen-tools-v1-390x844.png",
+        "rst-img-vegetables-v1-390x844.png",
+        "translated-ne-390x844.png",
+        "translated-my-390x844.png",
+        "translated-th-390x844.png",
+        "translated-km-390x844.png"
+      ],
+      "adapters": [
+        "Royal artwork and calendar leaf placeholder",
+        "background",
+        "safe area",
+        "localStorage for AsyncStorage"
+      ],
+      "restaurantRasterAssetsLoaded": [
+        "assets/restaurant/kitchen-tools-v1.png",
+        "assets/restaurant/vegetables-v1.png",
+        "assets/restaurant/meat-trays-v1.png"
+      ],
+      "additionalQaScriptFonts": [
+        "bn",
+        "hi",
+        "my",
+        "th",
+        "km"
+      ],
+      "realCourseReactAndNativeWeb": true,
+      "nativeDeviceTested": false,
+      "productionExpoTested": false,
+      "fullTranslationCoverageCertified": false
+    },
+    "current12LocaleSuite": {
+      "status": "PASS",
+      "scope": "locale-extension",
+      "checks": {
+        "translatedLocales": 12,
+        "explicitMissingLocaleBehavior": 0,
+        "localizedCalendarSubmissionResults": 12
+      },
+      "screenshots": [
+        "translated-ne-390x844.png",
+        "translated-my-390x844.png",
+        "translated-th-390x844.png",
+        "translated-km-390x844.png"
+      ],
+      "adapters": [
+        "Royal artwork and calendar leaf placeholder",
+        "background",
+        "safe area",
+        "localStorage for AsyncStorage"
+      ],
+      "restaurantRasterAssetsLoaded": [
+        "assets/restaurant/kitchen-tools-v1.png",
+        "assets/restaurant/vegetables-v1.png",
+        "assets/restaurant/meat-trays-v1.png"
+      ],
+      "additionalQaScriptFonts": [
+        "bn",
+        "hi",
+        "my",
+        "th",
+        "km"
+      ],
+      "realCourseReactAndNativeWeb": true,
+      "nativeDeviceTested": false,
+      "productionExpoTested": false,
+      "fullTranslationCoverageCertified": false
+    },
+    "currentFontReaderSuite": {
+      "status": "LOCALE_READER_FONT_BROWSER_PASS",
+      "locales": [
+        "en",
+        "vi",
+        "id",
+        "zh-CN",
+        "zh-TW",
+        "hi",
+        "bn",
+        "ne",
+        "my",
+        "th",
+        "km",
+        "tl"
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "fonts": [
+        "NotoSansJP",
+        "NotoSansSC",
+        "NotoSansTC",
+        "NotoSansBengali",
+        "NotoSansDevanagari",
+        "NotoSansMyanmar",
+        "NotoSansThai",
+        "NotoSansKhmer"
+      ],
+      "pageErrors": [],
+      "scope": "Course RNW reader adapter harness; CJK fonts supplied to Linux harness, not a native-device font test"
+    },
+    "scope": "Real RestaurantCourse React/RNW with explicit Royal/background/safe-area/storage adapters. Baseline full suite predates final wording/metadata repairs; current 12-locale suites and production module runtime recheck final display/revision data."
+  },
+  "additionalGuides": {
+    "standalone": {
+      "status": "ADDITIONAL_GUIDES_BROWSER_PASS",
+      "viewportLocaleGuideCases": 156,
+      "viewports": 4,
+      "locales": 13,
+      "guides": 3,
+      "font2xCases": 3,
+      "errors": [],
+      "fonts": [
+        "japanese.ttf",
+        "qa-bn.woff2",
+        "qa-hi.woff2",
+        "qa-my.woff2",
+        "qa-th.woff2",
+        "qa-km.woff2"
+      ],
+      "adapter": [
+        "AsyncStorage no-op; guide uses default appearance context"
+      ],
+      "nativeDeviceTested": false,
+      "fontScaleScope": "Browser Text DOM font/line-height doubled; not native accessibility-font scaling",
+      "screenshotsDirectory": "/workspace/scratch/815b69225e4a/restaurant-expo-qa/additional-guides"
+    },
+    "integratedCourse": {
+      "status": "COURSE_GUIDES_INTEGRATION_BROWSER_PASS",
+      "cases": 84,
+      "viewports": 4,
+      "priorityLocales": 7,
+      "guides": 3,
+      "font2xCases": 3,
+      "errors": [],
+      "scope": "Actual RestaurantCourse integration; RNW browser with original chrome/background/safe-area/storage adapters, not native or production full-app execution",
+      "screenshotsDirectory": "/workspace/scratch/815b69225e4a/restaurant-expo-qa/course-guides"
+    },
+    "typeScript": {
+      "status": "PASS",
+      "errors": 0,
+      "compiler": "5.9.2",
+      "scope": "Strict noEmit for RestaurantAdditionalGuides and imported local dependencies with real ReactNative0.81.5 declarations; not full repository typecheck."
+    },
+    "visualInspection": {
+      "reviewer": "AI visual inspection",
+      "viewed": [
+        "additional-guides/anatomy-390x844-vi.png",
+        "additional-guides/processing-390x844-vi.png",
+        "additional-guides/measurement-390x844-vi.png",
+        "additional-guides/measurement-390x844-vi-font2x.png",
+        "course-guides/anatomy-integrated-390x844-vi.png",
+        "locale-fonts/zh-CN-reader-390x844.png",
+        "locale-fonts/zh-TW-reader-390x844.png"
+      ],
+      "findings": "Diagram/labels and Japanese ruby legible; mobile processing result cards wrap into two rows; large text flows vertically. Integrated diagram and completion/footer remain reachable by ScrollView. Not native/domain illustration approval."
+    }
+  },
+  "assets": {
+    "restaurantRasterIntegrity": [
+      {
+        "path": "assets/restaurant/vegetables-v1.png",
+        "bytes": 1891069,
+        "sha256": "80e34ddaeb008bda56cb8a9ce6ed9e1cd261f6f5a53f64bc0d2d4f8b3f258105",
+        "lfs": false
+      },
+      {
+        "path": "assets/restaurant/meat-trays-v1.png",
+        "bytes": 1896599,
+        "sha256": "6f1f242c1ea8407c7203e3e9cd71bcf4ba474207ec10e79346191926c51f1e7d",
+        "lfs": true
+      },
+      {
+        "path": "assets/restaurant/kitchen-tools-v1.png",
+        "bytes": 1687793,
+        "sha256": "88fe7a626660fa44ae365ec06cecda0f933d31384752ff744e557609872c894d",
+        "lfs": true
+      }
+    ],
+    "all12LocaleFontCodepointCoverage": {
+      "my": {
+        "uniqueCodepoints": 838,
+        "missing": []
+      },
+      "bn": {
+        "uniqueCodepoints": 832,
+        "missing": []
+      },
+      "zh-CN": {
+        "uniqueCodepoints": 2241,
+        "missing": []
+      },
+      "km": {
+        "uniqueCodepoints": 838,
+        "missing": []
+      },
+      "en": {
+        "uniqueCodepoints": 768,
+        "missing": []
+      },
+      "ne": {
+        "uniqueCodepoints": 839,
+        "missing": []
+      },
+      "th": {
+        "uniqueCodepoints": 829,
+        "missing": []
+      },
+      "vi": {
+        "uniqueCodepoints": 850,
+        "missing": []
+      },
+      "id": {
+        "uniqueCodepoints": 764,
+        "missing": []
+      },
+      "zh-TW": {
+        "uniqueCodepoints": 2228,
+        "missing": []
+      },
+      "tl": {
+        "uniqueCodepoints": 765,
+        "missing": []
+      },
+      "hi": {
+        "uniqueCodepoints": 830,
+        "missing": []
+      }
+    },
+    "missingCodepoints": 0,
+    "fontCount": 8,
+    "scope": "Exact Git/LFS SHA256 for 3 actual restaurant rasters. Initial JP-only CJK fallback lacked SC/TC glyphs on Linux; explicit NotoSansSC/TC added to QA only and all locale codepoint sets plus12 reader renders rerun. No app fonts/package-lock changed."
+  },
+  "snapshot": {
+    "testedInputSha256": {
+      "src/data/restaurant/reading-overrides.json": "5635d7372b80ef1b343e21481269c00033dc94e16311bc7d48b7ca8678e31377",
+      "src/data/restaurant/context-readings.json": "5be164accc7ebd9774d1fa31a32885c6a5380caae237733be297d827dd346996",
+      "src/data/restaurant/illustrations.json": "d26539a3ecd0a1633b7f1023aeb9e9de644f599338dce6d41d215c3676bab6d3",
+      "src/data/restaurant/additional-guides.json": "1b129cb2993e7ecb61ee2cee7ed2c43407de107c9453decc54d22b421a9ed7bf",
+      "src/data/restaurant/lessons.1.ja.json": "279bbb6280e78dd415e68204e3a29d5a5ac5111657e8edbc0397d9cb845afc49",
+      "src/data/restaurant/glossary-links.json": "6bf2697459ae32ff8e490880054ad8f52405ace87011e0410fc127bfa7310a29",
+      "src/data/restaurant/diagrams.json": "eabd2a64217e131f1bc287bf333bc7e5457b7769541e9f7bbe9635495456e1e6",
+      "src/data/restaurant/course-manifest.json": "27a4da5d4e77c378be8d3af91403efb3c65b0760f8134b3e214ccb5aed2044c5",
+      "src/data/restaurant/glossary.ja.json": "ba3737a93549b48a9b4835a9ef62c4066f211557be047aa066a346562d9117fd",
+      "src/data/restaurant/lessons.2.ja.json": "30f0a0c0dec335fcef74b9a9b0af781676f8490b0bc8bfc4db5fcf6352c26d31",
+      "src/data/restaurant/exams.1.ja.json": "eacbd6694a29b3b321be174737c37e71543901d3796ec8b9fa74fa4f9c13fef8",
+      "src/data/restaurant/meal-placement.json": "7fb638a0e5ab70cc0f093dba5839abb506bf6125c4f535536613666fde48ce46",
+      "src/data/restaurant/exams.2.ja.json": "09e23dd0d4eab41f1d176cef7e354b7ba1743dea48c87fd492ef8fc9839a1766",
+      "src/data/restaurant/ui-keys.ja.json": "cf0d42da941f69dde538bae309c0267e4748d4da00b8ffeb2d8c6898b0989b74",
+      "src/data/restaurant/translations/my.json": "301f47e6197fb4801ac653b00eed7c30bfdc223fafc75be98b1cf81086c1662b",
+      "src/data/restaurant/translations/bn.json": "0df87f06c5b7033d8512ebf837b6f27391e43ca5b772855007474dd021b71af6",
+      "src/data/restaurant/translations/zh-CN.json": "3e07eb4f7b970c8e2b7e10ff2572e3738f5241aa880aafafab966f8b767ac274",
+      "src/data/restaurant/translations/km.json": "7481998d6dd7eee83bf91492a88839231dbe87e6738445a9637e92684da68129",
+      "src/data/restaurant/translations/en.json": "f315c57b7909b17924f95793ee22eaf5661c5335d542606f98bc541ac422b7c6",
+      "src/data/restaurant/translations/ne.json": "5b3d45c0829f86adaa35145b62e44e56afe8f5e15ce0eb962640b2490b4e8a91",
+      "src/data/restaurant/translations/th.json": "d115d9cb3cf57a2cbda0d18a736ba7dd2807951d21ab7247db447ec0556d8fc3",
+      "src/data/restaurant/translations/vi.json": "969d25874bfd79458309cf33aadbb52ecc5f15bc3b223e42d64544702f16becb",
+      "src/data/restaurant/translations/id.json": "4563cae4ef795e79c2df079d4ced5f4aa8a5d7dcb36df0f69d43dd95047c859b",
+      "src/data/restaurant/translations/zh-TW.json": "ae8707e9e91223a016ae87c99ec85e50ec2ae02a1ceac76e4c2aa96327f35334",
+      "src/data/restaurant/translations/tl.json": "6fa355629f860cf1412da5c6e7fa76acb5f2283487c7d62527bacd1ca58dbdc3",
+      "src/data/restaurant/translations/hi.json": "4828eff4aaea2366551482b4de5186c5ccb0c8575783d3ca1ea6f9995c15b759",
+      "src/components/restaurant/RestaurantDiagrams.tsx": "8e8f3ba44825bd8393dd04e01240f9c12f4dd81ee3c73eace8f434f7d2c1384b",
+      "src/components/restaurant/RestaurantMealPlacement.tsx": "5b8d817970a4e9fa3d4b749c55e92b9b7cfc98a934e67abe77dcb181fa8f67fe",
+      "src/components/restaurant/RestaurantReading.tsx": "5b72ee758e8d82c3fdee17b8fd1436d8b0aeab59b94aa10b996cb82db8b26fe8",
+      "src/components/restaurant/RestaurantIllustrations.tsx": "43754d807a7236d0d884d4243a626a8fa710bec3ce1edb2a9305800b9b4d7548",
+      "src/components/restaurant/RestaurantCuttingGuide.tsx": "5b950f0058a8fc95dbc67cd4fc41786e697b331eb7db50a64972af83b9bceb6a",
+      "src/components/restaurant/RestaurantAdditionalGuides.tsx": "4bf3b80248255400880e71061d1068344908d769aa359f5d4971fa62dce67e9a",
+      "src/components/restaurant/RestaurantCourse.tsx": "d94cef93251adc0a8e2ed322a3dff363e060dc5b7756cd6c3af89bce9f77711a",
+      "src/components/restaurant/RestaurantGlossary.tsx": "b13043dfcfce7de2a05344e2538a0d91d95d6469ba188b5d49a95091de2e18d1"
+    },
+    "currentInputSha256": {
+      "src/data/restaurant/reading-overrides.json": "5635d7372b80ef1b343e21481269c00033dc94e16311bc7d48b7ca8678e31377",
+      "src/data/restaurant/context-readings.json": "5be164accc7ebd9774d1fa31a32885c6a5380caae237733be297d827dd346996",
+      "src/data/restaurant/illustrations.json": "d26539a3ecd0a1633b7f1023aeb9e9de644f599338dce6d41d215c3676bab6d3",
+      "src/data/restaurant/additional-guides.json": "1b129cb2993e7ecb61ee2cee7ed2c43407de107c9453decc54d22b421a9ed7bf",
+      "src/data/restaurant/lessons.1.ja.json": "279bbb6280e78dd415e68204e3a29d5a5ac5111657e8edbc0397d9cb845afc49",
+      "src/data/restaurant/glossary-links.json": "6bf2697459ae32ff8e490880054ad8f52405ace87011e0410fc127bfa7310a29",
+      "src/data/restaurant/diagrams.json": "eabd2a64217e131f1bc287bf333bc7e5457b7769541e9f7bbe9635495456e1e6",
+      "src/data/restaurant/course-manifest.json": "27a4da5d4e77c378be8d3af91403efb3c65b0760f8134b3e214ccb5aed2044c5",
+      "src/data/restaurant/glossary.ja.json": "ba3737a93549b48a9b4835a9ef62c4066f211557be047aa066a346562d9117fd",
+      "src/data/restaurant/lessons.2.ja.json": "54ccf5fb647d1831659d6f104382c40cf65496bfd5a0f2926e5c61ee54dcfbab",
+      "src/data/restaurant/exams.1.ja.json": "eacbd6694a29b3b321be174737c37e71543901d3796ec8b9fa74fa4f9c13fef8",
+      "src/data/restaurant/meal-placement.json": "7fb638a0e5ab70cc0f093dba5839abb506bf6125c4f535536613666fde48ce46",
+      "src/data/restaurant/exams.2.ja.json": "09e23dd0d4eab41f1d176cef7e354b7ba1743dea48c87fd492ef8fc9839a1766",
+      "src/data/restaurant/ui-keys.ja.json": "cf0d42da941f69dde538bae309c0267e4748d4da00b8ffeb2d8c6898b0989b74",
+      "src/data/restaurant/translations/my.json": "301f47e6197fb4801ac653b00eed7c30bfdc223fafc75be98b1cf81086c1662b",
+      "src/data/restaurant/translations/bn.json": "0df87f06c5b7033d8512ebf837b6f27391e43ca5b772855007474dd021b71af6",
+      "src/data/restaurant/translations/zh-CN.json": "3e07eb4f7b970c8e2b7e10ff2572e3738f5241aa880aafafab966f8b767ac274",
+      "src/data/restaurant/translations/km.json": "7481998d6dd7eee83bf91492a88839231dbe87e6738445a9637e92684da68129",
+      "src/data/restaurant/translations/en.json": "f315c57b7909b17924f95793ee22eaf5661c5335d542606f98bc541ac422b7c6",
+      "src/data/restaurant/translations/ne.json": "5b3d45c0829f86adaa35145b62e44e56afe8f5e15ce0eb962640b2490b4e8a91",
+      "src/data/restaurant/translations/th.json": "d115d9cb3cf57a2cbda0d18a736ba7dd2807951d21ab7247db447ec0556d8fc3",
+      "src/data/restaurant/translations/vi.json": "969d25874bfd79458309cf33aadbb52ecc5f15bc3b223e42d64544702f16becb",
+      "src/data/restaurant/translations/id.json": "4563cae4ef795e79c2df079d4ced5f4aa8a5d7dcb36df0f69d43dd95047c859b",
+      "src/data/restaurant/translations/zh-TW.json": "ae8707e9e91223a016ae87c99ec85e50ec2ae02a1ceac76e4c2aa96327f35334",
+      "src/data/restaurant/translations/tl.json": "6fa355629f860cf1412da5c6e7fa76acb5f2283487c7d62527bacd1ca58dbdc3",
+      "src/data/restaurant/translations/hi.json": "4828eff4aaea2366551482b4de5186c5ccb0c8575783d3ca1ea6f9995c15b759",
+      "src/components/restaurant/RestaurantDiagrams.tsx": "8e8f3ba44825bd8393dd04e01240f9c12f4dd81ee3c73eace8f434f7d2c1384b",
+      "src/components/restaurant/RestaurantMealPlacement.tsx": "5b8d817970a4e9fa3d4b749c55e92b9b7cfc98a934e67abe77dcb181fa8f67fe",
+      "src/components/restaurant/RestaurantReading.tsx": "5b72ee758e8d82c3fdee17b8fd1436d8b0aeab59b94aa10b996cb82db8b26fe8",
+      "src/components/restaurant/RestaurantIllustrations.tsx": "43754d807a7236d0d884d4243a626a8fa710bec3ce1edb2a9305800b9b4d7548",
+      "src/components/restaurant/RestaurantCuttingGuide.tsx": "5b950f0058a8fc95dbc67cd4fc41786e697b331eb7db50a64972af83b9bceb6a",
+      "src/components/restaurant/RestaurantAdditionalGuides.tsx": "4bf3b80248255400880e71061d1068344908d769aa359f5d4971fa62dce67e9a",
+      "src/components/restaurant/RestaurantCourse.tsx": "d94cef93251adc0a8e2ed322a3dff363e060dc5b7756cd6c3af89bce9f77711a",
+      "src/components/restaurant/RestaurantGlossary.tsx": "b13043dfcfce7de2a05344e2538a0d91d95d6469ba188b5d49a95091de2e18d1"
+    },
+    "acceptedMetadataOnlyDelta": [
+      {
+        "path": "src/data/restaurant/lessons.2.ja.json",
+        "testedSnapshotSha256": "30f0a0c0dec335fcef74b9a9b0af781676f8490b0bc8bfc4db5fcf6352c26d31",
+        "currentSha256": "54ccf5fb647d1831659d6f104382c40cf65496bfd5a0f2926e5c61ee54dcfbab",
+        "difference": "knowledgeIds metadata only; displayed text, hashes, answers and translations equal"
+      }
+    ],
+    "note": "Root added knowledgeIds links after production snapshot. Verified only metadata delta with identical displayed text/sourceHash/options/answers/translations; UI rerun not required for these links."
+  },
+  "failuresAndRepairs": [
+    {
+      "type": "environment",
+      "failure": "No installed Playwright Chromium in initial environment; previous ZIP installation invalid/truncated.",
+      "resolution": "Existing /tmp/chromium resolved and real launch/version/hash verified; all subsequent browser checks executed."
+    },
+    {
+      "type": "harness assertion",
+      "failure": "Initial guide title plain innerText check failed because aligned ruby has separate reading/base DOM nodes.",
+      "resolution": "Check canonical aria-label or plain text, then rerun156cases."
+    },
+    {
+      "type": "harness resource",
+      "failure": "Long repeated55MB development-bundle navigations caused page crash in unbounded reruns (one full-course rerun, one guide matrix near final viewport). Shared host renderer RSS grew during this run; attribution to real app/device is not established.",
+      "resolution": "Disabled BackForwardCache and dev-shm use for bounded browser launch; final84guidecases+3font2x and12locale suites PASS."
+    },
+    {
+      "type": "screenshot capture",
+      "failure": "Screenshot of element taller than inner ScrollView produced clipped/white areas in screenshot artifact.",
+      "resolution": "Capture viewport after scroll-to-diagram and verify note/footer reachable; final integrated screenshots inspected."
+    },
+    {
+      "type": "harness fonts",
+      "failure": "NotoSansJP plus5script fonts did not cover SC/TC codepoints on Linux.",
+      "resolution": "Added explicit SC/TC QA fonts; all12locale codepoint coverage0missing and12reader suite PASS. Not an app font modification."
+    }
+  ],
+  "fullCourseProductionExport": {
+    "completed": false,
+    "attemptedFullBundle": false,
+    "reason": "Bounded source graph inspection found real AppBackdrop→prepareSceneRoute.ts imports world-map-config/home/common artwork/expo-router and dynamic life-content-repository; full no-adapter Course export needs unrelated world/farm/dialogue/registration source/assets absent in sparse checkout. Root instructed not to pull all unrelated sectors for this check. No adapter bundle is mislabeled as a full production app."
+  },
+  "nativeDeviceTested": false,
+  "nativeSimulatorTested": false,
+  "nativeAppLaunched": false,
+  "fullProductionAppBuilt": false,
+  "productionExpoModuleTested": true,
+  "releaseAcceptance": false,
+  "remaining": [
+    "Run full app production build in full checkout with actual shared artwork/config/plugins.",
+    "Launch iOS/Android app on connected physical hardware; inspect lesson/exam/translation/ruby/persistence and guide layouts at native font scales.",
+    "Measure actual device startup/memory and background/resume behavior; isolated web navigation timing is not a device benchmark."
+  ],
+  "cleanup": {
+    "allTestBrowsersClosedInFinally": true,
+    "allHttpServersClosedInFinally": true,
+    "remainingOwnedHarnessRootCount": 0,
+    "noBackgroundProcessClaimed": true
+  },
+  "scripts": [
+    "scripts/restaurant/check-expo-export.cjs",
+    "scripts/restaurant/check-expo-browser.cjs",
+    "scripts/restaurant/check-expo-guides.cjs",
+    "scripts/restaurant/check-expo-course-guides.cjs",
+    "scripts/restaurant/check-expo-fonts.cjs"
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false
+}

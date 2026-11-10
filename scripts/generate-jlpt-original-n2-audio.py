@@ -2,39 +2,100 @@
 Usage: python scripts/generate-jlpt-original-n2-audio.py --engine /path/to/engine/run
 No external text service; no legacy exam inputs. Generated audio requires human review.
 """
-import argparse,array,hashlib,io,json,math,subprocess,time,urllib.parse,urllib.request,wave
+import argparse,array,hashlib,io,json,math,os,subprocess,tempfile,time,urllib.parse,urllib.request,wave
 from pathlib import Path
-ap=argparse.ArgumentParser();ap.add_argument('--level',choices=['n2','n1'],default='n2');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--cpu-threads',type=int,default=2);ap.add_argument('--engine',required=True);ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--cache-only',action='store_true',help='Reassemble approved cached speech without starting or calling VOICEVOX');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[24,32,40,48,64,96],default=96);args=ap.parse_args();level=args.level;exam_number=f'{args.exam_number:02d}'
+from jlpt_audio_prosody import load_profile, apply_query, cache_key, fingerprint, turn_pause, candidate_root, query_parts, speech_query_text, SPOKEN_TEXT_NORMALIZATION, validate_voice_catalog, acquire_engine_slot, acquire_render_lock, reuse_rendered_candidate, runtime_synthesis_limits, complete_sentence_units, merge_sentence_queries
+ap=argparse.ArgumentParser();ap.add_argument('--level',choices=['n2','n1'],default='n2');ap.add_argument('--port',type=int,default=50128);ap.add_argument('--cpu-threads',type=int,default=2);ap.add_argument('--restart-every',type=int,choices=range(1,513),default=6);ap.add_argument('--engine',required=True);ap.add_argument('--prosody-profile');ap.add_argument('--candidate-dir');ap.add_argument('--exam-number',type=int,choices=range(1,7),default=1);ap.add_argument('--cache-dir');ap.add_argument('--cache-only',action='store_true',help='Reassemble approved cached speech without starting or calling VOICEVOX');ap.add_argument('--continuous-bitrate-kbps',type=int,choices=[24,32,40,48,64,96],default=96);args=ap.parse_args();level=args.level;exam_number=f'{args.exam_number:02d}'
 root=Path(__file__).resolve().parent.parent;master=root/f'src/data/jlpt-original/{level}/{exam_number}/master.ja.json';master_bytes=master.read_bytes();exam=json.loads(master_bytes);casting=json.loads((root/'src/data/jlpt-original/voice-casting.json').read_text());settings={**casting['settings'],**casting.get('levelPacing',{}).get(level,{})};roles=casting['roles'];organization_path=root/f'src/data/jlpt-original/{level}/{exam_number}/listening-organization.ja.json';organization_bytes=organization_path.read_bytes();organization=json.loads(organization_bytes)
-out=root/f'assets/jlpt-original/{level}/{exam_number}/audio';out.mkdir(parents=True,exist_ok=True)
-work=root/f'docs/jlpt-workspace/original/{level}-{exam_number}/audio';work.mkdir(parents=True,exist_ok=True)
+render_root=candidate_root(root,args.candidate_dir,args.prosody_profile);prosody=load_profile(root/args.prosody_profile) if args.prosody_profile else None;engine_version=None
+inference_limit=min(prosody.get('inferenceMaxMoras',160),64 if level=='n1' else 160) if prosody else None
+if prosody and getattr(args,'cache_only',False):raise ValueError('Prosody candidates require real re-synthesis, not legacy cache-only assembly')
+render_guard=None
+if prosody:
+ render_guard=acquire_render_lock(render_root,level,exam_number)
+ if reuse_rendered_candidate(root,render_root,prosody,level,exam_number):
+  print(json.dumps({'reusedValidatedCandidate':True,'level':level,'examNumber':exam_number}),flush=True)
+  raise SystemExit(0)
+out=render_root/f'assets/jlpt-original/{level}/{exam_number}/audio';out.mkdir(parents=True,exist_ok=True)
+work=render_root/f'docs/jlpt-workspace/original/{level}-{exam_number}/audio';work.mkdir(parents=True,exist_ok=True)
 settings.pop('answerPauseSeconds',None)
 plan={g['problem']:g['instructionsJa'] for g in organization['groups']}
 # Explicit actor casting; narrator is adultFemale. Same actor keeps same voice within each item.
 http=urllib.request.build_opener(urllib.request.ProxyHandler({}));proc=None;log=open(work/'generation.log','w')
+requested_threads,requested_restart=args.cpu_threads,args.restart_every
 def start():
  global proc
+ args.cpu_threads,args.restart_every=runtime_synthesis_limits(requested_threads,requested_restart)
  if args.cache_only:return
  proc=subprocess.Popen([args.engine,'--host','127.0.0.1','--port',str(args.port),'--cpu_num_threads',str(args.cpu_threads)],cwd=str(Path(args.engine).parent),stdout=log,stderr=log)
  for _ in range(80):
-  try: req('/speakers');return
+  try: catalog=json.loads(req('/speakers'))
   except Exception:
    if proc.poll() is not None:raise RuntimeError('VOICEVOX stopped')
-   time.sleep(.25)
+   time.sleep(.25);continue
+  if prosody:validate_voice_catalog(catalog,casting)
+  return
  raise RuntimeError('Startup timeout')
 def stop():
- if proc and proc.poll() is None:proc.terminate();proc.wait(timeout=15)
-def req(path,data=None):return http.open(urllib.request.Request('http://127.0.0.1:'+str(args.port)+path,data=data,headers={'Content-Type':'application/json'}),timeout=120).read()
+ if proc and proc.poll() is None:
+  proc.terminate()
+  try:proc.wait(timeout=15)
+  except subprocess.TimeoutExpired:proc.kill();proc.wait(timeout=15)
+def req(path,data=None):return http.open(urllib.request.Request('http://127.0.0.1:'+str(args.port)+path,data=data,headers={'Content-Type':'application/json'}),timeout=600).read()
 def silence(sec):return b'\0'*round(24000*sec)*2
 cache=Path(args.cache_dir) if args.cache_dir else work/'turn-cache';cache.mkdir(parents=True,exist_ok=True);new_synthesis_count=0
-def synth(text,role):
- global new_synthesis_count
- sid=roles[role]['speakerId'];text=text.replace(' ','');key=hashlib.sha256(json.dumps([text,sid,settings['speedScale']],ensure_ascii=False).encode()).hexdigest();p=cache/(key+'.wav')
+def script_gap(script,index):
+ if index==0:return settings['afterIntroSeconds']
+ if not prosody:return settings['betweenTurnsSeconds']
+ actor,text=script[index];next_actor=script[index+1][0] if index+1<len(script) else None
+ return turn_pause(prosody,level,text,actor,next_actor)
+def synth(text,role,mode='dialogue'):
+ global new_synthesis_count,engine_version
+ sid=roles[role]['speakerId']
+ if prosody:
+  if engine_version is None:
+   engine_version=json.loads(req('/version'))
+   if engine_version!=casting['engine']['version']:raise ValueError('Engine version differs from approved casting')
+  key=cache_key(text,sid,engine_version,prosody,level,mode,query_text=speech_query_text(text))
+ else:
+  text=text.replace(' ','');key=hashlib.sha256(json.dumps([text,sid,settings['speedScale']],ensure_ascii=False).encode()).hexdigest()
+ p=cache/(key+'.wav')
  if not p.exists():
   if args.cache_only:raise RuntimeError("Missing cached speech for "+role+": "+key)
-  if new_synthesis_count and new_synthesis_count%6==0:stop();start()
-  q=json.loads(req('/audio_query?'+urllib.parse.urlencode({'speaker':sid,'text':text}),b''));q.update(speedScale=settings['speedScale'],outputSamplingRate=24000,outputStereo=False)
-  p.write_bytes(req('/synthesis?speaker='+str(sid),json.dumps(q).encode()));new_synthesis_count+=1
+  if new_synthesis_count and new_synthesis_count%args.restart_every==0:stop();start()
+  query_text=speech_query_text(text)
+  units=complete_sentence_units(query_text) if prosody and level=='n1' else [query_text]
+  queries=[]
+  for unit_index,unit in enumerate(units):
+   if unit_index:stop();start()
+   request_text=unit+'あ。' if unit_index<len(units)-1 else unit
+   queries.append(json.loads(req('/audio_query?'+urllib.parse.urlencode({'speaker':sid,'text':request_text}),b'')))
+  q=merge_sentence_queries(queries) if len(queries)>1 else queries[0]
+  q=apply_query(q,prosody,level,mode) if prosody else dict(q,speedScale=settings['speedScale'],outputSamplingRate=24000,outputStereo=False)
+  if prosody:
+   pcm_parts=[]
+   for part_index,part in enumerate(query_parts(q,inference_limit)):
+    if part_index and level=='n1':stop();start()
+    if level=='n1':
+     (work/'inference-part.json').write_text(json.dumps({'cacheKey':key,'speakerId':sid,'partIndex':part_index,'moras':sum(len(p['moras']) for p in part['accent_phrases']),'phrases':len(part['accent_phrases']),'cpuThreads':args.cpu_threads,'configuredLimit':inference_limit}))
+    encoded=req('/synthesis?speaker='+str(sid),json.dumps(part).encode())
+    with wave.open(io.BytesIO(encoded)) as w:
+     assert (w.getframerate(),w.getnchannels(),w.getsampwidth())==(24000,1,2)
+     pcm_parts.append(w.readframes(w.getnframes()))
+   assembled=io.BytesIO()
+   with wave.open(assembled,'wb') as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(24000);w.writeframes(b''.join(pcm_parts))
+   data=assembled.getvalue()
+  else:data=req('/synthesis?speaker='+str(sid),json.dumps(q).encode())
+  temporary=None
+  try:
+   with tempfile.NamedTemporaryFile(dir=cache,suffix='.wav.tmp',delete=False) as f:temporary=Path(f.name);f.write(data)
+   temporary.replace(p);new_synthesis_count+=1
+   status=Path(f'/proc/{proc.pid}/status')
+   if status.exists():
+    memory={line.split(':')[0]:line.split(':',1)[1].strip() for line in status.read_text().splitlines() if line.startswith(('VmRSS:','VmHWM:'))}
+    (work/'engine-memory.json').write_text(json.dumps({'newUtterances':new_synthesis_count,**memory}))
+  finally:
+   if temporary is not None:temporary.unlink(missing_ok=True)
  with wave.open(str(p)) as w:
   assert (w.getframerate(),w.getnchannels(),w.getsampwidth())==(24000,1,2)
   pcm=w.readframes(w.getnframes());assert max(abs(v) for v in array.array('h',pcm))>100
@@ -65,26 +126,38 @@ def original_rest_music():
   samples.append(round(950*max(0,envelope)*value))
  assert len(samples)==1440000
  return samples.tobytes()
+engine_guard=None
 try:
+ if not getattr(args,'cache_only',False):
+  print('Waiting for the shared VOICEVOX production slot',flush=True)
+  engine_guard=acquire_engine_slot(root,exclusive=level in ('n3','n2','n1'))
  start();album=bytearray(silence(1));segments=[];used=[];break_manifest=None;orientation_segments=[]
  def narration(text):
-  album.extend(synth(text,'adultFemale'));album.extend(silence(settings['betweenTurnsSeconds']))
+  album.extend(synth(text,'adultFemale','narration'));album.extend(silence(settings['betweenTurnsSeconds']))
  opening_start=round(len(album)/48);narration(organization['openingJa'])
  for check in organization['soundCheck']:
   album.extend(synth(check['text'],check['role']));album.extend(silence(settings['betweenTurnsSeconds']))
  narration(organization['generalInstructionsJa']);orientation_segments.append({'role':'opening_sound_check_and_general_instructions','startMs':opening_start,'endMs':round(len(album)/48)})
+ if organization.get('openingBell'):
+  from importlib import import_module
+  album.extend(import_module('shorten-jlpt-original-opening').bell())
+  orientation_segments[-1]['endMs']=round(len(album)/48)
  for group in range(1,len(organization['groups'])+1):
-  orientation_start=round(len(album)/48);narration(plan[group]);org=next(g for g in organization['groups'] if g['problem']==group);practice=org['example'];practice_start=round(len(album)/48);practice_turns=[]
-  for i,(role,text) in enumerate(practice['script']):
-   album.extend(synth(text,role));album.extend(silence(settings['afterIntroSeconds'] if i==0 else settings['betweenTurnsSeconds']));practice_turns.append({'actor':role,'role':role,'text':text})
-  if org.get('readQuestionAfterDialogue',group<=2):album.extend(synth(practice['prompt'],'adultFemale'))
-  if org.get('readChoices',group>2):
-   for opt in practice['options']:
-    practice_answer_role=practice.get('optionVoiceRole') or ('femaleStudent' if group==3 else 'youngMale')
-    album.extend(synth(opt['id']+'。','adultFemale'));album.extend(silence(.3));album.extend(synth(opt['text'],practice_answer_role));album.extend(silence(.8));practice_turns.append({'actor':'option-'+opt['id'],'role':practice_answer_role,'text':opt['text']})
-  album.extend(silence(settings['answerPauseSecondsByProblem'][str(group)]));practice_end=round(len(album)/48)
-  narration(practice['answerExplanationJa']);narration(org['scoredStartJa'])
-  orientation_segments.append({'role':'problem_instructions_example_demonstration','problem':group,'startMs':orientation_start,'endMs':round(len(album)/48),'exampleId':practice['id'],'exampleStartMs':practice_start,'exampleEndMs':practice_end,'exampleCount':1,'exampleTurns':practice_turns,'scored':False})
+  orientation_start=round(len(album)/48);narration(plan[group]);org=next(g for g in organization['groups'] if g['problem']==group)
+  if org.get('playExample',True):
+   practice=org['example'];practice_start=round(len(album)/48);practice_turns=[]
+   for i,(role,text) in enumerate(practice['script']):
+    album.extend(synth(text,role,'narration' if i==0 else 'dialogue'));album.extend(silence(script_gap(practice['script'],i)));practice_turns.append({'actor':role,'role':role,'text':text})
+   if org.get('readQuestionAfterDialogue',group<=2):album.extend(synth(practice['prompt'],'adultFemale','narration'))
+   if org.get('readChoices',group>2):
+    for opt in practice['options']:
+     practice_answer_role=practice.get('optionVoiceRole') or ('femaleStudent' if group==3 else 'youngMale')
+     album.extend(synth(opt['id']+'。','adultFemale','narration'));album.extend(silence(.3));album.extend(synth(opt['text'],practice_answer_role));album.extend(silence(.8));practice_turns.append({'actor':'option-'+opt['id'],'role':practice_answer_role,'text':opt['text']})
+   album.extend(silence(settings['answerPauseSecondsByProblem'][str(group)]));practice_end=round(len(album)/48)
+   narration(practice['answerExplanationJa']);narration(org['scoredStartJa'])
+   orientation_segments.append({'role':'problem_instructions_example_demonstration','problem':group,'startMs':orientation_start,'endMs':round(len(album)/48),'exampleId':practice['id'],'exampleStartMs':practice_start,'exampleEndMs':practice_end,'exampleCount':1,'exampleTurns':practice_turns,'scored':False})
+  else:
+   orientation_segments.append({'role':'problem_instructions_without_example','problem':group,'startMs':orientation_start,'endMs':round(len(album)/48),'exampleCount':0,'scored':False})
   group_questions=[q for q in exam['questions'] if q['section']=='listening' and q['group']==group]
   completed_dialogues=set()
   for q in group_questions:
@@ -95,37 +168,51 @@ try:
    assert all(x['script']==q['script'] for x in siblings), 'Shared dialogue must have exactly matching script'
    key=f'{group}-{q["number"]:02d}'
    numbers='と'.join(str(x['number'])+'番' for x in siblings)
-   frames=bytearray(synth(numbers+'です。','adultFemale'));frames.extend(silence(.5));turns=[];response_windows=[]
+   frames=bytearray(synth(numbers+'です。','adultFemale','narration'));frames.extend(silence(.5));turns=[];response_windows=[]
    for i,(role,text) in enumerate(q['script']):
     assert role in roles
-    frames.extend(synth(text,role));frames.extend(silence(settings['afterIntroSeconds'] if i==0 else settings['betweenTurnsSeconds']));turns.append({'actor':role,'role':role,'text':text})
+    frames.extend(synth(text,role,'narration' if i==0 else 'dialogue'));frames.extend(silence(script_gap(q['script'],i)));turns.append({'actor':role,'role':role,'text':text})
    for response in siblings:
     question_start_ms=round(len(frames)/48)
     if org.get('readQuestionAfterDialogue',False):
      question=response['prompt']
      if len(siblings)>1:question=str(response['number'])+'番。'+question
-     frames.extend(synth(question,'adultFemale'));turns.append({'actor':'question-'+str(response['number']),'role':'adultFemale','text':question})
+     frames.extend(synth(question,'adultFemale','narration'));turns.append({'actor':'question-'+str(response['number']),'role':'adultFemale','text':question})
     if org.get('readChoices',False):
      answer_role=response.get('optionVoiceRole','adultMale')
      for opt in response['options']:
-      frames.extend(synth(opt['id']+'。','adultFemale'));frames.extend(silence(.3));frames.extend(synth(opt['text'],answer_role));frames.extend(silence(.8));turns.append({'actor':'option-'+opt['id'],'role':answer_role,'text':opt['text']})
+      frames.extend(synth(opt['id']+'。','adultFemale','narration'));frames.extend(silence(.3));frames.extend(synth(opt['text'],answer_role));frames.extend(silence(.8));turns.append({'actor':'option-'+opt['id'],'role':answer_role,'text':opt['text']})
     answer_start_ms=round(len(frames)/48);frames.extend(silence(settings['answerPauseSecondsByProblem'][str(group)]))
     response_windows.append({'questionId':response['id'],'questionStartOffsetMs':question_start_ms,'answerStartOffsetMs':answer_start_ms,'answerEndOffsetMs':round(len(frames)/48)})
    mp=save('problem-'+key,frames);begin=round(len(album)/48);album.extend(frames);end=round(len(album)/48)
    for response in siblings:
     segments.append({'questionId':response['id'],'group':group,'number':response['number'],'path':str(mp.relative_to(root)),'startMs':begin,'endMs':end,'durationMs':round(len(frames)/48),'sha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'playbackReviewed':False,'turns':turns,'sharedDialogueId':shared,'responseWindows':response_windows})
    print(f'{len(segments)}/{sum(x["section"]=="listening" for x in exam["questions"])} problem {key}, {len(siblings)} scored responses',flush=True)
-   if len(segments)%6==0 and len(segments)<sum(x['section']=='listening' for x in exam['questions']):stop();start()
+   if len(segments)%args.restart_every==0 and len(segments)<sum(x['section']=='listening' for x in exam['questions']):stop();start()
   if group==2:
-   before=round(len(album)/48);album.extend(synth('問題二はここまでです。これから一分間休みます。','adultFemale'))
+   before=round(len(album)/48);album.extend(synth('問題二はここまでです。これから一分間休みます。','adultFemale','narration'))
    music_start=round(len(album)/48);music=original_rest_music();music_file=save('original-instrumental-rest-60s',music);album.extend(music);music_end=round(len(album)/48)
    assert music_end-music_start==60000
-   album.extend(synth('休み時間は終わりです。問題三を始めます。','adultFemale'));resume_end=round(len(album)/48)
+   album.extend(synth('休み時間は終わりです。問題三を始めます。','adultFemale','narration'));resume_end=round(len(album)/48)
    break_manifest={'afterProblem':2,'beforeProblem':3,'announcementStartMs':before,'musicStartMs':music_start,'musicEndMs':music_end,'musicDurationMs':60000,'resumeAnnouncementEndMs':resume_end,'musicPcmFrames':1440000,'path':str(music_file.relative_to(root)),'sha256':hashlib.sha256(music_file.read_bytes()).hexdigest(),'source':'Original procedural score in this generation script; no external recording or melody input.','publisherReviewed':False}
  closing_start=round(len(album)/48);narration(organization['closingJa']);orientation_segments.append({'role':'closing','startMs':closing_start,'endMs':round(len(album)/48)})
  assert master.read_bytes()==master_bytes, 'Master changed during synthesis; regenerate from the new snapshot.'
  assert organization_path.read_bytes()==organization_bytes, 'Organization changed during synthesis; regenerate from the new snapshot.'
  mp=save(f'{level}-original-{exam_number}-listening-draft',album)
- manifest={'examId':exam['examId'],'status':'generated_ai_unreviewed','masterSha256':hashlib.sha256(master_bytes).hexdigest(),'voiceCastingSha256':hashlib.sha256((root/'src/data/jlpt-original/voice-casting.json').read_bytes()).hexdigest(),'continuousAudioPath':str(mp.relative_to(root)),'continuousSha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'durationMs':round(len(album)/48),'targetDurationMs':3300000 if level=='n1' else 3000000,'matchesThirtyMinuteTarget':False,'durationMeasuredFromPcm':True,'continuousBitrateKbps':args.continuous_bitrate_kbps,'publisherReviewed':False,'nativeReviewCompleted':False,'perceptualApproval':False,'rightsReleaseReviewCompleted':False,'break':break_manifest,'organizationSha256':hashlib.sha256(organization_bytes).hexdigest(),'orientationSegments':orientation_segments,'examplesCount':len(organization['groups']),'instructions':plan,'settings':settings,'credits':[v['credit'] for v in roles.values()],'items':segments}
- (root/f'src/data/jlpt-original/{level}/{exam_number}/audio.manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'count':len(segments),'durationSeconds':len(album)/48000,'complete':True}),flush=True)
-finally:stop();log.close()
+ manifest={'examId':exam['examId'],'status':'generated_ai_unreviewed','masterSha256':hashlib.sha256(master_bytes).hexdigest(),'voiceCastingSha256':hashlib.sha256((root/'src/data/jlpt-original/voice-casting.json').read_bytes()).hexdigest(),'continuousAudioPath':str(mp.relative_to(root)),'continuousSha256':hashlib.sha256(mp.read_bytes()).hexdigest(),'durationMs':round(len(album)/48),'targetDurationMs':3300000 if level=='n1' else 3000000,'matchesThirtyMinuteTarget':False,'durationMeasuredFromPcm':True,'continuousBitrateKbps':args.continuous_bitrate_kbps,'publisherReviewed':False,'nativeReviewCompleted':False,'perceptualApproval':False,'rightsReleaseReviewCompleted':False,'break':break_manifest,'organizationSha256':hashlib.sha256(organization_bytes).hexdigest(),'orientationSegments':orientation_segments,'shortenedIntroApplied':organization.get('openingRevision',{}).get('date')=='2026-10-31' and organization['groups'][0].get('playExample') is False,'examplesCount':sum(g.get('playExample',True) for g in organization['groups']),'instructions':plan,'settings':settings,'credits':[v['credit'] for v in roles.values()],'items':segments}
+ if prosody:
+  manifest['currentMasterSha256']=hashlib.sha256(master_bytes).hexdigest()
+  manifest['legacyTimingReference']=manifest.pop('settings')
+  manifest['settings']={'mode':'per-utterance-prosody-candidate','answerPauseSecondsByProblem':settings['answerPauseSecondsByProblem'],'afterIntroSeconds':settings['afterIntroSeconds']}
+  manifest['prosody']={'profile':prosody,'profileSha256':fingerprint(prosody),'engineVersion':engine_version,'candidateOnly':True,'installedInApp':False,'playbackReviewed':False,'textNormalization':SPOKEN_TEXT_NORMALIZATION,'renderRevision':prosody['revision']+'/'+SPOKEN_TEXT_NORMALIZATION}
+ if prosody:manifest['prosody'].update(inferenceMaxMorasApplied=inference_limit,restartBetweenInferenceParts=level=='n1',querySegmentation='complete-sentences-with-engine-pauses' if level=='n1' else 'whole-utterance')
+ manifest_path=render_root/f'src/data/jlpt-original/{level}/{exam_number}/audio.manifest.json';manifest_path.parent.mkdir(parents=True,exist_ok=True)
+ manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'count':len(segments),'durationSeconds':len(album)/48000,'complete':True}),flush=True)
+except BaseException:
+ print(json.dumps({'engineExitCode':proc.poll() if proc else None,'generationFailed':True}),flush=True)
+ raise
+finally:
+ try:stop()
+ finally:
+  log.close()
+  if engine_guard is not None:engine_guard.close()

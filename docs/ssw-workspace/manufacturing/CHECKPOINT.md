@@ -1,12 +1,144 @@
-# 2026-10-29 — batch35: remaining 33 detailed page views completed
+# Source64 — ba nhóm đánh giá nét bản vẽ, 06/11/2026
 
-Latest cumulative visual receipt: `batch35-remaining-pages/cumulative-review-index.json`. The historical batch33 index stays unchanged at541 detail views; the cumulative index records574/574. Directly viewed33 additional physical pages at1.5x render: mechanical1–8,169; electrical1–12,198; surface1–10,207. Of these,30 are covers/TOCs/colophons,3 are electrical chapter1 content. This is visual-reading closure only, not exhaustive knowledge closure.
+Tiếp tục làm lại để phục hồi nội dung từ GitHub; không khôi phục `d72833f84`. Tái dùng PDF cơ khí89/in81 đã kiểm hash và đọc chữ/ảnh bảng7-1, cùng đoạn source47 đang hiển thị bài080. Đã tìm các ngân hàng Nhật và đọc đầy đủ bảy kết quả liên quan: câu cũ về vị trí dụng cụ/vị trí di chuyển, phân biệt với ngoại hình, hình dạng nét cắt không kiểm trực tiếp bảy ý còn mở này. Giữ mọi câu cũ.
 
-Electricall043 now displays source-bound additions to3 existing paragraphs in Japanese+12locales (39 paragraph-locale supplements): CBT/skill-level/kana, the source work-scope examples, dated eligibility conditions, study method and exam fairness/monitoring/consequences. The frozen raw banks, revision/session IDs, question/answer order and existing artwork are unchanged. No missing technical figure was found within these33pages; decorative covers are not copied into the app. Reader uses the existing layout and controls.
+Ba nhóm tự kiểm tuần tự: (1)bốn câu riêng cho nét tưởng tượng biểu diễn chi tiết kế bên, trước/sau gia công, phần lặp, phần trước mặt cắt; (2)một câu cho cả hai dạng đường ngắt và ranh giới lược bỏ; (3)một câu đọc vị trí mặt cắt từ đường chỉ vị trí cắt trên hình tương ứng. Tổng6câu mới,24lý do riêng,72cặp dịch trực tiếp/12ngôn ngữ và54trường Nhật có đọc. Tái dùng đoạn dạy đầy đủ đã có, không thêm bài/đoạn lặp hoặc đổi ngân hàng/ID cũ.
 
-Data/state checks,156source/prior-text guard cases,26RNWeb reader flows at320x568/932x430, strict helper TypeScript, historical batch33 receipts and JLPT UI lock passed. Browser uses explicit QA adapters and a Japanese font; no native/physical-device or universal-script font certification. Source SHA256 matched all3 manifest entries. See `batch35-remaining-pages/REPORT.vi.md` for exact scope and validation limits.
+Khép7ý partial sẵn có;148ý hiện138covered_ai/8partial/1candidate/1excluded.141ý khác giữ nguyên. Tái đối chiếu1trang đã đọc trước,0trang nguồn mới và0trang kiểm kê mới được đóng. Mẫu số574trang vẫn mở vàcoveragePercent=null. Không gọi16hàng còn mở ban đầu là toàn bộ khối lượng nguồn.
 
-The previously recorded body-page knowledge/illustration gaps remain OPEN; these are different from the33front/back/intro pages. Full prose/assessment/native/domain/physical-device approval also remains pending. wholeCurriculumComplete/releaseReady remainfalse;SSW2excluded. No background process implied.
+PASS3nhóm/72targetpairs/54rubyfields/547negativeguards và grading/save/restore/stale; source63 cũ vẫn PASS qua phép chiếu predecessor chính xác7hàng64, không nới144hàng giữ nguyên; canonicalcontractPASS; stricthelper0diagnostic. Không kiểm bố cục/Expo/thiết bị thật/bản ngữ/chuyên môn/thời lượng. Hồ sơ source64-{reimplementation,validation,typecheck,freeze}-20261106.json; coordinator phải lưu GitHub và xác minh trước khi thông báo đã lưu.
+
+---
+
+# Phục hồi nội dung từ GitHub — source63, 06/11/2026
+
+Đây là **làm lại để phục hồi nội dung**, không phải lấy lại commit `d72833f84`. Baseline đã xác minh `74af5a75b`. Đọc chữ nguồn cơ khí PDF88–89 (in80–81), trực tiếp xem toàn ảnh bảng7-1 trang89 và kiểm SHA256 tài liệu. Ba nhóm đã sửa tuần tự: ngoại hình thấy/nét liền đậm; nét kích thước–đường gióng/nét liền mảnh với vai trò khác nhau; đường khuất/nét đứt mảnh hoặc đậm cùng mục đích chỉ hình không nhìn thấy.
+
+Tái dùng đúng hai đoạn dạy hiện có ở bài020 và080; không thêm đoạn lặp, không đổi bài nền, ngân hàng, ID hoặc lịch sử học cũ. Tạo3câu tự soạn riêng,12lý do riêng và36cặp câu–ngôn ngữ trực tiếp;27trường Nhật có đọc kèm. Nối qua danh mục bổ sung/runner hiện hành với ID vàrevision riêng; nguồn hoặc câu lệch sẽ chặn câu/bản dịch, khôngfallback. Khép4thiếu sót đánh giá có sẵn: outline,dimension,extension,hidden.144unitkhác giữ nguyên; tổng148unit/131covered_ai/15partial/1candidate/1excluded, mẫu số nguồn vẫn mở,coveragePercent=null. Đây không phải tỷ lệ hoàn thiện574trang.
+
+Đã đọc2trang để đối chiếu; **0trang kiểm kê mới được đóng**. PASS3nhóm,36targetpairs,27rubyfields,282negativeguards, chấm/lưu/khôi phục/loại revision cũ; canonicalcontractPASS; stricthelper0diagnostic. Không kiểmExpo/bố cục thiết bị thật, chưa duyệt chuyên môn/bản ngữ hoặc đo thời lượng. Hồ sơ: source63-reimplementation-20261106.json,source63-validation-20261106.json,source63-typecheck-20261106.json; script check-source63.cjs. Điều phối phảicommit và xác minhGitHub trước khi báo đã lưu.
+
+---
+
+# Manufacturing source57 —2026-11-02
+
+Three assessmentgaps addressed aftercrossbankreusecheck. Core072 getsboundedmajorurbanfire/open-spacerefugerole;core049getsexpliciteither-memberacceptablearrowomissioncondition. Core041ALREADYteacheslever-directionerror:reuseunchanged,assessmentonly. TwoJPextensions+24targetparagraphs/newreadings,3separateoriginalquestions/12distinctreasons/36questiontargets;348newtargetfields,not360newfields. Existingmock/weekly/recognitionquestions retained anddistinctobjectivesrecorded. No completion37patches ornewstudyday.
+
+Full13sourcerasters/11appPNGs selfcompared;21recognitionquestions/84reasons plus5relevantweekly/mockitems read,notall12oldtargetsemanticapproval.3newcovered_ai;124canonicalrows/89covered_ai=51reference+38competency,121directteaching/38directassessment;121oldrowsunchanged.64visualpages;34completeinventory=4instructionalcovered+30excluded unchanged. No newwholepageclosure;denominatoropen,coverage=null,whole574false. Sixrecognitiongroupsremainunreviewedv2; source105/106do not establishwholeintermittent-weldspecification merelybecausepaperintervalarithmeticiscorrect.
+
+Data393negativeguards/stricthelper0diag/actualcoreReader39locale(26newruby+13reused)/Attempt39locale/toggle/saveresume/grading/rationalegating/mainmanufacturing/canonical/all574exactcensusrebuild/fullregistryreplayexactledger+all3artifacts PASS. DeclaredRN/storage/appearance/safearea/Royal/imageadapters,notbrowserlayout/fullExpo/device/native/domain/measuredtime. See ../source-coverage-v2/manufacturing-source57-{REPORT.vi,review,validation,runtime,typecheck}. Rootremote persistence pending.
+
+---
+
+# Manufacturing source56 —2026-11-02
+
+Three more recognition groups self-compared: jig holding/contact/coating; indicator colour correspondence; relative metal/H ordering and oxide-film limitation. Fullsource67/96/110/114/180rasters and4actualappPNGs viewed;sourcePDFhashverified. Reused10existingquestions after boundedoption/reason checks; no duplicatequestions/content/ID/revision/state edits.
+
+11newcanonicalunits=9covered_ai/2partialprocedural-scopeclaims.121totalrows/86covered_ai(51reference+35competency),118directteaching/35directassessment.110olderrows preserved.51visualpages;34completeinventories=4instructionalcovered+30excluded unchanged; no newwholepageclosure. Nine recognitiongroupsremainunreviewedv2; two newpartialfacets and priorpartialfacets remain open. Denominatoropen,coverage=null,whole574false.
+
+Canonicalgate andexact574pagecensusrebuildPASS. No newruntime/device/native/domain/time acceptance; allappcontentunchanged. See ../source-coverage-v2/manufacturing-source56-{review,REPORT.vi,validation}. Rootremote persistence pending. Preserve this batch before other sector help.
+
+---
+
+# Manufacturing source54–55 —2026-11-02
+
+Three successive recognition groups self-compared: sampling/extrema/means; thickness-instrument principles/fit; wetting observation. Fullsource72/74/75/80/81/182rasters and4actualappPNGs viewed. Complete technicalpage72inventory covers both tables/all5rows/all5pointmarkers/formula/captions; four bounded competencies now taught/assessed with original app numbers/layout. New source55adds1separate mean-comparison question/4distinct reasons/12targets/fullyannotatedJapanese, preserving every old bank/examID/revision. Other9questions reused after full option/reason/source/figure self-comparison. No copying source data/exercise/image.
+
+10newcanonicalunits,9coveredAI/1partial specimen-workflow claim (source81alone insufficient).110totalrows/77coveredAI(51reference+26competency)/1excludedparent;107directteaching/26directassessment.46visualpages/34complete semantic inventories=4instructionalcovered+30excluded. Remaining12of15recognitiongroups not accepted; technicalpages74/75/80/81/182remainpartial. Denominatoropen,coverage=null,whole574false.
+
+ActualRecognitionReader39locale+Attempt117flows; newsource55Attempt13flows/12targets/93negativeguards; captions/imagenodes/toggle/saveresume/revision/grading/rationalegating PASS. Strictnewhelper0diag,main/canonical/all574exactcensusrebuild PASS. No browser/productionExpo/physicaldevice/native/domain/time acceptance. See ../source-coverage-v2/manufacturing-source54-55-{REPORT.vi,validation,freeze}; source54plan/review andruntime receipts. Coordinator persistence pending. Freeze before helping hotelv6TH/KM.
+
+---
+
+# Manufacturing source53 — scoped historical33page acceptance,2026-11-02
+
+Directly viewed ALL30remaining full-page rasters:3covers/24TOC/3colophons. All3388retained elements now explicitly navigation/decorative with page-specific reasons; fingerprints/geometry/font/spans preserved. No technical destination page excluded, no raw source prose/image republished. Source53receipt includes individual source-text and private-render hashes/observed roles. Existing3electrical overview pages10–12remain covered reference in source50. Thus historical33page DISPOSITION completeAI=30excluded+3instructionalcovered; not33technicalmastery or574sourceclosure.
+
+Canonical100rows/68coveredAI unchanged;40visualPages/33semanticInventoryPages/3instructionalPagesCoveredAi/30excludedPagesAi,sourceCoverage=null. No app content/ID/UI/question/translation/state changes in53. Canonical and all574page exactcensus rebuild PASS; runtime not repeated on unchanged app. See ../source-coverage-v2/manufacturing-source53-{review,validation,REPORT.vi,freeze}. Coordinator persistence pending. Next: full formula-page inventory and15recognitiongroups; source-local blockers never close whole source.
+
+---
+
+# Manufacturing source50–52 — 2026-11-02
+
+Completed three successive overview groups (electrical PDF10–12) with full AI page inventory and3guarded additions to existing lesson043, Japanese+12targets,217new ruby annotations.51historical administrative/study reference claims covered_ai with explicit assessment exemptions;31job-membership children replace1excluded coarse container. Current application eligibility/sanctions are not certified. No schedule/core/learnerID change.
+
+Continued three formula groups:12existing calculation48 competencies/questions now have exact current teaching/assessment evidence; mechanical123/electrical127/surface118 remain partial,121 boundary read only. Then authored2new electrical165 questions/8distinct reasons/24targetpairs for BOTH inclusive current/time boundaries and two bonded unlike-expansion plates; all new kanji have readings. Separate exam/revision, exact source49 teaching guard, old banks and attempts preserved.
+
+Canonical100rows/68coveredAI(51reference+17competency)/1excludedparent/97directteaching/17directassessment; denominatoropen,coverage=null,whole574false.13Readerflows+26Attemptflows,216+182negativeguards,stricthelpers0diag,main/3calculation48/source49ruby/censusbyte-regression PASS. No browser/productionExpo/physicaldevice/native/domain/time approval. See ../source-coverage-v2/manufacturing-batch50-52-REPORT.vi.md and validation/freeze manifests. Coordinator remote persistence pending; stop snapshot mutation at freeze while preparing any next batch privately.
+
+---
+
+# Manufacturing source→app v2 — 2026-11-02
+
+Canonical acceptance view: `../source-coverage-v2/manufacturing.json`; other historical ledgers are provenance. All574page byte-backed census retains121195textspans including50056smallfont spans,871imageplacements,572vector-page groups and3links, with0font-based exclusions. Compressed region artifacts contain hashes/geometry, not source prose/pixels.57bounded atoms are active;267older coarser rows remain an index outside the denominator. Exact semantic/teaching/assessment dispositions replace page/topic-based closure. Only3bounded competencies currently meet covered_ai; denominator=open,coveragePercent=null,wholeSourceKnowledgeCovered=false.
+
+Fresh full-page visual reading mechanical89/electrical165/surface103. Source49 fixes4teaching facets in actual electrical094/section2:burnout-prevention purpose,manual signal reset after safety check,inclusive current/time conditions,andtwo bondedmetalplates. Japanese+12directtargets,independent effectiveJapanese revision;frozen core IDs/banks/progress retained.198rubysegments/66annotatedwords rendered only on matching source/text;all other paragraphs preserve prior Text output.13Readerflows/translationtoggle,55source-targetguards,13TextSSR,2rubycomponentSSR,5readingdriftguards,stricthelpertypes0diagnostics PASS. No new question claimed; precise assessment gaps remain open.
+
+Mainmanufacturing regression,source47and3calculation48groups PASS. New Reader bytes have exact invertible49projection/replay;unknown bytes reject without write;assembler replays49after40. Native primitive/storage/appearance adapters are explicit;no browser layout,physicaldevice,domain/nativeorlearnertime approval. See `../source-coverage-v2/manufacturing-REPORT.vi.md`,validation/census/source-review/typecheck receipts. Coordinator must persist and verify remote before claiming saved. No further manufacturing authoring runs after freeze.
+
+---
+
+# Manufacturing SSW1 — calculation48, three source-backed groups, 2026-11-02
+
+Integratedthreeoriginal calculationmodels with12newquestions/48distinctmathematicaloptionreasons/144question-localepairs and3readerextensions inJapanese+12targets. Mechanicaldensity123:materialvolumevsdeclaredcavity/inversevolume; electrical127:areaSIunits/R=ρℓ/S/length-area-diameter ratios; surface118/121:Faradaywithfictionalk,efficiency/timeinverse,totalmassvsareaunderfixeddeclaredconditions. Actualsourceelectrical127printsS[m²]correctly;superscriptlossisatextextractionissue,notasourceerror. Sourceexercise/imageexpressionnotcopied.
+
+Exactsource/Japanese-before/effective-target-beforeguards,canonicaltaught-afterbinding,oneJSONpermatchingreader,independentexamIDs/revisions;corebanksandprogressidentitiesunchanged. ThreegatesPASS:39lessonlocales/144questionlocalepairs,1008Qdrift/156paragraphdrift/144staletargetrejects,4/4gradingandrevision-resume pergroup. ActualprivateReader/AttemptharnessPASS39readerlocale+156questionlocaleflows,translationtoggle,answer/positionpersist/reopen,andallrationaleshiddenbeforensubmission/shownafter. Declarednative/storage/appearance/Royal/assetadapters;notbrowserlayout/image-load,productionExpo,nativephone,measuredworkloadornative/domaincertification.
+
+Read session-20261102/calculation48/REPORT.vi.md, source-review.json, build-validation.json, component-validation.json andruntime-*.json. Rebuildvia scripts/manufacturing/build-calculation48.py; scopedgates check-calculation48.cjs andcheck-calculation48-components.cjs. Whole574knowledge/sourcepageclosureandhuman/native/domain/deviceflagsremainfalse. Remote persistence must be verified by coordinator; no block49 started.
+
+---
+
+# Manufacturing SSW1 — source atoms47 and guarded reader details, 2026-11-02
+
+Verified exact three source PDF hashes and574physicalpages. Reconciled the33historical non-detail-view rows into3covers/24TOC/3colophons/3electrical instructional overview pages10–12; these are not33unprocessed technicalpages. Visually compared mechanical89,electrical10–12/165,surface103 and recorded57bounded atom comparisons,6exact question-to-paragraph bindings and22option/rationale meaning dispositions. Existing source exercise wording was not copied; no new duplicate questions. Whole-page and whole574knowledge closure remainfalse.
+
+Integrated8missing mechanical table7-1 teaching details into actual lesson080/section2 through source47-clarification.json, Japanese+12targets. Exact canonical sourceHash/Japanese-before/effective-target-before guards, deferred payload loading and frozen core/session IDs preserved. Focused source47check PASS13effective-target/renderedRNWebTextSSR cases and55negative guards; notbrowserlayout/native-device acceptance. Source atom records retain before47status and explicit guarded supplement binding. Remaining exam reference details, photo component identification/manual-reset detail and all-source semantic/visual/assessment coverage are explicit, notclosed by metadata.
+
+Read session-20261102/atomic47/REPORT.vi.md, historical33.json, thethree atomfiles, question-bindings.json and validation.json. Reproduce source audit with scripts/manufacturing/audit-source-atoms47.py using source PDFs outsideGit. Runtime gate scripts/manufacturing/check-source47.cjs. Native/domain/device/duration/whole-source acceptance remainsfalse. Coordinator must verify remote persistence before claiming saved.
+
+---
+
+# Manufacturing SSW1 — source closure audit39, six owned lanes, 2026-10-31
+
+Exact3PDFhashes verified; all574physicalpages classified(169mechanical/198electrical/207surface), with headings/TOC/prose/table/formula/image/vector extraction receipts, retainedlowtextpages andsourceexerciseobjectives. Sharedsource-closure-20261031/coverage-matrix.json joins267bounded semanticunitoccurrences(107historical+160new;mechanical183/electrical39/surface45), exactsourcehash/page/region and authoredparagraph/term/question links with explicit candidatevsreview states. This is NOT an exhaustive knowledge denominator or wholepageclosure. New semantic sourcecomparisons remain bounded; no sourceprose/PDF/images redistributed. ExistingTOCmatrix retained as structuralhistory.
+
+Questioninventory1809unique authored/5436option sides;900truefalse+909fourchoice;5235page-navigationmetadataedges,19new authoredparagraphreviewedgesfor9Qs.78Qs/302option sides actually reread;63arithmetic+4Boolean recomputedPASS.29rationalegaps identified with116Japanese drafts notintegrated;3substantive crossbankrepeats and2pedagogicdecisionpairs.12locales/207600targetfield structurePASS;204definitions actually semanticallycompared,207396otherfields notclaimed reviewed. Fourcontextprecisioncandidates notautomaticcorrections;existingoverlays replayed toavoidduplicatefixes.
+
+Repaired hiddenquizcaption leakage throughimage/button accessibilitylabels;teachingretained. Zoom preserves at leastoriginalartwidth.29recognitionLFS-pointers replacedby25exact-source-recoveredPNGs+4explicitnewPNGencodingrevisionsfromunchangedhash-verifiedSVGs;9image-boundQrevisions/12localesources rebounded withauthoredwords/keys/reasons/translations identical.63uniquePNGbytes available;no oldcorebanks/IDs/answers changed. Newimagecheckrevisions intentionally reject staleattempts via existingguards. MainmanufacturingdatastategatePASS;793recognitioncomponentSSR andsentinelPASS,notphone/fullExpo certification. Narrowassemblerreplay added.
+
+Read source-closure-20261031/REPORT.vi.md,acceptance.json,completion-work-queue.json andall6lanereports. WholeKnowledgeAtomization/wholeCurriculum/release/human/domain/native/physicaldeviceflagsfalse. Remainingpages/units/options/translations requireactualsemanticdisposition,sourcequalifiedgaps,expert/nativeandrealdeviceevidence. No backgroundprocess implied; narrowpublication/fetch/WORKPERSISTENCErequired.
+
+---
+
+# Manufacturing SSW1 — batch37 six-AI concentrated production, 2026-10-31
+
+Onlymanufacturing1号. Added22source-bound cohesive JP supplements(mechanical8/electrical6/surface8),22checks/80newquestions(32/24/24),all12targets:264lesson-locale+960question-locale pairs. AuthorsreassignedafterJPtofiveconcurrenttranslationlanes whileintegratorownedcode. Newreadingcards/existingweeklycontroller,independentIDs/revisions/progress,exactteaching/question/targetbindings,nofallback. Old262corelessons/456weeklyquestions/8caliper+4Boolean/30originalmocks+3curated/12guides retained.7originalSVGPNGboards(4mechanical+3surface)/9lessonattachments,translatedsummarycaptions;total27+7=34uniqueartworks.
+
+Mainnew/legacydatastategate,66preservedcorehashes,source/canonicalhashes,alltargetfields,savedprogress/answers/grading/negativeguards PASS. SSR104oldfigure+192Booleanoption+208newfigurecasesPASS withdeclaredappearance/safearea/imageadapters;notbrowserlayout/image-load/zoom/nativecertification. Scopedhelper/figureTypeScript,readerTSXsyntax,scopedESLint0/0,JLPT10/10lock andwhitespacePASS. Exactreaderreplay/idempotence/unknown-inputzero-writePASS;fullassembler/Expo/fullappTypeScriptnotrerun. NoPDF/sourcepageartredistributed;source-specificrecipes/standardsnotuniversalized.
+
+Finite remaining-required-work.json has15groupedartifactpacks withspecificpages/goals/lessonlinks,not15lessons. Mechanical14visualpage-rows/8groups andsurface26visualrowsremaingloballybounded;sevenboards/duplicatesexcluded. Electrical14knownoccurrences+2visualassessmentfacetsnowhavetaught/assessedbindings;noinventedbridgeconstructionfrom151. Full574pageobjectclosure/alltranslationnative/domain/physicaldevicegatesremainunverified;wholecurriculum/release/human/native/domain/deviceflagsfalse. Readbatch37-completion/REPORT.vi.md,session-evidence.json andremaining-required-work.json. Nobackgroundprocessimplied.
+
+---
+
+# Manufacturing SSW1 — batch36 source-qualified diagrams and Boolean practice, 2026-10-30
+
+Integrated5independent conceptual figures (LCR/thermocouple/Hall/caliperparts/Vickersdiagonals) with60source-boundtargetcaptions;22original+5supplemental=27figures. Verified all3originalPDFhashes and visually reread electrical104/105/161,mechanical72,surface184;notnewunique-page orwhole-sourceclosure. Added dualdistributivity teaching to electrical075 inJapanese+12targets and4original formativequestions/48targetpairs with20visible rubyfields. Separate IDs/revisions,exactteachingactivation/source/targetguards,no fallback;existing corebanks/456weeklyquestions/8caliperquestions/96targets/30mocks+3assemblies/12guides unchanged.
+
+Independent AI source/pixel/technicalcaption/question review,artworkexacthashes,mainstate/negativeguards,savedanswer-position-submission/grading,104diagramSSR+192translatedoptionSSRcases,scopedESLint0/0,isolatedruntime-replay2files andJLPT10/10lock PASS. SSR usesdeclaredappearance/safearea/imageadapters;notbrowserlayout/image-load/zoom/nativeacceptance. FullappTypeScript6GiB retains1existing agriculture RecognitionImages.tsx:202 TS2322,0manufacturingdiagnostics. End-of-assembler narrowreplay preservesexactreviewedreader/mockloader;fullassembler/Expo notrun.
+
+Counts262corelessons/456coreweeklyquestions/30originalmocks+3curated/12guides unchanged;additionalformative now8caliper+4Boolean. Fourvisual-detail assessmentgaps preciselyrecorded;full574pageatomization,alltranslationsemantics anddomain/native/physicaldevice gates remainpending. Allwholecurriculum/release/human/native/domain/deviceflagsfalse;SSW2excluded. Readbatch36-continuation/REPORT.vi.md andsession-evidence.json. Nobackgroundprocess implied.
+
+---
+
+# Manufacturing SSW1 — batch35 six-AI safety and core-question continuation, 2026-10-30
+
+Integrated exact-source-bound surface062 term clarification in Japanese+12targets;28 EN/VI safety-field corrections after377 Japanese/754target safety-field comparisons; and surface07theoryq13 suspect-goods segregation clarification in Japanese+12targets with alignedruby. Frozen banks/IDs/hashes/grading/sessions preserved. Actual new review502questions/1404rationales plus698 exact historical bindings gives cumulative1200core questions/3000rationales; not1200 newly read, PDF-fidelity or domain/native certification.22actual PNGs/264caption bindings PASS;18selected Japanese high-risk lessons reread, no speculative corrections.
+
+Main data/state, editorial negative guards, saved attempts/timers/grading,502review bindings/25Decimal cases, source57negative fixtures, scopedESLint0/0 andJLPT10/10lock PASS. FullappTypeScript6GiB reports1unchanged agriculture RecognitionImages.tsx:202 TS2322,0manufacturing diagnostics. RNWeb bundle succeeds but Chromium socket denied beforepage creation:0UIflows. FullAndroid export unresolved:GitLFS objects partially recovered, some server404; default exit137;1worker endsEMFILE at23658modules. No Expo/native/physicaldevice acceptance.
+
+Counts remain262corelessons/456weeklyquestions/30originalmocks+3curatedassemblies/12guides/22diagrams. Full574page knowledge-objectclosure,5recordedvisualfacets,alltargetsemanticreview andnative/domain/physicaldevice gates remain pending. Wholecurriculum/release flags false;SSW2excluded. Read batch35-continuation/REPORT.vi.md and evidence; no backgroundprocess implied.
+
+---
 
 # Manufacturing SSW1 — batch34 source-bound lesson076 reader clarification, 2026-10-29
 
@@ -439,3 +571,6 @@ Only the three uploaded SSW1 textbooks are used. SSW2 remains excluded.
 5. RunfullExpo/type/lint/build andwhole-app/devicechecks in acompletecheckout. Preserve approvedJLPTUI, othersectors andexistingprogress.
 
 Resume from progress.json, knowledge-matrix.json, page-object-inventory.json, batch03semantic/source/QA reports, course-manifest.json andvalidators. Wholecurriculum/release flags remainfalse. No backgroundworker is implied by thischeckpoint.
+
+## Batch38 — 15 nhóm nhận diện
+15/15 nhóm đã có mã nguồn, 29 PNG/SVG, 61 câu hỏi và 12 ngôn ngữ; kiểm tra tổng PASS, xuất native Android/iOS PASS. Xem batch38-recognition/REPORT.vi.md, closure-report.json và device/native-export.json. Nghiệm thu chuyên gia con người, thiết bị thật và chứng nhận toàn bộ đối tượng nguồn vẫn chưa hoàn tất; không đánh dấu courseComplete.

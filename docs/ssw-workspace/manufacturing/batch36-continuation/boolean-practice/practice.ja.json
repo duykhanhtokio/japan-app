@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "status": "ai_authored_draft_not_integrated",
+  "specialty": "electrical",
+  "level": "1",
+  "basis": "Verified source physical161/printed152 formula facts only; questions and scenarios independently authored, no source exercise copied.",
+  "sourcePdfSha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+  "questionCount": 4,
+  "answerPositions": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "independentReviewed": false,
+  "appIntegrationReady": false,
+  "releaseReady": false,
+  "questions": [
+    {
+      "id": "mfg1-boolean-distributivity-check-01",
+      "lessonId": "mfg1-electrical-l075",
+      "lessonSourceHash": "25b343d5c17e0f1c6341bbb74624260be811dd15aa757a4eb8207cec69466d89",
+      "stemJa": "二値論理でa、b、cは0又は1、＋はOR、・はANDを表す。a+(b・c)と全ての入力で同じ値になる式はどれか。",
+      "optionsJa": [
+        "(a+b)・(a+c)",
+        "(a+b)+(a+c)",
+        "(a+b)・c",
+        "a・(b+c)"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "ORをANDへ分配すると(a+b)・(a+c)になる。8通りの入力で両辺は一致する。",
+        "a=0、b=1、c=0では元の式は0だが、この式は1になる。",
+        "a=1、b=0、c=0では元の式は1だが、この式は0になる。",
+        "a=1、b=0、c=0では元の式は1だが、この式は0になる。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 161,
+          "printedPage": 152
+        }
+      ],
+      "reviewStatus": "ai_authored_draft_independent_review_pending",
+      "sourceHash": "7ae15862f98608d126a20cae67138923f3595a0b1dce5f611ddd83267f19af69"
+    },
+    {
+      "id": "mfg1-boolean-distributivity-check-02",
+      "lessonId": "mfg1-electrical-l075",
+      "lessonSourceHash": "25b343d5c17e0f1c6341bbb74624260be811dd15aa757a4eb8207cec69466d89",
+      "stemJa": "二値論理で＋はOR、・はANDを表す。a=0、b=1、c=1とする。左辺a+(b・c)と右辺(a+b)・(a+c)の値の組はどれか。",
+      "optionsJa": [
+        "左辺0、右辺0",
+        "左辺1、右辺1",
+        "左辺0、右辺1",
+        "左辺1、右辺0"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "b・c=1であり、左辺も右辺も0ではない。",
+        "左辺は0+(1・1)=1、右辺は(0+1)・(0+1)=1である。＋は数の足し算ではなくORである。",
+        "左辺も0+(1・1)=1となるため、0ではない。",
+        "右辺も(0+1)・(0+1)=1となるため、0ではない。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 161,
+          "printedPage": 152
+        }
+      ],
+      "reviewStatus": "ai_authored_draft_independent_review_pending",
+      "sourceHash": "e17a90e54616cfbc64ec142807ba026c520a7b392799085a3ee8a1e11f70693e"
+    },
+    {
+      "id": "mfg1-boolean-distributivity-check-03",
+      "lessonId": "mfg1-electrical-l075",
+      "lessonSourceHash": "25b343d5c17e0f1c6341bbb74624260be811dd15aa757a4eb8207cec69466d89",
+      "stemJa": "二値論理のa、b、cは0又は1とする。「a+(b・c)=a・(b+c)」が成り立たないことを示す入力はどれか。＋はOR、・はANDである。",
+      "optionsJa": [
+        "a=0、b=0、c=0",
+        "a=0、b=1、c=0",
+        "a=1、b=0、c=0",
+        "a=1、b=1、c=0"
+      ],
+      "correctIndex": 2,
+      "optionReasonsJa": [
+        "この入力では両辺とも0であり、式の不一致を示さない。",
+        "この入力では両辺とも0であり、式の不一致を示さない。",
+        "左辺は1、右辺は0になる。一つの不一致でも、全ての入力で同じという主張を否定できる。",
+        "この入力では両辺とも1であり、式の不一致を示さない。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 161,
+          "printedPage": 152
+        }
+      ],
+      "reviewStatus": "ai_authored_draft_independent_review_pending",
+      "sourceHash": "75368e9c4f221fb2a172a0bd6219cff388c0b58b626aa59b764bb19cdc54154c"
+    },
+    {
+      "id": "mfg1-boolean-distributivity-check-04",
+      "lessonId": "mfg1-electrical-l075",
+      "lessonSourceHash": "25b343d5c17e0f1c6341bbb74624260be811dd15aa757a4eb8207cec69466d89",
+      "stemJa": "二値論理で＋はOR、・はANDを表す。a+(b・c)=(a+b)・(a+c)を8通りの入力で確かめる。全ての入力を扱う説明はどれか。",
+      "optionsJa": [
+        "a=0、b=0、c=0の一行だけ一致すればよい。",
+        "＋を普通の足し算として計算すればよい。",
+        "a=b=cの二行だけ一致すればよい。",
+        "a=0の四行は両辺ともb・c、a=1の四行は両辺とも1になる。"
+      ],
+      "correctIndex": 3,
+      "optionReasonsJa": [
+        "一行の一致だけでは、残る七行について判断できない。",
+        "ここでは＋はORであり、1+1はORの結果として1になる。普通の足し算とは区別する。",
+        "a=b=cの二行だけでは、残る六行を確かめていない。",
+        "aの二つの場合で全8通りを分け、各場合の両辺の結果が一致することを示している。実際の安全回路の変更許可とは別の検算である。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 161,
+          "printedPage": 152
+        }
+      ],
+      "reviewStatus": "ai_authored_draft_independent_review_pending",
+      "sourceHash": "7b3df3b1c3eb89760e092783fcfb2fd6e4781fc62ee31b358cbda0e0b1999905"
+    }
+  ]
+}

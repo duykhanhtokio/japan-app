@@ -1,0 +1,178 @@
+{
+  "scope": "Current active Reader visual integration; no whole-source/native/device approval",
+  "baseCommit": "9adfe8361464cf6a4693aee6d4fb689fa1768fa1",
+  "mainLessons": 38,
+  "nativeComponents": 11,
+  "actualCallerTypeProbes": 11,
+  "invalidCallerTypeRejections": 22,
+  "nativeLessonBindings": 16,
+  "nativeLocaleRenders": 208,
+  "rejectedNativeRenders": 792,
+  "bindings": [
+    {
+      "component": "HotelPracticeFloorplan",
+      "lessonId": "hotel-front-03",
+      "currentRenders": 13,
+      "rejectedRenders": 39
+    },
+    {
+      "component": "HotelRevenueExample",
+      "lessonId": "hotel-planning-02",
+      "currentRenders": 13,
+      "rejectedRenders": 39
+    },
+    {
+      "component": "HotelServiceVisualGuide",
+      "lessonId": "hotel-service-01",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    },
+    {
+      "component": "HotelServiceVisualGuide",
+      "lessonId": "hotel-service-02",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    },
+    {
+      "component": "HotelServiceVisualGuide",
+      "lessonId": "hotel-service-03",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    },
+    {
+      "component": "HotelHospitalityRoleGuide",
+      "lessonId": "hotel-service-04",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    },
+    {
+      "component": "HotelHospitalityRoleGuide",
+      "lessonId": "hotel-planning-05",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    },
+    {
+      "component": "HotelMealLayoutGuide",
+      "lessonId": "hotel-restaurant-02",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    },
+    {
+      "component": "HotelMealLayoutGuide",
+      "lessonId": "hotel-restaurant-03",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    },
+    {
+      "component": "HotelMealLayoutGuide",
+      "lessonId": "hotel-restaurant-04",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    },
+    {
+      "component": "HotelFoodHandoffGuide",
+      "lessonId": "hotel-restaurant-05",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    },
+    {
+      "component": "HotelMarketSelectionGuide",
+      "lessonId": "hotel-planning-07",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    },
+    {
+      "component": "HotelFoodCostComparison",
+      "lessonId": "hotel-restaurant-09",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    },
+    {
+      "component": "HotelTwoRouteGuide",
+      "lessonId": "hotel-safety-07",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    },
+    {
+      "component": "HotelRevenueComparison",
+      "lessonId": "hotel-planning-06",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    },
+    {
+      "component": "HotelSafetyDecisionGuide",
+      "lessonId": "hotel-safety-02",
+      "currentRenders": 13,
+      "rejectedRenders": 51
+    }
+  ],
+  "quizQuestionCount": 338,
+  "quizImageFields": 0,
+  "mainImageElements": 3,
+  "controlledRasterComponents": [
+    "HotelSafetyDecisionGuide"
+  ],
+  "limitations": [
+    "Native primitives, guide text renderer and translation delivery isolated.",
+    "Locale positives verify boundary routing with canonical test material, not actual translated-prose correctness.",
+    "No physical-device/browser rendering or source-domain certification."
+  ],
+  "beforeBlobSha": {
+    "scripts/hospitality/check-active-reader-bindings.cjs": null,
+    "docs/ssw-workspace/hospitality/active-reader-completion-matrix-20261107.json": null
+  },
+  "mainImageContract": {
+    "result": "PASS",
+    "royalBindings": 38,
+    "localeReadyCases": 494,
+    "staleCases": 494,
+    "loadFailureCases": 494,
+    "retryCases": 494,
+    "zoomCases": 38,
+    "script": "scripts/hospitality/check-main-image-contract.cjs"
+  },
+  "scopeDisposition": "All current main-image bindings are Royal; all current native callsites inventoried and boundary-tested. No additional quiz image fields exist. This closes the scoped active visual inventory only; source/domain/native-language/device gates remain separate.",
+  "fixedLocalizedExamples": [
+    "HotelPracticeFloorplan and HotelRevenueExample use bundled localized labels; unlike source-prose guides these do not depend on translated lesson material."
+  ],
+  "inputBlobSha": {
+    "src/components/hospitality/HospitalityCourse.tsx": "2d1eac0fa3901555acf69367722995e0ca73f6b1",
+    "src/components/hospitality/HotelFoodCostComparison.tsx": "4d8b5a0827c9400f7e669ed03f0c390e095259af",
+    "src/components/hospitality/HotelFoodHandoffGuide.tsx": "6ac4deaacdfa1dcd7b99961824245f524a802715",
+    "src/components/hospitality/HotelGuideText.tsx": "8da0ec939d2f77c93daf4859e04690c721b397cc",
+    "src/components/hospitality/HotelHospitalityRoleGuide.tsx": "f739a8092e3018172a01639744e1cdb8ce1c302e",
+    "src/components/hospitality/HotelJapaneseText.tsx": "690503bc619644e916f999f969bbabcf4f632472",
+    "src/components/hospitality/HotelMarketSelectionGuide.tsx": "e018204ca9e608c6d5979c853487196b77479c6d",
+    "src/components/hospitality/HotelMealLayoutGuide.tsx": "9eac52bef766577c328109f01c3017bcc0f48d12",
+    "src/components/hospitality/HotelPracticeFloorplan.tsx": "224b413dd68e96cea474edb5ee98a09ef9a7d59d",
+    "src/components/hospitality/HotelRevenueComparison.tsx": "9aa630103cca4122b4f85169e47c990fd2abf44c",
+    "src/components/hospitality/HotelRevenueExample.tsx": "caddf70054f7c8952682cdd1f10d9e21aedeaaa0",
+    "src/components/hospitality/HotelSafetyDecisionGuide.tsx": "53acd9e80df5348a962a3cbfda722ffe802a2d8b",
+    "src/components/hospitality/HotelServiceVisualGuide.tsx": "50254973876d628f43c13a9382cd9ebd23fdc4fc",
+    "src/components/hospitality/HotelTwoRouteGuide.tsx": "e436a5d3da0c7767dcfe6560917b814f080af9ab",
+    "src/data/hospitality/catalog.json": "f3a09c1b2864e41893a2cf19316b58bd28862f65",
+    "src/data/hospitality/food-handoff-labels.ts": "0ec69f713505f9e694abaf5365c1b5fe0fa96426",
+    "src/data/hospitality/front.json": "0f78453d19a9ff8e182d7e37aa535ed4cf35a0ac",
+    "src/data/hospitality/illustration-source-guards.ts": "fafec7930126f6bf8cc1ded7496375781208828f",
+    "src/data/hospitality/illustrations.ts": "80d546fcc493c3f0f0e4439fdc37bf0d53970294",
+    "src/data/hospitality/index.ts": "8df327e1c9c6b4de2231e26e1cc39d322974cc11",
+    "src/data/hospitality/market-guide-labels.ts": "02594afbefd83ff5e812e77f8cc4f4cd1fb60cf7",
+    "src/data/hospitality/meal-visual-guide-labels.ts": "32aaad33b478b350df226b72c7456e2df19b0b46",
+    "src/data/hospitality/mocks.json": "00d3717b36560635e3d4cedb97afd475ed2c12c1",
+    "src/data/hospitality/planning.json": "cb3c2e1d9d3fc34d6992688283e82c82c7a004c8",
+    "src/data/hospitality/practice-floorplan-labels.ts": "d4e8201fff2f61de9e2e7a82b36c31e137c2e9e7",
+    "src/data/hospitality/restaurant.json": "814970474773481d151a2a3e7ed8a6ab95a22e83",
+    "src/data/hospitality/revenue-example-labels.ts": "0498563b6605a7ef93fe3df73e08b9c66978f956",
+    "src/data/hospitality/role-visual-guide-labels.ts": "9e0eba31bc10130a2403aff36267cfe16135fc7b",
+    "src/data/hospitality/route-guide-labels.ts": "b4c631c0835278374f7e109b2d6d384117dcbec0",
+    "src/data/hospitality/royal-guide-readings.ts": "a8f3ef5a242205c4b3e4e36f19915d071ce2bcf6",
+    "src/data/hospitality/royal-illustration-metadata.ts": "3c5217b6d0c9c3ecfcd4ca61b54d378a319d2a7b",
+    "src/data/hospitality/safety-visual-guide-labels.ts": "83637367ff87e0d095ec75fd2a5826b82014c879",
+    "src/data/hospitality/safety.json": "b42665f29f9a275141ef9d3a51075a958432e6b3",
+    "src/data/hospitality/service-visual-guide-labels.ts": "8ac948be2365a247cdfea69e9249bd4bf406e616",
+    "src/data/hospitality/service.json": "d4538a36281cfce07adfa2a61057d9460aadabc7",
+    "src/data/hospitality/translation-loaders.ts": "abb5958d5aa6c09d2f7044261013045238fb67b4",
+    "src/data/hospitality/types.ts": "dfbdb11b616742f3ea93b9b90fafe0ad872fa08a",
+    "src/data/hospitality/ui.ts": "392203cb4ca70934eb112ea6f5b4be4069ed9659"
+  }
+}

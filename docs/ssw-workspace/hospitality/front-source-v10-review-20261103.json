@@ -1,0 +1,979 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "2aa8c72ef0dc475250631f222b3e3c7d0da7e3e9",
+  "date": "2026-11-03",
+  "scope": "Three bounded front-desk source groups; no whole-page or whole-sector acceptance.",
+  "groups": [
+    {
+      "group": 1,
+      "units": [
+        "HF1-009-01",
+        "HF1-009-02"
+      ],
+      "pagesTextAndImagesRead": [
+        {
+          "sourceId": "hotel-1",
+          "pdfPage": 9
+        },
+        {
+          "sourceId": "hotel-2",
+          "pdfPage": 13
+        }
+      ]
+    },
+    {
+      "group": 2,
+      "units": [
+        "HF1-011-01",
+        "HF1-011-02",
+        "HF1-011-03"
+      ],
+      "pagesTextAndImagesRead": [
+        {
+          "sourceId": "hotel-1",
+          "pdfPage": 11
+        },
+        {
+          "sourceId": "hotel-2",
+          "pdfPage": 15
+        }
+      ]
+    },
+    {
+      "group": 3,
+      "units": [
+        "HF1-012-01",
+        "HF1-012-02",
+        "HF1-012-04",
+        "HF1-012-05"
+      ],
+      "pagesTextAndImagesRead": [
+        {
+          "sourceId": "hotel-1",
+          "pdfPage": 12
+        },
+        {
+          "sourceId": "hotel-2",
+          "pdfPage": 17
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "knowledgeId": "HF1-009-01",
+      "group": 1,
+      "before": {
+        "status": "candidate",
+        "after": {
+          "teaching": "unknown",
+          "assessment": "unknown"
+        },
+        "unresolved": [
+          "The source atom has page-level provenance but no self-reviewed exact source-element assignment in v2.",
+          "Conditions and exceptions need source-by-source confirmation; inherited teaching/assessment links remain candidates."
+        ],
+        "sourceRefs": [
+          {
+            "sourceId": "hotel-1",
+            "pdfPage": 9,
+            "elementIds": []
+          },
+          {
+            "sourceId": "hotel-2",
+            "pdfPage": 13,
+            "elementIds": []
+          }
+        ]
+      },
+      "afterStatus": "covered_ai",
+      "sourceRefs": [
+        {
+          "sourceId": "hotel-1",
+          "pdfPage": 9,
+          "elementIds": [
+            "hotel-1-p009-text-006",
+            "hotel-1-p009-text-007"
+          ]
+        },
+        {
+          "sourceId": "hotel-2",
+          "pdfPage": 13,
+          "elementIds": [
+            "hotel-2-p013-text-006",
+            "hotel-2-p013-text-007"
+          ]
+        }
+      ],
+      "teachingEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/1/sections/3/body",
+          "sha256": "f4f74ea43bb5089e57071da1c6e672b03b04aef07c98746dc463ff983188e696",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front02 s04 and q03 require identifying the actual booking and applicable property cancellation policy; source2 adds accommodation terms. No national percentage or automatic fee waiver is invented."
+        }
+      ],
+      "assessmentEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/1/questions/2",
+          "sha256": "5462df0ada4026b4e323f7d7cf8fb5a1f24e76362c73d9eeb4a139d532e90f98",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front02 s04 and q03 require identifying the actual booking and applicable property cancellation policy; source2 adds accommodation terms. No national percentage or automatic fee waiver is invented."
+        }
+      ],
+      "reviewNote": "front02 s04 and q03 require identifying the actual booking and applicable property cancellation policy; source2 adds accommodation terms. No national percentage or automatic fee waiver is invented."
+    },
+    {
+      "knowledgeId": "HF1-009-02",
+      "group": 1,
+      "before": {
+        "status": "candidate",
+        "after": {
+          "teaching": "unknown",
+          "assessment": "unknown"
+        },
+        "unresolved": [
+          "The source atom has page-level provenance but no self-reviewed exact source-element assignment in v2.",
+          "Conditions and exceptions need source-by-source confirmation; inherited teaching/assessment links remain candidates."
+        ],
+        "sourceRefs": [
+          {
+            "sourceId": "hotel-1",
+            "pdfPage": 9,
+            "elementIds": []
+          },
+          {
+            "sourceId": "hotel-2",
+            "pdfPage": 13,
+            "elementIds": []
+          }
+        ]
+      },
+      "afterStatus": "covered_ai",
+      "sourceRefs": [
+        {
+          "sourceId": "hotel-1",
+          "pdfPage": 9,
+          "elementIds": [
+            "hotel-1-p009-text-008",
+            "hotel-1-p009-text-009",
+            "hotel-1-p009-text-010",
+            "hotel-1-p009-text-011"
+          ]
+        },
+        {
+          "sourceId": "hotel-2",
+          "pdfPage": 13,
+          "elementIds": [
+            "hotel-2-p013-text-008",
+            "hotel-2-p013-text-009",
+            "hotel-2-p013-text-010",
+            "hotel-2-p013-text-011"
+          ]
+        }
+      ],
+      "teachingEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/1/sections/2/body",
+          "sha256": "1ab0933920392b8632fb78bfed57dce7bf8db506c31874ffbd59be6a41057c56",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front02 s03 explains both reservation adjustment and post-stay lost-property enquiries. q01 presents two same-name bookings and requires the stay date to identify the correct booking; the name is already given by its scenario."
+        }
+      ],
+      "assessmentEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/1/questions/0",
+          "sha256": "0182d99220f502a7c67c6cbf1b25dc8f0efcc0ce4da042a32ae0d4841b6783ef",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front02 s03 explains both reservation adjustment and post-stay lost-property enquiries. q01 presents two same-name bookings and requires the stay date to identify the correct booking; the name is already given by its scenario."
+        }
+      ],
+      "reviewNote": "front02 s03 explains both reservation adjustment and post-stay lost-property enquiries. q01 presents two same-name bookings and requires the stay date to identify the correct booking; the name is already given by its scenario."
+    },
+    {
+      "knowledgeId": "HF1-011-01",
+      "group": 2,
+      "before": {
+        "status": "candidate",
+        "after": {
+          "teaching": "unknown",
+          "assessment": "unknown"
+        },
+        "unresolved": [
+          "The source atom has page-level provenance but no self-reviewed exact source-element assignment in v2.",
+          "Conditions and exceptions need source-by-source confirmation; inherited teaching/assessment links remain candidates."
+        ],
+        "sourceRefs": [
+          {
+            "sourceId": "hotel-1",
+            "pdfPage": 11,
+            "elementIds": []
+          },
+          {
+            "sourceId": "hotel-2",
+            "pdfPage": 15,
+            "elementIds": []
+          }
+        ]
+      },
+      "afterStatus": "covered_ai",
+      "sourceRefs": [
+        {
+          "sourceId": "hotel-1",
+          "pdfPage": 11,
+          "elementIds": [
+            "hotel-1-p011-text-000",
+            "hotel-1-p011-text-001",
+            "hotel-1-p011-text-002"
+          ]
+        },
+        {
+          "sourceId": "hotel-2",
+          "pdfPage": 15,
+          "elementIds": [
+            "hotel-2-p015-text-000",
+            "hotel-2-p015-text-001",
+            "hotel-2-p015-text-002"
+          ]
+        }
+      ],
+      "teachingEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/sections/0/body",
+          "sha256": "058b0918cd246267c4134da8bb5c1af467a4f095f750689dd206e034f18384ef",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s01 and q04 explicitly cover clean appearance, posture and polite wording together. This checks choosing customer-facing behavior, not a physical posture demonstration."
+        }
+      ],
+      "assessmentEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/questions/3",
+          "sha256": "483155e65aae5ee3a3753ce534551539a257097c35cc5a02b4422eea538231a7",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s01 and q04 explicitly cover clean appearance, posture and polite wording together. This checks choosing customer-facing behavior, not a physical posture demonstration."
+        }
+      ],
+      "reviewNote": "front03 s01 and q04 explicitly cover clean appearance, posture and polite wording together. This checks choosing customer-facing behavior, not a physical posture demonstration."
+    },
+    {
+      "knowledgeId": "HF1-011-02",
+      "group": 2,
+      "before": {
+        "status": "candidate",
+        "after": {
+          "teaching": "unknown",
+          "assessment": "unknown"
+        },
+        "unresolved": [
+          "The source atom has page-level provenance but no self-reviewed exact source-element assignment in v2.",
+          "Conditions and exceptions need source-by-source confirmation; inherited teaching/assessment links remain candidates."
+        ],
+        "sourceRefs": [
+          {
+            "sourceId": "hotel-1",
+            "pdfPage": 11,
+            "elementIds": []
+          },
+          {
+            "sourceId": "hotel-2",
+            "pdfPage": 15,
+            "elementIds": []
+          }
+        ]
+      },
+      "afterStatus": "covered_ai",
+      "sourceRefs": [
+        {
+          "sourceId": "hotel-1",
+          "pdfPage": 11,
+          "elementIds": [
+            "hotel-1-p011-text-019",
+            "hotel-1-p011-text-020",
+            "hotel-1-p011-text-007",
+            "hotel-1-p011-text-008"
+          ]
+        },
+        {
+          "sourceId": "hotel-2",
+          "pdfPage": 15,
+          "elementIds": [
+            "hotel-2-p015-text-016",
+            "hotel-2-p015-text-017",
+            "hotel-2-p015-text-004",
+            "hotel-2-p015-text-005"
+          ]
+        }
+      ],
+      "teachingEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/sections/1/body",
+          "sha256": "b27ffc78cd1bc659916e4766f5823364584a9c6fd576526c17e824a1fc9e5c55",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s02 and q01 explicitly check booking existence and guest name. The listed reservation details were read in both source diagrams, not inferred from the chapter heading."
+        }
+      ],
+      "assessmentEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/questions/0",
+          "sha256": "6b5c6337069dad08254729dbe4b08c9ad10653030503bdd9a7b03854e9bba994",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s02 and q01 explicitly check booking existence and guest name. The listed reservation details were read in both source diagrams, not inferred from the chapter heading."
+        }
+      ],
+      "reviewNote": "front03 s02 and q01 explicitly check booking existence and guest name. The listed reservation details were read in both source diagrams, not inferred from the chapter heading."
+    },
+    {
+      "knowledgeId": "HF1-011-03",
+      "group": 2,
+      "before": {
+        "status": "candidate",
+        "after": {
+          "teaching": "unknown",
+          "assessment": "unknown"
+        },
+        "unresolved": [
+          "The source atom has page-level provenance but no self-reviewed exact source-element assignment in v2.",
+          "Conditions and exceptions need source-by-source confirmation; inherited teaching/assessment links remain candidates."
+        ],
+        "sourceRefs": [
+          {
+            "sourceId": "hotel-1",
+            "pdfPage": 11,
+            "elementIds": []
+          },
+          {
+            "sourceId": "hotel-2",
+            "pdfPage": 15,
+            "elementIds": []
+          }
+        ]
+      },
+      "afterStatus": "covered_ai",
+      "sourceRefs": [
+        {
+          "sourceId": "hotel-1",
+          "pdfPage": 11,
+          "elementIds": [
+            "hotel-1-p011-text-019",
+            "hotel-1-p011-text-020",
+            "hotel-1-p011-text-009",
+            "hotel-1-p011-text-010"
+          ]
+        },
+        {
+          "sourceId": "hotel-2",
+          "pdfPage": 15,
+          "elementIds": [
+            "hotel-2-p015-text-016",
+            "hotel-2-p015-text-017",
+            "hotel-2-p015-text-006",
+            "hotel-2-p015-text-007"
+          ]
+        }
+      ],
+      "teachingEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/sections/1/body",
+          "sha256": "b27ffc78cd1bc659916e4766f5823364584a9c6fd576526c17e824a1fc9e5c55",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s02 teaches checking party size and the booked plan; q01 checks both and q05 tests a breakfast-plan discrepancy without accepting an unconfirmed change."
+        }
+      ],
+      "assessmentEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/questions/0",
+          "sha256": "6b5c6337069dad08254729dbe4b08c9ad10653030503bdd9a7b03854e9bba994",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s02 teaches checking party size and the booked plan; q01 checks both and q05 tests a breakfast-plan discrepancy without accepting an unconfirmed change."
+        },
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/questions/4",
+          "sha256": "61f14484aef8bb8ead9d52cdefa6de153c407f668f8f430946b6193d7679f62c",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s02 teaches checking party size and the booked plan; q01 checks both and q05 tests a breakfast-plan discrepancy without accepting an unconfirmed change."
+        }
+      ],
+      "reviewNote": "front03 s02 teaches checking party size and the booked plan; q01 checks both and q05 tests a breakfast-plan discrepancy without accepting an unconfirmed change."
+    },
+    {
+      "knowledgeId": "HF1-012-01",
+      "group": 3,
+      "before": {
+        "status": "candidate",
+        "after": {
+          "teaching": "unknown",
+          "assessment": "unknown"
+        },
+        "unresolved": [
+          "The source atom has page-level provenance but no self-reviewed exact source-element assignment in v2.",
+          "Conditions and exceptions need source-by-source confirmation; inherited teaching/assessment links remain candidates."
+        ],
+        "sourceRefs": [
+          {
+            "sourceId": "hotel-1",
+            "pdfPage": 12,
+            "elementIds": []
+          },
+          {
+            "sourceId": "hotel-2",
+            "pdfPage": 17,
+            "elementIds": []
+          }
+        ]
+      },
+      "afterStatus": "covered_ai",
+      "sourceRefs": [
+        {
+          "sourceId": "hotel-1",
+          "pdfPage": 12,
+          "elementIds": [
+            "hotel-1-p012-text-000",
+            "hotel-1-p012-text-001"
+          ]
+        },
+        {
+          "sourceId": "hotel-2",
+          "pdfPage": 17,
+          "elementIds": [
+            "hotel-2-p017-text-000",
+            "hotel-2-p017-text-001"
+          ]
+        }
+      ],
+      "teachingEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/sections/2/body",
+          "sha256": "e0821a8bcb018be46c93f803d9c9c180105068f54a71f522761fd04046c48f73",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s03 and q08 preserve the order: booking/procedure confirmation before handing over the intended room key, followed by property guidance."
+        }
+      ],
+      "assessmentEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/questions/7",
+          "sha256": "4376aaf25ffd7f7355d1999085afc6a64bb1de4d2529c42124ac655baa079ad8",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s03 and q08 preserve the order: booking/procedure confirmation before handing over the intended room key, followed by property guidance."
+        }
+      ],
+      "reviewNote": "front03 s03 and q08 preserve the order: booking/procedure confirmation before handing over the intended room key, followed by property guidance."
+    },
+    {
+      "knowledgeId": "HF1-012-02",
+      "group": 3,
+      "before": {
+        "status": "candidate",
+        "after": {
+          "teaching": "unknown",
+          "assessment": "unknown"
+        },
+        "unresolved": [
+          "The source atom has page-level provenance but no self-reviewed exact source-element assignment in v2.",
+          "Conditions and exceptions need source-by-source confirmation; inherited teaching/assessment links remain candidates."
+        ],
+        "sourceRefs": [
+          {
+            "sourceId": "hotel-1",
+            "pdfPage": 12,
+            "elementIds": []
+          },
+          {
+            "sourceId": "hotel-2",
+            "pdfPage": 17,
+            "elementIds": []
+          }
+        ]
+      },
+      "afterStatus": "covered_ai",
+      "sourceRefs": [
+        {
+          "sourceId": "hotel-1",
+          "pdfPage": 12,
+          "elementIds": [
+            "hotel-1-p012-text-001",
+            "hotel-1-p012-text-002",
+            "hotel-1-p012-text-003",
+            "hotel-1-p012-text-004"
+          ]
+        },
+        {
+          "sourceId": "hotel-2",
+          "pdfPage": 17,
+          "elementIds": [
+            "hotel-2-p017-text-001",
+            "hotel-2-p017-text-002",
+            "hotel-2-p017-text-003",
+            "hotel-2-p017-text-004"
+          ]
+        }
+      ],
+      "teachingEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/sections/2/body",
+          "sha256": "e0821a8bcb018be46c93f803d9c9c180105068f54a71f522761fd04046c48f73",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s03 and q02 explicitly test the route to the room plus facility locations and opening/use times; the source time conditions are property-specific."
+        }
+      ],
+      "assessmentEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/questions/1",
+          "sha256": "7a06c996917cd6a9428dc73fb8c0d1a3ae15d7495e05810ce847a48d94d58e42",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s03 and q02 explicitly test the route to the room plus facility locations and opening/use times; the source time conditions are property-specific."
+        }
+      ],
+      "reviewNote": "front03 s03 and q02 explicitly test the route to the room plus facility locations and opening/use times; the source time conditions are property-specific."
+    },
+    {
+      "knowledgeId": "HF1-012-04",
+      "group": 3,
+      "before": {
+        "status": "candidate",
+        "after": {
+          "teaching": "unknown",
+          "assessment": "unknown"
+        },
+        "unresolved": [
+          "The source atom has page-level provenance but no self-reviewed exact source-element assignment in v2.",
+          "Conditions and exceptions need source-by-source confirmation; inherited teaching/assessment links remain candidates."
+        ],
+        "sourceRefs": [
+          {
+            "sourceId": "hotel-1",
+            "pdfPage": 12,
+            "elementIds": []
+          },
+          {
+            "sourceId": "hotel-2",
+            "pdfPage": 17,
+            "elementIds": []
+          }
+        ]
+      },
+      "afterStatus": "covered_ai",
+      "sourceRefs": [
+        {
+          "sourceId": "hotel-1",
+          "pdfPage": 12,
+          "elementIds": [
+            "hotel-1-p012-text-005",
+            "hotel-1-p012-text-006",
+            "hotel-1-p012-text-007"
+          ]
+        },
+        {
+          "sourceId": "hotel-2",
+          "pdfPage": 17,
+          "elementIds": [
+            "hotel-2-p017-text-005",
+            "hotel-2-p017-text-006",
+            "hotel-2-p017-text-007"
+          ]
+        }
+      ],
+      "teachingEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/sections/2/body",
+          "sha256": "e0821a8bcb018be46c93f803d9c9c180105068f54a71f522761fd04046c48f73",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s03 keeps 14/15 and 10/11 as source examples, not national rules. q03 and q06 assess checking the actual property/plan time instead of substituting the source example."
+        }
+      ],
+      "assessmentEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/questions/2",
+          "sha256": "714cf5b40bbe3b388f230a570594058c327bd2716ddadf513247954eea181634",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s03 keeps 14/15 and 10/11 as source examples, not national rules. q03 and q06 assess checking the actual property/plan time instead of substituting the source example."
+        },
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/questions/5",
+          "sha256": "38df0d7da01575f9ef560dec580eab94618b355fb591ddb554f980c0e5d4383a",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s03 keeps 14/15 and 10/11 as source examples, not national rules. q03 and q06 assess checking the actual property/plan time instead of substituting the source example."
+        }
+      ],
+      "reviewNote": "front03 s03 keeps 14/15 and 10/11 as source examples, not national rules. q03 and q06 assess checking the actual property/plan time instead of substituting the source example."
+    },
+    {
+      "knowledgeId": "HF1-012-05",
+      "group": 3,
+      "before": {
+        "status": "candidate",
+        "after": {
+          "teaching": "unknown",
+          "assessment": "unknown"
+        },
+        "unresolved": [
+          "The source atom has page-level provenance but no self-reviewed exact source-element assignment in v2.",
+          "Conditions and exceptions need source-by-source confirmation; inherited teaching/assessment links remain candidates."
+        ],
+        "sourceRefs": [
+          {
+            "sourceId": "hotel-1",
+            "pdfPage": 12,
+            "elementIds": []
+          },
+          {
+            "sourceId": "hotel-2",
+            "pdfPage": 17,
+            "elementIds": []
+          }
+        ]
+      },
+      "afterStatus": "covered_ai",
+      "sourceRefs": [
+        {
+          "sourceId": "hotel-1",
+          "pdfPage": 12,
+          "elementIds": [
+            "hotel-1-p012-text-004",
+            "hotel-1-p012-text-005",
+            "hotel-1-p012-text-006"
+          ]
+        },
+        {
+          "sourceId": "hotel-2",
+          "pdfPage": 17,
+          "elementIds": [
+            "hotel-2-p017-text-004",
+            "hotel-2-p017-text-005",
+            "hotel-2-p017-text-006"
+          ]
+        }
+      ],
+      "teachingEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/sections/2/body",
+          "sha256": "e0821a8bcb018be46c93f803d9c9c180105068f54a71f522761fd04046c48f73",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s03 retains the usual check-in-to-check-out use window. q07 tests a late-use request by checking availability and conditions rather than claiming the calendar day grants extra hours. The scenario is independently authored; it does not invent a universal extension price or permission."
+        }
+      ],
+      "assessmentEvidence": [
+        {
+          "path": "src/data/hospitality/front.json",
+          "jsonPointer": "/lessons/2/questions/6",
+          "sha256": "7d6662e5303e5e7a97940fc3002847699563bc1293bd49e72915a259bbeb045b",
+          "sha256Mode": "json-value",
+          "relation": "direct",
+          "semanticReviewed": true,
+          "reviewNote": "front03 s03 retains the usual check-in-to-check-out use window. q07 tests a late-use request by checking availability and conditions rather than claiming the calendar day grants extra hours. The scenario is independently authored; it does not invent a universal extension price or permission."
+        }
+      ],
+      "reviewNote": "front03 s03 retains the usual check-in-to-check-out use window. q07 tests a late-use request by checking availability and conditions rather than claiming the calendar day grants extra hours. The scenario is independently authored; it does not invent a universal extension price or permission."
+    }
+  ],
+  "sourceElements": {
+    "hotel-1-p009-text-006": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "8ebb8dee77bd12d100d74d9260cf2d020eae4bb3dc4f85102eb19c5c475aa775",
+      "bboxVerified": true
+    },
+    "hotel-1-p009-text-007": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "9b7478d4d30565c906d1b85314933e9734675f18e9ac5aec721caa7f584e5980",
+      "bboxVerified": true
+    },
+    "hotel-2-p013-text-006": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "f272d3fcc15b7b90434ab6394f5d7743e9c5fa89c33d37145e03062c36430334",
+      "bboxVerified": true
+    },
+    "hotel-2-p013-text-007": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "a266931f82dc255b4a6b8e5f29f055226d8b036169e10750efe18b0c0459603d",
+      "bboxVerified": true
+    },
+    "hotel-1-p009-text-008": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "acdb20258e09c74b6a5b032b13777e9f3014064eed8fe526bcd239bc5df9686f",
+      "bboxVerified": true
+    },
+    "hotel-1-p009-text-009": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "bc0088609fb44b915601fb23598eb48dd0d911f1874980d9c29fe9a6dcde6cef",
+      "bboxVerified": true
+    },
+    "hotel-1-p009-text-010": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "3bb65aba098034417522fb71afde77be3dc250663705d66dc8638ab311d4cf64",
+      "bboxVerified": true
+    },
+    "hotel-1-p009-text-011": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "e1ea3ffcc026242dc4164e36067fd5c66af5d898cadf5bb792907ef5a4c4c5df",
+      "bboxVerified": true
+    },
+    "hotel-2-p013-text-008": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "acdb20258e09c74b6a5b032b13777e9f3014064eed8fe526bcd239bc5df9686f",
+      "bboxVerified": true
+    },
+    "hotel-2-p013-text-009": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "bc0088609fb44b915601fb23598eb48dd0d911f1874980d9c29fe9a6dcde6cef",
+      "bboxVerified": true
+    },
+    "hotel-2-p013-text-010": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "3bb65aba098034417522fb71afde77be3dc250663705d66dc8638ab311d4cf64",
+      "bboxVerified": true
+    },
+    "hotel-2-p013-text-011": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "e1ea3ffcc026242dc4164e36067fd5c66af5d898cadf5bb792907ef5a4c4c5df",
+      "bboxVerified": true
+    },
+    "hotel-1-p011-text-000": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "fce6f4a2bbed7f2af37a3f048e4612f2da1c818e7679c6a26f111e31824b7940",
+      "bboxVerified": true
+    },
+    "hotel-1-p011-text-001": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "2c7447126567a7b56c287b47d6a37c68c7705d6cfc6ae2d0a4bc0e71a231bf3c",
+      "bboxVerified": true
+    },
+    "hotel-1-p011-text-002": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "15f674eece927cfe7a6b0a126ef382acaa839f71154b1ac8fd4a65377c8566b4",
+      "bboxVerified": true
+    },
+    "hotel-2-p015-text-000": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "fce6f4a2bbed7f2af37a3f048e4612f2da1c818e7679c6a26f111e31824b7940",
+      "bboxVerified": true
+    },
+    "hotel-2-p015-text-001": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "2c7447126567a7b56c287b47d6a37c68c7705d6cfc6ae2d0a4bc0e71a231bf3c",
+      "bboxVerified": true
+    },
+    "hotel-2-p015-text-002": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "15f674eece927cfe7a6b0a126ef382acaa839f71154b1ac8fd4a65377c8566b4",
+      "bboxVerified": true
+    },
+    "hotel-1-p011-text-019": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "482fad4a600fec3c729c95c658ef37125120164fff5b4f34057fe0974c70e4a9",
+      "bboxVerified": true
+    },
+    "hotel-1-p011-text-020": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "7ef89d06386469f163cd76559d9116eedf6f31a4808f877e105d13f572c42e89",
+      "bboxVerified": true
+    },
+    "hotel-1-p011-text-007": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "5768439abace31f358cf18b3c5d91c3be8c36c45d4c440e28b0a91c9d82f8d6d",
+      "bboxVerified": true
+    },
+    "hotel-1-p011-text-008": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "ed26bd3acfb10670c3f7e7ca1d09bdd4e7725e9ee57265cf6ade1f01a31f86d9",
+      "bboxVerified": true
+    },
+    "hotel-2-p015-text-016": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "482fad4a600fec3c729c95c658ef37125120164fff5b4f34057fe0974c70e4a9",
+      "bboxVerified": true
+    },
+    "hotel-2-p015-text-017": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "7ef89d06386469f163cd76559d9116eedf6f31a4808f877e105d13f572c42e89",
+      "bboxVerified": true
+    },
+    "hotel-2-p015-text-004": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "5768439abace31f358cf18b3c5d91c3be8c36c45d4c440e28b0a91c9d82f8d6d",
+      "bboxVerified": true
+    },
+    "hotel-2-p015-text-005": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "ed26bd3acfb10670c3f7e7ca1d09bdd4e7725e9ee57265cf6ade1f01a31f86d9",
+      "bboxVerified": true
+    },
+    "hotel-1-p011-text-009": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "24b7c81d1feebab83d38081c49d07a0b45bd090fc2a43310a1657ed6343f4c8a",
+      "bboxVerified": true
+    },
+    "hotel-1-p011-text-010": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "fb65507d14ac9512efb1003d1c9f4a8ad759d1a16165e1826e2bc2b695ae466f",
+      "bboxVerified": true
+    },
+    "hotel-2-p015-text-006": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "24b7c81d1feebab83d38081c49d07a0b45bd090fc2a43310a1657ed6343f4c8a",
+      "bboxVerified": true
+    },
+    "hotel-2-p015-text-007": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "fb65507d14ac9512efb1003d1c9f4a8ad759d1a16165e1826e2bc2b695ae466f",
+      "bboxVerified": true
+    },
+    "hotel-1-p012-text-000": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "5b375c3ba70eb200cbc8ed9d712c2b9bc2e143d5991e40707a725576e6a71008",
+      "bboxVerified": true
+    },
+    "hotel-1-p012-text-001": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "7a7dd6d89cb391f2c6f8cb7cb93f79008c11157a3cfddfef39d9f76c66b04af0",
+      "bboxVerified": true
+    },
+    "hotel-2-p017-text-000": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "5b375c3ba70eb200cbc8ed9d712c2b9bc2e143d5991e40707a725576e6a71008",
+      "bboxVerified": true
+    },
+    "hotel-2-p017-text-001": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "7a7dd6d89cb391f2c6f8cb7cb93f79008c11157a3cfddfef39d9f76c66b04af0",
+      "bboxVerified": true
+    },
+    "hotel-1-p012-text-002": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "58d435f632288a12fe133325960dc21d6f5c03f42e1913e605b525138b324bf7",
+      "bboxVerified": true
+    },
+    "hotel-1-p012-text-003": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "8bfa07346262b655fff64b36e365c1c57ac25b7e355c3ef33ef30a83d4288015",
+      "bboxVerified": true
+    },
+    "hotel-1-p012-text-004": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "07642d350b1cb265273daaed25efcdfff9697021e60ecc9b0e14d245edb8df58",
+      "bboxVerified": true
+    },
+    "hotel-2-p017-text-002": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "58d435f632288a12fe133325960dc21d6f5c03f42e1913e605b525138b324bf7",
+      "bboxVerified": true
+    },
+    "hotel-2-p017-text-003": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "8bfa07346262b655fff64b36e365c1c57ac25b7e355c3ef33ef30a83d4288015",
+      "bboxVerified": true
+    },
+    "hotel-2-p017-text-004": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "07642d350b1cb265273daaed25efcdfff9697021e60ecc9b0e14d245edb8df58",
+      "bboxVerified": true
+    },
+    "hotel-1-p012-text-005": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "face0ef4f9cb7601787b8bf8f50da1d1683b6a518d8e9f8dbff839f501ad90fb",
+      "bboxVerified": true
+    },
+    "hotel-1-p012-text-006": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "b5d1bf2a6e82641db6bef59c359a3eb924d08ee3d42a25e4a7470b4d0c45d622",
+      "bboxVerified": true
+    },
+    "hotel-1-p012-text-007": {
+      "sourceSha256": "5e991b9559910e1a6be2fb4cf14c4a418023418f7771ed976a87d8e3a6962a29",
+      "elementSha256": "56dac86bdaa507a1aff7eef07e399b2cdb41dc9da87d6fadf066fbbe212c4583",
+      "bboxVerified": true
+    },
+    "hotel-2-p017-text-005": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "face0ef4f9cb7601787b8bf8f50da1d1683b6a518d8e9f8dbff839f501ad90fb",
+      "bboxVerified": true
+    },
+    "hotel-2-p017-text-006": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "b5d1bf2a6e82641db6bef59c359a3eb924d08ee3d42a25e4a7470b4d0c45d622",
+      "bboxVerified": true
+    },
+    "hotel-2-p017-text-007": {
+      "sourceSha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+      "elementSha256": "56dac86bdaa507a1aff7eef07e399b2cdb41dc9da87d6fadf066fbbe212c4583",
+      "bboxVerified": true
+    }
+  },
+  "review": {
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  },
+  "sourceTextOrImagesPublished": false,
+  "coveredAi": 174,
+  "knownUnits": 384,
+  "openUnits": 210,
+  "denominatorStatus": "open",
+  "sourceCoveragePercent": null,
+  "remainingSpecificGap": {
+    "knowledgeId": "HF1-012-03",
+    "note": "Teaching names emergency exits and evacuation routes; q02 correct option names emergency exits but omits routes. Its distractor mentions routes. Do not count this alone as an explicit correct-route assessment. Retained candidate pending focused assessment/source mapping.",
+    "resolution": {
+      "status": "resolved_by_additive_assessment",
+      "questionId": "hotel-front-03-q09",
+      "sourceReviewRef": "docs/ssw-workspace/hospitality/front-evacuation-v10-source-review.json",
+      "note": "Earlier candidate statement retained as before-state; current canonical ledger is covered_ai after focused source review."
+    }
+  }
+}

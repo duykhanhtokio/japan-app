@@ -1,0 +1,180 @@
+{
+  "date": "2026-11-02",
+  "status": "PASS_INTEGRATION_AI",
+  "canonicalSourceCoverage": "docs/ssw-workspace/source-coverage-v2/hospitality.json",
+  "translationSourceSha256": "726b3dd2a8b23cee593b57de49bdc9bec37ec9507d8fa982408c311a8609eece",
+  "validTranslationPairsBefore": 149,
+  "validTranslationPairsAfter": 173,
+  "requiredPairs": 456,
+  "missingOrStalePairs": 283,
+  "newFullPairs": 14,
+  "refreshedPairs": 10,
+  "unrelatedTranslationLessonsPreserved": 272,
+  "oldLessonIdsPreserved": 38,
+  "oldAnswerIndexesPreserved": true,
+  "oldQuestionWordingPreserved": 322,
+  "oldQuestionRewritten": [
+    "hotel-planning-01-q09"
+  ],
+  "newQuestionIds": [
+    "hotel-front-01-q09",
+    "hotel-front-01-q10",
+    "hotel-planning-04-q08"
+  ],
+  "checks": [
+    "check.cjs",
+    "check-source-atoms.cjs",
+    "check-readings.cjs",
+    "check-translations.cjs",
+    "check-translation-loaders.cjs",
+    "check-source-census-v2.cjs"
+  ],
+  "authorSelfChecks": {
+    "hi-bn-self-check.json": {
+      "status": "PASS_DIRECT_TRANSLATION_AUTHOR_SELF_CHECK",
+      "sourceSha256": "726b3dd2a8b23cee593b57de49bdc9bec37ec9507d8fa982408c311a8609eece",
+      "pairs": 4,
+      "translatedFields": 342,
+      "locales": [
+        {
+          "locale": "hi",
+          "lessons": 2,
+          "fields": 171,
+          "sha256": "be28021e1dbad8585b9f75374771f1aed813f87aefd56a3a12aacbd7864608fc",
+          "bytes": 50643
+        },
+        {
+          "locale": "bn",
+          "lessons": 2,
+          "fields": 171,
+          "sha256": "eb38c134cee8a52a53d068d41a08c9e9ca7ae80389c684d017c2e555b5b88686",
+          "bytes": 49836
+        }
+      ],
+      "semanticChecks": [
+        "All three independent planning-needs paragraphs and both hypothetical examples retained, including2hours and no guaranteed facility service.",
+        "B&B vs dinner/breakfast; consecutive-night benefit conditions; deposit versus room fee; FIT versus prior-use experience.",
+        "Public post versus reuse permission, account tagging versus topic hashtag, frequency example versus mandatory posting schedule.",
+        "All18question answerIndexes and choice order preserved per locale, including absolutes and negations in distractors."
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "targetFilesModified": false,
+      "crossWorkerContentReview": false
+    },
+    "ne-my-author-selfcheck.json": {
+      "status": "PASS_AUTHOR_SELF_CHECK",
+      "sourceSha256": "726b3dd2a8b23cee593b57de49bdc9bec37ec9507d8fa982408c311a8609eece",
+      "author": "food-sector support author; newly authored ne/my only; no cross-review",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "pairs": [
+        {
+          "language": "ne",
+          "lessonId": "hotel-planning-01",
+          "translatedLeafFields": 93,
+          "preservedStructuralLeafFields": 59,
+          "questionCount": 10,
+          "sourceRevision": "dc8ac37ff986ec5c649c75e551850c88aa0b2298a94f65fa6198ea8dd4d5a0c0",
+          "semanticSelfCheck": [
+            "All target fields authored directly from frozen Japanese; no English pivot copied.",
+            "Planning01 keeps both invented cases as hypotheses, checks actual facility availability, and does not infer dietary suitability from local ingredients.",
+            "Planning04 distinguishes account tag from common-topic hashtag, and public visibility from repost permission.",
+            "Answer order, negative distractors, numerical conditions and question IDs preserved."
+          ]
+        },
+        {
+          "language": "ne",
+          "lessonId": "hotel-planning-04",
+          "translatedLeafFields": 78,
+          "preservedStructuralLeafFields": 49,
+          "questionCount": 8,
+          "sourceRevision": "6bb547477ce7a6d88fbe32e5e29708f5de5b70408706d5a05ec53e23595451ea",
+          "semanticSelfCheck": [
+            "All target fields authored directly from frozen Japanese; no English pivot copied.",
+            "Planning01 keeps both invented cases as hypotheses, checks actual facility availability, and does not infer dietary suitability from local ingredients.",
+            "Planning04 distinguishes account tag from common-topic hashtag, and public visibility from repost permission.",
+            "Answer order, negative distractors, numerical conditions and question IDs preserved."
+          ]
+        },
+        {
+          "language": "my",
+          "lessonId": "hotel-planning-01",
+          "translatedLeafFields": 93,
+          "preservedStructuralLeafFields": 59,
+          "questionCount": 10,
+          "sourceRevision": "dc8ac37ff986ec5c649c75e551850c88aa0b2298a94f65fa6198ea8dd4d5a0c0",
+          "semanticSelfCheck": [
+            "All target fields authored directly from frozen Japanese; no English pivot copied.",
+            "Planning01 keeps both invented cases as hypotheses, checks actual facility availability, and does not infer dietary suitability from local ingredients.",
+            "Planning04 distinguishes account tag from common-topic hashtag, and public visibility from repost permission.",
+            "Answer order, negative distractors, numerical conditions and question IDs preserved."
+          ]
+        },
+        {
+          "language": "my",
+          "lessonId": "hotel-planning-04",
+          "translatedLeafFields": 78,
+          "preservedStructuralLeafFields": 49,
+          "questionCount": 8,
+          "sourceRevision": "6bb547477ce7a6d88fbe32e5e29708f5de5b70408706d5a05ec53e23595451ea",
+          "semanticSelfCheck": [
+            "All target fields authored directly from frozen Japanese; no English pivot copied.",
+            "Planning01 keeps both invented cases as hypotheses, checks actual facility availability, and does not infer dietary suitability from local ingredients.",
+            "Planning04 distinguishes account tag from common-topic hashtag, and public visibility from repost permission.",
+            "Answer order, negative distractors, numerical conditions and question IDs preserved."
+          ]
+        }
+      ],
+      "outputHashes": {
+        "ne": "cbc974530abe47ee9552df2cd4bacec8f375abd0f8efdf1c682dcbe8873019fa",
+        "my": "b6f6edc58e713b3fa0b33c44f5a018115078f30cfac9324eee807f31af1c2f09"
+      }
+    },
+    "th-km-selfcheck.json": {
+      "status": "PASS_DIRECT_TRANSLATION_AUTHOR_SELF_CHECK",
+      "sourceSha256": "726b3dd2a8b23cee593b57de49bdc9bec37ec9507d8fa982408c311a8609eece",
+      "pairs": 4,
+      "translatedFields": 342,
+      "locales": [
+        {
+          "locale": "th",
+          "lessons": 2,
+          "fields": 171,
+          "sha256": "429fb6b1c8a45dd15831436015fb3bfd0d518cc2c8f6d7996fac37fe12ec3ca9",
+          "bytes": 51380
+        },
+        {
+          "locale": "km",
+          "lessons": 2,
+          "fields": 171,
+          "sha256": "5c5af4f429c3cd6c0893b7f2446ea18348022f71a353c330f1163280b20378a6",
+          "bytes": 52984
+        }
+      ],
+      "semanticChecks": [
+        "Both hypothetical examples retained, including two hours and conditional facility service.",
+        "Meal scope, consecutive-night benefits, deposit versus price, FIT versus repeat-customer axes retained.",
+        "Public posting versus reuse permission, account tagging versus hashtag, frequency example versus mandate retained.",
+        "All18question keyed indexes and choice order per locale retained."
+      ],
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "targetFilesModified": false,
+      "crossWorkerContentReview": false
+    }
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "wholeSourceKnowledgeCovered": false,
+  "mergedPrivateSidecarSha256": {
+    "hi": "be28021e1dbad8585b9f75374771f1aed813f87aefd56a3a12aacbd7864608fc",
+    "bn": "eb38c134cee8a52a53d068d41a08c9e9ca7ae80389c684d017c2e555b5b88686",
+    "ne": "cbc974530abe47ee9552df2cd4bacec8f375abd0f8efdf1c682dcbe8873019fa",
+    "my": "b6f6edc58e713b3fa0b33c44f5a018115078f30cfac9324eee807f31af1c2f09",
+    "th": "429fb6b1c8a45dd15831436015fb3bfd0d518cc2c8f6d7996fac37fe12ec3ca9",
+    "km": "5c5af4f429c3cd6c0893b7f2446ea18348022f71a353c330f1163280b20378a6",
+    "tl": "f6d7063119dffc5ae67c8ad7eff8c9788be1e6afb5dfd1dcddff4364feb8cd09"
+  }
+}

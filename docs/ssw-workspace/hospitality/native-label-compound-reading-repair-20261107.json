@@ -1,0 +1,79 @@
+{
+  "baseCommit": "932d6c4b24c6dc9f72db57bd58c93c678d62b0a4",
+  "beforeBlobSha": {
+    "src/data/hospitality/royal-guide-readings.ts": "a8f3ef5a242205c4b3e4e36f19915d071ce2bcf6",
+    "docs/ssw-workspace/hospitality/native-label-compound-reading-repair-20261107.json": null
+  },
+  "trigger": "Specific shared generator-method concern: aligned token spans can still give incorrect compound pronunciation.",
+  "boundedScope": "38 actual Japanese illustration captions and70 supplemental illustration label/example/term entries. Canonical prose excluded. Existing whole-field/canonical-kana proofs and valid variants retained.",
+  "repairs": [
+    {
+      "lessonId": "hotel-restaurant-04",
+      "field": "Native meal diagram label パン皿",
+      "before": [
+        [
+          2,
+          1,
+          "さら"
+        ]
+      ],
+      "after": [
+        [
+          2,
+          1,
+          "ざら"
+        ]
+      ],
+      "context": "Compound bread plate takes rendaku: パンざら.",
+      "primaryEvidence": {
+        "source": "Existing Hospitality PDF2 khach_san_2_jp.pdf",
+        "sha256": "1b3b1fe665fbd01e16b69c8777c4977c2b67f6c164a3c0a5bc428a115d7bbd81",
+        "page": 51,
+        "observed": "Printed ruby ざら over 皿 in パン皿; page rendered and visually inspected."
+      },
+      "corroboratingUrl": "https://online.bunka.go.jp/heritages/detail/145964"
+    },
+    {
+      "lessonId": "hotel-planning-07",
+      "field": "Native market hypothetical-example label",
+      "exactEntryKey": "分類後にB群を選ぶ図は、手順を区別するための架空例です。",
+      "before": [
+        [
+          22,
+          1,
+          "か"
+        ],
+        [
+          23,
+          1,
+          "から"
+        ]
+      ],
+      "after": [
+        [
+          22,
+          2,
+          "かくう"
+        ]
+      ],
+      "context": "Fictional example uses 架空かくう; 空から is the wrong standalone-token sense. Existing 例れい preserved.",
+      "primaryUrl": "https://imidas.jp/kojiten/detail/W-06-0-742-06.html"
+    }
+  ],
+  "checks": {
+    "onlyTwoReadingEntriesChanged": true,
+    "allOther68SupplementEntriesByteStructurePreserved": true,
+    "sourceRevisionMapAndFunctionsUnchanged": true,
+    "canonicalLessonProseAnd38CaptionEntriesUnchanged": true,
+    "primaryReadingExactEntriesAbsentForBothLabels": true,
+    "actualProviderAndTextRendererFallback": "PASS both labels ruby on, exact surfaces reconstructed; ruby-off, translated context and stale context remain plain; stale revision resolver returns undefined. Native primitives isolated.",
+    "spanAlignmentAll70": "PASS; this is structural evidence, not pronunciation acceptance."
+  },
+  "acceptance": {
+    "humanNativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false,
+    "fullSourceAccepted": false
+  },
+  "remainingBoundedFindings": "No other supported wrong-context pronunciation identified in the inspected illustration-only candidates; structural validity was not used as proof of pronunciation."
+}

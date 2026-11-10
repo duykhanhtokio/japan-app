@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-30",
+  "reviewType": "AI assessment structural and numeric scope audit",
+  "baseCommit": "9199a0da672e84f979c1fd09cefe743a90a1db5f",
+  "structural": {
+    "exams": 36,
+    "mockExams": 20,
+    "weeklyChecks": 16,
+    "questions": 848,
+    "duplicateExactPrompts": 0,
+    "duplicateOptionsWithinQuestion": 0,
+    "mockAnswerPositionCounts": "10 per position in every mock"
+  },
+  "rubyData": {
+    "questions": 848,
+    "fields": 8480,
+    "uncovered": 0,
+    "malformedCasesRejected": 33833,
+    "tsxCompile": true,
+    "semanticPronunciationReviewed": false
+  },
+  "numericAuditFix": {
+    "previousQuestionsPerLocale": 839,
+    "questionsPerLocale": 848,
+    "locales": 12,
+    "additionalQuestionTranslationsNowAudited": 108,
+    "numericReviewCandidates": 346,
+    "allCandidatesSemanticallyResolved": true,
+    "resolutionScope": "AI-reviewed numeric equivalence only",
+    "unresolvedNumericCandidateIds": [],
+    "confirmedNumericDefects": [],
+    "reconciliationReport": "assessment-numeric-reconciliation-20261030.json"
+  },
+  "limits": [
+    "Structural checks do not prove unique semantic correct answers or domain certification.",
+    "18 historical source leaves lack direct knowledgeId tags. Page overlap alone is not proof of semantic question coverage.",
+    "No physical device, browser or native-speaker validation performed by this assessment agent."
+  ],
+  "files": [
+    "scripts/food-manufacturing/audit-question-numbers.py",
+    "docs/ssw-workspace/food-manufacturing/assessment-numeric-audit-20261030.json"
+  ],
+  "questionTranslationAdapter": {
+    "validPairs": 10176,
+    "rejectedStalePairs": 10176,
+    "missingPairs": 0
+  }
+}

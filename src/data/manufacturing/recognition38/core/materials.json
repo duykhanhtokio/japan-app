@@ -1,0 +1,460 @@
+{
+  "schemaVersion": 1,
+  "packs": [
+    {
+      "id": "mfg37-required-jig-contact-identification",
+      "lessonIds": [
+        "mfg1-surface-completion37-lesson-004",
+        "mfg1-surface-completion37-lesson-008"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-completion37-lesson-004": "8873e887c5f8fd080b5498cfc0740213cd24b4734b31b3a66cf81be93ddb0af7",
+        "mfg1-surface-completion37-lesson-008": "e17a09d99688d56b781a52c0523a2c46f31254fed711cf30d62e2d0a1d544956"
+      },
+      "titleJa": "治具の保持・通電接点・保護範囲を見分ける",
+      "captionJa": "図Aは機械的な保持、Bは通電が必要な処理で導通を保つ接点、Cは不要な付着を抑える治具の保護被覆を示します。実物の接点配置、材質、処理液との適合は指定仕様で確認します。",
+      "assets": [
+        {
+          "id": "mfg37-required-jig-contact-identification-diagram",
+          "file": "assets/manufacturing/recognition38/jig-contact.png",
+          "width": 1600,
+          "height": 1200,
+          "altJa": "独立した治具概念図。Aは品物を保持する部分、Bは裸の導電接点、Cは接点以外の治具被覆、Dは処理対象面。電源極性、寸法や操作手順は指定しない。",
+          "sha256": "cf06537ce349bfd5583a1ad76fcae83869836e9a6f2aa943e88340793959d150",
+          "role": "teaching"
+        },
+        {
+          "id": "mfg37-required-jig-contact-identification-quiz-diagram",
+          "file": "assets/manufacturing/recognition38/jig-contact-quiz.png",
+          "width": 1600,
+          "height": 1200,
+          "altJa": "独立した治具模式図。緑の縦棒と枝状部分、灰色の品物、橙色の小円を描き、位置A・B・Cへ線を引く。役割名、正解番号、解説や実配線の指定は表示しない。",
+          "role": "quiz",
+          "sha256": "7c7e0a4ddd9c6560f5543ff63d7b5630928bf2f73dc757b25807d4c1ee206055"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg37-required-jig-contact-identification-q01",
+          "lessonId": "mfg1-surface-completion37-lesson-004",
+          "stemJa": "図の通電接点として、導通を保つ必要がある位置はどれか。",
+          "optionsJa": [
+            "Aだけ",
+            "B",
+            "Cの被覆表面だけ",
+            "背景の余白"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "Aは保持の役割を示す。必要な通電接点はBで識別する。",
+            "Bは通電が必要な処理で導通を保つ接点として示している。",
+            "Cは不要な付着を抑える保護範囲で、必要な裸接点とは別。",
+            "余白は治具の接点ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 96,
+              "printedPage": 86
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 180,
+              "printedPage": 170
+            }
+          ],
+          "sourceHash": "06a0cf76c8ae9c861fd55be30cb30c2c15581952ddfe0ac3bb8838049c0664ac",
+          "imageAssetIds": [
+            "mfg37-required-jig-contact-identification-quiz-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-jig-contact-identification-quiz-diagram": "7c7e0a4ddd9c6560f5543ff63d7b5630928bf2f73dc757b25807d4c1ee206055"
+          }
+        },
+        {
+          "id": "mfg37-required-jig-contact-identification-q02",
+          "lessonId": "mfg1-surface-completion37-lesson-004",
+          "stemJa": "図AとCの役割の組合せで正しいものはどれか。",
+          "optionsJa": [
+            "Aは薬液濃度、Cは加熱温度。",
+            "Aは製品の合否、Cは電源の極性。",
+            "Aは品物の保持、Cは治具への不要な付着の抑制。",
+            "AもCも全ての接点を絶縁する指示。"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "濃度や温度を表す記号ではない。",
+            "合否や極性を指定する図ではない。",
+            "保持と、接点以外の保護範囲という異なる役割を読む。",
+            "必要な導電接点まで一律に絶縁する図ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 96,
+              "printedPage": 86
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 180,
+              "printedPage": 170
+            }
+          ],
+          "sourceHash": "8d62d96d9c1ecd4f12ec0d7e58fb8677f3d246295c38a8e3284eb6dfccbcc47f",
+          "imageAssetIds": [
+            "mfg37-required-jig-contact-identification-quiz-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-jig-contact-identification-quiz-diagram": "7c7e0a4ddd9c6560f5543ff63d7b5630928bf2f73dc757b25807d4c1ee206055"
+          }
+        },
+        {
+          "id": "mfg37-required-jig-contact-identification-q03",
+          "lessonId": "mfg1-surface-completion37-lesson-004",
+          "stemJa": "この図を別の材質・処理液の治具へ当てはめる前に必要な確認はどれか。",
+          "optionsJa": [
+            "図と同色なら確認不要。",
+            "チタンなら全ての薬液に必ず適合。",
+            "接点も全て被覆すれば必ず改善。",
+            "保持・導通・材質と処理液の適合を指定仕様で確認。"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "色は実物の適合を保証しない。",
+            "材質名だけで全薬液への適合は決まらない。",
+            "必要な接点の被覆は通電不良につながる場合がある。",
+            "図の概念と実物の適合・接点条件を区別して照合する。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 96,
+              "printedPage": 86
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 180,
+              "printedPage": 170
+            }
+          ],
+          "sourceHash": "df82ce55bdfb389036d89f8266dffbfc5184245618004cc1c360f168aefa6251",
+          "imageAssetIds": [
+            "mfg37-required-jig-contact-identification-quiz-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-jig-contact-identification-quiz-diagram": "7c7e0a4ddd9c6560f5543ff63d7b5630928bf2f73dc757b25807d4c1ee206055"
+          }
+        }
+      ],
+      "status": "ai_source_compared_preview",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false,
+      "captionSourceHash": "33f957a56eb17296dcc1cd461e3c4a4d6c1c6fe5a491ceab2b04289e15908733"
+    },
+    {
+      "id": "mfg37-required-indicator-color-recognition",
+      "lessonIds": [
+        "mfg1-surface-completion37-lesson-003",
+        "mfg1-surface-lesson-002"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-completion37-lesson-003": "58bc7a539e23c41699f91da7210087a090d741a0a6b331aa2004b2b0efc30c90",
+        "mfg1-surface-lesson-002": "90f19288d5d8f8eaa298bac95b9c13fab266bc24830b9764b0a473a3bc75dfb0"
+      },
+      "titleJa": "指示薬名と呈色の組合せを見分ける",
+      "captionJa": "指示薬名を先に確認します。代表例はフェノールフタレインの無色から赤色系、メチルオレンジの赤色系から黄色系、BTBの黄色・緑色・青色です。各変色範囲と条件は異なり、pH試験紙は製品の色見本で読みます。",
+      "assets": [
+        {
+          "id": "mfg37-required-indicator-color-recognition-diagram",
+          "file": "assets/manufacturing/recognition38/indicators-reference.png",
+          "width": 1600,
+          "height": 1200,
+          "altJa": "三つの指示薬を別の行に配置。フェノールフタレインは無色と赤色系、メチルオレンジは赤色系と黄色系、BTBは黄色・緑色・青色。色名も併記し、数値pH目盛りや全製品共通の校正表とはしない。",
+          "sha256": "8770d7b16b1ff91f666b7b5d90f3747df2e42ceed0a27467f7923c9072d4e358"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg37-required-indicator-color-recognition-q01",
+          "lessonId": "mfg1-surface-completion37-lesson-003",
+          "stemJa": "図のフェノールフタレイン行に対応する代表的な呈色の組合せはどれか。",
+          "optionsJa": [
+            "無色から赤色系。",
+            "常に緑色だけ。",
+            "青色から黒色。",
+            "全てのpHで黄色。"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "図では無色側と赤色系側を区別している。",
+            "緑色だけという対応ではない。",
+            "この行に青色から黒色という対応は示していない。",
+            "全範囲で黄色という指示薬ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 67,
+              "printedPage": 57
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 110,
+              "printedPage": 100
+            }
+          ],
+          "sourceHash": "248f52f623376c4f61d32b71c89ceb40ed6c52798db7895932b44d1def2093a3",
+          "imageAssetIds": [
+            "mfg37-required-indicator-color-recognition-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-indicator-color-recognition-diagram": "8770d7b16b1ff91f666b7b5d90f3747df2e42ceed0a27467f7923c9072d4e358"
+          }
+        },
+        {
+          "id": "mfg37-required-indicator-color-recognition-q02",
+          "lessonId": "mfg1-surface-completion37-lesson-003",
+          "stemJa": "図のBTB行で、中間の色見本に示した色はどれか。",
+          "optionsJa": [
+            "赤色",
+            "無色",
+            "黒色",
+            "緑色"
+          ],
+          "correctIndex": 3,
+          "optionReasonsJa": [
+            "このBTB行の中間の色は赤ではない。",
+            "このBTB行の中間の色は無色ではない。",
+            "このBTB行の中間に黒色は示していない。",
+            "BTB行は黄色・緑色・青色という代表的な対応を示している。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 67,
+              "printedPage": 57
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 110,
+              "printedPage": 100
+            }
+          ],
+          "sourceHash": "f58616bd9a021b52a273e51d8cd42a3e3bc759b146b753b7e30b6adf16a5f431",
+          "imageAssetIds": [
+            "mfg37-required-indicator-color-recognition-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-indicator-color-recognition-diagram": "8770d7b16b1ff91f666b7b5d90f3747df2e42ceed0a27467f7923c9072d4e358"
+          }
+        },
+        {
+          "id": "mfg37-required-indicator-color-recognition-q03",
+          "lessonId": "mfg1-surface-completion37-lesson-003",
+          "stemJa": "種類不明のpH試験紙が赤色に見えた。適切な判断はどれか。",
+          "optionsJa": [
+            "図だけで数値pHを確定。",
+            "製品名・使用条件・その製品の色見本を確認。",
+            "どの指示薬でも赤なら同じpH。",
+            "試験紙の種類は記録しない。"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "この図は全試験紙の数値校正表ではない。",
+            "試験紙の製品と使用条件に対応する色見本が必要。",
+            "指示薬ごとに変色する範囲と条件は異なる。",
+            "種類や製品の記録は解釈に必要。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 67,
+              "printedPage": 57
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 110,
+              "printedPage": 100
+            }
+          ],
+          "sourceHash": "aca92e0d166f6fee5972b0fb5e814e52835614aa2dfc71e94f6fe13cf75e9e95",
+          "imageAssetIds": [
+            "mfg37-required-indicator-color-recognition-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-indicator-color-recognition-diagram": "8770d7b16b1ff91f666b7b5d90f3747df2e42ceed0a27467f7923c9072d4e358"
+          }
+        },
+        {
+          "id": "mfg37-required-indicator-color-recognition-q04",
+          "lessonId": "mfg1-surface-completion37-lesson-003",
+          "stemJa": "図のメチルオレンジ行で、低いpH側から高いpH側への代表的な色の組合せはどれか。",
+          "optionsJa": [
+            "青色から黒色。",
+            "全て無色。",
+            "赤色系から黄色系。",
+            "全て緑色。"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "この行に青色から黒色という対応はない。",
+            "この行を全範囲で無色とはしていない。",
+            "図はメチルオレンジの赤色系側と黄色系側を示す。",
+            "緑色だけという対応ではない。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 67,
+              "printedPage": 57
+            },
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 110,
+              "printedPage": 100
+            }
+          ],
+          "imageAssetIds": [
+            "mfg37-required-indicator-color-recognition-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-indicator-color-recognition-diagram": "8770d7b16b1ff91f666b7b5d90f3747df2e42ceed0a27467f7923c9072d4e358"
+          },
+          "sourceHash": "db18c6051404ff069ab527c51050d5238f6f186f1bad665cdf994bb8fb319ad5"
+        }
+      ],
+      "status": "ai_source_compared_preview",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false,
+      "captionSourceHash": "b82e4e47ab0489a0a8be9da08e3409852b415343961165f8be92b43156abcfc7"
+    },
+    {
+      "id": "mfg37-required-metal-order-hydrogen-comparison",
+      "lessonIds": [
+        "mfg1-surface-lesson-027",
+        "mfg1-surface-completion37-lesson-008"
+      ],
+      "lessonSourceHashes": {
+        "mfg1-surface-lesson-027": "8494cfcd8849b3f8887ee2c43e00d91bd0d3c1612d2ba0196e50dc898394beeb",
+        "mfg1-surface-completion37-lesson-008": "e17a09d99688d56b781a52c0523a2c46f31254fed711cf30d62e2d0a1d544956"
+      },
+      "titleJa": "金属と水素の相対順序を条件付きで比べる",
+      "captionJa": "資料の実際の表は水素を含む15項目です。大きい側からLi、Na、Mg、Al、Zn、Fe、Ni、Sn、Pb、H、Cu、Hg、Ag、Pt、Auと読みます。水素はPbとCuの間です。この順序だけで全ての酸への溶解、腐食速度や実作業条件を決めません。",
+      "assets": [
+        {
+          "id": "mfg37-required-metal-order-hydrogen-comparison-diagram",
+          "file": "assets/manufacturing/recognition38/metal-order-reference.png",
+          "width": 1600,
+          "height": 1200,
+          "altJa": "独立した三段の順序カード。Li、Na、Mg、Al、Zn、Fe、Ni、Sn、Pb、H、Cu、Hg、Ag、Pt、Auの15項目を番号と矢印でつなぎ、水素を強調する。保護皮膜・液・温度の条件を別枠に示す。",
+          "sha256": "e6fea333b631c49aa7e76673f1a3d4b5853381c81bbab95034c76c2bd4642770"
+        }
+      ],
+      "questions": [
+        {
+          "id": "mfg37-required-metal-order-hydrogen-comparison-q01",
+          "lessonId": "mfg1-surface-completion37-lesson-008",
+          "stemJa": "図の水素Hの直前と直後の組合せはどれか。",
+          "optionsJa": [
+            "FeとNi",
+            "AgとPt",
+            "PbとCu",
+            "LiとNa"
+          ],
+          "correctIndex": 2,
+          "optionReasonsJa": [
+            "FeとNiは水素の直前・直後ではない。",
+            "AgとPtは水素より小さい側の別の位置。",
+            "図ではPb、H、Cuの順に並ぶ。",
+            "LiとNaは大きい側の先頭の位置。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 114,
+              "printedPage": 104
+            }
+          ],
+          "sourceHash": "9daaaf76423de92c6ab7e1b9491d4c130a7d439d9d125e6fc611d35f044aefdb",
+          "imageAssetIds": [
+            "mfg37-required-metal-order-hydrogen-comparison-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-metal-order-hydrogen-comparison-diagram": "e6fea333b631c49aa7e76673f1a3d4b5853381c81bbab95034c76c2bd4642770"
+          }
+        },
+        {
+          "id": "mfg37-required-metal-order-hydrogen-comparison-q02",
+          "lessonId": "mfg1-surface-completion37-lesson-008",
+          "stemJa": "図でNiとSnを比べたとき、大きい側に先にあるものはどれか。",
+          "optionsJa": [
+            "Ni",
+            "Sn",
+            "必ず同じ位置",
+            "図にはどちらもない"
+          ],
+          "correctIndex": 0,
+          "optionReasonsJa": [
+            "図の順序ではNiがSnより大きい側にある。",
+            "SnはNiの次で、小さい側にある。",
+            "二つは別の位置に並ぶ。",
+            "NiもSnも図に示している。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 114,
+              "printedPage": 104
+            }
+          ],
+          "sourceHash": "2b0995a4e17cb3d2ffd7c2b0b8d78a06120237e571a287d2785eb6c37c023094",
+          "imageAssetIds": [
+            "mfg37-required-metal-order-hydrogen-comparison-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-metal-order-hydrogen-comparison-diagram": "e6fea333b631c49aa7e76673f1a3d4b5853381c81bbab95034c76c2bd4642770"
+          }
+        },
+        {
+          "id": "mfg37-required-metal-order-hydrogen-comparison-q03",
+          "lessonId": "mfg1-surface-completion37-lesson-008",
+          "stemJa": "Alが水素より大きい側にある。この情報からの判断として適切なのはどれか。",
+          "optionsJa": [
+            "どの酸にも必ず同じ速さで溶ける。",
+            "保護皮膜、液と温度などの条件も確認する。",
+            "実験を無断で始めてよい。",
+            "全ての金属の腐食速度を順序だけで決める。"
+          ],
+          "correctIndex": 1,
+          "optionReasonsJa": [
+            "相対順序だけで全ての酸・速度は決まらない。",
+            "アルミニウムの保護皮膜など、実際の条件を分けて考える。",
+            "順序表は実験や薬液作業の許可ではない。",
+            "腐食は保護皮膜や環境などにも影響される。"
+          ],
+          "sources": [
+            {
+              "documentId": "mfg1-surface-source",
+              "pdfPage": 114,
+              "printedPage": 104
+            }
+          ],
+          "sourceHash": "b960fa811357ba6c15cb13196b66c08a4dbb622e485c862ebc306b226d0febeb",
+          "imageAssetIds": [
+            "mfg37-required-metal-order-hydrogen-comparison-diagram"
+          ],
+          "imageAssetHashes": {
+            "mfg37-required-metal-order-hydrogen-comparison-diagram": "e6fea333b631c49aa7e76673f1a3d4b5853381c81bbab95034c76c2bd4642770"
+          }
+        }
+      ],
+      "status": "ai_source_compared_preview",
+      "nativeReviewed": false,
+      "domainReviewed": false,
+      "humanReviewed": false,
+      "captionSourceHash": "c9109a3ba5881d453b836a6540a1d02d63721bb3ebdfb2e0333e6e8d82aa3ec8"
+    }
+  ]
+}

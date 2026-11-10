@@ -48,6 +48,17 @@ export function applyLessonTranslations<T extends LocalizableSession>(session:T,
  }))} as T;
 }
 
+/** Keep catalog/ID reads cheap; resolve exactly this session's overlay on demand. */
+export function deferLessonTranslations<T extends LocalizableSession>(session:T,loadBundle:()=>TranslationBundle):T{
+ let resolved:T|undefined;
+ const translated=()=>resolved??(resolved=applyLessonTranslations(session,loadBundle()));
+ const deferred={...session};
+ for(const key of ['titleTranslations','keyTerms','illustrations','clusters'] as const){
+  Object.defineProperty(deferred,key,{enumerable:true,configurable:true,get:()=>translated()[key]});
+ }
+ return deferred;
+}
+
 /** Validate each locale independently before combining overlays for one lesson. */
 export function applyLocaleLessonBundles<T extends LocalizableSession>(session:T,
  bundles:readonly (TranslationBundle | undefined)[]):T {

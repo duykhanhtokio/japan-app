@@ -18,7 +18,7 @@ async function load(overrides={}){
   for(const loc of locales){const row=d.locales[loc][i];assert(row&&row[0]&&row[2]);assert.equal(row[1].length,4);assert.equal(new Set(row[1]).size,4);assert.equal(d.localeSourceHashes[loc][i],sourceHash);assert.equal(d.reasonPrefixes[loc].length,2);}
  }
  assert.deepEqual(counts,[2,2,2,2]);
- const a=await load(),exam=a.manufacturingSupplementExams('mechanical')[0];assert(exam);assert.equal(a.manufacturingSupplementExams('electrical').length,0);assert.equal(a.manufacturingSupplementExams('surface').length,0);
+ const a=await load(),exam=a.manufacturingSupplementExams('mechanical')[0];assert(exam);const oldElectricalIds=['mfg1-electrical-boolean-supplement-01','mfg1-electrical-energy-supplement'];assert.deepEqual(a.manufacturingSupplementExams('electrical').filter(e=>oldElectricalIds.includes(e.id)).map(e=>e.id),oldElectricalIds);assert.equal(a.manufacturingSupplementExams('surface').length,0);
  let pairs=0;for(const q of exam.questions)for(const loc of locales){const t=a.manufacturingSupplementTranslation(q,loc);assert(t&&t.stem&&t.options.length===4&&t.reasons.length===4);assert.equal(t.sourceHash,q.sourceHash);pairs++;}
  assert.equal(a.manufacturingSupplementTranslation(exam.questions[0],'unknown'),null);
  assert.equal(a.manufacturingSupplementTranslation({...exam.questions[0],sourceHash:'0'.repeat(64)},'vi'),null);
@@ -26,7 +26,7 @@ async function load(overrides={}){
  assert.deepEqual(a.restoreTestAttempt(JSON.stringify(attempt),exam),attempt);assert.equal(a.restoreTestAttempt(JSON.stringify(attempt),{...exam,revision:'stale'}),null);
  assert.equal(a.gradeTest(exam,exam.questions.map(q=>q.correctIndex)).correct,8);assert.equal(a.gradeTest(exam,Array(8).fill(null)).unanswered,8);
  assert.notEqual(a.manufacturingExamKey('a','mechanical',exam.id),a.manufacturingExamKey('b','mechanical',exam.id));
- const stale=JSON.parse(JSON.stringify(d));stale.guideSourceHash='0'.repeat(64);const b=await load({'supplement-practice.json':stale});assert.deepEqual(b.manufacturingSupplementExams('mechanical'),[]);assert.equal(b.manufacturingSupplementTranslation(exam.questions[0],'vi'),null);
+ const stale=JSON.parse(JSON.stringify(d));stale.guideSourceHash='0'.repeat(64);const b=await load({'supplement-practice.json':stale});assert.equal(b.manufacturingSupplementExams('mechanical').some(e=>e.id===d.id),false);assert.equal(b.manufacturingSupplementExams('mechanical').some(e=>e.id==='mfg1-tolerance-class-supplement'),true);assert.equal(b.manufacturingSupplementTranslation(exam.questions[0],'vi'),null);
  const badTarget=JSON.parse(JSON.stringify(d));badTarget.localeSourceHashes.vi[0]='0'.repeat(64);const c=await load({'supplement-practice.json':badTarget});assert.equal(c.manufacturingSupplementTranslation(exam.questions[0],'vi'),null);
  console.log(JSON.stringify({status:'PASS',questions:8,translationPairs:pairs,balancedAnswers:counts,staleGuideSuppressed:true,staleTargetSuppressed:true,staleAttemptRejected:true,originalWeeklyQuestionsPreserved:456,nativeReviewed:false,domainReviewed:false}));
 })().catch(e=>{console.error(e);process.exitCode=1});

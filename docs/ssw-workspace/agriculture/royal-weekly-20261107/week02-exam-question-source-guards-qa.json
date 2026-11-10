@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "scope": "question-source-aware quiz image readiness and renderer; two week02 questions source reviewed",
+  "baselineCommit": "72cd4f1121086ec95087d86e083c347bd73b425b",
+  "problem": "Quiz illustration resolver formerly accepted a current bitmap and illustration revision even when current question or figure-linked lesson source changed. Answer and submit readiness used the same incomplete resolver.",
+  "change": "Actual question lessonId and lessonSourceHash forwarded to both readiness and renderer. Resolver verifies canonical current question lesson/hash/course and independently every course-applicable figure-linked lesson hash, requiring source dependencies and asset key. Existing crosslesson reuse is preserved without semantic endorsement.",
+  "preserved": [
+    "allquestionIDs,stems,options,reasons,correctindices,illustrationrevisions",
+    "all63illustrationdefinitions",
+    "allfigure/locale/sourceJSON",
+    "allimagebytesandnativecontrolledgeometry",
+    "existingcrosslessonreusepatterns"
+  ],
+  "semanticReview": [
+    {
+      "questionId": "agr-1-m05-q29",
+      "illustrationId": "agr-exam-a-20261031-figure-067",
+      "figureId": "agr-f40-general-seeder",
+      "sourcePages": [
+        "AGR-S1 PDF11/printed5",
+        "AGR-S2 PDF14/printed12"
+      ],
+      "assetSha256": "1c8fb4dad108a9965420a8502882f34275f6fc3de58d05a38a73e996001f58d5",
+      "actualPixelAndQuestionReview": "Fullsize actual image opened; visible seed hopper, handles and near-ground sowing part support option2播種機. Otheroptions grasscutter,sprayer,transplanter differ; allfourreasontexts checked; no operational or internal-mechanism certification.",
+      "canonicalLesson": "agr-germination",
+      "sourceHash": "ff847c65d80c262c1c3e7d4de04312c4c16f8dcf438f286560528b0cc9348810"
+    },
+    {
+      "questionId": "agr-1-m03-q01",
+      "illustrationId": "agr-exam-a-20261031-figure-069",
+      "figureId": "agr-f40-general-transplanter",
+      "sourcePages": [
+        "AGR-S1 PDF13/printed7",
+        "AGR-S2 PDF16/printed14"
+      ],
+      "assetSha256": "2ae2b9b317a1d6849bd6f416eb87a0fd02dbab659a4b9690073daa6a45a228fe",
+      "actualPixelAndQuestionReview": "Fullsize actual image opened; seedling tray, wheels and planting-side parts support option4移植機 versus seeder,rice-mill,sprayer. Allfourreasontexts checked; illustration not proof of product-specific transport/feeding internals or safe operation.",
+      "canonicalLesson": "agr-nursery",
+      "sourceHash": "c1a937413a433a99ba32d9e8c6a6a18f62ee806fa325596e9556fe46d4c8bc17"
+    }
+  ],
+  "sourcePDFSha256": {
+    "AGR-S1": "20e865c154d43f1d22c44bc36e00179ca5dea42b248f57a46fd7205a3241eb3f",
+    "AGR-S2": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12"
+  },
+  "validation": {
+    "runtime": "PASS81actualmockquestion-image references compatible;weeklyimagequestions0. Mechanical compatibility only, not81semanticreviews.",
+    "week02": "PASS2actual production renderer/actualCourse readinessexpression/actualanswer+submit disabledexpressions; actualassetmap and actualZoomableFigure with exact2PNGbytes",
+    "negativeCases": 34,
+    "negativeCoverage": [
+      "stale/missing/mismatchedquestionhashandlesson",
+      "canonicalsourcehashandcourse",
+      "stale/missingfigurebindingsandunknownlinkedlesson",
+      "missingscope/assetkey/figure",
+      "illustrationrevisionandassetSHA",
+      "missingquestioncontext"
+    ],
+    "callsiteTypecheck": "PASS20actualsector/sharedTSXfiles audited;1actualCoursecaller; actualreadiness+JSXcall expressions typed against canonicalWeeklyQuestionshape and actualcomponent+JSON;2omittedcontext fixtures rejected;minimalReact/RNambientnotwholeapp"
+  },
+  "pendingCrossLessonSemanticReview": [
+    {
+      "id": "agr-1-m07-q40",
+      "illustrationId": "agr-ghe-e",
+      "illustrationRevision": "v2-layout-20261107",
+      "lessonId": "agr-facility-env-grafted-seedlings",
+      "lessonSourceHash": "ca6d0c289c016916a37c9103e8d4160fc1497c9b1182ac98a286c0dc610f491b",
+      "level": "1",
+      "figureId": "agr-f40-seedling-condition-comparison",
+      "figureLessonIds": [
+        "agr-facility-env-growth-observation"
+      ],
+      "state": "pending_source_question_options_reasons_pixel_semantic_review"
+    },
+    {
+      "id": "agr-1-m08-q15",
+      "illustrationId": "agr-ghe-h",
+      "illustrationRevision": "v1",
+      "lessonId": "agr-facility-env-temperature-reading",
+      "lessonSourceHash": "0aca8e25834a8c584831412352d15fbc19cec8d799b02828ad644bb71fd541e0",
+      "level": "1",
+      "figureId": "agr-f40-temperature-instrument-source-examples",
+      "figureLessonIds": [
+        "agr-facility-env-growth-observation"
+      ],
+      "state": "pending_source_question_options_reasons_pixel_semantic_review"
+    },
+    {
+      "id": "agr-1-m08-q39",
+      "illustrationId": "agr-ghe-h",
+      "illustrationRevision": "v1",
+      "lessonId": "agr-facility-env-temperature-reading",
+      "lessonSourceHash": "0aca8e25834a8c584831412352d15fbc19cec8d799b02828ad644bb71fd541e0",
+      "level": "1",
+      "figureId": "agr-f40-temperature-instrument-source-examples",
+      "figureLessonIds": [
+        "agr-facility-env-growth-observation"
+      ],
+      "state": "pending_source_question_options_reasons_pixel_semantic_review"
+    },
+    {
+      "id": "agr-2-m09-q30",
+      "illustrationId": "agr-2-m09-figure-q30",
+      "illustrationRevision": "v2-layout-20261107",
+      "lessonId": "agr-facility-env-grafted-seedlings",
+      "lessonSourceHash": "ca6d0c289c016916a37c9103e8d4160fc1497c9b1182ac98a286c0dc610f491b",
+      "level": "2",
+      "figureId": "agr-f40-seedling-condition-comparison",
+      "figureLessonIds": [
+        "agr-facility-env-growth-observation"
+      ],
+      "state": "pending_source_question_options_reasons_pixel_semantic_review"
+    },
+    {
+      "id": "agr-2-m09-q34",
+      "illustrationId": "agr-2-m09-figure-q34",
+      "illustrationRevision": "v1",
+      "lessonId": "agr-fruit-foundation-graft-types",
+      "lessonSourceHash": "ac1d735322cd977e92f117662881da0a14a9475dd438e33d54410bde4ce563da",
+      "level": "2",
+      "figureId": "agr-f40-graft-cambium-contact-corrected-v2",
+      "figureLessonIds": [
+        "agr-fruit-foundation-graft-alignment"
+      ],
+      "state": "pending_source_question_options_reasons_pixel_semantic_review"
+    }
+  ],
+  "translationReconciliation": {
+    "remoteLocaleBlob": "bc9d65b8712e353d75fa0e7071b6a951cfb844ff",
+    "lotusAnd4EquipmentRows": "externalrows retained;PASS120actualSSRrenders/10contexts/275rejects;ourunpublishedlotusandgerminationdraftsretired",
+    "thinning": "controlledrecordgenericlocalerowabsent;leftuntouched"
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "durationTested": false,
+  "releaseReady": false,
+  "wholeWeekComplete": false
+}

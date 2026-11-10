@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "scope": "Actual reader integration for day08 contextual Royal art alongside retained brain figure",
+  "status": "self_checks_pass_pending_coordinator_persistence",
+  "problem": "DayReading chose controlled figures instead of contextual cover whenever figures.length>0; day08 asset was bound but not visible.",
+  "change": "Render additional day-scoped Royal context after existing controlled figures; guard requires both figures and explicit Royal override. Existing week01/day10-12 behavior unchanged.",
+  "component": "src/components/kaigo/WeeklyKaigo.tsx",
+  "componentSha256": "74f417fb884375b68eb4d7db02ac040066b0ebf15d75c169338fab3edd22ad7b",
+  "checks": [
+    {
+      "command": "node /tmp/kaigo-day08-reader-check.cjs",
+      "result": "PASS",
+      "method": "Current DayReading TSX transpiled via esbuild and rendered with ReactDOMServer. Production Royal artwork table and week02 Japanese metadata used; platform components, sections, locale, backdrop dependencies mocked.",
+      "assertions": [
+        "day08 original brain figure remains present",
+        "day08 new shoulder-context WebP and canonical Japanese caption present",
+        "day10 existing context remains single, no supplemental duplicate"
+      ]
+    }
+  ],
+  "limitations": {
+    "actualBrowserOrNativeDevice": false,
+    "fullReaderSectionsAndTranslationsExercised": false,
+    "technicalAnatomySourceAuditAccepted": false,
+    "humanReviewed": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "wholeWeekAccepted": false
+  },
+  "preservation": "No canonical text, translations, questions, revisions, completion keys, controlled figure definitions or legacy artwork bindings changed."
+}

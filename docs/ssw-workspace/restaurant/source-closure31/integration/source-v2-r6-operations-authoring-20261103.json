@@ -1,0 +1,521 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "4832f53f8407298126fa43c104a266972f2a3831",
+  "groups": [
+    "service-adjusted-labor-indicator",
+    "cumulative-sales-ABC-classification"
+  ],
+  "questions": [
+    {
+      "id": "rst31-v2-r6-ops-q001",
+      "lessonId": "rst-2-ops-02",
+      "unitIds": [
+        "rst-2-operations-k009"
+      ],
+      "factIds": [
+        "rst31-operations2-f007"
+      ],
+      "objectiveJa": "人時接客数を計算し、サービス内容が違う店の数値を単純比較しない。",
+      "stemJa": "同じ日の客数が200人、総労働時間が40人時のフルサービス店を確認します。人時接客数と判断の組合せで適切なのはどれですか。",
+      "optionsJa": [
+        "5人／人時。客席サービスの時間も考え、サービス内容の違う店より低いだけで効率が悪いと決めない。",
+        "5人／人時。サービス内容に関係なく、他店より低ければ必ず効率が悪い。",
+        "0.2人／人時。総労働時間を客数で割って比較する。",
+        "200人／人時。総労働時間を使わず、客数だけで判断する。"
+      ],
+      "correctIndex": 0,
+      "explanationJa": "200÷40＝5人／人時です。客席サービスにも労働時間を使うため、サービス内容の違う店との数値の差だけで良否を決めません。",
+      "optionReasonsJa": [
+        "客数÷総労働時間を使い、必要なサービスに使う時間も考えています。",
+        "計算は正しいですが、サービス内容の違いを無視しています。",
+        "分子と分母が逆です。客数を総労働時間で割ります。",
+        "総労働時間を分母にしていないため、人時接客数ではありません。"
+      ],
+      "sourceRefs": [
+        {
+          "documentId": "rst-2-operations",
+          "pdfPages": [
+            7
+          ],
+          "section": "人時接客数とフルサービスの労働時間"
+        }
+      ]
+    },
+    {
+      "id": "rst31-v2-r6-ops-q002",
+      "lessonId": "rst-2-ops-06",
+      "unitIds": [
+        "rst-2-operations-k034"
+      ],
+      "factIds": [
+        "rst31-operations2-f030"
+      ],
+      "objectiveJa": "売上順の累積構成比を計算し、練習条件のABC区分を当てはめる。",
+      "stemJa": "同じ期間の売上はX商品50,000円、Y商品30,000円、Z商品20,000円です。売上の多い順に並べ、行末の累積構成比が70％以下をA、70％超90％以下をB、90％超をCとする練習です。Y商品の累積構成比と区分はどれですか。",
+      "optionsJa": [
+        "80％・B。この区切りは練習条件で、自店でも同じとは限らない。",
+        "30％・A。Y商品だけの構成比を累積構成比にする。",
+        "80％・A。商品が二番目なので累積構成比に関係なくAにする。",
+        "100％・C。全商品の合計をY商品の累積構成比にする。"
+      ],
+      "correctIndex": 0,
+      "explanationJa": "合計は100,000円です。Yの行末までの累積売上は50,000＋30,000＝80,000円なので80％となり、この練習条件ではBです。区切りは事業体により変わります。",
+      "optionReasonsJa": [
+        "XとYの売上を合計して全体で割り、指定された区切りを適用しています。",
+        "30％はYだけの構成比で、Xからの累積ではありません。",
+        "80％はこの練習のAの範囲を超えています。順位だけでは区分を決めません。",
+        "100％はZまで累積した値であり、Yの行末ではありません。"
+      ],
+      "sourceRefs": [
+        {
+          "documentId": "rst-2-operations",
+          "pdfPages": [
+            20
+          ],
+          "section": "ABC分析の降順・累積構成比・事業体別の区切り"
+        }
+      ]
+    }
+  ],
+  "review": {
+    "selfReviewed": true,
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false,
+    "learnerDurationMeasured": false
+  },
+  "locales": {
+    "en": [
+      [
+        "Calculate customers per staff-hour while accounting for service differences.",
+        "A full-service restaurant served200customers with40staff-hours on the same day. Which calculation and judgment are appropriate?",
+        [
+          "5customers/staff-hour. Consider time spent on table service; a lower figure than a different service model does not alone prove inefficiency.",
+          "5customers/staff-hour. A lower figure always means inefficiency, whatever the service model.",
+          "0.2customers/staff-hour. Divide staff-hours by customers.",
+          "200customers/staff-hour. Judge by customer count without staff-hours."
+        ],
+        "200÷40＝5customers/staff-hour. Table service takes labor time, so figures from different service models cannot alone establish good or bad efficiency.",
+        [
+          "Uses customers÷staff-hours and considers time needed for service.",
+          "The calculation is right, but the service difference is ignored.",
+          "The numerator and denominator are reversed. Divide customers by staff-hours.",
+          "Without staff-hours as the denominator, this is not customers per staff-hour."
+        ]
+      ],
+      [
+        "Calculate cumulative sales share and apply the stated ABC practice bands.",
+        "Same-period sales: X50,000yen, Y30,000yen, Z20,000yen. Sort by descending sales. For this exercise, cumulative share at row end≤70%isA,>70%to90%isB,>90%isC. What are Y’s cumulative share and category?",
+        [
+          "80%, B. These are exercise bands; a business may use different bands.",
+          "30%, A. Use Y’s individual share as its cumulative share.",
+          "80%, A. The second-ranked product is A regardless of cumulative share.",
+          "100%, C. Use the total for every product as Y’s cumulative share."
+        ],
+        "Total sales are100,000yen. Through Y, cumulative sales are50,000＋30,000＝80,000yen, or80%; this is B under the exercise bands. Bands vary by business.",
+        [
+          "Adds X and Y, divides by the total and applies the stated bands.",
+          "30%is Y’s individual share, not the cumulative share from X.",
+          "80%exceeds the exercise’s A band. Rank alone does not set the category.",
+          "100%is cumulative through Z, not through Y."
+        ]
+      ]
+    ],
+    "vi": [
+      [
+        "Tính số khách trên một giờ công và xét sự khác biệt về hình thức phục vụ.",
+        "Trong cùng một ngày, nhà hàng phục vụ tại bàn có200khách và tổng40giờ công. Cách tính và nhận định nào phù hợp?",
+        [
+          "5khách/giờ công. Cần xét thời gian phục vụ tại bàn; chỉ thấp hơn quán có hình thức phục vụ khác chưa chứng minh hiệu suất kém.",
+          "5khách/giờ công. Thấp hơn quán khác thì luôn kém hiệu quả, bất kể hình thức phục vụ.",
+          "0,2khách/giờ công. Lấy giờ công chia số khách.",
+          "200khách/giờ công. Chỉ xét số khách, không dùng giờ công."
+        ],
+        "200÷40＝5khách/giờ công. Phục vụ tại bàn cũng cần giờ công, nên không thể chỉ dựa vào chênh lệch chỉ số giữa hai hình thức phục vụ để kết luận tốt hay kém.",
+        [
+          "Dùng số khách÷tổng giờ công và xét thời gian cần cho dịch vụ.",
+          "Tính đúng nhưng bỏ qua khác biệt về hình thức phục vụ.",
+          "Đảo tử số và mẫu số. Phải lấy số khách chia tổng giờ công.",
+          "Không có tổng giờ công ở mẫu nên đây không phải số khách trên giờ công."
+        ]
+      ],
+      [
+        "Tính tỷ trọng doanh thu lũy kế và phân nhóm ABC theo điều kiện bài tập.",
+        "Doanh thu cùng kỳ: X50.000yên, Y30.000yên, Z20.000yên. Xếp giảm dần. Bài tập quy định lũy kế cuối dòng≤70%làA,>70%đến90%làB,>90%làC. Tỷ trọng lũy kế và nhóm của Y là gì?",
+        [
+          "80%・B. Đây là ngưỡng bài tập; doanh nghiệp có thể dùng ngưỡng khác.",
+          "30%・A. Coi tỷ trọng riêng của Y là tỷ trọng lũy kế.",
+          "80%・A. Xếp thứ hai nên luôn thuộc A, không xét lũy kế.",
+          "100%・C. Coi tổng toàn bộ sản phẩm là lũy kế đến Y."
+        ],
+        "Tổng100.000yên. Lũy kế đến Y là50.000＋30.000＝80.000yên, tức80%, thuộc B theo điều kiện bài tập. Ngưỡng có thể thay đổi theo doanh nghiệp.",
+        [
+          "Cộng doanh thu X và Y, chia tổng rồi áp dụng ngưỡng đã cho.",
+          "30%chỉ là tỷ trọng riêng của Y, chưa cộng dồn từ X.",
+          "80%vượt ngưỡng A của bài tập. Không phân nhóm chỉ theo thứ hạng.",
+          "100%là lũy kế đến Z, không phải cuối dòng Y."
+        ]
+      ]
+    ],
+    "id": [
+      [
+        "Hitung pelanggan per jam-orang dengan mempertimbangkan perbedaan layanan.",
+        "Pada hari yang sama, restoran layanan penuh melayani200pelanggan dengan total40jam-orang. Perhitungan dan penilaian mana yang tepat?",
+        [
+          "5pelanggan/jam-orang. Pertimbangkan waktu pelayanan meja; angka lebih rendah dari model layanan lain belum membuktikan inefisiensi.",
+          "5pelanggan/jam-orang. Angka lebih rendah selalu berarti tidak efisien, apa pun model layanannya.",
+          "0,2pelanggan/jam-orang. Bagi jam-orang dengan jumlah pelanggan.",
+          "200pelanggan/jam-orang. Nilai dari jumlah pelanggan tanpa jam-orang."
+        ],
+        "200÷40＝5pelanggan/jam-orang. Pelayanan meja juga memerlukan waktu kerja, sehingga perbedaan angka antarmodel layanan saja tidak menentukan efisiensi.",
+        [
+          "Menggunakan pelanggan÷jam-orang dan mempertimbangkan waktu layanan.",
+          "Hitungannya benar, tetapi perbedaan layanan diabaikan.",
+          "Pembilang dan penyebut terbalik. Bagi pelanggan dengan jam-orang.",
+          "Tanpa jam-orang sebagai penyebut, ini bukan pelanggan per jam-orang."
+        ]
+      ],
+      [
+        "Hitung persentase penjualan kumulatif dan gunakan batas ABC latihan.",
+        "Penjualan periode sama: X50.000yen, Y30.000yen, Z20.000yen. Urutkan menurun. Untuk latihan ini, kumulatif akhir baris≤70%adalahA,>70%sampai90%adalahB,>90%adalahC. Berapa kumulatif dan kategori Y?",
+        [
+          "80%, B. Batas ini untuk latihan; perusahaan dapat memakai batas berbeda.",
+          "30%, A. Gunakan persentase Y sendiri sebagai kumulatif.",
+          "80%, A. Produk urutan kedua adalah A tanpa melihat kumulatif.",
+          "100%, C. Gunakan total semua produk sebagai kumulatif Y."
+        ],
+        "Total100.000yen. Sampai Y, kumulatif50.000＋30.000＝80.000yen atau80%, sehingga B menurut batas latihan. Batas dapat berbeda menurut perusahaan.",
+        [
+          "Menjumlahkan X dan Y, membagi dengan total, lalu menerapkan batas.",
+          "30%hanya persentase Y, bukan kumulatif mulai X.",
+          "80%melampaui batas A latihan. Peringkat saja tidak menentukan kategori.",
+          "100%adalah kumulatif sampai Z, bukan sampai Y."
+        ]
+      ]
+    ],
+    "zh-CN": [
+      [
+        "计算每人时接待人数，并考虑服务方式的差异。",
+        "同一天，一家全服务餐厅接待200人，总劳动时间为40人时。哪组计算和判断恰当？",
+        [
+          "5人／人时。还要考虑桌边服务耗时，不能仅因低于不同服务方式的店就判定效率差。",
+          "5人／人时。不论服务方式如何，低于其他店就一定效率差。",
+          "0.2人／人时。用总人时除以客数。",
+          "200人／人时。不用总人时，只看客数。"
+        ],
+        "200÷40＝5人／人时。桌边服务也占用劳动时间，不能仅凭不同服务方式店铺之间的指标差异判断效率好坏。",
+        [
+          "使用客数÷总人时，并考虑必要服务所需时间。",
+          "计算正确，但忽略了服务方式差异。",
+          "分子分母颠倒，应以客数除以总人时。",
+          "没有以总人时为分母，因此不是每人时接待人数。"
+        ]
+      ],
+      [
+        "计算累计销售占比，按练习规定进行ABC分类。",
+        "同期销售额：X50,000日元、Y30,000日元、Z20,000日元。按销售额降序排列。本练习规定行末累计占比≤70%为A、>70%至90%为B、>90%为C。Y的累计占比和类别是什么？",
+        [
+          "80%・B。这是练习条件，企业实际分界可以不同。",
+          "30%・A。把Y自身的占比当成累计占比。",
+          "80%・A。Y排名第二，不论累计占比都归A。",
+          "100%・C。把全部商品总额当成累计到Y的值。"
+        ],
+        "总额100,000日元。累计到Y为50,000＋30,000＝80,000日元，即80%，按本练习条件属于B。分界会因企业而异。",
+        [
+          "累加X和Y，再除以总额，并应用规定分界。",
+          "30%仅是Y自身占比，没有从X累计。",
+          "80%超出本练习A的范围，不能只按排名分类。",
+          "100%是累计到Z，不是累计到Y。"
+        ]
+      ]
+    ],
+    "zh-TW": [
+      [
+        "計算每人時接待人數，並考慮服務方式的差異。",
+        "同一天，一家全服務餐廳接待200人，總勞動時間為40人時。哪組計算和判斷恰當？",
+        [
+          "5人／人時。還要考慮桌邊服務耗時，不能只因低於不同服務方式的店就判定效率差。",
+          "5人／人時。不論服務方式如何，低於其他店就一定效率差。",
+          "0.2人／人時。用總人時除以客數。",
+          "200人／人時。不用總人時，只看客數。"
+        ],
+        "200÷40＝5人／人時。桌邊服務也占用勞動時間，不能只憑不同服務方式店家之間的指標差異判斷效率好壞。",
+        [
+          "使用客數÷總人時，並考慮必要服務所需時間。",
+          "計算正確，但忽略了服務方式差異。",
+          "分子分母顛倒，應以客數除以總人時。",
+          "沒有以總人時為分母，因此不是每人時接待人數。"
+        ]
+      ],
+      [
+        "計算累計銷售占比，按練習規定進行ABC分類。",
+        "同期銷售額：X50,000日圓、Y30,000日圓、Z20,000日圓。按銷售額遞減排列。本練習規定列末累計占比≤70%為A、>70%至90%為B、>90%為C。Y的累計占比和類別是什麼？",
+        [
+          "80%・B。這是練習條件，企業實際分界可以不同。",
+          "30%・A。把Y本身占比當成累計占比。",
+          "80%・A。Y排名第二，不論累計占比都歸A。",
+          "100%・C。把全部商品總額當成累計到Y的值。"
+        ],
+        "總額100,000日圓。累計到Y為50,000＋30,000＝80,000日圓，即80%，按本練習條件屬於B。分界會因企業而異。",
+        [
+          "累加X和Y，再除以總額，並套用規定分界。",
+          "30%只是Y本身占比，沒有從X累計。",
+          "80%超出本練習A的範圍，不能只按排名分類。",
+          "100%是累計到Z，不是累計到Y。"
+        ]
+      ]
+    ],
+    "hi": [
+      [
+        "सेवा के अंतर को ध्यान में रखकर प्रति श्रम-घंटा ग्राहकों की संख्या निकालें।",
+        "एक ही दिन पूर्ण सेवा वाले रेस्तराँ में200ग्राहक आए और कुल40श्रम-घंटे लगे। कौन-सी गणना और व्याख्या सही है?",
+        [
+          "5ग्राहक/श्रम-घंटा। मेज़ पर सेवा का समय भी देखें; दूसरे सेवा मॉडल से कम आँकड़ा अकेले खराब दक्षता सिद्ध नहीं करता।",
+          "5ग्राहक/श्रम-घंटा। सेवा मॉडल चाहे जो हो, कम आँकड़ा हमेशा खराब दक्षता है।",
+          "0.2ग्राहक/श्रम-घंटा। श्रम-घंटों को ग्राहकों से भाग दें।",
+          "200ग्राहक/श्रम-घंटा। श्रम-घंटों के बिना केवल ग्राहक संख्या देखें।"
+        ],
+        "200÷40＝5ग्राहक/श्रम-घंटा। मेज़ पर सेवा में भी श्रम समय लगता है, इसलिए अलग सेवा मॉडल के आँकड़ों का अंतर अकेले दक्षता तय नहीं करता।",
+        [
+          "ग्राहक÷कुल श्रम-घंटे लेकर आवश्यक सेवा का समय भी देखा गया है।",
+          "गणना सही है, लेकिन सेवा के अंतर को अनदेखा किया गया है।",
+          "अंश और हर उलटे हैं। ग्राहकों को कुल श्रम-घंटों से भाग दें।",
+          "कुल श्रम-घंटे हर में नहीं हैं, इसलिए यह प्रति श्रम-घंटा ग्राहक नहीं है।"
+        ]
+      ],
+      [
+        "संचयी बिक्री प्रतिशत निकालकर अभ्यास की ABC सीमाएँ लागू करें।",
+        "एक अवधि की बिक्री:X50,000येन,Y30,000येन,Z20,000येन। बिक्री के घटते क्रम में रखें। इस अभ्यास में पंक्ति के अंत का संचयी प्रतिशत≤70%हो तोA,>70%से90%तकB,>90%हो तोC। Y का संचयी प्रतिशत और वर्ग क्या है?",
+        [
+          "80%, B। ये अभ्यास की सीमाएँ हैं; व्यवसाय अलग सीमाएँ रख सकता है।",
+          "30%, A। Y के अकेले हिस्से को संचयी हिस्सा मानें।",
+          "80%, A। दूसरा स्थान होने से संचयी प्रतिशत की परवाह किए बिनाA।",
+          "100%, C। सभी उत्पादों का कुल Y का संचयी मान लें।"
+        ],
+        "कुल100,000येन है। Y तक संचयी बिक्री50,000＋30,000＝80,000येन अर्थात80%है, इसलिए अभ्यास की शर्त परB। सीमाएँ व्यवसाय के अनुसार बदलती हैं।",
+        [
+          "X और Y जोड़कर कुल से भाग दिया और निर्धारित सीमाएँ लगाईं।",
+          "30%केवल Y का हिस्सा है, X से संचयी नहीं।",
+          "80%अभ्यास कीAसीमा से अधिक है। केवल क्रम से वर्ग तय नहीं होता।",
+          "100%Zतक का संचयी है, Yतक का नहीं।"
+        ]
+      ]
+    ],
+    "bn": [
+      [
+        "সেবার পার্থক্য বিবেচনা করে প্রতি শ্রমঘণ্টায় অতিথির সংখ্যা হিসাব করুন।",
+        "একই দিনে পূর্ণ সেবার রেস্তোরাঁয়200জন অতিথি এসেছে এবং মোট40শ্রমঘণ্টা লেগেছে। কোন হিসাব ও বিচার সঠিক?",
+        [
+          "5জন/শ্রমঘণ্টা। টেবিল সেবার সময়ও বিবেচনা করুন; অন্য ধরনের সেবার দোকানের চেয়ে কম হলেই অদক্ষ বলা যায় না।",
+          "5জন/শ্রমঘণ্টা। সেবার ধরন যাই হোক, কম মান মানেই সবসময় অদক্ষতা।",
+          "0.2জন/শ্রমঘণ্টা। শ্রমঘণ্টাকে অতিথির সংখ্যা দিয়ে ভাগ করুন।",
+          "200জন/শ্রমঘণ্টা। শ্রমঘণ্টা বাদ দিয়ে কেবল অতিথির সংখ্যা দেখুন।"
+        ],
+        "200÷40＝5জন/শ্রমঘণ্টা। টেবিল সেবাতেও শ্রমসময় লাগে, তাই ভিন্ন সেবার দোকানের সংখ্যাগত পার্থক্য দিয়েই দক্ষতা বিচার করা যায় না।",
+        [
+          "অতিথি÷মোট শ্রমঘণ্টা ব্যবহার করে প্রয়োজনীয় সেবার সময়ও বিবেচনা করেছে।",
+          "হিসাব সঠিক, কিন্তু সেবার পার্থক্য উপেক্ষা করেছে।",
+          "লব ও হর উল্টো। অতিথির সংখ্যাকে মোট শ্রমঘণ্টা দিয়ে ভাগ করতে হবে।",
+          "হরে মোট শ্রমঘণ্টা নেই, তাই এটি প্রতি শ্রমঘণ্টায় অতিথি নয়।"
+        ]
+      ],
+      [
+        "বিক্রির ক্রমযোজিত অংশ হিসাব করে অনুশীলনের ABC সীমা প্রয়োগ করুন।",
+        "একই সময়ের বিক্রি:X50,000ইয়েন,Y30,000ইয়েন,Z20,000ইয়েন। বিক্রির অবরোহ ক্রমে সাজান। অনুশীলনে সারিশেষের ক্রমযোজিত অংশ≤70%হলেA,>70%থেকে90%হলেB,>90%হলেC। Y-এর ক্রমযোজিত অংশ ও শ্রেণি কী?",
+        [
+          "80%, B। এগুলো অনুশীলনের সীমা; প্রতিষ্ঠান ভিন্ন সীমা নিতে পারে।",
+          "30%, A। Y-এর একক অংশকেই ক্রমযোজিত অংশ ধরুন।",
+          "80%, A। দ্বিতীয় স্থানে থাকায় ক্রমযোজিত অংশ না দেখেইA।",
+          "100%, C। সব পণ্যের মোটকে Y পর্যন্ত ক্রমযোজিত অংশ ধরুন।"
+        ],
+        "মোট100,000ইয়েন। Y পর্যন্ত ক্রমযোজিত বিক্রি50,000＋30,000＝80,000ইয়েন, অর্থাৎ80%; অনুশীলনের শর্তেB। প্রতিষ্ঠানভেদে সীমা বদলায়।",
+        [
+          "X ও Y যোগ করে মোট দিয়ে ভাগ করেছে এবং নির্দিষ্ট সীমা প্রয়োগ করেছে।",
+          "30%শুধু Y-এর অংশ, X থেকে ক্রমযোজিত নয়।",
+          "80%অনুশীলনেরAসীমার বাইরে। শুধু অবস্থান দিয়ে শ্রেণি হয় না।",
+          "100%হলোZপর্যন্ত ক্রমযোজিত অংশ, Yপর্যন্ত নয়।"
+        ]
+      ]
+    ],
+    "ne": [
+      [
+        "सेवाको भिन्नता विचार गरी प्रति श्रम-घण्टा ग्राहक संख्या निकाल्नुहोस्।",
+        "एउटै दिन पूर्ण सेवा दिने रेस्टुराँमा200ग्राहक आए र कुल40श्रम-घण्टा लाग्यो। कुन गणना र निर्णय उचित छ?",
+        [
+          "5ग्राहक/श्रम-घण्टा। टेबल सेवाको समय पनि विचार गर्नुपर्छ; फरक सेवा ढाँचाको पसलभन्दा कम हुँदैमा अक्षमता प्रमाणित हुँदैन।",
+          "5ग्राहक/श्रम-घण्टा। सेवा ढाँचा जस्तो भए पनि कम संख्या सधैँ अक्षमता हो।",
+          "0.2ग्राहक/श्रम-घण्टा। श्रम-घण्टालाई ग्राहक संख्याले भाग गर्ने।",
+          "200ग्राहक/श्रम-घण्टा। श्रम-घण्टा नलिई ग्राहक संख्या मात्र हेर्ने।"
+        ],
+        "200÷40＝5ग्राहक/श्रम-घण्टा। टेबल सेवामा पनि श्रम समय लाग्ने हुँदा फरक सेवा ढाँचाबीचको अंकको अन्तरले मात्र दक्षता तय हुँदैन।",
+        [
+          "ग्राहक÷कुल श्रम-घण्टा प्रयोग गरी आवश्यक सेवाको समय पनि हेरेको छ।",
+          "गणना सही छ तर सेवाको भिन्नता बेवास्ता गरेको छ।",
+          "अंश र हर उल्टा छन्। ग्राहकलाई कुल श्रम-घण्टाले भाग गर्नुपर्छ।",
+          "हरमा कुल श्रम-घण्टा छैन, त्यसैले यो प्रति श्रम-घण्टा ग्राहक होइन।"
+        ]
+      ],
+      [
+        "सञ्चित बिक्री प्रतिशत निकालेर अभ्यासको ABC सीमा लागू गर्नुहोस्।",
+        "एउटै अवधिको बिक्री:X50,000येन,Y30,000येन,Z20,000येन। बिक्री घट्दो क्रममा राख्नुहोस्। अभ्यासमा पङ्क्तिको अन्त्यमा सञ्चित प्रतिशत≤70%भएA,>70%देखि90%भएB,>90%भएC। Yको सञ्चित प्रतिशत र वर्ग कुन हो?",
+        [
+          "80%, B। यी अभ्यासका सीमा हुन्; व्यवसायका सीमा फरक हुन सक्छन्।",
+          "30%, A। Yको आफ्नै हिस्सालाई सञ्चित हिस्सा मान्ने।",
+          "80%, A। दोस्रो स्थान भएकाले सञ्चित प्रतिशत नहेरीAमान्ने।",
+          "100%, C। सबै वस्तुको जम्मालाई Yसम्मको सञ्चित मान्ने।"
+        ],
+        "जम्मा100,000येन हो। Yसम्म सञ्चित बिक्री50,000＋30,000＝80,000येन अर्थात80%हुन्छ, त्यसैले अभ्यासको शर्तअनुसारB। सीमा व्यवसायअनुसार बदलिन्छ।",
+        [
+          "X र Y जोडेर जम्माले भाग गरी तोकिएको सीमा लगाएको छ।",
+          "30%Yको मात्र हिस्सा हो, Xदेखि सञ्चित होइन।",
+          "80%अभ्यासकोAसीमाभन्दा बढी हो। स्थानले मात्र वर्ग तय गर्दैन।",
+          "100%Zसम्मको सञ्चित हो, Yसम्मको होइन।"
+        ]
+      ]
+    ],
+    "my": [
+      [
+        "ဝန်ဆောင်မှုပုံစံကွာခြားမှုကို ထည့်စဉ်းစား၍ လူလုပ်အားတစ်နာရီလျှင် ဧည့်သည်ဦးရေတွက်ပါ။",
+        "တစ်ရက်တည်းတွင် အပြည့်အဝဝန်ဆောင်မှုပေးသောစားသောက်ဆိုင်၌ ဧည့်သည်200ဦးနှင့် စုစုပေါင်းလူလုပ်အား40နာရီရှိသည်။ မည်သည့်တွက်ချက်မှုနှင့် သုံးသပ်ချက်က သင့်လျော်သလဲ။",
+        [
+          "5ဦး/လူလုပ်အားနာရီ။ စားပွဲဝန်ဆောင်မှုအချိန်ကိုပါစဉ်းစားပါ။ ပုံစံမတူသည့်ဆိုင်ထက်နည်းရုံဖြင့် ထိရောက်မှုနည်းသည်ဟု မဆုံးဖြတ်ပါ။",
+          "5ဦး/လူလုပ်အားနာရီ။ ဝန်ဆောင်မှုပုံစံမည်သို့ပင်ဖြစ်စေ အခြားဆိုင်ထက်နည်းလျှင် အမြဲထိရောက်မှုနည်းသည်။",
+          "0.2ဦး/လူလုပ်အားနာရီ။ လူလုပ်အားနာရီကို ဧည့်သည်ဦးရေဖြင့်စားပါ။",
+          "200ဦး/လူလုပ်အားနာရီ။ လူလုပ်အားနာရီမသုံးဘဲ ဧည့်သည်ဦးရေဖြင့်သာဆုံးဖြတ်ပါ။"
+        ],
+        "200÷40＝5ဦး/လူလုပ်အားနာရီဖြစ်သည်။ စားပွဲဝန်ဆောင်မှုတွင်လည်း လုပ်အားအချိန်လိုသဖြင့် ပုံစံမတူသည့်ဆိုင်များ၏ ကိန်းဂဏန်းကွာခြားမှုတစ်ခုတည်းဖြင့် ထိရောက်မှုကိုမဆုံးဖြတ်ပါ။",
+        [
+          "ဧည့်သည်ဦးရေ÷စုစုပေါင်းလူလုပ်အားနာရီကိုသုံးပြီး ဝန်ဆောင်မှုအတွက်လိုသောအချိန်ကိုပါစဉ်းစားသည်။",
+          "တွက်ချက်မှုမှန်သော်လည်း ဝန်ဆောင်မှုကွာခြားချက်ကိုလျစ်လျူရှုထားသည်။",
+          "ပိုင်းဝေနှင့်ပိုင်းခြေပြောင်းပြန်ဖြစ်သည်။ ဧည့်သည်ဦးရေကိုလူလုပ်အားနာရီဖြင့်စားရသည်။",
+          "စုစုပေါင်းလူလုပ်အားနာရီကိုပိုင်းခြေမထားသောကြောင့် လူလုပ်အားတစ်နာရီလျှင်ဧည့်သည်ဦးရေမဟုတ်ပါ။"
+        ]
+      ],
+      [
+        "စုဆောင်းရောင်းရငွေအချိုးကိုတွက်၍ လေ့ကျင့်ခန်း၏ ABCအုပ်စုသတ်မှတ်ချက်ကိုသုံးပါ။",
+        "တူညီသောကာလ၏ရောင်းရငွေ:X50,000ယန်း၊Y30,000ယန်း၊Z20,000ယန်း။ ရောင်းရငွေများရာမှနည်းရာစီပါ။ ဤလေ့ကျင့်ခန်းတွင် တစ်တန်းအဆုံးရှိစုဆောင်းအချိုး≤70%ကိုA၊>70%မှ90%အထိကိုB၊>90%ကိုCသတ်မှတ်သည်။ Y၏စုဆောင်းအချိုးနှင့်အုပ်စုမှာဘာလဲ။",
+        [
+          "80%၊B။ ဤအပိုင်းအခြားသည်လေ့ကျင့်ခန်းအတွက်ဖြစ်ပြီး လုပ်ငန်းအလိုက်ကွာနိုင်သည်။",
+          "30%၊A။ Yတစ်မျိုးတည်း၏အချိုးကိုစုဆောင်းအချိုးဟုယူသည်။",
+          "80%၊A။ ဒုတိယအဆင့်ဖြစ်သောကြောင့် စုဆောင်းအချိုးမကြည့်ဘဲAဟုသတ်မှတ်သည်။",
+          "100%၊C။ ပစ္စည်းအားလုံး၏စုစုပေါင်းကို Yအထိစုဆောင်းအချိုးဟုယူသည်။"
+        ],
+        "စုစုပေါင်း100,000ယန်းဖြစ်သည်။ Yအထိစုဆောင်းရောင်းရငွေ50,000＋30,000＝80,000ယန်း၊ဆိုလိုသည်မှာ80%ဖြစ်၍ လေ့ကျင့်ခန်းသတ်မှတ်ချက်အရBဖြစ်သည်။ သတ်မှတ်ချက်သည်လုပ်ငန်းအလိုက်ကွာနိုင်သည်။",
+        [
+          "Xနှင့်Yကိုပေါင်း၊ စုစုပေါင်းဖြင့်စားပြီး သတ်မှတ်အပိုင်းအခြားကိုသုံးထားသည်။",
+          "30%သည်Yတစ်မျိုးတည်း၏အချိုးဖြစ်ပြီး Xမှစတင်စုဆောင်းထားခြင်းမဟုတ်ပါ။",
+          "80%သည်ဤလေ့ကျင့်ခန်း၏Aအပိုင်းအခြားကိုကျော်သည်။ အဆင့်တစ်ခုတည်းဖြင့်အုပ်စုမဆုံးဖြတ်ပါ။",
+          "100%သည်Zအထိစုဆောင်းအချိုးဖြစ်၍ Yအထိမဟုတ်ပါ။"
+        ]
+      ]
+    ],
+    "th": [
+      [
+        "คำนวณลูกค้าต่อชั่วโมงแรงงานโดยคำนึงถึงรูปแบบบริการที่ต่างกัน",
+        "วันเดียวกันร้านอาหารแบบบริการเต็มรูปแบบมีลูกค้า200คน ใช้แรงงานรวม40ชั่วโมงแรงงาน ข้อใดคำนวณและตัดสินได้เหมาะสม",
+        [
+          "5คน/ชั่วโมงแรงงาน ต้องพิจารณาเวลาบริการที่โต๊ะด้วย ตัวเลขต่ำกว่าร้านบริการต่างรูปแบบเพียงอย่างเดียวไม่ได้พิสูจน์ว่าประสิทธิภาพต่ำ",
+          "5คน/ชั่วโมงแรงงาน ตัวเลขต่ำกว่าร้านอื่นหมายถึงประสิทธิภาพต่ำเสมอ ไม่ว่าบริการแบบใด",
+          "0.2คน/ชั่วโมงแรงงาน นำชั่วโมงแรงงานหารจำนวนลูกค้า",
+          "200คน/ชั่วโมงแรงงาน ดูจำนวนลูกค้าอย่างเดียวโดยไม่ใช้ชั่วโมงแรงงาน"
+        ],
+        "200÷40＝5คน/ชั่วโมงแรงงาน บริการที่โต๊ะก็ใช้เวลาทำงาน จึงตัดสินประสิทธิภาพจากส่วนต่างตัวเลขของร้านที่บริการต่างรูปแบบเพียงอย่างเดียวไม่ได้",
+        [
+          "ใช้ลูกค้า÷ชั่วโมงแรงงานรวม และพิจารณาเวลาที่บริการจำเป็นต้องใช้",
+          "คำนวณถูกแต่ละเลยความต่างของบริการ",
+          "สลับตัวตั้งกับตัวหาร ต้องนำลูกค้าหารชั่วโมงแรงงานรวม",
+          "ไม่ได้ใช้ชั่วโมงแรงงานรวมเป็นตัวหาร จึงไม่ใช่ลูกค้าต่อชั่วโมงแรงงาน"
+        ]
+      ],
+      [
+        "คำนวณสัดส่วนยอดขายสะสมแล้วใช้เกณฑ์ABCที่โจทย์กำหนด",
+        "ยอดขายช่วงเดียวกัน:X50,000เยน,Y30,000เยน,Z20,000เยน เรียงยอดขายจากมากไปน้อย ในแบบฝึกนี้สัดส่วนสะสมท้ายแถว≤70%เป็นA,>70%ถึง90%เป็นB,>90%เป็นC สัดส่วนสะสมและกลุ่มของYคือข้อใด",
+        [
+          "80%・B เป็นเกณฑ์ของแบบฝึก แต่ละกิจการอาจใช้เกณฑ์ต่างกัน",
+          "30%・A ใช้สัดส่วนเฉพาะYเป็นสัดส่วนสะสม",
+          "80%・A เพราะเป็นอันดับสองจึงเป็นAโดยไม่ดูสัดส่วนสะสม",
+          "100%・C ใช้ยอดรวมทุกสินค้าเป็นสัดส่วนสะสมถึงY"
+        ],
+        "ยอดรวม100,000เยน สะสมถึงYคือ50,000＋30,000＝80,000เยน หรือ80% จึงเป็นBตามเกณฑ์แบบฝึก เกณฑ์อาจแตกต่างตามกิจการ",
+        [
+          "รวมXกับY หารยอดรวม แล้วใช้เกณฑ์ที่กำหนด",
+          "30%เป็นสัดส่วนเฉพาะY ไม่ใช่สะสมจากX",
+          "80%เกินช่วงAของแบบฝึก ไม่จัดกลุ่มจากอันดับอย่างเดียว",
+          "100%คือสะสมถึงZ ไม่ใช่ถึงY"
+        ]
+      ]
+    ],
+    "km": [
+      [
+        "គណនាចំនួនភ្ញៀវក្នុងមួយម៉ោងពលកម្ម ដោយគិតពីភាពខុសគ្នានៃសេវា។",
+        "ក្នុងថ្ងៃដូចគ្នា ភោជនីយដ្ឋានសេវាពេញលេញមានភ្ញៀវ200នាក់ និងពេលពលកម្មសរុប40ម៉ោងពលកម្ម។ តើការគណនា និងការវាយតម្លៃណាសមស្រប?",
+        [
+          "5នាក់/ម៉ោងពលកម្ម។ ត្រូវគិតពេលបម្រើតាមតុផង; ទាបជាងហាងមានសេវាបែបផ្សេង មិនមែនបញ្ជាក់ថាប្រសិទ្ធភាពទាបទេ។",
+          "5នាក់/ម៉ោងពលកម្ម។ ទាបជាងហាងផ្សេងគឺប្រសិទ្ធភាពទាបជានិច្ច ទោះសេវាបែបណាក៏ដោយ។",
+          "0.2នាក់/ម៉ោងពលកម្ម។ យកម៉ោងពលកម្មចែកនឹងចំនួនភ្ញៀវ។",
+          "200នាក់/ម៉ោងពលកម្ម។ មើលតែចំនួនភ្ញៀវដោយមិនប្រើម៉ោងពលកម្ម។"
+        ],
+        "200÷40＝5នាក់/ម៉ោងពលកម្ម។ សេវាតាមតុក៏ប្រើពេលពលកម្ម ដូច្នេះមិនអាចវាយតម្លៃប្រសិទ្ធភាពតាមភាពខុសគ្នានៃលេខរវាងសេវាបែបផ្សេងតែមួយមុខទេ។",
+        [
+          "ប្រើចំនួនភ្ញៀវ÷ម៉ោងពលកម្មសរុប និងគិតពេលចាំបាច់សម្រាប់សេវា។",
+          "គណនាត្រឹមត្រូវ ប៉ុន្តែមិនគិតភាពខុសគ្នានៃសេវា។",
+          "ភាគយកនិងភាគបែងបញ្ច្រាស។ ត្រូវយកចំនួនភ្ញៀវចែកនឹងម៉ោងពលកម្មសរុប។",
+          "មិនមានម៉ោងពលកម្មសរុបជាភាគបែង ដូច្នេះមិនមែនភ្ញៀវក្នុងមួយម៉ោងពលកម្មទេ។"
+        ]
+      ],
+      [
+        "គណនាសមាមាត្រប្រាក់លក់បូកសន្សំ និងប្រើព្រំកំណត់ABCរបស់លំហាត់។",
+        "ប្រាក់លក់ក្នុងរយៈពេលដូចគ្នា៖X50,000យេន,Y30,000យេន,Z20,000យេន។ រៀបពីច្រើនទៅតិច។ ក្នុងលំហាត់នេះ សមាមាត្របូកសន្សំនៅចុងជួរ≤70%ជាA,>70%ដល់90%ជាB,>90%ជាC។ តើសមាមាត្របូកសន្សំ និងក្រុមរបស់Yជាអ្វី?",
+        [
+          "80%・B។ នេះជាព្រំកំណត់លំហាត់; អាជីវកម្មអាចប្រើព្រំកំណត់ផ្សេង។",
+          "30%・A។ យកសមាមាត្ររបស់Yតែមួយជាសមាមាត្របូកសន្សំ។",
+          "80%・A។ ដោយជាលំដាប់ទីពីរ ដាក់ជាAដោយមិនមើលសមាមាត្របូកសន្សំ។",
+          "100%・C។ យកផលបូកផលិតផលទាំងអស់ជាតម្លៃបូកសន្សំដល់Y។"
+        ],
+        "សរុប100,000យេន។ បូកសន្សំដល់Yគឺ50,000＋30,000＝80,000យេន ឬ80%; តាមលក្ខខណ្ឌលំហាត់គឺB។ ព្រំកំណត់អាចខុសតាមអាជីវកម្ម។",
+        [
+          "បូកXនិងY ចែកនឹងសរុប ហើយប្រើព្រំកំណត់ដែលបានផ្តល់។",
+          "30%ជាសមាមាត្រYតែមួយ មិនមែនបូកសន្សំពីXទេ។",
+          "80%លើសព្រំAនៃលំហាត់។ លំដាប់តែមួយមិនកំណត់ក្រុមទេ។",
+          "100%ជាបូកសន្សំដល់Z មិនមែនដល់Yទេ។"
+        ]
+      ]
+    ],
+    "tl": [
+      [
+        "Kuwentahin ang customer bawat oras ng paggawa at isaalang-alang ang pagkakaiba ng serbisyo.",
+        "Sa parehong araw,200customer at40kabuuang oras ng paggawa ang naitala sa full-service restaurant. Aling kuwenta at pasya ang angkop?",
+        [
+          "5customer/oras ng paggawa. Isaalang-alang ang oras sa table service; hindi sapat ang mas mababang bilang kaysa sa ibang service model para sabihing hindi episyente.",
+          "5customer/oras ng paggawa. Ang mas mababang bilang ay laging hindi episyente, anuman ang serbisyo.",
+          "0.2customer/oras ng paggawa. Hatiin ang oras ng paggawa sa customer.",
+          "200customer/oras ng paggawa. Bilang lang ng customer ang gamitin, walang oras ng paggawa."
+        ],
+        "200÷40＝5customer/oras ng paggawa. Gumagamit din ng oras ang table service, kaya hindi matitiyak ang kahusayan batay lamang sa pagkakaiba ng bilang sa magkaibang service model.",
+        [
+          "Ginagamit ang customer÷kabuuang oras ng paggawa at isinasaalang-alang ang oras para sa serbisyo.",
+          "Tama ang kuwenta, pero hindi isinaalang-alang ang pagkakaiba ng serbisyo.",
+          "Baligtad ang numerator at denominator. Customer ang hahatiin sa oras ng paggawa.",
+          "Walang oras ng paggawa bilang denominator, kaya hindi ito customer bawat oras ng paggawa."
+        ]
+      ],
+      [
+        "Kuwentahin ang cumulative sales share at gamitin ang ABC bands ng pagsasanay.",
+        "Benta sa parehong panahon:X50,000yen,Y30,000yen,Z20,000yen. Ayusin mula pinakamalaki. Sa pagsasanay, ang cumulative share sa dulo ng row≤70%ayA,>70%hanggang90%ayB,>90%ayC. Ano ang cumulative share at kategorya ngY?",
+        [
+          "80%, B. Mga hangganan ito ng pagsasanay; maaaring iba ang gamitin ng negosyo.",
+          "30%, A. Ituring na cumulative share ang sariling share ngY.",
+          "80%, A. Ikalawa kayaA, anuman ang cumulative share.",
+          "100%, C. Ituring na cumulative hanggangY ang kabuuan ng lahat ng produkto."
+        ],
+        "100,000yen ang kabuuan. HanggangY,50,000＋30,000＝80,000yen o80%ang cumulative sales, kayaBsa kundisyon ng pagsasanay. Maaaring mag-iba ang hangganan ayon sa negosyo.",
+        [
+          "Pinagsama angXatY, hinati sa kabuuan, saka ginamit ang itinakdang hangganan.",
+          "30%ay share ngYlamang, hindi cumulative mulaX.",
+          "Lampas saAhangganan ng pagsasanay ang80%. Hindi sapat ang ranggo para itakda ang kategorya.",
+          "100%ay cumulative hanggangZ, hindi hanggangY."
+        ]
+      ]
+    ]
+  }
+}

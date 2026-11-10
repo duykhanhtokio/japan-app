@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "actualReader": true,
+  "assessmentLocaleViewportCases": 475,
+  "checks": 25,
+  "japaneseExpectedPoints": 124,
+  "checkDataFile": "src/data/food-manufacturing/source-assessment35.json",
+  "regressionIds": [
+    "food-assessment34-hygiene-foundation",
+    "food-assessment34-life-shared-space",
+    "food-assessment34-ky-four-rounds",
+    "food-assessment34-daily-health-supervision"
+  ],
+  "regressionSourceSha256": "3e46e6f9be51c629c50587c2447cdc272f372a3c9c4f39b53ee440a68c2a115e",
+  "locales": 13,
+  "viewports": 4,
+  "matrix": [
+    {
+      "width": 390,
+      "height": 844,
+      "locales": [
+        "ja",
+        "en",
+        "vi",
+        "id",
+        "zh-CN",
+        "zh-TW",
+        "hi",
+        "bn",
+        "ne",
+        "my",
+        "th",
+        "km",
+        "tl"
+      ],
+      "cases": 325
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "locales": [
+        "ja",
+        "vi"
+      ],
+      "cases": 50
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "locales": [
+        "ja",
+        "vi"
+      ],
+      "cases": 50
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "locales": [
+        "ja",
+        "vi"
+      ],
+      "cases": 50
+    }
+  ],
+  "hiddenBeforeRevealCases": 475,
+  "revealAndHideCases": 475,
+  "japanesePointAccessibleLabelChecks": 2356,
+  "translatedTitleAndPromptCases": 375,
+  "translatedPointChecks": 1860,
+  "unchangedLocalStorageCases": 475,
+  "expandedWebAttributeCases": 0,
+  "expandedAttributeNote": "React Native Web may omit aria-expanded from accessibilityState; DOM show/hide is asserted independently.",
+  "seededStateKeys": [
+    "@japan_app_food_manufacturing:completion:v1:assessment-qa:1",
+    "@japan_app_food_manufacturing:exam:v1:assessment-qa:1:food-1-mock-01"
+  ],
+  "sourceSha256": "1ebb1e227033e521a4c2858cf755a10df3399615e36ca40ff35de4e6e194c450",
+  "screenshots": [
+    "assessment-vi-phone.png",
+    "assessment-my-phone.png",
+    "assessment-km-phone.png",
+    "assessment-tl-phone.png"
+  ],
+  "visualGlyphInspection": {
+    "status": "AI_VISUAL_PASS_FOR_FOUR_REPRESENTATIVE_PHONE_CAPTURES",
+    "locales": [
+      "vi",
+      "my",
+      "km",
+      "tl"
+    ],
+    "findings": "Inspected all four revealed stacked-share check captures. Japanese ruby, Vietnamese accents, Myanmar and Khmer shaped glyphs, and Filipino text remain legible inside their cards; no tofu, horizontal clipping, overlapping text, or cut-off controls observed. This uses the declared QA font stack and is not native-language, physical-device, or production-font certification.",
+    "screenshots": [
+      {
+        "filename": "assessment-vi-phone.png",
+        "sha256": "951e38a306318238a12d4237c10e5951af1df3671f4d911fffd67058a2031149"
+      },
+      {
+        "filename": "assessment-my-phone.png",
+        "sha256": "532593b47f500930420462b2033ffc70ea5e0cef054be66e7650dbc3eaf23a8c"
+      },
+      {
+        "filename": "assessment-km-phone.png",
+        "sha256": "66fd7771bd85f0e4f2a7986455f0fb68e87a70fc86b4d28985b65b1eb3e1eb50"
+      },
+      {
+        "filename": "assessment-tl-phone.png",
+        "sha256": "20e10437951200bbd293b8227d562657f2a5535aafde7cbe157d639c5988ce1e"
+      }
+    ]
+  },
+  "adapters": [
+    "Royal surface/artwork",
+    "safe-area",
+    "backdrop",
+    "localStorage",
+    "Noto CJK/Myanmar/Khmer web-font stack"
+  ],
+  "browserPageErrors": [],
+  "physicalDeviceTested": false,
+  "productionExpoTested": false,
+  "testRunNotes": [
+    "Direct actual Reader component harness with seeded localStorage snapshots checks assessment toggles without completion or answer-state mutation; it does not certify the complete Course/Attempt navigation flow.",
+    "React Native Web did not expose aria-expanded in these cases. Hidden-before, reveal, and hide behavior were asserted directly in the DOM for every case.",
+    "399 cases cover all 21 new checks; 76 cases cover four unchanged assessment34 regressions."
+  ]
+}

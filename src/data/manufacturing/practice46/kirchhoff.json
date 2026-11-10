@@ -1,0 +1,1673 @@
+{
+  "schemaVersion": 1,
+  "id": "mfg1-sequential-kirchhoff-supplement",
+  "revision": "mfg46-kirchhoff-v1",
+  "titleJa": "キルヒホッフ：符号・単位・条件（8問）",
+  "lessonPatch": {
+    "lessonId": "mfg1-electrical-l070",
+    "paragraphId": "section-1",
+    "sourceHash": "e4f00ae5cbf227148e2b5380b6976d5533fc785630e52efefdc6f1514d4c17cb",
+    "wording": {
+      "ja": {
+        "before": "キルヒホッフの電流則では節点へ入る電流の合計と出る合計が等しくなります。例えば8mAが入り3mAと残りに分かれるなら残りは5mAです。矢印の仮定を揃え、計算が負なら仮定と逆向きとして読みます。",
+        "after": "キルヒホッフの電流則では節点へ入る電流の合計と出る合計が等しくなります。例えば8mAが入り3mAと残りに分かれるなら残りは5mAです。矢印の仮定を揃え、計算が負なら仮定と逆向きとして読みます。\n\n符号付きの収支を、単位をそろえて二段階で確認します。紙上の節点に4 mAと0.002 Aが入り、1 mAとXが出るなら、0.002 A＝2 mAよりX＝4＋2−1＝5 mAです。未知の矢印を外向きと仮定してX＝−5 mAなら、実際は内向き5 mAと読み、負号を消して外向きと報告しません。\n閉路は辿る向きに沿った上昇・低下を別々に書きます。＋16 V−6 V−X＝0ならX＝10 Vです。一周の向きを逆にする際は各項の符号をまとめて反転し、−16＋6＋10＝0でも確認できます。残差が0でなければ符号・単位・記録を再確認し、合うように測定値を書き換えません。\n未知の枝電流が二つあるのに独立した式が一つしかない場合、各枝の値は一意に定まりません。収支が一致することも、実物の故障がない証明ではありません。ここでは理想回路の紙上計算だけを扱い、配線や測定の実施を指示しません。"
+      },
+      "en": {
+        "before": "Kirchhoff’s current law equates total incoming and outgoing current at a node. If 8 mA enters and splits into 3 mA and another branch, the other branch is 5 mA. Keep assumed directions consistent; a negative result indicates the opposite direction.",
+        "after": "Kirchhoff’s current law equates total incoming and outgoing current at a node. If 8 mA enters and splits into 3 mA and another branch, the other branch is 5 mA. Keep assumed directions consistent; a negative result indicates the opposite direction.\n\nCheck signed balances after normalizing units. In a paper node, 4 mA and 0.002 A enter; 1 mA and X leave. Since 0.002 A=2 mA, X=4+2−1=5 mA. A negative result for an assumed outgoing arrow means actual inflow, not a positive outflow. For a loop, +16−6−X=0 gives X=10 V; reversing the traversal changes every sign to −16+6+10=0. A nonzero residual requires checking signs, units and records, not editing measurements to fit. Two unknown branches need more than one independent equation. Balance alone does not certify fault-free equipment; these are paper calculations."
+      },
+      "vi": {
+        "before": "Định luật dòng Kirchhoff: tổng dòng vào nút bằng tổng dòng ra. Nếu 8 mA vào rồi chia 3 mA và nhánh còn lại, nhánh đó 5 mA. Thống nhất giả định mũi tên; kết quả âm nghĩa ngược chiều giả định.",
+        "after": "Định luật dòng Kirchhoff: tổng dòng vào nút bằng tổng dòng ra. Nếu 8 mA vào rồi chia 3 mA và nhánh còn lại, nhánh đó 5 mA. Thống nhất giả định mũi tên; kết quả âm nghĩa ngược chiều giả định.\n\nChuẩn hóa đơn vị rồi kiểm tra cân bằng có dấu. Ở nút giả định, 4 mA và 0,002 A đi vào; 1 mA và X đi ra. Đổi 0,002 A=2 mA nên X=4+2−1=5 mA. Kết quả âm với mũi tên giả định đi ra có nghĩa dòng thực đi vào, không được bỏ dấu rồi báo đi ra. Với vòng, +16−6−X=0 cho X=10 V; đảo chiều đi vòng phải đổi dấu mọi hạng thành −16+6+10=0. Nếu dư khác 0, kiểm dấu, đơn vị và hồ sơ, không sửa số đo để khớp. Hai dòng nhánh chưa biết cần hơn một phương trình độc lập. Cân bằng không chứng nhận thiết bị hết lỗi; chỉ tính trên giấy."
+      },
+      "id": {
+        "before": "Jumlah arus masuk sama dengan keluar.8 mA terbagi 3 dan sisanya berarti 5 mA. Samakan asumsi panah; hasil negatif berlawanan asumsi.",
+        "after": "Jumlah arus masuk sama dengan keluar.8 mA terbagi 3 dan sisanya berarti 5 mA. Samakan asumsi panah; hasil negatif berlawanan asumsi.\n\nSamakan satuan sebelum memeriksa keseimbangan bertanda. Pada simpul kertas, 4 mA dan 0,002 A masuk; 1 mA dan X keluar. Karena 0,002 A=2 mA, X=4+2−1=5 mA. Hasil negatif untuk panah keluar berarti arus sebenarnya masuk, bukan keluar positif. Pada loop, +16−6−X=0 memberi X=10 V; pembalikan lintasan mengubah semua tanda menjadi −16+6+10=0. Jika sisa bukan nol, periksa tanda, satuan dan catatan, jangan ubah hasil ukur agar cocok. Dua cabang tak diketahui memerlukan lebih dari satu persamaan independen. Keseimbangan saja tidak membuktikan alat bebas kerusakan; ini hitungan kertas."
+      },
+      "zh-CN": {
+        "before": "电流定律规定入节点总流等于出流。8mA入分3mA与余支，余5mA。统一箭头假设，负结果表示实际相反。",
+        "after": "电流定律规定入节点总流等于出流。8mA入分3mA与余支，余5mA。统一箭头假设，负结果表示实际相反。\n\n先统一单位再检查带符号的收支。纸面节点有4 mA和0.002 A流入，1 mA和X流出。0.002 A=2 mA，所以X=4+2−1=5 mA。假设向外的箭头算出负值，表示实际向内，不可去掉负号仍报向外。闭路+16−6−X=0得X=10 V；反向遍历须把全部符号反转为−16+6+10=0。余量不为零时检查符号、单位和记录，不修改测量值来凑数。两个未知支路需要不止一个独立方程。收支相符不能证明设备无故障；这里只作纸面计算。"
+      },
+      "zh-TW": {
+        "before": "基爾霍夫電流定律中，進入節點的電流總和等於流出總和。如8mA流入，分為3mA與另一支，則另一支為5mA。統一假設箭頭，若計算為負，應理解為方向與假設相反。",
+        "after": "基爾霍夫電流定律中，進入節點的電流總和等於流出總和。如8mA流入，分為3mA與另一支，則另一支為5mA。統一假設箭頭，若計算為負，應理解為方向與假設相反。\n\n先統一單位再檢查帶符號的收支。紙面節點有4 mA和0.002 A流入，1 mA和X流出。0.002 A=2 mA，所以X=4+2−1=5 mA。假設向外的箭頭算出負值，表示實際向內，不可去掉負號仍報向外。閉路+16−6−X=0得X=10 V；反向走訪須把全部符號反轉為−16+6+10=0。餘量不為零時檢查符號、單位和紀錄，不修改測量值來湊數。兩個未知支路需要不止一個獨立方程。收支相符不能證明設備無故障；這裡只作紙面計算。"
+      },
+      "hi": {
+        "before": "अंदर कुल बाहर बराबर।8 mA से3 और शेष तो5 mA। तीर धारणा समान; ऋण उत्तर उलटी दिशा पढ़ें।",
+        "after": "अंदर कुल बाहर बराबर।8 mA से3 और शेष तो5 mA। तीर धारणा समान; ऋण उत्तर उलटी दिशा पढ़ें।\n\nपहले इकाइयाँ मिलाकर चिह्नयुक्त संतुलन जाँचें। कागजी नोड में 4 mA और 0.002 A अंदर, 1 mA और X बाहर हैं। 0.002 A=2 mA से X=4+2−1=5 mA। बाहर माने तीर का ऋणात्मक उत्तर वास्तविक अंदर की धारा है; चिह्न हटाकर बाहर न बताएँ। लूप +16−6−X=0 से X=10 V; दिशा उलटने पर हर चिह्न बदलकर −16+6+10=0 होता है। शेष शून्य न हो तो चिह्न, इकाई और रिकॉर्ड जाँचें, माप न बदलें। दो अज्ञात शाखाओं के लिए एक से अधिक स्वतंत्र समीकरण चाहिए। संतुलन उपकरण के दोषरहित होने का प्रमाण नहीं; केवल कागजी गणना है।"
+      },
+      "bn": {
+        "before": "কারেন্ট সূত্রে মোট প্রবেশ ও বের হওয়া সমান। 8 mA ঢুকে 3 ও বাকি হলে 5 mA। তির অনুমান এক রেখে ঋণাত্মক হলে বিপরীত দিক পড়ুন।",
+        "after": "কারেন্ট সূত্রে মোট প্রবেশ ও বের হওয়া সমান। 8 mA ঢুকে 3 ও বাকি হলে 5 mA। তির অনুমান এক রেখে ঋণাত্মক হলে বিপরীত দিক পড়ুন।\n\nআগে একক মিলিয়ে চিহ্নসহ ভারসাম্য দেখুন। কাগুজে নোডে 4 mA ও 0.002 A ঢোকে, 1 mA ও X বের হয়। 0.002 A=2 mA, তাই X=4+2−1=5 mA। বাইরে ধরা তিরে ঋণাত্মক ফল মানে আসলে ভেতরের প্রবাহ; চিহ্ন বাদ দিয়ে বাইরে বলবেন না। লুপ +16−6−X=0 থেকে X=10 V; দিক উল্টালে সব চিহ্ন বদলে −16+6+10=0। অবশিষ্ট শূন্য না হলে চিহ্ন, একক ও রেকর্ড দেখুন, মাপ বদলাবেন না। দুই অজানা শাখার জন্য একাধিক স্বাধীন সমীকরণ লাগে। ভারসাম্য যন্ত্র ত্রুটিমুক্তের প্রমাণ নয়; এটি কাগুজে গণনা।"
+      },
+      "ne": {
+        "before": "किर्खोफको करेन्ट नियममा जोड बिन्दुभित्र आउने कुल करेन्ट र बाहिर जाने कुल करेन्ट बराबर हुन्छ। 8mA भित्र आएर 3mA र बाँकीमा छुट्टिएमा बाँकी 5mA हुन्छ। तीरको मान्यता एकरूप राख्नुहोस्। हिसाब ऋणात्मक भए मानिएको दिशाको उल्टो रूपमा पढ्नुहोस्।",
+        "after": "किर्खोफको करेन्ट नियममा जोड बिन्दुभित्र आउने कुल करेन्ट र बाहिर जाने कुल करेन्ट बराबर हुन्छ। 8mA भित्र आएर 3mA र बाँकीमा छुट्टिएमा बाँकी 5mA हुन्छ। तीरको मान्यता एकरूप राख्नुहोस्। हिसाब ऋणात्मक भए मानिएको दिशाको उल्टो रूपमा पढ्नुहोस्।\n\nपहिले एकाइ मिलाएर चिह्नसहितको सन्तुलन जाँच्नुहोस्। कागजी नोडमा 4 mA र 0.002 A भित्र, 1 mA र X बाहिर छन्। 0.002 A=2 mA बाट X=4+2−1=5 mA हुन्छ। बाहिर मानेको तीरमा ऋणात्मक नतिजा वास्तविक भित्री धारा हो; चिह्न हटाई बाहिर नभन्नुहोस्। लूप +16−6−X=0 बाट X=10 V; दिशा उल्टाउँदा सबै चिह्न बदली −16+6+10=0 हुन्छ। बाँकी शून्य नभए चिह्न, एकाइ र अभिलेख जाँच्नुहोस्, मापन नबदल्नुहोस्। दुई अज्ञात शाखालाई एकभन्दा बढी स्वतन्त्र समीकरण चाहिन्छ। सन्तुलनले उपकरण दोषरहित प्रमाणित गर्दैन; यो कागजी गणना हो।"
+      },
+      "my": {
+        "before": "ကာ့ခေါ့ဖ်လျှပ်စီးနိယာမအရ ဆုံမှတ်သို့ ဝင်လျှပ်စီးစုစုပေါင်းနှင့် ထွက်လျှပ်စီးစုစုပေါင်း တူသည်။ ဥပမာ 8mA ဝင်၍ 3mA နှင့် ကျန်အပိုင်းသို့ခွဲလျှင် ကျန်လျှပ်စီးမှာ 5mA ဖြစ်သည်။ မြားယူဆချက်ကို တစ်သမတ်တည်းထား၍ အနုတ်တွက်ရလျှင် ယူဆချက်၏ပြောင်းပြန်ဦးတည်ချက်အဖြစ် ဖတ်ပါ။",
+        "after": "ကာ့ခေါ့ဖ်လျှပ်စီးနိယာမအရ ဆုံမှတ်သို့ ဝင်လျှပ်စီးစုစုပေါင်းနှင့် ထွက်လျှပ်စီးစုစုပေါင်း တူသည်။ ဥပမာ 8mA ဝင်၍ 3mA နှင့် ကျန်အပိုင်းသို့ခွဲလျှင် ကျန်လျှပ်စီးမှာ 5mA ဖြစ်သည်။ မြားယူဆချက်ကို တစ်သမတ်တည်းထား၍ အနုတ်တွက်ရလျှင် ယူဆချက်၏ပြောင်းပြန်ဦးတည်ချက်အဖြစ် ဖတ်ပါ။\n\nယူနစ်တူအောင်ပြောင်းပြီး အပေါင်းအနုတ်ပါ ချိန်ညှိချက်ကို စစ်ပါ။ စာရွက်နိုဒ်တွင် 4 mA နှင့် 0.002 A ဝင်ပြီး 1 mA နှင့် X ထွက်သည်။ 0.002 A=2 mA ကြောင့် X=4+2−1=5 mA။ အပြင်သို့ဟုယူထားသောမြား၏ အနုတ်အဖြေသည် လက်တွေ့အတွင်းသို့စီးကြောင်းဖြစ်ပြီး အနုတ်ကိုမဖျက်ပါနှင့်။ လမ်းပတ် +16−6−X=0 မှ X=10 V၊ ပြောင်းပြန်ပတ်လျှင် လက္ခဏာအားလုံးပြောင်း၍ −16+6+10=0။ အကြွင်းသုညမဟုတ်လျှင် လက္ခဏာ၊ ယူနစ်နှင့်မှတ်တမ်းစစ်ပြီး ကိန်းမပြင်ပါနှင့်။ မသိသောအကိုင်းနှစ်ခုအတွက် လွတ်လပ်ညီမျှခြင်းတစ်ခုထက်ပိုလိုသည်။ ချိန်ညီရုံဖြင့် စက်ကောင်းကြောင်းမပြပါ။ စာရွက်တွက်ချက်မှုသာဖြစ်သည်။"
+      },
+      "th": {
+        "before": "กฎกระแสเคอร์ชอฟฟ์ระบุว่าผลรวมกระแสเข้าจุดร่วมเท่ากับกระแสออก เช่น เข้า 8 mA แยกเป็น 3 mA กับส่วนที่เหลือ ส่วนที่เหลือคือ 5 mA กำหนดลูกศรสมมติให้ตรงกัน หากคำนวณติดลบให้อ่านว่าไหลตรงข้ามสมมติ",
+        "after": "กฎกระแสเคอร์ชอฟฟ์ระบุว่าผลรวมกระแสเข้าจุดร่วมเท่ากับกระแสออก เช่น เข้า 8 mA แยกเป็น 3 mA กับส่วนที่เหลือ ส่วนที่เหลือคือ 5 mA กำหนดลูกศรสมมติให้ตรงกัน หากคำนวณติดลบให้อ่านว่าไหลตรงข้ามสมมติ\n\nปรับหน่วยให้ตรงก่อนตรวจสมดุลที่มีเครื่องหมาย โหนดสมมุติมี 4 mA และ 0.002 A ไหลเข้า 1 mA และ X ไหลออก เมื่อ 0.002 A=2 mA จึงได้ X=4+2−1=5 mA หากลูกศรที่สมมุติออกได้ค่าลบ แปลว่าจริงไหลเข้า อย่าลบเครื่องหมายแล้วรายงานว่าออก วงรอบ +16−6−X=0 ให้ X=10 V กลับทิศต้องกลับทุกเครื่องหมายเป็น −16+6+10=0 หากเศษไม่เป็นศูนย์ ให้ตรวจเครื่องหมาย หน่วยและบันทึก ไม่แก้ค่าวัดให้ลงตัว สองแขนงไม่ทราบค่าต้องมีมากกว่าหนึ่งสมการอิสระ สมดุลไม่ได้พิสูจน์ว่าอุปกรณ์ไร้ข้อขัดข้อง นี่คือการคำนวณบนกระดาษ"
+      },
+      "km": {
+        "before": "ច្បាប់ចរន្តគីរហ្វហ្វឱ្យផលបូកចរន្តចូលចំណុចប្រសព្វស្មើផលបូកចេញ។ ឧទាហរណ៍8mAចូលបែកជា3mAនិងនៅសល់ នោះសល់5mA។ ឱ្យសន្មតព្រួញស្របគ្នា បើគណនាអវិជ្ជមាន អានថាទិសបញ្ច្រាសការសន្មត។",
+        "after": "ច្បាប់ចរន្តគីរហ្វហ្វឱ្យផលបូកចរន្តចូលចំណុចប្រសព្វស្មើផលបូកចេញ។ ឧទាហរណ៍8mAចូលបែកជា3mAនិងនៅសល់ នោះសល់5mA។ ឱ្យសន្មតព្រួញស្របគ្នា បើគណនាអវិជ្ជមាន អានថាទិសបញ្ច្រាសការសន្មត។\n\nប្ដូរឯកតាឱ្យដូចគ្នាមុនពិនិត្យតុល្យភាពមានសញ្ញា។ ថ្នាំងលើក្រដាសមាន 4 mA និង 0.002 A ចូល ហើយ 1 mA និង X ចេញ។ 0.002 A=2 mA ដូច្នេះ X=4+2−1=5 mA។ បើទិសស្មានចេញគណនាបានអវិជ្ជមាន នោះពិតជាចូល កុំលុបសញ្ញារួចថាចេញ។ រង្វិល +16−6−X=0 បាន X=10 V ហើយប្ដូរទិសត្រូវប្ដូរគ្រប់សញ្ញាទៅ −16+6+10=0។ បើសំណល់មិនសូន្យ ត្រូវពិនិត្យសញ្ញា ឯកតា និងកំណត់ត្រា កុំកែតម្លៃវាស់ឱ្យត្រូវ។ អថេរសាខាពីរត្រូវការសមីការឯករាជ្យលើសមួយ។ តុល្យភាពមិនបញ្ជាក់ថាឧបករណ៍គ្មានកំហុសទេ នេះជាគណនាលើក្រដាស។"
+      },
+      "tl": {
+        "before": "Current law: sum papasok=sum palabas. Halimbawa, 8 mA in at 3 mA sa isang branch, kaya 5 mA ang natira. Itugma ang assumed arrows; negative answer ay opposite direction.",
+        "after": "Current law: sum papasok=sum palabas. Halimbawa, 8 mA in at 3 mA sa isang branch, kaya 5 mA ang natira. Itugma ang assumed arrows; negative answer ay opposite direction.\n\nIpareho muna ang units bago suriin ang signed balance. Sa node sa papel, 4 mA at 0.002 A ang papasok; 1 mA at X ang palabas. Dahil 0.002 A=2 mA, X=4+2−1=5 mA. Ang negatibong sagot sa inaakalang palabas na arrow ay tunay na papasok; huwag alisin ang sign at sabihing palabas. Sa loop, +16−6−X=0 ay X=10 V; baligtarin ang lahat ng sign kapag binaligtad ang ikot: −16+6+10=0. Kung hindi zero ang tira, suriin ang sign, units at tala, huwag baguhin ang sukat para magtugma. Dalawang unknown branch ay nangangailangan ng higit sa isang independent equation. Hindi patunay na walang sira ang balance; papel na kalkulasyon ito."
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "mfg1-sequential-kirchhoff-01",
+      "lessonId": "mfg1-electrical-l070",
+      "stemJa": "紙上（しじょう）の節点（せってん）に6 mAと0.004 Aが入（はい）り、3 mAとXが出（で）ます。Xはどれですか。",
+      "optionsJa": [
+        "7 mA",
+        "10 mA",
+        "13 mA",
+        "3.004 mA"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "0.004 A＝4 mAなので6＋4−3＝7 mAです。",
+        "入る合計10 mAから出る3 mAを引く必要があります。",
+        "既知の出る電流を引かずに足してはいけません。",
+        "AとmAを同じ数値で扱ってはいけません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 130,
+          "printedPage": 121
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 131,
+          "printedPage": 122
+        }
+      ],
+      "sourceHash": "2a0df3e2e691d98a2f526f25370b7fd6d92ccec6f6acfda50a8de948eebc2bb7"
+    },
+    {
+      "id": "mfg1-sequential-kirchhoff-02",
+      "lessonId": "mfg1-electrical-l070",
+      "stemJa": "紙上（しじょう）の節点（せってん）へ2 mAが入（はい）り、5 mAとXが出（で）る向（む）きを仮定（かてい）しました。2−5−X＝0のXはどれですか。",
+      "optionsJa": [
+        "3 mA",
+        "7 mA",
+        "−3 mA",
+        "−7 mA"
+      ],
+      "correctIndex": 2,
+      "optionReasonsJa": [
+        "負号を落とした値です。",
+        "既知の電流を単純に足してはいけません。",
+        "X＝−3 mAです。負号は仮定と逆向きを示します。",
+        "2−5は−3であり、−7ではありません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 130,
+          "printedPage": 121
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 131,
+          "printedPage": 122
+        }
+      ],
+      "sourceHash": "32dbff0710c7ad7932e09d028b97c50bad1562101f4bca0241eae65718789fae"
+    },
+    {
+      "id": "mfg1-sequential-kirchhoff-03",
+      "lessonId": "mfg1-electrical-l070",
+      "stemJa": "外向（そとむ）きに仮定（かてい）したX＝−3 mAを得（え）ました。実際（じっさい）の向きと大（おお）きさはどれですか。",
+      "optionsJa": [
+        "外向き3 mA",
+        "内向き3 mA",
+        "0 mA",
+        "負の大きさ3 mA"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "外向き正3 mAでは、計算の負号を無視しています。",
+        "実際は内向き3 mAです。",
+        "符号を理由に電流をゼロと扱ってはいけません。",
+        "負号は方向を示すので、負の大きさとして報告しません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 130,
+          "printedPage": 121
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 131,
+          "printedPage": 122
+        }
+      ],
+      "sourceHash": "bcbc55cf019c2d7a33863229cee158f604242fd5652f4ff122893828b245ad84"
+    },
+    {
+      "id": "mfg1-sequential-kirchhoff-04",
+      "lessonId": "mfg1-electrical-l070",
+      "stemJa": "紙上（しじょう）の閉路（へいろ）に＋15 V−4 V−X＝0を立（た）てました。Xはどれですか。",
+      "optionsJa": [
+        "19 V",
+        "4 V",
+        "−11 V",
+        "11 V"
+      ],
+      "correctIndex": 3,
+      "optionReasonsJa": [
+        "15と4を足すのでなく、低下の合計を15へ合わせます。",
+        "15−4は4ではありません。",
+        "符号を逆にせず、X＝15−4とします。",
+        "X＝11 Vなら15−4−11＝0です。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 130,
+          "printedPage": 121
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 131,
+          "printedPage": 122
+        }
+      ],
+      "sourceHash": "6ac769f4787ccde323fd60608e74c368a41fc5a87f645c376f844cb84f7a9610"
+    },
+    {
+      "id": "mfg1-sequential-kirchhoff-05",
+      "lessonId": "mfg1-electrical-l070",
+      "stemJa": "15−4−11＝0の全項（ぜんこう）の符号（ふごう）を反転（はんてん）すると、−15＋4＋11＝0でも検算（けんざん）できる、は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "全項を反転してもゼロの和は保たれます。",
+        "全体の符号反転は一部だけ変えることとは違い、和はゼロです。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 130,
+          "printedPage": 121
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 131,
+          "printedPage": 122
+        }
+      ],
+      "sourceHash": "f77f2b9d44fd195361fae93da4bd7e5b315f6d9df784a6a9878a430a42ceca67"
+    },
+    {
+      "id": "mfg1-sequential-kirchhoff-06",
+      "lessonId": "mfg1-electrical-l070",
+      "stemJa": "15−4−10＝1ですが、閉路（へいろ）の収支（しゅうし）がゼロになった、と報告（ほうこく）してよいですか。",
+      "optionsJa": [
+        "よい",
+        "よくない"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "残差は1 Vであり、ゼロと報告できません。",
+        "符号・単位・記録を確認し、収支一致とは扱いません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 130,
+          "printedPage": 121
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 131,
+          "printedPage": 122
+        }
+      ],
+      "sourceHash": "a0b91de45c9f35e0ae0720924ecccda7a06fa6a1bd9e8f40673f24ffaf62f7f7"
+    },
+    {
+      "id": "mfg1-sequential-kirchhoff-07",
+      "lessonId": "mfg1-electrical-l070",
+      "stemJa": "節点（せってん）の収支（しゅうし）が一致（いっち）したので、全（すべ）ての部品（ぶひん）に故障（こしょう）がないと証明（しょうめい）できる、は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "電流則の整合だけでは、全ての部品の状態を保証できません。",
+        "収支の整合と実機の健全性の確認は別です。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 130,
+          "printedPage": 121
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 131,
+          "printedPage": 122
+        }
+      ],
+      "sourceHash": "8314167e86fdde9bac79fd9af18517d7bfa379a2a549a25089c1ca3e6b99eebe"
+    },
+    {
+      "id": "mfg1-sequential-kirchhoff-08",
+      "lessonId": "mfg1-electrical-l070",
+      "stemJa": "未知（みち）の二枝（にし）の電流（でんりゅう）に対（たい）し独立（どくりつ）した式（しき）が一つだけなら、各枝の値（あたい）を一意（いちい）に決（き）められない、は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "追加の独立条件がなければ、同じ合計を与える複数の組があり得ます。",
+        "一つの式だけで二つの未知値を勝手に選んではいけません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 130,
+          "printedPage": 121
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 131,
+          "printedPage": 122
+        }
+      ],
+      "sourceHash": "aad22b693ec2f00ff7084a1d58c22b18f332b12a52eb570f81c38f8b854e7e22"
+    }
+  ],
+  "locales": {
+    "en": {
+      "mfg1-sequential-kirchhoff-01": {
+        "sourceHash": "2a0df3e2e691d98a2f526f25370b7fd6d92ccec6f6acfda50a8de948eebc2bb7",
+        "stem": "At a paper node, 6 mA and 0.004 A enter; 3 mA and X leave. Find X.",
+        "options": [
+          "7 mA",
+          "10 mA",
+          "13 mA",
+          "3.004 mA"
+        ],
+        "reasons": [
+          "0.004 A=4 mA; X=(6+4−3) mA=7 mA.",
+          "(6+4) mA=10 mA; 10−3=7.",
+          "(6+4+3) mA=13 mA; 6+4−3=7.",
+          "A≠mA; 0.004 A=4 mA."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-02": {
+        "sourceHash": "32dbff0710c7ad7932e09d028b97c50bad1562101f4bca0241eae65718789fae",
+        "stem": "An ideal node has 2 mA entering, with 5 mA and X assumed outgoing. Solve 2−5−X=0.",
+        "options": [
+          "3 mA",
+          "7 mA",
+          "−3 mA",
+          "−7 mA"
+        ],
+        "reasons": [
+          "2−5=−3; −3≠3.",
+          "2−5=−3; −3≠7.",
+          "2−5−(−3)=0.",
+          "2−5=−3; −3≠−7."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-03": {
+        "sourceHash": "bcbc55cf019c2d7a33863229cee158f604242fd5652f4ff122893828b245ad84",
+        "stem": "An assumed outgoing X was calculated as −3 mA. What is its actual direction and magnitude?",
+        "options": [
+          "3 mA outward",
+          "3 mA inward",
+          "0 mA",
+          "Magnitude −3 mA"
+        ],
+        "reasons": [
+          "A negative outgoing value means actual inflow.",
+          "Use inward 3 mA, opposite to the assumed arrow.",
+          "A negative sign changes direction, not the magnitude to zero.",
+          "Magnitude is nonnegative; retain the sign in the directed value."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-04": {
+        "sourceHash": "6ac769f4787ccde323fd60608e74c368a41fc5a87f645c376f844cb84f7a9610",
+        "stem": "For a paper loop, +15 V−4 V−X=0. Find X.",
+        "options": [
+          "19 V",
+          "4 V",
+          "−11 V",
+          "11 V"
+        ],
+        "reasons": [
+          "15−4−19=−8≠0.",
+          "15−4−4=7≠0.",
+          "15−4−(−11)=22≠0.",
+          "15−4−11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-05": {
+        "sourceHash": "f77f2b9d44fd195361fae93da4bd7e5b315f6d9df784a6a9878a430a42ceca67",
+        "stem": "Is reversing every sign in 15−4−11=0 to obtain −15+4+11=0 a valid check?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "−(15−4−11)=−15+4+11=0.",
+          "15−4−11=0 ⇒ −15+4+11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-06": {
+        "sourceHash": "a0b91de45c9f35e0ae0720924ecccda7a06fa6a1bd9e8f40673f24ffaf62f7f7",
+        "stem": "The residual is 15−4−10=1. Is reporting that the loop balance is zero correct?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "15−4−10=1≠0.",
+          "15−4−10=1 V; 1 V≠0 V."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-07": {
+        "sourceHash": "8314167e86fdde9bac79fd9af18517d7bfa379a2a549a25089c1ca3e6b99eebe",
+        "stem": "Does a balanced node prove every component is fault-free?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "Balance alone cannot certify every component.",
+          "Checking balance and equipment health are different tasks."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-08": {
+        "sourceHash": "aad22b693ec2f00ff7084a1d58c22b18f332b12a52eb570f81c38f8b854e7e22",
+        "stem": "With two unknown branch currents but only one independent equation, is it correct that neither branch is uniquely determined?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "More than one pair can satisfy the same total without another independent condition.",
+          "Do not invent two unknown values from one equation."
+        ]
+      }
+    },
+    "vi": {
+      "mfg1-sequential-kirchhoff-01": {
+        "sourceHash": "2a0df3e2e691d98a2f526f25370b7fd6d92ccec6f6acfda50a8de948eebc2bb7",
+        "stem": "Nút giả định có 6 mA và 0,004 A đi vào; 3 mA và X đi ra. Tìm X.",
+        "options": [
+          "7 mA",
+          "10 mA",
+          "13 mA",
+          "3.004 mA"
+        ],
+        "reasons": [
+          "0.004 A=4 mA; X=(6+4−3) mA=7 mA.",
+          "(6+4) mA=10 mA; 10−3=7.",
+          "(6+4+3) mA=13 mA; 6+4−3=7.",
+          "A≠mA; 0.004 A=4 mA."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-02": {
+        "sourceHash": "32dbff0710c7ad7932e09d028b97c50bad1562101f4bca0241eae65718789fae",
+        "stem": "Nút lý tưởng có 2 mA vào, 5 mA và X được giả định đi ra. Giải 2−5−X=0.",
+        "options": [
+          "3 mA",
+          "7 mA",
+          "−3 mA",
+          "−7 mA"
+        ],
+        "reasons": [
+          "2−5=−3; −3≠3.",
+          "2−5=−3; −3≠7.",
+          "2−5−(−3)=0.",
+          "2−5=−3; −3≠−7."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-03": {
+        "sourceHash": "bcbc55cf019c2d7a33863229cee158f604242fd5652f4ff122893828b245ad84",
+        "stem": "X giả định đi ra được tính là −3 mA. Hướng và độ lớn thực là gì?",
+        "options": [
+          "3 mA đi ra",
+          "3 mA đi vào",
+          "0 mA",
+          "Độ lớn −3 mA"
+        ],
+        "reasons": [
+          "Giá trị âm khi giả định đi ra nghĩa là thực tế đi vào.",
+          "Dùng 3 mA đi vào, ngược mũi tên giả định.",
+          "Dấu âm đổi hướng, không làm độ lớn thành 0.",
+          "Độ lớn không âm; giữ dấu ở giá trị có hướng."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-04": {
+        "sourceHash": "6ac769f4787ccde323fd60608e74c368a41fc5a87f645c376f844cb84f7a9610",
+        "stem": "Vòng trên giấy có +15 V−4 V−X=0. Tìm X.",
+        "options": [
+          "19 V",
+          "4 V",
+          "−11 V",
+          "11 V"
+        ],
+        "reasons": [
+          "15−4−19=−8≠0.",
+          "15−4−4=7≠0.",
+          "15−4−(−11)=22≠0.",
+          "15−4−11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-05": {
+        "sourceHash": "f77f2b9d44fd195361fae93da4bd7e5b315f6d9df784a6a9878a430a42ceca67",
+        "stem": "Đổi dấu mọi hạng của 15−4−11=0 thành −15+4+11=0 để kiểm lại có đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "−(15−4−11)=−15+4+11=0.",
+          "15−4−11=0 ⇒ −15+4+11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-06": {
+        "sourceHash": "a0b91de45c9f35e0ae0720924ecccda7a06fa6a1bd9e8f40673f24ffaf62f7f7",
+        "stem": "Phần dư 15−4−10=1. Báo cân bằng vòng bằng 0 có đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "15−4−10=1≠0.",
+          "15−4−10=1 V; 1 V≠0 V."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-07": {
+        "sourceHash": "8314167e86fdde9bac79fd9af18517d7bfa379a2a549a25089c1ca3e6b99eebe",
+        "stem": "Cân bằng dòng tại nút có chứng minh mọi linh kiện không hỏng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "Chỉ cân bằng chưa chứng nhận mọi linh kiện tốt.",
+          "Kiểm cân bằng và tình trạng thiết bị là hai việc khác nhau."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-08": {
+        "sourceHash": "aad22b693ec2f00ff7084a1d58c22b18f332b12a52eb570f81c38f8b854e7e22",
+        "stem": "Hai dòng nhánh chưa biết nhưng chỉ có một phương trình độc lập thì chưa xác định duy nhất từng nhánh, đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "Thiếu điều kiện độc lập khác thì nhiều cặp có thể cùng cho một tổng.",
+          "Không tự đặt hai giá trị chưa biết từ một phương trình."
+        ]
+      }
+    },
+    "id": {
+      "mfg1-sequential-kirchhoff-01": {
+        "sourceHash": "2a0df3e2e691d98a2f526f25370b7fd6d92ccec6f6acfda50a8de948eebc2bb7",
+        "stem": "Pada simpul kertas, 6 mA dan 0,004 A masuk; 3 mA dan X keluar. Cari X.",
+        "options": [
+          "7 mA",
+          "10 mA",
+          "13 mA",
+          "3.004 mA"
+        ],
+        "reasons": [
+          "0.004 A=4 mA; X=(6+4−3) mA=7 mA.",
+          "(6+4) mA=10 mA; 10−3=7.",
+          "(6+4+3) mA=13 mA; 6+4−3=7.",
+          "A≠mA; 0.004 A=4 mA."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-02": {
+        "sourceHash": "32dbff0710c7ad7932e09d028b97c50bad1562101f4bca0241eae65718789fae",
+        "stem": "Simpul ideal memiliki 2 mA masuk, 5 mA dan X diasumsikan keluar. Selesaikan 2−5−X=0.",
+        "options": [
+          "3 mA",
+          "7 mA",
+          "−3 mA",
+          "−7 mA"
+        ],
+        "reasons": [
+          "2−5=−3; −3≠3.",
+          "2−5=−3; −3≠7.",
+          "2−5−(−3)=0.",
+          "2−5=−3; −3≠−7."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-03": {
+        "sourceHash": "bcbc55cf019c2d7a33863229cee158f604242fd5652f4ff122893828b245ad84",
+        "stem": "X yang diasumsikan keluar bernilai −3 mA. Apa arah dan besar sebenarnya?",
+        "options": [
+          "3 mA keluar",
+          "3 mA masuk",
+          "0 mA",
+          "Besar −3 mA"
+        ],
+        "reasons": [
+          "Nilai keluar negatif berarti arus sebenarnya masuk.",
+          "Gunakan 3 mA masuk, berlawanan dengan panah asumsi.",
+          "Tanda negatif mengubah arah, bukan membuat besar menjadi nol.",
+          "Besar tidak negatif; simpan tanda pada nilai berarah."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-04": {
+        "sourceHash": "6ac769f4787ccde323fd60608e74c368a41fc5a87f645c376f844cb84f7a9610",
+        "stem": "Loop kertas memenuhi +15 V−4 V−X=0. Cari X.",
+        "options": [
+          "19 V",
+          "4 V",
+          "−11 V",
+          "11 V"
+        ],
+        "reasons": [
+          "15−4−19=−8≠0.",
+          "15−4−4=7≠0.",
+          "15−4−(−11)=22≠0.",
+          "15−4−11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-05": {
+        "sourceHash": "f77f2b9d44fd195361fae93da4bd7e5b315f6d9df784a6a9878a430a42ceca67",
+        "stem": "Benarkah semua tanda 15−4−11=0 dibalik menjadi −15+4+11=0 untuk memeriksa?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "−(15−4−11)=−15+4+11=0.",
+          "15−4−11=0 ⇒ −15+4+11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-06": {
+        "sourceHash": "a0b91de45c9f35e0ae0720924ecccda7a06fa6a1bd9e8f40673f24ffaf62f7f7",
+        "stem": "Sisa 15−4−10=1. Benarkah melaporkan keseimbangan loop nol?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "15−4−10=1≠0.",
+          "15−4−10=1 V; 1 V≠0 V."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-07": {
+        "sourceHash": "8314167e86fdde9bac79fd9af18517d7bfa379a2a549a25089c1ca3e6b99eebe",
+        "stem": "Apakah simpul seimbang membuktikan semua komponen bebas kerusakan?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "Keseimbangan saja tidak menjamin semua komponen.",
+          "Keseimbangan dan kondisi alat diperiksa secara berbeda."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-08": {
+        "sourceHash": "aad22b693ec2f00ff7084a1d58c22b18f332b12a52eb570f81c38f8b854e7e22",
+        "stem": "Dua arus cabang tak diketahui dengan satu persamaan independen belum menentukan setiap cabang secara unik. Benar?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "Tanpa kondisi independen lain, beberapa pasangan dapat memberi total sama.",
+          "Jangan menentukan dua nilai tak diketahui dari satu persamaan."
+        ]
+      }
+    },
+    "zh-CN": {
+      "mfg1-sequential-kirchhoff-01": {
+        "sourceHash": "2a0df3e2e691d98a2f526f25370b7fd6d92ccec6f6acfda50a8de948eebc2bb7",
+        "stem": "纸面节点有6 mA和0.004 A流入，3 mA和X流出。求X。",
+        "options": [
+          "7 mA",
+          "10 mA",
+          "13 mA",
+          "3.004 mA"
+        ],
+        "reasons": [
+          "0.004 A=4 mA; X=(6+4−3) mA=7 mA.",
+          "(6+4) mA=10 mA; 10−3=7.",
+          "(6+4+3) mA=13 mA; 6+4−3=7.",
+          "A≠mA; 0.004 A=4 mA."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-02": {
+        "sourceHash": "32dbff0710c7ad7932e09d028b97c50bad1562101f4bca0241eae65718789fae",
+        "stem": "理想节点有2 mA流入，假设5 mA和X向外。求解2−5−X=0。",
+        "options": [
+          "3 mA",
+          "7 mA",
+          "−3 mA",
+          "−7 mA"
+        ],
+        "reasons": [
+          "2−5=−3; −3≠3.",
+          "2−5=−3; −3≠7.",
+          "2−5−(−3)=0.",
+          "2−5=−3; −3≠−7."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-03": {
+        "sourceHash": "bcbc55cf019c2d7a33863229cee158f604242fd5652f4ff122893828b245ad84",
+        "stem": "假设向外的X算得−3 mA。实际方向和大小是什么？",
+        "options": [
+          "向外3 mA",
+          "向内3 mA",
+          "0 mA",
+          "大小−3 mA"
+        ],
+        "reasons": [
+          "向外假设下的负值表示实际向内。",
+          "应为向内3 mA，与假设箭头相反。",
+          "负号改变方向，不把大小变为零。",
+          "大小非负，应在带方向的数值中保留符号。"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-04": {
+        "sourceHash": "6ac769f4787ccde323fd60608e74c368a41fc5a87f645c376f844cb84f7a9610",
+        "stem": "纸面闭路为+15 V−4 V−X=0。求X。",
+        "options": [
+          "19 V",
+          "4 V",
+          "−11 V",
+          "11 V"
+        ],
+        "reasons": [
+          "15−4−19=−8≠0.",
+          "15−4−4=7≠0.",
+          "15−4−(−11)=22≠0.",
+          "15−4−11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-05": {
+        "sourceHash": "f77f2b9d44fd195361fae93da4bd7e5b315f6d9df784a6a9878a430a42ceca67",
+        "stem": "把15−4−11=0的所有符号反转为−15+4+11=0作校核，是否正确？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "−(15−4−11)=−15+4+11=0.",
+          "15−4−11=0 ⇒ −15+4+11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-06": {
+        "sourceHash": "a0b91de45c9f35e0ae0720924ecccda7a06fa6a1bd9e8f40673f24ffaf62f7f7",
+        "stem": "余量15−4−10=1。报告闭路收支为零是否正确？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "15−4−10=1≠0.",
+          "15−4−10=1 V; 1 V≠0 V."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-07": {
+        "sourceHash": "8314167e86fdde9bac79fd9af18517d7bfa379a2a549a25089c1ca3e6b99eebe",
+        "stem": "节点收支相符能否证明所有元件无故障？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "仅凭收支不能保证全部元件正常。",
+          "收支校核和设备状态检查是不同任务。"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-08": {
+        "sourceHash": "aad22b693ec2f00ff7084a1d58c22b18f332b12a52eb570f81c38f8b854e7e22",
+        "stem": "两个未知支路电流只有一个独立方程时，各支路不能唯一确定，是否正确？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "缺少另一独立条件时，多组数可满足同一总量。",
+          "不能从一个方程任意指定两个未知值。"
+        ]
+      }
+    },
+    "zh-TW": {
+      "mfg1-sequential-kirchhoff-01": {
+        "sourceHash": "2a0df3e2e691d98a2f526f25370b7fd6d92ccec6f6acfda50a8de948eebc2bb7",
+        "stem": "紙面節點有6 mA和0.004 A流入，3 mA和X流出。求X。",
+        "options": [
+          "7 mA",
+          "10 mA",
+          "13 mA",
+          "3.004 mA"
+        ],
+        "reasons": [
+          "0.004 A=4 mA; X=(6+4−3) mA=7 mA.",
+          "(6+4) mA=10 mA; 10−3=7.",
+          "(6+4+3) mA=13 mA; 6+4−3=7.",
+          "A≠mA; 0.004 A=4 mA."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-02": {
+        "sourceHash": "32dbff0710c7ad7932e09d028b97c50bad1562101f4bca0241eae65718789fae",
+        "stem": "理想節點有2 mA流入，假設5 mA和X向外。求解2−5−X=0。",
+        "options": [
+          "3 mA",
+          "7 mA",
+          "−3 mA",
+          "−7 mA"
+        ],
+        "reasons": [
+          "2−5=−3; −3≠3.",
+          "2−5=−3; −3≠7.",
+          "2−5−(−3)=0.",
+          "2−5=−3; −3≠−7."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-03": {
+        "sourceHash": "bcbc55cf019c2d7a33863229cee158f604242fd5652f4ff122893828b245ad84",
+        "stem": "假設向外的X算得−3 mA。實際方向和大小是什麼？",
+        "options": [
+          "向外3 mA",
+          "向內3 mA",
+          "0 mA",
+          "大小−3 mA"
+        ],
+        "reasons": [
+          "向外假設下的負值表示實際向內。",
+          "應為向內3 mA，與假設箭頭相反。",
+          "負號改變方向，不把大小變為零。",
+          "大小非負，應在帶方向的數值中保留符號。"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-04": {
+        "sourceHash": "6ac769f4787ccde323fd60608e74c368a41fc5a87f645c376f844cb84f7a9610",
+        "stem": "紙面閉路為+15 V−4 V−X=0。求X。",
+        "options": [
+          "19 V",
+          "4 V",
+          "−11 V",
+          "11 V"
+        ],
+        "reasons": [
+          "15−4−19=−8≠0.",
+          "15−4−4=7≠0.",
+          "15−4−(−11)=22≠0.",
+          "15−4−11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-05": {
+        "sourceHash": "f77f2b9d44fd195361fae93da4bd7e5b315f6d9df784a6a9878a430a42ceca67",
+        "stem": "把15−4−11=0的所有符號反轉為−15+4+11=0作校核，是否正確？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "−(15−4−11)=−15+4+11=0.",
+          "15−4−11=0 ⇒ −15+4+11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-06": {
+        "sourceHash": "a0b91de45c9f35e0ae0720924ecccda7a06fa6a1bd9e8f40673f24ffaf62f7f7",
+        "stem": "餘量15−4−10=1。報告閉路收支為零是否正確？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "15−4−10=1≠0.",
+          "15−4−10=1 V; 1 V≠0 V."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-07": {
+        "sourceHash": "8314167e86fdde9bac79fd9af18517d7bfa379a2a549a25089c1ca3e6b99eebe",
+        "stem": "節點收支相符能否證明所有元件無故障？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "僅憑收支不能保證全部元件正常。",
+          "收支校核和設備狀態檢查是不同任務。"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-08": {
+        "sourceHash": "aad22b693ec2f00ff7084a1d58c22b18f332b12a52eb570f81c38f8b854e7e22",
+        "stem": "兩個未知支路電流只有一個獨立方程時，各支路不能唯一確定，是否正確？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "缺少另一獨立條件時，多組數可滿足同一總量。",
+          "不能從一個方程任意指定兩個未知值。"
+        ]
+      }
+    },
+    "hi": {
+      "mfg1-sequential-kirchhoff-01": {
+        "sourceHash": "2a0df3e2e691d98a2f526f25370b7fd6d92ccec6f6acfda50a8de948eebc2bb7",
+        "stem": "कागजी नोड में 6 mA और 0.004 A अंदर, 3 mA और X बाहर हैं। X निकालें।",
+        "options": [
+          "7 mA",
+          "10 mA",
+          "13 mA",
+          "3.004 mA"
+        ],
+        "reasons": [
+          "0.004 A=4 mA; X=(6+4−3) mA=7 mA.",
+          "(6+4) mA=10 mA; 10−3=7.",
+          "(6+4+3) mA=13 mA; 6+4−3=7.",
+          "A≠mA; 0.004 A=4 mA."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-02": {
+        "sourceHash": "32dbff0710c7ad7932e09d028b97c50bad1562101f4bca0241eae65718789fae",
+        "stem": "आदर्श नोड में 2 mA अंदर, 5 mA और X बाहर माने गए हैं। 2−5−X=0 हल करें।",
+        "options": [
+          "3 mA",
+          "7 mA",
+          "−3 mA",
+          "−7 mA"
+        ],
+        "reasons": [
+          "2−5=−3; −3≠3.",
+          "2−5=−3; −3≠7.",
+          "2−5−(−3)=0.",
+          "2−5=−3; −3≠−7."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-03": {
+        "sourceHash": "bcbc55cf019c2d7a33863229cee158f604242fd5652f4ff122893828b245ad84",
+        "stem": "बाहर माना X=−3 mA मिला। वास्तविक दिशा और परिमाण क्या है?",
+        "options": [
+          "3 mA बाहर",
+          "3 mA अंदर",
+          "0 mA",
+          "परिमाण −3 mA"
+        ],
+        "reasons": [
+          "ऋणात्मक बाहर की धारा का वास्तविक अर्थ अंदर है।",
+          "मान 3 mA अंदर है, माने हुए तीर के विपरीत।",
+          "ऋण चिह्न दिशा बदलता है, परिमाण शून्य नहीं करता।",
+          "परिमाण गैरऋणात्मक है; दिशात्मक मान में चिह्न रखें।"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-04": {
+        "sourceHash": "6ac769f4787ccde323fd60608e74c368a41fc5a87f645c376f844cb84f7a9610",
+        "stem": "कागजी लूप में +15 V−4 V−X=0 है। X निकालें।",
+        "options": [
+          "19 V",
+          "4 V",
+          "−11 V",
+          "11 V"
+        ],
+        "reasons": [
+          "15−4−19=−8≠0.",
+          "15−4−4=7≠0.",
+          "15−4−(−11)=22≠0.",
+          "15−4−11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-05": {
+        "sourceHash": "f77f2b9d44fd195361fae93da4bd7e5b315f6d9df784a6a9878a430a42ceca67",
+        "stem": "15−4−11=0 के सभी चिह्न पलटकर −15+4+11=0 से जाँचना सही है?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "−(15−4−11)=−15+4+11=0.",
+          "15−4−11=0 ⇒ −15+4+11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-06": {
+        "sourceHash": "a0b91de45c9f35e0ae0720924ecccda7a06fa6a1bd9e8f40673f24ffaf62f7f7",
+        "stem": "शेष 15−4−10=1 है। लूप संतुलन शून्य बताना सही है?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "15−4−10=1≠0.",
+          "15−4−10=1 V; 1 V≠0 V."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-07": {
+        "sourceHash": "8314167e86fdde9bac79fd9af18517d7bfa379a2a549a25089c1ca3e6b99eebe",
+        "stem": "क्या नोड का संतुलन सभी पुर्जों के दोषरहित होने का प्रमाण है?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "संतुलन अकेला सभी पुर्जों को प्रमाणित नहीं करता।",
+          "संतुलन और उपकरण की स्थिति अलग जाँच हैं।"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-08": {
+        "sourceHash": "aad22b693ec2f00ff7084a1d58c22b18f332b12a52eb570f81c38f8b854e7e22",
+        "stem": "दो अज्ञात शाखा धाराओं के लिए केवल एक स्वतंत्र समीकरण हो तो प्रत्येक का मान निश्चित नहीं होता। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "अतिरिक्त स्वतंत्र शर्त के बिना कई युग्म समान कुल देते हैं।",
+          "एक समीकरण से दो अज्ञात मान न गढ़ें।"
+        ]
+      }
+    },
+    "bn": {
+      "mfg1-sequential-kirchhoff-01": {
+        "sourceHash": "2a0df3e2e691d98a2f526f25370b7fd6d92ccec6f6acfda50a8de948eebc2bb7",
+        "stem": "কাগুজে নোডে 6 mA ও 0.004 A ঢোকে; 3 mA ও X বের হয়। X কত?",
+        "options": [
+          "7 mA",
+          "10 mA",
+          "13 mA",
+          "3.004 mA"
+        ],
+        "reasons": [
+          "0.004 A=4 mA; X=(6+4−3) mA=7 mA.",
+          "(6+4) mA=10 mA; 10−3=7.",
+          "(6+4+3) mA=13 mA; 6+4−3=7.",
+          "A≠mA; 0.004 A=4 mA."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-02": {
+        "sourceHash": "32dbff0710c7ad7932e09d028b97c50bad1562101f4bca0241eae65718789fae",
+        "stem": "আদর্শ নোডে 2 mA ঢোকে, 5 mA ও X বাইরে ধরা হয়েছে। 2−5−X=0 সমাধান করুন।",
+        "options": [
+          "3 mA",
+          "7 mA",
+          "−3 mA",
+          "−7 mA"
+        ],
+        "reasons": [
+          "2−5=−3; −3≠3.",
+          "2−5=−3; −3≠7.",
+          "2−5−(−3)=0.",
+          "2−5=−3; −3≠−7."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-03": {
+        "sourceHash": "bcbc55cf019c2d7a33863229cee158f604242fd5652f4ff122893828b245ad84",
+        "stem": "বাইরে ধরা X=−3 mA পাওয়া গেল। প্রকৃত দিক ও মান কী?",
+        "options": [
+          "3 mA বাইরে",
+          "3 mA ভেতরে",
+          "0 mA",
+          "পরিমাণ −3 mA"
+        ],
+        "reasons": [
+          "বাইরে ধরা মান ঋণাত্মক হলে আসলে ভেতরে প্রবাহ।",
+          "সঠিকটি 3 mA ভেতরে, ধরা তিরের বিপরীত।",
+          "ঋণ চিহ্ন দিক বদলায়, মান শূন্য করে না।",
+          "পরিমাণ ঋণাত্মক নয়; দিকসহ মানে চিহ্ন রাখুন।"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-04": {
+        "sourceHash": "6ac769f4787ccde323fd60608e74c368a41fc5a87f645c376f844cb84f7a9610",
+        "stem": "কাগুজে লুপে +15 V−4 V−X=0। X কত?",
+        "options": [
+          "19 V",
+          "4 V",
+          "−11 V",
+          "11 V"
+        ],
+        "reasons": [
+          "15−4−19=−8≠0.",
+          "15−4−4=7≠0.",
+          "15−4−(−11)=22≠0.",
+          "15−4−11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-05": {
+        "sourceHash": "f77f2b9d44fd195361fae93da4bd7e5b315f6d9df784a6a9878a430a42ceca67",
+        "stem": "15−4−11=0-এর সব চিহ্ন উল্টে −15+4+11=0 দিয়ে যাচাই সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "−(15−4−11)=−15+4+11=0.",
+          "15−4−11=0 ⇒ −15+4+11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-06": {
+        "sourceHash": "a0b91de45c9f35e0ae0720924ecccda7a06fa6a1bd9e8f40673f24ffaf62f7f7",
+        "stem": "অবশিষ্ট 15−4−10=1। লুপের ভারসাম্য শূন্য বলা সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "15−4−10=1≠0.",
+          "15−4−10=1 V; 1 V≠0 V."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-07": {
+        "sourceHash": "8314167e86fdde9bac79fd9af18517d7bfa379a2a549a25089c1ca3e6b99eebe",
+        "stem": "নোডের ভারসাম্য কি সব যন্ত্রাংশ ত্রুটিমুক্ত প্রমাণ করে?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "ভারসাম্য একা সব যন্ত্রাংশের নিশ্চয়তা নয়।",
+          "ভারসাম্য ও যন্ত্রের অবস্থা আলাদা পরীক্ষা।"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-08": {
+        "sourceHash": "aad22b693ec2f00ff7084a1d58c22b18f332b12a52eb570f81c38f8b854e7e22",
+        "stem": "দুই অজানা শাখা প্রবাহের জন্য শুধু একটি স্বাধীন সমীকরণে প্রতিটির মান নির্দিষ্ট হয় না। সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "আরেকটি স্বাধীন শর্ত ছাড়া একাধিক জোড়া একই মোট দিতে পারে।",
+          "এক সমীকরণ থেকে দুই অজানা মান বানাবেন না।"
+        ]
+      }
+    },
+    "ne": {
+      "mfg1-sequential-kirchhoff-01": {
+        "sourceHash": "2a0df3e2e691d98a2f526f25370b7fd6d92ccec6f6acfda50a8de948eebc2bb7",
+        "stem": "कागजी नोडमा 6 mA र 0.004 A भित्र, 3 mA र X बाहिर छन्। X कति?",
+        "options": [
+          "7 mA",
+          "10 mA",
+          "13 mA",
+          "3.004 mA"
+        ],
+        "reasons": [
+          "0.004 A=4 mA; X=(6+4−3) mA=7 mA.",
+          "(6+4) mA=10 mA; 10−3=7.",
+          "(6+4+3) mA=13 mA; 6+4−3=7.",
+          "A≠mA; 0.004 A=4 mA."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-02": {
+        "sourceHash": "32dbff0710c7ad7932e09d028b97c50bad1562101f4bca0241eae65718789fae",
+        "stem": "आदर्श नोडमा 2 mA भित्र, 5 mA र X बाहिर मानिएका छन्। 2−5−X=0 हल गर्नुहोस्।",
+        "options": [
+          "3 mA",
+          "7 mA",
+          "−3 mA",
+          "−7 mA"
+        ],
+        "reasons": [
+          "2−5=−3; −3≠3.",
+          "2−5=−3; −3≠7.",
+          "2−5−(−3)=0.",
+          "2−5=−3; −3≠−7."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-03": {
+        "sourceHash": "bcbc55cf019c2d7a33863229cee158f604242fd5652f4ff122893828b245ad84",
+        "stem": "बाहिर मानिएको X=−3 mA आयो। वास्तविक दिशा र परिमाण के हो?",
+        "options": [
+          "3 mA बाहिर",
+          "3 mA भित्र",
+          "0 mA",
+          "परिमाण −3 mA"
+        ],
+        "reasons": [
+          "बाहिरको मान ऋणात्मक भए वास्तविक धारा भित्र हो।",
+          "सही 3 mA भित्र हो, मानिएको तीरको उल्टो।",
+          "ऋण चिह्नले दिशा बदल्छ, परिमाण शून्य गर्दैन।",
+          "परिमाण गैरऋणात्मक हुन्छ; दिशासहितको मानमा चिह्न राख्नुहोस्।"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-04": {
+        "sourceHash": "6ac769f4787ccde323fd60608e74c368a41fc5a87f645c376f844cb84f7a9610",
+        "stem": "कागजी लूपमा +15 V−4 V−X=0 छ। X कति?",
+        "options": [
+          "19 V",
+          "4 V",
+          "−11 V",
+          "11 V"
+        ],
+        "reasons": [
+          "15−4−19=−8≠0.",
+          "15−4−4=7≠0.",
+          "15−4−(−11)=22≠0.",
+          "15−4−11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-05": {
+        "sourceHash": "f77f2b9d44fd195361fae93da4bd7e5b315f6d9df784a6a9878a430a42ceca67",
+        "stem": "15−4−11=0 का सबै चिह्न उल्टाई −15+4+11=0 ले जाँच्नु सही हो?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "−(15−4−11)=−15+4+11=0.",
+          "15−4−11=0 ⇒ −15+4+11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-06": {
+        "sourceHash": "a0b91de45c9f35e0ae0720924ecccda7a06fa6a1bd9e8f40673f24ffaf62f7f7",
+        "stem": "बाँकी 15−4−10=1 छ। लूप सन्तुलन शून्य भन्नु सही हो?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "15−4−10=1≠0.",
+          "15−4−10=1 V; 1 V≠0 V."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-07": {
+        "sourceHash": "8314167e86fdde9bac79fd9af18517d7bfa379a2a549a25089c1ca3e6b99eebe",
+        "stem": "नोड सन्तुलनले सबै पुर्जा दोषरहित प्रमाणित गर्छ?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "सन्तुलनले मात्र सबै पुर्जा प्रमाणित गर्दैन।",
+          "सन्तुलन र उपकरणको अवस्था फरक जाँच हुन्।"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-08": {
+        "sourceHash": "aad22b693ec2f00ff7084a1d58c22b18f332b12a52eb570f81c38f8b854e7e22",
+        "stem": "दुई अज्ञात शाखा धाराका लागि एउटा स्वतन्त्र समीकरण मात्र भए प्रत्येक मान निश्चित हुँदैन। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "थप स्वतन्त्र सर्तबिना धेरै जोडीले एउटै कुल दिन सक्छन्।",
+          "एक समीकरणबाट दुई अज्ञात मान नबनाउनुहोस्।"
+        ]
+      }
+    },
+    "my": {
+      "mfg1-sequential-kirchhoff-01": {
+        "sourceHash": "2a0df3e2e691d98a2f526f25370b7fd6d92ccec6f6acfda50a8de948eebc2bb7",
+        "stem": "စာရွက်နိုဒ်တွင် 6 mA နှင့် 0.004 A ဝင်ပြီး 3 mA နှင့် X ထွက်သည်။ X ကိုရှာပါ။",
+        "options": [
+          "7 mA",
+          "10 mA",
+          "13 mA",
+          "3.004 mA"
+        ],
+        "reasons": [
+          "0.004 A=4 mA; X=(6+4−3) mA=7 mA.",
+          "(6+4) mA=10 mA; 10−3=7.",
+          "(6+4+3) mA=13 mA; 6+4−3=7.",
+          "A≠mA; 0.004 A=4 mA."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-02": {
+        "sourceHash": "32dbff0710c7ad7932e09d028b97c50bad1562101f4bca0241eae65718789fae",
+        "stem": "စံနိုဒ်တွင် 2 mA ဝင်ပြီး 5 mA နှင့် X ထွက်သည်ဟုယူသည်။ 2−5−X=0 ကိုဖြေပါ။",
+        "options": [
+          "3 mA",
+          "7 mA",
+          "−3 mA",
+          "−7 mA"
+        ],
+        "reasons": [
+          "2−5=−3; −3≠3.",
+          "2−5=−3; −3≠7.",
+          "2−5−(−3)=0.",
+          "2−5=−3; −3≠−7."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-03": {
+        "sourceHash": "bcbc55cf019c2d7a33863229cee158f604242fd5652f4ff122893828b245ad84",
+        "stem": "အပြင်သို့ဟုယူသော X=−3 mA ရသည်။ လက်တွေ့ဦးတည်ချက်နှင့်ပမာဏမှာ ဘာလဲ။",
+        "options": [
+          "အပြင်သို့3 mA",
+          "အတွင်းသို့3 mA",
+          "0 mA",
+          "ပမာဏ−3 mA"
+        ],
+        "reasons": [
+          "အပြင်ဟုယူသောအနုတ်သည် လက်တွေ့အတွင်းဖြစ်သည်။",
+          "မြားနှင့်ဆန့်ကျင်၍ အတွင်းသို့3 mA ဖြစ်သည်။",
+          "အနုတ်သည်ဦးတည်ချက်ပြောင်းပြီး ပမာဏသုညမဖြစ်ပါ။",
+          "ပမာဏသည်အနုတ်မဟုတ်ဘဲ ဦးတည်တန်ဖိုးတွင် လက္ခဏာထားပါ။"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-04": {
+        "sourceHash": "6ac769f4787ccde323fd60608e74c368a41fc5a87f645c376f844cb84f7a9610",
+        "stem": "စာရွက်လမ်းပတ်တွင် +15 V−4 V−X=0 ဖြစ်သည်။ X ကိုရှာပါ။",
+        "options": [
+          "19 V",
+          "4 V",
+          "−11 V",
+          "11 V"
+        ],
+        "reasons": [
+          "15−4−19=−8≠0.",
+          "15−4−4=7≠0.",
+          "15−4−(−11)=22≠0.",
+          "15−4−11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-05": {
+        "sourceHash": "f77f2b9d44fd195361fae93da4bd7e5b315f6d9df784a6a9878a430a42ceca67",
+        "stem": "15−4−11=0 ၏ လက္ခဏာအားလုံးပြောင်း၍ −15+4+11=0 ဖြင့်စစ်ခြင်း မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "−(15−4−11)=−15+4+11=0.",
+          "15−4−11=0 ⇒ −15+4+11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-06": {
+        "sourceHash": "a0b91de45c9f35e0ae0720924ecccda7a06fa6a1bd9e8f40673f24ffaf62f7f7",
+        "stem": "အကြွင်း 15−4−10=1 ဖြစ်သည်။ သုညညီမျှသည်ဟုဆိုခြင်း မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "15−4−10=1≠0.",
+          "15−4−10=1 V; 1 V≠0 V."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-07": {
+        "sourceHash": "8314167e86fdde9bac79fd9af18517d7bfa379a2a549a25089c1ca3e6b99eebe",
+        "stem": "နိုဒ်ချိန်ညီခြင်းက အစိတ်အပိုင်းအားလုံးကောင်းကြောင်း သက်သေလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "ချိန်ညီရုံဖြင့် အစိတ်အပိုင်းအားလုံး မအာမခံနိုင်ပါ။",
+          "ချိန်ညှိစစ်ခြင်းနှင့် စက်အခြေအနေစစ်ခြင်း မတူပါ။"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-08": {
+        "sourceHash": "aad22b693ec2f00ff7084a1d58c22b18f332b12a52eb570f81c38f8b854e7e22",
+        "stem": "မသိသောအကိုင်းနှစ်ခုနှင့် လွတ်လပ်ညီမျှခြင်းတစ်ခုသာရှိလျှင် တစ်ခုချင်းတန်ဖိုးမသတ်မှတ်နိုင်ခြင်း မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "နောက်လွတ်လပ်အခြေအနေမရှိလျှင် အတွဲအများအပြားသည် စုပေါင်းတူနိုင်သည်။",
+          "ညီမျှခြင်းတစ်ခုမှ မသိကိန်းနှစ်ခုကို မဖန်တီးပါနှင့်။"
+        ]
+      }
+    },
+    "th": {
+      "mfg1-sequential-kirchhoff-01": {
+        "sourceHash": "2a0df3e2e691d98a2f526f25370b7fd6d92ccec6f6acfda50a8de948eebc2bb7",
+        "stem": "โหนดสมมุติมี 6 mA และ 0.004 A เข้า 3 mA และ X ออก จงหา X",
+        "options": [
+          "7 mA",
+          "10 mA",
+          "13 mA",
+          "3.004 mA"
+        ],
+        "reasons": [
+          "0.004 A=4 mA; X=(6+4−3) mA=7 mA.",
+          "(6+4) mA=10 mA; 10−3=7.",
+          "(6+4+3) mA=13 mA; 6+4−3=7.",
+          "A≠mA; 0.004 A=4 mA."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-02": {
+        "sourceHash": "32dbff0710c7ad7932e09d028b97c50bad1562101f4bca0241eae65718789fae",
+        "stem": "โหนดอุดมคติมี 2 mA เข้า สมมุติ 5 mA และ X ออก แก้ 2−5−X=0",
+        "options": [
+          "3 mA",
+          "7 mA",
+          "−3 mA",
+          "−7 mA"
+        ],
+        "reasons": [
+          "2−5=−3; −3≠3.",
+          "2−5=−3; −3≠7.",
+          "2−5−(−3)=0.",
+          "2−5=−3; −3≠−7."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-03": {
+        "sourceHash": "bcbc55cf019c2d7a33863229cee158f604242fd5652f4ff122893828b245ad84",
+        "stem": "สมมุติ X ออกแต่คำนวณได้ −3 mA ทิศและขนาดจริงคืออะไร",
+        "options": [
+          "3 mA ออก",
+          "3 mA เข้า",
+          "0 mA",
+          "ขนาด−3 mA"
+        ],
+        "reasons": [
+          "ค่าลบของทิศออกที่สมมุติ หมายถึงจริงไหลเข้า",
+          "จริงคือ3 mAเข้า ตรงข้ามลูกศรสมมุติ",
+          "เครื่องหมายลบเปลี่ยนทิศ ไม่ทำให้ขนาดเป็นศูนย์",
+          "ขนาดไม่ติดลบ ให้เก็บเครื่องหมายในค่าที่มีทิศ"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-04": {
+        "sourceHash": "6ac769f4787ccde323fd60608e74c368a41fc5a87f645c376f844cb84f7a9610",
+        "stem": "วงรอบสมมุติมี +15 V−4 V−X=0 จงหา X",
+        "options": [
+          "19 V",
+          "4 V",
+          "−11 V",
+          "11 V"
+        ],
+        "reasons": [
+          "15−4−19=−8≠0.",
+          "15−4−4=7≠0.",
+          "15−4−(−11)=22≠0.",
+          "15−4−11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-05": {
+        "sourceHash": "f77f2b9d44fd195361fae93da4bd7e5b315f6d9df784a6a9878a430a42ceca67",
+        "stem": "กลับทุกเครื่องหมายใน 15−4−11=0 เป็น −15+4+11=0 เพื่อตรวจ ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "−(15−4−11)=−15+4+11=0.",
+          "15−4−11=0 ⇒ −15+4+11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-06": {
+        "sourceHash": "a0b91de45c9f35e0ae0720924ecccda7a06fa6a1bd9e8f40673f24ffaf62f7f7",
+        "stem": "เศษ 15−4−10=1 รายงานว่าสมดุลวงรอบเป็นศูนย์ ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "15−4−10=1≠0.",
+          "15−4−10=1 V; 1 V≠0 V."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-07": {
+        "sourceHash": "8314167e86fdde9bac79fd9af18517d7bfa379a2a549a25089c1ca3e6b99eebe",
+        "stem": "สมดุลที่โหนดพิสูจน์ว่าทุกชิ้นส่วนไร้ข้อขัดข้องหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "สมดุลอย่างเดียวรับรองทุกชิ้นส่วนไม่ได้",
+          "ตรวจสมดุลกับสภาพอุปกรณ์เป็นคนละงาน"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-08": {
+        "sourceHash": "aad22b693ec2f00ff7084a1d58c22b18f332b12a52eb570f81c38f8b854e7e22",
+        "stem": "มีสองกระแสแขนงไม่ทราบค่าแต่มีสมการอิสระเดียว จึงยังหาค่าแต่ละแขนงแน่นอนไม่ได้ ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "หากไม่มีเงื่อนไขอิสระเพิ่ม หลายคู่ให้ผลรวมเดียวกันได้",
+          "อย่ากำหนดสองค่าที่ไม่รู้จากสมการเดียว"
+        ]
+      }
+    },
+    "km": {
+      "mfg1-sequential-kirchhoff-01": {
+        "sourceHash": "2a0df3e2e691d98a2f526f25370b7fd6d92ccec6f6acfda50a8de948eebc2bb7",
+        "stem": "ថ្នាំងស្មានមាន6 mA និង0.004 Aចូល 3 mA និងXចេញ។ រកX។",
+        "options": [
+          "7 mA",
+          "10 mA",
+          "13 mA",
+          "3.004 mA"
+        ],
+        "reasons": [
+          "0.004 A=4 mA; X=(6+4−3) mA=7 mA.",
+          "(6+4) mA=10 mA; 10−3=7.",
+          "(6+4+3) mA=13 mA; 6+4−3=7.",
+          "A≠mA; 0.004 A=4 mA."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-02": {
+        "sourceHash": "32dbff0710c7ad7932e09d028b97c50bad1562101f4bca0241eae65718789fae",
+        "stem": "ថ្នាំងឧត្តមគតិមាន2 mAចូល ហើយស្មាន5 mA និងXចេញ។ ដោះស្រាយ2−5−X=0។",
+        "options": [
+          "3 mA",
+          "7 mA",
+          "−3 mA",
+          "−7 mA"
+        ],
+        "reasons": [
+          "2−5=−3; −3≠3.",
+          "2−5=−3; −3≠7.",
+          "2−5−(−3)=0.",
+          "2−5=−3; −3≠−7."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-03": {
+        "sourceHash": "bcbc55cf019c2d7a33863229cee158f604242fd5652f4ff122893828b245ad84",
+        "stem": "Xស្មានចេញគណនាបាន−3 mA។ ទិសនិងទំហំពិតជាអ្វី?",
+        "options": [
+          "3 mAចេញ",
+          "3 mAចូល",
+          "0 mA",
+          "ទំហំ−3 mA"
+        ],
+        "reasons": [
+          "អវិជ្ជមាននៃទិសស្មានចេញ មានន័យថាពិតជាចូល។",
+          "ពិតជា3 mAចូល ផ្ទុយពីព្រួញស្មាន។",
+          "សញ្ញាអវិជ្ជមានប្ដូរទិស មិនធ្វើទំហំសូន្យទេ។",
+          "ទំហំមិនអវិជ្ជមាន ត្រូវរក្សាសញ្ញាក្នុងតម្លៃមានទិស។"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-04": {
+        "sourceHash": "6ac769f4787ccde323fd60608e74c368a41fc5a87f645c376f844cb84f7a9610",
+        "stem": "រង្វិលស្មានមាន+15 V−4 V−X=0។ រកX។",
+        "options": [
+          "19 V",
+          "4 V",
+          "−11 V",
+          "11 V"
+        ],
+        "reasons": [
+          "15−4−19=−8≠0.",
+          "15−4−4=7≠0.",
+          "15−4−(−11)=22≠0.",
+          "15−4−11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-05": {
+        "sourceHash": "f77f2b9d44fd195361fae93da4bd7e5b315f6d9df784a6a9878a430a42ceca67",
+        "stem": "ប្ដូរគ្រប់សញ្ញា15−4−11=0 ទៅ−15+4+11=0 ដើម្បីផ្ទៀង ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "−(15−4−11)=−15+4+11=0.",
+          "15−4−11=0 ⇒ −15+4+11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-06": {
+        "sourceHash": "a0b91de45c9f35e0ae0720924ecccda7a06fa6a1bd9e8f40673f24ffaf62f7f7",
+        "stem": "សំណល់15−4−10=1។ រាយការណ៍ថាតុល្យភាពសូន្យ ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "15−4−10=1≠0.",
+          "15−4−10=1 V; 1 V≠0 V."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-07": {
+        "sourceHash": "8314167e86fdde9bac79fd9af18517d7bfa379a2a549a25089c1ca3e6b99eebe",
+        "stem": "តុល្យភាពថ្នាំងបញ្ជាក់ថាគ្រប់គ្រឿងគ្មានកំហុសទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "តុល្យភាពតែមួយមិនធានាគ្រប់គ្រឿងទេ។",
+          "ពិនិត្យតុល្យភាពនិងស្ថានភាពឧបករណ៍ជាការងារផ្សេង។"
+        ]
+      },
+      "mfg1-sequential-kirchhoff-08": {
+        "sourceHash": "aad22b693ec2f00ff7084a1d58c22b18f332b12a52eb570f81c38f8b854e7e22",
+        "stem": "ចរន្តសាខាអថេរពីរមានតែសមីការឯករាជ្យមួយ ដូច្នេះមិនអាចកំណត់មួយៗជាក់លាក់ ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "គ្មានលក្ខខណ្ឌឯករាជ្យបន្ថែម គូជាច្រើនអាចឱ្យផលបូកដូចគ្នា។",
+          "កុំកំណត់អថេរពីរពីសមីការមួយដោយខ្លួនឯង។"
+        ]
+      }
+    },
+    "tl": {
+      "mfg1-sequential-kirchhoff-01": {
+        "sourceHash": "2a0df3e2e691d98a2f526f25370b7fd6d92ccec6f6acfda50a8de948eebc2bb7",
+        "stem": "Sa node sa papel, 6 mA at 0.004 A ang papasok; 3 mA at X ang palabas. Hanapin ang X.",
+        "options": [
+          "7 mA",
+          "10 mA",
+          "13 mA",
+          "3.004 mA"
+        ],
+        "reasons": [
+          "0.004 A=4 mA; X=(6+4−3) mA=7 mA.",
+          "(6+4) mA=10 mA; 10−3=7.",
+          "(6+4+3) mA=13 mA; 6+4−3=7.",
+          "A≠mA; 0.004 A=4 mA."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-02": {
+        "sourceHash": "32dbff0710c7ad7932e09d028b97c50bad1562101f4bca0241eae65718789fae",
+        "stem": "Sa ideal node, 2 mA ang papasok at inaakalang palabas ang 5 mA at X. Lutasin ang 2−5−X=0.",
+        "options": [
+          "3 mA",
+          "7 mA",
+          "−3 mA",
+          "−7 mA"
+        ],
+        "reasons": [
+          "2−5=−3; −3≠3.",
+          "2−5=−3; −3≠7.",
+          "2−5−(−3)=0.",
+          "2−5=−3; −3≠−7."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-03": {
+        "sourceHash": "bcbc55cf019c2d7a33863229cee158f604242fd5652f4ff122893828b245ad84",
+        "stem": "Ang inaakalang palabas na X ay −3 mA. Ano ang tunay na direksiyon at magnitude?",
+        "options": [
+          "3 mA palabas",
+          "3 mA papasok",
+          "0 mA",
+          "Magnitude −3 mA"
+        ],
+        "reasons": [
+          "Negatibo ang inaakalang palabas, kaya tunay na papasok.",
+          "Papasok na3 mA ito, kabaligtaran ng ipinagpalagay na arrow.",
+          "Binabago ng minus ang direksiyon, hindi ginagawang zero ang magnitude.",
+          "Hindi negatibo ang magnitude; panatilihin ang sign sa directed value."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-04": {
+        "sourceHash": "6ac769f4787ccde323fd60608e74c368a41fc5a87f645c376f844cb84f7a9610",
+        "stem": "Sa loop sa papel, +15 V−4 V−X=0. Hanapin ang X.",
+        "options": [
+          "19 V",
+          "4 V",
+          "−11 V",
+          "11 V"
+        ],
+        "reasons": [
+          "15−4−19=−8≠0.",
+          "15−4−4=7≠0.",
+          "15−4−(−11)=22≠0.",
+          "15−4−11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-05": {
+        "sourceHash": "f77f2b9d44fd195361fae93da4bd7e5b315f6d9df784a6a9878a430a42ceca67",
+        "stem": "Tama bang baligtarin ang lahat ng sign sa 15−4−11=0 bilang −15+4+11=0 para mag-check?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "−(15−4−11)=−15+4+11=0.",
+          "15−4−11=0 ⇒ −15+4+11=0."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-06": {
+        "sourceHash": "a0b91de45c9f35e0ae0720924ecccda7a06fa6a1bd9e8f40673f24ffaf62f7f7",
+        "stem": "Ang tira ay 15−4−10=1. Tama bang iulat na zero ang loop balance?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "15−4−10=1≠0.",
+          "15−4−10=1 V; 1 V≠0 V."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-07": {
+        "sourceHash": "8314167e86fdde9bac79fd9af18517d7bfa379a2a549a25089c1ca3e6b99eebe",
+        "stem": "Patunay ba ng balance sa node na walang sira ang lahat ng piyesa?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "Hindi sapat ang balance para sertipikahan ang lahat ng piyesa.",
+          "Magkaibang gawain ang balance check at equipment-health check."
+        ]
+      },
+      "mfg1-sequential-kirchhoff-08": {
+        "sourceHash": "aad22b693ec2f00ff7084a1d58c22b18f332b12a52eb570f81c38f8b854e7e22",
+        "stem": "Dalawang unknown branch current pero isang independent equation lang: tama bang hindi tiyak ang bawat branch?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "Maraming pares ang maaaring bumuo ng parehong total kung walang dagdag na independent condition.",
+          "Huwag gumawa ng dalawang unknown value mula sa isang equation."
+        ]
+      }
+    }
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "physicalDeviceVerified": false
+}

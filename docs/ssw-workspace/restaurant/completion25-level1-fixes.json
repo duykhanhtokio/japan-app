@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "baseCommit": "d4bf4e65c45cd53a51ff650c27ab7e8f95ed657b",
+  "confirmedIncorrectCanonicalAnswerCount": 0,
+  "scope": "No broad canonical correction is asserted from this coverage audit. These are explicit additions/metadata-review proposals and guards; not applied patches.",
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "proposals": [
+    {
+      "id": "level1-gap-fish-cheek",
+      "kind": "coverage_addition",
+      "unitIds": [
+        "rst-1-cooking-k007",
+        "rst-1-cooking-k009"
+      ],
+      "target": {
+        "lessonId": "rst-1-cook-02",
+        "paragraphId": "knowledge"
+      },
+      "reason": "Source fish label set includes cheek bone; the text does not name it.",
+      "proposalJa": "魚の頭のほほ骨と、尾の先にある尾びれも、図で位置を確かめます。部位名と位置を組み合わせて覚え、骨がないと見た目だけで決めつけません。",
+      "sourceRefs": [
+        {
+          "documentId": "rst-1-cooking",
+          "pdfPages": [
+            8
+          ]
+        }
+      ],
+      "integrationConditions": [
+        "Coordinate with AI4 ten-label anatomy guide, not a duplicate image.",
+        "Read/translate any appended content in all12locales and bind only reviewed revisions.",
+        "Rebuild and context-review furigana; retain source/native/domain false."
+      ]
+    },
+    {
+      "id": "level1-gap-cooking-quality-values",
+      "kind": "coverage_addition_needs_context",
+      "unitIds": [
+        "rst-1-cooking-k027",
+        "rst-1-cooking-k028",
+        "rst-1-cooking-k029"
+      ],
+      "target": {
+        "lessonId": "rst-1-cook-08",
+        "paragraphId": "knowledge"
+      },
+      "reason": "Source cooking-quality values/medium effects are omitted; they must not become universal safety acceptance thresholds.",
+      "requiredFacts": [
+        "Separate the source rice starch-gelatinisation example from a food-safety kill-step.",
+        "Differentiate salt→shape, vinegar→white colour, bicarbonate→green colour as source examples with recipe/product limits.",
+        "If adding approximate frying-oil temperature, explicitly distinguish it from food-centre temperature."
+      ],
+      "sourceRefs": [
+        {
+          "documentId": "rst-1-cooking",
+          "pdfPages": [
+            18
+          ]
+        }
+      ],
+      "integrationConditions": [
+        "Editorial rewrite and source-scope labels required.",
+        "No blind safety threshold substitution.",
+        "Explicit12-locale translation/furigana/revision review required."
+      ]
+    },
+    {
+      "id": "level1-gap-source-cooling",
+      "kind": "requires_primary_scope_verification_before_authoring",
+      "unitIds": [
+        "rst-1-hygiene-k069",
+        "rst-1-hygiene-k071"
+      ],
+      "target": {
+        "lessonId": "rst-1-hyg-15",
+        "paragraphId": "mistakes"
+      },
+      "reason": "Source juxtaposes two differently scoped schedules; elapsed-time origin and applicability must be checked against primary manuals before new numeric teaching.",
+      "sourceRefs": [
+        {
+          "documentId": "rst-1-hygiene",
+          "pdfPages": [
+            25
+          ]
+        }
+      ],
+      "integrationConditions": [
+        "Verify current primary manual and which point starts each timer.",
+        "Do not concatenate schedules or present an institutional example as a universal restaurant rule.",
+        "Keep the current no-mixed-examples warning until verified expansion is authored."
+      ]
+    },
+    {
+      "id": "level1-metadata-ref01",
+      "kind": "ledger_scope_label_review",
+      "unitIds": [
+        "rst-1-hygiene-ref01"
+      ],
+      "reason": "The referenced29–30 pages are handwashing and mixed-food process classification, whereas the ledger label emphasizes hygiene-plan design.",
+      "proposal": "Rename/split the navigation description so handwashing and process classification are represented accurately; plan templates are31–34. Do not fabricate replacement page references.",
+      "sourceRefs": [
+        {
+          "documentId": "rst-1-hygiene",
+          "pdfPages": [
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ]
+        }
+      ]
+    },
+    {
+      "id": "level1-service-emergency-source-guard",
+      "kind": "preserve_safer_editorial_policy",
+      "unitIds": [
+        "rst-1-service-k064",
+        "rst-1-service-k065"
+      ],
+      "reason": "Source includes older symptom-specific water/first-aid instructions; current app appropriately prioritizes emergency dispatch and avoids forced feeding for impaired consciousness/swallowing.",
+      "proposal": "Do not copy old source actions just to close coverage. Obtain current qualified first-aid guidance, then author bounded scenarios and a reviewed action guide.",
+      "sourceRefs": [
+        {
+          "documentId": "rst-1-service",
+          "pdfPages": [
+            40
+          ]
+        }
+      ]
+    }
+  ]
+}

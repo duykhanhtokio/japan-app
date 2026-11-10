@@ -33,3 +33,7 @@ Chuyển **nội dung mới đã duyệt** sang schema app; chỉ tạo dữ li�
 ## Prompt thực thi ngắn cho phiên AI kế tiếp
 
 > Đọc AGENTS.md, docs/AI_SESSION_START_HERE.md, chỉ mục nguồn và bản yêu cầu này. Kiểm tra trạng thái thực tế của ba repo trên GitHub; kiểm kê những tài liệu gốc thực sự có byte/hash, không suy đoán từ danh mục. Với mỗi mục đủ điều kiện B1, tạo bài học Nhật–Việt độc lập bằng từ vựng và kiến thức đã xác minh; không sao chép hoặc dịch sát cấu trúc/câu chữ/đề/hình của nguồn. Rà chuyên môn, quyền và tương đồng, ghi blocker chính xác, lưu checkpoint bền. Chỉ đưa bài đã qua gate vào app; không sửa JLPT UI. Tiếp tục các mục đủ điều kiện khác khi một mục bị chặn.
+
+## Bổ sung chung2026-10-31: khối lượng từng ngày và ảnh bắt buộc
+
+Áp dụng [DAILY_LEARNING_AND_IMAGE_REQUIREMENTS_VI.md](DAILY_LEARNING_AND_IMAGE_REQUIREMENTS_VI.md) cho cả sáu ngành đã triển khai: Nông nghiệp, Sản xuất, Thực phẩm, Nhà hàng, Xây dựng và Kaigo. Mỗi ngày học có ít nhất một ảnh/sơ đồ minh họa trực tiếp kiến thức trọng tâm. Đánh giá khối lượng theo ngày thực tế của lịch đọc; không lấy tổng bài, tổng ảnh, nhãn30phút hoặc thẻ tài liệu bổ sung ngoài lịch làm bằng chứng đạt. Các tồn tại được liệt kê trong [báo cáo rà soát](daily-learning-audit-20261031/REPORT_VI.md); đây là yêu cầu và kiểm kê, không phải tuyên bố đã tạo đủ ảnh hoặc cân đối xong lịch.

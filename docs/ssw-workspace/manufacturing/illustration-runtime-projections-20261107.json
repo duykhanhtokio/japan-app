@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "641935f18544fe872fc273140d1bea90d5303362",
+  "scope": "Manufacturing illustration reading/runtime data evaluation only. No artwork, source prose, accepted reading payload or translation change.",
+  "implementation": {
+    "fullCandidateCorpus": "docs/ssw-workspace/manufacturing/illustration-reading-authoring-corpus-20261107.json",
+    "immutableCandidateRecords": 1693,
+    "reviewedNativeRecords": 284,
+    "pendingAuthoringRecords": 1409,
+    "independentCaptionRecords": 27,
+    "nextReviewStorage": "small explicit reviewed weekly override files; immutable candidates retained",
+    "productionReadingLoader": "src/data/manufacturing/illustration-reading-tokens.ts",
+    "productionLocaleLoader": "src/data/manufacturing/royal-native-locale-loader.ts",
+    "retainedFullRoyalSnapshot": "authoring/test input only; no production imports",
+    "newAppDependency": false,
+    "runtimeTokenizer": false
+  },
+  "qa": {
+    "importOnlyJson": [
+      "src/data/manufacturing/illustration-reading-index.json",
+      "src/data/manufacturing/illustration-readings.json"
+    ],
+    "firstJaJson": [
+      "src/data/manufacturing/illustration-reading-index.json",
+      "src/data/manufacturing/illustration-readings.json",
+      "src/data/manufacturing/royal-native-locales/ja.json",
+      "src/data/manufacturing/illustration-reading-shards/week02.json"
+    ],
+    "afterViJson": [
+      "src/data/manufacturing/illustration-reading-index.json",
+      "src/data/manufacturing/illustration-readings.json",
+      "src/data/manufacturing/royal-native-locales/ja.json",
+      "src/data/manufacturing/illustration-reading-shards/week02.json",
+      "src/data/manufacturing/royal-native-locales/vi.json"
+    ],
+    "importOnlyJsonBytes": 45925,
+    "firstJaJsonBytes": 566654,
+    "jaPlusViJsonBytes": 988127,
+    "approvedTokenPayloadsUnchanged": 254,
+    "pendingAuthoringRecordsFailClosed": 1439,
+    "reviewedCaptionRecordsPreserved": 27,
+    "allLocaleProjectionRowsAndStylesIdentical": 3094,
+    "staleSourcesRejected": 3094,
+    "actualRuntimeMutationCases": 4,
+    "unknownLocaleFallsBackToJa": true,
+    "unreviewedOriginalTextAndStylePreserved": true,
+    "nonJaDoesNotApplyJapaneseReadings": true,
+    "fullAuthoringInputsNeverRequiredByRuntime": true,
+    "proofScope": "Initial254-token/3094-output proof before incoming30; retained because production component/loader code and locale outputs did not change. Incoming30 verified by separate bounded reconciliation."
+  },
+  "deterministicBuilder": {
+    "authoringRecords": 1693,
+    "reviewedRuntimeRecords": 284,
+    "pendingAuthoringRecords": 1409,
+    "captionRecords": 27,
+    "readingIndexBytes": 6250,
+    "captionManifestBytes": 40335,
+    "reviewedShardBytes": {
+      "week01": 25330,
+      "week02": 145446,
+      "week03": 261894,
+      "week04": 276461,
+      "week05": 3,
+      "week06": 3,
+      "week07": 3,
+      "week08": 3,
+      "week09": 3,
+      "week10": 3,
+      "week11": 3,
+      "week12": 3,
+      "week13": 3,
+      "week14": 3,
+      "other": 3
+    },
+    "localeBytes": {
+      "ja": 392545,
+      "en": 368112,
+      "vi": 421473,
+      "id": 360485,
+      "zh-CN": 286748,
+      "zh-TW": 291809,
+      "hi": 609862,
+      "bn": 635421,
+      "ne": 693117,
+      "my": 825569,
+      "th": 737538,
+      "km": 764471,
+      "tl": 363565
+    },
+    "check": true
+  },
+  "additionalChecks": [
+    "PASS adapted actual W1–2, W3 andW4 reader/context/source guards against authoring corpus and real projected token API",
+    "PASS actual22 direct captions286locale contexts264native286sourceguards",
+    "PASS actual5supplemental+6completion117locale contexts108native117sourceguards",
+    "PASS strict focused five actual components plus transitive loaders, exact JSON and alignment; declared RN/theme/lesson identity boundary; not whole app",
+    "PASS scoped git diff --check"
+  ],
+  "limits": [
+    "Evaluated JSON module loads in instrumented actual JavaScript components; no Metro delivery splitting or device memory claim",
+    "Native pronunciation, domain and device acceptance remain pending",
+    "Main262 artwork exhausted; remaining active reading context review RoyalW5–14 and other actual routes continues"
+  ],
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "deviceAcceptance": false,
+  "allExistingContentComplete": false,
+  "currentOutputSha256": {
+    "src/data/manufacturing/illustration-readings.json": "8d093782f061636f66e5a76d4f9ededec8f51f1cf81f06bfd3f176e5c217b402",
+    "src/data/manufacturing/illustration-reading-tokens.ts": "499ceaac07ddaf79cae2d482fdee12f0517fb8045b57da276c3dd1236950c55d",
+    "src/data/manufacturing/illustration-reading-index.json": "03d5774000b86f7cf9a4fcc55941368ebfc032a23ebf36885eaa674bc12a74c2",
+    "src/data/manufacturing/royal-native-locale-loader.ts": "b3fe1679e9745e65b02d3971a71531ad8cabc28fce2a831d1313bec962bddc28",
+    "src/components/manufacturing/ManufacturingIllustrationText.tsx": "8e55818fc1f25d71151e5d77a31e36e488bfd5b57ffb19fd9ea64cf1958353fc",
+    "src/components/manufacturing/RoyalWeek01TechnicalDetails.tsx": "e549f44a4f2a1b3a1a4a50066bf131e9277afe991bbb4fffd255254dd2d4f002",
+    "scripts/manufacturing/build-illustration-runtime.cjs": "88a4193dcfa4249f239fc673eab79d81aa2bf3777e6442e062b3afd9cf82d460",
+    "scripts/manufacturing/load-illustration-reading-authoring.cjs": "764ced36c68595ae71090e0ea6419f9534dd94912d9e7579057742be8498ac54",
+    "scripts/manufacturing/check-illustration-runtime-projections.cjs": "cc50b19a01a38d9ccb96a56c01f8ec94ab4123076a1c464b68b30440dc159a81",
+    "docs/ssw-workspace/manufacturing/illustration-reading-authoring-context-20261107.json": "4917235c863605900752cd4b0eba2af1483087f82cb9ad05a3af77c5868e4fb9",
+    "docs/ssw-workspace/manufacturing/illustration-reading-reviewed-overrides/early-primary-special30.json": "3064198410167df5572c9e3b075e271786987ae9e8659e916f4c700b0d548d72"
+  },
+  "initialValidatedBaseline": "932d6c4b24c6dc9f72db57bd58c93c678d62b0a4",
+  "incomingRegistryReconciliation": {
+    "incomingRegistryBlobSha": "843b02ff10d6561d823ea2140e11b3d1879f75c2",
+    "immutableW4SnapshotPreserved": "e891d6e2c21aed1c88eae21aeb8813d0e795494f",
+    "reviewedOverridePath": "docs/ssw-workspace/manufacturing/illustration-reading-reviewed-overrides/early-primary-special30.json",
+    "newIncomingReviewedFields": 30,
+    "previous254RowsUnchanged": true,
+    "wholeContextReadingChangesPreserved": 3,
+    "activePendingFields": 1378,
+    "storedPendingFields": 1409,
+    "difference": "27 legacy exact captions +4 historical snapshots; no removal counts as review",
+    "qa": {
+      "boundedIncomingDelta": true,
+      "incomingReviewedFieldsPreserved": 30,
+      "allMergedNativeRecordsExact": 1693,
+      "approvedTokenPayloadsExact": 284,
+      "pendingAuthoringRecordsFailClosed": 1409,
+      "captionRecordsPreserved": 27,
+      "all13LocaleDataProjectionsUnchanged": true,
+      "incomingQueueInventoryAndBatchProvenanceUnchanged": true,
+      "importOnlyJson": [
+        "src/data/manufacturing/illustration-reading-index.json",
+        "src/data/manufacturing/illustration-readings.json"
+      ],
+      "firstJaJson": [
+        "src/data/manufacturing/illustration-reading-index.json",
+        "src/data/manufacturing/illustration-readings.json",
+        "src/data/manufacturing/royal-native-locales/ja.json",
+        "src/data/manufacturing/illustration-reading-shards/week02.json"
+      ],
+      "afterViJson": [
+        "src/data/manufacturing/illustration-reading-index.json",
+        "src/data/manufacturing/illustration-readings.json",
+        "src/data/manufacturing/royal-native-locales/ja.json",
+        "src/data/manufacturing/illustration-reading-shards/week02.json",
+        "src/data/manufacturing/royal-native-locales/vi.json"
+      ],
+      "importOnlyJsonBytes": 46585,
+      "firstJaJsonBytes": 584576,
+      "jaPlusViJsonBytes": 1006049,
+      "actualRuntimeMutationCases": 4,
+      "prior3094HtmlStyleProofRetained": true,
+      "noRepeated3094RenderSweep": true
+    }
+  },
+  "latestBoundedIncomingDelta": {
+    "boundedIncomingDelta": true,
+    "incomingReviewedFieldsPreserved": 69,
+    "allMergedNativeRecordsExact": 1693,
+    "approvedTokenPayloadsExact": 353,
+    "pendingAuthoringRecordsFailClosed": 1340,
+    "captionRecordsPreserved": 27,
+    "all13LocaleDataProjectionsUnchanged": true,
+    "sharedQueueExcludedFromCoreUnit": true,
+    "importOnlyJson": [
+      "src/data/manufacturing/illustration-reading-index.json",
+      "src/data/manufacturing/illustration-caption-readings.json"
+    ],
+    "firstJaJson": [
+      "src/data/manufacturing/illustration-reading-index.json",
+      "src/data/manufacturing/illustration-caption-readings.json",
+      "src/data/manufacturing/royal-native-locales/ja.json",
+      "src/data/manufacturing/illustration-reading-shards/week02.json"
+    ],
+    "afterViJson": [
+      "src/data/manufacturing/illustration-reading-index.json",
+      "src/data/manufacturing/illustration-caption-readings.json",
+      "src/data/manufacturing/royal-native-locales/ja.json",
+      "src/data/manufacturing/illustration-reading-shards/week02.json",
+      "src/data/manufacturing/royal-native-locales/vi.json"
+    ],
+    "importOnlyJsonBytes": 48103,
+    "firstJaJsonBytes": 586094,
+    "jaPlusViJsonBytes": 1007567,
+    "actualRuntimeMutationCases": 4,
+    "prior3094HtmlStyleProofRetained": true,
+    "noRepeated3094RenderSweep": true
+  },
+  "currentState": {
+    "reviewedNative": 532,
+    "pendingStored": 1161,
+    "pendingActive": 1130,
+    "legacyCaptions": 27,
+    "inactiveHistorical": 4
+  },
+  "sourceDependencyVerification": {
+    "baseCommit": "49990dbaa2471c95dba7448fab557eff3b9fa257",
+    "fullRoyalBlob": "bc7aa2d55e6e206089309b3bbe5fd6a3e3ebdaf3",
+    "legacyFullReadingsBlob": "4e052154536a59f7df1088953e1ac3d66d546460",
+    "bothLocalBytesMatchRemote": true,
+    "legacyFullReadingsUnmodifiedAndExcluded": true,
+    "sharedQueueExcluded": true
+  },
+  "currentRuntimeCaptionManifest": "src/data/manufacturing/illustration-caption-readings.json",
+  "finalFocusedValidation": {
+    "captionContexts": 117,
+    "directContexts": 286,
+    "strictFiveComponents": true,
+    "builderCheck": true,
+    "fullPrior3094SweepNotRepeated": true
+  },
+  "latestIncomingBoundaryDelta": {
+    "boundedIncomingDelta": true,
+    "incomingReviewedFieldsPreserved": 179,
+    "allMergedNativeRecordsExact": 1693,
+    "approvedTokenPayloadsExact": 532,
+    "pendingAuthoringRecordsFailClosed": 1161,
+    "captionRecordsPreserved": 27,
+    "all13LocaleDataProjectionsUnchanged": true,
+    "sharedQueueExcludedFromCoreUnit": true,
+    "importOnlyJson": [
+      "src/data/manufacturing/illustration-reading-index.json",
+      "src/data/manufacturing/illustration-caption-readings.json"
+    ],
+    "firstJaJson": [
+      "src/data/manufacturing/illustration-reading-index.json",
+      "src/data/manufacturing/illustration-caption-readings.json",
+      "src/data/manufacturing/royal-native-locales/ja.json",
+      "src/data/manufacturing/illustration-reading-shards/week02.json"
+    ],
+    "afterViJson": [
+      "src/data/manufacturing/illustration-reading-index.json",
+      "src/data/manufacturing/illustration-caption-readings.json",
+      "src/data/manufacturing/royal-native-locales/ja.json",
+      "src/data/manufacturing/illustration-reading-shards/week02.json",
+      "src/data/manufacturing/royal-native-locales/vi.json"
+    ],
+    "importOnlyJsonBytes": 52041,
+    "firstJaJsonBytes": 604126,
+    "jaPlusViJsonBytes": 1025599,
+    "actualRuntimeMutationCases": 4,
+    "prior3094HtmlStyleProofRetained": true,
+    "noRepeated3094RenderSweep": true
+  },
+  "immutableIncomingBoundary": {
+    "commit": "b4650e473b79589a94ff42ad24846ee38733da5a",
+    "legacySourceBlob": "84e43c38501fcaffb26dc9a82444203b3d438094",
+    "newReviewed": 179,
+    "prior353Unchanged": true,
+    "movingLegacyCorpusExcludedAsDependency": true,
+    "futureIncomingChangesRequireSeparateAdditiveReconciliation": true
+  }
+}

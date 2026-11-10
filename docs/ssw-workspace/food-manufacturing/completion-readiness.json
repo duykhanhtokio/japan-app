@@ -1,0 +1,138 @@
+{
+  "audit": "Read-only runtime/build/furigana readiness",
+  "repository": "/workspace/scratch/ba945b425b2b/food-app",
+  "observedAtUTC": "2026-10-28",
+  "environment": {
+    "node": "v24.22.1",
+    "python": "3.12.14",
+    "freeBytes": 200421376,
+    "diskCapacityBytes": 33770192896,
+    "repoNodeModulesPresent": false,
+    "missingModules": [
+      "expo",
+      "react",
+      "react-dom",
+      "react-native",
+      "react-native-web",
+      "esbuild",
+      "typescript"
+    ],
+    "availableModule": "playwright in primary runtime",
+    "trackedAssetCount": 5545,
+    "trackedAssetsPresent": 0,
+    "trackedAssetsAbsent": 5545,
+    "sparseRulesExcludeAssets": true,
+    "unconfiguredBrowserVariables": [
+      "FOOD_QA_OUTPUT",
+      "FOOD_QA_CHROMIUM",
+      "FOOD_QA_JAPANESE_FONT",
+      "FOOD_QA_SCRIPT_FONT_DIR"
+    ]
+  },
+  "checksActuallyRun": [
+    {
+      "command": "node scripts/food-manufacturing/check-state.mjs",
+      "result": "PASS: resume, revision invalidation, scoring, malformed storage and namespace isolation"
+    },
+    {
+      "command": "node scripts/food-manufacturing/check-adapter-without-bundler.cjs",
+      "result": {
+        "status": "PASS",
+        "validTranslationPairs": 10068,
+        "rejectedStalePairs": 10068,
+        "missingPairsWithoutFallback": 0,
+        "validTitles": 396
+      }
+    },
+    {
+      "command": "python3 scripts/food-manufacturing/check-content.py",
+      "result": {
+        "status": "PASS structural only",
+        "lessons": 78,
+        "weeklyQuestions": 39,
+        "mockQuestions": 800,
+        "lessonLocales": 12,
+        "questionLocales": 12,
+        "fullBodyFurigana": "pending_verified_segments",
+        "scopeComplete": false
+      }
+    },
+    {
+      "command": "node scripts/food-manufacturing/check-question-translations.cjs",
+      "result": "BLOCKED: MODULE_NOT_FOUND esbuild"
+    }
+  ],
+  "furigana": {
+    "lessonCount": 78,
+    "lessonParagraphs": 238,
+    "termReadingOccurrences": 238,
+    "termReadingsNonempty": 238,
+    "termReadingsValidHiraganaSyntax": 236,
+    "uniqueTermReadingPairs": 229,
+    "termNativeOrDomainVerifiedCount": "not established: AI authored/unreviewed flags retained",
+    "fullBodyAlignedSegmentsInFoodLessonData": 0,
+    "plainLessonFields": {
+      "titles": 78,
+      "objectives": 78,
+      "paragraphHeadings": 238,
+      "paragraphBodies": 238,
+      "summaries": 78,
+      "activities": 78,
+      "total": 788
+    },
+    "assessmentText": "All question stems/options/explanations/reasons use plain text in current food runtime; no ruby segment interface in FoodManufacturingQuestion. 839 canonical questions; source-specific furigana verification not established.",
+    "architecture": "FoodManufacturingCourse imports JapaneseRuby only for lesson.terms; each receives one whole-term segment. Other reader and assessment strings render Text/Button. JapaneseRuby accepts only complete aligned segments with hiragana reading syntax and otherwise returns plain Text. Alignment validation does not certify pronunciation.",
+    "files": [
+      "src/components/food-manufacturing/FoodManufacturingCourse.tsx",
+      "src/components/world/JapaneseRuby.tsx",
+      "src/components/world/japanese-ruby-data.ts",
+      "src/data/food-manufacturing/index.ts",
+      "src/data/food-manufacturing/lessons.1.ja.json",
+      "src/data/food-manufacturing/lessons.2.ja.json"
+    ],
+    "termsRejectedByActualRenderer": [
+      {
+        "term": "健康チェック",
+        "reading": "けんこうチェック",
+        "reason": "Katakana fails hasAlignedRuby hiragana-only reading regex; renderer falls back to plain text."
+      },
+      {
+        "term": "食品ロス",
+        "reading": "しょくひんロス",
+        "reason": "Katakana fails hasAlignedRuby hiragana-only reading regex; renderer falls back to plain text."
+      }
+    ],
+    "structurallyRubyDisplayableTermOccurrences": 236
+  },
+  "exactBlockers": [
+    "Only about192MiB free; dependencies/assets/browser caches could exceed space. No installs attempted.",
+    "Sparse checkout omits every tracked asset, including shared artwork/audio. A production Expo build cannot be certified from this source subset.",
+    "Project JavaScript dependencies absent; bundler/browser/TypeScript/lint/Expo cannot run as configured.",
+    "Browser QA requires configured executable and Japanese/script fonts. Existing scoped script stubs Royal artwork/background/safe-area/storage and image assets; even a PASS there would not certify full production/native rendering.",
+    "No new screenshots, browser runtime, Expo build or native-device evidence produced.",
+    "Full-body furigana and semantic verification of existing readings remain uncompleted.",
+    "Two supplied term readings contain katakana and fail the actual hiragana-only ruby gate; those terms currently fall back to plain text."
+  ],
+  "feasibleRemainingWorkNow": [
+    "Continue dependency-free structural, numeric, revision/hash, terminology and actual Node adapter/state checks.",
+    "Design explicit source-aligned ruby data schema and inventory in a future authorized implementation; independently verify readings before display.",
+    "After sufficient disk and complete checkout/dependencies, execute configured scoped browser QA on final changed strings; then full Expo/native-device layout, safe-area, script-font, ruby wrapping and persistence checks."
+  ],
+  "evidenceCommands": [
+    "df -h .",
+    "du -sh food-app/node_modules food-app/assets",
+    "node --version",
+    "python3 --version",
+    "git -C food-app sparse-checkout list",
+    "git -C food-app ls-files assets",
+    "require.resolve module checks using project and primary runtime paths",
+    "JSON key/reading inventory of both Japanese lesson datasets",
+    "read FoodManufacturingCourse.tsx, JapaneseRuby.tsx, japanese-ruby-data.ts and browser scripts"
+  ],
+  "limitations": [
+    "No repo/Git edits.",
+    "Structural completeness is not domain/native/visual certification.",
+    "Counts measured current on-disk datasets; no full-body semantic furigana completeness claim."
+  ],
+  "snapshotStage": "Read-only audit at e0e8d76 before completion fixes; see completion-summary.json for post-fix status."
+}

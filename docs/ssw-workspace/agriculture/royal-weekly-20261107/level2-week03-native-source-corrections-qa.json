@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "sector": "agriculture",
+  "unit": "true-level2-week03-two-native-source-misassociation-corrections",
+  "reviewedBaseline": "1b69a96bd2e11f5a0f8c26a8d27b821041f973a3",
+  "scheduledEntryId": "agr-2-w03",
+  "scheduledLessonIds": [
+    "agr-crop-types",
+    "agr-plant-responses",
+    "agr-sowing-design"
+  ],
+  "changedLessonIds": [
+    "agr-crop-types",
+    "agr-plant-responses"
+  ],
+  "readyPaths": [
+    "src/components/agriculture/CropClassificationFigure.tsx",
+    "src/data/agriculture/crop-classification-native.json",
+    "src/components/agriculture/PlantResponseFigure.tsx",
+    "src/data/agriculture/plant-response-native.json",
+    "src/components/agriculture/DailyLearningSupport.tsx",
+    "docs/ssw-workspace/agriculture/royal-weekly-20261107/level2-week03-native-source-corrections-qa.json"
+  ],
+  "sourceReview": {
+    "primaryPdfPixelsViewed": {
+      "AGR-S2": [
+        9,
+        10,
+        11
+      ]
+    },
+    "primaryPdfSha256": "c19741bd8f6128a80d9d9f9e3ab39e8a5e9eb969a30f51771c47527ef6190a12",
+    "cropClassification": "AGR-S2 PDF10/printed8 exact 9-node taxonomy: crops split into field/horticultural; food, combined fodder-and-green-manure, industrial below field; fruit, vegetables, ornamentals below horticultural. Canonical six source paragraphs preserve separate fodder/green-manure uses and tendency-only scale/mechanization statements. Exact native taxonomy is a technical classification, not replacement occupational illustration.",
+    "plantResponses": "AGR-S2 PDF9/printed7 light increases photosynthesis only before saturation; PDF11/printed9 leaf stomata transpiration; heat releases excess water, prolonged dry soil retains water. Canonical six paragraphs preserve conditions separately and explicitly reject invented lux/temperature/irrigation setpoints. Reuses already saved source-correct native plant-flow diagram with independent source/revision guard; no quantitative curve invented.",
+    "rasterGenerated": false,
+    "wrongPriorDailyAssociationsSuperseded": [
+      "crop-types → organ-position diagram",
+      "plant-responses → pF numeric source-range comparison"
+    ],
+    "oldRecognitionRowsPreserved": true
+  },
+  "checks": {
+    "actualDailyRenders": 26,
+    "hiddenJapaneseOnlyFallbackRenders": 26,
+    "independentSourceRevisionScopeJapaneseLocaleAndRelatedProcessNegatives": 34,
+    "targetLocales": 12,
+    "japaneseAlwaysRetained": true,
+    "canonicalParagraphsPerLessonPerLocale": 6,
+    "strictTypeScript": "PASS actual DailyLearningSupport import graph and JSON, minimal React/RN/service ambient declarations; not full app",
+    "actualRendering": "Actual DailyLearningFigure + both new native components + existing NativeProcessDiagram, RNW SSR. Current exact canonical ID/level lesson lookup adapter; unrelated translation service, StudyAppearance and static assets isolated.",
+    "sourceJapaneseAndTwelveCanonicalTranslations": "exact current sourceHash-bound lesson title/objective/full paragraph titles and texts reused; nine taxonomy labels separately source-bound translated",
+    "dailyDiff": "exact reverse proof: only two imports and two native study overrides relative to reviewedBaseline",
+    "quizAndProgress": "no quiz/progress/source-lesson/answer files modified; existing exam generic labels/masks unchanged; no new exam alt hookup",
+    "visualScreenshot": "Not completed: local Chromium failed process singleton socket operation due sandbox permissions. HTML from actual RNW SSR prepared in scratch; no visual/device acceptance claimed.",
+    "scripts": [
+      "/workspace/scratch/b72f4a7f6a62/level2-week03-audit/check-crop-classification.cjs",
+      "/workspace/scratch/b72f4a7f6a62/level2-week03-audit/check-plant-response.cjs",
+      "/workspace/scratch/b72f4a7f6a62/week03-audit/check-daily-types.cjs"
+    ]
+  },
+  "remainingTrueLevel2Week03": [
+    "localize retained sowing-patterns, row/plant-spacing, and sowing/spacing technical figure metadata",
+    "review/localize retained pF source-range comparison without conflating L1 >3.0 and L2 >=3.0",
+    "audit soil-moisture instrument appearance illustration quality and source-photo debt; no duplicate raster generation"
+  ],
+  "wholeWeekComplete": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "sourcePhotoObjectiveComplete": false,
+  "releaseReady": false,
+  "sha256": {
+    "src/components/agriculture/CropClassificationFigure.tsx": "b8f2f10124a0b0cc45f78bc2d95c09deb03379c224616d8a3dd86548cf28be7c",
+    "src/data/agriculture/crop-classification-native.json": "2462616836f238aa42e5300b57a347d736877bd379b5b154fd92e86600fb847b",
+    "src/components/agriculture/PlantResponseFigure.tsx": "1de9a1ca2eadce7ef6abedcc6ede08e8c2b92a005efe04a9be836fc788b2eb0f",
+    "src/data/agriculture/plant-response-native.json": "e61cc7deb7425d64e729743fc4f0b253d796363e57b3dfe45eb816e0723d765d",
+    "src/components/agriculture/DailyLearningSupport.tsx": "9cd8315fd02ca81a24a8e05ba3d90945324facff126b502557e1e1508d342a43"
+  }
+}

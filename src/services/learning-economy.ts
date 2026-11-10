@@ -1,3 +1,4 @@
+import { learningStorageKey } from './learning-storage-scope';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export type JlptRank = 'N5' | 'N4' | 'N3' | 'N2' | 'N1';
@@ -19,13 +20,14 @@ export type LearningEconomy = {
 };
 const empty = (): LearningEconomy => ({ credits: CREDIT_CAPACITY, charges: {}, passed: { N5: {}, N4: {}, N3: {}, N2: {}, N1: {} }, officialRank: null });
 let queue: Promise<unknown> = Promise.resolve();
-function serial<T>(action: () => Promise<T>): Promise<T> {
-  const next = queue.then(action, action);
+function serial<T>(action: (storageKey: string) => Promise<T>): Promise<T> {
+  const run = async () => action(await learningStorageKey(STORAGE_KEY));
+  const next = queue.then(run, run);
   queue = next.catch(() => undefined);
   return next;
 }
-async function read(): Promise<LearningEconomy> {
-  const raw = await AsyncStorage.getItem(STORAGE_KEY);
+async function read(storageKey: string): Promise<LearningEconomy> {
+  const raw = await AsyncStorage.getItem(storageKey);
   if (!raw) return empty();
   try {
     const parsed = JSON.parse(raw) as Partial<LearningEconomy>;
@@ -35,45 +37,45 @@ async function read(): Promise<LearningEconomy> {
 }
 export const loadLearningEconomy = () => serial(read);
 export function chargeLearningSession(id: string, kind: Charge['kind']) {
-  return serial(async () => {
-    const state = await read();
+  return serial(async (storageKey) => {
+    const state = await read(storageKey);
     if (state.charges[id]) return { allowed: true, charged: false, state };
     const amount = kind === 'exam' ? EXAM_COST : DIALOGUE_COST;
     if (state.credits < amount) return { allowed: false, charged: false, state };
     const next = { ...state, credits: state.credits - amount, charges: { ...state.charges, [id]: { amount, refunded: false, kind } } };
-    await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    await AsyncStorage.setItem(storageKey, JSON.stringify(next));
     return { allowed: true, charged: true, state: next };
   });
 }
 /** Call only after the reward-ad provider confirms a completed viewing. */
 export function refundCompletedAd(id: string) {
-  return serial(async () => {
-    const state = await read();
+  return serial(async (storageKey) => {
+    const state = await read(storageKey);
     const charge = state.charges[id];
     if (!charge || charge.refunded) return { refunded: false, state };
     const next = { ...state, credits: Math.min(CREDIT_CAPACITY, state.credits + charge.amount), charges: { ...state.charges, [id]: { ...charge, refunded: true } } };
-    await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    await AsyncStorage.setItem(storageKey, JSON.stringify(next));
     return { refunded: true, state: next };
   });
 }
 export function earnCredits(amount: number) {
-  return serial(async () => {
+  return serial(async (storageKey) => {
     if (!Number.isInteger(amount) || amount <= 0) throw new Error('Invalid credit amount');
-    const state = await read();
+    const state = await read(storageKey);
     const next = { ...state, credits: Math.min(CREDIT_CAPACITY, state.credits + amount) };
-    await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    await AsyncStorage.setItem(storageKey, JSON.stringify(next));
     return next;
   });
 }
 export function recordQualifiedExam(examId: string, level: JlptRank, correct: number, total: number) {
-  return serial(async () => {
-    const state = await read();
+  return serial(async (storageKey) => {
+    const state = await read(storageKey);
     if (!total || correct / total < 0.8 || !examId) return state;
     const passed = { ...state.passed, [level]: { ...state.passed[level], [examId]: true as const } };
     const achieved = RANKS.filter(rank => Object.keys(passed[rank]).length >= 6).at(-1) ?? null;
     const officialRank = achieved && (!state.officialRank || RANKS.indexOf(achieved) > RANKS.indexOf(state.officialRank)) ? achieved : state.officialRank;
     const next = { ...state, passed, officialRank };
-    await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    await AsyncStorage.setItem(storageKey, JSON.stringify(next));
     return next;
   });
 }

@@ -1,0 +1,59 @@
+{
+  "status": "PASS_WITH_EXISTING_LINT_WARNING",
+  "commands": [
+    {
+      "command": "node scripts/manufacturing/check-source47.cjs",
+      "exitCode": 0,
+      "stdout": "{\"status\":\"PASS\",\"lessonLocales\":13,\"effectiveTargetGuards\":13,\"negativeGuards\":55,\"renderedParagraphs\":13,\"renderer\":\"ReactNativeWebTextSSR_not_browser_or_native\",\"frozenCourseUnchanged\":true,\"newQuestions\":0,\"whole574KnowledgeClosed\":false}\n"
+    },
+    {
+      "command": "node scripts/manufacturing/check-energy-practice.cjs",
+      "exitCode": 0,
+      "stdout": "{\"status\":\"PASS\",\"questions\":8,\"optionSpecificReasons\":24,\"lessonLocales\":13,\"translationPairs\":96,\"questionDriftRejections\":576,\"lessonDriftRejections\":52,\"staleTargetRejections\":96,\"activePowerW\":9,\"activeWh\":3,\"standbyWh\":2,\"totalWh\":5,\"totalKwh\":0.005,\"averageW\":5,\"twoCycleWh\":10,\"grading\":\"8/8\",\"newAttemptRestore\":true,\"staleRevisionRejected\":true,\"existingExamsPreserved\":true,\"physicalDeviceVerified\":false}\n"
+    },
+    {
+      "command": "node scripts/manufacturing/check-tolerance-practice.cjs",
+      "exitCode": 0,
+      "stdout": "{\"status\":\"PASS\",\"questions\":4,\"distinctOptionReasons\":16,\"lessonLocales\":13,\"questionLocalePairs\":48,\"rejectedQuestionDrifts\":288,\"rejectedLessonDrifts\":52,\"grade\":\"4/4\",\"newAttemptRestore\":true,\"changedRevisionRejected\":true,\"existingBanksUnmodified\":true,\"physicalDeviceVerified\":false}\n"
+    },
+    {
+      "command": "node scripts/manufacturing/check-sequential-practice.cjs kirchhoff",
+      "exitCode": 0,
+      "stdout": "{\"status\":\"PASS\",\"questions\":8,\"optionSpecificReasons\":24,\"lessonLocales\":13,\"translationPairs\":96,\"questionDriftRejections\":576,\"lessonDriftRejections\":52,\"staleTargetRejections\":96,\"cluster\":\"kirchhoff\",\"grading\":\"8/8\",\"newAttemptRestore\":true,\"staleRevisionRejected\":true,\"existingExamsPreserved\":true,\"readerLoadsOneCluster\":true,\"unrelatedReaderLoadsNone\":true,\"physicalDeviceVerified\":false}\n"
+    },
+    {
+      "command": "node scripts/manufacturing/check-dimension-editorial.cjs",
+      "exitCode": 0,
+      "stdout": "(node:2) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n{\"status\":\"PASS\",\"acceptedLocales\":13,\"rejectedDriftCases\":91,\"existingCorrectionLocales\":13,\"coreLessonUnmodified\":true,\"domainReviewed\":false,\"nativeReviewed\":false,\"physicalDeviceVerified\":false}\n"
+    },
+    {
+      "command": "node scripts/manufacturing/check-qc-plan-practice.cjs",
+      "exitCode": 0,
+      "stdout": "{\"status\":\"PASS\",\"questions\":8,\"optionSpecificReasons\":24,\"lessonLocales\":13,\"translationPairs\":96,\"questionDriftRejections\":576,\"lessonDriftRejections\":52,\"staleTargetRejections\":96,\"timelineCount\":5,\"grading\":\"8/8\",\"newAttemptRestore\":true,\"staleRevisionRejected\":true,\"existingExamsPreserved\":true,\"physicalDeviceVerified\":false}\n"
+    },
+    {
+      "command": "node scripts/manufacturing/check-calculation48.cjs density > docs/ssw-workspace/manufacturing/session-20261102/calculation48/runtime-density.json",
+      "exitCode": 0,
+      "stdout": ""
+    },
+    {
+      "command": "NODE_PATH=\"/workspace/scratch/f8119bf67710/japan-app/node_modules:/workspace/scratch/f8119bf67710/mfg-qa48-deps/node_modules\" node scripts/manufacturing/check-calculation48-components.cjs",
+      "exitCode": 0,
+      "stdout": "{\"status\":\"PASS\",\"readerLocaleFlows\":39,\"questionLocaleFlows\":156,\"saveResume\":true,\"rationalesGated\":true,\"scope\":\"Actual private Reader/Attempt/MockAttempt exposed only in memory; React test renderer with RN primitives, storage, appearance, safearea, header, Royal/decorative-image adapters. Not browser layout/image loading or physical-device certification.\"}\n"
+    },
+    {
+      "command": "./node_modules/.bin/eslint src/data/manufacturing/lesson-editorial.ts src/data/manufacturing/calculation48.ts src/data/manufacturing/supplement-practice.ts",
+      "exitCode": 0,
+      "stdout": "\n/workspace/scratch/f8119bf67710/japan-app/src/data/manufacturing/lesson-editorial.ts\n  22:17  warning  A `require()` style import is forbidden  @typescript-eslint/no-require-imports\n\n✖ 1 problem (0 errors, 1 warning)\n\n"
+    }
+  ],
+  "note": "Initial dimension legacy-loader and QC-plan fixed-catalog assertions were adapted by deferred runtime loading and an exact historical-ID projection; subsequent runs pass. No legacy source content or grading relaxed.",
+  "lint": {
+    "errors": 0,
+    "warnings": 1,
+    "rule": "@typescript-eslint/no-require-imports",
+    "location": "pre-existing sequential helper require, now line22"
+  },
+  "wholeAppProductionForThisBlock": "not_run",
+  "physicalDeviceVerified": false
+}

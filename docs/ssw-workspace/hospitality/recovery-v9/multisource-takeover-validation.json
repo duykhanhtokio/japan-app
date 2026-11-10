@@ -1,0 +1,60 @@
+{
+  "status": "PASS_BOUNDED_DATA_AND_SOURCE_CHECKS_BROWSER_BLOCKED",
+  "baselineCommit": "4832f53f8407298126fa43c104a266972f2a3831",
+  "date": "2026-11-03",
+  "sourceTextAndPageImagesReinspected": [
+    {
+      "sourceId": "hotel-1",
+      "pdfPages": [
+        30,
+        33,
+        34
+      ]
+    },
+    {
+      "sourceId": "hotel-2",
+      "pdfPages": [
+        37,
+        40,
+        41,
+        42
+      ]
+    }
+  ],
+  "validatedGroups": 3,
+  "newlyCoveredAi": 22,
+  "coveredAi": 165,
+  "knownUnits": 384,
+  "openUnits": 219,
+  "lessons": 38,
+  "questions": 334,
+  "completeTranslationPairs": 456,
+  "priorQuestionsPreserved": 333,
+  "priorTranslationPairsPreserved": 456,
+  "priorReadingEntriesPreserved": 3023,
+  "newReadingEntries": 6,
+  "newQuestionId": "hotel-service-01-q17",
+  "checks": [
+    "check-multisource-service.cjs",
+    "source-coverage-v2/check.cjs hospitality.json",
+    "hospitality/check.cjs",
+    "hospitality/check-readings.cjs",
+    "hospitality/check-translations.cjs --require-complete",
+    "hospitality/check-translation-loaders.cjs",
+    "git diff --check hospitality scope"
+  ],
+  "browser": {
+    "harnessBuild": "passed",
+    "render": "blocked",
+    "reason": "Chromium process_singleton_posix socket() failed: Operation not permitted (1)",
+    "screenshotsCreated": false,
+    "actualDeviceTested": false
+  },
+  "wholeSourceKnowledgeCovered": false,
+  "sourceCoveragePercent": null,
+  "domainReviewed": false,
+  "nativeReviewed": false,
+  "physicalDeviceTested": false,
+  "learnerDurationMeasured": false,
+  "persistence": "Root must publish and verify this batch; no remote claim from this receipt."
+}

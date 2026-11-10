@@ -1,6 +1,8 @@
 import paragraphReuse from './paragraph-reuse-policy.json';
+import dailyGroups from './daily-study-groups.json';
+import technicalFigures from './daily-technical-figures.json';
 import reusePolicy from './reuse-policy.json';
-import { sessions, weeks, type Field, type Level, type Session, type Week } from './index';
+import { completionId, sessions, weeks, type Field, type Level, type Session, type Week } from './index';
 
 export type Subject = 'theory' | 'practical' | 'foreman';
 export const subjectLabels: Record<Subject, string> = { theory: '学科', practical: '実技', foreman: '職長' };
@@ -68,8 +70,60 @@ export function paragraphIdsForScope(id: string, level: Level, field: Field, sub
  paragraphSets.set(key, ids); return ids;
 }
 
+/** A learning day may contain several existing short, same-topic sessions.
+ * Canonical source/question lookups above remain unchanged. */
+const dailyGroupCache = new Map<string, string[][]>();
+function activeDailyGroups(level: Level, field: Field, subject: Subject): string[][] {
+ const key = `${level}:${field}:${subject}`;
+ const cached = dailyGroupCache.get(key); if (cached) return cached;
+ const allowed = new Set(sessionsForScope(level, field, subject).map(s => s.id));
+ const groups = dailyGroups.groups.map(g => g.memberIds.filter(id => allowed.has(id))).filter(ids => ids.length > 1);
+ dailyGroupCache.set(key, groups); return groups;
+}
+export function studyDayIdForSession(id: string, level: Level, field: Field, subject: Subject): string {
+ return activeDailyGroups(level, field, subject).find(ids => ids.includes(id))?.[0] ?? id;
+}
+export function studyDayMembers(id: string, level: Level, field: Field, subject: Subject): Session[] {
+ const memberIds = activeDailyGroups(level, field, subject).find(ids => ids.includes(id)) ?? [id];
+ const byId = new Map(sessionsForScope(level, field, subject).map(s => [s.id, s]));
+ return memberIds.map(member => byId.get(member)).filter((s): s is Session => !!s);
+}
+const dailyViewCache = new Map<string, Session>();
+export function studyDayForScope(id: string, level: Level, field: Field, subject: Subject): Session | undefined {
+ const primaryId = studyDayIdForSession(id, level, field, subject);
+ const key = `${level}:${field}:${subject}:${primaryId}`;
+ const cached = dailyViewCache.get(key); if (cached) return cached;
+ const members = studyDayMembers(id, level, field, subject);
+ if (!members.length) return undefined;
+ const primary = members[0];
+ const addedFigures = technicalFigures.figures.flatMap(figure => {
+  const member = members.find(candidate => figure.bindings.some(binding =>
+   candidate.id === binding.sessionId && candidate.revision === binding.revision && candidate.clusters.some(cluster =>
+    cluster.paragraphs.some(p => p.id === binding.paragraphId && p.ja === binding.paragraphJa))));
+  // Reuse exact canonical Japanese captions and their 12 direct translations.
+  // New diagram-design/scoping descriptions stay in the authoring register.
+  return member ? [{path: figure.assetPath, altJa: member.titleJa, altTranslations: member.titleTranslations}] : [];
+ });
+ // Every paragraph retains its ID, direct translations and technical claims.
+ const clusters = [...new Map(members.flatMap(s => s.clusters).map(c => [c.id, c])).values()];
+ const sourceReferences = [...new Map(members.flatMap(s => s.sourceReferences ?? []).map(r => [r.sourceId, r])).values()];
+ const view = { ...primary, clusters, sourceReferences,
+  illustrations: [...members.flatMap(s => s.illustrations ?? []), ...addedFigures],
+  keyTerms: [...new Map(members.flatMap(s => s.keyTerms ?? []).map(t => [t.term, t])).values()] };
+ dailyViewCache.set(key, view); return view;
+}
+export function studyDayCompletionIds(id: string, level: Level, field: Field, subject: Subject): string[] {
+ return studyDayMembers(id, level, field, subject).map(completionId);
+}
 export function weeksForScope(level: Level, field: Field, subject: Subject): Week[] {
-  const ids = new Set(sessionsForScope(level, field, subject).map(session => session.id));
-  return weeks.map(week => ({ ...week, sessionIds: week.sessionIds.filter(id => ids.has(id)) }))
-    .filter(week => week.sessionIds.length > 0);
+ const ids = new Set(sessionsForScope(level, field, subject).map(s => s.id));
+ return weeks.flatMap(week => {
+  const kept = week.sessionIds.filter(id => ids.has(id) && studyDayIdForSession(id, level, field, subject) === id);
+  // Preserve order and week IDs; split any historical eighth slot into a continuation.
+  const parts: Week[] = [];
+  for (let start = 0; start < kept.length; start += 7) parts.push({ ...week,
+   id: start ? `${week.id}:continuation:${Math.floor(start / 7) + 1}` : week.id,
+   sessionIds: kept.slice(start, start + 7) });
+  return parts;
+ });
 }

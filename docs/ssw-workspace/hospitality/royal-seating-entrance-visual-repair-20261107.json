@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "dateJst": "2026-11-07",
+  "baseline": "2fb8bfb108fd0e345a62638fedec355ac8c146cf",
+  "lessonId": "hotel-service-04",
+  "lessonSection": "hotel-service-04-application",
+  "lessonCondition": "Practice A near entrance and B further inside; ask guest preference and verify actual route/availability before promising a seat.",
+  "defect": {
+    "observed": "Native room opening spans12–32% width centered22%; old entrance arrow began at left edge0%, indicating an intact wall instead of the opening.",
+    "instructionalImpact": "Entrance marker position conflicts with the reference point used to judge near/far seating."
+  },
+  "repair": "Center a separate arrow and translated entrance label in a column whose width is twice the actual door.x, so its center coincides with the door opening. Keep the labels in normal flow so multiline translations grow without covering the room or seat explanation.",
+  "visualProof": {
+    "path": "docs/ssw-workspace/hospitality/visual-review-20261107/seating-coordinate-before-after.png",
+    "sha256": "b44848785d40e2d4737798983ddabd3a17c0a83009140120f96d3a7b7a58e541",
+    "method": "Deterministic coordinate rendering from actual JSX style geometry; opened with view_image. Room342x280, opening12–32% width, A(25%,185), B(72%,70). Text font rendered with NotoSansCJK. This is a geometry inspection, not browser/native screenshot.",
+    "beforeAfterViewed": true,
+    "actualNativeGeometryPreservedExceptEntranceLabel": true
+  },
+  "checks": {
+    "actualTSXReactSSRLocales": 13,
+    "geometryWidthScaleCases": 15,
+    "wrongIdAndStaleRevisionRejected": true,
+    "nativeBundleEsbuild": "PASS with pre-existing missing expo/tsconfig.base warning; no full-app build claim",
+    "scopedDiffCheck": "PASS"
+  },
+  "files": [
+    {
+      "path": "src/components/hospitality/HotelHospitalityRoleGuide.tsx",
+      "beforeSha256": "3be35d543100298e3fdf808b03c79c49a21d2b68f1a61a888ff301223ec4f8de",
+      "afterSha256": "623b6888e7e98dd21ad74cbd660bab0d661244a93aee1008c6ee056647b49439"
+    }
+  ],
+  "acceptance": {
+    "browserTested": false,
+    "physicalDeviceTested": false,
+    "domainReviewed": false,
+    "nativeReviewed": false,
+    "wholeSectorComplete": false
+  },
+  "browserLimitation": "One headless launch failed socket EPERM; no retry or bypass.",
+  "unchanged": [
+    "Canonical Japanese lesson/source revision",
+    "All translations and readings",
+    "Seat and opening geometry",
+    "13-locale text",
+    "Primary raster images",
+    "Saved learner IDs/state"
+  ]
+}

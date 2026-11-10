@@ -1,0 +1,655 @@
+{
+  "status": "PASS",
+  "form": "food-1-mock-03",
+  "newQuestionLocalePairs": 240,
+  "nativeReviewed": false,
+  "domainExpertReviewed": false,
+  "browserTested": false,
+  "locales": {
+    "tl": {
+      "newPairs": 40,
+      "previousPairsPreserved": 199,
+      "totalPairs": 239,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "7693a90ee11254f32dceb64bdb9017f5261866b312c39a2064883c1f10784e59"
+    },
+    "th": {
+      "newPairs": 40,
+      "previousPairsPreserved": 199,
+      "totalPairs": 239,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "0e45f1742b63f32e20ff8cb0a0ba1b326d49dae7e26f7bbf415a4e3c266ba28c"
+    },
+    "my": {
+      "newPairs": 40,
+      "previousPairsPreserved": 199,
+      "totalPairs": 239,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "cd9afb9f7f734882c88f847e03de2adf393619285ef376b8dd02491d4fcaffde"
+    },
+    "km": {
+      "newPairs": 40,
+      "previousPairsPreserved": 199,
+      "totalPairs": 239,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "a66b1a5aaca8f81b47b0a2fddaa5f474c53d02e1251b53ce0603afb649ddf7fd"
+    },
+    "hi": {
+      "newPairs": 40,
+      "previousPairsPreserved": 199,
+      "totalPairs": 239,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "12540923418e0164611e866d509a5df385ff742442eae835c25e88564e1bf1f1"
+    },
+    "ne": {
+      "newPairs": 40,
+      "previousPairsPreserved": 199,
+      "totalPairs": 239,
+      "hashAndAdapterChecks": 40,
+      "staleRevisionsRejected": 40,
+      "correctOptionReasonAlignment": 40,
+      "titleHashValid": true,
+      "sha256": "4370dda6bf82bdc32bd52f6d4c7848f4818e883a8af9f939156020bd994290c4"
+    }
+  },
+  "totalQuestionLocalePairs": 2748,
+  "remainingQuestionLocalePairs": 7320,
+  "batch": "07",
+  "baselineCommit": "c643abfc457dcc2bb81a79ccb32aa33ac7494782",
+  "preservation": {
+    "priorQuestionLocalePairs": 2508,
+    "allPriorQuestionEntriesAndTitles": "exact parsed-object equality; six changed packs199 entries each preserved",
+    "japaneseSourceBlob": "765a238f07158b5c125f240023fcdea5418d33c5",
+    "adapterBlob": "43e8e1cdee371cc37f5167e5fad20363ea832103",
+    "runtimeOrUIChanged": false
+  },
+  "numericAudit": {
+    "candidates": [
+      {
+        "locale": "tl",
+        "id": "food-1-q185",
+        "field": "prompt",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "30",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "30"
+        ],
+        "source": "架空の冷却練習の手順は「開始から30分以内に中心を15℃以下にする」です。11時20分に開始し、11時48分に中心14℃でした。この測定時点の判定はどれですか。実製品の基準ではなく練習条件です。",
+        "target": "Sa kathang-isip na pagsasanay sa pagpapalamig, ang pamamaraan ay “ibaba ang temperatura sa gitna sa 15°C o mas mababa sa loob ng 30 minuto mula sa simula”. Nagsimula nang 11:20 at ang gitna ay 14°C nang 11:48. Alin ang tamang pagtatasa sa oras ng pagsukat? Kondisyon ito sa pagsasanay, hindi pamantayan para sa tunay na produkto.",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "tl",
+        "id": "food-1-q185",
+        "field": "explanation",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 minuto at 14 ≤ 15, kaya parehong natutugunan ang ibinigay na kondisyon sa oras at temperatura sa gitna.",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "tl",
+        "id": "food-1-q185",
+        "field": "reason2",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 minuto at 14 ≤ 15, kaya parehong natutugunan ang ibinigay na kondisyon sa oras at temperatura sa gitna.",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "th",
+        "id": "food-1-q185",
+        "field": "prompt",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "30",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "30"
+        ],
+        "source": "架空の冷却練習の手順は「開始から30分以内に中心を15℃以下にする」です。11時20分に開始し、11時48分に中心14℃でした。この測定時点の判定はどれですか。実製品の基準ではなく練習条件です。",
+        "target": "ขั้นตอนฝึกทำความเย็นสมมติกำหนดว่า “ลดอุณหภูมิแกนกลางให้ไม่เกิน 15°C ภายใน 30 นาทีหลังเริ่ม” เริ่มเวลา 11:20 น. และเวลา 11:48 น. อุณหภูมิแกนกลางเป็น 14°C ณ เวลาวัดนี้ควรประเมินอย่างไร? นี่เป็นเงื่อนไขฝึก ไม่ใช่เกณฑ์ของผลิตภัณฑ์จริง",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "th",
+        "id": "food-1-q185",
+        "field": "explanation",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 นาที และ 14 ≤ 15 จึงผ่านทั้งเงื่อนไขเวลาและอุณหภูมิแกนกลางที่ให้มา",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "th",
+        "id": "food-1-q185",
+        "field": "reason2",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 นาที และ 14 ≤ 15 จึงผ่านทั้งเงื่อนไขเวลาและอุณหภูมิแกนกลางที่ให้มา",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "th",
+        "id": "food-1-q140",
+        "field": "prompt",
+        "sourceNumbers": [],
+        "targetNumbers": [
+          "4",
+          "5"
+        ],
+        "source": "五袋の原料を開けましたが、切れ端は四つしかありません。数の確認から必要になる行動はどれですか。",
+        "target": "เปิดถุงวัตถุดิบ 5 ถุง แต่มีเศษที่ตัดออกเพียง 4 ชิ้น จากการตรวจนับนี้ควรทำอะไร?",
+        "resolution": "AI checked Japanese 五/四 and translated5/4 equivalence; missing cut-off scenario retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "th",
+        "id": "food-1-q140",
+        "field": "option0",
+        "sourceNumbers": [],
+        "targetNumbers": [
+          "4",
+          "5"
+        ],
+        "source": "五袋中四つあれば十分とする。",
+        "target": "มี 4 ชิ้นจาก 5 ถุงก็เพียงพอ",
+        "resolution": "AI checked Japanese 五/四 and translated5/4 equivalence; missing cut-off scenario retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "my",
+        "id": "food-1-q185",
+        "field": "prompt",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "30",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "30"
+        ],
+        "source": "架空の冷却練習の手順は「開始から30分以内に中心を15℃以下にする」です。11時20分に開始し、11時48分に中心14℃でした。この測定時点の判定はどれですか。実製品の基準ではなく練習条件です。",
+        "target": "စိတ်ကူးယဉ်အအေးခံလေ့ကျင့်မှုတွင် စတင်ပြီး မိနစ် 30 အတွင်း အတွင်းဗဟိုအပူချိန်ကို 15°C အောက် သို့မဟုတ် ညီမျှစေရမည်။ 11:20 တွင်စ၍ 11:48 တွင် 14°C ဖြစ်သည်။ ထိုတိုင်းတာချိန်တွင် မည်သို့အကဲဖြတ်မည်နည်း။ လက်တွေ့ထုတ်ကုန်စံမဟုတ်ဘဲ လေ့ကျင့်ရေးသတ်မှတ်ချက်ဖြစ်သည်။",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "my",
+        "id": "food-1-q185",
+        "field": "explanation",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 မိနစ်၊ 14 ≤ 15 ဖြစ်၍ အချိန်နှင့်ဗဟိုအပူချိန် နှစ်ခုလုံးပြည့်မီသည်။",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "my",
+        "id": "food-1-q185",
+        "field": "reason0",
+        "sourceNumbers": [
+          "14",
+          "15"
+        ],
+        "targetNumbers": [
+          "14",
+          "15",
+          "15"
+        ],
+        "source": "14℃は15℃以下です。",
+        "target": "14°C သည် 15°C အောက် သို့မဟုတ် ညီမျှသည့်သတ်မှတ်ချက် (≤15°C) ကိုပြည့်မီသည်။",
+        "resolution": "AI checked repeated15 in explicit <=15 parenthesis repeats the same bound;14 remains <=15.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "my",
+        "id": "food-1-q185",
+        "field": "reason2",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 မိနစ်၊ 14 ≤ 15 ဖြစ်၍ အချိန်နှင့်ဗဟိုအပူချိန် နှစ်ခုလုံးပြည့်မီသည်။",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "my",
+        "id": "food-1-q140",
+        "field": "prompt",
+        "sourceNumbers": [],
+        "targetNumbers": [
+          "4",
+          "5"
+        ],
+        "source": "五袋の原料を開けましたが、切れ端は四つしかありません。数の確認から必要になる行動はどれですか。",
+        "target": "ကုန်ကြမ်း 5 အိတ်ဖွင့်သော်လည်း ဖြတ်စ 4 ခုသာရှိသည်။ အရေအတွက်စစ်ဆေးမှုအရ ဘာလုပ်ရန်လိုသနည်း။",
+        "resolution": "AI checked Japanese 五/四 and translated5/4 equivalence; missing cut-off scenario retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "my",
+        "id": "food-1-q140",
+        "field": "option0",
+        "sourceNumbers": [],
+        "targetNumbers": [
+          "4",
+          "5"
+        ],
+        "source": "五袋中四つあれば十分とする。",
+        "target": "5 အိတ်အတွက် 4 ခုရှိလျှင် လုံလောက်သည်။",
+        "resolution": "AI checked Japanese 五/四 and translated5/4 equivalence; missing cut-off scenario retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "km",
+        "id": "food-1-q185",
+        "field": "prompt",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "30",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "30"
+        ],
+        "source": "架空の冷却練習の手順は「開始から30分以内に中心を15℃以下にする」です。11時20分に開始し、11時48分に中心14℃でした。この測定時点の判定はどれですか。実製品の基準ではなく練習条件です。",
+        "target": "លក្ខខណ្ឌហ្វឹកហាត់បញ្ចុះត្រជាក់សន្មតគឺធ្វើឱ្យសីតុណ្ហភាពកណ្តាលមិនលើស 15°C ក្នុង 30 នាទីពីពេលចាប់ផ្តើម។ ចាប់ផ្តើមម៉ោង 11:20 ហើយនៅ 11:48 សីតុណ្ហភាពកណ្តាលគឺ 14°C។ តើវាយតម្លៃនៅពេលវាស់នេះយ៉ាងណា? នេះជាលក្ខខណ្ឌហ្វឹកហាត់ មិនមែនស្តង់ដារផលិតផលពិតទេ។",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "km",
+        "id": "food-1-q185",
+        "field": "explanation",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 នាទី និង 14 ≤ 15 ដូច្នេះបំពេញទាំងលក្ខខណ្ឌពេលវេលានិងសីតុណ្ហភាពកណ្តាល។",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "km",
+        "id": "food-1-q185",
+        "field": "reason2",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 នាទី និង 14 ≤ 15 ដូច្នេះបំពេញទាំងលក្ខខណ្ឌពេលវេលានិងសីតុណ្ហភាពកណ្តាល។",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "km",
+        "id": "food-1-q140",
+        "field": "prompt",
+        "sourceNumbers": [],
+        "targetNumbers": [
+          "4",
+          "5"
+        ],
+        "source": "五袋の原料を開けましたが、切れ端は四つしかありません。数の確認から必要になる行動はどれですか。",
+        "target": "បានបើកថង់វត្ថុធាតុដើម 5 ប៉ុន្តែមានបំណែកកាត់តែ 4។ តើការពិនិត្យចំនួនទាមទារឱ្យធ្វើអ្វី?",
+        "resolution": "AI checked Japanese 五/四 and translated5/4 equivalence; missing cut-off scenario retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "km",
+        "id": "food-1-q140",
+        "field": "option0",
+        "sourceNumbers": [],
+        "targetNumbers": [
+          "4",
+          "5"
+        ],
+        "source": "五袋中四つあれば十分とする。",
+        "target": "មាន 4 ពី 5 គ្រប់គ្រាន់ហើយ។",
+        "resolution": "AI checked Japanese 五/四 and translated5/4 equivalence; missing cut-off scenario retained.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "hi",
+        "id": "food-1-q185",
+        "field": "prompt",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "30",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "30"
+        ],
+        "source": "架空の冷却練習の手順は「開始から30分以内に中心を15℃以下にする」です。11時20分に開始し、11時48分に中心14℃でした。この測定時点の判定はどれですか。実製品の基準ではなく練習条件です。",
+        "target": "एक काल्पनिक शीतलन अभ्यास की शर्त है: शुरुआत के 30 मिनट के भीतर केंद्र का तापमान 15°C या कम करें। शुरुआत 11:20 बजे हुई और 11:48 बजे केंद्र का तापमान 14°C था। इस मापन के समय कौन-सा आकलन सही है? ये अभ्यास की शर्तें हैं, वास्तविक उत्पाद का मानक नहीं।",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "hi",
+        "id": "food-1-q185",
+        "field": "explanation",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 मिनट और 14 ≤ 15 है। दिए गए समय और केंद्र के तापमान की दोनों शर्तें पूरी हैं।",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "hi",
+        "id": "food-1-q185",
+        "field": "reason2",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 मिनट और 14 ≤ 15 है। दिए गए समय और केंद्र के तापमान की दोनों शर्तें पूरी हैं।",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "ne",
+        "id": "food-1-q185",
+        "field": "prompt",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "30",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "30"
+        ],
+        "source": "架空の冷却練習の手順は「開始から30分以内に中心を15℃以下にする」です。11時20分に開始し、11時48分に中心14℃でした。この測定時点の判定はどれですか。実製品の基準ではなく練習条件です。",
+        "target": "काल्पनिक चिस्याउने अभ्यासको कार्यविधि यस्तो छ: ‘सुरु गरेको 30 मिनेटभित्र बीचको तापक्रम 15°C वा कम बनाउने।’ 11:20 मा सुरु गरियो र 11:48 मा बीचको तापक्रम 14°C थियो। यस मापनको समयमा कुन निष्कर्ष सही छ? यो वास्तविक उत्पादनको मापदण्ड नभई अभ्यासको सर्त हो।",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "ne",
+        "id": "food-1-q185",
+        "field": "explanation",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 मिनेट र 14 ≤ 15 भएकाले दिइएका समय र बीचको तापक्रम दुवै सर्त पूरा हुन्छन्।",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      },
+      {
+        "locale": "ne",
+        "id": "food-1-q185",
+        "field": "reason2",
+        "sourceNumbers": [
+          "11",
+          "11",
+          "14",
+          "15",
+          "20",
+          "28",
+          "48"
+        ],
+        "targetNumbers": [
+          "11:20",
+          "11:48",
+          "14",
+          "15",
+          "28"
+        ],
+        "source": "11時48分－11時20分＝28分、14≦15で、提示された時間と中心温度の条件をともに満たします。",
+        "target": "11:48 − 11:20 = 28 मिनेट र 14 ≤ 15 भएकाले दिइएका समय र बीचको तापक्रम दुवै सर्त पूरा हुन्छन्।",
+        "resolution": "AI checked equivalent clock notation: Japanese11時20分/11時48分 equals11:20/11:48; elapsed28minutes and14<=15 remain unchanged.",
+        "status": "ai_reviewed_equivalent"
+      }
+    ],
+    "pendingSemanticCandidates": 0
+  },
+  "aiPeerReview": {
+    "scope": "AI only, not native/domain certification",
+    "tl": "Burmese author independently reviewed8 critical items, no material issues",
+    "my": "Tagalog author independently reviewed12 critical items; q179 thawing clarified and q185 <= wording corrected",
+    "ne": "Hindi author independently reviewed12 critical items, no material issues",
+    "km": "Thai author independently reviewed40 items; conveyor terminology q308/q338 corrected; q288 refrigeration wording clarified",
+    "thAndHi": "Author self-review and parent spot checks of numerical/HACCP/toxin distinctions; not claimed independent full semantic review",
+    "allLocales": "Author self-review of40 each; parent programmatic checks240 pairs"
+  },
+  "browserEvidence": {
+    "baselinePairs": 2468,
+    "baselineResponsiveCases": 9872,
+    "pendingPairsSinceBaseline": 280,
+    "nativeDeviceTested": false,
+    "fullExpoBuildTested": false
+  },
+  "nextAction": "Translate food-1-mock-03 into zh-CN,zh-TW,bn (120 pairs)."
+}

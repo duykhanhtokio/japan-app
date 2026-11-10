@@ -1,10 +1,12 @@
 import { japaneseMasterBatches } from './japanese-master-batches';
 import pilotTranslations from './japanese-master/translations/pilot-01.json';
 import { japaneseTranslationBatches } from './japanese-translation-batches';
+import type { RubyToken } from './types';
 
 export type JapaneseMasterSection = {
   headingJa: string;
   paragraphsJa: string[];
+  paragraphsRuby?: RubyToken[][];
   editorialStatus: string;
   humanReviewed: boolean;
   domainReviewed: boolean;

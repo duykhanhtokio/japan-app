@@ -1,0 +1,115 @@
+{
+  "reviewType": "independent_ai_semantic_review",
+  "reviewer": "/root/b20_hi_ne",
+  "locale": "zh-CN",
+  "examId": "food-2-mock-06",
+  "reviewedQuestionCount": 40,
+  "reviewedQuestionIds": [
+    "food-2-q397",
+    "food-2-q149",
+    "food-2-q323",
+    "food-2-q315",
+    "food-2-q363",
+    "food-2-q197",
+    "food-2-q155",
+    "food-2-q355",
+    "food-2-q255",
+    "food-2-q102",
+    "food-2-q369",
+    "food-2-q090",
+    "food-2-q352",
+    "food-2-q235",
+    "food-2-q269",
+    "food-2-q139",
+    "food-2-q212",
+    "food-2-q220",
+    "food-2-q300",
+    "food-2-q122",
+    "food-2-q217",
+    "food-2-q328",
+    "food-2-q116",
+    "food-2-q141",
+    "food-2-q178",
+    "food-2-q351",
+    "food-2-q275",
+    "food-2-q377",
+    "food-2-q371",
+    "food-2-q389",
+    "food-2-q127",
+    "food-2-q107",
+    "food-2-q154",
+    "food-2-q109",
+    "food-2-q376",
+    "food-2-q334",
+    "food-2-q303",
+    "food-2-q349",
+    "food-2-q185",
+    "food-2-q203"
+  ],
+  "reviewedFields": [
+    "prompt",
+    "options[0..3]",
+    "explanation",
+    "optionExplanations[0..3]",
+    "examTitle"
+  ],
+  "canonicalSource": "batch20-canonical-source.json",
+  "canonicalSourceSha256": "5347db22a9f16b815f87eb055ec7e683e83dc5950d2fd9403d1f1324eab4c67b",
+  "corrections": [
+    {
+      "id": "food-2-q149",
+      "field": "options[0]",
+      "before": "确认新设备对目标产品的危害也能充分降低，验证方法的适用性。",
+      "after": "确认新设备是否也能充分降低目标产品的危害，验证管理方法的有效性。",
+      "corrected": true
+    },
+    {
+      "id": "food-2-q149",
+      "field": "options[2]",
+      "before": "新设备外观干净，就不需要确认方法是否适用。",
+      "after": "新设备外观干净，就不需要确认管理方法的有效性。",
+      "corrected": true
+    },
+    {
+      "id": "food-2-q154",
+      "field": "prompt",
+      "before": "新人说：“我不知道那个差点在通道滑倒的地点。”应如何利用以往的险肇事件信息？",
+      "after": "新人说：“我不知道通道上曾发生险些滑倒情况的地方。”应如何利用以往的险肇事件信息？",
+      "corrected": true
+    },
+    {
+      "id": "food-2-q315",
+      "field": "options[3]",
+      "before": "没有依据就把表达不满的人当作故意混入异物者。",
+      "after": "没有依据就把表达不满的人当作故意污染食品的人。",
+      "corrected": true
+    },
+    {
+      "id": "food-2-q369",
+      "field": "options[0]",
+      "before": "只与产品无关的供应商。",
+      "after": "只与产品无关的经营者。",
+      "corrected": true
+    },
+    {
+      "id": "food-2-q349",
+      "field": "prompt",
+      "before": "维修人员保养后，开工点检发现润滑油附着。班组长应如何指示？",
+      "after": "维护人员保养后，开工点检发现润滑油附着。班组长应如何指示？",
+      "corrected": true
+    }
+  ],
+  "findings": "Compared all40 prompts, every ordered option and every reason directly against root-frozen Japanese exam. Author agreed six precision fields across5IDs: validation effectiveness, neutral near-slip location, generic food-contamination actor, business-operator scope and maintenance-personnel role. Fictional/no-rounding conditions, q255 inclusive interval, q269 planned-time denominator and q303 water-per-output calculations retained.",
+  "checks": {
+    "exactMembershipAndOrder": true,
+    "sourceHashes": true,
+    "correctReasonEquality": true,
+    "numericCandidates": 0,
+    "noKanaFallback": true
+  },
+  "reviewedArtifactSha256": "3192265cdffa9282e310e286f5421ca89ba1c66e6feefdbaeff8e039f44da165",
+  "nativeSpeakerReviewed": false,
+  "domainExpertReviewed": false,
+  "browserTested": false,
+  "integratedPartSha256": "3192265cdffa9282e310e286f5421ca89ba1c66e6feefdbaeff8e039f44da165"
+}

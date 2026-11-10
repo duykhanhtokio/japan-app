@@ -1,0 +1,135 @@
+{
+  "date": "2026-11-02",
+  "baselineCommit": "3eaf89739ecdf6a16ebd154f73429fe28e3a48a0",
+  "scope": "bounded_electrical_power_energy_piecewise_competency",
+  "source": {
+    "documentId": "mfg1-electrical-source",
+    "sha256": "b846a05aa2c33a490e2bb706fe14ad55d587e7fd60718a4e09ab1cd28033bdcf",
+    "physicalPages": [
+      119
+    ],
+    "printedPages": [
+      110
+    ],
+    "sourceBytesVerified": true,
+    "pageVisuallyCompared": true,
+    "qualification": "Source(4) correctly identifiesW as power but calls voltage×current electricalenergy in one sentence. Preserve distinction:P=VI has unitsW; energy additionally includesduration. Do not copy ambiguous prose or useVI asWh."
+  },
+  "units": [
+    {
+      "id": "mfg45-electrical-p119-power-vs-energy",
+      "sourceFact": "Power is energy per time,unitW; under the expressly constantDC model,P=VI.",
+      "lessonId": "mfg1-electrical-l068",
+      "paragraphId": "section-2",
+      "questionIds": [
+        "mfg1-energy-check-01"
+      ]
+    },
+    {
+      "id": "mfg45-electrical-p119-energy-duration",
+      "sourceFact": "Energy is power×duration,unitWh when time ishours.",
+      "lessonId": "mfg1-electrical-l068",
+      "paragraphId": "section-2",
+      "questionIds": [
+        "mfg1-energy-check-02",
+        "mfg1-energy-check-03",
+        "mfg1-energy-check-04",
+        "mfg1-energy-check-08"
+      ]
+    },
+    {
+      "id": "mfg45-electrical-p119-piecewise-derived",
+      "derivedModel": "ApplyE=Pt to constantintervals then add energies,convertWh tokWh and repeat identicalcycles. Not a separate source-tablevalue.",
+      "lessonId": "mfg1-electrical-l068",
+      "paragraphId": "section-2",
+      "questionIds": [
+        "mfg1-energy-check-05",
+        "mfg1-energy-check-07"
+      ]
+    },
+    {
+      "id": "mfg45-electrical-p119-average-derived",
+      "derivedModel": "Meanpower=totalenergy/totaltime,derived from energyper time definition;distinct from maximumintervalpower.",
+      "lessonId": "mfg1-electrical-l068",
+      "paragraphId": "section-2",
+      "questionIds": [
+        "mfg1-energy-check-06"
+      ]
+    }
+  ],
+  "authoredExample": {
+    "model": "fictional_constant_DC_intervals_no_other_consumption",
+    "activeVoltageV": 18,
+    "activeCurrentA": 0.5,
+    "activeMinutes": 20,
+    "activePowerW": 9,
+    "activeWh": 3,
+    "standbyPowerW": 3,
+    "standbyMinutes": 40,
+    "standbyWh": 2,
+    "totalMinutes": 60,
+    "totalWh": 5,
+    "totalKwh": 0.005,
+    "averageW": 5,
+    "twoCycleWh": 10,
+    "actualOperationInstruction": false,
+    "sourceExerciseOrValuesReused": false,
+    "assumptionsNotInferred": [
+      "actualdeviceefficiency",
+      "ACpowerfactor",
+      "tariff",
+      "componentratings",
+      "additionalconsumption"
+    ]
+  },
+  "implementation": {
+    "lessonLocales": 13,
+    "examId": "mfg1-electrical-energy-supplement",
+    "questions": 8,
+    "distinctOptionReasons": 24,
+    "questionLocalePairs": 96,
+    "translatedQuestionFields": 672,
+    "optionLengths": [
+      4,
+      4,
+      4,
+      4,
+      2,
+      2,
+      2,
+      2
+    ],
+    "existingLessonHashChanged": false,
+    "existingExamOrAttemptIdsChanged": false,
+    "load": "JSON remains require-on-demand inside sector APIs",
+    "readings": "Difficult kanji in new prompts have parenthesized readings; no top-ruby renderer claimed.",
+    "figures": "Existing dayobjectivefigure retained; no new circuitdiagram or deviceimage acceptance claimed.",
+    "dailyWorkload": "Explanatory extension within existingday,not newday; no measuredlearnerduration or targetduration change claimed."
+  },
+  "independentExpressionReview": {
+    "status": "ai_compared",
+    "sourceExerciseCopied": false,
+    "sourceFigureCopied": false,
+    "decision": "Originaltwo-intervalDC model and decisionquestions; common formulas and SIunitnotation retained. No appliance/circuit/source-numericalexercise reproduced."
+  },
+  "validation": {
+    "energyGate": "PASS:8Q,24reasons,13lessonlocales,96localePairs,576Qdrift,52lessondrift,96staletranslations,8/8grading,stateRestoreAndRevisionReject",
+    "exactIndependentArithmetic": "9W;3Wh;2Wh;5Wh;0.005kWh;5Waverage;10Whtwocycles",
+    "existingCaliperToleranceQcPlan": "PASS",
+    "existingBoolean": "PASS:4questions48pairs20rubyfields,oldcaliper8questions96translationsunchanged; prior whole-supplement equality updated to exact matchingoriginalexamIDs to permit authorizedadditiveexams",
+    "limitations": "esbuild warns missingexpo/tsconfig.base in this partialcheckout;no fullExpo/typecheck/native claim",
+    "diffCheck": "PASS"
+  },
+  "remaining": [
+    "All574page exhaustive semanticclosure remains incomplete",
+    "Fullsourcepage119 atomization not certified",
+    "Other sourceclusters,expert/native review,actualdevice rendering and measuredlearnerworkload",
+    "Sourcep97 angle qualification untouched/unresolved"
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceVerified": false,
+  "wholeCurriculumComplete": false,
+  "releaseReady": false
+}

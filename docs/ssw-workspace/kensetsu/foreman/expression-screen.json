@@ -1,7 +1,7 @@
 {
   "status": "editorial_exact_span_screen_only",
-  "date": "2026-10-18",
-  "normalization": "NFKC, remove non-word characters, compare within each source page",
+  "date": "2026-11-02",
+  "normalization": "NFKC, remove non-word characters; also remove inlinekana; within source page",
   "thresholdNormalizedCharacters": 22,
   "sourcePdfPages": [
     7,
@@ -130,20 +130,43 @@
     130,
     131
   ],
-  "paragraphs": 112,
-  "allJapaneseStringsScreened": 250,
+  "paragraphs": 113,
+  "allJapaneseStringsScreened": 268,
   "includes": [
-    "lesson titles",
-    "cluster titles",
-    "paragraphs",
-    "application prompts",
-    "image captions"
+    "lesson/cluster titles",
+    "all113Japanese paragraphs",
+    "all50original prompts",
+    "all10depth activities including3expanded continuations",
+    "all7caption placements"
   ],
   "candidates": [],
   "rightsCertification": false,
   "semanticCoverageCertification": false,
+  "minimumSourceFontPoints": 10,
   "limitations": [
-    "Exact-span comparison does not detect paraphrase similarity or certify rights.",
-    "Source text extraction can omit figure labels, ruby and raster text."
-  ]
+    "Exact windows do not detect paraphrase similarity or establish rights.",
+    "PDF raster/table labels and extracted small fonts are not covered by this separate editorial screen; retained in source census."
+  ],
+  "incrementalFollowup": {
+    "sourcePage": 115,
+    "newParagraph": "kensetsu-foreman-session-022-c1-p3",
+    "sourcePagesSearched": 131,
+    "exact22CharacterCandidates": 0,
+    "promptChanged": true,
+    "promptReview": "Expanded independent author/purpose/reader retrieval command; no source question used."
+  },
+  "latestFollowup": {
+    "baseline": "ea1b43c95",
+    "sourcePdfPagesRead": [
+      111,
+      112,
+      113
+    ],
+    "allCurrentJapaneseStringsRescreened": 268,
+    "sourcePagesSearched": 131,
+    "exact22CharacterCandidates": 0,
+    "inlineKanaRemoved": true,
+    "minimumSourceFontPoints": 10,
+    "notRightsCertification": true
+  }
 }

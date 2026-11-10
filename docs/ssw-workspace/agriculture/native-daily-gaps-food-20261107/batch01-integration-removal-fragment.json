@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "baseHead": "ee58f2febc5b9e7f74caacb4886225e74a664ecd",
+  "componentImport": "import {FoodDailyObjectiveGapSupport,isFoodDailyObjectiveGapContext} from './FoodDailyObjectiveGapSupport';",
+  "routeAfter": "if(!lesson.levels.includes(level))return null;",
+  "route": "if(isFoodDailyObjectiveGapContext(lesson.id)) return <FoodDailyObjectiveGapSupport lessonId={lesson.id} lessonSourceHash={lesson.sourceHash} lessonRevision={lesson.revision} level={level} language={language} showTranslation={showTranslation} colors={colors} paragraphIds={paragraphIds}/>;",
+  "lessonIds": [
+    "agr-facility-env-solution-circulation-2",
+    "agr-f40-facility-fruit-bud-options2"
+  ],
+  "bindingRemovals": [
+    {
+      "lessonId": "agr-facility-env-solution-circulation-2",
+      "expectedBefore": {
+        "lessonSourceHash": "a198bda7105bc554b1c846fdb7d6a5a9957168abb5d45dfd5b4c2e3da45e943d",
+        "figureId": "agr-f40-hydroponic-system-positions",
+        "assetSha256": "2b3f1bcdaa9e744f9ce1c70bc59738b3c149c9916e31f10e39fdeff41c202e77",
+        "keyObjectiveId": "AGR-K-FACILITY-ENV-SOLUTION-CIRCULATION-2-01",
+        "objectiveJa": "循環方式と非循環方式で、養液の安定性、病害の広がり、排液処理の違いを説明できる。",
+        "reuseReasonJa": "「養液を戻す方式とかけ流す方式を比較する」で扱う対象を、既存の「養液栽培装置の場所と役割」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+        "scopeLevels": [
+          "2"
+        ],
+        "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
+      },
+      "instruction": "Delete only wrong binding after equality; null means already removed, retain null. Keep existing primary asset and all other lesson uses."
+    },
+    {
+      "lessonId": "agr-f40-facility-fruit-bud-options2",
+      "expectedBefore": {
+        "lessonSourceHash": "5b5a5d61fe2f5fa2c69fc9d4cf31da70a13af382f0701b5eeccb3bd132cdf063",
+        "figureId": "agr-f40-fruit-branch-age-source-types",
+        "assetSha256": "8239707b6f545cb50d6c883a970995061ed05ba9c6e5ae8b9afcd52e266e161f",
+        "keyObjectiveId": "AGR-K-F40-FACILITY-FRUIT-SUPPORT-08",
+        "objectiveJa": "記載事項と、出典に書かれていない条件を区別できる。",
+        "reuseReasonJa": "「出典の記述と限界を読む」で扱う対象を、既存の「六つの果樹の枝齢図と凡例を読む」の図上位置・外観と対応させて確認します。図にない性質や数値まで読み取らないでください。",
+        "scopeLevels": [
+          "2"
+        ],
+        "scopeReasonJa": "既存図の対象・位置の観察を本課の基礎事項に限定して使い、図中の出典別条件を他の級の操作指示へ広げません。"
+      },
+      "instruction": "Delete only wrong binding after equality; null means already removed, retain null. Keep existing primary asset and all other lesson uses."
+    }
+  ],
+  "sharedFilesEdited": false,
+  "fullSourceRequired": true
+}

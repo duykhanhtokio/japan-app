@@ -1,0 +1,82 @@
+{
+  "locale": "ne",
+  "examId": "food-2-mock-06",
+  "reviewType": "Independent AI semantic review directly against canonical Japanese",
+  "reviewedQuestionCount": 40,
+  "reviewedQuestionIds": [
+    "food-2-q397",
+    "food-2-q149",
+    "food-2-q323",
+    "food-2-q315",
+    "food-2-q363",
+    "food-2-q197",
+    "food-2-q155",
+    "food-2-q355",
+    "food-2-q255",
+    "food-2-q102",
+    "food-2-q369",
+    "food-2-q090",
+    "food-2-q352",
+    "food-2-q235",
+    "food-2-q269",
+    "food-2-q139",
+    "food-2-q212",
+    "food-2-q220",
+    "food-2-q300",
+    "food-2-q122",
+    "food-2-q217",
+    "food-2-q328",
+    "food-2-q116",
+    "food-2-q141",
+    "food-2-q178",
+    "food-2-q351",
+    "food-2-q275",
+    "food-2-q377",
+    "food-2-q371",
+    "food-2-q389",
+    "food-2-q127",
+    "food-2-q107",
+    "food-2-q154",
+    "food-2-q109",
+    "food-2-q376",
+    "food-2-q334",
+    "food-2-q303",
+    "food-2-q349",
+    "food-2-q185",
+    "food-2-q203"
+  ],
+  "reviewedFields": [
+    "prompt",
+    "options[0:4] in canonical order",
+    "explanation",
+    "optionExplanations[0:4] in canonical order",
+    "exam title"
+  ],
+  "findings": [
+    {
+      "questionId": "food-2-q090",
+      "field": "options[2]",
+      "issue": "परामर्श गर्नेको could ambiguously name the adviser rather than the advice-seeking worker.",
+      "resolution": "Author clarified to परामर्श माग्ने कामदारको; corrected text rechecked."
+    }
+  ],
+  "corrections": [
+    {
+      "questionId": "food-2-q090",
+      "field": "options[2]",
+      "before": "सबै कामदारलाई परामर्श गर्नेको नाम र कुरा खुलाउने।",
+      "after": "सबै कामदारलाई परामर्श माग्ने कामदारको नाम र कुरा खुलाउने।"
+    }
+  ],
+  "checks": [
+    "All40 prompts and every ordered option/reason compared with exact canonical Japanese, including role, negation, control scope and management authority.",
+    "Author selfclarified q102 scooping oil to तेल उघाउने, rechecked equivalent to Japanese すくう.",
+    "q212 cleaning-check evidence not generalized into microbial-kill proof; q300 ATP not bacterial counts; HACCP preparation and general hygiene verification scope retained.",
+    "q255 40±3×0.4=38.8–41.2g; q269 378/420=90%; q303 5/1000=0.005 and6/1500=0.004m³/kg; hypothetical/no-rounding qualifiers preserved.",
+    "Exact membership, EN source hashes, four ordered choices/reasons and correct-reason equality PASS."
+  ],
+  "reviewedArtifactSha256": "a0faf093f5177f2aefe65414117f3ee392df10eab5e0735ef1218df9306da34d",
+  "nativeOrDomainCertification": false,
+  "unresolvedFindings": [],
+  "integratedPartSha256": "a0faf093f5177f2aefe65414117f3ee392df10eab5e0735ef1218df9306da34d"
+}

@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "integratedTree": true,
+  "checks": [
+    {
+      "name": "content",
+      "command": [
+        "python",
+        "scripts/food-manufacturing/check-content.py"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/food-logs/content.log",
+      "tail": "{\n  \"pending\": {\n    \"mockQuestions\": {\n      \"1\": 0,\n      \"2\": 0\n    },\n    \"lessonTranslations\": {\n      \"en\": 0,\n      \"vi\": 0,\n      \"id\": 0,\n      \"zh-CN\": 0,\n      \"zh-TW\": 0,\n      \"hi\": 0,\n      \"bn\": 0,\n      \"ne\": 0,\n      \"my\": 0,\n      \"th\": 0,\n      \"km\": 0,\n      \"tl\": 0\n    },\n    \"fullBodyFurigana\": \"pending_verified_segments\",\n    \"nativeDomainReview\": \"pending\",\n    \"productionDeviceValidation\": \"pending\"\n  },\n  \"scopeComplete\": false,\n  \"lessons\": {\n    \"1\": 48,\n    \"2\": 48\n  },\n  \"weeklyQuestions\": {\n    \"1\": 24,\n    \"2\": 24\n  },\n  \"mockQuestions\": {\n    \"1\": 400,\n    \"2\": 400\n  },\n  \"mockQuestionTarget\": {\n    \"1\": 400,\n    \"2\": 400\n  },\n  \"translationLessons\": {\n    \"en\": 96,\n    \"vi\": 96,\n    \"id\": 96,\n    \"zh-CN\": 96,\n    \"zh-TW\": 96,\n    \"hi\": 96,\n    \"bn\": 96,\n    \"ne\": 96,\n    \"my\": 96,\n    \"th\": 96,\n    \"km\": 96,\n    \"tl\": 96\n  },\n  \"translatedQuestions\": {\n    \"en\": 848,\n    \"vi\": 848,\n    \"id\": 848,\n    \"zh-CN\": 848,\n    \"zh-TW\": 848,\n    \"hi\": 848,\n    \"bn\": 848,\n    \"ne\": 848,\n    \"my\": 848,\n    \"th\": 848,\n    \"km\": 848,\n    \"tl\": 848\n  },\n  \"errors\": [],\n  \"status\": \"PASS\",\n  \"meaning\": \"Structural check only; not native/domain/visual certification.\"\n}\n"
+    },
+    {
+      "name": "adapter",
+      "command": [
+        "node",
+        "scripts/food-manufacturing/check-adapter-without-bundler.cjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/food-logs/adapter.log",
+      "tail": "{\"status\":\"PASS\",\"validTranslationPairs\":10176,\"rejectedStalePairs\":10176,\"missingPairsWithoutFallback\":0,\"validTitles\":432,\"browserTested\":false,\"nativeDeviceTested\":false}\n(node:7) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "name": "state",
+      "command": [
+        "node",
+        "scripts/food-manufacturing/check-state.mjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/food-logs/state.log",
+      "tail": "Food manufacturing state: PASS (resume, revision invalidation, scoring, malformed storage, namespace isolation).\n(node:15) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "name": "daily-learning",
+      "command": [
+        "node",
+        "scripts/food-manufacturing/check-daily-learning.cjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/food-logs/daily-learning.log",
+      "tail": "▲ [WARNING] Cannot find base config file \"expo/tsconfig.base\" [tsconfig.json]\n\n    tsconfig.json:2:13:\n      2 │   \"extends\": \"expo/tsconfig.base\",\n        ╵              ~~~~~~~~~~~~~~~~~~~~\n\n{\"status\":\"PASS\",\"baseCommit\":\"3a09e225d95dca6975a81152fb1a6ecf9469e04d\",\"days\":96,\"enrichedDays\":94,\"daysWithSourceBoundDiagram\":96,\"originalControlledDrawings\":35,\"translatedCompanionPairs\":1128,\"translatedCaptionPairs\":1152,\"newUiTranslationFields\":36,\"canonicalFilesPreserved\":76,\"sourceProseChanged\":false,\"questionsOrProgressKeysChanged\":false,\"staleMainBindingCases\":96,\"byLevel\":{\"1\":{\"before\":{\"min\":282,\"median\":319,\"max\":529},\"after\":{\"min\":474,\"median\":565,\"max\":785}},\"2\":{\"before\":{\"min\":301,\"median\":364.5,\"max\":1055},\"after\":{\"min\":530,\"median\":642,\"max\":1055}}},\"durationMeasured\":false,\"domainReviewed\":false,\"nativeReviewed\":false}\n"
+    },
+    {
+      "name": "visual-assets",
+      "command": [
+        "python",
+        "scripts/food-manufacturing/check-visual-assets.py"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/food-logs/visual-assets.log",
+      "tail": "{\n  \"status\": \"PASS\",\n  \"decodedRuntimeImages\": 27,\n  \"lessonInventory\": 96,\n  \"errors\": [],\n  \"meaning\": \"File decoding, geometry and lesson/caption bindings only; not source, human, safety or device certification.\"\n}\n"
+    },
+    {
+      "name": "question-translations",
+      "command": [
+        "node",
+        "scripts/food-manufacturing/check-question-translations.cjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/food-logs/question-translations.log",
+      "tail": "{\"status\":\"PASS\",\"validTranslationPairs\":10176,\"rejectedStalePairs\":10176,\"missingPairsWithoutFallback\":0,\"meaning\":\"Adapter checks only; answer/explanation visibility tested in browser.\"}\n"
+    },
+    {
+      "name": "lesson-ruby",
+      "command": [
+        "node",
+        "scripts/food-manufacturing/check-lesson-ruby.cjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/food-logs/lesson-ruby.log",
+      "tail": "{\"status\":\"PASS\",\"lessons\":96,\"fields\":996,\"segments\":27609,\"kanjiSegments\":13427,\"staleAndMisalignedRejected\":996,\"malformedAndUncoveredRejected\":192,\"nativeReviewed\":false,\"deviceTested\":false}\n(node:6) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "name": "question-ruby",
+      "command": [
+        "node",
+        "scripts/food-manufacturing/check-question-ruby.cjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/food-logs/question-ruby.log",
+      "tail": "▲ [WARNING] Cannot find base config file \"expo/tsconfig.base\" [tsconfig.json]\n\n    tsconfig.json:2:13:\n      2 │   \"extends\": \"expo/tsconfig.base\",\n        ╵              ~~~~~~~~~~~~~~~~~~~~\n\n{\"status\":\"PASS\",\"questions\":848,\"fields\":8480,\"staleAndMisalignedRejected\":16960,\"malformedCasesRejected\":33833,\"uncoveredFallbacks\":0,\"tsxCompile\":true,\"nativeReviewed\":false,\"browserTested\":false}\n(node:14) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "name": "question-ruby-render",
+      "command": [
+        "node",
+        "scripts/food-manufacturing/check-question-ruby-render.cjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/ssw-workspace/integration-food-restaurant-20261031/food-logs/question-ruby-render.log",
+      "tail": "▲ [WARNING] Cannot find base config file \"expo/tsconfig.base\" [tsconfig.json]\n\n    tsconfig.json:2:13:\n      2 │   \"extends\": \"expo/tsconfig.base\",\n        ╵              ~~~~~~~~~~~~~~~~~~~~\n\n{\"status\":\"PASS\",\"renderedFields\":8480,\"submittedAndUnsubmittedCases\":1696,\"answerExplanationVisibility\":true,\"scope\":\"React SSR of actual components with test-only initial attempt injection and explicit app adapters; no browser geometry or native/device claims\"}\n"
+    }
+  ],
+  "humanReviewed": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "physicalDeviceTested": false,
+  "historicalBrowserReceiptsOverwritten": false
+}

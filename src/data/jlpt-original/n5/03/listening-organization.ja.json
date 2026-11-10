@@ -4,22 +4,22 @@
   "sourcePolicy": "New independent examples from skill objectives; no legacy exam content.",
   "publisherReviewed": false,
   "nativeReviewCompleted": false,
-  "openingJa": "聞く問題の第三回を始めます。はじめに、声が聞こえるか確かめてください。今から二人の声が流れます。聞きにくいときは、音の大きさを調節してください。",
+  "openingJa": "日本語能力模擬試験聴解を始めます。音が聞こえるか、先に確かめましょう。",
   "soundCheck": [
     {
-      "role": "youngMale",
-      "text": "こんにちは。わたしは今日、図書館へ行きます。青い自転車で行きます。"
+      "role": "adultMale",
+      "text": "こんにちは。今日の空は青いです。これから近くの公園まで歩きます。"
     },
     {
-      "role": "femaleStudent",
-      "text": "わたしも図書館へ行きます。読みたい本が二冊あります。"
+      "role": "adultFemale",
+      "text": "私は公園の入口で待っています。白いかばんを持っています。"
     }
   ],
-  "generalInstructionsJa": "ここまでの話は、音を確かめるためのものです。答える必要はありません。本当の問題は二十四問あります。問題一と問題二では、画面に四つの答えが出ます。問題三と問題四では、三つの答えを声で聞きます。それぞれ一つ選んでください。問題二が終わったら、一分間、音楽を聞きながら休みます。そのあと、自動で問題三が始まります。各問題の前に練習があります。練習は点数に入りません。",
+  "generalInstructionsJa": "音の確認は終わりです。これから問題一を始めます。",
   "groups": [
     {
       "problem": 1,
-      "instructionsJa": "問題1は7問です。話を聞いて、これからすることを選びます。質問は話の前とあとに聞きます。画面の四つの答えを見てください。答える時間は12秒です。まず練習を聞いてください。",
+      "instructionsJa": "問題一は七問です。メモを取っても構いません。質問を聞いてから、話を聞きます。話の後、もう一度質問を聞きます。問題用紙に書いてある、四つの答えから最も適切な答えを一つ選んでください。では始めます。",
       "example": {
         "id": "jpapp-n5-original-03-practice-1",
         "prompt": "女の人は、まず何をしますか。",
@@ -76,7 +76,8 @@
         "scored": false,
         "interactionPolicy": "Mental practice; no graded answer selection during examples."
       },
-      "scoredStartJa": "練習はここまでです。問題1の一番から、答えを選んでください。"
+      "scoredStartJa": "",
+      "playExample": false
     },
     {
       "problem": 2,
@@ -210,5 +211,15 @@
       "scoredStartJa": "練習はここまでです。問題4の一番から、答えを選んでください。"
     }
   ],
-  "closingJa": "聞く問題は、これで終わりです。答えを確かめてから、提出してください。提出するまでは、結果は出ません。"
+  "closingJa": "聞く問題は、これで終わりです。答えを確かめてから、提出してください。提出するまでは、結果は出ません。",
+  "openingBell": {
+    "source": "independently_synthesized_two_note_bell",
+    "startMs": 26435,
+    "endMs": 28435
+  },
+  "openingRevision": {
+    "date": "2026-10-31",
+    "scope": "opening_and_problem_1_only",
+    "status": "audio_applied_ai_unreviewed"
+  }
 }

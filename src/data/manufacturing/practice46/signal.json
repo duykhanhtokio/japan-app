@@ -1,0 +1,2241 @@
+{
+  "schemaVersion": 1,
+  "id": "mfg1-sequential-signal-supplement",
+  "revision": "mfg46-signal-v1",
+  "titleJa": "ICと信号経路：機能の照合（11問）",
+  "lessonPatch": {
+    "lessonId": "mfg1-electrical-l024",
+    "paragraphId": "section-3",
+    "sourceHash": "ec282035552d7ae1be1486a6287e4710f738254307794e9da64218526aa33f91",
+    "wording": {
+      "ja": {
+        "before": "温度に応じた連続電圧をコンピュータへ渡す教材なら、「センサのアナログ信号→必要な信号調整→A/D変換→デジタル処理」という役割分担を考えます。電源レギュレータはこの処理の電源条件を支えますが、A/D変換そのものを代用しません。具体的な信号範囲や電源電圧はICの仕様で確認します。",
+        "after": "温度に応じた連続電圧をコンピュータへ渡す教材なら、「センサのアナログ信号→必要な信号調整→A/D変換→デジタル処理」という役割分担を考えます。電源レギュレータはこの処理の電源条件を支えますが、A/D変換そのものを代用しません。具体的な信号範囲や電源電圧はICの仕様で確認します。\n\n機能表を、必要な変換の前後と照合します。連続的なセンサ電圧を数値として処理する境界にはA/D変換、数値からアナログ出力へ戻す境界にはD/A変換があります。記憶はメモリ、論理条件の処理はロジックIC、計算や制御の中心的な処理はMPUという役割を分けます。電圧レギュレータは電源を安定させる役割で、データの変換や保存の代わりにはなりません。\n小さな入力信号の振幅を大きくする増幅と、周期信号を持続的に発生させる発振も区別します。発振は、伝えたい外部信号を大きくすることの別名ではありません。\n通信の紙上例では、変調によって情報を搬送波へ反映し、受信後の復調で情報を取り出します。AMは搬送波の振幅、FMは周波数、PMは位相を変えるという対応を、略号の並びではなく変える量と組にします。これらは機能の区別であり、同じ機能名のICを無条件に交換できる意味ではありません。端子、信号範囲、電源等の仕様は別途必要です。"
+      },
+      "en": {
+        "before": "For a teaching system sending a continuous temperature-related voltage to a computer, consider: sensor analog signal → necessary signal conditioning → A/D conversion → digital processing. A supply regulator supports the power conditions but does not replace A/D conversion. Check actual signal ranges and supply voltage against the IC specifications.",
+        "after": "For a teaching system sending a continuous temperature-related voltage to a computer, consider: sensor analog signal → necessary signal conditioning → A/D conversion → digital processing. A supply regulator supports the power conditions but does not replace A/D conversion. Check actual signal ranges and supply voltage against the IC specifications.\n\nMatch each function to the required input and output. A/D converts a continuous sensor voltage to digital data; D/A converts digital data to an analog output. Memory retains data, logic ICs process logical conditions, and an MPU performs computing and control. A voltage regulator stabilizes the supply rather than converting or storing data. Amplification increases an input signal’s amplitude; oscillation generates a sustained periodic signal, not merely a larger external signal. In a paper communications model, modulation places information on a carrier and demodulation retrieves it. AM varies carrier amplitude, FM frequency, PM phase. These function names do not authorize interchangeable IC replacement; pinout, signal range and power specifications still matter."
+      },
+      "vi": {
+        "before": "Với mô hình đưa điện áp liên tục theo nhiệt độ vào máy tính, xem các vai trò: tín hiệu tương tự cảm biến → điều chỉnh tín hiệu cần thiết → A/D → xử lý số. IC ổn áp duy trì điều kiện nguồn, không thay cho chuyển đổi A/D. Dải tín hiệu, điện áp nguồn cụ thể phải theo thông số IC.",
+        "after": "Với mô hình đưa điện áp liên tục theo nhiệt độ vào máy tính, xem các vai trò: tín hiệu tương tự cảm biến → điều chỉnh tín hiệu cần thiết → A/D → xử lý số. IC ổn áp duy trì điều kiện nguồn, không thay cho chuyển đổi A/D. Dải tín hiệu, điện áp nguồn cụ thể phải theo thông số IC.\n\nĐối chiếu chức năng với đầu vào và đầu ra cần có. A/D đổi điện áp cảm biến liên tục thành dữ liệu số; D/A đổi dữ liệu số thành đầu ra tương tự. Bộ nhớ lưu dữ liệu, IC logic xử lý điều kiện logic, MPU tính toán và điều khiển. Bộ ổn áp giữ ổn định nguồn, không thay việc đổi hay lưu dữ liệu. Khuếch đại tăng biên độ tín hiệu vào; dao động tạo tín hiệu tuần hoàn duy trì, không chỉ làm lớn tín hiệu ngoài. Trong mô hình truyền tin trên giấy, điều chế đưa thông tin lên sóng mang, giải điều chế lấy thông tin ra. AM đổi biên độ sóng mang, FM đổi tần số, PM đổi pha. Tên chức năng không cho phép tự thay IC; vẫn cần đúng chân, dải tín hiệu và nguồn."
+      },
+      "id": {
+        "before": "Untuk materi yang mengirim tegangan kontinu sesuai suhu ke komputer, pertimbangkan pembagian peran: sinyal analog sensor → pengondisian sinyal yang diperlukan → konversi A/D → pemrosesan digital. Regulator mendukung kondisi catu daya pemrosesan tersebut, tetapi tidak menggantikan konversi A/D. Periksa rentang sinyal dan tegangan catu daya yang spesifik pada spesifikasi IC.",
+        "after": "Untuk materi yang mengirim tegangan kontinu sesuai suhu ke komputer, pertimbangkan pembagian peran: sinyal analog sensor → pengondisian sinyal yang diperlukan → konversi A/D → pemrosesan digital. Regulator mendukung kondisi catu daya pemrosesan tersebut, tetapi tidak menggantikan konversi A/D. Periksa rentang sinyal dan tegangan catu daya yang spesifik pada spesifikasi IC.\n\nCocokkan fungsi dengan masukan dan keluaran. A/D mengubah tegangan sensor kontinu menjadi data digital; D/A mengubah data digital menjadi keluaran analog. Memori menyimpan data, IC logika memproses kondisi logis, MPU menghitung dan mengendalikan. Regulator tegangan menstabilkan catu, bukan menggantikan konversi atau penyimpanan data. Penguatan memperbesar amplitudo sinyal masukan; osilasi menghasilkan sinyal periodik berkelanjutan. Pada model komunikasi kertas, modulasi memasukkan informasi ke pembawa dan demodulasi mengambilnya kembali. AM mengubah amplitudo pembawa, FM frekuensi, PM fase. Nama fungsi tidak mengizinkan pertukaran IC tanpa memeriksa pin, rentang sinyal dan catu."
+      },
+      "zh-CN": {
+        "before": "将随温度变化的连续电压送给电脑的教学例，可分为“传感器模拟信号→必要信号调理→A/D转换→数字处理”。稳压器支撑该处理的电源条件，但不能替代A/D本身。具体信号范围与电源电压查IC规格。",
+        "after": "将随温度变化的连续电压送给电脑的教学例，可分为“传感器模拟信号→必要信号调理→A/D转换→数字处理”。稳压器支撑该处理的电源条件，但不能替代A/D本身。具体信号范围与电源电压查IC规格。\n\n把功能与所需输入、输出对应。A/D把连续传感器电压变为数字数据，D/A把数字数据变为模拟输出。存储器保存数据，逻辑IC处理逻辑条件，MPU执行运算和控制。稳压器稳定电源，不能代替数据转换或保存。放大增大输入信号幅度，振荡则持续产生周期信号，不只是把外部信号放大。纸面通信模型中，调制把信息反映到载波，解调取出信息。AM改变载波幅度，FM改变频率，PM改变相位。功能名称不代表IC可任意替换，仍须核对引脚、信号范围和电源规格。"
+      },
+      "zh-TW": {
+        "before": "將隨溫度變化的連續電壓送給電腦的教學例，可分為“感測器類比訊號→必要訊號調理→A/D轉換→數位處理”。穩壓器支撐該處理的電源條件，但不能替代A/D本身。具體訊號範圍與電源電壓查IC規格。",
+        "after": "將隨溫度變化的連續電壓送給電腦的教學例，可分為“感測器類比訊號→必要訊號調理→A/D轉換→數位處理”。穩壓器支撐該處理的電源條件，但不能替代A/D本身。具體訊號範圍與電源電壓查IC規格。\n\n把功能與所需輸入、輸出對應。A/D把連續感測器電壓變為數位資料，D/A把數位資料變為類比輸出。記憶體保存資料，邏輯IC處理邏輯條件，MPU執行運算和控制。穩壓器穩定電源，不能代替資料轉換或保存。放大增大輸入訊號幅度，振盪則持續產生週期訊號，不只是把外部訊號放大。紙面通訊模型中，調變把資訊反映到載波，解調取出資訊。AM改變載波幅度，FM改變頻率，PM改變相位。功能名稱不代表IC可任意替換，仍須核對接腳、訊號範圍和電源規格。"
+      },
+      "hi": {
+        "before": "तापमान अनुसार सतत वोल्टेज कंप्यूटर को देने के शिक्षण में “सेंसर का एनालॉग संकेत → जरूरी संकेत समायोजन → A/D रूपांतरण → डिजिटल संसाधन” सोचें। स्रोत रेगुलेटर संसाधन की विद्युत शर्तों को सहारा देता है लेकिन A/D का विकल्प नहीं। विशिष्ट संकेत सीमा और स्रोत वोल्टेज IC विनिर्देश से जाँचें।",
+        "after": "तापमान अनुसार सतत वोल्टेज कंप्यूटर को देने के शिक्षण में “सेंसर का एनालॉग संकेत → जरूरी संकेत समायोजन → A/D रूपांतरण → डिजिटल संसाधन” सोचें। स्रोत रेगुलेटर संसाधन की विद्युत शर्तों को सहारा देता है लेकिन A/D का विकल्प नहीं। विशिष्ट संकेत सीमा और स्रोत वोल्टेज IC विनिर्देश से जाँचें।\n\nहर कार्य को आवश्यक इनपुट और आउटपुट से मिलाएँ। A/D सतत सेंसर वोल्टेज को डिजिटल डेटा और D/A डिजिटल डेटा को एनालॉग आउटपुट बनाता है। मेमोरी डेटा रखती है, लॉजिक IC तार्किक शर्तें संसाधित करता है, MPU गणना व नियंत्रण करता है। वोल्टेज रेगुलेटर आपूर्ति स्थिर करता है, डेटा रूपांतरण या संग्रह नहीं। प्रवर्धन इनपुट का आयाम बढ़ाता है; दोलन सतत आवर्ती संकेत बनाता है। कागजी संचार मॉडल में मॉड्यूलेशन वाहक पर सूचना डालता और डीमॉड्यूलेशन निकालता है। AM वाहक का आयाम, FM आवृत्ति, PM कला बदलता है। कार्य-नाम से IC बदलने की अनुमति नहीं मिलती; पिन, संकेत सीमा और आपूर्ति विनिर्देश जाँचें।"
+      },
+      "bn": {
+        "before": "তাপমাত্রা অনুযায়ী ধারাবাহিক ভোল্টেজ কম্পিউটারে দেওয়ার শিক্ষাসামগ্রীতে “সেন্সরের অ্যানালগ→প্রয়োজনীয় সংকেত সমন্বয়→A/D→ডিজিটাল প্রক্রিয়াকরণ” ভাবুন। রেগুলেটর এই কাজের বিদ্যুৎশর্ত সমর্থন করে, কিন্তু A/D-এর বদলে কাজ করে না। নির্দিষ্ট সংকেতসীমা ও উৎসভোল্টেজ IC-এর স্পেসিফিকেশনে দেখুন।",
+        "after": "তাপমাত্রা অনুযায়ী ধারাবাহিক ভোল্টেজ কম্পিউটারে দেওয়ার শিক্ষাসামগ্রীতে “সেন্সরের অ্যানালগ→প্রয়োজনীয় সংকেত সমন্বয়→A/D→ডিজিটাল প্রক্রিয়াকরণ” ভাবুন। রেগুলেটর এই কাজের বিদ্যুৎশর্ত সমর্থন করে, কিন্তু A/D-এর বদলে কাজ করে না। নির্দিষ্ট সংকেতসীমা ও উৎসভোল্টেজ IC-এর স্পেসিফিকেশনে দেখুন।\n\nকাজকে প্রয়োজনীয় ইনপুট ও আউটপুটের সঙ্গে মেলান। A/D অবিচ্ছিন্ন সেন্সর ভোল্টেজকে ডিজিটাল ডেটা, D/A ডিজিটাল ডেটাকে অ্যানালগ আউটপুট করে। মেমরি ডেটা রাখে, লজিক IC যৌক্তিক শর্ত প্রক্রিয়া করে, MPU গণনা ও নিয়ন্ত্রণ করে। ভোল্টেজ রেগুলেটর সরবরাহ স্থির করে, ডেটা রূপান্তর বা সংরক্ষণের বিকল্প নয়। পরিবর্ধন ইনপুটের বিস্তার বাড়ায়; দোলন স্থায়ী পর্যায়ক্রমিক সংকেত তৈরি করে। কাগুজে যোগাযোগ মডেলে মডুলেশন বাহকে তথ্য বসায়, ডিমডুলেশন বের করে। AM বাহকের বিস্তার, FM কম্পাঙ্ক, PM দশা বদলায়। কাজের নাম মিললেই IC বদলাবেন না; পিন, সংকেত পরিসর ও সরবরাহের শর্ত দেখুন।"
+      },
+      "ne": {
+        "before": "तापक्रमअनुसारको निरन्तर भोल्टेज कम्प्युटरमा पठाउने अभ्यासमा ‘सेन्सरको एनालग सङ्केत→आवश्यक सङ्केत मिलान→A/D रूपान्तरण→डिजिटल प्रशोधन’ भूमिका हुन्छ। रेगुलेटरले त्यसको आपूर्ति सर्त सघाउँछ तर A/D रूपान्तरणको विकल्प हुँदैन। वास्तविक सङ्केत सीमा र आपूर्ति भोल्टेज IC को विवरणमा जाँच्नुहोस्।",
+        "after": "तापक्रमअनुसारको निरन्तर भोल्टेज कम्प्युटरमा पठाउने अभ्यासमा ‘सेन्सरको एनालग सङ्केत→आवश्यक सङ्केत मिलान→A/D रूपान्तरण→डिजिटल प्रशोधन’ भूमिका हुन्छ। रेगुलेटरले त्यसको आपूर्ति सर्त सघाउँछ तर A/D रूपान्तरणको विकल्प हुँदैन। वास्तविक सङ्केत सीमा र आपूर्ति भोल्टेज IC को विवरणमा जाँच्नुहोस्।\n\nकार्यलाई आवश्यक इनपुट र आउटपुटसँग मिलाउनुहोस्। A/D ले निरन्तर सेन्सर भोल्टेजलाई डिजिटल डेटा र D/A ले डिजिटल डेटालाई एनालग आउटपुट बनाउँछ। मेमोरीले डेटा राख्छ, लजिक IC ले तार्किक सर्त प्रशोधन गर्छ, MPU ले गणना र नियन्त्रण गर्छ। भोल्टेज रेगुलेटरले आपूर्ति स्थिर गर्छ, डेटा रूपान्तरण वा भण्डारणको विकल्प होइन। प्रवर्धनले इनपुटको आयाम बढाउँछ; दोलनले निरन्तर आवधिक सङ्केत बनाउँछ। कागजी सञ्चार मोडेलमा मोडुलेसनले वाहकमा सूचना राख्छ र डिमोडुलेसनले निकाल्छ। AM ले आयाम, FM ले आवृत्ति, PM ले कला बदल्छ। कार्यको नामले IC फेरबदल अनुमति दिँदैन; पिन, सङ्केत दायरा र आपूर्ति जाँच्नुहोस्।"
+      },
+      "my": {
+        "before": "အပူချိန်အလိုက် ဆက်တိုက်ဗို့အားကို ကွန်ပျူတာသို့ပေးသော သင်ထောက်ကူတွင် ‘ဆင်ဆာအန်နာလော့→လိုအပ်အချက်ပြညှိ→A/D ပြောင်း→ဒစ်ဂျစ်တယ်လုပ်ဆောင်’ ဟု အခန်းကဏ္ဍခွဲစဉ်းစားသည်။ ပါဝါ regulator က ပါဝါအခြေအနေထောက်ပံ့သော်လည်း A/D ကိုယ်တိုင်ကို မအစားထိုးပါ။ တိကျအချက်ပြနယ်ပယ်နှင့် ပါဝါဗို့အားကို IC အသေးစိတ်တွင် စစ်ပါ။",
+        "after": "အပူချိန်အလိုက် ဆက်တိုက်ဗို့အားကို ကွန်ပျူတာသို့ပေးသော သင်ထောက်ကူတွင် ‘ဆင်ဆာအန်နာလော့→လိုအပ်အချက်ပြညှိ→A/D ပြောင်း→ဒစ်ဂျစ်တယ်လုပ်ဆောင်’ ဟု အခန်းကဏ္ဍခွဲစဉ်းစားသည်။ ပါဝါ regulator က ပါဝါအခြေအနေထောက်ပံ့သော်လည်း A/D ကိုယ်တိုင်ကို မအစားထိုးပါ။ တိကျအချက်ပြနယ်ပယ်နှင့် ပါဝါဗို့အားကို IC အသေးစိတ်တွင် စစ်ပါ။\n\nလုပ်ဆောင်ချက်ကို လိုအပ်သည့်အဝင်အထွက်နှင့်တွဲပါ။ A/Dကစဉ်ဆက်ဆင်ဆာဗို့အားကိုဒစ်ဂျစ်တယ်ဒေတာ၊ D/Aကဒစ်ဂျစ်တယ်ကိုအန်နာလော့အထွက်ပြောင်းသည်။ မမ်မိုရီကဒေတာသိမ်း၊ လော့ဂျစ်ICကယုတ္တိအခြေအနေစစ်၊ MPUကတွက်ချက်ထိန်းချုပ်သည်။ ဗို့အားထိန်းကိရိယာကမီးအားတည်ငြိမ်စေပြီး ဒေတာပြောင်းသိမ်းမှုကိုအစားမထိုးပါ။ ချဲ့ထွင်မှုကအဝင်လှိုင်းအမြင့်တိုး၊ လှုပ်ခတ်မှုကအချိန်မှန်ထပ်သောအချက်ပြကိုဆက်ထုတ်သည်။ စာရွက်ဆက်သွယ်ရေးမော်ဒယ်တွင်မော်ဂျူလေးရှင်းကသယ်ဆောင်လှိုင်းသို့သတင်းထည့်ပြီး ဒီမော်ဂျူလေးရှင်းကပြန်ထုတ်သည်။ AMကအမြင့်၊ FMကကြိမ်နှုန်း၊ PMကဖေ့စ်ပြောင်းသည်။ လုပ်ဆောင်ချက်နာမည်တူရုံICမလဲရ၊ ပင်၊ အချက်ပြအတိုင်းအတာနှင့်မီးအားစံစစ်ပါ။"
+      },
+      "th": {
+        "before": "ในสื่อการเรียนที่ส่งแรงดันต่อเนื่องตามอุณหภูมิเข้าคอมพิวเตอร์ ให้แบ่งหน้าที่เป็น “สัญญาณแอนะล็อกจากเซนเซอร์→ปรับสัญญาณตามจำเป็น→แปลง A/D→ประมวลผลดิจิทัล” ตัวควบคุมแหล่งจ่ายสนับสนุนเงื่อนไขไฟเลี้ยงของกระบวนการนี้ แต่ใช้แทนการแปลง A/D เองไม่ได้ ช่วงสัญญาณและแรงดันไฟเลี้ยงเฉพาะต้องตรวจจากข้อมูลจำเพาะ IC",
+        "after": "ในสื่อการเรียนที่ส่งแรงดันต่อเนื่องตามอุณหภูมิเข้าคอมพิวเตอร์ ให้แบ่งหน้าที่เป็น “สัญญาณแอนะล็อกจากเซนเซอร์→ปรับสัญญาณตามจำเป็น→แปลง A/D→ประมวลผลดิจิทัล” ตัวควบคุมแหล่งจ่ายสนับสนุนเงื่อนไขไฟเลี้ยงของกระบวนการนี้ แต่ใช้แทนการแปลง A/D เองไม่ได้ ช่วงสัญญาณและแรงดันไฟเลี้ยงเฉพาะต้องตรวจจากข้อมูลจำเพาะ IC\n\nจับคู่หน้าที่กับอินพุตและเอาต์พุต A/Dแปลงแรงดันเซนเซอร์ต่อเนื่องเป็นข้อมูลดิจิทัล D/Aแปลงข้อมูลดิจิทัลเป็นเอาต์พุตแอนะล็อก หน่วยความจำเก็บข้อมูล ICลอจิกประมวลเงื่อนไข MPUคำนวณและควบคุม ตัวควบคุมแรงดันทำให้แหล่งจ่ายคงที่ ไม่แทนการแปลงหรือเก็บข้อมูล การขยายเพิ่มแอมพลิจูดอินพุต การกำเนิดสัญญาณสร้างสัญญาณเป็นคาบต่อเนื่อง แบบสื่อสารบนกระดาษใช้การมอดูเลตใส่ข้อมูลบนคลื่นพาหะ และดีมอดูเลตดึงข้อมูลออก AMเปลี่ยนแอมพลิจูด FMเปลี่ยนความถี่ PMเปลี่ยนเฟส ชื่อหน้าที่ไม่ได้อนุญาตให้เปลี่ยนICแทนกัน ต้องตรวจขา ช่วงสัญญาณและแหล่งจ่ายด้วย"
+      },
+      "km": {
+        "before": "បើសម្ភារៈអប់រំបញ្ជូនតង់ស្យុងបន្តតាមសីតុណ្ហភាពទៅកុំព្យូទ័រ គិតការបែងតួនាទី «សញ្ញាអាណាឡូកសិនស័រ→កែសម្រួលសញ្ញាចាំបាច់→A/D→ដំណើរការឌីជីថល»។ រ៉េគុយឡាទ័រប្រភពគាំទ្រលក្ខខណ្ឌភ្លើងដំណើរការនេះ ប៉ុន្តែមិនជំនួសA/Dខ្លួនឯង។ ជួរសញ្ញានិងតង់ស្យុងប្រភពជាក់លាក់ត្រូវពិនិត្យលក្ខណៈIC។",
+        "after": "បើសម្ភារៈអប់រំបញ្ជូនតង់ស្យុងបន្តតាមសីតុណ្ហភាពទៅកុំព្យូទ័រ គិតការបែងតួនាទី «សញ្ញាអាណាឡូកសិនស័រ→កែសម្រួលសញ្ញាចាំបាច់→A/D→ដំណើរការឌីជីថល»។ រ៉េគុយឡាទ័រប្រភពគាំទ្រលក្ខខណ្ឌភ្លើងដំណើរការនេះ ប៉ុន្តែមិនជំនួសA/Dខ្លួនឯង។ ជួរសញ្ញានិងតង់ស្យុងប្រភពជាក់លាក់ត្រូវពិនិត្យលក្ខណៈIC។\n\nផ្គូផ្គងមុខងារជាមួយធាតុចូលនិងចេញ។ A/Dប្ដូរតង់ស្យុងសិនស័របន្តទៅទិន្នន័យឌីជីថល ហើយD/Aប្ដូរឌីជីថលទៅអាណាឡូក។ អង្គចងចាំរក្សាទិន្នន័យ ICតក្កដំណើរការលក្ខខណ្ឌ MPUគណនានិងគ្រប់គ្រង។ និយតករតង់ស្យុងធ្វើឱ្យប្រភពថេរ មិនជំនួសការប្ដូរឬរក្សាទិន្នន័យទេ។ ការពង្រីកបង្កើនអំព្លីទុតចូល ខណៈការយោលបង្កើតសញ្ញាខួបបន្ត។ គំរូទំនាក់ទំនងលើក្រដាសប្រើម៉ូឌុលដាក់ព័ត៌មានលើរលកនាំ និងឌីម៉ូឌុលយកព័ត៌មានចេញ។ AMប្ដូរអំព្លីទុត FMប្ដូរប្រេកង់ PMប្ដូរផាស។ ឈ្មោះមុខងារមិនអនុញ្ញាតឱ្យប្ដូរICដោយសេរីទេ ត្រូវផ្ទៀងជើង ជួរសញ្ញា និងប្រភព។"
+      },
+      "tl": {
+        "before": "Sa materyal na nagpapasa sa computer ng continuous voltage ayon sa temperatura, isipin ang “analog sensor signal→kinakailangang signal conditioning→A/D conversion→digital processing.” Sinusuportahan ng regulator ang power conditions ngunit hindi kapalit ng A/D conversion. Tingnan sa espesipikasyon ng IC ang signal range at supply voltage.",
+        "after": "Sa materyal na nagpapasa sa computer ng continuous voltage ayon sa temperatura, isipin ang “analog sensor signal→kinakailangang signal conditioning→A/D conversion→digital processing.” Sinusuportahan ng regulator ang power conditions ngunit hindi kapalit ng A/D conversion. Tingnan sa espesipikasyon ng IC ang signal range at supply voltage.\n\nItugma ang function sa kailangang input at output. A/D ang tuloy-tuloy na sensor voltage tungo sa digital data; D/A ang digital tungo sa analog output. Memory ang pag-iimbak, logic IC ang logical conditions, MPU ang computing at control. Supply ang pinatatatag ng voltage regulator, hindi nito pinapalitan ang conversion o storage. Amplification ang paglaki ng input amplitude; oscillation ang patuloy na periodic signal generation. Sa papel na communication model, modulation ang paglalagay ng impormasyon sa carrier, demodulation ang pagkuha nito. AM ang carrier amplitude, FM ang frequency, PM ang phase. Hindi pahintulot sa basta pagpapalit ng IC ang function name; suriin pa rin ang pinout, signal range at supply."
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "mfg1-sequential-signal-01",
+      "lessonId": "mfg1-electrical-l024",
+      "stemJa": "連続（れんぞく）的（てき）なセンサ電圧（でんあつ）をデジタル値（ち）へ変（か）える境界（きょうかい）の機能（きのう）はどれですか。",
+      "optionsJa": [
+        "A/Dコンバータ",
+        "D/Aコンバータ",
+        "メモリIC",
+        "電圧レギュレータ"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "A/Dはアナログからデジタルへの変換です。",
+        "D/Aは逆のデジタルからアナログへの変換です。",
+        "メモリは保存の役割で、変換そのものではありません。",
+        "電圧レギュレータは電源安定化で、信号変換の代わりではありません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 141,
+          "printedPage": 132
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 142,
+          "printedPage": 133
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 143,
+          "printedPage": 134
+        }
+      ],
+      "sourceHash": "627ef615cbb1ef7dfd060f10bce0352e4441758366a623d0803f6acc09a6da0a"
+    },
+    {
+      "id": "mfg1-sequential-signal-02",
+      "lessonId": "mfg1-electrical-l024",
+      "stemJa": "デジタル指令値（しれいち）からアナログ出力（しゅつりょく）を得（え）る機能（きのう）はどれですか。",
+      "optionsJa": [
+        "電圧レギュレータ",
+        "A/Dコンバータ",
+        "D/Aコンバータ",
+        "メモリIC"
+      ],
+      "correctIndex": 2,
+      "optionReasonsJa": [
+        "電源を安定させる機能だけではアナログ信号をつくれません。",
+        "A/Dはアナログからデジタルへの変換です。",
+        "D/Aはデジタルからアナログへの変換です。",
+        "保存はデジタル指令をアナログへ変換する役割ではありません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 141,
+          "printedPage": 132
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 142,
+          "printedPage": 133
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 143,
+          "printedPage": 134
+        }
+      ],
+      "sourceHash": "8e42ad34f844c8d6db211ae5fd4fea0680a8380953fb490517a788d41612ba89"
+    },
+    {
+      "id": "mfg1-sequential-signal-03",
+      "lessonId": "mfg1-electrical-l024",
+      "stemJa": "処理（しょり）回路（かいろ）の供給電圧（きょうきゅうでんあつ）を安定（あんてい）させる機能（きのう）はどれですか。",
+      "optionsJa": [
+        "MPU",
+        "電圧レギュレータ",
+        "メモリIC",
+        "A/Dコンバータ"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "MPUは演算や制御を担当する役割です。",
+        "電圧レギュレータは電源を安定させます。",
+        "メモリはデータの記憶を担当します。",
+        "A/Dは信号のアナログ・デジタル変換です。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 141,
+          "printedPage": 132
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 142,
+          "printedPage": 133
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 143,
+          "printedPage": 134
+        }
+      ],
+      "sourceHash": "8c4570a2e5b249e00495c161d460342304caedae72fec4b1606aa4e2bab5ae37"
+    },
+    {
+      "id": "mfg1-sequential-signal-04",
+      "lessonId": "mfg1-electrical-l024",
+      "stemJa": "調整値（ちょうせいち）をデータとして記憶（きおく）する役割（やくわり）はどれですか。",
+      "optionsJa": [
+        "A/Dコンバータ",
+        "電圧レギュレータ",
+        "D/Aコンバータ",
+        "メモリIC"
+      ],
+      "correctIndex": 3,
+      "optionReasonsJa": [
+        "A/Dは入力信号をデジタル値へ変えます。",
+        "レギュレータは電源を安定させます。",
+        "D/Aは数値をアナログ量へ変えます。",
+        "メモリICはデータを記憶する役割です。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 141,
+          "printedPage": 132
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 142,
+          "printedPage": 133
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 143,
+          "printedPage": 134
+        }
+      ],
+      "sourceHash": "f67e50b0508139fc8ae16568500f3778bc7a7b16f67d48739fb730ea6c91df3a"
+    },
+    {
+      "id": "mfg1-sequential-signal-05",
+      "lessonId": "mfg1-electrical-l024",
+      "stemJa": "ロジックICの役割（やくわり）はデータを保存（ほぞん）することだけで、論理条件（ろんりじょうけん）を処理（しょり）しない、は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "ロジックICは論理演算や制御を担い、保存だけではありません。",
+        "記憶の役割と論理条件の処理を混同してはいけません。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 141,
+          "printedPage": 132
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 142,
+          "printedPage": 133
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 143,
+          "printedPage": 134
+        }
+      ],
+      "sourceHash": "36d89675f47adf964f2225837b45409797b70893550a46c6cc5f760755f75171"
+    },
+    {
+      "id": "mfg1-sequential-signal-06",
+      "lessonId": "mfg1-electrical-l024",
+      "stemJa": "小（ちい）さな入力信号（にゅうりょくしんごう）の振幅（しんぷく）を大（おお）きくすることは、発振（はっしん）の別名（べつめい）である、は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "入力信号を大きくするのは増幅です。",
+        "発振は周期的な信号を持続的に生成する役割です。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 141,
+          "printedPage": 132
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 142,
+          "printedPage": 133
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 143,
+          "printedPage": 134
+        }
+      ],
+      "sourceHash": "7c01d32b2c1b915e675ab351201e71978abd6f6f92238a0b6f4a0085fca5f45f"
+    },
+    {
+      "id": "mfg1-sequential-signal-07",
+      "lessonId": "mfg1-electrical-l024",
+      "stemJa": "発振（はっしん）回路（かいろ）は、伝（つた）えたい外部入力（がいぶにゅうりょく）がなくても周期信号（しゅうきしんごう）を発生（はっせい）させる、は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "発振は周期信号を生成する機能です。",
+        "外部の情報信号を大きくするだけの増幅とは区別します。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 141,
+          "printedPage": 132
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 142,
+          "printedPage": 133
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 143,
+          "printedPage": 134
+        }
+      ],
+      "sourceHash": "64181874d8180d4db248afe09aea032fef14d67969f276431381ea23b856eb63"
+    },
+    {
+      "id": "mfg1-sequential-signal-08",
+      "lessonId": "mfg1-electrical-l024",
+      "stemJa": "AMは搬送波（はんそうは）の周波数（しゅうはすう）を変（か）える方式（ほうしき）である、は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "AMで変える量は振幅です。",
+        "周波数を変える方式はFMで、AMとは区別します。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 141,
+          "printedPage": 132
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 142,
+          "printedPage": 133
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 143,
+          "printedPage": 134
+        }
+      ],
+      "sourceHash": "c81aa6700bbbf363f4d2d5596b2cac47bd5b561b7efaeaa84e29e7ec0f95937a"
+    },
+    {
+      "id": "mfg1-sequential-signal-09",
+      "lessonId": "mfg1-electrical-l024",
+      "stemJa": "FMは搬送波（はんそうは）の周波数（しゅうはすう）を変（か）える方式（ほうしき）である、は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "FMは周波数の変化を使います。",
+        "振幅を変えるAMとは変える量が異なります。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 141,
+          "printedPage": 132
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 142,
+          "printedPage": 133
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 143,
+          "printedPage": 134
+        }
+      ],
+      "sourceHash": "555b29313e6396bf11163ecb504342924214ec5236e4d2ca3bbc824f903e1f19"
+    },
+    {
+      "id": "mfg1-sequential-signal-10",
+      "lessonId": "mfg1-electrical-l024",
+      "stemJa": "PMは搬送波（はんそうは）の振幅（しんぷく）を変（か）える方式（ほうしき）である、は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 1,
+      "optionReasonsJa": [
+        "PMで変える量は位相です。",
+        "振幅を変えるAMと、位相を変えるPMを区別します。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 141,
+          "printedPage": 132
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 142,
+          "printedPage": 133
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 143,
+          "printedPage": 134
+        }
+      ],
+      "sourceHash": "10f4751c9f348f7e1b54f56d209b4f6a90d1e632095d76c764af93c9337e9187"
+    },
+    {
+      "id": "mfg1-sequential-signal-11",
+      "lessonId": "mfg1-electrical-l024",
+      "stemJa": "復調（ふくちょう）は、受信（じゅしん）した変調波（へんちょうは）から情報信号（じょうほうしんごう）を取（と）り出（だ）す役割（やくわり）である、は正（ただ）しいですか。",
+      "optionsJa": [
+        "正しい",
+        "誤り"
+      ],
+      "correctIndex": 0,
+      "optionReasonsJa": [
+        "復調は情報信号を取り出す役割です。",
+        "送信側で情報を搬送波へ反映する変調とは逆側の役割です。"
+      ],
+      "sources": [
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 141,
+          "printedPage": 132
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 142,
+          "printedPage": 133
+        },
+        {
+          "documentId": "mfg1-electrical-source",
+          "pdfPage": 143,
+          "printedPage": 134
+        }
+      ],
+      "sourceHash": "480c7698debd52e7c313b2989b1f40d8b2909359b581798945dcaac90b6afe41"
+    }
+  ],
+  "locales": {
+    "en": {
+      "mfg1-sequential-signal-01": {
+        "sourceHash": "627ef615cbb1ef7dfd060f10bce0352e4441758366a623d0803f6acc09a6da0a",
+        "stem": "Which function converts continuous sensor voltage into digital data?",
+        "options": [
+          "A/D converter",
+          "D/A converter",
+          "Memory IC",
+          "Voltage regulator"
+        ],
+        "reasons": [
+          "A/D converts analog signals to digital data.",
+          "D/A converts digital data to an analog signal.",
+          "Memory retains data.",
+          "A voltage regulator stabilizes the supply."
+        ]
+      },
+      "mfg1-sequential-signal-02": {
+        "sourceHash": "8e42ad34f844c8d6db211ae5fd4fea0680a8380953fb490517a788d41612ba89",
+        "stem": "Which function turns a digital command value into an analog output?",
+        "options": [
+          "Voltage regulator",
+          "A/D converter",
+          "D/A converter",
+          "Memory IC"
+        ],
+        "reasons": [
+          "A voltage regulator stabilizes the supply.",
+          "A/D converts analog signals to digital data.",
+          "D/A converts digital data to an analog signal.",
+          "Memory retains data."
+        ]
+      },
+      "mfg1-sequential-signal-03": {
+        "sourceHash": "8c4570a2e5b249e00495c161d460342304caedae72fec4b1606aa4e2bab5ae37",
+        "stem": "Which function stabilizes the supply voltage of a processing circuit?",
+        "options": [
+          "MPU",
+          "Voltage regulator",
+          "Memory IC",
+          "A/D converter"
+        ],
+        "reasons": [
+          "An MPU performs computing and control.",
+          "A voltage regulator stabilizes the supply.",
+          "Memory retains data.",
+          "A/D converts analog signals to digital data."
+        ]
+      },
+      "mfg1-sequential-signal-04": {
+        "sourceHash": "f67e50b0508139fc8ae16568500f3778bc7a7b16f67d48739fb730ea6c91df3a",
+        "stem": "Which role retains adjustment values as data?",
+        "options": [
+          "A/D converter",
+          "Voltage regulator",
+          "D/A converter",
+          "Memory IC"
+        ],
+        "reasons": [
+          "A/D converts analog signals to digital data.",
+          "A voltage regulator stabilizes the supply.",
+          "D/A converts digital data to an analog signal.",
+          "Memory retains data."
+        ]
+      },
+      "mfg1-sequential-signal-05": {
+        "sourceHash": "36d89675f47adf964f2225837b45409797b70893550a46c6cc5f760755f75171",
+        "stem": "Is a logic IC only for storage, with no logical-condition processing?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "Logic ICs perform logical operations and control.",
+          "Memory retains data."
+        ]
+      },
+      "mfg1-sequential-signal-06": {
+        "sourceHash": "7c01d32b2c1b915e675ab351201e71978abd6f6f92238a0b6f4a0085fca5f45f",
+        "stem": "Is increasing a small input signal’s amplitude another name for oscillation?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "Amplification increases an input signal’s amplitude.",
+          "Oscillation generates a sustained periodic signal."
+        ]
+      },
+      "mfg1-sequential-signal-07": {
+        "sourceHash": "64181874d8180d4db248afe09aea032fef14d67969f276431381ea23b856eb63",
+        "stem": "Can an oscillator generate a periodic reference without an external information-signal input?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "Oscillation generates a sustained periodic signal.",
+          "Amplification increases an input signal’s amplitude."
+        ]
+      },
+      "mfg1-sequential-signal-08": {
+        "sourceHash": "c81aa6700bbbf363f4d2d5596b2cac47bd5b561b7efaeaa84e29e7ec0f95937a",
+        "stem": "Does AM vary carrier frequency?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "AM varies carrier amplitude.",
+          "FM varies carrier frequency."
+        ]
+      },
+      "mfg1-sequential-signal-09": {
+        "sourceHash": "555b29313e6396bf11163ecb504342924214ec5236e4d2ca3bbc824f903e1f19",
+        "stem": "Does FM vary carrier frequency?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "FM varies carrier frequency.",
+          "AM varies carrier amplitude."
+        ]
+      },
+      "mfg1-sequential-signal-10": {
+        "sourceHash": "10f4751c9f348f7e1b54f56d209b4f6a90d1e632095d76c764af93c9337e9187",
+        "stem": "Does PM vary carrier amplitude?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "PM varies carrier phase.",
+          "AM varies carrier amplitude."
+        ]
+      },
+      "mfg1-sequential-signal-11": {
+        "sourceHash": "480c7698debd52e7c313b2989b1f40d8b2909359b581798945dcaac90b6afe41",
+        "stem": "Does demodulation retrieve the information signal from a received modulated wave?",
+        "options": [
+          "Correct",
+          "Incorrect"
+        ],
+        "reasons": [
+          "Demodulation retrieves the information signal.",
+          "Modulation places information on a carrier."
+        ]
+      }
+    },
+    "vi": {
+      "mfg1-sequential-signal-01": {
+        "sourceHash": "627ef615cbb1ef7dfd060f10bce0352e4441758366a623d0803f6acc09a6da0a",
+        "stem": "Chức năng nào đổi điện áp cảm biến liên tục thành dữ liệu số?",
+        "options": [
+          "Bộ chuyển đổi A/D",
+          "Bộ chuyển đổi D/A",
+          "IC nhớ",
+          "Bộ ổn áp"
+        ],
+        "reasons": [
+          "A/D đổi tín hiệu tương tự thành dữ liệu số.",
+          "D/A đổi dữ liệu số thành tín hiệu tương tự.",
+          "Bộ nhớ lưu dữ liệu.",
+          "Bộ ổn áp ổn định nguồn điện."
+        ]
+      },
+      "mfg1-sequential-signal-02": {
+        "sourceHash": "8e42ad34f844c8d6db211ae5fd4fea0680a8380953fb490517a788d41612ba89",
+        "stem": "Chức năng nào đổi giá trị lệnh số thành đầu ra tương tự?",
+        "options": [
+          "Bộ ổn áp",
+          "Bộ chuyển đổi A/D",
+          "Bộ chuyển đổi D/A",
+          "IC nhớ"
+        ],
+        "reasons": [
+          "Bộ ổn áp ổn định nguồn điện.",
+          "A/D đổi tín hiệu tương tự thành dữ liệu số.",
+          "D/A đổi dữ liệu số thành tín hiệu tương tự.",
+          "Bộ nhớ lưu dữ liệu."
+        ]
+      },
+      "mfg1-sequential-signal-03": {
+        "sourceHash": "8c4570a2e5b249e00495c161d460342304caedae72fec4b1606aa4e2bab5ae37",
+        "stem": "Chức năng nào ổn định điện áp nguồn cho mạch xử lý?",
+        "options": [
+          "MPU",
+          "Bộ ổn áp",
+          "IC nhớ",
+          "Bộ chuyển đổi A/D"
+        ],
+        "reasons": [
+          "MPU thực hiện tính toán và điều khiển.",
+          "Bộ ổn áp ổn định nguồn điện.",
+          "Bộ nhớ lưu dữ liệu.",
+          "A/D đổi tín hiệu tương tự thành dữ liệu số."
+        ]
+      },
+      "mfg1-sequential-signal-04": {
+        "sourceHash": "f67e50b0508139fc8ae16568500f3778bc7a7b16f67d48739fb730ea6c91df3a",
+        "stem": "Vai trò nào lưu các giá trị điều chỉnh thành dữ liệu?",
+        "options": [
+          "Bộ chuyển đổi A/D",
+          "Bộ ổn áp",
+          "Bộ chuyển đổi D/A",
+          "IC nhớ"
+        ],
+        "reasons": [
+          "A/D đổi tín hiệu tương tự thành dữ liệu số.",
+          "Bộ ổn áp ổn định nguồn điện.",
+          "D/A đổi dữ liệu số thành tín hiệu tương tự.",
+          "Bộ nhớ lưu dữ liệu."
+        ]
+      },
+      "mfg1-sequential-signal-05": {
+        "sourceHash": "36d89675f47adf964f2225837b45409797b70893550a46c6cc5f760755f75171",
+        "stem": "IC logic chỉ để lưu, không xử lý điều kiện logic, đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "IC logic thực hiện phép logic và điều khiển.",
+          "Bộ nhớ lưu dữ liệu."
+        ]
+      },
+      "mfg1-sequential-signal-06": {
+        "sourceHash": "7c01d32b2c1b915e675ab351201e71978abd6f6f92238a0b6f4a0085fca5f45f",
+        "stem": "Tăng biên độ tín hiệu vào nhỏ là tên khác của dao động, đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "Khuếch đại tăng biên độ tín hiệu vào.",
+          "Dao động tạo tín hiệu tuần hoàn duy trì."
+        ]
+      },
+      "mfg1-sequential-signal-07": {
+        "sourceHash": "64181874d8180d4db248afe09aea032fef14d67969f276431381ea23b856eb63",
+        "stem": "Mạch dao động tạo tín hiệu tuần hoàn dù không có tín hiệu thông tin ngoài, đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "Dao động tạo tín hiệu tuần hoàn duy trì.",
+          "Khuếch đại tăng biên độ tín hiệu vào."
+        ]
+      },
+      "mfg1-sequential-signal-08": {
+        "sourceHash": "c81aa6700bbbf363f4d2d5596b2cac47bd5b561b7efaeaa84e29e7ec0f95937a",
+        "stem": "AM thay đổi tần số sóng mang, đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "AM thay đổi biên độ sóng mang.",
+          "FM thay đổi tần số sóng mang."
+        ]
+      },
+      "mfg1-sequential-signal-09": {
+        "sourceHash": "555b29313e6396bf11163ecb504342924214ec5236e4d2ca3bbc824f903e1f19",
+        "stem": "FM thay đổi tần số sóng mang, đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "FM thay đổi tần số sóng mang.",
+          "AM thay đổi biên độ sóng mang."
+        ]
+      },
+      "mfg1-sequential-signal-10": {
+        "sourceHash": "10f4751c9f348f7e1b54f56d209b4f6a90d1e632095d76c764af93c9337e9187",
+        "stem": "PM thay đổi biên độ sóng mang, đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "PM thay đổi pha sóng mang.",
+          "AM thay đổi biên độ sóng mang."
+        ]
+      },
+      "mfg1-sequential-signal-11": {
+        "sourceHash": "480c7698debd52e7c313b2989b1f40d8b2909359b581798945dcaac90b6afe41",
+        "stem": "Giải điều chế lấy tín hiệu thông tin từ sóng đã điều chế nhận được, đúng không?",
+        "options": [
+          "Đúng",
+          "Sai"
+        ],
+        "reasons": [
+          "Giải điều chế lấy tín hiệu thông tin ra.",
+          "Điều chế đưa thông tin lên sóng mang."
+        ]
+      }
+    },
+    "id": {
+      "mfg1-sequential-signal-01": {
+        "sourceHash": "627ef615cbb1ef7dfd060f10bce0352e4441758366a623d0803f6acc09a6da0a",
+        "stem": "Fungsi mana mengubah tegangan sensor kontinu menjadi data digital?",
+        "options": [
+          "Konverter A/D",
+          "Konverter D/A",
+          "IC memori",
+          "Regulator tegangan"
+        ],
+        "reasons": [
+          "A/D mengubah sinyal analog menjadi data digital.",
+          "D/A mengubah data digital menjadi sinyal analog.",
+          "Memori menyimpan data.",
+          "Regulator tegangan menstabilkan catu."
+        ]
+      },
+      "mfg1-sequential-signal-02": {
+        "sourceHash": "8e42ad34f844c8d6db211ae5fd4fea0680a8380953fb490517a788d41612ba89",
+        "stem": "Fungsi mana mengubah nilai perintah digital menjadi keluaran analog?",
+        "options": [
+          "Regulator tegangan",
+          "Konverter A/D",
+          "Konverter D/A",
+          "IC memori"
+        ],
+        "reasons": [
+          "Regulator tegangan menstabilkan catu.",
+          "A/D mengubah sinyal analog menjadi data digital.",
+          "D/A mengubah data digital menjadi sinyal analog.",
+          "Memori menyimpan data."
+        ]
+      },
+      "mfg1-sequential-signal-03": {
+        "sourceHash": "8c4570a2e5b249e00495c161d460342304caedae72fec4b1606aa4e2bab5ae37",
+        "stem": "Fungsi mana menstabilkan tegangan catu rangkaian pemrosesan?",
+        "options": [
+          "MPU",
+          "Regulator tegangan",
+          "IC memori",
+          "Konverter A/D"
+        ],
+        "reasons": [
+          "MPU melakukan komputasi dan kendali.",
+          "Regulator tegangan menstabilkan catu.",
+          "Memori menyimpan data.",
+          "A/D mengubah sinyal analog menjadi data digital."
+        ]
+      },
+      "mfg1-sequential-signal-04": {
+        "sourceHash": "f67e50b0508139fc8ae16568500f3778bc7a7b16f67d48739fb730ea6c91df3a",
+        "stem": "Peran mana menyimpan nilai penyetelan sebagai data?",
+        "options": [
+          "Konverter A/D",
+          "Regulator tegangan",
+          "Konverter D/A",
+          "IC memori"
+        ],
+        "reasons": [
+          "A/D mengubah sinyal analog menjadi data digital.",
+          "Regulator tegangan menstabilkan catu.",
+          "D/A mengubah data digital menjadi sinyal analog.",
+          "Memori menyimpan data."
+        ]
+      },
+      "mfg1-sequential-signal-05": {
+        "sourceHash": "36d89675f47adf964f2225837b45409797b70893550a46c6cc5f760755f75171",
+        "stem": "Benarkah IC logika hanya menyimpan, tanpa memproses kondisi logis?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "IC logika melakukan operasi logis dan kendali.",
+          "Memori menyimpan data."
+        ]
+      },
+      "mfg1-sequential-signal-06": {
+        "sourceHash": "7c01d32b2c1b915e675ab351201e71978abd6f6f92238a0b6f4a0085fca5f45f",
+        "stem": "Benarkah memperbesar amplitudo sinyal masukan disebut osilasi?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "Penguatan memperbesar amplitudo sinyal masukan.",
+          "Osilasi menghasilkan sinyal periodik berkelanjutan."
+        ]
+      },
+      "mfg1-sequential-signal-07": {
+        "sourceHash": "64181874d8180d4db248afe09aea032fef14d67969f276431381ea23b856eb63",
+        "stem": "Dapatkah osilator menghasilkan sinyal periodik tanpa masukan sinyal informasi eksternal?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "Osilasi menghasilkan sinyal periodik berkelanjutan.",
+          "Penguatan memperbesar amplitudo sinyal masukan."
+        ]
+      },
+      "mfg1-sequential-signal-08": {
+        "sourceHash": "c81aa6700bbbf363f4d2d5596b2cac47bd5b561b7efaeaa84e29e7ec0f95937a",
+        "stem": "Apakah AM mengubah frekuensi pembawa?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "AM mengubah amplitudo pembawa.",
+          "FM mengubah frekuensi pembawa."
+        ]
+      },
+      "mfg1-sequential-signal-09": {
+        "sourceHash": "555b29313e6396bf11163ecb504342924214ec5236e4d2ca3bbc824f903e1f19",
+        "stem": "Apakah FM mengubah frekuensi pembawa?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "FM mengubah frekuensi pembawa.",
+          "AM mengubah amplitudo pembawa."
+        ]
+      },
+      "mfg1-sequential-signal-10": {
+        "sourceHash": "10f4751c9f348f7e1b54f56d209b4f6a90d1e632095d76c764af93c9337e9187",
+        "stem": "Apakah PM mengubah amplitudo pembawa?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "PM mengubah fase pembawa.",
+          "AM mengubah amplitudo pembawa."
+        ]
+      },
+      "mfg1-sequential-signal-11": {
+        "sourceHash": "480c7698debd52e7c313b2989b1f40d8b2909359b581798945dcaac90b6afe41",
+        "stem": "Apakah demodulasi mengambil sinyal informasi dari gelombang termodulasi yang diterima?",
+        "options": [
+          "Benar",
+          "Salah"
+        ],
+        "reasons": [
+          "Demodulasi mengambil sinyal informasi.",
+          "Modulasi memasukkan informasi ke pembawa."
+        ]
+      }
+    },
+    "zh-CN": {
+      "mfg1-sequential-signal-01": {
+        "sourceHash": "627ef615cbb1ef7dfd060f10bce0352e4441758366a623d0803f6acc09a6da0a",
+        "stem": "哪种功能把连续传感器电压变为数字数据？",
+        "options": [
+          "A/D转换器",
+          "D/A转换器",
+          "存储器IC",
+          "稳压器"
+        ],
+        "reasons": [
+          "A/D把模拟信号变为数字数据。",
+          "D/A把数字数据变为模拟信号。",
+          "存储器保存数据。",
+          "稳压器稳定电源。"
+        ]
+      },
+      "mfg1-sequential-signal-02": {
+        "sourceHash": "8e42ad34f844c8d6db211ae5fd4fea0680a8380953fb490517a788d41612ba89",
+        "stem": "哪种功能把数字指令值变为模拟输出？",
+        "options": [
+          "稳压器",
+          "A/D转换器",
+          "D/A转换器",
+          "存储器IC"
+        ],
+        "reasons": [
+          "稳压器稳定电源。",
+          "A/D把模拟信号变为数字数据。",
+          "D/A把数字数据变为模拟信号。",
+          "存储器保存数据。"
+        ]
+      },
+      "mfg1-sequential-signal-03": {
+        "sourceHash": "8c4570a2e5b249e00495c161d460342304caedae72fec4b1606aa4e2bab5ae37",
+        "stem": "哪种功能稳定处理电路的供电电压？",
+        "options": [
+          "MPU",
+          "稳压器",
+          "存储器IC",
+          "A/D转换器"
+        ],
+        "reasons": [
+          "MPU执行运算和控制。",
+          "稳压器稳定电源。",
+          "存储器保存数据。",
+          "A/D把模拟信号变为数字数据。"
+        ]
+      },
+      "mfg1-sequential-signal-04": {
+        "sourceHash": "f67e50b0508139fc8ae16568500f3778bc7a7b16f67d48739fb730ea6c91df3a",
+        "stem": "哪种角色把调整值作为数据保存？",
+        "options": [
+          "A/D转换器",
+          "稳压器",
+          "D/A转换器",
+          "存储器IC"
+        ],
+        "reasons": [
+          "A/D把模拟信号变为数字数据。",
+          "稳压器稳定电源。",
+          "D/A把数字数据变为模拟信号。",
+          "存储器保存数据。"
+        ]
+      },
+      "mfg1-sequential-signal-05": {
+        "sourceHash": "36d89675f47adf964f2225837b45409797b70893550a46c6cc5f760755f75171",
+        "stem": "逻辑IC只保存数据，不处理逻辑条件，正确吗？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "逻辑IC执行逻辑运算和控制。",
+          "存储器保存数据。"
+        ]
+      },
+      "mfg1-sequential-signal-06": {
+        "sourceHash": "7c01d32b2c1b915e675ab351201e71978abd6f6f92238a0b6f4a0085fca5f45f",
+        "stem": "增大小输入信号幅度是振荡的别名，正确吗？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "放大增大输入信号幅度。",
+          "振荡持续产生周期信号。"
+        ]
+      },
+      "mfg1-sequential-signal-07": {
+        "sourceHash": "64181874d8180d4db248afe09aea032fef14d67969f276431381ea23b856eb63",
+        "stem": "振荡器没有外部信息信号输入也可产生周期参考信号，正确吗？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "振荡持续产生周期信号。",
+          "放大增大输入信号幅度。"
+        ]
+      },
+      "mfg1-sequential-signal-08": {
+        "sourceHash": "c81aa6700bbbf363f4d2d5596b2cac47bd5b561b7efaeaa84e29e7ec0f95937a",
+        "stem": "AM改变载波频率，正确吗？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "AM改变载波幅度。",
+          "FM改变载波频率。"
+        ]
+      },
+      "mfg1-sequential-signal-09": {
+        "sourceHash": "555b29313e6396bf11163ecb504342924214ec5236e4d2ca3bbc824f903e1f19",
+        "stem": "FM改变载波频率，正确吗？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "FM改变载波频率。",
+          "AM改变载波幅度。"
+        ]
+      },
+      "mfg1-sequential-signal-10": {
+        "sourceHash": "10f4751c9f348f7e1b54f56d209b4f6a90d1e632095d76c764af93c9337e9187",
+        "stem": "PM改变载波幅度，正确吗？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "PM改变载波相位。",
+          "AM改变载波幅度。"
+        ]
+      },
+      "mfg1-sequential-signal-11": {
+        "sourceHash": "480c7698debd52e7c313b2989b1f40d8b2909359b581798945dcaac90b6afe41",
+        "stem": "解调从收到的已调波中取出信息信号，正确吗？",
+        "options": [
+          "正确",
+          "错误"
+        ],
+        "reasons": [
+          "解调取出信息信号。",
+          "调制把信息反映到载波。"
+        ]
+      }
+    },
+    "zh-TW": {
+      "mfg1-sequential-signal-01": {
+        "sourceHash": "627ef615cbb1ef7dfd060f10bce0352e4441758366a623d0803f6acc09a6da0a",
+        "stem": "哪種功能把連續感測器電壓變為數位資料？",
+        "options": [
+          "A/D轉換器",
+          "D/A轉換器",
+          "記憶體IC",
+          "穩壓器"
+        ],
+        "reasons": [
+          "A/D把類比訊號變為數位資料。",
+          "D/A把數位資料變為類比訊號。",
+          "記憶體保存資料。",
+          "穩壓器穩定電源。"
+        ]
+      },
+      "mfg1-sequential-signal-02": {
+        "sourceHash": "8e42ad34f844c8d6db211ae5fd4fea0680a8380953fb490517a788d41612ba89",
+        "stem": "哪種功能把數位指令值變為類比輸出？",
+        "options": [
+          "穩壓器",
+          "A/D轉換器",
+          "D/A轉換器",
+          "記憶體IC"
+        ],
+        "reasons": [
+          "穩壓器穩定電源。",
+          "A/D把類比訊號變為數位資料。",
+          "D/A把數位資料變為類比訊號。",
+          "記憶體保存資料。"
+        ]
+      },
+      "mfg1-sequential-signal-03": {
+        "sourceHash": "8c4570a2e5b249e00495c161d460342304caedae72fec4b1606aa4e2bab5ae37",
+        "stem": "哪種功能穩定處理電路的供電電壓？",
+        "options": [
+          "MPU",
+          "穩壓器",
+          "記憶體IC",
+          "A/D轉換器"
+        ],
+        "reasons": [
+          "MPU執行運算和控制。",
+          "穩壓器穩定電源。",
+          "記憶體保存資料。",
+          "A/D把類比訊號變為數位資料。"
+        ]
+      },
+      "mfg1-sequential-signal-04": {
+        "sourceHash": "f67e50b0508139fc8ae16568500f3778bc7a7b16f67d48739fb730ea6c91df3a",
+        "stem": "哪種角色把調整值作為資料保存？",
+        "options": [
+          "A/D轉換器",
+          "穩壓器",
+          "D/A轉換器",
+          "記憶體IC"
+        ],
+        "reasons": [
+          "A/D把類比訊號變為數位資料。",
+          "穩壓器穩定電源。",
+          "D/A把數位資料變為類比訊號。",
+          "記憶體保存資料。"
+        ]
+      },
+      "mfg1-sequential-signal-05": {
+        "sourceHash": "36d89675f47adf964f2225837b45409797b70893550a46c6cc5f760755f75171",
+        "stem": "邏輯IC只保存資料，不處理邏輯條件，正確嗎？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "邏輯IC執行邏輯運算和控制。",
+          "記憶體保存資料。"
+        ]
+      },
+      "mfg1-sequential-signal-06": {
+        "sourceHash": "7c01d32b2c1b915e675ab351201e71978abd6f6f92238a0b6f4a0085fca5f45f",
+        "stem": "增大小輸入訊號幅度是振盪的別名，正確嗎？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "放大增大輸入訊號幅度。",
+          "振盪持續產生週期訊號。"
+        ]
+      },
+      "mfg1-sequential-signal-07": {
+        "sourceHash": "64181874d8180d4db248afe09aea032fef14d67969f276431381ea23b856eb63",
+        "stem": "振盪器沒有外部資訊訊號輸入也可產生週期參考訊號，正確嗎？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "振盪持續產生週期訊號。",
+          "放大增大輸入訊號幅度。"
+        ]
+      },
+      "mfg1-sequential-signal-08": {
+        "sourceHash": "c81aa6700bbbf363f4d2d5596b2cac47bd5b561b7efaeaa84e29e7ec0f95937a",
+        "stem": "AM改變載波頻率，正確嗎？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "AM改變載波幅度。",
+          "FM改變載波頻率。"
+        ]
+      },
+      "mfg1-sequential-signal-09": {
+        "sourceHash": "555b29313e6396bf11163ecb504342924214ec5236e4d2ca3bbc824f903e1f19",
+        "stem": "FM改變載波頻率，正確嗎？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "FM改變載波頻率。",
+          "AM改變載波幅度。"
+        ]
+      },
+      "mfg1-sequential-signal-10": {
+        "sourceHash": "10f4751c9f348f7e1b54f56d209b4f6a90d1e632095d76c764af93c9337e9187",
+        "stem": "PM改變載波幅度，正確嗎？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "PM改變載波相位。",
+          "AM改變載波幅度。"
+        ]
+      },
+      "mfg1-sequential-signal-11": {
+        "sourceHash": "480c7698debd52e7c313b2989b1f40d8b2909359b581798945dcaac90b6afe41",
+        "stem": "解調從收到的已調波中取出資訊訊號，正確嗎？",
+        "options": [
+          "正確",
+          "錯誤"
+        ],
+        "reasons": [
+          "解調取出資訊訊號。",
+          "調變把資訊反映到載波。"
+        ]
+      }
+    },
+    "hi": {
+      "mfg1-sequential-signal-01": {
+        "sourceHash": "627ef615cbb1ef7dfd060f10bce0352e4441758366a623d0803f6acc09a6da0a",
+        "stem": "सतत सेंसर वोल्टेज को डिजिटल डेटा कौन बनाता है?",
+        "options": [
+          "A/D कन्वर्टर",
+          "D/A कन्वर्टर",
+          "मेमोरी IC",
+          "वोल्टेज रेगुलेटर"
+        ],
+        "reasons": [
+          "A/D एनालॉग संकेत को डिजिटल डेटा बनाता है।",
+          "D/A डिजिटल डेटा को एनालॉग संकेत बनाता है।",
+          "मेमोरी डेटा रखती है।",
+          "वोल्टेज रेगुलेटर आपूर्ति स्थिर करता है।"
+        ]
+      },
+      "mfg1-sequential-signal-02": {
+        "sourceHash": "8e42ad34f844c8d6db211ae5fd4fea0680a8380953fb490517a788d41612ba89",
+        "stem": "डिजिटल आदेश मान को एनालॉग आउटपुट कौन बनाता है?",
+        "options": [
+          "वोल्टेज रेगुलेटर",
+          "A/D कन्वर्टर",
+          "D/A कन्वर्टर",
+          "मेमोरी IC"
+        ],
+        "reasons": [
+          "वोल्टेज रेगुलेटर आपूर्ति स्थिर करता है।",
+          "A/D एनालॉग संकेत को डिजिटल डेटा बनाता है।",
+          "D/A डिजिटल डेटा को एनालॉग संकेत बनाता है।",
+          "मेमोरी डेटा रखती है।"
+        ]
+      },
+      "mfg1-sequential-signal-03": {
+        "sourceHash": "8c4570a2e5b249e00495c161d460342304caedae72fec4b1606aa4e2bab5ae37",
+        "stem": "प्रसंस्करण सर्किट की आपूर्ति वोल्टेज कौन स्थिर करता है?",
+        "options": [
+          "MPU",
+          "वोल्टेज रेगुलेटर",
+          "मेमोरी IC",
+          "A/D कन्वर्टर"
+        ],
+        "reasons": [
+          "MPU गणना और नियंत्रण करता है।",
+          "वोल्टेज रेगुलेटर आपूर्ति स्थिर करता है।",
+          "मेमोरी डेटा रखती है।",
+          "A/D एनालॉग संकेत को डिजिटल डेटा बनाता है।"
+        ]
+      },
+      "mfg1-sequential-signal-04": {
+        "sourceHash": "f67e50b0508139fc8ae16568500f3778bc7a7b16f67d48739fb730ea6c91df3a",
+        "stem": "समायोजन मानों को डेटा के रूप में कौन रखता है?",
+        "options": [
+          "A/D कन्वर्टर",
+          "वोल्टेज रेगुलेटर",
+          "D/A कन्वर्टर",
+          "मेमोरी IC"
+        ],
+        "reasons": [
+          "A/D एनालॉग संकेत को डिजिटल डेटा बनाता है।",
+          "वोल्टेज रेगुलेटर आपूर्ति स्थिर करता है।",
+          "D/A डिजिटल डेटा को एनालॉग संकेत बनाता है।",
+          "मेमोरी डेटा रखती है।"
+        ]
+      },
+      "mfg1-sequential-signal-05": {
+        "sourceHash": "36d89675f47adf964f2225837b45409797b70893550a46c6cc5f760755f75171",
+        "stem": "लॉजिक IC केवल संग्रह करता है, तार्किक शर्तें नहीं संसाधित करता। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "लॉजिक IC तार्किक संचालन और नियंत्रण करता है।",
+          "मेमोरी डेटा रखती है।"
+        ]
+      },
+      "mfg1-sequential-signal-06": {
+        "sourceHash": "7c01d32b2c1b915e675ab351201e71978abd6f6f92238a0b6f4a0085fca5f45f",
+        "stem": "छोटे इनपुट का आयाम बढ़ाना दोलन का दूसरा नाम है। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "प्रवर्धन इनपुट संकेत का आयाम बढ़ाता है।",
+          "दोलन सतत आवर्ती संकेत पैदा करता है।"
+        ]
+      },
+      "mfg1-sequential-signal-07": {
+        "sourceHash": "64181874d8180d4db248afe09aea032fef14d67969f276431381ea23b856eb63",
+        "stem": "दोलक बाहरी सूचना संकेत के बिना आवर्ती संदर्भ संकेत बना सकता है। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "दोलन सतत आवर्ती संकेत पैदा करता है।",
+          "प्रवर्धन इनपुट संकेत का आयाम बढ़ाता है।"
+        ]
+      },
+      "mfg1-sequential-signal-08": {
+        "sourceHash": "c81aa6700bbbf363f4d2d5596b2cac47bd5b561b7efaeaa84e29e7ec0f95937a",
+        "stem": "AM वाहक की आवृत्ति बदलता है। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "AM वाहक का आयाम बदलता है।",
+          "FM वाहक की आवृत्ति बदलता है।"
+        ]
+      },
+      "mfg1-sequential-signal-09": {
+        "sourceHash": "555b29313e6396bf11163ecb504342924214ec5236e4d2ca3bbc824f903e1f19",
+        "stem": "FM वाहक की आवृत्ति बदलता है। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "FM वाहक की आवृत्ति बदलता है।",
+          "AM वाहक का आयाम बदलता है।"
+        ]
+      },
+      "mfg1-sequential-signal-10": {
+        "sourceHash": "10f4751c9f348f7e1b54f56d209b4f6a90d1e632095d76c764af93c9337e9187",
+        "stem": "PM वाहक का आयाम बदलता है। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "PM वाहक का फेज बदलता है।",
+          "AM वाहक का आयाम बदलता है।"
+        ]
+      },
+      "mfg1-sequential-signal-11": {
+        "sourceHash": "480c7698debd52e7c313b2989b1f40d8b2909359b581798945dcaac90b6afe41",
+        "stem": "डीमॉड्यूलेशन प्राप्त मॉड्यूलेटेड तरंग से सूचना संकेत निकालता है। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "डीमॉड्यूलेशन सूचना संकेत निकालता है।",
+          "मॉड्यूलेशन वाहक पर सूचना डालता है।"
+        ]
+      }
+    },
+    "bn": {
+      "mfg1-sequential-signal-01": {
+        "sourceHash": "627ef615cbb1ef7dfd060f10bce0352e4441758366a623d0803f6acc09a6da0a",
+        "stem": "অবিচ্ছিন্ন সেন্সর ভোল্টেজকে ডিজিটাল ডেটা কোন কাজ বদলায়?",
+        "options": [
+          "A/D কনভার্টার",
+          "D/A কনভার্টার",
+          "মেমরি IC",
+          "ভোল্টেজ রেগুলেটর"
+        ],
+        "reasons": [
+          "A/D অ্যানালগ সংকেতকে ডিজিটাল ডেটা করে।",
+          "D/A ডিজিটাল ডেটাকে অ্যানালগ সংকেত করে।",
+          "মেমরি ডেটা রাখে।",
+          "ভোল্টেজ রেগুলেটর সরবরাহ স্থির করে।"
+        ]
+      },
+      "mfg1-sequential-signal-02": {
+        "sourceHash": "8e42ad34f844c8d6db211ae5fd4fea0680a8380953fb490517a788d41612ba89",
+        "stem": "ডিজিটাল নির্দেশমানকে অ্যানালগ আউটপুট কোন কাজ করে?",
+        "options": [
+          "ভোল্টেজ রেগুলেটর",
+          "A/D কনভার্টার",
+          "D/A কনভার্টার",
+          "মেমরি IC"
+        ],
+        "reasons": [
+          "ভোল্টেজ রেগুলেটর সরবরাহ স্থির করে।",
+          "A/D অ্যানালগ সংকেতকে ডিজিটাল ডেটা করে।",
+          "D/A ডিজিটাল ডেটাকে অ্যানালগ সংকেত করে।",
+          "মেমরি ডেটা রাখে।"
+        ]
+      },
+      "mfg1-sequential-signal-03": {
+        "sourceHash": "8c4570a2e5b249e00495c161d460342304caedae72fec4b1606aa4e2bab5ae37",
+        "stem": "প্রক্রিয়াকরণ সার্কিটের সরবরাহ ভোল্টেজ কে স্থির করে?",
+        "options": [
+          "MPU",
+          "ভোল্টেজ রেগুলেটর",
+          "মেমরি IC",
+          "A/D কনভার্টার"
+        ],
+        "reasons": [
+          "MPU গণনা ও নিয়ন্ত্রণ করে।",
+          "ভোল্টেজ রেগুলেটর সরবরাহ স্থির করে।",
+          "মেমরি ডেটা রাখে।",
+          "A/D অ্যানালগ সংকেতকে ডিজিটাল ডেটা করে।"
+        ]
+      },
+      "mfg1-sequential-signal-04": {
+        "sourceHash": "f67e50b0508139fc8ae16568500f3778bc7a7b16f67d48739fb730ea6c91df3a",
+        "stem": "সমন্বয় মানকে ডেটা হিসেবে কে রাখে?",
+        "options": [
+          "A/D কনভার্টার",
+          "ভোল্টেজ রেগুলেটর",
+          "D/A কনভার্টার",
+          "মেমরি IC"
+        ],
+        "reasons": [
+          "A/D অ্যানালগ সংকেতকে ডিজিটাল ডেটা করে।",
+          "ভোল্টেজ রেগুলেটর সরবরাহ স্থির করে।",
+          "D/A ডিজিটাল ডেটাকে অ্যানালগ সংকেত করে।",
+          "মেমরি ডেটা রাখে।"
+        ]
+      },
+      "mfg1-sequential-signal-05": {
+        "sourceHash": "36d89675f47adf964f2225837b45409797b70893550a46c6cc5f760755f75171",
+        "stem": "লজিক IC শুধু সংরক্ষণ করে, যৌক্তিক শর্ত প্রক্রিয়া করে না। সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "লজিক IC যৌক্তিক কাজ ও নিয়ন্ত্রণ করে।",
+          "মেমরি ডেটা রাখে।"
+        ]
+      },
+      "mfg1-sequential-signal-06": {
+        "sourceHash": "7c01d32b2c1b915e675ab351201e71978abd6f6f92238a0b6f4a0085fca5f45f",
+        "stem": "ছোট ইনপুটের বিস্তার বাড়ানো দোলনের আরেক নাম। সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "পরিবর্ধন ইনপুট সংকেতের বিস্তার বাড়ায়।",
+          "দোলন স্থায়ী পর্যায়ক্রমিক সংকেত তৈরি করে।"
+        ]
+      },
+      "mfg1-sequential-signal-07": {
+        "sourceHash": "64181874d8180d4db248afe09aea032fef14d67969f276431381ea23b856eb63",
+        "stem": "দোলক বাহ্যিক তথ্যসংকেত ছাড়াও পর্যায়ক্রমিক রেফারেন্স সংকেত তৈরি করে। সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "দোলন স্থায়ী পর্যায়ক্রমিক সংকেত তৈরি করে।",
+          "পরিবর্ধন ইনপুট সংকেতের বিস্তার বাড়ায়।"
+        ]
+      },
+      "mfg1-sequential-signal-08": {
+        "sourceHash": "c81aa6700bbbf363f4d2d5596b2cac47bd5b561b7efaeaa84e29e7ec0f95937a",
+        "stem": "AM বাহকের কম্পাঙ্ক বদলায়। সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "AM বাহকের বিস্তার বদলায়।",
+          "FM বাহকের কম্পাঙ্ক বদলায়।"
+        ]
+      },
+      "mfg1-sequential-signal-09": {
+        "sourceHash": "555b29313e6396bf11163ecb504342924214ec5236e4d2ca3bbc824f903e1f19",
+        "stem": "FM বাহকের কম্পাঙ্ক বদলায়। সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "FM বাহকের কম্পাঙ্ক বদলায়।",
+          "AM বাহকের বিস্তার বদলায়।"
+        ]
+      },
+      "mfg1-sequential-signal-10": {
+        "sourceHash": "10f4751c9f348f7e1b54f56d209b4f6a90d1e632095d76c764af93c9337e9187",
+        "stem": "PM বাহকের বিস্তার বদলায়। সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "PM বাহকের দশা বদলায়।",
+          "AM বাহকের বিস্তার বদলায়।"
+        ]
+      },
+      "mfg1-sequential-signal-11": {
+        "sourceHash": "480c7698debd52e7c313b2989b1f40d8b2909359b581798945dcaac90b6afe41",
+        "stem": "ডিমডুলেশন পাওয়া মডুলেটেড তরঙ্গ থেকে তথ্যসংকেত বের করে। সঠিক?",
+        "options": [
+          "সঠিক",
+          "ভুল"
+        ],
+        "reasons": [
+          "ডিমডুলেশন তথ্যসংকেত বের করে।",
+          "মডুলেশন বাহকে তথ্য বসায়।"
+        ]
+      }
+    },
+    "ne": {
+      "mfg1-sequential-signal-01": {
+        "sourceHash": "627ef615cbb1ef7dfd060f10bce0352e4441758366a623d0803f6acc09a6da0a",
+        "stem": "निरन्तर सेन्सर भोल्टेजलाई डिजिटल डेटा कुन कार्यले बदल्छ?",
+        "options": [
+          "A/D कनभर्टर",
+          "D/A कनभर्टर",
+          "मेमोरी IC",
+          "भोल्टेज रेगुलेटर"
+        ],
+        "reasons": [
+          "A/D ले एनालग सङ्केतलाई डिजिटल डेटा बनाउँछ।",
+          "D/A ले डिजिटल डेटालाई एनालग सङ्केत बनाउँछ।",
+          "मेमोरीले डेटा राख्छ।",
+          "भोल्टेज रेगुलेटरले आपूर्ति स्थिर गर्छ।"
+        ]
+      },
+      "mfg1-sequential-signal-02": {
+        "sourceHash": "8e42ad34f844c8d6db211ae5fd4fea0680a8380953fb490517a788d41612ba89",
+        "stem": "डिजिटल आदेश मानलाई एनालग आउटपुट कुन कार्यले बनाउँछ?",
+        "options": [
+          "भोल्टेज रेगुलेटर",
+          "A/D कनभर्टर",
+          "D/A कनभर्टर",
+          "मेमोरी IC"
+        ],
+        "reasons": [
+          "भोल्टेज रेगुलेटरले आपूर्ति स्थिर गर्छ।",
+          "A/D ले एनालग सङ्केतलाई डिजिटल डेटा बनाउँछ।",
+          "D/A ले डिजिटल डेटालाई एनालग सङ्केत बनाउँछ।",
+          "मेमोरीले डेटा राख्छ।"
+        ]
+      },
+      "mfg1-sequential-signal-03": {
+        "sourceHash": "8c4570a2e5b249e00495c161d460342304caedae72fec4b1606aa4e2bab5ae37",
+        "stem": "प्रशोधन सर्किटको आपूर्ति भोल्टेज कुन कार्यले स्थिर गर्छ?",
+        "options": [
+          "MPU",
+          "भोल्टेज रेगुलेटर",
+          "मेमोरी IC",
+          "A/D कनभर्टर"
+        ],
+        "reasons": [
+          "MPU ले गणना र नियन्त्रण गर्छ।",
+          "भोल्टेज रेगुलेटरले आपूर्ति स्थिर गर्छ।",
+          "मेमोरीले डेटा राख्छ।",
+          "A/D ले एनालग सङ्केतलाई डिजिटल डेटा बनाउँछ।"
+        ]
+      },
+      "mfg1-sequential-signal-04": {
+        "sourceHash": "f67e50b0508139fc8ae16568500f3778bc7a7b16f67d48739fb730ea6c91df3a",
+        "stem": "समायोजन मानलाई डेटाका रूपमा कुन भूमिकाले राख्छ?",
+        "options": [
+          "A/D कनभर्टर",
+          "भोल्टेज रेगुलेटर",
+          "D/A कनभर्टर",
+          "मेमोरी IC"
+        ],
+        "reasons": [
+          "A/D ले एनालग सङ्केतलाई डिजिटल डेटा बनाउँछ।",
+          "भोल्टेज रेगुलेटरले आपूर्ति स्थिर गर्छ।",
+          "D/A ले डिजिटल डेटालाई एनालग सङ्केत बनाउँछ।",
+          "मेमोरीले डेटा राख्छ।"
+        ]
+      },
+      "mfg1-sequential-signal-05": {
+        "sourceHash": "36d89675f47adf964f2225837b45409797b70893550a46c6cc5f760755f75171",
+        "stem": "लजिक IC ले भण्डारण मात्र गर्छ, तार्किक सर्त प्रशोधन गर्दैन। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "लजिक IC ले तार्किक कार्य र नियन्त्रण गर्छ।",
+          "मेमोरीले डेटा राख्छ।"
+        ]
+      },
+      "mfg1-sequential-signal-06": {
+        "sourceHash": "7c01d32b2c1b915e675ab351201e71978abd6f6f92238a0b6f4a0085fca5f45f",
+        "stem": "सानो इनपुटको आयाम बढाउनु दोलनकै अर्को नाम हो। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "प्रवर्धनले इनपुट सङ्केतको आयाम बढाउँछ।",
+          "दोलनले निरन्तर आवधिक सङ्केत बनाउँछ।"
+        ]
+      },
+      "mfg1-sequential-signal-07": {
+        "sourceHash": "64181874d8180d4db248afe09aea032fef14d67969f276431381ea23b856eb63",
+        "stem": "दोलकले बाहिरी सूचना सङ्केतबिना आवधिक सन्दर्भ सङ्केत बनाउन सक्छ। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "दोलनले निरन्तर आवधिक सङ्केत बनाउँछ।",
+          "प्रवर्धनले इनपुट सङ्केतको आयाम बढाउँछ।"
+        ]
+      },
+      "mfg1-sequential-signal-08": {
+        "sourceHash": "c81aa6700bbbf363f4d2d5596b2cac47bd5b561b7efaeaa84e29e7ec0f95937a",
+        "stem": "AM ले वाहकको आवृत्ति बदल्छ। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "AM ले वाहकको आयाम बदल्छ।",
+          "FM ले वाहकको आवृत्ति बदल्छ।"
+        ]
+      },
+      "mfg1-sequential-signal-09": {
+        "sourceHash": "555b29313e6396bf11163ecb504342924214ec5236e4d2ca3bbc824f903e1f19",
+        "stem": "FM ले वाहकको आवृत्ति बदल्छ। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "FM ले वाहकको आवृत्ति बदल्छ।",
+          "AM ले वाहकको आयाम बदल्छ।"
+        ]
+      },
+      "mfg1-sequential-signal-10": {
+        "sourceHash": "10f4751c9f348f7e1b54f56d209b4f6a90d1e632095d76c764af93c9337e9187",
+        "stem": "PM ले वाहकको आयाम बदल्छ। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "PM ले वाहकको फेज बदल्छ।",
+          "AM ले वाहकको आयाम बदल्छ।"
+        ]
+      },
+      "mfg1-sequential-signal-11": {
+        "sourceHash": "480c7698debd52e7c313b2989b1f40d8b2909359b581798945dcaac90b6afe41",
+        "stem": "डिमोडुलेसनले प्राप्त मोडुलेटेड तरङ्गबाट सूचना सङ्केत निकाल्छ। सही?",
+        "options": [
+          "सही",
+          "गलत"
+        ],
+        "reasons": [
+          "डिमोडुलेसनले सूचना सङ्केत निकाल्छ।",
+          "मोडुलेसनले वाहकमा सूचना राख्छ।"
+        ]
+      }
+    },
+    "my": {
+      "mfg1-sequential-signal-01": {
+        "sourceHash": "627ef615cbb1ef7dfd060f10bce0352e4441758366a623d0803f6acc09a6da0a",
+        "stem": "စဉ်ဆက်ဆင်ဆာဗို့အားကို ဒစ်ဂျစ်တယ်ဒေတာပြောင်းသောလုပ်ဆောင်ချက်မှာ ဘာလဲ။",
+        "options": [
+          "A/Dပြောင်းကိရိယာ",
+          "D/Aပြောင်းကိရိယာ",
+          "မမ်မိုရီIC",
+          "ဗို့အားထိန်းကိရိယာ"
+        ],
+        "reasons": [
+          "A/Dကအန်နာလော့ကိုဒစ်ဂျစ်တယ်ဒေတာပြောင်းသည်။",
+          "D/Aကဒစ်ဂျစ်တယ်ဒေတာကိုအန်နာလော့ပြောင်းသည်။",
+          "မမ်မိုရီကဒေတာသိမ်းသည်။",
+          "ဗို့အားထိန်းကိရိယာကမီးအားတည်ငြိမ်စေသည်။"
+        ]
+      },
+      "mfg1-sequential-signal-02": {
+        "sourceHash": "8e42ad34f844c8d6db211ae5fd4fea0680a8380953fb490517a788d41612ba89",
+        "stem": "ဒစ်ဂျစ်တယ်ညွှန်ကြားတန်ဖိုးကို အန်နာလော့အထွက်ပြောင်းသောလုပ်ဆောင်ချက်မှာ ဘာလဲ။",
+        "options": [
+          "ဗို့အားထိန်းကိရိယာ",
+          "A/Dပြောင်းကိရိယာ",
+          "D/Aပြောင်းကိရိယာ",
+          "မမ်မိုရီIC"
+        ],
+        "reasons": [
+          "ဗို့အားထိန်းကိရိယာကမီးအားတည်ငြိမ်စေသည်။",
+          "A/Dကအန်နာလော့ကိုဒစ်ဂျစ်တယ်ဒေတာပြောင်းသည်။",
+          "D/Aကဒစ်ဂျစ်တယ်ဒေတာကိုအန်နာလော့ပြောင်းသည်။",
+          "မမ်မိုရီကဒေတာသိမ်းသည်။"
+        ]
+      },
+      "mfg1-sequential-signal-03": {
+        "sourceHash": "8c4570a2e5b249e00495c161d460342304caedae72fec4b1606aa4e2bab5ae37",
+        "stem": "လုပ်ဆောင်မည့်ဆားကစ်၏မီးအားဗို့အားကို ဘာကတည်ငြိမ်စေသနည်း။",
+        "options": [
+          "MPU",
+          "ဗို့အားထိန်းကိရိယာ",
+          "မမ်မိုရီIC",
+          "A/Dပြောင်းကိရိယာ"
+        ],
+        "reasons": [
+          "MPUကတွက်ချက်ထိန်းချုပ်သည်။",
+          "ဗို့အားထိန်းကိရိယာကမီးအားတည်ငြိမ်စေသည်။",
+          "မမ်မိုရီကဒေတာသိမ်းသည်။",
+          "A/Dကအန်နာလော့ကိုဒစ်ဂျစ်တယ်ဒေတာပြောင်းသည်။"
+        ]
+      },
+      "mfg1-sequential-signal-04": {
+        "sourceHash": "f67e50b0508139fc8ae16568500f3778bc7a7b16f67d48739fb730ea6c91df3a",
+        "stem": "ချိန်ညှိတန်ဖိုးများကိုဒေတာအဖြစ် ဘာကသိမ်းသနည်း။",
+        "options": [
+          "A/Dပြောင်းကိရိယာ",
+          "ဗို့အားထိန်းကိရိယာ",
+          "D/Aပြောင်းကိရိယာ",
+          "မမ်မိုရီIC"
+        ],
+        "reasons": [
+          "A/Dကအန်နာလော့ကိုဒစ်ဂျစ်တယ်ဒေတာပြောင်းသည်။",
+          "ဗို့အားထိန်းကိရိယာကမီးအားတည်ငြိမ်စေသည်။",
+          "D/Aကဒစ်ဂျစ်တယ်ဒေတာကိုအန်နာလော့ပြောင်းသည်။",
+          "မမ်မိုရီကဒေတာသိမ်းသည်။"
+        ]
+      },
+      "mfg1-sequential-signal-05": {
+        "sourceHash": "36d89675f47adf964f2225837b45409797b70893550a46c6cc5f760755f75171",
+        "stem": "လော့ဂျစ်ICကသိမ်းခြင်းသာလုပ်ပြီးယုတ္တိအခြေအနေမစစ်ခြင်း မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "လော့ဂျစ်ICကယုတ္တိလုပ်ဆောင်မှုနှင့်ထိန်းချုပ်မှုပြုသည်။",
+          "မမ်မိုရီကဒေတာသိမ်းသည်။"
+        ]
+      },
+      "mfg1-sequential-signal-06": {
+        "sourceHash": "7c01d32b2c1b915e675ab351201e71978abd6f6f92238a0b6f4a0085fca5f45f",
+        "stem": "အဝင်အချက်ပြအမြင့်တိုးခြင်းသည်လှုပ်ခတ်မှု၏အခြားအမည်ဖြစ်ခြင်း မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "ချဲ့ထွင်မှုကအဝင်လှိုင်းအမြင့်တိုးသည်။",
+          "လှုပ်ခတ်မှုကအချိန်မှန်ထပ်သောအချက်ပြဆက်ထုတ်သည်။"
+        ]
+      },
+      "mfg1-sequential-signal-07": {
+        "sourceHash": "64181874d8180d4db248afe09aea032fef14d67969f276431381ea23b856eb63",
+        "stem": "အပြင်သတင်းအချက်ပြအဝင်မရှိဘဲ oscillatorကအချိန်မှန်အချက်ပြထုတ်နိုင်ခြင်း မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "လှုပ်ခတ်မှုကအချိန်မှန်ထပ်သောအချက်ပြဆက်ထုတ်သည်။",
+          "ချဲ့ထွင်မှုကအဝင်လှိုင်းအမြင့်တိုးသည်။"
+        ]
+      },
+      "mfg1-sequential-signal-08": {
+        "sourceHash": "c81aa6700bbbf363f4d2d5596b2cac47bd5b561b7efaeaa84e29e7ec0f95937a",
+        "stem": "AMကသယ်ဆောင်လှိုင်းကြိမ်နှုန်းပြောင်းခြင်း မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "AMကသယ်ဆောင်လှိုင်းအမြင့်ပြောင်းသည်။",
+          "FMကသယ်ဆောင်လှိုင်းကြိမ်နှုန်းပြောင်းသည်။"
+        ]
+      },
+      "mfg1-sequential-signal-09": {
+        "sourceHash": "555b29313e6396bf11163ecb504342924214ec5236e4d2ca3bbc824f903e1f19",
+        "stem": "FMကသယ်ဆောင်လှိုင်းကြိမ်နှုန်းပြောင်းခြင်း မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "FMကသယ်ဆောင်လှိုင်းကြိမ်နှုန်းပြောင်းသည်။",
+          "AMကသယ်ဆောင်လှိုင်းအမြင့်ပြောင်းသည်။"
+        ]
+      },
+      "mfg1-sequential-signal-10": {
+        "sourceHash": "10f4751c9f348f7e1b54f56d209b4f6a90d1e632095d76c764af93c9337e9187",
+        "stem": "PMကသယ်ဆောင်လှိုင်းအမြင့်ပြောင်းခြင်း မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "PMကသယ်ဆောင်လှိုင်းဖေ့စ်ပြောင်းသည်။",
+          "AMကသယ်ဆောင်လှိုင်းအမြင့်ပြောင်းသည်။"
+        ]
+      },
+      "mfg1-sequential-signal-11": {
+        "sourceHash": "480c7698debd52e7c313b2989b1f40d8b2909359b581798945dcaac90b6afe41",
+        "stem": "ဒီမော်ဂျူလေးရှင်းကလက်ခံလှိုင်းမှသတင်းအချက်ပြထုတ်ယူခြင်း မှန်ပါသလား။",
+        "options": [
+          "မှန်သည်",
+          "မှားသည်"
+        ],
+        "reasons": [
+          "ဒီမော်ဂျူလေးရှင်းကသတင်းအချက်ပြပြန်ထုတ်သည်။",
+          "မော်ဂျူလေးရှင်းကသယ်ဆောင်လှိုင်းသို့သတင်းထည့်သည်။"
+        ]
+      }
+    },
+    "th": {
+      "mfg1-sequential-signal-01": {
+        "sourceHash": "627ef615cbb1ef7dfd060f10bce0352e4441758366a623d0803f6acc09a6da0a",
+        "stem": "หน้าที่ใดแปลงแรงดันเซนเซอร์ต่อเนื่องเป็นข้อมูลดิจิทัล",
+        "options": [
+          "ตัวแปลง A/D",
+          "ตัวแปลง D/A",
+          "ICหน่วยความจำ",
+          "ตัวควบคุมแรงดัน"
+        ],
+        "reasons": [
+          "A/Dแปลงแอนะล็อกเป็นข้อมูลดิจิทัล",
+          "D/Aแปลงข้อมูลดิจิทัลเป็นแอนะล็อก",
+          "หน่วยความจำเก็บข้อมูล",
+          "ตัวควบคุมแรงดันทำให้แหล่งจ่ายคงที่"
+        ]
+      },
+      "mfg1-sequential-signal-02": {
+        "sourceHash": "8e42ad34f844c8d6db211ae5fd4fea0680a8380953fb490517a788d41612ba89",
+        "stem": "หน้าที่ใดแปลงค่าคำสั่งดิจิทัลเป็นเอาต์พุตแอนะล็อก",
+        "options": [
+          "ตัวควบคุมแรงดัน",
+          "ตัวแปลง A/D",
+          "ตัวแปลง D/A",
+          "ICหน่วยความจำ"
+        ],
+        "reasons": [
+          "ตัวควบคุมแรงดันทำให้แหล่งจ่ายคงที่",
+          "A/Dแปลงแอนะล็อกเป็นข้อมูลดิจิทัล",
+          "D/Aแปลงข้อมูลดิจิทัลเป็นแอนะล็อก",
+          "หน่วยความจำเก็บข้อมูล"
+        ]
+      },
+      "mfg1-sequential-signal-03": {
+        "sourceHash": "8c4570a2e5b249e00495c161d460342304caedae72fec4b1606aa4e2bab5ae37",
+        "stem": "หน้าที่ใดทำให้แรงดันจ่ายวงจรประมวลผลคงที่",
+        "options": [
+          "MPU",
+          "ตัวควบคุมแรงดัน",
+          "ICหน่วยความจำ",
+          "ตัวแปลง A/D"
+        ],
+        "reasons": [
+          "MPUคำนวณและควบคุม",
+          "ตัวควบคุมแรงดันทำให้แหล่งจ่ายคงที่",
+          "หน่วยความจำเก็บข้อมูล",
+          "A/Dแปลงแอนะล็อกเป็นข้อมูลดิจิทัล"
+        ]
+      },
+      "mfg1-sequential-signal-04": {
+        "sourceHash": "f67e50b0508139fc8ae16568500f3778bc7a7b16f67d48739fb730ea6c91df3a",
+        "stem": "บทบาทใดเก็บค่าปรับตั้งเป็นข้อมูล",
+        "options": [
+          "ตัวแปลง A/D",
+          "ตัวควบคุมแรงดัน",
+          "ตัวแปลง D/A",
+          "ICหน่วยความจำ"
+        ],
+        "reasons": [
+          "A/Dแปลงแอนะล็อกเป็นข้อมูลดิจิทัล",
+          "ตัวควบคุมแรงดันทำให้แหล่งจ่ายคงที่",
+          "D/Aแปลงข้อมูลดิจิทัลเป็นแอนะล็อก",
+          "หน่วยความจำเก็บข้อมูล"
+        ]
+      },
+      "mfg1-sequential-signal-05": {
+        "sourceHash": "36d89675f47adf964f2225837b45409797b70893550a46c6cc5f760755f75171",
+        "stem": "ICลอจิกเก็บข้อมูลอย่างเดียว ไม่ประมวลเงื่อนไข ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "ICลอจิกทำงานตรรกะและควบคุม",
+          "หน่วยความจำเก็บข้อมูล"
+        ]
+      },
+      "mfg1-sequential-signal-06": {
+        "sourceHash": "7c01d32b2c1b915e675ab351201e71978abd6f6f92238a0b6f4a0085fca5f45f",
+        "stem": "เพิ่มแอมพลิจูดอินพุตเล็กคือชื่ออื่นของการกำเนิดสัญญาณ ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "การขยายเพิ่มแอมพลิจูดสัญญาณเข้า",
+          "การกำเนิดสัญญาณสร้างสัญญาณเป็นคาบต่อเนื่อง"
+        ]
+      },
+      "mfg1-sequential-signal-07": {
+        "sourceHash": "64181874d8180d4db248afe09aea032fef14d67969f276431381ea23b856eb63",
+        "stem": "วงจรกำเนิดสัญญาณสร้างสัญญาณอ้างอิงเป็นคาบได้แม้ไม่มีสัญญาณข้อมูลภายนอก ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "การกำเนิดสัญญาณสร้างสัญญาณเป็นคาบต่อเนื่อง",
+          "การขยายเพิ่มแอมพลิจูดสัญญาณเข้า"
+        ]
+      },
+      "mfg1-sequential-signal-08": {
+        "sourceHash": "c81aa6700bbbf363f4d2d5596b2cac47bd5b561b7efaeaa84e29e7ec0f95937a",
+        "stem": "AMเปลี่ยนความถี่คลื่นพาหะ ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "AMเปลี่ยนแอมพลิจูดคลื่นพาหะ",
+          "FMเปลี่ยนความถี่คลื่นพาหะ"
+        ]
+      },
+      "mfg1-sequential-signal-09": {
+        "sourceHash": "555b29313e6396bf11163ecb504342924214ec5236e4d2ca3bbc824f903e1f19",
+        "stem": "FMเปลี่ยนความถี่คลื่นพาหะ ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "FMเปลี่ยนความถี่คลื่นพาหะ",
+          "AMเปลี่ยนแอมพลิจูดคลื่นพาหะ"
+        ]
+      },
+      "mfg1-sequential-signal-10": {
+        "sourceHash": "10f4751c9f348f7e1b54f56d209b4f6a90d1e632095d76c764af93c9337e9187",
+        "stem": "PMเปลี่ยนแอมพลิจูดคลื่นพาหะ ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "PMเปลี่ยนเฟสคลื่นพาหะ",
+          "AMเปลี่ยนแอมพลิจูดคลื่นพาหะ"
+        ]
+      },
+      "mfg1-sequential-signal-11": {
+        "sourceHash": "480c7698debd52e7c313b2989b1f40d8b2909359b581798945dcaac90b6afe41",
+        "stem": "ดีมอดูเลตดึงข้อมูลจากคลื่นที่รับมา ถูกหรือไม่",
+        "options": [
+          "ถูก",
+          "ผิด"
+        ],
+        "reasons": [
+          "ดีมอดูเลตดึงสัญญาณข้อมูลออก",
+          "มอดูเลตใส่ข้อมูลบนคลื่นพาหะ"
+        ]
+      }
+    },
+    "km": {
+      "mfg1-sequential-signal-01": {
+        "sourceHash": "627ef615cbb1ef7dfd060f10bce0352e4441758366a623d0803f6acc09a6da0a",
+        "stem": "មុខងារណាប្ដូរតង់ស្យុងសិនស័របន្តទៅទិន្នន័យឌីជីថល?",
+        "options": [
+          "ឧបករណ៍ប្ដូរ A/D",
+          "ឧបករណ៍ប្ដូរ D/A",
+          "ICអង្គចងចាំ",
+          "និយតករតង់ស្យុង"
+        ],
+        "reasons": [
+          "A/Dប្ដូរអាណាឡូកទៅទិន្នន័យឌីជីថល។",
+          "D/Aប្ដូរទិន្នន័យឌីជីថលទៅអាណាឡូក។",
+          "អង្គចងចាំរក្សាទិន្នន័យ។",
+          "និយតករតង់ស្យុងធ្វើឱ្យប្រភពថេរ។"
+        ]
+      },
+      "mfg1-sequential-signal-02": {
+        "sourceHash": "8e42ad34f844c8d6db211ae5fd4fea0680a8380953fb490517a788d41612ba89",
+        "stem": "មុខងារណាប្ដូរតម្លៃបញ្ជាឌីជីថលទៅអាណាឡូក?",
+        "options": [
+          "និយតករតង់ស្យុង",
+          "ឧបករណ៍ប្ដូរ A/D",
+          "ឧបករណ៍ប្ដូរ D/A",
+          "ICអង្គចងចាំ"
+        ],
+        "reasons": [
+          "និយតករតង់ស្យុងធ្វើឱ្យប្រភពថេរ។",
+          "A/Dប្ដូរអាណាឡូកទៅទិន្នន័យឌីជីថល។",
+          "D/Aប្ដូរទិន្នន័យឌីជីថលទៅអាណាឡូក។",
+          "អង្គចងចាំរក្សាទិន្នន័យ។"
+        ]
+      },
+      "mfg1-sequential-signal-03": {
+        "sourceHash": "8c4570a2e5b249e00495c161d460342304caedae72fec4b1606aa4e2bab5ae37",
+        "stem": "មុខងារណាធ្វើឱ្យតង់ស្យុងប្រភពសៀគ្វីដំណើរការថេរ?",
+        "options": [
+          "MPU",
+          "និយតករតង់ស្យុង",
+          "ICអង្គចងចាំ",
+          "ឧបករណ៍ប្ដូរ A/D"
+        ],
+        "reasons": [
+          "MPUគណនានិងគ្រប់គ្រង។",
+          "និយតករតង់ស្យុងធ្វើឱ្យប្រភពថេរ។",
+          "អង្គចងចាំរក្សាទិន្នន័យ។",
+          "A/Dប្ដូរអាណាឡូកទៅទិន្នន័យឌីជីថល។"
+        ]
+      },
+      "mfg1-sequential-signal-04": {
+        "sourceHash": "f67e50b0508139fc8ae16568500f3778bc7a7b16f67d48739fb730ea6c91df3a",
+        "stem": "តួនាទីណារក្សាតម្លៃកែតម្រូវជាទិន្នន័យ?",
+        "options": [
+          "ឧបករណ៍ប្ដូរ A/D",
+          "និយតករតង់ស្យុង",
+          "ឧបករណ៍ប្ដូរ D/A",
+          "ICអង្គចងចាំ"
+        ],
+        "reasons": [
+          "A/Dប្ដូរអាណាឡូកទៅទិន្នន័យឌីជីថល។",
+          "និយតករតង់ស្យុងធ្វើឱ្យប្រភពថេរ។",
+          "D/Aប្ដូរទិន្នន័យឌីជីថលទៅអាណាឡូក។",
+          "អង្គចងចាំរក្សាទិន្នន័យ។"
+        ]
+      },
+      "mfg1-sequential-signal-05": {
+        "sourceHash": "36d89675f47adf964f2225837b45409797b70893550a46c6cc5f760755f75171",
+        "stem": "ICតក្ករក្សាទិន្នន័យតែប៉ុណ្ណោះ មិនដំណើរការលក្ខខណ្ឌ ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "ICតក្កធ្វើប្រតិបត្តិការតក្កនិងគ្រប់គ្រង។",
+          "អង្គចងចាំរក្សាទិន្នន័យ។"
+        ]
+      },
+      "mfg1-sequential-signal-06": {
+        "sourceHash": "7c01d32b2c1b915e675ab351201e71978abd6f6f92238a0b6f4a0085fca5f45f",
+        "stem": "បង្កើនអំព្លីទុតចូលតូចជាឈ្មោះផ្សេងនៃការយោល ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "ការពង្រីកបង្កើនអំព្លីទុតសញ្ញាចូល។",
+          "ការយោលបង្កើតសញ្ញាខួបបន្ត។"
+        ]
+      },
+      "mfg1-sequential-signal-07": {
+        "sourceHash": "64181874d8180d4db248afe09aea032fef14d67969f276431381ea23b856eb63",
+        "stem": "សៀគ្វីយោលអាចបង្កើតសញ្ញាយោងខួបដោយគ្មានសញ្ញាព័ត៌មានចូលក្រៅ ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "ការយោលបង្កើតសញ្ញាខួបបន្ត។",
+          "ការពង្រីកបង្កើនអំព្លីទុតសញ្ញាចូល។"
+        ]
+      },
+      "mfg1-sequential-signal-08": {
+        "sourceHash": "c81aa6700bbbf363f4d2d5596b2cac47bd5b561b7efaeaa84e29e7ec0f95937a",
+        "stem": "AMប្ដូរប្រេកង់រលកនាំ ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "AMប្ដូរអំព្លីទុតរលកនាំ។",
+          "FMប្ដូរប្រេកង់រលកនាំ។"
+        ]
+      },
+      "mfg1-sequential-signal-09": {
+        "sourceHash": "555b29313e6396bf11163ecb504342924214ec5236e4d2ca3bbc824f903e1f19",
+        "stem": "FMប្ដូរប្រេកង់រលកនាំ ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "FMប្ដូរប្រេកង់រលកនាំ។",
+          "AMប្ដូរអំព្លីទុតរលកនាំ។"
+        ]
+      },
+      "mfg1-sequential-signal-10": {
+        "sourceHash": "10f4751c9f348f7e1b54f56d209b4f6a90d1e632095d76c764af93c9337e9187",
+        "stem": "PMប្ដូរអំព្លីទុតរលកនាំ ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "PMប្ដូរផាសរលកនាំ។",
+          "AMប្ដូរអំព្លីទុតរលកនាំ។"
+        ]
+      },
+      "mfg1-sequential-signal-11": {
+        "sourceHash": "480c7698debd52e7c313b2989b1f40d8b2909359b581798945dcaac90b6afe41",
+        "stem": "ឌីម៉ូឌុលយកព័ត៌មានចេញពីរលកដែលទទួល ត្រឹមត្រូវទេ?",
+        "options": [
+          "ត្រឹមត្រូវ",
+          "មិនត្រឹមត្រូវ"
+        ],
+        "reasons": [
+          "ឌីម៉ូឌុលយកសញ្ញាព័ត៌មានចេញ។",
+          "ម៉ូឌុលដាក់ព័ត៌មានលើរលកនាំ។"
+        ]
+      }
+    },
+    "tl": {
+      "mfg1-sequential-signal-01": {
+        "sourceHash": "627ef615cbb1ef7dfd060f10bce0352e4441758366a623d0803f6acc09a6da0a",
+        "stem": "Aling function ang continuous sensor voltage tungo sa digital data?",
+        "options": [
+          "A/D converter",
+          "D/A converter",
+          "Memory IC",
+          "Voltage regulator"
+        ],
+        "reasons": [
+          "A/D ang analog signal tungo sa digital data.",
+          "D/A ang digital data tungo sa analog signal.",
+          "Memory ang nag-iimbak ng data.",
+          "Voltage regulator ang nagpapatatag ng supply."
+        ]
+      },
+      "mfg1-sequential-signal-02": {
+        "sourceHash": "8e42ad34f844c8d6db211ae5fd4fea0680a8380953fb490517a788d41612ba89",
+        "stem": "Aling function ang digital command value tungo sa analog output?",
+        "options": [
+          "Voltage regulator",
+          "A/D converter",
+          "D/A converter",
+          "Memory IC"
+        ],
+        "reasons": [
+          "Voltage regulator ang nagpapatatag ng supply.",
+          "A/D ang analog signal tungo sa digital data.",
+          "D/A ang digital data tungo sa analog signal.",
+          "Memory ang nag-iimbak ng data."
+        ]
+      },
+      "mfg1-sequential-signal-03": {
+        "sourceHash": "8c4570a2e5b249e00495c161d460342304caedae72fec4b1606aa4e2bab5ae37",
+        "stem": "Aling function ang nagpapatatag ng supply voltage ng processing circuit?",
+        "options": [
+          "MPU",
+          "Voltage regulator",
+          "Memory IC",
+          "A/D converter"
+        ],
+        "reasons": [
+          "MPU ang computing at control.",
+          "Voltage regulator ang nagpapatatag ng supply.",
+          "Memory ang nag-iimbak ng data.",
+          "A/D ang analog signal tungo sa digital data."
+        ]
+      },
+      "mfg1-sequential-signal-04": {
+        "sourceHash": "f67e50b0508139fc8ae16568500f3778bc7a7b16f67d48739fb730ea6c91df3a",
+        "stem": "Aling role ang nag-iimbak ng adjustment values bilang data?",
+        "options": [
+          "A/D converter",
+          "Voltage regulator",
+          "D/A converter",
+          "Memory IC"
+        ],
+        "reasons": [
+          "A/D ang analog signal tungo sa digital data.",
+          "Voltage regulator ang nagpapatatag ng supply.",
+          "D/A ang digital data tungo sa analog signal.",
+          "Memory ang nag-iimbak ng data."
+        ]
+      },
+      "mfg1-sequential-signal-05": {
+        "sourceHash": "36d89675f47adf964f2225837b45409797b70893550a46c6cc5f760755f75171",
+        "stem": "Storage lang ba ang logic IC at walang logical-condition processing?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "Logic IC ang logical operations at control.",
+          "Memory ang nag-iimbak ng data."
+        ]
+      },
+      "mfg1-sequential-signal-06": {
+        "sourceHash": "7c01d32b2c1b915e675ab351201e71978abd6f6f92238a0b6f4a0085fca5f45f",
+        "stem": "Oscillation din ba ang tawag sa pagpapalaki ng maliit na input amplitude?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "Amplification ang pagtaas ng input amplitude.",
+          "Oscillation ang tuloy-tuloy na periodic signal generation."
+        ]
+      },
+      "mfg1-sequential-signal-07": {
+        "sourceHash": "64181874d8180d4db248afe09aea032fef14d67969f276431381ea23b856eb63",
+        "stem": "Makagagawa ba ang oscillator ng periodic reference kahit walang external information-signal input?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "Oscillation ang tuloy-tuloy na periodic signal generation.",
+          "Amplification ang pagtaas ng input amplitude."
+        ]
+      },
+      "mfg1-sequential-signal-08": {
+        "sourceHash": "c81aa6700bbbf363f4d2d5596b2cac47bd5b561b7efaeaa84e29e7ec0f95937a",
+        "stem": "Carrier frequency ba ang binabago ng AM?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "AM ang pagbabago sa carrier amplitude.",
+          "FM ang pagbabago sa carrier frequency."
+        ]
+      },
+      "mfg1-sequential-signal-09": {
+        "sourceHash": "555b29313e6396bf11163ecb504342924214ec5236e4d2ca3bbc824f903e1f19",
+        "stem": "Carrier frequency ba ang binabago ng FM?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "FM ang pagbabago sa carrier frequency.",
+          "AM ang pagbabago sa carrier amplitude."
+        ]
+      },
+      "mfg1-sequential-signal-10": {
+        "sourceHash": "10f4751c9f348f7e1b54f56d209b4f6a90d1e632095d76c764af93c9337e9187",
+        "stem": "Carrier amplitude ba ang binabago ng PM?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "PM ang pagbabago sa carrier phase.",
+          "AM ang pagbabago sa carrier amplitude."
+        ]
+      },
+      "mfg1-sequential-signal-11": {
+        "sourceHash": "480c7698debd52e7c313b2989b1f40d8b2909359b581798945dcaac90b6afe41",
+        "stem": "Kinukuha ba ng demodulation ang impormasyon mula sa natanggap na modulated wave?",
+        "options": [
+          "Tama",
+          "Mali"
+        ],
+        "reasons": [
+          "Demodulation ang pagkuha ng information signal.",
+          "Modulation ang paglalagay ng impormasyon sa carrier."
+        ]
+      }
+    }
+  },
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "humanReviewed": false,
+  "physicalDeviceVerified": false
+}

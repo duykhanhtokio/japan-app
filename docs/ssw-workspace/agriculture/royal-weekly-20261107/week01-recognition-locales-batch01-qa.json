@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "unit": "week01-recognition-full-metadata-locales-batch01",
+  "status": "self_checked_not_accepted",
+  "ids": [
+    "agr-recognition-cabbage-v1",
+    "agr-recognition-chinese-cabbage-v1",
+    "agr-recognition-lettuce-v1",
+    "agr-recognition-spinach-v1"
+  ],
+  "sourceJapaneseMeaningSha256": {
+    "agr-recognition-cabbage-v1": "3ea689a2ae203386249f0f4e81291700eec7bbd2b9aa139fb1f7857c835314fa",
+    "agr-recognition-chinese-cabbage-v1": "6523fadc4c8a9681eb30ea98a16e0e7337b49e08661b04924786465bc1184da1",
+    "agr-recognition-lettuce-v1": "9d7a5138195d16fe10c41d7cbb87e97eab0010e16860379db01e6817d8b20644",
+    "agr-recognition-spinach-v1": "38ad783d067092e7eae83a3df039fb0d25e67b7c4086537610a9c9969f55dec7"
+  },
+  "meaningGuard": "Runtime exact comparison of all four original Japanese fields, plus exact original limitation in shared limit table. Exact comparison guards the full meaning; SHA values here provide reproducible provenance.",
+  "bindingGuards": [
+    "existing lesson ID/sourceHash visibility",
+    "explicit current lesson revision",
+    "current source image SHA256",
+    "registry schemaVersion1 and studyOnly",
+    "all original Japanese title/alt/observation/limit strings",
+    "complete requested locale fields and source-bound limitation; unknown or stale input falls back to Japanese"
+  ],
+  "files": {
+    "src/data/agriculture/recognition-image-locales.json": "3cb2e8405700f90c9c2f66662eeab8ca2e39a1103fcc2ce48b97215aa2f0f4ba",
+    "src/components/agriculture/RecognitionImages.tsx": "6065fbc15dc0564ecdec2f62f673995eab7e22f03154dde34c34febb692eeb68",
+    "src/components/agriculture/AgricultureCourse.tsx": "c2f19968373503a76c744a58c4b3a905afeece1daa4011893a759f3fe309b982"
+  },
+  "translation": "Full original Japanese title, alt, observation and limitation translated directly into12targetlocales; no generic replacement or loss of constraints. Indonesian spinach is disambiguated as bayam Jepang (spinach); Thai usesปวยเล้ง.",
+  "sourceAndPixelReview": "Original Japanese metadata and active current Royal pixels match cabbage head/leaves, longitudinal half Chinese cabbage white veins/yellow inner/green outer leaves, lettuce curled wavy leaves, spinach leaves and supporting petioles. All4 current asset bytes verified against original recognition SHA.",
+  "validation": {
+    "actualStudyReaderRenders": 52,
+    "meaning": "4items x Japanese+12locales: actual RecognitionImages/ZoomableFigure/RNW alt/title/observation/full limitation; Japanese original content retained",
+    "negativeTests": "Each of4 Japanese fields changed independently; wrong imageSHA; wrong lesson sourceHash/revision; unknown locale; hidden translation; each rejects localized data and/or falls back to original Japanese.",
+    "actualExamRenders": "4 corresponding exam illustrations retain original generic alt; no Japanese/translated object names or recognition alt leaked into exam",
+    "unchangedBlobs": "Canonical lessons, recognition metadata, exam renderer, exam illustration/masks and mock questions/answers equal preceding saved054812bd unit",
+    "mockScope": "Static asset URI modules only; actual study/exam components and native renderer used",
+    "script": "/workspace/scratch/b72f4a7f6a62/recognition-locales-qa/check.cjs",
+    "nativeReviewed": false,
+    "domainReviewed": false,
+    "physicalDeviceTested": false
+  },
+  "remainingWeek01Recognition": 22,
+  "remainingOrderedQueue": [
+    "onion/daikon/indica/japonica full12locale metadata",
+    "remaining vegetable/fruit/Unshu flower full12locale metadata through26",
+    "final week01 active selectors/art/source/locale census",
+    "week02 onward full99week existing scope; preserve native controlled diagrams vs occupational illustration distinction"
+  ],
+  "wholeWeekComplete": false,
+  "wholeSourceKnowledgeCovered": false,
+  "releaseReady": false
+}

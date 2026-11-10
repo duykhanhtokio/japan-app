@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "reviewedBaseline": "4ad486900520e70932163a95f110b6178ec36113",
+  "previousClosedBaseline": "1504eaede52402ea09225007896ebe5fdf787069",
+  "changedExactContexts": [
+    "パン皿",
+    "分類後にB群を選ぶ図は、手順を区別するための架空例です。"
+  ],
+  "remainingEntriesUnchanged": 68,
+  "all38SourceRevisionBindingsUnchanged": true,
+  "lookupAndGuardFunctionsByteExact": true,
+  "affectedJaNativeRoutes": 2,
+  "affectedJaDirectLabelRenders": 2,
+  "foreignIdenticalTextCases": 24,
+  "invalidSourceSupplementRejections": 6,
+  "invalidSourceNativeRejections": 6,
+  "staleContextPlain": true,
+  "productRegressionsFound": [],
+  "incomingContextFixesValid": true,
+  "physicalDeviceTested": false,
+  "browserTested": false,
+  "nativeReviewed": false,
+  "domainReviewed": false,
+  "fullSourceAccepted": false,
+  "records": [
+    {
+      "id": "hotel-restaurant-04",
+      "component": "HotelMealLayoutGuide",
+      "text": "パン皿",
+      "surface": "皿",
+      "reading": "ざら",
+      "nativeLabel": "4 · パン皿",
+      "sourceRevision": "61c59bb49669c612f3f4be126278acd39d7ea59b48b290a4b3f9edb1bfd4596a",
+      "correctSpans": [
+        {
+          "text": "パン"
+        },
+        {
+          "text": "皿",
+          "reading": "ざら"
+        }
+      ],
+      "fullJapaneseReconstructed": true,
+      "actualJaLabelMarkupSha256": "2d0a2b79d66aa302cab98b6b524e007a5243c81364151341ea92b27d0b6fcfc7",
+      "actualAffectedNativeMarkupSha256": "5bdb757dc12b1ecc53f8d6b45526780599f9f8887e7ae8f50166d77153aaa2d7"
+    },
+    {
+      "id": "hotel-planning-07",
+      "component": "HotelMarketSelectionGuide",
+      "text": "分類後にB群を選ぶ図は、手順を区別するための架空例です。",
+      "surface": "架空",
+      "reading": "かくう",
+      "sourceRevision": "3dbc6b276e33f9cb49ac809131655c9698ba5c6c77bc99e62baf0658e99c453f",
+      "correctSpans": [
+        {
+          "text": "分類後",
+          "reading": "ぶんるいご"
+        },
+        {
+          "text": "に"
+        },
+        {
+          "text": "B群",
+          "reading": "びーぐん"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "選ぶ",
+          "reading": "えらぶ"
+        },
+        {
+          "text": "図",
+          "reading": "ず"
+        },
+        {
+          "text": "は、"
+        },
+        {
+          "text": "手順",
+          "reading": "てじゅん"
+        },
+        {
+          "text": "を"
+        },
+        {
+          "text": "区別",
+          "reading": "くべつ"
+        },
+        {
+          "text": "するための"
+        },
+        {
+          "text": "架空",
+          "reading": "かくう"
+        },
+        {
+          "text": "例",
+          "reading": "れい"
+        },
+        {
+          "text": "です。"
+        }
+      ],
+      "fullJapaneseReconstructed": true,
+      "actualJaLabelMarkupSha256": "90d71504ecb8b8c5d84e851bcfe38d667160de07c8e162c0b42010d8ee9e0783",
+      "actualAffectedNativeMarkupSha256": "06c52e3e0aaaa46df7118e487d3b73227fb8c54557e954b703f84fec5fc3187e"
+    }
+  ],
+  "scope": "Only two changed native-guide reading contexts; preserve valid incoming data, no product fix.",
+  "contextDecisions": [
+    {
+      "key": "パン皿",
+      "decision": "Retain compound-context 皿→ざら, yielding パンざら; no global standalone皿 replacement."
+    },
+    {
+      "key": "分類後にB群を選ぶ図は、手順を区別するための架空例です。",
+      "decision": "Retain joined架空→かくう in this exact disclaimer; Japanese surface and other spans unchanged."
+    }
+  ],
+  "method": "Actual TS/TSX/data read from exact4ad4869 Git blobs; source-bound lookup reconstruction, actual affected native component JA SSR and identical Japanese/Han text under twelve foreign contexts. No broad16/208 rerun.",
+  "canonicalJapaneseAndSourceRevisionsUnchanged": true,
+  "allOtherReadingContextsPreserved": true,
+  "foreignSameHanInjectionRejected": true,
+  "freshHEADInputLeases": [
+    {
+      "path": "src/data/hospitality/royal-guide-readings.ts",
+      "blobSha": "365949886ffb608c42fd49d2431c649fbbf6fddb"
+    },
+    {
+      "path": "src/components/hospitality/HotelGuideText.tsx",
+      "blobSha": "8da0ec939d2f77c93daf4859e04690c721b397cc"
+    },
+    {
+      "path": "src/components/hospitality/HotelJapaneseText.tsx",
+      "blobSha": "690503bc619644e916f999f969bbabcf4f632472"
+    },
+    {
+      "path": "src/components/hospitality/HotelMealLayoutGuide.tsx",
+      "blobSha": "08c5bbf00c3a879545db54210f461b1a3f2e1ee7"
+    },
+    {
+      "path": "src/components/hospitality/HotelMarketSelectionGuide.tsx",
+      "blobSha": "e018204ca9e608c6d5979c853487196b77479c6d"
+    },
+    {
+      "path": "src/components/hospitality/HospitalityCourse.tsx",
+      "blobSha": "2d1eac0fa3901555acf69367722995e0ca73f6b1"
+    },
+    {
+      "path": "src/data/hospitality/meal-visual-guide-labels.ts",
+      "blobSha": "32aaad33b478b350df226b72c7456e2df19b0b46"
+    },
+    {
+      "path": "src/data/hospitality/market-guide-labels.ts",
+      "blobSha": "02594afbefd83ff5e812e77f8cc4f4cd1fb60cf7"
+    },
+    {
+      "path": "src/data/hospitality/index.ts",
+      "blobSha": "8df327e1c9c6b4de2231e26e1cc39d322974cc11"
+    },
+    {
+      "path": "src/data/hospitality/catalog.json",
+      "blobSha": "f3a09c1b2864e41893a2cf19316b58bd28862f65"
+    },
+    {
+      "path": "src/data/hospitality/planning.json",
+      "blobSha": "cb3c2e1d9d3fc34d6992688283e82c82c7a004c8"
+    },
+    {
+      "path": "src/data/hospitality/restaurant.json",
+      "blobSha": "814970474773481d151a2a3e7ed8a6ab95a22e83"
+    },
+    {
+      "path": "src/data/hospitality/readings/planning.json",
+      "blobSha": "de737c21f6b85aff58a8056eb194c6e19de0305c"
+    },
+    {
+      "path": "src/data/hospitality/readings/restaurant.json",
+      "blobSha": "6e062738a96dfce01a890efa136a0b06b93146da"
+    }
+  ],
+  "unitPaths": [
+    "docs/ssw-workspace/hospitality/royal-guide-context-reading-delta-validation-20261107.json"
+  ],
+  "beforeBlobSHAs": [
+    {
+      "path": "docs/ssw-workspace/hospitality/royal-guide-context-reading-delta-validation-20261107.json",
+      "blobSha": null
+    }
+  ]
+}

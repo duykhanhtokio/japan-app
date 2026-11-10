@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-07",
+  "baseCommit": "189a47ff55a6b2c864bb789f4bf92e056d11e374",
+  "scope": "Actual main Reader source-revision and image-load boundaries; preserve existing 38 Royal bindings.",
+  "demonstratedBefore": {
+    "canonicalLessons": 38,
+    "mismatchedRevisionImagesDisplayed": 38,
+    "mainImagesWithoutOnError": 38
+  },
+  "changes": [
+    "Require an exact recorded canonical revision before resolving a main image, with lazy asset requires after the guard.",
+    "Display localized unavailable text on rejected revision or failed image load; explicit retry remounts the image and closes failed zoom.",
+    "Separate transient Reader state by lesson, revision and language; learner records are not changed."
+  ],
+  "beforeBlobSha": {
+    "src/components/hospitality/HospitalityCourse.tsx": "e55e5623cb10bb2603882b9535cacef6fdb9ca21",
+    "src/data/hospitality/illustrations.ts": "23806786ff3a5780d9468a6f0227721a1e92b08a",
+    "scripts/hospitality/check-native-figure-revisions.cjs": "dae46e9371d54d570c68e2a152668cdb249b5759",
+    "src/data/hospitality/illustration-source-guards.ts": null,
+    "scripts/hospitality/check-main-image-contract.cjs": null,
+    "docs/ssw-workspace/hospitality/main-image-revision-fallback-20261107.json": null
+  },
+  "callerInventory": {
+    "baseFiles": 328,
+    "deltaFiles": 11,
+    "currentCachedFiles": 331,
+    "errors": 0,
+    "productionResolverCallers": [
+      "src/components/hospitality/HospitalityCourse.tsx"
+    ]
+  },
+  "validation": {
+    "mainContract": "PASS: 38 source/registry/manifest/tree bindings; 494 ready, 494 stale, 494 failed-load and 494 retry cases across 13 locales; 38 three-image zoom boundaries; actual resolver caller type probe and two invalid API calls.",
+    "nativeRegression": "PASS: 91 positive renders, 280 negative boundaries, 156 exit-anchor layouts, controlled fire geometry/13 locales, five actual JSX callers plus ten invalid-prop cases, 26 Reader language/toggle cases, deferred controlled-image requires."
+  },
+  "limitations": [
+    "Revision snapshot is a compatibility boundary, not semantic or full-source acceptance.",
+    "Tests isolate native primitives and do not certify a physical device or browser rendering.",
+    "No whole-project typecheck, native-prose review or image-semantic approval claimed."
+  ],
+  "preserved": [
+    "All existing art paths and IDs, external TwoRoute/Market guides, source guards, translations and learner records.",
+    "Current metadata and manifest materialized at the base and excluded from this unit."
+  ],
+  "originalBaseCommit": "b8d0c73ccc979b0be3bf7e228876af28dd964d5a",
+  "rebaseProvenance": "Reapplied only source/error/retry delta onto exact latest Course; retained HotelGuideReadingProvider import and all 11 wrappers, ruby props, external guides and UI. Native test provider stub now transparently renders children."
+}

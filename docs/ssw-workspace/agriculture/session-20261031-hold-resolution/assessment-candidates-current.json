@@ -1,0 +1,667 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "scope": "assessment-capacity-audit-no-canonical-content-edits",
+  "baseCommit": "06905f8b3a6ba51df28d55b0abd3e4ecc2edbf73",
+  "requirement": {
+    "formsPerLevel": 10,
+    "questionsPerForm": 40,
+    "totalNewQuestions": 800,
+    "notOfficialStructureClaim": true,
+    "translationsAuthorized": false,
+    "timeLimitMinutes": null,
+    "officialPassThreshold": null
+  },
+  "observed": {
+    "lessons": 174,
+    "weeklyBanks": 44,
+    "uniqueWeeklyQuestions": 412,
+    "weeklyReferencedKnowledgeIds": 438,
+    "mockForms": 0,
+    "mockQuestions": 0,
+    "levels": {
+      "1": {
+        "lessons": 114,
+        "paragraphLinkedKnowledgeIds": 684,
+        "paragraphsNotReferencedByAnyWeeklyQuestion": 419,
+        "unreferencedByChapter": {
+          "日本農業一般": 10,
+          "耕種農業一般": 128,
+          "安全衛生": 31,
+          "稲作作業": 38,
+          "畑作・野菜作業": 38,
+          "施設園芸作業": 72,
+          "果樹栽培作業": 78,
+          "農作業の用語": 20,
+          "稲作・畑作・野菜作業": 4
+        },
+        "uniqueAssessableObjectivesCertified": null,
+        "independentQuestionCapacityCertified": false
+      },
+      "2": {
+        "lessons": 171,
+        "paragraphLinkedKnowledgeIds": 1026,
+        "paragraphsNotReferencedByAnyWeeklyQuestion": 601,
+        "unreferencedByChapter": {
+          "日本農業一般": 18,
+          "耕種農業一般": 193,
+          "安全衛生": 42,
+          "稲作作業": 44,
+          "畑作・野菜作業": 52,
+          "施設園芸作業": 88,
+          "果樹栽培作業": 110,
+          "花き栽培作業": 30,
+          "農作業の用語": 20,
+          "稲作・畑作・野菜作業": 4
+        },
+        "uniqueAssessableObjectivesCertified": null,
+        "independentQuestionCapacityCertified": false
+      }
+    }
+  },
+  "limitations": [
+    "Paragraph-linked knowledge IDs are authoring bookkeeping, not deduplicated independent assessment objectives.",
+    "Counts of source occurrences and unreferenced paragraphs do not demonstrate capacity for 800 independent questions.",
+    "Weekly questions may share a knowledge ID with a mock only if the assessed operation/condition is genuinely distinct; do not paraphrase or relabel.",
+    "New objective candidates below have not been globally semantically deduplicated or independently reviewed.",
+    "Original source-image verification is required for any newly introduced fact; candidates below introduce no fact outside existing source-checked canonical lessons."
+  ],
+  "concreteRecommendation": [
+    "Add an objective registry with stable ID, level scope, operation, condition, lesson hash and source-linked knowledge IDs, distinguishing already weekly-assessed objectives.",
+    "Review candidates by chapter; exclude source holds, universalized product conditions, historic-as-current statistics, summary-only restatements and semantic duplicates.",
+    "Freeze 400 suitable level1 and 400 suitable level2 objective mappings before filling 20 forms; allow shared foundational knowledge only with genuinely distinct assessable operations.",
+    "Author fresh Japanese questions with four plausible choices and individual reasons, then independent semantic review and checked calculations.",
+    "Use existing runner with distinct mock IDs/storage/revisions, no invented official time/pass threshold; each 40-question form must have ten correct answers at each index and no three consecutive equal indexes."
+  ],
+  "new2goCandidateObjectives": [
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-fertilizer-p1",
+      "lessonId": "agr-par22-fertilizer",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "paragraphId": "agr-par22-fertilizer-p1",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-01"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Match 硝安 to 硝酸アンモニウム without counting synonyms as different fertilizers.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-fertilizer-p2",
+      "lessonId": "agr-par22-fertilizer",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "paragraphId": "agr-par22-fertilizer-p2",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-02"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish examples of blended fertilizers from universal claims about their ingredients.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-fertilizer-p3",
+      "lessonId": "agr-par22-fertilizer",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "paragraphId": "agr-par22-fertilizer-p3",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-03"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish fermented manure compost from unprocessed manure.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-fertilizer-p4",
+      "lessonId": "agr-par22-fertilizer",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "paragraphId": "agr-par22-fertilizer-p4",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-04"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish microbial decomposition from low chemical solubility as two slow-release mechanisms.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-fertilizer-p5",
+      "lessonId": "agr-par22-fertilizer",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "paragraphId": "agr-par22-fertilizer-p5",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-05"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Retain existence qualifier for fertilizer lasting over one year; no universal duration guarantee.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-fertilizer-p6",
+      "lessonId": "agr-par22-fertilizer",
+      "lessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8",
+      "paragraphId": "agr-par22-fertilizer-p6",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FERTILIZER-06"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish pellet shape from ingredient composition.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "df3b1c53a652f126965331abcdca3dd98e5de5435dea17e242a1c0acd6288da8"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-hormones-p1",
+      "lessonId": "agr-par22-hormones",
+      "lessonSourceHash": "23cf98ec45100807f07ca7a6aeaed9477553ae6190b282074d87f32a4c2ee7de",
+      "paragraphId": "agr-par22-hormones-p1",
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-01"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish endogenous growth-regulating substance from external treatment operation.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "2dd40be4c9e3197d661cb2b6bbba83bcfc8ffacf45b38f448d6f7e7ba8ad23d2"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-hormones-p2",
+      "lessonId": "agr-par22-hormones",
+      "lessonSourceHash": "23cf98ec45100807f07ca7a6aeaed9477553ae6190b282074d87f32a4c2ee7de",
+      "paragraphId": "agr-par22-hormones-p2",
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-02"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Associate auxin with lateral-bud suppression/apical dominance.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "2dd40be4c9e3197d661cb2b6bbba83bcfc8ffacf45b38f448d6f7e7ba8ad23d2"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-hormones-p3",
+      "lessonId": "agr-par22-hormones",
+      "lessonSourceHash": "23cf98ec45100807f07ca7a6aeaed9477553ae6190b282074d87f32a4c2ee7de",
+      "paragraphId": "agr-par22-hormones-p3",
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-03"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Associate gibberellin with stem elongation and dormancy breaking, retaining multiple targets.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "2dd40be4c9e3197d661cb2b6bbba83bcfc8ffacf45b38f448d6f7e7ba8ad23d2"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-hormones-p4",
+      "lessonId": "agr-par22-hormones",
+      "lessonSourceHash": "23cf98ec45100807f07ca7a6aeaed9477553ae6190b282074d87f32a4c2ee7de",
+      "paragraphId": "agr-par22-hormones-p4",
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-04"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Associate cytokinin with lateral-bud increase and delayed leaf senescence.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "2dd40be4c9e3197d661cb2b6bbba83bcfc8ffacf45b38f448d6f7e7ba8ad23d2"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-hormones-p5",
+      "lessonId": "agr-par22-hormones",
+      "lessonSourceHash": "23cf98ec45100807f07ca7a6aeaed9477553ae6190b282074d87f32a4c2ee7de",
+      "paragraphId": "agr-par22-hormones-p5",
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-05"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish ABA dormancy promotion from gibberellin dormancy breaking; do not assess ABA abscission hold.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "2dd40be4c9e3197d661cb2b6bbba83bcfc8ffacf45b38f448d6f7e7ba8ad23d2"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-hormones-p6",
+      "lessonId": "agr-par22-hormones",
+      "lessonSourceHash": "23cf98ec45100807f07ca7a6aeaed9477553ae6190b282074d87f32a4c2ee7de",
+      "paragraphId": "agr-par22-hormones-p6",
+      "knowledgeIds": [
+        "AGR-K-PAR22-HORMONES-06"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Recognize ethylene as gaseous and avoid a universal one-direction flowering claim.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "2dd40be4c9e3197d661cb2b6bbba83bcfc8ffacf45b38f448d6f7e7ba8ad23d2"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-weeds-p1",
+      "lessonId": "agr-par22-weeds",
+      "lessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b",
+      "paragraphId": "agr-par22-weeds-p1",
+      "knowledgeIds": [
+        "AGR-K-PAR22-WEEDS-01"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Explain weed habitat relationship with pests without asserting all weeds are infested.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-weeds-p2",
+      "lessonId": "agr-par22-weeds",
+      "lessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b",
+      "paragraphId": "agr-par22-weeds-p2",
+      "knowledgeIds": [
+        "AGR-K-PAR22-WEEDS-02"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish selective vs nonselective classifications while not inferring product authorization.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-weeds-p3",
+      "lessonId": "agr-par22-weeds",
+      "lessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b",
+      "paragraphId": "agr-par22-weeds-p3",
+      "knowledgeIds": [
+        "AGR-K-PAR22-WEEDS-03"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish foliar absorption route from selectivity classification.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-weeds-p4",
+      "lessonId": "agr-par22-weeds",
+      "lessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b",
+      "paragraphId": "agr-par22-weeds-p4",
+      "knowledgeIds": [
+        "AGR-K-PAR22-WEEDS-04"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Retain reduced effect on already large weeds for soil treatment description.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-weeds-p5",
+      "lessonId": "agr-par22-weeds",
+      "lessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b",
+      "paragraphId": "agr-par22-weeds-p5",
+      "knowledgeIds": [
+        "AGR-K-PAR22-WEEDS-05"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Keep herbicide-use equipment separate from pest/disease equipment; washing is not presented as equivalence.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-weeds-p6",
+      "lessonId": "agr-par22-weeds",
+      "lessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b",
+      "paragraphId": "agr-par22-weeds-p6",
+      "knowledgeIds": [
+        "AGR-K-PAR22-WEEDS-06"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish off-target drift prevented by nozzle/cover from residue inside equipment.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "5f1ac29f9e2434c49f04e19212a542f887c1ec2868645120e818284c05e6086b"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-vegetables-p1",
+      "lessonId": "agr-par22-vegetables",
+      "lessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac",
+      "paragraphId": "agr-par22-vegetables-p1",
+      "knowledgeIds": [
+        "AGR-K-PAR22-VEGETABLES-01"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Retain season and location together for summer highland cabbage production.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-vegetables-p2",
+      "lessonId": "agr-par22-vegetables",
+      "lessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac",
+      "paragraphId": "agr-par22-vegetables-p2",
+      "knowledgeIds": [
+        "AGR-K-PAR22-VEGETABLES-02"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Compare cabbage types by head shape and firmness.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-vegetables-p3",
+      "lessonId": "agr-par22-vegetables",
+      "lessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac",
+      "paragraphId": "agr-par22-vegetables-p3",
+      "knowledgeIds": [
+        "AGR-K-PAR22-VEGETABLES-03"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish Chinese-cabbage use examples from universal sowing/harvest dates.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-vegetables-p4",
+      "lessonId": "agr-par22-vegetables",
+      "lessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac",
+      "paragraphId": "agr-par22-vegetables-p4",
+      "knowledgeIds": [
+        "AGR-K-PAR22-VEGETABLES-04"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish lettuce leaf form from transplant cultivation method.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-vegetables-p5",
+      "lessonId": "agr-par22-vegetables",
+      "lessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac",
+      "paragraphId": "agr-par22-vegetables-p5",
+      "knowledgeIds": [
+        "AGR-K-PAR22-VEGETABLES-05"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Explain variety improvement enabling year-round spinach cultivation without one-plant year-round inference.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-vegetables-p6",
+      "lessonId": "agr-par22-vegetables",
+      "lessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac",
+      "paragraphId": "agr-par22-vegetables-p6",
+      "knowledgeIds": [
+        "AGR-K-PAR22-VEGETABLES-06"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish onion edible organ classification from transplant method.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "7e8801a46838dd9a004d94568b7bc84529aa357d1fa1f52fc351fff68c2db3ac"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-facility-p1",
+      "lessonId": "agr-par22-facility",
+      "lessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d",
+      "paragraphId": "agr-par22-facility-p1",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FACILITY-01"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Read 2018 protected-tomato production about 562000t separately from area ranking and open-field production.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-facility-p2",
+      "lessonId": "agr-par22-facility",
+      "lessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d",
+      "paragraphId": "agr-par22-facility-p2",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FACILITY-02"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Match example tomato regions with production-system relay without inventing rankings.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-facility-p3",
+      "lessonId": "agr-par22-facility",
+      "lessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d",
+      "paragraphId": "agr-par22-facility-p3",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FACILITY-03"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Recognize overlapping vegetative and reproductive growth in tomato.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-facility-p4",
+      "lessonId": "agr-par22-facility",
+      "lessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d",
+      "paragraphId": "agr-par22-facility-p4",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FACILITY-04"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Read 2018 protected-strawberry production about 135000t with year/production scope/unit retained.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-facility-p5",
+      "lessonId": "agr-par22-facility",
+      "lessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d",
+      "paragraphId": "agr-par22-facility-p5",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FACILITY-05"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish strawberry region examples from tomato region examples; not current rankings.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-facility-p6",
+      "lessonId": "agr-par22-facility",
+      "lessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d",
+      "paragraphId": "agr-par22-facility-p6",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FACILITY-06"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish total cultivated area direction from yield-per-10a direction without inventing a percentage/year.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "c163b4b78055c1cd6b2c3c2cb379ef66d4e6f432e346b1c151fbdfe59a02879d"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-fruit-p1",
+      "lessonId": "agr-par22-fruit",
+      "lessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f",
+      "paragraphId": "agr-par22-fruit-p1",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FRUIT-01"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Match peel-puffing prevention purpose to satsuma mandarin without product prescription.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-fruit-p2",
+      "lessonId": "agr-par22-fruit",
+      "lessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f",
+      "paragraphId": "agr-par22-fruit-p2",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FRUIT-02"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Retain preharvest timing and source apple/pear scope in fruit-drop prevention.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-fruit-p3",
+      "lessonId": "agr-par22-fruit",
+      "lessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f",
+      "paragraphId": "agr-par22-fruit-p3",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FRUIT-03"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Retain many-fruit-trees qualifier for maturation promotion.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-fruit-p4",
+      "lessonId": "agr-par22-fruit",
+      "lessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f",
+      "paragraphId": "agr-par22-fruit-p4",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FRUIT-04"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish root/branch initiation purpose from fruit maturity or propagation method.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-fruit-p5",
+      "lessonId": "agr-par22-fruit",
+      "lessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f",
+      "paragraphId": "agr-par22-fruit-p5",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FRUIT-05"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish agricultural monorail/単軌条運搬機 synonyms and riding/nonriding types.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f"
+    },
+    {
+      "candidateId": "ASSESS-CAND-agr-par22-fruit-p6",
+      "lessonId": "agr-par22-fruit",
+      "lessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f",
+      "paragraphId": "agr-par22-fruit-p6",
+      "knowledgeIds": [
+        "AGR-K-PAR22-FRUIT-06"
+      ],
+      "scopeLevels": [
+        "2"
+      ],
+      "objective": "Distinguish crawler-type self-propulsion from permission to ride or specific load limits.",
+      "status": "candidate_for_semantic_dedup_not_authored_question",
+      "notReferencedByCurrentWeeklyQuestion": true,
+      "historicalLessonSourceHash": "58b5606548e64937ab00bf36afc6e16e8f6127d70a4a94d28fd8cb56d029dc0f"
+    }
+  ],
+  "review": {
+    "aiAudit": true,
+    "globalSemanticDedupComplete": false,
+    "humanReviewed": false,
+    "nativeReviewed": false,
+    "domainReviewed": false
+  },
+  "inputs": {
+    "src/data/agriculture/lessons.ja.json": "967a6aea549c2609980af50870a083326f58e52e8180576f2011ca9748abdabb",
+    "src/data/agriculture/weekly-checks.ja.json": "06023b72dd6f5997a9c908b3a6f16824166be3118dedafa97abdf41a7d441a86",
+    "docs/ssw-workspace/agriculture/exam-authoring-blueprint.json": "7b3c4012afab1381291d9929e056c706be935f0bfbf902648195f74fce904f1c"
+  },
+  "currentBindingNote": "Historical proposals rebound mechanically to current lesson hashes. Changed source paragraphs are quarantined in the paired review; no automatic authoring eligibility."
+}
