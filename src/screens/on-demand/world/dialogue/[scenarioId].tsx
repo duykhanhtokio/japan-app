@@ -48,7 +48,7 @@ function DialogueScreen({id}:{id?:string}){
  const{profile}=useUserProfile(),{language}=useAppLanguage(),royalPosition=useRoyalPositioning(),insets=useSafeAreaInsets(),wide=royalPosition.isWide;
  const turns=useMemo(()=>id?loadDialogueTurns(id):[],[id]);
  // Warm the next NPC line while the learner reads/responds to the current turn.
- useEffect(()=>{let active=true;void (async()=>{const npc=turns.filter(item=>item.speaker==='NPC'&&item.npc?.textJa);for(let i=0;i<npc.length;i+=2){if(!active)return;await Promise.all(npc.slice(i,i+2).map(item=>Speech.prefetch(item.npc!.textJa,{scenarioId:item.scenarioId,turnId:item.id,category:location?.category}).catch(()=>{})));}})();return()=>{active=false;};},[turns,location?.category]);
+ useEffect(()=>{let active=true;void (async()=>{const npc=turns.filter(item=>item.speaker==='NPC'&&item.npc?.textJa);for(let i=0;i<npc.length;i+=2){if(!active)return;await Promise.all(npc.slice(i,i+2).map(item=>Speech.prefetch(item.npc?.textJa ?? '',{scenarioId:item.scenarioId,turnId:item.id,category:location?.category}).catch(()=>{})));}})();return()=>{active=false;};},[turns,location?.category]);
  const[index,setIndex]=useState(0),[revealedTurnIds,setRevealedTurnIds]=useState<Set<string>>(()=>new Set()),[npcSpeechDone,setNpcSpeechDone]=useState(true),[rewardVisible,setRewardVisible]=useState(false),[rewardCategory,setRewardCategory]=useState<NpcCategory|null>(null),[rewardProgress,setRewardProgress]=useState(0),[isUnlock,setIsUnlock]=useState(false),[finishing,setFinishing]=useState(false),speech=useGameSpeech(),turn=turns[index],npcTurn=turn?.speaker==='NPC';
  const [spokenLengths,setSpokenLengths]=useState<Record<string,number>>({});
  const [playerTranscripts,setPlayerTranscripts]=useState<Record<string,string>>({});
