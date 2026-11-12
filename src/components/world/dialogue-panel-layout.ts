@@ -56,38 +56,122 @@ export function rubyDialogueLineHeight(fontSize: number) {
 export function dialoguePanelLayout({ width, height, headerBottom, bottom, npcWaist, wide, compact = false, panels }: {
   width: number; height: number; headerBottom: number; bottom: number; npcWaist: number; wide: boolean; compact?: boolean; panels: DialoguePanelSpec[];
 }) {
-  const gap = 12, inset = 40;
-  const topLimit = Math.max(0, headerBottom + 8, npcWaist), bottomLimit = Math.min(height, bottom);
-  const available = Math.max(0, bottomLimit - topLimit);
+  const gap = 12;
+  const inset = 64; // Reserve space for ruby, frame padding and speaker label.
+
+  // The NPC's source-image waist is the fixed upper anchor.
+  const top = Math.max(0, Math.min(height, npcWaist));
+  const bottomLimit = Math.max(top, Math.min(height, bottom));
+  const available = Math.max(0, bottomLimit - top);
+
   const normalWidth = wide && !compact ? width * .46 : width - 20;
-  function required(spec: DialoguePanelSpec, panelWidth: number, fontSize: number) {
-    const copyWidth = Math.max(80, panelWidth - (wide || compact ? 44 : 56) - 8);
-    const copyHeight = Math.max(...[spec.copy, ...(spec.alternatives ?? [])].map(copy => copy.reduce((sum, row) => sum + dialogueCopyLines(row.text, copyWidth, fontSize) * fontSize * (row.lineHeight >= 2 ? Math.max(row.lineHeight, rubyDialogueLineHeight(fontSize)) : row.lineHeight), 0)));
-    return Math.ceil(copyHeight + inset + 8);
+
+  function required(
+    spec: DialoguePanelSpec,
+    panelWidth: number,
+    fontSize: number
+  ) {
+    const copyWidth = Math.max(
+      80,
+      panelWidth - (wide || compact ? 44 : 56) - 8
+    );
+
+    const variants = [spec.copy, ...(spec.alternatives ?? [])];
+
+    const copyHeight = Math.max(
+      0,
+      ...variants.map(copy =>
+        copy.reduce((sum, row) => {
+          const factor = row.lineHeight >= 2
+            ? Math.max(row.lineHeight, rubyDialogueLineHeight(fontSize))
+            : row.lineHeight;
+
+          return sum +
+            dialogueCopyLines(row.text, copyWidth, fontSize) *
+            fontSize * factor;
+        }, 0)
+      )
+    );
+
+    return Math.ceil(copyHeight + inset);
   }
-  const atFourteen = panels.map(spec => required(spec, normalWidth, 14));
-  const columns = panels.length === 2 && (wide || (available < 200 && atFourteen.reduce((sum, value) => sum + value, gap) > available));
-  const panelWidth = columns ? (width - 20 - gap) / 2 : normalWidth;
+
+  const initial = panels.map(spec => required(spec, normalWidth, 14));
+
+  const columns =
+    panels.length === 2 &&
+    (wide || (
+      available < 200 &&
+      initial.reduce((sum, value) => sum + value, gap) > available
+    ));
+
+  const panelWidth = columns
+    ? (width - 20 - gap) / 2
+    : normalWidth;
+
   const fonts = panels.map(() => 17);
-  const heights = () => panels.map((spec, i) => required(spec, panelWidth, fonts[i]));
-  const total = () => columns ? Math.max(0, ...heights()) : heights().reduce((sum, value) => sum + value, gap * Math.max(0, panels.length - 1));
-  // The waist is a hard boundary. Long copy is paged inside the allocated frame.
-  // Never borrow space above the character waist to fit a transcript.
-  const order = panels.map((_, i) => i).sort((a, b) => Number(panels[b].context) - Number(panels[a].context));
+
+  const heights = () =>
+    panels.map((spec, i) => required(spec, panelWidth, fonts[i]));
+
+  const total = () => columns
+    ? Math.max(0, ...heights())
+    : heights().reduce(
+        (sum, value) => sum + value,
+        gap * Math.max(0, panels.length - 1)
+      );
+
+  // Reduce font sizes only when necessary, without sacrificing ruby.
+  const order = panels.map((_, i) => i).sort(
+    (a, b) => Number(panels[b].context) - Number(panels[a].context)
+  );
+
   for (const i of order) {
     const minimum = panels[i].context ? 12 : 14;
-    while (fonts[i] > minimum && (columns ? heights()[i] > available : total() > available)) fonts[i] -= .5;
+
+    while (
+      fonts[i] > minimum &&
+      (columns ? heights()[i] > available : total() > available)
+    ) {
+      fonts[i] -= 0.5;
+    }
   }
-  const budget = columns ? available : Math.max(0, (available - gap * Math.max(0, panels.length - 1)) / Math.max(1, panels.length));
-  const sizes = heights().map(value => Math.min(value, budget));
-  const top = topLimit;
+
+  // Keep NPC and player frames equal in height.
+  // Text length must never change frame dimensions.
+  const usable = Math.max(
+    0,
+    available - (columns ? 0 : gap * Math.max(0, panels.length - 1))
+  );
+
+  const fixedHeight = columns
+    ? usable
+    : usable / Math.max(1, panels.length);
+
+  const sizes = panels.map(() => fixedHeight);
+
   let next = 0;
+
   const placements = sizes.map((panelHeight, i) => {
-    const placement = { left: columns ? i * (panelWidth + gap) : 0, top: columns ? 0 : next, width: panelWidth, height: panelHeight, fontSize: fonts[i] };
+    const placement = {
+      left: columns ? i * (panelWidth + gap) : 0,
+      top: columns ? 0 : next,
+      width: panelWidth,
+      height: Math.max(0, panelHeight),
+      fontSize: fonts[i]
+    };
+
     next += panelHeight + gap;
     return placement;
   });
-  return { top, bottom: height - bottomLimit, columns, placements, fits: budget >= 64 };
+
+  return {
+    top,
+    bottom: height - bottomLimit,
+    columns,
+    placements,
+    fits: sizes.every(size => size >= 64)
+  };
 }
 
 export type DialogueRubyPart = { text: string; reading?: string };

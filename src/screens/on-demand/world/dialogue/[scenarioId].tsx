@@ -168,7 +168,7 @@ function DialogueScreen({id}:{id?:string}){
  const entryDistance=Math.max(80,...panelLayout.placements.map(panel=>panel.height))+16;
  const renderPanel=(panel:typeof turn,context:boolean,slot:number)=>{
   const isNpc=panel.speaker==='NPC',showText=context||revealedTurnIds.has(panel.id),hintStage=hintStages[panel.id]??0;
-  const npcText=showText?panel.npc?.textJa??'':(panel.npc?.textJa??'').slice(0,spokenLengths[panel.id]??0);
+  const npcText=panel.npc?.textJa??'';
   const npcTranslation=panel.npc?.translations?.[language]??(language==='vi'?panel.npc?.translationVi:null);
   const panelTranscript=isNpc?'':context?playerTranscripts[panel.id]??'':speech.transcript;
   const panelRecognizing=!isNpc&&!context&&speech.recognizing;
@@ -178,8 +178,8 @@ function DialogueScreen({id}:{id?:string}){
   const ruby=(isNpc&&!(hintStage>0&&language!=='ja'))?(panel.npc?.textRuby?visibleRuby(panel.npc.textRuby,sourceText.length):undefined):!isNpc&&hintStage>0?panel.player?.recommendedAnswerRuby:undefined;
   return <View testID={`dialogue-panel-${panel.speaker}`} key={panel.id} style={[s.bubbleWrap,{height:allocatedHeight}]}>
    <RoyalNavyFrame style={s.speakerPlate}><Text onPress={isNpc?()=>Alert.alert('VOICEVOX',Speech.voiceCredits):undefined} accessibilityRole={isNpc?'button':undefined} accessibilityLabel={isNpc?`${npcName} · VOICEVOX`:undefined} numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1} style={s.speakerName}>{isNpc?npcName:playerName}</Text></RoyalNavyFrame>
-   <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame style={[{flex:1},{paddingVertical:8,paddingHorizontal:22}]}>
-    <ScrollView key={`${panel.id}:${hintStage}`} testID={`dialogue-scroll-${panel.speaker}`} style={{height:Math.max(1,allocatedHeight-40),flexGrow:0}} contentContainerStyle={{paddingBottom:8}} nestedScrollEnabled showsVerticalScrollIndicator bounces={false}>
+   <View style={[s.bubbleDepth,{flex:1}]}><RoyalReadingFrame fillContent style={[{flex:1},{paddingTop:20,paddingBottom:14,paddingHorizontal:22}]}>
+    <ScrollView key={`${panel.id}:${hintStage}`} testID={`dialogue-scroll-${panel.speaker}`} style={{flex:1,minHeight:0,width:"100%"}} contentContainerStyle={{flexGrow:1,justifyContent:"center",alignItems:"center",paddingTop:14,paddingBottom:14,paddingHorizontal:8}} nestedScrollEnabled showsVerticalScrollIndicator bounces={false}>
     {ruby?<JapaneseRuby testID={isNpc?'npc-japanese-ruby':'player-japanese-ruby'} text={sourceText||' '} fontSize={fontSize} segments={ruby} color={theme.text} readingColor={theme.reading}/>:<Text testID="dialogue-copy" maxFontSizeMultiplier={1} style={[s.guidance,fit,{color:theme.text}]}>{sourceText||' '}</Text>}
     {panelRecognizing&&!panelTranscript&&<Text style={[fit,{color:theme.reading}]}>音声を認識しています…</Text>}
     {!!panelTranscript&&<Text style={[s.guidance,fit,{color:theme.text}]}>{`「${panelTranscript}」`}</Text>}
