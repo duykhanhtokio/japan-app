@@ -12,7 +12,8 @@ import { locationBackground } from '@/components/world/location-backgrounds.gene
 import { useAppLanguage } from '@/context/LanguageContext';
 import { useGameSpeech } from '@/hooks/useGameSpeech';
 import { useUserProfile } from '@/hooks/useUserProfile';
-import { loadDialogueTurns } from '@/services/dialogue-content-loader';
+import { loadGeoDialogueTurns } from '@/services/geo-dialogue-loader';
+import type { LifeDialogueTurn } from '@/types/life-conversation';
 import { getLifeLocationById, getLifeScenarioById } from '@/services/life-content-repository';
 import { visibleRuby, hasAlignedRuby } from '@/components/world/japanese-ruby-data';
 import JapaneseRuby from '@/components/world/JapaneseRuby';
@@ -46,7 +47,27 @@ export default function DialogueRoute(){
 function DialogueScreen({id}:{id?:string}){
  const scenario=id?getLifeScenarioById(id):null,location=scenario?.locationId?getLifeLocationById(scenario.locationId):null;
  const{profile}=useUserProfile(),{language}=useAppLanguage(),royalPosition=useRoyalPositioning(),insets=useSafeAreaInsets(),wide=royalPosition.isWide;
- const turns=useMemo(()=>id?loadDialogueTurns(id):[],[id]);
+ const [turns,setTurns]=useState<LifeDialogueTurn[]>([]);
+ const [dialogueLoadState,setDialogueLoadState]=useState<'loading'|'ready'|'error'>('loading');
+ useEffect(()=>{
+  let active=true;
+  if(!id){setDialogueLoadState('error');return()=>{active=false;};}
+  // Keep existing turns and the current index while switching language.
+  // A new scenario remounts DialogueScreen via its key.
+  const started=globalThis.performance?.now?.()??Date.now();
+  void loadGeoDialogueTurns(id,language).then(value=>{
+   if(!active)return;
+   setTurns(value);
+   setDialogueLoadState('ready');
+   const elapsed=(globalThis.performance?.now?.()??Date.now())-started;
+   console.log('[geo-dialogue-timing]',JSON.stringify({scenarioId:id,language,loadMs:Math.round(elapsed),turns:value.length}));
+  }).catch(error=>{
+   console.error('[geo-dialogue] failed to load',id,language,error);
+   // A failed language switch must not erase an active conversation.
+   if(active)setDialogueLoadState(previous=>previous==='ready'?'ready':'error');
+  });
+  return()=>{active=false;};
+ },[id,language]);
  // Warm the next NPC line while the learner reads/responds to the current turn.
  useEffect(()=>{let active=true;void (async()=>{const npc=turns.filter(item=>item.speaker==='NPC'&&item.npc?.textJa);for(let i=0;i<npc.length;i+=2){if(!active)return;await Promise.all(npc.slice(i,i+2).map(item=>Speech.prefetch(item.npc?.textJa ?? '',{scenarioId:item.scenarioId,turnId:item.id,category:location?.category}).catch(()=>{})));}})();return()=>{active=false;};},[turns,location?.category]);
  const[index,setIndex]=useState(0),[revealedTurnIds,setRevealedTurnIds]=useState<Set<string>>(()=>new Set()),[npcSpeechDone,setNpcSpeechDone]=useState(true),[rewardVisible,setRewardVisible]=useState(false),[rewardCategory,setRewardCategory]=useState<NpcCategory|null>(null),[rewardProgress,setRewardProgress]=useState(0),[isUnlock,setIsUnlock]=useState(false),[finishing,setFinishing]=useState(false),speech=useGameSpeech(),turn=turns[index],npcTurn=turn?.speaker==='NPC';
@@ -121,6 +142,8 @@ function DialogueScreen({id}:{id?:string}){
   void begin().catch(()=>{if(active)setNpcSpeechDone(true)});
   return()=>{active=false;void Speech.stop()};
  },[turn?.id,turn?.speaker,turn?.npc?.textJa,turn?.scenarioId,location?.category,abortListening,index,turns,advanceTurn,audioRetry]);
+ if(dialogueLoadState==='loading')return <RoyalPageBackground source={require("../../../../../assets/app/backgrounds/profile-details.png")}><SafeAreaView style={s.emptyScreen}><Text style={s.empty}>会話を読み込み中...</Text></SafeAreaView></RoyalPageBackground>;
+ if(dialogueLoadState==='error')return <RoyalPageBackground source={require("../../../../../assets/app/backgrounds/profile-details.png")}><SafeAreaView style={s.emptyScreen}><Text style={s.empty}>会話の読み込みに失敗しました。</Text></SafeAreaView></RoyalPageBackground>;
  if(!scenario||!turn)return <RoyalPageBackground source={require("../../../../../assets/app/backgrounds/profile-details.png")}><SafeAreaView style={s.emptyScreen}><Text style={s.empty}>会話データがありません。</Text></SafeAreaView></RoyalPageBackground>;
  const nextHint=(turnId:string,isNpc:boolean)=>{if(isNpc)setHintStages(previous=>({...previous,[turnId]:previous[turnId]?0:1}));else setHintStages(previous=>({...previous,[turnId]:previous[turnId]?0:1}))},move=(next:number)=>advanceTurn(next);
  const finish=async()=>{if(finishing)return;const category=normalizeNpcCategory(location?.category);if(!category){backPrepared();return}setFinishing(true);const result=await recordNpcScenario(scenario.id,category.id);const unlocked=result.unlockedCategoryId?npcCategoryById(result.unlockedCategoryId):null;setRewardCategory(unlocked??category);setRewardProgress(result.progress);setIsUnlock(!!unlocked);setRewardVisible(true);setFinishing(false)};
