@@ -77,6 +77,20 @@ function withTranslations(turn: LifeDialogueTurn): LifeDialogueTurn {
 // restrict conversation content. New authored scenarios use `shared`.
 // Existing five-level packages remain available through their N5 content
 // while each scenario is rewritten; scenario IDs and saved card progress stay stable.
+// Shared decoration for the new geographic raw loader. This is an exact
+// compatibility bridge; the legacy require.context graph is still present.
+export function decorateGeoDialogueTurns(raw: unknown, scenarioId: string): LifeDialogueTurn[] {
+ const value = raw && typeof raw === 'object' && 'default' in raw
+  ? (raw as {default: unknown}).default : raw;
+ const selected = Array.isArray(value) ? value
+  : value && typeof value === 'object'
+   ? (value as LifeDialogueLevelSet & {shared?: LifeDialogueTurn[]}).shared ??
+     (value as LifeDialogueLevelSet).N5
+   : null;
+ if (!Array.isArray(selected)) return [];
+ return (selected as LifeDialogueTurn[]).map(withTranslations);
+}
+
 export function loadDialogueTurns(scenarioId: string): LifeDialogueTurn[] {
     const directKey = `./${scenarioId}.json`;
     const genericMatch = /^SC-LOC-JP-\d{5}-(\d{2})-001$/.exec(scenarioId);
