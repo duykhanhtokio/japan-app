@@ -1,5 +1,5 @@
 import { applyIndexedFurigana, furiganaShardKey, type IndexedFuriganaShard } from './dialogue-indexed-furigana';
-import { appLanguages } from '@/i18n/languages';
+import type { AppLanguageCode } from '@/i18n/languages';
 import { loadGeoLocaleBatch } from './geo-locale-batch-loader';
 import { applyDialogueFurigana, type DialogueFuriganaBundle } from './dialogue-furigana';
 import localeBatchIndex from '@/data/dialogue-content/locale-batch-index.json';
@@ -45,11 +45,12 @@ function withFurigana(turn: LifeDialogueTurn): LifeDialogueTurn {
 
 const translationContext = (require as RequireWithContext).context('../data/dialogue-content/translations', false, /\.json$/);
 const translatedFiles = new Set(translationContext.keys());
-async function withLocaleBatches(turns:LifeDialogueTurn[]):Promise<LifeDialogueTurn[]> {
+async function withLocaleBatches(turns:LifeDialogueTurn[],language:AppLanguageCode):Promise<LifeDialogueTurn[]> {
  const batchId=(localeBatchIndex as Record<string,string>)[turns[0]?.scenarioId];
  if(!batchId)return turns;
- const batches=await Promise.all(appLanguages.map(locale=>loadGeoLocaleBatch(locale.code,batchId)));
- return turns.map(turn=>batches.reduce((current,batch)=>batch?applyDialogueLocaleBatch(current,batch):current,turn));
+ if(language==='ja')return turns;
+ const batch=await loadGeoLocaleBatch(language,batchId);
+ return batch?turns.map(turn=>applyDialogueLocaleBatch(turn,batch)):turns;
 }
 function withTranslations(turn: LifeDialogueTurn): LifeDialogueTurn {
  turn = withFurigana(withIndexedFurigana(turn));
@@ -59,7 +60,7 @@ function withTranslations(turn: LifeDialogueTurn): LifeDialogueTurn {
  return applyDialogueTranslations(withAuthoredHint(turn), 'default' in value ? value.default : value);
 }
 
-export async function decorateGeoDialogueTurnsAsync(raw: unknown, _scenarioId: string): Promise<LifeDialogueTurn[]> {
+export async function decorateGeoDialogueTurnsAsync(raw: unknown, _scenarioId: string, language:AppLanguageCode): Promise<LifeDialogueTurn[]> {
  const value = raw && typeof raw === 'object' && 'default' in raw
   ? (raw as {default: unknown}).default : raw;
  const selected = Array.isArray(value) ? value
@@ -68,5 +69,5 @@ export async function decorateGeoDialogueTurnsAsync(raw: unknown, _scenarioId: s
      (value as LifeDialogueLevelSet).N5
    : null;
  if (!Array.isArray(selected)) return [];
- return withLocaleBatches((selected as LifeDialogueTurn[]).map(withTranslations));
+ return withLocaleBatches((selected as LifeDialogueTurn[]).map(withTranslations),language);
 }
