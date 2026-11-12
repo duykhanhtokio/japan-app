@@ -51,19 +51,23 @@ function DialogueScreen({id}:{id?:string}){
  const [dialogueLoadState,setDialogueLoadState]=useState<'loading'|'ready'|'error'>('loading');
  useEffect(()=>{
   let active=true;
-  setTurns([]);
-  setDialogueLoadState('loading');
   if(!id){setDialogueLoadState('error');return()=>{active=false;};}
-  void loadGeoDialogueTurns(id).then(value=>{
+  // Keep existing turns and the current index while switching language.
+  // A new scenario remounts DialogueScreen via its key.
+  const started=globalThis.performance?.now?.()??Date.now();
+  void loadGeoDialogueTurns(id,language).then(value=>{
    if(!active)return;
    setTurns(value);
    setDialogueLoadState('ready');
+   const elapsed=(globalThis.performance?.now?.()??Date.now())-started;
+   console.log('[geo-dialogue-timing]',JSON.stringify({scenarioId:id,language,loadMs:Math.round(elapsed),turns:value.length}));
   }).catch(error=>{
-   console.error('[geo-dialogue] failed to load',id,error);
-   if(active)setDialogueLoadState('error');
+   console.error('[geo-dialogue] failed to load',id,language,error);
+   // A failed language switch must not erase an active conversation.
+   if(active)setDialogueLoadState(previous=>previous==='ready'?'ready':'error');
   });
   return()=>{active=false;};
- },[id]);
+ },[id,language]);
  // Warm the next NPC line while the learner reads/responds to the current turn.
  useEffect(()=>{let active=true;void (async()=>{const npc=turns.filter(item=>item.speaker==='NPC'&&item.npc?.textJa);for(let i=0;i<npc.length;i+=2){if(!active)return;await Promise.all(npc.slice(i,i+2).map(item=>Speech.prefetch(item.npc?.textJa ?? '',{scenarioId:item.scenarioId,turnId:item.id,category:location?.category}).catch(()=>{})));}})();return()=>{active=false;};},[turns,location?.category]);
  const[index,setIndex]=useState(0),[revealedTurnIds,setRevealedTurnIds]=useState<Set<string>>(()=>new Set()),[npcSpeechDone,setNpcSpeechDone]=useState(true),[rewardVisible,setRewardVisible]=useState(false),[rewardCategory,setRewardCategory]=useState<NpcCategory|null>(null),[rewardProgress,setRewardProgress]=useState(0),[isUnlock,setIsUnlock]=useState(false),[finishing,setFinishing]=useState(false),speech=useGameSpeech(),turn=turns[index],npcTurn=turn?.speaker==='NPC';
