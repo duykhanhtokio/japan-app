@@ -1,13 +1,12 @@
 import type { LifeDialogueTurn } from '@/types/life-conversation';
 import { loadPrefectureRawDialogue } from './geo-prefecture-raw-loader';
+import { decorateGeoDialogueTurns } from './dialogue-decoration';
 
-// Compatibility-first: returns exactly the legacy decorated output for all
-// indexed prefecture scenarios, with legacy fallback for generic IDs.
-// IMPORTANT: legacy decoration still imports require.context and thus this
-// bridge alone does not improve initial Metro bundling.
-export async function loadGeoDialogueTurns(scenarioId: string): Promise<LifeDialogueTurn[]> {
- const raw = await loadPrefectureRawDialogue(scenarioId);
- const legacy = await import('./dialogue-content-loader');
- if (raw === undefined) return legacy.loadDialogueTurns(scenarioId);
- return legacy.decorateGeoDialogueTurns(raw, scenarioId);
+// Normal prefecture navigation does not import the 7561-file legacy raw
+// require.context. Generic fallback stays available as an async import.
+export async function loadGeoDialogueTurns(scenarioId:string):Promise<LifeDialogueTurn[]>{
+ const raw=await loadPrefectureRawDialogue(scenarioId);
+ if(raw!==undefined)return decorateGeoDialogueTurns(raw,scenarioId);
+ const legacy=await import('./dialogue-content-loader');
+ return legacy.loadDialogueTurns(scenarioId);
 }
