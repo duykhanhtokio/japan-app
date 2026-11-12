@@ -20,9 +20,23 @@ export default function GeoPilotTestScreen() {
       const value = await loadIbarakiRawDialogueAsync(id);
       const end = now();
       const payload = value && typeof value === 'object' && 'default' in value ? value.default : value;
-      const rows = Array.isArray(payload) ? payload : payload && typeof payload === 'object' && 'shared' in payload ? payload.shared : payload && typeof payload === 'object' && 'N5' in payload ? payload.N5 : null;
-      const valid = Array.isArray(rows) && rows.length > 0 && rows.every(t => t.scenarioId === id);
-      const summary = JSON.stringify({ scenarioId:id, turns:rows?.length??0, valid, absent:absent===undefined, firstImportMs:Math.round(loadedAt-start), sampleLoadMs:Math.round(end-loadedAt), note:'Warm/cold Metro and processed locale parity not yet measured.' },null,2);
+      const rows: unknown = Array.isArray(payload)
+        ? payload
+        : payload && typeof payload === 'object' && 'shared' in payload
+          ? payload.shared
+          : payload && typeof payload === 'object' && 'N5' in payload
+            ? payload.N5
+            : null;
+      const valid = Array.isArray(rows) && rows.length > 0 &&
+        rows.every((turn: unknown) => !!turn && typeof turn === 'object' &&
+          'scenarioId' in turn && turn.scenarioId === id);
+      const turnCount = Array.isArray(rows) ? rows.length : 0;
+      const summary = JSON.stringify({
+        scenarioId: id, turns: turnCount, valid, absent: absent === undefined,
+        firstImportMs: Math.round(loadedAt - start),
+        sampleLoadMs: Math.round(end - loadedAt),
+        note: 'Warm/cold Metro and processed locale parity not yet measured.'
+      }, null, 2);
       console.log('[geo-pilot]',summary);
       setResult(summary);
     } catch (error) {
