@@ -12,7 +12,7 @@ const scenarioLocations = read('src/data/generated/life-on-demand/scenario-locat
 const dialogueDir = path.join(root, 'src/data/generated/dialogues');
 const regionFor = n => n === 1 ? 'hokkaido' : n <= 7 ? 'tohoku' : n <= 14 ? 'kanto' : n <= 23 ? 'chubu' : n <= 30 ? 'kansai' : n <= 35 ? 'chugoku' : n <= 39 ? 'shikoku' : n <= 47 ? 'kyushu' : null;
 const prefectureNumber = id => {
-  const match = /^PRF-(\\d{1,2})$/.exec(id || '');
+  const match = /^PRF-(\d{1,2})$/.exec(id || '');
   return match ? Number(match[1]) : null;
 };
 const cityById = new Map(cities.map(c => [c.id, c]));
